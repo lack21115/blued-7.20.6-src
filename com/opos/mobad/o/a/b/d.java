@@ -15,11 +15,11 @@ import com.opos.mobad.cmn.a.b.g;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27036a;
+    private Context f13348a;
     private RelativeLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f27037c;
+    private TextView f13349c;
     private GridLayout d;
     private c e;
     private GradientDrawable f;
@@ -27,23 +27,23 @@ public class d {
     private int h;
 
     public d(Context context, c cVar) {
-        this.f27036a = context;
+        this.f13348a = context;
         this.e = cVar;
         c();
     }
 
     private TextView a(int i, com.opos.mobad.o.a.a.b bVar) {
-        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f27036a, this.f, this.g, Color.parseColor("#8C000000"), Color.parseColor("#FF5A60"));
+        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f13348a, this.f, this.g, Color.parseColor("#8C000000"), Color.parseColor("#FF5A60"));
         aVar.setGravity(17);
         aVar.setTextSize(1, 12.0f);
-        GridLayout.LayoutParams layoutParams = new GridLayout.LayoutParams(new ViewGroup.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f27036a, 92.0f), com.opos.cmn.an.h.f.a.a(this.f27036a, 31.0f)));
+        GridLayout.LayoutParams layoutParams = new GridLayout.LayoutParams(new ViewGroup.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f13348a, 92.0f), com.opos.cmn.an.h.f.a.a(this.f13348a, 31.0f)));
         double d = i;
         double d2 = d / 3.0d;
         if (d % 3.0d != 0.0d) {
-            layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f27036a, 6.0f);
+            layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f13348a, 6.0f);
         }
         if (d2 >= 1.0d) {
-            layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f27036a, 6.0f);
+            layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f13348a, 6.0f);
         }
         aVar.setText(bVar.b());
         aVar.setLayoutParams(layoutParams);
@@ -66,25 +66,25 @@ public class d {
     }
 
     private void c() {
-        this.b = new RelativeLayout(this.f27036a);
-        this.f27037c = new TextView(this.f27036a);
+        this.b = new RelativeLayout(this.f13348a);
+        this.f13349c = new TextView(this.f13348a);
         int a2 = g.a();
         this.h = a2;
-        this.f27037c.setId(a2);
-        this.f27037c.setTextColor(Color.parseColor("#8C000000"));
-        this.f27037c.setTextSize(1, 12.0f);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, com.opos.cmn.an.h.f.a.a(this.f27036a, 17.0f));
+        this.f13349c.setId(a2);
+        this.f13349c.setTextColor(Color.parseColor("#8C000000"));
+        this.f13349c.setTextSize(1, 12.0f);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, com.opos.cmn.an.h.f.a.a(this.f13348a, 17.0f));
         layoutParams.addRule(10);
         layoutParams.addRule(9);
-        this.b.addView(this.f27037c, layoutParams);
+        this.b.addView(this.f13349c, layoutParams);
         GradientDrawable gradientDrawable = new GradientDrawable();
         this.f = gradientDrawable;
         gradientDrawable.setColor(Color.parseColor("#F5F6F7"));
-        this.f.setCornerRadius(com.opos.cmn.an.h.f.a.a(this.f27036a, 5.0f));
+        this.f.setCornerRadius(com.opos.cmn.an.h.f.a.a(this.f13348a, 5.0f));
         GradientDrawable gradientDrawable2 = new GradientDrawable();
         this.g = gradientDrawable2;
         gradientDrawable2.setColor(Color.parseColor("#1AFF5A60"));
-        this.g.setCornerRadius(com.opos.cmn.an.h.f.a.a(this.f27036a, 5.0f));
+        this.g.setCornerRadius(com.opos.cmn.an.h.f.a.a(this.f13348a, 5.0f));
     }
 
     public View a() {
@@ -93,13 +93,13 @@ public class d {
 
     public void a(com.opos.mobad.o.a.a.a aVar) {
         if (aVar != null) {
-            this.f27037c.setText(aVar.f27029a);
+            this.f13349c.setText(aVar.f13341a);
             int size = aVar.b.size();
             if (size > 0) {
-                this.d = new GridLayout(this.f27036a);
-                RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f27036a, 288.0f), -2);
+                this.d = new GridLayout(this.f13348a);
+                RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f13348a, 288.0f), -2);
                 layoutParams.addRule(3, this.h);
-                layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f27036a, 8.0f);
+                layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f13348a, 8.0f);
                 this.d.setColumnCount(3);
                 this.d.setRowCount((int) Math.ceil(size / 3.0d));
                 this.d.setOrientation(0);

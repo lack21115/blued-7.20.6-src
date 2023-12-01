@@ -8,6 +8,7 @@ import android.text.InputFilter;
 import android.text.SpannableString;
 import android.text.TextPaint;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
@@ -15,8 +16,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.core.utils.toast.ToastUtils;
 import com.blued.android.module.base.shortvideo.ShortVideoProxy;
@@ -50,12 +54,12 @@ import kotlin.text.StringsKt;
 public final class GroupIdentifyFragment extends MVVMBaseFragment<GroupIdentifyViewModel> implements View.OnClickListener {
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f32673c;
+    private final ViewBindingProperty f18982c;
     private int d;
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(GroupIdentifyFragment.class, "vb", "getVb()Lcom/blued/android/module/yy_china/databinding/FragmentYyApplyLayoutBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(GroupIdentifyFragment.class, "vb", "getVb()Lcom/blued/android/module/yy_china/databinding/FragmentYyApplyLayoutBinding;", 0))};
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f32672a = new Companion(null);
+    public static final Companion f18981a = new Companion(null);
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/fragment/GroupIdentifyFragment$Companion.class */
@@ -73,18 +77,18 @@ public final class GroupIdentifyFragment extends MVVMBaseFragment<GroupIdentifyV
     }
 
     public GroupIdentifyFragment() {
-        super(2131559360);
-        this.f32673c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<GroupIdentifyFragment, FragmentYyApplyLayoutBinding>() { // from class: com.soft.blued.ui.msg_group.fragment.GroupIdentifyFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fragment_yy_apply_layout);
+        this.f18982c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<GroupIdentifyFragment, FragmentYyApplyLayoutBinding>() { // from class: com.soft.blued.ui.msg_group.fragment.GroupIdentifyFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/msg_group/fragment/GroupIdentifyFragment;)Lcom/blued/android/module/yy_china/databinding/FragmentYyApplyLayoutBinding; */
             /* renamed from: a */
-            public final FragmentYyApplyLayoutBinding invoke(GroupIdentifyFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentYyApplyLayoutBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<GroupIdentifyFragment, FragmentYyApplyLayoutBinding>() { // from class: com.soft.blued.ui.msg_group.fragment.GroupIdentifyFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/msg_group/fragment/GroupIdentifyFragment;)Lcom/blued/android/module/yy_china/databinding/FragmentYyApplyLayoutBinding; */
             /* renamed from: a */
-            public final FragmentYyApplyLayoutBinding invoke(GroupIdentifyFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentYyApplyLayoutBinding.a(fragment.requireView());
             }
@@ -191,26 +195,26 @@ public final class GroupIdentifyFragment extends MVVMBaseFragment<GroupIdentifyV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(GroupIdentifyFragment this$0, Void r6) {
-        Intrinsics.e(this$0, "this$0");
-        int i = this$0.d;
+    public static final void a(GroupIdentifyFragment groupIdentifyFragment, Void r6) {
+        Intrinsics.e(groupIdentifyFragment, "this$0");
+        int i = groupIdentifyFragment.d;
         int i2 = 2;
         if (i == 2 || i == -1) {
-            if (this$0.j().g()) {
+            if (((GroupIdentifyViewModel) groupIdentifyFragment.j()).g()) {
                 LiveDataManager.a().a(3);
-                ShortVideoProxy.e().a(this$0, 4, 100);
+                ShortVideoProxy.e().a(groupIdentifyFragment, 4, 100);
                 return;
             }
             LiveDataManager.a().a(2);
-            ShortVideoProxy.e().a(this$0, 3, 100);
+            ShortVideoProxy.e().a(groupIdentifyFragment, 3, 100);
             return;
         }
-        Context context = this$0.getContext();
-        if (!this$0.j().g()) {
+        Context context = groupIdentifyFragment.getContext();
+        if (!((GroupIdentifyViewModel) groupIdentifyFragment.j()).g()) {
             i2 = 1;
         }
         YYApplyFinishFragment.a(context, 0, i2);
-        FragmentActivity activity = this$0.getActivity();
+        FragmentActivity activity = groupIdentifyFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -218,11 +222,11 @@ public final class GroupIdentifyFragment extends MVVMBaseFragment<GroupIdentifyV
     }
 
     private final FragmentYyApplyLayoutBinding p() {
-        return (FragmentYyApplyLayoutBinding) this.f32673c.b(this, b[0]);
+        return (FragmentYyApplyLayoutBinding) this.f18982c.b(this, b[0]);
     }
 
     private final void q() {
-        String string = getString(2131886806);
+        String string = getString(R.string.blued_apply_host_agree);
         Intrinsics.c(string, "getString(R.string.blued_apply_host_agree)");
         String string2 = getString(R.string.group_code_of_conduct);
         Intrinsics.c(string2, "getString(R.string.group_code_of_conduct)");
@@ -232,25 +236,25 @@ public final class GroupIdentifyFragment extends MVVMBaseFragment<GroupIdentifyV
         if (p == null) {
             return;
         }
-        p.f16490c.setMovementMethod(LinkMovementMethod.getInstance());
+        p.c.setMovementMethod(LinkMovementMethod.getInstance());
         spannableString.setSpan(new ClickableSpan() { // from class: com.soft.blued.ui.msg_group.fragment.GroupIdentifyFragment$setAgreement$1$1
             @Override // android.text.style.ClickableSpan
-            public void onClick(View widget) {
-                Intrinsics.e(widget, "widget");
+            public void onClick(View view) {
+                Intrinsics.e(view, "widget");
                 YYRoomInfoManager.e().c().a(GroupIdentifyFragment.this.getActivity(), "https://app.blued.cn/term/conductterm", 7);
             }
 
             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-            public void updateDrawState(TextPaint ds) {
-                Intrinsics.e(ds, "ds");
+            public void updateDrawState(TextPaint textPaint) {
+                Intrinsics.e(textPaint, "ds");
                 Context context = GroupIdentifyFragment.this.getContext();
                 if (context != null) {
-                    ds.setColor(ContextCompat.getColor(context, 2131102163));
+                    textPaint.setColor(ContextCompat.getColor(context, 2131102163));
                 }
-                ds.setUnderlineText(false);
+                textPaint.setUnderlineText(false);
             }
-        }, StringsKt.a((CharSequence) str, string2, 0, false, 6, (Object) null), (string + ' ' + string2).length(), 33);
-        p.f16490c.setText(spannableString);
+        }, StringsKt.a(str, string2, 0, false, 6, (Object) null), (string + ' ' + string2).length(), 33);
+        p.c.setText(spannableString);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -259,30 +263,29 @@ public final class GroupIdentifyFragment extends MVVMBaseFragment<GroupIdentifyV
         if (p == null) {
             return;
         }
-        String obj = StringsKt.b((CharSequence) p.i.getText().toString()).toString();
-        String obj2 = StringsKt.b((CharSequence) p.h.getText().toString()).toString();
+        String obj = StringsKt.b(p.i.getText().toString()).toString();
+        String obj2 = StringsKt.b(p.h.getText().toString()).toString();
         Object tag = p.b.getTag();
         if (tag == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Boolean");
         }
         boolean booleanValue = ((Boolean) tag).booleanValue();
         if (TextUtils.isEmpty(obj) || TextUtils.isEmpty(obj2) || !booleanValue) {
-            p.f16489a.setEnabled(false);
-            p.f16489a.setAlpha(0.5f);
+            p.a.setEnabled(false);
+            p.a.setAlpha(0.5f);
             return;
         }
-        p.f16489a.setEnabled(true);
-        p.f16489a.setAlpha(1.0f);
+        p.a.setEnabled(true);
+        p.a.setAlpha(1.0f);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
         FragmentYyApplyLayoutBinding p = p();
         if (p == null) {
             return;
         }
-        p.f16489a.setText(getString(R.string.group_begin_identify));
-        ImageView imageView = p.l.f16964a;
+        p.a.setText(getString(R.string.group_begin_identify));
+        ImageView imageView = p.l.a;
         GroupIdentifyFragment groupIdentifyFragment = this;
         imageView.setOnClickListener(groupIdentifyFragment);
         p.b.setOnClickListener(groupIdentifyFragment);
@@ -290,26 +293,24 @@ public final class GroupIdentifyFragment extends MVVMBaseFragment<GroupIdentifyV
         p.b.setImageResource(2131233891);
         p.l.b.setText(getString(R.string.group_apply_create_title));
         p.j.setText(getString(R.string.group_apply_create_tip1));
-        if (j().g()) {
+        if (((GroupIdentifyViewModel) j()).g()) {
             p.j.setText(getString(R.string.event_apply_create_tip1));
         }
         p.k.setText(getString(R.string.group_apply_create_tip2));
-        p.i.setFilters(new InputFilter[]{new EnglishCharFilter(40)});
-        p.i.addTextChangedListener(new ITextWatcher() { // from class: com.soft.blued.ui.msg_group.fragment.GroupIdentifyFragment$initView$1$1
-            @Override // android.text.TextWatcher
-            public void afterTextChanged(Editable s) {
-                Intrinsics.e(s, "s");
+        p.i.setFilters(new InputFilter[]{(InputFilter) new EnglishCharFilter(40)});
+        p.i.addTextChangedListener((TextWatcher) new ITextWatcher() { // from class: com.soft.blued.ui.msg_group.fragment.GroupIdentifyFragment$initView$1$1
+            public void afterTextChanged(Editable editable) {
+                Intrinsics.e(editable, "s");
                 GroupIdentifyFragment.this.r();
             }
         });
-        p.h.addTextChangedListener(new ITextWatcher() { // from class: com.soft.blued.ui.msg_group.fragment.GroupIdentifyFragment$initView$1$2
-            @Override // android.text.TextWatcher
-            public void afterTextChanged(Editable s) {
-                Intrinsics.e(s, "s");
+        p.h.addTextChangedListener((TextWatcher) new ITextWatcher() { // from class: com.soft.blued.ui.msg_group.fragment.GroupIdentifyFragment$initView$1$2
+            public void afterTextChanged(Editable editable) {
+                Intrinsics.e(editable, "s");
                 GroupIdentifyFragment.this.r();
             }
         });
-        p.f16489a.setOnClickListener(groupIdentifyFragment);
+        p.a.setOnClickListener(groupIdentifyFragment);
         p.g.setOnClickListener(groupIdentifyFragment);
         TextView textView = p.g;
         String b2 = LoginRegisterTools.b();
@@ -321,21 +322,19 @@ public final class GroupIdentifyFragment extends MVVMBaseFragment<GroupIdentifyV
         q();
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void g() {
-        a().h();
+        ((GroupIdentifyViewModel) a()).h();
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        GroupIdentifyFragment groupIdentifyFragment = this;
-        a().e().observe(groupIdentifyFragment, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$GroupIdentifyFragment$gTpbVe43cce2ITbmqt-Jxp1ay3s
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        ((GroupIdentifyViewModel) a()).e().observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$GroupIdentifyFragment$gTpbVe43cce2ITbmqt-Jxp1ay3s
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 GroupIdentifyFragment.a(GroupIdentifyFragment.this, (Void) obj);
             }
         });
-        a().d().observe(groupIdentifyFragment, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$GroupIdentifyFragment$YJgukGkMPgVPSSJCeQT4xTCkXWk
+        ((GroupIdentifyViewModel) a()).d().observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$GroupIdentifyFragment$YJgukGkMPgVPSSJCeQT4xTCkXWk
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 GroupIdentifyFragment.a(GroupIdentifyFragment.this, (GroupIdentifyModel) obj);
@@ -343,12 +342,11 @@ public final class GroupIdentifyFragment extends MVVMBaseFragment<GroupIdentifyV
         });
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 != 0 && i == 100 && intent != null && intent.getBooleanExtra("auth_upload_state", false)) {
             this.d = 0;
-            YYApplyFinishFragment.a(getContext(), 0, j().g() ? 2 : 1);
+            YYApplyFinishFragment.a(getContext(), 0, ((GroupIdentifyViewModel) j()).g() ? 2 : 1);
             FragmentActivity activity = getActivity();
             if (activity == null) {
                 return;
@@ -358,11 +356,11 @@ public final class GroupIdentifyFragment extends MVVMBaseFragment<GroupIdentifyV
     }
 
     @Override // android.view.View.OnClickListener
-    public void onClick(View v) {
-        Tracker.onClick(v);
-        Intrinsics.e(v, "v");
-        switch (v.getId()) {
-            case 2131364105:
+    public void onClick(View view) {
+        Tracker.onClick(view);
+        Intrinsics.e(view, "v");
+        switch (view.getId()) {
+            case R.id.go_auth /* 2131364105 */:
                 FragmentYyApplyLayoutBinding p = p();
                 if (p == null) {
                     return;
@@ -375,27 +373,27 @@ public final class GroupIdentifyFragment extends MVVMBaseFragment<GroupIdentifyV
                     ToastUtils.a("请先阅读相关条款及协议", 0);
                     return;
                 }
-                String obj = StringsKt.b((CharSequence) p.i.getText().toString()).toString();
+                String obj = StringsKt.b(p.i.getText().toString()).toString();
                 if (TextUtils.isEmpty(obj)) {
                     ToastUtils.a("真实姓名不符合标准", 0);
                     return;
                 }
-                String obj2 = StringsKt.b((CharSequence) p.h.getText().toString()).toString();
+                String obj2 = StringsKt.b(p.h.getText().toString()).toString();
                 if (TextUtils.isEmpty(obj2) || obj2.length() < 18) {
                     ToastUtils.a("证件号码不符合标准", 0);
                     return;
                 } else {
-                    a().a(obj, obj2);
+                    ((GroupIdentifyViewModel) a()).a(obj, obj2);
                     return;
                 }
-            case 2131365115:
+            case R.id.iv_back_img /* 2131365115 */:
                 FragmentActivity activity = getActivity();
                 if (activity == null) {
                     return;
                 }
                 activity.finish();
                 return;
-            case 2131365945:
+            case R.id.iv_terms /* 2131365945 */:
                 FragmentYyApplyLayoutBinding p2 = p();
                 if (p2 == null) {
                     return;
@@ -409,14 +407,14 @@ public final class GroupIdentifyFragment extends MVVMBaseFragment<GroupIdentifyV
                 p2.b.setTag(Boolean.valueOf(z));
                 r();
                 return;
-            case 2131370980:
+            case R.id.tv_bind_phone /* 2131370980 */:
                 String b2 = LoginRegisterTools.b();
                 boolean z2 = true;
                 if (b2 != null) {
                     z2 = b2.length() == 0;
                 }
                 if (z2) {
-                    TerminalActivity.d(getContext(), LinkMobileFragment.class, null);
+                    TerminalActivity.d(getContext(), LinkMobileFragment.class, (Bundle) null);
                     return;
                 }
                 return;

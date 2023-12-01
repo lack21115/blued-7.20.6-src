@@ -15,50 +15,46 @@ import kotlinx.coroutines.flow.FlowCollector;
 @DebugMetadata(b = "ChannelFlow.kt", c = {152}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.internal.ChannelFlowOperator$collectWithContextUndispatched$2")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/ChannelFlowOperator$collectWithContextUndispatched$2.class */
 final class ChannelFlowOperator$collectWithContextUndispatched$2<T> extends SuspendLambda implements Function2<FlowCollector<? super T>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43458a;
+    int a;
     /* synthetic */ Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ ChannelFlowOperator<S, T> f43459c;
+    final /* synthetic */ ChannelFlowOperator<S, T> c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ChannelFlowOperator$collectWithContextUndispatched$2(ChannelFlowOperator<S, T> channelFlowOperator, Continuation<? super ChannelFlowOperator$collectWithContextUndispatched$2> continuation) {
         super(2, continuation);
-        this.f43459c = channelFlowOperator;
+        this.c = channelFlowOperator;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
-        return ((ChannelFlowOperator$collectWithContextUndispatched$2) create(flowCollector, continuation)).invokeSuspend(Unit.f42314a);
+        return ((ChannelFlowOperator$collectWithContextUndispatched$2) create(flowCollector, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        ChannelFlowOperator$collectWithContextUndispatched$2 channelFlowOperator$collectWithContextUndispatched$2 = new ChannelFlowOperator$collectWithContextUndispatched$2(this.f43459c, continuation);
+        ChannelFlowOperator$collectWithContextUndispatched$2 channelFlowOperator$collectWithContextUndispatched$2 = new ChannelFlowOperator$collectWithContextUndispatched$2(this.c, continuation);
         channelFlowOperator$collectWithContextUndispatched$2.b = obj;
         return channelFlowOperator$collectWithContextUndispatched$2;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f43458a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
             FlowCollector<? super T> flowCollector = (FlowCollector) this.b;
-            this.f43458a = 1;
-            if (this.f43459c.b(flowCollector, this) == a2) {
-                return a2;
+            this.a = 1;
+            if (this.c.b(flowCollector, this) == a) {
+                return a;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

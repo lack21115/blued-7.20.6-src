@@ -22,7 +22,7 @@ public class ChangeTransform extends Transition {
     private static final String[] b = {"android:changeTransform:matrix", "android:changeTransform:transforms", "android:changeTransform:parentMatrix"};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Property<PathAnimatorMatrix, float[]> f3427c = new Property<PathAnimatorMatrix, float[]>(float[].class, "nonTranslations") { // from class: androidx.transition.ChangeTransform.1
+    private static final Property<PathAnimatorMatrix, float[]> f3379c = new Property<PathAnimatorMatrix, float[]>(float[].class, "nonTranslations") { // from class: androidx.transition.ChangeTransform.1
         @Override // android.util.Property
         public float[] get(PathAnimatorMatrix pathAnimatorMatrix) {
             return null;
@@ -47,7 +47,7 @@ public class ChangeTransform extends Transition {
     private static final boolean e;
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f3428a;
+    boolean f3380a;
     private boolean f;
     private Matrix g;
 
@@ -56,20 +56,20 @@ public class ChangeTransform extends Transition {
     public static class GhostListener extends TransitionListenerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        private View f3431a;
+        private View f3383a;
         private GhostView b;
 
         GhostListener(View view, GhostView ghostView) {
-            this.f3431a = view;
+            this.f3383a = view;
             this.b = ghostView;
         }
 
         @Override // androidx.transition.TransitionListenerAdapter, androidx.transition.Transition.TransitionListener
         public void onTransitionEnd(Transition transition) {
             transition.removeListener(this);
-            GhostViewUtils.a(this.f3431a);
-            this.f3431a.setTag(R.id.transition_transform, null);
-            this.f3431a.setTag(R.id.parent_matrix, null);
+            GhostViewUtils.a(this.f3383a);
+            this.f3383a.setTag(R.id.transition_transform, null);
+            this.f3383a.setTag(R.id.parent_matrix, null);
         }
 
         @Override // androidx.transition.TransitionListenerAdapter, androidx.transition.Transition.TransitionListener
@@ -88,33 +88,33 @@ public class ChangeTransform extends Transition {
     public static class PathAnimatorMatrix {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Matrix f3432a = new Matrix();
+        private final Matrix f3384a = new Matrix();
         private final View b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final float[] f3433c;
+        private final float[] f3385c;
         private float d;
         private float e;
 
         PathAnimatorMatrix(View view, float[] fArr) {
             this.b = view;
             float[] fArr2 = (float[]) fArr.clone();
-            this.f3433c = fArr2;
+            this.f3385c = fArr2;
             this.d = fArr2[2];
             this.e = fArr2[5];
             b();
         }
 
         private void b() {
-            float[] fArr = this.f3433c;
+            float[] fArr = this.f3385c;
             fArr[2] = this.d;
             fArr[5] = this.e;
-            this.f3432a.setValues(fArr);
-            ViewUtils.c(this.b, this.f3432a);
+            this.f3384a.setValues(fArr);
+            ViewUtils.c(this.b, this.f3384a);
         }
 
         Matrix a() {
-            return this.f3432a;
+            return this.f3384a;
         }
 
         void a(PointF pointF) {
@@ -124,7 +124,7 @@ public class ChangeTransform extends Transition {
         }
 
         void a(float[] fArr) {
-            System.arraycopy((Object) fArr, 0, (Object) this.f3433c, 0, fArr.length);
+            System.arraycopy(fArr, 0, this.f3385c, 0, fArr.length);
             b();
         }
     }
@@ -134,11 +134,11 @@ public class ChangeTransform extends Transition {
     public static class Transforms {
 
         /* renamed from: a  reason: collision with root package name */
-        final float f3434a;
+        final float f3386a;
         final float b;
 
         /* renamed from: c  reason: collision with root package name */
-        final float f3435c;
+        final float f3387c;
         final float d;
         final float e;
         final float f;
@@ -146,9 +146,9 @@ public class ChangeTransform extends Transition {
         final float h;
 
         Transforms(View view) {
-            this.f3434a = view.getTranslationX();
+            this.f3386a = view.getTranslationX();
             this.b = view.getTranslationY();
-            this.f3435c = ViewCompat.getTranslationZ(view);
+            this.f3387c = ViewCompat.getTranslationZ(view);
             this.d = view.getScaleX();
             this.e = view.getScaleY();
             this.f = view.getRotationX();
@@ -160,11 +160,11 @@ public class ChangeTransform extends Transition {
             if (obj instanceof Transforms) {
                 Transforms transforms = (Transforms) obj;
                 boolean z = false;
-                if (transforms.f3434a == this.f3434a) {
+                if (transforms.f3386a == this.f3386a) {
                     z = false;
                     if (transforms.b == this.b) {
                         z = false;
-                        if (transforms.f3435c == this.f3435c) {
+                        if (transforms.f3387c == this.f3387c) {
                             z = false;
                             if (transforms.d == this.d) {
                                 z = false;
@@ -190,12 +190,12 @@ public class ChangeTransform extends Transition {
         }
 
         public int hashCode() {
-            float f = this.f3434a;
+            float f = this.f3386a;
             int i = 0;
             int floatToIntBits = f != 0.0f ? Float.floatToIntBits(f) : 0;
             float f2 = this.b;
             int floatToIntBits2 = f2 != 0.0f ? Float.floatToIntBits(f2) : 0;
-            float f3 = this.f3435c;
+            float f3 = this.f3387c;
             int floatToIntBits3 = f3 != 0.0f ? Float.floatToIntBits(f3) : 0;
             float f4 = this.d;
             int floatToIntBits4 = f4 != 0.0f ? Float.floatToIntBits(f4) : 0;
@@ -213,7 +213,7 @@ public class ChangeTransform extends Transition {
         }
 
         public void restore(View view) {
-            ChangeTransform.a(view, this.f3434a, this.b, this.f3435c, this.d, this.e, this.f, this.g, this.h);
+            ChangeTransform.a(view, this.f3386a, this.b, this.f3387c, this.d, this.e, this.f, this.g, this.h);
         }
     }
 
@@ -222,19 +222,19 @@ public class ChangeTransform extends Transition {
     }
 
     public ChangeTransform() {
-        this.f3428a = true;
+        this.f3380a = true;
         this.f = true;
         this.g = new Matrix();
     }
 
     public ChangeTransform(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f3428a = true;
+        this.f3380a = true;
         this.f = true;
         this.g = new Matrix();
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, Styleable.g);
         XmlPullParser xmlPullParser = (XmlPullParser) attributeSet;
-        this.f3428a = TypedArrayUtils.getNamedBoolean(obtainStyledAttributes, xmlPullParser, "reparentWithOverlay", 1, true);
+        this.f3380a = TypedArrayUtils.getNamedBoolean(obtainStyledAttributes, xmlPullParser, "reparentWithOverlay", 1, true);
         this.f = TypedArrayUtils.getNamedBoolean(obtainStyledAttributes, xmlPullParser, "reparent", 0, true);
         obtainStyledAttributes.recycle();
     }
@@ -245,11 +245,11 @@ public class ChangeTransform extends Transition {
         Matrix matrix2 = (Matrix) transitionValues2.values.get("android:changeTransform:matrix");
         Matrix matrix3 = matrix;
         if (matrix == null) {
-            matrix3 = MatrixUtils.f3456a;
+            matrix3 = MatrixUtils.f3408a;
         }
         Matrix matrix4 = matrix2;
         if (matrix2 == null) {
-            matrix4 = MatrixUtils.f3456a;
+            matrix4 = MatrixUtils.f3408a;
         }
         if (matrix3.equals(matrix4)) {
             return null;
@@ -262,7 +262,7 @@ public class ChangeTransform extends Transition {
         float[] fArr2 = new float[9];
         matrix4.getValues(fArr2);
         final PathAnimatorMatrix pathAnimatorMatrix = new PathAnimatorMatrix(view, fArr);
-        ObjectAnimator ofPropertyValuesHolder = ObjectAnimator.ofPropertyValuesHolder(pathAnimatorMatrix, PropertyValuesHolder.ofObject(f3427c, new FloatArrayEvaluator(new float[9]), (Object[]) new float[]{fArr, fArr2}), PropertyValuesHolderUtils.a(d, getPathMotion().getPath(fArr[2], fArr[5], fArr2[2], fArr2[5])));
+        ObjectAnimator ofPropertyValuesHolder = ObjectAnimator.ofPropertyValuesHolder(pathAnimatorMatrix, PropertyValuesHolder.ofObject(f3379c, new FloatArrayEvaluator(new float[9]), (Object[]) new float[]{fArr, fArr2}), PropertyValuesHolderUtils.a(d, getPathMotion().getPath(fArr[2], fArr[5], fArr2[2], fArr2[5])));
         final Matrix matrix5 = matrix4;
         AnimatorListenerAdapter animatorListenerAdapter = new AnimatorListenerAdapter() { // from class: androidx.transition.ChangeTransform.3
             private boolean g;
@@ -282,7 +282,7 @@ public class ChangeTransform extends Transition {
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (!this.g) {
-                    if (z && ChangeTransform.this.f3428a) {
+                    if (z && ChangeTransform.this.f3380a) {
                         a(matrix5);
                     } else {
                         view.setTag(R.id.transition_transform, null);
@@ -438,7 +438,7 @@ public class ChangeTransform extends Transition {
             a(transitionValues, transitionValues2);
         }
         ObjectAnimator a2 = a(transitionValues, transitionValues2, z);
-        if (z && a2 != null && this.f3428a) {
+        if (z && a2 != null && this.f3380a) {
             a(viewGroup, transitionValues, transitionValues2);
             return a2;
         }
@@ -453,7 +453,7 @@ public class ChangeTransform extends Transition {
     }
 
     public boolean getReparentWithOverlay() {
-        return this.f3428a;
+        return this.f3380a;
     }
 
     @Override // androidx.transition.Transition
@@ -466,6 +466,6 @@ public class ChangeTransform extends Transition {
     }
 
     public void setReparentWithOverlay(boolean z) {
-        this.f3428a = z;
+        this.f3380a = z;
     }
 }

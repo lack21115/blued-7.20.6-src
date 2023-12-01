@@ -1,11 +1,10 @@
 package com.soft.blued.ui.setting.model;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.gson.annotations.SerializedName;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/setting/model/BindingModel.class */
 public class BindingModel {
-    @SerializedName(BridgeUtil.UNDERLINE_STR)
+    @SerializedName("_")
     public String encrypted;
     public String safe_email;
 

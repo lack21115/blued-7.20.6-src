@@ -39,23 +39,20 @@ final class FlowLiveDataConversions$asFlow$1<T> extends SuspendLambda implements
             this.$observer = observer;
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
             return new AnonymousClass1(this.$this_asFlow, this.$observer, continuation);
         }
 
-        @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return create(coroutineScope, continuation).invokeSuspend(Unit.a);
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             IntrinsicsKt.a();
             if (this.label == 0) {
                 ResultKt.a(obj);
                 this.$this_asFlow.observeForever(this.$observer);
-                return Unit.f42314a;
+                return Unit.a;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
@@ -78,23 +75,20 @@ final class FlowLiveDataConversions$asFlow$1<T> extends SuspendLambda implements
             this.$observer = observer;
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
             return new AnonymousClass2(this.$this_asFlow, this.$observer, continuation);
         }
 
-        @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass2) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return create(coroutineScope, continuation).invokeSuspend(Unit.a);
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             IntrinsicsKt.a();
             if (this.label == 0) {
                 ResultKt.a(obj);
                 this.$this_asFlow.removeObserver(this.$observer);
-                return Unit.f42314a;
+                return Unit.a;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
@@ -107,20 +101,18 @@ final class FlowLiveDataConversions$asFlow$1<T> extends SuspendLambda implements
         this.$this_asFlow = liveData;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        FlowLiveDataConversions$asFlow$1 flowLiveDataConversions$asFlow$1 = new FlowLiveDataConversions$asFlow$1(this.$this_asFlow, continuation);
+        Continuation<Unit> flowLiveDataConversions$asFlow$1 = new FlowLiveDataConversions$asFlow$1<>(this.$this_asFlow, continuation);
         flowLiveDataConversions$asFlow$1.L$0 = obj;
         return flowLiveDataConversions$asFlow$1;
     }
 
-    @Override // kotlin.jvm.functions.Function2
-    public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Unit> continuation) {
-        return invoke((FlowCollector) ((FlowCollector) obj), continuation);
+    public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return invoke((FlowCollector) ((FlowCollector) obj), (Continuation) obj2);
     }
 
     public final Object invoke(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
-        return ((FlowLiveDataConversions$asFlow$1) create(flowCollector, continuation)).invokeSuspend(Unit.f42314a);
+        return create(flowCollector, continuation).invokeSuspend(Unit.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:31:0x0153  */
@@ -128,7 +120,6 @@ final class FlowLiveDataConversions$asFlow$1<T> extends SuspendLambda implements
     /* JADX WARN: Removed duplicated region for block: B:36:0x0174 A[Catch: all -> 0x01e8, TRY_LEAVE, TryCatch #1 {all -> 0x01e8, blocks: (B:34:0x016a, B:36:0x0174), top: B:54:0x016a }] */
     /* JADX WARN: Removed duplicated region for block: B:42:0x01bd  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:41:0x01b1 -> B:56:0x0121). Please submit an issue!!! */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

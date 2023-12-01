@@ -18,8 +18,7 @@ import com.soft.blued.R;
 public class GlassDetailFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    ViewDragHelperLayout.OnLayoutStateListener f33060a = new ViewDragHelperLayout.OnLayoutStateListener() { // from class: com.soft.blued.ui.photo.fragment.GlassDetailFragment.1
-        @Override // com.blued.android.module.live_china.view.ViewDragHelperLayout.OnLayoutStateListener
+    ViewDragHelperLayout.OnLayoutStateListener f19369a = new ViewDragHelperLayout.OnLayoutStateListener() { // from class: com.soft.blued.ui.photo.fragment.GlassDetailFragment.1
         public void a() {
             if (GlassDetailFragment.this.getActivity() != null) {
                 GlassDetailFragment.this.getActivity().finish();
@@ -28,28 +27,24 @@ public class GlassDetailFragment extends BaseFragment {
             EventCallbackObserver.a().b();
         }
 
-        @Override // com.blued.android.module.live_china.view.ViewDragHelperLayout.OnLayoutStateListener
         public void a(int i) {
             EventCallbackObserver.a().a(i);
         }
 
-        @Override // com.blued.android.module.live_china.view.ViewDragHelperLayout.OnLayoutStateListener
         public void b() {
             EventCallbackObserver.a().c();
         }
 
-        @Override // com.blued.android.module.live_china.view.ViewDragHelperLayout.OnLayoutStateListener
         public void c() {
         }
 
-        @Override // com.blued.android.module.live_china.view.ViewDragHelperLayout.OnLayoutStateListener
         public void d() {
         }
     };
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ViewDragHelperLayout f33061c;
+    private ViewDragHelperLayout f19370c;
     private ProgressBar d;
     private TextView e;
     private ImageView f;
@@ -82,17 +77,17 @@ public class GlassDetailFragment extends BaseFragment {
     }
 
     private void b() {
-        this.f33061c = (ViewDragHelperLayout) this.b.findViewById(2131373158);
-        this.d = (ProgressBar) this.b.findViewById(2131368385);
-        this.f33061c.setOnLayoutStateListener(this.f33060a);
-        this.f = (ImageView) this.b.findViewById(2131362351);
+        this.f19370c = this.b.findViewById(2131373158);
+        this.d = (ProgressBar) this.b.findViewById(R.id.loading_view);
+        this.f19370c.setOnLayoutStateListener(this.f19369a);
+        this.f = (ImageView) this.b.findViewById(R.id.background_header);
         this.e = (TextView) this.b.findViewById(R.id.lock_text);
         c();
     }
 
     private void c() {
         TextView textView = this.e;
-        textView.setText(getString(2131888865) + "(" + this.j + getString(R.string.album_unit) + ")");
+        textView.setText(getString(R.string.hidden_the_album) + "(" + this.j + getString(R.string.album_unit) + ")");
         ImageLoader.a(getFragmentActive(), this.i).d().a(this.f);
         this.f.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.photo.fragment.GlassDetailFragment.2
             @Override // android.view.View.OnClickListener
@@ -102,18 +97,15 @@ public class GlassDetailFragment extends BaseFragment {
         });
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         EventCallbackObserver.a().d();
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.b;
         if (view == null) {
@@ -126,23 +118,19 @@ public class GlassDetailFragment extends BaseFragment {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
-        this.f33061c.setScrollDisable(true);
+        this.f19370c.setScrollDisable(true);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
     }

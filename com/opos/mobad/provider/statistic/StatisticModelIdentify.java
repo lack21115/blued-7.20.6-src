@@ -25,11 +25,11 @@ public class StatisticModelIdentify implements IBridgeTargetIdentify {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f27131a;
+    public final boolean f13443a;
     public final String b;
 
     public StatisticModelIdentify(boolean z, String str) {
-        this.f27131a = z;
+        this.f13443a = z;
         this.b = str;
     }
 

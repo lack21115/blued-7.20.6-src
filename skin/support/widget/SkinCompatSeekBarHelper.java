@@ -8,15 +8,13 @@ import skin.support.content.res.SkinCompatVectorResources;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/widget/SkinCompatSeekBarHelper.class */
 public class SkinCompatSeekBarHelper extends SkinCompatProgressBarHelper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final SeekBar f44286a;
+    private final SeekBar a;
     private int b;
 
     public SkinCompatSeekBarHelper(SeekBar seekBar) {
         super(seekBar);
         this.b = 0;
-        this.f44286a = seekBar;
+        this.a = seekBar;
     }
 
     @Override // skin.support.widget.SkinCompatProgressBarHelper
@@ -25,7 +23,7 @@ public class SkinCompatSeekBarHelper extends SkinCompatProgressBarHelper {
         int b = b(this.b);
         this.b = b;
         if (b != 0) {
-            SeekBar seekBar = this.f44286a;
+            SeekBar seekBar = this.a;
             seekBar.setThumb(SkinCompatVectorResources.a(seekBar.getContext(), this.b));
         }
     }
@@ -34,7 +32,7 @@ public class SkinCompatSeekBarHelper extends SkinCompatProgressBarHelper {
     @Override // skin.support.widget.SkinCompatProgressBarHelper
     public void a(AttributeSet attributeSet, int i) {
         super.a(attributeSet, i);
-        TypedArray obtainStyledAttributes = this.f44286a.getContext().obtainStyledAttributes(attributeSet, R.styleable.AppCompatSeekBar, i, 0);
+        TypedArray obtainStyledAttributes = this.a.getContext().obtainStyledAttributes(attributeSet, R.styleable.AppCompatSeekBar, i, 0);
         this.b = obtainStyledAttributes.getResourceId(R.styleable.AppCompatSeekBar_android_thumb, 0);
         obtainStyledAttributes.recycle();
         a();

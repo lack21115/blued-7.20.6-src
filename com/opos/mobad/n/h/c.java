@@ -16,21 +16,21 @@ import com.opos.mobad.n.a;
 public class c extends TextView {
 
     /* renamed from: a  reason: collision with root package name */
-    com.opos.mobad.n.c.g f26955a;
+    com.opos.mobad.n.c.g f13267a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private a.InterfaceC0708a f26956c;
+    private a.InterfaceC0538a f13268c;
 
     public c(Context context, String str, int i, int i2, int i3) {
         super(context);
         this.b = "立即安装";
-        this.f26955a = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.h.c.1
+        this.f13267a = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.h.c.1
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
                 com.opos.cmn.an.f.a.b("RewardClickButton", "onBtnClick");
-                if (c.this.f26956c != null) {
-                    c.this.f26956c.f(view, iArr);
+                if (c.this.f13268c != null) {
+                    c.this.f13268c.f(view, iArr);
                 }
             }
         };
@@ -57,12 +57,12 @@ public class c extends TextView {
         TextPaint paint = getPaint();
         paint.setStrokeWidth(1.0f);
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        setOnClickListener(this.f26955a);
-        setOnTouchListener(this.f26955a);
+        setOnClickListener(this.f13267a);
+        setOnTouchListener(this.f13267a);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("RewardClickButton", "setListener " + interfaceC0708a);
-        this.f26956c = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("RewardClickButton", "setListener " + interfaceC0538a);
+        this.f13268c = interfaceC0538a;
     }
 }

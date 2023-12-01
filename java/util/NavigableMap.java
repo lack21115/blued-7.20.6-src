@@ -20,7 +20,7 @@ public interface NavigableMap<K, V> extends SortedMap<K, V> {
 
     NavigableMap<K, V> headMap(K k, boolean z);
 
-    @Override // 
+    @Override // java.util.SortedMap
     SortedMap<K, V> headMap(K k);
 
     Map.Entry<K, V> higherEntry(K k);
@@ -41,11 +41,11 @@ public interface NavigableMap<K, V> extends SortedMap<K, V> {
 
     NavigableMap<K, V> subMap(K k, boolean z, K k2, boolean z2);
 
-    @Override // 
+    @Override // java.util.SortedMap
     SortedMap<K, V> subMap(K k, K k2);
 
     NavigableMap<K, V> tailMap(K k, boolean z);
 
-    @Override // 
+    @Override // java.util.SortedMap
     SortedMap<K, V> tailMap(K k);
 }

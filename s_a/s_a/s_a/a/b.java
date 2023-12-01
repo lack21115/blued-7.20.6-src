@@ -1,19 +1,16 @@
 package s_a.s_a.s_a.a;
 
 import android.content.Context;
+import com.anythink.core.common.b.g;
 import java.util.HashMap;
 import s_a.s_a.s_a.a.c;
 import s_a.s_a.s_a.a.g;
 
 /* loaded from: source-3503164-dex2jar.jar:s_a/s_a/s_a/a/b.class */
 public class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static b f44175a;
+    public static b a;
     public HashMap<String, e> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public boolean f44176c = false;
+    public boolean c = false;
 
     public b() {
         this.b = null;
@@ -21,18 +18,18 @@ public class b {
     }
 
     public static b a() {
-        if (f44175a == null) {
+        if (a == null) {
             synchronized (b.class) {
                 try {
-                    if (f44175a == null) {
-                        f44175a = new b();
+                    if (a == null) {
+                        a = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f44175a;
+        return a;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0023, code lost:
@@ -55,12 +52,12 @@ public class b {
     public void b(Context context, String str) {
         if (!this.b.containsKey(str)) {
             if (str.equals("OUID") || str.equals("OUID_STATUS") || str == "OUID" || str == "OUID_STATUS") {
-                String a2 = this.f44176c ? c.b.f44180a.a(context, str) : g.b.f44187a.a(context, str);
+                String a2 = this.c ? c.b.a.a(context, str) : g.b.a.a(context, str);
                 long currentTimeMillis = System.currentTimeMillis();
                 if (a2.equals("") || a2 == "") {
                     return;
                 }
-                this.b.put(str, new e(a2, currentTimeMillis + 7200000));
+                this.b.put(str, new e(a2, currentTimeMillis + g.e.a));
                 return;
             }
             return;
@@ -69,13 +66,13 @@ public class b {
         if (eVar.a(str)) {
             return;
         }
-        String a3 = this.f44176c ? c.b.f44180a.a(context, str) : g.b.f44187a.a(context, str);
+        String a3 = this.c ? c.b.a.a(context, str) : g.b.a.a(context, str);
         long currentTimeMillis2 = System.currentTimeMillis();
         long b = a.b(str);
         if (a3.equals("") || a3 == "") {
             return;
         }
-        eVar.f44182a = a3;
+        eVar.a = a3;
         eVar.b = currentTimeMillis2 + b;
         a.a(context, eVar, str);
     }

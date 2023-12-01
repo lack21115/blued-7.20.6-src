@@ -12,6 +12,6 @@ public class DrawableImageViewTarget extends ImageViewTarget<Drawable> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.bumptech.glide.request.target.ImageViewTarget
     public void a(Drawable drawable) {
-        ((ImageView) this.f21072a).setImageDrawable(drawable);
+        ((ImageView) this.f7466a).setImageDrawable(drawable);
     }
 }

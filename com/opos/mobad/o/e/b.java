@@ -11,14 +11,14 @@ import com.opos.mobad.n.g.aj;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static b f27106a;
+    private static b f13418a;
     private com.opos.mobad.n.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.c.a f27107c = new com.opos.mobad.c.a() { // from class: com.opos.mobad.o.e.b.1
+    private com.opos.mobad.c.a f13419c = new com.opos.mobad.c.a() { // from class: com.opos.mobad.o.e.b.1
         @Override // com.opos.mobad.c.a
-        public void a(String str, String str2, int i, int i2, a.InterfaceC0676a interfaceC0676a) {
-            d.a().a(str, str2, i, i2, interfaceC0676a);
+        public void a(String str, String str2, int i, int i2, a.InterfaceC0506a interfaceC0506a) {
+            d.a().a(str, str2, i, i2, interfaceC0506a);
         }
     };
 
@@ -32,17 +32,17 @@ public class b {
 
     public static final b a() {
         b bVar;
-        b bVar2 = f27106a;
+        b bVar2 = f13418a;
         if (bVar2 != null) {
             return bVar2;
         }
         synchronized (b.class) {
             try {
-                b bVar3 = f27106a;
+                b bVar3 = f13418a;
                 bVar = bVar3;
                 if (bVar3 == null) {
                     bVar = new b();
-                    f27106a = bVar;
+                    f13418a = bVar;
                 }
             } catch (Throwable th) {
                 throw th;
@@ -118,8 +118,8 @@ public class b {
         return i2;
     }
 
-    public final com.opos.mobad.n.a a(Context context, int i, int i2, a.InterfaceC0708a interfaceC0708a) {
-        return a(context, i, i2, interfaceC0708a, 0);
+    public final com.opos.mobad.n.a a(Context context, int i, int i2, a.InterfaceC0538a interfaceC0538a) {
+        return a(context, i, i2, interfaceC0538a, 0);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:118:0x0723  */
@@ -134,7 +134,7 @@ public class b {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public final com.opos.mobad.n.a a(android.content.Context r7, int r8, int r9, com.opos.mobad.n.a.InterfaceC0708a r10, int r11) {
+    public final com.opos.mobad.n.a a(android.content.Context r7, int r8, int r9, com.opos.mobad.n.a.InterfaceC0538a r10, int r11) {
         /*
             Method dump skipped, instructions count: 1847
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -146,7 +146,7 @@ public class b {
         this.b = bVar;
     }
 
-    public final com.opos.mobad.n.a b(Context context, int i, int i2, a.InterfaceC0708a interfaceC0708a) {
-        return a(context, i, i2, interfaceC0708a, 1);
+    public final com.opos.mobad.n.a b(Context context, int i, int i2, a.InterfaceC0538a interfaceC0538a) {
+        return a(context, i, i2, interfaceC0538a, 1);
     }
 }

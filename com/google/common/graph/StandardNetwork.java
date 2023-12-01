@@ -8,8 +8,9 @@ import java.util.Set;
 import java.util.TreeMap;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/graph/StandardNetwork.class */
-class StandardNetwork<N, E> extends AbstractNetwork<N, E> {
+public class StandardNetwork<N, E> extends AbstractNetwork<N, E> {
     private final boolean allowsParallelEdges;
     private final boolean allowsSelfLoops;
     private final ElementOrder<E> edgeOrder;

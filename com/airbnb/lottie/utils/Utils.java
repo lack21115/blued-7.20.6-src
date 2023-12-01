@@ -11,18 +11,13 @@ import android.provider.Settings;
 import com.airbnb.lottie.L;
 import com.airbnb.lottie.animation.content.TrimPathContent;
 import com.airbnb.lottie.animation.keyframe.FloatKeyframeAnimation;
-import com.blued.das.live.LiveProtos;
 import java.io.Closeable;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/utils/Utils.class */
 public final class Utils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final PathMeasure f4416a = new PathMeasure();
+    private static final PathMeasure a = new PathMeasure();
     private static final Path b = new Path();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Path f4417c = new Path();
+    private static final Path c = new Path();
     private static final float[] d = new float[4];
     private static final float e = (float) Math.sqrt(2.0d);
     private static float f = -1.0f;
@@ -54,7 +49,7 @@ public final class Utils {
     }
 
     public static int a(float f2, float f3, float f4, float f5) {
-        int i = f2 != 0.0f ? (int) (((float) LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * f2) : 17;
+        int i = f2 != 0.0f ? (int) (527 * f2) : 17;
         int i2 = i;
         if (f3 != 0.0f) {
             i2 = (int) (i * 31 * f3);
@@ -83,8 +78,8 @@ public final class Utils {
 
     public static void a(Path path, float f2, float f3, float f4) {
         L.a("applyTrimPathIfNeeded");
-        f4416a.setPath(path, false);
-        float length = f4416a.getLength();
+        a.setPath(path, false);
+        float length = a.getLength();
         if (f2 == 1.0f && f3 == 0.0f) {
             L.b("applyTrimPathIfNeeded");
         } else if (length < 1.0f || Math.abs((f3 - f2) - 1.0f) < 0.01d) {
@@ -126,15 +121,15 @@ public final class Utils {
                 f14 = f12 - length;
             }
             b.reset();
-            f4416a.getSegment(f14, f13, b, true);
+            a.getSegment(f14, f13, b, true);
             if (f13 > length) {
-                f4417c.reset();
-                f4416a.getSegment(0.0f, f13 % length, f4417c, true);
-                b.addPath(f4417c);
+                c.reset();
+                a.getSegment(0.0f, f13 % length, c, true);
+                b.addPath(c);
             } else if (f14 < 0.0f) {
-                f4417c.reset();
-                f4416a.getSegment(f14 + length, length, f4417c, true);
-                b.addPath(f4417c);
+                c.reset();
+                a.getSegment(f14 + length, length, c, true);
+                b.addPath(c);
             }
             path.set(b);
             L.b("applyTrimPathIfNeeded");

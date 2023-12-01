@@ -89,7 +89,6 @@ public final class HotTopicItemModel implements MultiItemEntity {
         return this.avatar;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return 0;
     }

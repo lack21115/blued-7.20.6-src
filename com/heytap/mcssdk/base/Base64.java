@@ -250,7 +250,7 @@ public class Base64 extends BaseNCodec {
             }
             int i2 = bitLength / 8;
             byte[] bArr = new byte[i2];
-            System.arraycopy((Object) byteArray, i, (Object) bArr, i2 - length, length);
+            System.arraycopy(byteArray, i, bArr, i2 - length, length);
             return bArr;
         }
         return byteArray;
@@ -362,7 +362,7 @@ public class Base64 extends BaseNCodec {
                     bArr5[i7] = this.encodeTable[this.bitWorkArea & 63];
                     this.currentLinePos += 4;
                     if (this.lineLength > 0 && this.lineLength <= this.currentLinePos) {
-                        System.arraycopy((Object) this.lineSeparator, 0, (Object) this.buffer, this.pos, this.lineSeparator.length);
+                        System.arraycopy(this.lineSeparator, 0, this.buffer, this.pos, this.lineSeparator.length);
                         this.pos += this.lineSeparator.length;
                         this.currentLinePos = 0;
                     }
@@ -424,7 +424,7 @@ public class Base64 extends BaseNCodec {
         if (this.lineLength <= 0 || this.currentLinePos <= 0) {
             return;
         }
-        System.arraycopy((Object) this.lineSeparator, 0, (Object) this.buffer, this.pos, this.lineSeparator.length);
+        System.arraycopy(this.lineSeparator, 0, this.buffer, this.pos, this.lineSeparator.length);
         this.pos += this.lineSeparator.length;
     }
 

@@ -14,10 +14,10 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class b extends BroadcastReceiver implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public static b f38328a;
+    public static b f24637a;
 
     /* renamed from: c  reason: collision with root package name */
-    public ConnectivityManager.NetworkCallback f38329c;
+    public ConnectivityManager.NetworkCallback f24638c;
     public ConnectivityManager g;
     public final Map<c, String> b = new ConcurrentHashMap();
     public boolean d = true;
@@ -25,18 +25,18 @@ public final class b extends BroadcastReceiver implements Runnable {
     public boolean f = false;
 
     public static b a() {
-        if (f38328a == null) {
+        if (f24637a == null) {
             synchronized (b.class) {
                 try {
-                    if (f38328a == null) {
-                        f38328a = new b();
+                    if (f24637a == null) {
+                        f24637a = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f38328a;
+        return f24637a;
     }
 
     public void a(Context context) {
@@ -44,7 +44,7 @@ public final class b extends BroadcastReceiver implements Runnable {
             if (this.b.isEmpty()) {
                 this.f = com.tencent.qimei.a.a.a();
                 if (Build.VERSION.SDK_INT >= 21) {
-                    this.f38329c = new a(this);
+                    this.f24638c = new a(this);
                     this.g = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
                     NetworkRequest.Builder builder = new NetworkRequest.Builder();
                     builder.addTransportType(1);
@@ -53,7 +53,7 @@ public final class b extends BroadcastReceiver implements Runnable {
                     ConnectivityManager connectivityManager = this.g;
                     if (connectivityManager != null) {
                         try {
-                            connectivityManager.registerNetworkCallback(builder.build(), this.f38329c);
+                            connectivityManager.registerNetworkCallback(builder.build(), this.f24638c);
                         } catch (SecurityException e) {
                             com.tencent.qimei.k.a.a(e);
                         }
@@ -97,7 +97,7 @@ public final class b extends BroadcastReceiver implements Runnable {
                 if (Build.VERSION.SDK_INT >= 21) {
                     ConnectivityManager connectivityManager = this.g;
                     if (connectivityManager != null) {
-                        connectivityManager.unregisterNetworkCallback(this.f38329c);
+                        connectivityManager.unregisterNetworkCallback(this.f24638c);
                     }
                 } else if (context != null) {
                     try {

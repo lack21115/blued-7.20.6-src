@@ -33,7 +33,7 @@ public interface t {
     public static final int Z = 3000;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f22957a = 500;
+    public static final int f9349a = 500;
     public static final String aA = "com.huawei.android.hms.ppskit.PpsCoreService";
     public static final int aB = 1;
     public static final String aC = "msg_register";
@@ -77,7 +77,7 @@ public interface t {
     public static final long aq = 1800000;
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final long f22958ar = 1800000;
+    public static final long f9350ar = 1800000;
     public static final long as = 300000;
     public static final String at = "hwpps";
     public static final int au = 100300300;
@@ -141,7 +141,7 @@ public interface t {
     public static final String bz = "com.huawei.hms.ads.consent.inter.Consent";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final long f22959c = 1048576;
+    public static final long f9351c = 1048576;
     public static final String cA = "com.huawei.ads";
     public static final String cB = "FA_BASICE_INFO";
     public static final String cC = "1";
@@ -173,7 +173,7 @@ public interface t {
     public static final String cm = "twist";
 
     /* renamed from: cn  reason: collision with root package name */
-    public static final String f22960cn = "com.huawei.intelligent";
+    public static final String f9352cn = "com.huawei.intelligent";
     public static final int co = -1;
     public static final int cp = 30454100;
     public static final int cq = 600;

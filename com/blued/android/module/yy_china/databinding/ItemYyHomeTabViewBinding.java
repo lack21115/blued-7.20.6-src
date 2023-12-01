@@ -10,20 +10,16 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyHomeTabViewBinding.class */
 public final class ItemYyHomeTabViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16737a;
+    public final ImageView a;
     public final ShapeLinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16738c;
+    public final TextView c;
     private final ConstraintLayout d;
 
     private ItemYyHomeTabViewBinding(ConstraintLayout constraintLayout, ImageView imageView, ShapeLinearLayout shapeLinearLayout, TextView textView) {
         this.d = constraintLayout;
-        this.f16737a = imageView;
+        this.a = imageView;
         this.b = shapeLinearLayout;
-        this.f16738c = textView;
+        this.c = textView;
     }
 
     public static ItemYyHomeTabViewBinding a(View view) {
@@ -46,7 +42,6 @@ public final class ItemYyHomeTabViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.d;

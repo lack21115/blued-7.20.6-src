@@ -147,15 +147,13 @@ public class QCloudHttpRequest<T> extends HttpRequest<T> {
         return this.credentialScope;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.tencent.qcloud.core.http.HttpRequest
-    public QCloudSelfSigner getQCloudSelfSigner() throws QCloudClientException {
+    QCloudSelfSigner getQCloudSelfSigner() throws QCloudClientException {
         return this.selfSigner;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.tencent.qcloud.core.http.HttpRequest
-    public QCloudSigner getQCloudSigner() throws QCloudClientException {
+    QCloudSigner getQCloudSigner() throws QCloudClientException {
         if (this.signerType == null || !shouldCalculateAuth()) {
             return null;
         }

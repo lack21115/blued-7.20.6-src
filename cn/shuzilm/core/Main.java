@@ -14,19 +14,15 @@ public class Main {
     public static final int DU_ASYNCHRONOUS = 1;
     public static final int DU_SYNCHRONOUS = 0;
     public static final Lock mLock = new ReentrantLock();
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final ExecutorService f4166a = Executors.newSingleThreadExecutor();
+    private static final ExecutorService a = Executors.newSingleThreadExecutor();
     private static boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static Context f4167c = null;
+    private static Context c = null;
     private static DUConnection d = new DUConnection();
     private static int e = 0;
 
     public static void exitService() {
         try {
-            f4167c.unbindService(d);
+            c.unbindService(d);
         } catch (Exception e2) {
         }
     }
@@ -69,7 +65,7 @@ public class Main {
             return "";
         }
         try {
-            f4166a.execute(new x(str, str2, dUListener));
+            a.execute(new x(str, str2, dUListener));
             return "";
         } catch (Exception e2) {
             e2.printStackTrace();
@@ -119,7 +115,7 @@ public class Main {
         if (Looper.myLooper() != null) {
             try {
                 b = true;
-                f4167c = context;
+                c = context;
                 mLock.lock();
                 DUHelper.startService(context, d, str, 0);
             } catch (Exception e2) {
@@ -143,7 +139,7 @@ public class Main {
             return;
         }
         try {
-            f4166a.execute(new w(str, str2, str3, dUListener));
+            a.execute(new w(str, str2, str3, dUListener));
         } catch (Exception e2) {
             e2.printStackTrace();
         }
@@ -163,7 +159,7 @@ public class Main {
             e2.printStackTrace();
         }
         if (b) {
-            f4166a.execute(new v(str, str2));
+            a.execute(new v(str, str2));
             return e;
         }
         return DUHelper.setConfig(str, str2);
@@ -175,7 +171,7 @@ public class Main {
             e2.printStackTrace();
         }
         if (b) {
-            f4166a.execute(new u(str, str2));
+            a.execute(new u(str, str2));
             return e;
         }
         return DUHelper.setData(str, str2);

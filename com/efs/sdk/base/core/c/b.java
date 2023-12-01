@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.efs.sdk.base.core.config.b;
 import com.efs.sdk.base.core.controller.ControllerCenter;
 import com.efs.sdk.base.core.f.f;
@@ -24,7 +23,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class b extends Handler {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, Long> f21734a = new HashMap<String, Long>() { // from class: com.efs.sdk.base.core.c.b.1
+    private static final Map<String, Long> f8128a = new HashMap<String, Long>() { // from class: com.efs.sdk.base.core.c.b.1
         {
             put("flow_5min", 300000L);
             put("flow_hour", 3600000L);
@@ -40,7 +39,7 @@ public class b extends Handler {
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, AtomicInteger> f21735c;
+    private Map<String, AtomicInteger> f8129c;
     private volatile SharedPreferences d;
     private volatile SharedPreferences.Editor e;
     private Context f;
@@ -51,12 +50,12 @@ public class b extends Handler {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final b f21736a = new b((byte) 0);
+        private static final b f8130a = new b((byte) 0);
     }
 
     private b() {
-        super(com.efs.sdk.base.core.util.concurrent.a.f21795a.getLooper());
-        this.f21735c = new ConcurrentHashMap(5);
+        super(com.efs.sdk.base.core.util.concurrent.a.f8189a.getLooper());
+        this.f8129c = new ConcurrentHashMap(5);
         this.f = ControllerCenter.getGlobalEnvStruct().mAppContext;
         this.g = ControllerCenter.getGlobalEnvStruct().getAppid();
         b();
@@ -83,20 +82,20 @@ public class b extends Handler {
     }
 
     public static b a() {
-        return a.f21736a;
+        return a.f8130a;
     }
 
     private static List<String> a(String str, String str2, String str3) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(str);
         if (!TextUtils.isEmpty(str2)) {
-            arrayList.add(str + BridgeUtil.UNDERLINE_STR + str2);
+            arrayList.add(str + "_" + str2);
         }
         if (!TextUtils.isEmpty(str3) && !"unknown".equalsIgnoreCase(str3)) {
-            arrayList.add(str + BridgeUtil.UNDERLINE_STR + str3);
+            arrayList.add(str + "_" + str3);
         }
         if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
-            arrayList.add(str + BridgeUtil.UNDERLINE_STR + str2 + BridgeUtil.UNDERLINE_STR + str3);
+            arrayList.add(str + "_" + str2 + "_" + str3);
         }
         return arrayList;
     }
@@ -104,17 +103,17 @@ public class b extends Handler {
     private void a(String str) {
         com.efs.sdk.base.core.f.f fVar;
         com.efs.sdk.base.core.f.f fVar2;
-        if (!this.f21735c.containsKey(str) || this.f21735c.get(str) == null || this.f21735c.get(str).get() <= 10) {
-            fVar = f.a.f21781a;
-            fVar.a(com.efs.sdk.base.core.config.a.c.a().d.f21749a, str);
+        if (!this.f8129c.containsKey(str) || this.f8129c.get(str) == null || this.f8129c.get(str).get() <= 10) {
+            fVar = f.a.f8175a;
+            fVar.a(com.efs.sdk.base.core.config.a.c.a().d.f8143a, str);
             if (str.equals("flow_day")) {
-                fVar2 = f.a.f21781a;
-                fVar2.a(com.efs.sdk.base.core.config.a.c.a().d.f21749a);
+                fVar2 = f.a.f8175a;
+                fVar2.a(com.efs.sdk.base.core.config.a.c.a().d.f8143a);
             }
-            if (!this.f21735c.containsKey(str)) {
-                this.f21735c.put(str, new AtomicInteger());
+            if (!this.f8129c.containsKey(str)) {
+                this.f8129c.put(str, new AtomicInteger());
             }
-            this.f21735c.get(str).incrementAndGet();
+            this.f8129c.get(str).incrementAndGet();
         }
     }
 
@@ -178,9 +177,9 @@ public class b extends Handler {
 
     public final boolean a(String str, long j) {
         com.efs.sdk.base.core.config.b bVar;
-        bVar = b.a.f21758a;
+        bVar = b.a.f8152a;
         String a2 = bVar.a();
-        Iterator<Map.Entry<String, Long>> it = f21734a.entrySet().iterator();
+        Iterator<Map.Entry<String, Long>> it = f8128a.entrySet().iterator();
         boolean z = true;
         while (true) {
             if (!it.hasNext()) {
@@ -211,9 +210,9 @@ public class b extends Handler {
             } else {
                 String valueOf = String.valueOf(message.obj);
                 long j = message.arg1;
-                bVar = b.a.f21758a;
+                bVar = b.a.f8152a;
                 String a2 = bVar.a();
-                for (String str : f21734a.keySet()) {
+                for (String str : f8128a.keySet()) {
                     String concat = "curr_time_".concat(String.valueOf(str));
                     if (!this.d.contains(concat)) {
                         this.e.putLong(concat, System.currentTimeMillis());
@@ -244,7 +243,7 @@ public class b extends Handler {
                     }
                     this.e.putLong(concat2, System.currentTimeMillis());
                     this.e.apply();
-                    this.f21735c.clear();
+                    this.f8129c.clear();
                 }
             }
         }

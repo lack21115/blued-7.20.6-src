@@ -12,7 +12,6 @@ import com.blued.android.module.svgaplayer.SVGAImageView;
 import com.blued.android.module.yy_china.R;
 import com.blued.android.module.yy_china.view.YYBaseUserHeadView;
 import com.blued.android.module.yy_china.view.YYMemberRobView;
-import com.huawei.hms.ads.jsb.constant.Constant;
 import com.ktv.method.lrc.widget.LyricsBorShowingView;
 import com.ktv.method.lrc.widget.LyricsBorSingSingerView;
 import com.ktv.method.lrc.widget.LyricsBorSinglisView;
@@ -35,13 +34,9 @@ public final class ItemYyConnectingRobLayoutBinding implements ViewBinding {
     public final YYMemberRobView N;
     public final YYMemberRobView O;
     private final ConstraintLayout P;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16693a;
+    public final ShapeTextView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ConstraintLayout f16694c;
+    public final ConstraintLayout c;
     public final LinearLayout d;
     public final Group e;
     public final Group f;
@@ -68,9 +63,9 @@ public final class ItemYyConnectingRobLayoutBinding implements ViewBinding {
 
     private ItemYyConnectingRobLayoutBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, ConstraintLayout constraintLayout2, LinearLayout linearLayout, Group group, Group group2, Group group3, Group group4, YYBaseUserHeadView yYBaseUserHeadView, SVGAImageView sVGAImageView, ConstraintLayout constraintLayout3, ImageView imageView, ShapeTextView shapeTextView3, ShapeTextView shapeTextView4, ShapeTextView shapeTextView5, ShapeTextView shapeTextView6, ImageView imageView2, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5, LyricsBorShowingView lyricsBorShowingView, LyricsBorSinglisView lyricsBorSinglisView, LyricsBorSingSingerView lyricsBorSingSingerView, SVGAImageView sVGAImageView2, ImageView imageView3, TextView textView, ShapeTextView shapeTextView7, TextView textView2, ShapeTextView shapeTextView8, ShapeTextView shapeTextView9, TextView textView3, ShapeTextView shapeTextView10, YYMemberRobView yYMemberRobView, YYMemberRobView yYMemberRobView2, YYMemberRobView yYMemberRobView3, YYMemberRobView yYMemberRobView4, YYMemberRobView yYMemberRobView5, YYMemberRobView yYMemberRobView6, YYMemberRobView yYMemberRobView7, YYMemberRobView yYMemberRobView8) {
         this.P = constraintLayout;
-        this.f16693a = shapeTextView;
+        this.a = shapeTextView;
         this.b = shapeTextView2;
-        this.f16694c = constraintLayout2;
+        this.c = constraintLayout2;
         this.d = linearLayout;
         this.e = group;
         this.f = group2;
@@ -117,24 +112,24 @@ public final class ItemYyConnectingRobLayoutBinding implements ViewBinding {
         if (shapeTextView != null) {
             ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.btn_sing_singger_tiaoying);
             if (shapeTextView2 != null) {
-                ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.con);
-                if (constraintLayout != null) {
+                ConstraintLayout findViewById = view.findViewById(R.id.con);
+                if (findViewById != null) {
                     LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.con_showing);
                     if (linearLayout != null) {
-                        Group group = (Group) view.findViewById(R.id.gro_begin);
-                        if (group != null) {
-                            Group group2 = (Group) view.findViewById(R.id.group_sing_user);
-                            if (group2 != null) {
-                                Group group3 = (Group) view.findViewById(R.id.grp_sing_lis);
-                                if (group3 != null) {
-                                    Group group4 = (Group) view.findViewById(R.id.grp_sing_singer);
-                                    if (group4 != null) {
+                        Group findViewById2 = view.findViewById(R.id.gro_begin);
+                        if (findViewById2 != null) {
+                            Group findViewById3 = view.findViewById(R.id.group_sing_user);
+                            if (findViewById3 != null) {
+                                Group findViewById4 = view.findViewById(R.id.grp_sing_lis);
+                                if (findViewById4 != null) {
+                                    Group findViewById5 = view.findViewById(R.id.grp_sing_singer);
+                                    if (findViewById5 != null) {
                                         YYBaseUserHeadView yYBaseUserHeadView = (YYBaseUserHeadView) view.findViewById(R.id.head_user);
                                         if (yYBaseUserHeadView != null) {
                                             SVGAImageView sVGAImageView = (SVGAImageView) view.findViewById(R.id.head_user_ani);
                                             if (sVGAImageView != null) {
-                                                ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.item_rob_root);
-                                                if (constraintLayout2 != null) {
+                                                ConstraintLayout findViewById6 = view.findViewById(R.id.item_rob_root);
+                                                if (findViewById6 != null) {
                                                     ImageView imageView = (ImageView) view.findViewById(R.id.iv_begin);
                                                     if (imageView != null) {
                                                         ShapeTextView shapeTextView3 = (ShapeTextView) view.findViewById(R.id.iv_lrc_start_1);
@@ -155,12 +150,12 @@ public final class ItemYyConnectingRobLayoutBinding implements ViewBinding {
                                                                                     if (linearLayout4 != null) {
                                                                                         LinearLayout linearLayout5 = (LinearLayout) view.findViewById(R.id.ll_sing);
                                                                                         if (linearLayout5 != null) {
-                                                                                            LyricsBorShowingView lyricsBorShowingView = (LyricsBorShowingView) view.findViewById(R.id.lrc_view_showing);
-                                                                                            if (lyricsBorShowingView != null) {
-                                                                                                LyricsBorSinglisView lyricsBorSinglisView = (LyricsBorSinglisView) view.findViewById(R.id.lrc_view_sing_lis);
-                                                                                                if (lyricsBorSinglisView != null) {
-                                                                                                    LyricsBorSingSingerView lyricsBorSingSingerView = (LyricsBorSingSingerView) view.findViewById(R.id.lrc_view_sing_singger);
-                                                                                                    if (lyricsBorSingSingerView != null) {
+                                                                                            LyricsBorShowingView findViewById7 = view.findViewById(R.id.lrc_view_showing);
+                                                                                            if (findViewById7 != null) {
+                                                                                                LyricsBorSinglisView findViewById8 = view.findViewById(R.id.lrc_view_sing_lis);
+                                                                                                if (findViewById8 != null) {
+                                                                                                    LyricsBorSingSingerView findViewById9 = view.findViewById(R.id.lrc_view_sing_singger);
+                                                                                                    if (findViewById9 != null) {
                                                                                                         SVGAImageView sVGAImageView2 = (SVGAImageView) view.findViewById(R.id.svga);
                                                                                                         if (sVGAImageView2 != null) {
                                                                                                             ImageView imageView3 = (ImageView) view.findViewById(R.id.top);
@@ -195,7 +190,7 @@ public final class ItemYyConnectingRobLayoutBinding implements ViewBinding {
                                                                                                                                                                     if (yYMemberRobView7 != null) {
                                                                                                                                                                         YYMemberRobView yYMemberRobView8 = (YYMemberRobView) view.findViewById(R.id.user_8);
                                                                                                                                                                         if (yYMemberRobView8 != null) {
-                                                                                                                                                                            return new ItemYyConnectingRobLayoutBinding((ConstraintLayout) view, shapeTextView, shapeTextView2, constraintLayout, linearLayout, group, group2, group3, group4, yYBaseUserHeadView, sVGAImageView, constraintLayout2, imageView, shapeTextView3, shapeTextView4, shapeTextView5, shapeTextView6, imageView2, linearLayout2, linearLayout3, linearLayout4, linearLayout5, lyricsBorShowingView, lyricsBorSinglisView, lyricsBorSingSingerView, sVGAImageView2, imageView3, textView, shapeTextView7, textView2, shapeTextView8, shapeTextView9, textView3, shapeTextView10, yYMemberRobView, yYMemberRobView2, yYMemberRobView3, yYMemberRobView4, yYMemberRobView5, yYMemberRobView6, yYMemberRobView7, yYMemberRobView8);
+                                                                                                                                                                            return new ItemYyConnectingRobLayoutBinding((ConstraintLayout) view, shapeTextView, shapeTextView2, findViewById, linearLayout, findViewById2, findViewById3, findViewById4, findViewById5, yYBaseUserHeadView, sVGAImageView, findViewById6, imageView, shapeTextView3, shapeTextView4, shapeTextView5, shapeTextView6, imageView2, linearLayout2, linearLayout3, linearLayout4, linearLayout5, findViewById7, findViewById8, findViewById9, sVGAImageView2, imageView3, textView, shapeTextView7, textView2, shapeTextView8, shapeTextView9, textView3, shapeTextView10, yYMemberRobView, yYMemberRobView2, yYMemberRobView3, yYMemberRobView4, yYMemberRobView5, yYMemberRobView6, yYMemberRobView7, yYMemberRobView8);
                                                                                                                                                                         }
                                                                                                                                                                         str = "user8";
                                                                                                                                                                     } else {
@@ -241,7 +236,7 @@ public final class ItemYyConnectingRobLayoutBinding implements ViewBinding {
                                                                                                                     str = "tvBegin";
                                                                                                                 }
                                                                                                             } else {
-                                                                                                                str = Constant.MAP_KEY_TOP;
+                                                                                                                str = "top";
                                                                                                             }
                                                                                                         } else {
                                                                                                             str = "svga";
@@ -321,7 +316,6 @@ public final class ItemYyConnectingRobLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.P;

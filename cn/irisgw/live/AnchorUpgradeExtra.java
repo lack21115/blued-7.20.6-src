@@ -25,8 +25,8 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
     private volatile Object resource_;
     private static final AnchorUpgradeExtra DEFAULT_INSTANCE = new AnchorUpgradeExtra();
     private static final Parser<AnchorUpgradeExtra> PARSER = new AbstractParser<AnchorUpgradeExtra>() { // from class: cn.irisgw.live.AnchorUpgradeExtra.1
-        @Override // com.google.protobuf.Parser
-        public AnchorUpgradeExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public AnchorUpgradeExtra m339parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new AnchorUpgradeExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -55,22 +55,22 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
             boolean unused = AnchorUpgradeExtra.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m341addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public AnchorUpgradeExtra build() {
-            AnchorUpgradeExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public AnchorUpgradeExtra m343build() {
+            AnchorUpgradeExtra m345buildPartial = m345buildPartial();
+            if (m345buildPartial.isInitialized()) {
+                return m345buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m345buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public AnchorUpgradeExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public AnchorUpgradeExtra m345buildPartial() {
             AnchorUpgradeExtra anchorUpgradeExtra = new AnchorUpgradeExtra(this);
             anchorUpgradeExtra.level_ = this.level_;
             anchorUpgradeExtra.resource_ = this.resource_;
@@ -78,16 +78,16 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
             return anchorUpgradeExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m349clear() {
             super.clear();
             this.level_ = 0;
             this.resource_ = "";
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m351clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -97,8 +97,8 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m354clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -108,18 +108,16 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m360clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public AnchorUpgradeExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public AnchorUpgradeExtra m362getDefaultInstanceForType() {
             return AnchorUpgradeExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_AnchorUpgradeExtra_descriptor;
         }
@@ -151,12 +149,10 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_AnchorUpgradeExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(AnchorUpgradeExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -172,18 +168,18 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
                 this.resource_ = anchorUpgradeExtra.resource_;
                 onChanged();
             }
-            mergeUnknownFields(anchorUpgradeExtra.unknownFields);
+            m371mergeUnknownFields(anchorUpgradeExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.AnchorUpgradeExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.AnchorUpgradeExtra.Builder m368mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -228,11 +224,11 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.AnchorUpgradeExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.AnchorUpgradeExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.AnchorUpgradeExtra.Builder.m368mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.AnchorUpgradeExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m367mergeFrom(Message message) {
             if (message instanceof AnchorUpgradeExtra) {
                 return mergeFrom((AnchorUpgradeExtra) message);
             }
@@ -240,13 +236,13 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m371mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m373setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -256,8 +252,8 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m375setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -280,8 +276,8 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m377setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -339,66 +335,65 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m338toBuilder();
     }
 
     public static Builder newBuilder(AnchorUpgradeExtra anchorUpgradeExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(anchorUpgradeExtra);
+        return DEFAULT_INSTANCE.m338toBuilder().mergeFrom(anchorUpgradeExtra);
     }
 
     public static AnchorUpgradeExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (AnchorUpgradeExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static AnchorUpgradeExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (AnchorUpgradeExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static AnchorUpgradeExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (AnchorUpgradeExtra) PARSER.parseFrom(byteString);
     }
 
     public static AnchorUpgradeExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (AnchorUpgradeExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static AnchorUpgradeExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (AnchorUpgradeExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static AnchorUpgradeExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (AnchorUpgradeExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static AnchorUpgradeExtra parseFrom(InputStream inputStream) throws IOException {
-        return (AnchorUpgradeExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static AnchorUpgradeExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (AnchorUpgradeExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static AnchorUpgradeExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (AnchorUpgradeExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static AnchorUpgradeExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (AnchorUpgradeExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static AnchorUpgradeExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (AnchorUpgradeExtra) PARSER.parseFrom(bArr);
     }
 
     public static AnchorUpgradeExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (AnchorUpgradeExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<AnchorUpgradeExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -410,8 +405,8 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public AnchorUpgradeExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public AnchorUpgradeExtra m333getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -420,7 +415,6 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
         return this.level_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<AnchorUpgradeExtra> getParserForType() {
         return PARSER;
     }
@@ -447,7 +441,6 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -467,12 +460,10 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -482,12 +473,10 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_AnchorUpgradeExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(AnchorUpgradeExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -500,28 +489,26 @@ public final class AnchorUpgradeExtra extends GeneratedMessageV3 implements Anch
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m336newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m335newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new AnchorUpgradeExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m338toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.level_;
         if (i != 0) {

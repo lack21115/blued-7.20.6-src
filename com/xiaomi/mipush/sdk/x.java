@@ -7,16 +7,16 @@ import android.text.TextUtils;
 public class x {
 
     /* renamed from: a  reason: collision with root package name */
-    int f41238a = 0;
+    int f27547a = 0;
 
     /* renamed from: a  reason: collision with other field name */
-    String f165a = "";
+    String f118a = "";
 
     public boolean equals(Object obj) {
         if (obj == null || !(obj instanceof x)) {
             return false;
         }
         x xVar = (x) obj;
-        return !TextUtils.isEmpty(xVar.f165a) && xVar.f165a.equals(this.f165a);
+        return !TextUtils.isEmpty(xVar.f118a) && xVar.f118a.equals(this.f118a);
     }
 }

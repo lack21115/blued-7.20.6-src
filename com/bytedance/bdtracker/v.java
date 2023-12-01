@@ -24,11 +24,11 @@ public class v implements Handler.Callback, Comparator<t1> {
     public final h0 B;
 
     /* renamed from: a  reason: collision with root package name */
-    public s f21324a;
+    public s f7718a;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public c f21325c;
+    public c f7719c;
     public m0 d;
     public u e;
     public volatile w1 g;
@@ -57,10 +57,10 @@ public class v implements Handler.Callback, Comparator<t1> {
     public abstract class a<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        public T f21326a;
+        public T f7720a;
 
         public a(v vVar, T t) {
-            this.f21326a = t;
+            this.f7720a = t;
         }
     }
 
@@ -88,7 +88,7 @@ public class v implements Handler.Callback, Comparator<t1> {
     }
 
     public Context a() {
-        return this.f21325c.m;
+        return this.f7719c.m;
     }
 
     public void a(t1 t1Var) {
@@ -112,7 +112,7 @@ public class v implements Handler.Callback, Comparator<t1> {
     }
 
     public final void a(t tVar) {
-        if (this.i == null || tVar == null || this.f21325c.v) {
+        if (this.i == null || tVar == null || this.f7719c.v) {
             return;
         }
         tVar.i();
@@ -138,8 +138,8 @@ public class v implements Handler.Callback, Comparator<t1> {
         c2 a2 = o.a();
         c2 c2Var = a2;
         if (a2 != null) {
-            c2Var = (c2) a2.m5742clone();
-            c2Var.k = this.f21325c.l;
+            c2Var = (c2) a2.m2745clone();
+            c2Var.k = this.f7719c.l;
         }
         Message obtainMessage = this.i.obtainMessage(12, new Object[]{str, c2Var});
         this.i.removeMessages(12);
@@ -164,7 +164,7 @@ public class v implements Handler.Callback, Comparator<t1> {
         InitConfig initConfig;
         m0 m0Var = this.d;
         boolean z2 = (m0Var == null || (initConfig = m0Var.b) == null || initConfig.isTrackEventEnabled()) ? false : true;
-        if (this.f21325c.v || z2) {
+        if (this.f7719c.v || z2) {
             return;
         }
         synchronized (this.f) {
@@ -187,7 +187,7 @@ public class v implements Handler.Callback, Comparator<t1> {
         if (!arrayList.isEmpty()) {
             boolean isEventFilterEnable = this.d.b.isEventFilterEnable();
             a0 a0Var = this.x;
-            a0 a0Var2 = this.f21325c.u;
+            a0 a0Var2 = this.f7719c.u;
             if ((isEventFilterEnable && a0Var != null) || a0Var2 != null) {
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
@@ -216,7 +216,7 @@ public class v implements Handler.Callback, Comparator<t1> {
         boolean a3 = this.d.a((List<t1>) arrayList);
         if (arrayList.size() > 0) {
             if (!this.d.i()) {
-                Intent intent = new Intent(this.f21325c.m, Collector.class);
+                Intent intent = new Intent(this.f7719c.m, Collector.class);
                 int size = arrayList.size();
                 String[] strArr2 = new String[size];
                 int i3 = 0;
@@ -245,7 +245,7 @@ public class v implements Handler.Callback, Comparator<t1> {
                 }
                 if (z3) {
                     intent.putExtra("K_DATA", strArr2);
-                    this.f21325c.m.sendBroadcast(intent);
+                    this.f7719c.m.sendBroadcast(intent);
                 }
             } else if (a3 || arrayList.size() > 100) {
                 Collections.sort(arrayList, this);
@@ -256,7 +256,7 @@ public class v implements Handler.Callback, Comparator<t1> {
                 boolean z6 = false;
                 while (it2.hasNext()) {
                     t1 t1Var2 = (t1) it2.next();
-                    boolean a4 = z4 | this.m.a(this.f21325c, t1Var2, arrayList2);
+                    boolean a4 = z4 | this.m.a(this.f7719c, t1Var2, arrayList2);
                     boolean z7 = z5;
                     boolean z8 = z6;
                     if (t1Var2 instanceof c2) {
@@ -329,10 +329,10 @@ public class v implements Handler.Callback, Comparator<t1> {
 
     public final boolean a(ArrayList<t1> arrayList) {
         boolean z = true;
-        String[] a2 = this.f21325c.i.a(this, this.h.d(), true, 0);
+        String[] a2 = this.f7719c.i.a(this, this.h.d(), true, 0);
         JSONObject a3 = j1.a(this.h.d());
         if (a2.length > 0) {
-            c cVar = this.f21325c;
+            c cVar = this.f7719c;
             int a4 = cVar.j.a(a2, b2.a(cVar, arrayList, a3), this.d);
             if (a4 == 200) {
                 this.p = 0L;
@@ -373,7 +373,7 @@ public class v implements Handler.Callback, Comparator<t1> {
     public void b(t1 t1Var) {
         w wVar = this.s;
         if (((t1Var instanceof z1) || (t1Var instanceof d2)) && wVar != null) {
-            this.f21325c.j.a(t1Var.h(), wVar.g);
+            this.f7719c.j.a(t1Var.h(), wVar.g);
         }
     }
 

@@ -6,7 +6,7 @@ import butterknife.Unbinder;
 public interface Unbinder {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Unbinder f3727a = new Unbinder() { // from class: butterknife.-$$Lambda$Unbinder$9WoeN7tSgGzuM9X9pYFBAvVRwhU
+    public static final Unbinder f3679a = new Unbinder() { // from class: butterknife.-$$Lambda$Unbinder$9WoeN7tSgGzuM9X9pYFBAvVRwhU
         @Override // butterknife.Unbinder
         public final void unbind() {
             Unbinder.CC.a();

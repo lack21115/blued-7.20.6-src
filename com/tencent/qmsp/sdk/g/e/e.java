@@ -4,18 +4,18 @@ package com.tencent.qmsp.sdk.g.e;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f38636a;
+    public int f24945a;
     public long b = System.currentTimeMillis() + 86400000;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f38637c;
+    public String f24946c;
 
     public e(String str, int i) {
-        this.f38637c = str;
-        this.f38636a = i;
+        this.f24946c = str;
+        this.f24945a = i;
     }
 
     public String toString() {
-        return "ValueData{value='" + this.f38637c + "', code=" + this.f38636a + ", expired=" + this.b + '}';
+        return "ValueData{value='" + this.f24946c + "', code=" + this.f24945a + ", expired=" + this.b + '}';
     }
 }

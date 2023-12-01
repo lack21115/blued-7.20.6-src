@@ -10,14 +10,14 @@ public class ce extends h {
     final /* synthetic */ bw.c b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Handler f9374c;
+    final /* synthetic */ Handler f6534c;
     final /* synthetic */ bw d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ce(bw bwVar, bw.c cVar, Handler handler) {
         this.d = bwVar;
         this.b = cVar;
-        this.f9374c = handler;
+        this.f6534c = handler;
     }
 
     @Override // com.baidu.mobads.sdk.internal.h
@@ -26,7 +26,7 @@ public class ce extends h {
         SharedPreferences m;
         try {
             synchronized (bw.class) {
-                this.d.b(this.b, this.f9374c);
+                this.d.b(this.b, this.f6534c);
             }
             m = this.d.m();
             SharedPreferences.Editor edit = m.edit();
@@ -35,7 +35,7 @@ public class ce extends h {
             return null;
         } catch (Throwable th) {
             bqVar = this.d.z;
-            bqVar.a(bw.f9362a, th);
+            bqVar.a(bw.f6522a, th);
             return null;
         }
     }

@@ -11,12 +11,8 @@ import android.util.Log;
 public class Accelerometer {
     private static SensorEvent b;
     private static CLOCKWISE_ANGLE d;
-
-    /* renamed from: a  reason: collision with root package name */
-    private SensorManager f11303a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f11304c = false;
+    private SensorManager a;
+    private boolean c = false;
     private SensorEventListener e = new SensorEventListener() { // from class: com.blued.android.module.external_sense_library.utils.Accelerometer.1
         @Override // android.hardware.SensorEventListener
         public void onAccuracyChanged(Sensor sensor, int i) {
@@ -69,8 +65,8 @@ public class Accelerometer {
     }
 
     public Accelerometer(Context context) {
-        this.f11303a = null;
-        this.f11303a = (SensorManager) context.getSystemService("sensor");
+        this.a = null;
+        this.a = (SensorManager) context.getSystemService("sensor");
         d = CLOCKWISE_ANGLE.Deg90;
     }
 
@@ -79,19 +75,19 @@ public class Accelerometer {
     }
 
     public void a() {
-        if (this.f11304c) {
+        if (this.c) {
             return;
         }
-        this.f11304c = true;
+        this.c = true;
         d = CLOCKWISE_ANGLE.Deg90;
-        SensorManager sensorManager = this.f11303a;
+        SensorManager sensorManager = this.a;
         sensorManager.registerListener(this.e, sensorManager.getDefaultSensor(1), 3);
     }
 
     public void b() {
-        if (this.f11304c) {
-            this.f11304c = false;
-            this.f11303a.unregisterListener(this.e);
+        if (this.c) {
+            this.c = false;
+            this.a.unregisterListener(this.e);
         }
     }
 }

@@ -10,10 +10,10 @@ public final class FeedBackModel {
     private boolean isSelect;
     private String type;
 
-    public FeedBackModel(String name, boolean z) {
-        Intrinsics.e(name, "name");
+    public FeedBackModel(String str, boolean z) {
+        Intrinsics.e(str, "name");
         this.type = "";
-        this.type = name;
+        this.type = str;
         this.isSelect = z;
     }
 

@@ -28,11 +28,11 @@ import org.json.JSONObject;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f21874a = -1;
+    private static int f8267a = -1;
     private static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f21875c = "";
+    private static String f8268c = "";
 
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/a/a/d$a.class */
     static final class a implements InvocationHandler {
@@ -103,13 +103,13 @@ public final class d {
                     int optInt = jSONObject.optInt(ProcessBridgeProvider.KEY_RESULT_CODE, -1);
                     JSONObject optJSONObject = jSONObject.optJSONObject(ProcessBridgeProvider.KEY_RESULT_DATA);
                     if (optInt != 0 || optJSONObject == null) {
-                        gVar = new g(-9, d.f21875c, "");
+                        gVar = new g(-9, d.f8268c, "");
                     } else {
                         String optString = optJSONObject.optString("mobile", "");
                         if (TextUtils.isEmpty(optString)) {
                             i = -9;
                         }
-                        gVar = new g(i, d.f21875c, optString);
+                        gVar = new g(i, d.f8268c, optString);
                     }
                     final g gVar2 = gVar;
                     ScheduleQueue.getInstance().addSchedule(new Runnable() { // from class: com.getui.gtc.a.a.d.b.1
@@ -248,16 +248,16 @@ public final class d {
         try {
             String str = new String(com.getui.gtc.a.a.b.a("Y24uY29tLmNoaW5hdGVsZWNvbS5hY2NvdW50LnNkay4="));
             Class.forName(str + "CtAuth");
-            f21874a = 1;
+            f8267a = 1;
             return 1;
         } catch (Throwable th) {
             try {
                 String str2 = new String(com.getui.gtc.a.a.b.a("Y24uY29tLmNoaW5hdGVsZWNvbS5hY2NvdW50LmFwaS4="));
                 Class.forName(str2 + "CtAuth");
-                f21874a = 2;
+                f8267a = 2;
                 return 2;
             } catch (Throwable th2) {
-                f21874a = -1;
+                f8267a = -1;
                 return -1;
             }
         }
@@ -361,7 +361,7 @@ public final class d {
         try {
             Class<?> cls = Class.forName(b + ".UniAccountHelper");
             i = 0;
-            f21875c = (String) cls.getMethod("getSdkVersion", new Class[0]).invoke(cls.getMethod("getInstance", new Class[0]).invoke(null, new Object[0]), new Object[0]);
+            f8268c = (String) cls.getMethod("getSdkVersion", new Class[0]).invoke(cls.getMethod("getInstance", new Class[0]).invoke(null, new Object[0]), new Object[0]);
             str = (String) Class.forName(b + ".f.h").getMethod("c", new Class[0]).invoke(null, new Object[0]);
         } catch (Throwable th) {
             th = th;
@@ -378,9 +378,9 @@ public final class d {
             i = -5;
             com.getui.gtc.i.c.a.b(th);
             str2 = str;
-            return new g(i, f21875c, str2);
+            return new g(i, f8268c, str2);
         }
-        return new g(i, f21875c, str2);
+        return new g(i, f8268c, str2);
     }
 
     public static void f() {
@@ -404,7 +404,7 @@ public final class d {
             String str2 = new String(com.getui.gtc.a.a.b.a("Y24uY29tLmNoaW5hdGVsZWNvbS5hY2NvdW50LmFwaS4="));
             String str3 = str2 + "CtSetting";
             com.getui.gtc.i.c.a.d("prefixOfficial: " + str + ", prefixCustom: " + str2);
-            if (f21874a != 1) {
+            if (f8267a != 1) {
                 str = str2;
             }
             Class<?> cls = Class.forName(str + "CtAuth");

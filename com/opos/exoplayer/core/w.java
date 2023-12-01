@@ -4,13 +4,13 @@ package com.opos.exoplayer.core;
 public final class w {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final w f25588a = new w(0, 0);
+    public static final w f11900a = new w(0, 0);
     public static final w b = new w(Long.MAX_VALUE, Long.MAX_VALUE);
 
     /* renamed from: c  reason: collision with root package name */
-    public static final w f25589c = new w(Long.MAX_VALUE, 0);
+    public static final w f11901c = new w(Long.MAX_VALUE, 0);
     public static final w d = new w(0, Long.MAX_VALUE);
-    public static final w e = f25588a;
+    public static final w e = f11900a;
     public final long f;
     public final long g;
 

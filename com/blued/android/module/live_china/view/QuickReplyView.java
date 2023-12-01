@@ -20,13 +20,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/QuickReplyView.class */
 public class QuickReplyView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f15235a;
+    private View a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f15236c;
+    private LayoutInflater c;
     private ImageView d;
     private FlowLayout e;
     private boolean f;
@@ -49,11 +45,11 @@ public class QuickReplyView extends FrameLayout {
 
     private void a() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f15236c = from;
+        this.c = from;
         View inflate = from.inflate(R.layout.live_quick_reply_view, this);
-        this.f15235a = inflate;
+        this.a = inflate;
         this.d = (ImageView) inflate.findViewById(R.id.quick_reply_close);
-        this.e = (FlowLayout) this.f15235a.findViewById(R.id.quick_reply_flow_layout);
+        this.e = (FlowLayout) this.a.findViewById(R.id.quick_reply_flow_layout);
         setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.QuickReplyView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -101,7 +97,7 @@ public class QuickReplyView extends FrameLayout {
                 });
                 return;
             }
-            View inflate = this.f15236c.inflate(R.layout.live_quick_reply_text_view, (ViewGroup) null);
+            View inflate = this.c.inflate(R.layout.live_quick_reply_text_view, (ViewGroup) null);
             ((TextView) inflate.findViewById(R.id.live_quick_reply_text)).setText(list.get(i2).text);
             this.e.addView(inflate);
             i = i2 + 1;

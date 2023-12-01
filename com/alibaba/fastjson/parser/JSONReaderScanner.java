@@ -153,14 +153,14 @@ public final class JSONReaderScanner extends JSONLexerBase {
     }
 
     @Override // com.alibaba.fastjson.parser.JSONLexerBase
-    public final int indexOf(char c2, int i) {
+    public final int indexOf(char c, int i) {
         int i2 = i - this.bp;
         while (true) {
             int i3 = i2;
-            if (c2 == charAt(this.bp + i3)) {
+            if (c == charAt(this.bp + i3)) {
                 return i3 + this.bp;
             }
-            if (c2 == 26) {
+            if (c == 26) {
                 return -1;
             }
             i2 = i3 + 1;
@@ -229,9 +229,9 @@ public final class JSONReaderScanner extends JSONLexerBase {
                 throw new JSONException(e.getMessage(), e);
             }
         }
-        char c2 = this.buf[i3];
-        this.ch = c2;
-        return c2;
+        char c = this.buf[i3];
+        this.ch = c;
+        return c;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0043, code lost:

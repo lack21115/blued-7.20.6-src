@@ -11,11 +11,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public AtomicInteger f38407a = new AtomicInteger();
+    public AtomicInteger f24716a = new AtomicInteger();
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f38408c;
+    public String f24717c;
     public String d;
     public b e;
 
@@ -23,11 +23,11 @@ public class c {
     public abstract class a implements com.tencent.qimei.d.c {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f38409a;
+        public final String f24718a;
         public final String b;
 
         public a(String str, String str2) {
-            this.f38409a = str;
+            this.f24718a = str;
             this.b = str2;
         }
 
@@ -42,7 +42,7 @@ public class c {
         @Override // com.tencent.qimei.d.c
         public void a(String str, String... strArr) {
             String str2 = strArr.length > 0 ? strArr[0] : "";
-            f.a(c.this.f38408c).a(this.f38409a, str2);
+            f.a(c.this.f24717c).a(this.f24718a, str2);
             c.a(c.this, this.b, a(str));
             com.tencent.qimei.k.a.b("HidTask", "pull content from server,code:%d lastModifiedTime:%s", 200, str2);
         }
@@ -54,24 +54,24 @@ public class c {
 
     public c(Context context, String str, b bVar) {
         this.b = context;
-        this.f38408c = str;
+        this.f24717c = str;
         this.e = bVar;
         this.d = this.b.getFilesDir().getAbsolutePath() + "/jsfile/";
     }
 
     public static /* synthetic */ void a(c cVar, String str, String str2) {
-        if (cVar.f38407a.incrementAndGet() == 2) {
+        if (cVar.f24716a.incrementAndGet() == 2) {
             ((j) cVar.e).c();
         }
-        f.a(cVar.f38408c).a("lc_fe_tm", System.currentTimeMillis());
+        f.a(cVar.f24717c).a("lc_fe_tm", System.currentTimeMillis());
         if (TextUtils.isEmpty(str2)) {
             return;
         }
-        f.a(cVar.f38408c).a(str, com.tencent.qimei.j.a.a(str2));
+        f.a(cVar.f24717c).a(str, com.tencent.qimei.j.a.a(str2));
     }
 
     public void a(boolean z) {
-        String c2 = f.a(this.f38408c).c("hm_md_tm");
+        String c2 = f.a(this.f24717c).c("hm_md_tm");
         if (z) {
             c2 = "";
         }
@@ -83,11 +83,11 @@ public class c {
     }
 
     public final boolean a(String str, String str2) {
-        return com.tencent.qimei.j.a.a(com.tencent.qimei.j.c.a(this.d, str)).equals(f.a(this.f38408c).c(str2));
+        return com.tencent.qimei.j.a.a(com.tencent.qimei.j.c.a(this.d, str)).equals(f.a(this.f24717c).c(str2));
     }
 
     public void b(boolean z) {
-        String c2 = f.a(this.f38408c).c("js_md_tm");
+        String c2 = f.a(this.f24717c).c("js_md_tm");
         if (z) {
             c2 = "";
         }

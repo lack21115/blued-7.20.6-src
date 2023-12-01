@@ -14,7 +14,7 @@ public class q {
         Intent launchIntentForPackage;
         try {
             PackageManager packageManager = context.getPackageManager();
-            if (packageManager == null || (launchIntentForPackage = packageManager.getLaunchIntentForPackage(a.b(a.f21513a))) == null) {
+            if (packageManager == null || (launchIntentForPackage = packageManager.getLaunchIntentForPackage(a.b(a.f7907a))) == null) {
                 return false;
             }
             launchIntentForPackage.setFlags(270532608);
@@ -32,7 +32,7 @@ public class q {
             Intent intent = new Intent();
             intent.setAction("android.intent.action.VIEW");
             intent.setData(parse);
-            intent.setPackage(a.b(a.f21513a));
+            intent.setPackage(a.b(a.f7907a));
             intent.putExtra("out_intent_from", i);
             intent.addFlags(335544320);
             intent.putExtra("extra.key.productdetail_start_with_download", z);
@@ -53,7 +53,7 @@ public class q {
         try {
             Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(a.c() + "market://detail_search?keyword=" + str + "&packagename=" + str2));
             intent.addFlags(335544320);
-            intent.setPackage(a.b(a.f21513a));
+            intent.setPackage(a.b(a.f7907a));
             intent.putExtra("out_intent_from", i);
             if (intent.resolveActivity(context.getPackageManager()) != null) {
                 context.startActivity(intent);
@@ -72,7 +72,7 @@ public class q {
             Intent intent = new Intent();
             intent.setAction("android.intent.action.VIEW");
             intent.setData(parse);
-            intent.setPackage(a.b(a.f21513a));
+            intent.setPackage(a.b(a.f7907a));
             intent.putExtra("out_intent_from", i);
             intent.addFlags(335544320);
             intent.putExtra("extra.key.productdetail_start_with_download", z);

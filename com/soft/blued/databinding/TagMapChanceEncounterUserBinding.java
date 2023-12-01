@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class TagMapChanceEncounterUserBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29597a;
+    private final LinearLayout f15907a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29597a;
+        return this.f15907a;
     }
 }

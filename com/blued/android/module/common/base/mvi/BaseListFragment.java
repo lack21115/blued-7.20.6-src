@@ -5,7 +5,6 @@ import android.widget.FrameLayout;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SimpleItemAnimator;
 import com.blued.android.module.common.R;
 import com.blued.android.module.common.base.config.ListConfig;
 import com.blued.android.module.common.base.mvi.BaseListAction;
@@ -32,9 +31,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/mvi/BaseListFragment.class */
 public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> extends MVIBaseFragment<VM> {
     private SmartRefreshLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f10669c;
+    private RecyclerView c;
     private CommonTopTitleNoTrans d;
     private NoDataAndLoadFailView e;
     private FrameLayout f;
@@ -44,39 +41,35 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
     public BaseListFragment() {
         super(R.layout.fm_base_list);
         this.g = LazyKt.a(new Function0<ListConfig>(this) { // from class: com.blued.android.module.common.base.mvi.BaseListFragment$mListConfig$2
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ BaseListFragment<VM, M> f10672a;
+            final /* synthetic */ BaseListFragment<VM, M> a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
-                this.f10672a = this;
+                this.a = this;
             }
 
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final ListConfig invoke() {
-                return this.f10672a.h();
+                return this.a.h();
             }
         });
         this.h = LazyKt.a(new Function0<BaseQuickAdapter<M, BaseViewHolder>>(this) { // from class: com.blued.android.module.common.base.mvi.BaseListFragment$mAdapter$2
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ BaseListFragment<VM, M> f10671a;
+            final /* synthetic */ BaseListFragment<VM, M> a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
-                this.f10671a = this;
+                this.a = this;
             }
 
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final BaseQuickAdapter<M, BaseViewHolder> invoke() {
-                return this.f10671a.i();
+                return this.a.i();
             }
         });
     }
@@ -84,85 +77,81 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
     public BaseListFragment(int i) {
         super(i);
         this.g = LazyKt.a(new Function0<ListConfig>(this) { // from class: com.blued.android.module.common.base.mvi.BaseListFragment$mListConfig$2
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ BaseListFragment<VM, M> f10672a;
+            final /* synthetic */ BaseListFragment<VM, M> a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
-                this.f10672a = this;
+                this.a = this;
             }
 
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final ListConfig invoke() {
-                return this.f10672a.h();
+                return this.a.h();
             }
         });
         this.h = LazyKt.a(new Function0<BaseQuickAdapter<M, BaseViewHolder>>(this) { // from class: com.blued.android.module.common.base.mvi.BaseListFragment$mAdapter$2
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ BaseListFragment<VM, M> f10671a;
+            final /* synthetic */ BaseListFragment<VM, M> a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
-                this.f10671a = this;
+                this.a = this;
             }
 
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final BaseQuickAdapter<M, BaseViewHolder> invoke() {
-                return this.f10671a.i();
+                return this.a.i();
             }
         });
     }
 
     private final void C() {
-        this.b = (SmartRefreshLayout) requireView().findViewById(R.id.refreshLayout);
-        this.f10669c = (RecyclerView) requireView().findViewById(R.id.recyclerView);
+        this.b = requireView().findViewById(R.id.refreshLayout);
+        this.c = requireView().findViewById(R.id.recyclerView);
         this.d = (CommonTopTitleNoTrans) requireView().findViewById(R.id.title);
         this.e = (NoDataAndLoadFailView) requireView().findViewById(R.id.noDataView);
         this.f = (FrameLayout) requireView().findViewById(R.id.frame_layout);
     }
 
     private final void D() {
-        RecyclerView recyclerView = this.f10669c;
+        RecyclerView recyclerView = this.c;
         RecyclerView.ItemAnimator itemAnimator = recyclerView == null ? null : recyclerView.getItemAnimator();
         if (itemAnimator != null) {
             itemAnimator.setAddDuration(0L);
         }
-        RecyclerView recyclerView2 = this.f10669c;
+        RecyclerView recyclerView2 = this.c;
         RecyclerView.ItemAnimator itemAnimator2 = recyclerView2 == null ? null : recyclerView2.getItemAnimator();
         if (itemAnimator2 != null) {
             itemAnimator2.setChangeDuration(0L);
         }
-        RecyclerView recyclerView3 = this.f10669c;
+        RecyclerView recyclerView3 = this.c;
         RecyclerView.ItemAnimator itemAnimator3 = recyclerView3 == null ? null : recyclerView3.getItemAnimator();
         if (itemAnimator3 != null) {
             itemAnimator3.setMoveDuration(0L);
         }
-        RecyclerView recyclerView4 = this.f10669c;
+        RecyclerView recyclerView4 = this.c;
         RecyclerView.ItemAnimator itemAnimator4 = recyclerView4 == null ? null : recyclerView4.getItemAnimator();
         if (itemAnimator4 != null) {
             itemAnimator4.setRemoveDuration(0L);
         }
-        RecyclerView recyclerView5 = this.f10669c;
+        RecyclerView recyclerView5 = this.c;
         RecyclerView.ItemAnimator itemAnimator5 = recyclerView5 == null ? null : recyclerView5.getItemAnimator();
         if (itemAnimator5 == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.SimpleItemAnimator");
         }
-        ((SimpleItemAnimator) itemAnimator5).setSupportsChangeAnimations(false);
+        itemAnimator5.setSupportsChangeAnimations(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(BaseListFragment this$0) {
         Intrinsics.e(this$0, "this$0");
         this$0.f().setUpFetching(true);
-        BluedStructureExtKt.a(this$0, BaseListAction.LoadMoreData.f10667a);
+        BluedStructureExtKt.a(this$0, BaseListAction.LoadMoreData.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -175,7 +164,7 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
     public static final void a(BaseListFragment this$0, RefreshLayout it) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(it, "it");
-        BluedStructureExtKt.a(this$0, BaseListAction.RefreshData.f10668a);
+        BluedStructureExtKt.a(this$0, BaseListAction.RefreshData.a);
         this$0.n();
     }
 
@@ -186,7 +175,6 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
         this$0.f().addData(0, it);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     private final void a(final List<? extends M> list) {
         boolean z = false;
         if (((BaseListViewModel) y()).getMPage() != 1) {
@@ -202,7 +190,7 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
                 f().addData(list2);
                 return;
             } else {
-                RecyclerView recyclerView = this.f10669c;
+                RecyclerView recyclerView = this.c;
                 if (recyclerView == null) {
                     return;
                 }
@@ -221,7 +209,7 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
             }
         }
         f().setNewData(list);
-        List<M> data = f().getData();
+        List data = f().getData();
         if (data == null || data.isEmpty()) {
             z = true;
         }
@@ -232,7 +220,7 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
                 f().disableLoadMoreIfNotFullPage();
             }
         } else {
-            RecyclerView recyclerView2 = this.f10669c;
+            RecyclerView recyclerView2 = this.c;
             if (recyclerView2 != null) {
                 recyclerView2.scrollToPosition(f().getData().size() - 1);
             }
@@ -245,13 +233,13 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(BaseListFragment this$0) {
         Intrinsics.e(this$0, "this$0");
-        BluedStructureExtKt.a(this$0, BaseListAction.LoadMoreData.f10667a);
+        BluedStructureExtKt.a(this$0, BaseListAction.LoadMoreData.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(BaseListFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        BluedStructureExtKt.a(this$0, BaseListAction.RefreshData.f10668a);
+        BluedStructureExtKt.a(this$0, BaseListAction.RefreshData.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -261,16 +249,14 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
     }
 
     public final RecyclerView a() {
-        return this.f10669c;
+        return this.c;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void a(RecyclerView recyclerView) {
-        this.f10669c = recyclerView;
+    protected final void a(RecyclerView recyclerView) {
+        this.c = recyclerView;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void a(NoDataAndLoadFailView noDataAndLoadFailView) {
+    protected final void a(NoDataAndLoadFailView noDataAndLoadFailView) {
         this.e = noDataAndLoadFailView;
     }
 
@@ -285,7 +271,7 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
         }
         SmartRefreshLayout smartRefreshLayout = this.b;
         if (smartRefreshLayout != null) {
-            smartRefreshLayout.j();
+            smartRefreshLayout.g();
         }
         f().setUpFetching(false);
         if (z) {
@@ -352,7 +338,7 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
     @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     protected void k() {
         if (e().a()) {
-            BluedStructureExtKt.a(this, BaseListAction.RefreshData.f10668a);
+            BluedStructureExtKt.a(this, BaseListAction.RefreshData.a);
         }
     }
 
@@ -368,7 +354,7 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
     public void m() {
         C();
         j();
-        RecyclerView recyclerView = this.f10669c;
+        RecyclerView recyclerView = this.c;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(g());
         }
@@ -409,9 +395,9 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
         f().registerAdapterDataObserver(new BaseListFragment$initView$3(this));
         SmartRefreshLayout smartRefreshLayout = this.b;
         if (smartRefreshLayout != null) {
-            smartRefreshLayout.l(false);
+            smartRefreshLayout.b(false);
         }
-        f().bindToRecyclerView(this.f10669c);
+        f().bindToRecyclerView(this.c);
         if (e().f() == ListConfig.LoadMoreModel.PULL_DOWN) {
             SmartRefreshLayout smartRefreshLayout2 = this.b;
             if (smartRefreshLayout2 != null) {
@@ -419,7 +405,6 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
             }
             f().setEnableLoadMore(false);
             f().setUpFetchListener(new BaseQuickAdapter.UpFetchListener() { // from class: com.blued.android.module.common.base.mvi.-$$Lambda$BaseListFragment$BJwYUaie34WpfqFXxFXGO-VrS9Y
-                @Override // com.chad.library.adapter.base.BaseQuickAdapter.UpFetchListener
                 public final void onUpFetch() {
                     BaseListFragment.a(BaseListFragment.this);
                 }
@@ -432,7 +417,6 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
             SmartRefreshLayout smartRefreshLayout4 = this.b;
             if (smartRefreshLayout4 != null) {
                 smartRefreshLayout4.a(new OnRefreshListener() { // from class: com.blued.android.module.common.base.mvi.-$$Lambda$BaseListFragment$yszLUnPX5O7JdwKop3sqm8H_vVE
-                    @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
                     public final void onRefresh(RefreshLayout refreshLayout) {
                         BaseListFragment.a(BaseListFragment.this, refreshLayout);
                     }
@@ -441,16 +425,15 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
             f().setLoadMoreView(new BluedAdapterLoadMoreView());
             if (e().c()) {
                 f().setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.android.module.common.base.mvi.-$$Lambda$BaseListFragment$z2JtNIFceH3exnVs2aSV8mXdnmY
-                    @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
                     public final void onLoadMoreRequested() {
                         BaseListFragment.b(BaseListFragment.this);
                     }
-                }, this.f10669c);
+                }, this.c);
             }
             f().setEnableLoadMore(e().c());
         }
         ((BaseListViewModel) y()).setMPage(e().d());
-        RecyclerView recyclerView2 = this.f10669c;
+        RecyclerView recyclerView2 = this.c;
         if (recyclerView2 == null) {
             return;
         }
@@ -469,11 +452,11 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
         Intrinsics.e(event, "event");
         super.onEvent(event);
         if (event instanceof MviEvent.LoadData) {
-            List<? extends M> a2 = ((MviEvent.LoadData) event).a();
-            if (a2 == null) {
+            List<? extends M> a = ((MviEvent.LoadData) event).a();
+            if (a == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.collections.List<M of com.blued.android.module.common.base.mvi.BaseListFragment>");
             }
-            a(a2);
+            a(a);
         }
     }
 
@@ -511,7 +494,7 @@ public abstract class BaseListFragment<VM extends BaseListViewModel<M>, M> exten
 
     public void s() {
         NoDataAndLoadFailView noDataAndLoadFailView;
-        List<M> data = f().getData();
+        List data = f().getData();
         if (!(data == null || data.isEmpty()) || (noDataAndLoadFailView = this.e) == null) {
             return;
         }

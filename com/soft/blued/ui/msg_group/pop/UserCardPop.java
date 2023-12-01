@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.text.TextUtils;
 import android.view.View;
 import com.blued.android.core.net.IRequestHost;
+import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.core.BottomPopupView;
 import com.blued.android.module.common.extensions.CustomViewBindingProperty;
 import com.blued.android.module.common.extensions.ViewBindingProperty;
@@ -40,32 +41,32 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/pop/UserCardPop.class */
 public final class UserCardPop extends BottomPopupView {
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(UserCardPop.class, "vb", "getVb()Lcom/soft/blued/databinding/PopGroupUserCardBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(UserCardPop.class, "vb", "getVb()Lcom/soft/blued/databinding/PopGroupUserCardBinding;", 0))};
 
     /* renamed from: c  reason: collision with root package name */
-    private final UserInfoEntity f32802c;
+    private final UserInfoEntity f19111c;
     private final IRequestHost d;
     private final int e;
     private final GroupInfoModel f;
     private final ViewBindingProperty g;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public UserCardPop(Context context, UserInfoEntity userInfo, IRequestHost requestHost, int i, GroupInfoModel groupInfo) {
+    public UserCardPop(Context context, UserInfoEntity userInfoEntity, IRequestHost iRequestHost, int i, GroupInfoModel groupInfoModel) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(userInfo, "userInfo");
-        Intrinsics.e(requestHost, "requestHost");
-        Intrinsics.e(groupInfo, "groupInfo");
-        this.f32802c = userInfo;
-        this.d = requestHost;
+        Intrinsics.e(userInfoEntity, "userInfo");
+        Intrinsics.e(iRequestHost, "requestHost");
+        Intrinsics.e(groupInfoModel, "groupInfo");
+        this.f19111c = userInfoEntity;
+        this.d = iRequestHost;
         this.e = i;
-        this.f = groupInfo;
+        this.f = groupInfoModel;
+        BasePopupView basePopupView = (BasePopupView) this;
         this.g = new CustomViewBindingProperty(new Function1<UserCardPop, PopGroupUserCardBinding>() { // from class: com.soft.blued.ui.msg_group.pop.UserCardPop$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
-            public final PopGroupUserCardBinding invoke(UserCardPop popView) {
-                Intrinsics.e(popView, "popView");
-                return PopGroupUserCardBinding.a(popView.getPopupImplView());
+            public final PopGroupUserCardBinding invoke(UserCardPop userCardPop) {
+                Intrinsics.e(userCardPop, "popView");
+                return PopGroupUserCardBinding.a(userCardPop.getPopupImplView());
             }
         });
     }
@@ -76,39 +77,39 @@ public final class UserCardPop extends BottomPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(UserCardPop this$0) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(UserCardPop userCardPop) {
+        Intrinsics.e(userCardPop, "this$0");
         Observable<Object> observable = LiveEventBus.get("card_at_user");
         AtUserEvent atUserEvent = new AtUserEvent();
         UserBasicModel userBasicModel = new UserBasicModel();
-        userBasicModel.name = this$0.getUserInfo().name;
-        userBasicModel.uid = this$0.getUserInfo().uid;
+        userBasicModel.name = userCardPop.getUserInfo().name;
+        userBasicModel.uid = userCardPop.getUserInfo().uid;
         atUserEvent.a(userBasicModel);
         observable.post(atUserEvent);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(UserCardPop this$0, DialogInterface dialogInterface, int i) {
+    public static final void a(UserCardPop userCardPop, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        LiveEventBus.get("group_chat_kick_out", String.class).post(this$0.f32802c.uid);
+        Intrinsics.e(userCardPop, "this$0");
+        LiveEventBus.get("group_chat_kick_out", String.class).post(userCardPop.f19111c.uid);
         dialogInterface.dismiss();
-        this$0.p();
+        userCardPop.p();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(UserCardPop this$0, View view) {
+    public static final void a(UserCardPop userCardPop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.c();
+        Intrinsics.e(userCardPop, "this$0");
+        userCardPop.c();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(UserCardPop this$0, View view) {
+    public static final void b(UserCardPop userCardPop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
-        UserInfoFragmentNew.a(this$0.getContext(), Intrinsics.a(this$0.f32802c.uid, (Object) ""), "group_chatting");
+        Intrinsics.e(userCardPop, "this$0");
+        userCardPop.p();
+        UserInfoFragmentNew.a(userCardPop.getContext(), Intrinsics.a(userCardPop.f19111c.uid, ""), "group_chatting");
     }
 
     private final void c() {
@@ -124,15 +125,15 @@ public final class UserCardPop extends BottomPopupView {
         String string = context.getString(i);
         Intrinsics.c(string, "if (groupInfo.type == Gr…R.string.group_kick_user)");
         Context context2 = getContext();
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-        String format = String.format(string, Arrays.copyOf(new Object[]{this.f32802c.name}, 1));
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+        String format = String.format(string, Arrays.copyOf(new Object[]{this.f19111c.name}, 1));
         Intrinsics.c(format, "format(format, *args)");
         CommonAlertDialog.a(context2, "", format, getContext().getResources().getString(2131887320), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$UserCardPop$6Th1reD4Dcwn_92zx_F_zJbP0QY
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 UserCardPop.a(UserCardPop.this, dialogInterface, i2);
             }
-        }, getContext().getResources().getString(2131887258), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$UserCardPop$qaE8ikmCr9nE9PJ---TWdth9bIs
+        }, getContext().getResources().getString(R.string.common_cancel), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$UserCardPop$qaE8ikmCr9nE9PJ---TWdth9bIs
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 UserCardPop.a(dialogInterface, i2);
@@ -141,32 +142,32 @@ public final class UserCardPop extends BottomPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(UserCardPop this$0, View view) {
+    public static final void c(UserCardPop userCardPop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(userCardPop, "this$0");
+        userCardPop.p();
         ChatHelperV4 a2 = ChatHelperV4.a();
-        Context context = this$0.getContext();
-        String str = this$0.f32802c.uid;
+        Context context = userCardPop.getContext();
+        String str = userCardPop.f19111c.uid;
         Intrinsics.c(str, "userInfo.uid");
         long parseLong = Long.parseLong(str);
-        String str2 = this$0.f32802c.name;
-        String str3 = this$0.f32802c.avatar;
-        int i = this$0.f32802c.vbadge;
-        int i2 = this$0.f32802c.vip_grade;
-        int i3 = this$0.f32802c.is_vip_annual;
-        int i4 = this$0.f32802c.vip_exp_lvl;
+        String str2 = userCardPop.f19111c.name;
+        String str3 = userCardPop.f19111c.avatar;
+        int i = userCardPop.f19111c.vbadge;
+        int i2 = userCardPop.f19111c.vip_grade;
+        int i3 = userCardPop.f19111c.is_vip_annual;
+        int i4 = userCardPop.f19111c.vip_exp_lvl;
         LogData logData = new LogData();
         logData.userFrom = "group_chatting";
-        Unit unit = Unit.f42314a;
+        Unit unit = Unit.a;
         a2.a(context, parseLong, str2, str3, i, i2, i3, i4, "", false, 0, 0, logData, new MsgSourceEntity(MessageProtos.StrangerSource.GROUP_CHAT, ""));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(final UserCardPop this$0, View view) {
+    public static final void d(final UserCardPop userCardPop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(userCardPop, "this$0");
+        userCardPop.p();
         view.postDelayed(new Runnable() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$UserCardPop$Q5j6899ntIduIkLAk90u0rc9OUc
             @Override // java.lang.Runnable
             public final void run() {
@@ -186,7 +187,6 @@ public final class UserCardPop extends BottomPopupView {
         return (PopGroupUserCardBinding) this.g.b(this, b[0]);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         PopGroupUserCardBinding vb = getVb();
@@ -204,7 +204,7 @@ public final class UserCardPop extends BottomPopupView {
         } else {
             vb.f.setVisibility(4);
         }
-        GroupUtil.a(getRequestHost(), getUserInfo().avatar, vb.f29534c);
+        GroupUtil.a(getRequestHost(), getUserInfo().avatar, vb.f15844c);
         GroupUtil.a(vb.m, getGroupRole());
         vb.n.setText(getUserInfo().name);
         UserRelationshipUtils.a(vb.e, getUserInfo());
@@ -214,9 +214,9 @@ public final class UserCardPop extends BottomPopupView {
             vb.l.setVisibility(8);
         } else {
             if (TextUtils.isEmpty(getUserInfo().age)) {
-                vb.f29533a.setText("");
+                vb.f15843a.setText("");
             } else {
-                vb.f29533a.setText(Intrinsics.a(getUserInfo().age, (Object) getResources().getString(2131886374)));
+                vb.f15843a.setText(Intrinsics.a(getUserInfo().age, getResources().getString(2131886374)));
             }
             if (TextUtils.isEmpty(getUserInfo().height)) {
                 vb.b.setText("");
@@ -231,7 +231,7 @@ public final class UserCardPop extends BottomPopupView {
             if (TextUtils.isEmpty(getUserInfo().location) || getUserInfo().vbadge == 3) {
                 vb.l.setText("");
             } else {
-                vb.l.setText(Intrinsics.a(getUserInfo().location, (Object) " · "));
+                vb.l.setText(Intrinsics.a(getUserInfo().location, " · "));
             }
         }
         vb.o.setText(TimeAndDateUtils.a(getContext(), TimeAndDateUtils.c(getUserInfo().last_operate)));
@@ -266,7 +266,6 @@ public final class UserCardPop extends BottomPopupView {
         return this.e;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_group_user_card;
     }
@@ -276,6 +275,6 @@ public final class UserCardPop extends BottomPopupView {
     }
 
     public final UserInfoEntity getUserInfo() {
-        return this.f32802c;
+        return this.f19111c;
     }
 }

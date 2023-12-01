@@ -17,7 +17,7 @@ import java.util.List;
 public abstract class BaseItemDraggableAdapter<T, K extends BaseViewHolder> extends BaseQuickAdapter<T, K> {
 
     /* renamed from: c  reason: collision with root package name */
-    protected int f21553c;
+    protected int f7947c;
     protected ItemTouchHelper d;
     protected boolean e;
     protected boolean f;
@@ -29,7 +29,7 @@ public abstract class BaseItemDraggableAdapter<T, K extends BaseViewHolder> exte
 
     public BaseItemDraggableAdapter(int i, List<T> list) {
         super(i, list);
-        this.f21553c = 0;
+        this.f7947c = 0;
         this.e = false;
         this.f = false;
         this.i = true;
@@ -44,7 +44,7 @@ public abstract class BaseItemDraggableAdapter<T, K extends BaseViewHolder> exte
     }
 
     public void a(int i) {
-        this.f21553c = i;
+        this.f7947c = i;
     }
 
     public void a(Canvas canvas, RecyclerView.ViewHolder viewHolder, float f, float f2, boolean z) {
@@ -206,7 +206,7 @@ public abstract class BaseItemDraggableAdapter<T, K extends BaseViewHolder> exte
         if (this.d == null || !this.e || itemViewType == 546 || itemViewType == 273 || itemViewType == 1365 || itemViewType == 819) {
             return;
         }
-        int i2 = this.f21553c;
+        int i2 = this.f7947c;
         if (i2 == 0) {
             k.itemView.setTag(R.id.BaseQuickAdapter_viewholder_support, k);
             k.itemView.setOnLongClickListener(this.k);

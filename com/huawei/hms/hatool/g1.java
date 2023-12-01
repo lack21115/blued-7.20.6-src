@@ -12,11 +12,11 @@ public class g1 extends o {
         jSONObject.put("protocol_version", "1");
         jSONObject.put("compress_mode", "1");
         jSONObject.put("serviceid", this.d);
-        jSONObject.put("appid", this.f22777a);
+        jSONObject.put("appid", this.f9169a);
         jSONObject.put("hmac", this.g);
         jSONObject.put("chifer", this.f);
         jSONObject.put("timestamp", this.b);
-        jSONObject.put("servicetag", this.f22778c);
+        jSONObject.put("servicetag", this.f9170c);
         jSONObject.put("requestid", this.e);
         return jSONObject;
     }

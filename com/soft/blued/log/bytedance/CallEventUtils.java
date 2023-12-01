@@ -12,17 +12,17 @@ import org.json.JSONObject;
 public final class CallEventUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final CallEventUtils f29686a = new CallEventUtils();
+    public static final CallEventUtils f15996a = new CallEventUtils();
 
     private CallEventUtils() {
     }
 
     @JvmStatic
-    public static final void a(String vocative_source_page) {
-        Intrinsics.e(vocative_source_page, "vocative_source_page");
+    public static final void a(String str) {
+        Intrinsics.e(str, "vocative_source_page");
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("vocative_source_page", vocative_source_page);
+            jSONObject.put("vocative_source_page", str);
             ByteDanceLogUtils.a("HOME_GUY_PAGE_VOCATIVE_PRICE_WINDOW_SHOW", jSONObject);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -30,11 +30,11 @@ public final class CallEventUtils {
     }
 
     @JvmStatic
-    public static final void a(String vocative_source_page, int i) {
-        Intrinsics.e(vocative_source_page, "vocative_source_page");
+    public static final void a(String str, int i) {
+        Intrinsics.e(str, "vocative_source_page");
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("vocative_source_page", vocative_source_page);
+            jSONObject.put("vocative_source_page", str);
             jSONObject.put("sku", i);
             ByteDanceLogUtils.a("HOME_GUY_PAGE_VOCATIVE_PAY_BTN_CLICK", jSONObject);
         } catch (JSONException e) {

@@ -7,22 +7,21 @@ import java.nio.ByteBuffer;
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videobase/frame/i.class */
 public final class i extends com.tencent.liteav.videobase.frame.a<PixelFrame> {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videobase/frame/i$a.class */
-    public static final class a implements a.InterfaceC0936a {
+    static final class a implements a.InterfaceC0766a {
 
         /* renamed from: a  reason: collision with root package name */
-        final int f36640a;
+        final int f22949a;
         final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final GLConstants.PixelBufferType f36641c;
+        final GLConstants.PixelBufferType f22950c;
         final GLConstants.PixelFormatType d;
 
         public a(int i, int i2, GLConstants.PixelBufferType pixelBufferType, GLConstants.PixelFormatType pixelFormatType) {
-            this.f36640a = i;
+            this.f22949a = i;
             this.b = i2;
-            this.f36641c = pixelBufferType;
+            this.f22950c = pixelBufferType;
             this.d = pixelFormatType;
         }
 
@@ -31,11 +30,11 @@ public final class i extends com.tencent.liteav.videobase.frame.a<PixelFrame> {
                 return false;
             }
             a aVar = (a) obj;
-            return this.f36640a == aVar.f36640a && this.b == aVar.b && this.f36641c == aVar.f36641c && this.d == aVar.d;
+            return this.f22949a == aVar.f22949a && this.b == aVar.b && this.f22950c == aVar.f22950c && this.d == aVar.d;
         }
 
         public final int hashCode() {
-            return (((((this.f36640a * 10001) + this.b) << 2) + this.f36641c.ordinal()) << 2) + this.d.ordinal();
+            return (((((this.f22949a * 10001) + this.b) << 2) + this.f22950c.ordinal()) << 2) + this.d.ordinal();
         }
     }
 
@@ -85,9 +84,9 @@ public final class i extends com.tencent.liteav.videobase.frame.a<PixelFrame> {
     }
 
     @Override // com.tencent.liteav.videobase.frame.a
-    protected final /* synthetic */ PixelFrame a(g<PixelFrame> gVar, a.InterfaceC0936a interfaceC0936a) {
-        a aVar = (a) interfaceC0936a;
-        return new b(gVar, aVar.f36640a, aVar.b, aVar.f36641c, aVar.d, (byte) 0);
+    protected final /* synthetic */ PixelFrame a(g<PixelFrame> gVar, a.InterfaceC0766a interfaceC0766a) {
+        a aVar = (a) interfaceC0766a;
+        return new b(gVar, aVar.f22949a, aVar.b, aVar.f22950c, aVar.d, (byte) 0);
     }
 
     @Override // com.tencent.liteav.videobase.frame.a
@@ -95,7 +94,7 @@ public final class i extends com.tencent.liteav.videobase.frame.a<PixelFrame> {
     }
 
     @Override // com.tencent.liteav.videobase.frame.a
-    protected final /* synthetic */ a.InterfaceC0936a b(PixelFrame pixelFrame) {
+    protected final /* synthetic */ a.InterfaceC0766a b(PixelFrame pixelFrame) {
         PixelFrame pixelFrame2 = pixelFrame;
         return new a(pixelFrame2.getWidth(), pixelFrame2.getHeight(), pixelFrame2.getPixelBufferType(), pixelFrame2.getPixelFormatType());
     }

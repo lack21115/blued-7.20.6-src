@@ -20,7 +20,7 @@ import java.security.MessageDigest;
 public final class w3 implements s3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final s3 f21334a;
+    public final s3 f7728a;
     public f3<Boolean> b = new a(this);
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/w3$a.class */
@@ -49,10 +49,10 @@ public final class w3 implements s3 {
     public class b implements a4.b<g4, String> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Context f21335a;
+        public final /* synthetic */ Context f7729a;
 
         public b(Context context) {
-            this.f21335a = context;
+            this.f7729a = context;
         }
 
         @Override // com.bytedance.bdtracker.a4.b
@@ -66,12 +66,12 @@ public final class w3 implements s3 {
             if (g4Var2 == null) {
                 return null;
             }
-            String c2 = w3.this.c(this.f21335a);
+            String c2 = w3.this.c(this.f7729a);
             if (TextUtils.isEmpty(c2)) {
                 return null;
             }
-            String packageName = this.f21335a.getPackageName();
-            g4.a.C0311a c0311a = (g4.a.C0311a) g4Var2;
+            String packageName = this.f7729a.getPackageName();
+            g4.a.C0141a c0141a = (g4.a.C0141a) g4Var2;
             Parcel obtain = Parcel.obtain();
             Parcel obtain2 = Parcel.obtain();
             try {
@@ -79,7 +79,7 @@ public final class w3 implements s3 {
                 obtain.writeString(packageName);
                 obtain.writeString(c2);
                 obtain.writeString("OUID");
-                c0311a.f21223a.transact(1, obtain, obtain2, 0);
+                c0141a.f7617a.transact(1, obtain, obtain2, 0);
                 obtain2.readException();
                 return obtain2.readString();
             } finally {
@@ -90,21 +90,21 @@ public final class w3 implements s3 {
     }
 
     public w3(s3 s3Var) {
-        this.f21334a = s3Var;
+        this.f7728a = s3Var;
     }
 
     @Override // com.bytedance.bdtracker.s3
     public s3.a a(Context context) {
-        if (this.f21334a == null || this.b.b(new Object[0]).booleanValue()) {
+        if (this.f7728a == null || this.b.b(new Object[0]).booleanValue()) {
             Intent intent = new Intent();
             intent.setComponent(new ComponentName("com.heytap.openid", "com.heytap.openid.IdentifyService"));
             intent.setAction("action.com.heytap.openid.OPEN_ID_SERVICE");
             String str = (String) new a4(context, intent, new b(context)).a();
             s3.a aVar = new s3.a();
-            aVar.f21305a = str;
+            aVar.f7699a = str;
             return aVar;
         }
-        return this.f21334a.a(context);
+        return this.f7728a.a(context);
     }
 
     @Override // com.bytedance.bdtracker.s3
@@ -113,7 +113,7 @@ public final class w3 implements s3 {
             return false;
         }
         Boolean b2 = this.b.b(context);
-        return (this.f21334a == null || b2.booleanValue()) ? b2.booleanValue() : this.f21334a.b(context);
+        return (this.f7728a == null || b2.booleanValue()) ? b2.booleanValue() : this.f7728a.b(context);
     }
 
     public final String c(Context context) {

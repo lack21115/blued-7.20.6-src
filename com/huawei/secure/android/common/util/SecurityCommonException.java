@@ -4,10 +4,10 @@ package com.huawei.secure.android.common.util;
 public class SecurityCommonException extends Exception {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final long f23153c = 1;
+    private static final long f9545c = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f23154a;
+    private String f9546a;
     private String b;
 
     public SecurityCommonException() {
@@ -19,7 +19,7 @@ public class SecurityCommonException extends Exception {
     }
 
     public SecurityCommonException(String str, String str2) {
-        this.f23154a = str;
+        this.f9546a = str;
         this.b = str2;
     }
 
@@ -36,6 +36,6 @@ public class SecurityCommonException extends Exception {
     }
 
     public String getRetCd() {
-        return this.f23154a;
+        return this.f9546a;
     }
 }

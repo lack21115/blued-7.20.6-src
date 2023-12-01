@@ -9,10 +9,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/random/Random.class */
 public abstract class Random {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Default f42565a = new Default(null);
-    private static final Random b = PlatformImplementationsKt.f42478a.a();
+    public static final Default a = new Default(null);
+    private static final Random b = PlatformImplementationsKt.a.a();
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/random/Random$Default.class */
@@ -21,16 +19,14 @@ public abstract class Random {
         @Metadata
         /* loaded from: source-3503164-dex2jar.jar:kotlin/random/Random$Default$Serialized.class */
         static final class Serialized implements Serializable {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final Serialized f42566a = new Serialized();
+            public static final Serialized a = new Serialized();
             private static final long serialVersionUID = 0;
 
             private Serialized() {
             }
 
             private final Object readResolve() {
-                return Random.f42565a;
+                return Random.a;
             }
         }
 
@@ -42,7 +38,7 @@ public abstract class Random {
         }
 
         private final Object writeReplace() {
-            return Serialized.f42566a;
+            return Serialized.a;
         }
 
         @Override // kotlin.random.Random

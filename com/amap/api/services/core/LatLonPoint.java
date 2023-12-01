@@ -24,24 +24,22 @@ public class LatLonPoint implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private double f5610a;
+    private double a;
     private double b;
 
     public LatLonPoint(double d, double d2) {
-        this.f5610a = d;
+        this.a = d;
         this.b = d2;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public LatLonPoint(Parcel parcel) {
-        this.f5610a = parcel.readDouble();
+        this.a = parcel.readDouble();
         this.b = parcel.readDouble();
     }
 
     public LatLonPoint copy() {
-        return new LatLonPoint(this.f5610a, this.b);
+        return new LatLonPoint(this.a, this.b);
     }
 
     @Override // android.os.Parcelable
@@ -55,13 +53,13 @@ public class LatLonPoint implements Parcelable {
         }
         if (obj != null && getClass() == obj.getClass()) {
             LatLonPoint latLonPoint = (LatLonPoint) obj;
-            return Double.doubleToLongBits(this.f5610a) == Double.doubleToLongBits(latLonPoint.f5610a) && Double.doubleToLongBits(this.b) == Double.doubleToLongBits(latLonPoint.b);
+            return Double.doubleToLongBits(this.a) == Double.doubleToLongBits(latLonPoint.a) && Double.doubleToLongBits(this.b) == Double.doubleToLongBits(latLonPoint.b);
         }
         return false;
     }
 
     public double getLatitude() {
-        return this.f5610a;
+        return this.a;
     }
 
     public double getLongitude() {
@@ -69,14 +67,14 @@ public class LatLonPoint implements Parcelable {
     }
 
     public int hashCode() {
-        long doubleToLongBits = Double.doubleToLongBits(this.f5610a);
+        long doubleToLongBits = Double.doubleToLongBits(this.a);
         int i = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
         long doubleToLongBits2 = Double.doubleToLongBits(this.b);
         return ((i + 31) * 31) + ((int) (doubleToLongBits2 ^ (doubleToLongBits2 >>> 32)));
     }
 
     public void setLatitude(double d) {
-        this.f5610a = d;
+        this.a = d;
     }
 
     public void setLongitude(double d) {
@@ -84,12 +82,12 @@ public class LatLonPoint implements Parcelable {
     }
 
     public String toString() {
-        return this.f5610a + "," + this.b;
+        return this.a + "," + this.b;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeDouble(this.f5610a);
+        parcel.writeDouble(this.a);
         parcel.writeDouble(this.b);
     }
 }

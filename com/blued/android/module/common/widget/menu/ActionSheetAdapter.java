@@ -20,22 +20,20 @@ public class ActionSheetAdapter extends BaseMultiItemQuickAdapter<ActionSheetIte
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseMultiItemQuickAdapter, com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public ActionSheetViewHolder onCreateDefViewHolder(ViewGroup viewGroup, int i) {
-        ViewBinding a2;
+        ViewBinding a;
         if (i == -1) {
-            a2 = ItemActionsheetDefulatBinding.a(LayoutInflater.from(viewGroup.getContext()), viewGroup, false);
+            a = ItemActionsheetDefulatBinding.a(LayoutInflater.from(viewGroup.getContext()), viewGroup, false);
         } else if (i != 0) {
             return (ActionSheetViewHolder) super.onCreateDefViewHolder(viewGroup, i);
         } else {
-            a2 = ItemActionsheetOldBinding.a(LayoutInflater.from(viewGroup.getContext()), viewGroup, false);
+            a = ItemActionsheetOldBinding.a(LayoutInflater.from(viewGroup.getContext()), viewGroup, false);
         }
-        return new ActionSheetViewHolder(a2);
+        return new ActionSheetViewHolder(a);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(ActionSheetViewHolder actionSheetViewHolder, ActionSheetItem actionSheetItem) {
         actionSheetItem.a(actionSheetViewHolder);

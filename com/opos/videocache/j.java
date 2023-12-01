@@ -4,19 +4,19 @@ package com.opos.videocache;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f27444a;
+    public final String f13756a;
     public final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f27445c;
+    public final String f13757c;
 
     public j(String str, long j, String str2) {
-        this.f27444a = str;
+        this.f13756a = str;
         this.b = j;
-        this.f27445c = str2;
+        this.f13757c = str2;
     }
 
     public String toString() {
-        return "SourceInfo{url='" + this.f27444a + "', length=" + this.b + ", mime='" + this.f27445c + "'}";
+        return "SourceInfo{url='" + this.f13756a + "', length=" + this.b + ", mime='" + this.f13757c + "'}";
     }
 }

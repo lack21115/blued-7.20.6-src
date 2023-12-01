@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutSearchGlobalHeaderBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29429a;
+    private final LinearLayout f15739a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29429a;
+        return this.f15739a;
     }
 }

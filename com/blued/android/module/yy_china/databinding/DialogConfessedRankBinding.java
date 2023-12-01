@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogConfessedRankBinding.class */
 public final class DialogConfessedRankBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16311a;
+    public final TextView a;
     public final ShapeConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16312c;
+    public final ShapeTextView c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -31,9 +27,9 @@ public final class DialogConfessedRankBinding implements ViewBinding {
 
     private DialogConfessedRankBinding(ConstraintLayout constraintLayout, TextView textView, ShapeConstraintLayout shapeConstraintLayout, ShapeTextView shapeTextView, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ShapeTextView shapeTextView2, TextView textView2, TextView textView3, ViewPager viewPager) {
         this.l = constraintLayout;
-        this.f16311a = textView;
+        this.a = textView;
         this.b = shapeConstraintLayout;
-        this.f16312c = shapeTextView;
+        this.c = shapeTextView;
         this.d = imageView;
         this.e = imageView2;
         this.f = imageView3;
@@ -66,9 +62,9 @@ public final class DialogConfessedRankBinding implements ViewBinding {
                                         if (textView2 != null) {
                                             TextView textView3 = (TextView) view.findViewById(R.id.tit_zb);
                                             if (textView3 != null) {
-                                                ViewPager viewPager = (ViewPager) view.findViewById(R.id.vp);
-                                                if (viewPager != null) {
-                                                    return new DialogConfessedRankBinding((ConstraintLayout) view, textView, shapeConstraintLayout, shapeTextView, imageView, imageView2, imageView3, imageView4, shapeTextView2, textView2, textView3, viewPager);
+                                                ViewPager findViewById = view.findViewById(R.id.vp);
+                                                if (findViewById != null) {
+                                                    return new DialogConfessedRankBinding((ConstraintLayout) view, textView, shapeConstraintLayout, shapeTextView, imageView, imageView2, imageView3, imageView4, shapeTextView2, textView2, textView3, findViewById);
                                                 }
                                                 str = "vp";
                                             } else {
@@ -104,7 +100,6 @@ public final class DialogConfessedRankBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.l;

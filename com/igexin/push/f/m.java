@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 public final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23660a = 5;
+    public static final int f10052a = 5;
 
     private static Method a(Class<?> cls, String str, Class<?>... clsArr) throws Exception {
         Method method;

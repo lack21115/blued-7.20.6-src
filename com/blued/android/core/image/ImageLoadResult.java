@@ -4,12 +4,10 @@ import com.blued.android.core.net.IRequestHost;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/ImageLoadResult.class */
 public class ImageLoadResult {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f9500a;
+    private IRequestHost a;
 
     public ImageLoadResult(IRequestHost iRequestHost) {
-        this.f9500a = iRequestHost;
+        this.a = iRequestHost;
     }
 
     public void a() {
@@ -22,7 +20,7 @@ public class ImageLoadResult {
     }
 
     public boolean c() {
-        IRequestHost iRequestHost = this.f9500a;
+        IRequestHost iRequestHost = this.a;
         if (iRequestHost != null) {
             return iRequestHost.isActive();
         }

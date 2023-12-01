@@ -24,13 +24,9 @@ import mtopsdk.mtop.util.Result;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/MtopProxyBase.class */
 public class MtopProxyBase implements IMTOPDataObject {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static EnvModeEnum f43695a = EnvModeEnum.ONLINE;
+    public static EnvModeEnum a = EnvModeEnum.ONLINE;
     public static AntiAttackHandler b = new AntiAttackHandlerImpl();
-
-    /* renamed from: c  reason: collision with root package name */
-    public static CheckCodeValidateListener f43696c = new DefaultCheckCodeValidateListener();
+    public static CheckCodeValidateListener c = new DefaultCheckCodeValidateListener();
     private static volatile boolean l = false;
     public MtopRequest d;
     public MtopNetworkProp e;
@@ -54,7 +50,7 @@ public class MtopProxyBase implements IMTOPDataObject {
     private static void a() {
         EnvModeEnum j = SDKConfig.a().j();
         if (j != null) {
-            f43695a = j;
+            a = j;
         }
         MtopSDK.a();
         l = true;
@@ -94,14 +90,14 @@ public class MtopProxyBase implements IMTOPDataObject {
     public String c(String str) {
         EnvModeEnum envModeEnum;
         try {
-            envModeEnum = f43695a;
+            envModeEnum = a;
             this.e.o = envModeEnum;
         } catch (Exception e) {
             TBSdkLog.d("mtopsdk.MtopProxyBase", "[getFullBaseUrl] create MtopProxyBase fullbaseurl error ---" + e.toString());
         }
         if (StringUtils.a(this.k)) {
             StringBuilder sb = new StringBuilder(40);
-            sb.append(this.e.f43709a.a());
+            sb.append(this.e.a.a());
             if (StringUtils.a(str)) {
                 sb.append(str);
             }
@@ -112,11 +108,11 @@ public class MtopProxyBase implements IMTOPDataObject {
         }
         if (StringUtils.b(this.j)) {
             StringBuilder sb2 = new StringBuilder(40);
-            sb2.append(this.e.f43709a.a());
+            sb2.append(this.e.a.a());
             if (StringUtils.a(str)) {
                 sb2.append(str);
             }
-            sb2.append(MtopProxyConstant.f43783a[envModeEnum.a()]);
+            sb2.append(MtopProxyConstant.a[envModeEnum.a()]);
             sb2.append(this.i.a());
             return sb2.toString();
         }

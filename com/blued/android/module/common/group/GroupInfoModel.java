@@ -84,7 +84,6 @@ public class GroupInfoModel implements MultiItemEntity, Serializable {
         return obj != null && getClass() == obj.getClass() && this.group_id == ((GroupInfoModel) obj).group_id;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.itemType;
     }

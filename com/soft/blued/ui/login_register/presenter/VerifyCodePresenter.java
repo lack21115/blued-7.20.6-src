@@ -31,22 +31,21 @@ import com.soft.blued.utils.StringUtils;
 public class VerifyCodePresenter implements VerifyCodeContract.IPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    private VerifyCodeContract.IView f31576a;
+    private VerifyCodeContract.IView f17886a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f31577c;
+    private IRequestHost f17887c;
     private String d;
 
     public VerifyCodePresenter(Context context, VerifyCodeContract.IView iView, IRequestHost iRequestHost) {
-        this.f31576a = iView;
+        this.f17886a = iView;
         this.b = context;
-        this.f31577c = iRequestHost;
+        this.f17887c = iRequestHost;
     }
 
     public BluedUIHttpResponse a(String str, String str2, final String str3, final String str4, final String str5) {
-        return new BluedUIHttpResponse<BluedEntity<BluedLoginResult, AVConfigExtra>>(this.f31577c) { // from class: com.soft.blued.ui.login_register.presenter.VerifyCodePresenter.4
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        return new BluedUIHttpResponse<BluedEntity<BluedLoginResult, AVConfigExtra>>(this.f17887c) { // from class: com.soft.blued.ui.login_register.presenter.VerifyCodePresenter.4
             public boolean onUIFailure(int i, String str6, String str7) {
                 boolean z;
                 if (i != 4036501) {
@@ -77,19 +76,16 @@ public class VerifyCodePresenter implements VerifyCodeContract.IPresenter {
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                VerifyCodePresenter.this.f31576a.b();
+                VerifyCodePresenter.this.f17886a.b();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                VerifyCodePresenter.this.f31576a.a();
+                VerifyCodePresenter.this.f17886a.a();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<BluedLoginResult, AVConfigExtra> bluedEntity) {
                 if (bluedEntity != null) {
                     try {
@@ -97,13 +93,13 @@ public class VerifyCodePresenter implements VerifyCodeContract.IPresenter {
                             return;
                         }
                         if (bluedEntity.extra != null) {
-                            AVConfig.a().a(bluedEntity.extra.f20538a, false);
+                            AVConfig.a().a(((AVConfigExtra) bluedEntity.extra).f6932a, false);
                         }
-                        BluedLoginResult bluedLoginResult = bluedEntity.data.get(0);
+                        BluedLoginResult bluedLoginResult = (BluedLoginResult) bluedEntity.data.get(0);
                         BluedPreferences.J(bluedLoginResult.getDevice_safe() == 1);
                         int i = "mobile".equals(str3) ? 1 : "email".equals(str3) ? 0 : 2;
                         Logger.b(VerifyCodePresenter.class.getSimpleName(), "VerifyCodePresenter", "===success", "加密：responseJson:", bluedEntity);
-                        UserInfo.getInstance().saveUserInfo(str4, i, VerifyCodePresenter.this.d, bluedLoginResult, str5);
+                        UserInfo.getInstance().saveUserInfo(str4, i, VerifyCodePresenter.this.d, bluedLoginResult, new String[]{str5});
                         if (!StringUtils.d(str5)) {
                             UserAccountsVDao.a().c(str5);
                         }
@@ -114,29 +110,28 @@ public class VerifyCodePresenter implements VerifyCodeContract.IPresenter {
                         Bundle bundle = new Bundle();
                         bundle.putString("from_tag_page", "from_tag_login");
                         HomeArgumentHelper.a(VerifyCodePresenter.this.b, (String) null, bundle);
-                        LoginConstants.f20505c = "";
+                        LoginConstants.f6899c = "";
                         BluedApplicationLike.initAppLanguage();
                         ChatManager.getInstance().initLanguage();
                     } catch (Exception e) {
                         e.printStackTrace();
-                        AppMethods.a((CharSequence) VerifyCodePresenter.this.b.getResources().getString(2131887272));
+                        AppMethods.a(VerifyCodePresenter.this.b.getResources().getString(2131887272));
                     }
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public BluedEntity<BluedLoginResult, AVConfigExtra> parseData(String str6) {
                 VerifyCodePresenter.this.d = str6;
                 BluedEntity<BluedLoginResult, AVConfigExtra> parseData = super.parseData(str6);
                 if (parseData != null) {
                     try {
                         if (parseData.hasData()) {
-                            parseData.data.set(0, (BluedLoginResult) AppInfo.f().fromJson(AesCrypto2.a(parseData.data.get(0).getEncrypted()), (Class<Object>) BluedLoginResult.class));
+                            parseData.data.set(0, (BluedLoginResult) AppInfo.f().fromJson(AesCrypto2.a(((BluedLoginResult) parseData.data.get(0)).getEncrypted()), (Class<Object>) BluedLoginResult.class));
                             return parseData;
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
-                        AppMethods.a((CharSequence) VerifyCodePresenter.this.b.getResources().getString(2131887272));
+                        AppMethods.a(VerifyCodePresenter.this.b.getResources().getString(2131887272));
                     }
                 }
                 return parseData;
@@ -147,43 +142,39 @@ public class VerifyCodePresenter implements VerifyCodeContract.IPresenter {
     @Override // com.soft.blued.ui.login_register.Contract.VerifyCodeContract.IPresenter
     public void a(String str, int i) {
         if (i == 0) {
-            LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>(this.f31577c) { // from class: com.soft.blued.ui.login_register.presenter.VerifyCodePresenter.1
+            LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>(this.f17887c) { // from class: com.soft.blued.ui.login_register.presenter.VerifyCodePresenter.1
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 }
-            }, str, "reset", "", "", this.f31577c);
+            }, str, "reset", "", "", this.f17887c);
         } else if (i != 1) {
         } else {
-            LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>(this.f31577c) { // from class: com.soft.blued.ui.login_register.presenter.VerifyCodePresenter.2
+            LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>(this.f17887c) { // from class: com.soft.blued.ui.login_register.presenter.VerifyCodePresenter.2
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 }
-            }, "reset", "", "", this.f31577c);
+            }, "reset", "", "", this.f17887c);
         }
     }
 
     @Override // com.soft.blued.ui.login_register.Contract.VerifyCodeContract.IPresenter
     public void a(String str, String str2, String str3, String str4, String str5, int i, String str6) {
         if (i == 0) {
-            LoginRegisterHttpUtils.a(a(str, str2, str3, str4, str6), str, "verify", str2, "", this.f31577c);
+            LoginRegisterHttpUtils.a(a(str, str2, str3, str4, str6), str, "verify", str2, "", this.f17887c);
         } else if (i != 1) {
         } else {
-            LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>(this.f31577c) { // from class: com.soft.blued.ui.login_register.presenter.VerifyCodePresenter.3
+            LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>(this.f17887c) { // from class: com.soft.blued.ui.login_register.presenter.VerifyCodePresenter.3
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
-                    VerifyCodePresenter.this.f31576a.c();
+                    VerifyCodePresenter.this.f17886a.c();
                 }
-            }, "verify", str2, "", this.f31577c);
+            }, "verify", str2, "", this.f17887c);
         }
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
     }
 }

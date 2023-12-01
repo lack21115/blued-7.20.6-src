@@ -12,7 +12,7 @@ import java.util.Collections;
 final class d extends i {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.exoplayer.core.i.f f25165a;
+    private com.opos.exoplayer.core.i.f f11477a;
     private a b;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/e/d$a.class */
@@ -20,7 +20,7 @@ final class d extends i {
         private long[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long[] f25167c;
+        private long[] f11479c;
         private long d = -1;
         private long e = -1;
 
@@ -49,7 +49,7 @@ final class d extends i {
             mVar.d(1);
             int k = mVar.k() / 18;
             this.b = new long[k];
-            this.f25167c = new long[k];
+            this.f11479c = new long[k];
             int i = 0;
             while (true) {
                 int i2 = i;
@@ -57,7 +57,7 @@ final class d extends i {
                     return;
                 }
                 this.b[i2] = mVar.q();
-                this.f25167c[i2] = mVar.q();
+                this.f11479c[i2] = mVar.q();
                 mVar.d(2);
                 i = i2 + 1;
             }
@@ -70,19 +70,19 @@ final class d extends i {
 
         @Override // com.opos.exoplayer.core.c.l
         public long b() {
-            return d.this.f25165a.b();
+            return d.this.f11477a.b();
         }
 
         @Override // com.opos.exoplayer.core.c.l
         public l.a b(long j) {
             int a2 = u.a(this.b, d.this.b(j), true, true);
             long a3 = d.this.a(this.b[a2]);
-            com.opos.exoplayer.core.c.m mVar = new com.opos.exoplayer.core.c.m(a3, this.d + this.f25167c[a2]);
+            com.opos.exoplayer.core.c.m mVar = new com.opos.exoplayer.core.c.m(a3, this.d + this.f11479c[a2]);
             if (a3 < j) {
                 long[] jArr = this.b;
                 if (a2 != jArr.length - 1) {
                     int i = a2 + 1;
-                    return new l.a(mVar, new com.opos.exoplayer.core.c.m(d.this.a(jArr[i]), this.d + this.f25167c[i]));
+                    return new l.a(mVar, new com.opos.exoplayer.core.c.m(d.this.a(jArr[i]), this.d + this.f11479c[i]));
                 }
             }
             return new l.a(mVar);
@@ -113,7 +113,7 @@ final class d extends i {
     private int c(m mVar) {
         int i;
         int i2;
-        int i3 = (mVar.f25496a[2] & 255) >> 4;
+        int i3 = (mVar.f11808a[2] & 255) >> 4;
         switch (i3) {
             case 1:
                 return 192;
@@ -153,20 +153,20 @@ final class d extends i {
     public void a(boolean z) {
         super.a(z);
         if (z) {
-            this.f25165a = null;
+            this.f11477a = null;
             this.b = null;
         }
     }
 
     @Override // com.opos.exoplayer.core.c.e.i
     protected boolean a(m mVar, long j, i.a aVar) {
-        byte[] bArr = mVar.f25496a;
+        byte[] bArr = mVar.f11808a;
         boolean z = false;
-        if (this.f25165a == null) {
-            this.f25165a = new com.opos.exoplayer.core.i.f(bArr, 17);
+        if (this.f11477a == null) {
+            this.f11477a = new com.opos.exoplayer.core.i.f(bArr, 17);
             byte[] copyOfRange = Arrays.copyOfRange(bArr, 9, mVar.c());
             copyOfRange[4] = (byte) (-128);
-            aVar.f25176a = Format.a(null, "audio/flac", null, -1, this.f25165a.a(), this.f25165a.f, this.f25165a.e, Collections.singletonList(copyOfRange), null, 0, null);
+            aVar.f11488a = Format.a(null, "audio/flac", null, -1, this.f11477a.a(), this.f11477a.f, this.f11477a.e, Collections.singletonList(copyOfRange), null, 0, null);
         } else if ((bArr[0] & Byte.MAX_VALUE) == 3) {
             a aVar2 = new a();
             this.b = aVar2;
@@ -186,7 +186,7 @@ final class d extends i {
 
     @Override // com.opos.exoplayer.core.c.e.i
     protected long b(m mVar) {
-        if (a(mVar.f25496a)) {
+        if (a(mVar.f11808a)) {
             return c(mVar);
         }
         return -1L;

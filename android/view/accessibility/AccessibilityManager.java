@@ -248,7 +248,7 @@ public final class AccessibilityManager {
     }
 
     private void tryConnectToServiceLocked() {
-        IBinder service = ServiceManager.getService(Context.ACCESSIBILITY_SERVICE);
+        IBinder service = ServiceManager.getService("accessibility");
         if (service == null) {
             return;
         }

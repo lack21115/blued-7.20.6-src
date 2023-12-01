@@ -7,7 +7,6 @@ import android.os.CancellationSignal;
 import android.os.ParcelFileDescriptor;
 import android.print.PrintDocumentAdapter;
 import android.util.Log;
-import com.android.internal.R;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -59,7 +58,7 @@ public class PrintFileDocumentAdapter extends PrintDocumentAdapter {
                             e = e2;
                             Log.e(PrintFileDocumentAdapter.LOG_TAG, "Error writing data!", e);
                             fileInputStream2 = fileInputStream;
-                            this.mResultCallback.onWriteFailed(PrintFileDocumentAdapter.this.mContext.getString(R.string.write_fail_reason_cannot_write));
+                            this.mResultCallback.onWriteFailed(PrintFileDocumentAdapter.this.mContext.getString(17041213));
                             IoUtils.closeQuietly(fileInputStream);
                             IoUtils.closeQuietly(fileOutputStream);
                             return null;
@@ -86,7 +85,7 @@ public class PrintFileDocumentAdapter extends PrintDocumentAdapter {
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.os.AsyncTask
         public void onCancelled(Void r5) {
-            this.mResultCallback.onWriteFailed(PrintFileDocumentAdapter.this.mContext.getString(R.string.write_fail_reason_cancelled));
+            this.mResultCallback.onWriteFailed(PrintFileDocumentAdapter.this.mContext.getString(17041212));
         }
 
         /* JADX INFO: Access modifiers changed from: protected */

@@ -8,7 +8,7 @@ import android.widget.ImageView;
 public abstract class ThumbnailImageViewTarget<T> extends ImageViewTarget<T> {
     @Override // com.bumptech.glide.request.target.ImageViewTarget
     protected void a(T t) {
-        ViewGroup.LayoutParams layoutParams = ((ImageView) this.f21072a).getLayoutParams();
+        ViewGroup.LayoutParams layoutParams = ((ImageView) this.f7466a).getLayoutParams();
         Drawable b = b((ThumbnailImageViewTarget<T>) t);
         FixedSizeDrawable fixedSizeDrawable = b;
         if (layoutParams != null) {
@@ -20,7 +20,7 @@ public abstract class ThumbnailImageViewTarget<T> extends ImageViewTarget<T> {
                 }
             }
         }
-        ((ImageView) this.f21072a).setImageDrawable(fixedSizeDrawable);
+        ((ImageView) this.f7466a).setImageDrawable(fixedSizeDrawable);
     }
 
     protected abstract Drawable b(T t);

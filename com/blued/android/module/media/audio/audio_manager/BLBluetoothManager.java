@@ -1,6 +1,5 @@
 package com.blued.android.module.media.audio.audio_manager;
 
-import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothHeadset;
@@ -19,13 +18,9 @@ import java.util.Set;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/audio/audio_manager/BLBluetoothManager.class */
 public class BLBluetoothManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15513a;
+    private final Context a;
     private final BLAudioManager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AudioManager f15514c;
+    private final AudioManager c;
     private final Handler d;
     private int e;
     private State f;
@@ -52,8 +47,8 @@ public class BLBluetoothManager {
                 return;
             }
             String action = intent.getAction();
-            if (action.equals(BluetoothHeadset.ACTION_CONNECTION_STATE_CHANGED)) {
-                int intExtra = intent.getIntExtra(BluetoothProfile.EXTRA_STATE, 0);
+            if (action.equals("android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED")) {
+                int intExtra = intent.getIntExtra("android.bluetooth.profile.extra.STATE", 0);
                 Log.d("BLBluetoothManager", "BluetoothHeadsetBroadcastReceiver.onReceive: a=ACTION_CONNECTION_STATE_CHANGED, s=" + BLBluetoothManager.this.a(intExtra) + ", sb=" + isInitialStickyBroadcast() + ", BT state: " + BLBluetoothManager.this.f);
                 if (intExtra == 2) {
                     BLBluetoothManager.this.e = 0;
@@ -62,8 +57,8 @@ public class BLBluetoothManager {
                     BLBluetoothManager.this.d();
                     BLBluetoothManager.this.f();
                 }
-            } else if (action.equals(BluetoothHeadset.ACTION_AUDIO_STATE_CHANGED)) {
-                int intExtra2 = intent.getIntExtra(BluetoothProfile.EXTRA_STATE, 10);
+            } else if (action.equals("android.bluetooth.headset.profile.action.AUDIO_STATE_CHANGED")) {
+                int intExtra2 = intent.getIntExtra("android.bluetooth.profile.extra.STATE", 10);
                 Log.d("BLBluetoothManager", "BluetoothHeadsetBroadcastReceiver.onReceive: a=ACTION_AUDIO_STATE_CHANGED, s=" + BLBluetoothManager.this.a(intExtra2) + ", sb=" + isInitialStickyBroadcast() + ", BT state: " + BLBluetoothManager.this.f);
                 if (intExtra2 == 12) {
                     BLBluetoothManager.this.g();
@@ -135,9 +130,9 @@ public class BLBluetoothManager {
     protected BLBluetoothManager(Context context, BLAudioManager bLAudioManager) {
         Log.d("BLBluetoothManager", "ctor");
         ThreadUtils.a();
-        this.f15513a = context;
+        this.a = context;
         this.b = bLAudioManager;
-        this.f15514c = a(context);
+        this.c = a(context);
         this.f = State.UNINITIALIZED;
         this.g = new BluetoothServiceListener();
         this.k = new BluetoothHeadsetBroadcastReceiver();
@@ -208,7 +203,7 @@ public class BLBluetoothManager {
     }
 
     private boolean i() {
-        return this.f15514c.isBluetoothScoOn();
+        return this.c.isBluetoothScoOn();
     }
 
     protected AudioManager a(Context context) {
@@ -237,13 +232,13 @@ public class BLBluetoothManager {
     }
 
     protected boolean a(Context context, String str) {
-        return this.f15513a.checkPermission(str, Process.myPid(), Process.myUid()) == 0;
+        return this.a.checkPermission(str, Process.myPid(), Process.myUid()) == 0;
     }
 
     public void b() {
         ThreadUtils.a();
         Log.d("BLBluetoothManager", "start");
-        if (!a(this.f15513a, Manifest.permission.BLUETOOTH)) {
+        if (!a(this.a, "android.permission.BLUETOOTH")) {
             Log.w("BLBluetoothManager", "Process (pid=" + Process.myPid() + ") lacks BLUETOOTH permission");
         } else if (this.f != State.UNINITIALIZED) {
             Log.w("BLBluetoothManager", "Invalid BT state");
@@ -255,17 +250,17 @@ public class BLBluetoothManager {
             this.h = defaultAdapter;
             if (defaultAdapter == null) {
                 Log.w("BLBluetoothManager", "Device does not support Bluetooth");
-            } else if (!this.f15514c.isBluetoothScoAvailableOffCall()) {
+            } else if (!this.c.isBluetoothScoAvailableOffCall()) {
                 Log.e("BLBluetoothManager", "Bluetooth SCO audio is not available off call");
             } else {
                 a(this.h);
-                if (!a(this.f15513a, this.g, 1)) {
+                if (!a(this.a, this.g, 1)) {
                     Log.e("BLBluetoothManager", "BluetoothAdapter.getProfileProxy(HEADSET) failed");
                     return;
                 }
                 IntentFilter intentFilter = new IntentFilter();
-                intentFilter.addAction(BluetoothHeadset.ACTION_CONNECTION_STATE_CHANGED);
-                intentFilter.addAction(BluetoothHeadset.ACTION_AUDIO_STATE_CHANGED);
+                intentFilter.addAction("android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED");
+                intentFilter.addAction("android.bluetooth.headset.profile.action.AUDIO_STATE_CHANGED");
                 registerReceiver(this.k, intentFilter);
                 Log.d("BLBluetoothManager", "HEADSET profile state: " + a(this.h.getProfileConnectionState(1)));
                 Log.d("BLBluetoothManager", "Bluetooth proxy for headset profile has started");
@@ -303,8 +298,8 @@ public class BLBluetoothManager {
         Log.d("BLBluetoothManager", "stopScoAudio: BT state=" + this.f + ", SCO is on: " + i());
         if (this.f == State.SCO_CONNECTING || this.f == State.SCO_CONNECTED) {
             g();
-            this.f15514c.stopBluetoothSco();
-            this.f15514c.setBluetoothScoOn(false);
+            this.c.stopBluetoothSco();
+            this.c.setBluetoothScoOn(false);
             this.f = State.SCO_DISCONNECTING;
             Log.d("BLBluetoothManager", "stopScoAudio done: BT state=" + this.f + ", SCO is on: " + i());
         }
@@ -329,10 +324,10 @@ public class BLBluetoothManager {
     }
 
     protected void registerReceiver(BroadcastReceiver broadcastReceiver, IntentFilter intentFilter) {
-        this.f15513a.registerReceiver(broadcastReceiver, intentFilter);
+        this.a.registerReceiver(broadcastReceiver, intentFilter);
     }
 
     protected void unregisterReceiver(BroadcastReceiver broadcastReceiver) {
-        this.f15513a.unregisterReceiver(broadcastReceiver);
+        this.a.unregisterReceiver(broadcastReceiver);
     }
 }

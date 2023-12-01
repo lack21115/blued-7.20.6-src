@@ -8,14 +8,14 @@ import java.util.Iterator;
 public class NetWorkObserverManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final NetWorkObserverManager f34465a = new NetWorkObserverManager();
+    private static final NetWorkObserverManager f20774a = new NetWorkObserverManager();
     private ArrayList<SysNetworkListener> b = new ArrayList<>();
 
     private NetWorkObserverManager() {
     }
 
     public static NetWorkObserverManager a() {
-        return f34465a;
+        return f20774a;
     }
 
     public void a(boolean z) {

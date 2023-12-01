@@ -29,19 +29,15 @@ import com.blued.das.live.LiveProtos;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/LiveGiftBaseAdapter.class */
 public class LiveGiftBaseAdapter extends BaseGiftAdapter<LiveGiftModel> {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected Fragment f13823a;
+    protected Fragment a;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/LiveGiftBaseAdapter$LiveGiftOperateAdapter.class */
     public static class LiveGiftOperateAdapter extends CommonRecycleAdapter<LiveGiftOperateIconModel> {
-
-        /* renamed from: a  reason: collision with root package name */
-        public boolean f13826a;
+        public boolean a;
 
         public LiveGiftOperateAdapter(Context context, IRequestHost iRequestHost) {
             super(context, iRequestHost);
-            this.f13826a = false;
+            this.a = false;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -85,7 +81,7 @@ public class LiveGiftBaseAdapter extends BaseGiftAdapter<LiveGiftModel> {
             }
         }
 
-        @Override // com.blued.android.module.common.adapter.CommonRecycleAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
+        @Override // com.blued.android.module.common.adapter.CommonRecycleAdapter
         public int getItemViewType(int i) {
             return ((LiveGiftOperateIconModel) this.dataList.get(i)).type;
         }
@@ -98,7 +94,7 @@ public class LiveGiftBaseAdapter extends BaseGiftAdapter<LiveGiftModel> {
 
     public LiveGiftBaseAdapter(Context context, Fragment fragment, int i) {
         super(context, i);
-        this.f13823a = fragment;
+        this.a = fragment;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -134,7 +130,7 @@ public class LiveGiftBaseAdapter extends BaseGiftAdapter<LiveGiftModel> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ boolean a(LiveGiftModel liveGiftModel, View view) {
-        LiveRouteUtil.a(this.f13823a, liveGiftModel);
+        LiveRouteUtil.a(this.a, liveGiftModel);
         EventTrackLive.c(LiveProtos.Event.LIVE_GOODS_VALITIDY_POP_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), liveGiftModel.goods_id, 0);
         return true;
     }
@@ -202,15 +198,15 @@ public class LiveGiftBaseAdapter extends BaseGiftAdapter<LiveGiftModel> {
             commonAdapterHolder.a(R.id.item_live_gift_price, CommonStringUtils.d(String.valueOf(liveGiftModel.beans)));
             commonAdapterHolder.b(R.id.item_live_gift_price_icon, 0);
         }
-        RecyclerView recyclerView = (RecyclerView) commonAdapterHolder.a(R.id.item_live_gift_tag_rv);
-        if (recyclerView.getLayoutManager() == null) {
-            recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext(), 0, false));
+        RecyclerView a = commonAdapterHolder.a(R.id.item_live_gift_tag_rv);
+        if (a.getLayoutManager() == null) {
+            a.setLayoutManager(new LinearLayoutManager(a.getContext(), 0, false));
         }
-        LiveGiftOperateAdapter liveGiftOperateAdapter = (LiveGiftOperateAdapter) recyclerView.getAdapter();
+        LiveGiftOperateAdapter liveGiftOperateAdapter = (LiveGiftOperateAdapter) a.getAdapter();
         LiveGiftOperateAdapter liveGiftOperateAdapter2 = liveGiftOperateAdapter;
         if (liveGiftOperateAdapter == null) {
             liveGiftOperateAdapter2 = new LiveGiftOperateAdapter(AppInfo.d(), this.requestHost);
-            recyclerView.setAdapter(liveGiftOperateAdapter2);
+            a.setAdapter(liveGiftOperateAdapter2);
         }
         liveGiftOperateAdapter2.setDataAndNotify(liveGiftModel.realOperateIcons);
         ImageView imageView = (ImageView) commonAdapterHolder.a(R.id.item_live_gift_state);
@@ -253,7 +249,7 @@ public class LiveGiftBaseAdapter extends BaseGiftAdapter<LiveGiftModel> {
         }
     }
 
-    @Override // com.blued.android.module.common.adapter.CommonRecycleAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
+    @Override // com.blued.android.module.common.adapter.CommonRecycleAdapter
     public int getItemViewType(int i) {
         return ((LiveGiftModel) this.dataList.get(i)).ops;
     }

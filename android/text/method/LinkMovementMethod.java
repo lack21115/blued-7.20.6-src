@@ -144,16 +144,18 @@ public class LinkMovementMethod extends ScrollingMovementMethod {
         return true;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod
-    protected boolean down(TextView textView, Spannable spannable) {
+    public boolean down(TextView textView, Spannable spannable) {
         if (action(3, textView, spannable)) {
             return true;
         }
         return super.down(textView, spannable);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.text.method.BaseMovementMethod
-    protected boolean handleMovementKey(TextView textView, Spannable spannable, int i, int i2, KeyEvent keyEvent) {
+    public boolean handleMovementKey(TextView textView, Spannable spannable, int i, int i2, KeyEvent keyEvent) {
         switch (i) {
             case 23:
             case 66:
@@ -171,8 +173,9 @@ public class LinkMovementMethod extends ScrollingMovementMethod {
         spannable.removeSpan(FROM_BELOW);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod
-    protected boolean left(TextView textView, Spannable spannable) {
+    public boolean left(TextView textView, Spannable spannable) {
         if (action(2, textView, spannable)) {
             return true;
         }
@@ -218,16 +221,18 @@ public class LinkMovementMethod extends ScrollingMovementMethod {
         return super.onTouchEvent(textView, spannable, motionEvent);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod
-    protected boolean right(TextView textView, Spannable spannable) {
+    public boolean right(TextView textView, Spannable spannable) {
         if (action(3, textView, spannable)) {
             return true;
         }
         return super.right(textView, spannable);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod
-    protected boolean up(TextView textView, Spannable spannable) {
+    public boolean up(TextView textView, Spannable spannable) {
         if (action(2, textView, spannable)) {
             return true;
         }

@@ -9,18 +9,18 @@ public class a {
     private static volatile ScheduledThreadPoolExecutor b;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f21807a = a.class.getName();
+    private static final String f8200a = a.class.getName();
 
     /* renamed from: c  reason: collision with root package name */
-    private static ThreadFactory f21808c = new ThreadFactory() { // from class: com.efs.sdk.launch.a.1
+    private static ThreadFactory f8201c = new ThreadFactory() { // from class: com.efs.sdk.launch.a.1
 
         /* renamed from: a  reason: collision with root package name */
-        private AtomicInteger f21809a = new AtomicInteger(0);
+        private AtomicInteger f8202a = new AtomicInteger(0);
 
         @Override // java.util.concurrent.ThreadFactory
         public final Thread newThread(Runnable runnable) {
             Thread thread = new Thread(runnable);
-            thread.setName("LaunchThreadPoolExecutor" + this.f21809a.addAndGet(1));
+            thread.setName("LaunchThreadPoolExecutor" + this.f8202a.addAndGet(1));
             return thread;
         }
     };
@@ -30,7 +30,7 @@ public class a {
             synchronized (a.class) {
                 try {
                     if (b == null) {
-                        b = new ScheduledThreadPoolExecutor(4, f21808c);
+                        b = new ScheduledThreadPoolExecutor(4, f8201c);
                     }
                 } catch (Throwable th) {
                     throw th;

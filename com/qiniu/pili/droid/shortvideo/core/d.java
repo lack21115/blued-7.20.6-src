@@ -22,11 +22,11 @@ import org.json.JSONObject;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private SWVideoEncoder f27540a;
+    private SWVideoEncoder f13852a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.qiniu.pili.droid.shortvideo.encode.c f27541c;
+    private com.qiniu.pili.droid.shortvideo.encode.c f13853c;
     private long d;
     private com.qiniu.pili.droid.shortvideo.muxer.b e;
     private MediaFormat f;
@@ -41,8 +41,8 @@ public final class d {
     private boolean p;
     private Context q;
     private AtomicBoolean o = new AtomicBoolean(false);
-    private a.InterfaceC0745a r = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.core.d.1
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a r = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.core.d.1
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.h;
             eVar.b("ExternalMediaRecorderCore", "got video format:" + mediaFormat.toString());
@@ -51,11 +51,11 @@ public final class d {
             d.this.h();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             if (!d.this.h || d.this.e.b() < 0 || d.this.o.get()) {
                 return;
@@ -68,7 +68,7 @@ public final class d {
             d.this.e.a(byteBuffer, bufferInfo);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.h;
             eVar.c("ExternalMediaRecorderCore", "video encoder started: " + z);
@@ -81,7 +81,7 @@ public final class d {
             QosManager.a().a(6);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.h.c("ExternalMediaRecorderCore", "video encoder stopped.");
             d.this.k = false;
@@ -89,8 +89,8 @@ public final class d {
             d.this.i();
         }
     };
-    private a.InterfaceC0745a s = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.core.d.2
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a s = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.core.d.2
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.n;
             eVar.c("ExternalMediaRecorderCore", "got audio format:" + mediaFormat.toString());
@@ -99,11 +99,11 @@ public final class d {
             d.this.h();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             if (!d.this.h || d.this.e.c() < 0 || d.this.o.get()) {
                 return;
@@ -116,7 +116,7 @@ public final class d {
             d.this.e.b(byteBuffer, bufferInfo);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.h;
             eVar.c("ExternalMediaRecorderCore", "audio encoder started: " + z);
@@ -129,7 +129,7 @@ public final class d {
             QosManager.a().a(7);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.h.c("ExternalMediaRecorderCore", "audio encoder stopped.");
             d.this.l = false;
@@ -184,25 +184,25 @@ public final class d {
     }
 
     private void f() {
-        if (this.f27541c != null) {
+        if (this.f13853c != null) {
             com.qiniu.pili.droid.shortvideo.f.e.h.c("ExternalMediaRecorderCore", "start audio encoder +");
-            this.f27541c.a();
+            this.f13853c.a();
         }
-        if (this.f27540a != null) {
+        if (this.f13852a != null) {
             com.qiniu.pili.droid.shortvideo.f.e.h.c("ExternalMediaRecorderCore", "start video encoder +");
-            this.f27540a.a();
+            this.f13852a.a();
         }
         com.qiniu.pili.droid.shortvideo.f.e.h.c("ExternalMediaRecorderCore", "start encoder -");
     }
 
     private void g() {
-        if (this.f27541c != null) {
+        if (this.f13853c != null) {
             com.qiniu.pili.droid.shortvideo.f.e.h.c("ExternalMediaRecorderCore", "stop audio encoder +");
-            this.f27541c.c();
+            this.f13853c.c();
         }
-        if (this.f27540a != null) {
+        if (this.f13852a != null) {
             com.qiniu.pili.droid.shortvideo.f.e.h.c("ExternalMediaRecorderCore", "stop video encoder +");
-            this.f27540a.c();
+            this.f13852a.c();
         }
         com.qiniu.pili.droid.shortvideo.f.e.h.c("ExternalMediaRecorderCore", "stop encoder -");
     }
@@ -280,13 +280,13 @@ public final class d {
             ByteBuffer wrap = ByteBuffer.wrap(bArr);
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.h;
             eVar.b("ExternalMediaRecorderCore", "input video frame size:" + i4 + " ts:" + j);
-            this.f27540a.a(wrap, i4, j);
+            this.f13852a.a(wrap, i4, j);
         }
     }
 
     public void a(byte[] bArr, int i, long j) {
         if (e() && this.l) {
-            this.f27541c.a(ByteBuffer.wrap(bArr), i, j / 1000);
+            this.f13853c.a(ByteBuffer.wrap(bArr), i, j / 1000);
         }
     }
 
@@ -301,14 +301,14 @@ public final class d {
         } else {
             this.i = pLRecordSetting;
             SWVideoEncoder sWVideoEncoder = new SWVideoEncoder(pLVideoEncodeSetting);
-            this.f27540a = sWVideoEncoder;
+            this.f13852a = sWVideoEncoder;
             if (sWVideoEncoder == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.d.e("ExternalMediaRecorderCore", "Building video encoder failed!!!!");
                 return false;
             }
             sWVideoEncoder.a(this.r);
             com.qiniu.pili.droid.shortvideo.encode.c cVar = new com.qiniu.pili.droid.shortvideo.encode.c(pLAudioEncodeSetting);
-            this.f27541c = cVar;
+            this.f13853c = cVar;
             if (cVar == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.d.e("ExternalMediaRecorderCore", "Building audio encoder failed!!!!");
                 return false;

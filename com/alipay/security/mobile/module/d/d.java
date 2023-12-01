@@ -9,13 +9,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/security/mobile/module/d/d.class */
 public final class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static String f4712a = "";
+    private static String a = "";
     private static String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static String f4713c = "";
+    private static String c = "";
 
     public static void a(String str) {
         synchronized (d.class) {
@@ -32,9 +28,9 @@ public final class d {
     public static void a(String str, String str2, String str3) {
         synchronized (d.class) {
             try {
-                f4712a = str;
+                a = str;
                 b = str2;
-                f4713c = str3;
+                c = str3;
             } catch (Throwable th) {
                 throw th;
             }
@@ -64,19 +60,19 @@ public final class d {
     private static void a(List<String> list) {
         synchronized (d.class) {
             try {
-                if (!com.alipay.security.mobile.module.a.a.a(b) && !com.alipay.security.mobile.module.a.a.a(f4713c)) {
+                if (!com.alipay.security.mobile.module.a.a.a(b) && !com.alipay.security.mobile.module.a.a.a(c)) {
                     StringBuffer stringBuffer = new StringBuffer();
-                    stringBuffer.append(f4713c);
+                    stringBuffer.append(c);
                     for (String str : list) {
                         stringBuffer.append(", " + str);
                     }
                     stringBuffer.append("\n");
                     try {
-                        File file = new File(f4712a);
+                        File file = new File(a);
                         if (!file.exists()) {
                             file.mkdirs();
                         }
-                        File file2 = new File(f4712a, b);
+                        File file2 = new File(a, b);
                         if (!file2.exists()) {
                             file2.createNewFile();
                         }

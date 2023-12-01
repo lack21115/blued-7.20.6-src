@@ -17,35 +17,31 @@ public class LiveAlterDialog {
     /* renamed from: com.blued.android.module.live.base.utils.LiveAlterDialog$5  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/utils/LiveAlterDialog$5.class */
     class AnonymousClass5 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LifecycleDialog f11455a;
+        final /* synthetic */ LifecycleDialog a;
         final /* synthetic */ View.OnClickListener b;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            this.f11455a.cancel();
+            this.a.cancel();
             View.OnClickListener onClickListener = this.b;
             if (onClickListener != null) {
                 onClickListener.onClick(view);
             }
-            this.f11455a.cancel();
+            this.a.cancel();
         }
     }
 
     /* renamed from: com.blued.android.module.live.base.utils.LiveAlterDialog$6  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/utils/LiveAlterDialog$6.class */
     class AnonymousClass6 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LifecycleDialog f11456a;
+        final /* synthetic */ LifecycleDialog a;
         final /* synthetic */ View.OnClickListener b;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            this.f11456a.cancel();
+            this.a.cancel();
             View.OnClickListener onClickListener = this.b;
             if (onClickListener != null) {
                 onClickListener.onClick(view);

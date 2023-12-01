@@ -14,7 +14,6 @@ import com.blued.android.module.common.utils.CommonPreferences;
 import com.blued.android.module.device_identity.library.BluedDeviceIdentity;
 import com.blued.android.statistics.BluedStatistics;
 import com.blued.track.bytedance.ByteDanceLogHelper;
-import com.j256.ormlite.dao.Dao;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/user/model/UserInfo.class */
 public class UserInfo {
@@ -69,6 +68,7 @@ public class UserInfo {
     /* JADX WARN: Code restructure failed: missing block: B:24:0x00ab, code lost:
         if (r0.contains("�") != false) goto L27;
      */
+    /* JADX WARN: Type inference failed for: r2v0, types: [com.blued.android.module.common.user.model.UserInfo$1] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -274,7 +274,7 @@ public class UserInfo {
                         if (strArr.length > 0 && !TextUtils.isEmpty(strArr[0])) {
                             UserAccountsModel d = UserAccountsVDao.a().d();
                             d.setAliasUserId(bluedLoginResult.uid);
-                            UserAccountsVDao.a().b().update((Dao<UserAccountsModel, Integer>) d);
+                            UserAccountsVDao.a().b().update(d);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();

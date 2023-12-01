@@ -58,7 +58,7 @@ public final class DynamicMessage extends AbstractMessage {
 
         private void ensureIsMutable() {
             if (this.fields.isImmutable()) {
-                this.fields = this.fields.m6682clone();
+                this.fields = this.fields.m3675clone();
             }
         }
 
@@ -161,7 +161,7 @@ public final class DynamicMessage extends AbstractMessage {
 
         @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
+        public Builder mo2030clone() {
             Builder builder = new Builder(this.type);
             builder.fields.mergeFrom(this.fields);
             builder.mergeUnknownFields(this.unknownFields);

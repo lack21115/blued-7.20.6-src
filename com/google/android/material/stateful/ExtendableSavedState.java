@@ -5,7 +5,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.collection.SimpleArrayMap;
 import androidx.customview.view.AbsSavedState;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/stateful/ExtendableSavedState.class */
 public class ExtendableSavedState extends AbsSavedState {
@@ -53,7 +52,7 @@ public class ExtendableSavedState extends AbsSavedState {
     }
 
     public String toString() {
-        return "ExtendableSavedState{" + Integer.toHexString(System.identityHashCode(this)) + " states=" + this.extendableStates + i.d;
+        return "ExtendableSavedState{" + Integer.toHexString(System.identityHashCode(this)) + " states=" + this.extendableStates + "}";
     }
 
     @Override // androidx.customview.view.AbsSavedState, android.os.Parcelable

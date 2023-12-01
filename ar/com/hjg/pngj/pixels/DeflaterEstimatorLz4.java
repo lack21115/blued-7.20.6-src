@@ -6,7 +6,7 @@ import java.nio.ByteOrder;
 public final class DeflaterEstimatorLz4 {
 
     /* renamed from: a  reason: collision with root package name */
-    static final ByteOrder f3676a = ByteOrder.nativeOrder();
+    static final ByteOrder f3628a = ByteOrder.nativeOrder();
     static final int b = Math.max(6, 2);
 
     static int a(int i) {
@@ -141,7 +141,7 @@ public final class DeflaterEstimatorLz4 {
     }
 
     static int c(byte[] bArr, int i) {
-        return f3676a == ByteOrder.BIG_ENDIAN ? a(bArr, i) : b(bArr, i);
+        return f3628a == ByteOrder.BIG_ENDIAN ? a(bArr, i) : b(bArr, i);
     }
 
     static boolean c(byte[] bArr, int i, int i2) {

@@ -4,11 +4,11 @@ package androidx.collection;
 class ContainerHelpers {
 
     /* renamed from: a  reason: collision with root package name */
-    static final int[] f1947a = new int[0];
+    static final int[] f1899a = new int[0];
     static final long[] b = new long[0];
 
     /* renamed from: c  reason: collision with root package name */
-    static final Object[] f1948c = new Object[0];
+    static final Object[] f1900c = new Object[0];
 
     private ContainerHelpers() {
     }

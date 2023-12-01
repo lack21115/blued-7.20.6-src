@@ -30,9 +30,9 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.channels.ReceiveChannel
     public Object a(Continuation<? super ChannelResult<? extends E>> continuation) {
-        Object a2 = this.b.a(continuation);
+        Object a = this.b.a(continuation);
         IntrinsicsKt.a();
-        return a2;
+        return a;
     }
 
     @Override // kotlinx.coroutines.JobSupport, kotlinx.coroutines.Job
@@ -70,9 +70,9 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.JobSupport
     public void b(Throwable th) {
-        CancellationException a2 = JobSupport.a(this, th, null, 1, null);
-        this.b.a(a2);
-        d((Throwable) a2);
+        CancellationException a = JobSupport.a(this, th, null, 1, null);
+        this.b.a(a);
+        d((Throwable) a);
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel

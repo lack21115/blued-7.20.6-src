@@ -5,9 +5,7 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/CollectionSystemProperties.class */
 public final class CollectionSystemProperties {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final CollectionSystemProperties f42371a = new CollectionSystemProperties();
+    public static final CollectionSystemProperties a = new CollectionSystemProperties();
     public static final boolean b;
 
     static {

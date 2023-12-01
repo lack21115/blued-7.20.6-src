@@ -16,9 +16,7 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/content/PolystarContent.class */
 public class PolystarContent implements KeyPathElementContent, PathContent, BaseKeyframeAnimation.AnimationListener {
     private final String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final LottieDrawable f4285c;
+    private final LottieDrawable c;
     private final PolystarShape.Type d;
     private final boolean e;
     private final BaseKeyframeAnimation<?, Float> f;
@@ -29,35 +27,31 @@ public class PolystarContent implements KeyPathElementContent, PathContent, Base
     private final BaseKeyframeAnimation<?, Float> k;
     private final BaseKeyframeAnimation<?, Float> l;
     private boolean n;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Path f4284a = new Path();
+    private final Path a = new Path();
     private CompoundTrimPathContent m = new CompoundTrimPathContent();
 
     /* renamed from: com.airbnb.lottie.animation.content.PolystarContent$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/content/PolystarContent$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f4286a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[PolystarShape.Type.values().length];
-            f4286a = iArr;
+            a = iArr;
             try {
                 iArr[PolystarShape.Type.STAR.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f4286a[PolystarShape.Type.POLYGON.ordinal()] = 2;
+                a[PolystarShape.Type.POLYGON.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
     }
 
     public PolystarContent(LottieDrawable lottieDrawable, BaseLayer baseLayer, PolystarShape polystarShape) {
-        this.f4285c = lottieDrawable;
+        this.c = lottieDrawable;
         this.b = polystarShape.a();
         this.d = polystarShape.getType();
         this.e = polystarShape.i();
@@ -95,7 +89,7 @@ public class PolystarContent implements KeyPathElementContent, PathContent, Base
 
     private void c() {
         this.n = false;
-        this.f4285c.invalidateSelf();
+        this.c.invalidateSelf();
     }
 
     private void d() {
@@ -126,13 +120,13 @@ public class PolystarContent implements KeyPathElementContent, PathContent, Base
             double d4 = f;
             cos = (float) (d4 * Math.cos(d3));
             sin = (float) (d4 * Math.sin(d3));
-            this.f4284a.moveTo(cos, sin);
+            this.a.moveTo(cos, sin);
             d = d3 + ((f2 * f4) / 2.0f);
         } else {
             double d5 = floatValue2;
             cos = (float) (Math.cos(d3) * d5);
             sin = (float) (d5 * Math.sin(d3));
-            this.f4284a.moveTo(cos, sin);
+            this.a.moveTo(cos, sin);
             d = d3 + f3;
             f = 0.0f;
         }
@@ -145,8 +139,8 @@ public class PolystarContent implements KeyPathElementContent, PathContent, Base
             double d6 = i2;
             if (d6 >= ceil) {
                 PointF g = this.g.g();
-                this.f4284a.offset(g.x, g.y);
-                this.f4284a.close();
+                this.a.offset(g.x, g.y);
+                this.a.close();
                 return;
             }
             float f7 = z ? floatValue2 : floatValue3;
@@ -159,7 +153,7 @@ public class PolystarContent implements KeyPathElementContent, PathContent, Base
             float cos2 = (float) (d7 * Math.cos(d));
             float sin2 = (float) (d7 * Math.sin(d));
             if (floatValue4 == 0.0f && floatValue5 == 0.0f) {
-                this.f4284a.lineTo(cos2, sin2);
+                this.a.lineTo(cos2, sin2);
             } else {
                 float f9 = floatValue4;
                 double atan2 = (float) (Math.atan2(f5, f6) - 1.5707963267948966d);
@@ -203,7 +197,7 @@ public class PolystarContent implements KeyPathElementContent, PathContent, Base
                         }
                     }
                 }
-                this.f4284a.cubicTo(f6 - f22, f5 - f20, cos2 + f19, sin2 + f21, cos2, sin2);
+                this.a.cubicTo(f6 - f22, f5 - f20, cos2 + f19, sin2 + f21, cos2, sin2);
             }
             d += f8;
             z = !z;
@@ -224,7 +218,7 @@ public class PolystarContent implements KeyPathElementContent, PathContent, Base
         double d2 = floatValue2;
         float cos = (float) (Math.cos(radians) * d2);
         float sin = (float) (Math.sin(radians) * d2);
-        this.f4284a.moveTo(cos, sin);
+        this.a.moveTo(cos, sin);
         double d3 = f;
         double d4 = radians + d3;
         double ceil = Math.ceil(d);
@@ -240,9 +234,9 @@ public class PolystarContent implements KeyPathElementContent, PathContent, Base
                 float cos4 = (float) Math.cos(atan22);
                 float sin4 = (float) Math.sin(atan22);
                 float f2 = floatValue2 * floatValue * 0.25f;
-                this.f4284a.cubicTo(cos - (cos3 * f2), sin - (sin3 * f2), cos2 + (cos4 * f2), sin2 + (f2 * sin4), cos2, sin2);
+                this.a.cubicTo(cos - (cos3 * f2), sin - (sin3 * f2), cos2 + (cos4 * f2), sin2 + (f2 * sin4), cos2, sin2);
             } else {
-                this.f4284a.lineTo(cos2, sin2);
+                this.a.lineTo(cos2, sin2);
             }
             d4 += d3;
             i++;
@@ -250,8 +244,8 @@ public class PolystarContent implements KeyPathElementContent, PathContent, Base
             cos = cos2;
         }
         PointF g = this.g.g();
-        this.f4284a.offset(g.x, g.y);
-        this.f4284a.close();
+        this.a.offset(g.x, g.y);
+        this.a.close();
     }
 
     @Override // com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation.AnimationListener
@@ -313,22 +307,22 @@ public class PolystarContent implements KeyPathElementContent, PathContent, Base
     @Override // com.airbnb.lottie.animation.content.PathContent
     public Path e() {
         if (this.n) {
-            return this.f4284a;
+            return this.a;
         }
-        this.f4284a.reset();
+        this.a.reset();
         if (this.e) {
             this.n = true;
-            return this.f4284a;
+            return this.a;
         }
-        int i = AnonymousClass1.f4286a[this.d.ordinal()];
+        int i = AnonymousClass1.a[this.d.ordinal()];
         if (i == 1) {
             d();
         } else if (i == 2) {
             f();
         }
-        this.f4284a.close();
-        this.m.a(this.f4284a);
+        this.a.close();
+        this.m.a(this.a);
         this.n = true;
-        return this.f4284a;
+        return this.a;
     }
 }

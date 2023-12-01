@@ -28,16 +28,12 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRecordPostFragmentKL.class */
 public final class LiveRecordPostFragmentKL extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f13230a;
+    private Context a;
     private View b;
     private EditText e;
     private TextView f;
     private EventCallback h;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f13231c = "";
+    private String c = "";
     private String d = "";
     private final int g = 512;
 
@@ -81,7 +77,7 @@ public final class LiveRecordPostFragmentKL extends BaseFragment {
         L22:
             r0 = r3
             r1 = r4
-            r0.f13231c = r1
+            r0.c = r1
             r0 = r3
             android.os.Bundle r0 = r0.getArguments()
             r4 = r0
@@ -123,9 +119,7 @@ public final class LiveRecordPostFragmentKL extends BaseFragment {
         Intrinsics.a(editText);
         editText.addTextChangedListener(new TextWatcher() { // from class: com.blued.android.module.live_china.fragment.LiveRecordPostFragmentKL$initView$1
             private int b;
-
-            /* renamed from: c  reason: collision with root package name */
-            private int f13233c;
+            private int c;
 
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable s) {
@@ -148,11 +142,11 @@ public final class LiveRecordPostFragmentKL extends BaseFragment {
                     this.b = editText3.getSelectionStart();
                     editText4 = LiveRecordPostFragmentKL.this.e;
                     Intrinsics.a(editText4);
-                    this.f13233c = editText4.getSelectionEnd();
+                    this.c = editText4.getSelectionEnd();
                     while (true) {
-                        int a2 = CommonStringUtils.a(s);
+                        int a = CommonStringUtils.a(s);
                         i = LiveRecordPostFragmentKL.this.g;
-                        if (a2 <= i) {
+                        if (a <= i) {
                             textView3 = LiveRecordPostFragmentKL.this.f;
                             Intrinsics.a(textView3);
                             StringBuilder sb = new StringBuilder();
@@ -169,9 +163,9 @@ public final class LiveRecordPostFragmentKL extends BaseFragment {
                             editText6.addTextChangedListener(this);
                             return;
                         }
-                        s.delete(this.b - 1, this.f13233c);
+                        s.delete(this.b - 1, this.c);
                         this.b--;
-                        this.f13233c--;
+                        this.c--;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -229,26 +223,26 @@ public final class LiveRecordPostFragmentKL extends BaseFragment {
                     editText2 = LiveRecordPostFragmentKL.this.e;
                     d.a(editText2, LiveRecordPostFragmentKL.this.a(), LiveRecordPostFragmentKL.this.b());
                 }
-                RecordingOnliveFragment c2 = LiveRecordPostFragmentKL.this.c();
-                if (c2 == null) {
+                RecordingOnliveFragment c = LiveRecordPostFragmentKL.this.c();
+                if (c == null) {
                     return;
                 }
-                c2.ae();
+                c.ae();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void g() {
-        RecordingOnliveFragment c2 = c();
-        if (c2 == null) {
+        RecordingOnliveFragment c = c();
+        if (c == null) {
             return;
         }
-        c2.ae();
+        c.ae();
     }
 
     public final String a() {
-        return this.f13231c;
+        return this.c;
     }
 
     public final void a(EventCallback eventCallback) {
@@ -271,10 +265,10 @@ public final class LiveRecordPostFragmentKL extends BaseFragment {
         return this.h;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f13230a = getActivity();
+        this.a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = inflater.inflate(R.layout.dialog_live_record_post, (ViewGroup) null);

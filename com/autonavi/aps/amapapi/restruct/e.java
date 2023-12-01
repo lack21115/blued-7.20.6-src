@@ -1,6 +1,7 @@
 package com.autonavi.aps.amapapi.restruct;
 
 import android.content.Context;
+import android.net.http.Headers;
 import android.os.Build;
 import android.os.Handler;
 import android.telephony.CellIdentityCdma;
@@ -21,12 +22,12 @@ import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaCellLocation;
 import android.telephony.gsm.GsmCellLocation;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.lb;
-import com.amap.api.col.p0003sl.mj;
-import com.amap.api.col.p0003sl.mk;
-import com.amap.api.col.p0003sl.ml;
-import com.amap.api.col.p0003sl.mm;
-import com.amap.api.col.p0003sl.mn;
+import com.amap.api.col.3sl.lb;
+import com.amap.api.col.3sl.mj;
+import com.amap.api.col.3sl.mk;
+import com.amap.api.col.3sl.ml;
+import com.amap.api.col.3sl.mm;
+import com.amap.api.col.3sl.mn;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -43,13 +44,13 @@ public final class e {
     private boolean j = false;
 
     /* renamed from: a  reason: collision with root package name */
-    ArrayList<d> f9248a = new ArrayList<>();
+    ArrayList<d> f6408a = new ArrayList<>();
     private String k = null;
     private ArrayList<d> l = new ArrayList<>();
     private long n = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    PhoneStateListener f9249c = null;
+    PhoneStateListener f6409c = null;
     private boolean o = false;
     private Object p = new Object();
     private boolean r = false;
@@ -174,9 +175,9 @@ public final class e {
 
     private static d a(int i, boolean z, int i2, int i3, int i4, int i5, int i6) {
         d dVar = new d(i, z);
-        dVar.f9246a = i2;
+        dVar.f6406a = i2;
         dVar.b = i3;
-        dVar.f9247c = i4;
+        dVar.f6407c = i4;
         dVar.d = i5;
         dVar.k = i6;
         return dVar;
@@ -283,13 +284,13 @@ public final class e {
     public void a(CellLocation cellLocation) {
         synchronized (this) {
             String[] a2 = com.autonavi.aps.amapapi.utils.i.a(this.b);
-            this.f9248a.clear();
+            this.f6408a.clear();
             if (cellLocation instanceof GsmCellLocation) {
                 GsmCellLocation gsmCellLocation = (GsmCellLocation) cellLocation;
                 d dVar = new d(1, true);
-                dVar.f9246a = com.autonavi.aps.amapapi.utils.i.e(a2[0]);
+                dVar.f6406a = com.autonavi.aps.amapapi.utils.i.e(a2[0]);
                 dVar.b = com.autonavi.aps.amapapi.utils.i.e(a2[1]);
-                dVar.f9247c = gsmCellLocation.getLac();
+                dVar.f6407c = gsmCellLocation.getLac();
                 dVar.d = gsmCellLocation.getCid();
                 if (this.d != null) {
                     int gsmSignalStrength = this.d.getGsmSignalStrength();
@@ -297,13 +298,13 @@ public final class e {
                 }
                 dVar.r = false;
                 this.m.a((c) dVar);
-                this.f9248a.add(dVar);
+                this.f6408a.add(dVar);
                 return;
             }
             if (cellLocation instanceof CdmaCellLocation) {
                 CdmaCellLocation cdmaCellLocation = (CdmaCellLocation) cellLocation;
                 d dVar2 = new d(2, true);
-                dVar2.f9246a = Integer.parseInt(a2[0]);
+                dVar2.f6406a = Integer.parseInt(a2[0]);
                 dVar2.b = Integer.parseInt(a2[1]);
                 dVar2.f = cdmaCellLocation.getBaseStationLatitude();
                 dVar2.g = cdmaCellLocation.getBaseStationLongitude();
@@ -315,7 +316,7 @@ public final class e {
                 }
                 dVar2.r = false;
                 this.m.a((c) dVar2);
-                this.f9248a.add(dVar2);
+                this.f6408a.add(dVar2);
             }
         }
     }
@@ -469,17 +470,17 @@ public final class e {
                     mkVar.k = cellIdentity.getNetworkId();
                     mkVar.l = cellIdentity.getBasestationId();
                     mkVar.d = cellInfoCdma.getCellSignalStrength().getAsuLevel();
-                    mkVar.f5384c = cellInfoCdma.getCellSignalStrength().getCdmaDbm();
+                    mkVar.c = cellInfoCdma.getCellSignalStrength().getCdmaDbm();
                     arrayList.add(mkVar);
                 } else if (cellInfo instanceof CellInfoGsm) {
                     CellInfoGsm cellInfoGsm = (CellInfoGsm) cellInfo;
                     CellIdentityGsm cellIdentity2 = cellInfoGsm.getCellIdentity();
                     ml mlVar = new ml(cellInfo.isRegistered(), true);
-                    mlVar.f5383a = String.valueOf(cellIdentity2.getMcc());
+                    mlVar.a = String.valueOf(cellIdentity2.getMcc());
                     mlVar.b = String.valueOf(cellIdentity2.getMnc());
                     mlVar.j = cellIdentity2.getLac();
                     mlVar.k = cellIdentity2.getCid();
-                    mlVar.f5384c = cellInfoGsm.getCellSignalStrength().getDbm();
+                    mlVar.c = cellInfoGsm.getCellSignalStrength().getDbm();
                     mlVar.d = cellInfoGsm.getCellSignalStrength().getAsuLevel();
                     if (Build.VERSION.SDK_INT >= 24) {
                         mlVar.m = cellIdentity2.getArfcn();
@@ -490,14 +491,14 @@ public final class e {
                     CellInfoLte cellInfoLte = (CellInfoLte) cellInfo;
                     CellIdentityLte cellIdentity3 = cellInfoLte.getCellIdentity();
                     mm mmVar = new mm(cellInfo.isRegistered());
-                    mmVar.f5383a = String.valueOf(cellIdentity3.getMcc());
+                    mmVar.a = String.valueOf(cellIdentity3.getMcc());
                     mmVar.b = String.valueOf(cellIdentity3.getMnc());
                     mmVar.l = cellIdentity3.getPci();
                     mmVar.d = cellInfoLte.getCellSignalStrength().getAsuLevel();
                     mmVar.k = cellIdentity3.getCi();
                     mmVar.j = cellIdentity3.getTac();
                     mmVar.n = cellInfoLte.getCellSignalStrength().getTimingAdvance();
-                    mmVar.f5384c = cellInfoLte.getCellSignalStrength().getDbm();
+                    mmVar.c = cellInfoLte.getCellSignalStrength().getDbm();
                     if (Build.VERSION.SDK_INT >= 24) {
                         mmVar.m = cellIdentity3.getEarfcn();
                     }
@@ -506,13 +507,13 @@ public final class e {
                     CellInfoWcdma cellInfoWcdma = (CellInfoWcdma) cellInfo;
                     CellIdentityWcdma cellIdentity4 = cellInfoWcdma.getCellIdentity();
                     mn mnVar = new mn(cellInfo.isRegistered(), true);
-                    mnVar.f5383a = String.valueOf(cellIdentity4.getMcc());
+                    mnVar.a = String.valueOf(cellIdentity4.getMcc());
                     mnVar.b = String.valueOf(cellIdentity4.getMnc());
                     mnVar.j = cellIdentity4.getLac();
                     mnVar.k = cellIdentity4.getCid();
                     mnVar.l = cellIdentity4.getPsc();
                     mnVar.d = cellInfoWcdma.getCellSignalStrength().getAsuLevel();
-                    mnVar.f5384c = cellInfoWcdma.getCellSignalStrength().getDbm();
+                    mnVar.c = cellInfoWcdma.getCellSignalStrength().getDbm();
                     if (Build.VERSION.SDK_INT >= 24) {
                         mnVar.m = cellIdentity4.getUarfcn();
                     }
@@ -585,14 +586,14 @@ public final class e {
             this.o = true;
         }
         TelephonyManager telephonyManager = this.b;
-        if (telephonyManager != null && (phoneStateListener = this.f9249c) != null) {
+        if (telephonyManager != null && (phoneStateListener = this.f6409c) != null) {
             try {
                 telephonyManager.listen(phoneStateListener, 0);
             } catch (Throwable th) {
                 com.autonavi.aps.amapapi.utils.b.a(th, "CgiManager", "destroy");
             }
         }
-        this.f9249c = null;
+        this.f6409c = null;
         this.d = null;
         this.b = null;
     }
@@ -611,7 +612,7 @@ public final class e {
         } catch (SecurityException e) {
             this.g = e.getMessage();
         } catch (Throwable th) {
-            com.autonavi.aps.amapapi.utils.b.a(th, "CgiManager", "refresh");
+            com.autonavi.aps.amapapi.utils.b.a(th, "CgiManager", Headers.REFRESH);
         }
     }
 
@@ -642,8 +643,8 @@ public final class e {
         ArrayList<d> arrayList;
         synchronized (this) {
             arrayList = new ArrayList<>();
-            if (this.f9248a != null) {
-                Iterator<d> it = this.f9248a.iterator();
+            if (this.f6408a != null) {
+                Iterator<d> it = this.f6408a.iterator();
                 while (it.hasNext()) {
                     arrayList.add(it.next().clone());
                 }
@@ -671,7 +672,7 @@ public final class e {
             if (this.e) {
                 return null;
             }
-            ArrayList<d> arrayList = this.f9248a;
+            ArrayList<d> arrayList = this.f6408a;
             if (arrayList.size() > 0) {
                 return arrayList.get(0).clone();
             }
@@ -721,7 +722,7 @@ public final class e {
     final void j() {
         synchronized (this) {
             this.g = null;
-            this.f9248a.clear();
+            this.f6408a.clear();
             this.l.clear();
             this.i = false;
             this.j = false;
@@ -751,18 +752,18 @@ public final class e {
                 int i = 1;
                 while (true) {
                     int i2 = i;
-                    if (i2 >= this.f9248a.size()) {
+                    if (i2 >= this.f6408a.size()) {
                         break;
                     }
                     StringBuilder sb2 = this.f;
                     sb2.append("#");
-                    sb2.append(this.f9248a.get(i2).b);
+                    sb2.append(this.f6408a.get(i2).b);
                     StringBuilder sb3 = this.f;
                     sb3.append("|");
-                    sb3.append(this.f9248a.get(i2).f9247c);
+                    sb3.append(this.f6408a.get(i2).f6407c);
                     StringBuilder sb4 = this.f;
                     sb4.append("|");
-                    sb4.append(this.f9248a.get(i2).d);
+                    sb4.append(this.f6408a.get(i2).d);
                     i = i2 + 1;
                 }
             }
@@ -780,7 +781,7 @@ public final class e {
                         sb5.append(dVar.l);
                         StringBuilder sb6 = this.f;
                         sb6.append("|");
-                        sb6.append(dVar.f9246a);
+                        sb6.append(dVar.f6406a);
                         StringBuilder sb7 = this.f;
                         sb7.append("|");
                         sb7.append(dVar.h);
@@ -798,13 +799,13 @@ public final class e {
                 sb10.append(dVar.l);
                 StringBuilder sb11 = this.f;
                 sb11.append("|");
-                sb11.append(dVar.f9246a);
+                sb11.append(dVar.f6406a);
                 StringBuilder sb12 = this.f;
                 sb12.append("|");
                 sb12.append(dVar.b);
                 StringBuilder sb13 = this.f;
                 sb13.append("|");
-                sb13.append(dVar.f9247c);
+                sb13.append(dVar.f6407c);
                 StringBuilder sb14 = this.f;
                 sb14.append("|");
                 sb14.append(dVar.a());

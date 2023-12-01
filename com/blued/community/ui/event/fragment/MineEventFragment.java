@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.module.common.base.mvvm.MVVMBaseFragment;
@@ -32,14 +33,10 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/fragment/MineEventFragment.class */
 public final class MineEventFragment extends MVVMBaseFragment<MineEventViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f19567c;
+    private final ViewBindingProperty c;
     private MyAdapter d;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(MineEventFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FragmentMineEventBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19566a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/fragment/MineEventFragment$Companion.class */
@@ -60,9 +57,7 @@ public final class MineEventFragment extends MVVMBaseFragment<MineEventViewModel
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/fragment/MineEventFragment$MyAdapter.class */
     public static final class MyAdapter extends FragmentStatePagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final FragmentManager f19568a;
+        private final FragmentManager a;
         private final List<String> b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -70,23 +65,20 @@ public final class MineEventFragment extends MVVMBaseFragment<MineEventViewModel
             super(fm, 1);
             Intrinsics.e(fm, "fm");
             Intrinsics.e(tabs, "tabs");
-            this.f19568a = fm;
+            this.a = fm;
             this.b = tabs;
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
             super.destroyItem(container, i, object);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return this.b.size();
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter
         public Fragment getItem(int i) {
             if (i != 0) {
                 if (i != 1 && i == 2) {
@@ -97,12 +89,10 @@ public final class MineEventFragment extends MVVMBaseFragment<MineEventViewModel
             return new EventSubscribeFragment();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             return this.b.get(i);
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter, androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup container, int i) {
             Intrinsics.e(container, "container");
             Object instantiateItem = super.instantiateItem(container, i);
@@ -113,7 +103,7 @@ public final class MineEventFragment extends MVVMBaseFragment<MineEventViewModel
 
     public MineEventFragment() {
         super(R.layout.fragment_mine_event);
-        this.f19567c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<MineEventFragment, FragmentMineEventBinding>() { // from class: com.blued.community.ui.event.fragment.MineEventFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<MineEventFragment, FragmentMineEventBinding>() { // from class: com.blued.community.ui.event.fragment.MineEventFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentMineEventBinding invoke(MineEventFragment fragment) {
@@ -151,7 +141,7 @@ public final class MineEventFragment extends MVVMBaseFragment<MineEventViewModel
     }
 
     private final FragmentMineEventBinding p() {
-        return (FragmentMineEventBinding) this.f19567c.b(this, b[0]);
+        return (FragmentMineEventBinding) this.c.b(this, b[0]);
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -170,7 +160,7 @@ public final class MineEventFragment extends MVVMBaseFragment<MineEventViewModel
                 MineEventFragment.a(MineEventFragment.this, view);
             }
         });
-        p.f18895a.setVisibility(0);
+        p.a.setVisibility(0);
         p.d.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$MineEventFragment$Y8xnBcJaOudBpuzeyrkXFEiMUUg
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -181,23 +171,20 @@ public final class MineEventFragment extends MVVMBaseFragment<MineEventViewModel
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         this.d = new MyAdapter(childFragmentManager, j().d());
         CustomViewPager customViewPager = p.e;
-        MyAdapter myAdapter = this.d;
-        if (myAdapter == null) {
+        PagerAdapter pagerAdapter = this.d;
+        if (pagerAdapter == null) {
             Intrinsics.c("tabAdapter");
-            myAdapter = null;
+            pagerAdapter = null;
         }
-        customViewPager.setAdapter(myAdapter);
-        p.f18896c.setupWithViewPager(p.e);
+        customViewPager.setAdapter(pagerAdapter);
+        p.c.setupWithViewPager(p.e);
         p.e.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.community.ui.event.fragment.MineEventFragment$initView$1$3
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
             }
         });

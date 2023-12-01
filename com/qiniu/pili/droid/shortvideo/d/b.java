@@ -15,11 +15,11 @@ import java.util.List;
 public class b extends k {
 
     /* renamed from: a  reason: collision with root package name */
-    protected MediaExtractor f27635a;
+    protected MediaExtractor f13947a;
     protected MediaCodec b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected a f27636c;
+    protected a f13948c;
     protected d d;
     protected boolean e;
     private MediaFormat f;
@@ -28,7 +28,7 @@ public class b extends k {
     private ByteBuffer[] i;
     private c j;
     private e k;
-    private InterfaceC0744b l;
+    private InterfaceC0574b l;
     private int m;
     private long n;
     private long o;
@@ -53,7 +53,7 @@ public class b extends k {
 
     /* renamed from: com.qiniu.pili.droid.shortvideo.d.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/d/b$b.class */
-    public interface InterfaceC0744b {
+    public interface InterfaceC0574b {
         void a();
     }
 
@@ -73,7 +73,7 @@ public class b extends k {
     }
 
     public b(MediaExtractor mediaExtractor, MediaFormat mediaFormat) {
-        this.f27635a = mediaExtractor;
+        this.f13947a = mediaExtractor;
         this.f = mediaFormat;
     }
 
@@ -86,14 +86,14 @@ public class b extends k {
         b();
         int i2 = 0;
         do {
-            long sampleTime = this.f27635a.getSampleTime();
+            long sampleTime = this.f13947a.getSampleTime();
             i = i2;
             if (sampleTime >= this.n) {
                 i = i2;
                 if (sampleTime <= this.o) {
                     this.q.add(Long.valueOf(sampleTime));
                     int i3 = i2;
-                    if ((this.f27635a.getSampleFlags() & 1) > 0) {
+                    if ((this.f13947a.getSampleFlags() & 1) > 0) {
                         this.r.add(Long.valueOf(sampleTime));
                         if (this.r.size() > 1) {
                             this.s.add(Integer.valueOf(i2));
@@ -105,7 +105,7 @@ public class b extends k {
                 }
             }
             i2 = i;
-        } while (this.f27635a.advance());
+        } while (this.f13947a.advance());
         this.s.add(Integer.valueOf(i));
         com.qiniu.pili.droid.shortvideo.f.e.u.c(j(), "the gop frame num is : " + i);
         Collections.sort(this.q);
@@ -122,16 +122,16 @@ public class b extends k {
                 this.b.queueInputBuffer(dequeueInputBuffer, 0, 0, 0L, 4);
             } else {
                 if (this.v == 0) {
-                    this.f27635a.seekTo(this.r.get(this.u).longValue(), 2);
+                    this.f13947a.seekTo(this.r.get(this.u).longValue(), 2);
                     this.t.add(this.s.get(this.u));
                 } else {
                     this.t.add(0);
                 }
-                this.b.queueInputBuffer(dequeueInputBuffer, 0, this.f27635a.readSampleData(this.h[dequeueInputBuffer], 0), this.q.remove(0).longValue(), 0);
+                this.b.queueInputBuffer(dequeueInputBuffer, 0, this.f13947a.readSampleData(this.h[dequeueInputBuffer], 0), this.q.remove(0).longValue(), 0);
                 int i = this.v + 1;
                 this.v = i;
                 if (i < this.s.get(this.u).intValue()) {
-                    this.f27635a.advance();
+                    this.f13947a.advance();
                     return;
                 }
                 this.v = 0;
@@ -149,10 +149,10 @@ public class b extends k {
                 com.qiniu.pili.droid.shortvideo.f.e.u.b(j(), "dequeueInputBuffer INFO_TRY_AGAIN_LATER");
                 return;
             }
-            int readSampleData = this.f27635a.readSampleData(this.h[dequeueInputBuffer], 0);
+            int readSampleData = this.f13947a.readSampleData(this.h[dequeueInputBuffer], 0);
             if (readSampleData > 0) {
-                this.b.queueInputBuffer(dequeueInputBuffer, 0, readSampleData, this.f27635a.getSampleTime(), 0);
-                this.f27635a.advance();
+                this.b.queueInputBuffer(dequeueInputBuffer, 0, readSampleData, this.f13947a.getSampleTime(), 0);
+                this.f13947a.advance();
                 return;
             }
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.u;
@@ -232,11 +232,11 @@ public class b extends k {
     }
 
     public void a(a aVar) {
-        this.f27636c = aVar;
+        this.f13948c = aVar;
     }
 
-    public void a(InterfaceC0744b interfaceC0744b) {
-        this.l = interfaceC0744b;
+    public void a(InterfaceC0574b interfaceC0574b) {
+        this.l = interfaceC0574b;
     }
 
     public void a(c cVar) {
@@ -323,15 +323,15 @@ public class b extends k {
                     com.qiniu.pili.droid.shortvideo.f.e.u.d(j(), "not support multiple media codec!" + e2.getMessage());
                     i = 16;
                 }
-                if (this.f27636c != null) {
-                    this.f27636c.a(i);
+                if (this.f13948c != null) {
+                    this.f13948c.a(i);
                     return false;
                 }
                 return false;
             }
         } catch (Exception e3) {
             com.qiniu.pili.droid.shortvideo.f.e.u.e(j(), "startDecoder failed: " + e3.getMessage());
-            a aVar = this.f27636c;
+            a aVar = this.f13948c;
             if (aVar != null) {
                 aVar.a(17);
                 return false;
@@ -342,7 +342,7 @@ public class b extends k {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void b() {
-        this.f27635a.seekTo(this.n, 0);
+        this.f13947a.seekTo(this.n, 0);
     }
 
     protected boolean d() {
@@ -366,18 +366,18 @@ public class b extends k {
             eVar2.c(j2, "stop decoder failed : " + e2.getMessage());
         }
         try {
-            if (this.f27635a != null) {
-                this.f27635a.release();
-                this.f27635a = null;
+            if (this.f13947a != null) {
+                this.f13947a.release();
+                this.f13947a = null;
             }
         } catch (Exception e3) {
             com.qiniu.pili.droid.shortvideo.f.e eVar3 = com.qiniu.pili.droid.shortvideo.f.e.u;
             String j3 = j();
             eVar3.c(j3, "release extractor failed : " + e3.getMessage());
         }
-        InterfaceC0744b interfaceC0744b = this.l;
-        if (interfaceC0744b != null) {
-            interfaceC0744b.a();
+        InterfaceC0574b interfaceC0574b = this.l;
+        if (interfaceC0574b != null) {
+            interfaceC0574b.a();
         }
         com.qiniu.pili.droid.shortvideo.f.e eVar4 = com.qiniu.pili.droid.shortvideo.f.e.u;
         String j4 = j();

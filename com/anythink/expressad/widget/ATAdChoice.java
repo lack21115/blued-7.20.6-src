@@ -13,11 +13,11 @@ import com.anythink.expressad.foundation.h.s;
 public class ATAdChoice extends ATImageView {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f8777a = "ATAdChoice";
+    private static String f5937a = "ATAdChoice";
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f8778c;
+    private String f5938c;
     private String d;
     private Context e;
 
@@ -40,7 +40,7 @@ public class ATAdChoice extends ATImageView {
     public ATAdChoice(Context context) {
         super(context);
         this.b = "";
-        this.f8778c = "";
+        this.f5938c = "";
         this.d = "";
         this.e = context;
         a();
@@ -49,7 +49,7 @@ public class ATAdChoice extends ATImageView {
     public ATAdChoice(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = "";
-        this.f8778c = "";
+        this.f5938c = "";
         this.d = "";
         this.e = context;
         a();
@@ -58,7 +58,7 @@ public class ATAdChoice extends ATImageView {
     public ATAdChoice(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = "";
-        this.f8778c = "";
+        this.f5938c = "";
         this.d = "";
         this.e = context;
         a();

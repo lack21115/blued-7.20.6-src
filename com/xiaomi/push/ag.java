@@ -20,7 +20,7 @@ public class ag {
             try {
                 try {
                     File file = new File(new File(context.getExternalFilesDir(null), "/.vdevdir/"), "lcfp.lock");
-                    x.m12222a(file);
+                    x.m9172a(file);
                     randomAccessFile2 = new RandomAccessFile(file, "rw");
                     fileLock = null;
                 } catch (IOException e) {

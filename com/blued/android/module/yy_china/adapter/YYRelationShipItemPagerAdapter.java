@@ -16,9 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYRelationShipItemPagerAdapter.class */
 public final class YYRelationShipItemPagerAdapter extends BaseFragmentPagerAdapter {
     private final FragmentManager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<YYRelationShipRoomUserCardInfoMode> f16214c;
+    private List<YYRelationShipRoomUserCardInfoMode> c;
     private YYRelationShipRoomMode d;
     private View.OnClickListener e;
     private View.OnClickListener f;
@@ -28,12 +26,12 @@ public final class YYRelationShipItemPagerAdapter extends BaseFragmentPagerAdapt
         super(fm, 1);
         Intrinsics.e(fm, "fm");
         this.b = fm;
-        this.f16214c = new ArrayList();
+        this.c = new ArrayList();
     }
 
     private final boolean c(List<YYRelationShipRoomUserCardInfoMode> list) {
-        if (list.size() != this.f16214c.size()) {
-            this.f16214c = list;
+        if (list.size() != this.c.size()) {
+            this.c = list;
             return true;
         }
         int size = list.size();
@@ -41,10 +39,10 @@ public final class YYRelationShipItemPagerAdapter extends BaseFragmentPagerAdapt
         while (true) {
             int i2 = i;
             if (i2 >= size) {
-                this.f16214c = list;
+                this.c = list;
                 return false;
             }
-            YYRelationShipRoomUserCardInfoMode yYRelationShipRoomUserCardInfoMode = this.f16214c.get(i2);
+            YYRelationShipRoomUserCardInfoMode yYRelationShipRoomUserCardInfoMode = this.c.get(i2);
             String str = null;
             String id = yYRelationShipRoomUserCardInfoMode == null ? null : yYRelationShipRoomUserCardInfoMode.getId();
             YYRelationShipRoomUserCardInfoMode yYRelationShipRoomUserCardInfoMode2 = list.get(i2);
@@ -52,18 +50,17 @@ public final class YYRelationShipItemPagerAdapter extends BaseFragmentPagerAdapt
                 str = yYRelationShipRoomUserCardInfoMode2.getId();
             }
             if (!StringUtils.a(id, str)) {
-                this.f16214c = list;
+                this.c = list;
                 return true;
             }
             i = i2 + 1;
         }
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     /* renamed from: a */
     public String getPageTitle(int i) {
         String id;
-        YYRelationShipRoomUserCardInfoMode yYRelationShipRoomUserCardInfoMode = this.f16214c.get(i);
+        YYRelationShipRoomUserCardInfoMode yYRelationShipRoomUserCardInfoMode = this.c.get(i);
         return (yYRelationShipRoomUserCardInfoMode == null || (id = yYRelationShipRoomUserCardInfoMode.getId()) == null) ? "" : id;
     }
 

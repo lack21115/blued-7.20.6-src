@@ -3,7 +3,6 @@ package com.tencent.open.web.security;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.webkit.WebView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.open.a;
 import com.tencent.open.a.f;
 import java.io.UnsupportedEncodingException;
@@ -15,7 +14,7 @@ import java.util.List;
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/open/web/security/b.class */
 public class b extends com.tencent.open.a {
     @Override // com.tencent.open.a
-    public void a(String str, String str2, List<String> list, a.C0972a c0972a) {
+    public void a(String str, String str2, List<String> list, a.C0802a c0802a) {
         f.a("openSDK_LOG.SecureJsBridge", "-->getResult, objectName: " + str + " | methodName: " + str2);
         int size = list.size();
         int i = 0;
@@ -31,15 +30,15 @@ public class b extends com.tencent.open.a {
             }
             i = i2 + 1;
         }
-        a.b bVar = this.f38224a.get(str);
+        a.b bVar = this.f24533a.get(str);
         if (bVar != null) {
             f.b("openSDK_LOG.SecureJsBridge", "-->handler != null");
-            bVar.call(str2, list, c0972a);
+            bVar.call(str2, list, c0802a);
             return;
         }
         f.b("openSDK_LOG.SecureJsBridge", "-->handler == null");
-        if (c0972a != null) {
-            c0972a.a();
+        if (c0802a != null) {
+            c0802a.a();
         }
     }
 
@@ -47,7 +46,7 @@ public class b extends com.tencent.open.a {
     public boolean a(WebView webView, String str) {
         f.a("openSDK_LOG.SecureJsBridge", "-->canHandleUrl---url = " + str);
         if (str != null && Uri.parse(str).getScheme().equals("jsbridge")) {
-            ArrayList arrayList = new ArrayList(Arrays.asList((str + "/#").split(BridgeUtil.SPLIT_MARK)));
+            ArrayList arrayList = new ArrayList(Arrays.asList((str + "/#").split("/")));
             if (arrayList.size() < 7) {
                 return false;
             }

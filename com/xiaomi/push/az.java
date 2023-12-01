@@ -18,39 +18,39 @@ import java.security.MessageDigest;
 public class az implements as {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f41267a;
+    private static boolean f27576a;
 
     /* renamed from: a  reason: collision with other field name */
-    private Context f207a;
+    private Context f160a;
 
     /* renamed from: a  reason: collision with other field name */
-    private ServiceConnection f208a;
+    private ServiceConnection f161a;
 
     /* renamed from: a  reason: collision with other field name */
-    private volatile int f206a = 0;
+    private volatile int f159a = 0;
 
     /* renamed from: a  reason: collision with other field name */
-    private volatile a f209a = null;
+    private volatile a f162a = null;
 
     /* renamed from: a  reason: collision with other field name */
-    private final Object f210a = new Object();
+    private final Object f163a = new Object();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/az$a.class */
     public class a {
 
         /* renamed from: a  reason: collision with other field name */
-        String f211a;
+        String f164a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f41269c;
+        String f27578c;
         String d;
 
         private a() {
-            this.f211a = null;
+            this.f164a = null;
             this.b = null;
-            this.f41269c = null;
+            this.f27578c = null;
             this.d = null;
         }
     }
@@ -63,7 +63,7 @@ public class az implements as {
 
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            if (az.this.f209a != null) {
+            if (az.this.f162a != null) {
                 return;
             }
             new Thread(new bb(this, iBinder)).start();
@@ -96,36 +96,36 @@ public class az implements as {
     }
 
     public az(Context context) {
-        this.f207a = context;
+        this.f160a = context;
         a();
     }
 
     private void a() {
         boolean z;
-        this.f208a = new b();
+        this.f161a = new b();
         Intent intent = new Intent();
         intent.setClassName("com.heytap.openid", "com.heytap.openid.IdentifyService");
         intent.setAction("action.com.heytap.openid.OPEN_ID_SERVICE");
         int i = 1;
         try {
-            z = this.f207a.bindService(intent, this.f208a, 1);
+            z = this.f160a.bindService(intent, this.f161a, 1);
         } catch (Exception e) {
             z = false;
         }
         if (!z) {
             i = 2;
         }
-        this.f206a = i;
+        this.f159a = i;
     }
 
     private void a(String str) {
-        if (this.f206a != 1 || Looper.myLooper() == Looper.getMainLooper()) {
+        if (this.f159a != 1 || Looper.myLooper() == Looper.getMainLooper()) {
             return;
         }
-        synchronized (this.f210a) {
+        synchronized (this.f163a) {
             try {
-                com.xiaomi.channel.commonutils.logger.b.m11394a("oppo's " + str + " wait...");
-                this.f210a.wait(com.anythink.expressad.video.module.a.a.m.ag);
+                com.xiaomi.channel.commonutils.logger.b.m8344a("oppo's " + str + " wait...");
+                this.f163a.wait(com.anythink.expressad.video.module.a.a.m.ag);
             } catch (Exception e) {
             }
         }
@@ -137,7 +137,7 @@ public class az implements as {
             if (packageInfo != null) {
                 long longVersionCode = Build.VERSION.SDK_INT >= 28 ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
                 boolean z = (packageInfo.applicationInfo.flags & 1) != 0;
-                f41267a = longVersionCode >= 1;
+                f27576a = longVersionCode >= 1;
                 return z;
             }
             return false;
@@ -149,7 +149,7 @@ public class az implements as {
     /* JADX INFO: Access modifiers changed from: private */
     public String b() {
         try {
-            Signature[] signatureArr = this.f207a.getPackageManager().getPackageInfo(this.f207a.getPackageName(), 64).signatures;
+            Signature[] signatureArr = this.f160a.getPackageManager().getPackageInfo(this.f160a.getPackageName(), 64).signatures;
             MessageDigest messageDigest = MessageDigest.getInstance(AppSigning.SHA1);
             StringBuilder sb = new StringBuilder();
             for (byte b2 : messageDigest.digest(signatureArr[0].toByteArray())) {
@@ -163,11 +163,11 @@ public class az implements as {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: b  reason: collision with other method in class */
-    public void m11517b() {
-        ServiceConnection serviceConnection = this.f208a;
+    public void m8467b() {
+        ServiceConnection serviceConnection = this.f161a;
         if (serviceConnection != null) {
             try {
-                this.f207a.unbindService(serviceConnection);
+                this.f160a.unbindService(serviceConnection);
             } catch (Exception e) {
             }
         }
@@ -175,17 +175,17 @@ public class az implements as {
 
     @Override // com.xiaomi.push.as
     /* renamed from: a */
-    public String mo11508a() {
+    public String mo8458a() {
         a("getOAID");
-        if (this.f209a == null) {
+        if (this.f162a == null) {
             return null;
         }
-        return this.f209a.b;
+        return this.f162a.b;
     }
 
     @Override // com.xiaomi.push.as
     /* renamed from: a */
-    public boolean mo11509a() {
-        return f41267a;
+    public boolean mo8459a() {
+        return f27576a;
     }
 }

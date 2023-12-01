@@ -8,9 +8,7 @@ import com.blued.android.core.utils.toast.config.IToast;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/toast/SystemToast.class */
 public class SystemToast extends Toast implements IToast {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TextView f9756a;
+    private TextView a;
 
     public SystemToast(Application application) {
         super(application);
@@ -24,7 +22,7 @@ public class SystemToast extends Toast implements IToast {
     @Override // android.widget.Toast, com.blued.android.core.utils.toast.config.IToast
     public void setText(CharSequence charSequence) {
         super.setText(charSequence);
-        TextView textView = this.f9756a;
+        TextView textView = this.a;
         if (textView == null) {
             return;
         }
@@ -35,9 +33,9 @@ public class SystemToast extends Toast implements IToast {
     public void setView(View view) {
         super.setView(view);
         if (view == null) {
-            this.f9756a = null;
+            this.a = null;
         } else {
-            this.f9756a = a(view);
+            this.a = a(view);
         }
     }
 }

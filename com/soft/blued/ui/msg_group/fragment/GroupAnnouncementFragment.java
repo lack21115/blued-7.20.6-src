@@ -10,7 +10,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.module.common.base.mvvm.EmptyViewModel;
 import com.blued.android.module.common.base.mvvm.MVVMBaseFragment;
@@ -42,13 +44,13 @@ import kotlin.text.StringsKt;
 public final class GroupAnnouncementFragment extends MVVMBaseFragment<EmptyViewModel> {
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f32669c;
+    private final ViewBindingProperty f18978c;
     private String d;
     private int e;
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(GroupAnnouncementFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FmGroupAnnouncementBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(GroupAnnouncementFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FmGroupAnnouncementBinding;", 0))};
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f32668a = new Companion(null);
+    public static final Companion f18977a = new Companion(null);
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/fragment/GroupAnnouncementFragment$Companion.class */
@@ -66,25 +68,25 @@ public final class GroupAnnouncementFragment extends MVVMBaseFragment<EmptyViewM
                 return;
             }
             Bundle bundle = new Bundle();
-            bundle.putSerializable(d.K, groupInfoModel);
-            Unit unit = Unit.f42314a;
+            bundle.putSerializable(d.K, (Serializable) groupInfoModel);
+            Unit unit = Unit.a;
             TerminalActivity.d(context, GroupAnnouncementFragment.class, bundle);
         }
     }
 
     public GroupAnnouncementFragment() {
-        super(R.layout.fm_group_announcement);
-        this.f32669c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<GroupAnnouncementFragment, FmGroupAnnouncementBinding>() { // from class: com.soft.blued.ui.msg_group.fragment.GroupAnnouncementFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fm_group_announcement);
+        this.f18978c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<GroupAnnouncementFragment, FmGroupAnnouncementBinding>() { // from class: com.soft.blued.ui.msg_group.fragment.GroupAnnouncementFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/msg_group/fragment/GroupAnnouncementFragment;)Lcom/soft/blued/databinding/FmGroupAnnouncementBinding; */
             /* renamed from: a */
-            public final FmGroupAnnouncementBinding invoke(GroupAnnouncementFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmGroupAnnouncementBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<GroupAnnouncementFragment, FmGroupAnnouncementBinding>() { // from class: com.soft.blued.ui.msg_group.fragment.GroupAnnouncementFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/msg_group/fragment/GroupAnnouncementFragment;)Lcom/soft/blued/databinding/FmGroupAnnouncementBinding; */
             /* renamed from: a */
-            public final FmGroupAnnouncementBinding invoke(GroupAnnouncementFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmGroupAnnouncementBinding.a(fragment.requireView());
             }
@@ -99,7 +101,7 @@ public final class GroupAnnouncementFragment extends MVVMBaseFragment<EmptyViewM
             long j = this.e;
             FmGroupAnnouncementBinding p = p();
             Editable editable = null;
-            if (p != null && (editText = p.f28747a) != null) {
+            if (p != null && (editText = p.f15057a) != null) {
                 editable = editText.getText();
             }
             observable.post(new UpdateAnnouncementEvent(j, String.valueOf(editable)));
@@ -112,52 +114,52 @@ public final class GroupAnnouncementFragment extends MVVMBaseFragment<EmptyViewM
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FmGroupAnnouncementBinding viewBinding, GroupAnnouncementFragment this$0, View view) {
+    public static final void a(FmGroupAnnouncementBinding fmGroupAnnouncementBinding, GroupAnnouncementFragment groupAnnouncementFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(viewBinding, "$viewBinding");
-        Intrinsics.e(this$0, "this$0");
-        if (viewBinding.f28747a.getText().toString().length() == 0) {
-            this$0.r();
+        Intrinsics.e(fmGroupAnnouncementBinding, "$viewBinding");
+        Intrinsics.e(groupAnnouncementFragment, "this$0");
+        if (fmGroupAnnouncementBinding.f15057a.getText().toString().length() == 0) {
+            groupAnnouncementFragment.r();
         } else {
-            this$0.q();
+            groupAnnouncementFragment.q();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(GroupAnnouncementFragment this$0, DialogInterface dialogInterface, int i) {
+    public static final void a(GroupAnnouncementFragment groupAnnouncementFragment, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(-1);
+        Intrinsics.e(groupAnnouncementFragment, "this$0");
+        groupAnnouncementFragment.a(-1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(GroupAnnouncementFragment this$0, FmGroupAnnouncementBinding viewBinding, View view) {
+    public static final void a(GroupAnnouncementFragment groupAnnouncementFragment, FmGroupAnnouncementBinding fmGroupAnnouncementBinding, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(viewBinding, "$viewBinding");
-        if (Intrinsics.a((Object) this$0.d, (Object) viewBinding.f28747a.getText().toString())) {
-            this$0.a(0);
+        Intrinsics.e(groupAnnouncementFragment, "this$0");
+        Intrinsics.e(fmGroupAnnouncementBinding, "$viewBinding");
+        if (Intrinsics.a(groupAnnouncementFragment.d, fmGroupAnnouncementBinding.f15057a.getText().toString())) {
+            groupAnnouncementFragment.a(0);
         } else {
-            this$0.s();
+            groupAnnouncementFragment.s();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(GroupAnnouncementFragment this$0, DialogInterface dialogInterface, int i) {
+    public static final void b(GroupAnnouncementFragment groupAnnouncementFragment, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(-1);
+        Intrinsics.e(groupAnnouncementFragment, "this$0");
+        groupAnnouncementFragment.a(-1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(GroupAnnouncementFragment this$0, DialogInterface dialogInterface, int i) {
+    public static final void c(GroupAnnouncementFragment groupAnnouncementFragment, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(0);
+        Intrinsics.e(groupAnnouncementFragment, "this$0");
+        groupAnnouncementFragment.a(0);
     }
 
     private final FmGroupAnnouncementBinding p() {
-        return (FmGroupAnnouncementBinding) this.f32669c.b(this, b[0]);
+        return (FmGroupAnnouncementBinding) this.f18978c.b(this, b[0]);
     }
 
     private final void q() {
@@ -166,7 +168,7 @@ public final class GroupAnnouncementFragment extends MVVMBaseFragment<EmptyViewM
             public final void onClick(DialogInterface dialogInterface, int i) {
                 GroupAnnouncementFragment.a(GroupAnnouncementFragment.this, dialogInterface, i);
             }
-        }, getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+        }, getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
     private final void r() {
@@ -175,7 +177,7 @@ public final class GroupAnnouncementFragment extends MVVMBaseFragment<EmptyViewM
             public final void onClick(DialogInterface dialogInterface, int i) {
                 GroupAnnouncementFragment.b(GroupAnnouncementFragment.this, dialogInterface, i);
             }
-        }, getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+        }, getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
     private final void s() {
@@ -187,7 +189,6 @@ public final class GroupAnnouncementFragment extends MVVMBaseFragment<EmptyViewM
         }, getString(R.string.group_announcement_go_on), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
         final FmGroupAnnouncementBinding p = p();
         if (p == null) {
@@ -206,12 +207,12 @@ public final class GroupAnnouncementFragment extends MVVMBaseFragment<EmptyViewM
         if (serializable == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.common.group.GroupInfoModel");
         }
-        GroupInfoModel groupInfoModel = (GroupInfoModel) serializable;
+        GroupInfoModel groupInfoModel = serializable;
         this.e = groupInfoModel.group_id;
         if (groupInfoModel.group_role == 1 || groupInfoModel.group_role == 2) {
-            p.f28747a.setEnabled(true);
+            p.f15057a.setEnabled(true);
             p.g.setVisibility(0);
-            p.d.setRightText(R.string.group_announcement_submit);
+            p.d.setRightText((int) R.string.group_announcement_submit);
             p.d.setRightTextColor(2131101766);
             p.d.setRightClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$GroupAnnouncementFragment$UvUJtLAf7KRFT3UlhGQkP9hro1A
                 @Override // android.view.View.OnClickListener
@@ -219,7 +220,7 @@ public final class GroupAnnouncementFragment extends MVVMBaseFragment<EmptyViewM
                     GroupAnnouncementFragment.a(FmGroupAnnouncementBinding.this, this, view);
                 }
             });
-            p.f28747a.addTextChangedListener(new TextWatcher() { // from class: com.soft.blued.ui.msg_group.fragment.GroupAnnouncementFragment$initView$1$3$1
+            p.f15057a.addTextChangedListener(new TextWatcher() { // from class: com.soft.blued.ui.msg_group.fragment.GroupAnnouncementFragment$initView$1$3$1
                 @Override // android.text.TextWatcher
                 public void afterTextChanged(Editable editable) {
                     TextView textView = FmGroupAnnouncementBinding.this.g;
@@ -238,7 +239,7 @@ public final class GroupAnnouncementFragment extends MVVMBaseFragment<EmptyViewM
                 }
             });
         } else {
-            p.f28747a.setEnabled(false);
+            p.f15057a.setEnabled(false);
             p.g.setVisibility(8);
         }
         if (groupInfoModel.type == 4) {
@@ -253,16 +254,16 @@ public final class GroupAnnouncementFragment extends MVVMBaseFragment<EmptyViewM
                 }
             }
             String str3 = groupInfoModel.announcement;
-            if ((str3 == null || str3.length() == 0) && !p.f28747a.isEnabled()) {
-                p.f28748c.setVisibility(8);
+            if ((str3 == null || str3.length() == 0) && !p.f15057a.isEnabled()) {
+                p.f15058c.setVisibility(8);
             }
         }
-        p.f28747a.setText(groupInfoModel.announcement);
-        p.f28747a.setSelection(p.f28747a.getText().length());
+        p.f15057a.setText(groupInfoModel.announcement);
+        p.f15057a.setSelection(p.f15057a.getText().length());
         String str4 = groupInfoModel.announcement;
         Intrinsics.c(str4, "group.announcement");
         this.d = str4;
-        String obj = p.f28747a.getText().toString();
+        String obj = p.f15057a.getText().toString();
         if (!(obj == null || obj.length() == 0) || groupInfoModel.group_role == 1 || groupInfoModel.group_role == 2 || p.e.getVisibility() != 8) {
             return;
         }
@@ -274,11 +275,9 @@ public final class GroupAnnouncementFragment extends MVVMBaseFragment<EmptyViewM
         p.b.setBackgroundColor(ContextCompat.getColor(context, 2131102360));
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void g() {
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
     }
 }

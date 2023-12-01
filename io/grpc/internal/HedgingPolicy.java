@@ -4,7 +4,6 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.Status;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 
@@ -25,7 +24,7 @@ public final class HedgingPolicy {
     public HedgingPolicy(int i, long j, Set<Status.Code> set) {
         this.maxAttempts = i;
         this.hedgingDelayNanos = j;
-        this.nonFatalStatusCodes = ImmutableSet.copyOf((Collection) set);
+        this.nonFatalStatusCodes = ImmutableSet.copyOf(set);
     }
 
     public boolean equals(Object obj) {
@@ -40,7 +39,7 @@ public final class HedgingPolicy {
     }
 
     public int hashCode() {
-        return Objects.hashCode(Integer.valueOf(this.maxAttempts), Long.valueOf(this.hedgingDelayNanos), this.nonFatalStatusCodes);
+        return Objects.hashCode(new Object[]{Integer.valueOf(this.maxAttempts), Long.valueOf(this.hedgingDelayNanos), this.nonFatalStatusCodes});
     }
 
     public String toString() {

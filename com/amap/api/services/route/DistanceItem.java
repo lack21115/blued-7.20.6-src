@@ -27,13 +27,9 @@ public class DistanceItem implements Parcelable {
     public final int ERROR_CODE_NOT_IN_CHINA;
     public final int ERROR_CODE_NO_DRIVE;
     public final int ERROR_CODE_TOO_FAR;
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f5686a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f5687c;
+    private float c;
     private float d;
     private String e;
     private int f;
@@ -42,9 +38,9 @@ public class DistanceItem implements Parcelable {
         this.ERROR_CODE_NO_DRIVE = 1;
         this.ERROR_CODE_TOO_FAR = 2;
         this.ERROR_CODE_NOT_IN_CHINA = 3;
-        this.f5686a = 1;
+        this.a = 1;
         this.b = 1;
-        this.f5687c = 0.0f;
+        this.c = 0.0f;
         this.d = 0.0f;
     }
 
@@ -52,13 +48,13 @@ public class DistanceItem implements Parcelable {
         this.ERROR_CODE_NO_DRIVE = 1;
         this.ERROR_CODE_TOO_FAR = 2;
         this.ERROR_CODE_NOT_IN_CHINA = 3;
-        this.f5686a = 1;
+        this.a = 1;
         this.b = 1;
-        this.f5687c = 0.0f;
+        this.c = 0.0f;
         this.d = 0.0f;
-        this.f5686a = parcel.readInt();
+        this.a = parcel.readInt();
         this.b = parcel.readInt();
-        this.f5687c = parcel.readFloat();
+        this.c = parcel.readFloat();
         this.d = parcel.readFloat();
         this.e = parcel.readString();
         this.f = parcel.readInt();
@@ -74,7 +70,7 @@ public class DistanceItem implements Parcelable {
     }
 
     public float getDistance() {
-        return this.f5687c;
+        return this.c;
     }
 
     public float getDuration() {
@@ -90,7 +86,7 @@ public class DistanceItem implements Parcelable {
     }
 
     public int getOriginId() {
-        return this.f5686a;
+        return this.a;
     }
 
     public void setDestId(int i) {
@@ -98,7 +94,7 @@ public class DistanceItem implements Parcelable {
     }
 
     public void setDistance(float f) {
-        this.f5687c = f;
+        this.c = f;
     }
 
     public void setDuration(float f) {
@@ -114,14 +110,14 @@ public class DistanceItem implements Parcelable {
     }
 
     public void setOriginId(int i) {
-        this.f5686a = i;
+        this.a = i;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f5686a);
+        parcel.writeInt(this.a);
         parcel.writeInt(this.b);
-        parcel.writeFloat(this.f5687c);
+        parcel.writeFloat(this.c);
         parcel.writeFloat(this.d);
         parcel.writeString(this.e);
         parcel.writeInt(this.f);

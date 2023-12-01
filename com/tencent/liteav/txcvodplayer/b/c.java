@@ -13,11 +13,11 @@ import org.json.JSONObject;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    TXPlayInfoParams f36520a;
+    TXPlayInfoParams f22829a;
     public com.tencent.liteav.txcvodplayer.b.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    public f f36521c;
+    public f f22830c;
     public String d;
     public String e;
     private final String f = "https://playvideo.qcloud.com/getplayinfo/v4";
@@ -29,10 +29,10 @@ public final class c {
     final class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ a f36522a;
+        final /* synthetic */ a f22831a;
 
         AnonymousClass1(a aVar) {
-            this.f36522a = aVar;
+            this.f22831a = aVar;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:26:0x0169  */
@@ -65,20 +65,20 @@ public final class c {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public ArrayList<String> f36529a;
+        public ArrayList<String> f22838a;
         public String b;
     }
 
     /* renamed from: com.tencent.liteav.txcvodplayer.b.c$c  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/txcvodplayer/b/c$c.class */
-    public static final class C0934c {
+    public static final class C0764c {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f36530a;
+        public String f22839a;
         public float b;
 
         public final String toString() {
-            return "TCPlayKeyFrameDescInfo{content='" + this.f36530a + "', time=" + this.b + '}';
+            return "TCPlayKeyFrameDescInfo{content='" + this.f22839a + "', time=" + this.b + '}';
         }
     }
 
@@ -86,16 +86,16 @@ public final class c {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f36531a;
+        public String f22840a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f36532c;
+        public int f22841c;
         public String d;
     }
 
     public c(TXPlayInfoParams tXPlayInfoParams) {
-        this.f36520a = tXPlayInfoParams;
+        this.f22829a = tXPlayInfoParams;
     }
 
     public final String a() {
@@ -103,7 +103,7 @@ public final class c {
         if (bVar != null) {
             return bVar.a("SimpleAES");
         }
-        f fVar = this.f36521c;
+        f fVar = this.f22830c;
         if (fVar != null) {
             return fVar.a();
         }
@@ -111,7 +111,7 @@ public final class c {
     }
 
     public final void a(a aVar) {
-        if (this.f36520a == null) {
+        if (this.f22829a == null) {
             return;
         }
         com.tencent.liteav.txcplayer.a.a.a().execute(new AnonymousClass1(aVar));
@@ -159,7 +159,7 @@ public final class c {
             if (i2 == 2) {
                 this.d = null;
                 this.e = null;
-                this.f36521c = new f(jSONObject);
+                this.f22830c = new f(jSONObject);
                 return true;
             } else if (i2 == 4) {
                 this.b = new com.tencent.liteav.txcvodplayer.b.b(jSONObject);
@@ -187,7 +187,7 @@ public final class c {
         if (bVar != null) {
             return bVar.d;
         }
-        f fVar = this.f36521c;
+        f fVar = this.f22830c;
         if (fVar != null) {
             return fVar.b();
         }

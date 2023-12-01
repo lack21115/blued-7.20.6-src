@@ -13,28 +13,22 @@ import kotlin.jvm.functions.Function2;
 @DebugMetadata(b = "TickerChannels.kt", c = {72, 73}, d = "invokeSuspend", e = "kotlinx.coroutines.channels.TickerChannelsKt$ticker$3")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/TickerChannelsKt$ticker$3.class */
 final class TickerChannelsKt$ticker$3 extends SuspendLambda implements Function2<ProducerScope<? super Unit>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43009a;
+    int a;
     final /* synthetic */ TickerMode b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ long f43010c;
+    final /* synthetic */ long c;
     final /* synthetic */ long d;
     private /* synthetic */ Object e;
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/TickerChannelsKt$ticker$3$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f43011a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[TickerMode.valuesCustom().length];
             iArr[TickerMode.FIXED_PERIOD.ordinal()] = 1;
             iArr[TickerMode.FIXED_DELAY.ordinal()] = 2;
-            f43011a = iArr;
+            a = iArr;
         }
     }
 
@@ -42,44 +36,44 @@ final class TickerChannelsKt$ticker$3 extends SuspendLambda implements Function2
     TickerChannelsKt$ticker$3(TickerMode tickerMode, long j, long j2, Continuation<? super TickerChannelsKt$ticker$3> continuation) {
         super(2, continuation);
         this.b = tickerMode;
-        this.f43010c = j;
+        this.c = j;
         this.d = j2;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(ProducerScope<? super Unit> producerScope, Continuation<? super Unit> continuation) {
-        return ((TickerChannelsKt$ticker$3) create(producerScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((TickerChannelsKt$ticker$3) create(producerScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        TickerChannelsKt$ticker$3 tickerChannelsKt$ticker$3 = new TickerChannelsKt$ticker$3(this.b, this.f43010c, this.d, continuation);
+        TickerChannelsKt$ticker$3 tickerChannelsKt$ticker$3 = new TickerChannelsKt$ticker$3(this.b, this.c, this.d, continuation);
         tickerChannelsKt$ticker$3.e = obj;
         return tickerChannelsKt$ticker$3;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object c2;
+        Object c;
         Object d;
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f43009a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
             ProducerScope producerScope = (ProducerScope) this.e;
-            int i2 = WhenMappings.f43011a[this.b.ordinal()];
+            int i2 = WhenMappings.a[this.b.ordinal()];
             if (i2 == 1) {
-                this.f43009a = 1;
-                c2 = TickerChannelsKt.c(this.f43010c, this.d, producerScope.r(), this);
-                if (c2 == a2) {
-                    return a2;
+                this.a = 1;
+                c = TickerChannelsKt.c(this.c, this.d, producerScope.r(), this);
+                if (c == a) {
+                    return a;
                 }
             } else if (i2 == 2) {
-                this.f43009a = 2;
-                d = TickerChannelsKt.d(this.f43010c, this.d, producerScope.r(), this);
-                if (d == a2) {
-                    return a2;
+                this.a = 2;
+                d = TickerChannelsKt.d(this.c, this.d, producerScope.r(), this);
+                if (d == a) {
+                    return a;
                 }
             }
         } else if (i != 1 && i != 2) {
@@ -87,6 +81,6 @@ final class TickerChannelsKt$ticker$3 extends SuspendLambda implements Function2
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

@@ -1,6 +1,5 @@
 package java.util.concurrent;
 
-import com.ss.android.socialbase.downloader.constants.DBDefinition;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -105,16 +104,16 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             this.map = concurrentHashMap;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public final void clear() {
             this.map.clear();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public abstract boolean contains(Object obj);
 
         /* JADX WARN: Removed duplicated region for block: B:7:0x0015  */
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -155,7 +154,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return this.map;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public final boolean isEmpty() {
             return this.map.isEmpty();
         }
@@ -163,10 +162,10 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         @Override // java.util.Collection, java.lang.Iterable
         public abstract Iterator<E> iterator();
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public abstract boolean remove(Object obj);
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public final boolean removeAll(Collection<?> collection) {
             boolean z = false;
             Iterator<E> it = iterator();
@@ -179,7 +178,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return z;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public final boolean retainAll(Collection<?> collection) {
             boolean z = false;
             Iterator<E> it = iterator();
@@ -192,12 +191,12 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return z;
         }
 
-        @Override // java.util.Collection, java.util.List
+        @Override // java.util.Collection
         public final int size() {
             return this.map.size();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public final Object[] toArray() {
             long mappingCount = this.map.mappingCount();
             if (mappingCount > 2147483639) {
@@ -230,7 +229,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Type inference failed for: r0v14, types: [java.lang.Object[]] */
         /* JADX WARN: Type inference failed for: r0v45, types: [java.lang.Object[]] */
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public final <T> T[] toArray(T[] tArr) {
             long mappingCount = this.map.mappingCount();
             if (mappingCount > 2147483639) {
@@ -349,7 +348,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             super(concurrentHashMap);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public /* bridge */ /* synthetic */ boolean add(Object obj) {
             return add((Map.Entry) ((Map.Entry) obj));
         }
@@ -362,7 +361,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return z;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean addAll(Collection<? extends Map.Entry<K, V>> collection) {
             boolean z = false;
             for (Map.Entry<K, V> entry : collection) {
@@ -373,7 +372,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return z;
         }
 
-        @Override // java.util.concurrent.ConcurrentHashMap.CollectionView, java.util.Collection, java.util.Set
+        @Override // java.util.concurrent.ConcurrentHashMap.CollectionView, java.util.Collection
         public boolean contains(Object obj) {
             Map.Entry entry;
             Object key;
@@ -385,7 +384,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return value == v || value.equals(v);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public final boolean equals(Object obj) {
             if (obj instanceof Set) {
                 Set set = (Set) obj;
@@ -397,7 +396,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return false;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public final int hashCode() {
             int i = 0;
             int i2 = 0;
@@ -424,7 +423,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return new EntryIterator(nodeArr, length, 0, length, concurrentHashMap);
         }
 
-        @Override // java.util.concurrent.ConcurrentHashMap.CollectionView, java.util.Collection, java.util.Set
+        @Override // java.util.concurrent.ConcurrentHashMap.CollectionView, java.util.Collection
         public boolean remove(Object obj) {
             Map.Entry entry;
             Object key;
@@ -506,7 +505,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             this.value = v;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean add(K k) {
             V v = this.value;
             if (v == null) {
@@ -515,7 +514,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return this.map.putVal(k, v, true) == null;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean addAll(Collection<? extends K> collection) {
             boolean z = false;
             V v = this.value;
@@ -530,12 +529,12 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return z;
         }
 
-        @Override // java.util.concurrent.ConcurrentHashMap.CollectionView, java.util.Collection, java.util.Set
+        @Override // java.util.concurrent.ConcurrentHashMap.CollectionView, java.util.Collection
         public boolean contains(Object obj) {
             return this.map.containsKey(obj);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean equals(Object obj) {
             if (obj instanceof Set) {
                 Set set = (Set) obj;
@@ -556,7 +555,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return this.value;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public int hashCode() {
             int i = 0;
             Iterator<K> it = iterator();
@@ -574,7 +573,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return new KeyIterator(nodeArr, length, 0, length, concurrentHashMap);
         }
 
-        @Override // java.util.concurrent.ConcurrentHashMap.CollectionView, java.util.Collection, java.util.Set
+        @Override // java.util.concurrent.ConcurrentHashMap.CollectionView, java.util.Collection
         public boolean remove(Object obj) {
             return this.map.remove(obj) != null;
         }
@@ -713,7 +712,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     /* loaded from: source-2895416-dex2jar.jar:java/util/concurrent/ConcurrentHashMap$ReservationNode.class */
     static final class ReservationNode<K, V> extends Node<K, V> {
         ReservationNode() {
-            super(-2147483647, null, null, null);
+            super(ConcurrentHashMap.RESERVED, null, null, null);
         }
 
         @Override // java.util.concurrent.ConcurrentHashMap.Node
@@ -1368,17 +1367,17 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             super(concurrentHashMap);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public final boolean add(V v) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public final boolean addAll(Collection<? extends V> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.concurrent.ConcurrentHashMap.CollectionView, java.util.Collection, java.util.Set
+        @Override // java.util.concurrent.ConcurrentHashMap.CollectionView, java.util.Collection
         public final boolean contains(Object obj) {
             return this.map.containsValue(obj);
         }
@@ -1391,7 +1390,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             return new ValueIterator(nodeArr, length, 0, length, concurrentHashMap);
         }
 
-        @Override // java.util.concurrent.ConcurrentHashMap.CollectionView, java.util.Collection, java.util.Set
+        @Override // java.util.concurrent.ConcurrentHashMap.CollectionView, java.util.Collection
         public final boolean remove(Object obj) {
             if (obj != null) {
                 Iterator<V> it = iterator();
@@ -2126,10 +2125,10 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             if (i5 >= segmentArr.length) {
                 break;
             }
-            segmentArr[i5] = new Segment(0.75f);
+            segmentArr[i5] = new Segment(LOAD_FACTOR);
             i4 = i5 + 1;
         }
-        objectOutputStream.putFields().put(DBDefinition.SEGMENT_TABLE_NAME, segmentArr);
+        objectOutputStream.putFields().put("segments", segmentArr);
         objectOutputStream.putFields().put("segmentShift", 32 - i2);
         objectOutputStream.putFields().put("segmentMask", i - 1);
         objectOutputStream.writeFields();

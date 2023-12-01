@@ -8,10 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 @Deprecated
 /* loaded from: source-8756600-dex2jar.jar:androidx/lifecycle/ClassesInfoCache.class */
-public final class ClassesInfoCache {
+final class ClassesInfoCache {
     private static final int CALL_TYPE_NO_ARG = 0;
     private static final int CALL_TYPE_PROVIDER = 1;
     private static final int CALL_TYPE_PROVIDER_WITH_EVENT = 2;

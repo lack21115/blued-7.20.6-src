@@ -10,18 +10,18 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemMineHealthyBannerBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f29231a;
+    public final ImageView f15541a;
     public final TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final TextView f29232c;
+    public final TextView f15542c;
     private final LinearLayout d;
 
     private ItemMineHealthyBannerBinding(LinearLayout linearLayout, ImageView imageView, TextView textView, TextView textView2) {
         this.d = linearLayout;
-        this.f29231a = imageView;
+        this.f15541a = imageView;
         this.b = textView;
-        this.f29232c = textView2;
+        this.f15542c = textView2;
     }
 
     public static ItemMineHealthyBannerBinding a(View view) {

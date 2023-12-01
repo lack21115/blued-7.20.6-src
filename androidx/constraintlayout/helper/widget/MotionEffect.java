@@ -26,7 +26,7 @@ public class MotionEffect extends MotionHelper {
     public static final int WEST = 3;
 
     /* renamed from: a  reason: collision with root package name */
-    private float f2161a;
+    private float f2113a;
     private int b;
     private int d;
     private int e;
@@ -37,7 +37,7 @@ public class MotionEffect extends MotionHelper {
 
     public MotionEffect(Context context) {
         super(context);
-        this.f2161a = 0.1f;
+        this.f2113a = 0.1f;
         this.b = 49;
         this.d = 50;
         this.e = 0;
@@ -49,7 +49,7 @@ public class MotionEffect extends MotionHelper {
 
     public MotionEffect(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f2161a = 0.1f;
+        this.f2113a = 0.1f;
         this.b = 49;
         this.d = 50;
         this.e = 0;
@@ -62,7 +62,7 @@ public class MotionEffect extends MotionHelper {
 
     public MotionEffect(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f2161a = 0.1f;
+        this.f2113a = 0.1f;
         this.b = 49;
         this.d = 50;
         this.e = 0;
@@ -97,7 +97,7 @@ public class MotionEffect extends MotionHelper {
                 } else if (index == R.styleable.MotionEffect_motionEffect_translationY) {
                     this.f = obtainStyledAttributes.getDimensionPixelOffset(index, this.f);
                 } else if (index == R.styleable.MotionEffect_motionEffect_alpha) {
-                    this.f2161a = obtainStyledAttributes.getFloat(index, this.f2161a);
+                    this.f2113a = obtainStyledAttributes.getFloat(index, this.f2113a);
                 } else if (index == R.styleable.MotionEffect_motionEffect_move) {
                     this.i = obtainStyledAttributes.getInt(index, this.i);
                 } else if (index == R.styleable.MotionEffect_motionEffect_strict) {
@@ -137,8 +137,8 @@ public class MotionEffect extends MotionHelper {
         }
         Key keyAttributes = new KeyAttributes();
         Key keyAttributes2 = new KeyAttributes();
-        keyAttributes.setValue("alpha", Float.valueOf(this.f2161a));
-        keyAttributes2.setValue("alpha", Float.valueOf(this.f2161a));
+        keyAttributes.setValue("alpha", Float.valueOf(this.f2113a));
+        keyAttributes2.setValue("alpha", Float.valueOf(this.f2113a));
         keyAttributes.setFramePosition(this.b);
         keyAttributes2.setFramePosition(this.d);
         KeyPosition keyPosition = new KeyPosition();

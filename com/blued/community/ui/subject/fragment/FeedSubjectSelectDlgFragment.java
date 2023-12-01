@@ -36,6 +36,6 @@ public final class FeedSubjectSelectDlgFragment extends LiveBaseDialogFragment {
                 }
             });
         }
-        this.k = (FragmentContainerView) this.b.findViewById(R.id.feed_subject_select_fm_container);
+        this.k = this.b.findViewById(R.id.feed_subject_select_fm_container);
     }
 }

@@ -9,7 +9,7 @@ import com.tencent.rtmp.downloader.TXVodDownloadMediaInfo;
 public class c extends TXVodDownloadMediaInfo implements Parcelable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f38680a = c.class.getName();
+    private static final String f24989a = c.class.getName();
     public static final Parcelable.Creator<c> CREATOR = new Parcelable.Creator<c>() { // from class: com.tencent.rtmp.downloader.a.c.1
         @Override // android.os.Parcelable.Creator
         public final /* synthetic */ c createFromParcel(Parcel parcel) {

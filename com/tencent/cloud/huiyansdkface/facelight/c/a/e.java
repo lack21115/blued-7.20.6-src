@@ -9,31 +9,31 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public class e implements com.tencent.cloud.huiyansdkface.a.g.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.tencent.cloud.huiyansdkface.facelight.c.d.c f35540a;
+    private com.tencent.cloud.huiyansdkface.facelight.c.d.c f21849a;
 
     @Override // com.tencent.cloud.huiyansdkface.a.g.a
     public View a(Context context) {
-        return this.f35540a.a(context);
+        return this.f21849a.a(context);
     }
 
     public void a() {
         WLogger.d("TuringPreviewView", "destroy");
-        this.f35540a.c();
+        this.f21849a.c();
     }
 
     @Override // com.tencent.cloud.huiyansdkface.a.g.a
     public void a(com.tencent.cloud.huiyansdkface.a.c.a.a aVar) {
-        this.f35540a.a(aVar.a());
+        this.f21849a.a(aVar.a());
     }
 
     @Override // com.tencent.cloud.huiyansdkface.a.g.a
-    public void a(a.InterfaceC0905a interfaceC0905a) {
+    public void a(a.InterfaceC0735a interfaceC0735a) {
         WLogger.i("TuringPreviewView", "set TuringCallback");
-        this.f35540a.a(interfaceC0905a);
+        this.f21849a.a(interfaceC0735a);
     }
 
     public void a(com.tencent.cloud.huiyansdkface.facelight.c.d.c cVar) {
-        this.f35540a = cVar;
+        this.f21849a = cVar;
     }
 
     @Override // com.tencent.cloud.huiyansdkface.a.g.a

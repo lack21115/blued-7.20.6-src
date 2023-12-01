@@ -1,6 +1,5 @@
 package com.amap.api.col.p0003sl;
 
-import android.app.backup.FullBackup;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -14,6 +13,8 @@ import android.os.Process;
 import android.text.TextUtils;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClientOption;
+import com.amap.api.services.geocoder.GeocodeSearch;
+import com.anythink.core.common.c.g;
 import com.anythink.core.common.g.c;
 import com.autonavi.aps.amapapi.utils.g;
 import com.autonavi.aps.amapapi.utils.i;
@@ -29,16 +30,12 @@ public final class e {
     private List<Messenger> w;
     private boolean o = false;
     private boolean p = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    String f4874a = null;
+    String a = null;
     b b = null;
     private long q = 0;
     private long r = 0;
     private com.autonavi.aps.amapapi.model.a s = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    AMapLocation f4875c = null;
+    AMapLocation c = null;
     private long t = 0;
     private int u = 0;
     a d = null;
@@ -85,9 +82,8 @@ public final class e {
             super(str);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.os.HandlerThread
-        public final void onLooperPrepared() {
+        protected final void onLooperPrepared() {
             try {
                 e.this.v = new j(e.this.e);
                 com.autonavi.aps.amapapi.utils.a.b(e.this.e);
@@ -195,7 +191,7 @@ public final class e {
         Bundle bundle = new Bundle();
         bundle.setClassLoader(AMapLocation.class.getClassLoader());
         bundle.putParcelable("loc", aMapLocation);
-        bundle.putString(FullBackup.NO_BACKUP_TREE_TOKEN, str);
+        bundle.putString("nb", str);
         bundle.putParcelable("statics", aVar);
         this.h.put(messenger, Long.valueOf(i.b()));
         a(messenger, 1, bundle);
@@ -206,7 +202,7 @@ public final class e {
         bundle.setClassLoader(AMapLocation.class.getClassLoader());
         bundle.putInt("I_MAX_GEO_DIS", com.autonavi.aps.amapapi.utils.a.i() * 3);
         bundle.putInt("I_MIN_GEO_DIS", com.autonavi.aps.amapapi.utils.a.i());
-        bundle.putParcelable("loc", this.f4875c);
+        bundle.putParcelable("loc", this.c);
         if ("COARSE_LOC".equals(str)) {
             a(messenger, 103, bundle);
         } else {
@@ -226,7 +222,7 @@ public final class e {
                         this.r = 0L;
                     }
                     if (aMapLocationClientOption.isOffset() != this.m.isOffset() || this.m.getGeoLanguage() != aMapLocationClientOption.getGeoLanguage()) {
-                        this.f4875c = null;
+                        this.c = null;
                     }
                 }
                 this.m = aMapLocationClientOption;
@@ -346,12 +342,12 @@ public final class e {
                 if (bundle.isEmpty()) {
                     return;
                 }
-                double d = bundle.getDouble("lat");
+                double d = bundle.getDouble(c.B);
                 double d2 = bundle.getDouble(c.C);
                 float f2 = bundle.getFloat("radius");
-                long j = bundle.getLong("time");
+                long j = bundle.getLong(g.a.g);
                 if ("FINE_LOC".equals(str)) {
-                    AMapLocation aMapLocation = new AMapLocation("gps");
+                    AMapLocation aMapLocation = new AMapLocation(GeocodeSearch.GPS);
                     aMapLocation.setLatitude(d);
                     aMapLocation.setLocationType(1);
                     aMapLocation.setLongitude(d2);
@@ -361,8 +357,8 @@ public final class e {
                 }
                 if (com.autonavi.aps.amapapi.utils.a.h() && (b2 = b(bundle)) != null && b2.isNeedAddress()) {
                     a(b2);
-                    if (this.f4875c != null) {
-                        float a2 = i.a(new double[]{d, d2, this.f4875c.getLatitude(), this.f4875c.getLongitude()});
+                    if (this.c != null) {
+                        float a2 = i.a(new double[]{d, d2, this.c.getLatitude(), this.c.getLongitude()});
                         f = a2;
                         if (a2 < com.autonavi.aps.amapapi.utils.a.i() * 3) {
                             a(messenger, str);
@@ -374,7 +370,7 @@ public final class e {
                     if (f == -1.0f || f > com.autonavi.aps.amapapi.utils.a.i()) {
                         a(bundle);
                         com.autonavi.aps.amapapi.model.a a3 = this.f.a(d, d2);
-                        this.f4875c = a3;
+                        this.c = a3;
                         if (a3 == null || TextUtils.isEmpty(a3.getAdCode())) {
                             return;
                         }
@@ -404,7 +400,7 @@ public final class e {
             hp.a(this.e, stringExtra);
         }
         String stringExtra2 = intent.getStringExtra("b");
-        this.f4874a = stringExtra2;
+        this.a = stringExtra2;
         ho.a(stringExtra2);
         String stringExtra3 = intent.getStringExtra("d");
         if (TextUtils.isEmpty(stringExtra3)) {
@@ -444,10 +440,10 @@ public final class e {
             if (this.i != null && this.j != 0 && this.k != 0) {
                 long b2 = i.b();
                 long j = this.j;
-                g.a(this.e, this.i.c(this.e), this.i.d(this.e), this.k, b2 - j);
+                com.autonavi.aps.amapapi.utils.g.a(this.e, this.i.c(this.e), this.i.d(this.e), this.k, b2 - j);
                 this.i.e(this.e);
             }
-            g.a(this.e);
+            com.autonavi.aps.amapapi.utils.g.a(this.e);
             iw.b();
             if (g) {
                 Process.killProcess(Process.myPid());

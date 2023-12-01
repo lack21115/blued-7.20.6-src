@@ -50,8 +50,8 @@ public final class LivePlanetGiftNumTipsPop extends AttachPopupView implements O
     }
 
     public final void a(View view, XPopupCallback xPopupCallback) {
-        int a2 = DensityUtils.a(getContext(), 4.0f);
-        new XPopup.Builder(getContext()).a(xPopupCallback).a(PopupAnimation.ScrollAlphaFromBottom).d((Boolean) false).a(PopupPosition.Top).b(true).a(view).b(a2).c(DensityUtils.a(getContext(), 8.0f)).a((BasePopupView) this).h();
+        int a = DensityUtils.a(getContext(), 4.0f);
+        new XPopup.Builder(getContext()).a(xPopupCallback).a(PopupAnimation.ScrollAlphaFromBottom).d((Boolean) false).a(PopupPosition.Top).b(true).a(view).b(a).c(DensityUtils.a(getContext(), 8.0f)).a((BasePopupView) this).h();
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
@@ -71,15 +71,15 @@ public final class LivePlanetGiftNumTipsPop extends AttachPopupView implements O
         planetGiveNumModel2.setText("自定义数量");
         arrayList2.add(new FitemPlanetGiftNum(this.t, planetGiveNumModel2));
         FreedomAdapter freedomAdapter = new FreedomAdapter(getContext(), this.t.a(), arrayList2);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_list);
-        if (recyclerView != null) {
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        RecyclerView findViewById = findViewById(R.id.rv_list);
+        if (findViewById != null) {
+            findViewById.setLayoutManager(new LinearLayoutManager(getContext()));
         }
-        if (recyclerView != null) {
-            recyclerView.setItemAnimator(new DefaultItemAnimator());
+        if (findViewById != null) {
+            findViewById.setItemAnimator(new DefaultItemAnimator());
         }
-        if (recyclerView != null) {
-            recyclerView.setAdapter(freedomAdapter);
+        if (findViewById != null) {
+            findViewById.setAdapter(freedomAdapter);
         }
         freedomAdapter.a(this);
     }

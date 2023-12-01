@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.text.format.Time;
+import com.xiaomi.mipush.sdk.Constants;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,22 +22,22 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public abstract class gl {
 
     /* renamed from: a  reason: collision with root package name */
-    private static long f41443a;
+    private static long f27752a;
 
     /* renamed from: a  reason: collision with other field name */
-    public static final DateFormat f517a;
+    public static final DateFormat f470a;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f41444c;
+    private static String f27753c;
 
     /* renamed from: a  reason: collision with other field name */
-    private gp f518a;
+    private gp f471a;
 
     /* renamed from: a  reason: collision with other field name */
-    private List<gi> f519a;
+    private List<gi> f472a;
 
     /* renamed from: a  reason: collision with other field name */
-    private final Map<String, Object> f520a;
+    private final Map<String, Object> f473a;
     private String d;
     private String e;
     private String f;
@@ -45,15 +46,15 @@ public abstract class gl {
     private String i;
 
     /* renamed from: a  reason: collision with other field name */
-    protected static final String f516a = Locale.getDefault().getLanguage().toLowerCase();
+    protected static final String f469a = Locale.getDefault().getLanguage().toLowerCase();
     private static String b = null;
 
     static {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-        f517a = simpleDateFormat;
+        f470a = simpleDateFormat;
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone(Time.TIMEZONE_UTC));
-        f41444c = gw.a(5) + "-";
-        f41443a = 0L;
+        f27753c = gw.a(5) + Constants.ACCEPT_TIME_SEPARATOR_SERVER;
+        f27752a = 0L;
     }
 
     public gl() {
@@ -63,9 +64,9 @@ public abstract class gl {
         this.g = null;
         this.h = null;
         this.i = null;
-        this.f519a = new CopyOnWriteArrayList();
-        this.f520a = new HashMap();
-        this.f518a = null;
+        this.f472a = new CopyOnWriteArrayList();
+        this.f473a = new HashMap();
+        this.f471a = null;
     }
 
     public gl(Bundle bundle) {
@@ -75,16 +76,16 @@ public abstract class gl {
         this.g = null;
         this.h = null;
         this.i = null;
-        this.f519a = new CopyOnWriteArrayList();
-        this.f520a = new HashMap();
-        this.f518a = null;
+        this.f472a = new CopyOnWriteArrayList();
+        this.f473a = new HashMap();
+        this.f471a = null;
         this.f = bundle.getString("ext_to");
         this.g = bundle.getString("ext_from");
         this.h = bundle.getString("ext_chid");
         this.e = bundle.getString("ext_pkt_id");
         Parcelable[] parcelableArray = bundle.getParcelableArray("ext_exts");
         if (parcelableArray != null) {
-            this.f519a = new ArrayList(parcelableArray.length);
+            this.f472a = new ArrayList(parcelableArray.length);
             int length = parcelableArray.length;
             int i = 0;
             while (true) {
@@ -94,14 +95,14 @@ public abstract class gl {
                 }
                 gi a2 = gi.a((Bundle) parcelableArray[i2]);
                 if (a2 != null) {
-                    this.f519a.add(a2);
+                    this.f472a.add(a2);
                 }
                 i = i2 + 1;
             }
         }
         Bundle bundle2 = bundle.getBundle("ext_ERROR");
         if (bundle2 != null) {
-            this.f518a = new gp(bundle2);
+            this.f471a = new gp(bundle2);
         }
     }
 
@@ -110,9 +111,9 @@ public abstract class gl {
         synchronized (gl.class) {
             try {
                 StringBuilder sb2 = new StringBuilder();
-                sb2.append(f41444c);
-                long j = f41443a;
-                f41443a = 1 + j;
+                sb2.append(f27753c);
+                long j = f27752a;
+                f27752a = 1 + j;
                 sb2.append(Long.toString(j));
                 sb = sb2.toString();
             } catch (Throwable th) {
@@ -123,7 +124,7 @@ public abstract class gl {
     }
 
     public static String q() {
-        return f516a;
+        return f469a;
     }
 
     public Bundle a() {
@@ -143,15 +144,15 @@ public abstract class gl {
         if (!TextUtils.isEmpty(this.h)) {
             bundle.putString("ext_chid", this.h);
         }
-        gp gpVar = this.f518a;
+        gp gpVar = this.f471a;
         if (gpVar != null) {
             bundle.putBundle("ext_ERROR", gpVar.a());
         }
-        List<gi> list = this.f519a;
+        List<gi> list = this.f472a;
         if (list != null) {
             Bundle[] bundleArr = new Bundle[list.size()];
             int i = 0;
-            for (gi giVar : this.f519a) {
+            for (gi giVar : this.f472a) {
                 Bundle a2 = giVar.a();
                 if (a2 != null) {
                     bundleArr[i] = a2;
@@ -168,9 +169,9 @@ public abstract class gl {
     }
 
     public gi a(String str, String str2) {
-        for (gi giVar : this.f519a) {
+        for (gi giVar : this.f472a) {
             if (str2 == null || str2.equals(giVar.b())) {
-                if (str.equals(giVar.m11811a())) {
+                if (str.equals(giVar.m8761a())) {
                     return giVar;
                 }
             }
@@ -179,47 +180,47 @@ public abstract class gl {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public gp m11817a() {
-        return this.f518a;
+    public gp m8767a() {
+        return this.f471a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public Object m11818a(String str) {
+    public Object m8768a(String str) {
         synchronized (this) {
-            if (this.f520a == null) {
+            if (this.f473a == null) {
                 return null;
             }
-            return this.f520a.get(str);
+            return this.f473a.get(str);
         }
     }
 
     /* renamed from: a */
-    public abstract String mo11814a();
+    public abstract String mo8764a();
 
     /* renamed from: a  reason: collision with other method in class */
-    public Collection<gi> m11819a() {
+    public Collection<gi> m8769a() {
         synchronized (this) {
-            if (this.f519a == null) {
+            if (this.f472a == null) {
                 return Collections.emptyList();
             }
-            return Collections.unmodifiableList(new ArrayList(this.f519a));
+            return Collections.unmodifiableList(new ArrayList(this.f472a));
         }
     }
 
     public void a(gi giVar) {
-        this.f519a.add(giVar);
+        this.f472a.add(giVar);
     }
 
     public void a(gp gpVar) {
-        this.f518a = gpVar;
+        this.f471a = gpVar;
     }
 
     public Collection<String> b() {
         synchronized (this) {
-            if (this.f520a == null) {
+            if (this.f473a == null) {
                 return Collections.emptySet();
             }
-            return Collections.unmodifiableSet(new HashSet(this.f520a.keySet()));
+            return Collections.unmodifiableSet(new HashSet(this.f473a.keySet()));
         }
     }
 
@@ -231,12 +232,12 @@ public abstract class gl {
             return false;
         }
         gl glVar = (gl) obj;
-        gp gpVar = this.f518a;
+        gp gpVar = this.f471a;
         if (gpVar != null) {
-            if (!gpVar.equals(glVar.f518a)) {
+            if (!gpVar.equals(glVar.f471a)) {
                 return false;
             }
-        } else if (glVar.f518a != null) {
+        } else if (glVar.f471a != null) {
             return false;
         }
         String str = this.g;
@@ -247,7 +248,7 @@ public abstract class gl {
         } else if (glVar.g != null) {
             return false;
         }
-        if (this.f519a.equals(glVar.f519a)) {
+        if (this.f472a.equals(glVar.f472a)) {
             String str2 = this.e;
             if (str2 != null) {
                 if (!str2.equals(glVar.e)) {
@@ -264,12 +265,12 @@ public abstract class gl {
             } else if (glVar.h != null) {
                 return false;
             }
-            Map<String, Object> map = this.f520a;
+            Map<String, Object> map = this.f473a;
             if (map != null) {
-                if (!map.equals(glVar.f520a)) {
+                if (!map.equals(glVar.f473a)) {
                     return false;
                 }
-            } else if (glVar.f520a != null) {
+            } else if (glVar.f473a != null) {
                 return false;
             }
             String str4 = this.f;
@@ -299,9 +300,9 @@ public abstract class gl {
         int hashCode4 = str4 != null ? str4.hashCode() : 0;
         String str5 = this.h;
         int hashCode5 = str5 != null ? str5.hashCode() : 0;
-        int hashCode6 = this.f519a.hashCode();
-        int hashCode7 = this.f520a.hashCode();
-        gp gpVar = this.f518a;
+        int hashCode6 = this.f472a.hashCode();
+        int hashCode7 = this.f473a.hashCode();
+        gp gpVar = this.f471a;
         if (gpVar != null) {
             i = gpVar.hashCode();
         }

@@ -37,11 +37,11 @@ public abstract class BaseHmsClient implements AidlApiClient {
     private static BinderAdapter m;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f22642a;
+    private final Context f9034a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ClientSettings f22643c;
+    private final ClientSettings f9035c;
     private volatile IAIDLInvoke d;
     private final ConnectionCallbacks e;
     private final OnConnectionFailedListener f;
@@ -64,11 +64,11 @@ public abstract class BaseHmsClient implements AidlApiClient {
     public static final class ConnectionResultWrapper {
 
         /* renamed from: a  reason: collision with root package name */
-        private HuaweiApi.RequestHandler f22648a;
+        private HuaweiApi.RequestHandler f9040a;
         private ConnectionResult b;
 
         public ConnectionResultWrapper(HuaweiApi.RequestHandler requestHandler, ConnectionResult connectionResult) {
-            this.f22648a = requestHandler;
+            this.f9040a = requestHandler;
             this.b = connectionResult;
         }
 
@@ -77,7 +77,7 @@ public abstract class BaseHmsClient implements AidlApiClient {
         }
 
         public HuaweiApi.RequestHandler getRequest() {
-            return this.f22648a;
+            return this.f9040a;
         }
     }
 
@@ -87,8 +87,8 @@ public abstract class BaseHmsClient implements AidlApiClient {
     }
 
     public BaseHmsClient(Context context, ClientSettings clientSettings, OnConnectionFailedListener onConnectionFailedListener, ConnectionCallbacks connectionCallbacks) {
-        this.f22642a = context;
-        this.f22643c = clientSettings;
+        this.f9034a = context;
+        this.f9035c = clientSettings;
         this.b = clientSettings.getAppID();
         this.f = onConnectionFailedListener;
         this.e = connectionCallbacks;
@@ -96,19 +96,19 @@ public abstract class BaseHmsClient implements AidlApiClient {
 
     private void a(int i2, boolean z) {
         HMSLog.i("BaseHmsClient", "====== HMSSDK version: 60600300 ======");
-        int i3 = (this.f22643c.isUseInnerHms() ? k : j).get();
+        int i3 = (this.f9035c.isUseInnerHms() ? k : j).get();
         HMSLog.i("BaseHmsClient", "Enter connect, Connection Status: " + i3);
         if (z || !(i3 == 3 || i3 == 5)) {
             int i4 = i2;
             if (getMinApkVersion() > i2) {
                 i4 = getMinApkVersion();
             }
-            HMSLog.i("BaseHmsClient", "connect minVersion:" + i4 + " packageName:" + this.f22643c.getInnerHmsPkg());
-            if (this.f22642a.getPackageName().equals(this.f22643c.getInnerHmsPkg())) {
+            HMSLog.i("BaseHmsClient", "connect minVersion:" + i4 + " packageName:" + this.f9035c.getInnerHmsPkg());
+            if (this.f9034a.getPackageName().equals(this.f9035c.getInnerHmsPkg())) {
                 HMSLog.i("BaseHmsClient", "service packageName is same, bind core service return");
                 a();
-            } else if (!Util.isAvailableLibExist(this.f22642a)) {
-                int isHuaweiMobileServicesAvailable = HuaweiApiAvailability.getInstance().isHuaweiMobileServicesAvailable(this.f22642a, i4);
+            } else if (!Util.isAvailableLibExist(this.f9034a)) {
+                int isHuaweiMobileServicesAvailable = HuaweiApiAvailability.getInstance().isHuaweiMobileServicesAvailable(this.f9034a, i4);
                 HMSLog.i("BaseHmsClient", "HuaweiApiAvailability check available result: " + isHuaweiMobileServicesAvailable);
                 if (isHuaweiMobileServicesAvailable == 0) {
                     a();
@@ -117,7 +117,7 @@ public abstract class BaseHmsClient implements AidlApiClient {
                 }
             } else {
                 AvailableAdapter availableAdapter = new AvailableAdapter(i4);
-                int isHuaweiMobileServicesAvailable2 = availableAdapter.isHuaweiMobileServicesAvailable(this.f22642a);
+                int isHuaweiMobileServicesAvailable2 = availableAdapter.isHuaweiMobileServicesAvailable(this.f9034a);
                 HMSLog.i("BaseHmsClient", "check available result: " + isHuaweiMobileServicesAvailable2);
                 if (isHuaweiMobileServicesAvailable2 == 0) {
                     a();
@@ -142,7 +142,7 @@ public abstract class BaseHmsClient implements AidlApiClient {
             if (i2 == 29) {
                 i3 = 9;
             }
-            a(new ConnectionResult(26, HuaweiApiAvailability.getInstance().getErrPendingIntent(this.f22642a, i3, 0)));
+            a(new ConnectionResult(26, HuaweiApiAvailability.getInstance().getErrPendingIntent(this.f9034a, i3, 0)));
             return;
         }
         Activity activeActivity = Util.getActiveActivity(getClientSettings().getCpActivity(), getContext());
@@ -175,8 +175,8 @@ public abstract class BaseHmsClient implements AidlApiClient {
     }
 
     private void a(String str, String str2) {
-        if (this.f22643c.isUseInnerHms()) {
-            m = InnerBinderAdapter.getInstance(this.f22642a, str2, str);
+        if (this.f9035c.isUseInnerHms()) {
+            m = InnerBinderAdapter.getInstance(this.f9034a, str2, str);
             if (!isConnected()) {
                 a(5);
                 m.binder(c());
@@ -187,7 +187,7 @@ public abstract class BaseHmsClient implements AidlApiClient {
             connectedInternal(getAdapter().getServiceBinder());
             return;
         }
-        l = OuterBinderAdapter.getInstance(this.f22642a, str2, str);
+        l = OuterBinderAdapter.getInstance(this.f9034a, str2, str);
         if (!isConnected()) {
             a(5);
             l.binder(c());
@@ -224,7 +224,7 @@ public abstract class BaseHmsClient implements AidlApiClient {
     private void b(AvailableAdapter availableAdapter, int i2) {
         HMSLog.i("BaseHmsClient", "enter HmsCore resolution");
         if (!getClientSettings().isHasActivity()) {
-            a(new ConnectionResult(26, HuaweiApiAvailability.getInstance().getErrPendingIntent(this.f22642a, i2, 0)));
+            a(new ConnectionResult(26, HuaweiApiAvailability.getInstance().getErrPendingIntent(this.f9034a, i2, 0)));
             return;
         }
         Activity activeActivity = Util.getActiveActivity(getClientSettings().getCpActivity(), getContext());
@@ -262,7 +262,7 @@ public abstract class BaseHmsClient implements AidlApiClient {
                 Activity activeActivity = Util.getActiveActivity(BaseHmsClient.this.getClientSettings().getCpActivity(), BaseHmsClient.this.getContext());
                 if (activeActivity == null) {
                     HMSLog.i("BaseHmsClient", "onBinderFailed: return pendingIntent to kit and cp");
-                    BaseHmsClient.this.a(new ConnectionResult(10, PendingIntent.getActivity(BaseHmsClient.this.f22642a, 11, intent, 67108864)));
+                    BaseHmsClient.this.a(new ConnectionResult(10, PendingIntent.getActivity(BaseHmsClient.this.f9034a, 11, intent, 67108864)));
                     BaseHmsClient.this.d = null;
                     return;
                 }
@@ -317,7 +317,7 @@ public abstract class BaseHmsClient implements AidlApiClient {
 
     private void d() {
         HMSLog.w("BaseHmsClient", "Failed to get service as interface, trying to unbind.");
-        if (this.f22643c.isUseInnerHms()) {
+        if (this.f9035c.isUseInnerHms()) {
             BinderAdapter binderAdapter = m;
             if (binderAdapter == null) {
                 HMSLog.w("BaseHmsClient", "mInnerBinderAdapter is null.");
@@ -337,7 +337,7 @@ public abstract class BaseHmsClient implements AidlApiClient {
     }
 
     private void e() {
-        if (this.f22643c.isUseInnerHms()) {
+        if (this.f9035c.isUseInnerHms()) {
             BinderAdapter binderAdapter = m;
             if (binderAdapter != null) {
                 binderAdapter.unBind();
@@ -353,14 +353,14 @@ public abstract class BaseHmsClient implements AidlApiClient {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
-        String innerHmsPkg = this.f22643c.getInnerHmsPkg();
+        String innerHmsPkg = this.f9035c.getInnerHmsPkg();
         String serviceAction = getServiceAction();
         HMSLog.i("BaseHmsClient", "enter bindCoreService, packageName is " + innerHmsPkg + ", serviceAction is " + serviceAction);
         a(innerHmsPkg, serviceAction);
     }
 
     void a(int i2) {
-        if (this.f22643c.isUseInnerHms()) {
+        if (this.f9035c.isUseInnerHms()) {
             k.set(i2);
         } else {
             j.set(i2);
@@ -402,7 +402,7 @@ public abstract class BaseHmsClient implements AidlApiClient {
     }
 
     public void disconnect() {
-        int i2 = (this.f22643c.isUseInnerHms() ? k : j).get();
+        int i2 = (this.f9035c.isUseInnerHms() ? k : j).get();
         HMSLog.i("BaseHmsClient", "Enter disconnect, Connection Status: " + i2);
         if (i2 != 1) {
             if (i2 == 3) {
@@ -417,13 +417,13 @@ public abstract class BaseHmsClient implements AidlApiClient {
     }
 
     public BinderAdapter getAdapter() {
-        HMSLog.i("BaseHmsClient", "getAdapter:isInner:" + this.f22643c.isUseInnerHms() + ", mInnerBinderAdapter:" + m + ", mOuterBinderAdapter:" + l);
-        return this.f22643c.isUseInnerHms() ? m : l;
+        HMSLog.i("BaseHmsClient", "getAdapter:isInner:" + this.f9035c.isUseInnerHms() + ", mInnerBinderAdapter:" + m + ", mOuterBinderAdapter:" + l);
+        return this.f9035c.isUseInnerHms() ? m : l;
     }
 
     @Override // com.huawei.hms.support.api.client.AidlApiClient
     public List<String> getApiNameList() {
-        return this.f22643c.getApiName();
+        return this.f9035c.getApiName();
     }
 
     @Override // com.huawei.hms.support.api.client.ApiClient
@@ -433,21 +433,21 @@ public abstract class BaseHmsClient implements AidlApiClient {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public ClientSettings getClientSettings() {
-        return this.f22643c;
+        return this.f9035c;
     }
 
     public int getConnectionStatus() {
-        return (this.f22643c.isUseInnerHms() ? k : j).get();
+        return (this.f9035c.isUseInnerHms() ? k : j).get();
     }
 
     @Override // com.huawei.hms.support.api.client.ApiClient
     public Context getContext() {
-        return this.f22642a;
+        return this.f9034a;
     }
 
     @Override // com.huawei.hms.support.api.client.ApiClient
     public String getCpID() {
-        return this.f22643c.getCpID();
+        return this.f9035c.getCpID();
     }
 
     @Deprecated
@@ -457,7 +457,7 @@ public abstract class BaseHmsClient implements AidlApiClient {
 
     @Override // com.huawei.hms.support.api.client.ApiClient
     public String getPackageName() {
-        return this.f22643c.getClientPackageName();
+        return this.f9035c.getClientPackageName();
     }
 
     public int getRequestHmsVersionCode() {
@@ -470,8 +470,8 @@ public abstract class BaseHmsClient implements AidlApiClient {
     }
 
     public String getServiceAction() {
-        HMSPackageManager hMSPackageManager = HMSPackageManager.getInstance(this.f22642a);
-        return this.f22643c.isUseInnerHms() ? hMSPackageManager.getInnerServiceAction() : hMSPackageManager.getServiceAction();
+        HMSPackageManager hMSPackageManager = HMSPackageManager.getInstance(this.f9034a);
+        return this.f9035c.isUseInnerHms() ? hMSPackageManager.getInnerServiceAction() : hMSPackageManager.getServiceAction();
     }
 
     @Override // com.huawei.hms.support.api.client.ApiClient
@@ -481,7 +481,7 @@ public abstract class BaseHmsClient implements AidlApiClient {
 
     @Override // com.huawei.hms.support.api.client.ApiClient
     public SubAppInfo getSubAppInfo() {
-        return this.f22643c.getSubAppID();
+        return this.f9035c.getSubAppID();
     }
 
     @Override // com.huawei.hms.support.api.client.ApiClient
@@ -491,11 +491,11 @@ public abstract class BaseHmsClient implements AidlApiClient {
 
     @Override // com.huawei.hms.support.api.client.ApiClient
     public boolean isConnected() {
-        return this.f22643c.isUseInnerHms() ? k.get() == 3 : j.get() == 3;
+        return this.f9035c.isUseInnerHms() ? k.get() == 3 : j.get() == 3;
     }
 
     public boolean isConnecting() {
-        return (this.f22643c.isUseInnerHms() ? k : j).get() == 5;
+        return (this.f9035c.isUseInnerHms() ? k : j).get() == 5;
     }
 
     public void onConnecting() {

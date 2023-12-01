@@ -42,20 +42,16 @@ import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 import java.text.DecimalFormat;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopPKListView.class */
 public class PopPKListView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f15104a;
+    private LayoutInflater a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15105c;
+    private View c;
     private View d;
     private MyPopupWindow e;
     private View f;
@@ -109,31 +105,28 @@ public class PopPKListView {
         PkPagerAdapter() {
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             viewGroup.removeView((View) obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return 2;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             View view = (View) PopPKListView.this.s.get(String.valueOf(i));
             while (view == null) {
                 view = LayoutInflater.from(PopPKListView.this.b).inflate(R.layout.pop_window_pk_list, viewGroup, false);
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_list);
-                recyclerView.setLayoutManager(new LinearLayoutManager(PopPKListView.this.b, 1, false));
+                RecyclerView findViewById = view.findViewById(R.id.recycler_list);
+                findViewById.setLayoutManager(new LinearLayoutManager(PopPKListView.this.b, 1, false));
                 if (i == 0) {
                     PopPKListView popPKListView = PopPKListView.this;
                     popPKListView.q = new RankingAdapter(0);
-                    recyclerView.setAdapter(PopPKListView.this.q);
+                    findViewById.setAdapter(PopPKListView.this.q);
                 } else if (i == 1) {
                     PopPKListView popPKListView2 = PopPKListView.this;
                     popPKListView2.r = new RankingAdapter(1);
-                    recyclerView.setAdapter(PopPKListView.this.r);
+                    findViewById.setAdapter(PopPKListView.this.r);
                 }
                 PopPKListView.this.s.put(String.valueOf(i), view);
             }
@@ -145,7 +138,6 @@ public class PopPKListView {
             return view2;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object obj) {
             return view == obj;
         }
@@ -157,12 +149,11 @@ public class PopPKListView {
         private int b;
 
         public RankingAdapter(int i) {
-            super(R.layout.pop_window_ranking_list_item, null);
+            super(R.layout.pop_window_ranking_list_item, (List) null);
             this.b = i;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final LiveRankingListExtra liveRankingListExtra) {
             TextView textView = (TextView) baseViewHolder.getView(R.id.tv_rank_index);
@@ -296,8 +287,8 @@ public class PopPKListView {
                 ImageView imageView2 = (ImageView) view.findViewById(R.id.avatar);
                 TextView textView2 = (TextView) view.findViewById(R.id.tv_name);
                 TextView textView3 = (TextView) view.findViewById(R.id.tv_rank);
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_list);
-                View findViewById = view.findViewById(R.id.fl_pk_list_empty);
+                RecyclerView findViewById = view.findViewById(R.id.recycler_list);
+                View findViewById2 = view.findViewById(R.id.fl_pk_list_empty);
                 view.findViewById(R.id.live_pay).setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopPKListView.7.1
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view2) {
@@ -308,14 +299,14 @@ public class PopPKListView {
                 });
                 if (!bluedEntity.hasData()) {
                     shapeLinearLayout.setVisibility(8);
-                    findViewById.setVisibility(0);
-                    recyclerView.setVisibility(8);
+                    findViewById2.setVisibility(0);
+                    findViewById.setVisibility(8);
                     PopPKListView.this.b(i);
                     return;
                 }
                 shapeLinearLayout.setVisibility(0);
-                findViewById.setVisibility(8);
-                recyclerView.setVisibility(0);
+                findViewById2.setVisibility(8);
+                findViewById.setVisibility(0);
                 textView.setText(bluedEntity.extra.index > 10 ? "10+" : String.valueOf(bluedEntity.extra.index));
                 if (bluedEntity.extra.index == 1) {
                     int i2 = i;
@@ -371,10 +362,10 @@ public class PopPKListView {
                 int i3 = i;
                 if (i3 == 0) {
                     PopPKListView.this.q.setNewData(bluedEntity.data);
-                    recyclerView.setAdapter(PopPKListView.this.q);
+                    findViewById.setAdapter(PopPKListView.this.q);
                 } else if (i3 == 1) {
                     PopPKListView.this.r.setNewData(bluedEntity.data);
-                    recyclerView.setAdapter(PopPKListView.this.r);
+                    findViewById.setAdapter(PopPKListView.this.r);
                 }
             }
         }, str);
@@ -385,25 +376,25 @@ public class PopPKListView {
         View view = this.s.get(String.valueOf(i));
         if (view != null) {
             ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.ll_anchor_rank_layout);
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_list);
-            View findViewById = view.findViewById(R.id.fl_pk_list_empty);
-            View findViewById2 = view.findViewById(R.id.live_pay);
+            RecyclerView findViewById = view.findViewById(R.id.recycler_list);
+            View findViewById2 = view.findViewById(R.id.fl_pk_list_empty);
+            View findViewById3 = view.findViewById(R.id.live_pay);
             if (this.t == 0) {
-                findViewById2.setVisibility(0);
+                findViewById3.setVisibility(0);
             } else {
-                findViewById2.setVisibility(8);
+                findViewById3.setVisibility(8);
             }
             if (i == 0) {
                 if (this.q.getData() == null || this.q.getData().size() <= 0) {
                     shapeLinearLayout.setVisibility(8);
-                    findViewById.setVisibility(0);
-                    recyclerView.setVisibility(8);
+                    findViewById2.setVisibility(0);
+                    findViewById.setVisibility(8);
                 }
             } else if (i == 1) {
                 if (this.r.getData() == null || this.r.getData().size() <= 0) {
                     shapeLinearLayout.setVisibility(8);
-                    findViewById.setVisibility(0);
-                    recyclerView.setVisibility(8);
+                    findViewById2.setVisibility(0);
+                    findViewById.setVisibility(8);
                 }
             }
         }
@@ -411,11 +402,11 @@ public class PopPKListView {
 
     private void c() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f15104a = from;
+        this.a = from;
         View inflate = from.inflate(R.layout.pop_window_pk, (ViewGroup) null);
-        this.f15105c = inflate.findViewById(R.id.bg_view);
+        this.c = inflate.findViewById(R.id.bg_view);
         this.s.clear();
-        this.f15105c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopPKListView.1
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopPKListView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -453,15 +444,12 @@ public class PopPKListView {
         this.l = pkPagerAdapter;
         this.k.setAdapter(pkPagerAdapter);
         this.k.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.view.PopPKListView.4
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 if (i == 0) {
                     ShapeModel shapeModel = new ShapeModel();
@@ -503,7 +491,7 @@ public class PopPKListView {
         });
         MyPopupWindow myPopupWindow = new MyPopupWindow(inflate, -1, -1, true);
         this.e = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.e.setTouchable(true);
         this.e.setOutsideTouchable(true);
         this.e.setFocusable(true);
@@ -523,7 +511,7 @@ public class PopPKListView {
             this.e.a();
         }
         c();
-        this.f15105c.clearAnimation();
+        this.c.clearAnimation();
         this.d.clearAnimation();
         this.e.showAtLocation(this.d, 81, 0, 0);
         this.d.setVisibility(0);
@@ -542,7 +530,7 @@ public class PopPKListView {
     }
 
     public void b() {
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_SHOW_DIALOG).post(false);
+        LiveEventBus.get("live_show_dialog").post(false);
         this.d.setVisibility(8);
         this.d.startAnimation(AnimationUtils.loadAnimation(this.b, R.anim.push_bottom_out));
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.PopPKListView.8

@@ -7,22 +7,22 @@ import java.util.List;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f41834a;
+    private Context f28143a;
     private HtmlCacheStrategy b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.youzan.spiderman.c.b.d f41835c;
+    private com.youzan.spiderman.c.b.d f28144c;
 
     public f(Context context, HtmlCacheStrategy htmlCacheStrategy, com.youzan.spiderman.c.b.d dVar) {
-        this.f41834a = context.getApplicationContext();
+        this.f28143a = context.getApplicationContext();
         this.b = htmlCacheStrategy;
-        this.f41835c = dVar;
+        this.f28144c = dVar;
     }
 
     public final boolean a() {
         Boolean a2;
         HtmlCacheStrategy htmlCacheStrategy = this.b;
-        return (htmlCacheStrategy == null || (a2 = htmlCacheStrategy.a()) == null) ? this.f41835c.a() : a2.booleanValue();
+        return (htmlCacheStrategy == null || (a2 = htmlCacheStrategy.a()) == null) ? this.f28144c.a() : a2.booleanValue();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x004c, code lost:
@@ -41,7 +41,7 @@ public final class f {
             boolean r0 = r0.a()
             if (r0 == 0) goto L75
             r0 = r5
-            com.youzan.spiderman.c.b.d r0 = r0.f41835c
+            com.youzan.spiderman.c.b.d r0 = r0.f28144c
             java.lang.String r0 = r0.c()
             r9 = r0
             r0 = r9
@@ -61,7 +61,7 @@ public final class f {
             boolean r0 = r0.equals(r1)
             if (r0 != 0) goto L52
             r0 = r5
-            android.content.Context r0 = r0.f41834a
+            android.content.Context r0 = r0.f28143a
             java.lang.String r0 = com.youzan.spiderman.utils.NetWorkUtil.getConnectionStatus(r0)
             r10 = r0
             r0 = r9
@@ -83,7 +83,7 @@ public final class f {
             r1 = r6
             long r0 = r0 - r1
             r1 = r5
-            com.youzan.spiderman.c.b.d r1 = r1.f41835c
+            com.youzan.spiderman.c.b.d r1 = r1.f28144c
             long r1 = r1.b()
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 > 0) goto L6d
@@ -110,10 +110,10 @@ public final class f {
         long a2 = gVar.a();
         long currentTimeMillis = System.currentTimeMillis();
         HtmlCacheStrategy htmlCacheStrategy = this.b;
-        return currentTimeMillis - a2 <= ((htmlCacheStrategy == null || (b = htmlCacheStrategy.b()) == null) ? this.f41835c.d() : b.longValue());
+        return currentTimeMillis - a2 <= ((htmlCacheStrategy == null || (b = htmlCacheStrategy.b()) == null) ? this.f28144c.d() : b.longValue());
     }
 
     public final List<String> b() {
-        return this.f41835c.e();
+        return this.f28144c.e();
     }
 }

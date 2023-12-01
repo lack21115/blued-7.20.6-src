@@ -12,7 +12,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.wrapper_oaction.ZkViewSDK;
 import java.io.File;
 import java.util.ArrayList;
@@ -42,11 +41,11 @@ public class a extends FrameLayout {
     private int M;
 
     /* renamed from: a  reason: collision with root package name */
-    protected View f41956a;
+    protected View f28265a;
     protected String b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Context f41957c;
+    protected Context f28266c;
     protected String d;
     protected com.zk_oaction.adengine.lk_sdkwrapper.d e;
     protected HashMap<ZkViewSDK.KEY, Object> f;
@@ -73,32 +72,32 @@ public class a extends FrameLayout {
 
     /* renamed from: com.zk_oaction.adengine.lk_sdkwrapper.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_sdkwrapper/a$a.class */
-    class C1106a implements com.zk_oaction.adengine.lk_interfaces.c {
+    class C0936a implements com.zk_oaction.adengine.lk_interfaces.c {
 
         /* renamed from: com.zk_oaction.adengine.lk_sdkwrapper.a$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_sdkwrapper/a$a$a.class */
-        class RunnableC1107a implements Runnable {
+        class RunnableC0937a implements Runnable {
 
             /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ String f41959a;
+            final /* synthetic */ String f28268a;
             final /* synthetic */ int b;
 
             /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ String f41960c;
+            final /* synthetic */ String f28269c;
 
-            RunnableC1107a(String str, int i, String str2) {
-                this.f41959a = str;
+            RunnableC0937a(String str, int i, String str2) {
+                this.f28268a = str;
                 this.b = i;
-                this.f41960c = str2;
+                this.f28269c = str2;
             }
 
             @Override // java.lang.Runnable
             public void run() {
-                a.this.b(this.f41959a, this.b, this.f41960c);
+                a.this.b(this.f28268a, this.b, this.f28269c);
             }
         }
 
-        C1106a() {
+        C0936a() {
         }
 
         /* JADX WARN: Removed duplicated region for block: B:30:0x00e0 A[Catch: all -> 0x0184, TRY_LEAVE, TryCatch #1 {all -> 0x0184, blocks: (B:2:0x0000, B:28:0x00d6, B:30:0x00e0, B:33:0x0109, B:35:0x0112, B:37:0x011a, B:40:0x0132, B:42:0x0170, B:38:0x0128, B:44:0x017d, B:31:0x00f8), top: B:57:0x0000 }] */
@@ -114,7 +113,7 @@ public class a extends FrameLayout {
                 Method dump skipped, instructions count: 411
                 To view this dump change 'Code comments level' option to 'DEBUG'
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.zk_oaction.adengine.lk_sdkwrapper.a.C1106a.a():void");
+            throw new UnsupportedOperationException("Method not decompiled: com.zk_oaction.adengine.lk_sdkwrapper.a.C0936a.a():void");
         }
 
         @Override // com.zk_oaction.adengine.lk_interfaces.c
@@ -166,7 +165,7 @@ public class a extends FrameLayout {
         @Override // com.zk_oaction.adengine.lk_interfaces.c
         public void a(String str, int i, String str2) {
             if (a.this.x != null) {
-                a.this.x.post(new RunnableC1107a(str, i, str2));
+                a.this.x.post(new RunnableC0937a(str, i, str2));
             }
         }
 
@@ -218,20 +217,20 @@ public class a extends FrameLayout {
 
         /* renamed from: com.zk_oaction.adengine.lk_sdkwrapper.a$b$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_sdkwrapper/a$b$a.class */
-        class RunnableC1108a implements Runnable {
+        class RunnableC0938a implements Runnable {
 
             /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ String f41962a;
+            final /* synthetic */ String f28271a;
             final /* synthetic */ View b;
 
             /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ String f41963c;
+            final /* synthetic */ String f28272c;
             final /* synthetic */ Bitmap d;
 
-            RunnableC1108a(String str, View view, String str2, Bitmap bitmap) {
-                this.f41962a = str;
+            RunnableC0938a(String str, View view, String str2, Bitmap bitmap) {
+                this.f28271a = str;
                 this.b = view;
-                this.f41963c = str2;
+                this.f28272c = str2;
                 this.d = bitmap;
             }
 
@@ -239,10 +238,10 @@ public class a extends FrameLayout {
             public void run() {
                 try {
                     if (a.this.e != null) {
-                        if (!TextUtils.isEmpty(this.f41962a)) {
-                            a.this.e.e().a("ad_res_index", this.f41962a);
+                        if (!TextUtils.isEmpty(this.f28271a)) {
+                            a.this.e.e().a("ad_res_index", this.f28271a);
                         }
-                        a.this.e.e().a(this.b, this.f41963c, this.d);
+                        a.this.e.e().a(this.b, this.f28272c, this.d);
                     }
                 } catch (Throwable th) {
                     th.printStackTrace();
@@ -267,13 +266,13 @@ public class a extends FrameLayout {
                     if (!TextUtils.isEmpty(str) && new File(str).exists()) {
                         Bitmap decodeFile = BitmapFactory.decodeFile(str);
                         if (a.this.x != null) {
-                            a.this.x.post(new RunnableC1108a(str2, view, str, decodeFile));
+                            a.this.x.post(new RunnableC0938a(str2, view, str, decodeFile));
                         }
                     }
                 } else if (i != 2 || a.this.k) {
                 } else {
                     ArrayList arrayList = new ArrayList();
-                    File file = new File(a.this.b + BridgeUtil.SPLIT_MARK + "adres");
+                    File file = new File(a.this.b + "/adres");
                     if (!file.exists() || (listFiles = file.listFiles()) == null) {
                         return;
                     }
@@ -291,7 +290,7 @@ public class a extends FrameLayout {
                         i2 = i3 + 1;
                     }
                     a.this.l = (String) arrayList.get(new Random().nextInt(arrayList.size()));
-                    String str3 = a.this.b + "adres" + BridgeUtil.SPLIT_MARK + a.this.l;
+                    String str3 = a.this.b + "adres/" + a.this.l;
                     Message obtain = Message.obtain();
                     HashMap hashMap2 = new HashMap();
                     hashMap2.put("param_view", ((HashMap) message.obj).get("param_view"));
@@ -319,18 +318,18 @@ public class a extends FrameLayout {
 
         /* renamed from: com.zk_oaction.adengine.lk_sdkwrapper.a$c$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_sdkwrapper/a$c$a.class */
-        class RunnableC1109a implements Runnable {
+        class RunnableC0939a implements Runnable {
 
             /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ HashMap f41965a;
+            final /* synthetic */ HashMap f28274a;
 
-            RunnableC1109a(HashMap hashMap) {
-                this.f41965a = hashMap;
+            RunnableC0939a(HashMap hashMap) {
+                this.f28274a = hashMap;
             }
 
             @Override // java.lang.Runnable
             public void run() {
-                a.this.b(this.f41965a);
+                a.this.b(this.f28274a);
             }
         }
 
@@ -361,7 +360,7 @@ public class a extends FrameLayout {
                         a.this.b(hashMap);
                         return;
                     }
-                    a.this.J = new RunnableC1109a(hashMap);
+                    a.this.J = new RunnableC0939a(hashMap);
                 } else if (i == 103) {
                     d dVar2 = (d) message.obj;
                     com.zk_oaction.adengine.lk_sdkwrapper.d dVar3 = a.this.e;
@@ -369,7 +368,7 @@ public class a extends FrameLayout {
                         return;
                     }
                     com.zk_oaction.adengine.lk_sdk.b e2 = a.this.e.e();
-                    e2.a("download_state", "" + dVar2.f41966a);
+                    e2.a("download_state", "" + dVar2.f28275a);
                     com.zk_oaction.adengine.lk_sdk.b e3 = a.this.e.e();
                     e3.a("download_progress", "" + dVar2.b);
                 }
@@ -382,15 +381,15 @@ public class a extends FrameLayout {
     class d {
 
         /* renamed from: a  reason: collision with root package name */
-        int f41966a;
+        int f28275a;
         int b;
     }
 
     public a(Context context, int i, String str, HashMap<ZkViewSDK.KEY, Object> hashMap, int i2, Map map, ZkViewSDK.a aVar) {
         super(context);
-        this.f41956a = null;
+        this.f28265a = null;
         this.b = null;
-        this.f41957c = null;
+        this.f28266c = null;
         this.d = null;
         this.w = false;
         this.f = null;
@@ -405,18 +404,18 @@ public class a extends FrameLayout {
         this.o = 1.0f;
         this.p = false;
         this.q = false;
-        this.i = new C1106a();
+        this.i = new C0936a();
         this.v = 0;
-        this.f41957c = context;
+        this.f28266c = context;
         this.s = i2;
         this.K = i;
         this.f = hashMap;
         this.g = map;
         this.h = aVar;
-        if (str.endsWith(BridgeUtil.SPLIT_MARK)) {
+        if (str.endsWith("/")) {
             this.b = str;
         } else {
-            this.b = str + BridgeUtil.SPLIT_MARK;
+            this.b = str + "/";
         }
         setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
         h();
@@ -439,7 +438,7 @@ public class a extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, long j, String str2, String str3) {
-        com.zk_oaction.adengine.log.b.a().a(this.f41957c, str, this.b, this.r, (String) this.f.get(ZkViewSDK.KEY.KEY_AD_ID), (String) this.f.get(ZkViewSDK.KEY.KEY_USER_ID), this.s, j, str2, str3, this.g);
+        com.zk_oaction.adengine.log.b.a().a(this.f28266c, str, this.b, this.r, (String) this.f.get(ZkViewSDK.KEY.KEY_AD_ID), (String) this.f.get(ZkViewSDK.KEY.KEY_USER_ID), this.s, j, str2, str3, this.g);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -595,12 +594,12 @@ public class a extends FrameLayout {
                 String frameLayout = toString();
                 this.d = this.b + frameLayout.substring(frameLayout.indexOf("{"), frameLayout.indexOf("{") + 8);
                 if (this.e == null) {
-                    this.e = new com.zk_oaction.adengine.lk_sdkwrapper.d(this.f41957c, 1, i, i2);
+                    this.e = new com.zk_oaction.adengine.lk_sdkwrapper.d(this.f28266c, 1, i, i2);
                 }
                 View a2 = this.e.a(this.b, this.i);
-                this.f41956a = a2;
+                this.f28265a = a2;
                 if (a2 != null && a2.getParent() == null) {
-                    addView(this.f41956a);
+                    addView(this.f28265a);
                     invalidate();
                 }
             } catch (Throwable th) {
@@ -713,7 +712,7 @@ public class a extends FrameLayout {
                                 HashMap hashMap2 = new HashMap();
                                 if (ZkViewSDK.c.O.equals(key.key)) {
                                     this.l = (String) value;
-                                    str = this.b + "adres" + BridgeUtil.SPLIT_MARK + this.l;
+                                    str = this.b + "adres/" + this.l;
                                     this.k = true;
                                     hashMap2.put("ad_res_index", "" + c(this.l));
                                 }
@@ -736,7 +735,7 @@ public class a extends FrameLayout {
                     String str2 = key.key;
                     if (str2 == null || !str2.equals(ZkViewSDK.c.b)) {
                         String str3 = key.key;
-                        if (str3 != null && str3.equals(ZkViewSDK.c.f41168c)) {
+                        if (str3 != null && str3.equals(ZkViewSDK.c.f27477c)) {
                             this.q = true;
                         }
                     } else {
@@ -801,7 +800,7 @@ public class a extends FrameLayout {
                                 for (int i2 = 0; i2 < ((List) value).size(); i2++) {
                                     Object obj = ((List) value).get(i2);
                                     if (obj instanceof String) {
-                                        View a5 = this.e.e().a(key.key + BridgeUtil.UNDERLINE_STR + i2);
+                                        View a5 = this.e.e().a(key.key + "_" + i2);
                                         if (a5 != null) {
                                             String str9 = (String) obj;
                                             Message obtain2 = Message.obtain();
@@ -815,7 +814,7 @@ public class a extends FrameLayout {
                                             }
                                         }
                                     } else if ((obj instanceof Bitmap) && (dVar2 = this.e) != null) {
-                                        View a6 = dVar2.e().a(key.key + BridgeUtil.UNDERLINE_STR + i2);
+                                        View a6 = dVar2.e().a(key.key + "_" + i2);
                                         if (a6 != null) {
                                             this.e.e().a(a6, null, (Bitmap) obj);
                                         }
@@ -886,13 +885,13 @@ public class a extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void f() {
-        if (this.f41956a == null || this.e == null) {
+        if (this.f28265a == null || this.e == null) {
             return;
         }
         float measuredWidth = getMeasuredWidth();
         float measuredHeight = getMeasuredHeight();
-        float measuredWidth2 = this.f41956a.getMeasuredWidth();
-        float measuredHeight2 = this.f41956a.getMeasuredHeight();
+        float measuredWidth2 = this.f28265a.getMeasuredWidth();
+        float measuredHeight2 = this.f28265a.getMeasuredHeight();
         if (measuredHeight2 == 0.0f || measuredWidth2 == 0.0f) {
             return;
         }
@@ -903,34 +902,31 @@ public class a extends FrameLayout {
             f3 = f2 < f ? f : f2;
         }
         this.o = f3;
-        this.f41956a.setPivotX(0.0f);
-        this.f41956a.setPivotY(0.0f);
-        this.f41956a.setScaleX(f3);
-        this.f41956a.setScaleY(f3);
-        this.f41956a.setTranslationX((int) ((measuredWidth - (measuredWidth2 * f3)) / 2.0f));
-        this.f41956a.setTranslationY((int) ((measuredHeight - (f3 * measuredHeight2)) / 2.0f));
+        this.f28265a.setPivotX(0.0f);
+        this.f28265a.setPivotY(0.0f);
+        this.f28265a.setScaleX(f3);
+        this.f28265a.setScaleY(f3);
+        this.f28265a.setTranslationX((int) ((measuredWidth - (measuredWidth2 * f3)) / 2.0f));
+        this.f28265a.setTranslationY((int) ((measuredHeight - (f3 * measuredHeight2)) / 2.0f));
         forceLayout();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
-        View view = this.f41956a;
+        View view = this.f28265a;
         if (view != null) {
-            view.layout(0, 0, view.getMeasuredWidth(), this.f41956a.getMeasuredHeight());
+            view.layout(0, 0, view.getMeasuredWidth(), this.f28265a.getMeasuredHeight());
         }
     }
 
@@ -939,7 +935,7 @@ public class a extends FrameLayout {
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         try {
-            if (this.f41956a == null) {
+            if (this.f28265a == null) {
                 return;
             }
             int size = View.MeasureSpec.getSize(i);
@@ -953,8 +949,8 @@ public class a extends FrameLayout {
             b(size, size2);
             int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) (e * d2), View.MeasureSpec.getMode(i));
             int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec((int) (d2 * f), View.MeasureSpec.getMode(i2));
-            this.f41956a.measure(makeMeasureSpec, makeMeasureSpec2);
-            ViewGroup viewGroup = (ViewGroup) this.f41956a;
+            this.f28265a.measure(makeMeasureSpec, makeMeasureSpec2);
+            ViewGroup viewGroup = (ViewGroup) this.f28265a;
             int i3 = 0;
             while (true) {
                 int i4 = i3;
@@ -978,7 +974,7 @@ public class a extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public void removeAllViews() {
-        this.f41956a = null;
+        this.f28265a = null;
         try {
             super.removeAllViews();
         } catch (Throwable th) {

@@ -10,7 +10,7 @@ final class a {
 
     /* renamed from: com.kwad.sdk.api.loader.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/api/loader/a$a.class */
-    static final class C0549a {
+    static final class C0379a {
         String Tf;
         int Zk;
         String Zl;
@@ -18,7 +18,7 @@ final class a {
         long interval;
         String sdkVersion;
 
-        C0549a() {
+        C0379a() {
         }
 
         public final void parseJson(JSONObject jSONObject) {
@@ -48,15 +48,15 @@ final class a {
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/api/loader/a$b.class */
     static final class b {
         long Zn;
-        C0549a Zo;
+        C0379a Zo;
         String errorMsg;
 
         public final void parseJson(JSONObject jSONObject) {
             this.Zn = jSONObject.optLong("result");
             this.errorMsg = jSONObject.optString(Downloads.Impl.COLUMN_ERROR_MSG);
-            C0549a c0549a = new C0549a();
-            this.Zo = c0549a;
-            c0549a.parseJson(jSONObject.optJSONObject("data"));
+            C0379a c0379a = new C0379a();
+            this.Zo = c0379a;
+            c0379a.parseJson(jSONObject.optJSONObject("data"));
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */

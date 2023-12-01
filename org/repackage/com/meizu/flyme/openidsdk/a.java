@@ -2,9 +2,8 @@ package org.repackage.com.meizu.flyme.openidsdk;
 
 import android.content.BroadcastReceiver;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:org/repackage/com/meizu/flyme/openidsdk/a.class */
-public final class a extends BroadcastReceiver {
+final class a extends BroadcastReceiver {
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0032, code lost:
         if (android.text.TextUtils.equals(r6.getStringExtra("openIdPackage"), r5.getPackageName()) != false) goto L11;
      */
@@ -108,7 +107,7 @@ public final class a extends BroadcastReceiver {
             boolean r0 = r0.equals(r1)
             if (r0 == 0) goto La6
             r0 = r6
-            org.repackage.com.meizu.flyme.openidsdk.OpenId r0 = r0.f44113c
+            org.repackage.com.meizu.flyme.openidsdk.OpenId r0 = r0.c
             r5 = r0
             goto Lb9
         La6:
@@ -117,7 +116,7 @@ public final class a extends BroadcastReceiver {
             boolean r0 = r0.equals(r1)
             if (r0 == 0) goto Lb7
             r0 = r6
-            org.repackage.com.meizu.flyme.openidsdk.OpenId r0 = r0.f44112a
+            org.repackage.com.meizu.flyme.openidsdk.OpenId r0 = r0.a
             r5 = r0
             goto Lb9
         Lb7:

@@ -1,7 +1,6 @@
 package com.blued.android.kbswitch;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.MotionEvent;
@@ -37,13 +36,9 @@ import kotlin.jvm.internal.TypeIntrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/kbswitch/KeyboardHelper.class */
 public final class KeyboardHelper {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f10418a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Activity b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private KeyboardPop f10419c;
+    private KeyboardPop c;
     private KeyboardConstraintLayout d;
     private View e;
     private EditText f;
@@ -67,7 +62,7 @@ public final class KeyboardHelper {
         /* JADX INFO: Access modifiers changed from: private */
         public static final void a(KeyboardHelper this$0) {
             Intrinsics.e(this$0, "this$0");
-            KeyboardPop keyboardPop = this$0.f10419c;
+            KeyboardPop keyboardPop = this$0.c;
             KeyboardPop keyboardPop2 = keyboardPop;
             if (keyboardPop == null) {
                 Intrinsics.c("keyboardPop");
@@ -79,13 +74,13 @@ public final class KeyboardHelper {
         @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
         public final void onCreate(LifecycleOwner owner) {
             Intrinsics.e(owner, "owner");
-            ((ComponentActivity) KeyboardHelper.this.b).getWindow().setSoftInputMode(51);
+            KeyboardHelper.this.b.getWindow().setSoftInputMode(51);
             View parentView = KeyboardHelper.this.b.findViewById(16908290);
             KeyboardHelper keyboardHelper = KeyboardHelper.this;
             Activity activity = KeyboardHelper.this.b;
             Intrinsics.c(parentView, "parentView");
-            keyboardHelper.f10419c = new KeyboardPop(activity, parentView);
-            KeyboardPop keyboardPop = KeyboardHelper.this.f10419c;
+            keyboardHelper.c = new KeyboardPop(activity, parentView);
+            KeyboardPop keyboardPop = KeyboardHelper.this.c;
             KeyboardPop keyboardPop2 = keyboardPop;
             if (keyboardPop == null) {
                 Intrinsics.c("keyboardPop");
@@ -110,14 +105,14 @@ public final class KeyboardHelper {
         @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
         public final void onDestroy(LifecycleOwner owner) {
             Intrinsics.e(owner, "owner");
-            KeyboardPop keyboardPop = KeyboardHelper.this.f10419c;
+            KeyboardPop keyboardPop = KeyboardHelper.this.c;
             KeyboardPop keyboardPop2 = keyboardPop;
             if (keyboardPop == null) {
                 Intrinsics.c("keyboardPop");
                 keyboardPop2 = null;
             }
             keyboardPop2.a(null);
-            KeyboardPop keyboardPop3 = KeyboardHelper.this.f10419c;
+            KeyboardPop keyboardPop3 = KeyboardHelper.this.c;
             if (keyboardPop3 == null) {
                 Intrinsics.c("keyboardPop");
                 keyboardPop3 = null;
@@ -129,7 +124,7 @@ public final class KeyboardHelper {
         public final void onStop(LifecycleOwner owner) {
             Intrinsics.e(owner, "owner");
             if ((owner instanceof Activity) && ((Activity) owner).isFinishing()) {
-                KeyboardPop keyboardPop = KeyboardHelper.this.f10419c;
+                KeyboardPop keyboardPop = KeyboardHelper.this.c;
                 KeyboardPop keyboardPop2 = keyboardPop;
                 if (keyboardPop == null) {
                     Intrinsics.c("keyboardPop");
@@ -171,20 +166,20 @@ public final class KeyboardHelper {
     private final void a(final int i) {
         View view = null;
         if (i == 4 || i == 5) {
-            View view2 = this.g;
-            if (view2 instanceof RecyclerView) {
-                if (view2 == null) {
+            RecyclerView recyclerView = this.g;
+            if (recyclerView instanceof RecyclerView) {
+                if (recyclerView == null) {
                     throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView");
                 }
-                UtilsKt.a((RecyclerView) view2, false, false, 3, (Object) null);
+                UtilsKt.a(recyclerView, false, false, 3, (Object) null);
             }
         }
         if (!this.k) {
-            View view3 = this.e;
-            if (view3 == null) {
+            View view2 = this.e;
+            if (view2 == null) {
                 Intrinsics.c("panelView");
             } else {
-                view = view3;
+                view = view2;
             }
             UtilsKt.a(view);
         }
@@ -265,7 +260,7 @@ public final class KeyboardHelper {
     }
 
     private final void a(View view, Activity activity) {
-        Object systemService = activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        Object systemService = activity.getSystemService("input_method");
         if (systemService == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
         }
@@ -402,7 +397,7 @@ public final class KeyboardHelper {
     }
 
     private final boolean f() {
-        KeyboardPop keyboardPop = this.f10419c;
+        KeyboardPop keyboardPop = this.c;
         KeyboardPop keyboardPop2 = keyboardPop;
         if (keyboardPop == null) {
             Intrinsics.c("keyboardPop");
@@ -444,7 +439,7 @@ public final class KeyboardHelper {
             return false;
         }
         this.k = true;
-        KeyboardPop keyboardPop = this.f10419c;
+        KeyboardPop keyboardPop = this.c;
         KeyboardPop keyboardPop2 = keyboardPop;
         if (keyboardPop == null) {
             Intrinsics.c("keyboardPop");
@@ -459,7 +454,7 @@ public final class KeyboardHelper {
     }
 
     private final boolean j() {
-        KeyboardPop keyboardPop = this.f10419c;
+        KeyboardPop keyboardPop = this.c;
         KeyboardPop keyboardPop2 = keyboardPop;
         if (keyboardPop == null) {
             Intrinsics.c("keyboardPop");
@@ -473,7 +468,7 @@ public final class KeyboardHelper {
     }
 
     private final boolean k() {
-        KeyboardPop keyboardPop = this.f10419c;
+        KeyboardPop keyboardPop = this.c;
         KeyboardPop keyboardPop2 = keyboardPop;
         if (keyboardPop == null) {
             Intrinsics.c("keyboardPop");
@@ -486,7 +481,7 @@ public final class KeyboardHelper {
         if (this.k) {
             return true;
         }
-        KeyboardPop keyboardPop = this.f10419c;
+        KeyboardPop keyboardPop = this.c;
         KeyboardPop keyboardPop2 = keyboardPop;
         if (keyboardPop == null) {
             Intrinsics.c("keyboardPop");
@@ -529,18 +524,17 @@ public final class KeyboardHelper {
             keyboardConstraintLayout7 = null;
         }
         this.e = keyboardConstraintLayout7.getPanelView();
-        Activity activity = this.b;
-        ComponentActivity componentActivity = activity instanceof ComponentActivity ? (ComponentActivity) activity : null;
-        if (componentActivity != null) {
-            final ComponentActivity componentActivity2 = componentActivity;
-            componentActivity.getOnBackPressedDispatcher().addCallback(componentActivity, new OnBackPressedCallback() { // from class: com.blued.android.kbswitch.KeyboardHelper$start$1$1
+        ComponentActivity componentActivity = this.b;
+        ComponentActivity componentActivity2 = componentActivity instanceof ComponentActivity ? componentActivity : null;
+        if (componentActivity2 != null) {
+            final ComponentActivity componentActivity3 = componentActivity2;
+            componentActivity2.getOnBackPressedDispatcher().addCallback(componentActivity2, new OnBackPressedCallback() { // from class: com.blued.android.kbswitch.KeyboardHelper$start$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
                     super(true);
                 }
 
-                @Override // androidx.activity.OnBackPressedCallback
                 public void handleOnBackPressed() {
                     boolean g;
                     g = KeyboardHelper.this.g();
@@ -548,7 +542,7 @@ public final class KeyboardHelper {
                         return;
                     }
                     setEnabled(false);
-                    componentActivity2.getOnBackPressedDispatcher().onBackPressed();
+                    componentActivity3.getOnBackPressedDispatcher().onBackPressed();
                 }
             });
         }
@@ -596,7 +590,6 @@ public final class KeyboardHelper {
             return;
         }
         recyclerView.addOnItemTouchListener(new RecyclerView.SimpleOnItemTouchListener() { // from class: com.blued.android.kbswitch.KeyboardHelper$start$4$1
-            @Override // androidx.recyclerview.widget.RecyclerView.SimpleOnItemTouchListener, androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
             public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent ev) {
                 Intrinsics.e(rv, "rv");
                 Intrinsics.e(ev, "ev");

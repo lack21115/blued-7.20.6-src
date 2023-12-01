@@ -19,13 +19,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleSettingFragment.class */
 public class CircleSettingFragment extends MvpFragment<CircleSettingPresenter> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private CommonTopTitleNoTrans f19292a;
+    private CommonTopTitleNoTrans a;
     private LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f19293c;
+    private LinearLayout c;
     private TextView d;
     private ImageView e;
     private Context f;
@@ -38,12 +34,12 @@ public class CircleSettingFragment extends MvpFragment<CircleSettingPresenter> i
     }
 
     private void b() {
-        this.f19292a = (CommonTopTitleNoTrans) this.i.findViewById(R.id.title);
+        this.a = (CommonTopTitleNoTrans) this.i.findViewById(R.id.title);
         LinearLayout linearLayout = (LinearLayout) this.i.findViewById(R.id.ll_info_setting);
         this.b = linearLayout;
         linearLayout.setOnClickListener(this);
         LinearLayout linearLayout2 = (LinearLayout) this.i.findViewById(R.id.ll_join_setting);
-        this.f19293c = linearLayout2;
+        this.c = linearLayout2;
         linearLayout2.setOnClickListener(this);
         this.d = (TextView) this.i.findViewById(R.id.tv_join_setting);
         this.e = (ImageView) this.i.findViewById(R.id.iv_join_setting_icon);
@@ -59,7 +55,7 @@ public class CircleSettingFragment extends MvpFragment<CircleSettingPresenter> i
             this.d.setTextColor(this.f.getResources().getColor(R.color.syc_i));
             this.e.setImageDrawable(BluedSkinUtils.b(this.f, R.drawable.icon_common_right_arrow_new_gray));
         }
-        this.f19292a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleSettingFragment.1
+        this.a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleSettingFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);

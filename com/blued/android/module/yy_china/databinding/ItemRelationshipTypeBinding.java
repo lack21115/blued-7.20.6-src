@@ -8,14 +8,12 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemRelationshipTypeBinding.class */
 public final class ItemRelationshipTypeBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16652a;
+    public final ShapeTextView a;
     private final RelativeLayout b;
 
     private ItemRelationshipTypeBinding(RelativeLayout relativeLayout, ShapeTextView shapeTextView) {
         this.b = relativeLayout;
-        this.f16652a = shapeTextView;
+        this.a = shapeTextView;
     }
 
     public static ItemRelationshipTypeBinding a(View view) {
@@ -26,7 +24,6 @@ public final class ItemRelationshipTypeBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("tvType"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.b;

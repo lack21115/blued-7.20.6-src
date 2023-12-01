@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutNearbyPeopleTabBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29415a;
+    private final ConstraintLayout f15725a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29415a;
+        return this.f15725a;
     }
 }

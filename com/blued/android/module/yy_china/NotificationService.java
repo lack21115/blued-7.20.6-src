@@ -7,7 +7,6 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.IBinder;
 import android.text.TextUtils;
@@ -16,14 +15,12 @@ import com.blued.android.module.yy_china.model.YYUserInfo;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/NotificationService.class */
 public class NotificationService extends Service {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f16102a;
+    public static int a;
     private int b = 1;
 
     private String a(String str, String str2) {
         NotificationChannel notificationChannel = new NotificationChannel(str, str2, 0);
-        notificationChannel.setLightColor(Color.BLUE);
+        notificationChannel.setLightColor(-16776961);
         notificationChannel.setLockscreenVisibility(0);
         ((NotificationManager) getSystemService("notification")).createNotificationChannel(notificationChannel);
         return str;
@@ -43,9 +40,9 @@ public class NotificationService extends Service {
         LiveLogUtils.a("NotificationService --> SDK_INT >= O 显示通知 ...");
         startForeground(R.string.notification_live_start, build2);
         LiveLogUtils.a("NotificationService --> SDK_INT >= O 显示通知 ...1");
-        int i = f16102a;
+        int i = a;
         if (i == 0) {
-            f16102a = 1;
+            a = 1;
         } else if (i == -1) {
             stopSelf();
         }
@@ -55,10 +52,10 @@ public class NotificationService extends Service {
         LiveLogUtils.a("NotificationService --> stopBluedService .... ");
         if (Build.VERSION.SDK_INT < 26) {
             context.stopService(new Intent(context, NotificationService.class));
-        } else if (f16102a == 1) {
+        } else if (a == 1) {
             context.stopService(new Intent(context, NotificationService.class));
         } else {
-            f16102a = -1;
+            a = -1;
         }
     }
 
@@ -72,7 +69,7 @@ public class NotificationService extends Service {
             context.startService(intent);
             return;
         }
-        f16102a = 0;
+        a = 0;
         try {
             context.startForegroundService(intent);
         } catch (Exception e) {

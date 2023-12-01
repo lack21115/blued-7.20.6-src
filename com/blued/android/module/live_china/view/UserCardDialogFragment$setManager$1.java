@@ -17,19 +17,15 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/UserCardDialogFragment$setManager$1.class */
 public final class UserCardDialogFragment$setManager$1 extends BluedUIHttpResponse<BluedEntityA<LiveRoomUserModel>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ UserCardDialogFragment f15287a;
+    final /* synthetic */ UserCardDialogFragment a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f15288c;
+    private String c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public UserCardDialogFragment$setManager$1(UserCardDialogFragment userCardDialogFragment, IRequestHost iRequestHost) {
         super(iRequestHost);
-        this.f15287a = userCardDialogFragment;
+        this.a = userCardDialogFragment;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -51,7 +47,7 @@ public final class UserCardDialogFragment$setManager$1 extends BluedUIHttpRespon
         if (bluedEntityA == null || !bluedEntityA.hasData()) {
             return;
         }
-        context = this.f15287a.d;
+        context = this.a.d;
         Context context2 = context;
         if (context == null) {
             Intrinsics.c("mContext");
@@ -64,7 +60,7 @@ public final class UserCardDialogFragment$setManager$1 extends BluedUIHttpRespon
     public boolean onUIFailure(int i, String errInfo) {
         Intrinsics.e(errInfo, "errInfo");
         if (i == 403903) {
-            this.f15288c = errInfo;
+            this.c = errInfo;
             this.b = true;
             return true;
         }
@@ -78,28 +74,28 @@ public final class UserCardDialogFragment$setManager$1 extends BluedUIHttpRespon
         Context context3;
         super.onUIFinish();
         if (this.b) {
-            context = this.f15287a.d;
+            context = this.a.d;
             Context context4 = context;
             if (context4 == null) {
                 Intrinsics.c("mContext");
                 context4 = null;
             }
-            String str = this.f15288c;
-            context2 = this.f15287a.d;
+            String str = this.c;
+            context2 = this.a.d;
             Context context5 = context2;
             if (context2 == null) {
                 Intrinsics.c("mContext");
                 context5 = null;
             }
             String string = context5.getString(R.string.live_manager_manage);
-            context3 = this.f15287a.d;
+            context3 = this.a.d;
             Context context6 = context3;
             if (context6 == null) {
                 Intrinsics.c("mContext");
                 context6 = null;
             }
             String string2 = context6.getString(R.string.live_ok);
-            final UserCardDialogFragment userCardDialogFragment = this.f15287a;
+            final UserCardDialogFragment userCardDialogFragment = this.a;
             CommonAlertDialog.a(context4, (View) null, "", str, string, string2, (DialogInterface.OnClickListener) null, new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$UserCardDialogFragment$setManager$1$Db5NBG_i3g5Fb5y1oyYbRbyMS1I
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {

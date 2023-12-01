@@ -73,11 +73,11 @@ import java.util.concurrent.Executor;
 public class ContextCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f2403a = new Object();
+    private static final Object f2355a = new Object();
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static TypedValue f2404c;
+    private static TypedValue f2356c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/content/ContextCompat$Api16Impl.class */
@@ -94,9 +94,8 @@ public class ContextCompat {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/content/ContextCompat$Api19Impl.class */
-    public static class Api19Impl {
+    static class Api19Impl {
         private Api19Impl() {
         }
 
@@ -204,72 +203,72 @@ public class ContextCompat {
     public static final class LegacyServiceMapHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        static final HashMap<Class<?>, String> f2405a = new HashMap<>();
+        static final HashMap<Class<?>, String> f2357a = new HashMap<>();
 
         static {
             if (Build.VERSION.SDK_INT >= 22) {
-                f2405a.put(SubscriptionManager.class, Context.TELEPHONY_SUBSCRIPTION_SERVICE);
-                f2405a.put(UsageStatsManager.class, Context.USAGE_STATS_SERVICE);
+                f2357a.put(SubscriptionManager.class, Context.TELEPHONY_SUBSCRIPTION_SERVICE);
+                f2357a.put(UsageStatsManager.class, Context.USAGE_STATS_SERVICE);
             }
             if (Build.VERSION.SDK_INT >= 21) {
-                f2405a.put(AppWidgetManager.class, Context.APPWIDGET_SERVICE);
-                f2405a.put(BatteryManager.class, Context.BATTERY_SERVICE);
-                f2405a.put(CameraManager.class, "camera");
-                f2405a.put(JobScheduler.class, Context.JOB_SCHEDULER_SERVICE);
-                f2405a.put(LauncherApps.class, Context.LAUNCHER_APPS_SERVICE);
-                f2405a.put(MediaProjectionManager.class, Context.MEDIA_PROJECTION_SERVICE);
-                f2405a.put(MediaSessionManager.class, Context.MEDIA_SESSION_SERVICE);
-                f2405a.put(RestrictionsManager.class, Context.RESTRICTIONS_SERVICE);
-                f2405a.put(TelecomManager.class, "telecom");
-                f2405a.put(TvInputManager.class, Context.TV_INPUT_SERVICE);
+                f2357a.put(AppWidgetManager.class, Context.APPWIDGET_SERVICE);
+                f2357a.put(BatteryManager.class, Context.BATTERY_SERVICE);
+                f2357a.put(CameraManager.class, "camera");
+                f2357a.put(JobScheduler.class, Context.JOB_SCHEDULER_SERVICE);
+                f2357a.put(LauncherApps.class, Context.LAUNCHER_APPS_SERVICE);
+                f2357a.put(MediaProjectionManager.class, Context.MEDIA_PROJECTION_SERVICE);
+                f2357a.put(MediaSessionManager.class, Context.MEDIA_SESSION_SERVICE);
+                f2357a.put(RestrictionsManager.class, Context.RESTRICTIONS_SERVICE);
+                f2357a.put(TelecomManager.class, "telecom");
+                f2357a.put(TvInputManager.class, Context.TV_INPUT_SERVICE);
             }
             if (Build.VERSION.SDK_INT >= 19) {
-                f2405a.put(AppOpsManager.class, Context.APP_OPS_SERVICE);
-                f2405a.put(CaptioningManager.class, Context.CAPTIONING_SERVICE);
-                f2405a.put(ConsumerIrManager.class, Context.CONSUMER_IR_SERVICE);
-                f2405a.put(PrintManager.class, "print");
+                f2357a.put(AppOpsManager.class, Context.APP_OPS_SERVICE);
+                f2357a.put(CaptioningManager.class, Context.CAPTIONING_SERVICE);
+                f2357a.put(ConsumerIrManager.class, Context.CONSUMER_IR_SERVICE);
+                f2357a.put(PrintManager.class, "print");
             }
             if (Build.VERSION.SDK_INT >= 18) {
-                f2405a.put(BluetoothManager.class, "bluetooth");
+                f2357a.put(BluetoothManager.class, "bluetooth");
             }
             if (Build.VERSION.SDK_INT >= 17) {
-                f2405a.put(DisplayManager.class, "display");
-                f2405a.put(UserManager.class, "user");
+                f2357a.put(DisplayManager.class, "display");
+                f2357a.put(UserManager.class, "user");
             }
             if (Build.VERSION.SDK_INT >= 16) {
-                f2405a.put(InputManager.class, "input");
-                f2405a.put(MediaRouter.class, Context.MEDIA_ROUTER_SERVICE);
-                f2405a.put(NsdManager.class, Context.NSD_SERVICE);
+                f2357a.put(InputManager.class, "input");
+                f2357a.put(MediaRouter.class, Context.MEDIA_ROUTER_SERVICE);
+                f2357a.put(NsdManager.class, Context.NSD_SERVICE);
             }
-            f2405a.put(AccessibilityManager.class, Context.ACCESSIBILITY_SERVICE);
-            f2405a.put(AccountManager.class, "account");
-            f2405a.put(ActivityManager.class, "activity");
-            f2405a.put(AlarmManager.class, "alarm");
-            f2405a.put(AudioManager.class, "audio");
-            f2405a.put(ClipboardManager.class, Context.CLIPBOARD_SERVICE);
-            f2405a.put(ConnectivityManager.class, Context.CONNECTIVITY_SERVICE);
-            f2405a.put(DevicePolicyManager.class, Context.DEVICE_POLICY_SERVICE);
-            f2405a.put(DownloadManager.class, "download");
-            f2405a.put(DropBoxManager.class, Context.DROPBOX_SERVICE);
-            f2405a.put(InputMethodManager.class, Context.INPUT_METHOD_SERVICE);
-            f2405a.put(KeyguardManager.class, Context.KEYGUARD_SERVICE);
-            f2405a.put(LayoutInflater.class, Context.LAYOUT_INFLATER_SERVICE);
-            f2405a.put(LocationManager.class, "location");
-            f2405a.put(NfcManager.class, "nfc");
-            f2405a.put(NotificationManager.class, "notification");
-            f2405a.put(PowerManager.class, "power");
-            f2405a.put(SearchManager.class, "search");
-            f2405a.put(SensorManager.class, "sensor");
-            f2405a.put(StorageManager.class, Context.STORAGE_SERVICE);
-            f2405a.put(TelephonyManager.class, "phone");
-            f2405a.put(TextServicesManager.class, Context.TEXT_SERVICES_MANAGER_SERVICE);
-            f2405a.put(UiModeManager.class, Context.UI_MODE_SERVICE);
-            f2405a.put(UsbManager.class, Context.USB_SERVICE);
-            f2405a.put(Vibrator.class, Context.VIBRATOR_SERVICE);
-            f2405a.put(WallpaperManager.class, Context.WALLPAPER_SERVICE);
-            f2405a.put(WifiP2pManager.class, Context.WIFI_P2P_SERVICE);
-            f2405a.put(WifiManager.class, "wifi");
-            f2405a.put(WindowManager.class, Context.WINDOW_SERVICE);
+            f2357a.put(AccessibilityManager.class, Context.ACCESSIBILITY_SERVICE);
+            f2357a.put(AccountManager.class, "account");
+            f2357a.put(ActivityManager.class, "activity");
+            f2357a.put(AlarmManager.class, "alarm");
+            f2357a.put(AudioManager.class, "audio");
+            f2357a.put(ClipboardManager.class, Context.CLIPBOARD_SERVICE);
+            f2357a.put(ConnectivityManager.class, Context.CONNECTIVITY_SERVICE);
+            f2357a.put(DevicePolicyManager.class, Context.DEVICE_POLICY_SERVICE);
+            f2357a.put(DownloadManager.class, "download");
+            f2357a.put(DropBoxManager.class, Context.DROPBOX_SERVICE);
+            f2357a.put(InputMethodManager.class, Context.INPUT_METHOD_SERVICE);
+            f2357a.put(KeyguardManager.class, Context.KEYGUARD_SERVICE);
+            f2357a.put(LayoutInflater.class, Context.LAYOUT_INFLATER_SERVICE);
+            f2357a.put(LocationManager.class, "location");
+            f2357a.put(NfcManager.class, "nfc");
+            f2357a.put(NotificationManager.class, "notification");
+            f2357a.put(PowerManager.class, Context.POWER_SERVICE);
+            f2357a.put(SearchManager.class, "search");
+            f2357a.put(SensorManager.class, "sensor");
+            f2357a.put(StorageManager.class, Context.STORAGE_SERVICE);
+            f2357a.put(TelephonyManager.class, "phone");
+            f2357a.put(TextServicesManager.class, Context.TEXT_SERVICES_MANAGER_SERVICE);
+            f2357a.put(UiModeManager.class, Context.UI_MODE_SERVICE);
+            f2357a.put(UsbManager.class, Context.USB_SERVICE);
+            f2357a.put(Vibrator.class, Context.VIBRATOR_SERVICE);
+            f2357a.put(WallpaperManager.class, Context.WALLPAPER_SERVICE);
+            f2357a.put(WifiP2pManager.class, Context.WIFI_P2P_SERVICE);
+            f2357a.put(WifiManager.class, "wifi");
+            f2357a.put(WindowManager.class, Context.WINDOW_SERVICE);
         }
 
         private LegacyServiceMapHolder() {
@@ -338,12 +337,12 @@ public class ContextCompat {
         if (Build.VERSION.SDK_INT >= 16) {
             return context.getResources().getDrawable(i);
         }
-        synchronized (f2403a) {
-            if (f2404c == null) {
-                f2404c = new TypedValue();
+        synchronized (f2355a) {
+            if (f2356c == null) {
+                f2356c = new TypedValue();
             }
-            context.getResources().getValue(i, f2404c, true);
-            i2 = f2404c.resourceId;
+            context.getResources().getValue(i, f2356c, true);
+            i2 = f2356c.resourceId;
         }
         return context.getResources().getDrawable(i2);
     }
@@ -380,7 +379,7 @@ public class ContextCompat {
     }
 
     public static String getSystemServiceName(Context context, Class<?> cls) {
-        return Build.VERSION.SDK_INT >= 23 ? Api23Impl.b(context, cls) : LegacyServiceMapHolder.f2405a.get(cls);
+        return Build.VERSION.SDK_INT >= 23 ? Api23Impl.b(context, cls) : LegacyServiceMapHolder.f2357a.get(cls);
     }
 
     public static boolean isDeviceProtectedStorage(Context context) {

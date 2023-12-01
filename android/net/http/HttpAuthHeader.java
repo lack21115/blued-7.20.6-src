@@ -1,6 +1,6 @@
 package android.net.http;
 
-import com.alipay.sdk.app.statistic.c;
+import com.huawei.hms.ads.fw;
 import java.util.Locale;
 
 /* loaded from: source-9557208-dex2jar.jar:android/net/http/HttpAuthHeader.class */
@@ -103,7 +103,7 @@ public class HttpAuthHeader {
     }
 
     private void parseStale(String str) {
-        if (str == null || !str.equalsIgnoreCase("true")) {
+        if (str == null || !str.equalsIgnoreCase(fw.Code)) {
             return;
         }
         this.mStale = true;
@@ -181,7 +181,7 @@ public class HttpAuthHeader {
                 return true;
             }
             if (this.mScheme == 2 && this.mAlgorithm.equals("md5")) {
-                return this.mQop == null || this.mQop.equals(c.d);
+                return this.mQop == null || this.mQop.equals("auth");
             }
             return false;
         }

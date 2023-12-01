@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
-import com.android.internal.telephony.PhoneConstants;
 import com.tencent.map.tools.Util;
 import java.net.URLEncoder;
 
@@ -21,11 +20,11 @@ import java.net.URLEncoder;
 public class g7 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f37484a = 65537;
+    private static final int f23793a = 65537;
     public static final int b = 400;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f37485c = "TencentMapSDK";
+    public static final String f23794c = "TencentMapSDK";
     private static String d;
     private static String e;
     private static String f;
@@ -157,7 +156,7 @@ public class g7 {
 
     public static int f(Context context) {
         ConfigurationInfo deviceConfigurationInfo = ((ActivityManager) context.getSystemService("activity")).getDeviceConfigurationInfo();
-        return deviceConfigurationInfo != null ? deviceConfigurationInfo.reqGlEsVersion : f37484a;
+        return deviceConfigurationInfo != null ? deviceConfigurationInfo.reqGlEsVersion : f23793a;
     }
 
     public static String g(Context context) {
@@ -166,7 +165,7 @@ public class g7 {
         }
         try {
             DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-            return displayMetrics.widthPixels + PhoneConstants.APN_TYPE_ALL + displayMetrics.heightPixels;
+            return displayMetrics.widthPixels + "*" + displayMetrics.heightPixels;
         } catch (Exception e2) {
             e2.printStackTrace();
             return "";

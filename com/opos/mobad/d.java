@@ -13,7 +13,7 @@ import java.util.Map;
 final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f25938a;
+    private Context f12250a;
 
     private void a(final Context context) {
         String str = Build.BRAND != null ? Build.BRAND : "";
@@ -179,7 +179,7 @@ final class d {
     public void d() {
         com.opos.cmn.an.f.a.b("InterMobAdManager", "clearPublicVideoCache");
         try {
-            if (com.opos.cmn.d.d.a(this.f25938a)) {
+            if (com.opos.cmn.d.d.a(this.f12250a)) {
                 a(new File(com.opos.cmn.d.d.a()), 1073741824L, 50);
             }
         } catch (Exception e) {
@@ -191,7 +191,7 @@ final class d {
     public void e() {
         com.opos.cmn.an.f.a.b("InterMobAdManager", "clearPrivateVideoCache");
         try {
-            a(new File(com.opos.cmn.d.d.b(this.f25938a)), 536870912L, 25);
+            a(new File(com.opos.cmn.d.d.b(this.f12250a)), 536870912L, 25);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("InterMobAdManager", "", (Throwable) e);
         }
@@ -201,7 +201,7 @@ final class d {
     public void f() {
         com.opos.cmn.an.f.a.b("InterMobAdManager", "clearPublicDownloadApkCache");
         try {
-            if (com.opos.cmn.d.a.a(this.f25938a)) {
+            if (com.opos.cmn.d.a.a(this.f12250a)) {
                 a(new File(com.opos.cmn.d.a.a()), 1073741824L, 50);
             }
         } catch (Exception e) {
@@ -213,7 +213,7 @@ final class d {
     public void g() {
         com.opos.cmn.an.f.a.b("InterMobAdManager", "clearPrivateDownloadApkCache");
         try {
-            a(new File(com.opos.cmn.d.a.c(this.f25938a)), 536870912L, 25);
+            a(new File(com.opos.cmn.d.a.c(this.f12250a)), 536870912L, 25);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("InterMobAdManager", "", (Throwable) e);
         }
@@ -223,7 +223,7 @@ final class d {
     public void h() {
         com.opos.cmn.an.f.a.b("InterMobAdManager", "clearDynamicUnzipDir");
         try {
-            com.opos.mobad.service.c.b.a().b(this.f25938a);
+            com.opos.mobad.service.c.b.a().b(this.f12250a);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("InterMobAdManager", "", (Throwable) e);
         }
@@ -232,10 +232,10 @@ final class d {
     public void a() {
         if (com.opos.mobad.cmn.a.b.f.d()) {
             try {
-                if (!com.opos.mobad.cmn.a.b.f.c() || this.f25938a == null) {
+                if (!com.opos.mobad.cmn.a.b.f.c() || this.f12250a == null) {
                     return;
                 }
-                b(this.f25938a);
+                b(this.f12250a);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.a("InterMobAdManager", "", (Throwable) e);
             }
@@ -244,12 +244,12 @@ final class d {
 
     public void a(Context context, String str) {
         try {
-            this.f25938a = context.getApplicationContext();
+            this.f12250a = context.getApplicationContext();
             com.opos.mobad.cmn.a.b.f.a(str);
             com.opos.cmn.an.f.a.b("InterMobAdManager", "init sdk success.");
-            a(this.f25938a);
+            a(this.f12250a);
             com.opos.mobad.cmn.a.b.f.b();
-            c(this.f25938a);
+            c(this.f12250a);
             c();
             b();
         } catch (Exception e) {
@@ -262,14 +262,14 @@ final class d {
             @Override // java.lang.Runnable
             public void run() {
                 com.opos.cmn.an.f.a.b("InterMobAdManager", "startClearRewardSP");
-                Map<String, Long> b = com.opos.mobad.cmn.a.b.f.b(d.this.f25938a);
+                Map<String, Long> b = com.opos.mobad.cmn.a.b.f.b(d.this.f12250a);
                 if (b == null || b.size() <= 0) {
                     return;
                 }
                 for (Map.Entry<String, Long> entry : b.entrySet()) {
                     if (entry.getValue().longValue() + 259200000 < com.opos.cmn.b.a.a.c()) {
                         com.opos.cmn.an.f.a.b("InterMobAdManager", "remove pkgName=" + entry.getKey() + ",timestamp=" + entry.getValue());
-                        com.opos.mobad.cmn.a.b.f.e(d.this.f25938a, entry.getKey());
+                        com.opos.mobad.cmn.a.b.f.e(d.this.f12250a, entry.getKey());
                     }
                 }
             }

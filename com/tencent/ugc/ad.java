@@ -6,11 +6,11 @@ import com.tencent.ugc.TXVideoEditConstants;
 final /* synthetic */ class ad implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40219a;
+    private final TXVideoEditer f26528a;
     private final TXVideoEditConstants.TXThumbnail b;
 
     private ad(TXVideoEditer tXVideoEditer, TXVideoEditConstants.TXThumbnail tXThumbnail) {
-        this.f40219a = tXVideoEditer;
+        this.f26528a = tXVideoEditer;
         this.b = tXThumbnail;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class ad implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$setThumbnail$35(this.f40219a, this.b);
+        TXVideoEditer.lambda$setThumbnail$35(this.f26528a, this.b);
     }
 }

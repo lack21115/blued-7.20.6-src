@@ -12,25 +12,25 @@ import java.util.concurrent.CountDownLatch;
 public final class a4<SERVICE, RESULT> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CountDownLatch f21190a = new CountDownLatch(1);
+    public final CountDownLatch f7584a = new CountDownLatch(1);
     public final Intent b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final b<SERVICE, RESULT> f21191c;
+    public final b<SERVICE, RESULT> f7585c;
     public final Context d;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/a4$a.class */
     public class a implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        public final CountDownLatch f21192a;
+        public final CountDownLatch f7586a;
         public final b<SERVICE, RESULT> b;
 
         /* renamed from: c  reason: collision with root package name */
-        public SERVICE f21193c;
+        public SERVICE f7587c;
 
         public a(a4 a4Var, CountDownLatch countDownLatch, b<SERVICE, RESULT> bVar) {
-            this.f21192a = countDownLatch;
+            this.f7586a = countDownLatch;
             this.b = bVar;
         }
 
@@ -44,8 +44,8 @@ public final class a4<SERVICE, RESULT> {
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             z2.a("ServiceBlockBinder#onServiceConnected " + componentName);
             try {
-                this.f21193c = this.b.a(iBinder);
-                this.f21192a.countDown();
+                this.f7587c = this.b.a(iBinder);
+                this.f7586a.countDown();
             } catch (Exception e) {
                 z2.a(e);
             }
@@ -55,7 +55,7 @@ public final class a4<SERVICE, RESULT> {
         public void onServiceDisconnected(ComponentName componentName) {
             z2.a("ServiceBlockBinder#onServiceDisconnected" + componentName);
             try {
-                this.f21192a.countDown();
+                this.f7586a.countDown();
             } catch (Exception e) {
                 z2.a(e);
             }
@@ -72,7 +72,7 @@ public final class a4<SERVICE, RESULT> {
     public a4(Context context, Intent intent, b<SERVICE, RESULT> bVar) {
         this.d = context;
         this.b = intent;
-        this.f21191c = bVar;
+        this.f7585c = bVar;
     }
 
     public RESULT a() {
@@ -81,15 +81,15 @@ public final class a4<SERVICE, RESULT> {
             return null;
         }
         try {
-            aVar = new a(this, this.f21190a, this.f21191c);
+            aVar = new a(this, this.f7584a, this.f7585c);
             this.d.bindService(this.b, aVar, 1);
-            this.f21190a.await();
+            this.f7584a.await();
         } catch (Throwable th) {
             th = th;
             aVar = null;
         }
         try {
-            RESULT a2 = this.f21191c.a((b<SERVICE, RESULT>) aVar.f21193c);
+            RESULT a2 = this.f7585c.a((b<SERVICE, RESULT>) aVar.f7587c);
             a(aVar);
             return a2;
         } catch (Throwable th2) {

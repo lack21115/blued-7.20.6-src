@@ -154,7 +154,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         if (bArr != null) {
             Util.checkOffsetAndCount(bArr.length, i, i2);
             byte[] bArr2 = new byte[i2];
-            System.arraycopy((Object) bArr, i, (Object) bArr2, 0, i2);
+            System.arraycopy(bArr, i, bArr2, 0, i2);
             return new ByteString(bArr2);
         }
         throw new IllegalArgumentException("data == null");
@@ -413,7 +413,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
                     return this;
                 }
                 byte[] bArr2 = new byte[i3];
-                System.arraycopy((Object) this.data, i, (Object) bArr2, 0, i3);
+                System.arraycopy(this.data, i, bArr2, 0, i3);
                 return new ByteString(bArr2);
             }
             throw new IllegalArgumentException("endIndex < beginIndex");

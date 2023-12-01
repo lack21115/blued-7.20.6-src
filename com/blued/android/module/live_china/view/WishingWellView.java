@@ -10,7 +10,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.baidu.mobads.sdk.api.IAdInterListener;
+import com.android.internal.util.cm.QSConstants;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.module.live_china.R;
@@ -27,13 +27,9 @@ import java.text.DecimalFormat;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/WishingWellView.class */
 public class WishingWellView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f15314a;
+    public static String a;
     private BaseFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveWishingDrawModel f15315c;
+    private LiveWishingDrawModel c;
     private CountDownTimer d;
     private View e;
     private ImageView f;
@@ -82,7 +78,7 @@ public class WishingWellView extends FrameLayout {
 
     private String a(float f) {
         if (f >= 10000.0f) {
-            return new DecimalFormat("0").format(f / 10000.0f) + IAdInterListener.AdReqParam.WIDTH;
+            return new DecimalFormat("0").format(f / 10000.0f) + "w";
         }
         return new DecimalFormat("0").format(f);
     }
@@ -98,19 +94,19 @@ public class WishingWellView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(View view) {
-        EventTrackLive.a(LiveProtos.Event.LIVE_HITS_GIFT_ICON_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this.f15315c.goods_id);
+        EventTrackLive.a(LiveProtos.Event.LIVE_HITS_GIFT_ICON_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this.c.goods_id);
         LiveSetDataObserver.a().w();
     }
 
     private void b() {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f, "rotation", 0.0f, 360.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f, QSConstants.TILE_ROTATION, 0.0f, 360.0f);
         ofFloat.setRepeatCount(-1);
         ofFloat.setRepeatMode(-1);
         ofFloat.setInterpolator(new DecelerateInterpolator(1.2f));
         ofFloat.setDuration(5000L);
         ofFloat.start();
-        ImageLoader.a(this.b.getFragmentActive(), this.f15315c.goods_icon).a(this.g);
-        this.h.setText(String.format(getContext().getResources().getString(R.string.live_wishing_well_percentage), a(this.f15315c.times)));
+        ImageLoader.a(this.b.getFragmentActive(), this.c.goods_icon).a(this.g);
+        this.h.setText(String.format(getContext().getResources().getString(R.string.live_wishing_well_percentage), a(this.c.times)));
         c();
         post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$WishingWellView$1acWU2EUAaOhgi7PNZcHWwpealo
             @Override // java.lang.Runnable
@@ -118,7 +114,7 @@ public class WishingWellView extends FrameLayout {
                 WishingWellView.this.d();
             }
         });
-        f15314a = this.f15315c.url;
+        a = this.c.url;
         setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$WishingWellView$dyN_egblagxwvqv5pwRrO108ZyU
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -128,13 +124,13 @@ public class WishingWellView extends FrameLayout {
     }
 
     private void c() {
-        LiveWishingDrawModel liveWishingDrawModel = this.f15315c;
+        LiveWishingDrawModel liveWishingDrawModel = this.c;
         if (liveWishingDrawModel != null && liveWishingDrawModel.countdown > 0) {
             CountDownTimer countDownTimer = this.d;
             if (countDownTimer != null) {
                 countDownTimer.cancel();
             }
-            this.d = new AnonymousClass1(this.f15315c.countdown * 1000, 1000L).start();
+            this.d = new AnonymousClass1(this.c.countdown * 1000, 1000L).start();
             return;
         }
         CountDownTimer countDownTimer2 = this.d;
@@ -164,7 +160,7 @@ public class WishingWellView extends FrameLayout {
     }
 
     public boolean a(LiveWishingDrawModel liveWishingDrawModel) {
-        this.f15315c = liveWishingDrawModel;
+        this.c = liveWishingDrawModel;
         if (liveWishingDrawModel == null) {
             post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$WishingWellView$2moyD0gEtjLLXcizJRqGbCi4YL8
                 @Override // java.lang.Runnable
@@ -191,7 +187,7 @@ public class WishingWellView extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public void setVisibility(int i) {
         if (i == 8) {
-            f15314a = "";
+            a = "";
             CountDownTimer countDownTimer = this.d;
             if (countDownTimer != null) {
                 countDownTimer.cancel();

@@ -7,15 +7,15 @@ import org.json.JSONObject;
 public class m5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f3884a;
+    public String f3836a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f3885c;
+    public int f3837c;
 
     public m5(JSONObject jSONObject) {
-        this.f3884a = jSONObject.optString("bid", null);
+        this.f3836a = jSONObject.optString("bid", null);
         this.b = jSONObject.optString("floor", Constants.DEFAULT_UIN);
-        this.f3885c = jSONObject.optInt("type", -1);
+        this.f3837c = jSONObject.optInt("type", -1);
     }
 }

@@ -12,7 +12,6 @@ import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.module.common.log.oldtrack.LogData;
 import com.blued.android.module.common.user.model.UserInfo;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.das.message.MessageProtos;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -29,6 +28,7 @@ import com.soft.blued.ui.msg.model.MsgSourceEntity;
 import com.soft.blued.utils.BluedPreferences;
 import com.soft.blued.utils.StringUtils;
 import com.ss.android.download.api.constant.BaseConstants;
+import com.umeng.analytics.pro.d;
 import java.util.Arrays;
 import java.util.List;
 import kotlin.Metadata;
@@ -41,11 +41,11 @@ import kotlin.jvm.internal.StringCompanionObject;
 public final class DateTodayManager {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final DateTodayManager f32404a = new DateTodayManager();
+    public static final DateTodayManager f18714a = new DateTodayManager();
     private static Status b = Status.NULL;
 
     /* renamed from: c  reason: collision with root package name */
-    private static DateTodayConfigModel f32405c;
+    private static DateTodayConfigModel f18715c;
     private static SessionModel d;
     private static long e;
     private static boolean f;
@@ -78,7 +78,7 @@ public final class DateTodayManager {
     public final /* synthetic */ class WhenMappings {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f32408a;
+        public static final /* synthetic */ int[] f18718a;
 
         static {
             int[] iArr = new int[Status.values().length];
@@ -87,7 +87,7 @@ public final class DateTodayManager {
             iArr[Status.BE_MATCHED.ordinal()] = 3;
             iArr[Status.COME_BACK_TOMORROW.ordinal()] = 4;
             iArr[Status.UNAVAILABLE.ordinal()] = 5;
-            f32408a = iArr;
+            f18718a = iArr;
         }
     }
 
@@ -95,7 +95,7 @@ public final class DateTodayManager {
     }
 
     private final String A() {
-        int i2 = WhenMappings.f32408a[b.ordinal()];
+        int i2 = WhenMappings.f18718a[b.ordinal()];
         String str = "";
         if (i2 == 1) {
             j = "";
@@ -118,7 +118,7 @@ public final class DateTodayManager {
     }
 
     private final String C() {
-        return Intrinsics.a("date_today_next_update_time_", (Object) B());
+        return Intrinsics.a("date_today_next_update_time_", B());
     }
 
     private final long D() {
@@ -138,7 +138,7 @@ public final class DateTodayManager {
     }
 
     private final String H() {
-        return Intrinsics.a("date_today_status_", (Object) B());
+        return Intrinsics.a("date_today_status_", B());
     }
 
     private final Status I() {
@@ -146,7 +146,7 @@ public final class DateTodayManager {
     }
 
     private final String J() {
-        return Intrinsics.a("date_today_session_", (Object) B());
+        return Intrinsics.a("date_today_session_", B());
     }
 
     private final String K() {
@@ -154,19 +154,19 @@ public final class DateTodayManager {
     }
 
     private final String L() {
-        return Intrinsics.a("date_today_purpose_", (Object) B());
+        return Intrinsics.a("date_today_purpose_", B());
     }
 
     private final String M() {
-        return Intrinsics.a("date_today_purpose_shown_time_", (Object) B());
+        return Intrinsics.a("date_today_purpose_shown_time_", B());
     }
 
     private final String N() {
-        return Intrinsics.a("date_today_fake_avatar_num_", (Object) B());
+        return Intrinsics.a("date_today_fake_avatar_num_", B());
     }
 
     private final String O() {
-        return Intrinsics.a("date_today_remaining_times_", (Object) B());
+        return Intrinsics.a("date_today_remaining_times_", B());
     }
 
     private final int P() {
@@ -182,34 +182,32 @@ public final class DateTodayManager {
     }
 
     private final String S() {
-        return Intrinsics.a("date_today_purpose_", (Object) B());
+        return Intrinsics.a("date_today_purpose_", B());
     }
 
     private final String T() {
-        return Intrinsics.a("date_today_first_chat_", (Object) B());
+        return Intrinsics.a("date_today_first_chat_", B());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void U() {
-        h = !f32404a.F();
-        d = f32404a.y();
-        b = f32404a.I();
-        e = f32404a.D();
+        h = !f18714a.F();
+        d = f18714a.y();
+        b = f18714a.I();
+        e = f18714a.D();
         f = false;
         ChatHttpUtils.e(new BluedUIHttpResponse<BluedEntityA<DateTodayConfigModel>>() { // from class: com.soft.blued.ui.msg.manager.DateTodayManager$getConfig$1$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<DateTodayConfigModel> bluedEntityA) {
-                List<DateTodayConfigModel> list;
+                List list;
                 if (bluedEntityA == null || (list = bluedEntityA.data) == null || list.size() <= 0) {
                     return;
                 }
-                DateTodayManager dateTodayManager = DateTodayManager.f32404a;
-                DateTodayManager.f32405c = list.get(0);
+                DateTodayManager dateTodayManager = DateTodayManager.f18714a;
+                DateTodayManager.f18715c = (DateTodayConfigModel) list.get(0);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str) {
                 return true;
             }
@@ -251,7 +249,7 @@ public final class DateTodayManager {
         if (dateTodayMatchModel.getTarget_info() == null || dateTodayMatchModel.getSelf_info() == null) {
             return;
         }
-        DateTodayMatchUserModel self_info = Intrinsics.a((Object) String.valueOf(d(dateTodayMatchModel.getTarget_info().getUid())), (Object) B()) ? dateTodayMatchModel.getSelf_info() : dateTodayMatchModel.getTarget_info();
+        DateTodayMatchUserModel self_info = Intrinsics.a(String.valueOf(d(dateTodayMatchModel.getTarget_info().getUid())), B()) ? dateTodayMatchModel.getSelf_info() : dateTodayMatchModel.getTarget_info();
         sessionModel.lastMsgTime = dateTodayMatchModel.getTime();
         long d2 = d(self_info.getUid());
         sessionModel.lastMsgFromId = d2;
@@ -259,14 +257,14 @@ public final class DateTodayManager {
             sessionModel.lastMsgExtra = AppInfo.f().toJson(self_info);
         } catch (Exception e2) {
         }
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = AppInfo.d().getResources().getString(R.string.date_today_desc21);
         Intrinsics.c(string, "getAppContext().resource…string.date_today_desc21)");
         String format = String.format(string, Arrays.copyOf(new Object[]{a(self_info)}, 1));
         Intrinsics.c(format, "format(format, *args)");
         List<String> same_point_friends_purpose = dateTodayMatchModel.getSame_point_friends_purpose();
         if (!(same_point_friends_purpose == null || same_point_friends_purpose.isEmpty())) {
-            StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
             String string2 = AppInfo.d().getResources().getString(R.string.date_today_desc22);
             Intrinsics.c(string2, "getAppContext().resource…string.date_today_desc22)");
             Intrinsics.c(String.format(string2, Arrays.copyOf(new Object[]{StringUtils.a(dateTodayMatchModel.getSame_point_friends_purpose())}, 1)), "format(format, *args)");
@@ -278,63 +276,64 @@ public final class DateTodayManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(final IRequestHost iRequestHost, final OnFinishListener onFinishListener) {
-        ChatHttpUtils.e(new BluedUIHttpResponse<BluedEntityA<DateTodayQualificationModel>>(onFinishListener) { // from class: com.soft.blued.ui.msg.manager.DateTodayManager$getDatingTodaySession$1$1
+        ChatHttpUtils.e(new BluedUIHttpResponse<BluedEntityA<DateTodayQualificationModel>>(iRequestHost, onFinishListener) { // from class: com.soft.blued.ui.msg.manager.DateTodayManager$getDatingTodaySession$1$1
+
+            /* renamed from: a  reason: collision with root package name */
+            final /* synthetic */ IRequestHost f18719a;
             final /* synthetic */ DateTodayManager.OnFinishListener b;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
-                super(IRequestHost.this);
+                super(iRequestHost);
+                this.f18719a = iRequestHost;
                 this.b = onFinishListener;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<DateTodayQualificationModel> bluedEntityA) {
-                List<DateTodayQualificationModel> list;
+                List list;
                 if (bluedEntityA != null && (list = bluedEntityA.data) != null && list.size() > 0) {
-                    DateTodayQualificationModel dateTodayQualificationModel = list.get(0);
+                    DateTodayQualificationModel dateTodayQualificationModel = (DateTodayQualificationModel) list.get(0);
                     Log.e("xxx", "getDatingTodaySession [enable=" + dateTodayQualificationModel.getEnable() + ", residue_degree=" + dateTodayQualificationModel.getResidue_degree() + ']');
-                    DateTodayManager dateTodayManager = DateTodayManager.f32404a;
+                    DateTodayManager dateTodayManager = DateTodayManager.f18714a;
                     DateTodayManager.e = dateTodayQualificationModel.getExpire_time() * ((long) 1000);
-                    DateTodayManager.f32404a.i(DateTodayManager.f32404a.d());
-                    DateTodayManager.f32404a.b(dateTodayQualificationModel.getResidue_degree());
+                    DateTodayManager.f18714a.i(DateTodayManager.f18714a.d());
+                    DateTodayManager.f18714a.b(dateTodayQualificationModel.getResidue_degree());
                     if (dateTodayQualificationModel.getEnable() == 1) {
                         if (dateTodayQualificationModel.getResidue_degree() > 0) {
-                            DateTodayManager.a(DateTodayManager.f32404a, DateTodayManager.Status.HAVE_CHANCE, null, null, 6, null);
+                            DateTodayManager.a(DateTodayManager.f18714a, DateTodayManager.Status.HAVE_CHANCE, null, null, 6, null);
                             return;
                         }
-                        SessionModel c2 = DateTodayManager.f32404a.c();
-                        if (c2 != null && c2.lastMsgType == 281 && c2.lastMsgTime < DateTodayManager.f32404a.d()) {
+                        SessionModel c2 = DateTodayManager.f18714a.c();
+                        if (c2 != null && c2.lastMsgType == 281 && c2.lastMsgTime < DateTodayManager.f18714a.d()) {
                             Log.w("xxx", "getDatingTodaySession keep current state!!");
                             return;
                         } else {
-                            DateTodayManager.a(DateTodayManager.f32404a, DateTodayManager.Status.COME_BACK_TOMORROW, null, null, 6, null);
+                            DateTodayManager.a(DateTodayManager.f18714a, DateTodayManager.Status.COME_BACK_TOMORROW, null, null, 6, null);
                             return;
                         }
                     }
                 }
                 Log.e("xxx", "getDatingTodaySession() onUIUpdate()");
-                DateTodayManager.a(DateTodayManager.f32404a, DateTodayManager.Status.UNAVAILABLE, null, null, 6, null);
+                DateTodayManager.a(DateTodayManager.f18714a, DateTodayManager.Status.UNAVAILABLE, null, null, 6, null);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str) {
                 Log.e("xxx", "getDatingTodaySession() onUIFailure");
-                DateTodayManager.a(DateTodayManager.f32404a, DateTodayManager.Status.UNAVAILABLE, null, null, 6, null);
+                DateTodayManager.a(DateTodayManager.f18714a, DateTodayManager.Status.UNAVAILABLE, null, null, 6, null);
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
-                DateTodayManager dateTodayManager = DateTodayManager.f32404a;
+                DateTodayManager dateTodayManager = DateTodayManager.f18714a;
                 DateTodayManager.f = false;
                 DateTodayManager.OnFinishListener onFinishListener2 = this.b;
                 if (onFinishListener2 == null) {
                     return;
                 }
-                onFinishListener2.onFinish(DateTodayManager.f32404a.c());
+                onFinishListener2.onFinish(DateTodayManager.f18714a.c());
             }
         }, iRequestHost);
     }
@@ -411,7 +410,7 @@ public final class DateTodayManager {
             sb.append('-');
             sb.append((Object) B());
         }
-        return Intrinsics.a("date_today_interested_", (Object) sb.toString());
+        return Intrinsics.a("date_today_interested_", sb.toString());
     }
 
     private final void c(SessionModel sessionModel) {
@@ -502,27 +501,27 @@ public final class DateTodayManager {
         AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.msg.manager.-$$Lambda$DateTodayManager$P2tzcHBbgV3TobxGsTKfyMM01UY
             @Override // java.lang.Runnable
             public final void run() {
-                DateTodayManager.a(IRequestHost.this, onFinishListener);
+                DateTodayManager.a(iRequestHost, onFinishListener);
             }
         });
         return null;
     }
 
-    public final SessionModel a(Status nextStatus, SessionModel sessionModel, DateTodayMatchModel dateTodayMatchModel) {
-        Intrinsics.e(nextStatus, "nextStatus");
-        if (nextStatus != b) {
+    public final SessionModel a(Status status, SessionModel sessionModel, DateTodayMatchModel dateTodayMatchModel) {
+        Intrinsics.e(status, "nextStatus");
+        if (status != b) {
             StringBuilder sb = new StringBuilder();
             sb.append("changeStatus=");
-            sb.append(nextStatus.name());
+            sb.append(status.name());
             sb.append(", session==null:");
             sb.append(sessionModel == null);
             sb.append(", model==null:");
             sb.append(dateTodayMatchModel == null);
             Log.e("xxx", sb.toString());
-            SessionModel z = nextStatus == Status.UNAVAILABLE ? null : z();
+            SessionModel z = status == Status.UNAVAILABLE ? null : z();
             d = z;
             if (z != null) {
-                int i2 = WhenMappings.f32408a[nextStatus.ordinal()];
+                int i2 = WhenMappings.f18718a[status.ordinal()];
                 if (i2 == 1) {
                     z.noReadMsgCount = 1;
                     z.lastMsgContent = AppInfo.d().getString(R.string.date_today_desc1);
@@ -530,30 +529,30 @@ public final class DateTodayManager {
                     z.noReadMsgCount = 0;
                     z.lastMsgType = (short) 281;
                     if (dateTodayMatchModel == null) {
-                        DateTodayMatchModel b2 = f32404a.b(sessionModel);
+                        DateTodayMatchModel b2 = f18714a.b(sessionModel);
                         if (b2 != null) {
-                            f32404a.a(z, b2);
+                            f18714a.a(z, b2);
                         }
                     } else {
-                        f32404a.a(z, dateTodayMatchModel);
+                        f18714a.a(z, dateTodayMatchModel);
                     }
                 } else if (i2 == 3) {
                     z.noReadMsgCount = 1;
                     z.lastMsgType = (short) 281;
-                    DateTodayMatchModel b3 = f32404a.b(sessionModel);
+                    DateTodayMatchModel b3 = f18714a.b(sessionModel);
                     if (b3 != null) {
-                        f32404a.a(z, b3);
+                        f18714a.a(z, b3);
                     }
                 } else if (i2 == 4) {
-                    String B = f32404a.B();
+                    String B = f18714a.B();
                     Intrinsics.c(B, "getUid()");
                     z.lastMsgFromId = Long.parseLong(B);
                     z.noReadMsgCount = 0;
                     z.lastMsgContent = AppInfo.d().getString(R.string.date_today_finished);
                 }
             }
-            b = nextStatus;
-            a(nextStatus);
+            b = status;
+            a(status);
             c(d);
             m();
         }
@@ -564,22 +563,22 @@ public final class DateTodayManager {
         return b;
     }
 
-    public final String a(DateTodayMatchUserModel userInfo) {
-        Intrinsics.e(userInfo, "userInfo");
+    public final String a(DateTodayMatchUserModel dateTodayMatchUserModel) {
+        Intrinsics.e(dateTodayMatchUserModel, "userInfo");
         StringBuilder sb = new StringBuilder();
-        if (userInfo.getAge() > 0) {
-            sb.append(userInfo.getAge());
+        if (dateTodayMatchUserModel.getAge() > 0) {
+            sb.append(dateTodayMatchUserModel.getAge());
         }
-        sb.append(BridgeUtil.SPLIT_MARK);
-        if (userInfo.getHeight() > 0) {
-            sb.append(StringUtils.a(String.valueOf(userInfo.getHeight()), BlueAppLocal.c(), true));
+        sb.append("/");
+        if (dateTodayMatchUserModel.getHeight() > 0) {
+            sb.append(StringUtils.a(String.valueOf(dateTodayMatchUserModel.getHeight()), BlueAppLocal.c(), true));
         }
-        sb.append(BridgeUtil.SPLIT_MARK);
-        if (userInfo.getWeight() > 0) {
-            sb.append(StringUtils.b(String.valueOf(userInfo.getWeight()), BlueAppLocal.c(), true));
+        sb.append("/");
+        if (dateTodayMatchUserModel.getWeight() > 0) {
+            sb.append(StringUtils.b(String.valueOf(dateTodayMatchUserModel.getWeight()), BlueAppLocal.c(), true));
         }
-        sb.append(BridgeUtil.SPLIT_MARK);
-        sb.append(StringUtils.e(String.valueOf(userInfo.getRole())));
+        sb.append("/");
+        sb.append(StringUtils.e(String.valueOf(dateTodayMatchUserModel.getRole())));
         String sb2 = sb.toString();
         Intrinsics.c(sb2, "sBuilder.toString()");
         return sb2;
@@ -596,14 +595,14 @@ public final class DateTodayManager {
         }
         Log.e("xxx", "exitChatting() sessionId=" + j2 + ", it.lastMsgFromId=" + sessionModel.lastMsgFromId);
         if (sessionModel.lastMsgFromId == (-j2)) {
-            a(f32404a, Status.COME_BACK_TOMORROW, null, null, 6, null);
+            a(f18714a, Status.COME_BACK_TOMORROW, null, null, 6, null);
         }
     }
 
-    public final void a(Context context, DateTodayMatchUserModel targetInfo) {
+    public final void a(Context context, DateTodayMatchUserModel dateTodayMatchUserModel) {
         Intrinsics.e(context, "context");
-        Intrinsics.e(targetInfo, "targetInfo");
-        a(context, targetInfo.getName(), d(targetInfo.getUid()), targetInfo.getAvatar());
+        Intrinsics.e(dateTodayMatchUserModel, "targetInfo");
+        a(context, dateTodayMatchUserModel.getName(), d(dateTodayMatchUserModel.getUid()), dateTodayMatchUserModel.getAvatar());
     }
 
     public final void a(Context context, String str, long j2, String str2) {
@@ -634,9 +633,9 @@ public final class DateTodayManager {
         g = z;
     }
 
-    public final boolean a(SessionModel session) {
-        Intrinsics.e(session, "session");
-        return session.sessionType == 6668 && session.sessionId == 4;
+    public final boolean a(SessionModel sessionModel) {
+        Intrinsics.e(sessionModel, d.aw);
+        return sessionModel.sessionType == 6668 && sessionModel.sessionId == 4;
     }
 
     public final boolean a(boolean z, long j2) {
@@ -644,7 +643,7 @@ public final class DateTodayManager {
     }
 
     public final DateTodayConfigModel b() {
-        return f32405c;
+        return f18715c;
     }
 
     public final void b(int i2) {
@@ -656,14 +655,14 @@ public final class DateTodayManager {
         d(false, j2);
     }
 
-    public final void b(String distance) {
-        Intrinsics.e(distance, "distance");
-        k = distance;
+    public final void b(String str) {
+        Intrinsics.e(str, "distance");
+        k = str;
         if (w()) {
             return;
         }
         x();
-        EventTrackMessage.a(j, distance, l);
+        EventTrackMessage.a(j, str, l);
     }
 
     public final void b(boolean z, long j2) {
@@ -696,7 +695,7 @@ public final class DateTodayManager {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0047, code lost:
-        if (kotlin.text.StringsKt.a((java.lang.CharSequence) r8, 'e', 0, false, 6, (java.lang.Object) null) >= 0) goto L21;
+        if (kotlin.text.StringsKt.a(r8, 'e', 0, false, 6, (java.lang.Object) null) >= 0) goto L21;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -779,9 +778,9 @@ public final class DateTodayManager {
         a(j(j2), true);
     }
 
-    public final void e(String text) {
-        Intrinsics.e(text, "text");
-        a(S(), text);
+    public final void e(String str) {
+        Intrinsics.e(str, "text");
+        a(S(), str);
     }
 
     public final boolean e() {
@@ -820,7 +819,7 @@ public final class DateTodayManager {
             return;
         }
         sessionModel.noReadMsgCount = 0;
-        f32404a.c(sessionModel);
+        f18714a.c(sessionModel);
     }
 
     public final int j() {

@@ -166,20 +166,20 @@ public abstract class Charset implements Comparable<Charset> {
         }
     }
 
-    private static boolean isValidCharsetNamePart(char c2) {
-        if (c2 < 'A' || c2 > 'Z') {
-            if (c2 < 'a' || c2 > 'z') {
-                return (c2 >= '0' && c2 <= '9') || c2 == '-' || c2 == '.' || c2 == ':' || c2 == '_';
+    private static boolean isValidCharsetNamePart(char c) {
+        if (c < 'A' || c > 'Z') {
+            if (c < 'a' || c > 'z') {
+                return (c >= '0' && c <= '9') || c == '-' || c == '.' || c == ':' || c == '_';
             }
             return true;
         }
         return true;
     }
 
-    private static boolean isValidCharsetNameStart(char c2) {
-        if (c2 < 'A' || c2 > 'Z') {
-            if (c2 < 'a' || c2 > 'z') {
-                return c2 >= '0' && c2 <= '9';
+    private static boolean isValidCharsetNameStart(char c) {
+        if (c < 'A' || c > 'Z') {
+            if (c < 'a' || c > 'z') {
+                return c >= '0' && c <= '9';
             }
             return true;
         }

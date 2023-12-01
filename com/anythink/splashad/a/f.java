@@ -3,6 +3,7 @@ package com.anythink.splashad.a;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.ViewGroup;
+import com.anythink.core.api.ATAdInfo;
 import com.anythink.core.api.ATNetworkConfirmInfo;
 import com.anythink.core.api.AdError;
 import com.anythink.core.common.b.g;
@@ -24,87 +25,85 @@ import java.util.TimerTask;
 public final class f implements CustomSplashEventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    CustomSplashAdapter f9203a;
+    CustomSplashAdapter f6363a;
     a b;
 
     /* renamed from: c  reason: collision with root package name */
-    long f9204c;
+    long f6364c;
     private Timer d;
     private boolean e = false;
     private int f = 0;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.splashad.a.f$1  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/splashad/a/f$1.class */
-    public final class AnonymousClass1 extends TimerTask {
+    final class AnonymousClass1 extends TimerTask {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ViewGroup f9205a;
+        final /* synthetic */ ViewGroup f6365a;
         final /* synthetic */ f.b b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ ATSplashSkipAdListener f9206c;
+        final /* synthetic */ ATSplashSkipAdListener f6366c;
         final /* synthetic */ long d;
         final /* synthetic */ long e;
 
         AnonymousClass1(ViewGroup viewGroup, f.b bVar, ATSplashSkipAdListener aTSplashSkipAdListener, long j, long j2) {
-            this.f9205a = viewGroup;
+            this.f6365a = viewGroup;
             this.b = bVar;
-            this.f9206c = aTSplashSkipAdListener;
+            this.f6366c = aTSplashSkipAdListener;
             this.d = j;
             this.e = j2;
         }
 
         @Override // java.util.TimerTask, java.lang.Runnable
         public final void run() {
-            ViewGroup viewGroup = this.f9205a;
+            ViewGroup viewGroup = this.f6365a;
             if (viewGroup == null || u.a(viewGroup, this.b)) {
                 n.a().a(new Runnable() { // from class: com.anythink.splashad.a.f.1.1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        if (f.this.f9204c <= 0) {
+                        if (f.this.f6364c <= 0) {
                             f.this.a(3);
                             f.this.onSplashAdDismiss();
-                        } else if (AnonymousClass1.this.f9206c != null) {
-                            AnonymousClass1.this.f9206c.onAdTick(AnonymousClass1.this.d, f.this.f9204c);
+                        } else if (AnonymousClass1.this.f6366c != null) {
+                            AnonymousClass1.this.f6366c.onAdTick(AnonymousClass1.this.d, f.this.f6364c);
                         }
-                        f.this.f9204c -= AnonymousClass1.this.e;
+                        f.this.f6364c -= AnonymousClass1.this.e;
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.splashad.a.f$2  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/splashad/a/f$2.class */
-    public final class AnonymousClass2 implements Runnable {
+    final class AnonymousClass2 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ATSplashSkipAdListener f9208a;
+        final /* synthetic */ ATSplashSkipAdListener f6368a;
         final /* synthetic */ long b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ long f9209c;
+        final /* synthetic */ long f6369c;
 
         AnonymousClass2(ATSplashSkipAdListener aTSplashSkipAdListener, long j, long j2) {
-            this.f9208a = aTSplashSkipAdListener;
+            this.f6368a = aTSplashSkipAdListener;
             this.b = j;
-            this.f9209c = j2;
+            this.f6369c = j2;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            ATSplashSkipAdListener aTSplashSkipAdListener = this.f9208a;
+            ATSplashSkipAdListener aTSplashSkipAdListener = this.f6368a;
             if (aTSplashSkipAdListener != null) {
-                aTSplashSkipAdListener.onAdTick(this.b, f.this.f9204c);
-                f.this.f9204c -= this.f9209c;
+                aTSplashSkipAdListener.onAdTick(this.b, f.this.f6364c);
+                f.this.f6364c -= this.f6369c;
             }
         }
     }
 
     public f(CustomSplashAdapter customSplashAdapter, a aVar) {
-        this.f9203a = customSplashAdapter;
+        this.f6363a = customSplashAdapter;
         this.b = aVar;
     }
 
@@ -123,7 +122,7 @@ public final class f implements CustomSplashEventListener {
             ViewGroup container = aTSplashSkipInfo.getContainer();
             f.b bVar = new f.b();
             ATSplashSkipAdListener aTSplashSkipAdListener = aTSplashSkipInfo.getATSplashSkipAdListener();
-            this.f9204c = countDownDuration;
+            this.f6364c = countDownDuration;
             Timer timer = new Timer();
             this.d = timer;
             timer.schedule(new AnonymousClass1(container, bVar, aTSplashSkipAdListener, countDownDuration, callbackInterval), callbackInterval, callbackInterval);
@@ -149,7 +148,7 @@ public final class f implements CustomSplashEventListener {
     public final void onDeeplinkCallback(boolean z) {
         a aVar = this.b;
         if (aVar != null) {
-            aVar.onDeeplinkCallback(j.a(this.f9203a), z);
+            aVar.onDeeplinkCallback(j.a(this.f6363a), z);
         }
     }
 
@@ -157,13 +156,13 @@ public final class f implements CustomSplashEventListener {
     public final void onDownloadConfirm(Context context, ATNetworkConfirmInfo aTNetworkConfirmInfo) {
         a aVar = this.b;
         if (aVar != null) {
-            aVar.onDownloadConfirm(context, j.a(this.f9203a), aTNetworkConfirmInfo);
+            aVar.onDownloadConfirm(context, j.a(this.f6363a), aTNetworkConfirmInfo);
         }
     }
 
     @Override // com.anythink.splashad.unitgroup.api.CustomSplashEventListener
     public final void onSplashAdClicked() {
-        CustomSplashAdapter customSplashAdapter = this.f9203a;
+        CustomSplashAdapter customSplashAdapter = this.f6363a;
         if (customSplashAdapter != null) {
             com.anythink.core.common.e.e trackingInfo = customSplashAdapter.getTrackingInfo();
             com.anythink.core.common.j.a.a(n.a().g()).a(6, trackingInfo);
@@ -171,7 +170,7 @@ public final class f implements CustomSplashEventListener {
         }
         a aVar = this.b;
         if (aVar != null) {
-            aVar.onAdClick(j.a(this.f9203a));
+            aVar.onAdClick(j.a(this.f6363a));
         }
     }
 
@@ -182,14 +181,14 @@ public final class f implements CustomSplashEventListener {
         if (timer != null) {
             timer.cancel();
         }
-        CustomSplashAdapter customSplashAdapter = this.f9203a;
+        CustomSplashAdapter customSplashAdapter = this.f6363a;
         if (customSplashAdapter != null) {
             com.anythink.core.common.e.e trackingInfo = customSplashAdapter.getTrackingInfo();
             int i = this.f;
             if (i != 0) {
                 trackingInfo.y(i);
             } else {
-                int dismissType = this.f9203a.getDismissType();
+                int dismissType = this.f6363a.getDismissType();
                 i = dismissType;
                 if (dismissType == 0) {
                     i = 1;
@@ -197,17 +196,17 @@ public final class f implements CustomSplashEventListener {
                 trackingInfo.y(i);
             }
             com.anythink.core.common.j.c.a(trackingInfo, false);
-            ATSplashSkipInfo splashSkipInfo = this.f9203a.getSplashSkipInfo();
+            ATSplashSkipInfo splashSkipInfo = this.f6363a.getSplashSkipInfo();
             IATSplashEyeAd iATSplashEyeAd = null;
             if (splashSkipInfo != null && splashSkipInfo.canUseCustomSkipView()) {
-                this.f9203a.startSplashCustomSkipViewClickEye();
+                this.f6363a.startSplashCustomSkipViewClickEye();
                 Timer timer2 = this.d;
                 if (timer2 != null) {
                     timer2.cancel();
                     this.d = null;
                 }
                 splashSkipInfo.destroy();
-                this.f9203a.setSplashSkipInfo(null);
+                this.f6363a.setSplashSkipInfo(null);
             }
             com.anythink.core.common.k.g.a(trackingInfo, g.i.e, g.i.f, "");
             String W = trackingInfo.W();
@@ -215,21 +214,21 @@ public final class f implements CustomSplashEventListener {
                 v.a().e(W);
                 c.a(n.a().g(), W).d(v.a().a(W, d.a()));
             }
-            CustomSplashAdapter customSplashAdapter2 = this.f9203a;
+            CustomSplashAdapter customSplashAdapter2 = this.f6363a;
             if (customSplashAdapter2 instanceof CustomSplashAdapter) {
                 iATSplashEyeAd = customSplashAdapter2.getSplashEyeAd();
             }
             a aVar = this.b;
             if (aVar != null && !this.e) {
                 this.e = true;
-                aVar.onCallbackAdDismiss(j.a(trackingInfo, this.f9203a), new ATSplashAdExtraInfo(i, iATSplashEyeAd));
+                aVar.onCallbackAdDismiss(j.a(trackingInfo, this.f6363a), new ATSplashAdExtraInfo(i, iATSplashEyeAd));
             }
             if (iATSplashEyeAd == null) {
-                CustomSplashAdapter customSplashAdapter3 = this.f9203a;
+                CustomSplashAdapter customSplashAdapter3 = this.f6363a;
                 if (customSplashAdapter3 != null) {
                     customSplashAdapter3.cleanImpressionListener();
                 }
-                CustomSplashAdapter customSplashAdapter4 = this.f9203a;
+                CustomSplashAdapter customSplashAdapter4 = this.f6363a;
                 if (customSplashAdapter4 != null) {
                     customSplashAdapter4.destory();
                 }
@@ -239,20 +238,20 @@ public final class f implements CustomSplashEventListener {
 
     @Override // com.anythink.splashad.unitgroup.api.CustomSplashEventListener
     public final void onSplashAdShow() {
-        j a2 = j.a(this.f9203a);
-        CustomSplashAdapter customSplashAdapter = this.f9203a;
+        ATAdInfo a2 = j.a(this.f6363a);
+        CustomSplashAdapter customSplashAdapter = this.f6363a;
         if (customSplashAdapter != null) {
             com.anythink.core.common.e.e trackingInfo = customSplashAdapter.getTrackingInfo();
-            com.anythink.core.common.j.a.a(n.a().g()).a(4, trackingInfo, this.f9203a.getUnitGroupInfo());
-            com.anythink.core.common.k.g.a(trackingInfo, g.i.f6512c, g.i.f, "");
-            ATSplashSkipInfo splashSkipInfo = this.f9203a.getSplashSkipInfo();
-            if (splashSkipInfo != null && splashSkipInfo.canUseCustomSkipView() && this.f9203a.isSupportCustomSkipView() && this.d == null) {
+            com.anythink.core.common.j.a.a(n.a().g()).a(4, trackingInfo, this.f6363a.getUnitGroupInfo());
+            com.anythink.core.common.k.g.a(trackingInfo, g.i.c, g.i.f, "");
+            ATSplashSkipInfo splashSkipInfo = this.f6363a.getSplashSkipInfo();
+            if (splashSkipInfo != null && splashSkipInfo.canUseCustomSkipView() && this.f6363a.isSupportCustomSkipView() && this.d == null) {
                 long callbackInterval = splashSkipInfo.getCallbackInterval();
                 long countDownDuration = splashSkipInfo.getCountDownDuration();
                 ViewGroup container = splashSkipInfo.getContainer();
                 f.b bVar = new f.b();
                 ATSplashSkipAdListener aTSplashSkipAdListener = splashSkipInfo.getATSplashSkipAdListener();
-                this.f9204c = countDownDuration;
+                this.f6364c = countDownDuration;
                 Timer timer = new Timer();
                 this.d = timer;
                 timer.schedule(new AnonymousClass1(container, bVar, aTSplashSkipAdListener, countDownDuration, callbackInterval), callbackInterval, callbackInterval);
@@ -270,9 +269,9 @@ public final class f implements CustomSplashEventListener {
 
     @Override // com.anythink.splashad.unitgroup.api.CustomSplashEventListener
     public final void onSplashAdShowFail(AdError adError) {
-        CustomSplashAdapter customSplashAdapter = this.f9203a;
+        CustomSplashAdapter customSplashAdapter = this.f6363a;
         if (customSplashAdapter != null) {
-            com.anythink.core.common.j.c.a(customSplashAdapter.getTrackingInfo(), adError, this.f9203a.getNetworkInfoMap());
+            com.anythink.core.common.j.c.a(customSplashAdapter.getTrackingInfo(), adError, this.f6363a.getNetworkInfoMap());
         }
     }
 }

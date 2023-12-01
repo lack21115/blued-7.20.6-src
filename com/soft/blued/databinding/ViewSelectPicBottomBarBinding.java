@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ViewSelectPicBottomBarBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29630a;
+    private final FrameLayout f15940a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29630a;
+        return this.f15940a;
     }
 }

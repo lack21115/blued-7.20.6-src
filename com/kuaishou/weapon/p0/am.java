@@ -21,11 +21,11 @@ import org.json.JSONArray;
 public class am {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23723a = "tun";
+    private static final String f10115a = "tun";
     private static final String b = "ppp";
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f23724c;
+    private static int f10116c;
 
     public static JSONArray a() {
         BufferedReader bufferedReader;
@@ -43,7 +43,7 @@ public class am {
                             break;
                         }
                         String a2 = bn.a(readLine);
-                        if (a2.contains(f23723a) || a2.contains(b)) {
+                        if (a2.contains(f10115a) || a2.contains(b)) {
                             hashSet.add(a2.split("\t")[0]);
                         }
                     }
@@ -118,21 +118,21 @@ public class am {
     }
 
     public static int c() {
-        return f23724c;
+        return f10116c;
     }
 
     public static String d() {
         StringBuilder sb = new StringBuilder();
         try {
-            f23724c = 0;
+            f10116c = 0;
             KeyStore keyStore = KeyStore.getInstance("AndroidCAStore");
             if (keyStore != null) {
                 keyStore.load(null, null);
                 Enumeration<String> aliases = keyStore.aliases();
                 while (aliases.hasMoreElements()) {
-                    f23724c++;
+                    f10116c++;
                     X509Certificate x509Certificate = (X509Certificate) keyStore.getCertificate(aliases.nextElement());
-                    if (x509Certificate.getIssuerDN().getName().contains("2022") || x509Certificate.getIssuerDN().getName().contains("2023") || x509Certificate.getIssuerDN().getName().contains("HttpCanary") || x509Certificate.getIssuerDN().getName().contains("macbook") || x509Certificate.getIssuerDN().getName().contains(AudioSystem.DEVICE_OUT_PROXY_NAME) || x509Certificate.getIssuerDN().getName().contains("Proxy") || x509Certificate.getIssuerDN().getName().contains("local") || x509Certificate.getIssuerDN().getName().contains("github")) {
+                    if (x509Certificate.getIssuerDN().getName().contains("2022") || x509Certificate.getIssuerDN().getName().contains("2023") || x509Certificate.getIssuerDN().getName().contains("HttpCanary") || x509Certificate.getIssuerDN().getName().contains("macbook") || x509Certificate.getIssuerDN().getName().contains(AudioSystem.DEVICE_OUT_PROXY_NAME) || x509Certificate.getIssuerDN().getName().contains("Proxy") || x509Certificate.getIssuerDN().getName().contains(com.baidu.mobads.sdk.internal.at.f6479a) || x509Certificate.getIssuerDN().getName().contains("github")) {
                         sb.append(x509Certificate.getIssuerDN().getName());
                         sb.append("|");
                     }

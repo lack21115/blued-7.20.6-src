@@ -10,13 +10,13 @@ public class e2 extends JsonComposer {
     @Json(name = "domain1")
 
     /* renamed from: a  reason: collision with root package name */
-    public String f37403a;
+    public String f23712a;
     @Json(name = "dirNew")
     public String b;
     @Json(name = "domain")
 
     /* renamed from: c  reason: collision with root package name */
-    public String f37404c;
+    public String f23713c;
     @Json(name = "fileversion")
     public int d;
     @Json(name = "updateData")
@@ -27,7 +27,7 @@ public class e2 extends JsonComposer {
         if (list != null) {
             for (c2 c2Var : list) {
                 if (c2Var.a(offlineItem)) {
-                    c2Var.f37337a = "https://" + this.f37404c + this.b;
+                    c2Var.f23646a = "https://" + this.f23713c + this.b;
                     return c2Var;
                 }
             }

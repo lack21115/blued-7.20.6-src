@@ -44,17 +44,17 @@ public class GZIPInputStream extends InflaterInputStream {
     private boolean maybeReadNextMember() throws IOException {
         int remaining = this.inf.getRemaining() - 8;
         if (remaining > 0) {
-            if (!(this.f42254in instanceof PushbackInputStream)) {
-                this.f42254in = new PushbackInputStream(this.f42254in, this.buf.length);
+            if (!(this.in instanceof PushbackInputStream)) {
+                this.in = new PushbackInputStream(this.in, this.buf.length);
             }
-            ((PushbackInputStream) this.f42254in).unread(this.buf, this.inf.getCurrentOffset() + 8, remaining);
+            ((PushbackInputStream) this.in).unread(this.buf, this.inf.getCurrentOffset() + 8, remaining);
         }
         try {
-            byte[] readHeader = readHeader(this.f42254in);
+            byte[] readHeader = readHeader(this.in);
             if (Memory.peekShort(readHeader, 0, ByteOrder.LITTLE_ENDIAN) != -29921) {
                 return true;
             }
-            parseGzipHeader(this.f42254in, readHeader, this.crc, this.buf);
+            parseGzipHeader(this.in, readHeader, this.crc, this.buf);
             return false;
         } catch (EOFException e) {
             return true;
@@ -135,7 +135,7 @@ public class GZIPInputStream extends InflaterInputStream {
             i = remaining;
         }
         System.arraycopy(this.buf, this.len - remaining, bArr, 0, i);
-        Streams.readFully(this.f42254in, bArr, i, 8 - i);
+        Streams.readFully(this.in, bArr, i, 8 - i);
         if (Memory.peekInt(bArr, 0, ByteOrder.LITTLE_ENDIAN) != ((int) this.crc.getValue())) {
             throw new IOException("CRC mismatch");
         }

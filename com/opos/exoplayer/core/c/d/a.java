@@ -7,29 +7,29 @@ final class a {
 
     /* renamed from: com.opos.exoplayer.core.c.d.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/d/a$a.class */
-    public static final class C0651a {
+    public static final class C0481a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final long[] f25111a;
+        public final long[] f11423a;
         public final int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f25112c;
+        public final int f11424c;
         public final long[] d;
         public final int[] e;
         public final long f;
 
-        private C0651a(long[] jArr, int[] iArr, int i, long[] jArr2, int[] iArr2, long j) {
-            this.f25111a = jArr;
+        private C0481a(long[] jArr, int[] iArr, int i, long[] jArr2, int[] iArr2, long j) {
+            this.f11423a = jArr;
             this.b = iArr;
-            this.f25112c = i;
+            this.f11424c = i;
             this.d = jArr2;
             this.e = iArr2;
             this.f = j;
         }
     }
 
-    public static C0651a a(int i, long[] jArr, int[] iArr, long j) {
+    public static C0481a a(int i, long[] jArr, int[] iArr, long j) {
         int i2;
         int i3 = 8192 / i;
         int length = iArr.length;
@@ -67,6 +67,6 @@ final class a {
                 i6++;
             }
         }
-        return new C0651a(jArr2, iArr2, i7, jArr3, iArr3, i8 * j);
+        return new C0481a(jArr2, iArr2, i7, jArr3, iArr3, i8 * j);
     }
 }

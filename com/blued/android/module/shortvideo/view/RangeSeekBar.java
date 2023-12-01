@@ -13,24 +13,19 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.module.shortvideo.R;
 import com.blued.android.module.shortvideo.utils.StvLogUtils;
 import javax.annotation.Nullable;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/RangeSeekBar.class */
 public class RangeSeekBar extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f15903a = RangeSeekBar.class.getSimpleName() + " ";
+    private static final String a = RangeSeekBar.class.getSimpleName() + " ";
     private Thumb A;
     private boolean B;
     private boolean C;
     private OnRangeSeekBarChangeListener D;
     private double b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private double f15904c;
+    private double c;
     private double d;
     private double e;
     private long f;
@@ -70,7 +65,7 @@ public class RangeSeekBar extends View {
         super(context);
         this.d = 0.0d;
         this.e = 1.0d;
-        this.f = m.ag;
+        this.f = 3000L;
         this.g = 1.0d;
         this.h = 0.0d;
         this.i = 1.0d;
@@ -80,7 +75,7 @@ public class RangeSeekBar extends View {
         this.x = 255;
         this.C = false;
         this.b = j;
-        this.f15904c = j2;
+        this.c = j2;
         setFocusable(true);
         setFocusableInTouchMode(true);
         c();
@@ -90,7 +85,7 @@ public class RangeSeekBar extends View {
         super(context, attributeSet);
         this.d = 0.0d;
         this.e = 1.0d;
-        this.f = m.ag;
+        this.f = 3000L;
         this.g = 1.0d;
         this.h = 0.0d;
         this.i = 1.0d;
@@ -105,7 +100,7 @@ public class RangeSeekBar extends View {
         super(context, attributeSet, i);
         this.d = 0.0d;
         this.e = 1.0d;
-        this.f = m.ag;
+        this.f = 3000L;
         this.g = 1.0d;
         this.h = 0.0d;
         this.i = 1.0d;
@@ -130,7 +125,7 @@ public class RangeSeekBar extends View {
         double d5 = f;
         float a2 = a(this.d);
         float a3 = a(this.e);
-        this.g = (this.f / (this.f15904c - this.b)) * (width - (this.r * 2));
+        this.g = (this.f / (this.c - this.b)) * (width - (this.r * 2));
         if (i == 0) {
             if (b(f, this.d, 0.5d)) {
                 return this.d;
@@ -188,7 +183,7 @@ public class RangeSeekBar extends View {
     }
 
     private double a(long j) {
-        double d = this.f15904c;
+        double d = this.c;
         double d2 = this.b;
         if (0.0d == d - d2) {
             return 0.0d;
@@ -234,14 +229,14 @@ public class RangeSeekBar extends View {
 
     private long b(double d) {
         double d2 = this.b;
-        return (long) (d2 + (d * (this.f15904c - d2)));
+        return (long) (d2 + (d * (this.c - d2)));
     }
 
     private void b(MotionEvent motionEvent) {
         if (motionEvent.getPointerCount() > 1) {
             return;
         }
-        StvLogUtils.b(f15903a + "trackTouchEvent: " + motionEvent.getAction() + " x: " + motionEvent.getX(), new Object[0]);
+        StvLogUtils.b(a + "trackTouchEvent: " + motionEvent.getAction() + " x: " + motionEvent.getX(), new Object[0]);
         try {
             float x = motionEvent.getX(motionEvent.findPointerIndex(this.x));
             if (Thumb.MIN.equals(this.A)) {
@@ -336,7 +331,7 @@ public class RangeSeekBar extends View {
                 a(a(this.d), false, canvas, true);
                 a(a(this.e), false, canvas, false);
             } catch (Exception e) {
-                StvLogUtils.b(f15903a + "IllegalArgumentException--width=" + this.o.getWidth() + "Height=" + this.o.getHeight() + "scale_pro=" + width2, new Object[0]);
+                StvLogUtils.b(a + "IllegalArgumentException--width=" + this.o.getWidth() + "Height=" + this.o.getHeight() + "scale_pro=" + width2, new Object[0]);
                 e.printStackTrace();
             }
         }
@@ -381,7 +376,7 @@ public class RangeSeekBar extends View {
         OnRangeSeekBarChangeListener onRangeSeekBarChangeListener;
         if (!this.w && motionEvent.getPointerCount() <= 1) {
             if (isEnabled()) {
-                if (this.f15904c <= this.f) {
+                if (this.c <= this.f) {
                     return super.onTouchEvent(motionEvent);
                 }
                 int action = motionEvent.getAction() & 255;
@@ -449,7 +444,7 @@ public class RangeSeekBar extends View {
                         b(motionEvent);
                     } else if (Math.abs(motionEvent.getX(motionEvent.findPointerIndex(this.x)) - this.y) > this.j) {
                         setPressed(true);
-                        StvLogUtils.b(f15903a + "没有拖住最大最小值", new Object[0]);
+                        StvLogUtils.b(a + "没有拖住最大最小值", new Object[0]);
                         invalidate();
                         a();
                         b(motionEvent);
@@ -492,7 +487,7 @@ public class RangeSeekBar extends View {
     }
 
     public void setSelectedMaxValue(long j) {
-        if (0.0d == this.f15904c - this.b) {
+        if (0.0d == this.c - this.b) {
             setNormalizedMaxValue(1.0d);
         } else {
             setNormalizedMaxValue(a(j));
@@ -500,7 +495,7 @@ public class RangeSeekBar extends View {
     }
 
     public void setSelectedMinValue(long j) {
-        if (0.0d == this.f15904c - this.b) {
+        if (0.0d == this.c - this.b) {
             setNormalizedMinValue(0.0d);
         } else {
             setNormalizedMinValue(a(j));

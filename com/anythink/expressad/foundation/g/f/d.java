@@ -7,7 +7,7 @@ import java.util.concurrent.Executor;
 public class d implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f7868a = d.class.getSimpleName();
+    private final String f5028a = d.class.getSimpleName();
     private final Executor b;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/foundation/g/f/d$a.class */
@@ -15,11 +15,11 @@ public class d implements c {
         private final i b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final k f7879c;
+        private final k f5039c;
 
         public a(i iVar, k kVar) {
             this.b = iVar;
-            this.f7879c = kVar;
+            this.f5039c = kVar;
         }
 
         @Override // java.lang.Runnable
@@ -29,10 +29,10 @@ public class d implements c {
                 this.b.m();
                 return;
             }
-            if (this.f7879c.b == null) {
-                this.b.a(this.f7879c);
+            if (this.f5039c.b == null) {
+                this.b.a(this.f5039c);
             } else {
-                this.b.b(this.f7879c.b);
+                this.b.b(this.f5039c.b);
             }
             this.b.c();
             this.b.o();

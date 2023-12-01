@@ -11,23 +11,19 @@ import com.blued.android.core.AppInfo;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/push/NotificationSender.class */
 public class NotificationSender {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f9843a = NotificationSender.class.getSimpleName();
+    public static final String a = NotificationSender.class.getSimpleName();
     private static NotificationSender b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private NotificationManager f9844c;
+    private NotificationManager c;
 
     private NotificationManager a(NotificationChannel notificationChannel) {
         NotificationManager notificationManager;
-        if (this.f9844c == null) {
-            this.f9844c = (NotificationManager) AppInfo.d().getSystemService("notification");
+        if (this.c == null) {
+            this.c = (NotificationManager) AppInfo.d().getSystemService("notification");
         }
-        if (Build.VERSION.SDK_INT >= 26 && (notificationManager = this.f9844c) != null && notificationChannel != null) {
+        if (Build.VERSION.SDK_INT >= 26 && (notificationManager = this.c) != null && notificationChannel != null) {
             notificationManager.createNotificationChannel(notificationChannel);
         }
-        return this.f9844c;
+        return this.c;
     }
 
     public static NotificationSender a() {

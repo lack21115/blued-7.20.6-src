@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f21812a = "";
+    private static String f8205a = "";
 
     public static String a(Context context) {
         Class<?> cls;

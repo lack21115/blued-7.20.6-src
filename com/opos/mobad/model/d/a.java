@@ -1,7 +1,6 @@
 package com.opos.mobad.model.d;
 
 import android.content.Context;
-import com.android.ims.ImsReasonInfo;
 import com.autonavi.base.amap.mapcore.tools.GLMapStaticValue;
 import com.opos.mobad.b.a.b;
 import com.opos.mobad.b.a.x;
@@ -21,11 +20,11 @@ import java.util.concurrent.Callable;
 public abstract class a extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    protected i f26398a;
+    protected i f12710a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26399c;
+    private String f12711c;
     private boolean d;
     private o e;
     private com.opos.mobad.model.b.c f;
@@ -39,10 +38,10 @@ public abstract class a extends b {
         super(aVar);
         this.i = new HashSet();
         this.b = context;
-        this.f26399c = str;
+        this.f12711c = str;
         this.f = cVar;
         this.d = z;
-        this.f26398a = iVar;
+        this.f12710a = iVar;
         this.e = new j(context);
     }
 
@@ -85,7 +84,7 @@ public abstract class a extends b {
                     i2 = i3 + 1;
                 }
                 if (arrayList.size() <= 0) {
-                    return new AdData(ImsReasonInfo.CODE_CALL_DROP_IWLAN_TO_LTE_UNAVAILABLE, "adItemList is null.", dVar.l(), dVar.m());
+                    return new AdData(10004, "adItemList is null.", dVar.l(), dVar.m());
                 }
                 AdData adData = new AdData(dVar.f(), dVar.g(), dVar.l(), dVar.m());
                 adData.a(dVar.i());
@@ -214,8 +213,8 @@ public abstract class a extends b {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void k() {
-        if (!a(this.f26398a)) {
-            this.f26398a.b(this.b);
+        if (!a(this.f12710a)) {
+            this.f12710a.b(this.b);
         }
         c(this.h);
     }
@@ -227,21 +226,21 @@ public abstract class a extends b {
             com.opos.cmn.an.j.b.c(new Runnable() { // from class: com.opos.mobad.model.d.a.2
                 @Override // java.lang.Runnable
                 public void run() {
-                    boolean a2 = (a.this.j == null || a.this.j.size() <= 0) ? true : a.this.e.a(a.this.j, a.this.f26398a, new CustomInfoData(a.this.g.r()));
-                    a.this.f26398a.d();
+                    boolean a2 = (a.this.j == null || a.this.j.size() <= 0) ? true : a.this.e.a(a.this.j, a.this.f12710a, new CustomInfoData(a.this.g.r()));
+                    a.this.f12710a.d();
                     if (a2) {
                         a.this.k();
                         return;
                     }
                     AdData adData = new AdData(10011, "download material failed", a.this.h.g(), a.this.h.c());
-                    a.this.f26398a.a(a.this.b, adData.d());
+                    a.this.f12710a.a(a.this.b, adData.d());
                     a.this.b(adData);
                 }
             });
             return;
         }
         com.opos.cmn.an.f.a.b("ALoader", "resource available");
-        this.f26398a.d();
+        this.f12710a.d();
         k();
     }
 
@@ -251,14 +250,14 @@ public abstract class a extends b {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(final com.opos.mobad.model.b.d dVar) {
-        this.f26398a.b();
+        this.f12710a.b();
         final HashSet hashSet = new HashSet();
         final HashSet hashSet2 = new HashSet();
-        final AdData a2 = a(this.f, dVar, !this.d, this.f26398a, hashSet, hashSet2);
-        this.f26398a.c();
+        final AdData a2 = a(this.f, dVar, !this.d, this.f12710a, hashSet, hashSet2);
+        this.f12710a.c();
         com.opos.cmn.an.f.a.b("ALoader", "load data:" + a2);
         if (a2 == null || a2.d() != 10000) {
-            this.f26398a.a(this.b, a2 != null ? a2.d() : -1);
+            this.f12710a.a(this.b, a2 != null ? a2.d() : -1);
             a(a2);
             return;
         }
@@ -274,7 +273,7 @@ public abstract class a extends b {
             }
         });
         if (j() == 8) {
-            this.f26398a.a(this.b);
+            this.f12710a.a(this.b);
         }
     }
 
@@ -302,7 +301,7 @@ public abstract class a extends b {
                             }
                         }
                     }
-                    c.a(a.this.b).a(a.this.f26399c, a.this.g, arrayList);
+                    c.a(a.this.b).a(a.this.f12711c, a.this.g, arrayList);
                 }
             });
         }
@@ -314,7 +313,7 @@ public abstract class a extends b {
         if (j() != 3) {
             return;
         }
-        this.f26398a.a(this.b);
+        this.f12710a.a(this.b);
     }
 
     public void c() {

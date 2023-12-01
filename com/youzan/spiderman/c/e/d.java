@@ -24,11 +24,11 @@ import okhttp3.ResponseBody;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static d f41763a;
+    private static d f28072a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f41764c;
+    private int f28073c;
     private int d;
     private boolean e;
     private List<String> f;
@@ -41,10 +41,10 @@ public final class d {
         d dVar;
         synchronized (d.class) {
             try {
-                if (f41763a == null) {
-                    f41763a = new d();
+                if (f28072a == null) {
+                    f28072a = new d();
                 }
-                dVar = f41763a;
+                dVar = f28072a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -60,7 +60,7 @@ public final class d {
         }
         HashMap hashMap = new HashMap();
         hashMap.putAll(com.youzan.spiderman.c.b.a());
-        hashMap.put("start", String.valueOf(this.f41764c));
+        hashMap.put("start", String.valueOf(this.f28073c));
         hashMap.put("offset", String.valueOf(this.d));
         hashMap.put("query_condition", StringUtils.join(this.f));
         hashMap.put("last_update_time", j > 0 ? String.valueOf(j) : "0");
@@ -84,12 +84,10 @@ public final class d {
                 }
             }
 
-            @Override // okhttp3.Callback
             public final void onFailure(Call call, IOException iOException) {
                 Logger.e("SyncManager", "sync modify resource failed", iOException);
             }
 
-            @Override // okhttp3.Callback
             public final void onResponse(Call call, Response response) throws IOException {
                 if (!response.isSuccessful()) {
                     Logger.e("SyncManager", "sync modify resource not successful", Integer.valueOf(response.code()), response.message());
@@ -119,7 +117,7 @@ public final class d {
 
     static /* synthetic */ void a(d dVar, Context context, String str, String str2, long j, com.youzan.spiderman.c.b.f fVar, e eVar, f fVar2) {
         dVar.b = System.currentTimeMillis();
-        dVar.f41764c = 0;
+        dVar.f28073c = 0;
         dVar.d = 50;
         dVar.f = new ArrayList();
         dVar.a(context, str, str2, j, fVar, eVar, fVar2);

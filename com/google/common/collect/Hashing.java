@@ -2,9 +2,8 @@ package com.google.common.collect;
 
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/Hashing.class */
-public final class Hashing {
+final class Hashing {
     private static final long C1 = -862048943;
     private static final long C2 = 461845907;
     private static final int MAX_TABLE_SIZE = 1073741824;

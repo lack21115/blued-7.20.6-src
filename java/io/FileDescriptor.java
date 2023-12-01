@@ -7,14 +7,12 @@ import libcore.io.Libcore;
 /* loaded from: source-2895416-dex2jar.jar:java/io/FileDescriptor.class */
 public final class FileDescriptor {
     private int descriptor = -1;
-
-    /* renamed from: in  reason: collision with root package name */
-    public static final FileDescriptor f42253in = new FileDescriptor();
+    public static final FileDescriptor in = new FileDescriptor();
     public static final FileDescriptor out = new FileDescriptor();
     public static final FileDescriptor err = new FileDescriptor();
 
     static {
-        f42253in.descriptor = OsConstants.STDIN_FILENO;
+        in.descriptor = OsConstants.STDIN_FILENO;
         out.descriptor = OsConstants.STDOUT_FILENO;
         err.descriptor = OsConstants.STDERR_FILENO;
     }

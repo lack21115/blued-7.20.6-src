@@ -18,14 +18,14 @@ import java.io.Serializable;
 public class CameraModel implements Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f33030a;
+    private int f19339a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f33031c;
+    private int f19340c;
 
     public int a() {
-        return this.f33030a;
+        return this.f19339a;
     }
 
     public String a(Context context) {
@@ -33,7 +33,7 @@ public class CameraModel implements Serializable {
     }
 
     public void a(int i) {
-        this.f33030a = i;
+        this.f19339a = i;
     }
 
     public void a(final BluedUIHttpResponse bluedUIHttpResponse, final IRequestHost iRequestHost) {
@@ -47,18 +47,16 @@ public class CameraModel implements Serializable {
         BluedUIHttpResponse<BluedEntityA<BluedAlbum>> bluedUIHttpResponse2 = new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>() { // from class: com.soft.blued.ui.photo.camera.model.CameraModel.1
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f33032a = false;
+            boolean f19341a = false;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     AppMethods.d(2131887272);
                     return;
                 }
-                QiniuUploadUtils.a(CameraModel.this.b(), bluedEntityA.getSingleData(), new QiniuUploadTools.QiNiuListener() { // from class: com.soft.blued.ui.photo.camera.model.CameraModel.1.1
-                    @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
+                QiniuUploadUtils.a(CameraModel.this.b(), (BluedAlbum) bluedEntityA.getSingleData(), new QiniuUploadTools.QiNiuListener() { // from class: com.soft.blued.ui.photo.camera.model.CameraModel.1.1
                     public void a(String str) {
                         AppMethods.d(2131887272);
                         if (bluedUIHttpResponse != null) {
@@ -66,11 +64,9 @@ public class CameraModel implements Serializable {
                         }
                     }
 
-                    @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
                     public void a(String str, double d) {
                     }
 
-                    @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
                     public void a(String str, String str2) {
                         if (CameraModel.this.a() == 1) {
                             LoginRegisterHttpUtils.b(bluedUIHttpResponse, iRequestHost, str);
@@ -79,20 +75,17 @@ public class CameraModel implements Serializable {
                         }
                     }
 
-                    @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
                     public boolean a() {
                         return false;
                     }
                 });
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                this.f33032a = true;
+                this.f19341a = true;
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 BluedUIHttpResponse bluedUIHttpResponse3 = bluedUIHttpResponse;
@@ -129,11 +122,11 @@ public class CameraModel implements Serializable {
     }
 
     public void b(int i) {
-        this.f33031c = i;
+        this.f19340c = i;
     }
 
     public int c() {
-        return this.f33031c;
+        return this.f19340c;
     }
 
     public String c(Context context) {

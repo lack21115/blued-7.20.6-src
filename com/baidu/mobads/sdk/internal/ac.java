@@ -10,15 +10,15 @@ import java.util.List;
 public class ac implements e.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private BaiduNativeManager.FeedAdListener f9298a;
+    private BaiduNativeManager.FeedAdListener f6458a;
 
     public ac(BaiduNativeManager.FeedAdListener feedAdListener) {
-        this.f9298a = feedAdListener;
+        this.f6458a = feedAdListener;
     }
 
     @Override // com.baidu.mobads.sdk.internal.e.a
     public void a() {
-        BaiduNativeManager.FeedAdListener feedAdListener = this.f9298a;
+        BaiduNativeManager.FeedAdListener feedAdListener = this.f6458a;
         if (feedAdListener != null) {
             feedAdListener.onLpClosed();
         }
@@ -26,7 +26,7 @@ public class ac implements e.a {
 
     @Override // com.baidu.mobads.sdk.internal.e.a
     public void a(int i, String str) {
-        BaiduNativeManager.FeedAdListener feedAdListener = this.f9298a;
+        BaiduNativeManager.FeedAdListener feedAdListener = this.f6458a;
         if (feedAdListener != null) {
             feedAdListener.onNoAd(i, str);
         }
@@ -48,7 +48,7 @@ public class ac implements e.a {
 
     @Override // com.baidu.mobads.sdk.internal.e.a
     public void a(List<NativeResponse> list) {
-        BaiduNativeManager.FeedAdListener feedAdListener = this.f9298a;
+        BaiduNativeManager.FeedAdListener feedAdListener = this.f6458a;
         if (feedAdListener != null) {
             feedAdListener.onNativeLoad(list);
         }
@@ -56,7 +56,7 @@ public class ac implements e.a {
 
     @Override // com.baidu.mobads.sdk.internal.e.a
     public void b() {
-        BaiduNativeManager.FeedAdListener feedAdListener = this.f9298a;
+        BaiduNativeManager.FeedAdListener feedAdListener = this.f6458a;
         if (feedAdListener != null) {
             feedAdListener.onVideoDownloadSuccess();
         }
@@ -64,7 +64,7 @@ public class ac implements e.a {
 
     @Override // com.baidu.mobads.sdk.internal.e.a
     public void b(int i, String str) {
-        BaiduNativeManager.FeedAdListener feedAdListener = this.f9298a;
+        BaiduNativeManager.FeedAdListener feedAdListener = this.f6458a;
         if (feedAdListener != null) {
             feedAdListener.onNativeFail(i, str);
         }
@@ -72,7 +72,7 @@ public class ac implements e.a {
 
     @Override // com.baidu.mobads.sdk.internal.e.a
     public void b(NativeResponse nativeResponse) {
-        BaiduNativeManager.FeedAdListener feedAdListener = this.f9298a;
+        BaiduNativeManager.FeedAdListener feedAdListener = this.f6458a;
         if (feedAdListener != null && (feedAdListener instanceof BaiduNativeManager.PortraitVideoAdListener)) {
             ((BaiduNativeManager.PortraitVideoAdListener) feedAdListener).onAdClick();
         } else if (nativeResponse instanceof XAdNativeResponse) {
@@ -82,7 +82,7 @@ public class ac implements e.a {
 
     @Override // com.baidu.mobads.sdk.internal.e.a
     public void c() {
-        BaiduNativeManager.FeedAdListener feedAdListener = this.f9298a;
+        BaiduNativeManager.FeedAdListener feedAdListener = this.f6458a;
         if (feedAdListener != null) {
             feedAdListener.onVideoDownloadFailed();
         }

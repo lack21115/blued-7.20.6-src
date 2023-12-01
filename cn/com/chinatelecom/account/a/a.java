@@ -15,7 +15,7 @@ import java.net.URL;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f4079a = a.class.getSimpleName();
+    private static final String f4031a = a.class.getSimpleName();
 
     public static String a(Context context, String str, String str2) {
         InputStream inputStream;

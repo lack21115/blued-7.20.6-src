@@ -9,32 +9,32 @@ import android.net.wifi.WifiScanner;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import com.amap.api.col.p0003sl.ho;
-import com.amap.api.col.p0003sl.hs;
-import com.amap.api.col.p0003sl.ht;
-import com.amap.api.col.p0003sl.ib;
-import com.amap.api.col.p0003sl.iu;
-import com.amap.api.col.p0003sl.iw;
-import com.amap.api.col.p0003sl.jk;
-import com.amap.api.col.p0003sl.jr;
-import com.amap.api.col.p0003sl.ju;
-import com.amap.api.col.p0003sl.kc;
-import com.amap.api.col.p0003sl.ke;
-import com.amap.api.col.p0003sl.kf;
-import com.amap.api.col.p0003sl.kl;
-import com.amap.api.col.p0003sl.kv;
-import com.amap.api.col.p0003sl.kx;
-import com.amap.api.col.p0003sl.lb;
-import com.amap.api.col.p0003sl.lc;
-import com.amap.api.col.p0003sl.lk;
-import com.amap.api.col.p0003sl.lm;
-import com.amap.api.col.p0003sl.mg;
-import com.amap.api.col.p0003sl.mj;
-import com.amap.api.col.p0003sl.mp;
-import com.amap.api.col.p0003sl.mq;
-import com.amap.api.col.p0003sl.mu;
-import com.amap.api.col.p0003sl.mv;
-import com.amap.api.col.p0003sl.mw;
+import com.amap.api.col.3sl.ho;
+import com.amap.api.col.3sl.hs;
+import com.amap.api.col.3sl.ht;
+import com.amap.api.col.3sl.ib;
+import com.amap.api.col.3sl.iu;
+import com.amap.api.col.3sl.iw;
+import com.amap.api.col.3sl.jk;
+import com.amap.api.col.3sl.jr;
+import com.amap.api.col.3sl.ju;
+import com.amap.api.col.3sl.kc;
+import com.amap.api.col.3sl.ke;
+import com.amap.api.col.3sl.kf;
+import com.amap.api.col.3sl.kl;
+import com.amap.api.col.3sl.kv;
+import com.amap.api.col.3sl.kx;
+import com.amap.api.col.3sl.lb;
+import com.amap.api.col.3sl.lc;
+import com.amap.api.col.3sl.lk;
+import com.amap.api.col.3sl.lm;
+import com.amap.api.col.3sl.mg;
+import com.amap.api.col.3sl.mj;
+import com.amap.api.col.3sl.mp;
+import com.amap.api.col.3sl.mq;
+import com.amap.api.col.3sl.mu;
+import com.amap.api.col.3sl.mv;
+import com.amap.api.col.3sl.mw;
 import com.autonavi.aps.amapapi.restruct.e;
 import com.autonavi.aps.amapapi.restruct.i;
 import com.kuaishou.weapon.p0.t;
@@ -50,7 +50,7 @@ public final class c implements mw {
     private static long k;
 
     /* renamed from: a  reason: collision with root package name */
-    Context f9226a;
+    Context f6386a;
     mg d;
     ke e;
     private Handler g;
@@ -60,7 +60,7 @@ public final class c implements mw {
     i b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    e f9227c = null;
+    e f6387c = null;
     private volatile boolean j = false;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -68,25 +68,25 @@ public final class c implements mw {
     public static final class a implements LocationListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private c f9229a;
+        private c f6389a;
 
         a(c cVar) {
-            this.f9229a = cVar;
+            this.f6389a = cVar;
         }
 
         final void a() {
-            this.f9229a = null;
+            this.f6389a = null;
         }
 
         final void a(c cVar) {
-            this.f9229a = cVar;
+            this.f6389a = cVar;
         }
 
         @Override // android.location.LocationListener
         public final void onLocationChanged(Location location) {
             try {
-                if (this.f9229a != null) {
-                    this.f9229a.a(location);
+                if (this.f6389a != null) {
+                    this.f6389a.a(location);
                 }
             } catch (Throwable th) {
             }
@@ -111,7 +111,7 @@ public final class c implements mw {
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Location f9231c;
+        private Location f6391c;
 
         b(int i) {
             this.b = 0;
@@ -120,53 +120,53 @@ public final class c implements mw {
 
         b(c cVar, Location location) {
             this(1);
-            this.f9231c = location;
+            this.f6391c = location;
         }
 
         private void a() {
             try {
-                if (this.f9231c == null || !c.this.j || com.autonavi.aps.amapapi.utils.i.m(c.this.f9226a)) {
+                if (this.f6391c == null || !c.this.j || com.autonavi.aps.amapapi.utils.i.m(c.this.f6386a)) {
                     return;
                 }
-                Bundle extras = this.f9231c.getExtras();
+                Bundle extras = this.f6391c.getExtras();
                 int i = 0;
                 if (extras != null) {
                     i = extras.getInt("satellites");
                 }
-                if (com.autonavi.aps.amapapi.utils.i.a(this.f9231c, i)) {
+                if (com.autonavi.aps.amapapi.utils.i.a(this.f6391c, i)) {
                     return;
                 }
                 if (c.this.b != null && !c.this.b.s) {
                     c.this.b.f();
                 }
                 ArrayList<mq> a2 = c.this.b.a();
-                List<mj> a3 = c.this.f9227c.a();
+                List<mj> a3 = c.this.f6387c.a();
                 lk.a aVar = new lk.a();
                 mp mpVar = new mp();
-                mpVar.i = this.f9231c.getAccuracy();
-                mpVar.f = this.f9231c.getAltitude();
-                mpVar.d = this.f9231c.getLatitude();
-                mpVar.h = this.f9231c.getBearing();
-                mpVar.e = this.f9231c.getLongitude();
-                mpVar.j = this.f9231c.isFromMockProvider();
-                mpVar.f5385a = this.f9231c.getProvider();
-                mpVar.g = this.f9231c.getSpeed();
+                mpVar.i = this.f6391c.getAccuracy();
+                mpVar.f = this.f6391c.getAltitude();
+                mpVar.d = this.f6391c.getLatitude();
+                mpVar.h = this.f6391c.getBearing();
+                mpVar.e = this.f6391c.getLongitude();
+                mpVar.j = this.f6391c.isFromMockProvider();
+                mpVar.a = this.f6391c.getProvider();
+                mpVar.g = this.f6391c.getSpeed();
                 mpVar.l = (byte) i;
                 mpVar.b = System.currentTimeMillis();
-                mpVar.f5386c = this.f9231c.getTime();
-                mpVar.k = this.f9231c.getTime();
-                aVar.f5368a = mpVar;
+                mpVar.c = this.f6391c.getTime();
+                mpVar.k = this.f6391c.getTime();
+                aVar.a = mpVar;
                 aVar.b = a2;
                 WifiInfo c2 = c.this.b.c();
                 if (c2 != null) {
-                    aVar.f5369c = mq.a(c2.getBSSID());
+                    aVar.c = mq.a(c2.getBSSID());
                 }
                 aVar.d = i.A;
-                aVar.f = this.f9231c.getTime();
-                aVar.g = (byte) hs.n(c.this.f9226a);
-                aVar.h = hs.s(c.this.f9226a);
+                aVar.f = this.f6391c.getTime();
+                aVar.g = (byte) hs.n(c.this.f6386a);
+                aVar.h = hs.s(c.this.f6386a);
                 aVar.e = c.this.b.k();
-                aVar.j = com.autonavi.aps.amapapi.utils.i.a(c.this.f9226a);
+                aVar.j = com.autonavi.aps.amapapi.utils.i.a(c.this.f6386a);
                 aVar.i = a3;
                 lm a4 = mg.a(aVar);
                 if (a4 == null) {
@@ -185,7 +185,7 @@ public final class c implements mw {
         }
 
         private void b() {
-            if (com.autonavi.aps.amapapi.utils.i.m(c.this.f9226a)) {
+            if (com.autonavi.aps.amapapi.utils.i.m(c.this.f6386a)) {
                 return;
             }
             jr jrVar = null;
@@ -193,7 +193,7 @@ public final class c implements mw {
             try {
                 long unused = c.k = System.currentTimeMillis();
                 if (c.this.e.f.d()) {
-                    jr a2 = jr.a(new File(c.this.e.f5266a), c.this.e.b);
+                    jr a2 = jr.a(new File(c.this.e.a), c.this.e.b);
                     ArrayList arrayList = new ArrayList();
                     byte[] f = c.f();
                     if (f == null) {
@@ -248,7 +248,6 @@ public final class c implements mw {
             }
         }
 
-        @Override // com.amap.api.col.p0003sl.lc
         public final void runTask() {
             int i = this.b;
             if (i == 1) {
@@ -263,11 +262,11 @@ public final class c implements mw {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(Context context) {
-        this.f9226a = null;
-        this.f9226a = context;
+        this.f6386a = null;
+        this.f6386a = context;
         ke keVar = new ke();
         this.e = keVar;
-        kl.a(this.f9226a, keVar, iu.k, 100, WifiScanner.MAX_SCAN_PERIOD_MS, "0");
+        kl.a(this.f6386a, keVar, iu.k, 100, (int) WifiScanner.MAX_SCAN_PERIOD_MS, "0");
         ke keVar2 = this.e;
         int i = com.autonavi.aps.amapapi.utils.a.g;
         boolean z = com.autonavi.aps.amapapi.utils.a.e;
@@ -326,7 +325,7 @@ public final class c implements mw {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public static java.util.List<com.amap.api.col.p0003sl.lm> b(com.amap.api.col.p0003sl.jr r8, com.amap.api.col.p0003sl.ke r9, java.util.List<java.lang.String> r10, byte[] r11) {
+    public static java.util.List<com.amap.api.col.3sl.lm> b(com.amap.api.col.3sl.jr r8, com.amap.api.col.3sl.ke r9, java.util.List<java.lang.String> r10, byte[] r11) {
         /*
             Method dump skipped, instructions count: 712
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -363,7 +362,7 @@ public final class c implements mw {
     /* JADX INFO: Access modifiers changed from: private */
     public void g() {
         try {
-            if (com.autonavi.aps.amapapi.utils.i.m(this.f9226a) || this.f == null || this.f.size() == 0) {
+            if (com.autonavi.aps.amapapi.utils.i.m(this.f6386a) || this.f == null || this.f.size() == 0) {
                 return;
             }
             ArrayList arrayList = new ArrayList();
@@ -395,19 +394,18 @@ public final class c implements mw {
         }
     }
 
-    @Override // com.amap.api.col.p0003sl.mw
     public final mv a(mu muVar) {
         try {
             com.autonavi.aps.amapapi.trans.b bVar = new com.autonavi.aps.amapapi.trans.b();
             bVar.a(muVar.b);
-            bVar.a(muVar.f5391a);
+            bVar.a(muVar.a);
             bVar.a(muVar.d);
             ju.a();
             kc a2 = ju.a(bVar);
             mv mvVar = new mv();
-            mvVar.f5394c = a2.f5264a;
+            mvVar.c = a2.a;
             mvVar.b = a2.b;
-            mvVar.f5393a = 200;
+            mvVar.a = 200;
             return mvVar;
         } catch (Throwable th) {
             return null;
@@ -416,7 +414,7 @@ public final class c implements mw {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a() {
-        if (com.autonavi.aps.amapapi.utils.i.m(this.f9226a)) {
+        if (com.autonavi.aps.amapapi.utils.i.m(this.f6386a)) {
             return;
         }
         try {
@@ -429,8 +427,8 @@ public final class c implements mw {
             if (this.j) {
                 g();
                 this.b.a((c) null);
-                this.f9227c.a((c) null);
-                this.f9227c = null;
+                this.f6387c.a((c) null);
+                this.f6387c = null;
                 this.b = null;
                 this.g = null;
                 this.j = false;
@@ -451,18 +449,18 @@ public final class c implements mw {
     }
 
     public final void a(e eVar, i iVar, Handler handler) {
-        if (this.j || eVar == null || iVar == null || handler == null || com.autonavi.aps.amapapi.utils.i.m(this.f9226a)) {
+        if (this.j || eVar == null || iVar == null || handler == null || com.autonavi.aps.amapapi.utils.i.m(this.f6386a)) {
             return;
         }
         this.j = true;
-        this.f9227c = eVar;
+        this.f6387c = eVar;
         this.b = iVar;
         iVar.a(this);
-        this.f9227c.a(this);
+        this.f6387c.a(this);
         this.g = handler;
         try {
             if (this.h == null && handler != null) {
-                this.h = (LocationManager) this.f9226a.getSystemService("location");
+                this.h = (LocationManager) this.f6386a.getSystemService("location");
             }
             if (this.i == null) {
                 this.i = new a(this);
@@ -472,9 +470,9 @@ public final class c implements mw {
                 this.h.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 1000L, -1.0f, this.i);
             }
             if (this.d == null) {
-                mg mgVar = new mg("6.1.0", ho.f(this.f9226a), "S128DF1572465B890OE3F7A13167KLEI", ho.c(this.f9226a), this);
+                mg mgVar = new mg("6.1.0", ho.f(this.f6386a), "S128DF1572465B890OE3F7A13167KLEI", ho.c(this.f6386a), this);
                 this.d = mgVar;
-                mgVar.a(hs.v(this.f9226a)).b(hs.h(this.f9226a)).c(hs.a(this.f9226a)).d(hs.g(this.f9226a)).e(hs.y(this.f9226a)).f(hs.i(this.f9226a)).g(Build.MODEL).h(Build.MANUFACTURER).i(Build.BRAND).a(Build.VERSION.SDK_INT).j(Build.VERSION.RELEASE).a(mq.a(hs.k(this.f9226a))).k(hs.k(this.f9226a));
+                mgVar.a(hs.v(this.f6386a)).b(hs.h(this.f6386a)).c(hs.a(this.f6386a)).d(hs.g(this.f6386a)).e(hs.y(this.f6386a)).f(hs.i(this.f6386a)).g(Build.MODEL).h(Build.MANUFACTURER).i(Build.BRAND).a(Build.VERSION.SDK_INT).j(Build.VERSION.RELEASE).a(mq.a(hs.k(this.f6386a))).k(hs.k(this.f6386a));
                 mg.b();
             }
         } catch (Throwable th) {
@@ -506,10 +504,10 @@ public final class c implements mw {
 
     public final void c() {
         try {
-            if (this.d == null || this.f9227c == null) {
+            if (this.d == null || this.f6387c == null) {
                 return;
             }
-            mg.a(this.f9227c.a());
+            mg.a(this.f6387c.a());
         } catch (Throwable th) {
             com.autonavi.aps.amapapi.utils.b.a(th, "cl", "upc");
         }
@@ -517,7 +515,7 @@ public final class c implements mw {
 
     public final void d() {
         try {
-            if (!com.autonavi.aps.amapapi.utils.i.m(this.f9226a) && System.currentTimeMillis() - k >= 60000) {
+            if (!com.autonavi.aps.amapapi.utils.i.m(this.f6386a) && System.currentTimeMillis() - k >= 60000) {
                 lb.a().a(new b(2));
             }
         } catch (Throwable th) {

@@ -5,11 +5,11 @@ package com.tencent.ugc;
 public final /* synthetic */ class df implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCMediaListSource f40320a;
+    private final UGCMediaListSource f26629a;
     private final boolean b;
 
     private df(UGCMediaListSource uGCMediaListSource, boolean z) {
-        this.f40320a = uGCMediaListSource;
+        this.f26629a = uGCMediaListSource;
         this.b = z;
     }
 
@@ -19,6 +19,6 @@ public final /* synthetic */ class df implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCMediaListSource.lambda$setReverse$11(this.f40320a, this.b);
+        UGCMediaListSource.lambda$setReverse$11(this.f26629a, this.b);
     }
 }

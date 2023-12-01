@@ -82,7 +82,7 @@ public class LiveCouponDlgFragment extends com.blued.android.module.common.fragm
 
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void f() {
-        this.k = (LiveChargeCouponModel) this.f10822c.getSerializable("coupon_model");
+        this.k = (LiveChargeCouponModel) this.c.getSerializable("coupon_model");
     }
 
     @Override // com.blued.android.core.ui.BaseDialogFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener

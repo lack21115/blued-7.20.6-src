@@ -4,15 +4,15 @@ package com.tencent.tmsbeacon.event.immediate;
 public class BeaconTransferResult {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f39579a;
+    private int f25888a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private byte[] f39580c;
+    private byte[] f25889c;
     private String d;
 
     public byte[] getBizBuffer() {
-        return this.f39580c;
+        return this.f25889c;
     }
 
     public int getBizCode() {
@@ -24,11 +24,11 @@ public class BeaconTransferResult {
     }
 
     public int getCode() {
-        return this.f39579a;
+        return this.f25888a;
     }
 
     public void setBizBuffer(byte[] bArr) {
-        this.f39580c = bArr;
+        this.f25889c = bArr;
     }
 
     public void setBizCode(int i) {
@@ -40,10 +40,10 @@ public class BeaconTransferResult {
     }
 
     public void setCode(int i) {
-        this.f39579a = i;
+        this.f25888a = i;
     }
 
     public String toString() {
-        return "BeaconTransferResult{returnCode=" + this.f39579a + ", bizReturnCode=" + this.b + ", bizMsg='" + this.d + "'}";
+        return "BeaconTransferResult{returnCode=" + this.f25888a + ", bizReturnCode=" + this.b + ", bizMsg='" + this.d + "'}";
     }
 }

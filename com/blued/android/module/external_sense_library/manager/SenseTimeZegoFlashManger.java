@@ -8,8 +8,8 @@ import com.blued.android.module.external_sense_library.glutils.STUtils;
 import com.blued.android.module.external_sense_library.utils.Accelerometer;
 import com.blued.android.module.external_sense_library.utils.LogUtils;
 import com.sensetime.stmobile.STCommonNative;
-import com.sensetime.stmobile.STMobileHumanActionNative;
 import com.sensetime.stmobile.model.STHumanAction;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/manager/SenseTimeZegoFlashManger.class */
 public class SenseTimeZegoFlashManger extends SenseTimeBaseManager {
@@ -17,7 +17,7 @@ public class SenseTimeZegoFlashManger extends SenseTimeBaseManager {
 
     public SenseTimeZegoFlashManger(Context context, boolean z) {
         super(context, z);
-        init(false, STMobileHumanActionNative.ST_MOBILE_HUMAN_ACTION_DEFAULT_CONFIG_IMAGE);
+        init(false, 328128);
     }
 
     private STHumanAction checkHumanActionDetectWithRGBA() {
@@ -63,15 +63,15 @@ public class SenseTimeZegoFlashManger extends SenseTimeBaseManager {
     protected void checkTextureOutId() {
         if (this.mBeautifyTextureId == null) {
             this.mBeautifyTextureId = new int[1];
-            GlUtil.a(this.mTexWidth, this.mTexHeight, this.mBeautifyTextureId, 3553);
+            GlUtil.a(this.mTexWidth, this.mTexHeight, this.mBeautifyTextureId, GL10.GL_TEXTURE_2D);
         }
         if (this.mStickerTextureOutId == null) {
             this.mStickerTextureOutId = new int[1];
-            GlUtil.a(this.mTexWidth, this.mTexHeight, this.mStickerTextureOutId, 3553);
+            GlUtil.a(this.mTexWidth, this.mTexHeight, this.mStickerTextureOutId, GL10.GL_TEXTURE_2D);
         }
         if (this.mFilterTextureOutId == null) {
             this.mFilterTextureOutId = new int[1];
-            GlUtil.a(this.mTexWidth, this.mTexHeight, this.mFilterTextureOutId, 3553);
+            GlUtil.a(this.mTexWidth, this.mTexHeight, this.mFilterTextureOutId, GL10.GL_TEXTURE_2D);
         }
     }
 
@@ -104,7 +104,7 @@ public class SenseTimeZegoFlashManger extends SenseTimeBaseManager {
                 this.mOutputBuffer = new byte[i4];
             }
         }
-        GLES20.glDisable(2929);
+        GLES20.glDisable(GL10.GL_DEPTH_TEST);
         return this.mInputTextureId;
     }
 

@@ -7,23 +7,23 @@ import android.database.sqlite.SQLiteDatabase;
 public class d extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static d f40495a;
+    private static d f26804a;
 
     private d(Context context) {
         super(context);
     }
 
     public static d a(Context context) {
-        if (f40495a == null) {
+        if (f26804a == null) {
             synchronized (d.class) {
                 try {
-                    f40495a = new d(context.getApplicationContext());
+                    f26804a = new d(context.getApplicationContext());
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f40495a;
+        return f26804a;
     }
 
     private static void c(SQLiteDatabase sQLiteDatabase) {

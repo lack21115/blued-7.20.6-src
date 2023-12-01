@@ -44,87 +44,70 @@ public class PhoneStateListener {
     public PhoneStateListener(int i, Looper looper) {
         this.mSubId = -1;
         this.callback = new IPhoneStateListener.Stub() { // from class: android.telephony.PhoneStateListener.2
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onCallForwardingIndicatorChanged(boolean z) {
                 Message.obtain(PhoneStateListener.this.mHandler, 8, z ? 1 : 0, 0, null).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onCallStateChanged(int i2, String str) {
                 Message.obtain(PhoneStateListener.this.mHandler, 32, i2, 0, str).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onCellInfoChanged(List<CellInfo> list) {
                 Message.obtain(PhoneStateListener.this.mHandler, 1024, 0, 0, list).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onCellLocationChanged(Bundle bundle) {
                 Message.obtain(PhoneStateListener.this.mHandler, 16, 0, 0, CellLocation.newFromBundle(bundle)).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onDataActivity(int i2) {
                 Message.obtain(PhoneStateListener.this.mHandler, 128, i2, 0, null).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onDataConnectionRealTimeInfoChanged(DataConnectionRealTimeInfo dataConnectionRealTimeInfo) {
                 Message.obtain(PhoneStateListener.this.mHandler, 8192, 0, 0, dataConnectionRealTimeInfo).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onDataConnectionStateChanged(int i2, int i3) {
                 Message.obtain(PhoneStateListener.this.mHandler, 64, i2, i3).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onMessageWaitingIndicatorChanged(boolean z) {
                 Message.obtain(PhoneStateListener.this.mHandler, 4, z ? 1 : 0, 0, null).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onOemHookRawEvent(byte[] bArr) {
                 Message.obtain(PhoneStateListener.this.mHandler, 32768, 0, 0, bArr).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onOtaspChanged(int i2) {
                 Message.obtain(PhoneStateListener.this.mHandler, 512, i2, 0).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onPreciseCallStateChanged(PreciseCallState preciseCallState) {
                 Message.obtain(PhoneStateListener.this.mHandler, 2048, 0, 0, preciseCallState).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onPreciseDataConnectionStateChanged(PreciseDataConnectionState preciseDataConnectionState) {
                 Message.obtain(PhoneStateListener.this.mHandler, 4096, 0, 0, preciseDataConnectionState).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onServiceStateChanged(ServiceState serviceState) {
                 Message.obtain(PhoneStateListener.this.mHandler, 1, 0, 0, serviceState).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onSignalStrengthChanged(int i2) {
                 Message.obtain(PhoneStateListener.this.mHandler, 2, i2, 0, null).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onSignalStrengthsChanged(SignalStrength signalStrength) {
                 Message.obtain(PhoneStateListener.this.mHandler, 256, 0, 0, signalStrength).sendToTarget();
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onUnregistered() {
                 PhoneStateListener.this.mHandler.removeCallbacksAndMessages(null);
             }
 
-            @Override // com.android.internal.telephony.IPhoneStateListener
             public void onVoLteServiceStateChanged(VoLteServiceState voLteServiceState) {
                 Message.obtain(PhoneStateListener.this.mHandler, 16384, 0, 0, voLteServiceState).sendToTarget();
             }

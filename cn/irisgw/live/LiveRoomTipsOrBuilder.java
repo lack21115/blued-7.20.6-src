@@ -12,7 +12,8 @@ public interface LiveRoomTipsOrBuilder extends MessageOrBuilder {
 
     int getColorsCount();
 
-    List<String> getColorsList();
+    /* renamed from: getColorsList */
+    List<String> mo5087getColorsList();
 
     int getCountdown();
 

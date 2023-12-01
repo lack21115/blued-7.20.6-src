@@ -8,7 +8,7 @@ import com.umeng.analytics.pro.bm;
 public class b implements bm {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40811a = "RealTimeDebugSwitch";
+    private static final String f27120a = "RealTimeDebugSwitch";
     private static volatile int b;
 
     public static boolean d() {

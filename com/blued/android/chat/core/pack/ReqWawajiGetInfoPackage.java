@@ -19,7 +19,7 @@ public class ReqWawajiGetInfoPackage extends ReqBasePackage {
     protected Map<String, Object> getReqInfo() {
         HashMap hashMap = new HashMap();
         hashMap.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE, (short) 6);
-        hashMap.put("session_id", Long.valueOf(this.sessionId));
+        hashMap.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, Long.valueOf(this.sessionId));
         return hashMap;
     }
 

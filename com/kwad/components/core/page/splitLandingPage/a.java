@@ -72,8 +72,8 @@ public final class a extends f {
         this.MW.f(eVar);
         com.kwad.components.core.page.splitLandingPage.view.a aVar = new com.kwad.components.core.page.splitLandingPage.view.a(getContext(), new com.kwad.components.core.page.splitLandingPage.kwai.a(eVar.adTemplate, eVar.IM));
         this.MX = aVar;
-        aVar.a(new a.InterfaceC0531a() { // from class: com.kwad.components.core.page.splitLandingPage.a.3
-            @Override // com.kwad.components.core.page.splitLandingPage.view.a.InterfaceC0531a
+        aVar.a(new a.InterfaceC0361a() { // from class: com.kwad.components.core.page.splitLandingPage.a.3
+            @Override // com.kwad.components.core.page.splitLandingPage.view.a.InterfaceC0361a
             public final boolean oQ() {
                 return a.this.oN();
             }

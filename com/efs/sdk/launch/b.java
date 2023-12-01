@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
-import com.efs.sdk.base.Constants;
 import com.efs.sdk.base.EfsReporter;
 import com.efs.sdk.base.integrationtesting.IntegrationTestingUtil;
 import com.efs.sdk.base.protocol.record.EfsJSONLog;
@@ -19,11 +18,11 @@ import org.json.JSONObject;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static long f21810a;
+    private static long f8203a;
     private static long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static long f21811c;
+    private static long f8204c;
     private static long d;
     private static long e;
     private static boolean f;
@@ -79,11 +78,11 @@ public final class b {
             if (f) {
                 f = false;
                 long currentTimeMillis2 = System.currentTimeMillis();
-                long j3 = currentTimeMillis2 - f21811c;
+                long j3 = currentTimeMillis2 - f8204c;
                 if (LaunchManager.isDebug) {
                     Log.i("LaunchTrace", "loadTime is ".concat(String.valueOf(j3)));
                 }
-                long j4 = currentTimeMillis2 - f21810a;
+                long j4 = currentTimeMillis2 - f8203a;
                 if (LaunchManager.isDebug) {
                     Log.i("LaunchTrace", "======>>>>>> coldTime is ".concat(String.valueOf(j4)));
                 }
@@ -91,7 +90,7 @@ public final class b {
                 if (LaunchManager.isDebug) {
                     Log.i("LaunchTrace", "type is ".concat(String.valueOf(i3)));
                 }
-                a(activity.getApplicationContext(), i3, activity.getClass().getName(), j4, f21810a, b, i, f21811c, j, currentTimeMillis2, j3, 0L, 0L, m);
+                a(activity.getApplicationContext(), i3, activity.getClass().getName(), j4, f8203a, b, i, f8204c, j, currentTimeMillis2, j3, 0L, 0L, m);
             } else if (k == 1) {
                 if (g) {
                     g = false;
@@ -133,7 +132,7 @@ public final class b {
                 }
                 return;
             }
-            EfsJSONLog efsJSONLog = new EfsJSONLog(Constants.LOG_TYPE_STARTPERF);
+            EfsJSONLog efsJSONLog = new EfsJSONLog("startperf");
             efsJSONLog.put("w_type", Integer.valueOf(i2));
             efsJSONLog.put("w_url", str);
             efsJSONLog.put("l_version", "0.0.4.umeng");
@@ -252,7 +251,7 @@ public final class b {
             if (LaunchManager.isDebug) {
                 Log.i("LaunchTrace", "no init, cache launch, type is ".concat(String.valueOf(i2)));
             }
-            EfsJSONLog efsJSONLog2 = new EfsJSONLog(Constants.LOG_TYPE_STARTPERF);
+            EfsJSONLog efsJSONLog2 = new EfsJSONLog("startperf");
             efsJSONLog2.put("w_type", Integer.valueOf(i2));
             efsJSONLog2.put("w_url", str);
             efsJSONLog2.put("l_version", "0.0.4.umeng");
@@ -352,18 +351,18 @@ public final class b {
                 return;
             }
             long currentTimeMillis = System.currentTimeMillis();
-            f21811c = currentTimeMillis;
+            f8204c = currentTimeMillis;
             j = currentTimeMillis - b;
             if (LaunchManager.isDebug) {
                 Log.i("LaunchTrace", "buildTime is " + j);
             }
         } else if (z) {
-            f21810a = System.currentTimeMillis();
+            f8203a = System.currentTimeMillis();
             f = true;
         } else {
             long currentTimeMillis2 = System.currentTimeMillis();
             b = currentTimeMillis2;
-            i = currentTimeMillis2 - f21810a;
+            i = currentTimeMillis2 - f8203a;
             if (LaunchManager.isDebug) {
                 Log.i("LaunchTrace", "initTime is " + i);
             }
@@ -372,7 +371,7 @@ public final class b {
 
     private static boolean a(JSONObject jSONObject) {
         try {
-            EfsJSONLog efsJSONLog = new EfsJSONLog(Constants.LOG_TYPE_STARTPERF);
+            EfsJSONLog efsJSONLog = new EfsJSONLog("startperf");
             efsJSONLog.put("w_type", jSONObject.opt("w_type"));
             efsJSONLog.put("w_url", jSONObject.opt("w_url"));
             efsJSONLog.put("l_version", jSONObject.opt("l_version"));

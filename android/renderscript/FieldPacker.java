@@ -1,7 +1,6 @@
 package android.renderscript;
 
 import android.util.Log;
-import android.widget.ExpandableListView;
 import java.util.BitSet;
 
 /* loaded from: source-9557208-dex2jar.jar:android/renderscript/FieldPacker.class */
@@ -311,7 +310,7 @@ public class FieldPacker {
     }
 
     public void addU32(long j) {
-        if (j < 0 || j > ExpandableListView.PACKED_POSITION_VALUE_NULL) {
+        if (j < 0 || j > 4294967295L) {
             Log.e("rs", "FieldPacker.addU32( " + j + " )");
             throw new IllegalArgumentException("Saving value out of range for type");
         }

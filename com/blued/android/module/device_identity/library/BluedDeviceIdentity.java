@@ -5,6 +5,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import cn.shuzilm.core.Listener;
 import cn.shuzilm.core.Main;
+import com.anythink.china.api.ChinaDeviceDataInfo;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.framework.http.BluedHttpTools;
@@ -15,7 +17,6 @@ import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.statistics.BluedStatistics;
 import com.google.gson.Gson;
 import com.ishumei.smantifraud.SmAntiFraud;
-import com.tencent.ugc.datereport.UGCDataReportDef;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -23,23 +24,19 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/device_identity/library/BluedDeviceIdentity.class */
 public class BluedDeviceIdentity {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static BluedDeviceIdentity f11232a;
+    private static BluedDeviceIdentity a;
     private boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f11233c = false;
+    private boolean c = false;
     private String d = null;
     private Map<String, String> e = new ConcurrentHashMap();
     private Map<String, Boolean> f = new ConcurrentHashMap();
     private int g = 0;
 
     public static BluedDeviceIdentity a() {
-        if (f11232a == null) {
-            f11232a = new BluedDeviceIdentity();
+        if (a == null) {
+            a = new BluedDeviceIdentity();
         }
-        return f11232a;
+        return a;
     }
 
     private void a(Context context) {
@@ -52,7 +49,7 @@ public class BluedDeviceIdentity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Main.getQueryID(context, AppInfo.f9487c, "optionMessage", 1, new Listener() { // from class: com.blued.android.module.device_identity.library.BluedDeviceIdentity.1
+        Main.getQueryID(context, AppInfo.c, "optionMessage", 1, new Listener() { // from class: com.blued.android.module.device_identity.library.BluedDeviceIdentity.1
             @Override // cn.shuzilm.core.Listener
             public void handler(String str) {
                 Log.v("BluedDeviceIdentity", "get shumengid:" + str);
@@ -74,7 +71,7 @@ public class BluedDeviceIdentity {
             }
         });
         Log.v("BluedDeviceIdentity", "wait shumeng sdk callback");
-        if (TextUtils.equals("1", AppInfo.e()) || TextUtils.equals("7", AppInfo.e())) {
+        if (TextUtils.equals("1", AppInfo.e()) || TextUtils.equals(ATAdConst.ATDevFrameworkType.ADOBIE_AIR, AppInfo.e())) {
             Main.getOpenAnmsID(context, new Listener() { // from class: com.blued.android.module.device_identity.library.BluedDeviceIdentity.2
                 @Override // cn.shuzilm.core.Listener
                 public void handler(String str) {
@@ -82,7 +79,7 @@ public class BluedDeviceIdentity {
                     if ("NA".equalsIgnoreCase(str)) {
                         return;
                     }
-                    BluedDeviceIdentity.this.e.put("oaid", str);
+                    BluedDeviceIdentity.this.e.put(ChinaDeviceDataInfo.OAID, str);
                     BluedDeviceIdentity.this.a(str);
                     BluedStatistics.a().m(str);
                 }
@@ -104,10 +101,10 @@ public class BluedDeviceIdentity {
             return;
         }
         this.e.put(str, str2);
-        if (this.f11233c) {
+        if (this.c) {
             HashMap hashMap = new HashMap();
             hashMap.put("type", str);
-            hashMap.put(UGCDataReportDef.DR_KEY_DEV_ID, str2);
+            hashMap.put("dev_id", str2);
             Log.v("BluedDeviceIdentity", "upload deviceId, type:" + str + ", id:" + str2);
             Map<String, String> a2 = BluedHttpTools.a();
             Gson f = AppInfo.f();
@@ -130,26 +127,24 @@ public class BluedDeviceIdentity {
         try {
             SmAntiFraud.SmOption smOption = new SmAntiFraud.SmOption();
             smOption.setOrganization("qRLrIEyYwqE1vOhOACQy");
-            smOption.setChannel(AppInfo.f9487c);
+            smOption.setChannel(AppInfo.c);
             smOption.setAppId(AppInfo.e());
             smOption.setPublicKey("MIIDOzCCAiOgAwIBAgIBMDANBgkqhkiG9w0BAQUFADA4MQswCQYDVQQGEwJDTjENMAsGA1UECwwEQ05DQjEaMBgGA1UEAwwRZS5iYW5rLmVjaXRpYy5jb20wHhcNMTgwMjExMDg0NTIyWhcNMzgwMjA2MDg0NTIyWjA4MQswCQYDVQQGEwJDTjENMAsGA1UECwwEQ05DQjEaMBgGA1UEAwwRZS5iYW5rLmVjaXRpYy5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCkF+2AicVKj7SaHw3dbJt3i6fkL1WfLw1WRqe8r8Cc7qJOshaqNvCzW1qRX6E5H/umtl1Uj99V07uewUFk96xY/+s/GuBnbGoSrcu3OAHDgEGuY5atZo+umIk7LufAif2VUcNGY3nWxGcig20ExO/6nAf/G3Xxo4QL8fBdPG/prOXxSvtJiPls1Qg9zzSgAH+HMCAINMsuJmzDQiTt6Me8k7YHts+jWQF7KF25plITcW1Qmy3Aw8qYjVhbHn8KTAEeuQhmM5RS6KP1Hu71q4DYOWcx44QThSbiAYwG1JQBBwM8XnBfVYMpr6Qi0owibNYoZ/S6xwfRFGB0W1HeG9WfAgMBAAGjUDBOMB0GA1UdDgQWBBT0iLEXY9HIKNy5DG4d72l+R7Nf1zAfBgNVHSMEGDAWgBT0iLEXY9HIKNy5DG4d72l+R7Nf1zAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4IBAQB5MWz1RGFG537rJCtHp+LqxR9iJSFsHiW3ZoLIAeyD0oJ69RcL2gE/TNWmE9zYUkd9TdNtXqxlNPpj1P1/+x781neWnGou/n/XFS82T5S339X3DIjHc/IqOzwnxEOKH2V0NmK9iKgx6H05Q9MMvUXFsL3QK2hDMAVY28roRiC4S1yfJJaA08DfvXZf6cVx1xfWl+ks57+3knkoWap1rjwh1RdGk5ChPbzD0AnAcWTMWRCbjuJnttlmWZnI1I6mhcQUKUEMoj8sR8m11YJ5woscYPsIle/rJOOosuMghczD1vRcg3eLUaWn1A5rsBa82RyxhiuYocEQVX59Hy6v3npT");
             if (TextUtils.equals("2", AppInfo.e())) {
-                smOption.setArea(SmAntiFraud.AREA_XJP);
+                smOption.setArea("xjp");
             }
             if (TextUtils.equals("1", AppInfo.e())) {
                 HashSet hashSet = new HashSet();
-                hashSet.add("imei");
+                hashSet.add(ChinaDeviceDataInfo.IMEI);
                 hashSet.add("apps");
                 hashSet.add("riskapp");
                 smOption.setNotCollect(hashSet);
             }
             smOption.setServerIdCallback(new SmAntiFraud.IServerSmidCallback() { // from class: com.blued.android.module.device_identity.library.BluedDeviceIdentity.3
-                @Override // com.ishumei.smantifraud.SmAntiFraud.IServerSmidCallback
                 public void onError(int i) {
                     Log.v("BluedDeviceIdentity", "get shumeiBoxId failed:" + i);
                 }
 
-                @Override // com.ishumei.smantifraud.SmAntiFraud.IServerSmidCallback
                 public void onSuccess(String str) {
                     Log.v("BluedDeviceIdentity", "get shumeiBoxId:" + str);
                     BluedStatistics.a().j(str);
@@ -167,7 +162,7 @@ public class BluedDeviceIdentity {
         Log.v("BluedDeviceIdentity", "upload all id");
         a("szlm_id", this.e.get("szlm_id"));
         a("boxid", this.e.get("boxid"));
-        a("oaid", this.e.get("oaid"));
+        a(ChinaDeviceDataInfo.OAID, this.e.get(ChinaDeviceDataInfo.OAID));
         a("push_token", this.e.get("push_token"));
     }
 
@@ -189,15 +184,15 @@ public class BluedDeviceIdentity {
     }
 
     public void b() {
-        if (this.f11233c) {
+        if (this.c) {
             return;
         }
-        this.f11233c = true;
+        this.c = true;
         j();
     }
 
     public void c() {
-        this.f11233c = false;
+        this.c = false;
         this.f.clear();
     }
 
@@ -249,14 +244,14 @@ public class BluedDeviceIdentity {
     }
 
     public String h() {
-        String str = this.e.get("oaid");
+        String str = this.e.get(ChinaDeviceDataInfo.OAID);
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
             String k = k();
             Log.v("BluedDeviceIdentity", "get cached oaid:" + k);
             str2 = k;
             if (!TextUtils.isEmpty(k)) {
-                this.e.put("oaid", k);
+                this.e.put(ChinaDeviceDataInfo.OAID, k);
                 str2 = k;
             }
         }

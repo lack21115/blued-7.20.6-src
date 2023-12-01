@@ -13,26 +13,26 @@ import androidx.viewpager.widget.ViewPager;
 public class BounceBackViewPager extends ViewPager {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f28363a;
+    private int f14673a;
     private Rect b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f28364c;
+    private boolean f14674c;
     private float d;
 
     public BounceBackViewPager(Context context) {
         super(context);
-        this.f28363a = 0;
+        this.f14673a = 0;
         this.b = new Rect();
-        this.f28364c = true;
+        this.f14674c = true;
         this.d = 0.0f;
     }
 
     public BounceBackViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f28363a = 0;
+        this.f14673a = 0;
         this.b = new Rect();
-        this.f28364c = true;
+        this.f14674c = true;
         this.d = 0.0f;
     }
 
@@ -47,7 +47,7 @@ public class BounceBackViewPager extends ViewPager {
         if (this.b.isEmpty()) {
             this.b.set(getLeft(), getTop(), getRight(), getBottom());
         }
-        this.f28364c = false;
+        this.f14674c = false;
         int i = (int) (f * 0.5f);
         layout(getLeft() + i, getTop(), getRight() + i, getBottom());
     }
@@ -58,7 +58,7 @@ public class BounceBackViewPager extends ViewPager {
         startAnimation(translateAnimation);
         layout(this.b.left, this.b.top, this.b.right, this.b.bottom);
         this.b.setEmpty();
-        this.f28364c = true;
+        this.f14674c = true;
     }
 
     @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup, android.view.View
@@ -70,7 +70,7 @@ public class BounceBackViewPager extends ViewPager {
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0) {
             this.d = motionEvent.getX();
-            this.f28363a = getCurrentItem();
+            this.f14673a = getCurrentItem();
         }
         return super.onInterceptTouchEvent(motionEvent);
     }
@@ -111,22 +111,22 @@ public class BounceBackViewPager extends ViewPager {
                     a(f);
                 } else if (f < -10.0f) {
                     a(f);
-                } else if (!this.f28364c) {
+                } else if (!this.f14674c) {
                     int i = (int) (f * 0.5f);
                     if (getLeft() + i != this.b.left) {
                         layout(getLeft() + i, getTop(), getRight() + i, getBottom());
                     }
                 }
             } else {
-                int i2 = this.f28363a;
+                int i2 = this.f14673a;
                 if (i2 == 0 || i2 == getAdapter().getCount() - 1) {
                     float x2 = motionEvent.getX();
                     float f2 = x2 - this.d;
                     this.d = x2;
-                    if (this.f28363a == 0) {
+                    if (this.f14673a == 0) {
                         if (f2 > 10.0f) {
                             a(f2);
-                        } else if (!this.f28364c) {
+                        } else if (!this.f14674c) {
                             int i3 = (int) (f2 * 0.5f);
                             if (getLeft() + i3 >= this.b.left) {
                                 layout(getLeft() + i3, getTop(), getRight() + i3, getBottom());
@@ -134,17 +134,17 @@ public class BounceBackViewPager extends ViewPager {
                         }
                     } else if (f2 < -10.0f) {
                         a(f2);
-                    } else if (!this.f28364c) {
+                    } else if (!this.f14674c) {
                         int i4 = (int) (f2 * 0.5f);
                         if (getRight() + i4 <= this.b.right) {
                             layout(getLeft() + i4, getTop(), getRight() + i4, getBottom());
                         }
                     }
                 } else {
-                    this.f28364c = true;
+                    this.f14674c = true;
                 }
             }
-            if (!this.f28364c) {
+            if (!this.f14674c) {
                 return true;
             }
         }

@@ -11,8 +11,8 @@ public final class e {
 
     private static void a(MediaFormat mediaFormat, com.anythink.expressad.exoplayer.l.b bVar) {
         if (bVar != null) {
-            a(mediaFormat, "color-transfer", bVar.f7694c);
-            a(mediaFormat, "color-standard", bVar.f7693a);
+            a(mediaFormat, "color-transfer", bVar.f4855c);
+            a(mediaFormat, "color-standard", bVar.f4854a);
             a(mediaFormat, "color-range", bVar.b);
             byte[] bArr = bVar.d;
             if (bArr != null) {

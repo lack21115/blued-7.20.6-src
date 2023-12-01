@@ -46,14 +46,14 @@ public abstract class AbstractLrcView extends View {
     private Handler W;
 
     /* renamed from: a  reason: collision with root package name */
-    private Paint f23701a;
+    private Paint f10093a;
     private HandlerThread aa;
     private Handler ab;
     private WeakReference<Context> ac;
     private Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int[] f23702c;
+    private int[] f10094c;
     private Paint d;
     private int[] e;
     private Paint f;
@@ -89,7 +89,7 @@ public abstract class AbstractLrcView extends View {
 
     public AbstractLrcView(Context context) {
         super(context);
-        this.f23702c = new int[]{Color.parseColor("#FFFFFF"), Color.parseColor("#FFFFFF")};
+        this.f10094c = new int[]{Color.parseColor("#FFFFFF"), Color.parseColor("#FFFFFF")};
         this.e = new int[]{Color.parseColor("#00E0AB"), Color.parseColor("#00E0AB")};
         this.p = false;
         this.s = 0;
@@ -138,7 +138,7 @@ public abstract class AbstractLrcView extends View {
 
     public AbstractLrcView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f23702c = new int[]{Color.parseColor("#FFFFFF"), Color.parseColor("#FFFFFF")};
+        this.f10094c = new int[]{Color.parseColor("#FFFFFF"), Color.parseColor("#FFFFFF")};
         this.e = new int[]{Color.parseColor("#00E0AB"), Color.parseColor("#00E0AB")};
         this.p = false;
         this.s = 0;
@@ -191,10 +191,10 @@ public abstract class AbstractLrcView extends View {
         this.m = "";
         this.n = "";
         Paint paint = new Paint();
-        this.f23701a = paint;
+        this.f10093a = paint;
         paint.setDither(true);
-        this.f23701a.setAntiAlias(true);
-        this.f23701a.setTextSize(this.v);
+        this.f10093a.setAntiAlias(true);
+        this.f10093a.setTextSize(this.v);
         Paint paint2 = new Paint();
         this.b = paint2;
         paint2.setDither(true);
@@ -271,7 +271,7 @@ public abstract class AbstractLrcView extends View {
 
     private void b(Canvas canvas) {
         synchronized (this.Q) {
-            this.f23701a.setAlpha(255);
+            this.f10093a.setAlpha(255);
             this.d.setAlpha(255);
             this.h.setAlpha(255);
             this.i.setAlpha(255);
@@ -339,7 +339,7 @@ public abstract class AbstractLrcView extends View {
 
     public void a(Typeface typeface, boolean z) {
         if (typeface != null) {
-            this.f23701a.setTypeface(typeface);
+            this.f10093a.setTypeface(typeface);
             this.d.setTypeface(typeface);
             this.f.setTypeface(typeface);
             this.h.setTypeface(typeface);
@@ -352,7 +352,7 @@ public abstract class AbstractLrcView extends View {
     }
 
     public void a(int[] iArr, boolean z) {
-        this.f23702c = iArr;
+        this.f10094c = iArr;
         if (z) {
             a();
         }
@@ -407,7 +407,7 @@ public abstract class AbstractLrcView extends View {
             return false;
         }
         if (this.M.a() == 1) {
-            this.N = LyricsUtils.a(this.M.b(), this.x, this.f23701a);
+            this.N = LyricsUtils.a(this.M.b(), this.x, this.f10093a);
             return true;
         }
         return true;
@@ -508,11 +508,11 @@ public abstract class AbstractLrcView extends View {
     }
 
     public Paint getPaint() {
-        return this.f23701a;
+        return this.f10093a;
     }
 
     public int[] getPaintColors() {
-        return this.f23702c;
+        return this.f10094c;
     }
 
     public Paint getPaintHL() {
@@ -559,23 +559,21 @@ public abstract class AbstractLrcView extends View {
         return this.b;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         d();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         b(canvas);
     }
 
     public void setFontSize(float f) {
         synchronized (this.Q) {
             this.v = f;
-            this.f23701a.setTextSize(f);
+            this.f10093a.setTextSize(f);
             this.d.setTextSize(this.v);
             this.f.setTextSize(this.v);
             if (this.t != null) {

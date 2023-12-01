@@ -21,16 +21,16 @@ import kotlin.jvm.internal.Intrinsics;
 public final class UserTagAdapterNew extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f33773a;
+    private LayoutInflater f20082a;
     private List<? extends UserTag> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f33774c;
+    private Context f20083c;
 
     public UserTagAdapterNew(Context context, List<? extends UserTag> list) {
-        this.f33773a = LayoutInflater.from(context);
+        this.f20082a = LayoutInflater.from(context);
         this.b = list == null ? new ArrayList() : list;
-        this.f33774c = context;
+        this.f20083c = context;
     }
 
     @Override // android.widget.Adapter
@@ -55,15 +55,15 @@ public final class UserTagAdapterNew extends BaseAdapter {
     @Override // android.widget.Adapter
     public View getView(int i, View view, ViewGroup viewGroup) {
         List<? extends UserTag> list;
-        View inflate = LayoutInflater.from(this.f33774c).inflate(R.layout.item_user_tag_new, viewGroup, false);
+        View inflate = LayoutInflater.from(this.f20083c).inflate(R.layout.item_user_tag_new, viewGroup, false);
         ItemUserTagNewBinding a2 = ItemUserTagNewBinding.a(inflate);
         Intrinsics.c(a2, "bind(rootView)");
-        Context context = this.f33774c;
+        Context context = this.f20083c;
         if (context != null && (list = this.b) != null) {
-            ViewGroup.LayoutParams layoutParams = a2.f29339a.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams = a2.f15649a.getLayoutParams();
             Intrinsics.c(layoutParams, "vb.itemView.layoutParams");
             layoutParams.width = (context.getResources().getDisplayMetrics().widthPixels - DensityUtils.a(context, 50.0f)) / 4;
-            a2.f29339a.setLayoutParams(layoutParams);
+            a2.f15649a.setLayoutParams(layoutParams);
             ShapeModel shapeModel = new ShapeModel();
             shapeModel.H = DensityUtils.a(context, 15.0f);
             shapeModel.q = DensityUtils.a(context, 2.0f);
@@ -74,7 +74,7 @@ public final class UserTagAdapterNew extends BaseAdapter {
                 shapeModel.k = BluedSkinUtils.a(context, 2131102360);
                 shapeModel.n = BluedSkinUtils.a(context, 2131102360);
             }
-            a2.f29339a.setShapeModel(shapeModel);
+            a2.f15649a.setShapeModel(shapeModel);
             a2.b.setText(list.get(i).name);
             return inflate;
         }

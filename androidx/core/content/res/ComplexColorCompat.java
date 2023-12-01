@@ -14,16 +14,16 @@ import org.xmlpull.v1.XmlPullParserException;
 public final class ComplexColorCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Shader f2427a;
+    private final Shader f2379a;
     private final ColorStateList b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f2428c;
+    private int f2380c;
 
     private ComplexColorCompat(Shader shader, ColorStateList colorStateList, int i) {
-        this.f2427a = shader;
+        this.f2379a = shader;
         this.b = colorStateList;
-        this.f2428c = i;
+        this.f2380c = i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -81,37 +81,37 @@ public final class ComplexColorCompat {
     }
 
     public int getColor() {
-        return this.f2428c;
+        return this.f2380c;
     }
 
     public Shader getShader() {
-        return this.f2427a;
+        return this.f2379a;
     }
 
     public boolean isGradient() {
-        return this.f2427a != null;
+        return this.f2379a != null;
     }
 
     public boolean isStateful() {
         ColorStateList colorStateList;
-        return this.f2427a == null && (colorStateList = this.b) != null && colorStateList.isStateful();
+        return this.f2379a == null && (colorStateList = this.b) != null && colorStateList.isStateful();
     }
 
     public boolean onStateChanged(int[] iArr) {
         ColorStateList colorStateList;
         int colorForState;
-        if (!isStateful() || (colorForState = (colorStateList = this.b).getColorForState(iArr, colorStateList.getDefaultColor())) == this.f2428c) {
+        if (!isStateful() || (colorForState = (colorStateList = this.b).getColorForState(iArr, colorStateList.getDefaultColor())) == this.f2380c) {
             return false;
         }
-        this.f2428c = colorForState;
+        this.f2380c = colorForState;
         return true;
     }
 
     public void setColor(int i) {
-        this.f2428c = i;
+        this.f2380c = i;
     }
 
     public boolean willDraw() {
-        return isGradient() || this.f2428c != 0;
+        return isGradient() || this.f2380c != 0;
     }
 }

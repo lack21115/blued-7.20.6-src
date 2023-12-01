@@ -6,7 +6,7 @@ import android.content.Context;
 public class U {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f38315a = false;
+    public static boolean f24624a = false;
 
     static {
         int i;
@@ -14,12 +14,12 @@ public class U {
         do {
             try {
                 System.loadLibrary("beaconid");
-                f38315a = true;
+                f24624a = true;
             } catch (Throwable th) {
                 th.printStackTrace();
             }
             i = i2 + 1;
-            if (f38315a) {
+            if (f24624a) {
                 return;
             }
             i2 = i;
@@ -27,7 +27,7 @@ public class U {
     }
 
     public static String a(String str) {
-        if (f38315a) {
+        if (f24624a) {
             try {
                 return x(str);
             } catch (UnsatisfiedLinkError e) {

@@ -9,7 +9,7 @@ import okio.ByteString;
 public final class t extends com.heytap.nearx.a.a.b<t, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<t> f26365c = new b();
+    public static final com.heytap.nearx.a.a.e<t> f12677c = new b();
     public static final w d = w.UNKNOWN_STATUS;
     private static final long serialVersionUID = 0;
     public final String e;
@@ -19,7 +19,7 @@ public final class t extends com.heytap.nearx.a.a.b<t, a> {
     public static final class a extends b.a<t, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public String f26366c;
+        public String f12678c;
         public w d;
 
         public a a(w wVar) {
@@ -28,14 +28,14 @@ public final class t extends com.heytap.nearx.a.a.b<t, a> {
         }
 
         public a a(String str) {
-            this.f26366c = str;
+            this.f12678c = str;
             return this;
         }
 
         public t b() {
-            String str = this.f26366c;
+            String str = this.f12678c;
             if (str != null) {
-                return new t(this.f26366c, this.d, super.a());
+                return new t(this.f12678c, this.d, super.a());
             }
             throw com.heytap.nearx.a.a.a.b.a(str, "token");
         }
@@ -80,7 +80,7 @@ public final class t extends com.heytap.nearx.a.a.b<t, a> {
                     try {
                         aVar.a(w.d.a(fVar));
                     } catch (e.a e) {
-                        aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f22263a));
+                        aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f8655a));
                     }
                 }
             }
@@ -88,7 +88,7 @@ public final class t extends com.heytap.nearx.a.a.b<t, a> {
     }
 
     public t(String str, w wVar, ByteString byteString) {
-        super(f26365c, byteString);
+        super(f12677c, byteString);
         this.e = str;
         this.f = wVar;
     }

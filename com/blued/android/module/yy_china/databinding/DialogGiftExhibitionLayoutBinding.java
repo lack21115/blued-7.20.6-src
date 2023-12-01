@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.view.YYHomeThemeTabView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogGiftExhibitionLayoutBinding.class */
 public final class DialogGiftExhibitionLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16340a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16341c;
+    public final ImageView c;
     public final ShapeConstraintLayout d;
     public final YYHomeThemeTabView e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class DialogGiftExhibitionLayoutBinding implements ViewBinding {
 
     private DialogGiftExhibitionLayoutBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ShapeConstraintLayout shapeConstraintLayout, YYHomeThemeTabView yYHomeThemeTabView, TextView textView, ViewPager viewPager) {
         this.h = constraintLayout;
-        this.f16340a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16341c = imageView3;
+        this.c = imageView3;
         this.d = shapeConstraintLayout;
         this.e = yYHomeThemeTabView;
         this.f = textView;
@@ -50,9 +46,9 @@ public final class DialogGiftExhibitionLayoutBinding implements ViewBinding {
                         if (yYHomeThemeTabView != null) {
                             TextView textView = (TextView) view.findViewById(R.id.tv_title_text);
                             if (textView != null) {
-                                ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
-                                if (viewPager != null) {
-                                    return new DialogGiftExhibitionLayoutBinding((ConstraintLayout) view, imageView, imageView2, imageView3, shapeConstraintLayout, yYHomeThemeTabView, textView, viewPager);
+                                ViewPager findViewById = view.findViewById(R.id.view_pager);
+                                if (findViewById != null) {
+                                    return new DialogGiftExhibitionLayoutBinding((ConstraintLayout) view, imageView, imageView2, imageView3, shapeConstraintLayout, yYHomeThemeTabView, textView, findViewById);
                                 }
                                 str = "viewPager";
                             } else {
@@ -76,7 +72,6 @@ public final class DialogGiftExhibitionLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.h;

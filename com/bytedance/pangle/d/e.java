@@ -12,28 +12,28 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Executor f21373a = Executors.newCachedThreadPool(new ThreadFactory() { // from class: com.bytedance.pangle.d.e.1
+    private static Executor f7767a = Executors.newCachedThreadPool(new ThreadFactory() { // from class: com.bytedance.pangle.d.e.1
 
         /* renamed from: a  reason: collision with root package name */
-        private final AtomicInteger f21375a = new AtomicInteger(1);
+        private final AtomicInteger f7769a = new AtomicInteger(1);
 
         @Override // java.util.concurrent.ThreadFactory
         public final Thread newThread(Runnable runnable) {
-            return new Thread(runnable, "pangle-Fast-" + this.f21375a.getAndIncrement());
+            return new Thread(runnable, "pangle-Fast-" + this.f7769a.getAndIncrement());
         }
     });
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static Handler f21374c = null;
+    private static Handler f7768c = null;
 
     private static Handler a() {
         Handler handler;
         synchronized (b) {
-            if (f21374c == null) {
-                f21374c = new Handler(Looper.getMainLooper());
+            if (f7768c == null) {
+                f7768c = new Handler(Looper.getMainLooper());
             }
-            handler = f21374c;
+            handler = f7768c;
         }
         return handler;
     }
@@ -42,17 +42,17 @@ public final class e {
         return Executors.newFixedThreadPool(i, new ThreadFactory() { // from class: com.bytedance.pangle.d.e.2
 
             /* renamed from: a  reason: collision with root package name */
-            private final AtomicInteger f21376a = new AtomicInteger(1);
+            private final AtomicInteger f7770a = new AtomicInteger(1);
 
             @Override // java.util.concurrent.ThreadFactory
             public final Thread newThread(Runnable runnable) {
-                return new Thread(runnable, "pangle-Install-" + this.f21376a.getAndIncrement());
+                return new Thread(runnable, "pangle-Install-" + this.f7770a.getAndIncrement());
             }
         });
     }
 
     public static void a(Runnable runnable) {
-        f21373a.execute(runnable);
+        f7767a.execute(runnable);
     }
 
     public static void b(Runnable runnable) {

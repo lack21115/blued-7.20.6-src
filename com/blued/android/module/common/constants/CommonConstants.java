@@ -2,13 +2,9 @@ package com.blued.android.module.common.constants;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/constants/CommonConstants.class */
 public class CommonConstants {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static Boolean f10705a = false;
+    public static Boolean a = false;
     public static Boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static boolean f10706c = false;
+    public static boolean c = false;
     public static boolean d = false;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/constants/CommonConstants$ACTION_CODE.class */

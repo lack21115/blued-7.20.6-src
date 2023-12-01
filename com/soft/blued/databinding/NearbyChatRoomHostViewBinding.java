@@ -16,11 +16,11 @@ import com.soft.blued.R;
 public final class NearbyChatRoomHostViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f29486a;
+    public final ImageView f15796a;
     public final HomeChatRotationView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f29487c;
+    public final ImageView f15797c;
     public final ImageView d;
     public final LinearLayout e;
     public final TextView f;
@@ -29,9 +29,9 @@ public final class NearbyChatRoomHostViewBinding implements ViewBinding {
 
     private NearbyChatRoomHostViewBinding(RelativeLayout relativeLayout, ImageView imageView, HomeChatRotationView homeChatRotationView, ImageView imageView2, ImageView imageView3, LinearLayout linearLayout, TextView textView, ShapeLinearLayout shapeLinearLayout) {
         this.h = relativeLayout;
-        this.f29486a = imageView;
+        this.f15796a = imageView;
         this.b = homeChatRotationView;
-        this.f29487c = imageView2;
+        this.f15797c = imageView2;
         this.d = imageView3;
         this.e = linearLayout;
         this.f = textView;
@@ -50,8 +50,8 @@ public final class NearbyChatRoomHostViewBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.iv_notice);
         if (imageView != null) {
-            HomeChatRotationView homeChatRotationView = (HomeChatRotationView) view.findViewById(2131367603);
-            if (homeChatRotationView != null) {
+            HomeChatRotationView findViewById = view.findViewById(R.id.living_room_list);
+            if (findViewById != null) {
                 ImageView imageView2 = (ImageView) view.findViewById(R.id.nearby_chat_name_icon);
                 if (imageView2 != null) {
                     ImageView imageView3 = (ImageView) view.findViewById(R.id.nearby_chat_room_icon);
@@ -60,9 +60,9 @@ public final class NearbyChatRoomHostViewBinding implements ViewBinding {
                         if (linearLayout != null) {
                             TextView textView = (TextView) view.findViewById(R.id.nearby_chat_room_num);
                             if (textView != null) {
-                                ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.nearby_chat_room_short_layout);
-                                if (shapeLinearLayout != null) {
-                                    return new NearbyChatRoomHostViewBinding((RelativeLayout) view, imageView, homeChatRotationView, imageView2, imageView3, linearLayout, textView, shapeLinearLayout);
+                                ShapeLinearLayout findViewById2 = view.findViewById(R.id.nearby_chat_room_short_layout);
+                                if (findViewById2 != null) {
+                                    return new NearbyChatRoomHostViewBinding((RelativeLayout) view, imageView, findViewById, imageView2, imageView3, linearLayout, textView, findViewById2);
                                 }
                                 str = "nearbyChatRoomShortLayout";
                             } else {

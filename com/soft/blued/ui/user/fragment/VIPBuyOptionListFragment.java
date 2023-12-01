@@ -31,6 +31,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.imagecache.LoadOptions;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -105,7 +106,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
     private RecyclerView Z;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34117a;
+    public Context f20426a;
     private TextView aa;
     private TextView ab;
     private ShowAllListView ac;
@@ -123,7 +124,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public ListView f34118c;
+    public ListView f20427c;
     public VIPBuyAdapter d;
     private TextView g;
     private String i;
@@ -150,25 +151,21 @@ public class VIPBuyOptionListFragment extends BaseFragment {
     private boolean am = false;
     public BluedUIHttpResponse f = new BluedUIHttpResponse<BluedEntityA<VIPBuyOptionForJsonParse>>(VIPBuyOptionListFragment.class.getName() + this.h, getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.VIPBuyOptionListFragment.6
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUICache(BluedEntityA<VIPBuyOptionForJsonParse> bluedEntityA) {
             super.onUICache(bluedEntityA);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: b */
         public void onUIUpdate(BluedEntityA<VIPBuyOptionForJsonParse> bluedEntityA) {
             VIPBuyOptionListFragment.this.a(bluedEntityA);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
         }
@@ -179,7 +176,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
         private List<VIPBuyOptionForJsonParse._banner_model> b = new ArrayList();
 
         /* renamed from: c  reason: collision with root package name */
-        private List<View> f34132c = new ArrayList();
+        private List<View> f20441c = new ArrayList();
 
         public BannerPagerAdapter() {
         }
@@ -189,8 +186,8 @@ public class VIPBuyOptionListFragment extends BaseFragment {
                 this.b.clear();
                 this.b.addAll(list);
             }
-            while (this.f34132c.size() < this.b.size()) {
-                this.f34132c.add(LayoutInflater.from(VIPBuyOptionListFragment.this.getActivity()).inflate(R.layout.item_vip_operate_banner, (ViewGroup) null));
+            while (this.f20441c.size() < this.b.size()) {
+                this.f20441c.add(LayoutInflater.from(VIPBuyOptionListFragment.this.getActivity()).inflate(R.layout.item_vip_operate_banner, (ViewGroup) null));
             }
             notifyDataSetChanged();
         }
@@ -213,15 +210,15 @@ public class VIPBuyOptionListFragment extends BaseFragment {
         @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             final VIPBuyOptionForJsonParse._banner_model _banner_modelVar = this.b.get(i);
-            View view = this.f34132c.get(i);
+            View view = this.f20441c.get(i);
             viewGroup.addView(view);
-            ImageView imageView = (ImageView) this.f34132c.get(i).findViewById(R.id.item_vip_operate_banner_iv);
-            Glide.b(VIPBuyOptionListFragment.this.f34117a).b(_banner_modelVar.img).b(RequestOptions.c((Transformation<Bitmap>) new RoundedCorners(DensityUtils.a(VIPBuyOptionListFragment.this.f34117a, 6.0f)))).a(imageView);
+            ImageView imageView = (ImageView) this.f20441c.get(i).findViewById(R.id.item_vip_operate_banner_iv);
+            Glide.b(VIPBuyOptionListFragment.this.f20426a).b(_banner_modelVar.img).b(RequestOptions.c((Transformation<Bitmap>) new RoundedCorners(DensityUtils.a(VIPBuyOptionListFragment.this.f20426a, 6.0f)))).a(imageView);
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyOptionListFragment.BannerPagerAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view2) {
                     Tracker.onClick(view2);
-                    WebViewShowInfoFragment.show(VIPBuyOptionListFragment.this.f34117a, _banner_modelVar.link, -1);
+                    WebViewShowInfoFragment.show(VIPBuyOptionListFragment.this.f20426a, _banner_modelVar.link, -1);
                 }
             });
             return view;
@@ -236,18 +233,16 @@ public class VIPBuyOptionListFragment extends BaseFragment {
     private void a(int i) {
         PayHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<BluedCoupon>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.VIPBuyOptionListFragment.5
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedCoupon> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() == 0 || bluedEntityA.data.get(0) == null) {
                     VIPBuyOptionListFragment.this.q = null;
                 } else {
-                    VIPBuyOptionListFragment.this.q = bluedEntityA.data.get(0);
+                    VIPBuyOptionListFragment.this.q = (BluedCoupon) bluedEntityA.data.get(0);
                 }
                 VIPBuyOptionListFragment.this.b();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (z) {
@@ -271,7 +266,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
     public /* synthetic */ void a(View view) {
         Tracker.onClick(view);
         new ObjectAnimator();
-        ValueAnimator ofInt = ObjectAnimator.ofInt(DensityUtils.a(this.f34117a, 196.0f), DensityUtils.a(this.f34117a, 51.0f));
+        ValueAnimator ofInt = ObjectAnimator.ofInt(DensityUtils.a(this.f20426a, 196.0f), DensityUtils.a(this.f20426a, 51.0f));
         ofInt.setDuration(100L);
         ofInt.setInterpolator(new LinearInterpolator());
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VIPBuyOptionListFragment$nnaxFoYHEnT3fcT_a9FTQAFSgKA
@@ -292,6 +287,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
     public /* synthetic */ void a(VIPBuyOption vIPBuyOption, View view) {
         Tracker.onClick(view);
         this.t.setVisibility(8);
@@ -305,7 +301,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
     }
 
     private void a(List<VIPPrivilegeModel> list, boolean z) {
-        VIPPrivilegeModel vIPPrivilegeModel = new VIPPrivilegeModel(this.f34117a.getString(R.string.to_more_privilege), "");
+        VIPPrivilegeModel vIPPrivilegeModel = new VIPPrivilegeModel(this.f20426a.getString(R.string.to_more_privilege), "");
         if (z) {
             vIPPrivilegeModel.url = BluedHttpUrl.a(-1, "", 2, UserInfo.getInstance().getLoginUserInfo().vip_grade);
         } else {
@@ -330,7 +326,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
     public /* synthetic */ void b(View view) {
         Tracker.onClick(view);
         new ObjectAnimator();
-        ValueAnimator ofInt = ObjectAnimator.ofInt(DensityUtils.a(this.f34117a, 51.0f), DensityUtils.a(this.f34117a, 196.0f));
+        ValueAnimator ofInt = ObjectAnimator.ofInt(DensityUtils.a(this.f20426a, 51.0f), DensityUtils.a(this.f20426a, 196.0f));
         ofInt.setDuration(100L);
         ofInt.setInterpolator(new LinearInterpolator());
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VIPBuyOptionListFragment$5tr5L9XIm9I0NQlsbG-F1hRk3h4
@@ -354,29 +350,29 @@ public class VIPBuyOptionListFragment extends BaseFragment {
         this.R.setVisibility(0);
         this.Q.setVisibility(8);
         if (this.h == 1) {
-            this.k.setBackground(this.f34117a.getResources().getDrawable(R.drawable.icon_vip_new_page_buy_btn_bg));
-            if (bluedEntityA.data.get(0).vip_list != null && bluedEntityA.data.get(0).vip_list.list.size() > 0 && bluedEntityA.data.get(0).vip_list.list.get(0) != null) {
-                this.V.setText(this.f34117a.getResources().getString(R.string.vip_pay_list_title));
-                this.Y.setText(this.f34117a.getResources().getString(R.string.vip_pay_privilege_list_title));
-                this.aa.setText(this.f34117a.getResources().getString(R.string.vip_pay_service_title));
-                this.ab.setText(bluedEntityA.getSingleData().explain_list.vip);
-                a(bluedEntityA.getSingleData().banner.vip);
+            this.k.setBackground(this.f20426a.getResources().getDrawable(R.drawable.icon_vip_new_page_buy_btn_bg));
+            if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list != null && ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.list.size() > 0 && ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.list.get(0) != null) {
+                this.V.setText(this.f20426a.getResources().getString(R.string.vip_pay_list_title));
+                this.Y.setText(this.f20426a.getResources().getString(R.string.vip_pay_privilege_list_title));
+                this.aa.setText(this.f20426a.getResources().getString(R.string.vip_pay_service_title));
+                this.ab.setText(((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).explain_list.vip);
+                a(((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).banner.vip);
                 this.ad.a(1);
-                this.ad.setNewData(bluedEntityA.data.get(0).vip_list.list);
+                this.ad.setNewData(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.list);
                 int i = 0;
-                for (int i2 = 0; i2 < bluedEntityA.data.get(0).svip_list.list.size(); i2++) {
-                    if (bluedEntityA.data.get(0).svip_list.list.get(i2).default_checked == 1) {
+                for (int i2 = 0; i2 < ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.size(); i2++) {
+                    if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.get(i2).default_checked == 1) {
                         i = i2;
                     }
                 }
                 this.ad.a(i, true);
-                if (StringUtils.d(bluedEntityA.data.get(0).vip_list.list.get(i).item.remark)) {
+                if (StringUtils.d(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.list.get(i).item.remark)) {
                     this.X.setVisibility(8);
                 } else {
-                    this.X.setText(bluedEntityA.data.get(0).vip_list.list.get(i).item.remark);
+                    this.X.setText(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.list.get(i).item.remark);
                     this.X.setVisibility(0);
                 }
-                this.k.setText(bluedEntityA.data.get(0).vip_list.list.get(i).item.button);
+                this.k.setText(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.list.get(i).item.button);
                 this.ad.notifyDataSetChanged();
                 final int i3 = i;
                 postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.user.fragment.VIPBuyOptionListFragment.10
@@ -386,38 +382,38 @@ public class VIPBuyOptionListFragment extends BaseFragment {
                     }
                 }, 200L);
             }
-            if (bluedEntityA.getSingleData().banner == null || bluedEntityA.getSingleData().banner.svip == null || bluedEntityA.getSingleData().banner.svip.size() <= 0) {
+            if (((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).banner == null || ((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).banner.svip == null || ((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).banner.svip.size() <= 0) {
                 this.S.setVisibility(8);
             } else {
                 this.S.setVisibility(0);
-                this.ae.a(bluedEntityA.getSingleData().banner.vip);
+                this.ae.a(((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).banner.vip);
             }
-            if (bluedEntityA.getSingleData().vip_list.privilege_list != null && bluedEntityA.getSingleData().vip_list.privilege_list.size() > 0) {
-                a(bluedEntityA.getSingleData().vip_list.privilege_list, false);
+            if (((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).vip_list.privilege_list != null && ((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).vip_list.privilege_list.size() > 0) {
+                a(((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).vip_list.privilege_list, false);
             }
         } else {
-            this.k.setBackground(this.f34117a.getResources().getDrawable(R.drawable.icon_svip_new_page_buy_btn_bg));
-            if (bluedEntityA.data.get(0).svip_list != null && bluedEntityA.data.get(0).svip_list.list.size() > 0 && bluedEntityA.data.get(0).svip_list.list.get(0) != null) {
-                this.V.setText(this.f34117a.getResources().getString(R.string.svip_pay_list_title));
-                this.Y.setText(this.f34117a.getResources().getString(R.string.svip_pay_privilege_list_title));
-                this.aa.setText(this.f34117a.getResources().getString(R.string.vip_pay_service_title));
-                this.ab.setText(bluedEntityA.getSingleData().explain_list.svip);
+            this.k.setBackground(this.f20426a.getResources().getDrawable(R.drawable.icon_svip_new_page_buy_btn_bg));
+            if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list != null && ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.size() > 0 && ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.get(0) != null) {
+                this.V.setText(this.f20426a.getResources().getString(R.string.svip_pay_list_title));
+                this.Y.setText(this.f20426a.getResources().getString(R.string.svip_pay_privilege_list_title));
+                this.aa.setText(this.f20426a.getResources().getString(R.string.vip_pay_service_title));
+                this.ab.setText(((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).explain_list.svip);
                 this.ad.a(2);
-                this.ad.setNewData(bluedEntityA.data.get(0).svip_list.list);
+                this.ad.setNewData(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list);
                 int i4 = 0;
-                for (int i5 = 0; i5 < bluedEntityA.data.get(0).svip_list.list.size(); i5++) {
-                    if (bluedEntityA.data.get(0).svip_list.list.get(i5).default_checked == 1) {
+                for (int i5 = 0; i5 < ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.size(); i5++) {
+                    if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.get(i5).default_checked == 1) {
                         i4 = i5;
                     }
                 }
                 this.ad.a(i4, true);
-                if (StringUtils.d(bluedEntityA.data.get(0).svip_list.list.get(i4).item.remark)) {
+                if (StringUtils.d(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.get(i4).item.remark)) {
                     this.X.setVisibility(8);
                 } else {
-                    this.X.setText(bluedEntityA.data.get(0).svip_list.list.get(i4).item.remark);
+                    this.X.setText(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.get(i4).item.remark);
                     this.X.setVisibility(0);
                 }
-                this.k.setText(bluedEntityA.data.get(0).svip_list.list.get(i4).item.button);
+                this.k.setText(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.get(i4).item.button);
                 this.ad.notifyDataSetChanged();
                 final int i6 = i4;
                 postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.user.fragment.VIPBuyOptionListFragment.11
@@ -427,25 +423,25 @@ public class VIPBuyOptionListFragment extends BaseFragment {
                     }
                 }, 200L);
             }
-            if (bluedEntityA.getSingleData().banner == null || bluedEntityA.getSingleData().banner.vip == null || bluedEntityA.getSingleData().banner.vip.size() <= 0) {
+            if (((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).banner == null || ((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).banner.vip == null || ((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).banner.vip.size() <= 0) {
                 this.S.setVisibility(8);
             } else {
                 this.S.setVisibility(0);
-                this.ae.a(bluedEntityA.getSingleData().banner.svip);
+                this.ae.a(((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).banner.svip);
             }
-            if (bluedEntityA.getSingleData().svip_list.privilege_list != null && bluedEntityA.getSingleData().svip_list.privilege_list.size() > 0) {
-                a(bluedEntityA.getSingleData().svip_list.privilege_list, true);
+            if (((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).svip_list.privilege_list != null && ((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).svip_list.privilege_list.size() > 0) {
+                a(((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).svip_list.privilege_list, true);
             }
         }
-        if (bluedEntityA.getSingleData().new_member_experiment == 1) {
+        if (((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).new_member_experiment == 1) {
             this.o = "new_msg";
         }
-        if (bluedEntityA.data.get(0).rule_list == null || bluedEntityA.data.get(0).rule_list.size() <= 0) {
+        if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).rule_list == null || ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).rule_list.size() <= 0) {
             this.ac.setVisibility(8);
             return;
         }
         this.ac.setVisibility(0);
-        VIPAgreementAdapter vIPAgreementAdapter = new VIPAgreementAdapter(this.f34117a, bluedEntityA.data.get(0).rule_list);
+        VIPAgreementAdapter vIPAgreementAdapter = new VIPAgreementAdapter(this.f20426a, ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).rule_list);
         this.n = vIPAgreementAdapter;
         this.ac.setAdapter((ListAdapter) vIPAgreementAdapter);
         this.n.notifyDataSetChanged();
@@ -458,7 +454,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
             this.r = 1;
             a(vIPBuyOption, false);
         } else if (vIPBuyOption == null || vIPBuyOption.item == null || StringUtils.d(vIPBuyOption.item.button)) {
-            this.k.setText(this.f34117a.getResources().getString(R.string.get_it_right_now));
+            this.k.setText(this.f20426a.getResources().getString(R.string.get_it_right_now));
             this.X.setVisibility(8);
         } else {
             this.k.setText(vIPBuyOption.item.button);
@@ -509,7 +505,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
             }
         }
         if (a2 != null) {
-            Context context = this.f34117a;
+            Context context = this.f20426a;
             String str = this.i;
             String str2 = this.j;
             String str3 = this.o;
@@ -523,67 +519,67 @@ public class VIPBuyOptionListFragment extends BaseFragment {
         this.R.setVisibility(8);
         this.Q.setVisibility(0);
         if (this.h == 1) {
-            if (bluedEntityA.data.get(0).vip_list != null && bluedEntityA.data.get(0).vip_list.list.size() > 0 && bluedEntityA.data.get(0).vip_list.list.get(0) != null) {
-                bluedEntityA.data.get(0).vip_list.list.get(0);
-                if (bluedEntityA.data.get(0).is_show_hori_items == 1) {
+            if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list != null && ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.list.size() > 0 && ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.list.get(0) != null) {
+                ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.list.get(0);
+                if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).is_show_hori_items == 1) {
                     this.N.setVisibility(8);
-                    this.P.a(bluedEntityA.data.get(0).vip_list.list);
+                    this.P.a(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.list);
                     this.O.setVisibility(0);
-                    this.f34118c.setVisibility(8);
+                    this.f20427c.setVisibility(8);
                     this.J.setVisibility(0);
                     this.K.setVisibility(8);
                     this.P.a(0);
                 } else {
                     this.N.setVisibility(0);
-                    this.d.a(bluedEntityA.data.get(0).vip_list.list);
+                    this.d.a(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.list);
                     this.d.a(0);
                     this.O.setVisibility(8);
-                    this.f34118c.setVisibility(0);
+                    this.f20427c.setVisibility(0);
                     this.J.setVisibility(8);
                 }
             }
-        } else if (bluedEntityA.data.get(0).svip_list != null && bluedEntityA.data.get(0).svip_list.list.size() > 0 && bluedEntityA.data.get(0).svip_list.list.get(0) != null) {
-            bluedEntityA.data.get(0).svip_list.list.get(0);
-            if (bluedEntityA.data.get(0).is_show_hori_items == 1) {
-                this.P.a(bluedEntityA.data.get(0).svip_list.list);
+        } else if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list != null && ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.size() > 0 && ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.get(0) != null) {
+            ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.get(0);
+            if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).is_show_hori_items == 1) {
+                this.P.a(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list);
                 this.O.setVisibility(0);
-                this.f34118c.setVisibility(8);
+                this.f20427c.setVisibility(8);
                 this.J.setVisibility(0);
                 this.K.setVisibility(8);
                 this.P.a(0);
             } else {
-                this.d.a(bluedEntityA.data.get(0).svip_list.list);
+                this.d.a(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list);
                 int i = 0;
-                for (int i2 = 0; i2 < bluedEntityA.data.get(0).svip_list.list.size(); i2++) {
-                    if (bluedEntityA.data.get(0).svip_list.list.get(i2).default_checked == 1) {
+                for (int i2 = 0; i2 < ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.size(); i2++) {
+                    if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list.get(i2).default_checked == 1) {
                         i = i2;
                     }
                 }
-                if (bluedEntityA.getSingleData().new_member_experiment == 1) {
+                if (((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).new_member_experiment == 1) {
                     this.o = "new_msg";
                 }
                 this.d.a(i);
                 this.O.setVisibility(8);
-                this.f34118c.setVisibility(0);
+                this.f20427c.setVisibility(0);
                 this.J.setVisibility(8);
             }
-            this.q = bluedEntityA.data.get(0).svip_list.default_coupon;
+            this.q = ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.default_coupon;
         }
         a(this.O.getVisibility() == 0 ? this.P.a() : this.d.a(), true);
-        if (bluedEntityA.data.get(0).rule_list == null || bluedEntityA.data.get(0).rule_list.size() <= 0) {
+        if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).rule_list == null || ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).rule_list.size() <= 0) {
             this.m.setVisibility(8);
         } else {
             this.m.setVisibility(0);
-            VIPAgreementAdapter vIPAgreementAdapter = new VIPAgreementAdapter(this.f34117a, bluedEntityA.data.get(0).rule_list);
+            VIPAgreementAdapter vIPAgreementAdapter = new VIPAgreementAdapter(this.f20426a, ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).rule_list);
             this.n = vIPAgreementAdapter;
             this.m.setAdapter((ListAdapter) vIPAgreementAdapter);
             this.n.notifyDataSetChanged();
         }
-        if (bluedEntityA.data.get(0).explain_list != null) {
+        if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).explain_list != null) {
             if (this.h == 2) {
-                this.g.setText(bluedEntityA.data.get(0).explain_list.svip);
+                this.g.setText(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).explain_list.svip);
             } else {
-                this.g.setText(bluedEntityA.data.get(0).explain_list.vip);
+                this.g.setText(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).explain_list.vip);
             }
         }
     }
@@ -595,7 +591,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
             this.r = 1;
             a(vIPBuyOption, false);
         } else if (vIPBuyOption == null || vIPBuyOption.item == null || StringUtils.d(vIPBuyOption.item.button)) {
-            this.k.setText(this.f34117a.getResources().getString(R.string.get_it_right_now));
+            this.k.setText(this.f20426a.getResources().getString(R.string.get_it_right_now));
             this.K.setVisibility(8);
         } else {
             this.k.setText(vIPBuyOption.item.button);
@@ -617,7 +613,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
         this.z = this.b.findViewById(R.id.privilege_open_layout);
         this.D = (ImageView) this.b.findViewById(R.id.privilege_open_icon);
         this.A = (VIPPrivilegePageView) this.b.findViewById(R.id.privilege_page_view);
-        this.B = (LinePageIndicator) this.b.findViewById(R.id.privilege_page_indicator);
+        this.B = this.b.findViewById(R.id.privilege_page_indicator);
         this.E = (ImageView) this.b.findViewById(R.id.icon_close_right_arrow);
         this.F = (ImageView) this.b.findViewById(R.id.icon_open_right_arrow);
         this.G = this.b.findViewById(R.id.privilege_line);
@@ -681,7 +677,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
             this.r = 1;
             a(vIPBuyOption, false);
         } else if (vIPBuyOption == null || vIPBuyOption.item == null || StringUtils.d(vIPBuyOption.item.button)) {
-            this.k.setText(this.f34117a.getResources().getString(R.string.get_it_right_now));
+            this.k.setText(this.f20426a.getResources().getString(R.string.get_it_right_now));
             this.J.setVisibility(8);
         } else {
             this.k.setText(vIPBuyOption.item.button);
@@ -697,19 +693,19 @@ public class VIPBuyOptionListFragment extends BaseFragment {
 
     private void e() {
         this.R = (LinearLayout) this.b.findViewById(R.id.layout_new_list);
-        this.S = (ShapeConstraintLayout) this.b.findViewById(R.id.ll_operate);
-        this.T = (AutoScrollViewPager) this.b.findViewById(R.id.pager_operate);
-        this.U = (LinePageIndicator) this.b.findViewById(R.id.indicator_operate);
-        this.V = (TextView) this.b.findViewById(2131371829);
+        this.S = this.b.findViewById(R.id.ll_operate);
+        this.T = this.b.findViewById(R.id.pager_operate);
+        this.U = this.b.findViewById(R.id.indicator_operate);
+        this.V = (TextView) this.b.findViewById(R.id.tv_list_title);
         this.W = (RecyclerView) this.b.findViewById(R.id.recycler_new_list);
         this.X = (TextView) this.b.findViewById(R.id.tv_item_choosed_desc);
-        this.Y = (TextView) this.b.findViewById(2131372302);
+        this.Y = (TextView) this.b.findViewById(R.id.tv_privilege_title);
         this.Z = (RecyclerView) this.b.findViewById(R.id.recycler_privilege_list);
         this.aa = (TextView) this.b.findViewById(R.id.tv_service_title);
         this.ab = (TextView) this.b.findViewById(R.id.tv_service_content);
         ShowAllListView showAllListView = (ShowAllListView) this.b.findViewById(R.id.list_view_new_agreement);
         this.ac = showAllListView;
-        showAllListView.setBackgroundColor(BluedSkinUtils.a(this.f34117a, 2131102360));
+        showAllListView.setBackgroundColor(BluedSkinUtils.a(this.f20426a, 2131102360));
         this.ah = (ImageView) this.b.findViewById(R.id.agreement_btn);
         this.ai = (TextView) this.b.findViewById(R.id.agreement_text);
         this.aj = (LinearLayout) this.b.findViewById(R.id.layout_upgrade_blued_x);
@@ -724,18 +720,18 @@ public class VIPBuyOptionListFragment extends BaseFragment {
                 VIPBuyOptionListFragment.this.f();
             }
         });
-        this.ad = new VIPItemRoundNewAdapter(this.f34117a);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f34117a);
+        this.ad = new VIPItemRoundNewAdapter(this.f20426a);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f20426a);
         linearLayoutManager.setOrientation(0);
         this.W.setLayoutManager(linearLayoutManager);
         this.W.setAdapter(this.ad);
         BannerPagerAdapter bannerPagerAdapter = new BannerPagerAdapter();
         this.ae = bannerPagerAdapter;
         this.T.setAdapter(bannerPagerAdapter);
-        this.T.setInterval(m.ag);
+        this.T.setInterval((long) m.ag);
         this.U.setViewPager(this.T);
-        this.ag = new VIPPrivilegeNewAdapter(this.f34117a, getFragmentActive());
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this.f34117a, 2);
+        this.ag = new VIPPrivilegeNewAdapter(this.f20426a, getFragmentActive());
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this.f20426a, 2);
         gridLayoutManager.setOrientation(0);
         this.Z.setLayoutManager(gridLayoutManager);
         this.Z.setAdapter(this.ag);
@@ -759,11 +755,11 @@ public class VIPBuyOptionListFragment extends BaseFragment {
     }
 
     private void g() {
-        String string = this.f34117a.getString(R.string.hello_agree_new);
-        String string2 = this.f34117a.getString(R.string.hello_service_agreement_new);
-        String string3 = this.f34117a.getString(R.string.hello_stop_interval);
-        String string4 = this.f34117a.getString(R.string.hello_subscribe);
-        String string5 = this.f34117a.getString(2131890425);
+        String string = this.f20426a.getString(R.string.hello_agree_new);
+        String string2 = this.f20426a.getString(R.string.hello_service_agreement_new);
+        String string3 = this.f20426a.getString(R.string.hello_stop_interval);
+        String string4 = this.f20426a.getString(R.string.hello_subscribe);
+        String string5 = this.f20426a.getString(2131890425);
         String str = string + string2 + string3 + string4 + string3 + string5;
         SpannableString spannableString = new SpannableString(str);
         this.ai.setMovementMethod(LinkMovementMethod.getInstance());
@@ -775,7 +771,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
 
             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
             public void updateDrawState(TextPaint textPaint) {
-                textPaint.setColor(ContextCompat.getColor(VIPBuyOptionListFragment.this.f34117a, 2131101766));
+                textPaint.setColor(ContextCompat.getColor(VIPBuyOptionListFragment.this.f20426a, 2131101766));
                 textPaint.setUnderlineText(true);
             }
         }, str.indexOf(string2), (string + string2).length(), 33);
@@ -787,19 +783,19 @@ public class VIPBuyOptionListFragment extends BaseFragment {
 
             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
             public void updateDrawState(TextPaint textPaint) {
-                textPaint.setColor(ContextCompat.getColor(VIPBuyOptionListFragment.this.f34117a, 2131101766));
+                textPaint.setColor(ContextCompat.getColor(VIPBuyOptionListFragment.this.f20426a, 2131101766));
                 textPaint.setUnderlineText(true);
             }
         }, str.indexOf(string4), (string + string2 + string3 + string4).length(), 33);
         spannableString.setSpan(new ClickableSpan() { // from class: com.soft.blued.ui.user.fragment.VIPBuyOptionListFragment.4
             @Override // android.text.style.ClickableSpan
             public void onClick(View view) {
-                WebViewShowInfoFragment.show(VIPBuyOptionListFragment.this.f34117a, H5Url.a(22), 0);
+                WebViewShowInfoFragment.show(VIPBuyOptionListFragment.this.f20426a, H5Url.a(22), 0);
             }
 
             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
             public void updateDrawState(TextPaint textPaint) {
-                textPaint.setColor(ContextCompat.getColor(VIPBuyOptionListFragment.this.f34117a, 2131101766));
+                textPaint.setColor(ContextCompat.getColor(VIPBuyOptionListFragment.this.f20426a, 2131101766));
                 textPaint.setUnderlineText(true);
             }
         }, str.indexOf(string5), str.length(), 33);
@@ -832,14 +828,13 @@ public class VIPBuyOptionListFragment extends BaseFragment {
         }
         PayHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<VipUpgradeModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.VIPBuyOptionListFragment.9
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VipUpgradeModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     VIPBuyOptionListFragment.this.k.callOnClick();
                     return;
                 }
-                VIPBuyOptionListFragment.this.an = VipUpgradeDialogFragment.f34178a.a(VIPBuyOptionListFragment.this.getContext(), VIPBuyOptionListFragment.this.getParentFragmentManager(), bluedEntityA.data, VIPBuyOptionListFragment.this.w);
+                VIPBuyOptionListFragment.this.an = VipUpgradeDialogFragment.f20487a.a(VIPBuyOptionListFragment.this.getContext(), VIPBuyOptionListFragment.this.getParentFragmentManager(), bluedEntityA.data, VIPBuyOptionListFragment.this.w);
                 VIPBuyOptionListFragment.this.an.a(new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyOptionListFragment.9.1
                     @Override // android.content.DialogInterface.OnDismissListener
                     public void onDismiss(DialogInterface dialogInterface) {
@@ -848,7 +843,6 @@ public class VIPBuyOptionListFragment extends BaseFragment {
                 });
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str, String str2) {
                 return true;
             }
@@ -870,12 +864,12 @@ public class VIPBuyOptionListFragment extends BaseFragment {
             this.t.setVisibility(0);
         }
         this.O = (RecyclerView) this.b.findViewById(R.id.list_round_items);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f34117a);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f20426a);
         linearLayoutManager.setOrientation(0);
         this.O.setLayoutManager(linearLayoutManager);
         this.J = (TextView) this.b.findViewById(R.id.tv_round_item_choosed_desc);
         this.K = (TextView) this.b.findViewById(R.id.tv_list_item_choosed_desc);
-        VIPItemRoundAdapter vIPItemRoundAdapter = new VIPItemRoundAdapter(this.f34117a, this.h);
+        VIPItemRoundAdapter vIPItemRoundAdapter = new VIPItemRoundAdapter(this.f20426a, this.h);
         this.P = vIPItemRoundAdapter;
         vIPItemRoundAdapter.a(new VIPItemRoundAdapter.onGoodClick() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VIPBuyOptionListFragment$mjgkd-IGL6Miuq8s1Pjbk86Bxgc
             @Override // com.soft.blued.ui.user.adapter.VIPItemRoundAdapter.onGoodClick
@@ -886,9 +880,9 @@ public class VIPBuyOptionListFragment extends BaseFragment {
         this.O.setAdapter(this.P);
         ShowAllListView showAllListView = (ShowAllListView) this.b.findViewById(R.id.list_view_agreement);
         this.m = showAllListView;
-        showAllListView.setBackgroundColor(BluedSkinUtils.a(this.f34117a, 2131102360));
-        this.g = (TextView) this.b.findViewById(2131371262);
-        this.f34118c = (ListView) this.b.findViewById(2131366898);
+        showAllListView.setBackgroundColor(BluedSkinUtils.a(this.f20426a, 2131102360));
+        this.g = (TextView) this.b.findViewById(R.id.tv_desc);
+        this.f20427c = (ListView) this.b.findViewById(R.id.list_view);
         TextView textView = (TextView) this.b.findViewById(R.id.tv_buy_btn);
         this.k = textView;
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VIPBuyOptionListFragment$7gfpTb30PQqj_7HnWGrcHv_O0d4
@@ -897,7 +891,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
                 VIPBuyOptionListFragment.this.c(view);
             }
         });
-        VIPBuyAdapter vIPBuyAdapter = new VIPBuyAdapter(this.f34117a, this.h);
+        VIPBuyAdapter vIPBuyAdapter = new VIPBuyAdapter(this.f20426a, this.h);
         this.d = vIPBuyAdapter;
         vIPBuyAdapter.a(new VIPBuyAdapter.onGoodClick() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VIPBuyOptionListFragment$lDiqVJ3Z9hK0rowGYdc0xeegMsQ
             @Override // com.soft.blued.ui.user.adapter.VIPBuyAdapter.onGoodClick
@@ -905,37 +899,37 @@ public class VIPBuyOptionListFragment extends BaseFragment {
                 VIPBuyOptionListFragment.this.c(vIPBuyOption);
             }
         });
-        this.f34118c.setAdapter((ListAdapter) this.d);
-        String string = this.f34117a.getResources().getString(R.string.vip_buy_agreement);
+        this.f20427c.setAdapter((ListAdapter) this.d);
+        String string = this.f20426a.getResources().getString(R.string.vip_buy_agreement);
         if (this.h == 2) {
-            String string2 = this.f34117a.getResources().getString(R.string.vip_will_count_after_svip_end);
+            String string2 = this.f20426a.getResources().getString(R.string.vip_will_count_after_svip_end);
             TextView textView2 = this.g;
             textView2.setText(string2 + string);
             if (this.af) {
-                this.k.setBackground(this.f34117a.getResources().getDrawable(R.drawable.icon_svip_new_page_buy_btn_bg));
+                this.k.setBackground(this.f20426a.getResources().getDrawable(R.drawable.icon_svip_new_page_buy_btn_bg));
             } else {
-                this.k.setBackground(this.f34117a.getResources().getDrawable(R.drawable.icon_svip_new_page_buy_btn_bg));
+                this.k.setBackground(this.f20426a.getResources().getDrawable(R.drawable.icon_svip_new_page_buy_btn_bg));
             }
-            this.k.setTextColor(this.f34117a.getResources().getColor(2131102170));
+            this.k.setTextColor(this.f20426a.getResources().getColor(2131102170));
         } else {
             this.g.setText(string);
             if (this.af) {
-                this.k.setBackground(this.f34117a.getResources().getDrawable(R.drawable.icon_vip_new_page_buy_btn_bg));
+                this.k.setBackground(this.f20426a.getResources().getDrawable(R.drawable.icon_vip_new_page_buy_btn_bg));
             } else {
-                this.k.setBackground(this.f34117a.getResources().getDrawable(R.drawable.icon_vip_new_page_buy_btn_bg));
+                this.k.setBackground(this.f20426a.getResources().getDrawable(R.drawable.icon_vip_new_page_buy_btn_bg));
             }
-            this.k.setTextColor(this.f34117a.getResources().getColor(2131102203));
+            this.k.setTextColor(this.f20426a.getResources().getColor(2131102203));
         }
         this.f.refresh();
-        PayHttpUtils.a(this.f, getFragmentActive(), this.M, "vip");
+        PayHttpUtils.a(this.f, (IRequestHost) getFragmentActive(), this.M, "vip");
     }
 
     public void a(BluedEntityA<VIPBuyOptionForJsonParse> bluedEntityA) {
         if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || bluedEntityA.data.get(0) == null) {
             return;
         }
-        this.af = bluedEntityA.getSingleData().is_new_face == 1;
-        if (bluedEntityA.getSingleData().upgrade_button == 1 && this.h == 2 && this.v) {
+        this.af = ((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).is_new_face == 1;
+        if (((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).upgrade_button == 1 && this.h == 2 && this.v) {
             h();
             if (this.w) {
                 if (this.aj.getVisibility() == 8) {
@@ -947,14 +941,14 @@ public class VIPBuyOptionListFragment extends BaseFragment {
             this.aj.setVisibility(8);
             this.k.setVisibility(0);
         }
-        if (bluedEntityA.getSingleData().is_new_face == 1) {
+        if (((VIPBuyOptionForJsonParse) bluedEntityA.getSingleData()).is_new_face == 1) {
             b(bluedEntityA);
             return;
         }
         c(bluedEntityA);
         if (this.h == 1) {
-            if (bluedEntityA.data.get(0).vip_list != null) {
-                List<VIPPrivilegeModel> list = bluedEntityA.data.get(0).vip_list.privilege_list;
+            if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list != null) {
+                List<VIPPrivilegeModel> list = ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.privilege_list;
                 if (list == null || list.size() <= 0) {
                     this.x.setVisibility(8);
                     return;
@@ -962,8 +956,8 @@ public class VIPBuyOptionListFragment extends BaseFragment {
                 this.x.setVisibility(0);
                 this.A.a(getFragmentActive(), list);
             }
-        } else if (bluedEntityA.data.get(0).svip_list != null) {
-            List<VIPPrivilegeModel> list2 = bluedEntityA.data.get(0).svip_list.privilege_list;
+        } else if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list != null) {
+            List<VIPPrivilegeModel> list2 = ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.privilege_list;
             if (list2 == null || list2.size() <= 0) {
                 this.x.setVisibility(8);
                 return;
@@ -1020,7 +1014,7 @@ public class VIPBuyOptionListFragment extends BaseFragment {
             if (i == -1 || i == 0) {
                 textView.setText("");
             } else {
-                textView.setText(this.f34117a.getResources().getString(R.string.no_available_coupon));
+                textView.setText(this.f20426a.getResources().getString(R.string.no_available_coupon));
             }
             if (a2 == null || a2.item == null || StringUtils.d(a2.item.button)) {
                 return;
@@ -1031,10 +1025,9 @@ public class VIPBuyOptionListFragment extends BaseFragment {
         DecimalFormat decimalFormat = new DecimalFormat("###.##");
         String str = "-￥" + decimalFormat.format(this.q.money);
         textView.setText(str);
-        this.k.setText(String.format(this.f34117a.getResources().getString(R.string.money_after_discount), decimalFormat.format(a2.money - Double.parseDouble(this.q.money)) + ""));
+        this.k.setText(String.format(this.f20426a.getResources().getString(R.string.money_after_discount), decimalFormat.format(a2.money - Double.parseDouble(this.q.money)) + ""));
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i != 101 || intent == null) {
@@ -1055,22 +1048,19 @@ public class VIPBuyOptionListFragment extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         Log.v("drb", "child onBackPressed");
         VIPBuyOnBackPressedObserver.a().b();
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         c();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f34117a = getActivity();
+        this.f20426a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_vip_buy_option_list, viewGroup, false);
@@ -1087,7 +1077,6 @@ public class VIPBuyOptionListFragment extends BaseFragment {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         this.an = null;
@@ -1097,7 +1086,6 @@ public class VIPBuyOptionListFragment extends BaseFragment {
     /* JADX WARN: Code restructure failed: missing block: B:46:0x0178, code lost:
         if (r0.equals("dynamic_skin") != false) goto L31;
      */
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

@@ -43,7 +43,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class a implements ad {
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f36893c;
+    private static boolean f23202c;
     private final j g;
     private CaptureRequest l;
     private CaptureRequest.Builder m;
@@ -65,11 +65,11 @@ public final class a implements ad {
     private boolean r = true;
     private boolean s = true;
     private int t = -1;
-    private EnumC0940a u = EnumC0940a.IDLE;
+    private EnumC0770a u = EnumC0770a.IDLE;
     private boolean v = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f36894a = false;
+    public boolean f23203a = false;
     private float z = 0.0f;
     private final CameraDevice.StateCallback A = new CameraDevice.StateCallback() { // from class: com.tencent.liteav.videoproducer.capture.b.a.1
         @Override // android.hardware.camera2.CameraDevice.StateCallback
@@ -183,7 +183,7 @@ public final class a implements ad {
         }
 
         private static boolean a(CaptureRequest captureRequest) {
-            return (captureRequest.getTag() instanceof a) && !((a) captureRequest.getTag()).f36894a;
+            return (captureRequest.getTag() instanceof a) && !((a) captureRequest.getTag()).f23203a;
         }
 
         @Override // android.hardware.camera2.CameraCaptureSession.CaptureCallback
@@ -205,7 +205,7 @@ public final class a implements ad {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.liteav.videoproducer.capture.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/liteav/videoproducer/capture/b/a$a.class */
-    public enum EnumC0940a {
+    public enum EnumC0770a {
         IDLE,
         PREVIEWING
     }
@@ -263,7 +263,7 @@ public final class a implements ad {
 
     static /* synthetic */ void a(a aVar, boolean z) {
         LiteavLog.i("Camera2Controller", "onFocusCallback success:".concat(String.valueOf(z)));
-        aVar.f36894a = true;
+        aVar.f23203a = true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -298,7 +298,7 @@ public final class a implements ad {
             throw new IOException("startPreview cameraDevice null!");
         }
         j();
-        this.p.setDefaultBufferSize(this.n.f36340a, this.n.b);
+        this.p.setDefaultBufferSize(this.n.f22649a, this.n.b);
         Surface surface = new Surface(this.p);
         CaptureRequest.Builder createCaptureRequest = cameraDevice.createCaptureRequest(3);
         this.m = createCaptureRequest;
@@ -451,7 +451,7 @@ public final class a implements ad {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean o() {
-        return i() == null || this.m == null || this.u != EnumC0940a.PREVIEWING;
+        return i() == null || this.m == null || this.u != EnumC0770a.PREVIEWING;
     }
 
     @Override // com.tencent.liteav.videoproducer.capture.ad
@@ -469,10 +469,10 @@ public final class a implements ad {
         j();
         k();
         this.l = null;
-        this.f36894a = false;
+        this.f23203a = false;
         this.p = null;
         this.t = -1;
-        this.u = EnumC0940a.IDLE;
+        this.u = EnumC0770a.IDLE;
         LiteavLog.i("Camera2Controller", "stopCapture success");
     }
 
@@ -520,27 +520,27 @@ public final class a implements ad {
             CameraCaptureSession cameraCaptureSession = this.k.get();
             if (cameraCaptureSession == null) {
                 LiteavLog.e("Camera2Controller", "CameraCaptureSession get fail");
-            } else if (i < 0 || i >= this.n.f36340a || i2 < 0 || i2 >= this.n.b) {
+            } else if (i < 0 || i >= this.n.f22649a || i2 < 0 || i2 >= this.n.b) {
                 LiteavLog.w("Camera2Controller", "Start auto focus at (%d, %d) invalid ", Integer.valueOf(i), Integer.valueOf(i2));
             } else {
                 LiteavLog.i("Camera2Controller", "Start auto focus at (%d, %d)", Integer.valueOf(i), Integer.valueOf(i2));
                 double d9 = i;
                 double d10 = i2;
-                int i3 = this.n.f36340a;
+                int i3 = this.n.f22649a;
                 int i4 = this.n.b;
                 if (this.o == Rotation.ROTATION_90 || this.o == Rotation.ROTATION_270) {
                     i3 = this.n.b;
-                    i4 = this.n.f36340a;
+                    i4 = this.n.f22649a;
                 }
                 n a2 = q.a(ContextUtils.getApplicationContext());
                 double d11 = 0.0d;
-                if (a2.f36340a * i4 > a2.b * i3) {
-                    d2 = (a2.f36340a * 1.0d) / i3;
+                if (a2.f22649a * i4 > a2.b * i3) {
+                    d2 = (a2.f22649a * 1.0d) / i3;
                     d4 = (i4 - (a2.b / d2)) / 2.0d;
                     d3 = 0.0d;
                 } else {
                     d2 = (a2.b * 1.0d) / i4;
-                    d3 = (i3 - (a2.f36340a / d2)) / 2.0d;
+                    d3 = (i3 - (a2.f22649a / d2)) / 2.0d;
                     d4 = 0.0d;
                 }
                 double d12 = (d9 / d2) + d3;
@@ -553,7 +553,7 @@ public final class a implements ad {
                     d6 = d13;
                     if (this.o == Rotation.ROTATION_270) {
                         d6 = d12;
-                        d5 = this.n.f36340a - d13;
+                        d5 = this.n.f22649a - d13;
                     }
                 }
                 Rect rect = (Rect) this.l.get(CaptureRequest.SCALER_CROP_REGION);
@@ -564,12 +564,12 @@ public final class a implements ad {
                 }
                 int width = rect2.width();
                 int height = rect2.height();
-                if (this.n.b * width > this.n.f36340a * height) {
+                if (this.n.b * width > this.n.f22649a * height) {
                     d7 = (height * 1.0d) / this.n.b;
-                    d11 = (width - (this.n.f36340a * d7)) / 2.0d;
+                    d11 = (width - (this.n.f22649a * d7)) / 2.0d;
                     d8 = 0.0d;
                 } else {
-                    d7 = (width * 1.0d) / this.n.f36340a;
+                    d7 = (width * 1.0d) / this.n.f22649a;
                     d8 = (height - (this.n.b * d7)) / 2.0d;
                 }
                 double d14 = (d5 * d7) + d11 + rect2.left;
@@ -586,7 +586,7 @@ public final class a implements ad {
                     this.m.set(CaptureRequest.CONTROL_AF_TRIGGER, 1);
                     this.m.set(CaptureRequest.CONTROL_AE_PRECAPTURE_TRIGGER, 1);
                     this.v = true;
-                    this.f36894a = false;
+                    this.f23203a = false;
                     this.m.setTag(this);
                     cameraCaptureSession.setRepeatingRequest(this.m.build(), this.D, this.f);
                 } catch (Exception e2) {

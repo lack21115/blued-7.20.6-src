@@ -2,6 +2,7 @@ package com.amap.api.maps.model.particle;
 
 import com.amap.api.maps.model.BitmapDescriptor;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
+import com.mokee.volley.DefaultRetryPolicy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class ParticleOverlayOptionsFactory {
         ParticleOverlayOptions particleOverlayOptions2 = new ParticleOverlayOptions();
         particleOverlayOptions2.setMaxParticles(1000);
         particleOverlayOptions2.setDuration(10000L);
-        particleOverlayOptions2.setParticleEmissionModule(new ParticleEmissionModule(30, 2500));
+        particleOverlayOptions2.setParticleEmissionModule(new ParticleEmissionModule(30, DefaultRetryPolicy.DEFAULT_TIMEOUT_MS));
         particleOverlayOptions2.setLoop(true);
         particleOverlayOptions2.setParticleShapeModule(new RectParticleShape(0.5f, 0.5f, 1.0f, 1.0f, true));
         particleOverlayOptions2.setParticleLifeTime(10000L);
@@ -85,7 +86,7 @@ public class ParticleOverlayOptionsFactory {
         ParticleOverlayOptions particleOverlayOptions = new ParticleOverlayOptions();
         particleOverlayOptions.setMaxParticles(1);
         particleOverlayOptions.setDuration(10000L);
-        particleOverlayOptions.setParticleEmissionModule(new ParticleEmissionModule(1, 2500));
+        particleOverlayOptions.setParticleEmissionModule(new ParticleEmissionModule(1, DefaultRetryPolicy.DEFAULT_TIMEOUT_MS));
         particleOverlayOptions.setLoop(true);
         particleOverlayOptions.setParticleShapeModule(new SinglePointParticleShape(0.0f, 0.0f, 0.0f));
         particleOverlayOptions.setParticleLifeTime(10000L);
@@ -97,7 +98,7 @@ public class ParticleOverlayOptionsFactory {
         ParticleOverlayOptions particleOverlayOptions2 = new ParticleOverlayOptions();
         particleOverlayOptions2.setMaxParticles(1);
         particleOverlayOptions2.setDuration(10000L);
-        particleOverlayOptions2.setParticleEmissionModule(new ParticleEmissionModule(1, 2500));
+        particleOverlayOptions2.setParticleEmissionModule(new ParticleEmissionModule(1, DefaultRetryPolicy.DEFAULT_TIMEOUT_MS));
         particleOverlayOptions2.setLoop(true);
         particleOverlayOptions2.setParticleShapeModule(new SinglePointParticleShape(0.0f, 0.0f, 0.0f));
         particleOverlayOptions2.setParticleLifeTime(10000L);

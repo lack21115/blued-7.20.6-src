@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogPrivacyClauseBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28714a;
+    private final ConstraintLayout f15024a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28714a;
+        return this.f15024a;
     }
 }

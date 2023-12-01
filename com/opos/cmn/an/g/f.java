@@ -9,11 +9,11 @@ import javax.net.ssl.SSLSocketFactory;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f24549a;
+    public final int f10862a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f24550c;
+    public final String f10863c;
     public final Map<String, String> d;
     public final int e;
     public final int f;
@@ -26,14 +26,14 @@ public class f {
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f24552c;
+        private String f10865c;
         private Map<String, String> d;
         private byte[] g;
         private SSLSocketFactory h;
         private HostnameVerifier i;
 
         /* renamed from: a  reason: collision with root package name */
-        private int f24551a = 0;
+        private int f10864a = 0;
         private int e = 30000;
         private int f = 30000;
 
@@ -58,7 +58,7 @@ public class f {
         }
 
         public a a(int i) {
-            this.f24551a = i;
+            this.f10864a = i;
             return this;
         }
 
@@ -88,10 +88,10 @@ public class f {
         }
 
         public f a() throws Exception {
-            if (com.opos.cmn.an.c.a.a(this.b) || com.opos.cmn.an.c.a.a(this.f24552c)) {
+            if (com.opos.cmn.an.c.a.a(this.b) || com.opos.cmn.an.c.a.a(this.f10865c)) {
                 throw new NullPointerException("httpMethod or url is null.");
             }
-            if (d(this.f24551a)) {
+            if (d(this.f10864a)) {
                 b();
                 return new f(this);
             }
@@ -104,7 +104,7 @@ public class f {
         }
 
         public a b(String str) {
-            this.f24552c = str;
+            this.f10865c = str;
             return this;
         }
 
@@ -115,9 +115,9 @@ public class f {
     }
 
     public f(a aVar) {
-        this.f24549a = aVar.f24551a;
+        this.f10862a = aVar.f10864a;
         this.b = aVar.b;
-        this.f24550c = aVar.f24552c;
+        this.f10863c = aVar.f10865c;
         this.d = aVar.d;
         this.e = aVar.e;
         this.f = aVar.f;
@@ -127,6 +127,6 @@ public class f {
     }
 
     public String toString() {
-        return "NetRequest{protocol=" + this.f24549a + ", httpMethod='" + this.b + "', url='" + this.f24550c + "', headerMap=" + this.d + ", connectTimeout=" + this.e + ", readTimeout=" + this.f + ", data=" + Arrays.toString(this.g) + ", sslSocketFactory=" + this.h + ", hostnameVerifier=" + this.i + '}';
+        return "NetRequest{protocol=" + this.f10862a + ", httpMethod='" + this.b + "', url='" + this.f10863c + "', headerMap=" + this.d + ", connectTimeout=" + this.e + ", readTimeout=" + this.f + ", data=" + Arrays.toString(this.g) + ", sslSocketFactory=" + this.h + ", hostnameVerifier=" + this.i + '}';
     }
 }

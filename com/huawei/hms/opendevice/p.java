@@ -54,12 +54,12 @@ public abstract class p {
                             }
                             sb.append(readLine);
                         } catch (FileNotFoundException e) {
-                            HMSLog.e(ae.f22542a, "file not exist.");
+                            HMSLog.e(ae.f8934a, "file not exist.");
                             IOUtils.closeQuietly((Reader) inputStreamReader);
                             IOUtils.closeQuietly((Reader) bufferedReader);
                             return sb.toString();
                         } catch (IOException e2) {
-                            HMSLog.e(ae.f22542a, "read value IOException.");
+                            HMSLog.e(ae.f8934a, "read value IOException.");
                             IOUtils.closeQuietly((Reader) inputStreamReader);
                             IOUtils.closeQuietly((Reader) bufferedReader);
                             return sb.toString();
@@ -100,7 +100,7 @@ public abstract class p {
             try {
                 closeable.close();
             } catch (IOException e) {
-                HMSLog.w(ae.f22542a, "close IOException");
+                HMSLog.w(ae.f8934a, "close IOException");
             }
         }
     }
@@ -110,14 +110,14 @@ public abstract class p {
             return;
         }
         if (file.getParentFile() == null) {
-            HMSLog.e(ae.f22542a, "parent file is null.");
+            HMSLog.e(ae.f8934a, "parent file is null.");
             throw new IOException("parent file is null");
         } else if (!file.getParentFile().exists() && !file.getParentFile().mkdirs()) {
-            HMSLog.e(ae.f22542a, "make parent dirs failed.");
+            HMSLog.e(ae.f8934a, "make parent dirs failed.");
             throw new IOException("make parent dirs failed");
         } else if (file.createNewFile()) {
         } else {
-            HMSLog.e(ae.f22542a, "create file failed.");
+            HMSLog.e(ae.f8934a, "create file failed.");
             throw new IOException("create file failed");
         }
     }
@@ -127,7 +127,7 @@ public abstract class p {
             try {
                 httpURLConnection.disconnect();
             } catch (Throwable th) {
-                HMSLog.w(ae.f22542a, "close HttpURLConnection Exception");
+                HMSLog.w(ae.f8934a, "close HttpURLConnection Exception");
             }
         }
     }

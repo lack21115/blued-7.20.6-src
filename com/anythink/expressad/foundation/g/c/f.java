@@ -7,7 +7,7 @@ import java.util.List;
 public abstract class f {
 
     /* renamed from: a  reason: collision with root package name */
-    protected e f7847a;
+    protected e f5007a;
 
     public f(String str) {
         e eVar = new e();
@@ -17,7 +17,7 @@ public abstract class f {
         if (a2.size() > 0) {
             eVar.a(a2);
         }
-        this.f7847a = eVar;
+        this.f5007a = eVar;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -32,6 +32,6 @@ public abstract class f {
     protected abstract List<e> a();
 
     public final e b() {
-        return this.f7847a;
+        return this.f5007a;
     }
 }

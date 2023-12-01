@@ -10,7 +10,7 @@ import com.anythink.expressad.foundation.h.o;
 public class AnyThinkDyImageView extends ImageView {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8412a = "AnyThinkDyImageView";
+    private static final String f5572a = "AnyThinkDyImageView";
 
     public AnyThinkDyImageView(Context context) {
         super(context);
@@ -24,13 +24,12 @@ public class AnyThinkDyImageView extends ImageView {
         super(context, attributeSet, i);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         try {
             super.onDraw(canvas);
         } catch (Throwable th) {
-            o.d(f8412a, th.getMessage());
+            o.d(f5572a, th.getMessage());
         }
     }
 }

@@ -15,12 +15,10 @@ import kotlin.ranges.IntRange;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/dslspannable/DslSpannableStringBuilderImpl.class */
 public final class DslSpannableStringBuilderImpl implements DslSpannableStringBuilder {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final SpannableStringBuilder f14204a = new SpannableStringBuilder();
+    private final SpannableStringBuilder a = new SpannableStringBuilder();
 
     public final SpannableStringBuilder a() {
-        return this.f14204a;
+        return this.a;
     }
 
     @Override // com.blued.android.module.live_china.utils.dslspannable.DslSpannableStringBuilder
@@ -45,7 +43,7 @@ public final class DslSpannableStringBuilderImpl implements DslSpannableStringBu
     @Override // com.blued.android.module.live_china.utils.dslspannable.DslSpannableStringBuilder
     public void a(Drawable drawable, int i, int i2, int i3, int i4, VerticalCenterImageSpan.SpanDrawCallback spanDrawCallback) {
         Intrinsics.e(drawable, "drawable");
-        this.f14204a.append(LiveTextSpanExKt.a("1", drawable, new IntRange(0, 1), i, i2, i3, i4, spanDrawCallback));
+        this.a.append(LiveTextSpanExKt.a("1", drawable, new IntRange(0, 1), i, i2, i3, i4, spanDrawCallback));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -58,10 +56,10 @@ public final class DslSpannableStringBuilderImpl implements DslSpannableStringBu
         if (function1 != null) {
             function1.invoke(dslSpanBuilderImpl);
         }
-        Object a2 = dslSpanBuilderImpl.a() ? LiveTextSpanExKt.a((CharSequence) text, new IntRange(0, text.length()), dslSpanBuilderImpl.b()) : text;
-        Object obj = a2;
+        Object a = dslSpanBuilderImpl.a() ? LiveTextSpanExKt.a((CharSequence) text, new IntRange(0, text.length()), dslSpanBuilderImpl.b()) : text;
+        Object obj = a;
         if (dslSpanBuilderImpl.k()) {
-            obj = LiveTextSpanExKt.b(a2, new IntRange(0, text.length()), dslSpanBuilderImpl.l());
+            obj = LiveTextSpanExKt.b(a, new IntRange(0, text.length()), dslSpanBuilderImpl.l());
         }
         Object obj2 = obj;
         if (dslSpanBuilderImpl.f()) {
@@ -79,6 +77,6 @@ public final class DslSpannableStringBuilderImpl implements DslSpannableStringBu
         if (dslSpanBuilderImpl.j()) {
             obj5 = LiveTextSpanExKt.a((CharSequence) obj4, new IntRange(0, text.length()));
         }
-        this.f14204a.append((CharSequence) ((CharSequence) obj5));
+        this.a.append((CharSequence) ((CharSequence) obj5));
     }
 }

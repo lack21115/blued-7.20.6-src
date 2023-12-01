@@ -20,7 +20,7 @@ public class e extends b {
         public void run() {
             try {
                 e eVar = e.this;
-                eVar.f41909a.k.a(eVar.i);
+                eVar.f28218a.k.a(eVar.i);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -44,7 +44,7 @@ public class e extends b {
                 int lastIndexOf = attributeValue2.lastIndexOf("#Intent");
                 Intent parseUri = Intent.parseUri(attributeValue2.substring(0, lastIndexOf - 1), 0);
                 Intent intent = parseUri;
-                if (this.f41909a.j.getPackageManager().queryIntentActivities(parseUri, 0).isEmpty()) {
+                if (this.f28218a.j.getPackageManager().queryIntentActivities(parseUri, 0).isEmpty()) {
                     intent = Intent.parseUri(attributeValue2.substring(lastIndexOf), 0);
                 }
                 this.i = (Intent) intent.clone();
@@ -76,22 +76,22 @@ public class e extends b {
         if (attributeValue5 != null && attributeValue6 != null) {
             this.i.setClassName(attributeValue5, attributeValue6);
         }
-        this.b = new com.zk_oaction.adengine.lk_expression.a(this.f41909a, null, xmlPullParser.getAttributeValue(null, Condition.SCHEME), 1.0f, null, false);
+        this.b = new com.zk_oaction.adengine.lk_expression.a(this.f28218a, null, xmlPullParser.getAttributeValue(null, Condition.SCHEME), 1.0f, null, false);
         String attributeValue7 = xmlPullParser.getAttributeValue(null, "delay");
         if (attributeValue7 != null) {
-            this.f41910c = Integer.parseInt(attributeValue7);
+            this.f28219c = Integer.parseInt(attributeValue7);
         }
-        this.d = new com.zk_oaction.adengine.lk_expression.a(this.f41909a, null, xmlPullParser.getAttributeValue(null, "delayCondition"), 1.0f, null, false);
+        this.d = new com.zk_oaction.adengine.lk_expression.a(this.f28218a, null, xmlPullParser.getAttributeValue(null, "delayCondition"), 1.0f, null, false);
     }
 
     @Override // com.zk_oaction.adengine.lk_command.b
     public void a() {
         this.b.a((String) null, (String) null);
         if (this.b.a() != 0.0f) {
-            if (this.d.a() != 1.0f || this.f41910c == 0) {
+            if (this.d.a() != 1.0f || this.f28219c == 0) {
                 this.j.run();
             } else {
-                new Handler().postDelayed(this.j, this.f41910c);
+                new Handler().postDelayed(this.j, this.f28219c);
             }
         }
     }

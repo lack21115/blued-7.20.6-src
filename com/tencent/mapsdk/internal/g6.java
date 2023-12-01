@@ -6,8 +6,8 @@ import android.os.Build;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.view.View;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
+import com.sina.weibo.sdk.constant.WBConstants;
 import com.sobot.chat.core.channel.Const;
 import com.tencent.map.tools.Callback;
 import com.tencent.map.tools.json.JsonComposer;
@@ -21,6 +21,7 @@ import com.tencent.map.tools.net.NetUtil;
 import com.tencent.mapsdk.internal.ca;
 import com.tencent.mapsdk.internal.da;
 import com.tencent.mapsdk.internal.q1;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,19 +31,19 @@ import org.json.JSONObject;
 public class g6 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile boolean f37473a;
+    private static volatile boolean f23782a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/g6$a.class */
     public static final class a extends ca.c<JSONObject> {
         public final /* synthetic */ e b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ Context f37474c;
+        public final /* synthetic */ Context f23783c;
         public final /* synthetic */ SharedPreferences d;
 
         public a(e eVar, Context context, SharedPreferences sharedPreferences) {
             this.b = eVar;
-            this.f37474c = context;
+            this.f23783c = context;
             this.d = sharedPreferences;
         }
 
@@ -51,7 +52,7 @@ public class g6 {
         public void callback(JSONObject jSONObject) {
             if (jSONObject != null) {
                 this.b.b = (f) JsonUtils.parseToModel(jSONObject, f.class, new Object[0]);
-                g6.b(this.f37474c, this.d, this.b);
+                g6.b(this.f23783c, this.d, this.b);
                 JSONObject modelToJson = JsonUtils.modelToJson(this.b);
                 if (modelToJson != null) {
                     na.c(ma.i, "保存上报文件至本地");
@@ -65,18 +66,18 @@ public class g6 {
     public static final class b extends ca.i<JSONObject> {
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ e f37475c;
+        public final /* synthetic */ e f23784c;
         public final /* synthetic */ q1.b d;
 
         public b(e eVar, q1.b bVar) {
-            this.f37475c = eVar;
+            this.f23784c = eVar;
             this.d = bVar;
         }
 
         @Override // java.util.concurrent.Callable
         /* renamed from: a */
         public JSONObject call() throws Exception {
-            NetResponse uploadToken = ((u2) ((g3) n2.a(g3.class)).d()).uploadToken(this.f37475c.c(), this.d.g(), this.d.h());
+            NetResponse uploadToken = ((u2) ((g3) n2.a(g3.class)).d()).uploadToken(this.f23784c.c(), this.d.g(), this.d.h());
             na.c(ma.i, "响应状态：" + uploadToken.statusCode);
             if (uploadToken.available()) {
                 String a2 = f7.a(uploadToken.data, uploadToken.charset);
@@ -94,11 +95,11 @@ public class g6 {
     public static final class c implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ e f37476a;
+        public final /* synthetic */ e f23785a;
         public final /* synthetic */ Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ da.a f37477c;
+        public final /* synthetic */ da.a f23786c;
         public final /* synthetic */ SharedPreferences d;
 
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/g6$c$a.class */
@@ -113,28 +114,28 @@ public class g6 {
                     na.c(ma.i, "清理本地缓存");
                     ia.a(c.this.d).a("reportFile", "");
                 }
-                c.this.f37477c.a();
-                boolean unused = g6.f37473a = false;
+                c.this.f23786c.a();
+                boolean unused = g6.f23782a = false;
             }
         }
 
         public c(e eVar, Context context, da.a aVar, SharedPreferences sharedPreferences) {
-            this.f37476a = eVar;
+            this.f23785a = eVar;
             this.b = context;
-            this.f37477c = aVar;
+            this.f23786c = aVar;
             this.d = sharedPreferences;
         }
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            if (g6.f37473a || !this.f37476a.a(this.b)) {
+            if (g6.f23782a || !this.f23785a.a(this.b)) {
                 na.c(ma.i, "正在上传中");
                 return;
             }
-            this.f37477c.a("上报中", (View.OnClickListener) null);
-            this.f37476a.a(new a());
-            boolean unused = g6.f37473a = true;
+            this.f23786c.a("上报中", (View.OnClickListener) null);
+            this.f23785a.a(new a());
+            boolean unused = g6.f23782a = true;
         }
     }
 
@@ -153,7 +154,7 @@ public class g6 {
                 na.c(ma.i, "清理本地缓存");
                 ia.a(this.b).a("reportFile", "");
             }
-            boolean unused = g6.f37473a = false;
+            boolean unused = g6.f23782a = false;
         }
     }
 
@@ -162,13 +163,13 @@ public class g6 {
         @Json(name = "name")
 
         /* renamed from: a  reason: collision with root package name */
-        public String f37478a;
+        public String f23787a;
         @Json(name = "token")
         public f b;
-        @Json(name = "create_time")
+        @Json(name = WBConstants.GAME_PARAMS_GAME_CREATE_TIME)
 
         /* renamed from: c  reason: collision with root package name */
-        public long f37479c;
+        public long f23788c;
         @Json(ignore = true)
         public q1 d;
 
@@ -207,9 +208,9 @@ public class g6 {
         }
 
         public e(q1 q1Var, String str) {
-            this.f37478a = str;
+            this.f23787a = str;
             this.d = q1Var;
-            this.f37479c = System.currentTimeMillis();
+            this.f23788c = System.currentTimeMillis();
         }
 
         private byte[] e() {
@@ -317,7 +318,7 @@ public class g6 {
                 z = false;
                 if (h.length > 0) {
                     na.c(ma.i, "开始上传文件到：" + f());
-                    NetResponse doRequest = NetManager.getInstance().doRequest(new NetRequest(NetMethod.PUT, f()).setPostData(h).setMapHeaders("Content-Length", "" + h.length).setMapHeaders("Authorization", this.b.f37482a).setMapHeaders("x-cos-content-sha1", xa.a(c4)).setTimeout(Const.SOCKET_CHECK_CHANNEL));
+                    NetResponse doRequest = NetManager.getInstance().doRequest(new NetRequest(NetMethod.PUT, f()).setPostData(h).setMapHeaders("Content-Length", "" + h.length).setMapHeaders("Authorization", this.b.f23791a).setMapHeaders("x-cos-content-sha1", xa.a(c4)).setTimeout(Const.SOCKET_CHECK_CHANNEL));
                     na.c(ma.i, "结束上传文件");
                     ga.d(c4);
                     ga.d(a2);
@@ -333,7 +334,7 @@ public class g6 {
         }
 
         public long a() {
-            return this.f37479c;
+            return this.f23788c;
         }
 
         public void a(Callback<Boolean> callback) {
@@ -358,11 +359,11 @@ public class g6 {
         }
 
         public String d() {
-            return "android-" + this.f37478a + "-" + this.f37479c;
+            return "android-" + this.f23787a + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.f23788c;
         }
 
         public String f() {
-            return "https://" + this.b.f37483c + BridgeUtil.SPLIT_MARK + c();
+            return "https://" + this.b.f23792c + "/" + c();
         }
     }
 
@@ -371,13 +372,13 @@ public class g6 {
         @Json(name = "token")
 
         /* renamed from: a  reason: collision with root package name */
-        public String f37482a;
+        public String f23791a;
         @Json(name = "expire")
         public String b;
         @Json(name = "host")
 
         /* renamed from: c  reason: collision with root package name */
-        public String f37483c;
+        public String f23792c;
 
         public boolean a() {
             try {
@@ -390,7 +391,7 @@ public class g6 {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x00ab, code lost:
-        if (r0.equals(r9.f37478a) == false) goto L24;
+        if (r0.equals(r9.f23787a) == false) goto L24;
      */
     /* JADX WARN: Removed duplicated region for block: B:16:0x00a0  */
     /*
@@ -411,11 +412,11 @@ public class g6 {
             return false;
         }
         if (!na.d(ma.i) || Build.VERSION.SDK_INT >= 30) {
-            if (f37473a || !eVar.a(context)) {
+            if (f23782a || !eVar.a(context)) {
                 return false;
             }
             eVar.a(new d(sharedPreferences));
-            f37473a = true;
+            f23782a = true;
             return false;
         }
         try {

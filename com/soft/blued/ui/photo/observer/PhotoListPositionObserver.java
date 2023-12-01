@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class PhotoListPositionObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static PhotoListPositionObserver f33118a = new PhotoListPositionObserver();
+    private static PhotoListPositionObserver f19427a = new PhotoListPositionObserver();
     private ArrayList<IPhotoListPositionObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/photo/observer/PhotoListPositionObserver$IPhotoListPositionObserver.class */
@@ -19,7 +19,7 @@ public class PhotoListPositionObserver {
     }
 
     public static PhotoListPositionObserver a() {
-        return f33118a;
+        return f19427a;
     }
 
     public void a(int i) {

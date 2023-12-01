@@ -48,7 +48,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
 
     @Override // java.util.AbstractList, java.util.List
     public String get(int i) {
-        return this.list.get(i);
+        return (String) this.list.get(i);
     }
 
     @Override // com.google.protobuf.LazyStringList
@@ -76,7 +76,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
         return this;
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
     public Iterator<String> iterator() {
         return new Iterator<String>() { // from class: com.google.protobuf.UnmodifiableLazyStringList.2
             Iterator<String> iter;

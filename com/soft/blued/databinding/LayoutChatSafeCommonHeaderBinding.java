@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutChatSafeCommonHeaderBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29386a;
+    private final FrameLayout f15696a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29386a;
+        return this.f15696a;
     }
 }

@@ -17,12 +17,12 @@ public class b extends a {
 
     private void b(int i) {
         View view;
-        if (i == 0 || (view = this.f41956a) == null || view.getMeasuredWidth() == 0 || this.f41956a.getMeasuredWidth() == i) {
+        if (i == 0 || (view = this.f28265a) == null || view.getMeasuredWidth() == 0 || this.f28265a.getMeasuredWidth() == i) {
             return;
         }
-        float measuredWidth = (i * 1.0f) / this.f41956a.getMeasuredWidth();
-        this.f41956a.setScaleX(measuredWidth);
-        this.f41956a.setScaleY(measuredWidth);
+        float measuredWidth = (i * 1.0f) / this.f28265a.getMeasuredWidth();
+        this.f28265a.setScaleX(measuredWidth);
+        this.f28265a.setScaleY(measuredWidth);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -38,7 +38,7 @@ public class b extends a {
             this.j = ((View) getParent()).getMeasuredWidth();
         }
         try {
-            if (this.f41956a != null) {
+            if (this.f28265a != null) {
                 int size = View.MeasureSpec.getSize(i);
                 int size2 = View.MeasureSpec.getSize(i2);
                 if (size >= 0 && size2 >= 0) {
@@ -48,8 +48,8 @@ public class b extends a {
                     b(size, size2);
                     int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((int) (e * d), 1073741824);
                     int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec((int) (d * f), 1073741824);
-                    this.f41956a.measure(makeMeasureSpec, makeMeasureSpec2);
-                    ViewGroup viewGroup = (ViewGroup) this.f41956a;
+                    this.f28265a.measure(makeMeasureSpec, makeMeasureSpec2);
+                    ViewGroup viewGroup = (ViewGroup) this.f28265a;
                     int i3 = 0;
                     while (true) {
                         int i4 = i3;
@@ -60,13 +60,13 @@ public class b extends a {
                         i3 = i4 + 1;
                     }
                     f();
-                    if (this.j == 0 || this.f41956a.getMeasuredWidth() == 0) {
-                        measuredWidth = this.f41956a.getMeasuredWidth();
-                        measuredHeight = this.f41956a.getMeasuredHeight();
+                    if (this.j == 0 || this.f28265a.getMeasuredWidth() == 0) {
+                        measuredWidth = this.f28265a.getMeasuredWidth();
+                        measuredHeight = this.f28265a.getMeasuredHeight();
                     } else {
                         b(this.j);
                         measuredWidth = this.j;
-                        measuredHeight = (int) (((this.j * 1.0f) / this.f41956a.getMeasuredWidth()) * this.f41956a.getMeasuredHeight());
+                        measuredHeight = (int) (((this.j * 1.0f) / this.f28265a.getMeasuredWidth()) * this.f28265a.getMeasuredHeight());
                     }
                     setMeasuredDimension(measuredWidth, measuredHeight);
                     return;

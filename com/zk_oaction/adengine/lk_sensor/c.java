@@ -9,11 +9,11 @@ public class c extends d {
     private static int i = 250;
 
     /* renamed from: a  reason: collision with root package name */
-    public float[] f41978a;
+    public float[] f28287a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f41979c;
+    public boolean f28288c;
     private float j;
     private float k;
     private float l;
@@ -37,7 +37,7 @@ public class c extends d {
                     return;
                 }
             }
-            this.f41978a = new float[3];
+            this.f28287a = new float[3];
         } catch (Throwable th) {
         }
     }
@@ -76,7 +76,7 @@ public class c extends d {
                     float degrees = (float) Math.toDegrees(sensorEvent.values[0] * f4);
                     float degrees2 = (float) Math.toDegrees(sensorEvent.values[1] * f4);
                     float degrees3 = (float) Math.toDegrees(f4 * sensorEvent.values[2]);
-                    if (!this.f41979c && (Math.abs(degrees) > 3.0f || Math.abs(degrees2) > 3.0f || Math.abs(degrees3) > 3.0f)) {
+                    if (!this.f28288c && (Math.abs(degrees) > 3.0f || Math.abs(degrees2) > 3.0f || Math.abs(degrees3) > 3.0f)) {
                         if (System.currentTimeMillis() - this.b <= i) {
                             return;
                         }
@@ -95,7 +95,7 @@ public class c extends d {
                     this.j = f5;
                     this.k = f6;
                     this.l = f7;
-                    this.f41979c = true;
+                    this.f28288c = true;
                 }
                 this.m = (float) sensorEvent.timestamp;
             }
@@ -106,7 +106,7 @@ public class c extends d {
     @Override // com.zk_oaction.adengine.lk_sensor.d
     public void a() {
         super.a();
-        this.f41979c = false;
+        this.f28288c = false;
         this.n = false;
         this.b = 0L;
         this.j = 0.0f;
@@ -130,13 +130,13 @@ public class c extends d {
                 String[] strArr = this.g;
                 if (strArr[i3] != null) {
                     if (this.e == 1) {
-                        float[] fArr = this.f41978a;
+                        float[] fArr = this.f28287a;
                         fArr[i3] = (fArr[i3] * 0.85f) + (sensorEvent.values[i3] * 0.15f);
                         bVar = this.d;
                         str = strArr[i3];
                         sb = new StringBuilder();
                         sb.append("");
-                        sb.append(this.f41978a[i3]);
+                        sb.append(this.f28287a[i3]);
                     } else {
                         bVar = this.d;
                         str = strArr[i3];

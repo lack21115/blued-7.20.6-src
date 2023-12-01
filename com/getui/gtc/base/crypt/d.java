@@ -10,11 +10,11 @@ import javax.crypto.spec.IvParameterSpec;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    a f21904a;
+    a f8297a;
     c b;
 
     /* renamed from: c  reason: collision with root package name */
-    Map<String, SecretKey> f21905c = new HashMap();
+    Map<String, SecretKey> f8298c = new HashMap();
     Map<String, SecretKey> d = new HashMap();
     Map<String, KeyPair> e = new HashMap();
     Map<String, IvParameterSpec> f = new HashMap();
@@ -26,7 +26,7 @@ public final class d {
             if (this.e.containsKey(digestToHexString)) {
                 return this.e.get(digestToHexString);
             }
-            KeyPair a2 = this.f21904a.a(null, digestToHexString, false);
+            KeyPair a2 = this.f8297a.a(null, digestToHexString, false);
             if (a2 == null) {
                 return null;
             }
@@ -62,14 +62,14 @@ public final class d {
     public final SecretKey a(String str) {
         try {
             String digestToHexString = CryptTools.digestToHexString("MD5", (str + "-aes128alias").getBytes());
-            if (this.f21905c.containsKey(digestToHexString)) {
-                return this.f21905c.get(digestToHexString);
+            if (this.f8298c.containsKey(digestToHexString)) {
+                return this.f8298c.get(digestToHexString);
             }
-            SecretKey a2 = this.f21904a.a(digestToHexString);
+            SecretKey a2 = this.f8297a.a(digestToHexString);
             if (a2 == null) {
                 return null;
             }
-            this.f21905c.put(digestToHexString, a2);
+            this.f8298c.put(digestToHexString, a2);
             return a2;
         } catch (Throwable th) {
             return null;

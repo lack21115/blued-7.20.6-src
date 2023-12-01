@@ -19,18 +19,18 @@ public class a {
     private static final String b = a.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f7913a;
+    protected Context f5073a;
 
     public a(Context context) {
         if (context == null) {
-            this.f7913a = com.anythink.expressad.foundation.b.a.b().d();
+            this.f5073a = com.anythink.expressad.foundation.b.a.b().d();
         } else {
-            this.f7913a = context.getApplicationContext();
+            this.f5073a = context.getApplicationContext();
         }
     }
 
     private void a(int i, String str, b bVar, e eVar) {
-        String str2 = bVar.b().get("sign");
+        String str2 = bVar.b().get(com.anythink.expressad.d.a.b.d);
         String str3 = str2;
         if (str2 == null) {
             str3 = "";
@@ -53,7 +53,7 @@ public class a {
         b bVar3 = bVar2;
         a(str, bVar2);
         b bVar4 = bVar2;
-        String str2 = bVar2.b().get("sign");
+        String str2 = bVar2.b().get(com.anythink.expressad.d.a.b.d);
         String str3 = str2;
         if (str2 == null) {
             str3 = "";
@@ -155,7 +155,7 @@ public class a {
         b bVar4 = bVar3;
         a(str, bVar3);
         b bVar5 = bVar3;
-        String str2 = bVar3.b().get("sign");
+        String str2 = bVar3.b().get(com.anythink.expressad.d.a.b.d);
         String str3 = str2;
         if (str2 == null) {
             str3 = "";

@@ -21,7 +21,7 @@ import java.util.Map;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    static final GLConstants.PixelFormatType[] f36674a = {GLConstants.PixelFormatType.I420, GLConstants.PixelFormatType.NV21, GLConstants.PixelFormatType.NV12};
+    static final GLConstants.PixelFormatType[] f22983a = {GLConstants.PixelFormatType.I420, GLConstants.PixelFormatType.NV21, GLConstants.PixelFormatType.NV12};
     final com.tencent.liteav.videobase.videobase.a d;
     j g;
     com.tencent.liteav.videobase.frame.i i;
@@ -31,7 +31,7 @@ public final class g {
     final FloatBuffer b = OpenGlUtils.createNormalCubeVerticesBuffer();
 
     /* renamed from: c  reason: collision with root package name */
-    final FloatBuffer f36675c = OpenGlUtils.createTextureCoordsBuffer(Rotation.NORMAL, false, false);
+    final FloatBuffer f22984c = OpenGlUtils.createTextureCoordsBuffer(Rotation.NORMAL, false, false);
     final Map<GLConstants.PixelFormatType, List<a>> e = new HashMap();
     final Map<GLConstants.PixelFormatType, com.tencent.liteav.videobase.a.b> f = new HashMap();
 
@@ -41,23 +41,23 @@ public final class g {
     public static final /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f36676a;
+        static final /* synthetic */ int[] f22985a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[GLConstants.PixelFormatType.values().length];
-            f36676a = iArr;
+            f22985a = iArr;
             try {
                 iArr[GLConstants.PixelFormatType.I420.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f36676a[GLConstants.PixelFormatType.NV12.ordinal()] = 2;
+                f22985a[GLConstants.PixelFormatType.NV12.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f36676a[GLConstants.PixelFormatType.NV21.ordinal()] = 3;
+                f22985a[GLConstants.PixelFormatType.NV21.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -68,16 +68,16 @@ public final class g {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final GLConstants.PixelBufferType f36677a;
+        public final GLConstants.PixelBufferType f22986a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final e.a f36678c;
+        public final e.a f22987c;
 
         public a(GLConstants.PixelBufferType pixelBufferType, int i, e.a aVar) {
-            this.f36677a = pixelBufferType;
+            this.f22986a = pixelBufferType;
             this.b = i;
-            this.f36678c = aVar;
+            this.f22987c = aVar;
         }
     }
 
@@ -86,7 +86,7 @@ public final class g {
     }
 
     private void a(GLConstants.PixelFormatType pixelFormatType, com.tencent.liteav.videobase.frame.d dVar, Object obj) {
-        int i = this.d.f36668a;
+        int i = this.d.f22977a;
         int i2 = this.d.b;
         if (this.k == -1) {
             this.k = OpenGlUtils.generateFrameBufferId();
@@ -119,7 +119,7 @@ public final class g {
                 i = i2;
                 if (!it.hasNext()) {
                     break;
-                } else if (it.next().f36677a == pixelBufferType) {
+                } else if (it.next().f22986a == pixelBufferType) {
                     i2++;
                 }
             }
@@ -177,7 +177,7 @@ public final class g {
                     break;
                 }
                 a next = it.next();
-                if (next.b == i && next.f36678c == aVar) {
+                if (next.b == i && next.f22987c == aVar) {
                     entry.getValue().remove(next);
                     break;
                 }
@@ -215,8 +215,8 @@ public final class g {
         }
         pixelFrame.setTimestamp(j);
         for (a aVar : list) {
-            if (aVar.f36677a == pixelFrame.getPixelBufferType()) {
-                aVar.f36678c.onFrameConverted(aVar.b, pixelFrame);
+            if (aVar.f22986a == pixelFrame.getPixelBufferType()) {
+                aVar.f22987c.onFrameConverted(aVar.b, pixelFrame);
             }
         }
     }

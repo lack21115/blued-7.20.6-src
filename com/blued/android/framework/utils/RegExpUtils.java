@@ -17,24 +17,20 @@ public class RegExpUtils {
     /* renamed from: com.blued.android.framework.utils.RegExpUtils$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/RegExpUtils$1.class */
     class AnonymousClass1 extends ClickableSpan {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ TopicClickSpanListener f10109a;
+        final /* synthetic */ TopicClickSpanListener a;
         final /* synthetic */ String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int f10110c;
+        final /* synthetic */ int c;
 
         @Override // android.text.style.ClickableSpan
         public void onClick(View view) {
             Selection.removeSelection((Spannable) ((TextView) view).getText());
-            this.f10109a.a(this.b);
+            this.a.a(this.b);
         }
 
         @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
         public void updateDrawState(TextPaint textPaint) {
             super.updateDrawState(textPaint);
-            textPaint.setColor(this.f10110c);
+            textPaint.setColor(this.c);
             textPaint.setUnderlineText(false);
             textPaint.clearShadowLayer();
         }

@@ -73,7 +73,6 @@ import com.autonavi.amap.mapcore.IPoint;
 import com.autonavi.amap.mapcore.interfaces.IAMap;
 import com.autonavi.base.ae.gmap.AMapAppRequestParam;
 import com.autonavi.base.ae.gmap.GLMapState;
-import com.igexin.push.config.c;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,23 +104,19 @@ public final class AMap {
     /* renamed from: com.amap.api.maps.AMap$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/AMap$2.class */
     public final class AnonymousClass2 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ OnMapSnapshotListener f5496a;
+        final /* synthetic */ OnMapSnapshotListener a;
         final /* synthetic */ b b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Runnable f5497c;
+        final /* synthetic */ Runnable c;
 
         AnonymousClass2(OnMapSnapshotListener onMapSnapshotListener, b bVar, Runnable runnable) {
-            this.f5496a = onMapSnapshotListener;
+            this.a = onMapSnapshotListener;
             this.b = bVar;
-            this.f5497c = runnable;
+            this.c = runnable;
         }
 
         private ViewGroup a() {
             if (AMap.this.mapDelegate instanceof l) {
-                ViewGroup viewGroup = (ViewGroup) ((l) AMap.this.mapDelegate).getGLMapView().getParent();
+                ViewGroup viewGroup = (ViewGroup) AMap.this.mapDelegate.getGLMapView().getParent();
                 FrameLayout frameLayout = new FrameLayout(viewGroup.getContext());
                 frameLayout.setBackgroundColor(-1);
                 frameLayout.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
@@ -171,7 +166,7 @@ public final class AMap {
             AnimationSet animationSet = new AnimationSet(true);
             animationSet.addAnimation(scaleAnimation);
             animationSet.addAnimation(translateAnimation);
-            animationSet.setStartOffset(c.j);
+            animationSet.setStartOffset(1500L);
             animationSet.setDuration(200L);
             animationSet.setFillBefore(true);
             animationSet.setFillAfter(true);
@@ -200,8 +195,8 @@ public final class AMap {
 
         @Override // java.lang.Runnable
         public final void run() {
-            final ViewGroup a2 = a();
-            a(a2, new Runnable() { // from class: com.amap.api.maps.AMap.2.3
+            final ViewGroup a = a();
+            a(a, new Runnable() { // from class: com.amap.api.maps.AMap.2.3
                 @Override // java.lang.Runnable
                 public final void run() {
                     AMap.this.mapDelegate.getMapScreenShot(new OnMapScreenShotListener() { // from class: com.amap.api.maps.AMap.2.3.1
@@ -211,12 +206,12 @@ public final class AMap {
 
                         @Override // com.amap.api.maps.AMap.OnMapScreenShotListener
                         public final void onMapScreenShot(Bitmap bitmap, int i) {
-                            AnonymousClass2.this.a(a2, bitmap);
-                            AnonymousClass2.this.f5496a.onMapTile(AnonymousClass2.this.b.b(), bitmap, i);
+                            AnonymousClass2.this.a(a, bitmap);
+                            AnonymousClass2.this.a.onMapTile(AnonymousClass2.this.b.b(), bitmap, i);
                             if (AnonymousClass2.this.b.d()) {
-                                AMap.this.a(AnonymousClass2.this.b, AnonymousClass2.this.f5496a, AnonymousClass2.this.f5497c);
+                                AMap.this.a(AnonymousClass2.this.b, AnonymousClass2.this.a, AnonymousClass2.this.c);
                             } else {
-                                AnonymousClass2.this.f5497c.run();
+                                AnonymousClass2.this.c.run();
                             }
                         }
                     }, AnonymousClass2.this.b.e());
@@ -356,9 +351,7 @@ public final class AMap {
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/AMap$a.class */
     final class a {
         private Size b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private CameraPosition f5506c;
+        private CameraPosition c;
         private int d;
 
         private a() {
@@ -370,18 +363,18 @@ public final class AMap {
 
         public final void a() {
             if (AMap.this.mapDelegate instanceof l) {
-                ((l) AMap.this.mapDelegate).b(this.b);
+                AMap.this.mapDelegate.b(this.b);
             }
-            AMap.this.animateCamera(CameraUpdateFactory.newCameraPosition(this.f5506c));
+            AMap.this.animateCamera(CameraUpdateFactory.newCameraPosition(this.c));
             AMap.this.getUiSettings().setLogoPosition(this.d);
         }
 
         public final void a(Size size) {
             this.d = AMap.this.getUiSettings().getLogoPosition();
             AMap.this.getUiSettings().setLogoPosition(2);
-            this.f5506c = CameraPosition.builder(AMap.this.getCameraPosition()).build();
+            this.c = CameraPosition.builder(AMap.this.getCameraPosition()).build();
             if (AMap.this.mapDelegate instanceof l) {
-                this.b = ((l) AMap.this.mapDelegate).a(size);
+                this.b = AMap.this.mapDelegate.a(size);
             }
         }
     }
@@ -390,9 +383,7 @@ public final class AMap {
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/AMap$b.class */
     public final class b {
         private SizeF b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private RectF f5508c;
+        private RectF c;
         private double d;
         private LatLng e;
         private LatLng f;
@@ -420,7 +411,7 @@ public final class AMap {
             if (this.b.getHeight() % 4096.0f > 0.0f) {
                 this.k++;
             }
-            this.f5508c = new RectF(0.0f, 0.0f, this.b.getWidth() / this.j, this.b.getHeight() / this.k);
+            this.c = new RectF(0.0f, 0.0f, this.b.getWidth() / this.j, this.b.getHeight() / this.k);
             this.d = Math.atan((this.h.y - this.g.y) / (this.h.x - this.g.x));
         }
 
@@ -438,38 +429,38 @@ public final class AMap {
         }
 
         private LatLng b(double d, double d2) {
-            IPoint a2 = a(d, d2);
+            IPoint a = a(d, d2);
             DPoint dPoint = new DPoint();
-            GLMapState.geo2LonLat(a2.x, a2.y, dPoint);
+            GLMapState.geo2LonLat(a.x, a.y, dPoint);
             return new LatLng(dPoint.y, dPoint.x);
         }
 
         public final CameraUpdate a() {
             int i = this.l;
             if (i == 0) {
-                return CameraUpdateFactory.newCameraPosition(new CameraPosition(b(this.f5508c.centerX(), this.f5508c.centerY()), AMap.this.getZoomToSpanLevel(a(0L, ((long) this.g.distance(this.h)) / this.j), a(((long) this.i.distance(this.g)) / this.k, 0L)), 0.0f, (float) ((this.d * 180.0d) / 3.141592653589793d)));
+                return CameraUpdateFactory.newCameraPosition(new CameraPosition(b(this.c.centerX(), this.c.centerY()), AMap.this.getZoomToSpanLevel(a(0L, ((long) this.g.distance(this.h)) / this.j), a(((long) this.i.distance(this.g)) / this.k, 0L)), 0.0f, (float) ((this.d * 180.0d) / 3.141592653589793d)));
             }
             int i2 = this.j;
-            return (i - 1) / i2 < i / i2 ? CameraUpdateFactory.scrollBy((-this.f5508c.width()) * (this.j - 1), this.f5508c.height()) : CameraUpdateFactory.scrollBy(this.f5508c.width(), 0.0f);
+            return (i - 1) / i2 < i / i2 ? CameraUpdateFactory.scrollBy((-this.c.width()) * (this.j - 1), this.c.height()) : CameraUpdateFactory.scrollBy(this.c.width(), 0.0f);
         }
 
         public final Rect b() {
-            return new Rect((int) this.f5508c.left, (int) this.f5508c.top, (int) this.f5508c.right, (int) this.f5508c.bottom);
+            return new Rect((int) this.c.left, (int) this.c.top, (int) this.c.right, (int) this.c.bottom);
         }
 
         public final Size c() {
-            return new Size((int) this.f5508c.width(), (int) this.f5508c.height());
+            return new Size((int) this.c.width(), (int) this.c.height());
         }
 
         public final boolean d() {
-            if (this.f5508c.right + this.f5508c.width() <= this.b.getWidth()) {
-                RectF rectF = this.f5508c;
+            if (this.c.right + this.c.width() <= this.b.getWidth()) {
+                RectF rectF = this.c;
                 rectF.offset(rectF.width(), 0.0f);
-            } else if (this.f5508c.bottom + this.f5508c.height() > this.b.getHeight()) {
+            } else if (this.c.bottom + this.c.height() > this.b.getHeight()) {
                 return false;
             } else {
-                RectF rectF2 = this.f5508c;
-                rectF2.offset(-rectF2.left, this.f5508c.height());
+                RectF rectF2 = this.c;
+                rectF2.offset(-rectF2.left, this.c.height());
             }
             this.l++;
             return true;
@@ -873,8 +864,8 @@ public final class AMap {
     }
 
     public final void getMapRegionSnapshot(LatLng latLng, LatLng latLng2, Size size, final OnMapSnapshotListener onMapSnapshotListener) {
-        IAMap iAMap = this.mapDelegate;
-        if ((iAMap instanceof l) && ((l) iAMap).getMapConfig().isTerrainEnable()) {
+        l lVar = this.mapDelegate;
+        if ((lVar instanceof l) && lVar.getMapConfig().isTerrainEnable()) {
             onMapSnapshotListener.onFinish();
             return;
         }

@@ -4,19 +4,19 @@ package com.anythink.expressad.foundation.d;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f7779a;
+    private float f4939a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f7780c;
+    private float f4940c;
     private float d;
 
     private float a() {
-        return this.f7779a;
+        return this.f4939a;
     }
 
     private void a(float f) {
-        this.f7779a = f;
+        this.f4939a = f;
     }
 
     private float b() {
@@ -28,11 +28,11 @@ public final class e {
     }
 
     private float c() {
-        return this.f7780c;
+        return this.f4940c;
     }
 
     private void c(float f) {
-        this.f7780c = f;
+        this.f4940c = f;
     }
 
     private float d() {

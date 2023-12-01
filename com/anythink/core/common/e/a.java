@@ -7,13 +7,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f6611a;
+    public Context a;
     public com.anythink.core.common.j b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f6612c;
+    public String c;
     public String d;
     public int e;
     public long f;
@@ -38,8 +34,8 @@ public class a {
 
     private a d(List<ai> list) {
         a aVar = new a();
-        aVar.f6611a = this.f6611a;
-        aVar.f6612c = this.f6612c;
+        aVar.a = this.a;
+        aVar.c = this.c;
         aVar.d = this.d;
         aVar.e = this.e;
         aVar.g = this.g;

@@ -28,13 +28,9 @@ import kotlinx.coroutines.CoroutineScopeKt;
 /* renamed from: com.blued.android.module.common.adx.bd.native.BDNativeExpressAdAdapter  reason: invalid package */
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/bd/native/BDNativeExpressAdAdapter.class */
 public final class BDNativeExpressAdAdapter extends BaseNativeExpressAd {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BluedADExtra f10523a;
+    private BluedADExtra a;
     private ADSize b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ADListener f10524c;
+    private ADListener c;
     private final Context d;
     private BDNativeExpressAdDataAdapter e;
     private int f;
@@ -44,21 +40,19 @@ public final class BDNativeExpressAdAdapter extends BaseNativeExpressAd {
         Intrinsics.e(adExtra, "adExtra");
         Intrinsics.e(adSize, "adSize");
         Intrinsics.e(listener, "listener");
-        this.f10523a = adExtra;
+        this.a = adExtra;
         this.b = adSize;
-        this.f10524c = listener;
+        this.c = listener;
         this.d = context;
         this.f = -1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(final ADListener aDListener) {
-        new BaiduNativeManager(this.d, this.f10523a.third_id).loadExpressAd(new RequestParameters.Builder().setWidth(this.b.getWidth()).setHeight(this.b.getHeight()).build(), new BaiduNativeManager.ExpressAdListener() { // from class: com.blued.android.module.common.adx.bd.native.BDNativeExpressAdAdapter$loadExpressAd$1
-            @Override // com.baidu.mobads.sdk.api.BaiduNativeManager.ExpressAdListener
+        new BaiduNativeManager(this.d, this.a.third_id).loadExpressAd(new RequestParameters.Builder().setWidth(this.b.getWidth()).setHeight(this.b.getHeight()).build(), new BaiduNativeManager.ExpressAdListener() { // from class: com.blued.android.module.common.adx.bd.native.BDNativeExpressAdAdapter$loadExpressAd$1
             public void onLpClosed() {
             }
 
-            @Override // com.baidu.mobads.sdk.api.BaiduNativeManager.ExpressAdListener
             public void onNativeFail(int i, String msg) {
                 Intrinsics.e(msg, "msg");
                 BluedADExtra e = BDNativeExpressAdAdapter.this.e();
@@ -67,7 +61,6 @@ public final class BDNativeExpressAdAdapter extends BaseNativeExpressAd {
                 aDListener.onADEvent(new ADEvent(101, BDNativeExpressAdAdapter.this));
             }
 
-            @Override // com.baidu.mobads.sdk.api.BaiduNativeManager.ExpressAdListener
             public void onNativeLoad(List<? extends ExpressResponse> list) {
                 Context context;
                 ADListener aDListener2;
@@ -83,7 +76,7 @@ public final class BDNativeExpressAdAdapter extends BaseNativeExpressAd {
                 context = BDNativeExpressAdAdapter.this.d;
                 BDNativeExpressAdDataAdapter bDNativeExpressAdDataAdapter = new BDNativeExpressAdDataAdapter(context, expressResponse, BDNativeExpressAdAdapter.this.e());
                 BDNativeExpressAdAdapter.this.e = bDNativeExpressAdDataAdapter;
-                aDListener2 = BDNativeExpressAdAdapter.this.f10524c;
+                aDListener2 = BDNativeExpressAdAdapter.this.c;
                 bDNativeExpressAdDataAdapter.setAdListener(aDListener2);
                 try {
                     BDNativeExpressAdAdapter bDNativeExpressAdAdapter = BDNativeExpressAdAdapter.this;
@@ -102,7 +95,6 @@ public final class BDNativeExpressAdAdapter extends BaseNativeExpressAd {
                 Log.v("adx", "「百度信息流」广告「获取成功」 广告位id:" + ((Object) BDNativeExpressAdAdapter.this.e().third_id) + ' ' + str);
             }
 
-            @Override // com.baidu.mobads.sdk.api.BaiduNativeManager.ExpressAdListener
             public void onNoAd(int i, String msg) {
                 Intrinsics.e(msg, "msg");
                 BluedADExtra e = BDNativeExpressAdAdapter.this.e();
@@ -111,11 +103,9 @@ public final class BDNativeExpressAdAdapter extends BaseNativeExpressAd {
                 aDListener.onADEvent(new ADEvent(101, BDNativeExpressAdAdapter.this));
             }
 
-            @Override // com.baidu.mobads.sdk.api.BaiduNativeManager.ExpressAdListener
             public void onVideoDownloadFailed() {
             }
 
-            @Override // com.baidu.mobads.sdk.api.BaiduNativeManager.ExpressAdListener
             public void onVideoDownloadSuccess() {
                 aDListener.onADEvent(new ADEvent(201, new Object[0]));
             }
@@ -142,21 +132,21 @@ public final class BDNativeExpressAdAdapter extends BaseNativeExpressAd {
     @Override // com.blued.android.module.common.adx.base.BaseNativeExpressAd
     public void a(Map<String, ? extends Object> map) {
         Intrinsics.e(map, "map");
-        NativeExpressADView a2 = a();
-        if (a2 == null) {
+        NativeExpressADView a = a();
+        if (a == null) {
             return;
         }
-        a2.sendWinNotification(map);
+        a.sendWinNotification(map);
     }
 
     @Override // com.blued.android.module.common.adx.base.BaseNativeExpressAd
     public void b(Map<String, ? extends Object> map) {
         Intrinsics.e(map, "map");
-        NativeExpressADView a2 = a();
-        if (a2 == null) {
+        NativeExpressADView a = a();
+        if (a == null) {
             return;
         }
-        a2.sendLossNotification(map);
+        a.sendLossNotification(map);
     }
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
@@ -166,10 +156,10 @@ public final class BDNativeExpressAdAdapter extends BaseNativeExpressAd {
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
     public Map<String, Object> d() {
-        return MapsKt.a(TuplesKt.a("original_ad", this.f10523a));
+        return MapsKt.a(TuplesKt.a("original_ad", this.a));
     }
 
     public final BluedADExtra e() {
-        return this.f10523a;
+        return this.a;
     }
 }

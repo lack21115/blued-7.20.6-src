@@ -36,19 +36,19 @@ public class HelloListQuickAdapter extends HelloGridQuickAdapter {
     @Override // com.soft.blued.ui.msg.adapter.HelloGridQuickAdapter, com.soft.blued.ui.find.adapter.PeopleGridQuickAdapter
     public void b(final BaseViewHolder baseViewHolder, final UserFindResult userFindResult) {
         final ImageView imageView = (ImageView) baseViewHolder.getView(2131364232);
-        TextView textView = (TextView) baseViewHolder.getView(2131368652);
-        TextView textView2 = (TextView) baseViewHolder.getView(2131363246);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.name_view);
+        TextView textView2 = (TextView) baseViewHolder.getView(R.id.distance_view);
         TextView textView3 = (TextView) baseViewHolder.getView(R.id.online_time_view);
-        TextView textView4 = (TextView) baseViewHolder.getView(2131362003);
-        TextView textView5 = (TextView) baseViewHolder.getView(2131364242);
-        TextView textView6 = (TextView) baseViewHolder.getView(2131373390);
+        TextView textView4 = (TextView) baseViewHolder.getView(R.id.age_view);
+        TextView textView5 = (TextView) baseViewHolder.getView(R.id.height_view);
+        TextView textView6 = (TextView) baseViewHolder.getView(R.id.weight_view);
         TextView textView7 = (TextView) baseViewHolder.getView(R.id.sign_view);
-        ImageView imageView2 = (ImageView) baseViewHolder.getView(2131364720);
-        ImageView imageView3 = (ImageView) baseViewHolder.getView(2131364625);
+        ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.img_verify);
+        ImageView imageView3 = (ImageView) baseViewHolder.getView(R.id.img_online);
         ImageView imageView4 = (ImageView) baseViewHolder.getView(R.id.list_call_icon);
-        ImageView imageView5 = (ImageView) baseViewHolder.getView(2131364459);
+        ImageView imageView5 = (ImageView) baseViewHolder.getView(R.id.img_blued_medal);
         View view = baseViewHolder.getView(R.id.layout_friend);
-        ImageView imageView6 = (ImageView) baseViewHolder.getView(2131364588);
+        ImageView imageView6 = (ImageView) baseViewHolder.getView(R.id.img_live_new_icon);
         LinearLayout linearLayout = (LinearLayout) baseViewHolder.getView(R.id.ll_personal_info);
         imageView2.setVisibility(0);
         UserInfoHelper.b(imageView2, userFindResult.vbadge, 4, 8);

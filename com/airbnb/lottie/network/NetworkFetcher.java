@@ -6,6 +6,7 @@ import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieCompositionFactory;
 import com.airbnb.lottie.LottieResult;
 import com.airbnb.lottie.utils.Logger;
+import com.alibaba.fastjson.support.spring.FastJsonJsonView;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,19 +19,15 @@ import java.util.zip.ZipInputStream;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/network/NetworkFetcher.class */
 public class NetworkFetcher {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f4396a;
+    private final Context a;
     private final String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final NetworkCache f4397c;
+    private final NetworkCache c;
 
     private NetworkFetcher(Context context, String str) {
         Context applicationContext = context.getApplicationContext();
-        this.f4396a = applicationContext;
+        this.a = applicationContext;
         this.b = str;
-        this.f4397c = new NetworkCache(applicationContext, str);
+        this.c = new NetworkCache(applicationContext, str);
     }
 
     public static LottieResult<LottieComposition> a(Context context, String str) {
@@ -38,15 +35,15 @@ public class NetworkFetcher {
     }
 
     private LottieComposition b() {
-        Pair<FileExtension, InputStream> a2 = this.f4397c.a();
-        if (a2 == null) {
+        Pair<FileExtension, InputStream> a = this.c.a();
+        if (a == null) {
             return null;
         }
-        FileExtension fileExtension = a2.first;
-        InputStream inputStream = a2.second;
-        LottieResult<LottieComposition> a3 = fileExtension == FileExtension.ZIP ? LottieCompositionFactory.a(new ZipInputStream(inputStream), this.b) : LottieCompositionFactory.a(inputStream, this.b);
-        if (a3.a() != null) {
-            return a3.a();
+        FileExtension fileExtension = (FileExtension) a.first;
+        InputStream inputStream = (InputStream) a.second;
+        LottieResult<LottieComposition> a2 = fileExtension == FileExtension.ZIP ? LottieCompositionFactory.a(new ZipInputStream(inputStream), this.b) : LottieCompositionFactory.a(inputStream, this.b);
+        if (a2.a() != null) {
+            return a2.a();
         }
         return null;
     }
@@ -62,7 +59,7 @@ public class NetworkFetcher {
     /* JADX WARN: Finally extract failed */
     private LottieResult d() throws IOException {
         FileExtension fileExtension;
-        LottieResult<LottieComposition> a2;
+        LottieResult<LottieComposition> a;
         Logger.a("Fetching " + this.b);
         HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(this.b).openConnection();
         httpURLConnection.setRequestMethod("GET");
@@ -75,7 +72,7 @@ public class NetworkFetcher {
                 int hashCode = contentType.hashCode();
                 boolean z2 = true;
                 if (hashCode != -1248325150) {
-                    if (hashCode == -43840953 && contentType.equals("application/json")) {
+                    if (hashCode == -43840953 && contentType.equals(FastJsonJsonView.DEFAULT_CONTENT_TYPE)) {
                         z = true;
                     }
                 } else if (contentType.equals("application/zip")) {
@@ -84,23 +81,23 @@ public class NetworkFetcher {
                 if (z) {
                     Logger.a("Received json response.");
                     fileExtension = FileExtension.JSON;
-                    a2 = LottieCompositionFactory.a(new FileInputStream(new File(this.f4397c.a(httpURLConnection.getInputStream(), fileExtension).getAbsolutePath())), this.b);
+                    a = LottieCompositionFactory.a(new FileInputStream(new File(this.c.a(httpURLConnection.getInputStream(), fileExtension).getAbsolutePath())), this.b);
                 } else {
                     Logger.a("Handling zip response.");
                     fileExtension = FileExtension.ZIP;
-                    a2 = LottieCompositionFactory.a(new ZipInputStream(new FileInputStream(this.f4397c.a(httpURLConnection.getInputStream(), fileExtension))), this.b);
+                    a = LottieCompositionFactory.a(new ZipInputStream(new FileInputStream(this.c.a(httpURLConnection.getInputStream(), fileExtension))), this.b);
                 }
-                if (a2.a() != null) {
-                    this.f4397c.a(fileExtension);
+                if (a.a() != null) {
+                    this.c.a(fileExtension);
                 }
                 StringBuilder sb = new StringBuilder();
                 sb.append("Completed fetch from network. Success: ");
-                if (a2.a() == null) {
+                if (a.a() == null) {
                     z2 = false;
                 }
                 sb.append(z2);
                 Logger.a(sb.toString());
-                return a2;
+                return a;
             }
             int responseCode = httpURLConnection.getResponseCode();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getErrorStream()));

@@ -8,11 +8,11 @@ import java.io.File;
 class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27471a;
+    private Context f13783a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public a(Context context) {
-        this.f27471a = context;
+        this.f13783a = context;
     }
 
     private boolean a(String str, String str2) {
@@ -42,7 +42,7 @@ class a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
-        SharedPreferences sharedPreferences = this.f27471a.getSharedPreferences("plcrash", 0);
+        SharedPreferences sharedPreferences = this.f13783a.getSharedPreferences("plcrash", 0);
         if (a("3.1.1", sharedPreferences.getString("lastVersion", "3.1.1"))) {
             f.a().b();
             SharedPreferences.Editor edit = sharedPreferences.edit();

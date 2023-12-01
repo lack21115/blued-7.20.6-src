@@ -47,7 +47,6 @@ import com.blued.android.module.live_china.view.PopGrabBoxView;
 import com.blued.android.module.live_china.view.progress.SlopeProgress;
 import com.bytedance.applog.tracker.Tracker;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -57,13 +56,9 @@ import java.util.Set;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/GrabBoxView.class */
 public class GrabBoxView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public BaseFragment f14282a;
+    public BaseFragment a;
     public ActivityFragmentActive b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public boolean f14283c;
+    public boolean c;
     PopGrabBoxView.DismissLisnter d;
     private View e;
     private Context f;
@@ -86,27 +81,25 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/GrabBoxView$DurationThread.class */
     public class DurationThread implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        GrabBoxModel f14289a;
+        GrabBoxModel a;
 
         public DurationThread(GrabBoxModel grabBoxModel) {
-            this.f14289a = grabBoxModel;
+            this.a = grabBoxModel;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            if (this.f14289a == null) {
+            if (this.a == null) {
                 return;
             }
-            if (GrabBoxView.this.q != null && this.f14289a != GrabBoxView.this.q) {
+            if (GrabBoxView.this.q != null && this.a != GrabBoxView.this.q) {
                 GrabBoxView.this.q.duration--;
             }
-            this.f14289a.duration--;
-            if (this.f14289a.duration == 0) {
-                GrabBoxView.this.b(this.f14289a);
+            this.a.duration--;
+            if (this.a.duration == 0) {
+                GrabBoxView.this.b(this.a);
             } else {
-                GrabBoxView.this.s.postDelayed(new DurationThread(this.f14289a), 1000L);
+                GrabBoxView.this.s.postDelayed(new DurationThread(this.a), 1000L);
             }
         }
     }
@@ -114,30 +107,28 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/GrabBoxView$MyChronometerTickListener.class */
     public class MyChronometerTickListener implements Chronometer.OnChronometerTickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        GrabBoxModel f14290a;
+        GrabBoxModel a;
 
         public MyChronometerTickListener(GrabBoxModel grabBoxModel) {
-            this.f14290a = grabBoxModel;
+            this.a = grabBoxModel;
         }
 
         @Override // android.widget.Chronometer.OnChronometerTickListener
         public void onChronometerTick(Chronometer chronometer) {
-            GrabBoxModel grabBoxModel = this.f14290a;
+            GrabBoxModel grabBoxModel = this.a;
             if (grabBoxModel == null) {
                 return;
             }
             grabBoxModel.duration--;
-            Logger.a("drb", "onChronometerTick id duration = ", this.f14290a.box_id, "--", Integer.valueOf(this.f14290a.duration));
-            if (this.f14290a.duration > 0) {
+            Logger.a("drb", "onChronometerTick id duration = ", this.a.box_id, "--", Integer.valueOf(this.a.duration));
+            if (this.a.duration > 0) {
                 GrabBoxView.this.l.setVisibility(0);
-                chronometer.setText(LiveTimeAndDateUtils.a(this.f14290a.duration, false));
+                chronometer.setText(LiveTimeAndDateUtils.a(this.a.duration, false));
                 return;
             }
             chronometer.stop();
             GrabBoxView.this.l.setVisibility(8);
-            GrabBoxView.this.b(this.f14290a);
+            GrabBoxView.this.b(this.a);
             Logger.a("drb", "chronometer.stop");
         }
     }
@@ -154,10 +145,10 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
         this.d = new PopGrabBoxView.DismissLisnter() { // from class: com.blued.android.module.live_china.view.GrabBoxView.1
             @Override // com.blued.android.module.live_china.view.PopGrabBoxView.DismissLisnter
             public void a() {
-                if (GrabBoxView.this.f14282a instanceof PlayingOnliveBaseModeFragment) {
+                if (GrabBoxView.this.a instanceof PlayingOnliveBaseModeFragment) {
                     LiveRefreshUIObserver.a().d(0);
                     LiveSetDataObserver.a().e(0);
-                } else if (GrabBoxView.this.f14282a instanceof RecordingOnliveFragment) {
+                } else if (GrabBoxView.this.a instanceof RecordingOnliveFragment) {
                     if (GrabBoxView.this.n.x) {
                         GrabBoxView.this.n.i(0);
                     } else {
@@ -202,8 +193,8 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
             return;
         }
         Logger.a("drb", "下一个宝箱也是开启状态，继续倒计时 宝箱id为 = ", grabBoxModel.box_id);
-        LiveMsgSendManager a2 = LiveMsgSendManager.a();
-        a2.d("下一个宝箱也是开启状态，继续倒计时 宝箱id为 = " + grabBoxModel.box_id);
+        LiveMsgSendManager a = LiveMsgSendManager.a();
+        a.d("下一个宝箱也是开启状态，继续倒计时 宝箱id为 = " + grabBoxModel.box_id);
         this.s.removeCallbacksAndMessages(null);
         this.s.postDelayed(new DurationThread(this.q), 1000L);
     }
@@ -220,8 +211,8 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
     /* JADX INFO: Access modifiers changed from: private */
     public void b(GrabBoxModel grabBoxModel) {
         Logger.a("drb", "删除当前宝箱 = ", grabBoxModel.box_id);
-        LiveMsgSendManager a2 = LiveMsgSendManager.a();
-        a2.d("删除当前宝箱 = " + grabBoxModel.box_id);
+        LiveMsgSendManager a = LiveMsgSendManager.a();
+        a.d("删除当前宝箱 = " + grabBoxModel.box_id);
         if (!this.p.remove(grabBoxModel)) {
             int i = 0;
             while (true) {
@@ -246,8 +237,8 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
         this.q = grabBoxModel3;
         Logger.a("drb", "删除当前宝箱后 还有宝箱 新宝箱id = ", grabBoxModel3.box_id);
         Logger.a("drb", "初始化宝箱");
-        LiveMsgSendManager a3 = LiveMsgSendManager.a();
-        a3.d("删除当前宝箱后 还有宝箱 新宝箱id = " + this.q.box_id + " -- 初始化宝箱");
+        LiveMsgSendManager a2 = LiveMsgSendManager.a();
+        a2.d("删除当前宝箱后 还有宝箱 新宝箱id = " + this.q.box_id + " -- 初始化宝箱");
         a(this.q, false);
     }
 
@@ -375,8 +366,8 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
         SlopeProgress slopeProgress = this.j;
         ObjectAnimator.ofInt(slopeProgress, "progress", slopeProgress.getProgress(), grabBoxModel.progress).setDuration(300L).start();
         Logger.a("drb", "setBoxProgress", Integer.valueOf(grabBoxModel.progress));
-        LiveMsgSendManager a2 = LiveMsgSendManager.a();
-        a2.d("setBoxProgress" + grabBoxModel.progress);
+        LiveMsgSendManager a = LiveMsgSendManager.a();
+        a.d("setBoxProgress" + grabBoxModel.progress);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -406,7 +397,7 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
             LiveMsgSendManager.a().d("setReceiveBtn 隐藏领取按钮");
             this.k.setVisibility(8);
             LiveEventBus.get(LiveEventBusUtil.l).post(false);
-        } else if (this.f14283c) {
+        } else if (this.c) {
         } else {
             Logger.a("drb", "setReceiveBtn 显示领取按钮   ");
             LiveMsgSendManager.a().d("setReceiveBtn 显示领取按钮");
@@ -417,15 +408,15 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
     }
 
     public void a(BaseFragment baseFragment) {
-        this.f14282a = baseFragment;
+        this.a = baseFragment;
         if (baseFragment instanceof RecordingOnliveFragment) {
-            this.f14283c = true;
+            this.c = true;
             RecordingOnliveFragment recordingOnliveFragment = (RecordingOnliveFragment) baseFragment;
             this.n = recordingOnliveFragment;
             this.b = recordingOnliveFragment.getFragmentActive();
             this.t = this.n.t;
         } else if (baseFragment instanceof PlayingOnliveBaseModeFragment) {
-            this.f14283c = false;
+            this.c = false;
             PlayingOnliveBaseModeFragment playingOnliveBaseModeFragment = (PlayingOnliveBaseModeFragment) baseFragment;
             this.o = playingOnliveBaseModeFragment;
             this.b = playingOnliveBaseModeFragment.getFragmentActive();
@@ -445,10 +436,10 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
                 AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.live_china.view.GrabBoxView.2.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        Pair<Integer, String> a2 = BluedHttpUtils.a(th, i, str);
+                        Pair<Integer, String> a = BluedHttpUtils.a(th, i, str);
                         Logger.a("drb", "领取宝箱失败 id = ", grabBoxModel.box_id);
-                        if (a2 != null) {
-                            if (a2.first.intValue() != 40301001) {
+                        if (a != null) {
+                            if (((Integer) a.first).intValue() != 40301001) {
                                 BluedHttpUtils.b(th, i, str);
                                 return;
                             }
@@ -456,7 +447,7 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
                             Logger.a("drb", "领取宝箱失败 删除当前宝箱 id = ", grabBoxModel.box_id);
                             GrabBoxView.this.b(grabBoxModel);
                             GrabBoxView.this.c();
-                            AppMethods.a((CharSequence) a2.second);
+                            AppMethods.a((CharSequence) a.second);
                         }
                     }
                 });
@@ -472,9 +463,9 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
                     return;
                 }
                 OpenBoxModel openBoxModel = bluedEntity.extra;
-                if (GrabBoxView.this.f14282a instanceof PlayingOnliveBaseModeFragment) {
-                    LiveMsgSendManager a2 = LiveMsgSendManager.a();
-                    a2.d("领取宝箱成功 id = " + grabBoxModel.box_id + "-- duration = " + grabBoxModel.duration);
+                if (GrabBoxView.this.a instanceof PlayingOnliveBaseModeFragment) {
+                    LiveMsgSendManager a = LiveMsgSendManager.a();
+                    a.d("领取宝箱成功 id = " + grabBoxModel.box_id + "-- duration = " + grabBoxModel.duration);
                     Logger.a("drb", "领取宝箱成功 id = ", grabBoxModel.box_id, "-- duration = ", Integer.valueOf(grabBoxModel.duration));
                     LiveRefreshUIObserver.a().a(grabBoxModel);
                     LiveRefreshUIObserver.a().a(openBoxModel.num, openBoxModel.pic);
@@ -496,7 +487,7 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
                         GrabBoxView.this.setReceiveBtn(grabBoxModel);
                     }
                     LiveRoomHttpUtils.d();
-                    LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_REFRESH_GIFT_LIST).post(true);
+                    LiveEventBus.get("live_refresh_gift_list").post(true);
                 }
             }
         }, this.q.box_id, this.t, this.b);
@@ -514,13 +505,13 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
                 if (TextUtils.isEmpty(grabBoxDetailModel.url)) {
                     return;
                 }
-                if (GrabBoxView.this.f14282a instanceof PlayingOnliveBaseModeFragment) {
+                if (GrabBoxView.this.a instanceof PlayingOnliveBaseModeFragment) {
                     LiveRefreshUIObserver.a().b(grabBoxDetailModel.url, 0);
-                } else if (GrabBoxView.this.f14282a instanceof RecordingOnliveFragment) {
-                    ((RecordingOnliveFragment) GrabBoxView.this.f14282a).d(grabBoxDetailModel.url, 0);
+                } else if (GrabBoxView.this.a instanceof RecordingOnliveFragment) {
+                    ((RecordingOnliveFragment) GrabBoxView.this.a).d(grabBoxDetailModel.url, 0);
                 }
             }
-        }, this.f14283c ? LiveRoomInfo.a().f() : LiveRoomManager.a().g(), str, this.b);
+        }, this.c ? LiveRoomInfo.a().f() : LiveRoomManager.a().g(), str, this.b);
     }
 
     public boolean a(List<GrabBoxModel> list) {
@@ -544,16 +535,16 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
                 break;
             }
             GrabBoxModel grabBoxModel2 = this.p.get(i2);
-            LiveMsgSendManager a2 = LiveMsgSendManager.a();
-            a2.d("model index = " + grabBoxModel2.index + ",,,,box_id = " + grabBoxModel2.box_id);
+            LiveMsgSendManager a = LiveMsgSendManager.a();
+            a.d("model index = " + grabBoxModel2.index + ",,,,box_id = " + grabBoxModel2.box_id);
             Logger.a("drb", "model index = ", Integer.valueOf(grabBoxModel2.index), ",,,,box_id = ", grabBoxModel2.box_id);
             i = i2 + 1;
         }
         if (this.p.size() > 0) {
             this.q = this.p.get(0);
             Logger.a("drb", "收到宝箱消息 ＝ ", grabBoxModel.toString());
-            LiveMsgSendManager a3 = LiveMsgSendManager.a();
-            a3.d("收到宝箱消息 ＝ " + grabBoxModel.toString());
+            LiveMsgSendManager a2 = LiveMsgSendManager.a();
+            a2.d("收到宝箱消息 ＝ " + grabBoxModel.toString());
             Logger.a("drb", "初始化UI");
             a(this.q, true);
             b(this.q.progress_full_gif);
@@ -579,7 +570,7 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
                         if (!grabBoxModel4.isPlayAnim) {
                             LiveGiftModel liveGiftModel = new LiveGiftModel();
                             liveGiftModel.images_gif = this.q.progress_full_gif;
-                            BaseFragment baseFragment = this.f14282a;
+                            BaseFragment baseFragment = this.a;
                             if (baseFragment instanceof PlayingOnliveBaseModeFragment) {
                                 LiveSetDataObserver.a().b(liveGiftModel);
                             } else if (baseFragment instanceof RecordingOnliveFragment) {
@@ -601,7 +592,7 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
                     LiveMsgSendManager.a().d("这是宝箱开启消息 当前正在展示的宝箱");
                     LiveGiftModel liveGiftModel2 = new LiveGiftModel();
                     liveGiftModel2.images_gif = this.q.progress_full_gif;
-                    BaseFragment baseFragment2 = this.f14282a;
+                    BaseFragment baseFragment2 = this.a;
                     if (baseFragment2 instanceof PlayingOnliveBaseModeFragment) {
                         LiveSetDataObserver.a().b(liveGiftModel2);
                     } else if (baseFragment2 instanceof RecordingOnliveFragment) {
@@ -641,8 +632,8 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
             setGrabViewVisible(0);
             if (this.q == null || TextUtils.isEmpty(grabBoxModel.box_id) || !this.q.box_id.equals(grabBoxModel.box_id)) {
                 Logger.a("drb", "这是宝箱进度消息 -- 不是当前宝箱 ＝ ", grabBoxModel.box_id);
-                LiveMsgSendManager a4 = LiveMsgSendManager.a();
-                a4.d("这是宝箱进度消息 -- 不是当前宝箱 ＝ " + grabBoxModel.box_id);
+                LiveMsgSendManager a3 = LiveMsgSendManager.a();
+                a3.d("这是宝箱进度消息 -- 不是当前宝箱 ＝ " + grabBoxModel.box_id);
                 int i7 = 0;
                 while (true) {
                     int i8 = i7;
@@ -658,8 +649,8 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
                 }
             } else {
                 Logger.a("drb", "这是宝箱进度消息 -- 当前宝箱 ＝ ", grabBoxModel.box_id);
-                LiveMsgSendManager a5 = LiveMsgSendManager.a();
-                a5.d("这是宝箱进度消息 -- 当前宝箱 ＝ " + grabBoxModel.box_id);
+                LiveMsgSendManager a4 = LiveMsgSendManager.a();
+                a4.d("这是宝箱进度消息 -- 当前宝箱 ＝ " + grabBoxModel.box_id);
                 this.q.progress = grabBoxModel.progress;
             }
             setBoxProgress(grabBoxModel);
@@ -690,8 +681,8 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
                 i9 = i11 + 1;
             }
             Logger.a("drb", "删除当前宝箱 id ＝ ", grabBoxModel.box_id);
-            LiveMsgSendManager a6 = LiveMsgSendManager.a();
-            a6.d("删除当前宝箱 id ＝ " + grabBoxModel.box_id);
+            LiveMsgSendManager a5 = LiveMsgSendManager.a();
+            a5.d("删除当前宝箱 id ＝ " + grabBoxModel.box_id);
             b(grabBoxModel);
         }
         if (grabBoxModel.type == 4) {
@@ -708,8 +699,8 @@ public class GrabBoxView extends FrameLayout implements View.OnClickListener {
             }
             GrabBoxModel grabBoxModel8 = this.p.get(1);
             Logger.a("drb", "有多个宝箱 id =", grabBoxModel8.box_id);
-            LiveMsgSendManager a7 = LiveMsgSendManager.a();
-            a7.d("有多个宝箱 id =" + grabBoxModel8.box_id);
+            LiveMsgSendManager a6 = LiveMsgSendManager.a();
+            a6.d("有多个宝箱 id =" + grabBoxModel8.box_id);
             Logger.a("drb", "初始化宝箱 此时宝箱为队列中第二条");
             LiveMsgSendManager.a().d("初始化宝箱 此时宝箱为队列中第二条");
             a(grabBoxModel8, true);

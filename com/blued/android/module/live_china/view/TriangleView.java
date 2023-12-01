@@ -17,13 +17,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/TriangleView.class */
 public final class TriangleView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f15273a;
+    private final int a;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f15274c;
+    private final int c;
     private final int d;
     private final float e;
     private final float f;
@@ -46,7 +42,7 @@ public final class TriangleView extends View {
     public TriangleView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = 1;
-        this.f15274c = 2;
+        this.c = 2;
         this.d = 3;
         this.e = 10.0f;
         this.f = 6.0f;
@@ -74,7 +70,7 @@ public final class TriangleView extends View {
             paint2.setStyle(Paint.Style.FILL);
         }
         this.m = new Path();
-        this.l = this.f15273a;
+        this.l = this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -83,7 +79,7 @@ public final class TriangleView extends View {
         Intrinsics.e(canvas, "canvas");
         super.onDraw(canvas);
         int i = this.l;
-        if (i == this.f15273a) {
+        if (i == this.a) {
             Path path = this.m;
             Intrinsics.a(path);
             path.moveTo(0.0f, this.k);
@@ -103,7 +99,7 @@ public final class TriangleView extends View {
             Path path6 = this.m;
             Intrinsics.a(path6);
             path6.lineTo(this.j, 0.0f);
-        } else if (i == this.f15274c) {
+        } else if (i == this.c) {
             Path path7 = this.m;
             Intrinsics.a(path7);
             path7.moveTo(0.0f, 0.0f);

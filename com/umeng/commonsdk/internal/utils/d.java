@@ -11,11 +11,11 @@ public class d {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f40877a;
+        public String f27186a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f40878c;
+        public int f27187c;
         public String d;
         public String e;
         public String f;

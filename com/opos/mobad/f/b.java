@@ -10,12 +10,12 @@ import java.util.HashMap;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f26126a = b.class.getSimpleName();
+    private static final String f12438a = b.class.getSimpleName();
     private Handler d;
     private HashMap<Integer, com.opos.mobad.ad.c> b = new HashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private HashMap<Integer, Boolean> f26127c = new HashMap<>();
+    private HashMap<Integer, Boolean> f12439c = new HashMap<>();
     private boolean e = false;
 
     private void a(Context context) {
@@ -39,7 +39,7 @@ public class b {
     /* JADX INFO: Access modifiers changed from: private */
     public void b(Context context, com.opos.mobad.service.a.e eVar, boolean z) {
         com.opos.cmn.an.f.a.b("DispatchController", "initCreatorIfNeed done");
-        com.opos.cmn.an.f.a.a(f26126a, "init creator size:" + this.b.size() + ".CreateMap:" + this.b.toString());
+        com.opos.cmn.an.f.a.a(f12438a, "init creator size:" + this.b.size() + ".CreateMap:" + this.b.toString());
         String str = context.getApplicationInfo().name;
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
@@ -50,9 +50,9 @@ public class b {
             String b = eVar.b(num.intValue());
             String c2 = eVar.c(num.intValue());
             com.opos.mobad.ad.c cVar = this.b.get(num);
-            com.opos.cmn.an.f.a.a(f26126a, "init creator channelAppId:" + b);
+            com.opos.cmn.an.f.a.a(f12438a, "init creator channelAppId:" + b);
             if ((!TextUtils.isEmpty(b) || num.intValue() == 7) && com.opos.mobad.service.f.b().a(num.intValue()) && !a(num.intValue(), b)) {
-                this.f26127c.put(num, true);
+                this.f12439c.put(num, true);
                 cVar.a(context, b, str2, c2, z);
             } else {
                 z2 = false;
@@ -62,9 +62,9 @@ public class b {
     }
 
     public int a(int i) {
-        if (this.f26127c.containsKey(Integer.valueOf(i))) {
+        if (this.f12439c.containsKey(Integer.valueOf(i))) {
             if (com.opos.mobad.service.f.b().a(i)) {
-                return this.f26127c.get(Integer.valueOf(i)).booleanValue() ? 0 : 1;
+                return this.f12439c.get(Integer.valueOf(i)).booleanValue() ? 0 : 1;
             }
             return 3;
         }
@@ -80,14 +80,14 @@ public class b {
             } else {
                 a2 = cVar.a(context);
                 if (a2 == null) {
-                    String str = f26126a;
+                    String str = f12438a;
                     com.opos.cmn.an.f.a.c(str, "creator check null:" + num);
                     a2 = new c.a(false, "unknown error");
-                } else if (a2.f25670a) {
+                } else if (a2.f11982a) {
                     this.b.put(num, cVar);
-                    this.f26127c.put(num, false);
+                    this.f12439c.put(num, false);
                 } else {
-                    String str2 = f26126a;
+                    String str2 = f12438a;
                     com.opos.cmn.an.f.a.d(str2, "error:" + a2.b);
                 }
             }

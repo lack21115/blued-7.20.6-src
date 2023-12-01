@@ -15,13 +15,11 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveConstellationDialogFragment$initTabListScrollListener$1.class */
 public final class LiveConstellationDialogFragment$initTabListScrollListener$1 extends RecyclerView.OnScrollListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ LiveConstellationDialogFragment f12797a;
+    final /* synthetic */ LiveConstellationDialogFragment a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public LiveConstellationDialogFragment$initTabListScrollListener$1(LiveConstellationDialogFragment liveConstellationDialogFragment) {
-        this.f12797a = liveConstellationDialogFragment;
+        this.a = liveConstellationDialogFragment;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -41,13 +39,13 @@ public final class LiveConstellationDialogFragment$initTabListScrollListener$1 e
         final Ref.IntRef intRef = new Ref.IntRef();
         linearLayoutManager2 = this$0.g;
         Intrinsics.a(linearLayoutManager2);
-        intRef.f42543a = linearLayoutManager2.findFirstVisibleItemPosition();
-        int i = intRef.f42543a;
+        intRef.a = linearLayoutManager2.findFirstVisibleItemPosition();
+        int i = intRef.a;
         arrayList = this$0.e;
-        intRef.f42543a = i % arrayList.size();
+        intRef.a = i % arrayList.size();
         arrayList2 = this$0.e;
-        FitemConstellationTab fitemConstellationTab = (FitemConstellationTab) CollectionsKt.c((List<? extends Object>) arrayList2, intRef.f42543a);
-        if (fitemConstellationTab == null || (baseViewHolder = fitemConstellationTab.f10935a) == null || (view = baseViewHolder.itemView) == null) {
+        FitemConstellationTab fitemConstellationTab = (FitemConstellationTab) CollectionsKt.c((List<? extends Object>) arrayList2, intRef.a);
+        if (fitemConstellationTab == null || (baseViewHolder = fitemConstellationTab.a) == null || (view = baseViewHolder.itemView) == null) {
             return;
         }
         view.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveConstellationDialogFragment$initTabListScrollListener$1$5kA723HRIEcWPWyBoHfj5CLCR_g
@@ -74,14 +72,14 @@ public final class LiveConstellationDialogFragment$initTabListScrollListener$1 e
         Intrinsics.e(firstItem, "$firstItem");
         Intrinsics.e(recyclerView, "$recyclerView");
         arrayList = this$0.e;
-        ((FitemConstellationTab) arrayList.get(firstItem.f42543a)).g();
+        ((FitemConstellationTab) arrayList.get(firstItem.a)).g();
         linearLayoutManager = this$0.g;
         Intrinsics.a(linearLayoutManager);
         int findLastVisibleItemPosition = linearLayoutManager.findLastVisibleItemPosition();
         arrayList2 = this$0.e;
         int size = findLastVisibleItemPosition % arrayList2.size();
         int i2 = size;
-        if (size < firstItem.f42543a) {
+        if (size < firstItem.a) {
             arrayList7 = this$0.e;
             i2 = size + arrayList7.size();
         }
@@ -91,7 +89,7 @@ public final class LiveConstellationDialogFragment$initTabListScrollListener$1 e
         int width = recyclerView.getWidth() / 2;
         int i3 = width + 1;
         int i4 = -1;
-        int i5 = firstItem.f42543a;
+        int i5 = firstItem.a;
         int i6 = -1;
         if (i5 <= i2) {
             while (true) {
@@ -128,15 +126,14 @@ public final class LiveConstellationDialogFragment$initTabListScrollListener$1 e
         this$0.b(i6, true);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
     public void onScrollStateChanged(final RecyclerView recyclerView, int i) {
         boolean z;
         FitemConstellationTab fitemConstellationTab;
         Intrinsics.e(recyclerView, "recyclerView");
-        z = this.f12797a.i;
+        z = this.a.i;
         if (z) {
             if (i == 0) {
-                final LiveConstellationDialogFragment liveConstellationDialogFragment = this.f12797a;
+                final LiveConstellationDialogFragment liveConstellationDialogFragment = this.a;
                 recyclerView.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveConstellationDialogFragment$initTabListScrollListener$1$pyAuA1iiTVfiYcVXH55svfKcCaA
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -145,28 +142,27 @@ public final class LiveConstellationDialogFragment$initTabListScrollListener$1 e
                 });
             } else if (i != 1) {
             } else {
-                fitemConstellationTab = this.f12797a.h;
+                fitemConstellationTab = this.a.h;
                 if (fitemConstellationTab != null) {
                     fitemConstellationTab.a(false);
                 }
-                this.f12797a.h = null;
+                this.a.h = null;
             }
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
     public void onScrolled(RecyclerView recyclerView, int i, int i2) {
         boolean z;
         LinearLayoutManager linearLayoutManager;
         LinearLayoutManager linearLayoutManager2;
         Intrinsics.e(recyclerView, "recyclerView");
-        z = this.f12797a.i;
+        z = this.a.i;
         if (z) {
-            linearLayoutManager = this.f12797a.g;
+            linearLayoutManager = this.a.g;
             if (linearLayoutManager == null) {
                 return;
             }
-            linearLayoutManager2 = this.f12797a.g;
+            linearLayoutManager2 = this.a.g;
             Intrinsics.a(linearLayoutManager2);
             int findFirstVisibleItemPosition = linearLayoutManager2.findFirstVisibleItemPosition();
             if (findFirstVisibleItemPosition <= 1000 || findFirstVisibleItemPosition >= 2147482647) {

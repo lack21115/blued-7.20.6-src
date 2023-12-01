@@ -14,11 +14,11 @@ import java.util.Locale;
 public class DashBoard extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    final StringBuilder f38681a;
+    final StringBuilder f24990a;
     TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    TextView f38682c;
+    TextView f24991c;
     private final SimpleDateFormat d;
     private ScrollView e;
     private int f;
@@ -30,7 +30,7 @@ public class DashBoard extends LinearLayout {
 
     public DashBoard(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f38681a = new StringBuilder();
+        this.f24990a = new StringBuilder();
         this.d = new SimpleDateFormat("HH:mm:ss.SSS", Locale.ENGLISH);
         this.f = 3000;
         this.g = false;
@@ -43,7 +43,7 @@ public class DashBoard extends LinearLayout {
             return;
         }
         this.b = new TextView(getContext());
-        this.f38682c = new TextView(getContext());
+        this.f24991c = new TextView(getContext());
         this.e = new ScrollView(getContext());
         this.b.setLayoutParams(new LinearLayout.LayoutParams(-1, -2));
         this.b.setTextColor(-49023);
@@ -53,15 +53,15 @@ public class DashBoard extends LinearLayout {
         this.e.setLayoutParams(layoutParams);
         this.e.setVerticalScrollBarEnabled(true);
         this.e.setScrollbarFadingEnabled(true);
-        this.f38682c.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
-        this.f38682c.setTextColor(-49023);
-        this.e.addView(this.f38682c);
+        this.f24991c.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
+        this.f24991c.setTextColor(-49023);
+        this.e.addView(this.f24991c);
         addView(this.b);
         addView(this.e);
-        if (this.f38681a.length() <= 0) {
-            this.f38681a.append("liteav sdk version:\n");
+        if (this.f24990a.length() <= 0) {
+            this.f24990a.append("liteav sdk version:\n");
         }
-        this.f38682c.setText(this.f38681a.toString());
+        this.f24991c.setText(this.f24990a.toString());
     }
 
     public final void a(int i, int i2, int i3, int i4) {
@@ -76,7 +76,7 @@ public class DashBoard extends LinearLayout {
     }
 
     public void setEventTextSize(float f) {
-        TextView textView = this.f38682c;
+        TextView textView = this.f24991c;
         if (textView != null) {
             textView.setTextSize(f);
         }

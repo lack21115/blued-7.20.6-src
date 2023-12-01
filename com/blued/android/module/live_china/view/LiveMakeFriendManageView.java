@@ -15,13 +15,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeFriendManageView.class */
 public class LiveMakeFriendManageView extends LinearLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public LinearLayout f14525a;
+    public LinearLayout a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public boolean f14526c;
+    public boolean c;
     private Context d;
     private LayoutInflater e;
     private View f;
@@ -46,7 +42,7 @@ public class LiveMakeFriendManageView extends LinearLayout implements View.OnCli
 
     public LiveMakeFriendManageView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14526c = false;
+        this.c = false;
         this.d = context;
         c();
     }
@@ -56,11 +52,11 @@ public class LiveMakeFriendManageView extends LinearLayout implements View.OnCli
         this.e = from;
         View inflate = from.inflate(R.layout.live_make_friend_manage, (ViewGroup) this, true);
         this.f = inflate;
-        this.f14525a = (LinearLayout) inflate.findViewById(R.id.live_make_friend_wait_layout);
+        this.a = (LinearLayout) inflate.findViewById(R.id.live_make_friend_wait_layout);
         this.g = (TextView) this.f.findViewById(R.id.live_make_friend_wait_num);
         this.i = (TextView) this.f.findViewById(R.id.live_make_friend_wait_text);
         this.h = (ImageView) this.f.findViewById(R.id.live_make_friend_manage_head);
-        this.f14525a.setOnClickListener(this);
+        this.a.setOnClickListener(this);
     }
 
     public void a(int i) {
@@ -108,13 +104,13 @@ public class LiveMakeFriendManageView extends LinearLayout implements View.OnCli
     }
 
     public void b() {
-        this.f14526c = false;
-        if (this.f14525a.getVisibility() == 8) {
+        this.c = false;
+        if (this.a.getVisibility() == 8) {
             return;
         }
         setVisibility(8);
-        this.f14525a.setVisibility(8);
-        this.f14525a.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_out));
+        this.a.setVisibility(8);
+        this.a.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_out));
     }
 
     public void b(int i) {
@@ -124,11 +120,11 @@ public class LiveMakeFriendManageView extends LinearLayout implements View.OnCli
     }
 
     public void c(int i) {
-        this.f14526c = true;
+        this.c = true;
         setVisibility(0);
-        this.f14525a.clearAnimation();
-        this.f14525a.setVisibility(0);
-        this.f14525a.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_in));
+        this.a.clearAnimation();
+        this.a.setVisibility(0);
+        this.a.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_in));
         TextView textView = this.g;
         String string = this.d.getString(R.string.live_make_friend_wait);
         textView.setText(String.format(string, i + ""));
@@ -147,6 +143,6 @@ public class LiveMakeFriendManageView extends LinearLayout implements View.OnCli
 
     @Override // android.view.View
     public boolean performClick() {
-        return this.f14525a.performClick();
+        return this.a.performClick();
     }
 }

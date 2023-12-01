@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ChannelDialogLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28682a;
+    private final LinearLayout f14992a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28682a;
+        return this.f14992a;
     }
 }

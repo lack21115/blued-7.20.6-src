@@ -41,8 +41,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
     private int resultDisplayCountdown_;
     private static final ChallengeEnd DEFAULT_INSTANCE = new ChallengeEnd();
     private static final Parser<ChallengeEnd> PARSER = new AbstractParser<ChallengeEnd>() { // from class: cn.irisgw.live.ChallengeEnd.1
-        @Override // com.google.protobuf.Parser
-        public ChallengeEnd parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public ChallengeEnd m909parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new ChallengeEnd(codedInputStream, extensionRegistryLite);
         }
     };
@@ -106,7 +106,7 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                 return this;
             }
             ensureRecordsIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.records_);
+            AbstractMessageLite.Builder.addAll(iterable, this.records_);
             onChanged();
             return this;
         }
@@ -114,11 +114,11 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         public Builder addRecords(int i, ChallengeScoreResult.Builder builder) {
             RepeatedFieldBuilderV3<ChallengeScoreResult, ChallengeScoreResult.Builder, ChallengeScoreResultOrBuilder> repeatedFieldBuilderV3 = this.recordsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m962build());
                 return this;
             }
             ensureRecordsIsMutable();
-            this.records_.add(i, builder.build());
+            this.records_.add(i, builder.m962build());
             onChanged();
             return this;
         }
@@ -141,11 +141,11 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         public Builder addRecords(ChallengeScoreResult.Builder builder) {
             RepeatedFieldBuilderV3<ChallengeScoreResult, ChallengeScoreResult.Builder, ChallengeScoreResultOrBuilder> repeatedFieldBuilderV3 = this.recordsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m962build());
                 return this;
             }
             ensureRecordsIsMutable();
-            this.records_.add(builder.build());
+            this.records_.add(builder.m962build());
             onChanged();
             return this;
         }
@@ -173,22 +173,22 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return getRecordsFieldBuilder().addBuilder(i, ChallengeScoreResult.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m911addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public ChallengeEnd build() {
-            ChallengeEnd buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public ChallengeEnd m913build() {
+            ChallengeEnd m915buildPartial = m915buildPartial();
+            if (m915buildPartial.isInitialized()) {
+                return m915buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m915buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public ChallengeEnd buildPartial() {
+        /* renamed from: buildPartial */
+        public ChallengeEnd m915buildPartial() {
             ChallengeEnd challengeEnd = new ChallengeEnd(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<ChallengeScoreResult, ChallengeScoreResult.Builder, ChallengeScoreResultOrBuilder> repeatedFieldBuilderV3 = this.recordsBuilder_;
@@ -210,8 +210,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return challengeEnd;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m919clear() {
             super.clear();
             RepeatedFieldBuilderV3<ChallengeScoreResult, ChallengeScoreResult.Builder, ChallengeScoreResultOrBuilder> repeatedFieldBuilderV3 = this.recordsBuilder_;
             if (repeatedFieldBuilderV3 == null) {
@@ -234,8 +234,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m921clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -257,8 +257,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m924clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -280,10 +280,9 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m930clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.ChallengeEndOrBuilder
@@ -291,12 +290,11 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return this.againDisplay_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public ChallengeEnd getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public ChallengeEnd m932getDefaultInstanceForType() {
             return ChallengeEnd.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_ChallengeEnd_descriptor;
         }
@@ -345,7 +343,7 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         @Override // cn.irisgw.live.ChallengeEndOrBuilder
         public ChallengeScoreResultOrBuilder getRecordsOrBuilder(int i) {
             RepeatedFieldBuilderV3<ChallengeScoreResult, ChallengeScoreResult.Builder, ChallengeScoreResultOrBuilder> repeatedFieldBuilderV3 = this.recordsBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.records_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.records_.get(i) : (ChallengeScoreResultOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.ChallengeEndOrBuilder
@@ -359,12 +357,10 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return this.resultDisplayCountdown_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_ChallengeEnd_fieldAccessorTable.ensureFieldAccessorsInitialized(ChallengeEnd.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -414,18 +410,18 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             if (challengeEnd.getAgainDisplay() != 0) {
                 setAgainDisplay(challengeEnd.getAgainDisplay());
             }
-            mergeUnknownFields(challengeEnd.unknownFields);
+            m941mergeUnknownFields(challengeEnd.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.ChallengeEnd.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.ChallengeEnd.Builder m938mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -470,11 +466,11 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ChallengeEnd.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ChallengeEnd$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ChallengeEnd.Builder.m938mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ChallengeEnd$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m937mergeFrom(Message message) {
             if (message instanceof ChallengeEnd) {
                 return mergeFrom((ChallengeEnd) message);
             }
@@ -482,8 +478,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m941mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -505,8 +501,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m943setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -531,11 +527,11 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         public Builder setRecords(int i, ChallengeScoreResult.Builder builder) {
             RepeatedFieldBuilderV3<ChallengeScoreResult, ChallengeScoreResult.Builder, ChallengeScoreResultOrBuilder> repeatedFieldBuilderV3 = this.recordsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m962build());
                 return this;
             }
             ensureRecordsIsMutable();
-            this.records_.set(i, builder.build());
+            this.records_.set(i, builder.m962build());
             onChanged();
             return this;
         }
@@ -555,8 +551,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m945setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -566,8 +562,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m947setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -584,9 +580,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         public static final int Win_VALUE = 1;
         private final int value;
         private static final Internal.EnumLiteMap<ChallengeResultType> internalValueMap = new Internal.EnumLiteMap<ChallengeResultType>() { // from class: cn.irisgw.live.ChallengeEnd.ChallengeResultType.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.google.protobuf.Internal.EnumLiteMap
-            public ChallengeResultType findValueByNumber(int i) {
+            /* renamed from: findValueByNumber */
+            public ChallengeResultType m949findValueByNumber(int i) {
                 return ChallengeResultType.forNumber(i);
             }
         };
@@ -610,7 +605,7 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         }
 
         public static final Descriptors.EnumDescriptor getDescriptor() {
-            return ChallengeEnd.getDescriptor().getEnumTypes().get(0);
+            return (Descriptors.EnumDescriptor) ChallengeEnd.getDescriptor().getEnumTypes().get(0);
         }
 
         public static Internal.EnumLiteMap<ChallengeResultType> internalGetValueMap() {
@@ -629,12 +624,10 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumDescriptor getDescriptorForType() {
             return getDescriptor();
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
         public final int getNumber() {
             if (this != UNRECOGNIZED) {
                 return this.value;
@@ -642,10 +635,9 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumValueDescriptor getValueDescriptor() {
             if (this != UNRECOGNIZED) {
-                return getDescriptor().getValues().get(ordinal());
+                return (Descriptors.EnumValueDescriptor) getDescriptor().getValues().get(ordinal());
             }
             throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
         }
@@ -669,8 +661,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         private int type_;
         private static final ChallengeScoreResult DEFAULT_INSTANCE = new ChallengeScoreResult();
         private static final Parser<ChallengeScoreResult> PARSER = new AbstractParser<ChallengeScoreResult>() { // from class: cn.irisgw.live.ChallengeEnd.ChallengeScoreResult.1
-            @Override // com.google.protobuf.Parser
-            public ChallengeScoreResult parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public ChallengeScoreResult m958parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new ChallengeScoreResult(codedInputStream, extensionRegistryLite);
             }
         };
@@ -707,22 +699,22 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                 boolean unused = ChallengeScoreResult.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m960addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public ChallengeScoreResult build() {
-                ChallengeScoreResult buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public ChallengeScoreResult m962build() {
+                ChallengeScoreResult m964buildPartial = m964buildPartial();
+                if (m964buildPartial.isInitialized()) {
+                    return m964buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m964buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public ChallengeScoreResult buildPartial() {
+            /* renamed from: buildPartial */
+            public ChallengeScoreResult m964buildPartial() {
                 ChallengeScoreResult challengeScoreResult = new ChallengeScoreResult(this);
                 challengeScoreResult.score_ = this.score_;
                 challengeScoreResult.type_ = this.type_;
@@ -734,8 +726,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                 return challengeScoreResult;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m968clear() {
                 super.clear();
                 this.score_ = 0;
                 this.type_ = 0;
@@ -746,8 +738,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m970clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -775,8 +767,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m973clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -792,18 +784,16 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m979clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public ChallengeScoreResult getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public ChallengeScoreResult m981getDefaultInstanceForType() {
                 return ChallengeScoreResult.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_ChallengeEnd_ChallengeScoreResult_descriptor;
             }
@@ -882,12 +872,10 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                 return this.type_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_ChallengeEnd_ChallengeScoreResult_fieldAccessorTable.ensureFieldAccessorsInitialized(ChallengeScoreResult.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -916,18 +904,18 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                 if (challengeScoreResult.getHide()) {
                     setHide(challengeScoreResult.getHide());
                 }
-                mergeUnknownFields(challengeScoreResult.unknownFields);
+                m990mergeUnknownFields(challengeScoreResult.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.ChallengeEnd.ChallengeScoreResult.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.ChallengeEnd.ChallengeScoreResult.Builder m987mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -972,11 +960,11 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ChallengeEnd.ChallengeScoreResult.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ChallengeEnd$ChallengeScoreResult$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ChallengeEnd.ChallengeScoreResult.Builder.m987mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ChallengeEnd$ChallengeScoreResult$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m986mergeFrom(Message message) {
                 if (message instanceof ChallengeScoreResult) {
                     return mergeFrom((ChallengeScoreResult) message);
                 }
@@ -984,13 +972,13 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m990mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m992setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -1044,8 +1032,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m994setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -1070,8 +1058,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m996setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -1137,66 +1125,65 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m957toBuilder();
         }
 
         public static Builder newBuilder(ChallengeScoreResult challengeScoreResult) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(challengeScoreResult);
+            return DEFAULT_INSTANCE.m957toBuilder().mergeFrom(challengeScoreResult);
         }
 
         public static ChallengeScoreResult parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (ChallengeScoreResult) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static ChallengeScoreResult parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (ChallengeScoreResult) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static ChallengeScoreResult parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (ChallengeScoreResult) PARSER.parseFrom(byteString);
         }
 
         public static ChallengeScoreResult parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (ChallengeScoreResult) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static ChallengeScoreResult parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (ChallengeScoreResult) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static ChallengeScoreResult parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (ChallengeScoreResult) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static ChallengeScoreResult parseFrom(InputStream inputStream) throws IOException {
-            return (ChallengeScoreResult) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static ChallengeScoreResult parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (ChallengeScoreResult) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static ChallengeScoreResult parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (ChallengeScoreResult) PARSER.parseFrom(byteBuffer);
         }
 
         public static ChallengeScoreResult parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (ChallengeScoreResult) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static ChallengeScoreResult parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (ChallengeScoreResult) PARSER.parseFrom(bArr);
         }
 
         public static ChallengeScoreResult parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (ChallengeScoreResult) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<ChallengeScoreResult> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1208,8 +1195,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public ChallengeScoreResult getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public ChallengeScoreResult m952getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -1267,7 +1254,6 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return this.mvpScore_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<ChallengeScoreResult> getParserForType() {
             return PARSER;
         }
@@ -1277,7 +1263,6 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return this.score_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1330,12 +1315,10 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return this.type_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1345,12 +1328,10 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_ChallengeEnd_ChallengeScoreResult_fieldAccessorTable.ensureFieldAccessorsInitialized(ChallengeScoreResult.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1363,28 +1344,26 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m955newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m954newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new ChallengeScoreResult();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m957toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = this.score_;
             if (i != 0) {
@@ -1510,66 +1489,65 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m908toBuilder();
     }
 
     public static Builder newBuilder(ChallengeEnd challengeEnd) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(challengeEnd);
+        return DEFAULT_INSTANCE.m908toBuilder().mergeFrom(challengeEnd);
     }
 
     public static ChallengeEnd parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (ChallengeEnd) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static ChallengeEnd parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ChallengeEnd) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static ChallengeEnd parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (ChallengeEnd) PARSER.parseFrom(byteString);
     }
 
     public static ChallengeEnd parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (ChallengeEnd) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static ChallengeEnd parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (ChallengeEnd) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static ChallengeEnd parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ChallengeEnd) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static ChallengeEnd parseFrom(InputStream inputStream) throws IOException {
-        return (ChallengeEnd) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static ChallengeEnd parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ChallengeEnd) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static ChallengeEnd parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (ChallengeEnd) PARSER.parseFrom(byteBuffer);
     }
 
     public static ChallengeEnd parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (ChallengeEnd) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static ChallengeEnd parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (ChallengeEnd) PARSER.parseFrom(bArr);
     }
 
     public static ChallengeEnd parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (ChallengeEnd) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<ChallengeEnd> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1586,8 +1564,8 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         return this.againDisplay_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public ChallengeEnd getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public ChallengeEnd m903getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1606,7 +1584,6 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         return this.mvpDisplayCountdown_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<ChallengeEnd> getParserForType() {
         return PARSER;
     }
@@ -1641,7 +1618,6 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         return this.resultDisplayCountdown_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1681,12 +1657,10 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1701,12 +1675,10 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         return hashBoolean;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_ChallengeEnd_fieldAccessorTable.ensureFieldAccessorsInitialized(ChallengeEnd.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1719,28 +1691,26 @@ public final class ChallengeEnd extends GeneratedMessageV3 implements ChallengeE
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m906newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m905newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new ChallengeEnd();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m908toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {

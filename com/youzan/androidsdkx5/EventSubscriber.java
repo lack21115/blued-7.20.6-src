@@ -7,10 +7,10 @@ import com.youzan.x5web.JsSubscriberCompat;
 public class EventSubscriber extends JsSubscriberCompat {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private Event f1149;
+    private Event f1102;
 
     public EventSubscriber(Event event) {
-        this.f1149 = event;
+        this.f1102 = event;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0034, code lost:
@@ -25,7 +25,7 @@ public class EventSubscriber extends JsSubscriberCompat {
         /*
             r4 = this;
             r0 = r4
-            com.youzan.androidsdk.event.Event r0 = r0.f1149
+            com.youzan.androidsdk.event.Event r0 = r0.f1102
             if (r0 != 0) goto L8
             return
         L8:
@@ -35,7 +35,7 @@ public class EventSubscriber extends JsSubscriberCompat {
             r0 = r7
             r6 = r0
             r0 = r4
-            com.youzan.androidsdk.event.Event r0 = r0.f1149
+            com.youzan.androidsdk.event.Event r0 = r0.f1102
             boolean r0 = r0 instanceof com.youzan.androidsdk.event.AbsAuthEvent
             if (r0 == 0) goto L3a
             r0 = r7
@@ -57,7 +57,7 @@ public class EventSubscriber extends JsSubscriberCompat {
             r6 = r0
         L3a:
             r0 = r4
-            com.youzan.androidsdk.event.Event r0 = r0.f1149
+            com.youzan.androidsdk.event.Event r0 = r0.f1102
             r1 = r5
             android.content.Context r1 = r1.getContext()
             r2 = r6
@@ -69,7 +69,7 @@ public class EventSubscriber extends JsSubscriberCompat {
 
     @Override // com.youzan.jsbridge.subscriber.MethodSubscriberCompat, com.youzan.jsbridge.subscriber.Subscriber
     public String subscribe() {
-        Event event = this.f1149;
+        Event event = this.f1102;
         if (event != null) {
             return event.subscribe();
         }

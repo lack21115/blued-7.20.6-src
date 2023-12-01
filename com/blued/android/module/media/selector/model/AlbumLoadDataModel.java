@@ -18,7 +18,6 @@ import com.blued.android.module.media.selector.contract.IBaseCallback;
 import com.blued.android.module.media.selector.utils.ThreadPoolHelper;
 import com.blued.android.module.media.selector.utils.ThumbLoader;
 import com.blued.android.module.player.media.model.MediaInfo;
-import com.oplus.quickgame.sdk.hall.Constant;
 import java.io.File;
 import java.util.HashMap;
 import java.util.List;
@@ -28,9 +27,7 @@ public class AlbumLoadDataModel extends BaseModel<IAlbumLoadDataCallback> implem
     private static final String b = AlbumLoadDataModel.class.getSimpleName();
     private static String h;
     private static String i;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f15562c;
+    private String c;
     private Uri d;
     private int e;
     private ThumbLoader.GetVideoThumsAsynctack f;
@@ -57,11 +54,11 @@ public class AlbumLoadDataModel extends BaseModel<IAlbumLoadDataCallback> implem
         AlbumSelectInfo albumSelectInfo;
         this.e = 0;
         this.g = false;
-        if (this.f15566a == 0) {
+        if (this.a == 0) {
             return;
         }
-        this.f15562c = context.getResources().getString(R.string.foudation_media_all_photos);
-        this.d = MediaStore.Files.getContentUri(Constant.Param.KEY_RPK_EXTERNAL);
+        this.c = context.getResources().getString(R.string.foudation_media_all_photos);
+        this.d = MediaStore.Files.getContentUri("external");
         if (bundle == null || (albumSelectInfo = (AlbumSelectInfo) bundle.getSerializable("serializeble_data")) == null) {
             z = false;
         } else {
@@ -69,9 +66,9 @@ public class AlbumLoadDataModel extends BaseModel<IAlbumLoadDataCallback> implem
             z = true;
         }
         if (z) {
-            ((IAlbumLoadDataCallback) this.f15566a).getActivity().getLoaderManager().restartLoader(0, null, this);
+            ((IAlbumLoadDataCallback) this.a).getActivity().getLoaderManager().restartLoader(0, null, this);
         } else {
-            ((IAlbumLoadDataCallback) this.f15566a).getActivity().getLoaderManager().initLoader(0, null, this);
+            ((IAlbumLoadDataCallback) this.a).getActivity().getLoaderManager().initLoader(0, null, this);
         }
     }
 
@@ -126,15 +123,15 @@ public class AlbumLoadDataModel extends BaseModel<IAlbumLoadDataCallback> implem
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
         LogUtils.c(" onLoadFinished start");
         this.g = AppUtils.b();
-        if (this.f15566a == 0) {
+        if (this.a == 0) {
             return;
         }
         if (cursor == null) {
-            ((IAlbumLoadDataCallback) this.f15566a).a(true, "");
+            ((IAlbumLoadDataCallback) this.a).a(true, "");
         } else if (this.e == 0) {
             this.e = cursor.getCount();
             if (cursor.isAfterLast()) {
-                ((IAlbumLoadDataCallback) this.f15566a).a(true, "");
+                ((IAlbumLoadDataCallback) this.a).a(true, "");
                 return;
             }
             AlbumDataManager.removeAll();
@@ -161,10 +158,10 @@ public class AlbumLoadDataModel extends BaseModel<IAlbumLoadDataCallback> implem
                             }
                             if (i2 == c()) {
                                 if (new File(string).exists() && string.endsWith(".mp4")) {
-                                    if (this.f15566a == 0) {
+                                    if (this.a == 0) {
                                         return;
                                     }
-                                    if (j3 >= ((IAlbumLoadDataCallback) this.f15566a).f() && j3 <= ((IAlbumLoadDataCallback) this.f15566a).g()) {
+                                    if (j3 >= ((IAlbumLoadDataCallback) this.a).f() && j3 <= ((IAlbumLoadDataCallback) this.a).g()) {
                                     }
                                 }
                             }
@@ -191,7 +188,7 @@ public class AlbumLoadDataModel extends BaseModel<IAlbumLoadDataCallback> implem
                             if (hashMap.containsKey(mediaInfo2.imagePath)) {
                                 mediaInfo2.isSelected = true;
                             }
-                            AlbumDataManager.putGroupMap(this.f15562c, name, mediaInfo2);
+                            AlbumDataManager.putGroupMap(this.c, name, mediaInfo2);
                         } catch (Exception e) {
                         }
                     }
@@ -200,7 +197,7 @@ public class AlbumLoadDataModel extends BaseModel<IAlbumLoadDataCallback> implem
             }
             LogUtils.c(" onLoadFinished cursor end");
             AlbumDataManager.subGroupOfImage();
-            final String str = this.f15562c;
+            final String str = this.c;
             this.f = new ThumbLoader.GetVideoThumsAsynctack(new ThumbLoader.OnGetVideoThumsListener<MediaInfo>() { // from class: com.blued.android.module.media.selector.model.AlbumLoadDataModel.1
                 @Override // com.blued.android.module.media.selector.utils.ThumbLoader.OnGetVideoThumsListener
                 public void a(List<MediaInfo> list) {
@@ -209,13 +206,13 @@ public class AlbumLoadDataModel extends BaseModel<IAlbumLoadDataCallback> implem
                     AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.media.selector.model.AlbumLoadDataModel.1.1
                         @Override // java.lang.Runnable
                         public void run() {
-                            if (AlbumLoadDataModel.this.f15566a != 0) {
-                                ((IAlbumLoadDataCallback) AlbumLoadDataModel.this.f15566a).a(AlbumDataManager.getGroupListSize() <= 0, str);
+                            if (AlbumLoadDataModel.this.a != 0) {
+                                ((IAlbumLoadDataCallback) AlbumLoadDataModel.this.a).a(AlbumDataManager.getGroupListSize() <= 0, str);
                             }
                         }
                     });
                 }
-            }, AlbumDataManager.getGroupFileList(this.f15562c));
+            }, AlbumDataManager.getGroupFileList(this.c));
             ThreadPoolHelper.a().a(this.f);
         }
     }
@@ -223,19 +220,19 @@ public class AlbumLoadDataModel extends BaseModel<IAlbumLoadDataCallback> implem
     @Override // android.app.LoaderManager.LoaderCallbacks
     public Loader<Cursor> onCreateLoader(int i2, Bundle bundle) {
         String str;
-        if (this.f15566a == 0) {
+        if (this.a == 0) {
             return null;
         }
-        ((IAlbumLoadDataCallback) this.f15566a).d();
+        ((IAlbumLoadDataCallback) this.a).d();
         String[] strArr = {"_id", "_data", "date_added", "media_type", "mime_type", "title", "_size", "duration", "width", "height"};
-        if (((IAlbumLoadDataCallback) this.f15566a).e() == 2) {
+        if (((IAlbumLoadDataCallback) this.a).e() == 2) {
             str = strArr[3] + "=3";
-        } else if (((IAlbumLoadDataCallback) this.f15566a).e() == 1) {
+        } else if (((IAlbumLoadDataCallback) this.a).e() == 1) {
             str = strArr[3] + "=1";
         } else {
             str = strArr[3] + "=3 OR " + strArr[3] + "=1";
         }
-        return new CursorLoader(((IAlbumLoadDataCallback) this.f15566a).getActivity(), this.d, strArr, str, null, strArr[2] + " ASC");
+        return new CursorLoader(((IAlbumLoadDataCallback) this.a).getActivity(), this.d, strArr, str, null, strArr[2] + " ASC");
     }
 
     @Override // android.app.LoaderManager.LoaderCallbacks

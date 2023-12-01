@@ -10,23 +10,23 @@ public final class BidiFormatter {
     private final TextDirectionHeuristicCompat h;
 
     /* renamed from: a  reason: collision with root package name */
-    static final TextDirectionHeuristicCompat f2560a = TextDirectionHeuristicsCompat.FIRSTSTRONG_LTR;
+    static final TextDirectionHeuristicCompat f2512a = TextDirectionHeuristicsCompat.FIRSTSTRONG_LTR;
     private static final String d = Character.toString(8206);
     private static final String e = Character.toString(8207);
-    static final BidiFormatter b = new BidiFormatter(false, 2, f2560a);
+    static final BidiFormatter b = new BidiFormatter(false, 2, f2512a);
 
     /* renamed from: c  reason: collision with root package name */
-    static final BidiFormatter f2561c = new BidiFormatter(true, 2, f2560a);
+    static final BidiFormatter f2513c = new BidiFormatter(true, 2, f2512a);
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/text/BidiFormatter$Builder.class */
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f2562a;
+        private boolean f2514a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private TextDirectionHeuristicCompat f2563c;
+        private TextDirectionHeuristicCompat f2515c;
 
         public Builder() {
             a(BidiFormatter.a(Locale.getDefault()));
@@ -41,21 +41,21 @@ public final class BidiFormatter {
         }
 
         private void a(boolean z) {
-            this.f2562a = z;
-            this.f2563c = BidiFormatter.f2560a;
+            this.f2514a = z;
+            this.f2515c = BidiFormatter.f2512a;
             this.b = 2;
         }
 
         private static BidiFormatter b(boolean z) {
-            return z ? BidiFormatter.f2561c : BidiFormatter.b;
+            return z ? BidiFormatter.f2513c : BidiFormatter.b;
         }
 
         public BidiFormatter build() {
-            return (this.b == 2 && this.f2563c == BidiFormatter.f2560a) ? b(this.f2562a) : new BidiFormatter(this.f2562a, this.b, this.f2563c);
+            return (this.b == 2 && this.f2515c == BidiFormatter.f2512a) ? b(this.f2514a) : new BidiFormatter(this.f2514a, this.b, this.f2515c);
         }
 
         public Builder setTextDirectionHeuristic(TextDirectionHeuristicCompat textDirectionHeuristicCompat) {
-            this.f2563c = textDirectionHeuristicCompat;
+            this.f2515c = textDirectionHeuristicCompat;
             return this;
         }
 
@@ -74,11 +74,11 @@ public final class BidiFormatter {
     public static class DirectionalityEstimator {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final byte[] f2564a = new byte[1792];
+        private static final byte[] f2516a = new byte[1792];
         private final CharSequence b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final boolean f2565c;
+        private final boolean f2517c;
         private final int d;
         private int e;
         private char f;
@@ -90,19 +90,19 @@ public final class BidiFormatter {
                 if (i2 >= 1792) {
                     return;
                 }
-                f2564a[i2] = Character.getDirectionality(i2);
+                f2516a[i2] = Character.getDirectionality(i2);
                 i = i2 + 1;
             }
         }
 
         DirectionalityEstimator(CharSequence charSequence, boolean z) {
             this.b = charSequence;
-            this.f2565c = z;
+            this.f2517c = z;
             this.d = charSequence.length();
         }
 
         private static byte a(char c2) {
-            return c2 < 1792 ? f2564a[c2] : Character.getDirectionality(c2);
+            return c2 < 1792 ? f2516a[c2] : Character.getDirectionality(c2);
         }
 
         private byte e() {
@@ -341,7 +341,7 @@ public final class BidiFormatter {
             this.e++;
             byte a2 = a(this.f);
             byte b = a2;
-            if (this.f2565c) {
+            if (this.f2517c) {
                 char c2 = this.f;
                 if (c2 == '<') {
                     return e();
@@ -365,7 +365,7 @@ public final class BidiFormatter {
             this.e--;
             byte a2 = a(this.f);
             byte b = a2;
-            if (this.f2565c) {
+            if (this.f2517c) {
                 char c2 = this.f;
                 if (c2 == '>') {
                     return f();

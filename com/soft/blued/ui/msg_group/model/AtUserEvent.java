@@ -8,13 +8,13 @@ import kotlin.Metadata;
 public class AtUserEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    private UserBasicModel f32790a;
+    private UserBasicModel f19099a;
 
     public final UserBasicModel a() {
-        return this.f32790a;
+        return this.f19099a;
     }
 
     public final void a(UserBasicModel userBasicModel) {
-        this.f32790a = userBasicModel;
+        this.f19099a = userBasicModel;
     }
 }

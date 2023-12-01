@@ -8,6 +8,7 @@ import com.blued.android.module.common.api.Succeed;
 import com.blued.android.module.common.user.model.UserTagAll;
 import com.soft.blued.ui.find.api.FindService;
 import java.util.List;
+import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -28,7 +29,7 @@ import kotlinx.coroutines.CoroutineScopeKt;
 public final class FilterNewHelper$preLoadImages$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f30595a;
+    int f16905a;
     final /* synthetic */ CoroutineScope b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -38,26 +39,23 @@ public final class FilterNewHelper$preLoadImages$1 extends SuspendLambda impleme
         this.b = coroutineScope;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((FilterNewHelper$preLoadImages$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new FilterNewHelper$preLoadImages$1(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        ApiState error;
+        ApiState apiState;
         Object a2 = IntrinsicsKt.a();
-        int i = this.f30595a;
+        int i = this.f16905a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f30595a = 1;
-            Object a3 = ((FindService) BluedApiProxy.b().a(FindService.class)).a(this);
+            this.f16905a = 1;
+            Object a3 = ((FindService) BluedApiProxy.b().a(FindService.class)).a((Continuation) this);
             obj = a3;
             if (a3 == a2) {
                 return a2;
@@ -71,36 +69,36 @@ public final class FilterNewHelper$preLoadImages$1 extends SuspendLambda impleme
         CoroutineScope coroutineScope = this.b;
         if (bluedEntityA.code != 200) {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            error = new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            apiState = (ApiState) new Error(i2, str);
         } else if (bluedEntityA.hasData()) {
-            List<T> data = bluedEntityA.data;
-            Intrinsics.c(data, "data");
+            List list = bluedEntityA.data;
+            Intrinsics.c(list, "data");
             bluedEntityA.hasMore();
-            if (!data.isEmpty()) {
-                FilterNewHelper.f30593a.a((UserTagAll) data.get(0));
-                error = Succeed.f10631a;
+            if (!list.isEmpty()) {
+                FilterNewHelper.f16903a.a((UserTagAll) list.get(0));
+                apiState = (ApiState) Succeed.a;
             }
-            CoroutineScopeKt.a(coroutineScope, null, 1, null);
-            error = Succeed.f10631a;
+            CoroutineScopeKt.a(coroutineScope, (CancellationException) null, 1, (Object) null);
+            apiState = (ApiState) Succeed.a;
         } else {
             List b = CollectionsKt.b();
-            List list = b;
-            if (!(list == null || list.isEmpty())) {
-                FilterNewHelper.f30593a.a((UserTagAll) b.get(0));
-                error = Succeed.f10631a;
+            List list2 = b;
+            if (!(list2 == null || list2.isEmpty())) {
+                FilterNewHelper.f16903a.a((UserTagAll) b.get(0));
+                apiState = (ApiState) Succeed.a;
             }
-            CoroutineScopeKt.a(coroutineScope, null, 1, null);
-            error = Succeed.f10631a;
+            CoroutineScopeKt.a(coroutineScope, (CancellationException) null, 1, (Object) null);
+            apiState = (ApiState) Succeed.a;
         }
         CoroutineScope coroutineScope2 = this.b;
-        if (error instanceof Error) {
-            Error error2 = (Error) error;
-            error2.a();
-            error2.b();
-            CoroutineScopeKt.a(coroutineScope2, null, 1, null);
+        if (apiState instanceof Error) {
+            Error error = apiState;
+            error.a();
+            error.b();
+            CoroutineScopeKt.a(coroutineScope2, (CancellationException) null, 1, (Object) null);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

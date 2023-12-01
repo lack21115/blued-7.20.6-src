@@ -6,11 +6,11 @@ import com.umeng.analytics.pro.at;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f40889a = "native";
+    public static String f27198a = "native";
     public static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public static long f40890c = 2097152;
+    public static long f27199c = 2097152;
     public static long d = 204800;
     public static final String e = at.b().b(at.x);
     public static final String f = at.b().b(at.y);

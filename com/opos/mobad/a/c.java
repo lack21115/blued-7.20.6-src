@@ -12,12 +12,12 @@ import com.opos.mobad.q.a.m;
 public class c extends m implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f25609a;
+    private Context f11921a;
     private Activity b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.o.a.a f25610c;
-    private a.C0707a d;
+    private com.opos.mobad.o.a.a f11922c;
+    private a.C0537a d;
     private boolean e;
     private com.opos.mobad.ad.privacy.b f;
     private boolean g;
@@ -25,22 +25,22 @@ public class c extends m implements b {
     private a i;
     private com.opos.mobad.a.a.b j;
 
-    public c(Activity activity, String str, com.opos.mobad.cmn.a.a aVar, com.opos.mobad.o.a.a aVar2, com.opos.mobad.ad.privacy.b bVar, b.InterfaceC0687b interfaceC0687b, a aVar3, com.opos.mobad.a.a.b bVar2) {
-        super(activity.getApplicationContext(), str, aVar, interfaceC0687b, aVar3);
+    public c(Activity activity, String str, com.opos.mobad.cmn.a.a aVar, com.opos.mobad.o.a.a aVar2, com.opos.mobad.ad.privacy.b bVar, b.InterfaceC0517b interfaceC0517b, a aVar3, com.opos.mobad.a.a.b bVar2) {
+        super(activity.getApplicationContext(), str, aVar, interfaceC0517b, aVar3);
         this.e = false;
         this.g = false;
         this.h = false;
         this.b = activity;
-        this.f25609a = activity.getApplicationContext();
+        this.f11921a = activity.getApplicationContext();
         this.f = bVar;
-        this.f25610c = aVar2;
+        this.f11922c = aVar2;
         aVar2.a(new com.opos.mobad.o.a.b() { // from class: com.opos.mobad.a.c.1
             @Override // com.opos.mobad.o.a.b
             public void a(int i) {
                 c.this.l.c(i);
                 c.this.e = false;
-                c.this.j.a(com.opos.mobad.model.a.a(c.this.f25609a, c.this.d, c.this.g, c.this.e));
-                if (c.b(c.this.d.f26483c)) {
+                c.this.j.a(com.opos.mobad.model.a.a(c.this.f11921a, c.this.d, c.this.g, c.this.e));
+                if (c.b(c.this.d.f12795c)) {
                     c.this.d((View) null, (int[]) null);
                 }
             }
@@ -49,8 +49,8 @@ public class c extends m implements b {
             public void a(boolean z) {
                 if (z) {
                     c.this.e = false;
-                    c.this.j.a(com.opos.mobad.model.a.a(c.this.f25609a, c.this.d, c.this.g, c.this.e));
-                    if (c.b(c.this.d.f26483c)) {
+                    c.this.j.a(com.opos.mobad.model.a.a(c.this.f11921a, c.this.d, c.this.g, c.this.e));
+                    if (c.b(c.this.d.f12795c)) {
                         c.this.d((View) null, (int[]) null);
                     }
                 }
@@ -73,28 +73,28 @@ public class c extends m implements b {
         return bVar.c();
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void a(View view, int[] iArr) {
-        if (this.h || b(this.d.f26483c)) {
+        if (this.h || b(this.d.f12795c)) {
             return;
         }
-        this.f25610c.a(view);
+        this.f11922c.a(view);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public void a(a.C0707a c0707a, com.opos.mobad.n.a aVar) {
-        if (aVar == null || c0707a == null) {
+    public void a(a.C0537a c0537a, com.opos.mobad.n.a aVar) {
+        if (aVar == null || c0537a == null) {
             com.opos.cmn.an.f.a.b("InterBannerPresenter", "render fail null data or template = " + aVar);
             b(1);
             return;
         }
-        this.d = c0707a;
-        a(c0707a.b, c0707a.f26483c, aVar.e());
-        this.e = c0707a.f26483c.Z();
+        this.d = c0537a;
+        a(c0537a.b, c0537a.f12795c, aVar.e());
+        this.e = c0537a.f12795c.Z();
         this.g = false;
         this.j.a(aVar);
         this.j.a(this);
-        this.j.a(com.opos.mobad.model.a.a(this.f25609a, c0707a, this.g, this.e));
+        this.j.a(com.opos.mobad.model.a.a(this.f11921a, c0537a, this.g, this.e));
     }
 
     @Override // com.opos.mobad.a.b
@@ -105,12 +105,12 @@ public class c extends m implements b {
         }
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void b() {
         super.a(this.j.c());
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void b(View view, int[] iArr) {
         if (this.h) {
             return;
@@ -133,7 +133,7 @@ public class c extends m implements b {
         super.c();
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void c(View view, int[] iArr) {
         if (this.h) {
             return;
@@ -147,16 +147,16 @@ public class c extends m implements b {
             return;
         }
         this.g = true;
-        bVar.a(com.opos.mobad.model.a.a(this.f25609a, this.d, true, this.e));
+        bVar.a(com.opos.mobad.model.a.a(this.f11921a, this.d, true, this.e));
     }
 
-    @Override // com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0538a
     public void d(View view, int[] iArr) {
         if (this.h) {
             return;
         }
-        if (this.e && b(this.d.f26483c)) {
-            this.f25610c.a(view);
+        if (this.e && b(this.d.f12795c)) {
+            this.f11922c.a(view);
         } else {
             super.d(view, iArr);
         }

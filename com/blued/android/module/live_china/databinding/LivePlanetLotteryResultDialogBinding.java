@@ -14,13 +14,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LivePlanetLotteryResultDialogBinding.class */
 public final class LivePlanetLotteryResultDialogBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12366a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12367c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -46,9 +42,9 @@ public final class LivePlanetLotteryResultDialogBinding implements ViewBinding {
 
     private LivePlanetLotteryResultDialogBinding(FrameLayout frameLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, RelativeLayout relativeLayout, RelativeLayout relativeLayout2, LinearLayout linearLayout, RelativeLayout relativeLayout3, RelativeLayout relativeLayout4, RelativeLayout relativeLayout5, RelativeLayout relativeLayout6, RecyclerView recyclerView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7) {
         this.y = frameLayout;
-        this.f12366a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f12367c = imageView3;
+        this.c = imageView3;
         this.d = imageView4;
         this.e = imageView5;
         this.f = imageView6;
@@ -118,8 +114,8 @@ public final class LivePlanetLotteryResultDialogBinding implements ViewBinding {
                                                                 if (relativeLayout5 != null) {
                                                                     RelativeLayout relativeLayout6 = (RelativeLayout) view.findViewById(R.id.rl_winning_root);
                                                                     if (relativeLayout6 != null) {
-                                                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                                                                        if (recyclerView != null) {
+                                                                        RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                                                                        if (findViewById != null) {
                                                                             TextView textView = (TextView) view.findViewById(R.id.tv_close);
                                                                             if (textView != null) {
                                                                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_not_bet);
@@ -134,7 +130,7 @@ public final class LivePlanetLotteryResultDialogBinding implements ViewBinding {
                                                                                                 if (textView6 != null) {
                                                                                                     TextView textView7 = (TextView) view.findViewById(R.id.tv_winning_value);
                                                                                                     if (textView7 != null) {
-                                                                                                        return new LivePlanetLotteryResultDialogBinding((FrameLayout) view, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, relativeLayout, relativeLayout2, linearLayout, relativeLayout3, relativeLayout4, relativeLayout5, relativeLayout6, recyclerView, textView, textView2, textView3, textView4, textView5, textView6, textView7);
+                                                                                                        return new LivePlanetLotteryResultDialogBinding((FrameLayout) view, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, relativeLayout, relativeLayout2, linearLayout, relativeLayout3, relativeLayout4, relativeLayout5, relativeLayout6, findViewById, textView, textView2, textView3, textView4, textView5, textView6, textView7);
                                                                                                     }
                                                                                                     str = "tvWinningValue";
                                                                                                 } else {
@@ -209,7 +205,6 @@ public final class LivePlanetLotteryResultDialogBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.y;

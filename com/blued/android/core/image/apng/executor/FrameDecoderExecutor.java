@@ -6,33 +6,27 @@ import android.os.Looper;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/apng/executor/FrameDecoderExecutor.class */
 public class FrameDecoderExecutor {
-
-    /* renamed from: a  reason: collision with root package name */
-    private HandlerThread f9546a;
+    private HandlerThread a;
     private Handler b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private volatile Looper f9547c;
+    private volatile Looper c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/apng/executor/FrameDecoderExecutor$Inner.class */
     public static class Inner {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final FrameDecoderExecutor f9548a = new FrameDecoderExecutor();
+        static final FrameDecoderExecutor a = new FrameDecoderExecutor();
 
         private Inner() {
         }
     }
 
     private FrameDecoderExecutor() {
-        this.f9546a = null;
+        this.a = null;
         this.b = null;
-        this.f9547c = null;
+        this.c = null;
     }
 
     public static FrameDecoderExecutor a() {
-        return Inner.f9548a;
+        return Inner.a;
     }
 
     public void a(Runnable runnable) {
@@ -45,13 +39,13 @@ public class FrameDecoderExecutor {
 
     public Handler b() {
         if (this.b == null) {
-            synchronized (Inner.f9548a) {
+            synchronized (Inner.a) {
                 if (this.b == null) {
                     HandlerThread handlerThread = new HandlerThread("FrameDecoderExecutor");
-                    this.f9546a = handlerThread;
+                    this.a = handlerThread;
                     handlerThread.start();
-                    this.f9547c = this.f9546a.getLooper();
-                    this.b = new Handler(this.f9547c);
+                    this.c = this.a.getLooper();
+                    this.b = new Handler(this.c);
                 }
             }
         }
@@ -63,6 +57,6 @@ public class FrameDecoderExecutor {
     }
 
     public boolean c() {
-        return Looper.myLooper() == this.f9547c;
+        return Looper.myLooper() == this.c;
     }
 }

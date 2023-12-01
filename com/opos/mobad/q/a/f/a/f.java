@@ -8,11 +8,11 @@ import android.view.View;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private ObjectAnimator f27193a;
+    private ObjectAnimator f13505a;
     private ObjectAnimator b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AnimatorSet f27194c;
+    private AnimatorSet f13506c;
     private View d;
     private float e;
     private float f;
@@ -41,15 +41,15 @@ public class f {
                 return;
             }
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.d, "scaleX", this.e, this.f, this.e);
-            this.f27193a = ofFloat;
+            this.f13505a = ofFloat;
             ofFloat.setRepeatCount(-1);
             ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.d, "scaleY", this.e, this.f, this.e);
             this.b = ofFloat2;
             ofFloat2.setRepeatCount(-1);
             AnimatorSet animatorSet = new AnimatorSet();
-            this.f27194c = animatorSet;
-            animatorSet.play(this.f27193a).with(this.b);
-            this.f27194c.setDuration(this.g);
+            this.f13506c = animatorSet;
+            animatorSet.play(this.f13505a).with(this.b);
+            this.f13506c.setDuration(this.g);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("ScaleAnimator", "", (Throwable) e);
         }
@@ -60,7 +60,7 @@ public class f {
             if (this.d == null) {
                 return;
             }
-            this.f27194c.start();
+            this.f13506c.start();
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("ScaleAnimator", "", (Throwable) e);
         }
@@ -71,7 +71,7 @@ public class f {
             if (this.d == null) {
                 return;
             }
-            this.f27194c.cancel();
+            this.f13506c.cancel();
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("ScaleAnimator", "", (Throwable) e);
         }

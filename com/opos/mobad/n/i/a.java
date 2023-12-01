@@ -14,18 +14,17 @@ import java.util.concurrent.atomic.AtomicInteger;
 public abstract class a implements com.opos.mobad.n.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f26999a;
+    private int f13311a;
 
     /* renamed from: c  reason: collision with root package name */
-    public a.InterfaceC0708a f27000c;
+    public a.InterfaceC0538a f13312c;
     private long d;
     private boolean e = false;
-    protected C0718a b = j();
+    protected C0548a b = j();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.mobad.n.i.a$11  reason: invalid class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/n/i/a$11.class */
-    public class AnonymousClass11 implements Runnable {
+    class AnonymousClass11 implements Runnable {
         AnonymousClass11() {
         }
 
@@ -39,8 +38,8 @@ public abstract class a implements com.opos.mobad.n.a {
                         b.a(new Runnable() { // from class: com.opos.mobad.n.i.a.11.1.1
                             @Override // java.lang.Runnable
                             public void run() {
-                                if (a.this.f27000c != null) {
-                                    a.this.f27000c.b();
+                                if (a.this.f13312c != null) {
+                                    a.this.f13312c.b();
                                 }
                             }
                         });
@@ -56,25 +55,25 @@ public abstract class a implements com.opos.mobad.n.a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.mobad.n.i.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/n/i/a$a.class */
-    public static class C0718a {
+    public static class C0548a {
 
         /* renamed from: a  reason: collision with root package name */
-        private Map<Integer, Set<Integer>> f27023a;
+        private Map<Integer, Set<Integer>> f13335a;
         private AtomicInteger b;
 
         /* renamed from: com.opos.mobad.n.i.a$a$a  reason: collision with other inner class name */
         /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/n/i/a$a$a.class */
-        public static class C0719a {
+        public static class C0549a {
 
             /* renamed from: a  reason: collision with root package name */
-            private int f27024a;
+            private int f13336a;
             private Map<Integer, Set<Integer>> b = new HashMap();
 
-            public C0719a(int i) {
-                this.f27024a = i;
+            public C0549a(int i) {
+                this.f13336a = i;
             }
 
-            public C0719a a(int i, int i2) {
+            public C0549a a(int i, int i2) {
                 Set<Integer> set = this.b.get(Integer.valueOf(i));
                 HashSet hashSet = set;
                 if (set == null) {
@@ -85,7 +84,7 @@ public abstract class a implements com.opos.mobad.n.a {
                 return this;
             }
 
-            public C0719a a(int i, int... iArr) {
+            public C0549a a(int i, int... iArr) {
                 if (iArr == null) {
                     return this;
                 }
@@ -107,12 +106,12 @@ public abstract class a implements com.opos.mobad.n.a {
                 }
             }
 
-            public C0718a a() {
-                return new C0718a(this.f27024a, this.b);
+            public C0548a a() {
+                return new C0548a(this.f13336a, this.b);
             }
         }
 
-        protected C0718a(int i, Map<Integer, Set<Integer>> map) {
+        protected C0548a(int i, Map<Integer, Set<Integer>> map) {
             this.b = new AtomicInteger(i);
             a(map);
         }
@@ -142,23 +141,23 @@ public abstract class a implements com.opos.mobad.n.a {
             if (map == null || map.isEmpty()) {
                 return;
             }
-            this.f27023a = new HashMap();
+            this.f13335a = new HashMap();
             for (Integer num : map.keySet()) {
                 Set<Integer> set = map.get(num);
                 if (set != null && !set.isEmpty()) {
-                    this.f27023a.put(num, new HashSet(map.get(num)));
+                    this.f13335a.put(num, new HashSet(map.get(num)));
                 }
             }
         }
 
         private boolean a(int i, int i2) {
             String str;
-            Map<Integer, Set<Integer>> map = this.f27023a;
+            Map<Integer, Set<Integer>> map = this.f13335a;
             if (map == null) {
                 str = "checkEnable but mController = null";
             } else if (!map.containsKey(Integer.valueOf(i))) {
                 str = "checkEnable but error current state:" + i;
-            } else if (this.f27023a.get(Integer.valueOf(i)).contains(Integer.valueOf(i2))) {
+            } else if (this.f13335a.get(Integer.valueOf(i)).contains(Integer.valueOf(i2))) {
                 return true;
             } else {
                 str = "checkEnable but error next state:" + i + ",to:" + i2;
@@ -206,7 +205,7 @@ public abstract class a implements com.opos.mobad.n.a {
     }
 
     public a(int i) {
-        this.f26999a = i;
+        this.f13311a = i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -214,16 +213,16 @@ public abstract class a implements com.opos.mobad.n.a {
         b.a(new Runnable() { // from class: com.opos.mobad.n.i.a.4
             @Override // java.lang.Runnable
             public void run() {
-                if (a.this.o() == 8 || a.this.f27000c == null) {
+                if (a.this.o() == 8 || a.this.f13312c == null) {
                     return;
                 }
-                a.this.f27000c.d(j, j2);
+                a.this.f13312c.d(j, j2);
             }
         });
     }
 
-    protected static final C0718a j() {
-        return new C0718a.C0719a(0).a(0, 2, 1, 8).a(1, 8).a(2, 3, 8).a(3, 4, 5, 8).a(4, 7, 6, 1, 8).a(5, 7, 6, 1, 8).a(7, 4, 5, 8).a(6, 5, 8).a();
+    protected static final C0548a j() {
+        return new C0548a.C0549a(0).a(0, 2, 1, 8).a(1, 8).a(2, 3, 8).a(3, 4, 5, 8).a(4, 7, 6, 1, 8).a(5, 7, 6, 1, 8).a(7, 4, 5, 8).a(6, 5, 8).a();
     }
 
     @Override // com.opos.mobad.n.a
@@ -245,8 +244,8 @@ public abstract class a implements com.opos.mobad.n.a {
                     @Override // java.util.concurrent.Callable
                     /* renamed from: a */
                     public Boolean call() throws Exception {
-                        if (a.this.f27000c != null) {
-                            a.this.f27000c.b(i);
+                        if (a.this.f13312c != null) {
+                            a.this.f13312c.b(i);
                         }
                         return false;
                     }
@@ -263,8 +262,8 @@ public abstract class a implements com.opos.mobad.n.a {
                     @Override // java.util.concurrent.Callable
                     /* renamed from: a */
                     public Boolean call() throws Exception {
-                        if (a.this.f27000c != null) {
-                            a.this.f27000c.a(i, str);
+                        if (a.this.f13312c != null) {
+                            a.this.f13312c.a(i, str);
                         }
                         return true;
                     }
@@ -274,35 +273,35 @@ public abstract class a implements com.opos.mobad.n.a {
     }
 
     public void a(long j, long j2) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.b.a() == 8 || (interfaceC0708a = this.f27000c) == null) {
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.b.a() == 8 || (interfaceC0538a = this.f13312c) == null) {
             return;
         }
-        interfaceC0708a.c(j, j2);
+        interfaceC0538a.c(j, j2);
     }
 
     public void a(final View view, final int[] iArr) {
         b.b(new Runnable() { // from class: com.opos.mobad.n.i.a.12
             @Override // java.lang.Runnable
             public void run() {
-                if (a.this.f27000c != null) {
-                    a.this.f27000c.d(view, iArr);
+                if (a.this.f13312c != null) {
+                    a.this.f13312c.d(view, iArr);
                 }
             }
         });
     }
 
     public void a(View view, int[] iArr, boolean z) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.b.a() == 8 || (interfaceC0708a = this.f27000c) == null) {
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.b.a() == 8 || (interfaceC0538a = this.f13312c) == null) {
             return;
         }
-        interfaceC0708a.a(view, iArr, z);
+        interfaceC0538a.a(view, iArr, z);
     }
 
     @Override // com.opos.mobad.n.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.f27000c = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.f13312c = interfaceC0538a;
     }
 
     public void a(final Callable callable) {
@@ -313,8 +312,8 @@ public abstract class a implements com.opos.mobad.n.a {
                     @Override // java.util.concurrent.Callable
                     /* renamed from: a */
                     public Boolean call() throws Exception {
-                        if (a.this.f27000c != null) {
-                            a.this.f27000c.e();
+                        if (a.this.f13312c != null) {
+                            a.this.f13312c.e();
                         }
                         if (callable != null) {
                             callable.call();
@@ -338,27 +337,27 @@ public abstract class a implements com.opos.mobad.n.a {
     }
 
     public void b(int i) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.b.a() == 8 || (interfaceC0708a = this.f27000c) == null) {
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.b.a() == 8 || (interfaceC0538a = this.f13312c) == null) {
             return;
         }
-        interfaceC0708a.c(i);
+        interfaceC0538a.c(i);
     }
 
     public void b(long j, long j2) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.b.a() == 8 || (interfaceC0708a = this.f27000c) == null) {
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.b.a() == 8 || (interfaceC0538a = this.f13312c) == null) {
             return;
         }
-        interfaceC0708a.b(j, j2);
+        interfaceC0538a.b(j, j2);
     }
 
     public void b(View view, int[] iArr) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.b.a() == 8 || (interfaceC0708a = this.f27000c) == null) {
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.b.a() == 8 || (interfaceC0538a = this.f13312c) == null) {
             return;
         }
-        interfaceC0708a.c(view, iArr);
+        interfaceC0538a.c(view, iArr);
     }
 
     public void c(final long j, final long j2) {
@@ -386,11 +385,11 @@ public abstract class a implements com.opos.mobad.n.a {
     }
 
     public void c(View view, int[] iArr) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.b.a() == 8 || (interfaceC0708a = this.f27000c) == null) {
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.b.a() == 8 || (interfaceC0538a = this.f13312c) == null) {
             return;
         }
-        interfaceC0708a.b(view, iArr);
+        interfaceC0538a.b(view, iArr);
     }
 
     @Override // com.opos.mobad.n.a
@@ -400,49 +399,49 @@ public abstract class a implements com.opos.mobad.n.a {
             /* renamed from: a */
             public Boolean call() throws Exception {
                 a.this.h();
-                a.this.f27000c = null;
+                a.this.f13312c = null;
                 return true;
             }
         });
     }
 
     public void d(View view, int[] iArr) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.b.a() == 8 || (interfaceC0708a = this.f27000c) == null) {
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.b.a() == 8 || (interfaceC0538a = this.f13312c) == null) {
             return;
         }
-        interfaceC0708a.f(view, iArr);
+        interfaceC0538a.f(view, iArr);
     }
 
     @Override // com.opos.mobad.n.a
     public int e() {
-        return this.f26999a;
+        return this.f13311a;
     }
 
     public void e(View view, int[] iArr) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.b.a() == 8 || (interfaceC0708a = this.f27000c) == null) {
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.b.a() == 8 || (interfaceC0538a = this.f13312c) == null) {
             return;
         }
-        interfaceC0708a.g(view, iArr);
+        interfaceC0538a.g(view, iArr);
     }
 
     public void f(View view, int[] iArr) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.b.a() == 8 || (interfaceC0708a = this.f27000c) == null) {
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.b.a() == 8 || (interfaceC0538a = this.f13312c) == null) {
             return;
         }
-        interfaceC0708a.e(view, iArr);
+        interfaceC0538a.e(view, iArr);
     }
 
     protected abstract boolean f();
 
     public void g(View view, int[] iArr) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.b.a() == 8 || (interfaceC0708a = this.f27000c) == null) {
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.b.a() == 8 || (interfaceC0538a = this.f13312c) == null) {
             return;
         }
-        interfaceC0708a.h(view, iArr);
+        interfaceC0538a.h(view, iArr);
     }
 
     protected abstract boolean g();
@@ -450,19 +449,19 @@ public abstract class a implements com.opos.mobad.n.a {
     protected abstract void h();
 
     public void h(View view, int[] iArr) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.b.a() == 8 || (interfaceC0708a = this.f27000c) == null) {
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.b.a() == 8 || (interfaceC0538a = this.f13312c) == null) {
             return;
         }
-        interfaceC0708a.a(view, iArr);
+        interfaceC0538a.a(view, iArr);
     }
 
     public void i(View view, int[] iArr) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.b.a() == 8 || (interfaceC0708a = this.f27000c) == null) {
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.b.a() == 8 || (interfaceC0538a = this.f13312c) == null) {
             return;
         }
-        interfaceC0708a.i(view, iArr);
+        interfaceC0538a.i(view, iArr);
     }
 
     public void k() {
@@ -501,8 +500,8 @@ public abstract class a implements com.opos.mobad.n.a {
         b.b(new Runnable() { // from class: com.opos.mobad.n.i.a.5
             @Override // java.lang.Runnable
             public void run() {
-                if (a.this.f27000c != null) {
-                    a.this.f27000c.a(a.this.d, a.this.d);
+                if (a.this.f13312c != null) {
+                    a.this.f13312c.a(a.this.d, a.this.d);
                 }
             }
         });

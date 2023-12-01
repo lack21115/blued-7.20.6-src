@@ -17,13 +17,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYSubscriptionView.class */
 public final class YYSubscriptionView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public BaseYYStudioFragment f18508a;
+    public BaseYYStudioFragment a;
     private ViewYySubscriptionLayoutBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRoomModel f18509c;
+    private YYRoomModel c;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public YYSubscriptionView(Context context) {
@@ -41,14 +37,14 @@ public final class YYSubscriptionView extends LinearLayout {
     public YYSubscriptionView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        ViewYySubscriptionLayoutBinding a2 = ViewYySubscriptionLayoutBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.b = a2;
+        ViewYySubscriptionLayoutBinding a = ViewYySubscriptionLayoutBinding.a(LayoutInflater.from(getContext()), this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.b = a;
         a();
     }
 
     private final void a() {
-        this.b.f16962a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYSubscriptionView$bak6NzKbgVFBSj5BK1By7rONW84
+        this.b.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYSubscriptionView$bak6NzKbgVFBSj5BK1By7rONW84
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYSubscriptionView.a(YYSubscriptionView.this, view);
@@ -59,19 +55,19 @@ public final class YYSubscriptionView extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YYSubscriptionView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        if (this$0.f18509c == null || this$0.getFragment() == null) {
+        if (this$0.c == null || this$0.getFragment() == null) {
             return;
         }
         ChatRoomProtos.Event event = ChatRoomProtos.Event.CHAT_ROOM_FOLLOW_ANCHOR_GUIDE_CLICK;
-        YYRoomModel yYRoomModel = this$0.f18509c;
+        YYRoomModel yYRoomModel = this$0.c;
         String str = yYRoomModel == null ? null : yYRoomModel.room_id;
-        YYRoomModel yYRoomModel2 = this$0.f18509c;
+        YYRoomModel yYRoomModel2 = this$0.c;
         EventTrackYY.d(event, str, yYRoomModel2 == null ? null : yYRoomModel2.uid);
         YYRoomInfoManager e = YYRoomInfoManager.e();
         Context context = this$0.getContext();
-        YYRoomModel yYRoomModel3 = this$0.f18509c;
+        YYRoomModel yYRoomModel3 = this$0.c;
         String str2 = yYRoomModel3 == null ? null : yYRoomModel3.uid;
-        YYRoomModel yYRoomModel4 = this$0.f18509c;
+        YYRoomModel yYRoomModel4 = this$0.c;
         e.b(context, str2, yYRoomModel4 == null ? null : yYRoomModel4.name, this$0.getFragment().getFragmentActive());
         this$0.getFragment().y();
     }
@@ -80,13 +76,13 @@ public final class YYSubscriptionView extends LinearLayout {
         Intrinsics.e(fragment, "fragment");
         setFragment(fragment);
         YYRoomModel b = YYRoomInfoManager.e().b();
-        this.f18509c = b;
+        this.c = b;
         if (b != null) {
             ChatRoomProtos.Event event = ChatRoomProtos.Event.CHAT_ROOM_FOLLOW_ANCHOR_GUIDE_SHOW;
-            YYRoomModel yYRoomModel = this.f18509c;
+            YYRoomModel yYRoomModel = this.c;
             String str = null;
             String str2 = yYRoomModel == null ? null : yYRoomModel.room_id;
-            YYRoomModel yYRoomModel2 = this.f18509c;
+            YYRoomModel yYRoomModel2 = this.c;
             if (yYRoomModel2 != null) {
                 str = yYRoomModel2.uid;
             }
@@ -99,7 +95,7 @@ public final class YYSubscriptionView extends LinearLayout {
     }
 
     public final BaseYYStudioFragment getFragment() {
-        BaseYYStudioFragment baseYYStudioFragment = this.f18508a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment != null) {
             return baseYYStudioFragment;
         }
@@ -108,7 +104,7 @@ public final class YYSubscriptionView extends LinearLayout {
     }
 
     public final YYRoomModel getRoomModel() {
-        return this.f18509c;
+        return this.c;
     }
 
     public final void setBinding(ViewYySubscriptionLayoutBinding viewYySubscriptionLayoutBinding) {
@@ -118,10 +114,10 @@ public final class YYSubscriptionView extends LinearLayout {
 
     public final void setFragment(BaseYYStudioFragment baseYYStudioFragment) {
         Intrinsics.e(baseYYStudioFragment, "<set-?>");
-        this.f18508a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
     }
 
     public final void setRoomModel(YYRoomModel yYRoomModel) {
-        this.f18509c = yYRoomModel;
+        this.c = yYRoomModel;
     }
 }

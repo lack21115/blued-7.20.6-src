@@ -4,13 +4,13 @@ package com.youzan.androidsdk.ui;
 public class PageRequest {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private String f1148;
+    private String f1101;
 
     public PageRequest(String str) {
-        this.f1148 = str;
+        this.f1101 = str;
     }
 
     public String getUrl() {
-        return this.f1148;
+        return this.f1101;
     }
 }

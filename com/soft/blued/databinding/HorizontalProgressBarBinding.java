@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class HorizontalProgressBarBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29067a;
+    private final LinearLayout f15377a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29067a;
+        return this.f15377a;
     }
 }

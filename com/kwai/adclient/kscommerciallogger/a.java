@@ -11,10 +11,9 @@ public final class a {
     private boolean aDT;
     private boolean isDebug;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwai.adclient.kscommerciallogger.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/adclient/kscommerciallogger/a$a.class */
-    public static final class C0582a {
+    static final class C0412a {
         private static a aDU;
 
         public static a FS() {
@@ -35,7 +34,7 @@ public final class a {
     }
 
     public static a FS() {
-        return C0582a.FS();
+        return C0412a.FS();
     }
 
     private void d(c cVar) {

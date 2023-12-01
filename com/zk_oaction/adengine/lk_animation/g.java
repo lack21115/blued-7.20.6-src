@@ -10,10 +10,10 @@ import org.xmlpull.v1.XmlPullParserException;
 public class g extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.zk_oaction.adengine.lk_view.g f41900a;
+    private com.zk_oaction.adengine.lk_view.g f28209a;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f41901c;
+    private long f28210c;
     private ArrayList<a> b = new ArrayList<>();
     private String d = "";
 
@@ -22,17 +22,17 @@ public class g extends b {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        String f41902a;
+        String f28211a;
         long b;
 
         public a(String str, long j) {
-            this.f41902a = str;
+            this.f28211a = str;
             this.b = j;
         }
     }
 
     public g(com.zk_oaction.adengine.lk_view.g gVar) {
-        this.f41900a = gVar;
+        this.f28209a = gVar;
     }
 
     private void a(String str, long j) {
@@ -41,7 +41,7 @@ public class g extends b {
 
     @Override // com.zk_oaction.adengine.lk_animation.b
     public long a() {
-        return this.f41901c;
+        return this.f28210c;
     }
 
     @Override // com.zk_oaction.adengine.lk_animation.b
@@ -61,12 +61,12 @@ public class g extends b {
             }
         }
         a aVar = this.b.get(i);
-        if (this.d.equals(aVar.f41902a)) {
+        if (this.d.equals(aVar.f28211a)) {
             return;
         }
-        String str = aVar.f41902a;
+        String str = aVar.f28211a;
         this.d = str;
-        this.f41900a.e(str);
+        this.f28209a.e(str);
     }
 
     @Override // com.zk_oaction.adengine.lk_animation.b
@@ -84,8 +84,8 @@ public class g extends b {
                 } else if (xmlPullParser.getName().equals("Source")) {
                     String attributeValue = xmlPullParser.getAttributeValue(null, OapsKey.KEY_SRC);
                     long parseLong = Long.parseLong(xmlPullParser.getAttributeValue(null, "time"));
-                    if (parseLong > this.f41901c) {
-                        this.f41901c = parseLong;
+                    if (parseLong > this.f28210c) {
+                        this.f28210c = parseLong;
                     }
                     a(attributeValue, parseLong);
                 }

@@ -2,6 +2,7 @@ package com.zx.a.I8b7;
 
 import android.content.Context;
 import android.os.Handler;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,20 +19,20 @@ public class x implements d0 {
     public static Map<File, IvParameterSpec> f = new ConcurrentHashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    public File f42225a;
+    public File f28534a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Context f42226c;
+    public Context f28535c;
 
     public x(Context context) {
-        this.f42226c = context.getApplicationContext();
-        this.b = context.getPackageName() + "-" + new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()) + com.anythink.china.common.a.a.f;
-        this.f42225a = new File("sdcard/libs", this.b);
+        this.f28535c = context.getApplicationContext();
+        this.b = context.getPackageName() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()) + ".log";
+        this.f28534a = new File("sdcard/libs", this.b);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:28:0x0104, code lost:
-        if (((java.util.concurrent.ConcurrentHashMap) com.zx.a.I8b7.x.f).get(r7.f42225a) == null) goto L14;
+        if (((java.util.concurrent.ConcurrentHashMap) com.zx.a.I8b7.x.f).get(r7.f28534a) == null) goto L14;
      */
     @Override // com.zx.a.I8b7.d0
     /*

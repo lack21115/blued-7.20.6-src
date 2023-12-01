@@ -1,6 +1,5 @@
 package io.grpc.inprocess;
 
-import android.provider.Downloads;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
@@ -542,7 +541,7 @@ public final class InProcessTransport implements ConnectionClientTransport, Serv
 
         private InProcessStream(MethodDescriptor<?, ?> methodDescriptor, Metadata metadata, CallOptions callOptions, String str) {
             this.method = (MethodDescriptor) Preconditions.checkNotNull(methodDescriptor, "method");
-            this.headers = (Metadata) Preconditions.checkNotNull(metadata, Downloads.Impl.RequestHeaders.URI_SEGMENT);
+            this.headers = (Metadata) Preconditions.checkNotNull(metadata, "headers");
             this.callOptions = (CallOptions) Preconditions.checkNotNull(callOptions, "callOptions");
             this.authority = str;
             this.clientStream = new InProcessClientStream(callOptions, metadata);
@@ -690,7 +689,6 @@ public final class InProcessTransport implements ConnectionClientTransport, Serv
         return this.attributes;
     }
 
-    @Override // io.grpc.InternalWithLogId
     public InternalLogId getLogId() {
         return this.logId;
     }
@@ -700,10 +698,9 @@ public final class InProcessTransport implements ConnectionClientTransport, Serv
         return this.serverScheduler;
     }
 
-    @Override // io.grpc.InternalInstrumented
     public ListenableFuture<InternalChannelz.SocketStats> getStats() {
         SettableFuture create = SettableFuture.create();
-        create.set(null);
+        create.set((Object) null);
         return create;
     }
 
@@ -783,7 +780,7 @@ public final class InProcessTransport implements ConnectionClientTransport, Serv
             this.clientTransportListener = listener;
             if (this.optionalServerListener.isPresent()) {
                 this.serverScheduler = this.serverSchedulerPool.getObject();
-                this.serverTransportListener = this.optionalServerListener.get().transportCreated(this);
+                this.serverTransportListener = ((ServerListener) this.optionalServerListener.get()).transportCreated(this);
             } else {
                 InProcessServer findServer = InProcessServer.findServer(this.name);
                 if (findServer != null) {

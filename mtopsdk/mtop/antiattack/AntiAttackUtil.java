@@ -1,6 +1,7 @@
 package mtopsdk.mtop.antiattack;
 
 import com.taobao.tao.remotebusiness.listener.c;
+import java.net.SocketOptions;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -14,9 +15,7 @@ import mtopsdk.mtop.util.Result;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/antiattack/AntiAttackUtil.class */
 public final class AntiAttackUtil {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected static final ConcurrentMap f43698a = new ConcurrentHashMap(1);
+    protected static final ConcurrentMap a = new ConcurrentHashMap(1);
 
     private AntiAttackUtil() {
     }
@@ -26,7 +25,7 @@ public final class AntiAttackUtil {
             return null;
         }
         CheckCodeDO checkCodeDO = new CheckCodeDO();
-        checkCodeDO.f43700a = c.a(map, "image");
+        checkCodeDO.a = c.a(map, "image");
         checkCodeDO.b = c.a(map, "check");
         HashMap hashMap = new HashMap();
         CheckCodeDO.CheckCodeFieldEnum[] values = CheckCodeDO.CheckCodeFieldEnum.values();
@@ -35,7 +34,7 @@ public final class AntiAttackUtil {
         while (true) {
             int i2 = i;
             if (i2 >= length) {
-                checkCodeDO.f43701c = hashMap;
+                checkCodeDO.c = hashMap;
                 return checkCodeDO;
             }
             CheckCodeDO.CheckCodeFieldEnum checkCodeFieldEnum = values[i2];
@@ -57,7 +56,7 @@ public final class AntiAttackUtil {
     }
 
     public static void a() {
-        f43698a.remove("mtopsdk.mtop.antiattack.checkcode.validate.activity_action");
+        a.remove("mtopsdk.mtop.antiattack.checkcode.validate.activity_action");
         TBSdkLog.b("mtopsdk.AntiAttackUtil", "[removeLoadedFlag] remove AntiAttack loadFlag succeed.");
     }
 
@@ -67,7 +66,7 @@ public final class AntiAttackUtil {
             return null;
         }
         try {
-            return SDKConfig.a().m().a(new mtopsdk.a.b.c().a(str).c(1).d(4099).a()).b();
+            return SDKConfig.a().m().a(new mtopsdk.a.b.c().a(str).c(1).d(SocketOptions.SO_OOBINLINE).a()).b();
         } catch (Exception e) {
             e.printStackTrace();
             return null;

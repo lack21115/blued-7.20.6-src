@@ -14,11 +14,11 @@ import com.anythink.expressad.video.module.a.a.m;
 public class AutoSlideViewpager extends ViewPager {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f28317a;
+    private boolean f14627a;
     private PagerIndicator b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28318c;
+    private int f14628c;
     private Handler d;
     private Runnable e;
     private Boolean f;
@@ -27,8 +27,8 @@ public class AutoSlideViewpager extends ViewPager {
 
     public AutoSlideViewpager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f28317a = false;
-        this.f28318c = 0;
+        this.f14627a = false;
+        this.f14628c = 0;
         this.d = new Handler(Looper.getMainLooper());
         this.e = new Runnable() { // from class: com.soft.blued.customview.AutoSlideViewpager.1
             @Override // java.lang.Runnable
@@ -36,11 +36,11 @@ public class AutoSlideViewpager extends ViewPager {
                 if (AutoSlideViewpager.this.f.booleanValue() && AutoSlideViewpager.this.getAdapter() != null) {
                     int count = AutoSlideViewpager.this.getAdapter().getCount();
                     AutoSlideViewpager.b(AutoSlideViewpager.this);
-                    if (AutoSlideViewpager.this.f28318c >= count) {
-                        AutoSlideViewpager.this.f28318c = 0;
+                    if (AutoSlideViewpager.this.f14628c >= count) {
+                        AutoSlideViewpager.this.f14628c = 0;
                     }
                     AutoSlideViewpager autoSlideViewpager = AutoSlideViewpager.this;
-                    autoSlideViewpager.setCurrentItem(autoSlideViewpager.f28318c);
+                    autoSlideViewpager.setCurrentItem(autoSlideViewpager.f14628c);
                 }
             }
         };
@@ -68,8 +68,8 @@ public class AutoSlideViewpager extends ViewPager {
     }
 
     static /* synthetic */ int b(AutoSlideViewpager autoSlideViewpager) {
-        int i = autoSlideViewpager.f28318c;
-        autoSlideViewpager.f28318c = i + 1;
+        int i = autoSlideViewpager.f14628c;
+        autoSlideViewpager.f14628c = i + 1;
         return i;
     }
 
@@ -84,18 +84,18 @@ public class AutoSlideViewpager extends ViewPager {
                 }
                 int a2 = autoSlidePagerAdapter.a();
                 int count = autoSlidePagerAdapter.getCount();
-                if (AutoSlideViewpager.this.f28318c < a2) {
-                    int i3 = AutoSlideViewpager.this.f28318c + a2;
+                if (AutoSlideViewpager.this.f14628c < a2) {
+                    int i3 = AutoSlideViewpager.this.f14628c + a2;
                     AutoSlideViewpager.this.setCurrentItem(i3, false);
-                    AutoSlideViewpager.this.f28318c = i3;
-                } else if (AutoSlideViewpager.this.f28318c >= a2 * 2) {
+                    AutoSlideViewpager.this.f14628c = i3;
+                } else if (AutoSlideViewpager.this.f14628c >= a2 * 2) {
                     if (count < a2 * 3) {
-                        i2 = a2 == 0 ? AutoSlideViewpager.this.f28318c : AutoSlideViewpager.this.f28318c % a2;
+                        i2 = a2 == 0 ? AutoSlideViewpager.this.f14628c : AutoSlideViewpager.this.f14628c % a2;
                     } else {
-                        i2 = (a2 == 0 ? AutoSlideViewpager.this.f28318c : AutoSlideViewpager.this.f28318c % a2) + a2;
+                        i2 = (a2 == 0 ? AutoSlideViewpager.this.f14628c : AutoSlideViewpager.this.f14628c % a2) + a2;
                     }
                     AutoSlideViewpager.this.setCurrentItem(i2, false);
-                    AutoSlideViewpager.this.f28318c = i2;
+                    AutoSlideViewpager.this.f14628c = i2;
                 }
             }
 
@@ -108,7 +108,7 @@ public class AutoSlideViewpager extends ViewPager {
                 if (AutoSlideViewpager.this.b != null) {
                     AutoSlideViewpager.this.b.setCurrentPage(i);
                 }
-                AutoSlideViewpager.this.f28318c = i;
+                AutoSlideViewpager.this.f14628c = i;
                 AutoSlidePagerAdapter autoSlidePagerAdapter = (AutoSlidePagerAdapter) AutoSlideViewpager.this.getAdapter();
                 if (autoSlidePagerAdapter == null || autoSlidePagerAdapter.getCount() <= 1 || !AutoSlideViewpager.this.f.booleanValue()) {
                     return;
@@ -122,12 +122,12 @@ public class AutoSlideViewpager extends ViewPager {
     public void dataSetChanged() {
         AutoSlidePagerAdapter autoSlidePagerAdapter = (AutoSlidePagerAdapter) getAdapter();
         if (autoSlidePagerAdapter == null || autoSlidePagerAdapter.a() <= 1) {
-            this.f28317a = false;
+            this.f14627a = false;
             return;
         }
-        this.f28317a = true;
+        this.f14627a = true;
         int a2 = autoSlidePagerAdapter.a();
-        this.f28318c = a2;
+        this.f14628c = a2;
         setCurrentItem(a2, false);
         if (this.f.booleanValue()) {
             a();
@@ -155,11 +155,10 @@ public class AutoSlideViewpager extends ViewPager {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onWindowVisibilityChanged(int i) {
+    protected void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
-        if (this.f28317a) {
+        if (this.f14627a) {
             if (i != 0) {
                 this.d.removeCallbacks(this.e);
             } else if (this.f.booleanValue()) {

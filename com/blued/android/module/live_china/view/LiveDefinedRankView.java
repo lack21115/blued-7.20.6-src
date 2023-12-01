@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.framework.utils.LogUtils;
@@ -34,13 +35,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveDefinedRankView.class */
 public class LiveDefinedRankView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected View f14456a;
+    protected View a;
     protected ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected ListView f14457c;
+    protected ListView c;
     protected CommonAdapter<LiveDefinedRankModel> d;
     protected TextView e;
     private ImageView f;
@@ -92,7 +89,7 @@ public class LiveDefinedRankView extends FrameLayout {
                 viewHolder.b(R.id.item_live_defined_rank_index_tv, 0);
             }
             final boolean z = endsWith;
-            viewHolder.a(R.id.item_live_defined_rank_index_tv, liveDefinedRankModel.score > 0 ? String.valueOf(liveDefinedRankModel.index) : "-").a(R.id.item_live_defined_rank_avatar, liveDefinedRankModel.image, 6).a(R.id.item_live_defined_rank_name, liveDefinedRankModel.title).a(R.id.item_live_defined_rank_count, String.valueOf(liveDefinedRankModel.score)).c(R.id.item_live_defined_rank_content_layout, endsWith ? R.drawable.item_live_defined_rank_selected_bg : R.color.transparent).b(R.id.item_live_defined_rank_bottom, i == this.b.size() - 1 ? 0 : 8).a().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveDefinedRankView$1$9EYbQ4W_hZ6osGkgcmHu8PeSn1w
+            viewHolder.a(R.id.item_live_defined_rank_index_tv, liveDefinedRankModel.score > 0 ? String.valueOf(liveDefinedRankModel.index) : NativeLibraryHelper.CLEAR_ABI_OVERRIDE).a(R.id.item_live_defined_rank_avatar, liveDefinedRankModel.image, 6).a(R.id.item_live_defined_rank_name, liveDefinedRankModel.title).a(R.id.item_live_defined_rank_count, String.valueOf(liveDefinedRankModel.score)).c(R.id.item_live_defined_rank_content_layout, endsWith ? R.drawable.item_live_defined_rank_selected_bg : R.color.transparent).b(R.id.item_live_defined_rank_bottom, i == this.b.size() - 1 ? 0 : 8).a().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveDefinedRankView$1$9EYbQ4W_hZ6osGkgcmHu8PeSn1w
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveDefinedRankView.AnonymousClass1.this.a(z, liveDefinedRankModel, view);
@@ -101,8 +98,9 @@ public class LiveDefinedRankView extends FrameLayout {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveDefinedRankView$MyHandler.class */
-    class MyHandler extends Handler {
+    public class MyHandler extends Handler {
         private MyHandler() {
         }
 
@@ -116,7 +114,7 @@ public class LiveDefinedRankView extends FrameLayout {
             boolean z = false;
             if (message.what == 1) {
                 LiveDefinedRankView liveDefinedRankView = LiveDefinedRankView.this;
-                if (liveDefinedRankView.f14457c.getVisibility() == 0) {
+                if (liveDefinedRankView.c.getVisibility() == 0) {
                     z = true;
                 }
                 liveDefinedRankView.setViewLayout(z);
@@ -125,7 +123,7 @@ public class LiveDefinedRankView extends FrameLayout {
             } else if (message.what == 2) {
                 LiveDefinedRankView liveDefinedRankView2 = LiveDefinedRankView.this;
                 boolean z2 = false;
-                if (liveDefinedRankView2.f14457c.getVisibility() == 0) {
+                if (liveDefinedRankView2.c.getVisibility() == 0) {
                     z2 = true;
                 }
                 liveDefinedRankView2.setViewLayout(z2);
@@ -164,10 +162,10 @@ public class LiveDefinedRankView extends FrameLayout {
 
     private void a() {
         View inflate = LayoutInflater.from(AppInfo.d()).inflate(this.h, (ViewGroup) null);
-        this.f14456a = inflate.findViewById(R.id.live_defined_rank_title_layout);
+        this.a = inflate.findViewById(R.id.live_defined_rank_title_layout);
         this.f = (ImageView) inflate.findViewById(R.id.live_defined_rank_title_iv);
         this.b = (ImageView) inflate.findViewById(R.id.live_defined_rank_arrow_iv);
-        this.f14457c = (ListView) inflate.findViewById(R.id.live_defined_rank_lv);
+        this.c = (ListView) inflate.findViewById(R.id.live_defined_rank_lv);
         this.g = (ImageView) inflate.findViewById(R.id.live_defined_rank_host_state_iv);
         this.e = (TextView) inflate.findViewById(R.id.live_defined_rank_send_btn);
         this.g.setVisibility(8);
@@ -186,7 +184,7 @@ public class LiveDefinedRankView extends FrameLayout {
         });
         AnonymousClass1 anonymousClass1 = new AnonymousClass1(R.layout.item_live_defined_rank);
         this.d = anonymousClass1;
-        this.f14457c.setAdapter((ListAdapter) anonymousClass1);
+        this.c.setAdapter((ListAdapter) anonymousClass1);
         this.e.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveDefinedRankView$aV45eeGF_-TiIeOiXi6I8EHraLs
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -218,12 +216,12 @@ public class LiveDefinedRankView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(View view) {
-        setViewLayout(this.f14457c.getVisibility() == 8);
+        setViewLayout(this.c.getVisibility() == 8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void c(View view) {
-        setViewLayout(this.f14457c.getVisibility() == 8);
+        setViewLayout(this.c.getVisibility() == 8);
     }
 
     private boolean c() {
@@ -232,10 +230,10 @@ public class LiveDefinedRankView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void setViewLayout(boolean z) {
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.f14456a.getLayoutParams();
-        layoutParams.width = DisplayUtil.a(this.f14456a.getContext(), z ? 124.0f : 58.0f);
-        layoutParams.height = DisplayUtil.a(this.f14456a.getContext(), z ? 38.0f : 32.0f);
-        this.f14456a.setLayoutParams(layoutParams);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.a.getLayoutParams();
+        layoutParams.width = DisplayUtil.a(this.a.getContext(), z ? 124.0f : 58.0f);
+        layoutParams.height = DisplayUtil.a(this.a.getContext(), z ? 38.0f : 32.0f);
+        this.a.setLayoutParams(layoutParams);
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.f.getLayoutParams();
         layoutParams2.leftMargin = DisplayUtil.a(AppInfo.d(), z ? 43.0f : 6.0f);
         this.f.setLayoutParams(layoutParams2);
@@ -244,13 +242,13 @@ public class LiveDefinedRankView extends FrameLayout {
         this.b.setLayoutParams(layoutParams3);
         if (!z) {
             this.b.setImageResource(R.drawable.live_defined_rank_arrow);
-            this.f14457c.setVisibility(8);
+            this.c.setVisibility(8);
             this.e.setVisibility(8);
             this.g.setVisibility(8);
             EventTrackLive.a(LiveProtos.Event.LIVE_RANK_LIST_CLOSE, LiveRoomManager.a().e(), LiveRoomManager.a().g());
             return;
         }
-        this.f14457c.setVisibility(0);
+        this.c.setVisibility(0);
         this.b.setImageResource(R.drawable.live_defined_rank_arrow_up);
         if (this.i == null) {
             return;

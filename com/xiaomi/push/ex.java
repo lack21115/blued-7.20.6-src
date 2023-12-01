@@ -65,10 +65,10 @@ public enum ex {
     
 
     /* renamed from: a  reason: collision with other field name */
-    private final int f413a;
+    private final int f366a;
 
     ex(int i) {
-        this.f413a = i;
+        this.f366a = i;
     }
 
     public static ex a(int i) {
@@ -212,6 +212,6 @@ public enum ex {
     }
 
     public final int a() {
-        return this.f413a;
+        return this.f366a;
     }
 }

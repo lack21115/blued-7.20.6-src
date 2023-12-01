@@ -7,16 +7,16 @@ import org.json.JSONObject;
 public class YouzanToken {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private String f1102;
+    private String f1055;
 
     /* renamed from: ˋ  reason: contains not printable characters */
-    private String f1103;
+    private String f1056;
 
     /* renamed from: ˎ  reason: contains not printable characters */
-    private String f1104;
+    private String f1057;
 
     /* renamed from: ˏ  reason: contains not printable characters */
-    private String f1105;
+    private String f1058;
 
     public YouzanToken() {
     }
@@ -26,41 +26,41 @@ public class YouzanToken {
             return;
         }
         JSONObject optJSONObject = jSONObject.has("data") ? jSONObject.optJSONObject("data") : jSONObject;
-        this.f1102 = optJSONObject.optString("access_token");
-        this.f1103 = optJSONObject.optString("cookie_key");
-        this.f1104 = optJSONObject.optString("cookie_value");
-        this.f1105 = optJSONObject.optString("yz_open_id");
+        this.f1055 = optJSONObject.optString("access_token");
+        this.f1056 = optJSONObject.optString("cookie_key");
+        this.f1057 = optJSONObject.optString("cookie_value");
+        this.f1058 = optJSONObject.optString("yz_open_id");
     }
 
     public String getAccessToken() {
-        return this.f1102;
+        return this.f1055;
     }
 
     public String getCookieKey() {
-        return this.f1103;
+        return this.f1056;
     }
 
     public String getCookieValue() {
-        return this.f1104;
+        return this.f1057;
     }
 
     public String getYzOpenId() {
-        return this.f1105;
+        return this.f1058;
     }
 
     public void setAccessToken(String str) {
-        this.f1102 = str;
+        this.f1055 = str;
     }
 
     public void setCookieKey(String str) {
-        this.f1103 = str;
+        this.f1056 = str;
     }
 
     public void setCookieValue(String str) {
-        this.f1104 = str;
+        this.f1057 = str;
     }
 
     public void setYzOpenId(String str) {
-        this.f1105 = str;
+        this.f1058 = str;
     }
 }

@@ -40,11 +40,11 @@ import java.util.List;
 public class GoodFriendsListAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33284a;
+    private Context f19593a;
     private LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<BluedBlackList> f33285c = new ArrayList();
+    private List<BluedBlackList> f19594c = new ArrayList();
     private String d = GoodFriendsListAdapter.class.getSimpleName();
     private int e;
     private Dialog f;
@@ -57,11 +57,11 @@ public class GoodFriendsListAdapter extends BaseAdapter {
     public class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f33293a;
+        public ImageView f19602a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public TextView f33294c;
+        public TextView f19603c;
         public TextView d;
         public TextView e;
         public ImageView f;
@@ -74,7 +74,7 @@ public class GoodFriendsListAdapter extends BaseAdapter {
 
     public GoodFriendsListAdapter(Context context, IRequestHost iRequestHost) {
         this.g = iRequestHost;
-        this.f33284a = context;
+        this.f19593a = context;
         this.b = LayoutInflater.from(context);
         this.e = context.getResources().getDisplayMetrics().widthPixels;
         this.f = DialogUtils.a(context);
@@ -88,17 +88,17 @@ public class GoodFriendsListAdapter extends BaseAdapter {
     }
 
     private String a(int i) {
-        return this.f33284a.getResources().getString(i);
+        return this.f19593a.getResources().getString(i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(ViewHolder viewHolder) {
         int i = AppInfo.l;
         TextView textView = viewHolder.b;
-        int a2 = DensityUtils.a(this.f33284a, 105.0f);
+        int a2 = DensityUtils.a(this.f19593a, 105.0f);
         int i2 = 0;
         int width = viewHolder.h.getVisibility() == 0 ? viewHolder.h.getWidth() : 0;
-        int width2 = viewHolder.f33294c.getVisibility() == 0 ? viewHolder.f33294c.getWidth() : 0;
+        int width2 = viewHolder.f19603c.getVisibility() == 0 ? viewHolder.f19603c.getWidth() : 0;
         int width3 = viewHolder.g.getVisibility() == 0 ? viewHolder.g.getWidth() : 0;
         if (viewHolder.d.getVisibility() == 0) {
             i2 = viewHolder.d.getWidth();
@@ -108,26 +108,22 @@ public class GoodFriendsListAdapter extends BaseAdapter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final BluedBlackList bluedBlackList) {
-        CommonAlertDialog.a(this.f33284a, a(R.string.common_string_notice), 20, (String) null, (String) null, (String) null, bluedBlackList.note, a(R.string.please_input_user_comment), new CommonAlertDialog.TextOnClickListener() { // from class: com.soft.blued.ui.setting.adapter.GoodFriendsListAdapter.3
-            @Override // com.blued.android.module.common.widget.dialog.CommonAlertDialog.TextOnClickListener
+        CommonAlertDialog.a(this.f19593a, a(R.string.common_string_notice), 20, (String) null, (String) null, (String) null, bluedBlackList.note, a(R.string.please_input_user_comment), new CommonAlertDialog.TextOnClickListener() { // from class: com.soft.blued.ui.setting.adapter.GoodFriendsListAdapter.3
             public void a(final String str) {
                 if (str.equals(bluedBlackList.note)) {
                     AppMethods.d((int) R.string.please_input_user_comment);
                 } else {
-                    MineHttpUtils.h(GoodFriendsListAdapter.this.f33284a, new BluedUIHttpResponse() { // from class: com.soft.blued.ui.setting.adapter.GoodFriendsListAdapter.3.1
-                        @Override // com.blued.android.framework.http.BluedUIHttpResponse
+                    MineHttpUtils.h(GoodFriendsListAdapter.this.f19593a, new BluedUIHttpResponse() { // from class: com.soft.blued.ui.setting.adapter.GoodFriendsListAdapter.3.1
                         public void onUIFinish() {
                             super.onUIFinish();
                             DialogUtils.b(GoodFriendsListAdapter.this.f);
                         }
 
-                        @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public void onUIStart() {
                             super.onUIStart();
                             DialogUtils.a(GoodFriendsListAdapter.this.f);
                         }
 
-                        @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public void onUIUpdate(BluedEntity bluedEntity) {
                             DialogUtils.b(GoodFriendsListAdapter.this.f);
                             AppMethods.d((int) R.string.modify_note_success);
@@ -143,11 +139,11 @@ public class GoodFriendsListAdapter extends BaseAdapter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ boolean a(int i, ViewHolder viewHolder, final BluedBlackList bluedBlackList, View view) {
-        if (i < 0 || i > this.f33285c.size()) {
+        if (i < 0 || i > this.f19594c.size()) {
             return true;
         }
         String[] stringArray = AppInfo.d().getResources().getStringArray(R.array.friendslist_longclick_items);
-        Context context = this.f33284a;
+        Context context = this.f19593a;
         CommonAlertDialog.a(context, ((Object) viewHolder.b.getText()) + "", stringArray, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.adapter.GoodFriendsListAdapter.2
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i2) {
@@ -165,11 +161,11 @@ public class GoodFriendsListAdapter extends BaseAdapter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(final BluedBlackList bluedBlackList) {
-        CommonAlertDialog.a(this.f33284a, (String) null, a(R.string.confirm_remove_from_friends_list), a(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.adapter.GoodFriendsListAdapter.4
+        CommonAlertDialog.a(this.f19593a, (String) null, a(R.string.confirm_remove_from_friends_list), a(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.adapter.GoodFriendsListAdapter.4
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                UserHttpUtils.a(GoodFriendsListAdapter.this.f33284a, new UserRelationshipUtils.IAddOrRemoveAttentionDone() { // from class: com.soft.blued.ui.setting.adapter.GoodFriendsListAdapter.4.1
+                UserHttpUtils.a(GoodFriendsListAdapter.this.f19593a, new UserRelationshipUtils.IAddOrRemoveAttentionDone() { // from class: com.soft.blued.ui.setting.adapter.GoodFriendsListAdapter.4.1
                     @Override // com.soft.blued.utils.UserRelationshipUtils.IAddOrRemoveAttentionDone
                     public void a() {
                         DialogUtils.a(GoodFriendsListAdapter.this.f);
@@ -188,7 +184,7 @@ public class GoodFriendsListAdapter extends BaseAdapter {
                     public void b(String str) {
                         UserInfo.getInstance().getLoginUserInfo().setFriendsCount(-1);
                         DialogUtils.b(GoodFriendsListAdapter.this.f);
-                        GoodFriendsListAdapter.this.f33285c.remove(bluedBlackList);
+                        GoodFriendsListAdapter.this.f19594c.remove(bluedBlackList);
                         GoodFriendsListAdapter.this.notifyDataSetChanged();
                     }
 
@@ -203,9 +199,9 @@ public class GoodFriendsListAdapter extends BaseAdapter {
 
     public void a(List<BluedBlackList> list, String str) {
         this.h = str;
-        this.f33285c.clear();
+        this.f19594c.clear();
         if (list != null && list.size() > 0) {
-            this.f33285c.addAll(list);
+            this.f19594c.addAll(list);
         }
         notifyDataSetChanged();
     }
@@ -219,7 +215,7 @@ public class GoodFriendsListAdapter extends BaseAdapter {
         while (true) {
             int i2 = i;
             if (i2 >= list.size()) {
-                this.f33285c.addAll(list);
+                this.f19594c.addAll(list);
                 notifyDataSetChanged();
                 return;
             }
@@ -231,7 +227,7 @@ public class GoodFriendsListAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f33285c.size();
+        return this.f19594c.size();
     }
 
     @Override // android.widget.Adapter
@@ -251,34 +247,34 @@ public class GoodFriendsListAdapter extends BaseAdapter {
         if (view == null) {
             viewHolder = new ViewHolder();
             view2 = this.b.inflate(R.layout.item_friend_list, viewGroup, false);
-            viewHolder.f33293a = (ImageView) view2.findViewById(2131364232);
-            viewHolder.b = (TextView) view2.findViewById(2131368652);
-            viewHolder.f33294c = (TextView) view2.findViewById(2131363246);
+            viewHolder.f19602a = (ImageView) view2.findViewById(2131364232);
+            viewHolder.b = (TextView) view2.findViewById(R.id.name_view);
+            viewHolder.f19603c = (TextView) view2.findViewById(R.id.distance_view);
             viewHolder.d = (TextView) view2.findViewById(R.id.online_time_view);
             viewHolder.e = (TextView) view2.findViewById(R.id.description_view);
-            viewHolder.f = (ImageView) view2.findViewById(2131364720);
-            viewHolder.g = (ImageView) view2.findViewById(2131364459);
-            viewHolder.h = view2.findViewById(2131372167);
+            viewHolder.f = (ImageView) view2.findViewById(R.id.img_verify);
+            viewHolder.g = (ImageView) view2.findViewById(R.id.img_blued_medal);
+            viewHolder.h = view2.findViewById(R.id.tv_online);
             view2.setTag(viewHolder);
         } else {
             view2 = view;
             viewHolder = (ViewHolder) view.getTag();
         }
-        final BluedBlackList bluedBlackList = this.f33285c.get(i);
+        final BluedBlackList bluedBlackList = this.f19594c.get(i);
         UserInfoHelper.a(viewHolder.f, bluedBlackList.vbadge, 3);
         final ViewHolder viewHolder2 = viewHolder;
         view2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.adapter.GoodFriendsListAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view3) {
                 Tracker.onClick(view3);
-                UserInfoFragmentNew.a(GoodFriendsListAdapter.this.f33284a, bluedBlackList, "my_friends", viewHolder2.f33293a);
+                UserInfoFragmentNew.a(GoodFriendsListAdapter.this.f19593a, bluedBlackList, "my_friends", viewHolder2.f19602a);
             }
         });
-        ImageLoader.a(this.g, bluedBlackList.avatar).b(2131237310).c().a(viewHolder.f33293a);
+        ImageLoader.a(this.g, bluedBlackList.avatar).b(2131237310).c().a(viewHolder.f19602a);
         if (TextUtils.isEmpty(bluedBlackList.location) || bluedBlackList.vbadge == 3) {
-            viewHolder.f33294c.setText("");
+            viewHolder.f19603c.setText("");
         } else {
-            viewHolder.f33294c.setText(bluedBlackList.location);
+            viewHolder.f19603c.setText(bluedBlackList.location);
         }
         if (TextUtils.isEmpty(bluedBlackList.description)) {
             viewHolder.e.setText("");
@@ -292,13 +288,13 @@ public class GoodFriendsListAdapter extends BaseAdapter {
         } else {
             viewHolder.b.setText(bluedBlackList.name);
         }
-        UserRelationshipUtils.a(this.f33284a, viewHolder.b, bluedBlackList);
+        UserRelationshipUtils.a(this.f19593a, viewHolder.b, bluedBlackList);
         if (bluedBlackList.online_state == 1) {
             viewHolder.h.setVisibility(0);
         } else {
             viewHolder.h.setVisibility(8);
         }
-        TypefaceUtils.a(this.f33284a, viewHolder.b, this.h, this.f33284a.getResources().getColor(2131100629));
+        TypefaceUtils.a(this.f19593a, viewHolder.b, this.h, this.f19593a.getResources().getColor(2131100629));
         UserRelationshipUtils.a(viewHolder.g, bluedBlackList);
         if (bluedBlackList.vbadge != 3) {
             viewHolder.d.setVisibility(0);
@@ -315,7 +311,7 @@ public class GoodFriendsListAdapter extends BaseAdapter {
         } else {
             viewHolder.d.setVisibility(8);
         }
-        TypefaceUtils.a(this.f33284a, viewHolder.d, bluedBlackList.is_hide_last_operate, 1);
+        TypefaceUtils.a(this.f19593a, viewHolder.d, bluedBlackList.is_hide_last_operate, 1);
         final ViewHolder viewHolder3 = viewHolder;
         viewHolder.d.post(new Runnable() { // from class: com.soft.blued.ui.setting.adapter.-$$Lambda$GoodFriendsListAdapter$jdq_B4z1miylmbbzr2KIx3VCla8
             @Override // java.lang.Runnable

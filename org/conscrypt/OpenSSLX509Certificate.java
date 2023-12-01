@@ -1,6 +1,5 @@
 package org.conscrypt;
 
-import android.text.format.Time;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.math.BigInteger;
@@ -191,7 +190,7 @@ public final class OpenSSLX509Certificate extends X509Certificate {
     }
 
     private static Date toDate(long j) throws OpenSSLX509CertificateFactory.ParsingException {
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone(Time.TIMEZONE_UTC));
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         calendar.set(14, 0);
         NativeCrypto.ASN1_TIME_to_Calendar(j, calendar);
         return calendar.getTime();

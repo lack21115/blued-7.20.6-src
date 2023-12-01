@@ -4,13 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.util.List;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7206380-dex2jar.jar:com/cdo/oaps/ad/t.class */
 public class t {
     public static String a(long j, String str, boolean z, String str2, String str3, int i, String str4) {
-        return Uri.encode("out_pid=" + j + "&out_package_name=" + str + "&out_start_download=" + z + "&out_intent_from=" + i + "&enter_id=" + str2 + "&out_operator=" + str3 + "&out_match_type=" + str4);
+        return Uri.encode("out_pid=" + j + ContainerUtils.FIELD_DELIMITER + "out_package_name=" + str + ContainerUtils.FIELD_DELIMITER + "out_start_download=" + z + ContainerUtils.FIELD_DELIMITER + "out_intent_from=" + i + ContainerUtils.FIELD_DELIMITER + "enter_id=" + str2 + ContainerUtils.FIELD_DELIMITER + "out_operator=" + str3 + ContainerUtils.FIELD_DELIMITER + "out_match_type=" + str4);
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -34,15 +35,15 @@ public class t {
     }
 
     private static String a(String str, String str2) {
-        return Uri.encode("enter_id=" + str + "&out_operator=" + str2);
+        return Uri.encode("enter_id=" + str + ContainerUtils.FIELD_DELIMITER + "out_operator=" + str2);
     }
 
     public static String a(String str, String str2, String str3, int i, String str4) {
-        return Uri.encode("url=" + str + "&out_intent_from=" + i + "&enter_id=" + str2 + "&out_operator=" + str3 + "&out_match_type=" + str4);
+        return Uri.encode("url=" + str + ContainerUtils.FIELD_DELIMITER + "out_intent_from=" + i + ContainerUtils.FIELD_DELIMITER + "enter_id=" + str2 + ContainerUtils.FIELD_DELIMITER + "out_operator=" + str3 + ContainerUtils.FIELD_DELIMITER + "out_match_type=" + str4);
     }
 
     private static String a(String str, String str2, boolean z, String str3, String str4, int i, String str5) {
-        return Uri.encode("out_package_name=" + str2 + "&out_app_name=" + str + "&out_operator=" + str4 + "&out_start_download=" + z + "&out_intent_from=" + i + "&enter_id=" + str3 + "&out_operator=" + str4 + "&out_match_type=" + str5);
+        return Uri.encode("out_package_name=" + str2 + ContainerUtils.FIELD_DELIMITER + "out_app_name=" + str + ContainerUtils.FIELD_DELIMITER + "out_operator=" + str4 + ContainerUtils.FIELD_DELIMITER + "out_start_download=" + z + ContainerUtils.FIELD_DELIMITER + "out_intent_from=" + i + ContainerUtils.FIELD_DELIMITER + "enter_id=" + str3 + ContainerUtils.FIELD_DELIMITER + "out_operator=" + str4 + ContainerUtils.FIELD_DELIMITER + "out_match_type=" + str5);
     }
 
     public static boolean a(Context context, long j, String str, String str2, int i, String str3, String str4, String str5) {

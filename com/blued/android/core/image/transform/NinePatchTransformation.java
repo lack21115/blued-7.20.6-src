@@ -15,7 +15,6 @@ import java.security.MessageDigest;
 public class NinePatchTransformation extends BitmapTransformation {
     private static float b = Resources.getSystem().getDisplayMetrics().density;
 
-    @Override // com.bumptech.glide.load.resource.bitmap.BitmapTransformation
     public Bitmap a(BitmapPool bitmapPool, Bitmap bitmap, int i, int i2) {
         int min = Math.min(i, i2);
         int width = bitmap.getWidth();
@@ -34,44 +33,41 @@ public class NinePatchTransformation extends BitmapTransformation {
         int i3 = (int) (point.x * max);
         int i4 = (int) (point.y * max);
         Rect rect = new Rect(i3, i4, i - i3, i2 - i4);
-        Bitmap a2 = TransformUtils.a(bitmapPool, bitmap);
-        Bitmap a3 = bitmapPool.a(i, i2, TransformUtils.a(bitmap));
-        a3.setHasAlpha(true);
+        Bitmap a = TransformUtils.a(bitmapPool, bitmap);
+        Bitmap a2 = bitmapPool.a(i, i2, TransformUtils.a(bitmap));
+        a2.setHasAlpha(true);
         TransformationUtils.a().lock();
         try {
-            Canvas canvas = new Canvas(a3);
-            canvas.drawBitmap(a2, new Rect(point.x, 0, point.x + 1, point.y), new Rect(rect.left, 0, rect.right, rect.top), (Paint) null);
-            canvas.drawBitmap(a2, new Rect(0, point.y, point.x, point.y + 1), new Rect(0, rect.top, rect.left, rect.bottom), (Paint) null);
-            canvas.drawBitmap(a2, new Rect(point.x + 1, point.y, width, point.y + 1), new Rect(rect.right, rect.top, i, rect.bottom), (Paint) null);
-            canvas.drawBitmap(a2, new Rect(point.x, point.y + 1, point.x + 1, height), new Rect(rect.left, rect.bottom, rect.right, i2), (Paint) null);
-            canvas.drawBitmap(a2, new Rect(0, 0, point.x, point.y), new Rect(0, 0, rect.left, rect.top), (Paint) null);
-            canvas.drawBitmap(a2, new Rect(point.x + 1, 0, width, point.y), new Rect(rect.right, 0, i, rect.top), (Paint) null);
-            canvas.drawBitmap(a2, new Rect(0, point.y + 1, point.x, height), new Rect(0, rect.bottom, rect.left, i2), (Paint) null);
-            canvas.drawBitmap(a2, new Rect(point.x + 1, point.y + 1, width, height), new Rect(rect.right, rect.bottom, i, i2), (Paint) null);
-            canvas.drawBitmap(a2, new Rect(point.x, point.y, point.x + 1, point.y + 1), new Rect(rect.left, rect.top, rect.right, rect.bottom), (Paint) null);
+            Canvas canvas = new Canvas(a2);
+            canvas.drawBitmap(a, new Rect(point.x, 0, point.x + 1, point.y), new Rect(rect.left, 0, rect.right, rect.top), (Paint) null);
+            canvas.drawBitmap(a, new Rect(0, point.y, point.x, point.y + 1), new Rect(0, rect.top, rect.left, rect.bottom), (Paint) null);
+            canvas.drawBitmap(a, new Rect(point.x + 1, point.y, width, point.y + 1), new Rect(rect.right, rect.top, i, rect.bottom), (Paint) null);
+            canvas.drawBitmap(a, new Rect(point.x, point.y + 1, point.x + 1, height), new Rect(rect.left, rect.bottom, rect.right, i2), (Paint) null);
+            canvas.drawBitmap(a, new Rect(0, 0, point.x, point.y), new Rect(0, 0, rect.left, rect.top), (Paint) null);
+            canvas.drawBitmap(a, new Rect(point.x + 1, 0, width, point.y), new Rect(rect.right, 0, i, rect.top), (Paint) null);
+            canvas.drawBitmap(a, new Rect(0, point.y + 1, point.x, height), new Rect(0, rect.bottom, rect.left, i2), (Paint) null);
+            canvas.drawBitmap(a, new Rect(point.x + 1, point.y + 1, width, height), new Rect(rect.right, rect.bottom, i, i2), (Paint) null);
+            canvas.drawBitmap(a, new Rect(point.x, point.y, point.x + 1, point.y + 1), new Rect(rect.left, rect.top, rect.right, rect.bottom), (Paint) null);
             canvas.setBitmap(null);
             TransformationUtils.a().unlock();
-            if (!a2.equals(bitmap)) {
-                bitmapPool.a(a2);
+            if (!a.equals(bitmap)) {
+                bitmapPool.a(a);
             }
-            return a3;
+            return a2;
         } catch (Throwable th) {
             TransformationUtils.a().unlock();
             throw th;
         }
     }
 
-    @Override // com.bumptech.glide.load.Key
     public void a(MessageDigest messageDigest) {
-        messageDigest.update("com.blued.android.core.transform.NinePatchTransformation.1".getBytes(f20706a));
+        messageDigest.update("com.blued.android.core.transform.NinePatchTransformation.1".getBytes(a));
     }
 
-    @Override // com.bumptech.glide.load.Key
     public boolean equals(Object obj) {
         return obj instanceof NinePatchTransformation;
     }
 
-    @Override // com.bumptech.glide.load.Key
     public int hashCode() {
         return 784365633;
     }

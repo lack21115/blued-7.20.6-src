@@ -8,7 +8,7 @@ public class x5 implements Coordinate, Cloneable {
     private double b = Double.MIN_VALUE;
 
     /* renamed from: c  reason: collision with root package name */
-    private double f38103c = Double.MIN_VALUE;
+    private double f24412c = Double.MIN_VALUE;
 
     public x5(double d2, double d3) {
         setX(d2);
@@ -17,11 +17,11 @@ public class x5 implements Coordinate, Cloneable {
 
     /* renamed from: a */
     public x5 clone() {
-        return new x5(this.f38103c, this.b);
+        return new x5(this.f24412c, this.b);
     }
 
     public double b() {
-        return this.f38103c;
+        return this.f24412c;
     }
 
     public double c() {
@@ -34,20 +34,20 @@ public class x5 implements Coordinate, Cloneable {
         }
         if (obj.hashCode() == hashCode() && (obj instanceof x5)) {
             x5 x5Var = (x5) obj;
-            return Double.doubleToLongBits(x5Var.f38103c) == Double.doubleToLongBits(this.f38103c) && Double.doubleToLongBits(x5Var.b) == Double.doubleToLongBits(this.b);
+            return Double.doubleToLongBits(x5Var.f24412c) == Double.doubleToLongBits(this.f24412c) && Double.doubleToLongBits(x5Var.b) == Double.doubleToLongBits(this.b);
         }
         return false;
     }
 
     public int hashCode() {
-        long doubleToLongBits = Double.doubleToLongBits(this.f38103c);
+        long doubleToLongBits = Double.doubleToLongBits(this.f24412c);
         long doubleToLongBits2 = Double.doubleToLongBits(this.b);
         return ((((int) (doubleToLongBits2 ^ (doubleToLongBits2 >>> 32))) + 31) * 31) + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.interfaces.Coordinate
     public void setX(double d2) {
-        this.f38103c = Math.max(-2.003750834E7d, Math.min(2.003750834E7d, d2));
+        this.f24412c = Math.max(-2.003750834E7d, Math.min(2.003750834E7d, d2));
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.interfaces.Coordinate
@@ -60,12 +60,12 @@ public class x5 implements Coordinate, Cloneable {
     }
 
     public String toString() {
-        return "x=" + this.f38103c + ",y=" + this.b;
+        return "x=" + this.f24412c + ",y=" + this.b;
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.interfaces.Coordinate
     public double x() {
-        return this.f38103c;
+        return this.f24412c;
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.interfaces.Coordinate

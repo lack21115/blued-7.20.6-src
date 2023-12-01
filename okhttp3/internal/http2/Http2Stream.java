@@ -1,5 +1,7 @@
 package okhttp3.internal.http2;
 
+import com.android.internal.location.GpsNetInitiatedHandler;
+import com.android.org.conscrypt.NativeCrypto;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -23,17 +25,13 @@ import okio.Timeout;
 public final class Http2Stream {
     static final /* synthetic */ boolean i = !Http2Stream.class.desiredAssertionStatus();
     long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final int f43949c;
+    final int c;
     final Http2Connection d;
     final FramingSink e;
     private Header.Listener k;
     private boolean l;
     private final FramingSource m;
-
-    /* renamed from: a  reason: collision with root package name */
-    long f43948a = 0;
+    long a = 0;
     private final Deque<Headers> j = new ArrayDeque();
     final StreamTimeout f = new StreamTimeout();
     final StreamTimeout g = new StreamTimeout();
@@ -42,12 +40,8 @@ public final class Http2Stream {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Http2Stream$FramingSink.class */
     public final class FramingSink implements Sink {
-
-        /* renamed from: c  reason: collision with root package name */
-        static final /* synthetic */ boolean f43950c = !Http2Stream.class.desiredAssertionStatus();
-
-        /* renamed from: a  reason: collision with root package name */
-        boolean f43951a;
+        static final /* synthetic */ boolean c = !Http2Stream.class.desiredAssertionStatus();
+        boolean a;
         boolean b;
         private final Buffer e = new Buffer();
 
@@ -58,7 +52,7 @@ public final class Http2Stream {
             long min;
             synchronized (Http2Stream.this) {
                 Http2Stream.this.g.enter();
-                while (Http2Stream.this.b <= 0 && !this.b && !this.f43951a && Http2Stream.this.h == null) {
+                while (Http2Stream.this.b <= 0 && !this.b && !this.a && Http2Stream.this.h == null) {
                     Http2Stream.this.l();
                 }
                 Http2Stream.this.g.a();
@@ -68,7 +62,7 @@ public final class Http2Stream {
             }
             Http2Stream.this.g.enter();
             try {
-                Http2Stream.this.d.a(Http2Stream.this.f43949c, z && min == this.e.size(), this.e, min);
+                Http2Stream.this.d.a(Http2Stream.this.c, z && min == this.e.size(), this.e, min);
             } finally {
                 Http2Stream.this.g.a();
             }
@@ -76,11 +70,11 @@ public final class Http2Stream {
 
         @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
-            if (!f43950c && Thread.holdsLock(Http2Stream.this)) {
+            if (!c && Thread.holdsLock(Http2Stream.this)) {
                 throw new AssertionError();
             }
             synchronized (Http2Stream.this) {
-                if (this.f43951a) {
+                if (this.a) {
                     return;
                 }
                 if (!Http2Stream.this.e.b) {
@@ -89,11 +83,11 @@ public final class Http2Stream {
                             a(true);
                         }
                     } else {
-                        Http2Stream.this.d.a(Http2Stream.this.f43949c, true, (Buffer) null, 0L);
+                        Http2Stream.this.d.a(Http2Stream.this.c, true, (Buffer) null, 0L);
                     }
                 }
                 synchronized (Http2Stream.this) {
-                    this.f43951a = true;
+                    this.a = true;
                 }
                 Http2Stream.this.d.b();
                 Http2Stream.this.j();
@@ -102,7 +96,7 @@ public final class Http2Stream {
 
         @Override // okio.Sink, java.io.Flushable
         public void flush() throws IOException {
-            if (!f43950c && Thread.holdsLock(Http2Stream.this)) {
+            if (!c && Thread.holdsLock(Http2Stream.this)) {
                 throw new AssertionError();
             }
             synchronized (Http2Stream.this) {
@@ -121,11 +115,11 @@ public final class Http2Stream {
 
         @Override // okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
-            if (!f43950c && Thread.holdsLock(Http2Stream.this)) {
+            if (!c && Thread.holdsLock(Http2Stream.this)) {
                 throw new AssertionError();
             }
             this.e.write(buffer, j);
-            while (this.e.size() >= 16384) {
+            while (this.e.size() >= NativeCrypto.SSL_OP_NO_TICKET) {
                 a(false);
             }
         }
@@ -134,12 +128,8 @@ public final class Http2Stream {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Http2Stream$FramingSource.class */
     public final class FramingSource implements Source {
-
-        /* renamed from: c  reason: collision with root package name */
-        static final /* synthetic */ boolean f43952c = !Http2Stream.class.desiredAssertionStatus();
-
-        /* renamed from: a  reason: collision with root package name */
-        boolean f43953a;
+        static final /* synthetic */ boolean c = !Http2Stream.class.desiredAssertionStatus();
+        boolean a;
         boolean b;
         private final Buffer e = new Buffer();
         private final Buffer f = new Buffer();
@@ -150,7 +140,7 @@ public final class Http2Stream {
         }
 
         private void a(long j) {
-            if (!f43952c && Thread.holdsLock(Http2Stream.this)) {
+            if (!c && Thread.holdsLock(Http2Stream.this)) {
                 throw new AssertionError();
             }
             Http2Stream.this.d.a(j);
@@ -161,7 +151,7 @@ public final class Http2Stream {
             boolean z2;
             long j2;
             long j3 = j;
-            if (!f43952c) {
+            if (!c) {
                 if (Thread.holdsLock(Http2Stream.this)) {
                     throw new AssertionError();
                 }
@@ -186,7 +176,7 @@ public final class Http2Stream {
                     }
                     long j4 = j3 - read;
                     synchronized (Http2Stream.this) {
-                        if (this.f43953a) {
+                        if (this.a) {
                             j2 = this.e.size();
                             this.e.clear();
                         } else {
@@ -213,7 +203,7 @@ public final class Http2Stream {
             Header.Listener listener;
             ArrayList<Headers> arrayList;
             synchronized (Http2Stream.this) {
-                this.f43953a = true;
+                this.a = true;
                 size = this.f.size();
                 this.f.clear();
                 listener = null;
@@ -291,7 +281,7 @@ public final class Http2Stream {
 
         @Override // okio.AsyncTimeout
         public IOException newTimeoutException(IOException iOException) {
-            SocketTimeoutException socketTimeoutException = new SocketTimeoutException("timeout");
+            SocketTimeoutException socketTimeoutException = new SocketTimeoutException(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT);
             if (iOException != null) {
                 socketTimeoutException.initCause(iOException);
             }
@@ -310,7 +300,7 @@ public final class Http2Stream {
         if (http2Connection == null) {
             throw new NullPointerException("connection == null");
         }
-        this.f43949c = i2;
+        this.c = i2;
         this.d = http2Connection;
         this.b = http2Connection.k.d();
         this.m = new FramingSource(http2Connection.j.d());
@@ -339,7 +329,7 @@ public final class Http2Stream {
                 }
                 this.h = errorCode;
                 notifyAll();
-                this.d.b(this.f43949c);
+                this.d.b(this.c);
                 return true;
             }
         }
@@ -347,7 +337,7 @@ public final class Http2Stream {
     }
 
     public int a() {
-        return this.f43949c;
+        return this.c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -373,12 +363,12 @@ public final class Http2Stream {
         if (b) {
             return;
         }
-        this.d.b(this.f43949c);
+        this.d.b(this.c);
     }
 
     public void a(ErrorCode errorCode) throws IOException {
         if (d(errorCode)) {
-            this.d.b(this.f43949c, errorCode);
+            this.d.b(this.c, errorCode);
         }
     }
 
@@ -392,7 +382,7 @@ public final class Http2Stream {
 
     public void b(ErrorCode errorCode) {
         if (d(errorCode)) {
-            this.d.a(this.f43949c, errorCode);
+            this.d.a(this.c, errorCode);
         }
     }
 
@@ -401,7 +391,7 @@ public final class Http2Stream {
             if (this.h != null) {
                 return false;
             }
-            if ((this.m.b || this.m.f43953a) && (this.e.b || this.e.f43951a)) {
+            if ((this.m.b || this.m.a) && (this.e.b || this.e.a)) {
                 if (this.l) {
                     return false;
                 }
@@ -421,7 +411,7 @@ public final class Http2Stream {
     }
 
     public boolean c() {
-        return this.d.f43919a == ((this.f43949c & 1) == 1);
+        return this.d.a == ((this.c & 1) == 1);
     }
 
     public Headers d() throws IOException {
@@ -475,7 +465,7 @@ public final class Http2Stream {
         if (b) {
             return;
         }
-        this.d.b(this.f43949c);
+        this.d.b(this.c);
     }
 
     void j() throws IOException {
@@ -485,7 +475,7 @@ public final class Http2Stream {
             throw new AssertionError();
         }
         synchronized (this) {
-            if (this.m.b || !this.m.f43953a || (!this.e.b && !this.e.f43951a)) {
+            if (this.m.b || !this.m.a || (!this.e.b && !this.e.a)) {
                 z = false;
                 b = b();
             }
@@ -496,12 +486,12 @@ public final class Http2Stream {
             a(ErrorCode.CANCEL);
         } else if (b) {
         } else {
-            this.d.b(this.f43949c);
+            this.d.b(this.c);
         }
     }
 
     void k() throws IOException {
-        if (this.e.f43951a) {
+        if (this.e.a) {
             throw new IOException("stream closed");
         }
         if (this.e.b) {

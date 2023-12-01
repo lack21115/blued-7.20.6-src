@@ -20,6 +20,7 @@ import com.tencent.tendinsv.a.b;
 import com.tencent.tendinsv.listener.AuthCallbacks;
 import com.tencent.tendinsv.utils.t;
 import com.unikuwei.mianmi.account.shield.tencent.UniAccountHelper;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.concurrent.ExecutorService;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,11 +29,11 @@ import org.json.JSONObject;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile c f39038a;
+    private static volatile c f25347a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AuthCallbacks f39039c;
+    private AuthCallbacks f25348c;
     private String d;
     private a e = new a();
     private ExecutorService f;
@@ -51,9 +52,9 @@ public class c {
         public void onGetTokenComplete(int i, JSONObject jSONObject) {
             try {
                 if (jSONObject == null) {
-                    c.this.f39039c.authFailed(2003, 2003, "mCMCCAuth jsonObject isEmpty", "SDK获取token失败", 11, c.this.g, c.this.i, c.this.h, c.this.j);
+                    c.this.f25348c.authFailed(2003, 2003, "mCMCCAuth jsonObject isEmpty", "SDK获取token失败", 11, c.this.g, c.this.i, c.this.h, c.this.j);
                 } else if (!jSONObject.has("token")) {
-                    AuthCallbacks authCallbacks = c.this.f39039c;
+                    AuthCallbacks authCallbacks = c.this.f25348c;
                     authCallbacks.authFailed(2003, 2003, "getPhoneInfo()" + jSONObject.toString(), com.tencent.tendinsv.utils.d.a(jSONObject), 11, c.this.g, c.this.i, c.this.h, c.this.j);
                 } else {
                     String optString = jSONObject.optString("token");
@@ -62,13 +63,13 @@ public class c {
                         c.this.a(com.tencent.tendinsv.b.i, optString, "", "1", c.this.i, c.this.h, c.this.j);
                         return;
                     }
-                    AuthCallbacks authCallbacks2 = c.this.f39039c;
+                    AuthCallbacks authCallbacks2 = c.this.f25348c;
                     authCallbacks2.authFailed(2003, optInt, "getPhoneInfo()" + jSONObject.toString(), com.tencent.tendinsv.utils.d.a(jSONObject), 11, c.this.g, c.this.i, c.this.h, c.this.j);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
                 com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "mCMCCAuth--Exception_e=", e);
-                AuthCallbacks authCallbacks3 = c.this.f39039c;
+                AuthCallbacks authCallbacks3 = c.this.f25348c;
                 authCallbacks3.authFailed(1014, 1014, "mCMCCAuth--Exception_e=" + e, e.getClass().getSimpleName(), 11, c.this.g, c.this.i, c.this.h, c.this.j);
             }
         }
@@ -78,18 +79,18 @@ public class c {
     }
 
     public static c a() {
-        if (f39038a == null) {
+        if (f25347a == null) {
             synchronized (c.class) {
                 try {
-                    if (f39038a == null) {
-                        f39038a = new c();
+                    if (f25347a == null) {
+                        f25347a = new c();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39038a;
+        return f25347a;
     }
 
     private void a(String str) {
@@ -127,7 +128,7 @@ public class c {
                                     c.this.a(str, optString, optString2, "3", j, j2, j3);
                                     return;
                                 }
-                                authCallbacks = c.this.f39039c;
+                                authCallbacks = c.this.f25348c;
                                 str3 = com.tencent.tendinsv.utils.d.d(str2);
                                 i4 = i;
                                 str4 = str;
@@ -135,7 +136,7 @@ public class c {
                                 j5 = j2;
                                 j6 = j3;
                             } else {
-                                authCallbacks = c.this.f39039c;
+                                authCallbacks = c.this.f25348c;
                                 str3 = com.tencent.tendinsv.utils.d.d(str2);
                                 i4 = i;
                                 str4 = str;
@@ -144,7 +145,7 @@ public class c {
                                 j6 = j3;
                             }
                         } else {
-                            authCallbacks = c.this.f39039c;
+                            authCallbacks = c.this.f25348c;
                             str3 = com.tencent.tendinsv.utils.d.d(str2);
                             i4 = i;
                             str4 = str;
@@ -153,7 +154,7 @@ public class c {
                             j6 = j3;
                         }
                     } else {
-                        authCallbacks = c.this.f39039c;
+                        authCallbacks = c.this.f25348c;
                         i3 = 2003;
                         str3 = "s isEmpty";
                         i4 = i;
@@ -166,7 +167,7 @@ public class c {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "mCTCCAuth--Exception_e=", e);
-                    c.this.f39039c.authFailed(1014, 1014, "mCTCCAuth--Exception_e=" + e, e.getClass().getSimpleName(), i, str, j, j2, j3);
+                    c.this.f25348c.authFailed(1014, 1014, "mCTCCAuth--Exception_e=" + e, e.getClass().getSimpleName(), i, str, j, j2, j3);
                 }
             }
         });
@@ -199,21 +200,21 @@ public class c {
                 sb.append("A");
                 sb.append(str4);
                 sb.append(b);
-                sb.append("-");
+                sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 sb.append(encodeToString);
             } else {
                 sb = new StringBuilder();
                 sb.append("A");
                 sb.append(str4);
-                sb.append("-");
+                sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 sb.append(encodeToString);
             }
             jSONObject2.put("token", sb.toString());
-            this.f39039c.authSuccessed(2000, 2000, jSONObject2.toString(), com.tencent.tendinsv.b.aw, 11, str, j, j2, j3);
+            this.f25348c.authSuccessed(2000, 2000, jSONObject2.toString(), com.tencent.tendinsv.b.aw, 11, str, j, j2, j3);
         } catch (Exception e) {
             e.printStackTrace();
             com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "phoneNumVerify--Exception_e=", e);
-            AuthCallbacks authCallbacks = this.f39039c;
+            AuthCallbacks authCallbacks = this.f25348c;
             authCallbacks.authFailed(1014, 1014, "phoneNumVerify--Exception_e=" + e, e.getClass().getSimpleName(), 11, str, j, j2, j3);
         }
     }
@@ -225,7 +226,7 @@ public class c {
         OauthManager.getInstance(this.b).getAuthoriseCode(b, new CallBack<Object>() { // from class: com.tencent.tendinsv.tool.c.3
             @Override // com.sdk.tencent.base.api.CallBack
             public void onFailed(int i2, int i3, String str2, String str3) {
-                AuthCallbacks authCallbacks = c.this.f39039c;
+                AuthCallbacks authCallbacks = c.this.f25348c;
                 authCallbacks.authFailed(2003, i3, "_code=" + i2 + "_msg=" + str2 + "_status=" + i3 + "_seq=" + str3, "check_error", i, str, j, j2, j3);
             }
 
@@ -246,7 +247,7 @@ public class c {
                             ToolUtils.clearCache(c.this.b);
                             return;
                         }
-                        AuthCallbacks authCallbacks2 = c.this.f39039c;
+                        AuthCallbacks authCallbacks2 = c.this.f25348c;
                         str4 = "_code=" + i2 + "_msg=" + str2 + "_status=" + i3 + "_response=" + obj + "_seq=" + str3;
                         i4 = i;
                         str5 = str;
@@ -255,7 +256,7 @@ public class c {
                         j6 = j3;
                         authCallbacks = authCallbacks2;
                     } else {
-                        AuthCallbacks authCallbacks3 = c.this.f39039c;
+                        AuthCallbacks authCallbacks3 = c.this.f25348c;
                         str4 = "_code=" + i2 + "_msg=" + str2 + "_status=" + i3 + "_response=" + obj + "_seq=" + str3;
                         i4 = i;
                         str5 = str;
@@ -268,7 +269,7 @@ public class c {
                 } catch (Exception e) {
                     e.printStackTrace();
                     com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "mCUCCAuth--Exception_e=", e);
-                    c.this.f39039c.authFailed(1014, 1014, "mCUCCAuth--Exception_e=" + e, e.getClass().getSimpleName(), i, str, j, j2, j3);
+                    c.this.f25348c.authFailed(1014, 1014, "mCUCCAuth--Exception_e=" + e, e.getClass().getSimpleName(), i, str, j, j2, j3);
                 }
             }
         });
@@ -292,7 +293,7 @@ public class c {
                     String optString = jSONObject.optString(ProcessBridgeProvider.KEY_RESULT_DATA);
                     String optString2 = jSONObject.optString(ProcessBridgeProvider.KEY_RESULT_MSG);
                     if (optInt != 0) {
-                        authCallbacks = c.this.f39039c;
+                        authCallbacks = c.this.f25348c;
                         i2 = i;
                         str3 = str;
                         j4 = j;
@@ -304,14 +305,14 @@ public class c {
                             c.this.a(str, optString3, "", "4", j, j2, j3);
                             return;
                         }
-                        authCallbacks = c.this.f39039c;
+                        authCallbacks = c.this.f25348c;
                         i2 = i;
                         str3 = str;
                         j4 = j;
                         j5 = j2;
                         j6 = j3;
                     } else {
-                        authCallbacks = c.this.f39039c;
+                        authCallbacks = c.this.f25348c;
                         i2 = i;
                         str3 = str;
                         j4 = j;
@@ -322,7 +323,7 @@ public class c {
                 } catch (Exception e) {
                     e.printStackTrace();
                     com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "mCUCCAuth--Exception_e=", e);
-                    AuthCallbacks authCallbacks2 = c.this.f39039c;
+                    AuthCallbacks authCallbacks2 = c.this.f25348c;
                     authCallbacks2.authFailed(1014, 1014, "mCUCCAuth--Exception_e=" + e, e.getClass().getSimpleName(), i, str, j, j2, j3);
                 }
             }
@@ -330,7 +331,7 @@ public class c {
     }
 
     public void a(final int i, final long j, final long j2, final long j3) {
-        this.f39039c = new com.tencent.tendinsv.c.a();
+        this.f25348c = new com.tencent.tendinsv.c.a();
         Runnable runnable = new Runnable() { // from class: com.tencent.tendinsv.tool.c.1
             @Override // java.lang.Runnable
             public void run() {
@@ -345,7 +346,7 @@ public class c {
                         c.a().b(i, j, j2, j3);
                     } else if (1 == t.b(c.this.b, t.E, 0)) {
                         com.tencent.tendinsv.b.av = false;
-                        c.this.f39039c.authFailed(1032, 1032, "用户被禁用", "check_error", i, d.a().a(c.this.b), j, j2, j3);
+                        c.this.f25348c.authFailed(1032, 1032, "用户被禁用", "check_error", i, d.a().a(c.this.b), j, j2, j3);
                     } else {
                         com.tencent.tendinsv.b.R.set(true);
                         j.a().a(i, j, j2);
@@ -353,13 +354,13 @@ public class c {
                 } catch (Exception e) {
                     e.printStackTrace();
                     com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "authStart--Exception_e=", e);
-                    AuthCallbacks authCallbacks = c.this.f39039c;
+                    AuthCallbacks authCallbacks = c.this.f25348c;
                     authCallbacks.authFailed(1014, 1014, "authStart--Exception_e=" + e, e.getClass().getSimpleName(), i, d.a().a(c.this.b), j, j2, j3);
                 }
             }
         };
         if (this.b == null || this.f == null) {
-            this.f39039c.authFailed(1004, 1004, "getPhoneInfoMethod()未初始化", "未初始化", i, "Unknown_Operator", j, j2, j3);
+            this.f25348c.authFailed(1004, 1004, "getPhoneInfoMethod()未初始化", "未初始化", i, "Unknown_Operator", j, j2, j3);
         } else if (com.tencent.tendinsv.b.U != com.tencent.tendinsv.b.Y.getAndSet(com.tencent.tendinsv.b.U)) {
             this.f.execute(runnable);
         } else {
@@ -401,7 +402,7 @@ public class c {
                     b(a2, i, j, j2, j3);
                     return;
                 } else {
-                    authCallbacks = this.f39039c;
+                    authCallbacks = this.f25348c;
                     str = "联通运营商通道未开启";
                 }
             } else if (!z) {
@@ -409,20 +410,20 @@ public class c {
                     a(a2);
                     return;
                 } else {
-                    authCallbacks = this.f39039c;
+                    authCallbacks = this.f25348c;
                     str = "移动运营商通道未开启";
                 }
             } else if (1 == t.b(this.b, t.C, 1)) {
                 a(a2, i, j, j2, j3);
                 return;
             } else {
-                authCallbacks = this.f39039c;
+                authCallbacks = this.f25348c;
                 str = "电信运营商通道未开启";
             }
             authCallbacks.authFailed(1001, 1001, str, "check_error", i, a2, j, j2, j3);
         } catch (Exception e) {
             e.printStackTrace();
-            this.f39039c.authFailed(1014, 1014, "startAuth--Exception_e=" + e, e.getClass().getSimpleName(), i, d.a().a(this.b), j, j2, j3);
+            this.f25348c.authFailed(1014, 1014, "startAuth--Exception_e=" + e, e.getClass().getSimpleName(), i, d.a().a(this.b), j, j2, j3);
         }
     }
 }

@@ -20,6 +20,7 @@ import com.soft.blued.customview.VerticalDashView;
 import com.soft.blued.log.track.EventTrackVIP;
 import com.soft.blued.ui.pay.model.BluedCoupon;
 import com.soft.blued.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -28,14 +29,14 @@ import java.util.List;
 public class CouponListAdapter extends BaseQuickAdapter<BluedCoupon, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public ShapeTextView f32987a;
+    public ShapeTextView f19296a;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/pay/adapter/CouponListAdapter$CouponViewHolder.class */
     public class CouponViewHolder {
         private ConstraintLayout b;
 
         /* renamed from: c  reason: collision with root package name */
-        private FrameLayout f32989c;
+        private FrameLayout f19298c;
         private LinearLayout d;
         private ConstraintLayout e;
         private TextView f;
@@ -55,7 +56,7 @@ public class CouponListAdapter extends BaseQuickAdapter<BluedCoupon, BaseViewHol
 
         CouponViewHolder(BaseViewHolder baseViewHolder) {
             this.b = (ConstraintLayout) baseViewHolder.getView(R.id.view_item);
-            this.f32989c = (FrameLayout) baseViewHolder.getView(R.id.view_left_part);
+            this.f19298c = (FrameLayout) baseViewHolder.getView(R.id.view_left_part);
             this.d = (LinearLayout) baseViewHolder.getView(R.id.ll_money);
             this.e = (ConstraintLayout) baseViewHolder.getView(R.id.view_right_part);
             this.f = (TextView) baseViewHolder.getView(2131372046);
@@ -78,7 +79,7 @@ public class CouponListAdapter extends BaseQuickAdapter<BluedCoupon, BaseViewHol
     public CouponListAdapter(Context context, ShapeTextView shapeTextView) {
         super(R.layout.item_coupon, new ArrayList());
         this.mContext = context;
-        this.f32987a = shapeTextView;
+        this.f19296a = shapeTextView;
     }
 
     public static void a(Context context, ShapeTextView shapeTextView, boolean z) {
@@ -93,7 +94,7 @@ public class CouponListAdapter extends BaseQuickAdapter<BluedCoupon, BaseViewHol
 
     private void a(CouponViewHolder couponViewHolder, BluedCoupon bluedCoupon) {
         c(couponViewHolder, bluedCoupon);
-        couponViewHolder.f32989c.setBackground(this.mContext.getResources().getDrawable(R.drawable.bg_coupon_left_normal));
+        couponViewHolder.f19298c.setBackground(this.mContext.getResources().getDrawable(R.drawable.bg_coupon_left_normal));
         couponViewHolder.n.setDashColor(2131102260);
         couponViewHolder.e.setBackground(this.mContext.getResources().getDrawable(R.drawable.bg_coupon_right_normal));
         couponViewHolder.p.setTextColor(this.mContext.getResources().getColor(2131102260));
@@ -125,14 +126,14 @@ public class CouponListAdapter extends BaseQuickAdapter<BluedCoupon, BaseViewHol
         Tracker.onClick(view);
         bluedCoupon.ifChoosed = !bluedCoupon.ifChoosed;
         if (bluedCoupon.ifChoosed) {
-            for (BluedCoupon bluedCoupon2 : this.mData) {
-                if (bluedCoupon2 != bluedCoupon) {
-                    bluedCoupon2.ifChoosed = false;
+            for (T t : this.mData) {
+                if (t != bluedCoupon) {
+                    t.ifChoosed = false;
                 }
             }
         }
         EventTrackVIP.a(VipProtos.Event.ORDER_COUPON_CLICK, EventTrackVIP.c(bluedCoupon.type), bluedCoupon.id + "");
-        a(this.mContext, this.f32987a, a() != null);
+        a(this.mContext, this.f19296a, a() != null);
         notifyDataSetChanged();
     }
 
@@ -140,12 +141,12 @@ public class CouponListAdapter extends BaseQuickAdapter<BluedCoupon, BaseViewHol
         c(couponViewHolder, bluedCoupon);
         couponViewHolder.o.setVisibility(0);
         if (bluedCoupon.ifChoosed) {
-            couponViewHolder.f32989c.setBackground(this.mContext.getResources().getDrawable(R.drawable.bg_coupon_left_selected));
+            couponViewHolder.f19298c.setBackground(this.mContext.getResources().getDrawable(R.drawable.bg_coupon_left_selected));
             couponViewHolder.n.setDashColor("#84BDFF");
             couponViewHolder.e.setBackground(this.mContext.getResources().getDrawable(R.drawable.bg_coupon_right_selected));
             couponViewHolder.o.setImageResource(R.drawable.icon_coupon_choosed);
         } else {
-            couponViewHolder.f32989c.setBackground(this.mContext.getResources().getDrawable(R.drawable.bg_coupon_left_normal));
+            couponViewHolder.f19298c.setBackground(this.mContext.getResources().getDrawable(R.drawable.bg_coupon_left_normal));
             if (bluedCoupon.is_available == 1) {
                 couponViewHolder.n.setDashColor(2131102260);
             } else {
@@ -202,7 +203,7 @@ public class CouponListAdapter extends BaseQuickAdapter<BluedCoupon, BaseViewHol
         couponViewHolder.q.setText(bluedCoupon.discount_desc);
         couponViewHolder.f.setText(bluedCoupon.name);
         TextView textView2 = couponViewHolder.i;
-        textView2.setText(bluedCoupon.start_time + "-" + bluedCoupon.end_time);
+        textView2.setText(bluedCoupon.start_time + Constants.ACCEPT_TIME_SEPARATOR_SERVER + bluedCoupon.end_time);
         if (StringUtils.d(bluedCoupon.tag)) {
             couponViewHolder.j.setVisibility(8);
         } else {

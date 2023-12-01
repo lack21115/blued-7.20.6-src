@@ -1,6 +1,7 @@
 package com.blued.android.module.live_china.test;
 
 import androidx.fragment.app.DialogFragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.GridLayoutManager;
 import com.blued.android.core.AppInfo;
 import com.blued.android.module.common.base.mvvm.LifecycleExtKt;
@@ -24,13 +25,9 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/test/LiveHomeFramentTest.class */
 public final class LiveHomeFramentTest extends MVVMBaseFragment<LiveHomeViewModelTest> {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f14140a = {Reflection.a(new PropertyReference1Impl(LiveHomeFramentTest.class, "viewBinding", "getViewBinding()Lcom/blued/android/module/live_china/databinding/LiveHotFragmentLayoutTestBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] a = {Reflection.a(new PropertyReference1Impl(LiveHomeFramentTest.class, "viewBinding", "getViewBinding()Lcom/blued/android/module/live_china/databinding/LiveHotFragmentLayoutTestBinding;", 0))};
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f14141c;
+    private final ViewBindingProperty c;
     private LiveAdapterTest d;
 
     public LiveHomeFramentTest() {
@@ -40,7 +37,7 @@ public final class LiveHomeFramentTest extends MVVMBaseFragment<LiveHomeViewMode
     public LiveHomeFramentTest(int i) {
         super(R.layout.live_hot_fragment_layout_test);
         this.b = i;
-        this.f14141c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LiveHomeFramentTest, LiveHotFragmentLayoutTestBinding>() { // from class: com.blued.android.module.live_china.test.LiveHomeFramentTest$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LiveHomeFramentTest, LiveHotFragmentLayoutTestBinding>() { // from class: com.blued.android.module.live_china.test.LiveHomeFramentTest$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final LiveHotFragmentLayoutTestBinding invoke(LiveHomeFramentTest fragment) {
@@ -74,7 +71,7 @@ public final class LiveHomeFramentTest extends MVVMBaseFragment<LiveHomeViewMode
         if (p == null || (smartRefreshLayout = p.b) == null) {
             return;
         }
-        smartRefreshLayout.j();
+        smartRefreshLayout.g();
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -84,12 +81,11 @@ public final class LiveHomeFramentTest extends MVVMBaseFragment<LiveHomeViewMode
         if (p == null) {
             return;
         }
-        p.f12253a.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        p.f12253a.setAdapter(q());
+        p.a.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        p.a.setAdapter(q());
         p.b.c(true);
-        p.b.l(false);
+        p.b.b(false);
         p.b.a(new OnRefreshListener() { // from class: com.blued.android.module.live_china.test.LiveHomeFramentTest$initView$1$1
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 LiveHomeFramentTest.this.r();
@@ -105,11 +101,11 @@ public final class LiveHomeFramentTest extends MVVMBaseFragment<LiveHomeViewMode
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        LifecycleExtKt.a(this, a().d(), new LiveHomeFramentTest$liveDataObserver$1(this));
+        LifecycleExtKt.a((LifecycleOwner) this, a().d(), new LiveHomeFramentTest$liveDataObserver$1(this));
     }
 
     public final LiveHotFragmentLayoutTestBinding p() {
-        return (LiveHotFragmentLayoutTestBinding) this.f14141c.b(this, f14140a[0]);
+        return (LiveHotFragmentLayoutTestBinding) this.c.b(this, a[0]);
     }
 
     public final LiveAdapterTest q() {

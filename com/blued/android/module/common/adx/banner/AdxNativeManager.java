@@ -15,7 +15,6 @@ import com.blued.android.module.common.adx.ks.p003native.KSNativeExpressAdAdapte
 import com.blued.android.module.common.adx.tt.p004native.TTNativeExpressAdAdapter;
 import com.blued.android.module.common.login.model.BluedADExtra;
 import com.qq.e.ads.nativ.ADSize;
-import com.qq.e.comm.pi.IBidding;
 import com.scwang.smartrefresh.layout.util.DensityUtil;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -33,9 +32,7 @@ import kotlinx.coroutines.flow.FlowKt;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/banner/AdxNativeManager.class */
 public class AdxNativeManager extends AdxBaseManager {
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f10443c;
+    private int c;
     private int d;
     private long e;
     private final ADListener f;
@@ -45,7 +42,7 @@ public class AdxNativeManager extends AdxBaseManager {
         Intrinsics.e(context, "context");
         Intrinsics.e(listener, "listener");
         this.b = i;
-        this.f10443c = i2;
+        this.c = i2;
         this.d = i3;
         this.e = j;
         this.f = listener;
@@ -67,8 +64,8 @@ public class AdxNativeManager extends AdxBaseManager {
                                 arrayList.add(new BDNativeExpressAdAdapter(adxNativeManager.g, bluedADExtra, adxNativeManager.j(), adxNativeManager.d()));
                             }
                         } else if (str.equals("13")) {
-                            int a2 = AppInfo.l - DensityUtil.a(24.0f);
-                            arrayList.add(new KSNativeExpressAdAdapter(adxNativeManager.g, bluedADExtra, new ADSize(a2, (int) (a2 / 2.8d)), adxNativeManager.d()));
+                            int a = AppInfo.l - DensityUtil.a(24.0f);
+                            arrayList.add(new KSNativeExpressAdAdapter(adxNativeManager.g, bluedADExtra, new ADSize(a, (int) (a / 2.8d)), adxNativeManager.d()));
                         }
                     } else if (str.equals("4")) {
                         arrayList.add(new TTNativeExpressAdAdapter(adxNativeManager.g, bluedADExtra, adxNativeManager.k(), adxNativeManager.d()));
@@ -83,13 +80,13 @@ public class AdxNativeManager extends AdxBaseManager {
     }
 
     private final ADSize j() {
-        int a2 = AppInfo.l - DensityUtil.a(24.0f);
-        return new ADSize(a2, a2 / 3);
+        int a = AppInfo.l - DensityUtil.a(24.0f);
+        return new ADSize(a, a / 3);
     }
 
     private final ADSize k() {
-        float a2 = DensityUtil.a(AppInfo.l - DensityUtil.a(24.0f));
-        return new ADSize((int) a2, (int) (a2 / 3));
+        float a = DensityUtil.a(AppInfo.l - DensityUtil.a(24.0f));
+        return new ADSize((int) a, (int) (a / 3));
     }
 
     public int a() {
@@ -102,7 +99,7 @@ public class AdxNativeManager extends AdxBaseManager {
     }
 
     public void a(int i) {
-        this.f10443c = i;
+        this.c = i;
     }
 
     public void a(long j) {
@@ -150,20 +147,20 @@ public class AdxNativeManager extends AdxBaseManager {
             int hashCode = str.hashCode();
             if (hashCode == 51) {
                 if (str.equals("3")) {
-                    Map<String, ? extends Object> a2 = MapsKt.a(TuplesKt.a(IBidding.EXPECT_COST_PRICE, Integer.valueOf(i)), TuplesKt.a(IBidding.HIGHEST_LOSS_PRICE, Integer.valueOf(i2)));
+                    Map<String, ? extends Object> a = MapsKt.a(TuplesKt.a("expectCostPrice", Integer.valueOf(i)), TuplesKt.a("highestLossPrice", Integer.valueOf(i2)));
                     a("回传给广点通竞胜信息 广告id:" + ((Object) bluedADExtra2.ads_id_sub) + " 广告位id:" + ((Object) bluedADExtra2.third_id) + " 竞胜出价：" + i + " 竞败⽅的最⾼价格:" + i2);
-                    bluedADExtra2.baseNativeExpressAd.a(a2);
+                    bluedADExtra2.baseNativeExpressAd.a(a);
                 }
             } else if (hashCode != 1570) {
                 if (hashCode == 1572 && str.equals("15")) {
-                    Map<String, ? extends Object> a3 = MapsKt.a(TuplesKt.a("highest_loss_price", Integer.valueOf(i2)));
+                    Map<String, ? extends Object> a2 = MapsKt.a(TuplesKt.a("highest_loss_price", Integer.valueOf(i2)));
                     a("回传给百度竞胜信息 广告id:" + ((Object) bluedADExtra2.ads_id_sub) + " 广告位id:" + ((Object) bluedADExtra2.third_id) + " 竞败⽅的最⾼价格:" + i2);
-                    bluedADExtra2.baseNativeExpressAd.a(a3);
+                    bluedADExtra2.baseNativeExpressAd.a(a2);
                 }
             } else if (str.equals("13")) {
-                Map<String, ? extends Object> a4 = MapsKt.a(TuplesKt.a("win_data", bluedADExtra2), TuplesKt.a("loss_data", bluedADExtra4));
+                Map<String, ? extends Object> a3 = MapsKt.a(TuplesKt.a("win_data", bluedADExtra2), TuplesKt.a("loss_data", bluedADExtra4));
                 Log.v("adx", "回传给快手竞胜信息 广告id:" + ((Object) bluedADExtra2.ads_id_sub) + " 广告位id:" + ((Object) bluedADExtra2.third_id) + " 竞胜出价：" + i + " 竞败⽅的最⾼价格:" + i2);
-                bluedADExtra2.baseNativeExpressAd.a(a4);
+                bluedADExtra2.baseNativeExpressAd.a(a3);
             }
         }
     }
@@ -235,18 +232,18 @@ public class AdxNativeManager extends AdxBaseManager {
                 }
                 a("回传给广点通竞败信息 当前广告id:" + ((Object) bluedADExtra6.ads_id_sub) + " 广告位id:" + ((Object) bluedADExtra6.third_id) + " 本次竞胜方出价：" + i + "  竞价失败原因:" + str4 + "  本次竞胜方渠道ID:" + str2);
                 if (bluedADExtra6.bid_fail_notice != 1) {
-                    Map<String, ? extends Object> a2 = MapsKt.a(TuplesKt.a(IBidding.LOSS_REASON, Integer.valueOf(i2)));
+                    Map<String, ? extends Object> a = MapsKt.a(TuplesKt.a("lossReason", Integer.valueOf(i2)));
                     BaseNativeExpressAd baseNativeExpressAd = bluedADExtra6.baseNativeExpressAd;
                     if (baseNativeExpressAd != null) {
-                        baseNativeExpressAd.b(a2);
+                        baseNativeExpressAd.b(a);
                     }
                     Log.v("adx", "回传给广点通竞败信息 当前广告id:" + ((Object) bluedADExtra6.ads_id_sub) + " 广告位id:" + ((Object) bluedADExtra6.third_id) + " bid_fail_notice字段为：" + bluedADExtra6.bid_fail_notice + " 不上报「竞胜广告源」「竞胜价格」");
                     return;
                 }
-                Map<String, ? extends Object> a3 = MapsKt.a(TuplesKt.a(IBidding.WIN_PRICE, Integer.valueOf(i)), TuplesKt.a(IBidding.LOSS_REASON, Integer.valueOf(i2)), TuplesKt.a(IBidding.ADN_ID, str));
+                Map<String, ? extends Object> a2 = MapsKt.a(TuplesKt.a("winPrice", Integer.valueOf(i)), TuplesKt.a("lossReason", Integer.valueOf(i2)), TuplesKt.a("adnId", str));
                 BaseNativeExpressAd baseNativeExpressAd2 = bluedADExtra6.baseNativeExpressAd;
                 if (baseNativeExpressAd2 != null) {
-                    baseNativeExpressAd2.b(a3);
+                    baseNativeExpressAd2.b(a2);
                 }
                 a("回传给广点通竞败信息 当前广告id:" + ((Object) bluedADExtra6.ads_id_sub) + " 广告位id:" + ((Object) bluedADExtra6.third_id) + " 本次竞胜方出价：" + i + "  竞价失败原因:" + str4 + "  本次竞胜方渠道ID:" + str2);
             }
@@ -286,7 +283,7 @@ public class AdxNativeManager extends AdxBaseManager {
     }
 
     public int getType() {
-        return this.f10443c;
+        return this.c;
     }
 
     @Override // com.blued.android.module.common.adx.base.AdxBaseManager

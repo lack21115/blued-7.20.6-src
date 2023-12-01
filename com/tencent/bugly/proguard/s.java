@@ -26,13 +26,13 @@ public final class s {
     private static s b;
 
     /* renamed from: a  reason: collision with root package name */
-    public Map<String, String> f35404a = null;
+    public Map<String, String> f21713a = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f35405c;
+    private Context f21714c;
 
     private s(Context context) {
-        this.f35405c = context;
+        this.f21714c = context;
     }
 
     public static s a(Context context) {

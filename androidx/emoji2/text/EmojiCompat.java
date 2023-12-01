@@ -43,11 +43,11 @@ public class EmojiCompat {
     private static volatile boolean h;
 
     /* renamed from: a  reason: collision with root package name */
-    final MetadataRepoLoader f2812a;
+    final MetadataRepoLoader f2764a;
     final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    final boolean f2813c;
+    final boolean f2765c;
     final int[] d;
     private final CompatInternal m;
     private final boolean n;
@@ -64,10 +64,10 @@ public class EmojiCompat {
     public static class CompatInternal {
 
         /* renamed from: a  reason: collision with root package name */
-        final EmojiCompat f2814a;
+        final EmojiCompat f2766a;
 
         CompatInternal(EmojiCompat emojiCompat) {
-            this.f2814a = emojiCompat;
+            this.f2766a = emojiCompat;
         }
 
         CharSequence a(CharSequence charSequence, int i, int i2, int i3, boolean z) {
@@ -75,7 +75,7 @@ public class EmojiCompat {
         }
 
         void a() {
-            this.f2814a.a();
+            this.f2766a.a();
         }
 
         void a(EditorInfo editorInfo) {
@@ -99,7 +99,7 @@ public class EmojiCompat {
         private volatile EmojiProcessor b;
 
         /* renamed from: c  reason: collision with root package name */
-        private volatile MetadataRepo f2815c;
+        private volatile MetadataRepo f2767c;
 
         CompatInternal19(EmojiCompat emojiCompat) {
             super(emojiCompat);
@@ -113,10 +113,10 @@ public class EmojiCompat {
         @Override // androidx.emoji2.text.EmojiCompat.CompatInternal
         void a() {
             try {
-                this.f2814a.f2812a.load(new MetadataRepoLoaderCallback() { // from class: androidx.emoji2.text.EmojiCompat.CompatInternal19.1
+                this.f2766a.f2764a.load(new MetadataRepoLoaderCallback() { // from class: androidx.emoji2.text.EmojiCompat.CompatInternal19.1
                     @Override // androidx.emoji2.text.EmojiCompat.MetadataRepoLoaderCallback
                     public void onFailed(Throwable th) {
-                        CompatInternal19.this.f2814a.a(th);
+                        CompatInternal19.this.f2766a.a(th);
                     }
 
                     @Override // androidx.emoji2.text.EmojiCompat.MetadataRepoLoaderCallback
@@ -125,24 +125,24 @@ public class EmojiCompat {
                     }
                 });
             } catch (Throwable th) {
-                this.f2814a.a(th);
+                this.f2766a.a(th);
             }
         }
 
         @Override // androidx.emoji2.text.EmojiCompat.CompatInternal
         void a(EditorInfo editorInfo) {
-            editorInfo.extras.putInt(EmojiCompat.EDITOR_INFO_METAVERSION_KEY, this.f2815c.b());
-            editorInfo.extras.putBoolean(EmojiCompat.EDITOR_INFO_REPLACE_ALL_KEY, this.f2814a.b);
+            editorInfo.extras.putInt(EmojiCompat.EDITOR_INFO_METAVERSION_KEY, this.f2767c.b());
+            editorInfo.extras.putBoolean(EmojiCompat.EDITOR_INFO_REPLACE_ALL_KEY, this.f2766a.b);
         }
 
         void a(MetadataRepo metadataRepo) {
             if (metadataRepo == null) {
-                this.f2814a.a(new IllegalArgumentException("metadataRepo cannot be null"));
+                this.f2766a.a(new IllegalArgumentException("metadataRepo cannot be null"));
                 return;
             }
-            this.f2815c = metadataRepo;
-            this.b = new EmojiProcessor(this.f2815c, new SpanFactory(), this.f2814a.q, this.f2814a.f2813c, this.f2814a.d);
-            this.f2814a.a();
+            this.f2767c = metadataRepo;
+            this.b = new EmojiProcessor(this.f2767c, new SpanFactory(), this.f2766a.q, this.f2766a.f2765c, this.f2766a.d);
+            this.f2766a.a();
         }
 
         @Override // androidx.emoji2.text.EmojiCompat.CompatInternal
@@ -158,7 +158,7 @@ public class EmojiCompat {
 
         @Override // androidx.emoji2.text.EmojiCompat.CompatInternal
         String b() {
-            String sourceSha = this.f2815c.getMetadataList().sourceSha();
+            String sourceSha = this.f2767c.getMetadataList().sourceSha();
             String str = sourceSha;
             if (sourceSha == null) {
                 str = "";
@@ -171,11 +171,11 @@ public class EmojiCompat {
     public static abstract class Config {
 
         /* renamed from: a  reason: collision with root package name */
-        final MetadataRepoLoader f2817a;
+        final MetadataRepoLoader f2769a;
         boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        boolean f2818c;
+        boolean f2770c;
         int[] d;
         Set<InitCallback> e;
         boolean f;
@@ -186,12 +186,12 @@ public class EmojiCompat {
         /* JADX INFO: Access modifiers changed from: protected */
         public Config(MetadataRepoLoader metadataRepoLoader) {
             Preconditions.checkNotNull(metadataRepoLoader, "metadataLoader cannot be null.");
-            this.f2817a = metadataRepoLoader;
+            this.f2769a = metadataRepoLoader;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
         public final MetadataRepoLoader a() {
-            return this.f2817a;
+            return this.f2769a;
         }
 
         public Config registerInitCallback(InitCallback initCallback) {
@@ -234,7 +234,7 @@ public class EmojiCompat {
         }
 
         public Config setUseEmojiAsDefaultStyle(boolean z, List<Integer> list) {
-            this.f2818c = z;
+            this.f2770c = z;
             if (!z || list == null) {
                 this.d = null;
                 return this;
@@ -278,11 +278,11 @@ public class EmojiCompat {
     public static class ListenerDispatcher implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<InitCallback> f2819a;
+        private final List<InitCallback> f2771a;
         private final Throwable b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f2820c;
+        private final int f2772c;
 
         ListenerDispatcher(InitCallback initCallback, int i) {
             this(Arrays.asList((InitCallback) Preconditions.checkNotNull(initCallback, "initCallback cannot be null")), i, null);
@@ -294,17 +294,17 @@ public class EmojiCompat {
 
         ListenerDispatcher(Collection<InitCallback> collection, int i, Throwable th) {
             Preconditions.checkNotNull(collection, "initCallbacks cannot be null");
-            this.f2819a = new ArrayList(collection);
-            this.f2820c = i;
+            this.f2771a = new ArrayList(collection);
+            this.f2772c = i;
             this.b = th;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            int size = this.f2819a.size();
-            if (this.f2820c == 1) {
+            int size = this.f2771a.size();
+            if (this.f2772c == 1) {
                 for (int i = 0; i < size; i++) {
-                    this.f2819a.get(i).onInitialized();
+                    this.f2771a.get(i).onInitialized();
                 }
                 return;
             }
@@ -314,7 +314,7 @@ public class EmojiCompat {
                 if (i3 >= size) {
                     return;
                 }
-                this.f2819a.get(i3).onFailed(this.b);
+                this.f2771a.get(i3).onFailed(this.b);
                 i2 = i3 + 1;
             }
         }
@@ -358,11 +358,11 @@ public class EmojiCompat {
     /* JADX WARN: Type inference failed for: r0v19, types: [androidx.emoji2.text.EmojiCompat$CompatInternal] */
     private EmojiCompat(Config config) {
         this.b = config.b;
-        this.f2813c = config.f2818c;
+        this.f2765c = config.f2770c;
         this.d = config.d;
         this.n = config.f;
         this.o = config.g;
-        this.f2812a = config.f2817a;
+        this.f2764a = config.f2769a;
         this.p = config.h;
         this.q = config.i;
         if (config.e != null && !config.e.isEmpty()) {

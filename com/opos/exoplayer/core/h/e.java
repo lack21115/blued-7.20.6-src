@@ -14,11 +14,11 @@ import java.nio.channels.FileChannel;
 public final class e implements g {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ContentResolver f25444a;
+    private final ContentResolver f11756a;
     private final t<? super e> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Uri f25445c;
+    private Uri f11757c;
     private AssetFileDescriptor d;
     private FileInputStream e;
     private long f;
@@ -32,7 +32,7 @@ public final class e implements g {
     }
 
     public e(Context context, t<? super e> tVar) {
-        this.f25444a = context.getContentResolver();
+        this.f11756a = context.getContentResolver();
         this.b = tVar;
     }
 
@@ -73,12 +73,12 @@ public final class e implements g {
     @Override // com.opos.exoplayer.core.h.g
     public long a(i iVar) {
         try {
-            Uri uri = iVar.f25449a;
-            this.f25445c = uri;
-            AssetFileDescriptor openAssetFileDescriptor = this.f25444a.openAssetFileDescriptor(uri, "r");
+            Uri uri = iVar.f11761a;
+            this.f11757c = uri;
+            AssetFileDescriptor openAssetFileDescriptor = this.f11756a.openAssetFileDescriptor(uri, "r");
             this.d = openAssetFileDescriptor;
             if (openAssetFileDescriptor == null) {
-                throw new FileNotFoundException("Could not open file descriptor for: " + this.f25445c);
+                throw new FileNotFoundException("Could not open file descriptor for: " + this.f11757c);
             }
             this.e = new FileInputStream(this.d.getFileDescriptor());
             long startOffset = this.d.getStartOffset();
@@ -115,12 +115,12 @@ public final class e implements g {
 
     @Override // com.opos.exoplayer.core.h.g
     public Uri a() {
-        return this.f25445c;
+        return this.f11757c;
     }
 
     @Override // com.opos.exoplayer.core.h.g
     public void b() {
-        this.f25445c = null;
+        this.f11757c = null;
         try {
             try {
                 if (this.e != null) {

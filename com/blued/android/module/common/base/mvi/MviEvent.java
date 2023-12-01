@@ -13,9 +13,7 @@ public abstract class MviEvent implements UiEvent {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/mvi/MviEvent$DataEmpty.class */
     public static final class DataEmpty extends MviEvent {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final DataEmpty f10682a = new DataEmpty();
+        public static final DataEmpty a = new DataEmpty();
 
         private DataEmpty() {
             super(null);
@@ -25,9 +23,7 @@ public abstract class MviEvent implements UiEvent {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/mvi/MviEvent$LoadData.class */
     public static final class LoadData<M> extends MviEvent {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final List<M> f10683a;
+        private final List<M> a;
 
         public LoadData() {
             this(null, 1, null);
@@ -36,7 +32,7 @@ public abstract class MviEvent implements UiEvent {
         /* JADX WARN: Multi-variable type inference failed */
         public LoadData(List<? extends M> list) {
             super(null);
-            this.f10683a = list;
+            this.a = list;
         }
 
         public /* synthetic */ LoadData(List list, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -44,18 +40,18 @@ public abstract class MviEvent implements UiEvent {
         }
 
         public final List<M> a() {
-            return this.f10683a;
+            return this.a;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof LoadData) && Intrinsics.a(this.f10683a, ((LoadData) obj).f10683a);
+            return (obj instanceof LoadData) && Intrinsics.a(this.a, ((LoadData) obj).a);
         }
 
         public int hashCode() {
-            List<M> list = this.f10683a;
+            List<M> list = this.a;
             if (list == null) {
                 return 0;
             }
@@ -63,16 +59,14 @@ public abstract class MviEvent implements UiEvent {
         }
 
         public String toString() {
-            return "LoadData(data=" + this.f10683a + ')';
+            return "LoadData(data=" + this.a + ')';
         }
     }
 
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/mvi/MviEvent$LoadFinished.class */
     public static final class LoadFinished extends MviEvent {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final boolean f10684a;
+        private final boolean a;
         private final boolean b;
 
         public LoadFinished() {
@@ -81,7 +75,7 @@ public abstract class MviEvent implements UiEvent {
 
         public LoadFinished(boolean z, boolean z2) {
             super(null);
-            this.f10684a = z;
+            this.a = z;
             this.b = z2;
         }
 
@@ -90,7 +84,7 @@ public abstract class MviEvent implements UiEvent {
         }
 
         public final boolean a() {
-            return this.f10684a;
+            return this.a;
         }
 
         public final boolean b() {
@@ -103,7 +97,7 @@ public abstract class MviEvent implements UiEvent {
             }
             if (obj instanceof LoadFinished) {
                 LoadFinished loadFinished = (LoadFinished) obj;
-                return this.f10684a == loadFinished.f10684a && this.b == loadFinished.b;
+                return this.a == loadFinished.a && this.b == loadFinished.b;
             }
             return false;
         }
@@ -114,16 +108,14 @@ public abstract class MviEvent implements UiEvent {
         }
 
         public String toString() {
-            return "LoadFinished(succeed=" + this.f10684a + ", hasMore=" + this.b + ')';
+            return "LoadFinished(succeed=" + this.a + ", hasMore=" + this.b + ')';
         }
     }
 
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/mvi/MviEvent$LoadStarted.class */
     public static final class LoadStarted extends MviEvent {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final LoadStarted f10685a = new LoadStarted();
+        public static final LoadStarted a = new LoadStarted();
 
         private LoadStarted() {
             super(null);
@@ -133,34 +125,32 @@ public abstract class MviEvent implements UiEvent {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/mvi/MviEvent$ToastEvent.class */
     public static final class ToastEvent extends MviEvent {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final String f10686a;
+        private final String a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ToastEvent(String message) {
             super(null);
             Intrinsics.e(message, "message");
-            this.f10686a = message;
+            this.a = message;
         }
 
         public final String a() {
-            return this.f10686a;
+            return this.a;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof ToastEvent) && Intrinsics.a((Object) this.f10686a, (Object) ((ToastEvent) obj).f10686a);
+            return (obj instanceof ToastEvent) && Intrinsics.a((Object) this.a, (Object) ((ToastEvent) obj).a);
         }
 
         public int hashCode() {
-            return this.f10686a.hashCode();
+            return this.a.hashCode();
         }
 
         public String toString() {
-            return "ToastEvent(message=" + this.f10686a + ')';
+            return "ToastEvent(message=" + this.a + ')';
         }
     }
 

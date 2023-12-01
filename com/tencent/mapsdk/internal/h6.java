@@ -14,7 +14,7 @@ public class h6 extends rb {
     }
 
     public void a() {
-        u.d().onReport(new NetFlowEvent(this.f37741c));
+        u.d().onReport(new NetFlowEvent(this.f24050c));
     }
 
     @Override // com.tencent.mapsdk.internal.rb, com.tencent.map.tools.net.processor.ResponseProcessor

@@ -2,7 +2,6 @@ package android.os;
 
 import android.util.Log;
 import android.util.Printer;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/os/Looper.class */
 public final class Looper {
@@ -133,6 +132,6 @@ public final class Looper {
     }
 
     public String toString() {
-        return "Looper (" + this.mThread.getName() + ", tid " + this.mThread.getId() + ") {" + Integer.toHexString(System.identityHashCode(this)) + i.d;
+        return "Looper (" + this.mThread.getName() + ", tid " + this.mThread.getId() + ") {" + Integer.toHexString(System.identityHashCode(this)) + "}";
     }
 }

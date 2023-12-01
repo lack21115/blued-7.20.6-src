@@ -2,7 +2,6 @@ package com.anythink.expressad.b;
 
 import android.text.TextUtils;
 import com.anythink.expressad.foundation.h.o;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -17,7 +16,7 @@ import java.util.zip.ZipInputStream;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7120a = "UnzipUtility";
+    private static final String f4282a = "UnzipUtility";
     private static final int b = 4096;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -33,8 +32,8 @@ public final class c {
             return -1;
         }
         String str4 = str2;
-        if (!str2.endsWith(BridgeUtil.SPLIT_MARK)) {
-            str4 = str2 + BridgeUtil.SPLIT_MARK;
+        if (!str2.endsWith("/")) {
+            str4 = str2 + "/";
         }
         File file = new File(str);
         if (!file.exists()) {
@@ -58,7 +57,7 @@ public final class c {
                                 try {
                                     inputStream.close();
                                 } catch (IOException e) {
-                                    o.d(f7120a, e.getMessage());
+                                    o.d(f4282a, e.getMessage());
                                 }
                             }
                             if (fileOutputStream != null) {
@@ -66,7 +65,7 @@ public final class c {
                                     fileOutputStream.close();
                                     return 2;
                                 } catch (IOException e2) {
-                                    o.d(f7120a, e2.getMessage());
+                                    o.d(f4282a, e2.getMessage());
                                     return 2;
                                 }
                             }
@@ -127,12 +126,12 @@ public final class c {
                                                         } catch (IOException e4) {
                                                             fileOutputStream = fileOutputStream18;
                                                             e = e4;
-                                                            o.d(f7120a, e.getMessage());
+                                                            o.d(f4282a, e.getMessage());
                                                             if (inputStream != null) {
                                                                 try {
                                                                     inputStream.close();
                                                                 } catch (IOException e5) {
-                                                                    o.d(f7120a, e5.getMessage());
+                                                                    o.d(f4282a, e5.getMessage());
                                                                 }
                                                             }
                                                             if (fileOutputStream != null) {
@@ -140,7 +139,7 @@ public final class c {
                                                                     fileOutputStream.close();
                                                                     return 3;
                                                                 } catch (IOException e6) {
-                                                                    o.d(f7120a, e6.getMessage());
+                                                                    o.d(f4282a, e6.getMessage());
                                                                     return 3;
                                                                 }
                                                             }
@@ -152,14 +151,14 @@ public final class c {
                                                                 try {
                                                                     file2.close();
                                                                 } catch (IOException e7) {
-                                                                    o.d(f7120a, e7.getMessage());
+                                                                    o.d(f4282a, e7.getMessage());
                                                                 }
                                                             }
                                                             if (fileOutputStream2 != null) {
                                                                 try {
                                                                     fileOutputStream2.close();
                                                                 } catch (IOException e8) {
-                                                                    o.d(f7120a, e8.getMessage());
+                                                                    o.d(f4282a, e8.getMessage());
                                                                 }
                                                             }
                                                             throw th;
@@ -173,7 +172,7 @@ public final class c {
                                         try {
                                             inputStream.close();
                                         } catch (IOException e9) {
-                                            o.d(f7120a, e9.getMessage());
+                                            o.d(f4282a, e9.getMessage());
                                         }
                                     }
                                     if (fileOutputStream != null) {
@@ -181,7 +180,7 @@ public final class c {
                                             fileOutputStream.close();
                                             return 2;
                                         } catch (IOException e10) {
-                                            o.d(f7120a, e10.getMessage());
+                                            o.d(f4282a, e10.getMessage());
                                             return 2;
                                         }
                                     }
@@ -193,7 +192,7 @@ public final class c {
                             try {
                                 inputStream.close();
                             } catch (IOException e11) {
-                                o.d(f7120a, e11.getMessage());
+                                o.d(f4282a, e11.getMessage());
                             }
                         }
                         if (fileOutputStream != null) {
@@ -201,7 +200,7 @@ public final class c {
                                 fileOutputStream.close();
                                 return 2;
                             } catch (IOException e12) {
-                                o.d(f7120a, e12.getMessage());
+                                o.d(f4282a, e12.getMessage());
                                 return 2;
                             }
                         }
@@ -215,7 +214,7 @@ public final class c {
                     try {
                         inputStream.close();
                     } catch (IOException e14) {
-                        o.d(f7120a, e14.getMessage());
+                        o.d(f4282a, e14.getMessage());
                     }
                 }
                 if (fileOutputStream != null) {
@@ -223,7 +222,7 @@ public final class c {
                         fileOutputStream.close();
                         return 0;
                     } catch (IOException e15) {
-                        o.d(f7120a, e15.getMessage());
+                        o.d(f4282a, e15.getMessage());
                         return 0;
                     }
                 }

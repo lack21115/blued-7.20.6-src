@@ -67,7 +67,7 @@ public class AppUtils extends a {
         String str2 = (String) getMetaData(context, str);
         String str3 = str2;
         if (b.a(str2).booleanValue()) {
-            str3 = com.sdk.tencent.t.a.f28079c;
+            str3 = com.sdk.tencent.t.a.f14391c;
         }
         return str3;
     }
@@ -124,11 +124,11 @@ public class AppUtils extends a {
     }
 
     public static long getInstallDate(Context context) {
-        Long b = com.sdk.tencent.j.a.b(context, c.f28049a);
+        Long b = com.sdk.tencent.j.a.b(context, c.f14361a);
         Long l = b;
         if (b.longValue() == 0) {
             l = Long.valueOf(System.currentTimeMillis());
-            com.sdk.tencent.j.a.a(context, c.f28049a, l);
+            com.sdk.tencent.j.a.a(context, c.f14361a, l);
         }
         return l.longValue();
     }

@@ -17,9 +17,8 @@ public class BorderImageView extends ImageView {
         this.color = Color.parseColor("#dcdcdc");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Rect clipBounds = canvas.getClipBounds();
         Paint paint = new Paint();

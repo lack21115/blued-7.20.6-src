@@ -20,11 +20,11 @@ import java.util.HashMap;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static b f39125a;
+    private static b f25434a;
     private HandlerThread b;
 
     /* renamed from: c  reason: collision with root package name */
-    private c f39126c;
+    private c f25435c;
     private MediaMetadataRetriever d = null;
     private int e = 0;
 
@@ -38,21 +38,21 @@ public class b {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.thumbplayer.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/a/b$b.class */
-    public static class C1009b {
+    public static class C0839b {
 
         /* renamed from: a  reason: collision with root package name */
-        protected a f39127a;
+        protected a f25436a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f39128c;
+        private String f25437c;
         private FileDescriptor d;
         private AssetFileDescriptor e;
         private long f;
         private int g;
         private int h;
 
-        private C1009b() {
+        private C0839b() {
         }
     }
 
@@ -67,7 +67,7 @@ public class b {
             int i = message.what;
             if (i == 1) {
                 TPLogUtil.i("TPSysPlayerImageCapture", "eventHandler EV_CAP_IMAGE");
-                b.this.a((C1009b) message.obj);
+                b.this.a((C0839b) message.obj);
             } else if (i != 2) {
                 TPLogUtil.i("TPSysPlayerImageCapture", "eventHandler unknow msg");
             } else {
@@ -84,11 +84,11 @@ public class b {
     public static class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f39130a;
+        public String f25439a;
         public FileDescriptor b;
 
         /* renamed from: c  reason: collision with root package name */
-        public AssetFileDescriptor f39131c;
+        public AssetFileDescriptor f25440c;
         public long d;
         public int e;
         public int f;
@@ -96,13 +96,13 @@ public class b {
 
     private b() {
         this.b = null;
-        this.f39126c = null;
+        this.f25435c = null;
         try {
             this.b = o.a().b();
-            this.f39126c = new c(this.b.getLooper());
+            this.f25435c = new c(this.b.getLooper());
         } catch (Throwable th) {
             TPLogUtil.e("TPSysPlayerImageCapture", th);
-            this.f39126c = new c(Looper.getMainLooper());
+            this.f25435c = new c(Looper.getMainLooper());
         }
     }
 
@@ -110,10 +110,10 @@ public class b {
         b bVar;
         synchronized (b.class) {
             try {
-                if (f39125a == null) {
-                    f39125a = new b();
+                if (f25434a == null) {
+                    f25434a = new b();
                 }
-                bVar = f39125a;
+                bVar = f25434a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -122,14 +122,14 @@ public class b {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(C1009b c1009b) {
+    public void a(C0839b c0839b) {
         MediaMetadataRetriever mediaMetadataRetriever;
         try {
             try {
             } catch (Exception e) {
                 TPLogUtil.e("TPSysPlayerImageCapture", e);
                 TPLogUtil.e("TPSysPlayerImageCapture", "doRealCaptureImage, Exception: " + e.toString());
-                c1009b.f39127a.a(c1009b.b, TPGeneralError.FAILED);
+                c0839b.f25436a.a(c0839b.b, TPGeneralError.FAILED);
                 mediaMetadataRetriever = this.d;
                 if (mediaMetadataRetriever == null) {
                     return;
@@ -145,20 +145,20 @@ public class b {
             }
             this.d = new MediaMetadataRetriever();
             if (Build.VERSION.SDK_INT >= 14) {
-                if (c1009b.d != null) {
-                    this.d.setDataSource(c1009b.d);
-                } else if (c1009b.e != null) {
-                    this.d.setDataSource(c1009b.e.getFileDescriptor(), c1009b.e.getStartOffset(), c1009b.e.getLength());
+                if (c0839b.d != null) {
+                    this.d.setDataSource(c0839b.d);
+                } else if (c0839b.e != null) {
+                    this.d.setDataSource(c0839b.e.getFileDescriptor(), c0839b.e.getStartOffset(), c0839b.e.getLength());
                 } else {
-                    this.d.setDataSource(c1009b.f39128c, new HashMap());
+                    this.d.setDataSource(c0839b.f25437c, new HashMap());
                 }
             }
-            Bitmap frameAtTime = this.d.getFrameAtTime(c1009b.f * 1000, 2);
+            Bitmap frameAtTime = this.d.getFrameAtTime(c0839b.f * 1000, 2);
             long currentTimeMillis2 = System.currentTimeMillis();
             if (frameAtTime != null) {
-                c1009b.f39127a.a(c1009b.b, c1009b.f, c1009b.g, c1009b.h, frameAtTime, currentTimeMillis2 - currentTimeMillis);
+                c0839b.f25436a.a(c0839b.b, c0839b.f, c0839b.g, c0839b.h, frameAtTime, currentTimeMillis2 - currentTimeMillis);
             } else {
-                c1009b.f39127a.a(c1009b.b, TPGeneralError.FAILED);
+                c0839b.f25436a.a(c0839b.b, TPGeneralError.FAILED);
             }
             mediaMetadataRetriever = this.d;
             if (mediaMetadataRetriever == null) {
@@ -183,19 +183,19 @@ public class b {
             TPLogUtil.i("TPSysPlayerImageCapture", "captureImageWithPosition, Lenovo+K900 no incompatible");
             return -1;
         }
-        C1009b c1009b = new C1009b();
-        c1009b.b = this.e;
-        c1009b.d = dVar.b;
-        c1009b.e = dVar.f39131c;
-        c1009b.f39128c = dVar.f39130a;
-        c1009b.f = dVar.d;
-        c1009b.g = dVar.e;
-        c1009b.h = dVar.f;
-        c1009b.f39127a = aVar;
+        C0839b c0839b = new C0839b();
+        c0839b.b = this.e;
+        c0839b.d = dVar.b;
+        c0839b.e = dVar.f25440c;
+        c0839b.f25437c = dVar.f25439a;
+        c0839b.f = dVar.d;
+        c0839b.g = dVar.e;
+        c0839b.h = dVar.f;
+        c0839b.f25436a = aVar;
         Message message = new Message();
         message.what = 1;
-        message.obj = c1009b;
-        if (!this.f39126c.sendMessage(message)) {
+        message.obj = c0839b;
+        if (!this.f25435c.sendMessage(message)) {
             TPLogUtil.i("TPSysPlayerImageCapture", "captureImageWithPosition, send msg failed ");
         }
         return this.e;

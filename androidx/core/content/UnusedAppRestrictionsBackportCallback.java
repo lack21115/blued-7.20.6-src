@@ -7,13 +7,13 @@ import androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportCal
 public class UnusedAppRestrictionsBackportCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private IUnusedAppRestrictionsBackportCallback f2409a;
+    private IUnusedAppRestrictionsBackportCallback f2361a;
 
     public UnusedAppRestrictionsBackportCallback(IUnusedAppRestrictionsBackportCallback iUnusedAppRestrictionsBackportCallback) {
-        this.f2409a = iUnusedAppRestrictionsBackportCallback;
+        this.f2361a = iUnusedAppRestrictionsBackportCallback;
     }
 
     public void onResult(boolean z, boolean z2) throws RemoteException {
-        this.f2409a.onIsPermissionRevocationEnabledForAppResult(z, z2);
+        this.f2361a.onIsPermissionRevocationEnabledForAppResult(z, z2);
     }
 }

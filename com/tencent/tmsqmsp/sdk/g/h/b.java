@@ -13,11 +13,11 @@ public class b {
     public static String f = "SI";
 
     /* renamed from: a  reason: collision with root package name */
-    public InterfaceC1059b f39798a;
+    public InterfaceC0889b f26107a;
     private ServiceConnection b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f39799c;
+    private Context f26108c;
     public com.tencent.tmsqmsp.sdk.g.h.a d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/g/h/b$a.class */
@@ -28,11 +28,11 @@ public class b {
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             synchronized (this) {
-                b.this.d = a.AbstractBinderC1057a.a(iBinder);
+                b.this.d = a.AbstractBinderC0887a.a(iBinder);
                 b bVar = b.this;
-                InterfaceC1059b interfaceC1059b = bVar.f39798a;
-                if (interfaceC1059b != null) {
-                    interfaceC1059b.a(bVar);
+                InterfaceC0889b interfaceC0889b = bVar.f26107a;
+                if (interfaceC0889b != null) {
+                    interfaceC0889b.a(bVar);
                 }
                 StringBuilder sb = new StringBuilder();
                 sb.append(b.f);
@@ -50,25 +50,25 @@ public class b {
 
     /* renamed from: com.tencent.tmsqmsp.sdk.g.h.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/g/h/b$b.class */
-    public interface InterfaceC1059b {
+    public interface InterfaceC0889b {
         void a(b bVar);
     }
 
-    public b(Context context, InterfaceC1059b interfaceC1059b) {
-        this.f39798a = null;
-        this.f39799c = null;
+    public b(Context context, InterfaceC0889b interfaceC0889b) {
+        this.f26107a = null;
+        this.f26108c = null;
         if (context == null) {
             throw new NullPointerException("Context can not be null.");
         }
-        this.f39799c = context;
-        this.f39798a = interfaceC1059b;
+        this.f26108c = context;
+        this.f26107a = interfaceC0889b;
         this.b = new a();
     }
 
     public String a() {
         StringBuilder sb;
         String str;
-        Context context = this.f39799c;
+        Context context = this.f26108c;
         if (context == null) {
             com.tencent.tmsqmsp.sdk.base.c.c(f + " Context is null.");
             throw new IllegalArgumentException("Context is null, must be new SxCore first");
@@ -104,7 +104,7 @@ public class b {
     }
 
     public String b() {
-        if (this.f39799c == null) {
+        if (this.f26108c == null) {
             com.tencent.tmsqmsp.sdk.base.c.c(f + " Context is null.");
             throw new IllegalArgumentException("Context is null, must be new SxCore first");
         }
@@ -131,12 +131,12 @@ public class b {
         String str;
         Intent intent = new Intent();
         intent.setClassName("com.samsung.android.deviceidservice", "com.samsung.android.deviceidservice.DeviceIdService");
-        if (this.f39799c.bindService(intent, this.b, 1)) {
+        if (this.f26108c.bindService(intent, this.b, 1)) {
             sb = new StringBuilder();
             sb.append(f);
             str = " bindService Successful!";
         } else {
-            this.f39798a.a(this);
+            this.f26107a.a(this);
             sb = new StringBuilder();
             sb.append(f);
             str = " bindService Failed!";
@@ -167,7 +167,7 @@ public class b {
 
     public void e() {
         try {
-            this.f39799c.unbindService(this.b);
+            this.f26108c.unbindService(this.b);
             StringBuilder sb = new StringBuilder();
             sb.append(f);
             sb.append(" unBind Service successful");

@@ -10,38 +10,38 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8719a = "TemplateWebviewCache";
-    private static ConcurrentHashMap<String, C0164a> b = new ConcurrentHashMap<>();
+    private static final String f5879a = "TemplateWebviewCache";
+    private static ConcurrentHashMap<String, C0093a> b = new ConcurrentHashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private static ConcurrentHashMap<String, C0164a> f8720c = new ConcurrentHashMap<>();
-    private static ConcurrentHashMap<String, C0164a> d = new ConcurrentHashMap<>();
-    private static ConcurrentHashMap<String, C0164a> e = new ConcurrentHashMap<>();
-    private static ConcurrentHashMap<String, C0164a> f = new ConcurrentHashMap<>();
-    private static ConcurrentHashMap<String, C0164a> g = new ConcurrentHashMap<>();
-    private static ConcurrentHashMap<String, C0164a> h = new ConcurrentHashMap<>();
-    private static ConcurrentHashMap<String, C0164a> i = new ConcurrentHashMap<>();
-    private static ConcurrentHashMap<String, C0164a> j = new ConcurrentHashMap<>();
-    private static ConcurrentHashMap<String, C0164a> k = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, C0093a> f5880c = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, C0093a> d = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, C0093a> e = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, C0093a> f = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, C0093a> g = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, C0093a> h = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, C0093a> i = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, C0093a> j = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, C0093a> k = new ConcurrentHashMap<>();
 
     /* renamed from: com.anythink.expressad.videocommon.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/videocommon/a$a.class */
-    public static final class C0164a {
+    public static final class C0093a {
 
         /* renamed from: a  reason: collision with root package name */
-        private WindVaneWebView f8723a;
+        private WindVaneWebView f5883a;
         private boolean b;
 
         public final WindVaneWebView a() {
-            return this.f8723a;
+            return this.f5883a;
         }
 
         public final void a(WindVaneWebView windVaneWebView) {
-            this.f8723a = windVaneWebView;
+            this.f5883a = windVaneWebView;
         }
 
         public final void a(String str) {
-            WindVaneWebView windVaneWebView = this.f8723a;
+            WindVaneWebView windVaneWebView = this.f5883a;
             if (windVaneWebView != null) {
                 windVaneWebView.setTag(str);
             }
@@ -52,7 +52,7 @@ public final class a {
         }
 
         public final String b() {
-            WindVaneWebView windVaneWebView = this.f8723a;
+            WindVaneWebView windVaneWebView = this.f5883a;
             return windVaneWebView != null ? (String) windVaneWebView.getTag() : "";
         }
 
@@ -61,7 +61,7 @@ public final class a {
         }
     }
 
-    public static C0164a a(int i2, c cVar) {
+    public static C0093a a(int i2, c cVar) {
         if (cVar == null) {
             return null;
         }
@@ -69,10 +69,10 @@ public final class a {
             String aa = cVar.aa();
             if (i2 == 94) {
                 if (cVar.A()) {
-                    if (f8720c == null || f8720c.size() <= 0) {
+                    if (f5880c == null || f5880c.size() <= 0) {
                         return null;
                     }
-                    return f8720c.get(aa);
+                    return f5880c.get(aa);
                 } else if (f == null || f.size() <= 0) {
                     return null;
                 } else {
@@ -94,7 +94,7 @@ public final class a {
                 return g.get(aa);
             }
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
                 return null;
             }
@@ -102,7 +102,7 @@ public final class a {
         }
     }
 
-    public static C0164a a(String str) {
+    public static C0093a a(String str) {
         if (h.containsKey(str)) {
             return h.get(str);
         }
@@ -118,8 +118,8 @@ public final class a {
         return null;
     }
 
-    private static ConcurrentHashMap<String, C0164a> a(int i2, boolean z) {
-        return i2 != 94 ? i2 != 287 ? b : z ? d : g : z ? f8720c : f;
+    private static ConcurrentHashMap<String, C0093a> a(int i2, boolean z) {
+        return i2 != 94 ? i2 != 287 ? b : z ? d : g : z ? f5880c : f;
     }
 
     public static void a() {
@@ -130,77 +130,77 @@ public final class a {
     public static void a(int i2) {
         try {
             if (i2 == 94) {
-                if (f8720c != null) {
-                    f8720c.clear();
+                if (f5880c != null) {
+                    f5880c.clear();
                 }
             } else if (i2 == 287 && d != null) {
                 d.clear();
             }
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         }
     }
 
-    public static void a(int i2, String str, C0164a c0164a) {
+    public static void a(int i2, String str, C0093a c0093a) {
         try {
             if (i2 == 94) {
-                if (f8720c == null) {
-                    f8720c = new ConcurrentHashMap<>();
+                if (f5880c == null) {
+                    f5880c = new ConcurrentHashMap<>();
                 }
-                f8720c.put(str, c0164a);
+                f5880c.put(str, c0093a);
             } else if (i2 != 287) {
             } else {
                 if (d == null) {
                     d = new ConcurrentHashMap<>();
                 }
-                d.put(str, c0164a);
+                d.put(str, c0093a);
             }
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         }
     }
 
-    public static void a(String str, C0164a c0164a, boolean z, boolean z2) {
+    public static void a(String str, C0093a c0093a, boolean z, boolean z2) {
         if (z) {
             if (z2) {
-                i.put(str, c0164a);
+                i.put(str, c0093a);
             } else {
-                h.put(str, c0164a);
+                h.put(str, c0093a);
             }
         } else if (z2) {
-            k.put(str, c0164a);
+            k.put(str, c0093a);
         } else {
-            j.put(str, c0164a);
+            j.put(str, c0093a);
         }
     }
 
     private static void a(String str, boolean z, boolean z2) {
         if (z) {
             if (z2) {
-                for (Map.Entry<String, C0164a> entry : i.entrySet()) {
+                for (Map.Entry<String, C0093a> entry : i.entrySet()) {
                     if (entry.getKey().startsWith(str)) {
                         i.remove(entry.getKey());
                     }
                 }
                 return;
             }
-            for (Map.Entry<String, C0164a> entry2 : h.entrySet()) {
+            for (Map.Entry<String, C0093a> entry2 : h.entrySet()) {
                 if (entry2.getKey().startsWith(str)) {
                     h.remove(entry2.getKey());
                 }
             }
         } else if (z2) {
-            for (Map.Entry<String, C0164a> entry3 : k.entrySet()) {
+            for (Map.Entry<String, C0093a> entry3 : k.entrySet()) {
                 if (entry3.getKey().startsWith(str)) {
                     k.remove(entry3.getKey());
                 }
             }
         } else {
-            for (Map.Entry<String, C0164a> entry4 : j.entrySet()) {
+            for (Map.Entry<String, C0093a> entry4 : j.entrySet()) {
                 if (entry4.getKey().startsWith(str)) {
                     j.remove(entry4.getKey());
                 }
@@ -227,7 +227,7 @@ public final class a {
                 g.clear();
             }
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         }
@@ -241,8 +241,8 @@ public final class a {
             String aa = cVar.aa();
             if (i2 == 94) {
                 if (cVar.A()) {
-                    if (f8720c != null) {
-                        f8720c.remove(aa);
+                    if (f5880c != null) {
+                        f5880c.remove(aa);
                     }
                 } else if (f != null) {
                     f.remove(aa);
@@ -259,32 +259,32 @@ public final class a {
                 g.remove(aa);
             }
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         }
     }
 
-    public static void b(int i2, String str, C0164a c0164a) {
+    public static void b(int i2, String str, C0093a c0093a) {
         try {
             if (i2 == 94) {
                 if (f == null) {
                     f = new ConcurrentHashMap<>();
                 }
-                f.put(str, c0164a);
+                f.put(str, c0093a);
             } else if (i2 != 287) {
                 if (b == null) {
                     b = new ConcurrentHashMap<>();
                 }
-                b.put(str, c0164a);
+                b.put(str, c0093a);
             } else {
                 if (g == null) {
                     g = new ConcurrentHashMap<>();
                 }
-                g.put(str, c0164a);
+                g.put(str, c0093a);
             }
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         }
@@ -323,7 +323,7 @@ public final class a {
     }
 
     public static void d(String str) {
-        for (Map.Entry<String, C0164a> entry : h.entrySet()) {
+        for (Map.Entry<String, C0093a> entry : h.entrySet()) {
             if (entry.getKey().contains(str)) {
                 h.remove(entry.getKey());
             }
@@ -331,7 +331,7 @@ public final class a {
     }
 
     public static void e(String str) {
-        for (Map.Entry<String, C0164a> entry : i.entrySet()) {
+        for (Map.Entry<String, C0093a> entry : i.entrySet()) {
             if (entry.getKey().contains(str)) {
                 i.remove(entry.getKey());
             }
@@ -339,7 +339,7 @@ public final class a {
     }
 
     private static void f(String str) {
-        for (Map.Entry<String, C0164a> entry : j.entrySet()) {
+        for (Map.Entry<String, C0093a> entry : j.entrySet()) {
             if (entry.getKey().startsWith(str)) {
                 j.remove(entry.getKey());
             }
@@ -347,7 +347,7 @@ public final class a {
     }
 
     private static void g(String str) {
-        for (Map.Entry<String, C0164a> entry : k.entrySet()) {
+        for (Map.Entry<String, C0093a> entry : k.entrySet()) {
             if (entry.getKey().startsWith(str)) {
                 k.remove(entry.getKey());
             }

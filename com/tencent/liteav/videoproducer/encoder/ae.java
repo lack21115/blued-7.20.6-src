@@ -11,11 +11,11 @@ import java.util.concurrent.TimeUnit;
 final /* synthetic */ class ae implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final x f36974a;
+    private final x f23283a;
     private final int b;
 
     private ae(x xVar, int i) {
-        this.f36974a = xVar;
+        this.f23283a = xVar;
         this.b = i;
     }
 
@@ -25,7 +25,7 @@ final /* synthetic */ class ae implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        x xVar = this.f36974a;
+        x xVar = this.f23283a;
         int i = this.b;
         if (xVar.f.bitrate != i) {
             boolean z = false;
@@ -50,13 +50,13 @@ final /* synthetic */ class ae implements Runnable {
                 return;
             }
             if (z) {
-                xVar.f37044c.removeCallbacks(xVar.m);
+                xVar.f23353c.removeCallbacks(xVar.m);
                 long elapsedRealtime = SystemClock.elapsedRealtime() - xVar.g;
                 if (elapsedRealtime >= TimeUnit.SECONDS.toMillis(2L)) {
                     xVar.m.run();
                     return;
                 } else {
-                    xVar.f37044c.postDelayed(xVar.m, 2000 - elapsedRealtime);
+                    xVar.f23353c.postDelayed(xVar.m, 2000 - elapsedRealtime);
                     return;
                 }
             }
@@ -65,7 +65,7 @@ final /* synthetic */ class ae implements Runnable {
                 bundle.putInt(MediaCodec.PARAMETER_KEY_VIDEO_BITRATE, i * 1024);
                 xVar.d.setParameters(bundle);
             } catch (Throwable th) {
-                LiteavLog.e(xVar.f37043a, "setBitrateInternal failed.", th);
+                LiteavLog.e(xVar.f23352a, "setBitrateInternal failed.", th);
             }
         }
     }

@@ -26,12 +26,12 @@ public final class o3 extends g3<e4> {
             if (e4Var2 == null) {
                 return null;
             }
-            e4.a.C0309a c0309a = (e4.a.C0309a) e4Var2;
+            e4.a.C0139a c0139a = (e4.a.C0139a) e4Var2;
             Parcel obtain = Parcel.obtain();
             Parcel obtain2 = Parcel.obtain();
             try {
                 obtain.writeInterfaceToken("com.zui.deviceidservice.IDeviceidInterface");
-                c0309a.f21213a.transact(1, obtain, obtain2, 0);
+                c0139a.f7607a.transact(1, obtain, obtain2, 0);
                 obtain2.readException();
                 return obtain2.readString();
             } finally {

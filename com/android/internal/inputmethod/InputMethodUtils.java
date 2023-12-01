@@ -139,7 +139,7 @@ public class InputMethodUtils {
                     break;
                 }
                 Pair<String, String> next = it.next();
-                if (next.first.equals(str)) {
+                if (((String) next.first).equals(str)) {
                     loadInputMethodAndSubtypeHistoryLocked.remove(next);
                     break;
                 }
@@ -148,10 +148,10 @@ public class InputMethodUtils {
         }
 
         private static void buildEnabledInputMethodsSettingString(StringBuilder sb, Pair<String, ArrayList<String>> pair) {
-            sb.append(pair.first);
-            Iterator<String> it = pair.second.iterator();
+            sb.append((String) pair.first);
+            Iterator it = ((ArrayList) pair.second).iterator();
             while (it.hasNext()) {
-                sb.append(';').append(it.next());
+                sb.append(';').append((String) it.next());
             }
         }
 
@@ -180,16 +180,16 @@ public class InputMethodUtils {
         private String getEnabledSubtypeHashCodeForInputMethodAndSubtypeLocked(List<Pair<String, ArrayList<String>>> list, String str, String str2) {
             ArrayList implicitlyApplicableSubtypesLocked;
             for (Pair<String, ArrayList<String>> pair : list) {
-                if (pair.first.equals(str)) {
-                    ArrayList<String> arrayList = pair.second;
+                if (((String) pair.first).equals(str)) {
+                    ArrayList arrayList = (ArrayList) pair.second;
                     InputMethodInfo inputMethodInfo = this.mMethodMap.get(str);
                     if (arrayList.size() != 0) {
-                        Iterator<String> it = arrayList.iterator();
+                        Iterator it = arrayList.iterator();
                         while (it.hasNext()) {
-                            String next = it.next();
-                            if (next.equals(str2)) {
+                            String str3 = (String) it.next();
+                            if (str3.equals(str2)) {
                                 try {
-                                    return InputMethodUtils.isValidSubtypeId(inputMethodInfo, Integer.valueOf(str2).intValue()) ? next : InputMethodUtils.NOT_A_SUBTYPE_ID_STR;
+                                    return InputMethodUtils.isValidSubtypeId(inputMethodInfo, Integer.valueOf(str2).intValue()) ? str3 : InputMethodUtils.NOT_A_SUBTYPE_ID_STR;
                                 } catch (NumberFormatException e) {
                                     return InputMethodUtils.NOT_A_SUBTYPE_ID_STR;
                                 }
@@ -218,9 +218,9 @@ public class InputMethodUtils {
         private Pair<String, String> getLastSubtypeForInputMethodLockedInternal(String str) {
             List<Pair<String, ArrayList<String>>> enabledInputMethodsAndSubtypeListLocked = getEnabledInputMethodsAndSubtypeListLocked();
             for (Pair<String, String> pair : loadInputMethodAndSubtypeHistoryLocked()) {
-                String str2 = pair.first;
+                String str2 = (String) pair.first;
                 if (TextUtils.isEmpty(str) || str2.equals(str)) {
-                    String enabledSubtypeHashCodeForInputMethodAndSubtypeLocked = getEnabledSubtypeHashCodeForInputMethodAndSubtypeLocked(enabledInputMethodsAndSubtypeListLocked, str2, pair.second);
+                    String enabledSubtypeHashCodeForInputMethodAndSubtypeLocked = getEnabledSubtypeHashCodeForInputMethodAndSubtypeLocked(enabledInputMethodsAndSubtypeListLocked, str2, (String) pair.second);
                     if (!TextUtils.isEmpty(enabledSubtypeHashCodeForInputMethodAndSubtypeLocked)) {
                         return new Pair<>(str2, enabledSubtypeHashCodeForInputMethodAndSubtypeLocked);
                     }
@@ -231,14 +231,14 @@ public class InputMethodUtils {
 
         private int getSelectedInputMethodSubtypeHashCode() {
             try {
-                return Settings.Secure.getIntForUser(this.mResolver, Settings.Secure.SELECTED_INPUT_METHOD_SUBTYPE, this.mCurrentUserId);
+                return Settings.Secure.getIntForUser(this.mResolver, "selected_input_method_subtype", this.mCurrentUserId);
             } catch (Settings.SettingNotFoundException e) {
                 return -1;
             }
         }
 
         private String getSubtypeHistoryStr() {
-            return Settings.Secure.getStringForUser(this.mResolver, Settings.Secure.INPUT_METHODS_SUBTYPE_HISTORY, this.mCurrentUserId);
+            return Settings.Secure.getStringForUser(this.mResolver, "input_methods_subtype_history", this.mCurrentUserId);
         }
 
         private List<Pair<String, String>> loadInputMethodAndSubtypeHistoryLocked() {
@@ -262,12 +262,12 @@ public class InputMethodUtils {
         }
 
         private void putEnabledInputMethodsStr(String str) {
-            Settings.Secure.putStringForUser(this.mResolver, Settings.Secure.ENABLED_INPUT_METHODS, str, this.mCurrentUserId);
+            Settings.Secure.putStringForUser(this.mResolver, "enabled_input_methods", str, this.mCurrentUserId);
             this.mEnabledInputMethodsStrCache = str;
         }
 
         private void putSubtypeHistoryStr(String str) {
-            Settings.Secure.putStringForUser(this.mResolver, Settings.Secure.INPUT_METHODS_SUBTYPE_HISTORY, str, this.mCurrentUserId);
+            Settings.Secure.putStringForUser(this.mResolver, "input_methods_subtype_history", str, this.mCurrentUserId);
         }
 
         private void saveSubtypeHistory(List<Pair<String, String>> list, String str, String str2) {
@@ -281,8 +281,8 @@ public class InputMethodUtils {
                 }
             }
             for (Pair<String, String> pair : list) {
-                String str3 = pair.first;
-                String str4 = pair.second;
+                String str3 = (String) pair.first;
+                String str4 = (String) pair.second;
                 String str5 = str4;
                 if (TextUtils.isEmpty(str4)) {
                     str5 = InputMethodUtils.NOT_A_SUBTYPE_ID_STR;
@@ -312,7 +312,7 @@ public class InputMethodUtils {
             boolean z = false;
             boolean z2 = false;
             for (Pair<String, ArrayList<String>> pair : list) {
-                if (pair.first.equals(str)) {
+                if (((String) pair.first).equals(str)) {
                     z = true;
                 } else {
                     if (z2) {
@@ -357,7 +357,7 @@ public class InputMethodUtils {
         }
 
         public String getDisabledSystemInputMethods() {
-            return Settings.Secure.getStringForUser(this.mResolver, Settings.Secure.DISABLED_SYSTEM_INPUT_METHODS, this.mCurrentUserId);
+            return Settings.Secure.getStringForUser(this.mResolver, "disabled_system_input_methods", this.mCurrentUserId);
         }
 
         public List<Pair<InputMethodInfo, ArrayList<String>>> getEnabledInputMethodAndSubtypeHashCodeListLocked() {
@@ -400,9 +400,9 @@ public class InputMethodUtils {
                                 break;
                             }
                             InputMethodSubtype subtypeAt = inputMethodInfo2.getSubtypeAt(i2);
-                            Iterator<String> it2 = next.second.iterator();
+                            Iterator it2 = ((ArrayList) next.second).iterator();
                             while (it2.hasNext()) {
-                                if (String.valueOf(subtypeAt.hashCode()).equals(it2.next())) {
+                                if (String.valueOf(subtypeAt.hashCode()).equals((String) it2.next())) {
                                     arrayList.add(subtypeAt);
                                 }
                             }
@@ -435,7 +435,7 @@ public class InputMethodUtils {
         }
 
         public String getEnabledInputMethodsStr() {
-            this.mEnabledInputMethodsStrCache = Settings.Secure.getStringForUser(this.mResolver, Settings.Secure.ENABLED_INPUT_METHODS, this.mCurrentUserId);
+            this.mEnabledInputMethodsStrCache = Settings.Secure.getStringForUser(this.mResolver, "enabled_input_methods", this.mCurrentUserId);
             return this.mEnabledInputMethodsStrCache;
         }
 
@@ -454,13 +454,13 @@ public class InputMethodUtils {
         public String getLastSubtypeForInputMethodLocked(String str) {
             Pair<String, String> lastSubtypeForInputMethodLockedInternal = getLastSubtypeForInputMethodLockedInternal(str);
             if (lastSubtypeForInputMethodLockedInternal != null) {
-                return lastSubtypeForInputMethodLockedInternal.second;
+                return (String) lastSubtypeForInputMethodLockedInternal.second;
             }
             return null;
         }
 
         public String getSelectedInputMethod() {
-            return Settings.Secure.getStringForUser(this.mResolver, Settings.Secure.DEFAULT_INPUT_METHOD, this.mCurrentUserId);
+            return Settings.Secure.getStringForUser(this.mResolver, "default_input_method", this.mCurrentUserId);
         }
 
         public int getSelectedInputMethodSubtypeId(String str) {
@@ -491,7 +491,7 @@ public class InputMethodUtils {
         }
 
         public boolean isShowImeWithHardKeyboardEnabled() {
-            return Settings.Secure.getIntForUser(this.mResolver, Settings.Secure.SHOW_IME_WITH_HARD_KEYBOARD, 0, this.mCurrentUserId) == 1;
+            return Settings.Secure.getIntForUser(this.mResolver, "show_ime_with_hard_keyboard", 0, this.mCurrentUserId) == 1;
         }
 
         public boolean isSubtypeSelected() {
@@ -499,11 +499,11 @@ public class InputMethodUtils {
         }
 
         public void putSelectedInputMethod(String str) {
-            Settings.Secure.putStringForUser(this.mResolver, Settings.Secure.DEFAULT_INPUT_METHOD, str, this.mCurrentUserId);
+            Settings.Secure.putStringForUser(this.mResolver, "default_input_method", str, this.mCurrentUserId);
         }
 
         public void putSelectedSubtype(int i) {
-            Settings.Secure.putIntForUser(this.mResolver, Settings.Secure.SELECTED_INPUT_METHOD_SUBTYPE, i, this.mCurrentUserId);
+            Settings.Secure.putIntForUser(this.mResolver, "selected_input_method_subtype", i, this.mCurrentUserId);
         }
 
         public void saveCurrentInputMethodAndSubtypeToHistory(String str, InputMethodSubtype inputMethodSubtype) {
@@ -527,7 +527,7 @@ public class InputMethodUtils {
         }
 
         public void setShowImeWithHardKeyboard(boolean z) {
-            Settings.Secure.putIntForUser(this.mResolver, Settings.Secure.SHOW_IME_WITH_HARD_KEYBOARD, z ? 1 : 0, this.mCurrentUserId);
+            Settings.Secure.putIntForUser(this.mResolver, "show_ime_with_hard_keyboard", z ? 1 : 0, this.mCurrentUserId);
         }
     }
 

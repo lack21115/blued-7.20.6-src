@@ -3,6 +3,7 @@ package com.oplus.instant.router.a;
 import android.net.Uri;
 import android.text.TextUtils;
 import com.cdo.oaps.ad.OapsWrapper;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.oplus.instant.router.g.d;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -37,7 +38,7 @@ public class a {
                 sb.append("?");
                 for (String str : hashMap.keySet()) {
                     if (sb.charAt(sb.length() - 1) != '?') {
-                        sb.append("&");
+                        sb.append(ContainerUtils.FIELD_DELIMITER);
                     }
                     sb.append(str);
                     sb.append("=");

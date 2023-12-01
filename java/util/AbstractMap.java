@@ -266,7 +266,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
     public Set<K> keySet() {
         if (this.keySet == null) {
             this.keySet = new AbstractSet<K>() { // from class: java.util.AbstractMap.1
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public boolean contains(Object obj) {
                     return AbstractMap.this.containsKey(obj);
                 }
@@ -297,7 +297,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
                     };
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public int size() {
                     return AbstractMap.this.size();
                 }
@@ -380,7 +380,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
     public Collection<V> values() {
         if (this.valuesCollection == null) {
             this.valuesCollection = new AbstractCollection<V>() { // from class: java.util.AbstractMap.2
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public boolean contains(Object obj) {
                     return AbstractMap.this.containsValue(obj);
                 }
@@ -411,7 +411,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
                     };
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public int size() {
                     return AbstractMap.this.size();
                 }

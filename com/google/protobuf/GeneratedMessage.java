@@ -148,7 +148,7 @@ public abstract class GeneratedMessage extends AbstractMessage implements Serial
 
         @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public BuilderType mo1800clone() {
+        public BuilderType mo2030clone() {
             BuilderType buildertype = (BuilderType) getDefaultInstanceForType().newBuilderForType();
             buildertype.mergeFrom(buildPartial());
             return buildertype;
@@ -363,7 +363,7 @@ public abstract class GeneratedMessage extends AbstractMessage implements Serial
 
         private void ensureExtensionsIsMutable() {
             if (this.extensions.isImmutable()) {
-                this.extensions = this.extensions.m6682clone();
+                this.extensions = this.extensions.m3675clone();
             }
         }
 
@@ -446,8 +446,8 @@ public abstract class GeneratedMessage extends AbstractMessage implements Serial
 
         @Override // com.google.protobuf.GeneratedMessage.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public BuilderType mo1800clone() {
-            return (BuilderType) super.mo1800clone();
+        public BuilderType mo2030clone() {
+            return (BuilderType) super.mo2030clone();
         }
 
         protected boolean extensionsAreInitialized() {
@@ -1821,9 +1821,8 @@ public abstract class GeneratedMessage extends AbstractMessage implements Serial
             this.extensionType = extensionType;
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.Extension
-        public Object fromReflectionType(Object obj) {
+        protected Object fromReflectionType(Object obj) {
             Descriptors.FieldDescriptor descriptor = getDescriptor();
             if (descriptor.isRepeated()) {
                 if (descriptor.getJavaType() == Descriptors.FieldDescriptor.JavaType.MESSAGE || descriptor.getJavaType() == Descriptors.FieldDescriptor.JavaType.ENUM) {
@@ -1852,9 +1851,8 @@ public abstract class GeneratedMessage extends AbstractMessage implements Serial
             throw new IllegalStateException("getDescriptor() called before internalInit()");
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.Extension
-        public Extension.ExtensionType getExtensionType() {
+        protected Extension.ExtensionType getExtensionType() {
             return this.extensionType;
         }
 
@@ -1890,22 +1888,19 @@ public abstract class GeneratedMessage extends AbstractMessage implements Serial
             return getDescriptor().isRepeated();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.Extension
-        public Object singularFromReflectionType(Object obj) {
+        protected Object singularFromReflectionType(Object obj) {
             int i = AnonymousClass5.$SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$JavaType[getDescriptor().getJavaType().ordinal()];
             return i != 1 ? i != 2 ? obj : GeneratedMessage.invokeOrDie(this.enumValueOf, null, (Descriptors.EnumValueDescriptor) obj) : this.singularType.isInstance(obj) ? obj : this.messageDefaultInstance.newBuilderForType().mergeFrom((Message) obj).build();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.Extension
-        public Object singularToReflectionType(Object obj) {
+        protected Object singularToReflectionType(Object obj) {
             return AnonymousClass5.$SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$JavaType[getDescriptor().getJavaType().ordinal()] != 2 ? obj : GeneratedMessage.invokeOrDie(this.enumGetValueDescriptor, obj, new Object[0]);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.Extension
-        public Object toReflectionType(Object obj) {
+        protected Object toReflectionType(Object obj) {
             Descriptors.FieldDescriptor descriptor = getDescriptor();
             if (descriptor.isRepeated()) {
                 if (descriptor.getJavaType() == Descriptors.FieldDescriptor.JavaType.ENUM) {
@@ -2040,7 +2035,7 @@ public abstract class GeneratedMessage extends AbstractMessage implements Serial
             @Override // com.google.protobuf.GeneratedMessage.CachedDescriptorRetriever
             protected Descriptors.FieldDescriptor loadDescriptor() {
                 try {
-                    return ((Descriptors.FileDescriptor) Class.this.getClassLoader().loadClass(str).getField("descriptor").get(null)).findExtensionByName(str2);
+                    return ((Descriptors.FileDescriptor) cls.getClassLoader().loadClass(str).getField("descriptor").get(null)).findExtensionByName(str2);
                 } catch (Exception e) {
                     throw new RuntimeException("Cannot load descriptors: " + str + " is not a valid descriptor class name", e);
                 }

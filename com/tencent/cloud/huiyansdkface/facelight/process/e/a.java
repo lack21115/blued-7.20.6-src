@@ -13,11 +13,11 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private FaceVerifyStatus f35640a;
+    private FaceVerifyStatus f21949a;
     private d b;
 
     public a(d dVar, FaceVerifyStatus faceVerifyStatus) {
-        this.f35640a = faceVerifyStatus;
+        this.f21949a = faceVerifyStatus;
         this.b = dVar;
     }
 
@@ -37,13 +37,13 @@ public class a {
             WLogger.d("ResourceFetcher", str2);
             z2 = true;
             if (!WbFaceModeProviders.isUseWillSdk() || z2) {
-                this.f35640a.a(false);
+                this.f21949a.a(false);
                 WbFaceModeProviders.faceMode().getFaceResource(z2, str, new ProcessCallback<WbFaceWillRes>() { // from class: com.tencent.cloud.huiyansdkface.facelight.process.e.a.1
                     @Override // com.tencent.cloud.huiyansdkface.facelight.provider.ProcessCallback
                     /* renamed from: a */
                     public void onSuccess(WbFaceWillRes wbFaceWillRes) {
-                        a.this.f35640a.a(true);
-                        a.this.f35640a.l();
+                        a.this.f21949a.a(true);
+                        a.this.f21949a.l();
                         processCallback.onSuccess(wbFaceWillRes);
                     }
 
@@ -64,13 +64,13 @@ public class a {
         z2 = false;
         if (WbFaceModeProviders.isUseWillSdk()) {
         }
-        this.f35640a.a(false);
+        this.f21949a.a(false);
         WbFaceModeProviders.faceMode().getFaceResource(z2, str, new ProcessCallback<WbFaceWillRes>() { // from class: com.tencent.cloud.huiyansdkface.facelight.process.e.a.1
             @Override // com.tencent.cloud.huiyansdkface.facelight.provider.ProcessCallback
             /* renamed from: a */
             public void onSuccess(WbFaceWillRes wbFaceWillRes) {
-                a.this.f35640a.a(true);
-                a.this.f35640a.l();
+                a.this.f21949a.a(true);
+                a.this.f21949a.l();
                 processCallback.onSuccess(wbFaceWillRes);
             }
 

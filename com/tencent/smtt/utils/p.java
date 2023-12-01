@@ -10,7 +10,7 @@ import java.io.File;
 public class p {
 
     /* renamed from: a  reason: collision with root package name */
-    private static File f38975a;
+    private static File f25284a;
 
     public static long a() {
         StatFs statFs = new StatFs(Environment.getDataDirectory().getPath());
@@ -22,12 +22,12 @@ public class p {
         if (context == null) {
             return false;
         }
-        if (f38975a == null) {
+        if (f25284a == null) {
             try {
                 if (context.getApplicationInfo().processName.contains("com.tencent.mm") && (tbsFolderDir = QbSdk.getTbsFolderDir(context)) != null && tbsFolderDir.isDirectory()) {
                     File file = new File(tbsFolderDir, "share");
                     if (file.isDirectory() || file.mkdir()) {
-                        f38975a = file;
+                        f25284a = file;
                         file.setExecutable(true, false);
                         return true;
                     }

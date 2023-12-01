@@ -15,11 +15,11 @@ public class cj extends cp {
     private static final int l = 5;
 
     /* renamed from: a  reason: collision with root package name */
-    byte[] f40694a;
+    byte[] f27003a;
     byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    byte[] f40695c;
+    byte[] f27004c;
     private bo m;
     private short n;
     private ck o;
@@ -31,19 +31,19 @@ public class cj extends cp {
     public static class a implements cr {
 
         /* renamed from: a  reason: collision with root package name */
-        private final long f40696a;
+        private final long f27005a;
 
         public a() {
-            this.f40696a = -1L;
+            this.f27005a = -1L;
         }
 
         public a(int i) {
-            this.f40696a = i;
+            this.f27005a = i;
         }
 
         @Override // com.umeng.analytics.pro.cr
         public cp a(dd ddVar) {
-            return new cj(ddVar, this.f40696a);
+            return new cj(ddVar, this.f27005a);
         }
     }
 
@@ -51,11 +51,11 @@ public class cj extends cp {
     static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final byte f40697a = 1;
+        public static final byte f27006a = 1;
         public static final byte b = 2;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final byte f40698c = 3;
+        public static final byte f27007c = 3;
         public static final byte d = 4;
         public static final byte e = 5;
         public static final byte f = 6;
@@ -85,10 +85,10 @@ public class cj extends cp {
         this.n = (short) 0;
         this.o = null;
         this.p = null;
-        this.f40694a = new byte[5];
+        this.f27003a = new byte[5];
         this.b = new byte[10];
         this.r = new byte[1];
-        this.f40695c = new byte[1];
+        this.f27004c = new byte[1];
         this.q = j2;
     }
 
@@ -176,13 +176,13 @@ public class cj extends cp {
         if (b2 == -1) {
             b3 = e(ckVar.b);
         }
-        if (ckVar.f40700c <= this.n || ckVar.f40700c - this.n > 15) {
+        if (ckVar.f27009c <= this.n || ckVar.f27009c - this.n > 15) {
             b(b3);
-            a(ckVar.f40700c);
+            a(ckVar.f27009c);
         } else {
-            d(b3 | ((ckVar.f40700c - this.n) << 4));
+            d(b3 | ((ckVar.f27009c - this.n) << 4));
         }
-        this.n = ckVar.f40700c;
+        this.n = ckVar.f27009c;
     }
 
     private void a(byte[] bArr, int i2, int i3) throws bw {
@@ -201,11 +201,11 @@ public class cj extends cp {
         while (true) {
             int i5 = i4;
             if ((i3 & (-128)) == 0) {
-                this.f40694a[i5] = (byte) i3;
-                this.g.b(this.f40694a, 0, i5 + 1);
+                this.f27003a[i5] = (byte) i3;
+                this.g.b(this.f27003a, 0, i5 + 1);
                 return;
             }
-            this.f40694a[i5] = (byte) ((i3 & 127) | 128);
+            this.f27003a[i5] = (byte) ((i3 & 127) | 128);
             i3 >>>= 7;
             i4 = i5 + 1;
         }
@@ -379,30 +379,30 @@ public class cj extends cp {
 
     @Override // com.umeng.analytics.pro.cp
     public void a(cl clVar) throws bw {
-        a(clVar.f40701a, clVar.b);
+        a(clVar.f27010a, clVar.b);
     }
 
     @Override // com.umeng.analytics.pro.cp
     public void a(cm cmVar) throws bw {
-        if (cmVar.f40703c == 0) {
+        if (cmVar.f27012c == 0) {
             d(0);
             return;
         }
-        b(cmVar.f40703c);
-        d(e(cmVar.b) | (e(cmVar.f40702a) << 4));
+        b(cmVar.f27012c);
+        d(e(cmVar.b) | (e(cmVar.f27011a) << 4));
     }
 
     @Override // com.umeng.analytics.pro.cp
     public void a(cn cnVar) throws bw {
         b((byte) -126);
         d(((cnVar.b << 5) & (-32)) | 1);
-        b(cnVar.f40705c);
-        a(cnVar.f40704a);
+        b(cnVar.f27014c);
+        a(cnVar.f27013a);
     }
 
     @Override // com.umeng.analytics.pro.cp
     public void a(ct ctVar) throws bw {
-        a(ctVar.f40711a, ctVar.b);
+        a(ctVar.f27020a, ctVar.b);
     }
 
     @Override // com.umeng.analytics.pro.cp
@@ -515,7 +515,7 @@ public class cj extends cp {
         if (c(u)) {
             this.p = b2 == 1 ? Boolean.TRUE : Boolean.FALSE;
         }
-        this.n = ckVar.f40700c;
+        this.n = ckVar.f27009c;
         return ckVar;
     }
 
@@ -572,8 +572,8 @@ public class cj extends cp {
     @Override // com.umeng.analytics.pro.cp
     public byte u() throws bw {
         if (this.g.h() <= 0) {
-            this.g.d(this.f40695c, 0, 1);
-            return this.f40695c[0];
+            this.g.d(this.f27004c, 0, 1);
+            return this.f27004c[0];
         }
         byte b2 = this.g.f()[this.g.g()];
         this.g.a(1);

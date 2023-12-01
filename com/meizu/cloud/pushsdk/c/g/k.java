@@ -1,10 +1,11 @@
 package com.meizu.cloud.pushsdk.c.g;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/meizu/cloud/pushsdk/c/g/k.class */
-final class k {
+public final class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static j f24075a;
+    private static j f10464a;
     private static long b;
 
     private k() {
@@ -14,9 +15,9 @@ final class k {
     public static j a() {
         synchronized (k.class) {
             try {
-                if (f24075a != null) {
-                    j jVar = f24075a;
-                    f24075a = jVar.f;
+                if (f10464a != null) {
+                    j jVar = f10464a;
+                    f10464a = jVar.f;
                     jVar.f = null;
                     b -= 2048;
                     return jVar;
@@ -42,10 +43,10 @@ final class k {
                     return;
                 }
                 b += 2048;
-                jVar.f = f24075a;
-                jVar.f24074c = 0;
+                jVar.f = f10464a;
+                jVar.f10463c = 0;
                 jVar.b = 0;
-                f24075a = jVar;
+                f10464a = jVar;
             } finally {
             }
         }

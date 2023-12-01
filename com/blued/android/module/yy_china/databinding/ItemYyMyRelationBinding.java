@@ -14,13 +14,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyMyRelationBinding.class */
 public final class ItemYyMyRelationBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16767a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16768c;
+    public final ImageView c;
     public final ImageView d;
     public final ShapeableImageView e;
     public final ShapeableImageView f;
@@ -35,9 +31,9 @@ public final class ItemYyMyRelationBinding implements ViewBinding {
 
     private ItemYyMyRelationBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ShapeableImageView shapeableImageView, ShapeableImageView shapeableImageView2, YYLivingStreamView yYLivingStreamView, LinearLayout linearLayout, ShapeConstraintLayout shapeConstraintLayout, ShapeTextView shapeTextView, TextView textView, TextView textView2, TextView textView3) {
         this.n = constraintLayout;
-        this.f16767a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16768c = imageView3;
+        this.c = imageView3;
         this.d = imageView4;
         this.e = shapeableImageView;
         this.f = shapeableImageView2;
@@ -60,10 +56,10 @@ public final class ItemYyMyRelationBinding implements ViewBinding {
                 if (imageView3 != null) {
                     ImageView imageView4 = (ImageView) view.findViewById(R.id.iv_room);
                     if (imageView4 != null) {
-                        ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.iv_user_1);
-                        if (shapeableImageView != null) {
-                            ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.iv_user_2);
-                            if (shapeableImageView2 != null) {
+                        ShapeableImageView findViewById = view.findViewById(R.id.iv_user_1);
+                        if (findViewById != null) {
+                            ShapeableImageView findViewById2 = view.findViewById(R.id.iv_user_2);
+                            if (findViewById2 != null) {
                                 YYLivingStreamView yYLivingStreamView = (YYLivingStreamView) view.findViewById(R.id.live_user_2);
                                 if (yYLivingStreamView != null) {
                                     LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_value);
@@ -78,7 +74,7 @@ public final class ItemYyMyRelationBinding implements ViewBinding {
                                                     if (textView2 != null) {
                                                         TextView textView3 = (TextView) view.findViewById(R.id.tv_value_type);
                                                         if (textView3 != null) {
-                                                            return new ItemYyMyRelationBinding((ConstraintLayout) view, imageView, imageView2, imageView3, imageView4, shapeableImageView, shapeableImageView2, yYLivingStreamView, linearLayout, shapeConstraintLayout, shapeTextView, textView, textView2, textView3);
+                                                            return new ItemYyMyRelationBinding((ConstraintLayout) view, imageView, imageView2, imageView3, imageView4, findViewById, findViewById2, yYLivingStreamView, linearLayout, shapeConstraintLayout, shapeTextView, textView, textView2, textView3);
                                                         }
                                                         str = "tvValueType";
                                                     } else {
@@ -120,7 +116,6 @@ public final class ItemYyMyRelationBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.n;

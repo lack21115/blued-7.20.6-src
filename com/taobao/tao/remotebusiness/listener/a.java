@@ -10,16 +10,16 @@ import mtopsdk.mtop.common.MtopListener;
 public final class a implements InvocationHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private MtopFinishListenerImpl f34913a;
+    private MtopFinishListenerImpl f21222a;
     private MtopProgressListenerImpl b;
 
     /* renamed from: c  reason: collision with root package name */
-    private MtopBusiness f34914c;
+    private MtopBusiness f21223c;
     private MtopListener d;
 
     public a(MtopBusiness mtopBusiness, MtopListener mtopListener) {
-        this.f34913a = new MtopFinishListenerImpl(mtopBusiness, mtopListener);
-        this.f34914c = mtopBusiness;
+        this.f21222a = new MtopFinishListenerImpl(mtopBusiness, mtopListener);
+        this.f21223c = mtopBusiness;
         this.d = mtopListener;
     }
 
@@ -27,12 +27,12 @@ public final class a implements InvocationHandler {
     public final Object invoke(Object obj, Method method, Object[] objArr) {
         MtopFinishListenerImpl mtopFinishListenerImpl;
         if (method.getName().equals("onFinished")) {
-            mtopFinishListenerImpl = this.f34913a;
+            mtopFinishListenerImpl = this.f21222a;
         } else if (!method.getName().equals("onDataReceived") && !method.getName().equals("onHeader")) {
             return null;
         } else {
             if (this.b == null) {
-                this.b = new MtopProgressListenerImpl(this.f34914c, this.d);
+                this.b = new MtopProgressListenerImpl(this.f21223c, this.d);
             }
             mtopFinishListenerImpl = this.b;
         }

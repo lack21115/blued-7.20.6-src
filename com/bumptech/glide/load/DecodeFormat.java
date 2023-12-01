@@ -7,5 +7,5 @@ public enum DecodeFormat {
     
 
     /* renamed from: c  reason: collision with root package name */
-    public static final DecodeFormat f20696c = PREFER_ARGB_8888;
+    public static final DecodeFormat f7090c = PREFER_ARGB_8888;
 }

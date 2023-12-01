@@ -7,13 +7,9 @@ import android.view.animation.Transformation;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/animation/Rotate3dAnimation.class */
 public class Rotate3dAnimation extends Animation {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Byte f11720a = (byte) 0;
+    public static final Byte a = (byte) 0;
     public static final Byte b = (byte) 1;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final Byte f11721c = (byte) 2;
+    public static final Byte c = (byte) 2;
     private final float d;
     private final float e;
     private final float f;
@@ -48,7 +44,7 @@ public class Rotate3dAnimation extends Animation {
         } else {
             camera.translate(0.0f, 0.0f, this.h * (1.0f - f));
         }
-        if (f11720a.equals(this.k)) {
+        if (a.equals(this.k)) {
             camera.rotateX(f3);
         } else if (b.equals(this.k)) {
             camera.rotateY(f3);

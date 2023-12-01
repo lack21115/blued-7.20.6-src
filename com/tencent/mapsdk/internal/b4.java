@@ -1,7 +1,6 @@
 package com.tencent.mapsdk.internal;
 
 import android.provider.Downloads;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.tencent.map.tools.json.JsonComposer;
 import com.tencent.map.tools.json.annotation.Json;
 import com.tencent.mapsdk.internal.g4;
@@ -17,21 +16,21 @@ public final class b4 extends g4 {
         @Json(name = "styleTable")
 
         /* renamed from: c  reason: collision with root package name */
-        public C0946a f37308c;
+        public C0776a f23617c;
 
         /* renamed from: com.tencent.mapsdk.internal.b4$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/b4$a$a.class */
-        public static class C0946a extends g4.c {
+        public static class C0776a extends g4.c {
             @Json(name = "theme")
 
             /* renamed from: c  reason: collision with root package name */
-            public b f37309c;
+            public b f23618c;
             @Json(name = Downloads.Impl.COLUMN_CONTROL)
-            public C0947a d;
+            public C0777a d;
 
             /* renamed from: com.tencent.mapsdk.internal.b4$a$a$a  reason: collision with other inner class name */
             /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/b4$a$a$a.class */
-            public static final class C0947a extends g4.c.a {
+            public static final class C0777a extends g4.c.a {
                 @Json(name = "maxIntensity")
                 public double h;
                 @Json(name = "minIntensity")
@@ -56,47 +55,47 @@ public final class b4 extends g4 {
                 @Json(name = "standard")
 
                 /* renamed from: a  reason: collision with root package name */
-                public C0949b f37310a;
+                public C0779b f23619a;
 
                 /* renamed from: com.tencent.mapsdk.internal.b4$a$a$b$a  reason: collision with other inner class name */
                 /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/b4$a$a$b$a.class */
-                public static final class C0948a extends g4.c.AbstractC0959c {
+                public static final class C0778a extends g4.c.AbstractC0789c {
                     @Json(name = "gap")
 
                     /* renamed from: a  reason: collision with root package name */
-                    public int f37311a;
+                    public int f23620a;
                     @Json(name = "radius")
                     public int b;
                     @Json(name = "shapeType")
 
                     /* renamed from: c  reason: collision with root package name */
-                    public String f37312c;
+                    public String f23621c;
                     @Json(name = "gradient")
                     public g4.c.e d;
-                    @Json(name = ReqAckPackage.REQ_RESPONSE_KEY.ANIMATION)
+                    @Json(name = "animation")
                     public g4.c.d e;
                 }
 
                 /* renamed from: com.tencent.mapsdk.internal.b4$a$a$b$b  reason: collision with other inner class name */
                 /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/b4$a$a$b$b.class */
-                public static class C0949b extends JsonComposer {
+                public static class C0779b extends JsonComposer {
                     @Json(name = "defaultStyle")
 
                     /* renamed from: a  reason: collision with root package name */
-                    public C0948a f37313a;
+                    public C0778a f23622a;
                 }
             }
 
             @Override // com.tencent.mapsdk.internal.g4.c
             public boolean a() {
-                return (!super.a() || this.f37309c == null || this.d == null) ? false : true;
+                return (!super.a() || this.f23618c == null || this.d == null) ? false : true;
             }
         }
 
         @Override // com.tencent.mapsdk.internal.g4.a
         public boolean a() {
-            C0946a c0946a;
-            return super.a() && a4.Aggregation.b(this.f37457a) && (c0946a = this.f37308c) != null && c0946a.a();
+            C0776a c0776a;
+            return super.a() && a4.Aggregation.b(this.f23766a) && (c0776a = this.f23617c) != null && c0776a.a();
         }
     }
 
@@ -109,7 +108,7 @@ public final class b4 extends g4 {
     @Override // com.tencent.mapsdk.internal.g4
     public int b() {
         if (a()) {
-            return this.b.b.f37458a;
+            return this.b.b.f23767a;
         }
         return 0;
     }
@@ -117,7 +116,7 @@ public final class b4 extends g4 {
     @Override // com.tencent.mapsdk.internal.g4
     public int c() {
         if (a()) {
-            return this.b.f37308c.f37465a;
+            return this.b.f23617c.f23774a;
         }
         return 0;
     }

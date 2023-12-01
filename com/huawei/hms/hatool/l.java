@@ -7,11 +7,11 @@ import android.text.TextUtils;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f22763a;
+    public String f9155a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f22764c;
+    public String f9156c;
     public String d;
     public String e;
     public int f = 5;
@@ -40,11 +40,11 @@ public class l {
     }
 
     public String b() {
-        return this.f22764c;
+        return this.f9156c;
     }
 
     public void b(String str) {
-        this.f22764c = str;
+        this.f9156c = str;
     }
 
     public String c() {
@@ -92,7 +92,7 @@ public class l {
     }
 
     public void h(String str) {
-        this.f22763a = str;
+        this.f9155a = str;
     }
 
     public String i() {
@@ -120,7 +120,7 @@ public class l {
     }
 
     public String l() {
-        return this.f22763a;
+        return this.f9155a;
     }
 
     public void l(String str) {

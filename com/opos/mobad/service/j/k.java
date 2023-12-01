@@ -4,6 +4,6 @@ package com.opos.mobad.service.j;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f27397a;
+    public final String f13709a;
     public final int b;
 }

@@ -13,10 +13,10 @@ public class d extends b {
     public PLH264Encoder b;
 
     /* renamed from: c  reason: collision with root package name */
-    public PLAACEncoder f1230c;
+    public PLAACEncoder f1182c;
 
     public d(PLAACEncoder.Parameters parameters) {
-        this.f1230c = new PLAACEncoder(parameters);
+        this.f1182c = new PLAACEncoder(parameters);
     }
 
     public d(PLH264Encoder.Parameters parameters) {
@@ -32,7 +32,7 @@ public class d extends b {
             pLH264Encoder.a();
             return;
         }
-        PLAACEncoder pLAACEncoder = this.f1230c;
+        PLAACEncoder pLAACEncoder = this.f1182c;
         if (pLAACEncoder != null) {
             pLAACEncoder.release();
         }
@@ -53,7 +53,7 @@ public class d extends b {
             pLH264Encoder.a(aVar);
             return;
         }
-        PLAACEncoder pLAACEncoder = this.f1230c;
+        PLAACEncoder pLAACEncoder = this.f1182c;
         if (pLAACEncoder != null) {
             pLAACEncoder.a(aVar);
         }
@@ -74,7 +74,7 @@ public class d extends b {
                 pLBufferInfo.flags |= 4;
                 cVar.a(1, pLAVFrame.mSize, pLAVFrame, pLBufferInfo);
             }
-        } else if (this.f1230c != null) {
+        } else if (this.f1182c != null) {
             if (!z) {
                 if ((pLBufferInfo.flags & 2) != 0) {
                     cVar.a(0);
@@ -114,7 +114,7 @@ public class d extends b {
             pLH264Encoder.c(pLAVFrame);
             return;
         }
-        PLAACEncoder pLAACEncoder = this.f1230c;
+        PLAACEncoder pLAACEncoder = this.f1182c;
         if (pLAACEncoder != null) {
             pLAACEncoder.b(pLAVFrame);
         }
@@ -148,7 +148,7 @@ public class d extends b {
         if (pLH264Encoder != null) {
             return pLH264Encoder;
         }
-        PLAACEncoder pLAACEncoder = this.f1230c;
+        PLAACEncoder pLAACEncoder = this.f1182c;
         if (pLAACEncoder != null) {
             return pLAACEncoder;
         }

@@ -6,10 +6,10 @@ import android.os.IBinder;
 public final class b implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private IBinder f22354a;
+    private IBinder f8746a;
 
     public b(IBinder iBinder) {
-        this.f22354a = iBinder;
+        this.f8746a = iBinder;
     }
 
     @Override // android.os.IInterface

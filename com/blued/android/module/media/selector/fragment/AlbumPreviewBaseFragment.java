@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.lifecycle.Observer;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.StatusBarHelper;
@@ -30,9 +31,7 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/fragment/AlbumPreviewBaseFragment.class */
 public abstract class AlbumPreviewBaseFragment extends MediaBaseFragment<IAlbumPreviewBaseView, AlbumPreviewBasePresenter> implements IAlbumPreviewBaseView, PLVideoObserver.IPLVideoObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    EventCallBackAdapter f15547a = new EventCallBackAdapter() { // from class: com.blued.android.module.media.selector.fragment.AlbumPreviewBaseFragment.2
+    EventCallBackAdapter a = new EventCallBackAdapter() { // from class: com.blued.android.module.media.selector.fragment.AlbumPreviewBaseFragment.2
         @Override // com.blued.android.module.player.media.observer.EventCallBackAdapter, com.blued.android.module.player.media.observer.EventCallBackListener
         public void a(View view) {
             super.a(view);
@@ -139,7 +138,7 @@ public abstract class AlbumPreviewBaseFragment extends MediaBaseFragment<IAlbumP
     protected void A() {
         AlbumPreviewBasePresenter albumPreviewBasePresenter = (AlbumPreviewBasePresenter) this.b;
         a(AlbumPreviewBasePresenter.e());
-        FragmentStatePagerAdapter b = b();
+        PagerAdapter b = b();
         this.m = b;
         if (b == null) {
             getActivity().finish();
@@ -163,12 +162,12 @@ public abstract class AlbumPreviewBaseFragment extends MediaBaseFragment<IAlbumP
 
     @Override // com.blued.android.module.media.selector.contract.IAlbumPreviewBaseView
     public void a(int i) {
-        MediaInfo a2 = ((AlbumPreviewBasePresenter) this.b).a(i);
-        if (a2 != null) {
-            if (a2.media_type != AlbumPreviewBasePresenter.g()) {
+        MediaInfo a = ((AlbumPreviewBasePresenter) this.b).a(i);
+        if (a != null) {
+            if (a.media_type != AlbumPreviewBasePresenter.g()) {
                 this.j.setVisibility(4);
                 this.l.setVisibility(0);
-                this.l.setSelected(a2.isSelected);
+                this.l.setSelected(a.isSelected);
                 return;
             }
             AlbumPreviewBasePresenter albumPreviewBasePresenter = (AlbumPreviewBasePresenter) this.b;
@@ -205,15 +204,12 @@ public abstract class AlbumPreviewBaseFragment extends MediaBaseFragment<IAlbumP
         HackyViewPager hackyViewPager = (HackyViewPager) this.d.findViewById(R.id.vr_viewpager);
         this.e = hackyViewPager;
         hackyViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.media.selector.fragment.AlbumPreviewBaseFragment.3
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 AlbumPreviewBaseFragment albumPreviewBaseFragment = AlbumPreviewBaseFragment.this;
                 AlbumPreviewBasePresenter albumPreviewBasePresenter = (AlbumPreviewBasePresenter) albumPreviewBaseFragment.b;
@@ -221,7 +217,7 @@ public abstract class AlbumPreviewBaseFragment extends MediaBaseFragment<IAlbumP
             }
         });
         this.h = this.d.findViewById(R.id.vr_vpg_title_v);
-        StatusBarHelper.a(getActivity(), this.h);
+        StatusBarHelper.a((Activity) getActivity(), this.h);
         this.k = (ImageView) this.d.findViewById(R.id.vr_vpg_ctt_left);
         this.l = (ImageView) this.d.findViewById(R.id.vr_vpg_ctt_right);
         this.i = this.d.findViewById(R.id.vr_vpg_bottom_v);
@@ -271,25 +267,24 @@ public abstract class AlbumPreviewBaseFragment extends MediaBaseFragment<IAlbumP
         return new AlbumPreviewBasePresenter();
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.d;
         if (view == null) {
             this.d = layoutInflater.inflate(R.layout.photo_preview_v, viewGroup, false);
             super.onCreateView(layoutInflater, viewGroup, bundle);
             e();
-            EventCallbackObserver.a().a(this.f15547a);
+            EventCallbackObserver.a().a(this.a);
             PLVideoObserver.a().a(this);
         } else if (view.getParent() != null) {
             ((ViewGroup) this.d.getParent()).removeView(this.d);
         }
         AlbumDataManager.getCurrentListChangeLiveData().observe(this, new Observer<Boolean>() { // from class: com.blued.android.module.media.selector.fragment.AlbumPreviewBaseFragment.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Boolean bool) {
                 if (AlbumPreviewBaseFragment.this.m != null) {
@@ -300,9 +295,9 @@ public abstract class AlbumPreviewBaseFragment extends MediaBaseFragment<IAlbumP
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroyView() {
-        EventCallbackObserver.a().b(this.f15547a);
+        EventCallbackObserver.a().b(this.a);
         PLVideoObserver.a().b(this);
         super.onDestroyView();
     }

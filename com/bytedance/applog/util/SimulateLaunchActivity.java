@@ -17,6 +17,7 @@ import com.bytedance.applog.R;
 import com.bytedance.applog.annotation.PageMeta;
 import com.bytedance.bdtracker.c;
 import com.bytedance.bdtracker.z2;
+import com.huawei.openalliance.ad.constant.t;
 import java.util.Objects;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,11 +28,11 @@ public class SimulateLaunchActivity extends AppCompatActivity implements IPageMe
     public static final String KEY_QR_PARAM = "qr_param";
 
     /* renamed from: a  reason: collision with root package name */
-    public a f21183a = a.QR;
+    public a f7577a = a.QR;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f21184c;
+    public int f7578c;
     public int d;
     public String e;
     public String f;
@@ -50,15 +51,15 @@ public class SimulateLaunchActivity extends AppCompatActivity implements IPageMe
     public class b extends AsyncTask<Void, Void, JSONObject> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final c f21187a;
+        public final c f7581a;
 
         public b(c cVar) {
-            this.f21187a = cVar;
+            this.f7581a = cVar;
         }
 
         @Override // android.os.AsyncTask
         public JSONObject doInBackground(Void[] voidArr) {
-            return SimulateLaunchActivity.this.f21183a == a.QR ? this.f21187a.j.a(SimulateLaunchActivity.this.b, SimulateLaunchActivity.this.f, SimulateLaunchActivity.this.f21184c, SimulateLaunchActivity.this.d, SimulateLaunchActivity.this.g, SimulateLaunchActivity.this.e) : this.f21187a.j.a(this, SimulateLaunchActivity.this.b, SimulateLaunchActivity.this.f, SimulateLaunchActivity.this.f21184c, SimulateLaunchActivity.this.d, SimulateLaunchActivity.this.g);
+            return SimulateLaunchActivity.this.f7577a == a.QR ? this.f7581a.j.a(SimulateLaunchActivity.this.b, SimulateLaunchActivity.this.f, SimulateLaunchActivity.this.f7578c, SimulateLaunchActivity.this.d, SimulateLaunchActivity.this.g, SimulateLaunchActivity.this.e) : this.f7581a.j.a(this, SimulateLaunchActivity.this.b, SimulateLaunchActivity.this.f, SimulateLaunchActivity.this.f7578c, SimulateLaunchActivity.this.d, SimulateLaunchActivity.this.g);
         }
 
         @Override // android.os.AsyncTask
@@ -74,17 +75,17 @@ public class SimulateLaunchActivity extends AppCompatActivity implements IPageMe
             int optInt = jSONObject2.optInt("status");
             String str = optString2;
             if (optString2 != null) {
-                int indexOf = optString2.indexOf(";");
+                int indexOf = optString2.indexOf(t.aE);
                 str = optString2;
                 if (indexOf >= 0) {
                     str = optString2.substring(0, indexOf);
                 }
             }
-            if (SimulateLaunchActivity.this.f21183a == a.NO_QR && (optJSONObject = jSONObject2.optJSONObject("data")) != null) {
+            if (SimulateLaunchActivity.this.f7577a == a.NO_QR && (optJSONObject = jSONObject2.optJSONObject("data")) != null) {
                 SimulateLaunchActivity.this.h = optJSONObject.optString("mode", "").equals("log") ? "debug_log" : "bind_query";
             }
             if ("debug_log".equals(SimulateLaunchActivity.this.h) && optInt == 0 && !TextUtils.isEmpty(str)) {
-                this.f21187a.setRangersEventVerifyEnable(true, str);
+                this.f7581a.setRangersEventVerifyEnable(true, str);
                 Intent launchIntentForPackage = SimulateLaunchActivity.this.getPackageManager().getLaunchIntentForPackage(SimulateLaunchActivity.this.getApplicationInfo().packageName);
                 if (launchIntentForPackage == null) {
                     return;
@@ -106,16 +107,16 @@ public class SimulateLaunchActivity extends AppCompatActivity implements IPageMe
                 launchIntentForPackage2.setPackage(null);
                 SimulateLaunchActivity.this.startActivity(launchIntentForPackage2);
                 IPicker iPicker = null;
-                if (this.f21187a.getInitConfig() != null) {
+                if (this.f7581a.getInitConfig() != null) {
                     iPicker = null;
-                    if (this.f21187a.getInitConfig().getPicker() != null) {
-                        iPicker = this.f21187a.getInitConfig().getPicker();
+                    if (this.f7581a.getInitConfig().getPicker() != null) {
+                        iPicker = this.f7581a.getInitConfig().getPicker();
                     }
                 }
                 if (iPicker != null) {
                     iPicker.setMarqueeCookie(str);
                 }
-                this.f21187a.startSimulator(str);
+                this.f7581a.startSimulator(str);
             }
             SimulateLaunchActivity.this.finish();
         }
@@ -141,7 +142,7 @@ public class SimulateLaunchActivity extends AppCompatActivity implements IPageMe
         if (!TextUtils.isEmpty(str)) {
             String[] split = ((String) Objects.requireNonNull(str)).split("x");
             this.d = Integer.parseInt(split[0]);
-            this.f21184c = Integer.parseInt(split[1]);
+            this.f7578c = Integer.parseInt(split[1]);
         }
         this.b = cVar.l;
         this.g = cVar.getDid();
@@ -160,7 +161,7 @@ public class SimulateLaunchActivity extends AppCompatActivity implements IPageMe
         Intent intent = getIntent();
         Uri data = intent.getData();
         if (intent.hasExtra("url_prefix_no_qr") && intent.hasExtra("aid_no_qr")) {
-            this.f21183a = a.NO_QR;
+            this.f7577a = a.NO_QR;
             String stringExtra = intent.getStringExtra("url_prefix_no_qr");
             c a2 = com.bytedance.bdtracker.b.a(intent.getStringExtra("aid_no_qr"));
             if (a2 != null) {
@@ -168,14 +169,14 @@ public class SimulateLaunchActivity extends AppCompatActivity implements IPageMe
                     this.i.setText("启动失败,请按电脑提示检查原因然后重新扫码(AppLog未初始化)");
                     return;
                 }
-                a2.j.f21290a = stringExtra;
+                a2.j.f7684a = stringExtra;
                 a(a2);
                 b bVar = new b(a2);
                 this.j = bVar;
                 bVar.execute(new Void[0]);
             }
         } else if (data != null) {
-            this.f21183a = a.QR;
+            this.f7577a = a.QR;
             c a3 = com.bytedance.bdtracker.b.a(data.getQueryParameter("aid"));
             if (a3 == null) {
                 this.i.setText("启动失败：请按电脑提示检查原因然后重新扫码(aid错误或AppLog未初始化)");
@@ -191,7 +192,7 @@ public class SimulateLaunchActivity extends AppCompatActivity implements IPageMe
                     this.i.setText("启动失败：无url_prefix参数");
                     return;
                 }
-                a3.j.f21290a = queryParameter2;
+                a3.j.f7684a = queryParameter2;
                 this.e = data.getQueryParameter(KEY_QR_PARAM);
                 a(a3);
                 b bVar2 = new b(a3);

@@ -4,21 +4,17 @@ import java.util.Map;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/a/b/g.class */
 public final class g {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f43666a;
+    private final int a;
     private final Map b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final i f43667c;
+    private final i c;
     private final a d;
 
     private g(h hVar) {
         h.a(hVar);
-        this.f43666a = h.b(hVar);
+        this.a = h.b(hVar);
         h.c(hVar);
         this.b = h.d(hVar);
-        this.f43667c = h.e(hVar);
+        this.c = h.e(hVar);
         this.d = null;
     }
 
@@ -28,7 +24,7 @@ public final class g {
     }
 
     public final int a() {
-        return this.f43666a;
+        return this.a;
     }
 
     public final Map b() {
@@ -36,7 +32,7 @@ public final class g {
     }
 
     public final i c() {
-        return this.f43667c;
+        return this.c;
     }
 
     public final a d() {

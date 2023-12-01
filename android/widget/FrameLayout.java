@@ -242,9 +242,8 @@ public class FrameLayout extends ViewGroup {
         return new LayoutParams(-1, -1);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return new LayoutParams(layoutParams);
     }
 
@@ -320,7 +319,7 @@ public class FrameLayout extends ViewGroup {
                 int i9 = layoutParams.gravity;
                 int i10 = i9;
                 if (i9 == -1) {
-                    i10 = 8388659;
+                    i10 = DEFAULT_CHILD_GRAVITY;
                 }
                 switch (Gravity.getAbsoluteGravity(i10, getLayoutDirection()) & 7) {
                     case 1:

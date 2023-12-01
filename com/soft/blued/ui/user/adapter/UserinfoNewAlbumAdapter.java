@@ -18,19 +18,19 @@ import java.util.Iterator;
 public class UserinfoNewAlbumAdapter extends BaseQuickAdapter<BluedAlbum, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f33778a;
+    public Context f20087a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f33779c;
+    private String f20088c;
     private boolean d;
     private int e;
 
     public UserinfoNewAlbumAdapter(IRequestHost iRequestHost, Context context, String str, boolean z, int i) {
         super(R.layout.item_userinfo_new_album, new ArrayList());
-        this.f33778a = context;
+        this.f20087a = context;
         this.b = iRequestHost;
-        this.f33779c = str;
+        this.f20088c = str;
         this.d = z;
         this.e = i;
     }
@@ -52,26 +52,26 @@ public class UserinfoNewAlbumAdapter extends BaseQuickAdapter<BluedAlbum, BaseVi
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, BluedAlbum bluedAlbum) {
         if (baseViewHolder != null) {
-            ImageView imageView = (ImageView) baseViewHolder.getView(2131364496);
-            ImageView imageView2 = (ImageView) baseViewHolder.getView(2131364595);
-            ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.tv_under_review);
-            shapeTextView.setVisibility(0);
-            ShapeHelper.b(shapeTextView, 2131102388);
+            ImageView imageView = (ImageView) baseViewHolder.getView(R.id.img_cover);
+            ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.img_lock);
+            ShapeTextView view = baseViewHolder.getView(R.id.tv_under_review);
+            view.setVisibility(0);
+            ShapeHelper.b(view, 2131102388);
             int i = bluedAlbum.applyStatus;
             if (i == 1) {
-                shapeTextView.setText(R.string.user_profile_apply_album);
-                ImageLoader.a(this.b, bluedAlbum.getUrl()).b(R.drawable.private_album_icon).a(6.0f).a(imageView);
+                view.setText((int) R.string.user_profile_apply_album);
+                ImageLoader.a(this.b, bluedAlbum.getUrl()).b((int) R.drawable.private_album_icon).a(6.0f).a(imageView);
             } else if (i != 2) {
                 if (bluedAlbum.audit_status == 1) {
-                    ShapeHelper.b(shapeTextView, 2131101800);
-                    shapeTextView.setText(R.string.pic_in_review);
+                    ShapeHelper.b(view, 2131101800);
+                    view.setText((int) R.string.pic_in_review);
                 } else {
-                    shapeTextView.setVisibility(8);
+                    view.setVisibility(8);
                 }
-                ImageLoader.a(this.b, bluedAlbum.getUrl()).b(2131232687).a(6.0f).a(imageView);
+                ImageLoader.a(this.b, bluedAlbum.getUrl()).b((int) R.drawable.feed_photo_default).a(6.0f).a(imageView);
             } else {
-                shapeTextView.setText(R.string.user_profile_waiting_for_apply);
-                ImageLoader.a(this.b, bluedAlbum.getUrl()).b(R.drawable.private_album_icon).a(6.0f).a(imageView);
+                view.setText((int) R.string.user_profile_waiting_for_apply);
+                ImageLoader.a(this.b, bluedAlbum.getUrl()).b((int) R.drawable.private_album_icon).a(6.0f).a(imageView);
             }
             if (this.d) {
                 if (this.e == 2) {

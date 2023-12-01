@@ -36,7 +36,7 @@ public class AnimatedMoveViewJob extends AnimatedViewPortJob {
 
     @Override // com.github.mikephil.charting.jobs.AnimatedViewPortJob, android.animation.ValueAnimator.AnimatorUpdateListener
     public void onAnimationUpdate(ValueAnimator valueAnimator) {
-        this.l[0] = this.f22155c + ((this.n - this.f22155c) * this.b);
+        this.l[0] = this.f8548c + ((this.n - this.f8548c) * this.b);
         this.l[1] = this.d + ((this.o - this.d) * this.b);
         this.p.a(this.l);
         this.m.a(this.l, this.q);

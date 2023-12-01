@@ -6,7 +6,7 @@ import org.json.JSONObject;
 public final class i extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23408a = "ResponseDeviceidAction";
+    private static final String f9800a = "ResponseDeviceidAction";
 
     @Override // com.igexin.push.core.a.b.a
     public final boolean a(Object obj, JSONObject jSONObject) {

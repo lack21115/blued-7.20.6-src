@@ -1,6 +1,5 @@
 package com.blued.android.chat.core.pack;
 
-import android.media.MediaFormat;
 import android.text.TextUtils;
 import androidx.collection.ArrayMap;
 import com.blued.android.chat.ChatManager;
@@ -42,6 +41,7 @@ public class SendMsgPackage extends BasePackage {
         this.fromName = str4;
     }
 
+    /* JADX WARN: Type inference failed for: r0v32, types: [com.blued.android.chat.core.pack.SendMsgPackage$1] */
     @Override // com.blued.android.chat.core.pack.BasePackage
     protected BytesData msgDataToByte() {
         ArrayMap arrayMap = new ArrayMap();
@@ -50,7 +50,7 @@ public class SendMsgPackage extends BasePackage {
         if (!TextUtils.isEmpty(this.fromName)) {
             ArrayMap arrayMap2 = new ArrayMap();
             arrayMap2.put("name", this.fromName);
-            arrayMap.put(MediaFormat.KEY_PROFILE, arrayMap2);
+            arrayMap.put("profile", arrayMap2);
         }
         arrayMap.put("contents", this.msgContent);
         if (!TextUtils.isEmpty(this.msgAt)) {

@@ -5,9 +5,7 @@ import android.util.AttributeSet;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickylistheaders/ExpandableStickyListHeadersListView.class */
 public class ExpandableStickyListHeadersListView extends StickyListHeadersListView {
-
-    /* renamed from: a  reason: collision with root package name */
-    ExpandableStickyListHeadersAdapter f10335a;
+    ExpandableStickyListHeadersAdapter a;
     IAnimationExecutor b;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickylistheaders/ExpandableStickyListHeadersListView$IAnimationExecutor.class */
@@ -28,13 +26,13 @@ public class ExpandableStickyListHeadersListView extends StickyListHeadersListVi
 
     @Override // com.blued.android.framework.view.stickylistheaders.StickyListHeadersListView
     public ExpandableStickyListHeadersAdapter getAdapter() {
-        return this.f10335a;
+        return this.a;
     }
 
     @Override // com.blued.android.framework.view.stickylistheaders.StickyListHeadersListView
     public void setAdapter(StickyListHeadersAdapter stickyListHeadersAdapter) {
         ExpandableStickyListHeadersAdapter expandableStickyListHeadersAdapter = new ExpandableStickyListHeadersAdapter(stickyListHeadersAdapter);
-        this.f10335a = expandableStickyListHeadersAdapter;
+        this.a = expandableStickyListHeadersAdapter;
         super.setAdapter(expandableStickyListHeadersAdapter);
     }
 

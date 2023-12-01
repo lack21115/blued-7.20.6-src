@@ -20,16 +20,14 @@ public class District implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5692a;
+    private String a;
     private String b;
 
     public District() {
     }
 
     public District(Parcel parcel) {
-        this.f5692a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
     }
 
@@ -43,7 +41,7 @@ public class District implements Parcelable {
     }
 
     public String getDistrictName() {
-        return this.f5692a;
+        return this.a;
     }
 
     public void setDistrictAdcode(String str) {
@@ -51,12 +49,12 @@ public class District implements Parcelable {
     }
 
     public void setDistrictName(String str) {
-        this.f5692a = str;
+        this.a = str;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5692a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
     }
 }

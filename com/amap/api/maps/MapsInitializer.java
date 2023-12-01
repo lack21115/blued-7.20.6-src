@@ -82,7 +82,7 @@ public final class MapsInitializer {
 
     public static void initialize(Context context) throws RemoteException {
         if (context != null) {
-            aa.f4728a = context.getApplicationContext();
+            aa.a = context.getApplicationContext();
         } else {
             Log.w("MapsInitializer", "the context is null");
         }
@@ -124,7 +124,7 @@ public final class MapsInitializer {
         if (str == null || str.trim().length() <= 0) {
             return;
         }
-        hp.a(aa.f4728a, str);
+        hp.a(aa.a, str);
     }
 
     public static void setBuildingHeight(int i) {
@@ -140,11 +140,11 @@ public final class MapsInitializer {
 
     public static void setHost(String str) {
         if (TextUtils.isEmpty(str)) {
-            ju.f5230a = -1;
+            ju.a = -1;
             ju.b = "";
             return;
         }
-        ju.f5230a = 1;
+        ju.a = 1;
         ju.b = str;
     }
 

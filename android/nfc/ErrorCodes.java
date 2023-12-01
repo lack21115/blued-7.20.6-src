@@ -1,7 +1,5 @@
 package android.nfc;
 
-import com.alipay.security.mobile.module.http.model.c;
-
 /* loaded from: source-9557208-dex2jar.jar:android/nfc/ErrorCodes.class */
 public class ErrorCodes {
     public static final int ERROR_BUFFER_TO_SMALL = -12;
@@ -73,7 +71,7 @@ public class ErrorCodes {
             case -1:
                 return "IO";
             case 0:
-                return c.g;
+                return "SUCCESS";
             default:
                 return "UNKNOWN ERROR";
         }

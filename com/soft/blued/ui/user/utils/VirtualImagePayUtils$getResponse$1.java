@@ -33,11 +33,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class VirtualImagePayUtils$getResponse$1 extends BluedUIHttpResponse<BluedEntityA<VirtualImageModel.PaidResp>> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ IRequestHost f34337a;
+    final /* synthetic */ IRequestHost f20646a;
     final /* synthetic */ VirtualImagePayUtils b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ VirtualImagePayUtils.PayResult f34338c;
+    final /* synthetic */ VirtualImagePayUtils.PayResult f20647c;
     final /* synthetic */ Context d;
     final /* synthetic */ List<VirtualImageModel.PayGoodsInfo> e;
 
@@ -45,9 +45,9 @@ public final class VirtualImagePayUtils$getResponse$1 extends BluedUIHttpRespons
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public VirtualImagePayUtils$getResponse$1(IRequestHost iRequestHost, VirtualImagePayUtils virtualImagePayUtils, VirtualImagePayUtils.PayResult payResult, Context context, List<VirtualImageModel.PayGoodsInfo> list) {
         super(iRequestHost);
-        this.f34337a = iRequestHost;
+        this.f20646a = iRequestHost;
         this.b = virtualImagePayUtils;
-        this.f34338c = payResult;
+        this.f20647c = payResult;
         this.d = context;
         this.e = list;
     }
@@ -61,10 +61,10 @@ public final class VirtualImagePayUtils$getResponse$1 extends BluedUIHttpRespons
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(Context context, IRequestHost requestHost) {
+    public static final void a(Context context, IRequestHost iRequestHost) {
         Intrinsics.e(context, "$context");
-        Intrinsics.e(requestHost, "$requestHost");
-        LiveGiftPayTools.a(context, requestHost);
+        Intrinsics.e(iRequestHost, "$requestHost");
+        LiveGiftPayTools.a(context, iRequestHost);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -74,14 +74,14 @@ public final class VirtualImagePayUtils$getResponse$1 extends BluedUIHttpRespons
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VirtualImagePayUtils this$0, Context context, Pair pair) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(VirtualImagePayUtils virtualImagePayUtils, Context context, Pair pair) {
+        Intrinsics.e(virtualImagePayUtils, "this$0");
         Intrinsics.e(context, "$context");
-        DialogWith6PW a2 = this$0.a();
+        DialogWith6PW a2 = virtualImagePayUtils.a();
         if (a2 == null) {
             return;
         }
-        TextView textView = a2.f34869c;
+        TextView textView = a2.f21178c;
         if (textView != null) {
             textView.setTextColor(context.getResources().getColor(2131099765));
             textView.setText((CharSequence) pair.second);
@@ -94,23 +94,23 @@ public final class VirtualImagePayUtils$getResponse$1 extends BluedUIHttpRespons
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final VirtualImagePayUtils this$0, final Context context, final IRequestHost requestHost, final List goodsList, final VirtualImagePayUtils.PayResult payResult) {
+    public static final void a(final VirtualImagePayUtils virtualImagePayUtils, final Context context, final IRequestHost iRequestHost, final List list, final VirtualImagePayUtils.PayResult payResult) {
         AlertDialog alertDialog;
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(virtualImagePayUtils, "this$0");
         Intrinsics.e(context, "$context");
-        Intrinsics.e(requestHost, "$requestHost");
-        Intrinsics.e(goodsList, "$goodsList");
+        Intrinsics.e(iRequestHost, "$requestHost");
+        Intrinsics.e(list, "$goodsList");
         Intrinsics.e(payResult, "$payResult");
-        DialogWith6PW a2 = this$0.a();
-        if (a2 == null || (alertDialog = a2.f34868a) == null || !alertDialog.isShowing()) {
-            String string = context.getString(2131886103);
+        DialogWith6PW a2 = virtualImagePayUtils.a();
+        if (a2 == null || (alertDialog = a2.f21177a) == null || !alertDialog.isShowing()) {
+            String string = context.getString(R.string.Live_SendPresent_verifyPassword);
             Intrinsics.c(string, "context.getString(R.stri…ndPresent_verifyPassword)");
-            String string2 = context.getString(2131886104);
+            String string2 = context.getString(R.string.Live_SendPresent_verifyPasswordText);
             Intrinsics.c(string2, "context.getString(R.stri…esent_verifyPasswordText)");
-            this$0.a(CommonAlertDialog2.a(context, string, string2, true, false, true, true, new CommonAlertDialog2.PWDListener() { // from class: com.soft.blued.ui.user.utils.-$$Lambda$VirtualImagePayUtils$getResponse$1$6iiPWJUHud416TJUjp4fS3dXynM
+            virtualImagePayUtils.a(CommonAlertDialog2.a(context, string, string2, true, false, true, true, new CommonAlertDialog2.PWDListener() { // from class: com.soft.blued.ui.user.utils.-$$Lambda$VirtualImagePayUtils$getResponse$1$6iiPWJUHud416TJUjp4fS3dXynM
                 @Override // com.soft.blued.view.dialog.CommonAlertDialog2.PWDListener
                 public final void onClick(String str, boolean z, DialogWith6PW dialogWith6PW) {
-                    VirtualImagePayUtils$getResponse$1.a(VirtualImagePayUtils.this, context, requestHost, goodsList, payResult, str, z, dialogWith6PW);
+                    VirtualImagePayUtils$getResponse$1.a(VirtualImagePayUtils.this, context, iRequestHost, list, payResult, str, z, dialogWith6PW);
                 }
             }, null));
         }
@@ -123,20 +123,19 @@ public final class VirtualImagePayUtils$getResponse$1 extends BluedUIHttpRespons
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.blued.android.framework.http.BluedUIHttpResponse
     /* renamed from: a */
     public void onUIUpdate(BluedEntityA<VirtualImageModel.PaidResp> bluedEntityA) {
         AlertDialog alertDialog;
         DialogWith6PW a2 = this.b.a();
-        if (a2 != null && (alertDialog = a2.f34868a) != null && alertDialog.isShowing()) {
+        if (a2 != null && (alertDialog = a2.f21177a) != null && alertDialog.isShowing()) {
             alertDialog.dismiss();
         }
         if (bluedEntityA == null) {
             return;
         }
-        final VirtualImagePayUtils.PayResult payResult = this.f34338c;
+        final VirtualImagePayUtils.PayResult payResult = this.f20647c;
         if (bluedEntityA.hasData()) {
-            final VirtualImageModel.PaidResp paidResp = bluedEntityA.data.get(0);
+            final VirtualImageModel.PaidResp paidResp = (VirtualImageModel.PaidResp) bluedEntityA.data.get(0);
             if (!TextUtils.isEmpty(paidResp.getPayment_token())) {
                 BluedPreferences.H(paidResp.getPayment_token());
             }
@@ -149,20 +148,19 @@ public final class VirtualImagePayUtils$getResponse$1 extends BluedUIHttpRespons
         }
     }
 
-    @Override // com.blued.android.framework.http.BluedUIHttpResponse
     public boolean onUIFailure(int i, String str, String str2) {
         AlertDialog alertDialog;
         AlertDialog alertDialog2;
         LiveGiftPayTools.a(str2);
-        final Pair<Integer, String> a2 = BluedHttpUtils.a(null, i, str2);
-        Integer num = a2.first;
+        final Pair a2 = BluedHttpUtils.a((Throwable) null, i, str2);
+        Integer num = (Integer) a2.first;
         if (num != null && num.intValue() == 0) {
             return super.onUIFailure(i, str, str2);
         }
         if (i == 4221002) {
             Handler n = AppInfo.n();
             final Context context = this.d;
-            final IRequestHost iRequestHost = this.f34337a;
+            final IRequestHost iRequestHost = this.f20646a;
             n.post(new Runnable() { // from class: com.soft.blued.ui.user.utils.-$$Lambda$VirtualImagePayUtils$getResponse$1$acGJntLia2jfI1gpKR-nSWlVp20
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -172,24 +170,24 @@ public final class VirtualImagePayUtils$getResponse$1 extends BluedUIHttpRespons
             return true;
         } else if (i == 4221008) {
             DialogWith6PW a3 = this.b.a();
-            if (a3 != null && (alertDialog = a3.f34868a) != null && alertDialog.isShowing()) {
+            if (a3 != null && (alertDialog = a3.f21177a) != null && alertDialog.isShowing()) {
                 alertDialog.dismiss();
             }
             Context context2 = this.d;
-            String string = context2.getString(2131886091);
-            String string2 = this.d.getString(2131886096);
+            String string = context2.getString(R.string.Live_SendPresent_notEnoughWandou);
+            String string2 = this.d.getString(R.string.Live_SendPresent_recharge);
             final Context context3 = this.d;
             CommonAlertDialog.a(context2, "", string, string2, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.utils.-$$Lambda$VirtualImagePayUtils$getResponse$1$kcjcxF73XzTOaCDaBCwmjFV6mwc
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
                     VirtualImagePayUtils$getResponse$1.a(Context.this, dialogInterface, i2);
                 }
-            }, this.d.getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+            }, this.d.getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
             return true;
         } else {
             switch (i) {
                 case 4221004:
-                    if (TextUtils.isEmpty(a2.second)) {
+                    if (TextUtils.isEmpty((CharSequence) a2.second)) {
                         return true;
                     }
                     Handler n2 = AppInfo.n();
@@ -206,9 +204,9 @@ public final class VirtualImagePayUtils$getResponse$1 extends BluedUIHttpRespons
                     Handler n3 = AppInfo.n();
                     final VirtualImagePayUtils virtualImagePayUtils2 = this.b;
                     final Context context5 = this.d;
-                    final IRequestHost iRequestHost2 = this.f34337a;
+                    final IRequestHost iRequestHost2 = this.f20646a;
                     final List<VirtualImageModel.PayGoodsInfo> list = this.e;
-                    final VirtualImagePayUtils.PayResult payResult = this.f34338c;
+                    final VirtualImagePayUtils.PayResult payResult = this.f20647c;
                     n3.post(new Runnable() { // from class: com.soft.blued.ui.user.utils.-$$Lambda$VirtualImagePayUtils$getResponse$1$2-uuF1xomHkGqda1C0DqySXoT6M
                         @Override // java.lang.Runnable
                         public final void run() {
@@ -235,10 +233,10 @@ public final class VirtualImagePayUtils$getResponse$1 extends BluedUIHttpRespons
                             return true;
                         default:
                             DialogWith6PW a4 = this.b.a();
-                            if (a4 != null && (alertDialog2 = a4.f34868a) != null && alertDialog2.isShowing()) {
+                            if (a4 != null && (alertDialog2 = a4.f21177a) != null && alertDialog2.isShowing()) {
                                 alertDialog2.dismiss();
                             }
-                            this.f34338c.a(i, str);
+                            this.f20647c.a(i, str);
                             return true;
                     }
             }

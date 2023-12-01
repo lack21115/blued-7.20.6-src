@@ -38,7 +38,7 @@ public final class b extends com.kwad.components.ad.interstitial.e.a {
     private SlideTipsView ie;
 
     /* renamed from: if  reason: not valid java name */
-    private ValueAnimator f50if;
+    private ValueAnimator f3if;
     private boolean ig;
     private InterstitialAggregateManualTipsView ih;
     private boolean ij;
@@ -65,8 +65,8 @@ public final class b extends com.kwad.components.ad.interstitial.e.a {
                     if (b.this.ib != null) {
                         b.this.ib.cF();
                     }
-                    if (b.this.f50if != null) {
-                        b.this.f50if.pause();
+                    if (b.this.f3if != null) {
+                        b.this.f3if.pause();
                     }
                     b.this.ig = true;
                 }
@@ -79,8 +79,8 @@ public final class b extends com.kwad.components.ad.interstitial.e.a {
                     if (b.this.ib != null) {
                         b.this.ib.cG();
                     }
-                    if (b.this.f50if != null) {
-                        b.this.f50if.resume();
+                    if (b.this.f3if != null) {
+                        b.this.f3if.resume();
                     }
                     b.this.ig = false;
                 }
@@ -89,7 +89,7 @@ public final class b extends com.kwad.components.ad.interstitial.e.a {
         this.il = new ViewPager.SimpleOnPageChangeListener() { // from class: com.kwad.components.ad.interstitial.aggregate.b.3
 
             /* renamed from: io  reason: collision with root package name */
-            private int f23915io = 0;
+            private int f10306io = 0;
 
             @Override // androidx.viewpager.widget.ViewPager.SimpleOnPageChangeListener, androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public final void onPageScrolled(int i, float f, int i2) {
@@ -111,14 +111,14 @@ public final class b extends com.kwad.components.ad.interstitial.e.a {
                 if (B != null) {
                     B.ew();
                 }
-                if (this.f23915io != i) {
-                    com.kwad.sdk.core.report.a.a((AdTemplate) b.this.mAdTemplateList.get(this.f23915io), -1L, (JSONObject) null);
-                    com.kwad.components.ad.interstitial.e.c B2 = b.this.hZ.B(this.f23915io);
+                if (this.f10306io != i) {
+                    com.kwad.sdk.core.report.a.a((AdTemplate) b.this.mAdTemplateList.get(this.f10306io), -1L, (JSONObject) null);
+                    com.kwad.components.ad.interstitial.e.c B2 = b.this.hZ.B(this.f10306io);
                     if (B2 != null) {
                         B2.ex();
                     }
                 }
-                this.f23915io = i;
+                this.f10306io = i;
             }
         };
         this.mContext = context;
@@ -192,9 +192,9 @@ public final class b extends com.kwad.components.ad.interstitial.e.a {
             this.ih.a(this.mAdTemplate, this.hZ);
         }
         ValueAnimator ofInt = ValueAnimator.ofInt(0, 120, 0);
-        this.f50if = ofInt;
+        this.f3if = ofInt;
         ofInt.setDuration(1200L);
-        this.f50if.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.kwad.components.ad.interstitial.aggregate.b.8
+        this.f3if.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.kwad.components.ad.interstitial.aggregate.b.8
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 float f;
@@ -202,7 +202,7 @@ public final class b extends com.kwad.components.ad.interstitial.e.a {
                 b.this.hZ.onPageScrolled(0, com.kwad.sdk.c.kwai.a.a(b.this.mContext, f) / b.this.getWidth(), 0);
             }
         });
-        this.f50if.addListener(new AnimatorListenerAdapter() { // from class: com.kwad.components.ad.interstitial.aggregate.b.9
+        this.f3if.addListener(new AnimatorListenerAdapter() { // from class: com.kwad.components.ad.interstitial.aggregate.b.9
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public final void onAnimationEnd(Animator animator) {
                 if (b.this.ij) {
@@ -216,15 +216,15 @@ public final class b extends com.kwad.components.ad.interstitial.e.a {
                 b.this.ic.startAnimation(b.a(b.this, 0.5f, 0.1f));
             }
         });
-        this.f50if.start();
+        this.f3if.start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void cy() {
         ValueAnimator ofInt = ValueAnimator.ofInt(0, getWidth());
-        this.f50if = ofInt;
+        this.f3if = ofInt;
         ofInt.setDuration(800L);
-        this.f50if.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.kwad.components.ad.interstitial.aggregate.b.10
+        this.f3if.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.kwad.components.ad.interstitial.aggregate.b.10
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
@@ -232,7 +232,7 @@ public final class b extends com.kwad.components.ad.interstitial.e.a {
                 b.this.hZ.onPageScrolled(0, intValue / b.this.getWidth(), 0);
             }
         });
-        this.f50if.addListener(new AnimatorListenerAdapter() { // from class: com.kwad.components.ad.interstitial.aggregate.b.11
+        this.f3if.addListener(new AnimatorListenerAdapter() { // from class: com.kwad.components.ad.interstitial.aggregate.b.11
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public final void onAnimationEnd(Animator animator) {
                 b.this.hZ.setCurrentItem(1);
@@ -240,7 +240,7 @@ public final class b extends com.kwad.components.ad.interstitial.e.a {
                 b.this.ie.startAnimation(b.a(b.this, -0.5f, -0.1f));
             }
         });
-        this.f50if.start();
+        this.f3if.start();
     }
 
     private void initView() {
@@ -274,14 +274,14 @@ public final class b extends com.kwad.components.ad.interstitial.e.a {
                 b.this.hZ.a(i, cVar);
             }
         });
-        this.ia.a(new a.InterfaceC0480a() { // from class: com.kwad.components.ad.interstitial.aggregate.b.4
-            @Override // com.kwad.components.ad.interstitial.aggregate.a.InterfaceC0480a
+        this.ia.a(new a.InterfaceC0310a() { // from class: com.kwad.components.ad.interstitial.aggregate.b.4
+            @Override // com.kwad.components.ad.interstitial.aggregate.a.InterfaceC0310a
             public final void cs() {
                 if (b.this.ik) {
                     return;
                 }
-                if (b.this.f50if != null) {
-                    b.this.f50if.cancel();
+                if (b.this.f3if != null) {
+                    b.this.f3if.cancel();
                 }
                 b.this.ib.setPlayProgressListener(null);
                 b.this.ib.setVisibility(8);
@@ -325,9 +325,8 @@ public final class b extends com.kwad.components.ad.interstitial.e.a {
     public final void cv() {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
+    protected final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.mViewVisibleHelper.b(this.dk);
         this.mViewVisibleHelper.rE();

@@ -29,20 +29,20 @@ public class BarBuffer extends AbstractBuffer<IBarDataSet> {
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(float f, float f2, float f3, float f4) {
         float[] fArr = this.b;
-        int i = this.f22060a;
-        this.f22060a = i + 1;
+        int i = this.f8453a;
+        this.f8453a = i + 1;
         fArr[i] = f;
         float[] fArr2 = this.b;
-        int i2 = this.f22060a;
-        this.f22060a = i2 + 1;
+        int i2 = this.f8453a;
+        this.f8453a = i2 + 1;
         fArr2[i2] = f2;
         float[] fArr3 = this.b;
-        int i3 = this.f22060a;
-        this.f22060a = i3 + 1;
+        int i3 = this.f8453a;
+        this.f8453a = i3 + 1;
         fArr3[i3] = f3;
         float[] fArr4 = this.b;
-        int i4 = this.f22060a;
-        this.f22060a = i4 + 1;
+        int i4 = this.f8453a;
+        this.f8453a = i4 + 1;
         fArr4[i4] = f4;
     }
 
@@ -57,7 +57,7 @@ public class BarBuffer extends AbstractBuffer<IBarDataSet> {
         float f2;
         float f3;
         float H = iBarDataSet.H();
-        float f4 = this.f22061c;
+        float f4 = this.f8454c;
         float f5 = this.k / 2.0f;
         int i = 0;
         while (true) {

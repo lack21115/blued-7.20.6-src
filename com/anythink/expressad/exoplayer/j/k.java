@@ -9,11 +9,11 @@ import java.util.Arrays;
 public final class k {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7583a = 1;
+    public static final int f4744a = 1;
     public static final int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public final Uri f7584c;
+    public final Uri f4745c;
     public final byte[] d;
     public final long e;
     public final long f;
@@ -50,7 +50,7 @@ public final class k {
         com.anythink.expressad.exoplayer.k.a.a(j >= 0);
         com.anythink.expressad.exoplayer.k.a.a(j2 >= 0);
         com.anythink.expressad.exoplayer.k.a.a(j3 <= 0 ? j3 == -1 : true);
-        this.f7584c = uri;
+        this.f4745c = uri;
         this.d = bArr;
         this.e = j;
         this.f = j2;
@@ -60,7 +60,7 @@ public final class k {
     }
 
     private k a(long j, long j2) {
-        return (j == 0 && this.g == j2) ? this : new k(this.f7584c, this.d, this.e + j, this.f + j, j2, this.h, this.i);
+        return (j == 0 && this.g == j2) ? this : new k(this.f4745c, this.d, this.e + j, this.f + j, j2, this.h, this.i);
     }
 
     private k a(Uri uri) {
@@ -73,7 +73,7 @@ public final class k {
         if (j2 != -1) {
             j3 = j2 - j;
         }
-        return (j == 0 && this.g == j3) ? this : new k(this.f7584c, this.d, this.e + j, this.f + j, j3, this.h, this.i);
+        return (j == 0 && this.g == j3) ? this : new k(this.f4745c, this.d, this.e + j, this.f + j, j3, this.h, this.i);
     }
 
     public final boolean a(int i) {
@@ -81,6 +81,6 @@ public final class k {
     }
 
     public final String toString() {
-        return "DataSpec[" + this.f7584c + ", " + Arrays.toString(this.d) + ", " + this.e + ", " + this.f + ", " + this.g + ", " + this.h + ", " + this.i + "]";
+        return "DataSpec[" + this.f4745c + ", " + Arrays.toString(this.d) + ", " + this.e + ", " + this.f + ", " + this.g + ", " + this.h + ", " + this.i + "]";
     }
 }

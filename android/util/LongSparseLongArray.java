@@ -40,7 +40,7 @@ public class LongSparseLongArray implements Cloneable {
     }
 
     /* renamed from: clone */
-    public LongSparseLongArray m1023clone() {
+    public LongSparseLongArray m1019clone() {
         LongSparseLongArray longSparseLongArray = null;
         try {
             LongSparseLongArray longSparseLongArray2 = (LongSparseLongArray) super.clone();

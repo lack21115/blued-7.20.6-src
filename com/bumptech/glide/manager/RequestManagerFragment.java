@@ -5,7 +5,6 @@ import android.app.Fragment;
 import android.content.Context;
 import android.os.Build;
 import android.util.Log;
-import com.alipay.sdk.util.i;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bytedance.applog.tracker.Tracker;
@@ -18,11 +17,11 @@ import java.util.Set;
 public class RequestManagerFragment extends Fragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ActivityFragmentLifecycle f21016a;
+    private final ActivityFragmentLifecycle f7410a;
     private final RequestManagerTreeNode b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Set<RequestManagerFragment> f21017c;
+    private final Set<RequestManagerFragment> f7411c;
     private RequestManager d;
     private RequestManagerFragment e;
     private Fragment f;
@@ -45,7 +44,7 @@ public class RequestManagerFragment extends Fragment {
         }
 
         public String toString() {
-            return super.toString() + "{fragment=" + RequestManagerFragment.this + i.d;
+            return super.toString() + "{fragment=" + RequestManagerFragment.this + "}";
         }
     }
 
@@ -55,8 +54,8 @@ public class RequestManagerFragment extends Fragment {
 
     RequestManagerFragment(ActivityFragmentLifecycle activityFragmentLifecycle) {
         this.b = new FragmentRequestManagerTreeNode();
-        this.f21017c = new HashSet();
-        this.f21016a = activityFragmentLifecycle;
+        this.f7411c = new HashSet();
+        this.f7410a = activityFragmentLifecycle;
     }
 
     private void a(Activity activity) {
@@ -70,11 +69,11 @@ public class RequestManagerFragment extends Fragment {
     }
 
     private void a(RequestManagerFragment requestManagerFragment) {
-        this.f21017c.add(requestManagerFragment);
+        this.f7411c.add(requestManagerFragment);
     }
 
     private void b(RequestManagerFragment requestManagerFragment) {
-        this.f21017c.remove(requestManagerFragment);
+        this.f7411c.remove(requestManagerFragment);
     }
 
     private boolean b(Fragment fragment) {
@@ -106,7 +105,7 @@ public class RequestManagerFragment extends Fragment {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ActivityFragmentLifecycle a() {
-        return this.f21016a;
+        return this.f7410a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -132,7 +131,7 @@ public class RequestManagerFragment extends Fragment {
 
     Set<RequestManagerFragment> d() {
         if (equals(this.e)) {
-            return Collections.unmodifiableSet(this.f21017c);
+            return Collections.unmodifiableSet(this.f7411c);
         }
         if (this.e == null || Build.VERSION.SDK_INT < 17) {
             return Collections.emptySet();
@@ -161,7 +160,7 @@ public class RequestManagerFragment extends Fragment {
     @Override // android.app.Fragment
     public void onDestroy() {
         super.onDestroy();
-        this.f21016a.c();
+        this.f7410a.c();
         f();
     }
 
@@ -192,13 +191,13 @@ public class RequestManagerFragment extends Fragment {
     @Override // android.app.Fragment
     public void onStart() {
         super.onStart();
-        this.f21016a.a();
+        this.f7410a.a();
     }
 
     @Override // android.app.Fragment
     public void onStop() {
         super.onStop();
-        this.f21016a.b();
+        this.f7410a.b();
     }
 
     @Override // android.app.Fragment
@@ -209,6 +208,6 @@ public class RequestManagerFragment extends Fragment {
 
     @Override // android.app.Fragment
     public String toString() {
-        return super.toString() + "{parent=" + e() + i.d;
+        return super.toString() + "{parent=" + e() + "}";
     }
 }

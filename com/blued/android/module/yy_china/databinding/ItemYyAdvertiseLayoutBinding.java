@@ -8,14 +8,12 @@ import com.blued.android.module.yy_china.view.ban.BGABanner;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyAdvertiseLayoutBinding.class */
 public final class ItemYyAdvertiseLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final BGABanner f16675a;
+    public final BGABanner a;
     private final FrameLayout b;
 
     private ItemYyAdvertiseLayoutBinding(FrameLayout frameLayout, BGABanner bGABanner) {
         this.b = frameLayout;
-        this.f16675a = bGABanner;
+        this.a = bGABanner;
     }
 
     public static ItemYyAdvertiseLayoutBinding a(View view) {
@@ -26,7 +24,6 @@ public final class ItemYyAdvertiseLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("banner"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.b;

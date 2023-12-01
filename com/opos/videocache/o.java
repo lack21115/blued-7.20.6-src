@@ -14,24 +14,24 @@ final class o {
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile n f27453c;
+    private volatile n f13765c;
     private final b e;
     private final l f;
 
     /* renamed from: a  reason: collision with root package name */
-    private final AtomicInteger f27452a = new AtomicInteger(0);
+    private final AtomicInteger f13764a = new AtomicInteger(0);
     private final List<b> d = new CopyOnWriteArrayList();
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/videocache/o$a.class */
     static final class a extends Handler implements b {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f27454a;
+        private final String f13766a;
         private final List<b> b;
 
         public a(String str, List<b> list) {
             super(Looper.getMainLooper());
-            this.f27454a = str;
+            this.f13766a = str;
             this.b = list;
         }
 
@@ -46,7 +46,7 @@ final class o {
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             for (b bVar : this.b) {
-                bVar.a((File) message.obj, this.f27454a, message.arg1);
+                bVar.a((File) message.obj, this.f13766a, message.arg1);
             }
         }
     }
@@ -59,34 +59,34 @@ final class o {
 
     private void b() {
         synchronized (this) {
-            this.f27453c = this.f27453c == null ? d() : this.f27453c;
+            this.f13765c = this.f13765c == null ? d() : this.f13765c;
         }
     }
 
     private void c() {
         synchronized (this) {
-            if (this.f27452a.decrementAndGet() <= 0) {
-                this.f27453c.a();
-                this.f27453c = null;
+            if (this.f13764a.decrementAndGet() <= 0) {
+                this.f13765c.a();
+                this.f13765c = null;
             }
         }
     }
 
     private n d() {
-        n nVar = new n(new d(this.b, this.f.d, this.f.e), new com.opos.videocache.a.b(this.f.a(this.b), this.f.f27447c));
+        n nVar = new n(new d(this.b, this.f.d, this.f.e), new com.opos.videocache.a.b(this.f.a(this.b), this.f.f13759c));
         nVar.a(this.e);
         return nVar;
     }
 
     public int a() {
-        return this.f27452a.get();
+        return this.f13764a.get();
     }
 
     public void a(m mVar, Socket socket) {
         b();
         try {
-            this.f27452a.incrementAndGet();
-            this.f27453c.a(mVar, socket);
+            this.f13764a.incrementAndGet();
+            this.f13765c.a(mVar, socket);
         } finally {
             c();
         }

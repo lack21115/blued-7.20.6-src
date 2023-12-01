@@ -3,7 +3,6 @@ package com.android.internal.os;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothHeadset;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkStats;
 import android.net.wifi.WifiManager;
@@ -38,7 +37,6 @@ import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.FastPrintWriter;
 import com.android.internal.util.JournaledFile;
 import com.android.server.NetworkManagementSocketTagger;
-import com.kwad.components.offline.api.IOfflineCompo;
 import java.awt.font.NumericShaper;
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,6 +44,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -53,6 +52,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
+import javax.microedition.khronos.opengles.GL10;
+import javax.microedition.khronos.opengles.GL11ExtensionPack;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/os/BatteryStatsImpl.class */
 public class BatteryStatsImpl extends BatteryStats {
@@ -360,7 +361,7 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mTotalTime;
         }
 
-        @Override // com.android.internal.os.BatteryStatsImpl.Timer, android.os.BatteryStats.Timer
+        @Override // com.android.internal.os.BatteryStatsImpl.Timer
         public void logState(Printer printer, String str) {
             super.logState(printer, str);
             printer.println(str + "mLastAddedTime=" + this.mLastAddedTime + " mLastAddedDuration=" + this.mLastAddedDuration);
@@ -444,7 +445,6 @@ public class BatteryStatsImpl extends BatteryStats {
             this.mTimeBase.remove(this);
         }
 
-        @Override // android.os.BatteryStats.Counter
         public int getCountLocked(int i) {
             int i2;
             int i3 = this.mCount.get();
@@ -459,7 +459,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return i2;
         }
 
-        @Override // android.os.BatteryStats.Counter
         public void logState(Printer printer, String str) {
             printer.println(str + "mCount=" + this.mCount.get() + " mLoadedCount=" + this.mLoadedCount + " mLastCount=" + this.mLastCount + " mUnpluggedCount=" + this.mUnpluggedCount + " mPluggedCount=" + this.mPluggedCount);
         }
@@ -556,7 +555,6 @@ public class BatteryStatsImpl extends BatteryStats {
             this.mTimeBase.remove(this);
         }
 
-        @Override // android.os.BatteryStats.LongCounter
         public long getCountLocked(int i) {
             long j;
             long j2 = this.mCount;
@@ -571,7 +569,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return j;
         }
 
-        @Override // android.os.BatteryStats.LongCounter
         public void logState(Printer printer, String str) {
             printer.println(str + "mCount=" + this.mCount + " mLoadedCount=" + this.mLoadedCount + " mLastCount=" + this.mLastCount + " mUnpluggedCount=" + this.mUnpluggedCount + " mPluggedCount=" + this.mPluggedCount);
         }
@@ -812,7 +809,7 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mUpdateVersion;
         }
 
-        @Override // com.android.internal.os.BatteryStatsImpl.Timer, android.os.BatteryStats.Timer
+        @Override // com.android.internal.os.BatteryStatsImpl.Timer
         public void logState(Printer printer, String str) {
             super.logState(printer, str);
             printer.println(str + "mCurrentReportedCount=" + this.mCurrentReportedCount + " mUnpluggedReportedCount=" + this.mUnpluggedReportedCount + " mCurrentReportedTotalTime=" + this.mCurrentReportedTotalTime + " mUnpluggedReportedTotalTime=" + this.mUnpluggedReportedTotalTime);
@@ -996,7 +993,7 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mNesting > 0;
         }
 
-        @Override // com.android.internal.os.BatteryStatsImpl.Timer, android.os.BatteryStats.Timer
+        @Override // com.android.internal.os.BatteryStatsImpl.Timer
         public void logState(Printer printer, String str) {
             super.logState(printer, str);
             printer.println(str + "mNesting=" + this.mNesting + " mUpdateTime=" + this.mUpdateTime + " mAcquireTime=" + this.mAcquireTime);
@@ -1355,7 +1352,6 @@ public class BatteryStatsImpl extends BatteryStats {
             this.mTimeBase.remove(this);
         }
 
-        @Override // android.os.BatteryStats.Timer
         public int getCountLocked(int i) {
             int i2;
             int computeCurrentCountLocked = computeCurrentCountLocked();
@@ -1370,7 +1366,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return i2;
         }
 
-        @Override // android.os.BatteryStats.Timer
         public long getTotalTimeLocked(long j, int i) {
             long j2;
             long computeRunTimeLocked = computeRunTimeLocked(this.mTimeBase.getRealtime(j));
@@ -1385,7 +1380,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return j2;
         }
 
-        @Override // android.os.BatteryStats.Timer
         public void logState(Printer printer, String str) {
             printer.println(str + "mCount=" + this.mCount + " mLoadedCount=" + this.mLoadedCount + " mLastCount=" + this.mLastCount + " mUnpluggedCount=" + this.mUnpluggedCount);
             printer.println(str + "mTotalTime=" + this.mTotalTime + " mLoadedTime=" + this.mLoadedTime);
@@ -1537,7 +1531,7 @@ public class BatteryStatsImpl extends BatteryStats {
                 int mUnpluggedStarts;
 
                 Serv() {
-                    super();
+                    super(Pkg.this);
                     BatteryStatsImpl.this.mOnBatteryTimeBase.add(this);
                 }
 
@@ -1553,7 +1547,6 @@ public class BatteryStatsImpl extends BatteryStats {
                     return !this.mLaunched ? this.mLaunchedTime : (this.mLaunchedTime + j) - this.mLaunchedSince;
                 }
 
-                @Override // android.os.BatteryStats.Uid.Pkg.Serv
                 public int getLaunches(int i) {
                     int i2;
                     int i3 = this.mLaunches;
@@ -1568,7 +1561,6 @@ public class BatteryStatsImpl extends BatteryStats {
                     return i2;
                 }
 
-                @Override // android.os.BatteryStats.Uid.Pkg.Serv
                 public long getStartTime(long j, int i) {
                     long j2;
                     long startTimeToNowLocked = getStartTimeToNowLocked(j);
@@ -1587,7 +1579,6 @@ public class BatteryStatsImpl extends BatteryStats {
                     return !this.mRunning ? this.mStartTime : (this.mStartTime + j) - this.mRunningSince;
                 }
 
-                @Override // android.os.BatteryStats.Uid.Pkg.Serv
                 public int getStarts(int i) {
                     int i2;
                     int i3 = this.mStarts;
@@ -1705,12 +1696,10 @@ public class BatteryStatsImpl extends BatteryStats {
                 return BatteryStatsImpl.this;
             }
 
-            @Override // android.os.BatteryStats.Uid.Pkg
             public Map<String, ? extends BatteryStats.Uid.Pkg.Serv> getServiceStats() {
                 return this.mServiceStats;
             }
 
-            @Override // android.os.BatteryStats.Uid.Pkg
             public int getWakeups(int i) {
                 int i2;
                 int i3 = this.mWakeups;
@@ -1859,7 +1848,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 }
             }
 
-            @Override // android.os.BatteryStats.Uid.Proc
             public int countExcessivePowers() {
                 if (this.mExcessivePower != null) {
                     return this.mExcessivePower.size();
@@ -1889,7 +1877,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 return BatteryStatsImpl.this;
             }
 
-            @Override // android.os.BatteryStats.Uid.Proc
             public BatteryStats.Uid.Proc.ExcessivePower getExcessivePower(int i) {
                 if (this.mExcessivePower != null) {
                     return this.mExcessivePower.get(i);
@@ -1897,7 +1884,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 return null;
             }
 
-            @Override // android.os.BatteryStats.Uid.Proc
             public long getForegroundTime(int i) {
                 long j;
                 long j2 = this.mForegroundTime;
@@ -1912,7 +1898,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 return j;
             }
 
-            @Override // android.os.BatteryStats.Uid.Proc
             public int getNumAnrs(int i) {
                 int i2;
                 int i3 = this.mNumAnrs;
@@ -1927,7 +1912,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 return i2;
             }
 
-            @Override // android.os.BatteryStats.Uid.Proc
             public int getNumCrashes(int i) {
                 int i2;
                 int i3 = this.mNumCrashes;
@@ -1942,7 +1926,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 return i2;
             }
 
-            @Override // android.os.BatteryStats.Uid.Proc
             public int getStarts(int i) {
                 int i2;
                 int i3 = this.mStarts;
@@ -1957,7 +1940,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 return i2;
             }
 
-            @Override // android.os.BatteryStats.Uid.Proc
             public long getSystemTime(int i) {
                 long j;
                 long j2 = this.mSystemTime;
@@ -1972,7 +1954,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 return j;
             }
 
-            @Override // android.os.BatteryStats.Uid.Proc
             public long getTimeAtCpuSpeedStep(int i, int i2) {
                 long j = 0;
                 if (i < this.mSpeedBins.length) {
@@ -1985,7 +1966,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 return j;
             }
 
-            @Override // android.os.BatteryStats.Uid.Proc
             public long getUserTime(int i) {
                 long j;
                 long j2 = this.mUserTime;
@@ -2012,7 +1992,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 this.mStarts++;
             }
 
-            @Override // android.os.BatteryStats.Uid.Proc
             public boolean isActive() {
                 return this.mActive;
             }
@@ -2213,12 +2192,10 @@ public class BatteryStatsImpl extends BatteryStats {
                 return new StopwatchTimer(Uid.this, 0, arrayList2, timeBase, parcel);
             }
 
-            @Override // android.os.BatteryStats.Uid.Sensor
             public int getHandle() {
                 return this.mHandle;
             }
 
-            @Override // android.os.BatteryStats.Uid.Sensor
             public Timer getSensorTime() {
                 return this.mTimer;
             }
@@ -2287,7 +2264,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 }
             }
 
-            @Override // android.os.BatteryStats.Uid.Wakelock
             public Timer getWakeTime(int i) {
                 switch (i) {
                     case 0:
@@ -2380,7 +2356,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mVideoTurnedOnTimer;
         }
 
-        @Override // android.os.BatteryStats.Uid
         public long getAudioTurnedOnTime(long j, int i) {
             if (this.mAudioTurnedOnTimer == null) {
                 return 0L;
@@ -2392,12 +2367,10 @@ public class BatteryStatsImpl extends BatteryStats {
             return BatteryStatsImpl.this;
         }
 
-        @Override // android.os.BatteryStats.Uid
         public Timer getForegroundActivityTimer() {
             return this.mForegroundActivityTimer;
         }
 
-        @Override // android.os.BatteryStats.Uid
         public long getFullWifiLockTime(long j, int i) {
             if (this.mFullWifiLockTimer == null) {
                 return 0L;
@@ -2405,12 +2378,10 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mFullWifiLockTimer.getTotalTimeLocked(j, i);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public Map<String, ? extends BatteryStats.Timer> getJobStats() {
             return this.mJobStats.getMap();
         }
 
-        @Override // android.os.BatteryStats.Uid
         public int getMobileRadioActiveCount(int i) {
             if (this.mMobileRadioActiveCount != null) {
                 return (int) this.mMobileRadioActiveCount.getCountLocked(i);
@@ -2418,7 +2389,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return 0;
         }
 
-        @Override // android.os.BatteryStats.Uid
         public long getMobileRadioActiveTime(int i) {
             if (this.mMobileRadioActiveTime != null) {
                 return this.mMobileRadioActiveTime.getCountLocked(i);
@@ -2426,7 +2396,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return 0L;
         }
 
-        @Override // android.os.BatteryStats.Uid
         public long getNetworkActivityBytes(int i, int i2) {
             if (this.mNetworkByteActivityCounters == null || i < 0 || i >= this.mNetworkByteActivityCounters.length) {
                 return 0L;
@@ -2434,7 +2403,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mNetworkByteActivityCounters[i].getCountLocked(i2);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public long getNetworkActivityPackets(int i, int i2) {
             if (this.mNetworkPacketActivityCounters == null || i < 0 || i >= this.mNetworkPacketActivityCounters.length) {
                 return 0L;
@@ -2442,7 +2410,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mNetworkPacketActivityCounters[i].getCountLocked(i2);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public Map<String, ? extends BatteryStats.Uid.Pkg> getPackageStats() {
             return this.mPackageStats;
         }
@@ -2457,7 +2424,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return pkg2;
         }
 
-        @Override // android.os.BatteryStats.Uid
         public SparseArray<? extends BatteryStats.Uid.Pid> getPidStats() {
             return this.mPids;
         }
@@ -2466,13 +2432,12 @@ public class BatteryStatsImpl extends BatteryStats {
             BatteryStats.Uid.Pid pid = this.mPids.get(i);
             BatteryStats.Uid.Pid pid2 = pid;
             if (pid == null) {
-                pid2 = new BatteryStats.Uid.Pid();
+                pid2 = new BatteryStats.Uid.Pid(this);
                 this.mPids.put(i, pid2);
             }
             return pid2;
         }
 
-        @Override // android.os.BatteryStats.Uid
         public long getProcessStateTime(int i, long j, int i2) {
             if (i < 0 || i >= 3 || this.mProcessStateTimer[i] == null) {
                 return 0L;
@@ -2480,7 +2445,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mProcessStateTimer[i].getTotalTimeLocked(j, i2);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public Map<String, ? extends BatteryStats.Uid.Proc> getProcessStats() {
             return this.mProcessStats;
         }
@@ -2495,7 +2459,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return proc2;
         }
 
-        @Override // android.os.BatteryStats.Uid
         public SparseArray<? extends BatteryStats.Uid.Sensor> getSensorStats() {
             return this.mSensorStats;
         }
@@ -2539,17 +2502,14 @@ public class BatteryStatsImpl extends BatteryStats {
             return serv2;
         }
 
-        @Override // android.os.BatteryStats.Uid
         public Map<String, ? extends BatteryStats.Timer> getSyncStats() {
             return this.mSyncStats.getMap();
         }
 
-        @Override // android.os.BatteryStats.Uid
         public int getUid() {
             return this.mUid;
         }
 
-        @Override // android.os.BatteryStats.Uid
         public int getUserActivityCount(int i, int i2) {
             if (this.mUserActivityCounters == null) {
                 return 0;
@@ -2557,12 +2517,10 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mUserActivityCounters[i].getCountLocked(i2);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public Timer getVibratorOnTimer() {
             return this.mVibratorOnTimer;
         }
 
-        @Override // android.os.BatteryStats.Uid
         public long getVideoTurnedOnTime(long j, int i) {
             if (this.mVideoTurnedOnTimer == null) {
                 return 0L;
@@ -2570,12 +2528,10 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mVideoTurnedOnTimer.getTotalTimeLocked(j, i);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public Map<String, ? extends BatteryStats.Uid.Wakelock> getWakelockStats() {
             return this.mWakelockStats.getMap();
         }
 
-        @Override // android.os.BatteryStats.Uid
         public long getWifiBatchedScanTime(int i, long j, int i2) {
             if (i < 0 || i >= 5 || this.mWifiBatchedScanTimer[i] == null) {
                 return 0L;
@@ -2583,7 +2539,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mWifiBatchedScanTimer[i].getTotalTimeLocked(j, i2);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public long getWifiMulticastTime(long j, int i) {
             if (this.mWifiMulticastTimer == null) {
                 return 0L;
@@ -2591,7 +2546,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mWifiMulticastTimer.getTotalTimeLocked(j, i);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public long getWifiRunningTime(long j, int i) {
             if (this.mWifiRunningTimer == null) {
                 return 0L;
@@ -2599,7 +2553,6 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mWifiRunningTimer.getTotalTimeLocked(j, i);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public long getWifiScanTime(long j, int i) {
             if (this.mWifiScanTimer == null) {
                 return 0L;
@@ -2607,12 +2560,10 @@ public class BatteryStatsImpl extends BatteryStats {
             return this.mWifiScanTimer.getTotalTimeLocked(j, i);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public boolean hasNetworkActivity() {
             return this.mNetworkByteActivityCounters != null;
         }
 
-        @Override // android.os.BatteryStats.Uid
         public boolean hasUserActivity() {
             return this.mUserActivityCounters != null;
         }
@@ -2675,14 +2626,12 @@ public class BatteryStatsImpl extends BatteryStats {
             }
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteActivityPausedLocked(long j) {
             if (this.mForegroundActivityTimer != null) {
                 this.mForegroundActivityTimer.stopRunningLocked(j);
             }
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteActivityResumedLocked(long j) {
             createForegroundActivityTimerLocked().startRunningLocked(j);
         }
@@ -2697,7 +2646,6 @@ public class BatteryStatsImpl extends BatteryStats {
             createAudioTurnedOnTimerLocked().startRunningLocked(j);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteFullWifiLockAcquiredLocked(long j) {
             if (this.mFullWifiLockOut) {
                 return;
@@ -2709,7 +2657,6 @@ public class BatteryStatsImpl extends BatteryStats {
             this.mFullWifiLockTimer.startRunningLocked(j);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteFullWifiLockReleasedLocked(long j) {
             if (this.mFullWifiLockOut) {
                 this.mFullWifiLockOut = false;
@@ -2838,7 +2785,6 @@ public class BatteryStatsImpl extends BatteryStats {
             }
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteUserActivityLocked(int i) {
             if (this.mUserActivityCounters == null) {
                 initUserActivityLocked();
@@ -2870,7 +2816,6 @@ public class BatteryStatsImpl extends BatteryStats {
             createVideoTurnedOnTimerLocked().startRunningLocked(j);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteWifiBatchedScanStartedLocked(int i, long j) {
             int i2;
             int i3 = i;
@@ -2896,7 +2841,6 @@ public class BatteryStatsImpl extends BatteryStats {
             this.mWifiBatchedScanTimer[i2].startRunningLocked(j);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteWifiBatchedScanStoppedLocked(long j) {
             if (this.mWifiBatchedScanBinStarted != -1) {
                 this.mWifiBatchedScanTimer[this.mWifiBatchedScanBinStarted].stopRunningLocked(j);
@@ -2904,7 +2848,6 @@ public class BatteryStatsImpl extends BatteryStats {
             }
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteWifiMulticastDisabledLocked(long j) {
             if (this.mWifiMulticastEnabled) {
                 this.mWifiMulticastEnabled = false;
@@ -2912,7 +2855,6 @@ public class BatteryStatsImpl extends BatteryStats {
             }
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteWifiMulticastEnabledLocked(long j) {
             if (this.mWifiMulticastEnabled) {
                 return;
@@ -2924,7 +2866,6 @@ public class BatteryStatsImpl extends BatteryStats {
             this.mWifiMulticastTimer.startRunningLocked(j);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteWifiRunningLocked(long j) {
             if (this.mWifiRunning) {
                 return;
@@ -2936,7 +2877,6 @@ public class BatteryStatsImpl extends BatteryStats {
             this.mWifiRunningTimer.startRunningLocked(j);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteWifiScanStartedLocked(long j) {
             if (this.mWifiScanStarted) {
                 return;
@@ -2948,7 +2888,6 @@ public class BatteryStatsImpl extends BatteryStats {
             this.mWifiScanTimer.startRunningLocked(j);
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteWifiScanStoppedLocked(long j) {
             if (this.mWifiScanStarted) {
                 this.mWifiScanStarted = false;
@@ -2956,7 +2895,6 @@ public class BatteryStatsImpl extends BatteryStats {
             }
         }
 
-        @Override // android.os.BatteryStats.Uid
         public void noteWifiStoppedLocked(long j) {
             if (this.mWifiRunning) {
                 this.mWifiRunning = false;
@@ -3978,7 +3916,7 @@ public class BatteryStatsImpl extends BatteryStats {
             if (i4 >= 5) {
                 break;
             }
-            this.mPhoneSignalStrengthsTimer[i4] = new StopwatchTimer(null, IOfflineCompo.Priority.HIGHEST - i4, null, this.mOnBatteryTimeBase);
+            this.mPhoneSignalStrengthsTimer[i4] = new StopwatchTimer(null, (-200) - i4, null, this.mOnBatteryTimeBase);
             i3 = i4 + 1;
         }
         this.mPhoneSignalScanningTimer = new StopwatchTimer(null, -199, null, this.mOnBatteryTimeBase);
@@ -4001,8 +3939,8 @@ public class BatteryStatsImpl extends BatteryStats {
             this.mNetworkPacketActivityCounters[i8] = new LongSamplingCounter(this.mOnBatteryTimeBase);
             i7 = i8 + 1;
         }
-        this.mMobileRadioActiveTimer = new StopwatchTimer(null, PackageManager.INSTALL_FAILED_THEME_AAPT_ERROR, null, this.mOnBatteryTimeBase);
-        this.mMobileRadioActivePerAppTimer = new StopwatchTimer(null, PackageManager.INSTALL_FAILED_THEME_IDMAP_ERROR, null, this.mOnBatteryTimeBase);
+        this.mMobileRadioActiveTimer = new StopwatchTimer(null, -400, null, this.mOnBatteryTimeBase);
+        this.mMobileRadioActivePerAppTimer = new StopwatchTimer(null, -401, null, this.mOnBatteryTimeBase);
         this.mMobileRadioActiveAdjustedTime = new LongSamplingCounter(this.mOnBatteryTimeBase);
         this.mMobileRadioActiveUnknownTime = new LongSamplingCounter(this.mOnBatteryTimeBase);
         this.mMobileRadioActiveUnknownCount = new LongSamplingCounter(this.mOnBatteryTimeBase);
@@ -4090,7 +4028,7 @@ public class BatteryStatsImpl extends BatteryStats {
                     long j5 = j4 / (i2 - i4);
                     long j6 = j4 - j5;
                     long j7 = j5;
-                    if (j5 > BatteryStats.STEP_LEVEL_TIME_MASK) {
+                    if (j5 > 1099511627775L) {
                         j7 = 1099511627775L;
                     }
                     jArr[0] = j7 | j2;
@@ -4134,7 +4072,7 @@ public class BatteryStatsImpl extends BatteryStats {
             if (i3 >= i) {
                 return j / i;
             }
-            j += jArr[i3] & BatteryStats.STEP_LEVEL_TIME_MASK;
+            j += jArr[i3] & 1099511627775L;
             i2 = i3 + 1;
         }
     }
@@ -4190,7 +4128,7 @@ public class BatteryStatsImpl extends BatteryStats {
     }
 
     private void initActiveHistoryEventsLocked(long j, long j2) {
-        HashMap<String, SparseIntArray> stateForEvent;
+        HashMap stateForEvent;
         int i = 0;
         while (true) {
             int i2 = i;
@@ -4198,13 +4136,13 @@ public class BatteryStatsImpl extends BatteryStats {
                 return;
             }
             if ((this.mRecordAllHistory || i2 != 1) && (stateForEvent = this.mActiveEvents.getStateForEvent(i2)) != null) {
-                for (Map.Entry<String, SparseIntArray> entry : stateForEvent.entrySet()) {
-                    SparseIntArray value = entry.getValue();
+                for (Map.Entry entry : stateForEvent.entrySet()) {
+                    SparseIntArray sparseIntArray = (SparseIntArray) entry.getValue();
                     int i3 = 0;
                     while (true) {
                         int i4 = i3;
-                        if (i4 < value.size()) {
-                            addHistoryEventLocked(j, j2, i2, entry.getKey(), value.keyAt(i4));
+                        if (i4 < sparseIntArray.size()) {
+                            addHistoryEventLocked(j, j2, i2, (String) entry.getKey(), sparseIntArray.keyAt(i4));
                             i3 = i4 + 1;
                         }
                     }
@@ -4367,7 +4305,7 @@ public class BatteryStatsImpl extends BatteryStats {
         if (this.mHandler.hasMessages(1)) {
             return;
         }
-        this.mHandler.sendMessageDelayed(this.mHandler.obtainMessage(1), 5000L);
+        this.mHandler.sendMessageDelayed(this.mHandler.obtainMessage(1), DELAY_UPDATE_WAKELOCKS);
     }
 
     private void resetAllStatsLocked() {
@@ -4599,7 +4537,7 @@ public class BatteryStatsImpl extends BatteryStats {
                 this.mCurMobileSnapshot = readNetworkStatsDetail;
                 this.mLastMobileSnapshot = networkStats;
                 if (this.mOnBatteryInternal) {
-                    NetworkStats subtract = NetworkStats.subtract(readNetworkStatsDetail, networkStats, null, null, this.mTmpNetworkStats);
+                    NetworkStats subtract = NetworkStats.subtract(readNetworkStatsDetail, networkStats, (NetworkStats.NonMonotonicObserver) null, (Object) null, this.mTmpNetworkStats);
                     this.mTmpNetworkStats = subtract;
                     long checkpointRunningLocked = this.mMobileRadioActivePerAppTimer.checkpointRunningLocked(j);
                     long totalPackets = subtract.getTotalPackets();
@@ -4657,7 +4595,7 @@ public class BatteryStatsImpl extends BatteryStats {
             if (!this.mOnBatteryInternal) {
                 return;
             }
-            NetworkStats subtract2 = NetworkStats.subtract(readNetworkStatsDetail2, networkStats2, null, null, this.mTmpNetworkStats);
+            NetworkStats subtract2 = NetworkStats.subtract(readNetworkStatsDetail2, networkStats2, (NetworkStats.NonMonotonicObserver) null, (Object) null, this.mTmpNetworkStats);
             this.mTmpNetworkStats = subtract2;
             int size2 = subtract2.size();
             int i3 = 0;
@@ -4807,7 +4745,6 @@ public class BatteryStatsImpl extends BatteryStats {
         this.mLastRecordedClockRealtime = 0L;
     }
 
-    @Override // android.os.BatteryStats
     public void commitCurrentHistoryBatchLocked() {
         this.mHistoryLastWritten.cmd = (byte) -1;
     }
@@ -4837,22 +4774,18 @@ public class BatteryStatsImpl extends BatteryStats {
         }
     }
 
-    @Override // android.os.BatteryStats
     public long computeBatteryRealtime(long j, int i) {
         return this.mOnBatteryTimeBase.computeRealtime(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public long computeBatteryScreenOffRealtime(long j, int i) {
         return this.mOnBatteryScreenOffTimeBase.computeRealtime(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public long computeBatteryScreenOffUptime(long j, int i) {
         return this.mOnBatteryScreenOffTimeBase.computeUptime(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public long computeBatteryTimeRemaining(long j) {
         if (this.mOnBattery && this.mNumDischargeStepDurations >= 1) {
             long computeTimePerLevel = computeTimePerLevel(this.mDischargeStepDurations, this.mNumDischargeStepDurations);
@@ -4864,12 +4797,10 @@ public class BatteryStatsImpl extends BatteryStats {
         return -1L;
     }
 
-    @Override // android.os.BatteryStats
     public long computeBatteryUptime(long j, int i) {
         return this.mOnBatteryTimeBase.computeUptime(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public long computeChargeTimeRemaining(long j) {
         if (!this.mOnBattery && this.mNumChargeStepDurations >= 1) {
             long computeTimePerLevel = computeTimePerLevel(this.mChargeStepDurations, this.mNumChargeStepDurations);
@@ -4881,7 +4812,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return -1L;
     }
 
-    @Override // android.os.BatteryStats
     public long computeRealtime(long j, int i) {
         switch (i) {
             case 0:
@@ -4895,7 +4825,6 @@ public class BatteryStatsImpl extends BatteryStats {
         }
     }
 
-    @Override // android.os.BatteryStats
     public long computeUptime(long j, int i) {
         switch (i) {
             case 0:
@@ -4909,7 +4838,6 @@ public class BatteryStatsImpl extends BatteryStats {
         }
     }
 
-    @Override // android.os.Parcelable
     public int describeContents() {
         return 0;
     }
@@ -4976,7 +4904,6 @@ public class BatteryStatsImpl extends BatteryStats {
         }
     }
 
-    @Override // android.os.BatteryStats
     public void dumpLocked(Context context, PrintWriter printWriter, int i, int i2, long j) {
         super.dumpLocked(context, printWriter, i, i2, j);
     }
@@ -5097,14 +5024,12 @@ public class BatteryStatsImpl extends BatteryStats {
         }
     }
 
-    @Override // android.os.BatteryStats
     public void finishIteratingHistoryLocked() {
         this.mIteratingHistory = false;
         this.mHistoryBuffer.setDataPosition(this.mHistoryBuffer.dataSize());
         this.mReadHistoryStrings = null;
     }
 
-    @Override // android.os.BatteryStats
     public void finishIteratingOldHistoryLocked() {
         this.mIteratingHistory = false;
         this.mHistoryBuffer.setDataPosition(this.mHistoryBuffer.dataSize());
@@ -5119,12 +5044,10 @@ public class BatteryStatsImpl extends BatteryStats {
         return (SystemClock.uptimeMillis() * 1000) - getAwakeTimeBattery();
     }
 
-    @Override // android.os.BatteryStats
     public long getBatteryRealtime(long j) {
         return this.mOnBatteryTimeBase.getRealtime(j);
     }
 
-    @Override // android.os.BatteryStats
     public long getBatteryUptime(long j) {
         return this.mOnBatteryTimeBase.getUptime(j);
     }
@@ -5133,12 +5056,10 @@ public class BatteryStatsImpl extends BatteryStats {
         return this.mOnBatteryTimeBase.getUptime(SystemClock.uptimeMillis() * 1000);
     }
 
-    @Override // android.os.BatteryStats
     public long getBluetoothOnTime(long j, int i) {
         return this.mBluetoothOnTimer.getTotalTimeLocked(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public int getBluetoothPingCount() {
         if (this.mBluetoothPingStart == -1) {
             return this.mBluetoothPingCount;
@@ -5149,27 +5070,22 @@ public class BatteryStatsImpl extends BatteryStats {
         return 0;
     }
 
-    @Override // android.os.BatteryStats
     public int getBluetoothStateCount(int i, int i2) {
         return this.mBluetoothStateTimer[i].getCountLocked(i2);
     }
 
-    @Override // android.os.BatteryStats
     public long getBluetoothStateTime(int i, long j, int i2) {
         return this.mBluetoothStateTimer[i].getTotalTimeLocked(j, i2);
     }
 
-    @Override // android.os.BatteryStats
     public long[] getChargeStepDurationsArray() {
         return this.mChargeStepDurations;
     }
 
-    @Override // android.os.BatteryStats
     public int getCpuSpeedSteps() {
         return sNumSpeedSteps;
     }
 
-    @Override // android.os.BatteryStats
     public int getDischargeAmount(int i) {
         int highDischargeAmountSinceCharge = i == 0 ? getHighDischargeAmountSinceCharge() : getDischargeStartLevel() - getDischargeCurrentLevel();
         int i2 = highDischargeAmountSinceCharge;
@@ -5179,7 +5095,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return i2;
     }
 
-    @Override // android.os.BatteryStats
     public int getDischargeAmountScreenOff() {
         int i;
         synchronized (this) {
@@ -5198,7 +5113,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return i;
     }
 
-    @Override // android.os.BatteryStats
     public int getDischargeAmountScreenOffSinceCharge() {
         int i;
         synchronized (this) {
@@ -5217,7 +5131,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return i;
     }
 
-    @Override // android.os.BatteryStats
     public int getDischargeAmountScreenOn() {
         int i;
         synchronized (this) {
@@ -5236,7 +5149,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return i;
     }
 
-    @Override // android.os.BatteryStats
     public int getDischargeAmountScreenOnSinceCharge() {
         int i;
         synchronized (this) {
@@ -5255,7 +5167,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return i;
     }
 
-    @Override // android.os.BatteryStats
     public int getDischargeCurrentLevel() {
         int dischargeCurrentLevelLocked;
         synchronized (this) {
@@ -5268,7 +5179,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return this.mDischargeCurrentLevel;
     }
 
-    @Override // android.os.BatteryStats
     public int getDischargeStartLevel() {
         int dischargeStartLevelLocked;
         synchronized (this) {
@@ -5281,32 +5191,26 @@ public class BatteryStatsImpl extends BatteryStats {
         return this.mDischargeUnplugLevel;
     }
 
-    @Override // android.os.BatteryStats
     public long[] getDischargeStepDurationsArray() {
         return this.mDischargeStepDurations;
     }
 
-    @Override // android.os.BatteryStats
     public String getEndPlatformVersion() {
         return this.mEndPlatformVersion;
     }
 
-    @Override // android.os.BatteryStats
     public long getFlashlightOnCount(int i) {
         return this.mFlashlightOnTimer.getCountLocked(i);
     }
 
-    @Override // android.os.BatteryStats
     public long getFlashlightOnTime(long j, int i) {
         return this.mFlashlightOnTimer.getTotalTimeLocked(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public long getGlobalWifiRunningTime(long j, int i) {
         return this.mGlobalWifiRunningTimer.getTotalTimeLocked(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public int getHighDischargeAmountSinceCharge() {
         int i;
         synchronized (this) {
@@ -5322,52 +5226,42 @@ public class BatteryStatsImpl extends BatteryStats {
         return i;
     }
 
-    @Override // android.os.BatteryStats
     public long getHistoryBaseTime() {
         return this.mHistoryBaseTime;
     }
 
-    @Override // android.os.BatteryStats
     public int getHistoryStringPoolBytes() {
         return (this.mReadHistoryStrings.length * 12) + (this.mReadHistoryChars * 2);
     }
 
-    @Override // android.os.BatteryStats
     public int getHistoryStringPoolSize() {
         return this.mReadHistoryStrings.length;
     }
 
-    @Override // android.os.BatteryStats
     public String getHistoryTagPoolString(int i) {
         return this.mReadHistoryStrings[i];
     }
 
-    @Override // android.os.BatteryStats
     public int getHistoryTagPoolUid(int i) {
         return this.mReadHistoryUids[i];
     }
 
-    @Override // android.os.BatteryStats
     public int getHistoryTotalSize() {
         return 262144;
     }
 
-    @Override // android.os.BatteryStats
     public int getHistoryUsedSize() {
         return this.mHistoryBuffer.dataSize();
     }
 
-    @Override // android.os.BatteryStats
     public long getInteractiveTime(long j, int i) {
         return this.mInteractiveTimer.getTotalTimeLocked(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public boolean getIsOnBattery() {
         return this.mOnBattery;
     }
 
-    @Override // android.os.BatteryStats
     public Map<String, ? extends Timer> getKernelWakelockStats() {
         return this.mKernelWakelockStats;
     }
@@ -5390,7 +5284,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return "BatteryStats";
     }
 
-    @Override // android.os.BatteryStats
     public int getLowDischargeAmountSinceCharge() {
         int i;
         synchronized (this) {
@@ -5406,42 +5299,34 @@ public class BatteryStatsImpl extends BatteryStats {
         return i;
     }
 
-    @Override // android.os.BatteryStats
     public int getLowPowerModeEnabledCount(int i) {
         return this.mLowPowerModeEnabledTimer.getCountLocked(i);
     }
 
-    @Override // android.os.BatteryStats
     public long getLowPowerModeEnabledTime(long j, int i) {
         return this.mLowPowerModeEnabledTimer.getTotalTimeLocked(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public long getMobileRadioActiveAdjustedTime(int i) {
         return this.mMobileRadioActiveAdjustedTime.getCountLocked(i);
     }
 
-    @Override // android.os.BatteryStats
     public int getMobileRadioActiveCount(int i) {
         return this.mMobileRadioActiveTimer.getCountLocked(i);
     }
 
-    @Override // android.os.BatteryStats
     public long getMobileRadioActiveTime(long j, int i) {
         return this.mMobileRadioActiveTimer.getTotalTimeLocked(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public int getMobileRadioActiveUnknownCount(int i) {
         return (int) this.mMobileRadioActiveUnknownCount.getCountLocked(i);
     }
 
-    @Override // android.os.BatteryStats
     public long getMobileRadioActiveUnknownTime(int i) {
         return this.mMobileRadioActiveUnknownTime.getCountLocked(i);
     }
 
-    @Override // android.os.BatteryStats
     public long getNetworkActivityBytes(int i, int i2) {
         if (i < 0 || i >= this.mNetworkByteActivityCounters.length) {
             return 0L;
@@ -5449,7 +5334,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return this.mNetworkByteActivityCounters[i].getCountLocked(i2);
     }
 
-    @Override // android.os.BatteryStats
     public long getNetworkActivityPackets(int i, int i2) {
         if (i < 0 || i >= this.mNetworkPacketActivityCounters.length) {
             return 0L;
@@ -5457,7 +5341,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return this.mNetworkPacketActivityCounters[i].getCountLocked(i2);
     }
 
-    @Override // android.os.BatteryStats
     public boolean getNextHistoryLocked(BatteryStats.HistoryItem historyItem) {
         int dataPosition = this.mHistoryBuffer.dataPosition();
         if (dataPosition == 0) {
@@ -5476,7 +5359,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return true;
     }
 
-    @Override // android.os.BatteryStats
     public boolean getNextOldHistoryLocked(BatteryStats.HistoryItem historyItem) {
         boolean z = this.mHistoryBuffer.dataPosition() >= this.mHistoryBuffer.dataSize();
         if (!z) {
@@ -5502,7 +5384,7 @@ public class BatteryStatsImpl extends BatteryStats {
         } else if (historyItem.same(this.mHistoryReadTmp)) {
             return true;
         } else {
-            FastPrintWriter fastPrintWriter = new FastPrintWriter(new LogWriter(5, TAG));
+            FastPrintWriter fastPrintWriter = new FastPrintWriter((Writer) new LogWriter(5, TAG));
             fastPrintWriter.println("Histories differ!");
             fastPrintWriter.println("Old history:");
             new BatteryStats.HistoryPrinter().printNextItem(fastPrintWriter, historyItem, 0L, false, true);
@@ -5513,12 +5395,10 @@ public class BatteryStatsImpl extends BatteryStats {
         }
     }
 
-    @Override // android.os.BatteryStats
     public int getNumChargeStepDurations() {
         return this.mNumChargeStepDurations;
     }
 
-    @Override // android.os.BatteryStats
     public int getNumConnectivityChange(int i) {
         int i2;
         int i3 = this.mNumConnectivityChange;
@@ -5533,7 +5413,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return i2;
     }
 
-    @Override // android.os.BatteryStats
     public int getNumDischargeStepDurations() {
         return this.mNumDischargeStepDurations;
     }
@@ -5542,42 +5421,34 @@ public class BatteryStatsImpl extends BatteryStats {
         return getUidStatsLocked(mapUid(i)).getPackageStatsLocked(str);
     }
 
-    @Override // android.os.BatteryStats
     public int getParcelVersion() {
         return 116;
     }
 
-    @Override // android.os.BatteryStats
     public int getPhoneDataConnectionCount(int i, int i2) {
         return this.mPhoneDataConnectionsTimer[i].getCountLocked(i2);
     }
 
-    @Override // android.os.BatteryStats
     public long getPhoneDataConnectionTime(int i, long j, int i2) {
         return this.mPhoneDataConnectionsTimer[i].getTotalTimeLocked(j, i2);
     }
 
-    @Override // android.os.BatteryStats
     public int getPhoneOnCount(int i) {
         return this.mPhoneOnTimer.getCountLocked(i);
     }
 
-    @Override // android.os.BatteryStats
     public long getPhoneOnTime(long j, int i) {
         return this.mPhoneOnTimer.getTotalTimeLocked(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public long getPhoneSignalScanningTime(long j, int i) {
         return this.mPhoneSignalScanningTimer.getTotalTimeLocked(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public int getPhoneSignalStrengthCount(int i, int i2) {
         return this.mPhoneSignalStrengthsTimer[i].getCountLocked(i2);
     }
 
-    @Override // android.os.BatteryStats
     public long getPhoneSignalStrengthTime(int i, long j, int i2) {
         return this.mPhoneSignalStrengthsTimer[i].getTotalTimeLocked(j, i2);
     }
@@ -5604,17 +5475,14 @@ public class BatteryStatsImpl extends BatteryStats {
         return j3;
     }
 
-    @Override // android.os.BatteryStats
     public long getScreenBrightnessTime(int i, long j, int i2) {
         return this.mScreenBrightnessTimer[i].getTotalTimeLocked(j, i2);
     }
 
-    @Override // android.os.BatteryStats
     public int getScreenOnCount(int i) {
         return this.mScreenOnTimer.getCountLocked(i);
     }
 
-    @Override // android.os.BatteryStats
     public long getScreenOnTime(long j, int i) {
         return this.mScreenOnTimer.getTotalTimeLocked(j, i);
     }
@@ -5623,7 +5491,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return getUidStatsLocked(mapUid(i)).getServiceStatsLocked(str, str2);
     }
 
-    @Override // android.os.BatteryStats
     public long getStartClockTime() {
         if (!isStartClockTimeValid()) {
             this.mStartClockTime = System.currentTimeMillis();
@@ -5634,21 +5501,18 @@ public class BatteryStatsImpl extends BatteryStats {
         return this.mStartClockTime;
     }
 
-    @Override // android.os.BatteryStats
     public int getStartCount() {
         return this.mStartCount;
     }
 
-    @Override // android.os.BatteryStats
     public String getStartPlatformVersion() {
         return this.mStartPlatformVersion;
     }
 
     protected String getStatsName() {
-        return BatteryStats.SERVICE_NAME;
+        return "batterystats";
     }
 
-    @Override // android.os.BatteryStats
     public SparseArray<? extends BatteryStats.Uid> getUidStats() {
         return this.mUidStats;
     }
@@ -5663,7 +5527,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return uid2;
     }
 
-    @Override // android.os.BatteryStats
     public Map<String, ? extends Timer> getWakeupReasonStats() {
         return this.mWakeupReasonStats;
     }
@@ -5678,37 +5541,30 @@ public class BatteryStatsImpl extends BatteryStats {
         return samplingTimer2;
     }
 
-    @Override // android.os.BatteryStats
     public long getWifiOnTime(long j, int i) {
         return this.mWifiOnTimer.getTotalTimeLocked(j, i);
     }
 
-    @Override // android.os.BatteryStats
     public int getWifiSignalStrengthCount(int i, int i2) {
         return this.mWifiSignalStrengthsTimer[i].getCountLocked(i2);
     }
 
-    @Override // android.os.BatteryStats
     public long getWifiSignalStrengthTime(int i, long j, int i2) {
         return this.mWifiSignalStrengthsTimer[i].getTotalTimeLocked(j, i2);
     }
 
-    @Override // android.os.BatteryStats
     public int getWifiStateCount(int i, int i2) {
         return this.mWifiStateTimer[i].getCountLocked(i2);
     }
 
-    @Override // android.os.BatteryStats
     public long getWifiStateTime(int i, long j, int i2) {
         return this.mWifiStateTimer[i].getTotalTimeLocked(j, i2);
     }
 
-    @Override // android.os.BatteryStats
     public int getWifiSupplStateCount(int i, int i2) {
         return this.mWifiSupplStateTimer[i].getCountLocked(i2);
     }
 
-    @Override // android.os.BatteryStats
     public long getWifiSupplStateTime(int i, long j, int i2) {
         return this.mWifiSupplStateTimer[i].getTotalTimeLocked(j, i2);
     }
@@ -5968,8 +5824,8 @@ public class BatteryStatsImpl extends BatteryStats {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long uptimeMillis = SystemClock.uptimeMillis();
         getUidStatsLocked(mapUid).noteStopJobLocked(str, elapsedRealtime);
-        if (this.mActiveEvents.updateState(16390, str, mapUid, 0)) {
-            addHistoryEventLocked(elapsedRealtime, uptimeMillis, 16390, str, mapUid);
+        if (this.mActiveEvents.updateState((int) GL10.GL_LIGHT6, str, mapUid, 0)) {
+            addHistoryEventLocked(elapsedRealtime, uptimeMillis, GL10.GL_LIGHT6, str, mapUid);
         }
     }
 
@@ -5978,8 +5834,8 @@ public class BatteryStatsImpl extends BatteryStats {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long uptimeMillis = SystemClock.uptimeMillis();
         getUidStatsLocked(mapUid).noteStartJobLocked(str, elapsedRealtime);
-        if (this.mActiveEvents.updateState(32774, str, mapUid, 0)) {
-            addHistoryEventLocked(elapsedRealtime, uptimeMillis, 32774, str, mapUid);
+        if (this.mActiveEvents.updateState((int) GL11ExtensionPack.GL_FUNC_ADD, str, mapUid, 0)) {
+            addHistoryEventLocked(elapsedRealtime, uptimeMillis, GL11ExtensionPack.GL_FUNC_ADD, str, mapUid);
         }
     }
 
@@ -6181,12 +6037,12 @@ public class BatteryStatsImpl extends BatteryStats {
 
     public void noteProcessFinishLocked(String str, int i) {
         int mapUid = mapUid(i);
-        if (this.mActiveEvents.updateState(16385, str, mapUid, 0)) {
+        if (this.mActiveEvents.updateState((int) GL10.GL_LIGHT1, str, mapUid, 0)) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             long uptimeMillis = SystemClock.uptimeMillis();
             getUidStatsLocked(mapUid).updateProcessStateLocked(str, 3, elapsedRealtime);
             if (this.mRecordAllHistory) {
-                addHistoryEventLocked(elapsedRealtime, uptimeMillis, 16385, str, mapUid);
+                addHistoryEventLocked(elapsedRealtime, uptimeMillis, GL10.GL_LIGHT1, str, mapUid);
             }
         }
     }
@@ -6450,8 +6306,8 @@ public class BatteryStatsImpl extends BatteryStats {
                 if (str2 == null) {
                     str3 = str;
                 }
-                if (this.mActiveEvents.updateState(16389, str3, mapUid, 0)) {
-                    addHistoryEventLocked(j, j2, 16389, str3, mapUid);
+                if (this.mActiveEvents.updateState((int) GL10.GL_LIGHT5, str3, mapUid, 0)) {
+                    addHistoryEventLocked(j, j2, GL10.GL_LIGHT5, str3, mapUid);
                 }
             }
             if (this.mWakeLockNesting == 0) {
@@ -6664,7 +6520,7 @@ public class BatteryStatsImpl extends BatteryStats {
                 if (!this.mWifiSignalStrengthsTimer[calculateSignalLevel].isRunningLocked()) {
                     this.mWifiSignalStrengthsTimer[calculateSignalLevel].startRunningLocked(elapsedRealtime);
                 }
-                this.mHistoryCur.states2 = (this.mHistoryCur.states2 & PackageManager.INSTALL_FAILED_NO_MATCHING_ABIS) | (calculateSignalLevel << 4);
+                this.mHistoryCur.states2 = (this.mHistoryCur.states2 & (-113)) | (calculateSignalLevel << 4);
                 addHistoryRecordLocked(elapsedRealtime, uptimeMillis);
             } else {
                 stopAllWifiSignalStrengthTimersLocked(-1);
@@ -6822,7 +6678,6 @@ public class BatteryStatsImpl extends BatteryStats {
         }
     }
 
-    @Override // android.os.BatteryStats
     public void prepareForDumpLocked() {
         pullPendingStateUpdatesLocked();
         getStartClockTime();
@@ -6881,7 +6736,7 @@ public class BatteryStatsImpl extends BatteryStats {
             if (i4 >= 5) {
                 break;
             }
-            this.mPhoneSignalStrengthsTimer[i4] = new StopwatchTimer(null, IOfflineCompo.Priority.HIGHEST - i4, null, this.mOnBatteryTimeBase, parcel);
+            this.mPhoneSignalStrengthsTimer[i4] = new StopwatchTimer(null, (-200) - i4, null, this.mOnBatteryTimeBase, parcel);
             i3 = i4 + 1;
         }
         this.mPhoneSignalScanningTimer = new StopwatchTimer(null, -199, null, this.mOnBatteryTimeBase, parcel);
@@ -6905,8 +6760,8 @@ public class BatteryStatsImpl extends BatteryStats {
             i7 = i8 + 1;
         }
         this.mMobileRadioPowerState = DataConnectionRealTimeInfo.DC_POWER_STATE_LOW;
-        this.mMobileRadioActiveTimer = new StopwatchTimer(null, PackageManager.INSTALL_FAILED_THEME_AAPT_ERROR, null, this.mOnBatteryTimeBase, parcel);
-        this.mMobileRadioActivePerAppTimer = new StopwatchTimer(null, PackageManager.INSTALL_FAILED_THEME_IDMAP_ERROR, null, this.mOnBatteryTimeBase, parcel);
+        this.mMobileRadioActiveTimer = new StopwatchTimer(null, -400, null, this.mOnBatteryTimeBase, parcel);
+        this.mMobileRadioActivePerAppTimer = new StopwatchTimer(null, -401, null, this.mOnBatteryTimeBase, parcel);
         this.mMobileRadioActiveAdjustedTime = new LongSamplingCounter(this.mOnBatteryTimeBase, parcel);
         this.mMobileRadioActiveUnknownTime = new LongSamplingCounter(this.mOnBatteryTimeBase, parcel);
         this.mMobileRadioActiveUnknownCount = new LongSamplingCounter(this.mOnBatteryTimeBase, parcel);
@@ -7469,17 +7324,17 @@ public class BatteryStatsImpl extends BatteryStats {
     public void setRecordAllHistoryLocked(boolean z) {
         this.mRecordAllHistory = z;
         if (z) {
-            HashMap<String, SparseIntArray> stateForEvent = this.mActiveEvents.getStateForEvent(1);
+            HashMap stateForEvent = this.mActiveEvents.getStateForEvent(1);
             if (stateForEvent != null) {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 long uptimeMillis = SystemClock.uptimeMillis();
-                for (Map.Entry<String, SparseIntArray> entry : stateForEvent.entrySet()) {
-                    SparseIntArray value = entry.getValue();
+                for (Map.Entry entry : stateForEvent.entrySet()) {
+                    SparseIntArray sparseIntArray = (SparseIntArray) entry.getValue();
                     int i = 0;
                     while (true) {
                         int i2 = i;
-                        if (i2 < value.size()) {
-                            addHistoryEventLocked(elapsedRealtime, uptimeMillis, 32769, entry.getKey(), value.keyAt(i2));
+                        if (i2 < sparseIntArray.size()) {
+                            addHistoryEventLocked(elapsedRealtime, uptimeMillis, 32769, (String) entry.getKey(), sparseIntArray.keyAt(i2));
                             i = i2 + 1;
                         }
                     }
@@ -7489,17 +7344,17 @@ public class BatteryStatsImpl extends BatteryStats {
             return;
         }
         this.mActiveEvents.removeEvents(5);
-        HashMap<String, SparseIntArray> stateForEvent2 = this.mActiveEvents.getStateForEvent(1);
+        HashMap stateForEvent2 = this.mActiveEvents.getStateForEvent(1);
         if (stateForEvent2 != null) {
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
             long uptimeMillis2 = SystemClock.uptimeMillis();
-            for (Map.Entry<String, SparseIntArray> entry2 : stateForEvent2.entrySet()) {
-                SparseIntArray value2 = entry2.getValue();
+            for (Map.Entry entry2 : stateForEvent2.entrySet()) {
+                SparseIntArray sparseIntArray2 = (SparseIntArray) entry2.getValue();
                 int i3 = 0;
                 while (true) {
                     int i4 = i3;
-                    if (i4 < value2.size()) {
-                        addHistoryEventLocked(elapsedRealtime2, uptimeMillis2, 16385, entry2.getKey(), value2.keyAt(i4));
+                    if (i4 < sparseIntArray2.size()) {
+                        addHistoryEventLocked(elapsedRealtime2, uptimeMillis2, GL10.GL_LIGHT1, (String) entry2.getKey(), sparseIntArray2.keyAt(i4));
                         i3 = i4 + 1;
                     }
                 }
@@ -7540,7 +7395,6 @@ public class BatteryStatsImpl extends BatteryStats {
         }
     }
 
-    @Override // android.os.BatteryStats
     public boolean startIteratingHistoryLocked() {
         if (this.mHistoryBuffer.dataSize() <= 0) {
             return false;
@@ -7561,7 +7415,6 @@ public class BatteryStatsImpl extends BatteryStats {
         return true;
     }
 
-    @Override // android.os.BatteryStats
     public boolean startIteratingOldHistoryLocked() {
         BatteryStats.HistoryItem historyItem = this.mHistory;
         this.mHistoryIterator = historyItem;
@@ -8142,7 +7995,6 @@ public class BatteryStatsImpl extends BatteryStats {
         writeLocked(true);
     }
 
-    @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         writeToParcelLocked(parcel, true, i);
     }
@@ -8318,7 +8170,6 @@ public class BatteryStatsImpl extends BatteryStats {
         }
     }
 
-    @Override // android.os.BatteryStats
     public void writeToParcelWithoutUids(Parcel parcel, int i) {
         writeToParcelLocked(parcel, false, i);
     }

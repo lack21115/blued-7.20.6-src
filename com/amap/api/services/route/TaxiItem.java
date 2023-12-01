@@ -25,13 +25,9 @@ public class TaxiItem implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private LatLonPoint f5768a;
+    private LatLonPoint a;
     private LatLonPoint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f5769c;
+    private float c;
     private float d;
     private String e;
     private String f;
@@ -40,9 +36,9 @@ public class TaxiItem implements Parcelable {
     }
 
     protected TaxiItem(Parcel parcel) {
-        this.f5768a = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
+        this.a = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
         this.b = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
-        this.f5769c = parcel.readFloat();
+        this.c = parcel.readFloat();
         this.d = parcel.readFloat();
         this.e = parcel.readString();
         this.f = parcel.readString();
@@ -58,7 +54,7 @@ public class TaxiItem implements Parcelable {
     }
 
     public float getDistance() {
-        return this.f5769c;
+        return this.c;
     }
 
     public float getDuration() {
@@ -66,7 +62,7 @@ public class TaxiItem implements Parcelable {
     }
 
     public LatLonPoint getOrigin() {
-        return this.f5768a;
+        return this.a;
     }
 
     public String getmSname() {
@@ -82,7 +78,7 @@ public class TaxiItem implements Parcelable {
     }
 
     public void setDistance(float f) {
-        this.f5769c = f;
+        this.c = f;
     }
 
     public void setDuration(float f) {
@@ -90,7 +86,7 @@ public class TaxiItem implements Parcelable {
     }
 
     public void setOrigin(LatLonPoint latLonPoint) {
-        this.f5768a = latLonPoint;
+        this.a = latLonPoint;
     }
 
     public void setSname(String str) {
@@ -103,9 +99,9 @@ public class TaxiItem implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f5768a, i);
+        parcel.writeParcelable(this.a, i);
         parcel.writeParcelable(this.b, i);
-        parcel.writeFloat(this.f5769c);
+        parcel.writeFloat(this.c);
         parcel.writeFloat(this.d);
         parcel.writeString(this.e);
         parcel.writeString(this.f);

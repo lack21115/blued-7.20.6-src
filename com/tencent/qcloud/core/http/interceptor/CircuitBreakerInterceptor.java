@@ -1,6 +1,5 @@
 package com.tencent.qcloud.core.http.interceptor;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.qcloud.core.http.HttpRequest;
 import com.tencent.qcloud.core.http.HttpTask;
 import com.tencent.qcloud.core.http.QCloudHttpClient;
@@ -38,7 +37,7 @@ public class CircuitBreakerInterceptor implements Interceptor {
 
         String getResourceId(HttpTask httpTask) {
             HttpRequest request = httpTask.request();
-            return request.method() + request.url().getHost() + BridgeUtil.SPLIT_MARK + request.url().getPath();
+            return request.method() + request.url().getHost() + "/" + request.url().getPath();
         }
 
         boolean noRecords(HttpTask httpTask) {
@@ -57,7 +56,6 @@ public class CircuitBreakerInterceptor implements Interceptor {
         HALF_OPENED
     }
 
-    @Override // okhttp3.Interceptor
     public Response intercept(Interceptor.Chain chain) throws IOException {
         boolean noRecords;
         Request request = chain.request();

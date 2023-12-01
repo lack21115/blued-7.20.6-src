@@ -7,6 +7,7 @@ import com.sdk.tencent.a.d;
 import com.sdk.tencent.base.api.CallBack;
 import com.sdk.tencent.base.framework.bean.DataInfo;
 import com.sdk.tencent.base.framework.utils.app.AppUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import org.json.JSONObject;
 
 /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/v/a.class */
@@ -15,23 +16,23 @@ public class a<T> {
     public static Boolean g = Boolean.valueOf(com.sdk.tencent.f.c.b);
 
     /* renamed from: a  reason: collision with root package name */
-    public CallBack<T> f28080a;
+    public CallBack<T> f14392a;
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public a<T>.b f28081c;
+    public a<T>.b f14393c;
     public com.sdk.tencent.a.c d;
     public int e;
 
     /* renamed from: com.sdk.tencent.v.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/v/a$a.class */
-    public class C0763a implements com.sdk.tencent.e.a<T> {
+    public class C0593a implements com.sdk.tencent.e.a<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f28082a;
+        public final /* synthetic */ int f14394a;
 
-        public C0763a(int i) {
-            this.f28082a = i;
+        public C0593a(int i) {
+            this.f14394a = i;
         }
 
         @Override // com.sdk.tencent.e.a
@@ -46,9 +47,9 @@ public class a<T> {
             String str3 = t;
             if (i == 0) {
                 Context context = a.this.b;
-                int i3 = this.f28082a;
-                String str4 = com.sdk.tencent.b.a.f28016a;
-                com.sdk.tencent.b.a.a(context, i3, t + "-" + str2, com.tencent.tendinsv.b.g);
+                int i3 = this.f14394a;
+                String str4 = com.sdk.tencent.b.a.f14328a;
+                com.sdk.tencent.b.a.a(context, i3, t + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str2, com.tencent.tendinsv.b.g);
                 try {
                     Context context2 = a.this.b;
                     String a2 = com.sdk.tencent.s.a.a(String.valueOf(t));
@@ -58,7 +59,7 @@ public class a<T> {
                     }
                     JSONObject jSONObject = new JSONObject(a2);
                     str3 = a2;
-                    if (this.f28082a == 1) {
+                    if (this.f14394a == 1) {
                         jSONObject.remove("fakeMobile");
                         str3 = jSONObject.toString();
                     }
@@ -74,7 +75,7 @@ public class a<T> {
     public class b implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public Handler f28083a = new Handler(Looper.getMainLooper());
+        public Handler f14395a = new Handler(Looper.getMainLooper());
         public long b;
 
         public b(long j) {
@@ -87,7 +88,7 @@ public class a<T> {
                 com.sdk.tencent.n.b.c(a.f, "超时，已取消请求", a.g);
                 a.this.d.a();
             }
-            a.this.a(1, "超时", 101005, null, com.sdk.tencent.n.c.a().f28045c);
+            a.this.a(1, "超时", 101005, null, com.sdk.tencent.n.c.a().f14357c);
         }
     }
 
@@ -102,7 +103,7 @@ public class a<T> {
         } else if (!com.sdk.tencent.q.b.a(this.b)) {
             a(1, 201001, "操作频繁请,稍后再试");
         } else {
-            com.sdk.tencent.x.a aVar = new com.sdk.tencent.x.a(this.b, new C0763a(i));
+            com.sdk.tencent.x.a aVar = new com.sdk.tencent.x.a(this.b, new C0593a(i));
             DataInfo dataInfo = new DataInfo();
             dataInfo.putData("serviceType", Integer.valueOf(i));
             dataInfo.putData("privateIp", AppUtils.getLocalIPAddress());
@@ -112,21 +113,21 @@ public class a<T> {
     }
 
     public final void a(int i, int i2, String str) {
-        String str2 = com.sdk.tencent.n.c.a().f28045c;
+        String str2 = com.sdk.tencent.n.c.a().f14357c;
         String str3 = str2;
         if (com.sdk.tencent.n.b.a(str2).booleanValue()) {
             str3 = com.sdk.tencent.q.a.a(20);
         }
-        a<T>.b bVar = this.f28081c;
+        a<T>.b bVar = this.f14393c;
         if (bVar != null) {
-            bVar.f28083a.removeCallbacks(bVar);
+            bVar.f14395a.removeCallbacks(bVar);
         }
-        CallBack<T> callBack = this.f28080a;
+        CallBack<T> callBack = this.f14392a;
         if (callBack != null) {
             callBack.onFailed(i, i2, str, str3);
-            this.f28080a = null;
+            this.f14392a = null;
         }
-        String str4 = com.sdk.tencent.s.a.f28077a;
+        String str4 = com.sdk.tencent.s.a.f14389a;
     }
 
     public final void a(int i, String str, int i2, T t, String str2) {
@@ -134,20 +135,20 @@ public class a<T> {
         if (com.sdk.tencent.n.b.a(str2).booleanValue()) {
             str3 = com.sdk.tencent.q.a.a(20);
         }
-        a<T>.b bVar = this.f28081c;
+        a<T>.b bVar = this.f14393c;
         if (bVar != null) {
-            bVar.f28083a.removeCallbacks(bVar);
+            bVar.f14395a.removeCallbacks(bVar);
         }
-        CallBack<T> callBack = this.f28080a;
+        CallBack<T> callBack = this.f14392a;
         if (callBack != null) {
             callBack.onSuccess(i, str, i2, t, str3);
-            this.f28080a = null;
+            this.f14392a = null;
         }
-        String str4 = com.sdk.tencent.s.a.f28077a;
+        String str4 = com.sdk.tencent.s.a.f14389a;
     }
 
     public final void a(Context context, int i, CallBack<T> callBack) {
-        this.f28080a = callBack;
+        this.f14392a = callBack;
         this.b = context;
         int i2 = i;
         if (i <= 0) {
@@ -155,8 +156,8 @@ public class a<T> {
         }
         this.e = i2;
         a<T>.b bVar = new b(i2 * 1000);
-        this.f28081c = bVar;
-        bVar.f28083a.postDelayed(bVar, bVar.b);
+        this.f14393c = bVar;
+        bVar.f14395a.postDelayed(bVar, bVar.b);
         com.sdk.tencent.n.c.b();
     }
 }

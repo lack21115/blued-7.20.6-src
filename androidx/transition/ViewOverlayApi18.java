@@ -9,20 +9,20 @@ import android.view.ViewOverlay;
 public class ViewOverlayApi18 implements ViewOverlayImpl {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ViewOverlay f3500a;
+    private final ViewOverlay f3452a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ViewOverlayApi18(View view) {
-        this.f3500a = view.getOverlay();
+        this.f3452a = view.getOverlay();
     }
 
     @Override // androidx.transition.ViewOverlayImpl
     public void add(Drawable drawable) {
-        this.f3500a.add(drawable);
+        this.f3452a.add(drawable);
     }
 
     @Override // androidx.transition.ViewOverlayImpl
     public void remove(Drawable drawable) {
-        this.f3500a.remove(drawable);
+        this.f3452a.remove(drawable);
     }
 }

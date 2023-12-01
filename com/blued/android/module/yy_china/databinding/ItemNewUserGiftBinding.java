@@ -11,13 +11,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemNewUserGiftBinding.class */
 public final class ItemNewUserGiftBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16632a;
+    public final SquareImageView a;
     public final SquareImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeConstraintLayout f16633c;
+    public final ShapeConstraintLayout c;
     public final TextView d;
     public final ShapeTextView e;
     public final ShapeTextView f;
@@ -25,9 +21,9 @@ public final class ItemNewUserGiftBinding implements ViewBinding {
 
     private ItemNewUserGiftBinding(ConstraintLayout constraintLayout, SquareImageView squareImageView, SquareImageView squareImageView2, ShapeConstraintLayout shapeConstraintLayout, TextView textView, ShapeTextView shapeTextView, ShapeTextView shapeTextView2) {
         this.g = constraintLayout;
-        this.f16632a = squareImageView;
+        this.a = squareImageView;
         this.b = squareImageView2;
-        this.f16633c = shapeConstraintLayout;
+        this.c = shapeConstraintLayout;
         this.d = textView;
         this.e = shapeTextView;
         this.f = shapeTextView2;
@@ -68,7 +64,6 @@ public final class ItemNewUserGiftBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

@@ -32,13 +32,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/liveForMsg/ui/LiveSendMsgTransitionAnimView.class */
 public final class LiveSendMsgTransitionAnimView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13542a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f13543c;
+    private boolean c;
     private String d;
     private Activity e;
     private ViewGroup f;
@@ -142,7 +138,7 @@ public final class LiveSendMsgTransitionAnimView extends FrameLayout {
         if (cardView8 != null) {
             cardView8.addView(this.n);
         }
-        addView(this.l);
+        addView((View) this.l);
         CardView cardView9 = this.l;
         if (cardView9 == null) {
             return;
@@ -239,13 +235,13 @@ public final class LiveSendMsgTransitionAnimView extends FrameLayout {
         } else if (interpolation > 0.25f && (liveMsgBgFrameLayout = this$0.n) != null) {
             liveMsgBgFrameLayout.setAlpha((interpolation - 0.25f) * 4.0f);
         }
-        if (floatValue > 0.75d && !this$0.f13543c) {
+        if (floatValue > 0.75d && !this$0.c) {
             Runnable runnable = this$0.j;
             if (runnable != null) {
                 runnable.run();
             }
             this$0.j = null;
-            this$0.f13543c = true;
+            this$0.c = true;
         }
         if (interpolation <= 0.9f || (cardView = this$0.l) == null) {
             return;
@@ -388,7 +384,7 @@ public final class LiveSendMsgTransitionAnimView extends FrameLayout {
     }
 
     public final boolean getMSendFinish() {
-        return this.f13543c;
+        return this.c;
     }
 
     public final View getMSendMsgView() {
@@ -441,7 +437,7 @@ public final class LiveSendMsgTransitionAnimView extends FrameLayout {
     }
 
     public final void setMSendFinish(boolean z) {
-        this.f13543c = z;
+        this.c = z;
     }
 
     public final void setMSendMsgView(View view) {

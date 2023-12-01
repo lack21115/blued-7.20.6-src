@@ -27,10 +27,8 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/dialog/BluedAlertDialog.class */
 public class BluedAlertDialog extends Dialog {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final int[] f11097c = {R.drawable.selector_blued_dialog_blue_solid_btn_bg, R.drawable.selector_blued_dialog_blue_hollow_btn_bg, R.drawable.selector_blued_dialog_gary_hollow_btn_bg, 0};
-    private static final int[][] d = {new int[]{-16842919}, new int[]{16842919}};
+    private static final int[] c = {R.drawable.selector_blued_dialog_blue_solid_btn_bg, R.drawable.selector_blued_dialog_blue_hollow_btn_bg, R.drawable.selector_blued_dialog_gary_hollow_btn_bg, 0};
+    private static final int[][] d = {new int[]{-16842919}, new int[]{com.android.internal.R.attr.state_pressed}};
     private static final int[][] e = {new int[]{-1, -1}, new int[]{-13264385, -12094209}, new int[]{-5921102, -8814195}, new int[]{-5921102, -5921102}};
     private CharSequence A;
     private CharSequence B;
@@ -54,9 +52,7 @@ public class BluedAlertDialog extends Dialog {
     private boolean T;
     private boolean U;
     private boolean V;
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f11098a;
+    private int a;
     private List<String> b;
     private Context f;
     private CardView g;
@@ -82,24 +78,20 @@ public class BluedAlertDialog extends Dialog {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/dialog/BluedAlertDialog$Builder.class */
     public static class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final BluedAlertDialog f11104a;
+        private final BluedAlertDialog a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private boolean f11105c;
+        private boolean c;
         private boolean d;
         private boolean e;
         private boolean f;
         private boolean g;
 
         public Builder(Context context) {
-            this.f11104a = new BluedAlertDialog(context);
+            this.a = new BluedAlertDialog(context);
         }
 
         public Builder a(int i) {
-            this.f11104a.f11098a = i;
+            this.a.a = i;
             this.e = true;
             return this;
         }
@@ -108,17 +100,17 @@ public class BluedAlertDialog extends Dialog {
             if (i == 0) {
                 return this;
             }
-            a(this.f11104a.f.getString(i), onClickListener);
+            a(this.a.f.getString(i), onClickListener);
             return this;
         }
 
         public Builder a(DialogInterface.OnDismissListener onDismissListener) {
-            this.f11104a.L = onDismissListener;
+            this.a.L = onDismissListener;
             return this;
         }
 
         public Builder a(View view) {
-            this.f11104a.x = view;
+            this.a.x = view;
             return this;
         }
 
@@ -127,7 +119,7 @@ public class BluedAlertDialog extends Dialog {
                 if (TextUtils.isEmpty(charSequence.toString())) {
                     return this;
                 }
-                this.f11104a.A = charSequence.toString();
+                this.a.A = charSequence.toString();
             }
             return this;
         }
@@ -136,57 +128,57 @@ public class BluedAlertDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f11104a.C = charSequence;
-            this.f11104a.I = onClickListener;
+            this.a.C = charSequence;
+            this.a.I = onClickListener;
             return this;
         }
 
         public Builder a(boolean z) {
-            this.f11104a.z = z;
+            this.a.z = z;
             this.d = true;
             return this;
         }
 
         public BluedAlertDialog a() {
-            if (!this.e && this.f11105c) {
-                this.f11104a.f11098a = 1;
+            if (!this.e && this.c) {
+                this.a.a = 1;
             }
             if (!this.f) {
                 this.b = 1;
             }
-            if (!this.d && this.f11105c) {
-                this.f11104a.z = true;
+            if (!this.d && this.c) {
+                this.a.z = true;
             }
-            if (this.f11104a.f11098a != 1) {
-                this.f11104a.T = true;
+            if (this.a.a != 1) {
+                this.a.T = true;
                 if (!this.g) {
-                    this.f11104a.U = true;
+                    this.a.U = true;
                 }
-                BluedAlertDialog bluedAlertDialog = this.f11104a;
+                BluedAlertDialog bluedAlertDialog = this.a;
                 bluedAlertDialog.O = DensityUtils.a(bluedAlertDialog.f, 10.0f);
             } else {
-                this.f11104a.T = false;
+                this.a.T = false;
                 if (!this.g) {
-                    this.f11104a.U = false;
+                    this.a.U = false;
                 }
-                this.f11104a.Q = BluedAlertDialog.f11097c[this.b];
-                this.f11104a.R = BluedAlertDialog.e[this.b];
-                BluedAlertDialog bluedAlertDialog2 = this.f11104a;
+                this.a.Q = BluedAlertDialog.c[this.b];
+                this.a.R = BluedAlertDialog.e[this.b];
+                BluedAlertDialog bluedAlertDialog2 = this.a;
                 bluedAlertDialog2.P = DensityUtils.a(bluedAlertDialog2.f, 20.0f);
                 if (this.b == 3) {
-                    BluedAlertDialog bluedAlertDialog3 = this.f11104a;
+                    BluedAlertDialog bluedAlertDialog3 = this.a;
                     bluedAlertDialog3.S = DensityUtils.a(bluedAlertDialog3.f, 25.0f);
                 }
             }
-            if (!this.g && this.f11104a.z) {
-                BluedAlertDialog bluedAlertDialog4 = this.f11104a;
+            if (!this.g && this.a.z) {
+                BluedAlertDialog bluedAlertDialog4 = this.a;
                 bluedAlertDialog4.O = DensityUtils.a(bluedAlertDialog4.f, 0.0f);
             }
-            return this.f11104a;
+            return this.a;
         }
 
         public Builder b() {
-            this.f11104a.V = true;
+            this.a.V = true;
             return this;
         }
 
@@ -200,7 +192,7 @@ public class BluedAlertDialog extends Dialog {
             if (i == 0) {
                 return this;
             }
-            b(this.f11104a.f.getString(i), onClickListener);
+            b(this.a.f.getString(i), onClickListener);
             return this;
         }
 
@@ -208,7 +200,7 @@ public class BluedAlertDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f11104a.B = charSequence;
+            this.a.B = charSequence;
             return this;
         }
 
@@ -216,14 +208,14 @@ public class BluedAlertDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f11104a.D = charSequence;
-            this.f11104a.J = onClickListener;
+            this.a.D = charSequence;
+            this.a.J = onClickListener;
             return this;
         }
 
         public Builder b(boolean z) {
             this.g = true;
-            this.f11104a.U = z;
+            this.a.U = z;
             return this;
         }
 
@@ -231,24 +223,24 @@ public class BluedAlertDialog extends Dialog {
             if (i == 0) {
                 return this;
             }
-            this.f11105c = true;
-            this.f11104a.y = i;
+            this.c = true;
+            this.a.y = i;
             return this;
         }
 
         public Builder d(int i) {
-            return i == 0 ? this : a(this.f11104a.f.getString(i));
+            return i == 0 ? this : a(this.a.f.getString(i));
         }
 
         public Builder e(int i) {
-            return i == 0 ? this : b(this.f11104a.f.getString(i));
+            return i == 0 ? this : b(this.a.f.getString(i));
         }
 
         public Builder f(int i) {
             if (i == 0) {
                 return this;
             }
-            this.f11104a.E = i;
+            this.a.E = i;
             return this;
         }
 
@@ -256,7 +248,7 @@ public class BluedAlertDialog extends Dialog {
             if (i == 0) {
                 return this;
             }
-            this.f11104a.F = i;
+            this.a.F = i;
             return this;
         }
 
@@ -264,7 +256,7 @@ public class BluedAlertDialog extends Dialog {
             if (i == 0) {
                 return this;
             }
-            this.f11104a.H = i;
+            this.a.H = i;
             return this;
         }
 
@@ -272,7 +264,7 @@ public class BluedAlertDialog extends Dialog {
             if (i == 0) {
                 return this;
             }
-            this.f11104a.G = i;
+            this.a.G = i;
             return this;
         }
     }
@@ -297,27 +289,23 @@ public class BluedAlertDialog extends Dialog {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/dialog/BluedAlertDialog$SimpleAdapter.class */
     public static class SimpleAdapter extends RecyclerView.Adapter<SimpleHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private List<String> f11106a;
+        private List<String> a;
         private DialogInterface.OnClickListener b;
 
         public SimpleAdapter(List<String> list, DialogInterface.OnClickListener onClickListener) {
-            this.f11106a = list;
+            this.a = list;
             this.b = onClickListener;
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /* renamed from: a */
         public SimpleHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
             return new SimpleHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_blued_alert_dialog, (ViewGroup) null));
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /* renamed from: a */
         public void onBindViewHolder(SimpleHolder simpleHolder, int i) {
-            simpleHolder.f11108a.setText(this.f11106a.get(i));
-            simpleHolder.f11108a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.common.widget.dialog.BluedAlertDialog.SimpleAdapter.1
+            simpleHolder.a.setText(this.a.get(i));
+            simpleHolder.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.common.widget.dialog.BluedAlertDialog.SimpleAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
@@ -326,9 +314,8 @@ public class BluedAlertDialog extends Dialog {
             });
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            List<String> list = this.f11106a;
+            List<String> list = this.a;
             if (list == null) {
                 return 0;
             }
@@ -338,13 +325,11 @@ public class BluedAlertDialog extends Dialog {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/dialog/BluedAlertDialog$SimpleHolder.class */
     public static class SimpleHolder extends RecyclerView.ViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private TextView f11108a;
+        private TextView a;
 
         public SimpleHolder(View view) {
             super(view);
-            this.f11108a = (TextView) view.findViewById(R.id.tv_item);
+            this.a = (TextView) view.findViewById(R.id.tv_item);
         }
     }
 
@@ -368,7 +353,7 @@ public class BluedAlertDialog extends Dialog {
     }
 
     private void k() {
-        this.g = (CardView) findViewById(R.id.ll_root);
+        this.g = findViewById(R.id.ll_root);
         this.h = (LinearLayout) findViewById(R.id.ll_dialog);
         this.i = (ImageView) findViewById(R.id.iv_pic);
         this.j = (ImageView) findViewById(R.id.iv_close);
@@ -385,7 +370,7 @@ public class BluedAlertDialog extends Dialog {
         this.s = (LinearLayout) findViewById(R.id.ll_button_detailed);
         this.t = (TextView) findViewById(R.id.tv_positive_detailed);
         this.u = (TextView) findViewById(R.id.tv_negative_detailed);
-        this.v = (RecyclerView) findViewById(R.id.dialog_list_view);
+        this.v = findViewById(R.id.dialog_list_view);
         this.w = (FrameLayout) findViewById(R.id.ll_custom);
         l();
     }
@@ -397,7 +382,7 @@ public class BluedAlertDialog extends Dialog {
         o();
         p();
         q();
-        int i = this.f11098a;
+        int i = this.a;
         if (i == 0) {
             this.v.setVisibility(8);
             this.h.setVisibility(0);
@@ -727,7 +712,7 @@ public class BluedAlertDialog extends Dialog {
         k();
         Window window = getWindow();
         if (window != null) {
-            window.setBackgroundDrawableResource(17170445);
+            window.setBackgroundDrawableResource(com.android.internal.R.color.transparent);
         }
     }
 }

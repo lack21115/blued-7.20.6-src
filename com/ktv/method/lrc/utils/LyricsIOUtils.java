@@ -10,11 +10,11 @@ import java.util.Iterator;
 public class LyricsIOUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ArrayList<LyricsFileReader> f23699a;
+    private static ArrayList<LyricsFileReader> f10091a;
 
     static {
         ArrayList<LyricsFileReader> arrayList = new ArrayList<>();
-        f23699a = arrayList;
+        f10091a = arrayList;
         arrayList.add(new VttLyricsFileReader());
     }
 
@@ -24,7 +24,7 @@ public class LyricsIOUtils {
 
     public static LyricsFileReader a(String str) {
         String a2 = Utils.a(str);
-        Iterator<LyricsFileReader> it = f23699a.iterator();
+        Iterator<LyricsFileReader> it = f10091a.iterator();
         while (it.hasNext()) {
             LyricsFileReader next = it.next();
             if (next.a(a2)) {

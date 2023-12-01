@@ -87,7 +87,7 @@ import java.util.List;
 public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements View.OnClickListener, LiveSwipeRefreshObserver.IEnableRefeshObserver, LiveTabNewObserver.ILiveTabRefreshObserver, LiveTagsSetSelectedTab.iLiveTagsSetSelectedTab, HomeTabClick.TabClickListener, LiveHotViewScrollObserver.IScrollObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public List<LiveTabModel> f31167a;
+    public List<LiveTabModel> f17477a;
     @BindView
     AutoScrollViewPager asvp_banner_hot_new;
     @BindView
@@ -95,7 +95,7 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
     public List<LiveTabModel> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public LiveTabModel f31168c;
+    public LiveTabModel f17478c;
     private Context f;
     @BindView
     CustomTwoLevelHeader header;
@@ -210,7 +210,7 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             if (LiveHomeFragment.this.n == null || LiveHomeFragment.this.n.size() < i) {
-                View inflate = LayoutInflater.from(LiveHomeFragment.this.f).inflate(2131559775, viewGroup, false);
+                View inflate = LayoutInflater.from(LiveHomeFragment.this.f).inflate(R.layout.item_live_banner_new, viewGroup, false);
                 LiveHomeFragment.this.g.add(inflate);
                 return inflate;
             }
@@ -218,7 +218,7 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
             final String str = bannerModel.url;
             while (LiveHomeFragment.this.g.size() < LiveHomeFragment.this.n.size()) {
                 BannerViewHolder bannerViewHolder = new BannerViewHolder();
-                View inflate2 = LayoutInflater.from(LiveHomeFragment.this.f).inflate(2131559775, viewGroup, false);
+                View inflate2 = LayoutInflater.from(LiveHomeFragment.this.f).inflate(R.layout.item_live_banner_new, viewGroup, false);
                 Unbinder a2 = ButterKnife.a(bannerViewHolder, inflate2);
                 LiveHomeFragment.this.g.add(inflate2);
                 LiveHomeFragment.this.k.add(bannerViewHolder);
@@ -235,7 +235,7 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     if (!TextUtils.isEmpty(bannerModel.anchor_id)) {
-                        LiveHomeFragment.this.j().d(bannerModel.anchor_id);
+                        ((LiveHomePresenter) LiveHomeFragment.this.j()).d(bannerModel.anchor_id);
                         return;
                     }
                     FindHttpUtils.b(bannerModel.click_url);
@@ -271,7 +271,7 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
 
         public BannerViewHolder_ViewBinding(BannerViewHolder bannerViewHolder, View view) {
             this.b = bannerViewHolder;
-            bannerViewHolder.aariv_banner = (ImageView) Utils.a(view, 2131361890, "field 'aariv_banner'", ImageView.class);
+            bannerViewHolder.aariv_banner = (ImageView) Utils.a(view, R.id.aariv_banner, "field 'aariv_banner'", ImageView.class);
         }
 
         @Override // butterknife.Unbinder
@@ -298,7 +298,7 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return LiveHomeFragment.this.f31167a.size();
+            return LiveHomeFragment.this.f17477a.size();
         }
 
         @Override // androidx.fragment.app.FragmentStatePagerAdapter
@@ -308,7 +308,7 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return LiveHomeFragment.this.f31167a.get(i).name;
+            return LiveHomeFragment.this.f17477a.get(i).name;
         }
 
         @Override // androidx.fragment.app.FragmentStatePagerAdapter, androidx.viewpager.widget.PagerAdapter
@@ -330,9 +330,9 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
     }
 
     private void G() {
-        this.f31167a = new ArrayList();
+        this.f17477a = new ArrayList();
         this.b = new ArrayList();
-        this.f31167a.add(0, new LiveTabModel("0", this.f.getString(2131889583), 0, 0));
+        this.f17477a.add(0, new LiveTabModel("0", this.f.getString(R.string.live_gift_hot), 0, 0));
     }
 
     private void H() {
@@ -341,13 +341,12 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
             if ((date.getYear() * 10000) + ((date.getMonth() + 1) * 100) + date.getDate() > LiveRoomPreferences.w()) {
                 LiveRoomHttpUtils.r(new BluedUIHttpResponse<BluedEntityA<LiveFirstChargeInfo>>(getFragmentActive()) { // from class: com.soft.blued.ui.live.fragment.LiveHomeFragment.3
                     /* JADX INFO: Access modifiers changed from: protected */
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<LiveFirstChargeInfo> bluedEntityA) {
                         if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                             return;
                         }
-                        int i = bluedEntityA.getSingleData().count;
+                        int i = ((LiveFirstChargeInfo) bluedEntityA.getSingleData()).count;
                         LiveRoomPreferences.e(i);
                         if (i == 0) {
                             LiveRoomHttpUtils.e();
@@ -363,7 +362,7 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         BannerPagerAdapter bannerPagerAdapter = new BannerPagerAdapter();
         this.m = bannerPagerAdapter;
         this.asvp_banner_hot_new.setAdapter(bannerPagerAdapter);
-        this.asvp_banner_hot_new.setInterval(m.ag);
+        this.asvp_banner_hot_new.setInterval((long) m.ag);
         this.lpi_line.setViewPager(this.asvp_banner_hot_new);
         this.ll_tab.setVisibility(8);
         this.header.b(300);
@@ -396,7 +395,7 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
                         }
                         EventTrackLive.b(LiveProtos.Event.LIVE_HOME_REFRESH_WORD_SHOW, LiveHomeFragment.this.q.lid, LiveHomeFragment.this.q.uid, LiveHomeFragment.this.q.id);
                     } else if (refreshState2 != RefreshState.ReleaseToTwoLevel && refreshState2 == RefreshState.TwoLevelReleased) {
-                        LiveHomeFragment.this.j().n();
+                        ((LiveHomePresenter) LiveHomeFragment.this.j()).n();
                         if (LiveHomeFragment.this.q == null) {
                             return;
                         }
@@ -421,7 +420,7 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
                     LiveTabNewObserver.a().d();
                     LiveTabNewObserver.a().c();
                     LiveHomeFragment.this.swipe_view.a();
-                    LiveHomeFragment.this.j().e();
+                    ((LiveHomePresenter) LiveHomeFragment.this.j()).e();
                     if (LiveHomeFragment.this.getParentFragment() instanceof LiveFragment) {
                         ((LiveFragment) LiveHomeFragment.this.getParentFragment()).b(true);
                     }
@@ -443,20 +442,21 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
             @Override // java.lang.Runnable
             public void run() {
                 if (LiveHomeFragment.this.y) {
-                    LiveHomeFragment.this.refreshLayout.b(LiveHomeFragment.this.header);
+                    LiveHomeFragment.this.refreshLayout.b((RefreshHeader) LiveHomeFragment.this.header);
                 }
             }
         });
-        j().a(true);
+        ((LiveHomePresenter) j()).a(true);
         A();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void J() {
-        j().a(false);
+        ((LiveHomePresenter) j()).a(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
     public void b(int i) {
         if (i != 0 || this.w || this.x) {
             return;
@@ -574,7 +574,6 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         I();
@@ -627,17 +626,17 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         this.ll_tab.setVisibility(0);
         this.b.clear();
         this.b.addAll(liveTabInfo.liveTabs);
-        this.f31168c = liveTabInfo.liveTabModelExtra;
+        this.f17478c = liveTabInfo.liveTabModelExtra;
         B();
         z();
-        if (this.f31168c != null) {
+        if (this.f17478c != null) {
             LiveTabModel liveTabModel = null;
             if (this.b != null) {
                 while (true) {
                     liveTabModel = null;
                     if (i >= this.b.size()) {
                         break;
-                    } else if (TextUtils.equals(this.f31168c.default_cate_id, this.b.get(i).id)) {
+                    } else if (TextUtils.equals(this.f17478c.default_cate_id, this.b.get(i).id)) {
                         liveTabModel = this.b.get(i);
                         break;
                     } else {
@@ -647,7 +646,7 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
             }
             LiveTabModel liveTabModel2 = liveTabModel;
             if (liveTabModel == null) {
-                liveTabModel2 = this.f31168c;
+                liveTabModel2 = this.f17478c;
                 liveTabModel2.id = liveTabModel2.default_cate_id;
             }
             a(liveTabModel2);
@@ -717,7 +716,6 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         this.lpi_line.a(this.asvp_banner_hot_new, 0);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
         this.y = false;
@@ -737,11 +735,9 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         LiveTagsSetSelectedTab.a().b(this);
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveTabNewObserver.ILiveTabRefreshObserver
     public void ag_() {
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveSwipeRefreshObserver.IEnableRefeshObserver
     public void b() {
         this.refreshLayout.j();
     }
@@ -760,7 +756,6 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         BluedPreferences.L(AppInfo.f().toJson(C));
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveTagsSetSelectedTab.iLiveTagsSetSelectedTab
     public void b(String str) {
         ViewPager b;
         ViewPager b2;
@@ -838,7 +833,6 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         A();
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveSwipeRefreshObserver.IEnableRefeshObserver
     public void c() {
         Log.i("xpm", "autoRefresh 1");
         this.refreshLayout.i();
@@ -882,7 +876,6 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         H();
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveTabNewObserver.ILiveTabRefreshObserver
     public void d() {
     }
 
@@ -893,11 +886,9 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         }
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveTabNewObserver.ILiveTabRefreshObserver
     public void e() {
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_live_home_view;
     }
@@ -923,20 +914,17 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         b.setCurrentItem(2);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.f = getActivity();
         G();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         HomeTabClick.b("live", this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         LiveListHotFragment D;
         super.onPause();
@@ -951,7 +939,6 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         D.b.d();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         LiveListHotFragment D;
         super.onResume();
@@ -973,7 +960,6 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         MyAdapter myAdapter;
         super.onStart();
@@ -983,7 +969,6 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         this.main_live_new_viewpager.setOffscreenPageLimit(this.o.getCount());
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
         this.x = true;
@@ -992,7 +977,6 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.asvp_banner_hot_parent.getLayoutParams();
@@ -1001,12 +985,10 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
         this.asvp_banner_hot_parent.setLayoutParams(layoutParams);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean q() {
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         this.r = z;
@@ -1054,11 +1036,11 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
                 arrayList.add(this.b.get(i2));
                 i = i2 + 1;
             }
-            LiveTabModel liveTabModel = new LiveTabModel("15", getText(2131889736).toString(), 0, 0);
-            LiveTabModel liveTabModel2 = this.f31168c;
+            LiveTabModel liveTabModel = new LiveTabModel("15", getText(R.string.live_less).toString(), 0, 0);
+            LiveTabModel liveTabModel2 = this.f17478c;
             if (liveTabModel2 != null) {
                 liveTabModel.less_cate_icon = liveTabModel2.less_cate_icon;
-                liveTabModel.more_cate_icon = this.f31168c.more_cate_icon;
+                liveTabModel.more_cate_icon = this.f17478c.more_cate_icon;
             }
             arrayList.add(liveTabModel);
             int i3 = 9;
@@ -1093,11 +1075,11 @@ public class LiveHomeFragment extends MvpFragment<LiveHomePresenter> implements 
                 }
                 i = i2 + 1;
             }
-            LiveTabModel liveTabModel = new LiveTabModel("15", getText(2131889823).toString(), 0, 0);
-            LiveTabModel liveTabModel2 = this.f31168c;
+            LiveTabModel liveTabModel = new LiveTabModel("15", getText(R.string.live_more).toString(), 0, 0);
+            LiveTabModel liveTabModel2 = this.f17478c;
             if (liveTabModel2 != null) {
                 liveTabModel.less_cate_icon = liveTabModel2.less_cate_icon;
-                liveTabModel.more_cate_icon = this.f31168c.more_cate_icon;
+                liveTabModel.more_cate_icon = this.f17478c.more_cate_icon;
             }
             arrayList.add(liveTabModel);
         } else {

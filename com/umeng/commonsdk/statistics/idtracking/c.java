@@ -7,7 +7,7 @@ import com.umeng.commonsdk.statistics.common.DeviceConfig;
 public class c extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40917a = "idfa";
+    private static final String f27226a = "idfa";
     private Context b;
 
     public c(Context context) {

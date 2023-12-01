@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class VipBuyOptionNewListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29635a;
+    private final LinearLayout f15945a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29635a;
+        return this.f15945a;
     }
 }

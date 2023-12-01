@@ -10,20 +10,16 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewLivingStreamLayoutBinding.class */
 public final class ViewLivingStreamLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16867a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ConstraintLayout f16868c;
+    public final ConstraintLayout c;
     private final ConstraintLayout d;
 
     private ViewLivingStreamLayoutBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, ConstraintLayout constraintLayout2) {
         this.d = constraintLayout;
-        this.f16867a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16868c = constraintLayout2;
+        this.c = constraintLayout2;
     }
 
     public static ViewLivingStreamLayoutBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -40,9 +36,9 @@ public final class ViewLivingStreamLayoutBinding implements ViewBinding {
         if (imageView != null) {
             ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_yy_room_anim);
             if (imageView2 != null) {
-                ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.sll_yy_room_tag);
-                if (constraintLayout != null) {
-                    return new ViewLivingStreamLayoutBinding((ConstraintLayout) view, imageView, imageView2, constraintLayout);
+                ConstraintLayout findViewById = view.findViewById(R.id.sll_yy_room_tag);
+                if (findViewById != null) {
+                    return new ViewLivingStreamLayoutBinding((ConstraintLayout) view, imageView, imageView2, findViewById);
                 }
                 str = "sllYyRoomTag";
             } else {
@@ -54,7 +50,6 @@ public final class ViewLivingStreamLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.d;

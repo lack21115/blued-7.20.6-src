@@ -45,9 +45,8 @@ public interface IAppWidgetService extends IInterface {
         static final int TRANSACTION_updateAppWidgetOptions = 11;
         static final int TRANSACTION_updateAppWidgetProvider = 14;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/appwidget/IAppWidgetService$Stub$Proxy.class */
-        public static class Proxy implements IAppWidgetService {
+        private static class Proxy implements IAppWidgetService {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -146,10 +145,10 @@ public interface IAppWidgetService extends IInterface {
                     obtain.writeInt(i);
                     this.mRemote.transact(9, obtain, obtain2, 0);
                     obtain2.readException();
-                    IntentSender createFromParcel = obtain2.readInt() != 0 ? IntentSender.CREATOR.createFromParcel(obtain2) : null;
+                    IntentSender intentSender = obtain2.readInt() != 0 ? (IntentSender) IntentSender.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return intentSender;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -251,10 +250,10 @@ public interface IAppWidgetService extends IInterface {
                     obtain.writeInt(i);
                     this.mRemote.transact(17, obtain, obtain2, 0);
                     obtain2.readException();
-                    AppWidgetProviderInfo createFromParcel = obtain2.readInt() != 0 ? AppWidgetProviderInfo.CREATOR.createFromParcel(obtain2) : null;
+                    AppWidgetProviderInfo appWidgetProviderInfo = obtain2.readInt() != 0 ? (AppWidgetProviderInfo) AppWidgetProviderInfo.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return appWidgetProviderInfo;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -272,10 +271,10 @@ public interface IAppWidgetService extends IInterface {
                     obtain.writeInt(i);
                     this.mRemote.transact(12, obtain, obtain2, 0);
                     obtain2.readException();
-                    Bundle createFromParcel = obtain2.readInt() != 0 ? Bundle.CREATOR.createFromParcel(obtain2) : null;
+                    Bundle bundle = obtain2.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return bundle;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -630,7 +629,7 @@ public interface IAppWidgetService extends IInterface {
                     return true;
                 case 11:
                     parcel.enforceInterface(DESCRIPTOR);
-                    updateAppWidgetOptions(parcel.readString(), parcel.readInt(), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    updateAppWidgetOptions(parcel.readString(), parcel.readInt(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 12:
@@ -651,7 +650,7 @@ public interface IAppWidgetService extends IInterface {
                     return true;
                 case 14:
                     parcel.enforceInterface(DESCRIPTOR);
-                    updateAppWidgetProvider(parcel.readInt() != 0 ? ComponentName.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? RemoteViews.CREATOR.createFromParcel(parcel) : null);
+                    updateAppWidgetProvider(parcel.readInt() != 0 ? (ComponentName) ComponentName.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? RemoteViews.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 15:
@@ -689,7 +688,7 @@ public interface IAppWidgetService extends IInterface {
                     return true;
                 case 20:
                     parcel.enforceInterface(DESCRIPTOR);
-                    boolean bindAppWidgetId = bindAppWidgetId(parcel.readString(), parcel.readInt(), parcel.readInt(), parcel.readInt() != 0 ? ComponentName.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    boolean bindAppWidgetId = bindAppWidgetId(parcel.readString(), parcel.readInt(), parcel.readInt(), parcel.readInt() != 0 ? (ComponentName) ComponentName.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     int i3 = 0;
                     if (bindAppWidgetId) {
@@ -699,21 +698,21 @@ public interface IAppWidgetService extends IInterface {
                     return true;
                 case 21:
                     parcel.enforceInterface(DESCRIPTOR);
-                    bindRemoteViewsService(parcel.readString(), parcel.readInt(), parcel.readInt() != 0 ? Intent.CREATOR.createFromParcel(parcel) : null, parcel.readStrongBinder());
+                    bindRemoteViewsService(parcel.readString(), parcel.readInt(), parcel.readInt() != 0 ? (Intent) Intent.CREATOR.createFromParcel(parcel) : null, parcel.readStrongBinder());
                     parcel2.writeNoException();
                     return true;
                 case 22:
                     parcel.enforceInterface(DESCRIPTOR);
-                    unbindRemoteViewsService(parcel.readString(), parcel.readInt(), parcel.readInt() != 0 ? Intent.CREATOR.createFromParcel(parcel) : null);
+                    unbindRemoteViewsService(parcel.readString(), parcel.readInt(), parcel.readInt() != 0 ? (Intent) Intent.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 23:
                     parcel.enforceInterface(DESCRIPTOR);
-                    int[] appWidgetIds = getAppWidgetIds(parcel.readInt() != 0 ? ComponentName.CREATOR.createFromParcel(parcel) : null);
+                    int[] appWidgetIds = getAppWidgetIds(parcel.readInt() != 0 ? (ComponentName) ComponentName.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeIntArray(appWidgetIds);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

@@ -1,5 +1,6 @@
 package com.tencent.beacon.e;
 
+import com.ss.android.download.api.constant.BaseConstants;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -9,13 +10,13 @@ import java.util.Set;
 public class b implements com.tencent.beacon.a.a.d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile b f35016a;
+    private static volatile b f21325a;
     protected Boolean f;
     protected c h;
     protected int b = 48;
 
     /* renamed from: c  reason: collision with root package name */
-    protected int f35017c = 2000;
+    protected int f21326c = 2000;
     protected int d = 48;
     protected int e = 5000;
     protected boolean g = true;
@@ -50,18 +51,18 @@ public class b implements com.tencent.beacon.a.a.d {
     }
 
     public static b a() {
-        if (f35016a == null) {
+        if (f21325a == null) {
             synchronized (b.class) {
                 try {
-                    if (f35016a == null) {
-                        f35016a = new b();
+                    if (f21325a == null) {
+                        f21325a = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f35016a;
+        return f21325a;
     }
 
     private void b(Map<String, String> map) {
@@ -86,7 +87,7 @@ public class b implements com.tencent.beacon.a.a.d {
 
     @Override // com.tencent.beacon.a.a.d
     public void a(com.tencent.beacon.a.a.c cVar) {
-        if (cVar.f34920a != 8) {
+        if (cVar.f21229a != 8) {
             return;
         }
         this.y = cVar.b.containsKey("u_c_a_e") ? ((Boolean) cVar.b.get("u_c_a_e")).booleanValue() : this.y;
@@ -112,10 +113,10 @@ public class b implements com.tencent.beacon.a.a.d {
                         this.d = com.tencent.beacon.base.util.b.a(map.get("normalUploadNum"), this.d, 24, 100);
                     }
                     if (this.e == 5000) {
-                        this.e = com.tencent.beacon.base.util.b.a(map.get("normalPollingTime"), this.e, 2000, 3600000);
+                        this.e = com.tencent.beacon.base.util.b.a(map.get("normalPollingTime"), this.e, 2000, (int) BaseConstants.Time.HOUR);
                     }
-                    if (this.f35017c == 2000) {
-                        this.f35017c = com.tencent.beacon.base.util.b.a(map.get("realtimePollingTime"), this.f35017c, 1000, 10000);
+                    if (this.f21326c == 2000) {
+                        this.f21326c = com.tencent.beacon.base.util.b.a(map.get("realtimePollingTime"), this.f21326c, 1000, 10000);
                     }
                     this.j = com.tencent.beacon.base.util.b.a(map.get("heartOnOff"), this.j);
                     this.m = com.tencent.beacon.base.util.b.a(map.get("tidyEF"), this.m);

@@ -16,11 +16,11 @@ public abstract class BarLineScatterCandleBubbleRenderer extends DataRenderer {
     public class XBounds {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f22172a;
+        public int f8565a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f22173c;
+        public int f8566c;
 
         protected XBounds() {
         }
@@ -31,10 +31,10 @@ public abstract class BarLineScatterCandleBubbleRenderer extends DataRenderer {
             float highestVisibleX = barLineScatterCandleBubbleDataProvider.getHighestVisibleX();
             T a2 = iBarLineScatterCandleBubbleDataSet.a(lowestVisibleX, Float.NaN, DataSet.Rounding.DOWN);
             T a3 = iBarLineScatterCandleBubbleDataSet.a(highestVisibleX, Float.NaN, DataSet.Rounding.UP);
-            this.f22172a = a2 == 0 ? 0 : iBarLineScatterCandleBubbleDataSet.d((IBarLineScatterCandleBubbleDataSet) a2);
+            this.f8565a = a2 == 0 ? 0 : iBarLineScatterCandleBubbleDataSet.d((IBarLineScatterCandleBubbleDataSet) a2);
             int d = a3 == 0 ? 0 : iBarLineScatterCandleBubbleDataSet.d((IBarLineScatterCandleBubbleDataSet) a3);
             this.b = d;
-            this.f22173c = (int) ((d - this.f22172a) * max);
+            this.f8566c = (int) ((d - this.f8565a) * max);
         }
     }
 

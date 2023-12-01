@@ -11,25 +11,25 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AnimatorKt$addListener$listener$1 implements Animator.AnimatorListener {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function1<Animator, Unit> f2307a;
+    final /* synthetic */ Function1<Animator, Unit> f2259a;
     final /* synthetic */ Function1<Animator, Unit> b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Function1<Animator, Unit> f2308c;
+    final /* synthetic */ Function1<Animator, Unit> f2260c;
     final /* synthetic */ Function1<Animator, Unit> d;
 
     /* JADX WARN: Multi-variable type inference failed */
     public AnimatorKt$addListener$listener$1(Function1<? super Animator, Unit> function1, Function1<? super Animator, Unit> function12, Function1<? super Animator, Unit> function13, Function1<? super Animator, Unit> function14) {
-        this.f2307a = function1;
+        this.f2259a = function1;
         this.b = function12;
-        this.f2308c = function13;
+        this.f2260c = function13;
         this.d = function14;
     }
 
     @Override // android.animation.Animator.AnimatorListener
     public void onAnimationCancel(Animator animator) {
         Intrinsics.e(animator, "animator");
-        this.f2308c.invoke(animator);
+        this.f2260c.invoke(animator);
     }
 
     @Override // android.animation.Animator.AnimatorListener
@@ -41,7 +41,7 @@ public final class AnimatorKt$addListener$listener$1 implements Animator.Animato
     @Override // android.animation.Animator.AnimatorListener
     public void onAnimationRepeat(Animator animator) {
         Intrinsics.e(animator, "animator");
-        this.f2307a.invoke(animator);
+        this.f2259a.invoke(animator);
     }
 
     @Override // android.animation.Animator.AnimatorListener

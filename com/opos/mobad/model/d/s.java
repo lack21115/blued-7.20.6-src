@@ -10,11 +10,11 @@ import java.util.concurrent.CountDownLatch;
 public class s extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    private e f26446a;
+    private e f12758a;
     private t b;
 
     /* renamed from: c  reason: collision with root package name */
-    private m f26447c;
+    private m f12759c;
     private com.opos.mobad.model.b.c d;
     private int e;
     private int f;
@@ -45,7 +45,7 @@ public class s extends b {
                 s.this.l();
             }
         });
-        this.f26446a = new e(context, str, str2, cVar, z, new m.a() { // from class: com.opos.mobad.model.d.s.2
+        this.f12758a = new e(context, str, str2, cVar, z, new m.a() { // from class: com.opos.mobad.model.d.s.2
             @Override // com.opos.mobad.model.d.m.a
             public void a() {
                 com.opos.cmn.an.f.a.b("mLoader", "cache loaded");
@@ -62,7 +62,7 @@ public class s extends b {
 
             @Override // com.opos.mobad.model.d.m.a
             public void b(AdData adData) {
-                if (s.this.f26447c == s.this.f26446a) {
+                if (s.this.f12759c == s.this.f12758a) {
                     s.this.k.a();
                     s.this.c(adData);
                 }
@@ -70,7 +70,7 @@ public class s extends b {
 
             @Override // com.opos.mobad.model.d.m.a
             public void c(AdData adData) {
-                if (s.this.f26447c == s.this.f26446a) {
+                if (s.this.f12759c == s.this.f12758a) {
                     s.this.k.a();
                     s.this.b(adData);
                 }
@@ -95,7 +95,7 @@ public class s extends b {
 
             @Override // com.opos.mobad.model.d.m.a
             public void b(AdData adData) {
-                if (s.this.f26447c == s.this.b) {
+                if (s.this.f12759c == s.this.b) {
                     s.this.k.a();
                     s.this.c(adData);
                 }
@@ -105,7 +105,7 @@ public class s extends b {
             public void c(AdData adData) {
                 k kVar;
                 int i3;
-                if (s.this.f26447c == s.this.b) {
+                if (s.this.f12759c == s.this.b) {
                     s.this.k.a();
                     if (s.this.l || !s.this.m()) {
                         if (s.this.l) {
@@ -130,7 +130,7 @@ public class s extends b {
             com.opos.cmn.an.f.a.c("mLoader", "select fail");
             return;
         }
-        this.f26447c = this.b;
+        this.f12759c = this.b;
         g();
     }
 
@@ -141,13 +141,13 @@ public class s extends b {
             com.opos.cmn.an.f.a.c("mLoader", "select fail");
             return;
         }
-        this.f26447c = this.f26446a;
+        this.f12759c = this.f12758a;
         g();
     }
 
     private void k() {
-        e eVar = this.f26446a;
-        this.f26447c = eVar;
+        e eVar = this.f12758a;
+        this.f12759c = eVar;
         eVar.g();
     }
 
@@ -157,7 +157,7 @@ public class s extends b {
         int i;
         if (j() == 5) {
             i = 3;
-            if (this.f26446a.j() == 3 && this.f26446a.d()) {
+            if (this.f12758a.j() == 3 && this.f12758a.d()) {
                 com.opos.cmn.an.f.a.b("mLoader", "timeout to use cache");
                 k();
                 kVar = this.m;
@@ -174,7 +174,7 @@ public class s extends b {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean m() {
-        if (j() == 5 && this.f26446a.j() == 3) {
+        if (j() == 5 && this.f12758a.j() == 3) {
             com.opos.cmn.an.f.a.b("mLoader", "change to cache");
             this.m.d(2);
             k();
@@ -185,7 +185,7 @@ public class s extends b {
 
     @Override // com.opos.mobad.model.d.b
     protected void a() {
-        m mVar = this.f26447c;
+        m mVar = this.f12759c;
         if (mVar != null) {
             mVar.g();
         } else {
@@ -201,15 +201,15 @@ public class s extends b {
         if (adData == null) {
             adData2 = new AdData(-1, "unknown error.");
         }
-        this.m.a(this.n, adData2.d(), adData2.e(), this.f26447c == this.f26446a, this.d.i());
+        this.m.a(this.n, adData2.d(), adData2.e(), this.f12759c == this.f12758a, this.d.i());
         super.a(adData2);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:32:0x00b3, code lost:
-        if (r3.f26446a.d() != false) goto L32;
+        if (r3.f12758a.d() != false) goto L32;
      */
     /* JADX WARN: Code restructure failed: missing block: B:34:0x00bf, code lost:
-        if (r3.f26446a.j() == 6) goto L32;
+        if (r3.f12758a.j() == 6) goto L32;
      */
     @Override // com.opos.mobad.model.d.b
     /*
@@ -228,7 +228,7 @@ public class s extends b {
     @Override // com.opos.mobad.model.d.b
     public void b(AdData adData) {
         com.opos.cmn.an.f.a.b("mLoader", "onLoadResourceFail");
-        this.m.a(this.n, adData.d(), adData.e(), this.f26447c == this.f26446a, this.d.i());
+        this.m.a(this.n, adData.d(), adData.e(), this.f12759c == this.f12758a, this.d.i());
         super.b(adData);
         i();
     }
@@ -247,7 +247,7 @@ public class s extends b {
             str = adItemData.c();
             i = adItemData.X();
         }
-        this.m.a(this.n, str, this.f26447c == this.f26446a, this.d.i(), i);
+        this.m.a(this.n, str, this.f12759c == this.f12758a, this.d.i(), i);
         super.c(adData);
         i();
     }

@@ -7,5 +7,5 @@ import java.util.Set;
 public final class q9NV2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Set<String> f39982a = new LinkedHashSet();
+    public static final Set<String> f26291a = new LinkedHashSet();
 }

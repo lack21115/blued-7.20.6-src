@@ -1,6 +1,6 @@
 package android.util;
 
-import com.alipay.sdk.util.i;
+import com.huawei.hms.ads.fw;
 import com.igexin.push.core.b;
 import java.io.Closeable;
 import java.io.IOException;
@@ -205,7 +205,7 @@ public final class JsonWriter implements Closeable {
     }
 
     public JsonWriter endObject() throws IOException {
-        return close(JsonScope.EMPTY_OBJECT, JsonScope.NONEMPTY_OBJECT, i.d);
+        return close(JsonScope.EMPTY_OBJECT, JsonScope.NONEMPTY_OBJECT, "}");
     }
 
     public void flush() throws IOException {
@@ -284,7 +284,7 @@ public final class JsonWriter implements Closeable {
 
     public JsonWriter value(boolean z) throws IOException {
         beforeValue(false);
-        this.out.write(z ? "true" : "false");
+        this.out.write(z ? fw.Code : "false");
         return this;
     }
 }

@@ -15,8 +15,9 @@ public class PriorityQueue<E> extends AbstractQueue<E> implements Serializable {
     private transient E[] elements;
     private int size;
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-2895416-dex2jar.jar:java/util/PriorityQueue$PriorityIterator.class */
-    private class PriorityIterator implements Iterator<E> {
+    public class PriorityIterator implements Iterator<E> {
         private boolean allowRemove;
         private int currentIndex;
 
@@ -214,12 +215,12 @@ public class PriorityQueue<E> extends AbstractQueue<E> implements Serializable {
         }
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         return offer(e);
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         Arrays.fill(this.elements, (Object) null);
         this.size = 0;
@@ -265,7 +266,7 @@ public class PriorityQueue<E> extends AbstractQueue<E> implements Serializable {
         return e;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         if (obj == null) {
             return false;
@@ -284,7 +285,7 @@ public class PriorityQueue<E> extends AbstractQueue<E> implements Serializable {
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.size;
     }

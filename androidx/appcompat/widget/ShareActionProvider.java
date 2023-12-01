@@ -20,11 +20,11 @@ public class ShareActionProvider extends ActionProvider {
     public static final String DEFAULT_SHARE_HISTORY_FILE_NAME = "share_history.xml";
 
     /* renamed from: a  reason: collision with root package name */
-    final Context f1884a;
+    final Context f1836a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    OnShareTargetSelectedListener f1885c;
+    OnShareTargetSelectedListener f1837c;
     private int d;
     private final ShareMenuItemOnMenuItemClickListener e;
     private ActivityChooserModel.OnChooseActivityListener f;
@@ -42,8 +42,8 @@ public class ShareActionProvider extends ActionProvider {
 
         @Override // androidx.appcompat.widget.ActivityChooserModel.OnChooseActivityListener
         public boolean onChooseActivity(ActivityChooserModel activityChooserModel, Intent intent) {
-            if (ShareActionProvider.this.f1885c != null) {
-                ShareActionProvider.this.f1885c.onShareTargetSelected(ShareActionProvider.this, intent);
+            if (ShareActionProvider.this.f1837c != null) {
+                ShareActionProvider.this.f1837c.onShareTargetSelected(ShareActionProvider.this, intent);
                 return false;
             }
             return false;
@@ -58,13 +58,13 @@ public class ShareActionProvider extends ActionProvider {
         @Override // android.view.MenuItem.OnMenuItemClickListener
         public boolean onMenuItemClick(MenuItem menuItem) {
             Tracker.onMenuItemClick(menuItem);
-            Intent chooseActivity = ActivityChooserModel.get(ShareActionProvider.this.f1884a, ShareActionProvider.this.b).chooseActivity(menuItem.getItemId());
+            Intent chooseActivity = ActivityChooserModel.get(ShareActionProvider.this.f1836a, ShareActionProvider.this.b).chooseActivity(menuItem.getItemId());
             if (chooseActivity != null) {
                 String action = chooseActivity.getAction();
                 if (Intent.ACTION_SEND.equals(action) || Intent.ACTION_SEND_MULTIPLE.equals(action)) {
                     ShareActionProvider.this.a(chooseActivity);
                 }
-                ShareActionProvider.this.f1884a.startActivity(chooseActivity);
+                ShareActionProvider.this.f1836a.startActivity(chooseActivity);
                 return true;
             }
             return true;
@@ -75,18 +75,18 @@ public class ShareActionProvider extends ActionProvider {
         super(context);
         this.d = 4;
         this.e = new ShareMenuItemOnMenuItemClickListener();
-        this.b = "share_history.xml";
-        this.f1884a = context;
+        this.b = DEFAULT_SHARE_HISTORY_FILE_NAME;
+        this.f1836a = context;
     }
 
     private void a() {
-        if (this.f1885c == null) {
+        if (this.f1837c == null) {
             return;
         }
         if (this.f == null) {
             this.f = new ShareActivityChooserModelPolicy();
         }
-        ActivityChooserModel.get(this.f1884a, this.b).setOnChooseActivityListener(this.f);
+        ActivityChooserModel.get(this.f1836a, this.b).setOnChooseActivityListener(this.f);
     }
 
     void a(Intent intent) {
@@ -104,13 +104,13 @@ public class ShareActionProvider extends ActionProvider {
 
     @Override // androidx.core.view.ActionProvider
     public View onCreateActionView() {
-        ActivityChooserView activityChooserView = new ActivityChooserView(this.f1884a);
+        ActivityChooserView activityChooserView = new ActivityChooserView(this.f1836a);
         if (!activityChooserView.isInEditMode()) {
-            activityChooserView.setActivityChooserModel(ActivityChooserModel.get(this.f1884a, this.b));
+            activityChooserView.setActivityChooserModel(ActivityChooserModel.get(this.f1836a, this.b));
         }
         TypedValue typedValue = new TypedValue();
-        this.f1884a.getTheme().resolveAttribute(R.attr.actionModeShareDrawable, typedValue, true);
-        activityChooserView.setExpandActivityOverflowButtonDrawable(AppCompatResources.getDrawable(this.f1884a, typedValue.resourceId));
+        this.f1836a.getTheme().resolveAttribute(R.attr.actionModeShareDrawable, typedValue, true);
+        activityChooserView.setExpandActivityOverflowButtonDrawable(AppCompatResources.getDrawable(this.f1836a, typedValue.resourceId));
         activityChooserView.setProvider(this);
         activityChooserView.setDefaultActionButtonContentDescription(R.string.abc_shareactionprovider_share_with_application);
         activityChooserView.setExpandActivityOverflowButtonContentDescription(R.string.abc_shareactionprovider_share_with);
@@ -120,8 +120,8 @@ public class ShareActionProvider extends ActionProvider {
     @Override // androidx.core.view.ActionProvider
     public void onPrepareSubMenu(SubMenu subMenu) {
         subMenu.clear();
-        ActivityChooserModel activityChooserModel = ActivityChooserModel.get(this.f1884a, this.b);
-        PackageManager packageManager = this.f1884a.getPackageManager();
+        ActivityChooserModel activityChooserModel = ActivityChooserModel.get(this.f1836a, this.b);
+        PackageManager packageManager = this.f1836a.getPackageManager();
         int activityCount = activityChooserModel.getActivityCount();
         int min = Math.min(activityCount, this.d);
         int i = 0;
@@ -137,7 +137,7 @@ public class ShareActionProvider extends ActionProvider {
         if (min >= activityCount) {
             return;
         }
-        SubMenu addSubMenu = subMenu.addSubMenu(0, min, min, this.f1884a.getString(R.string.abc_activity_chooser_view_see_all));
+        SubMenu addSubMenu = subMenu.addSubMenu(0, min, min, this.f1836a.getString(R.string.abc_activity_chooser_view_see_all));
         int i3 = 0;
         while (true) {
             int i4 = i3;
@@ -151,7 +151,7 @@ public class ShareActionProvider extends ActionProvider {
     }
 
     public void setOnShareTargetSelectedListener(OnShareTargetSelectedListener onShareTargetSelectedListener) {
-        this.f1885c = onShareTargetSelectedListener;
+        this.f1837c = onShareTargetSelectedListener;
         a();
     }
 
@@ -167,6 +167,6 @@ public class ShareActionProvider extends ActionProvider {
                 a(intent);
             }
         }
-        ActivityChooserModel.get(this.f1884a, this.b).setIntent(intent);
+        ActivityChooserModel.get(this.f1836a, this.b).setIntent(intent);
     }
 }

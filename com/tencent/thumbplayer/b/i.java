@@ -269,7 +269,7 @@ public class i {
                             xmlSerializer.startTag("", "track_id");
                             xmlSerializer.text(Integer.toString(iTPMediaTrack.getTrackId()));
                             xmlSerializer.endTag("", "track_id");
-                            if (i != 1 && f.f39224a.equals("base_audio") && iTPMediaTrack.getTimelineDurationMs() > j) {
+                            if (i != 1 && f.f25533a.equals("base_audio") && iTPMediaTrack.getTimelineDurationMs() > j) {
                                 long j2 = 0;
                                 Iterator<ITPMediaTrackClip> it = iTPMediaTrack.getAllTrackClips().iterator();
                                 while (true) {

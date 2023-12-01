@@ -28,13 +28,9 @@ import kotlin.jvm.internal.Intrinsics;
 /* renamed from: com.blued.android.module.common.adx.bd.native.BDNativeExpressAdDataAdapter  reason: invalid package */
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/bd/native/BDNativeExpressAdDataAdapter.class */
 public final class BDNativeExpressAdDataAdapter extends NativeExpressADView implements ADEventListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f10530a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private BluedADExtra b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private WeakReference<Context> f10531c;
+    private WeakReference<Context> c;
     private ExpressResponse d;
     private AdData e;
     private ADListener f;
@@ -59,7 +55,7 @@ public final class BDNativeExpressAdDataAdapter extends NativeExpressADView impl
         Intrinsics.e(data, "data");
         Intrinsics.e(adExtra, "adExtra");
         this.b = adExtra;
-        this.f10531c = new WeakReference<>(context);
+        this.c = new WeakReference<>(context);
         this.d = data;
         this.e = getAdData();
         b();
@@ -73,7 +69,6 @@ public final class BDNativeExpressAdDataAdapter extends NativeExpressADView impl
 
     private final void b() {
         this.d.setAdDislikeListener(new ExpressResponse.ExpressDislikeListener() { // from class: com.blued.android.module.common.adx.bd.native.BDNativeExpressAdDataAdapter$bindDislike$1
-            @Override // com.baidu.mobads.sdk.api.ExpressResponse.ExpressDislikeListener
             public void onDislikeItemClick(String reason) {
                 ADListener aDListener;
                 Intrinsics.e(reason, "reason");
@@ -86,12 +81,10 @@ public final class BDNativeExpressAdDataAdapter extends NativeExpressADView impl
                 aDListener.onADEvent(new ADEvent(106, BDNativeExpressAdDataAdapter.this.getAdExtra()));
             }
 
-            @Override // com.baidu.mobads.sdk.api.ExpressResponse.ExpressDislikeListener
             public void onDislikeWindowClose() {
                 Log.v("adx", "百度 onDislikeWindowClose");
             }
 
-            @Override // com.baidu.mobads.sdk.api.ExpressResponse.ExpressDislikeListener
             public void onDislikeWindowShow() {
             }
         });
@@ -99,23 +92,18 @@ public final class BDNativeExpressAdDataAdapter extends NativeExpressADView impl
 
     private final void c() {
         this.d.setAdPrivacyListener(new ExpressResponse.ExpressAdDownloadWindowListener() { // from class: com.blued.android.module.common.adx.bd.native.BDNativeExpressAdDataAdapter$tryBindAdPrivacyListener$1
-            @Override // com.baidu.mobads.sdk.api.ExpressResponse.ExpressAdDownloadWindowListener
             public void adDownloadWindowClose() {
             }
 
-            @Override // com.baidu.mobads.sdk.api.ExpressResponse.ExpressAdDownloadWindowListener
             public void adDownloadWindowShow() {
             }
 
-            @Override // com.baidu.mobads.sdk.api.ExpressResponse.ExpressAdDownloadWindowListener
             public void onADPermissionClose() {
             }
 
-            @Override // com.baidu.mobads.sdk.api.ExpressResponse.ExpressAdDownloadWindowListener
             public void onADPermissionShow() {
             }
 
-            @Override // com.baidu.mobads.sdk.api.ExpressResponse.ExpressAdDownloadWindowListener
             public void onADPrivacyClick() {
             }
         });
@@ -123,12 +111,10 @@ public final class BDNativeExpressAdDataAdapter extends NativeExpressADView impl
 
     private final AdData getAdData() {
         return new AdData() { // from class: com.blued.android.module.common.adx.bd.native.BDNativeExpressAdDataAdapter$getAdData$1
-            @Override // com.qq.e.comm.pi.AdData
             public boolean equalsAdData(AdData adData) {
                 throw new NotImplementedError("An operation is not implemented: Not yet implemented");
             }
 
-            @Override // com.qq.e.comm.pi.AdData
             public int getAdPatternType() {
                 ExpressResponse expressResponse;
                 expressResponse = BDNativeExpressAdDataAdapter.this.d;
@@ -151,39 +137,32 @@ public final class BDNativeExpressAdDataAdapter extends NativeExpressADView impl
                 }
             }
 
-            @Override // com.qq.e.comm.pi.AdData
             public String getDesc() {
                 return "";
             }
 
-            @Override // com.qq.e.comm.pi.AdData
             public int getECPM() {
                 return BDNativeExpressAdDataAdapter.this.getECPM();
             }
 
-            @Override // com.qq.e.comm.pi.AdData
             public String getECPMLevel() {
                 ExpressResponse expressResponse;
                 expressResponse = BDNativeExpressAdDataAdapter.this.d;
                 return expressResponse.getECPMLevel();
             }
 
-            @Override // com.qq.e.comm.pi.AdData
             public Map<String, Object> getExtraInfo() {
                 return new HashMap();
             }
 
-            @Override // com.qq.e.comm.pi.AdData
             public <T> T getProperty(Class<T> cls) {
                 throw new NotImplementedError("An operation is not implemented: Not yet implemented");
             }
 
-            @Override // com.qq.e.comm.pi.AdData
             public String getProperty(String str) {
                 throw new NotImplementedError("An operation is not implemented: Not yet implemented");
             }
 
-            @Override // com.qq.e.comm.pi.AdData
             public String getTitle() {
                 ExpressResponse expressResponse;
                 expressResponse = BDNativeExpressAdDataAdapter.this.d;
@@ -194,19 +173,16 @@ public final class BDNativeExpressAdDataAdapter extends NativeExpressADView impl
                 return adData.getTitle();
             }
 
-            @Override // com.qq.e.comm.pi.AdData
             public int getVideoDuration() {
                 throw new NotImplementedError("An operation is not implemented: Not yet implemented");
             }
 
-            @Override // com.qq.e.comm.pi.AdData
             public void setECPMLevel(String str) {
                 BDNativeExpressAdDataAdapter.this.g = str;
             }
         };
     }
 
-    @Override // com.qq.e.ads.nativ.NativeExpressADView
     public void destroy() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
@@ -215,17 +191,14 @@ public final class BDNativeExpressAdDataAdapter extends NativeExpressADView impl
         return this.b;
     }
 
-    @Override // com.qq.e.comm.compliance.ApkDownloadComplianceInterface
     public String getApkInfoUrl() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeExpressADView
     public AdData getBoundData() {
         return this.e;
     }
 
-    @Override // com.qq.e.comm.pi.LADI
     public int getECPM() {
         try {
             String eCPMLevel = this.d.getECPMLevel();
@@ -236,49 +209,40 @@ public final class BDNativeExpressAdDataAdapter extends NativeExpressADView impl
         }
     }
 
-    @Override // com.qq.e.comm.pi.LADI
     public String getECPMLevel() {
         return this.e.getECPMLevel();
     }
 
-    @Override // com.qq.e.comm.pi.LADI
     public Map<String, Object> getExtraInfo() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.comm.pi.LADI
     public boolean isValid() {
         return true;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeExpressADView
     public void negativeFeedback() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.comm.compliance.DownloadConfirmListener
     public void onDownloadConfirm(Activity activity, int i, String str, DownloadConfirmCallBack downloadConfirmCallBack) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeExpressADView
     public void preloadVideo() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeExpressADView
     public void render() {
         this.d.render();
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void sendLossNotification(int i, int i2, String str) {
         this.d.biddingFail(String.valueOf(i2));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:34:0x00a0  */
     /* JADX WARN: Removed duplicated region for block: B:36:0x0126  */
-    @Override // com.qq.e.comm.pi.IBidding
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -291,12 +255,10 @@ public final class BDNativeExpressAdDataAdapter extends NativeExpressADView impl
         throw new UnsupportedOperationException("Method not decompiled: com.blued.android.module.common.adx.bd.p001native.BDNativeExpressAdDataAdapter.sendLossNotification(java.util.Map):void");
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void sendWinNotification(int i) {
         this.d.biddingSuccess(String.valueOf(i));
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void sendWinNotification(Map<String, Object> map) {
         Intrinsics.e(map, "map");
         this.d.biddingSuccess(String.valueOf(map.get("highest_loss_price")));
@@ -311,32 +273,26 @@ public final class BDNativeExpressAdDataAdapter extends NativeExpressADView impl
         this.f = aDListener;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeExpressADView
     public void setAdSize(ADSize aDSize) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void setBidECPM(int i) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.comm.compliance.ApkDownloadComplianceInterface
     public void setDownloadConfirmListener(DownloadConfirmListener downloadConfirmListener) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeExpressADView
     public void setMediaListener(NativeExpressMediaListener nativeExpressMediaListener) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.comm.pi.NFBI
     public void setNegativeFeedbackListener(NegativeFeedbackListener negativeFeedbackListener) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeExpressADView
     public void setViewBindStatusListener(NativeExpressADView.ViewBindStatusListener viewBindStatusListener) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }

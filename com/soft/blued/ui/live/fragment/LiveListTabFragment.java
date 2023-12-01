@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.lifecycle.Observer;
@@ -75,6 +76,7 @@ public class LiveListTabFragment extends PreloadFragment implements View.OnClick
         liveListAdapter.c();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void h() {
         LiveEventBus.get("live_float_dismiss", String.class).observe(this, new Observer() { // from class: com.soft.blued.ui.live.fragment.-$$Lambda$LiveListTabFragment$EvqmNvepDRCUzKa2gkVAQ5cAWbo
             @Override // androidx.lifecycle.Observer
@@ -99,7 +101,7 @@ public class LiveListTabFragment extends PreloadFragment implements View.OnClick
     }
 
     private void j() {
-        this.w = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
+        this.w = this.b.findViewById(R.id.top_title);
         if (TextUtils.equals(this.q, "12")) {
             this.w.setVisibility(8);
         } else {
@@ -110,7 +112,7 @@ public class LiveListTabFragment extends PreloadFragment implements View.OnClick
             this.w.setCenterText(this.r);
             this.w.setLeftClickListener(this);
         }
-        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) this.b.findViewById(2131369121);
+        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) this.b.findViewById(R.id.refresh_view);
         this.l = smartRefreshLayout;
         smartRefreshLayout.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.soft.blued.ui.live.fragment.LiveListTabFragment.1
             @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
@@ -134,14 +136,14 @@ public class LiveListTabFragment extends PreloadFragment implements View.OnClick
                 }
             }
         });
-        this.m = (RecyclerView) this.b.findViewById(2131364131);
+        this.m = (RecyclerView) this.b.findViewById(R.id.grid_view);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this.j, 2);
         this.m.setLayoutManager(gridLayoutManager);
         this.m.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.soft.blued.ui.live.fragment.LiveListTabFragment.2
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 super.onScrollStateChanged(recyclerView, i);
-                LiveListTabFragment.this.k.onScrollStateChanged(null, i);
+                LiveListTabFragment.this.k.onScrollStateChanged((AbsListView) null, i);
                 if (i == 0) {
                     if (LiveListTabFragment.this.n != null) {
                         LiveListTabFragment.this.n.c(false);
@@ -162,9 +164,9 @@ public class LiveListTabFragment extends PreloadFragment implements View.OnClick
             }
         });
         this.o = (LinearLayout) this.b.findViewById(R.id.ll_default_empty);
-        this.t = (NoDataAndLoadFailView) this.b.findViewById(R.id.ll_no_internet);
-        this.v = (TextView) this.o.findViewById(2131371861);
-        TextView textView = (TextView) this.o.findViewById(2131371860);
+        this.t = this.b.findViewById(R.id.ll_no_internet);
+        this.v = (TextView) this.o.findViewById(R.id.tv_live_start_txt);
+        TextView textView = (TextView) this.o.findViewById(R.id.tv_live_start_btn);
         this.u = textView;
         textView.setOnClickListener(this);
         LiveListAdapter liveListAdapter = new LiveListAdapter(getFragmentActive(), this.j, false, 2, this.q);
@@ -221,7 +223,6 @@ public class LiveListTabFragment extends PreloadFragment implements View.OnClick
         }
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveListPositionObserver.ILiveListPositionObserver
     public void a(int i, long j) {
         if (i == -1) {
             return;
@@ -235,7 +236,6 @@ public class LiveListTabFragment extends PreloadFragment implements View.OnClick
         }
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         LayoutInflater.from(this.j).inflate(R.layout.fragment_live_list_tabpage, (ViewGroup) this.b, true);
         j();
@@ -323,13 +323,11 @@ public class LiveListTabFragment extends PreloadFragment implements View.OnClick
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         i();
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
         if (!TextUtils.equals(this.q, "12")) {
@@ -339,7 +337,6 @@ public class LiveListTabFragment extends PreloadFragment implements View.OnClick
         return onCreateView;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         LiveListPositionObserver.a().b(this);
@@ -350,7 +347,6 @@ public class LiveListTabFragment extends PreloadFragment implements View.OnClick
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         if (this.x) {
@@ -362,7 +358,6 @@ public class LiveListTabFragment extends PreloadFragment implements View.OnClick
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (this.x) {
@@ -374,7 +369,6 @@ public class LiveListTabFragment extends PreloadFragment implements View.OnClick
         }
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         this.x = z;

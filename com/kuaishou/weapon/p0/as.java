@@ -10,13 +10,13 @@ import org.json.JSONObject;
 public class as extends df {
 
     /* renamed from: a  reason: collision with root package name */
-    private JSONObject f23730a;
+    private JSONObject f10122a;
 
     public as(Context context, int i) {
         if (Engine.loadSuccess) {
             try {
                 Engine engine = Engine.getInstance(context);
-                int intValue = Integer.valueOf(cj.f23783c).intValue();
+                int intValue = Integer.valueOf(cj.f10175c).intValue();
                 String a2 = a(context);
                 if (TextUtils.isEmpty(a2)) {
                     return;
@@ -25,7 +25,7 @@ public class as extends df {
                 if (TextUtils.isEmpty(eopq)) {
                     return;
                 }
-                this.f23730a = new JSONObject(eopq);
+                this.f10122a = new JSONObject(eopq);
             } catch (Throwable th) {
             }
         }
@@ -53,7 +53,7 @@ public class as extends df {
     }
 
     public String a(String str) {
-        JSONObject jSONObject = this.f23730a;
+        JSONObject jSONObject = this.f10122a;
         if (jSONObject != null) {
             try {
                 return jSONObject.getString(str);
@@ -65,11 +65,11 @@ public class as extends df {
     }
 
     public JSONObject a() {
-        return this.f23730a;
+        return this.f10122a;
     }
 
     public String b(String str) {
-        JSONObject jSONObject = this.f23730a;
+        JSONObject jSONObject = this.f10122a;
         if (jSONObject != null) {
             try {
                 String string = jSONObject.getString(str);
@@ -86,7 +86,7 @@ public class as extends df {
     }
 
     public JSONArray c(String str) {
-        JSONObject jSONObject = this.f23730a;
+        JSONObject jSONObject = this.f10122a;
         if (jSONObject != null) {
             try {
                 String string = jSONObject.getString(str);
@@ -110,7 +110,7 @@ public class as extends df {
     }
 
     public JSONObject d(String str) {
-        JSONObject jSONObject = this.f23730a;
+        JSONObject jSONObject = this.f10122a;
         if (jSONObject != null) {
             try {
                 String string = jSONObject.getString(str);
@@ -130,7 +130,7 @@ public class as extends df {
     }
 
     public String e(String str) {
-        JSONObject jSONObject = this.f23730a;
+        JSONObject jSONObject = this.f10122a;
         if (jSONObject != null) {
             try {
                 String string = jSONObject.getString(str);

@@ -20,9 +20,7 @@ import com.bytedance.applog.tracker.Tracker;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/RenrenPullToRefreshPinnedSectionListView.class */
 public class RenrenPullToRefreshPinnedSectionListView extends PullToRefreshPinnedSectionListView {
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f10282c;
+    private View c;
     private LinearLayout d;
     private ImageView e;
     private TextView f;
@@ -85,14 +83,14 @@ public class RenrenPullToRefreshPinnedSectionListView extends PullToRefreshPinne
 
     private void b(AttributeSet attributeSet) {
         View inflate = LayoutInflater.from(this.b).inflate(R.layout.pulldown_footer, (ViewGroup) null);
-        this.f10282c = inflate;
+        this.c = inflate;
         this.d = (LinearLayout) inflate.findViewById(R.id.pulldown_footer_content);
-        this.e = (ImageView) this.f10282c.findViewById(R.id.pulldown_footer_divider);
-        TextView textView = (TextView) this.f10282c.findViewById(R.id.pulldown_footer_text);
+        this.e = (ImageView) this.c.findViewById(R.id.pulldown_footer_divider);
+        TextView textView = (TextView) this.c.findViewById(R.id.pulldown_footer_text);
         this.f = textView;
         textView.setText(PullToRefreshHelper.d());
-        this.g = (ProgressBar) this.f10282c.findViewById(R.id.pulldown_footer_loading);
-        this.f10282c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshPinnedSectionListView.3
+        this.g = (ProgressBar) this.c.findViewById(R.id.pulldown_footer_loading);
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshPinnedSectionListView.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -110,7 +108,7 @@ public class RenrenPullToRefreshPinnedSectionListView extends PullToRefreshPinne
         if (attributeSet != null) {
             a(attributeSet);
         }
-        ((ListView) getRefreshableView()).addFooterView(this.f10282c);
+        ((ListView) getRefreshableView()).addFooterView(this.c);
     }
 
     private void d(Context context, AttributeSet attributeSet) {

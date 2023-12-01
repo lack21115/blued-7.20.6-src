@@ -67,8 +67,8 @@ public final class b {
             com.kwad.sdk.core.video.kwai.kwai.a.cN("videoFinishPlay");
         }
     };
-    private c.InterfaceC0567c QS = new c.InterfaceC0567c() { // from class: com.kwad.components.core.video.b.5
-        @Override // com.kwad.sdk.core.video.kwai.c.InterfaceC0567c
+    private c.InterfaceC0397c QS = new c.InterfaceC0397c() { // from class: com.kwad.components.core.video.b.5
+        @Override // com.kwad.sdk.core.video.kwai.c.InterfaceC0397c
         public final boolean j(int i, int i2) {
             if (i != -38) {
                 b.this.QD = -1;
@@ -279,7 +279,7 @@ public final class b {
         if (cVar == null) {
             return;
         }
-        cVar.a((c.InterfaceC0567c) null);
+        cVar.a((c.InterfaceC0397c) null);
         this.QE.a((c.b) null);
         this.QE.b(null);
         this.QE.a((c.h) null);

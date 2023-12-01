@@ -349,11 +349,10 @@ public class TPNativeKeyMap {
         int value();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Target({ElementType.ANNOTATION_TYPE})
     @Retention(RetentionPolicy.RUNTIME)
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/adapter/strategy/utils/TPNativeKeyMap$SearchConfig.class */
-    public @interface SearchConfig {
+    @interface SearchConfig {
         long nativeDefValue();
 
         Class<?> searchClass();

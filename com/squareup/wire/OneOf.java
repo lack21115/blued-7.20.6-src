@@ -21,15 +21,15 @@ public final class OneOf<K extends Key<T>, T> {
         private final boolean redacted;
         private final int tag;
 
-        public Key(int i, ProtoAdapter<T> adapter, String declaredName, boolean z, String jsonName) {
-            Intrinsics.e(adapter, "adapter");
-            Intrinsics.e(declaredName, "declaredName");
-            Intrinsics.e(jsonName, "jsonName");
+        public Key(int i, ProtoAdapter<T> protoAdapter, String str, boolean z, String str2) {
+            Intrinsics.e(protoAdapter, "adapter");
+            Intrinsics.e(str, "declaredName");
+            Intrinsics.e(str2, "jsonName");
             this.tag = i;
-            this.adapter = adapter;
-            this.declaredName = declaredName;
+            this.adapter = protoAdapter;
+            this.declaredName = str;
             this.redacted = z;
-            this.jsonName = jsonName;
+            this.jsonName = str2;
         }
 
         public /* synthetic */ Key(int i, ProtoAdapter protoAdapter, String str, boolean z, String str2, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -57,9 +57,9 @@ public final class OneOf<K extends Key<T>, T> {
         }
     }
 
-    public OneOf(K key, T t) {
-        Intrinsics.e(key, "key");
-        this.key = key;
+    public OneOf(K k, T t) {
+        Intrinsics.e(k, "key");
+        this.key = k;
         this.value = t;
     }
 
@@ -84,19 +84,19 @@ public final class OneOf<K extends Key<T>, T> {
         return this.value;
     }
 
-    public final OneOf<K, T> copy(K key, T t) {
-        Intrinsics.e(key, "key");
-        return new OneOf<>(key, t);
+    public final OneOf<K, T> copy(K k, T t) {
+        Intrinsics.e(k, "key");
+        return new OneOf<>(k, t);
     }
 
-    public final void encodeWithTag(ProtoWriter writer) {
-        Intrinsics.e(writer, "writer");
-        this.key.getAdapter().encodeWithTag(writer, this.key.getTag(), (int) this.value);
+    public final void encodeWithTag(ProtoWriter protoWriter) {
+        Intrinsics.e(protoWriter, "writer");
+        this.key.getAdapter().encodeWithTag(protoWriter, this.key.getTag(), (int) this.value);
     }
 
-    public final void encodeWithTag(ReverseProtoWriter writer) {
-        Intrinsics.e(writer, "writer");
-        this.key.getAdapter().encodeWithTag(writer, this.key.getTag(), (int) this.value);
+    public final void encodeWithTag(ReverseProtoWriter reverseProtoWriter) {
+        Intrinsics.e(reverseProtoWriter, "writer");
+        this.key.getAdapter().encodeWithTag(reverseProtoWriter, this.key.getTag(), (int) this.value);
     }
 
     public final int encodedSizeWithTag() {

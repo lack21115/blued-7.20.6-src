@@ -32,17 +32,12 @@ import com.bytedance.applog.tracker.Tracker;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
-import java.util.Collection;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/RoomMemberListView.class */
 public class RoomMemberListView extends LinearLayout implements FollowStatusObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f17985a;
+    private BaseYYStudioFragment a;
     private SmartRefreshLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f17986c;
+    private RecyclerView c;
     private FrameLayout d;
     private RoomMemberAdapter e;
     private int f;
@@ -79,20 +74,18 @@ public class RoomMemberListView extends LinearLayout implements FollowStatusObse
     private void a() {
         this.f = DensityUtils.a(getContext(), 16.0f);
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_room_members_layout, (ViewGroup) this, true);
-        this.b = (SmartRefreshLayout) findViewById(R.id.refresh_view);
-        this.f17986c = (RecyclerView) findViewById(R.id.recycler_view);
+        this.b = findViewById(R.id.refresh_view);
+        this.c = findViewById(R.id.recycler_view);
         this.d = (FrameLayout) findViewById(R.id.fl_loading_view);
         YYNoDataView yYNoDataView = new YYNoDataView(getContext());
         this.j = yYNoDataView;
         yYNoDataView.setNoDataImg(R.drawable.icon_nodata_img);
         this.j.setNoDataStr(R.string.yy_no_member);
         this.b.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.view.RoomMemberListView.1
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 RoomMemberListView.this.b();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 RoomMemberListView.this.h = 1;
                 RoomMemberListView.this.b();
@@ -113,7 +106,7 @@ public class RoomMemberListView extends LinearLayout implements FollowStatusObse
         if (TextUtils.equals(b.chat_type, "5")) {
             this.k = 2;
         }
-        YYRoomHttpUtils.a(b.room_id, yYAudienceModel.getUid(), this.k, new BluedUIHttpResponse<BluedEntityA<Object>>(this.f17985a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.RoomMemberListView.6
+        YYRoomHttpUtils.a(b.room_id, yYAudienceModel.getUid(), this.k, new BluedUIHttpResponse<BluedEntityA<Object>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.RoomMemberListView.6
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -132,7 +125,7 @@ public class RoomMemberListView extends LinearLayout implements FollowStatusObse
                 super.onUIStart();
                 RoomMemberListView.this.d.setVisibility(0);
             }
-        }, this.f17985a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -141,7 +134,7 @@ public class RoomMemberListView extends LinearLayout implements FollowStatusObse
         if (b == null) {
             return;
         }
-        YYRoomHttpUtils.c(b.room_id, this.h, new BluedUIHttpResponse<BluedEntityA<YYAudienceModel>>(this.f17985a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.RoomMemberListView.5
+        YYRoomHttpUtils.c(b.room_id, this.h, new BluedUIHttpResponse<BluedEntityA<YYAudienceModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.RoomMemberListView.5
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -152,25 +145,25 @@ public class RoomMemberListView extends LinearLayout implements FollowStatusObse
                 if (RoomMemberListView.this.h == 1) {
                     RoomMemberListView.this.e.setNewData(bluedEntityA.data);
                 } else {
-                    RoomMemberListView.this.e.addData((Collection) bluedEntityA.data);
+                    RoomMemberListView.this.e.addData(bluedEntityA.data);
                 }
                 if (bluedEntityA.hasMore()) {
                     RoomMemberListView.f(RoomMemberListView.this);
-                    RoomMemberListView.this.b.l(true);
+                    RoomMemberListView.this.b.b(true);
                 } else {
-                    RoomMemberListView.this.b.l(false);
+                    RoomMemberListView.this.b.b(false);
                 }
-                RoomMemberListView.this.b.j();
+                RoomMemberListView.this.b.g();
                 RoomMemberListView.this.b.h();
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
-                RoomMemberListView.this.b.j();
+                RoomMemberListView.this.b.g();
                 RoomMemberListView.this.b.h();
             }
-        }, this.f17985a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     static /* synthetic */ int f(RoomMemberListView roomMemberListView) {
@@ -180,14 +173,13 @@ public class RoomMemberListView extends LinearLayout implements FollowStatusObse
     }
 
     public void a(final BaseYYStudioFragment baseYYStudioFragment, int i) {
-        this.f17985a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         this.i = i;
         this.e = new RoomMemberAdapter(baseYYStudioFragment, i);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
-        this.f17986c.setLayoutManager(linearLayoutManager);
-        this.f17986c.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.RoomMemberListView.2
-            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
+        this.c.setLayoutManager(linearLayoutManager);
+        this.c.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.RoomMemberListView.2
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 if (recyclerView.getChildAdapterPosition(view) == 0) {
                     rect.top = RoomMemberListView.this.f;
@@ -195,7 +187,7 @@ public class RoomMemberListView extends LinearLayout implements FollowStatusObse
                 rect.bottom = RoomMemberListView.this.f;
             }
         });
-        this.f17986c.setAdapter(this.e);
+        this.c.setAdapter(this.e);
         this.e.setEmptyView(this.j);
         this.e.a(new OnItemClickRoomMemberListener() { // from class: com.blued.android.module.yy_china.view.RoomMemberListView.3
             @Override // com.blued.android.module.yy_china.listener.OnItemClickRoomMemberListener
@@ -237,9 +229,9 @@ public class RoomMemberListView extends LinearLayout implements FollowStatusObse
 
     @Override // com.blued.android.module.yy_china.observer.FollowStatusObserver
     public void a_(String str, String str2) {
-        int a2 = this.e.a(str);
-        this.e.getData().get(a2).relationship = str2;
-        this.e.notifyItemChanged(a2);
+        int a = this.e.a(str);
+        ((YYAudienceModel) this.e.getData().get(a)).relationship = str2;
+        this.e.notifyItemChanged(a);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

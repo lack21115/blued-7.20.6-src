@@ -25,13 +25,9 @@ public final class RegeocodeAddress implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5635a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5636c;
+    private String c;
     private String d;
     private String e;
     private String f;
@@ -62,9 +58,9 @@ public final class RegeocodeAddress implements Parcelable {
         this.n = new ArrayList();
         this.o = new ArrayList();
         this.p = new ArrayList();
-        this.f5635a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5636c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readString();
         this.e = parcel.readString();
         this.f = parcel.readString();
@@ -108,7 +104,7 @@ public final class RegeocodeAddress implements Parcelable {
     }
 
     public final String getCity() {
-        return this.f5636c;
+        return this.c;
     }
 
     public final String getCityCode() {
@@ -132,7 +128,7 @@ public final class RegeocodeAddress implements Parcelable {
     }
 
     public final String getFormatAddress() {
-        return this.f5635a;
+        return this.a;
     }
 
     public final String getNeighborhood() {
@@ -180,7 +176,7 @@ public final class RegeocodeAddress implements Parcelable {
     }
 
     public final void setCity(String str) {
-        this.f5636c = str;
+        this.c = str;
     }
 
     public final void setCityCode(String str) {
@@ -204,7 +200,7 @@ public final class RegeocodeAddress implements Parcelable {
     }
 
     public final void setFormatAddress(String str) {
-        this.f5635a = str;
+        this.a = str;
     }
 
     public final void setNeighborhood(String str) {
@@ -237,9 +233,9 @@ public final class RegeocodeAddress implements Parcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5635a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5636c);
+        parcel.writeString(this.c);
         parcel.writeString(this.d);
         parcel.writeString(this.e);
         parcel.writeString(this.f);

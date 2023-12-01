@@ -20,9 +20,9 @@ class i extends a<JSONObject> {
         List<c> list = this.e;
         if (list != null && map != null) {
             for (c cVar : list) {
-                Boolean a2 = cVar.a(i, map);
-                if (a2 != null) {
-                    return a2.booleanValue();
+                Boolean a = cVar.a(i, map);
+                if (a != null) {
+                    return a.booleanValue();
                 }
             }
         }

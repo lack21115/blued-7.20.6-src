@@ -100,7 +100,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
         private int[] mValue;
 
         public ComponentSizeChooser(int i, int i2, int i3, int i4, int i5, int i6) {
-            super(new int[]{12324, i, 12323, i2, 12322, i3, 12321, i4, 12325, i5, 12326, i6, 12344});
+            super(new int[]{EGL14.EGL_RED_SIZE, i, EGL14.EGL_GREEN_SIZE, i2, EGL14.EGL_BLUE_SIZE, i3, EGL14.EGL_ALPHA_SIZE, i4, EGL14.EGL_DEPTH_SIZE, i5, EGL14.EGL_STENCIL_SIZE, i6, EGL14.EGL_NONE});
             this.mValue = new int[1];
             this.mRedSize = i;
             this.mGreenSize = i2;
@@ -127,13 +127,13 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
                     return null;
                 }
                 javax.microedition.khronos.egl.EGLConfig eGLConfig = eGLConfigArr[i2];
-                int findConfigAttrib = findConfigAttrib(egl10, eGLDisplay, eGLConfig, 12325, 0);
-                int findConfigAttrib2 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, 12326, 0);
+                int findConfigAttrib = findConfigAttrib(egl10, eGLDisplay, eGLConfig, EGL14.EGL_DEPTH_SIZE, 0);
+                int findConfigAttrib2 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, EGL14.EGL_STENCIL_SIZE, 0);
                 if (findConfigAttrib >= this.mDepthSize && findConfigAttrib2 >= this.mStencilSize) {
-                    int findConfigAttrib3 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, 12324, 0);
-                    int findConfigAttrib4 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, 12323, 0);
-                    int findConfigAttrib5 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, 12322, 0);
-                    int findConfigAttrib6 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, 12321, 0);
+                    int findConfigAttrib3 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, EGL14.EGL_RED_SIZE, 0);
+                    int findConfigAttrib4 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, EGL14.EGL_GREEN_SIZE, 0);
+                    int findConfigAttrib5 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, EGL14.EGL_BLUE_SIZE, 0);
+                    int findConfigAttrib6 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, EGL14.EGL_ALPHA_SIZE, 0);
                     if (findConfigAttrib3 == this.mRedSize && findConfigAttrib4 == this.mGreenSize && findConfigAttrib5 == this.mBlueSize && findConfigAttrib6 == this.mAlphaSize) {
                         return eGLConfig;
                     }
@@ -153,7 +153,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
 
         @Override // android.opengl.GLSurfaceView.EGLContextFactory
         public javax.microedition.khronos.egl.EGLContext createContext(EGL10 egl10, javax.microedition.khronos.egl.EGLDisplay eGLDisplay, javax.microedition.khronos.egl.EGLConfig eGLConfig) {
-            int[] iArr = {this.EGL_CONTEXT_CLIENT_VERSION, GLSurfaceView.this.mEGLContextClientVersion, 12344};
+            int[] iArr = {this.EGL_CONTEXT_CLIENT_VERSION, GLSurfaceView.this.mEGLContextClientVersion, EGL14.EGL_NONE};
             javax.microedition.khronos.egl.EGLContext eGLContext = EGL10.EGL_NO_CONTEXT;
             if (GLSurfaceView.this.mEGLContextClientVersion == 0) {
                 iArr = null;
@@ -645,7 +645,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
                         switch (swap) {
                             case 12288:
                                 break;
-                            case 12302:
+                            case EGL14.EGL_CONTEXT_LOST /* 12302 */:
                                 z39 = true;
                                 break;
                             default:

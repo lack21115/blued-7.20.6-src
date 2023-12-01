@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.core.AppInfo;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
@@ -39,11 +40,11 @@ import com.soft.blued.utils.third.model.OneLoginResult;
 public class OneLoginFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f31527a = "drb";
+    public final String f17837a = "drb";
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public View f31528c;
+    public View f17838c;
     public String d;
     private Dialog e;
     private String f;
@@ -53,14 +54,14 @@ public class OneLoginFragment extends BaseFragment {
     class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ OneLoginResult f31529a;
+        final /* synthetic */ OneLoginResult f17839a;
         final /* synthetic */ OneLoginFragment b;
 
         @Override // java.lang.Runnable
         public void run() {
             LiveEventBus.get(EventBusConstant.KEY_EVENT_HIDE_LOGIN_BACK).post(null);
             UserAccountsVDao.a().i();
-            LoginRegisterHttpUtils.a(this.f31529a, this.b.getFragmentActive(), this.b.c());
+            LoginRegisterHttpUtils.a(this.f17839a, (IRequestHost) this.b.getFragmentActive(), this.b.c());
         }
     }
 
@@ -79,7 +80,6 @@ public class OneLoginFragment extends BaseFragment {
         return new BluedUIHttpResponse<BluedEntity<BluedLoginResult, AVConfigExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.login_register.View.OneLoginFragment.2
             /* JADX WARN: Removed duplicated region for block: B:37:0x011e  */
             /* JADX WARN: Removed duplicated region for block: B:39:0x0125 A[RETURN] */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -92,13 +92,11 @@ public class OneLoginFragment extends BaseFragment {
                 throw new UnsupportedOperationException("Method not decompiled: com.soft.blued.ui.login_register.View.OneLoginFragment.AnonymousClass2.onUIFailure(int, java.lang.String, java.lang.String):boolean");
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(OneLoginFragment.this.e);
                 OneLoginFragment.this.d();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<BluedLoginResult, AVConfigExtra> bluedEntity) {
                 if (bluedEntity != null) {
                     try {
@@ -107,12 +105,12 @@ public class OneLoginFragment extends BaseFragment {
                             if (bluedEntity.data.get(0) != null) {
                                 Logger.b("drb", bluedEntity);
                                 if (bluedEntity.extra != null) {
-                                    AVConfig.a().a(bluedEntity.extra.f20538a, false);
+                                    AVConfig.a().a(((AVConfigExtra) bluedEntity.extra).f6932a, false);
                                 }
-                                BluedLoginResult bluedLoginResult = bluedEntity.data.get(0);
+                                BluedLoginResult bluedLoginResult = (BluedLoginResult) bluedEntity.data.get(0);
                                 EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.LOGIN_SUCCESS, LoginAndRegisterProtos.Source.ONE_CLICK, bluedLoginResult.uid);
                                 Logger.b("drb", "===success", "加密：responseJson:", bluedEntity);
-                                UserInfo.getInstance().saveUserInfo(bluedLoginResult.uid, 2, OneLoginFragment.this.f, bluedLoginResult, OneLoginFragment.this.d);
+                                UserInfo.getInstance().saveUserInfo(bluedLoginResult.uid, 2, OneLoginFragment.this.f, bluedLoginResult, new String[]{OneLoginFragment.this.d});
                                 if (!StringUtils.d(OneLoginFragment.this.d)) {
                                     UserAccountsVDao.a().c(OneLoginFragment.this.d);
                                 }
@@ -130,7 +128,7 @@ public class OneLoginFragment extends BaseFragment {
                                     }
                                 });
                                 HomeArgumentHelper.a(OneLoginFragment.this.b, (String) null, bundle);
-                                LoginConstants.f20505c = "";
+                                LoginConstants.f6899c = "";
                                 LoginWithTypePresenter.e();
                                 ChatManager.getInstance().initLanguage();
                                 if (bluedLoginResult.getDevice_safe() == 1) {
@@ -145,14 +143,13 @@ public class OneLoginFragment extends BaseFragment {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public BluedEntity<BluedLoginResult, AVConfigExtra> parseData(String str) {
                 OneLoginFragment.this.f = str;
                 BluedEntity<BluedLoginResult, AVConfigExtra> parseData = super.parseData(str);
                 if (parseData != null) {
                     try {
                         if (parseData.data != null && parseData.data.size() > 0) {
-                            String a2 = AesCrypto2.a(parseData.data.get(0).getEncrypted());
+                            String a2 = AesCrypto2.a(((BluedLoginResult) parseData.data.get(0)).getEncrypted());
                             Logger.b("drb", "解密：deData===", a2);
                             parseData.data.set(0, (BluedLoginResult) AppInfo.f().fromJson(a2, (Class<Object>) BluedLoginResult.class));
                             return parseData;
@@ -171,23 +168,21 @@ public class OneLoginFragment extends BaseFragment {
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         Log.v("drb", "OneLoginFragment onCreateView");
         this.b = getActivity();
-        View view = this.f31528c;
+        View view = this.f17838c;
         if (view == null) {
-            this.f31528c = layoutInflater.inflate(R.layout.fragment_ad_video, viewGroup, false);
+            this.f17838c = layoutInflater.inflate(R.layout.fragment_ad_video, viewGroup, false);
             b();
             a();
             EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.ONE_CLICK_POP_SHOW);
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f31528c.getParent()).removeView(this.f31528c);
+            ((ViewGroup) this.f17838c.getParent()).removeView(this.f17838c);
         }
-        return this.f31528c;
+        return this.f17838c;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }

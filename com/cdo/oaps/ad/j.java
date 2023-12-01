@@ -17,17 +17,17 @@ import java.util.Map;
 public class j implements l {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f21530a = "Y29tLm9wcG8ubWFpbi5BQ1RJT05fTEFVTkNI";
+    private static final String f7924a = "Y29tLm9wcG8ubWFpbi5BQ1RJT05fTEFVTkNI";
     private static final String b = "b3Bwby9sYXVuY2g=";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f21531c = "com.nearme.gamecenter";
+    private static final String f7925c = "com.nearme.gamecenter";
     private static final String d = "com.heytap.market";
 
     private static String a(Context context, OapsWrapper oapsWrapper) {
         String host = oapsWrapper.getHost();
         if (Launcher.Host.GC.equals(host)) {
-            return f21531c;
+            return f7925c;
         }
         if ("mk".equals(host)) {
             return p.b(context, "com.heytap.market") ? "com.heytap.market" : a.b();
@@ -63,7 +63,7 @@ public class j implements l {
         for (ResolveInfo resolveInfo : queryIntentServices) {
             String str2 = resolveInfo.serviceInfo.packageName;
             if (TextUtils.isEmpty(str)) {
-                if (!f21531c.equals(str2) && !a.b().equals(str2) && !"com.heytap.market".equalsIgnoreCase(str2)) {
+                if (!f7925c.equals(str2) && !a.b().equals(str2) && !"com.heytap.market".equalsIgnoreCase(str2)) {
                     ComponentName componentName = new ComponentName(str2, resolveInfo.serviceInfo.name);
                     Intent intent2 = new Intent(intent);
                     intent2.setComponent(componentName);
@@ -161,7 +161,7 @@ public class j implements l {
         for (ResolveInfo resolveInfo : queryIntentActivities) {
             String str2 = resolveInfo.activityInfo.packageName;
             if (TextUtils.isEmpty(str)) {
-                if (!f21531c.equals(str2) && !a.b().equals(str2) && !"com.heytap.market".equalsIgnoreCase(str2)) {
+                if (!f7925c.equals(str2) && !a.b().equals(str2) && !"com.heytap.market".equalsIgnoreCase(str2)) {
                     ComponentName componentName = new ComponentName(str2, resolveInfo.activityInfo.name);
                     Intent intent2 = new Intent(intent);
                     intent2.setComponent(componentName);

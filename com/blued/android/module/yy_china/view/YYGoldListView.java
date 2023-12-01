@@ -24,9 +24,7 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYGoldListView.class */
 public class YYGoldListView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewYyGoldListViewBinding f18216a;
+    private ViewYyGoldListViewBinding a;
     private MemberAdapter b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -47,7 +45,6 @@ public class YYGoldListView extends LinearLayout {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYAudienceModel yYAudienceModel) {
             a(yYAudienceModel, (ImageView) baseViewHolder.getView(R.id.iv_user));
@@ -68,30 +65,27 @@ public class YYGoldListView extends LinearLayout {
     }
 
     private void a() {
-        this.f18216a = ViewYyGoldListViewBinding.a(LayoutInflater.from(getContext()), this, true);
+        this.a = ViewYyGoldListViewBinding.a(LayoutInflater.from(getContext()), this, true);
         this.b = new MemberAdapter();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
-        this.f18216a.f16920a.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.YYGoldListView.1
-
-            /* renamed from: a  reason: collision with root package name */
-            int f18217a;
+        this.a.a.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.YYGoldListView.1
+            int a;
 
             {
-                this.f18217a = DensityUtils.a(YYGoldListView.this.getContext(), 5.0f);
+                this.a = DensityUtils.a(YYGoldListView.this.getContext(), 5.0f);
             }
 
-            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 if (recyclerView.getChildAdapterPosition(view) == 0) {
                     rect.left = 0;
                 } else {
-                    rect.left = -this.f18217a;
+                    rect.left = -this.a;
                 }
             }
         });
-        this.f18216a.f16920a.setLayoutManager(linearLayoutManager);
-        this.f18216a.f16920a.setAdapter(this.b);
+        this.a.a.setLayoutManager(linearLayoutManager);
+        this.a.a.setAdapter(this.b);
         setGoldDatas(null);
     }
 
@@ -102,10 +96,10 @@ public class YYGoldListView extends LinearLayout {
 
     public void setGoldDatas(List<YYAudienceModel> list) {
         if (list == null || list.isEmpty()) {
-            this.f18216a.f16920a.setVisibility(8);
+            this.a.a.setVisibility(8);
             return;
         }
-        this.f18216a.f16920a.setVisibility(0);
+        this.a.a.setVisibility(0);
         List<YYAudienceModel> list2 = list;
         if (list != null) {
             list2 = list;

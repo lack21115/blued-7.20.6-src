@@ -255,7 +255,7 @@ public class PasswordEntryKeyboardHelper implements KeyboardView.OnKeyboardActio
             case 0:
                 this.mKeyboardView.setKeyboard(this.mQwertyKeyboard);
                 this.mKeyboardState = 0;
-                if (Settings.System.getInt(this.mContext.getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD, 1) == 0) {
+                if (Settings.System.getInt(this.mContext.getContentResolver(), "show_password", 1) == 0) {
                     z = false;
                 }
                 KeyboardView keyboardView = this.mKeyboardView;

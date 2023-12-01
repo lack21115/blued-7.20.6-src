@@ -21,11 +21,11 @@ public class ReflectionUtils {
     }
 
     public static void a(Object obj, String str, Object obj2) {
-        Field a2 = a(obj, str);
-        if (a2 != null) {
+        Field a = a(obj, str);
+        if (a != null) {
             try {
-                a2.setAccessible(true);
-                a2.set(obj, obj2);
+                a.setAccessible(true);
+                a.set(obj, obj2);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (IllegalArgumentException e2) {

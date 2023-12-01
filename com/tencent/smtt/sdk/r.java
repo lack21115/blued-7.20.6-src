@@ -12,17 +12,17 @@ class r {
     private static r e;
 
     /* renamed from: a  reason: collision with root package name */
-    t f38876a;
+    t f25185a;
     Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    com.tencent.tbs.video.interfaces.a f38877c;
+    com.tencent.tbs.video.interfaces.a f25186c;
     IUserStateChangedListener d;
 
     private r(Context context) {
-        this.f38876a = null;
+        this.f25185a = null;
         this.b = context.getApplicationContext();
-        this.f38876a = new t(this.b);
+        this.f25185a = new t(this.b);
     }
 
     public static r a(Context context) {
@@ -41,7 +41,7 @@ class r {
     }
 
     public void a(int i, int i2, Intent intent) {
-        com.tencent.tbs.video.interfaces.a aVar = this.f38877c;
+        com.tencent.tbs.video.interfaces.a aVar = this.f25186c;
         if (aVar != null) {
             aVar.a(i, i2, intent);
         }
@@ -49,12 +49,12 @@ class r {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Activity activity, int i) {
-        this.f38876a.a(activity, i);
+        this.f25185a.a(activity, i);
     }
 
     public boolean a() {
-        this.f38876a.a();
-        return this.f38876a.b();
+        this.f25185a.a();
+        return this.f25185a.b();
     }
 
     public boolean a(String str, Bundle bundle, com.tencent.tbs.video.interfaces.a aVar) {
@@ -66,24 +66,24 @@ class r {
             bundle2.putString("videoUrl", str);
         }
         if (aVar != null) {
-            this.f38876a.a();
-            if (!this.f38876a.b()) {
+            this.f25185a.a();
+            if (!this.f25185a.b()) {
                 return false;
             }
-            this.f38877c = aVar;
+            this.f25186c = aVar;
             IUserStateChangedListener iUserStateChangedListener = new IUserStateChangedListener() { // from class: com.tencent.smtt.sdk.r.1
                 @Override // com.tencent.tbs.video.interfaces.IUserStateChangedListener
                 public void onUserStateChanged() {
-                    r.this.f38876a.c();
+                    r.this.f25185a.c();
                 }
             };
             this.d = iUserStateChangedListener;
-            this.f38877c.a(iUserStateChangedListener);
+            this.f25186c.a(iUserStateChangedListener);
             bundle2.putInt("callMode", 3);
         } else {
             bundle2.putInt("callMode", 1);
         }
-        this.f38876a.a(bundle2, aVar == null ? null : this);
+        this.f25185a.a(bundle2, aVar == null ? null : this);
         return true;
     }
 }

@@ -11,7 +11,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class VirtualImageGoodsVM extends BaseListViewModel<VirtualImageModel.ImageGoodsModel> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f34410a = new Companion(null);
+    public static final Companion f20719a = new Companion(null);
     private VirtualImageModel.CategoryModel b;
 
     @Metadata
@@ -33,7 +33,6 @@ public final class VirtualImageGoodsVM extends BaseListViewModel<VirtualImageMod
         this.b = categoryModel;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseViewModel
     public void init(Bundle bundle) {
         super.init(bundle);
         Object obj = bundle == null ? null : bundle.get("data_category");
@@ -43,7 +42,6 @@ public final class VirtualImageGoodsVM extends BaseListViewModel<VirtualImageMod
         this.b = (VirtualImageModel.CategoryModel) obj;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListViewModel
     public void requestData() {
         VirtualImageModel.CategoryModel categoryModel = this.b;
         if (categoryModel == null) {

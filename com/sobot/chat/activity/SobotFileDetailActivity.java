@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import com.sobot.chat.activity.base.SobotBaseActivity;
 import com.sobot.chat.api.model.SobotCacheFile;
@@ -102,7 +101,7 @@ public class SobotFileDetailActivity extends SobotBaseActivity implements View.O
         String formatFileSize = Formatter.formatFileSize(this, j);
         String formatFileSize2 = Formatter.formatFileSize(this, j2);
         TextView textView = this.sobot_tv_progress;
-        textView.setText(this.mProgressStr + "…(" + formatFileSize + BridgeUtil.SPLIT_MARK + formatFileSize2 + ")");
+        textView.setText(this.mProgressStr + "…(" + formatFileSize + "/" + formatFileSize2 + ")");
         this.sobot_pb_progress.setProgress((int) (f * 100.0f));
     }
 

@@ -13,10 +13,10 @@ public enum a4 {
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f37287c;
+    private final String f23596c;
 
     a4(String str, int i) {
-        this.f37287c = str;
+        this.f23596c = str;
         this.b = i;
     }
 
@@ -53,7 +53,7 @@ public enum a4 {
     }
 
     public String a() {
-        return this.f37287c;
+        return this.f23596c;
     }
 
     public boolean a(int i) {
@@ -61,6 +61,6 @@ public enum a4 {
     }
 
     public boolean b(String str) {
-        return this.f37287c.equals(str);
+        return this.f23596c.equals(str);
     }
 }

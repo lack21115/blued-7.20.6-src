@@ -179,9 +179,7 @@ public class TextureView extends View {
     public void buildLayer() {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public void destroyHardwareResources() {
+    protected void destroyHardwareResources() {
         super.destroyHardwareResources();
         destroySurface();
         invalidateParentCaches();
@@ -220,7 +218,6 @@ public class TextureView extends View {
         return bitmap;
     }
 
-    @Override // android.view.View
     HardwareLayer getHardwareLayer() {
         this.mPrivateFlags |= a.B;
         this.mPrivateFlags &= -6291457;
@@ -275,9 +272,7 @@ public class TextureView extends View {
         return matrix2;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // android.view.View
-    public boolean hasStaticLayer() {
+    boolean hasStaticLayer() {
         return true;
     }
 
@@ -323,16 +318,13 @@ public class TextureView extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public void onDetachedFromWindowInternal() {
+    protected void onDetachedFromWindowInternal() {
         destroySurface();
         super.onDetachedFromWindowInternal();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    protected final void onDraw(Canvas canvas) {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -348,9 +340,8 @@ public class TextureView extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         if (this.mSurface != null) {
             if (i != 0) {

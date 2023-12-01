@@ -16,7 +16,7 @@ import java.util.Set;
 public class HttpUriLoader implements ModelLoader<Uri, InputStream> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Set<String> f20919a = Collections.unmodifiableSet(new HashSet(Arrays.asList("http", "https")));
+    private static final Set<String> f7313a = Collections.unmodifiableSet(new HashSet(Arrays.asList("http", "https")));
     private final ModelLoader<GlideUrl, InputStream> b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/stream/HttpUriLoader$Factory.class */
@@ -42,6 +42,6 @@ public class HttpUriLoader implements ModelLoader<Uri, InputStream> {
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public boolean a(Uri uri) {
-        return f20919a.contains(uri.getScheme());
+        return f7313a.contains(uri.getScheme());
     }
 }

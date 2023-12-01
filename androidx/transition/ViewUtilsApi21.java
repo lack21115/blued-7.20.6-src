@@ -7,19 +7,19 @@ import android.view.View;
 class ViewUtilsApi21 extends ViewUtilsApi19 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f3504a = true;
+    private static boolean f3456a = true;
     private static boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f3505c = true;
+    private static boolean f3457c = true;
 
     @Override // androidx.transition.ViewUtilsBase
     public void setAnimationMatrix(View view, Matrix matrix) {
-        if (f3504a) {
+        if (f3456a) {
             try {
                 view.setAnimationMatrix(matrix);
             } catch (NoSuchMethodError e) {
-                f3504a = false;
+                f3456a = false;
             }
         }
     }
@@ -37,11 +37,11 @@ class ViewUtilsApi21 extends ViewUtilsApi19 {
 
     @Override // androidx.transition.ViewUtilsBase
     public void transformMatrixToLocal(View view, Matrix matrix) {
-        if (f3505c) {
+        if (f3457c) {
             try {
                 view.transformMatrixToLocal(matrix);
             } catch (NoSuchMethodError e) {
-                f3505c = false;
+                f3457c = false;
             }
         }
     }

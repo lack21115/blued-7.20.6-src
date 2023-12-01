@@ -4,13 +4,13 @@ package com.tencent.qimei.r;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f38405a;
+    public boolean f24714a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qimei/r/b$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final b f38406a = new b(null);
+        public static final b f24715a = new b(null);
     }
 
     public /* synthetic */ b(com.tencent.qimei.r.a aVar) {
@@ -26,11 +26,11 @@ public class b {
         /*
             r4 = this;
             r0 = r4
-            boolean r0 = r0.f38405a
+            boolean r0 = r0.f24714a
             if (r0 == 0) goto L30
             long r0 = java.lang.System.currentTimeMillis()
             r8 = r0
-            boolean r0 = com.tencent.qimei.beaconid.U.f38315a
+            boolean r0 = com.tencent.qimei.beaconid.U.f24624a
             if (r0 == 0) goto L21
             r0 = r6
             r1 = r8

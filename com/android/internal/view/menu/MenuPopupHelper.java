@@ -119,11 +119,11 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     }
 
     public MenuPopupHelper(Context context, MenuBuilder menuBuilder) {
-        this(context, menuBuilder, null, false, 16843520, 0);
+        this(context, menuBuilder, null, false, R.attr.popupMenuStyle, 0);
     }
 
     public MenuPopupHelper(Context context, MenuBuilder menuBuilder, View view) {
-        this(context, menuBuilder, view, false, 16843520, 0);
+        this(context, menuBuilder, view, false, R.attr.popupMenuStyle, 0);
     }
 
     public MenuPopupHelper(Context context, MenuBuilder menuBuilder, View view, boolean z, int i) {

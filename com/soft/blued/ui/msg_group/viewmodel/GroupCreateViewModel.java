@@ -1,29 +1,32 @@
 package com.soft.blued.ui.msg_group.viewmodel;
 
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelKt;
 import com.blued.android.module.common.base.mvvm.BaseViewModel;
 import com.blued.android.module.common.group.GroupInfoModel;
 import java.util.Map;
 import kotlin.Metadata;
+import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
+import kotlinx.coroutines.CoroutineStart;
 
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/viewmodel/GroupCreateViewModel.class */
 public final class GroupCreateViewModel extends BaseViewModel {
 
     /* renamed from: a  reason: collision with root package name */
-    private final MutableLiveData<GroupInfoModel> f32840a = new MutableLiveData<>();
+    private final MutableLiveData<GroupInfoModel> f19149a = new MutableLiveData<>();
     private final MutableLiveData<String> b = new MutableLiveData<>();
 
-    public final void a(Map<String, String> params) {
-        Intrinsics.e(params, "params");
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new GroupCreateViewModel$createGroup$1(params, this, null), 3, null);
+    public final void a(Map<String, String> map) {
+        Intrinsics.e(map, "params");
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new GroupCreateViewModel$createGroup$1(map, this, null), 3, (Object) null);
     }
 
     public final MutableLiveData<GroupInfoModel> d() {
-        return this.f32840a;
+        return this.f19149a;
     }
 
     public final MutableLiveData<String> e() {
@@ -31,6 +34,6 @@ public final class GroupCreateViewModel extends BaseViewModel {
     }
 
     public final void f() {
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new GroupCreateViewModel$getCityCode$1(this, null), 3, null);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new GroupCreateViewModel$getCityCode$1(this, null), 3, (Object) null);
     }
 }

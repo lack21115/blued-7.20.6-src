@@ -13,75 +13,75 @@ import java.util.Map;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/tplayer/a/b/a.class */
 public class a implements Serializable {
-    @InterfaceC1025a(a = "flowid")
+    @InterfaceC0855a(a = "flowid")
 
     /* renamed from: a  reason: collision with root package name */
-    private String f39367a = "";
-    @InterfaceC1025a(a = TPDownloadProxyEnum.USER_GUID)
+    private String f25676a = "";
+    @InterfaceC0855a(a = TPDownloadProxyEnum.USER_GUID)
     private String b = "";
-    @InterfaceC1025a(a = "seq")
+    @InterfaceC0855a(a = "seq")
 
     /* renamed from: c  reason: collision with root package name */
-    private int f39368c = -1;
-    @InterfaceC1025a(a = "platformtype")
+    private int f25677c = -1;
+    @InterfaceC0855a(a = "platformtype")
     private int d = -1;
-    @InterfaceC1025a(a = "devtype")
+    @InterfaceC0855a(a = "devtype")
     private int e = -1;
-    @InterfaceC1025a(a = "networktype")
+    @InterfaceC0855a(a = "networktype")
     private int f = -1;
-    @InterfaceC1025a(a = "devicename")
+    @InterfaceC0855a(a = "devicename")
     private String g = "";
-    @InterfaceC1025a(a = "osver")
+    @InterfaceC0855a(a = "osver")
     private String h = "";
-    @InterfaceC1025a(a = "appname")
+    @InterfaceC0855a(a = "appname")
     private String i = "";
-    @InterfaceC1025a(a = "appver")
+    @InterfaceC0855a(a = "appver")
     private String j = "";
-    @InterfaceC1025a(a = "playerver")
+    @InterfaceC0855a(a = "playerver")
     private String k = "";
-    @InterfaceC1025a(a = "reportprotocolver")
+    @InterfaceC0855a(a = "reportprotocolver")
     private String l = "";
-    @InterfaceC1025a(a = "durationms")
+    @InterfaceC0855a(a = "durationms")
     private long m = -1;
-    @InterfaceC1025a(a = "hlssourcetype")
+    @InterfaceC0855a(a = "hlssourcetype")
     private int n = -1;
-    @InterfaceC1025a(a = "playertype")
+    @InterfaceC0855a(a = "playertype")
     private int o = -1;
-    @InterfaceC1025a(a = "urlprotocol")
+    @InterfaceC0855a(a = "urlprotocol")
     private int p = -1;
-    @InterfaceC1025a(a = "containerformat")
+    @InterfaceC0855a(a = "containerformat")
     private String q = "";
-    @InterfaceC1025a(a = "videoencodefmt")
+    @InterfaceC0855a(a = "videoencodefmt")
     private int r = -1;
-    @InterfaceC1025a(a = "audioencodefmt")
+    @InterfaceC0855a(a = "audioencodefmt")
     private int s = -1;
-    @InterfaceC1025a(a = "subtitleencodefmt")
+    @InterfaceC0855a(a = "subtitleencodefmt")
     private int t = -1;
-    @InterfaceC1025a(a = "streambitratekbps")
+    @InterfaceC0855a(a = "streambitratekbps")
     private long u = -1;
-    @InterfaceC1025a(a = "videoframerate")
+    @InterfaceC0855a(a = "videoframerate")
     private float v = -1.0f;
-    @InterfaceC1025a(a = "url")
+    @InterfaceC0855a(a = "url")
     private String w = "";
-    @InterfaceC1025a(a = "resolution")
+    @InterfaceC0855a(a = "resolution")
     private String x = "";
-    @InterfaceC1025a(a = "datatransportver")
+    @InterfaceC0855a(a = "datatransportver")
     private String y = "";
-    @InterfaceC1025a(a = "speedkbps")
+    @InterfaceC0855a(a = "speedkbps")
     private int z = -1;
-    @InterfaceC1025a(a = "usedatatransport")
+    @InterfaceC0855a(a = "usedatatransport")
     private int A = -1;
-    @InterfaceC1025a(a = "datatransportprotocolver")
+    @InterfaceC0855a(a = "datatransportprotocolver")
     private String B = "";
-    @InterfaceC1025a(a = "cdnuip")
+    @InterfaceC0855a(a = "cdnuip")
     private String C = "";
-    @InterfaceC1025a(a = "cdnip")
+    @InterfaceC0855a(a = "cdnip")
     private String D = "";
-    @InterfaceC1025a(a = "platform")
+    @InterfaceC0855a(a = "platform")
     private int E = -1;
-    @InterfaceC1025a(a = "playerconfig")
+    @InterfaceC0855a(a = "playerconfig")
     private String F = "";
-    @InterfaceC1025a(a = "drmability")
+    @InterfaceC0855a(a = "drmability")
     private int G = -1;
     private Map<String, String> H = null;
     private Map<String, String> I = null;
@@ -92,7 +92,7 @@ public class a implements Serializable {
     @Retention(RetentionPolicy.RUNTIME)
     /* renamed from: com.tencent.thumbplayer.tplayer.a.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/tplayer/a/b/a$a.class */
-    public @interface InterfaceC1025a {
+    public @interface InterfaceC0855a {
         String a() default "";
     }
 
@@ -133,9 +133,9 @@ public class a implements Serializable {
                 return hashMap;
             }
             Field field = fieldArr[i2];
-            InterfaceC1025a interfaceC1025a = (InterfaceC1025a) field.getAnnotation(InterfaceC1025a.class);
-            if (interfaceC1025a != null) {
-                hashMap.put(interfaceC1025a.a(), a(field));
+            InterfaceC0855a interfaceC0855a = (InterfaceC0855a) field.getAnnotation(InterfaceC0855a.class);
+            if (interfaceC0855a != null) {
+                hashMap.put(interfaceC0855a.a(), a(field));
             }
             i = i2 + 1;
         }
@@ -168,7 +168,7 @@ public class a implements Serializable {
     }
 
     public String a() {
-        return this.f39367a;
+        return this.f25676a;
     }
 
     public void a(float f) {
@@ -176,7 +176,7 @@ public class a implements Serializable {
     }
 
     public void a(int i) {
-        this.f39368c = i;
+        this.f25677c = i;
     }
 
     public void a(long j) {
@@ -184,9 +184,9 @@ public class a implements Serializable {
     }
 
     public void a(a aVar) {
-        this.f39367a = aVar.f39367a;
+        this.f25676a = aVar.f25676a;
         this.b = aVar.b;
-        this.f39368c = aVar.f39368c;
+        this.f25677c = aVar.f25677c;
         this.d = aVar.d;
         this.e = aVar.e;
         this.f = aVar.f;
@@ -224,7 +224,7 @@ public class a implements Serializable {
     }
 
     public void a(String str) {
-        this.f39367a = str;
+        this.f25676a = str;
     }
 
     public void a(Map<String, String> map) {

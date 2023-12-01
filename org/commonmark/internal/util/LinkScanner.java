@@ -23,7 +23,7 @@ public class LinkScanner {
         return charSequence.length();
     }
 
-    public static int a(CharSequence charSequence, int i, char c2) {
+    public static int a(CharSequence charSequence, int i, char c) {
         int i2;
         while (i < charSequence.length()) {
             char charAt = charSequence.charAt(i);
@@ -34,11 +34,11 @@ public class LinkScanner {
                     i = i2 + 1;
                 }
             }
-            if (charAt == c2) {
+            if (charAt == c) {
                 return i;
             }
             i2 = i;
-            if (c2 == ')') {
+            if (c == ')') {
                 i2 = i;
                 if (charAt == '(') {
                     return -1;
@@ -81,18 +81,18 @@ public class LinkScanner {
             return -1;
         }
         char charAt = charSequence.charAt(i);
-        char c2 = '\'';
+        char c = '\'';
         if (charAt == '\"') {
-            c2 = '\"';
+            c = '\"';
         } else if (charAt != '\'') {
             if (charAt != '(') {
                 return -1;
             }
-            c2 = ')';
+            c = ')';
         }
-        int a2 = a(charSequence, i + 1, c2);
-        if (a2 != -1 && a2 < charSequence.length() && charSequence.charAt(a2) == c2) {
-            return a2 + 1;
+        int a = a(charSequence, i + 1, c);
+        if (a != -1 && a < charSequence.length() && charSequence.charAt(a) == c) {
+            return a + 1;
         }
         return -1;
     }

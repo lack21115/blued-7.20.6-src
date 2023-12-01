@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.util.Log;
 import com.anythink.china.activity.TransparentActivity;
+import com.anythink.china.common.d;
 import com.bun.miitmdid.core.MdidSdkHelper;
 import com.bun.miitmdid.interfaces.IIdentifierListener;
 import com.bun.miitmdid.interfaces.IdSupplier;
@@ -49,7 +50,7 @@ public class ATChinaSDKHandler {
         Intent intent = new Intent(context, TransparentActivity.class);
         intent.putExtra("type", 1000);
         intent.putExtra(TransparentActivity.b, nextInt);
-        intent.putExtra(TransparentActivity.d, new String[]{"android.permission.READ_PHONE_STATE", "android.permission.WRITE_EXTERNAL_STORAGE"});
+        intent.putExtra(TransparentActivity.d, new String[]{d.a, d.b});
         intent.setFlags(268435456);
         context.startActivity(intent);
     }

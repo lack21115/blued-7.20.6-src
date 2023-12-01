@@ -14,7 +14,7 @@ public class MessageNotifyFragment_ViewBinding implements Unbinder {
 
     public MessageNotifyFragment_ViewBinding(MessageNotifyFragment messageNotifyFragment, View view) {
         this.b = messageNotifyFragment;
-        messageNotifyFragment.topTitle = (CommonTopTitleNoTrans) Utils.a(view, 2131370749, "field 'topTitle'", CommonTopTitleNoTrans.class);
+        messageNotifyFragment.topTitle = (CommonTopTitleNoTrans) Utils.a(view, R.id.top_title, "field 'topTitle'", CommonTopTitleNoTrans.class);
         messageNotifyFragment.llMessageMobileLogin = (LinearLayout) Utils.a(view, R.id.ll_message_mobile_login, "field 'llMessageMobileLogin'", LinearLayout.class);
         messageNotifyFragment.llMessageCommonLogin = (LinearLayout) Utils.a(view, R.id.ll_message_common_login, "field 'llMessageCommonLogin'", LinearLayout.class);
         messageNotifyFragment.tbMessageMobileLogin = (ToggleButton) Utils.a(view, R.id.tb_message_mobile_login, "field 'tbMessageMobileLogin'", ToggleButton.class);

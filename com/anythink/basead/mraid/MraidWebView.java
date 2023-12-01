@@ -13,13 +13,9 @@ import java.lang.ref.WeakReference;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/mraid/MraidWebView.class */
 public class MraidWebView extends ATBannerWebView {
     public static String TAG = MraidWebView.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    b f6014a;
+    b a;
     boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    MraidVolumeChangeReceiver f6015c;
+    MraidVolumeChangeReceiver c;
     boolean d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -29,7 +25,6 @@ public class MraidWebView extends ATBannerWebView {
         AnonymousClass2() {
         }
 
-        @Override // com.anythink.expressad.atsignalcommon.mraid.MraidVolumeChangeReceiver.VolumeChangeListener
         public final void onVolumeChanged(double d) {
             o.d(MraidWebView.TAG, "volume is : ".concat(String.valueOf(d)));
             try {
@@ -63,10 +58,10 @@ public class MraidWebView extends ATBannerWebView {
             if (context instanceof Activity) {
                 ((a) object).b = new WeakReference<>((Activity) context);
             }
-            ((a) object).a(mraidWebView.f6014a);
+            ((a) object).a(mraidWebView.a);
         }
         if (baseWebViewClient instanceof e) {
-            ((e) baseWebViewClient).f6032c = mraidWebView.f6014a;
+            ((e) baseWebViewClient).c = mraidWebView.a;
         }
     }
 
@@ -78,33 +73,32 @@ public class MraidWebView extends ATBannerWebView {
             if (context instanceof Activity) {
                 ((a) object).b = new WeakReference<>((Activity) context);
             }
-            ((a) object).a(this.f6014a);
+            ((a) object).a(this.a);
         }
         if (baseWebViewClient instanceof e) {
-            ((e) baseWebViewClient).f6032c = this.f6014a;
+            ((e) baseWebViewClient).c = this.a;
         }
     }
 
     static /* synthetic */ void b(MraidWebView mraidWebView) {
         MraidVolumeChangeReceiver mraidVolumeChangeReceiver = new MraidVolumeChangeReceiver(mraidWebView.getContext());
-        mraidWebView.f6015c = mraidVolumeChangeReceiver;
+        mraidWebView.c = mraidVolumeChangeReceiver;
         mraidVolumeChangeReceiver.registerReceiver();
-        mraidWebView.f6015c.getCurrentVolume();
-        mraidWebView.f6015c.setVolumeChangeListener(new AnonymousClass2());
+        mraidWebView.c.getCurrentVolume();
+        mraidWebView.c.setVolumeChangeListener(new AnonymousClass2());
     }
 
     private void c() {
         MraidVolumeChangeReceiver mraidVolumeChangeReceiver = new MraidVolumeChangeReceiver(getContext());
-        this.f6015c = mraidVolumeChangeReceiver;
+        this.c = mraidVolumeChangeReceiver;
         mraidVolumeChangeReceiver.registerReceiver();
-        this.f6015c.getCurrentVolume();
-        this.f6015c.setVolumeChangeListener(new AnonymousClass2());
+        this.c.getCurrentVolume();
+        this.c.setVolumeChangeListener(new AnonymousClass2());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x004c, code lost:
         if (r0.contains(com.anythink.core.common.res.d.a(com.anythink.core.common.b.n.a().g()).a()) == false) goto L5;
      */
-    @Override // com.anythink.expressad.atsignalcommon.base.BaseWebView
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -174,7 +168,7 @@ public class MraidWebView extends ATBannerWebView {
     }
 
     public void prepare(Context context, b bVar) {
-        this.f6014a = bVar;
+        this.a = bVar;
         getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: com.anythink.basead.mraid.MraidWebView.1
             @Override // android.view.ViewTreeObserver.OnPreDrawListener
             public final boolean onPreDraw() {
@@ -192,8 +186,8 @@ public class MraidWebView extends ATBannerWebView {
                     if (MraidWebView.this.d) {
                         MraidWebView.b(MraidWebView.this);
                     }
-                    if (MraidWebView.this.f6014a != null) {
-                        MraidWebView.this.f6014a.a();
+                    if (MraidWebView.this.a != null) {
+                        MraidWebView.this.a.a();
                         return false;
                     }
                     return false;
@@ -205,11 +199,10 @@ public class MraidWebView extends ATBannerWebView {
         });
     }
 
-    @Override // com.anythink.expressad.atsignalcommon.windvane.WindVaneWebView
     public void release() {
         super.release();
         setWebViewListener(null);
-        MraidVolumeChangeReceiver mraidVolumeChangeReceiver = this.f6015c;
+        MraidVolumeChangeReceiver mraidVolumeChangeReceiver = this.c;
         if (mraidVolumeChangeReceiver != null) {
             mraidVolumeChangeReceiver.unregisterReceiver();
         }

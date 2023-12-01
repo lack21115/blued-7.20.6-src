@@ -1,6 +1,5 @@
 package java.lang;
 
-import com.igexin.push.core.b;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -37,8 +36,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     @Override // java.lang.Appendable
-    public StringBuilder append(char c2) {
-        append0(c2);
+    public StringBuilder append(char c) {
+        append0(c);
         return this;
     }
 
@@ -176,8 +175,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
         return super.indexOf(str, i);
     }
 
-    public StringBuilder insert(int i, char c2) {
-        insert0(i, c2);
+    public StringBuilder insert(int i, char c) {
+        insert0(i, c);
         return this;
     }
 
@@ -202,7 +201,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     public StringBuilder insert(int i, CharSequence charSequence) {
-        insert0(i, charSequence == null ? b.l : charSequence.toString());
+        insert0(i, charSequence == null ? "null" : charSequence.toString());
         return this;
     }
 
@@ -212,7 +211,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     public StringBuilder insert(int i, Object obj) {
-        insert0(i, obj == null ? b.l : obj.toString());
+        insert0(i, obj == null ? "null" : obj.toString());
         return this;
     }
 
@@ -267,8 +266,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     @Override // java.lang.AbstractStringBuilder
-    public /* bridge */ /* synthetic */ void setCharAt(int i, char c2) {
-        super.setCharAt(i, c2);
+    public /* bridge */ /* synthetic */ void setCharAt(int i, char c) {
+        super.setCharAt(i, c);
     }
 
     @Override // java.lang.AbstractStringBuilder

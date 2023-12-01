@@ -11,9 +11,7 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2.class */
 public final class FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2<T> implements FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function2 f43244a;
+    final /* synthetic */ Function2 a;
     final /* synthetic */ Ref.ObjectRef b;
 
     @Metadata
@@ -21,13 +19,9 @@ public final class FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2<T> imple
     /* renamed from: kotlinx.coroutines.flow.FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        Object f43245a;
+        Object a;
         /* synthetic */ Object b;
-
-        /* renamed from: c  reason: collision with root package name */
-        int f43246c;
+        int c;
         Object e;
 
         public AnonymousClass1(Continuation continuation) {
@@ -37,13 +31,13 @@ public final class FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2<T> imple
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             this.b = obj;
-            this.f43246c |= Integer.MIN_VALUE;
+            this.c |= Integer.MIN_VALUE;
             return FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2.this.emit(null, this);
         }
     }
 
     public FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2(Function2 function2, Ref.ObjectRef objectRef) {
-        this.f43244a = function2;
+        this.a = function2;
         this.b = objectRef;
     }
 

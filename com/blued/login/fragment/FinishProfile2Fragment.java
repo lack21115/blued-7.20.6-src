@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
@@ -45,7 +47,7 @@ import net.simonvt.numberpicker.NumberPicker;
 public final class FinishProfile2Fragment extends MVVMBaseFragment<EmptyViewModel> implements DatePicker.OnDateChangedListener {
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f20545c;
+    private final ViewBindingProperty f6939c;
     private ProfileInfoModel d;
     private String[] e;
     private NumberPicker f;
@@ -58,10 +60,10 @@ public final class FinishProfile2Fragment extends MVVMBaseFragment<EmptyViewMode
     private int m;
     private int n;
     private int o;
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(FinishProfile2Fragment.class, "vb", "getVb()Lcom/blued/login/databinding/FmFinishProfile2Binding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(FinishProfile2Fragment.class, "vb", "getVb()Lcom/blued/login/databinding/FmFinishProfile2Binding;", 0))};
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f20544a = new Companion(null);
+    public static final Companion f6938a = new Companion(null);
 
     @Metadata
     /* loaded from: source-7206380-dex2jar.jar:com/blued/login/fragment/FinishProfile2Fragment$Companion.class */
@@ -76,17 +78,17 @@ public final class FinishProfile2Fragment extends MVVMBaseFragment<EmptyViewMode
 
     public FinishProfile2Fragment() {
         super(R.layout.fm_finish_profile_2);
-        this.f20545c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<FinishProfile2Fragment, FmFinishProfile2Binding>() { // from class: com.blued.login.fragment.FinishProfile2Fragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        this.f6939c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<FinishProfile2Fragment, FmFinishProfile2Binding>() { // from class: com.blued.login.fragment.FinishProfile2Fragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/blued/login/fragment/FinishProfile2Fragment;)Lcom/blued/login/databinding/FmFinishProfile2Binding; */
             /* renamed from: a */
-            public final FmFinishProfile2Binding invoke(FinishProfile2Fragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmFinishProfile2Binding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<FinishProfile2Fragment, FmFinishProfile2Binding>() { // from class: com.blued.login.fragment.FinishProfile2Fragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/blued/login/fragment/FinishProfile2Fragment;)Lcom/blued/login/databinding/FmFinishProfile2Binding; */
             /* renamed from: a */
-            public final FmFinishProfile2Binding invoke(FinishProfile2Fragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmFinishProfile2Binding.a(fragment.requireView());
             }
@@ -101,9 +103,9 @@ public final class FinishProfile2Fragment extends MVVMBaseFragment<EmptyViewMode
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FinishProfile2Fragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+    public static final void a(FinishProfile2Fragment finishProfile2Fragment, View view) {
+        Intrinsics.e(finishProfile2Fragment, "this$0");
+        FragmentActivity activity = finishProfile2Fragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -111,83 +113,83 @@ public final class FinishProfile2Fragment extends MVVMBaseFragment<EmptyViewMode
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FinishProfile2Fragment this$0, NumberPicker numberPicker, int i, int i2) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.h = i2 + "";
+    public static final void a(FinishProfile2Fragment finishProfile2Fragment, NumberPicker numberPicker, int i, int i2) {
+        Intrinsics.e(finishProfile2Fragment, "this$0");
+        finishProfile2Fragment.h = i2 + "";
         int c2 = CommonPreferences.c();
         if (c2 == 1) {
-            this$0.h = i2 + "";
+            finishProfile2Fragment.h = i2 + "";
         } else if (c2 == 2) {
-            String[] strArr = this$0.e;
+            String[] strArr = finishProfile2Fragment.e;
             String[] strArr2 = strArr;
             if (strArr == null) {
                 Intrinsics.c("heightList");
                 strArr2 = null;
             }
-            this$0.h = strArr2[i2];
+            finishProfile2Fragment.h = strArr2[i2];
         }
-        this$0.s();
+        finishProfile2Fragment.s();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(FinishProfile2Fragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void b(FinishProfile2Fragment finishProfile2Fragment, View view) {
+        Intrinsics.e(finishProfile2Fragment, "this$0");
         if (CommonPreferences.c() == 2) {
-            ProfileInfoModel profileInfoModel = this$0.d;
+            ProfileInfoModel profileInfoModel = finishProfile2Fragment.d;
             ProfileInfoModel profileInfoModel2 = profileInfoModel;
             if (profileInfoModel == null) {
                 Intrinsics.c("model");
                 profileInfoModel2 = null;
             }
-            String a2 = LoginServiceManager.a().a(this$0.h);
+            String a2 = LoginServiceManager.a().a(finishProfile2Fragment.h);
             Intrinsics.c(a2, "getLoginService().getHeightCM(height)");
             profileInfoModel2.d(a2);
-            ProfileInfoModel profileInfoModel3 = this$0.d;
+            ProfileInfoModel profileInfoModel3 = finishProfile2Fragment.d;
             ProfileInfoModel profileInfoModel4 = profileInfoModel3;
             if (profileInfoModel3 == null) {
                 Intrinsics.c("model");
                 profileInfoModel4 = null;
             }
-            String b2 = LoginServiceManager.a().b(String.valueOf(this$0.i));
+            String b2 = LoginServiceManager.a().b(String.valueOf(finishProfile2Fragment.i));
             Intrinsics.c(b2, "getLoginService().getWeightKG(weight.toString())");
             profileInfoModel4.e(b2);
         } else {
-            ProfileInfoModel profileInfoModel5 = this$0.d;
+            ProfileInfoModel profileInfoModel5 = finishProfile2Fragment.d;
             ProfileInfoModel profileInfoModel6 = profileInfoModel5;
             if (profileInfoModel5 == null) {
                 Intrinsics.c("model");
                 profileInfoModel6 = null;
             }
-            profileInfoModel6.d(this$0.h);
-            ProfileInfoModel profileInfoModel7 = this$0.d;
+            profileInfoModel6.d(finishProfile2Fragment.h);
+            ProfileInfoModel profileInfoModel7 = finishProfile2Fragment.d;
             ProfileInfoModel profileInfoModel8 = profileInfoModel7;
             if (profileInfoModel7 == null) {
                 Intrinsics.c("model");
                 profileInfoModel8 = null;
             }
-            profileInfoModel8.e(String.valueOf(this$0.i));
+            profileInfoModel8.e(String.valueOf(finishProfile2Fragment.i));
         }
-        Context context = this$0.getContext();
+        Context context = finishProfile2Fragment.getContext();
         Bundle bundle = new Bundle();
-        ProfileInfoModel profileInfoModel9 = this$0.d;
+        ProfileInfoModel profileInfoModel9 = finishProfile2Fragment.d;
         if (profileInfoModel9 == null) {
             Intrinsics.c("model");
             profileInfoModel9 = null;
         }
         bundle.putSerializable("profile_model", profileInfoModel9);
-        Unit unit = Unit.f42314a;
+        Unit unit = Unit.a;
         TerminalActivity.d(context, FinishProfile3Fragment.class, bundle);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(FinishProfile2Fragment this$0, NumberPicker numberPicker, int i, int i2) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.i = i2;
-        this$0.s();
+    public static final void b(FinishProfile2Fragment finishProfile2Fragment, NumberPicker numberPicker, int i, int i2) {
+        Intrinsics.e(finishProfile2Fragment, "this$0");
+        finishProfile2Fragment.i = i2;
+        finishProfile2Fragment.s();
     }
 
     private final FmFinishProfile2Binding p() {
-        return (FmFinishProfile2Binding) this.f20545c.b(this, b[0]);
+        return (FmFinishProfile2Binding) this.f6939c.b(this, b[0]);
     }
 
     private final void q() {
@@ -238,7 +240,6 @@ public final class FinishProfile2Fragment extends MVVMBaseFragment<EmptyViewMode
         throw new UnsupportedOperationException("Method not decompiled: com.blued.login.fragment.FinishProfile2Fragment.s():void");
     }
 
-    @Override // net.simonvt.datepicker.DatePicker.OnDateChangedListener
     public void a(DatePicker datePicker, int i, int i2, int i3) {
         StringBuilder sb = new StringBuilder();
         sb.append(i);
@@ -282,11 +283,10 @@ public final class FinishProfile2Fragment extends MVVMBaseFragment<EmptyViewMode
             if (textView == null) {
                 return;
             }
-            textView.setText(sb3 + ' ' + LoginHelper.f20590a.a(i2, i3));
+            textView.setText(sb3 + ' ' + LoginHelper.f6984a.a(i2, i3));
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
         ShapeTextView shapeTextView;
         CommonTopTitleNoTrans commonTopTitleNoTrans;
@@ -303,7 +303,7 @@ public final class FinishProfile2Fragment extends MVVMBaseFragment<EmptyViewMode
             }
             this.d = (ProfileInfoModel) serializable;
             LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.REGISTER_PROFILE_BIRTHDAY_SHOW;
-            LoginHelper loginHelper = LoginHelper.f20590a;
+            LoginHelper loginHelper = LoginHelper.f6984a;
             ProfileInfoModel profileInfoModel = this.d;
             ProfileInfoModel profileInfoModel2 = profileInfoModel;
             if (profileInfoModel == null) {
@@ -319,40 +319,40 @@ public final class FinishProfile2Fragment extends MVVMBaseFragment<EmptyViewMode
         int i2 = calendar.get(2);
         int i3 = calendar.get(5);
         FmFinishProfile2Binding p = p();
-        DatePicker datePicker4 = p == null ? null : p.f20513a;
+        DatePicker datePicker4 = p == null ? null : p.f6907a;
         if (datePicker4 != null) {
             datePicker4.setSpinnersShown(true);
         }
         FmFinishProfile2Binding p2 = p();
-        DatePicker datePicker5 = p2 == null ? null : p2.f20513a;
+        DatePicker datePicker5 = p2 == null ? null : p2.f6907a;
         if (datePicker5 != null) {
             datePicker5.setCalendarViewShown(false);
         }
         FmFinishProfile2Binding p3 = p();
-        if (p3 != null && (datePicker3 = p3.f20513a) != null) {
+        if (p3 != null && (datePicker3 = p3.f6907a) != null) {
             datePicker3.a(i, i2, i3, this);
         }
         FmFinishProfile2Binding p4 = p();
-        DatePicker datePicker6 = p4 == null ? null : p4.f20513a;
+        DatePicker datePicker6 = p4 == null ? null : p4.f6907a;
         if (datePicker6 != null) {
             datePicker6.setMaxDate(calendar.getTimeInMillis());
         }
         FmFinishProfile2Binding p5 = p();
-        if (p5 != null && (datePicker2 = p5.f20513a) != null) {
+        if (p5 != null && (datePicker2 = p5.f6907a) != null) {
             datePicker2.setWheelTextColor(BluedSkinUtils.a(getContext(), R.color.syc_h));
         }
         FmFinishProfile2Binding p6 = p();
-        if (p6 != null && (datePicker = p6.f20513a) != null) {
+        if (p6 != null && (datePicker = p6.f6907a) != null) {
             datePicker.setInputTextEnable(false);
         }
         View view = getView();
         if (view != null) {
-            View findViewById = view.findViewById(R.id.heightPicker);
+            NumberPicker findViewById = view.findViewById(R.id.heightPicker);
             Intrinsics.c(findViewById, "it.findViewById(R.id.heightPicker)");
-            this.f = (NumberPicker) findViewById;
-            View findViewById2 = view.findViewById(R.id.weightPicker);
+            this.f = findViewById;
+            NumberPicker findViewById2 = view.findViewById(R.id.weightPicker);
             Intrinsics.c(findViewById2, "it.findViewById(R.id.weightPicker)");
-            this.g = (NumberPicker) findViewById2;
+            this.g = findViewById2;
             NumberPicker numberPicker = this.f;
             NumberPicker numberPicker2 = numberPicker;
             if (numberPicker == null) {
@@ -392,7 +392,7 @@ public final class FinishProfile2Fragment extends MVVMBaseFragment<EmptyViewMode
             });
         }
         FmFinishProfile2Binding p8 = p();
-        a(p8 == null ? null : p8.f20513a, i, i2, i3);
+        a(p8 == null ? null : p8.f6907a, i, i2, i3);
         r();
         FmFinishProfile2Binding p9 = p();
         if (p9 == null || (shapeTextView = p9.h) == null) {
@@ -406,7 +406,6 @@ public final class FinishProfile2Fragment extends MVVMBaseFragment<EmptyViewMode
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
     }
 }

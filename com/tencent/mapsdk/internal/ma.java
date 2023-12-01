@@ -4,11 +4,11 @@ package com.tencent.mapsdk.internal;
 public interface ma {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f37642a = "TCL";
+    public static final String f23951a = "TCL";
     public static final String b = "TTO";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f37643c = "TMS";
+    public static final String f23952c = "TMS";
     public static final String d = "TT";
     public static final String e = "TC";
     public static final String f = "TDZ";

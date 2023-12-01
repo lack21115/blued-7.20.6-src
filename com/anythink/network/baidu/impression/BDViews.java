@@ -1,5 +1,6 @@
 package com.anythink.network.baidu.impression;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.view.ViewGroup;
 public class BDViews {
     private static View a(Context context) {
         if (context instanceof Activity) {
-            return ((Activity) context).getWindow().getDecorView().findViewById(16908290);
+            return ((Activity) context).getWindow().getDecorView().findViewById(R.id.content);
         }
         return null;
     }
@@ -19,13 +20,13 @@ public class BDViews {
         if (view == null || (rootView = view.getRootView()) == null) {
             return null;
         }
-        View findViewById = rootView.findViewById(16908290);
+        View findViewById = rootView.findViewById(R.id.content);
         return findViewById != null ? findViewById : rootView;
     }
 
     public static View getTopmostView(Context context, View view) {
         View rootView;
-        View findViewById = !(context instanceof Activity) ? null : ((Activity) context).getWindow().getDecorView().findViewById(16908290);
+        View findViewById = !(context instanceof Activity) ? null : ((Activity) context).getWindow().getDecorView().findViewById(R.id.content);
         if (view == null) {
             rootView = null;
         } else {
@@ -33,7 +34,7 @@ public class BDViews {
             if (rootView == null) {
                 rootView = null;
             } else {
-                View findViewById2 = rootView.findViewById(16908290);
+                View findViewById2 = rootView.findViewById(R.id.content);
                 if (findViewById2 != null) {
                     rootView = findViewById2;
                 }

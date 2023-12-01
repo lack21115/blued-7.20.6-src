@@ -10,41 +10,41 @@ import java.util.Map;
 final class aa extends XMPushService.j {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ ic f41592a;
+    final /* synthetic */ ic f27901a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ XMPushService f953a;
+    final /* synthetic */ XMPushService f906a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public aa(int i, XMPushService xMPushService, ic icVar) {
         super(i);
-        this.f953a = xMPushService;
-        this.f41592a = icVar;
+        this.f906a = xMPushService;
+        this.f27901a = icVar;
     }
 
     @Override // com.xiaomi.push.service.XMPushService.j
     /* renamed from: a */
-    public final String mo12102a() {
+    public final String mo9052a() {
         return "send ack message for message.";
     }
 
     @Override // com.xiaomi.push.service.XMPushService.j
     /* renamed from: a */
-    public final void mo11743a() {
+    public final void mo8693a() {
         try {
             Map<String, String> map = null;
-            if (com.xiaomi.push.j.m12048a((Context) this.f953a)) {
+            if (com.xiaomi.push.j.m8998a((Context) this.f906a)) {
                 try {
-                    map = ag.a((Context) this.f953a, this.f41592a);
+                    map = ag.a((Context) this.f906a, this.f27901a);
                 } catch (Throwable th) {
                     map = null;
                 }
             }
-            ah.a(this.f953a, y.a(this.f953a, this.f41592a, map));
+            ah.a(this.f906a, y.a(this.f906a, this.f27901a, map));
         } catch (gf e) {
             com.xiaomi.channel.commonutils.logger.b.a(e);
-            this.f953a.a(10, e);
+            this.f906a.a(10, e);
         }
     }
 }

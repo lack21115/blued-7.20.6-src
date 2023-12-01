@@ -12,32 +12,32 @@ public final class b implements com.kwai.filedownloader.a.a {
     final SparseArray<List<com.kwai.filedownloader.c.a>> aGu = new SparseArray<>();
 
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/a/b$a.class */
-    final class a implements a.InterfaceC0584a {
+    final class a implements a.InterfaceC0414a {
         a() {
         }
 
-        @Override // com.kwai.filedownloader.a.a.InterfaceC0584a
+        @Override // com.kwai.filedownloader.a.a.InterfaceC0414a
         public final void Hy() {
         }
 
-        @Override // com.kwai.filedownloader.a.a.InterfaceC0584a
+        @Override // com.kwai.filedownloader.a.a.InterfaceC0414a
         public final void a(int i, com.kwai.filedownloader.c.c cVar) {
         }
 
-        @Override // com.kwai.filedownloader.a.a.InterfaceC0584a
+        @Override // com.kwai.filedownloader.a.a.InterfaceC0414a
         public final void c(com.kwai.filedownloader.c.c cVar) {
         }
 
         @Override // java.lang.Iterable
         public final Iterator<com.kwai.filedownloader.c.c> iterator() {
-            return new C0585b();
+            return new C0415b();
         }
     }
 
     /* renamed from: com.kwai.filedownloader.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/a/b$b.class */
-    final class C0585b implements Iterator<com.kwai.filedownloader.c.c> {
-        C0585b() {
+    final class C0415b implements Iterator<com.kwai.filedownloader.c.c> {
+        C0415b() {
         }
 
         @Override // java.util.Iterator
@@ -66,7 +66,7 @@ public final class b implements com.kwai.filedownloader.a.a {
     }
 
     @Override // com.kwai.filedownloader.a.a
-    public final a.InterfaceC0584a Hx() {
+    public final a.InterfaceC0414a Hx() {
         return new a();
     }
 

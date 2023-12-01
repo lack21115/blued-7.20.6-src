@@ -7,11 +7,11 @@ import org.json.JSONObject;
 public class LoadAdParams {
 
     /* renamed from: a  reason: collision with root package name */
-    private LoginType f27907a;
+    private LoginType f14219a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f27908c;
+    private String f14220c;
     private String d;
     private Map<String, String> e;
     private JSONObject f;
@@ -46,11 +46,11 @@ public class LoadAdParams {
     }
 
     public String getLoginOpenid() {
-        return this.f27908c;
+        return this.f14220c;
     }
 
     public LoginType getLoginType() {
-        return this.f27907a;
+        return this.f14219a;
     }
 
     public JSONObject getParams() {
@@ -74,11 +74,11 @@ public class LoadAdParams {
     }
 
     public void setLoginOpenid(String str) {
-        this.f27908c = str;
+        this.f14220c = str;
     }
 
     public void setLoginType(LoginType loginType) {
-        this.f27907a = loginType;
+        this.f14219a = loginType;
     }
 
     public void setUin(String str) {
@@ -86,6 +86,6 @@ public class LoadAdParams {
     }
 
     public String toString() {
-        return "LoadAdParams{, loginType=" + this.f27907a + ", loginAppId=" + this.b + ", loginOpenid=" + this.f27908c + ", uin=" + this.d + ", passThroughInfo=" + this.e + ", extraInfo=" + this.f + '}';
+        return "LoadAdParams{, loginType=" + this.f14219a + ", loginAppId=" + this.b + ", loginOpenid=" + this.f14220c + ", uin=" + this.d + ", passThroughInfo=" + this.e + ", extraInfo=" + this.f + '}';
     }
 }

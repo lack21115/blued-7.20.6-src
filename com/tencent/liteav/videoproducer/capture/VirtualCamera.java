@@ -26,20 +26,20 @@ public final class VirtualCamera extends ar {
     public static class VirtualCameraParams extends CaptureSourceInterface.CaptureParams {
 
         /* renamed from: a  reason: collision with root package name */
-        public Bitmap f36851a;
+        public Bitmap f23160a;
 
         public VirtualCameraParams() {
         }
 
         public VirtualCameraParams(VirtualCameraParams virtualCameraParams) {
             super(virtualCameraParams);
-            this.f36851a = virtualCameraParams.f36851a;
+            this.f23160a = virtualCameraParams.f23160a;
         }
 
         @Override // com.tencent.liteav.videoproducer.capture.CaptureSourceInterface.CaptureParams
         public boolean equals(Object obj) {
             if (obj instanceof VirtualCameraParams) {
-                return super.equals(obj) && Objects.equals(this.f36851a, ((VirtualCameraParams) obj).f36851a);
+                return super.equals(obj) && Objects.equals(this.f23160a, ((VirtualCameraParams) obj).f23160a);
             }
             return false;
         }
@@ -49,10 +49,10 @@ public final class VirtualCamera extends ar {
             Locale locale = Locale.ENGLISH;
             String captureParams = super.toString();
             int i = 0;
-            boolean z = this.f36851a != null;
-            Bitmap bitmap = this.f36851a;
+            boolean z = this.f23160a != null;
+            Bitmap bitmap = this.f23160a;
             int width = bitmap != null ? bitmap.getWidth() : 0;
-            Bitmap bitmap2 = this.f36851a;
+            Bitmap bitmap2 = this.f23160a;
             if (bitmap2 != null) {
                 i = bitmap2.getHeight();
             }

@@ -8,19 +8,15 @@ import org.json.JSONArray;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/n.class */
 public class n {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile n f6861c;
-
-    /* renamed from: a  reason: collision with root package name */
-    com.anythink.core.common.c.h f6862a;
+    private static volatile n c;
+    com.anythink.core.common.c.h a;
     private final String b = getClass().getSimpleName();
     private ConcurrentHashMap<String, String> d = new ConcurrentHashMap<>(3);
 
     public n() {
-        com.anythink.core.common.c.h a2 = com.anythink.core.common.c.h.a(com.anythink.core.common.c.c.a(com.anythink.core.common.b.n.a().g()));
-        this.f6862a = a2;
-        List<com.anythink.core.common.e.p> d = a2.d();
+        com.anythink.core.common.c.h a = com.anythink.core.common.c.h.a(com.anythink.core.common.c.c.a(com.anythink.core.common.b.n.a().g()));
+        this.a = a;
+        List<com.anythink.core.common.e.p> d = a.d();
         if (d != null) {
             for (com.anythink.core.common.e.p pVar : d) {
                 this.d.put(pVar.a(), "1");
@@ -29,18 +25,18 @@ public class n {
     }
 
     public static n a() {
-        if (f6861c == null) {
+        if (c == null) {
             synchronized (n.class) {
                 try {
-                    if (f6861c == null) {
-                        f6861c = new n();
+                    if (c == null) {
+                        c = new n();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6861c;
+        return c;
     }
 
     public static int b() {
@@ -57,7 +53,7 @@ public class n {
             try {
                 if (com.anythink.core.common.k.h.a(com.anythink.core.common.b.n.a().g(), entry.getValue().toString())) {
                     this.d.put(entry.getKey(), "1");
-                    this.f6862a.a(entry.getKey());
+                    this.a.a(entry.getKey());
                 }
             } catch (Throwable th) {
             }
@@ -66,7 +62,7 @@ public class n {
         com.anythink.core.common.k.b.a.a().a(new Runnable() { // from class: com.anythink.core.common.n.1
             @Override // java.lang.Runnable
             public final void run() {
-                n.this.f6862a.c();
+                n.this.a.c();
             }
         });
     }

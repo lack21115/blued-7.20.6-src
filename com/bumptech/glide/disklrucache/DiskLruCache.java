@@ -27,7 +27,7 @@ public final class DiskLruCache implements Closeable {
     private final File b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final File f20673c;
+    private final File f7067c;
     private final File d;
     private final File e;
     private final int f;
@@ -40,7 +40,7 @@ public final class DiskLruCache implements Closeable {
     private long m = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    final ThreadPoolExecutor f20672a = new ThreadPoolExecutor(0, 1, 60, TimeUnit.SECONDS, new LinkedBlockingQueue(), new DiskLruCacheThreadFactory());
+    final ThreadPoolExecutor f7066a = new ThreadPoolExecutor(0, 1, 60, TimeUnit.SECONDS, new LinkedBlockingQueue(), new DiskLruCacheThreadFactory());
     private final Callable<Void> n = new Callable<Void>() { // from class: com.bumptech.glide.disklrucache.DiskLruCache.1
         @Override // java.util.concurrent.Callable
         public Void call() throws Exception {
@@ -79,12 +79,12 @@ public final class DiskLruCache implements Closeable {
         private final Entry b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final boolean[] f20676c;
+        private final boolean[] f7070c;
         private boolean d;
 
         private Editor(Entry entry) {
             this.b = entry;
-            this.f20676c = entry.f ? null : new boolean[DiskLruCache.this.h];
+            this.f7070c = entry.f ? null : new boolean[DiskLruCache.this.h];
         }
 
         public File a(int i) throws IOException {
@@ -94,7 +94,7 @@ public final class DiskLruCache implements Closeable {
                     throw new IllegalStateException();
                 }
                 if (!this.b.f) {
-                    this.f20676c[i] = true;
+                    this.f7070c[i] = true;
                 }
                 b = this.b.b(i);
                 if (!DiskLruCache.this.b.exists()) {
@@ -129,7 +129,7 @@ public final class DiskLruCache implements Closeable {
     public final class Entry {
 
         /* renamed from: a  reason: collision with root package name */
-        File[] f20677a;
+        File[] f7071a;
         File[] b;
         private final String d;
         private final long[] e;
@@ -140,7 +140,7 @@ public final class DiskLruCache implements Closeable {
         private Entry(String str) {
             this.d = str;
             this.e = new long[DiskLruCache.this.h];
-            this.f20677a = new File[DiskLruCache.this.h];
+            this.f7071a = new File[DiskLruCache.this.h];
             this.b = new File[DiskLruCache.this.h];
             StringBuilder sb = new StringBuilder(str);
             sb.append('.');
@@ -152,7 +152,7 @@ public final class DiskLruCache implements Closeable {
                     return;
                 }
                 sb.append(i2);
-                this.f20677a[i2] = new File(DiskLruCache.this.b, sb.toString());
+                this.f7071a[i2] = new File(DiskLruCache.this.b, sb.toString());
                 sb.append(".tmp");
                 this.b[i2] = new File(DiskLruCache.this.b, sb.toString());
                 sb.setLength(length);
@@ -185,7 +185,7 @@ public final class DiskLruCache implements Closeable {
         }
 
         public File a(int i) {
-            return this.f20677a[i];
+            return this.f7071a[i];
         }
 
         public String a() throws IOException {
@@ -215,13 +215,13 @@ public final class DiskLruCache implements Closeable {
         private final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final long f20680c;
+        private final long f7074c;
         private final long[] d;
         private final File[] e;
 
         private Value(String str, long j, File[] fileArr, long[] jArr) {
             this.b = str;
-            this.f20680c = j;
+            this.f7074c = j;
             this.e = fileArr;
             this.d = jArr;
         }
@@ -234,7 +234,7 @@ public final class DiskLruCache implements Closeable {
     private DiskLruCache(File file, int i, int i2, long j) {
         this.b = file;
         this.f = i;
-        this.f20673c = new File(file, "journal");
+        this.f7067c = new File(file, "journal");
         this.d = new File(file, "journal.tmp");
         this.e = new File(file, "journal.bkp");
         this.h = i2;
@@ -278,7 +278,7 @@ public final class DiskLruCache implements Closeable {
                     }
                 }
                 DiskLruCache diskLruCache = new DiskLruCache(file, i, i2, j);
-                if (diskLruCache.f20673c.exists()) {
+                if (diskLruCache.f7067c.exists()) {
                     try {
                         diskLruCache.a();
                         diskLruCache.b();
@@ -301,7 +301,7 @@ public final class DiskLruCache implements Closeable {
 
     private void a() throws IOException {
         int i;
-        StrictLineReader strictLineReader = new StrictLineReader(new FileInputStream(this.f20673c), Util.f20684a);
+        StrictLineReader strictLineReader = new StrictLineReader(new FileInputStream(this.f7067c), Util.f7078a);
         try {
             String a2 = strictLineReader.a();
             String a3 = strictLineReader.a();
@@ -322,7 +322,7 @@ public final class DiskLruCache implements Closeable {
                     if (strictLineReader.b()) {
                         c();
                     } else {
-                        this.j = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.f20673c, true), Util.f20684a));
+                        this.j = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.f7067c, true), Util.f7078a));
                     }
                     Util.a(strictLineReader);
                     return;
@@ -351,7 +351,7 @@ public final class DiskLruCache implements Closeable {
                         i = 0;
                         if (i3 >= this.h) {
                             break;
-                        } else if (!editor.f20676c[i3]) {
+                        } else if (!editor.f7070c[i3]) {
                             editor.b();
                             throw new IllegalStateException("Newly created entry didn't create value for index " + i3);
                         } else if (!entry.b(i3).exists()) {
@@ -400,7 +400,7 @@ public final class DiskLruCache implements Closeable {
             }
             b(this.j);
             if (this.i > this.g || d()) {
-                this.f20672a.submit(this.n);
+                this.f7066a.submit(this.n);
             }
         }
     }
@@ -480,7 +480,7 @@ public final class DiskLruCache implements Closeable {
             if (this.j != null) {
                 a(this.j);
             }
-            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.d), Util.f20684a));
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.d), Util.f7078a));
             bufferedWriter.write("libcore.io.DiskLruCache");
             bufferedWriter.write("\n");
             bufferedWriter.write("1");
@@ -498,12 +498,12 @@ public final class DiskLruCache implements Closeable {
                 }
             }
             a(bufferedWriter);
-            if (this.f20673c.exists()) {
-                a(this.f20673c, this.e, true);
+            if (this.f7067c.exists()) {
+                a(this.f7067c, this.e, true);
             }
-            a(this.d, this.f20673c, false);
+            a(this.d, this.f7067c, false);
             this.e.delete();
-            this.j = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.f20673c, true), Util.f20684a));
+            this.j = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.f7067c, true), Util.f7078a));
         }
     }
 
@@ -577,10 +577,10 @@ public final class DiskLruCache implements Closeable {
         if (d() == false) goto L29;
      */
     /* JADX WARN: Code restructure failed: missing block: B:29:0x0090, code lost:
-        r10.f20672a.submit(r10.n);
+        r10.f7066a.submit(r10.n);
      */
     /* JADX WARN: Code restructure failed: missing block: B:31:0x009f, code lost:
-        r0 = new com.bumptech.glide.disklrucache.DiskLruCache.Value(r10, r11, r0.h, r0.f20677a, r0.e, null);
+        r0 = new com.bumptech.glide.disklrucache.DiskLruCache.Value(r10, r11, r0.h, r0.f7071a, r0.e, null);
      */
     /* JADX WARN: Code restructure failed: missing block: B:34:0x00b9, code lost:
         return r0;
@@ -621,7 +621,7 @@ public final class DiskLruCache implements Closeable {
                 this.j.append('\n');
                 this.k.remove(str);
                 if (d()) {
-                    this.f20672a.submit(this.n);
+                    this.f7066a.submit(this.n);
                 }
                 return true;
             }

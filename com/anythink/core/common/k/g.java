@@ -2,17 +2,16 @@ package com.anythink.core.common.k;
 
 import android.content.Context;
 import android.os.Build;
-import android.provider.BrowserContract;
 import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.WebView;
+import com.android.internal.telephony.PhoneConstants;
 import com.anythink.core.api.ATCustomRuleKeys;
 import com.anythink.core.api.ATSDK;
 import com.anythink.core.common.b.g;
 import com.anythink.core.common.e.ae;
 import com.anythink.core.common.e.ai;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.cdo.oaps.ad.OapsKey;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -26,9 +25,7 @@ public final class g {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/g$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6810a = "com.android.vending";
+        public static final String a = "com.android.vending";
     }
 
     public static double a(ai aiVar) {
@@ -57,8 +54,8 @@ public final class g {
     }
 
     public static String a() {
-        String str = com.anythink.core.common.b.g.f6495a;
-        if (TextUtils.isEmpty(com.anythink.core.common.b.g.f6495a)) {
+        String str = com.anythink.core.common.b.g.a;
+        if (TextUtils.isEmpty(com.anythink.core.common.b.g.a)) {
             str = "UA_0.0.0";
         }
         return str;
@@ -68,13 +65,13 @@ public final class g {
         String x = com.anythink.core.common.b.n.a().x();
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append(d.d(context));
-        stringBuffer.append("&");
+        stringBuffer.append(com.alipay.sdk.sys.a.b);
         stringBuffer.append(d.f());
-        stringBuffer.append("&");
+        stringBuffer.append(com.alipay.sdk.sys.a.b);
         stringBuffer.append(x);
-        stringBuffer.append("&");
+        stringBuffer.append(com.alipay.sdk.sys.a.b);
         stringBuffer.append(System.currentTimeMillis());
-        stringBuffer.append("&");
+        stringBuffer.append(com.alipay.sdk.sys.a.b);
         stringBuffer.append(new Random().nextInt(10000));
         return f.a(stringBuffer.toString());
     }
@@ -102,7 +99,7 @@ public final class g {
                     break;
                 }
                 ae next = it.next();
-                i3 += next.f6623c;
+                i3 += next.c;
                 i5 = i4 + next.d;
             }
             aeVar = a2.get(str2);
@@ -113,11 +110,11 @@ public final class g {
         }
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("sr", OapsKey.KEY_TYPE);
+            jSONObject.put("sr", "tp");
             jSONObject.put("rid", str);
-            jSONObject.put(com.anythink.expressad.foundation.d.d.h, i3);
+            jSONObject.put("ads", i3);
             jSONObject.put("ahs", i4);
-            jSONObject.put("pds", aeVar != null ? aeVar.f6623c : 0);
+            jSONObject.put("pds", aeVar != null ? aeVar.c : 0);
             int i6 = 0;
             if (aeVar != null) {
                 i6 = aeVar.d;
@@ -136,7 +133,7 @@ public final class g {
             return;
         }
         webView.removeJavascriptInterface("searchBoxjavaBridge_");
-        webView.removeJavascriptInterface(Context.ACCESSIBILITY_SERVICE);
+        webView.removeJavascriptInterface("accessibility");
         webView.removeJavascriptInterface("accessibilityTraversal");
         webView.getSettings().setAllowFileAccess(false);
         if (Build.VERSION.SDK_INT >= 16) {
@@ -155,21 +152,21 @@ public final class g {
             if (eVar.y() != 0) {
                 jSONObject.put("defaultAdSourceType", eVar.y());
             }
-            jSONObject.put(com.anythink.expressad.videocommon.e.b.v, eVar.W());
+            jSONObject.put("placementId", eVar.W());
             jSONObject.put("adType", eVar.Z());
             jSONObject.put("mixedFormatAdType", eVar.L());
             jSONObject.put("action", str);
-            jSONObject.put("refresh", eVar.F());
-            jSONObject.put("result", str2);
+            jSONObject.put(com.alipay.sdk.widget.j.l, eVar.F());
+            jSONObject.put(com.alipay.sdk.util.l.c, str2);
             jSONObject.put("segmentId", eVar.I());
             jSONObject.put("adSourceId", eVar.x());
-            jSONObject.put(BrowserContract.Bookmarks.POSITION, eVar.z());
-            jSONObject.put("networkType", eVar.H());
+            jSONObject.put("position", eVar.z());
+            jSONObject.put(PhoneConstants.DATA_NETWORK_TYPE_KEY, eVar.H());
             jSONObject.put("networkName", eVar.T());
             jSONObject.put("networkVersion", eVar.u);
             jSONObject.put("networkUnit", eVar.G());
             jSONObject.put("isHB", eVar.v());
-            jSONObject.put("msg", str3);
+            jSONObject.put(com.alipay.sdk.cons.c.b, str3);
             jSONObject.put("hourly_frequency", eVar.B());
             jSONObject.put("daily_frequency", eVar.C());
             jSONObject.put("network_list", eVar.D());
@@ -264,12 +261,12 @@ public final class g {
 
     public static boolean a(String str) {
         if (TextUtils.isEmpty(str) || str.length() > 128) {
-            Log.e("anythink", "Invalid Channel(" + str + "):Channel'length over 128");
+            Log.e(com.anythink.core.common.b.g.n, "Invalid Channel(" + str + "):Channel'length over 128");
             return false;
         } else if (Pattern.matches("^([.A-Za-z0-9_-]){1,128}$", str)) {
             return true;
         } else {
-            Log.e("anythink", "Invalid Channel(" + str + "): contains some characters that are not in the ^([.A-Za-z0-9_-]){1,128}$");
+            Log.e(com.anythink.core.common.b.g.n, "Invalid Channel(" + str + "): contains some characters that are not in the ^([.A-Za-z0-9_-]){1,128}$");
             return false;
         }
     }
@@ -323,12 +320,12 @@ public final class g {
 
     public static boolean b(String str) {
         if (TextUtils.isEmpty(str) || str.length() > 128) {
-            Log.e("anythink", "Invalid SubChannel(" + str + "):SubChannel'length over 128");
+            Log.e(com.anythink.core.common.b.g.n, "Invalid SubChannel(" + str + "):SubChannel'length over 128");
             return false;
         } else if (Pattern.matches("^([.A-Za-z0-9_-]){1,128}$", str)) {
             return true;
         } else {
-            Log.e("anythink", "Invalid SubChannel(" + str + "):SubChannel contains some characters that are not in the ^([.A-Za-z0-9_-]){1,128}$");
+            Log.e(com.anythink.core.common.b.g.n, "Invalid SubChannel(" + str + "):SubChannel contains some characters that are not in the ^([.A-Za-z0-9_-]){1,128}$");
             return false;
         }
     }
@@ -343,12 +340,12 @@ public final class g {
 
     public static boolean c(String str) {
         if (TextUtils.isEmpty(str) || str.length() != 14) {
-            Log.e("anythink", "Invalid Scenario(" + str + "):Scenario'length isn't 14");
+            Log.e(com.anythink.core.common.b.g.n, "Invalid Scenario(" + str + "):Scenario'length isn't 14");
             return false;
         } else if (Pattern.matches("^[A-Za-z0-9]+$", str)) {
             return true;
         } else {
-            Log.e("anythink", "Invalid Scenario(" + str + "):Scenario contains some characters that are not in the [A-Za-z0-9]");
+            Log.e(com.anythink.core.common.b.g.n, "Invalid Scenario(" + str + "):Scenario contains some characters that are not in the [A-Za-z0-9]");
             return false;
         }
     }
@@ -396,7 +393,7 @@ public final class g {
                 z = true;
                 break;
         }
-        return z ? !z ? !z ? !z ? !z ? "" : g.C0100g.e : "Interstitial" : g.C0100g.f6508c : g.C0100g.b : g.C0100g.f6507a;
+        return z ? !z ? !z ? !z ? !z ? "" : g.C0060g.e : g.C0060g.d : g.C0060g.c : g.C0060g.b : g.C0060g.a;
     }
 
     private static boolean d(Context context) {

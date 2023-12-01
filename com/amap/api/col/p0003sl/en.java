@@ -10,39 +10,32 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.amap.api.maps.offlinemap.OfflineMapManager;
 import com.amap.api.maps.offlinemap.OfflineMapProvince;
-import com.soft.blued.R;
 import java.util.List;
 
 /* renamed from: com.amap.api.col.3sl.en  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/en.class */
 public final class en extends BaseExpandableListAdapter implements ExpandableListView.OnGroupCollapseListener, ExpandableListView.OnGroupExpandListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean[] f4923a;
+    private boolean[] a;
     private int b = -1;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<OfflineMapProvince> f4924c;
+    private List<OfflineMapProvince> c;
     private OfflineMapManager d;
     private Context e;
 
     /* renamed from: com.amap.api.col.3sl.en$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/en$a.class */
     public final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public er f4925a;
+        public er a;
 
         public a() {
         }
     }
 
     public en(List<OfflineMapProvince> list, OfflineMapManager offlineMapManager, Context context) {
-        this.f4924c = null;
-        this.f4924c = list;
+        this.c = null;
+        this.c = list;
         this.d = offlineMapManager;
         this.e = context;
-        this.f4923a = new boolean[list.size()];
+        this.a = new boolean[list.size()];
     }
 
     private boolean a(int i) {
@@ -79,21 +72,21 @@ public final class en extends BaseExpandableListAdapter implements ExpandableLis
             er erVar = new er(this.e, this.d);
             erVar.a(1);
             view = erVar.a();
-            aVar.f4925a = erVar;
+            aVar.a = erVar;
             view.setTag(aVar);
         }
-        aVar.f4925a.a(this.f4924c.get(i).getCityList().get(i2));
+        aVar.a.a(this.c.get(i).getCityList().get(i2));
         return view;
     }
 
     @Override // android.widget.ExpandableListAdapter
     public final int getChildrenCount(int i) {
-        return a(i) ? this.f4924c.get(i).getCityList().size() : this.f4924c.get(i).getCityList().size();
+        return a(i) ? this.c.get(i).getCityList().size() : this.c.get(i).getCityList().size();
     }
 
     @Override // android.widget.ExpandableListAdapter
     public final Object getGroup(int i) {
-        return this.f4924c.get(i).getProvinceName();
+        return this.c.get(i).getProvinceName();
     }
 
     @Override // android.widget.ExpandableListAdapter
@@ -101,7 +94,7 @@ public final class en extends BaseExpandableListAdapter implements ExpandableLis
         int i = this.b;
         int i2 = i;
         if (i == -1) {
-            i2 = this.f4924c.size();
+            i2 = this.c.size();
         }
         return i2;
     }
@@ -115,12 +108,12 @@ public final class en extends BaseExpandableListAdapter implements ExpandableLis
     public final View getGroupView(int i, boolean z, View view, ViewGroup viewGroup) {
         RelativeLayout relativeLayout = view;
         if (view == null) {
-            relativeLayout = (RelativeLayout) ev.a(this.e, (int) R.array.animal);
+            relativeLayout = (RelativeLayout) ev.a(this.e, 2130903043);
         }
         TextView textView = (TextView) relativeLayout.findViewById(2131165201);
         ImageView imageView = (ImageView) relativeLayout.findViewById(2131165202);
-        textView.setText(this.f4924c.get(i).getProvinceName());
-        if (this.f4923a[i]) {
+        textView.setText(this.c.get(i).getProvinceName());
+        if (this.a[i]) {
             imageView.setImageDrawable(ev.a().getDrawable(2130837509));
             return relativeLayout;
         }
@@ -140,11 +133,11 @@ public final class en extends BaseExpandableListAdapter implements ExpandableLis
 
     @Override // android.widget.ExpandableListView.OnGroupCollapseListener
     public final void onGroupCollapse(int i) {
-        this.f4923a[i] = false;
+        this.a[i] = false;
     }
 
     @Override // android.widget.ExpandableListView.OnGroupExpandListener
     public final void onGroupExpand(int i) {
-        this.f4923a[i] = true;
+        this.a[i] = true;
     }
 }

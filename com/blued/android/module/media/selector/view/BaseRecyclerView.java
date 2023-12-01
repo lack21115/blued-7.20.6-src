@@ -16,7 +16,6 @@ public class BaseRecyclerView extends RecyclerView {
         super(context, attributeSet);
         addItemDecoration(new MediaItemDecoration(context, attributeSet));
         setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.media.selector.view.BaseRecyclerView.1
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 if (i == 0) {
                     ImageLoadEngine.b();
@@ -28,7 +27,6 @@ public class BaseRecyclerView extends RecyclerView {
                 }
             }
 
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
                 super.onScrolled(recyclerView, i, i2);
             }

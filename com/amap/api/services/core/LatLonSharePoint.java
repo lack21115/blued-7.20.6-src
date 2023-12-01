@@ -24,18 +24,16 @@ public class LatLonSharePoint extends LatLonPoint implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5611a;
+    private String a;
 
     public LatLonSharePoint(double d, double d2, String str) {
         super(d, d2);
-        this.f5611a = str;
+        this.a = str;
     }
 
     protected LatLonSharePoint(Parcel parcel) {
         super(parcel);
-        this.f5611a = parcel.readString();
+        this.a = parcel.readString();
     }
 
     @Override // com.amap.api.services.core.LatLonPoint, android.os.Parcelable
@@ -50,35 +48,35 @@ public class LatLonSharePoint extends LatLonPoint implements Parcelable {
         }
         if (super.equals(obj) && getClass() == obj.getClass()) {
             LatLonSharePoint latLonSharePoint = (LatLonSharePoint) obj;
-            String str = this.f5611a;
-            return str == null ? latLonSharePoint.f5611a == null : str.equals(latLonSharePoint.f5611a);
+            String str = this.a;
+            return str == null ? latLonSharePoint.a == null : str.equals(latLonSharePoint.a);
         }
         return false;
     }
 
     public String getSharePointName() {
-        return this.f5611a;
+        return this.a;
     }
 
     @Override // com.amap.api.services.core.LatLonPoint
     public int hashCode() {
         int hashCode = super.hashCode();
-        String str = this.f5611a;
+        String str = this.a;
         return (hashCode * 31) + (str == null ? 0 : str.hashCode());
     }
 
     public void setSharePointName(String str) {
-        this.f5611a = str;
+        this.a = str;
     }
 
     @Override // com.amap.api.services.core.LatLonPoint
     public String toString() {
-        return super.toString() + "," + this.f5611a;
+        return super.toString() + "," + this.a;
     }
 
     @Override // com.amap.api.services.core.LatLonPoint, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeString(this.f5611a);
+        parcel.writeString(this.a);
     }
 }

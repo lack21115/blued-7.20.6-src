@@ -6,25 +6,25 @@ import com.anythink.expressad.exoplayer.k.af;
 final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7290a = 8192;
+    private static final int f4451a = 8192;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/e/a/d$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final long[] f7291a;
+        public final long[] f4452a;
         public final int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f7292c;
+        public final int f4453c;
         public final long[] d;
         public final int[] e;
         public final long f;
 
         private a(long[] jArr, int[] iArr, int i, long[] jArr2, int[] iArr2, long j) {
-            this.f7291a = jArr;
+            this.f4452a = jArr;
             this.b = iArr;
-            this.f7292c = i;
+            this.f4453c = i;
             this.d = jArr2;
             this.e = iArr2;
             this.f = j;

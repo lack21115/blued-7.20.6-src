@@ -16,20 +16,16 @@ import java.lang.ref.WeakReference;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/common/c.class */
 public final class c implements CustomAdapterDownloadListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    ATBaseAdAdapter f6311a;
+    ATBaseAdAdapter a;
     BaseAd b;
-
-    /* renamed from: c  reason: collision with root package name */
-    ATAdInfo f6312c;
+    ATAdInfo c;
     WeakReference<ATAppDownloadListener> d;
     long e;
     boolean f;
     boolean g;
 
     public c(ATBaseAdAdapter aTBaseAdAdapter, BaseAd baseAd, ATEventInterface aTEventInterface) {
-        this.f6311a = aTBaseAdAdapter;
+        this.a = aTBaseAdAdapter;
         this.b = baseAd;
         if (aTEventInterface == null || !(aTEventInterface instanceof ATAppDownloadListener)) {
             return;
@@ -40,9 +36,9 @@ public final class c implements CustomAdapterDownloadListener {
     private void a() {
         BaseAd baseAd = this.b;
         if (baseAd != null) {
-            this.f6312c = j.a(baseAd);
+            this.c = j.a(baseAd);
         } else {
-            this.f6312c = j.a(this.f6311a);
+            this.c = j.a(this.a);
         }
     }
 
@@ -52,9 +48,9 @@ public final class c implements CustomAdapterDownloadListener {
             public final void run() {
                 try {
                     f fVar = new f();
-                    fVar.b = c.this.b != null ? c.this.b.getDetail() : c.this.f6311a.getTrackingInfo();
-                    fVar.f6657a = i;
-                    fVar.f6658c = System.currentTimeMillis();
+                    fVar.b = c.this.b != null ? c.this.b.getDetail() : c.this.a.getTrackingInfo();
+                    fVar.a = i;
+                    fVar.c = System.currentTimeMillis();
                     if (fVar.b instanceof e) {
                         ((e) fVar.b).b(str);
                         ((e) fVar.b).b(j);
@@ -68,19 +64,19 @@ public final class c implements CustomAdapterDownloadListener {
 
     @Override // com.anythink.china.api.CustomAdapterDownloadListener
     public final void onDownloadFail(long j, long j2, String str, String str2) {
-        if (this.f6312c == null) {
+        if (this.c == null) {
             a();
         }
         WeakReference<ATAppDownloadListener> weakReference = this.d;
         ATAppDownloadListener aTAppDownloadListener = weakReference != null ? weakReference.get() : null;
         if (aTAppDownloadListener != null) {
-            aTAppDownloadListener.onDownloadFail(this.f6312c, j, j2, str, str2);
+            aTAppDownloadListener.onDownloadFail(this.c, j, j2, str, str2);
         }
     }
 
     @Override // com.anythink.china.api.CustomAdapterDownloadListener
     public final void onDownloadFinish(long j, String str, String str2) {
-        if (this.f6312c == null) {
+        if (this.c == null) {
             a();
         }
         if (this.e != 0 && !this.g) {
@@ -90,25 +86,25 @@ public final class c implements CustomAdapterDownloadListener {
         WeakReference<ATAppDownloadListener> weakReference = this.d;
         ATAppDownloadListener aTAppDownloadListener = weakReference != null ? weakReference.get() : null;
         if (aTAppDownloadListener != null) {
-            aTAppDownloadListener.onDownloadFinish(this.f6312c, j, str, str2);
+            aTAppDownloadListener.onDownloadFinish(this.c, j, str, str2);
         }
     }
 
     @Override // com.anythink.china.api.CustomAdapterDownloadListener
     public final void onDownloadPause(long j, long j2, String str, String str2) {
-        if (this.f6312c == null) {
+        if (this.c == null) {
             a();
         }
         WeakReference<ATAppDownloadListener> weakReference = this.d;
         ATAppDownloadListener aTAppDownloadListener = weakReference != null ? weakReference.get() : null;
         if (aTAppDownloadListener != null) {
-            aTAppDownloadListener.onDownloadPause(this.f6312c, j, j2, str, str2);
+            aTAppDownloadListener.onDownloadPause(this.c, j, j2, str, str2);
         }
     }
 
     @Override // com.anythink.china.api.CustomAdapterDownloadListener
     public final void onDownloadStart(long j, long j2, String str, String str2) {
-        if (this.f6312c == null) {
+        if (this.c == null) {
             a();
         }
         this.e = SystemClock.elapsedRealtime();
@@ -116,25 +112,25 @@ public final class c implements CustomAdapterDownloadListener {
         WeakReference<ATAppDownloadListener> weakReference = this.d;
         ATAppDownloadListener aTAppDownloadListener = weakReference != null ? weakReference.get() : null;
         if (aTAppDownloadListener != null) {
-            aTAppDownloadListener.onDownloadStart(this.f6312c, j, j2, str, str2);
+            aTAppDownloadListener.onDownloadStart(this.c, j, j2, str, str2);
         }
     }
 
     @Override // com.anythink.china.api.CustomAdapterDownloadListener
     public final void onDownloadUpdate(long j, long j2, String str, String str2) {
-        if (this.f6312c == null) {
+        if (this.c == null) {
             a();
         }
         WeakReference<ATAppDownloadListener> weakReference = this.d;
         ATAppDownloadListener aTAppDownloadListener = weakReference != null ? weakReference.get() : null;
         if (aTAppDownloadListener != null) {
-            aTAppDownloadListener.onDownloadUpdate(this.f6312c, j, j2, str, str2);
+            aTAppDownloadListener.onDownloadUpdate(this.c, j, j2, str, str2);
         }
     }
 
     @Override // com.anythink.china.api.CustomAdapterDownloadListener
     public final void onInstalled(String str, String str2) {
-        if (this.f6312c == null) {
+        if (this.c == null) {
             a();
         }
         if (!this.f) {
@@ -144,7 +140,7 @@ public final class c implements CustomAdapterDownloadListener {
         WeakReference<ATAppDownloadListener> weakReference = this.d;
         ATAppDownloadListener aTAppDownloadListener = weakReference != null ? weakReference.get() : null;
         if (aTAppDownloadListener != null) {
-            aTAppDownloadListener.onInstalled(this.f6312c, str, str2);
+            aTAppDownloadListener.onInstalled(this.c, str, str2);
         }
     }
 }

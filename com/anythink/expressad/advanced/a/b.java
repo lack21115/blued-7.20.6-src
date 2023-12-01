@@ -29,10 +29,10 @@ public final class b {
     public String p;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f6991c = "android";
+    public String f4153c = "android";
 
     /* renamed from: a  reason: collision with root package name */
-    public String f6990a = k.b();
+    public String f4152a = k.b();
     public String b = k.c();
     public String f = d.f();
 
@@ -79,7 +79,7 @@ public final class b {
     public final JSONObject a() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("device", this.f6990a);
+            jSONObject.put("device", this.f4152a);
             jSONObject.put("system_version", this.b);
             jSONObject.put("network_type", this.h);
             jSONObject.put("network_type_str", this.i);
@@ -95,7 +95,7 @@ public final class b {
                 sb2.append(L.d());
                 jSONObject.put("wx_api_ver", sb2.toString());
             }
-            jSONObject.put("plantform", this.f6991c);
+            jSONObject.put("plantform", this.f4153c);
             jSONObject.put(com.anythink.core.common.k.c.b("ZGV2aWNlX2ltZWk="), this.d);
             jSONObject.put("android_id", this.e);
             jSONObject.put("google_ad_id", this.f);

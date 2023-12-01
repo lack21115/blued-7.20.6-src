@@ -15,22 +15,22 @@ public class ci extends JsonComposer {
     @Json(name = "version")
 
     /* renamed from: a  reason: collision with root package name */
-    private int f37377a;
+    private int f23686a;
     @Json(name = "frontier")
     private bi b;
     @Json(name = "ver_data")
 
     /* renamed from: c  reason: collision with root package name */
-    private List<yh> f37378c;
+    private List<yh> f23687c;
     @Json(name = "detail")
     private List<zh> d;
 
     public List<yh> a() {
-        return this.f37378c;
+        return this.f23687c;
     }
 
     public void a(int i2) {
-        this.f37377a = i2;
+        this.f23686a = i2;
     }
 
     public void a(bi biVar) {
@@ -38,7 +38,7 @@ public class ci extends JsonComposer {
     }
 
     public void a(List<yh> list) {
-        this.f37378c = list;
+        this.f23687c = list;
     }
 
     public bi b() {
@@ -50,7 +50,7 @@ public class ci extends JsonComposer {
     }
 
     public int c() {
-        return this.f37377a;
+        return this.f23686a;
     }
 
     public List<zh> d() {

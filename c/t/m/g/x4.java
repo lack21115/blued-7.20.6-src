@@ -13,6 +13,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.provider.Settings;
 import com.blued.das.live.LiveProtos;
+import com.tencent.liteav.TXLiteAVCode;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -23,11 +24,11 @@ public final class x4 extends BroadcastReceiver {
     public static boolean p;
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f4055a;
+    public volatile boolean f4007a;
     public final t3 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final WifiManager f4056c;
+    public final WifiManager f4008c;
     public long d;
     public HashSet<String> e;
     public volatile Handler f;
@@ -69,9 +70,9 @@ public final class x4 extends BroadcastReceiver {
             intentFilter.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
             try {
                 if (x4.this.g != null) {
-                    x4.this.b.f3992a.registerReceiver(x4.this, intentFilter, null, x4.this.g);
+                    x4.this.b.f3944a.registerReceiver(x4.this, intentFilter, null, x4.this.g);
                 } else {
-                    x4.this.b.f3992a.registerReceiver(x4.this, intentFilter);
+                    x4.this.b.f3944a.registerReceiver(x4.this, intentFilter);
                 }
             } catch (Exception e) {
             }
@@ -124,7 +125,7 @@ public final class x4 extends BroadcastReceiver {
                     case 1202:
                         a();
                         break;
-                    case 1203:
+                    case TXLiteAVCode.WARNING_MICROPHONE_NOT_AUTHORIZED /* 1203 */:
                         x4.this.a((Intent) message.obj);
                         break;
                 }
@@ -134,8 +135,8 @@ public final class x4 extends BroadcastReceiver {
 
     public x4(t3 t3Var) {
         this.b = t3Var;
-        this.f4056c = t3Var.f();
-        f6.f3812a = 0L;
+        this.f4008c = t3Var.f();
+        f6.f3764a = 0L;
         this.e = new HashSet<>();
         this.k = new a();
         this.l = new b();
@@ -213,7 +214,7 @@ public final class x4 extends BroadcastReceiver {
             }
             boolean equals2 = WifiManager.SCAN_RESULTS_AVAILABLE_ACTION.equals(action);
             if (equals2 || equals) {
-                this.i = h6.a(this.f4056c, equals2);
+                this.i = h6.a(this.f4008c, equals2);
                 a(1202);
             }
         } catch (Throwable th) {
@@ -222,11 +223,11 @@ public final class x4 extends BroadcastReceiver {
 
     public void a(Handler handler, Handler handler2, Handler handler3, boolean z) {
         synchronized (this.o) {
-            if (this.f4055a) {
+            if (this.f4007a) {
                 return;
             }
-            this.f4055a = true;
-            f6.f3812a = 0L;
+            this.f4007a = true;
+            f6.f3764a = 0L;
             p = z;
             this.f = handler;
             this.g = handler3;
@@ -247,17 +248,17 @@ public final class x4 extends BroadcastReceiver {
 
     public final boolean a(List<ScanResult> list) {
         boolean z = true;
-        if (this.f4056c != null) {
+        if (this.f4008c != null) {
             z = true;
             if (!m3.a((Collection) list)) {
                 z = true;
                 boolean z2 = true;
                 try {
-                    if (!this.f4056c.isWifiEnabled()) {
+                    if (!this.f4008c.isWifiEnabled()) {
                         z = true;
                         if (Build.VERSION.SDK_INT >= 18) {
                             z = true;
-                            if (!this.f4056c.isScanAlwaysAvailable()) {
+                            if (!this.f4008c.isScanAlwaysAvailable()) {
                                 long j = 0;
                                 for (ScanResult scanResult : list) {
                                     if (scanResult.timestamp > j) {
@@ -292,7 +293,7 @@ public final class x4 extends BroadcastReceiver {
 
     public final void b() {
         try {
-            int a2 = h6.a(this.f4056c);
+            int a2 = h6.a(this.f4008c);
             int i = 1;
             if (a2 == 3) {
                 a(0L);
@@ -315,7 +316,7 @@ public final class x4 extends BroadcastReceiver {
             try {
                 if (Build.VERSION.SDK_INT >= 23) {
                     i2 = i;
-                    if (Settings.Secure.getInt(this.b.f3992a.getContentResolver(), Settings.Secure.LOCATION_MODE) == 0) {
+                    if (Settings.Secure.getInt(this.b.f3944a.getContentResolver(), Settings.Secure.LOCATION_MODE) == 0) {
                         i2 = 5;
                     }
                 }
@@ -338,12 +339,12 @@ public final class x4 extends BroadcastReceiver {
     public final void b(List<ScanResult> list) {
         if (list == null || list.size() == 0) {
             b();
-        } else if (h6.f3833a) {
-            h6.f3833a = false;
+        } else if (h6.f3785a) {
+            h6.f3785a = false;
             b();
         }
         if (a(list)) {
-            this.b.a(new g5(list, this.d, h6.a(this.f4056c)));
+            this.b.a(new g5(list, this.d, h6.a(this.f4008c)));
         }
     }
 
@@ -353,11 +354,11 @@ public final class x4 extends BroadcastReceiver {
 
     public void d() {
         synchronized (this.o) {
-            if (this.f4055a) {
-                this.f4055a = false;
-                f6.f3812a = 0L;
+            if (this.f4007a) {
+                this.f4007a = false;
+                f6.f3764a = 0L;
                 try {
-                    this.b.f3992a.unregisterReceiver(this);
+                    this.b.f3944a.unregisterReceiver(this);
                 } catch (Exception e) {
                 }
                 this.e = null;
@@ -379,7 +380,7 @@ public final class x4 extends BroadcastReceiver {
         if (!h6.c(this.b) || p) {
             return false;
         }
-        boolean b2 = h6.b(this.f4056c);
+        boolean b2 = h6.b(this.f4008c);
         s3.a("WIFI", "fs:" + m3.a(b2));
         return b2;
     }
@@ -390,7 +391,7 @@ public final class x4 extends BroadcastReceiver {
         if (cVar != null) {
             Message obtainMessage = cVar.obtainMessage();
             obtainMessage.obj = intent;
-            obtainMessage.what = 1203;
+            obtainMessage.what = TXLiteAVCode.WARNING_MICROPHONE_NOT_AUTHORIZED;
             c3.a(cVar, obtainMessage);
         }
     }

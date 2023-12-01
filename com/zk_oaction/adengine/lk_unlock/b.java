@@ -2,6 +2,7 @@ package com.zk_oaction.adengine.lk_unlock;
 
 import android.os.Handler;
 import android.os.Looper;
+import com.huawei.hms.ads.fw;
 import com.zk_oaction.adengine.lk_expression.a;
 import com.zk_oaction.adengine.lk_sdk.interfaces.f;
 import com.zk_oaction.adengine.lk_variable.g;
@@ -13,11 +14,11 @@ import org.xmlpull.v1.XmlPullParser;
 public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
 
     /* renamed from: a  reason: collision with root package name */
-    protected com.zk_oaction.adengine.lk_sdk.c f41983a;
+    protected com.zk_oaction.adengine.lk_sdk.c f28292a;
     protected String b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected com.zk_oaction.adengine.lk_expression.a f41984c;
+    protected com.zk_oaction.adengine.lk_expression.a f28293c;
     protected com.zk_oaction.adengine.lk_expression.a d;
     protected com.zk_oaction.adengine.lk_expression.a e;
     protected com.zk_oaction.adengine.lk_expression.a f;
@@ -46,8 +47,8 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
     }
 
     public b(com.zk_oaction.adengine.lk_sdk.c cVar) {
-        this.f41983a = cVar;
-        this.f41983a.s.add(this);
+        this.f28292a = cVar;
+        this.f28292a.s.add(this);
     }
 
     private void a(float f) {
@@ -64,7 +65,7 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
                 it.next().a(0);
             }
             if (this.b != null) {
-                cVar = this.f41983a;
+                cVar = this.f28292a;
                 str = this.b + ".visibility";
                 str2 = "1";
                 i = 0;
@@ -79,7 +80,7 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
             }
             i = 3;
             if (this.b != null) {
-                cVar = this.f41983a;
+                cVar = this.f28292a;
                 str = this.b + ".visibility";
                 str2 = "0";
                 i = 3;
@@ -92,10 +93,10 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
     private void a(XmlPullParser xmlPullParser) {
         try {
             b(xmlPullParser);
-            this.f41984c = new com.zk_oaction.adengine.lk_expression.a(this.f41983a, null, xmlPullParser.getAttributeValue(null, "bounceInitSpeed"), 0.0f, null, true);
-            this.d = new com.zk_oaction.adengine.lk_expression.a(this.f41983a, null, xmlPullParser.getAttributeValue(null, "bounceAccelation"), 0.0f, null, true);
-            this.e = new com.zk_oaction.adengine.lk_expression.a(this.f41983a, null, xmlPullParser.getAttributeValue(null, "visibility"), 1.0f, null, false);
-            this.f = new com.zk_oaction.adengine.lk_expression.a(this.f41983a, "always", xmlPullParser.getAttributeValue(null, "always"), 0.0f, null, false);
+            this.f28293c = new com.zk_oaction.adengine.lk_expression.a(this.f28292a, null, xmlPullParser.getAttributeValue(null, "bounceInitSpeed"), 0.0f, null, true);
+            this.d = new com.zk_oaction.adengine.lk_expression.a(this.f28292a, null, xmlPullParser.getAttributeValue(null, "bounceAccelation"), 0.0f, null, true);
+            this.e = new com.zk_oaction.adengine.lk_expression.a(this.f28292a, null, xmlPullParser.getAttributeValue(null, "visibility"), 1.0f, null, false);
+            this.f = new com.zk_oaction.adengine.lk_expression.a(this.f28292a, "always", xmlPullParser.getAttributeValue(null, "always"), 0.0f, null, false);
             String attributeValue = xmlPullParser.getAttributeValue(null, "keyPoint");
             if (attributeValue == null) {
                 return;
@@ -121,52 +122,52 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
         String attributeValue = xmlPullParser.getAttributeValue(null, "name");
         this.b = attributeValue;
         if (attributeValue != null) {
-            g gVar = this.f41983a.n;
+            g gVar = this.f28292a.n;
             com.zk_oaction.adengine.lk_variable.d a2 = gVar.a(this.b + ".move_x");
             this.m = a2;
             if (a2 == null) {
-                com.zk_oaction.adengine.lk_sdk.c cVar = this.f41983a;
+                com.zk_oaction.adengine.lk_sdk.c cVar = this.f28292a;
                 com.zk_oaction.adengine.lk_variable.d dVar = new com.zk_oaction.adengine.lk_variable.d(cVar, this.b + ".move_x");
                 this.m = dVar;
-                this.f41983a.n.a(dVar);
+                this.f28292a.n.a(dVar);
             }
-            g gVar2 = this.f41983a.n;
+            g gVar2 = this.f28292a.n;
             com.zk_oaction.adengine.lk_variable.d a3 = gVar2.a(this.b + ".move_y");
             this.n = a3;
             if (a3 == null) {
-                com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f41983a;
+                com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f28292a;
                 com.zk_oaction.adengine.lk_variable.d dVar2 = new com.zk_oaction.adengine.lk_variable.d(cVar2, this.b + ".move_y");
                 this.n = dVar2;
-                this.f41983a.n.a(dVar2);
+                this.f28292a.n.a(dVar2);
             }
-            g gVar3 = this.f41983a.n;
+            g gVar3 = this.f28292a.n;
             com.zk_oaction.adengine.lk_variable.d a4 = gVar3.a(this.b + ".move_dist");
             this.o = a4;
             if (a4 == null) {
-                com.zk_oaction.adengine.lk_sdk.c cVar3 = this.f41983a;
+                com.zk_oaction.adengine.lk_sdk.c cVar3 = this.f28292a;
                 com.zk_oaction.adengine.lk_variable.d dVar3 = new com.zk_oaction.adengine.lk_variable.d(cVar3, this.b + ".move_dist");
                 this.o = dVar3;
-                this.f41983a.n.a(dVar3);
+                this.f28292a.n.a(dVar3);
             }
-            g gVar4 = this.f41983a.n;
+            g gVar4 = this.f28292a.n;
             com.zk_oaction.adengine.lk_variable.d a5 = gVar4.a(this.b + ".state");
             this.p = a5;
             if (a5 == null) {
-                com.zk_oaction.adengine.lk_sdk.c cVar4 = this.f41983a;
+                com.zk_oaction.adengine.lk_sdk.c cVar4 = this.f28292a;
                 com.zk_oaction.adengine.lk_variable.d dVar4 = new com.zk_oaction.adengine.lk_variable.d(cVar4, this.b + ".state");
                 this.p = dVar4;
-                this.f41983a.n.a(dVar4);
+                this.f28292a.n.a(dVar4);
             }
         }
     }
 
     private void g() {
-        this.f41983a.a(this);
+        this.f28292a.a(this);
     }
 
     public String a(com.zk_oaction.adengine.lk_expression.a aVar, String str) {
         if (aVar != null) {
-            str = aVar.f41918a;
+            str = aVar.f28227a;
         }
         return str;
     }
@@ -180,11 +181,11 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
         this.g.g();
         if (this.b != null) {
             com.zk_oaction.adengine.lk_variable.d dVar = this.m;
-            dVar.b("" + (this.g.c() / this.f41983a.t));
+            dVar.b("" + (this.g.c() / this.f28292a.t));
             com.zk_oaction.adengine.lk_variable.d dVar2 = this.n;
-            dVar2.b("" + (this.g.d() / this.f41983a.t));
+            dVar2.b("" + (this.g.d() / this.f28292a.t));
             com.zk_oaction.adengine.lk_variable.d dVar3 = this.o;
-            dVar3.b("" + (Math.sqrt((this.g.c() * this.g.c()) + (this.g.d() * this.g.d())) / this.f41983a.t));
+            dVar3.b("" + (Math.sqrt((this.g.c() * this.g.c()) + (this.g.d() * this.g.d())) / this.f28292a.t));
         }
     }
 
@@ -206,7 +207,7 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
         com.zk_oaction.adengine.lk_sdk.c cVar;
         String str2;
         String str3;
-        if (str.equals("true")) {
+        if (str.equals(fw.Code)) {
             i = 0;
             this.g.a(0);
             Iterator<d> it = this.h.iterator();
@@ -214,7 +215,7 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
                 it.next().a(0);
             }
             if (this.b != null) {
-                cVar = this.f41983a;
+                cVar = this.f28292a;
                 str2 = this.b + ".visibility";
                 str3 = "1";
                 i = 0;
@@ -233,7 +234,7 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
             }
             i = 3;
             if (this.b != null) {
-                cVar = this.f41983a;
+                cVar = this.f28292a;
                 str2 = this.b + ".visibility";
                 str3 = "0";
                 i = 3;
@@ -268,20 +269,20 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
                 if (next != 2) {
                     if (next == 3 && xmlPullParser.getName().equals(str)) {
                         if (this.h.size() == 1) {
-                            this.g.f41994a = this.h.get(0).f41994a;
+                            this.g.f28303a = this.h.get(0).f28303a;
                         }
                         this.e.a(this);
                         this.f.a(this);
                         return true;
                     }
                 } else if (xmlPullParser.getName().equals("StartPoint")) {
-                    d dVar = new d(this.f41983a);
+                    d dVar = new d(this.f28292a);
                     this.g = dVar;
                     if (!dVar.a(xmlPullParser, "StartPoint")) {
                         return false;
                     }
                 } else if (xmlPullParser.getName().equals("EndPoint")) {
-                    d dVar2 = new d(this.f41983a);
+                    d dVar2 = new d(this.f28292a);
                     if (!dVar2.a(xmlPullParser, "EndPoint")) {
                         return false;
                     }
@@ -305,7 +306,7 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
         }
         a(1);
         this.g.b(f, f2);
-        this.f41983a.a(50L);
+        this.f28292a.a(50L);
     }
 
     @Override // com.zk_oaction.adengine.lk_sdk.interfaces.f
@@ -340,7 +341,7 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
         } else if (this.g.b() != 2) {
             this.g.a(2);
             a(2);
-            this.f41983a.a(50L);
+            this.f28292a.a(50L);
         }
     }
 
@@ -363,12 +364,12 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
         if (this.j) {
             this.k.h();
         } else {
-            this.f41983a.a(50L);
+            this.f28292a.a(50L);
         }
         if (this.i == 2) {
             this.q.postDelayed(new a(), 100L);
         } else {
-            this.g.a(this.f41984c.a(), this.d.a(), this, this.l);
+            this.g.a(this.f28293c.a(), this.d.a(), this, this.l);
         }
     }
 
@@ -379,11 +380,11 @@ public class b implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, f {
 
     @Override // com.zk_oaction.adengine.lk_sdk.interfaces.a
     public void e(float f, float f2) {
-        this.g.a(this.f41984c.a(), this.d.a(), this, this.l);
+        this.g.a(this.f28293c.a(), this.d.a(), this, this.l);
     }
 
     public void f() {
-        this.f41983a.B = false;
+        this.f28292a.B = false;
         if (this.i != 3) {
             this.g.a(0);
             Iterator<d> it = this.h.iterator();

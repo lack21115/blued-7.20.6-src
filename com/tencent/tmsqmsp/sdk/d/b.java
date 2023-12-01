@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.text.TextUtils;
-import com.android.internal.telephony.PhoneConstants;
 import com.tencent.mapsdk.internal.oj;
 import com.tencent.tmsqmsp.sdk.d.d;
 import com.tencent.tmsqmsp.sdk.f.g;
@@ -19,14 +18,14 @@ import org.json.JSONObject;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<d.b> f39737a = new ArrayList();
+    private List<d.b> f26046a = new ArrayList();
     private SharedPreferences b;
 
     public b() {
         Context context;
         this.b = null;
         context = oj.getContext();
-        this.b = context.getSharedPreferences(com.tencent.tmsqmsp.sdk.c.b.f39705a + a(d.b), 0);
+        this.b = context.getSharedPreferences(com.tencent.tmsqmsp.sdk.c.b.f26014a + a(d.b), 0);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x004a  */
@@ -204,8 +203,8 @@ public class b {
         }
         String replace = str.replace(" ", "");
         String replace2 = str2.replace(" ", "");
-        boolean equals = replace.equals(PhoneConstants.APN_TYPE_ALL);
-        boolean equals2 = replace2.equals(PhoneConstants.APN_TYPE_ALL);
+        boolean equals = replace.equals("*");
+        boolean equals2 = replace2.equals("*");
         if (equals && equals2) {
             return true;
         }
@@ -259,7 +258,7 @@ public class b {
     }
 
     private String b() {
-        return com.tencent.tmsqmsp.sdk.a.b.c() + a(d.f39743a);
+        return com.tencent.tmsqmsp.sdk.a.b.c() + a(d.f26052a);
     }
 
     private boolean b(String str) {
@@ -267,7 +266,7 @@ public class b {
             return false;
         }
         String replace = str.replace(" ", "");
-        if (replace.equals(PhoneConstants.APN_TYPE_ALL)) {
+        if (replace.equals("*")) {
             return true;
         }
         String str2 = Build.CPU_ABI;
@@ -301,16 +300,16 @@ public class b {
             while (true) {
                 int i2 = i;
                 if (i2 >= jSONArray.length()) {
-                    this.f39737a = arrayList;
+                    this.f26046a = arrayList;
                     return true;
                 }
                 d.b bVar = new d.b();
                 JSONObject jSONObject2 = jSONArray.getJSONObject(i2);
                 byte[][] bArr2 = d.g;
-                bVar.f39747a = jSONObject2.getLong(a(bArr2[3]));
+                bVar.f26056a = jSONObject2.getLong(a(bArr2[3]));
                 bVar.b = jSONObject2.getLong(a(bArr2[4]));
                 jSONObject2.getLong(a(bArr2[7]));
-                bVar.f39748c = jSONObject2.getString(a(bArr2[5]));
+                bVar.f26057c = jSONObject2.getString(a(bArr2[5]));
                 bVar.d = jSONObject2.getString(a(bArr2[6]));
                 bVar.e = jSONObject2.getString(a(bArr2[8]));
                 bVar.f = jSONObject2.getLong(a(bArr2[15]));
@@ -340,7 +339,7 @@ public class b {
                     aVar.d = jSONObject3.getString(a(bArr3[13]));
                     aVar.e = jSONObject3.getString(a(bArr3[14]));
                     String string2 = jSONObject3.getString(a(bArr3[5]));
-                    aVar.f39745a = string2;
+                    aVar.f26054a = string2;
                     aVar.f = a(aVar.d, aVar.e, string2);
                     aVar.b = jSONObject3.getString(a(bArr3[6]));
                     aVar.h = jSONObject3.getLong(a(bArr3[17]));
@@ -361,19 +360,19 @@ public class b {
     }
 
     public List<d.b> a() {
-        return this.f39737a;
+        return this.f26046a;
     }
 
     public List<d.b> a(long j) {
         ArrayList arrayList = new ArrayList();
-        if (a(b()) && !this.f39737a.isEmpty()) {
+        if (a(b()) && !this.f26046a.isEmpty()) {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f39737a.size()) {
+                if (i2 >= this.f26046a.size()) {
                     break;
                 }
-                d.b bVar = this.f39737a.get(i2);
+                d.b bVar = this.f26046a.get(i2);
                 if (bVar.b == j) {
                     int i3 = 0;
                     while (true) {

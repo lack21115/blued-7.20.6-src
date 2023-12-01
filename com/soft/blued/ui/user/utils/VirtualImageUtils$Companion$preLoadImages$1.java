@@ -15,7 +15,7 @@ import kotlinx.coroutines.CoroutineScope;
 public final class VirtualImageUtils$Companion$preLoadImages$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f34341a;
+    int f20650a;
     final /* synthetic */ CoroutineScope b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -25,13 +25,11 @@ public final class VirtualImageUtils$Companion$preLoadImages$1 extends SuspendLa
         this.b = coroutineScope;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((VirtualImageUtils$Companion$preLoadImages$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new VirtualImageUtils$Companion$preLoadImages$1(this.b, continuation);
     }
@@ -45,7 +43,6 @@ public final class VirtualImageUtils$Companion$preLoadImages$1 extends SuspendLa
     /* JADX WARN: Code restructure failed: missing block: B:27:0x00cb, code lost:
         com.soft.blued.ui.user.utils.VirtualImageUtils.Companion.b(r6);
      */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

@@ -5,16 +5,16 @@ package com.tencent.ugc;
 public final /* synthetic */ class fs implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCVideoProcessor f40394a;
+    private final UGCVideoProcessor f26703a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f40395c;
+    private final int f26704c;
 
     private fs(UGCVideoProcessor uGCVideoProcessor, int i, int i2) {
-        this.f40394a = uGCVideoProcessor;
+        this.f26703a = uGCVideoProcessor;
         this.b = i;
-        this.f40395c = i2;
+        this.f26704c = i2;
     }
 
     public static Runnable a(UGCVideoProcessor uGCVideoProcessor, int i, int i2) {
@@ -23,6 +23,6 @@ public final /* synthetic */ class fs implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCVideoProcessor.lambda$setBeautyFilter$10(this.f40394a, this.b, this.f40395c);
+        UGCVideoProcessor.lambda$setBeautyFilter$10(this.f26703a, this.b, this.f26704c);
     }
 }

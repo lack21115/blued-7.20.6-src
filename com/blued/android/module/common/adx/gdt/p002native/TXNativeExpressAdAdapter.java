@@ -29,13 +29,9 @@ import kotlinx.coroutines.CoroutineScopeKt;
 /* renamed from: com.blued.android.module.common.adx.gdt.native.TXNativeExpressAdAdapter  reason: invalid package */
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/gdt/native/TXNativeExpressAdAdapter.class */
 public final class TXNativeExpressAdAdapter extends BaseNativeExpressAd {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BluedADExtra f10547a;
+    private BluedADExtra a;
     private ADSize b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ADListener f10548c;
+    private ADListener c;
     private final Context d;
     private int e;
     private NativeExpressADView f;
@@ -46,9 +42,9 @@ public final class TXNativeExpressAdAdapter extends BaseNativeExpressAd {
         Intrinsics.e(adExtra, "adExtra");
         Intrinsics.e(adSize, "adSize");
         Intrinsics.e(listener, "listener");
-        this.f10547a = adExtra;
+        this.a = adExtra;
         this.b = adSize;
-        this.f10548c = listener;
+        this.c = listener;
         this.d = context;
         this.e = -1;
     }
@@ -56,11 +52,11 @@ public final class TXNativeExpressAdAdapter extends BaseNativeExpressAd {
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(ADListener aDListener) {
         NativeExpressAD nativeExpressAD;
-        if (this.f10547a.gdt_bid == null || TextUtils.isEmpty(this.f10547a.gdt_bid.gdt_token)) {
-            nativeExpressAD = new NativeExpressAD(this.d, this.b, this.f10547a.third_id, b(aDListener));
+        if (this.a.gdt_bid == null || TextUtils.isEmpty(this.a.gdt_bid.gdt_token)) {
+            nativeExpressAD = new NativeExpressAD(this.d, this.b, this.a.third_id, b(aDListener));
         } else {
-            Log.v("adx", Intrinsics.a("「广点通信息流」广告 本次请求为服务端bidding，token:", (Object) this.f10547a.gdt_bid.gdt_token));
-            nativeExpressAD = new NativeExpressAD(this.d, this.b, this.f10547a.third_id, b(aDListener), this.f10547a.gdt_bid.gdt_token);
+            Log.v("adx", Intrinsics.a("「广点通信息流」广告 本次请求为服务端bidding，token:", (Object) this.a.gdt_bid.gdt_token));
+            nativeExpressAD = new NativeExpressAD(this.d, this.b, this.a.third_id, b(aDListener), this.a.gdt_bid.gdt_token);
         }
         this.g = nativeExpressAD;
         VideoOption build = new VideoOption.Builder().setAutoPlayMuted(true).build();
@@ -77,44 +73,39 @@ public final class TXNativeExpressAdAdapter extends BaseNativeExpressAd {
 
     private final NativeExpressAD.NativeExpressADListener b(final ADListener aDListener) {
         return new NativeExpressAD.NativeExpressADListener() { // from class: com.blued.android.module.common.adx.gdt.native.TXNativeExpressAdAdapter$getNativeExpressADListener$1
-            @Override // com.qq.e.ads.nativ.NativeExpressAD.NativeExpressADListener
             public void onADClicked(NativeExpressADView nativeExpressADView) {
                 ADListener aDListener2;
                 Log.v("adx", "广点通SDK信息流 点击回调");
-                aDListener2 = TXNativeExpressAdAdapter.this.f10548c;
+                aDListener2 = TXNativeExpressAdAdapter.this.c;
                 if (aDListener2 == null) {
                     return;
                 }
                 aDListener2.onADEvent(new ADEvent(105, TXNativeExpressAdAdapter.this.e()));
             }
 
-            @Override // com.qq.e.ads.nativ.NativeExpressAD.NativeExpressADListener
             public void onADClosed(NativeExpressADView nativeExpressADView) {
                 ADListener aDListener2;
                 Log.v("adx", "广点通SDK信息流 关闭回调");
-                aDListener2 = TXNativeExpressAdAdapter.this.f10548c;
+                aDListener2 = TXNativeExpressAdAdapter.this.c;
                 if (aDListener2 == null) {
                     return;
                 }
                 aDListener2.onADEvent(new ADEvent(106, TXNativeExpressAdAdapter.this.e()));
             }
 
-            @Override // com.qq.e.ads.nativ.NativeExpressAD.NativeExpressADListener
             public void onADExposure(NativeExpressADView nativeExpressADView) {
                 ADListener aDListener2;
                 Log.v("adx", "广点通SDK信息流 曝光回调");
-                aDListener2 = TXNativeExpressAdAdapter.this.f10548c;
+                aDListener2 = TXNativeExpressAdAdapter.this.c;
                 if (aDListener2 == null) {
                     return;
                 }
                 aDListener2.onADEvent(new ADEvent(103, TXNativeExpressAdAdapter.this.e()));
             }
 
-            @Override // com.qq.e.ads.nativ.NativeExpressAD.NativeExpressADListener
             public void onADLeftApplication(NativeExpressADView nativeExpressADView) {
             }
 
-            @Override // com.qq.e.ads.nativ.NativeExpressAD.NativeExpressADListener
             public void onADLoaded(List<NativeExpressADView> list) {
                 String str;
                 int i;
@@ -138,7 +129,6 @@ public final class TXNativeExpressAdAdapter extends BaseNativeExpressAd {
                 Log.v("adx", "「广点通信息流」广告「获取成功」 广告位id:" + ((Object) TXNativeExpressAdAdapter.this.e().third_id) + ' ' + str);
             }
 
-            @Override // com.qq.e.ads.NativeAbstractAD.BasicADListener
             public void onNoAD(AdError adError) {
                 BluedADExtra e = TXNativeExpressAdAdapter.this.e();
                 StringBuilder sb = new StringBuilder();
@@ -157,20 +147,18 @@ public final class TXNativeExpressAdAdapter extends BaseNativeExpressAd {
                 aDListener.onADEvent(new ADEvent(101, TXNativeExpressAdAdapter.this));
             }
 
-            @Override // com.qq.e.ads.nativ.NativeExpressAD.NativeExpressADListener
             public void onRenderFail(NativeExpressADView nativeExpressADView) {
                 ADListener aDListener2;
-                aDListener2 = TXNativeExpressAdAdapter.this.f10548c;
+                aDListener2 = TXNativeExpressAdAdapter.this.c;
                 if (aDListener2 == null) {
                     return;
                 }
                 aDListener2.onADEvent(new ADEvent(110, TXNativeExpressAdAdapter.this.e()));
             }
 
-            @Override // com.qq.e.ads.nativ.NativeExpressAD.NativeExpressADListener
             public void onRenderSuccess(NativeExpressADView nativeExpressADView) {
                 ADListener aDListener2;
-                aDListener2 = TXNativeExpressAdAdapter.this.f10548c;
+                aDListener2 = TXNativeExpressAdAdapter.this.c;
                 if (aDListener2 == null) {
                     return;
                 }
@@ -199,21 +187,21 @@ public final class TXNativeExpressAdAdapter extends BaseNativeExpressAd {
     @Override // com.blued.android.module.common.adx.base.BaseNativeExpressAd
     public void a(Map<String, ? extends Object> map) {
         Intrinsics.e(map, "map");
-        NativeExpressADView a2 = a();
-        if (a2 == null) {
+        NativeExpressADView a = a();
+        if (a == null) {
             return;
         }
-        a2.sendWinNotification(map);
+        a.sendWinNotification(map);
     }
 
     @Override // com.blued.android.module.common.adx.base.BaseNativeExpressAd
     public void b(Map<String, ? extends Object> map) {
         Intrinsics.e(map, "map");
-        NativeExpressADView a2 = a();
-        if (a2 == null) {
+        NativeExpressADView a = a();
+        if (a == null) {
             return;
         }
-        a2.sendLossNotification(map);
+        a.sendLossNotification(map);
     }
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
@@ -223,10 +211,10 @@ public final class TXNativeExpressAdAdapter extends BaseNativeExpressAd {
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
     public Map<String, Object> d() {
-        return MapsKt.a(TuplesKt.a("original_ad", this.f10547a));
+        return MapsKt.a(TuplesKt.a("original_ad", this.a));
     }
 
     public final BluedADExtra e() {
-        return this.f10547a;
+        return this.a;
     }
 }

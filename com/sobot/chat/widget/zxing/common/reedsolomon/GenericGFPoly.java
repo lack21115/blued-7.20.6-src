@@ -1,5 +1,7 @@
 package com.sobot.chat.widget.zxing.common.reedsolomon;
 
+import com.xiaomi.mipush.sdk.Constants;
+
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/zxing/common/reedsolomon/GenericGFPoly.class */
 public final class GenericGFPoly {
@@ -32,7 +34,7 @@ public final class GenericGFPoly {
         }
         int[] iArr2 = new int[length - i];
         this.coefficients = iArr2;
-        System.arraycopy((Object) iArr, i, (Object) iArr2, 0, iArr2.length);
+        System.arraycopy(iArr, i, iArr2, 0, iArr2.length);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -57,7 +59,7 @@ public final class GenericGFPoly {
         }
         int[] iArr4 = new int[iArr.length];
         int length = iArr.length - iArr2.length;
-        System.arraycopy((Object) iArr, 0, (Object) iArr4, 0, length);
+        System.arraycopy(iArr, 0, iArr4, 0, length);
         int i = length;
         while (true) {
             int i2 = i;
@@ -239,7 +241,7 @@ public final class GenericGFPoly {
             if (coefficient != 0) {
                 if (coefficient < 0) {
                     if (i2 == getDegree()) {
-                        sb.append("-");
+                        sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     } else {
                         sb.append(" - ");
                     }

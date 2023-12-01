@@ -7,11 +7,11 @@ import android.text.TextUtils;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24961a = h.class.getSimpleName();
+    private static final String f11273a = h.class.getSimpleName();
     private static final byte[] b = new byte[0];
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte[] f24962c = new byte[0];
+    private static final byte[] f11274c = new byte[0];
     private static volatile long d = 0;
     private static volatile String e = "";
     private static volatile String f = "";
@@ -30,7 +30,7 @@ public class h {
                         public void run() {
                             try {
                                 synchronized (h.b) {
-                                    com.opos.cmn.an.f.a.b(h.f24961a, "updateOpenId begin!");
+                                    com.opos.cmn.an.f.a.b(h.f11273a, "updateOpenId begin!");
                                     String b2 = g.b(Context.this);
                                     String c2 = g.c(Context.this);
                                     String a2 = g.a(Context.this);
@@ -46,10 +46,10 @@ public class h {
                                         String unused3 = h.g = a2;
                                         i.c(Context.this, h.g);
                                     }
-                                    com.opos.cmn.an.f.a.b(h.f24961a, "updateOpenId end!");
+                                    com.opos.cmn.an.f.a.b(h.f11273a, "updateOpenId end!");
                                 }
                             } catch (Exception e2) {
-                                com.opos.cmn.an.f.a.c(h.f24961a, "", e2);
+                                com.opos.cmn.an.f.a.c(h.f11273a, "", e2);
                             }
                         }
                     }).start();
@@ -67,16 +67,16 @@ public class h {
                     @Override // java.lang.Runnable
                     public void run() {
                         try {
-                            synchronized (h.f24962c) {
-                                com.opos.cmn.an.f.a.b(h.f24961a, "updateOUIDStatus begin!");
+                            synchronized (h.f11274c) {
+                                com.opos.cmn.an.f.a.b(h.f11273a, "updateOUIDStatus begin!");
                                 boolean unused = h.h = g.e(Context.this);
                                 i.a(Context.this, h.h);
                                 long unused2 = h.d = System.currentTimeMillis();
-                                String str = h.f24961a;
+                                String str = h.f11273a;
                                 com.opos.cmn.an.f.a.b(str, "updateOUIDStatus end! OUIDStatus=" + h.h + " sLastUpdateOUIDStatusTime=" + h.d);
                             }
                         } catch (Exception e2) {
-                            com.opos.cmn.an.f.a.c(h.f24961a, "", e2);
+                            com.opos.cmn.an.f.a.c(h.f11273a, "", e2);
                         }
                     }
                 }).start();
@@ -88,7 +88,7 @@ public class h {
         if (context != null && TextUtils.isEmpty(e)) {
             e = i.a(context);
         }
-        String str = f24961a;
+        String str = f11273a;
         com.opos.cmn.an.f.a.b(str, "getOUID " + e);
         if (!i) {
             a(context);
@@ -100,7 +100,7 @@ public class h {
         if (context != null && TextUtils.isEmpty(f)) {
             f = i.b(context);
         }
-        String str = f24961a;
+        String str = f11273a;
         com.opos.cmn.an.f.a.b(str, "getDUID " + f);
         if (!i) {
             a(context);
@@ -112,7 +112,7 @@ public class h {
         if (context != null && TextUtils.isEmpty(g)) {
             g = i.c(context);
         }
-        String str = f24961a;
+        String str = f11273a;
         com.opos.cmn.an.f.a.b(str, "getGUID " + g);
         if (!i) {
             a(context);
@@ -124,7 +124,7 @@ public class h {
         if (context != null) {
             h = i.e(context);
         }
-        String str = f24961a;
+        String str = f11273a;
         com.opos.cmn.an.f.a.b(str, "getOUIDStatus " + h);
         return h;
     }

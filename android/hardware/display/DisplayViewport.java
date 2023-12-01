@@ -1,7 +1,6 @@
 package android.hardware.display;
 
 import android.graphics.Rect;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/hardware/display/DisplayViewport.class */
 public final class DisplayViewport {
@@ -24,6 +23,6 @@ public final class DisplayViewport {
     }
 
     public String toString() {
-        return "DisplayViewport{valid=" + this.valid + ", displayId=" + this.displayId + ", orientation=" + this.orientation + ", logicalFrame=" + this.logicalFrame + ", physicalFrame=" + this.physicalFrame + ", deviceWidth=" + this.deviceWidth + ", deviceHeight=" + this.deviceHeight + i.d;
+        return "DisplayViewport{valid=" + this.valid + ", displayId=" + this.displayId + ", orientation=" + this.orientation + ", logicalFrame=" + this.logicalFrame + ", physicalFrame=" + this.physicalFrame + ", deviceWidth=" + this.deviceWidth + ", deviceHeight=" + this.deviceHeight + "}";
     }
 }

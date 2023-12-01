@@ -9,7 +9,7 @@ public class f4 extends JsonComposer {
     @Json(name = "enable")
 
     /* renamed from: a  reason: collision with root package name */
-    private int f37429a;
+    private int f23738a;
     @Json(name = "layers")
     private List<e4> b;
 
@@ -18,10 +18,10 @@ public class f4 extends JsonComposer {
     }
 
     public boolean b() {
-        return this.f37429a == 1;
+        return this.f23738a == 1;
     }
 
     public String toString() {
-        return "DataLayerInfo{enable=" + this.f37429a + ", layers=" + this.b + '}';
+        return "DataLayerInfo{enable=" + this.f23738a + ", layers=" + this.b + '}';
     }
 }

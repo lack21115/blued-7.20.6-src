@@ -12,13 +12,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeLoverManageGuestView.class */
 public class LiveMakeLoverManageGuestView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    LiveMakeLoverOnClickListener f14562a;
+    LiveMakeLoverOnClickListener a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f14563c;
+    private LayoutInflater c;
     private View d;
     private View e;
     private View f;
@@ -45,7 +41,7 @@ public class LiveMakeLoverManageGuestView extends FrameLayout implements View.On
 
     private void a() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f14563c = from;
+        this.c = from;
         View inflate = from.inflate(R.layout.live_make_lover_manage_guest, this);
         this.d = inflate;
         this.e = inflate.findViewById(R.id.ll_make_lover_guest);
@@ -55,7 +51,7 @@ public class LiveMakeLoverManageGuestView extends FrameLayout implements View.On
     }
 
     public void a(PlayingOnliveFragment playingOnliveFragment, LiveMakeLoverOnClickListener liveMakeLoverOnClickListener) {
-        this.f14562a = liveMakeLoverOnClickListener;
+        this.a = liveMakeLoverOnClickListener;
         this.g = playingOnliveFragment;
     }
 
@@ -66,7 +62,7 @@ public class LiveMakeLoverManageGuestView extends FrameLayout implements View.On
             if (!LivePreferencesUtils.c()) {
                 LivePreferencesUtils.a(true);
             }
-            LiveMakeLoverOnClickListener liveMakeLoverOnClickListener = this.f14562a;
+            LiveMakeLoverOnClickListener liveMakeLoverOnClickListener = this.a;
             if (liveMakeLoverOnClickListener != null) {
                 liveMakeLoverOnClickListener.a();
             }

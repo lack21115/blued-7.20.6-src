@@ -2,6 +2,7 @@ package com.soft.blued.ui.community.model;
 
 import android.content.Context;
 import com.blued.android.core.ui.BaseFragment;
+import com.soft.blued.R;
 import com.soft.blued.ui.community.fragment.AttentionFeedHomeFragment;
 import com.soft.blued.ui.community.fragment.CircleHomeFragment;
 import com.soft.blued.ui.community.fragment.RecommendFeedHomeFragment;
@@ -29,12 +30,12 @@ public class DiscoveryPageTabModel {
     public DiscoveryPageTabModel(int i, Context context) {
         this.tabid = i;
         if (i == 2) {
-            this.title = context.getResources().getString(2131891428);
+            this.title = context.getResources().getString(R.string.recommend_feed);
         } else if (i == 3) {
-            this.title = context.getResources().getString(2131887901);
+            this.title = context.getResources().getString(R.string.feed_attention);
         } else if (i != 4) {
         } else {
-            this.title = context.getResources().getString(2131886545);
+            this.title = context.getResources().getString(R.string.base);
         }
     }
 

@@ -69,9 +69,9 @@ public class FitemRankHour extends FreedomItem {
             return;
         }
         ImageLoader.c(baseViewHolder.b, "live_rank_hour_bounce.png").e(baseViewHolder.a(R.id.iv_bounce).hashCode()).g(-1).a((ImageView) baseViewHolder.a(R.id.iv_bounce));
-        View.OnClickListener a2 = a((BaseFragment) baseViewHolder.f10931a.a("BaseFragment", (String) null));
-        if (a2 != null) {
-            baseViewHolder.a(R.id.rl_avatar, a2).a(R.id.tv_name, a2).a(R.id.iv_bounce, a2).b(R.id.iv_bounce, true);
+        View.OnClickListener a = a((BaseFragment) baseViewHolder.a.a("BaseFragment", (String) null));
+        if (a != null) {
+            baseViewHolder.a(R.id.rl_avatar, a).a(R.id.tv_name, a).a(R.id.iv_bounce, a).b(R.id.iv_bounce, true);
         }
     }
 }

@@ -2,6 +2,8 @@ package com.amap.api.col.p0003sl;
 
 import android.content.Context;
 import com.amap.api.maps.AMapException;
+import com.anythink.core.common.c.d;
+import com.efs.sdk.base.Constants;
 import java.util.Hashtable;
 import java.util.Locale;
 import java.util.Map;
@@ -9,9 +11,7 @@ import java.util.Map;
 /* renamed from: com.amap.api.col.3sl.hg  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hg.class */
 public abstract class hg<T, V> extends da {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected T f5062a;
+    protected T a;
     protected Context g;
     protected String h;
     protected int b = 1;
@@ -23,7 +23,7 @@ public abstract class hg<T, V> extends da {
 
     private void a(Context context, T t) {
         this.g = context;
-        this.f5062a = t;
+        this.a = t;
         this.b = 1;
         setSoTimeout(30000);
         setConnectionTimeout(30000);
@@ -106,7 +106,7 @@ public abstract class hg<T, V> extends da {
     protected abstract String c();
 
     public final V d() throws hf {
-        if (this.f5062a != null) {
+        if (this.a != null) {
             try {
                 return e();
             } catch (hf e) {
@@ -121,14 +121,14 @@ public abstract class hg<T, V> extends da {
 
     @Override // com.amap.api.col.p0003sl.kb
     public Map<String, String> getRequestHead() {
-        ia a2 = dw.a();
-        String b = a2 != null ? a2.b() : null;
+        ia a = dw.a();
+        String b = a != null ? a.b() : null;
         Hashtable hashtable = new Hashtable(16);
-        hashtable.put("User-Agent", w.f5440c);
-        hashtable.put("Accept-Encoding", "gzip");
+        hashtable.put("User-Agent", w.c);
+        hashtable.put("Accept-Encoding", Constants.CP_GZIP);
         hashtable.put("platinfo", String.format(Locale.US, "platform=Android&sdkversion=%s&product=%s", b, "3dmap"));
         hashtable.put("X-INFO", hr.b(this.g));
-        hashtable.put("key", ho.f(this.g));
+        hashtable.put(d.a.b, ho.f(this.g));
         hashtable.put("logversion", "2.1");
         return hashtable;
     }

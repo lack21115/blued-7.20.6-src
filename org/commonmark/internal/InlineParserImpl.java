@@ -1,5 +1,6 @@
 package org.commonmark.internal;
 
+import android.webkit.WebView;
 import java.util.Arrays;
 import java.util.BitSet;
 import java.util.HashMap;
@@ -27,13 +28,9 @@ import org.commonmark.parser.delimiter.DelimiterProcessor;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/InlineParserImpl.class */
 public class InlineParserImpl implements InlineParser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f44022a = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
+    private static final Pattern a = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
     private static final Pattern b = Pattern.compile("^(?:<[A-Za-z][A-Za-z0-9-]*(?:\\s+[a-zA-Z_:][a-zA-Z0-9:._-]*(?:\\s*=\\s*(?:[^\"'=<>`\\x00-\\x20]+|'[^']*'|\"[^\"]*\"))?)*\\s*/?>|</[A-Za-z][A-Za-z0-9-]*\\s*[>]|<!---->|<!--(?:-?[^>-])(?:-?[^-])*-->|[<][?].*?[?][>]|<![A-Z]+\\s+[^>]*>|<!\\[CDATA\\[[\\s\\S]*?\\]\\]>)", 2);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f44023c = Pattern.compile("^[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]");
+    private static final Pattern c = Pattern.compile("^[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]");
     private static final Pattern d = Pattern.compile("^&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
     private static final Pattern e = Pattern.compile("`+");
     private static final Pattern f = Pattern.compile("^`+");
@@ -55,17 +52,13 @@ public class InlineParserImpl implements InlineParser {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/InlineParserImpl$DelimiterData.class */
     public static class DelimiterData {
-
-        /* renamed from: a  reason: collision with root package name */
-        final int f44024a;
+        final int a;
         final boolean b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final boolean f44025c;
+        final boolean c;
 
         DelimiterData(int i, boolean z, boolean z2) {
-            this.f44024a = i;
-            this.f44025c = z;
+            this.a = i;
+            this.c = z;
             this.b = z2;
         }
     }
@@ -174,12 +167,12 @@ public class InlineParserImpl implements InlineParser {
         if (b2 == null) {
             return null;
         }
-        int i2 = b2.f44024a;
+        int i2 = b2.a;
         int i3 = this.r;
         int i4 = i3 + i2;
         this.r = i4;
         Text a2 = a(this.q, i3, i4);
-        Delimiter delimiter = new Delimiter(a2, c2, b2.f44025c, b2.b, this.s);
+        Delimiter delimiter = new Delimiter(a2, c2, b2.c, b2.b, this.s);
         this.s = delimiter;
         delimiter.g = i2;
         this.s.h = i2;
@@ -269,7 +262,7 @@ public class InlineParserImpl implements InlineParser {
                     }
                     int i3 = i2;
                     boolean z4 = z;
-                    if (delimiter5.f44010c) {
+                    if (delimiter5.c) {
                         i3 = i2;
                         z4 = z;
                         if (delimiter5.b == openingCharacter) {
@@ -291,8 +284,8 @@ public class InlineParserImpl implements InlineParser {
                 }
                 z2 = false;
                 if (z2) {
-                    Text text = delimiter5.f44009a;
-                    Text text2 = delimiter2.f44009a;
+                    Text text = delimiter5.a;
+                    Text text2 = delimiter2.a;
                     delimiter5.g -= i2;
                     delimiter2.g -= i2;
                     text.a(text.a().substring(0, text.a().length() - i2));
@@ -311,7 +304,7 @@ public class InlineParserImpl implements InlineParser {
                 } else {
                     if (!z) {
                         hashMap.put(Character.valueOf(c2), delimiter2.e);
-                        if (!delimiter2.f44010c) {
+                        if (!delimiter2.c) {
                             c(delimiter2);
                         }
                     }
@@ -412,7 +405,7 @@ public class InlineParserImpl implements InlineParser {
     }
 
     private void b(Delimiter delimiter) {
-        delimiter.f44009a.l();
+        delimiter.a.l();
         d(delimiter);
     }
 
@@ -480,7 +473,7 @@ public class InlineParserImpl implements InlineParser {
             return hardLineBreak;
         }
         if (this.r < this.q.length()) {
-            Pattern pattern = f44023c;
+            Pattern pattern = c;
             String str = this.q;
             int i2 = this.r;
             if (pattern.matcher(str.substring(i2, i2 + 1)).matches()) {
@@ -601,7 +594,7 @@ public class InlineParserImpl implements InlineParser {
         String a2 = a(g);
         if (a2 != null) {
             String substring = a2.substring(1, a2.length() - 1);
-            Link link = new Link("mailto:" + substring, null);
+            Link link = new Link(WebView.SCHEME_MAILTO + substring, null);
             link.b(new Text(substring));
             return link;
         }

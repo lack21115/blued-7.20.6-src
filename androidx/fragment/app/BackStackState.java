@@ -26,11 +26,11 @@ public final class BackStackState implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    final int[] f2902a;
+    final int[] f2854a;
     final ArrayList<String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    final int[] f2903c;
+    final int[] f2855c;
     final int[] d;
     final int e;
     final String f;
@@ -44,9 +44,9 @@ public final class BackStackState implements Parcelable {
     final boolean n;
 
     public BackStackState(Parcel parcel) {
-        this.f2902a = parcel.createIntArray();
+        this.f2854a = parcel.createIntArray();
         this.b = parcel.createStringArrayList();
-        this.f2903c = parcel.createIntArray();
+        this.f2855c = parcel.createIntArray();
         this.d = parcel.createIntArray();
         this.e = parcel.readInt();
         this.f = parcel.readString();
@@ -62,12 +62,12 @@ public final class BackStackState implements Parcelable {
 
     public BackStackState(BackStackRecord backStackRecord) {
         int size = backStackRecord.d.size();
-        this.f2902a = new int[size * 5];
+        this.f2854a = new int[size * 5];
         if (!backStackRecord.j) {
             throw new IllegalStateException("Not on back stack");
         }
         this.b = new ArrayList<>(size);
-        this.f2903c = new int[size];
+        this.f2855c = new int[size];
         this.d = new int[size];
         int i = 0;
         int i2 = 0;
@@ -76,7 +76,7 @@ public final class BackStackState implements Parcelable {
             if (i >= size) {
                 this.e = backStackRecord.i;
                 this.f = backStackRecord.l;
-                this.g = backStackRecord.f2901c;
+                this.g = backStackRecord.f2853c;
                 this.h = backStackRecord.m;
                 this.i = backStackRecord.n;
                 this.j = backStackRecord.o;
@@ -88,16 +88,16 @@ public final class BackStackState implements Parcelable {
             }
             FragmentTransaction.Op op = backStackRecord.d.get(i);
             int i4 = i3 + 1;
-            this.f2902a[i3] = op.f3012a;
+            this.f2854a[i3] = op.f2964a;
             this.b.add(op.b != null ? op.b.mWho : null);
             int i5 = i4 + 1;
-            this.f2902a[i4] = op.f3013c;
+            this.f2854a[i4] = op.f2965c;
             int i6 = i5 + 1;
-            this.f2902a[i5] = op.d;
+            this.f2854a[i5] = op.d;
             int i7 = i6 + 1;
-            this.f2902a[i6] = op.e;
-            this.f2902a[i7] = op.f;
-            this.f2903c[i] = op.g.ordinal();
+            this.f2854a[i6] = op.e;
+            this.f2854a[i7] = op.f;
+            this.f2855c[i] = op.g.ordinal();
             this.d[i] = op.h.ordinal();
             i++;
             i2 = i7 + 1;
@@ -113,12 +113,12 @@ public final class BackStackState implements Parcelable {
         BackStackRecord backStackRecord = new BackStackRecord(fragmentManager);
         int i = 0;
         int i2 = 0;
-        while (i < this.f2902a.length) {
+        while (i < this.f2854a.length) {
             FragmentTransaction.Op op = new FragmentTransaction.Op();
             int i3 = i + 1;
-            op.f3012a = this.f2902a[i];
+            op.f2964a = this.f2854a[i];
             if (FragmentManager.a(2)) {
-                Log.v("FragmentManager", "Instantiate " + backStackRecord + " op #" + i2 + " base fragment #" + this.f2902a[i3]);
+                Log.v("FragmentManager", "Instantiate " + backStackRecord + " op #" + i2 + " base fragment #" + this.f2854a[i3]);
             }
             String str = this.b.get(i2);
             if (str != null) {
@@ -126,16 +126,16 @@ public final class BackStackState implements Parcelable {
             } else {
                 op.b = null;
             }
-            op.g = Lifecycle.State.values()[this.f2903c[i2]];
+            op.g = Lifecycle.State.values()[this.f2855c[i2]];
             op.h = Lifecycle.State.values()[this.d[i2]];
             int i4 = i3 + 1;
-            op.f3013c = this.f2902a[i3];
+            op.f2965c = this.f2854a[i3];
             int i5 = i4 + 1;
-            op.d = this.f2902a[i4];
+            op.d = this.f2854a[i4];
             int i6 = i5 + 1;
-            op.e = this.f2902a[i5];
-            op.f = this.f2902a[i6];
-            backStackRecord.e = op.f3013c;
+            op.e = this.f2854a[i5];
+            op.f = this.f2854a[i6];
+            backStackRecord.e = op.f2965c;
             backStackRecord.f = op.d;
             backStackRecord.g = op.e;
             backStackRecord.h = op.f;
@@ -145,7 +145,7 @@ public final class BackStackState implements Parcelable {
         }
         backStackRecord.i = this.e;
         backStackRecord.l = this.f;
-        backStackRecord.f2901c = this.g;
+        backStackRecord.f2853c = this.g;
         backStackRecord.j = true;
         backStackRecord.m = this.h;
         backStackRecord.n = this.i;

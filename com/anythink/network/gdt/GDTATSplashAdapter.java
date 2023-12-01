@@ -18,6 +18,7 @@ import com.anythink.splashad.api.ATSplashEyeAdListener;
 import com.anythink.splashad.api.IATSplashEyeAd;
 import com.anythink.splashad.unitgroup.api.CustomSplashAdapter;
 import com.anythink.splashad.unitgroup.api.CustomSplashEventListener;
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.qq.e.ads.splash.SplashAD;
 import com.qq.e.ads.splash.SplashADZoomOutListener;
 import com.qq.e.comm.compliance.DownloadConfirmCallBack;
@@ -31,7 +32,7 @@ public class GDTATSplashAdapter extends CustomSplashAdapter implements SplashADZ
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    GDTATSplashEyeAd f8966c;
+    GDTATSplashEyeAd f6126c;
     ViewGroup d;
     String e;
     private String g;
@@ -41,7 +42,7 @@ public class GDTATSplashAdapter extends CustomSplashAdapter implements SplashADZ
     private boolean k;
 
     /* renamed from: a  reason: collision with root package name */
-    final String f8965a = GDTATSplashAdapter.class.getSimpleName();
+    final String f6125a = GDTATSplashAdapter.class.getSimpleName();
     private boolean l = false;
     boolean f = false;
 
@@ -72,51 +73,44 @@ public class GDTATSplashAdapter extends CustomSplashAdapter implements SplashADZ
     private void a(Map<String, Object> map, Map<String, Object> map2) {
         this.g = ATInitMediation.getStringFromMap(map, "app_id");
         this.h = ATInitMediation.getStringFromMap(map, "unit_id");
-        this.e = ATInitMediation.getStringFromMap(map, "payload");
+        this.e = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
         this.i = false;
-        this.k = ATInitMediation.getBooleanFromMap(map2, ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS, false);
+        this.k = ATInitMediation.getBooleanFromMap(map2, "ad_click_confirm_status", false);
         if (map.containsKey("zoomoutad_sw")) {
             this.l = TextUtils.equals("2", ATInitMediation.getStringFromMap(map, "zoomoutad_sw"));
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
         this.j = null;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void getBidRequestInfo(Context context, Map<String, Object> map, Map<String, Object> map2, ATBidRequestInfoListener aTBidRequestInfoListener) {
         this.h = ATInitMediation.getStringFromMap(map, "unit_id");
         GDTATInitManager.getInstance().a(context, map, map2, aTBidRequestInfoListener);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public ATInitMediation getMediationInitManager() {
         return GDTATInitManager.getInstance();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return GDTATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
         return this.h;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return GDTATInitManager.getInstance().getNetworkVersion();
     }
 
     @Override // com.anythink.splashad.unitgroup.api.CustomSplashAdapter
     public IATSplashEyeAd getSplashEyeAd() {
-        return this.f8966c;
+        return this.f6126c;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
         return this.i;
     }
@@ -126,13 +120,12 @@ public class GDTATSplashAdapter extends CustomSplashAdapter implements SplashADZ
         return this.l;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(final Context context, final Map<String, Object> map, final Map<String, Object> map2) {
         this.g = ATInitMediation.getStringFromMap(map, "app_id");
         this.h = ATInitMediation.getStringFromMap(map, "unit_id");
-        this.e = ATInitMediation.getStringFromMap(map, "payload");
+        this.e = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
         this.i = false;
-        this.k = ATInitMediation.getBooleanFromMap(map2, ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS, false);
+        this.k = ATInitMediation.getBooleanFromMap(map2, "ad_click_confirm_status", false);
         if (map.containsKey("zoomoutad_sw")) {
             this.l = TextUtils.equals("2", ATInitMediation.getStringFromMap(map, "zoomoutad_sw"));
         }
@@ -142,12 +135,10 @@ public class GDTATSplashAdapter extends CustomSplashAdapter implements SplashADZ
         }
         final Context applicationContext = context.getApplicationContext();
         GDTATInitManager.getInstance().initSDK(context, map, new MediationInitCallback() { // from class: com.anythink.network.gdt.GDTATSplashAdapter.1
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onFail(String str) {
                 GDTATSplashAdapter.this.notifyATLoadFail("", str);
             }
 
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onSuccess() {
                 if (GDTATSplashAdapter.this.getMixedFormatAdType() != 0) {
                     GDTATSplashAdapter.a(GDTATSplashAdapter.this, applicationContext, map);
@@ -178,7 +169,7 @@ public class GDTATSplashAdapter extends CustomSplashAdapter implements SplashADZ
             }
             return;
         }
-        GDTATSplashEyeAd gDTATSplashEyeAd = this.f8966c;
+        GDTATSplashEyeAd gDTATSplashEyeAd = this.f6126c;
         if (gDTATSplashEyeAd == null || (splashEyeAdListener = gDTATSplashEyeAd.getSplashEyeAdListener()) == null) {
             return;
         }
@@ -229,7 +220,7 @@ public class GDTATSplashAdapter extends CustomSplashAdapter implements SplashADZ
             ATBiddingListener aTBiddingListener = this.mBiddingListener;
             StringBuilder sb = new StringBuilder();
             sb.append(System.currentTimeMillis());
-            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(ecpm, sb.toString(), gDTATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(ecpm, sb.toString(), gDTATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
         }
     }
 
@@ -247,13 +238,13 @@ public class GDTATSplashAdapter extends CustomSplashAdapter implements SplashADZ
         sb.append(adError.getErrorCode());
         notifyATLoadFail(sb.toString(), adError.getErrorMsg());
         if (this.mImpressionListener != null) {
-            String str = this.f8965a;
+            String str = this.f6125a;
             Log.e(str, "GDT Splash show fail:[errorCode:" + adError.getErrorCode() + ",errorMsg:" + adError.getErrorMsg() + "]");
             this.mDismissType = 99;
             CustomSplashEventListener customSplashEventListener = this.mImpressionListener;
             StringBuilder sb2 = new StringBuilder();
             sb2.append(adError.getErrorCode());
-            customSplashEventListener.onSplashAdShowFail(ErrorCode.getErrorCode(ErrorCode.adShowError, sb2.toString(), adError.getErrorMsg()));
+            customSplashEventListener.onSplashAdShowFail(ErrorCode.getErrorCode("4006", sb2.toString(), adError.getErrorMsg()));
             this.mImpressionListener.onSplashAdDismiss();
         }
     }
@@ -263,7 +254,7 @@ public class GDTATSplashAdapter extends CustomSplashAdapter implements SplashADZ
         this.b = true;
         if (this.l) {
             GDTATSplashEyeAd gDTATSplashEyeAd = new GDTATSplashEyeAd(this, this.j);
-            this.f8966c = gDTATSplashEyeAd;
+            this.f6126c = gDTATSplashEyeAd;
             gDTATSplashEyeAd.setSplashView(this.d);
             if (this.mImpressionListener != null) {
                 this.mImpressionListener.onSplashAdDismiss();
@@ -291,7 +282,6 @@ public class GDTATSplashAdapter extends CustomSplashAdapter implements SplashADZ
         this.j.showAd(this.d);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.f = true;
         if (getMixedFormatAdType() == 0) {

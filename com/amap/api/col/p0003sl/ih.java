@@ -3,9 +3,7 @@ package com.amap.api.col.p0003sl;
 /* renamed from: com.amap.api.col.3sl.ih  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ih.class */
 public final class ih {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static String f5154a;
+    private static String a;
     private static String b;
 
     public static String a() {
@@ -13,6 +11,6 @@ public final class ih {
     }
 
     public static void a(String str) {
-        f5154a = str;
+        a = str;
     }
 }

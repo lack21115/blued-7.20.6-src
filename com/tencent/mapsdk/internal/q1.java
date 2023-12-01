@@ -21,6 +21,7 @@ import com.tencent.tencentmap.mapsdk.maps.model.BitmapDescriptorFactory;
 import com.tencent.tencentmap.mapsdk.maps.model.MapViewType;
 import com.tencent.tencentmap.mapsdk.maps.model.MyLocationStyle;
 import com.tencent.tencentmap.mapsdk.maps.model.OverSeaSource;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.util.HashSet;
 import java.util.Map;
@@ -36,11 +37,11 @@ public abstract class q1 implements TencentMapContext {
     private static final String m = "color_texture_flat_style.png";
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f37710a;
+    private final Context f24019a;
     private final TencentMapOptions b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final r1 f37711c;
+    private final r1 f24020c;
     private f6 d;
     private w6 e;
     private boolean f = false;
@@ -51,11 +52,11 @@ public abstract class q1 implements TencentMapContext {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public Class<? extends TencentMapComponent.Component> f37712a;
+        public Class<? extends TencentMapComponent.Component> f24021a;
         public Class<? extends TencentMapComponent.Component> b;
 
         public a(Class<? extends TencentMapComponent.Component> cls, Class<? extends TencentMapComponent.Component> cls2) {
-            this.f37712a = cls;
+            this.f24021a = cls;
             this.b = cls2;
         }
 
@@ -67,12 +68,12 @@ public abstract class q1 implements TencentMapContext {
                 return false;
             }
             a aVar = (a) obj;
-            Class<? extends TencentMapComponent.Component> cls = this.f37712a;
+            Class<? extends TencentMapComponent.Component> cls = this.f24021a;
             if (cls != null) {
-                if (!cls.equals(aVar.f37712a)) {
+                if (!cls.equals(aVar.f24021a)) {
                     return false;
                 }
-            } else if (aVar.f37712a != null) {
+            } else if (aVar.f24021a != null) {
                 return false;
             }
             Class<? extends TencentMapComponent.Component> cls2 = this.b;
@@ -81,7 +82,7 @@ public abstract class q1 implements TencentMapContext {
         }
 
         public int hashCode() {
-            Class<? extends TencentMapComponent.Component> cls = this.f37712a;
+            Class<? extends TencentMapComponent.Component> cls = this.f24021a;
             int i = 0;
             int hashCode = cls != null ? cls.hashCode() : 0;
             Class<? extends TencentMapComponent.Component> cls2 = this.b;
@@ -96,10 +97,10 @@ public abstract class q1 implements TencentMapContext {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f37713a;
+        public String f24022a;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f37714c;
+        public String f24023c;
         public String d;
         public String f;
         public String b = c7.N();
@@ -107,13 +108,13 @@ public abstract class q1 implements TencentMapContext {
 
         public b(TencentMapOptions tencentMapOptions) {
             this.f = "undefined";
-            this.f37713a = c7.t();
+            this.f24022a = c7.t();
             if (tencentMapOptions != null) {
                 if (!TextUtils.isEmpty(tencentMapOptions.getMapKey())) {
-                    this.f37713a = tencentMapOptions.getMapKey();
+                    this.f24022a = tencentMapOptions.getMapKey();
                 }
                 if (!TextUtils.isEmpty(tencentMapOptions.getSubKey())) {
-                    this.f37714c = tencentMapOptions.getSubKey();
+                    this.f24023c = tencentMapOptions.getSubKey();
                 }
                 if (!TextUtils.isEmpty(tencentMapOptions.getSubId())) {
                     this.d = tencentMapOptions.getSubId();
@@ -127,7 +128,7 @@ public abstract class q1 implements TencentMapContext {
         }
 
         public String b() {
-            return TextUtils.isEmpty(this.f37714c) ? this.f37713a : this.f37714c;
+            return TextUtils.isEmpty(this.f24023c) ? this.f24022a : this.f24023c;
         }
 
         public String c() {
@@ -139,15 +140,15 @@ public abstract class q1 implements TencentMapContext {
         }
 
         public String e() {
-            return this.f37713a + "-" + this.b + "-" + this.f37714c + "-" + this.d;
+            return this.f24022a + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.b + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.f24023c + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.d;
         }
 
         public String f() {
-            return this.e + "-" + this.f37713a + "-" + this.b + "-" + this.f37714c + "-" + this.d;
+            return this.e + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.f24022a + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.b + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.f24023c + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.d;
         }
 
         public String g() {
-            return this.f37713a;
+            return this.f24022a;
         }
 
         public String h() {
@@ -159,7 +160,7 @@ public abstract class q1 implements TencentMapContext {
         }
 
         public String j() {
-            return this.f37714c;
+            return this.f24023c;
         }
 
         public String k() {
@@ -175,9 +176,9 @@ public abstract class q1 implements TencentMapContext {
     }
 
     public q1(Context context, TencentMapOptions tencentMapOptions, r1 r1Var) {
-        this.f37710a = context.getApplicationContext();
+        this.f24019a = context.getApplicationContext();
         this.b = tencentMapOptions;
-        this.f37711c = r1Var;
+        this.f24020c = r1Var;
         BitmapDescriptorFactory.attachMapContext(this);
         jc.a(tencentMapOptions);
     }
@@ -190,7 +191,7 @@ public abstract class q1 implements TencentMapContext {
             }
         }
         for (a aVar : j) {
-            Class<? extends TencentMapComponent.Component> cls = aVar.f37712a;
+            Class<? extends TencentMapComponent.Component> cls = aVar.f24021a;
             Map<Class<? extends TencentMapComponent.Component>, TencentMapComponent.Component> map = i;
             TencentMapComponent.Component component = map.get(cls);
             Class<? extends TencentMapComponent.Component> cls2 = aVar.b;
@@ -260,7 +261,7 @@ public abstract class q1 implements TencentMapContext {
 
     public void D() {
         b q = q();
-        c7.a(this.f37710a, q.f37713a, q.b, q.f);
+        c7.a(this.f24019a, q.f24022a, q.b, q.f);
         z();
         F();
     }
@@ -373,7 +374,7 @@ public abstract class q1 implements TencentMapContext {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.TencentMapContext
     public Context getContext() {
-        return this.f37710a;
+        return this.f24019a;
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.TencentMapResource
@@ -414,7 +415,7 @@ public abstract class q1 implements TencentMapContext {
     }
 
     public MapDelegate j() {
-        return this.f37711c;
+        return this.f24020c;
     }
 
     public File m() {
@@ -458,7 +459,7 @@ public abstract class q1 implements TencentMapContext {
 
     public mc x() {
         if (this.h == null) {
-            this.h = mc.a(this.f37710a, this.b);
+            this.h = mc.a(this.f24019a, this.b);
         }
         return this.h;
     }

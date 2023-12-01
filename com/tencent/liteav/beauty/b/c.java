@@ -6,7 +6,7 @@ import android.opengl.GLES20;
 public final class c extends com.tencent.liteav.videobase.a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f36369a;
+    private int f22678a;
     private int b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -17,14 +17,14 @@ public final class c extends com.tencent.liteav.videobase.a.b {
     @Override // com.tencent.liteav.videobase.a.b
     public final void onInit(com.tencent.liteav.videobase.frame.e eVar) {
         super.onInit(eVar);
-        this.f36369a = GLES20.glGetUniformLocation(getProgramId(), "texelWidthOffset");
+        this.f22678a = GLES20.glGetUniformLocation(getProgramId(), "texelWidthOffset");
         this.b = GLES20.glGetUniformLocation(getProgramId(), "texelHeightOffset");
     }
 
     @Override // com.tencent.liteav.videobase.a.b
     public final void onOutputSizeChanged(int i, int i2) {
         super.onOutputSizeChanged(i, i2);
-        setFloatOnDraw(this.f36369a, 2.0f / this.mOutputSize.f36340a);
+        setFloatOnDraw(this.f22678a, 2.0f / this.mOutputSize.f22649a);
         setFloatOnDraw(this.b, 2.0f / this.mOutputSize.b);
     }
 }

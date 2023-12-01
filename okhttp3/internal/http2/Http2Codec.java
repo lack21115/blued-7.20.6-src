@@ -1,6 +1,6 @@
 package okhttp3.internal.http2;
 
-import android.net.http.Headers;
+import com.alipay.sdk.cons.c;
 import java.io.IOException;
 import java.net.ProtocolException;
 import java.util.ArrayList;
@@ -32,13 +32,9 @@ import okio.Source;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Http2Codec.class */
 public final class Http2Codec implements HttpCodec {
-    private static final List<String> b = Util.a(Headers.CONN_DIRECTIVE, "host", "keep-alive", Headers.PROXY_CONNECTION, "te", Headers.TRANSFER_ENCODING, OutputKeys.ENCODING, "upgrade", ":method", ":path", ":scheme", ":authority");
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final List<String> f43915c = Util.a(Headers.CONN_DIRECTIVE, "host", "keep-alive", Headers.PROXY_CONNECTION, "te", Headers.TRANSFER_ENCODING, OutputKeys.ENCODING, "upgrade");
-
-    /* renamed from: a  reason: collision with root package name */
-    final StreamAllocation f43916a;
+    private static final List<String> b = Util.a("connection", c.f, "keep-alive", "proxy-connection", "te", "transfer-encoding", OutputKeys.ENCODING, "upgrade", ":method", ":path", ":scheme", ":authority");
+    private static final List<String> c = Util.a("connection", c.f, "keep-alive", "proxy-connection", "te", "transfer-encoding", OutputKeys.ENCODING, "upgrade");
+    final StreamAllocation a;
     private final Interceptor.Chain d;
     private final Http2Connection e;
     private Http2Stream f;
@@ -46,23 +42,21 @@ public final class Http2Codec implements HttpCodec {
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Http2Codec$StreamFinishingSource.class */
     class StreamFinishingSource extends ForwardingSource {
-
-        /* renamed from: a  reason: collision with root package name */
-        boolean f43917a;
+        boolean a;
         long b;
 
         StreamFinishingSource(Source source) {
             super(source);
-            this.f43917a = false;
+            this.a = false;
             this.b = 0L;
         }
 
         private void a(IOException iOException) {
-            if (this.f43917a) {
+            if (this.a) {
                 return;
             }
-            this.f43917a = true;
-            Http2Codec.this.f43916a.a(false, Http2Codec.this, this.b, iOException);
+            this.a = true;
+            Http2Codec.this.a.a(false, Http2Codec.this, this.b, iOException);
         }
 
         @Override // okio.ForwardingSource, okio.Source, java.io.Closeable, java.lang.AutoCloseable
@@ -88,12 +82,12 @@ public final class Http2Codec implements HttpCodec {
 
     public Http2Codec(OkHttpClient okHttpClient, Interceptor.Chain chain, StreamAllocation streamAllocation, Http2Connection http2Connection) {
         this.d = chain;
-        this.f43916a = streamAllocation;
+        this.a = streamAllocation;
         this.e = http2Connection;
         this.g = okHttpClient.protocols().contains(Protocol.H2_PRIOR_KNOWLEDGE) ? Protocol.H2_PRIOR_KNOWLEDGE : Protocol.HTTP_2;
     }
 
-    public static Response.Builder a(okhttp3.Headers headers, Protocol protocol) throws IOException {
+    public static Response.Builder a(Headers headers, Protocol protocol) throws IOException {
         StatusLine statusLine;
         Headers.Builder builder = new Headers.Builder();
         int size = headers.size();
@@ -106,7 +100,7 @@ public final class Http2Codec implements HttpCodec {
                 statusLine = StatusLine.a("HTTP/1.1 " + value);
             } else {
                 statusLine = statusLine2;
-                if (!f43915c.contains(name)) {
+                if (!c.contains(name)) {
                     Internal.instance.addLenient(builder, name, value);
                     statusLine = statusLine2;
                 }
@@ -115,15 +109,15 @@ public final class Http2Codec implements HttpCodec {
             statusLine2 = statusLine;
         }
         if (statusLine2 != null) {
-            return new Response.Builder().protocol(protocol).code(statusLine2.b).message(statusLine2.f43895c).headers(builder.build());
+            return new Response.Builder().protocol(protocol).code(statusLine2.b).message(statusLine2.c).headers(builder.build());
         }
         throw new ProtocolException("Expected ':status' header not present");
     }
 
     public static List<Header> b(Request request) {
-        okhttp3.Headers headers = request.headers();
+        Headers headers = request.headers();
         ArrayList arrayList = new ArrayList(headers.size() + 4);
-        arrayList.add(new Header(Header.f43907c, request.method()));
+        arrayList.add(new Header(Header.c, request.method()));
         arrayList.add(new Header(Header.d, RequestLine.a(request.url())));
         String header = request.header("Host");
         if (header != null) {
@@ -142,16 +136,16 @@ public final class Http2Codec implements HttpCodec {
 
     @Override // okhttp3.internal.http.HttpCodec
     public Response.Builder a(boolean z) throws IOException {
-        Response.Builder a2 = a(this.f.d(), this.g);
-        if (z && Internal.instance.code(a2) == 100) {
+        Response.Builder a = a(this.f.d(), this.g);
+        if (z && Internal.instance.code(a) == 100) {
             return null;
         }
-        return a2;
+        return a;
     }
 
     @Override // okhttp3.internal.http.HttpCodec
     public ResponseBody a(Response response) throws IOException {
-        this.f43916a.f43880c.responseBodyStart(this.f43916a.b);
+        this.a.c.responseBodyStart(this.a.b);
         return new RealResponseBody(response.header("Content-Type"), HttpHeaders.a(response), Okio.buffer(new StreamFinishingSource(this.f.g())));
     }
 
@@ -170,9 +164,9 @@ public final class Http2Codec implements HttpCodec {
         if (this.f != null) {
             return;
         }
-        Http2Stream a2 = this.e.a(b(request), request.body() != null);
-        this.f = a2;
-        a2.e().timeout(this.d.readTimeoutMillis(), TimeUnit.MILLISECONDS);
+        Http2Stream a = this.e.a(b(request), request.body() != null);
+        this.f = a;
+        a.e().timeout(this.d.readTimeoutMillis(), TimeUnit.MILLISECONDS);
         this.f.f().timeout(this.d.writeTimeoutMillis(), TimeUnit.MILLISECONDS);
     }
 

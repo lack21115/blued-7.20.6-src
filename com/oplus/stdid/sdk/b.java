@@ -6,10 +6,10 @@ import android.util.Log;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f24434a;
+    public static boolean f10747a;
 
     public static void a(String str) {
-        if (f24434a) {
+        if (f10747a) {
             Log.d("StdIDHelper", str);
         }
     }

@@ -1,5 +1,6 @@
 package com.squareup.wire.internal;
 
+import com.xiaomi.mipush.sdk.Constants;
 import java.time.Duration;
 import java.util.Arrays;
 import kotlin.Metadata;
@@ -15,30 +16,30 @@ public final class DurationJsonFormatter implements JsonFormatter<Duration> {
     }
 
     @Override // com.squareup.wire.internal.JsonFormatter
-    public Duration fromString(String value) {
+    public Duration fromString(String str) {
         int i;
         long j;
-        Intrinsics.e(value, "value");
-        String str = value;
-        int a2 = StringsKt.a((CharSequence) str, 's', 0, false, 6, (Object) null);
-        if (a2 == value.length() - 1) {
-            int a3 = StringsKt.a((CharSequence) str, '.', 0, false, 6, (Object) null);
+        Intrinsics.e(str, "value");
+        String str2 = str;
+        int a2 = StringsKt.a(str2, 's', 0, false, 6, (Object) null);
+        if (a2 == str.length() - 1) {
+            int a3 = StringsKt.a(str2, '.', 0, false, 6, (Object) null);
             if (a3 == -1) {
-                String substring = value.substring(0, a2);
+                String substring = str.substring(0, a2);
                 Intrinsics.c(substring, "this as java.lang.String…ing(startIndex, endIndex)");
                 Duration ofSeconds = Duration.ofSeconds(Long.parseLong(substring));
                 Intrinsics.c(ofSeconds, "ofSeconds(seconds)");
                 return ofSeconds;
             }
-            String substring2 = value.substring(0, a3);
+            String substring2 = str.substring(0, a3);
             Intrinsics.c(substring2, "this as java.lang.String…ing(startIndex, endIndex)");
             long parseLong = Long.parseLong(substring2);
             int i2 = a3 + 1;
-            String substring3 = value.substring(i2, a2);
+            String substring3 = str.substring(i2, a2);
             Intrinsics.c(substring3, "this as java.lang.String…ing(startIndex, endIndex)");
             long parseLong2 = Long.parseLong(substring3);
             long j2 = parseLong2;
-            if (StringsKt.a(value, "-", false, 2, (Object) null)) {
+            if (StringsKt.a(str, Constants.ACCEPT_TIME_SEPARATOR_SERVER, false, 2, (Object) null)) {
                 j2 = -parseLong2;
             }
             int i3 = a2 - i2;
@@ -64,21 +65,21 @@ public final class DurationJsonFormatter implements JsonFormatter<Duration> {
     }
 
     @Override // com.squareup.wire.internal.JsonFormatter
-    public String toStringOrNumber(Duration value) {
+    public String toStringOrNumber(Duration duration) {
         Object obj;
         int i;
         long j;
         Object obj2;
-        Intrinsics.e(value, "value");
-        long seconds = value.getSeconds();
-        int nano = value.getNano();
+        Intrinsics.e(duration, "value");
+        long seconds = duration.getSeconds();
+        int nano = duration.getNano();
         if (seconds < 0) {
             if (seconds == Long.MIN_VALUE) {
                 j = 8;
                 obj2 = "-922337203685477580";
             } else {
                 j = -seconds;
-                obj2 = "-";
+                obj2 = Constants.ACCEPT_TIME_SEPARATOR_SERVER;
             }
             seconds = j;
             obj = obj2;

@@ -73,13 +73,13 @@ public abstract class ResponseBody implements Closeable {
         BufferedSource source = source();
         try {
             byte[] readByteArray = source.readByteArray();
-            Util.closeQuietly(source);
+            Util.closeQuietly((Closeable) source);
             if (contentLength != -1 && contentLength != readByteArray.length) {
                 throw new IOException("Content-Length and stream length disagree");
             }
             return readByteArray;
         } catch (Throwable th) {
-            Util.closeQuietly(source);
+            Util.closeQuietly((Closeable) source);
             throw th;
         }
     }

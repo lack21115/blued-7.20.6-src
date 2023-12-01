@@ -4,19 +4,19 @@ package com.xiaomi.push;
 class ge implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ gb f41434a;
+    final /* synthetic */ gb f27743a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ String f507a;
+    final /* synthetic */ String f460a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ge(gb gbVar, String str) {
-        this.f41434a = gbVar;
-        this.f507a = str;
+        this.f27743a = gbVar;
+        this.f460a = str;
     }
 
     @Override // java.lang.Runnable
     public void run() {
-        ct.a().a(this.f507a, true);
+        ct.a().a(this.f460a, true);
     }
 }

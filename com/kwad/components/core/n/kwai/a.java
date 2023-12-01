@@ -16,28 +16,28 @@ public final class a {
 
     /* renamed from: com.kwad.components.core.n.kwai.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/n/kwai/a$a.class */
-    public static final class C0527a {
+    public static final class C0357a {
         public b JW;
         public com.kwad.components.core.n.b Or;
         public boolean Ot;
         public boolean Ou;
 
-        public final C0527a a(com.kwad.components.core.n.b bVar) {
+        public final C0357a a(com.kwad.components.core.n.b bVar) {
             this.Or = bVar;
             return this;
         }
 
-        public final C0527a aG(boolean z) {
+        public final C0357a aG(boolean z) {
             this.Ot = true;
             return this;
         }
 
-        public final C0527a aH(boolean z) {
+        public final C0357a aH(boolean z) {
             this.Ou = z;
             return this;
         }
 
-        public final C0527a e(b bVar) {
+        public final C0357a e(b bVar) {
             this.JW = bVar;
             return this;
         }
@@ -50,15 +50,15 @@ public final class a {
         }
     }
 
-    private a(C0527a c0527a) {
-        this.JW = c0527a.JW;
-        this.Or = c0527a.Or;
-        this.Ot = c0527a.Ot;
-        this.Ou = c0527a.Ou;
+    private a(C0357a c0357a) {
+        this.JW = c0357a.JW;
+        this.Or = c0357a.Or;
+        this.Ot = c0357a.Ot;
+        this.Ou = c0357a.Ou;
     }
 
-    /* synthetic */ a(C0527a c0527a, byte b) {
-        this(c0527a);
+    /* synthetic */ a(C0357a c0357a, byte b) {
+        this(c0357a);
     }
 
     public static void a(a aVar, int i, String str, boolean z) {

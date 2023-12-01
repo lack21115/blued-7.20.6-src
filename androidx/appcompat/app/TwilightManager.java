@@ -11,11 +11,11 @@ import java.util.Calendar;
 class TwilightManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static TwilightManager f1605a;
+    private static TwilightManager f1557a;
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final LocationManager f1606c;
+    private final LocationManager f1558c;
     private final TwilightState d = new TwilightState();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -23,11 +23,11 @@ class TwilightManager {
     public static class TwilightState {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f1607a;
+        boolean f1559a;
         long b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f1608c;
+        long f1560c;
         long d;
         long e;
         long f;
@@ -38,13 +38,13 @@ class TwilightManager {
 
     TwilightManager(Context context, LocationManager locationManager) {
         this.b = context;
-        this.f1606c = locationManager;
+        this.f1558c = locationManager;
     }
 
     private Location a(String str) {
         try {
-            if (this.f1606c.isProviderEnabled(str)) {
-                return this.f1606c.getLastKnownLocation(str);
+            if (this.f1558c.isProviderEnabled(str)) {
+                return this.f1558c.getLastKnownLocation(str);
             }
             return null;
         } catch (Exception e) {
@@ -55,11 +55,11 @@ class TwilightManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static TwilightManager a(Context context) {
-        if (f1605a == null) {
+        if (f1557a == null) {
             Context applicationContext = context.getApplicationContext();
-            f1605a = new TwilightManager(applicationContext, (LocationManager) applicationContext.getSystemService("location"));
+            f1557a = new TwilightManager(applicationContext, (LocationManager) applicationContext.getSystemService("location"));
         }
-        return f1605a;
+        return f1557a;
     }
 
     private void a(Location location) {
@@ -80,9 +80,9 @@ class TwilightManager {
         } else {
             j = (currentTimeMillis > j4 ? 0 + j5 : currentTimeMillis > j3 ? 0 + j4 : 0 + j3) + 60000;
         }
-        twilightState.f1607a = z;
+        twilightState.f1559a = z;
         twilightState.b = j2;
-        twilightState.f1608c = j3;
+        twilightState.f1560c = j3;
         twilightState.d = j4;
         twilightState.e = j5;
         twilightState.f = j;
@@ -115,12 +115,12 @@ class TwilightManager {
     public boolean a() {
         TwilightState twilightState = this.d;
         if (c()) {
-            return twilightState.f1607a;
+            return twilightState.f1559a;
         }
         Location b = b();
         if (b != null) {
             a(b);
-            return twilightState.f1607a;
+            return twilightState.f1559a;
         }
         Log.i("TwilightManager", "Could not get last known location. This is probably because the app does not have any location permissions. Falling back to hardcoded sunrise/sunset values.");
         int i = Calendar.getInstance().get(11);

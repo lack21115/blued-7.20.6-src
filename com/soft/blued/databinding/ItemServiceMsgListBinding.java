@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemServiceMsgListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29316a;
+    private final ConstraintLayout f15626a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29316a;
+        return this.f15626a;
     }
 }

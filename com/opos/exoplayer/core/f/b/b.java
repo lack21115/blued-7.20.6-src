@@ -17,15 +17,15 @@ import java.util.List;
 final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f25347a = {0, 7, 8, 15};
+    private static final byte[] f11659a = {0, 7, 8, 15};
     private static final byte[] b = {0, 119, -120, -1};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte[] f25348c = {0, 17, 34, 51, 68, 85, 102, 119, -120, -103, -86, -69, -52, -35, -18, -1};
+    private static final byte[] f11660c = {0, 17, 34, 51, 68, 85, 102, 119, -120, -103, -86, -69, -52, -35, -18, -1};
     private final Paint d;
     private final Paint e;
     private final Canvas f;
-    private final C0662b g;
+    private final C0492b g;
     private final a h;
     private final h i;
     private Bitmap j;
@@ -35,17 +35,17 @@ final class b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25349a;
+        public final int f11661a;
         public final int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int[] f25350c;
+        public final int[] f11662c;
         public final int[] d;
 
         public a(int i, int[] iArr, int[] iArr2, int[] iArr3) {
-            this.f25349a = i;
+            this.f11661a = i;
             this.b = iArr;
-            this.f25350c = iArr2;
+            this.f11662c = iArr2;
             this.d = iArr3;
         }
     }
@@ -53,22 +53,22 @@ final class b {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.exoplayer.core.f.b.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/f/b/b$b.class */
-    public static final class C0662b {
+    public static final class C0492b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25351a;
+        public final int f11663a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f25352c;
+        public final int f11664c;
         public final int d;
         public final int e;
         public final int f;
 
-        public C0662b(int i, int i2, int i3, int i4, int i5, int i6) {
-            this.f25351a = i;
+        public C0492b(int i, int i2, int i3, int i4, int i5, int i6) {
+            this.f11663a = i;
             this.b = i2;
-            this.f25352c = i3;
+            this.f11664c = i3;
             this.d = i4;
             this.e = i5;
             this.f = i6;
@@ -80,17 +80,17 @@ final class b {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25353a;
+        public final int f11665a;
         public final boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final byte[] f25354c;
+        public final byte[] f11666c;
         public final byte[] d;
 
         public c(int i, boolean z, byte[] bArr, byte[] bArr2) {
-            this.f25353a = i;
+            this.f11665a = i;
             this.b = z;
-            this.f25354c = bArr;
+            this.f11666c = bArr;
             this.d = bArr2;
         }
     }
@@ -100,17 +100,17 @@ final class b {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25355a;
+        public final int f11667a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f25356c;
+        public final int f11668c;
         public final SparseArray<e> d;
 
         public d(int i, int i2, int i3, SparseArray<e> sparseArray) {
-            this.f25355a = i;
+            this.f11667a = i;
             this.b = i2;
-            this.f25356c = i3;
+            this.f11668c = i3;
             this.d = sparseArray;
         }
     }
@@ -120,11 +120,11 @@ final class b {
     public static final class e {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25357a;
+        public final int f11669a;
         public final int b;
 
         public e(int i, int i2) {
-            this.f25357a = i;
+            this.f11669a = i;
             this.b = i2;
         }
     }
@@ -134,11 +134,11 @@ final class b {
     public static final class f {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25358a;
+        public final int f11670a;
         public final boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f25359c;
+        public final int f11671c;
         public final int d;
         public final int e;
         public final int f;
@@ -149,9 +149,9 @@ final class b {
         public final SparseArray<g> k;
 
         public f(int i, boolean z, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, SparseArray<g> sparseArray) {
-            this.f25358a = i;
+            this.f11670a = i;
             this.b = z;
-            this.f25359c = i2;
+            this.f11671c = i2;
             this.d = i3;
             this.e = i4;
             this.f = i5;
@@ -184,19 +184,19 @@ final class b {
     public static final class g {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25360a;
+        public final int f11672a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f25361c;
+        public final int f11673c;
         public final int d;
         public final int e;
         public final int f;
 
         public g(int i, int i2, int i3, int i4, int i5, int i6) {
-            this.f25360a = i;
+            this.f11672a = i;
             this.b = i2;
-            this.f25361c = i3;
+            this.f11673c = i3;
             this.d = i4;
             this.e = i5;
             this.f = i6;
@@ -208,25 +208,25 @@ final class b {
     public static final class h {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25362a;
+        public final int f11674a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final SparseArray<f> f25363c = new SparseArray<>();
+        public final SparseArray<f> f11675c = new SparseArray<>();
         public final SparseArray<a> d = new SparseArray<>();
         public final SparseArray<c> e = new SparseArray<>();
         public final SparseArray<a> f = new SparseArray<>();
         public final SparseArray<c> g = new SparseArray<>();
-        public C0662b h;
+        public C0492b h;
         public d i;
 
         public h(int i, int i2) {
-            this.f25362a = i;
+            this.f11674a = i;
             this.b = i2;
         }
 
         public void a() {
-            this.f25363c.clear();
+            this.f11675c.clear();
             this.d.clear();
             this.e.clear();
             this.f.clear();
@@ -248,7 +248,7 @@ final class b {
         this.e.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OVER));
         this.e.setPathEffect(null);
         this.f = new Canvas();
-        this.g = new C0662b(719, 575, 0, 719, 0, 575);
+        this.g = new C0492b(719, 575, 0, 719, 0, 575);
         this.h = new a(0, b(), c(), d());
         this.i = new h(i, i2);
     }
@@ -273,7 +273,7 @@ final class b {
         throw new UnsupportedOperationException("Method not decompiled: com.opos.exoplayer.core.f.b.b.a(com.opos.exoplayer.core.i.l, int[], byte[], int, int, android.graphics.Paint, android.graphics.Canvas):int");
     }
 
-    private static C0662b a(l lVar) {
+    private static C0492b a(l lVar) {
         int i;
         int i2;
         int i3;
@@ -294,7 +294,7 @@ final class b {
             i3 = 0;
             i4 = 0;
         }
-        return new C0662b(c2, c3, i3, i, i4, i2);
+        return new C0492b(c2, c3, i3, i, i4, i2);
     }
 
     private static d a(l lVar, int i) {
@@ -314,8 +314,8 @@ final class b {
     }
 
     private static void a(c cVar, a aVar, int i, int i2, int i3, Paint paint, Canvas canvas) {
-        int[] iArr = i == 3 ? aVar.d : i == 2 ? aVar.f25350c : aVar.b;
-        a(cVar.f25354c, iArr, i, i2, i3, paint, canvas);
+        int[] iArr = i == 3 ? aVar.d : i == 2 ? aVar.f11662c : aVar.b;
+        a(cVar.f11666c, iArr, i, i2, i3, paint, canvas);
         a(cVar.d, iArr, i, i2, i3 + 1, paint, canvas);
     }
 
@@ -341,17 +341,17 @@ final class b {
         }
         switch (c2) {
             case 16:
-                if (c3 == hVar.f25362a) {
+                if (c3 == hVar.f11674a) {
                     d dVar = hVar.i;
                     d a2 = a(lVar, c4);
-                    if (a2.f25356c == 0) {
+                    if (a2.f11668c == 0) {
                         if (dVar != null && dVar.b != a2.b) {
                             hVar.i = a2;
                             break;
                         }
                     } else {
                         hVar.i = a2;
-                        hVar.f25363c.clear();
+                        hVar.f11675c.clear();
                         hVar.d.clear();
                         hVar.e.clear();
                         break;
@@ -360,17 +360,17 @@ final class b {
                 break;
             case 17:
                 d dVar2 = hVar.i;
-                if (c3 == hVar.f25362a && dVar2 != null) {
+                if (c3 == hVar.f11674a && dVar2 != null) {
                     f b2 = b(lVar, c4);
-                    if (dVar2.f25356c == 0) {
-                        b2.a(hVar.f25363c.get(b2.f25358a));
+                    if (dVar2.f11668c == 0) {
+                        b2.a(hVar.f11675c.get(b2.f11670a));
                     }
-                    hVar.f25363c.put(b2.f25358a, b2);
+                    hVar.f11675c.put(b2.f11670a, b2);
                     break;
                 }
                 break;
             case 18:
-                if (c3 == hVar.f25362a) {
+                if (c3 == hVar.f11674a) {
                     a c6 = c(lVar, c4);
                     sparseArray = hVar.d;
                     aVar = c6;
@@ -380,25 +380,25 @@ final class b {
                     aVar = c7;
                     sparseArray = sparseArray4;
                 }
-                i = aVar.f25349a;
+                i = aVar.f11661a;
                 sparseArray2 = sparseArray;
                 aVar2 = aVar;
                 sparseArray2.put(i, aVar2);
                 break;
             case 19:
-                if (c3 == hVar.f25362a) {
+                if (c3 == hVar.f11674a) {
                     aVar2 = b(lVar);
                     sparseArray3 = hVar.e;
                 } else if (c3 == hVar.b) {
                     aVar2 = b(lVar);
                     sparseArray3 = hVar.g;
                 }
-                i = aVar2.f25353a;
+                i = aVar2.f11665a;
                 sparseArray2 = sparseArray3;
                 sparseArray2.put(i, aVar2);
                 break;
             case 20:
-                if (c3 == hVar.f25362a) {
+                if (c3 == hVar.f11674a) {
                     hVar.h = a(lVar);
                     break;
                 }
@@ -419,12 +419,12 @@ final class b {
             if (c2 != 240) {
                 switch (c2) {
                     case 16:
-                        a2 = a(lVar, iArr, i == 3 ? bArr3 == null ? b : bArr3 : i == 2 ? bArr2 == null ? f25347a : bArr2 : null, i5, i4, paint, canvas);
+                        a2 = a(lVar, iArr, i == 3 ? bArr3 == null ? b : bArr3 : i == 2 ? bArr2 == null ? f11659a : bArr2 : null, i5, i4, paint, canvas);
                         i5 = a2;
                         lVar.f();
                         break;
                     case 17:
-                        a2 = b(lVar, iArr, i == 3 ? f25348c : null, i5, i4, paint, canvas);
+                        a2 = b(lVar, iArr, i == 3 ? f11660c : null, i5, i4, paint, canvas);
                         i5 = a2;
                         lVar.f();
                         break;
@@ -752,9 +752,9 @@ final class b {
         if (this.i.i == null) {
             return Collections.emptyList();
         }
-        C0662b c0662b = this.i.h != null ? this.i.h : this.g;
-        if (this.j == null || c0662b.f25351a + 1 != this.j.getWidth() || c0662b.b + 1 != this.j.getHeight()) {
-            Bitmap createBitmap = Bitmap.createBitmap(c0662b.f25351a + 1, c0662b.b + 1, Bitmap.Config.ARGB_8888);
+        C0492b c0492b = this.i.h != null ? this.i.h : this.g;
+        if (this.j == null || c0492b.f11663a + 1 != this.j.getWidth() || c0492b.b + 1 != this.j.getHeight()) {
+            Bitmap createBitmap = Bitmap.createBitmap(c0492b.f11663a + 1, c0492b.b + 1, Bitmap.Config.ARGB_8888);
             this.j = createBitmap;
             this.f.setBitmap(createBitmap);
         }
@@ -767,11 +767,11 @@ final class b {
                 return arrayList;
             }
             e valueAt = sparseArray.valueAt(i3);
-            f fVar = this.i.f25363c.get(sparseArray.keyAt(i3));
-            int i4 = valueAt.f25357a + c0662b.f25352c;
-            int i5 = valueAt.b + c0662b.e;
-            int min = Math.min(fVar.f25359c + i4, c0662b.d);
-            int min2 = Math.min(fVar.d + i5, c0662b.f);
+            f fVar = this.i.f11675c.get(sparseArray.keyAt(i3));
+            int i4 = valueAt.f11669a + c0492b.f11664c;
+            int i5 = valueAt.b + c0492b.e;
+            int min = Math.min(fVar.f11671c + i4, c0492b.d);
+            int min2 = Math.min(fVar.d + i5, c0492b.f);
             float f2 = i4;
             float f3 = i5;
             this.f.clipRect(f2, f3, min, min2, Region.Op.REPLACE);
@@ -798,15 +798,15 @@ final class b {
                     cVar = this.i.g.get(keyAt);
                 }
                 if (cVar != null) {
-                    a(cVar, aVar2, fVar.f, valueAt2.f25361c + i4, valueAt2.d + i5, cVar.b ? null : this.d, this.f);
+                    a(cVar, aVar2, fVar.f, valueAt2.f11673c + i4, valueAt2.d + i5, cVar.b ? null : this.d, this.f);
                 }
                 i6 = i7 + 1;
             }
             if (fVar.b) {
-                this.e.setColor(fVar.f == 3 ? aVar2.d[fVar.h] : fVar.f == 2 ? aVar2.f25350c[fVar.i] : aVar2.b[fVar.j]);
-                this.f.drawRect(f2, f3, fVar.f25359c + i4, fVar.d + i5, this.e);
+                this.e.setColor(fVar.f == 3 ? aVar2.d[fVar.h] : fVar.f == 2 ? aVar2.f11662c[fVar.i] : aVar2.b[fVar.j]);
+                this.f.drawRect(f2, f3, fVar.f11671c + i4, fVar.d + i5, this.e);
             }
-            arrayList.add(new com.opos.exoplayer.core.f.b(Bitmap.createBitmap(this.j, i4, i5, fVar.f25359c, fVar.d), f2 / c0662b.f25351a, 0, f3 / c0662b.b, 0, fVar.f25359c / c0662b.f25351a, fVar.d / c0662b.b));
+            arrayList.add(new com.opos.exoplayer.core.f.b(Bitmap.createBitmap(this.j, i4, i5, fVar.f11671c, fVar.d), f2 / c0492b.f11663a, 0, f3 / c0492b.b, 0, fVar.f11671c / c0492b.f11663a, fVar.d / c0492b.b));
             this.f.drawColor(0, PorterDuff.Mode.CLEAR);
             i2 = i3 + 1;
         }

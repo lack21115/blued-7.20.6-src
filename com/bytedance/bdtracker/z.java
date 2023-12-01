@@ -16,11 +16,11 @@ public class z {
     public static b p;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f21339a;
+    public long f7733a;
     public final v b;
 
     /* renamed from: c  reason: collision with root package name */
-    public c2 f21340c;
+    public c2 f7734c;
     public c2 d;
     public String e;
     public volatile long f;
@@ -75,7 +75,7 @@ public class z {
                             this.g = i;
                             bundle.putInt("send_times", i);
                             bundle.putLong("current_duration", j4 / 1000);
-                            bundle.putString(com.umeng.analytics.pro.u.f40781a, t1.n.format(new Date(this.h)));
+                            bundle.putString(com.umeng.analytics.pro.u.f27090a, t1.n.format(new Date(this.h)));
                             this.f = j;
                         }
                     }
@@ -126,11 +126,11 @@ public class z {
                 a2Var.k = t1Var.k;
                 a2Var.d = this.e;
                 a2Var.r = !this.i;
-                a2Var.f21309c = c();
+                a2Var.f7703c = c();
                 a2Var.a(this.h);
                 a2Var.q = this.b.h.m();
                 a2Var.p = this.b.h.l();
-                a2Var.e = this.f21339a;
+                a2Var.e = this.f7733a;
                 a2Var.f = iAppLogInstance.getUserUniqueID();
                 a2Var.g = iAppLogInstance.getSsid();
                 a2Var.h = iAppLogInstance.getAbSdkVersion();
@@ -149,7 +149,7 @@ public class z {
                 }
                 arrayList.add(a2Var);
             }
-            c cVar = this.b.f21325c;
+            c cVar = this.b.f7719c;
             if (cVar.k <= 0) {
                 cVar.k = 6;
             }
@@ -169,16 +169,16 @@ public class z {
     public void a(IAppLogInstance iAppLogInstance, t1 t1Var) {
         if (t1Var != null) {
             t1Var.k = iAppLogInstance.getAppId();
-            t1Var.e = this.f21339a;
+            t1Var.e = this.f7733a;
             t1Var.f = iAppLogInstance.getUserUniqueID();
             t1Var.g = iAppLogInstance.getSsid();
             t1Var.d = this.e;
-            t1Var.f21309c = c();
+            t1Var.f7703c = c();
             t1Var.h = iAppLogInstance.getAbSdkVersion();
             Context a2 = this.b.a();
             s2.b(a2);
             s2.a(a2);
-            t1Var.i = s2.b.f21304a;
+            t1Var.i = s2.b.f7698a;
         }
     }
 

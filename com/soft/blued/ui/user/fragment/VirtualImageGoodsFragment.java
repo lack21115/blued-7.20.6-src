@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.module.common.base.config.ListConfig;
 import com.blued.android.module.common.base.mvi.BaseListAction;
 import com.blued.android.module.common.base.mvi.BaseListFragment;
+import com.blued.android.module.common.base.mvi.MVIBaseFragment;
 import com.blued.android.module.common.extensions.BluedStructureExtKt;
 import com.blued.android.module.common.extensions.BluedViewExtKt;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -24,8 +25,8 @@ public final class VirtualImageGoodsFragment extends BaseListFragment<VirtualIma
     private VirtualImageFragment.ImageCallBack b;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VirtualImageGoodsFragment this$0, VirtualImageModel.CategoryModel categoryModel, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(VirtualImageGoodsFragment virtualImageGoodsFragment, VirtualImageModel.CategoryModel categoryModel, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        Intrinsics.e(virtualImageGoodsFragment, "this$0");
         Intrinsics.e(categoryModel, "$categoryModel");
         Object obj = baseQuickAdapter.getData().get(i);
         if (obj == null) {
@@ -35,32 +36,30 @@ public final class VirtualImageGoodsFragment extends BaseListFragment<VirtualIma
         if (imageGoodsModel.getCurrent_use() == 1) {
             return;
         }
-        VirtualImageFragment.ImageCallBack imageCallBack = this$0.b;
+        VirtualImageFragment.ImageCallBack imageCallBack = virtualImageGoodsFragment.b;
         if (imageCallBack != null) {
             imageCallBack.a();
         }
-        VirtualImageFragment.ImageCallBack imageCallBack2 = this$0.b;
+        VirtualImageFragment.ImageCallBack imageCallBack2 = virtualImageGoodsFragment.b;
         if (imageCallBack2 != null) {
             imageCallBack2.a(categoryModel.getId(), imageGoodsModel);
         }
         baseQuickAdapter.notifyDataSetChanged();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: C */
     public VirtualImageGoodsAdapter i() {
         return new VirtualImageGoodsAdapter(this.b);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: D */
     public GridLayoutManager g() {
         return new GridLayoutManager(getContext(), 5);
     }
 
     public final void E() {
-        BluedStructureExtKt.a(this, BaseListAction.RefreshData.f10668a);
+        BluedStructureExtKt.a((MVIBaseFragment) this, BaseListAction.RefreshData.a);
     }
 
     public final void a(VirtualImageFragment.ImageCallBack imageCallBack) {
@@ -69,11 +68,10 @@ public final class VirtualImageGoodsFragment extends BaseListFragment<VirtualIma
 
     public final void a(VirtualImageModel.CategoryModel categoryModel) {
         Intrinsics.e(categoryModel, "categoryModel");
-        ((VirtualImageGoodsVM) y()).a(categoryModel);
-        BluedStructureExtKt.a(this, BaseListAction.RefreshData.f10668a);
+        y().a(categoryModel);
+        BluedStructureExtKt.a((MVIBaseFragment) this, BaseListAction.RefreshData.a);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public ListConfig h() {
         ListConfig h = super.h();
         h.b(false);
@@ -82,7 +80,6 @@ public final class VirtualImageGoodsFragment extends BaseListFragment<VirtualIma
         return h;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         int i;
         Bundle arguments = getArguments();

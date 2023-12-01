@@ -1,6 +1,8 @@
 package com.blued.android.sdk.a;
 
+import com.alibaba.fastjson.support.spring.FastJsonJsonView;
 import com.google.gson.Gson;
+import io.grpc.internal.GrpcUtil;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -17,30 +19,28 @@ public class e {
     /* renamed from: com.blued.android.sdk.a.e$1  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/sdk/a/e$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f18657a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[a.values().length];
-            f18657a = iArr;
+            a = iArr;
             try {
                 iArr[a.Get.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f18657a[a.Delete.ordinal()] = 2;
+                a[a.Delete.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f18657a[a.Post.ordinal()] = 3;
+                a[a.Post.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f18657a[a.Put.ordinal()] = 4;
+                a[a.Put.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -70,7 +70,7 @@ public class e {
                     if (str.indexOf("?") == -1) {
                         str = str + "?" + str3;
                     } else {
-                        str = str + "&" + str3;
+                        str = str + com.alipay.sdk.sys.a.b + str3;
                     }
                 }
             }
@@ -112,7 +112,7 @@ public class e {
                 httpURLConnection.addRequestProperty(entry.getKey(), entry.getValue());
             }
         }
-        int i = AnonymousClass1.f18657a[aVar.ordinal()];
+        int i = AnonymousClass1.a[aVar.ordinal()];
         if (i == 1) {
             httpURLConnection.setRequestMethod("GET");
             return httpURLConnection;
@@ -120,7 +120,7 @@ public class e {
             httpURLConnection.setRequestMethod("DELETE");
             return httpURLConnection;
         } else if (i == 3) {
-            httpURLConnection.setRequestMethod("POST");
+            httpURLConnection.setRequestMethod(GrpcUtil.HTTP_METHOD);
             a(httpURLConnection, map2);
             return httpURLConnection;
         } else if (i == 4) {
@@ -149,7 +149,7 @@ public class e {
         if (httpURLConnection == null || map == null) {
             return;
         }
-        httpURLConnection.addRequestProperty("Content-Type", "application/json");
+        httpURLConnection.addRequestProperty("Content-Type", FastJsonJsonView.DEFAULT_CONTENT_TYPE);
         String json = new Gson().toJson(map);
         DataOutputStream dataOutputStream = new DataOutputStream(httpURLConnection.getOutputStream());
         dataOutputStream.writeUTF(json);

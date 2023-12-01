@@ -7,7 +7,7 @@ public final class an extends al {
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f40058c;
+    private String f26367c;
     private String d;
     private String e;
     private am f;
@@ -18,7 +18,7 @@ public final class an extends al {
 
     public an(Context context, String str, String str2, String str3, am amVar, String str4) {
         this.b = context;
-        this.f40058c = str;
+        this.f26367c = str;
         this.d = str2;
         this.e = str3;
         this.f = amVar;

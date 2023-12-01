@@ -10,7 +10,7 @@ public class MobileConfig implements b {
     public String cm = BaseConfig.cm;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f28062c = 1;
+    public int f14374c = 1;
     public String v = "1.0";
     public String n = "ZzxOAuth";
     public long r = System.currentTimeMillis();

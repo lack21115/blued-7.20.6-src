@@ -147,7 +147,7 @@ public class fq extends ae {
         JSONArray optJSONArray = jSONObject.optJSONArray(com.huawei.openalliance.ad.constant.ao.W);
         int optInt = jSONObject.optInt("adType", 3);
         int optInt2 = jSONObject.optInt(com.huawei.openalliance.ad.constant.ao.b, -111111);
-        int optInt3 = jSONObject.optInt(com.huawei.openalliance.ad.constant.ao.f22942c, -111111);
+        int optInt3 = jSONObject.optInt(com.huawei.openalliance.ad.constant.ao.f9334c, -111111);
         int optInt4 = jSONObject.optInt(com.huawei.openalliance.ad.constant.ao.d, -111111);
         int optInt5 = jSONObject.optInt("deviceType", 4);
         int optInt6 = jSONObject.optInt(com.huawei.openalliance.ad.constant.ao.g, -111111);

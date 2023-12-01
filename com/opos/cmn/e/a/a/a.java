@@ -11,35 +11,35 @@ import android.widget.TextView;
 public class a extends TextView {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f24751a;
+    private Context f11063a;
     private Drawable b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Drawable f24752c;
+    private Drawable f11064c;
 
     public a(Context context, int i) {
         super(context);
         this.b = com.opos.cmn.e.a.d.a.a(context, i);
-        this.f24752c = com.opos.cmn.e.a.d.a.a(context, i);
+        this.f11064c = com.opos.cmn.e.a.d.a.a(context, i);
         com.opos.cmn.e.a.d.a.a(this, a());
     }
 
     public a(Context context, Drawable drawable, Drawable drawable2, int i, int i2) {
         super(context);
         this.b = drawable;
-        this.f24752c = drawable2;
+        this.f11064c = drawable2;
         com.opos.cmn.e.a.d.a.a(this, a());
         setTextColor(a(i, i2));
     }
 
     public a(Context context, String str, String str2) {
         super(context);
-        this.f24751a = context;
+        this.f11063a = context;
         if (com.opos.cmn.an.c.a.a(str) || com.opos.cmn.an.c.a.a(str2)) {
             return;
         }
-        this.b = com.opos.cmn.an.d.a.a.c(this.f24751a, str);
-        this.f24752c = com.opos.cmn.an.d.a.a.c(this.f24751a, str2);
+        this.b = com.opos.cmn.an.d.a.a.c(this.f11063a, str);
+        this.f11064c = com.opos.cmn.an.d.a.a.c(this.f11063a, str2);
         com.opos.cmn.e.a.d.a.a(this, a());
     }
 
@@ -50,10 +50,10 @@ public class a extends TextView {
 
     private StateListDrawable a() {
         StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.addState(View.PRESSED_ENABLED_STATE_SET, this.f24752c);
-        stateListDrawable.addState(View.ENABLED_FOCUSED_STATE_SET, this.f24752c);
+        stateListDrawable.addState(View.PRESSED_ENABLED_STATE_SET, this.f11064c);
+        stateListDrawable.addState(View.ENABLED_FOCUSED_STATE_SET, this.f11064c);
         stateListDrawable.addState(View.ENABLED_STATE_SET, this.b);
-        stateListDrawable.addState(View.FOCUSED_STATE_SET, this.f24752c);
+        stateListDrawable.addState(View.FOCUSED_STATE_SET, this.f11064c);
         stateListDrawable.addState(View.EMPTY_STATE_SET, this.b);
         return stateListDrawable;
     }

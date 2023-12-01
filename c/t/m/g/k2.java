@@ -4,7 +4,7 @@ package c.t.m.g;
 public class k2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f3860a = new byte[0];
+    public static final byte[] f3812a = new byte[0];
 
     public static String a(double[] dArr, int i, boolean z) {
         if (dArr == null) {

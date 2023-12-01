@@ -13,19 +13,19 @@ import java.util.List;
 public class b extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private SQLiteDatabase f24628a;
+    private SQLiteDatabase f10941a;
 
     public b(Context context) {
         super(context, "monitor_cache.db", null, 1);
     }
 
     private SQLiteDatabase a() {
-        SQLiteDatabase sQLiteDatabase = this.f24628a;
+        SQLiteDatabase sQLiteDatabase = this.f10941a;
         if (sQLiteDatabase != null) {
             return sQLiteDatabase;
         }
         SQLiteDatabase writableDatabase = getWritableDatabase();
-        this.f24628a = writableDatabase;
+        this.f10941a = writableDatabase;
         return writableDatabase;
     }
 
@@ -38,7 +38,7 @@ public class b extends SQLiteOpenHelper {
     }
 
     public int a(d dVar) {
-        return TextUtils.isEmpty(dVar.f24640a) ? a().delete("monitor_cache", "monitorUrl=? and createTime=?", new String[]{dVar.f24641c, String.valueOf(dVar.b)}) : a().delete("monitor_cache", "id=?", new String[]{dVar.f24640a});
+        return TextUtils.isEmpty(dVar.f10953a) ? a().delete("monitor_cache", "monitorUrl=? and createTime=?", new String[]{dVar.f10954c, String.valueOf(dVar.b)}) : a().delete("monitor_cache", "id=?", new String[]{dVar.f10953a});
     }
 
     public List<d> a(long j, long j2, int i) {
@@ -70,7 +70,7 @@ public class b extends SQLiteOpenHelper {
         try {
             for (d dVar : list) {
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("monitorUrl", dVar.f24641c);
+                contentValues.put("monitorUrl", dVar.f10954c);
                 contentValues.put("createTime", Long.valueOf(dVar.b));
                 a2.insert("monitor_cache", null, contentValues);
             }
@@ -82,7 +82,7 @@ public class b extends SQLiteOpenHelper {
 
     @Override // android.database.sqlite.SQLiteOpenHelper
     public void close() {
-        SQLiteDatabase sQLiteDatabase = this.f24628a;
+        SQLiteDatabase sQLiteDatabase = this.f10941a;
         if (sQLiteDatabase != null) {
             sQLiteDatabase.close();
         }

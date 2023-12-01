@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DynamicSkinItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28736a;
+    private final ConstraintLayout f15046a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28736a;
+        return this.f15046a;
     }
 }

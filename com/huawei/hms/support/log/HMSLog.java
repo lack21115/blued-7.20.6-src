@@ -10,7 +10,7 @@ import com.huawei.hms.base.log.d;
 public class HMSLog {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final a f22894a = new a();
+    public static final a f9286a = new a();
 
     public static String a(Context context) {
         PackageManager packageManager = context.getPackageManager();
@@ -26,46 +26,46 @@ public class HMSLog {
     }
 
     public static void d(String str, String str2) {
-        f22894a.a(3, str, str2);
+        f9286a.a(3, str, str2);
     }
 
     public static void e(String str, long j, String str2) {
-        a aVar = f22894a;
+        a aVar = f9286a;
         aVar.a(6, str, "[" + j + "] " + str2);
     }
 
     public static void e(String str, long j, String str2, Throwable th) {
-        a aVar = f22894a;
+        a aVar = f9286a;
         aVar.b(6, str, "[" + j + "] " + str2, th);
     }
 
     public static void e(String str, String str2) {
-        f22894a.a(6, str, str2);
+        f9286a.a(6, str, str2);
     }
 
     public static void e(String str, String str2, Throwable th) {
-        f22894a.b(6, str, str2, th);
+        f9286a.b(6, str, str2, th);
     }
 
     public static void i(String str, String str2) {
-        f22894a.a(4, str, str2);
+        f9286a.a(4, str, str2);
     }
 
     public static void init(Context context, int i, String str) {
-        f22894a.a(context, i, str);
-        f22894a.a(str, "============================================================================\n====== " + a(context) + "\n============================================================================");
+        f9286a.a(context, i, str);
+        f9286a.a(str, "============================================================================\n====== " + a(context) + "\n============================================================================");
     }
 
     public static boolean isErrorEnable() {
-        return f22894a.a(6);
+        return f9286a.a(6);
     }
 
     public static boolean isInfoEnable() {
-        return f22894a.a(4);
+        return f9286a.a(4);
     }
 
     public static boolean isWarnEnable() {
-        return f22894a.a(5);
+        return f9286a.a(5);
     }
 
     public static void setExtLogger(HMSExtLogger hMSExtLogger, boolean z) throws IllegalArgumentException {
@@ -74,13 +74,13 @@ public class HMSLog {
         }
         d dVar = new d(hMSExtLogger);
         if (z) {
-            f22894a.a(dVar);
+            f9286a.a(dVar);
         } else {
-            f22894a.a().a(dVar);
+            f9286a.a().a(dVar);
         }
     }
 
     public static void w(String str, String str2) {
-        f22894a.a(5, str, str2);
+        f9286a.a(5, str, str2);
     }
 }

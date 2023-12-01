@@ -10,7 +10,7 @@ import java.util.Iterator;
 public final class OnBackPressedDispatcher {
 
     /* renamed from: a  reason: collision with root package name */
-    final ArrayDeque<OnBackPressedCallback> f1495a;
+    final ArrayDeque<OnBackPressedCallback> f1447a;
     private final Runnable b;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/activity/OnBackPressedDispatcher$LifecycleOnBackPressedCancellable.class */
@@ -18,19 +18,19 @@ public final class OnBackPressedDispatcher {
         private final Lifecycle b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final OnBackPressedCallback f1497c;
+        private final OnBackPressedCallback f1449c;
         private Cancellable d;
 
         LifecycleOnBackPressedCancellable(Lifecycle lifecycle, OnBackPressedCallback onBackPressedCallback) {
             this.b = lifecycle;
-            this.f1497c = onBackPressedCallback;
+            this.f1449c = onBackPressedCallback;
             lifecycle.addObserver(this);
         }
 
         @Override // androidx.activity.Cancellable
         public void cancel() {
             this.b.removeObserver(this);
-            this.f1497c.b(this);
+            this.f1449c.b(this);
             Cancellable cancellable = this.d;
             if (cancellable != null) {
                 cancellable.cancel();
@@ -41,7 +41,7 @@ public final class OnBackPressedDispatcher {
         @Override // androidx.lifecycle.LifecycleEventObserver
         public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
             if (event == Lifecycle.Event.ON_START) {
-                this.d = OnBackPressedDispatcher.this.a(this.f1497c);
+                this.d = OnBackPressedDispatcher.this.a(this.f1449c);
             } else if (event != Lifecycle.Event.ON_STOP) {
                 if (event == Lifecycle.Event.ON_DESTROY) {
                     cancel();
@@ -66,7 +66,7 @@ public final class OnBackPressedDispatcher {
 
         @Override // androidx.activity.Cancellable
         public void cancel() {
-            OnBackPressedDispatcher.this.f1495a.remove(this.b);
+            OnBackPressedDispatcher.this.f1447a.remove(this.b);
             this.b.b(this);
         }
     }
@@ -76,12 +76,12 @@ public final class OnBackPressedDispatcher {
     }
 
     public OnBackPressedDispatcher(Runnable runnable) {
-        this.f1495a = new ArrayDeque<>();
+        this.f1447a = new ArrayDeque<>();
         this.b = runnable;
     }
 
     Cancellable a(OnBackPressedCallback onBackPressedCallback) {
-        this.f1495a.add(onBackPressedCallback);
+        this.f1447a.add(onBackPressedCallback);
         OnBackPressedCancellable onBackPressedCancellable = new OnBackPressedCancellable(onBackPressedCallback);
         onBackPressedCallback.a(onBackPressedCancellable);
         return onBackPressedCancellable;
@@ -100,7 +100,7 @@ public final class OnBackPressedDispatcher {
     }
 
     public boolean hasEnabledCallbacks() {
-        Iterator<OnBackPressedCallback> descendingIterator = this.f1495a.descendingIterator();
+        Iterator<OnBackPressedCallback> descendingIterator = this.f1447a.descendingIterator();
         while (descendingIterator.hasNext()) {
             if (descendingIterator.next().isEnabled()) {
                 return true;
@@ -110,7 +110,7 @@ public final class OnBackPressedDispatcher {
     }
 
     public void onBackPressed() {
-        Iterator<OnBackPressedCallback> descendingIterator = this.f1495a.descendingIterator();
+        Iterator<OnBackPressedCallback> descendingIterator = this.f1447a.descendingIterator();
         while (descendingIterator.hasNext()) {
             OnBackPressedCallback next = descendingIterator.next();
             if (next.isEnabled()) {

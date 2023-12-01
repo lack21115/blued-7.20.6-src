@@ -19,9 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/vm/SelectLocationViewModel.class */
 public final class SelectLocationViewModel extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f20102a;
+    private int a;
     private String d;
     private String e;
     private String f;
@@ -30,9 +28,7 @@ public final class SelectLocationViewModel extends BaseViewModel {
     private int i;
     private int k;
     private MutableLiveData<String> b = new MutableLiveData<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private MutableLiveData<String> f20103c = new MutableLiveData<>();
+    private MutableLiveData<String> c = new MutableLiveData<>();
     private String j = "";
     private final MutableLiveData<Boolean> l = new MutableLiveData<>();
     private List<PositionPOIModel> m = new ArrayList();
@@ -42,16 +38,12 @@ public final class SelectLocationViewModel extends BaseViewModel {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/vm/SelectLocationViewModel$SEARCH_LVL.class */
     public interface SEARCH_LVL {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final Companion f20104a = Companion.f20105a;
+        public static final Companion a = Companion.a;
 
         @Metadata
         /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/vm/SelectLocationViewModel$SEARCH_LVL$Companion.class */
         public static final class Companion {
-
-            /* renamed from: a  reason: collision with root package name */
-            static final /* synthetic */ Companion f20105a = new Companion();
+            static final /* synthetic */ Companion a = new Companion();
 
             private Companion() {
             }
@@ -59,7 +51,7 @@ public final class SelectLocationViewModel extends BaseViewModel {
     }
 
     public final void a(int i) {
-        this.f20102a = i;
+        this.a = i;
     }
 
     public final void a(LifecycleOwner lifecycleOwner, boolean z, String keyWords) {
@@ -76,11 +68,11 @@ public final class SelectLocationViewModel extends BaseViewModel {
             public void onComplete(int i, List<? extends PositionPOIModel> list, boolean z2) {
                 int i2;
                 List list2;
-                List<PositionPOIModel> list3;
+                List list3;
                 int i3;
                 List list4;
-                List<PositionPOIModel> list5;
-                List<PositionPOIModel> list6;
+                List list5;
+                List list6;
                 if (i != 0) {
                     BluedStatistics.c().a("FEED_POI", 0L, i, null);
                 }
@@ -185,7 +177,7 @@ public final class SelectLocationViewModel extends BaseViewModel {
     }
 
     public final int d() {
-        int i = this.f20102a;
+        int i = this.a;
         return i > 0 ? i : AppInfo.m - StatusBarHelper.a(AppInfo.d());
     }
 
@@ -194,7 +186,7 @@ public final class SelectLocationViewModel extends BaseViewModel {
     }
 
     public final MutableLiveData<String> f() {
-        return this.f20103c;
+        return this.c;
     }
 
     public final String g() {

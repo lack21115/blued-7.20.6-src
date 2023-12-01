@@ -217,9 +217,8 @@ public abstract class AbsSeekBar extends ProgressBar {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.widget.ProgressBar
-    public void drawTrack(Canvas canvas) {
+    void drawTrack(Canvas canvas) {
         Drawable drawable = this.mThumb;
         if (drawable == null || !this.mSplitTrack) {
             super.drawTrack(canvas);
@@ -245,9 +244,8 @@ public abstract class AbsSeekBar extends ProgressBar {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         Drawable progressDrawable = getProgressDrawable();
         if (progressDrawable != null) {
@@ -292,9 +290,8 @@ public abstract class AbsSeekBar extends ProgressBar {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         synchronized (this) {
             super.onDraw(canvas);
             drawThumb(canvas);
@@ -398,9 +395,8 @@ public abstract class AbsSeekBar extends ProgressBar {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         updateThumbAndTrackPos(i, i2);
     }
@@ -580,9 +576,8 @@ public abstract class AbsSeekBar extends ProgressBar {
         return i2;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
+    protected boolean verifyDrawable(Drawable drawable) {
         return drawable == this.mThumb || super.verifyDrawable(drawable);
     }
 }

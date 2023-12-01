@@ -22,10 +22,10 @@ public class i implements Callback<byte[]>, Runnable {
     private boolean d;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f35026c = false;
+    private volatile boolean f21335c = false;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f35025a = com.tencent.beacon.a.c.c.d().c();
+    private final Context f21334a = com.tencent.beacon.a.c.c.d().c();
 
     public i(StrategyModule strategyModule) {
         this.b = strategyModule;
@@ -84,7 +84,7 @@ public class i implements Callback<byte[]>, Runnable {
 
     private void c() {
         f();
-        this.f35026c = false;
+        this.f21335c = false;
     }
 
     private void c(e eVar, b bVar, ModuleStrategy moduleStrategy) {
@@ -123,7 +123,7 @@ public class i implements Callback<byte[]>, Runnable {
         }
         com.tencent.beacon.a.c.e l = com.tencent.beacon.a.c.e.l();
         com.tencent.beacon.a.c.f e = com.tencent.beacon.a.c.f.e();
-        com.tencent.beacon.base.net.c.c().b(JceRequestEntity.builder().a(RequestType.STRATEGY).a(100).b(101).a(com.tencent.beacon.a.c.c.d().f()).b(com.tencent.beacon.base.net.b.b.b(false)).a(com.tencent.beacon.base.net.b.b.b(true), 8081).b("A1", com.tencent.beacon.a.c.c.d().l()).b("A2", e.b()).b("A4", e.d()).b("A6", e.f()).b("A7", e.a()).b("A23", com.tencent.beacon.a.c.c.d().a()).b("A31", l.p()).b("A19", l.q()).b("A66", com.tencent.beacon.a.c.b.f(this.f35025a) ? "F" : "B").b("A67", com.tencent.beacon.a.c.b.c(this.f35025a)).b("A68", String.valueOf(com.tencent.beacon.a.c.b.b(this.f35025a))).b("A85", com.tencent.beacon.a.c.b.d ? "Y" : "N").a(com.tencent.beacon.a.c.j.e()).a()).b(this);
+        com.tencent.beacon.base.net.c.c().b(JceRequestEntity.builder().a(RequestType.STRATEGY).a(100).b(101).a(com.tencent.beacon.a.c.c.d().f()).b(com.tencent.beacon.base.net.b.b.b(false)).a(com.tencent.beacon.base.net.b.b.b(true), 8081).b("A1", com.tencent.beacon.a.c.c.d().l()).b("A2", e.b()).b("A4", e.d()).b("A6", e.f()).b("A7", e.a()).b("A23", com.tencent.beacon.a.c.c.d().a()).b("A31", l.p()).b("A19", l.q()).b("A66", com.tencent.beacon.a.c.b.f(this.f21334a) ? "F" : "B").b("A67", com.tencent.beacon.a.c.b.c(this.f21334a)).b("A68", String.valueOf(com.tencent.beacon.a.c.b.b(this.f21334a))).b("A85", com.tencent.beacon.a.c.b.d ? "Y" : "N").a(com.tencent.beacon.a.c.j.e()).a()).b(this);
     }
 
     @Override // com.tencent.beacon.base.net.call.Callback
@@ -140,7 +140,7 @@ public class i implements Callback<byte[]>, Runnable {
             commonStrategy.readFrom(new com.tencent.beacon.pack.a(bArr));
             com.tencent.beacon.base.util.c.a("[strategy] -> common strategy: %s", commonStrategy);
             if (a(commonStrategy, a.a()) && z) {
-                a.SharedPreferences$EditorC0895a edit = com.tencent.beacon.a.d.a.a().edit();
+                a.SharedPreferences$EditorC0725a edit = com.tencent.beacon.a.d.a.a().edit();
                 if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                     edit.putString("strategy_data", Base64.encodeToString(bArr, 0));
                 }
@@ -155,7 +155,7 @@ public class i implements Callback<byte[]>, Runnable {
     }
 
     public boolean a() {
-        return this.f35026c;
+        return this.f21335c;
     }
 
     protected boolean a(CommonStrategy commonStrategy, a aVar) {
@@ -210,8 +210,8 @@ public class i implements Callback<byte[]>, Runnable {
             try {
                 String string = com.tencent.beacon.a.d.a.a().getString("strategy_data", "");
                 if (TextUtils.isEmpty(string)) {
-                    j a2 = k.a(this.f35025a, 101);
-                    bArr = a2 != null ? a2.f35028c : null;
+                    j a2 = k.a(this.f21334a, 101);
+                    bArr = a2 != null ? a2.f21337c : null;
                 } else {
                     bArr = Base64.decode(string, 0);
                 }
@@ -235,7 +235,7 @@ public class i implements Callback<byte[]>, Runnable {
 
     @Override // java.lang.Runnable
     public void run() {
-        this.f35026c = true;
+        this.f21335c = true;
         if (this.b.a().e()) {
             return;
         }

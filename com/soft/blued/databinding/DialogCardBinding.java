@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogCardBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28696a;
+    private final RelativeLayout f15006a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28696a;
+        return this.f15006a;
     }
 }

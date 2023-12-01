@@ -29,11 +29,11 @@ public abstract class PPSBaseView<P extends kd> extends RelativeLayout implement
     protected AdContentData S;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f23015a;
+    private boolean f9407a;
     private Long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f23016c;
+    private View f9408c;
     private kt d;
     private int l;
     private int m;
@@ -70,7 +70,7 @@ public abstract class PPSBaseView<P extends kd> extends RelativeLayout implement
     public PPSBaseView(Context context) {
         super(context);
         this.C = new hv();
-        this.f23015a = false;
+        this.f9407a = false;
         this.b = null;
         this.q = new he(this) { // from class: com.huawei.openalliance.ad.views.PPSBaseView.1
             @Override // com.huawei.hms.ads.he
@@ -214,7 +214,7 @@ public abstract class PPSBaseView<P extends kd> extends RelativeLayout implement
 
     @Override // com.huawei.hms.ads.lj
     public void Code(View view, Integer num) {
-        this.f23016c = view;
+        this.f9408c = view;
         if (view != null) {
             view.setOnTouchListener(this.r);
         }
@@ -232,17 +232,17 @@ public abstract class PPSBaseView<P extends kd> extends RelativeLayout implement
             }
             if (1 == num.intValue() || 4 == num.intValue()) {
                 setOnTouchListener(this.s);
-                if (this.f23016c == null || 1 != num.intValue()) {
+                if (this.f9408c == null || 1 != num.intValue()) {
                     return;
                 }
-                this.f23016c.setOnTouchListener(null);
+                this.f9408c.setOnTouchListener(null);
             } else if (2 == num.intValue() || 3 == num.intValue()) {
                 setOnTouchListener(this.t);
                 L();
-                if (this.f23016c == null || 2 != num.intValue()) {
+                if (this.f9408c == null || 2 != num.intValue()) {
                     return;
                 }
-                this.f23016c.setOnTouchListener(null);
+                this.f9408c.setOnTouchListener(null);
             }
         }
     }
@@ -291,7 +291,7 @@ public abstract class PPSBaseView<P extends kd> extends RelativeLayout implement
     @Override // com.huawei.hms.ads.lj
     public void Z() {
         ge.V("PPSBaseView", "notifyAdLoaded");
-        this.f23015a = true;
+        this.f9407a = true;
         this.b = Long.valueOf(System.currentTimeMillis());
         this.D.Code(this.S);
     }
@@ -314,9 +314,8 @@ public abstract class PPSBaseView<P extends kd> extends RelativeLayout implement
         return this;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         he heVar = this.q;
         if (heVar != null) {
@@ -336,9 +335,8 @@ public abstract class PPSBaseView<P extends kd> extends RelativeLayout implement
         this.C.I();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         he heVar = this.q;
         if (heVar != null) {

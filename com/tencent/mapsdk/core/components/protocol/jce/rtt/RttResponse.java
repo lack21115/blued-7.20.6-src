@@ -10,12 +10,12 @@ import com.tencent.mapsdk.internal.q;
 public final class RttResponse extends MapJceStruct implements Cloneable {
 
     /* renamed from: c  reason: collision with root package name */
-    public static byte[] f37268c;
+    public static byte[] f23577c;
     public static final /* synthetic */ boolean d = !RttResponse.class.desiredAssertionStatus();
     public byte[] result;
 
     static {
-        f37268c = r0;
+        f23577c = r0;
         byte[] bArr = {0};
     }
 
@@ -76,7 +76,7 @@ public final class RttResponse extends MapJceStruct implements Cloneable {
 
     @Override // com.tencent.mapsdk.internal.p
     public void readFrom(m mVar) {
-        this.result = mVar.a(f37268c, 0, true);
+        this.result = mVar.a(f23577c, 0, true);
     }
 
     public void setResult(byte[] bArr) {

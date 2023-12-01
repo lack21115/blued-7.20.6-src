@@ -14,22 +14,16 @@ import java.util.HashSet;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/eu.class */
 public final class eu extends ContextThemeWrapper {
     private static final String[] d = {"android.widget", "android.webkit", "android.app"};
-
-    /* renamed from: a  reason: collision with root package name */
-    private Resources f4942a;
+    private Resources a;
     private LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ClassLoader f4943c;
+    private ClassLoader c;
     private a e;
     private LayoutInflater.Factory f;
 
     /* renamed from: com.amap.api.col.3sl.eu$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/eu$a.class */
     public final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public HashSet<String> f4945a = new HashSet<>();
+        public HashSet<String> a = new HashSet<>();
         public HashMap<String, Constructor<?>> b = new HashMap<>();
 
         public a() {
@@ -45,8 +39,8 @@ public final class eu extends ContextThemeWrapper {
                 return eu.this.a(str, context2, attributeSet);
             }
         };
-        this.f4942a = ev.a();
-        this.f4943c = classLoader;
+        this.a = ev.a();
+        this.c = classLoader;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -66,13 +60,13 @@ public final class eu extends ContextThemeWrapper {
 
     @Override // android.view.ContextThemeWrapper, android.content.ContextWrapper, android.content.Context
     public final Resources getResources() {
-        Resources resources = this.f4942a;
+        Resources resources = this.a;
         return resources != null ? resources : super.getResources();
     }
 
     @Override // android.view.ContextThemeWrapper, android.content.ContextWrapper, android.content.Context
     public final Object getSystemService(String str) {
-        if (Context.LAYOUT_INFLATER_SERVICE.equals(str)) {
+        if ("layout_inflater".equals(str)) {
             if (this.b == null) {
                 LayoutInflater layoutInflater = (LayoutInflater) super.getSystemService(str);
                 if (layoutInflater != null) {

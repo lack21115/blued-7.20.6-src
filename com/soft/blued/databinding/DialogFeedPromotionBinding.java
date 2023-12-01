@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogFeedPromotionBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28698a;
+    private final ConstraintLayout f15008a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28698a;
+        return this.f15008a;
     }
 }

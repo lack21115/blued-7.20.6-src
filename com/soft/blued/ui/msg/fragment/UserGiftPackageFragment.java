@@ -59,7 +59,7 @@ public class UserGiftPackageFragment extends BasePagerGridFragment<UserGiftPrese
         this.o = str3;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(Bundle bundle) {
         super.a(bundle);
         this.stv_buy.setOnClickListener(this);
@@ -93,7 +93,7 @@ public class UserGiftPackageFragment extends BasePagerGridFragment<UserGiftPrese
         if (userGiftDialogFragment == null || userGiftDialogFragment.j() != 1) {
             return;
         }
-        giftHintEvent.f32325a = userGiftPackageModel.gift_detail.type;
+        giftHintEvent.f18635a = userGiftPackageModel.gift_detail.type;
         giftHintEvent.e = userGiftPackageModel.gift_detail.icon;
         if (userGiftPackageModel.gift_detail.type == 1) {
             giftHintEvent.b = getContext().getString(R.string.give_it_now_tip);
@@ -119,7 +119,7 @@ public class UserGiftPackageFragment extends BasePagerGridFragment<UserGiftPrese
     public void c(List<UserGiftPackageModel> list) {
         String str = g;
         Logger.c(str, "DATA_PACKAGE===" + list.size());
-        this.f32331a = list;
+        this.f18641a = list;
         a(this.gift_pager, this.circlePageIndicator);
         if (list == null || list.size() <= 0) {
             return;
@@ -131,7 +131,6 @@ public class UserGiftPackageFragment extends BasePagerGridFragment<UserGiftPrese
         b(list.get(0));
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fm_user_gift_package;
     }
@@ -158,14 +157,13 @@ public class UserGiftPackageFragment extends BasePagerGridFragment<UserGiftPrese
             ((UserGiftPackageModel) this.f).gift_detail.extra_info.to = this.o;
             ((UserGiftPackageModel) this.f).gift_detail.extra_info.from = UserInfo.getInstance().getLoginUserInfo().name;
             final BirthCardPop birthCardPop = new BirthCardPop(getContext(), ((UserGiftPackageModel) this.f).gift_detail, true, true);
-            birthCardPop.f32459c = getFragmentActive();
+            birthCardPop.f18768c = getFragmentActive();
             new XPopup.Builder(getContext()).f(false).a(new SimpleCallback() { // from class: com.soft.blued.ui.msg.fragment.UserGiftPackageFragment.2
-                @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
                 public boolean f(BasePopupView basePopupView) {
                     birthCardPop.c();
                     return true;
                 }
-            }).a((BasePopupView) birthCardPop).h();
+            }).a(birthCardPop).h();
         } else {
             UserGiftPresenter userGiftPresenter = (UserGiftPresenter) this.h;
             String str = this.m;

@@ -12,7 +12,7 @@ import org.json.JSONObject;
 public class aw {
 
     /* renamed from: a  reason: collision with root package name */
-    private JSONObject f23735a;
+    private JSONObject f10127a;
 
     public aw(Context context) {
         if (Engine.loadSuccess) {
@@ -21,14 +21,14 @@ public class aw {
                 if (TextUtils.isEmpty(pqr)) {
                     return;
                 }
-                this.f23735a = new JSONObject(pqr);
+                this.f10127a = new JSONObject(pqr);
             } catch (Throwable th) {
             }
         }
     }
 
     public String a(String str) {
-        JSONObject jSONObject = this.f23735a;
+        JSONObject jSONObject = this.f10127a;
         if (jSONObject != null) {
             try {
                 return jSONObject.optString(str, null);
@@ -71,7 +71,7 @@ public class aw {
     public Set a(Context context, String str, int i) {
         String str2;
         int i2;
-        JSONObject jSONObject = this.f23735a;
+        JSONObject jSONObject = this.f10127a;
         if (jSONObject != null) {
             try {
                 String string = jSONObject.getString(str);

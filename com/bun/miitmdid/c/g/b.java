@@ -8,12 +8,12 @@ import com.bun.supplier.SupplierListener;
 public class b implements com.bun.miitmdid.c.e.a, InnerIdSupplier {
 
     /* renamed from: a  reason: collision with root package name */
-    private a f21144a;
+    private a f7538a;
     private SupplierListener b;
 
     public b(Context context, SupplierListener supplierListener) {
         this.b = supplierListener;
-        this.f21144a = new a(context, this);
+        this.f7538a = new a(context, this);
     }
 
     @Override // com.bun.supplier.InnerIdSupplier

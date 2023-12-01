@@ -16,9 +16,7 @@ public class r {
     private static int G = 2;
     private static int H = 10;
     private static int I = 60;
-
-    /* renamed from: a  reason: collision with root package name */
-    public static r f4501a;
+    public static r a;
 
     /* renamed from: a  reason: collision with other field name */
     private static ThreadPoolExecutor f40a;
@@ -67,10 +65,10 @@ public class r {
         r rVar;
         synchronized (r.class) {
             try {
-                if (f4501a == null) {
-                    f4501a = new r();
+                if (a == null) {
+                    a = new r();
                 }
-                rVar = f4501a;
+                rVar = a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -79,7 +77,7 @@ public class r {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static ThreadPoolExecutor m2193a() {
+    private static ThreadPoolExecutor m8636a() {
         ThreadPoolExecutor threadPoolExecutor;
         synchronized (r.class) {
             try {
@@ -99,7 +97,7 @@ public class r {
     }
 
     static /* synthetic */ ThreadPoolExecutor b() {
-        return m2193a();
+        return m8636a();
     }
 
     public final void a(int i, Runnable runnable, long j) {
@@ -108,13 +106,13 @@ public class r {
             obtain.obj = runnable;
             this.mHandler.sendMessageDelayed(obtain, j);
         } catch (Exception e) {
-            com.alibaba.mtl.appmonitor.b.b.m2144a((Throwable) e);
+            com.alibaba.mtl.appmonitor.b.b.m8587a((Throwable) e);
         }
     }
 
     public void b(Runnable runnable) {
         try {
-            m2193a().submit(runnable);
+            m8636a().submit(runnable);
         } catch (Throwable th) {
         }
     }

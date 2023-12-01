@@ -4,11 +4,11 @@ package cn.com.chinatelecom.account.api;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f4086a = 0;
+    public static int f4038a = 0;
     public static int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f4087c = 2;
+    public static int f4039c = 2;
     public static int d = 3;
     private static boolean e = false;
 }

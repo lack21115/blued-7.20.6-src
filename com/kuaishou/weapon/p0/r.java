@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.text.TextUtils;
 import android.util.Pair;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +16,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class r {
 
     /* renamed from: c  reason: collision with root package name */
-    private static r f23857c;
+    private static r f10249c;
     private static Application d;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f23858a;
+    public boolean f10250a;
     private String e;
     private static Random f = new Random();
     private static Map<String, s> g = new ConcurrentHashMap();
@@ -44,19 +43,19 @@ public class r {
     }
 
     public static r a() {
-        return f23857c;
+        return f10249c;
     }
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x001e -> B:5:0x001a). Please submit an issue!!! */
     public static r a(Context context, boolean z) {
         try {
-            if (f23857c == null) {
+            if (f10249c == null) {
                 d = (Application) context.getApplicationContext();
-                f23857c = new r();
+                f10249c = new r();
             }
         } catch (Throwable th) {
         }
-        return f23857c;
+        return f10249c;
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(13:11|12|13|14|(4:16|17|18|(52:20|21|22|23|24|25|(45:27|28|29|(8:31|32|33|(4:35|36|37|(1:39))|135|136|137|(5:139|140|141|142|(4:144|145|146|(5:148|149|150|151|(1:153)(1:154))(1:155))(1:156))(1:157))(1:158)|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|60|61|62|63|64|65|66|67|68|69|70|(4:71|72|73|(1:75)(1:76))|77|78|79|80|81|(4:83|84|85|(3:87|88|(9:90|91|92|93|(4:94|95|96|(1:98)(1:99))|100|(1:102)|103|104)))|120|121|122)|159|28|29|(0)(0)|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|60|61|62|63|64|65|66|67|68|69|70|(5:71|72|73|(0)(0)|75)|77|78|79|80|81|(0)|120|121|122)(1:162))(1:164)|163|79|80|81|(0)|120|121|122) */
@@ -170,18 +169,18 @@ public class r {
                     try {
                         sVar.f = d;
                         if (sVar.p == 1) {
-                            if (TextUtils.isEmpty(sVar.f23862c) || TextUtils.isEmpty(sVar.e)) {
+                            if (TextUtils.isEmpty(sVar.f10254c) || TextUtils.isEmpty(sVar.e)) {
                                 throw new RuntimeException("apkPackageName or apkPkgPath is null");
                             }
-                            sVar.m = d.getFilesDir().getCanonicalPath() + bh.j + sVar.f23861a;
+                            sVar.m = d.getFilesDir().getCanonicalPath() + bh.j + sVar.f10253a;
                             String str = sVar.m + "/dex";
                             dm.c(sVar.m + "/lib");
-                            String str2 = (sVar.m + "/lib/" + this.e) + BridgeUtil.SPLIT_MARK + f.nextInt();
+                            String str2 = (sVar.m + "/lib/" + this.e) + "/" + f.nextInt();
                             e(str);
                             dm.a(str, Boolean.FALSE);
                             e(str2);
                             a(sVar, str2, str, false);
-                            h.put(sVar.f23862c, sVar);
+                            h.put(sVar.f10254c, sVar);
                             g.put(sVar.e, sVar);
                         }
                         if (sVar.p != 1 || 0 != 0) {
@@ -195,22 +194,22 @@ public class r {
                             if (sVar.p != 1 && sVar.b != 1 && !a(sVar.j, sVar.e).first.booleanValue()) {
                                 return false;
                             }
-                            sVar.f23862c = packageInfo.packageName;
+                            sVar.f10254c = packageInfo.packageName;
                             sVar.o = packageInfo.applicationInfo.className;
                             sVar.d = packageInfo.versionName;
                             sVar.l = packageInfo.activities;
                             sVar.q = packageInfo.applicationInfo.theme;
-                            sVar.m = d.getFilesDir().getCanonicalPath() + bh.j + sVar.f23861a;
+                            sVar.m = d.getFilesDir().getCanonicalPath() + bh.j + sVar.f10253a;
                             String str3 = sVar.m + "/dex";
                             dm.c(sVar.m + "/lib");
-                            String str4 = (sVar.m + "/lib/" + this.e) + BridgeUtil.SPLIT_MARK + f.nextInt();
+                            String str4 = (sVar.m + "/lib/" + this.e) + "/" + f.nextInt();
                             e(str3);
                             dm.a(str3, Boolean.FALSE);
                             e(str4);
                             a(sVar, str4, str3, true);
-                            h.put(sVar.f23862c, sVar);
+                            h.put(sVar.f10254c, sVar);
                             g.put(sVar.e, sVar);
-                            b.add(Integer.valueOf(sVar.f23861a));
+                            b.add(Integer.valueOf(sVar.f10253a));
                         }
                         return true;
                     } catch (Throwable th) {
@@ -243,7 +242,7 @@ public class r {
     }
 
     public boolean a(s sVar, boolean z) {
-        this.f23858a = z;
+        this.f10250a = z;
         this.e = sVar.d;
         return a(sVar);
     }
@@ -252,11 +251,11 @@ public class r {
         s sVar = g.get(str);
         if (sVar != null) {
             g.remove(str);
-            h.remove(sVar.f23862c);
+            h.remove(sVar.f10254c);
             dm.c(sVar.m);
             Application application = d;
             if (application != null) {
-                dm.c(application.getFileStreamPath(sVar.f23862c).getAbsolutePath());
+                dm.c(application.getFileStreamPath(sVar.f10254c).getAbsolutePath());
                 return true;
             }
             return true;
@@ -276,7 +275,7 @@ public class r {
             dm.c(sVar.m);
             Application application = d;
             if (application != null) {
-                dm.c(application.getFileStreamPath(sVar.f23862c).getAbsolutePath());
+                dm.c(application.getFileStreamPath(sVar.f10254c).getAbsolutePath());
                 return true;
             }
             return true;

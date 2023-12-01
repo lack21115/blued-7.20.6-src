@@ -11,13 +11,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogYyMaskedUseInfoRedisBinding.class */
 public final class DialogYyMaskedUseInfoRedisBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16434a;
+    public final ShapeTextView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16435c;
+    public final ImageView c;
     public final ShapeLinearLayout d;
     public final TextView e;
     public final TextView f;
@@ -25,9 +21,9 @@ public final class DialogYyMaskedUseInfoRedisBinding implements ViewBinding {
 
     private DialogYyMaskedUseInfoRedisBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, ImageView imageView, ShapeLinearLayout shapeLinearLayout, TextView textView, TextView textView2) {
         this.g = constraintLayout;
-        this.f16434a = shapeTextView;
+        this.a = shapeTextView;
         this.b = shapeTextView2;
-        this.f16435c = imageView;
+        this.c = imageView;
         this.d = shapeLinearLayout;
         this.e = textView;
         this.f = textView2;
@@ -68,7 +64,6 @@ public final class DialogYyMaskedUseInfoRedisBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

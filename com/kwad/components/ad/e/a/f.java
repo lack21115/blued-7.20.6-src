@@ -48,7 +48,7 @@ public final class f extends com.kwad.components.ad.e.kwai.a implements View.OnC
     };
 
     private void J(int i) {
-        com.kwad.components.core.d.b.a.a(new a.C0519a(this.nv.getContext()).I(this.mAdTemplate).ap(i).b(this.mApkDownloadHelper).a(new a.b() { // from class: com.kwad.components.ad.e.a.f.3
+        com.kwad.components.core.d.b.a.a(new a.C0349a(this.nv.getContext()).I(this.mAdTemplate).ap(i).b(this.mApkDownloadHelper).a(new a.b() { // from class: com.kwad.components.ad.e.a.f.3
             @Override // com.kwad.components.core.d.b.a.b
             public final void onAdClicked() {
                 com.kwad.sdk.core.report.a.a(f.this.mAdTemplate, 2, f.this.ni.nd.getTouchCoords());

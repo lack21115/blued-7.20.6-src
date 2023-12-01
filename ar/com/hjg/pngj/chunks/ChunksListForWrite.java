@@ -11,11 +11,11 @@ public class ChunksListForWrite extends ChunksList {
     class AnonymousClass1 implements ChunkPredicate {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PngChunk f3666a;
+        final /* synthetic */ PngChunk f3618a;
 
         @Override // ar.com.hjg.pngj.chunks.ChunkPredicate
         public boolean a(PngChunk pngChunk) {
-            return ChunkHelper.a(pngChunk, this.f3666a);
+            return ChunkHelper.a(pngChunk, this.f3618a);
         }
     }
 

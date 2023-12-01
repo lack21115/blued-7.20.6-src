@@ -4,11 +4,11 @@ package com.igexin.push.c.c;
 public final class g extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23341a = 96;
+    public static final int f9733a = 96;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private byte[] f23342c;
+    private byte[] f9734c;
     private byte d;
     private String e;
 
@@ -36,8 +36,8 @@ public final class g extends c {
             int i3 = i2 + 1;
             int i4 = bArr[i2] & 255;
             byte[] bArr2 = new byte[i4];
-            this.f23342c = bArr2;
-            System.arraycopy((Object) bArr, i3, (Object) bArr2, 0, i4);
+            this.f9734c = bArr2;
+            System.arraycopy(bArr, i3, bArr2, 0, i4);
             int i5 = i3 + i4;
             this.e = a(bArr, i5 + 1, bArr[i5] & 255);
         } catch (Exception e) {

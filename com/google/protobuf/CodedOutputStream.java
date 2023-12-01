@@ -244,7 +244,7 @@ public abstract class CodedOutputStream extends ByteOutput {
         @Override // com.google.protobuf.CodedOutputStream, com.google.protobuf.ByteOutput
         public final void write(byte[] bArr, int i, int i2) throws IOException {
             try {
-                System.arraycopy((Object) bArr, i, (Object) this.buffer, this.position, i2);
+                System.arraycopy(bArr, i, this.buffer, this.position, i2);
                 this.position += i2;
             } catch (IndexOutOfBoundsException e) {
                 throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), Integer.valueOf(i2)), e);
@@ -1003,20 +1003,20 @@ public abstract class CodedOutputStream extends ByteOutput {
         @Override // com.google.protobuf.CodedOutputStream, com.google.protobuf.ByteOutput
         public void write(byte[] bArr, int i, int i2) throws IOException {
             if (this.limit - this.position >= i2) {
-                System.arraycopy((Object) bArr, i, (Object) this.buffer, this.position, i2);
+                System.arraycopy(bArr, i, this.buffer, this.position, i2);
                 this.position += i2;
                 this.totalBytesWritten += i2;
                 return;
             }
             int i3 = this.limit - this.position;
-            System.arraycopy((Object) bArr, i, (Object) this.buffer, this.position, i3);
+            System.arraycopy(bArr, i, this.buffer, this.position, i3);
             int i4 = i + i3;
             int i5 = i2 - i3;
             this.position = this.limit;
             this.totalBytesWritten += i3;
             doFlush();
             if (i5 <= this.limit) {
-                System.arraycopy((Object) bArr, i4, (Object) this.buffer, 0, i5);
+                System.arraycopy(bArr, i4, this.buffer, 0, i5);
                 this.position = i5;
             } else {
                 this.out.write(bArr, i4, i5);

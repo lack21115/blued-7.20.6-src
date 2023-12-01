@@ -17,30 +17,30 @@ import kotlin.jvm.internal.Intrinsics;
 public final class LoginAccountAdapter extends BaseQuickAdapter<LoginAccountModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f20566a;
+    private final Context f6960a;
     private final LoginViewModel b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public LoginAccountAdapter(Context context, LoginViewModel viewModel) {
+    public LoginAccountAdapter(Context context, LoginViewModel loginViewModel) {
         super(R.layout.login_account_item_test);
-        Intrinsics.e(viewModel, "viewModel");
-        this.f20566a = context;
-        this.b = viewModel;
+        Intrinsics.e(loginViewModel, "viewModel");
+        this.f6960a = context;
+        this.b = loginViewModel;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(LoginAccountAdapter this$0, LoginAccountModel loginAccountModel, View view) {
-        Intrinsics.e(this$0, "this$0");
-        LoginViewModel loginViewModel = this$0.b;
+    public static final void a(LoginAccountAdapter loginAccountAdapter, LoginAccountModel loginAccountModel, View view) {
+        Intrinsics.e(loginAccountAdapter, "this$0");
+        LoginViewModel loginViewModel = loginAccountAdapter.b;
         if (loginViewModel != null) {
-            loginViewModel.a(this$0.f20566a, loginAccountModel);
+            loginViewModel.a(loginAccountAdapter.f6960a, loginAccountModel);
         }
-        for (LoginAccountModel data : this$0.getData()) {
-            Intrinsics.c(data, "data");
-            LoginAccountModel loginAccountModel2 = data;
-            loginAccountModel2.a(Intrinsics.a(loginAccountModel, loginAccountModel2));
+        for (LoginAccountModel loginAccountModel2 : loginAccountAdapter.getData()) {
+            Intrinsics.c(loginAccountModel2, "data");
+            LoginAccountModel loginAccountModel3 = loginAccountModel2;
+            loginAccountModel3.a(Intrinsics.a(loginAccountModel, loginAccountModel3));
         }
-        this$0.notifyDataSetChanged();
+        loginAccountAdapter.notifyDataSetChanged();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -63,26 +63,26 @@ public final class LoginAccountAdapter extends BaseQuickAdapter<LoginAccountMode
         Boolean valueOf = loginAccountModel == null ? null : Boolean.valueOf(loginAccountModel.g());
         Intrinsics.a(valueOf);
         if (valueOf.booleanValue()) {
-            Context context = this.f20566a;
+            Context context = this.f6960a;
             Intrinsics.a(context);
             shapeModel.k = ContextCompat.getColor(context, R.color.syc_dark_59004DDD);
         } else {
-            Context context2 = this.f20566a;
+            Context context2 = this.f6960a;
             Intrinsics.a(context2);
             shapeModel.k = ContextCompat.getColor(context2, R.color.syc_dark_b);
-            Context context3 = this.f20566a;
+            Context context3 = this.f6960a;
             Intrinsics.a(context3);
             shapeModel.l = ContextCompat.getColor(context3, R.color.syc_dark_59004DDD);
         }
         shapeModel.H = DensityUtils.a(this.mContext, 20.0f);
-        ShapeFrameLayout shapeFrameLayout = baseViewHolder == null ? null : (ShapeFrameLayout) baseViewHolder.getView(R.id.sf_lay);
-        if (shapeFrameLayout == null) {
+        ShapeFrameLayout view2 = baseViewHolder == null ? null : baseViewHolder.getView(R.id.sf_lay);
+        if (view2 == null) {
             return;
         }
-        shapeFrameLayout.setShapeModel(shapeModel);
+        view2.setShapeModel(shapeModel);
     }
 
     public final Context getContext() {
-        return this.f20566a;
+        return this.f6960a;
     }
 }

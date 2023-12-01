@@ -9,11 +9,11 @@ import com.tencent.qcloud.core.http.HttpConstants;
 public class MediaTypes {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final MediaType f36091a = MediaType.parse(ax.Z);
+    public static final MediaType f22400a = MediaType.parse(ax.Z);
     public static final MediaType b = MediaType.parse(ax.I);
 
     /* renamed from: c  reason: collision with root package name */
-    public static final MediaType f36092c = MediaType.parse(ax.B);
+    public static final MediaType f22401c = MediaType.parse(ax.B);
     public static final MediaType d = MediaType.parse("text/plain");
     public static final MediaType e = MediaType.parse(ClipDescription.MIMETYPE_TEXT_HTML);
     public static final MediaType f = MediaType.parse("text/xml");

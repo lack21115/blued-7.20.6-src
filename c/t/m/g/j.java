@@ -3,17 +3,18 @@ package c.t.m.g;
 import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.cdo.oaps.ad.OapsKey;
 import com.cdo.oaps.ad.wrapper.BaseWrapper;
+import com.huawei.hms.ads.fw;
 import java.util.HashMap;
 
 /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/j.class */
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f3844a = false;
+    public static boolean f3796a = false;
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f3845c = false;
+    public static boolean f3797c = false;
     public static boolean d = false;
     public static boolean e = true;
     public static boolean f = false;
@@ -21,7 +22,7 @@ public class j {
     public static boolean h = false;
     public static volatile c i;
     public static final a j = new a();
-    public static u1 k = u1.f4005a;
+    public static u1 k = u1.f3957a;
 
     public static final int a(String str) {
         if (str.startsWith("fc4") || str.startsWith("dc4")) {
@@ -37,7 +38,7 @@ public class j {
     }
 
     public static final String a(int i2) {
-        if (f3844a) {
+        if (f3796a) {
             StringBuilder sb = new StringBuilder();
             sb.append(h ? "https://lstest.map.qq.com/nlpdr?sf" : "https://nlp.map.qq.com/?sf");
             sb.append(i2);
@@ -55,7 +56,7 @@ public class j {
         hashMap.put("D_CH_ID", "fc_sdk");
         hashMap.put("D_FC_SRC", "209");
         hashMap.put("D_UP_INTERVAL", "1800000");
-        hashMap.put("D_UP_USE_HTTPS", "true");
+        hashMap.put("D_UP_USE_HTTPS", fw.Code);
         hashMap.put("D_MAX_1F_SIZE", "102400");
         hashMap.put("D_NUM_UP", "1");
         hashMap.put("D_MAX_BUF_WF", "25600");
@@ -66,7 +67,7 @@ public class j {
         hashMap.put("D_UP_NET", IAdInterListener.AdReqParam.WIDTH);
         hashMap.put("D_POS_COLL", "false");
         hashMap.put("D_WRITE_MAC", "false");
-        hashMap.put("D_UP_WF_INFO", "true");
+        hashMap.put("D_UP_WF_INFO", fw.Code);
         hashMap.put("D_UP_U_TRACK_INFO", "false");
         hashMap.put("D_UP_GPS_FOR_NAVI", "false");
         return hashMap;

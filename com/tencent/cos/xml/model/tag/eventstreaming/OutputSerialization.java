@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag.eventstreaming;
 
-import com.alipay.sdk.util.i;
 import java.io.Serializable;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/eventstreaming/OutputSerialization.class */
@@ -17,7 +16,7 @@ public class OutputSerialization implements Serializable, Cloneable {
     }
 
     /* renamed from: clone */
-    public OutputSerialization m10195clone() {
+    public OutputSerialization m7152clone() {
         try {
             return (OutputSerialization) super.clone();
         } catch (CloneNotSupportedException e) {
@@ -81,7 +80,7 @@ public class OutputSerialization implements Serializable, Cloneable {
             sb.append("JSON: ");
             sb.append(getJson());
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

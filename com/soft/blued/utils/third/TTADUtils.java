@@ -29,12 +29,12 @@ public class TTADUtils {
     class AnonymousClass6 implements TTAdNative.NativeAdListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ TTGetOriginAdListener f34842a;
+        final /* synthetic */ TTGetOriginAdListener f21151a;
 
         @Override // com.bytedance.sdk.openadsdk.TTAdNative.NativeAdListener, com.bytedance.sdk.openadsdk.common.CommonListener
         public void onError(int i, String str) {
             Log.v("drb", "穿山甲原生失败：" + i + " -- " + str);
-            TTGetOriginAdListener tTGetOriginAdListener = this.f34842a;
+            TTGetOriginAdListener tTGetOriginAdListener = this.f21151a;
             if (tTGetOriginAdListener != null) {
                 tTGetOriginAdListener.a(i, str);
             }
@@ -42,11 +42,11 @@ public class TTADUtils {
 
         @Override // com.bytedance.sdk.openadsdk.TTAdNative.NativeAdListener
         public void onNativeAdLoad(List<TTNativeAd> list) {
-            if (this.f34842a != null) {
+            if (this.f21151a != null) {
                 if (list == null || list.get(0) == null || list.get(0).getImageList() == null || list.get(0).getImageList().isEmpty()) {
-                    this.f34842a.a();
+                    this.f21151a.a();
                 } else {
-                    this.f34842a.a(list.get(0));
+                    this.f21151a.a(list.get(0));
                 }
             }
         }

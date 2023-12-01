@@ -66,7 +66,7 @@ public class Switch extends CompoundButton {
     private float mTouchY;
     private Drawable mTrackDrawable;
     private VelocityTracker mVelocityTracker;
-    private static final int[] CHECKED_STATE_SET = {16842912};
+    private static final int[] CHECKED_STATE_SET = {R.attr.state_checked};
     private static final FloatProperty<Switch> THUMB_POS = new FloatProperty<Switch>("thumbPos") { // from class: android.widget.Switch.1
         @Override // android.util.Property
         public Float get(Switch r3) {
@@ -84,7 +84,7 @@ public class Switch extends CompoundButton {
     }
 
     public Switch(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843839);
+        this(context, attributeSet, R.attr.switchStyle);
     }
 
     public Switch(Context context, AttributeSet attributeSet, int i) {

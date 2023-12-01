@@ -8,7 +8,6 @@ import android.media.MediaCodecInfo;
 import android.media.MediaFormat;
 import android.os.Build;
 import android.view.Surface;
-import com.android.internal.telephony.PhoneConstants;
 import java.nio.ByteBuffer;
 import java.util.HashSet;
 import java.util.Set;
@@ -240,7 +239,7 @@ public class MediaCodecVideoDecoder {
                 continue;
             }
         }
-        throw new RuntimeException("Unexpected size change. Configured " + this.width + PhoneConstants.APN_TYPE_ALL + this.height + ". New " + i4 + PhoneConstants.APN_TYPE_ALL + i5);
+        throw new RuntimeException("Unexpected size change. Configured " + this.width + "*" + this.height + ". New " + i4 + "*" + i5);
     }
 
     public static void disableH264HwCodec() {

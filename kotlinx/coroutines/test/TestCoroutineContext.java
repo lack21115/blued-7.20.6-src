@@ -26,13 +26,9 @@ import kotlinx.coroutines.test.TestCoroutineContext;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/test/TestCoroutineContext.class */
 public final class TestCoroutineContext implements CoroutineContext {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f43642a;
+    private final String a;
     private final List<Throwable> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Dispatcher f43643c;
+    private final Dispatcher c;
     private final CoroutineExceptionHandler d;
     private final ThreadSafeHeap<TimedRunnableObsolete> e;
     private long f;
@@ -47,14 +43,14 @@ public final class TestCoroutineContext implements CoroutineContext {
 
         @Override // kotlinx.coroutines.Delay
         public DisposableHandle a(long j, Runnable runnable, CoroutineContext coroutineContext) {
-            final TimedRunnableObsolete a2 = TestCoroutineContext.this.a(runnable, j);
+            final TimedRunnableObsolete a = TestCoroutineContext.this.a(runnable, j);
             final TestCoroutineContext testCoroutineContext = TestCoroutineContext.this;
             return new DisposableHandle() { // from class: kotlinx.coroutines.test.TestCoroutineContext$Dispatcher$invokeOnTimeout$1
                 @Override // kotlinx.coroutines.DisposableHandle
                 public void dispose() {
                     ThreadSafeHeap threadSafeHeap;
                     threadSafeHeap = TestCoroutineContext.this.e;
-                    threadSafeHeap.b((ThreadSafeHeap) a2);
+                    threadSafeHeap.b((ThreadSafeHeap) a);
                 }
             };
         }
@@ -64,7 +60,7 @@ public final class TestCoroutineContext implements CoroutineContext {
             TestCoroutineContext.this.a(new Runnable() { // from class: kotlinx.coroutines.test.TestCoroutineContext$Dispatcher$scheduleResumeAfterDelay$$inlined$Runnable$1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CancellableContinuation.this.a((CoroutineDispatcher) this, (TestCoroutineContext.Dispatcher) Unit.f42314a);
+                    CancellableContinuation.this.a((CoroutineDispatcher) this, (TestCoroutineContext.Dispatcher) Unit.a);
                 }
             }, j);
         }
@@ -90,9 +86,9 @@ public final class TestCoroutineContext implements CoroutineContext {
     }
 
     public TestCoroutineContext(String str) {
-        this.f43642a = str;
+        this.a = str;
         this.b = new ArrayList();
-        this.f43643c = new Dispatcher();
+        this.c = new Dispatcher();
         this.d = new TestCoroutineContext$special$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.b, this);
         this.e = new ThreadSafeHeap<>();
     }
@@ -103,9 +99,9 @@ public final class TestCoroutineContext implements CoroutineContext {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final long a() {
-        TimedRunnableObsolete c2 = this.e.c();
-        if (c2 != null) {
-            a(c2.f43647a);
+        TimedRunnableObsolete c = this.e.c();
+        if (c != null) {
+            a(c.a);
         }
         return this.e.b() ? Long.MAX_VALUE : 0L;
     }
@@ -127,15 +123,15 @@ public final class TestCoroutineContext implements CoroutineContext {
                 TimedRunnableObsolete e = threadSafeHeap.e();
                 obj = null;
                 if (e != null) {
-                    obj = (e.f43647a > j ? 1 : (e.f43647a == j ? 0 : -1)) <= 0 ? threadSafeHeap.a(0) : (ThreadSafeHeapNode) null;
+                    obj = (e.a > j ? 1 : (e.a == j ? 0 : -1)) <= 0 ? threadSafeHeap.a(0) : (ThreadSafeHeapNode) null;
                 }
             }
             TimedRunnableObsolete timedRunnableObsolete = (TimedRunnableObsolete) obj;
             if (timedRunnableObsolete == null) {
                 return;
             }
-            if (timedRunnableObsolete.f43647a != 0) {
-                this.g = timedRunnableObsolete.f43647a;
+            if (timedRunnableObsolete.a != 0) {
+                this.g = timedRunnableObsolete.a;
             }
             timedRunnableObsolete.run();
         }
@@ -151,13 +147,13 @@ public final class TestCoroutineContext implements CoroutineContext {
 
     @Override // kotlin.coroutines.CoroutineContext
     public <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
-        return function2.invoke((R) function2.invoke(r, this.f43643c), this.d);
+        return function2.invoke((R) function2.invoke(r, this.c), this.d);
     }
 
     @Override // kotlin.coroutines.CoroutineContext
     public <E extends CoroutineContext.Element> E get(CoroutineContext.Key<E> key) {
-        if (key == ContinuationInterceptor.f42453a) {
-            return this.f43643c;
+        if (key == ContinuationInterceptor.a) {
+            return this.c;
         }
         if (key == CoroutineExceptionHandler.b) {
             return this.d;
@@ -167,7 +163,7 @@ public final class TestCoroutineContext implements CoroutineContext {
 
     @Override // kotlin.coroutines.CoroutineContext
     public CoroutineContext minusKey(CoroutineContext.Key<?> key) {
-        return key == ContinuationInterceptor.f42453a ? this.d : key == CoroutineExceptionHandler.b ? this.f43643c : this;
+        return key == ContinuationInterceptor.a ? this.d : key == CoroutineExceptionHandler.b ? this.c : this;
     }
 
     @Override // kotlin.coroutines.CoroutineContext
@@ -176,7 +172,7 @@ public final class TestCoroutineContext implements CoroutineContext {
     }
 
     public String toString() {
-        String str = this.f43642a;
+        String str = this.a;
         String str2 = str;
         if (str == null) {
             str2 = Intrinsics.a("TestCoroutineContext@", (Object) DebugStringsKt.a(this));

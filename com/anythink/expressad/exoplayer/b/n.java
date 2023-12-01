@@ -10,16 +10,16 @@ final class n implements f {
     private static final int b = Float.floatToIntBits(Float.NaN);
 
     /* renamed from: c  reason: collision with root package name */
-    private static final double f7211c = 4.656612875245797E-10d;
+    private static final double f4372c = 4.656612875245797E-10d;
     private int d = -1;
     private int e = -1;
     private int f = 0;
-    private ByteBuffer g = f7181a;
-    private ByteBuffer h = f7181a;
+    private ByteBuffer g = f4342a;
+    private ByteBuffer h = f4342a;
     private boolean i;
 
     private static void a(int i, ByteBuffer byteBuffer) {
-        int floatToIntBits = Float.floatToIntBits((float) (i * f7211c));
+        int floatToIntBits = Float.floatToIntBits((float) (i * f4372c));
         int i2 = floatToIntBits;
         if (floatToIntBits == b) {
             i2 = Float.floatToIntBits(0.0f);
@@ -98,18 +98,18 @@ final class n implements f {
     @Override // com.anythink.expressad.exoplayer.b.f
     public final ByteBuffer f() {
         ByteBuffer byteBuffer = this.h;
-        this.h = f7181a;
+        this.h = f4342a;
         return byteBuffer;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final boolean g() {
-        return this.i && this.h == f7181a;
+        return this.i && this.h == f4342a;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final void h() {
-        this.h = f7181a;
+        this.h = f4342a;
         this.i = false;
     }
 
@@ -119,6 +119,6 @@ final class n implements f {
         this.d = -1;
         this.e = -1;
         this.f = 0;
-        this.g = f7181a;
+        this.g = f4342a;
     }
 }

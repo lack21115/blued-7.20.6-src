@@ -14,39 +14,31 @@ import mtopsdk.common.util.TBSdkLog;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/util/MtopSDKThreadPoolExecutorFactory.class */
 public class MtopSDKThreadPoolExecutorFactory {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static int f43785a = 10;
+    private static int a = 10;
     private static volatile ThreadPoolExecutor b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile ThreadPoolExecutor f43786c;
+    private static volatile ThreadPoolExecutor c;
     private static volatile ExecutorService[] d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/util/MtopSDKThreadPoolExecutorFactory$MtopSDKThreadFactory.class */
     public class MtopSDKThreadFactory implements ThreadFactory {
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f43787a;
+        private int a;
         private final AtomicInteger b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f43788c;
+        private String c;
 
         public MtopSDKThreadFactory(int i) {
-            this.f43787a = 10;
+            this.a = 10;
             this.b = new AtomicInteger();
-            this.f43788c = "";
-            this.f43787a = i;
+            this.c = "";
+            this.a = i;
         }
 
         public MtopSDKThreadFactory(int i, String str) {
-            this.f43787a = 10;
+            this.a = 10;
             this.b = new AtomicInteger();
-            this.f43788c = "";
-            this.f43787a = i;
-            this.f43788c = str;
+            this.c = "";
+            this.a = i;
+            this.c = str;
         }
 
         @Override // java.util.concurrent.ThreadFactory
@@ -54,8 +46,8 @@ public class MtopSDKThreadPoolExecutorFactory {
             String str;
             StringBuilder sb = new StringBuilder(32);
             sb.append("MTOPSDK ");
-            if (StringUtils.a(this.f43788c)) {
-                sb.append(this.f43788c);
+            if (StringUtils.a(this.c)) {
+                sb.append(this.c);
                 str = " ";
             } else {
                 str = "DefaultPool ";
@@ -66,7 +58,7 @@ public class MtopSDKThreadPoolExecutorFactory {
             return new Thread(runnable, sb.toString()) { // from class: mtopsdk.mtop.util.MtopSDKThreadPoolExecutorFactory.MtopSDKThreadFactory.1
                 @Override // java.lang.Thread, java.lang.Runnable
                 public void run() {
-                    Process.setThreadPriority(MtopSDKThreadFactory.this.f43787a);
+                    Process.setThreadPriority(MtopSDKThreadFactory.this.a);
                     super.run();
                 }
             };
@@ -96,7 +88,7 @@ public class MtopSDKThreadPoolExecutorFactory {
             synchronized (MtopSDKThreadPoolExecutorFactory.class) {
                 try {
                     if (b == null) {
-                        b = a(3, 3, 1, 128, new MtopSDKThreadFactory(f43785a));
+                        b = a(3, 3, 1, 128, new MtopSDKThreadFactory(a));
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -111,18 +103,18 @@ public class MtopSDKThreadPoolExecutorFactory {
     }
 
     public static ThreadPoolExecutor b() {
-        if (f43786c == null) {
+        if (c == null) {
             synchronized (MtopSDKThreadPoolExecutorFactory.class) {
                 try {
-                    if (f43786c == null) {
-                        f43786c = a(4, 4, 1, 0, new MtopSDKThreadFactory(f43785a, "RequestPool"));
+                    if (c == null) {
+                        c = a(4, 4, 1, 0, new MtopSDKThreadFactory(a, "RequestPool"));
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f43786c;
+        return c;
     }
 
     public static ExecutorService[] c() {
@@ -138,7 +130,7 @@ public class MtopSDKThreadPoolExecutorFactory {
                                 break;
                             }
                             ExecutorService[] executorServiceArr = d;
-                            int i3 = f43785a;
+                            int i3 = a;
                             executorServiceArr[i2] = Executors.newSingleThreadExecutor(new MtopSDKThreadFactory(i3, "CallbackPool" + i2));
                             i = i2 + 1;
                         }

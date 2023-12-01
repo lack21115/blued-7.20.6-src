@@ -12,13 +12,9 @@ import java.util.Iterator;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYPrePayPriceAdapter.class */
 public class YYPrePayPriceAdapter extends CommonRecycleAdapter<PayOption._pay_list> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f16208a;
+    public int a;
     public ArrayList<Long> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f16209c;
+    private int c;
     private int d;
     private SelectItemCallBack e;
 
@@ -30,8 +26,8 @@ public class YYPrePayPriceAdapter extends CommonRecycleAdapter<PayOption._pay_li
     public YYPrePayPriceAdapter(Context context, int i, int i2, int i3, SelectItemCallBack selectItemCallBack) {
         super(context);
         this.b = new ArrayList<>();
-        this.f16208a = i;
-        this.f16209c = i2;
+        this.a = i;
+        this.c = i2;
         this.d = i3;
         this.e = selectItemCallBack;
     }
@@ -60,7 +56,7 @@ public class YYPrePayPriceAdapter extends CommonRecycleAdapter<PayOption._pay_li
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(int i, View view, PayOption._pay_list _pay_listVar, View view2) {
-        this.f16208a = i;
+        this.a = i;
         SelectItemCallBack selectItemCallBack = this.e;
         if (selectItemCallBack != null) {
             selectItemCallBack.selectItem(i, view, _pay_listVar);
@@ -79,13 +75,13 @@ public class YYPrePayPriceAdapter extends CommonRecycleAdapter<PayOption._pay_li
             int i3 = R.id.tv_price;
             commonAdapterHolder.a(i3, a(_pay_listVar.money) + "元");
         }
-        final View a2 = commonAdapterHolder.a(R.id.view_border);
-        final int i4 = (this.f16209c * this.d) + i;
-        if (this.f16208a != i4) {
-            a2.setAlpha(0.0f);
+        final View a = commonAdapterHolder.a(R.id.view_border);
+        final int i4 = (this.c * this.d) + i;
+        if (this.a != i4) {
+            a.setAlpha(0.0f);
         } else if (this.e != null) {
-            a2.setAlpha(1.0f);
-            this.e.selectItem(this.f16208a, a2, _pay_listVar);
+            a.setAlpha(1.0f);
+            this.e.selectItem(this.a, a, _pay_listVar);
         }
         commonAdapterHolder.a(R.id.iv_icon_first_gift).setVisibility(4);
         Iterator<Long> it = this.b.iterator();
@@ -96,10 +92,10 @@ public class YYPrePayPriceAdapter extends CommonRecycleAdapter<PayOption._pay_li
                 commonAdapterHolder.a(R.id.iv_icon_first_gift).setVisibility(4);
             }
         }
-        a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYPrePayPriceAdapter$s_dKAOIQcxRQWjx4muT4d50rP3A
+        a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYPrePayPriceAdapter$s_dKAOIQcxRQWjx4muT4d50rP3A
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                YYPrePayPriceAdapter.this.a(i4, a2, _pay_listVar, view);
+                YYPrePayPriceAdapter.this.a(i4, a, _pay_listVar, view);
             }
         });
     }

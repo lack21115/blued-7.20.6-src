@@ -10,7 +10,7 @@ import androidx.emoji2.text.EmojiCompat;
 final class EmojiKeyListener implements KeyListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final KeyListener f2886a;
+    private final KeyListener f2838a;
     private final EmojiCompatHandleKeyDownHelper b;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/emoji2/viewsintegration/EmojiKeyListener$EmojiCompatHandleKeyDownHelper.class */
@@ -26,32 +26,32 @@ final class EmojiKeyListener implements KeyListener {
     }
 
     EmojiKeyListener(KeyListener keyListener, EmojiCompatHandleKeyDownHelper emojiCompatHandleKeyDownHelper) {
-        this.f2886a = keyListener;
+        this.f2838a = keyListener;
         this.b = emojiCompatHandleKeyDownHelper;
     }
 
     @Override // android.text.method.KeyListener
     public void clearMetaKeyState(View view, Editable editable, int i) {
-        this.f2886a.clearMetaKeyState(view, editable, i);
+        this.f2838a.clearMetaKeyState(view, editable, i);
     }
 
     @Override // android.text.method.KeyListener
     public int getInputType() {
-        return this.f2886a.getInputType();
+        return this.f2838a.getInputType();
     }
 
     @Override // android.text.method.KeyListener
     public boolean onKeyDown(View view, Editable editable, int i, KeyEvent keyEvent) {
-        return this.b.handleKeyDown(editable, i, keyEvent) || this.f2886a.onKeyDown(view, editable, i, keyEvent);
+        return this.b.handleKeyDown(editable, i, keyEvent) || this.f2838a.onKeyDown(view, editable, i, keyEvent);
     }
 
     @Override // android.text.method.KeyListener
     public boolean onKeyOther(View view, Editable editable, KeyEvent keyEvent) {
-        return this.f2886a.onKeyOther(view, editable, keyEvent);
+        return this.f2838a.onKeyOther(view, editable, keyEvent);
     }
 
     @Override // android.text.method.KeyListener
     public boolean onKeyUp(View view, Editable editable, int i, KeyEvent keyEvent) {
-        return this.f2886a.onKeyUp(view, editable, i, keyEvent);
+        return this.f2838a.onKeyUp(view, editable, i, keyEvent);
     }
 }

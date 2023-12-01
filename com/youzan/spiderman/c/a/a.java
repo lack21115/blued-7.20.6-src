@@ -23,24 +23,24 @@ import okhttp3.ResponseBody;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static b f41734a;
+    private static b f28043a;
     private com.youzan.spiderman.c.f.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f41735c;
+    private boolean f28044c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.youzan.spiderman.c.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/youzan/spiderman/c/a/a$a.class */
-    public static final class C1097a {
+    public static final class C0927a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final a f41740a = new a((byte) 0);
+        private static final a f28049a = new a((byte) 0);
     }
 
     private a() {
         h();
-        this.f41735c = h().a().b().a().b();
+        this.f28044c = h().a().b().a().b();
         this.b = com.youzan.spiderman.c.f.b.a();
     }
 
@@ -49,7 +49,7 @@ public final class a {
     }
 
     public static a a() {
-        return C1097a.f41740a;
+        return C0927a.f28049a;
     }
 
     static /* synthetic */ void a(a aVar, final Context context, final String str, final String str2) {
@@ -79,12 +79,10 @@ public final class a {
                 }
             }
 
-            @Override // okhttp3.Callback
             public final void onFailure(Call call, IOException iOException) {
                 Logger.e("ConfigManager", "config request fail", new Object[0]);
             }
 
-            @Override // okhttp3.Callback
             public final void onResponse(Call call, Response response) throws IOException {
                 if (!response.isSuccessful()) {
                     Logger.e("ConfigManager", "config request fail", new Object[0]);
@@ -108,14 +106,14 @@ public final class a {
     }
 
     private static b h() {
-        if (f41734a == null) {
+        if (f28043a == null) {
             b bVar = (b) com.youzan.spiderman.cache.b.a((Class<Object>) b.class, "config_pref");
-            f41734a = bVar;
+            f28043a = bVar;
             if (bVar == null) {
-                f41734a = new b();
+                f28043a = new b();
             }
         }
-        return f41734a;
+        return f28043a;
     }
 
     public final void a(final Context context) {
@@ -133,26 +131,26 @@ public final class a {
     }
 
     public final boolean b() {
-        return this.f41735c;
+        return this.f28044c;
     }
 
     public final f c() {
         h();
-        return f41734a.a().b().b();
+        return f28043a.a().b().b();
     }
 
     public final g d() {
         h();
-        return f41734a.a().b().c();
+        return f28043a.a().b().c();
     }
 
     public final com.youzan.spiderman.c.b.a e() {
         h();
-        return f41734a.a().a();
+        return f28043a.a().a();
     }
 
     public final d f() {
         h();
-        return f41734a.a().b().d();
+        return f28043a.a().b().d();
     }
 }

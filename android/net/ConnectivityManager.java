@@ -18,7 +18,6 @@ import android.os.ServiceManager;
 import android.telephony.SubscriptionManager;
 import android.util.ArrayMap;
 import android.util.Log;
-import com.android.internal.R;
 import com.android.internal.telephony.ITelephony;
 import com.android.internal.util.Preconditions;
 import java.net.InetAddress;
@@ -343,7 +342,7 @@ public class ConnectivityManager {
     }
 
     public static final void enforceTetherChangePermission(Context context) {
-        if (context.getResources().getStringArray(R.array.config_mobile_hotspot_provision_app).length == 2) {
+        if (context.getResources().getStringArray(17236000).length == 2) {
             context.enforceCallingOrSelfPermission(Manifest.permission.CONNECTIVITY_INTERNAL, "ConnectivityService");
         } else {
             context.enforceCallingOrSelfPermission(Manifest.permission.CHANGE_NETWORK_STATE, "ConnectivityService");

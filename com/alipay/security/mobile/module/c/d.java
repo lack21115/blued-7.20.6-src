@@ -11,9 +11,9 @@ public final class d {
                 if (!com.alipay.security.mobile.module.a.a.a(str)) {
                     if (!com.alipay.security.mobile.module.a.a.a(str2) && context != null) {
                         try {
-                            String a2 = com.alipay.security.mobile.module.a.a.c.a(com.alipay.security.mobile.module.a.a.c.a(), str3);
+                            String a = com.alipay.security.mobile.module.a.a.c.a(com.alipay.security.mobile.module.a.a.c.a(), str3);
                             HashMap hashMap = new HashMap();
-                            hashMap.put(str2, a2);
+                            hashMap.put(str2, a);
                             e.a(context, str, hashMap);
                         } catch (Throwable th) {
                         }

@@ -15,12 +15,12 @@ import com.kwad.sdk.j.k;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/page/widget/a.class */
 public final class a extends Dialog {
-    private final InterfaceC0532a Ns;
+    private final InterfaceC0362a Ns;
     private final String Nt;
 
     /* renamed from: com.kwad.components.core.page.widget.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/page/widget/a$a.class */
-    public interface InterfaceC0532a {
+    public interface InterfaceC0362a {
         void a(DialogInterface dialogInterface);
 
         void b(DialogInterface dialogInterface);
@@ -28,16 +28,16 @@ public final class a extends Dialog {
         void c(DialogInterface dialogInterface);
     }
 
-    public a(Context context, InterfaceC0532a interfaceC0532a) {
-        this(context, null, interfaceC0532a);
+    public a(Context context, InterfaceC0362a interfaceC0362a) {
+        this(context, null, interfaceC0362a);
     }
 
-    public a(Context context, String str, InterfaceC0532a interfaceC0532a) {
+    public a(Context context, String str, InterfaceC0362a interfaceC0362a) {
         super(context);
         if (context instanceof Activity) {
             setOwnerActivity((Activity) context);
         }
-        this.Ns = interfaceC0532a;
+        this.Ns = interfaceC0362a;
         this.Nt = str;
     }
 

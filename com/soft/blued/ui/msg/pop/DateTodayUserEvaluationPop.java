@@ -2,6 +2,7 @@ package com.soft.blued.ui.msg.pop;
 
 import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.blued.android.core.net.IRequestHost;
@@ -25,17 +26,17 @@ public final class DateTodayUserEvaluationPop extends BottomPopupView {
     private final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<String> f32473c;
+    private final List<String> f18782c;
     private final IRequestHost d;
     private final Set<Integer> e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DateTodayUserEvaluationPop(Context context, long j, List<String> evaluation, IRequestHost iRequestHost) {
+    public DateTodayUserEvaluationPop(Context context, long j, List<String> list, IRequestHost iRequestHost) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(evaluation, "evaluation");
+        Intrinsics.e(list, "evaluation");
         this.b = j;
-        this.f32473c = evaluation;
+        this.f18782c = list;
         this.d = iRequestHost;
         this.e = new LinkedHashSet();
     }
@@ -54,55 +55,53 @@ public final class DateTodayUserEvaluationPop extends BottomPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(DateTodayUserEvaluationPop this$0, View view) {
+    public static final void a(DateTodayUserEvaluationPop dateTodayUserEvaluationPop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        if (this$0.e.size() > 0) {
-            this$0.p();
+        Intrinsics.e(dateTodayUserEvaluationPop, "this$0");
+        if (dateTodayUserEvaluationPop.e.size() > 0) {
+            dateTodayUserEvaluationPop.p();
             ArrayList arrayList = new ArrayList();
-            for (Integer num : this$0.e) {
-                arrayList.add(this$0.f32473c.get(num.intValue()));
+            for (Number number : dateTodayUserEvaluationPop.e) {
+                arrayList.add(dateTodayUserEvaluationPop.f18782c.get(number.intValue()));
             }
             if (!arrayList.isEmpty()) {
-                ChatHttpUtils.a(this$0.b, arrayList, this$0.d);
+                ChatHttpUtils.a(dateTodayUserEvaluationPop.b, arrayList, dateTodayUserEvaluationPop.d);
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(DateTodayUserEvaluationPop this$0, TextView textView, View tagView, int i) {
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.c(tagView, "tagView");
-        this$0.a(tagView, i);
-        if (this$0.e.size() > 0) {
+    public static final void a(DateTodayUserEvaluationPop dateTodayUserEvaluationPop, TextView textView, View view, int i) {
+        Intrinsics.e(dateTodayUserEvaluationPop, "this$0");
+        Intrinsics.c(view, "tagView");
+        dateTodayUserEvaluationPop.a(view, i);
+        if (dateTodayUserEvaluationPop.e.size() > 0) {
             textView.setBackgroundResource(R.drawable.shape_date_today_done);
-            textView.setTextColor(this$0.getContext().getResources().getColor(BluedPreferences.cK() ? 2131102254 : 2131101780));
+            textView.setTextColor(dateTodayUserEvaluationPop.getContext().getResources().getColor(BluedPreferences.cK() ? 2131102254 : 2131101780));
             return;
         }
         textView.setBackgroundResource(R.drawable.shape_date_today_cancel);
-        textView.setTextColor(BluedSkinUtils.a(this$0.getContext(), 2131102264));
+        textView.setTextColor(BluedSkinUtils.a(dateTodayUserEvaluationPop.getContext(), 2131102264));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(DateTodayUserEvaluationPop this$0, View view) {
+    public static final void b(DateTodayUserEvaluationPop dateTodayUserEvaluationPop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(dateTodayUserEvaluationPop, "this$0");
+        dateTodayUserEvaluationPop.p();
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
-        FlowLayout flowLayout = (FlowLayout) findViewById(R.id.fl_user_impression);
-        flowLayout.removeAllViews();
-        int size = this.f32473c.size();
+        FlowLayout findViewById = findViewById(R.id.fl_user_impression);
+        findViewById.removeAllViews();
+        int size = this.f18782c.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
-                final TextView textView = (TextView) findViewById(2131371293);
-                flowLayout.setOnItemClickListener(new FlowLayout.OnItemClickListener() { // from class: com.soft.blued.ui.msg.pop.-$$Lambda$DateTodayUserEvaluationPop$wSMZlEqi0Np7neDPg6VhgzxkW-0
-                    @Override // com.blued.android.module.common.view.FlowLayout.OnItemClickListener
+                final TextView textView = (TextView) findViewById(R.id.tv_done);
+                findViewById.setOnItemClickListener(new FlowLayout.OnItemClickListener() { // from class: com.soft.blued.ui.msg.pop.-$$Lambda$DateTodayUserEvaluationPop$wSMZlEqi0Np7neDPg6VhgzxkW-0
                     public final void onItemClick(View view, int i3) {
                         DateTodayUserEvaluationPop.a(DateTodayUserEvaluationPop.this, textView, view, i3);
                     }
@@ -121,14 +120,13 @@ public final class DateTodayUserEvaluationPop extends BottomPopupView {
                 });
                 return;
             }
-            View inflate = BottomPopupView.inflate(getContext(), R.layout.item_date_today_evaluation, null);
-            ((TextView) inflate.findViewById(R.id.tv_evaluation_text)).setText(this.f32473c.get(i2));
-            flowLayout.addView(inflate);
+            View inflate = BottomPopupView.inflate(getContext(), (int) R.layout.item_date_today_evaluation, (ViewGroup) null);
+            ((TextView) inflate.findViewById(R.id.tv_evaluation_text)).setText(this.f18782c.get(i2));
+            findViewById.addView(inflate);
             i = i2 + 1;
         }
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_date_today_user_evaluation;
     }

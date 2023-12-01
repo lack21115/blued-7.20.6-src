@@ -9,15 +9,13 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/extensions/CustomViewBindingProperty.class */
 public final class CustomViewBindingProperty<R, V extends ViewBinding> implements ViewBindingProperty<R, V> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Function1<R, V> f10791a;
+    private final Function1<R, V> a;
     private V b;
 
     /* JADX WARN: Multi-variable type inference failed */
     public CustomViewBindingProperty(Function1<? super R, ? extends V> viewBinder) {
         Intrinsics.e(viewBinder, "viewBinder");
-        this.f10791a = viewBinder;
+        this.a = viewBinder;
     }
 
     @Override // kotlin.properties.ReadOnlyProperty
@@ -27,7 +25,7 @@ public final class CustomViewBindingProperty<R, V extends ViewBinding> implement
         Intrinsics.e(property, "property");
         V v = this.b;
         if (v == null) {
-            V invoke = this.f10791a.invoke(thisRef);
+            V invoke = this.a.invoke(thisRef);
             this.b = invoke;
             return invoke;
         }

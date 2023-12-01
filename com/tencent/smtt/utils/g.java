@@ -14,13 +14,13 @@ public class g {
     private static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static byte[] f38960c;
+    private static byte[] f25269c;
     private static String g;
     private Cipher d;
     private Cipher e;
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final char[] f38959a = "0123456789abcdef".toCharArray();
+    protected static final char[] f25268a = "0123456789abcdef".toCharArray();
     private static g f = null;
 
     private g() throws Exception {
@@ -32,10 +32,10 @@ public class g {
         while (true) {
             int i2 = i;
             if (i2 >= 12) {
-                f38960c = (str + g).getBytes();
+                f25269c = (str + g).getBytes();
                 this.d = Cipher.getInstance("RSA/ECB/NoPadding");
                 this.d.init(1, KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(android.util.Base64.decode((d() + e()).getBytes(), 0))));
-                b = b(this.d.doFinal(f38960c));
+                b = b(this.d.doFinal(f25269c));
                 SecretKey generateSecret = SecretKeyFactory.getInstance("DESede").generateSecret(new DESedeKeySpec(g.getBytes()));
                 Cipher cipher = Cipher.getInstance("DESede/ECB/PKCS5Padding");
                 this.e = cipher;
@@ -77,7 +77,7 @@ public class g {
             }
             int i3 = bArr[i2] & 255;
             int i4 = i2 * 2;
-            char[] cArr2 = f38959a;
+            char[] cArr2 = f25268a;
             cArr[i4] = cArr2[i3 >>> 4];
             cArr[i4 + 1] = cArr2[i3 & 15];
             i = i2 + 1;

@@ -11,7 +11,7 @@ public class dc extends cp<TextView> {
     private int L;
 
     /* renamed from: a  reason: collision with root package name */
-    private Typeface f22446a;
+    private Typeface f8838a;
 
     public dc(TextView textView) {
         super(textView);
@@ -106,11 +106,11 @@ public class dc extends cp<TextView> {
                     z = true;
                     break;
             }
-            this.f22446a = z ? !z ? !z ? !z ? Typeface.DEFAULT : Typeface.MONOSPACE : Typeface.SERIF : Typeface.SANS_SERIF : Typeface.DEFAULT_BOLD;
+            this.f8838a = z ? !z ? !z ? !z ? Typeface.DEFAULT : Typeface.MONOSPACE : Typeface.SERIF : Typeface.SANS_SERIF : Typeface.DEFAULT_BOLD;
         }
         String attributeValue3 = attributeSet.getAttributeValue(null, "fontFamily");
         if (TextUtils.isEmpty(attributeValue3)) {
-            ((TextView) this.Code).setTypeface(this.f22446a, this.L);
+            ((TextView) this.Code).setTypeface(this.f8838a, this.L);
         } else {
             ((TextView) this.Code).setTypeface(Typeface.create(attributeValue3, this.L));
         }

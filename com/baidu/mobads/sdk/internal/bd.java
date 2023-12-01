@@ -7,11 +7,11 @@ import java.lang.Thread;
 class bd implements Thread.UncaughtExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ bc f9334a;
+    final /* synthetic */ bc f6494a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public bd(bc bcVar) {
-        this.f9334a = bcVar;
+        this.f6494a = bcVar;
     }
 
     @Override // java.lang.Thread.UncaughtExceptionHandler

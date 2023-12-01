@@ -5,16 +5,14 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/c/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static a f4462a = new a();
+    private static a a = new a();
     private Map<Class<? extends b>, c<? extends b>> m = new HashMap();
 
     private a() {
     }
 
     public static a a() {
-        return f4462a;
+        return a;
     }
 
     private <T extends b> c<T> a(Class<T> cls) {
@@ -37,7 +35,7 @@ public class a {
             try {
                 t = cls.newInstance();
             } catch (Exception e) {
-                com.alibaba.mtl.appmonitor.b.b.m2144a((Throwable) e);
+                com.alibaba.mtl.appmonitor.b.b.m8587a((Throwable) e);
                 t = a2;
             }
         }

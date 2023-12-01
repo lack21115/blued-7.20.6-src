@@ -10,22 +10,20 @@ import java.lang.reflect.Method;
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/widget/h.class */
 public class h extends g {
     private com.alipay.sdk.app.b b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private WebView f4686c;
+    private WebView c;
 
     public h(Activity activity, com.alipay.sdk.sys.a aVar) {
         super(activity);
-        this.f4686c = new WebView(activity);
+        this.c = new WebView(activity);
         a(activity);
-        addView(this.f4686c);
+        addView(this.c);
         com.alipay.sdk.app.b bVar = new com.alipay.sdk.app.b(activity, aVar);
         this.b = bVar;
-        this.f4686c.setWebViewClient(bVar);
+        this.c.setWebViewClient(bVar);
     }
 
     private void a(Context context) {
-        WebSettings settings = this.f4686c.getSettings();
+        WebSettings settings = this.c.getSettings();
         settings.setUserAgentString(settings.getUserAgentString() + com.alipay.sdk.util.n.c(context));
         settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
         settings.setSupportMultipleWindows(true);
@@ -37,20 +35,20 @@ public class h extends g {
         settings.setTextSize(WebSettings.TextSize.NORMAL);
         settings.setDomStorageEnabled(true);
         settings.setCacheMode(1);
-        this.f4686c.resumeTimers();
-        this.f4686c.setVerticalScrollbarOverlay(true);
-        this.f4686c.setDownloadListener(new i(this));
+        this.c.resumeTimers();
+        this.c.setVerticalScrollbarOverlay(true);
+        this.c.setDownloadListener(new i(this));
         try {
-            this.f4686c.removeJavascriptInterface("searchBoxJavaBridge_");
-            this.f4686c.removeJavascriptInterface(Context.ACCESSIBILITY_SERVICE);
-            this.f4686c.removeJavascriptInterface("accessibilityTraversal");
+            this.c.removeJavascriptInterface("searchBoxJavaBridge_");
+            this.c.removeJavascriptInterface("accessibility");
+            this.c.removeJavascriptInterface("accessibilityTraversal");
         } catch (Throwable th) {
             try {
-                Method method = this.f4686c.getClass().getMethod("removeJavascriptInterface", new Class[0]);
+                Method method = this.c.getClass().getMethod("removeJavascriptInterface", new Class[0]);
                 if (method != null) {
-                    method.invoke(this.f4686c, "searchBoxJavaBridge_");
-                    method.invoke(this.f4686c, Context.ACCESSIBILITY_SERVICE);
-                    method.invoke(this.f4686c, "accessibilityTraversal");
+                    method.invoke(this.c, "searchBoxJavaBridge_");
+                    method.invoke(this.c, "accessibility");
+                    method.invoke(this.c, "accessibilityTraversal");
                 }
             } catch (Throwable th2) {
             }
@@ -65,19 +63,19 @@ public class h extends g {
 
     @Override // com.alipay.sdk.widget.g
     public void a(String str) {
-        Tracker.loadUrl(this.f4686c, str);
+        Tracker.loadUrl(this.c, str);
     }
 
     @Override // com.alipay.sdk.widget.g
     public boolean b() {
-        if (!this.f4686c.canGoBack()) {
+        if (!this.c.canGoBack()) {
             com.alipay.sdk.app.j.a(com.alipay.sdk.app.j.c());
-            this.f4685a.finish();
+            this.a.finish();
             return true;
         } else if (this.b.b()) {
             com.alipay.sdk.app.k b = com.alipay.sdk.app.k.b(com.alipay.sdk.app.k.NETWORK_ERROR.a());
             com.alipay.sdk.app.j.a(com.alipay.sdk.app.j.a(b.a(), b.b(), ""));
-            this.f4685a.finish();
+            this.a.finish();
             return true;
         } else {
             return true;

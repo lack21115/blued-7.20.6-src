@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import com.alibaba.mtl.appmonitor.AppMonitorDelegate;
 import com.alibaba.mtl.appmonitor.d.j;
 import com.alibaba.mtl.log.e.i;
+import com.anythink.core.common.l;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -22,12 +23,8 @@ public class a {
     public static String L = "http://m-adash.m.taobao.com/rest/sur";
     public static String M = "http://adashbc.m.taobao.com/rest/sur";
     public static String N;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f4477a = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static long f4478c = 300000;
+    private static boolean a = false;
+    private static long c = 300000;
     private static long d = 30000;
     public static boolean z = false;
     static List<String> f = new ArrayList();
@@ -36,7 +33,7 @@ public class a {
     static List<String> i = new ArrayList();
     static List<String> j = new ArrayList();
     static List<String> k = new ArrayList();
-    private static String O = "net";
+    private static String O = com.alipay.sdk.app.statistic.c.a;
 
     static {
         g.add("stm_bcx");
@@ -57,7 +54,7 @@ public class a {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static List<String> m2161a(String str) {
+    public static List<String> m8604a(String str) {
         int i2;
         try {
             i2 = Integer.parseInt(str);
@@ -79,11 +76,11 @@ public class a {
     }
 
     public static long b() {
-        return f4478c;
+        return c;
     }
 
     /* renamed from: b  reason: collision with other method in class */
-    public static String m2162b(String str) {
+    public static String m8605b(String str) {
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(com.alibaba.mtl.log.a.getContext());
         return defaultSharedPreferences.getString("ut_" + str + "_timestamp", "0");
     }
@@ -106,7 +103,7 @@ public class a {
             String a2 = a("b01na");
             if (a2 != null) {
                 try {
-                    JSONObject jSONObject = new JSONObject(a2).getJSONObject("content");
+                    JSONObject jSONObject = new JSONObject(a2).getJSONObject(l.y);
                     if (jSONObject != null) {
                         return jSONObject.getString("c_content");
                     }
@@ -125,7 +122,7 @@ public class a {
         if (C || (b = b(str)) == -1) {
             return;
         }
-        f4478c = b * 1000;
+        c = b * 1000;
     }
 
     public static void g(String str) {
@@ -145,14 +142,14 @@ public class a {
         SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(com.alibaba.mtl.log.a.getContext()).edit();
         if (!TextUtils.isEmpty(str)) {
             try {
-                JSONObject jSONObject = new JSONObject(str).getJSONObject(com.igexin.push.core.b.U);
+                JSONObject jSONObject = new JSONObject(str).getJSONObject("config");
                 if (jSONObject != null && (keys = jSONObject.keys()) != null) {
                     while (keys.hasNext()) {
                         String next = keys.next();
                         JSONObject jSONObject2 = jSONObject.getJSONObject(next);
                         if (jSONObject2 != null) {
                             edit.putString("ut_" + next + "_config", jSONObject2.toString());
-                            edit.putString("ut_" + next + "_timestamp", jSONObject2.remove("timestamp") + "");
+                            edit.putString("ut_" + next + "_timestamp", jSONObject2.remove(com.alipay.sdk.tid.b.f) + "");
                         }
                     }
                 }
@@ -170,8 +167,8 @@ public class a {
     public static void init(Context context) {
         synchronized (a.class) {
             try {
-                if (!f4477a) {
-                    f4477a = true;
+                if (!a) {
+                    a = true;
                     try {
                         q();
                         j.a().init(context);

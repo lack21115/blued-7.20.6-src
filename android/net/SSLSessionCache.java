@@ -8,7 +8,6 @@ import com.android.org.conscrypt.SSLClientSessionCache;
 import java.io.File;
 import java.io.IOException;
 import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSessionContext;
 
 /* loaded from: source-9557208-dex2jar.jar:android/net/SSLSessionCache.class */
 public final class SSLSessionCache {
@@ -35,10 +34,10 @@ public final class SSLSessionCache {
     }
 
     public static void install(SSLSessionCache sSLSessionCache, SSLContext sSLContext) {
-        SSLSessionContext clientSessionContext = sSLContext.getClientSessionContext();
+        ClientSessionContext clientSessionContext = sSLContext.getClientSessionContext();
         if (!(clientSessionContext instanceof ClientSessionContext)) {
             throw new IllegalArgumentException("Incompatible SSLContext: " + sSLContext);
         }
-        ((ClientSessionContext) clientSessionContext).setPersistentCache(sSLSessionCache == null ? null : sSLSessionCache.mSessionCache);
+        clientSessionContext.setPersistentCache(sSLSessionCache == null ? null : sSLSessionCache.mSessionCache);
     }
 }

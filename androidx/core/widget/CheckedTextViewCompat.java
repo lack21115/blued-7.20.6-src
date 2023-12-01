@@ -15,7 +15,7 @@ public final class CheckedTextViewCompat {
     static class Api14Impl {
 
         /* renamed from: a  reason: collision with root package name */
-        private static Field f2747a;
+        private static Field f2699a;
         private static boolean b;
 
         private Api14Impl() {
@@ -25,20 +25,20 @@ public final class CheckedTextViewCompat {
             if (!b) {
                 try {
                     Field declaredField = CheckedTextView.class.getDeclaredField("mCheckMarkDrawable");
-                    f2747a = declaredField;
+                    f2699a = declaredField;
                     declaredField.setAccessible(true);
                 } catch (NoSuchFieldException e) {
                     Log.i("CheckedTextViewCompat", "Failed to retrieve mCheckMarkDrawable field", e);
                 }
                 b = true;
             }
-            Field field = f2747a;
+            Field field = f2699a;
             if (field != null) {
                 try {
                     return (Drawable) field.get(checkedTextView);
                 } catch (IllegalAccessException e2) {
                     Log.i("CheckedTextViewCompat", "Failed to get check mark drawable via reflection", e2);
-                    f2747a = null;
+                    f2699a = null;
                     return null;
                 }
             }

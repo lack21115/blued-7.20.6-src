@@ -27,9 +27,9 @@ public final class SparseBooleanArrayKt {
         return sparseBooleanArray.indexOfValue(z) >= 0;
     }
 
-    public static final void forEach(SparseBooleanArray sparseBooleanArray, Function2<? super Integer, ? super Boolean, Unit> action) {
+    public static final void forEach(SparseBooleanArray sparseBooleanArray, Function2<? super Integer, ? super Boolean, Unit> function2) {
         Intrinsics.e(sparseBooleanArray, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function2, "action");
         int size = sparseBooleanArray.size();
         if (size <= 0) {
             return;
@@ -38,7 +38,7 @@ public final class SparseBooleanArrayKt {
         while (true) {
             int i2 = i;
             int i3 = i2 + 1;
-            action.invoke(Integer.valueOf(sparseBooleanArray.keyAt(i2)), Boolean.valueOf(sparseBooleanArray.valueAt(i2)));
+            function2.invoke(Integer.valueOf(sparseBooleanArray.keyAt(i2)), Boolean.valueOf(sparseBooleanArray.valueAt(i2)));
             if (i3 >= size) {
                 return;
             }
@@ -51,11 +51,11 @@ public final class SparseBooleanArrayKt {
         return sparseBooleanArray.get(i, z);
     }
 
-    public static final boolean getOrElse(SparseBooleanArray sparseBooleanArray, int i, Function0<Boolean> defaultValue) {
+    public static final boolean getOrElse(SparseBooleanArray sparseBooleanArray, int i, Function0<Boolean> function0) {
         Intrinsics.e(sparseBooleanArray, "<this>");
-        Intrinsics.e(defaultValue, "defaultValue");
+        Intrinsics.e(function0, "defaultValue");
         int indexOfKey = sparseBooleanArray.indexOfKey(i);
-        return indexOfKey >= 0 ? sparseBooleanArray.valueAt(indexOfKey) : defaultValue.invoke().booleanValue();
+        return indexOfKey >= 0 ? sparseBooleanArray.valueAt(indexOfKey) : ((Boolean) function0.invoke()).booleanValue();
     }
 
     public static final int getSize(SparseBooleanArray sparseBooleanArray) {
@@ -82,12 +82,10 @@ public final class SparseBooleanArrayKt {
                 return this.b;
             }
 
-            @Override // java.util.Iterator
             public boolean hasNext() {
                 return this.b < SparseBooleanArray.this.size();
             }
 
-            @Override // kotlin.collections.IntIterator
             public int nextInt() {
                 SparseBooleanArray sparseBooleanArray2 = SparseBooleanArray.this;
                 int i = this.b;
@@ -101,19 +99,19 @@ public final class SparseBooleanArrayKt {
         };
     }
 
-    public static final SparseBooleanArray plus(SparseBooleanArray sparseBooleanArray, SparseBooleanArray other) {
+    public static final SparseBooleanArray plus(SparseBooleanArray sparseBooleanArray, SparseBooleanArray sparseBooleanArray2) {
         Intrinsics.e(sparseBooleanArray, "<this>");
-        Intrinsics.e(other, "other");
-        SparseBooleanArray sparseBooleanArray2 = new SparseBooleanArray(sparseBooleanArray.size() + other.size());
-        putAll(sparseBooleanArray2, sparseBooleanArray);
-        putAll(sparseBooleanArray2, other);
-        return sparseBooleanArray2;
+        Intrinsics.e(sparseBooleanArray2, "other");
+        SparseBooleanArray sparseBooleanArray3 = new SparseBooleanArray(sparseBooleanArray.size() + sparseBooleanArray2.size());
+        putAll(sparseBooleanArray3, sparseBooleanArray);
+        putAll(sparseBooleanArray3, sparseBooleanArray2);
+        return sparseBooleanArray3;
     }
 
-    public static final void putAll(SparseBooleanArray sparseBooleanArray, SparseBooleanArray other) {
+    public static final void putAll(SparseBooleanArray sparseBooleanArray, SparseBooleanArray sparseBooleanArray2) {
         Intrinsics.e(sparseBooleanArray, "<this>");
-        Intrinsics.e(other, "other");
-        int size = other.size();
+        Intrinsics.e(sparseBooleanArray2, "other");
+        int size = sparseBooleanArray2.size();
         if (size <= 0) {
             return;
         }
@@ -121,7 +119,7 @@ public final class SparseBooleanArrayKt {
         while (true) {
             int i2 = i;
             int i3 = i2 + 1;
-            sparseBooleanArray.put(other.keyAt(i2), other.valueAt(i2));
+            sparseBooleanArray.put(sparseBooleanArray2.keyAt(i2), sparseBooleanArray2.valueAt(i2));
             if (i3 >= size) {
                 return;
             }
@@ -153,12 +151,10 @@ public final class SparseBooleanArrayKt {
                 return this.b;
             }
 
-            @Override // java.util.Iterator
             public boolean hasNext() {
                 return this.b < SparseBooleanArray.this.size();
             }
 
-            @Override // kotlin.collections.BooleanIterator
             public boolean nextBoolean() {
                 SparseBooleanArray sparseBooleanArray2 = SparseBooleanArray.this;
                 int i = this.b;

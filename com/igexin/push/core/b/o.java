@@ -9,10 +9,10 @@ import org.json.JSONObject;
 public final class o extends BaseActionBean {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f23454a;
+    private long f9846a;
 
     private long a() {
-        return this.f23454a;
+        return this.f9846a;
     }
 
     private static o a(String str) throws JSONException {
@@ -35,16 +35,16 @@ public final class o extends BaseActionBean {
             double d = jSONObject.getDouble("delay");
             if (d > 0.0d) {
                 j = (long) (d * 1000.0d);
-                oVar.f23454a = j;
+                oVar.f9846a = j;
                 return oVar;
             }
         }
         j = 200;
-        oVar.f23454a = j;
+        oVar.f9846a = j;
         return oVar;
     }
 
     private void a(long j) {
-        this.f23454a = j;
+        this.f9846a = j;
     }
 }

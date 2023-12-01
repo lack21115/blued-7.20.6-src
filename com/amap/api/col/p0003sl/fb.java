@@ -1,9 +1,9 @@
 package com.amap.api.col.p0003sl;
 
 import android.content.Context;
-import android.provider.MediaStore;
 import com.amap.api.services.cloud.CloudItemDetail;
 import com.amap.api.services.core.AMapException;
+import com.anythink.core.common.c.d;
 import java.util.Hashtable;
 import java.util.Map;
 import org.json.JSONArray;
@@ -33,14 +33,14 @@ public final class fb extends fa<fx, CloudItemDetail> {
     }
 
     private static CloudItemDetail d(JSONObject jSONObject) throws JSONException {
-        JSONArray a2 = a(jSONObject);
-        if (a2 == null || a2.length() <= 0) {
+        JSONArray a = a(jSONObject);
+        if (a == null || a.length() <= 0) {
             return null;
         }
-        JSONObject jSONObject2 = a2.getJSONObject(0);
-        CloudItemDetail c2 = c(jSONObject2);
-        a(c2, jSONObject2);
-        return c2;
+        JSONObject jSONObject2 = a.getJSONObject(0);
+        CloudItemDetail c = c(jSONObject2);
+        a(c, jSONObject2);
+        return c;
     }
 
     @Override // com.amap.api.col.p0003sl.ex, com.amap.api.col.p0003sl.ew
@@ -56,14 +56,14 @@ public final class fb extends fa<fx, CloudItemDetail> {
     @Override // com.amap.api.col.p0003sl.ex, com.amap.api.col.p0003sl.ew, com.amap.api.col.p0003sl.kb
     public final Map<String, String> getParams() {
         Hashtable hashtable = new Hashtable(16);
-        hashtable.put("key", ho.f(this.i));
-        hashtable.put("layerId", ((fx) this.b).f4975a);
-        hashtable.put(MediaStore.EXTRA_OUTPUT, "json");
+        hashtable.put(d.a.b, ho.f(this.i));
+        hashtable.put("layerId", ((fx) this.b).a);
+        hashtable.put("output", "json");
         hashtable.put("id", ((fx) this.b).b);
-        String a2 = hr.a();
-        String a3 = hr.a(this.i, a2, ib.b(hashtable));
-        hashtable.put("ts", a2);
-        hashtable.put("scode", a3);
+        String a = hr.a();
+        String a2 = hr.a(this.i, a, ib.b(hashtable));
+        hashtable.put("ts", a);
+        hashtable.put("scode", a2);
         return hashtable;
     }
 

@@ -223,7 +223,7 @@ public final class Options extends AbstractList<ByteString> implements RandomAcc
         return Companion.of(byteStringArr);
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public final /* bridge */ boolean contains(Object obj) {
         if (obj instanceof ByteString) {
             return contains((ByteString) obj);

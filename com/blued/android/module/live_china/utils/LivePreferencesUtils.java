@@ -5,25 +5,23 @@ import com.blued.android.module.live_china.live_info.LiveRoomInfo;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LivePreferencesUtils.class */
 public class LivePreferencesUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static BluedSharedPreferences f14187a;
+    private static BluedSharedPreferences a;
 
     public static BluedSharedPreferences a() {
-        if (f14187a == null) {
-            f14187a = BluedSharedPreferences.a();
+        if (a == null) {
+            a = BluedSharedPreferences.a();
         }
-        return f14187a;
+        return a;
     }
 
     public static void a(long j) {
-        BluedSharedPreferences.Editor c2 = a().c();
-        c2.a(LiveRoomInfo.a().f() + "live_upload_timer_is_done_time", j).b();
+        BluedSharedPreferences.Editor c = a().c();
+        c.a(LiveRoomInfo.a().f() + "live_upload_timer_is_done_time", j).b();
     }
 
     public static void a(boolean z) {
-        BluedSharedPreferences.Editor c2 = a().c();
-        c2.a(LiveRoomInfo.a().f() + "live_enter_room", z).b();
+        BluedSharedPreferences.Editor c = a().c();
+        c.a(LiveRoomInfo.a().f() + "live_enter_room", z).b();
     }
 
     public static long b() {
@@ -32,13 +30,13 @@ public class LivePreferencesUtils {
     }
 
     public static void b(boolean z) {
-        BluedSharedPreferences.Editor c2 = a().c();
-        c2.a(LiveRoomInfo.a().f() + "live_blind_date_room", z).b();
+        BluedSharedPreferences.Editor c = a().c();
+        c.a(LiveRoomInfo.a().f() + "live_blind_date_room", z).b();
     }
 
     public static void c(boolean z) {
-        BluedSharedPreferences.Editor c2 = a().c();
-        c2.a(LiveRoomInfo.a().f() + "live_show_big_photo", z).b();
+        BluedSharedPreferences.Editor c = a().c();
+        c.a(LiveRoomInfo.a().f() + "live_show_big_photo", z).b();
     }
 
     public static boolean c() {
@@ -47,8 +45,8 @@ public class LivePreferencesUtils {
     }
 
     public static void d(boolean z) {
-        BluedSharedPreferences.Editor c2 = a().c();
-        c2.a(LiveRoomInfo.a().f() + "live_scroll_guide", z).b();
+        BluedSharedPreferences.Editor c = a().c();
+        c.a(LiveRoomInfo.a().f() + "live_scroll_guide", z).b();
     }
 
     public static boolean d() {

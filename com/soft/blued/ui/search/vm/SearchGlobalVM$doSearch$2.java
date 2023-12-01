@@ -2,6 +2,7 @@ package com.soft.blued.ui.search.vm;
 
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.http.parser.BluedEntityA;
+import com.blued.android.module.common.api.ApiState;
 import com.blued.android.module.common.api.BluedApiProxy;
 import com.blued.android.module.common.api.Error;
 import com.blued.android.module.common.api.Succeed;
@@ -15,7 +16,6 @@ import com.soft.blued.ui.msg.controller.tools.MsgCommonUtils;
 import com.soft.blued.ui.search.api.SearchApiService;
 import com.soft.blued.ui.search.model.SearchGlobalInfo;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.Metadata;
@@ -23,15 +23,16 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
+import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
-import kotlinx.coroutines.Deferred;
+import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Dispatchers;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -41,11 +42,11 @@ import kotlinx.coroutines.Dispatchers;
 public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f33188a;
+    int f19497a;
     final /* synthetic */ SearchGlobalVM b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ String f33189c;
+    final /* synthetic */ String f19498c;
     private /* synthetic */ Object d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -56,34 +57,31 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        int f33190a;
+        int f19499a;
         final /* synthetic */ SearchGlobalVM b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f33191c;
+        final /* synthetic */ String f19500c;
         private /* synthetic */ Object d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass1(SearchGlobalVM searchGlobalVM, String str, Continuation<? super AnonymousClass1> continuation) {
             super(2, continuation);
             this.b = searchGlobalVM;
-            this.f33191c = str;
+            this.f19500c = str;
         }
 
-        @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return create(coroutineScope, continuation).invokeSuspend(Unit.a);
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.b, this.f33191c, continuation);
+            Continuation<Unit> anonymousClass1 = new AnonymousClass1(this.b, this.f19500c, continuation);
             anonymousClass1.d = obj;
             return anonymousClass1;
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             CoroutineScope coroutineScope;
             ArrayList arrayList;
@@ -92,15 +90,15 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
             ArrayList arrayList3;
             int i2;
             Object a2 = IntrinsicsKt.a();
-            int i3 = this.f33190a;
+            int i3 = this.f19499a;
             if (i3 == 0) {
                 ResultKt.a(obj);
                 coroutineScope = (CoroutineScope) this.d;
                 arrayList = this.b.e;
                 arrayList.clear();
                 this.d = coroutineScope;
-                this.f33190a = 1;
-                obj = ((SearchApiService) BluedApiProxy.b().a(SearchApiService.class)).a(this.f33191c, this);
+                this.f19499a = 1;
+                obj = ((SearchApiService) BluedApiProxy.b().a(SearchApiService.class)).a(this.f19500c, (Continuation) this);
                 if (obj == a2) {
                     return a2;
                 }
@@ -114,24 +112,24 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
             SearchGlobalVM searchGlobalVM = this.b;
             if (bluedEntityA.code != 200) {
                 int i4 = bluedEntityA.code;
-                String message = bluedEntityA.message;
-                Intrinsics.c(message, "message");
-                new Error(i4, message);
+                String str = bluedEntityA.message;
+                Intrinsics.c(str, "message");
+                new Error(i4, str);
             } else if (bluedEntityA.hasData()) {
-                Collection data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
+                List list = bluedEntityA.data;
+                Intrinsics.c(list, "data");
                 boolean hasMore = bluedEntityA.hasMore();
-                i2 = searchGlobalVM.f33186c;
-                searchGlobalVM.f33186c = i2 | 4;
+                i2 = searchGlobalVM.f19495c;
+                searchGlobalVM.f19495c = i2 | 4;
                 CoroutineScopeKt.a(coroutineScope);
-                if (!data.isEmpty()) {
+                if (!list.isEmpty()) {
                     ArrayList arrayList4 = new ArrayList();
                     SearchGlobalInfo searchGlobalInfo = new SearchGlobalInfo();
                     searchGlobalInfo.a(0);
                     searchGlobalInfo.b(3);
                     searchGlobalInfo.a(hasMore);
                     arrayList4.add(searchGlobalInfo);
-                    Iterator it = data.iterator();
+                    Iterator it = list.iterator();
                     while (true) {
                         arrayList2 = arrayList4;
                         if (!it.hasNext()) {
@@ -147,16 +145,16 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
                     arrayList3.addAll(arrayList2);
                 }
                 searchGlobalVM.a();
-                Succeed succeed = Succeed.f10631a;
+                ApiState apiState = Succeed.a;
             } else {
                 List b = CollectionsKt.b();
-                i = searchGlobalVM.f33186c;
-                searchGlobalVM.f33186c = i | 4;
+                i = searchGlobalVM.f19495c;
+                searchGlobalVM.f19495c = i | 4;
                 CoroutineScopeKt.a(coroutineScope);
-                List list = b;
+                List list2 = b;
                 boolean z = true;
-                if (list != null) {
-                    z = list.isEmpty();
+                if (list2 != null) {
+                    z = list2.isEmpty();
                 }
                 if (!z) {
                     ArrayList arrayList5 = new ArrayList();
@@ -181,9 +179,9 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
                     arrayList3.addAll(arrayList2);
                 }
                 searchGlobalVM.a();
-                Succeed succeed2 = Succeed.f10631a;
+                ApiState apiState2 = Succeed.a;
             }
-            return Unit.f42314a;
+            return Unit.a;
         }
     }
 
@@ -195,34 +193,31 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        int f33192a;
+        int f19501a;
         final /* synthetic */ SearchGlobalVM b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f33193c;
+        final /* synthetic */ String f19502c;
         private /* synthetic */ Object d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass2(SearchGlobalVM searchGlobalVM, String str, Continuation<? super AnonymousClass2> continuation) {
             super(2, continuation);
             this.b = searchGlobalVM;
-            this.f33193c = str;
+            this.f19502c = str;
         }
 
-        @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass2) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return create(coroutineScope, continuation).invokeSuspend(Unit.a);
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            AnonymousClass2 anonymousClass2 = new AnonymousClass2(this.b, this.f33193c, continuation);
+            Continuation<Unit> anonymousClass2 = new AnonymousClass2(this.b, this.f19502c, continuation);
             anonymousClass2.d = obj;
             return anonymousClass2;
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             CoroutineScope coroutineScope;
             ArrayList arrayList;
@@ -233,15 +228,15 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
             int i2;
             ChattingModelDB c3;
             Object a2 = IntrinsicsKt.a();
-            int i3 = this.f33192a;
+            int i3 = this.f19501a;
             if (i3 == 0) {
                 ResultKt.a(obj);
                 coroutineScope = (CoroutineScope) this.d;
                 arrayList = this.b.d;
                 arrayList.clear();
                 this.d = coroutineScope;
-                this.f33192a = 1;
-                obj = ((SearchApiService) BluedApiProxy.b().a(SearchApiService.class)).b(this.f33193c, this);
+                this.f19501a = 1;
+                obj = ((SearchApiService) BluedApiProxy.b().a(SearchApiService.class)).b(this.f19502c, (Continuation) this);
                 if (obj == a2) {
                     return a2;
                 }
@@ -255,24 +250,24 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
             SearchGlobalVM searchGlobalVM = this.b;
             if (bluedEntityA.code != 200) {
                 int i4 = bluedEntityA.code;
-                String message = bluedEntityA.message;
-                Intrinsics.c(message, "message");
-                new Error(i4, message);
+                String str = bluedEntityA.message;
+                Intrinsics.c(str, "message");
+                new Error(i4, str);
             } else if (bluedEntityA.hasData()) {
-                Collection data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
+                List list = bluedEntityA.data;
+                Intrinsics.c(list, "data");
                 boolean hasMore = bluedEntityA.hasMore();
-                i2 = searchGlobalVM.f33186c;
-                searchGlobalVM.f33186c = i2 | 2;
+                i2 = searchGlobalVM.f19495c;
+                searchGlobalVM.f19495c = i2 | 2;
                 CoroutineScopeKt.a(coroutineScope);
-                if (!data.isEmpty()) {
+                if (!list.isEmpty()) {
                     ArrayList arrayList4 = new ArrayList();
                     SearchGlobalInfo searchGlobalInfo = new SearchGlobalInfo();
                     searchGlobalInfo.a(0);
                     searchGlobalInfo.b(2);
                     searchGlobalInfo.a(hasMore);
                     arrayList4.add(searchGlobalInfo);
-                    Iterator it = data.iterator();
+                    Iterator it = list.iterator();
                     while (true) {
                         arrayList2 = arrayList4;
                         if (!it.hasNext()) {
@@ -280,12 +275,12 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
                         }
                         SearchGlobalInfo.SearchUserModel searchUserModel = (SearchGlobalInfo.SearchUserModel) it.next();
                         ChattingDao a3 = ChattingDao.a();
-                        String str = searchUserModel.uid;
-                        Intrinsics.c(str, "user.uid");
-                        if (a3.c(2, Long.parseLong(str)) != null) {
-                            String str2 = AppInfo.d().getString(R.string.friend_global_search_recent_chat) + MsgCommonUtils.a(AppInfo.d(), c3.msgTimestamp);
-                            Intrinsics.c(str2, "recentMsg.toString()");
-                            searchUserModel.setRecentMsg(str2);
+                        String str2 = searchUserModel.uid;
+                        Intrinsics.c(str2, "user.uid");
+                        if (a3.c(2, Long.parseLong(str2)) != null) {
+                            String str3 = AppInfo.d().getString(R.string.friend_global_search_recent_chat) + MsgCommonUtils.a(AppInfo.d(), c3.msgTimestamp);
+                            Intrinsics.c(str3, "recentMsg.toString()");
+                            searchUserModel.setRecentMsg(str3);
                         }
                         SearchGlobalInfo searchGlobalInfo2 = new SearchGlobalInfo();
                         searchGlobalInfo2.a(2);
@@ -296,16 +291,16 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
                     arrayList3.addAll(arrayList2);
                 }
                 searchGlobalVM.a();
-                Succeed succeed = Succeed.f10631a;
+                ApiState apiState = Succeed.a;
             } else {
                 List b = CollectionsKt.b();
-                i = searchGlobalVM.f33186c;
-                searchGlobalVM.f33186c = i | 2;
+                i = searchGlobalVM.f19495c;
+                searchGlobalVM.f19495c = i | 2;
                 CoroutineScopeKt.a(coroutineScope);
-                List list = b;
+                List list2 = b;
                 boolean z = true;
-                if (list != null) {
-                    z = list.isEmpty();
+                if (list2 != null) {
+                    z = list2.isEmpty();
                 }
                 if (!z) {
                     ArrayList arrayList5 = new ArrayList();
@@ -322,12 +317,12 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
                         }
                         SearchGlobalInfo.SearchUserModel searchUserModel2 = (SearchGlobalInfo.SearchUserModel) it2.next();
                         ChattingDao a4 = ChattingDao.a();
-                        String str3 = searchUserModel2.uid;
-                        Intrinsics.c(str3, "user.uid");
-                        if (a4.c(2, Long.parseLong(str3)) != null) {
-                            String str4 = AppInfo.d().getString(R.string.friend_global_search_recent_chat) + MsgCommonUtils.a(AppInfo.d(), c2.msgTimestamp);
-                            Intrinsics.c(str4, "recentMsg.toString()");
-                            searchUserModel2.setRecentMsg(str4);
+                        String str4 = searchUserModel2.uid;
+                        Intrinsics.c(str4, "user.uid");
+                        if (a4.c(2, Long.parseLong(str4)) != null) {
+                            String str5 = AppInfo.d().getString(R.string.friend_global_search_recent_chat) + MsgCommonUtils.a(AppInfo.d(), c2.msgTimestamp);
+                            Intrinsics.c(str5, "recentMsg.toString()");
+                            searchUserModel2.setRecentMsg(str5);
                         }
                         SearchGlobalInfo searchGlobalInfo4 = new SearchGlobalInfo();
                         searchGlobalInfo4.a(2);
@@ -338,9 +333,9 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
                     arrayList3.addAll(arrayList2);
                 }
                 searchGlobalVM.a();
-                Succeed succeed2 = Succeed.f10631a;
+                ApiState apiState2 = Succeed.a;
             }
-            return Unit.f42314a;
+            return Unit.a;
         }
     }
 
@@ -352,49 +347,46 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
     public static final class AnonymousClass3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        int f33194a;
+        int f19503a;
         final /* synthetic */ SearchGlobalVM b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f33195c;
+        final /* synthetic */ String f19504c;
         private /* synthetic */ Object d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass3(SearchGlobalVM searchGlobalVM, String str, Continuation<? super AnonymousClass3> continuation) {
             super(2, continuation);
             this.b = searchGlobalVM;
-            this.f33195c = str;
+            this.f19504c = str;
         }
 
-        @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass3) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return create(coroutineScope, continuation).invokeSuspend(Unit.a);
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            AnonymousClass3 anonymousClass3 = new AnonymousClass3(this.b, this.f33195c, continuation);
+            Continuation<Unit> anonymousClass3 = new AnonymousClass3(this.b, this.f19504c, continuation);
             anonymousClass3.d = obj;
             return anonymousClass3;
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             ArrayList arrayList;
             List b;
             int i;
             ArrayList arrayList2;
             IntrinsicsKt.a();
-            if (this.f33194a == 0) {
+            if (this.f19503a == 0) {
                 ResultKt.a(obj);
                 CoroutineScope coroutineScope = (CoroutineScope) this.d;
                 arrayList = this.b.f;
                 arrayList.clear();
-                b = this.b.b(this.f33195c);
+                b = this.b.b(this.f19504c);
                 SearchGlobalVM searchGlobalVM = this.b;
-                i = searchGlobalVM.f33186c;
-                searchGlobalVM.f33186c = i | 1;
+                i = searchGlobalVM.f19495c;
+                searchGlobalVM.f19495c = i | 1;
                 CoroutineScopeKt.a(coroutineScope);
                 List list = b;
                 boolean z = true;
@@ -406,7 +398,7 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
                     arrayList2.addAll(list);
                 }
                 this.b.a();
-                return Unit.f42314a;
+                return Unit.a;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
@@ -420,51 +412,46 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
     public static final class AnonymousClass4 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        int f33196a;
+        int f19505a;
         final /* synthetic */ SearchGlobalVM b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f33197c;
+        final /* synthetic */ String f19506c;
         private /* synthetic */ Object d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass4(SearchGlobalVM searchGlobalVM, String str, Continuation<? super AnonymousClass4> continuation) {
             super(2, continuation);
             this.b = searchGlobalVM;
-            this.f33197c = str;
+            this.f19506c = str;
         }
 
-        @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass4) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return create(coroutineScope, continuation).invokeSuspend(Unit.a);
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            AnonymousClass4 anonymousClass4 = new AnonymousClass4(this.b, this.f33197c, continuation);
+            Continuation<Unit> anonymousClass4 = new AnonymousClass4(this.b, this.f19506c, continuation);
             anonymousClass4.d = obj;
             return anonymousClass4;
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             CoroutineScope coroutineScope;
             ArrayList arrayList;
-            Deferred b;
             int i;
             ArrayList arrayList2;
             Object a2 = IntrinsicsKt.a();
-            int i2 = this.f33196a;
+            int i2 = this.f19505a;
             if (i2 == 0) {
                 ResultKt.a(obj);
                 coroutineScope = (CoroutineScope) this.d;
                 arrayList = this.b.g;
                 arrayList.clear();
-                b = BuildersKt__Builders_commonKt.b(coroutineScope, Dispatchers.c(), null, new SearchGlobalVM$doSearch$2$4$circleJob$1(this.b, this.f33197c, null), 2, null);
                 this.d = coroutineScope;
-                this.f33196a = 1;
-                obj = b.a(this);
+                this.f19505a = 1;
+                obj = BuildersKt.b(coroutineScope, Dispatchers.c(), (CoroutineStart) null, new SearchGlobalVM$doSearch$2$4$circleJob$1(this.b, this.f19506c, null), 2, (Object) null).a((Continuation) this);
                 if (obj == a2) {
                     return a2;
                 }
@@ -476,8 +463,8 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
             }
             BluedEntityA bluedEntityA = (BluedEntityA) obj;
             SearchGlobalVM searchGlobalVM = this.b;
-            i = searchGlobalVM.f33186c;
-            searchGlobalVM.f33186c = i | 8;
+            i = searchGlobalVM.f19495c;
+            searchGlobalVM.f19495c = i | 8;
             if (bluedEntityA != null) {
                 SearchGlobalVM searchGlobalVM2 = this.b;
                 CoroutineScopeKt.a(coroutineScope);
@@ -499,7 +486,7 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
                 }
             }
             this.b.a();
-            return Unit.f42314a;
+            return Unit.a;
         }
     }
 
@@ -511,51 +498,46 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
     public static final class AnonymousClass5 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        int f33200a;
+        int f19509a;
         final /* synthetic */ SearchGlobalVM b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f33201c;
+        final /* synthetic */ String f19510c;
         private /* synthetic */ Object d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass5(SearchGlobalVM searchGlobalVM, String str, Continuation<? super AnonymousClass5> continuation) {
             super(2, continuation);
             this.b = searchGlobalVM;
-            this.f33201c = str;
+            this.f19510c = str;
         }
 
-        @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass5) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return create(coroutineScope, continuation).invokeSuspend(Unit.a);
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            AnonymousClass5 anonymousClass5 = new AnonymousClass5(this.b, this.f33201c, continuation);
+            Continuation<Unit> anonymousClass5 = new AnonymousClass5(this.b, this.f19510c, continuation);
             anonymousClass5.d = obj;
             return anonymousClass5;
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             CoroutineScope coroutineScope;
             ArrayList arrayList;
-            Deferred b;
             int i;
             ArrayList arrayList2;
             Object a2 = IntrinsicsKt.a();
-            int i2 = this.f33200a;
+            int i2 = this.f19509a;
             if (i2 == 0) {
                 ResultKt.a(obj);
                 coroutineScope = (CoroutineScope) this.d;
                 arrayList = this.b.h;
                 arrayList.clear();
-                b = BuildersKt__Builders_commonKt.b(coroutineScope, Dispatchers.c(), null, new SearchGlobalVM$doSearch$2$5$circleJob$1(this.b, this.f33201c, null), 2, null);
                 this.d = coroutineScope;
-                this.f33200a = 1;
-                obj = b.a(this);
+                this.f19509a = 1;
+                obj = BuildersKt.b(coroutineScope, Dispatchers.c(), (CoroutineStart) null, new SearchGlobalVM$doSearch$2$5$circleJob$1(this.b, this.f19510c, null), 2, (Object) null).a((Continuation) this);
                 if (obj == a2) {
                     return a2;
                 }
@@ -567,8 +549,8 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
             }
             BluedEntityA bluedEntityA = (BluedEntityA) obj;
             SearchGlobalVM searchGlobalVM = this.b;
-            i = searchGlobalVM.f33186c;
-            searchGlobalVM.f33186c = i | 16;
+            i = searchGlobalVM.f19495c;
+            searchGlobalVM.f19495c = i | 16;
             if (bluedEntityA != null) {
                 SearchGlobalVM searchGlobalVM2 = this.b;
                 CoroutineScopeKt.a(coroutineScope);
@@ -590,7 +572,7 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
                 }
             }
             this.b.a();
-            return Unit.f42314a;
+            return Unit.a;
         }
     }
 
@@ -599,34 +581,31 @@ public final class SearchGlobalVM$doSearch$2 extends SuspendLambda implements Fu
     public SearchGlobalVM$doSearch$2(SearchGlobalVM searchGlobalVM, String str, Continuation<? super SearchGlobalVM$doSearch$2> continuation) {
         super(2, continuation);
         this.b = searchGlobalVM;
-        this.f33189c = str;
+        this.f19498c = str;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((SearchGlobalVM$doSearch$2) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        SearchGlobalVM$doSearch$2 searchGlobalVM$doSearch$2 = new SearchGlobalVM$doSearch$2(this.b, this.f33189c, continuation);
+        Continuation<Unit> searchGlobalVM$doSearch$2 = new SearchGlobalVM$doSearch$2(this.b, this.f19498c, continuation);
         searchGlobalVM$doSearch$2.d = obj;
         return searchGlobalVM$doSearch$2;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         IntrinsicsKt.a();
-        if (this.f33188a == 0) {
+        if (this.f19497a == 0) {
             ResultKt.a(obj);
             CoroutineScope coroutineScope = (CoroutineScope) this.d;
-            BuildersKt__Builders_commonKt.a(coroutineScope, null, null, new AnonymousClass1(this.b, this.f33189c, null), 3, null);
-            BuildersKt__Builders_commonKt.a(coroutineScope, null, null, new AnonymousClass2(this.b, this.f33189c, null), 3, null);
-            BuildersKt__Builders_commonKt.a(coroutineScope, null, null, new AnonymousClass3(this.b, this.f33189c, null), 3, null);
-            BuildersKt__Builders_commonKt.a(coroutineScope, null, null, new AnonymousClass4(this.b, this.f33189c, null), 3, null);
-            BuildersKt__Builders_commonKt.a(coroutineScope, null, null, new AnonymousClass5(this.b, this.f33189c, null), 3, null);
-            return Unit.f42314a;
+            BuildersKt.a(coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new AnonymousClass1(this.b, this.f19498c, null), 3, (Object) null);
+            BuildersKt.a(coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new AnonymousClass2(this.b, this.f19498c, null), 3, (Object) null);
+            BuildersKt.a(coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new AnonymousClass3(this.b, this.f19498c, null), 3, (Object) null);
+            BuildersKt.a(coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new AnonymousClass4(this.b, this.f19498c, null), 3, (Object) null);
+            BuildersKt.a(coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new AnonymousClass5(this.b, this.f19498c, null), 3, (Object) null);
+            return Unit.a;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }

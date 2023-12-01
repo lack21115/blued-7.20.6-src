@@ -6,21 +6,21 @@ import com.tencent.map.geolocation.walkBikeDr.dr.TencentDrJni;
 public class o6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile o6 f3912a;
+    public static volatile o6 f3864a;
 
     public static o6 b() {
-        if (f3912a == null) {
+        if (f3864a == null) {
             synchronized (o6.class) {
                 try {
-                    if (f3912a == null) {
-                        f3912a = new o6();
+                    if (f3864a == null) {
+                        f3864a = new o6();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f3912a;
+        return f3864a;
     }
 
     public void a() {

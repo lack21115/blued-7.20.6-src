@@ -7,7 +7,7 @@ public abstract class s8 implements Cloneable {
     public float b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Class<?> f37999c;
+    public Class<?> f24308c;
     private Interpolator d = null;
     public boolean e = false;
 
@@ -17,13 +17,13 @@ public abstract class s8 implements Cloneable {
 
         public a(float f) {
             this.b = f;
-            this.f37999c = Double.TYPE;
+            this.f24308c = Double.TYPE;
         }
 
         public a(float f, double d) {
             this.b = f;
             this.f = d;
-            this.f37999c = Double.TYPE;
+            this.f24308c = Double.TYPE;
             this.e = true;
         }
 
@@ -60,13 +60,13 @@ public abstract class s8 implements Cloneable {
 
         public b(float f) {
             this.b = f;
-            this.f37999c = Integer.TYPE;
+            this.f24308c = Integer.TYPE;
         }
 
         public b(float f, int i) {
             this.b = f;
             this.f = i;
-            this.f37999c = Integer.TYPE;
+            this.f24308c = Integer.TYPE;
             this.e = true;
         }
 
@@ -106,7 +106,7 @@ public abstract class s8 implements Cloneable {
             this.f = obj;
             boolean z = obj != null;
             this.e = z;
-            this.f37999c = z ? obj.getClass() : Object.class;
+            this.f24308c = z ? obj.getClass() : Object.class;
         }
 
         @Override // com.tencent.mapsdk.internal.s8
@@ -172,7 +172,7 @@ public abstract class s8 implements Cloneable {
     }
 
     public Class d() {
-        return this.f37999c;
+        return this.f24308c;
     }
 
     public void d(float f) {

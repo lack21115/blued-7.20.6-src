@@ -22,7 +22,6 @@ import android.view.ViewGroup;
 import android.view.ViewGroupOverlay;
 import android.widget.ImageView;
 import com.android.internal.R;
-import com.huawei.hms.ads.jsb.constant.Constant;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-4181928-dex2jar.jar:android/widget/FastScroller.class */
@@ -95,7 +94,7 @@ public class FastScroller {
             view.setLeft(i);
         }
     };
-    private static Property<View, Integer> TOP = new IntProperty<View>(Constant.MAP_KEY_TOP) { // from class: android.widget.FastScroller.4
+    private static Property<View, Integer> TOP = new IntProperty<View>("top") { // from class: android.widget.FastScroller.4
         @Override // android.util.Property
         public Integer get(View view) {
             return Integer.valueOf(view.getTop());
@@ -483,7 +482,7 @@ public class FastScroller {
 
     private void postAutoHide() {
         this.mList.removeCallbacks(this.mDeferHide);
-        this.mList.postDelayed(this.mDeferHide, 1500L);
+        this.mList.postDelayed(this.mDeferHide, FADE_TIMEOUT);
     }
 
     private void refreshDrawablePressedState() {
@@ -1020,7 +1019,7 @@ public class FastScroller {
     }
 
     public void setStyle(int i) {
-        TypedArray obtainStyledAttributes = this.mList.getContext().obtainStyledAttributes(null, R.styleable.FastScroll, 16843767, i);
+        TypedArray obtainStyledAttributes = this.mList.getContext().obtainStyledAttributes(null, R.styleable.FastScroll, R.attr.fastScrollStyle, i);
         int indexCount = obtainStyledAttributes.getIndexCount();
         int i2 = 0;
         while (true) {

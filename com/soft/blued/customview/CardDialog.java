@@ -26,10 +26,10 @@ public class CardDialog extends Dialog {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        public Context f28367a;
+        public Context f14677a;
 
         /* renamed from: c  reason: collision with root package name */
-        private CirclePageIndicator f28368c;
+        private CirclePageIndicator f14678c;
         private View d;
         private ViewPager e;
         private int f;
@@ -41,13 +41,13 @@ public class CardDialog extends Dialog {
         private Timer k = new Timer();
 
         public Builder(Context context) {
-            this.f28367a = context;
+            this.f14677a = context;
         }
 
         public Builder a() {
-            View inflate = ((LayoutInflater) this.f28367a.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_card, (ViewGroup) null);
+            View inflate = ((LayoutInflater) this.f14677a.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_card, (ViewGroup) null);
             this.d = inflate;
-            this.f28368c = (CirclePageIndicator) inflate.findViewById(R.id.cpi_guide_dot);
+            this.f14678c = (CirclePageIndicator) inflate.findViewById(R.id.cpi_guide_dot);
             this.e = (ViewPager) this.d.findViewById(R.id.vp_binding_content);
             return this;
         }
@@ -86,8 +86,8 @@ public class CardDialog extends Dialog {
 
         public Builder e() {
             final ArrayList arrayList = new ArrayList();
-            View inflate = LayoutInflater.from(this.f28367a).inflate(R.layout.dialog_page_binding_phone, (ViewGroup) null);
-            View inflate2 = LayoutInflater.from(this.f28367a).inflate(R.layout.dialog_page_binding_email, (ViewGroup) null);
+            View inflate = LayoutInflater.from(this.f14677a).inflate(R.layout.dialog_page_binding_phone, (ViewGroup) null);
+            View inflate2 = LayoutInflater.from(this.f14677a).inflate(R.layout.dialog_page_binding_email, (ViewGroup) null);
             this.e.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.customview.CardDialog.Builder.1
                 @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrollStateChanged(int i) {
@@ -162,30 +162,30 @@ public class CardDialog extends Dialog {
                 }
             }, 5000L, 5000L);
             if (arrayList.size() == 1) {
-                this.f28368c.setVisibility(8);
+                this.f14678c.setVisibility(8);
                 return this;
             }
-            this.f28368c.setVisibility(0);
-            this.f28368c.setRadius(5.0f);
-            this.f28368c.setViewPager(this.e);
-            this.f28368c.setInterval(18);
-            this.f28368c.setFillColor(2131101291);
-            this.f28368c.setPageColor(2131101287);
-            this.f28368c.setStrokeColor(2131101287);
-            this.f28368c.setStrokeWidth(1.0f);
+            this.f14678c.setVisibility(0);
+            this.f14678c.setRadius(5.0f);
+            this.f14678c.setViewPager(this.e);
+            this.f14678c.setInterval(18);
+            this.f14678c.setFillColor(2131101291);
+            this.f14678c.setPageColor(2131101287);
+            this.f14678c.setStrokeColor(2131101287);
+            this.f14678c.setStrokeWidth(1.0f);
             return this;
         }
 
         public CardDialog f() {
-            CardDialog cardDialog = new CardDialog(this.f28367a);
+            CardDialog cardDialog = new CardDialog(this.f14677a);
             this.b = cardDialog;
             cardDialog.requestWindowFeature(1);
             this.b.setContentView(this.d);
             Window window = this.b.getWindow();
             WindowManager.LayoutParams attributes = window.getAttributes();
             window.setBackgroundDrawableResource(2131102388);
-            attributes.width = DensityUtils.a(this.f28367a, 240.0f);
-            attributes.height = DensityUtils.a(this.f28367a, 300.0f);
+            attributes.width = DensityUtils.a(this.f14677a, 240.0f);
+            attributes.height = DensityUtils.a(this.f14677a, 300.0f);
             window.setAttributes(attributes);
             if (this.i != null) {
                 ((TextView) this.d.findViewById(R.id.tv_button_pos)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.customview.CardDialog.Builder.4

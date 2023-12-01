@@ -111,9 +111,9 @@ public final class FitemMsgTextCommon extends FitemMsgAboutUser {
         L67:
             r0 = r9
             r1 = r7
-            r0.f42545a = r1
+            r0.a = r1
             r0 = r9
-            T r0 = r0.f42545a
+            T r0 = r0.a
             java.lang.CharSequence r0 = (java.lang.CharSequence) r0
             r7 = r0
             r0 = r7
@@ -131,7 +131,7 @@ public final class FitemMsgTextCommon extends FitemMsgAboutUser {
             if (r0 == 0) goto L93
             r0 = r9
             java.lang.String r1 = "#FFFFFF"
-            r0.f42545a = r1
+            r0.a = r1
         L93:
             r0 = r8
             com.blued.android.module.live_china.fitem.msgcontent.FitemMsgTextCommon$initBindView$1$1 r1 = new com.blued.android.module.live_china.fitem.msgcontent.FitemMsgTextCommon$initBindView$1$1

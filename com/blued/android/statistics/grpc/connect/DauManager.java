@@ -10,13 +10,12 @@ import com.blued.android.statistics.util.NamedRunnable;
 import com.blued.android.statistics.util.Utils;
 import com.blued.das.dau.DayActiveUserProtos;
 import com.blued.das.dau.ReportServiceGrpc;
+import com.efs.sdk.base.Constants;
 import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/grpc/connect/DauManager.class */
 public final class DauManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Runnable f18718a;
+    private Runnable a;
     private Dau.OnDauListener b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -35,11 +34,11 @@ public final class DauManager {
             if (StatConfig.k()) {
                 StatConfig.b().b("DAU start-request @", Thread.currentThread().getName(), "\n", this.b);
             }
-            ReportServiceGrpc.ReportServiceBlockingStub reportServiceBlockingStub = (ReportServiceGrpc.ReportServiceBlockingStub) ((ReportServiceGrpc.ReportServiceBlockingStub) ((ReportServiceGrpc.ReportServiceBlockingStub) ConnectManager.a(ReportServiceGrpc.newBlockingStub(ConnectManager.a()))).withCompression("gzip")).withDeadlineAfter(30L, TimeUnit.SECONDS);
+            ReportServiceGrpc.ReportServiceBlockingStub withDeadlineAfter = ConnectManager.a(ReportServiceGrpc.newBlockingStub(ConnectManager.a())).withCompression(Constants.CP_GZIP).withDeadlineAfter(30L, TimeUnit.SECONDS);
             DayActiveUserProtos.Response response2 = null;
             long uptimeMillis = SystemClock.uptimeMillis();
             try {
-                DayActiveUserProtos.Response report = reportServiceBlockingStub.report(this.b);
+                DayActiveUserProtos.Response report = withDeadlineAfter.report(this.b);
                 response = report;
                 if (report != null) {
                     response2 = report;
@@ -63,16 +62,14 @@ public final class DauManager {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/grpc/connect/DauManager$InstanceHolder.class */
     public static class InstanceHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final DauManager f18721a = new DauManager();
+        private static final DauManager a = new DauManager();
 
         private InstanceHolder() {
         }
     }
 
     private DauManager() {
-        this.f18718a = new Runnable() { // from class: com.blued.android.statistics.grpc.connect.DauManager.1
+        this.a = new Runnable() { // from class: com.blued.android.statistics.grpc.connect.DauManager.1
             @Override // java.lang.Runnable
             public void run() {
                 StatThreadManager.a(new DauRunnable(DayActiveUserProtos.Request.newBuilder().setCommon(BluedStatistics.a().b()).setName(DayActiveUserProtos.NAME.REGULAR).build()));
@@ -80,14 +77,14 @@ public final class DauManager {
                     DauManager.this.b.a(DayActiveUserProtos.NAME.REGULAR);
                 }
                 if (StatConfig.j()) {
-                    Utils.a(DauManager.this.f18718a, 300000L);
+                    Utils.a(DauManager.this.a, 300000L);
                 }
             }
         };
     }
 
     public static DauManager a() {
-        return InstanceHolder.f18721a;
+        return InstanceHolder.a;
     }
 
     private void a(DayActiveUserProtos.Request.Builder builder, boolean z) {
@@ -98,9 +95,9 @@ public final class DauManager {
             if (onDauListener != null) {
                 onDauListener.a(builder.getName());
             }
-            Utils.b(this.f18718a);
+            Utils.b(this.a);
             if (z) {
-                Utils.a(this.f18718a, 300000L);
+                Utils.a(this.a, 300000L);
             }
         }
     }

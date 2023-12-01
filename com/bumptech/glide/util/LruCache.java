@@ -8,20 +8,20 @@ import java.util.Map;
 public class LruCache<T, Y> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<T, Y> f21104a = new LinkedHashMap(100, 0.75f, true);
+    private final Map<T, Y> f7498a = new LinkedHashMap(100, 0.75f, true);
     private final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f21105c;
+    private long f7499c;
     private long d;
 
     public LruCache(long j) {
         this.b = j;
-        this.f21105c = j;
+        this.f7499c = j;
     }
 
     private void d() {
-        a(this.f21105c);
+        a(this.f7499c);
     }
 
     public int a(Y y) {
@@ -40,7 +40,7 @@ public class LruCache<T, Y> {
     public void a(long j) {
         synchronized (this) {
             while (this.d > j) {
-                Iterator<Map.Entry<T, Y>> it = this.f21104a.entrySet().iterator();
+                Iterator<Map.Entry<T, Y>> it = this.f7498a.entrySet().iterator();
                 Map.Entry<T, Y> next = it.next();
                 Y value = next.getValue();
                 this.d -= a((LruCache<T, Y>) value);
@@ -57,7 +57,7 @@ public class LruCache<T, Y> {
     public long b() {
         long j;
         synchronized (this) {
-            j = this.f21105c;
+            j = this.f7499c;
         }
         return j;
     }
@@ -65,7 +65,7 @@ public class LruCache<T, Y> {
     public Y b(T t) {
         Y y;
         synchronized (this) {
-            y = this.f21104a.get(t);
+            y = this.f7498a.get(t);
         }
         return y;
     }
@@ -73,14 +73,14 @@ public class LruCache<T, Y> {
     public Y b(T t, Y y) {
         synchronized (this) {
             long a2 = a((LruCache<T, Y>) y);
-            if (a2 >= this.f21105c) {
+            if (a2 >= this.f7499c) {
                 a(t, y);
                 return null;
             }
             if (y != null) {
                 this.d += a2;
             }
-            Y put = this.f21104a.put(t, y);
+            Y put = this.f7498a.put(t, y);
             if (put != null) {
                 this.d -= a((LruCache<T, Y>) put);
                 if (!put.equals(y)) {
@@ -95,7 +95,7 @@ public class LruCache<T, Y> {
     public Y c(T t) {
         Y remove;
         synchronized (this) {
-            remove = this.f21104a.remove(t);
+            remove = this.f7498a.remove(t);
             if (remove != null) {
                 this.d -= a((LruCache<T, Y>) remove);
             }

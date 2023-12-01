@@ -7,21 +7,21 @@ import com.tencent.qimei.sdk.Qimei;
 public class s implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ IAsyncQimeiListener f38395a;
+    public final /* synthetic */ IAsyncQimeiListener f24704a;
     public final /* synthetic */ u b;
 
     public s(u uVar, IAsyncQimeiListener iAsyncQimeiListener) {
         this.b = uVar;
-        this.f38395a = iAsyncQimeiListener;
+        this.f24704a = iAsyncQimeiListener;
     }
 
     @Override // java.lang.Runnable
     public void run() {
         Qimei qimei = this.b.getQimei();
         if (qimei == null || qimei.isEmpty()) {
-            this.b.a(this.f38395a);
+            this.b.a(this.f24704a);
         } else {
-            this.f38395a.onQimeiDispatch(qimei);
+            this.f24704a.onQimeiDispatch(qimei);
         }
     }
 }

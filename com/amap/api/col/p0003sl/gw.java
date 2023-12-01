@@ -19,21 +19,17 @@ import java.util.List;
 /* renamed from: com.amap.api.col.3sl.gw  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gw.class */
 public final class gw implements IGeocodeSearch {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f5014a;
+    private Context a;
     private GeocodeSearch.OnGeocodeSearchListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Handler f5015c;
+    private Handler c;
 
     public gw(Context context) throws AMapException {
-        hy a2 = hx.a(context, fd.a(false));
-        if (a2.f5127a != hx.c.SuccessCode) {
-            throw new AMapException(a2.b, 1, a2.b, a2.f5127a.a());
+        hy a = hx.a(context, fd.a(false));
+        if (a.a != hx.c.SuccessCode) {
+            throw new AMapException(a.b, 1, a.b, a.a.a());
         }
-        this.f5014a = context.getApplicationContext();
-        this.f5015c = fp.a();
+        this.a = context.getApplicationContext();
+        this.c = fp.a();
     }
 
     private static boolean a(RegeocodeQuery regeocodeQuery) {
@@ -43,9 +39,9 @@ public final class gw implements IGeocodeSearch {
     @Override // com.amap.api.services.interfaces.IGeocodeSearch
     public final RegeocodeAddress getFromLocation(RegeocodeQuery regeocodeQuery) throws AMapException {
         try {
-            fn.a(this.f5014a);
+            fn.a(this.a);
             if (a(regeocodeQuery)) {
-                return new ge(this.f5014a, regeocodeQuery).d();
+                return new ge(this.a, regeocodeQuery).d();
             }
             throw new AMapException("无效的参数 - IllegalArgumentException");
         } catch (AMapException e) {
@@ -67,12 +63,12 @@ public final class gw implements IGeocodeSearch {
                         fp.i iVar = new fp.i();
                         iVar.b = gw.this.b;
                         obtainMessage.obj = iVar;
-                        iVar.f4969a = new RegeocodeResult(regeocodeQuery, gw.this.getFromLocation(regeocodeQuery));
+                        iVar.a = new RegeocodeResult(regeocodeQuery, gw.this.getFromLocation(regeocodeQuery));
                         obtainMessage.arg2 = 1000;
                     } catch (AMapException e) {
                         obtainMessage.arg2 = e.getErrorCode();
                     } finally {
-                        gw.this.f5015c.sendMessage(obtainMessage);
+                        gw.this.c.sendMessage(obtainMessage);
                     }
                 }
             });
@@ -84,9 +80,9 @@ public final class gw implements IGeocodeSearch {
     @Override // com.amap.api.services.interfaces.IGeocodeSearch
     public final List<GeocodeAddress> getFromLocationName(GeocodeQuery geocodeQuery) throws AMapException {
         try {
-            fn.a(this.f5014a);
+            fn.a(this.a);
             if (geocodeQuery != null) {
-                return new fk(this.f5014a, geocodeQuery).d();
+                return new fk(this.a, geocodeQuery).d();
             }
             throw new AMapException("无效的参数 - IllegalArgumentException");
         } catch (AMapException e) {
@@ -109,11 +105,11 @@ public final class gw implements IGeocodeSearch {
                         fp.e eVar = new fp.e();
                         eVar.b = gw.this.b;
                         obtainMessage.obj = eVar;
-                        eVar.f4965a = new GeocodeResult(geocodeQuery, gw.this.getFromLocationName(geocodeQuery));
+                        eVar.a = new GeocodeResult(geocodeQuery, gw.this.getFromLocationName(geocodeQuery));
                     } catch (AMapException e) {
                         obtainMessage.arg2 = e.getErrorCode();
                     } finally {
-                        gw.this.f5015c.sendMessage(obtainMessage);
+                        gw.this.c.sendMessage(obtainMessage);
                     }
                 }
             });

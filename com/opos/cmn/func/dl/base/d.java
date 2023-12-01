@@ -8,11 +8,11 @@ import com.opos.cmn.func.dl.base.c.d;
 public class d implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24905a = d.class.getSimpleName();
+    private static final String f11217a = d.class.getSimpleName();
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f24906c;
+    private int f11218c;
     private int d;
     private int e;
     private boolean f;
@@ -40,12 +40,12 @@ public class d implements c {
     }
 
     public int a() {
-        return this.f24906c;
+        return this.f11218c;
     }
 
     @Override // com.opos.cmn.func.dl.base.c
     public void a(DownloadConfig downloadConfig) {
-        com.opos.cmn.an.f.a.b(f24905a, "---init!");
+        com.opos.cmn.an.f.a.b(f11217a, "---init!");
         if (this.b) {
             return;
         }
@@ -54,7 +54,7 @@ public class d implements c {
         if (downloadConfig == null) {
             downloadConfig2 = new DownloadConfig();
         }
-        this.f24906c = downloadConfig2.a();
+        this.f11218c = downloadConfig2.a();
         this.d = downloadConfig2.b();
         this.e = downloadConfig2.c();
         this.f = downloadConfig2.d();
@@ -63,7 +63,7 @@ public class d implements c {
         this.i = downloadConfig2.g();
         this.e = Math.min(Math.max(1, this.e), 5);
         this.d = Math.min(Math.max(1, this.d), 3);
-        this.f24906c = Math.min(Math.max(1, this.f24906c), 5);
+        this.f11218c = Math.min(Math.max(1, this.f11218c), 5);
         if (this.n == null) {
             this.n = new c.a();
         }
@@ -75,7 +75,7 @@ public class d implements c {
 
     @Override // com.opos.cmn.func.dl.base.c
     public void a(DownloadRequest downloadRequest) {
-        com.opos.cmn.an.f.a.b(f24905a, "---start!");
+        com.opos.cmn.an.f.a.b(f11217a, "---start!");
         i();
         this.m.a(downloadRequest, false);
     }
@@ -83,7 +83,7 @@ public class d implements c {
     @Override // com.opos.cmn.func.dl.base.c
     public void a(b bVar) {
         i();
-        this.l.f24933a.add(bVar);
+        this.l.f11245a.add(bVar);
     }
 
     public int b() {
@@ -92,7 +92,7 @@ public class d implements c {
 
     @Override // com.opos.cmn.func.dl.base.c
     public void b(DownloadRequest downloadRequest) {
-        com.opos.cmn.an.f.a.b(f24905a, "---forceContinue!");
+        com.opos.cmn.an.f.a.b(f11217a, "---forceContinue!");
         i();
         this.m.a(downloadRequest, true);
     }
@@ -100,7 +100,7 @@ public class d implements c {
     @Override // com.opos.cmn.func.dl.base.c
     public void b(b bVar) {
         i();
-        this.l.f24933a.remove(bVar);
+        this.l.f11245a.remove(bVar);
     }
 
     public float c() {
@@ -109,11 +109,11 @@ public class d implements c {
 
     @Override // com.opos.cmn.func.dl.base.c
     public void c(final DownloadRequest downloadRequest) {
-        com.opos.cmn.an.f.a.b(f24905a, "---pause!");
+        com.opos.cmn.an.f.a.b(f11217a, "---pause!");
         i();
         final com.opos.cmn.func.dl.base.f.a aVar = this.m;
         if (downloadRequest == null) {
-            com.opos.cmn.an.f.a.d(com.opos.cmn.func.dl.base.f.a.f24923a, "Request is null,do nothing");
+            com.opos.cmn.an.f.a.d(com.opos.cmn.func.dl.base.f.a.f11235a, "Request is null,do nothing");
         } else {
             com.opos.cmn.an.j.b.a(new Runnable() { // from class: com.opos.cmn.func.dl.base.f.a.2
                 @Override // java.lang.Runnable
@@ -133,11 +133,11 @@ public class d implements c {
 
     @Override // com.opos.cmn.func.dl.base.c
     public void d(final DownloadRequest downloadRequest) {
-        com.opos.cmn.an.f.a.b(f24905a, "---cancel!");
+        com.opos.cmn.an.f.a.b(f11217a, "---cancel!");
         i();
         final com.opos.cmn.func.dl.base.f.a aVar = this.m;
         if (downloadRequest == null) {
-            com.opos.cmn.an.f.a.d(com.opos.cmn.func.dl.base.f.a.f24923a, "Request is null,do nothing");
+            com.opos.cmn.an.f.a.d(com.opos.cmn.func.dl.base.f.a.f11235a, "Request is null,do nothing");
         } else {
             com.opos.cmn.an.j.b.a(new Runnable() { // from class: com.opos.cmn.func.dl.base.f.a.3
                 @Override // java.lang.Runnable

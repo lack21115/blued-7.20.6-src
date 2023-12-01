@@ -1,6 +1,5 @@
 package com.google.common.hash;
 
-import android.widget.ExpandableListView;
 import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
@@ -39,7 +38,7 @@ public final class Murmur3_32HashFunction extends AbstractHashFunction implement
         private void update(int i, long j) {
             long j2 = this.buffer;
             int i2 = this.shift;
-            long j3 = ((j & ExpandableListView.PACKED_POSITION_VALUE_NULL) << i2) | j2;
+            long j3 = ((j & 4294967295L) << i2) | j2;
             this.buffer = j3;
             int i3 = i2 + (i * 8);
             this.shift = i3;

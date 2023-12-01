@@ -27,8 +27,8 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
     public static final int COUNTDOWN_FIELD_NUMBER = 3;
     private static final EndPKExtra DEFAULT_INSTANCE = new EndPKExtra();
     private static final Parser<EndPKExtra> PARSER = new AbstractParser<EndPKExtra>() { // from class: cn.irisgw.live.EndPKExtra.1
-        @Override // com.google.protobuf.Parser
-        public EndPKExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public EndPKExtra m2148parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new EndPKExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -102,7 +102,7 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                 return this;
             }
             ensureRecordsIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.records_);
+            AbstractMessageLite.Builder.addAll(iterable, this.records_);
             onChanged();
             return this;
         }
@@ -110,11 +110,11 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         public Builder addRecords(int i, EndRecord.Builder builder) {
             RepeatedFieldBuilderV3<EndRecord, EndRecord.Builder, EndRecordOrBuilder> repeatedFieldBuilderV3 = this.recordsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m2199build());
                 return this;
             }
             ensureRecordsIsMutable();
-            this.records_.add(i, builder.build());
+            this.records_.add(i, builder.m2199build());
             onChanged();
             return this;
         }
@@ -137,11 +137,11 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         public Builder addRecords(EndRecord.Builder builder) {
             RepeatedFieldBuilderV3<EndRecord, EndRecord.Builder, EndRecordOrBuilder> repeatedFieldBuilderV3 = this.recordsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m2199build());
                 return this;
             }
             ensureRecordsIsMutable();
-            this.records_.add(builder.build());
+            this.records_.add(builder.m2199build());
             onChanged();
             return this;
         }
@@ -169,22 +169,22 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return getRecordsFieldBuilder().addBuilder(i, EndRecord.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m2150addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public EndPKExtra build() {
-            EndPKExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public EndPKExtra m2152build() {
+            EndPKExtra m2154buildPartial = m2154buildPartial();
+            if (m2154buildPartial.isInitialized()) {
+                return m2154buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m2154buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public EndPKExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public EndPKExtra m2154buildPartial() {
             EndPKExtra endPKExtra = new EndPKExtra(this);
             endPKExtra.type_ = this.type_;
             endPKExtra.winner_ = this.winner_;
@@ -204,12 +204,12 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return endPKExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m2158clear() {
             super.clear();
             this.type_ = 0;
             this.winner_ = 0;
-            this.countdown_ = 0L;
+            this.countdown_ = EndPKExtra.serialVersionUID;
             RepeatedFieldBuilderV3<EndRecord, EndRecord.Builder, EndRecordOrBuilder> repeatedFieldBuilderV3 = this.recordsBuilder_;
             if (repeatedFieldBuilderV3 == null) {
                 this.records_ = Collections.emptyList();
@@ -222,18 +222,18 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         }
 
         public Builder clearCountdown() {
-            this.countdown_ = 0L;
+            this.countdown_ = EndPKExtra.serialVersionUID;
             onChanged();
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m2160clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m2163clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -267,10 +267,9 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m2169clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.EndPKExtraOrBuilder
@@ -278,12 +277,11 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return this.countdown_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public EndPKExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public EndPKExtra m2171getDefaultInstanceForType() {
             return EndPKExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_EndPKExtra_descriptor;
         }
@@ -322,7 +320,7 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         @Override // cn.irisgw.live.EndPKExtraOrBuilder
         public EndRecordOrBuilder getRecordsOrBuilder(int i) {
             RepeatedFieldBuilderV3<EndRecord, EndRecord.Builder, EndRecordOrBuilder> repeatedFieldBuilderV3 = this.recordsBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.records_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.records_.get(i) : (EndRecordOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.EndPKExtraOrBuilder
@@ -341,12 +339,10 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return this.winner_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_EndPKExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(EndPKExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -361,7 +357,7 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             if (endPKExtra.getWinner() != 0) {
                 setWinner(endPKExtra.getWinner());
             }
-            if (endPKExtra.getCountdown() != 0) {
+            if (endPKExtra.getCountdown() != EndPKExtra.serialVersionUID) {
                 setCountdown(endPKExtra.getCountdown());
             }
             if (this.recordsBuilder_ == null) {
@@ -393,18 +389,18 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             if (endPKExtra.getPkType() != 0) {
                 setPkType(endPKExtra.getPkType());
             }
-            mergeUnknownFields(endPKExtra.unknownFields);
+            m2180mergeUnknownFields(endPKExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.EndPKExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.EndPKExtra.Builder m2177mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -449,11 +445,11 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.EndPKExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.EndPKExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.EndPKExtra.Builder.m2177mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.EndPKExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m2176mergeFrom(Message message) {
             if (message instanceof EndPKExtra) {
                 return mergeFrom((EndPKExtra) message);
             }
@@ -461,8 +457,8 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m2180mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -484,8 +480,8 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m2182setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -498,11 +494,11 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         public Builder setRecords(int i, EndRecord.Builder builder) {
             RepeatedFieldBuilderV3<EndRecord, EndRecord.Builder, EndRecordOrBuilder> repeatedFieldBuilderV3 = this.recordsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m2199build());
                 return this;
             }
             ensureRecordsIsMutable();
-            this.records_.set(i, builder.build());
+            this.records_.set(i, builder.m2199build());
             onChanged();
             return this;
         }
@@ -522,8 +518,8 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m2184setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -533,8 +529,8 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m2186setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
 
@@ -552,8 +548,8 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         public static final int AVATAR_FIELD_NUMBER = 6;
         private static final EndRecord DEFAULT_INSTANCE = new EndRecord();
         private static final Parser<EndRecord> PARSER = new AbstractParser<EndRecord>() { // from class: cn.irisgw.live.EndPKExtra.EndRecord.1
-            @Override // com.google.protobuf.Parser
-            public EndRecord parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public EndRecord m2195parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new EndRecord(codedInputStream, extensionRegistryLite);
             }
         };
@@ -610,22 +606,22 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                 boolean unused = EndRecord.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m2197addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public EndRecord build() {
-                EndRecord buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public EndRecord m2199build() {
+                EndRecord m2201buildPartial = m2201buildPartial();
+                if (m2201buildPartial.isInitialized()) {
+                    return m2201buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m2201buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public EndRecord buildPartial() {
+            /* renamed from: buildPartial */
+            public EndRecord m2201buildPartial() {
                 EndRecord endRecord = new EndRecord(this);
                 endRecord.uid_ = this.uid_;
                 endRecord.score_ = this.score_;
@@ -640,8 +636,8 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                 return endRecord;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m2205clear() {
                 super.clear();
                 this.uid_ = 0;
                 this.score_ = 0;
@@ -673,13 +669,13 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m2207clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m2210clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -719,10 +715,9 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m2216clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.EndPKExtra.EndRecordOrBuilder
@@ -791,12 +786,11 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public EndRecord getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public EndRecord m2218getDefaultInstanceForType() {
                 return EndRecord.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_EndPKExtra_EndRecord_descriptor;
             }
@@ -831,12 +825,10 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                 return this.winStreak_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_EndPKExtra_EndRecord_fieldAccessorTable.ensureFieldAccessorsInitialized(EndRecord.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -875,18 +867,18 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                 if (endRecord.getTotalBeans() != 0) {
                     setTotalBeans(endRecord.getTotalBeans());
                 }
-                mergeUnknownFields(endRecord.unknownFields);
+                m2227mergeUnknownFields(endRecord.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.EndPKExtra.EndRecord.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.EndPKExtra.EndRecord.Builder m2224mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -931,11 +923,11 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.EndPKExtra.EndRecord.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.EndPKExtra$EndRecord$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.EndPKExtra.EndRecord.Builder.m2224mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.EndPKExtra$EndRecord$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m2223mergeFrom(Message message) {
                 if (message instanceof EndRecord) {
                     return mergeFrom((EndRecord) message);
                 }
@@ -943,8 +935,8 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m2227mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -1005,13 +997,13 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m2229setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m2231setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -1045,8 +1037,8 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m2233setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
 
@@ -1098,10 +1090,10 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                             }
                         }
                         z = true;
-                    } catch (InvalidProtocolBufferException e) {
-                        throw e.setUnfinishedMessage(this);
-                    } catch (IOException e2) {
-                        throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                    } catch (IOException e) {
+                        throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                    } catch (InvalidProtocolBufferException e2) {
+                        throw e2.setUnfinishedMessage(this);
                     }
                 } finally {
                     this.unknownFields = newBuilder.build();
@@ -1124,66 +1116,65 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m2194toBuilder();
         }
 
         public static Builder newBuilder(EndRecord endRecord) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(endRecord);
+            return DEFAULT_INSTANCE.m2194toBuilder().mergeFrom(endRecord);
         }
 
         public static EndRecord parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (EndRecord) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static EndRecord parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (EndRecord) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static EndRecord parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (EndRecord) PARSER.parseFrom(byteString);
         }
 
         public static EndRecord parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (EndRecord) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static EndRecord parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (EndRecord) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static EndRecord parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (EndRecord) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static EndRecord parseFrom(InputStream inputStream) throws IOException {
-            return (EndRecord) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static EndRecord parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (EndRecord) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static EndRecord parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (EndRecord) PARSER.parseFrom(byteBuffer);
         }
 
         public static EndRecord parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (EndRecord) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static EndRecord parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (EndRecord) PARSER.parseFrom(bArr);
         }
 
         public static EndRecord parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (EndRecord) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<EndRecord> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1261,12 +1252,11 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public EndRecord getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public EndRecord m2189getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<EndRecord> getParserForType() {
             return PARSER;
         }
@@ -1276,7 +1266,6 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return this.score_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1349,7 +1338,6 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
@@ -1359,7 +1347,6 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return this.winStreak_;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1369,12 +1356,10 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_EndPKExtra_EndRecord_fieldAccessorTable.ensureFieldAccessorsInitialized(EndRecord.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1387,28 +1372,26 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m2192newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m2191newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new EndRecord();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m2194toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = this.uid_;
             if (i != 0) {
@@ -1513,10 +1496,10 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
                         }
                     }
                     z = true;
-                } catch (InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (IOException e2) {
-                    throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                } catch (IOException e) {
+                    throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                } catch (InvalidProtocolBufferException e2) {
+                    throw e2.setUnfinishedMessage(this);
                 }
             } catch (Throwable th) {
                 if (z3 & true) {
@@ -1548,66 +1531,65 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m2147toBuilder();
     }
 
     public static Builder newBuilder(EndPKExtra endPKExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(endPKExtra);
+        return DEFAULT_INSTANCE.m2147toBuilder().mergeFrom(endPKExtra);
     }
 
     public static EndPKExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (EndPKExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static EndPKExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (EndPKExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static EndPKExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (EndPKExtra) PARSER.parseFrom(byteString);
     }
 
     public static EndPKExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (EndPKExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static EndPKExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (EndPKExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static EndPKExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (EndPKExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static EndPKExtra parseFrom(InputStream inputStream) throws IOException {
-        return (EndPKExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static EndPKExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (EndPKExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static EndPKExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (EndPKExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static EndPKExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (EndPKExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static EndPKExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (EndPKExtra) PARSER.parseFrom(bArr);
     }
 
     public static EndPKExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (EndPKExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<EndPKExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1624,12 +1606,11 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         return this.countdown_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public EndPKExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public EndPKExtra m2142getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<EndPKExtra> getParserForType() {
         return PARSER;
     }
@@ -1664,7 +1645,6 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         return this.records_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1680,7 +1660,7 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         long j = this.countdown_;
         int i5 = i4;
         int i6 = 0;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             i5 = i4 + CodedOutputStream.computeUInt64Size(3, j);
             i6 = 0;
         }
@@ -1703,7 +1683,6 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         return this.type_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1713,7 +1692,6 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         return this.winner_;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1728,12 +1706,10 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         return pkType;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_EndPKExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(EndPKExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1746,28 +1722,26 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m2145newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m2144newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new EndPKExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m2147toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.type_;
         if (i != 0) {
@@ -1778,7 +1752,7 @@ public final class EndPKExtra extends GeneratedMessageV3 implements EndPKExtraOr
             codedOutputStream.writeUInt32(2, i2);
         }
         long j = this.countdown_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             codedOutputStream.writeUInt64(3, j);
         }
         int i3 = 0;

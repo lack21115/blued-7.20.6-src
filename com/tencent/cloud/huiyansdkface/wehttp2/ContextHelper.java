@@ -6,15 +6,15 @@ import android.content.Context;
 public class ContextHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile Context f36079a;
+    private static volatile Context f22388a;
 
     public static Context getContext() {
-        return f36079a;
+        return f22388a;
     }
 
     public static void setContext(Context context) {
         if (context != null) {
-            f36079a = context.getApplicationContext();
+            f22388a = context.getApplicationContext();
         }
     }
 }

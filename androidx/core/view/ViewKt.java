@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import androidx.exifinterface.media.ExifInterface;
+import com.anythink.expressad.a;
+import com.igexin.push.core.b;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -17,87 +19,87 @@ import kotlin.sequences.SequencesKt;
 @Metadata
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/view/ViewKt.class */
 public final class ViewKt {
-    public static final void doOnAttach(final View view, final Function1<? super View, Unit> action) {
+    public static final void doOnAttach(final View view, final Function1<? super View, Unit> function1) {
         Intrinsics.e(view, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function1, "action");
         if (ViewCompat.isAttachedToWindow(view)) {
-            action.invoke(view);
+            function1.invoke(view);
         } else {
             view.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: androidx.core.view.ViewKt$doOnAttach$1
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewAttachedToWindow(View view2) {
-                    Intrinsics.e(view2, "view");
-                    View.this.removeOnAttachStateChangeListener(this);
-                    action.invoke(view2);
+                    Intrinsics.e(view2, a.B);
+                    view.removeOnAttachStateChangeListener(this);
+                    function1.invoke(view2);
                 }
 
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewDetachedFromWindow(View view2) {
-                    Intrinsics.e(view2, "view");
+                    Intrinsics.e(view2, a.B);
                 }
             });
         }
     }
 
-    public static final void doOnDetach(final View view, final Function1<? super View, Unit> action) {
+    public static final void doOnDetach(final View view, final Function1<? super View, Unit> function1) {
         Intrinsics.e(view, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function1, "action");
         if (ViewCompat.isAttachedToWindow(view)) {
             view.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: androidx.core.view.ViewKt$doOnDetach$1
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewAttachedToWindow(View view2) {
-                    Intrinsics.e(view2, "view");
+                    Intrinsics.e(view2, a.B);
                 }
 
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewDetachedFromWindow(View view2) {
-                    Intrinsics.e(view2, "view");
-                    View.this.removeOnAttachStateChangeListener(this);
-                    action.invoke(view2);
+                    Intrinsics.e(view2, a.B);
+                    view.removeOnAttachStateChangeListener(this);
+                    function1.invoke(view2);
                 }
             });
         } else {
-            action.invoke(view);
+            function1.invoke(view);
         }
     }
 
-    public static final void doOnLayout(View view, final Function1<? super View, Unit> action) {
+    public static final void doOnLayout(View view, final Function1<? super View, Unit> function1) {
         Intrinsics.e(view, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function1, "action");
         if (!ViewCompat.isLaidOut(view) || view.isLayoutRequested()) {
             view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: androidx.core.view.ViewKt$doOnLayout$$inlined$doOnNextLayout$1
                 @Override // android.view.View.OnLayoutChangeListener
                 public void onLayoutChange(View view2, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-                    Intrinsics.e(view2, "view");
+                    Intrinsics.e(view2, a.B);
                     view2.removeOnLayoutChangeListener(this);
-                    Function1.this.invoke(view2);
+                    function1.invoke(view2);
                 }
             });
         } else {
-            action.invoke(view);
+            function1.invoke(view);
         }
     }
 
-    public static final void doOnNextLayout(View view, final Function1<? super View, Unit> action) {
+    public static final void doOnNextLayout(View view, final Function1<? super View, Unit> function1) {
         Intrinsics.e(view, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function1, "action");
         view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: androidx.core.view.ViewKt$doOnNextLayout$1
             @Override // android.view.View.OnLayoutChangeListener
             public void onLayoutChange(View view2, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-                Intrinsics.e(view2, "view");
+                Intrinsics.e(view2, a.B);
                 view2.removeOnLayoutChangeListener(this);
-                action.invoke(view2);
+                function1.invoke(view2);
             }
         });
     }
 
-    public static final OneShotPreDrawListener doOnPreDraw(final View view, final Function1<? super View, Unit> action) {
+    public static final OneShotPreDrawListener doOnPreDraw(final View view, final Function1<? super View, Unit> function1) {
         Intrinsics.e(view, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function1, "action");
         OneShotPreDrawListener add = OneShotPreDrawListener.add(view, new Runnable() { // from class: androidx.core.view.ViewKt$doOnPreDraw$1
             @Override // java.lang.Runnable
             public final void run() {
-                action.invoke(view);
+                function1.invoke(view);
             }
         });
         Intrinsics.c(add, "View.doOnPreDraw(\n    crossinline action: (view: View) -> Unit\n): OneShotPreDrawListener = OneShotPreDrawListener.add(this) { action(this) }");
@@ -106,7 +108,7 @@ public final class ViewKt {
 
     public static final Bitmap drawToBitmap(View view, Bitmap.Config config) {
         Intrinsics.e(view, "<this>");
-        Intrinsics.e(config, "config");
+        Intrinsics.e(config, b.U);
         if (ViewCompat.isLaidOut(view)) {
             Bitmap createBitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), config);
             Intrinsics.c(createBitmap, "createBitmap(width, height, config)");
@@ -208,26 +210,26 @@ public final class ViewKt {
         return view.getVisibility() == 0;
     }
 
-    public static final Runnable postDelayed(View view, long j, final Function0<Unit> action) {
+    public static final Runnable postDelayed(View view, long j, final Function0<Unit> function0) {
         Intrinsics.e(view, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function0, "action");
         Runnable runnable = new Runnable() { // from class: androidx.core.view.ViewKt$postDelayed$runnable$1
             @Override // java.lang.Runnable
             public final void run() {
-                action.invoke();
+                function0.invoke();
             }
         };
         view.postDelayed(runnable, j);
         return runnable;
     }
 
-    public static final Runnable postOnAnimationDelayed(View view, long j, final Function0<Unit> action) {
+    public static final Runnable postOnAnimationDelayed(View view, long j, final Function0<Unit> function0) {
         Intrinsics.e(view, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function0, "action");
         Runnable runnable = new Runnable() { // from class: androidx.core.view.ViewKt$postOnAnimationDelayed$runnable$1
             @Override // java.lang.Runnable
             public final void run() {
-                action.invoke();
+                function0.invoke();
             }
         };
         view.postOnAnimationDelayed(runnable, j);
@@ -254,24 +256,24 @@ public final class ViewKt {
         view.setVisibility(z ? 0 : 8);
     }
 
-    public static final void updateLayoutParams(View view, Function1<? super ViewGroup.LayoutParams, Unit> block) {
+    public static final void updateLayoutParams(View view, Function1<? super ViewGroup.LayoutParams, Unit> function1) {
         Intrinsics.e(view, "<this>");
-        Intrinsics.e(block, "block");
+        Intrinsics.e(function1, "block");
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.LayoutParams");
         }
-        block.invoke(layoutParams);
+        function1.invoke(layoutParams);
         view.setLayoutParams(layoutParams);
     }
 
-    public static final /* synthetic */ <T extends ViewGroup.LayoutParams> void updateLayoutParamsTyped(View view, Function1<? super T, Unit> block) {
+    public static final /* synthetic */ <T extends ViewGroup.LayoutParams> void updateLayoutParamsTyped(View view, Function1<? super T, Unit> function1) {
         Intrinsics.e(view, "<this>");
-        Intrinsics.e(block, "block");
+        Intrinsics.e(function1, "block");
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         Intrinsics.a(1, ExifInterface.GPS_DIRECTION_TRUE);
         ViewGroup.LayoutParams layoutParams2 = layoutParams;
-        block.invoke(layoutParams2);
+        function1.invoke(layoutParams2);
         view.setLayoutParams(layoutParams2);
     }
 

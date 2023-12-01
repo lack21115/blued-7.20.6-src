@@ -10,13 +10,13 @@ import java.util.HashMap;
 public class cz implements ViewTreeObserver.OnWindowFocusChangeListener {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ RelativeLayout f9408a;
+    final /* synthetic */ RelativeLayout f6568a;
     final /* synthetic */ cv b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cz(cv cvVar, RelativeLayout relativeLayout) {
         this.b = cvVar;
-        this.f9408a = relativeLayout;
+        this.f6568a = relativeLayout;
     }
 
     @Override // android.view.ViewTreeObserver.OnWindowFocusChangeListener
@@ -24,7 +24,7 @@ public class cz implements ViewTreeObserver.OnWindowFocusChangeListener {
         if (z) {
             HashMap<String, Object> hashMap = new HashMap<>();
             hashMap.put("novel_activity", (Activity) this.b.h);
-            hashMap.put("banner_container", this.f9408a);
+            hashMap.put("banner_container", this.f6568a);
             hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.b.D));
             hashMap.put("channelId", Integer.valueOf(this.b.E));
             hashMap.put("novel_id", this.b.F);

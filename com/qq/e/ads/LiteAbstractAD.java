@@ -13,7 +13,7 @@ public abstract class LiteAbstractAD<T extends LADI> extends AbstractAD<T> imple
 
     @Override // com.qq.e.comm.compliance.ApkDownloadComplianceInterface
     public String getApkInfoUrl() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((LADI) t).getApkInfoUrl();
         }
@@ -23,7 +23,7 @@ public abstract class LiteAbstractAD<T extends LADI> extends AbstractAD<T> imple
 
     @Override // com.qq.e.comm.pi.LADI
     public int getECPM() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((LADI) t).getECPM();
         }
@@ -33,7 +33,7 @@ public abstract class LiteAbstractAD<T extends LADI> extends AbstractAD<T> imple
 
     @Override // com.qq.e.comm.pi.LADI
     public String getECPMLevel() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((LADI) t).getECPMLevel();
         }
@@ -43,7 +43,7 @@ public abstract class LiteAbstractAD<T extends LADI> extends AbstractAD<T> imple
 
     @Override // com.qq.e.comm.pi.LADI
     public Map<String, Object> getExtraInfo() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((LADI) t).getExtraInfo();
         }
@@ -53,7 +53,7 @@ public abstract class LiteAbstractAD<T extends LADI> extends AbstractAD<T> imple
 
     @Override // com.qq.e.comm.pi.LADI
     public boolean isValid() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((LADI) t).isValid();
         }
@@ -71,7 +71,7 @@ public abstract class LiteAbstractAD<T extends LADI> extends AbstractAD<T> imple
 
     @Override // com.qq.e.comm.pi.IBidding
     public void sendLossNotification(int i, int i2, String str) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((LADI) t).sendLossNotification(i, i2, str);
         } else {
@@ -81,7 +81,7 @@ public abstract class LiteAbstractAD<T extends LADI> extends AbstractAD<T> imple
 
     @Override // com.qq.e.comm.pi.IBidding
     public void sendLossNotification(Map<String, Object> map) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((LADI) t).sendLossNotification(map);
         } else {
@@ -91,7 +91,7 @@ public abstract class LiteAbstractAD<T extends LADI> extends AbstractAD<T> imple
 
     @Override // com.qq.e.comm.pi.IBidding
     public void sendWinNotification(int i) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((LADI) t).sendWinNotification(i);
         } else {
@@ -101,7 +101,7 @@ public abstract class LiteAbstractAD<T extends LADI> extends AbstractAD<T> imple
 
     @Override // com.qq.e.comm.pi.IBidding
     public void sendWinNotification(Map<String, Object> map) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((LADI) t).sendWinNotification(map);
         } else {
@@ -111,7 +111,7 @@ public abstract class LiteAbstractAD<T extends LADI> extends AbstractAD<T> imple
 
     @Override // com.qq.e.comm.pi.IBidding
     public void setBidECPM(int i) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((LADI) t).setBidECPM(i);
         } else {
@@ -122,7 +122,7 @@ public abstract class LiteAbstractAD<T extends LADI> extends AbstractAD<T> imple
     @Override // com.qq.e.comm.compliance.ApkDownloadComplianceInterface
     public void setDownloadConfirmListener(DownloadConfirmListener downloadConfirmListener) {
         this.b = downloadConfirmListener;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((LADI) t).setDownloadConfirmListener(this);
         }

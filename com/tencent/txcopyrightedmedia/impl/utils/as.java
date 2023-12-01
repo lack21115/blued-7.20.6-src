@@ -1,7 +1,6 @@
 package com.tencent.txcopyrightedmedia.impl.utils;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.txcopyrightedmedia.TXCopyrightedMedia;
 import com.tencent.txcopyrightedmedia.impl.utils.i;
 import com.tencent.txcopyrightedmedia.impl.utils.w;
@@ -16,7 +15,7 @@ import org.json.JSONObject;
 public class as extends bb {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40068a;
+    public String f26377a;
     private ArrayList<at> b;
 
     public as(ba baVar) {
@@ -29,8 +28,8 @@ public class as extends bb {
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("Action", "DescribeMusicMaterials");
-            jSONObject.put("PlayToken", this.k.e.f40081c);
-            jSONObject.put("LicenseExtAppName", ap.a().d.f40063c);
+            jSONObject.put("PlayToken", this.k.e.f26390c);
+            jSONObject.put("LicenseExtAppName", ap.a().d.f26372c);
             JSONArray jSONArray = new JSONArray();
             jSONArray.put("Original");
             jSONArray.put("Accompaniment");
@@ -45,8 +44,8 @@ public class as extends bb {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        w wVar = w.c.f40184a;
-        return w.a(this.f40068a, str.getBytes(), "application/json");
+        w wVar = w.c.f26493a;
+        return w.a(this.f26377a, str.getBytes(), "application/json");
     }
 
     private i q() {
@@ -54,31 +53,31 @@ public class as extends bb {
             return new i(-5, "BGMPlayList data null.");
         }
         try {
-            String str = new String(ac.a(o().f40088a, ac.a(f().f40087c.f), ac.a(f().f40087c.g), "PKCS5Padding"), "UTF-8");
+            String str = new String(ac.a(o().f26397a, ac.a(f().f26396c.f), ac.a(f().f26396c.g), "PKCS5Padding"), "UTF-8");
             try {
                 JSONObject optJSONObject = new JSONObject(str).optJSONObject("Response");
                 if (optJSONObject == null) {
                     i iVar = new i(-6, "Parse bgm playlist fail. Response not found.");
-                    iVar.f40101a.a(str);
+                    iVar.f26410a.a(str);
                     return iVar;
                 }
                 String optString = optJSONObject.optString("MusicId");
                 if (!TextUtils.isEmpty(optString)) {
-                    this.k.f40087c.f40078a = optString;
+                    this.k.f26396c.f26387a = optString;
                 }
                 JSONObject optJSONObject2 = optJSONObject.optJSONObject("Error");
                 if (optJSONObject2 != null) {
                     String optString2 = optJSONObject2.optString("Code");
                     if (optString2.contains("AuthFailure")) {
                         i iVar2 = new i(-3, "Token fail. ".concat(String.valueOf(optString2)));
-                        iVar2.f40101a.a(str);
+                        iVar2.f26410a.a(str);
                         return iVar2;
                     }
                 }
                 JSONArray optJSONArray = optJSONObject.optJSONArray("MusicMaterialSet");
                 if (optJSONArray == null) {
                     i iVar3 = new i(-6, "Parse bgm playlist fail. MusicMaterialSet not found.");
-                    iVar3.f40101a.a(str);
+                    iVar3.f26410a.a(str);
                     return iVar3;
                 }
                 int i = 0;
@@ -127,7 +126,7 @@ public class as extends bb {
         } catch (Exception e2) {
             e2.printStackTrace();
             i iVar4 = new i(-5, "Content format error.");
-            iVar4.f40101a.a(e2.toString());
+            iVar4.f26410a.a(e2.toString());
             return iVar4;
         }
     }
@@ -138,7 +137,7 @@ public class as extends bb {
                 Iterator<at> it = this.b.iterator();
                 while (it.hasNext()) {
                     at next = it.next();
-                    if (TextUtils.equals(next.f40069a, str) && next.b == i && next.f40070c == i2) {
+                    if (TextUtils.equals(next.f26378a, str) && next.b == i && next.f26379c == i2) {
                         return next;
                     }
                 }
@@ -150,12 +149,12 @@ public class as extends bb {
 
     @Override // com.tencent.txcopyrightedmedia.impl.utils.bb
     public final String b() {
-        return this.f40068a;
+        return this.f26377a;
     }
 
     @Override // com.tencent.txcopyrightedmedia.impl.utils.bb
     public final String c() {
-        return "txcm://bgmPlaylist/" + URLEncoder.encode(i()) + BridgeUtil.SPLIT_MARK + URLEncoder.encode(j());
+        return "txcm://bgmPlaylist/" + URLEncoder.encode(i()) + "/" + URLEncoder.encode(j());
     }
 
     public final ArrayList<at> d() {
@@ -174,10 +173,10 @@ public class as extends bb {
         if (f().b) {
             return new i(-2, "Cancel by user.");
         }
-        if (TextUtils.isEmpty(this.f40068a)) {
+        if (TextUtils.isEmpty(this.f26377a)) {
             return new i(-6, "Get url fail.");
         }
-        if (g() != null && f().f40087c.e == 100) {
+        if (g() != null && f().f26396c.e == 100) {
             this.m = g().a(c(), j());
         }
         if (o().a()) {
@@ -188,14 +187,14 @@ public class as extends bb {
             if (f().b) {
                 return new i(-2, "Cancel by user.");
             }
-            if (p.f40185a < 200 || p.f40185a >= 300) {
-                i iVar = new i(-4, "Fetch " + this.f40068a + " fail. Status: " + p.f40185a);
-                i.a aVar = iVar.f40101a;
-                aVar.b = String.valueOf(p.f40185a);
+            if (p.f26494a < 200 || p.f26494a >= 300) {
+                i iVar = new i(-4, "Fetch " + this.f26377a + " fail. Status: " + p.f26494a);
+                i.a aVar = iVar.f26410a;
+                aVar.b = String.valueOf(p.f26494a);
                 aVar.a(p.e);
                 return iVar;
             }
-            p.b = ac.a(p.b, ac.a(f().f40087c.f), ac.a(f().f40087c.g));
+            p.b = ac.a(p.b, ac.a(f().f26396c.f), ac.a(f().f26396c.g));
             if (p.b == null) {
                 return new i(-5, "Fail encrypt bgm playlist.");
             }

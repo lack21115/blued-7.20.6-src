@@ -13,7 +13,7 @@ import javax.microedition.khronos.opengles.GL10;
 public class ua {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f38042a = {"北", "东北", "东", "东南", "南", "西南", "西", "西北"};
+    private static final String[] f24351a = {"北", "东北", "东", "东南", "南", "西南", "西", "西北"};
 
     public static double a(double d) {
         return (d / 180.0d) * 3.141592653589793d;
@@ -29,9 +29,9 @@ public class ua {
     }
 
     public static float a(d6 d6Var, d6 d6Var2) {
-        double asin = Math.asin((d6Var2.f37388a - d6Var.f37388a) / b(d6Var, d6Var2));
+        double asin = Math.asin((d6Var2.f23697a - d6Var.f23697a) / b(d6Var, d6Var2));
         double d = asin;
-        if (d6Var2.f37389c - d6Var.f37389c < 0.0f) {
+        if (d6Var2.f23698c - d6Var.f23698c < 0.0f) {
             d = 3.141592653589793d - asin;
         }
         return (float) ((d / 3.141592653589793d) * 180.0d);
@@ -90,7 +90,7 @@ public class ua {
     }
 
     public static PointF a(d6 d6Var, double d, double d2) {
-        return new PointF((float) (d6Var.f37388a + d), (float) ((-d6Var.f37389c) + d2));
+        return new PointF((float) (d6Var.f23697a + d), (float) ((-d6Var.f23698c) + d2));
     }
 
     public static c6 a(float f, float f2, float[] fArr, float[] fArr2, int[] iArr) {
@@ -124,7 +124,7 @@ public class ua {
         d6 a2 = new d6(f, f2, f4).a(fArr2);
         float f5 = a2.b;
         float f6 = f5 != 0.0f ? f3 / f5 : 1.0f;
-        return new d6(a2.f37388a * f6, f3, a2.f37389c * f6);
+        return new d6(a2.f23697a * f6, f3, a2.f23698c * f6);
     }
 
     private static boolean a(float[] fArr, float[] fArr2) {
@@ -198,7 +198,7 @@ public class ua {
     }
 
     public static double b(d6 d6Var, d6 d6Var2) {
-        return Math.sqrt(Math.pow(d6Var.f37388a - d6Var2.f37388a, 2.0d) + Math.pow(d6Var.f37389c - d6Var2.f37389c, 2.0d));
+        return Math.sqrt(Math.pow(d6Var.f23697a - d6Var2.f23697a, 2.0d) + Math.pow(d6Var.f23698c - d6Var2.f23698c, 2.0d));
     }
 
     public static String b(float f) {
@@ -209,7 +209,7 @@ public class ua {
         int i = 0;
         while (true) {
             int i2 = i;
-            String[] strArr = f38042a;
+            String[] strArr = f24351a;
             if (i2 >= strArr.length) {
                 return strArr[0];
             }

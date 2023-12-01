@@ -5,10 +5,10 @@ package com.tencent.ugc;
 public final /* synthetic */ class dm implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCMediaListSource f40327a;
+    private final UGCMediaListSource f26636a;
 
     private dm(UGCMediaListSource uGCMediaListSource) {
-        this.f40327a = uGCMediaListSource;
+        this.f26636a = uGCMediaListSource;
     }
 
     public static Runnable a(UGCMediaListSource uGCMediaListSource) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class dm implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40327a.prePareNextUGCPixelFrameProvider();
+        this.f26636a.prePareNextUGCPixelFrameProvider();
     }
 }

@@ -24,14 +24,14 @@ import java.util.regex.Pattern;
 public final class LinkifyCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f2584a = new String[0];
+    private static final String[] f2536a = new String[0];
     private static final Comparator<LinkSpec> b = new Comparator<LinkSpec>() { // from class: androidx.core.text.util.LinkifyCompat.1
         @Override // java.util.Comparator
         public int compare(LinkSpec linkSpec, LinkSpec linkSpec2) {
-            if (linkSpec.f2586c < linkSpec2.f2586c) {
+            if (linkSpec.f2538c < linkSpec2.f2538c) {
                 return -1;
             }
-            if (linkSpec.f2586c <= linkSpec2.f2586c && linkSpec.d >= linkSpec2.d) {
+            if (linkSpec.f2538c <= linkSpec2.f2538c && linkSpec.d >= linkSpec2.d) {
                 return linkSpec.d > linkSpec2.d ? -1 : 0;
             }
             return 1;
@@ -43,11 +43,11 @@ public final class LinkifyCompat {
     public static class LinkSpec {
 
         /* renamed from: a  reason: collision with root package name */
-        URLSpan f2585a;
+        URLSpan f2537a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f2586c;
+        int f2538c;
         int d;
 
         LinkSpec() {
@@ -124,12 +124,12 @@ public final class LinkifyCompat {
                 }
                 LinkSpec linkSpec = new LinkSpec();
                 int length = a2.length() + indexOf;
-                linkSpec.f2586c = indexOf + i;
+                linkSpec.f2538c = indexOf + i;
                 i += length;
                 linkSpec.d = i;
                 obj = obj.substring(length);
                 try {
-                    linkSpec.b = "geo:0,0?q=" + URLEncoder.encode(a2, "UTF-8");
+                    linkSpec.b = com.tencent.smtt.sdk.WebView.SCHEME_GEO + URLEncoder.encode(a2, "UTF-8");
                     arrayList.add(linkSpec);
                 } catch (UnsupportedEncodingException e) {
                 }
@@ -147,7 +147,7 @@ public final class LinkifyCompat {
             if (matchFilter == null || matchFilter.acceptMatch(spannable, start, end)) {
                 LinkSpec linkSpec = new LinkSpec();
                 linkSpec.b = a(matcher.group(0), strArr, matcher, transformFilter);
-                linkSpec.f2586c = start;
+                linkSpec.f2538c = start;
                 linkSpec.d = end;
                 arrayList.add(linkSpec);
             }
@@ -223,8 +223,8 @@ public final class LinkifyCompat {
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
             LinkSpec linkSpec = (LinkSpec) it.next();
-            if (linkSpec.f2585a == null) {
-                a(linkSpec.b, linkSpec.f2586c, linkSpec.d, spannable);
+            if (linkSpec.f2537a == null) {
+                a(linkSpec.b, linkSpec.f2538c, linkSpec.d, spannable);
             }
         }
         return true;
@@ -286,8 +286,8 @@ public final class LinkifyCompat {
                 break;
             }
             LinkSpec linkSpec = new LinkSpec();
-            linkSpec.f2585a = objArr[i2];
-            linkSpec.f2586c = spannable.getSpanStart(objArr[i2]);
+            linkSpec.f2537a = objArr[i2];
+            linkSpec.f2538c = spannable.getSpanStart(objArr[i2]);
             linkSpec.d = spannable.getSpanEnd(objArr[i2]);
             arrayList.add(linkSpec);
             i = i2 + 1;
@@ -299,10 +299,10 @@ public final class LinkifyCompat {
             LinkSpec linkSpec2 = arrayList.get(i3);
             int i4 = i3 + 1;
             LinkSpec linkSpec3 = arrayList.get(i4);
-            if (linkSpec2.f2586c <= linkSpec3.f2586c && linkSpec2.d > linkSpec3.f2586c) {
-                int i5 = (linkSpec3.d > linkSpec2.d && linkSpec2.d - linkSpec2.f2586c <= linkSpec3.d - linkSpec3.f2586c) ? linkSpec2.d - linkSpec2.f2586c < linkSpec3.d - linkSpec3.f2586c ? i3 : -1 : i4;
+            if (linkSpec2.f2538c <= linkSpec3.f2538c && linkSpec2.d > linkSpec3.f2538c) {
+                int i5 = (linkSpec3.d > linkSpec2.d && linkSpec2.d - linkSpec2.f2538c <= linkSpec3.d - linkSpec3.f2538c) ? linkSpec2.d - linkSpec2.f2538c < linkSpec3.d - linkSpec3.f2538c ? i3 : -1 : i4;
                 if (i5 != -1) {
-                    Object obj = arrayList.get(i5).f2585a;
+                    Object obj = arrayList.get(i5).f2537a;
                     if (obj != null) {
                         spannable.removeSpan(obj);
                     }

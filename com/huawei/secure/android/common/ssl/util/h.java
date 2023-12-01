@@ -7,7 +7,7 @@ import android.content.pm.PackageManager;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23133a = "h";
+    private static final String f9525a = "h";
 
     public static String a(String str) {
         Context a2 = c.a();
@@ -17,15 +17,15 @@ public class h {
         try {
             return a2.getPackageManager().getPackageInfo(str, 0).versionName;
         } catch (PackageManager.NameNotFoundException e) {
-            String str2 = f23133a;
+            String str2 = f9525a;
             g.b(str2, "getVersion NameNotFoundException : " + e.getMessage());
             return "";
         } catch (Exception e2) {
-            String str3 = f23133a;
+            String str3 = f9525a;
             g.b(str3, "getVersion: " + e2.getMessage());
             return "";
         } catch (Throwable th) {
-            g.b(f23133a, "throwable");
+            g.b(f9525a, "throwable");
             return "";
         }
     }
@@ -38,10 +38,10 @@ public class h {
         try {
             return a2.getPackageManager().getPackageInfo(str, 0).versionCode;
         } catch (PackageManager.NameNotFoundException e) {
-            g.b(f23133a, "getVersion NameNotFoundException");
+            g.b(f9525a, "getVersion NameNotFoundException");
             return 0;
         } catch (Exception e2) {
-            String str2 = f23133a;
+            String str2 = f9525a;
             g.b(str2, "getVersion: " + e2.getMessage());
             return 0;
         }

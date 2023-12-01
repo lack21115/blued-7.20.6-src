@@ -85,7 +85,7 @@ public class TPDownloadProxyFactory {
         }
         mCallback = tPDLProxyBindServiceCallback;
         StringBuilder sb = new StringBuilder("ensurePlayManagerService ");
-        sb.append(context == null ? b.f7836a : com.igexin.push.core.b.x);
+        sb.append(context == null ? b.f4996a : com.igexin.push.core.b.x);
         TPDLProxyLog.i(FILE_NAME, 0, ITPDLProxyLogListener.COMMON_TAG, sb.toString());
         try {
             Intent intent = new Intent(context, TPDownloadProxyService.class);

@@ -11,11 +11,11 @@ import com.meizu.cloud.pushsdk.handler.MzPushMessage;
 public class d extends com.meizu.cloud.pushsdk.handler.a.a<MessageV3> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f24159a;
+    private Context f10544a;
 
     public d(Context context, com.meizu.cloud.pushsdk.handler.a aVar) {
         super(context, aVar);
-        this.f24159a = context;
+        this.f10544a = context;
     }
 
     @Override // com.meizu.cloud.pushsdk.handler.c
@@ -33,7 +33,7 @@ public class d extends com.meizu.cloud.pushsdk.handler.a.a<MessageV3> {
             c().c(d(), MzPushMessage.fromMessageV3(messageV3));
         }
         c(messageV3);
-        a(this.f24159a, messageV3);
+        a(this.f10544a, messageV3);
     }
 
     @Override // com.meizu.cloud.pushsdk.handler.c

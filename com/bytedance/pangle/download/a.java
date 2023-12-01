@@ -11,13 +11,13 @@ public class a {
     private static volatile a b;
 
     /* renamed from: a  reason: collision with root package name */
-    public final List<String> f21378a = new CopyOnWriteArrayList();
+    public final List<String> f7772a = new CopyOnWriteArrayList();
 
     public a() {
         Zeus.getAppApplication().registerActivityLifecycleCallbacks(new com.bytedance.pangle.a() { // from class: com.bytedance.pangle.download.a.1
             @Override // com.bytedance.pangle.a, android.app.Application.ActivityLifecycleCallbacks
             public final void onActivityResumed(Activity activity) {
-                Iterator it = a.this.f21378a.iterator();
+                Iterator it = a.this.f7772a.iterator();
                 while (it.hasNext()) {
                     it.next();
                     b.a();

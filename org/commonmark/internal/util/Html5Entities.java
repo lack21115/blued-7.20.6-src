@@ -11,15 +11,13 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/util/Html5Entities.class */
 public class Html5Entities {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, String> f44048a = a();
+    private static final Map<String, String> a = a();
     private static final Pattern b = Pattern.compile("^&#[Xx]?");
 
     public static String a(String str) {
         Matcher matcher = b.matcher(str);
         if (!matcher.find()) {
-            String str2 = f44048a.get(str.substring(1, str.length() - 1));
+            String str2 = a.get(str.substring(1, str.length() - 1));
             return str2 != null ? str2 : str;
         }
         try {

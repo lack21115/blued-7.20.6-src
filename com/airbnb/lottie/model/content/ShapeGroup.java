@@ -9,18 +9,14 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/ShapeGroup.class */
 public class ShapeGroup implements ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f4364a;
+    private final String a;
     private final List<ContentModel> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final boolean f4365c;
+    private final boolean c;
 
     public ShapeGroup(String str, List<ContentModel> list, boolean z) {
-        this.f4364a = str;
+        this.a = str;
         this.b = list;
-        this.f4365c = z;
+        this.c = z;
     }
 
     @Override // com.airbnb.lottie.model.content.ContentModel
@@ -29,7 +25,7 @@ public class ShapeGroup implements ContentModel {
     }
 
     public String a() {
-        return this.f4364a;
+        return this.a;
     }
 
     public List<ContentModel> b() {
@@ -37,10 +33,10 @@ public class ShapeGroup implements ContentModel {
     }
 
     public boolean c() {
-        return this.f4365c;
+        return this.c;
     }
 
     public String toString() {
-        return "ShapeGroup{name='" + this.f4364a + "' Shapes: " + Arrays.toString(this.b.toArray()) + '}';
+        return "ShapeGroup{name='" + this.a + "' Shapes: " + Arrays.toString(this.b.toArray()) + '}';
     }
 }

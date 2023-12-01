@@ -31,7 +31,7 @@ public class ChatBgSelectPresent extends MVPBasePresent<IChatBgSelectIView> impl
     private List<MsgChattingBgModel> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ChatBgSelectAdapter f32521c;
+    private ChatBgSelectAdapter f18830c;
     private SessionSettingModel d = null;
     private long e = -1;
     private short f;
@@ -82,16 +82,15 @@ public class ChatBgSelectPresent extends MVPBasePresent<IChatBgSelectIView> impl
             this.e = arguments.getLong("passby_session_id", -1L);
             this.f = arguments.getShort("passby_session_type");
             ChatBgSelectAdapter chatBgSelectAdapter = new ChatBgSelectAdapter(a(), this);
-            this.f32521c = chatBgSelectAdapter;
+            this.f18830c = chatBgSelectAdapter;
             ao_.a(chatBgSelectAdapter);
             this.b = new ArrayList();
             SessionModel snapSessionModel = ChatManager.getInstance().getSnapSessionModel(f(), e());
             if (snapSessionModel != null) {
-                this.d = (SessionSettingModel) snapSessionModel.sessionSettingModel;
+                this.d = snapSessionModel.sessionSettingModel;
             }
             if (this.d == null) {
                 ChatManager.getInstance().getSessionSettingModel(this.f, Long.valueOf(this.e).longValue(), new FetchDataListener<SessionSettingBaseModel>() { // from class: com.soft.blued.ui.msg.presenter.ChatBgSelectPresent.1
-                    @Override // com.blued.android.chat.listener.FetchDataListener
                     /* renamed from: a */
                     public void onFetchData(SessionSettingBaseModel sessionSettingBaseModel) {
                         ChatBgSelectPresent.this.d = (SessionSettingModel) sessionSettingBaseModel;
@@ -138,25 +137,23 @@ public class ChatBgSelectPresent extends MVPBasePresent<IChatBgSelectIView> impl
             ChatHttpUtils.a(new BluedUIHttpResponse<BluedEntity<MsgChattingBgModel, BluedEntityBaseExtra>>(a()) { // from class: com.soft.blued.ui.msg.presenter.ChatBgSelectPresent.2
 
                 /* renamed from: a  reason: collision with root package name */
-                boolean f32523a = false;
+                boolean f18832a = false;
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i, String str) {
-                    this.f32523a = true;
+                    this.f18832a = true;
                     return super.onUIFailure(i, str);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                     IChatBgSelectIView ao_2 = ChatBgSelectPresent.this.ao_();
                     if (ao_2 != null) {
                         ao_2.a(false);
                         ao_2.i();
                         if (ChatBgSelectPresent.this.b != null && ChatBgSelectPresent.this.b.size() > 0) {
-                            if (ChatBgSelectPresent.this.f32521c != null) {
-                                ChatBgSelectPresent.this.f32521c.a(ChatBgSelectPresent.this.b);
+                            if (ChatBgSelectPresent.this.f18830c != null) {
+                                ChatBgSelectPresent.this.f18830c.a(ChatBgSelectPresent.this.b);
                             }
-                        } else if (this.f32523a) {
+                        } else if (this.f18832a) {
                             ao_2.d();
                         } else {
                             ao_2.c();
@@ -164,7 +161,6 @@ public class ChatBgSelectPresent extends MVPBasePresent<IChatBgSelectIView> impl
                     }
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
                     IChatBgSelectIView ao_2 = ChatBgSelectPresent.this.ao_();
                     if (ao_2 != null) {
@@ -172,7 +168,6 @@ public class ChatBgSelectPresent extends MVPBasePresent<IChatBgSelectIView> impl
                     }
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity<MsgChattingBgModel, BluedEntityBaseExtra> bluedEntity) {
                     IChatBgSelectIView ao_2 = ChatBgSelectPresent.this.ao_();
                     if (ao_2 != null) {

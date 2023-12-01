@@ -105,8 +105,8 @@ public final class b {
             @Override // java.lang.Runnable
             public final void run() {
                 try {
-                    if (com.kwad.sdk.crash.a.a.h(Throwable.this)) {
-                        com.kwad.sdk.crash.handler.a.i(Throwable.this);
+                    if (com.kwad.sdk.crash.a.a.h(th)) {
+                        com.kwad.sdk.crash.handler.a.i(th);
                     }
                 } catch (Throwable th2) {
                     com.kwad.sdk.core.d.b.printStackTrace(th2);

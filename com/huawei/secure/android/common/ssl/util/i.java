@@ -8,7 +8,7 @@ import android.os.Build;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23134a = "aegis";
+    private static final String f9526a = "aegis";
     private static SharedPreferences b;
 
     public static int a(String str, int i, Context context) {
@@ -37,9 +37,9 @@ public class i {
             try {
                 if (b == null) {
                     if (Build.VERSION.SDK_INT >= 24) {
-                        b = context.createDeviceProtectedStorageContext().getSharedPreferences(f23134a, 0);
+                        b = context.createDeviceProtectedStorageContext().getSharedPreferences(f9526a, 0);
                     } else {
-                        b = context.getApplicationContext().getSharedPreferences(f23134a, 0);
+                        b = context.getApplicationContext().getSharedPreferences(f9526a, 0);
                     }
                 }
                 sharedPreferences = b;

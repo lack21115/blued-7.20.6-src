@@ -10,13 +10,11 @@ import kotlinx.coroutines.flow.internal.FusibleFlow;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/ReadonlySharedFlow.class */
 final class ReadonlySharedFlow<T> implements CancellableFlow<T>, SharedFlow<T>, FusibleFlow<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final /* synthetic */ SharedFlow<T> f43406a;
+    private final /* synthetic */ SharedFlow<T> a;
 
     @Override // kotlinx.coroutines.flow.Flow
     public Object a(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
-        return this.f43406a.a(flowCollector, continuation);
+        return this.a.a(flowCollector, continuation);
     }
 
     @Override // kotlinx.coroutines.flow.internal.FusibleFlow

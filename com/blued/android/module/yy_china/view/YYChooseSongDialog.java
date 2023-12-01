@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.os.BundleKt;
 import androidx.fragment.app.FragmentKt;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -38,13 +39,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYChooseSongDialog.class */
 public final class YYChooseSongDialog extends LinearLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogChooseASongBinding f18088a;
+    private DialogChooseASongBinding a;
     private NewSongMessageModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseYYStudioFragment f18089c;
+    private BaseYYStudioFragment c;
     private long d;
     private long e;
     private int f;
@@ -66,10 +63,10 @@ public final class YYChooseSongDialog extends LinearLayout implements View.OnCli
     public YYChooseSongDialog(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        DialogChooseASongBinding a2 = DialogChooseASongBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18088a = a2;
-        a2.f16304c.setOnClickListener(this);
+        DialogChooseASongBinding a = DialogChooseASongBinding.a(LayoutInflater.from(getContext()), this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
+        a.c.setOnClickListener(this);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -129,7 +126,7 @@ public final class YYChooseSongDialog extends LinearLayout implements View.OnCli
         yYPayRequestModel.pay_from = 1;
         yYGiftModel.hit_id = this.d;
         YYConstants.PayFromSource payFromSource = YYConstants.PayFromSource.Pay_Gift;
-        BaseYYStudioFragment baseYYStudioFragment = this.f18089c;
+        BaseYYStudioFragment baseYYStudioFragment = this.c;
         YYPayUtils.a(yYPayRequestModel, payFromSource, baseYYStudioFragment, baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.view.YYChooseSongDialog$buyGift$1
             @Override // com.blued.android.module.yy_china.utils.YYPayUtils.PayGiftStatusListener
             public void a(int i, String errorMessage) {
@@ -157,7 +154,7 @@ public final class YYChooseSongDialog extends LinearLayout implements View.OnCli
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(String str, String str2, String str3, String str4, long j) {
-        final BaseYYStudioFragment baseYYStudioFragment = this.f18089c;
+        final BaseYYStudioFragment baseYYStudioFragment = this.c;
         if (baseYYStudioFragment == null) {
             return;
         }
@@ -186,14 +183,13 @@ public final class YYChooseSongDialog extends LinearLayout implements View.OnCli
         Intrinsics.e(baseYYStudioFragment, "baseYYStudioFragment");
         Intrinsics.e(single, "single");
         this.b = single;
-        this.f18089c = baseYYStudioFragment;
-        ImageLoader.a(baseYYStudioFragment.getFragmentActive(), single.music.getCoverUrl()).a(this.f18088a.f16303a);
-        TextView textView = this.f18088a.b;
+        this.c = baseYYStudioFragment;
+        ImageLoader.a(baseYYStudioFragment.getFragmentActive(), single.music.getCoverUrl()).a(this.a.a);
+        TextView textView = this.a.b;
         textView.setText("本次排麦需支付单次点歌费用（一个" + ((Object) single.goods.name) + "礼物）");
-        this.f18088a.d.setText(single.music.getMusicName());
-        this.f18088a.f.setText(single.music.getArtist());
-        LiveEventBus.get("YYSuccessPasswordEvent", String.class).observe(baseYYStudioFragment, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYChooseSongDialog$mLKlasE78hsdjkvPcMGO66REHO8
-            @Override // androidx.lifecycle.Observer
+        this.a.d.setText(single.music.getMusicName());
+        this.a.f.setText(single.music.getArtist());
+        LiveEventBus.get("YYSuccessPasswordEvent", String.class).observe((LifecycleOwner) baseYYStudioFragment, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYChooseSongDialog$mLKlasE78hsdjkvPcMGO66REHO8
             public final void onChanged(Object obj) {
                 YYChooseSongDialog.a(NewSongMessageModel.this, this, (String) obj);
             }
@@ -201,11 +197,11 @@ public final class YYChooseSongDialog extends LinearLayout implements View.OnCli
     }
 
     public final BaseYYStudioFragment getBaseYYStudioFragment() {
-        return this.f18089c;
+        return this.c;
     }
 
     public final DialogChooseASongBinding getBinding() {
-        return this.f18088a;
+        return this.a;
     }
 
     public final NewSongMessageModel getSingle() {
@@ -223,12 +219,12 @@ public final class YYChooseSongDialog extends LinearLayout implements View.OnCli
     }
 
     public final void setBaseYYStudioFragment(BaseYYStudioFragment baseYYStudioFragment) {
-        this.f18089c = baseYYStudioFragment;
+        this.c = baseYYStudioFragment;
     }
 
     public final void setBinding(DialogChooseASongBinding dialogChooseASongBinding) {
         Intrinsics.e(dialogChooseASongBinding, "<set-?>");
-        this.f18088a = dialogChooseASongBinding;
+        this.a = dialogChooseASongBinding;
     }
 
     public final void setSingle(NewSongMessageModel newSongMessageModel) {

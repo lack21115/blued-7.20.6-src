@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopMsgChatGuideBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29542a;
+    private final LinearLayout f15852a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29542a;
+        return this.f15852a;
     }
 }

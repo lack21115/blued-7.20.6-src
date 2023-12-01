@@ -12,12 +12,8 @@ import kotlinx.coroutines.Job;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/ui/mvp/manager/CoroutineManager.class */
 public final class CoroutineManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f16040a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Lazy<CoroutineManager> f16041c = LazyKt.a(LazyThreadSafetyMode.SYNCHRONIZED, new Function0<CoroutineManager>() { // from class: com.blued.android.module.ui.mvp.manager.CoroutineManager$Companion$coroutineManager$2
+    public static final Companion a = new Companion(null);
+    private static final Lazy<CoroutineManager> c = LazyKt.a(LazyThreadSafetyMode.SYNCHRONIZED, new Function0<CoroutineManager>() { // from class: com.blued.android.module.ui.mvp.manager.CoroutineManager$Companion$coroutineManager$2
         @Override // kotlin.jvm.functions.Function0
         /* renamed from: a */
         public final CoroutineManager invoke() {

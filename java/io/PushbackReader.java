@@ -32,7 +32,7 @@ public class PushbackReader extends FilterReader {
     public void close() throws IOException {
         synchronized (this.lock) {
             this.buf = null;
-            this.f42255in.close();
+            this.in.close();
         }
     }
 
@@ -51,7 +51,7 @@ public class PushbackReader extends FilterReader {
         synchronized (this.lock) {
             checkNotClosed();
             if (this.pos >= this.buf.length) {
-                return this.f42255in.read();
+                return this.in.read();
             }
             char[] cArr = this.buf;
             int i = this.pos;
@@ -80,7 +80,7 @@ public class PushbackReader extends FilterReader {
             if (i3 == i2) {
                 return i2;
             }
-            int read = this.f42255in.read(cArr, i5, i2 - i4);
+            int read = this.in.read(cArr, i5, i2 - i4);
             return read > 0 ? read + i4 : i4 == 0 ? read : i4;
         }
     }
@@ -92,7 +92,7 @@ public class PushbackReader extends FilterReader {
             if (this.buf == null) {
                 throw new IOException("Reader is closed");
             }
-            if (this.buf.length - this.pos <= 0 && !this.f42255in.ready()) {
+            if (this.buf.length - this.pos <= 0 && !this.in.ready()) {
                 z = false;
             }
             z = true;
@@ -124,9 +124,9 @@ public class PushbackReader extends FilterReader {
                     return j;
                 }
                 this.pos += length;
-                skip = this.f42255in.skip(j2);
+                skip = this.in.skip(j2);
             } else {
-                skip = this.f42255in.skip(j);
+                skip = this.in.skip(j);
             }
             return skip + length;
         }

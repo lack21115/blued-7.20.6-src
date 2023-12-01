@@ -50,9 +50,9 @@ public final class u extends z {
             return;
         }
         UPSNotificationMessage a2 = com.vivo.push.util.q.a(f);
-        boolean equals = this.f41105a.getPackageName().equals(pVar.d());
+        boolean equals = this.f27414a.getPackageName().equals(pVar.d());
         if (equals) {
-            NotifyAdapterUtil.cancelNotify(this.f41105a);
+            NotifyAdapterUtil.cancelNotify(this.f27414a);
         }
         if (!equals) {
             com.vivo.push.util.p.a("OnNotificationClickTask", "notify is " + a2 + " ; isMatch is " + equals);
@@ -62,8 +62,8 @@ public final class u extends z {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("type", "2");
         hashMap.put(IntentConstant.MESSAGE_ID, String.valueOf(pVar.e()));
-        hashMap.put("platform", this.f41105a.getPackageName());
-        String b = com.vivo.push.util.z.b(this.f41105a, this.f41105a.getPackageName());
+        hashMap.put("platform", this.f27414a.getPackageName());
+        String b = com.vivo.push.util.z.b(this.f27414a, this.f27414a.getPackageName());
         if (!TextUtils.isEmpty(b)) {
             hashMap.put("remoteAppId", b);
         }
@@ -72,7 +72,7 @@ public final class u extends z {
         com.vivo.push.util.p.d("OnNotificationClickTask", "notification is clicked by skip type[" + a2.getSkipType() + "]");
         int skipType = a2.getSkipType();
         if (skipType == 1) {
-            new Thread(new v(this, this.f41105a, a2.getParams())).start();
+            new Thread(new v(this, this.f27414a, a2.getParams())).start();
             a(a2);
         } else if (skipType == 2) {
             String skipContent = a2.getSkipContent();
@@ -86,7 +86,7 @@ public final class u extends z {
                 intent.setFlags(268435456);
                 b(intent, a2.getParams());
                 try {
-                    this.f41105a.startActivity(intent);
+                    this.f27414a.startActivity(intent);
                 } catch (Exception e) {
                     str = "startActivity error : ".concat(String.valueOf(parse));
                 }
@@ -107,22 +107,22 @@ public final class u extends z {
             } catch (Exception e2) {
                 com.vivo.push.util.p.a("OnNotificationClickTask", "open activity error : ".concat(String.valueOf(skipContent2)), e2);
             }
-            if (!TextUtils.isEmpty(str2) && !this.f41105a.getPackageName().equals(str2)) {
-                com.vivo.push.util.p.a("OnNotificationClickTask", "open activity error : local pkgName is " + this.f41105a.getPackageName() + "; but remote pkgName is " + parseUri.getPackage());
+            if (!TextUtils.isEmpty(str2) && !this.f27414a.getPackageName().equals(str2)) {
+                com.vivo.push.util.p.a("OnNotificationClickTask", "open activity error : local pkgName is " + this.f27414a.getPackageName() + "; but remote pkgName is " + parseUri.getPackage());
                 return;
             }
             String packageName = parseUri.getComponent() == null ? null : parseUri.getComponent().getPackageName();
-            if (!TextUtils.isEmpty(packageName) && !this.f41105a.getPackageName().equals(packageName)) {
-                com.vivo.push.util.p.a("OnNotificationClickTask", "open activity component error : local pkgName is " + this.f41105a.getPackageName() + "; but remote pkgName is " + parseUri.getPackage());
+            if (!TextUtils.isEmpty(packageName) && !this.f27414a.getPackageName().equals(packageName)) {
+                com.vivo.push.util.p.a("OnNotificationClickTask", "open activity component error : local pkgName is " + this.f27414a.getPackageName() + "; but remote pkgName is " + parseUri.getPackage());
                 return;
             }
             parseUri.setSelector(null);
-            parseUri.setPackage(this.f41105a.getPackageName());
+            parseUri.setPackage(this.f27414a.getPackageName());
             parseUri.addFlags(335544320);
             b(parseUri, a2.getParams());
-            ActivityInfo resolveActivityInfo = parseUri.resolveActivityInfo(this.f41105a.getPackageManager(), 65536);
+            ActivityInfo resolveActivityInfo = parseUri.resolveActivityInfo(this.f27414a.getPackageManager(), 65536);
             if (resolveActivityInfo == null || resolveActivityInfo.exported) {
-                this.f41105a.startActivity(parseUri);
+                this.f27414a.startActivity(parseUri);
                 a(a2);
                 return;
             }

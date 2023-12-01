@@ -13,10 +13,10 @@ import javax.net.ssl.SSLPeerUnverifiedException;
 public final class BasicCertificateChainCleaner extends CertificateChainCleaner {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TrustRootIndex f36030a;
+    private final TrustRootIndex f22339a;
 
     public BasicCertificateChainCleaner(TrustRootIndex trustRootIndex) {
-        this.f36030a = trustRootIndex;
+        this.f22339a = trustRootIndex;
     }
 
     private boolean a(X509Certificate x509Certificate, X509Certificate x509Certificate2) {
@@ -39,9 +39,9 @@ public final class BasicCertificateChainCleaner extends CertificateChainCleaner 
         boolean z = false;
         for (int i = 0; i < 9; i++) {
             X509Certificate x509Certificate = (X509Certificate) arrayList.get(arrayList.size() - 1);
-            X509Certificate findByIssuerAndSignature = this.f36030a.findByIssuerAndSignature(x509Certificate);
+            X509Certificate findByIssuerAndSignature = this.f22339a.findByIssuerAndSignature(x509Certificate);
             if (findByIssuerAndSignature == null) {
-                Iterator<E> it = arrayDeque.iterator();
+                Iterator it = arrayDeque.iterator();
                 while (it.hasNext()) {
                     X509Certificate x509Certificate2 = (X509Certificate) it.next();
                     if (a(x509Certificate, x509Certificate2)) {
@@ -69,10 +69,10 @@ public final class BasicCertificateChainCleaner extends CertificateChainCleaner 
         if (obj == this) {
             return true;
         }
-        return (obj instanceof BasicCertificateChainCleaner) && ((BasicCertificateChainCleaner) obj).f36030a.equals(this.f36030a);
+        return (obj instanceof BasicCertificateChainCleaner) && ((BasicCertificateChainCleaner) obj).f22339a.equals(this.f22339a);
     }
 
     public int hashCode() {
-        return this.f36030a.hashCode();
+        return this.f22339a.hashCode();
     }
 }

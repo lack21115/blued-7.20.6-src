@@ -12,10 +12,10 @@ import java.net.URL;
 public final class g extends com.igexin.c.a.d.f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23600a = -2147483638;
+    public static final int f9992a = -2147483638;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23601c = "SimpleHttpTask";
+    private static final String f9993c = "SimpleHttpTask";
     private static final int d = 20000;
     private static final int e = 3;
     public d b;
@@ -26,11 +26,11 @@ public final class g extends com.igexin.c.a.d.f {
     public final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f23602a;
+        boolean f9994a;
         byte[] b;
 
         public a(boolean z, byte[] bArr) {
-            this.f23602a = z;
+            this.f9994a = z;
             this.b = bArr;
         }
     }
@@ -226,7 +226,7 @@ public final class g extends com.igexin.c.a.d.f {
         d dVar = this.b;
         if (dVar == null || dVar.f == null) {
             g();
-            com.igexin.c.a.c.a.a(f23601c, "run return ###");
+            com.igexin.c.a.c.a.a(f9993c, "run return ###");
             com.igexin.c.a.c.a.a("SimpleHttpTask|run return ###", new Object[0]);
             return;
         }
@@ -243,7 +243,7 @@ public final class g extends com.igexin.c.a.d.f {
             }
             if (i == 2) {
                 this.b.a(new Exception("try up to limit"));
-                com.igexin.c.a.c.a.a(f23601c, "http request exception, try times = " + (i + 1));
+                com.igexin.c.a.c.a.a(f9993c, "http request exception, try times = " + (i + 1));
             }
         }
     }

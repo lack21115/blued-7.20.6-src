@@ -109,7 +109,7 @@ public class ListView extends AbsListView {
     }
 
     public ListView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842868);
+        this(context, attributeSet, R.attr.listViewStyle);
     }
 
     public ListView(Context context, AttributeSet attributeSet, int i) {
@@ -127,7 +127,7 @@ public class ListView extends AbsListView {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ListView, i, i2);
         CharSequence[] textArray = obtainStyledAttributes.getTextArray(0);
         if (textArray != null) {
-            setAdapter((ListAdapter) new ArrayAdapter(context, 17367043, textArray));
+            setAdapter((ListAdapter) new ArrayAdapter(context, (int) R.layout.simple_list_item_1, textArray));
         }
         Drawable drawable = obtainStyledAttributes.getDrawable(1);
         if (drawable != null) {

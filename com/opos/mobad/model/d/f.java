@@ -6,14 +6,14 @@ import android.os.SystemClock;
 public class f extends q {
 
     /* renamed from: a  reason: collision with root package name */
-    private p f26417a = new p();
+    private p f12729a = new p();
     private long b = SystemClock.elapsedRealtime();
 
     public f a() {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long j = this.b;
         this.b = elapsedRealtime;
-        this.f26417a.a("1", String.valueOf(elapsedRealtime - j));
+        this.f12729a.a("1", String.valueOf(elapsedRealtime - j));
         return this;
     }
 
@@ -21,7 +21,7 @@ public class f extends q {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long j = this.b;
         this.b = elapsedRealtime;
-        this.f26417a.a("2", String.valueOf(elapsedRealtime - j));
+        this.f12729a.a("2", String.valueOf(elapsedRealtime - j));
         return this;
     }
 
@@ -29,7 +29,7 @@ public class f extends q {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long j = this.b;
         this.b = elapsedRealtime;
-        this.f26417a.a("3", String.valueOf(elapsedRealtime - j));
+        this.f12729a.a("3", String.valueOf(elapsedRealtime - j));
         return this;
     }
 
@@ -37,7 +37,7 @@ public class f extends q {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long j = this.b;
         this.b = elapsedRealtime;
-        this.f26417a.a("4", String.valueOf(elapsedRealtime - j));
+        this.f12729a.a("4", String.valueOf(elapsedRealtime - j));
         return this;
     }
 
@@ -45,12 +45,12 @@ public class f extends q {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long j = this.b;
         this.b = elapsedRealtime;
-        this.f26417a.a("5", String.valueOf(elapsedRealtime - j));
+        this.f12729a.a("5", String.valueOf(elapsedRealtime - j));
         return this;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public String f() {
-        return com.opos.cmn.i.n.a(this.f26417a.a());
+        return com.opos.cmn.i.n.a(this.f12729a.a());
     }
 }

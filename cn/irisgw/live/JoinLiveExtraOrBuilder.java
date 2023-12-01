@@ -35,7 +35,8 @@ public interface JoinLiveExtraOrBuilder extends MessageOrBuilder {
 
     int getChatFrameBorderColorCount();
 
-    List<String> getChatFrameBorderColorList();
+    /* renamed from: getChatFrameBorderColorList */
+    List<String> mo3606getChatFrameBorderColorList();
 
     ByteString getChatFrameBytes();
 
@@ -47,7 +48,8 @@ public interface JoinLiveExtraOrBuilder extends MessageOrBuilder {
 
     int getChatFrameFrameColorCount();
 
-    List<String> getChatFrameFrameColorList();
+    /* renamed from: getChatFrameFrameColorList */
+    List<String> mo3607getChatFrameFrameColorList();
 
     int getChatFrameGradientType();
 

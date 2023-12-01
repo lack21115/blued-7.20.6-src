@@ -17,9 +17,10 @@ import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
+import android.widget.SpellChecker;
 import android.widget.TextView;
-import androidx.constraintlayout.widget.Group;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -77,12 +78,8 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveConstellationDialogFragment.class */
 public final class LiveConstellationDialogFragment extends BaseDialogFragment implements OnClickCallback {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12792a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f12793c;
+    public static final Companion a = new Companion(null);
+    private boolean c;
     private ConstellationHttpDataModel d;
     private FreedomAdapter f;
     private LinearLayoutManager g;
@@ -113,13 +110,11 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
     private final AccelerateInterpolator r = new AccelerateInterpolator(1.5f);
     private final String t = "https://web.bldimg.com/image-manager/1688543781_46784.webp";
     private final Observer<Integer> u = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveConstellationDialogFragment$D6lOdlSxKCTm1255FGLPeyeETa4
-        @Override // androidx.lifecycle.Observer
         public final void onChanged(Object obj) {
             LiveConstellationDialogFragment.a(LiveConstellationDialogFragment.this, (Integer) obj);
         }
     };
     private final Observer<Pair<?, ?>> v = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveConstellationDialogFragment$qjGzKuiwxiccQs2tHtYqtAomKdw
-        @Override // androidx.lifecycle.Observer
         public final void onChanged(Object obj) {
             LiveConstellationDialogFragment.a(LiveConstellationDialogFragment.this, (Pair) obj);
         }
@@ -221,16 +216,16 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
                 d2 = LiveConstellationDialogFragment.this.d();
                 if (d2.g.getVisibility() != 8) {
                     d5 = LiveConstellationDialogFragment.this.d();
-                    Group group = d5.g;
-                    Intrinsics.c(group, "vb.groupTable");
-                    BluedViewExKt.a(group);
+                    View view = d5.g;
+                    Intrinsics.c(view, "vb.groupTable");
+                    BluedViewExKt.a(view);
                 }
                 d3 = LiveConstellationDialogFragment.this.d();
                 if (d3.e.getVisibility() != 0) {
                     d4 = LiveConstellationDialogFragment.this.d();
-                    Group group2 = d4.e;
-                    Intrinsics.c(group2, "vb.groupEmpty");
-                    BluedViewExKt.b(group2);
+                    View view2 = d4.e;
+                    Intrinsics.c(view2, "vb.groupEmpty");
+                    BluedViewExKt.b(view2);
                 }
                 return super.onUIFailure(i3, str);
             }
@@ -274,16 +269,16 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
                     d2 = LiveConstellationDialogFragment.this.d();
                     if (d2.g.getVisibility() != 8) {
                         d5 = LiveConstellationDialogFragment.this.d();
-                        Group group = d5.g;
-                        Intrinsics.c(group, "vb.groupTable");
-                        BluedViewExKt.a(group);
+                        View view = d5.g;
+                        Intrinsics.c(view, "vb.groupTable");
+                        BluedViewExKt.a(view);
                     }
                     d3 = LiveConstellationDialogFragment.this.d();
                     if (d3.e.getVisibility() != 0) {
                         d4 = LiveConstellationDialogFragment.this.d();
-                        Group group2 = d4.e;
-                        Intrinsics.c(group2, "vb.groupEmpty");
-                        BluedViewExKt.b(group2);
+                        View view2 = d4.e;
+                        Intrinsics.c(view2, "vb.groupEmpty");
+                        BluedViewExKt.b(view2);
                     }
                     return super.onUIFailure(i2, str);
                 }
@@ -368,16 +363,16 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveConstellationDialogFragment this$0, Pair pair) {
         Intrinsics.e(this$0, "this$0");
-        F f = pair.first;
-        if (f == 0) {
+        Object obj = pair.first;
+        if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Long");
         }
-        long longValue = ((Long) f).longValue();
-        S s = pair.second;
-        if (s == 0) {
+        long longValue = ((Long) obj).longValue();
+        Object obj2 = pair.second;
+        if (obj2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Long");
         }
-        this$0.a(longValue, ((Long) s).longValue());
+        this$0.a(longValue, ((Long) obj2).longValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -392,7 +387,7 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
     public static final void a(LiveConstellationDialogFragment this$0, ConstellationHttpDataModel data, View view) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(data, "$data");
-        LiveConstellationInfoDialogFragment.Companion companion = LiveConstellationInfoDialogFragment.f12805a;
+        LiveConstellationInfoDialogFragment.Companion companion = LiveConstellationInfoDialogFragment.a;
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         companion.a(childFragmentManager, data.getLink());
@@ -509,8 +504,8 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(final GiftConstellationBuyInfoModel giftConstellationBuyInfoModel) {
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-        String string = getString(R.string.live_constellation_onekey_summit_dialog_title, giftConstellationBuyInfoModel.getBeans(), giftConstellationBuyInfoModel.getCount(), giftConstellationBuyInfoModel.getGoods_name());
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+        String string = getString(R.string.live_constellation_onekey_summit_dialog_title, new Object[]{giftConstellationBuyInfoModel.getBeans(), giftConstellationBuyInfoModel.getCount(), giftConstellationBuyInfoModel.getGoods_name()});
         Intrinsics.c(string, "getString(\n             ….goods_name\n            )");
         String format = String.format(string, Arrays.copyOf(new Object[0], 0));
         Intrinsics.c(format, "format(format, *args)");
@@ -553,14 +548,14 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
             return;
         }
         if (d().e.getVisibility() != 8) {
-            Group group = d().e;
-            Intrinsics.c(group, "vb.groupEmpty");
-            BluedViewExKt.a(group);
+            View view = d().e;
+            Intrinsics.c(view, "vb.groupEmpty");
+            BluedViewExKt.a(view);
         }
         if (d().g.getVisibility() != 0) {
-            Group group2 = d().g;
-            Intrinsics.c(group2, "vb.groupTable");
-            BluedViewExKt.b(group2);
+            View view2 = d().g;
+            Intrinsics.c(view2, "vb.groupTable");
+            BluedViewExKt.b(view2);
         }
         this.l.clear();
         if (arrayList != null) {
@@ -652,7 +647,7 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
                 }
             }
             if (Math.abs(i3) > 2) {
-                d().C.smoothScrollBy(i3, 0, this.p, 350);
+                d().C.smoothScrollBy(i3, 0, this.p, (int) SpellChecker.WORD_ITERATOR_INTERVAL);
             }
         }
         if (z && fitemConstellationTab2 != null && (e = fitemConstellationTab2.e()) != null) {
@@ -803,16 +798,16 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
     /* JADX INFO: Access modifiers changed from: private */
     public static final void e(LiveConstellationDialogFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        LiveConstellationHonourDialogFragment.Companion companion = LiveConstellationHonourDialogFragment.f12800a;
+        LiveConstellationHonourDialogFragment.Companion companion = LiveConstellationHonourDialogFragment.a;
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         companion.a(childFragmentManager);
     }
 
     private final void f() {
-        LiveConstellationDialogFragment liveConstellationDialogFragment = this;
-        LiveEventBus.get(LiveEventBusUtil.Y, Integer.TYPE).observe(liveConstellationDialogFragment, this.u);
-        LiveEventBus.get(LiveEventBusUtil.Z, Pair.class).observe(liveConstellationDialogFragment, this.v);
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get(LiveEventBusUtil.Y, Integer.TYPE).observe(lifecycleOwner, this.u);
+        LiveEventBus.get(LiveEventBusUtil.Z, Pair.class).observe(lifecycleOwner, this.v);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -846,7 +841,7 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
             java.lang.String r0 = ""
             r6 = r0
         L21:
-            com.blued.android.module.live_china.fragment.LiveConstellationAwardDialogFragment$Companion r0 = com.blued.android.module.live_china.fragment.LiveConstellationAwardDialogFragment.f12786a
+            com.blued.android.module.live_china.fragment.LiveConstellationAwardDialogFragment$Companion r0 = com.blued.android.module.live_china.fragment.LiveConstellationAwardDialogFragment.a
             r7 = r0
             r0 = r5
             androidx.fragment.app.FragmentManager r0 = r0.getChildFragmentManager()
@@ -902,7 +897,7 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
             java.lang.String r0 = ""
             r6 = r0
         L21:
-            com.blued.android.module.live_china.fragment.LiveConstellationAwardDialogFragment$Companion r0 = com.blued.android.module.live_china.fragment.LiveConstellationAwardDialogFragment.f12786a
+            com.blued.android.module.live_china.fragment.LiveConstellationAwardDialogFragment$Companion r0 = com.blued.android.module.live_china.fragment.LiveConstellationAwardDialogFragment.a
             r7 = r0
             r0 = r5
             androidx.fragment.app.FragmentManager r0 = r0.getChildFragmentManager()
@@ -1108,7 +1103,7 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
             this.i = z;
             FreedomAdapter freedomAdapter = this.f;
             if (freedomAdapter != null) {
-                freedomAdapter.f10934c = z;
+                freedomAdapter.c = z;
             }
             DialogLiveConstellationBinding d2 = d();
             RecyclerView recyclerView3 = d2 == null ? null : d2.C;
@@ -1125,9 +1120,9 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
             if (recyclerView5 != null) {
                 recyclerView5.setAdapter(this.f);
             }
-            RecyclerView recyclerView6 = d().C;
-            Intrinsics.c(recyclerView6, "vb.rvTabList");
-            BluedViewExKt.b(recyclerView6);
+            View view = d().C;
+            Intrinsics.c(view, "vb.rvTabList");
+            BluedViewExKt.b(view);
             if (this.i) {
                 d().C.scrollToPosition(1073741823);
             }
@@ -1169,9 +1164,9 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
         if (recyclerView3 != null) {
             recyclerView3.setAdapter(this.m);
         }
-        RecyclerView recyclerView4 = d().D;
-        Intrinsics.c(recyclerView4, "vb.rvUserList");
-        BluedViewExKt.b(recyclerView4);
+        View view = d().D;
+        Intrinsics.c(view, "vb.rvUserList");
+        BluedViewExKt.b(view);
     }
 
     @Override // com.blued.android.module.common.utils.freedom.clickcallback.OnClickCallback
@@ -1179,12 +1174,11 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
         b(i, true);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(requireContext(), 623.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
-        dialog.setContentView(d().getRoot(), new ViewGroup.LayoutParams(-1, a2));
+        dialog.setContentView((View) d().getRoot(), new ViewGroup.LayoutParams(-1, a2));
         Window window = dialog.getWindow();
         Intrinsics.a(window);
         window.setBackgroundDrawable(new ColorDrawable(0));
@@ -1197,17 +1191,16 @@ public final class LiveConstellationDialogFragment extends BaseDialogFragment im
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         g();
         super.onDestroy();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
-        this.f12793c = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
+        this.c = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
         f();
         e();
         a(-1);

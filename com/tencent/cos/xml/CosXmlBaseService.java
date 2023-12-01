@@ -2,7 +2,7 @@ package com.tencent.cos.xml;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.cos.xml.common.ClientErrorCode;
 import com.tencent.cos.xml.crypto.Headers;
 import com.tencent.cos.xml.exception.CosXmlClientException;
@@ -307,7 +307,7 @@ public class CosXmlBaseService implements BaseCosXml {
         } catch (CosXmlClientException e2) {
             BeaconService.getInstance().reportError(TAG, e2);
             e2.printStackTrace();
-            str = BridgeUtil.SPLIT_MARK;
+            str = "/";
         }
         return this.config.getProtocol() + "://" + str3 + str;
     }
@@ -374,7 +374,7 @@ public class CosXmlBaseService implements BaseCosXml {
             if (TextUtils.isEmpty(flat)) {
                 return accessUrl + "?" + str;
             }
-            return accessUrl + "?" + flat + "&" + str;
+            return accessUrl + "?" + flat + ContainerUtils.FIELD_DELIMITER + str;
         } catch (QCloudClientException e) {
             throw new CosXmlClientException(ClientErrorCode.INVALID_CREDENTIALS.getCode(), e);
         }

@@ -15,11 +15,11 @@ import com.blued.android.core.AppInfo;
 public class CustomCircleView extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private Paint f30675a;
+    private Paint f16985a;
     private Bitmap b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Canvas f30676c;
+    private Canvas f16986c;
 
     public CustomCircleView(Context context) {
         this(context, null);
@@ -32,24 +32,22 @@ public class CustomCircleView extends View {
     public CustomCircleView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Paint paint = new Paint();
-        this.f30675a = paint;
+        this.f16985a = paint;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.f30675a.setAntiAlias(true);
+        this.f16985a.setAntiAlias(true);
         this.b = Bitmap.createBitmap(AppInfo.l, AppInfo.m + 150, Bitmap.Config.ARGB_8888);
-        this.f30676c = new Canvas(this.b);
+        this.f16986c = new Canvas(this.b);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         Log.e("liangYunLong", "onDetachedFromWindow");
         this.b.recycle();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int width = getWidth();
         int height = getHeight();
         int i = width > height ? height / 2 : width / 2;
@@ -57,8 +55,8 @@ public class CustomCircleView extends View {
             this.b = Bitmap.createBitmap(AppInfo.l, AppInfo.m + 150, Bitmap.Config.ARGB_8888);
         }
         this.b.eraseColor(0);
-        this.f30676c.drawColor(getResources().getColor(2131101312));
-        this.f30676c.drawCircle(width / 2, height / 2, i - 60, this.f30675a);
+        this.f16986c.drawColor(getResources().getColor(2131101312));
+        this.f16986c.drawCircle(width / 2, height / 2, i - 60, this.f16985a);
         canvas.drawBitmap(this.b, 0.0f, 0.0f, (Paint) null);
         super.onDraw(canvas);
         Log.e("liangYunLong", "onDraw");

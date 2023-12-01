@@ -104,12 +104,12 @@ public final class R {
         public static final int SkinTextAppearance_android_textStyle = 0x00000002;
         public static final int SkinTextAppearance_android_typeface = 0x00000001;
         public static final int SkinTextAppearance_textAllCaps = 0x00000009;
-        public static final int[] CardView = {16843071, 16843072, 2130968796, 2130968797, 2130968798, 2130968800, 2130968801, 2130968802, 2130968952, 2130968953, 2130968955, 2130968956, 2130968958};
-        public static final int[] SkinBackgroundHelper = {16842964};
-        public static final int[] SkinCompatImageView = {16843033, 16843041, 2130970086, 2130970353};
-        public static final int[] SkinCompatProgressBar = {16843067, 16843068};
-        public static final int[] SkinCompatTextHelper = {16842804, 16843117, 16843118, 16843119, 16843120, 16843666, 16843667};
-        public static final int[] SkinTextAppearance = {16842901, 16842902, 16842903, 16842904, 16842906, 16843105, 16843106, 16843107, 16843108, 2130970252};
+        public static final int[] CardView = {com.android.internal.R.attr.minWidth, com.android.internal.R.attr.minHeight, 2130968796, 2130968797, 2130968798, 2130968800, 2130968801, 2130968802, 2130968952, 2130968953, 2130968955, 2130968956, 2130968958};
+        public static final int[] SkinBackgroundHelper = {com.android.internal.R.attr.background};
+        public static final int[] SkinCompatImageView = {com.android.internal.R.attr.src, com.android.internal.R.attr.tint, 2130970086, 2130970353};
+        public static final int[] SkinCompatProgressBar = {com.android.internal.R.attr.indeterminateDrawable, com.android.internal.R.attr.progressDrawable};
+        public static final int[] SkinCompatTextHelper = {com.android.internal.R.attr.textAppearance, com.android.internal.R.attr.drawableTop, com.android.internal.R.attr.drawableBottom, com.android.internal.R.attr.drawableLeft, com.android.internal.R.attr.drawableRight, com.android.internal.R.attr.drawableStart, com.android.internal.R.attr.drawableEnd};
+        public static final int[] SkinTextAppearance = {com.android.internal.R.attr.textSize, com.android.internal.R.attr.typeface, com.android.internal.R.attr.textStyle, com.android.internal.R.attr.textColor, com.android.internal.R.attr.textColorHint, com.android.internal.R.attr.shadowColor, com.android.internal.R.attr.shadowDx, com.android.internal.R.attr.shadowDy, com.android.internal.R.attr.shadowRadius, 2130970252};
 
         private styleable() {
         }

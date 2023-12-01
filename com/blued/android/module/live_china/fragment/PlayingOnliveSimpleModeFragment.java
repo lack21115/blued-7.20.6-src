@@ -67,10 +67,10 @@ public class PlayingOnliveSimpleModeFragment extends PlayingOnliveBaseModeFragme
         if (PlayingOnliveFragment.cB != 0 || LiveRoomManager.a().t()) {
             return;
         }
-        LiveRoomInfo a2 = LiveRoomInfo.a();
-        Context context = this.f13292a;
+        LiveRoomInfo a = LiveRoomInfo.a();
+        Context context = this.a;
         String g = LiveRoomManager.a().g();
-        a2.a(context, this, g, "liveanchor_" + this.s, getFragmentActive());
+        a.a(context, this, g, "liveanchor_" + this.s, getFragmentActive());
     }
 
     @Override // com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment, com.blued.android.module.live_china.observer.LiveSetDataObserver.ILiveSetDataObserver
@@ -188,13 +188,13 @@ public class PlayingOnliveSimpleModeFragment extends PlayingOnliveBaseModeFragme
         }
     }
 
-    @Override // com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment, com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.aj = true;
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment, com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         this.q.a(8);

@@ -22,13 +22,13 @@ import java.util.List;
 public class ScatterChartRenderer extends LineScatterCandleRadarRenderer {
 
     /* renamed from: a  reason: collision with root package name */
-    protected ScatterDataProvider f22195a;
+    protected ScatterDataProvider f8588a;
     float[] b;
 
     public ScatterChartRenderer(ScatterDataProvider scatterDataProvider, ChartAnimator chartAnimator, ViewPortHandler viewPortHandler) {
         super(chartAnimator, viewPortHandler);
         this.b = new float[2];
-        this.f22195a = scatterDataProvider;
+        this.f8588a = scatterDataProvider;
     }
 
     @Override // com.github.mikephil.charting.renderer.DataRenderer
@@ -37,9 +37,9 @@ public class ScatterChartRenderer extends LineScatterCandleRadarRenderer {
 
     @Override // com.github.mikephil.charting.renderer.DataRenderer
     public void a(Canvas canvas) {
-        for (IScatterDataSet iScatterDataSet : this.f22195a.getScatterData().i()) {
-            if (iScatterDataSet.B()) {
-                a(canvas, iScatterDataSet);
+        for (T t : this.f8588a.getScatterData().i()) {
+            if (t.B()) {
+                a(canvas, t);
             }
         }
     }
@@ -50,7 +50,7 @@ public class ScatterChartRenderer extends LineScatterCandleRadarRenderer {
             return;
         }
         ViewPortHandler viewPortHandler = this.o;
-        Transformer a2 = this.f22195a.a(iScatterDataSet.C());
+        Transformer a2 = this.f8588a.a(iScatterDataSet.C());
         float a3 = this.g.a();
         IShapeRenderer b = iScatterDataSet.b();
         if (b == null) {
@@ -90,7 +90,7 @@ public class ScatterChartRenderer extends LineScatterCandleRadarRenderer {
     /* JADX WARN: Type inference failed for: r0v19, types: [com.github.mikephil.charting.data.Entry] */
     @Override // com.github.mikephil.charting.renderer.DataRenderer
     public void a(Canvas canvas, Highlight[] highlightArr) {
-        ScatterData scatterData = this.f22195a.getScatterData();
+        ScatterData scatterData = this.f8588a.getScatterData();
         int length = highlightArr.length;
         int i = 0;
         while (true) {
@@ -103,9 +103,9 @@ public class ScatterChartRenderer extends LineScatterCandleRadarRenderer {
             if (iScatterDataSet != null && iScatterDataSet.p()) {
                 ?? b = iScatterDataSet.b(highlight.a(), highlight.b());
                 if (a((Entry) b, iScatterDataSet)) {
-                    MPPointD b2 = this.f22195a.a(iScatterDataSet.C()).b(b.i(), b.b() * this.g.a());
-                    highlight.a((float) b2.f22202a, (float) b2.b);
-                    a(canvas, (float) b2.f22202a, (float) b2.b, iScatterDataSet);
+                    MPPointD b2 = this.f8588a.a(iScatterDataSet.C()).b(b.i(), b.b() * this.g.a());
+                    highlight.a((float) b2.f8595a, (float) b2.b);
+                    a(canvas, (float) b2.f8595a, (float) b2.b, iScatterDataSet);
                 }
             }
             i = i2 + 1;
@@ -114,25 +114,25 @@ public class ScatterChartRenderer extends LineScatterCandleRadarRenderer {
 
     @Override // com.github.mikephil.charting.renderer.DataRenderer
     public void b(Canvas canvas) {
-        if (!a(this.f22195a)) {
+        if (!a(this.f8588a)) {
             return;
         }
-        List<T> i = this.f22195a.getScatterData().i();
+        List<T> i = this.f8588a.getScatterData().i();
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f22195a.getScatterData().d()) {
+            if (i3 >= this.f8588a.getScatterData().d()) {
                 return;
             }
             IScatterDataSet iScatterDataSet = (IScatterDataSet) i.get(i3);
             if (a(iScatterDataSet) && iScatterDataSet.H() >= 1) {
                 b(iScatterDataSet);
-                this.f.a(this.f22195a, iScatterDataSet);
-                float[] a2 = this.f22195a.a(iScatterDataSet.C()).a(iScatterDataSet, this.g.b(), this.g.a(), this.f.f22172a, this.f.b);
+                this.f.a(this.f8588a, iScatterDataSet);
+                float[] a2 = this.f8588a.a(iScatterDataSet.C()).a(iScatterDataSet, this.g.b(), this.g.a(), this.f.f8565a, this.f.b);
                 float a3 = Utils.a(iScatterDataSet.a());
                 ValueFormatter q = iScatterDataSet.q();
                 MPPointF a4 = MPPointF.a(iScatterDataSet.A());
-                a4.f22204a = Utils.a(a4.f22204a);
+                a4.f8597a = Utils.a(a4.f8597a);
                 a4.b = Utils.a(a4.b);
                 int i4 = 0;
                 while (true) {
@@ -144,13 +144,13 @@ public class ScatterChartRenderer extends LineScatterCandleRadarRenderer {
                         int i6 = i5 + 1;
                         if (this.o.f(a2[i6])) {
                             int i7 = i5 / 2;
-                            Entry e = iScatterDataSet.e(this.f.f22172a + i7);
+                            Entry e = iScatterDataSet.e(this.f.f8565a + i7);
                             if (iScatterDataSet.y()) {
-                                a(canvas, q.a(e), a2[i5], a2[i6] - a3, iScatterDataSet.d(i7 + this.f.f22172a));
+                                a(canvas, q.a(e), a2[i5], a2[i6] - a3, iScatterDataSet.d(i7 + this.f.f8565a));
                             }
                             if (e.g() != null && iScatterDataSet.z()) {
                                 Drawable g = e.g();
-                                Utils.a(canvas, g, (int) (a2[i5] + a4.f22204a), (int) (a2[i6] + a4.b), g.getIntrinsicWidth(), g.getIntrinsicHeight());
+                                Utils.a(canvas, g, (int) (a2[i5] + a4.f8597a), (int) (a2[i6] + a4.b), g.getIntrinsicWidth(), g.getIntrinsicHeight());
                             }
                         }
                     }

@@ -9,7 +9,6 @@ import android.os.Looper;
 import android.text.TextUtils;
 import android.view.TextureView;
 import android.widget.FrameLayout;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.videobase.base.GLConstants;
 import com.tencent.liteav.videobase.common.EncodedVideoFrame;
@@ -313,7 +312,7 @@ public class TXVideoEditer {
         long currentTimeMillis = System.currentTimeMillis() / 1000;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US);
         String format = simpleDateFormat.format(new Date(Long.parseLong(String.valueOf(currentTimeMillis) + "000")));
-        return file + BridgeUtil.SPLIT_MARK + String.format("TXVideo_%s_process.mp4", format);
+        return file + "/" + String.format("TXVideo_%s_process.mp4", format);
     }
 
     private void getAllMediaFormatFromSource(List<String> list) {
@@ -1031,7 +1030,7 @@ public class TXVideoEditer {
         if (nVar == null) {
             tXVideoEditer.mVideoProcessor.setOutputSize(-1, -1, GLConstants.GLScaleType.FIT_CENTER);
         } else {
-            tXVideoEditer.mVideoProcessor.setOutputSize(nVar.f36340a, tXVideoEditer.mEncodeResolution.b, GLConstants.GLScaleType.FIT_CENTER);
+            tXVideoEditer.mVideoProcessor.setOutputSize(nVar.f22649a, tXVideoEditer.mEncodeResolution.b, GLConstants.GLScaleType.FIT_CENTER);
         }
         tXVideoEditer.mIsAudioEnd = false;
         tXVideoEditer.mIsVideoEnd = false;
@@ -1478,7 +1477,7 @@ public class TXVideoEditer {
         if (nVar == null) {
             this.mVideoProcessor.setOutputSize(-1, -1, GLConstants.GLScaleType.FIT_CENTER);
         } else {
-            this.mVideoProcessor.setOutputSize(nVar.f36340a, this.mEncodeResolution.b, GLConstants.GLScaleType.FIT_CENTER);
+            this.mVideoProcessor.setOutputSize(nVar.f22649a, this.mEncodeResolution.b, GLConstants.GLScaleType.FIT_CENTER);
         }
         if (list.size() == 1) {
             this.mThumbnailGenerator.setVideoSourceList(list);

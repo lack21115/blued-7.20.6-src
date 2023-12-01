@@ -1,5 +1,6 @@
 package com.google.android.material.navigation;
 
+import android.R;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -22,7 +23,6 @@ import androidx.core.view.PointerIconCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.widget.TextViewCompat;
-import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.badge.BadgeUtils;
@@ -59,7 +59,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
     private float shiftAmount;
     private final TextView smallLabel;
     private Drawable wrappedIconDrawable;
-    private static final int[] CHECKED_STATE_SET = {16842912};
+    private static final int[] CHECKED_STATE_SET = {R.attr.state_checked};
     private static final ActiveIndicatorTransform ACTIVE_INDICATOR_LABELED_TRANSFORM = new ActiveIndicatorTransform();
     private static final ActiveIndicatorTransform ACTIVE_INDICATOR_UNLABELED_TRANSFORM = new ActiveIndicatorUnlabeledTransform();
 
@@ -117,12 +117,12 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         this.activeIndicatorResizeable = false;
         this.activeIndicatorMarginHorizontal = 0;
         LayoutInflater.from(context).inflate(getItemLayoutResId(), (ViewGroup) this, true);
-        this.iconContainer = (FrameLayout) findViewById(R.id.navigation_bar_item_icon_container);
-        this.activeIndicatorView = findViewById(R.id.navigation_bar_item_active_indicator_view);
-        this.icon = (ImageView) findViewById(R.id.navigation_bar_item_icon_view);
-        this.labelGroup = (ViewGroup) findViewById(R.id.navigation_bar_item_labels_group);
-        this.smallLabel = (TextView) findViewById(R.id.navigation_bar_item_small_label_view);
-        this.largeLabel = (TextView) findViewById(R.id.navigation_bar_item_large_label_view);
+        this.iconContainer = (FrameLayout) findViewById(com.google.android.material.R.id.navigation_bar_item_icon_container);
+        this.activeIndicatorView = findViewById(com.google.android.material.R.id.navigation_bar_item_active_indicator_view);
+        this.icon = (ImageView) findViewById(com.google.android.material.R.id.navigation_bar_item_icon_view);
+        this.labelGroup = (ViewGroup) findViewById(com.google.android.material.R.id.navigation_bar_item_labels_group);
+        this.smallLabel = (TextView) findViewById(com.google.android.material.R.id.navigation_bar_item_small_label_view);
+        this.largeLabel = (TextView) findViewById(com.google.android.material.R.id.navigation_bar_item_large_label_view);
         setBackgroundResource(getItemBackgroundResId());
         this.itemPaddingTop = getResources().getDimensionPixelSize(getItemDefaultMarginResId());
         this.itemPaddingBottom = this.labelGroup.getPaddingBottom();
@@ -228,8 +228,8 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
                 NavigationBarItemView.this.setActiveIndicatorProgress(((Float) valueAnimator2.getAnimatedValue()).floatValue(), f);
             }
         });
-        this.activeIndicatorAnimator.setInterpolator(MotionUtils.resolveThemeInterpolator(getContext(), R.attr.motionEasingStandard, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
-        this.activeIndicatorAnimator.setDuration(MotionUtils.resolveThemeDuration(getContext(), R.attr.motionDurationLong1, getResources().getInteger(R.integer.material_motion_duration_long_1)));
+        this.activeIndicatorAnimator.setInterpolator(MotionUtils.resolveThemeInterpolator(getContext(), com.google.android.material.R.attr.motionEasingStandard, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
+        this.activeIndicatorAnimator.setDuration(MotionUtils.resolveThemeDuration(getContext(), com.google.android.material.R.attr.motionDurationLong1, getResources().getInteger(com.google.android.material.R.integer.material_motion_duration_long_1)));
         this.activeIndicatorAnimator.start();
     }
 
@@ -334,7 +334,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
     }
 
     protected int getItemBackgroundResId() {
-        return R.drawable.mtrl_navigation_bar_item_background;
+        return com.google.android.material.R.drawable.mtrl_navigation_bar_item_background;
     }
 
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
@@ -343,7 +343,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
     }
 
     protected int getItemDefaultMarginResId() {
-        return R.dimen.mtrl_navigation_bar_item_default_margin;
+        return com.google.android.material.R.dimen.mtrl_navigation_bar_item_default_margin;
     }
 
     protected abstract int getItemLayoutResId();
@@ -352,16 +352,14 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         return this.itemPosition;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public int getSuggestedMinimumHeight() {
+    protected int getSuggestedMinimumHeight() {
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.labelGroup.getLayoutParams();
         return getSuggestedIconHeight() + layoutParams.topMargin + this.labelGroup.getMeasuredHeight() + layoutParams.bottomMargin;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public int getSuggestedMinimumWidth() {
+    protected int getSuggestedMinimumWidth() {
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.labelGroup.getLayoutParams();
         int i = layoutParams.leftMargin;
         int measuredWidth = this.labelGroup.getMeasuredWidth();
@@ -398,7 +396,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         return onCreateDrawableState;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         BadgeDrawable badgeDrawable = this.badgeDrawable;
@@ -415,12 +413,11 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
             wrap.setClickable(false);
             wrap.removeAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_CLICK);
         }
-        wrap.setRoleDescription(getResources().getString(R.string.item_view_role_description));
+        wrap.setRoleDescription(getResources().getString(com.google.android.material.R.string.item_view_role_description));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onSizeChanged(final int i, int i2, int i3, int i4) {
+    @Override // android.view.View
+    protected void onSizeChanged(final int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         post(new Runnable() { // from class: com.google.android.material.navigation.NavigationBarItemView.2
             @Override // java.lang.Runnable
@@ -565,7 +562,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         setSelected(z);
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, androidx.appcompat.view.menu.MenuView.ItemView
     public void setEnabled(boolean z) {
         super.setEnabled(z);
         this.smallLabel.setEnabled(z);

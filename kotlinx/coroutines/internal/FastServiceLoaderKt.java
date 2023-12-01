@@ -7,23 +7,21 @@ import kotlin.ResultKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/FastServiceLoaderKt.class */
 public final class FastServiceLoaderKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final boolean f43535a;
+    private static final boolean a;
 
     static {
         Object f;
         try {
-            Result.Companion companion = Result.f42293a;
+            Result.Companion companion = Result.a;
             f = Result.f(Class.forName("android.os.Build"));
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             f = Result.f(ResultKt.a(th));
         }
-        f43535a = Result.a(f);
+        a = Result.a(f);
     }
 
     public static final boolean a() {
-        return f43535a;
+        return a;
     }
 }

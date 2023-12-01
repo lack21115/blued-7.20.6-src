@@ -3,6 +3,7 @@ package com.tencent.smtt.sdk;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/TbsPVConfig.class */
 public class TbsPVConfig extends TbsBaseConfig {
@@ -59,7 +60,7 @@ public class TbsPVConfig extends TbsBaseConfig {
         int i;
         synchronized (this) {
             try {
-                String str = this.f38756a.get(TbsPVConfigKey.KEY_DISABLED_CORE_VERSION);
+                String str = this.f25065a.get(TbsPVConfigKey.KEY_DISABLED_CORE_VERSION);
                 i = 0;
                 if (!TextUtils.isEmpty(str)) {
                     i = Integer.parseInt(str);
@@ -76,7 +77,7 @@ public class TbsPVConfig extends TbsBaseConfig {
         int i;
         synchronized (this) {
             try {
-                String str = this.f38756a.get(TbsPVConfigKey.KEY_EMERGENT_CORE_VERSION);
+                String str = this.f25065a.get(TbsPVConfigKey.KEY_EMERGENT_CORE_VERSION);
                 i = 0;
                 if (!TextUtils.isEmpty(str)) {
                     i = Integer.parseInt(str);
@@ -93,7 +94,7 @@ public class TbsPVConfig extends TbsBaseConfig {
         int i;
         synchronized (this) {
             try {
-                String str = this.f38756a.get(TbsPVConfigKey.KEY_GET_LOCALCOREVERSION_MORETIMES);
+                String str = this.f25065a.get(TbsPVConfigKey.KEY_GET_LOCALCOREVERSION_MORETIMES);
                 i = 0;
                 if (!TextUtils.isEmpty(str)) {
                     i = Integer.parseInt(str);
@@ -110,7 +111,7 @@ public class TbsPVConfig extends TbsBaseConfig {
         int i;
         synchronized (this) {
             try {
-                String str = this.f38756a.get(TbsPVConfigKey.KEY_READ_APK);
+                String str = this.f25065a.get(TbsPVConfigKey.KEY_READ_APK);
                 i = 0;
                 if (!TextUtils.isEmpty(str)) {
                     i = Integer.parseInt(str);
@@ -126,7 +127,7 @@ public class TbsPVConfig extends TbsBaseConfig {
     public String getSyncMapValue(String str) {
         String str2;
         synchronized (this) {
-            str2 = this.f38756a.get(str);
+            str2 = this.f25065a.get(str);
         }
         return str2;
     }
@@ -134,7 +135,7 @@ public class TbsPVConfig extends TbsBaseConfig {
     public boolean getTbsCoreSandboxModeEnable() {
         synchronized (this) {
             try {
-                if ("true".equals(this.f38756a.get(TbsPVConfigKey.KEY_TBS_CORE_SANDBOX_MODE_ENABLE))) {
+                if (fw.Code.equals(this.f25065a.get(TbsPVConfigKey.KEY_TBS_CORE_SANDBOX_MODE_ENABLE))) {
                     return true;
                 }
             } catch (Exception e) {
@@ -147,9 +148,9 @@ public class TbsPVConfig extends TbsBaseConfig {
     public boolean isDisableHostBackupCore() {
         synchronized (this) {
             try {
-                String str = this.f38756a.get(TbsPVConfigKey.KEY_IS_DISABLE_HOST_BACKUP_CORE);
+                String str = this.f25065a.get(TbsPVConfigKey.KEY_IS_DISABLE_HOST_BACKUP_CORE);
                 if (!TextUtils.isEmpty(str)) {
-                    if (str.equals("true")) {
+                    if (str.equals(fw.Code)) {
                         return true;
                     }
                 }
@@ -163,9 +164,9 @@ public class TbsPVConfig extends TbsBaseConfig {
     public boolean isEnableNoCoreGray() {
         synchronized (this) {
             try {
-                String str = this.f38756a.get(TbsPVConfigKey.KEY_ENABLE_NO_SHARE_GRAY);
+                String str = this.f25065a.get(TbsPVConfigKey.KEY_ENABLE_NO_SHARE_GRAY);
                 if (!TextUtils.isEmpty(str)) {
-                    if (str.equals("true")) {
+                    if (str.equals(fw.Code)) {
                         return true;
                     }
                 }
@@ -178,7 +179,7 @@ public class TbsPVConfig extends TbsBaseConfig {
 
     public void putData(String str, String str2) {
         synchronized (this) {
-            this.f38756a.put(str, str2);
+            this.f25065a.put(str, str2);
         }
     }
 }

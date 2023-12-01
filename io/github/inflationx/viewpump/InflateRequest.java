@@ -30,13 +30,13 @@ public final class InflateRequest {
         public Builder() {
         }
 
-        public Builder(InflateRequest request) {
-            Intrinsics.d(request, "request");
-            this.name = request.name();
-            this.context = request.context();
-            this.attrs = request.attrs();
-            this.parent = request.parent();
-            this.fallbackViewCreator = request.fallbackViewCreator();
+        public Builder(InflateRequest inflateRequest) {
+            Intrinsics.d(inflateRequest, "request");
+            this.name = inflateRequest.name();
+            this.context = inflateRequest.context();
+            this.attrs = inflateRequest.attrs();
+            this.parent = inflateRequest.parent();
+            this.fallbackViewCreator = inflateRequest.fallbackViewCreator();
         }
 
         public final Builder attrs(AttributeSet attributeSet) {
@@ -77,10 +77,10 @@ public final class InflateRequest {
             return builder;
         }
 
-        public final Builder name(String name) {
-            Intrinsics.d(name, "name");
+        public final Builder name(String str) {
+            Intrinsics.d(str, "name");
             Builder builder = this;
-            builder.name = name;
+            builder.name = str;
             return builder;
         }
 
@@ -107,11 +107,11 @@ public final class InflateRequest {
         }
     }
 
-    public InflateRequest(String name, Context context, AttributeSet attributeSet, View view, FallbackViewCreator fallbackViewCreator) {
-        Intrinsics.d(name, "name");
+    public InflateRequest(String str, Context context, AttributeSet attributeSet, View view, FallbackViewCreator fallbackViewCreator) {
+        Intrinsics.d(str, "name");
         Intrinsics.d(context, "context");
         Intrinsics.d(fallbackViewCreator, "fallbackViewCreator");
-        this.name = name;
+        this.name = str;
         this.context = context;
         this.attrs = attributeSet;
         this.parent = view;
@@ -174,18 +174,18 @@ public final class InflateRequest {
         return this.context;
     }
 
-    public final InflateRequest copy(String name, Context context, AttributeSet attributeSet, View view, FallbackViewCreator fallbackViewCreator) {
-        Intrinsics.d(name, "name");
+    public final InflateRequest copy(String str, Context context, AttributeSet attributeSet, View view, FallbackViewCreator fallbackViewCreator) {
+        Intrinsics.d(str, "name");
         Intrinsics.d(context, "context");
         Intrinsics.d(fallbackViewCreator, "fallbackViewCreator");
-        return new InflateRequest(name, context, attributeSet, view, fallbackViewCreator);
+        return new InflateRequest(str, context, attributeSet, view, fallbackViewCreator);
     }
 
     public boolean equals(Object obj) {
         if (this != obj) {
             if (obj instanceof InflateRequest) {
                 InflateRequest inflateRequest = (InflateRequest) obj;
-                return Intrinsics.a((Object) this.name, (Object) inflateRequest.name) && Intrinsics.a(this.context, inflateRequest.context) && Intrinsics.a(this.attrs, inflateRequest.attrs) && Intrinsics.a(this.parent, inflateRequest.parent) && Intrinsics.a(this.fallbackViewCreator, inflateRequest.fallbackViewCreator);
+                return Intrinsics.a(this.name, inflateRequest.name) && Intrinsics.a(this.context, inflateRequest.context) && Intrinsics.a(this.attrs, inflateRequest.attrs) && Intrinsics.a(this.parent, inflateRequest.parent) && Intrinsics.a(this.fallbackViewCreator, inflateRequest.fallbackViewCreator);
             }
             return false;
         }

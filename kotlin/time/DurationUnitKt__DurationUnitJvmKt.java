@@ -11,9 +11,7 @@ class DurationUnitKt__DurationUnitJvmKt {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/time/DurationUnitKt__DurationUnitJvmKt$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f42767a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[TimeUnit.values().length];
@@ -24,7 +22,7 @@ class DurationUnitKt__DurationUnitJvmKt {
             iArr[TimeUnit.MINUTES.ordinal()] = 5;
             iArr[TimeUnit.HOURS.ordinal()] = 6;
             iArr[TimeUnit.DAYS.ordinal()] = 7;
-            f42767a = iArr;
+            a = iArr;
         }
     }
 

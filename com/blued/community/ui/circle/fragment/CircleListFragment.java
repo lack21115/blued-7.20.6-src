@@ -28,13 +28,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleListFragment.class */
 public class CircleListFragment extends MvpFragment<CircleListPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f19209a;
+    private Context a;
     private CircleConstants.CIRCLE_FROM_PAGE b = CircleConstants.CIRCLE_FROM_PAGE.JOINED_CIRCLE;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f19210c = false;
+    private boolean c = false;
     private boolean d = true;
     private CommonTopTitleNoTrans e;
     private RecyclerView f;
@@ -61,7 +57,7 @@ public class CircleListFragment extends MvpFragment<CircleListPresenter> {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void c(View view) {
-            CircleMyManagementFragment.f19220a.a(CircleListFragment.this.f19209a);
+            CircleMyManagementFragment.a.a(CircleListFragment.this.a);
         }
 
         @Override // com.blued.android.framework.ui.mvp.MvpUtils.DataHandler
@@ -100,30 +96,28 @@ public class CircleListFragment extends MvpFragment<CircleListPresenter> {
     /* renamed from: com.blued.community.ui.circle.fragment.CircleListFragment$4  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleListFragment$4.class */
     static /* synthetic */ class AnonymousClass4 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f19214a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[CircleConstants.CIRCLE_FROM_PAGE.values().length];
-            f19214a = iArr;
+            a = iArr;
             try {
                 iArr[CircleConstants.CIRCLE_FROM_PAGE.JOINED_CIRCLE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f19214a[CircleConstants.CIRCLE_FROM_PAGE.EXPLORE_MORE.ordinal()] = 2;
+                a[CircleConstants.CIRCLE_FROM_PAGE.EXPLORE_MORE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f19214a[CircleConstants.CIRCLE_FROM_PAGE.HOT_CIRCLE.ordinal()] = 3;
+                a[CircleConstants.CIRCLE_FROM_PAGE.HOT_CIRCLE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f19214a[CircleConstants.CIRCLE_FROM_PAGE.MANAGED_CIRCLE.ordinal()] = 4;
+                a[CircleConstants.CIRCLE_FROM_PAGE.MANAGED_CIRCLE.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -147,8 +141,8 @@ public class CircleListFragment extends MvpFragment<CircleListPresenter> {
 
     private void c() {
         this.e = (CommonTopTitleNoTrans) this.i.findViewById(R.id.title);
-        this.f = (RecyclerView) this.i.findViewById(R.id.list);
-        this.g = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
+        this.f = this.i.findViewById(R.id.list);
+        this.g = this.i.findViewById(R.id.refresh_layout);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -159,30 +153,28 @@ public class CircleListFragment extends MvpFragment<CircleListPresenter> {
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        this.f19209a = getActivity();
+        this.a = getActivity();
         c();
         if (getArguments() != null) {
             this.b = (CircleConstants.CIRCLE_FROM_PAGE) getArguments().getSerializable("circle_list_page");
         }
-        this.k = new CircleListAdapter(this.f19209a, this.b, getFragmentActive(), null);
-        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.f19209a);
+        this.k = new CircleListAdapter(this.a, this.b, getFragmentActive(), null);
+        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.a);
         this.l = noDataAndLoadFailView;
         noDataAndLoadFailView.d();
         this.k.setEmptyView(this.l);
-        this.g.l(false);
+        this.g.b(false);
         this.g.a(new OnRefreshListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleListFragment$Ngo8VYINFCzuLit91OK3b7_eVC8
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public final void onRefresh(RefreshLayout refreshLayout) {
                 CircleListFragment.this.a(refreshLayout);
             }
         });
         this.k.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleListFragment$PDA7LgvluVg80_7rSp4WxYPt8k8
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public final void onLoadMoreRequested() {
                 CircleListFragment.this.d();
             }
         }, this.f);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f19209a);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.a);
         linearLayoutManager.setOrientation(1);
         this.f.setAdapter(this.k);
         this.f.setLayoutManager(linearLayoutManager);
@@ -193,38 +185,37 @@ public class CircleListFragment extends MvpFragment<CircleListPresenter> {
             }
         });
         if (this.b == CircleConstants.CIRCLE_FROM_PAGE.JOINED_CIRCLE) {
-            this.e.setRightText(this.f19209a.getResources().getString(R.string.managed_circle));
+            this.e.setRightText(this.a.getResources().getString(R.string.managed_circle));
             this.e.setRightTextColor(R.color.syc_i);
         } else {
             this.e.a();
         }
-        int i = AnonymousClass4.f19214a[this.b.ordinal()];
+        int i = AnonymousClass4.a[this.b.ordinal()];
         if (i == 1) {
-            this.e.setRightText(this.f19209a.getResources().getString(R.string.managed_circle));
+            this.e.setRightText(this.a.getResources().getString(R.string.managed_circle));
             this.e.setRightTextColor(R.color.syc_i);
-            this.e.setCenterText(this.f19209a.getResources().getString(R.string.my_new_base));
+            this.e.setCenterText(this.a.getResources().getString(R.string.my_new_base));
             this.l.setBtnStr(R.string.more_circle_title);
             this.l.setNoDataBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleListFragment.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    CircleListFragment.a(CircleListFragment.this.f19209a, CircleConstants.CIRCLE_FROM_PAGE.EXPLORE_MORE);
+                    CircleListFragment.a(CircleListFragment.this.a, CircleConstants.CIRCLE_FROM_PAGE.EXPLORE_MORE);
                 }
             });
         } else if (i == 2) {
             this.e.a();
-            this.e.setCenterText(this.f19209a.getResources().getString(R.string.more_circle_title));
+            this.e.setCenterText(this.a.getResources().getString(R.string.more_circle_title));
         } else if (i == 3) {
             this.e.a();
-            this.e.setCenterText(this.f19209a.getResources().getString(R.string.my_new_base_hot));
+            this.e.setCenterText(this.a.getResources().getString(R.string.my_new_base_hot));
         } else if (i == 4) {
             this.e.a();
-            this.e.setCenterText(this.f19209a.getResources().getString(R.string.managed_circle));
+            this.e.setCenterText(this.a.getResources().getString(R.string.managed_circle));
         }
         this.l.setNoDataImg(R.drawable.icon_no_circle);
         this.l.setNoDataStr(R.string.no_circle_yet);
         this.f.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.circle.fragment.CircleListFragment.2
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
                 super.onScrolled(recyclerView, i2, i3);
                 CircleListFragment.this.b();
@@ -276,7 +267,7 @@ public class CircleListFragment extends MvpFragment<CircleListPresenter> {
             z2 = false;
         }
         if (!z2 || z2) {
-            this.g.j();
+            this.g.g();
             this.k.loadMoreComplete();
             if (this.k.getData().size() > 0) {
                 this.l.d();
@@ -295,11 +286,11 @@ public class CircleListFragment extends MvpFragment<CircleListPresenter> {
     }
 
     public void b() {
-        if (this.f.canScrollVertically(1) || this.f19210c || this.d) {
+        if (this.f.canScrollVertically(1) || this.c || this.d) {
             return;
         }
         EventTrackFeed.a(FeedProtos.Event.CIRCLE_MORE_BTN_SHOW);
-        this.f19210c = true;
+        this.c = true;
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
@@ -318,7 +309,7 @@ public class CircleListFragment extends MvpFragment<CircleListPresenter> {
         if (getArguments() != null) {
             circle_from_page = (CircleConstants.CIRCLE_FROM_PAGE) getArguments().getSerializable("circle_list_page");
         }
-        return AnonymousClass4.f19214a[circle_from_page.ordinal()] != 1 ? super.getPageBizName() : "A71";
+        return AnonymousClass4.a[circle_from_page.ordinal()] != 1 ? super.getPageBizName() : "A71";
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView

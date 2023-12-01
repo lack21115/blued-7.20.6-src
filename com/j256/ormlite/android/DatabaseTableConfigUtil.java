@@ -1,7 +1,5 @@
 package com.j256.ormlite.android;
 
-import com.alibaba.mtl.appmonitor.AppMonitorDelegate;
-import com.android.internal.telephony.TelephonyIntents;
 import com.j256.ormlite.db.DatabaseType;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
@@ -184,13 +182,13 @@ public class DatabaseTableConfigUtil {
     }
 
     private static int configFieldNameToNum(String str) {
-        if (str.equals(TelephonyIntents.EXTRA_COLUMN_NAME)) {
+        if (str.equals("columnName")) {
             return 1;
         }
         if (str.equals(STManager.KEY_DATA_TYPE)) {
             return 2;
         }
-        if (str.equals(AppMonitorDelegate.DEFAULT_VALUE)) {
+        if (str.equals("defaultValue")) {
             return 3;
         }
         if (str.equals("width")) {

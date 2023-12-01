@@ -120,6 +120,6 @@ public final class e {
         boolean a2 = k.pP().a(covert, "loadConfigFeedAd");
         covert.setAdStyle(1);
         KsAdLoadManager.ac();
-        KsAdLoadManager.a(new a.C0527a().e(new com.kwad.components.core.n.kwai.b(covert)).aH(a2).a(new AnonymousClass2(feedAdListener, covert, z, elapsedRealtime)).pj());
+        KsAdLoadManager.a(new a.C0357a().e(new com.kwad.components.core.n.kwai.b(covert)).aH(a2).a(new AnonymousClass2(feedAdListener, covert, z, elapsedRealtime)).pj());
     }
 }

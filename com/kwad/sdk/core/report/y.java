@@ -2,6 +2,7 @@ package com.kwad.sdk.core.report;
 
 import android.text.TextUtils;
 import com.huawei.hms.ads.hl;
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.kwad.sdk.core.response.model.AdInfo;
 import com.kwad.sdk.core.response.model.AdTemplate;
 import com.kwad.sdk.service.ServiceProvider;
@@ -220,7 +221,7 @@ public final class y extends com.kwad.sdk.core.network.b {
         if (TextUtils.isEmpty(bVar.Ts)) {
             return;
         }
-        putBody("payload", bVar.Ts);
+        putBody(AssistPushConsts.MSG_TYPE_PAYLOAD, bVar.Ts);
     }
 
     private void b(String str, b bVar) {
@@ -231,7 +232,7 @@ public final class y extends com.kwad.sdk.core.network.b {
             putBody("itemClickType", bVar.jU);
         }
         if (!TextUtils.isEmpty(bVar.Ts)) {
-            putBody("payload", bVar.Ts);
+            putBody(AssistPushConsts.MSG_TYPE_PAYLOAD, bVar.Ts);
         }
         if (bVar.aiQ != 0) {
             putBody("adAggPageSource", bVar.aiQ);
@@ -298,7 +299,7 @@ public final class y extends com.kwad.sdk.core.network.b {
             putBody("elementType", bVar.aki);
         }
         if (!TextUtils.isEmpty(bVar.Ts)) {
-            putBody("payload", bVar.Ts);
+            putBody(AssistPushConsts.MSG_TYPE_PAYLOAD, bVar.Ts);
         }
         if (bVar.akG != null) {
             putBody("clientExtData", bVar.akG.toJson().toString());

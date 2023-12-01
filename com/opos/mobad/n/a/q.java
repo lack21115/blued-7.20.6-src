@@ -15,7 +15,7 @@ import com.heytap.msp.mobad.api.R;
 public class q {
 
     /* renamed from: a  reason: collision with root package name */
-    private static PowerManager f26544a;
+    private static PowerManager f12856a;
 
     public static final View a(com.opos.mobad.n.d.d dVar, ViewGroup viewGroup) {
         if (viewGroup == null || dVar == null) {
@@ -91,10 +91,10 @@ public class q {
     }
 
     public static final PowerManager d(Context context) {
-        if (f26544a == null) {
-            f26544a = (PowerManager) context.getSystemService("power");
+        if (f12856a == null) {
+            f12856a = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         }
-        return f26544a;
+        return f12856a;
     }
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0026 -> B:12:0x002e). Please submit an issue!!! */

@@ -14,12 +14,12 @@ public class ReleasableInputStream extends SdkFilterInputStream implements Relea
 
     private void doRelease() {
         try {
-            this.f42254in.close();
+            this.in.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (this.f42254in instanceof Releasable) {
-            ((Releasable) this.f42254in).release();
+        if (this.in instanceof Releasable) {
+            ((Releasable) this.in).release();
         }
         abortIfNeeded();
     }

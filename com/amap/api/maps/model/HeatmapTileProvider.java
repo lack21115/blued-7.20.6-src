@@ -116,8 +116,8 @@ public class HeatmapTileProvider implements TileProvider {
     }
 
     private static double a(Collection<WeightedLatLng> collection, df dfVar, int i, int i2) {
-        double d = dfVar.f4849a;
-        double d2 = dfVar.f4850c;
+        double d = dfVar.a;
+        double d2 = dfVar.c;
         double d3 = dfVar.b;
         double d4 = d2 - d;
         double d5 = dfVar.d - d3;
@@ -409,14 +409,14 @@ public class HeatmapTileProvider implements TileProvider {
             }
         }
         df dfVar = new df(d4, d5, d6, d7);
-        if (dfVar.a(new df(this.mBounds.f4849a - d2, this.mBounds.f4850c + d2, this.mBounds.b - d2, this.mBounds.d + d2))) {
-            Collection<WeightedLatLng> a2 = this.mTree.a(dfVar);
-            if (a2.isEmpty()) {
+        if (dfVar.a(new df(this.mBounds.a - d2, this.mBounds.c + d2, this.mBounds.b - d2, this.mBounds.d + d2))) {
+            Collection<WeightedLatLng> a = this.mTree.a(dfVar);
+            if (a.isEmpty()) {
                 return TileProvider.NO_TILE;
             }
             int i5 = this.mRadius;
             double[][] dArr = (double[][]) Array.newInstance(Double.TYPE, (i5 * 2) + 256, (i5 * 2) + 256);
-            for (WeightedLatLng weightedLatLng : a2) {
+            for (WeightedLatLng weightedLatLng : a) {
                 DPoint point = weightedLatLng.getPoint();
                 int i6 = (int) ((point.x - d4) / d3);
                 int i7 = (int) ((point.y - d6) / d3);

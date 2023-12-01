@@ -8,11 +8,11 @@ import com.opos.exoplayer.core.y;
 final class ad {
 
     /* renamed from: a  reason: collision with root package name */
-    private final y.a f25061a = new y.a();
+    private final y.a f11373a = new y.a();
     private final y.b b = new y.b();
 
     /* renamed from: c  reason: collision with root package name */
-    private long f25062c;
+    private long f11374c;
     private y d;
     private int e;
     private boolean f;
@@ -25,7 +25,7 @@ final class ad {
         e.b bVar = new e.b(i, i2, i3, j2);
         boolean b = b(bVar, Long.MIN_VALUE);
         boolean a2 = a(bVar, b);
-        return new ac(bVar, i3 == this.f25061a.b(i2) ? this.f25061a.e() : 0L, Long.MIN_VALUE, j, this.d.a(bVar.f25286a, this.f25061a).c(bVar.b, bVar.f25287c), b, a2);
+        return new ac(bVar, i3 == this.f11373a.b(i2) ? this.f11373a.e() : 0L, Long.MIN_VALUE, j, this.d.a(bVar.f11598a, this.f11373a).c(bVar.b, bVar.f11599c), b, a2);
     }
 
     private ac a(ab abVar, long j) {
@@ -39,47 +39,47 @@ final class ad {
         long j4;
         ac acVar = abVar.h;
         if (acVar.f) {
-            int a3 = this.d.a(acVar.f25059a.f25286a, this.f25061a, this.b, this.e, this.f);
+            int a3 = this.d.a(acVar.f11371a.f11598a, this.f11373a, this.b, this.e, this.f);
             if (a3 == -1) {
                 return null;
             }
-            int i4 = this.d.a(a3, this.f25061a, true).f25595c;
-            Object obj = this.f25061a.b;
-            long j5 = acVar.f25059a.d;
+            int i4 = this.d.a(a3, this.f11373a, true).f11907c;
+            Object obj = this.f11373a.b;
+            long j5 = acVar.f11371a.d;
             long j6 = 0;
             if (this.d.a(i4, this.b).f == a3) {
-                Pair<Integer, Long> a4 = this.d.a(this.b, this.f25061a, i4, com.anythink.expressad.exoplayer.b.b, Math.max(0L, (abVar.a() + acVar.e) - j));
+                Pair<Integer, Long> a4 = this.d.a(this.b, this.f11373a, i4, com.anythink.expressad.exoplayer.b.b, Math.max(0L, (abVar.a() + acVar.e) - j));
                 if (a4 == null) {
                     return null;
                 }
                 a3 = a4.first.intValue();
                 j6 = a4.second.longValue();
                 if (abVar.i == null || !abVar.i.b.equals(obj)) {
-                    j4 = this.f25062c;
-                    this.f25062c = 1 + j4;
+                    j4 = this.f11374c;
+                    this.f11374c = 1 + j4;
                 } else {
-                    j4 = abVar.i.h.f25059a.d;
+                    j4 = abVar.i.h.f11371a.d;
                 }
             } else {
                 j4 = j5;
             }
             return a(a(a3, j6, j4), j6, j6);
         }
-        e.b bVar = acVar.f25059a;
-        this.d.a(bVar.f25286a, this.f25061a);
+        e.b bVar = acVar.f11371a;
+        this.d.a(bVar.f11598a, this.f11373a);
         if (bVar.a()) {
             i = bVar.b;
-            int d = this.f25061a.d(i);
+            int d = this.f11373a.d(i);
             if (d == -1) {
                 return null;
             }
-            b = this.f25061a.a(i, bVar.f25287c);
+            b = this.f11373a.a(i, bVar.f11599c);
             if (b >= d) {
-                i3 = bVar.f25286a;
+                i3 = bVar.f11598a;
                 j3 = acVar.d;
                 return b(i3, j3, bVar.d);
-            } else if (this.f25061a.b(i, b)) {
-                i2 = bVar.f25286a;
+            } else if (this.f11373a.b(i, b)) {
+                i2 = bVar.f11598a;
                 a2 = acVar.d;
                 j2 = bVar.d;
                 return a(i2, i, b, a2, j2);
@@ -87,35 +87,35 @@ final class ad {
                 return null;
             }
         }
-        if (acVar.f25060c != Long.MIN_VALUE) {
-            i = this.f25061a.a(acVar.f25060c);
+        if (acVar.f11372c != Long.MIN_VALUE) {
+            i = this.f11373a.a(acVar.f11372c);
             if (i == -1) {
-                i3 = bVar.f25286a;
-                j3 = acVar.f25060c;
+                i3 = bVar.f11598a;
+                j3 = acVar.f11372c;
                 return b(i3, j3, bVar.d);
             }
-            b = this.f25061a.b(i);
-            if (!this.f25061a.b(i, b)) {
+            b = this.f11373a.b(i);
+            if (!this.f11373a.b(i, b)) {
                 return null;
             }
-            i2 = bVar.f25286a;
-            a2 = acVar.f25060c;
+            i2 = bVar.f11598a;
+            a2 = acVar.f11372c;
             j2 = bVar.d;
         } else {
-            int d2 = this.f25061a.d();
+            int d2 = this.f11373a.d();
             if (d2 == 0) {
                 return null;
             }
             i = d2 - 1;
-            if (this.f25061a.a(i) != Long.MIN_VALUE || this.f25061a.c(i)) {
+            if (this.f11373a.a(i) != Long.MIN_VALUE || this.f11373a.c(i)) {
                 return null;
             }
-            b = this.f25061a.b(i);
-            if (!this.f25061a.b(i, b)) {
+            b = this.f11373a.b(i);
+            if (!this.f11373a.b(i, b)) {
                 return null;
             }
-            a2 = this.f25061a.a();
-            i2 = bVar.f25286a;
+            a2 = this.f11373a.a();
+            i2 = bVar.f11598a;
             j2 = bVar.d;
         }
         return a(i2, i, b, a2, j2);
@@ -123,45 +123,45 @@ final class ad {
 
     private ac a(ac acVar, e.b bVar) {
         long j = acVar.b;
-        long j2 = acVar.f25060c;
+        long j2 = acVar.f11372c;
         boolean b = b(bVar, j2);
         boolean a2 = a(bVar, b);
-        this.d.a(bVar.f25286a, this.f25061a);
-        return new ac(bVar, j, j2, acVar.d, bVar.a() ? this.f25061a.c(bVar.b, bVar.f25287c) : j2 == Long.MIN_VALUE ? this.f25061a.a() : j2, b, a2);
+        this.d.a(bVar.f11598a, this.f11373a);
+        return new ac(bVar, j, j2, acVar.d, bVar.a() ? this.f11373a.c(bVar.b, bVar.f11599c) : j2 == Long.MIN_VALUE ? this.f11373a.a() : j2, b, a2);
     }
 
     private ac a(ae aeVar) {
-        return a(aeVar.f25064c, aeVar.e, aeVar.d);
+        return a(aeVar.f11376c, aeVar.e, aeVar.d);
     }
 
     private ac a(e.b bVar, long j, long j2) {
-        this.d.a(bVar.f25286a, this.f25061a);
+        this.d.a(bVar.f11598a, this.f11373a);
         if (bVar.a()) {
-            if (this.f25061a.b(bVar.b, bVar.f25287c)) {
-                return a(bVar.f25286a, bVar.b, bVar.f25287c, j, bVar.d);
+            if (this.f11373a.b(bVar.b, bVar.f11599c)) {
+                return a(bVar.f11598a, bVar.b, bVar.f11599c, j, bVar.d);
             }
             return null;
         }
-        return b(bVar.f25286a, j2, bVar.d);
+        return b(bVar.f11598a, j2, bVar.d);
     }
 
     private e.b a(int i, long j, long j2) {
-        this.d.a(i, this.f25061a);
-        int a2 = this.f25061a.a(j);
-        return a2 == -1 ? new e.b(i, j2) : new e.b(i, a2, this.f25061a.b(a2), j2);
+        this.d.a(i, this.f11373a);
+        int a2 = this.f11373a.a(j);
+        return a2 == -1 ? new e.b(i, j2) : new e.b(i, a2, this.f11373a.b(a2), j2);
     }
 
     private boolean a(ab abVar, ac acVar) {
         ac acVar2 = abVar.h;
-        return acVar2.b == acVar.b && acVar2.f25060c == acVar.f25060c && acVar2.f25059a.equals(acVar.f25059a);
+        return acVar2.b == acVar.b && acVar2.f11372c == acVar.f11372c && acVar2.f11371a.equals(acVar.f11371a);
     }
 
     private boolean a(e.b bVar, boolean z) {
-        return !this.d.a(this.d.a(bVar.f25286a, this.f25061a).f25595c, this.b).e && this.d.b(bVar.f25286a, this.f25061a, this.b, this.e, this.f) && z;
+        return !this.d.a(this.d.a(bVar.f11598a, this.f11373a).f11907c, this.b).e && this.d.b(bVar.f11598a, this.f11373a, this.b, this.e, this.f) && z;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0035, code lost:
-        return r11.h.f25059a.d;
+        return r11.h.f11371a.d;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -174,7 +174,7 @@ final class ad {
             com.opos.exoplayer.core.y r0 = r0.d
             r1 = r7
             r2 = r6
-            com.opos.exoplayer.core.y$a r2 = r2.f25061a
+            com.opos.exoplayer.core.y$a r2 = r2.f11373a
             r3 = 1
             com.opos.exoplayer.core.y$a r0 = r0.a(r1, r2, r3)
             java.lang.Object r0 = r0.b
@@ -193,7 +193,7 @@ final class ad {
         L2a:
             r0 = r11
             com.opos.exoplayer.core.ac r0 = r0.h
-            com.opos.exoplayer.core.e.e$b r0 = r0.f25059a
+            com.opos.exoplayer.core.e.e$b r0 = r0.f11371a
             long r0 = r0.d
             return r0
         L36:
@@ -203,8 +203,8 @@ final class ad {
             goto L18
         L40:
             r0 = r6
-            com.opos.exoplayer.core.y$a r0 = r0.f25061a
-            int r0 = r0.f25595c
+            com.opos.exoplayer.core.y$a r0 = r0.f11373a
+            int r0 = r0.f11907c
             r7 = r0
             r0 = r6
             com.opos.exoplayer.core.ab r0 = r0.e()
@@ -225,9 +225,9 @@ final class ad {
             com.opos.exoplayer.core.y r0 = r0.d
             r1 = r8
             r2 = r6
-            com.opos.exoplayer.core.y$a r2 = r2.f25061a
+            com.opos.exoplayer.core.y$a r2 = r2.f11373a
             com.opos.exoplayer.core.y$a r0 = r0.a(r1, r2)
-            int r0 = r0.f25595c
+            int r0 = r0.f11907c
             r1 = r7
             if (r0 != r1) goto L7b
             goto L2a
@@ -238,13 +238,13 @@ final class ad {
             goto L4e
         L85:
             r0 = r6
-            long r0 = r0.f25062c
+            long r0 = r0.f11374c
             r9 = r0
             r0 = r6
             r1 = 1
             r2 = r9
             long r1 = r1 + r2
-            r0.f25062c = r1
+            r0.f11374c = r1
             r0 = r9
             return r0
         */
@@ -253,31 +253,31 @@ final class ad {
 
     private ac b(int i, long j, long j2) {
         e.b bVar = new e.b(i, j2);
-        this.d.a(bVar.f25286a, this.f25061a);
-        int b = this.f25061a.b(j);
-        long a2 = b == -1 ? Long.MIN_VALUE : this.f25061a.a(b);
+        this.d.a(bVar.f11598a, this.f11373a);
+        int b = this.f11373a.b(j);
+        long a2 = b == -1 ? Long.MIN_VALUE : this.f11373a.a(b);
         boolean b2 = b(bVar, a2);
-        return new ac(bVar, j, a2, com.anythink.expressad.exoplayer.b.b, a2 == Long.MIN_VALUE ? this.f25061a.a() : a2, b2, a(bVar, b2));
+        return new ac(bVar, j, a2, com.anythink.expressad.exoplayer.b.b, a2 == Long.MIN_VALUE ? this.f11373a.a() : a2, b2, a(bVar, b2));
     }
 
     private boolean b(e.b bVar, long j) {
-        int d = this.d.a(bVar.f25286a, this.f25061a).d();
+        int d = this.d.a(bVar.f11598a, this.f11373a).d();
         if (d == 0) {
             return true;
         }
         int i = d - 1;
         boolean a2 = bVar.a();
-        if (this.f25061a.a(i) != Long.MIN_VALUE) {
+        if (this.f11373a.a(i) != Long.MIN_VALUE) {
             return !a2 && j == Long.MIN_VALUE;
         }
-        int d2 = this.f25061a.d(i);
+        int d2 = this.f11373a.d(i);
         if (d2 == -1) {
             return false;
         }
-        if (a2 && bVar.b == i && bVar.f25287c == d2 - 1) {
+        if (a2 && bVar.b == i && bVar.f11599c == d2 - 1) {
             return true;
         }
-        return !a2 && this.f25061a.b(i) == d2;
+        return !a2 && this.f11373a.b(i) == d2;
     }
 
     private boolean j() {
@@ -288,17 +288,17 @@ final class ad {
             return true;
         }
         while (true) {
-            int a2 = this.d.a(abVar.h.f25059a.f25286a, this.f25061a, this.b, this.e, this.f);
+            int a2 = this.d.a(abVar.h.f11371a.f11598a, this.f11373a, this.b, this.e, this.f);
             while (abVar.i != null && !abVar.h.f) {
                 abVar = abVar.i;
             }
-            if (a2 == -1 || abVar.i == null || abVar.i.h.f25059a.f25286a != a2) {
+            if (a2 == -1 || abVar.i == null || abVar.i.h.f11371a.f11598a != a2) {
                 break;
             }
             abVar = abVar.i;
         }
         boolean a3 = a(abVar);
-        abVar.h = a(abVar.h, abVar.h.f25059a);
+        abVar.h = a(abVar.h, abVar.h.f11371a);
         if (a3) {
             if (!f()) {
                 return true;
@@ -314,7 +314,7 @@ final class ad {
     }
 
     public ac a(ac acVar, int i) {
-        return a(acVar, acVar.f25059a.a(i));
+        return a(acVar, acVar.f11371a.a(i));
     }
 
     public com.opos.exoplayer.core.e.d a(t[] tVarArr, long j, com.opos.exoplayer.core.g.h hVar, com.opos.exoplayer.core.h.b bVar, com.opos.exoplayer.core.e.e eVar, Object obj, ac acVar) {
@@ -332,7 +332,7 @@ final class ad {
         }
         this.i = abVar2;
         this.j++;
-        return abVar2.f25057a;
+        return abVar2.f11369a;
     }
 
     public e.b a(int i, long j) {
@@ -386,7 +386,7 @@ final class ad {
 
     public boolean a(com.opos.exoplayer.core.e.d dVar) {
         ab abVar = this.i;
-        return abVar != null && abVar.f25057a == dVar;
+        return abVar != null && abVar.f11369a == dVar;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:30:0x00cd, code lost:

@@ -209,12 +209,12 @@ public final class Internal {
                 this.realSet = set;
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public Iterator<Map.Entry<K, V>> iterator() {
                 return new IteratorAdapter(this.realSet.iterator());
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return this.realSet.size();
             }

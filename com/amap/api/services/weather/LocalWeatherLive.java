@@ -20,13 +20,9 @@ public class LocalWeatherLive implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5802a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5803c;
+    private String c;
     private String d;
     private String e;
     private String f;
@@ -38,9 +34,9 @@ public class LocalWeatherLive implements Parcelable {
     }
 
     public LocalWeatherLive(Parcel parcel) {
-        this.f5802a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5803c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readString();
         this.e = parcel.readString();
         this.f = parcel.readString();
@@ -55,7 +51,7 @@ public class LocalWeatherLive implements Parcelable {
     }
 
     public String getAdCode() {
-        return this.f5803c;
+        return this.c;
     }
 
     public String getCity() {
@@ -67,7 +63,7 @@ public class LocalWeatherLive implements Parcelable {
     }
 
     public String getProvince() {
-        return this.f5802a;
+        return this.a;
     }
 
     public String getReportTime() {
@@ -91,7 +87,7 @@ public class LocalWeatherLive implements Parcelable {
     }
 
     public void setAdCode(String str) {
-        this.f5803c = str;
+        this.c = str;
     }
 
     public void setCity(String str) {
@@ -103,7 +99,7 @@ public class LocalWeatherLive implements Parcelable {
     }
 
     public void setProvince(String str) {
-        this.f5802a = str;
+        this.a = str;
     }
 
     public void setReportTime(String str) {
@@ -128,9 +124,9 @@ public class LocalWeatherLive implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5802a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5803c);
+        parcel.writeString(this.c);
         parcel.writeString(this.d);
         parcel.writeString(this.e);
         parcel.writeString(this.f);

@@ -6,7 +6,7 @@ import java.util.Arrays;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f25487a;
+    private int f11799a;
     private long[] b;
 
     public h() {
@@ -18,29 +18,29 @@ public final class h {
     }
 
     public int a() {
-        return this.f25487a;
+        return this.f11799a;
     }
 
     public long a(int i) {
-        if (i < 0 || i >= this.f25487a) {
-            throw new IndexOutOfBoundsException("Invalid index " + i + ", size is " + this.f25487a);
+        if (i < 0 || i >= this.f11799a) {
+            throw new IndexOutOfBoundsException("Invalid index " + i + ", size is " + this.f11799a);
         }
         return this.b[i];
     }
 
     public void a(long j) {
-        int i = this.f25487a;
+        int i = this.f11799a;
         long[] jArr = this.b;
         if (i == jArr.length) {
             this.b = Arrays.copyOf(jArr, i * 2);
         }
         long[] jArr2 = this.b;
-        int i2 = this.f25487a;
-        this.f25487a = i2 + 1;
+        int i2 = this.f11799a;
+        this.f11799a = i2 + 1;
         jArr2[i2] = j;
     }
 
     public long[] b() {
-        return Arrays.copyOf(this.b, this.f25487a);
+        return Arrays.copyOf(this.b, this.f11799a);
     }
 }

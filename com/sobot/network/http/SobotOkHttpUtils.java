@@ -182,12 +182,10 @@ public class SobotOkHttpUtils {
         }
         final Callback callback3 = callback2;
         requestCall.getCall().enqueue(new okhttp3.Callback() { // from class: com.sobot.network.http.SobotOkHttpUtils.1
-            @Override // okhttp3.Callback
             public void onFailure(Call call, IOException iOException) {
                 SobotOkHttpUtils.this.sendFailResultCallback(call, iOException, callback3);
             }
 
-            @Override // okhttp3.Callback
             public void onResponse(Call call, Response response) {
                 if (!response.isSuccessful()) {
                     try {

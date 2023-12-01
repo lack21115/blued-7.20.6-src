@@ -9,9 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/PagerGridLayoutManager.class */
 public class PagerGridLayoutManager extends RecyclerView.LayoutManager implements RecyclerView.SmoothScroller.ScrollVectorProvider {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f13875a = PagerGridLayoutManager.class.getSimpleName();
+    private static final String a = PagerGridLayoutManager.class.getSimpleName();
     private int b;
     private int e;
     private int f;
@@ -19,9 +17,7 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
     private int m;
     private int n;
     private RecyclerView q;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f13876c = 0;
+    private int c = 0;
     private int d = 0;
     private int i = 0;
     private int j = 0;
@@ -77,15 +73,15 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
         }
         addView(viewForPosition);
         measureChildWithMargins(viewForPosition, this.k, this.l);
-        RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) viewForPosition.getLayoutParams();
-        layoutDecorated(viewForPosition, (d.left - this.f13876c) + layoutParams.leftMargin + getPaddingLeft(), (d.top - this.d) + layoutParams.topMargin + getPaddingTop(), ((d.right - this.f13876c) - layoutParams.rightMargin) + getPaddingLeft(), ((d.bottom - this.d) - layoutParams.bottomMargin) + getPaddingTop());
+        RecyclerView.LayoutParams layoutParams = viewForPosition.getLayoutParams();
+        layoutDecorated(viewForPosition, (d.left - this.c) + layoutParams.leftMargin + getPaddingLeft(), (d.top - this.d) + layoutParams.topMargin + getPaddingTop(), ((d.right - this.c) - layoutParams.rightMargin) + getPaddingLeft(), ((d.bottom - this.d) - layoutParams.bottomMargin) + getPaddingTop());
     }
 
     private void a(RecyclerView.Recycler recycler, RecyclerView.State state, boolean z) {
         if (state.isPreLayout()) {
             return;
         }
-        Rect rect = new Rect(this.f13876c - this.i, this.d - this.j, f() + this.f13876c + this.i, g() + this.d + this.j);
+        Rect rect = new Rect(this.c - this.i, this.d - this.j, f() + this.c + this.i, g() + this.d + this.j);
         int i = 0;
         rect.intersect(0, 0, this.m + f(), this.n + g());
         int i2 = i();
@@ -246,7 +242,7 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
             int r0 = r0.f()
             r7 = r0
             r0 = r4
-            int r0 = r0.f13876c
+            int r0 = r0.c
             r8 = r0
             r0 = r8
             if (r0 <= 0) goto L62
@@ -293,7 +289,7 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
     /* JADX INFO: Access modifiers changed from: package-private */
     public int[] a(int i) {
         int[] f = f(i);
-        return new int[]{f[0] - this.f13876c, f[1] - this.d};
+        return new int[]{f[0] - this.c, f[1] - this.d};
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -308,10 +304,10 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
 
     public void b(int i) {
         if (i < 0 || i >= this.s) {
-            String str = f13875a;
+            String str = a;
             Log.e(str, "pageIndex is outOfIndex, must in [0, " + this.s + ").");
         } else if (this.q == null) {
-            Log.e(f13875a, "RecyclerView Not Found!");
+            Log.e(a, "RecyclerView Not Found!");
         } else {
             int i2 = i();
             if (Math.abs(i - i2) > 3) {
@@ -353,15 +349,15 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
         int f;
         int i2;
         if (i < 0 || i >= this.s) {
-            Log.e(f13875a, "pageIndex = " + i + " is out of bounds, mast in [0, " + this.s + ")");
+            Log.e(a, "pageIndex = " + i + " is out of bounds, mast in [0, " + this.s + ")");
         } else if (this.q == null) {
-            Log.e(f13875a, "RecyclerView Not Found!");
+            Log.e(a, "RecyclerView Not Found!");
         } else {
             if (canScrollVertically()) {
                 i2 = (g() * i) - this.d;
                 f = 0;
             } else {
-                f = (f() * i) - this.f13876c;
+                f = (f() * i) - this.c;
                 i2 = 0;
             }
             this.q.scrollBy(f, i2);
@@ -369,17 +365,14 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public boolean canScrollHorizontally() {
         return this.b == 1;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public boolean canScrollVertically() {
         return this.b == 0;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.SmoothScroller.ScrollVectorProvider
     public PointF computeScrollVectorForPosition(int i) {
         PointF pointF = new PointF();
         int[] a2 = a(i);
@@ -401,18 +394,15 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
         return this.p;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public RecyclerView.LayoutParams generateDefaultLayoutParams() {
         return new RecyclerView.LayoutParams(-2, -2);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onAttachedToWindow(RecyclerView recyclerView) {
         super.onAttachedToWindow(recyclerView);
         this.q = recyclerView;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         if (state.isPreLayout() || !state.didStructureChange()) {
             return;
@@ -434,8 +424,8 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
             int f = (i - 1) * f();
             this.m = f;
             this.n = 0;
-            if (this.f13876c > f) {
-                this.f13876c = f;
+            if (this.c > f) {
+                this.c = f;
             }
         } else {
             this.m = 0;
@@ -462,7 +452,7 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
             d(i3);
             i2 = i3 + 1;
         }
-        if (this.f13876c == 0 && this.d == 0) {
+        if (this.c == 0 && this.d == 0) {
             int i4 = 0;
             while (true) {
                 int i5 = i4;
@@ -478,7 +468,6 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
         a(recycler, state, true);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onLayoutCompleted(RecyclerView.State state) {
         super.onLayoutCompleted(state);
         if (state.isPreLayout()) {
@@ -488,7 +477,6 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
         a(i(), false);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onMeasure(RecyclerView.Recycler recycler, RecyclerView.State state, int i, int i2) {
         super.onMeasure(recycler, state, i, i2);
         int size = View.MeasureSpec.getSize(i);
@@ -512,7 +500,6 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
         setMeasuredDimension(View.MeasureSpec.makeMeasureSpec(size, i3), View.MeasureSpec.makeMeasureSpec(size2, i4));
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onScrollStateChanged(int i) {
         this.o = i;
         super.onScrollStateChanged(i);
@@ -521,9 +508,8 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public int scrollHorizontallyBy(int i, RecyclerView.Recycler recycler, RecyclerView.State state) {
-        int i2 = this.f13876c;
+        int i2 = this.c;
         int i3 = i2 + i;
         int i4 = this.m;
         if (i3 > i4) {
@@ -531,7 +517,7 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
         } else if (i3 < 0) {
             i = 0 - i2;
         }
-        this.f13876c += i;
+        this.c += i;
         a(i(), true);
         offsetChildrenHorizontal(-i);
         if (i > 0) {
@@ -542,12 +528,10 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
         return i;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void scrollToPosition(int i) {
         c(e(i));
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public int scrollVerticallyBy(int i, RecyclerView.Recycler recycler, RecyclerView.State state) {
         int i2 = this.d;
         int i3 = i2 + i;
@@ -568,7 +552,6 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager implement
         return i;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i) {
         b(e(i));
     }

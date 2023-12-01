@@ -9,21 +9,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyCreateRoomBgBinding.class */
 public final class ItemYyCreateRoomBgBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16700a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16701c;
+    public final ShapeTextView c;
     public final ShapeTextView d;
     private final ConstraintLayout e;
 
     private ItemYyCreateRoomBgBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, ShapeTextView shapeTextView, ShapeTextView shapeTextView2) {
         this.e = constraintLayout;
-        this.f16700a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16701c = shapeTextView;
+        this.c = shapeTextView;
         this.d = shapeTextView2;
     }
 
@@ -52,7 +48,6 @@ public final class ItemYyCreateRoomBgBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.e;

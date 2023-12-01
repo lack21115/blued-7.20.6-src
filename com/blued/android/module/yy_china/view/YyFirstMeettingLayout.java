@@ -27,13 +27,9 @@ public class YyFirstMeettingLayout extends RelativeLayout {
     private static int e = 500;
     private static int f = 2900;
     private static int g = 500;
-
-    /* renamed from: a  reason: collision with root package name */
-    private ItemYyFirstMeetBinding f18601a;
+    private ItemYyFirstMeetBinding a;
     private KeyBoardFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYFirstMeetMode f18602c;
+    private YYFirstMeetMode c;
     private boolean d;
 
     public YyFirstMeettingLayout(Context context) {
@@ -47,7 +43,7 @@ public class YyFirstMeettingLayout extends RelativeLayout {
     public YyFirstMeettingLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.d = false;
-        this.f18601a = ItemYyFirstMeetBinding.a(LayoutInflater.from(context), this, true);
+        this.a = ItemYyFirstMeetBinding.a(LayoutInflater.from(context), this, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -66,7 +62,7 @@ public class YyFirstMeettingLayout extends RelativeLayout {
     }
 
     public AnimatorSet a(float f2) {
-        this.f18601a.f16713a.setVisibility(0);
+        this.a.a.setVisibility(0);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(getResources().getDisplayMetrics().widthPixels, DensityUtils.a(getContext(), 20.0f));
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.yy_china.view.YyFirstMeettingLayout.2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -75,9 +71,9 @@ public class YyFirstMeettingLayout extends RelativeLayout {
                     return;
                 }
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YyFirstMeettingLayout.this.f18601a.f16713a.getLayoutParams();
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YyFirstMeettingLayout.this.a.a.getLayoutParams();
                 layoutParams.leftMargin = (int) floatValue;
-                YyFirstMeettingLayout.this.f18601a.f16713a.setLayoutParams(layoutParams);
+                YyFirstMeettingLayout.this.a.a.setLayoutParams(layoutParams);
             }
         });
         ofFloat.setDuration(e);
@@ -89,9 +85,9 @@ public class YyFirstMeettingLayout extends RelativeLayout {
                     return;
                 }
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YyFirstMeettingLayout.this.f18601a.f16713a.getLayoutParams();
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YyFirstMeettingLayout.this.a.a.getLayoutParams();
                 layoutParams.leftMargin = (int) floatValue;
-                YyFirstMeettingLayout.this.f18601a.f16713a.setLayoutParams(layoutParams);
+                YyFirstMeettingLayout.this.a.a.setLayoutParams(layoutParams);
             }
         });
         ofFloat2.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.yy_china.view.YyFirstMeettingLayout.4
@@ -121,18 +117,18 @@ public class YyFirstMeettingLayout extends RelativeLayout {
     }
 
     public void a() {
-        if (((LinearLayout.LayoutParams) this.f18601a.f16713a.getLayoutParams()).leftMargin < 0) {
+        if (((LinearLayout.LayoutParams) this.a.a.getLayoutParams()).leftMargin < 0) {
             return;
         }
         this.d = true;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(DensityUtils.a(getContext(), 5.0f), -this.f18601a.f16713a.getMeasuredWidth());
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(DensityUtils.a(getContext(), 5.0f), -this.a.a.getMeasuredWidth());
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.yy_china.view.YyFirstMeettingLayout.1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YyFirstMeettingLayout.this.f18601a.f16713a.getLayoutParams();
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YyFirstMeettingLayout.this.a.a.getLayoutParams();
                 layoutParams.leftMargin = (int) floatValue;
-                YyFirstMeettingLayout.this.f18601a.f16713a.setLayoutParams(layoutParams);
+                YyFirstMeettingLayout.this.a.a.setLayoutParams(layoutParams);
             }
         });
         ofFloat.setDuration(g);
@@ -145,10 +141,10 @@ public class YyFirstMeettingLayout extends RelativeLayout {
 
     public void a(final YYFirstMeetMode yYFirstMeetMode) {
         if (yYFirstMeetMode != null && this.b != null) {
-            a(this.f18601a.f16713a.getMeasuredWidth()).start();
+            a(this.a.a.getMeasuredWidth()).start();
         }
-        this.f18602c = yYFirstMeetMode;
-        LiveEventBus.get("show_frist_meet").postDelay(new YYFirstMeetMessMode(1, this.f18602c), yYFirstMeetMode.getDuration() * 1000);
+        this.c = yYFirstMeetMode;
+        LiveEventBus.get("show_frist_meet").postDelay(new YYFirstMeetMessMode(1, this.c), yYFirstMeetMode.getDuration() * 1000);
         setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YyFirstMeettingLayout$H5uMUjgTUQBlQ4nWu9ZvwmN0GLw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

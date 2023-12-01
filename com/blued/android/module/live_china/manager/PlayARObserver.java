@@ -5,9 +5,7 @@ import java.util.Iterator;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/PlayARObserver.class */
 public class PlayARObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static PlayARObserver f13676a = new PlayARObserver();
+    private static PlayARObserver a = new PlayARObserver();
     private ArrayList<IPlayARObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/PlayARObserver$IPlayARObserver.class */
@@ -19,7 +17,7 @@ public class PlayARObserver {
     }
 
     public static PlayARObserver a() {
-        return f13676a;
+        return a;
     }
 
     public void a(IPlayARObserver iPlayARObserver) {

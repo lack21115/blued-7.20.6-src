@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class SelectTextOperateWindowsBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29584a;
+    private final LinearLayout f15894a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29584a;
+        return this.f15894a;
     }
 }

@@ -11,12 +11,12 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.ui.BaseDialogFragment;
@@ -43,9 +43,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRandomGiftLotteryRecordDialog.class */
 public final class LiveRandomGiftLotteryRecordDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13183a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<LiveRandomGiftLotteryRecordDialogBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveRandomGiftLotteryRecordDialog$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -58,9 +56,7 @@ public final class LiveRandomGiftLotteryRecordDialog extends BaseDialogFragment 
             return LiveRandomGiftLotteryRecordDialogBinding.a(LayoutInflater.from(LiveRandomGiftLotteryRecordDialog.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<FitemRandomGiftRewardsHistory> f13184c = new ArrayList<>();
+    private final ArrayList<FitemRandomGiftRewardsHistory> c = new ArrayList<>();
     private FreedomAdapter d;
 
     @Metadata
@@ -93,10 +89,10 @@ public final class LiveRandomGiftLotteryRecordDialog extends BaseDialogFragment 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(List<RandomGiftDialogRewardsHistoryDataModel> list) {
         for (RandomGiftDialogRewardsHistoryDataModel randomGiftDialogRewardsHistoryDataModel : list) {
-            this.f13184c.add(new FitemRandomGiftRewardsHistory(randomGiftDialogRewardsHistoryDataModel));
+            this.c.add(new FitemRandomGiftRewardsHistory(randomGiftDialogRewardsHistoryDataModel));
         }
         d().e.setLayoutManager(new LinearLayoutManager(getContext()));
-        this.d = new FreedomAdapter(getContext(), a(), this.f13184c);
+        this.d = new FreedomAdapter(getContext(), a(), this.c);
         d().e.setItemAnimator(new DefaultItemAnimator());
         d().e.setAdapter(this.d);
     }
@@ -141,7 +137,7 @@ public final class LiveRandomGiftLotteryRecordDialog extends BaseDialogFragment 
             g();
             return;
         }
-        d().f12400c.b();
+        d().c.b();
         final ActivityFragmentActive a2 = a();
         LiveRoomHttpUtils.s(string, new BluedUIHttpResponse<BluedEntityA<RandomGiftDialogRewardsHistoryDataModel>>(a2) { // from class: com.blued.android.module.live_china.fragment.LiveRandomGiftLotteryRecordDialog$getData$1$1
             /* JADX INFO: Access modifiers changed from: protected */
@@ -170,7 +166,7 @@ public final class LiveRandomGiftLotteryRecordDialog extends BaseDialogFragment 
             public void onUIFinish() {
                 LiveRandomGiftLotteryRecordDialogBinding d;
                 d = LiveRandomGiftLotteryRecordDialog.this.d();
-                d.f12400c.c();
+                d.c.c();
                 super.onUIFinish();
             }
         }, a());
@@ -178,15 +174,14 @@ public final class LiveRandomGiftLotteryRecordDialog extends BaseDialogFragment 
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void g() {
-        RecyclerView recyclerView = d().e;
-        Intrinsics.c(recyclerView, "vb.rvList");
-        BluedViewExKt.a(recyclerView);
+        View view = d().e;
+        Intrinsics.c(view, "vb.rvList");
+        BluedViewExKt.a(view);
         RelativeLayout relativeLayout = d().d;
         Intrinsics.c(relativeLayout, "vb.rlEmpty");
         BluedViewExKt.b(relativeLayout);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         WindowManager windowManager;
         Display defaultDisplay;
@@ -212,13 +207,13 @@ public final class LiveRandomGiftLotteryRecordDialog extends BaseDialogFragment 
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

@@ -13,7 +13,6 @@ import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.enums.PopupAnimation;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.soft.blued.app.BluedApplicationLike;
@@ -32,11 +31,11 @@ import java.util.regex.Pattern;
 public class CommandManager {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f34326a = CommandManager.class.getSimpleName();
+    public static final String f20635a = CommandManager.class.getSimpleName();
     private static final CommandManager b = new CommandManager();
 
     /* renamed from: c  reason: collision with root package name */
-    private int f34327c = 10;
+    private int f20636c = 10;
     private int d;
 
     private CommandManager() {
@@ -67,7 +66,7 @@ public class CommandManager {
         Matcher matcher = Pattern.compile("##([^##]+)##").matcher(str);
         if (matcher.find()) {
             str2 = matcher.group(1);
-            String str3 = f34326a;
+            String str3 = f20635a;
             Log.v(str3, "matcher:" + str2);
         } else {
             str2 = "";
@@ -75,16 +74,14 @@ public class CommandManager {
         if (!str2.contains(":G")) {
             MineHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<WatchWordModel>>(null) { // from class: com.soft.blued.ui.user.utils.CommandManager.3
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<WatchWordModel> bluedEntityA) {
                     if (bluedEntityA.hasData()) {
-                        final WatchWordModel watchWordModel = bluedEntityA.data.get(0);
+                        final WatchWordModel watchWordModel = (WatchWordModel) bluedEntityA.data.get(0);
                         if (TextUtils.isEmpty(watchWordModel.image)) {
                             WebViewShowInfoFragment.show(BluedApplicationLike.getForeActivity(), watchWordModel.url, -1);
                         } else {
                             ImageFileLoader.a((IRequestHost) null).a(watchWordModel.image).a(new ImageLoadResult(null) { // from class: com.soft.blued.ui.user.utils.CommandManager.3.1
-                                @Override // com.blued.android.core.image.ImageLoadResult
                                 public void a() {
                                     CommandFragment.a(BluedApplicationLike.getForeActivity(), watchWordModel);
                                 }
@@ -93,12 +90,10 @@ public class CommandManager {
                     }
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i, String str4) {
                     return true;
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                 }
             }, str2);
@@ -111,27 +106,27 @@ public class CommandManager {
         final String str4 = str2;
         MineHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<GroupCommandDetailResp>>(null) { // from class: com.soft.blued.ui.user.utils.CommandManager.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+            /* JADX WARN: Multi-variable type inference failed */
+            /* JADX WARN: Type inference failed for: r0v22, types: [com.soft.blued.ui.home.HomeActivity] */
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<GroupCommandDetailResp> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
                     String str5 = UserInfo.getInstance().getLoginUserInfo().uid;
-                    if (str5.equals(bluedEntityA.getSingleData().getUid() + "")) {
+                    if (str5.equals(((GroupCommandDetailResp) bluedEntityA.getSingleData()).getUid() + "")) {
                         return;
                     }
                     Activity foreActivity = BluedApplicationLike.getForeActivity();
-                    HomeActivity homeActivity = foreActivity;
+                    Activity activity = foreActivity;
                     if (foreActivity == null) {
-                        homeActivity = foreActivity;
-                        if (HomeActivity.f30985c != null) {
-                            homeActivity = HomeActivity.f30985c;
+                        activity = foreActivity;
+                        if (HomeActivity.f17295c != null) {
+                            activity = HomeActivity.f17295c;
                         }
                     }
-                    new XPopup.Builder(homeActivity).d((Boolean) true).a(PopupAnimation.ScaleAlphaFromCenter).a((BasePopupView) new PopGroupCommand(homeActivity, str4, bluedEntityA.getSingleData())).h();
+                    new XPopup.Builder(activity).d(true).a(PopupAnimation.a).a(new PopGroupCommand(activity, str4, (GroupCommandDetailResp) bluedEntityA.getSingleData())).h();
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str5) {
                 return true;
             }
@@ -145,14 +140,14 @@ public class CommandManager {
     }
 
     public void a(final Context context) {
-        Log.v(f34326a, "start");
+        Log.v(f20635a, "start");
         AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.ui.user.utils.CommandManager.1
             @Override // java.lang.Runnable
             public void run() {
                 if (BluedPreferences.cr()) {
-                    if (CommandManager.this.d < CommandManager.this.f34327c) {
+                    if (CommandManager.this.d < CommandManager.this.f20636c) {
                         CommandManager.c(CommandManager.this);
-                        String str = CommandManager.f34326a;
+                        String str = CommandManager.f20635a;
                         Log.v(str, "在开机动画restartCount：" + CommandManager.this.d);
                         CommandManager.this.a(context);
                         return;
@@ -161,7 +156,7 @@ public class CommandManager {
                 }
                 CommandManager.this.d = 0;
                 String b2 = CommandManager.b(context);
-                String str2 = CommandManager.f34326a;
+                String str2 = CommandManager.f20635a;
                 Log.v(str2, "getClipData:" + b2);
                 if (TextUtils.isEmpty(b2) || !CommandManager.this.a(b2)) {
                     return;

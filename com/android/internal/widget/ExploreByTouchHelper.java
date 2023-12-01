@@ -51,7 +51,7 @@ public abstract class ExploreByTouchHelper extends View.AccessibilityDelegate {
         }
         this.mView = view;
         this.mContext = view.getContext();
-        this.mManager = (AccessibilityManager) this.mContext.getSystemService(Context.ACCESSIBILITY_SERVICE);
+        this.mManager = (AccessibilityManager) this.mContext.getSystemService("accessibility");
     }
 
     private boolean clearAccessibilityFocus(int i) {
@@ -245,7 +245,7 @@ public abstract class ExploreByTouchHelper extends View.AccessibilityDelegate {
     }
 
     private boolean requestAccessibilityFocus(int i) {
-        AccessibilityManager accessibilityManager = (AccessibilityManager) this.mContext.getSystemService(Context.ACCESSIBILITY_SERVICE);
+        AccessibilityManager accessibilityManager = (AccessibilityManager) this.mContext.getSystemService("accessibility");
         if (this.mManager.isEnabled() && accessibilityManager.isTouchExplorationEnabled() && !isAccessibilityFocused(i)) {
             this.mFocusedVirtualViewId = i;
             this.mView.invalidate();

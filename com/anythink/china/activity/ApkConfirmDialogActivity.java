@@ -27,13 +27,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/activity/ApkConfirmDialogActivity.class */
 public class ApkConfirmDialogActivity extends Activity {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static i f6249a;
+    public static i a;
     private static a b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Dialog f6250c;
+    private Dialog c;
 
     /* renamed from: com.anythink.china.activity.ApkConfirmDialogActivity$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/activity/ApkConfirmDialogActivity$2.class */
@@ -80,13 +76,11 @@ public class ApkConfirmDialogActivity extends Activity {
     /* renamed from: com.anythink.china.activity.ApkConfirmDialogActivity$4  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/activity/ApkConfirmDialogActivity$4.class */
     final class AnonymousClass4 implements b.a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f6258a;
+        final /* synthetic */ String a;
         final /* synthetic */ RoundImageView b;
 
         AnonymousClass4(String str, RoundImageView roundImageView) {
-            this.f6258a = str;
+            this.a = str;
             this.b = roundImageView;
         }
 
@@ -96,7 +90,7 @@ public class ApkConfirmDialogActivity extends Activity {
 
         @Override // com.anythink.core.common.res.b.a
         public final void onSuccess(String str, Bitmap bitmap) {
-            if (TextUtils.equals(str, this.f6258a)) {
+            if (TextUtils.equals(str, this.a)) {
                 this.b.setImageBitmap(bitmap);
             }
         }
@@ -105,36 +99,32 @@ public class ApkConfirmDialogActivity extends Activity {
     /* renamed from: com.anythink.china.activity.ApkConfirmDialogActivity$5  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/activity/ApkConfirmDialogActivity$5.class */
     final class AnonymousClass5 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ i f6260a;
+        final /* synthetic */ i a;
 
         AnonymousClass5(i iVar) {
-            this.f6260a = iVar;
+            this.a = iVar;
         }
 
         @Override // android.view.View.OnClickListener
         public final void onClick(View view) {
             Tracker.onClick(view);
-            l.b(ApkConfirmDialogActivity.this, this.f6260a.I());
+            l.b(ApkConfirmDialogActivity.this, this.a.I());
         }
     }
 
     /* renamed from: com.anythink.china.activity.ApkConfirmDialogActivity$6  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/activity/ApkConfirmDialogActivity$6.class */
     final class AnonymousClass6 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ i f6261a;
+        final /* synthetic */ i a;
 
         AnonymousClass6(i iVar) {
-            this.f6261a = iVar;
+            this.a = iVar;
         }
 
         @Override // android.view.View.OnClickListener
         public final void onClick(View view) {
             Tracker.onClick(view);
-            l.b(ApkConfirmDialogActivity.this, this.f6261a.H());
+            l.b(ApkConfirmDialogActivity.this, this.a.H());
         }
     }
 
@@ -184,19 +174,19 @@ public class ApkConfirmDialogActivity extends Activity {
         com.anythink.core.common.k.b.a.a().a(new Runnable() { // from class: com.anythink.china.activity.ApkConfirmDialogActivity.1
             @Override // java.lang.Runnable
             public final void run() {
-                if (com.anythink.china.common.a.a(Context.this).a(iVar)) {
+                if (com.anythink.china.common.a.a(context).a(iVar)) {
                     aVar.a(true);
-                } else if (com.anythink.china.common.c.a.a(Context.this, iVar.B())) {
+                } else if (com.anythink.china.common.c.a.a(context, iVar.B())) {
                     aVar.a(true);
                 } else {
                     n.a().a(new Runnable() { // from class: com.anythink.china.activity.ApkConfirmDialogActivity.1.1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ApkConfirmDialogActivity.f6249a = iVar;
+                            ApkConfirmDialogActivity.a = iVar;
                             a unused = ApkConfirmDialogActivity.b = aVar;
-                            Intent intent = new Intent(Context.this, ApkConfirmDialogActivity.class);
+                            Intent intent = new Intent(context, ApkConfirmDialogActivity.class);
                             intent.addFlags(268435456);
-                            Context.this.startActivity(intent);
+                            context.startActivity(intent);
                         }
                     });
                 }
@@ -206,10 +196,10 @@ public class ApkConfirmDialogActivity extends Activity {
 
     private void b() {
         try {
-            String aa = f6249a instanceof aa ? ((aa) f6249a).aa() : "";
+            String aa = a instanceof aa ? ((aa) a).aa() : "";
             String str = aa;
             if (TextUtils.isEmpty(aa)) {
-                str = f6249a.r();
+                str = a.r();
             }
             View inflate = LayoutInflater.from(this).inflate(h.a(this, "myoffer_confirm_dialog", "layout"), (ViewGroup) null, false);
             TextView textView = (TextView) inflate.findViewById(h.a(this, "myoffer_confirm_msg", "id"));
@@ -221,10 +211,10 @@ public class ApkConfirmDialogActivity extends Activity {
             textView2.setOnClickListener(new AnonymousClass2());
             textView3.setOnClickListener(new AnonymousClass3());
             Dialog dialog = new Dialog(this, h.a(this, "style_full_screen_translucent_dialog", "style"));
-            this.f6250c = dialog;
+            this.c = dialog;
             dialog.setContentView(inflate);
-            this.f6250c.setCancelable(false);
-            this.f6250c.show();
+            this.c.setCancelable(false);
+            this.c.show();
         } catch (Throwable th) {
             finish();
         }
@@ -232,7 +222,7 @@ public class ApkConfirmDialogActivity extends Activity {
 
     private void c() {
         try {
-            i iVar = f6249a;
+            i iVar = a;
             View inflate = LayoutInflater.from(this).inflate(h.a(this, "confirm", "layout"), (ViewGroup) null, false);
             RoundImageView roundImageView = (RoundImageView) inflate.findViewById(h.a(this, "confirm_dialog_icon", "id"));
             TextView textView = (TextView) inflate.findViewById(h.a(this, "confirm_dialog_title", "id"));
@@ -286,10 +276,10 @@ public class ApkConfirmDialogActivity extends Activity {
             textView6.setOnClickListener(new AnonymousClass7());
             textView7.setOnClickListener(new AnonymousClass8());
             Dialog dialog = new Dialog(this, h.a(this, "style_full_screen_translucent_dialog", "style"));
-            this.f6250c = dialog;
+            this.c = dialog;
             dialog.setContentView(inflate);
-            this.f6250c.setCancelable(false);
-            Window window = this.f6250c.getWindow();
+            this.c.setCancelable(false);
+            Window window = this.c.getWindow();
             if (window != null) {
                 int dimensionPixelSize = getResources().getDimensionPixelSize(h.a(this, "confirm_dialog_margin", "dimen"));
                 int i3 = getResources().getDisplayMetrics().widthPixels;
@@ -302,7 +292,7 @@ public class ApkConfirmDialogActivity extends Activity {
                     window.setLayout(i6, (int) Math.ceil(i6 / 0.98859316f));
                 }
             }
-            this.f6250c.show();
+            this.c.show();
         } catch (Throwable th) {
             finish();
         }
@@ -330,16 +320,15 @@ public class ApkConfirmDialogActivity extends Activity {
         throw new UnsupportedOperationException("Method not decompiled: com.anythink.china.activity.ApkConfirmDialogActivity.onCreate(android.os.Bundle):void");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onDestroy() {
+    protected void onDestroy() {
         u.a(false);
-        Dialog dialog = this.f6250c;
+        Dialog dialog = this.c;
         if (dialog != null) {
             dialog.dismiss();
-            this.f6250c = null;
+            this.c = null;
         }
-        f6249a = null;
+        a = null;
         b = null;
         super.onDestroy();
     }
@@ -352,9 +341,8 @@ public class ApkConfirmDialogActivity extends Activity {
         return super.onKeyDown(i, keyEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onResume() {
+    protected void onResume() {
         super.onResume();
         u.a(true);
     }

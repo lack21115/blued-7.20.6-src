@@ -14,11 +14,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LifecycleOwnerKt;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
-import com.anythink.expressad.d.a.b;
+import com.android.ims.ImsReasonInfo;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
@@ -49,6 +49,7 @@ import com.blued.community.track.EventTrackFeed;
 import com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView;
 import com.blued.community.ui.feed.manager.FeedMethods;
 import com.blued.community.ui.feed.model.FeedBubbleListGuideExtra;
+import com.blued.community.ui.feed.observer.IFeedDataObserver;
 import com.blued.community.ui.send.fragment.FeedPostSignStateFragment;
 import com.blued.community.ui.send.viewmodel.SignFeedListViewModel;
 import com.blued.community.utils.CommRouteUtil;
@@ -57,9 +58,6 @@ import com.blued.community.utils.UserInfoUtils;
 import com.blued.community.view.CommonFloatBottomView;
 import com.blued.community.widget.FeedGuidePop;
 import com.blued.das.client.feed.FeedProtos;
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-import com.igexin.push.config.c;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import java.util.Iterator;
 import java.util.List;
@@ -94,9 +92,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
     private int K;
     private boolean L;
     private boolean M;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CommonFloatBottomView f19805c;
+    private CommonFloatBottomView c;
     private View d;
     private ImageView e;
     private ImageView f;
@@ -256,7 +252,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
                 if (!b2.isEmpty()) {
                     String str = (String) b2.get(0);
                     String str2 = str;
-                    if (CommunityManager.f19086a.a().s()) {
+                    if (CommunityManager.a.a().s()) {
                         str2 = str;
                         if (b2.size() > 1) {
                             str2 = (String) b2.get(1);
@@ -292,7 +288,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
             if (textView3 != null) {
                 textView3.setText(getString(R.string.feed_bubble_sign_tips));
             }
-            float c2 = (AppInfo.l - FeedMethods.c(24)) / FeedMethods.c(351);
+            float c = (AppInfo.l - FeedMethods.c(24)) / FeedMethods.c(ImsReasonInfo.CODE_SIP_SERVER_INTERNAL_ERROR);
             TextView textView4 = this.q;
             if (textView4 != null) {
                 ViewGroup.LayoutParams layoutParams = textView4.getLayoutParams();
@@ -300,7 +296,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
                     throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
                 }
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
-                marginLayoutParams.width = (int) (FeedMethods.c(72) * c2);
+                marginLayoutParams.width = (int) (FeedMethods.c(72) * c);
                 textView4.setLayoutParams(marginLayoutParams);
                 textView4.setText(feedBubbleSignModel.getToday_complete() == 1 ? R.string.feed_bubble_sign_continue_post_bubble : R.string.feed_bubble_sign_now);
             }
@@ -372,7 +368,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
                     view7.setVisibility(8);
                 }
             }
-            if (CommunityManager.f19086a.a().s()) {
+            if (CommunityManager.a.a().s()) {
                 ImageView imageView2 = this.l;
                 if (imageView2 != null) {
                     imageView2.setImageResource(R.drawable.bubble_list_header_title_dark);
@@ -413,7 +409,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
                 if (linearLayout != null) {
                     linearLayout.removeAllViews();
                 }
-                int c3 = timeList.isEmpty() ^ true ? timeList.size() > 6 ? (AppInfo.l - FeedMethods.c(44)) / timeList.size() : FeedMethods.c(49) : FeedMethods.c(49);
+                int c2 = timeList.isEmpty() ^ true ? timeList.size() > 6 ? (AppInfo.l - FeedMethods.c(44)) / timeList.size() : FeedMethods.c(49) : FeedMethods.c(49);
                 Iterator<FeedBubbleSignTextModel> it = timeList.iterator();
                 int i = 0;
                 while (true) {
@@ -450,7 +446,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
                         throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
                     }
                     ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) layoutParams2;
-                    if (CommunityManager.f19086a.a().s()) {
+                    if (CommunityManager.a.a().s()) {
                         if (feedBubbleSignTextModel.is_today() == 1) {
                             imageView6.setImageResource(R.drawable.feed_bubble_list_header_item_today_dark);
                         } else {
@@ -469,7 +465,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
                             imageView8.setImageResource(R.drawable.bubble_list_header_indicator);
                         }
                     }
-                    marginLayoutParams2.width = c3;
+                    marginLayoutParams2.width = c2;
                     if (feedBubbleSignTextModel.is_today() == 1) {
                         if (imageView8 != null) {
                             imageView8.setVisibility(0);
@@ -483,7 +479,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
                         throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
                     }
                     ViewGroup.MarginLayoutParams marginLayoutParams3 = (ViewGroup.MarginLayoutParams) layoutParams3;
-                    marginLayoutParams3.width = c3;
+                    marginLayoutParams3.width = c2;
                     findViewById.setLayoutParams(marginLayoutParams3);
                     LinearLayout linearLayout2 = this.o;
                     if (linearLayout2 != null) {
@@ -501,15 +497,13 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
     }
 
     private final void H() {
-        SignFeedListFragment signFeedListFragment = this;
-        LiveEventBus.get("feed_post_sign_data", BluedIngSelfFeed.class).observe(signFeedListFragment, new Observer() { // from class: com.blued.community.ui.feed.fragment.-$$Lambda$SignFeedListFragment$s6pCd1XvENe71cdheX5HPMkOrYA
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("feed_post_sign_data", BluedIngSelfFeed.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.community.ui.feed.fragment.-$$Lambda$SignFeedListFragment$s6pCd1XvENe71cdheX5HPMkOrYA
             public final void onChanged(Object obj) {
                 SignFeedListFragment.a(SignFeedListFragment.this, (BluedIngSelfFeed) obj);
             }
         });
-        LiveEventBus.get("send_feed_success", BluedIngSelfFeed.class).observe(signFeedListFragment, new Observer() { // from class: com.blued.community.ui.feed.fragment.-$$Lambda$SignFeedListFragment$QZ7XGcdPPlCMUg5mxiBqIEJ-2Fg
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("send_feed_success", BluedIngSelfFeed.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.community.ui.feed.fragment.-$$Lambda$SignFeedListFragment$QZ7XGcdPPlCMUg5mxiBqIEJ-2Fg
             public final void onChanged(Object obj) {
                 SignFeedListFragment.b(SignFeedListFragment.this, (BluedIngSelfFeed) obj);
             }
@@ -519,24 +513,24 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
     private final void I() {
         if (CommunityPreferences.o()) {
             this.B = true;
-            CommonFloatBottomView commonFloatBottomView = this.f19805c;
+            CommonFloatBottomView commonFloatBottomView = this.c;
             if (commonFloatBottomView != null) {
                 commonFloatBottomView.setVisibility(0);
             }
-            FragmentActivity activity = getActivity();
+            Context activity = getActivity();
             if (activity != null) {
-                FragmentActivity fragmentActivity = activity;
+                Context context = activity;
                 String string = getString(R.string.sign_feed_set_guide_post);
                 Intrinsics.c(string, "getString(R.string.sign_feed_set_guide_post)");
-                FeedGuidePop feedGuidePop = new FeedGuidePop(fragmentActivity, string, NinePatchUtils.GuideArrowPosition.CENTER, false, 0, "sign_feed_set_guide_update_hand.png", 18, 30, 180);
+                FeedGuidePop feedGuidePop = new FeedGuidePop(context, string, NinePatchUtils.GuideArrowPosition.CENTER, false, 0, "sign_feed_set_guide_update_hand.png", 18, 30, 180);
                 this.z = feedGuidePop;
                 if (feedGuidePop != null) {
                     feedGuidePop.setOffsetX(DisplayUtil.a(getContext(), 10.0f));
                     feedGuidePop.setDismissOnTouchOutside(true);
-                    CommonFloatBottomView commonFloatBottomView2 = this.f19805c;
-                    if (commonFloatBottomView2 != null) {
+                    View view = this.c;
+                    if (view != null) {
                         FeedGuidePop.t.b(feedGuidePop, new SimpleCallback() { // from class: com.blued.community.ui.feed.fragment.SignFeedListFragment$showPostGuide$2$1$1$1
-                        }, commonFloatBottomView2, 0L);
+                        }, view, 0L);
                     }
                 }
             }
@@ -563,9 +557,9 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
 
                 @Override // android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
-                    ImageWrapper c2 = ImageLoader.c(SignFeedListFragment.this.getFragmentActive(), "sign_feed_list_frg_guide.png");
+                    ImageWrapper c = ImageLoader.c(SignFeedListFragment.this.getFragmentActive(), "sign_feed_list_frg_guide.png");
                     final SignFeedListFragment signFeedListFragment = SignFeedListFragment.this;
-                    c2.a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.fragment.SignFeedListFragment$startBtnEmotionAnim$1$1$onAnimationEnd$1
+                    c.a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.fragment.SignFeedListFragment$startBtnEmotionAnim$1$1$onAnimationEnd$1
                         @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                         public void a() {
                         }
@@ -673,9 +667,9 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
         bluedIngSelfFeed.bubbleInsertGuideExtra = ((SignFeedListViewModel) y()).c();
         bluedIngSelfFeed.playAnimType = 5;
         if (f().getData().size() < 13) {
-            f().addData((BaseQuickAdapter<BluedIngSelfFeed, BaseViewHolder>) bluedIngSelfFeed);
+            f().addData(bluedIngSelfFeed);
         } else {
-            f().addData(12, (int) bluedIngSelfFeed);
+            f().addData(12, bluedIngSelfFeed);
         }
         f().notifyDataSetChanged();
     }
@@ -697,12 +691,12 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
                 }
                 if (z) {
                     CancellableContinuation<FeedBubbleSignModel> cancellableContinuation = cancellableContinuationImpl2;
-                    Result.Companion companion = Result.f42293a;
+                    Result.Companion companion = Result.a;
                     cancellableContinuation.resumeWith(Result.f(bluedEntityA.getSingleData()));
                     return;
                 }
                 CancellableContinuation<FeedBubbleSignModel> cancellableContinuation2 = cancellableContinuationImpl2;
-                Result.Companion companion2 = Result.f42293a;
+                Result.Companion companion2 = Result.a;
                 cancellableContinuation2.resumeWith(Result.f(null));
             }
 
@@ -710,7 +704,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
             public void onUIFinish(boolean z) {
                 if (!z) {
                     CancellableContinuation<FeedBubbleSignModel> cancellableContinuation = cancellableContinuationImpl2;
-                    Result.Companion companion = Result.f42293a;
+                    Result.Companion companion = Result.a;
                     cancellableContinuation.resumeWith(Result.f(null));
                 }
                 LogUtils.c(Intrinsics.a("getSignFeedSet end, ", (Object) Long.valueOf(Thread.currentThread().getId())));
@@ -724,7 +718,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
     }
 
     private final String a(long j) {
-        if (j < b.P) {
+        if (j < 3600) {
             return ((int) ((((float) j) / 60.0f) + 0.5f)) + getString(R.string.feed_bubble_reward_minute);
         }
         return ((int) ((((float) j) / 3600.0f) + 0.5f)) + getString(R.string.feed_bubble_reward_hour);
@@ -737,7 +731,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
             Bundle bundle = new Bundle();
             FeedBubbleSignModel feedBubbleSignModel = this.D;
             bundle.putString("classify_id", feedBubbleSignModel == null ? null : feedBubbleSignModel.getId());
-            FeedPostSignStateFragment.f20033a.a(context, bundle, i);
+            FeedPostSignStateFragment.a.a(context, bundle, i);
         }
         if (this.C) {
             EventTrackFeed.a(FeedProtos.Event.PUNCH_FEED_PNG_GUIDE_CLICK);
@@ -775,12 +769,12 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(SignFeedListFragment this$0, BluedIngSelfFeed bluedIngSelfFeed) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f().addData(0, (int) bluedIngSelfFeed);
-        RecyclerView a2 = this$0.a();
-        if (a2 == null) {
+        this$0.f().addData(0, bluedIngSelfFeed);
+        RecyclerView a = this$0.a();
+        if (a == null) {
             return;
         }
-        a2.smoothScrollToPosition(0);
+        a.smoothScrollToPosition(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -799,7 +793,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
         if (bluedIngSelfFeed != null && bluedIngSelfFeed.is_bubble_ticktock == 1) {
             ((SignFeedListViewModel) this$0.y()).a(true);
         }
-        if (this$0.f().getData().size() > 0 && (bluedIngSelfFeed2 = this$0.f().getData().get(0)) != null && bluedIngSelfFeed != null && bluedIngSelfFeed.is_bubble_ticktock == 1 && !TextUtils.isEmpty(bluedIngSelfFeed.feed_uid) && TextUtils.equals(bluedIngSelfFeed.feed_uid, UserInfoUtils.c()) && !TextUtils.isEmpty(bluedIngSelfFeed.feed_content) && TextUtils.equals(bluedIngSelfFeed.feed_content, bluedIngSelfFeed2.feed_content) && !TextUtils.isEmpty(bluedIngSelfFeed.bubble_state_id) && TextUtils.equals(bluedIngSelfFeed.bubble_state_id, bluedIngSelfFeed2.bubble_state_id)) {
+        if (this$0.f().getData().size() > 0 && (bluedIngSelfFeed2 = (BluedIngSelfFeed) this$0.f().getData().get(0)) != null && bluedIngSelfFeed != null && bluedIngSelfFeed.is_bubble_ticktock == 1 && !TextUtils.isEmpty(bluedIngSelfFeed.feed_uid) && TextUtils.equals(bluedIngSelfFeed.feed_uid, UserInfoUtils.c()) && !TextUtils.isEmpty(bluedIngSelfFeed.feed_content) && TextUtils.equals(bluedIngSelfFeed.feed_content, bluedIngSelfFeed2.feed_content) && !TextUtils.isEmpty(bluedIngSelfFeed.bubble_state_id) && TextUtils.equals(bluedIngSelfFeed.bubble_state_id, bluedIngSelfFeed2.bubble_state_id)) {
             this$0.f().setData(0, bluedIngSelfFeed);
         }
         this$0.M();
@@ -831,8 +825,8 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
             view.setVisibility(8);
         }
         if (i == 0) {
-            int i2 = ((FeedListAdapterForRecyclerView) f()).q;
-            int i3 = ((FeedListAdapterForRecyclerView) f()).r;
+            int i2 = f().q;
+            int i3 = f().r;
             StringBuilder sb = new StringBuilder();
             sb.append("冒泡三期 feedBubblePostGuideGroup:");
             sb.append(this.K);
@@ -845,8 +839,8 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
             sb.append(", isSendToday:");
             sb.append(((SignFeedListViewModel) y()).a());
             sb.append(", insertGuideExtra:");
-            FeedBubbleListGuideExtra c2 = ((SignFeedListViewModel) y()).c();
-            sb.append((Object) (c2 == null ? null : c2.toString()));
+            FeedBubbleListGuideExtra c = ((SignFeedListViewModel) y()).c();
+            sb.append((Object) (c == null ? null : c.toString()));
             LogUtils.c(sb.toString());
             LogUtils.c("冒泡三期 firstPosition:" + i2 + ", lastPosition:" + i3);
             int i4 = this.K;
@@ -893,7 +887,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
     @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void a(boolean z, boolean z2) {
         super.a(z, z2);
-        final CommonFloatBottomView commonFloatBottomView = this.f19805c;
+        final CommonFloatBottomView commonFloatBottomView = this.c;
         if (commonFloatBottomView == null || commonFloatBottomView.getVisibility() == 0) {
             return;
         }
@@ -940,7 +934,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
 
             @Override // android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
-                CommonFloatBottomView.this.setVisibility(0);
+                commonFloatBottomView.setVisibility(0);
             }
         });
         ofFloat.setStartDelay(500L);
@@ -979,15 +973,15 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
     public void m() {
         View view;
         super.m();
-        if (CommunityManager.f19086a.a().s()) {
-            RecyclerView a2 = a();
-            if (a2 != null) {
-                a2.setBackgroundResource(R.color.syc_0E0E0E);
+        if (CommunityManager.a.a().s()) {
+            RecyclerView a = a();
+            if (a != null) {
+                a.setBackgroundResource(R.color.syc_0E0E0E);
             }
         } else {
-            RecyclerView a3 = a();
-            if (a3 != null) {
-                a3.setBackgroundResource(R.color.syc_c);
+            RecyclerView a2 = a();
+            if (a2 != null) {
+                a2.setBackgroundResource(R.color.syc_c);
             }
         }
         ((SignFeedListViewModel) y()).a(getArguments());
@@ -1009,28 +1003,27 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
                 }
             });
         }
+        NoDataAndLoadFailView c = c();
+        if (c != null) {
+            c.setNoDataImg(R.drawable.icon_no_data_common);
+        }
         NoDataAndLoadFailView c2 = c();
         if (c2 != null) {
-            c2.setNoDataImg(R.drawable.icon_no_data_common);
+            c2.setNoDataStr(R.string.sign_feed_no_data_str);
         }
         NoDataAndLoadFailView c3 = c();
         if (c3 != null) {
-            c3.setNoDataStr(R.string.sign_feed_no_data_str);
+            c3.setNoDataBtnVisibility(8);
         }
         NoDataAndLoadFailView c4 = c();
-        if (c4 != null) {
-            c4.setNoDataBtnVisibility(8);
-        }
-        NoDataAndLoadFailView c5 = c();
-        ShapeTextView btn = c5 == null ? null : c5.getBtn();
+        ShapeTextView btn = c4 == null ? null : c4.getBtn();
         if (btn != null) {
             btn.setVisibility(8);
         }
-        CommonFloatBottomView commonFloatBottomView = (CommonFloatBottomView) requireView().findViewById(R.id.sign_feed_list_send_float_view);
-        this.f19805c = commonFloatBottomView;
-        if (commonFloatBottomView != null) {
-            commonFloatBottomView.setOnBtnClickListener(new CommonFloatBottomView.OnBtnClickListener() { // from class: com.blued.community.ui.feed.fragment.SignFeedListFragment$initView$3
-                @Override // com.blued.community.view.CommonFloatBottomView.OnBtnClickListener
+        CommonFloatBottomView findViewById2 = requireView().findViewById(R.id.sign_feed_list_send_float_view);
+        this.c = findViewById2;
+        if (findViewById2 != null) {
+            findViewById2.setOnBtnClickListener(new CommonFloatBottomView.OnBtnClickListener() { // from class: com.blued.community.ui.feed.fragment.SignFeedListFragment$initView$3
                 public void onClick() {
                     SignFeedListFragment.this.a(1);
                 }
@@ -1038,37 +1031,37 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
         }
         View inflate = getLayoutInflater().inflate(R.layout.sign_feed_list_send_btn_layout, (ViewGroup) null);
         this.d = inflate;
-        CommonFloatBottomView commonFloatBottomView2 = this.f19805c;
-        if (commonFloatBottomView2 != null) {
-            commonFloatBottomView2.addChildView(inflate);
+        CommonFloatBottomView commonFloatBottomView = this.c;
+        if (commonFloatBottomView != null) {
+            commonFloatBottomView.addChildView(inflate);
         }
         View view2 = this.d;
         this.e = view2 == null ? null : (ImageView) view2.findViewById(R.id.sign_feed_list_btn_icon);
         View view3 = this.d;
         this.f = view3 == null ? null : (ImageView) view3.findViewById(R.id.sign_feed_list_btn_apng);
         View view4 = this.d;
-        View findViewById2 = view4 == null ? null : view4.findViewById(R.id.sign_feed_list_send_bg);
-        this.g = findViewById2;
-        if (findViewById2 != null) {
-            findViewById2.setVisibility(8);
+        View findViewById3 = view4 == null ? null : view4.findViewById(R.id.sign_feed_list_send_bg);
+        this.g = findViewById3;
+        if (findViewById3 != null) {
+            findViewById3.setVisibility(8);
         }
-        CommonFloatBottomView commonFloatBottomView3 = this.f19805c;
-        if (commonFloatBottomView3 != null) {
-            commonFloatBottomView3.setVisibility(8);
+        CommonFloatBottomView commonFloatBottomView2 = this.c;
+        if (commonFloatBottomView2 != null) {
+            commonFloatBottomView2.setVisibility(8);
         }
-        SignFeedListFragment signFeedListFragment = this;
-        RecyclerView a4 = a();
-        RecyclerView.Adapter adapter = a4 == null ? null : a4.getAdapter();
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        RecyclerView a3 = a();
+        RecyclerView.Adapter adapter = a3 == null ? null : a3.getAdapter();
         if (adapter == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView");
         }
-        FeedMethods.a(signFeedListFragment, (FeedListAdapterForRecyclerView) adapter);
+        FeedMethods.a(lifecycleOwner, (IFeedDataObserver) adapter);
         View inflate2 = View.inflate(getContext(), R.layout.layout_load_more_end_footer, null);
         this.h = inflate2;
-        View findViewById3 = inflate2 == null ? null : inflate2.findViewById(R.id.load_more_footer_bottom_view);
-        this.i = findViewById3;
-        if (findViewById3 != null) {
-            findViewById3.setVisibility(0);
+        View findViewById4 = inflate2 == null ? null : inflate2.findViewById(R.id.load_more_footer_bottom_view);
+        this.i = findViewById4;
+        if (findViewById4 != null) {
+            findViewById4.setVisibility(0);
         }
         View view5 = this.h;
         if (view5 != null) {
@@ -1077,16 +1070,16 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
         }
         if ((this.A == 8 || CommunityPreferences.m()) && (view = this.g) != null) {
             view.setVisibility(0);
-            final int a5 = DisplayUtil.a(AppInfo.d(), 154.0f);
-            final int a6 = DisplayUtil.a(AppInfo.d(), 44.0f);
+            final int a4 = DisplayUtil.a(AppInfo.d(), 154.0f);
+            final int a5 = DisplayUtil.a(AppInfo.d(), 44.0f);
             this.y.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.community.ui.feed.fragment.-$$Lambda$SignFeedListFragment$_MlkewJzkJUHcQw7kV_RmAc6b_Y
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    SignFeedListFragment.a(SignFeedListFragment.this, a5, a6, valueAnimator);
+                    SignFeedListFragment.a(SignFeedListFragment.this, a4, a5, valueAnimator);
                 }
             });
             this.y.setRepeatCount(1);
-            this.y.setDuration(c.j);
+            this.y.setDuration(1500L);
             this.y.setStartDelay(300L);
             this.y.start();
             CommunityPreferences.n();
@@ -1097,7 +1090,7 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
         boolean P = CommunityServiceManager.a().P();
         this.F = P;
         if (P) {
-            this.E = LifecycleOwnerKt.getLifecycleScope(signFeedListFragment);
+            this.E = LifecycleOwnerKt.getLifecycleScope(lifecycleOwner);
         }
         F();
         int Q = CommunityServiceManager.a().Q();
@@ -1117,13 +1110,13 @@ public final class SignFeedListFragment extends BaseListFragment<SignFeedListVie
         return true;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         EventTrackFeed.a(FeedProtos.Event.MINE_COMMENT_TAB_SHOW);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

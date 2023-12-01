@@ -20,11 +20,11 @@ import java.nio.ByteBuffer;
 public final class CommonExtraProtos {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Descriptors.Descriptor f9477a;
+    private static final Descriptors.Descriptor f6637a;
     private static final GeneratedMessageV3.FieldAccessorTable b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Descriptors.FileDescriptor f9478c = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017CommonExtraProtos.proto\u0012\u0016com.blct.irisdt.client\"6\n\u0010CommonExtraProto\u0012\u0010\n\bvip_type\u0018\u0001 \u0001(\t\u0012\u0010\n\bapp_type\u0018\u0002 \u0001(\tB\u000f¢\u0002\fCOMMON_EXTRAb\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor f6638c = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017CommonExtraProtos.proto\u0012\u0016com.blct.irisdt.client\"6\n\u0010CommonExtraProto\u0012\u0010\n\bvip_type\u0018\u0001 \u0001(\t\u0012\u0010\n\bapp_type\u0018\u0002 \u0001(\tB\u000f¢\u0002\fCOMMON_EXTRAb\u0006proto3"}, new Descriptors.FileDescriptor[0]);
 
     /* loaded from: source-8756600-dex2jar.jar:com/blct/irisdt/client/CommonExtraProtos$CommonExtraProto.class */
     public static final class CommonExtraProto extends GeneratedMessageV3 implements CommonExtraProtoOrBuilder {
@@ -62,7 +62,7 @@ public final class CommonExtraProtos {
             }
 
             public static final Descriptors.Descriptor getDescriptor() {
-                return CommonExtraProtos.f9477a;
+                return CommonExtraProtos.f6637a;
             }
 
             private void maybeForceBuilderInitialization() {
@@ -124,8 +124,8 @@ public final class CommonExtraProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blct.irisdt.client.CommonExtraProtos.CommonExtraProtoOrBuilder
@@ -157,7 +157,7 @@ public final class CommonExtraProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
-                return CommonExtraProtos.f9477a;
+                return CommonExtraProtos.f6637a;
             }
 
             @Override // com.blct.irisdt.client.CommonExtraProtos.CommonExtraProtoOrBuilder
@@ -381,7 +381,7 @@ public final class CommonExtraProtos {
         }
 
         public static final Descriptors.Descriptor getDescriptor() {
-            return CommonExtraProtos.f9477a;
+            return CommonExtraProtos.f6637a;
         }
 
         public static Builder newBuilder() {
@@ -608,7 +608,7 @@ public final class CommonExtraProtos {
 
     static {
         Descriptors.Descriptor descriptor = a().getMessageTypes().get(0);
-        f9477a = descriptor;
+        f6637a = descriptor;
         b = new GeneratedMessageV3.FieldAccessorTable(descriptor, new String[]{"VipType", "AppType"});
     }
 
@@ -616,6 +616,6 @@ public final class CommonExtraProtos {
     }
 
     public static Descriptors.FileDescriptor a() {
-        return f9478c;
+        return f6638c;
     }
 }

@@ -10,11 +10,11 @@ import java.util.List;
 public final class ab extends Thread {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f35360a = false;
+    private boolean f21669a = false;
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<aa> f35361c = new ArrayList();
+    private List<aa> f21670c = new ArrayList();
     private List<ac> d = new ArrayList();
     private ArrayList<aa> e = new ArrayList<>();
 
@@ -29,9 +29,9 @@ public final class ab extends Thread {
         while (true) {
             try {
                 int i2 = i;
-                if (i2 >= this.f35361c.size()) {
+                if (i2 >= this.f21670c.size()) {
                     break;
-                } else if (this.f35361c.get(i2).d().equals(handler.getLooper().getThread().getName())) {
+                } else if (this.f21670c.get(i2).d().equals(handler.getLooper().getThread().getName())) {
                     x.e("addThread fail ,this thread has been added in monitor queue", new Object[0]);
                     return;
                 } else {
@@ -41,7 +41,7 @@ public final class ab extends Thread {
                 x.b(e);
             }
         }
-        this.f35361c.add(new aa(handler, name, 5000L));
+        this.f21670c.add(new aa(handler, name, 5000L));
     }
 
     private int e() {
@@ -51,10 +51,10 @@ public final class ab extends Thread {
         while (true) {
             i = i3;
             try {
-                if (i2 >= this.f35361c.size()) {
+                if (i2 >= this.f21670c.size()) {
                     break;
                 }
-                i3 = Math.max(i, this.f35361c.get(i2).c());
+                i3 = Math.max(i, this.f21670c.get(i2).c());
                 i2++;
             } catch (Exception e) {
                 x.b(e);
@@ -84,12 +84,12 @@ public final class ab extends Thread {
         while (true) {
             try {
                 int i2 = i;
-                if (i2 >= this.f35361c.size()) {
+                if (i2 >= this.f21670c.size()) {
                     return;
                 }
-                if (this.f35361c.get(i2).d().equals(Looper.getMainLooper().getThread().getName())) {
-                    x.c("remove handler::%s", this.f35361c.get(i2));
-                    this.f35361c.remove(i2);
+                if (this.f21670c.get(i2).d().equals(Looper.getMainLooper().getThread().getName())) {
+                    x.c("remove handler::%s", this.f21670c.get(i2));
+                    this.f21670c.remove(i2);
                 }
                 i = i2 + 1;
             } catch (Exception e) {
@@ -104,7 +104,7 @@ public final class ab extends Thread {
     }
 
     public final boolean c() {
-        this.f35360a = true;
+        this.f21669a = true;
         if (isAlive()) {
             try {
                 interrupt();
@@ -132,15 +132,15 @@ public final class ab extends Thread {
 
     @Override // java.lang.Thread, java.lang.Runnable
     public final void run() {
-        while (!this.f35360a) {
+        while (!this.f21669a) {
             int i = 0;
             while (true) {
                 try {
                     int i2 = i;
-                    if (i2 >= this.f35361c.size()) {
+                    if (i2 >= this.f21670c.size()) {
                         break;
                     }
-                    this.f35361c.get(i2).a();
+                    this.f21670c.get(i2).a();
                     i = i2 + 1;
                 } catch (Exception e) {
                     x.b(e);
@@ -158,10 +158,10 @@ public final class ab extends Thread {
                 int i3 = 0;
                 while (true) {
                     int i4 = i3;
-                    if (i4 >= this.f35361c.size()) {
+                    if (i4 >= this.f21670c.size()) {
                         break;
                     }
-                    aa aaVar = this.f35361c.get(i4);
+                    aa aaVar = this.f21670c.get(i4);
                     if (aaVar.b()) {
                         this.e.add(aaVar);
                         aaVar.a(Long.MAX_VALUE);

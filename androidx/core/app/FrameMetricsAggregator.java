@@ -36,7 +36,7 @@ public class FrameMetricsAggregator {
     public static final int TOTAL_INDEX = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private FrameMetricsBaseImpl f2326a;
+    private FrameMetricsBaseImpl f2278a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl.class */
     static class FrameMetricsApi24Impl extends FrameMetricsBaseImpl {
@@ -44,47 +44,47 @@ public class FrameMetricsAggregator {
         private static Handler f;
 
         /* renamed from: a  reason: collision with root package name */
-        int f2327a;
+        int f2279a;
         SparseIntArray[] b = new SparseIntArray[9];
         private ArrayList<WeakReference<Activity>> d = new ArrayList<>();
 
         /* renamed from: c  reason: collision with root package name */
-        Window.OnFrameMetricsAvailableListener f2328c = new Window.OnFrameMetricsAvailableListener() { // from class: androidx.core.app.FrameMetricsAggregator.FrameMetricsApi24Impl.1
+        Window.OnFrameMetricsAvailableListener f2280c = new Window.OnFrameMetricsAvailableListener() { // from class: androidx.core.app.FrameMetricsAggregator.FrameMetricsApi24Impl.1
             @Override // android.view.Window.OnFrameMetricsAvailableListener
             public void onFrameMetricsAvailable(Window window, FrameMetrics frameMetrics, int i) {
-                if ((FrameMetricsApi24Impl.this.f2327a & 1) != 0) {
+                if ((FrameMetricsApi24Impl.this.f2279a & 1) != 0) {
                     FrameMetricsApi24Impl frameMetricsApi24Impl = FrameMetricsApi24Impl.this;
                     frameMetricsApi24Impl.a(frameMetricsApi24Impl.b[0], frameMetrics.getMetric(8));
                 }
-                if ((FrameMetricsApi24Impl.this.f2327a & 2) != 0) {
+                if ((FrameMetricsApi24Impl.this.f2279a & 2) != 0) {
                     FrameMetricsApi24Impl frameMetricsApi24Impl2 = FrameMetricsApi24Impl.this;
                     frameMetricsApi24Impl2.a(frameMetricsApi24Impl2.b[1], frameMetrics.getMetric(1));
                 }
-                if ((FrameMetricsApi24Impl.this.f2327a & 4) != 0) {
+                if ((FrameMetricsApi24Impl.this.f2279a & 4) != 0) {
                     FrameMetricsApi24Impl frameMetricsApi24Impl3 = FrameMetricsApi24Impl.this;
                     frameMetricsApi24Impl3.a(frameMetricsApi24Impl3.b[2], frameMetrics.getMetric(3));
                 }
-                if ((FrameMetricsApi24Impl.this.f2327a & 8) != 0) {
+                if ((FrameMetricsApi24Impl.this.f2279a & 8) != 0) {
                     FrameMetricsApi24Impl frameMetricsApi24Impl4 = FrameMetricsApi24Impl.this;
                     frameMetricsApi24Impl4.a(frameMetricsApi24Impl4.b[3], frameMetrics.getMetric(4));
                 }
-                if ((FrameMetricsApi24Impl.this.f2327a & 16) != 0) {
+                if ((FrameMetricsApi24Impl.this.f2279a & 16) != 0) {
                     FrameMetricsApi24Impl frameMetricsApi24Impl5 = FrameMetricsApi24Impl.this;
                     frameMetricsApi24Impl5.a(frameMetricsApi24Impl5.b[4], frameMetrics.getMetric(5));
                 }
-                if ((FrameMetricsApi24Impl.this.f2327a & 64) != 0) {
+                if ((FrameMetricsApi24Impl.this.f2279a & 64) != 0) {
                     FrameMetricsApi24Impl frameMetricsApi24Impl6 = FrameMetricsApi24Impl.this;
                     frameMetricsApi24Impl6.a(frameMetricsApi24Impl6.b[6], frameMetrics.getMetric(7));
                 }
-                if ((FrameMetricsApi24Impl.this.f2327a & 32) != 0) {
+                if ((FrameMetricsApi24Impl.this.f2279a & 32) != 0) {
                     FrameMetricsApi24Impl frameMetricsApi24Impl7 = FrameMetricsApi24Impl.this;
                     frameMetricsApi24Impl7.a(frameMetricsApi24Impl7.b[5], frameMetrics.getMetric(6));
                 }
-                if ((FrameMetricsApi24Impl.this.f2327a & 128) != 0) {
+                if ((FrameMetricsApi24Impl.this.f2279a & 128) != 0) {
                     FrameMetricsApi24Impl frameMetricsApi24Impl8 = FrameMetricsApi24Impl.this;
                     frameMetricsApi24Impl8.a(frameMetricsApi24Impl8.b[7], frameMetrics.getMetric(0));
                 }
-                if ((FrameMetricsApi24Impl.this.f2327a & 256) != 0) {
+                if ((FrameMetricsApi24Impl.this.f2279a & 256) != 0) {
                     FrameMetricsApi24Impl frameMetricsApi24Impl9 = FrameMetricsApi24Impl.this;
                     frameMetricsApi24Impl9.a(frameMetricsApi24Impl9.b[8], frameMetrics.getMetric(2));
                 }
@@ -92,7 +92,7 @@ public class FrameMetricsAggregator {
         };
 
         FrameMetricsApi24Impl(int i) {
-            this.f2327a = i;
+            this.f2279a = i;
         }
 
         void a(SparseIntArray sparseIntArray, long j) {
@@ -116,12 +116,12 @@ public class FrameMetricsAggregator {
             while (true) {
                 int i2 = i;
                 if (i2 > 8) {
-                    activity.getWindow().addOnFrameMetricsAvailableListener(this.f2328c, f);
+                    activity.getWindow().addOnFrameMetricsAvailableListener(this.f2280c, f);
                     this.d.add(new WeakReference<>(activity));
                     return;
                 }
                 SparseIntArray[] sparseIntArrayArr = this.b;
-                if (sparseIntArrayArr[i2] == null && (this.f2327a & (1 << i2)) != 0) {
+                if (sparseIntArrayArr[i2] == null && (this.f2279a & (1 << i2)) != 0) {
                     sparseIntArrayArr[i2] = new SparseIntArray();
                 }
                 i = i2 + 1;
@@ -146,7 +146,7 @@ public class FrameMetricsAggregator {
                     break;
                 }
             }
-            activity.getWindow().removeOnFrameMetricsAvailableListener(this.f2328c);
+            activity.getWindow().removeOnFrameMetricsAvailableListener(this.f2280c);
             return this.b;
         }
 
@@ -168,7 +168,7 @@ public class FrameMetricsAggregator {
                 WeakReference<Activity> weakReference = this.d.get(i);
                 Activity activity = weakReference.get();
                 if (weakReference.get() != null) {
-                    activity.getWindow().removeOnFrameMetricsAvailableListener(this.f2328c);
+                    activity.getWindow().removeOnFrameMetricsAvailableListener(this.f2280c);
                     this.d.remove(i);
                 }
                 size = i;
@@ -212,29 +212,29 @@ public class FrameMetricsAggregator {
 
     public FrameMetricsAggregator(int i) {
         if (Build.VERSION.SDK_INT >= 24) {
-            this.f2326a = new FrameMetricsApi24Impl(i);
+            this.f2278a = new FrameMetricsApi24Impl(i);
         } else {
-            this.f2326a = new FrameMetricsBaseImpl();
+            this.f2278a = new FrameMetricsBaseImpl();
         }
     }
 
     public void add(Activity activity) {
-        this.f2326a.add(activity);
+        this.f2278a.add(activity);
     }
 
     public SparseIntArray[] getMetrics() {
-        return this.f2326a.getMetrics();
+        return this.f2278a.getMetrics();
     }
 
     public SparseIntArray[] remove(Activity activity) {
-        return this.f2326a.remove(activity);
+        return this.f2278a.remove(activity);
     }
 
     public SparseIntArray[] reset() {
-        return this.f2326a.reset();
+        return this.f2278a.reset();
     }
 
     public SparseIntArray[] stop() {
-        return this.f2326a.stop();
+        return this.f2278a.stop();
     }
 }

@@ -31,11 +31,11 @@ public abstract class BTBaseView extends FrameLayout {
     private static final int p = -999;
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f8335a;
+    protected Context f5495a;
     protected c b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected String f8336c;
+    protected String f5496c;
     protected String d;
     protected d e;
     protected LayoutInflater f;
@@ -56,7 +56,7 @@ public abstract class BTBaseView extends FrameLayout {
         this.d = "";
         this.g = 1;
         this.h = false;
-        this.f8335a = context;
+        this.f5495a = context;
         this.f = LayoutInflater.from(context);
         init(context);
     }
@@ -118,19 +118,19 @@ public abstract class BTBaseView extends FrameLayout {
     }
 
     public int findColor(String str) {
-        return i.a(this.f8335a.getApplicationContext(), str, "color");
+        return i.a(this.f5495a.getApplicationContext(), str, "color");
     }
 
     public int findDrawable(String str) {
-        return i.a(this.f8335a.getApplicationContext(), str, i.f7952c);
+        return i.a(this.f5495a.getApplicationContext(), str, i.f5112c);
     }
 
     public int findID(String str) {
-        return i.a(this.f8335a.getApplicationContext(), str, "id");
+        return i.a(this.f5495a.getApplicationContext(), str, "id");
     }
 
     public int findLayout(String str) {
-        return i.a(this.f8335a.getApplicationContext(), str, "layout");
+        return i.a(this.f5495a.getApplicationContext(), str, "layout");
     }
 
     public c getCampaign() {
@@ -170,7 +170,7 @@ public abstract class BTBaseView extends FrameLayout {
     }
 
     public String getUnitId() {
-        return this.f8336c;
+        return this.f5496c;
     }
 
     public int getViewHeight() {
@@ -184,7 +184,7 @@ public abstract class BTBaseView extends FrameLayout {
     public abstract void init(Context context);
 
     public boolean isLandscape() {
-        return this.f8335a.getResources().getConfiguration().orientation == 2;
+        return this.f5495a.getResources().getConfiguration().orientation == 2;
     }
 
     public boolean isNotNULL(View... viewArr) {
@@ -331,7 +331,7 @@ public abstract class BTBaseView extends FrameLayout {
     }
 
     public void setUnitId(String str) {
-        this.f8336c = str;
+        this.f5496c = str;
     }
 
     public void setWrapContent() {

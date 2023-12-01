@@ -16,13 +16,13 @@ public final class ChatOnlineStatusModel {
         this(null, 0, 0L, null, 15, null);
     }
 
-    public ChatOnlineStatusModel(String uid, int i, long j, String jump_url) {
-        Intrinsics.e(uid, "uid");
-        Intrinsics.e(jump_url, "jump_url");
-        this.uid = uid;
+    public ChatOnlineStatusModel(String str, int i, long j, String str2) {
+        Intrinsics.e(str, "uid");
+        Intrinsics.e(str2, "jump_url");
+        this.uid = str;
         this.social_status = i;
         this.source_id = j;
-        this.jump_url = jump_url;
+        this.jump_url = str2;
     }
 
     public /* synthetic */ ChatOnlineStatusModel(String str, int i, long j, String str2, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -61,10 +61,10 @@ public final class ChatOnlineStatusModel {
         return this.jump_url;
     }
 
-    public final ChatOnlineStatusModel copy(String uid, int i, long j, String jump_url) {
-        Intrinsics.e(uid, "uid");
-        Intrinsics.e(jump_url, "jump_url");
-        return new ChatOnlineStatusModel(uid, i, j, jump_url);
+    public final ChatOnlineStatusModel copy(String str, int i, long j, String str2) {
+        Intrinsics.e(str, "uid");
+        Intrinsics.e(str2, "jump_url");
+        return new ChatOnlineStatusModel(str, i, j, str2);
     }
 
     public boolean equals(Object obj) {
@@ -73,7 +73,7 @@ public final class ChatOnlineStatusModel {
         }
         if (obj instanceof ChatOnlineStatusModel) {
             ChatOnlineStatusModel chatOnlineStatusModel = (ChatOnlineStatusModel) obj;
-            return Intrinsics.a((Object) this.uid, (Object) chatOnlineStatusModel.uid) && this.social_status == chatOnlineStatusModel.social_status && this.source_id == chatOnlineStatusModel.source_id && Intrinsics.a((Object) this.jump_url, (Object) chatOnlineStatusModel.jump_url);
+            return Intrinsics.a(this.uid, chatOnlineStatusModel.uid) && this.social_status == chatOnlineStatusModel.social_status && this.source_id == chatOnlineStatusModel.source_id && Intrinsics.a(this.jump_url, chatOnlineStatusModel.jump_url);
         }
         return false;
     }

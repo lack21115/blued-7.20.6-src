@@ -4,7 +4,6 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -12,11 +11,11 @@ import java.util.TimeZone;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35501a = c.class.getSimpleName();
+    private static final String f21810a = c.class.getSimpleName();
     private static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static DisplayMetrics f35502c = null;
+    private static DisplayMetrics f21811c = null;
 
     public static String a() {
         try {
@@ -61,7 +60,7 @@ public class c {
                 }
             } catch (Throwable th) {
                 th.printStackTrace();
-                WBSLogger.e(f35501a, th.getMessage(), new Object[0]);
+                WBSLogger.e(f21810a, th.getMessage(), new Object[0]);
             }
             return b;
         }
@@ -69,17 +68,17 @@ public class c {
     }
 
     public static DisplayMetrics c(Context context) {
-        if (f35502c == null) {
-            f35502c = new DisplayMetrics();
-            ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(f35502c);
+        if (f21811c == null) {
+            f21811c = new DisplayMetrics();
+            ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(f21811c);
         }
-        return f35502c;
+        return f21811c;
     }
 
     public static String d(Context context) {
         Locale locale = context.getResources().getConfiguration().locale;
         String language = locale.getLanguage();
         String country = locale.getCountry();
-        return language + BridgeUtil.UNDERLINE_STR + country;
+        return language + "_" + country;
     }
 }

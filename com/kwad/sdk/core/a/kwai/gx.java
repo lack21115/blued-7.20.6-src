@@ -17,7 +17,7 @@ public final class gx implements com.kwad.sdk.core.d<RewardCheckMonitorInfo> {
         if (rewardCheckMonitorInfo.errorMsg == JSONObject.NULL) {
             rewardCheckMonitorInfo.errorMsg = "";
         }
-        rewardCheckMonitorInfo.creativeId = jSONObject.optLong("creative_id");
+        rewardCheckMonitorInfo.creativeId = jSONObject.optLong(com.anythink.expressad.foundation.d.c.l);
         rewardCheckMonitorInfo.dataLoadInterval = jSONObject.optLong("data_load_interval_duration_ms");
         rewardCheckMonitorInfo.posId = jSONObject.optLong("pos_Id");
         rewardCheckMonitorInfo.enviType = jSONObject.optInt("enviType");
@@ -42,7 +42,7 @@ public final class gx implements com.kwad.sdk.core.d<RewardCheckMonitorInfo> {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "error_msg", rewardCheckMonitorInfo.errorMsg);
         }
         if (rewardCheckMonitorInfo.creativeId != 0) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "creative_id", rewardCheckMonitorInfo.creativeId);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, com.anythink.expressad.foundation.d.c.l, rewardCheckMonitorInfo.creativeId);
         }
         if (rewardCheckMonitorInfo.dataLoadInterval != 0) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "data_load_interval_duration_ms", rewardCheckMonitorInfo.dataLoadInterval);

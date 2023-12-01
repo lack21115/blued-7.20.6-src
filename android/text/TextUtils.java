@@ -33,8 +33,7 @@ import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.util.Printer;
-import android.widget.ExpandableListView;
-import com.android.internal.R;
+import com.xiaomi.mipush.sdk.Constants;
 import java.lang.reflect.Array;
 import java.util.Iterator;
 import java.util.Locale;
@@ -531,7 +530,7 @@ public class TextUtils {
                 return;
             }
             Object obj = spans[i2];
-            printer.println(str + ((Object) charSequence.subSequence(spanned.getSpanStart(obj), spanned.getSpanEnd(obj))) + ": " + Integer.toHexString(System.identityHashCode(obj)) + " " + obj.getClass().getCanonicalName() + " (" + spanned.getSpanStart(obj) + "-" + spanned.getSpanEnd(obj) + ") fl=#" + spanned.getSpanFlags(obj));
+            printer.println(str + ((Object) charSequence.subSequence(spanned.getSpanStart(obj), spanned.getSpanEnd(obj))) + ": " + Integer.toHexString(System.identityHashCode(obj)) + " " + obj.getClass().getCanonicalName() + " (" + spanned.getSpanStart(obj) + Constants.ACCEPT_TIME_SEPARATOR_SERVER + spanned.getSpanEnd(obj) + ") fl=#" + spanned.getSpanFlags(obj));
             i = i2 + 1;
         }
     }
@@ -1007,7 +1006,7 @@ public class TextUtils {
     }
 
     public static CharSequence join(Iterable<CharSequence> iterable) {
-        return join(Resources.getSystem().getText(R.string.list_delimeter), iterable);
+        return join(Resources.getSystem().getText(17041053), iterable);
     }
 
     public static String join(CharSequence charSequence, Iterable iterable) {
@@ -1287,7 +1286,7 @@ public class TextUtils {
     }
 
     public static int unpackRangeEndFromLong(long j) {
-        return (int) (ExpandableListView.PACKED_POSITION_VALUE_NULL & j);
+        return (int) (4294967295L & j);
     }
 
     public static int unpackRangeStartFromLong(long j) {

@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,6 +29,7 @@ import com.blued.android.module.yy_china.databinding.FragmentYyHomeMineBinding;
 import com.blued.android.module.yy_china.listener.OnCLickRoomItemToGoRoomListener;
 import com.blued.android.module.yy_china.manager.YYRoomInfoManager;
 import com.blued.android.module.yy_china.model.YYChatRoomFollowedModel;
+import com.blued.android.module.yy_china.model.YYGiftPackageModel;
 import com.blued.android.module.yy_china.presenter.YYHomeMineViewModel;
 import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.das.client.chatroom.ChatRoomProtos;
@@ -49,13 +51,9 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYHomeMineFragment.class */
 public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewModel> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f17281a = {Reflection.a(new PropertyReference1Impl(YYHomeMineFragment.class, "vb", "getVb()Lcom/blued/android/module/yy_china/databinding/FragmentYyHomeMineBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] a = {Reflection.a(new PropertyReference1Impl(YYHomeMineFragment.class, "vb", "getVb()Lcom/blued/android/module/yy_china/databinding/FragmentYyHomeMineBinding;", 0))};
     private final ViewBindingProperty b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f17282c;
+    private final String c;
     private final String d;
     private YYFollowAdapter e;
     private YYFollowAdapter f;
@@ -78,13 +76,13 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
                 return FragmentYyHomeMineBinding.a(fragment.requireView());
             }
         });
-        this.f17282c = "YY_HOME_FOLLOW_GUIDE_TIME";
+        this.c = "YY_HOME_FOLLOW_GUIDE_TIME";
         this.d = "YY_HOME_FOLLOW_GUIDE_NUM";
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YYHomeMineFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        List<YYChatRoomFollowedModel> data;
+        List data;
         Intrinsics.e(this$0, "this$0");
         if (ClickUtils.a(R.id.item_follow_layout, 2000L)) {
             return;
@@ -97,7 +95,7 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
         }
         YYFollowAdapter yYFollowAdapter = this$0.f;
         if (yYFollowAdapter != null && (data = yYFollowAdapter.getData()) != null) {
-            yYChatRoomFollowedModel = data.get(i);
+            yYChatRoomFollowedModel = (YYChatRoomFollowedModel) data.get(i);
         }
         Intrinsics.a(yYChatRoomFollowedModel);
         OnCLickRoomItemToGoRoomListener onCLickRoomItemToGoRoomListener = this$0.g;
@@ -111,7 +109,7 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
     public static final void a(YYHomeMineFragment this$0, String str) {
         Intrinsics.e(this$0, "this$0");
         LogUtils.d("EVENT_REFRESH_OR_LOAD_MORE_FINISH", Intrinsics.a("YYMineFragment refresh event tab type: ", (Object) str));
-        if (TextUtils.equals(str, "-1")) {
+        if (TextUtils.equals(str, YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID)) {
             YYHomeMineViewModel j = this$0.j();
             ActivityFragmentActive fragmentActive = this$0.getFragmentActive();
             Intrinsics.c(fragmentActive, "fragmentActive");
@@ -120,7 +118,7 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
     }
 
     private final void a(YYChatRoomFollowedModel yYChatRoomFollowedModel, String str) {
-        EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_TAB_PAGE_ROOM_CLICK, yYChatRoomFollowedModel.room_id, yYChatRoomFollowedModel.uid, "-1", yYChatRoomFollowedModel.type_id, false, str, j().d(), yYChatRoomFollowedModel.label_link);
+        EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_TAB_PAGE_ROOM_CLICK, yYChatRoomFollowedModel.room_id, yYChatRoomFollowedModel.uid, YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID, yYChatRoomFollowedModel.type_id, false, str, j().d(), yYChatRoomFollowedModel.label_link);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -143,10 +141,10 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(YYHomeMineFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        List<YYChatRoomFollowedModel> data;
+        List data;
         Intrinsics.e(this$0, "this$0");
         YYFollowAdapter yYFollowAdapter = this$0.e;
-        YYChatRoomFollowedModel yYChatRoomFollowedModel = (yYFollowAdapter == null || (data = yYFollowAdapter.getData()) == null) ? null : data.get(i);
+        YYChatRoomFollowedModel yYChatRoomFollowedModel = (yYFollowAdapter == null || (data = yYFollowAdapter.getData()) == null) ? null : (YYChatRoomFollowedModel) data.get(i);
         Intrinsics.a(yYChatRoomFollowedModel);
         if (yYChatRoomFollowedModel.isOnLive()) {
             EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_FOLLOW_ROOM_CLICK, yYChatRoomFollowedModel.room_id, yYChatRoomFollowedModel.uid, yYChatRoomFollowedModel.type_id, ChatRoomProtos.From.FOLLOW_ROOM_LIST_SECOND_PAGE);
@@ -196,14 +194,14 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
                 calendar.set(13, 0);
                 calendar.set(14, 0);
                 long timeInMillis = calendar.getTimeInMillis() / 1000;
-                if (timeInMillis == SharedPreferencesUtils.b().getLong(Intrinsics.a(this.f17282c, (Object) YYRoomInfoManager.e().k()), 0L)) {
+                if (timeInMillis == SharedPreferencesUtils.b().getLong(Intrinsics.a(this.c, (Object) YYRoomInfoManager.e().k()), 0L)) {
                     int i = SharedPreferencesUtils.b().getInt(Intrinsics.a(this.d, (Object) YYRoomInfoManager.e().k()), 0);
                     if (i >= 1) {
                         return;
                     }
                     SharedPreferencesUtils.b().edit().putInt(Intrinsics.a(this.d, (Object) YYRoomInfoManager.e().k()), i + 1).apply();
                 } else {
-                    SharedPreferencesUtils.b().edit().putLong(Intrinsics.a(this.f17282c, (Object) YYRoomInfoManager.e().k()), timeInMillis).apply();
+                    SharedPreferencesUtils.b().edit().putLong(Intrinsics.a(this.c, (Object) YYRoomInfoManager.e().k()), timeInMillis).apply();
                     SharedPreferencesUtils.b().edit().putInt(Intrinsics.a(this.d, (Object) YYRoomInfoManager.e().k()), 0).apply();
                 }
                 OnCLickRoomItemToGoRoomListener onCLickRoomItemToGoRoomListener = this.g;
@@ -249,12 +247,12 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
     private final void d(boolean z) {
         ImageView imageView;
         FragmentYyHomeMineBinding p = p();
-        FrameLayout frameLayout = p == null ? null : p.f16504a;
+        FrameLayout frameLayout = p == null ? null : p.a;
         if (frameLayout != null) {
             frameLayout.setVisibility(z ? 8 : 0);
         }
         FragmentYyHomeMineBinding p2 = p();
-        View view = p2 == null ? null : p2.f16505c;
+        View view = p2 == null ? null : p2.c;
         if (view != null) {
             int i = 8;
             if (z) {
@@ -295,7 +293,7 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FragmentYyHomeMineBinding p() {
-        return (FragmentYyHomeMineBinding) this.b.b(this, f17281a[0]);
+        return (FragmentYyHomeMineBinding) this.b.b(this, a[0]);
     }
 
     private final void q() {
@@ -318,7 +316,6 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
         YYFollowAdapter yYFollowAdapter = this.f;
         if (yYFollowAdapter != null) {
             yYFollowAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYHomeMineFragment$sqzKMqwja5xKy3eQ1gqLV4NhxdY
-                @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
                 public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                     YYHomeMineFragment.a(YYHomeMineFragment.this, baseQuickAdapter, view, i);
                 }
@@ -352,7 +349,6 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
         YYFollowAdapter yYFollowAdapter = this.e;
         if (yYFollowAdapter != null) {
             yYFollowAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYHomeMineFragment$9NZrRiAuPaLOYRPeOcBYWm7QyN0
-                @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
                 public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                     YYHomeMineFragment.b(YYHomeMineFragment.this, baseQuickAdapter, view, i);
                 }
@@ -392,7 +388,7 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
         q();
         FragmentYyHomeMineBinding p = p();
         if (p != null && (smartRefreshLayout4 = p.i) != null) {
-            smartRefreshLayout4.l(false);
+            smartRefreshLayout4.b(false);
         }
         FragmentYyHomeMineBinding p2 = p();
         if (p2 != null && (linearLayout2 = p2.g) != null) {
@@ -404,7 +400,7 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
         }
         FragmentYyHomeMineBinding p4 = p();
         if (p4 != null && (smartRefreshLayout3 = p4.i) != null) {
-            smartRefreshLayout3.l(false);
+            smartRefreshLayout3.b(false);
         }
         if (j().e()) {
             FragmentYyHomeMineBinding p5 = p();
@@ -412,12 +408,10 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
                 return;
             }
             smartRefreshLayout.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYHomeMineFragment$initView$1
-                @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
                 public void onLoadMore(RefreshLayout refreshLayout) {
                     Intrinsics.e(refreshLayout, "refreshLayout");
                 }
 
-                @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
                 public void onRefresh(RefreshLayout refreshLayout) {
                     YYHomeMineViewModel j;
                     FragmentYyHomeMineBinding p6;
@@ -430,7 +424,7 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
                     j.a(fragmentActive);
                     p6 = YYHomeMineFragment.this.p();
                     if (p6 != null && (smartRefreshLayout5 = p6.i) != null) {
-                        smartRefreshLayout5.j();
+                        smartRefreshLayout5.g();
                     }
                     onCLickRoomItemToGoRoomListener = YYHomeMineFragment.this.g;
                     if (onCLickRoomItemToGoRoomListener == null) {
@@ -450,8 +444,7 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void k() {
-        LiveEventBus.get("refresh_or_loadmore", String.class).observe(this, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYHomeMineFragment$mcfD5KJdJFDE54geRW6rBJ_NQ0c
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("refresh_or_loadmore", String.class).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYHomeMineFragment$mcfD5KJdJFDE54geRW6rBJ_NQ0c
             public final void onChanged(Object obj) {
                 YYHomeMineFragment.a(YYHomeMineFragment.this, (String) obj);
             }
@@ -460,11 +453,11 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        YYHomeMineFragment yYHomeMineFragment = this;
-        LifecycleExtKt.a(yYHomeMineFragment, j().i(), new YYHomeMineFragment$liveDataObserver$1(this));
-        LifecycleExtKt.a(yYHomeMineFragment, j().j(), new YYHomeMineFragment$liveDataObserver$2(this));
-        LifecycleExtKt.a(yYHomeMineFragment, j().l(), new YYHomeMineFragment$liveDataObserver$3(this));
-        LifecycleExtKt.a(yYHomeMineFragment, j().k(), new YYHomeMineFragment$liveDataObserver$4(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, j().i(), new YYHomeMineFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, j().j(), new YYHomeMineFragment$liveDataObserver$2(this));
+        LifecycleExtKt.a(lifecycleOwner, j().l(), new YYHomeMineFragment$liveDataObserver$3(this));
+        LifecycleExtKt.a(lifecycleOwner, j().k(), new YYHomeMineFragment$liveDataObserver$4(this));
     }
 
     @Override // android.view.View.OnClickListener
@@ -483,7 +476,7 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         YYFollowAdapter yYFollowAdapter = this.e;
@@ -497,7 +490,7 @@ public final class YYHomeMineFragment extends MVVMBaseFragment<YYHomeMineViewMod
         yYFollowAdapter2.a(false);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         if (j().h()) {

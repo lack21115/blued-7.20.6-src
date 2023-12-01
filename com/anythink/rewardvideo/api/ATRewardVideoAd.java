@@ -215,7 +215,6 @@ public class ATRewardVideoAd {
         }
     };
     com.anythink.core.common.b.a adLoadListener = new com.anythink.core.common.b.a() { // from class: com.anythink.rewardvideo.api.ATRewardVideoAd.2
-        @Override // com.anythink.core.common.b.a
         public void onAdLoadFail(final AdError adError) {
             n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.api.ATRewardVideoAd.2.2
                 @Override // java.lang.Runnable
@@ -227,7 +226,6 @@ public class ATRewardVideoAd {
             });
         }
 
-        @Override // com.anythink.core.common.b.a
         public void onAdLoaded() {
             n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.api.ATRewardVideoAd.2.1
                 @Override // java.lang.Runnable
@@ -252,7 +250,7 @@ public class ATRewardVideoAd {
     private void controlShow(Activity activity, String str) {
         com.anythink.core.common.k.n.b(this.mPlacementId, g.i.k, g.i.s, g.i.h, "");
         if (n.a().g() == null || TextUtils.isEmpty(n.a().p()) || TextUtils.isEmpty(n.a().q())) {
-            AdError errorCode = ErrorCode.getErrorCode(ErrorCode.exception, "", "sdk init error");
+            AdError errorCode = ErrorCode.getErrorCode("9999", "", "sdk init error");
             ATRewardVideoListener aTRewardVideoListener = this.mListener;
             if (aTRewardVideoListener != null) {
                 aTRewardVideoListener.onRewardedVideoAdPlayFailed(errorCode, j.a((d) null));
@@ -275,7 +273,7 @@ public class ATRewardVideoAd {
     }
 
     public static void entryAdScenario(String str, String str2) {
-        n.a().a(str, str2, "1", (Map<String, Object>) null);
+        n.a().a(str, str2, "1", (Map) null);
     }
 
     public static void entryAdScenario(String str, String str2, Map<String, Object> map) {
@@ -309,7 +307,7 @@ public class ATRewardVideoAd {
     public ATAdStatusInfo checkAdStatus() {
         ATAdStatusInfo adStatus = getAdStatus();
         if (adStatus == null) {
-            return new ATAdStatusInfo(false, false, null);
+            return new ATAdStatusInfo(false, false, (ATAdInfo) null);
         }
         com.anythink.core.common.k.n.b(this.mPlacementId, g.i.k, g.i.u, adStatus.toString(), "");
         return adStatus;

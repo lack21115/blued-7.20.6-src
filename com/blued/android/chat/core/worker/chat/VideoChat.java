@@ -210,6 +210,7 @@ public class VideoChat {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
+    /* JADX WARN: Type inference failed for: r2v3, types: [com.blued.android.chat.core.worker.chat.VideoChat$4] */
     public boolean recvPushCallMessageAndNotifyOrNot(ChattingModel chattingModel) {
         VideoChatMsgContentModel videoChatMsgContentModel;
         if (ChatManager.debug) {
@@ -357,6 +358,7 @@ public class VideoChat {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r2v2, types: [com.blued.android.chat.core.worker.chat.VideoChat$3] */
     public void updateCallMessage(long j, long j2, int i, int i2) {
         ChattingModel findMessage = this.chat.findMessage((short) 2, j, j2, 0L, null);
         if (findMessage == null || findMessage.msgType != 52) {

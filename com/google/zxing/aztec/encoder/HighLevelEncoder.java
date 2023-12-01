@@ -106,7 +106,7 @@ public final class HighLevelEncoder {
         boolean z;
         LinkedList linkedList = new LinkedList();
         for (State state : iterable) {
-            Iterator<E> it = linkedList.iterator();
+            Iterator it = linkedList.iterator();
             while (true) {
                 z = true;
                 if (!it.hasNext()) {

@@ -9,9 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 @JvmInline
 /* loaded from: source-3503164-dex2jar.jar:kotlin/Result.class */
 public final class Result<T> implements Serializable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42293a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Object b;
 
     @Metadata
@@ -28,25 +26,23 @@ public final class Result<T> implements Serializable {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/Result$Failure.class */
     public static final class Failure implements Serializable {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final Throwable f42294a;
+        public final Throwable a;
 
         public Failure(Throwable exception) {
             Intrinsics.e(exception, "exception");
-            this.f42294a = exception;
+            this.a = exception;
         }
 
         public boolean equals(Object obj) {
-            return (obj instanceof Failure) && Intrinsics.a(this.f42294a, ((Failure) obj).f42294a);
+            return (obj instanceof Failure) && Intrinsics.a(this.a, ((Failure) obj).a);
         }
 
         public int hashCode() {
-            return this.f42294a.hashCode();
+            return this.a.hashCode();
         }
 
         public String toString() {
-            return "Failure(" + this.f42294a + ')';
+            return "Failure(" + this.a + ')';
         }
     }
 
@@ -68,7 +64,7 @@ public final class Result<T> implements Serializable {
 
     public static final Throwable c(Object obj) {
         if (obj instanceof Failure) {
-            return ((Failure) obj).f42294a;
+            return ((Failure) obj).a;
         }
         return null;
     }

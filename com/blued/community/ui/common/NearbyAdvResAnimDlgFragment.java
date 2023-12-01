@@ -36,7 +36,6 @@ import com.blued.community.ui.event.fragment.EventDetailsFragment;
 import com.blued.community.ui.feed.manager.FeedMethods;
 import com.blued.das.guy.GuyProtos;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 import java.net.URL;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -142,9 +141,9 @@ public final class NearbyAdvResAnimDlgFragment extends LiveBaseDialogFragment {
             return;
         }
         int i = AppInfo.l / 2;
-        int c2 = view2.getMeasuredHeight() != 0 ? FeedMethods.c(159) + (view2.getMeasuredHeight() / 2) : 0;
-        int i2 = c2;
-        if (c2 == 0) {
+        int c = view2.getMeasuredHeight() != 0 ? FeedMethods.c(159) + (view2.getMeasuredHeight() / 2) : 0;
+        int i2 = c;
+        if (c == 0) {
             i2 = FeedMethods.c(384);
         }
         if (this.u == 0) {
@@ -182,7 +181,7 @@ public final class NearbyAdvResAnimDlgFragment extends LiveBaseDialogFragment {
                 if (i3 == 12) {
                     HomeTabBubble homeTabBubble = new HomeTabBubble();
                     homeTabBubble.bubble_type = 1102;
-                    bundle = NearbyAdvResAnimDlgFragment.this.f10822c;
+                    bundle = NearbyAdvResAnimDlgFragment.this.c;
                     String string = bundle.getString("activity_text");
                     String str = string;
                     if (TextUtils.isEmpty(string)) {
@@ -191,14 +190,14 @@ public final class NearbyAdvResAnimDlgFragment extends LiveBaseDialogFragment {
                     homeTabBubble.bubble_text = str;
                     HomeTabBubbleExtra homeTabBubbleExtra = new HomeTabBubbleExtra();
                     homeTabBubbleExtra.extra_bubble_type = 2;
-                    bundle2 = NearbyAdvResAnimDlgFragment.this.f10822c;
+                    bundle2 = NearbyAdvResAnimDlgFragment.this.c;
                     homeTabBubbleExtra.adv_activity_id = CommonStringUtils.a(bundle2.getString("activity_id"));
-                    bundle3 = NearbyAdvResAnimDlgFragment.this.f10822c;
+                    bundle3 = NearbyAdvResAnimDlgFragment.this.c;
                     homeTabBubbleExtra.extra_bubble_img = bundle3.getString("activity_img");
-                    bundle4 = NearbyAdvResAnimDlgFragment.this.f10822c;
+                    bundle4 = NearbyAdvResAnimDlgFragment.this.c;
                     homeTabBubbleExtra.extra_bubble_text = bundle4.getString("activity_text");
-                    CommunityManager.f19086a.a().a(homeTabBubbleExtra);
-                    LiveEventBus.get(EventBusConstant.KEY_EVENT_CITY_NEW).post(homeTabBubble);
+                    CommunityManager.a.a().a(homeTabBubbleExtra);
+                    LiveEventBus.get("city_new_hint").post(homeTabBubble);
                 }
             }
 
@@ -218,7 +217,7 @@ public final class NearbyAdvResAnimDlgFragment extends LiveBaseDialogFragment {
         String str;
         String str2;
         this.C = false;
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             str = "#222222";
             str2 = "#1A1A1A";
         } else {
@@ -338,11 +337,11 @@ public final class NearbyAdvResAnimDlgFragment extends LiveBaseDialogFragment {
 
     private final void o() {
         if (this.w == 12) {
-            String string = this.f10822c.getString("activity_id", "");
+            String string = this.c.getString("activity_id", "");
             this.x = true;
             Context context = getContext();
             if (context != null) {
-                EventDetailsFragment.f19534a.a(context, string, null);
+                EventDetailsFragment.a.a(context, string, null);
                 dismissAllowingStateLoss();
             }
         } else if (!TextUtils.isEmpty(this.r)) {
@@ -364,7 +363,7 @@ public final class NearbyAdvResAnimDlgFragment extends LiveBaseDialogFragment {
         this.k = this.b.findViewById(R.id.nearby_adv_res_content_lo);
         this.l = (ImageView) this.b.findViewById(R.id.nearby_adv_res_close);
         this.m = (SVGAImageView) this.b.findViewById(R.id.nearby_adv_res_svg);
-        this.p = (CardView) this.b.findViewById(R.id.nearby_adv_res_svg_parent);
+        this.p = this.b.findViewById(R.id.nearby_adv_res_svg_parent);
         this.n = (ImageView) this.b.findViewById(R.id.nearby_adv_res_iv);
         CardView cardView = this.p;
         if (cardView != null) {
@@ -384,30 +383,30 @@ public final class NearbyAdvResAnimDlgFragment extends LiveBaseDialogFragment {
                 }
             });
         }
-        this.o = SVGAParser.f15958a.b();
+        this.o = SVGAParser.a.b();
         EventTrackFeed.a(GuyProtos.Event.HOME_ADV_POP_SHOW, this.w, this.s, String.valueOf(this.B), String.valueOf(this.A), String.valueOf(this.z));
-        CommunityManager.f19086a.a().h(true);
-        CommunityManager.f19086a.a().i(true);
+        CommunityManager.a.a().h(true);
+        CommunityManager.a.a().i(true);
     }
 
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void f() {
         super.f();
-        this.q = this.f10822c.getInt("anim_loop", 1);
-        String string = this.f10822c.getString("img_url", "");
+        this.q = this.c.getInt("anim_loop", 1);
+        String string = this.c.getString("img_url", "");
         Intrinsics.c(string, "args.getString(\"img_url\", \"\")");
         this.s = string;
-        String string2 = this.f10822c.getString("target_link", "");
+        String string2 = this.c.getString("target_link", "");
         Intrinsics.c(string2, "args.getString(\"target_link\", \"\")");
         this.r = string2;
-        this.t = this.f10822c.getInt("img_type", 0);
-        this.w = this.f10822c.getInt("adv_type", 0);
-        this.u = this.f10822c.getInt("anim_x", 0);
-        this.v = this.f10822c.getInt("anim_y", 0);
-        this.y = this.f10822c.getInt("force_gray", 0);
-        this.z = this.f10822c.getLong("ads_id", 0L);
-        this.A = this.f10822c.getInt("business_line", 0);
-        this.B = this.f10822c.getInt("department", 0);
+        this.t = this.c.getInt("img_type", 0);
+        this.w = this.c.getInt("adv_type", 0);
+        this.u = this.c.getInt("anim_x", 0);
+        this.v = this.c.getInt("anim_y", 0);
+        this.y = this.c.getInt("force_gray", 0);
+        this.z = this.c.getLong("ads_id", 0L);
+        this.A = this.c.getInt("business_line", 0);
+        this.B = this.c.getInt("department", 0);
     }
 
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
@@ -436,20 +435,20 @@ public final class NearbyAdvResAnimDlgFragment extends LiveBaseDialogFragment {
         ImageLoader.a((IRequestHost) null, this.s).d(R.drawable.defaultpicture).a(this.n);
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
-        CommunityManager.f19086a.a().h(false);
+        CommunityManager.a.a().h(false);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDismiss(DialogInterface dialog) {
         Intrinsics.e(dialog, "dialog");
         super.onDismiss(dialog);
-        CommunityManager.f19086a.a().h(false);
+        CommunityManager.a.a().h(false);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onResume() {
         super.onResume();
         if (this.y > 0) {

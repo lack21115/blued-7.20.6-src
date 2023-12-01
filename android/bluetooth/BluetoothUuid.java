@@ -1,7 +1,6 @@
 package android.bluetooth;
 
 import android.os.ParcelUuid;
-import android.widget.ExpandableListView;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Arrays;
@@ -97,7 +96,7 @@ public final class BluetoothUuid {
 
     public static boolean is32BitUuid(ParcelUuid parcelUuid) {
         UUID uuid = parcelUuid.getUuid();
-        return uuid.getLeastSignificantBits() == BASE_UUID.getUuid().getLeastSignificantBits() && !is16BitUuid(parcelUuid) && (uuid.getMostSignificantBits() & ExpandableListView.PACKED_POSITION_VALUE_NULL) == 4096;
+        return uuid.getLeastSignificantBits() == BASE_UUID.getUuid().getLeastSignificantBits() && !is16BitUuid(parcelUuid) && (uuid.getMostSignificantBits() & 4294967295L) == 4096;
     }
 
     public static boolean isAdvAudioDist(ParcelUuid parcelUuid) {

@@ -22,12 +22,10 @@ abstract class ForwardingConnectionClientTransport implements ConnectionClientTr
         return delegate().getAttributes();
     }
 
-    @Override // io.grpc.InternalWithLogId
     public InternalLogId getLogId() {
         return delegate().getLogId();
     }
 
-    @Override // io.grpc.InternalInstrumented
     public ListenableFuture<InternalChannelz.SocketStats> getStats() {
         return delegate().getStats();
     }

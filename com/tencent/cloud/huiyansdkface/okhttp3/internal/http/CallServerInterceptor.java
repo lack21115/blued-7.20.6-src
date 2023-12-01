@@ -19,13 +19,13 @@ import java.net.ProtocolException;
 public final class CallServerInterceptor implements Interceptor {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f35947a;
+    private final boolean f22256a;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okhttp3/internal/http/CallServerInterceptor$CountingSink.class */
     static final class CountingSink extends ForwardingSink {
 
         /* renamed from: a  reason: collision with root package name */
-        long f35948a;
+        long f22257a;
 
         CountingSink(Sink sink) {
             super(sink);
@@ -34,12 +34,12 @@ public final class CallServerInterceptor implements Interceptor {
         @Override // com.tencent.cloud.huiyansdkface.okio.ForwardingSink, com.tencent.cloud.huiyansdkface.okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
             super.write(buffer, j);
-            this.f35948a += j;
+            this.f22257a += j;
         }
     }
 
     public CallServerInterceptor(boolean z) {
-        this.f35947a = z;
+        this.f22256a = z;
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Interceptor
@@ -71,7 +71,7 @@ public final class CallServerInterceptor implements Interceptor {
                     BufferedSink buffer = Okio.buffer(countingSink);
                     request.body().writeTo(buffer);
                     buffer.close();
-                    realInterceptorChain.eventListener().requestBodyEnd(realInterceptorChain.call(), countingSink.f35948a);
+                    realInterceptorChain.eventListener().requestBodyEnd(realInterceptorChain.call(), countingSink.f22257a);
                     builder2 = builder;
                 } else {
                     builder2 = builder;
@@ -96,9 +96,9 @@ public final class CallServerInterceptor implements Interceptor {
             i = build.code();
         }
         realInterceptorChain.eventListener().responseHeadersEnd(realInterceptorChain.call(), build);
-        if (this.f35947a && i == 101) {
+        if (this.f22256a && i == 101) {
             newBuilder = build.newBuilder();
-            openResponseBody = Util.f35905c;
+            openResponseBody = Util.f22214c;
         } else {
             newBuilder = build.newBuilder();
             openResponseBody = httpStream.openResponseBody(build);

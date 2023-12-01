@@ -8,16 +8,14 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/keyframe/PathKeyframeAnimation.class */
 public class PathKeyframeAnimation extends KeyframeAnimation<PointF> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final PointF f4301c;
+    private final PointF c;
     private final float[] d;
     private PathKeyframe e;
     private PathMeasure f;
 
     public PathKeyframeAnimation(List<? extends Keyframe<PointF>> list) {
         super(list);
-        this.f4301c = new PointF();
+        this.c = new PointF();
         this.d = new float[2];
         this.f = new PathMeasure();
     }
@@ -30,19 +28,19 @@ public class PathKeyframeAnimation extends KeyframeAnimation<PointF> {
         PathKeyframe pathKeyframe = (PathKeyframe) keyframe;
         Path b = pathKeyframe.b();
         if (b == null) {
-            return keyframe.f4418a;
+            return keyframe.a;
         }
-        if (this.b == null || (pointF = (PointF) this.b.a(pathKeyframe.d, pathKeyframe.e.floatValue(), pathKeyframe.f4418a, pathKeyframe.b, d(), f, h())) == null) {
+        if (this.b == null || (pointF = (PointF) this.b.a(pathKeyframe.d, pathKeyframe.e.floatValue(), pathKeyframe.a, pathKeyframe.b, d(), f, h())) == null) {
             if (this.e != pathKeyframe) {
                 this.f.setPath(b, false);
                 this.e = pathKeyframe;
             }
             PathMeasure pathMeasure = this.f;
             pathMeasure.getPosTan(f * pathMeasure.getLength(), this.d, null);
-            PointF pointF2 = this.f4301c;
+            PointF pointF2 = this.c;
             float[] fArr = this.d;
             pointF2.set(fArr[0], fArr[1]);
-            return this.f4301c;
+            return this.c;
         }
         return pointF;
     }

@@ -11,17 +11,13 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveMedalExplainBinding.class */
 public final class DialogLiveMedalExplainBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final RecyclerView f11786a;
+    public final RecyclerView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final FrameLayout f11787c;
+    private final FrameLayout c;
 
     private DialogLiveMedalExplainBinding(FrameLayout frameLayout, RecyclerView recyclerView, ImageView imageView) {
-        this.f11787c = frameLayout;
-        this.f11786a = recyclerView;
+        this.c = frameLayout;
+        this.a = recyclerView;
         this.b = imageView;
     }
 
@@ -39,11 +35,11 @@ public final class DialogLiveMedalExplainBinding implements ViewBinding {
 
     public static DialogLiveMedalExplainBinding a(View view) {
         String str;
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_medal_explain);
-        if (recyclerView != null) {
+        RecyclerView findViewById = view.findViewById(R.id.rv_medal_explain);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.tv_live_desc_back);
             if (imageView != null) {
-                return new DialogLiveMedalExplainBinding((FrameLayout) view, recyclerView, imageView);
+                return new DialogLiveMedalExplainBinding((FrameLayout) view, findViewById, imageView);
             }
             str = "tvLiveDescBack";
         } else {
@@ -52,9 +48,8 @@ public final class DialogLiveMedalExplainBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f11787c;
+        return this.c;
     }
 }

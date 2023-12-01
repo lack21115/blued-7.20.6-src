@@ -4,9 +4,9 @@ package com.sdk.tencent.g;
 public class a extends com.sdk.tencent.e.b<String> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ b f28053a;
+    public final /* synthetic */ b f14365a;
 
     public a(b bVar) {
-        this.f28053a = bVar;
+        this.f14365a = bVar;
     }
 }

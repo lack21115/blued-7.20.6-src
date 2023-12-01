@@ -10,7 +10,7 @@ import androidx.appcompat.widget.FitWindowsViewGroup;
 public class FitWindowsLinearLayout extends LinearLayout implements FitWindowsViewGroup {
 
     /* renamed from: a  reason: collision with root package name */
-    private FitWindowsViewGroup.OnFitSystemWindowsListener f1822a;
+    private FitWindowsViewGroup.OnFitSystemWindowsListener f1774a;
 
     public FitWindowsLinearLayout(Context context) {
         super(context);
@@ -20,10 +20,9 @@ public class FitWindowsLinearLayout extends LinearLayout implements FitWindowsVi
         super(context, attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public boolean fitSystemWindows(Rect rect) {
-        FitWindowsViewGroup.OnFitSystemWindowsListener onFitSystemWindowsListener = this.f1822a;
+    protected boolean fitSystemWindows(Rect rect) {
+        FitWindowsViewGroup.OnFitSystemWindowsListener onFitSystemWindowsListener = this.f1774a;
         if (onFitSystemWindowsListener != null) {
             onFitSystemWindowsListener.onFitSystemWindows(rect);
         }
@@ -32,6 +31,6 @@ public class FitWindowsLinearLayout extends LinearLayout implements FitWindowsVi
 
     @Override // androidx.appcompat.widget.FitWindowsViewGroup
     public void setOnFitSystemWindowsListener(FitWindowsViewGroup.OnFitSystemWindowsListener onFitSystemWindowsListener) {
-        this.f1822a = onFitSystemWindowsListener;
+        this.f1774a = onFitSystemWindowsListener;
     }
 }

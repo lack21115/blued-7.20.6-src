@@ -4,5 +4,5 @@ package com.opos.cmn.func.b;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Boolean f24812a = true;
+    public static final Boolean f11124a = true;
 }

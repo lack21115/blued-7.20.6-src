@@ -4,11 +4,11 @@ package com.bytedance.pangle;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f21406a = "_i";
+    public static String f7800a = "_i";
     public static String b = "_d";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f21407c = "_p";
+    public static String f7801c = "_p";
     public static String d = "pangle_p";
     public static final String e = "pangle".toUpperCase() + "_PLUGIN_";
 }

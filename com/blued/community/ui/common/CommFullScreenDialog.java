@@ -10,12 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.core.ui.BaseDialogFragment;
 import com.blued.android.framework.utils.ReflectionUtils;
 import com.blued.community.R;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.lang.reflect.Method;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -23,13 +24,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/common/CommFullScreenDialog.class */
 public abstract class CommFullScreenDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f19492a;
+    private View a;
     private final String b = "navigationBarBackground";
 
     private final void j() {
-        if (Build.VERSION.SDK_INT < 19 || !h() || a(getActivity())) {
+        if (Build.VERSION.SDK_INT < 19 || !h() || a((Activity) getActivity())) {
             return;
         }
         Dialog dialog = getDialog();
@@ -65,7 +64,7 @@ public abstract class CommFullScreenDialog extends BaseDialogFragment {
     }
 
     public final View d() {
-        return this.f19492a;
+        return this.a;
     }
 
     public abstract int e();
@@ -81,11 +80,11 @@ public abstract class CommFullScreenDialog extends BaseDialogFragment {
         Object invoke;
         Resources resources = getResources();
         Intrinsics.c(resources, "resources");
-        int identifier = resources.getIdentifier("config_showNavigationBar", "bool", "android");
+        int identifier = resources.getIdentifier("config_showNavigationBar", "bool", MsgBackupManager.PLATFORM_ANDROID);
         boolean z = identifier > 0 ? resources.getBoolean(identifier) : false;
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
-            Method method = cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class);
+            Method method = cls.getMethod("get", String.class);
             Intrinsics.c(method, "systemPropertiesClass.ge…get\", String::class.java)");
             invoke = method.invoke(cls, "qemu.hw.mainkeys");
         } catch (Exception e) {
@@ -107,23 +106,23 @@ public abstract class CommFullScreenDialog extends BaseDialogFragment {
         dismissAllowingStateLoss();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setStyle(0, R.style.dialog_community_full_screen);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         f();
         View inflate = inflater.inflate(e(), viewGroup, true);
-        this.f19492a = inflate;
+        this.a = inflate;
         Intrinsics.a(inflate);
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
@@ -142,7 +141,7 @@ public abstract class CommFullScreenDialog extends BaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
@@ -150,7 +149,7 @@ public abstract class CommFullScreenDialog extends BaseDialogFragment {
             ReflectionUtils.a(this, "mShownByMe", true);
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

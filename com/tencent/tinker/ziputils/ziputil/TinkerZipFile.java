@@ -1,7 +1,5 @@
 package com.tencent.tinker.ziputils.ziputil;
 
-import android.widget.ExpandableListView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedInputStream;
 import java.io.Closeable;
 import java.io.DataInputStream;
@@ -179,7 +177,7 @@ public class TinkerZipFile implements ZipConstants, Closeable {
             if (readShort3 != (readShort4 & 65535) || (readShort & 65535) != 0 || (readShort2 & 65535) != 0) {
                 throw new ZipException("Spanned archives not supported");
             }
-            j2 = readInt & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+            j2 = readInt & 4294967295L;
             j3 = readShort3;
         }
         return new EocdRecord(j3, j2, it.readShort() & 65535);
@@ -192,7 +190,7 @@ public class TinkerZipFile implements ZipConstants, Closeable {
             throw new ZipException("File too short to be a zip file: " + this.raf.length());
         }
         this.raf.seek(0L);
-        if (Integer.reverseBytes(this.raf.readInt()) != 67324752) {
+        if (Integer.reverseBytes(this.raf.readInt()) != ZipConstants.LOCSIG) {
             throw new ZipException("Not a zip archive");
         }
         long j2 = length - 65536;
@@ -201,7 +199,7 @@ public class TinkerZipFile implements ZipConstants, Closeable {
         }
         do {
             this.raf.seek(length);
-            if (Integer.reverseBytes(this.raf.readInt()) == 101010256) {
+            if (Integer.reverseBytes(this.raf.readInt()) == ZipConstants.ENDSIG) {
                 byte[] bArr = new byte[18];
                 this.raf.readFully(bArr);
                 BufferIterator it = HeapBufferIterator.iterator(bArr, 0, 18, ByteOrder.LITTLE_ENDIAN);
@@ -210,7 +208,7 @@ public class TinkerZipFile implements ZipConstants, Closeable {
                 int readShort3 = it.readShort() & 65535;
                 short readShort4 = it.readShort();
                 it.skip(4);
-                long readInt = it.readInt() & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+                long readInt = it.readInt() & 4294967295L;
                 int readShort5 = it.readShort() & 65535;
                 if (readShort3 != (readShort4 & 65535) || (readShort & 65535) != 0 || (readShort2 & 65535) != 0) {
                     throw new ZipException("Spanned archives not supported");
@@ -298,7 +296,7 @@ public class TinkerZipFile implements ZipConstants, Closeable {
             TinkerZipEntry tinkerZipEntry2 = tinkerZipEntry;
             if (tinkerZipEntry == null) {
                 LinkedHashMap<String, TinkerZipEntry> linkedHashMap = this.entries;
-                tinkerZipEntry2 = linkedHashMap.get(str + BridgeUtil.SPLIT_MARK);
+                tinkerZipEntry2 = linkedHashMap.get(str + "/");
             }
             return tinkerZipEntry2;
         }
@@ -316,7 +314,7 @@ public class TinkerZipFile implements ZipConstants, Closeable {
             rAFStream = new RAFStream(randomAccessFile, entry.localHeaderRelOffset);
             DataInputStream dataInputStream = new DataInputStream(rAFStream);
             int reverseBytes = Integer.reverseBytes(dataInputStream.readInt());
-            if (reverseBytes != 67324752) {
+            if (reverseBytes != ZipConstants.LOCSIG) {
                 throwZipException(this.filename, randomAccessFile.length(), entry.getName(), entry.localHeaderRelOffset, "Local File Header", reverseBytes);
             }
             dataInputStream.skipBytes(2);

@@ -9,13 +9,9 @@ import java.util.Locale;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/encoder/MediaMuxerWrapper.class */
 public class MediaMuxerWrapper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final SimpleDateFormat f11242a = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss", Locale.US);
+    private static final SimpleDateFormat a = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss", Locale.US);
     private final MediaMuxer b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f11243c;
+    private int c;
     private int d;
     private boolean e;
 
@@ -54,7 +50,7 @@ public class MediaMuxerWrapper {
         synchronized (this) {
             int i = this.d + 1;
             this.d = i;
-            if (this.f11243c > 0 && i == this.f11243c) {
+            if (this.c > 0 && i == this.c) {
                 this.b.start();
                 this.e = true;
                 notifyAll();
@@ -69,7 +65,7 @@ public class MediaMuxerWrapper {
         synchronized (this) {
             int i = this.d - 1;
             this.d = i;
-            if (this.f11243c > 0 && i <= 0) {
+            if (this.c > 0 && i <= 0) {
                 this.b.stop();
                 this.b.release();
                 this.e = false;

@@ -13,7 +13,7 @@ public class CameraStreamingSetting {
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f27817c;
+    public int f14129c;
     public boolean d;
     public boolean g;
     public PREVIEW_SIZE_LEVEL h;
@@ -24,7 +24,7 @@ public class CameraStreamingSetting {
     public int u;
 
     /* renamed from: a  reason: collision with root package name */
-    public FaceBeautySetting f27816a = new FaceBeautySetting(1.0f, 0.5f, 0.5f);
+    public FaceBeautySetting f14128a = new FaceBeautySetting(1.0f, 0.5f, 0.5f);
     public CAMERA_FACING_ID k = CAMERA_FACING_ID.CAMERA_FACING_BACK;
     public boolean l = false;
     public boolean m = false;
@@ -95,7 +95,7 @@ public class CameraStreamingSetting {
             throw new RuntimeException("Illegal width or height!!!");
         }
         this.b = i;
-        this.f27817c = i2;
+        this.f14129c = i2;
         return this;
     }
 
@@ -117,7 +117,7 @@ public class CameraStreamingSetting {
     }
 
     public int b() {
-        return this.f27817c;
+        return this.f14129c;
     }
 
     public CameraStreamingSetting b(int i, int i2) {
@@ -170,7 +170,7 @@ public class CameraStreamingSetting {
     }
 
     public FaceBeautySetting getFaceBeautySetting() {
-        return this.f27816a;
+        return this.f14128a;
     }
 
     public String getFocusMode() {
@@ -268,14 +268,14 @@ public class CameraStreamingSetting {
     }
 
     public CameraStreamingSetting setFaceBeautySetting(FaceBeautySetting faceBeautySetting) {
-        this.f27816a = faceBeautySetting;
+        this.f14128a = faceBeautySetting;
         return this;
     }
 
     public CameraStreamingSetting setFocusMode(String str) {
         this.n = str;
         this.g = "continuous-picture".equals(str) || "continuous-video".equals(str);
-        e eVar = e.f1361c;
+        e eVar = e.f1313c;
         eVar.d("CameraStreamingSetting", "ContinuousFocusModeEnabled had been forced to:" + this.g);
         return this;
     }
@@ -325,7 +325,7 @@ public class CameraStreamingSetting {
             jSONObject.put("PrvSizeLevel", this.h);
             jSONObject.put("PrvSizeRatio", this.i);
             jSONObject.put("BuiltInFBEnabled", this.s);
-            jSONObject.put("FBSetting", this.f27816a.toString());
+            jSONObject.put("FBSetting", this.f14128a.toString());
             jSONObject.put("VideoFilterType", this.r);
             jSONObject.put("CameraFacingId", this.k);
             jSONObject.put("ContinuousFocusMode", this.g);

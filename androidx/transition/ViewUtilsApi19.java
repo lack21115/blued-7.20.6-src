@@ -6,7 +6,7 @@ import android.view.View;
 class ViewUtilsApi19 extends ViewUtilsBase {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f3503a = true;
+    private static boolean f3455a = true;
 
     @Override // androidx.transition.ViewUtilsBase
     public void clearNonTransitionAlpha(View view) {
@@ -14,11 +14,11 @@ class ViewUtilsApi19 extends ViewUtilsBase {
 
     @Override // androidx.transition.ViewUtilsBase
     public float getTransitionAlpha(View view) {
-        if (f3503a) {
+        if (f3455a) {
             try {
                 return view.getTransitionAlpha();
             } catch (NoSuchMethodError e) {
-                f3503a = false;
+                f3455a = false;
             }
         }
         return view.getAlpha();
@@ -30,12 +30,12 @@ class ViewUtilsApi19 extends ViewUtilsBase {
 
     @Override // androidx.transition.ViewUtilsBase
     public void setTransitionAlpha(View view, float f) {
-        if (f3503a) {
+        if (f3455a) {
             try {
                 view.setTransitionAlpha(f);
                 return;
             } catch (NoSuchMethodError e) {
-                f3503a = false;
+                f3455a = false;
             }
         }
         view.setAlpha(f);

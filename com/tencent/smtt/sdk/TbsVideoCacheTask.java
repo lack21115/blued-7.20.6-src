@@ -13,20 +13,20 @@ public class TbsVideoCacheTask {
     public static final String KEY_VIDEO_CACHE_PARAM_URL = "url";
 
     /* renamed from: a  reason: collision with root package name */
-    Context f38791a;
+    Context f25100a;
     TbsVideoCacheListener b;
     private String e;
     private String f;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f38792c = false;
+    private boolean f25101c = false;
     private q d = null;
     private Object g = null;
 
     public TbsVideoCacheTask(Context context, Bundle bundle, TbsVideoCacheListener tbsVideoCacheListener) {
-        this.f38791a = null;
+        this.f25100a = null;
         this.b = null;
-        this.f38791a = context;
+        this.f25100a = context;
         this.b = tbsVideoCacheListener;
         if (bundle != null) {
             this.e = bundle.getString(DBDefinition.TASK_ID);
@@ -40,7 +40,7 @@ public class TbsVideoCacheTask {
         String str;
         DexLoader dexLoader;
         if (this.d == null) {
-            f.a(true).a(this.f38791a, false, false);
+            f.a(true).a(this.f25100a, false, false);
             u a2 = f.a(true).a();
             if (a2 != null) {
                 dexLoader = a2.b();
@@ -56,7 +56,7 @@ public class TbsVideoCacheTask {
         }
         q qVar = this.d;
         if (qVar != null) {
-            Object a3 = qVar.a(this.f38791a, this, bundle);
+            Object a3 = qVar.a(this.f25100a, this, bundle);
             this.g = a3;
             if (a3 != null) {
                 return;

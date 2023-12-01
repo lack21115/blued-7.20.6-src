@@ -20,13 +20,13 @@ public class a extends com.kwad.sdk.core.response.kwai.a {
 
     /* renamed from: com.kwad.sdk.ranger.kwai.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/ranger/kwai/a$a.class */
-    public static class C0577a extends com.kwad.sdk.core.response.kwai.a {
+    public static class C0407a extends com.kwad.sdk.core.response.kwai.a {
         public List<Object> ayA;
         public String ayu;
         public String ayv;
         public String ayw;
         public List<String> ayx;
-        public List<C0577a> ayy = new ArrayList();
+        public List<C0407a> ayy = new ArrayList();
         public Object ayz;
         public String className;
         public String fieldName;
@@ -54,13 +54,13 @@ public class a extends com.kwad.sdk.core.response.kwai.a {
             if (this.ayy != null) {
                 obj = eA;
                 if (!this.ayy.isEmpty()) {
-                    Iterator<C0577a> it = this.ayy.iterator();
+                    Iterator<C0407a> it = this.ayy.iterator();
                     while (true) {
                         obj = eA;
                         if (!it.hasNext()) {
                             break;
                         }
-                        C0577a next = it.next();
+                        C0407a next = it.next();
                         next.ayz = eA;
                         String str2 = a.TAG;
                         StringBuilder sb2 = new StringBuilder("param.ob:");
@@ -130,7 +130,7 @@ public class a extends com.kwad.sdk.core.response.kwai.a {
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/ranger/kwai/a$b.class */
     public static class b extends com.kwad.sdk.core.response.kwai.a {
         public boolean ayB;
-        public List<C0577a> ayC;
+        public List<C0407a> ayC;
         public Object[] ayD;
         public String name;
 
@@ -139,7 +139,7 @@ public class a extends com.kwad.sdk.core.response.kwai.a {
         }
 
         public final Object[] Cu() {
-            List<C0577a> list = this.ayC;
+            List<C0407a> list = this.ayC;
             if (list == null || list.isEmpty()) {
                 return null;
             }

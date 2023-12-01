@@ -31,14 +31,14 @@ import org.json.JSONObject;
 public class u implements com.tencent.qimei.g.c, d.a, r.b, IQimeiSDK, com.tencent.qimei.u.b, com.tencent.qimei.u.c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map<String, u> f38397a = new ConcurrentHashMap();
+    public static final Map<String, u> f24706a = new ConcurrentHashMap();
     public static final String b = QimeiSDK.class.getCanonicalName();
     public final IDebugger e;
     public final String g;
     public long l;
 
     /* renamed from: c  reason: collision with root package name */
-    public final List<IAsyncQimeiListener> f38398c = Collections.synchronizedList(new ArrayList(8));
+    public final List<IAsyncQimeiListener> f24707c = Collections.synchronizedList(new ArrayList(8));
     public final ConcurrentHashMap<String, String> d = new ConcurrentHashMap<>();
     public final com.tencent.qimei.x.b f = new com.tencent.qimei.x.b();
     public Context h = null;
@@ -55,11 +55,11 @@ public class u implements com.tencent.qimei.g.c, d.a, r.b, IQimeiSDK, com.tencen
         u uVar;
         synchronized (u.class) {
             try {
-                u uVar2 = f38397a.get(str);
+                u uVar2 = f24706a.get(str);
                 uVar = uVar2;
                 if (uVar2 == null) {
                     uVar = new u(str);
-                    f38397a.put(str, uVar);
+                    f24706a.put(str, uVar);
                 }
             } catch (Throwable th) {
                 throw th;
@@ -99,13 +99,13 @@ public class u implements com.tencent.qimei.g.c, d.a, r.b, IQimeiSDK, com.tencen
 
     @Override // com.tencent.qimei.u.b
     public void M() {
-        synchronized (this.f38398c) {
+        synchronized (this.f24707c) {
             Qimei qimei = getQimei();
             if (qimei != null && !qimei.isEmpty()) {
-                for (IAsyncQimeiListener iAsyncQimeiListener : this.f38398c) {
+                for (IAsyncQimeiListener iAsyncQimeiListener : this.f24707c) {
                     iAsyncQimeiListener.onQimeiDispatch(qimei);
                 }
-                this.f38398c.clear();
+                this.f24707c.clear();
             }
         }
     }
@@ -127,9 +127,9 @@ public class u implements com.tencent.qimei.g.c, d.a, r.b, IQimeiSDK, com.tencen
     }
 
     public final void a(IAsyncQimeiListener iAsyncQimeiListener) {
-        synchronized (this.f38398c) {
-            if (!this.f38398c.contains(iAsyncQimeiListener)) {
-                this.f38398c.add(iAsyncQimeiListener);
+        synchronized (this.f24707c) {
+            if (!this.f24707c.contains(iAsyncQimeiListener)) {
+                this.f24707c.add(iAsyncQimeiListener);
             }
         }
     }
@@ -241,7 +241,7 @@ public class u implements com.tencent.qimei.g.c, d.a, r.b, IQimeiSDK, com.tencen
 
     @Override // com.tencent.qimei.sdk.IQimeiSDK
     public ITerminalStrategy getStrategy() {
-        return this.f.f38441a;
+        return this.f.f24750a;
     }
 
     @Override // com.tencent.qimei.sdk.IQimeiSDK
@@ -273,7 +273,7 @@ public class u implements com.tencent.qimei.g.c, d.a, r.b, IQimeiSDK, com.tencen
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            String a3 = m.f38382a.a(com.tencent.qimei.j.a.a(), a2.b, com.tencent.qimei.a.a.i(a2.b), str);
+            String a3 = m.f24691a.a(com.tencent.qimei.j.a.a(), a2.b, com.tencent.qimei.a.a.i(a2.b), str);
             a2.c(a3);
             return a3;
         }
@@ -299,10 +299,10 @@ public class u implements com.tencent.qimei.g.c, d.a, r.b, IQimeiSDK, com.tencen
             String str = this.g;
             com.tencent.qimei.t.b.a().a("BizInfo" + str, this);
             com.tencent.qimei.n.i.a().a(this.h);
-            com.tencent.qimei.r.b bVar = b.a.f38406a;
+            com.tencent.qimei.r.b bVar = b.a.f24715a;
             Context context2 = this.h;
             String str2 = b;
-            if (bVar.f38405a) {
+            if (bVar.f24714a) {
                 z = true;
             } else if (context2 == null) {
                 z = false;
@@ -312,21 +312,21 @@ public class u implements com.tencent.qimei.g.c, d.a, r.b, IQimeiSDK, com.tencen
                     filesDir.mkdir();
                 }
                 String absolutePath = new File(filesDir, str2).getAbsolutePath();
-                if (U.f38315a) {
+                if (U.f24624a) {
                     try {
                         U.n(context2, absolutePath);
                         z2 = true;
                     } catch (UnsatisfiedLinkError e) {
                         e.printStackTrace();
                     }
-                    bVar.f38405a = z2;
-                    com.tencent.qimei.k.a.b("SDK_INIT ｜ 本地加密", " 初始化完成（%b）,文件名:%s ", Boolean.valueOf(bVar.f38405a), str2);
-                    z = bVar.f38405a;
+                    bVar.f24714a = z2;
+                    com.tencent.qimei.k.a.b("SDK_INIT ｜ 本地加密", " 初始化完成（%b）,文件名:%s ", Boolean.valueOf(bVar.f24714a), str2);
+                    z = bVar.f24714a;
                 }
                 z2 = false;
-                bVar.f38405a = z2;
-                com.tencent.qimei.k.a.b("SDK_INIT ｜ 本地加密", " 初始化完成（%b）,文件名:%s ", Boolean.valueOf(bVar.f38405a), str2);
-                z = bVar.f38405a;
+                bVar.f24714a = z2;
+                com.tencent.qimei.k.a.b("SDK_INIT ｜ 本地加密", " 初始化完成（%b）,文件名:%s ", Boolean.valueOf(bVar.f24714a), str2);
+                z = bVar.f24714a;
             }
             if (!z) {
                 String str3 = this.g;
@@ -342,8 +342,8 @@ public class u implements com.tencent.qimei.g.c, d.a, r.b, IQimeiSDK, com.tencen
                 hashMap.put("a6", Build.BRAND);
                 hashMap.put("a7", Build.VERSION.SDK);
                 com.tencent.qimei.n.c a4 = a2.a(str4, new JSONObject(hashMap).toString());
-                a4.f38356a = str3;
-                a4.f38357c = "/report";
+                a4.f24665a = str3;
+                a4.f24666c = "/report";
                 a4.a(com.huawei.hms.ads.dynamicloader.b.g);
             }
             com.tencent.qimei.i.f a5 = com.tencent.qimei.i.f.a(this.g);
@@ -355,7 +355,7 @@ public class u implements com.tencent.qimei.g.c, d.a, r.b, IQimeiSDK, com.tencen
                 if (TextUtils.isEmpty(str5)) {
                     str6 = "";
                 }
-                a5.b = a5.d.getSharedPreferences("QV1" + str6 + com.tencent.qimei.c.a.b().replace(context3.getPackageName(), "") + com.tencent.qimei.j.a.a(a5.f38339c), 0);
+                a5.b = a5.d.getSharedPreferences("QV1" + str6 + com.tencent.qimei.c.a.b().replace(context3.getPackageName(), "") + com.tencent.qimei.j.a.a(a5.f24648c), 0);
             }
             d dVar = new d(this.g, this.h, this, this.f, this);
             com.tencent.qimei.b.a.a().a(dVar.k);
@@ -396,7 +396,7 @@ public class u implements com.tencent.qimei.g.c, d.a, r.b, IQimeiSDK, com.tencen
     @Override // com.tencent.qimei.sdk.IQimeiSDK
     public IQimeiSDK setLogObserver(IObservableLog iObservableLog) {
         synchronized (this) {
-            com.tencent.qimei.k.a.f38347c = iObservableLog;
+            com.tencent.qimei.k.a.f24656c = iObservableLog;
         }
         return this;
     }

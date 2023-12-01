@@ -6,7 +6,7 @@ import android.util.Log;
 public class SafeStringBuffer {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23149a = "SafeStringBuffer";
+    private static final String f9541a = "SafeStringBuffer";
     private static final String b = "";
 
     public static String substring(StringBuffer stringBuffer, int i) {
@@ -16,7 +16,7 @@ public class SafeStringBuffer {
         try {
             return stringBuffer.substring(i);
         } catch (Exception e) {
-            String str = f23149a;
+            String str = f9541a;
             Log.e(str, "substring exception: " + e.getMessage());
             return "";
         }
@@ -29,7 +29,7 @@ public class SafeStringBuffer {
         try {
             return stringBuffer.substring(i, i2);
         } catch (Exception e) {
-            String str = f23149a;
+            String str = f9541a;
             Log.e(str, "substring: " + e.getMessage());
             return "";
         }

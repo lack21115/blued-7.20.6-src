@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class LiveHotViewScrollObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static LiveHotViewScrollObserver f31244a = new LiveHotViewScrollObserver();
+    private static LiveHotViewScrollObserver f17554a = new LiveHotViewScrollObserver();
     private ArrayList<IScrollObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/live/manager/LiveHotViewScrollObserver$IScrollObserver.class */
@@ -17,7 +17,7 @@ public class LiveHotViewScrollObserver {
     }
 
     public static LiveHotViewScrollObserver a() {
-        return f31244a;
+        return f17554a;
     }
 
     public void a(RecyclerView recyclerView, int i, int i2) {

@@ -26,8 +26,8 @@ public class EmulatedFieldsForDumping extends ObjectOutputStream.PutField {
     }
 
     @Override // java.io.ObjectOutputStream.PutField
-    public void put(String str, char c2) {
-        this.emulatedFields.put(str, c2);
+    public void put(String str, char c) {
+        this.emulatedFields.put(str, c);
     }
 
     @Override // java.io.ObjectOutputStream.PutField

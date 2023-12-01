@@ -26,7 +26,7 @@ import javax.net.ssl.X509TrustManager;
 public class Platform {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Platform f36027a = a();
+    private static final Platform f22336a = a();
     private static final Logger b = Logger.getLogger(OkHttpClient.class.getName());
 
     private static Platform a() {
@@ -99,7 +99,7 @@ public class Platform {
     }
 
     public static Platform get() {
-        return f36027a;
+        return f22336a;
     }
 
     public static boolean isConscryptPreferred() {

@@ -44,14 +44,14 @@ public final class ReedSolomonEncoder {
         }
         GenericGFPoly buildGenerator = buildGenerator(i);
         int[] iArr2 = new int[length];
-        System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, length);
+        System.arraycopy(iArr, 0, iArr2, 0, length);
         int[] coefficients = new GenericGFPoly(this.field, iArr2).multiplyByMonomial(i, 1).divide(buildGenerator)[1].getCoefficients();
         int length2 = i - coefficients.length;
         int i2 = 0;
         while (true) {
             int i3 = i2;
             if (i3 >= length2) {
-                System.arraycopy((Object) coefficients, 0, (Object) iArr, length + length2, coefficients.length);
+                System.arraycopy(coefficients, 0, iArr, length + length2, coefficients.length);
                 return;
             } else {
                 iArr[length + i3] = 0;

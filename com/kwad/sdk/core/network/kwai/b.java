@@ -3,6 +3,8 @@ package com.kwad.sdk.core.network.kwai;
 import android.text.TextUtils;
 import android.util.Log;
 import com.google.common.net.HttpHeaders;
+import com.huawei.hms.framework.common.ContainerUtils;
+import com.huawei.openalliance.ad.utils.ay;
 import com.kwad.sdk.core.network.f;
 import com.kwad.sdk.core.network.q;
 import com.kwad.sdk.core.network.s;
@@ -225,7 +227,7 @@ public final class b {
                 sb.append(entry.getKey());
                 sb.append("=");
                 sb.append(encode);
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
             str2 = sb.substring(0, sb.length() - 1);
         } else {
@@ -247,7 +249,7 @@ public final class b {
             httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
             try {
                 s.wrapHttpURLConnection(httpURLConnection);
-                httpURLConnection.setRequestProperty(HttpHeaders.ACCEPT_LANGUAGE, "zh-CN");
+                httpURLConnection.setRequestProperty(HttpHeaders.ACCEPT_LANGUAGE, ay.Code);
                 httpURLConnection.setConnectTimeout(10000);
                 httpURLConnection.setReadTimeout(Const.SOCKET_CHECK_CHANNEL);
                 httpURLConnection.setUseCaches(false);

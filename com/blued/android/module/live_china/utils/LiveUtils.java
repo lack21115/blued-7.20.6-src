@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ImageView;
-import com.anythink.expressad.foundation.h.i;
+import com.amap.api.services.core.AMapException;
 import com.blued.android.chat.utils.MsgPackHelper;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.BlueAppLocal;
@@ -17,6 +17,7 @@ import com.blued.android.module.live_china.model.LiveGiftModel;
 import com.blued.android.module.live_china.model.LiveLiangModel;
 import com.blued.android.module.live_china.same.Logger;
 import com.google.gson.Gson;
+import java.net.HttpURLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -27,9 +28,7 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveUtils.class */
 public class LiveUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int[] f14194a = {1, 5, 15, 30, 50, 100, 200, 400, 650, 1000, 1500, 2100, 2800, 3800, 5000, 8000, 12000, 17000, 23000, 30000, 38000, 47000, 57000, 70000, 88000, 114000, 150000, 198000, 261000, 342000, 453000, 606000, 783000, 1013000, 1413000};
+    public static final int[] a = {1, 5, 15, 30, 50, 100, 200, HttpURLConnection.HTTP_BAD_REQUEST, 650, 1000, 1500, AMapException.CODE_AMAP_NEARBY_INVALID_USERID, 2800, 3800, 5000, 8000, 12000, 17000, 23000, 30000, 38000, 47000, 57000, 70000, 88000, 114000, 150000, 198000, 261000, 342000, 453000, 606000, 783000, 1013000, 1413000};
     public static Pattern b = Pattern.compile("@\\(word:([\\s\\S]*?)\\)");
 
     public static int a(double d, float f, float f2, float f3) {
@@ -81,7 +80,7 @@ public class LiveUtils {
         } else {
             str = i2 + "";
         }
-        int identifier = context.getResources().getIdentifier("anchor_rich" + str, i.f7952c, context.getPackageName());
+        int identifier = context.getResources().getIdentifier("anchor_rich" + str, "drawable", context.getPackageName());
         if (imageView != null) {
             imageView.setImageResource(identifier);
             if (i2 == 0 && z) {
@@ -114,7 +113,7 @@ public class LiveUtils {
             return null;
         }
         try {
-            return (LiveGiftModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveGiftModel.class);
+            return (LiveGiftModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveGiftModel.class);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -222,7 +221,7 @@ public class LiveUtils {
                 if (TextUtils.isEmpty(liveChattingModel.getMsgExtra())) {
                     return null;
                 }
-                return (LiveLiangModel) f.fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveLiangModel.class);
+                return (LiveLiangModel) f.fromJson(liveChattingModel.getMsgExtra(), LiveLiangModel.class);
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;

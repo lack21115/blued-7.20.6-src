@@ -50,8 +50,8 @@ public class EdgeEffect {
     private int mState = 0;
     private final Rect mBounds = new Rect();
     private final Paint mPaint = new Paint();
-    private float mDisplacement = 0.5f;
-    private float mTargetDisplacement = 0.5f;
+    private float mDisplacement = MAX_ALPHA;
+    private float mTargetDisplacement = MAX_ALPHA;
 
     public EdgeEffect(Context context) {
         this.mPaint.setAntiAlias(true);
@@ -110,7 +110,7 @@ public class EdgeEffect {
         float height = this.mBounds.height();
         float f = this.mRadius;
         canvas.scale(1.0f, Math.min(this.mGlowScaleY, 1.0f) * this.mBaseGlowScale, centerX, 0.0f);
-        float width = (this.mBounds.width() * (Math.max(0.0f, Math.min(this.mDisplacement, 1.0f)) - 0.5f)) / MAX_GLOW_SCALE;
+        float width = (this.mBounds.width() * (Math.max(0.0f, Math.min(this.mDisplacement, 1.0f)) - MAX_ALPHA)) / MAX_GLOW_SCALE;
         canvas.clipRect(this.mBounds);
         canvas.translate(width, 0.0f);
         this.mPaint.setAlpha((int) (255.0f * this.mGlowAlpha));
@@ -139,7 +139,7 @@ public class EdgeEffect {
     }
 
     public int getMaxHeight() {
-        return (int) ((this.mBounds.height() * MAX_GLOW_SCALE) + 0.5f);
+        return (int) ((this.mBounds.height() * MAX_GLOW_SCALE) + MAX_ALPHA);
     }
 
     public boolean isFinished() {
@@ -154,12 +154,12 @@ public class EdgeEffect {
         this.mGlowAlphaStart = 0.3f;
         this.mGlowScaleYStart = Math.max(this.mGlowScaleY, 0.0f);
         this.mGlowScaleYFinish = Math.min(0.025f + ((((min / 100) * min) * 1.5E-4f) / MAX_GLOW_SCALE), 1.0f);
-        this.mGlowAlphaFinish = Math.max(this.mGlowAlphaStart, Math.min(min * 6 * 1.0E-5f, 0.5f));
-        this.mTargetDisplacement = 0.5f;
+        this.mGlowAlphaFinish = Math.max(this.mGlowAlphaStart, Math.min(min * 6 * 1.0E-5f, (float) MAX_ALPHA));
+        this.mTargetDisplacement = MAX_ALPHA;
     }
 
     public void onPull(float f) {
-        onPull(f, 0.5f);
+        onPull(f, MAX_ALPHA);
     }
 
     public void onPull(float f, float f2) {
@@ -173,7 +173,7 @@ public class EdgeEffect {
             this.mStartTime = currentAnimationTimeMillis;
             this.mDuration = 167.0f;
             this.mPullDistance += f;
-            float min = Math.min(0.5f, this.mGlowAlpha + (0.8f * Math.abs(f)));
+            float min = Math.min((float) MAX_ALPHA, this.mGlowAlpha + (PULL_DISTANCE_ALPHA_GLOW_FACTOR * Math.abs(f)));
             this.mGlowAlphaStart = min;
             this.mGlowAlpha = min;
             if (this.mPullDistance == 0.0f) {

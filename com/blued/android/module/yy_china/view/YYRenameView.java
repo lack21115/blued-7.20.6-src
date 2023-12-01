@@ -1,6 +1,5 @@
 package com.blued.android.module.yy_china.view;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -30,27 +29,23 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRenameView.class */
 public class YYRenameView extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private EditText f18424a;
+    private EditText a;
     private FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f18425c;
+    private ImageView c;
     private ShapeTextView d;
 
     private void a(View view) {
         this.d = (ShapeTextView) view.findViewById(R.id.tv_modify);
-        this.f18425c = (ImageView) view.findViewById(R.id.img_back);
+        this.c = (ImageView) view.findViewById(R.id.img_back);
         EditText editText = (EditText) view.findViewById(R.id.et_room_name);
-        this.f18424a = editText;
+        this.a = editText;
         editText.setFilters(new InputFilter[]{new EnglishCharFilter(32)});
         this.b = (FrameLayout) view.findViewById(R.id.fl_loading_view);
         this.d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYRenameView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
                 Tracker.onClick(view2);
-                String trim = YYRenameView.this.f18424a.getText().toString().trim();
+                String trim = YYRenameView.this.a.getText().toString().trim();
                 if (TextUtils.isEmpty(trim)) {
                     ToastUtils.a("房间名不能为空", 0);
                 } else {
@@ -65,7 +60,7 @@ public class YYRenameView extends BaseFullScreenDialog {
                 YYRenameView.this.dismissAllowingStateLoss();
             }
         });
-        this.f18425c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYRenameView.3
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYRenameView.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
                 Tracker.onClick(view2);
@@ -76,22 +71,22 @@ public class YYRenameView extends BaseFullScreenDialog {
         if (b == null) {
             return;
         }
-        this.f18424a.addTextChangedListener(new ITextWatcher() { // from class: com.blued.android.module.yy_china.view.YYRenameView.4
+        this.a.addTextChangedListener(new ITextWatcher() { // from class: com.blued.android.module.yy_china.view.YYRenameView.4
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
                 YYRenameView.this.a(!TextUtils.isEmpty(editable));
             }
         });
-        this.f18424a.setText(b.room_name);
+        this.a.setText(b.room_name);
         if (b.room_id.equals(b.room_name)) {
-            EditText editText2 = this.f18424a;
+            EditText editText2 = this.a;
             editText2.setText(b.name + "的语音聊天室");
         }
-        this.f18424a.setFocusableInTouchMode(true);
-        this.f18424a.setFocusable(true);
-        this.f18424a.requestFocus();
-        ((InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(this.f18424a, 0);
-        EditText editText3 = this.f18424a;
+        this.a.setFocusableInTouchMode(true);
+        this.a.setFocusable(true);
+        this.a.requestFocus();
+        ((InputMethodManager) getContext().getSystemService("input_method")).showSoftInput(this.a, 0);
+        EditText editText3 = this.a;
         editText3.setSelection(editText3.getText().length());
     }
 
@@ -135,7 +130,7 @@ public class YYRenameView extends BaseFullScreenDialog {
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.view_yy_modify_room_name, viewGroup, true);
         a(inflate);

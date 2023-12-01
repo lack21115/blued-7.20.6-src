@@ -16,9 +16,8 @@ public interface IPrinterDiscoveryObserver extends IInterface {
         static final int TRANSACTION_onPrintersAdded = 1;
         static final int TRANSACTION_onPrintersRemoved = 2;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/print/IPrinterDiscoveryObserver$Stub$Proxy.class */
-        public static class Proxy implements IPrinterDiscoveryObserver {
+        private static class Proxy implements IPrinterDiscoveryObserver {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

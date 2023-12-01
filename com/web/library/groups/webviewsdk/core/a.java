@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.MimeTypeMap;
+import com.bytedance.applog.util.WebViewJsUtil;
 import com.web.library.groups.webviewsdk.a.b;
 import com.web.library.groups.webviewsdk.photo.ShowPhotoActivity;
 import com.weimob.library.groups.wjson.WJSON;
@@ -103,9 +104,9 @@ public final class a implements Serializable {
 
     public void callJavaScript(String str, String str2, String str3) {
         if (this.webView != null) {
-            Log.e("callJavaScript===>", "javascript:" + str3 + "." + str + "(" + str2 + ")");
+            Log.e("callJavaScript===>", WebViewJsUtil.JS_URL_PREFIX + str3 + "." + str + "(" + str2 + ")");
             WMWebView wMWebView = this.webView;
-            wMWebView.loadUrl("javascript:" + str3 + "." + str + "(" + str2 + ")");
+            wMWebView.loadUrl(WebViewJsUtil.JS_URL_PREFIX + str3 + "." + str + "(" + str2 + ")");
         }
     }
 

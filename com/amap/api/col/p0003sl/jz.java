@@ -18,13 +18,9 @@ import javax.net.ssl.SSLSocketFactory;
 /* renamed from: com.amap.api.col.3sl.jz  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jz.class */
 public final class jz extends SSLSocketFactory {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SSLSocketFactory f5252a;
+    private SSLSocketFactory a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private SSLContext f5253c;
+    private SSLContext c;
 
     public jz(Context context, SSLContext sSLContext) {
         if (context != null) {
@@ -34,15 +30,15 @@ public final class jz extends SSLSocketFactory {
                 try {
                     iw.c(th, "myssl", "<init>");
                     try {
-                        if (this.f5253c == null && Build.VERSION.SDK_INT >= 9) {
-                            this.f5253c = SSLContext.getDefault();
+                        if (this.c == null && Build.VERSION.SDK_INT >= 9) {
+                            this.c = SSLContext.getDefault();
                         }
                     } catch (Throwable th2) {
                         iw.c(th2, "myssl", "<init2>");
                     }
                     try {
-                        if (this.f5252a == null) {
-                            this.f5252a = (SSLSocketFactory) SSLSocketFactory.getDefault();
+                        if (this.a == null) {
+                            this.a = (SSLSocketFactory) SSLSocketFactory.getDefault();
                             return;
                         }
                         return;
@@ -52,15 +48,15 @@ public final class jz extends SSLSocketFactory {
                     }
                 } catch (Throwable th4) {
                     try {
-                        if (this.f5253c == null && Build.VERSION.SDK_INT >= 9) {
-                            this.f5253c = SSLContext.getDefault();
+                        if (this.c == null && Build.VERSION.SDK_INT >= 9) {
+                            this.c = SSLContext.getDefault();
                         }
                     } catch (Throwable th5) {
                         iw.c(th5, "myssl", "<init2>");
                     }
                     try {
-                        if (this.f5252a == null) {
-                            this.f5252a = (SSLSocketFactory) SSLSocketFactory.getDefault();
+                        if (this.a == null) {
+                            this.a = (SSLSocketFactory) SSLSocketFactory.getDefault();
                         }
                     } catch (Throwable th6) {
                         iw.c(th6, "myssl", "<init3>");
@@ -69,20 +65,20 @@ public final class jz extends SSLSocketFactory {
                 }
             }
         }
-        this.f5253c = sSLContext;
+        this.c = sSLContext;
         if (sSLContext != null) {
-            this.f5252a = sSLContext.getSocketFactory();
+            this.a = sSLContext.getSocketFactory();
         }
         try {
-            if (this.f5253c == null && Build.VERSION.SDK_INT >= 9) {
-                this.f5253c = SSLContext.getDefault();
+            if (this.c == null && Build.VERSION.SDK_INT >= 9) {
+                this.c = SSLContext.getDefault();
             }
         } catch (Throwable th7) {
             iw.c(th7, "myssl", "<init2>");
         }
         try {
-            if (this.f5252a == null) {
-                this.f5252a = (SSLSocketFactory) SSLSocketFactory.getDefault();
+            if (this.a == null) {
+                this.a = (SSLSocketFactory) SSLSocketFactory.getDefault();
             }
         } catch (Throwable th8) {
             iw.c(th8, "myssl", "<init3>");
@@ -105,7 +101,7 @@ public final class jz extends SSLSocketFactory {
     }
 
     private void a(SSLSessionCache sSLSessionCache) {
-        SSLContext sSLContext = this.f5253c;
+        SSLContext sSLContext = this.c;
         if (sSLContext == null) {
             return;
         }
@@ -115,7 +111,7 @@ public final class jz extends SSLSocketFactory {
             declaredField.setAccessible(true);
             Object obj = declaredField.get(sSLSessionCache);
             Method[] methods = clientSessionContext.getClass().getMethods();
-            String c2 = ib.c("Yc2V0UGVyc2lzdGVudENhY2hl");
+            String c = ib.c("Yc2V0UGVyc2lzdGVudENhY2hl");
             int length = methods.length;
             int i = 0;
             while (true) {
@@ -124,7 +120,7 @@ public final class jz extends SSLSocketFactory {
                     return;
                 }
                 Method method = methods[i2];
-                if (method.getName().equals(c2)) {
+                if (method.getName().equals(c)) {
                     method.invoke(clientSessionContext, obj);
                     return;
                 }
@@ -136,7 +132,7 @@ public final class jz extends SSLSocketFactory {
     }
 
     private static void b(Socket socket) {
-        if (Build.VERSION.SDK_INT >= 17 && hp.f.f5094c && hp.f.e && (socket instanceof SSLSocket)) {
+        if (Build.VERSION.SDK_INT >= 17 && hp.f.c && hp.f.e && (socket instanceof SSLSocket)) {
             int i = hp.f.f > hp.f.d ? hp.f.d : hp.f.f;
             if (i <= 17 || Build.VERSION.SDK_INT <= i) {
                 try {
@@ -149,7 +145,7 @@ public final class jz extends SSLSocketFactory {
     }
 
     public final void a() {
-        if (Build.VERSION.SDK_INT >= 17 && hp.f.f5094c && this.b != null && this.f5253c != null) {
+        if (Build.VERSION.SDK_INT >= 17 && hp.f.c && this.b != null && this.c != null) {
             int i = hp.f.d;
             if (i <= 17 || Build.VERSION.SDK_INT <= i) {
                 SSLSessionCache sSLSessionCache = new SSLSessionCache(this.b);
@@ -158,7 +154,7 @@ public final class jz extends SSLSocketFactory {
                     return;
                 }
                 try {
-                    sSLSessionCache.getClass().getMethod(ib.c("MaW5zdGFsbA"), SSLSessionCache.class, SSLContext.class).invoke(sSLSessionCache, sSLSessionCache, this.f5253c);
+                    sSLSessionCache.getClass().getMethod(ib.c("MaW5zdGFsbA"), SSLSessionCache.class, SSLContext.class).invoke(sSLSessionCache, sSLSessionCache, this.c);
                 } catch (Throwable th) {
                     iw.c(th, "myssl", "isc1");
                     a(sSLSessionCache);
@@ -172,10 +168,10 @@ public final class jz extends SSLSocketFactory {
         boolean z;
         IOException iOException;
         try {
-            if (this.f5252a != null) {
-                Socket a2 = a(this.f5252a.createSocket());
-                b(a2);
-                return a2;
+            if (this.a != null) {
+                Socket a = a(this.a.createSocket());
+                b(a);
+                return a;
             }
             return null;
         } finally {
@@ -187,10 +183,10 @@ public final class jz extends SSLSocketFactory {
     @Override // javax.net.SocketFactory
     public final Socket createSocket(String str, int i) throws IOException, UnknownHostException {
         try {
-            if (this.f5252a != null) {
-                Socket a2 = a(this.f5252a.createSocket(str, i));
-                b(a2);
-                return a2;
+            if (this.a != null) {
+                Socket a = a(this.a.createSocket(str, i));
+                b(a);
+                return a;
             }
             return null;
         } catch (Throwable th) {
@@ -208,10 +204,10 @@ public final class jz extends SSLSocketFactory {
     @Override // javax.net.SocketFactory
     public final Socket createSocket(String str, int i, InetAddress inetAddress, int i2) throws IOException, UnknownHostException {
         try {
-            if (this.f5252a != null) {
-                Socket a2 = a(this.f5252a.createSocket(str, i, inetAddress, i2));
-                b(a2);
-                return a2;
+            if (this.a != null) {
+                Socket a = a(this.a.createSocket(str, i, inetAddress, i2));
+                b(a);
+                return a;
             }
             return null;
         } catch (Throwable th) {
@@ -231,10 +227,10 @@ public final class jz extends SSLSocketFactory {
         boolean z;
         IOException iOException;
         try {
-            if (this.f5252a != null) {
-                Socket a2 = a(this.f5252a.createSocket(inetAddress, i));
-                b(a2);
-                return a2;
+            if (this.a != null) {
+                Socket a = a(this.a.createSocket(inetAddress, i));
+                b(a);
+                return a;
             }
             return null;
         } finally {
@@ -248,10 +244,10 @@ public final class jz extends SSLSocketFactory {
         boolean z;
         IOException iOException;
         try {
-            if (this.f5252a != null) {
-                Socket a2 = a(this.f5252a.createSocket(inetAddress, i, inetAddress2, i2));
-                b(a2);
-                return a2;
+            if (this.a != null) {
+                Socket a = a(this.a.createSocket(inetAddress, i, inetAddress2, i2));
+                b(a);
+                return a;
             }
             return null;
         } finally {
@@ -265,10 +261,10 @@ public final class jz extends SSLSocketFactory {
         boolean z2;
         IOException iOException;
         try {
-            if (this.f5252a != null) {
-                Socket a2 = a(this.f5252a.createSocket(socket, str, i, z));
-                b(a2);
-                return a2;
+            if (this.a != null) {
+                Socket a = a(this.a.createSocket(socket, str, i, z));
+                b(a);
+                return a;
             }
             return null;
         } finally {
@@ -280,8 +276,8 @@ public final class jz extends SSLSocketFactory {
     @Override // javax.net.ssl.SSLSocketFactory
     public final String[] getDefaultCipherSuites() {
         try {
-            if (this.f5252a != null) {
-                return this.f5252a.getDefaultCipherSuites();
+            if (this.a != null) {
+                return this.a.getDefaultCipherSuites();
             }
         } catch (Throwable th) {
             iw.c(th, "myssl", "gdcs");
@@ -292,8 +288,8 @@ public final class jz extends SSLSocketFactory {
     @Override // javax.net.ssl.SSLSocketFactory
     public final String[] getSupportedCipherSuites() {
         try {
-            if (this.f5252a != null) {
-                return this.f5252a.getSupportedCipherSuites();
+            if (this.a != null) {
+                return this.a.getSupportedCipherSuites();
             }
         } catch (Throwable th) {
             iw.c(th, "myssl", "gscs");

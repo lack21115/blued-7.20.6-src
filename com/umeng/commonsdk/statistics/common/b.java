@@ -12,7 +12,7 @@ import java.util.zip.Inflater;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f40908a;
+    public static int f27217a;
 
     public static String a(byte[] bArr, String str) throws UnsupportedEncodingException, DataFormatException {
         byte[] b = b(bArr);
@@ -38,13 +38,13 @@ public class b {
         deflater.setInput(bArr);
         deflater.finish();
         byte[] bArr2 = new byte[8192];
-        f40908a = 0;
+        f27217a = 0;
         try {
             byteArrayOutputStream = new ByteArrayOutputStream();
             while (!deflater.finished()) {
                 try {
                     int deflate = deflater.deflate(bArr2);
-                    f40908a += deflate;
+                    f27217a += deflate;
                     byteArrayOutputStream.write(bArr2, 0, deflate);
                 } catch (Throwable th) {
                     th = th;

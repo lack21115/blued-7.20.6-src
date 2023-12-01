@@ -8,6 +8,10 @@ import android.net.Uri;
 import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
+import com.anythink.expressad.a;
+import com.google.common.net.HttpHeaders;
+import com.huawei.openalliance.ad.constant.bc;
+import com.opos.process.bridge.provider.ProcessBridgeProvider;
 import com.tencent.smtt.export.external.interfaces.ConsoleMessage;
 import com.tencent.smtt.export.external.interfaces.GeolocationPermissionsCallback;
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient;
@@ -37,29 +41,29 @@ public final class ChromeClientWrapper extends WebChromeClient {
     public static final String LOAD_PHASE_DOM_CREATED = "dom_created";
 
     /* renamed from: ʼ  reason: contains not printable characters */
-    private static final String f1172 = "image/*";
+    private static final String f1125 = "image/*";
 
     /* renamed from: ʽ  reason: contains not printable characters */
-    private static final String f1173 = "yz_prefs_action";
+    private static final String f1126 = "yz_prefs_action";
     public final int autoRequestId;
 
     /* renamed from: ʻ  reason: contains not printable characters */
-    private final EventCenter f1174;
+    private final EventCenter f1127;
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private WebChromeClient f1175;
+    private WebChromeClient f1128;
 
     /* renamed from: ˋ  reason: contains not printable characters */
-    private ValueCallback<Uri> f1176;
+    private ValueCallback<Uri> f1129;
 
     /* renamed from: ˎ  reason: contains not printable characters */
-    private ValueCallback<Uri[]> f1177;
+    private ValueCallback<Uri[]> f1130;
 
     /* renamed from: ˏ  reason: contains not printable characters */
-    private ICustomEventCallback f1178;
+    private ICustomEventCallback f1131;
 
     /* renamed from: ᐝ  reason: contains not printable characters */
-    private final WebView f1179;
+    private final WebView f1132;
 
     @Metadata
     /* loaded from: source-8829756-dex2jar.jar:com/youzan/androidsdkx5/plugin/ChromeClientWrapper$Companion.class */
@@ -84,16 +88,16 @@ public final class ChromeClientWrapper extends WebChromeClient {
     public @interface WebCustomEventKey {
     }
 
-    public ChromeClientWrapper(WebView webView, EventCenter mEventCenter) {
-        Intrinsics.d(mEventCenter, "mEventCenter");
-        this.f1179 = webView;
-        this.f1174 = mEventCenter;
+    public ChromeClientWrapper(WebView webView, EventCenter eventCenter) {
+        Intrinsics.d(eventCenter, "mEventCenter");
+        this.f1132 = webView;
+        this.f1127 = eventCenter;
         this.autoRequestId = Environment.generateRequestId();
     }
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private final void m12260() {
-        WebView webView = this.f1179;
+    private final void m9210() {
+        WebView webView = this.f1132;
         if (webView == null) {
             return;
         }
@@ -101,48 +105,48 @@ public final class ChromeClientWrapper extends WebChromeClient {
     }
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private final boolean m12261(Context context, String str) {
+    private final boolean m9211(Context context, String str) {
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
-            str2 = f1172;
+            str2 = f1125;
         }
         AbsChooserEvent.Meta meta = new AbsChooserEvent.Meta();
         meta.acceptType = str2;
         meta.requestId = this.autoRequestId;
-        return this.f1174.dispatch(context, EventAPI.EVENT_FILE_CHOOSER, meta.toJSON());
+        return this.f1127.dispatch(context, EventAPI.EVENT_FILE_CHOOSER, meta.toJSON());
     }
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private final boolean m12262(ValueCallback<Uri> valueCallback, String str) {
-        this.f1176 = valueCallback;
-        WebView webView = this.f1179;
+    private final boolean m9212(ValueCallback<Uri> valueCallback, String str) {
+        this.f1129 = valueCallback;
+        WebView webView = this.f1132;
         if (webView == null) {
             Intrinsics.a();
         }
         Context context = webView.getContext();
         Intrinsics.b(context, "mWebView!!.context");
-        return m12261(context, str);
+        return m9211(context, str);
     }
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private final boolean m12263(String str) {
-        if (this.f1178 == null) {
+    private final boolean m9213(String str) {
+        if (this.f1131 == null) {
             return false;
         }
         String str2 = str;
         if (TextUtils.isEmpty(str2)) {
             return false;
         }
-        List b = StringsKt.b((CharSequence) str2, new String[]{":"}, false, 0, 6, (Object) null);
+        List b = StringsKt.b(str2, new String[]{":"}, false, 0, 6, (Object) null);
         if (b != null) {
             Object[] array = b.toArray(new String[0]);
             if (array != null) {
                 String[] strArr = (String[]) array;
-                if (strArr.length != 2 || (!Intrinsics.a((Object) f1173, (Object) strArr[0]))) {
+                if (strArr.length != 2 || (!Intrinsics.a(f1126, strArr[0]))) {
                     return false;
                 }
-                if (Intrinsics.a((Object) LOAD_PHASE_DOM_CREATED, (Object) strArr[1])) {
-                    ICustomEventCallback iCustomEventCallback = this.f1178;
+                if (Intrinsics.a(LOAD_PHASE_DOM_CREATED, strArr[1])) {
+                    ICustomEventCallback iCustomEventCallback = this.f1131;
                     if (iCustomEventCallback == null) {
                         Intrinsics.a();
                     }
@@ -157,20 +161,20 @@ public final class ChromeClientWrapper extends WebChromeClient {
     }
 
     /* renamed from: ˋ  reason: contains not printable characters */
-    private final boolean m12264(ValueCallback<Uri[]> valueCallback, String str) {
-        this.f1177 = valueCallback;
-        WebView webView = this.f1179;
+    private final boolean m9214(ValueCallback<Uri[]> valueCallback, String str) {
+        this.f1130 = valueCallback;
+        WebView webView = this.f1132;
         if (webView == null) {
             Intrinsics.a();
         }
         Context context = webView.getContext();
         Intrinsics.b(context, "mWebView!!.context");
-        return m12261(context, str);
+        return m9211(context, str);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
     public Bitmap getDefaultVideoPoster() {
-        WebChromeClient webChromeClient = this.f1175;
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient != null) {
             if (webChromeClient == null) {
                 Intrinsics.a();
@@ -182,7 +186,7 @@ public final class ChromeClientWrapper extends WebChromeClient {
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
     public View getVideoLoadingProgressView() {
-        WebChromeClient webChromeClient = this.f1175;
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient != null) {
             if (webChromeClient == null) {
                 Intrinsics.a();
@@ -193,37 +197,37 @@ public final class ChromeClientWrapper extends WebChromeClient {
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public void getVisitedHistory(ValueCallback<String[]> callback) {
-        Intrinsics.d(callback, "callback");
-        WebChromeClient webChromeClient = this.f1175;
+    public void getVisitedHistory(ValueCallback<String[]> valueCallback) {
+        Intrinsics.d(valueCallback, bc.e.D);
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient == null) {
-            super.getVisitedHistory(callback);
+            super.getVisitedHistory(valueCallback);
             return;
         }
         if (webChromeClient == null) {
             Intrinsics.a();
         }
-        webChromeClient.getVisitedHistory(callback);
+        webChromeClient.getVisitedHistory(valueCallback);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public void onCloseWindow(WebView window) {
-        Intrinsics.d(window, "window");
-        WebChromeClient webChromeClient = this.f1175;
+    public void onCloseWindow(WebView webView) {
+        Intrinsics.d(webView, Context.WINDOW_SERVICE);
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient == null) {
-            super.onCloseWindow(window);
+            super.onCloseWindow(webView);
             return;
         }
         if (webChromeClient == null) {
             Intrinsics.a();
         }
-        webChromeClient.onCloseWindow(window);
+        webChromeClient.onCloseWindow(webView);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
     public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
         Intrinsics.d(consoleMessage, "consoleMessage");
-        WebChromeClient webChromeClient = this.f1175;
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient != null) {
             if (webChromeClient == null) {
                 Intrinsics.a();
@@ -234,37 +238,37 @@ public final class ChromeClientWrapper extends WebChromeClient {
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public boolean onCreateWindow(WebView view, boolean z, boolean z2, Message resultMsg) {
-        Intrinsics.d(view, "view");
-        Intrinsics.d(resultMsg, "resultMsg");
-        WebChromeClient webChromeClient = this.f1175;
+    public boolean onCreateWindow(WebView webView, boolean z, boolean z2, Message message) {
+        Intrinsics.d(webView, a.B);
+        Intrinsics.d(message, ProcessBridgeProvider.KEY_RESULT_MSG);
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient != null) {
             if (webChromeClient == null) {
                 Intrinsics.a();
             }
-            return webChromeClient.onCreateWindow(view, z, z2, resultMsg);
+            return webChromeClient.onCreateWindow(webView, z, z2, message);
         }
-        return super.onCreateWindow(view, z, z2, resultMsg);
+        return super.onCreateWindow(webView, z, z2, message);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public void onExceededDatabaseQuota(String url, String databaseIdentifier, long j, long j2, long j3, WebStorage.QuotaUpdater quotaUpdater) {
-        Intrinsics.d(url, "url");
-        Intrinsics.d(databaseIdentifier, "databaseIdentifier");
+    public void onExceededDatabaseQuota(String str, String str2, long j, long j2, long j3, WebStorage.QuotaUpdater quotaUpdater) {
+        Intrinsics.d(str, "url");
+        Intrinsics.d(str2, "databaseIdentifier");
         Intrinsics.d(quotaUpdater, "quotaUpdater");
         quotaUpdater.updateQuota((long) IntentFilter.MATCH_CATEGORY_PATH);
-        WebChromeClient webChromeClient = this.f1175;
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient != null) {
             if (webChromeClient == null) {
                 Intrinsics.a();
             }
-            webChromeClient.onExceededDatabaseQuota(url, databaseIdentifier, j, j2, j3, quotaUpdater);
+            webChromeClient.onExceededDatabaseQuota(str, str2, j, j2, j3, quotaUpdater);
         }
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
     public void onGeolocationPermissionsHidePrompt() {
-        WebChromeClient webChromeClient = this.f1175;
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient == null) {
             super.onGeolocationPermissionsHidePrompt();
             return;
@@ -276,24 +280,24 @@ public final class ChromeClientWrapper extends WebChromeClient {
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissionsCallback callback) {
-        Intrinsics.d(origin, "origin");
-        Intrinsics.d(callback, "callback");
-        callback.invoke(origin, true, false);
-        WebChromeClient webChromeClient = this.f1175;
+    public void onGeolocationPermissionsShowPrompt(String str, GeolocationPermissionsCallback geolocationPermissionsCallback) {
+        Intrinsics.d(str, HttpHeaders.ReferrerPolicyValues.ORIGIN);
+        Intrinsics.d(geolocationPermissionsCallback, bc.e.D);
+        geolocationPermissionsCallback.invoke(str, true, false);
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient == null) {
-            super.onGeolocationPermissionsShowPrompt(origin, callback);
+            super.onGeolocationPermissionsShowPrompt(str, geolocationPermissionsCallback);
             return;
         }
         if (webChromeClient == null) {
             Intrinsics.a();
         }
-        webChromeClient.onGeolocationPermissionsShowPrompt(origin, callback);
+        webChromeClient.onGeolocationPermissionsShowPrompt(str, geolocationPermissionsCallback);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
     public void onHideCustomView() {
-        WebChromeClient webChromeClient = this.f1175;
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient == null) {
             super.onHideCustomView();
             return;
@@ -305,77 +309,77 @@ public final class ChromeClientWrapper extends WebChromeClient {
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-        Intrinsics.d(view, "view");
-        Intrinsics.d(url, "url");
-        Intrinsics.d(message, "message");
-        Intrinsics.d(result, "result");
-        WebChromeClient webChromeClient = this.f1175;
+    public boolean onJsAlert(WebView webView, String str, String str2, JsResult jsResult) {
+        Intrinsics.d(webView, a.B);
+        Intrinsics.d(str, "url");
+        Intrinsics.d(str2, "message");
+        Intrinsics.d(jsResult, "result");
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient != null) {
             if (webChromeClient == null) {
                 Intrinsics.a();
             }
-            return webChromeClient.onJsAlert(view, url, message, result);
+            return webChromeClient.onJsAlert(webView, str, str2, jsResult);
         }
-        return super.onJsAlert(view, url, message, result);
+        return super.onJsAlert(webView, str, str2, jsResult);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public boolean onJsBeforeUnload(WebView view, String url, String message, JsResult result) {
-        Intrinsics.d(view, "view");
-        Intrinsics.d(url, "url");
-        Intrinsics.d(message, "message");
-        Intrinsics.d(result, "result");
-        WebChromeClient webChromeClient = this.f1175;
+    public boolean onJsBeforeUnload(WebView webView, String str, String str2, JsResult jsResult) {
+        Intrinsics.d(webView, a.B);
+        Intrinsics.d(str, "url");
+        Intrinsics.d(str2, "message");
+        Intrinsics.d(jsResult, "result");
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient != null) {
             if (webChromeClient == null) {
                 Intrinsics.a();
             }
-            return webChromeClient.onJsBeforeUnload(view, url, message, result);
+            return webChromeClient.onJsBeforeUnload(webView, str, str2, jsResult);
         }
-        return super.onJsBeforeUnload(view, url, message, result);
+        return super.onJsBeforeUnload(webView, str, str2, jsResult);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public boolean onJsConfirm(WebView view, String url, String message, JsResult result) {
-        Intrinsics.d(view, "view");
-        Intrinsics.d(url, "url");
-        Intrinsics.d(message, "message");
-        Intrinsics.d(result, "result");
-        WebChromeClient webChromeClient = this.f1175;
+    public boolean onJsConfirm(WebView webView, String str, String str2, JsResult jsResult) {
+        Intrinsics.d(webView, a.B);
+        Intrinsics.d(str, "url");
+        Intrinsics.d(str2, "message");
+        Intrinsics.d(jsResult, "result");
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient != null) {
             if (webChromeClient == null) {
                 Intrinsics.a();
             }
-            return webChromeClient.onJsConfirm(view, url, message, result);
+            return webChromeClient.onJsConfirm(webView, str, str2, jsResult);
         }
-        return super.onJsConfirm(view, url, message, result);
+        return super.onJsConfirm(webView, str, str2, jsResult);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {
-        Intrinsics.d(view, "view");
-        Intrinsics.d(url, "url");
-        Intrinsics.d(message, "message");
-        Intrinsics.d(defaultValue, "defaultValue");
-        Intrinsics.d(result, "result");
-        if (m12263(message)) {
-            result.confirm(null);
+    public boolean onJsPrompt(WebView webView, String str, String str2, String str3, JsPromptResult jsPromptResult) {
+        Intrinsics.d(webView, a.B);
+        Intrinsics.d(str, "url");
+        Intrinsics.d(str2, "message");
+        Intrinsics.d(str3, "defaultValue");
+        Intrinsics.d(jsPromptResult, "result");
+        if (m9213(str2)) {
+            jsPromptResult.confirm(null);
             return true;
         }
-        WebChromeClient webChromeClient = this.f1175;
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient != null) {
             if (webChromeClient == null) {
                 Intrinsics.a();
             }
-            return webChromeClient.onJsPrompt(view, url, message, defaultValue, result);
+            return webChromeClient.onJsPrompt(webView, str, str2, str3, jsPromptResult);
         }
-        return super.onJsPrompt(view, url, message, defaultValue, result);
+        return super.onJsPrompt(webView, str, str2, str3, jsPromptResult);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
     public boolean onJsTimeout() {
-        WebChromeClient webChromeClient = this.f1175;
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient != null) {
             if (webChromeClient == null) {
                 Intrinsics.a();
@@ -386,23 +390,23 @@ public final class ChromeClientWrapper extends WebChromeClient {
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public void onProgressChanged(WebView view, int i) {
-        Intrinsics.d(view, "view");
-        WebChromeClient webChromeClient = this.f1175;
+    public void onProgressChanged(WebView webView, int i) {
+        Intrinsics.d(webView, a.B);
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient == null) {
-            super.onProgressChanged(view, i);
+            super.onProgressChanged(webView, i);
             return;
         }
         if (webChromeClient == null) {
             Intrinsics.a();
         }
-        webChromeClient.onProgressChanged(view, i);
+        webChromeClient.onProgressChanged(webView, i);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
     public void onReachedMaxAppCacheSize(long j, long j2, WebStorage.QuotaUpdater quotaUpdater) {
         Intrinsics.d(quotaUpdater, "quotaUpdater");
-        WebChromeClient webChromeClient = this.f1175;
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient == null) {
             super.onReachedMaxAppCacheSize(j, j2, quotaUpdater);
             return;
@@ -414,93 +418,93 @@ public final class ChromeClientWrapper extends WebChromeClient {
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public void onReceivedIcon(WebView view, Bitmap icon) {
-        Intrinsics.d(view, "view");
-        Intrinsics.d(icon, "icon");
-        WebChromeClient webChromeClient = this.f1175;
+    public void onReceivedIcon(WebView webView, Bitmap bitmap) {
+        Intrinsics.d(webView, a.B);
+        Intrinsics.d(bitmap, "icon");
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient == null) {
-            super.onReceivedIcon(view, icon);
+            super.onReceivedIcon(webView, bitmap);
             return;
         }
         if (webChromeClient == null) {
             Intrinsics.a();
         }
-        webChromeClient.onReceivedIcon(view, icon);
+        webChromeClient.onReceivedIcon(webView, bitmap);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public void onReceivedTitle(WebView view, String title) {
-        Intrinsics.d(view, "view");
-        Intrinsics.d(title, "title");
-        WebChromeClient webChromeClient = this.f1175;
+    public void onReceivedTitle(WebView webView, String str) {
+        Intrinsics.d(webView, a.B);
+        Intrinsics.d(str, "title");
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient != null) {
             if (webChromeClient == null) {
                 Intrinsics.a();
             }
-            webChromeClient.onReceivedTitle(view, title);
+            webChromeClient.onReceivedTitle(webView, str);
         } else {
-            super.onReceivedTitle(view, title);
+            super.onReceivedTitle(webView, str);
         }
-        m12260();
+        m9210();
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public void onReceivedTouchIconUrl(WebView view, String url, boolean z) {
-        Intrinsics.d(view, "view");
-        Intrinsics.d(url, "url");
-        WebChromeClient webChromeClient = this.f1175;
+    public void onReceivedTouchIconUrl(WebView webView, String str, boolean z) {
+        Intrinsics.d(webView, a.B);
+        Intrinsics.d(str, "url");
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient == null) {
-            super.onReceivedTouchIconUrl(view, url, z);
+            super.onReceivedTouchIconUrl(webView, str, z);
             return;
         }
         if (webChromeClient == null) {
             Intrinsics.a();
         }
-        webChromeClient.onReceivedTouchIconUrl(view, url, z);
+        webChromeClient.onReceivedTouchIconUrl(webView, str, z);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public void onRequestFocus(WebView view) {
-        Intrinsics.d(view, "view");
-        WebChromeClient webChromeClient = this.f1175;
+    public void onRequestFocus(WebView webView) {
+        Intrinsics.d(webView, a.B);
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient == null) {
-            super.onRequestFocus(view);
+            super.onRequestFocus(webView);
             return;
         }
         if (webChromeClient == null) {
             Intrinsics.a();
         }
-        webChromeClient.onRequestFocus(view);
+        webChromeClient.onRequestFocus(webView);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public void onShowCustomView(View view, int i, IX5WebChromeClient.CustomViewCallback callback) {
-        Intrinsics.d(view, "view");
-        Intrinsics.d(callback, "callback");
-        WebChromeClient webChromeClient = this.f1175;
+    public void onShowCustomView(View view, int i, IX5WebChromeClient.CustomViewCallback customViewCallback) {
+        Intrinsics.d(view, a.B);
+        Intrinsics.d(customViewCallback, bc.e.D);
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient == null) {
-            super.onShowCustomView(view, i, callback);
+            super.onShowCustomView(view, i, customViewCallback);
             return;
         }
         if (webChromeClient == null) {
             Intrinsics.a();
         }
-        webChromeClient.onShowCustomView(view, i, callback);
+        webChromeClient.onShowCustomView(view, i, customViewCallback);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public void onShowCustomView(View view, IX5WebChromeClient.CustomViewCallback callback) {
-        Intrinsics.d(view, "view");
-        Intrinsics.d(callback, "callback");
-        WebChromeClient webChromeClient = this.f1175;
+    public void onShowCustomView(View view, IX5WebChromeClient.CustomViewCallback customViewCallback) {
+        Intrinsics.d(view, a.B);
+        Intrinsics.d(customViewCallback, bc.e.D);
+        WebChromeClient webChromeClient = this.f1128;
         if (webChromeClient == null) {
-            super.onShowCustomView(view, callback);
+            super.onShowCustomView(view, customViewCallback);
             return;
         }
         if (webChromeClient == null) {
             Intrinsics.a();
         }
-        webChromeClient.onShowCustomView(view, callback);
+        webChromeClient.onShowCustomView(view, customViewCallback);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
@@ -509,7 +513,7 @@ public final class ChromeClientWrapper extends WebChromeClient {
         Intrinsics.d(webView, "webView");
         Intrinsics.d(fileChooserParams, "fileChooserParams");
         String[] acceptTypes = fileChooserParams.getAcceptTypes();
-        if (m12264(valueCallback, (acceptTypes == null || acceptTypes.length <= 0) ? null : acceptTypes[0]) || (webChromeClient = this.f1175) == null) {
+        if (m9214(valueCallback, (acceptTypes == null || acceptTypes.length <= 0) ? null : acceptTypes[0]) || (webChromeClient = this.f1128) == null) {
             return true;
         }
         if (webChromeClient == null) {
@@ -520,7 +524,7 @@ public final class ChromeClientWrapper extends WebChromeClient {
 
     public final void openFileChooser(ValueCallback<Uri> valueCallback) {
         WebChromeClient webChromeClient;
-        if (m12262(valueCallback, (String) null) || (webChromeClient = this.f1175) == null) {
+        if (m9212(valueCallback, (String) null) || (webChromeClient = this.f1128) == null) {
             return;
         }
         if (webChromeClient == null) {
@@ -531,12 +535,12 @@ public final class ChromeClientWrapper extends WebChromeClient {
                 return;
             }
         }
-        webChromeClient.getClass().getDeclaredMethod("openFileChooser", ValueCallback.class).invoke(this.f1175, valueCallback);
+        webChromeClient.getClass().getDeclaredMethod("openFileChooser", ValueCallback.class).invoke(this.f1128, valueCallback);
     }
 
     public final void openFileChooser(ValueCallback<Uri> valueCallback, String str) {
         WebChromeClient webChromeClient;
-        if (m12262(valueCallback, str) || (webChromeClient = this.f1175) == null) {
+        if (m9212(valueCallback, str) || (webChromeClient = this.f1128) == null) {
             return;
         }
         if (webChromeClient == null) {
@@ -547,15 +551,15 @@ public final class ChromeClientWrapper extends WebChromeClient {
                 return;
             }
         }
-        webChromeClient.getClass().getDeclaredMethod("openFileChooser", ValueCallback.class, String.class).invoke(this.f1175, valueCallback, str);
+        webChromeClient.getClass().getDeclaredMethod("openFileChooser", ValueCallback.class, String.class).invoke(this.f1128, valueCallback, str);
     }
 
     @Override // com.tencent.smtt.sdk.WebChromeClient
-    public void openFileChooser(ValueCallback<Uri> valueCallback, String acceptType, String capture) {
+    public void openFileChooser(ValueCallback<Uri> valueCallback, String str, String str2) {
         WebChromeClient webChromeClient;
-        Intrinsics.d(acceptType, "acceptType");
-        Intrinsics.d(capture, "capture");
-        if (m12262(valueCallback, acceptType) || (webChromeClient = this.f1175) == null) {
+        Intrinsics.d(str, "acceptType");
+        Intrinsics.d(str2, "capture");
+        if (m9212(valueCallback, str) || (webChromeClient = this.f1128) == null) {
             return;
         }
         if (webChromeClient == null) {
@@ -566,21 +570,21 @@ public final class ChromeClientWrapper extends WebChromeClient {
                 return;
             }
         }
-        webChromeClient.getClass().getDeclaredMethod("openFileChooser", ValueCallback.class, String.class, String.class).invoke(this.f1175, valueCallback, acceptType, capture);
+        webChromeClient.getClass().getDeclaredMethod("openFileChooser", ValueCallback.class, String.class, String.class).invoke(this.f1128, valueCallback, str, str2);
     }
 
     public final void receiveImage(Intent intent) {
         try {
-            if (this.f1176 != null) {
+            if (this.f1129 != null) {
                 Uri data = intent != null ? intent.getData() : null;
-                ValueCallback<Uri> valueCallback = this.f1176;
+                ValueCallback<Uri> valueCallback = this.f1129;
                 if (valueCallback == null) {
                     Intrinsics.a();
                 }
                 valueCallback.onReceiveValue(data);
-            } else if (this.f1177 != null) {
+            } else if (this.f1130 != null) {
                 Uri[] uriArr = intent == null ? null : new Uri[]{Uri.parse(intent.getDataString())};
-                ValueCallback<Uri[]> valueCallback2 = this.f1177;
+                ValueCallback<Uri[]> valueCallback2 = this.f1130;
                 if (valueCallback2 == null) {
                     Intrinsics.a();
                 }
@@ -590,18 +594,18 @@ public final class ChromeClientWrapper extends WebChromeClient {
             th.printStackTrace();
         }
         ValueCallback valueCallback3 = null;
-        this.f1177 = valueCallback3;
-        this.f1176 = valueCallback3;
+        this.f1130 = valueCallback3;
+        this.f1129 = valueCallback3;
     }
 
     public final void setCustomEventCallback$yzsdkx5_release(ICustomEventCallback iCustomEventCallback) {
-        this.f1178 = iCustomEventCallback;
+        this.f1131 = iCustomEventCallback;
     }
 
     public final void setDelegate(WebChromeClient webChromeClient) {
         if (webChromeClient instanceof ChromeClientWrapper) {
             return;
         }
-        this.f1175 = webChromeClient;
+        this.f1128 = webChromeClient;
     }
 }

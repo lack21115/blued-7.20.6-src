@@ -10,19 +10,19 @@ final class o implements d {
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25045c;
+    private int f11357c;
     private int d;
     private int f;
     private int g;
     private byte[] j;
     private int k;
     private boolean l;
-    private ByteBuffer h = f25014a;
-    private ByteBuffer i = f25014a;
+    private ByteBuffer h = f11326a;
+    private ByteBuffer i = f11326a;
     private int e = -1;
 
     public void a(int i, int i2) {
-        this.f25045c = i;
+        this.f11357c = i;
         this.d = i2;
     }
 
@@ -54,7 +54,7 @@ final class o implements d {
         int i4 = this.k - a2;
         this.k = i4;
         byte[] bArr = this.j;
-        System.arraycopy((Object) bArr, a2, (Object) bArr, 0, i4);
+        System.arraycopy(bArr, a2, bArr, 0, i4);
         byteBuffer.get(this.j, this.k, i3);
         this.k = i3 + this.k;
         this.h.flip();
@@ -75,7 +75,7 @@ final class o implements d {
             this.j = new byte[i4 * i2 * 2];
             boolean z = false;
             this.k = 0;
-            int i5 = this.f25045c;
+            int i5 = this.f11357c;
             this.g = i2 * i5 * 2;
             boolean z2 = this.b;
             boolean z3 = (i5 == 0 && i4 == 0) ? false : true;
@@ -111,18 +111,18 @@ final class o implements d {
     @Override // com.opos.exoplayer.core.a.d
     public ByteBuffer f() {
         ByteBuffer byteBuffer = this.i;
-        this.i = f25014a;
+        this.i = f11326a;
         return byteBuffer;
     }
 
     @Override // com.opos.exoplayer.core.a.d
     public boolean g() {
-        return this.l && this.i == f25014a;
+        return this.l && this.i == f11326a;
     }
 
     @Override // com.opos.exoplayer.core.a.d
     public void h() {
-        this.i = f25014a;
+        this.i = f11326a;
         this.l = false;
         this.g = 0;
         this.k = 0;
@@ -131,7 +131,7 @@ final class o implements d {
     @Override // com.opos.exoplayer.core.a.d
     public void i() {
         h();
-        this.h = f25014a;
+        this.h = f11326a;
         this.e = -1;
         this.f = -1;
         this.j = null;

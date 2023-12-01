@@ -8,7 +8,6 @@ public final class SearchMemberFragment_MVP implements MvpDispatcher {
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0077, code lost:
         if (r5.equals("data_search") != false) goto L12;
      */
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

@@ -28,7 +28,6 @@ import com.blued.android.module.live_china.view.WishingWellView;
 import com.blued.das.live.LiveProtos;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.jeremyliao.liveeventbus.core.Observable;
-import com.soft.blued.constant.EventBusConstant;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -45,13 +44,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/operation/LiveBottomOperationView.class */
 public final class LiveBottomOperationView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15342a;
+    private final Context a;
     private final Lazy b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ArrayList<LiveRoomOperationModel> f15343c;
+    private ArrayList<LiveRoomOperationModel> c;
     private BaseFragment d;
     private boolean e;
     private WishingWellBottomView f;
@@ -72,7 +67,7 @@ public final class LiveBottomOperationView extends FrameLayout {
     public LiveBottomOperationView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f15342a = mContext;
+        this.a = mContext;
         this.b = LazyKt.a(new Function0<LiveBottomOperationViewBinding>() { // from class: com.blued.android.module.live_china.view.operation.LiveBottomOperationView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -82,12 +77,12 @@ public final class LiveBottomOperationView extends FrameLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveBottomOperationViewBinding invoke() {
-                LiveBottomOperationViewBinding a2 = LiveBottomOperationViewBinding.a(LayoutInflater.from(LiveBottomOperationView.this.getMContext()).inflate(R.layout.live_bottom_operation_view, LiveBottomOperationView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…ion_view, this)\n        )");
-                return a2;
+                LiveBottomOperationViewBinding a = LiveBottomOperationViewBinding.a(LayoutInflater.from(LiveBottomOperationView.this.getMContext()).inflate(R.layout.live_bottom_operation_view, LiveBottomOperationView.this));
+                Intrinsics.c(a, "bind(\n            Layout…ion_view, this)\n        )");
+                return a;
             }
         });
-        this.f15343c = new ArrayList<>();
+        this.c = new ArrayList<>();
     }
 
     public /* synthetic */ LiveBottomOperationView(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -95,7 +90,7 @@ public final class LiveBottomOperationView extends FrameLayout {
     }
 
     private final void a() {
-        Iterator<LiveRoomOperationModel> it = this.f15343c.iterator();
+        Iterator<LiveRoomOperationModel> it = this.c.iterator();
         while (it.hasNext()) {
             LiveRoomOperationModel next = it.next();
             int tools_type = next.getTools_type();
@@ -116,7 +111,7 @@ public final class LiveBottomOperationView extends FrameLayout {
         }
         final OperationBottomChildH5View h5View = getH5View();
         h5View.a(this.d, liveRoomOperationModel);
-        getVb().f12155a.addView(h5View);
+        getVb().a.addView(h5View);
         if (liveRoomOperationModel.getRed_point() == 1 && (redDot = h5View.getRedDot()) != null) {
             redDot.setVisibility(0);
         }
@@ -153,22 +148,22 @@ public final class LiveBottomOperationView extends FrameLayout {
         View view4;
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(model, "$model");
-        EventTrackLive.r(LiveProtos.Event.LIVE_DOWN_SETTINGS_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), !TextUtils.isEmpty(WishingWellView.f15314a) ? WishingWellView.f15314a : !TextUtils.isEmpty(LiveRoomManager.a().p().entrance_url) ? LiveRoomManager.a().p().entrance_url : LiveRoomInfo.a().j() ? "https://activity-test.blued.cn/hd/2021/wishing-well/star-site?blued_mode=hide_nav" : "https://activity.blued.cn/hd/2021/wishing-well/star-site?blued_mode=hide_nav");
+        EventTrackLive.r(LiveProtos.Event.LIVE_DOWN_SETTINGS_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), !TextUtils.isEmpty(WishingWellView.a) ? WishingWellView.a : !TextUtils.isEmpty(LiveRoomManager.a().p().entrance_url) ? LiveRoomManager.a().p().entrance_url : LiveRoomInfo.a().j() ? "https://activity-test.blued.cn/hd/2021/wishing-well/star-site?blued_mode=hide_nav" : "https://activity.blued.cn/hd/2021/wishing-well/star-site?blued_mode=hide_nav");
         LiveSetDataObserver.a().w();
         WishingWellBottomView wishingWellView = this$0.getWishingWellView();
-        if ((wishingWellView == null ? null : wishingWellView.f15312a) != null) {
+        if ((wishingWellView == null ? null : wishingWellView.a) != null) {
             WishingWellBottomView wishingWellView2 = this$0.getWishingWellView();
             boolean z = false;
-            if (wishingWellView2 != null && (view4 = wishingWellView2.f15312a) != null && view4.getVisibility() == 0) {
+            if (wishingWellView2 != null && (view4 = wishingWellView2.a) != null && view4.getVisibility() == 0) {
                 z = true;
             }
             if (z) {
                 WishingWellBottomView wishingWellView3 = this$0.getWishingWellView();
-                if (((wishingWellView3 == null || (view2 = wishingWellView3.f15312a) == null) ? null : view2.getTag()) == null || model.getRed_point_cancel() == 0) {
+                if (((wishingWellView3 == null || (view2 = wishingWellView3.a) == null) ? null : view2.getTag()) == null || model.getRed_point_cancel() == 0) {
                     if (model.getRed_point_cancel() == 1) {
                         LiveRoomHttpUtils.b((BluedUIHttpResponse) null, model.getRed_point_word());
                         WishingWellBottomView wishingWellView4 = this$0.getWishingWellView();
-                        View view5 = wishingWellView4 == null ? null : wishingWellView4.f15312a;
+                        View view5 = wishingWellView4 == null ? null : wishingWellView4.a;
                         if (view5 == null) {
                             return;
                         }
@@ -178,7 +173,7 @@ public final class LiveBottomOperationView extends FrameLayout {
                     return;
                 }
                 WishingWellBottomView wishingWellView5 = this$0.getWishingWellView();
-                Object tag = (wishingWellView5 == null || (view3 = wishingWellView5.f15312a) == null) ? null : view3.getTag();
+                Object tag = (wishingWellView5 == null || (view3 = wishingWellView5.a) == null) ? null : view3.getTag();
                 if (tag == null) {
                     throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.model.FunctionRedPModelJson");
                 }
@@ -187,7 +182,7 @@ public final class LiveBottomOperationView extends FrameLayout {
                 if (functionRedPModelJson.getRed_point_cancel()) {
                     LiveRoomHttpUtils.b((BluedUIHttpResponse) null, red_point_word);
                     WishingWellBottomView wishingWellView6 = this$0.getWishingWellView();
-                    View view6 = wishingWellView6 == null ? null : wishingWellView6.f15312a;
+                    View view6 = wishingWellView6 == null ? null : wishingWellView6.a;
                     if (view6 == null) {
                         return;
                     }
@@ -210,11 +205,11 @@ public final class LiveBottomOperationView extends FrameLayout {
             ((ViewGroup) parent).removeView(wishingWellBottomView);
         }
         LiveRoomManager.a().p().entrance_icon = liveRoomOperationModel.getIcon();
-        getVb().f12155a.addView(getWishingWellView());
+        getVb().a.addView(getWishingWellView());
         boolean z = false;
         if (liveRoomOperationModel.getRed_point() == 1) {
             WishingWellBottomView wishingWellView = getWishingWellView();
-            View view = wishingWellView == null ? null : wishingWellView.f15312a;
+            View view = wishingWellView == null ? null : wishingWellView.a;
             if (view != null) {
                 view.setVisibility(0);
             }
@@ -237,7 +232,7 @@ public final class LiveBottomOperationView extends FrameLayout {
                 }
             });
         }
-        Observable<Object> observable = LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_LUCK_TURNING_BTN);
+        Observable observable = LiveEventBus.get("live_luck_turning_btn");
         if (LiveRoomManager.a().p().entrance_status == 1) {
             z = true;
         }
@@ -268,20 +263,20 @@ public final class LiveBottomOperationView extends FrameLayout {
     }
 
     public final OperationBottomChildH5View getH5View() {
-        return new OperationBottomChildH5View(this.f15342a);
+        return new OperationBottomChildH5View(this.a);
     }
 
     public final Context getMContext() {
-        return this.f15342a;
+        return this.a;
     }
 
     public final List<View> getViewList() {
         ArrayList arrayList = new ArrayList();
-        int childCount = getVb().f12155a.getChildCount() - 1;
+        int childCount = getVb().a.getChildCount() - 1;
         if (childCount >= 0) {
             while (true) {
                 int i = childCount - 1;
-                View childAt = getVb().f12155a.getChildAt(childCount);
+                View childAt = getVb().a.getChildAt(childCount);
                 if (childAt != null) {
                     arrayList.add(childAt);
                 }
@@ -296,7 +291,7 @@ public final class LiveBottomOperationView extends FrameLayout {
 
     public final WishingWellBottomView getWishingWellView() {
         if (this.f == null) {
-            WishingWellBottomView wishingWellBottomView = new WishingWellBottomView(this.f15342a, null);
+            WishingWellBottomView wishingWellBottomView = new WishingWellBottomView(this.a, null);
             this.f = wishingWellBottomView;
             if (wishingWellBottomView != null) {
                 wishingWellBottomView.setBaseFragment(this.d);
@@ -310,7 +305,7 @@ public final class LiveBottomOperationView extends FrameLayout {
             return;
         }
         a(list);
-        this.f15343c = (ArrayList) list;
+        this.c = (ArrayList) list;
         a();
     }
 }

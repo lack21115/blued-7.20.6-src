@@ -46,7 +46,7 @@ public final class FragmentTouristBinding implements ViewBinding {
     public final TextView Z;
 
     /* renamed from: a  reason: collision with root package name */
-    public final QBadgeContainer f28989a;
+    public final QBadgeContainer f15299a;
     public final TextView aa;
     public final TextView ab;
     public final TextView ac;
@@ -63,7 +63,7 @@ public final class FragmentTouristBinding implements ViewBinding {
     public final ShapeTextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final View f28990c;
+    public final View f15300c;
     public final ConstraintLayout d;
     public final ConstraintLayout e;
     public final QBadgeContainer f;
@@ -90,9 +90,9 @@ public final class FragmentTouristBinding implements ViewBinding {
 
     private FragmentTouristBinding(ConstraintLayout constraintLayout, QBadgeContainer qBadgeContainer, ShapeTextView shapeTextView, View view, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, QBadgeContainer qBadgeContainer2, QBadgeContainer qBadgeContainer3, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, ImageView imageView10, ImageView imageView11, ImageView imageView12, ImageView imageView13, QBadgeContainer qBadgeContainer4, ShapeLinearLayout shapeLinearLayout, LinearLayout linearLayout, ShapeLinearLayout shapeLinearLayout2, ShapeLinearLayout shapeLinearLayout3, LinearLayout linearLayout2, ShapeLinearLayout shapeLinearLayout4, ShapeLinearLayout shapeLinearLayout5, ShapeLinearLayout shapeLinearLayout6, RelativeLayout relativeLayout, RelativeLayout relativeLayout2, RelativeLayout relativeLayout3, RelativeLayout relativeLayout4, RelativeLayout relativeLayout5, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5, LinearLayout linearLayout6, ShapeLinearLayout shapeLinearLayout7, LinearLayout linearLayout7, QBadgeContainer qBadgeContainer5, QBadgeContainer qBadgeContainer6, ObservableScrollView observableScrollView, LinearLayout linearLayout8, ImageView imageView14, ImageView imageView15, TextView textView, ImageView imageView16, FrameLayout frameLayout, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, ShapeTextView shapeTextView2, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, ViewFlipper viewFlipper) {
         this.am = constraintLayout;
-        this.f28989a = qBadgeContainer;
+        this.f15299a = qBadgeContainer;
         this.b = shapeTextView;
-        this.f28990c = view;
+        this.f15300c = view;
         this.d = constraintLayout2;
         this.e = constraintLayout3;
         this.f = qBadgeContainer2;
@@ -158,25 +158,25 @@ public final class FragmentTouristBinding implements ViewBinding {
 
     public static FragmentTouristBinding a(View view) {
         String str;
-        QBadgeContainer qBadgeContainer = (QBadgeContainer) view.findViewById(R.id.badge_container);
-        if (qBadgeContainer != null) {
-            ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.beans_icon);
-            if (shapeTextView != null) {
-                View findViewById = view.findViewById(R.id.bindView);
-                if (findViewById != null) {
+        QBadgeContainer findViewById = view.findViewById(R.id.badge_container);
+        if (findViewById != null) {
+            ShapeTextView findViewById2 = view.findViewById(R.id.beans_icon);
+            if (findViewById2 != null) {
+                View findViewById3 = view.findViewById(R.id.bindView);
+                if (findViewById3 != null) {
                     ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.cl_per_entry);
                     if (constraintLayout != null) {
-                        ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(2131362949);
+                        ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.cl_user_info);
                         if (constraintLayout2 != null) {
-                            QBadgeContainer qBadgeContainer2 = (QBadgeContainer) view.findViewById(R.id.feed_badge_container);
-                            if (qBadgeContainer2 != null) {
-                                QBadgeContainer qBadgeContainer3 = (QBadgeContainer) view.findViewById(R.id.find_badge_container);
-                                if (qBadgeContainer3 != null) {
+                            QBadgeContainer findViewById4 = view.findViewById(R.id.feed_badge_container);
+                            if (findViewById4 != null) {
+                                QBadgeContainer findViewById5 = view.findViewById(R.id.find_badge_container);
+                                if (findViewById5 != null) {
                                     ImageView imageView = (ImageView) view.findViewById(2131364232);
                                     if (imageView != null) {
                                         ImageView imageView2 = (ImageView) view.findViewById(R.id.helper_arrow);
                                         if (imageView2 != null) {
-                                            ImageView imageView3 = (ImageView) view.findViewById(2131365108);
+                                            ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_avatar_widget);
                                             if (imageView3 != null) {
                                                 ImageView imageView4 = (ImageView) view.findViewById(R.id.iv_feed);
                                                 if (imageView4 != null) {
@@ -194,28 +194,28 @@ public final class FragmentTouristBinding implements ViewBinding {
                                                                         if (imageView10 != null) {
                                                                             ImageView imageView11 = (ImageView) view.findViewById(R.id.iv_main_others);
                                                                             if (imageView11 != null) {
-                                                                                ImageView imageView12 = (ImageView) view.findViewById(2131366029);
+                                                                                ImageView imageView12 = (ImageView) view.findViewById(R.id.iv_verify);
                                                                                 if (imageView12 != null) {
                                                                                     ImageView imageView13 = (ImageView) view.findViewById(R.id.iv_visit);
                                                                                     if (imageView13 != null) {
-                                                                                        QBadgeContainer qBadgeContainer4 = (QBadgeContainer) view.findViewById(R.id.live_badge_container);
-                                                                                        if (qBadgeContainer4 != null) {
-                                                                                            ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(2131367655);
-                                                                                            if (shapeLinearLayout != null) {
+                                                                                        QBadgeContainer findViewById6 = view.findViewById(R.id.live_badge_container);
+                                                                                        if (findViewById6 != null) {
+                                                                                            ShapeLinearLayout findViewById7 = view.findViewById(R.id.ll_beans);
+                                                                                            if (findViewById7 != null) {
                                                                                                 LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_health);
                                                                                                 if (linearLayout != null) {
-                                                                                                    ShapeLinearLayout shapeLinearLayout2 = (ShapeLinearLayout) view.findViewById(R.id.ll_health_entry);
-                                                                                                    if (shapeLinearLayout2 != null) {
-                                                                                                        ShapeLinearLayout shapeLinearLayout3 = (ShapeLinearLayout) view.findViewById(R.id.ll_help);
-                                                                                                        if (shapeLinearLayout3 != null) {
+                                                                                                    ShapeLinearLayout findViewById8 = view.findViewById(R.id.ll_health_entry);
+                                                                                                    if (findViewById8 != null) {
+                                                                                                        ShapeLinearLayout findViewById9 = view.findViewById(R.id.ll_help);
+                                                                                                        if (findViewById9 != null) {
                                                                                                             LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.ll_live);
                                                                                                             if (linearLayout2 != null) {
-                                                                                                                ShapeLinearLayout shapeLinearLayout4 = (ShapeLinearLayout) view.findViewById(R.id.ll_live_fans);
-                                                                                                                if (shapeLinearLayout4 != null) {
-                                                                                                                    ShapeLinearLayout shapeLinearLayout5 = (ShapeLinearLayout) view.findViewById(R.id.ll_live_level);
-                                                                                                                    if (shapeLinearLayout5 != null) {
-                                                                                                                        ShapeLinearLayout shapeLinearLayout6 = (ShapeLinearLayout) view.findViewById(R.id.ll_live_wealth);
-                                                                                                                        if (shapeLinearLayout6 != null) {
+                                                                                                                ShapeLinearLayout findViewById10 = view.findViewById(R.id.ll_live_fans);
+                                                                                                                if (findViewById10 != null) {
+                                                                                                                    ShapeLinearLayout findViewById11 = view.findViewById(R.id.ll_live_level);
+                                                                                                                    if (findViewById11 != null) {
+                                                                                                                        ShapeLinearLayout findViewById12 = view.findViewById(R.id.ll_live_wealth);
+                                                                                                                        if (findViewById12 != null) {
                                                                                                                             RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.ll_main_feed);
                                                                                                                             if (relativeLayout != null) {
                                                                                                                                 RelativeLayout relativeLayout2 = (RelativeLayout) view.findViewById(R.id.ll_main_find);
@@ -234,16 +234,16 @@ public final class FragmentTouristBinding implements ViewBinding {
                                                                                                                                                         if (linearLayout5 != null) {
                                                                                                                                                             LinearLayout linearLayout6 = (LinearLayout) view.findViewById(R.id.ll_other_entry);
                                                                                                                                                             if (linearLayout6 != null) {
-                                                                                                                                                                ShapeLinearLayout shapeLinearLayout7 = (ShapeLinearLayout) view.findViewById(R.id.ll_rainbow);
-                                                                                                                                                                if (shapeLinearLayout7 != null) {
+                                                                                                                                                                ShapeLinearLayout findViewById13 = view.findViewById(R.id.ll_rainbow);
+                                                                                                                                                                if (findViewById13 != null) {
                                                                                                                                                                     LinearLayout linearLayout7 = (LinearLayout) view.findViewById(R.id.ll_top_entry);
                                                                                                                                                                     if (linearLayout7 != null) {
-                                                                                                                                                                        QBadgeContainer qBadgeContainer5 = (QBadgeContainer) view.findViewById(R.id.msg_badge_container);
-                                                                                                                                                                        if (qBadgeContainer5 != null) {
-                                                                                                                                                                            QBadgeContainer qBadgeContainer6 = (QBadgeContainer) view.findViewById(R.id.other_badge_container);
-                                                                                                                                                                            if (qBadgeContainer6 != null) {
-                                                                                                                                                                                ObservableScrollView observableScrollView = (ObservableScrollView) view.findViewById(2131369645);
-                                                                                                                                                                                if (observableScrollView != null) {
+                                                                                                                                                                        QBadgeContainer findViewById14 = view.findViewById(R.id.msg_badge_container);
+                                                                                                                                                                        if (findViewById14 != null) {
+                                                                                                                                                                            QBadgeContainer findViewById15 = view.findViewById(R.id.other_badge_container);
+                                                                                                                                                                            if (findViewById15 != null) {
+                                                                                                                                                                                ObservableScrollView findViewById16 = view.findViewById(R.id.scroll_view);
+                                                                                                                                                                                if (findViewById16 != null) {
                                                                                                                                                                                     LinearLayout linearLayout8 = (LinearLayout) view.findViewById(2131370694);
                                                                                                                                                                                     if (linearLayout8 != null) {
                                                                                                                                                                                         ImageView imageView14 = (ImageView) view.findViewById(R.id.title_header);
@@ -258,7 +258,7 @@ public final class FragmentTouristBinding implements ViewBinding {
                                                                                                                                                                                                         if (frameLayout != null) {
                                                                                                                                                                                                             TextView textView2 = (TextView) view.findViewById(R.id.tv_attentions_count);
                                                                                                                                                                                                             if (textView2 != null) {
-                                                                                                                                                                                                                TextView textView3 = (TextView) view.findViewById(2131370967);
+                                                                                                                                                                                                                TextView textView3 = (TextView) view.findViewById(R.id.tv_beans);
                                                                                                                                                                                                                 if (textView3 != null) {
                                                                                                                                                                                                                     TextView textView4 = (TextView) view.findViewById(R.id.tv_fans_count);
                                                                                                                                                                                                                     if (textView4 != null) {
@@ -268,8 +268,8 @@ public final class FragmentTouristBinding implements ViewBinding {
                                                                                                                                                                                                                             if (textView6 != null) {
                                                                                                                                                                                                                                 TextView textView7 = (TextView) view.findViewById(R.id.tv_live_wealth);
                                                                                                                                                                                                                                 if (textView7 != null) {
-                                                                                                                                                                                                                                    ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.tv_login_register);
-                                                                                                                                                                                                                                    if (shapeTextView2 != null) {
+                                                                                                                                                                                                                                    ShapeTextView findViewById17 = view.findViewById(R.id.tv_login_register);
+                                                                                                                                                                                                                                    if (findViewById17 != null) {
                                                                                                                                                                                                                                         TextView textView8 = (TextView) view.findViewById(R.id.tv_main_feed);
                                                                                                                                                                                                                                         if (textView8 != null) {
                                                                                                                                                                                                                                             TextView textView9 = (TextView) view.findViewById(R.id.tv_main_find);
@@ -282,11 +282,11 @@ public final class FragmentTouristBinding implements ViewBinding {
                                                                                                                                                                                                                                                         if (textView12 != null) {
                                                                                                                                                                                                                                                             TextView textView13 = (TextView) view.findViewById(R.id.tv_rainbow);
                                                                                                                                                                                                                                                             if (textView13 != null) {
-                                                                                                                                                                                                                                                                TextView textView14 = (TextView) view.findViewById(2131372933);
+                                                                                                                                                                                                                                                                TextView textView14 = (TextView) view.findViewById(R.id.tv_visit);
                                                                                                                                                                                                                                                                 if (textView14 != null) {
                                                                                                                                                                                                                                                                     ViewFlipper viewFlipper = (ViewFlipper) view.findViewById(R.id.vf_health);
                                                                                                                                                                                                                                                                     if (viewFlipper != null) {
-                                                                                                                                                                                                                                                                        return new FragmentTouristBinding((ConstraintLayout) view, qBadgeContainer, shapeTextView, findViewById, constraintLayout, constraintLayout2, qBadgeContainer2, qBadgeContainer3, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, imageView13, qBadgeContainer4, shapeLinearLayout, linearLayout, shapeLinearLayout2, shapeLinearLayout3, linearLayout2, shapeLinearLayout4, shapeLinearLayout5, shapeLinearLayout6, relativeLayout, relativeLayout2, relativeLayout3, relativeLayout4, relativeLayout5, linearLayout3, linearLayout4, linearLayout5, linearLayout6, shapeLinearLayout7, linearLayout7, qBadgeContainer5, qBadgeContainer6, observableScrollView, linearLayout8, imageView14, imageView15, textView, imageView16, frameLayout, textView2, textView3, textView4, textView5, textView6, textView7, shapeTextView2, textView8, textView9, textView10, textView11, textView12, textView13, textView14, viewFlipper);
+                                                                                                                                                                                                                                                                        return new FragmentTouristBinding((ConstraintLayout) view, findViewById, findViewById2, findViewById3, constraintLayout, constraintLayout2, findViewById4, findViewById5, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, imageView13, findViewById6, findViewById7, linearLayout, findViewById8, findViewById9, linearLayout2, findViewById10, findViewById11, findViewById12, relativeLayout, relativeLayout2, relativeLayout3, relativeLayout4, relativeLayout5, linearLayout3, linearLayout4, linearLayout5, linearLayout6, findViewById13, linearLayout7, findViewById14, findViewById15, findViewById16, linearLayout8, imageView14, imageView15, textView, imageView16, frameLayout, textView2, textView3, textView4, textView5, textView6, textView7, findViewById17, textView8, textView9, textView10, textView11, textView12, textView13, textView14, viewFlipper);
                                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                                     str = "vfHealth";
                                                                                                                                                                                                                                                                 } else {

@@ -24,20 +24,20 @@ public final class ChapterFrame extends Id3Frame {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25527a;
+    public final String f11839a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f25528c;
+    public final int f11840c;
     public final long d;
     public final long e;
     private final Id3Frame[] g;
 
     ChapterFrame(Parcel parcel) {
-        super(c.f7346a);
-        this.f25527a = parcel.readString();
+        super(c.f4507a);
+        this.f11839a = parcel.readString();
         this.b = parcel.readInt();
-        this.f25528c = parcel.readInt();
+        this.f11840c = parcel.readInt();
         this.d = parcel.readLong();
         this.e = parcel.readLong();
         int readInt = parcel.readInt();
@@ -54,10 +54,10 @@ public final class ChapterFrame extends Id3Frame {
     }
 
     public ChapterFrame(String str, int i, int i2, long j, long j2, Id3Frame[] id3FrameArr) {
-        super(c.f7346a);
-        this.f25527a = str;
+        super(c.f4507a);
+        this.f11839a = str;
         this.b = i;
-        this.f25528c = i2;
+        this.f11840c = i2;
         this.d = j;
         this.e = j2;
         this.g = id3FrameArr;
@@ -80,13 +80,13 @@ public final class ChapterFrame extends Id3Frame {
                 z = false;
                 if (this.b == chapterFrame.b) {
                     z = false;
-                    if (this.f25528c == chapterFrame.f25528c) {
+                    if (this.f11840c == chapterFrame.f11840c) {
                         z = false;
                         if (this.d == chapterFrame.d) {
                             z = false;
                             if (this.e == chapterFrame.e) {
                                 z = false;
-                                if (u.a(this.f25527a, chapterFrame.f25527a)) {
+                                if (u.a(this.f11839a, chapterFrame.f11839a)) {
                                     if (!Arrays.equals(this.g, chapterFrame.g)) {
                                         return false;
                                     }
@@ -104,18 +104,18 @@ public final class ChapterFrame extends Id3Frame {
 
     public int hashCode() {
         int i = this.b;
-        int i2 = this.f25528c;
+        int i2 = this.f11840c;
         int i3 = (int) this.d;
         int i4 = (int) this.e;
-        String str = this.f25527a;
+        String str = this.f11839a;
         return (str != null ? str.hashCode() : 0) + ((((((((i + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + i2) * 31) + i3) * 31) + i4) * 31);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f25527a);
+        parcel.writeString(this.f11839a);
         parcel.writeInt(this.b);
-        parcel.writeInt(this.f25528c);
+        parcel.writeInt(this.f11840c);
         parcel.writeLong(this.d);
         parcel.writeLong(this.e);
         parcel.writeInt(this.g.length);

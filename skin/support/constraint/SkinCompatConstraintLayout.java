@@ -18,6 +18,7 @@ public class SkinCompatConstraintLayout extends ConstraintLayout implements Skin
         this(context, attributeSet, 0);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public SkinCompatConstraintLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
@@ -33,7 +34,6 @@ public class SkinCompatConstraintLayout extends ConstraintLayout implements Skin
         }
     }
 
-    @Override // android.view.View
     public void setBackgroundResource(int i) {
         super.setBackgroundResource(i);
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.mBackgroundTintHelper;

@@ -41,7 +41,7 @@ public final class MutableClassToInstanceMap<B> extends ForwardingMap<Class<? ex
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.google.common.collect.ForwardingMapEntry, com.google.common.collect.ForwardingObject
             public Map.Entry<Class<? extends B>, B> delegate() {
-                return Map.Entry.this;
+                return entry;
             }
 
             @Override // com.google.common.collect.ForwardingMapEntry, java.util.Map.Entry
@@ -78,7 +78,7 @@ public final class MutableClassToInstanceMap<B> extends ForwardingMap<Class<? ex
                 return MutableClassToInstanceMap.this.delegate().entrySet();
             }
 
-            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable
+            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public Iterator<Map.Entry<Class<? extends B>, B>> iterator() {
                 return new TransformedIterator<Map.Entry<Class<? extends B>, B>, Map.Entry<Class<? extends B>, B>>(delegate().iterator()) { // from class: com.google.common.collect.MutableClassToInstanceMap.2.1
                     /* JADX INFO: Access modifiers changed from: package-private */
@@ -115,12 +115,12 @@ public final class MutableClassToInstanceMap<B> extends ForwardingMap<Class<? ex
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.common.collect.ForwardingMap, java.util.Map
+    @Override // com.google.common.collect.ForwardingMap, java.util.Map, com.google.common.collect.BiMap
     public /* bridge */ /* synthetic */ Object put(Object obj, Object obj2) {
         return put((Class<? extends Class<? extends B>>) obj, (Class<? extends B>) obj2);
     }
 
-    @Override // com.google.common.collect.ForwardingMap, java.util.Map
+    @Override // com.google.common.collect.ForwardingMap, java.util.Map, com.google.common.collect.BiMap
     public void putAll(Map<? extends Class<? extends B>, ? extends B> map) {
         LinkedHashMap linkedHashMap = new LinkedHashMap(map);
         for (Map.Entry entry : linkedHashMap.entrySet()) {

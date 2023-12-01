@@ -15,13 +15,9 @@ import kotlin.ranges.RangesKt;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/kbswitch/KeyboardPop.class */
 public final class KeyboardPop extends PopupWindow implements ViewTreeObserver.OnGlobalLayoutListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Activity f10424a;
+    private final Activity a;
     private final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final View f10425c;
+    private final View c;
     private int d;
     private int e;
     private int f;
@@ -32,16 +28,16 @@ public final class KeyboardPop extends PopupWindow implements ViewTreeObserver.O
         super(activity);
         Intrinsics.e(activity, "activity");
         Intrinsics.e(parentView, "parentView");
-        this.f10424a = activity;
+        this.a = activity;
         this.b = parentView;
-        View view = new View(this.f10424a);
-        this.f10425c = view;
+        View view = new View(this.a);
+        this.c = view;
         setContentView(view);
         setSoftInputMode(21);
         setInputMethodMode(1);
         setWidth(0);
         setHeight(-1);
-        this.f10425c.getViewTreeObserver().addOnGlobalLayoutListener(this);
+        this.c.getViewTreeObserver().addOnGlobalLayoutListener(this);
     }
 
     private final void a(int i, int i2) {
@@ -79,7 +75,7 @@ public final class KeyboardPop extends PopupWindow implements ViewTreeObserver.O
 
     @Override // android.widget.PopupWindow
     public void dismiss() {
-        this.f10425c.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        this.c.getViewTreeObserver().removeOnGlobalLayoutListener(this);
         this.g = null;
         super.dismiss();
     }
@@ -87,11 +83,11 @@ public final class KeyboardPop extends PopupWindow implements ViewTreeObserver.O
     @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
     public void onGlobalLayout() {
         boolean z;
-        int height = this.f10425c.getHeight();
+        int height = this.c.getHeight();
         if (height <= 0) {
             return;
         }
-        if (c() - height <= UtilsKt.a(this.f10424a, 100.0f)) {
+        if (c() - height <= UtilsKt.a(this.a, 100.0f)) {
             this.f = height;
             z = false;
         } else {
@@ -107,7 +103,7 @@ public final class KeyboardPop extends PopupWindow implements ViewTreeObserver.O
         }
         this.d = i2;
         this.e = i;
-        int i3 = this.f10424a.getResources().getConfiguration().orientation;
+        int i3 = this.a.getResources().getConfiguration().orientation;
         if (i < 120) {
             this.e = 0;
             a(0, i3);

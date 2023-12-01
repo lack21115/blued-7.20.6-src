@@ -62,8 +62,8 @@ public class ChatBgSettingFragment extends MVPBaseFragment<IChatBgSettingIView, 
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
-                    if (ChatBgSettingFragment.this.f28293a != null) {
-                        ((ChatBgSettingPresent) ChatBgSettingFragment.this.f28293a).g();
+                    if (ChatBgSettingFragment.this.f14603a != null) {
+                        ((ChatBgSettingPresent) ChatBgSettingFragment.this.f14603a).g();
                     }
                 }
             }, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
@@ -79,7 +79,7 @@ public class ChatBgSettingFragment extends MVPBaseFragment<IChatBgSettingIView, 
 
     @Override // com.soft.blued.base.mvp.MVPBaseFragment
     public void b(Bundle bundle) {
-        this.f.setCenterText(R.string.biao_v4_chat_setting_select_bg);
+        this.f.setCenterText((int) R.string.biao_v4_chat_setting_select_bg);
         this.f.a();
         this.f.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.ChatBgSettingFragment.1
             @Override // android.view.View.OnClickListener
@@ -88,10 +88,10 @@ public class ChatBgSettingFragment extends MVPBaseFragment<IChatBgSettingIView, 
                 ChatBgSettingFragment.this.getActivity().finish();
             }
         });
-        this.j = (LabeledTextView) this.f28294c.findViewById(R.id.chat_setting_select_bg);
-        this.k = (LabeledTextView) this.f28294c.findViewById(R.id.chat_setting_select_picture);
-        this.l = (LabeledTextView) this.f28294c.findViewById(R.id.chat_setting_take_photo);
-        this.m = (TextView) this.f28294c.findViewById(R.id.chat_setting_set_default);
+        this.j = (LabeledTextView) this.f14604c.findViewById(R.id.chat_setting_select_bg);
+        this.k = (LabeledTextView) this.f14604c.findViewById(R.id.chat_setting_select_picture);
+        this.l = (LabeledTextView) this.f14604c.findViewById(R.id.chat_setting_take_photo);
+        this.m = (TextView) this.f14604c.findViewById(R.id.chat_setting_set_default);
         this.j.setOnClickListener(this);
         this.k.setOnClickListener(this);
         this.l.setOnClickListener(this);
@@ -126,21 +126,19 @@ public class ChatBgSettingFragment extends MVPBaseFragment<IChatBgSettingIView, 
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
-        if (this.f28293a != 0) {
+        if (this.f14603a != 0) {
             switch (view.getId()) {
                 case R.id.chat_setting_select_bg /* 2131362831 */:
                     InstantLog.b("set_chat_bg_option_click", 0);
-                    ((ChatBgSettingPresent) this.f28293a).d();
+                    ((ChatBgSettingPresent) this.f14603a).d();
                     return;
                 case R.id.chat_setting_select_picture /* 2131362832 */:
                     InstantLog.b("set_chat_bg_option_click", 1);
                     PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.msg.ChatBgSettingFragment.3
-                        @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void U_() {
-                            ((ChatBgSettingPresent) ChatBgSettingFragment.this.f28293a).e();
+                            ((ChatBgSettingPresent) ChatBgSettingFragment.this.f14603a).e();
                         }
 
-                        @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void a(String[] strArr) {
                         }
                     });
@@ -151,12 +149,10 @@ public class ChatBgSettingFragment extends MVPBaseFragment<IChatBgSettingIView, 
                 case R.id.chat_setting_take_photo /* 2131362834 */:
                     InstantLog.b("set_chat_bg_option_click", 2);
                     PermissionUtils.b(new PermissionCallbacks() { // from class: com.soft.blued.ui.msg.ChatBgSettingFragment.4
-                        @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void U_() {
-                            ((ChatBgSettingPresent) ChatBgSettingFragment.this.f28293a).f();
+                            ((ChatBgSettingPresent) ChatBgSettingFragment.this.f14603a).f();
                         }
 
-                        @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void a(String[] strArr) {
                         }
                     });
@@ -167,7 +163,6 @@ public class ChatBgSettingFragment extends MVPBaseFragment<IChatBgSettingIView, 
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         return super.a(R.layout.fragment_chat_bg_setting, layoutInflater, viewGroup, bundle);
     }

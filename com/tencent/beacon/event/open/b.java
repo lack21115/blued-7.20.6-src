@@ -10,13 +10,13 @@ import com.tencent.beacon.base.util.c;
 public class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ BeaconConfig f35074a;
+    final /* synthetic */ BeaconConfig f21383a;
     final /* synthetic */ BeaconReport b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public b(BeaconReport beaconReport, BeaconConfig beaconConfig) {
         this.b = beaconReport;
-        this.f35074a = beaconConfig;
+        this.f21383a = beaconConfig;
     }
 
     @Override // java.lang.Runnable
@@ -24,7 +24,7 @@ public class b implements Runnable {
         try {
             j.a();
             j.h();
-            this.b.a(this.f35074a);
+            this.b.a(this.f21383a);
             this.b.a();
             c.a("BeaconReport", "App: %s start success!", com.tencent.beacon.a.c.c.d().f());
         } catch (Throwable th) {

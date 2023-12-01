@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.SystemClock;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.base.util.r;
 import com.tencent.liteav.videobase.base.TakeSnapshotListener;
@@ -32,10 +31,10 @@ public final class ai implements r.a, bf.a {
     private static final PixelFrame b = new PixelFrame();
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f36978a;
+    private final String f23287a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.tencent.liteav.videobase.utils.h f36979c;
+    private final com.tencent.liteav.videobase.utils.h f23288c;
     private com.tencent.liteav.base.util.b f;
     private com.tencent.liteav.base.util.r g;
     private bf h;
@@ -66,7 +65,7 @@ public final class ai implements r.a, bf.a {
     public static final /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f36981a;
+        static final /* synthetic */ int[] f23290a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -74,25 +73,25 @@ public final class ai implements r.a, bf.a {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[c.d.values().length];
-            f36981a = iArr;
+            f23290a = iArr;
             try {
                 iArr[c.d.CONTINUE_ENCODE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f36981a[c.d.RESTART_ENCODER.ordinal()] = 2;
+                f23290a[c.d.RESTART_ENCODER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f36981a[c.d.USE_HARDWARE.ordinal()] = 3;
+                f23290a[c.d.USE_HARDWARE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f36981a[c.d.USE_SOFTWARE.ordinal()] = 4;
+                f23290a[c.d.USE_SOFTWARE.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f36981a[c.d.REPORT_ENCODE_FAILED.ordinal()] = 5;
+                f23290a[c.d.REPORT_ENCODE_FAILED.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -101,31 +100,31 @@ public final class ai implements r.a, bf.a {
     public ai(IVideoReporter iVideoReporter, VideoProducerDef.StreamType streamType, boolean z) {
         a unused;
         a unused2;
-        this.f36978a = "VideoEncodeController_" + streamType + BridgeUtil.UNDERLINE_STR + hashCode();
+        this.f23287a = "VideoEncodeController_" + streamType + "_" + hashCode();
         this.u = iVideoReporter;
-        unused = a.C0941a.f36968a;
+        unused = a.C0771a.f23277a;
         boolean a2 = a.a();
-        unused2 = a.C0941a.f36968a;
+        unused2 = a.C0771a.f23277a;
         this.v = new c(a2, this.u, streamType);
         this.w = new com.tencent.liteav.videobase.utils.f("VideoEncodeController", 2000, new f.a(this) { // from class: com.tencent.liteav.videoproducer.encoder.aj
 
             /* renamed from: a  reason: collision with root package name */
-            private final ai f36982a;
+            private final ai f23291a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f36982a = this;
+                this.f23291a = this;
             }
 
             @Override // com.tencent.liteav.videobase.utils.f.a
             public final void a(double d) {
-                LiteavLog.i(this.f36982a.f36978a, "encoder input fps: ".concat(String.valueOf(d)));
+                LiteavLog.i(this.f23291a.f23287a, "encoder input fps: ".concat(String.valueOf(d)));
             }
         });
         this.x = new be(iVideoReporter, streamType);
         this.y = streamType;
         this.z = z;
-        this.f36979c = z ? new com.tencent.liteav.videobase.utils.b() : new com.tencent.liteav.videobase.utils.j(2);
+        this.f23288c = z ? new com.tencent.liteav.videobase.utils.b() : new com.tencent.liteav.videobase.utils.j(2);
     }
 
     private void a(long j, long j2) {
@@ -142,10 +141,10 @@ public final class ai implements r.a, bf.a {
         ServerVideoProducerConfig serverVideoProducerConfig = this.m;
         if ((serverVideoProducerConfig == null || serverVideoProducerConfig.isHardwareEncoderAllowed()) && VideoEncoderDef.a.HARDWARE == aVar) {
             this.h = new p(this.d, this.u, this.y);
-            LiteavLog.i(this.f36978a, "create HardwareVideoEncoder");
+            LiteavLog.i(this.f23287a, "create HardwareVideoEncoder");
         } else {
             this.h = new SoftwareVideoEncoder(this.u, this.y);
-            LiteavLog.i(this.f36978a, "create SoftwareVideoEncoder");
+            LiteavLog.i(this.f23287a, "create SoftwareVideoEncoder");
         }
         this.h.initialize();
         this.h.setServerConfig(this.m);
@@ -160,7 +159,7 @@ public final class ai implements r.a, bf.a {
         if (aVar != k || b2.codecType != l || b2.referenceStrategy != m) {
             this.u.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_ENCODER_TYPE, this.y.mValue, new VideoEncoderDef.EncoderProperty(aVar, b2.isEnablesRps() ? VideoEncoderDef.ReferenceStrategy.RPS : VideoEncoderDef.ReferenceStrategy.FIX_GOP, b2.codecType));
         }
-        String str = this.f36978a;
+        String str = this.f23287a;
         LiteavLog.i(str, "open encoder cost time: " + (SystemClock.elapsedRealtime() - elapsedRealtime));
     }
 
@@ -190,7 +189,7 @@ public final class ai implements r.a, bf.a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(ai aiVar, Rotation rotation) {
-        LiteavLog.i(aiVar.f36978a, "setEncodeRotation: ".concat(String.valueOf(rotation)));
+        LiteavLog.i(aiVar.f23287a, "setEncodeRotation: ".concat(String.valueOf(rotation)));
         if (rotation == null) {
             return;
         }
@@ -199,7 +198,7 @@ public final class ai implements r.a, bf.a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(ai aiVar, h.a aVar) {
-        LiteavLog.i(aiVar.f36978a, "onEncodedFail: ".concat(String.valueOf(aVar)));
+        LiteavLog.i(aiVar.f23287a, "onEncodedFail: ".concat(String.valueOf(aVar)));
         aiVar.u.notifyError(h.a.ERR_VIDEO_ENCODE_FATALERROR, "encode fail:".concat(String.valueOf(aVar)), new Object[0]);
         VideoEncoderDef.VideoEncoderDataListener videoEncoderDataListener = aiVar.i;
         if (videoEncoderDataListener != null) {
@@ -209,7 +208,7 @@ public final class ai implements r.a, bf.a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(ai aiVar, VideoEncodeParams videoEncodeParams) {
-        LiteavLog.i(aiVar.f36978a, "reconfig: ".concat(String.valueOf(videoEncodeParams)));
+        LiteavLog.i(aiVar.f23287a, "reconfig: ".concat(String.valueOf(videoEncodeParams)));
         if (videoEncodeParams != null) {
             VideoEncodeParams b2 = aiVar.v.b();
             aiVar.v.a(videoEncodeParams);
@@ -230,7 +229,7 @@ public final class ai implements r.a, bf.a {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(ai aiVar, VideoEncodeParams videoEncodeParams, VideoEncoderDef.VideoEncoderDataListener videoEncoderDataListener) {
         if (videoEncodeParams == null || videoEncodeParams.width == 0 || videoEncodeParams.height == 0 || videoEncodeParams.fps == 0 || videoEncodeParams.gop == 0 || videoEncodeParams.bitrate == 0) {
-            LiteavLog.e(aiVar.f36978a, "invalid params, Start failed.");
+            LiteavLog.e(aiVar.f23287a, "invalid params, Start failed.");
             return;
         }
         aiVar.i = videoEncoderDataListener;
@@ -247,29 +246,29 @@ public final class ai implements r.a, bf.a {
     public static /* synthetic */ void a(ai aiVar, VideoEncoderDef.EncodeStrategy encodeStrategy) {
         a aVar;
         a aVar2;
-        LiteavLog.i(aiVar.f36978a, "setEncodeStrategy ".concat(String.valueOf(encodeStrategy)));
+        LiteavLog.i(aiVar.f23287a, "setEncodeStrategy ".concat(String.valueOf(encodeStrategy)));
         if (encodeStrategy == null) {
             return;
         }
         c cVar = aiVar.v;
-        LiteavLog.i(cVar.f37010a, "strategy = ".concat(String.valueOf(encodeStrategy)));
+        LiteavLog.i(cVar.f23319a, "strategy = ".concat(String.valueOf(encodeStrategy)));
         if (cVar.j != encodeStrategy) {
             cVar.j = encodeStrategy;
             cVar.k = null;
             boolean z = cVar.j != VideoEncoderDef.EncodeStrategy.USE_HARDWARE_ONLY;
-            aVar = a.C0941a.f36968a;
-            aVar.f36967a.f36955a = z;
+            aVar = a.C0771a.f23277a;
+            aVar.f23276a.f23264a = z;
             IVideoReporter iVideoReporter = cVar.q;
             com.tencent.liteav.videobase.videobase.i iVar = com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_ENCODER_ABILITY;
             int i = cVar.r.mValue;
-            aVar2 = a.C0941a.f36968a;
-            iVideoReporter.updateStatus(iVar, i, aVar2.f36967a);
+            aVar2 = a.C0771a.f23277a;
+            iVideoReporter.updateStatus(iVar, i, aVar2.f23276a);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(ai aiVar, String str) {
-        LiteavLog.i(aiVar.f36978a, "onEncodeError: ".concat(String.valueOf(str)));
+        LiteavLog.i(aiVar.f23287a, "onEncodeError: ".concat(String.valueOf(str)));
         aiVar.v.h = true;
     }
 
@@ -285,10 +284,10 @@ public final class ai implements r.a, bf.a {
         boolean z2 = true;
         if (!aiVar.s) {
             aiVar.s = true;
-            LiteavLog.i(aiVar.f36978a, "encode first frame cost time: " + (SystemClock.elapsedRealtime() - aiVar.q));
+            LiteavLog.i(aiVar.f23287a, "encode first frame cost time: " + (SystemClock.elapsedRealtime() - aiVar.q));
         }
         if (z) {
-            LiteavLog.i(aiVar.f36978a, "got eos");
+            LiteavLog.i(aiVar.f23287a, "got eos");
         } else {
             aiVar.a(encodedVideoFrame.frameIndex, encodedVideoFrame.gopIndex);
             c cVar = aiVar.v;
@@ -297,15 +296,15 @@ public final class ai implements r.a, bf.a {
             }
             w wVar = cVar.u;
             if (encodedVideoFrame == null || encodedVideoFrame.data == null) {
-                LiteavLog.w(wVar.f37041a, "encodedVideoFrame is null.");
+                LiteavLog.w(wVar.f23350a, "encodedVideoFrame is null.");
             } else {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
-                if (elapsedRealtime <= wVar.f37042c + wVar.i) {
+                if (elapsedRealtime <= wVar.f23351c + wVar.i) {
                     wVar.d++;
                 } else {
-                    wVar.b = (wVar.d * 1000.0d) / (elapsedRealtime - wVar.f37042c);
+                    wVar.b = (wVar.d * 1000.0d) / (elapsedRealtime - wVar.f23351c);
                     wVar.d = 1L;
-                    wVar.f37042c = elapsedRealtime;
+                    wVar.f23351c = elapsedRealtime;
                     if (wVar.h != null) {
                         wVar.h.a(wVar.b);
                     }
@@ -326,8 +325,8 @@ public final class ai implements r.a, bf.a {
                 wVar.g += remaining;
             }
             be beVar = aiVar.x;
-            if (encodedVideoFrame != null && beVar.f37009c.containsKey(Long.valueOf(encodedVideoFrame.dts))) {
-                long elapsedRealtime3 = SystemClock.elapsedRealtime() - beVar.f37009c.remove(Long.valueOf(encodedVideoFrame.dts)).longValue();
+            if (encodedVideoFrame != null && beVar.f23318c.containsKey(Long.valueOf(encodedVideoFrame.dts))) {
+                long elapsedRealtime3 = SystemClock.elapsedRealtime() - beVar.f23318c.remove(Long.valueOf(encodedVideoFrame.dts)).longValue();
                 beVar.e++;
                 beVar.d += elapsedRealtime3;
                 beVar.b.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_ENCODER_COST, Long.valueOf(elapsedRealtime3));
@@ -372,7 +371,7 @@ public final class ai implements r.a, bf.a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void b(ai aiVar, Rotation rotation) {
-        LiteavLog.i(aiVar.f36978a, "setCaptureRotation: ".concat(String.valueOf(rotation)));
+        LiteavLog.i(aiVar.f23287a, "setCaptureRotation: ".concat(String.valueOf(rotation)));
         if (rotation == null) {
             return;
         }
@@ -404,10 +403,10 @@ public final class ai implements r.a, bf.a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void d(ai aiVar) {
-        LiteavLog.d(aiVar.f36978a, "stop");
+        LiteavLog.d(aiVar.f23287a, "stop");
         aiVar.o();
         aiVar.j();
-        aiVar.f36979c.b();
+        aiVar.f23288c.b();
         aiVar.r = false;
         aiVar.s = false;
         aiVar.w.b();
@@ -415,7 +414,7 @@ public final class ai implements r.a, bf.a {
         cVar.c();
         cVar.o = null;
         cVar.p = null;
-        cVar.f37011c = 0L;
+        cVar.f23320c = 0L;
         cVar.d = 0.0f;
         cVar.e = 0.0f;
         cVar.f = 0.0f;
@@ -430,7 +429,7 @@ public final class ai implements r.a, bf.a {
         cVar.s = false;
         cVar.t = 0;
         be beVar = aiVar.x;
-        beVar.f37009c.clear();
+        beVar.f23318c.clear();
         beVar.e = 0L;
         beVar.d = 0L;
     }
@@ -438,7 +437,7 @@ public final class ai implements r.a, bf.a {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void f(ai aiVar) {
         if (!aiVar.r) {
-            LiteavLog.i(aiVar.f36978a, "encoder receive first frame");
+            LiteavLog.i(aiVar.f23287a, "encoder receive first frame");
             aiVar.q = SystemClock.elapsedRealtime();
             if (aiVar.g()) {
                 aiVar.n();
@@ -454,7 +453,7 @@ public final class ai implements r.a, bf.a {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void h() {
-        PixelFrame a2 = this.f36979c.a();
+        PixelFrame a2 = this.f23288c.a();
         if (a2 == null) {
             return;
         }
@@ -463,12 +462,12 @@ public final class ai implements r.a, bf.a {
             beVar.f = new com.tencent.liteav.base.util.r(Looper.myLooper(), beVar);
             beVar.f.a(0, 1000);
         }
-        if (beVar.f37009c.containsKey(Long.valueOf(a2.getTimestamp()))) {
-            String str = beVar.f37008a;
+        if (beVar.f23318c.containsKey(Long.valueOf(a2.getTimestamp()))) {
+            String str = beVar.f23317a;
             LiteavLog.i(str, "Duplicate timestamp!" + a2.getTimestamp());
         }
-        beVar.f37009c.put(Long.valueOf(a2.getTimestamp()), Long.valueOf(SystemClock.elapsedRealtime()));
-        int i = AnonymousClass2.f36981a[this.v.a(a2).ordinal()];
+        beVar.f23318c.put(Long.valueOf(a2.getTimestamp()), Long.valueOf(SystemClock.elapsedRealtime()));
+        int i = AnonymousClass2.f23290a[this.v.a(a2).ordinal()];
         if (i == 1) {
             b(a2);
         } else if (i == 2) {
@@ -484,12 +483,12 @@ public final class ai implements r.a, bf.a {
             if (a2 != b) {
                 a2.release();
             }
-            LiteavLog.i(this.f36978a, "encode ask instruction return default.");
+            LiteavLog.i(this.f23287a, "encode ask instruction return default.");
         } else {
             if (a2 != b) {
                 be beVar2 = this.x;
-                if (a2 != null && beVar2.f37009c.containsKey(Long.valueOf(a2.getTimestamp()))) {
-                    beVar2.f37009c.remove(Long.valueOf(a2.getTimestamp()));
+                if (a2 != null && beVar2.f23318c.containsKey(Long.valueOf(a2.getTimestamp()))) {
+                    beVar2.f23318c.remove(Long.valueOf(a2.getTimestamp()));
                 }
                 a2.release();
             }
@@ -552,14 +551,14 @@ public final class ai implements r.a, bf.a {
     private void n() {
         com.tencent.liteav.base.util.b bVar;
         if (this.g != null) {
-            LiteavLog.i(this.f36978a, "timer is not null before start.");
+            LiteavLog.i(this.f23287a, "timer is not null before start.");
             return;
         }
         synchronized (this) {
             bVar = this.f;
         }
         if (bVar == null) {
-            LiteavLog.i(this.f36978a, "startInternal handler is null.");
+            LiteavLog.i(this.f23287a, "startInternal handler is null.");
             return;
         }
         com.tencent.liteav.base.util.r rVar = new com.tencent.liteav.base.util.r(bVar.getLooper(), this);
@@ -583,7 +582,7 @@ public final class ai implements r.a, bf.a {
 
     @Override // com.tencent.liteav.videoproducer.encoder.bf.a
     public final void a() {
-        LiteavLog.i(this.f36978a, "onRequestRestart");
+        LiteavLog.i(this.f23287a, "onRequestRestart");
         a(ar.a(this), "restartEncoder");
     }
 
@@ -598,7 +597,7 @@ public final class ai implements r.a, bf.a {
         if (this.e) {
             return;
         }
-        this.f36979c.a(pixelFrame);
+        this.f23288c.a(pixelFrame);
         if (g()) {
             return;
         }
@@ -628,12 +627,12 @@ public final class ai implements r.a, bf.a {
     public final void a(Runnable runnable, String str) {
         synchronized (this) {
             if (!this.t) {
-                LiteavLog.w(this.f36978a, "runOnEncodeThread before initialize! ".concat(String.valueOf(str)));
+                LiteavLog.w(this.f23287a, "runOnEncodeThread before initialize! ".concat(String.valueOf(str)));
                 return;
             }
             com.tencent.liteav.base.util.b bVar = this.f;
             if (bVar == null) {
-                LiteavLog.w(this.f36978a, "ignore runnable: ".concat(String.valueOf(str)));
+                LiteavLog.w(this.f23287a, "ignore runnable: ".concat(String.valueOf(str)));
             } else if (Looper.myLooper() == bVar.getLooper()) {
                 runnable.run();
             } else {
@@ -659,7 +658,7 @@ public final class ai implements r.a, bf.a {
             return;
         }
         if (this.v.b().fps == 0) {
-            LiteavLog.w(this.f36978a, "onTimeout: encode param is null.");
+            LiteavLog.w(this.f23287a, "onTimeout: encode param is null.");
             return;
         }
         this.n += TimeUnit.SECONDS.toMillis(1L) / b2.fps;
@@ -669,10 +668,10 @@ public final class ai implements r.a, bf.a {
     public final void b() {
         synchronized (this) {
             if (this.t) {
-                LiteavLog.i(this.f36978a, "already initialzied");
+                LiteavLog.i(this.f23287a, "already initialzied");
                 return;
             }
-            LiteavLog.i(this.f36978a, "initialzie");
+            LiteavLog.i(this.f23287a, "initialzie");
             HandlerThread handlerThread = new HandlerThread("video-encoder");
             handlerThread.start();
             this.f = new com.tencent.liteav.base.util.b(handlerThread.getLooper());
@@ -690,10 +689,10 @@ public final class ai implements r.a, bf.a {
             public final void run() {
                 synchronized (this) {
                     if (!ai.this.t) {
-                        LiteavLog.i(ai.this.f36978a, "not initialized.");
+                        LiteavLog.i(ai.this.f23287a, "not initialized.");
                         return;
                     }
-                    LiteavLog.d(ai.this.f36978a, "uninitialize");
+                    LiteavLog.d(ai.this.f23287a, "uninitialize");
                     com.tencent.liteav.base.util.b bVar = ai.this.f;
                     ai.j(ai.this);
                     ai.k(ai.this);
@@ -707,7 +706,7 @@ public final class ai implements r.a, bf.a {
 
     public final void d() {
         this.e = true;
-        this.f36979c.a(b);
+        this.f23288c.a(b);
     }
 
     public final void e() {
@@ -722,9 +721,9 @@ public final class ai implements r.a, bf.a {
             b2 = (VideoEncodeParams) futureTask.get(500L, TimeUnit.MILLISECONDS);
         } catch (Exception e) {
             if (e instanceof TimeoutException) {
-                LiteavLog.w(this.f36978a, "getEncodeParams future task timeout:".concat(String.valueOf(e)));
+                LiteavLog.w(this.f23287a, "getEncodeParams future task timeout:".concat(String.valueOf(e)));
             } else {
-                LiteavLog.w(this.f36978a, "getEncodeParams future task error: ".concat(String.valueOf(e)));
+                LiteavLog.w(this.f23287a, "getEncodeParams future task error: ".concat(String.valueOf(e)));
             }
             synchronized (this) {
                 b2 = this.v.b();
@@ -744,21 +743,21 @@ public final class ai implements r.a, bf.a {
     @Override // com.tencent.liteav.videoproducer.encoder.VideoEncoderDef.VideoEncoderDataListener
     public final void onEncodedNAL(EncodedVideoFrame encodedVideoFrame, boolean z) {
         if (encodedVideoFrame == null) {
-            LiteavLog.d(this.f36978a, "onEncodedNAL encoded frame is null.");
+            LiteavLog.d(this.f23287a, "onEncodedNAL encoded frame is null.");
             return;
         }
         synchronized (this) {
             if (this.t) {
                 a(av.a(this, z, encodedVideoFrame), "");
             } else {
-                LiteavLog.d(this.f36978a, "onEncodedNAL called when uninitialized!");
+                LiteavLog.d(this.f23287a, "onEncodedNAL called when uninitialized!");
             }
         }
     }
 
     @Override // com.tencent.liteav.videoproducer.encoder.VideoEncoderDef.VideoEncoderDataListener
     public final void onOutputFormatChanged(MediaFormat mediaFormat) {
-        LiteavLog.i(this.f36978a, "onOutputFormatChanged: ".concat(String.valueOf(mediaFormat)));
+        LiteavLog.i(this.f23287a, "onOutputFormatChanged: ".concat(String.valueOf(mediaFormat)));
         VideoEncoderDef.VideoEncoderDataListener videoEncoderDataListener = this.i;
         if (videoEncoderDataListener != null) {
             videoEncoderDataListener.onOutputFormatChanged(mediaFormat);

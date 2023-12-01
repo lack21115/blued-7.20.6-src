@@ -37,9 +37,8 @@ public interface IAppOpsService extends IInterface {
         static final int TRANSACTION_startWatchingMode = 5;
         static final int TRANSACTION_stopWatchingMode = 6;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/app/IAppOpsService$Stub$Proxy.class */
-        public static class Proxy implements IAppOpsService {
+        private static class Proxy implements IAppOpsService {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -519,7 +518,7 @@ public interface IAppOpsService extends IInterface {
                     return true;
                 case 15:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setUserRestrictions(parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null, parcel.readInt());
+                    setUserRestrictions(parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, parcel.readInt());
                     parcel2.writeNoException();
                     return true;
                 case 16:
@@ -557,7 +556,7 @@ public interface IAppOpsService extends IInterface {
                     resetCounters();
                     parcel2.writeNoException();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

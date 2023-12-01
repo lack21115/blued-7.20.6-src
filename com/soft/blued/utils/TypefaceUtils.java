@@ -44,11 +44,11 @@ public class TypefaceUtils {
     public static class SpannIndex {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f34797a;
+        public int f21106a;
         public int b;
 
         public SpannIndex(int i, int i2) {
-            this.f34797a = i;
+            this.f21106a = i;
             this.b = i2;
         }
     }
@@ -105,7 +105,7 @@ public class TypefaceUtils {
         textView.setText(str);
         if (d > 1.0d) {
             textView.setTextSize(DensityUtils.c(context, (float) (textView.getTextSize() * d)));
-            ImageView imageView = (ImageView) inflate.findViewById(2131365590);
+            ImageView imageView = (ImageView) inflate.findViewById(R.id.iv_logo);
             ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
             layoutParams.width = (int) (layoutParams.width * d);
             layoutParams.height = (int) (layoutParams.height * d);
@@ -162,11 +162,11 @@ public class TypefaceUtils {
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(textView.getText());
-        ClickUtils.RevoWhiteClickSpan revoWhiteClickSpan = z ? new ClickUtils.RevoWhiteClickSpan(context, i, new View.OnClickListener() { // from class: com.soft.blued.utils.TypefaceUtils.2
+        ClickUtils.RevoClickSpan revoWhiteClickSpan = z ? new ClickUtils.RevoWhiteClickSpan(context, i, new View.OnClickListener() { // from class: com.soft.blued.utils.TypefaceUtils.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                View.OnClickListener onClickListener2 = View.OnClickListener.this;
+                View.OnClickListener onClickListener2 = onClickListener;
                 if (onClickListener2 != null) {
                     onClickListener2.onClick(view);
                 }
@@ -175,18 +175,18 @@ public class TypefaceUtils {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                View.OnClickListener onClickListener2 = View.OnClickListener.this;
+                View.OnClickListener onClickListener2 = onClickListener;
                 if (onClickListener2 != null) {
                     onClickListener2.onClick(view);
                 }
             }
         });
         if (!a.V.equals(BlueAppLocal.c().getLanguage()) || spannIndex == null) {
-            if (spannIndex2 != null && spannIndex2.f34797a < spannableStringBuilder.length() && spannIndex2.b <= spannableStringBuilder.length()) {
-                spannableStringBuilder.setSpan(revoWhiteClickSpan, spannIndex2.f34797a, spannIndex2.b, 17);
+            if (spannIndex2 != null && spannIndex2.f21106a < spannableStringBuilder.length() && spannIndex2.b <= spannableStringBuilder.length()) {
+                spannableStringBuilder.setSpan(revoWhiteClickSpan, spannIndex2.f21106a, spannIndex2.b, 17);
             }
-        } else if (spannIndex.f34797a < spannableStringBuilder.length() && spannIndex.b <= spannableStringBuilder.length()) {
-            spannableStringBuilder.setSpan(revoWhiteClickSpan, spannIndex.f34797a, spannIndex.b, 17);
+        } else if (spannIndex.f21106a < spannableStringBuilder.length() && spannIndex.b <= spannableStringBuilder.length()) {
+            spannableStringBuilder.setSpan(revoWhiteClickSpan, spannIndex.f21106a, spannIndex.b, 17);
         }
         textView.setText(spannableStringBuilder);
         textView.setMovementMethod(LinkMovementMethod.getInstance());

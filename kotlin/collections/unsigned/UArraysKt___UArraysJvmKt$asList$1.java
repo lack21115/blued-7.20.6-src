@@ -10,23 +10,21 @@ import kotlin.collections.ArraysKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/unsigned/UArraysKt___UArraysJvmKt$asList$1.class */
 public final class UArraysKt___UArraysJvmKt$asList$1 extends AbstractList<UInt> implements RandomAccess {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ int[] f42417a;
+    final /* synthetic */ int[] a;
 
     public boolean a(int i) {
-        return UIntArray.b(this.f42417a, i);
+        return UIntArray.b(this.a, i);
     }
 
     public int b(int i) {
-        return UIntArray.a(this.f42417a, i);
+        return UIntArray.a(this.a, i);
     }
 
     public int c(int i) {
-        return ArraysKt.b(this.f42417a, i);
+        return ArraysKt.b(this.a, i);
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public final boolean contains(Object obj) {
         if (obj instanceof UInt) {
             return a(((UInt) obj).a());
@@ -35,7 +33,7 @@ public final class UArraysKt___UArraysJvmKt$asList$1 extends AbstractList<UInt> 
     }
 
     public int d(int i) {
-        return ArraysKt.c(this.f42417a, i);
+        return ArraysKt.c(this.a, i);
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
@@ -45,7 +43,7 @@ public final class UArraysKt___UArraysJvmKt$asList$1 extends AbstractList<UInt> 
 
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
-        return UIntArray.a(this.f42417a);
+        return UIntArray.a(this.a);
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
@@ -56,9 +54,9 @@ public final class UArraysKt___UArraysJvmKt$asList$1 extends AbstractList<UInt> 
         return -1;
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
-        return UIntArray.c(this.f42417a);
+        return UIntArray.c(this.a);
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List

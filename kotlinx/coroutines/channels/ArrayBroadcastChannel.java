@@ -20,9 +20,7 @@ public final class ArrayBroadcastChannel<E> extends AbstractSendChannel<E> imple
     private volatile /* synthetic */ int _size;
     private volatile /* synthetic */ long _tail;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ReentrantLock f42890c;
+    private final ReentrantLock c;
     private final Object[] d;
     private final List<Subscriber<E>> e;
 
@@ -32,14 +30,12 @@ public final class ArrayBroadcastChannel<E> extends AbstractSendChannel<E> imple
     public static final class Subscriber<E> extends AbstractChannel<E> implements ReceiveChannel<E> {
         private volatile /* synthetic */ long _subHead;
         private final ArrayBroadcastChannel<E> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final ReentrantLock f42891c;
+        private final ReentrantLock c;
 
         public Subscriber(ArrayBroadcastChannel<E> arrayBroadcastChannel) {
             super(null);
             this.b = arrayBroadcastChannel;
-            this.f42891c = new ReentrantLock();
+            this.c = new ReentrantLock();
             this._subHead = 0L;
         }
 
@@ -47,9 +43,9 @@ public final class ArrayBroadcastChannel<E> extends AbstractSendChannel<E> imple
             long x = x();
             Object s = this.b.s();
             if (x < this.b.d()) {
-                Object c2 = this.b.c(x);
+                Object c = this.b.c(x);
                 Closed<?> s2 = s();
-                return s2 != null ? s2 : c2;
+                return s2 != null ? s2 : c;
             }
             Object obj = s;
             if (s == null) {
@@ -72,7 +68,7 @@ public final class ArrayBroadcastChannel<E> extends AbstractSendChannel<E> imple
         @Override // kotlinx.coroutines.channels.AbstractChannel
         protected Object a(SelectInstance<?> selectInstance) {
             Object obj;
-            ReentrantLock reentrantLock = this.f42891c;
+            ReentrantLock reentrantLock = this.c;
             reentrantLock.lock();
             try {
                 Object A = A();
@@ -91,7 +87,7 @@ public final class ArrayBroadcastChannel<E> extends AbstractSendChannel<E> imple
                 reentrantLock.unlock();
                 Closed closed = obj instanceof Closed ? (Closed) obj : null;
                 if (closed != null) {
-                    b_(closed.f42989a);
+                    b_(closed.a);
                 }
                 if (y()) {
                     z = true;
@@ -126,11 +122,11 @@ public final class ArrayBroadcastChannel<E> extends AbstractSendChannel<E> imple
             boolean b_ = super.b_(th);
             if (b_) {
                 ArrayBroadcastChannel.a(this.b, null, this, 1, null);
-                ReentrantLock reentrantLock = this.f42891c;
+                ReentrantLock reentrantLock = this.c;
                 reentrantLock.lock();
                 try {
                     a(this.b.d());
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                     return b_;
                 } finally {
                     reentrantLock.unlock();
@@ -153,7 +149,7 @@ public final class ArrayBroadcastChannel<E> extends AbstractSendChannel<E> imple
             /*
                 r6 = this;
                 r0 = r6
-                java.util.concurrent.locks.ReentrantLock r0 = r0.f42891c
+                java.util.concurrent.locks.ReentrantLock r0 = r0.c
                 java.util.concurrent.locks.Lock r0 = (java.util.concurrent.locks.Lock) r0
                 r10 = r0
                 r0 = r10
@@ -203,7 +199,7 @@ public final class ArrayBroadcastChannel<E> extends AbstractSendChannel<E> imple
             L60:
                 r0 = r6
                 r1 = r10
-                java.lang.Throwable r1 = r1.f42989a
+                java.lang.Throwable r1 = r1.a
                 boolean r0 = r0.b_(r1)
             L6a:
                 r0 = r6
@@ -261,7 +257,7 @@ public final class ArrayBroadcastChannel<E> extends AbstractSendChannel<E> imple
                 closed = null;
                 if (!z()) {
                     break;
-                } else if (!this.f42891c.tryLock()) {
+                } else if (!this.c.tryLock()) {
                     closed = null;
                     break;
                 } else {
@@ -280,29 +276,29 @@ public final class ArrayBroadcastChannel<E> extends AbstractSendChannel<E> imple
                                 closed = null;
                                 break;
                             } else {
-                                Symbol a2 = l.a(e, null);
-                                if (a2 != null) {
+                                Symbol a = l.a(e, null);
+                                if (a != null) {
                                     if (DebugKt.a()) {
-                                        if (!(a2 == CancellableContinuationImplKt.f42786a)) {
+                                        if (!(a == CancellableContinuationImplKt.a)) {
                                             throw new AssertionError();
                                         }
                                     }
                                     a(x() + 1);
-                                    this.f42891c.unlock();
+                                    this.c.unlock();
                                     l.b(e);
                                     z = true;
                                 }
                             }
                         }
                     } finally {
-                        this.f42891c.unlock();
+                        this.c.unlock();
                     }
                 }
             }
             if (closed == null) {
                 return z;
             }
-            b_(closed.f42989a);
+            b_(closed.a);
             return z;
         }
     }
@@ -409,20 +405,20 @@ public final class ArrayBroadcastChannel<E> extends AbstractSendChannel<E> imple
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // kotlinx.coroutines.channels.AbstractSendChannel
     public Object a(E e) {
-        ReentrantLock reentrantLock = this.f42890c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
             Closed<?> r = r();
             if (r == null) {
                 int e2 = e();
                 if (e2 >= a()) {
-                    return AbstractChannelKt.f42882c;
+                    return AbstractChannelKt.c;
                 }
                 long d = d();
                 this.d[(int) (d % a())] = e;
                 a(e2 + 1);
                 b(d + 1);
-                Unit unit = Unit.f42314a;
+                Unit unit = Unit.a;
                 reentrantLock.unlock();
                 f();
                 return AbstractChannelKt.b;
@@ -436,21 +432,21 @@ public final class ArrayBroadcastChannel<E> extends AbstractSendChannel<E> imple
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // kotlinx.coroutines.channels.AbstractSendChannel
     public Object a(E e, SelectInstance<?> selectInstance) {
-        ReentrantLock reentrantLock = this.f42890c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
             Closed<?> r = r();
             if (r == null) {
                 int e2 = e();
                 if (e2 >= a()) {
-                    return AbstractChannelKt.f42882c;
+                    return AbstractChannelKt.c;
                 }
                 if (selectInstance.g()) {
                     long d = d();
                     this.d[(int) (d % a())] = e;
                     a(e2 + 1);
                     b(d + 1);
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                     reentrantLock.unlock();
                     f();
                     return AbstractChannelKt.b;

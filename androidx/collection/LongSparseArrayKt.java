@@ -12,50 +12,50 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-8756600-dex2jar.jar:androidx/collection/LongSparseArrayKt.class */
 public final class LongSparseArrayKt {
-    public static final <T> boolean contains(LongSparseArray<T> receiver$0, long j) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        return receiver$0.containsKey(j);
+    public static final <T> boolean contains(LongSparseArray<T> longSparseArray, long j) {
+        Intrinsics.d(longSparseArray, "receiver$0");
+        return longSparseArray.containsKey(j);
     }
 
-    public static final <T> void forEach(LongSparseArray<T> receiver$0, Function2<? super Long, ? super T, Unit> action) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        Intrinsics.d(action, "action");
-        int size = receiver$0.size();
+    public static final <T> void forEach(LongSparseArray<T> longSparseArray, Function2<? super Long, ? super T, Unit> function2) {
+        Intrinsics.d(longSparseArray, "receiver$0");
+        Intrinsics.d(function2, "action");
+        int size = longSparseArray.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return;
             }
-            action.invoke(Long.valueOf(receiver$0.keyAt(i2)), receiver$0.valueAt(i2));
+            function2.invoke(Long.valueOf(longSparseArray.keyAt(i2)), longSparseArray.valueAt(i2));
             i = i2 + 1;
         }
     }
 
-    public static final <T> T getOrDefault(LongSparseArray<T> receiver$0, long j, T t) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        return receiver$0.get(j, t);
+    public static final <T> T getOrDefault(LongSparseArray<T> longSparseArray, long j, T t) {
+        Intrinsics.d(longSparseArray, "receiver$0");
+        return longSparseArray.get(j, t);
     }
 
-    public static final <T> T getOrElse(LongSparseArray<T> receiver$0, long j, Function0<? extends T> defaultValue) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        Intrinsics.d(defaultValue, "defaultValue");
-        T t = receiver$0.get(j);
-        return t != null ? t : defaultValue.invoke();
+    public static final <T> T getOrElse(LongSparseArray<T> longSparseArray, long j, Function0<? extends T> function0) {
+        Intrinsics.d(longSparseArray, "receiver$0");
+        Intrinsics.d(function0, "defaultValue");
+        T t = longSparseArray.get(j);
+        return t != null ? t : (T) function0.invoke();
     }
 
-    public static final <T> int getSize(LongSparseArray<T> receiver$0) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        return receiver$0.size();
+    public static final <T> int getSize(LongSparseArray<T> longSparseArray) {
+        Intrinsics.d(longSparseArray, "receiver$0");
+        return longSparseArray.size();
     }
 
-    public static final <T> boolean isNotEmpty(LongSparseArray<T> receiver$0) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        return !receiver$0.isEmpty();
+    public static final <T> boolean isNotEmpty(LongSparseArray<T> longSparseArray) {
+        Intrinsics.d(longSparseArray, "receiver$0");
+        return !longSparseArray.isEmpty();
     }
 
-    public static final <T> LongIterator keyIterator(final LongSparseArray<T> receiver$0) {
-        Intrinsics.d(receiver$0, "receiver$0");
+    public static final <T> LongIterator keyIterator(final LongSparseArray<T> longSparseArray) {
+        Intrinsics.d(longSparseArray, "receiver$0");
         return new LongIterator() { // from class: androidx.collection.LongSparseArrayKt$keyIterator$1
             private int b;
 
@@ -63,17 +63,15 @@ public final class LongSparseArrayKt {
                 return this.b;
             }
 
-            @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.b < receiver$0.size();
+                return this.b < longSparseArray.size();
             }
 
-            @Override // kotlin.collections.LongIterator
             public long nextLong() {
-                LongSparseArray longSparseArray = receiver$0;
+                LongSparseArray longSparseArray2 = longSparseArray;
                 int i = this.b;
                 this.b = i + 1;
-                return longSparseArray.keyAt(i);
+                return longSparseArray2.keyAt(i);
             }
 
             public final void setIndex(int i) {
@@ -82,28 +80,28 @@ public final class LongSparseArrayKt {
         };
     }
 
-    public static final <T> LongSparseArray<T> plus(LongSparseArray<T> receiver$0, LongSparseArray<T> other) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        Intrinsics.d(other, "other");
-        LongSparseArray<T> longSparseArray = new LongSparseArray<>(receiver$0.size() + other.size());
-        longSparseArray.putAll(receiver$0);
-        longSparseArray.putAll(other);
-        return longSparseArray;
+    public static final <T> LongSparseArray<T> plus(LongSparseArray<T> longSparseArray, LongSparseArray<T> longSparseArray2) {
+        Intrinsics.d(longSparseArray, "receiver$0");
+        Intrinsics.d(longSparseArray2, "other");
+        LongSparseArray<T> longSparseArray3 = new LongSparseArray<>(longSparseArray.size() + longSparseArray2.size());
+        longSparseArray3.putAll(longSparseArray);
+        longSparseArray3.putAll(longSparseArray2);
+        return longSparseArray3;
     }
 
     @Deprecated
-    public static final <T> boolean remove(LongSparseArray<T> receiver$0, long j, T t) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        return receiver$0.remove(j, t);
+    public static final <T> boolean remove(LongSparseArray<T> longSparseArray, long j, T t) {
+        Intrinsics.d(longSparseArray, "receiver$0");
+        return longSparseArray.remove(j, t);
     }
 
-    public static final <T> void set(LongSparseArray<T> receiver$0, long j, T t) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        receiver$0.put(j, t);
+    public static final <T> void set(LongSparseArray<T> longSparseArray, long j, T t) {
+        Intrinsics.d(longSparseArray, "receiver$0");
+        longSparseArray.put(j, t);
     }
 
-    public static final <T> Iterator<T> valueIterator(LongSparseArray<T> receiver$0) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        return new LongSparseArrayKt$valueIterator$1(receiver$0);
+    public static final <T> Iterator<T> valueIterator(LongSparseArray<T> longSparseArray) {
+        Intrinsics.d(longSparseArray, "receiver$0");
+        return new LongSparseArrayKt$valueIterator$1(longSparseArray);
     }
 }

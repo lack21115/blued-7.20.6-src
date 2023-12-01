@@ -8,10 +8,10 @@ import java.util.Map;
 public class DownloadRespWrapper extends ai {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f21549a = "dl_st";
+    private static final String f7943a = "dl_st";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f21550c = "dl_tlen";
+    private static final String f7944c = "dl_tlen";
     private static final String d = "dl_perc";
     private static final String e = "dl_sp";
     private static final String f = "dl_error_code";
@@ -58,7 +58,7 @@ public class DownloadRespWrapper extends ai {
 
     public int getStatus() {
         try {
-            return getInt(f21549a);
+            return getInt(f7943a);
         } catch (ag e2) {
             return -1;
         }
@@ -66,7 +66,7 @@ public class DownloadRespWrapper extends ai {
 
     public long getTotalLength() {
         try {
-            return getLong(f21550c);
+            return getLong(f7944c);
         } catch (ag e2) {
             return -1L;
         }
@@ -89,10 +89,10 @@ public class DownloadRespWrapper extends ai {
     }
 
     public DownloadRespWrapper setStatus(int i) {
-        return (DownloadRespWrapper) set(f21549a, Integer.valueOf(i));
+        return (DownloadRespWrapper) set(f7943a, Integer.valueOf(i));
     }
 
     public DownloadRespWrapper setTotalLength(long j) {
-        return (DownloadRespWrapper) set(f21550c, Long.valueOf(j));
+        return (DownloadRespWrapper) set(f7944c, Long.valueOf(j));
     }
 }

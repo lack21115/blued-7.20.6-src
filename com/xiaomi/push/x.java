@@ -24,7 +24,7 @@ import java.util.zip.ZipOutputStream;
 public class x {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String[] f41714a = {"jpg", "png", "bmp", "gif", "webp"};
+    public static final String[] f28023a = {"jpg", "png", "bmp", "gif", "webp"};
 
     public static String a(File file) {
         InputStreamReader inputStreamReader;
@@ -102,7 +102,7 @@ public class x {
                     ZipOutputStream zipOutputStream3 = zipOutputStream;
                     sb.append(e.getMessage());
                     ZipOutputStream zipOutputStream4 = zipOutputStream;
-                    com.xiaomi.channel.commonutils.logger.b.m11394a(sb.toString());
+                    com.xiaomi.channel.commonutils.logger.b.m8344a(sb.toString());
                     a(zipOutputStream);
                 } catch (Throwable th) {
                     zipOutputStream2 = zipOutputStream;
@@ -270,7 +270,7 @@ public class x {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m12222a(File file) {
+    public static boolean m9172a(File file) {
         try {
             if (file.isDirectory()) {
                 return false;

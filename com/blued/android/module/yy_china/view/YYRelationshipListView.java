@@ -26,13 +26,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRelationshipListView.class */
 public class YYRelationshipListView extends RelativeLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogRelationListBinding f18418a;
+    private DialogRelationListBinding a;
     private BaseYYStudioFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RelationShipAdapter f18419c;
+    private RelationShipAdapter c;
     private String d;
     private String e;
     private String f;
@@ -47,7 +43,7 @@ public class YYRelationshipListView extends RelativeLayout implements View.OnCli
         }
 
         private void a(BaseViewHolder baseViewHolder, final UserAuctionModel userAuctionModel, int i) {
-            ItemRelationListBinding a2 = ItemRelationListBinding.a(baseViewHolder.itemView);
+            ItemRelationListBinding a = ItemRelationListBinding.a(baseViewHolder.itemView);
             View.OnClickListener onClickListener = new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYRelationshipListView.RelationShipAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -67,50 +63,48 @@ public class YYRelationshipListView extends RelativeLayout implements View.OnCli
                 }
             };
             if (YYRelationshipListView.this.d.equals(userAuctionModel.getAuction_uid())) {
-                ImageLoader.a(YYRelationshipListView.this.b.getFragmentActive(), userAuctionModel.getAuction_avatar()).c().a(a2.f16647c);
-                a2.f16647c.setOnClickListener(onClickListener);
-                ImageLoader.a(YYRelationshipListView.this.b.getFragmentActive(), userAuctionModel.getTarget_avatar()).c().a(a2.d);
-                a2.d.setOnClickListener(onClickListener2);
+                ImageLoader.a(YYRelationshipListView.this.b.getFragmentActive(), userAuctionModel.getAuction_avatar()).c().a(a.c);
+                a.c.setOnClickListener(onClickListener);
+                ImageLoader.a(YYRelationshipListView.this.b.getFragmentActive(), userAuctionModel.getTarget_avatar()).c().a(a.d);
+                a.d.setOnClickListener(onClickListener2);
             } else {
-                a2.d.setOnClickListener(onClickListener);
-                a2.f16647c.setOnClickListener(onClickListener2);
-                ImageLoader.a(YYRelationshipListView.this.b.getFragmentActive(), userAuctionModel.getAuction_avatar()).c().a(a2.d);
-                ImageLoader.a(YYRelationshipListView.this.b.getFragmentActive(), userAuctionModel.getTarget_avatar()).c().a(a2.f16647c);
+                a.d.setOnClickListener(onClickListener);
+                a.c.setOnClickListener(onClickListener2);
+                ImageLoader.a(YYRelationshipListView.this.b.getFragmentActive(), userAuctionModel.getAuction_avatar()).c().a(a.d);
+                ImageLoader.a(YYRelationshipListView.this.b.getFragmentActive(), userAuctionModel.getTarget_avatar()).c().a(a.c);
             }
-            ImageLoader.a(YYRelationshipListView.this.b.getFragmentActive(), userAuctionModel.getRelation_image()).a(a2.b);
-            a2.g.setText(userAuctionModel.getIntimacy_name());
-            TextView textView = a2.f;
+            ImageLoader.a(YYRelationshipListView.this.b.getFragmentActive(), userAuctionModel.getRelation_image()).a(a.b);
+            a.g.setText(userAuctionModel.getIntimacy_name());
+            TextView textView = a.f;
             textView.setText("亲密值: " + CommonStringUtils.g(userAuctionModel.getIntimacy_val()));
-            TextView textView2 = a2.e;
+            TextView textView2 = a.e;
             textView2.setText("竞拍值: " + CommonStringUtils.g(userAuctionModel.getAuction_val()));
-            a2.f16646a.setVisibility(4);
+            a.a.setVisibility(4);
             if (i == 0) {
-                a2.f16646a.setVisibility(0);
-                a2.f16646a.setImageResource(R.drawable.icn_relation_ship_num_1);
+                a.a.setVisibility(0);
+                a.a.setImageResource(R.drawable.icn_relation_ship_num_1);
             } else if (i == 1) {
-                a2.f16646a.setVisibility(0);
-                a2.f16646a.setImageResource(R.drawable.icn_relation_ship_num_2);
+                a.a.setVisibility(0);
+                a.a.setImageResource(R.drawable.icn_relation_ship_num_2);
             } else if (i == 2) {
-                a2.f16646a.setVisibility(0);
-                a2.f16646a.setImageResource(R.drawable.icn_relation_ship_num_3);
+                a.a.setVisibility(0);
+                a.a.setImageResource(R.drawable.icn_relation_ship_num_3);
             }
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, UserAuctionModel userAuctionModel) {
         }
 
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(BaseViewHolder baseViewHolder, int i) {
-            super.onBindViewHolder((RelationShipAdapter) baseViewHolder, i);
+            super.onBindViewHolder(baseViewHolder, i);
             int itemViewType = baseViewHolder.getItemViewType();
             if (itemViewType == 0) {
-                a(baseViewHolder, getItem(i - getHeaderLayoutCount()), i);
+                a(baseViewHolder, (UserAuctionModel) getItem(i - getHeaderLayoutCount()), i);
             } else if (itemViewType == 273 || itemViewType == 546 || itemViewType == 819 || itemViewType == 1365) {
             } else {
-                a(baseViewHolder, getItem(i - getHeaderLayoutCount()), i);
+                a(baseViewHolder, (UserAuctionModel) getItem(i - getHeaderLayoutCount()), i);
             }
         }
     }
@@ -125,12 +119,12 @@ public class YYRelationshipListView extends RelativeLayout implements View.OnCli
 
     public YYRelationshipListView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        DialogRelationListBinding a2 = DialogRelationListBinding.a(LayoutInflater.from(context), this, true);
-        this.f18418a = a2;
-        a2.f16386a.setOnClickListener(this);
-        this.f18418a.b.setLayoutManager(new LinearLayoutManager(getContext()));
-        this.f18419c = new RelationShipAdapter();
-        this.f18418a.b.setAdapter(this.f18419c);
+        DialogRelationListBinding a = DialogRelationListBinding.a(LayoutInflater.from(context), this, true);
+        this.a = a;
+        a.a.setOnClickListener(this);
+        this.a.b.setLayoutManager(new LinearLayoutManager(getContext()));
+        this.c = new RelationShipAdapter();
+        this.a.b.setAdapter(this.c);
     }
 
     public void a(BaseYYStudioFragment baseYYStudioFragment, String str, String str2, String str3, String str4, String str5, boolean z, String str6) {
@@ -148,7 +142,7 @@ public class YYRelationshipListView extends RelativeLayout implements View.OnCli
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                     return;
                 }
-                YYRelationshipListView.this.f18419c.setNewData(bluedEntityA.data);
+                YYRelationshipListView.this.c.setNewData(bluedEntityA.data);
             }
         }, (IRequestHost) baseYYStudioFragment.getFragmentActive());
     }

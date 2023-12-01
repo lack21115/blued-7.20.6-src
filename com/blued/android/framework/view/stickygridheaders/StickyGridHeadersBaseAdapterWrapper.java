@@ -9,13 +9,9 @@ import android.widget.FrameLayout;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickygridheaders/StickyGridHeadersBaseAdapterWrapper.class */
 public class StickyGridHeadersBaseAdapterWrapper extends BaseAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f10296a;
+    private final Context a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f10297c = false;
+    private boolean c = false;
     private DataSetObserver d;
     private final StickyGridHeadersBaseAdapter e;
     private StickyGridHeadersGridView f;
@@ -87,14 +83,12 @@ public class StickyGridHeadersBaseAdapterWrapper extends BaseAdapter {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickygridheaders/StickyGridHeadersBaseAdapterWrapper$Position.class */
     public class Position {
-
-        /* renamed from: a  reason: collision with root package name */
-        protected int f10301a;
+        protected int a;
         protected int b;
 
         protected Position(int i, int i2) {
             this.b = i;
-            this.f10301a = i2;
+            this.a = i2;
         }
     }
 
@@ -107,12 +101,12 @@ public class StickyGridHeadersBaseAdapterWrapper extends BaseAdapter {
 
             @Override // android.database.DataSetObserver
             public void onInvalidated() {
-                StickyGridHeadersBaseAdapterWrapper.this.f10297c = false;
+                StickyGridHeadersBaseAdapterWrapper.this.c = false;
             }
         };
         this.d = dataSetObserver;
         this.i = 1;
-        this.f10296a = context;
+        this.a = context;
         this.e = stickyGridHeadersBaseAdapter;
         this.f = stickyGridHeadersGridView;
         stickyGridHeadersBaseAdapter.registerDataSetObserver(dataSetObserver);
@@ -122,7 +116,7 @@ public class StickyGridHeadersBaseAdapterWrapper extends BaseAdapter {
         FillerView fillerView = (FillerView) view;
         FillerView fillerView2 = fillerView;
         if (fillerView == null) {
-            fillerView2 = new FillerView(this.f10296a);
+            fillerView2 = new FillerView(this.a);
         }
         fillerView2.setMeasureTarget(view2);
         return fillerView2;
@@ -132,7 +126,7 @@ public class StickyGridHeadersBaseAdapterWrapper extends BaseAdapter {
         HeaderFillerView headerFillerView = (HeaderFillerView) view;
         HeaderFillerView headerFillerView2 = headerFillerView;
         if (headerFillerView == null) {
-            headerFillerView2 = new HeaderFillerView(this.f10296a);
+            headerFillerView2 = new HeaderFillerView(this.a);
         }
         return headerFillerView2;
     }
@@ -141,9 +135,9 @@ public class StickyGridHeadersBaseAdapterWrapper extends BaseAdapter {
         if (this.i == 0) {
             return 0;
         }
-        int a2 = this.e.a(i);
+        int a = this.e.a(i);
         int i2 = this.i;
-        int i3 = a2 % i2;
+        int i3 = a % i2;
         if (i3 == 0) {
             return 0;
         }
@@ -155,26 +149,26 @@ public class StickyGridHeadersBaseAdapterWrapper extends BaseAdapter {
         if (this.e.a() == 0) {
             return null;
         }
-        return this.e.a(c(i).f10301a, view, viewGroup);
+        return this.e.a(c(i).a, view, viewGroup);
     }
 
     protected void a() {
         this.b = 0;
-        int a2 = this.e.a();
-        if (a2 == 0) {
+        int a = this.e.a();
+        if (a == 0) {
             this.b = this.e.getCount();
-            this.f10297c = true;
+            this.c = true;
             return;
         }
-        for (int i = 0; i < a2; i++) {
+        for (int i = 0; i < a; i++) {
             this.b += this.e.a(i) + this.i;
         }
-        this.f10297c = true;
+        this.c = true;
     }
 
     public void a(int i) {
         this.i = i;
-        this.f10297c = false;
+        this.c = false;
     }
 
     @Override // android.widget.BaseAdapter, android.widget.ListAdapter
@@ -184,13 +178,13 @@ public class StickyGridHeadersBaseAdapterWrapper extends BaseAdapter {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public long b(int i) {
-        return c(i).f10301a;
+        return c(i).a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public Position c(int i) {
-        int a2 = this.e.a();
-        if (a2 == 0) {
+        int a = this.e.a();
+        if (a == 0) {
             return i >= this.e.getCount() ? new Position(-1, 0) : new Position(i, 0);
         }
         int i2 = i;
@@ -198,10 +192,10 @@ public class StickyGridHeadersBaseAdapterWrapper extends BaseAdapter {
         int i4 = 0;
         while (true) {
             int i5 = i4;
-            if (i5 >= a2) {
+            if (i5 >= a) {
                 return new Position(-1, i5);
             }
-            int a3 = this.e.a(i5);
+            int a2 = this.e.a(i5);
             if (i3 == 0) {
                 return new Position(-2, i5);
             }
@@ -211,12 +205,12 @@ public class StickyGridHeadersBaseAdapterWrapper extends BaseAdapter {
                 return new Position(-3, i5);
             }
             int i8 = i2 - i6;
-            if (i7 < a3) {
+            if (i7 < a2) {
                 return new Position(i8, i5);
             }
             int d = d(i5);
             i2 = i8 - d;
-            i3 = i7 - (a3 + d);
+            i3 = i7 - (a2 + d);
             if (i3 < 0) {
                 return new Position(-1, i5);
             }
@@ -226,84 +220,84 @@ public class StickyGridHeadersBaseAdapterWrapper extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        if (this.f10297c) {
+        if (this.c) {
             return this.b;
         }
         this.b = 0;
-        int a2 = this.e.a();
-        if (a2 == 0) {
+        int a = this.e.a();
+        if (a == 0) {
             int count = this.e.getCount();
             this.b = count;
-            this.f10297c = true;
+            this.c = true;
             return count;
         }
-        for (int i = 0; i < a2; i++) {
+        for (int i = 0; i < a; i++) {
             this.b += this.e.a(i) + d(i) + this.i;
         }
-        this.f10297c = true;
+        this.c = true;
         return this.b;
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) throws ArrayIndexOutOfBoundsException {
-        Position c2 = c(i);
-        if (c2.b == -1 || c2.b == -2) {
+        Position c = c(i);
+        if (c.b == -1 || c.b == -2) {
             return null;
         }
-        return this.e.getItem(c2.b);
+        return this.e.getItem(c.b);
     }
 
     @Override // android.widget.Adapter
     public long getItemId(int i) {
-        Position c2 = c(i);
-        if (c2.b == -2) {
+        Position c = c(i);
+        if (c.b == -2) {
             return -1L;
         }
-        if (c2.b == -1) {
+        if (c.b == -1) {
             return -2L;
         }
-        if (c2.b == -3) {
+        if (c.b == -3) {
             return -3L;
         }
-        return this.e.getItemId(c2.b);
+        return this.e.getItemId(c.b);
     }
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public int getItemViewType(int i) {
-        Position c2 = c(i);
-        if (c2.b == -2) {
+        Position c = c(i);
+        if (c.b == -2) {
             return 1;
         }
-        if (c2.b == -1) {
+        if (c.b == -1) {
             return 0;
         }
-        if (c2.b == -3) {
+        if (c.b == -3) {
             return 2;
         }
-        int itemViewType = this.e.getItemViewType(c2.b);
+        int itemViewType = this.e.getItemViewType(c.b);
         return itemViewType == -1 ? itemViewType : itemViewType + 3;
     }
 
     @Override // android.widget.Adapter
     public View getView(int i, View view, ViewGroup viewGroup) {
-        Position c2 = c(i);
-        if (c2.b == -2) {
-            HeaderFillerView b = b(c2.f10301a, view, viewGroup);
-            View a2 = this.e.a(c2.f10301a, (View) b.getTag(), viewGroup);
+        Position c = c(i);
+        if (c.b == -2) {
+            HeaderFillerView b = b(c.a, view, viewGroup);
+            View a = this.e.a(c.a, (View) b.getTag(), viewGroup);
             this.f.b((View) b.getTag());
-            b.setTag(a2);
-            this.f.a(a2);
+            b.setTag(a);
+            this.f.a(a);
             this.g = b;
             b.forceLayout();
             return b;
-        } else if (c2.b == -3) {
-            FillerView a3 = a(view, viewGroup, this.g);
-            a3.forceLayout();
-            return a3;
-        } else if (c2.b == -1) {
+        } else if (c.b == -3) {
+            FillerView a2 = a(view, viewGroup, this.g);
+            a2.forceLayout();
+            return a2;
+        } else if (c.b == -1) {
             return a(view, viewGroup, this.h);
         } else {
-            View view2 = this.e.getView(c2.b, view, viewGroup);
+            View view2 = this.e.getView(c.b, view, viewGroup);
             this.h = view2;
             return view2;
         }
@@ -326,11 +320,11 @@ public class StickyGridHeadersBaseAdapterWrapper extends BaseAdapter {
 
     @Override // android.widget.BaseAdapter, android.widget.ListAdapter
     public boolean isEnabled(int i) {
-        Position c2 = c(i);
-        if (c2.b == -1 || c2.b == -2) {
+        Position c = c(i);
+        if (c.b == -1 || c.b == -2) {
             return false;
         }
-        return this.e.isEnabled(c2.b);
+        return this.e.isEnabled(c.b);
     }
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter

@@ -10,11 +10,11 @@ import java.io.InputStream;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f41010a = File.separator + new String(m.b("LnVuaWFjY291bnQ=")) + File.separator;
+    private static final String f27319a = File.separator + new String(m.b("LnVuaWFjY291bnQ=")) + File.separator;
     private static final String b = new String(m.b("dW5pYWNjb3VudC5qYXI="));
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f41011c = new String(m.b("dW5pY29tX3VwZGF0ZQ==")) + File.separator + new String(m.b("dW5pYWNjb3VudF9jb3JlLmRhdA=="));
+    private static final String f27320c = new String(m.b("dW5pY29tX3VwZGF0ZQ==")) + File.separator + new String(m.b("dW5pYWNjb3VudF9jb3JlLmRhdA=="));
     private static final String d = new String(m.b("dW5pYWNjb3VudF9jb3JlLmRhdA=="));
     private static DexClassLoader e = null;
 
@@ -128,7 +128,7 @@ public class i {
 
     public static InputStream b(Context context) {
         try {
-            String str = e(context) + f41011c;
+            String str = e(context) + f27320c;
             File file = new File(str);
             if (file.exists()) {
                 g.a("find:" + str);
@@ -168,7 +168,7 @@ public class i {
 
     public static void d(Context context) {
         try {
-            String str = e(context) + f41011c;
+            String str = e(context) + f27320c;
             File file = new File(str);
             if (file.exists()) {
                 g.a("delete " + str + " result:" + file.delete());
@@ -179,6 +179,6 @@ public class i {
     }
 
     private static String e(Context context) {
-        return context.getFilesDir().getParent() + f41010a;
+        return context.getFilesDir().getParent() + f27319a;
     }
 }

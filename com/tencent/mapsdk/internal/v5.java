@@ -9,11 +9,11 @@ public class v5 {
     public static final int l = 3;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f38062a = -1;
+    public int f24371a = -1;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f38063c;
+    public boolean f24372c;
     public int d;
     public double e;
     public float f;

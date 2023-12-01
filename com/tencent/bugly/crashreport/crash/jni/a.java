@@ -12,17 +12,17 @@ import java.util.Map;
 public final class a implements NativeExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f35182a;
+    private final Context f21491a;
     private final com.tencent.bugly.crashreport.crash.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.tencent.bugly.crashreport.common.info.a f35183c;
+    private final com.tencent.bugly.crashreport.common.info.a f21492c;
     private final com.tencent.bugly.crashreport.common.strategy.a d;
 
     public a(Context context, com.tencent.bugly.crashreport.common.info.a aVar, com.tencent.bugly.crashreport.crash.b bVar, com.tencent.bugly.crashreport.common.strategy.a aVar2) {
-        this.f35182a = context;
+        this.f21491a = context;
         this.b = bVar;
-        this.f35183c = aVar;
+        this.f21492c = aVar;
         this.d = aVar2;
     }
 
@@ -63,10 +63,10 @@ public final class a implements NativeExceptionHandler {
         }
         CrashDetailBean crashDetailBean = new CrashDetailBean();
         crashDetailBean.b = 1;
-        crashDetailBean.e = this.f35183c.h();
-        crashDetailBean.f = this.f35183c.k;
-        crashDetailBean.g = this.f35183c.q();
-        crashDetailBean.m = this.f35183c.g();
+        crashDetailBean.e = this.f21492c.h();
+        crashDetailBean.f = this.f21492c.k;
+        crashDetailBean.g = this.f21492c.q();
+        crashDetailBean.m = this.f21492c.g();
         crashDetailBean.n = str3;
         crashDetailBean.o = l ? " This Crash Caused By ANR , PLS To Fix ANR , This Trace May Be Not Useful![Bugly]" : "";
         crashDetailBean.p = str4;
@@ -78,9 +78,9 @@ public final class a implements NativeExceptionHandler {
         crashDetailBean.u = z.a(crashDetailBean.q.getBytes());
         crashDetailBean.A = str;
         crashDetailBean.B = str2;
-        crashDetailBean.I = this.f35183c.s();
-        crashDetailBean.h = this.f35183c.p();
-        crashDetailBean.i = this.f35183c.B();
+        crashDetailBean.I = this.f21492c.s();
+        crashDetailBean.h = this.f21492c.p();
+        crashDetailBean.i = this.f21492c.B();
         crashDetailBean.v = str8;
         NativeCrashHandler nativeCrashHandler = NativeCrashHandler.getInstance();
         String dumpFilePath = nativeCrashHandler != null ? nativeCrashHandler.getDumpFilePath() : null;
@@ -94,9 +94,9 @@ public final class a implements NativeExceptionHandler {
         crashDetailBean.J = str7;
         crashDetailBean.K = str6;
         crashDetailBean.L = str11;
-        crashDetailBean.F = this.f35183c.k();
-        crashDetailBean.G = this.f35183c.j();
-        crashDetailBean.H = this.f35183c.l();
+        crashDetailBean.F = this.f21492c.k();
+        crashDetailBean.G = this.f21492c.j();
+        crashDetailBean.H = this.f21492c.l();
         if (!z) {
             crashDetailBean.C = -1L;
             crashDetailBean.D = -1L;
@@ -108,7 +108,7 @@ public final class a implements NativeExceptionHandler {
             crashDetailBean.Q = -1;
             crashDetailBean.R = -1;
             crashDetailBean.S = map;
-            crashDetailBean.T = this.f35183c.y();
+            crashDetailBean.T = this.f21492c.y();
             crashDetailBean.z = null;
             if (str == null) {
                 crashDetailBean.A = "unknown(record)";
@@ -122,11 +122,11 @@ public final class a implements NativeExceptionHandler {
         crashDetailBean.D = com.tencent.bugly.crashreport.common.info.b.e();
         crashDetailBean.E = com.tencent.bugly.crashreport.common.info.b.i();
         if (crashDetailBean.w == null) {
-            crashDetailBean.w = z.a(this.f35182a, c.e, (String) null);
+            crashDetailBean.w = z.a(this.f21491a, c.e, (String) null);
         }
         crashDetailBean.y = y.a();
-        crashDetailBean.M = this.f35183c.f35129a;
-        crashDetailBean.N = this.f35183c.a();
+        crashDetailBean.M = this.f21492c.f21438a;
+        crashDetailBean.N = this.f21492c.a();
         crashDetailBean.z = z.a(c.f, false);
         int indexOf2 = crashDetailBean.q.indexOf("java:\n");
         if (indexOf2 > 0 && (i = indexOf2 + 6) < crashDetailBean.q.length()) {
@@ -139,13 +139,13 @@ public final class a implements NativeExceptionHandler {
             }
         }
         if (str == null) {
-            crashDetailBean.A = this.f35183c.d;
+            crashDetailBean.A = this.f21492c.d;
         }
         this.b.d(crashDetailBean);
-        crashDetailBean.Q = this.f35183c.z();
-        crashDetailBean.R = this.f35183c.A();
-        crashDetailBean.S = this.f35183c.t();
-        crashDetailBean.T = this.f35183c.y();
+        crashDetailBean.Q = this.f21492c.z();
+        crashDetailBean.R = this.f21492c.A();
+        crashDetailBean.S = this.f21492c.t();
+        crashDetailBean.T = this.f21492c.y();
         return crashDetailBean;
     }
 }

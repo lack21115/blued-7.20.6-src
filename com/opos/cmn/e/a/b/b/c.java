@@ -28,21 +28,21 @@ public class c extends a {
     }
 
     private void c() {
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f24758a, 129.0f), com.opos.cmn.an.h.f.a.a(this.f24758a, 38.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f11070a, 129.0f), com.opos.cmn.an.h.f.a.a(this.f11070a, 38.0f));
         layoutParams.addRule(12);
         layoutParams.addRule(9);
         this.d.addView(this.h, layoutParams);
     }
 
     private void d() {
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f24758a, 129.0f), com.opos.cmn.an.h.f.a.a(this.f24758a, 38.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f11070a, 129.0f), com.opos.cmn.an.h.f.a.a(this.f11070a, 38.0f));
         layoutParams.addRule(12);
         layoutParams.addRule(11);
         this.d.addView(this.i, layoutParams);
     }
 
     private void e() {
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f24758a, 1.0f), com.opos.cmn.an.h.f.a.a(this.f24758a, 38.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f11070a, 1.0f), com.opos.cmn.an.h.f.a.a(this.f11070a, 38.0f));
         layoutParams.addRule(12);
         layoutParams.addRule(14);
         this.d.addView(this.g, layoutParams);
@@ -50,21 +50,21 @@ public class c extends a {
 
     @Override // com.opos.cmn.e.a.b.b.a
     protected void a() {
-        TextView textView = new TextView(this.f24758a);
+        TextView textView = new TextView(this.f11070a);
         this.h = textView;
         textView.setGravity(17);
         this.h.setSingleLine();
         this.h.setEllipsize(TextUtils.TruncateAt.END);
         this.h.setTextColor(Color.parseColor("#767575"));
         this.h.setTextSize(1, 13.0f);
-        TextView textView2 = new TextView(this.f24758a);
+        TextView textView2 = new TextView(this.f11070a);
         this.i = textView2;
         textView2.setGravity(17);
         this.i.setSingleLine();
         this.i.setEllipsize(TextUtils.TruncateAt.END);
         this.i.setTextColor(Color.parseColor("#d95955"));
         this.i.setTextSize(1, 13.0f);
-        ImageView imageView = new ImageView(this.f24758a);
+        ImageView imageView = new ImageView(this.f11070a);
         this.g = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         this.g.setImageDrawable(new ColorDrawable(Color.parseColor("#cdd2d4")));

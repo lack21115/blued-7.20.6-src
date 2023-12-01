@@ -20,10 +20,10 @@ import java.util.Map;
 public class BaiduATRewardedVideoAdapter extends CustomRewardVideoAdapter {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f8893c = BaiduATRewardedVideoAdapter.class.getSimpleName();
+    private static final String f6053c = BaiduATRewardedVideoAdapter.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    RewardVideoAd f8894a;
+    RewardVideoAd f6054a;
     private String d = "";
     private String e = "";
     private double f = 0.0d;
@@ -106,7 +106,7 @@ public class BaiduATRewardedVideoAdapter extends CustomRewardVideoAdapter {
                 this.mLoadListener.onAdCacheLoaded(new BaseAd[0]);
             }
         } else if (this.mBiddingListener != null) {
-            RewardVideoAd rewardVideoAd = this.f8894a;
+            RewardVideoAd rewardVideoAd = this.f6054a;
             if (rewardVideoAd == null) {
                 notifyATLoadFail("", "Baidu: RewardVideoAd had been destroyed.");
                 return;
@@ -122,52 +122,52 @@ public class BaiduATRewardedVideoAdapter extends CustomRewardVideoAdapter {
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-            BaiduATBiddingNotice baiduATBiddingNotice = new BaiduATBiddingNotice(this.f8894a);
+            BaiduATBiddingNotice baiduATBiddingNotice = new BaiduATBiddingNotice(this.f6054a);
             ATBiddingListener aTBiddingListener = this.mBiddingListener;
             StringBuilder sb = new StringBuilder();
             sb.append(System.currentTimeMillis());
-            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
         }
     }
 
     private void a(Context context) {
-        this.f8894a = new RewardVideoAd(context.getApplicationContext(), this.d, new AnonymousClass1());
+        this.f6054a = new RewardVideoAd(context.getApplicationContext(), this.d, new AnonymousClass1());
         if (this.b && this.f > 0.0d) {
             if (ATSDK.isNetworkLogDebug()) {
                 Log.i("BaiduATRewardedVideo", "setBidFloor:" + ((int) this.f));
             }
-            this.f8894a.setBidFloor((int) this.f);
+            this.f6054a.setBidFloor((int) this.f);
         }
         if (!TextUtils.isEmpty(this.mUserId)) {
-            this.f8894a.setUserId(this.mUserId);
+            this.f6054a.setUserId(this.mUserId);
         }
         if (!TextUtils.isEmpty(this.mUserData)) {
-            if (this.mUserData.contains(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME)) {
-                this.mUserData = this.mUserData.replace(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME, this.d);
+            if (this.mUserData.contains("{network_placement_id}")) {
+                this.mUserData = this.mUserData.replace("{network_placement_id}", this.d);
             }
-            this.f8894a.setExtraInfo(this.mUserData);
+            this.f6054a.setExtraInfo(this.mUserData);
         }
-        this.f8894a.load();
+        this.f6054a.load();
     }
 
     static /* synthetic */ void a(BaiduATRewardedVideoAdapter baiduATRewardedVideoAdapter, Context context) {
-        baiduATRewardedVideoAdapter.f8894a = new RewardVideoAd(context.getApplicationContext(), baiduATRewardedVideoAdapter.d, new AnonymousClass1());
+        baiduATRewardedVideoAdapter.f6054a = new RewardVideoAd(context.getApplicationContext(), baiduATRewardedVideoAdapter.d, new AnonymousClass1());
         if (baiduATRewardedVideoAdapter.b && baiduATRewardedVideoAdapter.f > 0.0d) {
             if (ATSDK.isNetworkLogDebug()) {
                 Log.i("BaiduATRewardedVideo", "setBidFloor:" + ((int) baiduATRewardedVideoAdapter.f));
             }
-            baiduATRewardedVideoAdapter.f8894a.setBidFloor((int) baiduATRewardedVideoAdapter.f);
+            baiduATRewardedVideoAdapter.f6054a.setBidFloor((int) baiduATRewardedVideoAdapter.f);
         }
         if (!TextUtils.isEmpty(baiduATRewardedVideoAdapter.mUserId)) {
-            baiduATRewardedVideoAdapter.f8894a.setUserId(baiduATRewardedVideoAdapter.mUserId);
+            baiduATRewardedVideoAdapter.f6054a.setUserId(baiduATRewardedVideoAdapter.mUserId);
         }
         if (!TextUtils.isEmpty(baiduATRewardedVideoAdapter.mUserData)) {
-            if (baiduATRewardedVideoAdapter.mUserData.contains(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME)) {
-                baiduATRewardedVideoAdapter.mUserData = baiduATRewardedVideoAdapter.mUserData.replace(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME, baiduATRewardedVideoAdapter.d);
+            if (baiduATRewardedVideoAdapter.mUserData.contains("{network_placement_id}")) {
+                baiduATRewardedVideoAdapter.mUserData = baiduATRewardedVideoAdapter.mUserData.replace("{network_placement_id}", baiduATRewardedVideoAdapter.d);
             }
-            baiduATRewardedVideoAdapter.f8894a.setExtraInfo(baiduATRewardedVideoAdapter.mUserData);
+            baiduATRewardedVideoAdapter.f6054a.setExtraInfo(baiduATRewardedVideoAdapter.mUserData);
         }
-        baiduATRewardedVideoAdapter.f8894a.load();
+        baiduATRewardedVideoAdapter.f6054a.load();
     }
 
     private void a(Map<String, Object> map) {
@@ -182,7 +182,7 @@ public class BaiduATRewardedVideoAdapter extends CustomRewardVideoAdapter {
                 baiduATRewardedVideoAdapter.mLoadListener.onAdCacheLoaded(new BaseAd[0]);
             }
         } else if (baiduATRewardedVideoAdapter.mBiddingListener != null) {
-            RewardVideoAd rewardVideoAd = baiduATRewardedVideoAdapter.f8894a;
+            RewardVideoAd rewardVideoAd = baiduATRewardedVideoAdapter.f6054a;
             if (rewardVideoAd == null) {
                 baiduATRewardedVideoAdapter.notifyATLoadFail("", "Baidu: RewardVideoAd had been destroyed.");
                 return;
@@ -198,11 +198,11 @@ public class BaiduATRewardedVideoAdapter extends CustomRewardVideoAdapter {
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-            BaiduATBiddingNotice baiduATBiddingNotice = new BaiduATBiddingNotice(baiduATRewardedVideoAdapter.f8894a);
+            BaiduATBiddingNotice baiduATBiddingNotice = new BaiduATBiddingNotice(baiduATRewardedVideoAdapter.f6054a);
             ATBiddingListener aTBiddingListener = baiduATRewardedVideoAdapter.mBiddingListener;
             StringBuilder sb = new StringBuilder();
             sb.append(System.currentTimeMillis());
-            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
         }
     }
 
@@ -211,36 +211,30 @@ public class BaiduATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         return 2;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
-        this.f8894a = null;
+        this.f6054a = null;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return BaiduATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
         return this.d;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return BaiduATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
-        RewardVideoAd rewardVideoAd = this.f8894a;
+        RewardVideoAd rewardVideoAd = this.f6054a;
         if (rewardVideoAd != null) {
             return rewardVideoAd.isReady();
         }
         return false;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(Context context, Map<String, Object> map, Map<String, Object> map2) {
         this.e = ATInitMediation.getStringFromMap(map, "app_id");
         this.d = ATInitMediation.getStringFromMap(map, "ad_place_id");
@@ -251,14 +245,12 @@ public class BaiduATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         }
         final Context applicationContext = context.getApplicationContext();
         BaiduATInitManager.getInstance().initSDK(applicationContext, map, new MediationInitCallback() { // from class: com.anythink.network.baidu.BaiduATRewardedVideoAdapter.2
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onFail(String str) {
                 if (BaiduATRewardedVideoAdapter.this.mLoadListener != null) {
                     BaiduATRewardedVideoAdapter.this.mLoadListener.onAdLoadError("", str);
                 }
             }
 
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onSuccess() {
                 try {
                     BaiduATRewardedVideoAdapter.a(BaiduATRewardedVideoAdapter.this, applicationContext);
@@ -280,13 +272,12 @@ public class BaiduATRewardedVideoAdapter extends CustomRewardVideoAdapter {
     @Override // com.anythink.rewardvideo.unitgroup.api.CustomRewardVideoAdapter
     public void show(Activity activity) {
         try {
-            this.f8894a.show();
+            this.f6054a.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.b = true;
         loadCustomNetworkAd(context, map, map2);

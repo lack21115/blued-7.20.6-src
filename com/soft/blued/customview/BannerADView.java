@@ -21,9 +21,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentActivity;
 import com.anythink.banner.api.ATBannerListener;
 import com.anythink.banner.api.ATBannerView;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.ATAdInfo;
 import com.anythink.core.api.AdError;
+import com.anythink.expressad.d.b;
 import com.anythink.nativead.api.ATNativeAdView;
 import com.blued.ad.ADConstants;
 import com.blued.android.config.FlexDebugSevConfig;
@@ -95,11 +95,11 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
     private AdxNativeManager K;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f28322a;
+    public Context f14632a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public List<BluedADExtra> f28323c;
+    public List<BluedADExtra> f14633c;
     public BannerAdManager d;
     public BannerAdManager e;
     ATBannerListener f;
@@ -130,17 +130,17 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
     public class AnonymousClass13 implements ImageFileLoader.OnLoadFileListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BluedADExtra f28332a;
+        final /* synthetic */ BluedADExtra f14642a;
         final /* synthetic */ ImageSize b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int f28333c;
+        final /* synthetic */ int f14643c;
         final /* synthetic */ BannerAdListener d;
 
         AnonymousClass13(BluedADExtra bluedADExtra, ImageSize imageSize, int i, BannerAdListener bannerAdListener) {
-            this.f28332a = bluedADExtra;
+            this.f14642a = bluedADExtra;
             this.b = imageSize;
-            this.f28333c = i;
+            this.f14643c = i;
             this.d = bannerAdListener;
         }
 
@@ -156,7 +156,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(BluedADExtra bluedADExtra, View view) {
             Tracker.onClick(view);
-            ADClosePopOptionsUtils.a(BannerADView.this.f28322a, bluedADExtra, BannerADView.this.j, BannerADView.this.w, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$13$THHwCHlmz2scidxW6k8wIpPp1Rg
+            ADClosePopOptionsUtils.a(BannerADView.this.f14632a, bluedADExtra, BannerADView.this.j, BannerADView.this.w, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$13$THHwCHlmz2scidxW6k8wIpPp1Rg
                 @Override // com.soft.blued.utils.ADClosePopOptionsUtils.ADRemovedListener
                 public final void onRemoved() {
                     BannerADView.AnonymousClass13.this.a();
@@ -164,10 +164,9 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
             });
         }
 
-        @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
         public void onUIFinish(File file, Exception exc) {
             if (file == null || !file.exists()) {
-                Log.v("drb", "直客广告加载完成 文件不存在：" + this.f28332a.ads_pics);
+                Log.v("drb", "直客广告加载完成 文件不存在：" + this.f14642a.ads_pics);
                 if (BannerADView.this.u != null && BannerADView.this.g.isActive()) {
                     BannerADView.this.u.b();
                 }
@@ -178,11 +177,11 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
                 }
                 return;
             }
-            Log.v("drb", "直客广告加载完成 文件存在：" + this.f28332a.ads_pics);
+            Log.v("drb", "直客广告加载完成 文件存在：" + this.f14642a.ads_pics);
             float a2 = (float) this.b.a();
             float b = (float) this.b.b();
-            if ("7".equalsIgnoreCase(this.f28332a.adms_type) && (BannerADView.this.w == ADConstants.AD_POSITION.NEARBY_HOME_TOP || BannerADView.this.w == ADConstants.AD_POSITION.NEARBY_HOME_LIST_BANNER)) {
-                int a3 = DensityUtils.a(BannerADView.this.f28322a, this.f28333c);
+            if ("7".equalsIgnoreCase(this.f14642a.adms_type) && (BannerADView.this.w == ADConstants.AD_POSITION.NEARBY_HOME_TOP || BannerADView.this.w == ADConstants.AD_POSITION.NEARBY_HOME_LIST_BANNER)) {
+                int a3 = DensityUtils.a(BannerADView.this.f14632a, this.f14643c);
                 int round = Math.round(a3 / 4.0f);
                 int[] a4 = ImageUtils.a((int) a2, (int) b, a3, round, a3, round);
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) BannerADView.this.i.getLayoutParams();
@@ -196,7 +195,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
                 BannerADView.this.n.setLayoutParams(layoutParams2);
             } else {
                 FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) BannerADView.this.i.getLayoutParams();
-                layoutParams3.width = DensityUtils.a(BannerADView.this.f28322a, this.f28333c);
+                layoutParams3.width = DensityUtils.a(BannerADView.this.f14632a, this.f14643c);
                 layoutParams3.height = (int) ((layoutParams3.width * b) / a2);
                 BannerADView.this.i.setLayoutParams(layoutParams3);
                 FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) BannerADView.this.n.getLayoutParams();
@@ -205,12 +204,12 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
                 BannerADView.this.i.setScaleType(ImageView.ScaleType.CENTER_CROP);
             }
             ImageLoader.a(BannerADView.this.g, file).a(BannerADView.this.q).a(BannerADView.this.i);
-            if (this.f28332a.can_close == 1) {
+            if (this.f14642a.can_close == 1) {
                 Log.v("drb", "直客广告 展示关闭按钮");
                 BannerADView.this.j.setVisibility(0);
                 BannerADView.this.v.setVisibility(0);
                 View view = BannerADView.this.v;
-                final BluedADExtra bluedADExtra = this.f28332a;
+                final BluedADExtra bluedADExtra = this.f14642a;
                 view.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$13$qqq1hpwv7yGY2s6Hx5Yy6qUni4E
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
@@ -234,10 +233,10 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
     public class AnonymousClass16 implements TTNativeExpressAd.ExpressAdInteractionListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BluedADExtra f28338a;
+        final /* synthetic */ BluedADExtra f14648a;
 
         AnonymousClass16(BluedADExtra bluedADExtra) {
-            this.f28338a = bluedADExtra;
+            this.f14648a = bluedADExtra;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -255,7 +254,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(BluedADExtra bluedADExtra, View view) {
             Tracker.onClick(view);
-            ADClosePopOptionsUtils.a(BannerADView.this.f28322a, bluedADExtra, BannerADView.this.v, BannerADView.this.w, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$16$NBJewN0Rf5YBwI84FQX_1XCeDo0
+            ADClosePopOptionsUtils.a(BannerADView.this.f14632a, bluedADExtra, BannerADView.this.v, BannerADView.this.w, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$16$NBJewN0Rf5YBwI84FQX_1XCeDo0
                 @Override // com.soft.blued.utils.ADClosePopOptionsUtils.ADRemovedListener
                 public final void onRemoved() {
                     BannerADView.AnonymousClass16.this.a();
@@ -266,13 +265,13 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         @Override // com.bytedance.sdk.openadsdk.TTNativeExpressAd.ExpressAdInteractionListener
         public void onAdClicked(View view, int i) {
             Log.v("drb", "banner1穿山甲广告：onAdClicked");
-            FindHttpUtils.b(this.f28338a.click_url);
+            FindHttpUtils.b(this.f14648a.click_url);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTNativeExpressAd.ExpressAdInteractionListener
         public void onAdShow(View view, int i) {
             Log.v("drb", "banner1穿山甲广告：onAdShow");
-            FindHttpUtils.b(this.f28338a.show_url);
+            FindHttpUtils.b(this.f14648a.show_url);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTNativeExpressAd.ExpressAdInteractionListener
@@ -285,7 +284,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
             Log.v("drb", "banner1穿山甲广告：onRenderSuccess");
             BannerADView.this.v.setVisibility(0);
             View view2 = BannerADView.this.v;
-            final BluedADExtra bluedADExtra = this.f28338a;
+            final BluedADExtra bluedADExtra = this.f14648a;
             view2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$16$QnWv5wcakcK52kwlsWKf5TK-A1o
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {
@@ -307,18 +306,18 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
     public static /* synthetic */ class AnonymousClass21 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f28347a;
+        static final /* synthetic */ int[] f14657a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[ADConstants.AD_POSITION.values().length];
-            f28347a = iArr;
+            f14657a = iArr;
             try {
                 iArr[ADConstants.AD_POSITION.NEARBY_HOME_GRID_BANNER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f28347a[ADConstants.AD_POSITION.USER_PROFILE_TAB.ordinal()] = 2;
+                f14657a[ADConstants.AD_POSITION.USER_PROFILE_TAB.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -330,10 +329,10 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
     public class AnonymousClass8 implements BannerAdListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BluedADExtra f28354a;
+        final /* synthetic */ BluedADExtra f14664a;
 
         AnonymousClass8(BluedADExtra bluedADExtra) {
-            this.f28354a = bluedADExtra;
+            this.f14664a = bluedADExtra;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -341,30 +340,30 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
             Tracker.onClick(view);
             Log.v("drb", "banner1点击：" + bluedADExtra.adm_type + " -- " + bluedADExtra.adms_type);
             if ("2".equals(bluedADExtra.adms_type) && AlipayUtils.a()) {
-                WebViewShowInfoFragment.show(BannerADView.this.f28322a, bluedADExtra.deep_link_url, 9);
+                WebViewShowInfoFragment.show(BannerADView.this.f14632a, bluedADExtra.deep_link_url, 9);
             } else if (BannerADView.this.b(bluedADExtra)) {
             } else {
                 if ("7".equals(bluedADExtra.adms_type)) {
                     if (TextUtils.isEmpty(bluedADExtra.deep_link_url)) {
-                        WebViewShowInfoFragment.show(BannerADView.this.f28322a, bluedADExtra.target_url, 9);
+                        WebViewShowInfoFragment.show(BannerADView.this.f14632a, bluedADExtra.target_url, 9);
                         return;
                     }
                     Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(bluedADExtra.deep_link_url));
                     if (AppUtils.a(intent)) {
-                        BannerADView.this.f28322a.startActivity(intent);
+                        BannerADView.this.f14632a.startActivity(intent);
                     } else {
-                        WebViewShowInfoFragment.show(BannerADView.this.f28322a, bluedADExtra.target_url, 9);
+                        WebViewShowInfoFragment.show(BannerADView.this.f14632a, bluedADExtra.target_url, 9);
                     }
                 } else if (bluedADExtra.adm_type == 2) {
-                    BaseADVideoFragment.a(BannerADView.this.f28322a, bluedADExtra, 1);
+                    BaseADVideoFragment.a(BannerADView.this.f14632a, bluedADExtra, 1);
                 } else if (TextUtils.isEmpty(bluedADExtra.deep_link_url)) {
-                    WebViewShowInfoFragment.show(BannerADView.this.f28322a, bluedADExtra.target_url, 9);
+                    WebViewShowInfoFragment.show(BannerADView.this.f14632a, bluedADExtra.target_url, 9);
                 } else {
                     Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(bluedADExtra.deep_link_url));
                     if (AppUtils.a(intent2)) {
-                        BannerADView.this.f28322a.startActivity(intent2);
+                        BannerADView.this.f14632a.startActivity(intent2);
                     } else {
-                        WebViewShowInfoFragment.show(BannerADView.this.f28322a, bluedADExtra.target_url, 9);
+                        WebViewShowInfoFragment.show(BannerADView.this.f14632a, bluedADExtra.target_url, 9);
                     }
                 }
             }
@@ -374,9 +373,9 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         public void a() {
             Log.v("drb", "banner1直客广告 展示成功:" + BannerADView.this.getVisibility());
             LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.AD_HOME_BANNER1_RESPONSE;
-            EventTrackLoginAndRegister.b(event, this.f28354a.ads_id + "", this.f28354a.adm_type_source);
+            EventTrackLoginAndRegister.b(event, this.f14664a.ads_id + "", this.f14664a.adm_type_source);
             BluedADConstraintLayout bluedADConstraintLayout = BannerADView.this.t;
-            final BluedADExtra bluedADExtra = this.f28354a;
+            final BluedADExtra bluedADExtra = this.f14664a;
             bluedADConstraintLayout.a(bluedADExtra, new View.OnClickListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$8$aqE67IAb2oS77PJPf0baezM-AC0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -388,7 +387,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         @Override // com.soft.blued.customview.BannerADView.BannerAdListener
         public void a(int i, String str) {
             BannerADView.this.a("banner1直客广告展示失败 -- 删除广告id:");
-            EventTrackLoginAndRegister.b(LoginAndRegisterProtos.Event.AD_HOME_BANNER1_RESPONSE_FAIL, this.f28354a.ads_id + "", str, i + "", this.f28354a.adm_type_source);
+            EventTrackLoginAndRegister.b(LoginAndRegisterProtos.Event.AD_HOME_BANNER1_RESPONSE_FAIL, this.f14664a.ads_id + "", str, i + "", this.f14664a.adm_type_source);
         }
     }
 
@@ -429,8 +428,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
 
     private void a(int i, AdxConfig adxConfig, long j) {
         if (this.K == null) {
-            this.K = new AdxNativeManager(this.f28322a, i, adxConfig.type, adxConfig.parallel_num, j, new com.blued.android.module.common.adx.base.ADListener() { // from class: com.soft.blued.customview.BannerADView.1
-                @Override // com.blued.android.module.common.adx.base.ADListener
+            this.K = new AdxNativeManager(this.f14632a, i, adxConfig.type, adxConfig.parallel_num, j, new com.blued.android.module.common.adx.base.ADListener() { // from class: com.soft.blued.customview.BannerADView.1
                 public void onADEvent(ADEvent aDEvent) {
                     if (aDEvent == null) {
                         return;
@@ -492,7 +490,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
             });
         }
         this.K.a(j, adxConfig.type, adxConfig.parallel_num);
-        this.K.a((ArrayList) this.f28323c);
+        this.K.a((ArrayList) this.f14633c);
     }
 
     private void a(View view) {
@@ -513,12 +511,12 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
                     BannerADView.this.d(view);
                 }
             });
-            a(bluedADExtra, DensityUtils.b(this.f28322a, AppInfo.l) - 20, new AnonymousClass8(bluedADExtra));
+            a(bluedADExtra, DensityUtils.b(this.f14632a, AppInfo.l) - 20, new AnonymousClass8(bluedADExtra));
             return;
         }
         Log.v("drb", "banner1直客广告 图片资源为空，开始展示下一个");
-        if (this.f28323c.size() > 0) {
-            this.f28323c.remove(0);
+        if (this.f14633c.size() > 0) {
+            this.f14633c.remove(0);
             a();
         }
     }
@@ -650,7 +648,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(BluedADExtra bluedADExtra, View view) {
         Tracker.onClick(view);
-        ADClosePopOptionsUtils.a(this.f28322a, bluedADExtra, this.D, this.w, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$8Eu9R-8DoM-pG5rnRWeLHQptD5U
+        ADClosePopOptionsUtils.a(this.f14632a, bluedADExtra, this.D, this.w, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$8Eu9R-8DoM-pG5rnRWeLHQptD5U
             @Override // com.soft.blued.utils.ADClosePopOptionsUtils.ADRemovedListener
             public final void onRemoved() {
                 BannerADView.this.e();
@@ -666,7 +664,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
     private void a(final BluedADExtra bluedADExtra, final BannerAdListener bannerAdListener, BannerAdManager bannerAdManager) {
         String str = this.w == ADConstants.AD_POSITION.NEARBY_HOME_GRID_BANNER ? "b63c0c6b8c390f" : bluedADExtra.third_id;
         Log.v("drb", "bannerPosition:" + this.w + " -- third_id:" + str);
-        bannerAdManager.a(this.f28322a, str, new BannerAdListenerAdapter() { // from class: com.soft.blued.customview.BannerADView.7
+        bannerAdManager.a(this.f14632a, str, new BannerAdListenerAdapter() { // from class: com.soft.blued.customview.BannerADView.7
             @Override // com.soft.blued.customview.banner.BannerAdListenerAdapter, com.soft.blued.customview.banner.BannerAdListener
             public void a() {
             }
@@ -708,8 +706,8 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str) {
-        if (this.f28323c.size() > 0) {
-            BluedADExtra remove = this.f28323c.remove(0);
+        if (this.f14633c.size() > 0) {
+            BluedADExtra remove = this.f14633c.remove(0);
             Log.v("drb", str + remove.ads_id);
             a();
         }
@@ -726,19 +724,19 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         Tracker.onClick(view);
         Log.v("drb", "---------click:" + bluedADExtra.adm_type);
         if ("2".equals(bluedADExtra.adms_type) && AlipayUtils.a()) {
-            WebViewShowInfoFragment.show(this.f28322a, bluedADExtra.deep_link_url, 9);
+            WebViewShowInfoFragment.show(this.f14632a, bluedADExtra.deep_link_url, 9);
         } else if (b(bluedADExtra)) {
         } else {
             if (bluedADExtra.adm_type == 2) {
-                BaseADVideoFragment.a(this.f28322a, bluedADExtra, 1);
+                BaseADVideoFragment.a(this.f14632a, bluedADExtra, 1);
             } else if (TextUtils.isEmpty(bluedADExtra.deep_link_url)) {
-                WebViewShowInfoFragment.show(this.f28322a, bluedADExtra.target_url, 9);
+                WebViewShowInfoFragment.show(this.f14632a, bluedADExtra.target_url, 9);
             } else {
                 Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(bluedADExtra.deep_link_url));
                 if (AppUtils.a(intent)) {
-                    this.f28322a.startActivity(intent);
+                    this.f14632a.startActivity(intent);
                 } else {
-                    WebViewShowInfoFragment.show(this.f28322a, bluedADExtra.target_url, 9);
+                    WebViewShowInfoFragment.show(this.f14632a, bluedADExtra.target_url, 9);
                 }
             }
         }
@@ -788,10 +786,10 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
             return false;
         }
         if (bluedADExtra.wx.is_popup != 1) {
-            WeChatUtils.a(this.f28322a, bluedADExtra.wx.id, bluedADExtra.wx.path);
+            WeChatUtils.a(this.f14632a, bluedADExtra.wx.id, bluedADExtra.wx.path);
             return true;
-        } else if (BDActivityManager.f34819a.a() != null) {
-            Activity a2 = BDActivityManager.f34819a.a();
+        } else if (BDActivityManager.f21128a.a() != null) {
+            Activity a2 = BDActivityManager.f21128a.a();
             if (a2 instanceof FragmentActivity) {
                 AdMiniAppDialogFragment.a(((FragmentActivity) a2).getSupportFragmentManager(), bluedADExtra.wx.id, bluedADExtra.wx.path, bluedADExtra);
                 return true;
@@ -810,7 +808,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         if (this.w == ADConstants.AD_POSITION.FEED_DETAILS) {
             bluedADExtra.third_id = "b63901578de9d5";
         }
-        this.F = (ATBannerView) new TOPBannerManager().a(this.f28322a, bluedADExtra.third_id, bluedADExtra.bannerWidthUnitDP, new BannerAdListenerAdapter() { // from class: com.soft.blued.customview.BannerADView.11
+        this.F = (ATBannerView) new TOPBannerManager().a(this.f14632a, bluedADExtra.third_id, bluedADExtra.bannerWidthUnitDP, new BannerAdListenerAdapter() { // from class: com.soft.blued.customview.BannerADView.11
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: com.soft.blued.customview.BannerADView$11$1  reason: invalid class name */
@@ -831,7 +829,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    ADClosePopOptionsUtils.a(BannerADView.this.f28322a, bluedADExtra, BannerADView.this.v, BannerADView.this.w, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$11$1$snDMoasMH1Yf5o6EKtJX2R9C92E
+                    ADClosePopOptionsUtils.a(BannerADView.this.f14632a, bluedADExtra, BannerADView.this.v, BannerADView.this.w, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$11$1$snDMoasMH1Yf5o6EKtJX2R9C92E
                         @Override // com.soft.blued.utils.ADClosePopOptionsUtils.ADRemovedListener
                         public final void onRemoved() {
                             BannerADView.AnonymousClass11.AnonymousClass1.this.a();
@@ -865,7 +863,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
                 if (BannerADView.this.F != null && BannerADView.this.F.getParent() != null) {
                     ((ViewGroup) BannerADView.this.F.getParent()).removeView(BannerADView.this.F);
                 }
-                Log.v("anythink", "onBannerClose");
+                Log.v(b.f4297c, "onBannerClose");
             }
 
             @Override // com.soft.blued.customview.banner.BannerAdListenerAdapter, com.soft.blued.customview.banner.BannerAdListener
@@ -876,14 +874,14 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
                 }
                 BannerADView.this.v.setVisibility(0);
                 BannerADView.this.v.setOnClickListener(new AnonymousClass1());
-                Log.v("anythink", "onBannerShow");
+                Log.v(b.f4297c, "onBannerShow");
             }
         });
         this.p.setVisibility(0);
         ViewGroup.LayoutParams layoutParams = this.p.getLayoutParams();
         layoutParams.height = -2;
         this.p.setLayoutParams(layoutParams);
-        this.p.addView(this.F, new FrameLayout.LayoutParams(-1, -2));
+        this.p.addView((View) this.F, (ViewGroup.LayoutParams) new FrameLayout.LayoutParams(-1, -2));
         return this.F;
     }
 
@@ -913,7 +911,6 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         if (tTImage != null) {
             final ImageSize imageSize = new ImageSize();
             ImageFileLoader.a(this.g).a(tTImage.getImageUrl()).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.customview.BannerADView.18
-                @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public void onUIFinish(File file, Exception exc) {
                     if (file == null || !file.exists()) {
                         if (BannerADView.this.u == null || !BannerADView.this.g.isActive()) {
@@ -962,7 +959,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
     public /* synthetic */ void c(BluedADExtra bluedADExtra, View view) {
         Tracker.onClick(view);
         Log.v("drb", "---------click:" + bluedADExtra.adm_type);
-        WebViewShowInfoFragment.show(this.f28322a, bluedADExtra.target_url, 9);
+        WebViewShowInfoFragment.show(this.f14632a, bluedADExtra.target_url, 9);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -984,11 +981,11 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
             this.F = c(bluedADExtra, bannerAdListener);
             if (this.s) {
                 this.s = false;
-                int a2 = DensityUtils.a(this.f28322a, bluedADExtra.bannerWidthUnitDP);
+                int a2 = DensityUtils.a(this.f14632a, bluedADExtra.bannerWidthUnitDP);
                 int round = Math.round(a2 / 4.0f);
                 HashMap hashMap = new HashMap();
-                hashMap.put(ATAdConst.KEY.AD_WIDTH, Integer.valueOf(a2));
-                hashMap.put(ATAdConst.KEY.AD_HEIGHT, Integer.valueOf(round));
+                hashMap.put("key_width", Integer.valueOf(a2));
+                hashMap.put("key_height", Integer.valueOf(round));
                 this.F.setLocalExtra(hashMap);
                 this.F.loadAd();
                 Log.v("drb", "banner1 topon Banner loadAd()");
@@ -997,7 +994,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
             return;
         }
         Log.v("drb", "banner2 topon first loadAd()");
-        ATBannerView a3 = NearbyTopBannerManager.a().a(bluedADExtra.ads_id);
+        View a3 = NearbyTopBannerManager.a().a(bluedADExtra.ads_id);
         a3.setBannerAdListener(a(bluedADExtra, bannerAdListener));
         this.p.setVisibility(0);
         this.p.removeAllViews();
@@ -1046,7 +1043,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         if (bannerView != null) {
             return bannerView;
         }
-        this.H = (BannerView) new HWBannerManager().a(this.f28322a, bluedADExtra.third_id, new BannerAdListenerAdapter() { // from class: com.soft.blued.customview.BannerADView.14
+        this.H = (BannerView) new HWBannerManager().a(this.f14632a, bluedADExtra.third_id, new BannerAdListenerAdapter() { // from class: com.soft.blued.customview.BannerADView.14
             @Override // com.soft.blued.customview.banner.BannerAdListenerAdapter, com.soft.blued.customview.banner.BannerAdListener
             public void a(int i, String str) {
                 if (BannerADView.this.u != null && BannerADView.this.g.isActive()) {
@@ -1092,7 +1089,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
     }
 
     private FrameLayout.LayoutParams getUnifiedBannerLayoutParams() {
-        int a2 = AppInfo.l - DensityUtils.a(this.f28322a, 20.0f);
+        int a2 = AppInfo.l - DensityUtils.a(this.f14632a, 20.0f);
         return new FrameLayout.LayoutParams(a2, Math.round(a2 / 6.4f));
     }
 
@@ -1115,7 +1112,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
             return;
         }
         this.r = false;
-        new TTTemplateBannerManager().a(this.f28322a, bluedADExtra.third_id, new BannerAdListenerAdapter() { // from class: com.soft.blued.customview.BannerADView.15
+        new TTTemplateBannerManager().a(this.f14632a, bluedADExtra.third_id, new BannerAdListenerAdapter() { // from class: com.soft.blued.customview.BannerADView.15
             @Override // com.soft.blued.customview.banner.BannerAdListenerAdapter, com.soft.blued.customview.banner.BannerAdListener
             public void a(int i, String str) {
                 Log.v("drb", "banner1穿山甲广告：onAdError");
@@ -1152,8 +1149,8 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
             unifiedBannerView.setVisibility(8);
             this.I.destroy();
         }
-        int a2 = DensityUtils.a(this.f28322a, 10.0f);
-        int i = AnonymousClass21.f28347a[this.w.ordinal()];
+        int a2 = DensityUtils.a(this.f14632a, 10.0f);
+        int i = AnonymousClass21.f14657a[this.w.ordinal()];
         if (i == 1 || i == 2) {
             a2 = 0;
         }
@@ -1167,7 +1164,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
             return;
         }
         bluedADExtra.ttShowSet.add(Long.valueOf(bluedADExtra.ads_id));
-        new TTBannerManager().a(this.f28322a, bluedADExtra.third_id, new BannerAdListenerAdapter() { // from class: com.soft.blued.customview.BannerADView.17
+        new TTBannerManager().a(this.f14632a, bluedADExtra.third_id, new BannerAdListenerAdapter() { // from class: com.soft.blued.customview.BannerADView.17
             @Override // com.soft.blued.customview.banner.BannerAdListenerAdapter, com.soft.blued.customview.banner.BannerAdListener
             public void a(int i2, String str) {
                 BannerADView.this.b();
@@ -1205,7 +1202,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         if (this.w == ADConstants.AD_POSITION.FEED_DETAILS) {
             bluedADExtra.third_id = "2094656821672498";
         }
-        this.I = (UnifiedBannerView) new TXBannerManager().a(this.f28322a, bluedADExtra.third_id, new BannerAdListenerAdapter() { // from class: com.soft.blued.customview.BannerADView.20
+        this.I = (UnifiedBannerView) new TXBannerManager().a(this.f14632a, bluedADExtra.third_id, new BannerAdListenerAdapter() { // from class: com.soft.blued.customview.BannerADView.20
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: com.soft.blued.customview.BannerADView$20$1  reason: invalid class name */
@@ -1226,7 +1223,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    ADClosePopOptionsUtils.a(BannerADView.this.f28322a, bluedADExtra, BannerADView.this.v, BannerADView.this.w, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$20$1$tULhTt4ySN_8_mwXRY0SJnDTfmY
+                    ADClosePopOptionsUtils.a(BannerADView.this.f14632a, bluedADExtra, BannerADView.this.v, BannerADView.this.w, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$20$1$tULhTt4ySN_8_mwXRY0SJnDTfmY
                         @Override // com.soft.blued.utils.ADClosePopOptionsUtils.ADRemovedListener
                         public final void onRemoved() {
                             BannerADView.AnonymousClass20.AnonymousClass1.this.a();
@@ -1268,7 +1265,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
             }
         });
         ViewGroup.LayoutParams layoutParams = this.p.getLayoutParams();
-        layoutParams.height = DensityUtils.a(this.f28322a, 84.0f);
+        layoutParams.height = DensityUtils.a(this.f14632a, 84.0f);
         this.p.setLayoutParams(layoutParams);
         this.p.addView(this.I, getUnifiedBannerLayoutParams());
         this.p.setVisibility(0);
@@ -1301,7 +1298,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    ADClosePopOptionsUtils.a(BannerADView.this.f28322a, bluedADExtra, BannerADView.this.v, BannerADView.this.w, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$12$1$ffNX_4Lo7XWQ_3uIJgG_r1HwfHs
+                    ADClosePopOptionsUtils.a(BannerADView.this.f14632a, bluedADExtra, BannerADView.this.v, BannerADView.this.w, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.customview.-$$Lambda$BannerADView$12$1$ffNX_4Lo7XWQ_3uIJgG_r1HwfHs
                         @Override // com.soft.blued.utils.ADClosePopOptionsUtils.ADRemovedListener
                         public final void onRemoved() {
                             BannerADView.AnonymousClass12.AnonymousClass1.this.a();
@@ -1310,21 +1307,17 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
                 }
             }
 
-            @Override // com.anythink.banner.api.ATBannerListener
             public void onBannerAutoRefreshFail(AdError adError) {
             }
 
-            @Override // com.anythink.banner.api.ATBannerListener
             public void onBannerAutoRefreshed(ATAdInfo aTAdInfo) {
             }
 
-            @Override // com.anythink.banner.api.ATBannerListener
             public void onBannerClicked(ATAdInfo aTAdInfo) {
                 Log.v("drb", "banner2 onBannerClicked");
                 FindHttpUtils.b(bluedADExtra.click_url);
             }
 
-            @Override // com.anythink.banner.api.ATBannerListener
             public void onBannerClose(ATAdInfo aTAdInfo) {
                 if (BannerADView.this.F != null && BannerADView.this.F.getParent() != null) {
                     ((ViewGroup) BannerADView.this.F.getParent()).removeView(BannerADView.this.F);
@@ -1332,7 +1325,6 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
                 Log.v("drb", "banner2 onBannerClose");
             }
 
-            @Override // com.anythink.banner.api.ATBannerListener
             public void onBannerFailed(AdError adError) {
                 Log.v("drb", "banner2 onBannerFailed:" + adError.toString());
                 if (BannerADView.this.u != null && BannerADView.this.g.isActive()) {
@@ -1344,12 +1336,10 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
                 }
             }
 
-            @Override // com.anythink.banner.api.ATBannerListener
             public void onBannerLoaded() {
                 Log.v("drb", "banner2 onBannerLoaded");
             }
 
-            @Override // com.anythink.banner.api.ATBannerListener
             public void onBannerShow(ATAdInfo aTAdInfo) {
                 bannerAdListener.a();
                 BannerADView.this.v.setVisibility(0);
@@ -1362,13 +1352,13 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
     }
 
     public void a() {
-        Log.v("drb", "bannerNext adList.size():" + this.f28323c.size());
-        List<BluedADExtra> list = this.f28323c;
+        Log.v("drb", "bannerNext adList.size():" + this.f14633c.size());
+        List<BluedADExtra> list = this.f14633c;
         if (list == null || list.size() <= 0) {
             b();
             return;
         }
-        final BluedADExtra bluedADExtra = this.f28323c.get(0);
+        final BluedADExtra bluedADExtra = this.f14633c.get(0);
         d();
         LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.AD_HOME_BANNER1_REQUEST;
         EventTrackLoginAndRegister.b(event, bluedADExtra.ads_id + "", bluedADExtra.adm_type_source);
@@ -1467,7 +1457,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         } else {
             this.s = true;
             if (bluedADExtra.third_style_view == 1) {
-                bluedADExtra.bannerWidthUnitDP = DensityUtils.b(this.f28322a, AppInfo.l) - 24;
+                bluedADExtra.bannerWidthUnitDP = DensityUtils.b(this.f14632a, AppInfo.l) - 24;
                 d(bluedADExtra, new BannerAdListener() { // from class: com.soft.blued.customview.BannerADView.5
                     @Override // com.soft.blued.customview.BannerADView.BannerAdListener
                     public void a() {
@@ -1505,18 +1495,18 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
     }
 
     public void a(Context context, AttributeSet attributeSet) {
-        this.f28322a = context;
+        this.f14632a = context;
         ImageOptions imageOptions = new ImageOptions();
         this.q = imageOptions;
-        imageOptions.f9507a = 2131231620;
-        this.q.f9508c = 2131231620;
-        View inflate = LayoutInflater.from(this.f28322a).inflate(R.layout.ad_banner_layout, this);
+        imageOptions.a = 2131231620;
+        this.q.c = 2131231620;
+        View inflate = LayoutInflater.from(this.f14632a).inflate(R.layout.ad_banner_layout, this);
         this.b = inflate;
         this.G = (ATNativeAdView) inflate.findViewById(2131361988);
-        this.h = this.b.findViewById(2131370746);
-        this.i = (ImageView) this.b.findViewById(2131364414);
+        this.h = this.b.findViewById(R.id.top_line);
+        this.i = (ImageView) this.b.findViewById(R.id.img_ad);
         this.j = (ImageView) this.b.findViewById(R.id.img_ad_close);
-        this.k = (ImageView) this.b.findViewById(2131364417);
+        this.k = (ImageView) this.b.findViewById(R.id.img_ad_icon);
         this.l = (TextView) this.b.findViewById(R.id.tv_ad_icon);
         this.m = this.b.findViewById(R.id.btm_line);
         this.n = this.b.findViewById(R.id.fl_blued_ad);
@@ -1527,7 +1517,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         this.v = this.b.findViewById(R.id.tv_transparent_close);
         a(this.b);
         if (attributeSet != null) {
-            TypedArray obtainStyledAttributes = this.f28322a.obtainStyledAttributes(attributeSet, R.styleable.BannerADView);
+            TypedArray obtainStyledAttributes = this.f14632a.obtainStyledAttributes(attributeSet, R.styleable.BannerADView);
             boolean z = obtainStyledAttributes.getBoolean(2, false);
             boolean z2 = obtainStyledAttributes.getBoolean(1, false);
             float dimension = obtainStyledAttributes.getDimension(0, 0.0f);
@@ -1554,7 +1544,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
         this.w = ad_position;
         bluedADExtra.bannerPosition = ad_position;
         this.g = iRequestHost;
-        int b = (ad_position == ADConstants.AD_POSITION.USER_PROFILE_TAB || ad_position == ADConstants.AD_POSITION.NEARBY_HOME_TOP) ? DensityUtils.b(this.f28322a, AppInfo.l) - 20 : ad_position == ADConstants.AD_POSITION.NEARBY_HOME_GRID_BANNER ? DensityUtils.b(this.f28322a, AppInfo.l) - 6 : DensityUtils.b(this.f28322a, AppInfo.l);
+        int b = (ad_position == ADConstants.AD_POSITION.USER_PROFILE_TAB || ad_position == ADConstants.AD_POSITION.NEARBY_HOME_TOP) ? DensityUtils.b(this.f14632a, AppInfo.l) - 20 : ad_position == ADConstants.AD_POSITION.NEARBY_HOME_GRID_BANNER ? DensityUtils.b(this.f14632a, AppInfo.l) - 6 : DensityUtils.b(this.f14632a, AppInfo.l);
         if (bluedADExtra.isShowUrlVisited) {
             this.r = false;
         } else {
@@ -1575,14 +1565,14 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
             return;
         }
         this.g = iRequestHost;
-        this.f28323c = bannerAdExtra.data;
+        this.f14633c = bannerAdExtra.data;
         this.u = aDListener;
         this.w = ADConstants.AD_POSITION.NEARBY_HOME_TOP;
         if (bannerAdExtra.connect_type == 1) {
             a(bannerAdExtra.position_code, bannerAdExtra.serial_parallel, bannerAdExtra.timeout);
             return;
         }
-        Collections.sort(this.f28323c);
+        Collections.sort(this.f14633c);
         a();
     }
 
@@ -1639,7 +1629,7 @@ public class BannerADView extends LinearLayout implements AdBannerTestObserve {
 
     public void setRadius(float f) {
         if (f > 0.0f) {
-            this.o.setRadius(DensityUtils.a(this.f28322a, f));
+            this.o.setRadius(DensityUtils.a(this.f14632a, f));
         }
     }
 }

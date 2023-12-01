@@ -4,18 +4,18 @@ package com.tencent.turingface.sdk.mfa;
 public final class xEKdO {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f40011a = new byte[0];
+    public static final byte[] f26320a = new byte[0];
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public byte[] f40012c;
+    public byte[] f26321c;
 
     public xEKdO(int i, byte[] bArr) {
         this.b = i;
-        this.f40012c = bArr;
+        this.f26321c = bArr;
     }
 
     public static xEKdO a(int i) {
-        return new xEKdO(i, f40011a);
+        return new xEKdO(i, f26320a);
     }
 }

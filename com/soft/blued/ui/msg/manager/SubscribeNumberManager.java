@@ -19,22 +19,22 @@ import kotlin.text.StringsKt;
 public final class SubscribeNumberManager {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SubscribeNumberManager f32449a;
+    public static final SubscribeNumberManager f18759a;
     private static final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static List<String> f32450c;
+    private static List<String> f18760c;
     private static List<String> d;
     private static int e;
     private static int f;
 
     static {
         SubscribeNumberManager subscribeNumberManager = new SubscribeNumberManager();
-        f32449a = subscribeNumberManager;
+        f18759a = subscribeNumberManager;
         String simpleName = subscribeNumberManager.getClass().getSimpleName();
         Intrinsics.c(simpleName, "SubscribeNumberManager.javaClass.simpleName");
         b = simpleName;
-        f32450c = new ArrayList();
+        f18760c = new ArrayList();
         d = new ArrayList();
     }
 
@@ -60,14 +60,14 @@ public final class SubscribeNumberManager {
             }
         }
         for (SessionModel sessionModel2 : arrayList) {
-            SessionSettingBaseModel sessionSettingBaseModel = sessionModel2.sessionSettingModel;
-            if (sessionSettingBaseModel instanceof SessionSettingModel) {
-                if (((SessionSettingModel) sessionSettingBaseModel).getRemindAudio() == 1) {
+            SessionSettingModel sessionSettingModel = sessionModel2.sessionSettingModel;
+            if (sessionSettingModel instanceof SessionSettingModel) {
+                if (sessionSettingModel.getRemindAudio() == 1) {
                     arrayList3.add(String.valueOf(sessionModel2.sessionId));
-                    SubscribeNumberManager subscribeNumberManager = f32449a;
+                    SubscribeNumberManager subscribeNumberManager = f18759a;
                     subscribeNumberManager.b(subscribeNumberManager.b() + sessionModel2.noReadMsgCount);
                 } else {
-                    SubscribeNumberManager subscribeNumberManager2 = f32449a;
+                    SubscribeNumberManager subscribeNumberManager2 = f18759a;
                     subscribeNumberManager2.a(subscribeNumberManager2.a() + sessionModel2.noReadMsgCount);
                 }
             }
@@ -91,9 +91,9 @@ public final class SubscribeNumberManager {
             sessionModel3.lastMsgFromId = sessionModel4.lastMsgFromId;
             sessionModel3.lastMsgStateCode = sessionModel4.lastMsgStateCode;
             sessionModel3.lastMsgExtra = sessionModel4.lastMsgExtra;
-            SessionSettingModel sessionSettingModel = new SessionSettingModel();
-            sessionSettingModel.setRemindAudio(0);
-            sessionModel3.sessionSettingModel = sessionSettingModel;
+            SessionSettingBaseModel sessionSettingModel2 = new SessionSettingModel();
+            sessionSettingModel2.setRemindAudio(0);
+            sessionModel3.sessionSettingModel = sessionSettingModel2;
             arrayList2.add(0, sessionModel3);
         }
         return z ? arrayList : arrayList2;
@@ -128,8 +128,8 @@ public final class SubscribeNumberManager {
     }
 
     public final boolean a(String str, Short sh) {
-        List<String> list = f32450c;
-        if ((list == null || list.isEmpty()) || TextUtils.isEmpty(str) || !CollectionsKt.a((Iterable<? extends String>) f32450c, str)) {
+        List<String> list = f18760c;
+        if ((list == null || list.isEmpty()) || TextUtils.isEmpty(str) || !CollectionsKt.a(f18760c, str)) {
             return false;
         }
         return sh != null && sh.shortValue() == 2;
@@ -166,18 +166,18 @@ public final class SubscribeNumberManager {
 
     public final void d() {
         AppConfigModel b2 = BluedConfig.a().b();
-        List<String> officialAccount = b2.official_account;
+        List<String> list = b2.official_account;
         String str = b2.official_unique_account;
         if (b2 != null) {
-            List<String> list = officialAccount;
-            if ((list == null || list.isEmpty()) || str == null) {
+            List<String> list2 = list;
+            if ((list2 == null || list2.isEmpty()) || str == null) {
                 return;
             }
-            f32450c.clear();
-            List<String> list2 = f32450c;
-            Intrinsics.c(officialAccount, "officialAccount");
-            list2.addAll(list);
-            f32450c.add(str);
+            f18760c.clear();
+            List<String> list3 = f18760c;
+            Intrinsics.c(list, "officialAccount");
+            list3.addAll(list2);
+            f18760c.add(str);
         }
     }
 }

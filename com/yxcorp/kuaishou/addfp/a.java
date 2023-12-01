@@ -10,11 +10,11 @@ import com.yxcorp.kuaishou.addfp.android.b.f;
 public class a implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ KWEGIDDFP f41849a;
+    final /* synthetic */ KWEGIDDFP f28158a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public a(KWEGIDDFP kwegiddfp) {
-        this.f41849a = kwegiddfp;
+        this.f28158a = kwegiddfp;
     }
 
     @Override // java.lang.Runnable
@@ -26,24 +26,24 @@ public class a implements Runnable {
         ResponseDfpCallback responseDfpCallback2;
         Context unused;
         try {
-            context = this.f41849a.mParamContext;
+            context = this.f28158a.mParamContext;
             if (context == null) {
-                responseDfpCallback2 = this.f41849a.mCallBack;
+                responseDfpCallback2 = this.f28158a.mCallBack;
                 responseDfpCallback2.onFailed(-3, "parameter error");
                 return;
             }
-            unused = this.f41849a.mParamContext;
-            int i = f.f41861c;
+            unused = this.f28158a.mParamContext;
+            int i = f.f28170c;
             if (Build.VERSION.SDK_INT >= 28) {
                 f.a();
             }
-            KWEGIDDFP kwegiddfp = this.f41849a;
+            KWEGIDDFP kwegiddfp = this.f28158a;
             context2 = kwegiddfp.mParamContext;
             kwegiddfp.mPkgName = context2.getPackageName();
             c c2 = c.c();
-            str = this.f41849a.mPkgName;
+            str = this.f28158a.mPkgName;
             c2.b(str);
-            KWEGIDDFP kwegiddfp2 = this.f41849a;
+            KWEGIDDFP kwegiddfp2 = this.f28158a;
             responseDfpCallback = kwegiddfp2.mCallBack;
             kwegiddfp2.getEGid(responseDfpCallback);
         } catch (Throwable th) {

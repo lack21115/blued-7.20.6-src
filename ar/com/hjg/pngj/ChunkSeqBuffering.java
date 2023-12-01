@@ -4,11 +4,11 @@ package ar.com.hjg.pngj;
 public class ChunkSeqBuffering extends ChunkSeqReader {
 
     /* renamed from: a  reason: collision with root package name */
-    protected boolean f3616a = true;
+    protected boolean f3568a = true;
 
     @Override // ar.com.hjg.pngj.ChunkSeqReader
     protected boolean a(int i, String str) {
-        return this.f3616a;
+        return this.f3568a;
     }
 
     @Override // ar.com.hjg.pngj.ChunkSeqReader

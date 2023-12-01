@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Lifecycle;
-import com.alipay.sdk.util.i;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -15,17 +14,17 @@ import java.util.ArrayList;
 public final class BackStackRecord extends FragmentTransaction implements FragmentManager.BackStackEntry, FragmentManager.OpGenerator {
 
     /* renamed from: a  reason: collision with root package name */
-    final FragmentManager f2900a;
+    final FragmentManager f2852a;
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2901c;
+    int f2853c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public BackStackRecord(FragmentManager fragmentManager) {
         super(fragmentManager.getFragmentFactory(), fragmentManager.h() != null ? fragmentManager.h().getContext().getClassLoader() : null);
-        this.f2901c = -1;
-        this.f2900a = fragmentManager;
+        this.f2853c = -1;
+        this.f2852a = fragmentManager;
     }
 
     private static boolean b(FragmentTransaction.Op op) {
@@ -45,12 +44,12 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
         }
         this.b = true;
         if (this.j) {
-            this.f2901c = this.f2900a.e();
+            this.f2853c = this.f2852a.e();
         } else {
-            this.f2901c = -1;
+            this.f2853c = -1;
         }
-        this.f2900a.a(this, z);
-        return this.f2901c;
+        this.f2852a.a(this, z);
+        return this.f2853c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -64,7 +63,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                 return fragment2;
             }
             FragmentTransaction.Op op = this.d.get(i3);
-            int i4 = op.f3012a;
+            int i4 = op.f2964a;
             if (i4 != 1) {
                 if (i4 == 2) {
                     Fragment fragment3 = op.b;
@@ -92,7 +91,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                                     fragment5 = null;
                                 }
                                 FragmentTransaction.Op op2 = new FragmentTransaction.Op(3, fragment4);
-                                op2.f3013c = op.f3013c;
+                                op2.f2965c = op.f2965c;
                                 op2.e = op.e;
                                 op2.d = op.d;
                                 op2.f = op.f;
@@ -111,7 +110,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                         this.d.remove(i);
                         i--;
                     } else {
-                        op.f3012a = 1;
+                        op.f2964a = 1;
                         arrayList.add(fragment3);
                     }
                 } else if (i4 == 3 || i4 == 6) {
@@ -149,11 +148,11 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
         while (true) {
             int i2 = i;
             if (i2 >= size) {
-                if (this.s || FragmentManager.f2967a) {
+                if (this.s || FragmentManager.f2919a) {
                     return;
                 }
-                FragmentManager fragmentManager = this.f2900a;
-                fragmentManager.a(fragmentManager.f2968c, true);
+                FragmentManager fragmentManager = this.f2852a;
+                fragmentManager.a(fragmentManager.f2920c, true);
                 return;
             }
             FragmentTransaction.Op op = this.d.get(i2);
@@ -163,49 +162,49 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                 fragment.setNextTransition(this.i);
                 fragment.setSharedElementNames(this.q, this.r);
             }
-            switch (op.f3012a) {
+            switch (op.f2964a) {
                 case 1:
-                    fragment.setAnimations(op.f3013c, op.d, op.e, op.f);
-                    this.f2900a.a(fragment, false);
-                    this.f2900a.i(fragment);
+                    fragment.setAnimations(op.f2965c, op.d, op.e, op.f);
+                    this.f2852a.a(fragment, false);
+                    this.f2852a.i(fragment);
                     break;
                 case 2:
                 default:
-                    throw new IllegalArgumentException("Unknown cmd: " + op.f3012a);
+                    throw new IllegalArgumentException("Unknown cmd: " + op.f2964a);
                 case 3:
-                    fragment.setAnimations(op.f3013c, op.d, op.e, op.f);
-                    this.f2900a.j(fragment);
+                    fragment.setAnimations(op.f2965c, op.d, op.e, op.f);
+                    this.f2852a.j(fragment);
                     break;
                 case 4:
-                    fragment.setAnimations(op.f3013c, op.d, op.e, op.f);
-                    this.f2900a.k(fragment);
+                    fragment.setAnimations(op.f2965c, op.d, op.e, op.f);
+                    this.f2852a.k(fragment);
                     break;
                 case 5:
-                    fragment.setAnimations(op.f3013c, op.d, op.e, op.f);
-                    this.f2900a.a(fragment, false);
-                    this.f2900a.l(fragment);
+                    fragment.setAnimations(op.f2965c, op.d, op.e, op.f);
+                    this.f2852a.a(fragment, false);
+                    this.f2852a.l(fragment);
                     break;
                 case 6:
-                    fragment.setAnimations(op.f3013c, op.d, op.e, op.f);
-                    this.f2900a.m(fragment);
+                    fragment.setAnimations(op.f2965c, op.d, op.e, op.f);
+                    this.f2852a.m(fragment);
                     break;
                 case 7:
-                    fragment.setAnimations(op.f3013c, op.d, op.e, op.f);
-                    this.f2900a.a(fragment, false);
-                    this.f2900a.n(fragment);
+                    fragment.setAnimations(op.f2965c, op.d, op.e, op.f);
+                    this.f2852a.a(fragment, false);
+                    this.f2852a.n(fragment);
                     break;
                 case 8:
-                    this.f2900a.o(fragment);
+                    this.f2852a.o(fragment);
                     break;
                 case 9:
-                    this.f2900a.o(null);
+                    this.f2852a.o(null);
                     break;
                 case 10:
-                    this.f2900a.a(fragment, op.h);
+                    this.f2852a.a(fragment, op.h);
                     break;
             }
-            if (!this.s && op.f3012a != 1 && fragment != null && !FragmentManager.f2967a) {
-                this.f2900a.g(fragment);
+            if (!this.s && op.f2964a != 1 && fragment != null && !FragmentManager.f2919a) {
+                this.f2852a.g(fragment);
             }
             i = i2 + 1;
         }
@@ -241,7 +240,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
     @Override // androidx.fragment.app.FragmentTransaction
     public void a(int i, Fragment fragment, String str, int i2) {
         super.a(i, fragment, str, i2);
-        fragment.mFragmentManager = this.f2900a;
+        fragment.mFragmentManager = this.f2852a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -316,7 +315,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                 return fragment;
             }
             FragmentTransaction.Op op = this.d.get(i);
-            int i2 = op.f3012a;
+            int i2 = op.f2964a;
             if (i2 != 1) {
                 if (i2 != 3) {
                     switch (i2) {
@@ -346,11 +345,11 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
         while (true) {
             int i = size - 1;
             if (i < 0) {
-                if (this.s || !z || FragmentManager.f2967a) {
+                if (this.s || !z || FragmentManager.f2919a) {
                     return;
                 }
-                FragmentManager fragmentManager = this.f2900a;
-                fragmentManager.a(fragmentManager.f2968c, true);
+                FragmentManager fragmentManager = this.f2852a;
+                fragmentManager.a(fragmentManager.f2920c, true);
                 return;
             }
             FragmentTransaction.Op op = this.d.get(i);
@@ -360,49 +359,49 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                 fragment.setNextTransition(FragmentManager.c(this.i));
                 fragment.setSharedElementNames(this.r, this.q);
             }
-            switch (op.f3012a) {
+            switch (op.f2964a) {
                 case 1:
-                    fragment.setAnimations(op.f3013c, op.d, op.e, op.f);
-                    this.f2900a.a(fragment, true);
-                    this.f2900a.j(fragment);
+                    fragment.setAnimations(op.f2965c, op.d, op.e, op.f);
+                    this.f2852a.a(fragment, true);
+                    this.f2852a.j(fragment);
                     break;
                 case 2:
                 default:
-                    throw new IllegalArgumentException("Unknown cmd: " + op.f3012a);
+                    throw new IllegalArgumentException("Unknown cmd: " + op.f2964a);
                 case 3:
-                    fragment.setAnimations(op.f3013c, op.d, op.e, op.f);
-                    this.f2900a.i(fragment);
+                    fragment.setAnimations(op.f2965c, op.d, op.e, op.f);
+                    this.f2852a.i(fragment);
                     break;
                 case 4:
-                    fragment.setAnimations(op.f3013c, op.d, op.e, op.f);
-                    this.f2900a.l(fragment);
+                    fragment.setAnimations(op.f2965c, op.d, op.e, op.f);
+                    this.f2852a.l(fragment);
                     break;
                 case 5:
-                    fragment.setAnimations(op.f3013c, op.d, op.e, op.f);
-                    this.f2900a.a(fragment, true);
-                    this.f2900a.k(fragment);
+                    fragment.setAnimations(op.f2965c, op.d, op.e, op.f);
+                    this.f2852a.a(fragment, true);
+                    this.f2852a.k(fragment);
                     break;
                 case 6:
-                    fragment.setAnimations(op.f3013c, op.d, op.e, op.f);
-                    this.f2900a.n(fragment);
+                    fragment.setAnimations(op.f2965c, op.d, op.e, op.f);
+                    this.f2852a.n(fragment);
                     break;
                 case 7:
-                    fragment.setAnimations(op.f3013c, op.d, op.e, op.f);
-                    this.f2900a.a(fragment, true);
-                    this.f2900a.m(fragment);
+                    fragment.setAnimations(op.f2965c, op.d, op.e, op.f);
+                    this.f2852a.a(fragment, true);
+                    this.f2852a.m(fragment);
                     break;
                 case 8:
-                    this.f2900a.o(null);
+                    this.f2852a.o(null);
                     break;
                 case 9:
-                    this.f2900a.o(fragment);
+                    this.f2852a.o(fragment);
                     break;
                 case 10:
-                    this.f2900a.a(fragment, op.g);
+                    this.f2852a.a(fragment, op.g);
                     break;
             }
-            if (!this.s && op.f3012a != 3 && fragment != null && !FragmentManager.f2967a) {
-                this.f2900a.g(fragment);
+            if (!this.s && op.f2964a != 3 && fragment != null && !FragmentManager.f2919a) {
+                this.f2852a.g(fragment);
             }
             size = i;
         }
@@ -454,18 +453,18 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
     @Override // androidx.fragment.app.FragmentTransaction
     public void commitNow() {
         disallowAddToBackStack();
-        this.f2900a.b((FragmentManager.OpGenerator) this, false);
+        this.f2852a.b((FragmentManager.OpGenerator) this, false);
     }
 
     @Override // androidx.fragment.app.FragmentTransaction
     public void commitNowAllowingStateLoss() {
         disallowAddToBackStack();
-        this.f2900a.b((FragmentManager.OpGenerator) this, true);
+        this.f2852a.b((FragmentManager.OpGenerator) this, true);
     }
 
     @Override // androidx.fragment.app.FragmentTransaction
     public FragmentTransaction detach(Fragment fragment) {
-        if (fragment.mFragmentManager == null || fragment.mFragmentManager == this.f2900a) {
+        if (fragment.mFragmentManager == null || fragment.mFragmentManager == this.f2852a) {
             return super.detach(fragment);
         }
         throw new IllegalStateException("Cannot detach Fragment attached to a different FragmentManager. Fragment " + fragment.toString() + " is already attached to a FragmentManager.");
@@ -482,7 +481,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
             printWriter.print("mName=");
             printWriter.print(this.l);
             printWriter.print(" mIndex=");
-            printWriter.print(this.f2901c);
+            printWriter.print(this.f2853c);
             printWriter.print(" mCommitted=");
             printWriter.println(this.b);
             if (this.i != 0) {
@@ -532,7 +531,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                 return;
             }
             FragmentTransaction.Op op = this.d.get(i2);
-            switch (op.f3012a) {
+            switch (op.f2964a) {
                 case 0:
                     str2 = WifiEnterpriseConfig.EMPTY_VALUE;
                     break;
@@ -567,7 +566,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                     str2 = "OP_SET_MAX_LIFECYCLE";
                     break;
                 default:
-                    str2 = "cmd=" + op.f3012a;
+                    str2 = "cmd=" + op.f2964a;
                     break;
             }
             printWriter.print(str);
@@ -578,10 +577,10 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
             printWriter.print(" ");
             printWriter.println(op.b);
             if (z) {
-                if (op.f3013c != 0 || op.d != 0) {
+                if (op.f2965c != 0 || op.d != 0) {
                     printWriter.print(str);
                     printWriter.print("enterAnim=#");
-                    printWriter.print(Integer.toHexString(op.f3013c));
+                    printWriter.print(Integer.toHexString(op.f2965c));
                     printWriter.print(" exitAnim=#");
                     printWriter.println(Integer.toHexString(op.d));
                 }
@@ -605,7 +604,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
         arrayList.add(this);
         arrayList2.add(false);
         if (this.j) {
-            this.f2900a.a(this);
+            this.f2852a.a(this);
             return true;
         }
         return true;
@@ -613,7 +612,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
 
     @Override // androidx.fragment.app.FragmentManager.BackStackEntry
     public CharSequence getBreadCrumbShortTitle() {
-        return this.o != 0 ? this.f2900a.h().getContext().getText(this.o) : this.p;
+        return this.o != 0 ? this.f2852a.h().getContext().getText(this.o) : this.p;
     }
 
     @Override // androidx.fragment.app.FragmentManager.BackStackEntry
@@ -623,7 +622,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
 
     @Override // androidx.fragment.app.FragmentManager.BackStackEntry
     public CharSequence getBreadCrumbTitle() {
-        return this.m != 0 ? this.f2900a.h().getContext().getText(this.m) : this.n;
+        return this.m != 0 ? this.f2852a.h().getContext().getText(this.m) : this.n;
     }
 
     @Override // androidx.fragment.app.FragmentManager.BackStackEntry
@@ -633,7 +632,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
 
     @Override // androidx.fragment.app.FragmentManager.BackStackEntry
     public int getId() {
-        return this.f2901c;
+        return this.f2853c;
     }
 
     @Override // androidx.fragment.app.FragmentManager.BackStackEntry
@@ -643,7 +642,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
 
     @Override // androidx.fragment.app.FragmentTransaction
     public FragmentTransaction hide(Fragment fragment) {
-        if (fragment.mFragmentManager == null || fragment.mFragmentManager == this.f2900a) {
+        if (fragment.mFragmentManager == null || fragment.mFragmentManager == this.f2852a) {
             return super.hide(fragment);
         }
         throw new IllegalStateException("Cannot hide Fragment attached to a different FragmentManager. Fragment " + fragment.toString() + " is already attached to a FragmentManager.");
@@ -656,7 +655,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
 
     @Override // androidx.fragment.app.FragmentTransaction
     public FragmentTransaction remove(Fragment fragment) {
-        if (fragment.mFragmentManager == null || fragment.mFragmentManager == this.f2900a) {
+        if (fragment.mFragmentManager == null || fragment.mFragmentManager == this.f2852a) {
             return super.remove(fragment);
         }
         throw new IllegalStateException("Cannot remove Fragment attached to a different FragmentManager. Fragment " + fragment.toString() + " is already attached to a FragmentManager.");
@@ -681,8 +680,8 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
 
     @Override // androidx.fragment.app.FragmentTransaction
     public FragmentTransaction setMaxLifecycle(Fragment fragment, Lifecycle.State state) {
-        if (fragment.mFragmentManager != this.f2900a) {
-            throw new IllegalArgumentException("Cannot setMaxLifecycle for Fragment not attached to FragmentManager " + this.f2900a);
+        if (fragment.mFragmentManager != this.f2852a) {
+            throw new IllegalArgumentException("Cannot setMaxLifecycle for Fragment not attached to FragmentManager " + this.f2852a);
         } else if (state == Lifecycle.State.INITIALIZED && fragment.mState > -1) {
             throw new IllegalArgumentException("Cannot set maximum Lifecycle to " + state + " after the Fragment has been created");
         } else if (state != Lifecycle.State.DESTROYED) {
@@ -694,7 +693,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
 
     @Override // androidx.fragment.app.FragmentTransaction
     public FragmentTransaction setPrimaryNavigationFragment(Fragment fragment) {
-        if (fragment == null || fragment.mFragmentManager == null || fragment.mFragmentManager == this.f2900a) {
+        if (fragment == null || fragment.mFragmentManager == null || fragment.mFragmentManager == this.f2852a) {
             return super.setPrimaryNavigationFragment(fragment);
         }
         throw new IllegalStateException("Cannot setPrimaryNavigation for Fragment attached to a different FragmentManager. Fragment " + fragment.toString() + " is already attached to a FragmentManager.");
@@ -702,7 +701,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
 
     @Override // androidx.fragment.app.FragmentTransaction
     public FragmentTransaction show(Fragment fragment) {
-        if (fragment.mFragmentManager == null || fragment.mFragmentManager == this.f2900a) {
+        if (fragment.mFragmentManager == null || fragment.mFragmentManager == this.f2852a) {
             return super.show(fragment);
         }
         throw new IllegalStateException("Cannot show Fragment attached to a different FragmentManager. Fragment " + fragment.toString() + " is already attached to a FragmentManager.");
@@ -712,15 +711,15 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
         StringBuilder sb = new StringBuilder(128);
         sb.append("BackStackEntry{");
         sb.append(Integer.toHexString(System.identityHashCode(this)));
-        if (this.f2901c >= 0) {
+        if (this.f2853c >= 0) {
             sb.append(" #");
-            sb.append(this.f2901c);
+            sb.append(this.f2853c);
         }
         if (this.l != null) {
             sb.append(" ");
             sb.append(this.l);
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

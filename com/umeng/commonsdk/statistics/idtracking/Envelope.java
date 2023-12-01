@@ -149,7 +149,7 @@ public class Envelope {
         String imprintProperty = UMEnvelopeBuild.imprintProperty(context, bh.g, null);
         String hexString = DataHelper.toHexString(this.mSignature);
         byte[] bArr = new byte[16];
-        System.arraycopy((Object) this.mSignature, 2, (Object) bArr, 0, 16);
+        System.arraycopy(this.mSignature, 2, bArr, 0, 16);
         String hexString2 = DataHelper.toHexString(DataHelper.hash(bArr));
         try {
             JSONObject jSONObject = new JSONObject();
@@ -191,7 +191,7 @@ public class Envelope {
         if (this.encrypt) {
             byte[] bArr = new byte[16];
             try {
-                System.arraycopy((Object) this.mSignature, 1, (Object) bArr, 0, 16);
+                System.arraycopy(this.mSignature, 1, bArr, 0, 16);
                 this.mEntity = DataHelper.encrypt(this.mEntity, bArr);
             } catch (Exception e) {
             }

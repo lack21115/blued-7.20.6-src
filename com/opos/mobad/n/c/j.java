@@ -11,18 +11,18 @@ import android.widget.TextView;
 public class j extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f26614a;
+    private final a f12926a;
     private float b;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/n/c/j$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f26615a;
+        public final int f12927a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f26616c;
+        public final int f12928c;
         public final int d;
         public final int e;
         public final float f;
@@ -35,7 +35,7 @@ public class j extends RelativeLayout {
             this.f = f <= 0.0f ? 6.315f : f;
             int i4 = i > 0 ? i : 171;
             this.b = i4;
-            this.f26615a = (int) (i4 / this.f);
+            this.f12927a = (int) (i4 / this.f);
             int i5 = i;
             if (i2 <= i4) {
                 i5 = i;
@@ -44,7 +44,7 @@ public class j extends RelativeLayout {
                 }
             }
             this.d = i5;
-            this.f26616c = (int) (i5 / this.f);
+            this.f12928c = (int) (i5 / this.f);
             this.e = a(i3);
         }
 
@@ -65,11 +65,11 @@ public class j extends RelativeLayout {
 
         public int b(int i) {
             int i2;
-            int i3 = this.f26616c;
+            int i3 = this.f12928c;
             if (i <= i3) {
                 i2 = i3;
             } else {
-                int i4 = this.f26615a;
+                int i4 = this.f12927a;
                 if (i < i4) {
                     return i;
                 }
@@ -79,14 +79,14 @@ public class j extends RelativeLayout {
         }
 
         public String toString() {
-            return "maxH = " + this.f26615a + ",maxW = " + this.b + ",minH = " + this.f26616c + ",minW = " + this.d;
+            return "maxH = " + this.f12927a + ",maxW = " + this.b + ",minH = " + this.f12928c + ",minW = " + this.d;
         }
     }
 
     public j(Context context, AttributeSet attributeSet, int i, a aVar) {
         super(context, attributeSet, i);
         this.b = 1.0f;
-        this.f26614a = aVar;
+        this.f12926a = aVar;
     }
 
     public j(Context context, AttributeSet attributeSet, a aVar) {
@@ -149,7 +149,7 @@ public class j extends RelativeLayout {
         if (viewGroup == null) {
             return;
         }
-        float width = viewGroup.getWidth() / this.f26614a.e;
+        float width = viewGroup.getWidth() / this.f12926a.e;
         float f = this.b;
         if (f == width) {
             com.opos.cmn.an.f.a.b("SizeView", "size not change");
@@ -169,29 +169,27 @@ public class j extends RelativeLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         a(this);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RelativeLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int makeMeasureSpec;
         int makeMeasureSpec2;
         int mode = View.MeasureSpec.getMode(i2);
         int mode2 = View.MeasureSpec.getMode(i);
         int size = View.MeasureSpec.getSize(i2);
         int size2 = View.MeasureSpec.getSize(i);
-        int b = this.f26614a.b(size);
-        int a2 = this.f26614a.a(size2);
-        a aVar = this.f26614a;
+        int b = this.f12926a.b(size);
+        int a2 = this.f12926a.a(size2);
+        a aVar = this.f12926a;
         int a3 = aVar.a(aVar.e);
-        int i3 = (int) (a3 / this.f26614a.f);
-        int i4 = (int) (a2 / this.f26614a.f);
-        int i5 = (int) (b * this.f26614a.f);
+        int i3 = (int) (a3 / this.f12926a.f);
+        int i4 = (int) (a2 / this.f12926a.f);
+        int i5 = (int) (b * this.f12926a.f);
         if (mode2 != 1073741824) {
             if (mode == 1073741824) {
                 makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i5, 1073741824);

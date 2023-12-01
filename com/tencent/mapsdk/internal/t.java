@@ -11,26 +11,26 @@ import com.tencent.tencentmap.mapsdk.maps.TencentMapOptions;
 public final class t {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f38013a;
+    private final Context f24322a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/t$a.class */
     public class a implements Callback<Void> {
         public final /* synthetic */ ViewGroup b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ TencentMapOptions f38014c;
+        public final /* synthetic */ TencentMapOptions f24323c;
         public final /* synthetic */ Callback d;
 
         public a(ViewGroup viewGroup, TencentMapOptions tencentMapOptions, Callback callback) {
             this.b = viewGroup;
-            this.f38014c = tencentMapOptions;
+            this.f24323c = tencentMapOptions;
             this.d = callback;
         }
 
         @Override // com.tencent.map.tools.Callback
         /* renamed from: a */
         public void callback(Void r6) {
-            BaseMapView.MapViewProxy a2 = t.this.a(u.d().f(), this.b, this.f38014c);
+            BaseMapView.MapViewProxy a2 = t.this.a(u.d().f(), this.b, this.f24323c);
             Callback callback = this.d;
             if (callback != null) {
                 callback.callback(a2);
@@ -39,19 +39,19 @@ public final class t {
     }
 
     public t(Context context) {
-        this.f38013a = context.getApplicationContext();
+        this.f24322a = context.getApplicationContext();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public BaseMapView.MapViewProxy a(s sVar, ViewGroup viewGroup, TencentMapOptions tencentMapOptions) {
-        return sVar.createDelegate(this.f38013a, tencentMapOptions, viewGroup);
+        return sVar.createDelegate(this.f24322a, tencentMapOptions, viewGroup);
     }
 
     private String a(TencentMapOptions tencentMapOptions) {
         String mapKey = tencentMapOptions.getMapKey();
         String str = mapKey;
         if (f7.b(mapKey)) {
-            str = g7.a(this.f38013a, "TencentMapSDK");
+            str = g7.a(this.f24322a, "TencentMapSDK");
         }
         String customUserId = tencentMapOptions.getCustomUserId();
         String str2 = customUserId;
@@ -62,11 +62,11 @@ public final class t {
     }
 
     public BaseMapView.MapViewProxy a(ViewGroup viewGroup, TencentMapOptions tencentMapOptions) {
-        u.d().init(this.f38013a, a(tencentMapOptions));
+        u.d().init(this.f24322a, a(tencentMapOptions));
         return a(u.d().f(), viewGroup, tencentMapOptions);
     }
 
     public void a(ViewGroup viewGroup, TencentMapOptions tencentMapOptions, Callback<BaseMapView.MapViewProxy> callback) {
-        u.d().a(this.f38013a, a(tencentMapOptions), new a(viewGroup, tencentMapOptions, callback));
+        u.d().a(this.f24322a, a(tencentMapOptions), new a(viewGroup, tencentMapOptions, callback));
     }
 }

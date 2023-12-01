@@ -32,7 +32,7 @@ public class WebViewClient {
     public static final int INTERCEPT_BY_ISP = -16;
 
     /* renamed from: a  reason: collision with root package name */
-    i f38816a;
+    i f25125a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/WebViewClient$a.class */
     public interface a {
@@ -58,7 +58,7 @@ public class WebViewClient {
     }
 
     public void onPageStarted(WebView webView, String str, Bitmap bitmap) {
-        i iVar = this.f38816a;
+        i iVar = this.f25125a;
         if (iVar != null) {
             iVar.a(webView, str, bitmap);
         }
@@ -72,9 +72,9 @@ public class WebViewClient {
     }
 
     public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
-        if (this.f38816a != null) {
+        if (this.f25125a != null) {
             if (webResourceRequest.isForMainFrame()) {
-                this.f38816a.onReceivedError(webView.c(), webResourceError.getErrorCode(), webResourceError.getDescription().toString(), webResourceRequest.getUrl().toString());
+                this.f25125a.onReceivedError(webView.c(), webResourceError.getErrorCode(), webResourceError.getDescription().toString(), webResourceRequest.getUrl().toString());
             }
         } else if (webResourceRequest.isForMainFrame()) {
             onReceivedError(webView, webResourceError.getErrorCode(), webResourceError.getDescription().toString(), webResourceRequest.getUrl().toString());
@@ -110,12 +110,12 @@ public class WebViewClient {
     }
 
     public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
-        i iVar = this.f38816a;
+        i iVar = this.f25125a;
         return iVar != null ? iVar.shouldInterceptRequest(webView.c(), webResourceRequest.getUrl().toString()) : shouldInterceptRequest(webView, webResourceRequest.getUrl().toString());
     }
 
     public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest, Bundle bundle) {
-        i iVar = this.f38816a;
+        i iVar = this.f25125a;
         if (iVar != null) {
             return iVar.shouldInterceptRequest(webView.c(), webResourceRequest);
         }
@@ -131,7 +131,7 @@ public class WebViewClient {
     }
 
     public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
-        i iVar = this.f38816a;
+        i iVar = this.f25125a;
         return iVar != null ? iVar.shouldOverrideUrlLoading(webView.c(), webResourceRequest.getUrl().toString()) : shouldOverrideUrlLoading(webView, webResourceRequest.getUrl().toString());
     }
 

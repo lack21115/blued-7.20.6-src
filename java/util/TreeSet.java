@@ -66,12 +66,12 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         return this.backingMap.put(e, Boolean.TRUE) == null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         return super.addAll(collection);
     }
@@ -81,7 +81,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
         return this.backingMap.ceilingKey(e);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.backingMap.clear();
     }
@@ -105,7 +105,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
         return this.backingMap.comparator();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         return this.backingMap.containsKey(obj);
     }
@@ -146,7 +146,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
         return new TreeSet(this.backingMap.headMap(e, z));
     }
 
-    @Override // java.util.NavigableSet
+    @Override // java.util.NavigableSet, java.util.SortedSet
     public SortedSet<E> headSet(E e) {
         return headSet(e, false);
     }
@@ -156,7 +156,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
         return this.backingMap.higherKey(e);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         return this.backingMap.isEmpty();
     }
@@ -194,12 +194,12 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
         return pollLastEntry.getKey();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         return this.backingMap.remove(obj) != null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.backingMap.size();
     }
@@ -213,7 +213,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
         throw new IllegalArgumentException();
     }
 
-    @Override // java.util.NavigableSet
+    @Override // java.util.NavigableSet, java.util.SortedSet
     public SortedSet<E> subSet(E e, E e2) {
         return subSet(e, true, e2, false);
     }
@@ -229,7 +229,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
         return new TreeSet(this.backingMap.tailMap(e, z));
     }
 
-    @Override // java.util.NavigableSet
+    @Override // java.util.NavigableSet, java.util.SortedSet
     public SortedSet<E> tailSet(E e) {
         return tailSet(e, true);
     }

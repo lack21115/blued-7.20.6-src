@@ -22,11 +22,11 @@ import com.soft.blued.utils.Logger;
 public class SystemEventReceiver extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f28307a = SystemEventReceiver.class.getName();
+    private static final String f14617a = SystemEventReceiver.class.getName();
     private final int b = 100;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f28308c = 101;
+    private final int f14618c = 101;
     private final int d = 102;
     private final int e = 103;
     private Handler f = new Handler(new Handler.Callback() { // from class: com.soft.blued.broadcastReceiver.SystemEventReceiver.1
@@ -38,7 +38,7 @@ public class SystemEventReceiver extends BroadcastReceiver {
                     NetWorkObserverManager.a().a(true);
                     return false;
                 case 101:
-                    Logger.b(SystemEventReceiver.f28307a, " 非联网状态1");
+                    Logger.b(SystemEventReceiver.f14617a, " 非联网状态1");
                     NetWorkObserverManager.a().a(false);
                     return false;
                 case 102:
@@ -58,7 +58,7 @@ public class SystemEventReceiver extends BroadcastReceiver {
     static class SingletonCreator {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final SystemEventReceiver f28310a = new SystemEventReceiver();
+        private static final SystemEventReceiver f14620a = new SystemEventReceiver();
 
         private SingletonCreator() {
         }
@@ -66,7 +66,7 @@ public class SystemEventReceiver extends BroadcastReceiver {
 
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
-        Logger.b(f28307a, "  网络状态改变了。。。");
+        Logger.b(f14617a, "  网络状态改变了。。。");
         if (!"android.net.conn.CONNECTIVITY_CHANGE".equals(intent.getAction())) {
             if (Intent.ACTION_LOCALE_CHANGED.equals(intent.getAction())) {
                 LocaleUtils.d();
@@ -85,16 +85,16 @@ public class SystemEventReceiver extends BroadcastReceiver {
         NetworkInfo activeNetworkInfo = ((ConnectivityManager) AppInfo.d().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
         if (activeNetworkInfo == null || !activeNetworkInfo.isAvailable()) {
             this.f.sendEmptyMessage(101);
-            Logger.b(f28307a, " 非联网状态");
+            Logger.b(f14617a, " 非联网状态");
             return;
         }
         this.f.sendEmptyMessage(100);
         if (activeNetworkInfo == null || activeNetworkInfo.getType() != 1) {
             this.f.sendEmptyMessage(103);
-            Logger.b(f28307a, "  正常联网的非wifi状态");
+            Logger.b(f14617a, "  正常联网的非wifi状态");
             return;
         }
         this.f.sendEmptyMessage(102);
-        Logger.b(f28307a, "  wifi状态");
+        Logger.b(f14617a, "  wifi状态");
     }
 }

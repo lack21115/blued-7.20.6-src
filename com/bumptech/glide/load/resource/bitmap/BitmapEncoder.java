@@ -11,19 +11,19 @@ import com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool;
 public class BitmapEncoder implements ResourceEncoder<Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Option<Integer> f20938a = Option.a("com.bumptech.glide.load.resource.bitmap.BitmapEncoder.CompressionQuality", 90);
+    public static final Option<Integer> f7332a = Option.a("com.bumptech.glide.load.resource.bitmap.BitmapEncoder.CompressionQuality", 90);
     public static final Option<Bitmap.CompressFormat> b = Option.a("com.bumptech.glide.load.resource.bitmap.BitmapEncoder.CompressionFormat");
 
     /* renamed from: c  reason: collision with root package name */
-    private final ArrayPool f20939c;
+    private final ArrayPool f7333c;
 
     @Deprecated
     public BitmapEncoder() {
-        this.f20939c = null;
+        this.f7333c = null;
     }
 
     public BitmapEncoder(ArrayPool arrayPool) {
-        this.f20939c = arrayPool;
+        this.f7333c = arrayPool;
     }
 
     private Bitmap.CompressFormat a(Bitmap bitmap, Options options) {

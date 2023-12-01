@@ -28,11 +28,11 @@ public class b {
     private static final String Z = "reserveapp";
 
     /* renamed from: a  reason: collision with root package name */
-    private a f22963a;
+    private a f9355a;
     private c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.huawei.openalliance.ad.download.f f22964c;
+    private com.huawei.openalliance.ad.download.f f9356c;
     private Context d;
     private Map<String, WeakHashMap<com.huawei.openalliance.ad.download.g, Object>> e = new ConcurrentHashMap();
 
@@ -64,8 +64,8 @@ public class b {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.huawei.openalliance.ad.download.app.b$b  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/download/app/b$b.class */
-    public static class C0431b implements RemoteCallResultCallback<String> {
-        private C0431b() {
+    public static class C0261b implements RemoteCallResultCallback<String> {
+        private C0261b() {
         }
 
         @Override // com.huawei.openalliance.ad.ipc.RemoteCallResultCallback
@@ -121,8 +121,8 @@ public class b {
     }
 
     private void Code() {
-        this.f22963a = new a();
-        this.d.registerReceiver(this.f22963a, new IntentFilter(I), D, null);
+        this.f9355a = new a();
+        this.d.registerReceiver(this.f9355a, new IntentFilter(I), D, null);
         this.b = new c();
         this.d.registerReceiver(this.b, new IntentFilter(C), "com.huawei.permission.app.DOWNLOAD", null);
     }
@@ -177,18 +177,18 @@ public class b {
                 }
             }
         }
-        com.huawei.openalliance.ad.download.f fVar = this.f22964c;
+        com.huawei.openalliance.ad.download.f fVar = this.f9356c;
         if (fVar != null) {
             fVar.Code(str, i);
         }
     }
 
     public void Code(AppDownloadTask appDownloadTask) {
-        com.huawei.openalliance.ad.download.app.c.Z(this.d, appDownloadTask, new C0431b(), String.class);
+        com.huawei.openalliance.ad.download.app.c.Z(this.d, appDownloadTask, new C0261b(), String.class);
     }
 
     public void Code(com.huawei.openalliance.ad.download.f fVar) {
-        this.f22964c = fVar;
+        this.f9356c = fVar;
     }
 
     public void Code(String str, com.huawei.openalliance.ad.download.g gVar) {

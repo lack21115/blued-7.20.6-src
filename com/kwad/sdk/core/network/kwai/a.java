@@ -12,11 +12,11 @@ public final class a {
 
     /* renamed from: com.kwad.sdk.core.network.kwai.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/network/kwai/a$a.class */
-    public static final class C0564a {
+    public static final class C0394a {
         public String msg;
     }
 
-    public static boolean a(String str, OutputStream outputStream, C0564a c0564a, int i) {
+    public static boolean a(String str, OutputStream outputStream, C0394a c0394a, int i) {
         boolean wj = wj();
         AdHttpProxy adHttpProxy = ahf;
         com.kwad.sdk.core.network.b.a aVar = adHttpProxy;
@@ -34,7 +34,7 @@ public final class a {
             return true;
         } catch (Exception e) {
             com.kwad.sdk.core.d.b.d("VideoCacheHelper", Log.getStackTraceString(e));
-            c0564a.msg = e.getMessage();
+            c0394a.msg = e.getMessage();
             return false;
         }
     }

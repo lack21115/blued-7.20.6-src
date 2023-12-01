@@ -16,7 +16,7 @@ public final class g extends Fragment {
     private static final WeakHashMap<Activity, WeakReference<g>> b = new WeakHashMap<>();
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<WeakReference<ExecuteResult<?>>> f22370a = new ArrayList();
+    private final List<WeakReference<ExecuteResult<?>>> f8762a = new ArrayList();
 
     private static g a(Activity activity) {
         g gVar;
@@ -77,8 +77,8 @@ public final class g extends Fragment {
     public static void a(Activity activity, ExecuteResult executeResult) {
         g a2 = a(activity);
         if (a2 != null) {
-            synchronized (a2.f22370a) {
-                a2.f22370a.add(new WeakReference<>(executeResult));
+            synchronized (a2.f8762a) {
+                a2.f8762a.add(new WeakReference<>(executeResult));
             }
         }
     }
@@ -104,14 +104,14 @@ public final class g extends Fragment {
     @Override // android.app.Fragment
     public final void onStop() {
         super.onStop();
-        synchronized (this.f22370a) {
-            for (WeakReference<ExecuteResult<?>> weakReference : this.f22370a) {
+        synchronized (this.f8762a) {
+            for (WeakReference<ExecuteResult<?>> weakReference : this.f8762a) {
                 ExecuteResult<?> executeResult = weakReference.get();
                 if (executeResult != null) {
                     executeResult.cancel();
                 }
             }
-            this.f22370a.clear();
+            this.f8762a.clear();
         }
     }
 

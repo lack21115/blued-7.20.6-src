@@ -14,11 +14,11 @@ import java.util.Arrays;
 public abstract class SplineSet {
 
     /* renamed from: a  reason: collision with root package name */
-    protected CurveFit f2057a;
+    protected CurveFit f2009a;
     protected int[] b = new int[10];
 
     /* renamed from: c  reason: collision with root package name */
-    protected float[] f2058c = new float[10];
+    protected float[] f2010c = new float[10];
     private int d;
     private String e;
 
@@ -59,7 +59,7 @@ public abstract class SplineSet {
         }
 
         public void setProperty(WidgetFrame widgetFrame, float f) {
-            this.f2057a.getPos(f, this.f);
+            this.f2009a.getPos(f, this.f);
             widgetFrame.setCustomValue(this.e.valueAt(0), this.f);
         }
 
@@ -74,7 +74,7 @@ public abstract class SplineSet {
             while (true) {
                 int i3 = i2;
                 if (i3 >= size) {
-                    this.f2057a = CurveFit.get(i, dArr, dArr2);
+                    this.f2009a = CurveFit.get(i, dArr, dArr2);
                     return;
                 }
                 int keyAt = this.e.keyAt(i3);
@@ -116,7 +116,7 @@ public abstract class SplineSet {
         }
 
         public void setProperty(MotionWidget motionWidget, float f) {
-            this.f2057a.getPos(f, this.f);
+            this.f2009a.getPos(f, this.f);
             this.e.valueAt(0).setInterpolatedValue(motionWidget, this.f);
         }
 
@@ -136,7 +136,7 @@ public abstract class SplineSet {
             while (true) {
                 int i3 = i2;
                 if (i3 >= size) {
-                    this.f2057a = CurveFit.get(i, dArr, dArr2);
+                    this.f2009a = CurveFit.get(i, dArr, dArr2);
                     return;
                 }
                 int keyAt = this.e.keyAt(i3);
@@ -229,28 +229,28 @@ public abstract class SplineSet {
     }
 
     public float get(float f) {
-        return (float) this.f2057a.getPos(f, 0);
+        return (float) this.f2009a.getPos(f, 0);
     }
 
     public CurveFit getCurveFit() {
-        return this.f2057a;
+        return this.f2009a;
     }
 
     public float getSlope(float f) {
-        return (float) this.f2057a.getSlope(f, 0);
+        return (float) this.f2009a.getSlope(f, 0);
     }
 
     public void setPoint(int i, float f) {
         int[] iArr = this.b;
         if (iArr.length < this.d + 1) {
             this.b = Arrays.copyOf(iArr, iArr.length * 2);
-            float[] fArr = this.f2058c;
-            this.f2058c = Arrays.copyOf(fArr, fArr.length * 2);
+            float[] fArr = this.f2010c;
+            this.f2010c = Arrays.copyOf(fArr, fArr.length * 2);
         }
         int[] iArr2 = this.b;
         int i2 = this.d;
         iArr2[i2] = i;
-        this.f2058c[i2] = f;
+        this.f2010c[i2] = f;
         this.d = i2 + 1;
     }
 
@@ -269,7 +269,7 @@ public abstract class SplineSet {
         if (i4 == 0) {
             return;
         }
-        Sort.a(this.b, this.f2058c, 0, i4 - 1);
+        Sort.a(this.b, this.f2010c, 0, i4 - 1);
         int i5 = 1;
         int i6 = 1;
         while (true) {
@@ -294,10 +294,10 @@ public abstract class SplineSet {
                 i3 = iArr2[i3] == iArr2[i3 - 1] ? i3 + 1 : 0;
             }
             dArr[i8] = this.b[i3] * 0.01d;
-            dArr2[i8][0] = this.f2058c[i3];
+            dArr2[i8][0] = this.f2010c[i3];
             i8++;
         }
-        this.f2057a = CurveFit.get(i, dArr, dArr2);
+        this.f2009a = CurveFit.get(i, dArr, dArr2);
     }
 
     public String toString() {
@@ -309,7 +309,7 @@ public abstract class SplineSet {
             if (i2 >= this.d) {
                 return str;
             }
-            str = str + "[" + this.b[i2] + " , " + decimalFormat.format(this.f2058c[i2]) + "] ";
+            str = str + "[" + this.b[i2] + " , " + decimalFormat.format(this.f2010c[i2]) + "] ";
             i = i2 + 1;
         }
     }

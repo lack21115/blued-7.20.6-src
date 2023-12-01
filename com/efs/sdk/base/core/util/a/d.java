@@ -12,17 +12,17 @@ import java.util.Map;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public b f21791a;
+    public b f8185a;
     private List<com.efs.sdk.base.core.util.concurrent.b<HttpResponse>> b;
 
     public d(String str) {
         b bVar = new b();
-        this.f21791a = bVar;
-        bVar.f21788a = str;
+        this.f8185a = bVar;
+        bVar.f8182a = str;
     }
 
     public final c a() {
-        c cVar = new c(this.f21791a);
+        c cVar = new c(this.f8185a);
         List<com.efs.sdk.base.core.util.concurrent.b<HttpResponse>> list = this.b;
         if (list != null && list.size() > 0) {
             cVar.a(this.b);
@@ -43,15 +43,15 @@ public final class d {
     }
 
     public final d a(String str, String str2) {
-        if (this.f21791a.f == null) {
-            this.f21791a.f = new HashMap(5);
+        if (this.f8185a.f == null) {
+            this.f8185a.f = new HashMap(5);
         }
-        this.f21791a.f.put(str, str2);
+        this.f8185a.f.put(str, str2);
         return this;
     }
 
     public final d a(Map<String, String> map) {
-        this.f21791a.b = map;
+        this.f8185a.b = map;
         return this;
     }
 }

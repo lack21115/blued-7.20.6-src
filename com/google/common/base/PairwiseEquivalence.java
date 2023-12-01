@@ -4,9 +4,8 @@ import java.io.Serializable;
 import java.util.Iterator;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/base/PairwiseEquivalence.class */
-public final class PairwiseEquivalence<T> extends Equivalence<Iterable<T>> implements Serializable {
+final class PairwiseEquivalence<T> extends Equivalence<Iterable<T>> implements Serializable {
     private static final long serialVersionUID = 1;
     final Equivalence<? super T> elementEquivalence;
 

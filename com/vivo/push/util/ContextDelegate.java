@@ -17,7 +17,7 @@ public class ContextDelegate {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static ContextDelegate f41128a = new ContextDelegate();
+        private static ContextDelegate f27437a = new ContextDelegate();
     }
 
     private static Context createCredentialProtectedStorageContext(Context context) {
@@ -61,7 +61,7 @@ public class ContextDelegate {
     }
 
     public static ContextDelegate getInstance() {
-        return a.f41128a;
+        return a.f27437a;
     }
 
     public static boolean isFBEProject() {

@@ -34,7 +34,7 @@ public class RotateAnimationController {
 
         @Override // com.tencent.tencentmap.mapsdk.maps.model.RotateAnimationController.d
         public double[] a() {
-            int i = c.f38983a[RotateAnimationController.this.mModelType.ordinal()];
+            int i = c.f25292a[RotateAnimationController.this.mModelType.ordinal()];
             return new double[]{0.0d, 1.0d};
         }
     }
@@ -58,12 +58,12 @@ public class RotateAnimationController {
     public static /* synthetic */ class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f38983a;
+        public static final /* synthetic */ int[] f25292a;
 
         static {
             GeneralTranslateAnimator.ModelType.values();
             int[] iArr = new int[2];
-            f38983a = iArr;
+            f25292a = iArr;
             try {
                 GeneralTranslateAnimator.ModelType modelType = GeneralTranslateAnimator.ModelType.MODEL_OVERLAY;
                 iArr[1] = 1;

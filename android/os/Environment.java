@@ -1,12 +1,12 @@
 package android.os;
 
+import android.content.res.ThemeConfig;
 import android.os.storage.IMountService;
 import android.os.storage.StorageManager;
 import android.os.storage.StorageVolume;
 import android.text.TextUtils;
 import android.util.Log;
 import com.android.internal.annotations.GuardedBy;
-import com.android.internal.util.cm.PowerMenuConstants;
 import com.google.android.collect.Lists;
 import java.io.File;
 import java.io.IOException;
@@ -415,7 +415,7 @@ public class Environment {
     }
 
     public static File getSystemSecureDirectory() {
-        return isEncryptedFilesystemEnabled() ? new File(SECURE_DATA_DIRECTORY, "system") : new File(DATA_DIRECTORY, "system");
+        return isEncryptedFilesystemEnabled() ? new File(SECURE_DATA_DIRECTORY, ThemeConfig.SYSTEM_DEFAULT) : new File(DATA_DIRECTORY, ThemeConfig.SYSTEM_DEFAULT);
     }
 
     public static File getUserConfigDirectory(int i) {
@@ -423,7 +423,7 @@ public class Environment {
     }
 
     public static File getUserSystemDirectory(int i) {
-        return new File(new File(getSystemSecureDirectory(), PowerMenuConstants.GLOBAL_ACTION_KEY_USERS), Integer.toString(i));
+        return new File(new File(getSystemSecureDirectory(), "users"), Integer.toString(i));
     }
 
     public static File getVendorDirectory() {

@@ -9,23 +9,23 @@ import java.util.UUID;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7300a = "PsshAtomUtil";
+    private static final String f4461a = "PsshAtomUtil";
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/e/a/h$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final UUID f7301a;
+        private final UUID f4462a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final byte[] f7302c;
+        private final byte[] f4463c;
 
         public a(UUID uuid, int i, byte[] bArr) {
-            this.f7301a = uuid;
+            this.f4462a = uuid;
             this.b = i;
-            this.f7302c = bArr;
+            this.f4463c = bArr;
         }
     }
 
@@ -37,7 +37,7 @@ public final class h {
         if (c2 == null) {
             return null;
         }
-        return c2.f7301a;
+        return c2.f4462a;
     }
 
     private static byte[] a(UUID uuid, byte[] bArr) {
@@ -97,10 +97,10 @@ public final class h {
         if (c2 == null) {
             return null;
         }
-        if (uuid == null || uuid.equals(c2.f7301a)) {
-            return c2.f7302c;
+        if (uuid == null || uuid.equals(c2.f4462a)) {
+            return c2.f4463c;
         }
-        Log.w(f7300a, "UUID mismatch. Expected: " + uuid + ", got: " + c2.f7301a + ".");
+        Log.w(f4461a, "UUID mismatch. Expected: " + uuid + ", got: " + c2.f4462a + ".");
         return null;
     }
 
@@ -121,7 +121,7 @@ public final class h {
         if (sVar.i() == sVar.a() + 4 && sVar.i() == com.anythink.expressad.exoplayer.e.a.a.Z) {
             int a2 = com.anythink.expressad.exoplayer.e.a.a.a(sVar.i());
             if (a2 > 1) {
-                Log.w(f7300a, "Unsupported pssh version: ".concat(String.valueOf(a2)));
+                Log.w(f4461a, "Unsupported pssh version: ".concat(String.valueOf(a2)));
                 return null;
             }
             UUID uuid = new UUID(sVar.j(), sVar.j());

@@ -10,13 +10,9 @@ import com.airbnb.lottie.model.layer.BaseLayer;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/PolystarShape.class */
 public class PolystarShape implements ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f4352a;
+    private final String a;
     private final Type b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AnimatableFloatValue f4353c;
+    private final AnimatableFloatValue c;
     private final AnimatableValue<PointF, PointF> d;
     private final AnimatableFloatValue e;
     private final AnimatableFloatValue f;
@@ -30,12 +26,10 @@ public class PolystarShape implements ContentModel {
         STAR(1),
         POLYGON(2);
         
-
-        /* renamed from: c  reason: collision with root package name */
-        private final int f4355c;
+        private final int c;
 
         Type(int i) {
-            this.f4355c = i;
+            this.c = i;
         }
 
         public static Type a(int i) {
@@ -48,7 +42,7 @@ public class PolystarShape implements ContentModel {
                     return null;
                 }
                 Type type = values[i3];
-                if (type.f4355c == i) {
+                if (type.c == i) {
                     return type;
                 }
                 i2 = i3 + 1;
@@ -57,9 +51,9 @@ public class PolystarShape implements ContentModel {
     }
 
     public PolystarShape(String str, Type type, AnimatableFloatValue animatableFloatValue, AnimatableValue<PointF, PointF> animatableValue, AnimatableFloatValue animatableFloatValue2, AnimatableFloatValue animatableFloatValue3, AnimatableFloatValue animatableFloatValue4, AnimatableFloatValue animatableFloatValue5, AnimatableFloatValue animatableFloatValue6, boolean z) {
-        this.f4352a = str;
+        this.a = str;
         this.b = type;
-        this.f4353c = animatableFloatValue;
+        this.c = animatableFloatValue;
         this.d = animatableValue;
         this.e = animatableFloatValue2;
         this.f = animatableFloatValue3;
@@ -75,11 +69,11 @@ public class PolystarShape implements ContentModel {
     }
 
     public String a() {
-        return this.f4352a;
+        return this.a;
     }
 
     public AnimatableFloatValue b() {
-        return this.f4353c;
+        return this.c;
     }
 
     public AnimatableValue<PointF, PointF> c() {

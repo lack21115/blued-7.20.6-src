@@ -91,7 +91,7 @@ public interface IImsEcbmListener extends IInterface {
                     exitedECBM();
                     parcel2.writeNoException();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

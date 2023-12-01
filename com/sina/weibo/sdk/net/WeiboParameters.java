@@ -2,6 +2,7 @@ package com.sina.weibo.sdk.net;
 
 import android.graphics.Bitmap;
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.sina.weibo.sdk.utils.LogUtil;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -55,7 +56,7 @@ public class WeiboParameters {
             if (z2) {
                 z = false;
             } else {
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
                 z = z2;
             }
             Object obj = this.mParams.get(str2);

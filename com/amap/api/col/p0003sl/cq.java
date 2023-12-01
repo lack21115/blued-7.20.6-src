@@ -1,8 +1,8 @@
 package com.amap.api.col.p0003sl;
 
 import android.content.Context;
-import android.provider.ContactsContract;
-import android.provider.MediaStore;
+import com.anythink.core.common.c.d;
+import com.efs.sdk.base.Constants;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Locale;
@@ -21,13 +21,9 @@ public final class cq extends hg<String, a> {
     /* renamed from: com.amap.api.col.3sl.cq$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/cq$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public byte[] f4817a;
+        public byte[] a;
         public int b = -1;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f4818c = null;
+        public String c = null;
         public boolean d = false;
     }
 
@@ -65,8 +61,8 @@ public final class cq extends hg<String, a> {
     public a a(kc kcVar) throws hf {
         a aVar;
         if (kcVar != null) {
-            a a2 = a(kcVar.f5264a);
-            a2.d = a2.f4817a != null;
+            a a2 = a(kcVar.a);
+            a2.d = a2.a != null;
             aVar = a2;
             if (kcVar.b != null) {
                 aVar = a2;
@@ -76,7 +72,7 @@ public final class cq extends hg<String, a> {
                     if (list != null) {
                         aVar = a2;
                         if (list.size() > 0) {
-                            a2.f4818c = list.get(0);
+                            a2.c = list.get(0);
                             return a2;
                         }
                     }
@@ -93,15 +89,15 @@ public final class cq extends hg<String, a> {
     /* renamed from: b */
     public a a(byte[] bArr) throws hf {
         a aVar = new a();
-        aVar.f4817a = bArr;
+        aVar.a = bArr;
         if (this.n && bArr != null) {
             if (bArr.length == 0) {
-                aVar.f4817a = null;
+                aVar.a = null;
                 return aVar;
-            } else if (aVar.f4817a.length <= 1024) {
+            } else if (aVar.a.length <= 1024) {
                 try {
                     if (new String(bArr, "utf-8").contains("errcode")) {
-                        aVar.f4817a = null;
+                        aVar.a = null;
                         return aVar;
                     }
                 } catch (Exception e) {
@@ -142,14 +138,14 @@ public final class cq extends hg<String, a> {
     @Override // com.amap.api.col.p0003sl.da, com.amap.api.col.p0003sl.kb
     public final Map<String, String> getParams() {
         Hashtable hashtable = new Hashtable(16);
-        hashtable.put("key", ho.f(this.g));
+        hashtable.put(d.a.b, ho.f(this.g));
         if (this.n) {
             hashtable.put("sdkType", this.o);
         } else {
-            hashtable.put(MediaStore.EXTRA_OUTPUT, "bin");
+            hashtable.put("output", "bin");
         }
         hashtable.put("styleid", this.j);
-        hashtable.put(ContactsContract.PresenceColumns.PROTOCOL, this.k);
+        hashtable.put("protocol", this.k);
         hashtable.put("ispublic", "1");
         hashtable.put("lastModified", this.l);
         String a2 = hr.a();
@@ -164,11 +160,11 @@ public final class cq extends hg<String, a> {
         ia a2 = dw.a();
         String b = a2 != null ? a2.b() : null;
         Hashtable hashtable = new Hashtable(16);
-        hashtable.put("User-Agent", w.f5440c);
-        hashtable.put("Accept-Encoding", "gzip");
+        hashtable.put("User-Agent", w.c);
+        hashtable.put("Accept-Encoding", Constants.CP_GZIP);
         hashtable.put("platinfo", String.format(Locale.US, "platform=Android&sdkversion=%s&product=%s", b, "3dmap"));
         hashtable.put("x-INFO", hr.a(this.g));
-        hashtable.put("key", ho.f(this.g));
+        hashtable.put(d.a.b, ho.f(this.g));
         hashtable.put("logversion", "2.1");
         return hashtable;
     }

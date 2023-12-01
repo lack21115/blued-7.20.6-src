@@ -1,6 +1,5 @@
 package com.squareup.okhttp;
 
-import com.android.org.conscrypt.NativeCrypto;
 import com.blued.das.live.LiveProtos;
 import com.squareup.okhttp.internal.Util;
 import java.util.Arrays;
@@ -159,8 +158,8 @@ public final class ConnectionSpec {
         String[] strArr3 = enabledCipherSuites;
         if (z) {
             strArr3 = enabledCipherSuites;
-            if (Util.contains(sSLSocket.getSupportedCipherSuites(), NativeCrypto.TLS_FALLBACK_SCSV)) {
-                strArr3 = Util.concat(enabledCipherSuites, NativeCrypto.TLS_FALLBACK_SCSV);
+            if (Util.contains(sSLSocket.getSupportedCipherSuites(), "TLS_FALLBACK_SCSV")) {
+                strArr3 = Util.concat(enabledCipherSuites, "TLS_FALLBACK_SCSV");
             }
         }
         return new Builder(this).cipherSuites(strArr3).tlsVersions(enabledProtocols).build();

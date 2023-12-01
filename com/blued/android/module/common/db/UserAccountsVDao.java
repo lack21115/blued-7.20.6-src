@@ -17,39 +17,35 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/db/UserAccountsVDao.class */
 public class UserAccountsVDao {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static UserAccountsVDao f10775a;
+    private static UserAccountsVDao a;
     private Dao<UserAccountsModel, Integer> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f10776c;
+    private String c;
 
     public static UserAccountsVDao a() {
-        if (f10775a == null) {
+        if (a == null) {
             synchronized (UserAccountsVDao.class) {
                 try {
-                    if (f10775a == null) {
-                        f10775a = new UserAccountsVDao();
+                    if (a == null) {
+                        a = new UserAccountsVDao();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f10775a;
+        return a;
     }
 
     public UserAccountsModel a(int i) {
         try {
-            QueryBuilder<UserAccountsModel, Integer> queryBuilder = b().queryBuilder();
+            QueryBuilder queryBuilder = b().queryBuilder();
             queryBuilder.where().eq("loginType", Integer.valueOf(i));
             queryBuilder.orderBy("lastHandleTime", false);
-            List<UserAccountsModel> query = queryBuilder.query();
+            List query = queryBuilder.query();
             if (query == null || query.size() <= 0) {
                 return null;
             }
-            return query.get(0);
+            return (UserAccountsModel) query.get(0);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -58,13 +54,13 @@ public class UserAccountsVDao {
 
     public UserAccountsModel a(String str) {
         try {
-            QueryBuilder<UserAccountsModel, Integer> queryBuilder = b().queryBuilder();
+            QueryBuilder queryBuilder = b().queryBuilder();
             queryBuilder.where().eq("uid", str);
-            List<UserAccountsModel> query = queryBuilder.query();
+            List query = queryBuilder.query();
             if (query == null || query.size() <= 0) {
                 return null;
             }
-            return query.get(0);
+            return (UserAccountsModel) query.get(0);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -74,14 +70,14 @@ public class UserAccountsVDao {
     public void a(UserAccountsModel userAccountsModel) {
         try {
             Dao<UserAccountsModel, Integer> b = b();
-            QueryBuilder<UserAccountsModel, Integer> queryBuilder = b.queryBuilder();
+            QueryBuilder queryBuilder = b.queryBuilder();
             queryBuilder.where().eq("uid", userAccountsModel.getUid());
-            List<UserAccountsModel> query = queryBuilder.query();
+            List query = queryBuilder.query();
             if (query == null || query.size() <= 0) {
                 b.create(userAccountsModel);
                 return;
             }
-            UserAccountsModel userAccountsModel2 = query.get(0);
+            UserAccountsModel userAccountsModel2 = (UserAccountsModel) query.get(0);
             userAccountsModel2.setLoginresult(userAccountsModel.getLoginresult());
             userAccountsModel2.setUid(userAccountsModel.getUid());
             userAccountsModel2.setUsername(userAccountsModel.getUsername());
@@ -91,7 +87,7 @@ public class UserAccountsVDao {
             if (!TextUtils.isEmpty(userAccountsModel.getAliasUserId())) {
                 userAccountsModel2.setAliasUserId(userAccountsModel.getAliasUserId());
             }
-            b.update((Dao<UserAccountsModel, Integer>) userAccountsModel2);
+            b.update(userAccountsModel2);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -114,13 +110,13 @@ public class UserAccountsVDao {
         }
         try {
             Dao<UserAccountsModel, Integer> b = b();
-            List<UserAccountsModel> queryForAll = b.queryForAll();
+            List queryForAll = b.queryForAll();
             if (queryForAll == null || queryForAll.size() <= 0) {
                 return;
             }
-            UserAccountsModel userAccountsModel = queryForAll.get(0);
+            UserAccountsModel userAccountsModel = (UserAccountsModel) queryForAll.get(0);
             userAccountsModel.setLoginresult(str);
-            b.update((Dao<UserAccountsModel, Integer>) userAccountsModel);
+            b.update(userAccountsModel);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -128,8 +124,8 @@ public class UserAccountsVDao {
 
     public UserAccountsModel c() {
         try {
-            List<UserAccountsModel> queryForAll = b().queryForAll();
-            return (queryForAll == null || queryForAll.size() <= 0) ? (queryForAll == null || queryForAll.size() == 0) ? null : null : queryForAll.get(0);
+            List queryForAll = b().queryForAll();
+            return (queryForAll == null || queryForAll.size() <= 0) ? (queryForAll == null || queryForAll.size() == 0) ? null : null : (UserAccountsModel) queryForAll.get(0);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -137,30 +133,30 @@ public class UserAccountsVDao {
     }
 
     public void c(String str) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(this.f10776c)) {
+        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(this.c)) {
             return;
         }
         UserAccountsModel a2 = a().a(str);
         if (a2 != null) {
-            a2.setAccessToken(this.f10776c);
+            a2.setAccessToken(this.c);
             try {
-                a().b().update((Dao<UserAccountsModel, Integer>) a2);
+                a().b().update(a2);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        this.f10776c = null;
+        this.c = null;
     }
 
     public UserAccountsModel d() {
         try {
-            QueryBuilder<UserAccountsModel, Integer> queryBuilder = b().queryBuilder();
+            QueryBuilder queryBuilder = b().queryBuilder();
             queryBuilder.orderBy("lastHandleTime", false);
-            List<UserAccountsModel> query = queryBuilder.query();
+            List query = queryBuilder.query();
             if (query == null || query.size() <= 0) {
                 return null;
             }
-            return query.get(0);
+            return (UserAccountsModel) query.get(0);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -169,14 +165,14 @@ public class UserAccountsVDao {
 
     public UserAccountsModel e() {
         try {
-            QueryBuilder<UserAccountsModel, Integer> queryBuilder = b().queryBuilder();
+            QueryBuilder queryBuilder = b().queryBuilder();
             queryBuilder.where().eq("loginType", 0).or().eq("loginType", 1);
             queryBuilder.orderBy("lastHandleTime", false);
-            List<UserAccountsModel> query = queryBuilder.query();
+            List query = queryBuilder.query();
             if (query == null || query.size() <= 0) {
                 return null;
             }
-            return query.get(0);
+            return (UserAccountsModel) query.get(0);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -185,15 +181,15 @@ public class UserAccountsVDao {
 
     public void f() {
         try {
-            QueryBuilder<UserAccountsModel, Integer> queryBuilder = b().queryBuilder();
+            QueryBuilder queryBuilder = b().queryBuilder();
             queryBuilder.where().eq("uid", UserInfo.getInstance().getLoginUserInfo().getUid());
-            List<UserAccountsModel> query = queryBuilder.query();
+            List query = queryBuilder.query();
             if (query == null || query.size() <= 0) {
                 return;
             }
-            UserAccountsModel userAccountsModel = query.get(0);
+            UserAccountsModel userAccountsModel = (UserAccountsModel) query.get(0);
             userAccountsModel.setAccessToken("");
-            this.b.update((Dao<UserAccountsModel, Integer>) userAccountsModel);
+            this.b.update(userAccountsModel);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -231,42 +227,42 @@ public class UserAccountsVDao {
         if (b == null) {
             return copyOnWriteArrayList;
         }
-        QueryBuilder<UserAccountsModel, Integer> queryBuilder = b.queryBuilder();
+        QueryBuilder queryBuilder = b.queryBuilder();
         queryBuilder.orderBy("lastHandleTime", false);
-        List<UserAccountsModel> query = queryBuilder.query();
+        List query = queryBuilder.query();
         if (!TypeUtils.a((List<?>) query) && AppInfo.m()) {
             Gson f = AppInfo.f();
-            Iterator<UserAccountsModel> it = query.iterator();
+            Iterator it = query.iterator();
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (!it.hasNext()) {
                     break;
                 }
-                LogUtils.c("AllAccount(" + i2 + "): " + f.toJson(it.next()));
+                LogUtils.c("AllAccount(" + i2 + "): " + f.toJson((UserAccountsModel) it.next()));
                 i = i2 + 1;
             }
         }
         UserAccountsModel userAccountsModel2 = null;
-        Iterator<UserAccountsModel> it2 = query.iterator();
+        Iterator it2 = query.iterator();
         do {
             if (!it2.hasNext()) {
                 return copyOnWriteArrayList;
             }
-            UserAccountsModel next = it2.next();
-            if (next.getUid().equals(UserInfo.getInstance().getLoginUserInfo().uid)) {
-                next.setBluedLoginResult(UserInfo.getInstance().getLoginUserInfo());
-                copyOnWriteArrayList.add(0, next);
-                userAccountsModel = next;
+            UserAccountsModel userAccountsModel3 = (UserAccountsModel) it2.next();
+            if (userAccountsModel3.getUid().equals(UserInfo.getInstance().getLoginUserInfo().uid)) {
+                userAccountsModel3.setBluedLoginResult(UserInfo.getInstance().getLoginUserInfo());
+                copyOnWriteArrayList.add(0, userAccountsModel3);
+                userAccountsModel = userAccountsModel3;
             } else {
                 userAccountsModel = userAccountsModel2;
                 if (userAccountsModel2 != null) {
                     userAccountsModel = userAccountsModel2;
                     if (!TextUtils.isEmpty(userAccountsModel2.getAliasUserId())) {
                         userAccountsModel = userAccountsModel2;
-                        if (userAccountsModel2.getAliasUserId().equals(next.getUid())) {
-                            next.setBluedLoginResult(UserInfo.getInstance().getLoginResultForV1(next));
-                            copyOnWriteArrayList.add(next);
+                        if (userAccountsModel2.getAliasUserId().equals(userAccountsModel3.getUid())) {
+                            userAccountsModel3.setBluedLoginResult(UserInfo.getInstance().getLoginResultForV1(userAccountsModel3));
+                            copyOnWriteArrayList.add(userAccountsModel3);
                             userAccountsModel = userAccountsModel2;
                         }
                     }
@@ -278,7 +274,7 @@ public class UserAccountsVDao {
     }
 
     public void i() {
-        this.f10776c = UserInfo.getInstance().getAccessToken();
+        this.c = UserInfo.getInstance().getAccessToken();
         UserInfo.getInstance().logout(false);
     }
 }

@@ -4,9 +4,7 @@ import java.util.WeakHashMap;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/DelayRepeatTaskUtils.class */
 public class DelayRepeatTaskUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static WeakHashMap<String, Runnable> f10077a = new WeakHashMap<>();
+    private static WeakHashMap<String, Runnable> a = new WeakHashMap<>();
 
     public static void a(String str, Runnable runnable) {
         a(str, runnable, 200);
@@ -23,11 +21,11 @@ public class DelayRepeatTaskUtils {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void b(String str, Runnable runnable, int i) {
-        Runnable remove = f10077a.remove(str);
+        Runnable remove = a.remove(str);
         if (remove != null) {
             ThreadUtils.c(remove);
         }
-        f10077a.put(str, runnable);
+        a.put(str, runnable);
         ThreadUtils.a(runnable, i);
     }
 }

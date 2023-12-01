@@ -25,13 +25,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/righttopfunction/LiveFloatGoodsWallView.class */
 public final class LiveFloatGoodsWallView extends FrameLayout implements RightTopFunction {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15437a;
+    private final Context a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f15438c;
+    private boolean c;
     private BaseFragment d;
     private final LiveFloatGoodsWallViewBinding e;
 
@@ -51,12 +47,12 @@ public final class LiveFloatGoodsWallView extends FrameLayout implements RightTo
     public LiveFloatGoodsWallView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f15437a = mContext;
+        this.a = mContext;
         setShow(false);
-        this.f15438c = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
-        LiveFloatGoodsWallViewBinding a2 = LiveFloatGoodsWallViewBinding.a(LayoutInflater.from(this.f15437a).inflate(R.layout.live_float_goods_wall_view, this));
-        Intrinsics.c(a2, "bind(\n        LayoutInfl…ds_wall_view, this)\n    )");
-        this.e = a2;
+        this.c = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
+        LiveFloatGoodsWallViewBinding a = LiveFloatGoodsWallViewBinding.a(LayoutInflater.from(this.a).inflate(R.layout.live_float_goods_wall_view, this));
+        Intrinsics.c(a, "bind(\n        LayoutInfl…ds_wall_view, this)\n    )");
+        this.e = a;
         setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.righttopfunction.-$$Lambda$LiveFloatGoodsWallView$BnRe_I-RZsgblr_w6Q6A2ADln64
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -83,7 +79,7 @@ public final class LiveFloatGoodsWallView extends FrameLayout implements RightTo
     }
 
     public final Context getMContext() {
-        return this.f15437a;
+        return this.a;
     }
 
     @Override // com.blued.android.module.live_china.view.righttopfunction.RightTopFunction
@@ -105,7 +101,7 @@ public final class LiveFloatGoodsWallView extends FrameLayout implements RightTo
         BaseFragment baseFragment = this.d;
         ImageLoader.a(baseFragment == null ? null : baseFragment.getFragmentActive(), liveGiftWallFloatModel.getIcon()).a(this.e.b);
         this.e.d.setText(liveGiftWallFloatModel.getTitle());
-        TextView textView = this.e.f12210c;
+        TextView textView = this.e.c;
         StringBuilder sb = new StringBuilder();
         sb.append(liveGiftWallFloatModel.getProgress());
         sb.append('/');

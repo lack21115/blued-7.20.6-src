@@ -10,10 +10,10 @@ import com.opos.process.bridge.provider.c;
 public final class a extends com.opos.process.bridge.provider.a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f27114c = InitModel.class.getName();
+    private static final String f13426c = InitModel.class.getName();
 
     public a(Context context) {
-        this.f27427a = context;
+        this.f13739a = context;
     }
 
     @Override // com.opos.process.bridge.provider.a
@@ -22,6 +22,6 @@ public final class a extends com.opos.process.bridge.provider.a {
     }
 
     public final void a(boolean z, boolean z2) throws c, b {
-        b(this.f27427a, f27114c, this.b, 1, Boolean.valueOf(z), Boolean.valueOf(z2));
+        b(this.f13739a, f13426c, this.b, 1, Boolean.valueOf(z), Boolean.valueOf(z2));
     }
 }

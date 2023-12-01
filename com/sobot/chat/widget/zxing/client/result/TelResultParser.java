@@ -1,6 +1,7 @@
 package com.sobot.chat.widget.zxing.client.result;
 
 import com.sobot.chat.widget.zxing.Result;
+import com.tencent.smtt.sdk.WebView;
 
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/zxing/client/result/TelResultParser.class */
 public final class TelResultParser extends ResultParser {
@@ -8,9 +9,9 @@ public final class TelResultParser extends ResultParser {
     public TelParsedResult parse(Result result) {
         String str;
         String massagedText = getMassagedText(result);
-        if (massagedText.startsWith("tel:") || massagedText.startsWith("TEL:")) {
+        if (massagedText.startsWith(WebView.SCHEME_TEL) || massagedText.startsWith("TEL:")) {
             if (massagedText.startsWith("TEL:")) {
-                str = "tel:" + massagedText.substring(4);
+                str = WebView.SCHEME_TEL + massagedText.substring(4);
             } else {
                 str = massagedText;
             }

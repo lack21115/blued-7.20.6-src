@@ -70,6 +70,7 @@ public class TextAuditJobResponse$TextAuditJobsDetail$$XmlAdapter implements IXm
             }
         });
         this.childElementBinders.put("Section", new ChildElementBinder<TextAuditJobResponse.TextAuditJobsDetail>() { // from class: com.tencent.cos.xml.model.tag.audit.get.TextAuditJobResponse$TextAuditJobsDetail$$XmlAdapter.9
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, TextAuditJobResponse.TextAuditJobsDetail textAuditJobsDetail, String str) throws IOException, XmlPullParserException {
                 if (textAuditJobsDetail.section == null) {

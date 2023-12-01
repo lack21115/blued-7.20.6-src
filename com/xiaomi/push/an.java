@@ -6,19 +6,19 @@ import com.xiaomi.push.al;
 class an implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ al.b f41254a;
+    final /* synthetic */ al.b f27563a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ al f183a;
+    final /* synthetic */ al f136a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public an(al alVar, al.b bVar) {
-        this.f183a = alVar;
-        this.f41254a = bVar;
+        this.f136a = alVar;
+        this.f27563a = bVar;
     }
 
     @Override // java.lang.Runnable
     public void run() {
-        this.f183a.a(this.f41254a);
+        this.f136a.a(this.f27563a);
     }
 }

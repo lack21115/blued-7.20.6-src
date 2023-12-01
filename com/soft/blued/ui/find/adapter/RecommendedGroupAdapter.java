@@ -27,18 +27,18 @@ import java.util.List;
 public class RecommendedGroupAdapter extends RecyclerView.Adapter<GroupViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30130a;
+    private Context f16440a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<BluedGroupLists> f30131c;
+    private List<BluedGroupLists> f16441c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/adapter/RecommendedGroupAdapter$GroupViewHolder.class */
     public class GroupViewHolder extends RecyclerView.ViewHolder {
         private TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private TextView f30134c;
+        private TextView f16444c;
         private TextView d;
         private ImageView e;
         private ConstraintLayout f;
@@ -47,8 +47,8 @@ public class RecommendedGroupAdapter extends RecyclerView.Adapter<GroupViewHolde
         public GroupViewHolder(View view) {
             super(view);
             this.f = (ConstraintLayout) view.findViewById(R.id.cl_root_view);
-            this.b = (TextView) view.findViewById(2131371285);
-            this.f30134c = (TextView) view.findViewById(R.id.tv_group_name);
+            this.b = (TextView) view.findViewById(R.id.tv_distance);
+            this.f16444c = (TextView) view.findViewById(R.id.tv_group_name);
             this.d = (TextView) view.findViewById(R.id.tv_group_size);
             this.e = (ImageView) view.findViewById(R.id.iv_verify_icon);
             this.g = (ImageView) view.findViewById(R.id.aariv_group_avatar);
@@ -56,16 +56,16 @@ public class RecommendedGroupAdapter extends RecyclerView.Adapter<GroupViewHolde
     }
 
     public RecommendedGroupAdapter(Context context, IRequestHost iRequestHost, List<BluedGroupLists> list) {
-        this.f30130a = context;
+        this.f16440a = context;
         this.b = iRequestHost;
-        this.f30131c = list;
+        this.f16441c = list;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public GroupViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         try {
-            return new GroupViewHolder(LayoutInflater.from(this.f30130a).inflate(R.layout.item_recommended_group, viewGroup, false));
+            return new GroupViewHolder(LayoutInflater.from(this.f16440a).inflate(R.layout.item_recommended_group, viewGroup, false));
         } catch (Exception e) {
             return null;
         }
@@ -74,7 +74,7 @@ public class RecommendedGroupAdapter extends RecyclerView.Adapter<GroupViewHolde
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public void onBindViewHolder(GroupViewHolder groupViewHolder, int i) {
-        final BluedGroupLists bluedGroupLists = this.f30131c.get(i);
+        final BluedGroupLists bluedGroupLists = this.f16441c.get(i);
         if (groupViewHolder == null || bluedGroupLists == null) {
             return;
         }
@@ -99,34 +99,34 @@ public class RecommendedGroupAdapter extends RecyclerView.Adapter<GroupViewHolde
             groupViewHolder.d.setVisibility(0);
         }
         if (TextUtils.isEmpty(bluedGroupLists.groups_name)) {
-            groupViewHolder.f30134c.setVisibility(4);
+            groupViewHolder.f16444c.setVisibility(4);
         } else {
-            groupViewHolder.f30134c.setText(bluedGroupLists.groups_name);
-            groupViewHolder.f30134c.setVisibility(0);
+            groupViewHolder.f16444c.setText(bluedGroupLists.groups_name);
+            groupViewHolder.f16444c.setVisibility(0);
         }
-        ImageLoader.a(this.b, bluedGroupLists.groups_avatar).b(R.drawable.group_default_head).c().a(groupViewHolder.g);
+        ImageLoader.a(this.b, bluedGroupLists.groups_avatar).b((int) R.drawable.group_default_head).c().a(groupViewHolder.g);
         UserInfoHelper.a(groupViewHolder.e, bluedGroupLists.vbadge, 3);
         groupViewHolder.f.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.RecommendedGroupAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 InstantLog.a("groups_recommend");
-                GroupInfoFragment.a(RecommendedGroupAdapter.this.f30130a, bluedGroupLists.groups_gid, "recommend");
+                GroupInfoFragment.a(RecommendedGroupAdapter.this.f16440a, bluedGroupLists.groups_gid, "recommend");
             }
         });
     }
 
     public void a(List<BluedGroupLists> list) {
-        this.f30131c.clear();
+        this.f16441c.clear();
         if (list != null) {
-            this.f30131c.addAll(list);
+            this.f16441c.addAll(list);
         }
         notifyDataSetChanged();
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemCount() {
-        List<BluedGroupLists> list = this.f30131c;
+        List<BluedGroupLists> list = this.f16441c;
         if (list == null) {
             return 0;
         }

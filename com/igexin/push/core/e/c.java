@@ -15,54 +15,54 @@ import org.json.JSONObject;
 public class c implements a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static c f23499c;
+    private static c f9891c;
     private ArrayList<j> d;
     private boolean e;
     private String b = "MessageDataManager";
 
     /* renamed from: a  reason: collision with root package name */
-    public int f23500a = -1;
+    public int f9892a = -1;
 
     public static c a() {
-        if (f23499c == null) {
+        if (f9891c == null) {
             synchronized (c.class) {
                 try {
-                    if (f23499c == null) {
-                        f23499c = new c();
+                    if (f9891c == null) {
+                        f9891c = new c();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f23499c;
+        return f9891c;
     }
 
     public static void a(int i, String str) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("status", Integer.valueOf(i));
-        d.a.f23474a.i.a("message", contentValues, new String[]{"taskid"}, new String[]{str});
+        d.a.f9866a.i.a("message", contentValues, new String[]{"taskid"}, new String[]{str});
     }
 
     private void a(ContentValues contentValues) {
         try {
-            if (this.f23500a == -1) {
-                this.f23500a = b();
+            if (this.f9892a == -1) {
+                this.f9892a = b();
             }
-            if (this.f23500a < 1000) {
-                if (d.a.f23474a.i.a("message", contentValues) != -1) {
-                    this.f23500a++;
+            if (this.f9892a < 1000) {
+                if (d.a.f9866a.i.a("message", contentValues) != -1) {
+                    this.f9892a++;
                     return;
                 }
                 return;
             }
-            int a2 = d.a.f23474a.i.a("message", "id IN (SELECT id from message where status IS NULL or status=1 or status=2 order by id asc limit 250)");
-            this.f23500a -= a2;
+            int a2 = d.a.f9866a.i.a("message", "id IN (SELECT id from message where status IS NULL or status=1 or status=2 order by id asc limit 250)");
+            this.f9892a -= a2;
             if (a2 < 250) {
-                this.f23500a -= d.a.f23474a.i.a("message", "id IN (SELECT id from message where status=0 order by id asc limit " + (250 - a2) + ")");
+                this.f9892a -= d.a.f9866a.i.a("message", "id IN (SELECT id from message where status=0 order by id asc limit " + (250 - a2) + ")");
             }
-            if (d.a.f23474a.i.a("message", contentValues) != -1) {
-                this.f23500a++;
+            if (d.a.f9866a.i.a("message", contentValues) != -1) {
+                this.f9892a++;
             }
         } catch (Throwable th) {
             com.igexin.c.a.c.a.a(th);
@@ -76,9 +76,9 @@ public class c implements a {
                 j next = it.next();
                 byte[] bArr = next.e;
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("id", Long.valueOf(next.f23444a));
+                contentValues.put("id", Long.valueOf(next.f9836a));
                 contentValues.put("messageid", next.b);
-                contentValues.put("taskid", next.f23445c);
+                contentValues.put("taskid", next.f9837c);
                 contentValues.put("appid", next.d);
                 if (bArr != null) {
                     contentValues.put("info", bArr);
@@ -107,7 +107,7 @@ public class c implements a {
             ContentValues contentValues = new ContentValues();
             contentValues.put("notify_status", Integer.valueOf(i));
             if (i == com.igexin.push.core.b.af) {
-                Cursor a2 = d.a.f23474a.i.a("message", new String[]{DBDefinition.TASK_ID}, new String[]{str}, new String[]{"redisplay_num", "redisplay_duration", "redisplay_freq"}, null);
+                Cursor a2 = d.a.f9866a.i.a("message", new String[]{DBDefinition.TASK_ID}, new String[]{str}, new String[]{"redisplay_num", "redisplay_duration", "redisplay_freq"}, null);
                 if (a2 != null && a2.getCount() != 0) {
                     cursor = a2;
                     if (a2.moveToFirst()) {
@@ -124,7 +124,7 @@ public class c implements a {
                 }
                 return;
             }
-            d.a.f23474a.i.a("message", contentValues, new String[]{"taskid"}, new String[]{str});
+            d.a.f9866a.i.a("message", contentValues, new String[]{"taskid"}, new String[]{str});
             cursor2 = cursor;
             com.igexin.push.e.e.c().d();
             if (cursor != null) {
@@ -148,7 +148,7 @@ public class c implements a {
     public static boolean a(String str) {
         Cursor cursor = null;
         try {
-            Cursor a2 = d.a.f23474a.i.a("message", new String[]{"taskid"}, new String[]{str}, null, null);
+            Cursor a2 = d.a.f9866a.i.a("message", new String[]{"taskid"}, new String[]{str}, null, null);
             boolean z = false;
             if (a2 != null) {
                 cursor = a2;
@@ -182,7 +182,7 @@ public class c implements a {
         Cursor a2;
         Cursor cursor = null;
         try {
-            a2 = d.a.f23474a.i.a("message", null, null, null, null);
+            a2 = d.a.f9866a.i.a("message", null, null, null, null);
         } catch (Throwable th) {
             try {
                 com.igexin.c.a.c.a.a(th);
@@ -286,9 +286,9 @@ public class c implements a {
                 j next = it.next();
                 byte[] bArr = next.e;
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("id", Long.valueOf(next.f23444a));
+                contentValues.put("id", Long.valueOf(next.f9836a));
                 contentValues.put("messageid", next.b);
-                contentValues.put("taskid", next.f23445c);
+                contentValues.put("taskid", next.f9837c);
                 contentValues.put("appid", next.d);
                 if (bArr != null) {
                     contentValues.put("info", bArr);
@@ -317,7 +317,7 @@ public class c implements a {
             public final void a_() throws Exception {
                 Cursor cursor = null;
                 try {
-                    com.igexin.push.a.b bVar = d.a.f23474a.i;
+                    com.igexin.push.a.b bVar = d.a.f9866a.i;
                     Cursor a2 = bVar.a("message", new String[]{"status"}, new String[]{"0"}, null, null);
                     if (a2 != null) {
                         while (true) {
@@ -364,7 +364,7 @@ public class c implements a {
         com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new com.igexin.push.a.d() { // from class: com.igexin.push.core.e.c.2
             @Override // com.igexin.push.a.d
             public final void a_() throws Exception {
-                d.a.f23474a.i.a("message", "createtime <= ".concat(String.valueOf(System.currentTimeMillis() - 604800000)));
+                d.a.f9866a.i.a("message", "createtime <= ".concat(String.valueOf(System.currentTimeMillis() - 604800000)));
             }
         }, false, true);
     }

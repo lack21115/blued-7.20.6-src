@@ -6,12 +6,12 @@ import java.io.File;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private final b f40097a;
+    private final b f26406a;
     private final f b;
 
     public e(f fVar, b bVar) {
         this.b = fVar;
-        this.f40097a = bVar;
+        this.f26406a = bVar;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:20:0x0082, code lost:
@@ -42,7 +42,7 @@ public final class e {
             return true;
         }
         File c2 = d.c(bbVar);
-        this.f40097a.a().a("REPLACE INTO m4a_uri_cache ( url, content,music_id,music_ext_id,content_file_path,content_length) VALUES (?,?,?,?,?,?);", new Object[]{bbVar.c(), null, bbVar.i(), bbVar.j(), c2.getAbsolutePath(), Long.valueOf(bbVar.o().b)});
+        this.f26406a.a().a("REPLACE INTO m4a_uri_cache ( url, content,music_id,music_ext_id,content_file_path,content_length) VALUES (?,?,?,?,?,?);", new Object[]{bbVar.c(), null, bbVar.i(), bbVar.j(), c2.getAbsolutePath(), Long.valueOf(bbVar.o().b)});
         return true;
     }
 

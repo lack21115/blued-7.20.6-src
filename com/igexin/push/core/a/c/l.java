@@ -14,15 +14,15 @@ import org.json.JSONObject;
 public class l implements PushMessageInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23425a = com.igexin.push.core.b.e + l.class.getName();
+    private static final String f9817a = com.igexin.push.core.b.e + l.class.getName();
 
     private static void a(String str) {
         try {
-            com.igexin.c.a.c.a.a(f23425a + "|del condition taskid = " + str, new Object[0]);
-            d.a.f23474a.i.a("message", new String[]{"taskid"}, new String[]{str});
+            com.igexin.c.a.c.a.a(f9817a + "|del condition taskid = " + str, new Object[0]);
+            d.a.f9866a.i.a("message", new String[]{"taskid"}, new String[]{str});
         } catch (Throwable th) {
             com.igexin.c.a.c.a.a(th);
-            String str2 = f23425a;
+            String str2 = f9817a;
             com.igexin.c.a.c.a.b(str2, "del condition" + th.toString());
         }
     }
@@ -77,7 +77,7 @@ public class l implements PushMessageInterface {
                 rVar.setType(com.igexin.push.core.b.n);
                 rVar.setActionId(jSONObject.getString("actionid"));
                 rVar.setDoActionId(jSONObject.getString(com.anythink.expressad.foundation.d.d.s));
-                rVar.f23458a = jSONObject.getString("taskid");
+                rVar.f9850a = jSONObject.getString("taskid");
                 rVar.b = jSONObject.optBoolean("force");
                 return rVar;
             }

@@ -1,5 +1,6 @@
 package com.sobot.chat.widget.zxing.aztec.detector;
 
+import android.net.UrlQuerySanitizer;
 import com.blued.das.live.LiveProtos;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import com.sobot.chat.widget.zxing.NotFoundException;
@@ -116,7 +117,7 @@ public final class Detector {
             return;
         }
         this.nbLayers = (correctedParameterData >> 11) + 1;
-        this.nbDataBlocks = (correctedParameterData & 2047) + 1;
+        this.nbDataBlocks = (correctedParameterData & UrlQuerySanitizer.IllegalCharacterValueSanitizer.ALL_OK) + 1;
     }
 
     private ResultPoint[] getBullsEyeCorners(Point point) throws NotFoundException {

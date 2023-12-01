@@ -22,56 +22,56 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ServiceMenuPopAdapter extends BaseQuickAdapter<ServiceMenuModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ServiceMenuPopWindow f32188a;
+    private final ServiceMenuPopWindow f18498a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f32189c;
+    private long f18499c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ServiceMenuPopAdapter(ServiceMenuPopWindow serviceMenuPopWindow, int i) {
         super((int) R.layout.service_menu_pop_item);
         Intrinsics.e(serviceMenuPopWindow, "serviceMenuPopWindow");
-        this.f32188a = serviceMenuPopWindow;
+        this.f18498a = serviceMenuPopWindow;
         this.b = i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ServiceMenuModel item, ServiceMenuPopAdapter this$0, BaseViewHolder helper, View view) {
+    public static final void a(ServiceMenuModel serviceMenuModel, ServiceMenuPopAdapter serviceMenuPopAdapter, BaseViewHolder baseViewHolder, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(item, "$item");
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(helper, "$helper");
-        if (item.type == 1) {
-            WebViewShowInfoFragment.show(this$0.mContext, item.value.url, -1);
+        Intrinsics.e(serviceMenuModel, "$item");
+        Intrinsics.e(serviceMenuPopAdapter, "this$0");
+        Intrinsics.e(baseViewHolder, "$helper");
+        if (serviceMenuModel.type == 1) {
+            WebViewShowInfoFragment.show(serviceMenuPopAdapter.mContext, serviceMenuModel.value.url, -1);
         } else {
-            ChatHttpUtils.a((BluedUIHttpResponse) null, String.valueOf(this$0.f32189c), 1, this$0.b, helper.getAdapterPosition(), item.name, (ChattingModel) null);
+            ChatHttpUtils.a((BluedUIHttpResponse) null, String.valueOf(serviceMenuPopAdapter.f18499c), 1, serviceMenuPopAdapter.b, baseViewHolder.getAdapterPosition(), serviceMenuModel.name, (ChattingModel) null);
         }
-        this$0.f32188a.p();
-        EventTrackMessage.e(MessageProtos.Event.SERVICE_MSG_PAGE_SECOND_CLICK, String.valueOf(this$0.f32189c), item.name);
+        serviceMenuPopAdapter.f18498a.p();
+        EventTrackMessage.e(MessageProtos.Event.SERVICE_MSG_PAGE_SECOND_CLICK, String.valueOf(serviceMenuPopAdapter.f18499c), serviceMenuModel.name);
     }
 
     public final void a(long j) {
-        this.f32189c = j;
+        this.f18499c = j;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(final BaseViewHolder helper, final ServiceMenuModel item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        helper.setText(R.id.tv_menu_name, item.name);
-        ((LinearLayout) helper.getView(2131367715)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.-$$Lambda$ServiceMenuPopAdapter$cB-5VkczSyJcDdVYv7-HinYUTpw
+    public void convert(final BaseViewHolder baseViewHolder, final ServiceMenuModel serviceMenuModel) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(serviceMenuModel, "item");
+        baseViewHolder.setText(R.id.tv_menu_name, serviceMenuModel.name);
+        ((LinearLayout) baseViewHolder.getView(2131367715)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.-$$Lambda$ServiceMenuPopAdapter$cB-5VkczSyJcDdVYv7-HinYUTpw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ServiceMenuPopAdapter.a(ServiceMenuModel.this, this, helper, view);
+                ServiceMenuPopAdapter.a(ServiceMenuModel.this, this, baseViewHolder, view);
             }
         });
         boolean z = true;
-        if (item.show_divider == 1) {
+        if (serviceMenuModel.show_divider == 1) {
             z = false;
         }
-        helper.setGone(R.id.tv_divider, z);
+        baseViewHolder.setGone(R.id.tv_divider, z);
     }
 }

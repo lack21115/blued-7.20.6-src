@@ -2,9 +2,7 @@ package com.alipay.sdk.app;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/j.class */
 public class j {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f4601a = false;
+    private static boolean a = false;
     private static String b;
 
     public static String a() {
@@ -20,11 +18,11 @@ public class j {
     }
 
     public static void a(boolean z) {
-        f4601a = z;
+        a = z;
     }
 
     public static boolean b() {
-        return f4601a;
+        return a;
     }
 
     public static String c() {

@@ -6,24 +6,24 @@ import android.text.TextUtils;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile a f40475a;
+    private static volatile a f26784a;
 
     private a() {
     }
 
     public static a a() {
-        if (f40475a == null) {
+        if (f26784a == null) {
             synchronized (a.class) {
                 try {
-                    if (f40475a == null) {
-                        f40475a = new a();
+                    if (f26784a == null) {
+                        f26784a = new a();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f40475a;
+        return f26784a;
     }
 
     private static String a(String str, String str2) {

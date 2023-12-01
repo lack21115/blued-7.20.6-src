@@ -1,5 +1,6 @@
 package android.preference;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Parcel;
@@ -11,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.EditText;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/preference/EditTextPreference.class */
 public class EditTextPreference extends DialogPreference {
@@ -57,7 +57,7 @@ public class EditTextPreference extends DialogPreference {
     }
 
     public EditTextPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842898);
+        this(context, attributeSet, R.attr.editTextPreferenceStyle);
     }
 
     public EditTextPreference(Context context, AttributeSet attributeSet, int i) {
@@ -67,7 +67,7 @@ public class EditTextPreference extends DialogPreference {
     public EditTextPreference(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
         this.mEditText = new EditText(context, attributeSet);
-        this.mEditText.setId(16908291);
+        this.mEditText.setId(R.id.edit);
         this.mEditText.setEnabled(true);
     }
 
@@ -85,7 +85,7 @@ public class EditTextPreference extends DialogPreference {
     }
 
     protected void onAddEditTextToDialogView(View view, EditText editText) {
-        ViewGroup viewGroup = (ViewGroup) view.findViewById(R.id.edittext_container);
+        ViewGroup viewGroup = (ViewGroup) view.findViewById(16909147);
         if (viewGroup != null) {
             viewGroup.addView(editText, -1, -2);
         }

@@ -151,7 +151,7 @@ public final class PluginProtos {
             public Builder addFileToGenerate(String str) {
                 if (str != null) {
                     ensureFileToGenerateIsMutable();
-                    this.fileToGenerate_.add((LazyStringList) str);
+                    this.fileToGenerate_.add(str);
                     onChanged();
                     return this;
                 }
@@ -355,8 +355,8 @@ public final class PluginProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequestOrBuilder
@@ -405,7 +405,7 @@ public final class PluginProtos {
 
             @Override // com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequestOrBuilder
             public String getFileToGenerate(int i) {
-                return this.fileToGenerate_.get(i);
+                return (String) this.fileToGenerate_.get(i);
             }
 
             @Override // com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequestOrBuilder
@@ -700,7 +700,7 @@ public final class PluginProtos {
             public Builder setFileToGenerate(int i, String str) {
                 if (str != null) {
                     ensureFileToGenerateIsMutable();
-                    this.fileToGenerate_.set(i, (int) str);
+                    this.fileToGenerate_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -772,6 +772,7 @@ public final class PluginProtos {
             this.protoFile_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private CodeGeneratorRequest(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             Version.Builder builder;
@@ -976,7 +977,7 @@ public final class PluginProtos {
 
         @Override // com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequestOrBuilder
         public String getFileToGenerate(int i) {
-            return this.fileToGenerate_.get(i);
+            return (String) this.fileToGenerate_.get(i);
         }
 
         @Override // com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequestOrBuilder
@@ -1467,8 +1468,8 @@ public final class PluginProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -1960,8 +1961,8 @@ public final class PluginProtos {
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
                 /* renamed from: clone */
-                public Builder mo1800clone() {
-                    return (Builder) super.mo1800clone();
+                public Builder mo2030clone() {
+                    return (Builder) super.mo2030clone();
                 }
 
                 @Override // com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse.FileOrBuilder
@@ -2615,6 +2616,7 @@ public final class PluginProtos {
             this.file_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private CodeGeneratorResponse(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -3123,8 +3125,8 @@ public final class PluginProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder

@@ -74,9 +74,8 @@ public abstract class HeaderValue {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/eventstreaming/HeaderValue$BooleanValue.class */
-    public static final class BooleanValue extends HeaderValue {
+    static final class BooleanValue extends HeaderValue {
         private final boolean value;
 
         private BooleanValue(boolean z) {
@@ -181,9 +180,8 @@ public abstract class HeaderValue {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/eventstreaming/HeaderValue$ByteValue.class */
-    public static final class ByteValue extends HeaderValue {
+    static final class ByteValue extends HeaderValue {
         private final byte value;
 
         private ByteValue(byte b) {
@@ -268,9 +266,8 @@ public abstract class HeaderValue {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/eventstreaming/HeaderValue$LongValue.class */
-    public static final class LongValue extends HeaderValue {
+    static final class LongValue extends HeaderValue {
         private final long value;
 
         private LongValue(long j) {
@@ -313,9 +310,8 @@ public abstract class HeaderValue {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/eventstreaming/HeaderValue$ShortValue.class */
-    public static final class ShortValue extends HeaderValue {
+    static final class ShortValue extends HeaderValue {
         private final short value;
 
         private ShortValue(short s) {
@@ -403,9 +399,8 @@ public abstract class HeaderValue {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/eventstreaming/HeaderValue$TimestampValue.class */
-    public static final class TimestampValue extends HeaderValue {
+    static final class TimestampValue extends HeaderValue {
         private final Date value;
 
         private TimestampValue(Date date) {
@@ -454,9 +449,8 @@ public abstract class HeaderValue {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/eventstreaming/HeaderValue$UuidValue.class */
-    public static final class UuidValue extends HeaderValue {
+    static final class UuidValue extends HeaderValue {
         private final UUID value;
 
         private UuidValue(UUID uuid) {

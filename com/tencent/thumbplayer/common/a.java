@@ -9,15 +9,15 @@ import com.tencent.thumbplayer.utils.TPLogUtil;
 public class a implements com.tencent.thumbplayer.tplayer.a.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f39267a;
+    private b f25576a;
 
     public a(b bVar) {
-        this.f39267a = bVar;
+        this.f25576a = bVar;
     }
 
     @Override // com.tencent.thumbplayer.tplayer.a.a.a
     public TPDynamicStatisticParams a(boolean z) {
-        b bVar = this.f39267a;
+        b bVar = this.f25576a;
         if (bVar == null) {
             TPLogUtil.e("TPPlayerInfoGetterImpl", "playerBase is null, return default dynamic statistic params");
             return new TPDynamicStatisticParams();
@@ -33,7 +33,7 @@ public class a implements com.tencent.thumbplayer.tplayer.a.a.a {
 
     @Override // com.tencent.thumbplayer.tplayer.a.a.a
     public TPGeneralPlayFlowParams a() {
-        b bVar = this.f39267a;
+        b bVar = this.f25576a;
         if (bVar == null) {
             TPLogUtil.e("TPPlayerInfoGetterImpl", "playerBase is null, return default general play flow params");
             return new TPGeneralPlayFlowParams();

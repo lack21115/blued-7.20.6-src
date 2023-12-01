@@ -4,7 +4,7 @@ package com.opos.mobad.ad;
 public interface e {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final e f25679c = new e() { // from class: com.opos.mobad.ad.e.1
+    public static final e f11991c = new e() { // from class: com.opos.mobad.ad.e.1
         @Override // com.opos.mobad.ad.e
         public void a() {
             com.opos.cmn.an.f.a.b("IInitListener", "init success.");

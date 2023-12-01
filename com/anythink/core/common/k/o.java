@@ -12,9 +12,7 @@ import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/o.class */
 public final class o {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final PackageManager f6819a;
+    private final PackageManager a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/o$a.class */
     public enum a {
@@ -24,7 +22,7 @@ public final class o {
     }
 
     public o(Context context) {
-        this.f6819a = context.getPackageManager();
+        this.a = context.getPackageManager();
     }
 
     private static boolean a(Context context) {
@@ -58,7 +56,7 @@ public final class o {
 
     private int c(String str) {
         try {
-            PackageInfo packageInfo = this.f6819a.getPackageInfo(str, 16);
+            PackageInfo packageInfo = this.a.getPackageInfo(str, 16);
             if (packageInfo != null) {
                 return packageInfo.versionCode;
             }
@@ -70,7 +68,7 @@ public final class o {
 
     private String d(String str) {
         try {
-            PackageInfo packageInfo = this.f6819a.getPackageInfo(str, 16);
+            PackageInfo packageInfo = this.a.getPackageInfo(str, 16);
             return (packageInfo == null || packageInfo.versionName == null) ? "" : packageInfo.versionName;
         } catch (PackageManager.NameNotFoundException e) {
             return "";
@@ -79,7 +77,7 @@ public final class o {
 
     private byte[] e(String str) {
         try {
-            PackageInfo packageInfo = this.f6819a.getPackageInfo(str, 64);
+            PackageInfo packageInfo = this.a.getPackageInfo(str, 64);
             if (packageInfo != null && packageInfo.signatures != null && packageInfo.signatures.length > 0) {
                 return packageInfo.signatures[0].toByteArray();
             }
@@ -93,7 +91,7 @@ public final class o {
             return a.NOT_INSTALLED;
         }
         try {
-            return this.f6819a.getApplicationInfo(str, 0).enabled ? a.ENABLED : a.DISABLED;
+            return this.a.getApplicationInfo(str, 0).enabled ? a.ENABLED : a.DISABLED;
         } catch (PackageManager.NameNotFoundException e) {
             return a.NOT_INSTALLED;
         }

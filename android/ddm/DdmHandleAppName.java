@@ -38,15 +38,12 @@ public class DdmHandleAppName extends ChunkHandler {
         sendAPNM(str, i);
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public void connected() {
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public void disconnected() {
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public Chunk handleChunk(Chunk chunk) {
         return null;
     }

@@ -3,6 +3,7 @@ package com.kwad.sdk.crash.handler;
 import com.kwad.sdk.crash.f;
 import com.kwad.sdk.crash.report.e;
 import com.kwad.sdk.utils.q;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
@@ -65,13 +66,13 @@ public abstract class b {
             this.mLogDir.mkdirs();
         }
         File file2 = this.mLogDir;
-        this.mDumpFile = new File(file2, FILE_NAME_BASE + "-" + this.mIndex + ".dump");
+        this.mDumpFile = new File(file2, FILE_NAME_BASE + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.mIndex + ".dump");
         File file3 = this.mLogDir;
-        this.mLogFile = new File(file3, FILE_NAME_BASE + "-" + this.mIndex + com.anythink.china.common.a.a.f);
+        this.mLogFile = new File(file3, FILE_NAME_BASE + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.mIndex + ".log");
         File file4 = this.mLogDir;
-        this.mJavaTraceFile = new File(file4, FILE_NAME_BASE + "-" + this.mIndex + ".jtrace");
+        this.mJavaTraceFile = new File(file4, FILE_NAME_BASE + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.mIndex + ".jtrace");
         File file5 = this.mLogDir;
-        this.mMemoryInfoFile = new File(file5, FILE_NAME_BASE + "-" + this.mIndex + ".minfo");
+        this.mMemoryInfoFile = new File(file5, FILE_NAME_BASE + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.mIndex + ".minfo");
         this.mExceptionListener = fVar;
         this.mUploader = eVar;
     }

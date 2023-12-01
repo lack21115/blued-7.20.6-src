@@ -27,11 +27,11 @@ import java.util.Map;
 public final class BeaconReport {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile BeaconReport f39590a;
+    private static volatile BeaconReport f25899a;
     private static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f39591c;
+    private Context f25900c;
     private boolean d;
     private String e;
     private BeaconConfig f;
@@ -50,7 +50,7 @@ public final class BeaconReport {
                 BeaconReport.this.b();
                 BeaconReport.this.a();
                 BeaconReport.this.c();
-                e.a(BeaconReport.this.f39591c);
+                e.a(BeaconReport.this.f25900c);
                 c.a("BeaconReport", "App: %s start success!", BeaconReport.this.e);
             } catch (Throwable th) {
                 d b = d.b();
@@ -75,10 +75,10 @@ public final class BeaconReport {
             com.tencent.tmsbeacon.a.c.c.d().a(this.f.isEnableQmsp());
         }
         com.tencent.tmsbeacon.base.net.c c2 = com.tencent.tmsbeacon.base.net.c.c();
-        Context context = this.f39591c;
+        Context context = this.f25900c;
         BeaconConfig beaconConfig2 = this.f;
         c2.a(context, beaconConfig2 == null ? null : beaconConfig2.getHttpAdapter());
-        com.tencent.tmsbeacon.a.d.a.a().a(this.f39591c);
+        com.tencent.tmsbeacon.a.d.a.a().a(this.f25900c);
         com.tencent.tmsbeacon.a.c.b.f();
         com.tencent.tmsbeacon.a.c.e.l().B();
     }
@@ -121,7 +121,7 @@ public final class BeaconReport {
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         com.tencent.tmsbeacon.a.c.c d = com.tencent.tmsbeacon.a.c.c.d();
-        d.a(this.f39591c);
+        d.a(this.f25900c);
         d.c(this.e);
         QimeiSDK.getInstance().setAppKey(this.e);
         d.a(this.h);
@@ -138,7 +138,7 @@ public final class BeaconReport {
             }
             ModuleName moduleName = values[i2];
             try {
-                BeaconModule.f39592a.put(moduleName, com.tencent.tmsbeacon.event.c.d.f(moduleName.getClassName()));
+                BeaconModule.f25901a.put(moduleName, com.tencent.tmsbeacon.event.c.d.f(moduleName.getClassName()));
             } catch (Exception e) {
                 c.b("init Module error: " + e.getMessage(), new Object[0]);
                 c.a(e);
@@ -150,12 +150,12 @@ public final class BeaconReport {
         while (true) {
             int i4 = i3;
             if (i4 >= length) {
-                QimeiSDK.getInstance().init(this.f39591c);
+                QimeiSDK.getInstance().init(this.f25900c);
                 return;
             }
-            BeaconModule beaconModule = BeaconModule.f39592a.get(values[i4]);
+            BeaconModule beaconModule = BeaconModule.f25901a.get(values[i4]);
             if (beaconModule != null) {
-                beaconModule.a(this.f39591c);
+                beaconModule.a(this.f25900c);
             }
             i3 = i4 + 1;
         }
@@ -179,18 +179,18 @@ public final class BeaconReport {
     }
 
     public static BeaconReport getInstance() {
-        if (f39590a == null) {
+        if (f25899a == null) {
             synchronized (BeaconReport.class) {
                 try {
-                    if (f39590a == null) {
-                        f39590a = new BeaconReport();
+                    if (f25899a == null) {
+                        f25899a = new BeaconReport();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39590a;
+        return f25899a;
     }
 
     public static String getSoPath() {
@@ -284,7 +284,7 @@ public final class BeaconReport {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        com.tencent.tmsbeacon.a.c.b.f39471a = str;
+        com.tencent.tmsbeacon.a.c.b.f25780a = str;
     }
 
     public void setChannelID(String str) {
@@ -382,7 +382,7 @@ public final class BeaconReport {
     }
 
     public void setStrictMode(boolean z) {
-        e.f39530a.set(z);
+        e.f25839a.set(z);
     }
 
     public void setUserID(String str) {
@@ -410,13 +410,13 @@ public final class BeaconReport {
                 return;
             }
             e.a("Context", context);
-            this.f39591c = context.getApplicationContext();
+            this.f25900c = context.getApplicationContext();
             e.a(TbsCoreSettings.TBS_SETTINGS_APP_KEY, str);
             this.e = str;
             this.f = beaconConfig;
             com.tencent.tmsbeacon.a.c.c.d().a(context);
             d.b().a(beaconConfig != null && beaconConfig.isForceEnableAtta());
-            ((Application) this.f39591c).registerActivityLifecycleCallbacks(new com.tencent.tmsbeacon.b.b());
+            ((Application) this.f25900c).registerActivityLifecycleCallbacks(new com.tencent.tmsbeacon.b.b());
             if (beaconConfig != null) {
                 a(beaconConfig);
             }

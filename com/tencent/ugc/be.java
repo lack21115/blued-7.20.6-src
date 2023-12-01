@@ -6,11 +6,11 @@ import android.graphics.Bitmap;
 final /* synthetic */ class be implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40252a;
+    private final TXVideoEditer f26561a;
     private final Bitmap b;
 
     private be(TXVideoEditer tXVideoEditer, Bitmap bitmap) {
-        this.f40252a = tXVideoEditer;
+        this.f26561a = tXVideoEditer;
         this.b = bitmap;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class be implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$setFilter$6(this.f40252a, this.b);
+        TXVideoEditer.lambda$setFilter$6(this.f26561a, this.b);
     }
 }

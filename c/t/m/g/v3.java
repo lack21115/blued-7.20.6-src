@@ -6,14 +6,14 @@ import android.os.Bundle;
 public abstract class v3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f4022a;
+    public String f3974a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f4023c = true;
+    public boolean f3975c = true;
 
     public v3(String str, String str2) {
-        this.f4022a = str;
+        this.f3974a = str;
         this.b = str2;
     }
 
@@ -21,7 +21,7 @@ public abstract class v3 {
     }
 
     public boolean a(Bundle bundle) {
-        if (this.f4023c) {
+        if (this.f3975c) {
             return b(bundle);
         }
         return false;
@@ -30,6 +30,6 @@ public abstract class v3 {
     public abstract boolean b(Bundle bundle);
 
     public String toString() {
-        return "[name=" + this.f4022a + ",desc=" + this.b + ",enabled=" + this.f4023c + "]";
+        return "[name=" + this.f3974a + ",desc=" + this.b + ",enabled=" + this.f3975c + "]";
     }
 }

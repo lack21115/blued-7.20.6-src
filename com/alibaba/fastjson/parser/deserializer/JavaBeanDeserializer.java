@@ -182,26 +182,26 @@ public class JavaBeanDeserializer implements ObjectDeserializer {
             int i = 0;
             int length = this.sortedFieldDeserializers.length;
             while (i < length) {
-                char c2 = i == length - 1 ? ']' : ',';
+                char c = i == length - 1 ? ']' : ',';
                 FieldDeserializer fieldDeserializer = this.sortedFieldDeserializers[i];
                 Class<?> cls = fieldDeserializer.fieldInfo.fieldClass;
                 if (cls == Integer.TYPE) {
-                    fieldDeserializer.setValue((Object) t, jSONLexer.scanInt(c2));
+                    fieldDeserializer.setValue((Object) t, jSONLexer.scanInt(c));
                 } else if (cls == String.class) {
-                    fieldDeserializer.setValue((Object) t, jSONLexer.scanString(c2));
+                    fieldDeserializer.setValue((Object) t, jSONLexer.scanString(c));
                 } else if (cls == Long.TYPE) {
-                    fieldDeserializer.setValue(t, jSONLexer.scanLong(c2));
+                    fieldDeserializer.setValue(t, jSONLexer.scanLong(c));
                 } else if (cls.isEnum()) {
-                    fieldDeserializer.setValue(t, jSONLexer.scanEnum(cls, defaultJSONParser.getSymbolTable(), c2));
+                    fieldDeserializer.setValue(t, jSONLexer.scanEnum(cls, defaultJSONParser.getSymbolTable(), c));
                 } else {
                     jSONLexer.nextToken(14);
                     fieldDeserializer.setValue(t, defaultJSONParser.parseObject(fieldDeserializer.fieldInfo.fieldType));
-                    if (c2 == ']') {
+                    if (c == ']') {
                         if (jSONLexer.token() != 15) {
                             throw new JSONException("syntax error");
                         }
                         jSONLexer.nextToken(16);
-                    } else if (c2 == ',' && jSONLexer.token() != 16) {
+                    } else if (c == ',' && jSONLexer.token() != 16) {
                         throw new JSONException("syntax error");
                     }
                 }

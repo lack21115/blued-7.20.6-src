@@ -16,7 +16,7 @@ import java.io.PrintStream;
 public class Utils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f29787a = false;
+    private static boolean f16097a = false;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/tinker/util/Utils$ScreenState.class */
     public static class ScreenState {
@@ -82,7 +82,7 @@ public class Utils {
     }
 
     public static void a(boolean z) {
-        f29787a = z;
+        f16097a = z;
     }
 
     public static boolean a() {
@@ -154,6 +154,6 @@ public class Utils {
     }
 
     public static boolean b() {
-        return f29787a;
+        return f16097a;
     }
 }

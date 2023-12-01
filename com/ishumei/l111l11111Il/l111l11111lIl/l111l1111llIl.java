@@ -1,7 +1,6 @@
 package com.ishumei.l111l11111Il.l111l11111lIl;
 
 import android.util.Pair;
-import android.widget.ExpandableListView;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -26,7 +25,7 @@ final class l111l1111llIl {
     }
 
     private static long l1111l111111Il(ByteBuffer byteBuffer, int i) {
-        return byteBuffer.getInt(i) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+        return byteBuffer.getInt(i) & 4294967295L;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

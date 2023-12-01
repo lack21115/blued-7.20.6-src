@@ -31,15 +31,15 @@ public class k1 extends q1 {
                 if (i2 == 0) {
                     jSONObject3 = q1.a(str, str2);
                     jSONObject.put("header", jSONObject3);
-                    jSONObject.put("img", list.get(i2).f21178a);
+                    jSONObject.put("img", list.get(i2).f7572a);
                     jSONObject.put(com.umeng.analytics.pro.d.t, list.get(i2).b);
                 } else {
                     jSONObject2.put("header", jSONObject3);
-                    jSONObject2.put("img", list.get(i2).f21178a);
+                    jSONObject2.put("img", list.get(i2).f7572a);
                     jSONObject2.put(com.umeng.analytics.pro.d.t, list.get(i2).b);
                     jSONArray.put(jSONObject2);
                 }
-                jSONObject3.put("width", list.get(i2).f21179c);
+                jSONObject3.put("width", list.get(i2).f7573c);
                 jSONObject3.put("height", list.get(i2).d);
                 i = i2 + 1;
             }
@@ -51,7 +51,7 @@ public class k1 extends q1 {
         hashMap.put("Content-Type", this.b.A ? "application/octet-stream;tt-data=a" : "application/json; charset=utf-8");
         hashMap.put("Cookie", str3);
         try {
-            str4 = a(1, this.b.j.f21290a + "/simulator/mobile/layout", hashMap, this.b.j.f21291c.b(jSONObject.toString()));
+            str4 = a(1, this.b.j.f7684a + "/simulator/mobile/layout", hashMap, this.b.j.f7685c.b(jSONObject.toString()));
         } catch (RangersHttpException e2) {
             str4 = null;
         }

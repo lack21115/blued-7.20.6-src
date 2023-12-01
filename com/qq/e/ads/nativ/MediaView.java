@@ -20,9 +20,8 @@ public final class MediaView extends FrameLayout {
         super(context, attributeSet, i);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         GDTLogger.d("onAttachedToWindow");
         super.onAttachedToWindow();
         if (Build.VERSION.SDK_INT < 11 || isHardwareAccelerated()) {

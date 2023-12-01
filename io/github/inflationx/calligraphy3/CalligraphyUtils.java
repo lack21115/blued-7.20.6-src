@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 /* loaded from: source-8829756-dex2jar.jar:io/github/inflationx/calligraphy3/CalligraphyUtils.class */
 public final class CalligraphyUtils {
-    public static final int[] ANDROID_ATTR_TEXT_APPEARANCE = {16842804};
+    public static final int[] ANDROID_ATTR_TEXT_APPEARANCE = {android.R.attr.textAppearance};
     private static Boolean sAppCompatViewCheck;
     private static Boolean sToolbarCheck;
 

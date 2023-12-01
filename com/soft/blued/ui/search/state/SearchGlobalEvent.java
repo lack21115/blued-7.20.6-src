@@ -16,26 +16,26 @@ public abstract class SearchGlobalEvent implements UiEvent {
     public static final class ShortcutEvent extends SearchGlobalEvent {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<SearchGlobalInfo.SearchShortcutModel> f33174a;
+        private final List<SearchGlobalInfo.SearchShortcutModel> f19483a;
 
         public ShortcutEvent(List<SearchGlobalInfo.SearchShortcutModel> list) {
             super(null);
-            this.f33174a = list;
+            this.f19483a = list;
         }
 
         public final List<SearchGlobalInfo.SearchShortcutModel> a() {
-            return this.f33174a;
+            return this.f19483a;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof ShortcutEvent) && Intrinsics.a(this.f33174a, ((ShortcutEvent) obj).f33174a);
+            return (obj instanceof ShortcutEvent) && Intrinsics.a(this.f19483a, ((ShortcutEvent) obj).f19483a);
         }
 
         public int hashCode() {
-            List<SearchGlobalInfo.SearchShortcutModel> list = this.f33174a;
+            List<SearchGlobalInfo.SearchShortcutModel> list = this.f19483a;
             if (list == null) {
                 return 0;
             }
@@ -43,7 +43,7 @@ public abstract class SearchGlobalEvent implements UiEvent {
         }
 
         public String toString() {
-            return "ShortcutEvent(shortcutList=" + this.f33174a + ')';
+            return "ShortcutEvent(shortcutList=" + this.f19483a + ')';
         }
     }
 

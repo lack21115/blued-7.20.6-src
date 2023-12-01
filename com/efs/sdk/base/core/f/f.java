@@ -1,32 +1,33 @@
 package com.efs.sdk.base.core.f;
 
 import com.efs.sdk.base.core.controller.ControllerCenter;
+import com.efs.sdk.base.protocol.ILogProtocol;
 
 /* loaded from: source-7206380-dex2jar.jar:com/efs/sdk/base/core/f/f.class */
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public c f21779a;
+    public c f8173a;
     public ControllerCenter b;
 
     /* renamed from: c  reason: collision with root package name */
-    public d f21780c;
+    public d f8174c;
     public g d;
 
     /* loaded from: source-7206380-dex2jar.jar:com/efs/sdk/base/core/f/f$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final f f21781a = new f((byte) 0);
+        private static final f f8175a = new f((byte) 0);
 
         public static /* synthetic */ f a() {
-            return f21781a;
+            return f8175a;
         }
     }
 
     private f() {
-        this.f21779a = new c();
-        this.f21780c = new d();
+        this.f8173a = new c();
+        this.f8174c = new d();
         this.d = new g();
     }
 
@@ -35,7 +36,7 @@ public final class f {
     }
 
     public final b a(String str, int i) {
-        b bVar = new b("efs_core", str, this.f21779a.f21777c);
+        b bVar = new b("efs_core", str, this.f8173a.f8171c);
         bVar.put("cver", Integer.valueOf(i));
         return bVar;
     }
@@ -49,7 +50,7 @@ public final class f {
 
     public final void a(int i, String str) {
         if (this.b != null || ControllerCenter.getGlobalEnvStruct().isEnableWaStat()) {
-            b a2 = a("flow_limit_type", i);
+            ILogProtocol a2 = a("flow_limit_type", i);
             a2.put("code", str);
             this.b.send(a2);
         }

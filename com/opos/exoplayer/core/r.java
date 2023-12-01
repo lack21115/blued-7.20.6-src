@@ -6,11 +6,11 @@ import android.os.Handler;
 public final class r {
 
     /* renamed from: a  reason: collision with root package name */
-    private final b f25556a;
+    private final b f11868a;
     private final a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final y f25557c;
+    private final y f11869c;
     private int d;
     private Object e;
     private Handler f;
@@ -33,8 +33,8 @@ public final class r {
 
     public r(a aVar, b bVar, y yVar, int i, Handler handler) {
         this.b = aVar;
-        this.f25556a = bVar;
-        this.f25557c = yVar;
+        this.f11868a = bVar;
+        this.f11869c = yVar;
         this.f = handler;
         this.g = i;
     }
@@ -52,7 +52,7 @@ public final class r {
     }
 
     public y a() {
-        return this.f25557c;
+        return this.f11869c;
     }
 
     public void a(boolean z) {
@@ -64,7 +64,7 @@ public final class r {
     }
 
     public b b() {
-        return this.f25556a;
+        return this.f11868a;
     }
 
     public int c() {

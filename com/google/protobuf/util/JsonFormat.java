@@ -1,8 +1,5 @@
 package com.google.protobuf.util;
 
-import android.widget.ExpandableListView;
-import com.alipay.sdk.util.i;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.io.BaseEncoding;
 import com.google.gson.Gson;
@@ -38,6 +35,7 @@ import com.google.protobuf.Timestamp;
 import com.google.protobuf.UInt32Value;
 import com.google.protobuf.UInt64Value;
 import com.google.protobuf.Value;
+import com.huawei.hms.ads.fw;
 import com.igexin.push.core.b;
 import java.io.IOException;
 import java.io.Reader;
@@ -543,7 +541,7 @@ public class JsonFormat {
         }
 
         private boolean parseBool(JsonElement jsonElement) throws InvalidProtocolBufferException {
-            if (jsonElement.getAsString().equals("true")) {
+            if (jsonElement.getAsString().equals(fw.Code)) {
                 return true;
             }
             if (jsonElement.getAsString().equals("false")) {
@@ -714,7 +712,7 @@ public class JsonFormat {
             try {
                 try {
                     long parseLong = Long.parseLong(jsonElement.getAsString());
-                    if (parseLong < 0 || parseLong > ExpandableListView.PACKED_POSITION_VALUE_NULL) {
+                    if (parseLong < 0 || parseLong > 4294967295L) {
                         throw new InvalidProtocolBufferException("Out of range uint32 value: " + jsonElement);
                     }
                     return (int) parseLong;
@@ -1062,7 +1060,7 @@ public class JsonFormat {
                 this.generator.print(this.blankOrNewLine);
             }
             this.generator.outdent();
-            this.generator.print(i.d);
+            this.generator.print("}");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1102,7 +1100,7 @@ public class JsonFormat {
             wellKnownTypePrinter.print(this, parseFrom);
             this.generator.print(this.blankOrNewLine);
             this.generator.outdent();
-            this.generator.print(i.d);
+            this.generator.print("}");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1171,7 +1169,7 @@ public class JsonFormat {
                 this.generator.print(this.blankOrNewLine);
             }
             this.generator.outdent();
-            this.generator.print(i.d);
+            this.generator.print("}");
         }
 
         private void printRepeatedFieldValue(Descriptors.FieldDescriptor fieldDescriptor, Object obj) throws IOException {
@@ -1217,7 +1215,7 @@ public class JsonFormat {
                         this.generator.print("\"");
                     }
                     if (((Boolean) obj).booleanValue()) {
-                        this.generator.print("true");
+                        this.generator.print(fw.Code);
                     } else {
                         this.generator.print("false");
                     }
@@ -1491,7 +1489,7 @@ public class JsonFormat {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static String getTypeName(String str) throws InvalidProtocolBufferException {
-        String[] split = str.split(BridgeUtil.SPLIT_MARK);
+        String[] split = str.split("/");
         if (split.length != 1) {
             return split[split.length - 1];
         }
@@ -1508,7 +1506,7 @@ public class JsonFormat {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static String unsignedToString(int i) {
-        return i >= 0 ? Integer.toString(i) : Long.toString(i & ExpandableListView.PACKED_POSITION_VALUE_NULL);
+        return i >= 0 ? Integer.toString(i) : Long.toString(i & 4294967295L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

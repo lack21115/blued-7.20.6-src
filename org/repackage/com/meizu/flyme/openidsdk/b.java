@@ -9,20 +9,19 @@ import android.content.pm.ProviderInfo;
 import android.database.Cursor;
 import android.text.TextUtils;
 import android.util.Log;
+import com.anythink.china.api.ChinaDeviceDataInfo;
+import com.anythink.core.common.b.g;
+import com.anythink.core.common.c.d;
 
 /* loaded from: source-3503164-dex2jar.jar:org/repackage/com/meizu/flyme/openidsdk/b.class */
 class b {
     private static volatile b e;
     private static boolean f = false;
     private BroadcastReceiver h;
-
-    /* renamed from: a  reason: collision with root package name */
-    OpenId f44112a = new OpenId("udid");
-    OpenId b = new OpenId("oaid");
+    OpenId a = new OpenId("udid");
+    OpenId b = new OpenId(ChinaDeviceDataInfo.OAID);
     OpenId d = new OpenId("vaid");
-
-    /* renamed from: c  reason: collision with root package name */
-    OpenId f44113c = new OpenId("aaid");
+    OpenId c = new OpenId("aaid");
     private SupportInfo g = new SupportInfo();
 
     private b() {
@@ -43,13 +42,13 @@ class b {
             str = "parseValue fail, cursor is null.";
         } else if (!cursor.isClosed()) {
             cursor.moveToFirst();
-            int columnIndex = cursor.getColumnIndex("value");
+            int columnIndex = cursor.getColumnIndex(d.a.d);
             if (columnIndex >= 0) {
-                valueData.f44110a = cursor.getString(columnIndex);
+                valueData.a = cursor.getString(columnIndex);
             } else {
                 a("parseValue fail, index < 0.");
             }
-            int columnIndex2 = cursor.getColumnIndex("code");
+            int columnIndex2 = cursor.getColumnIndex(g.c.b);
             if (columnIndex2 >= 0) {
                 valueData.b = cursor.getInt(columnIndex2);
             } else {
@@ -57,7 +56,7 @@ class b {
             }
             int columnIndex3 = cursor.getColumnIndex("expired");
             if (columnIndex3 >= 0) {
-                valueData.f44111c = cursor.getLong(columnIndex3);
+                valueData.c = cursor.getLong(columnIndex3);
                 return valueData;
             }
             a("parseExpired fail, index < 0.");
@@ -92,7 +91,7 @@ class b {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0059, code lost:
-        if ("0".equals(r0.f44110a) != false) goto L21;
+        if ("0".equals(r0.a) != false) goto L21;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -170,20 +169,20 @@ class b {
             if (packageManager == null) {
                 return false;
             }
-            String a2 = a(packageManager, "com.meizu.flyme.openidsdk");
-            if (TextUtils.isEmpty(a2)) {
+            String a = a(packageManager, "com.meizu.flyme.openidsdk");
+            if (TextUtils.isEmpty(a)) {
                 return false;
             }
-            String b = b(packageManager, a2);
+            String b = b(packageManager, a);
             if (this.g.a() && this.g.a(b)) {
                 a("use same version cache, safeVersion : ".concat(String.valueOf(b)));
                 return this.g.b();
             }
             this.g.b(b);
-            boolean a3 = a(context);
-            a("query support, result : ".concat(String.valueOf(a3)));
-            this.g.a(a3);
-            return a3;
+            boolean a2 = a(context);
+            a("query support, result : ".concat(String.valueOf(a2)));
+            this.g.a(a2);
+            return a2;
         }
         return this.g.b();
     }

@@ -17,11 +17,11 @@ public class p implements ServiceConnection {
     public static final Object e = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    public final RemoteServiceBean f22316a;
+    public final RemoteServiceBean f8708a;
     public a b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Handler f22317c = null;
+    public Handler f8709c = null;
     public boolean d = false;
 
     /* loaded from: source-7994992-dex2jar.jar:com/hihonor/push/sdk/p$a.class */
@@ -29,15 +29,15 @@ public class p implements ServiceConnection {
     }
 
     public p(RemoteServiceBean remoteServiceBean) {
-        this.f22316a = remoteServiceBean;
+        this.f8708a = remoteServiceBean;
     }
 
     public final void a() {
         synchronized (e) {
-            Handler handler = this.f22317c;
+            Handler handler = this.f8709c;
             if (handler != null) {
                 handler.removeMessages(1001);
-                this.f22317c = null;
+                this.f8709c = null;
             }
         }
     }
@@ -46,9 +46,9 @@ public class p implements ServiceConnection {
         a aVar = this.b;
         if (aVar != null) {
             m mVar = (m) aVar;
-            mVar.f22312a.f22313a.set(i == HonorPushErrorEnum.ERROR_SERVICE_TIME_OUT.statusCode ? 2 : 1);
-            mVar.f22312a.a(i);
-            mVar.f22312a.b = null;
+            mVar.f8704a.f8705a.set(i == HonorPushErrorEnum.ERROR_SERVICE_TIME_OUT.statusCode ? 2 : 1);
+            mVar.f8704a.a(i);
+            mVar.f8704a.b = null;
         }
     }
 
@@ -72,9 +72,9 @@ public class p implements ServiceConnection {
         a aVar = this.b;
         if (aVar != null) {
             m mVar = (m) aVar;
-            mVar.f22312a.f22313a.set(1);
-            mVar.f22312a.a(HonorPushErrorCode.ERROR_SERVICE_NULL_BINDING);
-            mVar.f22312a.b = null;
+            mVar.f8704a.f8705a.set(1);
+            mVar.f8704a.a(HonorPushErrorCode.ERROR_SERVICE_NULL_BINDING);
+            mVar.f8704a.b = null;
         }
     }
 
@@ -85,21 +85,21 @@ public class p implements ServiceConnection {
         a aVar = this.b;
         if (aVar != null) {
             m mVar = (m) aVar;
-            mVar.f22312a.b = IPushInvoke.Stub.asInterface(iBinder);
-            if (mVar.f22312a.b == null) {
-                mVar.f22312a.d.b();
-                mVar.f22312a.f22313a.set(1);
-                mVar.f22312a.a(HonorPushErrorCode.ERROR_BIND_SERVICE);
+            mVar.f8704a.b = IPushInvoke.Stub.asInterface(iBinder);
+            if (mVar.f8704a.b == null) {
+                mVar.f8704a.d.b();
+                mVar.f8704a.f8705a.set(1);
+                mVar.f8704a.a(HonorPushErrorCode.ERROR_BIND_SERVICE);
                 return;
             }
-            mVar.f22312a.f22313a.set(3);
-            l.a aVar2 = mVar.f22312a.f22314c;
+            mVar.f8704a.f8705a.set(3);
+            l.a aVar2 = mVar.f8704a.f8706c;
             if (aVar2 != null) {
                 j.a aVar3 = (j.a) aVar2;
-                if (Looper.myLooper() == j.this.f22303a.getLooper()) {
+                if (Looper.myLooper() == j.this.f8695a.getLooper()) {
                     aVar3.b();
                 } else {
-                    j.this.f22303a.post(new h(aVar3));
+                    j.this.f8695a.post(new h(aVar3));
                 }
             }
         }
@@ -111,9 +111,9 @@ public class p implements ServiceConnection {
         a aVar = this.b;
         if (aVar != null) {
             m mVar = (m) aVar;
-            mVar.f22312a.f22313a.set(1);
-            mVar.f22312a.a(HonorPushErrorCode.ERROR_SERVICE_DISCONNECTED);
-            mVar.f22312a.b = null;
+            mVar.f8704a.f8705a.set(1);
+            mVar.f8704a.a(HonorPushErrorCode.ERROR_SERVICE_DISCONNECTED);
+            mVar.f8704a.b = null;
         }
     }
 }

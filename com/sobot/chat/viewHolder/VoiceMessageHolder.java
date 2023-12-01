@@ -89,7 +89,7 @@ public class VoiceMessageHolder extends MessageHolderBase {
     }
 
     private void resetAnim() {
-        this.voicePlay.setImageResource(this.isRight ? ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_voice_to_icon") : ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_voice_from_icon"));
+        this.voicePlay.setImageResource(this.isRight ? ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_voice_to_icon") : ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_voice_from_icon"));
         Drawable drawable = this.voicePlay.getDrawable();
         if (drawable == null || !(drawable instanceof AnimationDrawable)) {
             return;
@@ -167,7 +167,7 @@ public class VoiceMessageHolder extends MessageHolderBase {
         if (this.message.isVoideIsPlaying()) {
             resetAnim();
         } else {
-            this.voicePlay.setImageResource(this.isRight ? ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_pop_voice_send_anime_3") : ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_pop_voice_receive_anime_3"));
+            this.voicePlay.setImageResource(this.isRight ? ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_pop_voice_send_anime_3") : ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_pop_voice_receive_anime_3"));
         }
     }
 

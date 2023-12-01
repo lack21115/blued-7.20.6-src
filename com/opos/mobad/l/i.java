@@ -4,16 +4,16 @@ package com.opos.mobad.l;
 public abstract class i extends j implements com.opos.mobad.ad.e.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.mobad.ad.e.c f26306a;
+    private com.opos.mobad.ad.e.c f12618a;
 
     public i(com.opos.mobad.ad.e.c cVar) {
         super(cVar);
-        this.f26306a = cVar;
+        this.f12618a = cVar;
     }
 
     public void d(String str) {
         com.opos.mobad.ad.e.c cVar;
-        if (5 == d() || (cVar = this.f26306a) == null) {
+        if (5 == d() || (cVar = this.f12618a) == null) {
             return;
         }
         cVar.a(str);
@@ -21,7 +21,7 @@ public abstract class i extends j implements com.opos.mobad.ad.e.b {
 
     public final void i() {
         com.opos.mobad.ad.e.c cVar;
-        if (5 == d() || (cVar = this.f26306a) == null) {
+        if (5 == d() || (cVar = this.f12618a) == null) {
             return;
         }
         cVar.a(0L);
@@ -30,7 +30,7 @@ public abstract class i extends j implements com.opos.mobad.ad.e.b {
     @Override // com.opos.mobad.l.j
     public void i_() {
         com.opos.mobad.ad.e.c cVar;
-        if (5 == d() || (cVar = this.f26306a) == null) {
+        if (5 == d() || (cVar = this.f12618a) == null) {
             return;
         }
         cVar.b();

@@ -124,7 +124,7 @@ public final class PostalAddress extends GeneratedMessageV3 implements PostalAdd
         public Builder addAddressLines(String str) {
             if (str != null) {
                 ensureAddressLinesIsMutable();
-                this.addressLines_.add((LazyStringList) str);
+                this.addressLines_.add(str);
                 onChanged();
                 return this;
             }
@@ -159,7 +159,7 @@ public final class PostalAddress extends GeneratedMessageV3 implements PostalAdd
         public Builder addRecipients(String str) {
             if (str != null) {
                 ensureRecipientsIsMutable();
-                this.recipients_.add((LazyStringList) str);
+                this.recipients_.add(str);
                 onChanged();
                 return this;
             }
@@ -317,13 +317,13 @@ public final class PostalAddress extends GeneratedMessageV3 implements PostalAdd
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.type.PostalAddressOrBuilder
         public String getAddressLines(int i) {
-            return this.addressLines_.get(i);
+            return (String) this.addressLines_.get(i);
         }
 
         @Override // com.google.type.PostalAddressOrBuilder
@@ -463,7 +463,7 @@ public final class PostalAddress extends GeneratedMessageV3 implements PostalAdd
 
         @Override // com.google.type.PostalAddressOrBuilder
         public String getRecipients(int i) {
-            return this.recipients_.get(i);
+            return (String) this.recipients_.get(i);
         }
 
         @Override // com.google.type.PostalAddressOrBuilder
@@ -697,7 +697,7 @@ public final class PostalAddress extends GeneratedMessageV3 implements PostalAdd
         public Builder setAddressLines(int i, String str) {
             if (str != null) {
                 ensureAddressLinesIsMutable();
-                this.addressLines_.set(i, (int) str);
+                this.addressLines_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -807,7 +807,7 @@ public final class PostalAddress extends GeneratedMessageV3 implements PostalAdd
         public Builder setRecipients(int i, String str) {
             if (str != null) {
                 ensureRecipientsIsMutable();
-                this.recipients_.set(i, (int) str);
+                this.recipients_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -949,7 +949,7 @@ public final class PostalAddress extends GeneratedMessageV3 implements PostalAdd
                                 this.addressLines_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.addressLines_.add((LazyStringList) readStringRequireUtf8);
+                            this.addressLines_.add(readStringRequireUtf8);
                             z2 = z4;
                             continue;
                         case 82:
@@ -959,7 +959,7 @@ public final class PostalAddress extends GeneratedMessageV3 implements PostalAdd
                                 this.recipients_ = new LazyStringArrayList();
                                 z5 = z2 | true;
                             }
-                            this.recipients_.add((LazyStringList) readStringRequireUtf82);
+                            this.recipients_.add(readStringRequireUtf82);
                             z2 = z5;
                             continue;
                         case 90:
@@ -1087,7 +1087,7 @@ public final class PostalAddress extends GeneratedMessageV3 implements PostalAdd
 
     @Override // com.google.type.PostalAddressOrBuilder
     public String getAddressLines(int i) {
-        return this.addressLines_.get(i);
+        return (String) this.addressLines_.get(i);
     }
 
     @Override // com.google.type.PostalAddressOrBuilder
@@ -1227,7 +1227,7 @@ public final class PostalAddress extends GeneratedMessageV3 implements PostalAdd
 
     @Override // com.google.type.PostalAddressOrBuilder
     public String getRecipients(int i) {
-        return this.recipients_.get(i);
+        return (String) this.recipients_.get(i);
     }
 
     @Override // com.google.type.PostalAddressOrBuilder

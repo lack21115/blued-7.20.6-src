@@ -67,14 +67,11 @@ public class EmojiEditText extends SkinCompatEditText {
         }
     }
 
-    @Override // android.widget.TextView
     public void onSelectionChanged(int i, int i2) {
         super.onSelectionChanged(i, i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.TextView
-    public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    protected void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         updateText(i, i2, i3);
     }
 

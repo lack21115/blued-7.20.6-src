@@ -1,6 +1,7 @@
 package com.soft.blued.ui.live.fragment;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -10,6 +11,7 @@ import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.common.base.config.ListConfig;
 import com.blued.android.module.common.base.mvi.BaseListAction;
 import com.blued.android.module.common.base.mvi.BaseListFragment;
+import com.blued.android.module.common.base.mvi.UiAction;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
 import com.blued.android.module.common.view.NoDataAndLoadFailView;
 import com.bytedance.applog.tracker.Tracker;
@@ -37,15 +39,15 @@ public final class LiveGrabListFragment extends BaseListFragment<LiveGrabViewMod
         }
 
         public final void a(Context context) {
-            TerminalActivity.d(context, LiveGrabListFragment.class, null);
+            TerminalActivity.d(context, LiveGrabListFragment.class, (Bundle) null);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(LiveGrabListFragment this$0, View view) {
+    public static final void a(LiveGrabListFragment liveGrabListFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(liveGrabListFragment, "this$0");
+        FragmentActivity activity = liveGrabListFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -53,24 +55,21 @@ public final class LiveGrabListFragment extends BaseListFragment<LiveGrabViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(LiveGrabListFragment this$0, View view) {
+    public static final void b(LiveGrabListFragment liveGrabListFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        ((LiveGrabViewModel) this$0.y()).dispatchAction(BaseListAction.RefreshData.f10668a);
+        Intrinsics.e(liveGrabListFragment, "this$0");
+        liveGrabListFragment.y().dispatchAction((UiAction) BaseListAction.RefreshData.a);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: C */
     public LiveGrabAdapter i() {
         return new LiveGrabAdapter();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public ListConfig h() {
-        return new ListConfig.Builder().e(true).a(20).a(ListConfig.LoadMoreModel.PULL_UP).b(true).c(true).d(true).a(true).a();
+        return new ListConfig.Builder().e(true).a(20).a(ListConfig.LoadMoreModel.b).b(true).c(true).d(true).a(true).a();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         ShapeTextView btn;
         super.m();
@@ -84,7 +83,7 @@ public final class LiveGrabListFragment extends BaseListFragment<LiveGrabViewMod
         }
         NoDataAndLoadFailView c2 = c();
         if (c2 != null) {
-            c2.setNoDataStr(R.string.recommend_no_grab);
+            c2.setNoDataStr((int) R.string.recommend_no_grab);
         }
         NoDataAndLoadFailView c3 = c();
         if (c3 != null) {

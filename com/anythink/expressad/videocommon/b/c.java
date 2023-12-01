@@ -20,7 +20,7 @@ import java.util.concurrent.ExecutorService;
 public class c implements Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8727a = "2000077";
+    public static final String f5887a = "2000077";
     protected static final String b = "CampaignDownLoadTask";
     private static final long d = -510642107992871538L;
     private static final int e = 1;
@@ -49,7 +49,7 @@ public class c implements Serializable {
     private int Z;
 
     /* renamed from: c  reason: collision with root package name */
-    b f8728c;
+    b f5888c;
     private boolean o;
     private int q;
     private String r;
@@ -377,17 +377,15 @@ public class c implements Serializable {
     }
 
     private void u() {
-        if (this.f8728c == null) {
+        if (this.f5888c == null) {
             b bVar = new b(this.I, this.R, this.W);
-            this.f8728c = bVar;
-            bVar.a(new a.AbstractC0108a() { // from class: com.anythink.expressad.videocommon.b.c.3
-                @Override // com.anythink.core.common.res.a.a.AbstractC0108a
+            this.f5888c = bVar;
+            bVar.a(new a.a() { // from class: com.anythink.expressad.videocommon.b.c.3
                 public final void a(String str, String str2) {
                     c cVar = c.this;
                     c.a(cVar, "errorCode:" + str + ",errorMsg:" + str2);
                 }
 
-                @Override // com.anythink.core.common.res.a.a.AbstractC0108a
                 public final boolean a(int i2, long j2, long j3) {
                     if (c.this.H != j3) {
                         c.this.H = j3;
@@ -550,10 +548,10 @@ public class c implements Serializable {
         } else {
             x();
             u();
-            if (this.f8728c != null) {
+            if (this.f5888c != null) {
                 this.u = 1;
                 this.F = true;
-                this.f8728c.a();
+                this.f5888c.a();
             }
         }
     }
@@ -561,10 +559,10 @@ public class c implements Serializable {
     public final void i() {
         x();
         u();
-        if (this.f8728c != null) {
+        if (this.f5888c != null) {
             this.u = 1;
             this.F = true;
-            this.f8728c.b();
+            this.f5888c.b();
         }
     }
 
@@ -590,7 +588,7 @@ public class c implements Serializable {
             return file.exists() ? file.canRead() ? file.length() > 0 ? "" : "file length is 0 " : "file can not read " : "file is not exist ";
         } catch (Throwable th) {
             String message = th.getMessage();
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 th.printStackTrace();
             }
             return message;

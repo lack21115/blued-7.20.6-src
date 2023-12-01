@@ -24,11 +24,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class VIPNewUserOptionAdapter extends BaseQuickAdapter<VIPCenterNewModel.OptionList, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f33802a;
+    private final int f20111a;
 
     public VIPNewUserOptionAdapter(int i) {
         super((int) R.layout.vip_center_new_user_option_item);
-        this.f33802a = i;
+        this.f20111a = i;
     }
 
     public final VIPCenterNewModel.OptionList a() {
@@ -53,67 +53,67 @@ public final class VIPNewUserOptionAdapter extends BaseQuickAdapter<VIPCenterNew
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, VIPCenterNewModel.OptionList data) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(data, "data");
-        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) helper.getView(2131364999);
-        ShapeTextView shapeTextView = (ShapeTextView) helper.getView(R.id.tv_choosen_tag);
-        if (helper.getAdapterPosition() == 0) {
-            ViewGroup.LayoutParams layoutParams = shapeLinearLayout.getLayoutParams();
+    public void convert(BaseViewHolder baseViewHolder, VIPCenterNewModel.OptionList optionList) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(optionList, "data");
+        ShapeHelper.ShapeView shapeView = (ShapeLinearLayout) baseViewHolder.getView(R.id.item_view);
+        ShapeTextView view = baseViewHolder.getView(R.id.tv_choosen_tag);
+        if (baseViewHolder.getAdapterPosition() == 0) {
+            ViewGroup.LayoutParams layoutParams = shapeView.getLayoutParams();
             if (layoutParams == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.widget.LinearLayout.LayoutParams");
             }
             ((LinearLayout.LayoutParams) layoutParams).setMarginStart(DensityUtils.a(this.mContext, 10.0f));
         }
-        if (helper.getPosition() == 0) {
-            data.item.tag_up = "最优惠";
+        if (baseViewHolder.getPosition() == 0) {
+            optionList.item.tag_up = "最优惠";
         }
-        if (TextUtils.isEmpty(data.item.tag_up)) {
-            shapeTextView.setVisibility(4);
+        if (TextUtils.isEmpty(optionList.item.tag_up)) {
+            view.setVisibility(4);
         } else {
-            shapeTextView.setText(data.item.tag_up);
-            shapeTextView.setVisibility(0);
+            view.setText(optionList.item.tag_up);
+            view.setVisibility(0);
         }
-        helper.setText(2131372046, data.item.name);
-        ShapeLinearLayout shapeLinearLayout2 = shapeLinearLayout;
-        ShapeHelper.a(shapeLinearLayout2, DensityUtils.a(this.mContext, 2.0f), 0.0f, 0.0f);
-        if (data.choosen) {
-            ShapeHelper.b(shapeLinearLayout2, 2131102170);
-            ShapeHelper.d(shapeLinearLayout2, R.color.syc_FF3F4F);
-        } else if (this.f33802a == 2) {
-            ShapeHelper.b(shapeLinearLayout2, R.color.syc_B2D4FF);
-            ShapeHelper.d(shapeLinearLayout2, R.color.syc_B2D4FF);
+        baseViewHolder.setText(2131372046, optionList.item.name);
+        ShapeHelper.ShapeView shapeView2 = shapeView;
+        ShapeHelper.a(shapeView2, DensityUtils.a(this.mContext, 2.0f), 0.0f, 0.0f);
+        if (optionList.choosen) {
+            ShapeHelper.b(shapeView2, 2131102170);
+            ShapeHelper.d(shapeView2, (int) R.color.syc_FF3F4F);
+        } else if (this.f20111a == 2) {
+            ShapeHelper.b(shapeView2, (int) R.color.syc_B2D4FF);
+            ShapeHelper.d(shapeView2, (int) R.color.syc_B2D4FF);
         } else {
-            ShapeHelper.b(shapeLinearLayout2, R.color.syc_FFE9D3);
-            ShapeHelper.d(shapeLinearLayout2, R.color.syc_FFE9D3);
+            ShapeHelper.b(shapeView2, (int) R.color.syc_FFE9D3);
+            ShapeHelper.d(shapeView2, (int) R.color.syc_FFE9D3);
         }
-        helper.setText(R.id.tv_amount, Intrinsics.a("", (Object) Integer.valueOf((int) data.money)));
-        TextView textView = (TextView) helper.getView(R.id.tv_amount_per_month);
+        baseViewHolder.setText(R.id.tv_amount, Intrinsics.a("", Integer.valueOf((int) optionList.money)));
+        TextView textView = (TextView) baseViewHolder.getView(R.id.tv_amount_per_month);
         textView.setPaintFlags(textView.getPaintFlags() | 16);
-        String a2 = Intrinsics.a("", (Object) Integer.valueOf((int) data.original_money));
-        helper.setText(R.id.tv_amount_per_month, BlueAppLocal.a().equals("en") ? Intrinsics.a("￥", (Object) a2) : Intrinsics.a(a2, (Object) "元"));
-        ShapeTextView shapeTextView2 = (ShapeTextView) helper.getView(2131372678);
+        String a2 = Intrinsics.a("", Integer.valueOf((int) optionList.original_money));
+        baseViewHolder.setText(R.id.tv_amount_per_month, BlueAppLocal.a().equals("en") ? Intrinsics.a("￥", a2) : Intrinsics.a(a2, "元"));
+        ShapeTextView view2 = baseViewHolder.getView(R.id.tv_tag);
         ShapeModel shapeModel = new ShapeModel();
         shapeModel.K = DensityUtils.a(this.mContext, 12.0f);
         shapeModel.L = DensityUtils.a(this.mContext, 12.0f);
         shapeModel.b = BluedSkinUtils.a(this.mContext, 2131102170);
-        if (this.f33802a == 2) {
-            if (data.choosen) {
+        if (this.f20111a == 2) {
+            if (optionList.choosen) {
                 shapeModel.k = BluedSkinUtils.a(this.mContext, (int) R.color.syc_FF3F4F);
             } else {
                 shapeModel.k = BluedSkinUtils.a(this.mContext, (int) R.color.syc_8CB6EB);
             }
-        } else if (data.choosen) {
+        } else if (optionList.choosen) {
             shapeModel.k = BluedSkinUtils.a(this.mContext, (int) R.color.syc_FF3F4F);
         } else {
             shapeModel.k = BluedSkinUtils.a(this.mContext, (int) R.color.syc_F3C291);
         }
-        shapeTextView2.setShapeModel(shapeModel);
-        if (TextUtils.isEmpty(data.item.tag_bottom)) {
-            shapeTextView2.setVisibility(4);
+        view2.setShapeModel(shapeModel);
+        if (TextUtils.isEmpty(optionList.item.tag_bottom)) {
+            view2.setVisibility(4);
             return;
         }
-        shapeTextView2.setVisibility(0);
-        shapeTextView2.setText(data.item.tag_bottom);
+        view2.setVisibility(0);
+        view2.setText(optionList.item.tag_bottom);
     }
 }

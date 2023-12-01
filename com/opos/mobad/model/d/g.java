@@ -41,19 +41,19 @@ public class g implements n {
     private static final int f = y.e.APP_UNINSTALLED.a();
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f26418a;
+    private Context f12730a;
     private com.opos.mobad.model.a.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private o f26419c;
+    private o f12731c;
     private com.opos.mobad.provider.ad.a d;
 
     public g(Context context, com.opos.mobad.model.a.b bVar) {
         Context a2 = com.opos.mobad.service.b.a(context.getApplicationContext());
-        this.f26418a = a2;
+        this.f12730a = a2;
         this.d = new com.opos.mobad.provider.ad.a(a2);
-        this.b = new com.opos.mobad.model.a.a.a(this.f26418a, bVar);
-        this.f26419c = new j(this.f26418a);
+        this.b = new com.opos.mobad.model.a.a.a(this.f12730a, bVar);
+        this.f12731c = new j(this.f12730a);
     }
 
     private static final int a(AdData adData) {
@@ -93,7 +93,7 @@ public class g implements n {
                             if (list != null && list.size() > 0) {
                                 if (!a(bVar, list)) {
                                     hVar.e(yVar);
-                                    com.opos.mobad.model.e.e.a(this.f26418a, yVar);
+                                    com.opos.mobad.model.e.e.a(this.f12730a, yVar);
                                 }
                             }
                             hVar.d(yVar);
@@ -109,7 +109,7 @@ public class g implements n {
             }
             com.opos.cmn.an.f.a.b("FetchAdTask", "data size:" + jSONArray.length());
             if (jSONArray.length() <= 0) {
-                context = this.f26418a;
+                context = this.f12730a;
                 hVar.a(context, 1);
                 return null;
             }
@@ -117,10 +117,10 @@ public class g implements n {
             jSONObject2.put("adReqInfoList", jSONArray);
             HashMap hashMap = new HashMap();
             hashMap.put("Content-Type", "application/json");
-            hashMap.put("Route-Data", com.opos.cmn.biz.a.e.a(this.f26418a));
-            com.opos.cmn.func.b.b.e a2 = com.opos.cmn.func.b.b.b.a().a(this.f26418a, new d.a().a(jSONObject2.toString().getBytes()).a(hashMap).a("POST").b("https://uapi.ads.heytapmobi.com/union/ads/advert/aol").a());
+            hashMap.put("Route-Data", com.opos.cmn.biz.a.e.a(this.f12730a));
+            com.opos.cmn.func.b.b.e a2 = com.opos.cmn.func.b.b.b.a().a(this.f12730a, new d.a().a(jSONObject2.toString().getBytes()).a(hashMap).a("POST").b("https://uapi.ads.heytapmobi.com/union/ads/advert/aol").a());
             try {
-                com.opos.cmn.an.f.a.b("FetchAdTask", "check code:" + a2.f24862a);
+                com.opos.cmn.an.f.a.b("FetchAdTask", "check code:" + a2.f11174a);
             } catch (Throwable th2) {
                 th = th2;
                 eVar = a2;
@@ -138,14 +138,14 @@ public class g implements n {
                     throw th3;
                 }
             }
-            if (a2 == null || 200 != a2.f24862a) {
+            if (a2 == null || 200 != a2.f11174a) {
                 if (a2 != null) {
                     a2.a();
                 }
-                hVar.a(this.f26418a, 3);
+                hVar.a(this.f12730a, 3);
                 return null;
             }
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(a2.f24863c);
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(a2.f11175c);
             byte[] bArr = new byte[1024];
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             while (true) {
@@ -186,7 +186,7 @@ public class g implements n {
                     }
                     com.opos.cmn.an.f.a.a("FetchAdTask", "enable size:" + arrayList.size());
                     if (arrayList.size() > 0) {
-                        hVar.a(this.f26418a);
+                        hVar.a(this.f12730a);
                         com.opos.mobad.model.b.d dVar2 = new com.opos.mobad.model.b.d(dVar.c(), arrayList, dVar.i());
                         bufferedInputStream.close();
                         if (a2 != null) {
@@ -194,21 +194,21 @@ public class g implements n {
                         }
                         return dVar2;
                     }
-                    hVar.a(this.f26418a, 4);
+                    hVar.a(this.f12730a, 4);
                     bufferedInputStream.close();
                     if (a2 == null) {
                         return null;
                     }
                     eVar = a2;
                 }
-                hVar.a(this.f26418a, 4);
+                hVar.a(this.f12730a, 4);
                 bufferedInputStream.close();
                 if (a2 == null) {
                     return null;
                 }
                 eVar = a2;
             } else {
-                hVar.a(this.f26418a, 3);
+                hVar.a(this.f12730a, 3);
                 bufferedInputStream.close();
                 if (a2 == null) {
                     return null;
@@ -218,7 +218,7 @@ public class g implements n {
             eVar.a();
             return null;
         }
-        context = this.f26418a;
+        context = this.f12730a;
         hVar.a(context, 1);
         return null;
     }
@@ -244,13 +244,13 @@ public class g implements n {
     }
 
     private com.opos.mobad.model.b.e a(x xVar) {
-        if (com.opos.cmn.d.b.a(com.opos.cmn.d.c.a(this.f26418a, xVar.d), xVar.e)) {
+        if (com.opos.cmn.d.b.a(com.opos.cmn.d.c.a(this.f12730a, xVar.d), xVar.e)) {
             return null;
         }
         com.opos.mobad.model.b.e eVar = new com.opos.mobad.model.b.e();
         eVar.a(xVar.d);
         eVar.b(xVar.e);
-        eVar.c(com.opos.cmn.d.c.a(this.f26418a, xVar.d));
+        eVar.c(com.opos.cmn.d.c.a(this.f12730a, xVar.d));
         return eVar;
     }
 
@@ -284,7 +284,7 @@ public class g implements n {
     private MaterialFileData a(x xVar, boolean z) {
         if (xVar != null) {
             MaterialFileData materialFileData = new MaterialFileData();
-            materialFileData.a(z ? xVar.d : com.opos.cmn.d.c.a(this.f26418a, xVar.d));
+            materialFileData.a(z ? xVar.d : com.opos.cmn.d.c.a(this.f12730a, xVar.d));
             materialFileData.b(xVar.e);
             return materialFileData;
         }
@@ -358,7 +358,7 @@ public class g implements n {
             int readInt = dataInputStream.readInt();
             byte[] bArr2 = new byte[readInt];
             dataInputStream.read(bArr2, 0, readInt);
-            arrayList.add(com.opos.mobad.b.a.b.f25708c.a(bArr2));
+            arrayList.add(com.opos.mobad.b.a.b.f12020c.a(bArr2));
         }
         return arrayList;
     }
@@ -414,7 +414,7 @@ public class g implements n {
             public void run() {
                 try {
                     byte[] b = g.this.b(list);
-                    g.this.d.a(str, new AdEntity(com.opos.mobad.b.a.d.f25722c.b((com.heytap.nearx.a.a.e<com.opos.mobad.b.a.d>) dVar.c()), b, dVar.i()));
+                    g.this.d.a(str, new AdEntity(com.opos.mobad.b.a.d.f12034c.b((com.heytap.nearx.a.a.e<com.opos.mobad.b.a.d>) dVar.c()), b, dVar.i()));
                 } catch (Exception e2) {
                     com.opos.cmn.an.f.a.a("FetchAdTask", "cache fail", (Throwable) e2);
                 }
@@ -424,7 +424,7 @@ public class g implements n {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, String str2, int i, long j) {
-        com.opos.mobad.cmn.a.b.d.a(this.f26418a, str, str2, i, j);
+        com.opos.mobad.cmn.a.b.d.a(this.f12730a, str, str2, i, j);
     }
 
     private void a(final String str, final String str2, final CountDownLatch countDownLatch, final AtomicReference atomicReference, final l lVar, final com.opos.mobad.model.b.c cVar) {
@@ -443,13 +443,13 @@ public class g implements n {
                             com.opos.cmn.an.f.a.b("FetchAdTask", "fail cache", e2);
                         }
                         if (a2 == null) {
-                            hVar.a(g.this.f26418a, 1);
+                            hVar.a(g.this.f12730a, 1);
                             return;
-                        } else if (System.currentTimeMillis() >= a2.f27111c) {
-                            hVar.a(g.this.f26418a, 2);
+                        } else if (System.currentTimeMillis() >= a2.f13423c) {
+                            hVar.a(g.this.f12730a, 2);
                             return;
                         } else {
-                            com.opos.mobad.model.b.d dVar = new com.opos.mobad.model.b.d(com.opos.mobad.b.a.d.f25722c.a(a2.f27110a), g.this.a(a2.b), a2.f27111c);
+                            com.opos.mobad.model.b.d dVar = new com.opos.mobad.model.b.d(com.opos.mobad.b.a.d.f12034c.a(a2.f13422a), g.this.a(a2.b), a2.f13423c);
                             com.opos.cmn.an.f.a.b("FetchAdTask", "cache data:", dVar);
                             if (dVar.h() != null && dVar.h().size() > 0) {
                                 l lVar2 = lVar;
@@ -467,7 +467,7 @@ public class g implements n {
                                 }
                                 str3 = "cache check fail";
                             }
-                            hVar.a(g.this.f26418a, 1);
+                            hVar.a(g.this.f12730a, 1);
                             return;
                         }
                     }
@@ -487,7 +487,7 @@ public class g implements n {
         for (AdItemData adItemData : list) {
             List<MaterialData> i = adItemData.i();
             if (i != null && i.size() > 0 && (materialData = i.get(0)) != null) {
-                u.a(this.f26418a, materialData.i, materialData.h);
+                u.a(this.f12730a, materialData.i, materialData.h);
             }
         }
     }
@@ -495,7 +495,7 @@ public class g implements n {
     private boolean a(com.opos.mobad.b.a.b bVar, List<x> list) {
         if (bVar.M == b.c.PLAY_CACHE) {
             x xVar = list.get(0);
-            if (TextUtils.isEmpty(com.opos.cmn.d.d.a(this.f26418a, xVar.d, xVar.e))) {
+            if (TextUtils.isEmpty(com.opos.cmn.d.d.a(this.f12730a, xVar.d, xVar.e))) {
                 com.opos.mobad.service.j.n.a().b(false);
                 com.opos.cmn.an.f.a.b("FetchAdTask", "isVideoEnableMaterial but not cache video");
                 return false;
@@ -536,7 +536,7 @@ public class g implements n {
             AtomicBoolean atomicBoolean = new AtomicBoolean(false);
             com.opos.mobad.model.b.d a2 = a(str, cVar, atomicBoolean, lVar);
             com.opos.cmn.an.f.a.b("FetchAdTask", "fetchAdResponse end");
-            com.opos.mobad.model.e.d.a(this.f26418a, str, a2.d());
+            com.opos.mobad.model.e.d.a(this.f12730a, str, a2.d());
             lVar.b();
             if (a2.p()) {
                 com.opos.mobad.service.i.d.a().b();
@@ -547,10 +547,10 @@ public class g implements n {
             adData = z ? a(str, cVar, a2, false, lVar, atomicBoolean) : a(str, cVar, a2, true, lVar, atomicBoolean);
             try {
                 if (adData.d() != 10000) {
-                    lVar.a(this.f26418a, adData.d(), adData.e(), a2.a(), cVar.i());
+                    lVar.a(this.f12730a, adData.d(), adData.e(), a2.a(), cVar.i());
                     return adData;
                 }
-                lVar.a(this.f26418a, a2.j(), a2.a(), cVar.i(), a(adData));
+                lVar.a(this.f12730a, a2.j(), a2.a(), cVar.i(), a(adData));
                 return adData;
             } catch (Exception e2) {
                 e = e2;
@@ -573,13 +573,13 @@ public class g implements n {
         }
         int intValue = yVar.aL.intValue();
         int i = e;
-        if (i == (i & intValue) && !TextUtils.isEmpty(yVar.X) && com.opos.cmn.an.h.d.a.d(this.f26418a, yVar.X)) {
+        if (i == (i & intValue) && !TextUtils.isEmpty(yVar.X) && com.opos.cmn.an.h.d.a.d(this.f12730a, yVar.X)) {
             com.opos.cmn.an.f.a.b("FetchAdTask", "filter install");
             qVar.a(yVar);
             return true;
         }
         int i2 = f;
-        if (i2 != (intValue & i2) || TextUtils.isEmpty(yVar.X) || com.opos.cmn.an.h.d.a.d(this.f26418a, yVar.X)) {
+        if (i2 != (intValue & i2) || TextUtils.isEmpty(yVar.X) || com.opos.cmn.an.h.d.a.d(this.f12730a, yVar.X)) {
             return false;
         }
         com.opos.cmn.an.f.a.b("FetchAdTask", "filter uninstall");
@@ -592,7 +592,7 @@ public class g implements n {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         DataOutputStream dataOutputStream = new DataOutputStream(byteArrayOutputStream);
         for (com.opos.mobad.b.a.b bVar : list) {
-            byte[] b = com.opos.mobad.b.a.b.f25708c.b((com.heytap.nearx.a.a.e<com.opos.mobad.b.a.b>) bVar);
+            byte[] b = com.opos.mobad.b.a.b.f12020c.b((com.heytap.nearx.a.a.e<com.opos.mobad.b.a.b>) bVar);
             dataOutputStream.writeInt(b.length);
             dataOutputStream.write(b);
         }

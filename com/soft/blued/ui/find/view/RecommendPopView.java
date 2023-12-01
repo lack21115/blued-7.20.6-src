@@ -31,27 +31,27 @@ public final class RecommendPopView extends BottomPopupView {
     private List<RecommendPopModel> b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public RecommendPopView(Context context, List<RecommendPopModel> data) {
+    public RecommendPopView(Context context, List<RecommendPopModel> list) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(data, "data");
-        this.b = data;
+        Intrinsics.e(list, "data");
+        this.b = list;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(RecommendPopView this$0, View view) {
+    public static final void a(RecommendPopView recommendPopView, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(recommendPopView, "this$0");
+        recommendPopView.p();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(RecommendPopView this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        Intrinsics.e(this$0, "this$0");
-        long uid = this$0.b.get(i).getUid();
+    public static final void a(RecommendPopView recommendPopView, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        Intrinsics.e(recommendPopView, "this$0");
+        long uid = recommendPopView.b.get(i).getUid();
         if (uid > 0) {
             EventTrackGuy.a(GuyProtos.Event.PICK_FOR_YOU_POP_USER_CLICK, String.valueOf(uid));
-            UserInfoFragmentNew.a(this$0.getContext(), String.valueOf(uid), UserFindResult.USER_SORT_BY.NEARBY);
+            UserInfoFragmentNew.a(recommendPopView.getContext(), String.valueOf(uid), UserFindResult.USER_SORT_BY.NEARBY);
         }
     }
 
@@ -60,10 +60,9 @@ public final class RecommendPopView extends BottomPopupView {
         ChatHelperV4.a().c(ChatHelper.getChattingModelForSendmsg(j, (short) 1, getContext().getResources().getString(R.string.recommend_people_message_content), ChatHelperV4.a().b(), "", (short) 2), "", "", 0, 0, 0, 0, 0, false);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
-        ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("bg_nearby_people_recommend")).a((ImageView) findViewById(2131365126));
+        ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("bg_nearby_people_recommend")).a((ImageView) findViewById(R.id.iv_bg));
         ((FrameLayout) findViewById(R.id.fl_close)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.view.-$$Lambda$RecommendPopView$Qk9zV0xti9jCmFtbqdfQ07-rCiA
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -96,12 +95,11 @@ public final class RecommendPopView extends BottomPopupView {
                 }
             }
         });
-        RecyclerView recyclerView = (RecyclerView) findViewById(2131369529);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(recommendPopAdapter);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_nearby_people_recommend;
     }

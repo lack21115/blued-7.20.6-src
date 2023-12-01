@@ -16,11 +16,11 @@ import java.util.concurrent.locks.ReentrantLock;
 public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueue<E> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f28040a;
+    public final int f14352a;
     public final AtomicInteger b;
 
     /* renamed from: c  reason: collision with root package name */
-    public transient com.sdk.tencent.d.a<E> f28041c;
+    public transient com.sdk.tencent.d.a<E> f14353c;
     public transient com.sdk.tencent.d.a<E> d;
     public final ReentrantLock e;
     public final Condition f;
@@ -31,19 +31,19 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
     public class a implements Iterator<E> {
 
         /* renamed from: a  reason: collision with root package name */
-        public com.sdk.tencent.d.a<E> f28042a;
+        public com.sdk.tencent.d.a<E> f14354a;
         public com.sdk.tencent.d.a<E> b;
 
         /* renamed from: c  reason: collision with root package name */
-        public E f28043c;
+        public E f14355c;
 
         public a() {
             f.this.a();
             try {
-                com.sdk.tencent.d.a<E> aVar = f.this.f28041c.f28028c;
-                this.f28042a = aVar;
+                com.sdk.tencent.d.a<E> aVar = f.this.f14353c.f14340c;
+                this.f14354a = aVar;
                 if (aVar != null) {
-                    this.f28043c = aVar.a();
+                    this.f14355c = aVar.a();
                 }
             } finally {
                 f.this.b();
@@ -52,7 +52,7 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f28042a != null;
+            return this.f14354a != null;
         }
 
         @Override // java.util.Iterator
@@ -60,14 +60,14 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
             com.sdk.tencent.d.a<E> aVar;
             f.this.a();
             try {
-                com.sdk.tencent.d.a<E> aVar2 = this.f28042a;
+                com.sdk.tencent.d.a<E> aVar2 = this.f14354a;
                 if (aVar2 != null) {
-                    E e = this.f28043c;
+                    E e = this.f14355c;
                     this.b = aVar2;
                     while (true) {
-                        com.sdk.tencent.d.a<E> aVar3 = aVar2.f28028c;
+                        com.sdk.tencent.d.a<E> aVar3 = aVar2.f14340c;
                         if (aVar3 == aVar2) {
-                            aVar = f.this.f28041c.f28028c;
+                            aVar = f.this.f14353c.f14340c;
                             break;
                         }
                         aVar = aVar3;
@@ -80,8 +80,8 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
                             aVar2 = aVar3;
                         }
                     }
-                    this.f28042a = aVar;
-                    this.f28043c = aVar == null ? null : aVar.a();
+                    this.f14354a = aVar;
+                    this.f14355c = aVar == null ? null : aVar.a();
                     return e;
                 }
                 throw new NoSuchElementException();
@@ -115,13 +115,13 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
                 r0.b = r1     // Catch: java.lang.Throwable -> L45
                 r0 = r4
                 com.sdk.tencent.d.f r0 = com.sdk.tencent.d.f.this     // Catch: java.lang.Throwable -> L45
-                com.sdk.tencent.d.a<E> r0 = r0.f28041c     // Catch: java.lang.Throwable -> L45
+                com.sdk.tencent.d.a<E> r0 = r0.f14353c     // Catch: java.lang.Throwable -> L45
                 r5 = r0
             L21:
                 r0 = r5
                 r6 = r0
                 r0 = r6
-                com.sdk.tencent.d.a<T> r0 = r0.f28028c     // Catch: java.lang.Throwable -> L45
+                com.sdk.tencent.d.a<T> r0 = r0.f14340c     // Catch: java.lang.Throwable -> L45
                 r7 = r0
                 r0 = r7
                 if (r0 == 0) goto L3d
@@ -172,9 +172,9 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
         if (i <= 0) {
             throw new IllegalArgumentException();
         }
-        this.f28040a = i;
+        this.f14352a = i;
         com.sdk.tencent.d.a<E> aVar = new com.sdk.tencent.d.a<>(null);
-        this.f28041c = aVar;
+        this.f14353c = aVar;
         this.d = aVar;
     }
 
@@ -183,31 +183,31 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
         boolean z;
         synchronized (this) {
             if (aVar == 0) {
-                com.sdk.tencent.d.a aVar2 = (com.sdk.tencent.d.a<E>) this.f28041c;
-                com.sdk.tencent.d.a<E> aVar3 = (com.sdk.tencent.d.a<E>) aVar2.f28028c;
-                aVar2.f28028c = aVar2;
-                this.f28041c = aVar3;
+                com.sdk.tencent.d.a aVar2 = (com.sdk.tencent.d.a<E>) this.f14353c;
+                com.sdk.tencent.d.a<E> aVar3 = (com.sdk.tencent.d.a<E>) aVar2.f14340c;
+                aVar2.f14340c = aVar2;
+                this.f14353c = aVar3;
                 E a2 = aVar3.a();
                 aVar3.a(null);
                 return a2;
             }
-            com.sdk.tencent.d.a<E> aVar4 = this.f28041c;
+            com.sdk.tencent.d.a<E> aVar4 = this.f14353c;
             while (true) {
-                com.sdk.tencent.d.a aVar5 = (com.sdk.tencent.d.a<E>) aVar4.f28028c;
+                com.sdk.tencent.d.a aVar5 = (com.sdk.tencent.d.a<E>) aVar4.f14340c;
                 z = false;
                 if (aVar5 == null) {
                     break;
-                } else if (aVar5.b.f28039a.ordinal() > aVar.b.f28039a.ordinal()) {
-                    aVar4.f28028c = aVar;
-                    aVar.f28028c = aVar5;
+                } else if (aVar5.b.f14351a.ordinal() > aVar.b.f14351a.ordinal()) {
+                    aVar4.f14340c = aVar;
+                    aVar.f14340c = aVar5;
                     z = true;
                     break;
                 } else {
-                    aVar4 = aVar4.f28028c;
+                    aVar4 = aVar4.f14340c;
                 }
             }
             if (!z) {
-                this.d.f28028c = aVar;
+                this.d.f14340c = aVar;
                 this.d = aVar;
             }
             return null;
@@ -221,11 +221,11 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
 
     public void a(com.sdk.tencent.d.a<E> aVar, com.sdk.tencent.d.a<E> aVar2) {
         aVar.a(null);
-        aVar2.f28028c = (com.sdk.tencent.d.a<E>) aVar.f28028c;
+        aVar2.f14340c = (com.sdk.tencent.d.a<E>) aVar.f14340c;
         if (this.d == aVar) {
             this.d = aVar2;
         }
-        if (this.b.getAndDecrement() == this.f28040a) {
+        if (this.b.getAndDecrement() == this.f14352a) {
             this.h.signal();
         }
     }
@@ -246,23 +246,23 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         a();
         try {
-            com.sdk.tencent.d.a aVar = this.f28041c;
+            com.sdk.tencent.d.a aVar = this.f14353c;
             while (true) {
                 com.sdk.tencent.d.a aVar2 = aVar;
-                com.sdk.tencent.d.a aVar3 = aVar2.f28028c;
+                com.sdk.tencent.d.a aVar3 = aVar2.f14340c;
                 if (aVar3 == null) {
                     break;
                 }
-                aVar2.f28028c = aVar2;
+                aVar2.f14340c = aVar2;
                 aVar3.a(null);
                 aVar = aVar3;
             }
-            this.f28041c = this.d;
-            if (this.b.getAndSet(0) == this.f28040a) {
+            this.f14353c = this.d;
+            if (this.b.getAndSet(0) == this.f14352a) {
                 this.h.signal();
             }
         } finally {
@@ -270,16 +270,16 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.concurrent.BlockingQueue
     public boolean contains(Object obj) {
         if (obj == null) {
             return false;
         }
         a();
         try {
-            com.sdk.tencent.d.a<E> aVar = this.f28041c;
+            com.sdk.tencent.d.a<E> aVar = this.f14353c;
             do {
-                aVar = aVar.f28028c;
+                aVar = aVar.f14340c;
                 if (aVar == null) {
                     b();
                     return false;
@@ -321,22 +321,22 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
             boolean z = false;
             try {
                 int min = Math.min(i, this.b.get());
-                com.sdk.tencent.d.a<E> aVar = this.f28041c;
+                com.sdk.tencent.d.a<E> aVar = this.f14353c;
                 int i2 = 0;
                 while (i2 < min) {
-                    com.sdk.tencent.d.a<E> aVar2 = aVar.f28028c;
+                    com.sdk.tencent.d.a<E> aVar2 = aVar.f14340c;
                     collection.add((E) aVar2.a());
                     aVar2.a(null);
-                    aVar.f28028c = aVar;
+                    aVar.f14340c = aVar;
                     i2++;
                     aVar = aVar2;
                 }
                 boolean z2 = false;
                 if (i2 > 0) {
-                    this.f28041c = aVar;
+                    this.f14353c = aVar;
                     z = false;
                     z2 = false;
-                    if (this.b.getAndAdd(-i2) == this.f28040a) {
+                    if (this.b.getAndAdd(-i2) == this.f14352a) {
                         z2 = true;
                     }
                 }
@@ -366,7 +366,7 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
         e.getClass();
         AtomicInteger atomicInteger = this.b;
         boolean z = false;
-        if (atomicInteger.get() == this.f28040a) {
+        if (atomicInteger.get() == this.f14352a) {
             return false;
         }
         int i = -1;
@@ -374,11 +374,11 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
         ReentrantLock reentrantLock = this.g;
         reentrantLock.lock();
         try {
-            if (atomicInteger.get() < this.f28040a) {
+            if (atomicInteger.get() < this.f14352a) {
                 a(aVar);
                 int andIncrement = atomicInteger.getAndIncrement();
                 i = andIncrement;
-                if (andIncrement + 1 < this.f28040a) {
+                if (andIncrement + 1 < this.f14352a) {
                     this.h.signal();
                     i = andIncrement;
                 }
@@ -404,7 +404,7 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
         ReentrantLock reentrantLock = this.g;
         AtomicInteger atomicInteger = this.b;
         reentrantLock.lockInterruptibly();
-        while (atomicInteger.get() == this.f28040a) {
+        while (atomicInteger.get() == this.f14352a) {
             try {
                 if (nanos <= 0) {
                     reentrantLock.unlock();
@@ -417,7 +417,7 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
         }
         a(new com.sdk.tencent.d.a<>(e));
         int andIncrement = atomicInteger.getAndIncrement();
-        if (andIncrement + 1 < this.f28040a) {
+        if (andIncrement + 1 < this.f14352a) {
             this.h.signal();
         }
         if (andIncrement == 0) {
@@ -435,7 +435,7 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
         ReentrantLock reentrantLock = this.e;
         reentrantLock.lock();
         try {
-            com.sdk.tencent.d.a<E> aVar = this.f28041c.f28028c;
+            com.sdk.tencent.d.a<E> aVar = this.f14353c.f14340c;
             if (aVar == null) {
                 reentrantLock.unlock();
                 return null;
@@ -469,7 +469,7 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
                 }
             }
             reentrantLock.unlock();
-            if (i == this.f28040a) {
+            if (i == this.f14352a) {
                 d();
             }
             return e;
@@ -503,7 +503,7 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
             this.f.signal();
         }
         reentrantLock.unlock();
-        if (andDecrement == this.f28040a) {
+        if (andDecrement == this.f14352a) {
             d();
         }
         return a2;
@@ -516,7 +516,7 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
         ReentrantLock reentrantLock = this.g;
         AtomicInteger atomicInteger = this.b;
         reentrantLock.lockInterruptibly();
-        while (atomicInteger.get() == this.f28040a) {
+        while (atomicInteger.get() == this.f14352a) {
             try {
                 this.h.await();
             } finally {
@@ -525,7 +525,7 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
         }
         a(aVar);
         int andIncrement = atomicInteger.getAndIncrement();
-        if (andIncrement + 1 < this.f28040a) {
+        if (andIncrement + 1 < this.f14352a) {
             this.h.signal();
         }
         if (andIncrement == 0) {
@@ -535,10 +535,10 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
 
     @Override // java.util.concurrent.BlockingQueue
     public int remainingCapacity() {
-        return this.f28040a - this.b.get();
+        return this.f14352a - this.b.get();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.concurrent.BlockingQueue
     public boolean remove(Object obj) {
         com.sdk.tencent.d.a<E> aVar;
         com.sdk.tencent.d.a<E> aVar2;
@@ -547,10 +547,10 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
         }
         a();
         try {
-            com.sdk.tencent.d.a<E> aVar3 = this.f28041c;
+            com.sdk.tencent.d.a<E> aVar3 = this.f14353c;
             do {
                 aVar = aVar3;
-                aVar2 = aVar.f28028c;
+                aVar2 = aVar.f14340c;
                 if (aVar2 == null) {
                     b();
                     return false;
@@ -566,7 +566,7 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.b.get();
     }
@@ -590,21 +590,21 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
             this.f.signal();
         }
         reentrantLock.unlock();
-        if (andDecrement == this.f28040a) {
+        if (andDecrement == this.f14352a) {
             d();
         }
         return a2;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         a();
         try {
             Object[] objArr = new Object[this.b.get()];
             int i = 0;
-            com.sdk.tencent.d.a<E> aVar = this.f28041c;
+            com.sdk.tencent.d.a<E> aVar = this.f14353c;
             while (true) {
-                aVar = aVar.f28028c;
+                aVar = aVar.f14340c;
                 if (aVar == null) {
                     return objArr;
                 }
@@ -618,7 +618,7 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v27, types: [java.lang.Object[]] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         a();
         try {
@@ -628,9 +628,9 @@ public class f<E> extends AbstractQueue<E> implements Serializable, BlockingQueu
                 tArr2 = (Object[]) Array.newInstance(tArr.getClass().getComponentType(), i);
             }
             int i2 = 0;
-            com.sdk.tencent.d.a<E> aVar = this.f28041c;
+            com.sdk.tencent.d.a<E> aVar = this.f14353c;
             while (true) {
-                aVar = aVar.f28028c;
+                aVar = aVar.f14340c;
                 if (aVar == null) {
                     break;
                 }

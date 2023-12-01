@@ -8,26 +8,26 @@ import com.xiaomi.push.dd;
 public class df extends al.b {
 
     /* renamed from: a  reason: collision with root package name */
-    al.b f41333a;
+    al.b f27642a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ dd f297a;
+    final /* synthetic */ dd f250a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public df(dd ddVar) {
-        this.f297a = ddVar;
+        this.f250a = ddVar;
     }
 
     @Override // com.xiaomi.push.al.b
     public void b() {
-        dd.b bVar = (dd.b) this.f297a.f285a.peek();
+        dd.b bVar = (dd.b) this.f250a.f238a.peek();
         if (bVar == null || !bVar.a()) {
             return;
         }
-        if (this.f297a.f285a.remove(bVar)) {
-            this.f41333a = bVar;
+        if (this.f250a.f238a.remove(bVar)) {
+            this.f27642a = bVar;
         }
-        al.b bVar2 = this.f41333a;
+        al.b bVar2 = this.f27642a;
         if (bVar2 != null) {
             bVar2.b();
         }
@@ -35,10 +35,10 @@ public class df extends al.b {
 
     @Override // com.xiaomi.push.al.b
     /* renamed from: c */
-    public void mo11618c() {
-        al.b bVar = this.f41333a;
+    public void mo8568c() {
+        al.b bVar = this.f27642a;
         if (bVar != null) {
-            bVar.mo11618c();
+            bVar.mo8568c();
         }
     }
 }

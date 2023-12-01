@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/ReplicationConfiguration.class */
@@ -14,7 +13,7 @@ public class ReplicationConfiguration {
         public String storageClass;
 
         public String toString() {
-            return "{Destination:\nBucket:" + this.bucket + "\nStorageClass:" + this.storageClass + "\n" + i.d;
+            return "{Destination:\nBucket:" + this.bucket + "\nStorageClass:" + this.storageClass + "\n}";
         }
     }
 
@@ -41,7 +40,7 @@ public class ReplicationConfiguration {
                 sb.append(destination.toString());
                 sb.append("\n");
             }
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -60,7 +59,7 @@ public class ReplicationConfiguration {
                 }
             }
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

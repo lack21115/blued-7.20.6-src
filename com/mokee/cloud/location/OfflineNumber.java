@@ -8,9 +8,7 @@ import com.mokee.cloud.misc.CloudUtils;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/cloud/location/OfflineNumber.class */
 public final class OfflineNumber {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f24212a;
+    private static final String a;
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x005c, code lost:
         r0 = r6;
@@ -28,7 +26,7 @@ public final class OfflineNumber {
         if (r7 > r8) goto L3;
      */
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0074, code lost:
-        com.mokee.cloud.location.OfflineNumber.f24212a = new java.lang.String(r11).intern();
+        com.mokee.cloud.location.OfflineNumber.a = new java.lang.String(r11).intern();
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0083, code lost:
         return;
@@ -158,7 +156,7 @@ public final class OfflineNumber {
             r2 = r11
             r1.<init>(r2)
             java.lang.String r0 = r0.intern()
-            com.mokee.cloud.location.OfflineNumber.f24212a = r0
+            com.mokee.cloud.location.OfflineNumber.a = r0
             return
         L84:
             r0 = 40
@@ -177,7 +175,7 @@ public final class OfflineNumber {
             r5 = r0
             goto L4b
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.mokee.cloud.location.OfflineNumber.m8041clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.mokee.cloud.location.OfflineNumber.m11264clinit():void");
     }
 
     public static String detect(String str, Context context) {
@@ -187,7 +185,7 @@ public final class OfflineNumber {
         if (locationInfo != null) {
             return locationInfo.getLocation();
         }
-        if ((!formatNumber.startsWith("+") || formatNumber.startsWith(f24212a)) && MoKeeUtils.isSupportLanguage(true)) {
+        if ((!formatNumber.startsWith("+") || formatNumber.startsWith(a)) && MoKeeUtils.isSupportLanguage(true)) {
             return PhoneNumberOfflineGeocoder.getPhoneLocation(formatNumber);
         }
         return com.mokee.google.OfflineNumber.getGeocodedLocationFor(formatNumber, com.mokee.google.OfflineNumber.getCurrentCountryIso(context), context.getResources().getConfiguration().locale);

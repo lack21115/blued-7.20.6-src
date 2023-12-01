@@ -27,13 +27,13 @@ public final class RoundedBitmapDrawableFactory {
 
         @Override // androidx.core.graphics.drawable.RoundedBitmapDrawable
         public boolean hasMipMap() {
-            return this.f2471a != null && BitmapCompat.hasMipMap(this.f2471a);
+            return this.f2423a != null && BitmapCompat.hasMipMap(this.f2423a);
         }
 
         @Override // androidx.core.graphics.drawable.RoundedBitmapDrawable
         public void setMipMap(boolean z) {
-            if (this.f2471a != null) {
-                BitmapCompat.setHasMipMap(this.f2471a, z);
+            if (this.f2423a != null) {
+                BitmapCompat.setHasMipMap(this.f2423a, z);
                 invalidateSelf();
             }
         }

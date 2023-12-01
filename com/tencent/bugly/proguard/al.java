@@ -8,7 +8,7 @@ public final class al extends k implements Cloneable {
     private static ArrayList<ak> b;
 
     /* renamed from: a  reason: collision with root package name */
-    public ArrayList<ak> f35370a = null;
+    public ArrayList<ak> f21679a = null;
 
     @Override // com.tencent.bugly.proguard.k
     public final void a(i iVar) {
@@ -16,12 +16,12 @@ public final class al extends k implements Cloneable {
             b = new ArrayList<>();
             b.add(new ak());
         }
-        this.f35370a = (ArrayList) iVar.a((i) b, 0, true);
+        this.f21679a = (ArrayList) iVar.a((i) b, 0, true);
     }
 
     @Override // com.tencent.bugly.proguard.k
     public final void a(j jVar) {
-        jVar.a((Collection) this.f35370a, 0);
+        jVar.a((Collection) this.f21679a, 0);
     }
 
     @Override // com.tencent.bugly.proguard.k

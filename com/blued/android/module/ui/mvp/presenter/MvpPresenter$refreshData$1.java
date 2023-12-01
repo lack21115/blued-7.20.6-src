@@ -8,13 +8,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/ui/mvp/presenter/MvpPresenter$refreshData$1.class */
 public final class MvpPresenter$refreshData$1 implements IFetchDataListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ MvpPresenter f16057a;
+    final /* synthetic */ MvpPresenter a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public MvpPresenter$refreshData$1(MvpPresenter mvpPresenter) {
-        this.f16057a = mvpPresenter;
+        this.a = mvpPresenter;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -41,11 +39,11 @@ public final class MvpPresenter$refreshData$1 implements IFetchDataListener {
     public static final void b(final MvpPresenter this$0, final String type, List list) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(type, "$type");
-        final List<?> a2 = this$0.a(type, list);
+        final List<?> a = this$0.a(type, list);
         this$0.b("refresh_datafetch", new Runnable() { // from class: com.blued.android.module.ui.mvp.presenter.-$$Lambda$MvpPresenter$refreshData$1$x5HyOotfyT42c4tn3XM7LT_yfI0
             @Override // java.lang.Runnable
             public final void run() {
-                MvpPresenter$refreshData$1.a(MvpPresenter.this, type, a2);
+                MvpPresenter$refreshData$1.a(MvpPresenter.this, type, a);
             }
         });
     }
@@ -58,7 +56,7 @@ public final class MvpPresenter$refreshData$1 implements IFetchDataListener {
 
     @Override // com.blued.android.framework.ui.mvp.IFetchDataListener
     public void a() {
-        final MvpPresenter mvpPresenter = this.f16057a;
+        final MvpPresenter mvpPresenter = this.a;
         mvpPresenter.b("refresh_start", new Runnable() { // from class: com.blued.android.module.ui.mvp.presenter.-$$Lambda$MvpPresenter$refreshData$1$t7i2wjDC6yNqWfA4m7f_-fkD_tw
             @Override // java.lang.Runnable
             public final void run() {
@@ -70,7 +68,7 @@ public final class MvpPresenter$refreshData$1 implements IFetchDataListener {
     @Override // com.blued.android.framework.ui.mvp.IFetchDataListener
     public void a(final String type, final List<?> list) {
         Intrinsics.e(type, "type");
-        final MvpPresenter mvpPresenter = this.f16057a;
+        final MvpPresenter mvpPresenter = this.a;
         mvpPresenter.a("refresh_datafetch", new Runnable() { // from class: com.blued.android.module.ui.mvp.presenter.-$$Lambda$MvpPresenter$refreshData$1$cO_tsJzwWBxL27gjCypVMLgsKUo
             @Override // java.lang.Runnable
             public final void run() {
@@ -81,7 +79,7 @@ public final class MvpPresenter$refreshData$1 implements IFetchDataListener {
 
     @Override // com.blued.android.framework.ui.mvp.IFetchDataListener
     public void a(final boolean z) {
-        final MvpPresenter mvpPresenter = this.f16057a;
+        final MvpPresenter mvpPresenter = this.a;
         mvpPresenter.b("refresh_end", new Runnable() { // from class: com.blued.android.module.ui.mvp.presenter.-$$Lambda$MvpPresenter$refreshData$1$pBJ7p2xdt-x8yM38Uak5tjrSH_s
             @Override // java.lang.Runnable
             public final void run() {
@@ -92,10 +90,10 @@ public final class MvpPresenter$refreshData$1 implements IFetchDataListener {
 
     @Override // com.blued.android.framework.ui.mvp.IFetchDataListener
     public void b(final boolean z) {
-        MvpPresenter mvpPresenter = this.f16057a;
-        String a2 = Intrinsics.a("refresh_onMoreData, hasMoreData:", (Object) Boolean.valueOf(z));
-        final MvpPresenter mvpPresenter2 = this.f16057a;
-        mvpPresenter.b(a2, new Runnable() { // from class: com.blued.android.module.ui.mvp.presenter.-$$Lambda$MvpPresenter$refreshData$1$As4aXWoj5MMxWkBlrZclkHY7B_k
+        MvpPresenter mvpPresenter = this.a;
+        String a = Intrinsics.a("refresh_onMoreData, hasMoreData:", (Object) Boolean.valueOf(z));
+        final MvpPresenter mvpPresenter2 = this.a;
+        mvpPresenter.b(a, new Runnable() { // from class: com.blued.android.module.ui.mvp.presenter.-$$Lambda$MvpPresenter$refreshData$1$As4aXWoj5MMxWkBlrZclkHY7B_k
             @Override // java.lang.Runnable
             public final void run() {
                 MvpPresenter$refreshData$1.b(MvpPresenter.this, z);

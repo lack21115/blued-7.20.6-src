@@ -4,12 +4,12 @@ package com.tencent.map.b;
 public final class n {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f37245a;
+    public byte[] f23554a;
     public String b = "GBK";
 
     public final String toString() {
         try {
-            return new String(this.f37245a, this.b);
+            return new String(this.f23554a, this.b);
         } catch (Exception e) {
             return "";
         }

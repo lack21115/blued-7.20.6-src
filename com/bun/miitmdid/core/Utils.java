@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
@@ -111,13 +110,13 @@ public class Utils {
 
     public static String getXdataDir(Context context, String str) {
         StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append(String.valueOf(getUserDir(context)) + BridgeUtil.SPLIT_MARK + JLibrary.xdata + BridgeUtil.SPLIT_MARK + str);
+        stringBuffer.append(String.valueOf(getUserDir(context)) + "/" + JLibrary.xdata + "/" + str);
         return stringBuffer.toString();
     }
 
     public static String getYdataDir(Context context, String str) {
         StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append(String.valueOf(getUserDir(context)) + BridgeUtil.SPLIT_MARK + JLibrary.ydata + BridgeUtil.SPLIT_MARK + str);
+        stringBuffer.append(String.valueOf(getUserDir(context)) + "/" + JLibrary.ydata + "/" + str);
         return stringBuffer.toString();
     }
 

@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyHomeRoomsBinding.class */
 public final class FragmentYyHomeRoomsBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f16506a;
+    public final ConstraintLayout a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f16507c;
+    public final FrameLayout c;
     public final ImageView d;
     public final LinearLayout e;
     public final RecyclerView f;
@@ -27,9 +23,9 @@ public final class FragmentYyHomeRoomsBinding implements ViewBinding {
 
     private FragmentYyHomeRoomsBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, View view, FrameLayout frameLayout, ImageView imageView, LinearLayout linearLayout, RecyclerView recyclerView, CommonTopTitleNoTrans commonTopTitleNoTrans) {
         this.h = constraintLayout;
-        this.f16506a = constraintLayout2;
+        this.a = constraintLayout2;
         this.b = view;
-        this.f16507c = frameLayout;
+        this.c = frameLayout;
         this.d = imageView;
         this.e = linearLayout;
         this.f = recyclerView;
@@ -38,21 +34,21 @@ public final class FragmentYyHomeRoomsBinding implements ViewBinding {
 
     public static FragmentYyHomeRoomsBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.con);
-        if (constraintLayout != null) {
-            View findViewById = view.findViewById(R.id.cover_view);
-            if (findViewById != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.con);
+        if (findViewById != null) {
+            View findViewById2 = view.findViewById(R.id.cover_view);
+            if (findViewById2 != null) {
                 FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.fra);
                 if (frameLayout != null) {
                     ImageView imageView = (ImageView) view.findViewById(R.id.iv_bott_back);
                     if (imageView != null) {
                         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_bott);
                         if (linearLayout != null) {
-                            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv_bott);
-                            if (recyclerView != null) {
+                            RecyclerView findViewById3 = view.findViewById(R.id.rcv_bott);
+                            if (findViewById3 != null) {
                                 CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(R.id.top_title);
                                 if (commonTopTitleNoTrans != null) {
-                                    return new FragmentYyHomeRoomsBinding((ConstraintLayout) view, constraintLayout, findViewById, frameLayout, imageView, linearLayout, recyclerView, commonTopTitleNoTrans);
+                                    return new FragmentYyHomeRoomsBinding((ConstraintLayout) view, findViewById, findViewById2, frameLayout, imageView, linearLayout, findViewById3, commonTopTitleNoTrans);
                                 }
                                 str = "topTitle";
                             } else {
@@ -76,7 +72,6 @@ public final class FragmentYyHomeRoomsBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.h;

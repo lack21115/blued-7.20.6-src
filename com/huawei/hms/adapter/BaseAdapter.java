@@ -1,5 +1,6 @@
 package com.huawei.hms.adapter;
 
+import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -42,11 +43,11 @@ import org.json.JSONObject;
 public class BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private WeakReference<ApiClient> f22414a;
+    private WeakReference<ApiClient> f8806a;
     private WeakReference<Activity> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private BaseCallBack f22415c;
+    private BaseCallBack f8807c;
     private String d;
     private String e;
     private Parcelable f;
@@ -68,7 +69,7 @@ public class BaseAdapter {
     public class BaseRequestResultCallback implements ResultCallback<ResolveResult<CoreBaseResponse>> {
 
         /* renamed from: a  reason: collision with root package name */
-        private AtomicBoolean f22417a = new AtomicBoolean(true);
+        private AtomicBoolean f8809a = new AtomicBoolean(true);
 
         public BaseRequestResultCallback() {
         }
@@ -195,7 +196,7 @@ public class BaseAdapter {
                     b.onError(BaseAdapter.this.b(-1));
                 } else {
                     JsonUtil.jsonToEntity(value.getJsonHeader(), BaseAdapter.this.k);
-                    if (this.f22417a.compareAndSet(true, false)) {
+                    if (this.f8809a.compareAndSet(true, false)) {
                         BaseAdapter baseAdapter = BaseAdapter.this;
                         baseAdapter.a(baseAdapter.i, BaseAdapter.this.k);
                     }
@@ -224,13 +225,13 @@ public class BaseAdapter {
     }
 
     public BaseAdapter(ApiClient apiClient) {
-        this.f22414a = new WeakReference<>(apiClient);
+        this.f8806a = new WeakReference<>(apiClient);
         this.i = apiClient.getContext().getApplicationContext();
-        HMSLog.i("BaseAdapter", "In constructor, WeakReference is " + this.f22414a);
+        HMSLog.i("BaseAdapter", "In constructor, WeakReference is " + this.f8806a);
     }
 
     public BaseAdapter(ApiClient apiClient, Activity activity) {
-        this.f22414a = new WeakReference<>(apiClient);
+        this.f8806a = new WeakReference<>(apiClient);
         this.b = new WeakReference<>(activity);
         this.i = activity.getApplicationContext();
         HMSLog.i("BaseAdapter", "In constructor, activityWeakReference is " + this.b + ", activity is " + this.b.get());
@@ -256,7 +257,7 @@ public class BaseAdapter {
     public String a(int i) {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("errorCode", i);
+            jSONObject.put(AccountManager.KEY_ERROR_CODE, i);
         } catch (JSONException e) {
             HMSLog.e("BaseAdapter", "buildBodyStr failed: " + e.getMessage());
         }
@@ -347,7 +348,7 @@ public class BaseAdapter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public BaseCallBack b() {
-        BaseCallBack baseCallBack = this.f22415c;
+        BaseCallBack baseCallBack = this.f8807c;
         BaseCallBack baseCallBack2 = baseCallBack;
         if (baseCallBack == null) {
             HMSLog.e("BaseAdapter", "callback null");
@@ -397,7 +398,7 @@ public class BaseAdapter {
             HMSLog.i("BaseAdapter", "activityWeakReference is " + this.b);
             return null;
         }
-        ApiClient apiClient = this.f22414a.get();
+        ApiClient apiClient = this.f8806a.get();
         if (apiClient == null) {
             HMSLog.i("BaseAdapter", "tmpApi is null");
             return null;
@@ -532,12 +533,12 @@ public class BaseAdapter {
 
     public void baseRequest(String str, String str2, Parcelable parcelable, BaseCallBack baseCallBack) {
         a(str, str2, parcelable, baseCallBack);
-        if (this.f22414a == null) {
+        if (this.f8806a == null) {
             HMSLog.e("BaseAdapter", "client is null");
             baseCallBack.onError(b(-2));
             return;
         }
-        this.f22415c = baseCallBack;
+        this.f8807c = baseCallBack;
         JsonUtil.jsonToEntity(str, this.j);
         CoreBaseRequest coreBaseRequest = new CoreBaseRequest();
         coreBaseRequest.setJsonObject(str2);
@@ -558,6 +559,6 @@ public class BaseAdapter {
         }
         HMSLog.i("BaseAdapter", "in baseRequest + uri is :" + apiName + ", transactionId is : " + this.h);
         a(this.i, this.j);
-        a(this.f22414a.get(), apiName, coreBaseRequest).setResultCallback(new BaseRequestResultCallback());
+        a(this.f8806a.get(), apiName, coreBaseRequest).setResultCallback(new BaseRequestResultCallback());
     }
 }

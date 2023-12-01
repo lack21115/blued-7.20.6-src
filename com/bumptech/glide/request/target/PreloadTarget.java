@@ -11,7 +11,7 @@ import com.bumptech.glide.request.transition.Transition;
 public final class PreloadTarget<Z> extends CustomTarget<Z> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Handler f21070a = new Handler(Looper.getMainLooper(), new Handler.Callback() { // from class: com.bumptech.glide.request.target.PreloadTarget.1
+    private static final Handler f7464a = new Handler(Looper.getMainLooper(), new Handler.Callback() { // from class: com.bumptech.glide.request.target.PreloadTarget.1
         @Override // android.os.Handler.Callback
         public boolean handleMessage(Message message) {
             if (message.what == 1) {
@@ -33,6 +33,6 @@ public final class PreloadTarget<Z> extends CustomTarget<Z> {
 
     @Override // com.bumptech.glide.request.target.Target
     public void onResourceReady(Z z, Transition<? super Z> transition) {
-        f21070a.obtainMessage(1, this).sendToTarget();
+        f7464a.obtainMessage(1, this).sendToTarget();
     }
 }

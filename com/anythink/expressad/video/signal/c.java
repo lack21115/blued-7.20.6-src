@@ -8,7 +8,7 @@ import com.anythink.expressad.out.p;
 public interface c extends d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f8520a = 2;
+    public static final int f5680a = 2;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/video/signal/c$a.class */
     public interface a extends p.c {

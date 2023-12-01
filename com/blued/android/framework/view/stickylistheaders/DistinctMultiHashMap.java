@@ -6,13 +6,9 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickylistheaders/DistinctMultiHashMap.class */
 class DistinctMultiHashMap<TKey, TItemValue> {
-
-    /* renamed from: a  reason: collision with root package name */
-    LinkedHashMap<Object, List<TItemValue>> f10330a;
+    LinkedHashMap<Object, List<TItemValue>> a;
     LinkedHashMap<Object, TKey> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IDMapper<TKey, TItemValue> f10331c;
+    private IDMapper<TKey, TItemValue> c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickylistheaders/DistinctMultiHashMap$IDMapper.class */
@@ -38,34 +34,34 @@ class DistinctMultiHashMap<TKey, TItemValue> {
     }
 
     DistinctMultiHashMap(IDMapper<TKey, TItemValue> iDMapper) {
-        this.f10330a = new LinkedHashMap<>();
+        this.a = new LinkedHashMap<>();
         this.b = new LinkedHashMap<>();
-        this.f10331c = iDMapper;
+        this.c = iDMapper;
     }
 
     public TKey a(TItemValue titemvalue) {
-        return this.b.get(this.f10331c.b(titemvalue));
+        return this.b.get(this.c.b(titemvalue));
     }
 
     public void a(TKey tkey, TItemValue titemvalue) {
-        Object a2 = this.f10331c.a(tkey);
-        if (this.f10330a.get(a2) == null) {
-            this.f10330a.put(a2, new ArrayList());
+        Object a = this.c.a(tkey);
+        if (this.a.get(a) == null) {
+            this.a.put(a, new ArrayList());
         }
-        TKey a3 = a(titemvalue);
-        if (a3 != null) {
-            this.f10330a.get(this.f10331c.a(a3)).remove(titemvalue);
+        TKey a2 = a(titemvalue);
+        if (a2 != null) {
+            this.a.get(this.c.a(a2)).remove(titemvalue);
         }
-        this.b.put(this.f10331c.b(titemvalue), tkey);
-        if (a((List<List<TItemValue>>) this.f10330a.get(this.f10331c.a(tkey)), (List<TItemValue>) titemvalue)) {
+        this.b.put(this.c.b(titemvalue), tkey);
+        if (a((List<List<TItemValue>>) this.a.get(this.c.a(tkey)), (List<TItemValue>) titemvalue)) {
             return;
         }
-        this.f10330a.get(this.f10331c.a(tkey)).add(titemvalue);
+        this.a.get(this.c.a(tkey)).add(titemvalue);
     }
 
     protected boolean a(List<TItemValue> list, TItemValue titemvalue) {
         for (TItemValue titemvalue2 : list) {
-            if (this.f10331c.b(titemvalue2).equals(this.f10331c.b(titemvalue))) {
+            if (this.c.b(titemvalue2).equals(this.c.b(titemvalue))) {
                 return true;
             }
         }

@@ -4,7 +4,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import com.baidu.mobads.sdk.internal.a;
 import java.io.IOException;
-import javax.xml.XMLConstants;
 import okhttp3.Headers;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
@@ -44,7 +43,7 @@ public class LoggerInterceptor implements Interceptor {
     private boolean isText(MediaType mediaType) {
         if (mediaType.type() == null || !mediaType.type().equals("text")) {
             if (mediaType.subtype() != null) {
-                return mediaType.subtype().equals("json") || mediaType.subtype().equals(XMLConstants.XML_NS_PREFIX) || mediaType.subtype().equals(a.f) || mediaType.subtype().equals("webviewhtml");
+                return mediaType.subtype().equals("json") || mediaType.subtype().equals("xml") || mediaType.subtype().equals(a.f) || mediaType.subtype().equals("webviewhtml");
             }
             return false;
         }
@@ -115,7 +114,6 @@ public class LoggerInterceptor implements Interceptor {
         }
     }
 
-    @Override // okhttp3.Interceptor
     public Response intercept(Interceptor.Chain chain) throws IOException {
         Request request = chain.request();
         logForRequest(request);

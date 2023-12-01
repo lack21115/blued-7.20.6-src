@@ -3,7 +3,6 @@ package com.sobot.chat.voice;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.sobot.chat.api.model.ZhiChiMessageBase;
 import com.sobot.chat.core.HttpUtils;
 import com.sobot.chat.utils.AudioTools;
@@ -76,7 +75,7 @@ public class AudioPlayPresenter {
             return;
         }
         if (zhiChiMessageBase.getSugguestionsFontColor() == 1) {
-            String str2 = SobotPathManager.getInstance().getVoiceDir() + msg.substring(msg.lastIndexOf(BridgeUtil.SPLIT_MARK) + 1, msg.length());
+            String str2 = SobotPathManager.getInstance().getVoiceDir() + msg.substring(msg.lastIndexOf("/") + 1, msg.length());
             File parentFile = new File(str2).getParentFile();
             str = str2;
             if (!parentFile.exists()) {

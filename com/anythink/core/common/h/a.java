@@ -13,13 +13,9 @@ import javax.crypto.Cipher;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/h/a.class */
 public final class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Map<Character, Character> f6750a;
+    private static Map<Character, Character> a;
     private static char[] b = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
-
-    /* renamed from: c  reason: collision with root package name */
-    private static char[] f6751c = {'5', 'P', 'V', 'u', '3', 'J', 'j', 'l', 'e', 'Q', 'b', 'H', '9', 'A', 'v', 'h', 't', 's', 'g', 'W', 'I', 'C', 'U', 'i', 'F', '2', 'a', 'd', 'M', '8', 'D', 'y', 'Z', 'O', 'N', 'k', '/', '4', 'R', '7', '0', 'f', 'n', '+', 'z', 'G', 'Y', 'L', 'X', 'p', 'm', '1', 'E', 'K', 'S', 'T', 'o', 'x', '6', 'q', 'w', 'r', 'c', 'B'};
+    private static char[] c = {'5', 'P', 'V', 'u', '3', 'J', 'j', 'l', 'e', 'Q', 'b', 'H', '9', 'A', 'v', 'h', 't', 's', 'g', 'W', 'I', 'C', 'U', 'i', 'F', '2', 'a', 'd', 'M', '8', 'D', 'y', 'Z', 'O', 'N', 'k', '/', '4', 'R', '7', '0', 'f', 'n', '+', 'z', 'G', 'Y', 'L', 'X', 'p', 'm', '1', 'E', 'K', 'S', 'T', 'o', 'x', '6', 'q', 'w', 'r', 'c', 'B'};
     private static byte[] d = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -1, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1};
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -43,19 +39,19 @@ public final class a {
     }
 
     private static Character a(char c2) {
-        if (f6750a == null) {
-            f6750a = new HashMap();
+        if (a == null) {
+            a = new HashMap();
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= b.length) {
                     break;
                 }
-                f6750a.put(Character.valueOf(f6751c[i2]), Character.valueOf(b[i2]));
+                a.put(Character.valueOf(c[i2]), Character.valueOf(b[i2]));
                 i = i2 + 1;
             }
         }
-        return f6750a.containsKey(Character.valueOf(c2)) ? f6750a.get(Character.valueOf(c2)) : Character.valueOf(c2);
+        return a.containsKey(Character.valueOf(c2)) ? a.get(Character.valueOf(c2)) : Character.valueOf(c2);
     }
 
     public static String a(String str) {
@@ -76,19 +72,19 @@ public final class a {
                                 break;
                             }
                             char c2 = charArray[i2];
-                            if (f6750a == null) {
-                                f6750a = new HashMap();
+                            if (a == null) {
+                                a = new HashMap();
                                 int i3 = 0;
                                 while (true) {
                                     int i4 = i3;
                                     if (i4 >= b.length) {
                                         break;
                                     }
-                                    f6750a.put(Character.valueOf(f6751c[i4]), Character.valueOf(b[i4]));
+                                    a.put(Character.valueOf(c[i4]), Character.valueOf(b[i4]));
                                     i3 = i4 + 1;
                                 }
                             }
-                            cArr[i2] = (f6750a.containsKey(Character.valueOf(c2)) ? f6750a.get(Character.valueOf(c2)) : Character.valueOf(c2)).charValue();
+                            cArr[i2] = (a.containsKey(Character.valueOf(c2)) ? a.get(Character.valueOf(c2)) : Character.valueOf(c2)).charValue();
                             i = i2 + 1;
                         }
                         str4 = new String(cArr);

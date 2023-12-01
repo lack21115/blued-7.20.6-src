@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.fragment.app.Fragment;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.ui.BaseFragment;
@@ -43,27 +45,26 @@ import java.util.List;
 public class UserGroupListsFragment extends BaseFragment implements View.OnClickListener, CommonDataRefreshObserver.IDataRefreshObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public BluedUIHttpResponse f30878a = new BluedUIHttpResponse<BluedEntityA<BluedMyGroupLists>>() { // from class: com.soft.blued.ui.group.UserGroupListsFragment.1
+    public BluedUIHttpResponse f17188a = new BluedUIHttpResponse<BluedEntityA<BluedMyGroupLists>>() { // from class: com.soft.blued.ui.group.UserGroupListsFragment.1
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f30880a;
+        boolean f17190a;
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedMyGroupLists> bluedEntityA) {
             if (bluedEntityA != null) {
                 try {
-                    BluedMyGroupLists singleData = bluedEntityA.getSingleData();
-                    if (singleData != null) {
-                        if (singleData.created.size() <= 0 && singleData.admin.size() <= 0 && singleData.joined.size() <= 0) {
+                    BluedMyGroupLists bluedMyGroupLists = (BluedMyGroupLists) bluedEntityA.getSingleData();
+                    if (bluedMyGroupLists != null) {
+                        if (bluedMyGroupLists.created.size() <= 0 && bluedMyGroupLists.admin.size() <= 0 && bluedMyGroupLists.joined.size() <= 0) {
                             UserGroupListsFragment.this.m.clear();
                             UserGroupListsFragment.this.g.setVisibility(8);
-                            UserGroupListsFragment.this.f30879c.setVisibility(0);
+                            UserGroupListsFragment.this.f17189c.setVisibility(0);
                             UserGroupListsFragment.this.e.setVisibility(0);
                             UserGroupListsFragment.this.b.a();
                         }
-                        UserGroupListsFragment.this.f30879c.setVisibility(8);
+                        UserGroupListsFragment.this.f17189c.setVisibility(8);
                         UserGroupListsFragment.this.l.clear();
                         UserGroupListsFragment.this.l.addAll(bluedEntityA.data);
                         List<BluedCreatedGroupInfo> list = ((BluedMyGroupLists) UserGroupListsFragment.this.l.get(0)).created;
@@ -109,45 +110,42 @@ public class UserGroupListsFragment extends BaseFragment implements View.OnClick
                                 i5 = i6 + 1;
                             }
                         }
-                        UserGroupListsFragment.this.b.setRightImg(R.drawable.icon_title_create_group);
+                        UserGroupListsFragment.this.b.setRightImg((int) R.drawable.icon_title_create_group);
                     } else {
                         UserGroupListsFragment.this.m.clear();
                         UserGroupListsFragment.this.g.setVisibility(8);
-                        UserGroupListsFragment.this.f30879c.setVisibility(0);
+                        UserGroupListsFragment.this.f17189c.setVisibility(0);
                         UserGroupListsFragment.this.e.setVisibility(0);
                         UserGroupListsFragment.this.b.a();
                     }
                     UserGroupListsFragment.this.h.notifyDataSetChanged();
                 } catch (Exception e) {
-                    this.f30880a = true;
+                    this.f17190a = true;
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) UserGroupListsFragment.this.j.getResources().getString(2131887272));
+                    AppMethods.a(UserGroupListsFragment.this.j.getResources().getString(2131887272));
                 }
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f30880a = true;
+            this.f17190a = true;
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(UserGroupListsFragment.this.k);
-            if (this.f30880a) {
-                this.f30880a = false;
+            if (this.f17190a) {
+                this.f17190a = false;
                 UserGroupListsFragment.this.m.clear();
                 UserGroupListsFragment.this.g.setVisibility(8);
-                UserGroupListsFragment.this.f30879c.setVisibility(8);
+                UserGroupListsFragment.this.f17189c.setVisibility(8);
                 UserGroupListsFragment.this.e.setVisibility(8);
                 UserGroupListsFragment.this.b.a();
                 UserGroupListsFragment.this.d.b();
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(UserGroupListsFragment.this.k);
@@ -156,7 +154,7 @@ public class UserGroupListsFragment extends BaseFragment implements View.OnClick
     private CommonTopTitleNoTrans b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f30879c;
+    private LinearLayout f17189c;
     private NoDataAndLoadFailView d;
     private TextView e;
     private TextView f;
@@ -187,7 +185,7 @@ public class UserGroupListsFragment extends BaseFragment implements View.OnClick
             Bundle arguments = UserGroupListsFragment.this.getArguments();
             String string = arguments != null ? arguments.getString("fragment_name_key") : "";
             if (StringUtils.d(string) || !string.equals(MsgChattingFragment.class.getSimpleName())) {
-                GroupInfoFragment.a(UserGroupListsFragment.this, bluedGroupLists.groups_gid, 100);
+                GroupInfoFragment.a((Fragment) UserGroupListsFragment.this, bluedGroupLists.groups_gid, 100);
                 return;
             }
             MsgExtra msgExtra = new MsgExtra();
@@ -224,12 +222,12 @@ public class UserGroupListsFragment extends BaseFragment implements View.OnClick
     }
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.i.findViewById(2131370749);
-        this.b = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setRightClickListener(this);
+        CommonTopTitleNoTrans findViewById = this.i.findViewById(R.id.top_title);
+        this.b = findViewById;
+        findViewById.setRightClickListener(this);
         if (getArguments() == null || StringUtils.d(getArguments().getString("UID")) || getArguments().getString("UID").equalsIgnoreCase(UserInfo.getInstance().getLoginUserInfo().getUid())) {
             this.b.setCenterText(getString(R.string.mygroup_list));
-            this.b.setRightImg(R.drawable.icon_title_create_group);
+            this.b.setRightImg((int) R.drawable.icon_title_create_group);
             this.b.setRightClickListener(this);
         } else {
             this.b.setCenterText(getString(R.string.group_lists));
@@ -241,8 +239,8 @@ public class UserGroupListsFragment extends BaseFragment implements View.OnClick
     private void c() {
         this.k = DialogUtils.a(this.j);
         this.o = new BluedGroupCheck.GroupFailureReason();
-        this.f30879c = (LinearLayout) this.i.findViewById(R.id.ll_nodata_show_groups);
-        this.d = (NoDataAndLoadFailView) this.i.findViewById(R.id.nodataview);
+        this.f17189c = (LinearLayout) this.i.findViewById(R.id.ll_nodata_show_groups);
+        this.d = this.i.findViewById(R.id.nodataview);
         TextView textView = (TextView) this.i.findViewById(R.id.tv_group_create);
         this.e = textView;
         textView.setOnClickListener(this);
@@ -251,9 +249,9 @@ public class UserGroupListsFragment extends BaseFragment implements View.OnClick
         textView2.setOnClickListener(this);
         this.l = new ArrayList();
         this.m = new ArrayList();
-        StickyListHeadersListView stickyListHeadersListView = (StickyListHeadersListView) this.i.findViewById(R.id.my_grouplist_pullrefresh);
-        this.g = stickyListHeadersListView;
-        stickyListHeadersListView.setDivider(null);
+        StickyListHeadersListView findViewById = this.i.findViewById(R.id.my_grouplist_pullrefresh);
+        this.g = findViewById;
+        findViewById.setDivider((Drawable) null);
         this.g.setSelector(new ColorDrawable(0));
         this.g.setOnItemClickListener(new MyOnItemClickListener());
         MyGroupListsAdapter myGroupListsAdapter = new MyGroupListsAdapter(this.j, getFragmentActive(), this.m, UserInfo.getInstance().getLoginUserInfo().getUid().equalsIgnoreCase(this.p));
@@ -262,9 +260,9 @@ public class UserGroupListsFragment extends BaseFragment implements View.OnClick
     }
 
     private void d() {
-        GroupHttpUtils.g(this.j, this.f30878a, this.p, getFragmentActive());
+        GroupHttpUtils.g(this.j, this.f17188a, this.p, getFragmentActive());
         if (this.n) {
-            this.i.findViewById(2131370749).setVisibility(8);
+            this.i.findViewById(R.id.top_title).setVisibility(8);
         }
     }
 
@@ -273,14 +271,13 @@ public class UserGroupListsFragment extends BaseFragment implements View.OnClick
         d();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i == 100) {
             d();
         } else if (StringUtils.d(this.p)) {
         } else {
-            GroupHttpUtils.g(this.j, this.f30878a, this.p, getFragmentActive());
+            GroupHttpUtils.g(this.j, this.f17188a, this.p, getFragmentActive());
         }
     }
 
@@ -295,28 +292,26 @@ public class UserGroupListsFragment extends BaseFragment implements View.OnClick
                 if (PopMenuUtils.a(this.j)) {
                     return;
                 }
-                TerminalActivity.d(getActivity(), GroupCreateFragment.class, null);
+                TerminalActivity.d(getActivity(), GroupCreateFragment.class, (Bundle) null);
                 return;
             case R.id.tv_group_create /* 2131371585 */:
                 if (PopMenuUtils.a(this.j)) {
                     return;
                 }
-                TerminalActivity.d(getActivity(), GroupCreateFragment.class, null);
+                TerminalActivity.d(getActivity(), GroupCreateFragment.class, (Bundle) null);
                 return;
             case R.id.tv_group_look /* 2131371613 */:
-                TerminalActivity.d(getActivity(), GroupFragment.class, null);
+                TerminalActivity.d(getActivity(), GroupFragment.class, (Bundle) null);
                 return;
             default:
                 return;
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.j = getActivity();
         View view = this.i;
@@ -342,7 +337,6 @@ public class UserGroupListsFragment extends BaseFragment implements View.OnClick
         return this.i;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         if (this.n) {
             CommonDataRefreshObserver.a().b(this);

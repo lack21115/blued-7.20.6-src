@@ -11,6 +11,7 @@ import com.sobot.network.http.model.SobotProgress;
 import com.sobot.network.http.request.RequestCall;
 import com.sobot.network.http.task.PriorityRunnable;
 import com.sobot.network.http.utils.IOUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -276,7 +277,7 @@ public class SobotDownloadTask implements Runnable {
         }
         try {
             RequestCall requestCall = this.progress.request;
-            requestCall.getOkHttpRequest().addHeader("Range", "bytes=" + j2 + "-");
+            requestCall.getOkHttpRequest().addHeader("Range", "bytes=" + j2 + Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             Response execute = requestCall.execute();
             int code = execute.code();
             if (code == 404 || code >= 500) {

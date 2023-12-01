@@ -4,11 +4,11 @@ package com.anythink.expressad.exoplayer.k;
 public final class ac {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f7628a = Long.MAX_VALUE;
+    public static final long f4789a = Long.MAX_VALUE;
     private static final long b = 8589934592L;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f7629c;
+    private long f4790c;
     private long d;
     private volatile long e = com.anythink.expressad.exoplayer.b.b;
 
@@ -17,21 +17,21 @@ public final class ac {
     }
 
     private long b() {
-        return this.f7629c;
+        return this.f4790c;
     }
 
     private long c() {
         if (this.e != com.anythink.expressad.exoplayer.b.b) {
             return this.e + this.d;
         }
-        long j = this.f7629c;
+        long j = this.f4790c;
         return j != Long.MAX_VALUE ? j : com.anythink.expressad.exoplayer.b.b;
     }
 
     private void c(long j) {
         synchronized (this) {
             a.b(this.e == com.anythink.expressad.exoplayer.b.b);
-            this.f7629c = j;
+            this.f4790c = j;
         }
     }
 
@@ -56,7 +56,7 @@ public final class ac {
     }
 
     public final long a() {
-        if (this.f7629c == Long.MAX_VALUE) {
+        if (this.f4790c == Long.MAX_VALUE) {
             return 0L;
         }
         return this.e == com.anythink.expressad.exoplayer.b.b ? com.anythink.expressad.exoplayer.b.b : this.d;
@@ -87,7 +87,7 @@ public final class ac {
         if (this.e != com.anythink.expressad.exoplayer.b.b) {
             this.e = j;
         } else {
-            long j2 = this.f7629c;
+            long j2 = this.f4790c;
             if (j2 != Long.MAX_VALUE) {
                 this.d = j2 - j;
             }

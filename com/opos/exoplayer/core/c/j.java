@@ -13,11 +13,11 @@ public final class j {
     private static final int[] n = {8, 16, 24, 32, 40, 48, 56, 64, 80, 96, 112, 128, 144, 160};
 
     /* renamed from: a  reason: collision with root package name */
-    public int f25247a;
+    public int f11559a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f25248c;
+    public int f11560c;
     public int d;
     public int e;
     public int f;
@@ -57,9 +57,9 @@ public final class j {
     }
 
     private void a(int i2, String str, int i3, int i4, int i5, int i6, int i7) {
-        this.f25247a = i2;
+        this.f11559a = i2;
         this.b = str;
-        this.f25248c = i3;
+        this.f11560c = i3;
         this.d = i4;
         this.e = i5;
         this.f = i6;

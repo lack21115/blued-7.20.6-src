@@ -33,13 +33,9 @@ public class Style implements Parcelable {
     public int I;
     public boolean J;
     public int K;
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f10189a;
+    public String a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f10190c;
+    public int c;
     public int d;
     public int e;
     public int f;
@@ -111,7 +107,7 @@ public class Style implements Parcelable {
 
     public Style() {
         this.b = 2750;
-        this.f10190c = PaletteUtils.a("9E9E9E");
+        this.c = PaletteUtils.a("9E9E9E");
         this.g = 81;
         this.i = BackgroundUtils.b(64);
         this.j = -2;
@@ -130,9 +126,9 @@ public class Style implements Parcelable {
     }
 
     private Style(Parcel parcel) {
-        this.f10189a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readInt();
-        this.f10190c = parcel.readInt();
+        this.c = parcel.readInt();
         this.d = parcel.readInt();
         this.e = parcel.readInt();
         this.f = parcel.readInt();
@@ -176,9 +172,9 @@ public class Style implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f10189a);
+        parcel.writeString(this.a);
         parcel.writeInt(this.b);
-        parcel.writeInt(this.f10190c);
+        parcel.writeInt(this.c);
         parcel.writeInt(this.d);
         parcel.writeInt(this.e);
         parcel.writeInt(this.f);

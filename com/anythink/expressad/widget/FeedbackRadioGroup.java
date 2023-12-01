@@ -11,7 +11,7 @@ import android.widget.RadioGroup;
 public class FeedbackRadioGroup extends RadioGroup {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8783a = "FeedbackRadioGroup";
+    private static final String f5943a = "FeedbackRadioGroup";
 
     public FeedbackRadioGroup(Context context) {
         super(context);
@@ -21,9 +21,8 @@ public class FeedbackRadioGroup extends RadioGroup {
         super(context, attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int i5;
         int i6;
         int childCount = getChildCount();
@@ -54,9 +53,8 @@ public class FeedbackRadioGroup extends RadioGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3;
         int i4;
         int size = View.MeasureSpec.getSize(i);
@@ -78,7 +76,7 @@ public class FeedbackRadioGroup extends RadioGroup {
                 i3 = Math.max(i8, i5);
                 i6 += i7;
                 i7 = childAt.getMeasuredHeight() + marginLayoutParams.topMargin + marginLayoutParams.bottomMargin;
-                Log.v(f8783a, "maxHeight:" + i6 + "---maxWidth:" + i3);
+                Log.v(f5943a, "maxHeight:" + i6 + "---maxWidth:" + i3);
                 i8 = measuredWidth;
             } else {
                 i7 = Math.max(i7, childAt.getMeasuredHeight() + marginLayoutParams.topMargin + marginLayoutParams.bottomMargin);

@@ -23,23 +23,19 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/content/FillContent.class */
 public class FillContent implements DrawingContent, KeyPathElementContent, BaseKeyframeAnimation.AnimationListener {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final BaseLayer f4277c;
+    private final BaseLayer c;
     private final String d;
     private final boolean e;
     private final BaseKeyframeAnimation<Integer, Integer> g;
     private final BaseKeyframeAnimation<Integer, Integer> h;
     private BaseKeyframeAnimation<ColorFilter, ColorFilter> i;
     private final LottieDrawable j;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Path f4276a = new Path();
+    private final Path a = new Path();
     private final Paint b = new LPaint(1);
     private final List<PathContent> f = new ArrayList();
 
     public FillContent(LottieDrawable lottieDrawable, BaseLayer baseLayer, ShapeFill shapeFill) {
-        this.f4277c = baseLayer;
+        this.c = baseLayer;
         this.d = shapeFill.a();
         this.e = shapeFill.e();
         this.j = lottieDrawable;
@@ -48,14 +44,14 @@ public class FillContent implements DrawingContent, KeyPathElementContent, BaseK
             this.h = null;
             return;
         }
-        this.f4276a.setFillType(shapeFill.d());
-        BaseKeyframeAnimation<Integer, Integer> a2 = shapeFill.b().a();
-        this.g = a2;
-        a2.a(this);
+        this.a.setFillType(shapeFill.d());
+        BaseKeyframeAnimation<Integer, Integer> a = shapeFill.b().a();
+        this.g = a;
+        a.a(this);
         baseLayer.a(this.g);
-        BaseKeyframeAnimation<Integer, Integer> a3 = shapeFill.c().a();
-        this.h = a3;
-        a3.a(this);
+        BaseKeyframeAnimation<Integer, Integer> a2 = shapeFill.c().a();
+        this.h = a2;
+        a2.a(this);
         baseLayer.a(this.h);
     }
 
@@ -77,26 +73,26 @@ public class FillContent implements DrawingContent, KeyPathElementContent, BaseK
         if (baseKeyframeAnimation != null) {
             this.b.setColorFilter(baseKeyframeAnimation.g());
         }
-        this.f4276a.reset();
+        this.a.reset();
         for (int i2 = 0; i2 < this.f.size(); i2++) {
-            this.f4276a.addPath(this.f.get(i2).e(), matrix);
+            this.a.addPath(this.f.get(i2).e(), matrix);
         }
-        canvas.drawPath(this.f4276a, this.b);
+        canvas.drawPath(this.a, this.b);
         L.b("FillContent#draw");
     }
 
     @Override // com.airbnb.lottie.animation.content.DrawingContent
     public void a(RectF rectF, Matrix matrix, boolean z) {
-        this.f4276a.reset();
+        this.a.reset();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= this.f.size()) {
-                this.f4276a.computeBounds(rectF, false);
+                this.a.computeBounds(rectF, false);
                 rectF.set(rectF.left - 1.0f, rectF.top - 1.0f, rectF.right + 1.0f, rectF.bottom + 1.0f);
                 return;
             }
-            this.f4276a.addPath(this.f.get(i2).e(), matrix);
+            this.a.addPath(this.f.get(i2).e(), matrix);
             i = i2 + 1;
         }
     }
@@ -108,7 +104,7 @@ public class FillContent implements DrawingContent, KeyPathElementContent, BaseK
 
     @Override // com.airbnb.lottie.model.KeyPathElement
     public <T> void a(T t, LottieValueCallback<T> lottieValueCallback) {
-        if (t == LottieProperty.f4254a) {
+        if (t == LottieProperty.a) {
             this.g.a((LottieValueCallback<Integer>) lottieValueCallback);
         } else if (t == LottieProperty.d) {
             this.h.a((LottieValueCallback<Integer>) lottieValueCallback);
@@ -120,7 +116,7 @@ public class FillContent implements DrawingContent, KeyPathElementContent, BaseK
             ValueCallbackKeyframeAnimation valueCallbackKeyframeAnimation = new ValueCallbackKeyframeAnimation(lottieValueCallback);
             this.i = valueCallbackKeyframeAnimation;
             valueCallbackKeyframeAnimation.a(this);
-            this.f4277c.a(this.i);
+            this.c.a(this.i);
         }
     }
 

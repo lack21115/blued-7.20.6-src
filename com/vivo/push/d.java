@@ -12,7 +12,7 @@ import com.vivo.push.d.z;
 public final class d implements IPushClientFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    private ag f41069a = new ag();
+    private ag f27378a = new ag();
 
     @Override // com.vivo.push.IPushClientFactory
     public final z createReceiveTask(o oVar) {

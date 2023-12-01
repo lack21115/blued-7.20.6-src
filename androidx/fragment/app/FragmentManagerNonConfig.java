@@ -9,22 +9,22 @@ import java.util.Map;
 public class FragmentManagerNonConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Collection<Fragment> f2989a;
+    private final Collection<Fragment> f2941a;
     private final Map<String, FragmentManagerNonConfig> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Map<String, ViewModelStore> f2990c;
+    private final Map<String, ViewModelStore> f2942c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FragmentManagerNonConfig(Collection<Fragment> collection, Map<String, FragmentManagerNonConfig> map, Map<String, ViewModelStore> map2) {
-        this.f2989a = collection;
+        this.f2941a = collection;
         this.b = map;
-        this.f2990c = map2;
+        this.f2942c = map2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Collection<Fragment> a() {
-        return this.f2989a;
+        return this.f2941a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -34,6 +34,6 @@ public class FragmentManagerNonConfig {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Map<String, ViewModelStore> c() {
-        return this.f2990c;
+        return this.f2942c;
     }
 }

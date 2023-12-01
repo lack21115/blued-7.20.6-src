@@ -1460,9 +1460,8 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         addOnOffsetChangedListener((BaseOnOffsetChangedListener) onOffsetChangedListener);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.ViewGroup
-    public boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return layoutParams instanceof LayoutParams;
     }
 
@@ -1481,9 +1480,8 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         int[] drawableState = getDrawableState();
         Drawable drawable = this.statusBarForeground;
@@ -1662,16 +1660,14 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         return this.lifted;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         MaterialShapeUtils.setParentAbsoluteElevation(this);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public int[] onCreateDrawableState(int i) {
+    protected int[] onCreateDrawableState(int i) {
         if (this.tmpStatesArray == null) {
             this.tmpStatesArray = new int[4];
         }
@@ -1684,16 +1680,14 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         return mergeDrawableStates(onCreateDrawableState, iArr);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         clearLiftOnScrollTargetView();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         if (ViewCompat.getFitsSystemWindows(this) && shouldOffsetFirstChild()) {
             int topInset = getTopInset();
@@ -1736,9 +1730,8 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         setLiftableState(z2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int mode = View.MeasureSpec.getMode(i2);
         if (mode != 1073741824 && ViewCompat.getFitsSystemWindows(this) && shouldOffsetFirstChild()) {
@@ -1921,9 +1914,8 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
+    protected boolean verifyDrawable(Drawable drawable) {
         return super.verifyDrawable(drawable) || drawable == this.statusBarForeground;
     }
 }

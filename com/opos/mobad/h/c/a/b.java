@@ -9,17 +9,17 @@ import com.opos.mobad.model.data.AdItemData;
 public class b implements a {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.mobad.h.e.a.a f26195a;
+    private com.opos.mobad.h.e.a.a f12507a;
     private com.opos.mobad.h.a.a b;
 
     public b(Context context, com.opos.mobad.h.a.a aVar, FrameLayout frameLayout) {
-        this.f26195a = new com.opos.mobad.h.e.a.b(context, this, frameLayout);
+        this.f12507a = new com.opos.mobad.h.e.a.b(context, this, frameLayout);
         this.b = aVar;
     }
 
     @Override // com.opos.mobad.h.c.a.a
     public void a() {
-        this.f26195a.b();
+        this.f12507a.b();
     }
 
     @Override // com.opos.mobad.h.c.a.a
@@ -44,17 +44,17 @@ public class b implements a {
 
     @Override // com.opos.mobad.h.c.a.a
     public void a(AdItemData adItemData) {
-        this.f26195a.a(adItemData);
+        this.f12507a.a(adItemData);
     }
 
     @Override // com.opos.mobad.h.c.a.a
     public void a(AdItemData adItemData, String str) {
-        this.f26195a.a(adItemData, str);
+        this.f12507a.a(adItemData, str);
     }
 
     @Override // com.opos.mobad.h.c.a.a
     public void b() {
-        this.f26195a.c();
+        this.f12507a.c();
     }
 
     @Override // com.opos.mobad.h.c.a.a
@@ -72,7 +72,7 @@ public class b implements a {
 
     @Override // com.opos.mobad.h.c.a.a
     public void b(AdItemData adItemData, String str) {
-        this.f26195a.b(adItemData, str);
+        this.f12507a.b(adItemData, str);
     }
 
     @Override // com.opos.mobad.h.c.a.a

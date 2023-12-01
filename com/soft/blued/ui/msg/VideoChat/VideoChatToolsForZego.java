@@ -25,11 +25,11 @@ import java.util.HashMap;
 public class VideoChatToolsForZego implements IVideoChatTools {
 
     /* renamed from: a  reason: collision with root package name */
-    private static VideoChatToolsForZego f31949a;
+    private static VideoChatToolsForZego f18259a;
     private Activity b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ZegoLiveRoom f31950c;
+    private ZegoLiveRoom f18260c;
     private boolean d = true;
     private ViewGroup e;
     private ViewGroup f;
@@ -43,8 +43,8 @@ public class VideoChatToolsForZego implements IVideoChatTools {
             if (this.e != null && this.e.getChildCount() == 0) {
                 this.e.addView(new SurfaceView(this.e.getContext()));
             }
-            this.f31950c.startPlayingStream(str, this.e.getChildAt(0));
-            this.f31950c.setViewMode(1, str);
+            this.f18260c.startPlayingStream(str, this.e.getChildAt(0));
+            this.f18260c.setViewMode(1, str);
             if (this.g != null) {
                 this.g.b();
                 this.g.a();
@@ -53,15 +53,15 @@ public class VideoChatToolsForZego implements IVideoChatTools {
     }
 
     public static VideoChatToolsForZego i() {
-        if (f31949a == null) {
-            f31949a = new VideoChatToolsForZego();
+        if (f18259a == null) {
+            f18259a = new VideoChatToolsForZego();
         }
-        return f31949a;
+        return f18259a;
     }
 
     @Override // com.soft.blued.ui.msg.VideoChat.IVideoChatTools
     public void a() {
-        this.f31950c.logoutRoom();
+        this.f18260c.logoutRoom();
     }
 
     @Override // com.soft.blued.ui.msg.VideoChat.IVideoChatTools
@@ -72,20 +72,20 @@ public class VideoChatToolsForZego implements IVideoChatTools {
         ZegoLiveRoom.setTestEnv(!BluedHttpUrl.h());
         ZegoLiveRoom.setBusinessType(0);
         ZegoLiveRoom zegoLiveRoom = new ZegoLiveRoom();
-        this.f31950c = zegoLiveRoom;
-        if (!zegoLiveRoom.initSDK(bD1V1Config.f31946c, bD1V1Config.b, AppInfo.d())) {
-            AppMethods.a((CharSequence) "Zego SDK初始化失败!");
+        this.f18260c = zegoLiveRoom;
+        if (!zegoLiveRoom.initSDK(bD1V1Config.f18256c, bD1V1Config.b, AppInfo.d())) {
+            AppMethods.a("Zego SDK初始化失败!");
         }
         ZegoAvConfig zegoAvConfig = new ZegoAvConfig(2);
         zegoAvConfig.setVideoFPS(15);
         zegoAvConfig.setVideoBitrate(StCameraView.MEDIA_QUALITY_POOR);
-        this.f31950c.setAVConfig(zegoAvConfig);
-        this.f31950c.enableTrafficControl(0, false);
+        this.f18260c.setAVConfig(zegoAvConfig);
+        this.f18260c.enableTrafficControl(0, false);
         ZegoLiveRoom.requireHardwareEncoder(false);
         ZegoLiveRoom.requireHardwareDecoder(false);
-        this.f31950c.enableBeautifying(3);
-        this.f31950c.setPolishStep(7.0f);
-        this.f31950c.setZegoLivePublisherCallback(new IZegoLivePublisherCallback() { // from class: com.soft.blued.ui.msg.VideoChat.VideoChatToolsForZego.1
+        this.f18260c.enableBeautifying(3);
+        this.f18260c.setPolishStep(7.0f);
+        this.f18260c.setZegoLivePublisherCallback(new IZegoLivePublisherCallback() { // from class: com.soft.blued.ui.msg.VideoChat.VideoChatToolsForZego.1
             @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onCaptureAudioFirstFrame() {
             }
@@ -114,7 +114,7 @@ public class VideoChatToolsForZego implements IVideoChatTools {
                 iVideoChatListener.d();
             }
         });
-        this.f31950c.setZegoLivePlayerCallback(new IZegoLivePlayerCallback() { // from class: com.soft.blued.ui.msg.VideoChat.VideoChatToolsForZego.2
+        this.f18260c.setZegoLivePlayerCallback(new IZegoLivePlayerCallback() { // from class: com.soft.blued.ui.msg.VideoChat.VideoChatToolsForZego.2
             @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
             public void onInviteJoinLiveRequest(int i, String str, String str2, String str3) {
             }
@@ -139,7 +139,7 @@ public class VideoChatToolsForZego implements IVideoChatTools {
             public void onVideoSizeChangedTo(String str, int i, int i2) {
             }
         });
-        this.f31950c.setZegoRoomCallback(new IZegoRoomCallback() { // from class: com.soft.blued.ui.msg.VideoChat.VideoChatToolsForZego.3
+        this.f18260c.setZegoRoomCallback(new IZegoRoomCallback() { // from class: com.soft.blued.ui.msg.VideoChat.VideoChatToolsForZego.3
             @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onDisconnect(int i, String str) {
                 iVideoChatListener.c();
@@ -195,21 +195,21 @@ public class VideoChatToolsForZego implements IVideoChatTools {
         SurfaceView surfaceView = new SurfaceView(viewGroup.getContext());
         viewGroup.addView(surfaceView);
         this.f = viewGroup;
-        this.f31950c.setPreviewView(surfaceView);
-        this.f31950c.setPreviewViewMode(1);
-        this.f31950c.startPreview();
+        this.f18260c.setPreviewView(surfaceView);
+        this.f18260c.setPreviewViewMode(1);
+        this.f18260c.startPreview();
     }
 
     @Override // com.soft.blued.ui.msg.VideoChat.IVideoChatTools
     public void a(String str, int i, final String str2) {
-        this.f31950c.loginRoom(str, 2, new IZegoLoginCompletionCallback() { // from class: com.soft.blued.ui.msg.VideoChat.VideoChatToolsForZego.4
+        this.f18260c.loginRoom(str, 2, new IZegoLoginCompletionCallback() { // from class: com.soft.blued.ui.msg.VideoChat.VideoChatToolsForZego.4
             @Override // com.zego.zegoliveroom.callback.IZegoLoginCompletionCallback
             public void onLoginCompletion(int i2, ZegoStreamInfo[] zegoStreamInfoArr) {
                 if (i2 != 0) {
                     VideoChatToolsForZego.this.g.d();
                     return;
                 }
-                VideoChatToolsForZego.this.f31950c.startPublishing(str2, "", 0);
+                VideoChatToolsForZego.this.f18260c.startPublishing(str2, "", 0);
                 if (zegoStreamInfoArr == null || zegoStreamInfoArr.length <= 0) {
                     return;
                 }
@@ -222,14 +222,14 @@ public class VideoChatToolsForZego implements IVideoChatTools {
 
     @Override // com.soft.blued.ui.msg.VideoChat.IVideoChatTools
     public void a(boolean z) {
-        this.f31950c.enableSpeaker(!z);
+        this.f18260c.enableSpeaker(!z);
     }
 
     @Override // com.soft.blued.ui.msg.VideoChat.IVideoChatTools
     public void b() {
         boolean z = !this.d;
         this.d = z;
-        this.f31950c.setFrontCam(z);
+        this.f18260c.setFrontCam(z);
     }
 
     public void b(ViewGroup viewGroup) {
@@ -239,17 +239,17 @@ public class VideoChatToolsForZego implements IVideoChatTools {
 
     @Override // com.soft.blued.ui.msg.VideoChat.IVideoChatTools
     public void b(boolean z) {
-        this.f31950c.setBuiltInSpeakerOn(z);
+        this.f18260c.setBuiltInSpeakerOn(z);
     }
 
     @Override // com.soft.blued.ui.msg.VideoChat.IVideoChatTools
     public void c() {
-        this.f31950c.enableCamera(true);
+        this.f18260c.enableCamera(true);
     }
 
     @Override // com.soft.blued.ui.msg.VideoChat.IVideoChatTools
     public void d() {
-        this.f31950c.enableCamera(false);
+        this.f18260c.enableCamera(false);
     }
 
     @Override // com.soft.blued.ui.msg.VideoChat.IVideoChatTools
@@ -262,17 +262,17 @@ public class VideoChatToolsForZego implements IVideoChatTools {
 
     @Override // com.soft.blued.ui.msg.VideoChat.IVideoChatTools
     public void g() {
-        if (this.f31950c != null) {
+        if (this.f18260c != null) {
             if (!TextUtils.isEmpty(this.h)) {
-                this.f31950c.stopPlayingStream(this.h);
+                this.f18260c.stopPlayingStream(this.h);
             }
-            this.f31950c.setPreviewView(null);
-            this.f31950c.stopPreview();
-            this.f31950c.stopPublishing();
-            this.f31950c.unInitSDK();
-            this.f31950c.setZegoLivePublisherCallback(null);
-            this.f31950c.setZegoLivePlayerCallback(null);
-            this.f31950c.setZegoRoomCallback(null);
+            this.f18260c.setPreviewView(null);
+            this.f18260c.stopPreview();
+            this.f18260c.stopPublishing();
+            this.f18260c.unInitSDK();
+            this.f18260c.setZegoLivePublisherCallback(null);
+            this.f18260c.setZegoLivePlayerCallback(null);
+            this.f18260c.setZegoRoomCallback(null);
         }
         ViewGroup viewGroup = this.f;
         if (viewGroup != null) {

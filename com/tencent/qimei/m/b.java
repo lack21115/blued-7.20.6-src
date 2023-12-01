@@ -9,22 +9,22 @@ import com.tencent.qimei.v.d;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static b f38354a;
+    public static b f24663a;
     public boolean b = false;
 
     public static b a() {
-        if (f38354a == null) {
+        if (f24663a == null) {
             synchronized (b.class) {
                 try {
-                    if (f38354a == null) {
-                        f38354a = new b();
+                    if (f24663a == null) {
+                        f24663a = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f38354a;
+        return f24663a;
     }
 
     public boolean a(String str) {

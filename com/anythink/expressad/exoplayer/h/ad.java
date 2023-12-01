@@ -11,11 +11,11 @@ import java.io.IOException;
 public final class ad extends com.anythink.expressad.exoplayer.h.c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7412a = 3;
+    public static final int f4573a = 3;
     private final com.anythink.expressad.exoplayer.j.k b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final h.a f7413c;
+    private final h.a f4574c;
     private final com.anythink.expressad.exoplayer.m d;
     private final long e;
     private final int f;
@@ -32,11 +32,11 @@ public final class ad extends com.anythink.expressad.exoplayer.h.c {
     static final class b extends k {
 
         /* renamed from: a  reason: collision with root package name */
-        private final a f7414a;
+        private final a f4575a;
         private final int b;
 
         public b(a aVar, int i) {
-            this.f7414a = (a) com.anythink.expressad.exoplayer.k.a.a(aVar);
+            this.f4575a = (a) com.anythink.expressad.exoplayer.k.a.a(aVar);
             this.b = i;
         }
 
@@ -49,16 +49,16 @@ public final class ad extends com.anythink.expressad.exoplayer.h.c {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        private final h.a f7415a;
+        private final h.a f4576a;
         private int b = 3;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f7416c;
+        private boolean f4577c;
         private boolean d;
         private Object e;
 
         private c(h.a aVar) {
-            this.f7415a = (h.a) com.anythink.expressad.exoplayer.k.a.a(aVar);
+            this.f4576a = (h.a) com.anythink.expressad.exoplayer.k.a.a(aVar);
         }
 
         private c a(int i) {
@@ -75,19 +75,19 @@ public final class ad extends com.anythink.expressad.exoplayer.h.c {
 
         private c a(boolean z) {
             com.anythink.expressad.exoplayer.k.a.b(!this.d);
-            this.f7416c = z;
+            this.f4577c = z;
             return this;
         }
 
         private ad a(Uri uri, com.anythink.expressad.exoplayer.m mVar, long j) {
             this.d = true;
-            return new ad(uri, this.f7415a, mVar, j, this.b, this.f7416c, this.e, (byte) 0);
+            return new ad(uri, this.f4576a, mVar, j, this.b, this.f4577c, this.e, (byte) 0);
         }
 
         @Deprecated
         private ad a(Uri uri, com.anythink.expressad.exoplayer.m mVar, long j, Handler handler, t tVar) {
             this.d = true;
-            ad adVar = new ad(uri, this.f7415a, mVar, j, this.b, this.f7416c, this.e, (byte) 0);
+            ad adVar = new ad(uri, this.f4576a, mVar, j, this.b, this.f4577c, this.e, (byte) 0);
             if (handler != null && tVar != null) {
                 adVar.a(handler, tVar);
             }
@@ -115,7 +115,7 @@ public final class ad extends com.anythink.expressad.exoplayer.h.c {
     }
 
     private ad(Uri uri, h.a aVar, com.anythink.expressad.exoplayer.m mVar, long j, int i, boolean z, Object obj) {
-        this.f7413c = aVar;
+        this.f4574c = aVar;
         this.d = mVar;
         this.e = j;
         this.f = i;
@@ -130,8 +130,8 @@ public final class ad extends com.anythink.expressad.exoplayer.h.c {
 
     @Override // com.anythink.expressad.exoplayer.h.s
     public final r a(s.a aVar, com.anythink.expressad.exoplayer.j.b bVar) {
-        com.anythink.expressad.exoplayer.k.a.a(aVar.f7484a == 0);
-        return new ac(this.b, this.f7413c, this.d, this.e, this.f, a(aVar), this.g);
+        com.anythink.expressad.exoplayer.k.a.a(aVar.f4645a == 0);
+        return new ac(this.b, this.f4574c, this.d, this.e, this.f, a(aVar), this.g);
     }
 
     @Override // com.anythink.expressad.exoplayer.h.c

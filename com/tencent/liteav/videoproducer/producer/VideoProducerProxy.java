@@ -52,7 +52,7 @@ public class VideoProducerProxy {
     public void appendCustomCaptureFrame(PixelFrame pixelFrame) {
         f fVar = this.mProducer;
         if (pixelFrame == null || !pixelFrame.isFrameDataValid()) {
-            LiteavLog.w(fVar.f37155a, "appendCustomCaptureFrame: frame is not valid.");
+            LiteavLog.w(fVar.f23464a, "appendCustomCaptureFrame: frame is not valid.");
             return;
         }
         int width = pixelFrame.getWidth();
@@ -69,14 +69,14 @@ public class VideoProducerProxy {
     }
 
     public VideoPreprocessor getVideoPreprocessor() {
-        return this.mProducer.f37156c;
+        return this.mProducer.f23465c;
     }
 
     public void initialize() {
         f fVar = this.mProducer;
         synchronized (fVar) {
             if (fVar.f) {
-                LiteavLog.w(fVar.f37155a, "videoproducer already initialized.");
+                LiteavLog.w(fVar.f23464a, "videoproducer already initialized.");
                 return;
             }
             HandlerThread handlerThread = new HandlerThread("videoProducer_" + fVar.hashCode());

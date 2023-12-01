@@ -14,8 +14,8 @@ import com.anythink.core.api.ATInitMediation;
 import com.anythink.core.api.BaseAd;
 import com.anythink.core.api.ErrorCode;
 import com.anythink.core.api.MediationInitCallback;
-import com.anythink.core.common.b.g;
 import com.anythink.splashad.unitgroup.api.CustomSplashAdapter;
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.kwad.sdk.api.KsAdSDK;
 import com.kwad.sdk.api.KsLoadManager;
 import com.kwad.sdk.api.KsScene;
@@ -27,11 +27,11 @@ import java.util.Map;
 public class KSATSplashAdapter extends CustomSplashAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    long f9013a;
+    long f6173a;
     KsSplashScreenAd b;
 
     /* renamed from: c  reason: collision with root package name */
-    View f9014c;
+    View f6174c;
     boolean d;
     Context e;
     String f;
@@ -74,14 +74,14 @@ public class KSATSplashAdapter extends CustomSplashAdapter {
                 ATBiddingListener aTBiddingListener = KSATSplashAdapter.this.mBiddingListener;
                 StringBuilder sb = new StringBuilder();
                 sb.append(System.currentTimeMillis());
-                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), kSATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), kSATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
             }
         }
     }
 
     private void a() {
         AnonymousClass2 anonymousClass2 = new AnonymousClass2();
-        KsScene.Builder adNum = new KsScene.Builder(this.f9013a).adNum(1);
+        KsScene.Builder adNum = new KsScene.Builder(this.f6173a).adNum(1);
         if (!TextUtils.isEmpty(this.f)) {
             adNum.setBidResponseV2(this.f);
         }
@@ -90,7 +90,7 @@ public class KSATSplashAdapter extends CustomSplashAdapter {
 
     static /* synthetic */ void a(KSATSplashAdapter kSATSplashAdapter) {
         AnonymousClass2 anonymousClass2 = new AnonymousClass2();
-        KsScene.Builder adNum = new KsScene.Builder(kSATSplashAdapter.f9013a).adNum(1);
+        KsScene.Builder adNum = new KsScene.Builder(kSATSplashAdapter.f6173a).adNum(1);
         if (!TextUtils.isEmpty(kSATSplashAdapter.f)) {
             adNum.setBidResponseV2(kSATSplashAdapter.f);
         }
@@ -104,17 +104,17 @@ public class KSATSplashAdapter extends CustomSplashAdapter {
             return false;
         }
         try {
-            this.f9013a = Long.parseLong(stringFromMap2);
+            this.f6173a = Long.parseLong(stringFromMap2);
         } catch (NumberFormatException e) {
         }
         if (map.containsKey("zoomoutad_sw")) {
             this.j = TextUtils.equals("2", ATInitMediation.getStringFromMap(map, "zoomoutad_sw"));
         }
-        if (map.containsKey(g.k.o)) {
-            this.g = ATInitMediation.getDoubleFromMap(map, g.k.o);
+        if (map.containsKey("anythink_gsp")) {
+            this.g = ATInitMediation.getDoubleFromMap(map, "anythink_gsp");
         }
-        if (map.containsKey("payload")) {
-            this.f = KSATInitManager.getInstance().getPayloadInfo(ATInitMediation.getStringFromMap(map, "payload"), this.g);
+        if (map.containsKey(AssistPushConsts.MSG_TYPE_PAYLOAD)) {
+            this.f = KSATInitManager.getInstance().getPayloadInfo(ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD), this.g);
             return true;
         }
         return true;
@@ -141,44 +141,37 @@ public class KSATSplashAdapter extends CustomSplashAdapter {
         return 2;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
         this.b = null;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void getBidRequestInfo(Context context, Map<String, Object> map, Map<String, Object> map2, ATBidRequestInfoListener aTBidRequestInfoListener) {
-        this.f9013a = ATInitMediation.getLongFromMap(map, "position_id");
+        this.f6173a = ATInitMediation.getLongFromMap(map, "position_id");
         KSATInitManager.getInstance().a(context, map, map2, aTBidRequestInfoListener);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return KSATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
         try {
-            return String.valueOf(this.f9013a);
+            return String.valueOf(this.f6173a);
         } catch (Exception e) {
             e.printStackTrace();
             return "";
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return KSATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
         KsSplashScreenAd ksSplashScreenAd = this.b;
         return ksSplashScreenAd != null && ksSplashScreenAd.isAdEnable();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(Context context, final Map<String, Object> map, final Map<String, Object> map2) {
         if (!a(map)) {
             notifyATLoadFail("", "kuaishou app_id or position_id is empty.");
@@ -186,12 +179,10 @@ public class KSATSplashAdapter extends CustomSplashAdapter {
         }
         this.e = context.getApplicationContext();
         KSATInitManager.getInstance().initSDK(this.e, map, new MediationInitCallback() { // from class: com.anythink.network.ks.KSATSplashAdapter.1
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onFail(String str) {
                 KSATSplashAdapter.this.notifyATLoadFail("", str);
             }
 
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onSuccess() {
                 if (KSATSplashAdapter.this.getMixedFormatAdType() != 0) {
                     KSATSplashAdapter.a(KSATSplashAdapter.this);
@@ -237,7 +228,7 @@ public class KSATSplashAdapter extends CustomSplashAdapter {
                             return;
                         }
                         KSATSplashAdapter.this.d = true;
-                        KSATSplashAdapter.this.mImpressionListener.onSplashAdShowFail(ErrorCode.getErrorCode(ErrorCode.adShowError, String.valueOf(i), str));
+                        KSATSplashAdapter.this.mImpressionListener.onSplashAdShowFail(ErrorCode.getErrorCode("4006", String.valueOf(i), str));
                         KSATSplashAdapter.this.mImpressionListener.onSplashAdDismiss();
                     }
 
@@ -278,7 +269,7 @@ public class KSATSplashAdapter extends CustomSplashAdapter {
                     viewGroup.addView(view, new ViewGroup.LayoutParams(-1, -1));
                     return;
                 }
-                this.f9014c = view;
+                this.f6174c = view;
                 viewGroup.addView(view, new ViewGroup.LayoutParams(-1, -1));
             } catch (Throwable th) {
                 Log.e(this.i, th.getMessage());
@@ -287,7 +278,6 @@ public class KSATSplashAdapter extends CustomSplashAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.h = true;
         if (getMixedFormatAdType() == 0) {

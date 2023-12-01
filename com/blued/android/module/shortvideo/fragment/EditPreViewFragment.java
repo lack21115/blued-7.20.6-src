@@ -32,9 +32,7 @@ import com.bytedance.applog.tracker.Tracker;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/fragment/EditPreViewFragment.class */
 public class EditPreViewFragment extends ShortVideoBaseFragment<IBaseView, EditPreViewPresenter> implements View.OnClickListener, IBaseView, IEditPreContentView, EventObserver {
     private GLSurfaceView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RelativeLayout f15718c;
+    private RelativeLayout c;
     private ImageView n;
     private KeyboardListenLinearLayout o;
     private RelativeLayout p;
@@ -47,9 +45,7 @@ public class EditPreViewFragment extends ShortVideoBaseFragment<IBaseView, EditP
     /* renamed from: com.blued.android.module.shortvideo.fragment.EditPreViewFragment$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/fragment/EditPreViewFragment$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f15719a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -59,33 +55,33 @@ public class EditPreViewFragment extends ShortVideoBaseFragment<IBaseView, EditP
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[EventType.VALUE.values().length];
-            f15719a = iArr;
+            a = iArr;
             try {
                 iArr[EventType.VALUE.CONFIG_VOLUME.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f15719a[EventType.VALUE.CONFIG_FILTER.ordinal()] = 2;
+                a[EventType.VALUE.CONFIG_FILTER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f15719a[EventType.VALUE.CONFIG_COVER.ordinal()] = 3;
+                a[EventType.VALUE.CONFIG_COVER.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f15719a[EventType.VALUE.EDIT_FINISH.ordinal()] = 4;
+                a[EventType.VALUE.EDIT_FINISH.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f15719a[EventType.VALUE.HIDE_COVER.ordinal()] = 5;
+                a[EventType.VALUE.HIDE_COVER.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f15719a[EventType.VALUE.SAVE_FILTER.ordinal()] = 6;
+                a[EventType.VALUE.SAVE_FILTER.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f15719a[EventType.VALUE.SAVE_VOLUME.ordinal()] = 7;
+                a[EventType.VALUE.SAVE_VOLUME.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -111,15 +107,15 @@ public class EditPreViewFragment extends ShortVideoBaseFragment<IBaseView, EditP
     }
 
     private void k() {
-        if (this.f15718c.getVisibility() == 0) {
-            StvViewUtils.f(getContext(), this.f15718c);
+        if (this.c.getVisibility() == 0) {
+            StvViewUtils.f(getContext(), this.c);
         }
     }
 
     private void l() {
-        if (this.f15718c.getVisibility() == 8) {
-            this.f15718c.setVisibility(0);
-            StvViewUtils.e(getContext(), this.f15718c);
+        if (this.c.getVisibility() == 8) {
+            this.c.setVisibility(0);
+            StvViewUtils.e(getContext(), this.c);
         }
     }
 
@@ -185,7 +181,7 @@ public class EditPreViewFragment extends ShortVideoBaseFragment<IBaseView, EditP
 
     @Override // com.blued.android.module.shortvideo.observer.EventObserver
     public void a(EventType.VALUE value) {
-        switch (AnonymousClass1.f15719a[value.ordinal()]) {
+        switch (AnonymousClass1.a[value.ordinal()]) {
             case 1:
             case 2:
             case 3:
@@ -213,8 +209,8 @@ public class EditPreViewFragment extends ShortVideoBaseFragment<IBaseView, EditP
     protected void b(Bundle bundle) {
         getActivity().getWindow().setSoftInputMode(16);
         this.o = (KeyboardListenLinearLayout) this.m.findViewById(R.id.keyboardLinearLayout);
-        this.f15718c = (RelativeLayout) this.m.findViewById(R.id.layoutTop);
-        StatusBarHelper.a(getActivity(), this.f15718c);
+        this.c = (RelativeLayout) this.m.findViewById(R.id.layoutTop);
+        StatusBarHelper.a((Activity) getActivity(), (View) this.c);
         this.n = (ImageView) this.m.findViewById(R.id.btnBack);
         this.b = (GLSurfaceView) this.m.findViewById(R.id.stv_edit_preview);
     }
@@ -242,7 +238,7 @@ public class EditPreViewFragment extends ShortVideoBaseFragment<IBaseView, EditP
     public void j_(int i) {
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1 && i == 300 && getActivity() != null) {
@@ -289,12 +285,12 @@ public class EditPreViewFragment extends ShortVideoBaseFragment<IBaseView, EditP
         }
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         if (this.m == null) {
             super.a(layoutInflater, R.layout.activity_stv_pre_edit, viewGroup, bundle);
@@ -306,20 +302,20 @@ public class EditPreViewFragment extends ShortVideoBaseFragment<IBaseView, EditP
         return this.m;
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         ChatHelperV4Proxy.a().b();
         i();
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         i();
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         ObserverMgr.a().a(this);

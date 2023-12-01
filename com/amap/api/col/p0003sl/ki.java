@@ -3,18 +3,15 @@ package com.amap.api.col.p0003sl;
 import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
+import com.anythink.core.api.ATAdConst;
 import java.lang.ref.WeakReference;
 
 /* renamed from: com.amap.api.col.3sl.ki  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ki.class */
 public class ki {
-
-    /* renamed from: a  reason: collision with root package name */
-    static int f5272a = 1000;
+    static int a = 1000;
     static boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    static int f5273c = 20;
+    static int c = 20;
     static int d = 0;
     private static WeakReference<ke> e;
     private static int f = 10;
@@ -23,54 +20,50 @@ public class ki {
     /* renamed from: com.amap.api.col.3sl.ki$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ki$a.class */
     public static final class a extends lc {
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f5274a;
+        private int a;
         private Context b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private kh f5275c;
+        private kh c;
 
         a(Context context, int i) {
             this.b = context;
-            this.f5274a = i;
+            this.a = i;
         }
 
         a(Context context, kh khVar) {
             this(context, 1);
-            this.f5275c = khVar;
+            this.c = khVar;
         }
 
         @Override // com.amap.api.col.p0003sl.lc
         public final void runTask() {
-            int i = this.f5274a;
+            int i = this.a;
             if (i == 1) {
                 try {
                     synchronized (ki.class) {
                         String l = Long.toString(System.currentTimeMillis());
-                        ke a2 = kl.a(ki.e);
-                        kl.a(this.b, a2, iu.i, ki.f5272a, 2097152, "6");
-                        if (a2.e == null) {
-                            a2.e = new jm(new jo(new jp(new jo())));
+                        ke a = kl.a(ki.e);
+                        kl.a(this.b, a, iu.i, ki.a, 2097152, ATAdConst.ATDevFrameworkType.FLUTTER);
+                        if (a.e == null) {
+                            a.e = new jm(new jo(new jp(new jo())));
                         }
-                        kf.a(l, this.f5275c.a(), a2);
+                        kf.a(l, this.c.a(), a);
                     }
                 } catch (Throwable th) {
                     iw.c(th, "ofm", "aple");
                 }
             } else if (i == 2) {
                 try {
-                    ke a3 = kl.a(ki.e);
-                    kl.a(this.b, a3, iu.i, ki.f5272a, 2097152, "6");
-                    a3.h = 14400000;
-                    if (a3.g == null) {
-                        a3.g = new kp(new ko(this.b, new kt(), new jm(new jo(new jp())), new String(ip.a(10)), ho.f(this.b), hs.v(this.b), hs.k(this.b), hs.h(this.b), hs.a(), Build.MANUFACTURER, Build.DEVICE, hs.y(this.b), ho.c(this.b), Build.MODEL, ho.d(this.b), ho.b(this.b), hs.g(this.b), hs.a(this.b), String.valueOf(Build.VERSION.SDK_INT)));
+                    ke a2 = kl.a(ki.e);
+                    kl.a(this.b, a2, iu.i, ki.a, 2097152, ATAdConst.ATDevFrameworkType.FLUTTER);
+                    a2.h = 14400000;
+                    if (a2.g == null) {
+                        a2.g = new kp(new ko(this.b, new kt(), new jm(new jo(new jp())), new String(ip.a(10)), ho.f(this.b), hs.v(this.b), hs.k(this.b), hs.h(this.b), hs.a(), Build.MANUFACTURER, Build.DEVICE, hs.y(this.b), ho.c(this.b), Build.MODEL, ho.d(this.b), ho.b(this.b), hs.g(this.b), hs.a(this.b), String.valueOf(Build.VERSION.SDK_INT)));
                     }
-                    if (TextUtils.isEmpty(a3.i)) {
-                        a3.i = "fKey";
+                    if (TextUtils.isEmpty(a2.i)) {
+                        a2.i = "fKey";
                     }
-                    a3.f = new kx(this.b, a3.h, a3.i, new kv(this.b, ki.b, ki.f * 1024, ki.f5273c * 1024, "offLocKey", ki.d * 1024));
-                    kf.a(a3);
+                    a2.f = new kx(this.b, a2.h, a2.i, new kv(this.b, ki.b, ki.f * 1024, ki.c * 1024, "offLocKey", ki.d * 1024));
+                    kf.a(a2);
                 } catch (Throwable th2) {
                     iw.c(th2, "ofm", "uold");
                 }
@@ -82,7 +75,7 @@ public class ki {
     public static void a(int i, boolean z) {
         synchronized (ki.class) {
             try {
-                f5272a = i;
+                a = i;
                 b = z;
             } catch (Throwable th) {
                 throw th;
@@ -102,7 +95,7 @@ public class ki {
             java.lang.Class<com.amap.api.col.3sl.ki> r0 = com.amap.api.col.p0003sl.ki.class
             monitor-enter(r0)
             r0 = r3
-            com.amap.api.col.p0003sl.ki.f5272a = r0     // Catch: java.lang.Throwable -> L37
+            com.amap.api.col.p0003sl.ki.a = r0     // Catch: java.lang.Throwable -> L37
             r0 = r4
             com.amap.api.col.p0003sl.ki.b = r0     // Catch: java.lang.Throwable -> L37
             r0 = r5
@@ -116,7 +109,7 @@ public class ki {
             goto L3f
         L1c:
             r0 = r3
-            com.amap.api.col.p0003sl.ki.f5273c = r0     // Catch: java.lang.Throwable -> L37
+            com.amap.api.col.p0003sl.ki.c = r0     // Catch: java.lang.Throwable -> L37
             r0 = r3
             r1 = 5
             int r0 = r0 / r1

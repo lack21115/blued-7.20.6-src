@@ -430,9 +430,8 @@ public class TvView extends ViewGroup {
         this.mSession.setSurface(surface);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         if (this.mWindowZOrder != 2) {
             canvas.drawColor(0, PorterDuff.Mode.CLEAR);
         }
@@ -544,23 +543,20 @@ public class TvView extends ViewGroup {
         return this.mSession.getTracks(i);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         createSessionOverlayView();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         removeSessionOverlayView();
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         if (this.mUseRequestedSurfaceLayout) {
             this.mSurfaceView.layout(this.mSurfaceViewLeft, this.mSurfaceViewTop, this.mSurfaceViewRight, this.mSurfaceViewBottom);
         } else {
@@ -568,9 +564,8 @@ public class TvView extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         this.mSurfaceView.measure(i, i2);
         int measuredWidth = this.mSurfaceView.getMeasuredWidth();
         int measuredHeight = this.mSurfaceView.getMeasuredHeight();
@@ -582,9 +577,8 @@ public class TvView extends ViewGroup {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         this.mSurfaceView.setVisibility(i);
         if (i == 0) {

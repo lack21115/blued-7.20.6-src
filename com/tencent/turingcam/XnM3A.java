@@ -11,26 +11,26 @@ import java.util.concurrent.ConcurrentHashMap;
 public class XnM3A {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<String, spXPg> f39818a = new ConcurrentHashMap();
+    private final Map<String, spXPg> f26127a = new ConcurrentHashMap();
     private HandlerThread b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/turingcam/XnM3A$spXPg.class */
     class spXPg extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        private final CvowV f39819a;
+        private final CvowV f26128a;
 
         spXPg(XnM3A xnM3A, HandlerThread handlerThread, CvowV cvowV) {
             super(handlerThread.getLooper());
-            this.f39819a = cvowV;
+            this.f26128a = cvowV;
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             try {
-                this.f39819a.a(message);
+                this.f26128a.a(message);
             } catch (Throwable th) {
-                this.f39819a.a(th);
+                this.f26128a.a(th);
             }
         }
     }
@@ -47,26 +47,26 @@ public class XnM3A {
         String uuid = UUID.randomUUID().toString();
         HandlerThread handlerThread = new HandlerThread("MFA-ASYNC-WORKER-" + uuid);
         handlerThread.start();
-        this.f39818a.put(uuid, new spXPg(this, handlerThread, cvowV));
+        this.f26127a.put(uuid, new spXPg(this, handlerThread, cvowV));
         return uuid;
     }
 
     public void a(String str, int i) {
-        spXPg spxpg = this.f39818a.get(str);
+        spXPg spxpg = this.f26127a.get(str);
         if (spxpg != null) {
             spxpg.removeMessages(i);
         }
     }
 
     public void a(String str, int i, long j) {
-        spXPg spxpg = this.f39818a.get(str);
+        spXPg spxpg = this.f26127a.get(str);
         if (spxpg != null) {
             spxpg.sendEmptyMessageDelayed(i, j);
         }
     }
 
     public void a(String str, Message message) {
-        spXPg spxpg = this.f39818a.get(str);
+        spXPg spxpg = this.f26127a.get(str);
         if (spxpg != null) {
             spxpg.sendMessageDelayed(message, 0L);
         }

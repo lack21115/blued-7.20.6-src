@@ -25,7 +25,7 @@ public class StringUtils {
     }
 
     public static byte[] getBytesUtf16(String str) {
-        return getBytesUnchecked(str, "UTF-16");
+        return getBytesUnchecked(str, CharEncoding.UTF_16);
     }
 
     public static byte[] getBytesUtf16Be(String str) {
@@ -64,7 +64,7 @@ public class StringUtils {
     }
 
     public static String newStringUtf16(byte[] bArr) {
-        return newString(bArr, "UTF-16");
+        return newString(bArr, CharEncoding.UTF_16);
     }
 
     public static String newStringUtf16Be(byte[] bArr) {

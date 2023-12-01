@@ -14,12 +14,12 @@ import java.util.List;
 public class VisitorGitVipAvatarAdapter extends BaseQuickAdapter<BluedMyVisitorList.ProfilePicture, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30154a;
+    private Context f16464a;
     private IRequestHost b;
 
     public VisitorGitVipAvatarAdapter(Context context, IRequestHost iRequestHost) {
         super(R.layout.item_visitor_git_vip_avatar, null);
-        this.f30154a = context;
+        this.f16464a = context;
         this.b = iRequestHost;
     }
 
@@ -34,11 +34,11 @@ public class VisitorGitVipAvatarAdapter extends BaseQuickAdapter<BluedMyVisitorL
         List<BluedMyVisitorList.ProfilePicture> data = getData();
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.img_avatar1);
         ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.img_avatar2);
-        ImageLoader.a(this.b, data.get(adapterPosition).url).b(2131237313).a(2.0f, this.f30154a.getResources().getColor(2131101191)).a(imageView);
+        ImageLoader.a(this.b, data.get(adapterPosition).url).b((int) R.drawable.user_bg_round_border_white).a(2.0f, this.f16464a.getResources().getColor(2131101191)).a(imageView);
         int size = data.size();
         int i = adapterPosition + 1;
         if (size > i) {
-            ImageLoader.a(this.b, data.get(i).url).b(2131237313).a(2.0f, this.f30154a.getResources().getColor(2131101191)).a(imageView2);
+            ImageLoader.a(this.b, data.get(i).url).b((int) R.drawable.user_bg_round_border_white).a(2.0f, this.f16464a.getResources().getColor(2131101191)).a(imageView2);
         }
     }
 }

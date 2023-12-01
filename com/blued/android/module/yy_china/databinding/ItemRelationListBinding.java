@@ -9,13 +9,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemRelationListBinding.class */
 public final class ItemRelationListBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16646a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16647c;
+    public final ImageView c;
     public final ImageView d;
     public final TextView e;
     public final TextView f;
@@ -24,9 +20,9 @@ public final class ItemRelationListBinding implements ViewBinding {
 
     private ItemRelationListBinding(FrameLayout frameLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, TextView textView, TextView textView2, TextView textView3) {
         this.h = frameLayout;
-        this.f16646a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16647c = imageView3;
+        this.c = imageView3;
         this.d = imageView4;
         this.e = textView;
         this.f = textView2;
@@ -73,7 +69,6 @@ public final class ItemRelationListBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.h;

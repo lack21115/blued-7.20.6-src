@@ -8,11 +8,11 @@ import java.util.List;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f8354a;
+    private Context f5514a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f8355c;
+    private int f5515c;
     private float d;
     private float e;
     private int f;
@@ -28,11 +28,11 @@ public final class c {
     public static final class a implements b {
 
         /* renamed from: a  reason: collision with root package name */
-        private Context f8356a;
+        private Context f5516a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f8357c;
+        private int f5517c;
         private float d;
         private float e;
         private int f;
@@ -52,13 +52,13 @@ public final class c {
 
         @Override // com.anythink.expressad.video.dynview.c.b
         public final b a(int i) {
-            this.f8357c = i;
+            this.f5517c = i;
             return this;
         }
 
         @Override // com.anythink.expressad.video.dynview.c.b
         public final b a(Context context) {
-            this.f8356a = context.getApplicationContext();
+            this.f5516a = context.getApplicationContext();
             return this;
         }
 
@@ -164,9 +164,9 @@ public final class c {
         this.d = aVar.d;
         this.f = aVar.f;
         this.g = aVar.g;
-        this.f8354a = aVar.f8356a;
+        this.f5514a = aVar.f5516a;
         this.b = aVar.b;
-        this.f8355c = aVar.f8357c;
+        this.f5515c = aVar.f5517c;
         this.h = aVar.h;
         this.i = aVar.i;
         this.j = aVar.j;
@@ -182,7 +182,7 @@ public final class c {
     }
 
     public final Context a() {
-        return this.f8354a;
+        return this.f5514a;
     }
 
     public final String b() {
@@ -210,7 +210,7 @@ public final class c {
     }
 
     public final int h() {
-        return this.f8355c;
+        return this.f5515c;
     }
 
     public final int i() {

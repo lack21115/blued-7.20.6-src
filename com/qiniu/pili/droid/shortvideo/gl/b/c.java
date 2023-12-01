@@ -15,11 +15,11 @@ import java.util.concurrent.CountDownLatch;
 public class c implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Object f27700a;
+    private Object f14012a;
     private Surface b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27701c;
+    private int f14013c;
     private int d;
     private f e;
     private g f = new g();
@@ -32,17 +32,17 @@ public class c implements Runnable {
     static class a extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        private WeakReference<c> f27702a;
+        private WeakReference<c> f14014a;
 
         public a(c cVar) {
-            this.f27702a = new WeakReference<>(cVar);
+            this.f14014a = new WeakReference<>(cVar);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             super.handleMessage(message);
             b bVar = (b) message.obj;
-            c cVar = this.f27702a.get();
+            c cVar = this.f14014a.get();
             if (cVar != null) {
                 cVar.a(bVar);
             }
@@ -54,39 +54,39 @@ public class c implements Runnable {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f27703a;
+        public int f14015a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f27704c;
+        public int f14016c;
         public long d;
         public CountDownLatch e = new CountDownLatch(1);
 
         public b(int i, int i2, int i3, long j) {
-            this.f27703a = i;
+            this.f14015a = i;
             this.b = i2;
-            this.f27704c = i3;
+            this.f14016c = i3;
             this.d = j;
         }
     }
 
     public c(Object obj, Surface surface, int i, int i2, PLDisplayMode pLDisplayMode) {
-        this.f27700a = obj;
+        this.f14012a = obj;
         this.b = surface;
-        this.f27701c = i;
+        this.f14013c = i;
         this.d = i2;
         this.i = pLDisplayMode;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(b bVar) {
-        if (!this.f.k() && bVar.b != 0 && bVar.f27704c != 0) {
-            this.f.a(this.f27701c, this.d);
-            this.f.a(bVar.b, bVar.f27704c, this.i);
+        if (!this.f.k() && bVar.b != 0 && bVar.f14016c != 0) {
+            this.f.a(this.f14013c, this.d);
+            this.f.a(bVar.b, bVar.f14016c, this.i);
         }
-        synchronized (com.qiniu.pili.droid.shortvideo.f.d.f27670a) {
+        synchronized (com.qiniu.pili.droid.shortvideo.f.d.f13982a) {
             if (this.f != null) {
-                this.f.b(bVar.f27703a);
+                this.f.b(bVar.f14015a);
             }
         }
         this.e.a(bVar.d);
@@ -166,7 +166,7 @@ public class c implements Runnable {
                 return;
             }
             try {
-                com.qiniu.pili.droid.shortvideo.gl.a.d dVar = new com.qiniu.pili.droid.shortvideo.gl.a.d(this.f27700a, 1);
+                com.qiniu.pili.droid.shortvideo.gl.a.d dVar = new com.qiniu.pili.droid.shortvideo.gl.a.d(this.f14012a, 1);
                 f fVar = new f(dVar, this.b, false);
                 this.e = fVar;
                 fVar.b();

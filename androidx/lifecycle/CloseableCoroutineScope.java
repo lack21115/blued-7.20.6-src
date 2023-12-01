@@ -1,28 +1,28 @@
 package androidx.lifecycle;
 
 import java.io.Closeable;
+import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.JobKt__JobKt;
+import kotlinx.coroutines.JobKt;
 
 @Metadata
 /* loaded from: source-8756600-dex2jar.jar:androidx/lifecycle/CloseableCoroutineScope.class */
 public final class CloseableCoroutineScope implements Closeable, CoroutineScope {
     private final CoroutineContext coroutineContext;
 
-    public CloseableCoroutineScope(CoroutineContext context) {
-        Intrinsics.e(context, "context");
-        this.coroutineContext = context;
+    public CloseableCoroutineScope(CoroutineContext coroutineContext) {
+        Intrinsics.e(coroutineContext, "context");
+        this.coroutineContext = coroutineContext;
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() {
-        JobKt__JobKt.a(getCoroutineContext(), null, 1, null);
+        JobKt.a(getCoroutineContext(), (CancellationException) null, 1, (Object) null);
     }
 
-    @Override // kotlinx.coroutines.CoroutineScope
     public CoroutineContext getCoroutineContext() {
         return this.coroutineContext;
     }

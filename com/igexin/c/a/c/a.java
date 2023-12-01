@@ -12,22 +12,22 @@ public class a {
     private static volatile a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final List<String> f23250c = new ArrayList();
+    private static final List<String> f9642c = new ArrayList();
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile Logger f23251a;
+    public volatile Logger f9643a;
 
     private a() {
         try {
-            this.f23251a = new Logger(GtcProvider.context());
-            this.f23251a.setGlobalTag("gtsdk");
-            this.f23251a.setLogcatEnable(false);
-            this.f23251a.setLogFileNameSuffix("GTSDK");
-            this.f23251a.setStackOffset(1);
-            this.f23251a.setFileEnableProperty("sdk.debug");
-            f23250c.add(g.h);
-            f23250c.add("ScheduleQueue");
-            f23250c.add("SilentTimeTimerTask");
+            this.f9643a = new Logger(GtcProvider.context());
+            this.f9643a.setGlobalTag("gtsdk");
+            this.f9643a.setLogcatEnable(false);
+            this.f9643a.setLogFileNameSuffix("GTSDK");
+            this.f9643a.setStackOffset(1);
+            this.f9643a.setFileEnableProperty("sdk.debug");
+            f9642c.add(g.h);
+            f9642c.add("ScheduleQueue");
+            f9642c.add("SilentTimeTimerTask");
         } catch (Throwable th) {
         }
     }
@@ -49,10 +49,10 @@ public class a {
 
     public static void a(String str, String str2) {
         try {
-            if (a().f23251a == null || str == null || f23250c.contains(str)) {
+            if (a().f9643a == null || str == null || f9642c.contains(str)) {
                 return;
             }
-            Logger logger = a().f23251a;
+            Logger logger = a().f9643a;
             logger.e(str + "|" + str2);
         } catch (Throwable th) {
         }
@@ -60,12 +60,12 @@ public class a {
 
     public static void a(String str, Object... objArr) {
         try {
-            if (a().f23251a != null) {
+            if (a().f9643a != null) {
                 String str2 = str;
                 if (objArr.length > 0) {
                     str2 = String.format(str, objArr);
                 }
-                a().f23251a.filelog(1, null, str2, null);
+                a().f9643a.filelog(1, null, str2, null);
             }
         } catch (Throwable th) {
         }
@@ -73,8 +73,8 @@ public class a {
 
     public static void a(Throwable th) {
         try {
-            if (a().f23251a != null) {
-                a().f23251a.e(th);
+            if (a().f9643a != null) {
+                a().f9643a.e(th);
             }
         } catch (Throwable th2) {
         }
@@ -83,24 +83,24 @@ public class a {
     public static void a(boolean z) {
         try {
             e.a(Boolean.valueOf(z));
-            if (a().f23251a != null) {
-                a().f23251a.setLogcatEnable(false);
-                a().f23251a.setFileEnableProperty("sdk.debug");
+            if (a().f9643a != null) {
+                a().f9643a.setLogcatEnable(false);
+                a().f9643a.setFileEnableProperty("sdk.debug");
             }
         } catch (Throwable th) {
         }
     }
 
     private static Logger b() {
-        return a().f23251a;
+        return a().f9643a;
     }
 
     public static void b(String str, String str2) {
         try {
-            if (a().f23251a == null || str == null || f23250c.contains(str)) {
+            if (a().f9643a == null || str == null || f9642c.contains(str)) {
                 return;
             }
-            Logger logger = a().f23251a;
+            Logger logger = a().f9643a;
             logger.d(str + "|" + str2);
         } catch (Throwable th) {
         }
@@ -108,30 +108,30 @@ public class a {
 
     private static void c(String str, String str2) {
         try {
-            if (a().f23251a == null || str == null || f23250c.contains(str)) {
+            if (a().f9643a == null || str == null || f9642c.contains(str)) {
                 return;
             }
-            a().f23251a.logcat(2, null, str2, null);
+            a().f9643a.logcat(2, null, str2, null);
         } catch (Throwable th) {
         }
     }
 
     private static void d(String str, String str2) {
         try {
-            if (a().f23251a == null || str == null || f23250c.contains(str)) {
+            if (a().f9643a == null || str == null || f9642c.contains(str)) {
                 return;
             }
-            a().f23251a.logcat(3, null, str2, null);
+            a().f9643a.logcat(3, null, str2, null);
         } catch (Throwable th) {
         }
     }
 
     private static void e(String str, String str2) {
         try {
-            if (a().f23251a == null || str == null || f23250c.contains(str)) {
+            if (a().f9643a == null || str == null || f9642c.contains(str)) {
                 return;
             }
-            a().f23251a.logcat(4, null, str2, null);
+            a().f9643a.logcat(4, null, str2, null);
         } catch (Throwable th) {
         }
     }

@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.collection.ArrayMap;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.module.common.api.BluedApiProxy;
@@ -35,11 +38,11 @@ import kotlin.reflect.KProperty;
 public final class LoginFragment extends MVVMBaseFragment<LoginViewModel> {
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f20570c;
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(LoginFragment.class, "viewBinding", "getViewBinding()Lcom/blued/login/databinding/FragmentLoginTestBinding;", 0))};
+    private final ViewBindingProperty f6964c;
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(LoginFragment.class, "viewBinding", "getViewBinding()Lcom/blued/login/databinding/FragmentLoginTestBinding;", 0))};
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f20569a = new Companion(null);
+    public static final Companion f6963a = new Companion(null);
 
     @Metadata
     /* loaded from: source-7206380-dex2jar.jar:com/blued/login/test/LoginFragment$Companion.class */
@@ -52,23 +55,23 @@ public final class LoginFragment extends MVVMBaseFragment<LoginViewModel> {
         }
 
         public final void a(Context context) {
-            TerminalActivity.d(context, LoginFragment.class, null);
+            TerminalActivity.d(context, LoginFragment.class, (Bundle) null);
         }
     }
 
     public LoginFragment() {
         super(R.layout.fragment_login_test);
-        this.f20570c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LoginFragment, FragmentLoginTestBinding>() { // from class: com.blued.login.test.LoginFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        this.f6964c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<LoginFragment, FragmentLoginTestBinding>() { // from class: com.blued.login.test.LoginFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/blued/login/test/LoginFragment;)Lcom/blued/login/databinding/FragmentLoginTestBinding; */
             /* renamed from: a */
-            public final FragmentLoginTestBinding invoke(LoginFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentLoginTestBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<LoginFragment, FragmentLoginTestBinding>() { // from class: com.blued.login.test.LoginFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/blued/login/test/LoginFragment;)Lcom/blued/login/databinding/FragmentLoginTestBinding; */
             /* renamed from: a */
-            public final FragmentLoginTestBinding invoke(LoginFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentLoginTestBinding.a(fragment.requireView());
             }
@@ -76,10 +79,10 @@ public final class LoginFragment extends MVVMBaseFragment<LoginViewModel> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FragmentLoginTestBinding viewBinding, View view) {
-        Intrinsics.e(viewBinding, "$viewBinding");
-        LoginPreferences.a(viewBinding.j.isChecked());
-        if (viewBinding.j.isChecked()) {
+    public static final void a(FragmentLoginTestBinding fragmentLoginTestBinding, View view) {
+        Intrinsics.e(fragmentLoginTestBinding, "$viewBinding");
+        LoginPreferences.a(fragmentLoginTestBinding.j.isChecked());
+        if (fragmentLoginTestBinding.j.isChecked()) {
             BluedHttpUrl.k();
         } else {
             BluedHttpUrl.l();
@@ -93,33 +96,33 @@ public final class LoginFragment extends MVVMBaseFragment<LoginViewModel> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FragmentLoginTestBinding viewBinding, LoginFragment this$0, View view) {
-        Intrinsics.e(viewBinding, "$viewBinding");
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(FragmentLoginTestBinding fragmentLoginTestBinding, LoginFragment loginFragment, View view) {
+        Intrinsics.e(fragmentLoginTestBinding, "$viewBinding");
+        Intrinsics.e(loginFragment, "this$0");
         LoginAccountModel loginAccountModel = new LoginAccountModel();
         loginAccountModel.b("mobile");
         StringBuilder sb = new StringBuilder();
-        sb.append((Object) viewBinding.d.getText());
+        sb.append((Object) fragmentLoginTestBinding.d.getText());
         sb.append('-');
-        sb.append((Object) viewBinding.f20524c.getText());
+        sb.append((Object) fragmentLoginTestBinding.f6918c.getText());
         loginAccountModel.c(sb.toString());
-        loginAccountModel.d(viewBinding.f.getText().toString());
-        this$0.a().a(this$0.getContext(), loginAccountModel);
+        loginAccountModel.d(fragmentLoginTestBinding.f.getText().toString());
+        ((LoginViewModel) loginFragment.a()).a(loginFragment.getContext(), loginAccountModel);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(FragmentLoginTestBinding viewBinding, LoginFragment this$0, View view) {
-        Intrinsics.e(viewBinding, "$viewBinding");
-        Intrinsics.e(this$0, "this$0");
+    public static final void b(FragmentLoginTestBinding fragmentLoginTestBinding, LoginFragment loginFragment, View view) {
+        Intrinsics.e(fragmentLoginTestBinding, "$viewBinding");
+        Intrinsics.e(loginFragment, "this$0");
         LoginAccountModel loginAccountModel = new LoginAccountModel();
         loginAccountModel.b("mobile");
         StringBuilder sb = new StringBuilder();
-        sb.append((Object) viewBinding.d.getText());
+        sb.append((Object) fragmentLoginTestBinding.d.getText());
         sb.append('-');
-        sb.append((Object) viewBinding.f20524c.getText());
+        sb.append((Object) fragmentLoginTestBinding.f6918c.getText());
         loginAccountModel.c(sb.toString());
-        loginAccountModel.d(viewBinding.f.getText().toString());
-        this$0.a().a(this$0.getContext(), loginAccountModel.b(), loginAccountModel.c(), viewBinding.b.getText().toString());
+        loginAccountModel.d(fragmentLoginTestBinding.f.getText().toString());
+        ((LoginViewModel) loginFragment.a()).a(loginFragment.getContext(), loginAccountModel.b(), loginAccountModel.c(), fragmentLoginTestBinding.b.getText().toString());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -130,47 +133,46 @@ public final class LoginFragment extends MVVMBaseFragment<LoginViewModel> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(FragmentLoginTestBinding viewBinding, LoginFragment this$0, View view) {
-        Intrinsics.e(viewBinding, "$viewBinding");
-        Intrinsics.e(this$0, "this$0");
+    public static final void c(FragmentLoginTestBinding fragmentLoginTestBinding, LoginFragment loginFragment, View view) {
+        Intrinsics.e(fragmentLoginTestBinding, "$viewBinding");
+        Intrinsics.e(loginFragment, "this$0");
         LoginAccountModel loginAccountModel = new LoginAccountModel();
         loginAccountModel.b("email");
-        loginAccountModel.c(viewBinding.f20524c.getText().toString());
-        loginAccountModel.d(viewBinding.f.getText().toString());
-        this$0.a().a(this$0.getContext(), loginAccountModel);
+        loginAccountModel.c(fragmentLoginTestBinding.f6918c.getText().toString());
+        loginAccountModel.d(fragmentLoginTestBinding.f.getText().toString());
+        ((LoginViewModel) loginFragment.a()).a(loginFragment.getContext(), loginAccountModel);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(FragmentLoginTestBinding viewBinding, LoginFragment this$0, View view) {
-        Intrinsics.e(viewBinding, "$viewBinding");
-        Intrinsics.e(this$0, "this$0");
+    public static final void d(FragmentLoginTestBinding fragmentLoginTestBinding, LoginFragment loginFragment, View view) {
+        Intrinsics.e(fragmentLoginTestBinding, "$viewBinding");
+        Intrinsics.e(loginFragment, "this$0");
         LoginAccountModel loginAccountModel = new LoginAccountModel();
         loginAccountModel.b("mobile");
         StringBuilder sb = new StringBuilder();
-        sb.append((Object) viewBinding.d.getText());
+        sb.append((Object) fragmentLoginTestBinding.d.getText());
         sb.append('-');
-        sb.append((Object) viewBinding.f20524c.getText());
+        sb.append((Object) fragmentLoginTestBinding.f6918c.getText());
         loginAccountModel.c(sb.toString());
-        this$0.a().a(this$0.getContext(), loginAccountModel.b(), "", viewBinding.b.getText().toString());
+        ((LoginViewModel) loginFragment.a()).a(loginFragment.getContext(), loginAccountModel.b(), "", fragmentLoginTestBinding.b.getText().toString());
     }
 
-    public final LoginAccountModel a(String name, String type, String identify, String pwd) {
-        Intrinsics.e(name, "name");
-        Intrinsics.e(type, "type");
-        Intrinsics.e(identify, "identify");
-        Intrinsics.e(pwd, "pwd");
+    public final LoginAccountModel a(String str, String str2, String str3, String str4) {
+        Intrinsics.e(str, "name");
+        Intrinsics.e(str2, "type");
+        Intrinsics.e(str3, "identify");
+        Intrinsics.e(str4, "pwd");
         LoginAccountModel loginAccountModel = new LoginAccountModel();
-        loginAccountModel.a(name);
-        loginAccountModel.b(type);
-        loginAccountModel.c(identify);
-        loginAccountModel.d(pwd);
+        loginAccountModel.a(str);
+        loginAccountModel.b(str2);
+        loginAccountModel.c(str3);
+        loginAccountModel.d(str4);
         return loginAccountModel;
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
         BluedHttpUrl.k();
-        BluedDeviceIdentity.a().a(AppInfo.d(), Intrinsics.a(BluedHttpUrl.q(), (Object) "/blued/device"), 2);
+        BluedDeviceIdentity.a().a(AppInfo.d(), Intrinsics.a(BluedHttpUrl.q(), "/blued/device"), 2);
         final FragmentLoginTestBinding p = p();
         if (p == null) {
             return;
@@ -212,20 +214,19 @@ public final class LoginFragment extends MVVMBaseFragment<LoginViewModel> {
             BluedHttpUrl.l();
         }
         p.i.setLayoutManager(new LinearLayoutManager(getContext(), 1, false));
-        LoginAccountAdapter loginAccountAdapter = new LoginAccountAdapter(getContext(), a());
+        LoginAccountAdapter loginAccountAdapter = new LoginAccountAdapter(getContext(), (LoginViewModel) a());
         loginAccountAdapter.setNewData(q());
         p.i.setAdapter(loginAccountAdapter);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        LoginFragment loginFragment = this;
-        LifecycleExtKt.a(loginFragment, a().d(), new LoginFragment$liveDataObserver$1(this));
-        LifecycleExtKt.a(loginFragment, a().e(), new LoginFragment$liveDataObserver$2(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, ((LoginViewModel) a()).d(), new LoginFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, ((LoginViewModel) a()).e(), new LoginFragment$liveDataObserver$2(this));
     }
 
     public final FragmentLoginTestBinding p() {
-        return (FragmentLoginTestBinding) this.f20570c.b(this, b[0]);
+        return (FragmentLoginTestBinding) this.f6964c.b(this, b[0]);
     }
 
     public final List<LoginAccountModel> q() {

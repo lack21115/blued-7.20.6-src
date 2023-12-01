@@ -6,6 +6,7 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.Base64;
 import com.umeng.analytics.pro.bh;
+import com.xiaomi.mipush.sdk.Constants;
 import com.zx.a.I8b7.g0;
 import com.zx.a.I8b7.w1;
 import com.zx.a.I8b7.z1;
@@ -33,16 +34,16 @@ import org.json.JSONObject;
 public class a0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static w1 f42098a;
+    public static w1 f28407a;
     public static final String[] b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/zx/a/I8b7/a0$a.class */
     public class a implements g0 {
         @Override // com.zx.a.I8b7.g0
         public e1 a(g0.a aVar) throws IOException {
-            if (d3.a(t2.f42201a, true)) {
+            if (d3.a(t2.f28510a, true)) {
                 v0 v0Var = (v0) aVar;
-                return v0Var.a(v0Var.f42217c, v0Var.d);
+                return v0Var.a(v0Var.f28526c, v0Var.d);
             }
             throw new IllegalStateException("network is not available");
         }
@@ -164,7 +165,7 @@ public class a0 {
             if (i2 >= 5) {
                 return;
             }
-            stringBuffer.append("-");
+            stringBuffer.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             i = i2 + 1;
         }
     }
@@ -202,7 +203,7 @@ public class a0 {
         try {
             jSONObject.put(bh.x, "Android");
             jSONObject.put("applicationId", t2.g);
-            PackageManager packageManager = d3.f42116a;
+            PackageManager packageManager = d3.f28425a;
             jSONObject.put("country", Locale.getDefault().getCountry());
             jSONObject.put("language", Locale.getDefault().getLanguage());
             jSONObject.put("model", Build.MODEL);
@@ -230,7 +231,7 @@ public class a0 {
         try {
             jSONObject.put("version", t2.b);
             jSONObject.put("configVersion", t2.l);
-            if (TextUtils.equals("core-d", t2.f42202c)) {
+            if (TextUtils.equals("core-d", t2.f28511c)) {
                 jSONObject.put("versiond", t2.d);
             }
             jSONObject.put("channelId", t2.e);
@@ -257,14 +258,14 @@ public class a0 {
     public static void i() {
         try {
             w1.a aVar = new w1.a();
-            aVar.b.add(new l0(z1.a.f42234a.f42233a, 5));
+            aVar.b.add(new l0(z1.a.f28543a.f28542a, 5));
             aVar.b.add(new a());
             SSLSocketFactory c2 = c();
             if (c2 == null) {
                 throw new NullPointerException("sslSocketFactory == null");
             }
-            aVar.f42223c = c2;
-            f42098a = new w1(aVar);
+            aVar.f28532c = c2;
+            f28407a = new w1(aVar);
         } catch (Throwable th) {
             z1.a(th);
             th.printStackTrace();

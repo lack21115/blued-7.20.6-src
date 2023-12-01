@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,13 +46,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYRedPackageDialog.class */
 public final class YYRedPackageDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogRedPackageBinding f17417a;
+    private DialogRedPackageBinding a;
     private YYRedPackageDetails b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRedPackageItemAdapter f17418c;
+    private YYRedPackageItemAdapter c;
     private YYGiftModel d;
     private ArrayList<YYSeatMemberModel> e;
     private String f = "";
@@ -70,16 +67,16 @@ public final class YYRedPackageDialog extends BaseFullScreenDialog {
     public static final void a(YYRedPackageDialog this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         List<YYRedPackageDetails> data;
         Intrinsics.e(this$0, "this$0");
-        YYRedPackageItemAdapter yYRedPackageItemAdapter = this$0.f17418c;
+        YYRedPackageItemAdapter yYRedPackageItemAdapter = this$0.c;
         if (yYRedPackageItemAdapter == null || (data = yYRedPackageItemAdapter.getData()) == null) {
             return;
         }
         for (YYRedPackageDetails yYRedPackageDetails : data) {
             yYRedPackageDetails.set_checked(0);
         }
-        this$0.b = data.get(i);
-        data.get(i).set_checked(1);
-        YYRedPackageItemAdapter yYRedPackageItemAdapter2 = this$0.f17418c;
+        this$0.b = (YYRedPackageDetails) data.get(i);
+        ((YYRedPackageDetails) data.get(i)).set_checked(1);
+        YYRedPackageItemAdapter yYRedPackageItemAdapter2 = this$0.c;
         if (yYRedPackageItemAdapter2 == null) {
             return;
         }
@@ -95,34 +92,34 @@ public final class YYRedPackageDialog extends BaseFullScreenDialog {
             return;
         }
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = new YYPayRequestModel();
+        objectRef.a = new YYPayRequestModel();
         YYGiftModel yYGiftModel = this.d;
         if (yYGiftModel != null) {
             yYGiftModel.hit_id = System.currentTimeMillis();
         }
-        ((YYPayRequestModel) objectRef.f42545a).gift = this.d;
-        YYPayRequestModel yYPayRequestModel = (YYPayRequestModel) objectRef.f42545a;
+        ((YYPayRequestModel) objectRef.a).gift = this.d;
+        YYPayRequestModel yYPayRequestModel = (YYPayRequestModel) objectRef.a;
         YYRedPackageDetails yYRedPackageDetails = this.b;
         yYPayRequestModel.beans = StringUtils.a(yYRedPackageDetails == null ? null : yYRedPackageDetails.getTotal_beans(), 0L);
-        ((YYPayRequestModel) objectRef.f42545a).giftCount = 1;
-        YYPayRequestModel yYPayRequestModel2 = (YYPayRequestModel) objectRef.f42545a;
+        ((YYPayRequestModel) objectRef.a).giftCount = 1;
+        YYPayRequestModel yYPayRequestModel2 = (YYPayRequestModel) objectRef.a;
         YYGiftModel yYGiftModel2 = this.d;
         yYPayRequestModel2.goods_id = yYGiftModel2 == null ? null : yYGiftModel2.goods_id;
-        YYPayRequestModel yYPayRequestModel3 = (YYPayRequestModel) objectRef.f42545a;
+        YYPayRequestModel yYPayRequestModel3 = (YYPayRequestModel) objectRef.a;
         YYGiftModel yYGiftModel3 = this.d;
         Integer valueOf = yYGiftModel3 == null ? null : Integer.valueOf(yYGiftModel3.goods_type);
         Intrinsics.a(valueOf);
         yYPayRequestModel3.goods_type = valueOf.intValue();
-        ((YYPayRequestModel) objectRef.f42545a).hit_id = 0L;
-        ((YYPayRequestModel) objectRef.f42545a).payCode = str;
-        ((YYPayRequestModel) objectRef.f42545a).remember_me = z;
-        ((YYPayRequestModel) objectRef.f42545a).room_id = b.room_id;
-        ((YYPayRequestModel) objectRef.f42545a).target_uid = (arrayList == null || (yYSeatMemberModel = arrayList.get(0)) == null) ? null : yYSeatMemberModel.getUid();
-        ((YYPayRequestModel) objectRef.f42545a).pay_from = 1;
-        YYPayRequestModel yYPayRequestModel4 = (YYPayRequestModel) objectRef.f42545a;
+        ((YYPayRequestModel) objectRef.a).hit_id = 0L;
+        ((YYPayRequestModel) objectRef.a).payCode = str;
+        ((YYPayRequestModel) objectRef.a).remember_me = z;
+        ((YYPayRequestModel) objectRef.a).room_id = b.room_id;
+        ((YYPayRequestModel) objectRef.a).target_uid = (arrayList == null || (yYSeatMemberModel = arrayList.get(0)) == null) ? null : yYSeatMemberModel.getUid();
+        ((YYPayRequestModel) objectRef.a).pay_from = 1;
+        YYPayRequestModel yYPayRequestModel4 = (YYPayRequestModel) objectRef.a;
         YYRedPackageDetails yYRedPackageDetails2 = this.b;
         yYPayRequestModel4.redPacket_group_id = yYRedPackageDetails2 == null ? null : yYRedPackageDetails2.getId();
-        YYPayUtils.a((YYPayRequestModel) objectRef.f42545a, YYConstants.PayFromSource.Pay_Gift, this, a(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.fragment.YYRedPackageDialog$toPay$1
+        YYPayUtils.a((YYPayRequestModel) objectRef.a, YYConstants.PayFromSource.Pay_Gift, (Fragment) this, a(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.fragment.YYRedPackageDialog$toPay$1
             @Override // com.blued.android.module.yy_china.utils.YYPayUtils.PayGiftStatusListener
             public void a(int i, String errorMessage) {
                 Intrinsics.e(errorMessage, "errorMessage");
@@ -138,13 +135,13 @@ public final class YYRedPackageDialog extends BaseFullScreenDialog {
                 ArrayList arrayList5;
                 ArrayList arrayList6;
                 Intrinsics.e(goodsModel, "goodsModel");
-                YYSeatMemberModel yYSeatMemberModel2 = YYRoomInfoManager.e().o().get(objectRef.f42545a.target_uid);
+                YYSeatMemberModel yYSeatMemberModel2 = YYRoomInfoManager.e().o().get(objectRef.a.target_uid);
                 if (yYSeatMemberModel2 == null) {
                     return;
                 }
-                YYImMsgManager a2 = YYImMsgManager.a();
+                YYImMsgManager a = YYImMsgManager.a();
                 yYGiftModel4 = this.d;
-                a2.a(yYGiftModel4, yYSeatMemberModel2, goodsModel, false);
+                a.a(yYGiftModel4, yYSeatMemberModel2, goodsModel, false);
                 arrayList2 = this.e;
                 if (arrayList2 != null) {
                     arrayList3 = this.e;
@@ -217,7 +214,7 @@ public final class YYRedPackageDialog extends BaseFullScreenDialog {
         ImageView imageView;
         ImageView imageView2;
         View view;
-        DialogRedPackageBinding dialogRedPackageBinding = this.f17417a;
+        DialogRedPackageBinding dialogRedPackageBinding = this.a;
         if (dialogRedPackageBinding != null && (view = dialogRedPackageBinding.d) != null) {
             view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRedPackageDialog$1nGpFknLx1D1jUSq0hGsxNutM-g
                 @Override // android.view.View.OnClickListener
@@ -226,7 +223,7 @@ public final class YYRedPackageDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        DialogRedPackageBinding dialogRedPackageBinding2 = this.f17417a;
+        DialogRedPackageBinding dialogRedPackageBinding2 = this.a;
         if (dialogRedPackageBinding2 != null && (imageView2 = dialogRedPackageBinding2.e) != null) {
             imageView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRedPackageDialog$BL1Psd_W13OyvY5flSqxECPrp8U
                 @Override // android.view.View.OnClickListener
@@ -235,7 +232,7 @@ public final class YYRedPackageDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        DialogRedPackageBinding dialogRedPackageBinding3 = this.f17417a;
+        DialogRedPackageBinding dialogRedPackageBinding3 = this.a;
         if (dialogRedPackageBinding3 != null && (imageView = dialogRedPackageBinding3.b) != null) {
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRedPackageDialog$NpqT7L9QtxUzp31VYDq7tZk7OrM
                 @Override // android.view.View.OnClickListener
@@ -244,8 +241,8 @@ public final class YYRedPackageDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        DialogRedPackageBinding dialogRedPackageBinding4 = this.f17417a;
-        if (dialogRedPackageBinding4 == null || (shapeTextView = dialogRedPackageBinding4.f16383a) == null) {
+        DialogRedPackageBinding dialogRedPackageBinding4 = this.a;
+        if (dialogRedPackageBinding4 == null || (shapeTextView = dialogRedPackageBinding4.a) == null) {
             return;
         }
         shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRedPackageDialog$ztgMUY4Sy8sIvcxjaTo1EkRVkPg
@@ -257,32 +254,30 @@ public final class YYRedPackageDialog extends BaseFullScreenDialog {
     }
 
     private final void g() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
-        DialogRedPackageBinding dialogRedPackageBinding = this.f17417a;
+        DialogRedPackageBinding dialogRedPackageBinding = this.a;
         RecyclerView recyclerView = dialogRedPackageBinding == null ? null : dialogRedPackageBinding.g;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(linearLayoutManager);
         }
-        this.f17418c = new YYRedPackageItemAdapter();
-        DialogRedPackageBinding dialogRedPackageBinding2 = this.f17417a;
+        this.c = new YYRedPackageItemAdapter();
+        DialogRedPackageBinding dialogRedPackageBinding2 = this.a;
         RecyclerView recyclerView2 = dialogRedPackageBinding2 == null ? null : dialogRedPackageBinding2.g;
         if (recyclerView2 != null) {
-            recyclerView2.setAdapter(this.f17418c);
+            recyclerView2.setAdapter(this.c);
         }
-        YYRedPackageItemAdapter yYRedPackageItemAdapter = this.f17418c;
+        YYRedPackageItemAdapter yYRedPackageItemAdapter = this.c;
         if (yYRedPackageItemAdapter == null) {
             return;
         }
         yYRedPackageItemAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRedPackageDialog$UEfBRg1NJb4Y7fYj5zRZZufk-eM
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 YYRedPackageDialog.a(YYRedPackageDialog.this, baseQuickAdapter, view, i);
             }
         });
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1) {
@@ -296,18 +291,18 @@ public final class YYRedPackageDialog extends BaseFullScreenDialog {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_red_package, viewGroup, true);
         Intrinsics.c(inflate, "inflater.inflate(R.layou…package, container, true)");
-        this.f17417a = DialogRedPackageBinding.a(inflate);
+        this.a = DialogRedPackageBinding.a(inflate);
         f();
         g();
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
@@ -319,8 +314,8 @@ public final class YYRedPackageDialog extends BaseFullScreenDialog {
             YYRedPackageDetails yYRedPackageDetails = this.b;
             EventTrackYY.r(event, str, str2, yYRedPackageDetails == null ? null : yYRedPackageDetails.getTotal_beans());
         }
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.e((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<YYRedPackageDetails, YYRedPackageDetailsExtra>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYRedPackageDialog$onViewCreated$2
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.e((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<YYRedPackageDetails, YYRedPackageDetailsExtra>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYRedPackageDialog$onViewCreated$2
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<YYRedPackageDetails, YYRedPackageDetailsExtra> bluedEntity) {
                 YYRedPackageDetails yYRedPackageDetails2;
@@ -346,7 +341,7 @@ public final class YYRedPackageDialog extends BaseFullScreenDialog {
                     yYRedPackageDialog.b = bluedEntity.data.get(0);
                     bluedEntity.data.get(0).set_checked(1);
                 }
-                yYRedPackageItemAdapter = yYRedPackageDialog.f17418c;
+                yYRedPackageItemAdapter = yYRedPackageDialog.c;
                 if (yYRedPackageItemAdapter != null) {
                     yYRedPackageItemAdapter.setNewData(bluedEntity.data);
                 }
@@ -356,7 +351,7 @@ public final class YYRedPackageDialog extends BaseFullScreenDialog {
                 }
                 yYRedPackageDialog.f = yYRedPackageDetailsExtra.getClose_time();
                 yYRedPackageDialog.d = yYRedPackageDetailsExtra.getGoods_info();
-                dialogRedPackageBinding = yYRedPackageDialog.f17417a;
+                dialogRedPackageBinding = yYRedPackageDialog.a;
                 TextView textView = dialogRedPackageBinding == null ? null : dialogRedPackageBinding.h;
                 if (textView == null) {
                     return;

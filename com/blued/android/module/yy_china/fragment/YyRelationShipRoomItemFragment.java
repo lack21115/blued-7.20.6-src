@@ -7,6 +7,7 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.Group;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.ui.BaseFragmentActivity;
@@ -36,13 +37,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YyRelationShipRoomItemFragment.class */
 public final class YyRelationShipRoomItemFragment extends MvpFragment<MvpPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private FragYyRelationshipInfoItemBinding f17507a;
+    private FragYyRelationshipInfoItemBinding a;
     private YYRelationShipRoomUserCardInfoMode b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRelationShipRoomMode f17508c;
+    private YYRelationShipRoomMode c;
     private int d = 1;
     private View.OnClickListener e;
     private View.OnClickListener f;
@@ -50,7 +47,7 @@ public final class YyRelationShipRoomItemFragment extends MvpFragment<MvpPresent
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YyRelationShipRoomItemFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding = this$0.f17507a;
+        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding = this$0.a;
         Group group = fragYyRelationshipInfoItemBinding == null ? null : fragYyRelationshipInfoItemBinding.f;
         if (group == null) {
             return;
@@ -72,25 +69,25 @@ public final class YyRelationShipRoomItemFragment extends MvpFragment<MvpPresent
 
     private final void a(ArrayList<YYRelationShipRoomLevelInfoMode> arrayList, int i) {
         ViewPager viewPager;
-        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding = this.f17507a;
+        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding = this.a;
         ViewPager viewPager2 = fragYyRelationshipInfoItemBinding == null ? null : fragYyRelationshipInfoItemBinding.J;
         if (viewPager2 != null) {
             viewPager2.setOffscreenPageLimit(3);
         }
-        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding2 = this.f17507a;
+        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding2 = this.a;
         if (fragYyRelationshipInfoItemBinding2 != null && (viewPager = fragYyRelationshipInfoItemBinding2.J) != null) {
             viewPager.setPageTransformer(true, new MedalTransformer());
         }
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
-        YYRelationShipItemUIPagerAdapter yYRelationShipItemUIPagerAdapter = new YYRelationShipItemUIPagerAdapter(childFragmentManager);
+        PagerAdapter yYRelationShipItemUIPagerAdapter = new YYRelationShipItemUIPagerAdapter(childFragmentManager);
         yYRelationShipItemUIPagerAdapter.a(arrayList, i);
-        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding3 = this.f17507a;
+        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding3 = this.a;
         ViewPager viewPager3 = fragYyRelationshipInfoItemBinding3 == null ? null : fragYyRelationshipInfoItemBinding3.J;
         if (viewPager3 != null) {
             viewPager3.setAdapter(yYRelationShipItemUIPagerAdapter);
         }
-        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding4 = this.f17507a;
+        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding4 = this.a;
         ViewPager viewPager4 = fragYyRelationshipInfoItemBinding4 == null ? null : fragYyRelationshipInfoItemBinding4.J;
         if (viewPager4 != null) {
             viewPager4.setCurrentItem(i - 1);
@@ -101,7 +98,7 @@ public final class YyRelationShipRoomItemFragment extends MvpFragment<MvpPresent
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(YyRelationShipRoomItemFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding = this$0.f17507a;
+        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding = this$0.a;
         Group group = fragYyRelationshipInfoItemBinding == null ? null : fragYyRelationshipInfoItemBinding.f;
         if (group == null) {
             return;
@@ -112,7 +109,7 @@ public final class YyRelationShipRoomItemFragment extends MvpFragment<MvpPresent
     /* JADX INFO: Access modifiers changed from: private */
     public static final void c(YyRelationShipRoomItemFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding = this$0.f17507a;
+        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding = this$0.a;
         Group group = fragYyRelationshipInfoItemBinding == null ? null : fragYyRelationshipInfoItemBinding.f;
         if (group == null) {
             return;
@@ -125,7 +122,7 @@ public final class YyRelationShipRoomItemFragment extends MvpFragment<MvpPresent
         String id;
         Intrinsics.e(this$0, "this$0");
         YYRelationShipMyAllDialog yYRelationShipMyAllDialog = new YYRelationShipMyAllDialog();
-        YYRelationShipRoomMode yYRelationShipRoomMode = this$0.f17508c;
+        YYRelationShipRoomMode yYRelationShipRoomMode = this$0.c;
         String str = null;
         if (yYRelationShipRoomMode != null && (id = yYRelationShipRoomMode.getId()) != null) {
             str = id;
@@ -169,8 +166,8 @@ public final class YyRelationShipRoomItemFragment extends MvpFragment<MvpPresent
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding;
-                fragYyRelationshipInfoItemBinding = YyRelationShipRoomItemFragment.this.f17507a;
-                TextView textView = fragYyRelationshipInfoItemBinding == null ? null : fragYyRelationshipInfoItemBinding.f16466c;
+                fragYyRelationshipInfoItemBinding = YyRelationShipRoomItemFragment.this.a;
+                TextView textView = fragYyRelationshipInfoItemBinding == null ? null : fragYyRelationshipInfoItemBinding.c;
                 if (textView != null) {
                     textView.setText("隐藏关系");
                 }
@@ -182,7 +179,7 @@ public final class YyRelationShipRoomItemFragment extends MvpFragment<MvpPresent
                 YyRelationShipRoomItemFragment.this.w();
             }
         }, this$0.getFragmentActive());
-        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding = this$0.f17507a;
+        FragYyRelationshipInfoItemBinding fragYyRelationshipInfoItemBinding = this$0.a;
         LinearLayout linearLayout = fragYyRelationshipInfoItemBinding == null ? null : fragYyRelationshipInfoItemBinding.v;
         if (linearLayout == null) {
             return;
@@ -233,7 +230,7 @@ public final class YyRelationShipRoomItemFragment extends MvpFragment<MvpPresent
     }
 
     private final void v() {
-        this.f17507a = FragYyRelationshipInfoItemBinding.a(this.i);
+        this.a = FragYyRelationshipInfoItemBinding.a(this.i);
         x();
         w();
     }
@@ -285,7 +282,7 @@ public final class YyRelationShipRoomItemFragment extends MvpFragment<MvpPresent
     }
 
     public final void a(YYRelationShipRoomMode yYRelationShipRoomMode) {
-        this.f17508c = yYRelationShipRoomMode;
+        this.c = yYRelationShipRoomMode;
     }
 
     public final void a(YYRelationShipRoomUserCardInfoMode yYRelationShipRoomUserCardInfoMode) {
@@ -301,7 +298,7 @@ public final class YyRelationShipRoomItemFragment extends MvpFragment<MvpPresent
     }
 
     public final YYRelationShipRoomMode c() {
-        return this.f17508c;
+        return this.c;
     }
 
     public final View.OnClickListener d() {
@@ -315,7 +312,7 @@ public final class YyRelationShipRoomItemFragment extends MvpFragment<MvpPresent
         YYRoomHttpUtils.Y(id, new BluedUIHttpResponse<BluedEntityA<YYRelationShipRoomUserCardInfoMode>>(fragmentActive) { // from class: com.blued.android.module.yy_china.fragment.YyRelationShipRoomItemFragment$loadInfo$1
             /* JADX INFO: Access modifiers changed from: protected */
             /* JADX WARN: Code restructure failed: missing block: B:14:0x003c, code lost:
-                r0 = r0.f17507a;
+                r0 = r0.a;
              */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */

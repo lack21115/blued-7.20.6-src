@@ -10,22 +10,22 @@ public interface a extends IInterface {
 
     /* renamed from: com.tencent.tmsqmsp.sdk.g.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/g/a/a$a.class */
-    public static abstract class AbstractBinderC1048a extends Binder implements a {
+    public static abstract class AbstractBinderC0878a extends Binder implements a {
 
         /* renamed from: com.tencent.tmsqmsp.sdk.g.a.a$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/g/a/a$a$a.class */
-        public static class C1049a implements a {
+        public static class C0879a implements a {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f39759a;
+            public IBinder f26068a;
 
-            public C1049a(IBinder iBinder) {
-                this.f39759a = iBinder;
+            public C0879a(IBinder iBinder) {
+                this.f26068a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f39759a;
+                return this.f26068a;
             }
 
             @Override // com.tencent.tmsqmsp.sdk.g.a.a
@@ -34,7 +34,7 @@ public interface a extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.asus.msa.SupplementaryDID.IDidAidlInterface");
-                    this.f39759a.transact(3, obtain, obtain2, 0);
+                    this.f26068a.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                     String readString = obtain2.readString();
                     obtain2.recycle();
@@ -68,7 +68,7 @@ public interface a extends IInterface {
                     java.lang.String r1 = "com.asus.msa.SupplementaryDID.IDidAidlInterface"
                     r0.writeInterfaceToken(r1)     // Catch: java.lang.Throwable -> L32 java.lang.Exception -> L4d
                     r0 = r6
-                    android.os.IBinder r0 = r0.f39759a     // Catch: java.lang.Throwable -> L32 java.lang.Exception -> L4d
+                    android.os.IBinder r0 = r0.f26068a     // Catch: java.lang.Throwable -> L32 java.lang.Exception -> L4d
                     r1 = 1
                     r2 = r9
                     r3 = r10
@@ -104,7 +104,7 @@ public interface a extends IInterface {
                     r11 = move-exception
                     goto L40
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.tencent.tmsqmsp.sdk.g.a.a.AbstractBinderC1048a.C1049a.g():boolean");
+                throw new UnsupportedOperationException("Method not decompiled: com.tencent.tmsqmsp.sdk.g.a.a.AbstractBinderC0878a.C0879a.g():boolean");
             }
 
             @Override // com.tencent.tmsqmsp.sdk.g.a.a
@@ -113,7 +113,7 @@ public interface a extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.asus.msa.SupplementaryDID.IDidAidlInterface");
-                    this.f39759a.transact(5, obtain, obtain2, 0);
+                    this.f26068a.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
                     String readString = obtain2.readString();
                     obtain2.recycle();
@@ -132,7 +132,7 @@ public interface a extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.asus.msa.SupplementaryDID.IDidAidlInterface");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof a)) ? new C1049a(iBinder) : (a) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof a)) ? new C0879a(iBinder) : (a) queryLocalInterface;
         }
     }
 

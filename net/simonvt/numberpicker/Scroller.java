@@ -15,13 +15,9 @@ public class Scroller {
     private static float x = 1.0f - 0.4f;
     private static final float[] y = new float[101];
     private final float A;
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f43838a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f43839c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -98,12 +94,12 @@ public class Scroller {
     }
 
     public void a(int i, int i2, int i3, int i4, int i5) {
-        this.f43838a = 0;
+        this.a = 0;
         this.q = false;
         this.m = i5;
         this.l = AnimationUtils.currentAnimationTimeMillis();
         this.b = i;
-        this.f43839c = i2;
+        this.c = i2;
         this.d = i + i3;
         this.e = i2 + i4;
         this.o = i3;
@@ -113,14 +109,14 @@ public class Scroller {
 
     public void a(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
         if (this.s && !this.q) {
-            float c2 = c();
+            float c = c();
             float f = this.d - this.b;
-            float f2 = this.e - this.f43839c;
+            float f2 = this.e - this.c;
             float sqrt = (float) Math.sqrt((f * f) + (f2 * f2));
             float f3 = f / sqrt;
             float f4 = f2 / sqrt;
-            float f5 = f3 * c2;
-            float f6 = f4 * c2;
+            float f5 = f3 * c;
+            float f6 = f4 * c;
             float f7 = i3;
             if (Math.signum(f7) == Math.signum(f5)) {
                 float f8 = i4;
@@ -131,7 +127,7 @@ public class Scroller {
                 }
             }
         }
-        this.f43838a = 1;
+        this.a = 1;
         this.q = false;
         float sqrt2 = (float) Math.sqrt((i3 * i3) + (i4 * i4));
         this.t = sqrt2;
@@ -139,7 +135,7 @@ public class Scroller {
         this.m = (int) (Math.exp(log / (u - 1.0d)) * 1000.0d);
         this.l = AnimationUtils.currentAnimationTimeMillis();
         this.b = i;
-        this.f43839c = i2;
+        this.c = i2;
         float f9 = 1.0f;
         int i9 = (sqrt2 > 0.0f ? 1 : (sqrt2 == 0.0f ? 0 : -1));
         float f10 = i9 == 0 ? 1.0f : i3 / sqrt2;
@@ -182,7 +178,7 @@ public class Scroller {
     }
 
     public final int d() {
-        return this.f43839c;
+        return this.c;
     }
 
     public final int e() {
@@ -201,13 +197,13 @@ public class Scroller {
             this.q = true;
             return true;
         }
-        int i2 = this.f43838a;
+        int i2 = this.a;
         if (i2 == 0) {
             float f = currentAnimationTimeMillis * this.n;
             Interpolator interpolator = this.r;
-            float a2 = interpolator == null ? a(f) : interpolator.getInterpolation(f);
-            this.j = this.b + Math.round(this.o * a2);
-            this.k = this.f43839c + Math.round(a2 * this.p);
+            float a = interpolator == null ? a(f) : interpolator.getInterpolation(f);
+            this.j = this.b + Math.round(this.o * a);
+            this.k = this.c + Math.round(a * this.p);
             return true;
         } else if (i2 != 1) {
             return true;
@@ -226,7 +222,7 @@ public class Scroller {
             int min = Math.min(round, this.g);
             this.j = min;
             this.j = Math.max(min, this.f);
-            int i6 = this.f43839c;
+            int i6 = this.c;
             int round2 = i6 + Math.round(f6 * (this.e - i6));
             this.k = round2;
             int min2 = Math.min(round2, this.i);

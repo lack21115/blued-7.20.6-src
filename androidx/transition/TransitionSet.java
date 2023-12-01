@@ -19,11 +19,11 @@ public class TransitionSet extends Transition {
     public static final int ORDERING_TOGETHER = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    int f3479a;
+    int f3431a;
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ArrayList<Transition> f3480c;
+    private ArrayList<Transition> f3432c;
     private boolean d;
     private int e;
 
@@ -32,34 +32,34 @@ public class TransitionSet extends Transition {
     public static class TransitionSetListener extends TransitionListenerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        TransitionSet f3482a;
+        TransitionSet f3434a;
 
         TransitionSetListener(TransitionSet transitionSet) {
-            this.f3482a = transitionSet;
+            this.f3434a = transitionSet;
         }
 
         @Override // androidx.transition.TransitionListenerAdapter, androidx.transition.Transition.TransitionListener
         public void onTransitionEnd(Transition transition) {
-            this.f3482a.f3479a--;
-            if (this.f3482a.f3479a == 0) {
-                this.f3482a.b = false;
-                this.f3482a.end();
+            this.f3434a.f3431a--;
+            if (this.f3434a.f3431a == 0) {
+                this.f3434a.b = false;
+                this.f3434a.end();
             }
             transition.removeListener(this);
         }
 
         @Override // androidx.transition.TransitionListenerAdapter, androidx.transition.Transition.TransitionListener
         public void onTransitionStart(Transition transition) {
-            if (this.f3482a.b) {
+            if (this.f3434a.b) {
                 return;
             }
-            this.f3482a.start();
-            this.f3482a.b = true;
+            this.f3434a.start();
+            this.f3434a.b = true;
         }
     }
 
     public TransitionSet() {
-        this.f3480c = new ArrayList<>();
+        this.f3432c = new ArrayList<>();
         this.d = true;
         this.b = false;
         this.e = 0;
@@ -67,7 +67,7 @@ public class TransitionSet extends Transition {
 
     public TransitionSet(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f3480c = new ArrayList<>();
+        this.f3432c = new ArrayList<>();
         this.d = true;
         this.b = false;
         this.e = 0;
@@ -78,15 +78,15 @@ public class TransitionSet extends Transition {
 
     private void a() {
         TransitionSetListener transitionSetListener = new TransitionSetListener(this);
-        Iterator<Transition> it = this.f3480c.iterator();
+        Iterator<Transition> it = this.f3432c.iterator();
         while (it.hasNext()) {
             it.next().addListener(transitionSetListener);
         }
-        this.f3479a = this.f3480c.size();
+        this.f3431a = this.f3432c.size();
     }
 
     private void a(Transition transition) {
-        this.f3480c.add(transition);
+        this.f3432c.add(transition);
         transition.mParent = this;
     }
 
@@ -95,14 +95,14 @@ public class TransitionSet extends Transition {
     /* renamed from: a */
     public TransitionSet setSceneRoot(ViewGroup viewGroup) {
         super.setSceneRoot(viewGroup);
-        int size = this.f3480c.size();
+        int size = this.f3432c.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return this;
             }
-            this.f3480c.get(i2).setSceneRoot(viewGroup);
+            this.f3432c.get(i2).setSceneRoot(viewGroup);
             i = i2 + 1;
         }
     }
@@ -122,10 +122,10 @@ public class TransitionSet extends Transition {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f3480c.size()) {
+            if (i3 >= this.f3432c.size()) {
                 return (TransitionSet) super.addTarget(i);
             }
-            this.f3480c.get(i3).addTarget(i);
+            this.f3432c.get(i3).addTarget(i);
             i2 = i3 + 1;
         }
     }
@@ -135,10 +135,10 @@ public class TransitionSet extends Transition {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3480c.size()) {
+            if (i2 >= this.f3432c.size()) {
                 return (TransitionSet) super.addTarget(view);
             }
-            this.f3480c.get(i2).addTarget(view);
+            this.f3432c.get(i2).addTarget(view);
             i = i2 + 1;
         }
     }
@@ -148,10 +148,10 @@ public class TransitionSet extends Transition {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3480c.size()) {
+            if (i2 >= this.f3432c.size()) {
                 return (TransitionSet) super.addTarget(cls);
             }
-            this.f3480c.get(i2).addTarget(cls);
+            this.f3432c.get(i2).addTarget(cls);
             i = i2 + 1;
         }
     }
@@ -161,10 +161,10 @@ public class TransitionSet extends Transition {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3480c.size()) {
+            if (i2 >= this.f3432c.size()) {
                 return (TransitionSet) super.addTarget(str);
             }
-            this.f3480c.get(i2).addTarget(str);
+            this.f3432c.get(i2).addTarget(str);
             i = i2 + 1;
         }
     }
@@ -189,17 +189,18 @@ public class TransitionSet extends Transition {
         return this;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.transition.Transition
-    protected void cancel() {
+    public void cancel() {
         super.cancel();
-        int size = this.f3480c.size();
+        int size = this.f3432c.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return;
             }
-            this.f3480c.get(i2).cancel();
+            this.f3432c.get(i2).cancel();
             i = i2 + 1;
         }
     }
@@ -207,28 +208,29 @@ public class TransitionSet extends Transition {
     @Override // androidx.transition.Transition
     public void captureEndValues(TransitionValues transitionValues) {
         if (isValidTarget(transitionValues.view)) {
-            Iterator<Transition> it = this.f3480c.iterator();
+            Iterator<Transition> it = this.f3432c.iterator();
             while (it.hasNext()) {
                 Transition next = it.next();
                 if (next.isValidTarget(transitionValues.view)) {
                     next.captureEndValues(transitionValues);
-                    transitionValues.f3487a.add(next);
+                    transitionValues.f3439a.add(next);
                 }
             }
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // androidx.transition.Transition
-    void capturePropagationValues(TransitionValues transitionValues) {
+    public void capturePropagationValues(TransitionValues transitionValues) {
         super.capturePropagationValues(transitionValues);
-        int size = this.f3480c.size();
+        int size = this.f3432c.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return;
             }
-            this.f3480c.get(i2).capturePropagationValues(transitionValues);
+            this.f3432c.get(i2).capturePropagationValues(transitionValues);
             i = i2 + 1;
         }
     }
@@ -236,12 +238,12 @@ public class TransitionSet extends Transition {
     @Override // androidx.transition.Transition
     public void captureStartValues(TransitionValues transitionValues) {
         if (isValidTarget(transitionValues.view)) {
-            Iterator<Transition> it = this.f3480c.iterator();
+            Iterator<Transition> it = this.f3432c.iterator();
             while (it.hasNext()) {
                 Transition next = it.next();
                 if (next.isValidTarget(transitionValues.view)) {
                     next.captureStartValues(transitionValues);
-                    transitionValues.f3487a.add(next);
+                    transitionValues.f3439a.add(next);
                 }
             }
         }
@@ -249,32 +251,33 @@ public class TransitionSet extends Transition {
 
     @Override // androidx.transition.Transition
     /* renamed from: clone */
-    public Transition mo1622clone() {
-        TransitionSet transitionSet = (TransitionSet) super.mo1622clone();
-        transitionSet.f3480c = new ArrayList<>();
-        int size = this.f3480c.size();
+    public Transition mo1493clone() {
+        TransitionSet transitionSet = (TransitionSet) super.mo1493clone();
+        transitionSet.f3432c = new ArrayList<>();
+        int size = this.f3432c.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return transitionSet;
             }
-            transitionSet.a(this.f3480c.get(i2).mo1622clone());
+            transitionSet.a(this.f3432c.get(i2).mo1493clone());
             i = i2 + 1;
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.transition.Transition
-    protected void createAnimators(ViewGroup viewGroup, TransitionValuesMaps transitionValuesMaps, TransitionValuesMaps transitionValuesMaps2, ArrayList<TransitionValues> arrayList, ArrayList<TransitionValues> arrayList2) {
+    public void createAnimators(ViewGroup viewGroup, TransitionValuesMaps transitionValuesMaps, TransitionValuesMaps transitionValuesMaps2, ArrayList<TransitionValues> arrayList, ArrayList<TransitionValues> arrayList2) {
         long startDelay = getStartDelay();
-        int size = this.f3480c.size();
+        int size = this.f3432c.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return;
             }
-            Transition transition = this.f3480c.get(i2);
+            Transition transition = this.f3432c.get(i2);
             if (startDelay > 0 && (this.d || i2 == 0)) {
                 long startDelay2 = transition.getStartDelay();
                 if (startDelay2 > 0) {
@@ -293,10 +296,10 @@ public class TransitionSet extends Transition {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f3480c.size()) {
+            if (i3 >= this.f3432c.size()) {
                 return super.excludeTarget(i, z);
             }
-            this.f3480c.get(i3).excludeTarget(i, z);
+            this.f3432c.get(i3).excludeTarget(i, z);
             i2 = i3 + 1;
         }
     }
@@ -306,10 +309,10 @@ public class TransitionSet extends Transition {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3480c.size()) {
+            if (i2 >= this.f3432c.size()) {
                 return super.excludeTarget(view, z);
             }
-            this.f3480c.get(i2).excludeTarget(view, z);
+            this.f3432c.get(i2).excludeTarget(view, z);
             i = i2 + 1;
         }
     }
@@ -319,10 +322,10 @@ public class TransitionSet extends Transition {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3480c.size()) {
+            if (i2 >= this.f3432c.size()) {
                 return super.excludeTarget(cls, z);
             }
-            this.f3480c.get(i2).excludeTarget(cls, z);
+            this.f3432c.get(i2).excludeTarget(cls, z);
             i = i2 + 1;
         }
     }
@@ -332,25 +335,26 @@ public class TransitionSet extends Transition {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3480c.size()) {
+            if (i2 >= this.f3432c.size()) {
                 return super.excludeTarget(str, z);
             }
-            this.f3480c.get(i2).excludeTarget(str, z);
+            this.f3432c.get(i2).excludeTarget(str, z);
             i = i2 + 1;
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // androidx.transition.Transition
-    void forceToEnd(ViewGroup viewGroup) {
+    public void forceToEnd(ViewGroup viewGroup) {
         super.forceToEnd(viewGroup);
-        int size = this.f3480c.size();
+        int size = this.f3432c.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return;
             }
-            this.f3480c.get(i2).forceToEnd(viewGroup);
+            this.f3432c.get(i2).forceToEnd(viewGroup);
             i = i2 + 1;
         }
     }
@@ -360,27 +364,27 @@ public class TransitionSet extends Transition {
     }
 
     public Transition getTransitionAt(int i) {
-        if (i < 0 || i >= this.f3480c.size()) {
+        if (i < 0 || i >= this.f3432c.size()) {
             return null;
         }
-        return this.f3480c.get(i);
+        return this.f3432c.get(i);
     }
 
     public int getTransitionCount() {
-        return this.f3480c.size();
+        return this.f3432c.size();
     }
 
     @Override // androidx.transition.Transition
     public void pause(View view) {
         super.pause(view);
-        int size = this.f3480c.size();
+        int size = this.f3432c.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return;
             }
-            this.f3480c.get(i2).pause(view);
+            this.f3432c.get(i2).pause(view);
             i = i2 + 1;
         }
     }
@@ -400,10 +404,10 @@ public class TransitionSet extends Transition {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f3480c.size()) {
+            if (i3 >= this.f3432c.size()) {
                 return (TransitionSet) super.removeTarget(i);
             }
-            this.f3480c.get(i3).removeTarget(i);
+            this.f3432c.get(i3).removeTarget(i);
             i2 = i3 + 1;
         }
     }
@@ -413,10 +417,10 @@ public class TransitionSet extends Transition {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3480c.size()) {
+            if (i2 >= this.f3432c.size()) {
                 return (TransitionSet) super.removeTarget(view);
             }
-            this.f3480c.get(i2).removeTarget(view);
+            this.f3432c.get(i2).removeTarget(view);
             i = i2 + 1;
         }
     }
@@ -426,10 +430,10 @@ public class TransitionSet extends Transition {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3480c.size()) {
+            if (i2 >= this.f3432c.size()) {
                 return (TransitionSet) super.removeTarget(cls);
             }
-            this.f3480c.get(i2).removeTarget(cls);
+            this.f3432c.get(i2).removeTarget(cls);
             i = i2 + 1;
         }
     }
@@ -439,16 +443,16 @@ public class TransitionSet extends Transition {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3480c.size()) {
+            if (i2 >= this.f3432c.size()) {
                 return (TransitionSet) super.removeTarget(str);
             }
-            this.f3480c.get(i2).removeTarget(str);
+            this.f3432c.get(i2).removeTarget(str);
             i = i2 + 1;
         }
     }
 
     public TransitionSet removeTransition(Transition transition) {
-        this.f3480c.remove(transition);
+        this.f3432c.remove(transition);
         transition.mParent = null;
         return this;
     }
@@ -456,28 +460,29 @@ public class TransitionSet extends Transition {
     @Override // androidx.transition.Transition
     public void resume(View view) {
         super.resume(view);
-        int size = this.f3480c.size();
+        int size = this.f3432c.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return;
             }
-            this.f3480c.get(i2).resume(view);
+            this.f3432c.get(i2).resume(view);
             i = i2 + 1;
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.transition.Transition
-    protected void runAnimators() {
-        if (this.f3480c.isEmpty()) {
+    public void runAnimators() {
+        if (this.f3432c.isEmpty()) {
             start();
             end();
             return;
         }
         a();
         if (this.d) {
-            Iterator<Transition> it = this.f3480c.iterator();
+            Iterator<Transition> it = this.f3432c.iterator();
             while (it.hasNext()) {
                 it.next().runAnimators();
             }
@@ -486,11 +491,11 @@ public class TransitionSet extends Transition {
         int i = 1;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3480c.size()) {
+            if (i2 >= this.f3432c.size()) {
                 break;
             }
-            final Transition transition = this.f3480c.get(i2);
-            this.f3480c.get(i2 - 1).addListener(new TransitionListenerAdapter() { // from class: androidx.transition.TransitionSet.1
+            final Transition transition = this.f3432c.get(i2);
+            this.f3432c.get(i2 - 1).addListener(new TransitionListenerAdapter() { // from class: androidx.transition.TransitionSet.1
                 @Override // androidx.transition.TransitionListenerAdapter, androidx.transition.Transition.TransitionListener
                 public void onTransitionEnd(Transition transition2) {
                     transition.runAnimators();
@@ -499,23 +504,24 @@ public class TransitionSet extends Transition {
             });
             i = i2 + 1;
         }
-        Transition transition2 = this.f3480c.get(0);
+        Transition transition2 = this.f3432c.get(0);
         if (transition2 != null) {
             transition2.runAnimators();
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // androidx.transition.Transition
-    void setCanRemoveViews(boolean z) {
+    public void setCanRemoveViews(boolean z) {
         super.setCanRemoveViews(z);
-        int size = this.f3480c.size();
+        int size = this.f3432c.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return;
             }
-            this.f3480c.get(i2).setCanRemoveViews(z);
+            this.f3432c.get(i2).setCanRemoveViews(z);
             i = i2 + 1;
         }
     }
@@ -524,7 +530,7 @@ public class TransitionSet extends Transition {
     public TransitionSet setDuration(long j) {
         ArrayList<Transition> arrayList;
         super.setDuration(j);
-        if (this.mDuration >= 0 && (arrayList = this.f3480c) != null) {
+        if (this.mDuration >= 0 && (arrayList = this.f3432c) != null) {
             int size = arrayList.size();
             int i = 0;
             while (true) {
@@ -532,7 +538,7 @@ public class TransitionSet extends Transition {
                 if (i2 >= size) {
                     break;
                 }
-                this.f3480c.get(i2).setDuration(j);
+                this.f3432c.get(i2).setDuration(j);
                 i = i2 + 1;
             }
         }
@@ -543,14 +549,14 @@ public class TransitionSet extends Transition {
     public void setEpicenterCallback(Transition.EpicenterCallback epicenterCallback) {
         super.setEpicenterCallback(epicenterCallback);
         this.e |= 8;
-        int size = this.f3480c.size();
+        int size = this.f3432c.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return;
             }
-            this.f3480c.get(i2).setEpicenterCallback(epicenterCallback);
+            this.f3432c.get(i2).setEpicenterCallback(epicenterCallback);
             i = i2 + 1;
         }
     }
@@ -558,7 +564,7 @@ public class TransitionSet extends Transition {
     @Override // androidx.transition.Transition
     public TransitionSet setInterpolator(TimeInterpolator timeInterpolator) {
         this.e |= 1;
-        ArrayList<Transition> arrayList = this.f3480c;
+        ArrayList<Transition> arrayList = this.f3432c;
         if (arrayList != null) {
             int size = arrayList.size();
             int i = 0;
@@ -567,7 +573,7 @@ public class TransitionSet extends Transition {
                 if (i2 >= size) {
                     break;
                 }
-                this.f3480c.get(i2).setInterpolator(timeInterpolator);
+                this.f3432c.get(i2).setInterpolator(timeInterpolator);
                 i = i2 + 1;
             }
         }
@@ -590,16 +596,16 @@ public class TransitionSet extends Transition {
     public void setPathMotion(PathMotion pathMotion) {
         super.setPathMotion(pathMotion);
         this.e |= 4;
-        if (this.f3480c == null) {
+        if (this.f3432c == null) {
             return;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3480c.size()) {
+            if (i2 >= this.f3432c.size()) {
                 return;
             }
-            this.f3480c.get(i2).setPathMotion(pathMotion);
+            this.f3432c.get(i2).setPathMotion(pathMotion);
             i = i2 + 1;
         }
     }
@@ -608,14 +614,14 @@ public class TransitionSet extends Transition {
     public void setPropagation(TransitionPropagation transitionPropagation) {
         super.setPropagation(transitionPropagation);
         this.e |= 2;
-        int size = this.f3480c.size();
+        int size = this.f3432c.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return;
             }
-            this.f3480c.get(i2).setPropagation(transitionPropagation);
+            this.f3432c.get(i2).setPropagation(transitionPropagation);
             i = i2 + 1;
         }
     }
@@ -625,19 +631,20 @@ public class TransitionSet extends Transition {
         return (TransitionSet) super.setStartDelay(j);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // androidx.transition.Transition
-    String toString(String str) {
+    public String toString(String str) {
         String transition = super.toString(str);
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3480c.size()) {
+            if (i2 >= this.f3432c.size()) {
                 return transition;
             }
             StringBuilder sb = new StringBuilder();
             sb.append(transition);
             sb.append("\n");
-            Transition transition2 = this.f3480c.get(i2);
+            Transition transition2 = this.f3432c.get(i2);
             sb.append(transition2.toString(str + "  "));
             transition = sb.toString();
             i = i2 + 1;

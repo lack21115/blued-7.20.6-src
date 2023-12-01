@@ -188,7 +188,7 @@ public class PLTextureVideoViewINT extends AbsPlayerView implements LiveSysNetwo
             }
         };
         this.y = new AnonymousClass2();
-        this.f15662a = context;
+        this.a = context;
         r();
     }
 
@@ -245,9 +245,9 @@ public class PLTextureVideoViewINT extends AbsPlayerView implements LiveSysNetwo
     }
 
     private AbBaseVideoView getVideoView() {
-        AbBaseVideoView a2 = this.l.a(this.j.b);
-        AbBaseVideoView abBaseVideoView = a2;
-        if (a2 == null) {
+        AbBaseVideoView a = this.l.a(this.j.b);
+        AbBaseVideoView abBaseVideoView = a;
+        if (a == null) {
             abBaseVideoView = this.l.a(this.j.b, getContext());
         }
         if (abBaseVideoView != null) {
@@ -341,17 +341,17 @@ public class PLTextureVideoViewINT extends AbsPlayerView implements LiveSysNetwo
     }
 
     private void r() {
-        this.b = LayoutInflater.from(this.f15662a);
-        this.f15663c = this.b.inflate(R.layout.pl_texture_video_view_international, this);
-        this.i = (FrameLayout) this.f15663c.findViewById(R.id.video_root);
-        this.e = this.f15663c.findViewById(R.id.cover_view);
+        this.b = LayoutInflater.from(this.a);
+        this.c = this.b.inflate(R.layout.pl_texture_video_view_international, this);
+        this.i = (FrameLayout) this.c.findViewById(R.id.video_root);
+        this.e = this.c.findViewById(R.id.cover_view);
         this.e.setVisibility(0);
-        this.f = (ImageView) this.f15663c.findViewById(R.id.preview);
-        this.g = (ImageView) this.f15663c.findViewById(R.id.video_state_icon);
-        this.o = (ImageView) this.f15663c.findViewById(R.id.video_screent_icon);
-        this.p = (ImageView) this.f15663c.findViewById(R.id.video_voice_icon);
-        this.h = this.f15663c.findViewById(R.id.LoadingView);
-        this.x = (MediaControllerINT) this.f15663c.findViewById(R.id.seek_lay);
+        this.f = (ImageView) this.c.findViewById(R.id.preview);
+        this.g = (ImageView) this.c.findViewById(R.id.video_state_icon);
+        this.o = (ImageView) this.c.findViewById(R.id.video_screent_icon);
+        this.p = (ImageView) this.c.findViewById(R.id.video_voice_icon);
+        this.h = this.c.findViewById(R.id.LoadingView);
+        this.x = (MediaControllerINT) this.c.findViewById(R.id.seek_lay);
         LiveSysNetworkObserver.a().a(this);
         Log.c("PLTextureVideoViewINT", "init");
     }
@@ -373,7 +373,7 @@ public class PLTextureVideoViewINT extends AbsPlayerView implements LiveSysNetwo
     private void setCoverView(ImageView.ScaleType scaleType) {
         this.f.setVisibility(0);
         this.f.setScaleType(scaleType);
-        ((TextUtils.isEmpty(this.j.f15652a) || this.j.f15652a.contains("http")) ? ImageLoader.a((IRequestHost) null, this.j.f15652a) : ImageLoader.d(null, this.j.f15652a)).b(R.drawable.video_international_default).a(this.f);
+        ((TextUtils.isEmpty(this.j.a) || this.j.a.contains("http")) ? ImageLoader.a((IRequestHost) null, this.j.a) : ImageLoader.d(null, this.j.a)).b(R.drawable.video_international_default).a(this.f);
     }
 
     private void setVideoSize(VideoPlayConfig videoPlayConfig) {
@@ -460,13 +460,13 @@ public class PLTextureVideoViewINT extends AbsPlayerView implements LiveSysNetwo
                 }
             });
         }
-        this.f15663c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.player.media.view.-$$Lambda$PLTextureVideoViewINT$wKJxSnmLzVQw04JelmLv7KRvbPo
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.player.media.view.-$$Lambda$PLTextureVideoViewINT$wKJxSnmLzVQw04JelmLv7KRvbPo
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PLTextureVideoViewINT.this.c(view);
             }
         });
-        this.f15663c.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.module.player.media.view.-$$Lambda$PLTextureVideoViewINT$yHp1Gr6ZyWxoDQLnIcvXjSfQsAo
+        this.c.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.module.player.media.view.-$$Lambda$PLTextureVideoViewINT$yHp1Gr6ZyWxoDQLnIcvXjSfQsAo
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
                 boolean b;

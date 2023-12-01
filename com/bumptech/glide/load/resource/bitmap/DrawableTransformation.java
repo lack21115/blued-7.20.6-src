@@ -15,11 +15,11 @@ public class DrawableTransformation implements Transformation<Drawable> {
     private final Transformation<Bitmap> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f20954c;
+    private final boolean f7348c;
 
     public DrawableTransformation(Transformation<Bitmap> transformation, boolean z) {
         this.b = transformation;
-        this.f20954c = z;
+        this.f7348c = z;
     }
 
     private Resource<Drawable> a(Context context, Resource<Bitmap> resource) {
@@ -42,7 +42,7 @@ public class DrawableTransformation implements Transformation<Drawable> {
                 return resource;
             }
             return a(context, a4);
-        } else if (this.f20954c) {
+        } else if (this.f7348c) {
             throw new IllegalArgumentException("Unable to convert " + f + " to a Bitmap");
         } else {
             return resource;

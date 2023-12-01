@@ -12,9 +12,7 @@ import kotlin.jvm.functions.Function2;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__MergeKt$flatMapConcat$$inlined$map$1.class */
 public final class FlowKt__MergeKt$flatMapConcat$$inlined$map$1<R> implements Flow<Flow<? extends R>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Flow f43218a;
+    final /* synthetic */ Flow a;
     final /* synthetic */ Function2 b;
 
     /* JADX INFO: Add missing generic type declarations: [T] */
@@ -22,9 +20,7 @@ public final class FlowKt__MergeKt$flatMapConcat$$inlined$map$1<R> implements Fl
     /* renamed from: kotlinx.coroutines.flow.FlowKt__MergeKt$flatMapConcat$$inlined$map$1$2  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__MergeKt$flatMapConcat$$inlined$map$1$2.class */
     public static final class AnonymousClass2<T> implements FlowCollector<T> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FlowCollector f43219a;
+        final /* synthetic */ FlowCollector a;
         final /* synthetic */ Function2 b;
 
         @Metadata
@@ -32,13 +28,9 @@ public final class FlowKt__MergeKt$flatMapConcat$$inlined$map$1<R> implements Fl
         /* renamed from: kotlinx.coroutines.flow.FlowKt__MergeKt$flatMapConcat$$inlined$map$1$2$1  reason: invalid class name */
         /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__MergeKt$flatMapConcat$$inlined$map$1$2$1.class */
         public static final class AnonymousClass1 extends ContinuationImpl {
-
-            /* renamed from: a  reason: collision with root package name */
-            /* synthetic */ Object f43220a;
+            /* synthetic */ Object a;
             int b;
-
-            /* renamed from: c  reason: collision with root package name */
-            Object f43221c;
+            Object c;
 
             public AnonymousClass1(Continuation continuation) {
                 super(continuation);
@@ -46,14 +38,14 @@ public final class FlowKt__MergeKt$flatMapConcat$$inlined$map$1<R> implements Fl
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Object invokeSuspend(Object obj) {
-                this.f43220a = obj;
+                this.a = obj;
                 this.b |= Integer.MIN_VALUE;
                 return AnonymousClass2.this.emit(null, this);
             }
         }
 
         public AnonymousClass2(FlowCollector flowCollector, Function2 function2) {
-            this.f43219a = flowCollector;
+            this.a = flowCollector;
             this.b = function2;
         }
 
@@ -97,7 +89,7 @@ public final class FlowKt__MergeKt$flatMapConcat$$inlined$map$1<R> implements Fl
                 r7 = r0
             L35:
                 r0 = r7
-                java.lang.Object r0 = r0.f43220a
+                java.lang.Object r0 = r0.a
                 r10 = r0
                 java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
                 r11 = r0
@@ -123,7 +115,7 @@ public final class FlowKt__MergeKt$flatMapConcat$$inlined$map$1<R> implements Fl
                 throw r0
             L65:
                 r0 = r7
-                java.lang.Object r0 = r0.f43221c
+                java.lang.Object r0 = r0.c
                 kotlinx.coroutines.flow.FlowCollector r0 = (kotlinx.coroutines.flow.FlowCollector) r0
                 r9 = r0
                 r0 = r10
@@ -135,14 +127,14 @@ public final class FlowKt__MergeKt$flatMapConcat$$inlined$map$1<R> implements Fl
                 r0 = r10
                 kotlin.ResultKt.a(r0)
                 r0 = r5
-                kotlinx.coroutines.flow.FlowCollector r0 = r0.f43219a
+                kotlinx.coroutines.flow.FlowCollector r0 = r0.a
                 r9 = r0
                 r0 = r5
                 kotlin.jvm.functions.Function2 r0 = r0.b
                 r10 = r0
                 r0 = r7
                 r1 = r9
-                r0.f43221c = r1
+                r0.c = r1
                 r0 = r7
                 r1 = 1
                 r0.b = r1
@@ -159,7 +151,7 @@ public final class FlowKt__MergeKt$flatMapConcat$$inlined$map$1<R> implements Fl
             La8:
                 r0 = r7
                 r1 = 0
-                r0.f43221c = r1
+                r0.c = r1
                 r0 = r7
                 r1 = 2
                 r0.b = r1
@@ -172,7 +164,7 @@ public final class FlowKt__MergeKt$flatMapConcat$$inlined$map$1<R> implements Fl
                 r0 = r11
                 return r0
             Lc3:
-                kotlin.Unit r0 = kotlin.Unit.f42314a
+                kotlin.Unit r0 = kotlin.Unit.a
                 return r0
             */
             throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.flow.FlowKt__MergeKt$flatMapConcat$$inlined$map$1.AnonymousClass2.emit(java.lang.Object, kotlin.coroutines.Continuation):java.lang.Object");
@@ -181,7 +173,7 @@ public final class FlowKt__MergeKt$flatMapConcat$$inlined$map$1<R> implements Fl
 
     @Override // kotlinx.coroutines.flow.Flow
     public Object a(FlowCollector flowCollector, Continuation continuation) {
-        Object a2 = this.f43218a.a(new AnonymousClass2(flowCollector, this.b), continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        Object a = this.a.a(new AnonymousClass2(flowCollector, this.b), continuation);
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 }

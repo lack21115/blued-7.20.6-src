@@ -14,7 +14,7 @@ import com.cdo.oaps.ad.af;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24967a = "com." + com.opos.cmn.an.a.a.f24484c + ".market";
+    private static final String f11279a = "com." + com.opos.cmn.an.a.a.f10797c + ".market";
 
     private static boolean a(Activity activity, String str) {
         String str2;
@@ -24,8 +24,8 @@ public class a {
             try {
                 Context applicationContext = activity.getApplicationContext();
                 Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str));
-                if (b(applicationContext, f24967a)) {
-                    intent.setPackage(f24967a);
+                if (b(applicationContext, f11279a)) {
+                    intent.setPackage(f11279a);
                 } else if (!b(applicationContext, af.e)) {
                     com.opos.cmn.an.f.a.d("MarketDLTool", "not find market app");
                     return false;
@@ -48,12 +48,12 @@ public class a {
     public static boolean a(Context context, String str) {
         String str2;
         if (context == null) {
-            str2 = b.f7836a;
+            str2 = b.f4996a;
         } else if (!TextUtils.isEmpty(str)) {
             com.opos.cmn.an.f.a.b("MarketDLTool", "market url:" + str);
             try {
                 Context applicationContext = context.getApplicationContext();
-                if (!b(applicationContext, f24967a) && !b(applicationContext, af.e)) {
+                if (!b(applicationContext, f11279a) && !b(applicationContext, af.e)) {
                     com.opos.cmn.an.f.a.d("MarketDLTool", "not find market app");
                     return false;
                 } else if (context instanceof Activity) {

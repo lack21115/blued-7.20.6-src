@@ -7,7 +7,7 @@ import com.tencent.mapsdk.internal.n9;
 public abstract class s9<D extends n9> extends l9<D> {
 
     /* renamed from: c  reason: collision with root package name */
-    private static c f38000c = new a();
+    private static c f24309c = new a();
     private d b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/s9$a.class */
@@ -34,8 +34,8 @@ public abstract class s9<D extends n9> extends l9<D> {
         private b b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f38002c = 104857600;
-        private c d = s9.f38000c;
+        private int f24311c = 104857600;
+        private c d = s9.f24309c;
 
         public d(b bVar) {
             this.b = bVar;
@@ -43,11 +43,11 @@ public abstract class s9<D extends n9> extends l9<D> {
 
         @Override // com.tencent.mapsdk.internal.m9.a
         public int a() {
-            return this.f38002c;
+            return this.f24311c;
         }
 
         public d a(int i) {
-            this.f38002c = i;
+            this.f24311c = i;
             return this;
         }
 
@@ -65,7 +65,7 @@ public abstract class s9<D extends n9> extends l9<D> {
         }
 
         public String toString() {
-            return "Options{mType=" + this.b + ", mCacheSize=" + this.f38002c + ", keyGenerator=" + this.d + '}';
+            return "Options{mType=" + this.b + ", mCacheSize=" + this.f24311c + ", keyGenerator=" + this.d + '}';
         }
     }
 

@@ -12,11 +12,11 @@ import java.util.Iterator;
 public class StandardGifDecoder implements GifDecoder {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f20691a = StandardGifDecoder.class.getSimpleName();
+    private static final String f7085a = StandardGifDecoder.class.getSimpleName();
     private int[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int[] f20692c;
+    private final int[] f7086c;
     private final GifDecoder.BitmapProvider d;
     private ByteBuffer e;
     private byte[] f;
@@ -37,7 +37,7 @@ public class StandardGifDecoder implements GifDecoder {
     private Bitmap.Config u;
 
     public StandardGifDecoder(GifDecoder.BitmapProvider bitmapProvider) {
-        this.f20692c = new int[256];
+        this.f7086c = new int[256];
         this.u = Bitmap.Config.ARGB_8888;
         this.d = bitmapProvider;
         this.m = new GifHeader();
@@ -144,8 +144,8 @@ public class StandardGifDecoder implements GifDecoder {
                 }
                 int i2 = gifFrame2.d / this.q;
                 int i3 = gifFrame2.b / this.q;
-                int i4 = gifFrame2.f20686c / this.q;
-                int i5 = gifFrame2.f20685a / this.q;
+                int i4 = gifFrame2.f7080c / this.q;
+                int i5 = gifFrame2.f7079a / this.q;
                 int i6 = this.s;
                 int i7 = (i3 * i6) + i5;
                 int i8 = i7;
@@ -193,8 +193,8 @@ public class StandardGifDecoder implements GifDecoder {
         int[] iArr = this.k;
         int i = gifFrame.d;
         int i2 = gifFrame.b;
-        int i3 = gifFrame.f20686c;
-        int i4 = gifFrame.f20685a;
+        int i3 = gifFrame.f7080c;
+        int i4 = gifFrame.f7079a;
         boolean z = this.l == 0;
         int i5 = this.s;
         byte[] bArr = this.j;
@@ -209,7 +209,7 @@ public class StandardGifDecoder implements GifDecoder {
             if (i10 < i9) {
                 i11 = i10;
             }
-            int i12 = gifFrame.f20686c * i6;
+            int i12 = gifFrame.f7080c * i6;
             while (i8 < i11) {
                 byte b2 = bArr[i12];
                 int i13 = b2 & 255;
@@ -245,8 +245,8 @@ public class StandardGifDecoder implements GifDecoder {
         int[] iArr = this.k;
         int i7 = gifFrame.d / this.q;
         int i8 = gifFrame.b / this.q;
-        int i9 = gifFrame.f20686c / this.q;
-        int i10 = gifFrame.f20685a / this.q;
+        int i9 = gifFrame.f7080c / this.q;
+        int i10 = gifFrame.f7079a / this.q;
         boolean z = this.l == 0;
         int i11 = this.q;
         int i12 = this.s;
@@ -295,7 +295,7 @@ public class StandardGifDecoder implements GifDecoder {
                 if (i23 < i22) {
                     i24 = i23;
                 }
-                int i25 = i15 * i11 * gifFrame.f20686c;
+                int i25 = i15 * i11 * gifFrame.f7080c;
                 if (z2) {
                     int i26 = i21;
                     while (true) {
@@ -332,7 +332,7 @@ public class StandardGifDecoder implements GifDecoder {
                         bool = bool4;
                         i6 = i30;
                         if (i31 < i24) {
-                            int a2 = a(i32, ((i24 - i21) * i11) + i25, gifFrame.f20686c);
+                            int a2 = a(i32, ((i24 - i21) * i11) + i25, gifFrame.f7080c);
                             if (a2 != 0) {
                                 iArr[i31] = a2;
                                 bool2 = bool4;
@@ -389,7 +389,7 @@ public class StandardGifDecoder implements GifDecoder {
         if (gifFrame == null) {
             i = this.m.f * this.m.g;
         } else {
-            i = gifFrame.d * gifFrame.f20686c;
+            i = gifFrame.d * gifFrame.f7080c;
         }
         byte[] bArr = this.j;
         if (bArr == null || bArr.length < i) {
@@ -586,7 +586,7 @@ public class StandardGifDecoder implements GifDecoder {
     }
 
     public int a(int i) {
-        if (i < 0 || i >= this.m.f20688c) {
+        if (i < 0 || i >= this.m.f7082c) {
             return -1;
         }
         return this.m.e.get(i).i;
@@ -639,13 +639,13 @@ public class StandardGifDecoder implements GifDecoder {
 
     @Override // com.bumptech.glide.gifdecoder.GifDecoder
     public void b() {
-        this.l = (this.l + 1) % this.m.f20688c;
+        this.l = (this.l + 1) % this.m.f7082c;
     }
 
     @Override // com.bumptech.glide.gifdecoder.GifDecoder
     public int c() {
         int i;
-        if (this.m.f20688c <= 0 || (i = this.l) < 0) {
+        if (this.m.f7082c <= 0 || (i = this.l) < 0) {
             return 0;
         }
         return a(i);
@@ -653,7 +653,7 @@ public class StandardGifDecoder implements GifDecoder {
 
     @Override // com.bumptech.glide.gifdecoder.GifDecoder
     public int d() {
-        return this.m.f20688c;
+        return this.m.f7082c;
     }
 
     @Override // com.bumptech.glide.gifdecoder.GifDecoder
@@ -685,10 +685,10 @@ public class StandardGifDecoder implements GifDecoder {
     @Override // com.bumptech.glide.gifdecoder.GifDecoder
     public Bitmap i() {
         synchronized (this) {
-            if (this.m.f20688c <= 0 || this.l < 0) {
-                if (Log.isLoggable(f20691a, 3)) {
-                    String str = f20691a;
-                    Log.d(str, "Unable to decode frame, frameCount=" + this.m.f20688c + ", framePointer=" + this.l);
+            if (this.m.f7082c <= 0 || this.l < 0) {
+                if (Log.isLoggable(f7085a, 3)) {
+                    String str = f7085a;
+                    Log.d(str, "Unable to decode frame, frameCount=" + this.m.f7082c + ", framePointer=" + this.l);
                 }
                 this.p = 1;
             }
@@ -700,19 +700,19 @@ public class StandardGifDecoder implements GifDecoder {
                 GifFrame gifFrame = this.m.e.get(this.l);
                 int i = this.l - 1;
                 GifFrame gifFrame2 = i >= 0 ? this.m.e.get(i) : null;
-                int[] iArr = gifFrame.k != null ? gifFrame.k : this.m.f20687a;
+                int[] iArr = gifFrame.k != null ? gifFrame.k : this.m.f7081a;
                 this.b = iArr;
                 if (iArr == null) {
-                    if (Log.isLoggable(f20691a, 3)) {
-                        String str2 = f20691a;
+                    if (Log.isLoggable(f7085a, 3)) {
+                        String str2 = f7085a;
                         Log.d(str2, "No valid color table found for frame #" + this.l);
                     }
                     this.p = 1;
                     return null;
                 }
                 if (gifFrame.f) {
-                    System.arraycopy((Object) this.b, 0, (Object) this.f20692c, 0, this.b.length);
-                    int[] iArr2 = this.f20692c;
+                    System.arraycopy(this.b, 0, this.f7086c, 0, this.b.length);
+                    int[] iArr2 = this.f7086c;
                     this.b = iArr2;
                     iArr2[gifFrame.h] = 0;
                     if (gifFrame.g == 2 && this.l == 0) {
@@ -721,8 +721,8 @@ public class StandardGifDecoder implements GifDecoder {
                 }
                 return a(gifFrame, gifFrame2);
             }
-            if (Log.isLoggable(f20691a, 3)) {
-                String str3 = f20691a;
+            if (Log.isLoggable(f7085a, 3)) {
+                String str3 = f7085a;
                 Log.d(str3, "Unable to decode frame, status=" + this.p);
             }
             return null;

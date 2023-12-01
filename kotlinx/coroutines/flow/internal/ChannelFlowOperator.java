@@ -26,29 +26,29 @@ public abstract class ChannelFlowOperator<S, T> extends ChannelFlow<T> {
     private final Object a(FlowCollector<? super T> flowCollector, CoroutineContext coroutineContext, Continuation<? super Unit> continuation) {
         FlowCollector b;
         b = ChannelFlowKt.b(flowCollector, continuation.getContext());
-        Object a2 = ChannelFlowKt.a(coroutineContext, b, null, new ChannelFlowOperator$collectWithContextUndispatched$2(this, null), continuation, 4, null);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        Object a = ChannelFlowKt.a(coroutineContext, b, null, new ChannelFlowOperator$collectWithContextUndispatched$2(this, null), continuation, 4, null);
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 
     static /* synthetic */ Object a(ChannelFlowOperator channelFlowOperator, ProducerScope producerScope, Continuation continuation) {
         Object b = channelFlowOperator.b(new SendingCollector(producerScope), continuation);
-        return b == IntrinsicsKt.a() ? b : Unit.f42314a;
+        return b == IntrinsicsKt.a() ? b : Unit.a;
     }
 
     static /* synthetic */ Object a(ChannelFlowOperator channelFlowOperator, FlowCollector flowCollector, Continuation continuation) {
         if (channelFlowOperator.b == -3) {
             CoroutineContext context = continuation.getContext();
-            CoroutineContext plus = context.plus(channelFlowOperator.f43446a);
+            CoroutineContext plus = context.plus(channelFlowOperator.a);
             if (Intrinsics.a(plus, context)) {
                 Object b = channelFlowOperator.b(flowCollector, continuation);
-                return b == IntrinsicsKt.a() ? b : Unit.f42314a;
-            } else if (Intrinsics.a(plus.get(ContinuationInterceptor.f42453a), context.get(ContinuationInterceptor.f42453a))) {
-                Object a2 = channelFlowOperator.a(flowCollector, plus, continuation);
-                return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+                return b == IntrinsicsKt.a() ? b : Unit.a;
+            } else if (Intrinsics.a(plus.get(ContinuationInterceptor.a), context.get(ContinuationInterceptor.a))) {
+                Object a = channelFlowOperator.a(flowCollector, plus, continuation);
+                return a == IntrinsicsKt.a() ? a : Unit.a;
             }
         }
-        Object a3 = super.a(flowCollector, continuation);
-        return a3 == IntrinsicsKt.a() ? a3 : Unit.f42314a;
+        Object a2 = super.a(flowCollector, continuation);
+        return a2 == IntrinsicsKt.a() ? a2 : Unit.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

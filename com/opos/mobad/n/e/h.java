@@ -19,7 +19,7 @@ import com.opos.mobad.n.d;
 public class h extends com.opos.mobad.n.i.a {
 
     /* renamed from: a  reason: collision with root package name */
-    com.opos.mobad.c.d.a f26643a;
+    com.opos.mobad.c.d.a f12955a;
     private Context d;
     private com.opos.mobad.n.d.b e;
     private View f;
@@ -38,7 +38,7 @@ public class h extends com.opos.mobad.n.i.a {
     private Drawable s;
     private long t;
     private Runnable u;
-    private a.InterfaceC0708a v;
+    private a.InterfaceC0538a v;
 
     public h(Context context, int i) {
         super(i);
@@ -69,101 +69,101 @@ public class h extends com.opos.mobad.n.i.a {
                 h.this.m -= 1000;
             }
         };
-        this.v = new a.InterfaceC0708a() { // from class: com.opos.mobad.n.e.h.5
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+        this.v = new a.InterfaceC0538a() { // from class: com.opos.mobad.n.e.h.5
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void a(int i2, String str) {
                 h.this.a(i2, str);
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void a(long j, long j2) {
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void a(View view, int[] iArr) {
                 h.this.h(view, iArr);
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void a(View view, int[] iArr, boolean z) {
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void b() {
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void b(int i2) {
                 h.this.a(i2);
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void b(long j, long j2) {
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void b(View view, int[] iArr) {
                 h.this.c(view, iArr);
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void c(int i2) {
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void c(long j, long j2) {
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void c(View view, int[] iArr) {
                 h.this.b(view, iArr);
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void d(long j, long j2) {
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void d(View view, int[] iArr) {
                 h.this.a(view, iArr);
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void e() {
                 h.this.m();
                 h.this.q();
                 h.this.t();
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void e(View view, int[] iArr) {
                 h.this.d(view, iArr);
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void f(View view, int[] iArr) {
                 h.this.d(view, iArr);
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void g(View view, int[] iArr) {
                 h.this.e(view, iArr);
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void h(View view, int[] iArr) {
                 h.this.g(view, iArr);
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void i(View view, int[] iArr) {
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void j(View view, int[] iArr) {
             }
 
-            @Override // com.opos.mobad.n.a.InterfaceC0708a
+            @Override // com.opos.mobad.n.a.InterfaceC0538a
             public void k(View view, int[] iArr) {
             }
         };
@@ -301,11 +301,11 @@ public class h extends com.opos.mobad.n.i.a {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void t() {
-        if (this.f26643a == null) {
+        if (this.f12955a == null) {
             com.opos.mobad.c.d.a aVar = new com.opos.mobad.c.d.a(this.d);
-            this.f26643a = aVar;
-            aVar.a(new a.InterfaceC0678a() { // from class: com.opos.mobad.n.e.h.4
-                @Override // com.opos.mobad.c.d.a.InterfaceC0678a
+            this.f12955a = aVar;
+            aVar.a(new a.InterfaceC0508a() { // from class: com.opos.mobad.n.e.h.4
+                @Override // com.opos.mobad.c.d.a.InterfaceC0508a
                 public void a(boolean z) {
                     com.opos.cmn.an.f.a.b("SplashDyTemplate", "visible change:" + z);
                     h hVar = h.this;
@@ -321,13 +321,13 @@ public class h extends com.opos.mobad.n.i.a {
                     }
                     if (z && z2) {
                         h.this.r();
-                        h.this.f26643a.a((a.InterfaceC0678a) null);
+                        h.this.f12955a.a((a.InterfaceC0508a) null);
                     }
                 }
             });
         }
-        if (this.g.indexOfChild(this.f26643a) < 0) {
-            this.g.addView(this.f26643a, new ViewGroup.LayoutParams(0, 0));
+        if (this.g.indexOfChild(this.f12955a) < 0) {
+            this.g.addView(this.f12955a, new ViewGroup.LayoutParams(0, 0));
         }
     }
 

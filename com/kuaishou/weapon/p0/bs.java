@@ -9,7 +9,7 @@ import java.util.UUID;
 public class bs {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f23761a;
+    private static String f10153a;
 
     public static String a(int i) {
         int nextInt;

@@ -3,21 +3,24 @@ package com.soft.blued.ui.msg;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
 import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.chat.model.ChattingModel;
-import com.blued.android.core.ui.ActivityFragmentActive;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.core.utils.skin.listener.BluedSkinSupportable;
 import com.blued.android.module.common.base.config.ListConfig;
 import com.blued.android.module.common.base.mvi.BaseListAction;
 import com.blued.android.module.common.base.mvi.BaseListFragment;
+import com.blued.android.module.common.base.mvi.UiAction;
 import com.blued.android.module.common.base.mvvm.LifecycleExtKt;
 import com.blued.android.module.common.utils.NinePatchUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
@@ -42,7 +45,7 @@ public final class ServiceMsgFragment extends BaseListFragment<ServiceMsgViewMod
     public static final Companion b = new Companion(null);
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f31910c;
+    private boolean f18220c;
     private PopupWindow d;
 
     @Metadata
@@ -57,7 +60,7 @@ public final class ServiceMsgFragment extends BaseListFragment<ServiceMsgViewMod
 
         public final void a(Context context) {
             Intrinsics.e(context, "context");
-            TerminalActivity.d(context, ServiceMsgFragment.class, null);
+            TerminalActivity.d(context, ServiceMsgFragment.class, (Bundle) null);
         }
     }
 
@@ -72,7 +75,7 @@ public final class ServiceMsgFragment extends BaseListFragment<ServiceMsgViewMod
         TextView textView = (TextView) inflate.findViewById(R.id.tv_cnt);
         Context context = getContext();
         textView.setText((context == null || (resources = context.getResources()) == null) ? null : resources.getString(R.string.service_msg_guide_content));
-        textView.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.LEFT, 2131232896));
+        textView.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.a, new int[]{2131232896}));
         inflate.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$ServiceMsgFragment$ReVb1hGhX1Um_ZGM7BXfzwEiBck
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -122,10 +125,10 @@ public final class ServiceMsgFragment extends BaseListFragment<ServiceMsgViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ServiceMsgFragment this$0, View view) {
+    public static final void a(ServiceMsgFragment serviceMsgFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Context context = this$0.getContext();
+        Intrinsics.e(serviceMsgFragment, "this$0");
+        Context context = serviceMsgFragment.getContext();
         if (context == null) {
             return;
         }
@@ -133,20 +136,20 @@ public final class ServiceMsgFragment extends BaseListFragment<ServiceMsgViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ServiceMsgFragment this$0, ChattingModel chattingModel) {
-        Intrinsics.e(this$0, "this$0");
-        if (((ServiceMsgViewModel) this$0.y()).a() == null) {
+    public static final void a(ServiceMsgFragment serviceMsgFragment, ChattingModel chattingModel) {
+        Intrinsics.e(serviceMsgFragment, "this$0");
+        if (serviceMsgFragment.y().a() == null) {
             return;
         }
-        ((ServiceMsgViewModel) this$0.y()).dispatchAction(BaseListAction.RefreshData.f10668a);
-        SubscribeNumberManager.f32449a.c();
+        serviceMsgFragment.y().dispatchAction((UiAction) BaseListAction.RefreshData.a);
+        SubscribeNumberManager.f18759a.c();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ServiceMsgFragment this$0, Void r4) {
-        Intrinsics.e(this$0, "this$0");
-        ((ServiceMsgViewModel) this$0.y()).a((ChattingModel) null);
-        ((ServiceMsgViewModel) this$0.y()).dispatchAction(BaseListAction.RefreshData.f10668a);
+    public static final void a(ServiceMsgFragment serviceMsgFragment, Void r4) {
+        Intrinsics.e(serviceMsgFragment, "this$0");
+        serviceMsgFragment.y().a((ChattingModel) null);
+        serviceMsgFragment.y().dispatchAction((UiAction) BaseListAction.RefreshData.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -193,7 +196,7 @@ public final class ServiceMsgFragment extends BaseListFragment<ServiceMsgViewMod
                     f = ServiceMsgFragment.this.f();
                     a3 = ServiceMsgFragment.this.a();
                     f2 = ServiceMsgFragment.this.f();
-                    View viewByPosition = f.getViewByPosition(a3, f2.getHeaderLayoutCount() + 1, 2131365082);
+                    View viewByPosition = f.getViewByPosition(a3, f2.getHeaderLayoutCount() + 1, R.id.iv_avatar);
                     if (viewByPosition != null) {
                         viewByPosition.getLocationOnScreen(iArr);
                         D = ServiceMsgFragment.this.D();
@@ -202,7 +205,7 @@ public final class ServiceMsgFragment extends BaseListFragment<ServiceMsgViewMod
                             if (popupWindow == null) {
                                 Intrinsics.c("guidePopupWindow");
                             }
-                            z2 = ServiceMsgFragment.this.f31910c;
+                            z2 = ServiceMsgFragment.this.f18220c;
                             if (z2) {
                                 return;
                             }
@@ -285,34 +288,34 @@ public final class ServiceMsgFragment extends BaseListFragment<ServiceMsgViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(ServiceMsgFragment this$0, View view) {
+    public static final void b(ServiceMsgFragment serviceMsgFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        PopupWindow popupWindow = this$0.d;
+        Intrinsics.e(serviceMsgFragment, "this$0");
+        PopupWindow popupWindow = serviceMsgFragment.d;
         PopupWindow popupWindow2 = popupWindow;
         if (popupWindow == null) {
             Intrinsics.c("guidePopupWindow");
             popupWindow2 = null;
         }
         popupWindow2.dismiss();
-        this$0.f31910c = true;
+        serviceMsgFragment.f18220c = true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void g(ServiceMsgFragment this$0) {
-        Intrinsics.e(this$0, "this$0");
-        View viewByPosition = this$0.f().getViewByPosition(this$0.a(), this$0.f().getHeaderLayoutCount() + 1, 2131365082);
+    public static final void g(ServiceMsgFragment serviceMsgFragment) {
+        Intrinsics.e(serviceMsgFragment, "this$0");
+        View viewByPosition = serviceMsgFragment.f().getViewByPosition(serviceMsgFragment.a(), serviceMsgFragment.f().getHeaderLayoutCount() + 1, R.id.iv_avatar);
         if (viewByPosition == null) {
             return;
         }
-        this$0.a(viewByPosition);
+        serviceMsgFragment.a(viewByPosition);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void h(ServiceMsgFragment this$0) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.f31910c = true;
-        PopupWindow popupWindow = this$0.d;
+    public static final void h(ServiceMsgFragment serviceMsgFragment) {
+        Intrinsics.e(serviceMsgFragment, "this$0");
+        serviceMsgFragment.f18220c = true;
+        PopupWindow popupWindow = serviceMsgFragment.d;
         PopupWindow popupWindow2 = popupWindow;
         if (popupWindow == null) {
             Intrinsics.c("guidePopupWindow");
@@ -322,29 +325,25 @@ public final class ServiceMsgFragment extends BaseListFragment<ServiceMsgViewMod
         BluedPreferences.eR();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: C */
     public ServiceMsgListAdapter i() {
-        ActivityFragmentActive fragmentActive = getFragmentActive();
+        IRequestHost fragmentActive = getFragmentActive();
         Intrinsics.c(fragmentActive, "fragmentActive");
         return new ServiceMsgListAdapter(fragmentActive);
     }
 
-    @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
         CommonTopTitleNoTrans b2 = b();
         if (b2 == null) {
             return;
         }
-        b2.getRightImg().setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_service_msg_right_menu));
+        b2.getRightImg().setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.icon_service_msg_right_menu));
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public ListConfig h() {
         return new ListConfig.Builder().a(20).b(false).c(true).a();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         Resources resources;
         super.m();
@@ -360,7 +359,7 @@ public final class ServiceMsgFragment extends BaseListFragment<ServiceMsgViewMod
                 str = resources.getString(R.string.msg_service_information);
             }
             b2.setCenterText(str);
-            b2.getRightImg().setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_service_msg_right_menu));
+            b2.getRightImg().setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.icon_service_msg_right_menu));
             b2.setRightClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$ServiceMsgFragment$rDpye5bMWOziIdP-jxWHGUNAmNA
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -372,23 +371,22 @@ public final class ServiceMsgFragment extends BaseListFragment<ServiceMsgViewMod
         if (c2 != null) {
             c2.setNoDataImg(2131233626);
             c2.setNoDataBtnVisibility(8);
-            c2.setNoDataStr(R.string.msg_service_information_no_data);
+            c2.setNoDataStr((int) R.string.msg_service_information_no_data);
         }
-        SubscribeNumberManager.f32449a.c();
+        SubscribeNumberManager.f18759a.c();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         super.o();
-        ServiceMsgFragment serviceMsgFragment = this;
-        LifecycleExtKt.a(serviceMsgFragment, ((ServiceMsgViewModel) y()).c(), new ServiceMsgFragment$liveDataObserver$1(this));
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_SERVICE_NUMBER_DELETE, Void.class).observe(serviceMsgFragment, new Observer() { // from class: com.soft.blued.ui.msg.-$$Lambda$ServiceMsgFragment$nRq8LkzL2UqgUlI8Fa7gWGiVzSc
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, y().c(), new ServiceMsgFragment$liveDataObserver$1(this));
+        LiveEventBus.get(EventBusConstant.KEY_EVENT_SERVICE_NUMBER_DELETE, Void.class).observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.msg.-$$Lambda$ServiceMsgFragment$nRq8LkzL2UqgUlI8Fa7gWGiVzSc
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 ServiceMsgFragment.a(ServiceMsgFragment.this, (Void) obj);
             }
         });
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_SERVICE_NEW_MSG, ChattingModel.class).observe(serviceMsgFragment, new Observer() { // from class: com.soft.blued.ui.msg.-$$Lambda$ServiceMsgFragment$IA7KCajp35pAKEeCyMgucxRcH7E
+        LiveEventBus.get(EventBusConstant.KEY_EVENT_SERVICE_NEW_MSG, ChattingModel.class).observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.msg.-$$Lambda$ServiceMsgFragment$IA7KCajp35pAKEeCyMgucxRcH7E
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 ServiceMsgFragment.a(ServiceMsgFragment.this, (ChattingModel) obj);
@@ -396,7 +394,6 @@ public final class ServiceMsgFragment extends BaseListFragment<ServiceMsgViewMod
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         if (!BluedPreferences.eS() || BluedPreferences.eQ()) {

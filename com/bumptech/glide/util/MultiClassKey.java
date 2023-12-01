@@ -4,11 +4,11 @@ package com.bumptech.glide.util;
 public class MultiClassKey {
 
     /* renamed from: a  reason: collision with root package name */
-    private Class<?> f21107a;
+    private Class<?> f7501a;
     private Class<?> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Class<?> f21108c;
+    private Class<?> f7502c;
 
     public MultiClassKey() {
     }
@@ -18,9 +18,9 @@ public class MultiClassKey {
     }
 
     public void a(Class<?> cls, Class<?> cls2, Class<?> cls3) {
-        this.f21107a = cls;
+        this.f7501a = cls;
         this.b = cls2;
-        this.f21108c = cls3;
+        this.f7502c = cls3;
     }
 
     public boolean equals(Object obj) {
@@ -31,17 +31,17 @@ public class MultiClassKey {
             return false;
         }
         MultiClassKey multiClassKey = (MultiClassKey) obj;
-        return this.f21107a.equals(multiClassKey.f21107a) && this.b.equals(multiClassKey.b) && Util.a(this.f21108c, multiClassKey.f21108c);
+        return this.f7501a.equals(multiClassKey.f7501a) && this.b.equals(multiClassKey.b) && Util.a(this.f7502c, multiClassKey.f7502c);
     }
 
     public int hashCode() {
-        int hashCode = this.f21107a.hashCode();
+        int hashCode = this.f7501a.hashCode();
         int hashCode2 = this.b.hashCode();
-        Class<?> cls = this.f21108c;
+        Class<?> cls = this.f7502c;
         return (((hashCode * 31) + hashCode2) * 31) + (cls != null ? cls.hashCode() : 0);
     }
 
     public String toString() {
-        return "MultiClassKey{first=" + this.f21107a + ", second=" + this.b + '}';
+        return "MultiClassKey{first=" + this.f7501a + ", second=" + this.b + '}';
     }
 }

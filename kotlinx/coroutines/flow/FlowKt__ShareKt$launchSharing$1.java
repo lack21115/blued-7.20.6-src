@@ -23,13 +23,9 @@ import kotlinx.coroutines.CoroutineScope;
 @DebugMetadata(b = "Share.kt", c = {206, 210, 211, 217}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__ShareKt$launchSharing$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ShareKt$launchSharing$1.class */
 final class FlowKt__ShareKt$launchSharing$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43279a;
+    int a;
     final /* synthetic */ SharingStarted b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Flow<T> f43280c;
+    final /* synthetic */ Flow<T> c;
     final /* synthetic */ MutableSharedFlow<T> d;
     final /* synthetic */ T e;
 
@@ -39,9 +35,7 @@ final class FlowKt__ShareKt$launchSharing$1 extends SuspendLambda implements Fun
     /* renamed from: kotlinx.coroutines.flow.FlowKt__ShareKt$launchSharing$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ShareKt$launchSharing$1$1.class */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<Integer, Continuation<? super Boolean>, Object> {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f43281a;
+        int a;
         /* synthetic */ int b;
 
         AnonymousClass1(Continuation<? super AnonymousClass1> continuation) {
@@ -49,7 +43,7 @@ final class FlowKt__ShareKt$launchSharing$1 extends SuspendLambda implements Fun
         }
 
         public final Object a(int i, Continuation<? super Boolean> continuation) {
-            return ((AnonymousClass1) create(Integer.valueOf(i), continuation)).invokeSuspend(Unit.f42314a);
+            return ((AnonymousClass1) create(Integer.valueOf(i), continuation)).invokeSuspend(Unit.a);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -67,7 +61,7 @@ final class FlowKt__ShareKt$launchSharing$1 extends SuspendLambda implements Fun
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             IntrinsicsKt.a();
-            if (this.f43281a == 0) {
+            if (this.a == 0) {
                 ResultKt.a(obj);
                 return Boxing.a(this.b > 0);
             }
@@ -81,13 +75,9 @@ final class FlowKt__ShareKt$launchSharing$1 extends SuspendLambda implements Fun
     /* renamed from: kotlinx.coroutines.flow.FlowKt__ShareKt$launchSharing$1$2  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ShareKt$launchSharing$1$2.class */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<SharingCommand, Continuation<? super Unit>, Object> {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f43282a;
+        int a;
         /* synthetic */ Object b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Flow<T> f43283c;
+        final /* synthetic */ Flow<T> c;
         final /* synthetic */ MutableSharedFlow<T> d;
         final /* synthetic */ T e;
 
@@ -95,16 +85,14 @@ final class FlowKt__ShareKt$launchSharing$1 extends SuspendLambda implements Fun
         /* renamed from: kotlinx.coroutines.flow.FlowKt__ShareKt$launchSharing$1$2$WhenMappings */
         /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ShareKt$launchSharing$1$2$WhenMappings.class */
         public final /* synthetic */ class WhenMappings {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final /* synthetic */ int[] f43284a;
+            public static final /* synthetic */ int[] a;
 
             static {
                 int[] iArr = new int[SharingCommand.valuesCustom().length];
                 iArr[SharingCommand.START.ordinal()] = 1;
                 iArr[SharingCommand.STOP.ordinal()] = 2;
                 iArr[SharingCommand.STOP_AND_RESET_REPLAY_CACHE.ordinal()] = 3;
-                f43284a = iArr;
+                a = iArr;
             }
         }
 
@@ -112,18 +100,18 @@ final class FlowKt__ShareKt$launchSharing$1 extends SuspendLambda implements Fun
         /* JADX WARN: Multi-variable type inference failed */
         AnonymousClass2(Flow<? extends T> flow, MutableSharedFlow<T> mutableSharedFlow, T t, Continuation<? super AnonymousClass2> continuation) {
             super(2, continuation);
-            this.f43283c = flow;
+            this.c = flow;
             this.d = mutableSharedFlow;
             this.e = t;
         }
 
         public final Object a(SharingCommand sharingCommand, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass2) create(sharingCommand, continuation)).invokeSuspend(Unit.f42314a);
+            return ((AnonymousClass2) create(sharingCommand, continuation)).invokeSuspend(Unit.a);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            AnonymousClass2 anonymousClass2 = new AnonymousClass2(this.f43283c, this.d, this.e, continuation);
+            AnonymousClass2 anonymousClass2 = new AnonymousClass2(this.c, this.d, this.e, continuation);
             anonymousClass2.b = obj;
             return anonymousClass2;
         }
@@ -135,18 +123,18 @@ final class FlowKt__ShareKt$launchSharing$1 extends SuspendLambda implements Fun
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            Object a2 = IntrinsicsKt.a();
-            int i = this.f43282a;
+            Object a = IntrinsicsKt.a();
+            int i = this.a;
             if (i == 0) {
                 ResultKt.a(obj);
-                int i2 = WhenMappings.f43284a[((SharingCommand) this.b).ordinal()];
+                int i2 = WhenMappings.a[((SharingCommand) this.b).ordinal()];
                 if (i2 == 1) {
-                    this.f43282a = 1;
-                    if (this.f43283c.a(this.d, this) == a2) {
-                        return a2;
+                    this.a = 1;
+                    if (this.c.a(this.d, this) == a) {
+                        return a;
                     }
                 } else if (i2 == 3) {
-                    if (this.e == SharedFlowKt.f43416a) {
+                    if (this.e == SharedFlowKt.a) {
                         this.d.b();
                     } else {
                         this.d.a(this.e);
@@ -157,7 +145,7 @@ final class FlowKt__ShareKt$launchSharing$1 extends SuspendLambda implements Fun
             } else {
                 ResultKt.a(obj);
             }
-            return Unit.f42314a;
+            return Unit.a;
         }
     }
 
@@ -166,18 +154,18 @@ final class FlowKt__ShareKt$launchSharing$1 extends SuspendLambda implements Fun
     FlowKt__ShareKt$launchSharing$1(SharingStarted sharingStarted, Flow<? extends T> flow, MutableSharedFlow<T> mutableSharedFlow, T t, Continuation<? super FlowKt__ShareKt$launchSharing$1> continuation) {
         super(2, continuation);
         this.b = sharingStarted;
-        this.f43280c = flow;
+        this.c = flow;
         this.d = mutableSharedFlow;
         this.e = t;
     }
 
     public final Object a(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((FlowKt__ShareKt$launchSharing$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((FlowKt__ShareKt$launchSharing$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new FlowKt__ShareKt$launchSharing$1(this.b, this.f43280c, this.d, this.e, continuation);
+        return new FlowKt__ShareKt$launchSharing$1(this.b, this.c, this.d, this.e, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2

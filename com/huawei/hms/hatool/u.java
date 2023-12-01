@@ -12,18 +12,18 @@ import org.json.JSONObject;
 public class u {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f22794a;
+    public String f9186a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f22795c;
+    public String f9187c;
     public List<q> d;
     public String e;
 
     public u(String str, String str2, String str3, List<q> list, String str4) {
-        this.f22794a = str;
+        this.f9186a = str;
         this.b = str2;
-        this.f22795c = str3;
+        this.f9187c = str3;
         this.d = list;
         this.e = str4;
     }
@@ -51,22 +51,22 @@ public class u {
         o0 m0Var;
         p0 c2;
         String str;
-        String a2 = a(this.f22794a, this.b);
+        String a2 = a(this.f9186a, this.b);
         if (!TextUtils.isEmpty(a2) || "preins".equals(this.b)) {
-            if (!"_hms_config_tag".equals(this.f22794a) && !"_openness_config_tag".equals(this.f22794a)) {
+            if (!"_hms_config_tag".equals(this.f9186a) && !"_openness_config_tag".equals(this.f9186a)) {
                 b();
             }
-            C1138r d = d();
+            C0955r d = d();
             if (d != null) {
                 byte[] a3 = a(d);
                 if (a3.length == 0) {
                     str = "request body is empty";
                 } else {
-                    m0Var = new j0(a3, a2, this.f22794a, this.b, this.e, this.d);
+                    m0Var = new j0(a3, a2, this.f9186a, this.b, this.e, this.d);
                     c2 = p0.b();
                 }
             } else {
-                m0Var = new m0(this.d, this.f22794a, this.e, this.b);
+                m0Var = new m0(this.d, this.f9186a, this.e, this.b);
                 c2 = p0.c();
             }
             c2.a(m0Var);
@@ -76,10 +76,10 @@ public class u {
         z.e("hmsSdk", str);
     }
 
-    public final byte[] a(C1138r c1138r) {
+    public final byte[] a(C0955r c0955r) {
         String str;
         try {
-            JSONObject a2 = c1138r.a();
+            JSONObject a2 = c0955r.a();
             if (a2 == null) {
                 z.e("hmsSdk", "uploadEvents is null");
                 return new byte[0];
@@ -102,7 +102,7 @@ public class u {
             return;
         }
         JSONArray c2 = c();
-        String a2 = v0.a(this.f22794a, this.b, this.e);
+        String a2 = v0.a(this.f9186a, this.b, this.e);
         z.c("hmsSdk", "Update data cached into backup,spKey: " + a2);
         h0.b(b.i(), "backup_event", a2, c2.toString());
     }
@@ -119,7 +119,7 @@ public class u {
         return jSONArray;
     }
 
-    public final C1138r d() {
-        return e1.a(this.d, this.f22794a, this.b, this.e, this.f22795c);
+    public final C0955r d() {
+        return e1.a(this.d, this.f9186a, this.b, this.e, this.f9187c);
     }
 }

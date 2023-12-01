@@ -20,16 +20,16 @@ public class AdEntity implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f27110a;
+    public byte[] f13422a;
     public byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f27111c;
+    public long f13423c;
 
     public AdEntity(byte[] bArr, byte[] bArr2, long j) {
-        this.f27110a = bArr;
+        this.f13422a = bArr;
         this.b = bArr2;
-        this.f27111c = j;
+        this.f13423c = j;
     }
 
     @Override // android.os.Parcelable
@@ -39,8 +39,8 @@ public class AdEntity implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeByteArray(this.f27110a);
+        parcel.writeByteArray(this.f13422a);
         parcel.writeByteArray(this.b);
-        parcel.writeLong(this.f27111c);
+        parcel.writeLong(this.f13423c);
     }
 }

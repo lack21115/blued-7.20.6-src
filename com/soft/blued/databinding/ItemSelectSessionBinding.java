@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemSelectSessionBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29310a;
+    private final ConstraintLayout f15620a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29310a;
+        return this.f15620a;
     }
 }

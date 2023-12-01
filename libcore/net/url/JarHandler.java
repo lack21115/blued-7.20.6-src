@@ -1,6 +1,5 @@
 package libcore.net.url;
 
-import com.tencent.tinker.loader.shareutil.ShareConstants;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -37,7 +36,7 @@ public class JarHandler extends URLStreamHandler {
         }
         try {
             new URL(substring);
-            setURL(url, ShareConstants.DEXMODE_JAR, "", -1, null, null, substring, null, null);
+            setURL(url, "jar", "", -1, null, null, substring, null, null);
         } catch (MalformedURLException e) {
             throw new NullPointerException(e.toString());
         }

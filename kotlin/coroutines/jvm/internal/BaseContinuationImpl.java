@@ -65,13 +65,13 @@ public abstract class BaseContinuationImpl implements Serializable, Continuation
             try {
                 invokeSuspend = baseContinuationImpl2.invokeSuspend(obj);
             } catch (Throwable th) {
-                Result.Companion companion = Result.f42293a;
+                Result.Companion companion = Result.a;
                 obj = Result.f(ResultKt.a(th));
             }
             if (invokeSuspend == IntrinsicsKt.a()) {
                 return;
             }
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             obj = Result.f(invokeSuspend);
             baseContinuationImpl2.releaseIntercepted();
         } while (baseContinuationImpl instanceof BaseContinuationImpl);

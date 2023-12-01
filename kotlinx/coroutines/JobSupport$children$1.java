@@ -12,13 +12,9 @@ import kotlin.sequences.SequenceScope;
 @DebugMetadata(b = "JobSupport.kt", c = {952, 954}, d = "invokeSuspend", e = "kotlinx.coroutines.JobSupport$children$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/JobSupport$children$1.class */
 final class JobSupport$children$1 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super ChildJob>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42843a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f42844c;
+    int c;
     final /* synthetic */ JobSupport d;
     private /* synthetic */ Object e;
 
@@ -31,7 +27,7 @@ final class JobSupport$children$1 extends RestrictedSuspendLambda implements Fun
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(SequenceScope<? super ChildJob> sequenceScope, Continuation<? super Unit> continuation) {
-        return ((JobSupport$children$1) create(sequenceScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((JobSupport$children$1) create(sequenceScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

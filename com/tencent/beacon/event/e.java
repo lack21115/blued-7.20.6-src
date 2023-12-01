@@ -7,13 +7,13 @@ import java.util.Set;
 public class e implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ long f35052a;
+    final /* synthetic */ long f21361a;
     final /* synthetic */ f b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public e(f fVar, long j) {
         this.b = fVar;
-        this.f35052a = j;
+        this.f21361a = j;
     }
 
     @Override // java.lang.Runnable
@@ -26,7 +26,7 @@ public class e implements Runnable {
         Set<Long> set2;
         g gVar2;
         StringBuilder sb = new StringBuilder();
-        set = this.b.f35053a;
+        set = this.b.f21362a;
         for (Long l : set) {
             sb.append(l);
             sb.append(",");
@@ -38,9 +38,9 @@ public class e implements Runnable {
         str2 = this.b.b;
         com.tencent.beacon.base.util.c.a(str2, 4, "delete: %s", Boolean.valueOf(a2));
         gVar = this.b.e;
-        set2 = this.b.f35053a;
+        set2 = this.b.f21362a;
         gVar.a(set2);
         gVar2 = this.b.e;
-        gVar2.a(this.f35052a);
+        gVar2.a(this.f21361a);
     }
 }

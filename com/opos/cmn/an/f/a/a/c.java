@@ -1,5 +1,6 @@
 package com.opos.cmn.an.f.a.a;
 
+import com.anythink.pd.ExHandler;
 import com.google.common.net.HttpHeaders;
 import com.usertrace.cdo.usertrace.domain.dto.UserTraceConfigDto;
 import java.io.BufferedReader;
@@ -45,8 +46,8 @@ public class c implements com.oplus.log.g.a {
                 JSONObject jSONObject = new JSONObject(str);
                 UserTraceConfigDto userTraceConfigDto2 = new UserTraceConfigDto();
                 userTraceConfigDto2.setTraceId(jSONObject.optLong("traceId", 0L));
-                if (!jSONObject.isNull("imei")) {
-                    userTraceConfigDto2.setImei(jSONObject.optString("imei", ""));
+                if (!jSONObject.isNull(ExHandler.JSON_REQUEST_IMEI)) {
+                    userTraceConfigDto2.setImei(jSONObject.optString(ExHandler.JSON_REQUEST_IMEI, ""));
                 }
                 userTraceConfigDto2.setBeginTime(jSONObject.optLong("beginTime", 0L));
                 userTraceConfigDto2.setBeginTime(jSONObject.optLong("endTime", 0L));
@@ -82,7 +83,7 @@ public class c implements com.oplus.log.g.a {
                 httpURLConnection.setDoOutput(true);
                 httpURLConnection.setUseCaches(false);
                 httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.setRequestProperty("Connection", com.anythink.expressad.foundation.g.f.g.c.f7906c);
+                httpURLConnection.setRequestProperty("Connection", com.anythink.expressad.foundation.g.f.g.c.f5066c);
                 httpURLConnection.setRequestProperty("Charset", "UTF-8");
                 httpURLConnection.setRequestProperty(HttpHeaders.ACCEPT, "application/json");
                 httpURLConnection.connect();

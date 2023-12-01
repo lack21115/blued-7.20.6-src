@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.utils.Log;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
@@ -44,9 +45,7 @@ public final class PayVIPPopupWindow extends CenterPopupView {
     private String k;
     private final ViewBindingProperty t;
     static final /* synthetic */ KProperty<Object>[] d = {Reflection.a(new PropertyReference1Impl(PayVIPPopupWindow.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/PopupWindowPayVipBinding;", 0))};
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final Companion f19924c = new Companion(null);
+    public static final Companion c = new Companion(null);
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/dialog/PayVIPPopupWindow$Companion.class */
@@ -133,7 +132,7 @@ public final class PayVIPPopupWindow extends CenterPopupView {
         Intrinsics.e(type, "$type");
         CommunityServiceManager.b().a(this$0.e, 0, this$0.k, 33, VipProtos.FromType.FLASH_PRIVILEGE);
         this$0.p();
-        EventTrackOther.a(MessageProtos.Event.FLASH_PHOTO_BUY_POP_YES_CLICK, (String) type.f42545a);
+        EventTrackOther.a(MessageProtos.Event.FLASH_PHOTO_BUY_POP_YES_CLICK, (String) type.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -149,20 +148,20 @@ public final class PayVIPPopupWindow extends CenterPopupView {
         Log.a("drb", "onClick");
         if (this$0.i != 1 || CommunityServiceManager.a().H() <= 0) {
             this$0.p();
-            EventTrackOther.a(MessageProtos.Event.FLASH_PHOTO_BUY_POP_NO_CLICK, (String) type.f42545a);
+            EventTrackOther.a(MessageProtos.Event.FLASH_PHOTO_BUY_POP_NO_CLICK, (String) type.a);
             return;
         }
         BluedADExtra bluedADExtra = new BluedADExtra();
         bluedADExtra.aid = CommunityServiceManager.a().I();
         bluedADExtra.third_id = CommunityServiceManager.a().J();
         bluedADExtra.adms_type = CommunityServiceManager.a().K();
-        if (TextUtils.isEmpty(bluedADExtra.third_id) || !TextUtils.equals(bluedADExtra.adms_type, "6")) {
+        if (TextUtils.isEmpty(bluedADExtra.third_id) || !TextUtils.equals(bluedADExtra.adms_type, ATAdConst.ATDevFrameworkType.FLUTTER)) {
             this$0.p();
             AppMethods.d(R.string.msg_flash_stimulate_failed);
         } else {
             CommunityServiceManager.b().a(this$0.getContext(), bluedADExtra, 2, new OnVideoSuccessListener() { // from class: com.blued.community.ui.send.dialog.PayVIPPopupWindow$initFlashPop$3$1
                 /* JADX WARN: Code restructure failed: missing block: B:4:0x0004, code lost:
-                    r0 = r3.f19925a.j;
+                    r0 = r3.a.j;
                  */
                 @Override // com.blued.community.ui.send.dialog.PayVIPPopupWindow.OnVideoSuccessListener
                 /*
@@ -195,7 +194,7 @@ public final class PayVIPPopupWindow extends CenterPopupView {
                 }
             });
         }
-        EventTrackOther.a(MessageProtos.Event.FLASH_PHOTO_BUY_POP_FREE_CLICK, (String) type.f42545a);
+        EventTrackOther.a(MessageProtos.Event.FLASH_PHOTO_BUY_POP_FREE_CLICK, (String) type.a);
     }
 
     private final void c() {
@@ -205,7 +204,7 @@ public final class PayVIPPopupWindow extends CenterPopupView {
         }
         viewBinding.g.setText(this.g);
         viewBinding.f.setText(this.h);
-        viewBinding.f19064c.setImageDrawable(BluedSkinUtils.b(getMContext(), R.drawable.icon_nearby_people_list_pay_vip_popup_window_bg));
+        viewBinding.c.setImageDrawable(BluedSkinUtils.b(getMContext(), R.drawable.icon_nearby_people_list_pay_vip_popup_window_bg));
         EventTrackOther.a(VipProtos.Event.NEARBY_USER_VIP_POP_SHOW);
         viewBinding.e.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$PayVIPPopupWindow$6eZjjR5aMCmGiXZOgJpYCaZR4qk
             @Override // android.view.View.OnClickListener
@@ -236,9 +235,9 @@ public final class PayVIPPopupWindow extends CenterPopupView {
         TextView textView2;
         TextView textView3;
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = "think";
+        objectRef.a = "think";
         if (!TextUtils.isEmpty(CommunityServiceManager.a().J()) && TextUtils.equals(CommunityServiceManager.a().K(), "4")) {
-            objectRef.f42545a = "video";
+            objectRef.a = "video";
         }
         if (!TextUtils.isEmpty(CommunityServiceManager.a().G())) {
             PopupWindowPayVipBinding viewBinding = getViewBinding();
@@ -286,7 +285,7 @@ public final class PayVIPPopupWindow extends CenterPopupView {
                 }
             }
             PopupWindowPayVipBinding viewBinding9 = getViewBinding();
-            if (viewBinding9 != null && (imageView3 = viewBinding9.f19064c) != null) {
+            if (viewBinding9 != null && (imageView3 = viewBinding9.c) != null) {
                 imageView3.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_pay_vip_popup_window_bg_1));
             }
             PopupWindowPayVipBinding viewBinding10 = getViewBinding();
@@ -322,7 +321,7 @@ public final class PayVIPPopupWindow extends CenterPopupView {
                 }
             });
         }
-        EventTrackOther.a(MessageProtos.Event.FLASH_PHOTO_BUY_POP_SHOW, (String) objectRef.f42545a);
+        EventTrackOther.a(MessageProtos.Event.FLASH_PHOTO_BUY_POP_SHOW, (String) objectRef.a);
     }
 
     private final PopupWindowPayVipBinding getViewBinding() {

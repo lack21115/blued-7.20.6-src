@@ -11,14 +11,12 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$filterIndexed$1.class */
 final class SequencesKt___SequencesKt$filterIndexed$1<T> extends Lambda implements Function1<IndexedValue<? extends T>, Boolean> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function2<Integer, T, Boolean> f42662a;
+    final /* synthetic */ Function2<Integer, T, Boolean> a;
 
     @Override // kotlin.jvm.functions.Function1
     /* renamed from: a */
     public final Boolean invoke(IndexedValue<? extends T> it) {
         Intrinsics.e(it, "it");
-        return this.f42662a.invoke(Integer.valueOf(it.a()), it.b());
+        return this.a.invoke(Integer.valueOf(it.a()), it.b());
     }
 }

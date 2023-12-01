@@ -1,6 +1,5 @@
 package com.tencent.qimei.j;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
 import java.io.FileInputStream;
@@ -13,12 +12,12 @@ import java.util.Random;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Random f38340a = new Random();
+    public static final Random f24649a = new Random();
 
     public static String a() {
         String d = com.tencent.qimei.c.a.d();
-        int nextInt = f38340a.nextInt(2147473647);
-        return a(BridgeUtil.UNDERLINE_STR + d + BridgeUtil.UNDERLINE_STR + new Date().getTime() + BridgeUtil.UNDERLINE_STR + (nextInt + 1000));
+        int nextInt = f24649a.nextInt(2147473647);
+        return a("_" + d + "_" + new Date().getTime() + "_" + (nextInt + 1000));
     }
 
     public static String a(String str) {

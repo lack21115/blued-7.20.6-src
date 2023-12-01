@@ -9,8 +9,9 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/apng/decode/APNGParser.class */
 public class APNGParser {
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/apng/decode/APNGParser$FormatException.class */
-    static class FormatException extends IOException {
+    public static class FormatException extends IOException {
         FormatException() {
             super("APNG Format error");
         }
@@ -52,7 +53,7 @@ public class APNGParser {
         int b = aPNGReader.b();
         int m_ = aPNGReader.m_();
         int d = aPNGReader.d();
-        ACTLChunk aCTLChunk = d == ACTLChunk.f9518a ? new ACTLChunk() : d == FCTLChunk.f9524a ? new FCTLChunk() : d == FDATChunk.f9526a ? new FDATChunk() : d == IDATChunk.f9536a ? new IDATChunk() : d == IENDChunk.f9537a ? new IENDChunk() : d == IHDRChunk.f9538a ? new IHDRChunk() : new Chunk();
+        ACTLChunk aCTLChunk = d == ACTLChunk.a ? new ACTLChunk() : d == FCTLChunk.a ? new FCTLChunk() : d == FDATChunk.a ? new FDATChunk() : d == IDATChunk.a ? new IDATChunk() : d == IENDChunk.a ? new IENDChunk() : d == IHDRChunk.a ? new IHDRChunk() : new Chunk();
         aCTLChunk.g = b;
         aCTLChunk.e = d;
         aCTLChunk.d = m_;

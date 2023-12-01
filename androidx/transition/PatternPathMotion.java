@@ -14,15 +14,15 @@ import org.xmlpull.v1.XmlPullParser;
 public class PatternPathMotion extends PathMotion {
 
     /* renamed from: a  reason: collision with root package name */
-    private Path f3459a;
+    private Path f3411a;
     private final Path b = new Path();
 
     /* renamed from: c  reason: collision with root package name */
-    private final Matrix f3460c = new Matrix();
+    private final Matrix f3412c = new Matrix();
 
     public PatternPathMotion() {
         this.b.lineTo(1.0f, 0.0f);
-        this.f3459a = this.b;
+        this.f3411a = this.b;
     }
 
     public PatternPathMotion(Context context, AttributeSet attributeSet) {
@@ -52,16 +52,16 @@ public class PatternPathMotion extends PathMotion {
         float f6 = f4 - f2;
         float a2 = a(f5, f6);
         double atan2 = Math.atan2(f6, f5);
-        this.f3460c.setScale(a2, a2);
-        this.f3460c.postRotate((float) Math.toDegrees(atan2));
-        this.f3460c.postTranslate(f, f2);
+        this.f3412c.setScale(a2, a2);
+        this.f3412c.postRotate((float) Math.toDegrees(atan2));
+        this.f3412c.postTranslate(f, f2);
         Path path = new Path();
-        this.b.transform(this.f3460c, path);
+        this.b.transform(this.f3412c, path);
         return path;
     }
 
     public Path getPatternPath() {
-        return this.f3459a;
+        return this.f3411a;
     }
 
     public void setPatternPath(Path path) {
@@ -77,13 +77,13 @@ public class PatternPathMotion extends PathMotion {
         if (f3 == f && f4 == f2) {
             throw new IllegalArgumentException("pattern must not end at the starting point");
         }
-        this.f3460c.setTranslate(-f3, -f4);
+        this.f3412c.setTranslate(-f3, -f4);
         float f5 = f - f3;
         float f6 = f2 - f4;
         float a2 = 1.0f / a(f5, f6);
-        this.f3460c.postScale(a2, a2);
-        this.f3460c.postRotate((float) Math.toDegrees(-Math.atan2(f6, f5)));
-        path.transform(this.f3460c, this.b);
-        this.f3459a = path;
+        this.f3412c.postScale(a2, a2);
+        this.f3412c.postRotate((float) Math.toDegrees(-Math.atan2(f6, f5)));
+        path.transform(this.f3412c, this.b);
+        this.f3411a = path;
     }
 }

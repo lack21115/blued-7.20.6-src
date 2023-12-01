@@ -28,11 +28,11 @@ import java.util.concurrent.TimeUnit;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    static boolean f21948a = false;
+    static boolean f8341a = false;
     public static ThreadPoolExecutor b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final a f21949c;
+    private static final a f8342c;
     private static volatile d d;
     private static Context e;
     private static boolean f = false;
@@ -56,11 +56,11 @@ public class d {
     static class c implements a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static String f21950a;
+        private static String f8343a;
         private static boolean b = false;
 
         /* renamed from: c  reason: collision with root package name */
-        private static boolean f21951c = false;
+        private static boolean f8344c = false;
         private static final CountDownLatch d = new CountDownLatch(1);
         private final String e;
         private final String f;
@@ -81,7 +81,7 @@ public class d {
 
         @Override // com.getui.gtc.dim.c.d.a
         public boolean a(Context context) {
-            if (f21951c) {
+            if (f8344c) {
                 return b;
             }
             boolean z = false;
@@ -110,7 +110,7 @@ public class d {
                 }
             }
             b = z;
-            f21951c = true;
+            f8344c = true;
             return b;
         }
 
@@ -122,18 +122,18 @@ public class d {
         @Override // com.getui.gtc.dim.c.d.a
         public String b(Context context) {
             f fVar;
-            if (!TextUtils.isEmpty(f21950a) || (fVar = this.i) == null || fVar.f21955a == null) {
-                return f21950a;
+            if (!TextUtils.isEmpty(f8343a) || (fVar = this.i) == null || fVar.f8348a == null) {
+                return f8343a;
             }
             try {
-                String a2 = this.i.f21955a.a(d(context), e(context), a(), b());
-                f21950a = a2;
+                String a2 = this.i.f8348a.a(d(context), e(context), a(), b());
+                f8343a = a2;
                 if (!TextUtils.isEmpty(a2) && this.i != null) {
                     context.unbindService(this.i);
                 }
             } catch (Throwable th) {
             }
-            return f21950a;
+            return f8343a;
         }
 
         @Override // com.getui.gtc.dim.c.d.a
@@ -167,26 +167,26 @@ public class d {
 
     /* renamed from: com.getui.gtc.dim.c.d$d  reason: collision with other inner class name */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/dim/c/d$d.class */
-    public static class C0346d implements a {
+    public static class C0176d implements a {
         protected static boolean b = false;
         private static String d;
 
         /* renamed from: a  reason: collision with root package name */
-        String[] f21952a;
+        String[] f8345a;
 
         /* renamed from: c  reason: collision with root package name */
-        protected boolean f21953c = false;
+        protected boolean f8346c = false;
         private String e;
         private String f;
 
-        public C0346d(String str, String str2) {
+        public C0176d(String str, String str2) {
             this.e = str;
             this.f = str2;
         }
 
         @Override // com.getui.gtc.dim.c.d.a
         public boolean a(Context context) {
-            if (this.f21953c) {
+            if (this.f8346c) {
                 return b;
             }
             if (context == null) {
@@ -198,7 +198,7 @@ public class d {
             } catch (Throwable th) {
                 b = false;
             }
-            this.f21953c = true;
+            this.f8346c = true;
             return b;
         }
 
@@ -219,7 +219,7 @@ public class d {
         public java.lang.String b(android.content.Context r8) {
             /*
                 r7 = this;
-                java.lang.String r0 = com.getui.gtc.dim.c.d.C0346d.d
+                java.lang.String r0 = com.getui.gtc.dim.c.d.C0176d.d
                 boolean r0 = android.text.TextUtils.isEmpty(r0)
                 if (r0 == 0) goto L87
                 java.lang.StringBuilder r0 = new java.lang.StringBuilder
@@ -248,7 +248,7 @@ public class d {
                 r2 = 0
                 r3 = 0
                 r4 = r7
-                java.lang.String[] r4 = r4.f21952a     // Catch: java.lang.Throwable -> L8b
+                java.lang.String[] r4 = r4.f8345a     // Catch: java.lang.Throwable -> L8b
                 r5 = 0
                 android.database.Cursor r0 = r0.query(r1, r2, r3, r4, r5)     // Catch: java.lang.Throwable -> L8b
                 r8 = r0
@@ -261,7 +261,7 @@ public class d {
                 java.lang.String r2 = "value"
                 int r1 = r1.getColumnIndex(r2)     // Catch: java.lang.Throwable -> L8f
                 java.lang.String r0 = r0.getString(r1)     // Catch: java.lang.Throwable -> L8f
-                com.getui.gtc.dim.c.d.C0346d.d = r0     // Catch: java.lang.Throwable -> L8f
+                com.getui.gtc.dim.c.d.C0176d.d = r0     // Catch: java.lang.Throwable -> L8f
             L60:
                 r0 = r8
                 if (r0 == 0) goto L87
@@ -271,7 +271,7 @@ public class d {
                 r8 = r0
             L69:
                 r0 = 0
-                com.getui.gtc.dim.c.d.C0346d.d = r0     // Catch: java.lang.Throwable -> L7a
+                com.getui.gtc.dim.c.d.C0176d.d = r0     // Catch: java.lang.Throwable -> L7a
                 r0 = r8
                 if (r0 == 0) goto L87
             L71:
@@ -288,7 +288,7 @@ public class d {
                 r0 = r9
                 throw r0
             L87:
-                java.lang.String r0 = com.getui.gtc.dim.c.d.C0346d.d
+                java.lang.String r0 = com.getui.gtc.dim.c.d.C0176d.d
                 return r0
             L8b:
                 r8 = move-exception
@@ -297,7 +297,7 @@ public class d {
                 r9 = move-exception
                 goto L69
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.getui.gtc.dim.c.d.C0346d.b(android.content.Context):java.lang.String");
+            throw new UnsupportedOperationException("Method not decompiled: com.getui.gtc.dim.c.d.C0176d.b(android.content.Context):java.lang.String");
         }
 
         @Override // com.getui.gtc.dim.c.d.a
@@ -310,11 +310,11 @@ public class d {
     public static final class e implements IInterface {
 
         /* renamed from: a  reason: collision with root package name */
-        private IBinder f21954a;
+        private IBinder f8347a;
         private String b;
 
         private e(IBinder iBinder, String str) {
-            this.f21954a = iBinder;
+            this.f8347a = iBinder;
             this.b = str;
         }
 
@@ -340,7 +340,7 @@ public class d {
                 if (!TextUtils.isEmpty(str3)) {
                     obtain.writeString(str3);
                 }
-                this.f21954a.transact(i, obtain, obtain2, 0);
+                this.f8347a.transact(i, obtain, obtain2, 0);
                 obtain2.readException();
                 return obtain2.readString();
             } catch (Throwable th) {
@@ -356,7 +356,7 @@ public class d {
 
         @Override // android.os.IInterface
         public final IBinder asBinder() {
-            return this.f21954a;
+            return this.f8347a;
         }
     }
 
@@ -364,29 +364,29 @@ public class d {
     public static final class f implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        e f21955a;
+        e f8348a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private CountDownLatch f21956c;
+        private CountDownLatch f8349c;
         private IBinder d;
 
         f(String str, CountDownLatch countDownLatch) {
             this.b = str;
-            this.f21956c = countDownLatch;
+            this.f8349c = countDownLatch;
         }
 
         final boolean a(Context context, Intent intent) {
             if (context == null) {
                 return false;
             }
-            if (this.f21955a != null) {
+            if (this.f8348a != null) {
                 return true;
             }
             try {
                 boolean bindService = context.bindService(intent, this, 1);
-                this.f21956c.await(1L, TimeUnit.SECONDS);
-                this.f21955a = e.a(this.d, this.b);
+                this.f8349c.await(1L, TimeUnit.SECONDS);
+                this.f8348a = e.a(this.d, this.b);
                 return bindService;
             } catch (Throwable th) {
                 return false;
@@ -397,14 +397,14 @@ public class d {
         public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             try {
                 this.d = iBinder;
-                this.f21956c.countDown();
+                this.f8349c.countDown();
             } catch (Throwable th) {
             }
         }
 
         @Override // android.content.ServiceConnection
         public final void onServiceDisconnected(ComponentName componentName) {
-            this.f21955a = null;
+            this.f8348a = null;
             this.d = null;
         }
     }
@@ -490,12 +490,12 @@ public class d {
     }
 
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/dim/c/d$j.class */
-    public static final class j extends C0346d {
+    public static final class j extends C0176d {
         public j() {
             super("com.meizu.flyme.openidsdk", "");
         }
 
-        @Override // com.getui.gtc.dim.c.d.C0346d, com.getui.gtc.dim.c.d.a
+        @Override // com.getui.gtc.dim.c.d.C0176d, com.getui.gtc.dim.c.d.a
         public final boolean a(Context context) {
             if (super.a(context)) {
                 b = true;
@@ -521,13 +521,13 @@ public class d {
                     return false;
                 }
             }
-            this.f21953c = true;
+            this.f8346c = true;
             return b;
         }
 
-        @Override // com.getui.gtc.dim.c.d.C0346d, com.getui.gtc.dim.c.d.a
+        @Override // com.getui.gtc.dim.c.d.C0176d, com.getui.gtc.dim.c.d.a
         public final String b(Context context) {
-            this.f21952a = new String[]{"oaid"};
+            this.f8345a = new String[]{"oaid"};
             return super.b(context);
         }
     }
@@ -536,16 +536,16 @@ public class d {
     static final class k implements a {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f21957a;
+        private boolean f8350a;
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f21958c;
+        private String f8351c;
 
         private k() {
-            this.f21957a = false;
+            this.f8350a = false;
             this.b = false;
-            this.f21958c = null;
+            this.f8351c = null;
         }
 
         /* synthetic */ k(byte b) {
@@ -555,26 +555,26 @@ public class d {
         @Override // com.getui.gtc.dim.c.d.a
         public final boolean a(Context context) {
             if (this.b) {
-                return this.f21957a;
+                return this.f8350a;
             }
             if (context == null) {
                 return false;
             }
             try {
                 PackageManager packageManager = context.getPackageManager();
-                this.f21957a = (packageManager == null || packageManager.resolveContentProvider("cn.nubia.identity", 0) == null) ? false : true;
+                this.f8350a = (packageManager == null || packageManager.resolveContentProvider("cn.nubia.identity", 0) == null) ? false : true;
             } catch (Throwable th) {
-                this.f21957a = false;
+                this.f8350a = false;
             }
             this.b = true;
-            return this.f21957a;
+            return this.f8350a;
         }
 
         @Override // com.getui.gtc.dim.c.d.a
         public final String b(Context context) {
             Bundle call;
             try {
-                if (TextUtils.isEmpty(this.f21958c)) {
+                if (TextUtils.isEmpty(this.f8351c)) {
                     Uri parse = Uri.parse("content://cn.nubia.identity/identity");
                     if (Build.VERSION.SDK_INT >= 17) {
                         ContentProviderClient acquireContentProviderClient = context.getContentResolver().acquireContentProviderClient(parse);
@@ -595,16 +595,16 @@ public class d {
                         call = context.getContentResolver().call(parse, "getOAID", null, null);
                     }
                     if (call == null) {
-                        return this.f21958c;
+                        return this.f8351c;
                     }
                     if (call.getInt("code", -1) == 0) {
-                        this.f21958c = call.getString("id");
+                        this.f8351c = call.getString("id");
                     }
                 }
             } catch (Throwable th2) {
-                this.f21958c = null;
+                this.f8351c = null;
             }
-            return this.f21958c;
+            return this.f8351c;
         }
 
         @Override // com.getui.gtc.dim.c.d.a
@@ -617,7 +617,7 @@ public class d {
     public static final class l extends c {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f21959a;
+        private String f8352a;
         private String b;
 
         public l() {
@@ -654,7 +654,7 @@ public class d {
 
         @Override // com.getui.gtc.dim.c.d.c
         protected final String e(Context context) {
-            if (TextUtils.isEmpty(this.f21959a)) {
+            if (TextUtils.isEmpty(this.f8352a)) {
                 try {
                     String d = d(context);
                     this.b = d;
@@ -665,12 +665,12 @@ public class d {
                         for (byte b : digest) {
                             sb.append(Integer.toHexString((b & 255) | 256).substring(1, 3));
                         }
-                        this.f21959a = sb.toString();
+                        this.f8352a = sb.toString();
                     }
                 } catch (Throwable th) {
                 }
             }
-            return this.f21959a;
+            return this.f8352a;
         }
     }
 
@@ -697,7 +697,7 @@ public class d {
     }
 
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/dim/c/d$n.class */
-    public static final class n extends C0346d {
+    public static final class n extends C0176d {
         public n() {
             super("com.vivo.vms.IdProvider", "IdentifierId/OAID");
         }
@@ -708,12 +708,12 @@ public class d {
         private static String b;
 
         /* renamed from: a  reason: collision with root package name */
-        private Class<?> f21960a = null;
+        private Class<?> f8353a = null;
 
         @Override // com.getui.gtc.dim.c.d.a
         public final boolean a(Context context) {
             try {
-                this.f21960a = Class.forName("com.android.id.impl.IdProviderImpl");
+                this.f8353a = Class.forName("com.android.id.impl.IdProviderImpl");
                 return true;
             } catch (Throwable th) {
                 return false;
@@ -724,7 +724,7 @@ public class d {
         public final String b(Context context) {
             if (TextUtils.isEmpty(b)) {
                 try {
-                    b = String.valueOf(this.f21960a.getMethod("getOAID", Context.class).invoke(this.f21960a.newInstance(), context));
+                    b = String.valueOf(this.f8353a.getMethod("getOAID", Context.class).invoke(this.f8353a.newInstance(), context));
                 } catch (Throwable th) {
                     b = null;
                 }
@@ -955,7 +955,7 @@ public class d {
                 lVar = null;
                 break;
         }
-        f21949c = lVar;
+        f8342c = lVar;
     }
 
     public static d a() {
@@ -975,14 +975,14 @@ public class d {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(Context context) {
-        if (f21949c == null || context == null) {
+        if (f8342c == null || context == null) {
             return;
         }
         e = context.getApplicationContext();
         boolean c2 = c();
         f = c2;
         if (c2) {
-            f21948a = f21949c.c(e);
+            f8341a = f8342c.c(e);
         }
     }
 
@@ -993,11 +993,11 @@ public class d {
             if (e == null) {
                 return null;
             }
-            if (f21949c != null) {
-                if (!f21948a) {
+            if (f8342c != null) {
+                if (!f8341a) {
                     return null;
                 }
-                str = f21949c.b(e);
+                str = f8342c.b(e);
             }
             return str;
         } catch (Throwable th) {
@@ -1007,10 +1007,10 @@ public class d {
 
     private static boolean c() {
         try {
-            if (e == null || f21949c == null) {
+            if (e == null || f8342c == null) {
                 return false;
             }
-            return f21949c.a(e);
+            return f8342c.a(e);
         } catch (Throwable th) {
             return false;
         }

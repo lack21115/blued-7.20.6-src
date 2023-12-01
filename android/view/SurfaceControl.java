@@ -6,7 +6,6 @@ import android.graphics.Region;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.Surface;
-import com.alipay.sdk.util.i;
 import dalvik.system.CloseGuard;
 
 /* loaded from: source-9557208-dex2jar.jar:android/view/SurfaceControl.class */
@@ -79,7 +78,7 @@ public class SurfaceControl {
         }
 
         public String toString() {
-            return "PhysicalDisplayInfo{" + this.width + " x " + this.height + ", " + this.refreshRate + " fps, density " + this.density + ", " + this.xDpi + " x " + this.yDpi + " dpi, secure " + this.secure + ", appVsyncOffset " + this.appVsyncOffsetNanos + ", bufferDeadline " + this.presentationDeadlineNanos + i.d;
+            return "PhysicalDisplayInfo{" + this.width + " x " + this.height + ", " + this.refreshRate + " fps, density " + this.density + ", " + this.xDpi + " x " + this.yDpi + " dpi, secure " + this.secure + ", appVsyncOffset " + this.appVsyncOffsetNanos + ", bufferDeadline " + this.presentationDeadlineNanos + "}";
         }
     }
 

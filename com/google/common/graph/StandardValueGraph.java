@@ -98,7 +98,7 @@ class StandardValueGraph<N, V> extends AbstractValueGraph<N, V> {
     public Set<EndpointPair<N>> incidentEdges(N n) {
         final GraphConnections<N, V> checkedConnections = checkedConnections(n);
         return new IncidentEdgeSet<N>(this, n) { // from class: com.google.common.graph.StandardValueGraph.1
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public Iterator<EndpointPair<N>> iterator() {
                 return checkedConnections.incidentEdgeIterator(this.node);
             }

@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f38316a;
+    public static String f24625a;
     public static String b;
 
     static {
@@ -20,17 +20,17 @@ public class a {
     }
 
     public static String a() {
-        if (f38316a == null) {
-            f38316a = e();
+        if (f24625a == null) {
+            f24625a = e();
         }
-        return f38316a;
+        return f24625a;
     }
 
     public static void a(String str) {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        f38316a = str;
+        f24625a = str;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:34:0x0038, code lost:

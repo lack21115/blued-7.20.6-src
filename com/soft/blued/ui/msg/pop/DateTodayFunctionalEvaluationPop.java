@@ -2,8 +2,10 @@ package com.soft.blued.ui.msg.pop;
 
 import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.anythink.expressad.a;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.ui.xpop.core.BottomPopupView;
@@ -29,7 +31,7 @@ public final class DateTodayFunctionalEvaluationPop extends BottomPopupView {
     private final List<DateTodayFunctionEvaluationModel> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final IRequestHost f32468c;
+    private final IRequestHost f18777c;
     private TextView d;
     private Evaluation e;
     private Set<Integer> f;
@@ -45,21 +47,21 @@ public final class DateTodayFunctionalEvaluationPop extends BottomPopupView {
     public static final class Evaluation {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f32469a;
+        private final String f18778a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f32470c;
+        private final int f18779c;
         private final List<String> d;
         private boolean e;
 
-        public Evaluation(String title, int i, int i2, List<String> tags, boolean z) {
-            Intrinsics.e(title, "title");
-            Intrinsics.e(tags, "tags");
-            this.f32469a = title;
+        public Evaluation(String str, int i, int i2, List<String> list, boolean z) {
+            Intrinsics.e(str, "title");
+            Intrinsics.e(list, "tags");
+            this.f18778a = str;
             this.b = i;
-            this.f32470c = i2;
-            this.d = tags;
+            this.f18779c = i2;
+            this.d = list;
             this.e = z;
         }
 
@@ -68,7 +70,7 @@ public final class DateTodayFunctionalEvaluationPop extends BottomPopupView {
         }
 
         public final String a() {
-            return this.f32469a;
+            return this.f18778a;
         }
 
         public final int b() {
@@ -76,7 +78,7 @@ public final class DateTodayFunctionalEvaluationPop extends BottomPopupView {
         }
 
         public final int c() {
-            return this.f32470c;
+            return this.f18779c;
         }
 
         public final List<String> d() {
@@ -89,7 +91,7 @@ public final class DateTodayFunctionalEvaluationPop extends BottomPopupView {
             }
             if (obj instanceof Evaluation) {
                 Evaluation evaluation = (Evaluation) obj;
-                return Intrinsics.a((Object) this.f32469a, (Object) evaluation.f32469a) && this.b == evaluation.b && this.f32470c == evaluation.f32470c && Intrinsics.a(this.d, evaluation.d) && this.e == evaluation.e;
+                return Intrinsics.a(this.f18778a, evaluation.f18778a) && this.b == evaluation.b && this.f18779c == evaluation.f18779c && Intrinsics.a(this.d, evaluation.d) && this.e == evaluation.e;
             }
             return false;
         }
@@ -100,23 +102,23 @@ public final class DateTodayFunctionalEvaluationPop extends BottomPopupView {
         }
 
         public String toString() {
-            return "Evaluation(title=" + this.f32469a + ", iconNormal=" + this.b + ", iconSelected=" + this.f32470c + ", tags=" + this.d + ", selected=" + this.e + ')';
+            return "Evaluation(title=" + this.f18778a + ", iconNormal=" + this.b + ", iconSelected=" + this.f18779c + ", tags=" + this.d + ", selected=" + this.e + ')';
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DateTodayFunctionalEvaluationPop(Context context, List<DateTodayFunctionEvaluationModel> evaluation, IRequestHost iRequestHost) {
+    public DateTodayFunctionalEvaluationPop(Context context, List<DateTodayFunctionEvaluationModel> list, IRequestHost iRequestHost) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(evaluation, "evaluation");
-        this.b = evaluation;
-        this.f32468c = iRequestHost;
+        Intrinsics.e(list, "evaluation");
+        this.b = list;
+        this.f18777c = iRequestHost;
         this.f = new LinkedHashSet();
         this.g = new ArrayList();
         this.h = new ArrayList();
-        this.i = CollectionsKt.b(Integer.valueOf((int) R.string.date_today_evaluation_a), Integer.valueOf((int) R.string.date_today_evaluation_b), Integer.valueOf((int) R.string.date_today_evaluation_c), Integer.valueOf((int) R.string.date_today_evaluation_d), Integer.valueOf((int) R.string.date_today_evaluation_e));
-        this.j = CollectionsKt.b(Integer.valueOf((int) R.drawable.icon_date_today_a_normal), Integer.valueOf((int) R.drawable.icon_date_today_b_normal), Integer.valueOf((int) R.drawable.icon_date_today_c_normal), Integer.valueOf((int) R.drawable.icon_date_today_d_normal), Integer.valueOf((int) R.drawable.icon_date_today_e_normal));
-        this.k = CollectionsKt.b(Integer.valueOf((int) R.drawable.icon_date_today_a_selected), Integer.valueOf((int) R.drawable.icon_date_today_b_selected), Integer.valueOf((int) R.drawable.icon_date_today_c_selected), Integer.valueOf((int) R.drawable.icon_date_today_d_selected), Integer.valueOf((int) R.drawable.icon_date_today_e_selected));
+        this.i = CollectionsKt.b(new Integer[]{Integer.valueOf((int) R.string.date_today_evaluation_a), Integer.valueOf((int) R.string.date_today_evaluation_b), Integer.valueOf((int) R.string.date_today_evaluation_c), Integer.valueOf((int) R.string.date_today_evaluation_d), Integer.valueOf((int) R.string.date_today_evaluation_e)});
+        this.j = CollectionsKt.b(new Integer[]{Integer.valueOf((int) R.drawable.icon_date_today_a_normal), Integer.valueOf((int) R.drawable.icon_date_today_b_normal), Integer.valueOf((int) R.drawable.icon_date_today_c_normal), Integer.valueOf((int) R.drawable.icon_date_today_d_normal), Integer.valueOf((int) R.drawable.icon_date_today_e_normal)});
+        this.k = CollectionsKt.b(new Integer[]{Integer.valueOf((int) R.drawable.icon_date_today_a_selected), Integer.valueOf((int) R.drawable.icon_date_today_b_selected), Integer.valueOf((int) R.drawable.icon_date_today_c_selected), Integer.valueOf((int) R.drawable.icon_date_today_d_selected), Integer.valueOf((int) R.drawable.icon_date_today_e_selected)});
     }
 
     private final void a(View view, int i) {
@@ -167,103 +169,101 @@ public final class DateTodayFunctionalEvaluationPop extends BottomPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(DateTodayFunctionalEvaluationPop this$0, View view) {
+    public static final void a(DateTodayFunctionalEvaluationPop dateTodayFunctionalEvaluationPop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        if (this$0.f.size() > 0) {
-            this$0.p();
-            Evaluation evaluation = this$0.e;
+        Intrinsics.e(dateTodayFunctionalEvaluationPop, "this$0");
+        if (dateTodayFunctionalEvaluationPop.f.size() > 0) {
+            dateTodayFunctionalEvaluationPop.p();
+            Evaluation evaluation = dateTodayFunctionalEvaluationPop.e;
             if (evaluation == null) {
                 return;
             }
             ArrayList arrayList = new ArrayList();
-            for (Integer num : this$0.f) {
-                arrayList.add(evaluation.d().get(num.intValue()));
+            for (Number number : dateTodayFunctionalEvaluationPop.f) {
+                arrayList.add(evaluation.d().get(number.intValue()));
             }
             if (!arrayList.isEmpty()) {
-                ChatHttpUtils.a(evaluation.a(), arrayList, this$0.f32468c);
+                ChatHttpUtils.a(evaluation.a(), arrayList, dateTodayFunctionalEvaluationPop.f18777c);
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(DateTodayFunctionalEvaluationPop this$0, View tagView, int i) {
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.c(tagView, "tagView");
-        this$0.a(tagView, i);
+    public static final void a(DateTodayFunctionalEvaluationPop dateTodayFunctionalEvaluationPop, View view, int i) {
+        Intrinsics.e(dateTodayFunctionalEvaluationPop, "this$0");
+        Intrinsics.c(view, "tagView");
+        dateTodayFunctionalEvaluationPop.a(view, i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final DateTodayFunctionalEvaluationPop this$0, FlowLayout flowLayout, View itemView, int i) {
-        Intrinsics.e(this$0, "this$0");
-        Evaluation evaluation = this$0.g.get(i);
-        if (Intrinsics.a(this$0.e, evaluation)) {
-            this$0.e = null;
-            Intrinsics.c(itemView, "itemView");
-            this$0.a(itemView, evaluation, false);
+    public static final void a(final DateTodayFunctionalEvaluationPop dateTodayFunctionalEvaluationPop, FlowLayout flowLayout, View view, int i) {
+        Intrinsics.e(dateTodayFunctionalEvaluationPop, "this$0");
+        Evaluation evaluation = dateTodayFunctionalEvaluationPop.g.get(i);
+        if (Intrinsics.a(dateTodayFunctionalEvaluationPop.e, evaluation)) {
+            dateTodayFunctionalEvaluationPop.e = null;
+            Intrinsics.c(view, "itemView");
+            dateTodayFunctionalEvaluationPop.a(view, evaluation, false);
             flowLayout.setVisibility(8);
             flowLayout.removeAllViews();
-            TextView textView = this$0.d;
+            TextView textView = dateTodayFunctionalEvaluationPop.d;
             if (textView != null) {
                 textView.setBackgroundResource(R.drawable.shape_date_today_cancel);
             }
-            TextView textView2 = this$0.d;
+            TextView textView2 = dateTodayFunctionalEvaluationPop.d;
             if (textView2 == null) {
                 return;
             }
-            textView2.setTextColor(BluedSkinUtils.a(this$0.getContext(), 2131102264));
+            textView2.setTextColor(BluedSkinUtils.a(dateTodayFunctionalEvaluationPop.getContext(), 2131102264));
             return;
         }
-        this$0.e = evaluation;
-        Iterator<View> it = this$0.h.iterator();
+        dateTodayFunctionalEvaluationPop.e = evaluation;
+        Iterator<T> it = dateTodayFunctionalEvaluationPop.h.iterator();
         int i2 = 0;
         while (true) {
             int i3 = i2;
             if (!it.hasNext()) {
                 break;
             }
-            View next = it.next();
+            Object next = it.next();
             if (i3 < 0) {
                 CollectionsKt.c();
             }
-            this$0.a(next, this$0.g.get(i3), false);
+            dateTodayFunctionalEvaluationPop.a((View) next, dateTodayFunctionalEvaluationPop.g.get(i3), false);
             i2 = i3 + 1;
         }
-        Intrinsics.c(itemView, "itemView");
-        this$0.a(itemView, evaluation, true);
-        this$0.f.clear();
+        Intrinsics.c(view, "itemView");
+        dateTodayFunctionalEvaluationPop.a(view, evaluation, true);
+        dateTodayFunctionalEvaluationPop.f.clear();
         flowLayout.setVisibility(0);
         flowLayout.removeAllViews();
         for (String str : evaluation.d()) {
-            View inflate = BottomPopupView.inflate(this$0.getContext(), R.layout.item_date_today_evaluation, null);
+            View inflate = BottomPopupView.inflate(dateTodayFunctionalEvaluationPop.getContext(), (int) R.layout.item_date_today_evaluation, (ViewGroup) null);
             ((TextView) inflate.findViewById(R.id.tv_evaluation_text)).setText(str);
             flowLayout.addView(inflate);
         }
         flowLayout.setOnItemClickListener(new FlowLayout.OnItemClickListener() { // from class: com.soft.blued.ui.msg.pop.-$$Lambda$DateTodayFunctionalEvaluationPop$E2lj-TMTxnRXwLq2g6CC1waxkfA
-            @Override // com.blued.android.module.common.view.FlowLayout.OnItemClickListener
-            public final void onItemClick(View view, int i4) {
-                DateTodayFunctionalEvaluationPop.a(DateTodayFunctionalEvaluationPop.this, view, i4);
+            public final void onItemClick(View view2, int i4) {
+                DateTodayFunctionalEvaluationPop.a(DateTodayFunctionalEvaluationPop.this, view2, i4);
             }
         });
-        TextView textView3 = this$0.d;
+        TextView textView3 = dateTodayFunctionalEvaluationPop.d;
         if (textView3 != null) {
             textView3.setBackgroundResource(R.drawable.shape_date_today_done);
         }
-        TextView textView4 = this$0.d;
+        TextView textView4 = dateTodayFunctionalEvaluationPop.d;
         if (textView4 == null) {
             return;
         }
-        textView4.setTextColor(this$0.getContext().getResources().getColor(BluedPreferences.cK() ? 2131102254 : 2131101780));
+        textView4.setTextColor(dateTodayFunctionalEvaluationPop.getContext().getResources().getColor(BluedPreferences.cK() ? 2131102254 : 2131101780));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(DateTodayFunctionalEvaluationPop this$0, View view) {
+    public static final void b(DateTodayFunctionalEvaluationPop dateTodayFunctionalEvaluationPop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(dateTodayFunctionalEvaluationPop, "this$0");
+        dateTodayFunctionalEvaluationPop.p();
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         List<String> tags;
         super.b();
@@ -283,57 +283,55 @@ public final class DateTodayFunctionalEvaluationPop extends BottomPopupView {
             }
             i = i2 + 1;
         }
-        FlowLayout flowLayout = (FlowLayout) findViewById(R.id.fl_user_satisfaction);
-        final FlowLayout flowLayout2 = (FlowLayout) findViewById(R.id.fl_user_impression);
-        flowLayout2.setVisibility(8);
-        flowLayout.removeAllViews();
+        FlowLayout findViewById = findViewById(R.id.fl_user_satisfaction);
+        final FlowLayout findViewById2 = findViewById(R.id.fl_user_impression);
+        findViewById2.setVisibility(8);
+        findViewById.removeAllViews();
         for (Evaluation evaluation : this.g) {
-            View view = BottomPopupView.inflate(getContext(), R.layout.item_date_today_functional_evaluation, null);
+            View inflate = BottomPopupView.inflate(getContext(), (int) R.layout.item_date_today_functional_evaluation, (ViewGroup) null);
             List<View> list2 = this.h;
-            Intrinsics.c(view, "view");
-            list2.add(view);
+            Intrinsics.c(inflate, a.B);
+            list2.add(inflate);
         }
-        Iterator<View> it2 = this.h.iterator();
+        Iterator<T> it2 = this.h.iterator();
         int i3 = 0;
         while (true) {
             int i4 = i3;
             if (!it2.hasNext()) {
                 break;
             }
-            View next2 = it2.next();
+            Object next2 = it2.next();
             if (i4 < 0) {
                 CollectionsKt.c();
             }
-            View view2 = next2;
-            a(view2, this.g.get(i4), false);
-            flowLayout.addView(view2);
+            View view = (View) next2;
+            a(view, this.g.get(i4), false);
+            findViewById.addView(view);
             i3 = i4 + 1;
         }
-        flowLayout.setOnItemClickListener(new FlowLayout.OnItemClickListener() { // from class: com.soft.blued.ui.msg.pop.-$$Lambda$DateTodayFunctionalEvaluationPop$XDDaVoLHIs5330bYZFHMN9hkWzA
-            @Override // com.blued.android.module.common.view.FlowLayout.OnItemClickListener
-            public final void onItemClick(View view3, int i5) {
-                DateTodayFunctionalEvaluationPop.a(DateTodayFunctionalEvaluationPop.this, flowLayout2, view3, i5);
+        findViewById.setOnItemClickListener(new FlowLayout.OnItemClickListener() { // from class: com.soft.blued.ui.msg.pop.-$$Lambda$DateTodayFunctionalEvaluationPop$XDDaVoLHIs5330bYZFHMN9hkWzA
+            public final void onItemClick(View view2, int i5) {
+                DateTodayFunctionalEvaluationPop.a(DateTodayFunctionalEvaluationPop.this, findViewById2, view2, i5);
             }
         });
-        TextView textView = (TextView) findViewById(2131371293);
+        TextView textView = (TextView) findViewById(R.id.tv_done);
         this.d = textView;
         if (textView != null) {
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.pop.-$$Lambda$DateTodayFunctionalEvaluationPop$3OW8RoP-MMcGj7P48r-AlPnSMu0
                 @Override // android.view.View.OnClickListener
-                public final void onClick(View view3) {
-                    DateTodayFunctionalEvaluationPop.a(DateTodayFunctionalEvaluationPop.this, view3);
+                public final void onClick(View view2) {
+                    DateTodayFunctionalEvaluationPop.a(DateTodayFunctionalEvaluationPop.this, view2);
                 }
             });
         }
         ((ImageView) findViewById(2131365207)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.pop.-$$Lambda$DateTodayFunctionalEvaluationPop$VFSa2G2h4O2MEz9JecWx_l21zmI
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view3) {
-                DateTodayFunctionalEvaluationPop.b(DateTodayFunctionalEvaluationPop.this, view3);
+            public final void onClick(View view2) {
+                DateTodayFunctionalEvaluationPop.b(DateTodayFunctionalEvaluationPop.this, view2);
             }
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_date_today_functional_evaluation;
     }

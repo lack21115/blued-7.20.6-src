@@ -1,8 +1,5 @@
 package io.grpc.okhttp.internal;
 
-import com.ishumei.sdk.captcha.SmCaptchaWebView;
-import com.soft.blued.ui.find.model.UserFindResult;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
@@ -282,8 +279,8 @@ public class Platform {
             } else if (name.equals("protocols") && strArr.length == 0) {
                 return this.protocols;
             } else {
-                if ((!name.equals("selectProtocol") && !name.equals(SmCaptchaWebView.MODE_SELECT)) || String.class != returnType || strArr.length != 1 || !(strArr[0] instanceof List)) {
-                    if ((name.equals("protocolSelected") || name.equals(UserFindResult.USER_SORT_BY.SELECTED)) && strArr.length == 1) {
+                if ((!name.equals("selectProtocol") && !name.equals("select")) || String.class != returnType || strArr.length != 1 || !(strArr[0] instanceof List)) {
+                    if ((name.equals("protocolSelected") || name.equals("selected")) && strArr.length == 1) {
                         this.selected = (String) strArr[0];
                         return null;
                     }
@@ -391,7 +388,7 @@ public class Platform {
                 try {
                     Class<?> cls2 = Class.forName("org.eclipse.jetty.alpn.ALPN");
                     Class<?> cls3 = Class.forName("org.eclipse.jetty.alpn.ALPN$Provider");
-                    return new JdkWithJettyBootPlatform(cls2.getMethod("put", SSLSocket.class, cls3), cls2.getMethod(MonitorConstants.CONNECT_TYPE_GET, SSLSocket.class), cls2.getMethod("remove", SSLSocket.class), Class.forName("org.eclipse.jetty.alpn.ALPN$ClientProvider"), Class.forName("org.eclipse.jetty.alpn.ALPN$ServerProvider"), provider);
+                    return new JdkWithJettyBootPlatform(cls2.getMethod("put", SSLSocket.class, cls3), cls2.getMethod("get", SSLSocket.class), cls2.getMethod("remove", SSLSocket.class), Class.forName("org.eclipse.jetty.alpn.ALPN$ClientProvider"), Class.forName("org.eclipse.jetty.alpn.ALPN$ServerProvider"), provider);
                 } catch (ClassNotFoundException | NoSuchMethodException e4) {
                     return new Platform(provider);
                 }

@@ -3,7 +3,6 @@ package com.android.internal.os;
 import android.os.IBinder;
 import android.os.SystemClock;
 import android.util.EventLog;
-import com.anythink.expressad.video.module.a.a.m;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
@@ -81,12 +80,12 @@ public class BinderInternal {
         synchronized (delayGcMonitorObject) {
             if (futureTaskInstance != null) {
                 long uptimeMillis = SystemClock.uptimeMillis() - lastGcDelayRequestTime;
-                if (uptimeMillis < m.ag) {
+                if (uptimeMillis < 3000) {
                     if (postponedGcCount != 0) {
                         return;
                     }
                     futureTaskInstance.cancel(true);
-                    timerGcInstance = new TimerGc(m.ag - uptimeMillis);
+                    timerGcInstance = new TimerGc(3000 - uptimeMillis);
                     futureTaskInstance = new FutureTask<>(timerGcInstance);
                     postponedGcCount = 1;
                     executor.execute(futureTaskInstance);
@@ -117,14 +116,14 @@ public class BinderInternal {
         synchronized (delayGcMonitorObject) {
             if (futureTaskInstance == null || postponedGcCount == 0) {
                 lastGcDelayRequestTime = uptimeMillis;
-                timerGcInstance = new TimerGc(m.ag);
+                timerGcInstance = new TimerGc(3000L);
                 futureTaskInstance = new FutureTask<>(timerGcInstance);
             } else if (postponedGcCount <= 5) {
                 futureTaskInstance.cancel(true);
                 if (futureTaskInstance.isCancelled()) {
                     lastGcDelayRequestTime = uptimeMillis;
                     postponedGcCount++;
-                    timerGcInstance = new TimerGc(m.ag);
+                    timerGcInstance = new TimerGc(3000L);
                     futureTaskInstance = new FutureTask<>(timerGcInstance);
                     executor.execute(futureTaskInstance);
                 }

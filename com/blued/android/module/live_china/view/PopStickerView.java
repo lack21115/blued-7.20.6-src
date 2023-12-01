@@ -13,7 +13,6 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.anythink.expressad.d.a.b;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
@@ -31,18 +30,13 @@ import com.blued.android.module.live_china.utils.LiveRoomPreferences;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import java.util.Collection;
 import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopStickerView.class */
 public class PopStickerView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f15213a;
+    private LayoutInflater a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15214c;
+    private View c;
     private View d;
     private MyPopupWindow e;
     private RecordingOnliveFragment f;
@@ -78,30 +72,27 @@ public class PopStickerView {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopStickerView$StickerAdapter.class */
     public class StickerAdapter extends BaseQuickAdapter<LiveRecordLevelStickerModel, BaseViewHolder> {
         private ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private ImageView f15222c;
+        private ImageView c;
         private ImageView d;
         private TextView e;
 
         public StickerAdapter() {
-            super(R.layout.sticker_view_item, null);
+            super(R.layout.sticker_view_item, (List) null);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final LiveRecordLevelStickerModel liveRecordLevelStickerModel) {
             if (baseViewHolder != null) {
                 this.b = (ImageView) baseViewHolder.getView(R.id.sticker_image);
                 this.e = (TextView) baseViewHolder.getView(R.id.sticker_time_text);
-                this.f15222c = (ImageView) baseViewHolder.getView(R.id.sticker_image_bg);
+                this.c = (ImageView) baseViewHolder.getView(R.id.sticker_image_bg);
                 this.d = (ImageView) baseViewHolder.getView(R.id.sticker_from_source);
                 ImageLoader.a((IRequestHost) null, liveRecordLevelStickerModel.status == 1 ? liveRecordLevelStickerModel.icon : liveRecordLevelStickerModel.icon_disable).a(this.b);
                 if (liveRecordLevelStickerModel.isSelect) {
-                    this.f15222c.setVisibility(0);
+                    this.c.setVisibility(0);
                 } else {
-                    this.f15222c.setVisibility(8);
+                    this.c.setVisibility(8);
                 }
                 if (liveRecordLevelStickerModel.is_from_mall == 1) {
                     this.d.setVisibility(0);
@@ -166,7 +157,7 @@ public class PopStickerView {
     /* JADX INFO: Access modifiers changed from: private */
     public String a(long j) {
         long j2 = j / 86400;
-        long j3 = (j % 86400) / b.P;
+        long j3 = (j % 86400) / 3600;
         return (j2 > 0 || j3 > 0) ? String.format(this.b.getResources().getString(R.string.live_sticker_times), Long.valueOf(j2), Long.valueOf(j3)) : String.format(this.b.getResources().getString(R.string.live_sticker_times_short), Long.valueOf(j / 60));
     }
 
@@ -178,7 +169,7 @@ public class PopStickerView {
             return;
         }
         stickerAdapter.getData().clear();
-        this.k.addData((Collection) list);
+        this.k.addData(list);
         String p = LiveRoomPreferences.p();
         Log.v("pk", "本地缓存code：" + p);
         if (TextUtils.isEmpty(p)) {
@@ -206,9 +197,9 @@ public class PopStickerView {
 
     private void e() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f15213a = from;
+        this.a = from;
         View inflate = from.inflate(R.layout.pop_window_record_level_sticker, (ViewGroup) null);
-        this.f15214c = inflate.findViewById(R.id.tv_bg);
+        this.c = inflate.findViewById(R.id.tv_bg);
         this.h = (PullToRefreshRecyclerView) inflate.findViewById(R.id.live_sticker_recycler_view);
         this.i = inflate.findViewById(R.id.ll_loading);
         this.j = this.h.getRefreshableView();
@@ -217,7 +208,7 @@ public class PopStickerView {
         this.k = stickerAdapter;
         this.j.setAdapter(stickerAdapter);
         this.h.setRefreshEnabled(false);
-        this.f15214c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopStickerView.1
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopStickerView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -235,7 +226,7 @@ public class PopStickerView {
         });
         MyPopupWindow myPopupWindow = new MyPopupWindow(inflate, -1, -1, true);
         this.e = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.e.setTouchable(true);
         this.e.setOutsideTouchable(true);
         this.e.setFocusable(true);
@@ -295,7 +286,7 @@ public class PopStickerView {
         if (recordingOnliveFragment != null) {
             recordingOnliveFragment.O();
         }
-        this.f15214c.clearAnimation();
+        this.c.clearAnimation();
         this.d.clearAnimation();
         if (this.e.isShowing()) {
             this.e.a();

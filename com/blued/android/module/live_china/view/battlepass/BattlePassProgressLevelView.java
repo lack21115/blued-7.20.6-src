@@ -12,13 +12,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/battlepass/BattlePassProgressLevelView.class */
 public final class BattlePassProgressLevelView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f15321a;
+    private boolean a;
     private LightCallBack b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f15322c;
+    private final int c;
     private final int d;
     private final int e;
     private final ArrayList<BattlePassLevelDataModel> f;
@@ -38,10 +34,10 @@ public final class BattlePassProgressLevelView extends FrameLayout {
     public BattlePassProgressLevelView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         Intrinsics.e(context, "context");
-        this.f15322c = DensityUtils.a(context, 77.5f);
-        int a2 = DensityUtils.a(context, 9.0f);
-        this.d = a2;
-        this.e = a2 + DensityUtils.a(context, 9.0f);
+        this.c = DensityUtils.a(context, 77.5f);
+        int a = DensityUtils.a(context, 9.0f);
+        this.d = a;
+        this.e = a + DensityUtils.a(context, 9.0f);
         this.f = new ArrayList<>();
         this.g = new ArrayList<>();
     }
@@ -54,9 +50,9 @@ public final class BattlePassProgressLevelView extends FrameLayout {
             if (callback2 != null) {
                 callback2.a(i);
             }
-            int a2 = battlePassLevelItemView.a(i);
-            if (a2 >= 0 && (callback = getCallback()) != null) {
-                boolean z = a2 == 1;
+            int a = battlePassLevelItemView.a(i);
+            if (a >= 0 && (callback = getCallback()) != null) {
+                boolean z = a == 1;
                 BattlePassLevelDataModel model = battlePassLevelItemView.getModel();
                 Intrinsics.a(model);
                 callback.a(z, model.getLevel(), size);
@@ -85,7 +81,7 @@ public final class BattlePassProgressLevelView extends FrameLayout {
             if (i2 == 0) {
                 this.f.get(i2).setX(-this.e);
             } else {
-                this.f.get(i2).setX((-this.e) + ((this.f15322c - this.d) * i2));
+                this.f.get(i2).setX((-this.e) + ((this.c - this.d) * i2));
             }
             i = i2 + 1;
         }
@@ -157,11 +153,11 @@ public final class BattlePassProgressLevelView extends FrameLayout {
     }
 
     public final boolean getHasLightLevel() {
-        return this.f15321a;
+        return this.a;
     }
 
     public final int getItemWidth() {
-        return this.f15322c;
+        return this.c;
     }
 
     public final int getMCurrentLevelIndex() {
@@ -194,7 +190,7 @@ public final class BattlePassProgressLevelView extends FrameLayout {
     }
 
     public final void setHasLightLevel(boolean z) {
-        this.f15321a = z;
+        this.a = z;
     }
 
     public final void setMCurrentLevelIndex(int i) {

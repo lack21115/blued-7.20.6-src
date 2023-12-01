@@ -2,6 +2,7 @@ package com.uc.crashsdk;
 
 import android.content.pm.PackageInfo;
 import android.util.SparseArray;
+import com.huawei.openalliance.ad.constant.t;
 import com.uc.crashsdk.export.LogType;
 import java.io.OutputStream;
 import java.lang.ref.WeakReference;
@@ -18,7 +19,7 @@ public class a {
     static final /* synthetic */ boolean d = !a.class.desiredAssertionStatus();
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f40557a = "";
+    public static String f26866a = "";
     public static String b = "";
     private static final Map<String, String> e = new HashMap();
     private static final List<String> f = new ArrayList();
@@ -49,7 +50,7 @@ public class a {
     private static int E = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    static boolean f40558c = false;
+    static boolean f26867c = false;
     private static Runnable F = new com.uc.crashsdk.a.e(201);
     private static boolean G = false;
     private static boolean H = false;
@@ -307,7 +308,7 @@ public class a {
         if (i2 == 201) {
             com.uc.crashsdk.a.a.a("crashsdk", "Begin update info ...");
             long currentTimeMillis = System.currentTimeMillis();
-            if (b.d && f40558c) {
+            if (b.d && f26867c) {
                 JNIBridge.nativeCmd(11, g.G(), String.valueOf(g.H()), null);
             }
             com.uc.crashsdk.a.a.a("crashsdk", "Update info took " + (System.currentTimeMillis() - currentTimeMillis) + " ms");
@@ -444,7 +445,7 @@ public class a {
 
     public static boolean a(boolean z2) {
         int G2;
-        if (!b.f40575c) {
+        if (!b.f26884c) {
             com.uc.crashsdk.a.a.a("crashsdk", "Unexp log not enabled, skip update unexp info!");
             return false;
         } else if (e.F() || b.L()) {
@@ -603,7 +604,7 @@ public class a {
         if (com.uc.crashsdk.a.g.a(str)) {
             return null;
         }
-        String[] split = str.split(";", 20);
+        String[] split = str.split(t.aE, 20);
         ArrayList<String> arrayList = new ArrayList<>();
         int length = split.length;
         int i2 = 0;
@@ -791,7 +792,7 @@ public class a {
 
     private static boolean o() {
         try {
-            PackageInfo packageInfo = com.uc.crashsdk.a.g.a().getPackageManager().getPackageInfo(f40557a, 0);
+            PackageInfo packageInfo = com.uc.crashsdk.a.g.a().getPackageManager().getPackageInfo(f26866a, 0);
             h = packageInfo.versionName;
             j = packageInfo.lastUpdateTime;
             i = packageInfo.versionCode;

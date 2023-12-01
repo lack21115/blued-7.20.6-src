@@ -12,27 +12,27 @@ import com.zego.zegoavkit2.entities.ZegoStreamRelayCDNInfo;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final C0926a[] f36347a = {new C0926a(l.a.FACE_SLIM, TXLiteAVCode.WARNING_SCREEN_CAPTURE_NOT_AUTHORIZED, "reportFaceSlimDua", (byte) 0), new C0926a(l.a.EYE_SCALE, 1205, "reportEyeScaleDua", (byte) 0), new C0926a(l.a.FACE_V_SHAPE, ZegoStreamRelayCDNInfo.Detail.MIXSTREAM_ALL_INPUT_STREAM_CLOSED, "reportFaceVDua", (byte) 0), new C0926a(l.a.FACE_SHORT, 1216, "reportFaceShortDua", (byte) 0), new C0926a(l.a.CHIN_SCALE, ZegoStreamRelayCDNInfo.Detail.MIXSTREAM_ALL_INPUT_STREAM_NODATA, "reportChinDua", (byte) 0), new C0926a(l.a.NOSE_SLIM, 1217, "reportNoseSlimDua", (byte) 0), new C0926a(l.a.FOREHEAD, 1221, "reportForeheadDua", (byte) 0), new C0926a(l.a.EYE_DISTANCE, 1222, "reportEyeDistanceDua", (byte) 0), new C0926a(l.a.EYE_ANGLE, 1223, "reportEyeAngleDua", (byte) 0), new C0926a(l.a.MOUTH_SHAPE, 1224, "reportMouthShapeDua", (byte) 0), new C0926a(l.a.NOSE_WING, 1225, "reportNoseWingDua", (byte) 0), new C0926a(l.a.NOSE_POSITION, 1226, "reportNosePositionDua", (byte) 0), new C0926a(l.a.LIPS_THICKNESS, 1227, "reportLipsThicknessDua", (byte) 0), new C0926a(l.a.BASIC3, 1213, "reportFaceBeautyDua", (byte) 0), new C0926a(l.a.EYE_LIGHTEN, 1229, "reportEyeLightenDua", (byte) 0), new C0926a(l.a.TOOTH_WHITEN, 1230, "reportToothWhitenDua", (byte) 0), new C0926a(l.a.REMOVE_WRINKLES, 1218, "reportWrinkleRemoveDua", (byte) 0), new C0926a(l.a.REMOVE_POUNCH, 1219, "reportPounchRemoveDua", (byte) 0), new C0926a(l.a.REMOVE_SMILE_LINES, 1220, "reportSmileLinesRemoveDua", (byte) 0)};
+    private static final C0756a[] f22656a = {new C0756a(l.a.FACE_SLIM, TXLiteAVCode.WARNING_SCREEN_CAPTURE_NOT_AUTHORIZED, "reportFaceSlimDua", (byte) 0), new C0756a(l.a.EYE_SCALE, 1205, "reportEyeScaleDua", (byte) 0), new C0756a(l.a.FACE_V_SHAPE, ZegoStreamRelayCDNInfo.Detail.MIXSTREAM_ALL_INPUT_STREAM_CLOSED, "reportFaceVDua", (byte) 0), new C0756a(l.a.FACE_SHORT, 1216, "reportFaceShortDua", (byte) 0), new C0756a(l.a.CHIN_SCALE, ZegoStreamRelayCDNInfo.Detail.MIXSTREAM_ALL_INPUT_STREAM_NODATA, "reportChinDua", (byte) 0), new C0756a(l.a.NOSE_SLIM, 1217, "reportNoseSlimDua", (byte) 0), new C0756a(l.a.FOREHEAD, 1221, "reportForeheadDua", (byte) 0), new C0756a(l.a.EYE_DISTANCE, 1222, "reportEyeDistanceDua", (byte) 0), new C0756a(l.a.EYE_ANGLE, 1223, "reportEyeAngleDua", (byte) 0), new C0756a(l.a.MOUTH_SHAPE, 1224, "reportMouthShapeDua", (byte) 0), new C0756a(l.a.NOSE_WING, 1225, "reportNoseWingDua", (byte) 0), new C0756a(l.a.NOSE_POSITION, 1226, "reportNosePositionDua", (byte) 0), new C0756a(l.a.LIPS_THICKNESS, 1227, "reportLipsThicknessDua", (byte) 0), new C0756a(l.a.BASIC3, 1213, "reportFaceBeautyDua", (byte) 0), new C0756a(l.a.EYE_LIGHTEN, 1229, "reportEyeLightenDua", (byte) 0), new C0756a(l.a.TOOTH_WHITEN, 1230, "reportToothWhitenDua", (byte) 0), new C0756a(l.a.REMOVE_WRINKLES, 1218, "reportWrinkleRemoveDua", (byte) 0), new C0756a(l.a.REMOVE_POUNCH, 1219, "reportPounchRemoveDua", (byte) 0), new C0756a(l.a.REMOVE_SMILE_LINES, 1220, "reportSmileLinesRemoveDua", (byte) 0)};
     private static final SparseBooleanArray b = new SparseBooleanArray();
 
     /* renamed from: com.tencent.liteav.beauty.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/beauty/a$a.class */
-    static final class C0926a {
+    static final class C0756a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final l.a f36348a;
+        public final l.a f22657a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final String f36349c;
+        public final String f22658c;
 
-        private C0926a(l.a aVar, int i, String str) {
-            this.f36348a = aVar;
+        private C0756a(l.a aVar, int i, String str) {
+            this.f22657a = aVar;
             this.b = i;
-            this.f36349c = str;
+            this.f22658c = str;
         }
 
-        /* synthetic */ C0926a(l.a aVar, int i, String str, byte b) {
+        /* synthetic */ C0756a(l.a aVar, int i, String str, byte b) {
             this(aVar, i, str);
         }
     }
@@ -60,17 +60,17 @@ public final class a {
     }
 
     public static void a(IVideoReporter iVideoReporter, l.a aVar) {
-        C0926a[] c0926aArr = f36347a;
-        int length = c0926aArr.length;
+        C0756a[] c0756aArr = f22656a;
+        int length = c0756aArr.length;
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= length) {
                 return;
             }
-            C0926a c0926a = c0926aArr[i2];
-            if (c0926a.f36348a == aVar) {
-                a(iVideoReporter, c0926a.b, c0926a.f36349c);
+            C0756a c0756a = c0756aArr[i2];
+            if (c0756a.f22657a == aVar) {
+                a(iVideoReporter, c0756a.b, c0756a.f22658c);
                 return;
             }
             i = i2 + 1;
@@ -82,7 +82,7 @@ public final class a {
     }
 
     public static void c(IVideoReporter iVideoReporter) {
-        a(iVideoReporter, 1203, "reportWhiteDua");
+        a(iVideoReporter, TXLiteAVCode.WARNING_MICROPHONE_NOT_AUTHORIZED, "reportWhiteDua");
     }
 
     public static void d(IVideoReporter iVideoReporter) {

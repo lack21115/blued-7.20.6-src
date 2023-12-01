@@ -102,7 +102,7 @@ public class ScrollView extends FrameLayout {
     }
 
     public ScrollView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842880);
+        this(context, attributeSet, R.attr.scrollViewStyle);
     }
 
     public ScrollView(Context context, AttributeSet attributeSet, int i) {
@@ -690,7 +690,7 @@ public class ScrollView extends FrameLayout {
     }
 
     public int getMaxScrollAmount() {
-        return (int) (0.5f * (this.mBottom - this.mTop));
+        return (int) (MAX_SCROLL_FACTOR * (this.mBottom - this.mTop));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -957,9 +957,8 @@ public class ScrollView extends FrameLayout {
         awakenScrollBars();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean onRequestFocusInDescendants(int i, Rect rect) {
+    protected boolean onRequestFocusInDescendants(int i, Rect rect) {
         int i2;
         if (i == 2) {
             i2 = 130;

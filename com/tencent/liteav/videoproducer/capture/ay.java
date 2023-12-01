@@ -4,10 +4,10 @@ package com.tencent.liteav.videoproducer.capture;
 final /* synthetic */ class ay implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ScreenCapturer f36890a;
+    private final ScreenCapturer f23199a;
 
     private ay(ScreenCapturer screenCapturer) {
-        this.f36890a = screenCapturer;
+        this.f23199a = screenCapturer;
     }
 
     public static Runnable a(ScreenCapturer screenCapturer) {
@@ -16,6 +16,6 @@ final /* synthetic */ class ay implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ScreenCapturer.c(this.f36890a);
+        ScreenCapturer.c(this.f23199a);
     }
 }

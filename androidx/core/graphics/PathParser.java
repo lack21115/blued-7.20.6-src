@@ -12,7 +12,7 @@ public class PathParser {
     public static class ExtractFloatResult {
 
         /* renamed from: a  reason: collision with root package name */
-        int f2451a;
+        int f2403a;
         boolean b;
 
         ExtractFloatResult() {
@@ -287,7 +287,7 @@ public class PathParser {
         L9e:
             r0 = r5
             r1 = r7
-            r0.f2451a = r1
+            r0.f2403a = r1
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.core.graphics.PathParser.a(java.lang.String, int, androidx.core.graphics.PathParser$ExtractFloatResult):void");
@@ -313,7 +313,7 @@ public class PathParser {
                     return a(fArr, 0, i3);
                 }
                 a(str, i, extractFloatResult);
-                int i4 = extractFloatResult.f2451a;
+                int i4 = extractFloatResult.f2403a;
                 int i5 = i3;
                 if (i < i4) {
                     fArr[i3] = Float.parseFloat(str.substring(i, i4));
@@ -341,7 +341,7 @@ public class PathParser {
             int i3 = i2 - i;
             int min = Math.min(i3, length - i);
             float[] fArr2 = new float[i3];
-            System.arraycopy((Object) fArr, i, (Object) fArr2, 0, min);
+            System.arraycopy(fArr, i, fArr2, 0, min);
             return fArr2;
         }
         throw new IllegalArgumentException();

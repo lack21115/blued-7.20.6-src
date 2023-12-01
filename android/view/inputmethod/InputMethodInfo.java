@@ -161,7 +161,7 @@ public final class InputMethodInfo implements Parcelable {
         this.mIsDefaultResId = parcel.readInt();
         this.mIsAuxIme = parcel.readInt() == 1;
         this.mSupportsSwitchingToNextInputMethod = parcel.readInt() == 1;
-        this.mService = ResolveInfo.CREATOR.createFromParcel(parcel);
+        this.mService = (ResolveInfo) ResolveInfo.CREATOR.createFromParcel(parcel);
         this.mSubtypes = new InputMethodSubtypeArray(parcel);
         this.mForceDefault = false;
     }

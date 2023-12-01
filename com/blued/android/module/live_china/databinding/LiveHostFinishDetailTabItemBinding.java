@@ -10,21 +10,17 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveHostFinishDetailTabItemBinding.class */
 public final class LiveHostFinishDetailTabItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeFrameLayout f12249a;
+    public final ShapeFrameLayout a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f12250c;
+    public final TextView c;
     public final TextView d;
     private final ShapeFrameLayout e;
 
     private LiveHostFinishDetailTabItemBinding(ShapeFrameLayout shapeFrameLayout, ShapeFrameLayout shapeFrameLayout2, TextView textView, TextView textView2, TextView textView3) {
         this.e = shapeFrameLayout;
-        this.f12249a = shapeFrameLayout2;
+        this.a = shapeFrameLayout2;
         this.b = textView;
-        this.f12250c = textView2;
+        this.c = textView2;
         this.d = textView3;
     }
 
@@ -65,7 +61,6 @@ public final class LiveHostFinishDetailTabItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeFrameLayout getRoot() {
         return this.e;

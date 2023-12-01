@@ -6,9 +6,7 @@ import java.util.Comparator;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/e/g.class */
 public class g {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static g f4495a = new g();
+    private static g a = new g();
 
     /* renamed from: a  reason: collision with other field name */
     private b f35a = new b();
@@ -48,7 +46,7 @@ public class g {
     }
 
     public static g a() {
-        return f4495a;
+        return a;
     }
 
     public String[] a(String[] strArr, boolean z) {

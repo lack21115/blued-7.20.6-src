@@ -30,11 +30,11 @@ import java.util.List;
 public class StartLoginVerifyFragment extends BaseFragment implements View.OnClickListener, StartLoginVerifyContract.IView {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f31537a;
+    private View f17847a;
     private Bundle b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f31538c;
+    private Context f17848c;
     private StartLoginVerifyContract.IPresenter d;
     private TextView e;
     private TextView f;
@@ -51,21 +51,21 @@ public class StartLoginVerifyFragment extends BaseFragment implements View.OnCli
     }
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f31537a.findViewById(R.id.cttnt_title);
-        this.g = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.d();
+        CommonTopTitleNoTrans findViewById = this.f17847a.findViewById(R.id.cttnt_title);
+        this.g = findViewById;
+        findViewById.d();
         this.g.setCenterText("");
         this.g.f();
-        this.g.setRightText(R.string.close);
+        this.g.setRightText((int) R.string.close);
         this.g.setRightTextColor(2131102260);
         this.g.setTitleBackgroundDrawable(2131101780);
         this.g.setRightClickListener(this);
-        this.f = (TextView) this.f31537a.findViewById(R.id.tv_start_verify);
-        TextView textView = (TextView) this.f31537a.findViewById(R.id.tv_phone_number);
+        this.f = (TextView) this.f17847a.findViewById(R.id.tv_start_verify);
+        TextView textView = (TextView) this.f17847a.findViewById(R.id.tv_phone_number);
         this.e = textView;
         textView.setText(this.i);
         this.f.setOnClickListener(this);
-        TextView textView2 = (TextView) this.f31537a.findViewById(R.id.tv_appeal);
+        TextView textView2 = (TextView) this.f17847a.findViewById(R.id.tv_appeal);
         this.h = textView2;
         textView2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.View.-$$Lambda$StartLoginVerifyFragment$RTM9zkDk7cLa4-XVl095N4BBTHs
             @Override // android.view.View.OnClickListener
@@ -73,13 +73,13 @@ public class StartLoginVerifyFragment extends BaseFragment implements View.OnCli
                 StartLoginVerifyFragment.this.a(view);
             }
         });
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.f31537a.findViewById(2131366898);
-        this.k = pullToRefreshRecyclerView;
-        this.l = pullToRefreshRecyclerView.getRefreshableView();
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f31538c);
+        PullToRefreshRecyclerView findViewById2 = this.f17847a.findViewById(R.id.list_view);
+        this.k = findViewById2;
+        this.l = (RecyclerView) findViewById2.getRefreshableView();
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f17848c);
         linearLayoutManager.setOrientation(1);
         this.l.setLayoutManager(linearLayoutManager);
-        VerifyAdapter verifyAdapter = new VerifyAdapter(this.f31538c);
+        VerifyAdapter verifyAdapter = new VerifyAdapter(this.f17848c);
         this.m = verifyAdapter;
         this.l.setAdapter(verifyAdapter);
         this.k.setRefreshEnabled(false);
@@ -93,7 +93,7 @@ public class StartLoginVerifyFragment extends BaseFragment implements View.OnCli
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(View view) {
         Tracker.onClick(view);
-        WebViewShowInfoFragment.a(this.f31538c, BluedHttpUrl.a(getArguments() != null ? getArguments().getString("key_uid", "") : "", 8), getResources().getString(R.string.consult_online), 16);
+        WebViewShowInfoFragment.a(this.f17848c, BluedHttpUrl.a(getArguments() != null ? getArguments().getString("key_uid", "") : "", 8), getResources().getString(R.string.consult_online), 16);
     }
 
     private void b() {
@@ -160,22 +160,20 @@ public class StartLoginVerifyFragment extends BaseFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f31538c = getActivity();
-        View view = this.f31537a;
+        this.f17848c = getActivity();
+        View view = this.f17847a;
         if (view == null) {
-            this.f31537a = layoutInflater.inflate(R.layout.fragment_start_login_verify, viewGroup, false);
-            this.d = new StartLoginVerifyPresenter(this.f31538c, this, getFragmentActive());
+            this.f17847a = layoutInflater.inflate(R.layout.fragment_start_login_verify, viewGroup, false);
+            this.d = new StartLoginVerifyPresenter(this.f17848c, this, getFragmentActive());
             b();
             a();
         } else {
-            ((ViewGroup) view.getParent()).removeView(this.f31537a);
+            ((ViewGroup) view.getParent()).removeView(this.f17847a);
         }
-        return this.f31537a;
+        return this.f17847a;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

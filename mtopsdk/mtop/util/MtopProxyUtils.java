@@ -10,12 +10,10 @@ import mtopsdk.mtop.common.NetworkListenerAdapter;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/util/MtopProxyUtils.class */
 public class MtopProxyUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final List f43784a = Arrays.asList("mtop.common.gettimestamp$*");
+    private static final List a = Arrays.asList("mtop.common.gettimestamp$*");
 
     public static List a() {
-        return f43784a;
+        return a;
     }
 
     public static NetworkListenerAdapter a(MtopProxy mtopProxy) {
@@ -29,7 +27,7 @@ public class MtopProxyUtils {
             try {
                 MtopListener f = mtopProxy.f();
                 if (f instanceof MtopCallback.MtopFinishListener) {
-                    networkListenerAdapter.f43715a = (MtopCallback.MtopFinishListener) f;
+                    networkListenerAdapter.a = (MtopCallback.MtopFinishListener) f;
                 }
                 networkListenerAdapter2 = networkListenerAdapter;
                 if (f instanceof MtopCallback.MtopHeaderListener) {

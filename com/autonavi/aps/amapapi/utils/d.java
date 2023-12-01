@@ -11,11 +11,11 @@ import java.util.List;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    static double f9280a = 3.141592653589793d;
+    static double f6440a = 3.141592653589793d;
     private static final List<DPoint> b = new ArrayList(Arrays.asList(new DPoint(23.379947d, 119.757001d), new DPoint(24.983296d, 120.474496d), new DPoint(25.518722d, 121.359866d), new DPoint(25.41329d, 122.443582d), new DPoint(24.862708d, 122.288354d), new DPoint(24.461292d, 122.188319d), new DPoint(21.584761d, 120.968923d), new DPoint(21.830837d, 120.654445d)));
 
     private static double a(double d) {
-        return Math.sin(d * 3000.0d * (f9280a / 180.0d)) * 2.0E-5d;
+        return Math.sin(d * 3000.0d * (f6440a / 180.0d)) * 2.0E-5d;
     }
 
     private static double a(double d, double d2) {
@@ -59,7 +59,7 @@ public final class d {
     }
 
     private static double b(double d) {
-        return Math.cos(d * 3000.0d * (f9280a / 180.0d)) * 3.0E-6d;
+        return Math.cos(d * 3000.0d * (f6440a / 180.0d)) * 3.0E-6d;
     }
 
     private static double b(double d, double d2) {
@@ -142,20 +142,20 @@ public final class d {
         double d4 = d - 35.0d;
         double h = h(d3, d4);
         double i = i(d3, d4);
-        double d5 = (d / 180.0d) * f9280a;
+        double d5 = (d / 180.0d) * f6440a;
         double sin = Math.sin(d5);
         double d6 = 1.0d - ((0.006693421622965943d * sin) * sin);
         double sqrt = Math.sqrt(d6);
-        return new DPoint(d + ((h * 180.0d) / ((6335552.717000426d / (d6 * sqrt)) * f9280a)), d2 + ((i * 180.0d) / (((6378245.0d / sqrt) * Math.cos(d5)) * f9280a)));
+        return new DPoint(d + ((h * 180.0d) / ((6335552.717000426d / (d6 * sqrt)) * f6440a)), d2 + ((i * 180.0d) / (((6378245.0d / sqrt) * Math.cos(d5)) * f6440a)));
     }
 
     private static double h(double d, double d2) {
         double d3 = d * 2.0d;
-        return (-100.0d) + d3 + (d2 * 3.0d) + (d2 * 0.2d * d2) + (0.1d * d * d2) + (Math.sqrt(Math.abs(d)) * 0.2d) + ((((Math.sin((d * 6.0d) * f9280a) * 20.0d) + (Math.sin(d3 * f9280a) * 20.0d)) * 2.0d) / 3.0d) + ((((Math.sin(f9280a * d2) * 20.0d) + (Math.sin((d2 / 3.0d) * f9280a) * 40.0d)) * 2.0d) / 3.0d) + ((((Math.sin((d2 / 12.0d) * f9280a) * 160.0d) + (Math.sin((d2 * f9280a) / 30.0d) * 320.0d)) * 2.0d) / 3.0d);
+        return (-100.0d) + d3 + (d2 * 3.0d) + (d2 * 0.2d * d2) + (0.1d * d * d2) + (Math.sqrt(Math.abs(d)) * 0.2d) + ((((Math.sin((d * 6.0d) * f6440a) * 20.0d) + (Math.sin(d3 * f6440a) * 20.0d)) * 2.0d) / 3.0d) + ((((Math.sin(f6440a * d2) * 20.0d) + (Math.sin((d2 / 3.0d) * f6440a) * 40.0d)) * 2.0d) / 3.0d) + ((((Math.sin((d2 / 12.0d) * f6440a) * 160.0d) + (Math.sin((d2 * f6440a) / 30.0d) * 320.0d)) * 2.0d) / 3.0d);
     }
 
     private static double i(double d, double d2) {
         double d3 = d * 0.1d;
-        return d + 300.0d + (d2 * 2.0d) + (d3 * d) + (d3 * d2) + (Math.sqrt(Math.abs(d)) * 0.1d) + ((((Math.sin((6.0d * d) * f9280a) * 20.0d) + (Math.sin((d * 2.0d) * f9280a) * 20.0d)) * 2.0d) / 3.0d) + ((((Math.sin(f9280a * d) * 20.0d) + (Math.sin((d / 3.0d) * f9280a) * 40.0d)) * 2.0d) / 3.0d) + ((((Math.sin((d / 12.0d) * f9280a) * 150.0d) + (Math.sin((d / 30.0d) * f9280a) * 300.0d)) * 2.0d) / 3.0d);
+        return d + 300.0d + (d2 * 2.0d) + (d3 * d) + (d3 * d2) + (Math.sqrt(Math.abs(d)) * 0.1d) + ((((Math.sin((6.0d * d) * f6440a) * 20.0d) + (Math.sin((d * 2.0d) * f6440a) * 20.0d)) * 2.0d) / 3.0d) + ((((Math.sin(f6440a * d) * 20.0d) + (Math.sin((d / 3.0d) * f6440a) * 40.0d)) * 2.0d) / 3.0d) + ((((Math.sin((d / 12.0d) * f6440a) * 150.0d) + (Math.sin((d / 30.0d) * f6440a) * 300.0d)) * 2.0d) / 3.0d);
     }
 }

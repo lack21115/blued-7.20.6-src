@@ -47,9 +47,7 @@ import com.blued.das.live.LiveProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.huawei.hms.ads.jsb.constant.Constant;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,13 +56,9 @@ import java.util.Map;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopRankingListView.class */
 public class PopRankingListView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f15142a;
+    private LayoutInflater a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15143c;
+    private View c;
     private View d;
     private MyPopupWindow e;
     private View f;
@@ -87,14 +81,12 @@ public class PopRankingListView {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopRankingListView$BannerPagerAdapter.class */
     public class BannerPagerAdapter extends PagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        List<RankHourDataModel> f15156a;
+        List<RankHourDataModel> a;
         Map<String, View> b = new HashMap();
 
         public BannerPagerAdapter(List<RankHourDataModel> list) {
-            this.f15156a = new ArrayList();
-            this.f15156a = list;
+            this.a = new ArrayList();
+            this.a = list;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -102,17 +94,14 @@ public class PopRankingListView {
             PopRankingListView.this.a(rankHourDataModel.getUid(), rankHourDataModel.getType());
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             viewGroup.removeView((View) obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f15156a.size();
+            return this.a.size();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             View view = this.b.get(String.valueOf(i));
             while (view == null) {
@@ -127,8 +116,8 @@ public class PopRankingListView {
                 ImageView imageView6 = (ImageView) view.findViewById(R.id.iv_time_minute);
                 View findViewById = view.findViewById(R.id.rl_time_root);
                 ImageView imageView7 = (ImageView) view.findViewById(R.id.iv_tag);
-                final RankHourDataModel rankHourDataModel = this.f15156a.get(this.b.size());
-                imageView.setImageResource(Constant.MAP_KEY_TOP.equals(rankHourDataModel.getType()) ? R.drawable.live_rank_hour_banner_top : R.drawable.live_rank_hour_banner_potential);
+                final RankHourDataModel rankHourDataModel = this.a.get(this.b.size());
+                imageView.setImageResource("top".equals(rankHourDataModel.getType()) ? R.drawable.live_rank_hour_banner_top : R.drawable.live_rank_hour_banner_potential);
                 ImageLoader.a(PopRankingListView.this.k, AvatarUtils.a(1, rankHourDataModel.getAvatar())).c().b(R.drawable.live_rank_hour_default_avatar).a(imageView2);
                 if (TextUtils.isEmpty(rankHourDataModel.getAvatar_frame())) {
                     imageView3.setVisibility(8);
@@ -158,7 +147,7 @@ public class PopRankingListView {
                         ImageLoader.c(PopRankingListView.this.k, "live_rank_hour_bounce_white.png").g().g(-1).a(imageView4);
                     }
                     PopRankingListView.this.a(imageView5, imageView6, rankHourDataModel.getHour());
-                    imageView7.setImageResource(Constant.MAP_KEY_TOP.equals(rankHourDataModel.getType()) ? R.drawable.live_rank_hour_star_top : R.drawable.live_rank_hour_star_potential);
+                    imageView7.setImageResource("top".equals(rankHourDataModel.getType()) ? R.drawable.live_rank_hour_star_top : R.drawable.live_rank_hour_star_potential);
                     findViewById.setVisibility(0);
                     imageView7.setVisibility(0);
                     imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$PopRankingListView$BannerPagerAdapter$Qtbnk6kOUikblClpl66vFIo0Vhg
@@ -178,7 +167,6 @@ public class PopRankingListView {
             return view2;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object obj) {
             return view == obj;
         }
@@ -194,30 +182,27 @@ public class PopRankingListView {
         MyPagerAdapter() {
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             viewGroup.removeView((View) obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return PopRankingListView.this.m;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             if (((View) PopRankingListView.this.q.get(String.valueOf(i))) == null) {
                 if (i == PopRankingListView.this.t) {
                     PopRankingListView.this.q.put(String.valueOf(i), PopRankingListView.this.a(viewGroup));
                 } else {
                     View inflate = LayoutInflater.from(PopRankingListView.this.b).inflate(R.layout.pop_window_ranking_list, viewGroup, false);
-                    RecyclerView recyclerView = (RecyclerView) inflate.findViewById(R.id.recycler_list);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(PopRankingListView.this.b, 1, false));
-                    View findViewById = inflate.findViewById(R.id.tv_hot_tips);
-                    View findViewById2 = inflate.findViewById(R.id.tv_send_gift);
+                    RecyclerView findViewById = inflate.findViewById(R.id.recycler_list);
+                    findViewById.setLayoutManager(new LinearLayoutManager(PopRankingListView.this.b, 1, false));
+                    View findViewById2 = inflate.findViewById(R.id.tv_hot_tips);
+                    View findViewById3 = inflate.findViewById(R.id.tv_send_gift);
                     if (PopRankingListView.this.j instanceof PlayingOnliveFragment) {
-                        findViewById2.setVisibility(0);
-                        findViewById2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopRankingListView.MyPagerAdapter.1
+                        findViewById3.setVisibility(0);
+                        findViewById3.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopRankingListView.MyPagerAdapter.1
                             @Override // android.view.View.OnClickListener
                             public void onClick(View view) {
                                 Tracker.onClick(view);
@@ -231,12 +216,12 @@ public class PopRankingListView {
                             }
                         });
                     } else {
-                        findViewById2.setVisibility(8);
+                        findViewById3.setVisibility(8);
                     }
                     if (i == PopRankingListView.this.u) {
-                        findViewById.setVisibility(0);
+                        findViewById2.setVisibility(0);
                         PopRankingListView.this.p = new RankingAdapter(1, 0);
-                        recyclerView.setAdapter(PopRankingListView.this.p);
+                        findViewById.setAdapter(PopRankingListView.this.p);
                     }
                     PopRankingListView.this.q.put(String.valueOf(i), inflate);
                 }
@@ -249,7 +234,6 @@ public class PopRankingListView {
             return view;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object obj) {
             return view == obj;
         }
@@ -283,18 +267,15 @@ public class PopRankingListView {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopRankingListView$RankingAdapter.class */
     class RankingAdapter extends BaseQuickAdapter<LiveRankingListExtra, BaseViewHolder> {
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f15162c;
+        private int c;
 
         public RankingAdapter(int i, int i2) {
-            super(R.layout.pop_window_ranking_list_item, null);
+            super(R.layout.pop_window_ranking_list_item, (List) null);
             this.b = i;
-            this.f15162c = i2;
+            this.c = i2;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final LiveRankingListExtra liveRankingListExtra) {
             if (this.b == 1) {
@@ -488,15 +469,12 @@ public class PopRankingListView {
             final View findViewById2 = view.findViewById(R.id.view_cursor_potential);
             view.setVisibility(0);
             autoScrollViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.view.PopRankingListView.9
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrollStateChanged(int i) {
                 }
 
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrolled(int i, float f, int i2) {
                 }
 
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageSelected(int i) {
                     if (i == 0) {
                         findViewById.animate().translationX(0.0f).setDuration(200L);
@@ -564,18 +542,18 @@ public class PopRankingListView {
                     ImageView imageView3 = (ImageView) view.findViewById(R.id.avatar);
                     TextView textView2 = (TextView) view.findViewById(R.id.tv_name);
                     TextView textView3 = (TextView) view.findViewById(R.id.tv_rank);
-                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_list);
+                    RecyclerView findViewById = view.findViewById(R.id.recycler_list);
                     TextView textView4 = (TextView) view.findViewById(R.id.tv_empty_view);
                     if (!bluedEntity.hasData()) {
                         shapeLinearLayout.setVisibility(8);
                         textView4.setVisibility(0);
                         textView4.setText(R.string.live_ranking_no_data);
-                        recyclerView.setVisibility(8);
+                        findViewById.setVisibility(8);
                         return;
                     }
                     shapeLinearLayout.setVisibility(0);
                     textView4.setVisibility(8);
-                    recyclerView.setVisibility(0);
+                    findViewById.setVisibility(0);
                     if (TextUtils.isEmpty(bluedEntity.extra.avatar_frame)) {
                         imageView2.setVisibility(8);
                     } else {
@@ -627,12 +605,12 @@ public class PopRankingListView {
 
     private void d() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f15142a = from;
+        this.a = from;
         View inflate = from.inflate(R.layout.pop_window_ranking, (ViewGroup) null);
-        this.f15143c = inflate.findViewById(R.id.tv_bg);
+        this.c = inflate.findViewById(R.id.tv_bg);
         this.q.clear();
         this.r.clear();
-        this.f15143c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopRankingListView.1
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopRankingListView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -682,15 +660,12 @@ public class PopRankingListView {
         this.i = myPagerAdapter;
         this.g.setAdapter(myPagerAdapter);
         this.g.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.view.PopRankingListView.5
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 if (LiveRoomManager.a().p().isShowHourRank && LiveRoomManager.a().Q()) {
                     PopRankingListView.this.g.setCurrentItem(i);
@@ -705,7 +680,7 @@ public class PopRankingListView {
         });
         MyPopupWindow myPopupWindow = new MyPopupWindow(inflate, -1, -1, true);
         this.e = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.e.setTouchable(true);
         this.e.setOutsideTouchable(true);
         this.e.setFocusable(true);
@@ -717,7 +692,7 @@ public class PopRankingListView {
         if (LiveRoomManager.a().t()) {
             return;
         }
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_SHOW_DIALOG).post(true);
+        LiveEventBus.get("live_show_dialog").post(true);
         this.o = LiveRoomManager.a().g();
         MyPopupWindow myPopupWindow = this.e;
         if (myPopupWindow != null && myPopupWindow.isShowing()) {
@@ -735,7 +710,7 @@ public class PopRankingListView {
             i2 = 1;
         }
         d();
-        this.f15143c.clearAnimation();
+        this.c.clearAnimation();
         this.d.clearAnimation();
         this.e.showAtLocation(this.d, 81, 0, 0);
         this.d.setVisibility(0);
@@ -758,7 +733,7 @@ public class PopRankingListView {
 
     public void c() {
         Dialog dialog;
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_SHOW_DIALOG).post(false);
+        LiveEventBus.get("live_show_dialog").post(false);
         LiveRankWebDialogFragment liveRankWebDialogFragment = this.s;
         if (liveRankWebDialogFragment != null && (dialog = liveRankWebDialogFragment.getDialog()) != null && dialog.isShowing()) {
             this.s.dismiss();

@@ -10,11 +10,11 @@ import org.json.JSONObject;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f38827a;
+    private int f25136a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<b> f38828c;
+    private List<b> f25137c;
 
     private d() {
     }
@@ -34,12 +34,12 @@ public class d {
                 e = e2;
             }
             try {
-                dVar2.f38827a = jSONObject.optInt("ret_code", -1);
+                dVar2.f25136a = jSONObject.optInt("ret_code", -1);
                 dVar2.b = jSONObject.optLong("next_req_interval", 1000L);
                 JSONArray optJSONArray = jSONObject.optJSONArray("cmds");
                 dVar = dVar2;
                 if (optJSONArray != null) {
-                    dVar2.f38828c = new ArrayList();
+                    dVar2.f25137c = new ArrayList();
                     int i = 0;
                     while (true) {
                         int i2 = i;
@@ -49,7 +49,7 @@ public class d {
                         }
                         b a2 = b.a(optJSONArray.optJSONObject(i2));
                         if (a2 != null) {
-                            dVar2.f38828c.add(a2);
+                            dVar2.f25137c.add(a2);
                         }
                         i = i2 + 1;
                     }
@@ -67,7 +67,7 @@ public class d {
     }
 
     public int a() {
-        return this.f38827a;
+        return this.f25136a;
     }
 
     public long b() {
@@ -75,6 +75,6 @@ public class d {
     }
 
     public List<b> c() {
-        return this.f38828c;
+        return this.f25137c;
     }
 }

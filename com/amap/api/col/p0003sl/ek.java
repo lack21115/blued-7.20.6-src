@@ -14,13 +14,9 @@ import java.io.InputStream;
 /* renamed from: com.amap.api.col.3sl.ek  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ek.class */
 public final class ek extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Bitmap f4912a;
+    private Bitmap a;
     private Bitmap b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Bitmap f4913c;
+    private Bitmap c;
     private Bitmap d;
     private Bitmap e;
     private Bitmap f;
@@ -75,17 +71,17 @@ public final class ek extends View {
             try {
                 Bitmap decodeStream = BitmapFactory.decodeStream(open);
                 this.f = decodeStream;
-                this.f4912a = dw.a(decodeStream, w.f5439a);
+                this.a = dw.a(decodeStream, w.a);
                 open.close();
                 InputStream open2 = dq.a(context).open("ap1.data");
                 Bitmap decodeStream2 = BitmapFactory.decodeStream(open2);
                 this.g = decodeStream2;
-                this.b = dw.a(decodeStream2, w.f5439a);
+                this.b = dw.a(decodeStream2, w.a);
                 open2.close();
                 this.k = this.b.getWidth();
                 this.j = this.b.getHeight();
                 this.h.setAntiAlias(true);
-                this.h.setColor(-16777216);
+                this.h.setColor(View.MEASURED_STATE_MASK);
                 this.h.setStyle(Paint.Style.STROKE);
                 StringBuilder sb = new StringBuilder();
                 sb.append(context.getFilesDir());
@@ -102,15 +98,15 @@ public final class ek extends View {
                         ek.this.a(AMapEngineUtils.LOGO_CUSTOM_ICON_DAY_NAME, 0);
                         ek.this.a(AMapEngineUtils.LOGO_CUSTOM_ICON_NIGHT_NAME, 1);
                         if ("".equals(dm.a(ek.this.t, "amap_web_logo", "md5_day", ""))) {
-                            if (ek.this.f4913c == null || ek.this.d == null) {
+                            if (ek.this.c == null || ek.this.d == null) {
                                 dm.a(ek.this.t, "amap_web_logo", "md5_day", (Object) "0b718b5f291b09d2b62be725dfb977b3");
                                 dm.a(ek.this.t, "amap_web_logo", "md5_night", (Object) "4b1405462a5c910de0e0723ffd96c018");
                                 return;
                             }
                             dm.a(ek.this.t, "amap_web_logo", "md5_day", (Object) hw.a(AMapEngineUtils.LOGO_CUSTOM_ICON_DAY_NAME));
-                            String a2 = hw.a(AMapEngineUtils.LOGO_CUSTOM_ICON_NIGHT_NAME);
-                            if (!"".equals(a2)) {
-                                dm.a(ek.this.t, "amap_web_logo", "md5_night", (Object) a2);
+                            String a = hw.a(AMapEngineUtils.LOGO_CUSTOM_ICON_NIGHT_NAME);
+                            if (!"".equals(a)) {
+                                dm.a(ek.this.t, "amap_web_logo", "md5_night", (Object) a);
                             }
                             ek.this.d(true);
                         }
@@ -178,7 +174,7 @@ public final class ek extends View {
         Bitmap bitmap;
         Bitmap bitmap2;
         Bitmap bitmap3;
-        return (!this.y || (bitmap3 = this.e) == null) ? this.i ? (!this.s || (bitmap2 = this.d) == null) ? this.b : bitmap2 : (!this.s || (bitmap = this.f4913c) == null) ? this.f4912a : bitmap : bitmap3;
+        return (!this.y || (bitmap3 = this.e) == null) ? this.i ? (!this.s || (bitmap2 = this.d) == null) ? this.b : bitmap2 : (!this.s || (bitmap = this.c) == null) ? this.a : bitmap : bitmap3;
     }
 
     private void f() {
@@ -221,15 +217,15 @@ public final class ek extends View {
 
     public final void a() {
         try {
-            if (this.f4912a != null) {
-                dw.a(this.f4912a);
-                this.f4912a = null;
+            if (this.a != null) {
+                dw.a(this.a);
+                this.a = null;
             }
             if (this.b != null) {
                 dw.a(this.b);
                 this.b = null;
             }
-            this.f4912a = null;
+            this.a = null;
             this.b = null;
             if (this.f != null) {
                 dw.a(this.f);
@@ -239,10 +235,10 @@ public final class ek extends View {
                 dw.a(this.g);
                 this.g = null;
             }
-            if (this.f4913c != null) {
-                dw.a(this.f4913c);
+            if (this.c != null) {
+                dw.a(this.c);
             }
-            this.f4913c = null;
+            this.c = null;
             if (this.d != null) {
                 dw.a(this.d);
             }
@@ -284,10 +280,10 @@ public final class ek extends View {
         try {
             if (this.u && new File(str).exists()) {
                 if (i == 0) {
-                    Bitmap bitmap = this.f4913c;
+                    Bitmap bitmap = this.c;
                     Bitmap decodeFile = BitmapFactory.decodeFile(str);
                     this.f = decodeFile;
-                    this.f4913c = dw.a(decodeFile, w.f5439a);
+                    this.c = dw.a(decodeFile, w.a);
                     if (bitmap == null || bitmap.isRecycled()) {
                         return;
                     }
@@ -296,7 +292,7 @@ public final class ek extends View {
                     Bitmap bitmap2 = this.d;
                     Bitmap decodeFile2 = BitmapFactory.decodeFile(str);
                     this.f = decodeFile2;
-                    this.d = dw.a(decodeFile2, w.f5439a);
+                    this.d = dw.a(decodeFile2, w.a);
                     if (bitmap2 == null || bitmap2.isRecycled()) {
                         return;
                     }
@@ -316,7 +312,7 @@ public final class ek extends View {
                 if (z) {
                     this.h.setColor(-1);
                 } else {
-                    this.h.setColor(-16777216);
+                    this.h.setColor(View.MEASURED_STATE_MASK);
                 }
             } catch (Throwable th) {
                 iw.c(th, "WaterMarkerView", "changeBitmap");
@@ -339,8 +335,8 @@ public final class ek extends View {
         if (this.u) {
             this.y = z;
             if (!z) {
-                this.k = this.f4912a.getWidth();
-                this.j = this.f4912a.getHeight();
+                this.k = this.a.getWidth();
+                this.j = this.a.getHeight();
                 return;
             }
             Bitmap bitmap = this.e;
@@ -391,8 +387,8 @@ public final class ek extends View {
         if (this.u && this.s != z) {
             this.s = z;
             if (!z) {
-                this.k = this.f4912a.getWidth();
-                this.j = this.f4912a.getHeight();
+                this.k = this.a.getWidth();
+                this.j = this.a.getHeight();
             } else if (this.i) {
                 Bitmap bitmap = this.d;
                 if (bitmap != null) {
@@ -400,10 +396,10 @@ public final class ek extends View {
                     this.j = this.d.getHeight();
                 }
             } else {
-                Bitmap bitmap2 = this.f4913c;
+                Bitmap bitmap2 = this.c;
                 if (bitmap2 != null) {
                     this.k = bitmap2.getWidth();
-                    this.j = this.f4913c.getHeight();
+                    this.j = this.c.getHeight();
                 }
             }
         }

@@ -4,7 +4,7 @@ package com.igexin.push.core.h;
 public final class a extends com.igexin.push.e.a.d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23553a = 65558;
+    public static final int f9945a = 65558;
 
     public a(String str, byte[] bArr) {
         super(str);
@@ -13,6 +13,6 @@ public final class a extends com.igexin.push.e.a.d {
 
     @Override // com.igexin.c.a.d.a.e
     public final int c() {
-        return f23553a;
+        return f9945a;
     }
 }

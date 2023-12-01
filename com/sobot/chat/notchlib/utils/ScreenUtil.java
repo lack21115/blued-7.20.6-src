@@ -1,5 +1,6 @@
 package com.sobot.chat.notchlib.utils;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
@@ -36,7 +37,7 @@ public class ScreenUtil {
     }
 
     public static View getContentView(Activity activity) {
-        return activity.getWindow().getDecorView().findViewById(16908290);
+        return activity.getWindow().getDecorView().findViewById(R.id.content);
     }
 
     public static Rect getContentViewDisplayFrame(Activity activity) {

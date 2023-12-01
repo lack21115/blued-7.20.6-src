@@ -6,7 +6,7 @@ import com.amap.api.col.p0003sl.dp;
 import com.amap.api.col.p0003sl.dt;
 import com.amap.api.col.p0003sl.iw;
 import com.amap.api.maps.model.LatLng;
-import com.kwad.sdk.api.model.AdnName;
+import com.amap.api.services.geocoder.GeocodeSearch;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/CoordinateConverter.class */
 public class CoordinateConverter {
@@ -18,9 +18,7 @@ public class CoordinateConverter {
     /* renamed from: com.amap.api.maps.CoordinateConverter$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/CoordinateConverter$1.class */
     static final /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f5511a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -30,33 +28,33 @@ public class CoordinateConverter {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[CoordType.values().length];
-            f5511a = iArr;
+            a = iArr;
             try {
                 iArr[CoordType.BAIDU.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f5511a[CoordType.MAPBAR.ordinal()] = 2;
+                a[CoordType.MAPBAR.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f5511a[CoordType.MAPABC.ordinal()] = 3;
+                a[CoordType.MAPABC.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f5511a[CoordType.SOSOMAP.ordinal()] = 4;
+                a[CoordType.SOSOMAP.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f5511a[CoordType.ALIYUN.ordinal()] = 5;
+                a[CoordType.ALIYUN.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f5511a[CoordType.GOOGLE.ordinal()] = 6;
+                a[CoordType.GOOGLE.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f5511a[CoordType.GPS.ordinal()] = 7;
+                a[CoordType.GPS.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -88,10 +86,10 @@ public class CoordinateConverter {
         }
         String str = "";
         try {
-            switch (AnonymousClass1.f5511a[this.coordType.ordinal()]) {
+            switch (AnonymousClass1.a[this.coordType.ordinal()]) {
                 case 1:
                     latLng = al.a(this.sourceLatLng);
-                    str = AdnName.BAIDU;
+                    str = "baidu";
                     break;
                 case 2:
                     latLng = al.b(this.ctx, this.sourceLatLng);
@@ -114,7 +112,7 @@ public class CoordinateConverter {
                     latLng = this.sourceLatLng;
                     break;
                 case 7:
-                    str = "gps";
+                    str = GeocodeSearch.GPS;
                     latLng = al.a(this.ctx, this.sourceLatLng);
                     break;
             }

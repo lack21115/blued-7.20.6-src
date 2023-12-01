@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/ListBucket.class */
@@ -21,7 +20,7 @@ public class ListBucket {
         public String prefix;
 
         public String toString() {
-            return "{CommonPrefixes:\nPrefix:" + this.prefix + "\n" + i.d;
+            return "{CommonPrefixes:\nPrefix:" + this.prefix + "\n}";
         }
     }
 
@@ -56,7 +55,7 @@ public class ListBucket {
             sb.append("StorageClass:");
             sb.append(this.storageClass);
             sb.append("\n");
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -66,7 +65,7 @@ public class ListBucket {
         public String id;
 
         public String toString() {
-            return "{Owner:\nId:" + this.id + "\n" + i.d;
+            return "{Owner:\nId:" + this.id + "\n}";
         }
     }
 
@@ -114,7 +113,7 @@ public class ListBucket {
         sb.append("Delimiter:");
         sb.append(this.delimiter);
         sb.append("\n");
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

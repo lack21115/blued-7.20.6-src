@@ -16,9 +16,8 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/ta/utdid2/b/a/e.class */
-public class e {
+class e {
     public static final Object a(XmlPullParser xmlPullParser, String[] strArr) throws XmlPullParserException, IOException {
         int eventType = xmlPullParser.getEventType();
         while (eventType != 2) {
@@ -64,7 +63,7 @@ public class e {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static final HashMap m9893a(XmlPullParser xmlPullParser, String str, String[] strArr) throws XmlPullParserException, IOException {
+    public static final HashMap m6848a(XmlPullParser xmlPullParser, String str, String[] strArr) throws XmlPullParserException, IOException {
         HashMap hashMap = new HashMap();
         int eventType = xmlPullParser.getEventType();
         do {
@@ -251,7 +250,7 @@ public class e {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static final int[] m9894a(XmlPullParser xmlPullParser, String str, String[] strArr) throws XmlPullParserException, IOException {
+    public static final int[] m6849a(XmlPullParser xmlPullParser, String str, String[] strArr) throws XmlPullParserException, IOException {
         int i;
         try {
             int[] iArr = new int[Integer.parseInt(xmlPullParser.getAttributeValue(null, l.d))];
@@ -330,14 +329,14 @@ public class e {
             } else if (!name.equals(TypedValues.Custom.S_BOOLEAN)) {
                 if (name.equals("int-array")) {
                     xmlPullParser.next();
-                    int[] m9894a = m9894a(xmlPullParser, "int-array", strArr);
+                    int[] m6849a = m6849a(xmlPullParser, "int-array", strArr);
                     strArr[0] = attributeValue;
-                    return m9894a;
+                    return m6849a;
                 } else if (name.equals("map")) {
                     xmlPullParser.next();
-                    HashMap m9893a = m9893a(xmlPullParser, "map", strArr);
+                    HashMap m6848a = m6848a(xmlPullParser, "map", strArr);
                     strArr[0] = attributeValue;
-                    return m9893a;
+                    return m6848a;
                 } else if (name.equals("list")) {
                     xmlPullParser.next();
                     ArrayList a2 = a(xmlPullParser, "list", strArr);

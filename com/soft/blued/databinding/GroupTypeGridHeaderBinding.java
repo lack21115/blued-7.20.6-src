@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class GroupTypeGridHeaderBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29053a;
+    private final LinearLayout f15363a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29053a;
+        return this.f15363a;
     }
 }

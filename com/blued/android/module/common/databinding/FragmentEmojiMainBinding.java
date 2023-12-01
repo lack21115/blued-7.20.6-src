@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/databinding/FragmentEmojiMainBinding.class */
 public final class FragmentEmojiMainBinding implements ViewBinding {
+    private final LinearLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f10725a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f10725a;
+        return this.a;
     }
 }

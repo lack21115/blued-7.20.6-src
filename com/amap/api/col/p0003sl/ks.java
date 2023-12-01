@@ -12,9 +12,7 @@ import javax.crypto.NoSuchPaddingException;
 /* renamed from: com.amap.api.col.3sl.ks  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ks.class */
 public abstract class ks {
-
-    /* renamed from: c  reason: collision with root package name */
-    ks f5287c;
+    ks c;
     byte[] d = null;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -23,15 +21,15 @@ public abstract class ks {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ks(ks ksVar) {
-        this.f5287c = ksVar;
+        this.c = ksVar;
     }
 
     public final byte[] a() throws CertificateException, NoSuchAlgorithmException, IOException, BadPaddingException, IllegalBlockSizeException, NoSuchPaddingException, InvalidKeyException, InvalidKeySpecException {
-        byte[] a2 = a(this.d);
-        ks ksVar = this.f5287c;
-        byte[] bArr = a2;
+        byte[] a = a(this.d);
+        ks ksVar = this.c;
+        byte[] bArr = a;
         if (ksVar != null) {
-            ksVar.d = a2;
+            ksVar.d = a;
             bArr = ksVar.a();
         }
         return bArr;

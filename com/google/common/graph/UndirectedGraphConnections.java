@@ -54,7 +54,7 @@ final class UndirectedGraphConnections<N, V> implements GraphConnections<N, V> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <N, V> UndirectedGraphConnections<N, V> ofImmutable(Map<N, V> map) {
-        return new UndirectedGraphConnections<>(ImmutableMap.copyOf(map));
+        return new UndirectedGraphConnections<>(ImmutableMap.copyOf((Map) map));
     }
 
     @Override // com.google.common.graph.GraphConnections

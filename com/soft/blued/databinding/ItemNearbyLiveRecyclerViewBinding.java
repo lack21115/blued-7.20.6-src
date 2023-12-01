@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemNearbyLiveRecyclerViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29263a;
+    private final FrameLayout f15573a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29263a;
+        return this.f15573a;
     }
 }

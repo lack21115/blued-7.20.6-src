@@ -1,5 +1,6 @@
 package com.tencent.qcloud.core.auth;
 
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.qcloud.core.util.QCloudStringUtils;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
@@ -102,7 +103,7 @@ public class Utils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static long[] parseKeyTimes(String str) {
-        String[] split = str.split(";");
+        String[] split = str.split(t.aE);
         return new long[]{Long.parseLong(split[0]), Long.parseLong(split[1])};
     }
 

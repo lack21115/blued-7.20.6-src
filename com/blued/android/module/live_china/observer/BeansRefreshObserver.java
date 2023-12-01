@@ -5,9 +5,7 @@ import java.util.Iterator;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/BeansRefreshObserver.class */
 public class BeansRefreshObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static BeansRefreshObserver f13943a = new BeansRefreshObserver();
+    private static BeansRefreshObserver a = new BeansRefreshObserver();
     private ArrayList<IBeansRefreshObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/BeansRefreshObserver$IBeansRefreshObserver.class */
@@ -19,7 +17,7 @@ public class BeansRefreshObserver {
     }
 
     public static BeansRefreshObserver a() {
-        return f13943a;
+        return a;
     }
 
     public void a(double d, double d2) {

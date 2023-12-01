@@ -79,7 +79,7 @@ public final class AutoConfiguredLoadBalancerFactory {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public Status tryHandleResolvedAddresses(LoadBalancer.ResolvedAddresses resolvedAddresses) {
-            List<EquivalentAddressGroup> addresses = resolvedAddresses.getAddresses();
+            List addresses = resolvedAddresses.getAddresses();
             Attributes attributes = resolvedAddresses.getAttributes();
             if (attributes.get(LoadBalancer.ATTR_LOAD_BALANCING_CONFIG) != null) {
                 throw new IllegalArgumentException("Unexpected ATTR_LOAD_BALANCING_CONFIG from upstream: " + attributes.get(LoadBalancer.ATTR_LOAD_BALANCING_CONFIG));
@@ -104,12 +104,12 @@ public final class AutoConfiguredLoadBalancerFactory {
                 this.delegateProvider = loadBalancerProvider;
                 LoadBalancer loadBalancer = this.delegate;
                 this.delegate = loadBalancerProvider.newLoadBalancer(this.helper);
-                this.helper.getChannelLogger().log(ChannelLogger.ChannelLogLevel.INFO, "Load balancer changed from {0} to {1}", loadBalancer.getClass().getSimpleName(), this.delegate.getClass().getSimpleName());
+                this.helper.getChannelLogger().log(ChannelLogger.ChannelLogLevel.INFO, "Load balancer changed from {0} to {1}", new Object[]{loadBalancer.getClass().getSimpleName(), this.delegate.getClass().getSimpleName()});
             }
             Object obj = policySelection2.config;
             Attributes attributes2 = attributes;
             if (obj != null) {
-                this.helper.getChannelLogger().log(ChannelLogger.ChannelLogLevel.DEBUG, "Load-balancing config: {0}", policySelection2.config);
+                this.helper.getChannelLogger().log(ChannelLogger.ChannelLogLevel.DEBUG, "Load-balancing config: {0}", new Object[]{policySelection2.config});
                 attributes2 = attributes.toBuilder().set(LoadBalancer.ATTR_LOAD_BALANCING_CONFIG, policySelection2.rawConfig).build();
             }
             LoadBalancer delegate = getDelegate();
@@ -128,13 +128,12 @@ public final class AutoConfiguredLoadBalancerFactory {
         private EmptyPicker() {
         }
 
-        @Override // io.grpc.LoadBalancer.SubchannelPicker
         public LoadBalancer.PickResult pickSubchannel(LoadBalancer.PickSubchannelArgs pickSubchannelArgs) {
             return LoadBalancer.PickResult.withNoResult();
         }
 
         public String toString() {
-            return MoreObjects.toStringHelper((Class<?>) EmptyPicker.class).toString();
+            return MoreObjects.toStringHelper(EmptyPicker.class).toString();
         }
     }
 
@@ -147,7 +146,6 @@ public final class AutoConfiguredLoadBalancerFactory {
             this.failure = status;
         }
 
-        @Override // io.grpc.LoadBalancer.SubchannelPicker
         public LoadBalancer.PickResult pickSubchannel(LoadBalancer.PickSubchannelArgs pickSubchannelArgs) {
             return LoadBalancer.PickResult.withError(this.failure);
         }
@@ -159,20 +157,16 @@ public final class AutoConfiguredLoadBalancerFactory {
         private NoopLoadBalancer() {
         }
 
-        @Override // io.grpc.LoadBalancer
         public void handleNameResolutionError(Status status) {
         }
 
-        @Override // io.grpc.LoadBalancer
         @Deprecated
         public void handleResolvedAddressGroups(List<EquivalentAddressGroup> list, Attributes attributes) {
         }
 
-        @Override // io.grpc.LoadBalancer
         public void handleResolvedAddresses(LoadBalancer.ResolvedAddresses resolvedAddresses) {
         }
 
-        @Override // io.grpc.LoadBalancer
         public void shutdown() {
         }
     }

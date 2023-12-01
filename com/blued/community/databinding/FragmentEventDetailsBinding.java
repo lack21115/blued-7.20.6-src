@@ -45,9 +45,7 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
     public final ImageView X;
     public final View Y;
     public final TextView Z;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeLinearLayout f18851a;
+    public final ShapeLinearLayout a;
     public final TextView aA;
     public final TextView aB;
     public final TextView aC;
@@ -70,9 +68,7 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
     public final TextView ao;
     public final TextView ap;
     public final TextView aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    public final TextView f18852ar;
+    public final TextView ar;
     public final ShapeTextView as;
     public final TextView at;
     public final ShapeTextView au;
@@ -82,9 +78,7 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
     public final TextView ay;
     public final TextView az;
     public final ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ConstraintLayout f18853c;
+    public final ConstraintLayout c;
     public final ShapeTextView d;
     public final ConstraintLayout e;
     public final LinearLayout f;
@@ -111,9 +105,9 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
 
     private FragmentEventDetailsBinding(ConstraintLayout constraintLayout, ShapeLinearLayout shapeLinearLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ShapeTextView shapeTextView, ConstraintLayout constraintLayout4, LinearLayout linearLayout, RelativeLayout relativeLayout, ImageView imageView, ImageView imageView2, LinearLayout linearLayout2, ShapeFrameLayout shapeFrameLayout, RelativeLayout relativeLayout2, TextView textView, TextView textView2, View view, FrameLayout frameLayout, LinearLayout linearLayout3, LinearLayout linearLayout4, ImageView imageView3, ImageView imageView4, ImageView imageView5, CardView cardView, ImageView imageView6, ImageView imageView7, ImageView imageView8, ConstraintLayout constraintLayout5, LinearLayout linearLayout5, ConstraintLayout constraintLayout6, TextView textView3, FrameLayout frameLayout2, LinearLayout linearLayout6, ShapeLinearLayout shapeLinearLayout2, LinearLayout linearLayout7, LinearLayout linearLayout8, LinearLayout linearLayout9, LinearLayout linearLayout10, LinearLayout linearLayout11, ShapeLinearLayout shapeLinearLayout3, ConstraintLayout constraintLayout7, ShapeFrameLayout shapeFrameLayout2, RecyclerView recyclerView, RecyclerView recyclerView2, RecyclerView recyclerView3, ObservableScrollView observableScrollView, TabPageIndicatorWithDot tabPageIndicatorWithDot, TabPageIndicatorWithDot tabPageIndicatorWithDot2, ShapeTextView shapeTextView2, ImageView imageView9, ImageView imageView10, ImageView imageView11, View view2, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, TextView textView15, TextView textView16, TextView textView17, TextView textView18, TextView textView19, TextView textView20, TextView textView21, TextView textView22, ShapeTextView shapeTextView3, TextView textView23, ShapeTextView shapeTextView4, ShapeTextView shapeTextView5, TextView textView24, TextView textView25, TextView textView26, TextView textView27, TextView textView28, TextView textView29, TextView textView30, TextView textView31) {
         this.aE = constraintLayout;
-        this.f18851a = shapeLinearLayout;
+        this.a = shapeLinearLayout;
         this.b = constraintLayout2;
-        this.f18853c = constraintLayout3;
+        this.c = constraintLayout3;
         this.d = shapeTextView;
         this.e = constraintLayout4;
         this.f = linearLayout;
@@ -180,7 +174,7 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
         this.ao = textView19;
         this.ap = textView20;
         this.aq = textView21;
-        this.f18852ar = textView22;
+        this.ar = textView22;
         this.as = shapeTextView3;
         this.at = textView23;
         this.au = shapeTextView4;
@@ -199,14 +193,14 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
         String str;
         ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.anim_btn_left_btm);
         if (shapeLinearLayout != null) {
-            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.area_recommend_event_list);
-            if (constraintLayout != null) {
-                ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.area_review_list);
-                if (constraintLayout2 != null) {
+            ConstraintLayout findViewById = view.findViewById(R.id.area_recommend_event_list);
+            if (findViewById != null) {
+                ConstraintLayout findViewById2 = view.findViewById(R.id.area_review_list);
+                if (findViewById2 != null) {
                     ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.btn_left_btm);
                     if (shapeTextView != null) {
-                        ConstraintLayout constraintLayout3 = (ConstraintLayout) view.findViewById(R.id.cl_header);
-                        if (constraintLayout3 != null) {
+                        ConstraintLayout findViewById3 = view.findViewById(R.id.cl_header);
+                        if (findViewById3 != null) {
                             LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.cl_offline_address);
                             if (linearLayout != null) {
                                 RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.container_review_list);
@@ -225,8 +219,8 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
                                                         if (textView != null) {
                                                             TextView textView2 = (TextView) view.findViewById(R.id.event_detail_sign_num_tv);
                                                             if (textView2 != null) {
-                                                                View findViewById = view.findViewById(R.id.event_distance_divider);
-                                                                if (findViewById != null) {
+                                                                View findViewById4 = view.findViewById(R.id.event_distance_divider);
+                                                                if (findViewById4 != null) {
                                                                     FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.fl_avatar);
                                                                     if (frameLayout != null) {
                                                                         LinearLayout linearLayout3 = (LinearLayout) view.findViewById(R.id.fl_tab_title);
@@ -239,20 +233,20 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
                                                                                     if (imageView4 != null) {
                                                                                         ImageView imageView5 = (ImageView) view.findViewById(R.id.iv_event_avatar);
                                                                                         if (imageView5 != null) {
-                                                                                            CardView cardView = (CardView) view.findViewById(R.id.iv_event_avatar_cv);
-                                                                                            if (cardView != null) {
+                                                                                            CardView findViewById5 = view.findViewById(R.id.iv_event_avatar_cv);
+                                                                                            if (findViewById5 != null) {
                                                                                                 ImageView imageView6 = (ImageView) view.findViewById(R.id.iv_event_manager_avatar);
                                                                                                 if (imageView6 != null) {
                                                                                                     ImageView imageView7 = (ImageView) view.findViewById(R.id.iv_event_registered);
                                                                                                     if (imageView7 != null) {
                                                                                                         ImageView imageView8 = (ImageView) view.findViewById(R.id.iv_sub);
                                                                                                         if (imageView8 != null) {
-                                                                                                            ConstraintLayout constraintLayout4 = (ConstraintLayout) view.findViewById(R.id.layout_event_user);
-                                                                                                            if (constraintLayout4 != null) {
+                                                                                                            ConstraintLayout findViewById6 = view.findViewById(R.id.layout_event_user);
+                                                                                                            if (findViewById6 != null) {
                                                                                                                 LinearLayout linearLayout5 = (LinearLayout) view.findViewById(R.id.layout_sub_owner_event);
                                                                                                                 if (linearLayout5 != null) {
-                                                                                                                    ConstraintLayout constraintLayout5 = (ConstraintLayout) view.findViewById(R.id.layout_title_scroll);
-                                                                                                                    if (constraintLayout5 != null) {
+                                                                                                                    ConstraintLayout findViewById7 = view.findViewById(R.id.layout_title_scroll);
+                                                                                                                    if (findViewById7 != null) {
                                                                                                                         TextView textView3 = (TextView) view.findViewById(R.id.line_below_tv_more_reivew);
                                                                                                                         if (textView3 != null) {
                                                                                                                             FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.ll_description);
@@ -273,16 +267,16 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
                                                                                                                                                         if (linearLayout11 != null) {
                                                                                                                                                             ShapeLinearLayout shapeLinearLayout3 = (ShapeLinearLayout) view.findViewById(R.id.ll_time_address);
                                                                                                                                                             if (shapeLinearLayout3 != null) {
-                                                                                                                                                                ConstraintLayout constraintLayout6 = (ConstraintLayout) view.findViewById(R.id.rl_content);
-                                                                                                                                                                if (constraintLayout6 != null) {
+                                                                                                                                                                ConstraintLayout findViewById8 = view.findViewById(R.id.rl_content);
+                                                                                                                                                                if (findViewById8 != null) {
                                                                                                                                                                     ShapeFrameLayout shapeFrameLayout2 = (ShapeFrameLayout) view.findViewById(R.id.rl_members);
                                                                                                                                                                     if (shapeFrameLayout2 != null) {
-                                                                                                                                                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_event_recommend);
-                                                                                                                                                                        if (recyclerView != null) {
-                                                                                                                                                                            RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rv_feed);
-                                                                                                                                                                            if (recyclerView2 != null) {
-                                                                                                                                                                                RecyclerView recyclerView3 = (RecyclerView) view.findViewById(R.id.rv_photo);
-                                                                                                                                                                                if (recyclerView3 != null) {
+                                                                                                                                                                        RecyclerView findViewById9 = view.findViewById(R.id.rv_event_recommend);
+                                                                                                                                                                        if (findViewById9 != null) {
+                                                                                                                                                                            RecyclerView findViewById10 = view.findViewById(R.id.rv_feed);
+                                                                                                                                                                            if (findViewById10 != null) {
+                                                                                                                                                                                RecyclerView findViewById11 = view.findViewById(R.id.rv_photo);
+                                                                                                                                                                                if (findViewById11 != null) {
                                                                                                                                                                                     ObservableScrollView observableScrollView = (ObservableScrollView) view.findViewById(R.id.scroll_view);
                                                                                                                                                                                     if (observableScrollView != null) {
                                                                                                                                                                                         TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) view.findViewById(R.id.tablayout);
@@ -297,8 +291,8 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
                                                                                                                                                                                                         if (imageView10 != null) {
                                                                                                                                                                                                             ImageView imageView11 = (ImageView) view.findViewById(R.id.title_share);
                                                                                                                                                                                                             if (imageView11 != null) {
-                                                                                                                                                                                                                View findViewById2 = view.findViewById(R.id.top_bar);
-                                                                                                                                                                                                                if (findViewById2 != null) {
+                                                                                                                                                                                                                View findViewById12 = view.findViewById(R.id.top_bar);
+                                                                                                                                                                                                                if (findViewById12 != null) {
                                                                                                                                                                                                                     TextView textView4 = (TextView) view.findViewById(R.id.tv_address);
                                                                                                                                                                                                                     if (textView4 != null) {
                                                                                                                                                                                                                         TextView textView5 = (TextView) view.findViewById(R.id.tv_event_desc);
@@ -361,7 +355,7 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
                                                                                                                                                                                                                                                                                                                                         if (textView30 != null) {
                                                                                                                                                                                                                                                                                                                                             TextView textView31 = (TextView) view.findViewById(R.id.tv_user_score);
                                                                                                                                                                                                                                                                                                                                             if (textView31 != null) {
-                                                                                                                                                                                                                                                                                                                                                return new FragmentEventDetailsBinding((ConstraintLayout) view, shapeLinearLayout, constraintLayout, constraintLayout2, shapeTextView, constraintLayout3, linearLayout, relativeLayout, imageView, imageView2, linearLayout2, shapeFrameLayout, relativeLayout2, textView, textView2, findViewById, frameLayout, linearLayout3, linearLayout4, imageView3, imageView4, imageView5, cardView, imageView6, imageView7, imageView8, constraintLayout4, linearLayout5, constraintLayout5, textView3, frameLayout2, linearLayout6, shapeLinearLayout2, linearLayout7, linearLayout8, linearLayout9, linearLayout10, linearLayout11, shapeLinearLayout3, constraintLayout6, shapeFrameLayout2, recyclerView, recyclerView2, recyclerView3, observableScrollView, tabPageIndicatorWithDot, tabPageIndicatorWithDot2, shapeTextView2, imageView9, imageView10, imageView11, findViewById2, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, textView21, textView22, shapeTextView3, textView23, shapeTextView4, shapeTextView5, textView24, textView25, textView26, textView27, textView28, textView29, textView30, textView31);
+                                                                                                                                                                                                                                                                                                                                                return new FragmentEventDetailsBinding((ConstraintLayout) view, shapeLinearLayout, findViewById, findViewById2, shapeTextView, findViewById3, linearLayout, relativeLayout, imageView, imageView2, linearLayout2, shapeFrameLayout, relativeLayout2, textView, textView2, findViewById4, frameLayout, linearLayout3, linearLayout4, imageView3, imageView4, imageView5, findViewById5, imageView6, imageView7, imageView8, findViewById6, linearLayout5, findViewById7, textView3, frameLayout2, linearLayout6, shapeLinearLayout2, linearLayout7, linearLayout8, linearLayout9, linearLayout10, linearLayout11, shapeLinearLayout3, findViewById8, shapeFrameLayout2, findViewById9, findViewById10, findViewById11, observableScrollView, tabPageIndicatorWithDot, tabPageIndicatorWithDot2, shapeTextView2, imageView9, imageView10, imageView11, findViewById12, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, textView21, textView22, shapeTextView3, textView23, shapeTextView4, shapeTextView5, textView24, textView25, textView26, textView27, textView28, textView29, textView30, textView31);
                                                                                                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                                                                                                             str = "tvUserScore";
                                                                                                                                                                                                                                                                                                                                         } else {
@@ -610,7 +604,6 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.aE;

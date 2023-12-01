@@ -30,9 +30,7 @@ public final class YYChorusMusicCenterDialog extends BaseMusicCenterDialog<YYKtv
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChorusMusicCenterDialog$MusicAdapter.class */
     final class MusicAdapter extends BaseMusicPagerAdapter<YYKtvMusicTypeModel> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYChorusMusicCenterDialog f17133a;
+        final /* synthetic */ YYChorusMusicCenterDialog a;
 
         /* JADX WARN: Illegal instructions before constructor call */
         /*
@@ -47,7 +45,7 @@ public final class YYChorusMusicCenterDialog extends BaseMusicCenterDialog<YYKtv
                 kotlin.jvm.internal.Intrinsics.e(r0, r1)
                 r0 = r4
                 r1 = r5
-                r0.f17133a = r1
+                r0.a = r1
                 r0 = r5
                 androidx.fragment.app.FragmentManager r0 = r0.getChildFragmentManager()
                 r5 = r0
@@ -63,13 +61,12 @@ public final class YYChorusMusicCenterDialog extends BaseMusicCenterDialog<YYKtv
             throw new UnsupportedOperationException("Method not decompiled: com.blued.android.module.yy_china.fragment.YYChorusMusicCenterDialog.MusicAdapter.<init>(com.blued.android.module.yy_china.fragment.YYChorusMusicCenterDialog):void");
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             YYKtvMusicTypeModel yYKtvMusicTypeModel;
             String str;
-            List<YYKtvMusicTypeModel> a2 = a();
+            List<YYKtvMusicTypeModel> a = a();
             YYChorusMusicItemFragment yYChorusMusicItemFragment = null;
-            if (a2 != null && (yYKtvMusicTypeModel = a2.get(i)) != null && (str = yYKtvMusicTypeModel.sheetId) != null) {
+            if (a != null && (yYKtvMusicTypeModel = a.get(i)) != null && (str = yYKtvMusicTypeModel.sheetId) != null) {
                 yYChorusMusicItemFragment = new YYChorusMusicItemFragment(str);
             }
             if (yYChorusMusicItemFragment != null) {
@@ -78,12 +75,11 @@ public final class YYChorusMusicCenterDialog extends BaseMusicCenterDialog<YYKtv
             throw new NullPointerException("null cannot be cast to non-null type androidx.fragment.app.Fragment");
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             YYKtvMusicTypeModel yYKtvMusicTypeModel;
-            List<YYKtvMusicTypeModel> a2 = a();
+            List<YYKtvMusicTypeModel> a = a();
             String str = null;
-            if (a2 != null && (yYKtvMusicTypeModel = a2.get(i)) != null) {
+            if (a != null && (yYKtvMusicTypeModel = a.get(i)) != null) {
                 str = yYKtvMusicTypeModel.sheetName;
             }
             return str;
@@ -111,15 +107,15 @@ public final class YYChorusMusicCenterDialog extends BaseMusicCenterDialog<YYKtv
     private final void k() {
         YYRoomModel b = YYRoomInfoManager.e().b();
         String str = b == null ? null : b.room_id;
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.a(str, 1, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<YYChorusMusicModel, BluedEntityBaseExtra>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYChorusMusicCenterDialog$loadMusicCount$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.a(str, 1, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<YYChorusMusicModel, BluedEntityBaseExtra>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYChorusMusicCenterDialog$loadMusicCount$1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<YYChorusMusicModel, BluedEntityBaseExtra> bluedEntity) {
                 if (bluedEntity == null) {
                     return;
                 }
                 ShapeTextView shapeTextView = YYChorusMusicCenterDialog.this.f().e;
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                 String string = YYChorusMusicCenterDialog.this.getResources().getString(R.string.yy_playlist_amount);
                 Intrinsics.c(string, "resources.getString(R.string.yy_playlist_amount)");
                 BluedEntityBaseExtra bluedEntityBaseExtra = bluedEntity.extra;
@@ -134,8 +130,8 @@ public final class YYChorusMusicCenterDialog extends BaseMusicCenterDialog<YYKtv
     public void i() {
         YYRoomModel b = YYRoomInfoManager.e().b();
         String str = b == null ? null : b.room_id;
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.q(str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYKtvMusicTypeModel>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYChorusMusicCenterDialog$loadMusicSheet$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.q(str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYKtvMusicTypeModel>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYChorusMusicCenterDialog$loadMusicSheet$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -157,7 +153,7 @@ public final class YYChorusMusicCenterDialog extends BaseMusicCenterDialog<YYKtv
         return new MusicAdapter(this);
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseMusicCenterDialog, com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseMusicCenterDialog, com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

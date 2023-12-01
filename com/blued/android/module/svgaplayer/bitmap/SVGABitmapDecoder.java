@@ -11,13 +11,13 @@ public abstract class SVGABitmapDecoder<T> {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = i > 0 && i2 > 0;
         options.inPreferredConfig = Bitmap.Config.RGB_565;
-        Bitmap a2 = a(t, options);
+        Bitmap a = a(t, options);
         if (options.inJustDecodeBounds) {
-            options.inSampleSize = BitmapSampleSizeCalculator.f15983a.a(options, i, i2);
+            options.inSampleSize = BitmapSampleSizeCalculator.a.a(options, i, i2);
             options.inJustDecodeBounds = false;
             return a(t, options);
         }
-        return a2;
+        return a;
     }
 
     public abstract Bitmap a(T t, BitmapFactory.Options options);

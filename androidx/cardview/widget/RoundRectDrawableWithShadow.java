@@ -14,15 +14,16 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import androidx.cardview.R;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/cardview/widget/RoundRectDrawableWithShadow.class */
-class RoundRectDrawableWithShadow extends Drawable {
+public class RoundRectDrawableWithShadow extends Drawable {
 
     /* renamed from: a  reason: collision with root package name */
-    static RoundRectHelper f1938a;
+    static RoundRectHelper f1890a;
     private static final double b = Math.cos(Math.toRadians(45.0d));
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f1939c;
+    private final int f1891c;
     private Paint e;
     private Paint f;
     private final RectF g;
@@ -48,7 +49,7 @@ class RoundRectDrawableWithShadow extends Drawable {
     public RoundRectDrawableWithShadow(Resources resources, ColorStateList colorStateList, float f, float f2, float f3) {
         this.o = resources.getColor(R.color.cardview_shadow_start_color);
         this.p = resources.getColor(R.color.cardview_shadow_end_color);
-        this.f1939c = resources.getDimensionPixelSize(R.dimen.cardview_compat_inset_shadow);
+        this.f1891c = resources.getDimensionPixelSize(R.dimen.cardview_compat_inset_shadow);
         b(colorStateList);
         Paint paint = new Paint(5);
         this.e = paint;
@@ -86,7 +87,7 @@ class RoundRectDrawableWithShadow extends Drawable {
             }
             this.l = f3;
             this.j = d2;
-            this.k = (int) ((f3 * 1.5f) + this.f1939c + 0.5f);
+            this.k = (int) ((f3 * 1.5f) + this.f1891c + 0.5f);
             this.n = true;
             invalidateSelf();
         }
@@ -95,7 +96,7 @@ class RoundRectDrawableWithShadow extends Drawable {
     private void a(Canvas canvas) {
         float f = this.h;
         float f2 = (-f) - this.k;
-        float f3 = f + this.f1939c + (this.l / 2.0f);
+        float f3 = f + this.f1891c + (this.l / 2.0f);
         float f4 = f3 * 2.0f;
         boolean z = this.g.width() - f4 > 0.0f;
         boolean z2 = this.g.height() - f4 > 0.0f;
@@ -259,7 +260,7 @@ class RoundRectDrawableWithShadow extends Drawable {
     /* JADX INFO: Access modifiers changed from: package-private */
     public float d() {
         float f = this.j;
-        return (Math.max(f, this.h + this.f1939c + (f / 2.0f)) * 2.0f) + ((this.j + this.f1939c) * 2.0f);
+        return (Math.max(f, this.h + this.f1891c + (f / 2.0f)) * 2.0f) + ((this.j + this.f1891c) * 2.0f);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -271,13 +272,13 @@ class RoundRectDrawableWithShadow extends Drawable {
         canvas.translate(0.0f, this.l / 2.0f);
         a(canvas);
         canvas.translate(0.0f, (-this.l) / 2.0f);
-        f1938a.drawRoundRect(canvas, this.g, this.h, this.d);
+        f1890a.drawRoundRect(canvas, this.g, this.h, this.d);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public float e() {
         float f = this.j;
-        return (Math.max(f, this.h + this.f1939c + ((f * 1.5f) / 2.0f)) * 2.0f) + (((this.j * 1.5f) + this.f1939c) * 2.0f);
+        return (Math.max(f, this.h + this.f1891c + ((f * 1.5f) / 2.0f)) * 2.0f) + (((this.j * 1.5f) + this.f1891c) * 2.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

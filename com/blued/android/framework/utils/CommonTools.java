@@ -9,6 +9,7 @@ import android.os.PowerManager;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.fragment.app.Fragment;
+import com.android.internal.util.cm.PowerMenuConstants;
 import com.blued.android.core.AppInfo;
 import java.io.File;
 import java.io.Reader;
@@ -16,9 +17,7 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/CommonTools.class */
 public class CommonTools {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f10076a = "blued" + File.separator + "patch";
+    public static final String a = "blued" + File.separator + "patch";
 
     public static long a(String str) {
         try {
@@ -30,10 +29,10 @@ public class CommonTools {
     }
 
     public static String a() {
-        String b = b(f10076a);
+        String b = b(a);
         String str = b;
         if (TextUtils.isEmpty(b)) {
-            str = c(f10076a);
+            str = c(a);
         }
         return str;
     }
@@ -56,7 +55,7 @@ public class CommonTools {
         boolean z;
         ComponentName componentName;
         try {
-            z = ((PowerManager) context.getSystemService("power")).isScreenOn();
+            z = ((PowerManager) context.getSystemService(PowerMenuConstants.GLOBAL_ACTION_KEY_POWER)).isScreenOn();
         } catch (Throwable th) {
             z = false;
         }
@@ -93,7 +92,7 @@ public class CommonTools {
 
     public static String b(String str) {
         File file;
-        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+        if (Environment.getExternalStorageState().equals("mounted")) {
             file = Environment.getExternalStorageDirectory();
             Log.i("PTH", "downloadDirs parent:" + file);
         } else {

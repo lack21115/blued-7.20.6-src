@@ -6,11 +6,11 @@ import android.graphics.Path;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f35778a = 0;
+    private int f22087a = 0;
     private Path b = new Path();
 
     /* renamed from: c  reason: collision with root package name */
-    private int f35779c = 0;
+    private int f22088c = 0;
     private float[] d = new float[6];
 
     public void a(Path path) {

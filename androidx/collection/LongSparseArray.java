@@ -16,7 +16,7 @@ public class LongSparseArray<E> implements Cloneable {
         this.mGarbage = false;
         if (i == 0) {
             this.mKeys = ContainerHelpers.b;
-            this.mValues = ContainerHelpers.f1948c;
+            this.mValues = ContainerHelpers.f1900c;
             return;
         }
         int idealLongArraySize = ContainerHelpers.idealLongArraySize(i);
@@ -67,7 +67,7 @@ public class LongSparseArray<E> implements Cloneable {
             long[] jArr = new long[idealLongArraySize];
             Object[] objArr = new Object[idealLongArraySize];
             long[] jArr2 = this.mKeys;
-            System.arraycopy((Object) jArr2, 0, (Object) jArr, 0, jArr2.length);
+            System.arraycopy(jArr2, 0, jArr, 0, jArr2.length);
             Object[] objArr2 = this.mValues;
             System.arraycopy(objArr2, 0, objArr, 0, objArr2.length);
             this.mKeys = jArr;
@@ -95,7 +95,7 @@ public class LongSparseArray<E> implements Cloneable {
     }
 
     /* renamed from: clone */
-    public LongSparseArray<E> m1270clone() {
+    public LongSparseArray<E> m1132clone() {
         try {
             LongSparseArray<E> longSparseArray = (LongSparseArray) super.clone();
             longSparseArray.mKeys = (long[]) this.mKeys.clone();
@@ -195,7 +195,7 @@ public class LongSparseArray<E> implements Cloneable {
             long[] jArr = new long[idealLongArraySize];
             Object[] objArr2 = new Object[idealLongArraySize];
             long[] jArr2 = this.mKeys;
-            System.arraycopy((Object) jArr2, 0, (Object) jArr, 0, jArr2.length);
+            System.arraycopy(jArr2, 0, jArr, 0, jArr2.length);
             Object[] objArr3 = this.mValues;
             System.arraycopy(objArr3, 0, objArr2, 0, objArr3.length);
             this.mKeys = jArr;
@@ -205,7 +205,7 @@ public class LongSparseArray<E> implements Cloneable {
         if (i3 - i != 0) {
             long[] jArr3 = this.mKeys;
             int i4 = i + 1;
-            System.arraycopy((Object) jArr3, i, (Object) jArr3, i4, i3 - i);
+            System.arraycopy(jArr3, i, jArr3, i4, i3 - i);
             Object[] objArr4 = this.mValues;
             System.arraycopy(objArr4, i, objArr4, i4, this.mSize - i);
         }

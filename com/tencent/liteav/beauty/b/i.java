@@ -9,11 +9,11 @@ import java.nio.FloatBuffer;
 public final class i extends com.tencent.liteav.videobase.a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    Bitmap f36386a;
+    Bitmap f22695a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    Bitmap f36387c;
+    Bitmap f22696c;
     int d;
     final FloatBuffer e;
     final FloatBuffer f;
@@ -24,9 +24,9 @@ public final class i extends com.tencent.liteav.videobase.a.b {
 
     public i() {
         super(com.tencent.liteav.videobase.a.b.NO_FILTER_VERTEX_SHADER, "varying highp vec2 textureCoordinate;\n\nuniform sampler2D inputImageTexture;\nuniform sampler2D inputImageTexture2; // lookup texture 1\nuniform sampler2D inputImageTexture3; // lookup texture 2\n\n\nuniform lowp vec3 v3_params;\nuniform lowp vec2 v2_texs;\n\n\nvoid main()\n{\n    lowp vec4 textureColor = texture2D(inputImageTexture, textureCoordinate);\n\n    mediump float blueColor = textureColor.b * 63.0;\n\n    mediump vec2 quad1;\n    quad1.y = floor(floor(blueColor) / 8.0);\n    quad1.x = floor(blueColor) - (quad1.y * 8.0);\n\n    mediump vec2 quad2;\n    quad2.y = floor(ceil(blueColor) / 8.0);\n    quad2.x = ceil(blueColor) - (quad2.y * 8.0);\n\n    highp vec2 texPos1;\n    texPos1.x = (quad1.x * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.r);\n    texPos1.y = (quad1.y * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.g);\n\n    highp vec2 texPos2;\n    texPos2.x = (quad2.x * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.r);\n    texPos2.y = (quad2.y * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.g);\n\n    lowp vec4 newColor1;\n    lowp vec4 newColor2;\n    if(textureCoordinate.x <= v3_params.x) { \n      if(v2_texs.x == 1.0) { \n        newColor1 = texture2D(inputImageTexture2, texPos1);\n        newColor2 = texture2D(inputImageTexture2, texPos2);\n        lowp vec4 newColor = mix(newColor1, newColor2, fract(blueColor));\n        gl_FragColor = mix(textureColor, vec4(newColor.rgb, textureColor.w), v3_params.y);\n      } else { \n        gl_FragColor = textureColor;\n      } \n    } else {\n      if(v2_texs.y == 1.0) { \n        newColor1 = texture2D(inputImageTexture3, texPos1);\n        newColor2 = texture2D(inputImageTexture3, texPos2);\n        lowp vec4 newColor = mix(newColor1, newColor2, fract(blueColor));\n        gl_FragColor = mix(textureColor, vec4(newColor.rgb, textureColor.w), v3_params.z);\n      } else { \n        gl_FragColor = textureColor;\n      } \n    }\n }");
-        this.f36386a = null;
+        this.f22695a = null;
         this.b = -1;
-        this.f36387c = null;
+        this.f22696c = null;
         this.d = -1;
         this.e = FloatBuffer.allocate(3);
         this.f = FloatBuffer.allocate(2);
@@ -73,12 +73,12 @@ public final class i extends com.tencent.liteav.videobase.a.b {
         this.h = GLES20.glGetUniformLocation(getProgramId(), com.tencent.liteav.videobase.a.j.THIRD_INPUT_SAMPLE2D_NAME);
         this.i = GLES20.glGetUniformLocation(getProgramId(), "v3_params");
         this.j = GLES20.glGetUniformLocation(getProgramId(), "v2_texs");
-        if (this.f36386a == null && this.f36387c == null) {
+        if (this.f22695a == null && this.f22696c == null) {
             return;
         }
-        a(this.e.get(0), this.f36386a, this.e.get(1), this.f36387c, this.e.get(2));
-        this.f36386a = null;
-        this.f36387c = null;
+        a(this.e.get(0), this.f22695a, this.e.get(1), this.f22696c, this.e.get(2));
+        this.f22695a = null;
+        this.f22696c = null;
     }
 
     @Override // com.tencent.liteav.videobase.a.b

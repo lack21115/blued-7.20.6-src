@@ -17,22 +17,22 @@ import java.util.List;
 public class AvatarWidgetManager {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final AvatarWidgetManager f34223c = new AvatarWidgetManager();
+    private static final AvatarWidgetManager f20532c = new AvatarWidgetManager();
 
     /* renamed from: a  reason: collision with root package name */
-    public List<AvatarWidgetModel> f34224a;
+    public List<AvatarWidgetModel> f20533a;
     private boolean b;
 
     private AvatarWidgetManager() {
         ArrayList arrayList = new ArrayList();
-        this.f34224a = arrayList;
+        this.f20533a = arrayList;
         if (arrayList.size() == 0) {
-            this.f34224a = b().getModelList();
+            this.f20533a = b().getModelList();
         }
     }
 
     public static AvatarWidgetManager a() {
-        return f34223c;
+        return f20532c;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -59,24 +59,21 @@ public class AvatarWidgetManager {
     private void c() {
         MineHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<AvatarWidgetModel>>() { // from class: com.soft.blued.ui.user.manager.AvatarWidgetManager.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<AvatarWidgetModel> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
                     AvatarWidgetManager.this.a(bluedEntityA.data);
-                    if (AvatarWidgetManager.this.f34224a.size() == 0) {
-                        AvatarWidgetManager.this.f34224a.addAll(bluedEntityA.data);
+                    if (AvatarWidgetManager.this.f20533a.size() == 0) {
+                        AvatarWidgetManager.this.f20533a.addAll(bluedEntityA.data);
                         AvatarWidgetManager.this.b(-1);
                     }
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
             }
         }, "pendant");
@@ -88,7 +85,7 @@ public class AvatarWidgetManager {
             this.b = true;
         }
         Log.v("drb", "getWidgetRes id:" + i);
-        for (AvatarWidgetModel avatarWidgetModel : this.f34224a) {
+        for (AvatarWidgetModel avatarWidgetModel : this.f20533a) {
             if (avatarWidgetModel.id == i) {
                 Log.v("drb", "getWidgetRes AvatarWidgetModel.theme:" + avatarWidgetModel.theme);
                 return avatarWidgetModel.theme;

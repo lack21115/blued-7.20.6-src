@@ -31,7 +31,7 @@ public class g {
         int i = applicationInfo.uid;
         try {
             Class<?> cls = Class.forName(AppOpsManager.class.getName());
-            Class<Integer> cls2 = Integer.TYPE;
+            Class<?> cls2 = Integer.TYPE;
             return ((Integer) cls.getMethod("checkOpNoThrow", cls2, cls2, String.class).invoke(appOpsManager, Integer.valueOf(((Integer) cls.getDeclaredField("OP_POST_NOTIFICATION").get(Integer.class)).intValue()), Integer.valueOf(i), packageName)).intValue() == 0;
         } catch (ClassNotFoundException | IllegalAccessException | NoSuchFieldException | NoSuchMethodException | RuntimeException | InvocationTargetException e) {
             return true;

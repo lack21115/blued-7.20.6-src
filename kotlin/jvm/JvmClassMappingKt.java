@@ -1,8 +1,5 @@
 package kotlin.jvm;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.tencent.lbssearch.object.param.Geo2AddressParam;
 import kotlin.Metadata;
 import kotlin.jvm.internal.ClassBasedDeclarationContainer;
 import kotlin.jvm.internal.Intrinsics;
@@ -38,7 +35,7 @@ public final class JvmClassMappingKt {
                             return cls;
                         }
                     case 104431:
-                        return !name.equals(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL) ? cls : Integer.class;
+                        return !name.equals("int") ? cls : Integer.class;
                     case 3039496:
                         return !name.equals("byte") ? cls : Byte.class;
                     case 3052374:
@@ -48,11 +45,11 @@ public final class JvmClassMappingKt {
                     case 3625364:
                         return !name.equals("void") ? cls : Void.class;
                     case 64711720:
-                        return !name.equals(TypedValues.Custom.S_BOOLEAN) ? cls : Boolean.class;
+                        return !name.equals("boolean") ? cls : Boolean.class;
                     case 97526364:
-                        return !name.equals(TypedValues.Custom.S_FLOAT) ? cls : Float.class;
+                        return !name.equals("float") ? cls : Float.class;
                     case 109413500:
-                        return !name.equals(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT) ? cls : Short.class;
+                        return !name.equals("short") ? cls : Short.class;
                     default:
                         return cls;
                 }

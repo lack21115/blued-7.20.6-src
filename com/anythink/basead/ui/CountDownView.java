@@ -13,13 +13,9 @@ import android.view.View;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/CountDownView.class */
 public class CountDownView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Paint f6106a;
+    private Paint a;
     private Paint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Paint f6107c;
+    private Paint c;
     private float d;
     private float e;
     private int f;
@@ -48,20 +44,20 @@ public class CountDownView extends View {
         this.g = Color.parseColor("#CC000000");
         this.h = -1;
         Paint paint = new Paint();
-        this.f6106a = paint;
+        this.a = paint;
         paint.setAntiAlias(true);
-        this.f6106a.setStrokeCap(Paint.Cap.ROUND);
-        this.f6106a.setStyle(Paint.Style.STROKE);
-        this.f6106a.setStrokeWidth(this.d);
-        Paint paint2 = new Paint(this.f6106a);
+        this.a.setStrokeCap(Paint.Cap.ROUND);
+        this.a.setStyle(Paint.Style.STROKE);
+        this.a.setStrokeWidth(this.d);
+        Paint paint2 = new Paint(this.a);
         this.b = paint2;
         paint2.setColor(this.f);
         this.b.setStyle(Paint.Style.FILL);
         Paint paint3 = new Paint();
-        this.f6107c = paint3;
+        this.c = paint3;
         paint3.setAntiAlias(true);
-        this.f6107c.setTextSize(this.e);
-        this.f6107c.setColor(this.h);
+        this.c.setTextSize(this.e);
+        this.c.setColor(this.h);
         this.l = new RectF();
         this.o = new Rect();
     }
@@ -80,20 +76,20 @@ public class CountDownView extends View {
         this.g = Color.parseColor("#CC000000");
         this.h = -1;
         Paint paint = new Paint();
-        this.f6106a = paint;
+        this.a = paint;
         paint.setAntiAlias(true);
-        this.f6106a.setStrokeCap(Paint.Cap.ROUND);
-        this.f6106a.setStyle(Paint.Style.STROKE);
-        this.f6106a.setStrokeWidth(this.d);
-        Paint paint2 = new Paint(this.f6106a);
+        this.a.setStrokeCap(Paint.Cap.ROUND);
+        this.a.setStyle(Paint.Style.STROKE);
+        this.a.setStrokeWidth(this.d);
+        Paint paint2 = new Paint(this.a);
         this.b = paint2;
         paint2.setColor(this.f);
         this.b.setStyle(Paint.Style.FILL);
         Paint paint3 = new Paint();
-        this.f6107c = paint3;
+        this.c = paint3;
         paint3.setAntiAlias(true);
-        this.f6107c.setTextSize(this.e);
-        this.f6107c.setColor(this.h);
+        this.c.setTextSize(this.e);
+        this.c.setColor(this.h);
         this.l = new RectF();
         this.o = new Rect();
     }
@@ -103,19 +99,19 @@ public class CountDownView extends View {
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawCircle(this.l.centerX(), this.l.centerY(), this.k, this.b);
-        this.f6106a.setColor(this.g);
-        canvas.drawArc(this.l, 0.0f, 360.0f, false, this.f6106a);
-        this.f6106a.setColor(this.h);
-        canvas.drawArc(this.l, -90.0f, this.m, false, this.f6106a);
+        this.a.setColor(this.g);
+        canvas.drawArc(this.l, 0.0f, 360.0f, false, this.a);
+        this.a.setColor(this.h);
+        canvas.drawArc(this.l, -90.0f, this.m, false, this.a);
         if (TextUtils.isEmpty(this.n)) {
             return;
         }
-        Paint paint = this.f6107c;
+        Paint paint = this.c;
         String str = this.n;
         paint.getTextBounds(str, 0, str.length(), this.o);
-        this.q = this.f6107c.measureText(this.n);
-        this.r = this.f6107c.getFontMetrics();
-        canvas.drawText(this.n, this.l.centerX() - (this.q / 2.0f), this.l.centerY() + (((this.r.bottom - this.r.top) / 2.0f) - this.r.bottom), this.f6107c);
+        this.q = this.c.measureText(this.n);
+        this.r = this.c.getFontMetrics();
+        canvas.drawText(this.n, this.l.centerX() - (this.q / 2.0f), this.l.centerY() + (((this.r.bottom - this.r.top) / 2.0f) - this.r.bottom), this.c);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -150,7 +146,7 @@ public class CountDownView extends View {
     public void setThickInPx(int i) {
         float f = i;
         this.d = f;
-        this.f6106a.setStrokeWidth(f);
+        this.a.setStrokeWidth(f);
         a();
     }
 

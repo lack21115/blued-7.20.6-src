@@ -1,6 +1,6 @@
 package com.tencent.thumbplayer.core.downloadproxy.utils;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.thumbplayer.core.downloadproxy.api.ITPDLProxyLogListener;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -52,7 +52,7 @@ public class TPDLProxyUtils {
                     str5 = str;
                     if (readLine.contains("avg")) {
                         String str8 = str6;
-                        int indexOf = readLine.indexOf(BridgeUtil.SPLIT_MARK, 20);
+                        int indexOf = readLine.indexOf("/", 20);
                         String str9 = str6;
                         str5 = readLine.substring(indexOf + 1, readLine.indexOf(".", indexOf));
                         str4 = str6;
@@ -61,7 +61,7 @@ public class TPDLProxyUtils {
                     th = th;
                     th.printStackTrace();
                     str3 = str;
-                    return str2 + ";" + str3;
+                    return str2 + t.aE + str3;
                 }
             }
         } catch (Throwable th2) {
@@ -69,7 +69,7 @@ public class TPDLProxyUtils {
             str = "";
             str2 = str4;
         }
-        return str2 + ";" + str3;
+        return str2 + t.aE + str3;
     }
 
     public static int objectToInt(Object obj, int i) {

@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.ui.BaseDialogFragment;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -36,13 +37,9 @@ import org.json.JSONException;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveShakeDialogFragment.class */
 public class LiveShakeDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f13247a;
+    public Context a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f13248c;
+    public View c;
     public LinearLayout d;
     public View e;
     public View f;
@@ -168,7 +165,7 @@ public class LiveShakeDialogFragment extends BaseDialogFragment {
                 this.e.setVisibility(0);
                 this.k.setVisibility(8);
                 this.m.setText(this.p.desc);
-                this.l.setText(this.f13247a.getString(R.string.live_shake_state_2));
+                this.l.setText(this.a.getString(R.string.live_shake_state_2));
                 this.l.setBackgroundResource(R.drawable.live_shake_state_2);
                 if (this.p.pageFrom == 1) {
                     this.h.setVisibility(8);
@@ -193,7 +190,7 @@ public class LiveShakeDialogFragment extends BaseDialogFragment {
             this.k.setVisibility(8);
             this.m.setText(this.p.desc);
             this.l.setBackgroundResource(R.drawable.live_shake_state_1);
-            this.l.setText(String.format(this.f13247a.getString(R.string.live_shake_state_1), "5"));
+            this.l.setText(String.format(this.a.getString(R.string.live_shake_state_1), "5"));
             if (this.p.pageFrom == 1) {
                 this.h.setVisibility(8);
                 this.l.setVisibility(0);
@@ -266,19 +263,19 @@ public class LiveShakeDialogFragment extends BaseDialogFragment {
                 return;
             }
             String str = (String) it.next();
-            View inflate = LayoutInflater.from(this.f13247a).inflate(R.layout.live_shake_item_line_view, (ViewGroup) null);
+            View inflate = LayoutInflater.from(this.a).inflate(R.layout.live_shake_item_line_view, (ViewGroup) null);
             this.d.addView(inflate, -2, -1);
             View findViewById = inflate.findViewById(R.id.line_view);
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) findViewById.getLayoutParams();
             if (arrayList.size() == 5) {
-                marginLayoutParams.leftMargin = DensityUtils.a(this.f13247a, 2.58f);
-                marginLayoutParams.rightMargin = DensityUtils.a(this.f13247a, 2.58f);
+                marginLayoutParams.leftMargin = DensityUtils.a(this.a, 2.58f);
+                marginLayoutParams.rightMargin = DensityUtils.a(this.a, 2.58f);
             } else if (arrayList.size() == 6) {
-                marginLayoutParams.leftMargin = DensityUtils.a(this.f13247a, 0.0f);
-                marginLayoutParams.rightMargin = DensityUtils.a(this.f13247a, 0.0f);
+                marginLayoutParams.leftMargin = DensityUtils.a(this.a, 0.0f);
+                marginLayoutParams.rightMargin = DensityUtils.a(this.a, 0.0f);
             } else {
-                marginLayoutParams.leftMargin = DensityUtils.a(this.f13247a, 7.4f);
-                marginLayoutParams.rightMargin = DensityUtils.a(this.f13247a, 7.4f);
+                marginLayoutParams.leftMargin = DensityUtils.a(this.a, 7.4f);
+                marginLayoutParams.rightMargin = DensityUtils.a(this.a, 7.4f);
             }
             if (i4 == arrayList.size() - 1) {
                 findViewById.setVisibility(8);
@@ -286,7 +283,7 @@ public class LiveShakeDialogFragment extends BaseDialogFragment {
             findViewById.setLayoutParams(marginLayoutParams);
             Log.i("==xpm", "result:" + str + "  index:" + i4 + " shakeModel.index:" + this.p.index);
             LiveShakeScrollView liveShakeScrollView = (LiveShakeScrollView) inflate.findViewById(R.id.scroll_view);
-            if (TextUtils.equals("-", str)) {
+            if (TextUtils.equals(NativeLibraryHelper.CLEAR_ABI_OVERRIDE, str)) {
                 liveShakeScrollView.a(-1, false);
             } else if (this.p.index == i4 && this.p.status == 1) {
                 liveShakeScrollView.setEventCallback(new LiveShakeScrollView.EventCallback() { // from class: com.blued.android.module.live_china.fragment.LiveShakeDialogFragment.8
@@ -322,6 +319,7 @@ public class LiveShakeDialogFragment extends BaseDialogFragment {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.fragment.LiveShakeDialogFragment$9] */
     public void h() {
         o();
         this.q = new CountDownTimer(6000L, 1000L) { // from class: com.blued.android.module.live_china.fragment.LiveShakeDialogFragment.9
@@ -331,11 +329,12 @@ public class LiveShakeDialogFragment extends BaseDialogFragment {
 
             @Override // android.os.CountDownTimer
             public void onTick(long j) {
-                LiveShakeDialogFragment.this.l.setText(String.format(LiveShakeDialogFragment.this.f13247a.getString(R.string.live_shake_state_1), String.valueOf(j / 1000)));
+                LiveShakeDialogFragment.this.l.setText(String.format(LiveShakeDialogFragment.this.a.getString(R.string.live_shake_state_1), String.valueOf(j / 1000)));
             }
         }.start();
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.fragment.LiveShakeDialogFragment$10] */
     public void i() {
         p();
         this.r = new CountDownTimer(6000L, 1000L) { // from class: com.blued.android.module.live_china.fragment.LiveShakeDialogFragment.10
@@ -355,7 +354,7 @@ public class LiveShakeDialogFragment extends BaseDialogFragment {
             return;
         }
         this.l.setBackgroundResource(R.drawable.live_shake_state_2);
-        this.l.setText(this.f13247a.getString(R.string.live_shake_state_2));
+        this.l.setText(this.a.getString(R.string.live_shake_state_2));
         LiveRoomHttpUtils.e(new BluedUIHttpResponse(a()) { // from class: com.blued.android.module.live_china.fragment.LiveShakeDialogFragment.11
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
@@ -368,14 +367,14 @@ public class LiveShakeDialogFragment extends BaseDialogFragment {
         }, this.p.mvp, this.p.anchor);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f13247a = getActivity();
+        this.a = getActivity();
         setStyle(0, R.style.Dialog_FullScreen);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         if (getArguments() != null) {
             this.p = (LiveShakeModel) getArguments().getSerializable("shakeModel");
@@ -386,7 +385,7 @@ public class LiveShakeDialogFragment extends BaseDialogFragment {
             d();
             return this.b;
         }
-        this.f13248c = inflate.findViewById(R.id.empty_view);
+        this.c = inflate.findViewById(R.id.empty_view);
         this.d = (LinearLayout) this.b.findViewById(R.id.ll_shake);
         this.e = this.b.findViewById(R.id.live_shake_layout);
         this.g = this.b.findViewById(R.id.iv_reward);
@@ -399,7 +398,7 @@ public class LiveShakeDialogFragment extends BaseDialogFragment {
         this.n = (TextView) this.b.findViewById(R.id.tv_beans);
         this.j = this.b.findViewById(R.id.iv_beans_close);
         a(this.p);
-        this.f13248c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveShakeDialogFragment.1
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveShakeDialogFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -431,7 +430,7 @@ public class LiveShakeDialogFragment extends BaseDialogFragment {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         if (this.o) {
@@ -440,7 +439,7 @@ public class LiveShakeDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

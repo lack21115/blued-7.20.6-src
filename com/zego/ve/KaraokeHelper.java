@@ -6,8 +6,10 @@ import android.media.AudioManager;
 import android.media.AudioTrack;
 import android.os.Build;
 import com.cdo.oaps.ad.p;
+import com.huawei.hms.ads.fw;
 import com.igexin.assist.util.AssistUtils;
 import com.tencent.tendinsv.utils.r;
+import com.tencent.thumbplayer.api.TPErrorCode;
 import java.util.StringTokenizer;
 
 /* loaded from: source-8829756-dex2jar.jar:com/zego/ve/KaraokeHelper.class */
@@ -38,7 +40,7 @@ public class KaraokeHelper {
     protected Context _context;
     protected int _deviceHardware;
     protected int _deviceManufacturer;
-    private static final int[][] ReverbCustomParams = {new int[]{200, 1000, 500, 4500, 1000, 1500}, new int[]{5000, 4500, 1200, 4500, p.f, 1200}, new int[]{4500, 8000, 1000, 4000, p.f, 1500}, new int[]{2500, 3000, 1500, 4000, 5000, 1500}, new int[]{3500, 5500, 1500, 5000, 5500, 1500}, new int[]{4000, 3000, 1000, 2500, 5500, 1200}, new int[]{500, 5000, 800, 4500, 3000, 1200}, new int[]{20, 500, 60, 4500, 5000, 1500}, new int[]{0, 0, 0, 4000, 0, 1200}};
+    private static final int[][] ReverbCustomParams = {new int[]{200, 1000, 500, 4500, 1000, 1500}, new int[]{5000, 4500, 1200, 4500, p.f, 1200}, new int[]{4500, 8000, 1000, TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY, p.f, 1500}, new int[]{2500, 3000, 1500, TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY, 5000, 1500}, new int[]{3500, 5500, 1500, 5000, 5500, 1500}, new int[]{TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY, 3000, 1000, 2500, 5500, 1200}, new int[]{500, 5000, 800, 4500, 3000, 1200}, new int[]{20, 500, 60, 4500, 5000, 1500}, new int[]{0, 0, 0, TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY, 0, 1200}};
     private static final int[][] EQCustomGain = {new int[]{0, 0, 0, 2, 2}, new int[]{0, 0, 0, 0, 0}, new int[]{3, 4, 2, 0, -3}, new int[]{3, 2, 0, 0, 2}, new int[]{3, 2, 0, -1, -3}, new int[]{2, 2, 2, 0, 0}, new int[]{5, 2, -2, 1, 3}, new int[]{-2, 0, 1, 2, 1}, new int[]{0, 0, 0, 0, 0}};
     protected HwAudioKit _hwAudioKit = null;
     protected SilentPlayer _silentPlayer = null;
@@ -314,7 +316,7 @@ public class KaraokeHelper {
         }
         HwAudioKit hwAudioKit2 = this._hwAudioKit;
         if (hwAudioKit2 == null || !hwAudioKit2.isFeatureKaraokeOn()) {
-            return ("true".equals(this._audioManager.getProperty("android.media.property.SUPPORT_HWKARAOKE_EFFECT")) && this._context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_AUDIO_LOW_LATENCY)) ? 0 : -1;
+            return (fw.Code.equals(this._audioManager.getProperty("android.media.property.SUPPORT_HWKARAOKE_EFFECT")) && this._context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_AUDIO_LOW_LATENCY)) ? 0 : -1;
         }
         return 1;
     }
@@ -332,7 +334,7 @@ public class KaraokeHelper {
     }
 
     public int SupportXiaomiKaraokeLowlatency() {
-        return this._audioManager.getParameters("audio_karaoke_support").contains("true") ? 0 : -1;
+        return this._audioManager.getParameters("audio_karaoke_support").contains(fw.Code) ? 0 : -1;
     }
 
     public int UninitHWKtvEnv() {

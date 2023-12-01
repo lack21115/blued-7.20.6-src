@@ -9,11 +9,11 @@ import javax.net.ssl.X509TrustManager;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f24853a;
+    public final int f11165a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final SSLSocketFactory f24854c;
+    public final SSLSocketFactory f11166c;
     public final HostnameVerifier d;
     public final X509TrustManager e;
     public final d f;
@@ -22,17 +22,17 @@ public class g {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f24855a = 30000;
+        private int f11167a = 30000;
         private int b = 30000;
 
         /* renamed from: c  reason: collision with root package name */
-        private SSLSocketFactory f24856c;
+        private SSLSocketFactory f11168c;
         private HostnameVerifier d;
         private d e;
         private X509TrustManager f;
 
         public a a(SSLSocketFactory sSLSocketFactory) {
-            this.f24856c = sSLSocketFactory;
+            this.f11168c = sSLSocketFactory;
             return this;
         }
 
@@ -45,15 +45,15 @@ public class g {
     }
 
     private g(a aVar) {
-        this.f24853a = aVar.f24855a;
+        this.f11165a = aVar.f11167a;
         this.b = aVar.b;
-        this.f24854c = aVar.f24856c;
+        this.f11166c = aVar.f11168c;
         this.d = aVar.d;
         this.e = aVar.f;
         this.f = aVar.e;
     }
 
     public String toString() {
-        return "InitParameter{, connectTimeout=" + this.f24853a + ", readTimeout=" + this.b + ", sslSocketFactory=" + this.f24854c + ", hostnameVerifier=" + this.d + ", x509TrustManager=" + this.e + ", httpExtConfig=" + this.f + '}';
+        return "InitParameter{, connectTimeout=" + this.f11165a + ", readTimeout=" + this.b + ", sslSocketFactory=" + this.f11166c + ", hostnameVerifier=" + this.d + ", x509TrustManager=" + this.e + ", httpExtConfig=" + this.f + '}';
     }
 }

@@ -20,7 +20,7 @@ import org.xmlpull.v1.XmlPullParserException;
 public final class ColorStateListInflaterCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ThreadLocal<TypedValue> f2426a = new ThreadLocal<>();
+    private static final ThreadLocal<TypedValue> f2378a = new ThreadLocal<>();
 
     private ColorStateListInflaterCompat() {
     }
@@ -130,8 +130,8 @@ public final class ColorStateListInflaterCompat {
         }
         int[] iArr6 = new int[i];
         ?? r0 = new int[i];
-        System.arraycopy((Object) iArr2, 0, (Object) iArr6, 0, i);
-        System.arraycopy(iArr, 0, (Object) r0, 0, i);
+        System.arraycopy(iArr2, 0, iArr6, 0, i);
+        System.arraycopy(iArr, 0, r0, 0, i);
         return new ColorStateList(r0, iArr6);
     }
 
@@ -140,11 +140,11 @@ public final class ColorStateListInflaterCompat {
     }
 
     private static TypedValue a() {
-        TypedValue typedValue = f2426a.get();
+        TypedValue typedValue = f2378a.get();
         TypedValue typedValue2 = typedValue;
         if (typedValue == null) {
             typedValue2 = new TypedValue();
-            f2426a.set(typedValue2);
+            f2378a.set(typedValue2);
         }
         return typedValue2;
     }

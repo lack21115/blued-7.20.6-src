@@ -121,9 +121,8 @@ public class SobotMHLinearLayout extends LinearLayout {
         return (int) ((f * context.getResources().getDisplayMetrics().density) + 0.5f);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int mode = View.MeasureSpec.getMode(i2);
         int size = View.MeasureSpec.getSize(i2);
         View.MeasureSpec.getSize(i);

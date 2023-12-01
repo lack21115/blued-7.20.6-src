@@ -36,11 +36,11 @@ import java.io.File;
 public class UpdateVersionFragment extends BaseDialogFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public LayoutInflater f34846a;
+    public LayoutInflater f21155a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f34847c;
+    private String f21156c;
     private String d;
     private String e;
     private String f;
@@ -79,7 +79,7 @@ public class UpdateVersionFragment extends BaseDialogFragment {
 
     private void d() {
         this.i.setVisibility(8);
-        this.j = (TextView) this.i.findViewById(2131372124);
+        this.j = (TextView) this.i.findViewById(R.id.tv_notice);
         this.k = (TextView) this.i.findViewById(R.id.tv_code);
         this.l = (TextView) this.i.findViewById(2131371186);
         this.m = (TextView) this.i.findViewById(R.id.tv_update);
@@ -92,7 +92,7 @@ public class UpdateVersionFragment extends BaseDialogFragment {
             getActivity().finish();
             return;
         }
-        this.f34847c = arguments.getString("i_s_update_tag");
+        this.f21156c = arguments.getString("i_s_update_tag");
         this.d = arguments.getString("i_s_update_title");
         this.e = arguments.getString("i_s_update_desc");
         this.f = arguments.getString("i_s_update_url");
@@ -121,7 +121,7 @@ public class UpdateVersionFragment extends BaseDialogFragment {
                 if (query2 != null && query2.moveToFirst()) {
                     int i = query2.getInt(query2.getColumnIndex("status"));
                     if (i == 2) {
-                        AppMethods.d(2131892290);
+                        AppMethods.d((int) R.string.tips_downloading);
                         query2.close();
                         return false;
                     } else if (i == 8) {
@@ -148,10 +148,10 @@ public class UpdateVersionFragment extends BaseDialogFragment {
                     }
                 }
             }
-            if ("i_s_weak_update".equals(this.f34847c)) {
+            if ("i_s_weak_update".equals(this.f21156c)) {
                 h();
                 return true;
-            } else if ("i_s_strong_update".equals(this.f34847c)) {
+            } else if ("i_s_strong_update".equals(this.f21156c)) {
                 i();
                 return true;
             } else {
@@ -164,7 +164,7 @@ public class UpdateVersionFragment extends BaseDialogFragment {
     }
 
     private void g() {
-        CommonAlertDialog.a(this.b, (View) null, getResources().getString(2131889017), getResources().getString(2131889016), getResources().getString(2131886885), getResources().getString(2131892209), new DialogInterface.OnClickListener() { // from class: com.soft.blued.version.update.UpdateVersionFragment.1
+        CommonAlertDialog.a(this.b, (View) null, getResources().getString(R.string.install_title), getResources().getString(R.string.install_content), getResources().getString(2131886885), getResources().getString(2131892209), new DialogInterface.OnClickListener() { // from class: com.soft.blued.version.update.UpdateVersionFragment.1
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
@@ -269,20 +269,18 @@ public class UpdateVersionFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
-        if ("i_s_strong_update".equals(this.f34847c)) {
+        if ("i_s_strong_update".equals(this.f21156c)) {
             AppUtils.a(AppInfo.d());
             return true;
         }
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         FragmentActivity activity = getActivity();
         this.b = activity;
-        this.f34846a = LayoutInflater.from(activity);
+        this.f21155a = LayoutInflater.from(activity);
         if (this.i == null) {
             this.i = layoutInflater.inflate(R.layout.dialog_update_version, viewGroup, false);
             d();
@@ -291,13 +289,12 @@ public class UpdateVersionFragment extends BaseDialogFragment {
         if (!f()) {
             j();
         }
-        CommunityManager.f19086a.a().g(true);
+        CommunityManager.a.a().g(true);
         return this.i;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
-        CommunityManager.f19086a.a().g(false);
+        CommunityManager.a.a().g(false);
     }
 }

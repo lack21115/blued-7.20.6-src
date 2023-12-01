@@ -8,21 +8,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemGiftwallInfoAboutTitleBinding.class */
 public final class ItemGiftwallInfoAboutTitleBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16609a;
+    public final TextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16610c;
+    public final TextView c;
     public final TextView d;
     private final ConstraintLayout e;
 
     private ItemGiftwallInfoAboutTitleBinding(ConstraintLayout constraintLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.e = constraintLayout;
-        this.f16609a = textView;
+        this.a = textView;
         this.b = textView2;
-        this.f16610c = textView3;
+        this.c = textView3;
         this.d = textView4;
     }
 
@@ -51,7 +47,6 @@ public final class ItemGiftwallInfoAboutTitleBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.e;

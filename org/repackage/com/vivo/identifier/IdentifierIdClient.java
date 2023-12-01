@@ -11,8 +11,8 @@ import android.os.HandlerThread;
 import android.os.Message;
 import android.os.SystemClock;
 import android.util.Log;
-import com.igexin.assist.util.AssistUtils;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
+import com.alipay.sdk.util.i;
+import com.anythink.china.api.ChinaDeviceDataInfo;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
@@ -20,12 +20,8 @@ import java.util.concurrent.TimeUnit;
 public class IdentifierIdClient {
     private static Context b;
     private final int t;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Object f44117a = new Object();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static boolean f44118c = false;
+    private static Object a = new Object();
+    private static boolean c = false;
     private static int d = 13;
     private static IdentifierIdObserver e = null;
     private static IdentifierIdObserver f = null;
@@ -67,7 +63,7 @@ public class IdentifierIdClient {
         stringBuffer.append(i2);
         stringBuffer.append(",");
         stringBuffer.append(i3);
-        stringBuffer.append(";");
+        stringBuffer.append(i.b);
         stringBuffer.append(i4);
         stringBuffer.append(",");
         stringBuffer.append(i5);
@@ -78,7 +74,7 @@ public class IdentifierIdClient {
         try {
             try {
                 Class<?> cls = Class.forName("android.os.SystemProperties");
-                return (String) cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class, String.class).invoke(cls, str, "0");
+                return (String) cls.getMethod("get", String.class, String.class).invoke(cls, str, "0");
             } catch (Exception e2) {
                 Log.e("VMS_SDK_Client", "getProperty: invoke is error" + e2.getMessage());
                 return str2;
@@ -143,10 +139,10 @@ public class IdentifierIdClient {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static boolean a() {
-        if (!f44118c) {
+        if (!c) {
             v();
         }
-        return f44118c;
+        return c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -219,11 +215,11 @@ public class IdentifierIdClient {
     }
 
     private void d(int i2, String str) {
-        synchronized (f44117a) {
+        synchronized (a) {
             a(i2, str);
             long uptimeMillis = SystemClock.uptimeMillis();
             try {
-                f44117a.wait(2000L);
+                a.wait(2000L);
             } catch (InterruptedException e2) {
                 Log.e("VMS_SDK_Client", "queryId: lock error");
             }
@@ -239,10 +235,10 @@ public class IdentifierIdClient {
             public void run() {
                 if (IdentifierIdClient.u + IdentifierIdClient.v + IdentifierIdClient.A + IdentifierIdClient.D + IdentifierIdClient.w + IdentifierIdClient.x + IdentifierIdClient.C + IdentifierIdClient.D + IdentifierIdClient.y + IdentifierIdClient.z + IdentifierIdClient.E + IdentifierIdClient.F > 0) {
                     ContentValues contentValues = new ContentValues();
-                    contentValues.put("oaid", IdentifierIdClient.this.a(IdentifierIdClient.u, IdentifierIdClient.v, IdentifierIdClient.A, IdentifierIdClient.B));
+                    contentValues.put(ChinaDeviceDataInfo.OAID, IdentifierIdClient.this.a(IdentifierIdClient.u, IdentifierIdClient.v, IdentifierIdClient.A, IdentifierIdClient.B));
                     contentValues.put("vaid", IdentifierIdClient.this.a(IdentifierIdClient.w, IdentifierIdClient.x, IdentifierIdClient.C, IdentifierIdClient.D));
                     contentValues.put("aaid", IdentifierIdClient.this.a(IdentifierIdClient.y, IdentifierIdClient.z, IdentifierIdClient.E, IdentifierIdClient.F));
-                    IdentifierIdClient.s.a(7, AssistUtils.BRAND_VIVO, new ContentValues[]{contentValues});
+                    IdentifierIdClient.s.a(7, "vivo", new ContentValues[]{contentValues});
                     int unused = IdentifierIdClient.u = IdentifierIdClient.v = IdentifierIdClient.w = IdentifierIdClient.x = IdentifierIdClient.y = IdentifierIdClient.z = 0;
                     int unused2 = IdentifierIdClient.A = IdentifierIdClient.B = IdentifierIdClient.C = IdentifierIdClient.D = IdentifierIdClient.E = IdentifierIdClient.F = 0;
                 }
@@ -299,15 +295,15 @@ public class IdentifierIdClient {
                 } catch (Exception e2) {
                     Log.e("VMS_SDK_Client", "readException:" + e2.toString());
                 }
-                synchronized (IdentifierIdClient.f44117a) {
-                    IdentifierIdClient.f44117a.notify();
+                synchronized (IdentifierIdClient.a) {
+                    IdentifierIdClient.a.notify();
                 }
             }
         };
     }
 
     private static void v() {
-        f44118c = "1".equals(a("persist.sys.identifierid.supported", "0")) || "1".equals(a("persist.sys.identifierid", "0"));
+        c = "1".equals(a("persist.sys.identifierid.supported", "0")) || "1".equals(a("persist.sys.identifierid", "0"));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

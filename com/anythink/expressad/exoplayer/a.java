@@ -44,9 +44,9 @@ public abstract class a implements y, z {
             return a2;
         }
         if (a2 == -5) {
-            m mVar = nVar.f7721a;
+            m mVar = nVar.f4882a;
             if (mVar.l != Long.MAX_VALUE) {
-                nVar.f7721a = mVar.a(mVar.l + this.t);
+                nVar.f4882a = mVar.a(mVar.l + this.t);
             }
         }
         return a2;

@@ -12,9 +12,7 @@ import java.io.FileNotFoundException;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/modules/TakePhotoModule.class */
 public class TakePhotoModule {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected static ITakePhoto f18643a = new ITakePhoto() { // from class: com.blued.android.modules.TakePhotoModule.1
+    protected static ITakePhoto a = new ITakePhoto() { // from class: com.blued.android.modules.TakePhotoModule.1
         @Override // com.blued.android.module.base.album.ITakePhoto
         public void a(String str) {
             if (new File(str).exists()) {
@@ -32,6 +30,6 @@ public class TakePhotoModule {
     };
 
     public static void a() {
-        TakePhotoProxy.a().a((TakePhotoProxy) f18643a);
+        TakePhotoProxy.a().a((TakePhotoProxy) a);
     }
 }

@@ -19,7 +19,7 @@ public class UserInfoVideoDataManager {
     private static UserInfoVideoDataManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<IShineVideoDataDownloadListner> f20425c = new ArrayList();
+    private List<IShineVideoDataDownloadListner> f6819c = new ArrayList();
     private List<BluedIngSelfFeed> d = new ArrayList();
     private List<BluedIngSelfFeed> e = new ArrayList();
     private Set<String> f = new HashSet();
@@ -33,15 +33,14 @@ public class UserInfoVideoDataManager {
     private BluedIngSelfFeed o = new BluedIngSelfFeed();
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f20424a = true;
+    public boolean f6818a = true;
     private IRequestHost k;
     private BluedUIHttpResponse p = new BluedUIHttpResponse<BluedEntityA<BluedIngSelfFeed>>("shineVideoList", this.k) { // from class: com.blued.community.ui.video.manager.UserInfoVideoDataManager.1
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f20426a = false;
+        public boolean f6820a = false;
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedIngSelfFeed> bluedEntityA) {
             if (UserInfoVideoDataManager.this.h == 1) {
@@ -53,30 +52,29 @@ public class UserInfoVideoDataManager {
                 List<BluedIngSelfFeed> a2 = UserInfoVideoDataManager.this.a(bluedEntityA);
                 UserInfoVideoDataManager.this.d.addAll(a2);
                 Log.v("drb", "user下载成功：" + UserInfoVideoDataManager.this.d.size() + " -- isHasMore:" + UserInfoVideoDataManager.this.n);
-                if (UserInfoVideoDataManager.this.f20425c != null && UserInfoVideoDataManager.this.f20425c.size() > 0) {
+                if (UserInfoVideoDataManager.this.f6819c != null && UserInfoVideoDataManager.this.f6819c.size() > 0) {
                     int i = 0;
                     while (true) {
                         int i2 = i;
-                        if (i2 >= UserInfoVideoDataManager.this.f20425c.size()) {
+                        if (i2 >= UserInfoVideoDataManager.this.f6819c.size()) {
                             break;
                         }
-                        ((IShineVideoDataDownloadListner) UserInfoVideoDataManager.this.f20425c.get(i2)).a(bluedEntityA.hasMore(), a2);
+                        ((IShineVideoDataDownloadListner) UserInfoVideoDataManager.this.f6819c.get(i2)).a(bluedEntityA.hasMore(), a2);
                         i = i2 + 1;
                     }
                 }
                 if (UserInfoVideoDataManager.this.n) {
-                    UserInfoVideoDataManager.this.f20424a = true;
+                    UserInfoVideoDataManager.this.f6818a = true;
                     return;
                 }
-                UserInfoVideoDataManager.this.f20424a = false;
+                UserInfoVideoDataManager.this.f6818a = false;
                 UserInfoVideoDataManager userInfoVideoDataManager = UserInfoVideoDataManager.this;
                 userInfoVideoDataManager.c(userInfoVideoDataManager.k);
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f20426a = true;
+            this.f6820a = true;
             if (UserInfoVideoDataManager.this.h > 1) {
                 UserInfoVideoDataManager.g(UserInfoVideoDataManager.this);
             }
@@ -84,25 +82,23 @@ public class UserInfoVideoDataManager {
             return true;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             UserInfoVideoDataManager.this.m = true;
-            if (UserInfoVideoDataManager.this.f20425c == null || UserInfoVideoDataManager.this.f20425c.size() <= 0) {
+            if (UserInfoVideoDataManager.this.f6819c == null || UserInfoVideoDataManager.this.f6819c.size() <= 0) {
                 return;
             }
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= UserInfoVideoDataManager.this.f20425c.size()) {
+                if (i2 >= UserInfoVideoDataManager.this.f6819c.size()) {
                     return;
                 }
-                ((IShineVideoDataDownloadListner) UserInfoVideoDataManager.this.f20425c.get(i2)).a(this.f20426a);
+                ((IShineVideoDataDownloadListner) UserInfoVideoDataManager.this.f6819c.get(i2)).a(this.f6820a);
                 i = i2 + 1;
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             UserInfoVideoDataManager.this.m = false;
@@ -111,10 +107,9 @@ public class UserInfoVideoDataManager {
     private BluedUIHttpResponse q = new BluedUIHttpResponse<BluedEntityA<BluedIngSelfFeed>>("shineVideoList", this.k) { // from class: com.blued.community.ui.video.manager.UserInfoVideoDataManager.2
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f20427a = false;
+        public boolean f6821a = false;
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedIngSelfFeed> bluedEntityA) {
             if (bluedEntityA == null) {
@@ -124,23 +119,22 @@ public class UserInfoVideoDataManager {
             List<BluedIngSelfFeed> a2 = UserInfoVideoDataManager.this.a(bluedEntityA);
             Log.v("drb", "ai下载成功：" + bluedEntityA.data.size());
             UserInfoVideoDataManager.this.d.addAll(a2);
-            if (UserInfoVideoDataManager.this.f20425c == null || UserInfoVideoDataManager.this.f20425c.size() <= 0) {
+            if (UserInfoVideoDataManager.this.f6819c == null || UserInfoVideoDataManager.this.f6819c.size() <= 0) {
                 return;
             }
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= UserInfoVideoDataManager.this.f20425c.size()) {
+                if (i2 >= UserInfoVideoDataManager.this.f6819c.size()) {
                     return;
                 }
-                ((IShineVideoDataDownloadListner) UserInfoVideoDataManager.this.f20425c.get(i2)).a(bluedEntityA.hasMore(), a2);
+                ((IShineVideoDataDownloadListner) UserInfoVideoDataManager.this.f6819c.get(i2)).a(bluedEntityA.hasMore(), a2);
                 i = i2 + 1;
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f20427a = true;
+            this.f6821a = true;
             if (UserInfoVideoDataManager.this.g > 1) {
                 UserInfoVideoDataManager.i(UserInfoVideoDataManager.this);
             }
@@ -148,25 +142,23 @@ public class UserInfoVideoDataManager {
             return true;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             UserInfoVideoDataManager.this.m = true;
-            if (UserInfoVideoDataManager.this.f20425c == null || UserInfoVideoDataManager.this.f20425c.size() <= 0) {
+            if (UserInfoVideoDataManager.this.f6819c == null || UserInfoVideoDataManager.this.f6819c.size() <= 0) {
                 return;
             }
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= UserInfoVideoDataManager.this.f20425c.size()) {
+                if (i2 >= UserInfoVideoDataManager.this.f6819c.size()) {
                     return;
                 }
-                ((IShineVideoDataDownloadListner) UserInfoVideoDataManager.this.f20425c.get(i2)).a(this.f20427a);
+                ((IShineVideoDataDownloadListner) UserInfoVideoDataManager.this.f6819c.get(i2)).a(this.f6821a);
                 i = i2 + 1;
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             UserInfoVideoDataManager.this.m = false;
@@ -206,7 +198,7 @@ public class UserInfoVideoDataManager {
                 if (i2 >= bluedEntityA.data.size()) {
                     break;
                 }
-                BluedIngSelfFeed bluedIngSelfFeed = bluedEntityA.data.get(i2);
+                BluedIngSelfFeed bluedIngSelfFeed = (BluedIngSelfFeed) bluedEntityA.data.get(i2);
                 if (!this.f.contains(bluedIngSelfFeed.feed_id)) {
                     if (bluedIngSelfFeed.isRepost()) {
                         arrayList.add(bluedIngSelfFeed.repost);
@@ -269,11 +261,11 @@ public class UserInfoVideoDataManager {
     }
 
     public void a(IShineVideoDataDownloadListner iShineVideoDataDownloadListner) {
-        this.f20425c.add(iShineVideoDataDownloadListner);
+        this.f6819c.add(iShineVideoDataDownloadListner);
     }
 
     public void a(String str, String str2) {
-        Logger.b("UserInfoVideoDataManager", "notifyAttentionChanged:", str);
+        Logger.b("UserInfoVideoDataManager", new Object[]{"notifyAttentionChanged:", str});
         List<BluedIngSelfFeed> list = this.d;
         if (list == null) {
             return;
@@ -300,8 +292,8 @@ public class UserInfoVideoDataManager {
     }
 
     public void b(IRequestHost iRequestHost) {
-        Log.v("drb", "startDownload hasUserInfoData:" + this.f20424a);
-        if (this.f20424a) {
+        Log.v("drb", "startDownload hasUserInfoData:" + this.f6818a);
+        if (this.f6818a) {
             a(iRequestHost);
         } else {
             c(iRequestHost);
@@ -309,19 +301,19 @@ public class UserInfoVideoDataManager {
     }
 
     public void b(BluedIngSelfFeed bluedIngSelfFeed) {
-        Logger.b("UserInfoVideoDataManager", "notifyDataHasChanged");
-        List<IShineVideoDataDownloadListner> list = this.f20425c;
+        Logger.b("UserInfoVideoDataManager", new Object[]{"notifyDataHasChanged"});
+        List<IShineVideoDataDownloadListner> list = this.f6819c;
         if (list == null || list.size() <= 0) {
             return;
         }
-        for (int i = 0; i < this.f20425c.size(); i++) {
-            this.f20425c.get(i).b(this.d);
-            this.f20425c.get(i).a(bluedIngSelfFeed);
+        for (int i = 0; i < this.f6819c.size(); i++) {
+            this.f6819c.get(i).b(this.d);
+            this.f6819c.get(i).a(bluedIngSelfFeed);
         }
     }
 
     public void b(IShineVideoDataDownloadListner iShineVideoDataDownloadListner) {
-        this.f20425c.remove(iShineVideoDataDownloadListner);
+        this.f6819c.remove(iShineVideoDataDownloadListner);
     }
 
     public BluedIngSelfFeed c() {
@@ -330,7 +322,7 @@ public class UserInfoVideoDataManager {
 
     public void c(BluedIngSelfFeed bluedIngSelfFeed) {
         BluedIngSelfFeed bluedIngSelfFeed2;
-        Logger.b("UserInfoVideoDataManager", "notifyDataHasRemove");
+        Logger.b("UserInfoVideoDataManager", new Object[]{"notifyDataHasRemove"});
         List<BluedIngSelfFeed> list = this.d;
         if (list == null || bluedIngSelfFeed == null) {
             return;
@@ -346,17 +338,17 @@ public class UserInfoVideoDataManager {
         if (bluedIngSelfFeed2 != null) {
             this.d.remove(bluedIngSelfFeed2);
         }
-        List<IShineVideoDataDownloadListner> list2 = this.f20425c;
+        List<IShineVideoDataDownloadListner> list2 = this.f6819c;
         if (list2 == null || list2.size() <= 0) {
             return;
         }
-        for (int i = 0; i < this.f20425c.size(); i++) {
-            this.f20425c.get(i).b(bluedIngSelfFeed);
+        for (int i = 0; i < this.f6819c.size(); i++) {
+            this.f6819c.get(i).b(bluedIngSelfFeed);
         }
     }
 
     public void d() {
-        this.f20424a = true;
+        this.f6818a = true;
         this.n = true;
         this.g = 0;
         this.h = 0;

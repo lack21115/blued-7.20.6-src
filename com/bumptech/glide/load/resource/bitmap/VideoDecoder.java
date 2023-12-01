@@ -19,24 +19,24 @@ import java.security.MessageDigest;
 public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Option<Long> f20978a = Option.a("com.bumptech.glide.load.resource.bitmap.VideoBitmapDecode.TargetFrame", -1L, new Option.CacheKeyUpdater<Long>() { // from class: com.bumptech.glide.load.resource.bitmap.VideoDecoder.1
+    public static final Option<Long> f7372a = Option.a("com.bumptech.glide.load.resource.bitmap.VideoBitmapDecode.TargetFrame", -1L, new Option.CacheKeyUpdater<Long>() { // from class: com.bumptech.glide.load.resource.bitmap.VideoDecoder.1
 
         /* renamed from: a  reason: collision with root package name */
-        private final ByteBuffer f20980a = ByteBuffer.allocate(8);
+        private final ByteBuffer f7374a = ByteBuffer.allocate(8);
 
         @Override // com.bumptech.glide.load.Option.CacheKeyUpdater
         public void update(byte[] bArr, Long l, MessageDigest messageDigest) {
             messageDigest.update(bArr);
-            synchronized (this.f20980a) {
-                this.f20980a.position(0);
-                messageDigest.update(this.f20980a.putLong(l.longValue()).array());
+            synchronized (this.f7374a) {
+                this.f7374a.position(0);
+                messageDigest.update(this.f7374a.putLong(l.longValue()).array());
             }
         }
     });
     public static final Option<Integer> b = Option.a("com.bumptech.glide.load.resource.bitmap.VideoBitmapDecode.FrameOption", 2, new Option.CacheKeyUpdater<Integer>() { // from class: com.bumptech.glide.load.resource.bitmap.VideoDecoder.2
 
         /* renamed from: a  reason: collision with root package name */
-        private final ByteBuffer f20981a = ByteBuffer.allocate(4);
+        private final ByteBuffer f7375a = ByteBuffer.allocate(4);
 
         @Override // com.bumptech.glide.load.Option.CacheKeyUpdater
         public void update(byte[] bArr, Integer num, MessageDigest messageDigest) {
@@ -44,15 +44,15 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
                 return;
             }
             messageDigest.update(bArr);
-            synchronized (this.f20981a) {
-                this.f20981a.position(0);
-                messageDigest.update(this.f20981a.putInt(num.intValue()).array());
+            synchronized (this.f7375a) {
+                this.f7375a.position(0);
+                messageDigest.update(this.f7375a.putInt(num.intValue()).array());
             }
         }
     });
 
     /* renamed from: c  reason: collision with root package name */
-    private static final MediaMetadataRetrieverFactory f20979c = new MediaMetadataRetrieverFactory();
+    private static final MediaMetadataRetrieverFactory f7373c = new MediaMetadataRetrieverFactory();
     private final MediaMetadataRetrieverInitializer<T> d;
     private final BitmapPool e;
     private final MediaMetadataRetrieverFactory f;
@@ -130,7 +130,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
     }
 
     VideoDecoder(BitmapPool bitmapPool, MediaMetadataRetrieverInitializer<T> mediaMetadataRetrieverInitializer) {
-        this(bitmapPool, mediaMetadataRetrieverInitializer, f20979c);
+        this(bitmapPool, mediaMetadataRetrieverInitializer, f7373c);
     }
 
     VideoDecoder(BitmapPool bitmapPool, MediaMetadataRetrieverInitializer<T> mediaMetadataRetrieverInitializer, MediaMetadataRetrieverFactory mediaMetadataRetrieverFactory) {
@@ -249,7 +249,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<Bitmap> a(T t, int i, int i2, Options options) throws IOException {
-        long longValue = ((Long) options.a(f20978a)).longValue();
+        long longValue = ((Long) options.a(f7372a)).longValue();
         if (longValue < 0 && longValue != -1) {
             throw new IllegalArgumentException("Requested frame must be non-negative, or DEFAULT_FRAME, given: " + longValue);
         }

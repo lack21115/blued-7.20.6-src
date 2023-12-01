@@ -11,7 +11,7 @@ import java.io.File;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f38856a = CookieManager.LOGTAG;
+    public static final String f25165a = CookieManager.LOGTAG;
     static File b;
 
     public static File a(Context context) {
@@ -204,7 +204,7 @@ public class j {
             sQLiteDatabase = null;
         }
         if (sQLiteDatabase == null) {
-            TbsLog.i(f38856a, "dbPath is not exist!");
+            TbsLog.i(f25165a, "dbPath is not exist!");
         }
         return sQLiteDatabase;
     }

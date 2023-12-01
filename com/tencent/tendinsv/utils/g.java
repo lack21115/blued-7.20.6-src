@@ -9,10 +9,6 @@ import android.provider.Settings;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
-import com.android.internal.telephony.IccCardConstants;
-import com.android.internal.telephony.TelephonyProperties;
-import com.android.internal.util.cm.QSConstants;
-import com.blued.android.module.common.web.LoaderConstants;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -21,11 +17,11 @@ import java.util.Arrays;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    static boolean f39095a = false;
+    static boolean f25404a = false;
     static int b = -2;
 
     /* renamed from: c  reason: collision with root package name */
-    static int f39096c = -1;
+    static int f25405c = -1;
     private static final long d = 3000;
     private static long e = 0;
     private static int f = -1;
@@ -102,26 +98,26 @@ public class g {
                         declaredMethod = cls.getDeclaredMethod("getDefaultDataSubscriptionId", new Class[0]);
                     }
                     int intValue = ((Integer) declaredMethod.invoke(null, new Object[0])).intValue();
-                    f39096c = Build.VERSION.SDK_INT == 21 ? ((Integer) cls.getDeclaredMethod("getSlotId", Long.TYPE).invoke(null, Long.valueOf(intValue))).intValue() : ((Integer) cls.getDeclaredMethod("getSlotId", Integer.TYPE).invoke(null, Integer.valueOf(intValue))).intValue();
-                    return Integer.valueOf(f39096c);
+                    f25405c = Build.VERSION.SDK_INT == 21 ? ((Integer) cls.getDeclaredMethod("getSlotId", Long.TYPE).invoke(null, Long.valueOf(intValue))).intValue() : ((Integer) cls.getDeclaredMethod("getSlotId", Integer.TYPE).invoke(null, Integer.valueOf(intValue))).intValue();
+                    return Integer.valueOf(f25405c);
                 }
                 SubscriptionManager subscriptionManager = (SubscriptionManager) context.getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
                 if (e.a(context, "android.permission.READ_PHONE_STATE")) {
                     l.a(com.tencent.tendinsv.b.L, "get default data SubscriptionInfo by system");
                     SubscriptionInfo subscriptionInfo = (SubscriptionInfo) subscriptionManager.getClass().getMethod("getDefaultDataSubscriptionInfo", new Class[0]).invoke(subscriptionManager, new Object[0]);
                     if (subscriptionInfo != null) {
-                        f39096c = subscriptionInfo.getSimSlotIndex();
+                        f25405c = subscriptionInfo.getSimSlotIndex();
                     }
                 }
-                if (f39096c < 0 && (method = subscriptionManager.getClass().getMethod("getDefaultDataPhoneId", new Class[0])) != null) {
-                    f39096c = ((Integer) method.invoke(subscriptionManager, new Object[0])).intValue();
+                if (f25405c < 0 && (method = subscriptionManager.getClass().getMethod("getDefaultDataPhoneId", new Class[0])) != null) {
+                    f25405c = ((Integer) method.invoke(subscriptionManager, new Object[0])).intValue();
                 }
             }
         } catch (Throwable th) {
             l.d(com.tencent.tendinsv.b.L, "slot index Exception_e", th);
         }
-        l.a(com.tencent.tendinsv.b.L, "default data slot index", Integer.valueOf(f39096c));
-        return Integer.valueOf(f39096c);
+        l.a(com.tencent.tendinsv.b.L, "default data slot index", Integer.valueOf(f25405c));
+        return Integer.valueOf(f25405c);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -290,23 +286,23 @@ public class g {
                 int b2 = t.b(context, str, -2);
                 l.a(com.tencent.tendinsv.b.L, "data sim card changed sub", str, Integer.valueOf(b2), Integer.valueOf(b));
                 if (b != b2) {
-                    f39095a = true;
+                    f25404a = true;
                     t.a(context, str, b);
                 }
             }
-            l.a(com.tencent.tendinsv.b.L, "data sim card changed ", Boolean.valueOf(f39095a));
-            return f39095a;
+            l.a(com.tencent.tendinsv.b.L, "data sim card changed ", Boolean.valueOf(f25404a));
+            return f25404a;
         }
-        f39095a = false;
-        l.a(com.tencent.tendinsv.b.L, "data sim card changed ", Boolean.valueOf(f39095a));
-        return f39095a;
+        f25404a = false;
+        l.a(com.tencent.tendinsv.b.L, "data sim card changed ", Boolean.valueOf(f25404a));
+        return f25404a;
     }
 
     private static int b(Context context, int i) {
         if (i != -1) {
             try {
                 TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
-                Method declaredMethod = Class.forName("android.telephony.TelephonyManager").getDeclaredMethod(LoaderConstants.GET_NETWORK_TYPE, Integer.TYPE);
+                Method declaredMethod = Class.forName("android.telephony.TelephonyManager").getDeclaredMethod("getNetworkType", Integer.TYPE);
                 declaredMethod.setAccessible(true);
                 return ((Integer) declaredMethod.invoke(telephonyManager, Integer.valueOf(i))).intValue();
             } catch (Throwable th) {
@@ -322,7 +318,7 @@ public class g {
             return 0;
         }
         String lowerCase = str.toLowerCase();
-        if (lowerCase.contains(QSConstants.TILE_LTE) || lowerCase.contains("iwlan")) {
+        if (lowerCase.contains("lte") || lowerCase.contains("iwlan")) {
             return 4;
         }
         if (lowerCase.contains("nr")) {
@@ -373,7 +369,7 @@ public class g {
             return 0;
         }
         try {
-            String b2 = b(context, TelephonyProperties.PROPERTY_DATA_NETWORK_TYPE);
+            String b2 = b(context, "gsm.network.type");
             String b3 = b(context, "gsm.network.type.2");
             String str = b2;
             if (!d.a(b3)) {
@@ -487,7 +483,7 @@ public class g {
         int i;
         int i2;
         try {
-            String b2 = b(context, TelephonyProperties.PROPERTY_SIM_STATE);
+            String b2 = b(context, "gsm.sim.state");
             String b3 = b(context, "gsm.sim.state.2");
             String str = b2;
             if (!d.a(b3)) {
@@ -508,9 +504,9 @@ public class g {
                     String str2 = split[i3];
                     int i5 = i;
                     try {
-                        if (!IccCardConstants.INTENT_VALUE_ICC_ABSENT.equalsIgnoreCase(str2)) {
+                        if (!"ABSENT".equalsIgnoreCase(str2)) {
                             i5 = i;
-                            if (!IccCardConstants.INTENT_VALUE_ICC_NOT_READY.equalsIgnoreCase(str2)) {
+                            if (!"NOT_READY".equalsIgnoreCase(str2)) {
                                 i5 = i + 1;
                             }
                         }
@@ -575,7 +571,7 @@ public class g {
         int i;
         try {
             TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
-            Method declaredMethod = Class.forName("android.telephony.TelephonyManager").getDeclaredMethod(LoaderConstants.GET_NETWORK_TYPE, new Class[0]);
+            Method declaredMethod = Class.forName("android.telephony.TelephonyManager").getDeclaredMethod("getNetworkType", new Class[0]);
             declaredMethod.setAccessible(true);
             i = ((Integer) declaredMethod.invoke(telephonyManager, new Object[0])).intValue();
         } catch (Throwable th) {

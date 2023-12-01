@@ -21,37 +21,37 @@ public interface ImageReader {
     public static final class InputStreamImageReader implements ImageReader {
 
         /* renamed from: a  reason: collision with root package name */
-        private final InputStreamRewinder f20958a;
+        private final InputStreamRewinder f7352a;
         private final ArrayPool b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final List<ImageHeaderParser> f20959c;
+        private final List<ImageHeaderParser> f7353c;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public InputStreamImageReader(InputStream inputStream, List<ImageHeaderParser> list, ArrayPool arrayPool) {
             this.b = (ArrayPool) Preconditions.a(arrayPool);
-            this.f20959c = (List) Preconditions.a(list);
-            this.f20958a = new InputStreamRewinder(inputStream, arrayPool);
+            this.f7353c = (List) Preconditions.a(list);
+            this.f7352a = new InputStreamRewinder(inputStream, arrayPool);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public Bitmap a(BitmapFactory.Options options) throws IOException {
-            return BitmapFactory.decodeStream(this.f20958a.a(), null, options);
+            return BitmapFactory.decodeStream(this.f7352a.a(), null, options);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public ImageHeaderParser.ImageType a() throws IOException {
-            return ImageHeaderParserUtils.getType(this.f20959c, this.f20958a.a(), this.b);
+            return ImageHeaderParserUtils.getType(this.f7353c, this.f7352a.a(), this.b);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public int b() throws IOException {
-            return ImageHeaderParserUtils.a(this.f20959c, this.f20958a.a(), this.b);
+            return ImageHeaderParserUtils.a(this.f7353c, this.f7352a.a(), this.b);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public void c() {
-            this.f20958a.d();
+            this.f7352a.d();
         }
     }
 
@@ -59,32 +59,32 @@ public interface ImageReader {
     public static final class ParcelFileDescriptorImageReader implements ImageReader {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ArrayPool f20960a;
+        private final ArrayPool f7354a;
         private final List<ImageHeaderParser> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final ParcelFileDescriptorRewinder f20961c;
+        private final ParcelFileDescriptorRewinder f7355c;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public ParcelFileDescriptorImageReader(ParcelFileDescriptor parcelFileDescriptor, List<ImageHeaderParser> list, ArrayPool arrayPool) {
-            this.f20960a = (ArrayPool) Preconditions.a(arrayPool);
+            this.f7354a = (ArrayPool) Preconditions.a(arrayPool);
             this.b = (List) Preconditions.a(list);
-            this.f20961c = new ParcelFileDescriptorRewinder(parcelFileDescriptor);
+            this.f7355c = new ParcelFileDescriptorRewinder(parcelFileDescriptor);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public Bitmap a(BitmapFactory.Options options) throws IOException {
-            return BitmapFactory.decodeFileDescriptor(this.f20961c.a().getFileDescriptor(), null, options);
+            return BitmapFactory.decodeFileDescriptor(this.f7355c.a().getFileDescriptor(), null, options);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public ImageHeaderParser.ImageType a() throws IOException {
-            return ImageHeaderParserUtils.getType(this.b, this.f20961c, this.f20960a);
+            return ImageHeaderParserUtils.getType(this.b, this.f7355c, this.f7354a);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public int b() throws IOException {
-            return ImageHeaderParserUtils.a(this.b, this.f20961c, this.f20960a);
+            return ImageHeaderParserUtils.a(this.b, this.f7355c, this.f7354a);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader

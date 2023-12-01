@@ -7,7 +7,7 @@ import com.baidu.mobads.sdk.internal.av;
 public class as extends av.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9318a = "debug";
+    public static final String f6478a = "debug";
 
     private static void a(int i, String str, String str2) {
         try {
@@ -32,6 +32,6 @@ public class as extends av.a {
 
     @Override // com.baidu.mobads.sdk.internal.av.a
     protected boolean a(String str, int i) {
-        return av.f9322a.equals(str);
+        return av.f6482a.equals(str);
     }
 }

@@ -13,20 +13,16 @@ import com.blued.android.module.live_china.view.PopLiveActivityWebView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveLiangWebFragment.class */
 public class LiveLiangWebFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public PopLiveActivityWebView f13006a;
+    public PopLiveActivityWebView a;
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f13007c;
+    public int c;
     private Context d;
     private View e;
 
     private void a() {
         if (getArguments() != null) {
             this.b = getArguments().getString("web_url");
-            this.f13007c = getArguments().getInt("type");
+            this.c = getArguments().getInt("type");
         }
     }
 
@@ -34,12 +30,12 @@ public class LiveLiangWebFragment extends BaseFragment {
         return (ViewGroup) layoutInflater.inflate(R.layout.dialog_live_web, viewGroup, false);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.d = getActivity();
         getActivity().getWindow().setSoftInputMode(18);
@@ -49,9 +45,9 @@ public class LiveLiangWebFragment extends BaseFragment {
                 this.e = a(layoutInflater, viewGroup);
                 a();
                 PopLiveActivityWebView popLiveActivityWebView = (PopLiveActivityWebView) this.e.findViewById(R.id.live_activity_web_view);
-                this.f13006a = popLiveActivityWebView;
+                this.a = popLiveActivityWebView;
                 popLiveActivityWebView.a(this);
-                this.f13006a.b(this.b, this.f13007c);
+                this.a.b(this.b, this.c);
             } catch (InflateException e) {
                 getActivity().finish();
                 AppMethods.a((CharSequence) "请前往系统应用商店安装系统浏览器~");

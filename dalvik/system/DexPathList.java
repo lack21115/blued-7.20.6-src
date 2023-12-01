@@ -131,7 +131,7 @@ public final class DexPathList {
                 arrayList3.add(new Element(next, true, null, null));
             } else if (!next.isFile()) {
                 System.logW("ClassLoader referenced unknown path: " + next);
-            } else if (name.endsWith(".dex")) {
+            } else if (name.endsWith(DEX_SUFFIX)) {
                 try {
                     dexFile = loadDexFile(next, file);
                 } catch (IOException e) {
@@ -155,14 +155,14 @@ public final class DexPathList {
     private static String optimizedPathFor(File file, File file2) {
         String name = file.getName();
         String str = name;
-        if (!name.endsWith(".dex")) {
+        if (!name.endsWith(DEX_SUFFIX)) {
             int lastIndexOf = name.lastIndexOf(".");
             if (lastIndexOf < 0) {
-                str = name + ".dex";
+                str = name + DEX_SUFFIX;
             } else {
                 StringBuilder sb = new StringBuilder(lastIndexOf + 4);
                 sb.append((CharSequence) name, 0, lastIndexOf);
-                sb.append(".dex");
+                sb.append(DEX_SUFFIX);
                 str = sb.toString();
             }
         }

@@ -9,20 +9,14 @@ import java.util.List;
 public class VolleyLog {
     public static boolean DEBUG;
     public static String TAG;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f24243a = null;
+    private static final String[] a = null;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/VolleyLog$a.class */
     public static class a {
         public static final boolean ENABLED = false;
-
-        /* renamed from: c  reason: collision with root package name */
-        private static final String[] f24244c = null;
-
-        /* renamed from: a  reason: collision with root package name */
-        private final List<b> f24245a = new ArrayList();
+        private static final String[] c = null;
+        private final List<b> a = new ArrayList();
         private boolean b = false;
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -46,10 +40,10 @@ public class VolleyLog {
 
         private long a() {
             try {
-                if (this.f24245a.size() == 0) {
+                if (this.a.size() == 0) {
                     return 0L;
                 }
-                return this.f24245a.get(this.f24245a.size() - 1).time - this.f24245a.get(0).time;
+                return this.a.get(this.a.size() - 1).time - this.a.get(0).time;
             } catch (IllegalStateException e) {
                 throw e;
             }
@@ -59,9 +53,9 @@ public class VolleyLog {
             synchronized (this) {
                 try {
                     if (this.b) {
-                        throw new IllegalStateException(f24244c[2]);
+                        throw new IllegalStateException(c[2]);
                     }
-                    this.f24245a.add(new b(str, j, SystemClock.elapsedRealtime()));
+                    this.a.add(new b(str, j, SystemClock.elapsedRealtime()));
                 } catch (IllegalStateException e) {
                     throw e;
                 }
@@ -72,8 +66,8 @@ public class VolleyLog {
             if (this.b) {
                 return;
             }
-            finish(f24244c[1]);
-            VolleyLog.e(f24244c[0], new Object[0]);
+            finish(c[1]);
+            VolleyLog.e(c[0], new Object[0]);
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:17:0x009c, code lost:
@@ -107,13 +101,13 @@ public class VolleyLog {
                 return
             L19:
                 r0 = r9
-                java.util.List<com.mokee.volley.VolleyLog$a$b> r0 = r0.f24245a     // Catch: java.lang.Throwable -> La2
+                java.util.List<com.mokee.volley.VolleyLog$a$b> r0 = r0.a     // Catch: java.lang.Throwable -> La2
                 r1 = 0
                 java.lang.Object r0 = r0.get(r1)     // Catch: java.lang.Throwable -> La2
                 com.mokee.volley.VolleyLog$a$b r0 = (com.mokee.volley.VolleyLog.a.b) r0     // Catch: java.lang.Throwable -> La2
                 long r0 = r0.time     // Catch: java.lang.Throwable -> La2
                 r14 = r0
-                java.lang.String[] r0 = com.mokee.volley.VolleyLog.a.f24244c     // Catch: java.lang.Throwable -> La2
+                java.lang.String[] r0 = com.mokee.volley.VolleyLog.a.c     // Catch: java.lang.Throwable -> La2
                 r1 = 3
                 r0 = r0[r1]     // Catch: java.lang.Throwable -> La2
                 r1 = 2
@@ -129,7 +123,7 @@ public class VolleyLog {
                 r2[r3] = r4     // Catch: java.lang.Throwable -> La2
                 com.mokee.volley.VolleyLog.d(r0, r1)     // Catch: java.lang.Throwable -> La2
                 r0 = r9
-                java.util.List<com.mokee.volley.VolleyLog$a$b> r0 = r0.f24245a     // Catch: java.lang.Throwable -> La2
+                java.util.List<com.mokee.volley.VolleyLog$a$b> r0 = r0.a     // Catch: java.lang.Throwable -> La2
                 java.util.Iterator r0 = r0.iterator()     // Catch: java.lang.Throwable -> La2
                 r10 = r0
                 r0 = r14
@@ -146,7 +140,7 @@ public class VolleyLog {
                 r0 = r16
                 long r0 = r0.time     // Catch: java.lang.Throwable -> La2
                 r14 = r0
-                java.lang.String[] r0 = com.mokee.volley.VolleyLog.a.f24244c     // Catch: java.lang.Throwable -> La2
+                java.lang.String[] r0 = com.mokee.volley.VolleyLog.a.c     // Catch: java.lang.Throwable -> La2
                 r1 = 4
                 r0 = r0[r1]     // Catch: java.lang.Throwable -> La2
                 r1 = 3
@@ -229,7 +223,7 @@ public class VolleyLog {
     }
 
     public static void setTag(String str) {
-        d(f24243a[0], str);
+        d(a[0], str);
         TAG = str;
         DEBUG = Log.isLoggable(TAG, 2);
     }

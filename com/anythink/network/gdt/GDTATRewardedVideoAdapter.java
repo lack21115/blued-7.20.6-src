@@ -12,6 +12,7 @@ import com.anythink.core.api.BaseAd;
 import com.anythink.core.api.MediationInitCallback;
 import com.anythink.rewardvideo.unitgroup.api.CustomRewardVideoAdapter;
 import com.anythink.rewardvideo.unitgroup.api.CustomRewardedVideoEventListener;
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.qq.e.ads.cfg.VideoOption;
 import com.qq.e.ads.interstitial2.ADRewardListener;
 import com.qq.e.ads.interstitial2.UnifiedInterstitialAD;
@@ -32,11 +33,11 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
     private static final String f = GDTATRewardedVideoAdapter.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    RewardVideoAD f8955a;
+    RewardVideoAD f6115a;
     UnifiedInterstitialAD b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f8956c;
+    String f6116c;
     String d;
     String e;
     private Map<String, Object> h;
@@ -70,7 +71,7 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         @Override // com.qq.e.ads.rewardvideo.RewardVideoADListener
         public final void onADExpose() {
             try {
-                GDTATInitManager.getInstance().a(GDTATRewardedVideoAdapter.this.getTrackingInfo().l(), new WeakReference(GDTATRewardedVideoAdapter.this.f8955a));
+                GDTATInitManager.getInstance().a(GDTATRewardedVideoAdapter.this.getTrackingInfo().l(), new WeakReference(GDTATRewardedVideoAdapter.this.f6115a));
             } catch (Throwable th) {
             }
             if (GDTATRewardedVideoAdapter.this.mImpressionListener != null) {
@@ -81,7 +82,7 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         @Override // com.qq.e.ads.rewardvideo.RewardVideoADListener
         public final void onADLoad() {
             try {
-                Map<String, Object> extraInfo = GDTATRewardedVideoAdapter.this.f8955a.getExtraInfo();
+                Map<String, Object> extraInfo = GDTATRewardedVideoAdapter.this.f6115a.getExtraInfo();
                 if (extraInfo != null) {
                     if (GDTATRewardedVideoAdapter.this.h == null) {
                         GDTATRewardedVideoAdapter.this.h = new HashMap();
@@ -91,8 +92,8 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-            if (GDTATRewardedVideoAdapter.this.f8955a != null && GDTATRewardedVideoAdapter.this.i) {
-                GDTATRewardedVideoAdapter.this.f8955a.setDownloadConfirmListener(new DownloadConfirmListener() { // from class: com.anythink.network.gdt.GDTATRewardedVideoAdapter.2.1
+            if (GDTATRewardedVideoAdapter.this.f6115a != null && GDTATRewardedVideoAdapter.this.i) {
+                GDTATRewardedVideoAdapter.this.f6115a.setDownloadConfirmListener(new DownloadConfirmListener() { // from class: com.anythink.network.gdt.GDTATRewardedVideoAdapter.2.1
                     @Override // com.qq.e.comm.compliance.DownloadConfirmListener
                     public final void onDownloadConfirm(Activity activity, int i, String str, DownloadConfirmCallBack downloadConfirmCallBack) {
                         if (GDTATRewardedVideoAdapter.this.mImpressionListener != null) {
@@ -145,14 +146,14 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
                 if (GDTATRewardedVideoAdapter.this.mLoadListener != null) {
                     GDTATRewardedVideoAdapter.this.mLoadListener.onAdCacheLoaded(new BaseAd[0]);
                 }
-            } else if (GDTATRewardedVideoAdapter.this.mBiddingListener == null || GDTATRewardedVideoAdapter.this.f8955a == null) {
+            } else if (GDTATRewardedVideoAdapter.this.mBiddingListener == null || GDTATRewardedVideoAdapter.this.f6115a == null) {
             } else {
-                double ecpm = GDTATRewardedVideoAdapter.this.f8955a.getECPM();
-                GDTATBiddingNotice gDTATBiddingNotice = new GDTATBiddingNotice(GDTATRewardedVideoAdapter.this.f8955a);
+                double ecpm = GDTATRewardedVideoAdapter.this.f6115a.getECPM();
+                GDTATBiddingNotice gDTATBiddingNotice = new GDTATBiddingNotice(GDTATRewardedVideoAdapter.this.f6115a);
                 ATBiddingListener aTBiddingListener = GDTATRewardedVideoAdapter.this.mBiddingListener;
                 StringBuilder sb = new StringBuilder();
                 sb.append(System.currentTimeMillis());
-                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(ecpm, sb.toString(), gDTATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(ecpm, sb.toString(), gDTATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
             }
         }
 
@@ -275,7 +276,7 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
                 ATBiddingListener aTBiddingListener = GDTATRewardedVideoAdapter.this.mBiddingListener;
                 StringBuilder sb = new StringBuilder();
                 sb.append(System.currentTimeMillis());
-                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(ecpm, sb.toString(), gDTATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(ecpm, sb.toString(), gDTATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
             }
         }
 
@@ -348,23 +349,23 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
                     z = true;
                 }
                 RewardVideoAD rewardVideoAD = new RewardVideoAD(applicationContext, str, anonymousClass2, z);
-                this.f8955a = rewardVideoAD;
+                this.f6115a = rewardVideoAD;
                 GDTATInitManager.getInstance();
                 rewardVideoAD.setLoadAdParams(GDTATInitManager.a(map));
             } else {
-                this.f8955a = new RewardVideoAD(context.getApplicationContext(), this.d, anonymousClass2, this.g != 1, this.e);
+                this.f6115a = new RewardVideoAD(context.getApplicationContext(), this.d, anonymousClass2, this.g != 1, this.e);
             }
             try {
                 ServerSideVerificationOptions.Builder builder = new ServerSideVerificationOptions.Builder();
                 builder.setUserId(this.mUserId);
-                if (!TextUtils.isEmpty(this.mUserData) && this.mUserData.contains(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME)) {
-                    this.mUserData = this.mUserData.replace(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME, this.d);
+                if (!TextUtils.isEmpty(this.mUserData) && this.mUserData.contains("{network_placement_id}")) {
+                    this.mUserData = this.mUserData.replace("{network_placement_id}", this.d);
                 }
                 builder.setCustomData(this.mUserData);
-                this.f8955a.setServerSideVerificationOptions(builder.build());
+                this.f6115a.setServerSideVerificationOptions(builder.build());
             } catch (Throwable th) {
             }
-            this.f8955a.loadAD();
+            this.f6115a.loadAD();
         } else if (!(context instanceof Activity)) {
             notifyATLoadFail("", "GDT UnifiedInterstitial's context must be activity.");
         } else {
@@ -408,23 +409,23 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
                     z = true;
                 }
                 RewardVideoAD rewardVideoAD = new RewardVideoAD(applicationContext, str, anonymousClass2, z);
-                gDTATRewardedVideoAdapter.f8955a = rewardVideoAD;
+                gDTATRewardedVideoAdapter.f6115a = rewardVideoAD;
                 GDTATInitManager.getInstance();
                 rewardVideoAD.setLoadAdParams(GDTATInitManager.a(map));
             } else {
-                gDTATRewardedVideoAdapter.f8955a = new RewardVideoAD(context.getApplicationContext(), gDTATRewardedVideoAdapter.d, anonymousClass2, gDTATRewardedVideoAdapter.g != 1, gDTATRewardedVideoAdapter.e);
+                gDTATRewardedVideoAdapter.f6115a = new RewardVideoAD(context.getApplicationContext(), gDTATRewardedVideoAdapter.d, anonymousClass2, gDTATRewardedVideoAdapter.g != 1, gDTATRewardedVideoAdapter.e);
             }
             try {
                 ServerSideVerificationOptions.Builder builder = new ServerSideVerificationOptions.Builder();
                 builder.setUserId(gDTATRewardedVideoAdapter.mUserId);
-                if (!TextUtils.isEmpty(gDTATRewardedVideoAdapter.mUserData) && gDTATRewardedVideoAdapter.mUserData.contains(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME)) {
-                    gDTATRewardedVideoAdapter.mUserData = gDTATRewardedVideoAdapter.mUserData.replace(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME, gDTATRewardedVideoAdapter.d);
+                if (!TextUtils.isEmpty(gDTATRewardedVideoAdapter.mUserData) && gDTATRewardedVideoAdapter.mUserData.contains("{network_placement_id}")) {
+                    gDTATRewardedVideoAdapter.mUserData = gDTATRewardedVideoAdapter.mUserData.replace("{network_placement_id}", gDTATRewardedVideoAdapter.d);
                 }
                 builder.setCustomData(gDTATRewardedVideoAdapter.mUserData);
-                gDTATRewardedVideoAdapter.f8955a.setServerSideVerificationOptions(builder.build());
+                gDTATRewardedVideoAdapter.f6115a.setServerSideVerificationOptions(builder.build());
             } catch (Throwable th) {
             }
-            gDTATRewardedVideoAdapter.f8955a.loadAD();
+            gDTATRewardedVideoAdapter.f6115a.loadAD();
         } else if (!(context instanceof Activity)) {
             gDTATRewardedVideoAdapter.notifyATLoadFail("", "GDT UnifiedInterstitial's context must be activity.");
         } else {
@@ -475,12 +476,12 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
     }
 
     private void a(Map<String, Object> map, Map<String, Object> map2) {
-        this.f8956c = ATInitMediation.getStringFromMap(map, "app_id");
+        this.f6116c = ATInitMediation.getStringFromMap(map, "app_id");
         this.d = ATInitMediation.getStringFromMap(map, "unit_id");
-        this.e = ATInitMediation.getStringFromMap(map, "payload");
+        this.e = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
         this.g = ATInitMediation.getIntFromMap(map, "video_muted", 0);
         this.j = ATInitMediation.getIntFromMap(map, "unit_type", 1);
-        this.i = ATInitMediation.getBooleanFromMap(map2, ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS, false);
+        this.i = ATInitMediation.getBooleanFromMap(map2, "ad_click_confirm_status", false);
     }
 
     private void b(Context context, Map<String, Object> map) {
@@ -493,23 +494,23 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
                 z = true;
             }
             RewardVideoAD rewardVideoAD = new RewardVideoAD(applicationContext, str, anonymousClass2, z);
-            this.f8955a = rewardVideoAD;
+            this.f6115a = rewardVideoAD;
             GDTATInitManager.getInstance();
             rewardVideoAD.setLoadAdParams(GDTATInitManager.a(map));
         } else {
-            this.f8955a = new RewardVideoAD(context.getApplicationContext(), this.d, anonymousClass2, this.g != 1, this.e);
+            this.f6115a = new RewardVideoAD(context.getApplicationContext(), this.d, anonymousClass2, this.g != 1, this.e);
         }
         try {
             ServerSideVerificationOptions.Builder builder = new ServerSideVerificationOptions.Builder();
             builder.setUserId(this.mUserId);
-            if (!TextUtils.isEmpty(this.mUserData) && this.mUserData.contains(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME)) {
-                this.mUserData = this.mUserData.replace(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME, this.d);
+            if (!TextUtils.isEmpty(this.mUserData) && this.mUserData.contains("{network_placement_id}")) {
+                this.mUserData = this.mUserData.replace("{network_placement_id}", this.d);
             }
             builder.setCustomData(this.mUserData);
-            this.f8955a.setServerSideVerificationOptions(builder.build());
+            this.f6115a.setServerSideVerificationOptions(builder.build());
         } catch (Throwable th) {
         }
-        this.f8955a.loadAD();
+        this.f6115a.loadAD();
     }
 
     private void c(Context context, Map<String, Object> map) {
@@ -545,50 +546,42 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         this.b.loadFullScreenAD();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
-        if (this.f8955a != null) {
-            this.f8955a = null;
+        if (this.f6115a != null) {
+            this.f6115a = null;
         }
         if (this.b != null) {
             this.b = null;
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void getBidRequestInfo(Context context, Map<String, Object> map, Map<String, Object> map2, ATBidRequestInfoListener aTBidRequestInfoListener) {
         this.d = ATInitMediation.getStringFromMap(map, "unit_id");
         GDTATInitManager.getInstance().a(context, map, map2, aTBidRequestInfoListener);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public ATInitMediation getMediationInitManager() {
         return GDTATInitManager.getInstance();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public Map<String, Object> getNetworkInfoMap() {
         return this.h;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return GDTATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
         return this.d;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return GDTATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
-        RewardVideoAD rewardVideoAD = this.f8955a;
+        RewardVideoAD rewardVideoAD = this.f6115a;
         if (rewardVideoAD != null) {
             return rewardVideoAD.isValid();
         }
@@ -599,25 +592,22 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         return false;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(final Context context, final Map<String, Object> map, Map<String, Object> map2) {
-        this.f8956c = ATInitMediation.getStringFromMap(map, "app_id");
+        this.f6116c = ATInitMediation.getStringFromMap(map, "app_id");
         this.d = ATInitMediation.getStringFromMap(map, "unit_id");
-        this.e = ATInitMediation.getStringFromMap(map, "payload");
+        this.e = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
         this.g = ATInitMediation.getIntFromMap(map, "video_muted", 0);
         this.j = ATInitMediation.getIntFromMap(map, "unit_type", 1);
-        this.i = ATInitMediation.getBooleanFromMap(map2, ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS, false);
-        if (TextUtils.isEmpty(this.f8956c) || TextUtils.isEmpty(this.d)) {
+        this.i = ATInitMediation.getBooleanFromMap(map2, "ad_click_confirm_status", false);
+        if (TextUtils.isEmpty(this.f6116c) || TextUtils.isEmpty(this.d)) {
             notifyATLoadFail("", "GTD appid or unitId is empty.");
             return;
         }
         GDTATInitManager.getInstance().initSDK(context.getApplicationContext(), map, new MediationInitCallback() { // from class: com.anythink.network.gdt.GDTATRewardedVideoAdapter.1
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onFail(String str) {
                 GDTATRewardedVideoAdapter.this.notifyATLoadFail("", str);
             }
 
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onSuccess() {
                 GDTATRewardedVideoAdapter.a(GDTATRewardedVideoAdapter.this, context, map);
             }
@@ -630,13 +620,13 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
 
     @Override // com.anythink.rewardvideo.unitgroup.api.CustomRewardVideoAdapter
     public void show(Activity activity) {
-        if (this.f8955a != null) {
+        if (this.f6115a != null) {
             try {
-                GDTATInitManager.getInstance().a(this.d, this.f8955a);
+                GDTATInitManager.getInstance().a(this.d, this.f6115a);
                 if (activity != null) {
-                    this.f8955a.showAD(activity);
+                    this.f6115a.showAD(activity);
                 } else {
-                    this.f8955a.showAD();
+                    this.f6115a.showAD();
                 }
             } catch (Throwable th) {
                 GDTATInitManager.getInstance().a();
@@ -654,7 +644,6 @@ public class GDTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.k = true;
         loadCustomNetworkAd(context, map, map2);

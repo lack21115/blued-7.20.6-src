@@ -15,10 +15,10 @@ import java.lang.reflect.Modifier;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23191a = "AssistMangerFactory";
+    public static final String f9583a = "AssistMangerFactory";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23192c = "com.igexin.assist.control.fcm.ManufacturePushManager";
+    private static final String f9584c = "com.igexin.assist.control.fcm.ManufacturePushManager";
     private static a d;
     private static final String[] e = {"com.igexin.assist.control.xiaomi.MiuiPushManager", "com.igexin.assist.control.meizu.FlymePushManager", "com.igexin.assist.control.huawei.HmsPushManager", "com.igexin.assist.control.oppo.OppoPushManager", "com.igexin.assist.control.vivo.VivoPushManager", "com.igexin.assist.control.st.SmartisanPushManager", "com.igexin.assist.control.fcm.FcmPushManager"};
     public AbstractPushManager b;
@@ -48,7 +48,7 @@ public final class a {
                     com.igexin.c.a.c.a.a(th);
                     com.igexin.c.a.c.a.a("AssistMangerFactory | cancelAllAssistNotification() err " + th.toString(), new Object[0]);
                 }
-                com.igexin.c.a.c.a.b(f23191a, " cancelAllAssistNotification() XM ");
+                com.igexin.c.a.c.a.b(f9583a, " cancelAllAssistNotification() XM ");
             } else if (this.b.getBrandCode().equals("4")) {
                 try {
                     Class.forName("com.meizu.cloud.pushsdk.PushManager").getDeclaredMethod("clearNotification", Context.class).invoke(null, context);
@@ -56,7 +56,7 @@ public final class a {
                     com.igexin.c.a.c.a.a(th2);
                     com.igexin.c.a.c.a.a("AssistMangerFactory | cancelAllAssistNotification() err " + th2.toString(), new Object[0]);
                 }
-                com.igexin.c.a.c.a.b(f23191a, " cancelAllAssistNotification() MZ ");
+                com.igexin.c.a.c.a.b(f9583a, " cancelAllAssistNotification() MZ ");
             }
         }
     }
@@ -68,7 +68,7 @@ public final class a {
             com.igexin.c.a.c.a.a(th);
             com.igexin.c.a.c.a.a("AssistMangerFactory | cancelAllAssistNotification() err " + th.toString(), new Object[0]);
         }
-        com.igexin.c.a.c.a.b(f23191a, " cancelAllAssistNotification() XM ");
+        com.igexin.c.a.c.a.b(f9583a, " cancelAllAssistNotification() XM ");
     }
 
     private static void d() {
@@ -100,7 +100,7 @@ public final class a {
             com.igexin.c.a.c.a.a(th);
             com.igexin.c.a.c.a.a("AssistMangerFactory | cancelAllAssistNotification() err " + th.toString(), new Object[0]);
         }
-        com.igexin.c.a.c.a.b(f23191a, " cancelAllAssistNotification() MZ ");
+        com.igexin.c.a.c.a.b(f9583a, " cancelAllAssistNotification() MZ ");
     }
 
     private String e() {
@@ -199,7 +199,7 @@ public final class a {
         if (this.b == null) {
             try {
                 com.igexin.c.a.c.a.a("AssistMangerFactory|try init fcm push", new Object[0]);
-                AbstractPushManager abstractPushManager = (AbstractPushManager) Class.forName(f23192c).getConstructor(Context.class).newInstance(context);
+                AbstractPushManager abstractPushManager = (AbstractPushManager) Class.forName(f9584c).getConstructor(Context.class).newInstance(context);
                 this.b = abstractPushManager;
                 if (!abstractPushManager.isSupport()) {
                     this.b = null;
@@ -208,7 +208,7 @@ public final class a {
                 d.a().a(lowerCase + " Fcm PushManager = null");
                 StringBuilder sb = new StringBuilder("|Fcm ManufacturePushManager = null ");
                 sb.append(th2.toString());
-                com.igexin.c.a.c.a.b(f23191a, sb.toString());
+                com.igexin.c.a.c.a.b(f9583a, sb.toString());
                 if (!e.J) {
                     f.a().b("false");
                 }
@@ -257,7 +257,7 @@ public final class a {
         try {
             f = (String) this.b.getClass().getDeclaredMethod("getBrandSdkVersion", new Class[0]).invoke(this.b, new Object[0]);
         } catch (Throwable th4) {
-            com.igexin.c.a.c.a.a(f23191a, th4.getMessage());
+            com.igexin.c.a.c.a.a(f9583a, th4.getMessage());
             f = f();
         }
         return new String[]{str, f};

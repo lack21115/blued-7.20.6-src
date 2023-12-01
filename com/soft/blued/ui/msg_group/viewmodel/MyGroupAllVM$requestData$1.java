@@ -1,6 +1,7 @@
 package com.soft.blued.ui.msg_group.viewmodel;
 
 import com.blued.android.framework.http.parser.BluedEntityA;
+import com.blued.android.module.common.api.ApiState;
 import com.blued.android.module.common.api.BluedApiProxy;
 import com.blued.android.module.common.api.BluedApiService;
 import com.blued.android.module.common.api.Error;
@@ -28,7 +29,7 @@ import kotlinx.coroutines.CoroutineScope;
 final class MyGroupAllVM$requestData$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f32858a;
+    int f19167a;
     final /* synthetic */ MyGroupAllVM b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -38,28 +39,25 @@ final class MyGroupAllVM$requestData$1 extends SuspendLambda implements Function
         this.b = myGroupAllVM;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((MyGroupAllVM$requestData$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new MyGroupAllVM$requestData$1(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         List<GroupInfoModel> a2;
         Object a3 = IntrinsicsKt.a();
-        int i = this.f32858a;
+        int i = this.f19167a;
         if (i == 0) {
             ResultKt.a(obj);
             BluedApiService a4 = BluedApiProxy.b().a(GroupApiService.class);
             Intrinsics.c(a4, "getInstance().create(GroupApiService::class.java)");
-            this.f32858a = 1;
-            Object a5 = GroupApiService.DefaultImpls.a((GroupApiService) a4, null, this, 1, null);
+            this.f19167a = 1;
+            Object a5 = GroupApiService.DefaultImpls.a((GroupApiService) a4, null, (Continuation) this, 1, null);
             obj = a5;
             if (a5 == a3) {
                 return a3;
@@ -73,31 +71,31 @@ final class MyGroupAllVM$requestData$1 extends SuspendLambda implements Function
         MyGroupAllVM myGroupAllVM = this.b;
         if (bluedEntityA.code != 200) {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            new Error(i2, str);
         } else if (bluedEntityA.hasData()) {
-            List<T> data = bluedEntityA.data;
-            Intrinsics.c(data, "data");
+            List list = bluedEntityA.data;
+            Intrinsics.c(list, "data");
             bluedEntityA.hasMore();
-            if (!data.isEmpty()) {
-                a2 = GroupHelper.f32827a.a((MyGroupModel) data.get(0), false);
+            if (!list.isEmpty()) {
+                a2 = GroupHelper.f19136a.a((MyGroupModel) list.get(0), false);
                 myGroupAllVM.loadListSucceed(a2, false);
             }
-            Succeed succeed = Succeed.f10631a;
+            ApiState apiState = Succeed.a;
         } else {
             List b = CollectionsKt.b();
-            List list = b;
+            List list2 = b;
             boolean z = true;
-            if (list != null) {
-                z = list.isEmpty();
+            if (list2 != null) {
+                z = list2.isEmpty();
             }
             if (!z) {
-                a2 = GroupHelper.f32827a.a((MyGroupModel) b.get(0), false);
+                a2 = GroupHelper.f19136a.a((MyGroupModel) b.get(0), false);
                 myGroupAllVM.loadListSucceed(a2, false);
             }
-            Succeed succeed2 = Succeed.f10631a;
+            ApiState apiState2 = Succeed.a;
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

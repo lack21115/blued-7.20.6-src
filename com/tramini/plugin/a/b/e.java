@@ -7,7 +7,7 @@ import android.database.Cursor;
 public class e extends com.tramini.plugin.a.b.a<com.tramini.plugin.a.c.d> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40496a = e.class.getSimpleName();
+    private static final String f26805a = e.class.getSimpleName();
     private static e b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tramini/plugin/a/b/e$a.class */
@@ -33,11 +33,11 @@ public class e extends com.tramini.plugin.a.b.a<com.tramini.plugin.a.c.d> {
             }
             try {
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("id", dVar.f40504a);
+                contentValues.put("id", dVar.f26813a);
                 contentValues.put("value", dVar.b);
-                contentValues.put("time", Long.valueOf(dVar.f40505c));
-                if (a(dVar.f40504a)) {
-                    return b().update("il", contentValues, "id = ? ", new String[]{dVar.f40504a});
+                contentValues.put("time", Long.valueOf(dVar.f26814c));
+                if (a(dVar.f26813a)) {
+                    return b().update("il", contentValues, "id = ? ", new String[]{dVar.f26813a});
                 }
                 return b().insert("il", null, contentValues);
             } catch (Exception e) {
@@ -67,7 +67,7 @@ public class e extends com.tramini.plugin.a.b.a<com.tramini.plugin.a.c.d> {
                 return -1L;
             }
             try {
-                return b().delete("il", "id= ?", new String[]{dVar.f40504a});
+                return b().delete("il", "id= ?", new String[]{dVar.f26813a});
             } catch (Throwable th) {
                 return -1L;
             }
@@ -129,7 +129,7 @@ public class e extends com.tramini.plugin.a.b.a<com.tramini.plugin.a.c.d> {
             java.lang.String r3 = "id"
             int r2 = r2.getColumnIndex(r3)     // Catch: java.lang.Throwable -> Lb1
             java.lang.String r1 = r1.getString(r2)     // Catch: java.lang.Throwable -> Lb1
-            r0.f40504a = r1     // Catch: java.lang.Throwable -> Lb1
+            r0.f26813a = r1     // Catch: java.lang.Throwable -> Lb1
             r0 = r12
             r1 = r10
             r2 = r10
@@ -143,10 +143,10 @@ public class e extends com.tramini.plugin.a.b.a<com.tramini.plugin.a.c.d> {
             java.lang.String r3 = "time"
             int r2 = r2.getColumnIndex(r3)     // Catch: java.lang.Throwable -> Lb1
             long r1 = r1.getLong(r2)     // Catch: java.lang.Throwable -> Lb1
-            r0.f40505c = r1     // Catch: java.lang.Throwable -> Lb1
+            r0.f26814c = r1     // Catch: java.lang.Throwable -> Lb1
             r0 = r11
             r1 = r12
-            java.lang.String r1 = r1.f40504a     // Catch: java.lang.Throwable -> Lb1
+            java.lang.String r1 = r1.f26813a     // Catch: java.lang.Throwable -> Lb1
             r2 = r12
             java.lang.Object r0 = r0.put(r1, r2)     // Catch: java.lang.Throwable -> Lb1
             goto L27

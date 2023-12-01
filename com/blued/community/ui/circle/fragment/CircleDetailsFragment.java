@@ -20,6 +20,7 @@ import androidx.lifecycle.Observer;
 import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.android.ims.ImsConferenceState;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageFileLoader;
@@ -88,7 +89,6 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
-import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import java.io.File;
 import java.util.ArrayList;
@@ -126,9 +126,7 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
     private ImageView X;
     private ShapeConstraintLayout Y;
     private NoDataAndLoadFailView Z;
-
-    /* renamed from: a  reason: collision with root package name */
-    public AnimationSet f19148a;
+    public AnimationSet a;
     private ImageView aa;
     private CircleJoinView ab;
     private ShapeLinearLayout ac;
@@ -141,9 +139,7 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
     private int aj;
     private float ak;
     private Timer am;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f19149c;
+    private View c;
     private ImageView d;
     private ImageView e;
     private RotateLayout f;
@@ -166,12 +162,10 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
     private LinearLayout z;
     private boolean al = false;
     private NestedScrollView.OnScrollChangeListener an = new NestedScrollView.OnScrollChangeListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.17
-        @Override // androidx.core.widget.NestedScrollView.OnScrollChangeListener
         public void onScrollChange(NestedScrollView nestedScrollView, int i, int i2, int i3, int i4) {
         }
     };
     private AppBarLayout.OnOffsetChangedListener ao = new AppBarLayout.OnOffsetChangedListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.18
-        @Override // com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener, com.google.android.material.appbar.AppBarLayout.BaseOnOffsetChangedListener
         public void onOffsetChanged(AppBarLayout appBarLayout, int i) {
             int height = CircleDetailsFragment.this.O.getHeight() - DensityUtils.a(CircleDetailsFragment.this.ah, 60.0f);
             int abs = Math.abs(i);
@@ -210,7 +204,6 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
         }
     };
     private RecyclerView.OnScrollListener ap = new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.19
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrollStateChanged(RecyclerView recyclerView, int i) {
             if (CircleDetailsFragment.this.S == null || i != 0 || !recyclerView.canScrollVertically(-1) || recyclerView.canScrollVertically(1)) {
                 return;
@@ -218,7 +211,6 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
             CircleDetailsFragment.this.S.startBtmBtnHide();
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrolled(RecyclerView recyclerView, int i, int i2) {
             if (CircleDetailsFragment.this.S != null) {
                 if (i2 < 0) {
@@ -236,14 +228,12 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
     /* renamed from: com.blued.community.ui.circle.fragment.CircleDetailsFragment$26  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleDetailsFragment$26.class */
     public class AnonymousClass26 extends ImageLoadResult {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ MyCircleModel f19169a;
+        final /* synthetic */ MyCircleModel a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass26(IRequestHost iRequestHost, MyCircleModel myCircleModel) {
             super(iRequestHost);
-            this.f19169a = myCircleModel;
+            this.a = myCircleModel;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -258,13 +248,12 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
 
         @Override // com.blued.android.core.image.ImageLoadResult
         public void a() {
-            ImageFileLoader.a(CircleDetailsFragment.this.getFragmentActive()).b(AvatarUtils.a(this.f19169a.cover)).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.26.1
+            ImageFileLoader.a(CircleDetailsFragment.this.getFragmentActive()).b(AvatarUtils.a(this.a.cover)).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.26.1
                 @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public void onUIFinish(File file, Exception exc) {
                     Bitmap decodeFile = (file == null || !file.exists()) ? null : BitmapFactory.decodeFile(file.getPath());
                     if (decodeFile != null) {
                         Palette.from(decodeFile).generate(new Palette.PaletteAsyncListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.26.1.1
-                            @Override // androidx.palette.graphics.Palette.PaletteAsyncListener
                             public void onGenerated(Palette palette) {
                                 if (palette == null) {
                                     AnonymousClass26.this.d();
@@ -306,7 +295,7 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a() {
-            CircleDetailsFragment.this.ac.startAnimation(CircleDetailsFragment.this.f19148a);
+            CircleDetailsFragment.this.ac.startAnimation(CircleDetailsFragment.this.a);
         }
 
         @Override // java.util.TimerTask, java.lang.Runnable
@@ -323,28 +312,28 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
     /* JADX INFO: Access modifiers changed from: private */
     public void A() {
         ArrayList arrayList = new ArrayList();
-        final BasePopupView a2 = CommonShowBottomWindow.a(getContext(), arrayList);
+        final BasePopupView a = CommonShowBottomWindow.a(getContext(), arrayList);
         BottomMenuPop.MenuItemInfo menuItemInfo = new BottomMenuPop.MenuItemInfo();
-        menuItemInfo.f11214a = this.ah.getResources().getString(R.string.circle_member_invitation);
+        menuItemInfo.a = this.ah.getResources().getString(R.string.circle_member_invitation);
         menuItemInfo.d = new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.14
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 CircleDetailsFragment.this.C();
-                BasePopupView basePopupView = a2;
+                BasePopupView basePopupView = a;
                 if (basePopupView != null) {
                     basePopupView.p();
                 }
             }
         };
         BottomMenuPop.MenuItemInfo menuItemInfo2 = new BottomMenuPop.MenuItemInfo();
-        menuItemInfo2.f11214a = this.ah.getResources().getString(R.string.btn_share);
+        menuItemInfo2.a = this.ah.getResources().getString(R.string.btn_share);
         menuItemInfo2.d = new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.15
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 CircleDetailsFragment.this.B();
-                BasePopupView basePopupView = a2;
+                BasePopupView basePopupView = a;
                 if (basePopupView != null) {
                     basePopupView.p();
                 }
@@ -355,7 +344,7 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
             EventTrackFeed.h(FeedProtos.Event.CIRCLE_USER_MANAGE_SHOW, j().r());
             arrayList.add(menuItemInfo);
         }
-        a2.h();
+        a.h();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -390,8 +379,7 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
         this.U.setStyle(1);
         this.O.addOnOffsetChangedListener(this.ao);
         this.P.addOnScrollListener(this.ap);
-        this.Q.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.16
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener
+        this.Q.a(new SimpleMultiPurposeListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.16
             public void a(RefreshHeader refreshHeader, boolean z, float f, int i, int i2, int i3) {
                 if (CircleDetailsFragment.this.e != null) {
                     CircleDetailsFragment.this.f.d();
@@ -405,20 +393,18 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
                 }
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnStateChangedListener
             public void a(RefreshLayout refreshLayout, RefreshState refreshState, RefreshState refreshState2) {
-                if (refreshState2 == RefreshState.PullDownToRefresh) {
+                if (refreshState2 == RefreshState.b) {
                     if (CircleDetailsFragment.this.f != null) {
                         CircleDetailsFragment.this.f.setVisibility(0);
                         CircleDetailsFragment.this.R.a();
                     }
-                } else if ((refreshState2 == RefreshState.PullDownCanceled || refreshState2 == RefreshState.None) && CircleDetailsFragment.this.f != null) {
+                } else if ((refreshState2 == RefreshState.d || refreshState2 == RefreshState.a) && CircleDetailsFragment.this.f != null) {
                     CircleDetailsFragment.this.f.setVisibility(8);
                     CircleDetailsFragment.this.R.c();
                 }
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 CircleDetailsFragment.this.j().e();
                 CircleDetailsFragment.this.ag.setVisibility(8);
@@ -540,7 +526,7 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final MyCircleModel myCircleModel) {
-        this.f19149c.setVisibility(8);
+        this.c.setVisibility(8);
         if (myCircleModel == null) {
             return;
         }
@@ -632,11 +618,11 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
         sb.append(this.ah.getString(R.string.circle_introduction));
         sb.append(!TextUtils.isEmpty(myCircleModel.description) ? myCircleModel.description : getString(R.string.circle_description_default));
         final String sb2 = sb.toString();
-        int a2 = AppInfo.l - DensityUtils.a(this.ah, 20.0f);
+        int a = AppInfo.l - DensityUtils.a(this.ah, 20.0f);
         ViewGroup.LayoutParams layoutParams = this.C.getLayoutParams();
-        layoutParams.width = a2;
+        layoutParams.width = a;
         this.C.setLayoutParams(layoutParams);
-        this.C.setMaxWidth(a2);
+        this.C.setMaxWidth(a);
         this.C.setMoeTextColor(this.ah.getResources().getColor(R.color.syc_b));
         this.C.setMaxLines(3);
         this.C.setExpandText(sb2);
@@ -787,8 +773,8 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
                 AppMethods.a((CharSequence) getResources().getString(R.string.toast_all_circle_mute));
             }
         } else {
-            String c2 = TimeAndDateUtils.c(TimeAndDateUtils.c(j().t().user_mute_time + ""));
-            AppMethods.a((CharSequence) ("你已经被禁言， " + c2 + "自动解禁"));
+            String c = TimeAndDateUtils.c(TimeAndDateUtils.c(j().t().user_mute_time + ""));
+            AppMethods.a((CharSequence) ("你已经被禁言， " + c + "自动解禁"));
         }
     }
 
@@ -847,7 +833,7 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
         } else {
             this.ac.setVisibility(0);
             if (this.ac.getVisibility() == 0 && !this.b) {
-                this.f19148a = AnimationUtils.a((View) this.ac, 1.3f, 1.45f, 1, 1500);
+                this.a = AnimationUtils.a((View) this.ac, 1.3f, 1.45f, 1, 1500);
                 Timer timer = new Timer();
                 this.am = timer;
                 timer.schedule(new AnonymousClass32(), 300L, 15000L);
@@ -857,13 +843,13 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
         if (myCircleModel.is_disclosure == 1 || !myCircleModel.isNotMember()) {
             this.Q.c(true);
             View childAt = this.O.getChildAt(0);
-            AppBarLayout.LayoutParams layoutParams = (AppBarLayout.LayoutParams) childAt.getLayoutParams();
+            AppBarLayout.LayoutParams layoutParams = childAt.getLayoutParams();
             layoutParams.setScrollFlags(1);
             childAt.setLayoutParams(layoutParams);
             this.Y.setVisibility(8);
         } else {
             this.Q.c(false);
-            ((AppBarLayout.LayoutParams) this.O.getChildAt(0).getLayoutParams()).setScrollFlags(0);
+            this.O.getChildAt(0).getLayoutParams().setScrollFlags(0);
             this.Y.setVisibility(0);
             ImageLoader.a(getFragmentActive(), R.drawable.circle_blur_bg).a(this.aa);
             this.Z.setNoDataBtnListener(onClickListener);
@@ -893,7 +879,7 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
     }
 
     private void b(boolean z) {
-        this.Q.j();
+        this.Q.g();
         if (z) {
             this.ae.loadMoreComplete();
         } else {
@@ -909,7 +895,7 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
     }
 
     private void c() {
-        this.f19149c = this.i.findViewById(R.id.skeleton);
+        this.c = this.i.findViewById(R.id.skeleton);
         this.d = (ImageView) this.i.findViewById(R.id.iv_top_bg);
         this.e = (ImageView) this.i.findViewById(R.id.img_top_bg);
         this.f = (RotateLayout) this.i.findViewById(R.id.rotate_layout);
@@ -932,7 +918,7 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
         this.z = (LinearLayout) this.i.findViewById(R.id.ll_active_header);
         this.A = (LinearLayout) this.i.findViewById(R.id.ll_title);
         this.B = (CircleJoinView) this.i.findViewById(R.id.cjv_join);
-        this.C = (TextViewFixTouchForDynamic) this.i.findViewById(R.id.tv_content);
+        this.C = this.i.findViewById(R.id.tv_content);
         this.D = (FrameLayout) this.i.findViewById(R.id.fl_content);
         this.E = (TextView) this.i.findViewById(R.id.tv_is_top_title_1);
         this.F = (LinearLayout) this.i.findViewById(R.id.ll_is_top_1);
@@ -944,11 +930,11 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
         this.L = (ShapeLinearLayout) this.i.findViewById(R.id.sll_is_top);
         this.M = (PageTabLayout) this.i.findViewById(R.id.tab_layout);
         this.N = (ShapeLinearLayout) this.i.findViewById(R.id.sll_list_title);
-        this.O = (AppBarLayout) this.i.findViewById(R.id.appbar);
-        this.P = (RecyclerView) this.i.findViewById(R.id.recycler_view);
-        this.Q = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
+        this.O = this.i.findViewById(R.id.appbar);
+        this.P = this.i.findViewById(R.id.recycler_view);
+        this.Q = this.i.findViewById(R.id.refresh_layout);
         this.R = (CommonTopTitleNoTrans) this.i.findViewById(R.id.title_still);
-        this.S = (FloatFooterView) this.i.findViewById(R.id.ffv_post);
+        this.S = this.i.findViewById(R.id.ffv_post);
         this.T = (ImageView) this.i.findViewById(R.id.img_guide);
         this.U = (CircleJoinView) this.i.findViewById(R.id.cjv_join_scroll);
         this.V = (ImageView) this.i.findViewById(R.id.iv_number_scroll);
@@ -969,7 +955,6 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
 
     private void d() {
         LiveEventBus.get("common_refresh_circle_group", GroupInfoModel.class).observe(this, new Observer<GroupInfoModel>() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(GroupInfoModel groupInfoModel) {
                 MyCircleModel t;
@@ -981,7 +966,6 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
             }
         });
         LiveEventBus.get("common_group_dismiss", GroupInfoModel.class).observe(this, new Observer<GroupInfoModel>() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(GroupInfoModel groupInfoModel) {
                 MyCircleModel t;
@@ -992,7 +976,6 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
             }
         });
         LiveEventBus.get("common_refresh_circle_group_enter", Integer.class).observe(this, new Observer<Integer>() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.3
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Integer num) {
                 if (CircleDetailsFragment.this.j().t() != null) {
@@ -1002,14 +985,12 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
             }
         });
         LiveEventBus.get("common_kick_out_member", Void.class).observe(this, new Observer<Void>() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.4
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Void r3) {
                 CircleDetailsFragment.this.l();
             }
         });
         LiveEventBus.get("common_clear_group_member_state", String.class).observe(this, new Observer<String>() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.5
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 if (TextUtils.equals(str, CircleDetailsFragment.this.j().r())) {
@@ -1031,14 +1012,12 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
 
     private void v() {
         this.S.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.6
-            @Override // com.blued.community.view.FloatFooterView.OnBtnClickListener
             public void onPostFeedClick() {
                 EventTrackFeed.a(FeedProtos.Event.FEED_PUBLISH_BTN_CLICK, FeedProtos.FeedFrom.PUBLISH_CIRCLE_NOTE);
                 CircleDetailsFragment.this.b((CircleBubble) null);
             }
         });
         this.S.setBtnAnimatorUpdateListener(new FloatFooterView.BtnAnimatorUpdateListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.7
-            @Override // com.blued.community.view.FloatFooterView.BtnAnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 if (CircleDetailsFragment.this.T != null) {
                     int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
@@ -1052,11 +1031,11 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void w() {
-        if (this.f19148a != null) {
+        if (this.a != null) {
             this.ac.setVisibility(8);
             this.am.cancel();
-            this.f19148a.setRepeatMode(0);
-            this.f19148a.cancel();
+            this.a.setRepeatMode(0);
+            this.a.cancel();
             this.ac.clearAnimation();
         }
     }
@@ -1099,17 +1078,15 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
         inflate.setVisibility(8);
         this.ae.addFooterView(this.ag);
         this.ae.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.9
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
                 CircleDetailsFragment.this.j().f();
             }
         }, this.P);
         this.ae.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.10
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 int id = view.getId();
                 if (id == R.id.new_base_header || id == R.id.new_base_name) {
-                    BluedIngSelfFeed bluedIngSelfFeed = CircleDetailsFragment.this.ae.getData().get(i);
+                    BluedIngSelfFeed bluedIngSelfFeed = (BluedIngSelfFeed) CircleDetailsFragment.this.ae.getData().get(i);
                     if (bluedIngSelfFeed.is_anonym == 1) {
                         AppMethods.d(R.string.circle_anonymous_not_to_user_info);
                         return;
@@ -1128,9 +1105,8 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
             }
         });
         this.ae.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleDetailsFragment.11
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                BluedIngSelfFeed bluedIngSelfFeed = CircleDetailsFragment.this.ae.getData().get(i);
+                BluedIngSelfFeed bluedIngSelfFeed = (BluedIngSelfFeed) CircleDetailsFragment.this.ae.getData().get(i);
                 bluedIngSelfFeed.circle_title = CircleDetailsFragment.this.j().t().title;
                 bluedIngSelfFeed.admin_level = CircleDetailsFragment.this.j().t().admin_level;
                 bluedIngSelfFeed.cover = CircleDetailsFragment.this.j().t().cover;
@@ -1164,12 +1140,12 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
             public void onClick(View view) {
                 Tracker.onClick(view);
                 if (CircleDetailsFragment.this.R.getAlpha() >= 0.9f) {
-                    EventTrackFeed.i(FeedProtos.Event.CIRCLE_DETAIL_MORE_BTN_CLICK, CircleDetailsFragment.this.j().n() ? "manager" : "user");
+                    EventTrackFeed.i(FeedProtos.Event.CIRCLE_DETAIL_MORE_BTN_CLICK, CircleDetailsFragment.this.j().n() ? "manager" : ImsConferenceState.USER);
                     if (!CircleDetailsFragment.this.j().n()) {
                         CircleDetailsFragment.this.B();
                         return;
                     }
-                    EventTrackFeed.i(FeedProtos.Event.CIRCLE_USER_MANAGE_SHOW, CircleDetailsFragment.this.j().n() ? "manager" : "user");
+                    EventTrackFeed.i(FeedProtos.Event.CIRCLE_USER_MANAGE_SHOW, CircleDetailsFragment.this.j().n() ? "manager" : ImsConferenceState.USER);
                     CircleDetailsFragment.this.A();
                 }
             }
@@ -1352,7 +1328,7 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
                     @Override // com.blued.android.framework.ui.mvp.MvpUtils.DataHandler
                     public void a(BluedIngSelfFeed bluedIngSelfFeed) {
                         if (CircleDetailsFragment.this.ae != null) {
-                            CircleDetailsFragment.this.ae.addData(0, (int) bluedIngSelfFeed);
+                            CircleDetailsFragment.this.ae.addData(0, bluedIngSelfFeed);
                             CircleDetailsFragment.this.ae.notifyDataSetChanged();
                         }
                     }
@@ -1478,15 +1454,15 @@ public class CircleDetailsFragment extends MvpFragment<CircleDetailsPresenter> {
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
-        if (this.f19148a != null) {
+        if (this.a != null) {
             this.am.cancel();
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         if (this.aq) {

@@ -2,10 +2,12 @@ package com.bytedance.bdtracker;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.provider.SearchIndexablesContract;
 import android.text.TextUtils;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.baidu.mobads.sdk.api.ArticleInfo;
 import com.cdo.oaps.ad.OapsKey;
+import com.huawei.hms.ads.fw;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -79,11 +81,11 @@ public class a2 extends t1 {
     public JSONObject i() {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("local_time_ms", this.b);
-        jSONObject.put("tea_event_index", this.f21309c);
+        jSONObject.put("tea_event_index", this.f7703c);
         jSONObject.put("session_id", this.d);
         long j = this.e;
         if (j > 0) {
-            jSONObject.put("user_id", j);
+            jSONObject.put(SearchIndexablesContract.RawData.COLUMN_USER_ID, j);
         }
         jSONObject.put("user_unique_id", TextUtils.isEmpty(this.f) ? JSONObject.NULL : this.f);
         if (!TextUtils.isEmpty(this.g)) {
@@ -109,11 +111,11 @@ public class a2 extends t1 {
             jSONObject.put("original_session_id", this.s);
         }
         if (this.t == 1) {
-            jSONObject.put("$is_first_time", "true");
+            jSONObject.put("$is_first_time", fw.Code);
         }
         jSONObject.put("$page_title", TextUtils.isEmpty(this.u) ? "" : this.u);
         jSONObject.put("$page_key", TextUtils.isEmpty(this.v) ? "" : this.v);
-        jSONObject.put("$resume_from_background", this.w ? "true" : "false");
+        jSONObject.put("$resume_from_background", this.w ? fw.Code : "false");
         return jSONObject;
     }
 }

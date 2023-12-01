@@ -59,27 +59,27 @@ import java.util.Map;
 public class GroupUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f32828a = 168;
+    public static int f19137a = 168;
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f32829c = false;
+    public static boolean f19138c = false;
 
     /* renamed from: com.soft.blued.ui.msg_group.utils.GroupUtil$1  reason: invalid class name */
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/utils/GroupUtil$1.class */
     class AnonymousClass1 implements FetchDataListener<List<SessionModel>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ IRequestHost f32830a;
+        final /* synthetic */ IRequestHost f19139a;
         final /* synthetic */ ImageView b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ SessionModel f32831c;
+        final /* synthetic */ SessionModel f19140c;
 
         AnonymousClass1(IRequestHost iRequestHost, ImageView imageView, SessionModel sessionModel) {
-            this.f32830a = iRequestHost;
+            this.f19139a = iRequestHost;
             this.b = imageView;
-            this.f32831c = sessionModel;
+            this.f19140c = sessionModel;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -119,17 +119,16 @@ public class GroupUtil {
             }
         }
 
-        @Override // com.blued.android.chat.listener.FetchDataListener
         /* renamed from: a */
         public void onFetchData(final List<SessionModel> list) {
             Handler n = AppInfo.n();
-            final IRequestHost iRequestHost = this.f32830a;
+            final IRequestHost iRequestHost = this.f19139a;
             final ImageView imageView = this.b;
-            final SessionModel sessionModel = this.f32831c;
+            final SessionModel sessionModel = this.f19140c;
             n.post(new Runnable() { // from class: com.soft.blued.ui.msg_group.utils.-$$Lambda$GroupUtil$1$u67Zv5dxAzjfw23vxf2ZTYN4Z5k
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GroupUtil.AnonymousClass1.a(IRequestHost.this, imageView, list, sessionModel);
+                    GroupUtil.AnonymousClass1.a(iRequestHost, imageView, list, sessionModel);
                 }
             });
         }
@@ -231,17 +230,16 @@ public class GroupUtil {
     public static void a() {
         MsgGroupHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<GroupConfigModel>>(null) { // from class: com.soft.blued.ui.msg_group.utils.GroupUtil.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<GroupConfigModel> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
-                    final GroupConfigModel groupConfigModel = bluedEntityA.data.get(0);
+                    final GroupConfigModel groupConfigModel = (GroupConfigModel) bluedEntityA.data.get(0);
                     if (groupConfigModel.tips_interval != 0) {
-                        GroupUtil.f32828a = groupConfigModel.tips_interval;
+                        GroupUtil.f19137a = groupConfigModel.tips_interval;
                     }
                     GroupUtil.b = groupConfigModel.create == 1;
-                    GroupUtil.f32829c = groupConfigModel.share == 1;
-                    BluedConstant.f28239a = groupConfigModel.group_open == 0;
+                    GroupUtil.f19138c = groupConfigModel.share == 1;
+                    BluedConstant.f14549a = groupConfigModel.group_open == 0;
                     boolean z = false;
                     if (groupConfigModel.group_more == 0) {
                         z = true;
@@ -254,7 +252,6 @@ public class GroupUtil {
                         return;
                     }
                     ChatManager.getInstance().getSessionModelMap(new FetchDataListener<Map<String, SessionModel>>() { // from class: com.soft.blued.ui.msg_group.utils.GroupUtil.2.1
-                        @Override // com.blued.android.chat.listener.FetchDataListener
                         /* renamed from: a */
                         public void onFetchData(Map<String, SessionModel> map) {
                             SessionModel sessionModel;
@@ -264,7 +261,7 @@ public class GroupUtil {
                                 if (map == null || (sessionModel = map.get(SessionHeader.getSessionKey(3, j))) == null || sessionModel.sessionSettingModel == null) {
                                     arrayList.add(groupInfoModel);
                                 } else {
-                                    SessionSettingModel sessionSettingModel = (SessionSettingModel) sessionModel.sessionSettingModel;
+                                    SessionSettingModel sessionSettingModel = sessionModel.sessionSettingModel;
                                     sessionSettingModel.setRemindAudio(GroupUtil.a(groupInfoModel.message_is_mute, groupInfoModel.at_message_is_mute, groupInfoModel.notice_is_mute));
                                     sessionSettingModel.is_super = groupInfoModel.is_super;
                                     sessionSettingModel.group_status = groupInfoModel.group_status;
@@ -346,7 +343,7 @@ public class GroupUtil {
             if (textView instanceof ShapeTextView) {
                 ShapeTextView shapeTextView = (ShapeTextView) textView;
                 ShapeHelper.b(shapeTextView, 2131101115);
-                ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131099863);
+                ShapeHelper.a(shapeTextView, (int) R.color.circle_top_text);
             }
         } else if (i != 2) {
             if (z) {
@@ -359,7 +356,7 @@ public class GroupUtil {
             if (textView instanceof ShapeTextView) {
                 ShapeTextView shapeTextView2 = (ShapeTextView) textView;
                 ShapeHelper.b(shapeTextView2, 2131101112);
-                ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView2, 2131101766);
+                ShapeHelper.a(shapeTextView2, 2131101766);
             }
         }
     }
@@ -397,21 +394,21 @@ public class GroupUtil {
         int i = groupInfoModel.type;
         if (i == 1) {
             shapeTextView.setText(shapeTextView.getContext().getString(R.string.group_type_circle));
-            ShapeHelper.b(shapeTextView, R.color.syc_19FF8021);
-            ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131099863);
+            ShapeHelper.b(shapeTextView, (int) R.color.syc_19FF8021);
+            ShapeHelper.a(shapeTextView, (int) R.color.circle_top_text);
             return;
         }
         if (i != 2) {
             if (i == 4) {
                 shapeTextView.setText(shapeTextView.getContext().getString(R.string.group_event_group));
                 ShapeHelper.b(shapeTextView, 2131101106);
-                ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131101766);
+                ShapeHelper.a(shapeTextView, 2131101766);
                 return;
             } else if (i != 5) {
                 if (i == 6) {
                     shapeTextView.setText(shapeTextView.getContext().getString(R.string.group_selected_group));
-                    ShapeHelper.b(shapeTextView, R.color.syc_19FF0016);
-                    ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, (int) R.color.syc_dark_FF0016);
+                    ShapeHelper.b(shapeTextView, (int) R.color.syc_19FF0016);
+                    ShapeHelper.a(shapeTextView, (int) R.color.syc_dark_FF0016);
                     return;
                 } else if (groupInfoModel.is_super != 1 || zArr.length <= 0 || !zArr[0]) {
                     shapeTextView.setVisibility(8);
@@ -419,14 +416,14 @@ public class GroupUtil {
                 } else {
                     shapeTextView.setText(shapeTextView.getContext().getString(R.string.group_super));
                     ShapeHelper.b(shapeTextView, 2131101117);
-                    ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131102170);
+                    ShapeHelper.a(shapeTextView, 2131102170);
                     return;
                 }
             }
         }
         shapeTextView.setText(shapeTextView.getContext().getString(R.string.group_type_fans));
-        ShapeHelper.b(shapeTextView, R.color.syc_19583DFF);
-        ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131102357);
+        ShapeHelper.b(shapeTextView, (int) R.color.syc_19583DFF);
+        ShapeHelper.a(shapeTextView, 2131102357);
     }
 
     public static void a(GroupInfoModel groupInfoModel, TextView textView) {
@@ -438,7 +435,7 @@ public class GroupUtil {
     }
 
     public static void a(final GroupJoinView groupJoinView, int i, final int i2, final List<GroupInfoModel> list, final IRequestHost iRequestHost) {
-        if (BluedConstant.f28239a || i == 0 || list == null || list.size() == 0) {
+        if (BluedConstant.f14549a || i == 0 || list == null || list.size() == 0) {
             groupJoinView.setVisibility(8);
             return;
         }
@@ -448,13 +445,13 @@ public class GroupUtil {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                List list2 = List.this;
+                List list2 = list;
                 if (list2 == null || list2.size() != 1) {
-                    new CircleGroupListPop(groupJoinView.getContext(), List.this, i2, iRequestHost).a(groupJoinView.getContext());
+                    new CircleGroupListPop(groupJoinView.getContext(), list, i2, iRequestHost).a(groupJoinView.getContext());
                     return;
                 }
                 Context context = groupJoinView.getContext();
-                GroupInfoFragment.a(context, ((GroupInfoModel) List.this.get(0)).group_id + "", (GroupInfoModel) List.this.get(0), SocialNetWorkProtos.SourceType.CIRCLE);
+                GroupInfoFragment.a(context, ((GroupInfoModel) list.get(0)).group_id + "", (GroupInfoModel) list.get(0), SocialNetWorkProtos.SourceType.CIRCLE);
             }
         });
     }
@@ -470,16 +467,14 @@ public class GroupUtil {
         hashMap.put("announcement", str);
         MsgGroupHttpUtils.a(iRequestHost, j + "", hashMap, new BluedUIHttpResponse<BluedEntityA>(iRequestHost) { // from class: com.soft.blued.ui.msg_group.utils.GroupUtil.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (z) {
-                    AppMethods.a((CharSequence) AppUtils.a((int) R.string.group_announcement_submitted));
+                    AppMethods.a(AppUtils.a((int) R.string.group_announcement_submitted));
                     LiveEventBus.get("update_announcement", UpdateAnnouncementEvent.class).post(new UpdateAnnouncementEvent(j, str));
                 }
             }
@@ -527,7 +522,7 @@ public class GroupUtil {
     }
 
     public static void b(IRequestHost iRequestHost, String str, ImageView imageView) {
-        ImageLoader.a(iRequestHost, str).b(R.drawable.group_default_head).c().a(imageView);
+        ImageLoader.a(iRequestHost, str).b((int) R.drawable.group_default_head).c().a(imageView);
     }
 
     public static void b(List<GroupInfoModel> list) {
@@ -553,26 +548,26 @@ public class GroupUtil {
     public static String d(int i) {
         switch (i) {
             case 0:
-                return AppInfo.d().getResources().getString(2131891208);
+                return AppInfo.d().getResources().getString(R.string.other_dialog_report);
             case 1:
-                return AppInfo.d().getResources().getString(2131886298);
+                return AppInfo.d().getResources().getString(R.string.ad_report);
             case 2:
-                return AppInfo.d().getResources().getString(2131891289);
+                return AppInfo.d().getResources().getString(R.string.porn_repot);
             case 3:
             default:
                 return "";
             case 4:
-                return AppInfo.d().getResources().getString(2131891288);
+                return AppInfo.d().getResources().getString(R.string.political_report);
             case 5:
-                return AppInfo.d().getResources().getString(2131887538);
+                return AppInfo.d().getResources().getString(R.string.drug_report);
             case 6:
-                return AppInfo.d().getResources().getString(2131886996);
+                return AppInfo.d().getResources().getString(R.string.cheat_report);
             case 7:
-                return AppInfo.d().getResources().getString(2131887348);
+                return AppInfo.d().getResources().getString(R.string.content_unauth_report);
             case 8:
-                return AppInfo.d().getResources().getString(2131891260);
+                return AppInfo.d().getResources().getString(R.string.personal_report);
             case 9:
-                return AppInfo.d().getResources().getString(2131890631);
+                return AppInfo.d().getResources().getString(R.string.minors_report);
         }
     }
 }

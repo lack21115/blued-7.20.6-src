@@ -4,6 +4,7 @@ import android.content.Context;
 import com.opos.cmn.an.g.f;
 import com.opos.cmn.an.g.g;
 import com.opos.cmn.an.g.h;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,11 +16,11 @@ import java.util.concurrent.CountDownLatch;
 public class c implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f24802a;
+    private Context f11114a;
     private com.opos.cmn.func.a.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f24803c;
+    private long f11115c;
     private long d;
     private CountDownLatch e;
     private boolean f = false;
@@ -80,17 +81,17 @@ public class c implements Runnable {
 
     public c(Context context, com.opos.cmn.func.a.a aVar, long j, long j2, long j3, CountDownLatch countDownLatch) {
         this.h = -1;
-        this.f24802a = context.getApplicationContext();
+        this.f11114a = context.getApplicationContext();
         this.b = aVar;
         this.g = j;
-        this.f24803c = j2;
+        this.f11115c = j2;
         this.d = j3;
         this.e = countDownLatch;
         this.h = hashCode();
     }
 
     public long a() {
-        return this.f24803c;
+        return this.f11115c;
     }
 
     public long b() {
@@ -105,39 +106,39 @@ public class c implements Runnable {
     public void run() {
         String str;
         com.opos.cmn.an.f.a.b("DownloadThread", "threadId=" + this.h + " start.");
-        com.opos.cmn.an.f.a.b("DownloadThread", "threadId=" + this.h + " ,startPos=" + this.f24803c + ",endPos=" + this.d);
+        com.opos.cmn.an.f.a.b("DownloadThread", "threadId=" + this.h + " ,startPos=" + this.f11115c + ",endPos=" + this.d);
         try {
             try {
-                if (this.d + 1 > this.f24803c) {
+                if (this.d + 1 > this.f11115c) {
                     long a2 = h.a();
                     HashMap hashMap = new HashMap();
-                    if (this.b.f24796a.d != null) {
-                        hashMap.putAll(this.b.f24796a.d);
+                    if (this.b.f11108a.d != null) {
+                        hashMap.putAll(this.b.f11108a.d);
                     }
-                    String str2 = "bytes=" + this.f24803c + "-" + this.d;
+                    String str2 = "bytes=" + this.f11115c + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.d;
                     com.opos.cmn.an.f.a.b("DownloadThread", "rangeProperty=" + str2);
                     hashMap.put("Range", str2);
-                    g a3 = h.a(this.f24802a, a2, new f.a().a(this.b.f24796a.f24549a).b(this.b.f24796a.f24550c).a(hashMap).a(this.b.f24796a.b).a(this.b.f24796a.g).a(this.b.f24796a.i).a(this.b.f24796a.h).b(this.b.f24796a.e).c(this.b.f24796a.f).a());
+                    g a3 = h.a(this.f11114a, a2, new f.a().a(this.b.f11108a.f10862a).b(this.b.f11108a.f10863c).a(hashMap).a(this.b.f11108a.b).a(this.b.f11108a.g).a(this.b.f11108a.i).a(this.b.f11108a.h).b(this.b.f11108a.e).c(this.b.f11108a.f).a());
                     if (a3 != null) {
-                        com.opos.cmn.an.f.a.b("DownloadThread", "httpResponseEntity.getResponseCode()=" + a3.f24553a);
-                        if (206 != a3.f24553a && 200 != a3.f24553a) {
-                            str = "httpResponseEntity.getResponseCode()=" + a3.f24553a;
+                        com.opos.cmn.an.f.a.b("DownloadThread", "httpResponseEntity.getResponseCode()=" + a3.f10866a);
+                        if (206 != a3.f10866a && 200 != a3.f10866a) {
+                            str = "httpResponseEntity.getResponseCode()=" + a3.f10866a;
                         }
-                        InputStream inputStream = a3.f24554c;
+                        InputStream inputStream = a3.f10867c;
                         if (inputStream != null) {
-                            a aVar = new a(d.b(this.f24802a, this.b), this.f24803c);
+                            a aVar = new a(d.b(this.f11114a, this.b), this.f11115c);
                             byte[] bArr = new byte[4096];
                             while (true) {
                                 try {
                                     try {
                                         int read = inputStream.read(bArr);
-                                        if (-1 == read || this.f24803c >= this.d) {
+                                        if (-1 == read || this.f11115c >= this.d) {
                                             break;
                                         }
                                         int a4 = aVar.a(bArr, 0, read);
                                         com.opos.cmn.an.f.a.b("DownloadThread", "threadId=" + this.h + ", pro=" + a4);
-                                        this.f24803c = this.f24803c + ((long) a4);
-                                        com.opos.cmn.an.f.a.b("DownloadThread", "threadId=" + this.h + " ,startPos=" + this.f24803c);
+                                        this.f11115c = this.f11115c + ((long) a4);
+                                        com.opos.cmn.an.f.a.b("DownloadThread", "threadId=" + this.h + " ,startPos=" + this.f11115c);
                                     } catch (Throwable th) {
                                         aVar.a();
                                         throw th;
@@ -155,13 +156,13 @@ public class c implements Runnable {
                     }
                     com.opos.cmn.an.f.a.b("DownloadThread", str);
                 }
-                com.opos.cmn.an.f.a.b("DownloadThread", "threadId=" + this.h + " ,startPos=" + this.f24803c + ",endPos=" + this.d);
+                com.opos.cmn.an.f.a.b("DownloadThread", "threadId=" + this.h + " ,startPos=" + this.f11115c + ",endPos=" + this.d);
             } catch (Exception e2) {
                 com.opos.cmn.an.f.a.c("DownloadThread", "DownloadThread run", e2);
             }
-            if (this.d + 1 == this.f24803c) {
+            if (this.d + 1 == this.f11115c) {
                 com.opos.cmn.an.f.a.b("DownloadThread", "start=endPos+1,download success.");
-            } else if (this.g != this.d || this.d != this.f24803c) {
+            } else if (this.g != this.d || this.d != this.f11115c) {
                 com.opos.cmn.an.f.a.b("DownloadThread", "start!=endPos,download fail.");
                 this.e.countDown();
                 com.opos.cmn.an.f.a.b("DownloadThread", "threadId=" + this.h + " end.");

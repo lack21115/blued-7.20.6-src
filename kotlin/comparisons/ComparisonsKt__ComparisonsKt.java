@@ -29,9 +29,9 @@ public class ComparisonsKt__ComparisonsKt {
                 return 0;
             }
             Function1<? super T, ? extends Comparable<?>> function1 = function1Arr[i2];
-            int a2 = ComparisonsKt.a(function1.invoke(t), function1.invoke(t2));
-            if (a2 != 0) {
-                return a2;
+            int a = ComparisonsKt.a(function1.invoke(t), function1.invoke(t2));
+            if (a != 0) {
+                return a;
             }
             i = i2 + 1;
         }

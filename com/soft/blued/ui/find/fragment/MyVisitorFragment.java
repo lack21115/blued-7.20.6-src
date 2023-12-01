@@ -111,42 +111,41 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
     private boolean E = false;
     BluedUIHttpResponse j = new BluedUIHttpResponse<BluedEntityA<VisitorCountExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.MyVisitorFragment.9
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<VisitorCountExtra> bluedEntityA) {
             if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() == 0) {
                 return;
             }
             if (MyVisitorFragment.this.H.getVisibility() == 0) {
-                MyVisitorFragment.this.a(bluedEntityA.getSingleData());
+                MyVisitorFragment.this.a((VisitorCountExtra) bluedEntityA.getSingleData());
             }
-            if (bluedEntityA.getSingleData().new_user == 1) {
+            if (((VisitorCountExtra) bluedEntityA.getSingleData()).new_user == 1) {
                 MyVisitorFragment.this.v.setVisibility(8);
             }
             if (UserInfo.getInstance().getLoginUserInfo().vip_grade != 0) {
-                MyVisitorFragment.this.s.setText(DistanceUtils.a(MyVisitorFragment.this.l, Long.valueOf(bluedEntityA.getSingleData().history)));
+                MyVisitorFragment.this.s.setText(DistanceUtils.a(MyVisitorFragment.this.l, Long.valueOf(((VisitorCountExtra) bluedEntityA.getSingleData()).history)));
             }
             if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
                 MyVisitorFragment.this.t.setVisibility(8);
-            } else if (bluedEntityA.getSingleData().increase == 0) {
+            } else if (((VisitorCountExtra) bluedEntityA.getSingleData()).increase == 0) {
                 MyVisitorFragment.this.t.setVisibility(8);
             } else {
-                String a2 = DistanceUtils.a(MyVisitorFragment.this.l, Long.valueOf(bluedEntityA.getSingleData().increase));
+                String a2 = DistanceUtils.a(MyVisitorFragment.this.l, Long.valueOf(((VisitorCountExtra) bluedEntityA.getSingleData()).increase));
                 if (!StringUtils.d(a2)) {
                     MyVisitorFragment.this.t.setText("+" + a2);
                     MyVisitorFragment.this.t.setVisibility(0);
                 }
             }
-            final VisitorCountExtra singleData = bluedEntityA.getSingleData();
-            if (BluedConfig.a().T() != 1 || singleData.often_see_you == null || singleData.seen_each_other == null) {
+            final VisitorCountExtra visitorCountExtra = (VisitorCountExtra) bluedEntityA.getSingleData();
+            if (BluedConfig.a().T() != 1 || visitorCountExtra.often_see_you == null || visitorCountExtra.seen_each_other == null) {
                 MyVisitorFragment.this.P.setVisibility(0);
                 MyVisitorFragment.this.Q.setVisibility(8);
             } else {
                 MyVisitorFragment.this.P.setVisibility(8);
                 MyVisitorFragment.this.Q.setVisibility(0);
                 TextView textView = MyVisitorFragment.this.R;
-                textView.setText(DistanceUtils.a(MyVisitorFragment.this.l, Long.valueOf(singleData.today)) + MyVisitorFragment.this.l.getString(R.string.times));
-                ImageWrapper b = ImageLoader.a(MyVisitorFragment.this.getFragmentActive(), singleData.often_see_you.avatar).c().d(R.drawable.icon_default_user_avatar).b(R.drawable.icon_default_user_avatar);
+                textView.setText(DistanceUtils.a(MyVisitorFragment.this.l, Long.valueOf(visitorCountExtra.today)) + MyVisitorFragment.this.l.getString(R.string.times));
+                ImageWrapper b = ImageLoader.a(MyVisitorFragment.this.getFragmentActive(), visitorCountExtra.often_see_you.avatar).c().d((int) R.drawable.icon_default_user_avatar).b((int) R.drawable.icon_default_user_avatar);
                 if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
                     b.d();
                 }
@@ -158,21 +157,21 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
                         EventTrackVIP.a(VipProtos.Event.VISIT_PAGE_OFTEN_CLICK, EventTrackVIP.b(UserInfo.getInstance().getLoginUserInfo().vip_grade));
                         if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
                             PayUtils.a(MyVisitorFragment.this.getActivity(), 12, "nearby_visit_often", VipProtos.FromType.VISIT_OFTEN);
-                        } else if (TextUtils.isEmpty(singleData.often_see_you.uid) || TextUtils.equals(singleData.often_see_you.uid, "0")) {
+                        } else if (TextUtils.isEmpty(visitorCountExtra.often_see_you.uid) || TextUtils.equals(visitorCountExtra.often_see_you.uid, "0")) {
                             AppMethods.d((int) R.string.visitor_no_people_to_you);
                         } else {
-                            UserInfoFragmentNew.a(MyVisitorFragment.this.l, singleData.often_see_you.uid, "my_visitor");
+                            UserInfoFragmentNew.a(MyVisitorFragment.this.l, visitorCountExtra.often_see_you.uid, "my_visitor");
                         }
                     }
                 });
-                if (TextUtils.isEmpty(singleData.often_see_you.times)) {
+                if (TextUtils.isEmpty(visitorCountExtra.often_see_you.times)) {
                     TextView textView2 = MyVisitorFragment.this.V;
                     textView2.setText("0" + MyVisitorFragment.this.l.getString(R.string.times));
                 } else {
                     TextView textView3 = MyVisitorFragment.this.V;
-                    textView3.setText(singleData.often_see_you.times + MyVisitorFragment.this.l.getString(R.string.times));
+                    textView3.setText(visitorCountExtra.often_see_you.times + MyVisitorFragment.this.l.getString(R.string.times));
                 }
-                ImageWrapper b2 = ImageLoader.a(MyVisitorFragment.this.getFragmentActive(), singleData.seen_each_other.avatar).d(R.drawable.icon_default_user_avatar).c().b(R.drawable.icon_default_user_avatar);
+                ImageWrapper b2 = ImageLoader.a(MyVisitorFragment.this.getFragmentActive(), visitorCountExtra.seen_each_other.avatar).d((int) R.drawable.icon_default_user_avatar).c().b((int) R.drawable.icon_default_user_avatar);
                 if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
                     b2.d();
                 }
@@ -184,26 +183,25 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
                         EventTrackVIP.a(VipProtos.Event.VISIT_PAGE_EACH_CLICK, EventTrackVIP.b(UserInfo.getInstance().getLoginUserInfo().vip_grade));
                         if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
                             PayUtils.a(MyVisitorFragment.this.getActivity(), 12, "nearby_visit_each", VipProtos.FromType.VISIT_EACH);
-                        } else if (TextUtils.isEmpty(singleData.often_see_you.uid) || TextUtils.equals(singleData.often_see_you.uid, "0")) {
+                        } else if (TextUtils.isEmpty(visitorCountExtra.often_see_you.uid) || TextUtils.equals(visitorCountExtra.often_see_you.uid, "0")) {
                             AppMethods.d((int) R.string.visitor_no_people_to_you);
                         } else {
-                            UserInfoFragmentNew.a(MyVisitorFragment.this.l, singleData.seen_each_other.uid, "my_visitor");
+                            UserInfoFragmentNew.a(MyVisitorFragment.this.l, visitorCountExtra.seen_each_other.uid, "my_visitor");
                         }
                     }
                 });
             }
-            MyVisitorFragment.this.u.setText(DistanceUtils.a(MyVisitorFragment.this.l, Long.valueOf(bluedEntityA.getSingleData().today)));
+            MyVisitorFragment.this.u.setText(DistanceUtils.a(MyVisitorFragment.this.l, Long.valueOf(((VisitorCountExtra) bluedEntityA.getSingleData()).today)));
             if (!MyVisitorFragment.this.E) {
                 MyVisitorFragment.this.E = true;
                 MyVisitorFragment.this.o.addHeaderView(MyVisitorFragment.this.p);
                 MyVisitorFragment.this.z.notifyDataSetChanged();
             }
-            if (bluedEntityA.getSingleData().visitors_is_complete_rate == 1) {
+            if (((VisitorCountExtra) bluedEntityA.getSingleData()).visitors_is_complete_rate == 1) {
                 MyVisitorFragment.this.l();
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
         }
@@ -211,38 +209,34 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
     BluedUIHttpResponse k = new BluedUIHttpResponse<BluedEntity<BluedMyVisitorList, BluedVisitorExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.MyVisitorFragment.10
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f30374a;
+        boolean f16684a;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onSuccess(String str) {
             Logger.a("drb", "content:" + str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f30374a = true;
+            this.f16684a = true;
             if (MyVisitorFragment.this.A != 1) {
                 MyVisitorFragment.w(MyVisitorFragment.this);
             }
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             MyVisitorFragment.this.n.j();
             MyVisitorFragment.this.n.q();
             if (MyVisitorFragment.this.z.getCount() != 0) {
                 MyVisitorFragment.this.D.d();
-            } else if (this.f30374a) {
+            } else if (this.f16684a) {
                 MyVisitorFragment.this.D.b();
             } else {
                 MyVisitorFragment.this.D.a();
             }
             MyVisitorFragment.this.z.notifyDataSetChanged();
-            this.f30374a = false;
+            this.f16684a = false;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<BluedMyVisitorList, BluedVisitorExtra> bluedEntity) {
             if (bluedEntity != null) {
                 try {
@@ -259,12 +253,12 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
                             return;
                         }
                         MyVisitorFragment.this.z.a(bluedEntity.data, 1);
-                        MyVisitorFragment.this.z.a(bluedEntity.extra.last_visit_time);
+                        MyVisitorFragment.this.z.a(((BluedVisitorExtra) bluedEntity.extra).last_visit_time);
                         return;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) MyVisitorFragment.this.l.getResources().getString(2131887272));
+                    AppMethods.a(MyVisitorFragment.this.l.getResources().getString(2131887272));
                     if (MyVisitorFragment.this.A != 1) {
                         MyVisitorFragment.w(MyVisitorFragment.this);
                         return;
@@ -280,10 +274,9 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
                 MyVisitorFragment.w(MyVisitorFragment.this);
                 MyVisitorFragment.this.C = false;
             }
-            AppMethods.a((CharSequence) MyVisitorFragment.this.l.getResources().getString(2131887275));
+            AppMethods.a(MyVisitorFragment.this.l.getResources().getString(2131887275));
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public BluedEntity<BluedMyVisitorList, BluedVisitorExtra> parseData(String str) {
             return super.parseData(str);
         }
@@ -433,14 +426,14 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
         }
         if (!this.C) {
             this.A--;
-            AppMethods.a((CharSequence) this.l.getResources().getString(2131887275));
+            AppMethods.a(this.l.getResources().getString(2131887275));
             this.n.j();
             this.n.q();
             return;
         }
-        MineHttpUtils.a(this.l, this.k, UserInfo.getInstance().getLoginUserInfo().getUid(), this.A + "", BaseWrapper.ENTER_ID_SYSTEM_HELPER, getFragmentActive());
+        MineHttpUtils.a(this.l, this.k, UserInfo.getInstance().getLoginUserInfo().getUid(), this.A + "", BaseWrapper.ENTER_ID_SYSTEM_HELPER, (IRequestHost) getFragmentActive());
         if (z) {
-            MineHttpUtils.a(this.l, this.j, UserInfo.getInstance().getLoginUserInfo().getUid(), getFragmentActive());
+            MineHttpUtils.a(this.l, this.j, UserInfo.getInstance().getLoginUserInfo().getUid(), (IRequestHost) getFragmentActive());
             if (UserInfo.getInstance().getLoginUserInfo() == null || UserInfo.getInstance().getLoginUserInfo().vip_grade != 0) {
                 this.s.setVisibility(0);
                 this.r.setVisibility(8);
@@ -461,7 +454,7 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
     public /* synthetic */ void d(View view) {
         Tracker.onClick(view);
         if (BluedConfig.a().m() == 1 || BluedConfig.a().m() == 3 || BluedConfig.a().n() > 0) {
-            CallHelloManager.a().a(getContext(), getFragmentActive(), 7, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.find.fragment.MyVisitorFragment.7
+            CallHelloManager.a().a(getContext(), (IRequestHost) getFragmentActive(), 7, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.find.fragment.MyVisitorFragment.7
                 @Override // com.soft.blued.ui.find.manager.CallHelloManager.ToOpenListener
                 public void done(boolean z) {
                     if (z) {
@@ -480,7 +473,7 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
     public /* synthetic */ void e(View view) {
         Tracker.onClick(view);
         EventTrackVIP.a(VipProtos.Event.VISIT_PAGE_SHADOW_BTN_CLICK);
-        WebViewShowInfoFragment.show(this.l, H5Url.a(46, "", "visit_shadow"), -1);
+        WebViewShowInfoFragment.show(this.l, H5Url.a(46, new Object[]{"", "visit_shadow"}), -1);
     }
 
     private void j() {
@@ -489,9 +482,9 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
 
     private void k() {
         this.y = LayoutInflater.from(this.l);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.m.findViewById(2131366898);
-        this.n = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        RenrenPullToRefreshListView findViewById = this.m.findViewById(R.id.list_view);
+        this.n = findViewById;
+        findViewById.setRefreshEnabled(true);
         this.o = (ListView) this.n.getRefreshableView();
         VisitorListAdapter visitorListAdapter = new VisitorListAdapter(this.l, getFragmentActive());
         this.z = visitorListAdapter;
@@ -503,7 +496,7 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
         NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.l);
         this.D = noDataAndLoadFailView;
         noDataAndLoadFailView.setNoDataImg(2131233632);
-        this.D.setNoDataStr(R.string.no_data_for_my_visitor);
+        this.D.setNoDataStr((int) R.string.no_data_for_my_visitor);
         this.o.setEmptyView(this.D);
         this.n.postDelayed(new Runnable() { // from class: com.soft.blued.ui.find.fragment.MyVisitorFragment.1
             @Override // java.lang.Runnable
@@ -512,13 +505,11 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
             }
         }, 100L);
         this.n.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.soft.blued.ui.find.fragment.MyVisitorFragment.2
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 MyVisitorFragment.this.A = 1;
                 MyVisitorFragment.this.a(true);
             }
 
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void b() {
                 MyVisitorFragment.b(MyVisitorFragment.this);
                 MyVisitorFragment.this.a(false);
@@ -570,7 +561,6 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
         }
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         FragmentActivity activity = getActivity();
         this.l = activity;
@@ -679,12 +669,10 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (UserInfo.getInstance().getLoginUserInfo() == null || UserInfo.getInstance().getLoginUserInfo().vip_grade == this.B || this.m == null) {
@@ -694,7 +682,6 @@ public class MyVisitorFragment extends PreloadFragment implements VIPBuyResultOb
         a(true);
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

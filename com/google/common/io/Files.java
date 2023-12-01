@@ -10,6 +10,7 @@ import com.google.common.graph.SuccessorsFunction;
 import com.google.common.graph.Traverser;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.HashFunction;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -189,7 +190,7 @@ public final class Files {
 
     public static File createTempDir() {
         File file = new File(System.getProperty("java.io.tmpdir"));
-        String str = System.currentTimeMillis() + "-";
+        String str = System.currentTimeMillis() + Constants.ACCEPT_TIME_SEPARATOR_SERVER;
         int i = 0;
         while (true) {
             int i2 = i;

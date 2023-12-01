@@ -26,9 +26,8 @@ public final class e {
             return !TextUtils.isEmpty(str) && str.startsWith("com.kwad.sdk.api");
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.lang.ClassLoader
-        public final Class<?> loadClass(String str, boolean z) {
+        protected final Class<?> loadClass(String str, boolean z) {
             if (ba(str)) {
                 return getParent().loadClass(str);
             }

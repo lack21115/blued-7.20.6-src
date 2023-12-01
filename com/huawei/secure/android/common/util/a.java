@@ -4,16 +4,16 @@ package com.huawei.secure.android.common.util;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f23158a;
+    private String f9550a;
     private Character b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Character f23159c;
+    private Character f9551c;
     private int d = 0;
     private int e = 0;
 
     public a(String str) {
-        this.f23158a = str;
+        this.f9550a = str;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0032, code lost:
@@ -92,15 +92,15 @@ public class a {
         if (this.b != null) {
             return true;
         }
-        String str = this.f23158a;
-        return (str == null || str.length() == 0 || this.d >= this.f23158a.length()) ? false : true;
+        String str = this.f9550a;
+        return (str == null || str.length() == 0 || this.d >= this.f9550a.length()) ? false : true;
     }
 
     public boolean a(char c2) {
         Character ch = this.b;
         if (ch == null || ch.charValue() != c2) {
-            String str = this.f23158a;
-            return str != null && str.length() != 0 && this.d < this.f23158a.length() && this.f23158a.charAt(this.d) == c2;
+            String str = this.f9550a;
+            return str != null && str.length() != 0 && this.d < this.f9550a.length() && this.f9550a.charAt(this.d) == c2;
         }
         return true;
     }
@@ -110,7 +110,7 @@ public class a {
     }
 
     public void c() {
-        this.f23159c = this.b;
+        this.f9551c = this.b;
         this.e = this.d;
     }
 
@@ -120,11 +120,11 @@ public class a {
             this.b = null;
             return ch;
         }
-        String str = this.f23158a;
-        if (str == null || str.length() == 0 || this.d >= this.f23158a.length()) {
+        String str = this.f9550a;
+        if (str == null || str.length() == 0 || this.d >= this.f9550a.length()) {
             return null;
         }
-        String str2 = this.f23158a;
+        String str2 = this.f9550a;
         int i = this.d;
         this.d = i + 1;
         return Character.valueOf(str2.charAt(i));
@@ -151,15 +151,15 @@ public class a {
         if (ch != null) {
             return ch;
         }
-        String str = this.f23158a;
-        if (str == null || str.length() == 0 || this.d >= this.f23158a.length()) {
+        String str = this.f9550a;
+        if (str == null || str.length() == 0 || this.d >= this.f9550a.length()) {
             return null;
         }
-        return Character.valueOf(this.f23158a.charAt(this.d));
+        return Character.valueOf(this.f9550a.charAt(this.d));
     }
 
     protected String h() {
-        String substring = this.f23158a.substring(this.d);
+        String substring = this.f9550a.substring(this.d);
         String str = substring;
         if (this.b != null) {
             str = this.b + substring;
@@ -168,7 +168,7 @@ public class a {
     }
 
     public void i() {
-        this.b = this.f23159c;
+        this.b = this.f9551c;
         this.d = this.e;
     }
 }

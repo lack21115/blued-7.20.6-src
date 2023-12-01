@@ -17,7 +17,7 @@ public class l {
         }
         File file2 = file;
         if (!parentFile.mkdirs()) {
-            com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f27672a;
+            com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f13984a;
             eVar.e("ShortVideoCore", "failed to mkdirs: " + parentFile + " use default: " + context.getFilesDir());
             file2 = new File(context.getFilesDir(), file.getName());
         }

@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public abstract class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f22843a = new Object();
+    private static final Object f9235a = new Object();
     private static int b = -1;
 
     private static boolean a() {
@@ -99,7 +99,7 @@ public abstract class c {
 
     public static boolean d(Context context) {
         HMSLog.d("CommFun", "existFrameworkPush:" + b);
-        synchronized (f22843a) {
+        synchronized (f9235a) {
             int i = b;
             boolean z = false;
             if (-1 != i) {

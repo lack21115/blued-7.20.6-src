@@ -12,11 +12,11 @@ public class d {
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public com.tencent.qmsp.sdk.g.a.a f38610c;
+    public com.tencent.qmsp.sdk.g.a.a f24919c;
     public b d;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f38609a = false;
+    public boolean f24918a = false;
     public ServiceConnection e = new a();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/g/a/d$a.class */
@@ -27,7 +27,7 @@ public class d {
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             com.tencent.qmsp.sdk.base.c.a("HSDID did service binded");
-            d.this.f38610c = a.AbstractBinderC0991a.a(iBinder);
+            d.this.f24919c = a.AbstractBinderC0821a.a(iBinder);
             d.this.a(true);
         }
 
@@ -48,7 +48,7 @@ public class d {
             return;
         }
         try {
-            this.d.a(this.f38610c);
+            this.d.a(this.f24919c);
         } catch (Exception e) {
             com.tencent.qmsp.sdk.base.c.b("HSDID notify did bind status error :" + e.getMessage());
         }
@@ -56,11 +56,11 @@ public class d {
 
     public void a() {
         try {
-            if (!this.f38609a || this.e == null || this.b == null) {
+            if (!this.f24918a || this.e == null || this.b == null) {
                 return;
             }
             com.tencent.qmsp.sdk.base.c.a("HSDID start to unbind did service");
-            this.f38609a = false;
+            this.f24918a = false;
             this.b.unbindService(this.e);
         } catch (Exception e) {
             com.tencent.qmsp.sdk.base.c.b("HSDID error:" + e.getMessage());
@@ -76,7 +76,7 @@ public class d {
             intent2.setComponent(componentName);
             com.tencent.qmsp.sdk.base.c.a("HSDID start to bind did service");
             boolean bindService = this.b.bindService(intent2, this.e, 1);
-            this.f38609a = bindService;
+            this.f24918a = bindService;
             if (bindService) {
                 return;
             }

@@ -11,11 +11,11 @@ import com.opos.exoplayer.core.h.g;
 public final class c implements e, o.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Uri f25282a;
+    private final Uri f11594a;
     private final g.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.opos.exoplayer.core.c.h f25283c;
+    private final com.opos.exoplayer.core.c.h f11595c;
     private final int d;
     private final f.a e;
     private final String f;
@@ -28,17 +28,17 @@ public final class c implements e, o.c {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final g.a f25284a;
+        private final g.a f11596a;
         private com.opos.exoplayer.core.c.h b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f25285c;
+        private String f11597c;
         private int d = -1;
         private int e = 1048576;
         private boolean f;
 
         public a(g.a aVar) {
-            this.f25284a = aVar;
+            this.f11596a = aVar;
         }
 
         public c a(Uri uri) {
@@ -50,14 +50,14 @@ public final class c implements e, o.c {
             if (this.b == null) {
                 this.b = new com.opos.exoplayer.core.c.c();
             }
-            return new c(uri, this.f25284a, this.b, this.d, handler, fVar, this.f25285c, this.e);
+            return new c(uri, this.f11596a, this.b, this.d, handler, fVar, this.f11597c, this.e);
         }
     }
 
     private c(Uri uri, g.a aVar, com.opos.exoplayer.core.c.h hVar, int i, Handler handler, f fVar, String str, int i2) {
-        this.f25282a = uri;
+        this.f11594a = uri;
         this.b = aVar;
-        this.f25283c = hVar;
+        this.f11595c = hVar;
         this.d = i;
         this.e = new f.a(handler, fVar);
         this.f = str;
@@ -72,8 +72,8 @@ public final class c implements e, o.c {
 
     @Override // com.opos.exoplayer.core.e.e
     public d a(e.b bVar, com.opos.exoplayer.core.h.b bVar2) {
-        com.opos.exoplayer.core.i.a.a(bVar.f25286a == 0);
-        return new o(this.f25282a, this.b.a(), this.f25283c.a(), this.d, this.e, this, bVar2, this.f, this.g);
+        com.opos.exoplayer.core.i.a.a(bVar.f11598a == 0);
+        return new o(this.f11594a, this.b.a(), this.f11595c.a(), this.d, this.e, this, bVar2, this.f, this.g);
     }
 
     @Override // com.opos.exoplayer.core.e.e

@@ -12,7 +12,7 @@ public final class ActivityMgr implements Application.ActivityLifecycleCallbacks
     public static final ActivityMgr INST = new ActivityMgr();
 
     /* renamed from: a  reason: collision with root package name */
-    public WeakReference<Activity> f22889a;
+    public WeakReference<Activity> f9281a;
 
     public static String a(Object obj) {
         if (obj == null) {
@@ -22,12 +22,12 @@ public final class ActivityMgr implements Application.ActivityLifecycleCallbacks
     }
 
     public Activity getCurrentActivity() {
-        if (this.f22889a == null) {
-            HMSLog.i("ActivityMgr", "mCurrentActivity is " + this.f22889a);
+        if (this.f9281a == null) {
+            HMSLog.i("ActivityMgr", "mCurrentActivity is " + this.f9281a);
             return null;
         }
-        HMSLog.i("ActivityMgr", "mCurrentActivity.get() is " + this.f22889a.get());
-        return this.f22889a.get();
+        HMSLog.i("ActivityMgr", "mCurrentActivity.get() is " + this.f9281a.get());
+        return this.f9281a.get();
     }
 
     public void init(Application application) {
@@ -43,7 +43,7 @@ public final class ActivityMgr implements Application.ActivityLifecycleCallbacks
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityCreated(Activity activity, Bundle bundle) {
         HMSLog.d("ActivityMgr", "onCreated:" + a(activity));
-        this.f22889a = new WeakReference<>(activity);
+        this.f9281a = new WeakReference<>(activity);
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -57,7 +57,7 @@ public final class ActivityMgr implements Application.ActivityLifecycleCallbacks
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityResumed(Activity activity) {
         HMSLog.d("ActivityMgr", "onResumed:" + a(activity));
-        this.f22889a = new WeakReference<>(activity);
+        this.f9281a = new WeakReference<>(activity);
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -67,7 +67,7 @@ public final class ActivityMgr implements Application.ActivityLifecycleCallbacks
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityStarted(Activity activity) {
         HMSLog.d("ActivityMgr", "onStarted:" + a(activity));
-        this.f22889a = new WeakReference<>(activity);
+        this.f9281a = new WeakReference<>(activity);
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks

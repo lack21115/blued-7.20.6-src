@@ -51,11 +51,11 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
     public List<SurfaceTextureCallback> X;
 
     /* renamed from: a  reason: collision with root package name */
-    public GLSurfaceView f1287a;
+    public GLSurfaceView f1239a;
     public a.a.a.a.a.b.e b;
 
     /* renamed from: c  reason: collision with root package name */
-    public b.d f1288c;
+    public b.d f1240c;
     public AspectFrameLayout e;
     public ViewGroup f;
     public View g;
@@ -243,23 +243,23 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
     public static class i extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public WeakReference<c> f1296a;
+        public WeakReference<c> f1248a;
 
         public i(Looper looper, c cVar) {
             super(looper);
-            this.f1296a = new WeakReference<>(cVar);
+            this.f1248a = new WeakReference<>(cVar);
         }
 
         public void a() {
             getLooper().quit();
-            this.f1296a.clear();
+            this.f1248a.clear();
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.g;
             eVar.b("CameraManager", "CameraHandler [" + this + "]: what=" + message.what);
-            c cVar = this.f1296a.get();
+            c cVar = this.f1248a.get();
             if (cVar == null) {
                 a.a.a.a.a.e.e.g.d("CameraManager", "CameraHandler.handleMessage: mananger is null");
                 return;
@@ -310,15 +310,15 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
     public static class k implements b.e {
 
         /* renamed from: a  reason: collision with root package name */
-        public WeakReference<c> f1297a;
+        public WeakReference<c> f1249a;
 
         public k(c cVar) {
-            this.f1297a = new WeakReference<>(cVar);
+            this.f1249a = new WeakReference<>(cVar);
         }
 
         @Override // a.a.a.a.a.b.b.e
         public void a(Camera.Parameters parameters) {
-            c cVar = this.f1297a.get();
+            c cVar = this.f1249a.get();
             if (cVar == null) {
                 a.a.a.a.a.e.e.g.d("CameraManager", "onParametersChanged: mananger is null");
             } else {
@@ -331,7 +331,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
     public class l extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        public a.a.a.a.a.a.b f1298a;
+        public a.a.a.a.a.a.b f1250a;
 
         /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/b/c$l$a.class */
         public class a implements Runnable {
@@ -341,12 +341,12 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
             @Override // java.lang.Runnable
             public void run() {
                 c cVar = c.this;
-                cVar.a(cVar.j.getReqCameraId(), l.this.f1298a);
+                cVar.a(cVar.j.getReqCameraId(), l.this.f1250a);
             }
         }
 
         public l(a.a.a.a.a.a.b bVar) {
-            this.f1298a = bVar;
+            this.f1250a = bVar;
             setName("CameraStartUp");
         }
 
@@ -361,16 +361,16 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
     public static class m {
 
         /* renamed from: a  reason: collision with root package name */
-        public SurfaceTexture f1300a;
+        public SurfaceTexture f1252a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public Object f1301c;
+        public Object f1253c;
 
         public m(SurfaceTexture surfaceTexture, int i, Object obj) {
-            this.f1300a = surfaceTexture;
+            this.f1252a = surfaceTexture;
             this.b = i;
-            this.f1301c = obj;
+            this.f1253c = obj;
         }
     }
 
@@ -392,7 +392,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
         this.X = new ArrayList();
         this.h = context.getApplicationContext();
         this.e = aspectFrameLayout;
-        this.f1287a = gLSurfaceView;
+        this.f1239a = gLSurfaceView;
         HandlerThread handlerThread = new HandlerThread("CameraManagerHt");
         handlerThread.start();
         this.q = new i(handlerThread.getLooper(), this);
@@ -404,7 +404,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
 
     public final void A() {
         w();
-        this.f1288c.a(this.z);
+        this.f1240c.a(this.z);
         if (!this.A) {
             this.j.a(this.z);
         }
@@ -415,7 +415,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
             if (aspectFrameLayout != null) {
                 this.i.a(aspectFrameLayout.getWidth(), this.e.getHeight());
             } else {
-                this.i.a(this.f1287a.getWidth(), this.f1287a.getHeight());
+                this.i.a(this.f1239a.getWidth(), this.f1239a.getHeight());
             }
         }
     }
@@ -425,7 +425,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
         if (a.a.a.a.a.e.c.a().c()) {
             synchronized (this.d) {
                 a.a.a.a.a.e.e.g.c("CameraManager", "isSupportedTorch getParameters");
-                Camera.Parameters d2 = this.f1288c.d();
+                Camera.Parameters d2 = this.f1240c.d();
                 z = false;
                 if (d2.getSupportedFlashModes() != null) {
                     z = false;
@@ -441,11 +441,11 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
 
     public final void C() {
         synchronized (this.d) {
-            if (this.f1288c != null) {
+            if (this.f1240c != null) {
                 this.v = false;
-                this.f1288c.a();
+                this.f1240c.a();
                 this.u = true;
-                this.f1288c = null;
+                this.f1240c = null;
                 this.D = null;
                 this.r = false;
                 a.a.a.a.a.e.e.g.c("CameraManager", "releaseCamera -- done");
@@ -483,7 +483,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
 
     public final void E() {
         String[] strArr = {"auto", "continuous-picture", "continuous-video"};
-        this.i = new a.a.a.a.a.b.g(this.j, strArr, this.f, this.f1288c.d(), this, a.a.a.a.a.b.b.a().c(), this.h.getMainLooper(), this.g);
+        this.i = new a.a.a.a.a.b.g(this.j, strArr, this.f, this.f1240c.d(), this, a.a.a.a.a.b.b.a().c(), this.h.getMainLooper(), this.g);
     }
 
     public final void F() {
@@ -492,18 +492,18 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
             E();
         } else {
             gVar.a(a.a.a.a.a.b.b.a().c());
-            this.i.a(this.f1288c.d());
+            this.i.a(this.f1240c.d());
         }
         AspectFrameLayout aspectFrameLayout = this.e;
         if (aspectFrameLayout != null) {
             this.i.a(aspectFrameLayout.getWidth(), this.e.getHeight());
         } else {
-            this.i.a(this.f1287a.getWidth(), this.f1287a.getHeight());
+            this.i.a(this.f1239a.getWidth(), this.f1239a.getHeight());
         }
     }
 
     public final void G() {
-        b.d dVar = this.f1288c;
+        b.d dVar = this.f1240c;
         if (dVar == null) {
             return;
         }
@@ -526,7 +526,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
         }
         d2.setFocusMode(this.i.d());
         c(d2);
-        this.f1288c.a(d2);
+        this.f1240c.a(d2);
     }
 
     public final boolean H() {
@@ -589,8 +589,8 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
 
     public void a(int i2) {
         synchronized (this.d) {
-            if (this.f1288c != null && this.r) {
-                Camera.Parameters d2 = this.f1288c.d();
+            if (this.f1240c != null && this.r) {
+                Camera.Parameters d2 = this.f1240c.d();
                 if (d2 == null) {
                     a.a.a.a.a.e.e.g.e("CameraManager", "parameters is null");
                     return;
@@ -599,18 +599,18 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
                     return;
                 } else {
                     d2.setExposureCompensation(i2);
-                    this.f1288c.a(d2);
+                    this.f1240c.a(d2);
                     return;
                 }
             }
             a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.g;
-            eVar.e("CameraManager", "mCamera:" + this.f1288c + ",mIsPreviewReady:" + this.r);
+            eVar.e("CameraManager", "mCamera:" + this.f1240c + ",mIsPreviewReady:" + this.r);
         }
     }
 
     public void a(int i2, int i3) {
         a.a.a.a.a.b.g gVar;
-        if (this.f1288c == null || !this.r) {
+        if (this.f1240c == null || !this.r) {
             return;
         }
         if ((this.E || this.F) && (gVar = this.i) != null) {
@@ -621,14 +621,14 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
     public final void a(m mVar) {
         synchronized (this.d) {
             a.a.a.a.a.e.e.g.c("CameraManager", "handleSetSurfaceTexture");
-            if (mVar != null && this.f1288c != null && mVar.f1300a != null) {
+            if (mVar != null && this.f1240c != null && mVar.f1252a != null) {
                 this.m = mVar;
                 F();
                 this.i.h();
-                this.f1288c.c();
-                this.m.f1300a.setOnFrameAvailableListener(this);
-                this.f1288c.a(this.m.f1300a);
-                this.f1288c.b();
+                this.f1240c.c();
+                this.m.f1252a.setOnFrameAvailableListener(this);
+                this.f1240c.a(this.m.f1252a);
+                this.f1240c.b();
                 q();
                 this.i.a();
                 return;
@@ -668,7 +668,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
         Camera.Size size3 = size;
         if (size == null) {
             if (!this.j.g()) {
-                this.j.a(a.a.a.a.a.e.d.f1359c);
+                this.j.a(a.a.a.a.a.e.d.f1311c);
             }
             Camera.Size a2 = a.a.a.a.a.b.f.a(parameters, this.j.getPrvSizeRatio(), this.j.getPrvSizeLevel());
             size3 = a2;
@@ -807,9 +807,9 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
 
     public final void a(ByteBuffer byteBuffer) {
         synchronized (this.d) {
-            if (this.P != null && this.f1288c != null) {
+            if (this.P != null && this.f1240c != null) {
                 long currentTimeMillis = System.currentTimeMillis();
-                Camera.Parameters d2 = this.f1288c.d();
+                Camera.Parameters d2 = this.f1240c.d();
                 if (d2 == null) {
                     this.P.onFrameCaptured(null);
                     return;
@@ -835,7 +835,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
                 return;
             }
             a.a.a.a.a.e.e eVar3 = a.a.a.a.a.e.e.g;
-            eVar3.e("CameraManager", "mCamera : " + this.f1288c + ", mFrameCapturedCallback : " + this.P);
+            eVar3.e("CameraManager", "mCamera : " + this.f1240c + ", mFrameCapturedCallback : " + this.P);
         }
     }
 
@@ -860,7 +860,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
             if (v()) {
                 this.S = true;
             } else {
-                this.f1288c.b(new d());
+                this.f1240c.b(new d());
             }
         }
     }
@@ -909,14 +909,14 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
         synchronized (this.d) {
             try {
                 b.d b2 = a.a.a.a.a.b.b.a().b(i2);
-                this.f1288c = b2;
+                this.f1240c = b2;
                 if (b2 == null) {
                     a.a.a.a.a.e.e.g.e("CameraManager", "Unable to open camera, id:" + i2);
                     this.W.a(i2);
                     return false;
                 }
                 this.u = false;
-                Camera.Parameters d2 = this.f1288c.d();
+                Camera.Parameters d2 = this.f1240c.d();
                 if (d2 == null) {
                     a.a.a.a.a.e.e.g.e("CameraManager", "camera released");
                     return false;
@@ -963,8 +963,8 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
                 }
                 a(d2);
                 d2.setPreviewSize(this.j.getCameraPreviewWidth(), this.j.getCameraPreviewHeight());
-                this.f1288c.a(d2);
-                Camera.Parameters d3 = this.f1288c.d();
+                this.f1240c.a(d2);
+                Camera.Parameters d3 = this.f1240c.d();
                 if (d3 != null) {
                     Camera.Size previewSize = d3.getPreviewSize();
                     if (previewSize.width * previewSize.height != this.j.getCameraPreviewWidth() * this.j.getCameraPreviewHeight()) {
@@ -990,7 +990,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
                 }
                 A();
                 a.a.a.a.a.e.e.g.c("CameraManager", "openCameraInternal onResume");
-                this.f1287a.onResume();
+                this.f1239a.onResume();
                 return true;
             } catch (Exception e2) {
                 e2.printStackTrace();
@@ -1005,7 +1005,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
             a.a.a.a.a.e.e.g.e("CameraManager", "Fatal error. No camera!");
             return false;
         }
-        this.f1287a.onPause();
+        this.f1239a.onPause();
         b(bVar);
         return true;
     }
@@ -1036,8 +1036,8 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
             if (this.N) {
                 this.W.b();
             }
-            this.f1287a.queueEvent(new RunnableC0007c());
-            this.f1287a.onPause();
+            this.f1239a.queueEvent(new RunnableC0007c());
+            this.f1239a.onPause();
             this.j.setCameraFacingId(camera_facing_id);
             this.v = true;
             this.x = false;
@@ -1081,7 +1081,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
         synchronized (this.d) {
             if (this.D != null) {
                 this.D.setZoom(i2);
-                this.f1288c.a(this.D);
+                this.f1240c.a(this.D);
             }
         }
     }
@@ -1090,9 +1090,9 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
         if (this.I) {
             String focusMode = parameters.getFocusMode();
             if (this.M == null || !("continuous-video".equals(focusMode) || "continuous-picture".equals(focusMode))) {
-                this.f1288c.a((Camera.AutoFocusMoveCallback) null);
+                this.f1240c.a((Camera.AutoFocusMoveCallback) null);
             } else {
-                this.f1288c.a((a.a.a.a.a.b.a) this.M);
+                this.f1240c.a((a.a.a.a.a.b.a) this.M);
             }
         }
     }
@@ -1120,8 +1120,8 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
         if (a.a.a.a.a.e.c.a().c()) {
             synchronized (this.d) {
                 if (this.t) {
-                    if (this.f1288c != null && this.r) {
-                        Camera.Parameters d2 = this.f1288c.d();
+                    if (this.f1240c != null && this.r) {
+                        Camera.Parameters d2 = this.f1240c.d();
                         if (d2 == null) {
                             a.a.a.a.a.e.e.g.e("CameraManager", "camera parameters is null");
                             return false;
@@ -1141,13 +1141,13 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
                                 d2.setFocusMode("continuous-video");
                             }
                             d2.setFlashMode("off");
-                            this.f1288c.a(d2);
+                            this.f1240c.a(d2);
                             this.t = false;
                         }
                         return true;
                     }
                     a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.g;
-                    eVar.e("CameraManager", "mCamera:" + this.f1288c + ",mIsPreviewReady=" + this.r);
+                    eVar.e("CameraManager", "mCamera:" + this.f1240c + ",mIsPreviewReady=" + this.r);
                     return false;
                 }
                 return false;
@@ -1159,8 +1159,8 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
     public boolean e() {
         if (a.a.a.a.a.e.c.a().c()) {
             synchronized (this.d) {
-                if (this.f1288c != null && this.r) {
-                    Camera.Parameters d2 = this.f1288c.d();
+                if (this.f1240c != null && this.r) {
+                    Camera.Parameters d2 = this.f1240c.d();
                     if (d2 == null) {
                         a.a.a.a.a.e.e.g.e("CameraManager", "parameters is null");
                         return false;
@@ -1179,13 +1179,13 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
                             d2.setFocusMode(Camera.Parameters.FOCUS_MODE_MACRO);
                         }
                         d2.setFlashMode("torch");
-                        this.f1288c.a(d2);
+                        this.f1240c.a(d2);
                         this.t = true;
                     }
                     return true;
                 }
                 a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.g;
-                eVar.e("CameraManager", "mCamera:" + this.f1288c + ",mIsPreviewReady:" + this.r + ", mIsLightOn:" + this.t);
+                eVar.e("CameraManager", "mCamera:" + this.f1240c + ",mIsPreviewReady:" + this.r + ", mIsLightOn:" + this.t);
                 return false;
             }
         }
@@ -1202,7 +1202,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
     }
 
     public int f() {
-        b.d dVar = this.f1288c;
+        b.d dVar = this.f1240c;
         if (dVar != null && this.r) {
             Camera.Parameters d2 = dVar.d();
             if (d2 == null) {
@@ -1212,12 +1212,12 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
             return d2.getMinExposureCompensation();
         }
         a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.g;
-        eVar.e("CameraManager", "mCamera:" + this.f1288c + ",mIsPreviewReady:" + this.r);
+        eVar.e("CameraManager", "mCamera:" + this.f1240c + ",mIsPreviewReady:" + this.r);
         return 0;
     }
 
     public int g() {
-        b.d dVar = this.f1288c;
+        b.d dVar = this.f1240c;
         if (dVar != null && this.r) {
             Camera.Parameters d2 = dVar.d();
             if (d2 == null) {
@@ -1227,7 +1227,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
             return d2.getMaxExposureCompensation();
         }
         a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.g;
-        eVar.e("CameraManager", "mCamera:" + this.f1288c + ",mIsPreviewReady:" + this.r);
+        eVar.e("CameraManager", "mCamera:" + this.f1240c + ",mIsPreviewReady:" + this.r);
         return 0;
     }
 
@@ -1256,8 +1256,8 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
             this.P.onFrameCaptured(null);
         }
         C();
-        this.f1287a.queueEvent(new e());
-        this.f1287a.onPause();
+        this.f1239a.queueEvent(new e());
+        this.f1239a.onPause();
     }
 
     public void l() {
@@ -1306,7 +1306,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
             a.a.a.a.a.e.e.g.e("CameraManager", "camera have been closed!!");
             return;
         }
-        this.f1287a.requestRender();
+        this.f1239a.requestRender();
         if (this.b.a()) {
             if (this.s) {
                 this.s = false;
@@ -1365,18 +1365,18 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
         if (!v()) {
             a.a.a.a.a.e.e.g.d("CameraManager", "no need addCallbackBuffer and uninstall the preview callback");
             synchronized (this.d) {
-                if (this.f1288c != null) {
-                    this.f1288c.a((Camera.PreviewCallback) null);
+                if (this.f1240c != null) {
+                    this.f1240c.a((Camera.PreviewCallback) null);
                 }
             }
             return;
         }
         synchronized (this.d) {
-            if (this.f1288c == null) {
+            if (this.f1240c == null) {
                 a.a.a.a.a.e.e.g.d("CameraManager", "mCamera is null in preparePreviewCallback");
                 return;
             }
-            Camera.Parameters d2 = this.f1288c.d();
+            Camera.Parameters d2 = this.f1240c.d();
             if (d2 == null) {
                 a.a.a.a.a.e.e.g.d("CameraManager", "params is null");
                 return;
@@ -1399,8 +1399,8 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
                     arrayList.add(new byte[i2]);
                     i3 = i4 + 1;
                 }
-                this.f1288c.a(this);
-                this.f1288c.a(arrayList);
+                this.f1240c.a(this);
+                this.f1240c.a(arrayList);
             } else {
                 this.W.f();
             }
@@ -1409,15 +1409,15 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
 
     @Override // a.a.a.a.a.b.g.a
     public void r() {
-        if (this.f1288c != null) {
+        if (this.f1240c != null) {
             this.K = System.currentTimeMillis();
-            this.f1288c.a(this.L);
+            this.f1240c.a(this.L);
         }
     }
 
     @Override // a.a.a.a.a.b.g.a
     public void s() {
-        b.d dVar = this.f1288c;
+        b.d dVar = this.f1240c;
         if (dVar != null) {
             dVar.e();
             G();
@@ -1430,7 +1430,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
     }
 
     public final void u() {
-        this.f1287a.setEGLContextClientVersion(2);
+        this.f1239a.setEGLContextClientVersion(2);
         this.b = new a.a.a.a.a.b.e(this.q);
         for (SurfaceTextureCallback surfaceTextureCallback : this.X) {
             this.b.a(surfaceTextureCallback);
@@ -1439,8 +1439,8 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
         this.b.a(this.p ? this.o : null);
         this.b.a(this.k);
         this.b.a(this.l);
-        this.f1287a.setRenderer(this.b);
-        this.f1287a.setRenderMode(0);
+        this.f1239a.setRenderer(this.b);
+        this.f1239a.setRenderMode(0);
     }
 
     public final boolean v() {
@@ -1496,7 +1496,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
 
     public final void z() {
         synchronized (this.d) {
-            if (this.f1288c == null) {
+            if (this.f1240c == null) {
                 a.a.a.a.a.e.e.g.d("CameraManager", "Camera have been closed");
                 return;
             }
@@ -1517,7 +1517,7 @@ public class c implements g.a, SurfaceTexture.OnFrameAvailableListener, Camera.P
                 this.q.removeMessages(2);
                 this.q.sendMessage(this.q.obtainMessage(2));
             }
-            this.f1287a.queueEvent(new f());
+            this.f1239a.queueEvent(new f());
         }
     }
 }

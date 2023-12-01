@@ -2,6 +2,7 @@ package com.bytedance.bdtracker;
 
 import android.content.Context;
 import android.media.TtmlUtils;
+import com.ss.android.download.api.constant.BaseConstants;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -19,7 +20,7 @@ public class r0 extends i0 {
     @Override // com.bytedance.bdtracker.i0
     public boolean a(JSONObject jSONObject) {
         n0.a(jSONObject, "language", this.e.getResources().getConfiguration().locale.getLanguage());
-        int rawOffset = TimeZone.getDefault().getRawOffset() / 3600000;
+        int rawOffset = TimeZone.getDefault().getRawOffset() / BaseConstants.Time.HOUR;
         int i = rawOffset;
         if (rawOffset < -12) {
             i = -12;

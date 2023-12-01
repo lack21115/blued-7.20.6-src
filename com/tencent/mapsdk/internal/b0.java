@@ -44,14 +44,14 @@ public class b0 implements h5, le {
         public final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f37301c;
+        public final /* synthetic */ String f23610c;
         public final /* synthetic */ LatLng d;
         public final /* synthetic */ String[] e;
         public final /* synthetic */ int f;
 
         public b(String str, String str2, LatLng latLng, String[] strArr, int i) {
             this.b = str;
-            this.f37301c = str2;
+            this.f23610c = str2;
             this.d = latLng;
             this.e = strArr;
             this.f = i;
@@ -59,7 +59,7 @@ public class b0 implements h5, le {
 
         @Override // java.lang.Runnable
         public void run() {
-            b0.this.a(this.b, this.f37301c, this.d, this.e, this.f);
+            b0.this.a(this.b, this.f23610c, this.d, this.e, this.f);
         }
     }
 
@@ -67,25 +67,25 @@ public class b0 implements h5, le {
     public static /* synthetic */ class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f37302a;
+        public static final /* synthetic */ int[] f23611a;
 
         static {
             d.values();
             int[] iArr = new int[3];
-            f37302a = iArr;
+            f23611a = iArr;
             try {
                 d dVar = d.SET_TRUE;
                 iArr[1] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f37302a;
+                int[] iArr2 = f23611a;
                 d dVar2 = d.IDLE;
                 iArr2[0] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f37302a;
+                int[] iArr3 = f23611a;
                 d dVar3 = d.SET_FALSE;
                 iArr3[2] = 3;
             } catch (NoSuchFieldError e3) {
@@ -411,7 +411,7 @@ public class b0 implements h5, le {
         if (b2 == null) {
             return;
         }
-        ca.b(new b(b2.f37399a, b2.b, new LatLng((geoPoint.getLatitudeE6() * 1.0d) / 1000000.0d, (geoPoint.getLongitudeE6() * 1.0d) / 1000000.0d), b2.d, b2.f37400c));
+        ca.b(new b(b2.f23708a, b2.b, new LatLng((geoPoint.getLatitudeE6() * 1.0d) / 1000000.0d, (geoPoint.getLongitudeE6() * 1.0d) / 1000000.0d), b2.d, b2.f23709c));
     }
 
     public String e() {

@@ -20,11 +20,11 @@ import com.heytap.msp.mobad.api.R;
 public class d extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.mobad.n.c.f f26679a;
+    private com.opos.mobad.n.c.f f12991a;
     private LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26680c;
+    private TextView f12992c;
     private FrameLayout d;
     private TextView e;
     private LinearLayout f;
@@ -52,11 +52,11 @@ public class d extends RelativeLayout {
 
     private void c() {
         com.opos.mobad.n.c.f fVar = new com.opos.mobad.n.c.f(getContext(), com.opos.cmn.an.h.f.a.a(getContext(), 14.0f));
-        this.f26679a = fVar;
+        this.f12991a = fVar;
         fVar.setId(View.generateViewId());
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(getContext(), 60.0f), com.opos.cmn.an.h.f.a.a(getContext(), 60.0f));
         layoutParams.addRule(this.l == 1 ? 14 : 15);
-        addView(this.f26679a, layoutParams);
+        addView(this.f12991a, layoutParams);
         e();
         d();
     }
@@ -75,22 +75,22 @@ public class d extends RelativeLayout {
         this.d.setBackground(gradientDrawable);
         RelativeLayout relativeLayout = new RelativeLayout(getContext());
         TextView textView2 = new TextView(getContext());
-        this.f26680c = textView2;
+        this.f12992c = textView2;
         textView2.setId(View.generateViewId());
-        this.f26680c.setTextColor(-1);
+        this.f12992c.setTextColor(-1);
         if (this.l == 1) {
-            textView = this.f26680c;
+            textView = this.f12992c;
             f = 14.0f;
         } else {
-            textView = this.f26680c;
+            textView = this.f12992c;
             f = 10.0f;
         }
         textView.setTextSize(1, f);
-        this.f26680c.setGravity(17);
-        this.f26680c.setSingleLine();
+        this.f12992c.setGravity(17);
+        this.f12992c.setSingleLine();
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams2.addRule(15);
-        relativeLayout.addView(this.f26680c, layoutParams2);
+        relativeLayout.addView(this.f12992c, layoutParams2);
         TextView textView3 = new TextView(getContext());
         this.j = textView3;
         textView3.setId(View.generateViewId());
@@ -105,7 +105,7 @@ public class d extends RelativeLayout {
             f2 = 1.62f;
         }
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(a2, a3);
-        layoutParams3.addRule(1, this.f26680c.getId());
+        layoutParams3.addRule(1, this.f12992c.getId());
         layoutParams3.leftMargin = com.opos.cmn.an.h.f.a.a(getContext(), f2);
         layoutParams3.addRule(15);
         relativeLayout.addView(this.j, layoutParams3);
@@ -176,12 +176,12 @@ public class d extends RelativeLayout {
         if (this.l == 1) {
             layoutParams3.addRule(14);
             layoutParams3.topMargin = com.opos.cmn.an.h.f.a.a(getContext(), 4.0f);
-            layoutParams3.addRule(3, this.f26679a.getId());
+            layoutParams3.addRule(3, this.f12991a.getId());
             layoutParams3.bottomMargin = com.opos.cmn.an.h.f.a.a(getContext(), 24.0f);
         } else {
             layoutParams3.addRule(15);
             layoutParams3.leftMargin = com.opos.cmn.an.h.f.a.a(getContext(), 8.0f);
-            layoutParams3.addRule(1, this.f26679a.getId());
+            layoutParams3.addRule(1, this.f12991a.getId());
         }
         addView(this.b, layoutParams3);
     }
@@ -251,7 +251,7 @@ public class d extends RelativeLayout {
         if (bitmap == null) {
             return;
         }
-        this.f26679a.setImageBitmap(bitmap);
+        this.f12991a.setImageBitmap(bitmap);
     }
 
     public void a(com.opos.mobad.n.c.g gVar) {
@@ -279,10 +279,10 @@ public class d extends RelativeLayout {
             this.i.setText(str4);
             this.h.setText(str3);
         }
-        this.f26680c.setText(str5);
+        this.f12992c.setText(str5);
     }
 
     public void b() {
-        this.f26679a.setVisibility(8);
+        this.f12991a.setVisibility(8);
     }
 }

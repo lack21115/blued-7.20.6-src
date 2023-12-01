@@ -43,7 +43,7 @@ public abstract class z extends com.vivo.push.l {
                     return true;
                 }
                 com.vivo.push.util.p.d("OnVerifyCallBackCommand", "vertify fail srcDigest is ".concat(String.valueOf(str)));
-                com.vivo.push.util.p.c(this.f41105a, "vertify fail srcDigest is ".concat(String.valueOf(str)));
+                com.vivo.push.util.p.c(this.f27414a, "vertify fail srcDigest is ".concat(String.valueOf(str)));
                 return false;
             } catch (Exception e) {
                 e.printStackTrace();
@@ -56,7 +56,7 @@ public abstract class z extends com.vivo.push.l {
 
     public final int b() {
         if (Build.VERSION.SDK_INT >= 24) {
-            NotificationManager notificationManager = (NotificationManager) this.f41105a.getSystemService("notification");
+            NotificationManager notificationManager = (NotificationManager) this.f27414a.getSystemService("notification");
             if (notificationManager == null || notificationManager.areNotificationsEnabled()) {
                 if (Build.VERSION.SDK_INT < 26 || notificationManager == null) {
                     return 0;

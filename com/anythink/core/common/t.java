@@ -11,13 +11,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/t.class */
 public class t {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6919a = t.class.getSimpleName();
+    public static final String a = t.class.getSimpleName();
     private static volatile t b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Map<String, com.anythink.core.common.e.w> f6920c;
+    private Map<String, com.anythink.core.common.e.w> c;
     private List<com.anythink.core.common.e.w> d;
     private final int f = 5;
     private final int g = 500;
@@ -45,7 +41,7 @@ public class t {
     public void a(com.anythink.core.common.e.w wVar) {
         synchronized (this) {
             new StringBuilder("delete: ").append(wVar.a());
-            this.f6920c.remove(wVar.f6680a);
+            this.c.remove(wVar.a);
             this.d.remove(wVar);
             com.anythink.core.common.c.i.a(com.anythink.core.common.c.c.a(com.anythink.core.common.b.n.a().g())).b(wVar);
         }
@@ -55,14 +51,14 @@ public class t {
         synchronized (this) {
             if (System.currentTimeMillis() > wVar.f) {
                 new StringBuilder("resendNoticeUrl: do nothing because offer is out date: ").append(wVar.a());
-                this.e.remove(wVar.f6680a);
+                this.e.remove(wVar.a);
                 if (z) {
                     a(wVar);
                 }
-            } else if (this.e.contains(wVar.f6680a)) {
+            } else if (this.e.contains(wVar.a)) {
                 new StringBuilder("resendNoticeUrl: do nothing because it is loading... ").append(wVar.a());
             } else {
-                this.e.add(wVar.f6680a);
+                this.e.add(wVar.a);
                 if (z) {
                     wVar.g++;
                     if (wVar.g >= 5) {
@@ -75,7 +71,7 @@ public class t {
                     wVar.g++;
                     if (wVar.g >= 5) {
                         new StringBuilder("resendNoticeUrl: The number of retries is greater than or equal to the maximum number of retries, start deleting and continue: ").append(wVar.a());
-                        this.e.remove(wVar.f6680a);
+                        this.e.remove(wVar.a);
                         return;
                     }
                 }
@@ -84,16 +80,16 @@ public class t {
                     @Override // com.anythink.core.common.g.i
                     public final void onLoadCanceled(int i) {
                         synchronized (t.this) {
-                            t.this.e.remove(wVar.f6680a);
+                            t.this.e.remove(wVar.a);
                         }
                     }
 
                     @Override // com.anythink.core.common.g.i
                     public final void onLoadError(int i, String str, AdError adError) {
-                        String str2 = t.f6919a;
+                        String str2 = t.a;
                         new StringBuilder("resendNoticeUrl:  send notice failed: ").append(wVar.a());
                         synchronized (t.this) {
-                            t.this.e.remove(wVar.f6680a);
+                            t.this.e.remove(wVar.a);
                             if (!z) {
                                 t.this.b(wVar);
                             }
@@ -102,10 +98,10 @@ public class t {
 
                     @Override // com.anythink.core.common.g.i
                     public final void onLoadFinish(int i, Object obj) {
-                        String str = t.f6919a;
+                        String str = t.a;
                         new StringBuilder("resendNoticeUrl:  send notice success: ").append(wVar.a());
                         synchronized (t.this) {
-                            t.this.e.remove(wVar.f6680a);
+                            t.this.e.remove(wVar.a);
                             if (z) {
                                 t.this.a(wVar);
                             }
@@ -124,9 +120,9 @@ public class t {
         boolean z;
         boolean z2 = true;
         switch (i) {
-            case -1003:
-            case -1002:
-            case -1001:
+            case com.anythink.core.common.g.g.d /* -1003 */:
+            case com.anythink.core.common.g.g.c /* -1002 */:
+            case com.anythink.core.common.g.g.b /* -1001 */:
             case -1000:
                 z = true;
                 break;
@@ -149,10 +145,10 @@ public class t {
     /* JADX INFO: Access modifiers changed from: private */
     public void b(com.anythink.core.common.e.w wVar) {
         synchronized (this) {
-            if (TextUtils.isEmpty(wVar.f6680a)) {
+            if (TextUtils.isEmpty(wVar.a)) {
                 wVar.e = System.currentTimeMillis();
-                wVar.f6680a = com.anythink.core.common.k.f.a(wVar.d + wVar.e);
-                this.f6920c.put(wVar.f6680a, wVar);
+                wVar.a = com.anythink.core.common.k.f.a(wVar.d + wVar.e);
+                this.c.put(wVar.a, wVar);
                 this.d.add(wVar);
             }
             new StringBuilder("insertOrUpdate: ").append(wVar.a());
@@ -160,7 +156,7 @@ public class t {
             if (this.d.size() > 500) {
                 com.anythink.core.common.e.w wVar2 = this.d.get(0);
                 new StringBuilder("insertOrUpdate,  exceeded the maximum number of records, start to delete: ").append(wVar.a());
-                this.e.remove(wVar.f6680a);
+                this.e.remove(wVar.a);
                 a(wVar2);
             }
         }
@@ -169,13 +165,13 @@ public class t {
     private void c() {
         synchronized (this) {
             try {
-                if (this.f6920c == null && this.d == null) {
-                    i.a c2 = com.anythink.core.common.c.i.a(com.anythink.core.common.c.c.a(com.anythink.core.common.b.n.a().g())).c();
-                    this.f6920c = c2.b;
-                    this.d = c2.f6588a;
+                if (this.c == null && this.d == null) {
+                    i.a c = com.anythink.core.common.c.i.a(com.anythink.core.common.c.c.a(com.anythink.core.common.b.n.a().g())).c();
+                    this.c = c.b;
+                    this.d = c.a;
                 }
-                if (this.f6920c == null) {
-                    this.f6920c = new ConcurrentHashMap();
+                if (this.c == null) {
+                    this.c = new ConcurrentHashMap();
                 }
                 if (this.d == null) {
                     this.d = Collections.synchronizedList(new ArrayList());
@@ -189,7 +185,7 @@ public class t {
             com.anythink.core.common.e.w wVar = new com.anythink.core.common.e.w();
             wVar.b = 2;
             wVar.d = str;
-            wVar.f6681c = str2;
+            wVar.c = str2;
             wVar.f = j;
             new StringBuilder("reSendNow: ").append(wVar.a());
             a(wVar, false);

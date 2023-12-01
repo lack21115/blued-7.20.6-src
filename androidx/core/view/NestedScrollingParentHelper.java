@@ -7,14 +7,14 @@ import android.view.ViewGroup;
 public class NestedScrollingParentHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f2651a;
+    private int f2603a;
     private int b;
 
     public NestedScrollingParentHelper(ViewGroup viewGroup) {
     }
 
     public int getNestedScrollAxes() {
-        return this.f2651a | this.b;
+        return this.f2603a | this.b;
     }
 
     public void onNestedScrollAccepted(View view, View view2, int i) {
@@ -25,7 +25,7 @@ public class NestedScrollingParentHelper {
         if (i2 == 1) {
             this.b = i;
         } else {
-            this.f2651a = i;
+            this.f2603a = i;
         }
     }
 
@@ -37,7 +37,7 @@ public class NestedScrollingParentHelper {
         if (i == 1) {
             this.b = 0;
         } else {
-            this.f2651a = 0;
+            this.f2603a = 0;
         }
     }
 }

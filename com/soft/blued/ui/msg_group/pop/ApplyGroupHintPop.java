@@ -2,6 +2,7 @@ package com.soft.blued.ui.msg_group.pop;
 
 import android.content.Context;
 import android.view.View;
+import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.core.CenterPopupView;
 import com.blued.android.module.common.extensions.CustomViewBindingProperty;
 import com.blued.android.module.common.extensions.ViewBindingProperty;
@@ -20,50 +21,49 @@ import kotlin.reflect.KProperty;
 public final class ApplyGroupHintPop extends CenterPopupView {
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f32793c = {Reflection.a(new PropertyReference1Impl(ApplyGroupHintPop.class, "vb", "getVb()Lcom/soft/blued/databinding/PopGroupCreateHintBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f19102c = {(KProperty) Reflection.a(new PropertyReference1Impl(ApplyGroupHintPop.class, "vb", "getVb()Lcom/soft/blued/databinding/PopGroupCreateHintBinding;", 0))};
     private final View.OnClickListener d;
     private final View.OnClickListener e;
     private final ViewBindingProperty f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ApplyGroupHintPop(Context context, View.OnClickListener onPositiveClickListener, View.OnClickListener onNegativeClickListener) {
+    public ApplyGroupHintPop(Context context, View.OnClickListener onClickListener, View.OnClickListener onClickListener2) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(onPositiveClickListener, "onPositiveClickListener");
-        Intrinsics.e(onNegativeClickListener, "onNegativeClickListener");
-        this.d = onPositiveClickListener;
-        this.e = onNegativeClickListener;
+        Intrinsics.e(onClickListener, "onPositiveClickListener");
+        Intrinsics.e(onClickListener2, "onNegativeClickListener");
+        this.d = onClickListener;
+        this.e = onClickListener2;
+        BasePopupView basePopupView = (BasePopupView) this;
         this.f = new CustomViewBindingProperty(new Function1<ApplyGroupHintPop, PopGroupCreateHintBinding>() { // from class: com.soft.blued.ui.msg_group.pop.ApplyGroupHintPop$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
-            public final PopGroupCreateHintBinding invoke(ApplyGroupHintPop popView) {
-                Intrinsics.e(popView, "popView");
-                return PopGroupCreateHintBinding.a(popView.getPopupImplView());
+            public final PopGroupCreateHintBinding invoke(ApplyGroupHintPop applyGroupHintPop) {
+                Intrinsics.e(applyGroupHintPop, "popView");
+                return PopGroupCreateHintBinding.a(applyGroupHintPop.getPopupImplView());
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ApplyGroupHintPop this$0, View view) {
+    public static final void a(ApplyGroupHintPop applyGroupHintPop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
-        this$0.d.onClick(view);
+        Intrinsics.e(applyGroupHintPop, "this$0");
+        applyGroupHintPop.p();
+        applyGroupHintPop.d.onClick(view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(ApplyGroupHintPop this$0, View view) {
+    public static final void b(ApplyGroupHintPop applyGroupHintPop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
-        this$0.e.onClick(view);
+        Intrinsics.e(applyGroupHintPop, "this$0");
+        applyGroupHintPop.p();
+        applyGroupHintPop.e.onClick(view);
     }
 
     private final PopGroupCreateHintBinding getVb() {
-        return (PopGroupCreateHintBinding) this.f.b(this, f32793c[0]);
+        return (PopGroupCreateHintBinding) this.f.b(this, f19102c[0]);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         PopGroupCreateHintBinding vb = getVb();
@@ -84,7 +84,6 @@ public final class ApplyGroupHintPop extends CenterPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_group_apply_hint;
     }

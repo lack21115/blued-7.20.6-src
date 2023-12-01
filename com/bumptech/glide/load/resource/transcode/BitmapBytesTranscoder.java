@@ -10,7 +10,7 @@ import java.io.ByteArrayOutputStream;
 public class BitmapBytesTranscoder implements ResourceTranscoder<Bitmap, byte[]> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Bitmap.CompressFormat f21003a;
+    private final Bitmap.CompressFormat f7397a;
     private final int b;
 
     public BitmapBytesTranscoder() {
@@ -18,14 +18,14 @@ public class BitmapBytesTranscoder implements ResourceTranscoder<Bitmap, byte[]>
     }
 
     public BitmapBytesTranscoder(Bitmap.CompressFormat compressFormat, int i) {
-        this.f21003a = compressFormat;
+        this.f7397a = compressFormat;
         this.b = i;
     }
 
     @Override // com.bumptech.glide.load.resource.transcode.ResourceTranscoder
     public Resource<byte[]> a(Resource<Bitmap> resource, Options options) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        resource.f().compress(this.f21003a, this.b, byteArrayOutputStream);
+        resource.f().compress(this.f7397a, this.b, byteArrayOutputStream);
         resource.c();
         return new BytesResource(byteArrayOutputStream.toByteArray());
     }

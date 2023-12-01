@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.model;
 
+import $r8;
 import kotlin.Metadata;
 
 @Metadata
@@ -38,7 +39,7 @@ public final class YYTrueLovePackGiftMode {
     }
 
     public int hashCode() {
-        return C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.round_end_time);
+        return $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.round_end_time);
     }
 
     public String toString() {

@@ -2,13 +2,9 @@ package skin.support.collection;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/collection/ContainerHelpers.class */
 class ContainerHelpers {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final int[] f44206a = new int[0];
+    static final int[] a = new int[0];
     static final long[] b = new long[0];
-
-    /* renamed from: c  reason: collision with root package name */
-    static final Object[] f44207c = new Object[0];
+    static final Object[] c = new Object[0];
 
     private ContainerHelpers() {
     }

@@ -66,16 +66,16 @@ public class WishingWellBubbleView extends AttachPopupView {
         if (this.l == null || this.x == null) {
             return;
         }
-        View a2 = this.l.a();
+        View a = this.l.a();
         View popupContentView = getPopupContentView();
-        if (a2 == null || popupContentView == null) {
+        if (a == null || popupContentView == null) {
             return;
         }
         int width = popupContentView.getWidth();
         int[] iArr = new int[2];
-        a2.getLocationOnScreen(iArr);
+        a.getLocationOnScreen(iArr);
         int i = 0;
-        int width2 = ((iArr[0] + (a2.getWidth() / 2)) - (popupContentView.getWidth() / 2)) + width;
+        int width2 = ((iArr[0] + (a.getWidth() / 2)) - (popupContentView.getWidth() / 2)) + width;
         if (width2 > AppInfo.l) {
             i = AppInfo.l - width2;
         }

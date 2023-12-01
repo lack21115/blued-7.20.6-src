@@ -1,10 +1,10 @@
 package java.util;
 
-import com.igexin.push.config.c;
-import com.sobot.chat.camera.StCameraView;
+import com.android.ims.ImsReasonInfo;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.HttpURLConnection;
 
 /* loaded from: source-2895416-dex2jar.jar:java/util/GregorianCalendar.class */
 public class GregorianCalendar extends Calendar {
@@ -18,10 +18,10 @@ public class GregorianCalendar extends Calendar {
     private transient int julianSkew;
     private int lastYearSkew;
     static byte[] DaysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    private static int[] DaysInYear = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
-    private static int[] maximums = {1, 292278994, 11, 53, 6, 31, 366, 7, 6, 1, 11, 23, 59, 59, 999, 50400000, c.L};
+    private static int[] DaysInYear = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, ImsReasonInfo.CODE_SIP_NOT_SUPPORTED};
+    private static int[] maximums = {1, 292278994, 11, 53, 6, 31, 366, 7, 6, 1, 11, 23, 59, 59, 999, 50400000, 7200000};
     private static int[] minimums = {0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, -46800000, 0};
-    private static int[] leastMaximums = {1, 292269054, 11, 50, 3, 28, 355, 7, 3, 1, 11, 23, 59, 59, 999, 50400000, StCameraView.MEDIA_QUALITY_LOW};
+    private static int[] leastMaximums = {1, 292269054, 11, 50, 3, 28, ImsReasonInfo.CODE_SIP_SERVER_TIMEOUT, 7, 3, 1, 11, 23, 59, 59, 999, 50400000, 1200000};
 
     public GregorianCalendar() {
         this(TimeZone.getDefault(), Locale.getDefault());
@@ -31,7 +31,7 @@ public class GregorianCalendar extends Calendar {
         super(TimeZone.getDefault(), Locale.getDefault());
         this.gregorianCutover = defaultGregorianCutover;
         this.changeYear = 1582;
-        this.julianSkew = (((this.changeYear - 2000) / 400) + julianError()) - ((this.changeYear - 2000) / 100);
+        this.julianSkew = (((this.changeYear - 2000) / HttpURLConnection.HTTP_BAD_REQUEST) + julianError()) - ((this.changeYear - 2000) / 100);
         this.currentYearSkew = 10;
         this.lastYearSkew = 0;
         set(i, i2, i3);
@@ -41,7 +41,7 @@ public class GregorianCalendar extends Calendar {
         super(TimeZone.getDefault(), Locale.getDefault());
         this.gregorianCutover = defaultGregorianCutover;
         this.changeYear = 1582;
-        this.julianSkew = (((this.changeYear - 2000) / 400) + julianError()) - ((this.changeYear - 2000) / 100);
+        this.julianSkew = (((this.changeYear - 2000) / HttpURLConnection.HTTP_BAD_REQUEST) + julianError()) - ((this.changeYear - 2000) / 100);
         this.currentYearSkew = 10;
         this.lastYearSkew = 0;
         set(i, i2, i3, i4, i5);
@@ -51,7 +51,7 @@ public class GregorianCalendar extends Calendar {
         super(TimeZone.getDefault(), Locale.getDefault());
         this.gregorianCutover = defaultGregorianCutover;
         this.changeYear = 1582;
-        this.julianSkew = (((this.changeYear - 2000) / 400) + julianError()) - ((this.changeYear - 2000) / 100);
+        this.julianSkew = (((this.changeYear - 2000) / HttpURLConnection.HTTP_BAD_REQUEST) + julianError()) - ((this.changeYear - 2000) / 100);
         this.currentYearSkew = 10;
         this.lastYearSkew = 0;
         set(i, i2, i3, i4, i5, i6);
@@ -75,7 +75,7 @@ public class GregorianCalendar extends Calendar {
         super(timeZone, locale);
         this.gregorianCutover = defaultGregorianCutover;
         this.changeYear = 1582;
-        this.julianSkew = (((this.changeYear - 2000) / 400) + julianError()) - ((this.changeYear - 2000) / 100);
+        this.julianSkew = (((this.changeYear - 2000) / HttpURLConnection.HTTP_BAD_REQUEST) + julianError()) - ((this.changeYear - 2000) / 100);
         this.currentYearSkew = 10;
         this.lastYearSkew = 0;
         setTimeInMillis(System.currentTimeMillis());
@@ -85,7 +85,7 @@ public class GregorianCalendar extends Calendar {
         super(TimeZone.getDefault());
         this.gregorianCutover = defaultGregorianCutover;
         this.changeYear = 1582;
-        this.julianSkew = (((this.changeYear - 2000) / 400) + julianError()) - ((this.changeYear - 2000) / 100);
+        this.julianSkew = (((this.changeYear - 2000) / HttpURLConnection.HTTP_BAD_REQUEST) + julianError()) - ((this.changeYear - 2000) / 100);
         this.currentYearSkew = 10;
         this.lastYearSkew = 0;
         setFirstDayOfWeek(1);
@@ -160,7 +160,7 @@ public class GregorianCalendar extends Calendar {
         int i4 = i3;
         long j4 = j3;
         if (i3 < 0) {
-            i4 = i3 + 86400000;
+            i4 = i3 + Grego.MILLIS_PER_DAY;
             j4 = j3 - 1;
         }
         int i5 = i4 + this.fields[15];
@@ -172,11 +172,11 @@ public class GregorianCalendar extends Calendar {
             if (i5 >= 0) {
                 break;
             }
-            i5 += 86400000;
+            i5 += Grego.MILLIS_PER_DAY;
             j5 = j6 - 1;
         }
         while (i >= 86400000) {
-            i -= 86400000;
+            i -= Grego.MILLIS_PER_DAY;
             j++;
         }
         int computeYearAndDay = computeYearAndDay(j, this.time + this.fields[15]);
@@ -212,13 +212,13 @@ public class GregorianCalendar extends Calendar {
         if (i10 != 0) {
             int i14 = i + i10;
             if (i14 < 0) {
-                i2 = i14 + 86400000;
+                i2 = i14 + Grego.MILLIS_PER_DAY;
                 j2 = j - 1;
             } else {
                 i2 = i14;
                 j2 = j;
                 if (i14 >= 86400000) {
-                    i2 = i14 - 86400000;
+                    i2 = i14 - Grego.MILLIS_PER_DAY;
                     j2 = j + 1;
                 }
             }
@@ -296,7 +296,7 @@ public class GregorianCalendar extends Calendar {
         int i2 = i;
         long j3 = j2;
         if (i < 0) {
-            i2 = i + 86400000;
+            i2 = i + Grego.MILLIS_PER_DAY;
             j3 = j2 - 1;
         }
         long j4 = j3;
@@ -347,7 +347,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     private int julianError() {
-        return ((this.changeYear / 100) - (this.changeYear / 400)) - 2;
+        return ((this.changeYear / 100) - (this.changeYear / HttpURLConnection.HTTP_BAD_REQUEST)) - 2;
     }
 
     private int mod(int i, int i2) {
@@ -651,7 +651,7 @@ public class GregorianCalendar extends Calendar {
         if (i <= this.changeYear) {
             return i % 4 == 0;
         } else if (i % 4 == 0) {
-            return i % 100 != 0 || i % 400 == 0;
+            return i % 100 != 0 || i % HttpURLConnection.HTTP_BAD_REQUEST == 0;
         } else {
             return false;
         }
@@ -789,7 +789,7 @@ public class GregorianCalendar extends Calendar {
         if (gregorianCalendar.get(0) == 0) {
             this.changeYear = 1 - this.changeYear;
         }
-        this.julianSkew = (((this.changeYear - 2000) / 400) + julianError()) - ((this.changeYear - 2000) / 100);
+        this.julianSkew = (((this.changeYear - 2000) / HttpURLConnection.HTTP_BAD_REQUEST) + julianError()) - ((this.changeYear - 2000) / 100);
         int i = gregorianCalendar.get(6);
         if (i < this.julianSkew) {
             this.currentYearSkew = i - 1;

@@ -22,13 +22,9 @@ import com.blued.android.module.live_china.utils.LiveRoomPreferences;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveRecordStickerViewLayout.class */
 public class LiveRecordStickerViewLayout extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewDragHelper f14914a;
+    private ViewDragHelper a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f14915c;
+    private View c;
     private View d;
     private Context e;
     private int f;
@@ -42,45 +38,39 @@ public class LiveRecordStickerViewLayout extends FrameLayout {
     public LiveRecordStickerViewLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.j = new ViewDragHelper.Callback() { // from class: com.blued.android.module.live_china.view.LiveRecordStickerViewLayout.1
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int clampViewPositionHorizontal(View view, int i, int i2) {
                 int paddingLeft = LiveRecordStickerViewLayout.this.getPaddingLeft();
                 return Math.min(Math.max(i, paddingLeft), (LiveRecordStickerViewLayout.this.getWidth() - view.getWidth()) - paddingLeft);
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int clampViewPositionVertical(View view, int i, int i2) {
                 int paddingTop = LiveRecordStickerViewLayout.this.getPaddingTop();
                 return Math.min(Math.max(i, paddingTop), (LiveRecordStickerViewLayout.this.getHeight() - view.getHeight()) - paddingTop);
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int getViewHorizontalDragRange(View view) {
                 return LiveRecordStickerViewLayout.this.getMeasuredWidth() - view.getMeasuredWidth();
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int getViewVerticalDragRange(View view) {
                 return LiveRecordStickerViewLayout.this.getMeasuredHeight() - view.getMeasuredHeight();
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewCaptured(View view, int i) {
                 super.onViewCaptured(view, i);
                 LiveRecordStickerViewLayout.this.f = view.getLeft();
                 LiveRecordStickerViewLayout.this.g = view.getTop();
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewDragStateChanged(int i) {
                 super.onViewDragStateChanged(i);
                 if (i == 0) {
-                    LiveRecordStickerViewLayout.this.f14915c.setVisibility(4);
+                    LiveRecordStickerViewLayout.this.c.setVisibility(4);
                     LiveRecordStickerViewLayout.this.h.setVisibility(4);
                     LiveRecordStickerViewLayout.this.i.setVisibility(4);
                     LiveRecordStickerViewLayout.this.k.cL.setBackgroundColor(LiveRecordStickerViewLayout.this.e.getResources().getColor(R.color.transparent));
                 } else if (i == 1) {
-                    LiveRecordStickerViewLayout.this.f14915c.setVisibility(0);
+                    LiveRecordStickerViewLayout.this.c.setVisibility(0);
                     LiveRecordStickerViewLayout.this.h.setVisibility(0);
                     LiveRecordStickerViewLayout.this.i.setVisibility(0);
                     LiveRecordStickerViewLayout.this.k.cL.setBackgroundColor(LiveRecordStickerViewLayout.this.e.getResources().getColor(R.color.color_4c000000));
@@ -88,12 +78,10 @@ public class LiveRecordStickerViewLayout extends FrameLayout {
                 Log.v("pk", "onViewDragStateChanged state:" + i);
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewPositionChanged(View view, int i, int i2, int i3, int i4) {
                 super.onViewPositionChanged(view, i, i2, i3, i4);
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewReleased(View view, float f, float f2) {
                 super.onViewReleased(view, f, f2);
                 int left = view.getLeft();
@@ -102,8 +90,8 @@ public class LiveRecordStickerViewLayout extends FrameLayout {
                 int bottom = view.getBottom();
                 Log.v("drb", "onViewReleased stickerLeft:" + left + " -- stickerTop:" + top);
                 LiveRecordStickerViewLayout liveRecordStickerViewLayout = LiveRecordStickerViewLayout.this;
-                if (liveRecordStickerViewLayout.a(liveRecordStickerViewLayout.f14915c, left, bottom)) {
-                    LiveRecordStickerViewLayout.this.f14915c.setVisibility(4);
+                if (liveRecordStickerViewLayout.a(liveRecordStickerViewLayout.c, left, bottom)) {
+                    LiveRecordStickerViewLayout.this.c.setVisibility(4);
                     LiveRecordStickerViewLayout.this.b.setVisibility(8);
                     LiveRecordStickerViewLayout.this.b.startAnimation(AnimationUtils.loadAnimation(LiveRecordStickerViewLayout.this.e, R.anim.push_center_out));
                     LiveRecordStickerViewLayout.this.b();
@@ -112,13 +100,13 @@ public class LiveRecordStickerViewLayout extends FrameLayout {
                 }
                 LiveRecordStickerViewLayout liveRecordStickerViewLayout2 = LiveRecordStickerViewLayout.this;
                 if (liveRecordStickerViewLayout2.a(liveRecordStickerViewLayout2.h, left, top)) {
-                    LiveRecordStickerViewLayout.this.f14914a.settleCapturedViewAt(LiveRecordStickerViewLayout.this.f, LiveRecordStickerViewLayout.this.g);
+                    LiveRecordStickerViewLayout.this.a.settleCapturedViewAt(LiveRecordStickerViewLayout.this.f, LiveRecordStickerViewLayout.this.g);
                     LiveRecordStickerViewLayout.this.invalidate();
                     return;
                 }
                 LiveRecordStickerViewLayout liveRecordStickerViewLayout3 = LiveRecordStickerViewLayout.this;
                 if (liveRecordStickerViewLayout3.a(liveRecordStickerViewLayout3.i, right, top)) {
-                    LiveRecordStickerViewLayout.this.f14914a.settleCapturedViewAt(LiveRecordStickerViewLayout.this.f, LiveRecordStickerViewLayout.this.g);
+                    LiveRecordStickerViewLayout.this.a.settleCapturedViewAt(LiveRecordStickerViewLayout.this.f, LiveRecordStickerViewLayout.this.g);
                     LiveRecordStickerViewLayout.this.invalidate();
                     return;
                 }
@@ -126,7 +114,6 @@ public class LiveRecordStickerViewLayout extends FrameLayout {
                 liveRecordStickerViewLayout4.a(left, top, liveRecordStickerViewLayout4.l);
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public boolean tryCaptureView(View view, int i) {
                 return view == LiveRecordStickerViewLayout.this.b;
             }
@@ -136,7 +123,7 @@ public class LiveRecordStickerViewLayout extends FrameLayout {
     }
 
     private void a() {
-        this.f14914a = ViewDragHelper.create(this, 1.0f, this.j);
+        this.a = ViewDragHelper.create(this, 1.0f, this.j);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -237,7 +224,7 @@ public class LiveRecordStickerViewLayout extends FrameLayout {
     @Override // android.view.View
     public void computeScroll() {
         super.computeScroll();
-        if (this.f14914a.continueSettling(true)) {
+        if (this.a.continueSettling(true)) {
             invalidate();
         }
     }
@@ -247,7 +234,7 @@ public class LiveRecordStickerViewLayout extends FrameLayout {
     public void onFinishInflate() {
         super.onFinishInflate();
         this.b = (ImageView) findViewById(R.id.live_record_sticker_image);
-        this.f14915c = findViewById(R.id.live_record_sticker_remove_layout);
+        this.c = findViewById(R.id.live_record_sticker_remove_layout);
         this.d = findViewById(R.id.live_record_sticker_remove_btn);
         this.h = findViewById(R.id.live_record_domain1);
         this.i = findViewById(R.id.live_record_domain2);
@@ -255,7 +242,7 @@ public class LiveRecordStickerViewLayout extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return this.f14914a.shouldInterceptTouchEvent(motionEvent);
+        return this.a.shouldInterceptTouchEvent(motionEvent);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -274,7 +261,7 @@ public class LiveRecordStickerViewLayout extends FrameLayout {
     public boolean onTouchEvent(MotionEvent motionEvent) {
         int rawX = (int) motionEvent.getRawX();
         int rawY = (int) motionEvent.getRawY();
-        this.f14914a.processTouchEvent(motionEvent);
+        this.a.processTouchEvent(motionEvent);
         return a(this.b, rawX, rawY);
     }
 }

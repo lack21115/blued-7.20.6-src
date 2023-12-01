@@ -1,5 +1,6 @@
 package com.sobot.chat.viewHolder;
 
+import android.R;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
@@ -9,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.blued.android.chat.data.MsgType;
 import com.sobot.chat.activity.WebViewActivity;
 import com.sobot.chat.api.model.SobotMultiDiaRespInfo;
 import com.sobot.chat.api.model.ZhiChiMessageBase;
@@ -105,7 +105,7 @@ public class RobotTemplateMessageHolder1 extends MessageHolderBase {
             }
             checkShowTransferBtn();
             List<Map<String, String>> interfaceRetList = multiDiaRespInfo.getInterfaceRetList();
-            if (!MsgType.UID_GROUP_AT_ALL.equals(multiDiaRespInfo.getRetCode()) || interfaceRetList == null || interfaceRetList.size() <= 0) {
+            if (!"000000".equals(multiDiaRespInfo.getRetCode()) || interfaceRetList == null || interfaceRetList.size() <= 0) {
                 this.pageView.setVisibility(8);
             } else {
                 this.pageView.setVisibility(0);
@@ -144,7 +144,7 @@ public class RobotTemplateMessageHolder1 extends MessageHolderBase {
         if (this.pageBuilder != null) {
             return;
         }
-        this.pageBuilder = new PageBuilder.Builder().setGrid(i, i2).setPageMargin(0).setIndicatorMargins(5, 10, 5, 10).setIndicatorSize(10).setIndicatorRes(17301609, 17301611).setIndicatorGravity(17).setSwipePercent(40).setShowIndicator(true).setSpace(5).setItemHeight(ScreenUtils.dip2px(this.mContext, 125.0f)).build();
+        this.pageBuilder = new PageBuilder.Builder().setGrid(i, i2).setPageMargin(0).setIndicatorMargins(5, 10, 5, 10).setIndicatorSize(10).setIndicatorRes(R.drawable.presence_invisible, R.drawable.presence_online).setIndicatorGravity(17).setSwipePercent(40).setShowIndicator(true).setSpace(5).setItemHeight(ScreenUtils.dip2px(this.mContext, 125.0f)).build();
         this.adapter = new PageGridAdapter(new PageCallBack() { // from class: com.sobot.chat.viewHolder.RobotTemplateMessageHolder1.1
             @Override // com.sobot.chat.widget.horizontalgridpage.PageCallBack
             public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i3) {

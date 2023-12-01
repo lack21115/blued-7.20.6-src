@@ -19,13 +19,9 @@ import com.blued.android.module.svgaplayer.SVGAPlayer;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PKDoubleAnimView.class */
 public class PKDoubleAnimView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f14985a;
+    public static int a;
     long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    long f14986c;
+    long c;
     Runnable d;
     ScaleAnimation e;
     private SVGAImageView f;
@@ -42,7 +38,7 @@ public class PKDoubleAnimView extends FrameLayout {
     public PKDoubleAnimView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = 0L;
-        this.f14986c = 0L;
+        this.c = 0L;
         this.d = new Runnable() { // from class: com.blued.android.module.live_china.view.PKDoubleAnimView.2
             @Override // java.lang.Runnable
             public void run() {
@@ -50,7 +46,7 @@ public class PKDoubleAnimView extends FrameLayout {
                     PKDoubleAnimView.this.a();
                     return;
                 }
-                int i = (int) (((((float) PKDoubleAnimView.this.b) * 1.0f) / ((float) PKDoubleAnimView.this.f14986c)) * 10000.0f);
+                int i = (int) (((((float) PKDoubleAnimView.this.b) * 1.0f) / ((float) PKDoubleAnimView.this.c)) * 10000.0f);
                 Log.i("xpm====", "value:" + i);
                 PKDoubleAnimView.this.k.setLevel(i);
                 PKDoubleAnimView.this.g.setText(LiveTimeAndDateUtils.a(PKDoubleAnimView.this.b, false));
@@ -107,7 +103,7 @@ public class PKDoubleAnimView extends FrameLayout {
         this.g.setVisibility(8);
         this.h.clearAnimation();
         this.b = 0L;
-        this.f14986c = 0L;
+        this.c = 0L;
         ScaleAnimation scaleAnimation = this.e;
         if (scaleAnimation != null) {
             scaleAnimation.cancel();
@@ -143,7 +139,7 @@ public class PKDoubleAnimView extends FrameLayout {
             }
         });
         new SVGAPlayer.Builder().a("live_pk_count_down.svga").a((Integer) 1).a(SVGAImageView.FillMode.Forward).a((Boolean) true).a(this.f);
-        this.f14986c = j;
+        this.c = j;
         this.b = j;
         post(this.d);
     }

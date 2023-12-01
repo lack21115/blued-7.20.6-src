@@ -8,16 +8,16 @@ import com.tencent.liteav.videoproducer.capture.b.a;
 final /* synthetic */ class e implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a.AnonymousClass4 f36905a;
+    private final a.AnonymousClass4 f23214a;
     private final CaptureRequest b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final CameraCaptureSession f36906c;
+    private final CameraCaptureSession f23215c;
 
     private e(a.AnonymousClass4 anonymousClass4, CaptureRequest captureRequest, CameraCaptureSession cameraCaptureSession) {
-        this.f36905a = anonymousClass4;
+        this.f23214a = anonymousClass4;
         this.b = captureRequest;
-        this.f36906c = cameraCaptureSession;
+        this.f23215c = cameraCaptureSession;
     }
 
     public static Runnable a(a.AnonymousClass4 anonymousClass4, CaptureRequest captureRequest, CameraCaptureSession cameraCaptureSession) {
@@ -26,6 +26,6 @@ final /* synthetic */ class e implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        a.AnonymousClass4.a(this.f36905a, this.b, this.f36906c);
+        a.AnonymousClass4.a(this.f23214a, this.b, this.f23215c);
     }
 }

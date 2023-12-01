@@ -24,7 +24,7 @@ import com.soft.blued.http.GroupHttpUtils;
 public class GroupJoinVerifyFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: c  reason: collision with root package name */
-    private View f30806c;
+    private View f17116c;
     private EditText d;
     private String e;
     private String f;
@@ -34,20 +34,17 @@ public class GroupJoinVerifyFragment extends BaseFragment implements View.OnClic
     private String b = GroupJoinVerifyFragment.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public BluedUIHttpResponse f30805a = new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.group.GroupJoinVerifyFragment.1
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
+    public BluedUIHttpResponse f17115a = new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.group.GroupJoinVerifyFragment.1
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(GroupJoinVerifyFragment.this.h);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(GroupJoinVerifyFragment.this.h);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
             try {
                 AppMethods.d((int) R.string.group_apply_feedback);
@@ -62,18 +59,18 @@ public class GroupJoinVerifyFragment extends BaseFragment implements View.OnClic
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f30809c;
+        private int f17119c;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             try {
                 this.b = GroupJoinVerifyFragment.this.d.getSelectionStart();
-                this.f30809c = GroupJoinVerifyFragment.this.d.getSelectionEnd();
+                this.f17119c = GroupJoinVerifyFragment.this.d.getSelectionEnd();
                 GroupJoinVerifyFragment.this.d.removeTextChangedListener(GroupJoinVerifyFragment.this.j);
                 while (editable.length() > 90) {
-                    editable.delete(this.b - 1, this.f30809c);
+                    editable.delete(this.b - 1, this.f17119c);
                     this.b--;
-                    this.f30809c--;
+                    this.f17119c--;
                 }
                 int length = editable.length();
                 GroupJoinVerifyFragment.this.i.setText(length + " ");
@@ -95,11 +92,11 @@ public class GroupJoinVerifyFragment extends BaseFragment implements View.OnClic
     };
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f30806c.findViewById(2131370749);
-        commonTopTitleNoTrans.setCenterText(getString(R.string.group_join_validation));
-        commonTopTitleNoTrans.setRightText(getString(R.string.send));
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.setRightClickListener(this);
+        CommonTopTitleNoTrans findViewById = this.f17116c.findViewById(R.id.top_title);
+        findViewById.setCenterText(getString(R.string.group_join_validation));
+        findViewById.setRightText(getString(R.string.send));
+        findViewById.setLeftClickListener(this);
+        findViewById.setRightClickListener(this);
     }
 
     private void b() {
@@ -108,8 +105,8 @@ public class GroupJoinVerifyFragment extends BaseFragment implements View.OnClic
 
     private void c() {
         this.h = DialogUtils.a(this.g);
-        this.d = (EditText) this.f30806c.findViewById(R.id.et_validation_info);
-        TextView textView = (TextView) this.f30806c.findViewById(R.id.tv_word_count);
+        this.d = (EditText) this.f17116c.findViewById(R.id.et_validation_info);
+        TextView textView = (TextView) this.f17116c.findViewById(R.id.tv_word_count);
         this.i = textView;
         textView.setText(((Object) getResources().getText(R.string.group_name_count)) + " ");
         this.d.addTextChangedListener(this.j);
@@ -127,23 +124,21 @@ public class GroupJoinVerifyFragment extends BaseFragment implements View.OnClic
         } else {
             String obj = this.d.getText().toString();
             this.e = obj;
-            GroupHttpUtils.b(this.g, this.f30805a, this.f, obj, getFragmentActive());
+            GroupHttpUtils.b(this.g, this.f17115a, this.f, obj, getFragmentActive());
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         this.g = getActivity();
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getActivity().getWindow().setSoftInputMode(21);
-        this.f30806c = layoutInflater.inflate(R.layout.fragment_group_join_verify, viewGroup, false);
+        this.f17116c = layoutInflater.inflate(R.layout.fragment_group_join_verify, viewGroup, false);
         c();
         a();
         b();
-        return this.f30806c;
+        return this.f17116c;
     }
 }

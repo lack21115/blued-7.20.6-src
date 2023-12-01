@@ -14,8 +14,8 @@ public final class l implements Runnable {
         lock = DUHelper.f;
         if (lock.tryLock()) {
             try {
-                AIClient unused = DUHelper.f4163c = new AIClient(DUHelper.mContext);
-                aIClient = DUHelper.f4163c;
+                AIClient unused = DUHelper.c = new AIClient(DUHelper.mContext);
+                aIClient = DUHelper.c;
                 aIClient.asynAI();
             } catch (Exception e) {
             } catch (Throwable th) {

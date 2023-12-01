@@ -13,11 +13,11 @@ public final class j {
     private static Method e;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final boolean f41136a = b("rom_1.0");
+    public static final boolean f27445a = b("rom_1.0");
     public static final boolean b = b("rom_2.0");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final boolean f41137c = b("rom_2.5");
+    public static final boolean f27446c = b("rom_2.5");
     public static final boolean d = b("rom_3.0");
     private static String f = null;
     private static String g = null;

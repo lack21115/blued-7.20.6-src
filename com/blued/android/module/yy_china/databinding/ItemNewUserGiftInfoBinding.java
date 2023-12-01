@@ -10,20 +10,16 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemNewUserGiftInfoBinding.class */
 public final class ItemNewUserGiftInfoBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16634a;
+    public final SquareImageView a;
     public final ShapeLinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16635c;
+    public final TextView c;
     private final ConstraintLayout d;
 
     private ItemNewUserGiftInfoBinding(ConstraintLayout constraintLayout, SquareImageView squareImageView, ShapeLinearLayout shapeLinearLayout, TextView textView) {
         this.d = constraintLayout;
-        this.f16634a = squareImageView;
+        this.a = squareImageView;
         this.b = shapeLinearLayout;
-        this.f16635c = textView;
+        this.c = textView;
     }
 
     public static ItemNewUserGiftInfoBinding a(View view) {
@@ -46,7 +42,6 @@ public final class ItemNewUserGiftInfoBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.d;

@@ -5,9 +5,8 @@ import com.ss.android.downloadlib.constants.EventConstants;
 import com.ss.android.downloadlib.event.AdEventHandler;
 import org.json.JSONObject;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/addownload/compliance/h.class */
-public class h {
+class h {
     public static void mb(int i, long j) {
         JSONObject jSONObject = new JSONObject();
         try {

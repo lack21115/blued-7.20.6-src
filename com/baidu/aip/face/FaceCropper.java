@@ -23,7 +23,7 @@ public class FaceCropper {
                 return iArr2;
             }
             try {
-                System.arraycopy((Object) iArr, (i * i3) + rect.left, (Object) iArr2, rect.width() * (i3 - rect.top), rect.width());
+                System.arraycopy(iArr, (i * i3) + rect.left, iArr2, rect.width() * (i3 - rect.top), rect.width());
                 i2 = i3 + 1;
             } catch (Exception e) {
                 e.printStackTrace();

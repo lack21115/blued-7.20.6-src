@@ -2,7 +2,6 @@ package android.telephony;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telephony/CellInfoCdma.class */
 public final class CellInfoCdma extends CellInfo implements Parcelable {
@@ -100,7 +99,7 @@ public final class CellInfoCdma extends CellInfo implements Parcelable {
         stringBuffer.append(super.toString());
         stringBuffer.append(" ").append(this.mCellIdentityCdma);
         stringBuffer.append(" ").append(this.mCellSignalStrengthCdma);
-        stringBuffer.append(i.d);
+        stringBuffer.append("}");
         return stringBuffer.toString();
     }
 

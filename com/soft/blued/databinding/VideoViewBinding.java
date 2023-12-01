@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class VideoViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29612a;
+    private final FrameLayout f15922a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29612a;
+        return this.f15922a;
     }
 }

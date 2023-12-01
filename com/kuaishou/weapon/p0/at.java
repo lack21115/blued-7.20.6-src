@@ -14,11 +14,11 @@ import org.json.JSONObject;
 public class at {
 
     /* renamed from: a  reason: collision with root package name */
-    private JSONObject f23731a;
+    private JSONObject f10123a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f23732c;
+    private boolean f10124c;
 
     public at(Context context) {
         if (Engine.loadSuccess) {
@@ -27,14 +27,14 @@ public class at {
                 if (TextUtils.isEmpty(pqr)) {
                     return;
                 }
-                this.f23731a = new JSONObject(pqr);
+                this.f10123a = new JSONObject(pqr);
             } catch (Throwable th) {
             }
         }
     }
 
     public String a(String str) {
-        JSONObject jSONObject = this.f23731a;
+        JSONObject jSONObject = this.f10123a;
         if (jSONObject != null) {
             try {
                 return jSONObject.getString(str);
@@ -54,7 +54,7 @@ public class at {
     }
 
     public Set a(Context context, String str, int i) {
-        JSONObject jSONObject = this.f23731a;
+        JSONObject jSONObject = this.f10123a;
         if (jSONObject != null) {
             try {
                 String string = jSONObject.getString(str);
@@ -98,7 +98,7 @@ public class at {
     }
 
     public JSONArray b(String str) {
-        JSONObject jSONObject = this.f23731a;
+        JSONObject jSONObject = this.f10123a;
         if (jSONObject != null) {
             try {
                 String string = jSONObject.getString(str);
@@ -129,11 +129,11 @@ public class at {
     }
 
     public boolean b() {
-        return this.f23732c;
+        return this.f10124c;
     }
 
     public Set c(String str) {
-        JSONObject jSONObject = this.f23731a;
+        JSONObject jSONObject = this.f10123a;
         if (jSONObject == null) {
             return null;
         }
@@ -159,7 +159,7 @@ public class at {
     }
 
     public JSONArray d(String str) {
-        JSONObject jSONObject = this.f23731a;
+        JSONObject jSONObject = this.f10123a;
         if (jSONObject != null) {
             try {
                 String string = jSONObject.getString(str);
@@ -198,7 +198,7 @@ public class at {
                             this.b = true;
                         }
                         if (str2.contains(a3)) {
-                            this.f23732c = true;
+                            this.f10124c = true;
                         }
                     }
                     return jSONArray4;

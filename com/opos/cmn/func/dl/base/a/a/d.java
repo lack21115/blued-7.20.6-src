@@ -7,15 +7,15 @@ import java.util.ArrayList;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    com.opos.cmn.func.dl.base.f.a f24885a;
+    com.opos.cmn.func.dl.base.f.a f11197a;
     public e[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    Context f24886c;
+    Context f11198c;
 
     public d(Context context, com.opos.cmn.func.dl.base.f.a aVar, int i) {
-        this.f24885a = aVar;
-        this.f24886c = context;
+        this.f11197a = aVar;
+        this.f11198c = context;
         this.b = new e[i];
         int i2 = 0;
         while (true) {
@@ -24,13 +24,13 @@ public final class d {
                 return;
             }
             this.b[i3] = new e(this);
-            aVar.f24924c.g().c().execute(this.b[i3]);
+            aVar.f11236c.g().c().execute(this.b[i3]);
             i2 = i3 + 1;
         }
     }
 
     public final com.opos.cmn.func.dl.base.a.c a(int i) {
-        return this.f24885a.b.get(Integer.valueOf(i));
+        return this.f11197a.b.get(Integer.valueOf(i));
     }
 
     public final void b(int i) {
@@ -43,7 +43,7 @@ public final class d {
                 return;
             }
             e eVar = eVarArr[i3];
-            if (eVar.f24888c.containsKey(Integer.valueOf(i))) {
+            if (eVar.f11200c.containsKey(Integer.valueOf(i))) {
                 ArrayList arrayList = new ArrayList();
                 for (a aVar : eVar.d) {
                     if (aVar.b == i) {
@@ -51,8 +51,8 @@ public final class d {
                     }
                 }
                 eVar.d.removeAll(arrayList);
-                com.opos.cmn.an.f.a.b(e.f24887a, "close buffer stream!downloadId:".concat(String.valueOf(i)));
-                com.opos.cmn.func.dl.base.h.a.a(eVar.f24888c.remove(Integer.valueOf(i)));
+                com.opos.cmn.an.f.a.b(e.f11199a, "close buffer stream!downloadId:".concat(String.valueOf(i)));
+                com.opos.cmn.func.dl.base.h.a.a(eVar.f11200c.remove(Integer.valueOf(i)));
             }
             i2 = i3 + 1;
         }

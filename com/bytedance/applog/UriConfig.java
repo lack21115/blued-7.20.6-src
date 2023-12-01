@@ -15,11 +15,11 @@ public class UriConfig {
     public static final String PATH_SEND = "/service/2/app_log/";
 
     /* renamed from: a  reason: collision with root package name */
-    public String f21173a;
+    public String f7567a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String[] f21174c;
+    public String[] f7568c;
     public String[] d;
     public String e;
     public String f;
@@ -32,11 +32,11 @@ public class UriConfig {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f21175a;
+        public String f7569a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String[] f21176c;
+        public String[] f7570c;
         public String[] d;
         public String e;
         public String f;
@@ -85,12 +85,12 @@ public class UriConfig {
         }
 
         public Builder setRegisterUri(String str) {
-            this.f21175a = str;
+            this.f7569a = str;
             return this;
         }
 
         public Builder setSendUris(String[] strArr) {
-            this.f21176c = strArr;
+            this.f7570c = strArr;
             return this;
         }
 
@@ -101,9 +101,9 @@ public class UriConfig {
     }
 
     public /* synthetic */ UriConfig(Builder builder, a aVar) {
-        this.f21173a = builder.f21175a;
+        this.f7567a = builder.f7569a;
         this.b = builder.b;
-        this.f21174c = builder.f21176c;
+        this.f7568c = builder.f7570c;
         this.d = builder.d;
         this.e = builder.e;
         this.f = builder.f;
@@ -169,11 +169,11 @@ public class UriConfig {
     }
 
     public String getRegisterUri() {
-        return this.f21173a;
+        return this.f7567a;
     }
 
     public String[] getSendUris() {
-        return this.f21174c;
+        return this.f7568c;
     }
 
     public String getSettingUri() {
@@ -209,11 +209,11 @@ public class UriConfig {
     }
 
     public void setRegisterUri(String str) {
-        this.f21173a = str;
+        this.f7567a = str;
     }
 
     public void setSendUris(String[] strArr) {
-        this.f21174c = strArr;
+        this.f7568c = strArr;
     }
 
     public void setSettingUri(String str) {

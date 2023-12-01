@@ -7,10 +7,10 @@ import android.os.Parcel;
 public class l1 implements m1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public IBinder f3871a;
+    public IBinder f3823a;
 
     public l1(IBinder iBinder) {
-        this.f3871a = iBinder;
+        this.f3823a = iBinder;
     }
 
     @Override // c.t.m.g.m1
@@ -19,7 +19,7 @@ public class l1 implements m1 {
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.bun.lib.MsaIdInterface");
-            this.f3871a.transact(1, obtain, obtain2, 0);
+            this.f3823a.transact(1, obtain, obtain2, 0);
             obtain2.readException();
             return obtain2.readInt() != 0;
         } catch (Exception e) {
@@ -31,7 +31,7 @@ public class l1 implements m1 {
 
     @Override // android.os.IInterface
     public IBinder asBinder() {
-        return this.f3871a;
+        return this.f3823a;
     }
 
     @Override // c.t.m.g.m1
@@ -41,7 +41,7 @@ public class l1 implements m1 {
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.bun.lib.MsaIdInterface");
-            this.f3871a.transact(3, obtain, obtain2, 0);
+            this.f3823a.transact(3, obtain, obtain2, 0);
             obtain2.readException();
             str = obtain2.readString();
         } catch (Throwable th) {

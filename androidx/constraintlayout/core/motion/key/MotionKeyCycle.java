@@ -25,7 +25,7 @@ public class MotionKeyCycle extends MotionKey {
     public static final String WAVE_SHAPE = "waveShape";
 
     /* renamed from: c  reason: collision with root package name */
-    private String f2019c = null;
+    private String f1971c = null;
     private int d = 0;
     private int e = -1;
     private String f = null;
@@ -74,7 +74,7 @@ public class MotionKeyCycle extends MotionKey {
 
     @Override // androidx.constraintlayout.core.motion.key.MotionKey
     /* renamed from: clone */
-    public MotionKey mo1293clone() {
+    public MotionKey mo1156clone() {
         return null;
     }
 
@@ -557,7 +557,7 @@ public class MotionKeyCycle extends MotionKey {
     @Override // androidx.constraintlayout.core.motion.key.MotionKey, androidx.constraintlayout.core.motion.utils.TypedValues
     public boolean setValue(int i, String str) {
         if (i == 420) {
-            this.f2019c = str;
+            this.f1971c = str;
             return true;
         } else if (i != 422) {
             return super.setValue(i, str);

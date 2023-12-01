@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemSearchGroupMemberBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29308a;
+    private final LinearLayout f15618a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29308a;
+        return this.f15618a;
     }
 }

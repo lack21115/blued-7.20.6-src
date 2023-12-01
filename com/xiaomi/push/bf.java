@@ -7,19 +7,19 @@ import java.util.Map;
 public class bf {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f41277a;
+    public int f27586a;
 
     /* renamed from: a  reason: collision with other field name */
-    public String f216a;
+    public String f169a;
 
     /* renamed from: a  reason: collision with other field name */
-    public Map<String, String> f217a = new HashMap();
+    public Map<String, String> f170a = new HashMap();
 
     public String a() {
-        return this.f216a;
+        return this.f169a;
     }
 
     public String toString() {
-        return String.format("resCode = %1$d, headers = %2$s, response = %3$s", Integer.valueOf(this.f41277a), this.f217a.toString(), this.f216a);
+        return String.format("resCode = %1$d, headers = %2$s, response = %3$s", Integer.valueOf(this.f27586a), this.f170a.toString(), this.f169a);
     }
 }

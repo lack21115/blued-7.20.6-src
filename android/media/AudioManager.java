@@ -22,7 +22,6 @@ import android.os.SystemClock;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
-import com.android.internal.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -277,9 +276,9 @@ public class AudioManager {
 
     public AudioManager(Context context) {
         setContext(context);
-        this.mUseMasterVolume = getContext().getResources().getBoolean(R.bool.config_useMasterVolume);
-        this.mUseVolumeKeySounds = getContext().getResources().getBoolean(R.bool.config_useVolumeKeySounds);
-        this.mUseFixedVolume = getContext().getResources().getBoolean(R.bool.config_useFixedVolume);
+        this.mUseMasterVolume = getContext().getResources().getBoolean(17956883);
+        this.mUseVolumeKeySounds = getContext().getResources().getBoolean(17956884);
+        this.mUseFixedVolume = getContext().getResources().getBoolean(17956998);
         sAudioPortEventHandler.init();
     }
 
@@ -855,7 +854,7 @@ public class AudioManager {
     }
 
     public boolean isBluetoothScoAvailableOffCall() {
-        return getContext().getResources().getBoolean(R.bool.config_bluetooth_sco_off_call);
+        return getContext().getResources().getBoolean(17956954);
     }
 
     public boolean isBluetoothScoOn() {

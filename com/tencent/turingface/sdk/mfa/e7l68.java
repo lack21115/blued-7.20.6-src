@@ -11,8 +11,8 @@ public final class e7l68 {
     public Document b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final DocumentBuilder f39946c = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+    public final DocumentBuilder f26255c = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 
     /* renamed from: a  reason: collision with root package name */
-    public Stack<Node> f39945a = new Stack<>();
+    public Stack<Node> f26254a = new Stack<>();
 }

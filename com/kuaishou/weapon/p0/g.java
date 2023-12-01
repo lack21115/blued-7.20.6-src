@@ -7,11 +7,11 @@ import android.os.Process;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23834a = "android.permission.INTERNET";
+    public static final String f10226a = "android.permission.INTERNET";
     public static final String b = "android.permission.ACCESS_NETWORK_STATE";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23835c = "android.permission.READ_PHONE_STATE";
+    public static final String f10227c = "android.permission.READ_PHONE_STATE";
     public static final String d = "android.permission.ACCESS_WIFI_STATE";
     public static final String e = "android.permission.GET_TASKS";
     public static final String f = "android.permission.GET_ACCOUNTS";

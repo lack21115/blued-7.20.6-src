@@ -1,11 +1,11 @@
 package com.google.android.material.textview;
 
+import android.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import androidx.appcompat.widget.AppCompatTextView;
-import com.google.android.material.R;
 import com.google.android.material.resources.MaterialAttributes;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
@@ -17,7 +17,7 @@ public class MaterialTextView extends AppCompatTextView {
     }
 
     public MaterialTextView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842884);
+        this(context, attributeSet, R.attr.textViewStyle);
     }
 
     public MaterialTextView(Context context, AttributeSet attributeSet, int i) {
@@ -38,8 +38,8 @@ public class MaterialTextView extends AppCompatTextView {
     }
 
     private void applyLineHeightFromViewAppearance(Resources.Theme theme, int i) {
-        TypedArray obtainStyledAttributes = theme.obtainStyledAttributes(i, R.styleable.MaterialTextAppearance);
-        int readFirstAvailableDimension = readFirstAvailableDimension(getContext(), obtainStyledAttributes, R.styleable.MaterialTextAppearance_android_lineHeight, R.styleable.MaterialTextAppearance_lineHeight);
+        TypedArray obtainStyledAttributes = theme.obtainStyledAttributes(i, com.google.android.material.R.styleable.MaterialTextAppearance);
+        int readFirstAvailableDimension = readFirstAvailableDimension(getContext(), obtainStyledAttributes, com.google.android.material.R.styleable.MaterialTextAppearance_android_lineHeight, com.google.android.material.R.styleable.MaterialTextAppearance_lineHeight);
         obtainStyledAttributes.recycle();
         if (readFirstAvailableDimension >= 0) {
             setLineHeight(readFirstAvailableDimension);
@@ -47,12 +47,12 @@ public class MaterialTextView extends AppCompatTextView {
     }
 
     private static boolean canApplyTextAppearanceLineHeight(Context context) {
-        return MaterialAttributes.resolveBoolean(context, R.attr.textAppearanceLineHeightEnabled, true);
+        return MaterialAttributes.resolveBoolean(context, com.google.android.material.R.attr.textAppearanceLineHeightEnabled, true);
     }
 
     private static int findViewAppearanceResourceId(Resources.Theme theme, AttributeSet attributeSet, int i, int i2) {
-        TypedArray obtainStyledAttributes = theme.obtainStyledAttributes(attributeSet, R.styleable.MaterialTextView, i, i2);
-        int resourceId = obtainStyledAttributes.getResourceId(R.styleable.MaterialTextView_android_textAppearance, -1);
+        TypedArray obtainStyledAttributes = theme.obtainStyledAttributes(attributeSet, com.google.android.material.R.styleable.MaterialTextView, i, i2);
+        int resourceId = obtainStyledAttributes.getResourceId(com.google.android.material.R.styleable.MaterialTextView_android_textAppearance, -1);
         obtainStyledAttributes.recycle();
         return resourceId;
     }
@@ -66,9 +66,9 @@ public class MaterialTextView extends AppCompatTextView {
     }
 
     private static boolean viewAttrsHasLineHeight(Context context, Resources.Theme theme, AttributeSet attributeSet, int i, int i2) {
-        TypedArray obtainStyledAttributes = theme.obtainStyledAttributes(attributeSet, R.styleable.MaterialTextView, i, i2);
+        TypedArray obtainStyledAttributes = theme.obtainStyledAttributes(attributeSet, com.google.android.material.R.styleable.MaterialTextView, i, i2);
         boolean z = false;
-        int readFirstAvailableDimension = readFirstAvailableDimension(context, obtainStyledAttributes, R.styleable.MaterialTextView_android_lineHeight, R.styleable.MaterialTextView_lineHeight);
+        int readFirstAvailableDimension = readFirstAvailableDimension(context, obtainStyledAttributes, com.google.android.material.R.styleable.MaterialTextView_android_lineHeight, com.google.android.material.R.styleable.MaterialTextView_lineHeight);
         obtainStyledAttributes.recycle();
         if (readFirstAvailableDimension != -1) {
             z = true;

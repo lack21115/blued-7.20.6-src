@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentYyMineBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final NestedScrollView f29048a;
+    private final NestedScrollView f15358a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public NestedScrollView getRoot() {
-        return this.f29048a;
+        return this.f15358a;
     }
 }

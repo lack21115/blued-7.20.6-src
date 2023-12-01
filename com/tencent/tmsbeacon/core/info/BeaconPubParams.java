@@ -2,7 +2,6 @@ package com.tencent.tmsbeacon.core.info;
 
 import android.content.Context;
 import android.os.Build;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tmsbeacon.a.c.b;
 import com.tencent.tmsbeacon.a.c.c;
 import com.tencent.tmsbeacon.a.c.e;
@@ -91,7 +90,7 @@ public class BeaconPubParams {
         this.platform = String.valueOf((int) d.g());
         this.dtMf = l.o();
         this.osVersion = l.s();
-        this.hardwareOs = l.f() + BridgeUtil.UNDERLINE_STR + l.e();
+        this.hardwareOs = l.f() + "_" + l.e();
         this.brand = Build.BRAND;
         f e = f.e();
         this.model = e.h();

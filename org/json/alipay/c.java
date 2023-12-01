@@ -7,19 +7,15 @@ import java.io.StringReader;
 
 /* loaded from: source-3503164-dex2jar.jar:org/json/alipay/c.class */
 public final class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f44096a;
+    private int a;
     private Reader b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private char f44097c;
+    private char c;
     private boolean d;
 
     private c(Reader reader) {
         this.b = reader.markSupported() ? reader : new BufferedReader(reader);
         this.d = false;
-        this.f44096a = 0;
+        this.a = 0;
     }
 
     public c(String str) {
@@ -34,7 +30,7 @@ public final class c {
         int i2 = 0;
         if (this.d) {
             this.d = false;
-            cArr[0] = this.f44097c;
+            cArr[0] = this.c;
             i2 = 1;
         }
         while (i2 < i) {
@@ -48,9 +44,9 @@ public final class c {
                 throw new JSONException(e);
             }
         }
-        this.f44096a += i2;
+        this.a += i2;
         if (i2 >= i) {
-            this.f44097c = cArr[i - 1];
+            this.c = cArr[i - 1];
             return new String(cArr);
         }
         throw a("Substring bounds error");
@@ -62,31 +58,31 @@ public final class c {
 
     public final void a() {
         int i;
-        if (this.d || (i = this.f44096a) <= 0) {
+        if (this.d || (i = this.a) <= 0) {
             throw new JSONException("Stepping back two steps is not supported");
         }
-        this.f44096a = i - 1;
+        this.a = i - 1;
         this.d = true;
     }
 
     public final char b() {
         if (this.d) {
             this.d = false;
-            if (this.f44097c != 0) {
-                this.f44096a++;
+            if (this.c != 0) {
+                this.a++;
             }
-            return this.f44097c;
+            return this.c;
         }
         try {
             int read = this.b.read();
             if (read <= 0) {
-                this.f44097c = (char) 0;
+                this.c = (char) 0;
                 return (char) 0;
             }
-            this.f44096a++;
-            char c2 = (char) read;
-            this.f44097c = c2;
-            return c2;
+            this.a++;
+            char c = (char) read;
+            this.c = c;
+            return c;
         } catch (IOException e) {
             throw new JSONException(e);
         }
@@ -202,6 +198,6 @@ public final class c {
     }
 
     public final String toString() {
-        return " at character " + this.f44096a;
+        return " at character " + this.a;
     }
 }

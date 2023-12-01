@@ -33,7 +33,7 @@ public abstract class UnicodeEscaper extends Escaper {
         if (i2 >= 0) {
             char[] cArr2 = new char[i2];
             if (i > 0) {
-                System.arraycopy((Object) cArr, 0, (Object) cArr2, 0, i);
+                System.arraycopy(cArr, 0, cArr2, 0, i);
             }
             return cArr2;
         }
@@ -98,7 +98,7 @@ public abstract class UnicodeEscaper extends Escaper {
                 }
                 int i13 = i12;
                 if (escape.length > 0) {
-                    System.arraycopy((Object) escape, 0, (Object) cArr2, i12, escape.length);
+                    System.arraycopy(escape, 0, cArr2, i12, escape.length);
                     i13 = i12 + escape.length;
                 }
                 i9 = i8;

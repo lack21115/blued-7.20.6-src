@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogCancelActionTwoBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28695a;
+    private final LinearLayout f15005a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28695a;
+        return this.f15005a;
     }
 }

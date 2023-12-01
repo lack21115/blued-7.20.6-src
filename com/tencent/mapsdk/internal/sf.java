@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public class sf implements JsonParser {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f38006a;
+    private boolean f24315a;
     private List<uf> b;
 
     public List<uf> a() {
@@ -18,7 +18,7 @@ public class sf implements JsonParser {
     }
 
     public boolean b() {
-        return this.f38006a;
+        return this.f24315a;
     }
 
     @Override // com.tencent.map.tools.json.JsonParser
@@ -28,7 +28,7 @@ public class sf implements JsonParser {
             if (jSONObject.optInt("enable", 0) != 1) {
                 z = false;
             }
-            this.f38006a = z;
+            this.f24315a = z;
             JSONArray optJSONArray = jSONObject.optJSONArray("layers");
             if (optJSONArray != null) {
                 this.b = JsonUtils.parseToList(optJSONArray, uf.class, new Object[0]);

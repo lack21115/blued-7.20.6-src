@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import com.anythink.china.api.CustomAdapterDownloadListener;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.ATBiddingListener;
 import com.anythink.core.api.ATInitMediation;
 import com.anythink.core.api.BaseAd;
@@ -16,6 +15,7 @@ import com.bytedance.sdk.openadsdk.TTAdNative;
 import com.bytedance.sdk.openadsdk.TTAdSdk;
 import com.bytedance.sdk.openadsdk.TTAppDownloadListener;
 import com.bytedance.sdk.openadsdk.TTRewardVideoAd;
+import com.igexin.assist.sdk.AssistPushConsts;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,10 +28,10 @@ public class TTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
     private final String h = getClass().getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    String f9135a = "";
+    String f6295a = "";
 
     /* renamed from: c  reason: collision with root package name */
-    String f9136c = "";
+    String f6296c = "";
     boolean d = false;
     TTAdNative.RewardVideoAdListener e = new TTAdNative.RewardVideoAdListener() { // from class: com.anythink.network.toutiao.TTATRewardedVideoAdapter.1
         @Override // com.bytedance.sdk.openadsdk.TTAdNative.RewardVideoAdListener, com.bytedance.sdk.openadsdk.common.CommonListener
@@ -152,14 +152,14 @@ public class TTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
                 if (TTATRewardedVideoAdapter.this.mDownloadListener == null || !(TTATRewardedVideoAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATRewardedVideoAdapter.this.mDownloadListener).onDownloadUpdate(j, j2, str, str2);
+                TTATRewardedVideoAdapter.this.mDownloadListener.onDownloadUpdate(j, j2, str, str2);
                 return;
             }
             TTATRewardedVideoAdapter.M(TTATRewardedVideoAdapter.this);
             if (TTATRewardedVideoAdapter.this.mDownloadListener == null || !(TTATRewardedVideoAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATRewardedVideoAdapter.this.mDownloadListener).onDownloadStart(j, j2, str, str2);
+            TTATRewardedVideoAdapter.this.mDownloadListener.onDownloadStart(j, j2, str, str2);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -167,7 +167,7 @@ public class TTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
             if (TTATRewardedVideoAdapter.this.mDownloadListener == null || !(TTATRewardedVideoAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATRewardedVideoAdapter.this.mDownloadListener).onDownloadFail(j, j2, str, str2);
+            TTATRewardedVideoAdapter.this.mDownloadListener.onDownloadFail(j, j2, str, str2);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -175,7 +175,7 @@ public class TTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
             if (TTATRewardedVideoAdapter.this.mDownloadListener == null || !(TTATRewardedVideoAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATRewardedVideoAdapter.this.mDownloadListener).onDownloadFinish(j, str, str2);
+            TTATRewardedVideoAdapter.this.mDownloadListener.onDownloadFinish(j, str, str2);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -183,7 +183,7 @@ public class TTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
             if (TTATRewardedVideoAdapter.this.mDownloadListener == null || !(TTATRewardedVideoAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATRewardedVideoAdapter.this.mDownloadListener).onDownloadPause(j, j2, str, str2);
+            TTATRewardedVideoAdapter.this.mDownloadListener.onDownloadPause(j, j2, str, str2);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -195,7 +195,7 @@ public class TTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
             if (TTATRewardedVideoAdapter.this.mDownloadListener == null || !(TTATRewardedVideoAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATRewardedVideoAdapter.this.mDownloadListener).onInstalled(str, str2);
+            TTATRewardedVideoAdapter.this.mDownloadListener.onInstalled(str, str2);
         }
     };
 
@@ -205,40 +205,40 @@ public class TTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
     public final class AnonymousClass3 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f9139a;
+        final /* synthetic */ Context f6299a;
         final /* synthetic */ Map b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Map f9140c;
+        final /* synthetic */ Map f6300c;
 
         AnonymousClass3(Context context, Map map, Map map2) {
-            this.f9139a = context;
+            this.f6299a = context;
             this.b = map;
-            this.f9140c = map2;
+            this.f6300c = map2;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            TTAdNative createAdNative = TTAdSdk.getAdManager().createAdNative(this.f9139a);
-            TTATCustomAdSlotBuilder tTATCustomAdSlotBuilder = new TTATCustomAdSlotBuilder(TTATRewardedVideoAdapter.this.f9135a, this.b, this.f9140c);
-            int i = this.f9139a.getResources().getDisplayMetrics().widthPixels;
-            int i2 = this.f9139a.getResources().getDisplayMetrics().heightPixels;
+            TTAdNative createAdNative = TTAdSdk.getAdManager().createAdNative(this.f6299a);
+            TTATCustomAdSlotBuilder tTATCustomAdSlotBuilder = new TTATCustomAdSlotBuilder(TTATRewardedVideoAdapter.this.f6295a, this.b, this.f6300c);
+            int i = this.f6299a.getResources().getDisplayMetrics().widthPixels;
+            int i2 = this.f6299a.getResources().getDisplayMetrics().heightPixels;
             try {
                 String obj = this.b.get("personalized_template").toString();
                 if (!TextUtils.isEmpty(obj) && TextUtils.equals("1", obj)) {
-                    tTATCustomAdSlotBuilder.setExpressViewAcceptedSize(TTATRewardedVideoAdapter.a(this.f9139a, i), TTATRewardedVideoAdapter.a(this.f9139a, i2));
+                    tTATCustomAdSlotBuilder.setExpressViewAcceptedSize(TTATRewardedVideoAdapter.a(this.f6299a, i), TTATRewardedVideoAdapter.a(this.f6299a, i2));
                 }
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-            Map map = this.f9140c;
+            Map map = this.f6300c;
             if (map != null) {
                 try {
-                    tTATCustomAdSlotBuilder.setSupportDeepLink(((Boolean) map.get(ATAdConst.KEY.AD_IS_SUPPORT_DEEP_LINK)).booleanValue());
+                    tTATCustomAdSlotBuilder.setSupportDeepLink(((Boolean) map.get("ad_is_support_deep_link")).booleanValue());
                 } catch (Exception e) {
                 }
                 try {
-                    int parseInt = Integer.parseInt(this.f9140c.get(ATAdConst.KEY.AD_ORIENTATION).toString());
+                    int parseInt = Integer.parseInt(this.f6300c.get("ad_orientation").toString());
                     if (parseInt == 1) {
                         tTATCustomAdSlotBuilder.setOrientation(1);
                     } else if (parseInt == 2) {
@@ -251,9 +251,9 @@ public class TTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
                 tTATCustomAdSlotBuilder.setUserID(TTATRewardedVideoAdapter.this.mUserId);
             }
             if (!TextUtils.isEmpty(TTATRewardedVideoAdapter.this.mUserData)) {
-                if (TTATRewardedVideoAdapter.this.mUserData.contains(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME)) {
+                if (TTATRewardedVideoAdapter.this.mUserData.contains("{network_placement_id}")) {
                     TTATRewardedVideoAdapter tTATRewardedVideoAdapter = TTATRewardedVideoAdapter.this;
-                    tTATRewardedVideoAdapter.mUserData = tTATRewardedVideoAdapter.mUserData.replace(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME, TTATRewardedVideoAdapter.this.f9135a);
+                    tTATRewardedVideoAdapter.mUserData = tTATRewardedVideoAdapter.mUserData.replace("{network_placement_id}", TTATRewardedVideoAdapter.this.f6295a);
                 }
                 tTATCustomAdSlotBuilder.setMediaExtra(TTATRewardedVideoAdapter.this.mUserData);
             }
@@ -291,11 +291,11 @@ public class TTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
 
     private boolean a(Map<String, Object> map) {
         String stringFromMap = ATInitMediation.getStringFromMap(map, "app_id");
-        this.f9135a = ATInitMediation.getStringFromMap(map, "slot_id");
-        if (TextUtils.isEmpty(stringFromMap) || TextUtils.isEmpty(this.f9135a)) {
+        this.f6295a = ATInitMediation.getStringFromMap(map, "slot_id");
+        if (TextUtils.isEmpty(stringFromMap) || TextUtils.isEmpty(this.f6295a)) {
             return false;
         }
-        this.f9136c = ATInitMediation.getStringFromMap(map, "payload");
+        this.f6296c = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
         return true;
     }
 
@@ -313,7 +313,6 @@ public class TTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         return 2;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
         TTRewardVideoAd tTRewardVideoAd = this.i;
         if (tTRewardVideoAd != null) {
@@ -325,50 +324,42 @@ public class TTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         this.f = null;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public Map<String, Object> getNetworkInfoMap() {
         return this.j;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return TTATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
-        return this.f9135a;
+        return this.f6295a;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return TTATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
         return this.i != null;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(final Context context, final Map<String, Object> map, final Map<String, Object> map2) {
         boolean z;
         String stringFromMap = ATInitMediation.getStringFromMap(map, "app_id");
-        this.f9135a = ATInitMediation.getStringFromMap(map, "slot_id");
-        if (TextUtils.isEmpty(stringFromMap) || TextUtils.isEmpty(this.f9135a)) {
+        this.f6295a = ATInitMediation.getStringFromMap(map, "slot_id");
+        if (TextUtils.isEmpty(stringFromMap) || TextUtils.isEmpty(this.f6295a)) {
             z = false;
         } else {
-            this.f9136c = ATInitMediation.getStringFromMap(map, "payload");
+            this.f6296c = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
             z = true;
         }
         if (z) {
             TTATInitManager.getInstance().initSDK(context, map, new MediationInitCallback() { // from class: com.anythink.network.toutiao.TTATRewardedVideoAdapter.5
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onFail(String str) {
                     TTATRewardedVideoAdapter.this.notifyATLoadFail("", str);
                 }
 
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onSuccess() {
                     try {
                         TTATRewardedVideoAdapter.a(TTATRewardedVideoAdapter.this, context, map, map2);
@@ -458,7 +449,6 @@ public class TTATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         this.i.showRewardVideoAd(activity);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.d = true;
         loadCustomNetworkAd(context, map, map2);

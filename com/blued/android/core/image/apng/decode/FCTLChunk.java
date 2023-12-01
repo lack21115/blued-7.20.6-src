@@ -5,13 +5,9 @@ import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/apng/decode/FCTLChunk.class */
 class FCTLChunk extends Chunk {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final int f9524a = Chunk.a("fcTL");
+    static final int a = Chunk.a("fcTL");
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f9525c;
+    int c;
     int h;
     int i;
     int j;
@@ -23,7 +19,7 @@ class FCTLChunk extends Chunk {
     @Override // com.blued.android.core.image.apng.decode.Chunk
     void a(APNGReader aPNGReader) throws IOException {
         this.b = aPNGReader.m_();
-        this.f9525c = aPNGReader.m_();
+        this.c = aPNGReader.m_();
         this.h = aPNGReader.m_();
         this.i = aPNGReader.m_();
         this.j = aPNGReader.m_();

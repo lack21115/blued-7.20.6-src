@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.Group;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -43,9 +41,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGoodsWallBrandAwardDialogFragment.class */
 public final class LiveGoodsWallBrandAwardDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12927a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private FreedomAdapter d;
     private final Lazy b = LazyKt.a(new Function0<DialogLiveGoodsWallBrandAwardBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveGoodsWallBrandAwardDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -59,9 +55,7 @@ public final class LiveGoodsWallBrandAwardDialogFragment extends BaseDialogFragm
             return DialogLiveGoodsWallBrandAwardBinding.a(LayoutInflater.from(LiveGoodsWallBrandAwardDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<FreedomItem> f12928c = new ArrayList<>();
+    private final ArrayList<FreedomItem> c = new ArrayList<>();
     private final String e = "@\\(word:([\\s\\S]*?)\\)";
     private Pattern f = Pattern.compile("@\\(word:([\\s\\S]*?)\\)");
 
@@ -114,9 +108,9 @@ public final class LiveGoodsWallBrandAwardDialogFragment extends BaseDialogFragm
                 } else if (goodsWallBrandAwardTaskModel2.getFinish() == 1) {
                     d().m.setText(R.string.live_goods_wall_task_state_complete);
                 }
-                ConstraintLayout constraintLayout = d().f11773a;
-                Intrinsics.c(constraintLayout, "vb.clTask1");
-                BluedViewExKt.b(constraintLayout);
+                View view = d().a;
+                Intrinsics.c(view, "vb.clTask1");
+                BluedViewExKt.b(view);
             }
         }
         ArrayList<GoodsWallBrandAwardTaskModel> tasks2 = goodsWallBrandAwardDataModel.getTasks();
@@ -128,32 +122,32 @@ public final class LiveGoodsWallBrandAwardDialogFragment extends BaseDialogFragm
                 CharSequence text2 = d().o.getText();
                 Intrinsics.c(text2, "vb.tvTask2Title.text");
                 textView2.setText(a(text2, "#FFB219", true));
-                ConstraintLayout constraintLayout2 = d().b;
-                Intrinsics.c(constraintLayout2, "vb.clTask2");
-                BluedViewExKt.b(constraintLayout2);
+                View view2 = d().b;
+                Intrinsics.c(view2, "vb.clTask2");
+                BluedViewExKt.b(view2);
             }
         }
         ArrayList<GoodsWallBrandAwardModel> rewards = goodsWallBrandAwardDataModel.getRewards();
         if (rewards != null ? rewards.isEmpty() : true) {
-            Group group = d().f11774c;
-            Intrinsics.c(group, "vb.groupList");
-            BluedViewExKt.a(group);
+            View view3 = d().c;
+            Intrinsics.c(view3, "vb.groupList");
+            BluedViewExKt.a(view3);
             TextView textView3 = d().l;
             Intrinsics.c(textView3, "vb.tvNoData");
             BluedViewExKt.b(textView3);
             return;
         }
-        Group group2 = d().f11774c;
-        Intrinsics.c(group2, "vb.groupList");
-        BluedViewExKt.b(group2);
+        View view4 = d().c;
+        Intrinsics.c(view4, "vb.groupList");
+        BluedViewExKt.b(view4);
         TextView textView4 = d().l;
         Intrinsics.c(textView4, "vb.tvNoData");
         BluedViewExKt.a(textView4);
-        this.f12928c.clear();
+        this.c.clear();
         ArrayList<GoodsWallBrandAwardModel> rewards2 = goodsWallBrandAwardDataModel.getRewards();
         if (rewards2 != null) {
             for (GoodsWallBrandAwardModel goodsWallBrandAwardModel : rewards2) {
-                this.f12928c.add(new FitemGoodsWallBrandAward(goodsWallBrandAwardModel));
+                this.c.add(new FitemGoodsWallBrandAward(goodsWallBrandAwardModel));
             }
         }
         f();
@@ -197,7 +191,7 @@ public final class LiveGoodsWallBrandAwardDialogFragment extends BaseDialogFragm
             freedomAdapter.notifyDataSetChanged();
             return;
         }
-        this.d = new FreedomAdapter(getContext(), a(), this.f12928c);
+        this.d = new FreedomAdapter(getContext(), a(), this.c);
         DialogLiveGoodsWallBrandAwardBinding d = d();
         RecyclerView recyclerView = d == null ? null : d.f;
         if (recyclerView != null) {
@@ -216,12 +210,11 @@ public final class LiveGoodsWallBrandAwardDialogFragment extends BaseDialogFragm
         recyclerView3.setAdapter(this.d);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 511.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
-        dialog.setContentView(d().getRoot(), new ViewGroup.LayoutParams(-1, a2));
+        dialog.setContentView((View) d().getRoot(), new ViewGroup.LayoutParams(-1, a2));
         Window window = dialog.getWindow();
         Intrinsics.a(window);
         window.setBackgroundDrawable(new ColorDrawable(0));
@@ -234,7 +227,6 @@ public final class LiveGoodsWallBrandAwardDialogFragment extends BaseDialogFragm
         return dialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

@@ -8,6 +8,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import butterknife.BindView;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.ui.mvp.MvpFragment;
 import com.blued.android.module.common.utils.DialogUtils;
@@ -29,11 +30,11 @@ import java.util.List;
 public class MsgAttentionNotifyFragment extends MvpFragment<AttentionNotifyPresenter> implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f32898a = "MsgAttentionNotifyFragment";
+    private String f19207a = "MsgAttentionNotifyFragment";
     private MsgAttentionNotifyListAdapter b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Dialog f32899c;
+    private Dialog f19208c;
     @BindView
     NoDataAndLoadFailView llNodataChats;
     @BindView
@@ -53,7 +54,7 @@ public class MsgAttentionNotifyFragment extends MvpFragment<AttentionNotifyPrese
 
     private void e() {
         this.topTitle.setCenterText(getString(R.string.msg_follow_to_me));
-        this.topTitle.setRightImg(R.drawable.icon_title_delete);
+        this.topTitle.setRightImg((int) R.drawable.icon_title_delete);
         this.topTitle.setLeftClickListener(this);
         this.topTitle.setRightClickListener(this);
     }
@@ -65,24 +66,22 @@ public class MsgAttentionNotifyFragment extends MvpFragment<AttentionNotifyPrese
         this.msgFrientPullrefresh.a(new OnRefreshLoadMoreListener() { // from class: com.soft.blued.ui.notify.fragment.MsgAttentionNotifyFragment.1
             @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
-                MsgAttentionNotifyFragment.this.j().f();
+                ((AttentionNotifyPresenter) MsgAttentionNotifyFragment.this.j()).f();
             }
 
             @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
-                MsgAttentionNotifyFragment.this.j().e();
+                ((AttentionNotifyPresenter) MsgAttentionNotifyFragment.this.j()).e();
             }
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         e();
         v();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
         if (str == null) {
@@ -103,16 +102,16 @@ public class MsgAttentionNotifyFragment extends MvpFragment<AttentionNotifyPrese
             this.msgFrientPullrefresh.h();
         }
         d();
-        FindHttpUtils.a((BluedUIHttpResponse) null, "followers", String.valueOf(this.b.b()), getFragmentActive());
+        FindHttpUtils.a((BluedUIHttpResponse) null, "followers", String.valueOf(this.b.b()), (IRequestHost) getFragmentActive());
     }
 
     public void a(List<FeedNotice> list) {
         this.llNodataChats.d();
-        this.b.a(list, j().h);
+        this.b.a(list, ((AttentionNotifyPresenter) j()).h);
     }
 
     public void b() {
-        Dialog dialog = this.f32899c;
+        Dialog dialog = this.f19208c;
         if (dialog != null) {
             dialog.cancel();
         }
@@ -125,26 +124,22 @@ public class MsgAttentionNotifyFragment extends MvpFragment<AttentionNotifyPrese
         this.llNodataChats.b();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_msg_attention_notify;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void g_(String str) {
         super.g_(str);
         Dialog a2 = DialogUtils.a(getContext());
-        this.f32899c = a2;
+        this.f19208c = a2;
         a2.show();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
         this.msgFrientPullrefresh.l(true);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
     }
@@ -157,20 +152,19 @@ public class MsgAttentionNotifyFragment extends MvpFragment<AttentionNotifyPrese
             getActivity().finish();
         } else if (id != 2131363126) {
         } else {
-            CommonAlertDialog.a(getContext(), j().a(2131891156), j().a(R.string.biao_msg_notify_attention_title_clear_all), j().a(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.notify.fragment.MsgAttentionNotifyFragment.2
+            CommonAlertDialog.a(getContext(), ((AttentionNotifyPresenter) j()).a(R.string.one_key_delete), ((AttentionNotifyPresenter) j()).a(R.string.biao_msg_notify_attention_title_clear_all), ((AttentionNotifyPresenter) j()).a(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.notify.fragment.MsgAttentionNotifyFragment.2
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
-                    if (MsgAttentionNotifyFragment.this.f32899c != null) {
-                        MsgAttentionNotifyFragment.this.f32899c.show();
+                    if (MsgAttentionNotifyFragment.this.f19208c != null) {
+                        MsgAttentionNotifyFragment.this.f19208c.show();
                     }
-                    MsgAttentionNotifyFragment.this.j().a(MsgAttentionNotifyFragment.this.b.b());
+                    ((AttentionNotifyPresenter) MsgAttentionNotifyFragment.this.j()).a(MsgAttentionNotifyFragment.this.b.b());
                 }
-            }, j().a(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+            }, ((AttentionNotifyPresenter) j()).a(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
         this.msgFrientPullrefresh.l(false);

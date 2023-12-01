@@ -10,12 +10,12 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f28077a;
+    public static final String f14389a;
     public static Boolean b;
 
     static {
         new TreeMap();
-        f28077a = a.class.getSimpleName();
+        f14389a = a.class.getSimpleName();
         b = Boolean.valueOf(c.b);
     }
 
@@ -28,12 +28,12 @@ public class a {
         } catch (Throwable th) {
             String th2 = th.toString();
             try {
-                List<String> list = com.sdk.tencent.n.c.f28064a.b.b;
+                List<String> list = com.sdk.tencent.n.c.f14376a.b.b;
                 list.add(th2);
-                com.sdk.tencent.n.c.f28064a.b.b = list;
+                com.sdk.tencent.n.c.f14376a.b.b = list;
             } catch (Throwable th3) {
             }
-            String str2 = f28077a;
+            String str2 = f14389a;
             com.sdk.tencent.n.b.a(str2, "SDK解密异常：" + th.toString(), b);
             return null;
         }

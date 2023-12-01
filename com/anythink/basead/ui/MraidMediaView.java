@@ -54,7 +54,7 @@ public class MraidMediaView extends BaseMediaAdView {
     }
 
     private void a() {
-        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.f6059a, this.f6060c, new AnonymousClass1());
+        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.a, this.c, new AnonymousClass1());
         this.g = mraidContainerView;
         mraidContainerView.init();
         if (this.f == null || this.g == null) {
@@ -87,7 +87,7 @@ public class MraidMediaView extends BaseMediaAdView {
     @Override // com.anythink.basead.ui.BaseMediaAdView
     public void init(int i, int i2) {
         super.init(i, i2);
-        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.f6059a, this.f6060c, new AnonymousClass1());
+        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.a, this.c, new AnonymousClass1());
         this.g = mraidContainerView;
         mraidContainerView.init();
         if (this.f == null || this.g == null) {

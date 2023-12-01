@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class PeopleDataObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static PeopleDataObserver f30627a = new PeopleDataObserver();
+    private static PeopleDataObserver f16937a = new PeopleDataObserver();
     private ArrayList<IFriendsDataRefreshObserver> b = new ArrayList<>();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/observer/PeopleDataObserver$IFriendsDataRefreshObserver.class */
@@ -21,7 +21,7 @@ public class PeopleDataObserver {
     }
 
     public static PeopleDataObserver a() {
-        return f30627a;
+        return f16937a;
     }
 
     public void a(IFriendsDataRefreshObserver iFriendsDataRefreshObserver) {

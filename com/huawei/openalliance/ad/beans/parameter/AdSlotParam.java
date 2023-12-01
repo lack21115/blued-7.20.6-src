@@ -77,11 +77,11 @@ public class AdSlotParam {
         private String S;
 
         /* renamed from: a  reason: collision with root package name */
-        private android.location.Location f22934a;
+        private android.location.Location f9326a;
         private RequestOptions b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f22935c;
+        private int f9327c;
         private String d;
         private String e;
         private Set<String> f;
@@ -160,11 +160,11 @@ public class AdSlotParam {
         }
 
         public Location Code() {
-            android.location.Location location = this.f22934a;
+            android.location.Location location = this.f9326a;
             if (location == null) {
                 return null;
             }
-            return new Location(Double.valueOf(location.getLongitude()), Double.valueOf(this.f22934a.getLatitude()));
+            return new Location(Double.valueOf(location.getLongitude()), Double.valueOf(this.f9326a.getLatitude()));
         }
 
         public a Code(int i) {
@@ -173,7 +173,7 @@ public class AdSlotParam {
         }
 
         public a Code(android.location.Location location) {
-            this.f22934a = location;
+            this.f9326a = location;
             return this;
         }
 
@@ -277,7 +277,7 @@ public class AdSlotParam {
         }
 
         public a S(int i) {
-            this.f22935c = i;
+            this.f9327c = i;
             return this;
         }
 
@@ -390,7 +390,7 @@ public class AdSlotParam {
         this.adType = aVar.L;
         this.requestOptions = aVar.b;
         this.location = aVar.Code();
-        this.gender = aVar.f22935c;
+        this.gender = aVar.f9327c;
         this.contentUrl = aVar.d;
         this.requestAgent = aVar.e;
         this.keyWordsSet = aVar.f;

@@ -10,21 +10,21 @@ import java.util.ArrayList;
 public class TouchDelegateGroup extends TouchDelegate {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Rect f28589a = new Rect();
+    private static final Rect f14899a = new Rect();
     private final ArrayList<TouchDelegate> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TouchDelegate f28590c;
+    private TouchDelegate f14900c;
     private boolean d;
 
     public TouchDelegateGroup(View view) {
-        super(f28589a, view);
+        super(f14899a, view);
         this.b = new ArrayList<>();
     }
 
     public void a() {
         this.b.clear();
-        this.f28590c = null;
+        this.f14900c = null;
     }
 
     public void a(TouchDelegate touchDelegate) {
@@ -50,7 +50,7 @@ public class TouchDelegateGroup extends TouchDelegate {
                     }
                     TouchDelegate touchDelegate2 = this.b.get(i2);
                     if (touchDelegate2.onTouchEvent(motionEvent)) {
-                        this.f28590c = touchDelegate2;
+                        this.f14900c = touchDelegate2;
                         return true;
                     }
                     i = i2 + 1;
@@ -58,13 +58,13 @@ public class TouchDelegateGroup extends TouchDelegate {
             } else {
                 if (action != 1) {
                     if (action == 2) {
-                        touchDelegate = this.f28590c;
+                        touchDelegate = this.f14900c;
                     } else if (action != 3) {
                         touchDelegate = null;
                     }
                 }
-                touchDelegate = this.f28590c;
-                this.f28590c = null;
+                touchDelegate = this.f14900c;
+                this.f14900c = null;
             }
             boolean z = false;
             if (touchDelegate != null) {

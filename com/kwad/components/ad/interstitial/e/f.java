@@ -32,9 +32,7 @@ public final class f extends KSFrameLayout implements com.kwad.sdk.widget.c {
     private View mb;
     private ImageView mc;
     private TextProgressBar md;
-
-    /* renamed from: me  reason: collision with root package name */
-    private ViewGroup f23924me;
+    private ViewGroup me;
     private ViewGroup mf;
     private ImageView mg;
     private View mh;
@@ -208,7 +206,7 @@ public final class f extends KSFrameLayout implements com.kwad.sdk.widget.c {
         this.mc = (ImageView) findViewById(R.id.ksad_interstitial_tail_frame);
         this.eM = (ImageView) findViewById(R.id.ksad_video_first_frame_container);
         this.mLogoView = (KsLogoView) findViewById(R.id.ksad_ad_interstitial_logo);
-        this.f23924me = (ViewGroup) findViewById(R.id.ksad_interstitial_playing);
+        this.me = (ViewGroup) findViewById(R.id.ksad_interstitial_playing);
         this.mf = (ViewGroup) findViewById(R.id.ksad_interstitial_play_end);
         this.md = (TextProgressBar) findViewById(R.id.ksad_interstitial_download_btn);
         this.mh = findViewById(R.id.ksad_interstitial_close_outer);
@@ -435,8 +433,8 @@ public final class f extends KSFrameLayout implements com.kwad.sdk.widget.c {
     }
 
     public final void t(boolean z) {
-        if (this.f23924me != null) {
-            this.f23924me.setVisibility(z ? 0 : 8);
+        if (this.me != null) {
+            this.me.setVisibility(z ? 0 : 8);
         }
     }
 

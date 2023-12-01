@@ -10,10 +10,10 @@ public abstract class b {
     public SQLiteOpenHelper b;
 
     /* renamed from: a  reason: collision with root package name */
-    public Map<Class<? extends c>, c> f42102a = new HashMap();
+    public Map<Class<? extends c>, c> f28411a = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    public AtomicBoolean f42103c = new AtomicBoolean(false);
+    public AtomicBoolean f28412c = new AtomicBoolean(false);
 
     public abstract String a();
 

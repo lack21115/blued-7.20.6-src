@@ -13,7 +13,7 @@ public abstract class ImageLineSetDefault<T extends IImageLine> implements IImag
 
             /* renamed from: ar.com.hjg.pngj.ImageLineSetDefault$1$1  reason: invalid class name and collision with other inner class name */
             /* loaded from: source-8756600-dex2jar.jar:ar/com/hjg/pngj/ImageLineSetDefault$1$1.class */
-            class C00381 extends ImageLineSetDefault<T> {
+            class C00361 extends ImageLineSetDefault<T> {
             }
         };
     }

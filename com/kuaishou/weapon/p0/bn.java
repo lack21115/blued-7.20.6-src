@@ -53,7 +53,7 @@ public class bn {
                         if (readLine == null) {
                             break;
                         }
-                        String[] split = a(readLine).split(";");
+                        String[] split = a(readLine).split(com.huawei.openalliance.ad.constant.t.aE);
                         if (split != null && split.length != 0) {
                             d = Double.valueOf(split[0]).doubleValue();
                         }
@@ -97,7 +97,7 @@ public class bn {
 
     public static String a(String str) {
         try {
-            return str.replace("      ", ";").replace("     ", ";").replace("    ", ";").replace("   ", ";").replace("  ", ";").replace(" ", ";");
+            return str.replace("      ", com.huawei.openalliance.ad.constant.t.aE).replace("     ", com.huawei.openalliance.ad.constant.t.aE).replace("    ", com.huawei.openalliance.ad.constant.t.aE).replace("   ", com.huawei.openalliance.ad.constant.t.aE).replace("  ", com.huawei.openalliance.ad.constant.t.aE).replace(" ", com.huawei.openalliance.ad.constant.t.aE);
         } catch (Throwable th) {
             return null;
         }
@@ -117,7 +117,7 @@ public class bn {
                         if (readLine == null) {
                             break;
                         }
-                        String[] split = a(readLine).split(";");
+                        String[] split = a(readLine).split(com.huawei.openalliance.ad.constant.t.aE);
                         if (split != null && split.length != 0) {
                             d = Double.valueOf(split[0]).doubleValue();
                         }

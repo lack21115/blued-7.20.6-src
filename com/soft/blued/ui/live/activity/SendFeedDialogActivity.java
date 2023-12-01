@@ -12,18 +12,16 @@ import com.soft.blued.ui.msg.customview.GlobalTaskFloatManager;
 public class SendFeedDialogActivity extends LiveFloatDialogActivity {
     public int i;
 
-    @Override // com.blued.android.module.live_china.activity.LiveFloatDialogActivity
     public void c() {
         TextView textView = (TextView) this.h.findViewById(2131371259);
         int i = this.i;
         if (i == 0) {
-            textView.setText(getString(2131887935));
+            textView.setText(getString(R.string.feed_float_dialog_des));
         } else if (i == 1) {
             textView.setText(getString(R.string.task_float_dialog_des));
         }
     }
 
-    @Override // com.blued.android.module.live_china.activity.LiveFloatDialogActivity
     public void d() {
         int i = this.i;
         if (i != 0) {
@@ -36,7 +34,6 @@ public class SendFeedDialogActivity extends LiveFloatDialogActivity {
         }
     }
 
-    @Override // com.blued.android.module.live_china.activity.LiveFloatDialogActivity
     public void e() {
         if (this.i == 0) {
             SendFeedFloatManager.a().a(false);
@@ -44,7 +41,6 @@ public class SendFeedDialogActivity extends LiveFloatDialogActivity {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseActivity, android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.i = getIntent().getIntExtra("type", 0);

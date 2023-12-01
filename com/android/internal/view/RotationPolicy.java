@@ -57,7 +57,7 @@ public final class RotationPolicy {
 
     private static boolean isCurrentRotationAllowed(Context context) {
         try {
-            return isRotationAllowed(WindowManagerGlobal.getWindowManagerService().getRotation(), Settings.System.getInt(context.getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_ANGLES, -1), context.getResources().getBoolean(R.bool.config_allowAllRotations));
+            return isRotationAllowed(WindowManagerGlobal.getWindowManagerService().getRotation(), Settings.System.getInt(context.getContentResolver(), "accelerometer_rotation_angles", -1), context.getResources().getBoolean(R.bool.config_allowAllRotations));
         } catch (RemoteException e) {
             Log.w(TAG, "Unable to getWindowManagerService.getRotation()");
             return false;
@@ -106,7 +106,7 @@ public final class RotationPolicy {
         boolean z = false;
         if (isRotationSupported(context)) {
             z = false;
-            if (Settings.System.getIntForUser(context.getContentResolver(), Settings.System.HIDE_ROTATION_LOCK_TOGGLE_FOR_ACCESSIBILITY, 0, -2) == 0) {
+            if (Settings.System.getIntForUser(context.getContentResolver(), "hide_rotation_lock_toggle_for_accessibility", 0, -2) == 0) {
                 z = true;
             }
         }
@@ -115,7 +115,7 @@ public final class RotationPolicy {
 
     public static boolean isRotationLocked(Context context) {
         boolean z = false;
-        if (Settings.System.getIntForUser(context.getContentResolver(), Settings.System.ACCELEROMETER_ROTATION, 0, -2) == 0) {
+        if (Settings.System.getIntForUser(context.getContentResolver(), "accelerometer_rotation", 0, -2) == 0) {
             z = true;
         }
         return z;
@@ -123,7 +123,7 @@ public final class RotationPolicy {
 
     public static boolean isRotationSupported(Context context) {
         PackageManager packageManager = context.getPackageManager();
-        return packageManager.hasSystemFeature(PackageManager.FEATURE_SENSOR_ACCELEROMETER) && packageManager.hasSystemFeature(PackageManager.FEATURE_SCREEN_PORTRAIT) && packageManager.hasSystemFeature(PackageManager.FEATURE_SCREEN_LANDSCAPE) && context.getResources().getBoolean(R.bool.config_supportAutoRotation);
+        return packageManager.hasSystemFeature("android.hardware.sensor.accelerometer") && packageManager.hasSystemFeature("android.hardware.screen.portrait") && packageManager.hasSystemFeature("android.hardware.screen.landscape") && context.getResources().getBoolean(R.bool.config_supportAutoRotation);
     }
 
     public static void registerRotationPolicyListener(Context context, RotationPolicyListener rotationPolicyListener) {
@@ -131,12 +131,12 @@ public final class RotationPolicy {
     }
 
     public static void registerRotationPolicyListener(Context context, RotationPolicyListener rotationPolicyListener, int i) {
-        context.getContentResolver().registerContentObserver(Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION), false, rotationPolicyListener.mObserver, i);
-        context.getContentResolver().registerContentObserver(Settings.System.getUriFor(Settings.System.HIDE_ROTATION_LOCK_TOGGLE_FOR_ACCESSIBILITY), false, rotationPolicyListener.mObserver, i);
+        context.getContentResolver().registerContentObserver(Settings.System.getUriFor("accelerometer_rotation"), false, rotationPolicyListener.mObserver, i);
+        context.getContentResolver().registerContentObserver(Settings.System.getUriFor("hide_rotation_lock_toggle_for_accessibility"), false, rotationPolicyListener.mObserver, i);
     }
 
     public static void setRotationLock(Context context, boolean z) {
-        Settings.System.putIntForUser(context.getContentResolver(), Settings.System.HIDE_ROTATION_LOCK_TOGGLE_FOR_ACCESSIBILITY, 0, -2);
+        Settings.System.putIntForUser(context.getContentResolver(), "hide_rotation_lock_toggle_for_accessibility", 0, -2);
         setRotationLock(z, isCurrentRotationAllowed(context) ? -1 : NATURAL_ROTATION);
     }
 
@@ -159,7 +159,7 @@ public final class RotationPolicy {
     }
 
     public static void setRotationLockForAccessibility(Context context, boolean z) {
-        Settings.System.putIntForUser(context.getContentResolver(), Settings.System.HIDE_ROTATION_LOCK_TOGGLE_FOR_ACCESSIBILITY, z ? 1 : 0, -2);
+        Settings.System.putIntForUser(context.getContentResolver(), "hide_rotation_lock_toggle_for_accessibility", z ? 1 : 0, -2);
         setRotationLock(z, NATURAL_ROTATION);
     }
 

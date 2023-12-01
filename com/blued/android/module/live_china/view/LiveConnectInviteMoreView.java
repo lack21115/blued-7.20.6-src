@@ -35,13 +35,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveConnectInviteMoreView.class */
 public class LiveConnectInviteMoreView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14394a;
+    private Context a;
     private LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f14395c;
+    private View c;
     private View d;
     private LinearLayout e;
     private LinearLayout f;
@@ -124,7 +120,7 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
 
     public LiveConnectInviteMoreView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14394a = context;
+        this.a = context;
         h();
     }
 
@@ -140,7 +136,7 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
         }
         this.e.removeAllViews();
         boolean z = LiveRoomManager.a().m() == 12 || LiveRoomManager.a().m() == 13;
-        int a2 = ((AppInfo.l - (DensityUtils.a(AppInfo.d(), 82.0f) * 4)) - (DensityUtils.a(AppInfo.d(), 15.0f) * 2)) / 3;
+        int a = ((AppInfo.l - (DensityUtils.a(AppInfo.d(), 82.0f) * 4)) - (DensityUtils.a(AppInfo.d(), 15.0f) * 2)) / 3;
         int i = 0;
         while (true) {
             int i2 = i;
@@ -149,14 +145,14 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
                 if (liveInviteUserModel == null) {
                     return;
                 }
-                View inflate = LayoutInflater.from(this.f14394a).inflate(R.layout.live_multi_invite_item, (ViewGroup) null);
+                View inflate = LayoutInflater.from(this.a).inflate(R.layout.live_multi_invite_item, (ViewGroup) null);
                 ImageView imageView = (ImageView) inflate.findViewById(R.id.iv_invite);
                 TextView textView = (TextView) inflate.findViewById(R.id.tv_invite);
-                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(DensityUtils.a(this.f14394a, 82.0f), -2);
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(DensityUtils.a(this.a, 82.0f), -2);
                 if (i2 == 3 || z) {
                     layoutParams.rightMargin = 0;
                 } else {
-                    layoutParams.rightMargin = a2;
+                    layoutParams.rightMargin = a;
                 }
                 this.e.addView(inflate, layoutParams);
                 ImageLoader.a((IRequestHost) null, liveInviteUserModel.avatar).b(R.drawable.user_bg_round).c().a(imageView);
@@ -171,14 +167,14 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
                     if (i4 >= size) {
                         return;
                     }
-                    View inflate2 = LayoutInflater.from(this.f14394a).inflate(R.layout.live_multi_invite_item, (ViewGroup) null);
+                    View inflate2 = LayoutInflater.from(this.a).inflate(R.layout.live_multi_invite_item, (ViewGroup) null);
                     ImageView imageView2 = (ImageView) inflate2.findViewById(R.id.iv_invite);
                     TextView textView2 = (TextView) inflate2.findViewById(R.id.tv_invite);
-                    LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(DensityUtils.a(this.f14394a, 82.0f), -2);
+                    LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(DensityUtils.a(this.a, 82.0f), -2);
                     if (i4 == 3) {
                         layoutParams2.rightMargin = 0;
                     } else {
-                        layoutParams2.rightMargin = a2;
+                        layoutParams2.rightMargin = a;
                     }
                     this.e.addView(inflate2, layoutParams2);
                     imageView2.setImageResource(R.drawable.live_multi_invite_more);
@@ -214,10 +210,10 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
     }
 
     private void h() {
-        LayoutInflater from = LayoutInflater.from(this.f14394a);
+        LayoutInflater from = LayoutInflater.from(this.a);
         this.b = from;
         View inflate = from.inflate(R.layout.live_pk_invite_more, this);
-        this.f14395c = inflate.findViewById(R.id.content_layout);
+        this.c = inflate.findViewById(R.id.content_layout);
         this.d = inflate.findViewById(R.id.live_pk_invite_layer);
         this.e = (LinearLayout) inflate.findViewById(R.id.ll_invite);
         this.g = (TextView) inflate.findViewById(R.id.tv_title);
@@ -246,12 +242,12 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
     }
 
     public void a(ILiveConnectionAnimListener iLiveConnectionAnimListener) {
-        if (this.f14395c.getVisibility() != 0) {
+        if (this.c.getVisibility() != 0) {
             setVisibility(8);
         } else {
-            this.f14395c.setVisibility(8);
-            Animation loadAnimation = AnimationUtils.loadAnimation(this.f14394a, R.anim.push_bottom_out);
-            this.f14395c.startAnimation(loadAnimation);
+            this.c.setVisibility(8);
+            Animation loadAnimation = AnimationUtils.loadAnimation(this.a, R.anim.push_bottom_out);
+            this.c.startAnimation(loadAnimation);
             loadAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.module.live_china.view.LiveConnectInviteMoreView.2
                 @Override // android.view.animation.Animation.AnimationListener
                 public void onAnimationEnd(Animation animation) {
@@ -283,8 +279,7 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
             return;
         }
         this.l.setVisibility(0);
-        LiveEventBus.get(LiveEventBusUtil.D, Integer.class).observe(this.m.f14428a, new Observer() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveConnectInviteMoreView$IBNj-3pGjN6_zYUfhqrgUqKns58
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusUtil.D, Integer.class).observe(this.m.a, new Observer() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveConnectInviteMoreView$IBNj-3pGjN6_zYUfhqrgUqKns58
             public final void onChanged(Object obj) {
                 LiveConnectInviteMoreView.this.a((Integer) obj);
             }
@@ -295,10 +290,10 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
         EventTrackLive.b(LiveProtos.Event.LIVE_MANY_CONNECTING_PAGE_SHOW, LiveRoomManager.a().e());
         this.p = list;
         setVisibility(0);
-        this.f14395c.setVisibility(0);
-        this.f14395c.clearAnimation();
-        Animation loadAnimation = AnimationUtils.loadAnimation(this.f14394a, R.anim.push_bottom_in);
-        this.f14395c.startAnimation(loadAnimation);
+        this.c.setVisibility(0);
+        this.c.clearAnimation();
+        Animation loadAnimation = AnimationUtils.loadAnimation(this.a, R.anim.push_bottom_in);
+        this.c.startAnimation(loadAnimation);
         loadAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.module.live_china.view.LiveConnectInviteMoreView.1
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
@@ -326,7 +321,7 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
             this.i.setText(AppInfo.d().getString(i == 2 ? R.string.live_invite_pk_end_tip : R.string.live_invite_pking_tip));
             this.i.setVisibility(0);
             LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.f.getLayoutParams();
-            layoutParams.bottomMargin = DisplayUtil.a(this.f14394a, 6.5f);
+            layoutParams.bottomMargin = DisplayUtil.a(this.a, 6.5f);
             this.f.setLayoutParams(layoutParams);
             this.h.setVisibility(0);
             this.j.setVisibility(8);
@@ -338,18 +333,18 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
         this.h.setText(AppInfo.d().getString(R.string.live_invite_connect_exit));
         this.i.setVisibility(8);
         LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) this.f.getLayoutParams();
-        layoutParams2.bottomMargin = DisplayUtil.a(this.f14394a, 14.0f);
+        layoutParams2.bottomMargin = DisplayUtil.a(this.a, 14.0f);
         this.f.setLayoutParams(layoutParams2);
         this.h.setVisibility(0);
         this.j.setVisibility(0);
     }
 
     public boolean b() {
-        return this.f14395c.getVisibility() == 0;
+        return this.c.getVisibility() == 0;
     }
 
     public void c() {
-        LiveRoomHttpUtils.r(new BluedUIHttpResponse(this.m.f14428a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LiveConnectInviteMoreView.3
+        LiveRoomHttpUtils.r(new BluedUIHttpResponse(this.m.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LiveConnectInviteMoreView.3
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onFailure(Throwable th, int i, String str) {
                 super.onFailure(th, i, str);
@@ -369,7 +364,7 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
     }
 
     public void d() {
-        LiveRoomHttpUtils.a(1, (List<LiveGroupPkUserModel>) null, new BluedUIHttpResponse(this.m.f14428a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LiveConnectInviteMoreView.4
+        LiveRoomHttpUtils.a(1, (List<LiveGroupPkUserModel>) null, new BluedUIHttpResponse(this.m.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LiveConnectInviteMoreView.4
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onFailure(Throwable th, int i, String str) {
                 super.onFailure(th, i, str);
@@ -385,11 +380,11 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
-        }, this.m.f14428a.getFragmentActive());
+        }, this.m.a.getFragmentActive());
     }
 
     public void e() {
-        LiveRoomHttpUtils.q(new BluedUIHttpResponse(this.m.f14428a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LiveConnectInviteMoreView.5
+        LiveRoomHttpUtils.q(new BluedUIHttpResponse(this.m.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LiveConnectInviteMoreView.5
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onFailure(Throwable th, int i, String str) {
                 super.onFailure(th, i, str);
@@ -416,7 +411,7 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
     }
 
     public void f() {
-        LiveRoomHttpUtils.a("1", new BluedUIHttpResponse(this.m.f14428a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LiveConnectInviteMoreView.6
+        LiveRoomHttpUtils.a("1", new BluedUIHttpResponse(this.m.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LiveConnectInviteMoreView.6
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onFailure(Throwable th, int i, String str) {
                 super.onFailure(th, i, str);
@@ -443,7 +438,7 @@ public class LiveConnectInviteMoreView extends FrameLayout implements View.OnCli
     }
 
     public void g() {
-        new ExitDialog(this.f14394a).show();
+        new ExitDialog(this.a).show();
     }
 
     @Override // android.view.View.OnClickListener

@@ -3,13 +3,14 @@ package com.ss.android.downloadlib.addownload.model;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
+import com.anythink.expressad.foundation.g.a;
 import com.ss.android.downloadlib.addownload.x;
 import java.util.Iterator;
 import java.util.LinkedList;
 
 /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/addownload/model/hj.class */
 public class hj {
-    private static final String[] b = {"com", "android", "ss"};
+    private static final String[] b = {"com", "android", a.ac};
     private static final int[] hj = {3101, 3102, 3103, 3201, 3202, 3203};
     private static volatile hj mb;
     private final LinkedList<mb> ox = new LinkedList<>();

@@ -10,19 +10,19 @@ import java.util.List;
 public final class e extends com.opos.exoplayer.core.f.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final d f25403a;
+    private final d f11715a;
     private final m b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final c.a f25404c;
+    private final c.a f11716c;
     private final g d;
     private final List<b> e;
 
     public e() {
         super("WebvttDecoder");
-        this.f25403a = new d();
+        this.f11715a = new d();
         this.b = new m();
-        this.f25404c = new c.a();
+        this.f11716c = new c.a();
         this.d = new g();
         this.e = new ArrayList();
     }
@@ -49,7 +49,7 @@ public final class e extends com.opos.exoplayer.core.f.c {
     /* renamed from: b */
     public i a(byte[] bArr, int i, boolean z) {
         this.b.a(bArr, i);
-        this.f25404c.a();
+        this.f11716c.a();
         this.e.clear();
         f.a(this.b);
         do {
@@ -71,9 +71,9 @@ public final class e extends com.opos.exoplayer.core.f.c {
                 if (a3 != null) {
                     this.e.add(a3);
                 }
-            } else if (a2 == 3 && this.f25403a.a(this.b, this.f25404c, this.e)) {
-                arrayList.add(this.f25404c.b());
-                this.f25404c.a();
+            } else if (a2 == 3 && this.f11715a.a(this.b, this.f11716c, this.e)) {
+                arrayList.add(this.f11716c.b());
+                this.f11716c.a();
             }
         }
     }

@@ -2,6 +2,7 @@ package com.soft.blued.ui.msg.viewModel;
 
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.BlueAppLocal;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.module.common.base.mvi.MviEvent;
@@ -33,63 +34,57 @@ import kotlinx.coroutines.CoroutineScope;
 public final class HelloCallViewModel$getCallData$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f32609a;
+    int f18918a;
     final /* synthetic */ HelloCallAction.GetHelloCallData b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ HelloCallViewModel f32610c;
+    final /* synthetic */ HelloCallViewModel f18919c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public HelloCallViewModel$getCallData$1(HelloCallAction.GetHelloCallData getHelloCallData, HelloCallViewModel helloCallViewModel, Continuation<? super HelloCallViewModel$getCallData$1> continuation) {
         super(2, continuation);
         this.b = getHelloCallData;
-        this.f32610c = helloCallViewModel;
+        this.f18919c = helloCallViewModel;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((HelloCallViewModel$getCallData$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new HelloCallViewModel$getCallData$1(this.b, this.f32610c, continuation);
+        return new HelloCallViewModel$getCallData$1(this.b, this.f18919c, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         IntrinsicsKt.a();
-        if (this.f32609a == 0) {
+        if (this.f18918a == 0) {
             ResultKt.a(obj);
             UserHttpUtils.a(null, new BluedUIHttpResponse<BluedEntity<UserFindResult, HelloDataExtra>>(this.b.f()) { // from class: com.soft.blued.ui.msg.viewModel.HelloCallViewModel$getCallData$1.1
                 {
-                    super(r5);
+                    super((IRequestHost) r5);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i, String str, String str2) {
                     BluedStructureExtKt.a(HelloCallViewModel.this, new MviEvent.LoadFinished(false, false));
                     return super.onUIFailure(i, str, str2);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                     boolean z;
                     super.onUIFinish();
                     HelloCallViewModel helloCallViewModel = HelloCallViewModel.this;
-                    z = helloCallViewModel.f32608a;
+                    z = helloCallViewModel.f18917a;
                     BluedStructureExtKt.a(helloCallViewModel, new MviEvent.LoadFinished(true, z));
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(final BluedEntity<UserFindResult, HelloDataExtra> bluedEntity) {
                     if (bluedEntity == null) {
                         return;
                     }
                     HelloCallViewModel helloCallViewModel = HelloCallViewModel.this;
-                    helloCallViewModel.f32608a = bluedEntity.hasMore();
+                    helloCallViewModel.f18917a = bluedEntity.hasMore();
                     BluedStructureExtKt.a(helloCallViewModel, new Function1<HelloCallState, HelloCallState>() { // from class: com.soft.blued.ui.msg.viewModel.HelloCallViewModel$getCallData$1$1$onUIUpdate$1$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -97,16 +92,14 @@ public final class HelloCallViewModel$getCallData$1 extends SuspendLambda implem
                             super(1);
                         }
 
-                        @Override // kotlin.jvm.functions.Function1
                         /* renamed from: a */
-                        public final HelloCallState invoke(HelloCallState setState) {
-                            Intrinsics.e(setState, "$this$setState");
-                            return setState.a(bluedEntity);
+                        public final HelloCallState invoke(HelloCallState helloCallState) {
+                            Intrinsics.e(helloCallState, "$this$setState");
+                            return helloCallState.a(bluedEntity);
                         }
                     });
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public BluedEntity<UserFindResult, HelloDataExtra> parseData(String str) {
                     BluedEntity<UserFindResult, HelloDataExtra> parseData = super.parseData(str);
                     if (parseData != null) {
@@ -117,14 +110,14 @@ public final class HelloCallViewModel$getCallData$1 extends SuspendLambda implem
                             if (i2 >= size) {
                                 break;
                             }
-                            parseData.data.get(i2).distance = DistanceUtils.a(parseData.data.get(i2).distance, BlueAppLocal.c(), false);
-                            parseData.data.get(i2).last_operate = TimeAndDateUtils.a(AppInfo.d(), TimeAndDateUtils.c(parseData.data.get(i2).last_operate));
+                            ((UserFindResult) parseData.data.get(i2)).distance = DistanceUtils.a(((UserFindResult) parseData.data.get(i2)).distance, BlueAppLocal.c(), false);
+                            ((UserFindResult) parseData.data.get(i2)).last_operate = TimeAndDateUtils.a(AppInfo.d(), TimeAndDateUtils.c(((UserFindResult) parseData.data.get(i2)).last_operate));
                             i = i2 + 1;
                         }
                         if (parseData.extra != null) {
-                            List<UserFindResult> list = parseData.extra.top_data;
+                            List<UserFindResult> list = ((HelloDataExtra) parseData.extra).top_data;
                             if (!(list == null || list.isEmpty())) {
-                                List<UserFindResult> list2 = parseData.extra.top_data;
+                                List<UserFindResult> list2 = ((HelloDataExtra) parseData.extra).top_data;
                                 Intrinsics.c(list2, "parseData.extra.top_data");
                                 for (UserFindResult userFindResult : list2) {
                                     userFindResult.distance = DistanceUtils.a(userFindResult.distance, BlueAppLocal.c(), false);
@@ -137,7 +130,7 @@ public final class HelloCallViewModel$getCallData$1 extends SuspendLambda implem
                     return parseData;
                 }
             }, String.valueOf(this.b.a()), String.valueOf(this.b.b()), this.b.c(), this.b.d(), this.b.e(), this.b.f());
-            return Unit.f42314a;
+            return Unit.a;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }

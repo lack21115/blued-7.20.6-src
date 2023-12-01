@@ -17,13 +17,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/BluedGradientStrokeView.class */
 public class BluedGradientStrokeView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Paint f17898a;
+    private Paint a;
     private Xfermode b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f17899c;
+    private float c;
     private float d;
     private float e;
     private float f;
@@ -35,13 +31,9 @@ public class BluedGradientStrokeView extends LinearLayout {
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/BluedGradientStrokeView$RoundRect.class */
     class RoundRect {
-
-        /* renamed from: a  reason: collision with root package name */
-        public float f17900a;
+        public float a;
         public float b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public float f17901c;
+        public float c;
         public float d;
         public float e;
         public float f;
@@ -62,7 +54,7 @@ public class BluedGradientStrokeView extends LinearLayout {
 
     public BluedGradientStrokeView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f17899c = 0.0f;
+        this.c = 0.0f;
         this.d = 0.0f;
         this.e = 0.0f;
         this.f = 0.0f;
@@ -71,7 +63,7 @@ public class BluedGradientStrokeView extends LinearLayout {
         this.k = new Path();
         setWillNotDraw(false);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.BluedGradientStrokeView);
-        this.f17899c = obtainStyledAttributes.getDimension(R.styleable.BluedGradientStrokeView_stroke_width, 0.0f);
+        this.c = obtainStyledAttributes.getDimension(R.styleable.BluedGradientStrokeView_stroke_width, 0.0f);
         this.d = obtainStyledAttributes.getDimension(R.styleable.BluedGradientStrokeView_left_top_radius, 0.0f);
         this.e = obtainStyledAttributes.getDimension(R.styleable.BluedGradientStrokeView_right_top_radius, 0.0f);
         this.f = obtainStyledAttributes.getDimension(R.styleable.BluedGradientStrokeView_bottom_left_radius, 0.0f);
@@ -80,7 +72,7 @@ public class BluedGradientStrokeView extends LinearLayout {
         this.i = obtainStyledAttributes.getResourceId(R.styleable.BluedGradientStrokeView_storke_color, R.drawable.shape_raduis_6dp_66ffa3_3e93ff_4e9bff);
         obtainStyledAttributes.recycle();
         Paint paint = new Paint();
-        this.f17898a = paint;
+        this.a = paint;
         paint.setAntiAlias(true);
         this.b = new PorterDuffXfermode(PorterDuff.Mode.DST_OUT);
     }
@@ -90,9 +82,9 @@ public class BluedGradientStrokeView extends LinearLayout {
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null, 31);
-        this.f17898a.setXfermode(this.b);
+        this.a.setXfermode(this.b);
         RectF rectF = new RectF();
-        rectF.set(this.j.f17900a, this.j.b, this.j.f17901c, this.j.d);
+        rectF.set(this.j.a, this.j.b, this.j.c, this.j.d);
         this.k.reset();
         Path path = this.k;
         float f = this.h;
@@ -102,7 +94,7 @@ public class BluedGradientStrokeView extends LinearLayout {
         Drawable drawable = getResources().getDrawable(this.i);
         drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
         drawable.draw(canvas);
-        this.f17898a.setXfermode(null);
+        this.a.setXfermode(null);
         canvas.restoreToCount(saveLayer);
     }
 
@@ -112,10 +104,10 @@ public class BluedGradientStrokeView extends LinearLayout {
         super.onMeasure(i, i2);
         RoundRect roundRect = new RoundRect();
         this.j = roundRect;
-        roundRect.f17900a = this.f17899c;
-        this.j.b = this.f17899c;
-        this.j.f17901c = getMeasuredWidth() - this.f17899c;
-        this.j.d = getMeasuredHeight() - this.f17899c;
+        roundRect.a = this.c;
+        this.j.b = this.c;
+        this.j.c = getMeasuredWidth() - this.c;
+        this.j.d = getMeasuredHeight() - this.c;
         RoundRect roundRect2 = this.j;
         float f = this.d;
         float f2 = f;

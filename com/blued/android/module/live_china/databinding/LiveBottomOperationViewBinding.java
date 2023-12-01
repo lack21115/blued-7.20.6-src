@@ -8,14 +8,12 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveBottomOperationViewBinding.class */
 public final class LiveBottomOperationViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f12155a;
+    public final LinearLayout a;
     private final FrameLayout b;
 
     private LiveBottomOperationViewBinding(FrameLayout frameLayout, LinearLayout linearLayout) {
         this.b = frameLayout;
-        this.f12155a = linearLayout;
+        this.a = linearLayout;
     }
 
     public static LiveBottomOperationViewBinding a(View view) {
@@ -26,7 +24,6 @@ public final class LiveBottomOperationViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("llChildRoot"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.b;

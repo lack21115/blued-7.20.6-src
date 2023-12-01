@@ -26,8 +26,8 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
     public static final int BOXES_FIELD_NUMBER = 1;
     private static final BoxExtra DEFAULT_INSTANCE = new BoxExtra();
     private static final Parser<BoxExtra> PARSER = new AbstractParser<BoxExtra>() { // from class: cn.irisgw.live.BoxExtra.1
-        @Override // com.google.protobuf.Parser
-        public BoxExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public BoxExtra m625parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new BoxExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -57,8 +57,8 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
         private int type_;
         private static final Box DEFAULT_INSTANCE = new Box();
         private static final Parser<Box> PARSER = new AbstractParser<Box>() { // from class: cn.irisgw.live.BoxExtra.Box.1
-            @Override // com.google.protobuf.Parser
-            public Box parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public Box m634parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new Box(codedInputStream, extensionRegistryLite);
             }
         };
@@ -99,22 +99,22 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 boolean unused = Box.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m636addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Box build() {
-                Box buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public Box m638build() {
+                Box m640buildPartial = m640buildPartial();
+                if (m640buildPartial.isInitialized()) {
+                    return m640buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m640buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Box buildPartial() {
+            /* renamed from: buildPartial */
+            public Box m640buildPartial() {
                 Box box = new Box(this);
                 box.type_ = this.type_;
                 box.boxId_ = this.boxId_;
@@ -128,8 +128,8 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 return box;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m644clear() {
                 super.clear();
                 this.type_ = 0;
                 this.boxId_ = "";
@@ -166,8 +166,8 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m646clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -177,8 +177,8 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m649clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -200,10 +200,9 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m655clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.BoxExtra.BoxOrBuilder
@@ -272,12 +271,11 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public Box getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public Box m657getDefaultInstanceForType() {
                 return Box.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_BoxExtra_Box_descriptor;
             }
@@ -324,12 +322,10 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 return this.type_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_BoxExtra_Box_fieldAccessorTable.ensureFieldAccessorsInitialized(Box.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -366,18 +362,18 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                     this.boxGif_ = box.boxGif_;
                     onChanged();
                 }
-                mergeUnknownFields(box.unknownFields);
+                m666mergeUnknownFields(box.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.BoxExtra.Box.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.BoxExtra.Box.Builder m663mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -422,11 +418,11 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.BoxExtra.Box.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.BoxExtra$Box$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.BoxExtra.Box.Builder.m663mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.BoxExtra$Box$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m662mergeFrom(Message message) {
                 if (message instanceof Box) {
                     return mergeFrom((Box) message);
                 }
@@ -434,8 +430,8 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m666mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -502,8 +498,8 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m668setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -538,8 +534,8 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m670setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -549,8 +545,8 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m672setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -621,66 +617,65 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m633toBuilder();
         }
 
         public static Builder newBuilder(Box box) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(box);
+            return DEFAULT_INSTANCE.m633toBuilder().mergeFrom(box);
         }
 
         public static Box parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (Box) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static Box parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Box) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Box parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (Box) PARSER.parseFrom(byteString);
         }
 
         public static Box parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (Box) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static Box parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (Box) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static Box parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Box) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static Box parseFrom(InputStream inputStream) throws IOException {
-            return (Box) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static Box parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Box) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Box parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (Box) PARSER.parseFrom(byteBuffer);
         }
 
         public static Box parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (Box) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static Box parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (Box) PARSER.parseFrom(bArr);
         }
 
         public static Box parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (Box) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<Box> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -758,8 +753,8 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public Box getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public Box m628getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -773,7 +768,6 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
             return this.index_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<Box> getParserForType() {
             return PARSER;
         }
@@ -805,7 +799,6 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -857,12 +850,10 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
             return this.type_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -872,12 +863,10 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_BoxExtra_Box_fieldAccessorTable.ensureFieldAccessorsInitialized(Box.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -890,28 +879,26 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m631newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m630newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new Box();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m633toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = this.type_;
             if (i != 0) {
@@ -1026,7 +1013,7 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 return this;
             }
             ensureBoxesIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.boxes_);
+            AbstractMessageLite.Builder.addAll(iterable, this.boxes_);
             onChanged();
             return this;
         }
@@ -1034,11 +1021,11 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
         public Builder addBoxes(int i, Box.Builder builder) {
             RepeatedFieldBuilderV3<Box, Box.Builder, BoxOrBuilder> repeatedFieldBuilderV3 = this.boxesBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m638build());
                 return this;
             }
             ensureBoxesIsMutable();
-            this.boxes_.add(i, builder.build());
+            this.boxes_.add(i, builder.m638build());
             onChanged();
             return this;
         }
@@ -1061,11 +1048,11 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
         public Builder addBoxes(Box.Builder builder) {
             RepeatedFieldBuilderV3<Box, Box.Builder, BoxOrBuilder> repeatedFieldBuilderV3 = this.boxesBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m638build());
                 return this;
             }
             ensureBoxesIsMutable();
-            this.boxes_.add(builder.build());
+            this.boxes_.add(builder.m638build());
             onChanged();
             return this;
         }
@@ -1093,22 +1080,22 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
             return getBoxesFieldBuilder().addBuilder(i, Box.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m674addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public BoxExtra build() {
-            BoxExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public BoxExtra m676build() {
+            BoxExtra m678buildPartial = m678buildPartial();
+            if (m678buildPartial.isInitialized()) {
+                return m678buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m678buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public BoxExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public BoxExtra m678buildPartial() {
             BoxExtra boxExtra = new BoxExtra(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<Box, Box.Builder, BoxOrBuilder> repeatedFieldBuilderV3 = this.boxesBuilder_;
@@ -1125,8 +1112,8 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
             return boxExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m682clear() {
             super.clear();
             RepeatedFieldBuilderV3<Box, Box.Builder, BoxOrBuilder> repeatedFieldBuilderV3 = this.boxesBuilder_;
             if (repeatedFieldBuilderV3 != null) {
@@ -1150,20 +1137,19 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m684clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m687clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m693clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.BoxExtraOrBuilder
@@ -1195,7 +1181,7 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
         @Override // cn.irisgw.live.BoxExtraOrBuilder
         public BoxOrBuilder getBoxesOrBuilder(int i) {
             RepeatedFieldBuilderV3<Box, Box.Builder, BoxOrBuilder> repeatedFieldBuilderV3 = this.boxesBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.boxes_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.boxes_.get(i) : (BoxOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.BoxExtraOrBuilder
@@ -1204,22 +1190,19 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
             return repeatedFieldBuilderV3 != null ? repeatedFieldBuilderV3.getMessageOrBuilderList() : Collections.unmodifiableList(this.boxes_);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public BoxExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public BoxExtra m695getDefaultInstanceForType() {
             return BoxExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_BoxExtra_descriptor;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_BoxExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(BoxExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -1254,18 +1237,18 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                     this.boxesBuilder_.addAllMessages(boxExtra.boxes_);
                 }
             }
-            mergeUnknownFields(boxExtra.unknownFields);
+            m704mergeUnknownFields(boxExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.BoxExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.BoxExtra.Builder m701mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -1310,11 +1293,11 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.BoxExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.BoxExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.BoxExtra.Builder.m701mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.BoxExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m700mergeFrom(Message message) {
             if (message instanceof BoxExtra) {
                 return mergeFrom((BoxExtra) message);
             }
@@ -1322,8 +1305,8 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m704mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -1342,11 +1325,11 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
         public Builder setBoxes(int i, Box.Builder builder) {
             RepeatedFieldBuilderV3<Box, Box.Builder, BoxOrBuilder> repeatedFieldBuilderV3 = this.boxesBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m638build());
                 return this;
             }
             ensureBoxesIsMutable();
-            this.boxes_.set(i, builder.build());
+            this.boxes_.set(i, builder.m638build());
             onChanged();
             return this;
         }
@@ -1366,18 +1349,18 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m706setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m708setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m710setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -1448,66 +1431,65 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m624toBuilder();
     }
 
     public static Builder newBuilder(BoxExtra boxExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(boxExtra);
+        return DEFAULT_INSTANCE.m624toBuilder().mergeFrom(boxExtra);
     }
 
     public static BoxExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (BoxExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static BoxExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (BoxExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static BoxExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (BoxExtra) PARSER.parseFrom(byteString);
     }
 
     public static BoxExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (BoxExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static BoxExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (BoxExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static BoxExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (BoxExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static BoxExtra parseFrom(InputStream inputStream) throws IOException {
-        return (BoxExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static BoxExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (BoxExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static BoxExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (BoxExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static BoxExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (BoxExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static BoxExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (BoxExtra) PARSER.parseFrom(bArr);
     }
 
     public static BoxExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (BoxExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<BoxExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1544,17 +1526,15 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
         return this.boxes_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public BoxExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public BoxExtra m619getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<BoxExtra> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1569,12 +1549,10 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1589,12 +1567,10 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_BoxExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(BoxExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1607,28 +1583,26 @@ public final class BoxExtra extends GeneratedMessageV3 implements BoxExtraOrBuil
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m622newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m621newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new BoxExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m624toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {

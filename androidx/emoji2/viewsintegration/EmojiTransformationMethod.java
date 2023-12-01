@@ -9,15 +9,15 @@ import androidx.emoji2.text.EmojiCompat;
 class EmojiTransformationMethod implements TransformationMethod {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TransformationMethod f2894a;
+    private final TransformationMethod f2846a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public EmojiTransformationMethod(TransformationMethod transformationMethod) {
-        this.f2894a = transformationMethod;
+        this.f2846a = transformationMethod;
     }
 
     public TransformationMethod getOriginalTransformationMethod() {
-        return this.f2894a;
+        return this.f2846a;
     }
 
     @Override // android.text.method.TransformationMethod
@@ -25,7 +25,7 @@ class EmojiTransformationMethod implements TransformationMethod {
         if (view.isInEditMode()) {
             return charSequence;
         }
-        TransformationMethod transformationMethod = this.f2894a;
+        TransformationMethod transformationMethod = this.f2846a;
         CharSequence charSequence2 = charSequence;
         if (transformationMethod != null) {
             charSequence2 = transformationMethod.getTransformation(charSequence, view);
@@ -42,7 +42,7 @@ class EmojiTransformationMethod implements TransformationMethod {
 
     @Override // android.text.method.TransformationMethod
     public void onFocusChanged(View view, CharSequence charSequence, boolean z, int i, Rect rect) {
-        TransformationMethod transformationMethod = this.f2894a;
+        TransformationMethod transformationMethod = this.f2846a;
         if (transformationMethod != null) {
             transformationMethod.onFocusChanged(view, charSequence, z, i, rect);
         }

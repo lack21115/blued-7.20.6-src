@@ -9,13 +9,9 @@ import javax.crypto.spec.SecretKeySpec;
 /* renamed from: com.amap.api.col.3sl.ij  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ij.class */
 public final class ij {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static byte[] f5155a;
+    private static byte[] a;
     private static String[] b = {"kp6SsA", "cHE4dQ", "JKekrA", "XBxOHQ", "CSnpKw", "VwcThw", "wkp6Sg", "1cHE4Q"};
-
-    /* renamed from: c  reason: collision with root package name */
-    private static int[] f5156c = null;
+    private static int[] c = null;
 
     private static int a(int i, int i2) {
         int i3 = 0;
@@ -82,10 +78,10 @@ public final class ij {
 
     private static byte[] a(byte[] bArr) {
         try {
-            if (f5155a == null) {
-                f5155a = ib.c("YAAAAAAAAAAAAAAAAAAAAAA").getBytes();
+            if (a == null) {
+                a = ib.c("YAAAAAAAAAAAAAAAAAAAAAA").getBytes();
             }
-            IvParameterSpec ivParameterSpec = new IvParameterSpec(f5155a);
+            IvParameterSpec ivParameterSpec = new IvParameterSpec(a);
             SecretKeySpec secretKeySpec = new SecretKeySpec(a(b()).getBytes("UTF-8"), ib.c("EQUVT"));
             Cipher cipher = Cipher.getInstance(ib.c("CQUVTL0NCQy9QS0NTNVBhZGRpbmc"));
             cipher.init(1, secretKeySpec, ivParameterSpec);
@@ -113,7 +109,7 @@ public final class ij {
     }
 
     private static int[] b() {
-        int[] iArr = f5156c;
+        int[] iArr = c;
         if (iArr != null) {
             return iArr;
         }

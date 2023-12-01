@@ -13,18 +13,18 @@ import java.util.concurrent.ConcurrentMap;
 public final class ApplicationVersionSignature {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ConcurrentMap<String, Key> f21091a = new ConcurrentHashMap();
+    private static final ConcurrentMap<String, Key> f7485a = new ConcurrentHashMap();
 
     private ApplicationVersionSignature() {
     }
 
     public static Key a(Context context) {
         String packageName = context.getPackageName();
-        Key key = f21091a.get(packageName);
+        Key key = f7485a.get(packageName);
         Key key2 = key;
         if (key == null) {
             Key b = b(context);
-            key2 = f21091a.putIfAbsent(packageName, b);
+            key2 = f7485a.putIfAbsent(packageName, b);
             if (key2 == null) {
                 return b;
             }

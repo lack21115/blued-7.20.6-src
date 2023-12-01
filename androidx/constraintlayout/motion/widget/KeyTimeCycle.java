@@ -47,30 +47,30 @@ public class KeyTimeCycle extends Key {
     static class Loader {
 
         /* renamed from: a  reason: collision with root package name */
-        private static SparseIntArray f2175a;
+        private static SparseIntArray f2127a;
 
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
-            f2175a = sparseIntArray;
+            f2127a = sparseIntArray;
             sparseIntArray.append(R.styleable.KeyTimeCycle_android_alpha, 1);
-            f2175a.append(R.styleable.KeyTimeCycle_android_elevation, 2);
-            f2175a.append(R.styleable.KeyTimeCycle_android_rotation, 4);
-            f2175a.append(R.styleable.KeyTimeCycle_android_rotationX, 5);
-            f2175a.append(R.styleable.KeyTimeCycle_android_rotationY, 6);
-            f2175a.append(R.styleable.KeyTimeCycle_android_scaleX, 7);
-            f2175a.append(R.styleable.KeyTimeCycle_transitionPathRotate, 8);
-            f2175a.append(R.styleable.KeyTimeCycle_transitionEasing, 9);
-            f2175a.append(R.styleable.KeyTimeCycle_motionTarget, 10);
-            f2175a.append(R.styleable.KeyTimeCycle_framePosition, 12);
-            f2175a.append(R.styleable.KeyTimeCycle_curveFit, 13);
-            f2175a.append(R.styleable.KeyTimeCycle_android_scaleY, 14);
-            f2175a.append(R.styleable.KeyTimeCycle_android_translationX, 15);
-            f2175a.append(R.styleable.KeyTimeCycle_android_translationY, 16);
-            f2175a.append(R.styleable.KeyTimeCycle_android_translationZ, 17);
-            f2175a.append(R.styleable.KeyTimeCycle_motionProgress, 18);
-            f2175a.append(R.styleable.KeyTimeCycle_wavePeriod, 20);
-            f2175a.append(R.styleable.KeyTimeCycle_waveOffset, 21);
-            f2175a.append(R.styleable.KeyTimeCycle_waveShape, 19);
+            f2127a.append(R.styleable.KeyTimeCycle_android_elevation, 2);
+            f2127a.append(R.styleable.KeyTimeCycle_android_rotation, 4);
+            f2127a.append(R.styleable.KeyTimeCycle_android_rotationX, 5);
+            f2127a.append(R.styleable.KeyTimeCycle_android_rotationY, 6);
+            f2127a.append(R.styleable.KeyTimeCycle_android_scaleX, 7);
+            f2127a.append(R.styleable.KeyTimeCycle_transitionPathRotate, 8);
+            f2127a.append(R.styleable.KeyTimeCycle_transitionEasing, 9);
+            f2127a.append(R.styleable.KeyTimeCycle_motionTarget, 10);
+            f2127a.append(R.styleable.KeyTimeCycle_framePosition, 12);
+            f2127a.append(R.styleable.KeyTimeCycle_curveFit, 13);
+            f2127a.append(R.styleable.KeyTimeCycle_android_scaleY, 14);
+            f2127a.append(R.styleable.KeyTimeCycle_android_translationX, 15);
+            f2127a.append(R.styleable.KeyTimeCycle_android_translationY, 16);
+            f2127a.append(R.styleable.KeyTimeCycle_android_translationZ, 17);
+            f2127a.append(R.styleable.KeyTimeCycle_motionProgress, 18);
+            f2127a.append(R.styleable.KeyTimeCycle_wavePeriod, 20);
+            f2127a.append(R.styleable.KeyTimeCycle_waveOffset, 21);
+            f2127a.append(R.styleable.KeyTimeCycle_waveShape, 19);
         }
 
         private Loader() {
@@ -85,7 +85,7 @@ public class KeyTimeCycle extends Key {
                     return;
                 }
                 int index = typedArray.getIndex(i2);
-                switch (f2175a.get(index)) {
+                switch (f2127a.get(index)) {
                     case 1:
                         keyTimeCycle.h = typedArray.getFloat(index, keyTimeCycle.h);
                         break;
@@ -95,7 +95,7 @@ public class KeyTimeCycle extends Key {
                     case 3:
                     case 11:
                     default:
-                        Log.e("KeyTimeCycle", "unused attribute 0x" + Integer.toHexString(index) + "   " + f2175a.get(index));
+                        Log.e("KeyTimeCycle", "unused attribute 0x" + Integer.toHexString(index) + "   " + f2127a.get(index));
                         break;
                     case 4:
                         keyTimeCycle.j = typedArray.getFloat(index, keyTimeCycle.j);
@@ -121,7 +121,7 @@ public class KeyTimeCycle extends Key {
                                 keyTimeCycle.b = typedArray.getResourceId(index, keyTimeCycle.b);
                                 break;
                             } else {
-                                keyTimeCycle.f2170c = typedArray.getString(index);
+                                keyTimeCycle.f2122c = typedArray.getString(index);
                                 break;
                             }
                         } else {
@@ -129,12 +129,12 @@ public class KeyTimeCycle extends Key {
                             if (keyTimeCycle.b != -1) {
                                 break;
                             } else {
-                                keyTimeCycle.f2170c = typedArray.getString(index);
+                                keyTimeCycle.f2122c = typedArray.getString(index);
                                 break;
                             }
                         }
                     case 12:
-                        keyTimeCycle.f2169a = typedArray.getInt(index, keyTimeCycle.f2169a);
+                        keyTimeCycle.f2121a = typedArray.getInt(index, keyTimeCycle.f2121a);
                         break;
                     case 13:
                         keyTimeCycle.g = typedArray.getInteger(index, keyTimeCycle.g);
@@ -212,7 +212,7 @@ public class KeyTimeCycle extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     /* renamed from: clone */
-    public Key mo1365clone() {
+    public Key mo1228clone() {
         return new KeyTimeCycle().copy(this);
     }
 
@@ -249,7 +249,7 @@ public class KeyTimeCycle extends Key {
             hashSet.add("elevation");
         }
         if (!Float.isNaN(this.j)) {
-            hashSet.add("rotation");
+            hashSet.add(Key.ROTATION);
         }
         if (!Float.isNaN(this.k)) {
             hashSet.add("rotationX");
@@ -302,7 +302,7 @@ public class KeyTimeCycle extends Key {
             hashMap.put("elevation", Integer.valueOf(this.g));
         }
         if (!Float.isNaN(this.j)) {
-            hashMap.put("rotation", Integer.valueOf(this.g));
+            hashMap.put(Key.ROTATION, Integer.valueOf(this.g));
         }
         if (!Float.isNaN(this.k)) {
             hashMap.put("rotationX", Integer.valueOf(this.g));
@@ -407,7 +407,7 @@ public class KeyTimeCycle extends Key {
                 z = true;
                 break;
             case -40300674:
-                if (str.equals("rotation")) {
+                if (str.equals(Key.ROTATION)) {
                     z = true;
                     break;
                 }

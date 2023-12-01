@@ -36,7 +36,6 @@ public final class SearchLikeChatFragment_MVP implements MvpDispatcher {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     public void a(MvpFragment mvpFragment, String str, List list) {
         SearchLikeChatFragment searchLikeChatFragment = (SearchLikeChatFragment) mvpFragment;
         if (list != null && list.size() > 0) {

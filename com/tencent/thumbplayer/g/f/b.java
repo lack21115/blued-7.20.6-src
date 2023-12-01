@@ -8,10 +8,10 @@ public final class b {
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f39353c;
+    public int f25662c;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f39352a = true;
+    public boolean f25661a = true;
     public a d = a.First;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/g/f/b$a.class */
@@ -22,10 +22,10 @@ public final class b {
 
     public b(int i, int i2) {
         this.b = i;
-        this.f39353c = i2;
+        this.f25662c = i2;
     }
 
     public final String toString() {
-        return "[initWidth:" + this.b + ", initHeight:" + this.f39353c + ", reConfigByRealFormat:" + this.f39352a + ']';
+        return "[initWidth:" + this.b + ", initHeight:" + this.f25662c + ", reConfigByRealFormat:" + this.f25661a + ']';
     }
 }

@@ -50,12 +50,12 @@ public class ah {
         this.C.put(ai.B, com.huawei.openalliance.ad.utils.an.Code(com.huawei.openalliance.ad.constant.t.by));
         this.C.put(ai.C, ad.class);
         this.C.put(ai.b, ax.class);
-        this.C.put(ai.f22437c, ay.class);
+        this.C.put(ai.f8829c, ay.class);
         this.C.put(ai.S, bc.class);
         this.C.put(ai.D, ba.class);
         this.C.put(ai.F, bb.class);
         this.C.put(ai.L, aw.class);
-        this.C.put(ai.f22436a, aq.class);
+        this.C.put(ai.f8828a, aq.class);
         this.C.put(ai.d, av.class);
         this.C.put(ai.g, au.class);
         this.C.put(ai.f, as.class);

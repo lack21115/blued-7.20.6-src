@@ -1,6 +1,7 @@
 package com.blued.android.module.shortvideo.presenter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
@@ -62,19 +63,15 @@ import com.qiniu.pili.droid.shortvideo.PLVideoEncodeSetting;
 import com.qiniu.pili.droid.shortvideo.PLVideoFilterListener;
 import com.qiniu.pili.droid.shortvideo.PLVideoFrame;
 import com.qiniu.pili.droid.shortvideo.PLVideoSaveListener;
-import com.tencent.ugc.UGCTransitionRules;
 import java.io.File;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/presenter/ShinePresenter.class */
 public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements FeedStateObserverProxy.IFeedStateListener, EventObserver, PLFocusListener, PLRecordStateListener, PLVideoSaveListener {
     private static final String i = ShinePresenter.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f15802a;
+    public String a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    PLMicrophoneSetting f15803c;
+    PLMicrophoneSetting c;
     PLVideoEncodeSetting d;
     PLAudioEncodeSetting e;
     PLFaceBeautySetting f;
@@ -195,9 +192,7 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
     /* renamed from: com.blued.android.module.shortvideo.presenter.ShinePresenter$19  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/presenter/ShinePresenter$19.class */
     static /* synthetic */ class AnonymousClass19 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f15814a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x007d -> B:61:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x0081 -> B:55:0x001f). Please submit an issue!!! */
@@ -210,45 +205,45 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:39:0x009d -> B:57:0x0070). Please submit an issue!!! */
         static {
             int[] iArr = new int[EventType.VALUE.values().length];
-            f15814a = iArr;
+            a = iArr;
             try {
                 iArr[EventType.VALUE.CONFIG_MUSIC.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f15814a[EventType.VALUE.CONFIG_BEAUTY.ordinal()] = 2;
+                a[EventType.VALUE.CONFIG_BEAUTY.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f15814a[EventType.VALUE.CONFIG_FILTER.ordinal()] = 3;
+                a[EventType.VALUE.CONFIG_FILTER.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f15814a[EventType.VALUE.UPDATE_FILTER.ordinal()] = 4;
+                a[EventType.VALUE.UPDATE_FILTER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f15814a[EventType.VALUE.SAVE_FILTER.ordinal()] = 5;
+                a[EventType.VALUE.SAVE_FILTER.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f15814a[EventType.VALUE.CAPTURE_FRAME.ordinal()] = 6;
+                a[EventType.VALUE.CAPTURE_FRAME.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f15814a[EventType.VALUE.SHINE_RECORD.ordinal()] = 7;
+                a[EventType.VALUE.SHINE_RECORD.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f15814a[EventType.VALUE.SHINE_ENDRECORD.ordinal()] = 8;
+                a[EventType.VALUE.SHINE_ENDRECORD.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f15814a[EventType.VALUE.SHINE_SPEED.ordinal()] = 9;
+                a[EventType.VALUE.SHINE_SPEED.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f15814a[EventType.VALUE.DELECT_LAST_SECOTION.ordinal()] = 10;
+                a[EventType.VALUE.DELECT_LAST_SECOTION.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
         }
@@ -261,7 +256,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         AnonymousClass2() {
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.PLCaptureFrameListener
         public void onFrameCaptured(PLVideoFrame pLVideoFrame) {
             IShineView D = ShinePresenter.this.D();
             if (D == null || D.getActivity() == null || D.getActivity().isFinishing()) {
@@ -354,7 +348,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         senseTimeQiniuShortVideoManager.enableBeautify(false);
         SenseConfigData.a(this.t);
         this.k.setCameraPreviewListener(new PLCameraPreviewListener() { // from class: com.blued.android.module.shortvideo.presenter.ShinePresenter.17
-            @Override // com.qiniu.pili.droid.shortvideo.PLCameraPreviewListener
             public boolean onPreviewFrame(byte[] bArr, int i2, int i3, int i4, int i5, long j) {
                 if (ShinePresenter.this.t != null) {
                     ShinePresenter.this.t.handlePreviewFrame(bArr, i2, i3, i4);
@@ -364,22 +357,18 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
             }
         });
         this.k.setVideoFilterListener(new PLVideoFilterListener() { // from class: com.blued.android.module.shortvideo.presenter.ShinePresenter.18
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
             public int onDrawFrame(int i2, int i3, int i4, long j, float[] fArr) {
                 return ShinePresenter.this.t.drawFrame(i2, i3, i4, false);
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
             public void onSurfaceChanged(int i2, int i3) {
                 ShinePresenter.this.t.adjustViewPort(i2, i3);
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
             public void onSurfaceCreated() {
                 ShinePresenter.this.t.onSurfaceCreated();
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
             public void onSurfaceDestroy() {
                 ShinePresenter.this.t.onSurfaceDestroyed();
             }
@@ -420,7 +409,7 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         commonModel.setVideoPath(str);
         commonModel.setAddAblum(true);
         commonModel.setCurrentPage(1);
-        EditFragment.a(D().b(), commonModel, 2, o(), this.f15802a, this.b, this.s);
+        EditFragment.a(D().b(), commonModel, 2, o(), this.a, this.b, this.s);
     }
 
     public boolean A() {
@@ -465,7 +454,7 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
             ShineDataModel shineDataModel = new ShineDataModel();
             this.u = shineDataModel;
             shineDataModel.copyModel(commonModel, serializableData);
-            this.f15802a = bundle.getString("delete_auto_checkbox_text");
+            this.a = bundle.getString("delete_auto_checkbox_text");
             this.b = bundle.getInt("delete_auto_number");
             if (o() == 3 || o() == 0) {
                 this.r = true;
@@ -476,8 +465,8 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
             if (!z) {
                 this.u.setOpenBeauty(true);
             }
-            String a2 = UserProxy.b().a();
-            if (!TextUtils.isEmpty(a2) && (a2.equals(String.valueOf(2)) || a2.equals(String.valueOf(3)))) {
+            String a = UserProxy.b().a();
+            if (!TextUtils.isEmpty(a) && (a.equals(String.valueOf(2)) || a.equals(String.valueOf(3)))) {
                 this.u.setPrivilegeUser(true);
             }
             if (this.u.isPrivilegeUser()) {
@@ -499,20 +488,20 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
             pLShortVideoRecorder.setRecordStateListener(this);
             this.k.setFocusListener(this);
             this.n = new PLCameraSetting();
-            PLCameraSetting.CAMERA_FACING_ID a3 = StvCameraUtils.a();
+            PLCameraSetting.CAMERA_FACING_ID a2 = StvCameraUtils.a();
             if (z) {
-                a3 = StvCameraUtils.a(this.u.getCurrentCameraId());
+                a2 = StvCameraUtils.a(this.u.getCurrentCameraId());
             }
-            this.n.setCameraId(a3);
+            this.n.setCameraId(a2);
             this.n.setCameraPreviewSizeRatio(VideoConfigData.a());
             this.n.setCameraPreviewSizeLevel(VideoConfigData.b());
-            this.f15803c = new PLMicrophoneSetting();
+            this.c = new PLMicrophoneSetting();
             PLVideoEncodeSetting pLVideoEncodeSetting = new PLVideoEncodeSetting(D().getContext());
             this.d = pLVideoEncodeSetting;
-            pLVideoEncodeSetting.setPreferredEncodingSize(UGCTransitionRules.DEFAULT_IMAGE_WIDTH, 1280);
+            pLVideoEncodeSetting.setPreferredEncodingSize(720, (int) GL10.GL_INVALID_ENUM);
             this.d.setEncodingBitrate(VideoConfigData.c());
             this.d.setEncodingFps(30);
-            this.d.setHWCodecEnabled(VideoConfigData.f15874a.booleanValue());
+            this.d.setHWCodecEnabled(VideoConfigData.a.booleanValue());
             this.d.setProfileMode(PLVideoEncodeSetting.ProfileMode.HIGH);
             PLAudioEncodeSetting pLAudioEncodeSetting = new PLAudioEncodeSetting();
             this.e = pLAudioEncodeSetting;
@@ -525,8 +514,8 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
             this.u.setMaxRecordDuration(15000L);
             this.m.setMaxRecordDuration((long) (this.u.getRecordSpeed() * 15000.0d));
             D().e().setFirstPointPre(this.u.getMinRecordDurationPre());
-            D().e().a(D().getActivity(), this.m.getMaxRecordDuration());
-            this.k.prepare(D().a(), this.n, this.f15803c, this.d, this.e, this.f, this.m);
+            D().e().a((Context) D().getActivity(), this.m.getMaxRecordDuration());
+            this.k.prepare(D().a(), this.n, this.c, this.d, this.e, this.f, this.m);
             this.k.setRecordSpeed(this.u.getRecordSpeed());
             L();
             this.l = new GestureDetector(D().getContext(), this.v);
@@ -612,7 +601,7 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
 
     @Override // com.blued.android.module.shortvideo.observer.EventObserver
     public void a(EventType.VALUE value) {
-        switch (AnonymousClass19.f15814a[value.ordinal()]) {
+        switch (AnonymousClass19.a[value.ordinal()]) {
             case 1:
                 G();
                 return;
@@ -651,7 +640,7 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
                 double recordSpeed = this.u.getRecordSpeed();
                 this.m.setMaxRecordDuration((long) (this.u.getMaxRecordDuration() * recordSpeed));
                 this.k.setRecordSpeed(recordSpeed);
-                D().e().a(D().getActivity(), this.m.getMaxRecordDuration());
+                D().e().a((Context) D().getActivity(), this.m.getMaxRecordDuration());
                 return;
             case 10:
                 boolean s = s();
@@ -827,17 +816,14 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         return this.u.getFrom();
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLFocusListener
     public void onAutoFocusStart() {
         StvLogUtils.a(i + "auto focus start", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLFocusListener
     public void onAutoFocusStop() {
         StvLogUtils.a(i + "auto focus stop", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onDurationTooShort() {
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
             D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.ShinePresenter.5
@@ -851,7 +837,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         StvLogUtils.a(i + " getView() == null!!!", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onError(int i2) {
         if (i2 == 4) {
             this.o = "摄像头配置错误";
@@ -873,13 +858,11 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         StvLogUtils.a(i + " getView() == null!!!", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLFocusListener
     public void onManualFocusCancel() {
         StvLogUtils.a(i + "manual focus canceled", new Object[0]);
         D().f().d();
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLFocusListener
     public void onManualFocusStart(boolean z) {
         if (!z) {
             D().f().d();
@@ -894,7 +877,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         D().f().a();
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLFocusListener
     public void onManualFocusStop(boolean z) {
         StvLogUtils.a(i + "manual focus end result: " + z, new Object[0]);
         if (z) {
@@ -904,7 +886,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         }
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
     public void onProgressUpdate(final float f) {
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
             D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.ShinePresenter.11
@@ -918,7 +899,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         StvLogUtils.a(i + " getView() == null", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onReady() {
         StvLogUtils.a(i + "onReady()", new Object[0]);
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
@@ -933,7 +913,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         StvLogUtils.a(i + " getView() == null!!!", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onRecordCompleted() {
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
             this.k.concatSections(this);
@@ -950,7 +929,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         StvLogUtils.a(i + " getView() == null", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onRecordStarted() {
         StvLogUtils.a(i + "record start time: " + System.currentTimeMillis(), new Object[0]);
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
@@ -965,7 +943,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         StvLogUtils.a(i + " getView() == null", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onRecordStopped() {
         StvLogUtils.a(i + "record stop time: " + System.currentTimeMillis(), new Object[0]);
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
@@ -980,7 +957,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         StvLogUtils.a(i + " getView() == null", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
     public void onSaveVideoCanceled() {
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
             D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.ShinePresenter.13
@@ -994,7 +970,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         StvLogUtils.a(i + " getView() == null", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
     public void onSaveVideoFailed(final int i2) {
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
             D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.ShinePresenter.12
@@ -1011,7 +986,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         StvLogUtils.a(i + " getView() == null", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
     public void onSaveVideoSuccess(final String str) {
         StvLogUtils.a(i + "concat sections success filePath: " + str, new Object[0]);
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
@@ -1028,7 +1002,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         StvLogUtils.a(i + " getView() == null", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onSectionDecreased(long j, final long j2, final int i2) {
         StvLogUtils.a(i + "section decreased decDuration: " + j + " totalDuration: " + j2 + " sectionCount: " + i2, new Object[0]);
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
@@ -1049,7 +1022,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         StvLogUtils.a(i + " getView() == null", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onSectionIncreased(long j, final long j2, final int i2) {
         StvLogUtils.a(i + "section increased incDuration: " + j + " totalDuration: " + j2 + " sectionCount: " + i2, new Object[0]);
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
@@ -1066,7 +1038,6 @@ public class ShinePresenter extends ShortVideoBasePresent<IShineView> implements
         StvLogUtils.a(i + " getView() == null", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onSectionRecording(long j, long j2, int i2) {
         StvLogUtils.a(i + "section recording sectionDurationMs: " + j + " videoDurationMs: " + j2 + " sectionCount: " + i2, new Object[0]);
     }

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemProperties;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telephony/SignalStrength.class */
 public class SignalStrength implements Parcelable {
@@ -122,8 +121,8 @@ public class SignalStrength implements Parcelable {
         int i;
         int i2 = -1;
         int i3 = -1;
-        int integer = Resources.getSystem().getInteger(R.integer.config_LTE_RSRP_threshold_type);
-        int[] intArray = integer == 0 ? RSRP_THRESH_STRICT : integer == 2 ? Resources.getSystem().getIntArray(R.array.config_LTE_RSRP_custom_levels) : RSRP_THRESH_LENIENT;
+        int integer = Resources.getSystem().getInteger(17694856);
+        int[] intArray = integer == 0 ? RSRP_THRESH_STRICT : integer == 2 ? Resources.getSystem().getIntArray(17236053) : RSRP_THRESH_LENIENT;
         if (this.mLteRsrp > intArray[5]) {
             i2 = -1;
         } else if (this.mLteRsrp >= intArray[4]) {

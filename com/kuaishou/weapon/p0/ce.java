@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public class ce {
 
     /* renamed from: a  reason: collision with root package name */
-    private JSONObject f23777a;
+    private JSONObject f10169a;
 
     public ce(Context context) {
         if (Engine.loadSuccess) {
@@ -19,14 +19,14 @@ public class ce {
                 return;
             }
             try {
-                this.f23777a = new JSONObject(nop);
+                this.f10169a = new JSONObject(nop);
             } catch (Exception e) {
             }
         }
     }
 
     public String a(String str) {
-        JSONObject jSONObject = this.f23777a;
+        JSONObject jSONObject = this.f10169a;
         if (jSONObject != null) {
             try {
                 return jSONObject.getString(str);
@@ -38,7 +38,7 @@ public class ce {
     }
 
     public JSONArray b(String str) {
-        JSONObject jSONObject = this.f23777a;
+        JSONObject jSONObject = this.f10169a;
         if (jSONObject != null) {
             try {
                 String string = jSONObject.getString(str);

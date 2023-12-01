@@ -1,5 +1,6 @@
 package com.ss.android.socialbase.downloader.thread;
 
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -22,7 +23,7 @@ public class DefaultThreadFactory implements ThreadFactory {
     @Override // java.util.concurrent.ThreadFactory
     public Thread newThread(Runnable runnable) {
         int incrementAndGet = this.threadSeq.incrementAndGet();
-        Thread thread = new Thread(runnable, this.threadName + "-" + incrementAndGet);
+        Thread thread = new Thread(runnable, this.threadName + Constants.ACCEPT_TIME_SEPARATOR_SERVER + incrementAndGet);
         if (!this.ignoreStatusCheck) {
             if (thread.isDaemon()) {
                 thread.setDaemon(false);

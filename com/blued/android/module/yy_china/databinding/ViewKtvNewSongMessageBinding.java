@@ -10,14 +10,12 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewKtvNewSongMessageBinding.class */
 public final class ViewKtvNewSongMessageBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16864a;
+    public final TextView a;
     private final FrameLayout b;
 
     private ViewKtvNewSongMessageBinding(FrameLayout frameLayout, TextView textView) {
         this.b = frameLayout;
-        this.f16864a = textView;
+        this.a = textView;
     }
 
     public static ViewKtvNewSongMessageBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -36,7 +34,6 @@ public final class ViewKtvNewSongMessageBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("tvAddMess"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.b;

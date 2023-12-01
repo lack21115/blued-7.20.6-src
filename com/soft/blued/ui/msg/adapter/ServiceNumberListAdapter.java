@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.blued.android.chat.data.MsgType;
 import com.blued.android.chat.model.SessionModel;
-import com.blued.android.chat.model.SessionSettingBaseModel;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.utils.DensityUtils;
@@ -17,6 +16,7 @@ import com.blued.android.module.common.login.model.UserBasicModel;
 import com.blued.android.module.common.user.UserInfoHelper;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.soft.blued.R;
 import com.soft.blued.ui.msg.controller.tools.MsgCommonUtils;
 import com.soft.blued.utils.StringUtils;
@@ -29,58 +29,58 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ServiceNumberListAdapter extends BaseQuickAdapter<SessionModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final IRequestHost f32195a;
+    private final IRequestHost f18505a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ServiceNumberListAdapter(IRequestHost requestHost) {
+    public ServiceNumberListAdapter(IRequestHost iRequestHost) {
         super((int) R.layout.item_msg_friend_list);
-        Intrinsics.e(requestHost, "requestHost");
-        this.f32195a = requestHost;
+        Intrinsics.e(iRequestHost, "requestHost");
+        this.f18505a = iRequestHost;
     }
 
-    public final void a(TextView tv_content, SessionModel item) {
-        Intrinsics.e(tv_content, "tv_content");
-        Intrinsics.e(item, "item");
-        String str = item.lastDraft;
+    public final void a(TextView textView, SessionModel sessionModel) {
+        Intrinsics.e(textView, "tv_content");
+        Intrinsics.e(sessionModel, "item");
+        String str = sessionModel.lastDraft;
         if (!TextUtils.isEmpty(str)) {
             String string = this.mContext.getResources().getString(R.string.msg_draft);
             Intrinsics.c(string, "mContext.resources.getString(R.string.msg_draft)");
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Intrinsics.a(string, (Object) str));
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Intrinsics.a(string, str));
             spannableStringBuilder.setSpan(new ForegroundColorSpan(this.mContext.getResources().getColor(2131101201)), 0, string.length(), 33);
-            tv_content.setText(StringUtils.a(spannableStringBuilder, (int) tv_content.getTextSize(), 0));
-        } else if (MsgType.getClassify(item.lastMsgType) == 1 || item.lastMsgType == 8) {
-            if (TextUtils.isEmpty(item.lastMsgContent)) {
-                tv_content.setText("");
+            textView.setText(StringUtils.a(spannableStringBuilder, (int) textView.getTextSize(), 0));
+        } else if (MsgType.getClassify(sessionModel.lastMsgType) == 1 || sessionModel.lastMsgType == 8) {
+            if (TextUtils.isEmpty(sessionModel.lastMsgContent)) {
+                textView.setText("");
             } else {
-                tv_content.setText(item.lastMsgContent);
+                textView.setText(sessionModel.lastMsgContent);
             }
-        } else if (MsgType.getGroupOperationNotifyType(item.lastMsgType) == 2) {
-            if (TextUtils.isEmpty(item.lastMsgContent)) {
-                tv_content.setText("");
+        } else if (MsgType.getGroupOperationNotifyType(sessionModel.lastMsgType) == 2) {
+            if (TextUtils.isEmpty(sessionModel.lastMsgContent)) {
+                textView.setText("");
             } else {
-                tv_content.setText(item.lastMsgContent);
+                textView.setText(sessionModel.lastMsgContent);
             }
-        } else if (item.sessionType == 1 && item.sessionId == 5) {
-            if (TextUtils.isEmpty(item.lastMsgContent)) {
-                tv_content.setText("");
-            } else if (TextUtils.isEmpty(item.lastMsgFromNickname)) {
-                tv_content.setText(item.lastMsgContent);
+        } else if (sessionModel.sessionType == 1 && sessionModel.sessionId == 5) {
+            if (TextUtils.isEmpty(sessionModel.lastMsgContent)) {
+                textView.setText("");
+            } else if (TextUtils.isEmpty(sessionModel.lastMsgFromNickname)) {
+                textView.setText(sessionModel.lastMsgContent);
             } else {
-                tv_content.setText(item.lastMsgFromNickname + ": " + ((Object) item.lastMsgContent));
+                textView.setText(sessionModel.lastMsgFromNickname + ": " + ((Object) sessionModel.lastMsgContent));
             }
         } else {
-            short s = item.lastMsgType;
+            short s = sessionModel.lastMsgType;
             if (s == 1) {
-                if (TextUtils.isEmpty(item.lastMsgContent)) {
-                    tv_content.setText("");
+                if (TextUtils.isEmpty(sessionModel.lastMsgContent)) {
+                    textView.setText("");
                 } else {
-                    tv_content.setText(StringUtils.a(StringUtils.a(item.lastMsgContent, false, true, true, ""), (int) tv_content.getTextSize()));
+                    textView.setText(StringUtils.a(StringUtils.a(sessionModel.lastMsgContent, false, true, true, ""), (int) textView.getTextSize()));
                 }
             } else if (s == 68) {
-                if (TextUtils.isEmpty(item.lastMsgContent)) {
-                    tv_content.setText("");
+                if (TextUtils.isEmpty(sessionModel.lastMsgContent)) {
+                    textView.setText("");
                 } else {
-                    tv_content.setText(StringUtils.a(item.lastMsgContent, false, true, true, ""));
+                    textView.setText(StringUtils.a(sessionModel.lastMsgContent, false, true, true, ""));
                 }
             }
         }
@@ -89,49 +89,49 @@ public final class ServiceNumberListAdapter extends BaseQuickAdapter<SessionMode
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, SessionModel item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        ((TextView) helper.getView(R.id.msg_friend_item_name)).setMaxWidth(DensityUtils.a(this.mContext, 120.0f));
-        helper.setText(R.id.msg_friend_item_name, item.nickName);
-        TextView textView = (TextView) helper.getView(R.id.msg_friend_item_name);
+    public void convert(BaseViewHolder baseViewHolder, SessionModel sessionModel) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(sessionModel, "item");
+        ((TextView) baseViewHolder.getView(R.id.msg_friend_item_name)).setMaxWidth(DensityUtils.a(this.mContext, 120.0f));
+        baseViewHolder.setText(R.id.msg_friend_item_name, sessionModel.nickName);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.msg_friend_item_name);
         UserBasicModel userBasicModel = new UserBasicModel();
-        userBasicModel.vip_grade = item.vipGrade;
-        userBasicModel.is_vip_annual = item.vipAnnual;
-        userBasicModel.is_hide_vip_look = item.hideVipLook;
-        userBasicModel.vip_exp_lvl = item.vipExpLvl;
+        userBasicModel.vip_grade = sessionModel.vipGrade;
+        userBasicModel.is_vip_annual = sessionModel.vipAnnual;
+        userBasicModel.is_hide_vip_look = sessionModel.hideVipLook;
+        userBasicModel.vip_exp_lvl = sessionModel.vipExpLvl;
         UserRelationshipUtils.a(this.mContext, textView, userBasicModel);
-        View view = helper.getView(R.id.msg_friend_item_avatar);
+        View view = baseViewHolder.getView(R.id.msg_friend_item_avatar);
         Intrinsics.c(view, "helper.getView(R.id.msg_friend_item_avatar)");
-        ImageLoader.a(this.f32195a, item.avatar).b(2131237310).c().a((ImageView) view);
-        View view2 = helper.getView(R.id.msg_friend_item_avatar_v);
+        ImageLoader.a(this.f18505a, sessionModel.avatar).b(2131237310).c().a((ImageView) view);
+        View view2 = baseViewHolder.getView(R.id.msg_friend_item_avatar_v);
         Intrinsics.c(view2, "helper.getView(R.id.msg_friend_item_avatar_v)");
-        UserInfoHelper.a((ImageView) view2, item.vBadge, 3, 1, this.mContext.getResources().getColor(2131101191));
-        View view3 = helper.getView(2131364726);
+        UserInfoHelper.a((ImageView) view2, sessionModel.vBadge, 3, 1, this.mContext.getResources().getColor(2131101191));
+        View view3 = baseViewHolder.getView(2131364726);
         Intrinsics.c(view3, "helper.getView(R.id.img_vip_icon)");
         ImageView imageView = (ImageView) view3;
         UserBasicModel userBasicModel2 = new UserBasicModel();
-        userBasicModel2.vip_grade = item.vipGrade;
-        userBasicModel2.is_vip_annual = item.vipAnnual;
-        userBasicModel2.is_hide_vip_look = item.hideVipLook;
-        userBasicModel2.vip_exp_lvl = item.vipExpLvl;
+        userBasicModel2.vip_grade = sessionModel.vipGrade;
+        userBasicModel2.is_vip_annual = sessionModel.vipAnnual;
+        userBasicModel2.is_hide_vip_look = sessionModel.hideVipLook;
+        userBasicModel2.vip_exp_lvl = sessionModel.vipExpLvl;
         UserRelationshipUtils.a(imageView, userBasicModel2);
-        SessionSettingBaseModel sessionSettingBaseModel = item.sessionSettingModel;
-        if (sessionSettingBaseModel == null) {
+        SessionSettingModel sessionSettingModel = sessionModel.sessionSettingModel;
+        if (sessionSettingModel == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.common.db.model.SessionSettingModel");
         }
-        helper.setGone(R.id.msg_group_remind_soundoff, ((SessionSettingModel) sessionSettingBaseModel).getRemindAudio() == 1);
-        helper.setText(R.id.msg_friend_item_time, MsgCommonUtils.a(this.mContext, item.lastMsgTime));
-        helper.setTextColor(R.id.msg_friend_item_content, this.mContext.getResources().getColor(2131102263));
-        TextView msgContent = (TextView) helper.getView(R.id.msg_friend_item_content);
-        Intrinsics.c(msgContent, "msgContent");
-        a(msgContent, item);
-        helper.setGone(R.id.iv_secret, false);
-        ImageView imageView2 = (ImageView) helper.getView(R.id.msg_friend_item_status);
-        if (!TextUtils.isEmpty(item.lastDraft) || item.lastMsgType == 52 || item.lastMsgType == 68) {
+        baseViewHolder.setGone(R.id.msg_group_remind_soundoff, sessionSettingModel.getRemindAudio() == 1);
+        baseViewHolder.setText(R.id.msg_friend_item_time, MsgCommonUtils.a(this.mContext, sessionModel.lastMsgTime));
+        baseViewHolder.setTextColor(R.id.msg_friend_item_content, this.mContext.getResources().getColor(2131102263));
+        TextView textView2 = (TextView) baseViewHolder.getView(R.id.msg_friend_item_content);
+        Intrinsics.c(textView2, RemoteMessageConst.MessageBody.MSG_CONTENT);
+        a(textView2, sessionModel);
+        baseViewHolder.setGone(R.id.iv_secret, false);
+        ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.msg_friend_item_status);
+        if (!TextUtils.isEmpty(sessionModel.lastDraft) || sessionModel.lastMsgType == 52 || sessionModel.lastMsgType == 68) {
             imageView2.setVisibility(8);
         } else {
-            short s = item.lastMsgStateCode;
+            short s = sessionModel.lastMsgStateCode;
             if (s == 7) {
                 imageView2.setImageResource(R.drawable.chat_fail_resend);
                 imageView2.setVisibility(0);
@@ -145,6 +145,6 @@ public final class ServiceNumberListAdapter extends BaseQuickAdapter<SessionMode
                 imageView2.setVisibility(8);
             }
         }
-        helper.setGone(R.id.tv_at_me, false);
+        baseViewHolder.setGone(R.id.tv_at_me, false);
     }
 }

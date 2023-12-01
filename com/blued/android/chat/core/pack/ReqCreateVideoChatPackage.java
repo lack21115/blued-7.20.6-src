@@ -1,7 +1,6 @@
 package com.blued.android.chat.core.pack;
 
 import androidx.collection.ArrayMap;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/chat/core/pack/ReqCreateVideoChatPackage.class */
@@ -25,7 +24,7 @@ public class ReqCreateVideoChatPackage extends ReqBasePackage {
     protected Map<String, Object> getReqInfo() {
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("invited_uid", Long.valueOf(this.invitedUid));
-        arrayMap.put(TTLiveConstants.ROOMID_KEY, this.roomId);
+        arrayMap.put("room_id", this.roomId);
         arrayMap.put("room_type", Integer.valueOf(this.roomType));
         arrayMap.put("chat_sdk_type", Integer.valueOf(this.chatSdkType));
         arrayMap.put("consume_beans", Integer.valueOf(this.consumeBeans));

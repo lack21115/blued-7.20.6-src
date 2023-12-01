@@ -6,11 +6,11 @@ import com.bumptech.glide.request.RequestCoordinator;
 public class ThumbnailRequestCoordinator implements Request, RequestCoordinator {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RequestCoordinator f21052a;
+    private final RequestCoordinator f7446a;
     private final Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile Request f21053c;
+    private volatile Request f7447c;
     private volatile Request d;
     private RequestCoordinator.RequestState e = RequestCoordinator.RequestState.CLEARED;
     private RequestCoordinator.RequestState f = RequestCoordinator.RequestState.CLEARED;
@@ -18,21 +18,21 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
 
     public ThumbnailRequestCoordinator(Object obj, RequestCoordinator requestCoordinator) {
         this.b = obj;
-        this.f21052a = requestCoordinator;
+        this.f7446a = requestCoordinator;
     }
 
     private boolean i() {
-        RequestCoordinator requestCoordinator = this.f21052a;
+        RequestCoordinator requestCoordinator = this.f7446a;
         return requestCoordinator == null || requestCoordinator.b(this);
     }
 
     private boolean j() {
-        RequestCoordinator requestCoordinator = this.f21052a;
+        RequestCoordinator requestCoordinator = this.f7446a;
         return requestCoordinator == null || requestCoordinator.d(this);
     }
 
     private boolean k() {
-        RequestCoordinator requestCoordinator = this.f21052a;
+        RequestCoordinator requestCoordinator = this.f7446a;
         return requestCoordinator == null || requestCoordinator.c(this);
     }
 
@@ -46,19 +46,19 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
             }
             if (this.g && this.e != RequestCoordinator.RequestState.RUNNING) {
                 this.e = RequestCoordinator.RequestState.RUNNING;
-                this.f21053c.a();
+                this.f7447c.a();
             }
             this.g = false;
         }
     }
 
     public void a(Request request, Request request2) {
-        this.f21053c = request;
+        this.f7447c = request;
         this.d = request2;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0036, code lost:
-        if (r3.f21053c.a(r0.f21053c) != false) goto L7;
+        if (r3.f7447c.a(r0.f7447c) != false) goto L7;
      */
     /* JADX WARN: Code restructure failed: missing block: B:12:0x003d, code lost:
         if (r3.d != null) goto L12;
@@ -79,7 +79,7 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
         r5 = true;
      */
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0021, code lost:
-        if (r0.f21053c == null) goto L7;
+        if (r0.f7447c == null) goto L7;
      */
     @Override // com.bumptech.glide.request.Request
     /*
@@ -102,21 +102,21 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
             com.bumptech.glide.request.ThumbnailRequestCoordinator r0 = (com.bumptech.glide.request.ThumbnailRequestCoordinator) r0
             r4 = r0
             r0 = r3
-            com.bumptech.glide.request.Request r0 = r0.f21053c
+            com.bumptech.glide.request.Request r0 = r0.f7447c
             if (r0 != 0) goto L27
             r0 = r6
             r5 = r0
             r0 = r4
-            com.bumptech.glide.request.Request r0 = r0.f21053c
+            com.bumptech.glide.request.Request r0 = r0.f7447c
             if (r0 != 0) goto L60
             goto L39
         L27:
             r0 = r6
             r5 = r0
             r0 = r3
-            com.bumptech.glide.request.Request r0 = r0.f21053c
+            com.bumptech.glide.request.Request r0 = r0.f7447c
             r1 = r4
-            com.bumptech.glide.request.Request r1 = r1.f21053c
+            com.bumptech.glide.request.Request r1 = r1.f7447c
             boolean r0 = r0.a(r1)
             if (r0 == 0) goto L60
         L39:
@@ -155,7 +155,7 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
             this.e = RequestCoordinator.RequestState.CLEARED;
             this.f = RequestCoordinator.RequestState.CLEARED;
             this.d.b();
-            this.f21053c.b();
+            this.f7447c.b();
         }
     }
 
@@ -163,7 +163,7 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
     public boolean b(Request request) {
         boolean z;
         synchronized (this.b) {
-            if (!i() || (!request.equals(this.f21053c) && this.e == RequestCoordinator.RequestState.SUCCESS)) {
+            if (!i() || (!request.equals(this.f7447c) && this.e == RequestCoordinator.RequestState.SUCCESS)) {
                 z = false;
             }
             z = true;
@@ -180,7 +180,7 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
             }
             if (!this.e.a()) {
                 this.e = RequestCoordinator.RequestState.PAUSED;
-                this.f21053c.c();
+                this.f7447c.c();
             }
         }
     }
@@ -189,7 +189,7 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
     public boolean c(Request request) {
         boolean z;
         synchronized (this.b) {
-            z = k() && request.equals(this.f21053c) && !g();
+            z = k() && request.equals(this.f7447c) && !g();
         }
         return z;
     }
@@ -207,7 +207,7 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
     public boolean d(Request request) {
         boolean z;
         synchronized (this.b) {
-            z = j() && request.equals(this.f21053c) && this.e != RequestCoordinator.RequestState.PAUSED;
+            z = j() && request.equals(this.f7447c) && this.e != RequestCoordinator.RequestState.PAUSED;
         }
         return z;
     }
@@ -220,8 +220,8 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
                 return;
             }
             this.e = RequestCoordinator.RequestState.SUCCESS;
-            if (this.f21052a != null) {
-                this.f21052a.e(this);
+            if (this.f7446a != null) {
+                this.f7446a.e(this);
             }
             if (!this.f.a()) {
                 this.d.b();
@@ -241,13 +241,13 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
     @Override // com.bumptech.glide.request.RequestCoordinator
     public void f(Request request) {
         synchronized (this.b) {
-            if (!request.equals(this.f21053c)) {
+            if (!request.equals(this.f7447c)) {
                 this.f = RequestCoordinator.RequestState.FAILED;
                 return;
             }
             this.e = RequestCoordinator.RequestState.FAILED;
-            if (this.f21052a != null) {
-                this.f21052a.f(this);
+            if (this.f7446a != null) {
+                this.f7446a.f(this);
             }
         }
     }
@@ -265,7 +265,7 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
     public boolean g() {
         boolean z;
         synchronized (this.b) {
-            if (!this.d.g() && !this.f21053c.g()) {
+            if (!this.d.g() && !this.f7447c.g()) {
                 z = false;
             }
             z = true;
@@ -277,7 +277,7 @@ public class ThumbnailRequestCoordinator implements Request, RequestCoordinator 
     public RequestCoordinator h() {
         ThumbnailRequestCoordinator h;
         synchronized (this.b) {
-            h = this.f21052a != null ? this.f21052a.h() : this;
+            h = this.f7446a != null ? this.f7446a.h() : this;
         }
         return h;
     }

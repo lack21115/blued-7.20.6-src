@@ -13,13 +13,13 @@ import com.opos.mobad.model.data.MaterialData;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public com.opos.mobad.ad.h f27226a;
+    public com.opos.mobad.ad.h f13538a;
     private Context b;
     private AdItemData g;
     private MaterialData h;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f27227c = false;
+    private boolean f13539c = false;
     private volatile boolean d = false;
     private long e = -1;
     private boolean f = false;
@@ -27,7 +27,7 @@ public class l {
 
     public l(Context context, com.opos.mobad.ad.h hVar) {
         this.b = context;
-        this.f27226a = hVar;
+        this.f13538a = hVar;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0041, code lost:
@@ -90,10 +90,10 @@ public class l {
         com.opos.mobad.service.c.a(new Runnable() { // from class: com.opos.mobad.q.a.l.1
             @Override // java.lang.Runnable
             public void run() {
-                if (l.this.f27227c || !l.this.d || l.this.f27226a == null) {
+                if (l.this.f13539c || !l.this.d || l.this.f13538a == null) {
                     return;
                 }
-                l.this.f27226a.a(objArr);
+                l.this.f13538a.a(objArr);
             }
         });
     }
@@ -138,7 +138,7 @@ public class l {
     }
 
     public void a() {
-        if (this.d || this.f27227c || !this.g.z()) {
+        if (this.d || this.f13539c || !this.g.z()) {
             return;
         }
         a(new Object[0]);
@@ -146,7 +146,7 @@ public class l {
 
     public void a(long j) {
         this.e = j;
-        if (this.d || this.f27227c) {
+        if (this.d || this.f13539c) {
             return;
         }
         if (this.g.v() && this.g.K() > 0 && j >= this.g.K()) {
@@ -167,7 +167,7 @@ public class l {
     }
 
     public void a(AdItemData adItemData, String str) {
-        if (this.d || this.f27227c || !this.g.x() || adItemData.C()) {
+        if (this.d || this.f13539c || !this.g.x() || adItemData.C()) {
             return;
         }
         adItemData.d(true);
@@ -180,14 +180,14 @@ public class l {
 
     public void b(long j) {
         this.e = j;
-        if (this.d || this.f27227c || !this.g.v()) {
+        if (this.d || this.f13539c || !this.g.v()) {
             return;
         }
         a(new Object[0]);
     }
 
     public void b(AdItemData adItemData, String str) {
-        if (this.d || this.f27227c) {
+        if (this.d || this.f13539c) {
             return;
         }
         this.i = true;
@@ -219,14 +219,14 @@ public class l {
             long f = f(j);
             String valueOf = String.valueOf(Math.round(f / 1000.0d));
             SpannableString spannableString = new SpannableString(valueOf);
-            spannableString.setSpan(new ForegroundColorSpan(this.b.getResources().getColor(17170455)), 0, valueOf.length(), 33);
+            spannableString.setSpan(new ForegroundColorSpan(this.b.getResources().getColor(android.R.color.holo_red_dark)), 0, valueOf.length(), 33);
             charSequence = a(new SpannableStringBuilder(), spannableString, f);
         }
         return charSequence;
     }
 
     public void c() {
-        if (this.d || this.f27227c) {
+        if (this.d || this.f13539c) {
             return;
         }
         this.f = true;
@@ -242,7 +242,7 @@ public class l {
     }
 
     public boolean d() {
-        if (this.d || this.f27227c) {
+        if (this.d || this.f13539c) {
             return false;
         }
         this.d = true;
@@ -278,6 +278,6 @@ public class l {
 
     public void e() {
         this.d = false;
-        this.f27227c = true;
+        this.f13539c = true;
     }
 }

@@ -12,22 +12,18 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveGiftSetComboLayoutBinding.class */
 public final class LiveGiftSetComboLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12228a;
+    public final ImageView a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12229c;
+    public final ImageView c;
     public final CircleProgressView d;
     public final TextView e;
     private final FrameLayout f;
 
     private LiveGiftSetComboLayoutBinding(FrameLayout frameLayout, ImageView imageView, FrameLayout frameLayout2, ImageView imageView2, CircleProgressView circleProgressView, TextView textView) {
         this.f = frameLayout;
-        this.f12228a = imageView;
+        this.a = imageView;
         this.b = frameLayout2;
-        this.f12229c = imageView2;
+        this.c = imageView2;
         this.d = circleProgressView;
         this.e = textView;
     }
@@ -70,7 +66,6 @@ public final class LiveGiftSetComboLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.f;

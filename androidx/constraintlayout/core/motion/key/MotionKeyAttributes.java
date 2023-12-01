@@ -10,7 +10,7 @@ public class MotionKeyAttributes extends MotionKey {
     public static final int KEY_TYPE = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f2018c;
+    private String f1970c;
     private int d = -1;
     private int e = 0;
     private float f = Float.NaN;
@@ -90,7 +90,7 @@ public class MotionKeyAttributes extends MotionKey {
 
     @Override // androidx.constraintlayout.core.motion.key.MotionKey
     /* renamed from: clone */
-    public MotionKey mo1293clone() {
+    public MotionKey mo1156clone() {
         return null;
     }
 
@@ -298,7 +298,7 @@ public class MotionKeyAttributes extends MotionKey {
         } else if (i != 317) {
             return super.setValue(i, str);
         } else {
-            this.f2018c = str;
+            this.f1970c = str;
             return true;
         }
     }

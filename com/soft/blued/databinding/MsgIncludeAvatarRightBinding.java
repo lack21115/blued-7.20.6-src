@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class MsgIncludeAvatarRightBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29471a;
+    private final RelativeLayout f15781a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29471a;
+        return this.f15781a;
     }
 }

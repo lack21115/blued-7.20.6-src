@@ -5,14 +5,10 @@ import java.io.Serializable;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/LoadOptions.class */
 public class LoadOptions implements Serializable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static boolean f9592a = false;
+    public static boolean a = false;
     private static boolean n = false;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f9593c;
+    public String c;
     public int d;
     public boolean e;
     public String f;
@@ -27,9 +23,9 @@ public class LoadOptions implements Serializable {
 
     public LoadOptions() {
         this.b = 0;
-        this.f9593c = null;
+        this.c = null;
         this.d = 0;
-        this.e = f9592a;
+        this.e = a;
         this.f = ImageLoaderUtils.b();
         this.g = false;
         this.h = true;
@@ -43,9 +39,9 @@ public class LoadOptions implements Serializable {
 
     public LoadOptions(LoadOptions loadOptions) {
         this.b = 0;
-        this.f9593c = null;
+        this.c = null;
         this.d = 0;
-        this.e = f9592a;
+        this.e = a;
         this.f = ImageLoaderUtils.b();
         this.g = false;
         this.h = true;
@@ -56,7 +52,7 @@ public class LoadOptions implements Serializable {
         this.l = false;
         this.m = true;
         this.b = loadOptions.b;
-        this.f9593c = loadOptions.f9593c;
+        this.c = loadOptions.c;
         this.d = loadOptions.d;
         this.e = loadOptions.e;
         this.f = loadOptions.f;

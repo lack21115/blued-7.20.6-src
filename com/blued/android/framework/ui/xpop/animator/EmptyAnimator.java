@@ -11,16 +11,16 @@ public class EmptyAnimator extends PopupAnimator {
 
     @Override // com.blued.android.framework.ui.xpop.animator.PopupAnimator
     public void a() {
-        this.f9941c.setAlpha(0.0f);
+        this.c.setAlpha(0.0f);
     }
 
     @Override // com.blued.android.framework.ui.xpop.animator.PopupAnimator
     public void b() {
-        this.f9941c.animate().alpha(1.0f).setDuration(XPopup.b()).withLayer().start();
+        this.c.animate().alpha(1.0f).setDuration(XPopup.b()).withLayer().start();
     }
 
     @Override // com.blued.android.framework.ui.xpop.animator.PopupAnimator
     public void c() {
-        this.f9941c.animate().alpha(0.0f).setDuration(XPopup.b()).withLayer().start();
+        this.c.animate().alpha(0.0f).setDuration(XPopup.b()).withLayer().start();
     }
 }

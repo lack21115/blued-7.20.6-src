@@ -6,14 +6,14 @@ import com.opos.exoplayer.core.i.m;
 final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private final m f25098a = new m(8);
+    private final m f11410a = new m(8);
     private int b;
 
     private long b(com.opos.exoplayer.core.c.f fVar) {
         int i;
         int i2 = 0;
-        fVar.c(this.f25098a.f25496a, 0, 1);
-        int i3 = this.f25098a.f25496a[0] & 255;
+        fVar.c(this.f11410a.f11808a, 0, 1);
+        int i3 = this.f11410a.f11808a[0] & 255;
         if (i3 == 0) {
             return Long.MIN_VALUE;
         }
@@ -28,10 +28,10 @@ final class e {
             i5 = i + 1;
         }
         int i6 = i3 & i4;
-        fVar.c(this.f25098a.f25496a, 1, i);
+        fVar.c(this.f11410a.f11808a, 1, i);
         while (i2 < i) {
             i2++;
-            i6 = (this.f25098a.f25496a[i2] & 255) + (i6 << 8);
+            i6 = (this.f11410a.f11808a[i2] & 255) + (i6 << 8);
         }
         this.b += i + 1;
         return i6;

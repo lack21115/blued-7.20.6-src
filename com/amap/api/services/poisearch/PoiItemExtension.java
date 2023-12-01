@@ -24,18 +24,16 @@ public class PoiItemExtension implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5662a;
+    private String a;
     private String b;
 
     protected PoiItemExtension(Parcel parcel) {
-        this.f5662a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
     }
 
     public PoiItemExtension(String str, String str2) {
-        this.f5662a = str;
+        this.a = str;
         this.b = str2;
     }
 
@@ -45,7 +43,7 @@ public class PoiItemExtension implements Parcelable {
     }
 
     public String getOpentime() {
-        return this.f5662a;
+        return this.a;
     }
 
     public String getmRating() {
@@ -54,7 +52,7 @@ public class PoiItemExtension implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5662a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
     }
 }

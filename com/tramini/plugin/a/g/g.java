@@ -10,7 +10,7 @@ public final class g {
         ConcurrentHashMap<String, com.tramini.plugin.a.c.c> e = aVar.e();
         if (e != null) {
             for (String str : e.keySet()) {
-                if (!TextUtils.isEmpty(str) && (cVar = e.get(str)) != null && !TextUtils.isEmpty(cVar.f40502a) && cVar.f40502a.startsWith("http")) {
+                if (!TextUtils.isEmpty(str) && (cVar = e.get(str)) != null && !TextUtils.isEmpty(cVar.f26811a) && cVar.f26811a.startsWith("http")) {
                     return str;
                 }
             }

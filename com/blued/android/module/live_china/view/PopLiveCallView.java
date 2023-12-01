@@ -39,13 +39,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopLiveCallView.class */
 public class PopLiveCallView implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f15062a;
+    public View a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f15063c;
+    public View c;
     public Context d;
     public LayoutInflater e;
     private MyPopupWindow f;
@@ -102,19 +98,17 @@ public class PopLiveCallView implements View.OnClickListener {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopLiveCallView$CancelResponse.class */
     public class CancelResponse extends BluedUIHttpResponse {
-
-        /* renamed from: a  reason: collision with root package name */
-        LiveFriendModel f15076a;
+        LiveFriendModel a;
 
         public CancelResponse(LiveFriendModel liveFriendModel, IRequestHost iRequestHost) {
             super(iRequestHost);
-            this.f15076a = liveFriendModel;
+            this.a = liveFriendModel;
         }
 
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             if (i == 403) {
-                PopLiveCallView.this.u.remove(this.f15076a);
+                PopLiveCallView.this.u.remove(this.a);
                 PopLiveCallView.this.i();
             }
             return super.onUIFailure(i, str);
@@ -134,7 +128,7 @@ public class PopLiveCallView implements View.OnClickListener {
 
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
-            PopLiveCallView.this.u.remove(this.f15076a);
+            PopLiveCallView.this.u.remove(this.a);
             PopLiveCallView.this.i();
         }
     }
@@ -192,7 +186,7 @@ public class PopLiveCallView implements View.OnClickListener {
         }, 320L);
         j();
         k();
-        this.f15063c.setVisibility(8);
+        this.c.setVisibility(8);
     }
 
     private void a(List<LiveInviteUserModel> list) {
@@ -294,6 +288,7 @@ public class PopLiveCallView implements View.OnClickListener {
         }, i);
     }
 
+    /* JADX WARN: Type inference failed for: r1v6, types: [com.blued.android.module.live_china.view.PopLiveCallView$3] */
     private void c(final LiveFriendModel liveFriendModel) {
         if (liveFriendModel != null) {
             if (liveFriendModel.model != 5) {
@@ -382,17 +377,17 @@ public class PopLiveCallView implements View.OnClickListener {
     private void e() {
         this.e = LayoutInflater.from(this.d);
         b();
-        this.b = this.f15062a.findViewById(R.id.live_pk_call_layer);
-        this.t = (LinearLayout) this.f15062a.findViewById(R.id.ll_invite);
-        this.f15063c = this.f15062a.findViewById(R.id.content_layout);
-        this.j = (TextView) this.f15062a.findViewById(R.id.live_pk_call_text);
-        this.k = (TextView) this.f15062a.findViewById(R.id.live_pk_call_invite_text);
-        this.o = this.f15062a.findViewById(R.id.live_pk_call_invite_layout);
-        this.l = (TextView) this.f15062a.findViewById(R.id.live_pk_call_cancel);
-        this.m = this.f15062a.findViewById(R.id.live_pk_call_answer);
-        this.n = (ImageView) this.f15062a.findViewById(R.id.live_pk_call_invite);
-        this.p = this.f15062a.findViewById(R.id.ll_loading);
-        this.q = this.f15062a.findViewById(R.id.iv_connect);
+        this.b = this.a.findViewById(R.id.live_pk_call_layer);
+        this.t = (LinearLayout) this.a.findViewById(R.id.ll_invite);
+        this.c = this.a.findViewById(R.id.content_layout);
+        this.j = (TextView) this.a.findViewById(R.id.live_pk_call_text);
+        this.k = (TextView) this.a.findViewById(R.id.live_pk_call_invite_text);
+        this.o = this.a.findViewById(R.id.live_pk_call_invite_layout);
+        this.l = (TextView) this.a.findViewById(R.id.live_pk_call_cancel);
+        this.m = this.a.findViewById(R.id.live_pk_call_answer);
+        this.n = (ImageView) this.a.findViewById(R.id.live_pk_call_invite);
+        this.p = this.a.findViewById(R.id.ll_loading);
+        this.q = this.a.findViewById(R.id.iv_connect);
         this.l.setOnClickListener(this);
         this.m.setOnClickListener(this);
         this.n.setOnClickListener(this);
@@ -403,16 +398,16 @@ public class PopLiveCallView implements View.OnClickListener {
                 Tracker.onClick(view);
             }
         });
-        this.f15063c.setVisibility(8);
-        this.f15063c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopLiveCallView.2
+        this.c.setVisibility(8);
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopLiveCallView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
             }
         });
-        MyPopupWindow myPopupWindow = new MyPopupWindow(this.f15062a, -1, -1, true);
+        MyPopupWindow myPopupWindow = new MyPopupWindow(this.a, -1, -1, true);
         this.f = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.f.setTouchable(true);
         this.f.setOutsideTouchable(true);
         this.f.setFocusable(true);
@@ -459,12 +454,12 @@ public class PopLiveCallView implements View.OnClickListener {
             LiveSetDataObserver.a().e(4);
         }
         this.b.clearAnimation();
-        this.f15063c.clearAnimation();
+        this.c.clearAnimation();
         if (this.f.isShowing()) {
             this.f.a();
         }
-        this.f.showAtLocation(this.f15063c, 81, 0, 0);
-        this.f15063c.setVisibility(0);
+        this.f.showAtLocation(this.c, 81, 0, 0);
+        this.c.setVisibility(0);
         g();
     }
 
@@ -478,7 +473,7 @@ public class PopLiveCallView implements View.OnClickListener {
     }
 
     private void g() {
-        this.f15063c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_in));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_in));
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.5f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
@@ -562,7 +557,7 @@ public class PopLiveCallView implements View.OnClickListener {
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f15063c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_out));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_out));
     }
 
     private boolean l() {
@@ -596,7 +591,7 @@ public class PopLiveCallView implements View.OnClickListener {
     }
 
     public void b() {
-        this.f15062a = this.e.inflate(R.layout.live_pk_call, (ViewGroup) null);
+        this.a = this.e.inflate(R.layout.live_pk_call, (ViewGroup) null);
     }
 
     public void b(LiveFriendModel liveFriendModel) {
@@ -612,7 +607,7 @@ public class PopLiveCallView implements View.OnClickListener {
     }
 
     public boolean c() {
-        return this.f15063c.getVisibility() == 0;
+        return this.c.getVisibility() == 0;
     }
 
     @Override // android.view.View.OnClickListener

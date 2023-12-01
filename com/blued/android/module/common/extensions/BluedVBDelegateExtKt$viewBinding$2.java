@@ -12,9 +12,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/extensions/BluedVBDelegateExtKt$viewBinding$2.class */
 public final class BluedVBDelegateExtKt$viewBinding$2<V> extends Lambda implements Function1<ComponentActivity, V> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function1<View, V> f10783a;
+    final /* synthetic */ Function1<View, V> a;
     final /* synthetic */ Function1<ComponentActivity, View> b;
 
     /* JADX WARN: Incorrect return type in method signature: (Landroidx/activity/ComponentActivity;)TV; */
@@ -22,6 +20,6 @@ public final class BluedVBDelegateExtKt$viewBinding$2<V> extends Lambda implemen
     /* renamed from: a */
     public final ViewBinding invoke(ComponentActivity activity) {
         Intrinsics.e(activity, "activity");
-        return (ViewBinding) this.f10783a.invoke(this.b.invoke(activity));
+        return (ViewBinding) this.a.invoke(this.b.invoke(activity));
     }
 }

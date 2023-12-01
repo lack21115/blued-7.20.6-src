@@ -10,11 +10,11 @@ import kotlin.Metadata;
 public final class MyGroupFragmentNew$showGuide$1$1 extends SimpleCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ MyGroupFragmentNew f32771a;
+    final /* synthetic */ MyGroupFragmentNew f19080a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public MyGroupFragmentNew$showGuide$1$1(MyGroupFragmentNew myGroupFragmentNew) {
-        this.f32771a = myGroupFragmentNew;
+        this.f19080a = myGroupFragmentNew;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -26,12 +26,11 @@ public final class MyGroupFragmentNew$showGuide$1$1 extends SimpleCallback {
         basePopupView.p();
     }
 
-    @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
     public void c(final BasePopupView basePopupView) {
-        this.f32771a.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$showGuide$1$1$D3cE2b1SrbS8GR6hW2PJ3f24YM0
+        this.f19080a.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$showGuide$1$1$D3cE2b1SrbS8GR6hW2PJ3f24YM0
             @Override // java.lang.Runnable
             public final void run() {
-                MyGroupFragmentNew$showGuide$1$1.g(BasePopupView.this);
+                MyGroupFragmentNew$showGuide$1$1.g(basePopupView);
             }
         }, 5000L);
     }

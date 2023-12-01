@@ -3,12 +3,11 @@ package androidx.recyclerview.widget;
 import androidx.recyclerview.widget.AdapterHelper;
 import java.util.List;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/recyclerview/widget/OpReorderer.class */
-public class OpReorderer {
+class OpReorderer {
 
     /* renamed from: a  reason: collision with root package name */
-    final Callback f3310a;
+    final Callback f3262a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/recyclerview/widget/OpReorderer$Callback.class */
@@ -20,13 +19,13 @@ public class OpReorderer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public OpReorderer(Callback callback) {
-        this.f3310a = callback;
+        this.f3262a = callback;
     }
 
     private void a(List<AdapterHelper.UpdateOp> list, int i, int i2) {
         AdapterHelper.UpdateOp updateOp = list.get(i);
         AdapterHelper.UpdateOp updateOp2 = list.get(i2);
-        int i3 = updateOp2.f3211a;
+        int i3 = updateOp2.f3163a;
         if (i3 == 1) {
             c(list, i, updateOp, i2, updateOp2);
         } else if (i3 == 2) {
@@ -46,7 +45,7 @@ public class OpReorderer {
             if (size < 0) {
                 return -1;
             }
-            if (list.get(size).f3211a == 8) {
+            if (list.get(size).f3163a == 8) {
                 z = z3;
                 if (z3) {
                     return size;
@@ -107,11 +106,11 @@ public class OpReorderer {
             updateOp2.b--;
         } else if (updateOp.d < updateOp2.b + updateOp2.d) {
             updateOp2.d--;
-            updateOp.f3211a = 2;
+            updateOp.f3163a = 2;
             updateOp.d = 1;
             if (updateOp2.d == 0) {
                 list.remove(i2);
-                this.f3310a.recycleUpdateOp(updateOp2);
+                this.f3262a.recycleUpdateOp(updateOp2);
                 return;
             }
             return;
@@ -120,13 +119,13 @@ public class OpReorderer {
         if (updateOp.b <= updateOp2.b) {
             updateOp2.b++;
         } else if (updateOp.b < updateOp2.b + updateOp2.d) {
-            updateOp3 = this.f3310a.obtainUpdateOp(2, updateOp.b + 1, (updateOp2.b + updateOp2.d) - updateOp.b, null);
+            updateOp3 = this.f3262a.obtainUpdateOp(2, updateOp.b + 1, (updateOp2.b + updateOp2.d) - updateOp.b, null);
             updateOp2.d = updateOp.b - updateOp2.b;
         }
         if (z2) {
             list.set(i, updateOp2);
             list.remove(i2);
-            this.f3310a.recycleUpdateOp(updateOp);
+            this.f3262a.recycleUpdateOp(updateOp);
             return;
         }
         if (z) {

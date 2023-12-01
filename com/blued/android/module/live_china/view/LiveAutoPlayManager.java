@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
-import com.anythink.expressad.foundation.d.c;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.chat.data.EntranceData;
 import com.blued.android.chat.data.JoinLiveResult;
 import com.blued.android.chat.data.LiveChatInitData;
@@ -32,12 +30,8 @@ import java.util.List;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveAutoPlayManager.class */
 public class LiveAutoPlayManager implements LiveChatInfoListener, LiveSysNetworkObserver.ILiveSysNetworkObserver {
     private static volatile LiveAutoPlayManager b;
-
-    /* renamed from: a  reason: collision with root package name */
-    public BlLiveView f14368a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveAutoPlayer f14369c;
+    public BlLiveView a;
+    private LiveAutoPlayer c;
     private String d;
     private LiveRoomData g;
     private String h;
@@ -124,7 +118,7 @@ public class LiveAutoPlayManager implements LiveChatInfoListener, LiveSysNetwork
 
         @Override // java.lang.Runnable
         public void run() {
-            LiveAutoPlayManager.this.f14369c.e();
+            LiveAutoPlayManager.this.c.e();
         }
     }
 
@@ -132,7 +126,7 @@ public class LiveAutoPlayManager implements LiveChatInfoListener, LiveSysNetwork
         p();
         this.v = new Handler(Looper.getMainLooper());
         LiveAutoPlayer liveAutoPlayer = new LiveAutoPlayer();
-        this.f14369c = liveAutoPlayer;
+        this.c = liveAutoPlayer;
         liveAutoPlayer.a(this.w);
     }
 
@@ -174,7 +168,7 @@ public class LiveAutoPlayManager implements LiveChatInfoListener, LiveSysNetwork
     private void a(String str, LiveRoomData liveRoomData, String str2) {
         synchronized (this) {
             Logger.b("LiveAutoPlayManager", "initMediaPlayer");
-            if (this.f14369c.a()) {
+            if (this.c.a()) {
                 n();
             }
             this.d = str;
@@ -205,10 +199,10 @@ public class LiveAutoPlayManager implements LiveChatInfoListener, LiveSysNetwork
                 return;
             }
             try {
-                if (this.f14369c.a()) {
+                if (this.c.a()) {
                     o();
                 }
-                this.f14369c.a(this.d, this.f14368a);
+                this.c.a(this.d, this.a);
                 Logger.a("LiveAutoPlayManager", "prepare prepareAsync");
             } catch (Exception e) {
                 n();
@@ -245,15 +239,15 @@ public class LiveAutoPlayManager implements LiveChatInfoListener, LiveSysNetwork
         synchronized (this) {
             Logger.b("LiveAutoPlayManager", "setMediaEmpty");
             this.g = null;
-            if (this.f14369c.b()) {
-                this.f14369c.f();
+            if (this.c.b()) {
+                this.c.f();
             }
         }
     }
 
     private void p() {
         synchronized (this) {
-            this.f14368a = new BlLiveView(AppInfo.d());
+            this.a = new BlLiveView(AppInfo.d());
         }
     }
 
@@ -286,21 +280,21 @@ public class LiveAutoPlayManager implements LiveChatInfoListener, LiveSysNetwork
     private BlLiveView s() {
         BlLiveView blLiveView;
         synchronized (this) {
-            if (this.f14368a != null) {
-                ViewParent parent = this.f14368a.getParent();
+            if (this.a != null) {
+                ViewParent parent = this.a.getParent();
                 if (parent instanceof ViewGroup) {
-                    ((ViewGroup) parent).removeView(this.f14368a);
+                    ((ViewGroup) parent).removeView(this.a);
                 }
             }
             Logger.a("LiveAutoPlayManager", "getSurfaceView");
-            blLiveView = this.f14368a;
+            blLiveView = this.a;
         }
         return blLiveView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void u() {
-        BlLiveView blLiveView = this.f14368a;
+        BlLiveView blLiveView = this.a;
         if (blLiveView != null) {
             FrameLayout.LayoutParams layoutParams = blLiveView.getLayoutParams();
             if (layoutParams == null) {
@@ -309,7 +303,7 @@ public class LiveAutoPlayManager implements LiveChatInfoListener, LiveSysNetwork
                 layoutParams.width = this.t;
                 layoutParams.height = this.u;
             }
-            this.f14368a.setLayoutParams(layoutParams);
+            this.a.setLayoutParams(layoutParams);
             Logger.a("LiveAutoPlayManager", "setSurfaceParams");
         }
     }
@@ -326,14 +320,14 @@ public class LiveAutoPlayManager implements LiveChatInfoListener, LiveSysNetwork
             Logger.b("LiveAutoPlayManager", "autoPlay:" + liveRoomData.lid);
             if (LiveFloatManager.a().H()) {
                 Logger.b("LiveAutoPlayManager", "float window is playing, discard!");
-            } else if (this.g != null && TextUtils.equals(liveRoomData.live_url, this.g.live_url) && this.f14369c.b()) {
+            } else if (this.g != null && TextUtils.equals(liveRoomData.live_url, this.g.live_url) && this.c.b()) {
                 Logger.b("LiveAutoPlayManager", "already auto play, discard!");
             } else {
                 View s = s();
                 FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(1, 1);
                 layoutParams.gravity = 17;
                 frameLayout.addView(s, layoutParams);
-                if (this.f14368a == null) {
+                if (this.a == null) {
                     return;
                 }
                 Logger.b("LiveAutoPlayManager", "autoPlay prepare:" + liveRoomData.lid);
@@ -362,19 +356,19 @@ public class LiveAutoPlayManager implements LiveChatInfoListener, LiveSysNetwork
 
     public void d() {
         this.v.removeCallbacks(this.l);
-        this.v.postDelayed(this.l, m.ag);
+        this.v.postDelayed(this.l, 3000L);
     }
 
     public void e() {
         synchronized (this) {
-            this.f14369c.c();
+            this.c.c();
         }
     }
 
     public void f() {
         synchronized (this) {
-            Logger.b("LiveAutoPlayManager", c.cb);
-            this.f14369c.d();
+            Logger.b("LiveAutoPlayManager", "pause");
+            this.c.d();
         }
     }
 
@@ -426,7 +420,7 @@ public class LiveAutoPlayManager implements LiveChatInfoListener, LiveSysNetwork
     }
 
     public boolean l() {
-        return this.f14369c.b();
+        return this.c.b();
     }
 
     @Override // com.blued.android.chat.listener.LiveChatInfoListener

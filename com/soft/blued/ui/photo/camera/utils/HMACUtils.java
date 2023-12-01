@@ -8,7 +8,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class HMACUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f33042a = HMACUtils.class.getSimpleName();
+    public static final String f19351a = HMACUtils.class.getSimpleName();
 
     public static String a(String str, String str2) {
         try {
@@ -16,7 +16,7 @@ public class HMACUtils {
             mac.init(new SecretKeySpec(str2.getBytes(), "HmacSHA256"));
             return a(mac.doFinal(str.getBytes()));
         } catch (Exception e) {
-            Logger.b(f33042a, "Error sha256_HMAC == =========", e);
+            Logger.b(f19351a, "Error sha256_HMAC == =========", e);
             return "";
         }
     }

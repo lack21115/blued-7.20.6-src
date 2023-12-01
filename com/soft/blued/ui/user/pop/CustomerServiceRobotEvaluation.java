@@ -1,6 +1,7 @@
 package com.soft.blued.ui.user.pop;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,7 +20,7 @@ public final class CustomerServiceRobotEvaluation extends BottomPopupView {
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<String> f34250c;
+    private final List<String> f20559c;
     private final List<ViewHolder> d;
 
     @Metadata
@@ -27,18 +28,18 @@ public final class CustomerServiceRobotEvaluation extends BottomPopupView {
     public static final class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final TextView f34251a;
+        private final TextView f20560a;
         private final ImageView b;
 
-        public ViewHolder(TextView ratingText, ImageView ratingIcon) {
-            Intrinsics.e(ratingText, "ratingText");
-            Intrinsics.e(ratingIcon, "ratingIcon");
-            this.f34251a = ratingText;
-            this.b = ratingIcon;
+        public ViewHolder(TextView textView, ImageView imageView) {
+            Intrinsics.e(textView, "ratingText");
+            Intrinsics.e(imageView, "ratingIcon");
+            this.f20560a = textView;
+            this.b = imageView;
         }
 
         public final TextView a() {
-            return this.f34251a;
+            return this.f20560a;
         }
 
         public final ImageView b() {
@@ -51,17 +52,17 @@ public final class CustomerServiceRobotEvaluation extends BottomPopupView {
             }
             if (obj instanceof ViewHolder) {
                 ViewHolder viewHolder = (ViewHolder) obj;
-                return Intrinsics.a(this.f34251a, viewHolder.f34251a) && Intrinsics.a(this.b, viewHolder.b);
+                return Intrinsics.a(this.f20560a, viewHolder.f20560a) && Intrinsics.a(this.b, viewHolder.b);
             }
             return false;
         }
 
         public int hashCode() {
-            return (this.f34251a.hashCode() * 31) + this.b.hashCode();
+            return (this.f20560a.hashCode() * 31) + this.b.hashCode();
         }
 
         public String toString() {
-            return "ViewHolder(ratingText=" + this.f34251a + ", ratingIcon=" + this.b + ')';
+            return "ViewHolder(ratingText=" + this.f20560a + ", ratingIcon=" + this.b + ')';
         }
     }
 
@@ -78,48 +79,48 @@ public final class CustomerServiceRobotEvaluation extends BottomPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(CustomerServiceRobotEvaluation this$0, View view) {
+    public static final void a(CustomerServiceRobotEvaluation customerServiceRobotEvaluation, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(customerServiceRobotEvaluation, "this$0");
+        customerServiceRobotEvaluation.p();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(CustomerServiceRobotEvaluation this$0, View view, View view2) {
+    public static final void a(CustomerServiceRobotEvaluation customerServiceRobotEvaluation, View view, View view2) {
         Tracker.onClick(view2);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(customerServiceRobotEvaluation, "this$0");
         Object tag = view.getTag();
         if (tag == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Int");
         }
-        this$0.setRatingBarSelected(((Integer) tag).intValue());
+        customerServiceRobotEvaluation.setRatingBarSelected(((Integer) tag).intValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(CustomerServiceRobotEvaluation this$0, TextView tvYes, TextView tvNo, View view) {
+    public static final void a(CustomerServiceRobotEvaluation customerServiceRobotEvaluation, TextView textView, TextView textView2, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.c(tvYes, "tvYes");
-        this$0.a(tvYes, true, true);
-        Intrinsics.c(tvNo, "tvNo");
-        this$0.a(tvNo, false, false);
+        Intrinsics.e(customerServiceRobotEvaluation, "this$0");
+        Intrinsics.c(textView, "tvYes");
+        customerServiceRobotEvaluation.a(textView, true, true);
+        Intrinsics.c(textView2, "tvNo");
+        customerServiceRobotEvaluation.a(textView2, false, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(CustomerServiceRobotEvaluation this$0, View view) {
+    public static final void b(CustomerServiceRobotEvaluation customerServiceRobotEvaluation, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(customerServiceRobotEvaluation, "this$0");
+        customerServiceRobotEvaluation.p();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(CustomerServiceRobotEvaluation this$0, TextView tvYes, TextView tvNo, View view) {
+    public static final void b(CustomerServiceRobotEvaluation customerServiceRobotEvaluation, TextView textView, TextView textView2, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.c(tvYes, "tvYes");
-        this$0.a(tvYes, true, false);
-        Intrinsics.c(tvNo, "tvNo");
-        this$0.a(tvNo, false, true);
+        Intrinsics.e(customerServiceRobotEvaluation, "this$0");
+        Intrinsics.c(textView, "tvYes");
+        customerServiceRobotEvaluation.a(textView, true, false);
+        Intrinsics.c(textView2, "tvNo");
+        customerServiceRobotEvaluation.a(textView2, false, true);
     }
 
     private final void setRating(int i) {
@@ -131,7 +132,7 @@ public final class CustomerServiceRobotEvaluation extends BottomPopupView {
         LinearLayout linearLayout2 = (LinearLayout) findViewById(R.id.ll_evaluate_rating_bar);
         linearLayout2.removeAllViews();
         this.d.clear();
-        Iterator<String> it = this.f34250c.iterator();
+        Iterator<String> it = this.f20559c.iterator();
         int i2 = 0;
         while (true) {
             int i3 = i2;
@@ -139,10 +140,10 @@ public final class CustomerServiceRobotEvaluation extends BottomPopupView {
                 return;
             }
             String next = it.next();
-            final View inflate = BottomPopupView.inflate(getContext(), R.layout.layout_customer_service_robot_rating, null);
-            TextView ratingText = (TextView) inflate.findViewById(R.id.tv_rating_text);
-            ratingText.setText(next);
-            ImageView ratingIcon = (ImageView) inflate.findViewById(R.id.iv_rating_icon);
+            final View inflate = BottomPopupView.inflate(getContext(), (int) R.layout.layout_customer_service_robot_rating, (ViewGroup) null);
+            TextView textView = (TextView) inflate.findViewById(R.id.tv_rating_text);
+            textView.setText(next);
+            ImageView imageView = (ImageView) inflate.findViewById(R.id.iv_rating_icon);
             inflate.setTag(Integer.valueOf(i3));
             inflate.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.pop.-$$Lambda$CustomerServiceRobotEvaluation$hifkXHprh8bEJx4j31NEC3dzLQA
                 @Override // android.view.View.OnClickListener
@@ -152,15 +153,15 @@ public final class CustomerServiceRobotEvaluation extends BottomPopupView {
             });
             linearLayout2.addView(inflate);
             List<ViewHolder> list = this.d;
-            Intrinsics.c(ratingText, "ratingText");
-            Intrinsics.c(ratingIcon, "ratingIcon");
-            list.add(new ViewHolder(ratingText, ratingIcon));
+            Intrinsics.c(textView, "ratingText");
+            Intrinsics.c(imageView, "ratingIcon");
+            list.add(new ViewHolder(textView, imageView));
             i2 = i3 + 1;
         }
     }
 
     private final void setRatingBarSelected(int i) {
-        int size = this.f34250c.size();
+        int size = this.f20559c.size();
         int i2 = 0;
         while (true) {
             int i3 = i2;
@@ -195,7 +196,6 @@ public final class CustomerServiceRobotEvaluation extends BottomPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         setYesNo(this.b == 2 ? 8 : 0);
@@ -214,7 +214,6 @@ public final class CustomerServiceRobotEvaluation extends BottomPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_customer_service_robot_evaluate;
     }

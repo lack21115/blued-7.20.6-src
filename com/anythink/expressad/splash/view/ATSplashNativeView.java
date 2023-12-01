@@ -25,7 +25,7 @@ import com.bytedance.applog.tracker.Tracker;
 public class ATSplashNativeView extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8248a = "MBSplashNativeView";
+    private static final String f5408a = "MBSplashNativeView";
     private int A;
     private int B;
     private float C;
@@ -47,7 +47,7 @@ public class ATSplashNativeView extends RelativeLayout {
     private MBNoRecycledCrashImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private MBNoRecycledCrashImageView f8249c;
+    private MBNoRecycledCrashImageView f5409c;
     private RelativeLayout d;
     private ImageView e;
     private FeedBackButton f;
@@ -88,8 +88,8 @@ public class ATSplashNativeView extends RelativeLayout {
                     if (bitmap.getWidth() < bitmap.getHeight()) {
                         ATSplashNativeView.a(ATSplashNativeView.this);
                         ATSplashNativeView.this.h.setVisibility(4);
-                        ATSplashNativeView.this.f8249c.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                        ATSplashNativeView.this.f8249c.setImageBitmap(bitmap);
+                        ATSplashNativeView.this.f5409c.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                        ATSplashNativeView.this.f5409c.setImageBitmap(bitmap);
                     } else if (ATSplashNativeView.this.A == 1) {
                         ATSplashNativeView.this.h.setVisibility(0);
                         Bitmap a2 = n.a(bitmap, t.b(com.anythink.core.common.b.n.a().g(), 10.0f));
@@ -101,13 +101,13 @@ public class ATSplashNativeView extends RelativeLayout {
                         ATSplashNativeView.h(ATSplashNativeView.this);
                         Bitmap b = n.b(bitmap);
                         if (b != null && !b.isRecycled()) {
-                            ATSplashNativeView.this.f8249c.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                            ATSplashNativeView.this.f8249c.setImageBitmap(b);
+                            ATSplashNativeView.this.f5409c.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                            ATSplashNativeView.this.f5409c.setImageBitmap(b);
                         }
                     } else {
                         ATSplashNativeView.this.h.setVisibility(4);
-                        ATSplashNativeView.this.f8249c.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                        ATSplashNativeView.this.f8249c.setImageBitmap(bitmap);
+                        ATSplashNativeView.this.f5409c.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                        ATSplashNativeView.this.f5409c.setImageBitmap(bitmap);
                     }
                     Bitmap b2 = n.b(bitmap);
                     if (b2 == null || b2.isRecycled()) {
@@ -116,7 +116,7 @@ public class ATSplashNativeView extends RelativeLayout {
                     ATSplashNativeView.this.b.setScaleType(ImageView.ScaleType.CENTER_CROP);
                     ATSplashNativeView.this.b.setImageBitmap(b2);
                 } catch (Throwable th) {
-                    o.d(ATSplashNativeView.f8248a, th.getMessage());
+                    o.d(ATSplashNativeView.f5408a, th.getMessage());
                 }
             }
         }
@@ -216,7 +216,7 @@ public class ATSplashNativeView extends RelativeLayout {
                     }
                     ATSplashNativeView.this.i.setImageBitmap(a2);
                 } catch (Throwable th) {
-                    o.d(ATSplashNativeView.f8248a, th.getMessage());
+                    o.d(ATSplashNativeView.f5408a, th.getMessage());
                 }
             }
         }
@@ -329,7 +329,7 @@ public class ATSplashNativeView extends RelativeLayout {
             View inflate = LayoutInflater.from(getContext()).inflate(this.A == 1 ? i.a(getContext().getApplicationContext(), "anythink_splash_portrait", "layout") : i.a(getContext().getApplicationContext(), "anythink_splash_landscape", "layout"), (ViewGroup) null);
             addView(inflate);
             this.b = (MBNoRecycledCrashImageView) inflate.findViewById(i.a(getContext().getApplicationContext(), "anythink_splash_iv_image_bg", "id"));
-            this.f8249c = (MBNoRecycledCrashImageView) inflate.findViewById(i.a(getContext().getApplicationContext(), "anythink_splash_iv_image", "id"));
+            this.f5409c = (MBNoRecycledCrashImageView) inflate.findViewById(i.a(getContext().getApplicationContext(), "anythink_splash_iv_image", "id"));
             this.d = (RelativeLayout) inflate.findViewById(i.a(getContext().getApplicationContext(), "anythink_splash_topcontroller", "id"));
             this.e = (ImageView) inflate.findViewById(i.a(getContext().getApplicationContext(), "anythink_splash_iv_link", "id"));
             this.f = (FeedBackButton) inflate.findViewById(i.a(getContext().getApplicationContext(), "anythink_splash_feedback", "id"));
@@ -352,12 +352,12 @@ public class ATSplashNativeView extends RelativeLayout {
             this.Q = getContext().getResources().getString(a3);
             this.O = getContext().getResources().getString(a4);
         } catch (Throwable th) {
-            o.d(f8248a, th.getMessage());
+            o.d(f5408a, th.getMessage());
         }
         try {
             this.E = getContext().getResources().getConfiguration().locale.getLanguage().contains("en");
         } catch (Throwable th2) {
-            o.d(f8248a, th2.getMessage());
+            o.d(f5408a, th2.getMessage());
         }
         if (com.anythink.expressad.foundation.f.b.a().b()) {
             this.M.l(this.J);
@@ -371,7 +371,7 @@ public class ATSplashNativeView extends RelativeLayout {
             }
         }
         if (TextUtils.isEmpty(this.M.be())) {
-            this.f8249c.setVisibility(4);
+            this.f5409c.setVisibility(4);
         } else {
             com.anythink.expressad.foundation.g.d.b.a(com.anythink.core.common.b.n.a().g()).a(this.M.be(), new AnonymousClass1());
         }
@@ -427,7 +427,7 @@ public class ATSplashNativeView extends RelativeLayout {
             View inflate = LayoutInflater.from(getContext()).inflate(this.A == 1 ? i.a(getContext().getApplicationContext(), "anythink_splash_portrait", "layout") : i.a(getContext().getApplicationContext(), "anythink_splash_landscape", "layout"), (ViewGroup) null);
             addView(inflate);
             this.b = (MBNoRecycledCrashImageView) inflate.findViewById(i.a(getContext().getApplicationContext(), "anythink_splash_iv_image_bg", "id"));
-            this.f8249c = (MBNoRecycledCrashImageView) inflate.findViewById(i.a(getContext().getApplicationContext(), "anythink_splash_iv_image", "id"));
+            this.f5409c = (MBNoRecycledCrashImageView) inflate.findViewById(i.a(getContext().getApplicationContext(), "anythink_splash_iv_image", "id"));
             this.d = (RelativeLayout) inflate.findViewById(i.a(getContext().getApplicationContext(), "anythink_splash_topcontroller", "id"));
             this.e = (ImageView) inflate.findViewById(i.a(getContext().getApplicationContext(), "anythink_splash_iv_link", "id"));
             this.f = (FeedBackButton) inflate.findViewById(i.a(getContext().getApplicationContext(), "anythink_splash_feedback", "id"));
@@ -450,7 +450,7 @@ public class ATSplashNativeView extends RelativeLayout {
             this.Q = getContext().getResources().getString(a3);
             this.O = getContext().getResources().getString(a4);
         } catch (Throwable th) {
-            o.d(f8248a, th.getMessage());
+            o.d(f5408a, th.getMessage());
         }
     }
 
@@ -461,7 +461,7 @@ public class ATSplashNativeView extends RelativeLayout {
         try {
             this.L.getSplashJSBridgeImpl().getSplashBridgeListener().a(com.anythink.expressad.splash.a.a.a.a(com.anythink.expressad.splash.a.a.a.a(i, this.C, this.D), this.M));
         } catch (Throwable th) {
-            o.d(f8248a, th.getMessage());
+            o.d(f5408a, th.getMessage());
             this.L.getSplashJSBridgeImpl().getSplashBridgeListener().a(this.M);
         }
     }
@@ -473,7 +473,7 @@ public class ATSplashNativeView extends RelativeLayout {
         try {
             aTSplashNativeView.L.getSplashJSBridgeImpl().getSplashBridgeListener().a(com.anythink.expressad.splash.a.a.a.a(com.anythink.expressad.splash.a.a.a.a(i, aTSplashNativeView.C, aTSplashNativeView.D), aTSplashNativeView.M));
         } catch (Throwable th) {
-            o.d(f8248a, th.getMessage());
+            o.d(f5408a, th.getMessage());
             aTSplashNativeView.L.getSplashJSBridgeImpl().getSplashBridgeListener().a(aTSplashNativeView.M);
         }
     }
@@ -494,7 +494,7 @@ public class ATSplashNativeView extends RelativeLayout {
         try {
             this.E = getContext().getResources().getConfiguration().locale.getLanguage().contains("en");
         } catch (Throwable th) {
-            o.d(f8248a, th.getMessage());
+            o.d(f5408a, th.getMessage());
         }
         if (com.anythink.expressad.foundation.f.b.a().b()) {
             this.M.l(this.J);
@@ -508,7 +508,7 @@ public class ATSplashNativeView extends RelativeLayout {
             }
         }
         if (TextUtils.isEmpty(this.M.be())) {
-            this.f8249c.setVisibility(4);
+            this.f5409c.setVisibility(4);
         } else {
             com.anythink.expressad.foundation.g.d.b.a(com.anythink.core.common.b.n.a().g()).a(this.M.be(), new AnonymousClass1());
         }
@@ -568,7 +568,7 @@ public class ATSplashNativeView extends RelativeLayout {
 
     private void c() {
         if (TextUtils.isEmpty(this.M.be())) {
-            this.f8249c.setVisibility(4);
+            this.f5409c.setVisibility(4);
         } else {
             com.anythink.expressad.foundation.g.d.b.a(com.anythink.core.common.b.n.a().g()).a(this.M.be(), new AnonymousClass1());
         }
@@ -672,9 +672,8 @@ public class ATSplashNativeView extends RelativeLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         try {
             if (this.x != 1 || this.N == null || this.R == null) {
@@ -682,13 +681,12 @@ public class ATSplashNativeView extends RelativeLayout {
             }
             com.anythink.expressad.shake.a.a().a(this.R);
         } catch (Throwable th) {
-            o.d(f8248a, th.getMessage());
+            o.d(f5408a, th.getMessage());
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         release();
     }
@@ -709,7 +707,7 @@ public class ATSplashNativeView extends RelativeLayout {
             com.anythink.expressad.foundation.f.b.a().c(this.J);
             detachAllViewsFromParent();
         } catch (Exception e) {
-            o.d(f8248a, e.getMessage());
+            o.d(f5408a, e.getMessage());
         }
     }
 

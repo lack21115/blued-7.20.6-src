@@ -21,7 +21,7 @@ public class PLUploadSetting {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f27505a;
+        static final /* synthetic */ int[] f13817a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -29,25 +29,25 @@ public class PLUploadSetting {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[PLUploadZone.values().length];
-            f27505a = iArr;
+            f13817a = iArr;
             try {
                 iArr[PLUploadZone.ZONE0.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f27505a[PLUploadZone.ZONE1.ordinal()] = 2;
+                f13817a[PLUploadZone.ZONE1.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f27505a[PLUploadZone.ZONE2.ordinal()] = 3;
+                f13817a[PLUploadZone.ZONE2.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f27505a[PLUploadZone.ZONENA0.ordinal()] = 4;
+                f13817a[PLUploadZone.ZONENA0.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f27505a[PLUploadZone.ZONEAS0.ordinal()] = 5;
+                f13817a[PLUploadZone.ZONEAS0.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -132,7 +132,7 @@ public class PLUploadSetting {
     }
 
     public PLUploadSetting setZone(PLUploadZone pLUploadZone) {
-        int i = AnonymousClass1.f27505a[pLUploadZone.ordinal()];
+        int i = AnonymousClass1.f13817a[pLUploadZone.ordinal()];
         if (i == 1) {
             this.mZone = FixedZone.zone0;
         } else if (i == 2) {

@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.webkit.CookieSyncManager;
 import android.webkit.WebSettings;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.connect.auth.QQAuth;
 import com.tencent.connect.auth.QQToken;
 import com.tencent.connect.common.BaseApi;
@@ -32,22 +31,22 @@ import org.json.JSONObject;
 public class SocialApiIml extends BaseApi {
 
     /* renamed from: a  reason: collision with root package name */
-    private Activity f38191a;
+    private Activity f24500a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/open/SocialApiIml$a.class */
     public class a implements IUiListener {
 
         /* renamed from: a  reason: collision with root package name */
-        b f38194a;
+        b f24503a;
 
         public a(b bVar) {
-            this.f38194a = bVar;
+            this.f24503a = bVar;
         }
 
         @Override // com.tencent.tauth.IUiListener
         public void onCancel() {
             SocialApiIml.this.b();
-            e.a(this.f38194a.f38196c.getString(SocialConstants.PARAM_IMG_DATA));
+            e.a(this.f24503a.f24505c.getString(SocialConstants.PARAM_IMG_DATA));
         }
 
         /* JADX WARN: Removed duplicated region for block: B:11:0x0025  */
@@ -90,23 +89,23 @@ public class SocialApiIml extends BaseApi {
                 r1 = r8
                 android.app.Activity r1 = com.tencent.open.SocialApiIml.b(r1)
                 r2 = r7
-                com.tencent.open.SocialApiIml$b r2 = r2.f38194a
-                android.content.Intent r2 = r2.f38195a
+                com.tencent.open.SocialApiIml$b r2 = r2.f24503a
+                android.content.Intent r2 = r2.f24504a
                 r3 = r7
-                com.tencent.open.SocialApiIml$b r3 = r3.f38194a
+                com.tencent.open.SocialApiIml$b r3 = r3.f24503a
                 java.lang.String r3 = r3.b
                 r4 = r7
-                com.tencent.open.SocialApiIml$b r4 = r4.f38194a
-                android.os.Bundle r4 = r4.f38196c
+                com.tencent.open.SocialApiIml$b r4 = r4.f24503a
+                android.os.Bundle r4 = r4.f24505c
                 r5 = r7
-                com.tencent.open.SocialApiIml$b r5 = r5.f38194a
+                com.tencent.open.SocialApiIml$b r5 = r5.f24503a
                 com.tencent.tauth.IUiListener r5 = r5.e
                 com.tencent.open.SocialApiIml.a(r0, r1, r2, r3, r4, r5)
                 return
             L4f:
                 r0 = r7
-                com.tencent.open.SocialApiIml$b r0 = r0.f38194a
-                android.os.Bundle r0 = r0.f38196c
+                com.tencent.open.SocialApiIml$b r0 = r0.f24503a
+                android.os.Bundle r0 = r0.f24505c
                 java.lang.String r1 = "image_date"
                 java.lang.String r0 = r0.getString(r1)
                 com.tencent.open.e.a(r0)
@@ -117,16 +116,16 @@ public class SocialApiIml extends BaseApi {
                 r1 = r8
                 android.app.Activity r1 = com.tencent.open.SocialApiIml.b(r1)
                 r2 = r7
-                com.tencent.open.SocialApiIml$b r2 = r2.f38194a
+                com.tencent.open.SocialApiIml$b r2 = r2.f24503a
                 java.lang.String r2 = r2.b
                 r3 = r7
-                com.tencent.open.SocialApiIml$b r3 = r3.f38194a
-                android.os.Bundle r3 = r3.f38196c
+                com.tencent.open.SocialApiIml$b r3 = r3.f24503a
+                android.os.Bundle r3 = r3.f24505c
                 r4 = r7
-                com.tencent.open.SocialApiIml$b r4 = r4.f38194a
+                com.tencent.open.SocialApiIml$b r4 = r4.f24503a
                 java.lang.String r4 = r4.d
                 r5 = r7
-                com.tencent.open.SocialApiIml$b r5 = r5.f38194a
+                com.tencent.open.SocialApiIml$b r5 = r5.f24503a
                 com.tencent.tauth.IUiListener r5 = r5.e
                 com.tencent.open.SocialApiIml.a(r0, r1, r2, r3, r4, r5)
                 return
@@ -137,9 +136,9 @@ public class SocialApiIml extends BaseApi {
         @Override // com.tencent.tauth.IUiListener
         public void onError(UiError uiError) {
             SocialApiIml.this.b();
-            e.a(this.f38194a.f38196c.getString(SocialConstants.PARAM_IMG_DATA));
+            e.a(this.f24503a.f24505c.getString(SocialConstants.PARAM_IMG_DATA));
             SocialApiIml socialApiIml = SocialApiIml.this;
-            socialApiIml.a(socialApiIml.f38191a, this.f38194a.b, this.f38194a.f38196c, this.f38194a.d, this.f38194a.e);
+            socialApiIml.a(socialApiIml.f24500a, this.f24503a.b, this.f24503a.f24505c, this.f24503a.d, this.f24503a.e);
         }
     }
 
@@ -148,11 +147,11 @@ public class SocialApiIml extends BaseApi {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        Intent f38195a;
+        Intent f24504a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        Bundle f38196c;
+        Bundle f24505c;
         String d;
         IUiListener e;
     }
@@ -163,14 +162,14 @@ public class SocialApiIml extends BaseApi {
         private IUiListener b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f38198c;
+        private String f24507c;
         private String d;
         private Bundle e;
         private Activity f;
 
         c(Activity activity, IUiListener iUiListener, String str, String str2, Bundle bundle) {
             this.b = iUiListener;
-            this.f38198c = str;
+            this.f24507c = str;
             this.d = str2;
             this.e = bundle;
         }
@@ -192,7 +191,7 @@ public class SocialApiIml extends BaseApi {
             }
             this.e.putString("encrytoken", str);
             SocialApiIml socialApiIml = SocialApiIml.this;
-            socialApiIml.a((Context) socialApiIml.f38191a, this.f38198c, this.e, this.d, this.b);
+            socialApiIml.a((Context) socialApiIml.f24500a, this.f24507c, this.e, this.d, this.b);
             if (TextUtils.isEmpty(str)) {
                 f.b("openSDK_LOG.SocialApiIml", "The token get from qq or qzone is empty. Write temp token to localstorage.");
                 SocialApiIml.this.writeEncryToken(this.f);
@@ -218,8 +217,8 @@ public class SocialApiIml extends BaseApi {
         Intent intent = new Intent();
         intent.setClassName("com.qzone", "com.tencent.open.agent.AgentActivity");
         b bVar = new b();
-        bVar.f38195a = intent;
-        bVar.f38196c = bundle;
+        bVar.f24504a = intent;
+        bVar.f24505c = bundle;
         bVar.d = str2;
         bVar.e = iUiListener;
         bVar.b = str;
@@ -275,7 +274,7 @@ public class SocialApiIml extends BaseApi {
     }
 
     private void a(Activity activity, String str, Bundle bundle, IUiListener iUiListener) {
-        this.f38191a = activity;
+        this.f24500a = activity;
         Intent agentIntentWithTarget = getAgentIntentWithTarget(SocialConstants.ACTIVITY_FRIEND_CHOOSER);
         Intent intent = agentIntentWithTarget;
         if (agentIntentWithTarget == null) {
@@ -342,16 +341,16 @@ public class SocialApiIml extends BaseApi {
         String str3 = str2 + Util.encodeUrl(bundle);
         f.b("openSDK_LOG.SocialApiIml", "OpenUi, showDialog TDialog");
         if (!SocialConstants.ACTION_CHALLENGE.equals(str) && !SocialConstants.ACTION_BRAG.equals(str)) {
-            new TDialog(this.f38191a, str, str3, iUiListener, this.mToken).show();
+            new TDialog(this.f24500a, str, str3, iUiListener, this.mToken).show();
             return;
         }
         f.b("openSDK_LOG.SocialApiIml", "OpenUi, showDialog PKDialog");
-        new PKDialog(this.f38191a, str, str3, iUiListener, this.mToken).show();
+        new PKDialog(this.f24500a, str, str3, iUiListener, this.mToken).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
-        if (this.f38191a.isFinishing() || this.mProgressDialog == null || !this.mProgressDialog.isShowing()) {
+        if (this.f24500a.isFinishing() || this.mProgressDialog == null || !this.mProgressDialog.isShowing()) {
             return;
         }
         this.mProgressDialog.dismiss();
@@ -380,14 +379,14 @@ public class SocialApiIml extends BaseApi {
     }
 
     public void brag(Activity activity, Bundle bundle, IUiListener iUiListener) {
-        this.f38191a = activity;
+        this.f24500a = activity;
         Intent agentIntentWithTarget = getAgentIntentWithTarget(SocialConstants.ACTIVITY_BRAG);
         bundle.putAll(composeActivityParams());
         a(activity, agentIntentWithTarget, SocialConstants.ACTION_BRAG, bundle, ServerSetting.getInstance().getEnvUrl(Global.getContext(), ServerSetting.DEFAULT_URL_BRAG), iUiListener, false);
     }
 
     public void challenge(Activity activity, Bundle bundle, IUiListener iUiListener) {
-        this.f38191a = activity;
+        this.f24500a = activity;
         Intent agentIntentWithTarget = getAgentIntentWithTarget(SocialConstants.ACTIVITY_CHALLENGE);
         bundle.putAll(composeActivityParams());
         a(activity, agentIntentWithTarget, SocialConstants.ACTION_CHALLENGE, bundle, ServerSetting.getInstance().getEnvUrl(Global.getContext(), ServerSetting.DEFAULT_URL_BRAG), iUiListener, false);
@@ -413,7 +412,7 @@ public class SocialApiIml extends BaseApi {
     }
 
     public void grade(Activity activity, Bundle bundle, IUiListener iUiListener) {
-        this.f38191a = activity;
+        this.f24500a = activity;
         bundle.putAll(composeActivityParams());
         bundle.putString("version", Util.getAppVersion(activity));
         Intent agentIntentWithTarget = getAgentIntentWithTarget(SocialConstants.ACTIVITY_GRADE);
@@ -428,7 +427,7 @@ public class SocialApiIml extends BaseApi {
     }
 
     public void invite(Activity activity, Bundle bundle, IUiListener iUiListener) {
-        this.f38191a = activity;
+        this.f24500a = activity;
         Intent agentIntentWithTarget = getAgentIntentWithTarget(SocialConstants.ACTIVITY_FRIEND_CHOOSER);
         Intent intent = agentIntentWithTarget;
         if (agentIntentWithTarget == null) {
@@ -440,7 +439,7 @@ public class SocialApiIml extends BaseApi {
     }
 
     public void reactive(Activity activity, Bundle bundle, IUiListener iUiListener) {
-        this.f38191a = activity;
+        this.f24500a = activity;
         Intent agentIntentWithTarget = getAgentIntentWithTarget(SocialConstants.ACTIVITY_FRIEND_CHOOSER);
         Intent intent = agentIntentWithTarget;
         if (agentIntentWithTarget == null) {
@@ -463,7 +462,7 @@ public class SocialApiIml extends BaseApi {
     }
 
     public void story(Activity activity, Bundle bundle, IUiListener iUiListener) {
-        this.f38191a = activity;
+        this.f24500a = activity;
         Intent agentIntentWithTarget = getAgentIntentWithTarget(SocialConstants.ACTIVITY_STORY);
         bundle.putAll(composeActivityParams());
         a(activity, agentIntentWithTarget, SocialConstants.ACTION_STORY, bundle, ServerSetting.getInstance().getEnvUrl(Global.getContext(), ServerSetting.DEFAULT_URL_SEND_STORY), iUiListener, false);
@@ -471,7 +470,7 @@ public class SocialApiIml extends BaseApi {
 
     public void voice(final Activity activity, final Bundle bundle, final IUiListener iUiListener) {
         Bitmap bitmap;
-        this.f38191a = activity;
+        this.f24500a = activity;
         bundle.putAll(composeActivityParams());
         bundle.putString("version", Util.getAppVersion(activity));
         if (!e.a()) {
@@ -519,6 +518,6 @@ public class SocialApiIml extends BaseApi {
         settings.setJavaScriptEnabled(true);
         settings.setDatabaseEnabled(true);
         String envUrl = ServerSetting.getInstance().getEnvUrl(context, ServerSetting.DEFAULT_LOCAL_STORAGE_URI);
-        bVar.loadDataWithBaseURL(envUrl, "<!DOCTYPE HTML><html lang=\"en-US\"><head><meta charset=\"UTF-8\"><title>localStorage Test</title><script type=\"text/javascript\">document.domain = 'qq.com';localStorage[\"" + this.mToken.getOpenId() + BridgeUtil.UNDERLINE_STR + this.mToken.getAppId() + "\"]=\"" + str + "\";</script></head><body></body></html>", ClipDescription.MIMETYPE_TEXT_HTML, "utf-8", envUrl);
+        bVar.loadDataWithBaseURL(envUrl, "<!DOCTYPE HTML><html lang=\"en-US\"><head><meta charset=\"UTF-8\"><title>localStorage Test</title><script type=\"text/javascript\">document.domain = 'qq.com';localStorage[\"" + this.mToken.getOpenId() + "_" + this.mToken.getAppId() + "\"]=\"" + str + "\";</script></head><body></body></html>", ClipDescription.MIMETYPE_TEXT_HTML, "utf-8", envUrl);
     }
 }

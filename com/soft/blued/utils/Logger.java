@@ -10,7 +10,7 @@ import com.igexin.push.core.b;
 public class Logger {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f34748a = false;
+    private static boolean f21057a = false;
     private static boolean b = false;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -19,7 +19,7 @@ public class Logger {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f34749a;
+        static final /* synthetic */ int[] f21058a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -27,25 +27,25 @@ public class Logger {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[TYPE.values().length];
-            f34749a = iArr;
+            f21058a = iArr;
             try {
                 iArr[TYPE.Verbose.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f34749a[TYPE.Info.ordinal()] = 2;
+                f21058a[TYPE.Info.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f34749a[TYPE.Debug.ordinal()] = 3;
+                f21058a[TYPE.Debug.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f34749a[TYPE.Warn.ordinal()] = 4;
+                f21058a[TYPE.Warn.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f34749a[TYPE.Error.ordinal()] = 5;
+                f21058a[TYPE.Error.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -100,7 +100,7 @@ public class Logger {
     }
 
     private static void a(TYPE type, String str, String str2) {
-        int i = AnonymousClass1.f34749a[type.ordinal()];
+        int i = AnonymousClass1.f21058a[type.ordinal()];
         if (i == 1) {
             Log.v(str, str2);
         } else if (i == 2) {
@@ -138,37 +138,37 @@ public class Logger {
     }
 
     public static void a(String str, String str2) {
-        if (f34748a) {
+        if (f21057a) {
             c("ljx_" + str, str2);
         }
     }
 
     public static void a(String str, Object... objArr) {
-        if (f34748a) {
+        if (f21057a) {
             a(TYPE.Verbose, str, objArr);
         }
     }
 
     public static void b(String str, Object... objArr) {
-        if (f34748a) {
+        if (f21057a) {
             a(TYPE.Info, str, objArr);
         }
     }
 
     public static void c(String str, Object... objArr) {
-        if (f34748a) {
+        if (f21057a) {
             a(TYPE.Debug, str, objArr);
         }
     }
 
     public static void d(String str, Object... objArr) {
-        if (f34748a) {
+        if (f21057a) {
             a(TYPE.Warn, str, objArr);
         }
     }
 
     public static void e(String str, Object... objArr) {
-        if (f34748a) {
+        if (f21057a) {
             a(TYPE.Error, str, objArr);
         }
     }

@@ -10,11 +10,11 @@ import java.lang.annotation.RetentionPolicy;
 final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7194a = 0;
+    private static final int f4355a = 0;
     private static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7195c = 2;
+    private static final int f4356c = 2;
     private static final int d = 3;
     private static final int e = 4;
     private static final int f = 5000;
@@ -33,27 +33,27 @@ final class i {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final AudioTrack f7196a;
+        private final AudioTrack f4357a;
         private final AudioTimestamp b = new AudioTimestamp();
 
         /* renamed from: c  reason: collision with root package name */
-        private long f7197c;
+        private long f4358c;
         private long d;
         private long e;
 
         public a(AudioTrack audioTrack) {
-            this.f7196a = audioTrack;
+            this.f4357a = audioTrack;
         }
 
         public final boolean a() {
-            boolean timestamp = this.f7196a.getTimestamp(this.b);
+            boolean timestamp = this.f4357a.getTimestamp(this.b);
             if (timestamp) {
                 long j = this.b.framePosition;
                 if (this.d > j) {
-                    this.f7197c++;
+                    this.f4358c++;
                 }
                 this.d = j;
-                this.e = j + (this.f7197c << 32);
+                this.e = j + (this.f4358c << 32);
             }
             return timestamp;
         }
@@ -73,7 +73,7 @@ final class i {
     }
 
     public i(AudioTrack audioTrack) {
-        if (af.f7632a >= 19) {
+        if (af.f4793a >= 19) {
             this.j = new a(audioTrack);
             e();
             return;

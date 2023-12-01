@@ -7,17 +7,17 @@ import android.view.View;
 class ViewUtilsApi23 extends ViewUtilsApi22 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f3507a = true;
+    private static boolean f3459a = true;
 
     @Override // androidx.transition.ViewUtilsBase
     public void setTransitionVisibility(View view, int i) {
         if (Build.VERSION.SDK_INT == 28) {
             super.setTransitionVisibility(view, i);
-        } else if (f3507a) {
+        } else if (f3459a) {
             try {
                 view.setTransitionVisibility(i);
             } catch (NoSuchMethodError e) {
-                f3507a = false;
+                f3459a = false;
             }
         }
     }

@@ -16,11 +16,11 @@ import java.nio.FloatBuffer;
 public class b extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1387a;
+    public int f1339a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f1388c;
+    public int f1340c;
     public int d;
     public int e;
     public int f;
@@ -31,7 +31,7 @@ public class b extends a {
         a.EnumC0011a enumC0011a = a.EnumC0011a.TEXTURE_2D;
         this.g = enumC0011a;
         int a2 = a(enumC0011a);
-        this.f1387a = a2;
+        this.f1339a = a2;
         if (a2 == 0) {
             throw new RuntimeException("Unable to create program");
         }
@@ -92,7 +92,7 @@ public class b extends a {
                 float f12 = floatValue2 - 1.0f;
                 fArr = new float[]{f11, -1.0f, 1.0f, -1.0f, f11, f12, 1.0f, f12};
             } else {
-                e.f1361c.e("WatermarkFilter", "ERROR: pass in wrong location.");
+                e.f1313c.e("WatermarkFilter", "ERROR: pass in wrong location.");
                 fArr = null;
             }
         }
@@ -137,7 +137,7 @@ public class b extends a {
 
     public void a(float[] fArr, FloatBuffer floatBuffer, int i, int i2, FloatBuffer floatBuffer2, int i3) {
         GLES20.glUniform1f(this.e, this.h);
-        GLES20.glUniformMatrix4fv(this.f1388c, 1, false, fArr, 0);
+        GLES20.glUniformMatrix4fv(this.f1340c, 1, false, fArr, 0);
         GLES20.glEnableVertexAttribArray(this.b);
         GLES20.glVertexAttribPointer(this.b, i, 5126, false, i2, (Buffer) floatBuffer);
         GLES20.glEnableVertexAttribArray(this.d);
@@ -149,15 +149,15 @@ public class b extends a {
     }
 
     public void c() {
-        this.f = GLES20.glGetUniformLocation(this.f1387a, "uTexture");
-        this.e = GLES20.glGetUniformLocation(this.f1387a, "uOpacity");
-        this.b = GLES20.glGetAttribLocation(this.f1387a, "aPosition");
-        this.f1388c = GLES20.glGetUniformLocation(this.f1387a, "uMVPMatrix");
-        this.d = GLES20.glGetAttribLocation(this.f1387a, "aTextureCoord");
+        this.f = GLES20.glGetUniformLocation(this.f1339a, "uTexture");
+        this.e = GLES20.glGetUniformLocation(this.f1339a, "uOpacity");
+        this.b = GLES20.glGetAttribLocation(this.f1339a, "aPosition");
+        this.f1340c = GLES20.glGetUniformLocation(this.f1339a, "uMVPMatrix");
+        this.d = GLES20.glGetAttribLocation(this.f1339a, "aTextureCoord");
     }
 
     public void d() {
-        GLES20.glUseProgram(this.f1387a);
+        GLES20.glUseProgram(this.f1339a);
         f.b("glUseProgram");
     }
 
@@ -175,7 +175,7 @@ public class b extends a {
     }
 
     public void h() {
-        GLES20.glDeleteProgram(this.f1387a);
-        this.f1387a = -1;
+        GLES20.glDeleteProgram(this.f1339a);
+        this.f1339a = -1;
     }
 }

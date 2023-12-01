@@ -103,7 +103,7 @@ public class GifView2 extends View implements View.OnTouchListener {
 
     private void init(Context context, AttributeSet attributeSet, int i) {
         setLayerType(1, null);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.sobot_GifView2, i, 16973842);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.sobot_GifView2, i, android.R.style.Widget);
         this.movieMovieResourceId = obtainStyledAttributes.getResourceId(R.styleable.sobot_GifView2_sobot_gif, -1);
         obtainStyledAttributes.recycle();
         if (this.movieMovieResourceId != -1) {
@@ -221,9 +221,8 @@ public class GifView2 extends View implements View.OnTouchListener {
         return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         if (this.movie != null) {
             if (this.isPaused) {
                 drawMovieFrame(canvas);
@@ -235,23 +234,21 @@ public class GifView2 extends View implements View.OnTouchListener {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         this.movieLeft = (getWidth() - this.movieMeasuredMovieWidth) / 2.0f;
         this.movieTop = (getHeight() - this.movieMeasuredMovieHeight) / 2.0f;
         this.isVisible = getVisibility() == 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Removed duplicated region for block: B:17:0x00f7  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void onMeasure(int r6, int r7) {
+    protected void onMeasure(int r6, int r7) {
         /*
             Method dump skipped, instructions count: 438
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -331,17 +328,15 @@ public class GifView2 extends View implements View.OnTouchListener {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         this.isVisible = i == 0;
         invalidateView();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onWindowVisibilityChanged(int i) {
+    protected void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
         this.isVisible = i == 0;
         invalidateView();

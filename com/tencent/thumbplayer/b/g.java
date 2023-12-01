@@ -14,23 +14,23 @@ import java.util.List;
 public class g extends d implements ITPMediaTrack, Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f39226a;
+    private int f25535a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<ITPMediaTrackClip> f39227c;
+    private List<ITPMediaTrackClip> f25536c;
 
     public g(int i) {
-        this.f39226a = -1;
+        this.f25535a = -1;
         this.b = i;
-        this.f39227c = new ArrayList();
+        this.f25536c = new ArrayList();
     }
 
     public g(int i, int i2) {
-        this.f39226a = -1;
-        this.f39226a = i;
+        this.f25535a = -1;
+        this.f25535a = i;
         this.b = i2;
-        this.f39227c = new ArrayList();
+        this.f25536c = new ArrayList();
     }
 
     private void a(ITPMediaTrackClip iTPMediaTrackClip) {
@@ -48,8 +48,8 @@ public class g extends d implements ITPMediaTrack, Serializable {
     public int addTrackClip(ITPMediaTrackClip iTPMediaTrackClip) {
         synchronized (this) {
             a(iTPMediaTrackClip);
-            if (!this.f39227c.contains(iTPMediaTrackClip)) {
-                this.f39227c.add(iTPMediaTrackClip);
+            if (!this.f25536c.contains(iTPMediaTrackClip)) {
+                this.f25536c.add(iTPMediaTrackClip);
                 return iTPMediaTrackClip.getClipId();
             }
             TPLogUtil.i("TPMediaCompositionTrack", "add track clip failed, clip already exists : " + iTPMediaTrackClip.getClipId());
@@ -61,7 +61,7 @@ public class g extends d implements ITPMediaTrack, Serializable {
     public List<ITPMediaTrackClip> getAllTrackClips() {
         List<ITPMediaTrackClip> list;
         synchronized (this) {
-            list = this.f39227c;
+            list = this.f25536c;
         }
         return list;
     }
@@ -80,7 +80,7 @@ public class g extends d implements ITPMediaTrack, Serializable {
         long j;
         synchronized (this) {
             j = 0;
-            for (ITPMediaTrackClip iTPMediaTrackClip : this.f39227c) {
+            for (ITPMediaTrackClip iTPMediaTrackClip : this.f25536c) {
                 j += iTPMediaTrackClip.getOriginalDurationMs();
             }
         }
@@ -91,7 +91,7 @@ public class g extends d implements ITPMediaTrack, Serializable {
     public ITPMediaTrackClip getTrackClip(int i) {
         ITPMediaTrackClip next;
         synchronized (this) {
-            Iterator<ITPMediaTrackClip> it = this.f39227c.iterator();
+            Iterator<ITPMediaTrackClip> it = this.f25536c.iterator();
             do {
                 if (!it.hasNext()) {
                     return null;
@@ -106,7 +106,7 @@ public class g extends d implements ITPMediaTrack, Serializable {
     public int getTrackId() {
         int i;
         synchronized (this) {
-            i = this.f39226a;
+            i = this.f25535a;
         }
         return i;
     }
@@ -116,7 +116,7 @@ public class g extends d implements ITPMediaTrack, Serializable {
         String a2;
         synchronized (this) {
             try {
-                a2 = i.a(this.f39227c, this.b);
+                a2 = i.a(this.f25536c, this.b);
             } catch (IOException e) {
                 TPLogUtil.e("TPMediaCompositionTrack", e);
                 return null;
@@ -129,22 +129,22 @@ public class g extends d implements ITPMediaTrack, Serializable {
     public int insertTrackClip(ITPMediaTrackClip iTPMediaTrackClip, int i) {
         synchronized (this) {
             a(iTPMediaTrackClip);
-            if (this.f39227c.contains(iTPMediaTrackClip)) {
+            if (this.f25536c.contains(iTPMediaTrackClip)) {
                 TPLogUtil.i("TPMediaCompositionTrack", "add track clip failed, clip already exists : " + iTPMediaTrackClip.getClipId());
                 return iTPMediaTrackClip.getClipId();
             }
             if (i == -1) {
-                this.f39227c.add(0, iTPMediaTrackClip);
+                this.f25536c.add(0, iTPMediaTrackClip);
                 return iTPMediaTrackClip.getClipId();
             }
-            int size = this.f39227c.size();
+            int size = this.f25536c.size();
             for (int i2 = 0; i2 < size; i2++) {
-                if (this.f39227c.get(i2).getClipId() == i) {
-                    this.f39227c.add(i2 + 1, iTPMediaTrackClip);
+                if (this.f25536c.get(i2).getClipId() == i) {
+                    this.f25536c.add(i2 + 1, iTPMediaTrackClip);
                     return iTPMediaTrackClip.getClipId();
                 }
             }
-            this.f39227c.add(iTPMediaTrackClip);
+            this.f25536c.add(iTPMediaTrackClip);
             TPLogUtil.i("TPMediaCompositionTrack", "insert track clip into the end, coz after clip not found :".concat(String.valueOf(i)));
             return iTPMediaTrackClip.getClipId();
         }
@@ -153,7 +153,7 @@ public class g extends d implements ITPMediaTrack, Serializable {
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaTrack
     public void removeAllTrackClips() {
         synchronized (this) {
-            this.f39227c.clear();
+            this.f25536c.clear();
         }
     }
 
@@ -164,7 +164,7 @@ public class g extends d implements ITPMediaTrack, Serializable {
             if (iTPMediaTrackClip == null) {
                 throw new IllegalArgumentException("remove track clip , clip can not be null");
             }
-            remove = this.f39227c.remove(iTPMediaTrackClip);
+            remove = this.f25536c.remove(iTPMediaTrackClip);
         }
         return remove;
     }
@@ -173,9 +173,9 @@ public class g extends d implements ITPMediaTrack, Serializable {
     public boolean swapTrackClip(int i, int i2) {
         synchronized (this) {
             if (i >= 0) {
-                if (i < this.f39227c.size()) {
-                    if (i2 >= 0 && i2 < this.f39227c.size()) {
-                        Collections.swap(this.f39227c, i, i2);
+                if (i < this.f25536c.size()) {
+                    if (i2 >= 0 && i2 < this.f25536c.size()) {
+                        Collections.swap(this.f25536c, i, i2);
                         return true;
                     }
                     TPLogUtil.w("TPMediaCompositionTrack", "swap clip failed, to pos invalid , to pos :".concat(String.valueOf(i2)));

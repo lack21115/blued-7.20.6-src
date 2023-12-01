@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class VipUpgradeOptionBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29639a;
+    private final ConstraintLayout f15949a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29639a;
+        return this.f15949a;
     }
 }

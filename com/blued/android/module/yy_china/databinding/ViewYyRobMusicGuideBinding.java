@@ -8,14 +8,12 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyRobMusicGuideBinding.class */
 public final class ViewYyRobMusicGuideBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16951a;
+    public final ImageView a;
     private final LinearLayout b;
 
     private ViewYyRobMusicGuideBinding(LinearLayout linearLayout, ImageView imageView) {
         this.b = linearLayout;
-        this.f16951a = imageView;
+        this.a = imageView;
     }
 
     public static ViewYyRobMusicGuideBinding a(View view) {
@@ -26,7 +24,6 @@ public final class ViewYyRobMusicGuideBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("ivBack"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.b;

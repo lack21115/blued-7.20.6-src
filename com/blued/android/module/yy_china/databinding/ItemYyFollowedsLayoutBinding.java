@@ -13,13 +13,9 @@ import com.blued.android.module.yy_china.view.YYFansLevelView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyFollowedsLayoutBinding.class */
 public final class ItemYyFollowedsLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16718a;
+    public final TextView a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16719c;
+    public final ImageView c;
     public final SVGAImageView d;
     public final LinearLayout e;
     public final ShapeLinearLayout f;
@@ -33,9 +29,9 @@ public final class ItemYyFollowedsLayoutBinding implements ViewBinding {
 
     private ItemYyFollowedsLayoutBinding(LinearLayout linearLayout, TextView textView, LinearLayout linearLayout2, ImageView imageView, SVGAImageView sVGAImageView, LinearLayout linearLayout3, ShapeLinearLayout shapeLinearLayout, TextView textView2, TextView textView3, TextView textView4, ShapeTextView shapeTextView, TextView textView5, YYFansLevelView yYFansLevelView) {
         this.m = linearLayout;
-        this.f16718a = textView;
+        this.a = textView;
         this.b = linearLayout2;
-        this.f16719c = imageView;
+        this.c = imageView;
         this.d = sVGAImageView;
         this.e = linearLayout3;
         this.f = shapeLinearLayout;
@@ -112,7 +108,6 @@ public final class ItemYyFollowedsLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.m;

@@ -15,7 +15,7 @@ public class PushPreferences {
     public static final String TAG = "PushPreferences";
 
     /* renamed from: a  reason: collision with root package name */
-    protected SharedPreferences f22397a;
+    protected SharedPreferences f8789a;
 
     public PushPreferences(Context context, String str) {
         if (context == null) {
@@ -36,10 +36,10 @@ public class PushPreferences {
             }
         }
         SharedPreferences b = b(context2, str);
-        this.f22397a = b;
+        this.f8789a = b;
         if (b == null) {
             HMSLog.w(TAG, "get new sharedPreferences failed,start to get from context. ");
-            this.f22397a = context2.getSharedPreferences(str, 0);
+            this.f8789a = context2.getSharedPreferences(str, 0);
         }
     }
 
@@ -77,7 +77,7 @@ public class PushPreferences {
     }
 
     public boolean clear() {
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         if (sharedPreferences != null) {
             return sharedPreferences.edit().clear().commit();
         }
@@ -85,17 +85,17 @@ public class PushPreferences {
     }
 
     public boolean containsKey(String str) {
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         return sharedPreferences != null && sharedPreferences.contains(str);
     }
 
     public Map<String, ?> getAll() {
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         return sharedPreferences != null ? sharedPreferences.getAll() : new HashMap();
     }
 
     public boolean getBoolean(String str) {
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         boolean z = false;
         if (sharedPreferences != null) {
             z = false;
@@ -107,7 +107,7 @@ public class PushPreferences {
     }
 
     public int getInt(String str) {
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         int i = 0;
         if (sharedPreferences != null) {
             i = sharedPreferences.getInt(str, 0);
@@ -116,7 +116,7 @@ public class PushPreferences {
     }
 
     public long getLong(String str) {
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         long j = 0;
         if (sharedPreferences != null) {
             j = sharedPreferences.getLong(str, 0L);
@@ -125,13 +125,13 @@ public class PushPreferences {
     }
 
     public String getString(String str) {
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         return sharedPreferences != null ? sharedPreferences.getString(str, "") : "";
     }
 
     public ContentValues read() {
         Map<String, ?> all;
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         if (sharedPreferences == null || (all = sharedPreferences.getAll()) == null) {
             return null;
         }
@@ -158,28 +158,28 @@ public class PushPreferences {
 
     public boolean removeKey(String str) {
         SharedPreferences.Editor edit;
-        SharedPreferences sharedPreferences = this.f22397a;
-        if (sharedPreferences == null || !sharedPreferences.contains(str) || (edit = this.f22397a.edit()) == null) {
+        SharedPreferences sharedPreferences = this.f8789a;
+        if (sharedPreferences == null || !sharedPreferences.contains(str) || (edit = this.f8789a.edit()) == null) {
             return false;
         }
         return edit.remove(str).commit();
     }
 
     public boolean removeKey(String[] strArr) {
-        if (this.f22397a == null) {
+        if (this.f8789a == null) {
             return false;
         }
         for (String str : strArr) {
-            if (this.f22397a.contains(str)) {
-                this.f22397a.edit().remove(str);
+            if (this.f8789a.contains(str)) {
+                this.f8789a.edit().remove(str);
             }
         }
-        this.f22397a.edit().commit();
+        this.f8789a.edit().commit();
         return true;
     }
 
     public boolean save(String str, Object obj) {
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         if (sharedPreferences == null) {
             return false;
         }
@@ -206,7 +206,7 @@ public class PushPreferences {
 
     public void saveBoolean(String str, boolean z) {
         SharedPreferences.Editor edit;
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         if (sharedPreferences == null || (edit = sharedPreferences.edit()) == null) {
             return;
         }
@@ -215,7 +215,7 @@ public class PushPreferences {
 
     public void saveInt(String str, Integer num) {
         SharedPreferences.Editor edit;
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         if (sharedPreferences == null || (edit = sharedPreferences.edit()) == null) {
             return;
         }
@@ -224,7 +224,7 @@ public class PushPreferences {
 
     public void saveLong(String str, Long l) {
         SharedPreferences.Editor edit;
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         if (sharedPreferences == null || (edit = sharedPreferences.edit()) == null) {
             return;
         }
@@ -239,7 +239,7 @@ public class PushPreferences {
 
     public boolean saveString(String str, String str2) {
         SharedPreferences.Editor edit;
-        SharedPreferences sharedPreferences = this.f22397a;
+        SharedPreferences sharedPreferences = this.f8789a;
         if (sharedPreferences == null || (edit = sharedPreferences.edit()) == null) {
             return false;
         }
@@ -247,7 +247,7 @@ public class PushPreferences {
     }
 
     public boolean write(ContentValues contentValues) {
-        if (this.f22397a == null || contentValues == null) {
+        if (this.f8789a == null || contentValues == null) {
             return false;
         }
         boolean z = true;

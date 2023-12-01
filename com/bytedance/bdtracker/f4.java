@@ -12,18 +12,18 @@ public interface f4 extends IInterface {
 
         /* renamed from: com.bytedance.bdtracker.f4$a$a  reason: collision with other inner class name */
         /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/f4$a$a.class */
-        public static class C0310a implements f4 {
+        public static class C0140a implements f4 {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f21219a;
+            public IBinder f7613a;
 
-            public C0310a(IBinder iBinder) {
-                this.f21219a = iBinder;
+            public C0140a(IBinder iBinder) {
+                this.f7613a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f21219a;
+                return this.f7613a;
             }
         }
 
@@ -32,7 +32,7 @@ public interface f4 extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.asus.msa.SupplementaryDID.IDidAidlInterface");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof f4)) ? new C0310a(iBinder) : (f4) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof f4)) ? new C0140a(iBinder) : (f4) queryLocalInterface;
         }
     }
 }

@@ -6,11 +6,11 @@ import org.json.JSONObject;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f24455a;
+    public int f10768a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f24456c;
+    public String f10769c;
     public String d;
     public String e;
     public String f;

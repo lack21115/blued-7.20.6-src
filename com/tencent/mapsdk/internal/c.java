@@ -13,11 +13,11 @@ import java.util.Set;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public HashMap<String, HashMap<String, byte[]>> f37334a = new HashMap<>();
+    public HashMap<String, HashMap<String, byte[]>> f23643a = new HashMap<>();
     public HashMap<String, Object> b = new HashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private HashMap<String, Object> f37335c = new HashMap<>();
+    private HashMap<String, Object> f23644c = new HashMap<>();
     public String d = "GBK";
     public m e = new m();
 
@@ -79,18 +79,18 @@ public class c {
     }
 
     private void b(String str, Object obj) {
-        this.f37335c.put(str, obj);
+        this.f23644c.put(str, obj);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public <T> T a(String str, Object obj, boolean z, ClassLoader classLoader) {
         String str2;
         byte[] bArr;
-        if (this.f37334a.containsKey(str)) {
-            if (this.f37335c.containsKey(str)) {
-                return (T) this.f37335c.get(str);
+        if (this.f23643a.containsKey(str)) {
+            if (this.f23644c.containsKey(str)) {
+                return (T) this.f23644c.get(str);
             }
-            Iterator<Map.Entry<String, byte[]>> it = this.f37334a.get(str).entrySet().iterator();
+            Iterator<Map.Entry<String, byte[]>> it = this.f23643a.get(str).entrySet().iterator();
             if (it.hasNext()) {
                 Map.Entry<String, byte[]> next = it.next();
                 str2 = next.getKey();
@@ -118,12 +118,12 @@ public class c {
     /* JADX WARN: Multi-variable type inference failed */
     public <T> T a(String str, boolean z, ClassLoader classLoader) throws b {
         String str2 = null;
-        if (this.f37334a.containsKey(str)) {
-            if (this.f37335c.containsKey(str)) {
-                return (T) this.f37335c.get(str);
+        if (this.f23643a.containsKey(str)) {
+            if (this.f23644c.containsKey(str)) {
+                return (T) this.f23644c.get(str);
             }
             byte[] bArr = new byte[0];
-            Iterator<Map.Entry<String, byte[]>> it = this.f37334a.get(str).entrySet().iterator();
+            Iterator<Map.Entry<String, byte[]>> it = this.f23643a.get(str).entrySet().iterator();
             if (it.hasNext()) {
                 Map.Entry<String, byte[]> next = it.next();
                 str2 = next.getKey();
@@ -154,7 +154,7 @@ public class c {
     }
 
     public void a() {
-        this.f37335c.clear();
+        this.f23644c.clear();
     }
 
     public <T> void a(String str, T t) {
@@ -175,8 +175,8 @@ public class c {
         ArrayList<String> arrayList = new ArrayList<>(1);
         a(arrayList, t);
         hashMap.put(a.a(arrayList), b);
-        this.f37335c.remove(str);
-        this.f37334a.put(str, hashMap);
+        this.f23644c.remove(str);
+        this.f23643a.put(str, hashMap);
     }
 
     public void a(byte[] bArr) {
@@ -186,11 +186,11 @@ public class c {
         HashMap hashMap2 = new HashMap(1);
         hashMap2.put("", new byte[0]);
         hashMap.put("", hashMap2);
-        this.f37334a = this.e.a((Map) hashMap, 0, false);
+        this.f23643a = this.e.a((Map) hashMap, 0, false);
     }
 
     public boolean a(String str) {
-        return this.f37334a.containsKey(str);
+        return this.f23643a.containsKey(str);
     }
 
     public void b(String str) {
@@ -200,18 +200,18 @@ public class c {
     public byte[] b() {
         n nVar = new n(0);
         nVar.a(this.d);
-        nVar.a((Map) this.f37334a, 0);
+        nVar.a((Map) this.f23643a, 0);
         return q.b(nVar.a());
     }
 
     public <T> T c(String str, boolean z, ClassLoader classLoader) throws b {
         String str2 = null;
-        if (this.f37334a.containsKey(str)) {
-            if (this.f37335c.containsKey(str)) {
-                return (T) this.f37335c.get(str);
+        if (this.f23643a.containsKey(str)) {
+            if (this.f23644c.containsKey(str)) {
+                return (T) this.f23644c.get(str);
             }
             byte[] bArr = new byte[0];
-            Iterator<Map.Entry<String, byte[]>> it = this.f37334a.get(str).entrySet().iterator();
+            Iterator<Map.Entry<String, byte[]>> it = this.f23643a.get(str).entrySet().iterator();
             if (it.hasNext()) {
                 Map.Entry<String, byte[]> next = it.next();
                 str2 = next.getKey();
@@ -240,8 +240,8 @@ public class c {
     public <T> T d(String str, boolean z, ClassLoader classLoader) throws b {
         String str2;
         byte[] bArr;
-        if (this.f37334a.containsKey(str)) {
-            Iterator<Map.Entry<String, byte[]>> it = this.f37334a.remove(str).entrySet().iterator();
+        if (this.f23643a.containsKey(str)) {
+            Iterator<Map.Entry<String, byte[]>> it = this.f23643a.remove(str).entrySet().iterator();
             if (it.hasNext()) {
                 Map.Entry<String, byte[]> next = it.next();
                 str2 = next.getKey();
@@ -264,14 +264,14 @@ public class c {
     }
 
     public Set<String> d() {
-        return Collections.unmodifiableSet(this.f37334a.keySet());
+        return Collections.unmodifiableSet(this.f23643a.keySet());
     }
 
     public boolean e() {
-        return this.f37334a.isEmpty();
+        return this.f23643a.isEmpty();
     }
 
     public int f() {
-        return this.f37334a.size();
+        return this.f23643a.size();
     }
 }

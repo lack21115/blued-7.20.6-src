@@ -35,11 +35,11 @@ import java.util.concurrent.TimeUnit;
 public class b implements f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static OkHttpClient f24818a;
+    private static OkHttpClient f11130a;
     private OkHttpClient b;
 
     /* renamed from: c  reason: collision with root package name */
-    private HashMap<Long, Call> f24819c = new HashMap<>();
+    private HashMap<Long, Call> f11131c = new HashMap<>();
     private Object d = new Object();
     private Object e = new Object();
 
@@ -55,28 +55,28 @@ public class b implements f {
     public static /* synthetic */ class AnonymousClass4 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f24822a;
+        static final /* synthetic */ int[] f11134a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[b.a.values().length];
-            f24822a = iArr;
+            f11134a = iArr;
             try {
                 iArr[b.a.CN.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f24822a[b.a.EU.ordinal()] = 2;
+                f11134a[b.a.EU.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f24822a[b.a.SA.ordinal()] = 3;
+                f11134a[b.a.SA.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f24822a[b.a.SEA.ordinal()] = 4;
+                f11134a[b.a.SEA.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -87,7 +87,7 @@ public class b implements f {
     public static class a<K, V> extends HashMap<K, V> {
 
         /* renamed from: a  reason: collision with root package name */
-        Headers f24823a;
+        Headers f11135a;
 
         private a() {
         }
@@ -97,7 +97,7 @@ public class b implements f {
         }
 
         public void a(Headers headers) {
-            this.f24823a = headers;
+            this.f11135a = headers;
         }
 
         @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
@@ -106,7 +106,7 @@ public class b implements f {
                 return null;
             }
             String str = (String) obj;
-            Headers headers = this.f24823a;
+            Headers headers = this.f11135a;
             if (headers == null) {
                 return (V) super.get(obj);
             }
@@ -123,21 +123,21 @@ public class b implements f {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.cmn.func.b.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/func/b/a/b$b.class */
-    public static class C0637b implements com.opos.cmn.func.b.b.a {
+    public static class C0467b implements com.opos.cmn.func.b.b.a {
 
         /* renamed from: a  reason: collision with root package name */
-        private Headers f24824a;
+        private Headers f11136a;
         private Map<String, String> b;
 
-        public C0637b(Headers headers) {
+        public C0467b(Headers headers) {
             this.b = null;
-            this.f24824a = headers;
+            this.f11136a = headers;
             if (headers != null) {
                 try {
                     this.b = new HashMap();
-                    for (String str : this.f24824a.names()) {
+                    for (String str : this.f11136a.names()) {
                         if (str != null) {
-                            this.b.put(str, this.f24824a.get(str));
+                            this.b.put(str, this.f11136a.get(str));
                         }
                     }
                 } catch (Exception e) {
@@ -147,7 +147,7 @@ public class b implements f {
 
         @Override // com.opos.cmn.func.b.b.a
         public String a(String str) {
-            Headers headers = this.f24824a;
+            Headers headers = this.f11136a;
             if (headers == null || str == null) {
                 return null;
             }
@@ -160,7 +160,7 @@ public class b implements f {
         if (aVar == null) {
             aVar2 = com.opos.cmn.func.b.a.a.b.d(context);
         }
-        int i = AnonymousClass4.f24822a[aVar2.ordinal()];
+        int i = AnonymousClass4.f11134a[aVar2.ordinal()];
         if (i != 1) {
             if (i == 2) {
                 return AreaCode.EU;
@@ -180,7 +180,7 @@ public class b implements f {
             return null;
         }
         String str = cVar.b;
-        String str2 = cVar.f24841c;
+        String str2 = cVar.f11153c;
         String str3 = str;
         if (TextUtils.isEmpty(str)) {
             str3 = com.opos.cmn.func.b.a.a.b.c(context);
@@ -189,7 +189,7 @@ public class b implements f {
         if (TextUtils.isEmpty(str2)) {
             str4 = com.opos.cmn.func.b.a.a.b.b(context);
         }
-        HttpDnsConfig httpDnsConfig = new HttpDnsConfig(cVar.f24840a, str3, str4, cVar.d);
+        HttpDnsConfig httpDnsConfig = new HttpDnsConfig(cVar.f11152a, str3, str4, cVar.d);
         if (cVar.e != null && !cVar.e.isEmpty()) {
             httpDnsConfig.setInnerWhiteList(cVar.e);
         }
@@ -233,20 +233,20 @@ public class b implements f {
         }
         sb.append(logLevel);
         com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", sb.toString());
-        if (dVar2.e != null && (aVar = dVar2.e.f24848a) != null) {
+        if (dVar2.e != null && (aVar = dVar2.e.f11160a) != null) {
             builder.useHttpStat(new HttpStatConfig(true, new StatisticCallback() { // from class: com.opos.cmn.func.b.a.b.2
             }, dVar2.e.b));
         }
-        if (dVar2.f24844a != null) {
-            com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "config set" + dVar2.f24844a.toString());
-            if (dVar2.f24844a.f24834a) {
-                builder.setCloudConfig(dVar2.f24844a.b, a(dVar2.f24844a.f24835c, context));
+        if (dVar2.f11156a != null) {
+            com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "config set" + dVar2.f11156a.toString());
+            if (dVar2.f11156a.f11146a) {
+                builder.setCloudConfig(dVar2.f11156a.b, a(dVar2.f11156a.f11147c, context));
             }
             return builder;
         }
-        if (dVar2.f24845c != null) {
-            com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "config set" + dVar2.f24845c);
-            AppTraceConfig a3 = a(dVar2.f24845c);
+        if (dVar2.f11157c != null) {
+            com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "config set" + dVar2.f11157c);
+            AppTraceConfig a3 = a(dVar2.f11157c);
             if (a3 != null) {
                 builder.useAppTrace(a3);
             }
@@ -270,15 +270,15 @@ public class b implements f {
         if (fVar == null) {
             return null;
         }
-        return new IPv6Config(fVar.f24849a, fVar.b, fVar.f24850c, fVar.d);
+        return new IPv6Config(fVar.f11161a, fVar.b, fVar.f11162c, fVar.d);
     }
 
     private Call a(long j) {
         try {
             synchronized (this.d) {
-                Call call = this.f24819c.get(Long.valueOf(j));
+                Call call = this.f11131c.get(Long.valueOf(j));
                 if (call != null) {
-                    this.f24819c.remove(Long.valueOf(j));
+                    this.f11131c.remove(Long.valueOf(j));
                     return call;
                 }
                 return null;
@@ -298,21 +298,21 @@ public class b implements f {
 
     private static OkHttpClient.Builder a(Context context, OkHttpClient.Builder builder, g gVar) {
         if (gVar != null) {
-            if (gVar.f24854c != null) {
+            if (gVar.f11166c != null) {
                 com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "config set sslSocketFactory");
                 if (gVar.e != null) {
-                    builder.sslSocketFactory(gVar.f24854c, gVar.e);
+                    builder.sslSocketFactory(gVar.f11166c, gVar.e);
                 } else {
-                    builder.sslSocketFactory(gVar.f24854c);
+                    builder.sslSocketFactory(gVar.f11166c);
                 }
             }
             if (gVar.d != null) {
                 com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "config set hostnameVerifier");
                 builder.hostnameVerifier(gVar.d);
             }
-            builder.readTimeout(gVar.b, TimeUnit.MILLISECONDS).connectTimeout(gVar.f24853a, TimeUnit.MILLISECONDS);
+            builder.readTimeout(gVar.b, TimeUnit.MILLISECONDS).connectTimeout(gVar.f11165a, TimeUnit.MILLISECONDS);
             com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "config set readTimeout=" + gVar.b);
-            com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "config set connectTimeout=" + gVar.f24853a);
+            com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "config set connectTimeout=" + gVar.f11165a);
             HeyConfig.Builder a2 = a(gVar.f, context);
             if (a2 != null) {
                 builder.config(a2.build(context));
@@ -325,7 +325,7 @@ public class b implements f {
         if (aVar == null) {
             return null;
         }
-        return new AppTraceConfig(aVar.f24832a, aVar.b);
+        return new AppTraceConfig(aVar.f11144a, aVar.b);
     }
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x00e3 -> B:18:0x00b1). Please submit an issue!!! */
@@ -357,7 +357,7 @@ public class b implements f {
                 }
             }
         }
-        return new e.a().a(code).a(message).a(j).a(a(build)).a(new C0637b(build)).a(inputStream).a();
+        return new e.a().a(code).a(message).a(j).a(a(build)).a(new C0467b(build)).a(inputStream).a();
     }
 
     private Map<String, String> a(Headers headers) {
@@ -382,8 +382,8 @@ public class b implements f {
         com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "putCall requestId=" + j);
         if (call != null) {
             synchronized (this.d) {
-                this.f24819c.put(Long.valueOf(j), call);
-                com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "putCall mCallsMap.size()=" + this.f24819c.size());
+                this.f11131c.put(Long.valueOf(j), call);
+                com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "putCall mCallsMap.size()=" + this.f11131c.size());
             }
         }
     }
@@ -402,28 +402,28 @@ public class b implements f {
     }
 
     private static ApiEnv b() {
-        return com.opos.cmn.func.b.a.f24812a.booleanValue() ? ApiEnv.RELEASE : ApiEnv.DEV;
+        return com.opos.cmn.func.b.a.f11124a.booleanValue() ? ApiEnv.RELEASE : ApiEnv.DEV;
     }
 
     private static OkHttpClient b(Context context) {
         OkHttpClient okHttpClient;
-        OkHttpClient okHttpClient2 = f24818a;
+        OkHttpClient okHttpClient2 = f11130a;
         if (okHttpClient2 != null) {
             return okHttpClient2;
         }
         synchronized (b.class) {
             try {
-                if (f24818a == null) {
+                if (f11130a == null) {
                     try {
                         g a2 = com.opos.cmn.func.b.a.a.b.a(context);
                         OkHttpClient.Builder a3 = a();
                         a(context, a3, a2);
-                        f24818a = a3.build();
+                        f11130a = a3.build();
                     } catch (Exception e) {
                         com.opos.cmn.an.f.a.b("HttpTapExternalHttpImpl", "init fail", e);
                     }
                 }
-                okHttpClient = f24818a;
+                okHttpClient = f11130a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -456,15 +456,15 @@ public class b implements f {
         }
         com.opos.cmn.func.b.b.d a2 = com.opos.cmn.func.b.a.a.b.a(context, dVar);
         Request.Builder builder = new Request.Builder();
-        if (a2.f24859c != null) {
-            for (String str : a2.f24859c.keySet()) {
-                builder.addHeader(str, a2.f24859c.get(str));
+        if (a2.f11171c != null) {
+            for (String str : a2.f11171c.keySet()) {
+                builder.addHeader(str, a2.f11171c.get(str));
             }
         }
-        if (a2.f24858a == "GET") {
+        if (a2.f11170a == "GET") {
             url = builder.url(a2.b).get();
         } else {
-            if (a2.f24858a == "POST") {
+            if (a2.f11170a == "POST") {
                 builder.post(a2.d != null ? RequestBody.create((MediaType) null, a2.d) : RequestBody.create((MediaType) null, new byte[0]));
             }
             url = builder.url(a2.b);

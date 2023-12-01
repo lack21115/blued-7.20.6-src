@@ -13,13 +13,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/b/b.class */
 public class b implements d.a {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f5835a = b.class.getSimpleName();
+    public static final String a = b.class.getSimpleName();
     i b;
-
-    /* renamed from: c  reason: collision with root package name */
-    k f5836c;
+    k c;
     j d;
     Runnable e = new Runnable() { // from class: com.anythink.basead.a.b.b.1
         @Override // java.lang.Runnable
@@ -32,7 +28,7 @@ public class b implements d.a {
     private int h;
     private String i;
     private List<String> j;
-    private InterfaceC0067b k;
+    private InterfaceC0027b k;
     private com.anythink.basead.a.a.c<Void, com.anythink.basead.c.e> l;
     private MraidWebView m;
     private volatile boolean n;
@@ -40,20 +36,18 @@ public class b implements d.a {
     /* renamed from: com.anythink.basead.a.b.b$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/b/b$2.class */
     final class AnonymousClass2 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f5838a;
+        final /* synthetic */ String a;
         final /* synthetic */ String b;
 
         AnonymousClass2(String str, String str2) {
-            this.f5838a = str;
+            this.a = str;
             this.b = str2;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             b.this.m = new MraidWebView(n.a().g());
-            com.anythink.basead.mraid.d.a(this.f5838a, this.b, b.this.m, new d.a() { // from class: com.anythink.basead.a.b.b.2.1
+            com.anythink.basead.mraid.d.a(this.a, this.b, b.this.m, new d.a() { // from class: com.anythink.basead.a.b.b.2.1
                 @Override // com.anythink.basead.mraid.d.a
                 public final void a() {
                     b.this.b();
@@ -79,7 +73,7 @@ public class b implements d.a {
         /* renamed from: a  reason: avoid collision after fix types in other method */
         private void a2(com.anythink.basead.c.e eVar) {
             if (b.this.k != null) {
-                String str = b.f5835a;
+                String str = b.a;
                 new StringBuilder("Offer load failed, OfferId -> ").append(b.this.i);
                 b.this.k.a(eVar);
             }
@@ -88,7 +82,7 @@ public class b implements d.a {
 
         private void b() {
             if (b.this.k != null) {
-                String str = b.f5835a;
+                String str = b.a;
                 new StringBuilder("Offer load success, OfferId -> ").append(b.this.i);
                 b.this.k.a();
             }
@@ -98,7 +92,7 @@ public class b implements d.a {
         @Override // com.anythink.basead.a.a.b
         public final /* synthetic */ void a() {
             if (b.this.k != null) {
-                String str = b.f5835a;
+                String str = b.a;
                 new StringBuilder("Offer load success, OfferId -> ").append(b.this.i);
                 b.this.k.a();
             }
@@ -109,7 +103,7 @@ public class b implements d.a {
         public final /* synthetic */ void a(com.anythink.basead.c.e eVar) {
             com.anythink.basead.c.e eVar2 = eVar;
             if (b.this.k != null) {
-                String str = b.f5835a;
+                String str = b.a;
                 new StringBuilder("Offer load failed, OfferId -> ").append(b.this.i);
                 b.this.k.a(eVar2);
             }
@@ -119,7 +113,7 @@ public class b implements d.a {
 
     /* renamed from: com.anythink.basead.a.b.b$b  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/b/b$b.class */
-    public interface InterfaceC0067b {
+    public interface InterfaceC0027b {
         void a();
 
         void a(com.anythink.basead.c.e eVar);
@@ -131,7 +125,7 @@ public class b implements d.a {
         this.b = iVar;
         this.d = jVar;
         k kVar = jVar.m;
-        this.f5836c = kVar;
+        this.c = kVar;
         this.h = kVar.m();
         com.anythink.basead.a.b.a aVar = new com.anythink.basead.a.b.a();
         this.l = aVar;
@@ -139,7 +133,7 @@ public class b implements d.a {
     }
 
     private void a() {
-        List<String> b = this.b.b((i) this.f5836c);
+        List<String> b = this.b.b((i) this.c);
         if (b == null) {
             a(com.anythink.basead.c.f.a(com.anythink.basead.c.f.l, "Incomplete resource allocation! MissResource: ".concat(String.valueOf(this.b.m()))));
             return;
@@ -159,11 +153,11 @@ public class b implements d.a {
             String str = b.get(i2);
             if (!TextUtils.isEmpty(str)) {
                 if (this.b.D(str)) {
-                    if (!c.b(str, this.f5836c.S()) && !this.j.contains(str)) {
+                    if (!c.b(str, this.c.S()) && !this.j.contains(str)) {
                         StringBuilder sb = new StringBuilder("videoInfo:video file is not ready to play -> ");
                         sb.append(str);
                         sb.append(",need readyRate:");
-                        sb.append(this.f5836c.S());
+                        sb.append(this.c.S());
                         this.j.add(str);
                     }
                 } else if (!c.c(str) && !this.j.contains(str)) {
@@ -188,7 +182,7 @@ public class b implements d.a {
                 if (i4 < size2) {
                     String str2 = this.j.get(i4);
                     boolean D = this.b.D(str2);
-                    int S = this.f5836c.S();
+                    int S = this.c.S();
                     if (D) {
                         if (c.b(str2, S)) {
                             StringBuilder sb3 = new StringBuilder("Video file ready -> ");
@@ -201,7 +195,7 @@ public class b implements d.a {
                             sb4.append(str2);
                             sb4.append(",videoNeedReadyRate:");
                             sb4.append(S);
-                            new f(this.f, this.b, this.f5836c).a();
+                            new f(this.f, this.b, this.c).a();
                         }
                     } else if (!c.a(str2)) {
                         if (c.c(str2)) {
@@ -260,14 +254,14 @@ public class b implements d.a {
         n.a().c(bVar.e);
     }
 
-    public final void a(InterfaceC0067b interfaceC0067b) {
+    public final void a(InterfaceC0027b interfaceC0027b) {
         i iVar = this.b;
         if (iVar == null || this.l == null) {
             a(com.anythink.basead.c.f.a("-9999", com.anythink.basead.c.f.w));
             return;
         }
         this.i = iVar.p();
-        this.k = interfaceC0067b;
+        this.k = interfaceC0027b;
         n.a().a(this.e, this.h);
         if (!this.b.g()) {
             this.l.a(1);
@@ -276,7 +270,7 @@ public class b implements d.a {
         }
         boolean z = false;
         this.n = false;
-        k kVar = this.f5836c;
+        k kVar = this.c;
         if (kVar != null) {
             String valueOf = String.valueOf(kVar.t());
             if (valueOf.equals("1") || valueOf.equals("3")) {
@@ -290,7 +284,7 @@ public class b implements d.a {
             if (this.n) {
                 return;
             }
-            boolean V = this.f5836c.V();
+            boolean V = this.c.V();
             String a2 = com.anythink.basead.mraid.d.a(this.d, this.b);
             if (TextUtils.isEmpty(a2)) {
                 a(com.anythink.basead.c.f.a(com.anythink.basead.c.f.F, com.anythink.basead.c.f.L));
@@ -306,7 +300,7 @@ public class b implements d.a {
     public final void a(String str, int i) {
         synchronized (this) {
             c.a(str, i);
-            if (this.j.contains(str) && ((!this.b.D(str) || this.f5836c.S() <= i) && this.j != null)) {
+            if (this.j.contains(str) && ((!this.b.D(str) || this.c.S() <= i) && this.j != null)) {
                 this.j.remove(str);
                 StringBuilder sb = new StringBuilder();
                 sb.append(this.i);

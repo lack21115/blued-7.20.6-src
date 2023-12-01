@@ -14,32 +14,32 @@ public abstract class PrivilegeBuyAction implements UiAction {
     public static final class checUserPermission extends PrivilegeBuyAction {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f34305a;
+        private final String f20614a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public checUserPermission(String uid) {
+        public checUserPermission(String str) {
             super(null);
-            Intrinsics.e(uid, "uid");
-            this.f34305a = uid;
+            Intrinsics.e(str, "uid");
+            this.f20614a = str;
         }
 
         public final String a() {
-            return this.f34305a;
+            return this.f20614a;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof checUserPermission) && Intrinsics.a((Object) this.f34305a, (Object) ((checUserPermission) obj).f34305a);
+            return (obj instanceof checUserPermission) && Intrinsics.a(this.f20614a, ((checUserPermission) obj).f20614a);
         }
 
         public int hashCode() {
-            return this.f34305a.hashCode();
+            return this.f20614a.hashCode();
         }
 
         public String toString() {
-            return "checUserPermission(uid=" + this.f34305a + ')';
+            return "checUserPermission(uid=" + this.f20614a + ')';
         }
     }
 
@@ -48,14 +48,14 @@ public abstract class PrivilegeBuyAction implements UiAction {
     public static final class getGoodsList extends PrivilegeBuyAction {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f34306a;
+        private final String f20615a;
         private final int b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public getGoodsList(String type, int i) {
+        public getGoodsList(String str, int i) {
             super(null);
-            Intrinsics.e(type, "type");
-            this.f34306a = type;
+            Intrinsics.e(str, "type");
+            this.f20615a = str;
             this.b = i;
         }
 
@@ -69,21 +69,21 @@ public abstract class PrivilegeBuyAction implements UiAction {
             }
             if (obj instanceof getGoodsList) {
                 getGoodsList getgoodslist = (getGoodsList) obj;
-                return Intrinsics.a((Object) this.f34306a, (Object) getgoodslist.f34306a) && this.b == getgoodslist.b;
+                return Intrinsics.a(this.f20615a, getgoodslist.f20615a) && this.b == getgoodslist.b;
             }
             return false;
         }
 
         public final String getType() {
-            return this.f34306a;
+            return this.f20615a;
         }
 
         public int hashCode() {
-            return (this.f34306a.hashCode() * 31) + this.b;
+            return (this.f20615a.hashCode() * 31) + this.b;
         }
 
         public String toString() {
-            return "getGoodsList(type=" + this.f34306a + ", recommend=" + this.b + ')';
+            return "getGoodsList(type=" + this.f20615a + ", recommend=" + this.b + ')';
         }
     }
 

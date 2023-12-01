@@ -6,9 +6,7 @@ import kotlin.collections.AbstractList;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/text/MatcherMatchResult$groupValues$1.class */
 public final class MatcherMatchResult$groupValues$1 extends AbstractList<String> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ MatcherMatchResult f42727a;
+    final /* synthetic */ MatcherMatchResult a;
 
     public int a(String str) {
         return super.indexOf(str);
@@ -18,7 +16,7 @@ public final class MatcherMatchResult$groupValues$1 extends AbstractList<String>
     /* renamed from: a */
     public String get(int i) {
         java.util.regex.MatchResult b;
-        b = this.f42727a.b();
+        b = this.a.b();
         String group = b.group(i);
         String str = group;
         if (group == null) {
@@ -35,7 +33,7 @@ public final class MatcherMatchResult$groupValues$1 extends AbstractList<String>
         return super.contains(str);
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public final boolean contains(Object obj) {
         if (obj instanceof String) {
             return c((String) obj);
@@ -46,7 +44,7 @@ public final class MatcherMatchResult$groupValues$1 extends AbstractList<String>
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
         java.util.regex.MatchResult b;
-        b = this.f42727a.b();
+        b = this.a.b();
         return b.groupCount() + 1;
     }
 

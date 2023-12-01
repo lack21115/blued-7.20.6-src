@@ -132,9 +132,10 @@ public final class RegularContiguousSet<C extends Comparable> extends Contiguous
         return intersectionInCurrentDomain(Range.upTo(c2, BoundType.forBoolean(z)));
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     @Override // com.google.common.collect.ContiguousSet, com.google.common.collect.ImmutableSortedSet
-    /* bridge */ /* synthetic */ ImmutableSortedSet headSetImpl(Object obj, boolean z) {
+    public /* bridge */ /* synthetic */ ImmutableSortedSet headSetImpl(Object obj, boolean z) {
         return headSetImpl((RegularContiguousSet<C>) ((Comparable) obj), z);
     }
 
@@ -171,7 +172,7 @@ public final class RegularContiguousSet<C extends Comparable> extends Contiguous
         return false;
     }
 
-    @Override // com.google.common.collect.ImmutableSortedSet, com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // com.google.common.collect.ImmutableSortedSet, com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
     public UnmodifiableIterator<C> iterator() {
         return new AbstractSequentialIterator<C>(first()) { // from class: com.google.common.collect.RegularContiguousSet.1
             final C last;
@@ -210,7 +211,7 @@ public final class RegularContiguousSet<C extends Comparable> extends Contiguous
         return Range.create(this.range.lowerBound.withLowerBoundType(boundType, this.domain), this.range.upperBound.withUpperBoundType(boundType2, this.domain));
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public int size() {
         long distance = this.domain.distance(first(), last());
         if (distance >= 2147483647L) {

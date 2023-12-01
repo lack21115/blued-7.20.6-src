@@ -18,11 +18,11 @@ import java.util.Set;
 public class c3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static SparseArray<String> f21203a;
+    public static SparseArray<String> f7597a;
     public static Set<Integer> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static LruCache<Class, String> f21204c = new LruCache<>(100);
+    public static LruCache<Class, String> f7598c = new LruCache<>(100);
 
     public static int a(View view) {
         if (view == null) {
@@ -45,8 +45,8 @@ public class c3 {
             if (z) {
                 return null;
             }
-            if (f21203a == null) {
-                f21203a = new SparseArray<>();
+            if (f7597a == null) {
+                f7597a = new SparseArray<>();
             }
             if (b == null) {
                 b = new HashSet();
@@ -55,13 +55,13 @@ public class c3 {
             if (id <= 2130706432 || b.contains(Integer.valueOf(id))) {
                 return null;
             }
-            String str = f21203a.get(id);
+            String str = f7597a.get(id);
             if (str != null) {
                 return str;
             }
             try {
                 String resourceEntryName = view.getResources().getResourceEntryName(id);
-                f21203a.put(id, resourceEntryName);
+                f7597a.put(id, resourceEntryName);
                 return resourceEntryName;
             } catch (Exception e) {
                 b.add(Integer.valueOf(id));
@@ -72,7 +72,7 @@ public class c3 {
     }
 
     public static String a(Class cls) {
-        String str = f21204c.get(cls);
+        String str = f7598c.get(cls);
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
             String simpleName = cls.getSimpleName();
@@ -80,22 +80,22 @@ public class c3 {
             if (TextUtils.isEmpty(simpleName)) {
                 str3 = "Anonymous";
             }
-            f21204c.put(cls, str3);
+            f7598c.put(cls, str3);
             str2 = str3;
             if (!k2.j) {
                 str2 = str3;
                 if (!k2.e) {
                     str2 = str3;
-                    if (!k2.f21242a) {
+                    if (!k2.f7636a) {
                         str2 = str3;
                         if (str3.contains("RecyclerView")) {
                             str2 = str3;
                             try {
                                 if (k2.a((Class<?>) cls) != null) {
                                     str2 = str3;
-                                    if (k2.f21243c != null) {
+                                    if (k2.f7637c != null) {
                                         k2.b = cls;
-                                        k2.f21242a = true;
+                                        k2.f7636a = true;
                                         return str3;
                                     }
                                 }

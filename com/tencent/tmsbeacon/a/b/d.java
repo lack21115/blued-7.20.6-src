@@ -15,11 +15,11 @@ import java.util.Map;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile d f39463a;
+    private static volatile d f25772a;
     private static final Map<String, String> b = new LinkedHashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f39464c = false;
+    private boolean f25773c = false;
     private boolean d = false;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/a/b/d$a.class */
@@ -43,13 +43,13 @@ public class d {
         public final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f39465c;
+        public final /* synthetic */ String f25774c;
         public final /* synthetic */ Throwable d;
         public final /* synthetic */ Callback e;
 
         public b(String str, String str2, Throwable th, Callback callback) {
             this.b = str;
-            this.f39465c = str2;
+            this.f25774c = str2;
             this.d = th;
             this.e = callback;
         }
@@ -59,11 +59,11 @@ public class d {
             synchronized (d.this) {
                 LinkedHashMap linkedHashMap = new LinkedHashMap(d.b);
                 linkedHashMap.put("error_code", this.b);
-                linkedHashMap.put("error_msg", this.f39465c);
+                linkedHashMap.put("error_msg", this.f25774c);
                 linkedHashMap.put("error_stack_full", com.tencent.tmsbeacon.base.util.b.a(this.d));
                 linkedHashMap.put("_dc", String.valueOf(Math.random()));
                 com.tencent.tmsbeacon.base.net.c.c().a(e.b().b("https://h.trace.qq.com/kv").a("atta").a(linkedHashMap).a(HttpMethod.POST).a()).a(this.e);
-                c.d("[atta] upload a new error, errorCode: %s, message: %s, stack: %s", this.b, this.f39465c, com.tencent.tmsbeacon.base.util.b.a(this.d));
+                c.d("[atta] upload a new error, errorCode: %s, message: %s, stack: %s", this.b, this.f25774c, com.tencent.tmsbeacon.base.util.b.a(this.d));
             }
         }
     }
@@ -72,23 +72,23 @@ public class d {
     }
 
     public static d b() {
-        if (f39463a == null) {
+        if (f25772a == null) {
             synchronized (d.class) {
                 try {
-                    if (f39463a == null) {
-                        f39463a = new d();
+                    if (f25772a == null) {
+                        f25772a = new d();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39463a;
+        return f25772a;
     }
 
     private void d() {
         synchronized (this) {
-            if (this.f39464c) {
+            if (this.f25773c) {
                 return;
             }
             Map<String, String> map = b;
@@ -105,7 +105,7 @@ public class d {
             map.put("sdk_version", com.tencent.tmsbeacon.a.c.c.d().i());
             map.put("product_id", com.tencent.tmsbeacon.a.c.c.d().f());
             map.put("_dc", "");
-            this.f39464c = true;
+            this.f25773c = true;
         }
     }
 
@@ -124,7 +124,7 @@ public class d {
     public void a(String str, String str2, Throwable th, Callback<BResponse> callback) {
         synchronized (this) {
             if (c()) {
-                if (!this.f39464c) {
+                if (!this.f25773c) {
                     d();
                 }
                 if (TextUtils.isEmpty(str)) {

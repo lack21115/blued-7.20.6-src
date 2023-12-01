@@ -10,7 +10,7 @@ import com.baidu.mobads.sdk.internal.c;
 public class an {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9311a = "PluginLoader";
+    private static final String f6471a = "PluginLoader";
     private static ClassLoader b;
 
     /* loaded from: source-8756600-dex2jar.jar:com/baidu/mobads/sdk/internal/an$a.class */
@@ -29,7 +29,7 @@ public class an {
     public static ClassLoader a(String str, String str2, String str3, ClassLoader classLoader) {
         r rVar;
         if (a()) {
-            if (b == null && (rVar = (r) c.a().a(c.a.f9369a).a()) != null) {
+            if (b == null && (rVar = (r) c.a().a(c.a.f6529a).a()) != null) {
                 b = rVar.getClassLoaderFromJar(str, str2, str3, classLoader);
             }
             return b;
@@ -38,7 +38,7 @@ public class an {
     }
 
     public static void a(double d, am.b bVar, a aVar) {
-        r rVar = (r) c.a().a(c.a.f9369a).a();
+        r rVar = (r) c.a().a(c.a.f6529a).a();
         if (rVar != null) {
             rVar.startLoadRemotePhp(d, bVar);
         } else if (aVar != null) {

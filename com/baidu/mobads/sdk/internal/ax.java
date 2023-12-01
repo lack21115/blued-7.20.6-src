@@ -10,7 +10,7 @@ import android.view.WindowManager;
 public class ax {
 
     /* renamed from: a  reason: collision with root package name */
-    private static DisplayMetrics f9325a;
+    private static DisplayMetrics f6485a;
     private static float b;
 
     public static int a(Context context, float f) {
@@ -68,8 +68,8 @@ public class ax {
 
     public static DisplayMetrics f(Context context) {
         try {
-            if (f9325a != null && f9325a.widthPixels > 0) {
-                return f9325a;
+            if (f6485a != null && f6485a.widthPixels > 0) {
+                return f6485a;
             }
             DisplayMetrics displayMetrics = new DisplayMetrics();
             if (bj.a(context).a() >= 17) {
@@ -77,12 +77,12 @@ public class ax {
             } else {
                 ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(displayMetrics);
             }
-            f9325a = displayMetrics;
+            f6485a = displayMetrics;
         } catch (Throwable th) {
-            f9325a = new DisplayMetrics();
+            f6485a = new DisplayMetrics();
             bq.a().a(th);
         }
-        return f9325a;
+        return f6485a;
     }
 
     public static int g(Context context) {

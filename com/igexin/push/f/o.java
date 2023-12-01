@@ -8,11 +8,11 @@ import android.text.TextUtils;
 public final class o {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23663a = "us";
+    public static final String f10055a = "us";
     public static final String b = "ups";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23664c = "uis";
+    public static final String f10056c = "uis";
     public static final String d = "ua";
     public static final String e = "sc";
     public static final String f = "it";
@@ -58,7 +58,7 @@ public final class o {
 
     public static boolean a(Context context) {
         try {
-            String str = (String) b(context, f23663a, "");
+            String str = (String) b(context, f10055a, "");
             if (TextUtils.isEmpty(str)) {
                 return false;
             }

@@ -16,11 +16,11 @@ public final class e {
     private static final long f = 60;
 
     /* renamed from: a  reason: collision with root package name */
-    Future<d> f23310a;
+    Future<d> f9702a;
     d b;
 
     /* renamed from: c  reason: collision with root package name */
-    i f23311c;
+    i f9703c;
     boolean d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -37,7 +37,7 @@ public final class e {
         public d call() {
             Socket socket;
             Thread.currentThread().hashCode();
-            com.igexin.b.a.a().f23194a.getActiveCount();
+            com.igexin.b.a.a().f9586a.getActiveCount();
             if (!Thread.currentThread().isInterrupted()) {
                 Socket socket2 = null;
                 try {
@@ -52,7 +52,7 @@ public final class e {
                         sb.append(" is interrupted ######");
                         com.igexin.c.a.c.a.a(e.e, sb.toString());
                         Thread.currentThread().hashCode();
-                        com.igexin.b.a.a().f23194a.getActiveCount();
+                        com.igexin.b.a.a().f9586a.getActiveCount();
                         return null;
                     }
                     synchronized (i.class) {
@@ -71,8 +71,8 @@ public final class e {
                         e.this.c();
                         com.igexin.c.a.c.a.a("DT_DetectRunTask|detect " + e.this.c() + "|time = " + e.this.b.c(), new Object[0]);
                         synchronized (i.class) {
-                            if (e.this.f23311c != null && !Thread.currentThread().isInterrupted()) {
-                                e.this.f23311c.a(b.a.f23302a, e.this.b);
+                            if (e.this.f9703c != null && !Thread.currentThread().isInterrupted()) {
+                                e.this.f9703c.a(b.a.f9694a, e.this.b);
                             }
                         }
                         if (!socket.isClosed()) {
@@ -82,7 +82,7 @@ public final class e {
                                 e = e2;
                                 com.igexin.c.a.c.a.a(e);
                                 Thread.currentThread().hashCode();
-                                com.igexin.b.a.a().f23194a.getActiveCount();
+                                com.igexin.b.a.a().f9586a.getActiveCount();
                                 return e.this.b;
                             }
                         }
@@ -99,9 +99,9 @@ public final class e {
                         com.igexin.c.a.c.a.b(e.e, sb2.toString());
                         Socket socket7 = socket;
                         synchronized (i.class) {
-                            if (e.this.f23311c != null) {
+                            if (e.this.f9703c != null) {
                                 e.this.b.b();
-                                e.this.f23311c.a(b.a.f23303c, e.this.b);
+                                e.this.f9703c.a(b.a.f9695c, e.this.b);
                             }
                         }
                         if (socket != null && !socket.isClosed()) {
@@ -111,12 +111,12 @@ public final class e {
                                 e = e4;
                                 com.igexin.c.a.c.a.a(e);
                                 Thread.currentThread().hashCode();
-                                com.igexin.b.a.a().f23194a.getActiveCount();
+                                com.igexin.b.a.a().f9586a.getActiveCount();
                                 return e.this.b;
                             }
                         }
                         Thread.currentThread().hashCode();
-                        com.igexin.b.a.a().f23194a.getActiveCount();
+                        com.igexin.b.a.a().f9586a.getActiveCount();
                         return e.this.b;
                     } catch (Throwable th) {
                         socket2 = socket;
@@ -129,11 +129,11 @@ public final class e {
                             }
                         }
                         Thread.currentThread().hashCode();
-                        com.igexin.b.a.a().f23194a.getActiveCount();
+                        com.igexin.b.a.a().f9586a.getActiveCount();
                         throw th;
                     }
                     Thread.currentThread().hashCode();
-                    com.igexin.b.a.a().f23194a.getActiveCount();
+                    com.igexin.b.a.a().f9586a.getActiveCount();
                 } catch (Throwable th2) {
                     th = th2;
                 }
@@ -193,8 +193,8 @@ public final class e {
     private void e() {
         synchronized (i.class) {
             try {
-                if (this.f23311c != null) {
-                    this.f23310a = com.igexin.b.a.a().f23194a.submit(new AnonymousClass1());
+                if (this.f9703c != null) {
+                    this.f9702a = com.igexin.b.a.a().f9586a.submit(new AnonymousClass1());
                 }
             } finally {
             }
@@ -202,16 +202,16 @@ public final class e {
     }
 
     private void f() {
-        this.f23310a = com.igexin.b.a.a().f23194a.submit(new AnonymousClass1());
+        this.f9702a = com.igexin.b.a.a().f9586a.submit(new AnonymousClass1());
     }
 
     private void g() {
         try {
-            if (this.f23310a == null || this.f23310a.isCancelled() || this.f23310a.isDone()) {
+            if (this.f9702a == null || this.f9702a.isCancelled() || this.f9702a.isDone()) {
                 return;
             }
-            this.f23310a.cancel(true);
-            this.f23310a = null;
+            this.f9702a.cancel(true);
+            this.f9702a = null;
         } catch (Exception e2) {
             com.igexin.c.a.c.a.a(e2);
         }
@@ -226,7 +226,7 @@ public final class e {
     public final void a(i iVar) {
         synchronized (i.class) {
             try {
-                this.f23311c = iVar;
+                this.f9703c = iVar;
             } catch (Throwable th) {
                 throw th;
             }
@@ -240,6 +240,6 @@ public final class e {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final String c() {
-        return this.b.a() + "|" + this.b.f23308a;
+        return this.b.a() + "|" + this.b.f9700a;
     }
 }

@@ -1,6 +1,6 @@
 package java.util;
 
-import android.text.format.Time;
+import com.amap.api.services.core.AMapException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -23,21 +23,21 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     @Deprecated
     public Date(int i, int i2, int i3) {
         GregorianCalendar gregorianCalendar = new GregorianCalendar(false);
-        gregorianCalendar.set(i + 1900, i2, i3);
+        gregorianCalendar.set(i + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR, i2, i3);
         this.milliseconds = gregorianCalendar.getTimeInMillis();
     }
 
     @Deprecated
     public Date(int i, int i2, int i3, int i4, int i5) {
         GregorianCalendar gregorianCalendar = new GregorianCalendar(false);
-        gregorianCalendar.set(i + 1900, i2, i3, i4, i5);
+        gregorianCalendar.set(i + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR, i2, i3, i4, i5);
         this.milliseconds = gregorianCalendar.getTimeInMillis();
     }
 
     @Deprecated
     public Date(int i, int i2, int i3, int i4, int i5, int i6) {
         GregorianCalendar gregorianCalendar = new GregorianCalendar(false);
-        gregorianCalendar.set(i + 1900, i2, i3, i4, i5, i6);
+        gregorianCalendar.set(i + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR, i2, i3, i4, i5, i6);
         this.milliseconds = gregorianCalendar.getTimeInMillis();
     }
 
@@ -54,7 +54,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     public static long UTC(int i, int i2, int i3, int i4, int i5, int i6) {
         GregorianCalendar gregorianCalendar = new GregorianCalendar(false);
         gregorianCalendar.setTimeZone(TimeZone.getTimeZone("GMT"));
-        gregorianCalendar.set(i + 1900, i2, i3, i4, i5, i6);
+        gregorianCalendar.set(i + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR, i2, i3, i4, i5, i6);
         return gregorianCalendar.getTimeInMillis();
     }
 
@@ -87,16 +87,16 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
         int i6;
         int i7;
         int i8;
-        char c2;
+        char c;
         int i9;
         boolean z2;
         int i10;
         int i11;
-        char c3;
+        char c2;
         if (str == null) {
             throw new IllegalArgumentException("The string argument is null");
         }
-        char c4 = 0;
+        char c3 = 0;
         int i12 = 0;
         int i13 = 0;
         int length = str.length();
@@ -119,7 +119,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                 i23 = i12 + 1;
             }
             int i24 = i23;
-            char c5 = charAt;
+            char c4 = charAt;
             if (i23 > 0) {
                 int i25 = i23;
                 if (charAt == ')') {
@@ -128,19 +128,19 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                 i12 = i25;
                 i13 = i22;
                 if (i25 == 0) {
-                    c5 = ' ';
+                    c4 = ' ';
                     i24 = i25;
                 } else {
                     continue;
                 }
             }
-            if (('a' <= c5 && c5 <= 'z') || ('A' <= c5 && c5 <= 'Z')) {
+            if (('a' <= c4 && c4 <= 'z') || ('A' <= c4 && c4 <= 'Z')) {
                 z = true;
-            } else if ('0' > c5 || c5 > '9') {
+            } else if ('0' > c4 || c4 > '9') {
                 z = false;
-                if (!Character.isSpace(c5)) {
+                if (!Character.isSpace(c4)) {
                     z = false;
-                    if (",+-:/".indexOf(c5) == -1) {
+                    if (",+-:/".indexOf(c4) == -1) {
                         throw parseError(str);
                     }
                 }
@@ -155,7 +155,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                 i7 = i19;
                 i8 = i21;
                 i13 = i22;
-                c2 = c4;
+                c = c3;
                 i9 = i14;
                 z2 = z4;
                 i10 = i20;
@@ -167,7 +167,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                     i7 = i19;
                     i8 = i21;
                     i13 = i22;
-                    c2 = c4;
+                    c = c3;
                     i9 = i14;
                     z2 = z4;
                     i10 = i20;
@@ -187,7 +187,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                                     i7 = i19;
                                     i8 = i21;
                                     i13 = i22;
-                                    c2 = c4;
+                                    c = c3;
                                     i9 = i14;
                                     z2 = z4;
                                     i10 = i20;
@@ -203,7 +203,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                             i7 = i19;
                             i8 = i21;
                             i13 = i22;
-                            c2 = c4;
+                            c = c3;
                             i9 = i14;
                             z2 = z4;
                             i10 = i20;
@@ -224,7 +224,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                             i7 = i19;
                             i8 = i21;
                             i13 = i22;
-                            c2 = c4;
+                            c = c3;
                             i9 = i14;
                             z2 = z4;
                             i10 = i20;
@@ -239,7 +239,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                             i7 = i19;
                             i8 = i21;
                             i13 = i22;
-                            c2 = c4;
+                            c = c3;
                             i9 = i14;
                             z2 = z4;
                             i10 = i20;
@@ -254,7 +254,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                                     i7 = i19;
                                     i8 = i21;
                                     i13 = i22;
-                                    c2 = c4;
+                                    c = c3;
                                     i9 = i14;
                                     z2 = z4;
                                     i10 = i20;
@@ -262,7 +262,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                                         i3 = parse;
                                     }
                                 }
-                                if (upperCase.equals("GMT") || upperCase.equals("UT") || upperCase.equals(Time.TIMEZONE_UTC)) {
+                                if (upperCase.equals("GMT") || upperCase.equals("UT") || upperCase.equals("UTC")) {
                                     z2 = true;
                                     i10 = 0;
                                     i4 = i16;
@@ -271,7 +271,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                                     i7 = i19;
                                     i8 = i21;
                                     i13 = i22;
-                                    c2 = c4;
+                                    c = c3;
                                     i9 = i14;
                                 } else {
                                     i10 = zone(upperCase);
@@ -285,7 +285,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                                     i7 = i19;
                                     i8 = i21;
                                     i13 = i22;
-                                    c2 = c4;
+                                    c = c3;
                                     i9 = i14;
                                 }
                             }
@@ -295,18 +295,18 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
             } else {
                 int parseInt = Integer.parseInt(sb.toString());
                 sb.setLength(0);
-                if (c4 == '+' || c4 == '-') {
+                if (c3 == '+' || c3 == '-') {
                     if (i20 != 0) {
                         throw parseError(str);
                     }
                     z2 = true;
                     i13 = i22;
-                    if (c5 == ':') {
-                        i21 = c4 == '-' ? -Integer.parseInt(str.substring(i22, i22 + 2)) : Integer.parseInt(str.substring(i22, i22 + 2));
+                    if (c4 == ':') {
+                        i21 = c3 == '-' ? -Integer.parseInt(str.substring(i22, i22 + 2)) : Integer.parseInt(str.substring(i22, i22 + 2));
                         i13 = i22 + 2;
                     }
-                    i10 = c4 == '-' ? -parseInt : parseInt;
-                    c2 = 0;
+                    i10 = c3 == '-' ? -parseInt : parseInt;
+                    c = 0;
                     i9 = i14;
                     i8 = i21;
                     i7 = i19;
@@ -315,7 +315,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                     i4 = i16;
                     i3 = i15;
                 } else if (parseInt >= 70) {
-                    if (i14 != -1 || (!Character.isSpace(c5) && c5 != ',' && c5 != '/' && c5 != '\r')) {
+                    if (i14 != -1 || (!Character.isSpace(c4) && c4 != ',' && c4 != '/' && c4 != '\r')) {
                         throw parseError(str);
                     }
                     i9 = parseInt;
@@ -326,10 +326,10 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                     i7 = i19;
                     i8 = i21;
                     i13 = i22;
-                    c2 = c4;
+                    c = c3;
                     z2 = z4;
                     i10 = i20;
-                } else if (c5 == ':') {
+                } else if (c4 == ':') {
                     if (i17 == -1) {
                         i5 = parseInt;
                         i3 = i15;
@@ -338,7 +338,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                         i7 = i19;
                         i8 = i21;
                         i13 = i22;
-                        c2 = c4;
+                        c = c3;
                         i9 = i14;
                         z2 = z4;
                         i10 = i20;
@@ -352,12 +352,12 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                         i7 = i19;
                         i8 = i21;
                         i13 = i22;
-                        c2 = c4;
+                        c = c3;
                         i9 = i14;
                         z2 = z4;
                         i10 = i20;
                     }
-                } else if (c5 == '/') {
+                } else if (c4 == '/') {
                     if (i15 == -1) {
                         i3 = parseInt - 1;
                         i4 = i16;
@@ -366,7 +366,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                         i7 = i19;
                         i8 = i21;
                         i13 = i22;
-                        c2 = c4;
+                        c = c3;
                         i9 = i14;
                         z2 = z4;
                         i10 = i20;
@@ -380,12 +380,12 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                         i7 = i19;
                         i8 = i21;
                         i13 = i22;
-                        c2 = c4;
+                        c = c3;
                         i9 = i14;
                         z2 = z4;
                         i10 = i20;
                     }
-                } else if (Character.isSpace(c5) || c5 == ',' || c5 == '-' || c5 == '\r') {
+                } else if (Character.isSpace(c4) || c4 == ',' || c4 == '-' || c4 == '\r') {
                     if (i17 != -1 && i18 == -1) {
                         i6 = parseInt;
                         i3 = i15;
@@ -394,7 +394,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                         i7 = i19;
                         i8 = i21;
                         i13 = i22;
-                        c2 = c4;
+                        c = c3;
                         i9 = i14;
                         z2 = z4;
                         i10 = i20;
@@ -406,7 +406,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                         i6 = i18;
                         i8 = i21;
                         i13 = i22;
-                        c2 = c4;
+                        c = c3;
                         i9 = i14;
                         z2 = z4;
                         i10 = i20;
@@ -418,7 +418,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                         i7 = i19;
                         i8 = i21;
                         i13 = i22;
-                        c2 = c4;
+                        c = c3;
                         i9 = i14;
                         z2 = z4;
                         i10 = i20;
@@ -433,7 +433,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                         i7 = i19;
                         i8 = i21;
                         i13 = i22;
-                        c2 = c4;
+                        c = c3;
                         z2 = z4;
                         i10 = i20;
                     }
@@ -448,27 +448,27 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
                     i7 = i19;
                     i8 = i21;
                     i13 = i22;
-                    c2 = c4;
+                    c = c3;
                     z2 = z4;
                     i10 = i20;
                 }
             }
-            if (c5 == '+' || (i9 != -1 && c5 == '-')) {
-                c3 = c5;
+            if (c4 == '+' || (i9 != -1 && c4 == '-')) {
+                c2 = c4;
             } else {
-                c3 = c2;
-                if (!Character.isSpace(c5)) {
-                    c3 = c2;
-                    if (c5 != ',') {
-                        c3 = c2;
+                c2 = c;
+                if (!Character.isSpace(c4)) {
+                    c2 = c;
+                    if (c4 != ',') {
+                        c2 = c;
                         if (!z) {
-                            c3 = 0;
+                            c2 = 0;
                         }
                     }
                 }
             }
             if (z || z) {
-                sb.append(c5);
+                sb.append(c4);
             }
             i15 = i3;
             i16 = i4;
@@ -477,7 +477,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
             i19 = i7;
             i12 = i24;
             i21 = i8;
-            c4 = c3;
+            c3 = c2;
             z3 = z;
             i14 = i9;
             z4 = z2;
@@ -503,7 +503,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
         } else {
             i = i14;
             if (i14 < 100) {
-                i = i14 + 1900;
+                i = i14 + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR;
             }
         }
         int i29 = i27 - i21;
@@ -514,9 +514,9 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
             } else {
                 i2 = i26 - i20;
             }
-            return UTC(i - 1900, i15, i16, i2, i29, i28);
+            return UTC(i - AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR, i15, i16, i2, i29, i28);
         }
-        return new Date(i - 1900, i15, i16, i26, i29, i28).getTime();
+        return new Date(i - AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR, i15, i16, i26, i29, i28).getTime();
     }
 
     private static IllegalArgumentException parseError(String str) {
@@ -631,7 +631,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
 
     @Deprecated
     public int getYear() {
-        return new GregorianCalendar(this.milliseconds).get(1) - 1900;
+        return new GregorianCalendar(this.milliseconds).get(1) - AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR;
     }
 
     public int hashCode() {
@@ -680,7 +680,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     @Deprecated
     public void setYear(int i) {
         GregorianCalendar gregorianCalendar = new GregorianCalendar(this.milliseconds);
-        gregorianCalendar.set(1, i + 1900);
+        gregorianCalendar.set(1, i + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR);
         this.milliseconds = gregorianCalendar.getTimeInMillis();
     }
 

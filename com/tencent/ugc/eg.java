@@ -4,11 +4,11 @@ package com.tencent.ugc;
 final /* synthetic */ class eg implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCRotateScaleFilter f40351a;
+    private final UGCRotateScaleFilter f26660a;
     private final float b;
 
     private eg(UGCRotateScaleFilter uGCRotateScaleFilter, float f) {
-        this.f40351a = uGCRotateScaleFilter;
+        this.f26660a = uGCRotateScaleFilter;
         this.b = f;
     }
 
@@ -18,6 +18,6 @@ final /* synthetic */ class eg implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40351a.setRotateInternal(null, this.b);
+        this.f26660a.setRotateInternal(null, this.b);
     }
 }

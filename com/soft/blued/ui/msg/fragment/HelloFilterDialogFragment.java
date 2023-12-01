@@ -25,11 +25,11 @@ import java.util.List;
 public class HelloFilterDialogFragment extends BottomSheetDialogFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f32364a;
+    private Context f18674a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ShapeLinearLayout f32365c;
+    private ShapeLinearLayout f18675c;
     private ImageView d;
     private ShapeTextView e;
     private ShapeTextView f;
@@ -52,46 +52,46 @@ public class HelloFilterDialogFragment extends BottomSheetDialogFragment impleme
 
     private void a(ShapeTextView shapeTextView, boolean z) {
         if (z) {
-            ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131101780);
+            ShapeHelper.a(shapeTextView, 2131101780);
             ShapeHelper.b(shapeTextView, 2131101766);
         } else {
-            ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131102254);
+            ShapeHelper.a(shapeTextView, 2131102254);
             ShapeHelper.b(shapeTextView, 2131101796);
         }
         shapeTextView.setTag(Boolean.valueOf(z));
     }
 
     private void i() {
-        this.f32365c = (ShapeLinearLayout) this.b.findViewById(2131366816);
+        this.f18675c = this.b.findViewById(R.id.layout_read_auth);
         ImageView imageView = (ImageView) this.b.findViewById(2131365207);
         this.d = imageView;
         imageView.setOnClickListener(this);
-        ShapeTextView shapeTextView = (ShapeTextView) this.b.findViewById(R.id.stv_role_1);
-        this.e = shapeTextView;
-        shapeTextView.setOnClickListener(this);
-        ShapeTextView shapeTextView2 = (ShapeTextView) this.b.findViewById(R.id.stv_role_075);
-        this.f = shapeTextView2;
-        shapeTextView2.setVisibility(8);
+        ShapeTextView findViewById = this.b.findViewById(R.id.stv_role_1);
+        this.e = findViewById;
+        findViewById.setOnClickListener(this);
+        ShapeTextView findViewById2 = this.b.findViewById(R.id.stv_role_075);
+        this.f = findViewById2;
+        findViewById2.setVisibility(8);
         this.f.setOnClickListener(this);
-        ShapeTextView shapeTextView3 = (ShapeTextView) this.b.findViewById(R.id.stv_role_05);
-        this.g = shapeTextView3;
-        shapeTextView3.setOnClickListener(this);
-        ShapeTextView shapeTextView4 = (ShapeTextView) this.b.findViewById(R.id.stv_role_025);
-        this.h = shapeTextView4;
-        shapeTextView4.setVisibility(8);
+        ShapeTextView findViewById3 = this.b.findViewById(R.id.stv_role_05);
+        this.g = findViewById3;
+        findViewById3.setOnClickListener(this);
+        ShapeTextView findViewById4 = this.b.findViewById(R.id.stv_role_025);
+        this.h = findViewById4;
+        findViewById4.setVisibility(8);
         this.h.setOnClickListener(this);
-        ShapeTextView shapeTextView5 = (ShapeTextView) this.b.findViewById(R.id.stv_role_0);
-        this.i = shapeTextView5;
-        shapeTextView5.setOnClickListener(this);
-        ShapeTextView shapeTextView6 = (ShapeTextView) this.b.findViewById(R.id.stv_role_others);
-        this.j = shapeTextView6;
-        shapeTextView6.setOnClickListener(this);
-        ShapeTextView shapeTextView7 = (ShapeTextView) this.b.findViewById(R.id.stv_reset);
-        this.k = shapeTextView7;
-        shapeTextView7.setOnClickListener(this);
-        ShapeTextView shapeTextView8 = (ShapeTextView) this.b.findViewById(R.id.stv_ok);
-        this.l = shapeTextView8;
-        shapeTextView8.setOnClickListener(this);
+        ShapeTextView findViewById5 = this.b.findViewById(R.id.stv_role_0);
+        this.i = findViewById5;
+        findViewById5.setOnClickListener(this);
+        ShapeTextView findViewById6 = this.b.findViewById(R.id.stv_role_others);
+        this.j = findViewById6;
+        findViewById6.setOnClickListener(this);
+        ShapeTextView findViewById7 = this.b.findViewById(R.id.stv_reset);
+        this.k = findViewById7;
+        findViewById7.setOnClickListener(this);
+        ShapeTextView findViewById8 = this.b.findViewById(R.id.stv_ok);
+        this.l = findViewById8;
+        findViewById8.setOnClickListener(this);
     }
 
     public void a(OnHelloFilterChange onHelloFilterChange) {
@@ -212,14 +212,12 @@ public class HelloFilterDialogFragment extends BottomSheetDialogFragment impleme
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f32364a = getActivity();
+        this.f18674a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.dialog_hello_filter, viewGroup, false);

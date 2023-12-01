@@ -60,11 +60,11 @@ public class XAxisRenderer extends AxisRenderer {
                 MPPointD a2 = this.b.a(this.o.f(), this.o.e());
                 MPPointD a3 = this.b.a(this.o.g(), this.o.e());
                 if (z) {
-                    f3 = (float) a3.f22202a;
-                    d = a2.f22202a;
+                    f3 = (float) a3.f8595a;
+                    d = a2.f8595a;
                 } else {
-                    f3 = (float) a2.f22202a;
-                    d = a3.f22202a;
+                    f3 = (float) a2.f8595a;
+                    d = a3.f8595a;
                 }
                 f5 = (float) d;
                 MPPointD.a(a2);
@@ -83,26 +83,26 @@ public class XAxisRenderer extends AxisRenderer {
             this.d.setColor(this.g.y());
             MPPointF a2 = MPPointF.a(0.0f, 0.0f);
             if (this.g.A() == XAxis.XAxisPosition.TOP) {
-                a2.f22204a = 0.5f;
+                a2.f8597a = 0.5f;
                 a2.b = 1.0f;
                 a(canvas, this.o.e() - v, a2);
             } else if (this.g.A() == XAxis.XAxisPosition.TOP_INSIDE) {
-                a2.f22204a = 0.5f;
+                a2.f8597a = 0.5f;
                 a2.b = 1.0f;
                 a(canvas, this.o.e() + v + this.g.F, a2);
             } else if (this.g.A() == XAxis.XAxisPosition.BOTTOM) {
-                a2.f22204a = 0.5f;
+                a2.f8597a = 0.5f;
                 a2.b = 0.0f;
                 a(canvas, this.o.h() + v, a2);
             } else if (this.g.A() == XAxis.XAxisPosition.BOTTOM_INSIDE) {
-                a2.f22204a = 0.5f;
+                a2.f8597a = 0.5f;
                 a2.b = 0.0f;
                 a(canvas, (this.o.h() - v) - this.g.F, a2);
             } else {
-                a2.f22204a = 0.5f;
+                a2.f8597a = 0.5f;
                 a2.b = 1.0f;
                 a(canvas, this.o.e() - v, a2);
-                a2.f22204a = 0.5f;
+                a2.f8597a = 0.5f;
                 a2.b = 0.0f;
                 a(canvas, this.o.h() + v, a2);
             }
@@ -113,7 +113,7 @@ public class XAxisRenderer extends AxisRenderer {
     protected void a(Canvas canvas, float f, float f2, Path path) {
         path.moveTo(f, this.o.h());
         path.lineTo(f, this.o.e());
-        canvas.drawPath(path, this.f22169c);
+        canvas.drawPath(path, this.f8562c);
         path.reset();
     }
 
@@ -129,7 +129,7 @@ public class XAxisRenderer extends AxisRenderer {
                 break;
             }
             if (c2) {
-                fArr[i3] = this.g.f22086c[i3 / 2];
+                fArr[i3] = this.g.f8479c[i3 / 2];
             } else {
                 fArr[i3] = this.g.b[i3 / 2];
             }
@@ -225,9 +225,9 @@ public class XAxisRenderer extends AxisRenderer {
     }
 
     protected void b() {
-        this.f22169c.setColor(this.g.d());
-        this.f22169c.setStrokeWidth(this.g.f());
-        this.f22169c.setPathEffect(this.g.r());
+        this.f8562c.setColor(this.g.d());
+        this.f8562c.setStrokeWidth(this.g.f());
+        this.f8562c.setPathEffect(this.g.r());
     }
 
     public void b(Canvas canvas) {
@@ -249,12 +249,12 @@ public class XAxisRenderer extends AxisRenderer {
         this.d.setTypeface(this.g.w());
         this.d.setTextSize(this.g.x());
         FSize c2 = Utils.c(this.d, p);
-        float f = c2.f22200a;
+        float f = c2.f8593a;
         float b = Utils.b(this.d, "Q");
         FSize a2 = Utils.a(f, b, this.g.B());
         this.g.C = Math.round(f);
         this.g.D = Math.round(b);
-        this.g.E = Math.round(a2.f22200a);
+        this.g.E = Math.round(a2.f8593a);
         this.g.F = Math.round(a2.b);
         FSize.a(a2);
         FSize.a(c2);
@@ -266,7 +266,7 @@ public class XAxisRenderer extends AxisRenderer {
         }
         int save = canvas.save();
         canvas.clipRect(d());
-        if (this.i.length != this.f22168a.d * 2) {
+        if (this.i.length != this.f8561a.d * 2) {
             this.i = new float[this.g.d * 2];
         }
         float[] fArr = this.i;
@@ -300,7 +300,7 @@ public class XAxisRenderer extends AxisRenderer {
 
     public RectF d() {
         this.j.set(this.o.k());
-        this.j.inset(-this.f22168a.f(), 0.0f);
+        this.j.inset(-this.f8561a.f(), 0.0f);
         return this.j;
     }
 

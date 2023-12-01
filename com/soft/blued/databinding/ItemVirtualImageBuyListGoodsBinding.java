@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemVirtualImageBuyListGoodsBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29365a;
+    private final ConstraintLayout f15675a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29365a;
+        return this.f15675a;
     }
 }

@@ -13,11 +13,11 @@ import com.huawei.hms.utils.UIUtil;
 public abstract class AbstractDialog {
 
     /* renamed from: a  reason: collision with root package name */
-    public Activity f22896a;
+    public Activity f9288a;
     public AlertDialog b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Callback f22897c;
+    public Callback f9289c;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ui/AbstractDialog$Callback.class */
     public interface Callback {
@@ -91,21 +91,21 @@ public abstract class AbstractDialog {
     }
 
     public void fireCancel() {
-        Callback callback = this.f22897c;
+        Callback callback = this.f9289c;
         if (callback != null) {
             callback.onCancel(this);
         }
     }
 
     public void fireDoWork() {
-        Callback callback = this.f22897c;
+        Callback callback = this.f9289c;
         if (callback != null) {
             callback.onDoWork(this);
         }
     }
 
     public Activity getActivity() {
-        return this.f22896a;
+        return this.f9288a;
     }
 
     public int getDialogThemeId() {
@@ -156,13 +156,13 @@ public abstract class AbstractDialog {
     }
 
     public void show(Activity activity, Callback callback) {
-        this.f22896a = activity;
-        this.f22897c = callback;
+        this.f9288a = activity;
+        this.f9289c = callback;
         if (activity == null || activity.isFinishing()) {
             HMSLog.e("AbstractDialog", "In show, The activity is null or finishing.");
             return;
         }
-        AlertDialog onCreateDialog = onCreateDialog(this.f22896a);
+        AlertDialog onCreateDialog = onCreateDialog(this.f9288a);
         this.b = onCreateDialog;
         onCreateDialog.setCanceledOnTouchOutside(false);
         this.b.setOnCancelListener(new c());

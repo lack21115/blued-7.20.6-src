@@ -17,13 +17,9 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequenceBuilderIterator.class */
 final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Iterator<T>, Continuation<Unit>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f42641a;
+    private int a;
     private T b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Iterator<? extends T> f42642c;
+    private Iterator<? extends T> c;
     private Continuation<? super Unit> d;
 
     private final T a() {
@@ -34,10 +30,10 @@ final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Itera
     }
 
     private final Throwable b() {
-        int i = this.f42641a;
+        int i = this.a;
         if (i != 4) {
             if (i != 5) {
-                return new IllegalStateException("Unexpected state of the iterator: " + this.f42641a);
+                return new IllegalStateException("Unexpected state of the iterator: " + this.a);
             }
             return new IllegalStateException("Iterator has failed.");
         }
@@ -47,28 +43,28 @@ final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Itera
     @Override // kotlin.sequences.SequenceScope
     public Object a(T t, Continuation<? super Unit> continuation) {
         this.b = t;
-        this.f42641a = 3;
+        this.a = 3;
         this.d = continuation;
-        Object a2 = IntrinsicsKt.a();
-        if (a2 == IntrinsicsKt.a()) {
+        Object a = IntrinsicsKt.a();
+        if (a == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
         }
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 
     @Override // kotlin.sequences.SequenceScope
     public Object a(Iterator<? extends T> it, Continuation<? super Unit> continuation) {
         if (it.hasNext()) {
-            this.f42642c = it;
-            this.f42641a = 2;
+            this.c = it;
+            this.a = 2;
             this.d = continuation;
-            Object a2 = IntrinsicsKt.a();
-            if (a2 == IntrinsicsKt.a()) {
+            Object a = IntrinsicsKt.a();
+            if (a == IntrinsicsKt.a()) {
                 DebugProbesKt.c(continuation);
             }
-            return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+            return a == IntrinsicsKt.a() ? a : Unit.a;
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 
     public final void a(Continuation<? super Unit> continuation) {
@@ -77,13 +73,13 @@ final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Itera
 
     @Override // kotlin.coroutines.Continuation
     public CoroutineContext getContext() {
-        return EmptyCoroutineContext.f42457a;
+        return EmptyCoroutineContext.a;
     }
 
     @Override // java.util.Iterator
     public boolean hasNext() {
         while (true) {
-            int i = this.f42641a;
+            int i = this.a;
             if (i != 0) {
                 if (i != 1) {
                     if (i == 2 || i == 3) {
@@ -94,36 +90,36 @@ final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Itera
                     }
                     throw b();
                 }
-                Iterator<? extends T> it = this.f42642c;
+                Iterator<? extends T> it = this.c;
                 Intrinsics.a(it);
                 if (it.hasNext()) {
-                    this.f42641a = 2;
+                    this.a = 2;
                     return true;
                 }
-                this.f42642c = null;
+                this.c = null;
             }
-            this.f42641a = 5;
+            this.a = 5;
             Continuation<? super Unit> continuation = this.d;
             Intrinsics.a(continuation);
             this.d = null;
-            Result.Companion companion = Result.f42293a;
-            continuation.resumeWith(Result.f(Unit.f42314a));
+            Result.Companion companion = Result.a;
+            continuation.resumeWith(Result.f(Unit.a));
         }
     }
 
     @Override // java.util.Iterator
     public T next() {
-        int i = this.f42641a;
+        int i = this.a;
         if (i == 0 || i == 1) {
             return a();
         }
         if (i == 2) {
-            this.f42641a = 1;
-            Iterator<? extends T> it = this.f42642c;
+            this.a = 1;
+            Iterator<? extends T> it = this.c;
             Intrinsics.a(it);
             return it.next();
         } else if (i == 3) {
-            this.f42641a = 0;
+            this.a = 0;
             T t = this.b;
             this.b = null;
             return t;
@@ -140,6 +136,6 @@ final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Itera
     @Override // kotlin.coroutines.Continuation
     public void resumeWith(Object obj) {
         ResultKt.a(obj);
-        this.f42641a = 4;
+        this.a = 4;
     }
 }

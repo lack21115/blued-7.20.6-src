@@ -21,7 +21,7 @@ public interface MenuView {
 
         void setIcon(Drawable drawable);
 
-        void setShortcut(boolean z, char c2);
+        void setShortcut(boolean z, char c);
 
         void setTitle(CharSequence charSequence);
 

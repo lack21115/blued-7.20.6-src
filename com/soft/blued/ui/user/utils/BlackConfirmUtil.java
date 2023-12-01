@@ -17,7 +17,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class BlackConfirmUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final BlackConfirmUtil f34325a = new BlackConfirmUtil();
+    public static final BlackConfirmUtil f20634a = new BlackConfirmUtil();
 
     private BlackConfirmUtil() {
     }
@@ -43,13 +43,13 @@ public final class BlackConfirmUtil {
         a2.show();
     }
 
-    public final void a(Context context, String str, DialogInterface.OnClickListener okListener) {
+    public final void a(Context context, String str, DialogInterface.OnClickListener onClickListener) {
         Intrinsics.e(context, "context");
-        Intrinsics.e(okListener, "okListener");
+        Intrinsics.e(onClickListener, "okListener");
         BluedAlertDialog.Builder builder = new BluedAlertDialog.Builder(context);
         BluedAlertDialog.Builder a2 = builder.c(0).a(context.getString(R.string.block_user_title));
         String str2 = str;
-        a2.b(context.getString((TextUtils.isEmpty(str2) || !TextUtils.equals(str2, "1")) ? 2131886798 : 2131890884)).a((View) null).a(context.getString(R.string.block_user_confirm), okListener).b(context.getString(2131886885), (DialogInterface.OnClickListener) null).a(false).b(true).a((DialogInterface.OnDismissListener) null).a(0).b(0).i(ContextCompat.getColor(context, 2131102251)).h(ContextCompat.getColor(context, 2131102263));
+        a2.b(context.getString((TextUtils.isEmpty(str2) || !TextUtils.equals(str2, "1")) ? 2131886798 : 2131890884)).a((View) null).a(context.getString(R.string.block_user_confirm), onClickListener).b(context.getString(2131886885), (DialogInterface.OnClickListener) null).a(false).b(true).a((DialogInterface.OnDismissListener) null).a(0).b(0).i(ContextCompat.getColor(context, 2131102251)).h(ContextCompat.getColor(context, 2131102263));
         BluedAlertDialog a3 = builder.a();
         a3.setCanceledOnTouchOutside(false);
         a3.show();

@@ -31,7 +31,7 @@ public abstract class AbsOpenAPI {
             LogUtil.e(TAG, "Argument error!");
             return;
         }
-        weiboParameters.put("access_token", this.mAccessToken.getToken());
+        weiboParameters.put(KEY_ACCESS_TOKEN, this.mAccessToken.getToken());
         new AsyncWeiboRunner(this.mContext).requestAsync(str, weiboParameters, str2, requestListener);
     }
 
@@ -41,7 +41,7 @@ public abstract class AbsOpenAPI {
             LogUtil.e(TAG, "Argument error!");
             return "";
         }
-        weiboParameters.put("access_token", this.mAccessToken.getToken());
+        weiboParameters.put(KEY_ACCESS_TOKEN, this.mAccessToken.getToken());
         return new AsyncWeiboRunner(this.mContext).request(str, weiboParameters, str2);
     }
 }

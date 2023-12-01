@@ -39,11 +39,11 @@ public final class a implements Parcelable {
     private String f;
 
     /* renamed from: a  reason: collision with root package name */
-    private long f9220a = 0;
+    private long f6380a = 0;
     private long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f9221c = 0;
+    private long f6381c = 0;
     private long d = 0;
     private String g = "first";
     private String h = "";
@@ -52,7 +52,7 @@ public final class a implements Parcelable {
 
     public final long a() {
         long j = this.d;
-        long j2 = this.f9221c;
+        long j2 = this.f6381c;
         if (j - j2 <= 0) {
             return 0L;
         }
@@ -60,7 +60,7 @@ public final class a implements Parcelable {
     }
 
     public final void a(long j) {
-        this.f9221c = j;
+        this.f6381c = j;
     }
 
     public final void a(String str) {
@@ -84,7 +84,7 @@ public final class a implements Parcelable {
     }
 
     public final void c(long j) {
-        this.f9220a = j;
+        this.f6380a = j;
     }
 
     public final void c(String str) {
@@ -130,7 +130,7 @@ public final class a implements Parcelable {
 
     public final long h() {
         long j = this.b;
-        long j2 = this.f9220a;
+        long j2 = this.f6380a;
         if (j <= j2) {
             return 0L;
         }
@@ -145,9 +145,9 @@ public final class a implements Parcelable {
             parcel.writeString(this.g);
             parcel.writeString(this.h);
             parcel.writeString(this.j);
-            parcel.writeLong(this.f9220a);
+            parcel.writeLong(this.f6380a);
             parcel.writeLong(this.b);
-            parcel.writeLong(this.f9221c);
+            parcel.writeLong(this.f6381c);
             parcel.writeLong(this.d);
             parcel.writeString(this.i);
         } catch (Throwable th) {

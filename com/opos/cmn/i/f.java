@@ -8,7 +8,7 @@ import java.util.UUID;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f24976a = "getCryptByKey";
+    private static String f11288a = "getCryptByKey";
     private static String b;
 
     public static final String a() {

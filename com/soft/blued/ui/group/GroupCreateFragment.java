@@ -54,10 +54,10 @@ import java.util.List;
 public class GroupCreateFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f30759a = 256;
+    public static int f17069a = 256;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f30760c = "account";
+    public static String f17070c = "account";
     public static String d = "groupNum";
     public static String e = "groupNumRest";
     public static String f = "accountAble";
@@ -89,7 +89,6 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
     private TextView z;
     private String k = GroupCreateFragment.class.getSimpleName();
     private BluedUIHttpResponse J = new BluedUIHttpResponse<BluedEntityA<BluedGroupCheck>>() { // from class: com.soft.blued.ui.group.GroupCreateFragment.3
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedGroupCheck> bluedEntityA) {
             if (GroupCreateFragment.this.getFragmentActive() == null || !GroupCreateFragment.this.getFragmentActive().isActive()) {
@@ -99,7 +98,7 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
                 try {
                     if (bluedEntityA.hasData()) {
                         GroupCreateFragment.this.v.d();
-                        if ("1".equals(bluedEntityA.data.get(0).getAble())) {
+                        if ("1".equals(((BluedGroupCheck) bluedEntityA.data.get(0)).getAble())) {
                             GroupCreateFragment.this.t.setVisibility(0);
                             GroupCreateFragment.this.u.setVisibility(8);
                             GroupCreateFragment.this.getActivity().getWindow().setSoftInputMode(21);
@@ -107,7 +106,7 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
                         }
                         GroupCreateFragment.this.t.setVisibility(8);
                         GroupCreateFragment.this.u.setVisibility(0);
-                        GroupCreateFragment.this.b = bluedEntityA.data.get(0).getReason();
+                        GroupCreateFragment.this.b = ((BluedGroupCheck) bluedEntityA.data.get(0)).getReason();
                         GroupCreateFragment.this.D = GroupCreateFragment.this.b.getDays().getAble();
                         GroupCreateFragment.this.F = GroupCreateFragment.this.b.getDays().getReason();
                         GroupCreateFragment.this.E = GroupCreateFragment.this.b.getNum().getAble();
@@ -118,7 +117,7 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
                     }
                 } catch (Exception e2) {
                     e2.printStackTrace();
-                    AppMethods.a((CharSequence) GroupCreateFragment.this.getResources().getString(2131887272));
+                    AppMethods.a(GroupCreateFragment.this.getResources().getString(2131887272));
                     GroupCreateFragment.this.v.b();
                     return;
                 }
@@ -126,7 +125,6 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
             GroupCreateFragment.this.v.b();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             super.onFailure(th, i, str);
             GroupCreateFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.group.GroupCreateFragment.3.1
@@ -137,51 +135,44 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
             });
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             Logger.a(GroupCreateFragment.this.k, "onFinish");
             DialogUtils.b(GroupCreateFragment.this.r);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             DialogUtils.a(GroupCreateFragment.this.r);
         }
     };
     public BluedUIHttpResponse h = new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.group.GroupCreateFragment.4
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
             new Bundle().putString("groupName", GroupCreateFragment.this.n.getText().toString());
             GroupHttpUtils.d(GroupCreateFragment.this.q, GroupCreateFragment.this.i, GroupCreateFragment.this.o.getText().toString(), GroupCreateFragment.this.getFragmentActive());
         }
     };
     public BluedUIHttpResponse i = new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.group.GroupCreateFragment.5
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
             ChooseCountryFragment.a(GroupCreateFragment.this, 8000);
         }
     };
     public BluedUIHttpResponse j = new BluedUIHttpResponse<BluedEntityA<BluedCreatedGroupInfo>>() { // from class: com.soft.blued.ui.group.GroupCreateFragment.6
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedCreatedGroupInfo> bluedEntityA) {
             if (bluedEntityA == null || !bluedEntityA.hasData()) {
                 return;
             }
-            AppMethods.a((CharSequence) GroupCreateFragment.this.getResources().getString(R.string.group_create_successful));
+            AppMethods.a(GroupCreateFragment.this.getResources().getString(R.string.group_create_successful));
             GroupCreateFragment.this.s.clear();
             GroupCreateFragment.this.s.addAll(bluedEntityA.data);
             GroupCreateFragment.this.g();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(GroupCreateFragment.this.r);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(GroupCreateFragment.this.r);
@@ -191,18 +182,18 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f30771c;
+        private int f17081c;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             try {
                 this.b = GroupCreateFragment.this.o.getSelectionStart();
-                this.f30771c = GroupCreateFragment.this.o.getSelectionEnd();
+                this.f17081c = GroupCreateFragment.this.o.getSelectionEnd();
                 GroupCreateFragment.this.o.removeTextChangedListener(GroupCreateFragment.this.K);
-                while (editable.length() > GroupCreateFragment.f30759a) {
-                    editable.delete(this.b - 1, this.f30771c);
+                while (editable.length() > GroupCreateFragment.f17069a) {
+                    editable.delete(this.b - 1, this.f17081c);
                     this.b--;
-                    this.f30771c--;
+                    this.f17081c--;
                 }
                 int length = editable.length();
                 GroupCreateFragment.this.p.setText(length + " ");
@@ -227,21 +218,21 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
     public class RevoClickSpan extends ClickableSpan {
 
         /* renamed from: a  reason: collision with root package name */
-        Context f30772a;
+        Context f17082a;
 
         public RevoClickSpan(Context context) {
-            this.f30772a = context;
+            this.f17082a = context;
         }
 
         @Override // android.text.style.ClickableSpan
         public void onClick(View view) {
             Selection.removeSelection((Spannable) ((TextView) view).getText());
-            WebViewShowInfoFragment.show(this.f30772a, H5Url.a(27), 0);
+            WebViewShowInfoFragment.show(this.f17082a, H5Url.a(27), 0);
         }
 
         @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
         public void updateDrawState(TextPaint textPaint) {
-            textPaint.setColor(this.f30772a.getResources().getColor(2131101220));
+            textPaint.setColor(this.f17082a.getResources().getColor(2131101220));
             textPaint.setUnderlineText(false);
         }
     }
@@ -250,9 +241,9 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
         this.s = new ArrayList();
         this.t = this.l.findViewById(R.id.ll_create_group);
         this.u = this.l.findViewById(R.id.ll_create_failed);
-        NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) this.l.findViewById(2131368727);
-        this.v = noDataAndLoadFailView;
-        noDataAndLoadFailView.setFailBtnListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.GroupCreateFragment.1
+        NoDataAndLoadFailView findViewById = this.l.findViewById(R.id.no_data_view);
+        this.v = findViewById;
+        findViewById.setFailBtnListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.GroupCreateFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -290,9 +281,9 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
     }
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.l.findViewById(2131370749);
-        this.m = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.l.findViewById(R.id.top_title);
+        this.m = findViewById;
+        findViewById.a();
         this.m.setCenterText(getString(R.string.group_create));
         this.m.setLeftClickListener(this);
         this.m.setRightClickListener(this);
@@ -371,13 +362,12 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
     /* JADX INFO: Access modifiers changed from: private */
     public void e() {
         GroupHttpUtils.k(null, new BluedUIHttpResponse<BluedEntityA<VerifyStatus>>() { // from class: com.soft.blued.ui.group.GroupCreateFragment.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VerifyStatus> bluedEntityA) {
                 if (bluedEntityA != null) {
                     try {
                         if (bluedEntityA.hasData()) {
-                            UserInfo.getInstance().getLoginUserInfo().setVerify(new VerifyStatus[]{bluedEntityA.data.get(0)});
+                            UserInfo.getInstance().getLoginUserInfo().setVerify(new VerifyStatus[]{(VerifyStatus) bluedEntityA.data.get(0)});
                             GroupCreateFragment.this.I = UserInfo.getInstance().getLoginUserInfo().getVerify()[0].has_audited;
                             GroupCreateFragment.this.f();
                         }
@@ -408,7 +398,6 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
         }
         DialogUtils.a(this.r);
         ThreadManager.a().a(new ThreadExecutor("toChat") { // from class: com.soft.blued.ui.group.GroupCreateFragment.7
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
                 ChatHelperV4.a().a(GroupCreateFragment.this.q, bluedCreatedGroupInfo);
                 GroupCreateFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.group.GroupCreateFragment.7.1
@@ -425,7 +414,6 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
         });
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i != 8000) {
@@ -471,13 +459,11 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         this.q = getActivity();
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.l = layoutInflater.inflate(R.layout.fragment_root_create_group, viewGroup, false);
         a();
@@ -485,14 +471,12 @@ public class GroupCreateFragment extends BaseFragment implements View.OnClickLis
         return this.l;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         d();
         e();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

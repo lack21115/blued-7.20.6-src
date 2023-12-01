@@ -38,12 +38,12 @@ public class Array {
             }
             sb.append(' ');
             sb.append(Byte.toHexString(bArr[i], false));
-            char c2 = (char) (65535 & bArr[i] & 255);
-            char c3 = c2;
-            if (Character.isISOControl(c2)) {
-                c3 = '.';
+            char c = (char) (65535 & bArr[i] & 255);
+            char c2 = c;
+            if (Character.isISOControl(c)) {
+                c2 = '.';
             }
-            sb2.append(c3);
+            sb2.append(c2);
             if ((i + 1) % 8 == 0) {
                 sb.append(' ');
             }

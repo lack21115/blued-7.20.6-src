@@ -3,12 +3,11 @@ package com.kwad.sdk.utils.kwai;
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/a.class */
 final class a {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.sdk.utils.kwai.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/a$a.class */
-    public static final class C0580a extends j {
+    static final class C0410a extends j {
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0580a(int i, int i2, Object obj, int i3, boolean z) {
+        public C0410a(int i, int i2, Object obj, int i3, boolean z) {
             super(i, i2, obj, i3, z);
         }
 
@@ -18,9 +17,8 @@ final class a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/a$b.class */
-    public static abstract class b {
+    static abstract class b {
         int offset;
 
         b() {
@@ -30,9 +28,8 @@ final class a {
         public abstract byte Fb();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/a$c.class */
-    public static final class c extends b {
+    static final class c extends b {
         boolean value;
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -48,9 +45,8 @@ final class a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/a$d.class */
-    public static final class d extends b {
+    static final class d extends b {
         double value;
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -66,9 +62,8 @@ final class a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/a$e.class */
-    public static final class e extends b {
+    static final class e extends b {
         float value;
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -84,9 +79,8 @@ final class a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/a$f.class */
-    public static final class f extends b {
+    static final class f extends b {
         int value;
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -102,9 +96,8 @@ final class a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/a$g.class */
-    public static final class g extends b {
+    static final class g extends b {
         long value;
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -120,9 +113,8 @@ final class a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/a$h.class */
-    public static final class h extends j {
+    static final class h extends j {
         /* JADX INFO: Access modifiers changed from: package-private */
         public h(int i, int i2, Object obj, int i3, boolean z) {
             super(i, i2, obj, i3, z);
@@ -135,9 +127,8 @@ final class a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/a$i.class */
-    public static final class i extends j {
+    static final class i extends j {
         /* JADX INFO: Access modifiers changed from: package-private */
         public i(int i, int i2, String str, int i3, boolean z) {
             super(i, i2, str, i3, z);
@@ -150,9 +141,8 @@ final class a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/a$j.class */
-    public static abstract class j extends b {
+    static abstract class j extends b {
         int aBL;
         boolean aBM;
         int start;

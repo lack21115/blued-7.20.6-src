@@ -1,6 +1,5 @@
 package kotlin.jvm.internal;
 
-import com.igexin.push.core.b;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -52,7 +51,7 @@ public class TypeIntrinsics {
     }
 
     public static void a(Object obj, String str) {
-        String name = obj == null ? b.l : obj.getClass().getName();
+        String name = obj == null ? "null" : obj.getClass().getName();
         a(name + " cannot be cast to " + str);
     }
 

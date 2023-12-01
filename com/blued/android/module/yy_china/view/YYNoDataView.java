@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYNoDataView.class */
 public class YYNoDataView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ImageView f18345a;
+    private ImageView a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private FrameLayout f18346c;
+    private FrameLayout c;
 
     public YYNoDataView(Context context) {
         super(context);
@@ -37,9 +33,9 @@ public class YYNoDataView extends FrameLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_nodata, (ViewGroup) this, true);
-        this.f18345a = (ImageView) findViewById(R.id.img_nodata);
+        this.a = (ImageView) findViewById(R.id.img_nodata);
         this.b = (TextView) findViewById(R.id.tv_nodata);
-        this.f18346c = (FrameLayout) findViewById(R.id.fl_root_view);
+        this.c = (FrameLayout) findViewById(R.id.fl_root_view);
     }
 
     public void setNoDataColor(int i) {
@@ -47,7 +43,7 @@ public class YYNoDataView extends FrameLayout {
     }
 
     public void setNoDataImg(int i) {
-        this.f18345a.setImageResource(i);
+        this.a.setImageResource(i);
     }
 
     public void setNoDataStr(int i) {
@@ -55,6 +51,6 @@ public class YYNoDataView extends FrameLayout {
     }
 
     public void setRootViewBackground(int i) {
-        this.f18346c.setBackgroundColor(BluedSkinUtils.a(getContext(), i));
+        this.c.setBackgroundColor(BluedSkinUtils.a(getContext(), i));
     }
 }

@@ -14,16 +14,16 @@ public class Gradient {
     public class b {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f37262a;
+        private final int f23571a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final float f37263c;
+        private final float f23572c;
 
         private b(int i, int i2, float f) {
-            this.f37262a = i;
+            this.f23571a = i;
             this.b = i2;
-            this.f37263c = f;
+            this.f23572c = f;
         }
     }
 
@@ -46,8 +46,8 @@ public class Gradient {
                 int[] iArr2 = new int[iArr.length];
                 this.mColors = iArr2;
                 this.mStartPoints = new float[fArr.length];
-                System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, iArr.length);
-                System.arraycopy((Object) fArr, 0, (Object) this.mStartPoints, 0, fArr.length);
+                System.arraycopy(iArr, 0, iArr2, 0, iArr.length);
+                System.arraycopy(fArr, 0, this.mStartPoints, 0, fArr.length);
                 return;
             } else if (fArr[i3] <= fArr[i3 - 1]) {
                 throw new IllegalArgumentException("startPoints should be in increasing order");
@@ -116,7 +116,7 @@ public class Gradient {
                 bVar = generateColorIntervals.get(Integer.valueOf(i2));
                 i = i2;
             }
-            iArr[i2] = interpolateColor(bVar.f37262a, bVar.b, (i2 - i) / bVar.f37263c);
+            iArr[i2] = interpolateColor(bVar.f23571a, bVar.b, (i2 - i) / bVar.f23572c);
         }
         if (d != 1.0d) {
             int i3 = 0;

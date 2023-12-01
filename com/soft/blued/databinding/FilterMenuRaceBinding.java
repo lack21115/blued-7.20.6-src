@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FilterMenuRaceBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28739a;
+    private final LinearLayout f15049a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28739a;
+        return this.f15049a;
     }
 }

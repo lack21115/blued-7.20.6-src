@@ -12,6 +12,7 @@ import com.tencent.thumbplayer.core.downloadproxy.utils.TPDLFileSystem;
 import com.tencent.thumbplayer.core.downloadproxy.utils.TPDLIOUtil;
 import com.tencent.thumbplayer.utils.TPLogUtil;
 import com.tencent.thumbplayer.utils.o;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -22,11 +23,11 @@ import java.util.Iterator;
 public class b implements com.tencent.thumbplayer.c.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f39235a = "TPAssetResourceLoader";
+    private static String f25544a = "TPAssetResourceLoader";
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ITPAssetResourceLoaderListener f39236c;
+    private ITPAssetResourceLoaderListener f25545c;
     private long d = 0;
     private String e = "";
     private String f = "";
@@ -51,9 +52,9 @@ public class b implements com.tencent.thumbplayer.c.a.a {
             dVar.a(b.this.m.getLooper());
             dVar.a(b.this.b(i, str));
             dVar.a(b.this.k);
-            if (b.this.f39236c.shouldWaitForLoadingOfRequestedResource(dVar)) {
+            if (b.this.f25545c.shouldWaitForLoadingOfRequestedResource(dVar)) {
                 b.this.a(dVar);
-                TPLogUtil.i(b.f39235a, "add to mLoadingRequests, requestId: ".concat(String.valueOf(i2)));
+                TPLogUtil.i(b.f25544a, "add to mLoadingRequests, requestId: ".concat(String.valueOf(i2)));
             }
         }
 
@@ -67,9 +68,9 @@ public class b implements com.tencent.thumbplayer.c.a.a {
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
-            String str = b.f39235a;
+            String str = b.f25544a;
             TPLogUtil.d(str, "mCallbackForResourceLoaderHandler msg : " + message.what);
-            if (b.this.f39236c == null) {
+            if (b.this.f25545c == null) {
                 return;
             }
             int i = message.what;
@@ -77,22 +78,22 @@ public class b implements com.tencent.thumbplayer.c.a.a {
                 if (i != 257) {
                     return;
                 }
-                TPLogUtil.i(b.f39235a, "stop read data");
+                TPLogUtil.i(b.f25544a, "stop read data");
                 b.this.b(message.arg1);
                 return;
             }
-            TPLogUtil.i(b.f39235a, "start read data");
-            C1015b c1015b = (C1015b) message.obj;
-            long j = c1015b.f39238a;
-            long j2 = c1015b.b;
-            String str2 = c1015b.f39239c;
+            TPLogUtil.i(b.f25544a, "start read data");
+            C0845b c0845b = (C0845b) message.obj;
+            long j = c0845b.f25547a;
+            long j2 = c0845b.b;
+            String str2 = c0845b.f25548c;
             int i2 = message.arg1;
             int i3 = message.arg2;
-            String str3 = b.f39235a;
+            String str3 = b.f25544a;
             TPLogUtil.i(str3, "start read data, requestStart: " + j + " requestEnd:" + j2 + " requestId:" + i3);
             long a2 = b.this.a(j, j2);
             if (a2 <= 0) {
-                TPLogUtil.e(b.f39235a, "requestLength invalid, check requestStart and requestEnd");
+                TPLogUtil.e(b.f25544a, "requestLength invalid, check requestStart and requestEnd");
             } else {
                 a(j, a2, str2, i2, i3);
             }
@@ -101,16 +102,16 @@ public class b implements com.tencent.thumbplayer.c.a.a {
 
     /* renamed from: com.tencent.thumbplayer.c.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/c/a/b$b.class */
-    static class C1015b {
+    static class C0845b {
 
         /* renamed from: a  reason: collision with root package name */
-        long f39238a;
+        long f25547a;
         long b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f39239c;
+        String f25548c;
 
-        private C1015b() {
+        private C0845b() {
         }
     }
 
@@ -174,7 +175,7 @@ public class b implements com.tencent.thumbplayer.c.a.a {
     private String a(Context context, int i) {
         if (TextUtils.isEmpty(this.g)) {
             String format = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-            File externalCacheFile = TPDLFileSystem.getExternalCacheFile(context, "resourceLoader", format + "-" + i + this.h);
+            File externalCacheFile = TPDLFileSystem.getExternalCacheFile(context, "resourceLoader", format + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i + this.h);
             TPDLIOUtil.createFile(externalCacheFile);
             this.g = externalCacheFile.getAbsolutePath();
         }
@@ -207,12 +208,12 @@ public class b implements com.tencent.thumbplayer.c.a.a {
         d a2 = a(i);
         if (a2 != null) {
             a2.b();
-            TPLogUtil.i(f39235a, "handleStopReadData, cancel the loading request with id ".concat(String.valueOf(i)));
+            TPLogUtil.i(f25544a, "handleStopReadData, cancel the loading request with id ".concat(String.valueOf(i)));
             b(a2);
-            this.f39236c.didCancelLoadingRequest(a2);
+            this.f25545c.didCancelLoadingRequest(a2);
             return;
         }
-        String str = f39235a;
+        String str = f25544a;
         TPLogUtil.e(str, "TPAssetLoader can't find the request " + i + " with current loading requests");
     }
 
@@ -236,7 +237,7 @@ public class b implements com.tencent.thumbplayer.c.a.a {
                 while (it.hasNext()) {
                     d next = it.next();
                     next.b();
-                    this.f39236c.didCancelLoadingRequest(next);
+                    this.f25545c.didCancelLoadingRequest(next);
                 }
                 this.j.clear();
             }
@@ -245,8 +246,8 @@ public class b implements com.tencent.thumbplayer.c.a.a {
 
     @Override // com.tencent.thumbplayer.c.a.a
     public int a(int i, String str, int i2) {
-        if (this.f39236c == null) {
-            TPLogUtil.e(f39235a, "listener not set");
+        if (this.f25545c == null) {
+            TPLogUtil.e(f25544a, "listener not set");
             return 0;
         }
         a(257, i2, 0, (Object) null);
@@ -255,18 +256,18 @@ public class b implements com.tencent.thumbplayer.c.a.a {
 
     @Override // com.tencent.thumbplayer.c.a.a
     public int a(int i, String str, long j, long j2) {
-        if (this.f39236c == null) {
-            TPLogUtil.e(f39235a, "listener not set");
+        if (this.f25545c == null) {
+            TPLogUtil.e(f25544a, "listener not set");
             return 0;
         }
-        String str2 = f39235a;
+        String str2 = f25544a;
         TPLogUtil.i(str2, "onStartReadData, fileId:" + i + ", fileKey:" + str + ", requestStart:" + j + ", requestEnd:" + j2);
         int i2 = this.i + 1;
-        C1015b c1015b = new C1015b();
-        c1015b.f39238a = j;
-        c1015b.b = j2;
-        c1015b.f39239c = str;
-        a(256, i, i2, c1015b);
+        C0845b c0845b = new C0845b();
+        c0845b.f25547a = j;
+        c0845b.b = j2;
+        c0845b.f25548c = str;
+        a(256, i, i2, c0845b);
         this.i = i2;
         return i2;
     }
@@ -278,34 +279,34 @@ public class b implements com.tencent.thumbplayer.c.a.a {
 
     @Override // com.tencent.thumbplayer.c.a.a
     public void a() {
-        if (this.f39236c == null) {
-            TPLogUtil.e(f39235a, "listener not set");
+        if (this.f25545c == null) {
+            TPLogUtil.e(f25544a, "listener not set");
             return;
         }
         TPAssetResourceLoadingContentInformationRequest tPAssetResourceLoadingContentInformationRequest = new TPAssetResourceLoadingContentInformationRequest();
         this.k = tPAssetResourceLoadingContentInformationRequest;
-        this.f39236c.fillInContentInformation(tPAssetResourceLoadingContentInformationRequest);
+        this.f25545c.fillInContentInformation(tPAssetResourceLoadingContentInformationRequest);
         this.e = this.k.contentType;
         this.d = this.k.dataTotalSize;
         this.f = this.k.dataFilePath;
-        String str = f39235a;
+        String str = f25544a;
         TPLogUtil.i(str, "proxy start, mDataTotalSize: " + this.d + " businessPath:" + this.f);
     }
 
     @Override // com.tencent.thumbplayer.c.a.a
     public void a(ITPAssetResourceLoaderListener iTPAssetResourceLoaderListener) {
-        this.f39236c = iTPAssetResourceLoaderListener;
+        this.f25545c = iTPAssetResourceLoaderListener;
     }
 
     @Override // com.tencent.thumbplayer.c.a.a
     public int b(int i, String str, long j, long j2) {
-        String str2 = f39235a;
+        String str2 = f25544a;
         TPLogUtil.d(str2, "read data, offset:" + j + ", length:" + j2);
         int min = (int) Math.min((long) a(j), j2);
         if (min <= 0) {
             return -1;
         }
-        String str3 = f39235a;
+        String str3 = f25544a;
         TPLogUtil.d(str3, "on read data, fileId: " + i + " readOffset: " + j + " readLength:" + j2 + " readyLength:" + min);
         return min;
     }
@@ -318,7 +319,7 @@ public class b implements com.tencent.thumbplayer.c.a.a {
 
     @Override // com.tencent.thumbplayer.c.a.a
     public void b() {
-        TPLogUtil.i(f39235a, "reset start");
+        TPLogUtil.i(f25544a, "reset start");
         f();
         this.d = 0L;
         this.e = "";
@@ -328,7 +329,7 @@ public class b implements com.tencent.thumbplayer.c.a.a {
                 new File(this.g).deleteOnExit();
                 this.g = "";
             } catch (Exception e) {
-                String str = f39235a;
+                String str = f25544a;
                 TPLogUtil.e(str, "reset, delete cache file has exception:" + e.toString());
             }
         }
@@ -345,7 +346,7 @@ public class b implements com.tencent.thumbplayer.c.a.a {
 
     @Override // com.tencent.thumbplayer.c.a.a
     public void c() {
-        TPLogUtil.i(f39235a, "release start");
+        TPLogUtil.i(f25544a, "release start");
         b();
         o.a().a(this.l, this.n);
         o.a().a(this.m, (Handler) null);

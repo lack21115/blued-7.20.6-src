@@ -8,28 +8,22 @@ import java.util.concurrent.atomic.AtomicInteger;
 /* renamed from: com.amap.api.col.3sl.eb  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/eb.class */
 public final class eb implements dz {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Map<String, a> f4878a = new ConcurrentHashMap();
+    private static Map<String, a> a = new ConcurrentHashMap();
 
     /* renamed from: com.amap.api.col.3sl.eb$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/eb$a.class */
     final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        String f4879a;
+        String a;
         String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        int f4880c;
+        int c;
         final AtomicInteger d = new AtomicInteger(0);
 
         public a(int i, String str, String str2) {
-            this.f4879a = "";
+            this.a = "";
             this.b = "";
-            this.f4879a = str;
+            this.a = str;
             this.b = str2;
-            this.f4880c = i;
+            this.c = i;
         }
 
         public final int a() {
@@ -77,13 +71,13 @@ public final class eb implements dz {
     @Override // com.amap.api.col.p0003sl.dz
     public final void a() {
         try {
-            for (Map.Entry<String, a> entry : f4878a.entrySet()) {
+            for (Map.Entry<String, a> entry : a.entrySet()) {
                 a value = entry.getValue();
                 if (value != null) {
-                    a(value.f4880c, value.f4879a, value.b, value.d.get());
+                    a(value.c, value.a, value.b, value.d.get());
                 }
             }
-            f4878a.clear();
+            a.clear();
             il.a(dw.a()).a();
         } catch (Throwable th) {
         }
@@ -93,15 +87,15 @@ public final class eb implements dz {
     public final void a(int i, String str, String str2) {
         try {
             String b = b(i, str, str2);
-            a aVar = f4878a.get(b);
+            a aVar = a.get(b);
             a aVar2 = aVar;
             if (aVar == null) {
                 aVar2 = new a(i, str, str2);
-                f4878a.put(b, aVar2);
+                a.put(b, aVar2);
             }
             if (aVar2.a() > 100) {
-                a(aVar2.f4880c, aVar2.f4879a, aVar2.b, aVar2.d.get());
-                f4878a.remove(b);
+                a(aVar2.c, aVar2.a, aVar2.b, aVar2.d.get());
+                a.remove(b);
             }
         } catch (Throwable th) {
         }

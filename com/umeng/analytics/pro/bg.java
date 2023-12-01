@@ -1,12 +1,13 @@
 package com.umeng.analytics.pro;
 
 import android.util.Log;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/bg.class */
 public class bg {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40653a = "OpenId";
+    private static final String f26962a = "OpenId";
     private static boolean b = false;
 
     private static String a(Object obj, Object obj2) {
@@ -23,30 +24,30 @@ public class bg {
 
     public static void a(String str, Object... objArr) {
         if (b) {
-            Log.d(f40653a, e(str, objArr));
+            Log.d(f26962a, e(str, objArr));
         }
     }
 
     public static void a(boolean z) {
-        Log.d(f40653a, "setDebug:" + z);
+        Log.d(f26962a, "setDebug:" + z);
         b = z;
     }
 
     public static void b(String str, Object... objArr) {
         if (b) {
-            Log.i(f40653a, e(str, objArr));
+            Log.i(f26962a, e(str, objArr));
         }
     }
 
     public static void c(String str, Object... objArr) {
         if (b) {
-            Log.w(f40653a, e(str, objArr));
+            Log.w(f26962a, e(str, objArr));
         }
     }
 
     public static void d(String str, Object... objArr) {
         if (b) {
-            Log.e(f40653a, e(str, objArr));
+            Log.e(f26962a, e(str, objArr));
         }
     }
 
@@ -57,7 +58,7 @@ public class bg {
         StringBuilder sb = new StringBuilder();
         String str2 = str;
         if (str == null) {
-            str2 = "-";
+            str2 = Constants.ACCEPT_TIME_SEPARATOR_SERVER;
         }
         int i = 0;
         sb.append(String.format("[%s] ", str2));

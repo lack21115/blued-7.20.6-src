@@ -1,5 +1,6 @@
 package com.kwad.sdk.core.a.kwai;
 
+import com.anythink.pd.ExHandler;
 import com.tencent.tendinsv.a.b;
 import org.json.JSONObject;
 
@@ -10,7 +11,7 @@ public final class ck implements com.kwad.sdk.core.d<com.kwad.sdk.core.request.m
         if (jSONObject == null) {
             return;
         }
-        bVar.adV = jSONObject.optString("imei");
+        bVar.adV = jSONObject.optString(ExHandler.JSON_REQUEST_IMEI);
         if (bVar.adV == JSONObject.NULL) {
             bVar.adV = "";
         }
@@ -121,7 +122,7 @@ public final class ck implements com.kwad.sdk.core.d<com.kwad.sdk.core.request.m
             jSONObject2 = new JSONObject();
         }
         if (bVar.adV != null && !bVar.adV.equals("")) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "imei", bVar.adV);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, ExHandler.JSON_REQUEST_IMEI, bVar.adV);
         }
         if (bVar.ala != null && !bVar.ala.equals("")) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "imei1", bVar.ala);

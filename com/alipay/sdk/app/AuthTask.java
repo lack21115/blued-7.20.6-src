@@ -12,18 +12,14 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/AuthTask.class */
 public class AuthTask {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final Object f4572a = com.alipay.sdk.util.e.class;
+    static final Object a = com.alipay.sdk.util.e.class;
     private Activity b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private com.alipay.sdk.widget.a f4573c;
+    private com.alipay.sdk.widget.a c;
 
     public AuthTask(Activity activity) {
         this.b = activity;
         com.alipay.sdk.sys.b.a().a(this.b);
-        this.f4573c = new com.alipay.sdk.widget.a(activity, com.alipay.sdk.widget.a.f4680c);
+        this.c = new com.alipay.sdk.widget.a(activity, com.alipay.sdk.widget.a.c);
     }
 
     private e.a a() {
@@ -48,14 +44,14 @@ public class AuthTask {
             java.util.List r0 = r0.i()
             r10 = r0
             com.alipay.sdk.data.a r0 = com.alipay.sdk.data.a.j()
-            boolean r0 = r0.f4618a
+            boolean r0 = r0.a
             if (r0 == 0) goto L20
             r0 = r10
             r8 = r0
             r0 = r10
             if (r0 != 0) goto L24
         L20:
-            java.util.List<com.alipay.sdk.data.a$a> r0 = com.alipay.sdk.app.i.f4599a
+            java.util.List<com.alipay.sdk.data.a$a> r0 = com.alipay.sdk.app.i.a
             r8 = r0
         L24:
             r0 = r9
@@ -119,16 +115,16 @@ public class AuthTask {
     }
 
     private String a(com.alipay.sdk.sys.a aVar, com.alipay.sdk.protocol.b bVar) {
-        String[] c2 = bVar.c();
+        String[] c = bVar.c();
         Bundle bundle = new Bundle();
-        bundle.putString("url", c2[0]);
+        bundle.putString("url", c[0]);
         Intent intent = new Intent(this.b, H5AuthActivity.class);
         intent.putExtras(bundle);
-        a.C0050a.a(aVar, intent);
+        a.C0010a.a(aVar, intent);
         this.b.startActivity(intent);
-        synchronized (f4572a) {
+        synchronized (a) {
             try {
-                f4572a.wait();
+                a.wait();
             } catch (InterruptedException e) {
                 return j.c();
             }
@@ -252,7 +248,7 @@ public class AuthTask {
     }
 
     private void b() {
-        com.alipay.sdk.widget.a aVar = this.f4573c;
+        com.alipay.sdk.widget.a aVar = this.c;
         if (aVar != null) {
             aVar.b();
         }
@@ -260,7 +256,7 @@ public class AuthTask {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        com.alipay.sdk.widget.a aVar = this.f4573c;
+        com.alipay.sdk.widget.a aVar = this.c;
         if (aVar != null) {
             aVar.c();
         }
@@ -284,7 +280,7 @@ public class AuthTask {
     }
 
     public String innerAuth(com.alipay.sdk.sys.a aVar, String str, boolean z) {
-        String c2;
+        String c;
         Activity activity;
         String str2;
         synchronized (this) {
@@ -292,7 +288,7 @@ public class AuthTask {
                 b();
             }
             com.alipay.sdk.sys.b.a().a(this.b);
-            c2 = j.c();
+            c = j.c();
             i.a("");
             try {
                 String a2 = a(this.b, str, aVar);
@@ -301,7 +297,7 @@ public class AuthTask {
                 c();
                 Activity activity2 = this.b;
                 str2 = aVar.p;
-                c2 = a2;
+                c = a2;
                 activity = activity2;
             } catch (Exception e) {
                 com.alipay.sdk.util.c.a(e);
@@ -313,6 +309,6 @@ public class AuthTask {
             }
             com.alipay.sdk.app.statistic.a.b(activity, aVar, str, str2);
         }
-        return c2;
+        return c;
     }
 }

@@ -4,11 +4,14 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.anythink.core.common.c.g;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.ActivityFragmentActive;
+import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.framework.ui.SimpleFragment;
@@ -30,7 +33,7 @@ import com.blued.das.client.feed.FeedProtos;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
-import java.util.Collection;
+import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
@@ -38,13 +41,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/subject/fragment/FeedTopicDetailBaseFragment.class */
 public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected FeedListAdapterForRecyclerView f20230a;
+    protected FeedListAdapterForRecyclerView a;
     protected NoDataAndLoadFailView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected ImageView f20231c;
+    protected ImageView c;
     protected String d;
     protected String e;
     protected BluedTopic f;
@@ -63,12 +62,11 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
     private int r = 5;
     private int s = 10;
     private final RecyclerView.OnScrollListener u = new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.subject.fragment.FeedTopicDetailBaseFragment$onScrollListener$1
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrollStateChanged(RecyclerView recyclerView, int i) {
             FloatFooterView g;
             RecyclerView.OnScrollListener onScrollListener;
             Intrinsics.e(recyclerView, "recyclerView");
-            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = FeedTopicDetailBaseFragment.this.f20230a;
+            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = FeedTopicDetailBaseFragment.this.a;
             if (feedListAdapterForRecyclerView != null && (onScrollListener = feedListAdapterForRecyclerView.s) != null) {
                 onScrollListener.onScrollStateChanged(recyclerView, i);
             }
@@ -85,12 +83,11 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
             FeedTopicDetailBaseFragment.this.a(recyclerView, i);
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrolled(RecyclerView recyclerView, int i, int i2) {
             FloatFooterView g;
             RecyclerView.OnScrollListener onScrollListener;
             Intrinsics.e(recyclerView, "recyclerView");
-            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = FeedTopicDetailBaseFragment.this.f20230a;
+            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = FeedTopicDetailBaseFragment.this.a;
             if (feedListAdapterForRecyclerView != null && (onScrollListener = feedListAdapterForRecyclerView.s) != null) {
                 onScrollListener.onScrolled(recyclerView, i, i2);
             }
@@ -113,8 +110,8 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
     }
 
     public void a() {
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = new FeedListAdapterForRecyclerView(getContext(), this, this.j, this.r);
-        this.f20230a = feedListAdapterForRecyclerView;
+        RecyclerView.Adapter feedListAdapterForRecyclerView = new FeedListAdapterForRecyclerView(getContext(), (BaseFragment) this, this.j, this.r);
+        this.a = feedListAdapterForRecyclerView;
         RecyclerView recyclerView = this.j;
         if (recyclerView != null) {
             recyclerView.setAdapter(feedListAdapterForRecyclerView);
@@ -130,7 +127,6 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
         SmartRefreshLayout smartRefreshLayout = this.i;
         if (smartRefreshLayout != null) {
             smartRefreshLayout.a(new OnRefreshLoadMoreListener() { // from class: com.blued.community.ui.subject.fragment.FeedTopicDetailBaseFragment$initRecycleView$1
-                @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
                 public void onLoadMore(RefreshLayout refreshLayout) {
                     Intrinsics.e(refreshLayout, "refreshLayout");
                     FeedTopicDetailBaseFragment feedTopicDetailBaseFragment = FeedTopicDetailBaseFragment.this;
@@ -138,7 +134,6 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
                     FeedTopicDetailBaseFragment.this.a(false);
                 }
 
-                @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
                 public void onRefresh(RefreshLayout refreshLayout) {
                     Intrinsics.e(refreshLayout, "refreshLayout");
                     FeedTopicDetailBaseFragment.this.a(true);
@@ -150,7 +145,7 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
         if (inflate != null) {
             inflate.setVisibility(8);
         }
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView2 = this.f20230a;
+        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView2 = this.a;
         if (feedListAdapterForRecyclerView2 != null) {
             feedListAdapterForRecyclerView2.addFooterView(this.m);
         }
@@ -200,17 +195,17 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
-                    Collection data;
-                    Collection data2;
+                    List data;
+                    List data2;
                     SmartRefreshLayout d = FeedTopicDetailBaseFragment.this.d();
                     if (d != null) {
-                        d.j();
+                        d.g();
                     }
                     SmartRefreshLayout d2 = FeedTopicDetailBaseFragment.this.d();
                     if (d2 != null) {
                         d2.h();
                     }
-                    FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = FeedTopicDetailBaseFragment.this.f20230a;
+                    FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = FeedTopicDetailBaseFragment.this.a;
                     if ((feedListAdapterForRecyclerView == null || (data = feedListAdapterForRecyclerView.getData()) == null || data.size() != 0) ? false : true) {
                         if (this.b) {
                             NoDataAndLoadFailView noDataAndLoadFailView = FeedTopicDetailBaseFragment.this.b;
@@ -232,7 +227,7 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
                         noDataAndLoadFailView3.d();
                     }
                     if (!FeedTopicDetailBaseFragment.this.j()) {
-                        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView2 = FeedTopicDetailBaseFragment.this.f20230a;
+                        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView2 = FeedTopicDetailBaseFragment.this.a;
                         if (!((feedListAdapterForRecyclerView2 == null || (data2 = feedListAdapterForRecyclerView2.getData()) == null || data2.size() != 0) ? false : true)) {
                             View h = FeedTopicDetailBaseFragment.this.h();
                             if (h == null) {
@@ -261,13 +256,13 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
                             feedTopicDetailBaseFragment.b(true);
                             SmartRefreshLayout d = feedTopicDetailBaseFragment.d();
                             if (d != null) {
-                                d.l(true);
+                                d.b(true);
                             }
                         } else {
                             feedTopicDetailBaseFragment.b(false);
                             SmartRefreshLayout d2 = feedTopicDetailBaseFragment.d();
                             if (d2 != null) {
-                                d2.l(false);
+                                d2.b(false);
                             }
                         }
                         if (!TextUtils.isEmpty(bluedEntity.getSingleData().super_did)) {
@@ -294,12 +289,12 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
                             }
                         }
                         if (feedTopicDetailBaseFragment.i() == 1) {
-                            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = feedTopicDetailBaseFragment.f20230a;
+                            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = feedTopicDetailBaseFragment.a;
                             if (feedListAdapterForRecyclerView != null) {
                                 feedListAdapterForRecyclerView.a(bluedEntity.getSingleData().tt);
                             }
                         } else {
-                            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView2 = feedTopicDetailBaseFragment.f20230a;
+                            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView2 = feedTopicDetailBaseFragment.a;
                             if (feedListAdapterForRecyclerView2 != null) {
                                 feedListAdapterForRecyclerView2.b(bluedEntity.getSingleData().tt);
                             }
@@ -343,14 +338,14 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
                     }
                     return parseData;
                 }
-            }, this.e, this.d, "time", String.valueOf(this.n), String.valueOf(this.o), this.q, this.t, getFragmentActive());
+            }, this.e, this.d, g.a.g, String.valueOf(this.n), String.valueOf(this.o), this.q, this.t, getFragmentActive());
             return;
         }
         this.n = i - 1;
         AppMethods.a((CharSequence) getString(R.string.common_nomore_data));
         SmartRefreshLayout smartRefreshLayout = this.i;
         if (smartRefreshLayout != null) {
-            smartRefreshLayout.j();
+            smartRefreshLayout.g();
         }
         SmartRefreshLayout smartRefreshLayout2 = this.i;
         if (smartRefreshLayout2 == null) {
@@ -396,7 +391,7 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
         if (!TextUtils.isEmpty(bluedTopic.avatar)) {
             this.g = bluedTopic.avatar;
         }
-        ImageView imageView = this.f20231c;
+        ImageView imageView = this.c;
         if (imageView == null || (str = this.g) == null) {
             return;
         }
@@ -500,29 +495,26 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
         EventTrackFeed.a(FeedProtos.Event.FEED_PUBLISH_BTN_CLICK, FeedProtos.FeedFrom.SUPER_TOPIC_DETAIL, str, false, bluedTopic.is_anonym == 1, "");
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitView() {
         super.onInitView();
-        FloatFooterView floatFooterView = (FloatFooterView) this.rootView.findViewById(R.id.ll_feed_post);
-        this.l = floatFooterView;
-        if (floatFooterView != null) {
-            floatFooterView.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.blued.community.ui.subject.fragment.-$$Lambda$FeedTopicDetailBaseFragment$HGdZUl5NQcPhY030Hc2Bbb_jsUQ
-                @Override // com.blued.community.view.FloatFooterView.OnBtnClickListener
+        FloatFooterView findViewById = this.rootView.findViewById(R.id.ll_feed_post);
+        this.l = findViewById;
+        if (findViewById != null) {
+            findViewById.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.blued.community.ui.subject.fragment.-$$Lambda$FeedTopicDetailBaseFragment$HGdZUl5NQcPhY030Hc2Bbb_jsUQ
                 public final void onPostFeedClick() {
                     FeedTopicDetailBaseFragment.b(FeedTopicDetailBaseFragment.this);
                 }
             });
         }
-        this.i = (SmartRefreshLayout) this.rootView.findViewById(R.id.refresh_layout);
-        this.j = (RecyclerView) this.rootView.findViewById(R.id.recycler_view);
+        this.i = this.rootView.findViewById(R.id.refresh_layout);
+        this.j = this.rootView.findViewById(R.id.recycler_view);
         a();
         b();
-        FeedTopicDetailBaseFragment feedTopicDetailBaseFragment = this;
-        FeedMethods.a(feedTopicDetailBaseFragment, this.f20230a);
-        CircleMethods.a(feedTopicDetailBaseFragment, this.f20230a);
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        FeedMethods.a(lifecycleOwner, this.a);
+        CircleMethods.a(lifecycleOwner, this.a);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onParseArguments() {
         super.onParseArguments();
         this.d = this.args.getString("topic_id");
@@ -530,20 +522,18 @@ public abstract class FeedTopicDetailBaseFragment extends SimpleFragment {
         this.t = this.args.getString("insert_tt_dids", "");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.f20230a;
+        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.a;
         if (feedListAdapterForRecyclerView == null) {
             return;
         }
         feedListAdapterForRecyclerView.e();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.f20230a;
+        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.a;
         if (feedListAdapterForRecyclerView == null) {
             return;
         }

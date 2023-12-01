@@ -22,13 +22,9 @@ import kotlinx.coroutines.flow.FlowCollector;
 @DebugMetadata(b = "Combine.kt", c = {57, 79, 82}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/CombineKt$combineInternal$2.class */
 final class CombineKt$combineInternal$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f43478a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f43479c;
+    int c;
     int d;
     int e;
     final /* synthetic */ Flow<T>[] f;
@@ -43,13 +39,9 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
     /* renamed from: kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1.class */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f43480a;
+        int a;
         final /* synthetic */ Flow<T>[] b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int f43481c;
+        final /* synthetic */ int c;
         final /* synthetic */ AtomicInteger d;
         final /* synthetic */ Channel<IndexedValue<Object>> e;
 
@@ -58,7 +50,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
         AnonymousClass1(Flow<? extends T>[] flowArr, int i, AtomicInteger atomicInteger, Channel<IndexedValue<Object>> channel, Continuation<? super AnonymousClass1> continuation) {
             super(2, continuation);
             this.b = flowArr;
-            this.f43481c = i;
+            this.c = i;
             this.d = atomicInteger;
             this.e = channel;
         }
@@ -66,25 +58,25 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
         @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new AnonymousClass1(this.b, this.f43481c, this.d, this.e, continuation);
+            return new AnonymousClass1(this.b, this.c, this.d, this.e, continuation);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             AtomicInteger atomicInteger;
-            Object a2 = IntrinsicsKt.a();
-            int i = this.f43480a;
+            Object a = IntrinsicsKt.a();
+            int i = this.a;
             try {
                 if (i == 0) {
                     ResultKt.a(obj);
-                    this.f43480a = 1;
-                    if (this.b[this.f43481c].a(new CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1(this.e, this.f43481c), this) == a2) {
-                        return a2;
+                    this.a = 1;
+                    if (this.b[this.c].a(new CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1(this.e, this.c), this) == a) {
+                        return a;
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -94,7 +86,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
                 if (atomicInteger.decrementAndGet() == 0) {
                     SendChannel.DefaultImpls.a(this.e, null, 1, null);
                 }
-                return Unit.f42314a;
+                return Unit.a;
             } finally {
                 if (this.d.decrementAndGet() == 0) {
                     SendChannel.DefaultImpls.a(this.e, null, 1, null);
@@ -117,7 +109,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((CombineKt$combineInternal$2) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((CombineKt$combineInternal$2) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

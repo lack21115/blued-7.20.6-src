@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentImageFeedBinding.class */
 public final class FragmentImageFeedBinding implements ViewBinding {
+    private final RelativeLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f18891a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f18891a;
+        return this.a;
     }
 }

@@ -3,7 +3,6 @@ package android.content;
 import android.database.ContentObserver;
 import android.os.Handler;
 import android.util.DebugUtils;
-import com.alipay.sdk.util.i;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
@@ -66,7 +65,7 @@ public class Loader<D> {
     public String dataToString(D d) {
         StringBuilder sb = new StringBuilder(64);
         DebugUtils.buildShortClassTag(d, sb);
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 
@@ -213,7 +212,7 @@ public class Loader<D> {
         DebugUtils.buildShortClassTag(this, sb);
         sb.append(" id=");
         sb.append(this.mId);
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

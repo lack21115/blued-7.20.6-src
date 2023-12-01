@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentHealthForModifyBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28847a;
+    private final LinearLayout f15157a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28847a;
+        return this.f15157a;
     }
 }

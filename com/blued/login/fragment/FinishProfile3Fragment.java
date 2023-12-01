@@ -11,7 +11,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.viewbinding.ViewBinding;
+import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.common.base.mvvm.MVVMBaseFragment;
@@ -46,25 +49,25 @@ import kotlin.reflect.KProperty;
 public final class FinishProfile3Fragment extends MVVMBaseFragment<FinishProfileVM> {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f20546a = {Reflection.a(new PropertyReference1Impl(FinishProfile3Fragment.class, "vb", "getVb()Lcom/blued/login/databinding/FmFinishProfile3Binding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f6940a = {(KProperty) Reflection.a(new PropertyReference1Impl(FinishProfile3Fragment.class, "vb", "getVb()Lcom/blued/login/databinding/FmFinishProfile3Binding;", 0))};
     private final ViewBindingProperty b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ProfileInfoModel f20547c;
+    private ProfileInfoModel f6941c;
 
     public FinishProfile3Fragment() {
         super(R.layout.fm_finish_profile_3);
-        this.b = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<FinishProfile3Fragment, FmFinishProfile3Binding>() { // from class: com.blued.login.fragment.FinishProfile3Fragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        this.b = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<FinishProfile3Fragment, FmFinishProfile3Binding>() { // from class: com.blued.login.fragment.FinishProfile3Fragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/blued/login/fragment/FinishProfile3Fragment;)Lcom/blued/login/databinding/FmFinishProfile3Binding; */
             /* renamed from: a */
-            public final FmFinishProfile3Binding invoke(FinishProfile3Fragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmFinishProfile3Binding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<FinishProfile3Fragment, FmFinishProfile3Binding>() { // from class: com.blued.login.fragment.FinishProfile3Fragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/blued/login/fragment/FinishProfile3Fragment;)Lcom/blued/login/databinding/FmFinishProfile3Binding; */
             /* renamed from: a */
-            public final FmFinishProfile3Binding invoke(FinishProfile3Fragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmFinishProfile3Binding.a(fragment.requireView());
             }
@@ -72,9 +75,9 @@ public final class FinishProfile3Fragment extends MVVMBaseFragment<FinishProfile
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FinishProfile3Fragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+    public static final void a(FinishProfile3Fragment finishProfile3Fragment, View view) {
+        Intrinsics.e(finishProfile3Fragment, "this$0");
+        FragmentActivity activity = finishProfile3Fragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -114,32 +117,31 @@ public final class FinishProfile3Fragment extends MVVMBaseFragment<FinishProfile
             return;
         }
         p3.d.setOnItemClickListener(new FlowLayout.OnItemClickListener() { // from class: com.blued.login.fragment.-$$Lambda$FinishProfile3Fragment$P6nDDT45Lbyl8HCHjAyxpjPpa8I
-            @Override // com.blued.android.module.common.view.FlowLayout.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                FinishProfile3Fragment.a(List.this, p3, this, view, i2);
+                FinishProfile3Fragment.a(list, p3, this, view, i2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(List list, FmFinishProfile3Binding it, FinishProfile3Fragment this$0, View view, int i) {
-        Intrinsics.e(it, "$it");
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(List list, FmFinishProfile3Binding fmFinishProfile3Binding, FinishProfile3Fragment finishProfile3Fragment, View view, int i) {
+        Intrinsics.e(fmFinishProfile3Binding, "$it");
+        Intrinsics.e(finishProfile3Fragment, "this$0");
         UserTag userTag = (UserTag) list.get(i);
         TextView textView = (TextView) view.findViewById(R.id.tv_tag_text);
         if (userTag.checked != 0) {
             userTag.checked = 0;
             textView.setBackgroundResource(R.drawable.login_user_job_text_bg);
-            textView.setTextColor(BluedSkinUtils.a(this$0.getContext(), R.color.syc_h));
-            ProfileInfoModel profileInfoModel = this$0.f20547c;
+            textView.setTextColor(BluedSkinUtils.a(finishProfile3Fragment.getContext(), R.color.syc_h));
+            ProfileInfoModel profileInfoModel = finishProfile3Fragment.f6941c;
             ProfileInfoModel profileInfoModel2 = profileInfoModel;
             if (profileInfoModel == null) {
                 Intrinsics.c("model");
                 profileInfoModel2 = null;
             }
             profileInfoModel2.f("");
-            it.h.setText("");
-            FmFinishProfile3Binding p = this$0.p();
+            fmFinishProfile3Binding.h.setText("");
+            FmFinishProfile3Binding p = finishProfile3Fragment.p();
             ShapeTextView shapeTextView = p == null ? null : p.g;
             if (shapeTextView == null) {
                 return;
@@ -155,17 +157,17 @@ public final class FinishProfile3Fragment extends MVVMBaseFragment<FinishProfile
                 break;
             }
             ((UserTag) list.get(i3)).checked = 0;
-            View childAt = it.d.getChildAt(i3);
+            View childAt = fmFinishProfile3Binding.d.getChildAt(i3);
             Intrinsics.c(childAt, "it.roleFlowLayout.getChildAt(i)");
             TextView textView2 = (TextView) childAt.findViewById(R.id.tv_tag_text);
             textView2.setBackgroundResource(R.drawable.login_user_job_text_bg);
-            textView2.setTextColor(BluedSkinUtils.a(this$0.getContext(), R.color.syc_h));
+            textView2.setTextColor(BluedSkinUtils.a(finishProfile3Fragment.getContext(), R.color.syc_h));
             i2 = i3 + 1;
         }
         userTag.checked = 1;
-        textView.setBackground(BluedSkinUtils.b(this$0.getContext(), R.drawable.login_user_job_text_select_bg));
-        textView.setTextColor(BluedSkinUtils.a(this$0.getContext(), R.color.syc_b));
-        ProfileInfoModel profileInfoModel3 = this$0.f20547c;
+        textView.setBackground(BluedSkinUtils.b(finishProfile3Fragment.getContext(), R.drawable.login_user_job_text_select_bg));
+        textView.setTextColor(BluedSkinUtils.a(finishProfile3Fragment.getContext(), R.color.syc_b));
+        ProfileInfoModel profileInfoModel3 = finishProfile3Fragment.f6941c;
         ProfileInfoModel profileInfoModel4 = profileInfoModel3;
         if (profileInfoModel3 == null) {
             Intrinsics.c("model");
@@ -174,8 +176,8 @@ public final class FinishProfile3Fragment extends MVVMBaseFragment<FinishProfile
         String str = userTag.id;
         Intrinsics.c(str, "userTag.id");
         profileInfoModel4.f(str);
-        it.h.setText(userTag.name);
-        FmFinishProfile3Binding p2 = this$0.p();
+        fmFinishProfile3Binding.h.setText(userTag.name);
+        FmFinishProfile3Binding p2 = finishProfile3Fragment.p();
         ShapeTextView shapeTextView2 = p2 == null ? null : p2.g;
         if (shapeTextView2 == null) {
             return;
@@ -184,58 +186,57 @@ public final class FinishProfile3Fragment extends MVVMBaseFragment<FinishProfile
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(FinishProfile3Fragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void b(FinishProfile3Fragment finishProfile3Fragment, View view) {
+        Intrinsics.e(finishProfile3Fragment, "this$0");
         LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.PROFILE_WRITE_PAGE_CONFIRM_BTN_CLICK;
-        LoginHelper loginHelper = LoginHelper.f20590a;
-        ProfileInfoModel profileInfoModel = this$0.f20547c;
+        LoginHelper loginHelper = LoginHelper.f6984a;
+        ProfileInfoModel profileInfoModel = finishProfile3Fragment.f6941c;
         ProfileInfoModel profileInfoModel2 = profileInfoModel;
         if (profileInfoModel == null) {
             Intrinsics.c("model");
             profileInfoModel2 = null;
         }
         EventTrackLogin.a(event, loginHelper.a(profileInfoModel2));
-        FinishProfileVM a2 = this$0.a();
-        ProfileInfoModel profileInfoModel3 = this$0.f20547c;
+        FinishProfileVM finishProfileVM = (FinishProfileVM) finishProfile3Fragment.a();
+        ProfileInfoModel profileInfoModel3 = finishProfile3Fragment.f6941c;
         if (profileInfoModel3 == null) {
             Intrinsics.c("model");
             profileInfoModel3 = null;
         }
-        a2.b(profileInfoModel3);
+        finishProfileVM.b(profileInfoModel3);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(FinishProfile3Fragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void c(FinishProfile3Fragment finishProfile3Fragment, View view) {
+        Intrinsics.e(finishProfile3Fragment, "this$0");
         ILoginService a2 = LoginServiceManager.a();
-        FinishProfile3Fragment finishProfile3Fragment = this$0;
-        ProfileInfoModel profileInfoModel = this$0.f20547c;
+        BaseFragment baseFragment = (BaseFragment) finishProfile3Fragment;
+        ProfileInfoModel profileInfoModel = finishProfile3Fragment.f6941c;
         ProfileInfoModel profileInfoModel2 = profileInfoModel;
         if (profileInfoModel == null) {
             Intrinsics.c("model");
             profileInfoModel2 = null;
         }
         String h = profileInfoModel2.h();
-        ProfileInfoModel profileInfoModel3 = this$0.f20547c;
+        ProfileInfoModel profileInfoModel3 = finishProfile3Fragment.f6941c;
         ProfileInfoModel profileInfoModel4 = profileInfoModel3;
         if (profileInfoModel3 == null) {
             Intrinsics.c("model");
             profileInfoModel4 = null;
         }
         String i = profileInfoModel4.i();
-        ProfileInfoModel profileInfoModel5 = this$0.f20547c;
+        ProfileInfoModel profileInfoModel5 = finishProfile3Fragment.f6941c;
         if (profileInfoModel5 == null) {
             Intrinsics.c("model");
             profileInfoModel5 = null;
         }
-        a2.a(finishProfile3Fragment, h, i, profileInfoModel5.j(), LoginConstants.b);
+        a2.a(baseFragment, h, i, profileInfoModel5.j(), LoginConstants.b);
     }
 
     private final FmFinishProfile3Binding p() {
-        return (FmFinishProfile3Binding) this.b.b(this, f20546a[0]);
+        return (FmFinishProfile3Binding) this.b.b(this, f6940a[0]);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
         RelativeLayout relativeLayout;
         ShapeTextView shapeTextView;
@@ -243,7 +244,7 @@ public final class FinishProfile3Fragment extends MVVMBaseFragment<FinishProfile
         ImageView leftImg;
         Context context = getContext();
         if (context != null) {
-            a().a(context);
+            ((FinishProfileVM) a()).a(context);
         }
         Bundle arguments = getArguments();
         if (arguments != null && arguments.containsKey("profile_model")) {
@@ -251,18 +252,18 @@ public final class FinishProfile3Fragment extends MVVMBaseFragment<FinishProfile
             if (serializable == null) {
                 throw new NullPointerException("null cannot be cast to non-null type com.blued.login.model.ProfileInfoModel");
             }
-            this.f20547c = (ProfileInfoModel) serializable;
-            FinishProfileVM a2 = a();
-            ProfileInfoModel profileInfoModel = this.f20547c;
+            this.f6941c = (ProfileInfoModel) serializable;
+            FinishProfileVM finishProfileVM = (FinishProfileVM) a();
+            ProfileInfoModel profileInfoModel = this.f6941c;
             ProfileInfoModel profileInfoModel2 = profileInfoModel;
             if (profileInfoModel == null) {
                 Intrinsics.c("model");
                 profileInfoModel2 = null;
             }
-            a2.a(profileInfoModel2);
+            finishProfileVM.a(profileInfoModel2);
             LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.REGISTER_PROFILE_ROLE_SHOW;
-            LoginHelper loginHelper = LoginHelper.f20590a;
-            ProfileInfoModel profileInfoModel3 = this.f20547c;
+            LoginHelper loginHelper = LoginHelper.f6984a;
+            ProfileInfoModel profileInfoModel3 = this.f6941c;
             ProfileInfoModel profileInfoModel4 = profileInfoModel3;
             if (profileInfoModel3 == null) {
                 Intrinsics.c("model");
@@ -309,51 +310,49 @@ public final class FinishProfile3Fragment extends MVVMBaseFragment<FinishProfile
         a(arrayList);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         TextView textView;
         super.onActivityResult(i, i2, intent);
         if (i == LoginConstants.b) {
-            ProfileInfoModel profileInfoModel = this.f20547c;
+            ProfileInfoModel profileInfoModel = this.f6941c;
             ProfileInfoModel profileInfoModel2 = profileInfoModel;
             if (profileInfoModel == null) {
                 Intrinsics.c("model");
                 profileInfoModel2 = null;
             }
             profileInfoModel2.h(intent == null ? null : intent.getStringExtra("health_result"));
-            ProfileInfoModel profileInfoModel3 = this.f20547c;
+            ProfileInfoModel profileInfoModel3 = this.f6941c;
             ProfileInfoModel profileInfoModel4 = profileInfoModel3;
             if (profileInfoModel3 == null) {
                 Intrinsics.c("model");
                 profileInfoModel4 = null;
             }
             profileInfoModel4.i(intent == null ? null : intent.getStringExtra("health_time"));
-            ProfileInfoModel profileInfoModel5 = this.f20547c;
+            ProfileInfoModel profileInfoModel5 = this.f6941c;
             ProfileInfoModel profileInfoModel6 = profileInfoModel5;
             if (profileInfoModel5 == null) {
                 Intrinsics.c("model");
                 profileInfoModel6 = null;
             }
             profileInfoModel6.j(intent == null ? null : intent.getStringExtra("health_prep"));
-            ProfileInfoModel profileInfoModel7 = this.f20547c;
+            ProfileInfoModel profileInfoModel7 = this.f6941c;
             ProfileInfoModel profileInfoModel8 = profileInfoModel7;
             if (profileInfoModel7 == null) {
                 Intrinsics.c("model");
                 profileInfoModel8 = null;
             }
             if (TextUtils.equals(profileInfoModel8.h(), "-1")) {
-                ProfileInfoModel profileInfoModel9 = this.f20547c;
+                ProfileInfoModel profileInfoModel9 = this.f6941c;
                 ProfileInfoModel profileInfoModel10 = profileInfoModel9;
                 if (profileInfoModel9 == null) {
                     Intrinsics.c("model");
                     profileInfoModel10 = null;
                 }
                 if (TextUtils.equals(profileInfoModel10.i(), "-1")) {
-                    ProfileInfoModel profileInfoModel11 = this.f20547c;
+                    ProfileInfoModel profileInfoModel11 = this.f6941c;
                     ProfileInfoModel profileInfoModel12 = profileInfoModel11;
                     if (profileInfoModel11 == null) {
                         Intrinsics.c("model");

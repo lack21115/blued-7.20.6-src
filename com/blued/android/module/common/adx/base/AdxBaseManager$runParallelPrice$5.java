@@ -13,32 +13,28 @@ import kotlinx.coroutines.CoroutineScope;
 @DebugMetadata(b = "AdxBaseManager.kt", c = {319, 1416}, d = "invokeSuspend", e = "com.blued.android.module.common.adx.base.AdxBaseManager$runParallelPrice$5")
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/base/AdxBaseManager$runParallelPrice$5.class */
 public final class AdxBaseManager$runParallelPrice$5 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f10515a;
+    Object a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ AdxBaseManager f10516c;
+    final /* synthetic */ AdxBaseManager c;
     final /* synthetic */ CoroutineScope d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public AdxBaseManager$runParallelPrice$5(AdxBaseManager adxBaseManager, CoroutineScope coroutineScope, Continuation<? super AdxBaseManager$runParallelPrice$5> continuation) {
         super(2, continuation);
-        this.f10516c = adxBaseManager;
+        this.c = adxBaseManager;
         this.d = coroutineScope;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((AdxBaseManager$runParallelPrice$5) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((AdxBaseManager$runParallelPrice$5) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new AdxBaseManager$runParallelPrice$5(this.f10516c, this.d, continuation);
+        return new AdxBaseManager$runParallelPrice$5(this.c, this.d, continuation);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:47:0x0209  */

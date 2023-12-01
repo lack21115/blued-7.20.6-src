@@ -26,15 +26,13 @@ public class FailingClientTransport implements ClientTransport {
         this.rpcProgress = rpcProgress;
     }
 
-    @Override // io.grpc.InternalWithLogId
     public InternalLogId getLogId() {
         throw new UnsupportedOperationException("Not a real transport");
     }
 
-    @Override // io.grpc.InternalInstrumented
     public ListenableFuture<InternalChannelz.SocketStats> getStats() {
         SettableFuture create = SettableFuture.create();
-        create.set(null);
+        create.set((Object) null);
         return create;
     }
 

@@ -3,7 +3,7 @@ package com.zx.a.I8b7;
 /* loaded from: source-8829756-dex2jar.jar:com/zx/a/I8b7/s0.class */
 public class s0 extends e {
     /* JADX WARN: Code restructure failed: missing block: B:23:0x00a6, code lost:
-        if (android.text.TextUtils.equals(com.zx.a.I8b7.u1.a.f42208a.f42207a.a(26), r0.toString()) != false) goto L3;
+        if (android.text.TextUtils.equals(com.zx.a.I8b7.u1.a.f28517a.f28516a.a(26), r0.toString()) != false) goto L3;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

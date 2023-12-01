@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentRecommendUserOnRegisterHeaderBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28941a;
+    private final RelativeLayout f15251a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28941a;
+        return this.f15251a;
     }
 }

@@ -3,7 +3,7 @@ package com.meizu.cloud.pushsdk.platform.b;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.igexin.sdk.PushConsts;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.platform.PlatformMessageSender;
 import com.meizu.cloud.pushsdk.platform.message.BasicPushStatus;
@@ -40,20 +40,20 @@ public class d extends c<SubAliasStatus> {
 
     private void b(boolean z) {
         Map<String, Boolean> map = this.k;
-        map.put(this.d + BridgeUtil.UNDERLINE_STR + this.i, Boolean.valueOf(z));
+        map.put(this.d + "_" + this.i, Boolean.valueOf(z));
     }
 
     private void f(String str) {
-        com.meizu.cloud.pushsdk.util.b.h(this.f24187a, !TextUtils.isEmpty(this.d) ? this.d : this.f24187a.getPackageName(), str);
+        com.meizu.cloud.pushsdk.util.b.h(this.f10572a, !TextUtils.isEmpty(this.d) ? this.d : this.f10572a.getPackageName(), str);
     }
 
     private String o() {
-        return com.meizu.cloud.pushsdk.util.b.g(this.f24187a, !TextUtils.isEmpty(this.d) ? this.d : this.f24187a.getPackageName());
+        return com.meizu.cloud.pushsdk.util.b.g(this.f10572a, !TextUtils.isEmpty(this.d) ? this.d : this.f10572a.getPackageName());
     }
 
     private boolean p() {
         Map<String, Boolean> map = this.k;
-        Boolean bool = map.get(this.d + BridgeUtil.UNDERLINE_STR + this.i);
+        Boolean bool = map.get(this.d + "_" + this.i);
         return bool == null || bool.booleanValue();
     }
 
@@ -68,7 +68,7 @@ public class d extends c<SubAliasStatus> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.meizu.cloud.pushsdk.platform.b.c
     public void a(SubAliasStatus subAliasStatus) {
-        PlatformMessageSender.a(this.f24187a, !TextUtils.isEmpty(this.d) ? this.d : this.f24187a.getPackageName(), subAliasStatus);
+        PlatformMessageSender.a(this.f10572a, !TextUtils.isEmpty(this.d) ? this.d : this.f10572a.getPackageName(), subAliasStatus);
     }
 
     public void a(String str) {
@@ -77,7 +77,7 @@ public class d extends c<SubAliasStatus> {
 
     @Override // com.meizu.cloud.pushsdk.platform.b.c
     protected boolean a() {
-        return (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.f24188c) || TextUtils.isEmpty(this.h)) ? false : true;
+        return (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.f10573c) || TextUtils.isEmpty(this.h)) ? false : true;
     }
 
     @Override // com.meizu.cloud.pushsdk.platform.b.c
@@ -85,8 +85,8 @@ public class d extends c<SubAliasStatus> {
         if (this.i != 2) {
             Intent intent = new Intent();
             intent.putExtra("app_id", this.b);
-            intent.putExtra("app_key", this.f24188c);
-            intent.putExtra("strategy_package_name", this.f24187a.getPackageName());
+            intent.putExtra("app_key", this.f10573c);
+            intent.putExtra("strategy_package_name", this.f10572a.getPackageName());
             intent.putExtra(PushConstants.REGISTER_STATUS_PUSH_ID, this.h);
             intent.putExtra("strategy_type", g());
             intent.putExtra("strategy_child_type", this.i);
@@ -111,10 +111,10 @@ public class d extends c<SubAliasStatus> {
     public SubAliasStatus b() {
         String str;
         SubAliasStatus subAliasStatus = new SubAliasStatus();
-        subAliasStatus.setCode("20001");
+        subAliasStatus.setCode(PushConsts.SEND_MESSAGE_ERROR_GENERAL);
         if (TextUtils.isEmpty(this.b)) {
             str = "appId not empty";
-        } else if (TextUtils.isEmpty(this.f24188c)) {
+        } else if (TextUtils.isEmpty(this.f10573c)) {
             str = "appKey not empty";
         } else if (!TextUtils.isEmpty(this.h)) {
             return subAliasStatus;

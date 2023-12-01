@@ -8,16 +8,16 @@ import com.youzan.spiderman.html.k;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static c f41756a;
+    private static c f28065a;
 
     private c() {
     }
 
     public static c a() {
-        if (f41756a == null) {
-            f41756a = new c();
+        if (f28065a == null) {
+            f28065a = new c();
         }
-        return f41756a;
+        return f28065a;
     }
 
     public static void a(Context context) {

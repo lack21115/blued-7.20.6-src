@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
 import com.anythink.expressad.foundation.g.a;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.ss.android.socialbase.downloader.setting.DownloadSetting;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -25,11 +26,11 @@ public class nk extends mb {
             stringBuffer.append(entry.getKey());
             stringBuffer.append("=");
             stringBuffer.append(URLEncoder.encode(entry.getValue()));
-            stringBuffer.append("&");
+            stringBuffer.append(ContainerUtils.FIELD_DELIMITER);
         }
         String stringBuffer2 = stringBuffer.toString();
         String str = stringBuffer2;
-        if (stringBuffer2.endsWith("&")) {
+        if (stringBuffer2.endsWith(ContainerUtils.FIELD_DELIMITER)) {
             str = stringBuffer2.substring(0, stringBuffer2.length() - 1);
         }
         return str;

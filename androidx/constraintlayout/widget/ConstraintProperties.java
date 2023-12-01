@@ -23,7 +23,7 @@ public class ConstraintProperties {
     public static final int WRAP_CONTENT = -2;
 
     /* renamed from: a  reason: collision with root package name */
-    ConstraintLayout.LayoutParams f2265a;
+    ConstraintLayout.LayoutParams f2217a;
     View b;
 
     public ConstraintProperties(View view) {
@@ -31,7 +31,7 @@ public class ConstraintProperties {
         if (!(layoutParams instanceof ConstraintLayout.LayoutParams)) {
             throw new RuntimeException("Only children of ConstraintLayout.LayoutParams supported");
         }
-        this.f2265a = (ConstraintLayout.LayoutParams) layoutParams;
+        this.f2217a = (ConstraintLayout.LayoutParams) layoutParams;
         this.b = view;
     }
 
@@ -109,17 +109,17 @@ public class ConstraintProperties {
                 if (i2 == 1 || i2 == 2) {
                     connect(1, i, i2, i3);
                     connect(2, i4, i5, i6);
-                    this.f2265a.horizontalBias = f;
+                    this.f2217a.horizontalBias = f;
                     return this;
                 } else if (i2 == 6 || i2 == 7) {
                     connect(6, i, i2, i3);
                     connect(7, i4, i5, i6);
-                    this.f2265a.horizontalBias = f;
+                    this.f2217a.horizontalBias = f;
                     return this;
                 } else {
                     connect(3, i, i2, i3);
                     connect(4, i4, i5, i6);
-                    this.f2265a.verticalBias = f;
+                    this.f2217a.verticalBias = f;
                     return this;
                 }
             }
@@ -140,7 +140,7 @@ public class ConstraintProperties {
     public ConstraintProperties centerHorizontally(int i, int i2, int i3, int i4, int i5, int i6, float f) {
         connect(1, i, i2, i3);
         connect(2, i4, i5, i6);
-        this.f2265a.horizontalBias = f;
+        this.f2217a.horizontalBias = f;
         return this;
     }
 
@@ -156,7 +156,7 @@ public class ConstraintProperties {
     public ConstraintProperties centerHorizontallyRtl(int i, int i2, int i3, int i4, int i5, int i6, float f) {
         connect(6, i, i2, i3);
         connect(7, i4, i5, i6);
-        this.f2265a.horizontalBias = f;
+        this.f2217a.horizontalBias = f;
         return this;
     }
 
@@ -172,7 +172,7 @@ public class ConstraintProperties {
     public ConstraintProperties centerVertically(int i, int i2, int i3, int i4, int i5, int i6, float f) {
         connect(3, i, i2, i3);
         connect(4, i4, i5, i6);
-        this.f2265a.verticalBias = f;
+        this.f2217a.verticalBias = f;
         return this;
     }
 
@@ -180,116 +180,116 @@ public class ConstraintProperties {
         switch (i) {
             case 1:
                 if (i3 == 1) {
-                    this.f2265a.leftToLeft = i2;
-                    this.f2265a.leftToRight = -1;
+                    this.f2217a.leftToLeft = i2;
+                    this.f2217a.leftToRight = -1;
                 } else if (i3 != 2) {
                     throw new IllegalArgumentException("Left to " + a(i3) + " undefined");
                 } else {
-                    this.f2265a.leftToRight = i2;
-                    this.f2265a.leftToLeft = -1;
+                    this.f2217a.leftToRight = i2;
+                    this.f2217a.leftToLeft = -1;
                 }
-                this.f2265a.leftMargin = i4;
+                this.f2217a.leftMargin = i4;
                 break;
             case 2:
                 if (i3 == 1) {
-                    this.f2265a.rightToLeft = i2;
-                    this.f2265a.rightToRight = -1;
+                    this.f2217a.rightToLeft = i2;
+                    this.f2217a.rightToRight = -1;
                 } else if (i3 != 2) {
                     throw new IllegalArgumentException("right to " + a(i3) + " undefined");
                 } else {
-                    this.f2265a.rightToRight = i2;
-                    this.f2265a.rightToLeft = -1;
+                    this.f2217a.rightToRight = i2;
+                    this.f2217a.rightToLeft = -1;
                 }
-                this.f2265a.rightMargin = i4;
+                this.f2217a.rightMargin = i4;
                 return this;
             case 3:
                 if (i3 == 3) {
-                    this.f2265a.topToTop = i2;
-                    this.f2265a.topToBottom = -1;
-                    this.f2265a.baselineToBaseline = -1;
-                    this.f2265a.baselineToTop = -1;
-                    this.f2265a.baselineToBottom = -1;
+                    this.f2217a.topToTop = i2;
+                    this.f2217a.topToBottom = -1;
+                    this.f2217a.baselineToBaseline = -1;
+                    this.f2217a.baselineToTop = -1;
+                    this.f2217a.baselineToBottom = -1;
                 } else if (i3 != 4) {
                     throw new IllegalArgumentException("right to " + a(i3) + " undefined");
                 } else {
-                    this.f2265a.topToBottom = i2;
-                    this.f2265a.topToTop = -1;
-                    this.f2265a.baselineToBaseline = -1;
-                    this.f2265a.baselineToTop = -1;
-                    this.f2265a.baselineToBottom = -1;
+                    this.f2217a.topToBottom = i2;
+                    this.f2217a.topToTop = -1;
+                    this.f2217a.baselineToBaseline = -1;
+                    this.f2217a.baselineToTop = -1;
+                    this.f2217a.baselineToBottom = -1;
                 }
-                this.f2265a.topMargin = i4;
+                this.f2217a.topMargin = i4;
                 return this;
             case 4:
                 if (i3 == 4) {
-                    this.f2265a.bottomToBottom = i2;
-                    this.f2265a.bottomToTop = -1;
-                    this.f2265a.baselineToBaseline = -1;
-                    this.f2265a.baselineToTop = -1;
-                    this.f2265a.baselineToBottom = -1;
+                    this.f2217a.bottomToBottom = i2;
+                    this.f2217a.bottomToTop = -1;
+                    this.f2217a.baselineToBaseline = -1;
+                    this.f2217a.baselineToTop = -1;
+                    this.f2217a.baselineToBottom = -1;
                 } else if (i3 != 3) {
                     throw new IllegalArgumentException("right to " + a(i3) + " undefined");
                 } else {
-                    this.f2265a.bottomToTop = i2;
-                    this.f2265a.bottomToBottom = -1;
-                    this.f2265a.baselineToBaseline = -1;
-                    this.f2265a.baselineToTop = -1;
-                    this.f2265a.baselineToBottom = -1;
+                    this.f2217a.bottomToTop = i2;
+                    this.f2217a.bottomToBottom = -1;
+                    this.f2217a.baselineToBaseline = -1;
+                    this.f2217a.baselineToTop = -1;
+                    this.f2217a.baselineToBottom = -1;
                 }
-                this.f2265a.bottomMargin = i4;
+                this.f2217a.bottomMargin = i4;
                 return this;
             case 5:
                 if (i3 == 5) {
-                    this.f2265a.baselineToBaseline = i2;
-                    this.f2265a.bottomToBottom = -1;
-                    this.f2265a.bottomToTop = -1;
-                    this.f2265a.topToTop = -1;
-                    this.f2265a.topToBottom = -1;
+                    this.f2217a.baselineToBaseline = i2;
+                    this.f2217a.bottomToBottom = -1;
+                    this.f2217a.bottomToTop = -1;
+                    this.f2217a.topToTop = -1;
+                    this.f2217a.topToBottom = -1;
                 }
                 if (i3 == 3) {
-                    this.f2265a.baselineToTop = i2;
-                    this.f2265a.bottomToBottom = -1;
-                    this.f2265a.bottomToTop = -1;
-                    this.f2265a.topToTop = -1;
-                    this.f2265a.topToBottom = -1;
+                    this.f2217a.baselineToTop = i2;
+                    this.f2217a.bottomToBottom = -1;
+                    this.f2217a.bottomToTop = -1;
+                    this.f2217a.topToTop = -1;
+                    this.f2217a.topToBottom = -1;
                 } else if (i3 != 4) {
                     throw new IllegalArgumentException("right to " + a(i3) + " undefined");
                 } else {
-                    this.f2265a.baselineToBottom = i2;
-                    this.f2265a.bottomToBottom = -1;
-                    this.f2265a.bottomToTop = -1;
-                    this.f2265a.topToTop = -1;
-                    this.f2265a.topToBottom = -1;
+                    this.f2217a.baselineToBottom = i2;
+                    this.f2217a.bottomToBottom = -1;
+                    this.f2217a.bottomToTop = -1;
+                    this.f2217a.topToTop = -1;
+                    this.f2217a.topToBottom = -1;
                 }
-                this.f2265a.baselineMargin = i4;
+                this.f2217a.baselineMargin = i4;
                 return this;
             case 6:
                 if (i3 == 6) {
-                    this.f2265a.startToStart = i2;
-                    this.f2265a.startToEnd = -1;
+                    this.f2217a.startToStart = i2;
+                    this.f2217a.startToEnd = -1;
                 } else if (i3 != 7) {
                     throw new IllegalArgumentException("right to " + a(i3) + " undefined");
                 } else {
-                    this.f2265a.startToEnd = i2;
-                    this.f2265a.startToStart = -1;
+                    this.f2217a.startToEnd = i2;
+                    this.f2217a.startToStart = -1;
                 }
                 if (Build.VERSION.SDK_INT >= 17) {
-                    this.f2265a.setMarginStart(i4);
+                    this.f2217a.setMarginStart(i4);
                     return this;
                 }
                 break;
             case 7:
                 if (i3 == 7) {
-                    this.f2265a.endToEnd = i2;
-                    this.f2265a.endToStart = -1;
+                    this.f2217a.endToEnd = i2;
+                    this.f2217a.endToStart = -1;
                 } else if (i3 != 6) {
                     throw new IllegalArgumentException("right to " + a(i3) + " undefined");
                 } else {
-                    this.f2265a.endToStart = i2;
-                    this.f2265a.endToEnd = -1;
+                    this.f2217a.endToStart = i2;
+                    this.f2217a.endToEnd = -1;
                 }
                 if (Build.VERSION.SDK_INT >= 17) {
-                    this.f2265a.setMarginEnd(i4);
+                    this.f2217a.setMarginEnd(i4);
                     return this;
                 }
                 break;
@@ -300,47 +300,47 @@ public class ConstraintProperties {
     }
 
     public ConstraintProperties constrainDefaultHeight(int i) {
-        this.f2265a.matchConstraintDefaultHeight = i;
+        this.f2217a.matchConstraintDefaultHeight = i;
         return this;
     }
 
     public ConstraintProperties constrainDefaultWidth(int i) {
-        this.f2265a.matchConstraintDefaultWidth = i;
+        this.f2217a.matchConstraintDefaultWidth = i;
         return this;
     }
 
     public ConstraintProperties constrainHeight(int i) {
-        this.f2265a.height = i;
+        this.f2217a.height = i;
         return this;
     }
 
     public ConstraintProperties constrainMaxHeight(int i) {
-        this.f2265a.matchConstraintMaxHeight = i;
+        this.f2217a.matchConstraintMaxHeight = i;
         return this;
     }
 
     public ConstraintProperties constrainMaxWidth(int i) {
-        this.f2265a.matchConstraintMaxWidth = i;
+        this.f2217a.matchConstraintMaxWidth = i;
         return this;
     }
 
     public ConstraintProperties constrainMinHeight(int i) {
-        this.f2265a.matchConstraintMinHeight = i;
+        this.f2217a.matchConstraintMinHeight = i;
         return this;
     }
 
     public ConstraintProperties constrainMinWidth(int i) {
-        this.f2265a.matchConstraintMinWidth = i;
+        this.f2217a.matchConstraintMinWidth = i;
         return this;
     }
 
     public ConstraintProperties constrainWidth(int i) {
-        this.f2265a.width = i;
+        this.f2217a.width = i;
         return this;
     }
 
     public ConstraintProperties dimensionRatio(String str) {
-        this.f2265a.dimensionRatio = str;
+        this.f2217a.dimensionRatio = str;
         return this;
     }
 
@@ -354,24 +354,24 @@ public class ConstraintProperties {
     public ConstraintProperties goneMargin(int i, int i2) {
         switch (i) {
             case 1:
-                this.f2265a.goneLeftMargin = i2;
+                this.f2217a.goneLeftMargin = i2;
                 return this;
             case 2:
-                this.f2265a.goneRightMargin = i2;
+                this.f2217a.goneRightMargin = i2;
                 return this;
             case 3:
-                this.f2265a.goneTopMargin = i2;
+                this.f2217a.goneTopMargin = i2;
                 return this;
             case 4:
-                this.f2265a.goneBottomMargin = i2;
+                this.f2217a.goneBottomMargin = i2;
                 return this;
             case 5:
                 throw new IllegalArgumentException("baseline does not support margins");
             case 6:
-                this.f2265a.goneStartMargin = i2;
+                this.f2217a.goneStartMargin = i2;
                 return this;
             case 7:
-                this.f2265a.goneEndMargin = i2;
+                this.f2217a.goneEndMargin = i2;
                 return this;
             default:
                 throw new IllegalArgumentException("unknown constraint");
@@ -379,41 +379,41 @@ public class ConstraintProperties {
     }
 
     public ConstraintProperties horizontalBias(float f) {
-        this.f2265a.horizontalBias = f;
+        this.f2217a.horizontalBias = f;
         return this;
     }
 
     public ConstraintProperties horizontalChainStyle(int i) {
-        this.f2265a.horizontalChainStyle = i;
+        this.f2217a.horizontalChainStyle = i;
         return this;
     }
 
     public ConstraintProperties horizontalWeight(float f) {
-        this.f2265a.horizontalWeight = f;
+        this.f2217a.horizontalWeight = f;
         return this;
     }
 
     public ConstraintProperties margin(int i, int i2) {
         switch (i) {
             case 1:
-                this.f2265a.leftMargin = i2;
+                this.f2217a.leftMargin = i2;
                 return this;
             case 2:
-                this.f2265a.rightMargin = i2;
+                this.f2217a.rightMargin = i2;
                 return this;
             case 3:
-                this.f2265a.topMargin = i2;
+                this.f2217a.topMargin = i2;
                 return this;
             case 4:
-                this.f2265a.bottomMargin = i2;
+                this.f2217a.bottomMargin = i2;
                 return this;
             case 5:
                 throw new IllegalArgumentException("baseline does not support margins");
             case 6:
-                this.f2265a.setMarginStart(i2);
+                this.f2217a.setMarginStart(i2);
                 return this;
             case 7:
-                this.f2265a.setMarginEnd(i2);
+                this.f2217a.setMarginEnd(i2);
                 return this;
             default:
                 throw new IllegalArgumentException("unknown constraint");
@@ -423,43 +423,43 @@ public class ConstraintProperties {
     public ConstraintProperties removeConstraints(int i) {
         switch (i) {
             case 1:
-                this.f2265a.leftToRight = -1;
-                this.f2265a.leftToLeft = -1;
-                this.f2265a.leftMargin = -1;
-                this.f2265a.goneLeftMargin = Integer.MIN_VALUE;
+                this.f2217a.leftToRight = -1;
+                this.f2217a.leftToLeft = -1;
+                this.f2217a.leftMargin = -1;
+                this.f2217a.goneLeftMargin = Integer.MIN_VALUE;
                 return this;
             case 2:
-                this.f2265a.rightToRight = -1;
-                this.f2265a.rightToLeft = -1;
-                this.f2265a.rightMargin = -1;
-                this.f2265a.goneRightMargin = Integer.MIN_VALUE;
+                this.f2217a.rightToRight = -1;
+                this.f2217a.rightToLeft = -1;
+                this.f2217a.rightMargin = -1;
+                this.f2217a.goneRightMargin = Integer.MIN_VALUE;
                 return this;
             case 3:
-                this.f2265a.topToBottom = -1;
-                this.f2265a.topToTop = -1;
-                this.f2265a.topMargin = -1;
-                this.f2265a.goneTopMargin = Integer.MIN_VALUE;
+                this.f2217a.topToBottom = -1;
+                this.f2217a.topToTop = -1;
+                this.f2217a.topMargin = -1;
+                this.f2217a.goneTopMargin = Integer.MIN_VALUE;
                 return this;
             case 4:
-                this.f2265a.bottomToTop = -1;
-                this.f2265a.bottomToBottom = -1;
-                this.f2265a.bottomMargin = -1;
-                this.f2265a.goneBottomMargin = Integer.MIN_VALUE;
+                this.f2217a.bottomToTop = -1;
+                this.f2217a.bottomToBottom = -1;
+                this.f2217a.bottomMargin = -1;
+                this.f2217a.goneBottomMargin = Integer.MIN_VALUE;
                 return this;
             case 5:
-                this.f2265a.baselineToBaseline = -1;
+                this.f2217a.baselineToBaseline = -1;
                 return this;
             case 6:
-                this.f2265a.startToEnd = -1;
-                this.f2265a.startToStart = -1;
-                this.f2265a.setMarginStart(-1);
-                this.f2265a.goneStartMargin = Integer.MIN_VALUE;
+                this.f2217a.startToEnd = -1;
+                this.f2217a.startToStart = -1;
+                this.f2217a.setMarginStart(-1);
+                this.f2217a.goneStartMargin = Integer.MIN_VALUE;
                 return this;
             case 7:
-                this.f2265a.endToStart = -1;
-                this.f2265a.endToEnd = -1;
-                this.f2265a.setMarginEnd(-1);
-                this.f2265a.goneEndMargin = Integer.MIN_VALUE;
+                this.f2217a.endToStart = -1;
+                this.f2217a.endToEnd = -1;
+                this.f2217a.setMarginEnd(-1);
+                this.f2217a.goneEndMargin = Integer.MIN_VALUE;
                 return this;
             default:
                 throw new IllegalArgumentException("unknown constraint");
@@ -467,9 +467,9 @@ public class ConstraintProperties {
     }
 
     public ConstraintProperties removeFromHorizontalChain() {
-        int i = this.f2265a.leftToRight;
-        int i2 = this.f2265a.rightToLeft;
-        ConstraintLayout.LayoutParams layoutParams = this.f2265a;
+        int i = this.f2217a.leftToRight;
+        int i2 = this.f2217a.rightToLeft;
+        ConstraintLayout.LayoutParams layoutParams = this.f2217a;
         if (i != -1 || i2 != -1) {
             ConstraintProperties constraintProperties = new ConstraintProperties(((ViewGroup) this.b.getParent()).findViewById(i));
             ConstraintProperties constraintProperties2 = new ConstraintProperties(((ViewGroup) this.b.getParent()).findViewById(i2));
@@ -477,13 +477,13 @@ public class ConstraintProperties {
                 constraintProperties.connect(2, i2, 1, 0);
                 constraintProperties2.connect(1, i, 2, 0);
             } else if (i != -1 || i2 != -1) {
-                int i3 = this.f2265a.rightToRight;
-                ConstraintLayout.LayoutParams layoutParams2 = this.f2265a;
+                int i3 = this.f2217a.rightToRight;
+                ConstraintLayout.LayoutParams layoutParams2 = this.f2217a;
                 if (i3 != -1) {
                     constraintProperties.connect(2, layoutParams2.rightToRight, 2, 0);
                 } else {
                     int i4 = layoutParams2.leftToLeft;
-                    ConstraintLayout.LayoutParams layoutParams3 = this.f2265a;
+                    ConstraintLayout.LayoutParams layoutParams3 = this.f2217a;
                     if (i4 != -1) {
                         constraintProperties2.connect(1, layoutParams3.leftToLeft, 1, 0);
                     }
@@ -494,7 +494,7 @@ public class ConstraintProperties {
             return this;
         }
         int i5 = layoutParams.startToEnd;
-        int i6 = this.f2265a.endToStart;
+        int i6 = this.f2217a.endToStart;
         if (i5 != -1 || i6 != -1) {
             ConstraintProperties constraintProperties3 = new ConstraintProperties(((ViewGroup) this.b.getParent()).findViewById(i5));
             ConstraintProperties constraintProperties4 = new ConstraintProperties(((ViewGroup) this.b.getParent()).findViewById(i6));
@@ -502,13 +502,13 @@ public class ConstraintProperties {
                 constraintProperties3.connect(7, i6, 6, 0);
                 constraintProperties4.connect(6, i, 7, 0);
             } else if (i != -1 || i6 != -1) {
-                int i7 = this.f2265a.rightToRight;
-                ConstraintLayout.LayoutParams layoutParams4 = this.f2265a;
+                int i7 = this.f2217a.rightToRight;
+                ConstraintLayout.LayoutParams layoutParams4 = this.f2217a;
                 if (i7 != -1) {
                     constraintProperties3.connect(7, layoutParams4.rightToRight, 7, 0);
                 } else {
                     int i8 = layoutParams4.leftToLeft;
-                    ConstraintLayout.LayoutParams layoutParams5 = this.f2265a;
+                    ConstraintLayout.LayoutParams layoutParams5 = this.f2217a;
                     if (i8 != -1) {
                         constraintProperties4.connect(6, layoutParams5.leftToLeft, 6, 0);
                     }
@@ -521,8 +521,8 @@ public class ConstraintProperties {
     }
 
     public ConstraintProperties removeFromVerticalChain() {
-        int i = this.f2265a.topToBottom;
-        int i2 = this.f2265a.bottomToTop;
+        int i = this.f2217a.topToBottom;
+        int i2 = this.f2217a.bottomToTop;
         if (i != -1 || i2 != -1) {
             ConstraintProperties constraintProperties = new ConstraintProperties(((ViewGroup) this.b.getParent()).findViewById(i));
             ConstraintProperties constraintProperties2 = new ConstraintProperties(((ViewGroup) this.b.getParent()).findViewById(i2));
@@ -530,13 +530,13 @@ public class ConstraintProperties {
                 constraintProperties.connect(4, i2, 3, 0);
                 constraintProperties2.connect(3, i, 4, 0);
             } else if (i != -1 || i2 != -1) {
-                int i3 = this.f2265a.bottomToBottom;
-                ConstraintLayout.LayoutParams layoutParams = this.f2265a;
+                int i3 = this.f2217a.bottomToBottom;
+                ConstraintLayout.LayoutParams layoutParams = this.f2217a;
                 if (i3 != -1) {
                     constraintProperties.connect(4, layoutParams.bottomToBottom, 4, 0);
                 } else {
                     int i4 = layoutParams.topToTop;
-                    ConstraintLayout.LayoutParams layoutParams2 = this.f2265a;
+                    ConstraintLayout.LayoutParams layoutParams2 = this.f2217a;
                     if (i4 != -1) {
                         constraintProperties2.connect(3, layoutParams2.topToTop, 3, 0);
                     }
@@ -612,17 +612,17 @@ public class ConstraintProperties {
     }
 
     public ConstraintProperties verticalBias(float f) {
-        this.f2265a.verticalBias = f;
+        this.f2217a.verticalBias = f;
         return this;
     }
 
     public ConstraintProperties verticalChainStyle(int i) {
-        this.f2265a.verticalChainStyle = i;
+        this.f2217a.verticalChainStyle = i;
         return this;
     }
 
     public ConstraintProperties verticalWeight(float f) {
-        this.f2265a.verticalWeight = f;
+        this.f2217a.verticalWeight = f;
         return this;
     }
 

@@ -8,52 +8,52 @@ import java.util.LinkedHashMap;
 public class k1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f22762a;
+    public String f9154a;
     public m b;
 
     public k1(String str) {
-        this.f22762a = str;
+        this.f9154a = str;
         this.b = new m(str);
-        i.c().a(this.f22762a, this.b);
+        i.c().a(this.f9154a, this.b);
     }
 
     public void a(int i) {
-        z.d("hmsSdk", "onReport. TAG: " + this.f22762a + ", TYPE: " + i);
-        j1.a().a(this.f22762a, i);
+        z.d("hmsSdk", "onReport. TAG: " + this.f9154a + ", TYPE: " + i);
+        j1.a().a(this.f9154a, i);
     }
 
     public void a(int i, String str, LinkedHashMap<String, String> linkedHashMap) {
-        z.d("hmsSdk", "onEvent. TAG: " + this.f22762a + ", TYPE: " + i + ", eventId : " + str);
+        z.d("hmsSdk", "onEvent. TAG: " + this.f9154a + ", TYPE: " + i + ", eventId : " + str);
         if (t0.a(str) || !c(i)) {
-            z.e("hmsSdk", "onEvent() parameters check fail. Nothing will be recorded.TAG: " + this.f22762a + ", TYPE: " + i);
+            z.e("hmsSdk", "onEvent() parameters check fail. Nothing will be recorded.TAG: " + this.f9154a + ", TYPE: " + i);
             return;
         }
         LinkedHashMap<String, String> linkedHashMap2 = linkedHashMap;
         if (!t0.a(linkedHashMap)) {
-            z.e("hmsSdk", "onEvent() parameter mapValue will be cleared.TAG: " + this.f22762a + ", TYPE: " + i);
+            z.e("hmsSdk", "onEvent() parameter mapValue will be cleared.TAG: " + this.f9154a + ", TYPE: " + i);
             linkedHashMap2 = null;
         }
-        j1.a().a(this.f22762a, i, str, linkedHashMap2);
+        j1.a().a(this.f9154a, i, str, linkedHashMap2);
     }
 
     public void a(Context context, String str, String str2) {
-        z.d("hmsSdk", "onEvent(context). TAG: " + this.f22762a + ", eventId : " + str);
+        z.d("hmsSdk", "onEvent(context). TAG: " + this.f9154a + ", eventId : " + str);
         if (context == null) {
             z.e("hmsSdk", "context is null in onevent ");
         } else if (t0.a(str) || !c(0)) {
-            z.e("hmsSdk", "onEvent() parameters check fail. Nothing will be recorded.TAG: " + this.f22762a);
+            z.e("hmsSdk", "onEvent() parameters check fail. Nothing will be recorded.TAG: " + this.f9154a);
         } else {
             String str3 = str2;
             if (!t0.a("value", str2, 65536)) {
-                z.e("hmsSdk", "onEvent() parameter VALUE is overlong, content will be cleared.TAG: " + this.f22762a);
+                z.e("hmsSdk", "onEvent() parameter VALUE is overlong, content will be cleared.TAG: " + this.f9154a);
                 str3 = "";
             }
-            j1.a().a(this.f22762a, context, str, str3);
+            j1.a().a(this.f9154a, context, str, str3);
         }
     }
 
     public void a(k kVar) {
-        z.c("hmsSdk", "HiAnalyticsInstanceImpl.setMaintConf() is executed.TAG : " + this.f22762a);
+        z.c("hmsSdk", "HiAnalyticsInstanceImpl.setMaintConf() is executed.TAG : " + this.f9154a);
         if (kVar != null) {
             this.b.a(kVar);
             return;
@@ -79,21 +79,21 @@ public class k1 {
     }
 
     public void b(int i, String str, LinkedHashMap<String, String> linkedHashMap) {
-        z.d("hmsSdk", "onStreamEvent. TAG: " + this.f22762a + ", TYPE: " + i + ", eventId : " + str);
+        z.d("hmsSdk", "onStreamEvent. TAG: " + this.f9154a + ", TYPE: " + i + ", eventId : " + str);
         if (t0.a(str) || !c(i)) {
-            z.e("hmsSdk", "onStreamEvent() parameters check fail. Nothing will be recorded.TAG: " + this.f22762a + ", TYPE: " + i);
+            z.e("hmsSdk", "onStreamEvent() parameters check fail. Nothing will be recorded.TAG: " + this.f9154a + ", TYPE: " + i);
             return;
         }
         LinkedHashMap<String, String> linkedHashMap2 = linkedHashMap;
         if (!t0.a(linkedHashMap)) {
-            z.e("hmsSdk", "onStreamEvent() parameter mapValue will be cleared.TAG: " + this.f22762a + ", TYPE: " + i);
+            z.e("hmsSdk", "onStreamEvent() parameter mapValue will be cleared.TAG: " + this.f9154a + ", TYPE: " + i);
             linkedHashMap2 = null;
         }
-        j1.a().b(this.f22762a, i, str, linkedHashMap2);
+        j1.a().b(this.f9154a, i, str, linkedHashMap2);
     }
 
     public void b(k kVar) {
-        z.c("hmsSdk", "HiAnalyticsInstanceImpl.setOperConf() is executed.TAG: " + this.f22762a);
+        z.c("hmsSdk", "HiAnalyticsInstanceImpl.setOperConf() is executed.TAG: " + this.f9154a);
         if (kVar != null) {
             this.b.b(kVar);
             return;
@@ -110,7 +110,7 @@ public class k1 {
                 return true;
             }
             str = "verifyURL(): URL check failed. type: " + i;
-        } else if ("_default_config_tag".equals(this.f22762a)) {
+        } else if ("_default_config_tag".equals(this.f9154a)) {
             return true;
         } else {
             str = "verifyURL(): type: preins. Only default config can report Pre-install data.";

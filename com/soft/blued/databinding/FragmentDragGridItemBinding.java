@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentDragGridItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28814a;
+    private final RelativeLayout f15124a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28814a;
+        return this.f15124a;
     }
 }

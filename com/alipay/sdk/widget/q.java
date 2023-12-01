@@ -9,13 +9,11 @@ import com.bytedance.applog.tracker.Tracker;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/widget/q.class */
 public class q implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ p f4697a;
+    final /* synthetic */ p a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public q(p pVar) {
-        this.f4697a = pVar;
+        this.a = pVar;
     }
 
     @Override // android.view.View.OnClickListener
@@ -25,19 +23,19 @@ public class q implements View.OnClickListener {
         ImageView imageView;
         ImageView imageView2;
         Tracker.onClick(view);
-        cVar = this.f4697a.i;
+        cVar = this.a.i;
         if (cVar != null) {
             view.setEnabled(false);
             handler = p.f;
             handler.postDelayed(new r(this, view), 256L);
-            imageView = this.f4697a.f4695a;
+            imageView = this.a.a;
             if (view == imageView) {
-                cVar.a(this.f4697a);
+                cVar.a(this.a);
                 return;
             }
-            imageView2 = this.f4697a.f4696c;
+            imageView2 = this.a.c;
             if (view == imageView2) {
-                cVar.b(this.f4697a);
+                cVar.b(this.a);
             }
         }
     }

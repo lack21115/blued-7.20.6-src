@@ -185,7 +185,7 @@ public final class RealConnection implements Connection {
     }
 
     private Request createTunnelRequest() throws IOException {
-        return new Request.Builder().url(this.route.getAddress().url()).header("Host", Util.hostHeader(this.route.getAddress().url())).header("Proxy-Connection", c.f7906c).header("User-Agent", Version.userAgent()).build();
+        return new Request.Builder().url(this.route.getAddress().url()).header("Host", Util.hostHeader(this.route.getAddress().url())).header("Proxy-Connection", c.f5066c).header("User-Agent", Version.userAgent()).build();
     }
 
     private static TrustRootIndex trustRootIndex(SSLSocketFactory sSLSocketFactory) {

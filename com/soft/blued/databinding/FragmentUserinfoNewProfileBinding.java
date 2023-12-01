@@ -43,7 +43,7 @@ public final class FragmentUserinfoNewProfileBinding implements ViewBinding {
     public final TextView Z;
 
     /* renamed from: a  reason: collision with root package name */
-    public final BannerADView f29007a;
+    public final BannerADView f15317a;
     public final TextView aa;
     public final TextView ab;
     public final TextView ac;
@@ -56,7 +56,7 @@ public final class FragmentUserinfoNewProfileBinding implements ViewBinding {
     public final ConstraintLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f29008c;
+    public final FrameLayout f15318c;
     public final FlowLayout d;
     public final FlowLayout e;
     public final FlowLayout f;
@@ -83,9 +83,9 @@ public final class FragmentUserinfoNewProfileBinding implements ViewBinding {
 
     private FragmentUserinfoNewProfileBinding(NestedScrollView nestedScrollView, BannerADView bannerADView, ConstraintLayout constraintLayout, FrameLayout frameLayout, FlowLayout flowLayout, FlowLayout flowLayout2, FlowLayout flowLayout3, FlowLayout flowLayout4, FlowLayout flowLayout5, FlowLayout flowLayout6, FlowLayout flowLayout7, FlowLayout flowLayout8, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ConstraintLayout constraintLayout4, LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5, LinearLayout linearLayout6, LinearLayout linearLayout7, LinearLayout linearLayout8, RecyclerView recyclerView, RecyclerView recyclerView2, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, TextView textView15, TextView textView16, TextView textView17, TextView textView18, TextView textView19, TextView textView20, TextView textView21, TextView textView22, TextView textView23, TextView textView24, TextView textView25, TextView textView26, TextView textView27, TextView textView28, TextView textView29, TextView textView30, TextView textView31, TextView textView32) {
         this.ai = nestedScrollView;
-        this.f29007a = bannerADView;
+        this.f15317a = bannerADView;
         this.b = constraintLayout;
-        this.f29008c = frameLayout;
+        this.f15318c = frameLayout;
         this.d = flowLayout;
         this.e = flowLayout2;
         this.f = flowLayout3;
@@ -153,29 +153,29 @@ public final class FragmentUserinfoNewProfileBinding implements ViewBinding {
             if (constraintLayout != null) {
                 FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.fl_health_tips);
                 if (frameLayout != null) {
-                    FlowLayout flowLayout = (FlowLayout) view.findViewById(R.id.flow_joined_groups);
-                    if (flowLayout != null) {
-                        FlowLayout flowLayout2 = (FlowLayout) view.findViewById(R.id.flow_lookfor_chara);
-                        if (flowLayout2 != null) {
-                            FlowLayout flowLayout3 = (FlowLayout) view.findViewById(R.id.flow_lookfor_figure);
-                            if (flowLayout3 != null) {
-                                FlowLayout flowLayout4 = (FlowLayout) view.findViewById(R.id.flow_my_chara);
-                                if (flowLayout4 != null) {
-                                    FlowLayout flowLayout5 = (FlowLayout) view.findViewById(R.id.flow_my_entertainment);
-                                    if (flowLayout5 != null) {
-                                        FlowLayout flowLayout6 = (FlowLayout) view.findViewById(R.id.flow_my_figure);
-                                        if (flowLayout6 != null) {
-                                            FlowLayout flowLayout7 = (FlowLayout) view.findViewById(R.id.flow_my_groups);
-                                            if (flowLayout7 != null) {
-                                                FlowLayout flowLayout8 = (FlowLayout) view.findViewById(R.id.flow_my_hobby);
-                                                if (flowLayout8 != null) {
+                    FlowLayout findViewById = view.findViewById(R.id.flow_joined_groups);
+                    if (findViewById != null) {
+                        FlowLayout findViewById2 = view.findViewById(R.id.flow_lookfor_chara);
+                        if (findViewById2 != null) {
+                            FlowLayout findViewById3 = view.findViewById(R.id.flow_lookfor_figure);
+                            if (findViewById3 != null) {
+                                FlowLayout findViewById4 = view.findViewById(R.id.flow_my_chara);
+                                if (findViewById4 != null) {
+                                    FlowLayout findViewById5 = view.findViewById(R.id.flow_my_entertainment);
+                                    if (findViewById5 != null) {
+                                        FlowLayout findViewById6 = view.findViewById(R.id.flow_my_figure);
+                                        if (findViewById6 != null) {
+                                            FlowLayout findViewById7 = view.findViewById(R.id.flow_my_groups);
+                                            if (findViewById7 != null) {
+                                                FlowLayout findViewById8 = view.findViewById(R.id.flow_my_hobby);
+                                                if (findViewById8 != null) {
                                                     ImageView imageView = (ImageView) view.findViewById(R.id.gift_right_arrow);
                                                     if (imageView != null) {
                                                         ImageView imageView2 = (ImageView) view.findViewById(R.id.img_anchor_rank);
                                                         if (imageView2 != null) {
                                                             ImageView imageView3 = (ImageView) view.findViewById(R.id.img_his_gift_red_dot);
                                                             if (imageView3 != null) {
-                                                                ImageView imageView4 = (ImageView) view.findViewById(2131364660);
+                                                                ImageView imageView4 = (ImageView) view.findViewById(R.id.img_rich_rank);
                                                                 if (imageView4 != null) {
                                                                     ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.lay_lookfor_tags);
                                                                     if (constraintLayout2 != null) {
@@ -199,7 +199,7 @@ public final class FragmentUserinfoNewProfileBinding implements ViewBinding {
                                                                                                         if (linearLayout7 != null) {
                                                                                                             LinearLayout linearLayout8 = (LinearLayout) view.findViewById(R.id.ll_user_gift);
                                                                                                             if (linearLayout8 != null) {
-                                                                                                                RecyclerView recyclerView = (RecyclerView) view.findViewById(2131368416);
+                                                                                                                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.lv_medals);
                                                                                                                 if (recyclerView != null) {
                                                                                                                     RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.lv_user_gift);
                                                                                                                     if (recyclerView2 != null) {
@@ -209,9 +209,9 @@ public final class FragmentUserinfoNewProfileBinding implements ViewBinding {
                                                                                                                             if (textView2 != null) {
                                                                                                                                 TextView textView3 = (TextView) view.findViewById(R.id.tv_bloodtype_title);
                                                                                                                                 if (textView3 != null) {
-                                                                                                                                    TextView textView4 = (TextView) view.findViewById(2131371168);
+                                                                                                                                    TextView textView4 = (TextView) view.findViewById(R.id.tv_constellation);
                                                                                                                                     if (textView4 != null) {
-                                                                                                                                        TextView textView5 = (TextView) view.findViewById(2131371176);
+                                                                                                                                        TextView textView5 = (TextView) view.findViewById(R.id.tv_constellation_title);
                                                                                                                                         if (textView5 != null) {
                                                                                                                                             TextView textView6 = (TextView) view.findViewById(R.id.tv_goal);
                                                                                                                                             if (textView6 != null) {
@@ -267,7 +267,7 @@ public final class FragmentUserinfoNewProfileBinding implements ViewBinding {
                                                                                                                                                                                                                                                 if (textView31 != null) {
                                                                                                                                                                                                                                                     TextView textView32 = (TextView) view.findViewById(R.id.tv_user_gift_title);
                                                                                                                                                                                                                                                     if (textView32 != null) {
-                                                                                                                                                                                                                                                        return new FragmentUserinfoNewProfileBinding((NestedScrollView) view, bannerADView, constraintLayout, frameLayout, flowLayout, flowLayout2, flowLayout3, flowLayout4, flowLayout5, flowLayout6, flowLayout7, flowLayout8, imageView, imageView2, imageView3, imageView4, constraintLayout2, constraintLayout3, constraintLayout4, linearLayout, linearLayout2, linearLayout3, linearLayout4, linearLayout5, linearLayout6, linearLayout7, linearLayout8, recyclerView, recyclerView2, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, textView21, textView22, textView23, textView24, textView25, textView26, textView27, textView28, textView29, textView30, textView31, textView32);
+                                                                                                                                                                                                                                                        return new FragmentUserinfoNewProfileBinding((NestedScrollView) view, bannerADView, constraintLayout, frameLayout, findViewById, findViewById2, findViewById3, findViewById4, findViewById5, findViewById6, findViewById7, findViewById8, imageView, imageView2, imageView3, imageView4, constraintLayout2, constraintLayout3, constraintLayout4, linearLayout, linearLayout2, linearLayout3, linearLayout4, linearLayout5, linearLayout6, linearLayout7, linearLayout8, recyclerView, recyclerView2, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, textView21, textView22, textView23, textView24, textView25, textView26, textView27, textView28, textView29, textView30, textView31, textView32);
                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                     str = "tvUserGiftTitle";
                                                                                                                                                                                                                                                 } else {

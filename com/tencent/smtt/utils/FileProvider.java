@@ -16,7 +16,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
 import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.cdo.oaps.ad.OapsWrapper;
 import com.tencent.smtt.sdk.QbSdk;
 import java.io.File;
@@ -31,11 +30,11 @@ import org.xmlpull.v1.XmlPullParserException;
 public class FileProvider extends ContentProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f38919a = {"_display_name", "_size"};
-    private static final File b = new File(BridgeUtil.SPLIT_MARK);
+    private static final String[] f25228a = {"_display_name", "_size"};
+    private static final File b = new File("/");
 
     /* renamed from: c  reason: collision with root package name */
-    private static HashMap<String, a> f38920c = new HashMap<>();
+    private static HashMap<String, a> f25229c = new HashMap<>();
     private a d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -51,11 +50,11 @@ public class FileProvider extends ContentProvider {
     public static class b implements a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f38921a;
+        private final String f25230a;
         private final HashMap<String, File> b = new HashMap<>();
 
         public b(String str) {
-            this.f38921a = str;
+            this.f25230a = str;
         }
 
         @Override // com.tencent.smtt.utils.FileProvider.a
@@ -73,13 +72,13 @@ public class FileProvider extends ContentProvider {
                     throw new IllegalArgumentException("Failed to find configured root that contains " + canonicalPath);
                 }
                 String path2 = entry.getValue().getPath();
-                boolean endsWith = path2.endsWith(BridgeUtil.SPLIT_MARK);
+                boolean endsWith = path2.endsWith("/");
                 int length = path2.length();
                 if (!endsWith) {
                     length++;
                 }
                 String substring = canonicalPath.substring(length);
-                return new Uri.Builder().scheme("content").authority(this.f38921a).encodedPath(Uri.encode(entry.getKey()) + '/' + Uri.encode(substring, BridgeUtil.SPLIT_MARK)).build();
+                return new Uri.Builder().scheme("content").authority(this.f25230a).encodedPath(Uri.encode(entry.getKey()) + '/' + Uri.encode(substring, "/")).build();
             } catch (IOException e) {
                 throw new IllegalArgumentException("Failed to resolve canonical path for " + file);
             }
@@ -239,13 +238,13 @@ public class FileProvider extends ContentProvider {
 
     private static a b(Context context, String str) {
         a aVar;
-        synchronized (f38920c) {
-            a aVar2 = f38920c.get(str);
+        synchronized (f25229c) {
+            a aVar2 = f25229c.get(str);
             aVar = aVar2;
             if (aVar2 == null) {
                 try {
                     aVar = c(context, str);
-                    f38920c.put(str, aVar);
+                    f25229c.put(str, aVar);
                 } catch (IOException e) {
                     throw new IllegalArgumentException("Failed to parse android.support.FILE_PROVIDER_PATHS meta-data", e);
                 } catch (XmlPullParserException e2) {
@@ -343,7 +342,7 @@ public class FileProvider extends ContentProvider {
         File a2 = this.d.a(uri);
         String[] strArr3 = strArr;
         if (strArr == null) {
-            strArr3 = f38919a;
+            strArr3 = f25228a;
         }
         String[] strArr4 = new String[strArr3.length];
         Object[] objArr = new Object[strArr3.length];

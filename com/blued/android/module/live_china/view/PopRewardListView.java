@@ -92,9 +92,7 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
     private View X;
     private View Y;
     private TextView Z;
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f15201a;
+    public View a;
     private View aa;
     private RewardListAdapter ab;
     private LiveRewardModel ac;
@@ -104,9 +102,7 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
     private LiveRewardExtraModel ag;
     private OnPopEventCallBack ah;
     public LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15202c;
+    private View c;
     private View d;
     private Context e;
     private BaseFragment f;
@@ -253,16 +249,16 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
         }
         this.b = LayoutInflater.from(context);
         i();
-        View findViewById = this.f15201a.findViewById(R.id.tv_bg);
-        this.f15202c = findViewById;
+        View findViewById = this.a.findViewById(R.id.tv_bg);
+        this.c = findViewById;
         findViewById.setBackgroundColor(this.e.getResources().getColor(R.color.transparent));
-        this.f15202c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopRewardListView.1
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopRewardListView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
             }
         });
-        View findViewById2 = this.f15201a.findViewById(R.id.ll_content);
+        View findViewById2 = this.a.findViewById(R.id.ll_content);
         this.d = findViewById2;
         findViewById2.setVisibility(8);
         this.d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopRewardListView.2
@@ -271,37 +267,37 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
                 Tracker.onClick(view);
             }
         });
-        View findViewById3 = this.f15201a.findViewById(R.id.ll_identify);
+        View findViewById3 = this.a.findViewById(R.id.ll_identify);
         this.Q = findViewById3;
         findViewById3.setVisibility(8);
-        this.R = (ImageView) this.f15201a.findViewById(R.id.iv_close);
-        this.S = (ImageView) this.f15201a.findViewById(R.id.sm_refresh);
-        this.T = (SmCaptchaWebView) this.f15201a.findViewById(R.id.sm_captch);
+        this.R = (ImageView) this.a.findViewById(R.id.iv_close);
+        this.S = (ImageView) this.a.findViewById(R.id.sm_refresh);
+        this.T = this.a.findViewById(R.id.sm_captch);
         this.Q.post(new Runnable() { // from class: com.blued.android.module.live_china.view.PopRewardListView.3
             @Override // java.lang.Runnable
             public void run() {
                 PopRewardListView.this.s();
             }
         });
-        this.X = this.f15201a.findViewById(R.id.ll_word_tip);
-        this.Y = this.f15201a.findViewById(R.id.iv_word_tip_close);
-        TextView textView = (TextView) this.f15201a.findViewById(R.id.tv_word_tip_content);
+        this.X = this.a.findViewById(R.id.ll_word_tip);
+        this.Y = this.a.findViewById(R.id.iv_word_tip_close);
+        TextView textView = (TextView) this.a.findViewById(R.id.tv_word_tip_content);
         this.Z = textView;
         textView.setText(String.format(this.e.getString(R.string.live_reward_receive_content), this.ac.pwd));
-        this.aa = this.f15201a.findViewById(R.id.tv_word_tip_ok);
-        MyPopupWindow myPopupWindow = new MyPopupWindow(this.f15201a, -1, -1, true);
+        this.aa = this.a.findViewById(R.id.tv_word_tip_ok);
+        MyPopupWindow myPopupWindow = new MyPopupWindow(this.a, -1, -1, true);
         this.l = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.e.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.e.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.l.setTouchable(true);
         this.l.setOutsideTouchable(true);
         this.l.setFocusable(true);
         this.l.update();
         this.ab = new RewardListAdapter(this.f, this);
-        this.p = (LayoutInflater) this.e.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.m = (ImageView) this.f15201a.findViewById(R.id.live_reward_close);
-        this.n = (RenrenPullToRefreshListView) this.f15201a.findViewById(R.id.live_reward_list);
-        this.t = this.f15201a.findViewById(R.id.live_reward_list_seat);
-        this.s = (ViewGroup) this.f15201a.findViewById(R.id.live_reward_title);
+        this.p = (LayoutInflater) this.e.getSystemService("layout_inflater");
+        this.m = (ImageView) this.a.findViewById(R.id.live_reward_close);
+        this.n = (RenrenPullToRefreshListView) this.a.findViewById(R.id.live_reward_list);
+        this.t = this.a.findViewById(R.id.live_reward_list_seat);
+        this.s = (ViewGroup) this.a.findViewById(R.id.live_reward_title);
         this.n.setRefreshEnabled(false);
         this.n.setOnPullDownListener(this);
         ListView listView = (ListView) this.n.getRefreshableView();
@@ -309,7 +305,7 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
         listView.setDivider(null);
         this.o.setAdapter((ListAdapter) this.ab);
         this.q = (FrameLayout) this.p.inflate(R.layout.pop_reward_list_header, (ViewGroup) this.o, false);
-        this.r = this.f15201a.findViewById(R.id.pop_reward_list_footer);
+        this.r = this.a.findViewById(R.id.pop_reward_list_footer);
         this.u = (FrameLayout) this.q.findViewById(R.id.reward_get_layout);
         this.v = (ImageView) this.q.findViewById(R.id.reward_get_bg);
         this.w = (ImageView) this.q.findViewById(R.id.reward_get_header);
@@ -384,18 +380,18 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
     /* JADX INFO: Access modifiers changed from: private */
     public void s() {
         String string = this.e.getString(R.string.biao_v1_lr_ver_sm_captcha);
-        int a2 = DensityUtils.a(this.e, 300.0f);
-        int i = (int) ((a2 / 300.0d) * 234.0d);
+        int a = DensityUtils.a(this.e, 300.0f);
+        int i = (int) ((a / 300.0d) * 234.0d);
         ViewGroup.LayoutParams layoutParams = this.T.getLayoutParams();
-        layoutParams.width = a2;
+        layoutParams.width = a;
         layoutParams.height = i;
         this.T.setLayoutParams(layoutParams);
         SmCaptchaWebView.SmOption smOption = new SmCaptchaWebView.SmOption();
         this.V = smOption;
         smOption.setOrganization("qRLrIEyYwqE1vOhOACQy");
-        this.V.setMode(SmCaptchaWebView.MODE_SLIDE);
+        this.V.setMode("slide");
         this.V.setAppId("1");
-        this.V.setChannel(AppInfo.f9487c);
+        this.V.setChannel(AppInfo.c);
         if (!BlueAppLocal.d()) {
             HashMap hashMap = new HashMap();
             hashMap.put("lang", "en");
@@ -406,15 +402,12 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
         }
         this.T.setBackgroundColor(0);
         this.U = new SmCaptchaWebView.ResultListener() { // from class: com.blued.android.module.live_china.view.PopRewardListView.9
-            @Override // com.ishumei.sdk.captcha.SmCaptchaWebView.ResultListener
             public void onError(int i2) {
             }
 
-            @Override // com.ishumei.sdk.captcha.SmCaptchaWebView.ResultListener
             public void onReady() {
             }
 
-            @Override // com.ishumei.sdk.captcha.SmCaptchaWebView.ResultListener
             public void onSuccess(CharSequence charSequence, boolean z) {
                 EventTrackLive.a(LiveProtos.Event.LIVE_REDVERIFY_CONFIRM, String.valueOf(PopRewardListView.this.k), PopRewardListView.this.af, z);
                 PopRewardListView.this.W = charSequence.toString();
@@ -518,17 +511,17 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
             EventTrackLive.a(LiveProtos.Event.LIVE_REDVERIFY_CONFIRM_RED_RESULT, String.valueOf(this.k), this.af, false);
         }
         this.B.setVisibility(8);
-        Pair<Integer, String> a2 = BluedHttpUtils.a(th, i, str);
-        if (a2.first.intValue() == 4032014) {
+        Pair<Integer, String> a = BluedHttpUtils.a(th, i, str);
+        if (((Integer) a.first).intValue() == 4032014) {
             this.u.setVisibility(0);
             this.z.setVisibility(0);
             this.A.setVisibility(0);
             this.d.setVisibility(0);
             this.Q.setVisibility(8);
-        } else if (a2.first.intValue() == 4032015) {
+        } else if (((Integer) a.first).intValue() == 4032015) {
             m();
             AppMethods.a((CharSequence) this.e.getString(R.string.live_live_receive_conditions_toast), true);
-        } else if (a2.first.intValue() == 4032021) {
+        } else if (((Integer) a.first).intValue() == 4032021) {
             EventTrackLive.a(LiveProtos.Event.LIVE_REDVERIFY_SHOW, String.valueOf(this.k), this.af);
             AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.PopRewardListView.8
                 @Override // java.lang.Runnable
@@ -538,7 +531,7 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
                     PopRewardListView.this.t();
                 }
             }, 300L);
-        } else if (a2.first.intValue() == 4032022) {
+        } else if (((Integer) a.first).intValue() == 4032022) {
             this.d.setVisibility(8);
             this.Q.setVisibility(0);
             this.T.reloadCaptcha();
@@ -620,9 +613,9 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
             return;
         }
         if (LiveFloatManager.a().C()) {
-            this.f15201a = this.b.inflate(R.layout.pop_reward_list_center, (ViewGroup) null);
+            this.a = this.b.inflate(R.layout.pop_reward_list_center, (ViewGroup) null);
         } else {
-            this.f15201a = this.b.inflate(R.layout.pop_reward_list, (ViewGroup) null);
+            this.a = this.b.inflate(R.layout.pop_reward_list, (ViewGroup) null);
         }
     }
 
@@ -663,7 +656,7 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
     }
 
     public void k() {
-        this.f15202c.clearAnimation();
+        this.c.clearAnimation();
         this.d.clearAnimation();
         if (this.l.isShowing()) {
             this.l.a();
@@ -690,7 +683,7 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
             public void onAnimationStart(Animation animation) {
             }
         });
-        this.f15202c.startAnimation(alphaAnimation);
+        this.c.startAnimation(alphaAnimation);
     }
 
     public void m() {
@@ -714,7 +707,7 @@ public class PopRewardListView implements View.OnClickListener, RenrenPullToRefr
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.5f, 0.0f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
-        this.f15202c.startAnimation(alphaAnimation);
+        this.c.startAnimation(alphaAnimation);
         this.d.startAnimation(AnimationUtils.loadAnimation(this.e, R.anim.push_center_out));
     }
 

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class UserinfoVipBgBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29609a;
+    private final FrameLayout f15919a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29609a;
+        return this.f15919a;
     }
 }

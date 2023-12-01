@@ -1,8 +1,7 @@
 package com.heytap.baselib.utils;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/heytap/baselib/utils/IDResult.class */
-public class IDResult {
+class IDResult {
     String mResult;
     int retCode;
 

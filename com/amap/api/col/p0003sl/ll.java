@@ -10,12 +10,8 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ll.class */
 public final class ll {
     private mp b;
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<mq> f5370a = new ArrayList();
-
-    /* renamed from: c  reason: collision with root package name */
-    private ArrayList<mq> f5371c = new ArrayList<>();
+    private List<mq> a = new ArrayList();
+    private ArrayList<mq> c = new ArrayList<>();
 
     private static List<mq> a(List<mq> list) {
         ArrayList arrayList = new ArrayList();
@@ -28,7 +24,7 @@ public final class ll {
                 return arrayList;
             }
             mq mqVar = list.get(i2);
-            hashMap.put(Integer.valueOf(mqVar.f5388c), mqVar);
+            hashMap.put(Integer.valueOf(mqVar.c), mqVar);
             i = i2 + 1;
         }
     }
@@ -67,11 +63,11 @@ public final class ll {
         }
         HashMap hashMap = new HashMap(list.size());
         for (mq mqVar : list) {
-            hashMap.put(Long.valueOf(mqVar.f5387a), 1);
+            hashMap.put(Long.valueOf(mqVar.a), 1);
         }
         int i = 0;
         for (mq mqVar2 : list2) {
-            if (((Integer) hashMap.get(Long.valueOf(mqVar2.f5387a))) != null) {
+            if (((Integer) hashMap.get(Long.valueOf(mqVar2.a))) != null) {
                 i++;
             }
         }
@@ -81,7 +77,7 @@ public final class ll {
     private List<mq> b(List<mq> list) {
         Collections.sort(list, new Comparator<mq>() { // from class: com.amap.api.col.3sl.ll.1
             private static int a(mq mqVar, mq mqVar2) {
-                return mqVar2.f5388c - mqVar.f5388c;
+                return mqVar2.c - mqVar.c;
             }
 
             @Override // java.util.Comparator
@@ -123,10 +119,10 @@ public final class ll {
                     z2 = false;
                     if (list.size() > 0) {
                         if (this.b != null) {
-                            boolean a2 = a(mpVar);
-                            z2 = a2;
-                            if (!a2) {
-                                return !a(list, this.f5370a);
+                            boolean a = a(mpVar);
+                            z2 = a;
+                            if (!a) {
+                                return !a(list, this.a);
                             }
                         } else {
                             z2 = true;
@@ -142,11 +138,11 @@ public final class ll {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final List<mq> a(mp mpVar, List<mq> list, boolean z, long j, long j2) {
         if (b(mpVar, list, z, j, j2)) {
-            b(this.f5371c, list);
-            this.f5370a.clear();
-            this.f5370a.addAll(list);
+            b(this.c, list);
+            this.a.clear();
+            this.a.addAll(list);
             this.b = mpVar;
-            return this.f5371c;
+            return this.c;
         }
         return null;
     }

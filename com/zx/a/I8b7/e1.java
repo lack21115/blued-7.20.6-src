@@ -9,11 +9,11 @@ import java.util.Map;
 public class e1 implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final b1 f42120a;
+    public final b1 f28429a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f42121c;
+    public final String f28430c;
     public final Map<String, List<String>> d;
     public final f1 e;
 
@@ -21,11 +21,11 @@ public class e1 implements Closeable {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public b1 f42122a;
+        public b1 f28431a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f42123c;
+        public String f28432c;
         public Map<String, List<String>> d;
         public f1 e;
 
@@ -36,17 +36,17 @@ public class e1 implements Closeable {
 
         public a(e1 e1Var) {
             this.b = -1;
-            this.f42122a = e1Var.f42120a;
+            this.f28431a = e1Var.f28429a;
             this.b = e1Var.b;
-            this.f42123c = e1Var.f42121c;
+            this.f28432c = e1Var.f28430c;
             this.d = new HashMap(e1Var.d);
             this.e = e1Var.e;
         }
 
         public e1 a() {
-            if (this.f42122a != null) {
+            if (this.f28431a != null) {
                 if (this.b >= 0) {
-                    if (this.f42123c != null) {
+                    if (this.f28432c != null) {
                         return new e1(this);
                     }
                     throw new IllegalStateException("message == null");
@@ -60,9 +60,9 @@ public class e1 implements Closeable {
     }
 
     public e1(a aVar) {
-        this.f42120a = aVar.f42122a;
+        this.f28429a = aVar.f28431a;
         this.b = aVar.b;
-        this.f42121c = aVar.f42123c;
+        this.f28430c = aVar.f28432c;
         this.d = new HashMap(aVar.d);
         this.e = aVar.e;
     }

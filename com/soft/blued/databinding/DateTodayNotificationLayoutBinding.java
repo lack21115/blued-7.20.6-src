@@ -14,11 +14,11 @@ import com.soft.blued.R;
 public final class DateTodayNotificationLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f28692a;
+    public final ConstraintLayout f15002a;
     public final FrameLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f28693c;
+    public final FrameLayout f15003c;
     public final FrameLayout d;
     public final FrameLayout e;
     public final ImageView f;
@@ -31,9 +31,9 @@ public final class DateTodayNotificationLayoutBinding implements ViewBinding {
 
     private DateTodayNotificationLayoutBinding(ShapeConstraintLayout shapeConstraintLayout, ConstraintLayout constraintLayout, FrameLayout frameLayout, FrameLayout frameLayout2, FrameLayout frameLayout3, FrameLayout frameLayout4, ImageView imageView, ImageView imageView2, ImageView imageView3, RelativeLayout relativeLayout, ShapeConstraintLayout shapeConstraintLayout2, TextView textView) {
         this.l = shapeConstraintLayout;
-        this.f28692a = constraintLayout;
+        this.f15002a = constraintLayout;
         this.b = frameLayout;
-        this.f28693c = frameLayout2;
+        this.f15003c = frameLayout2;
         this.d = frameLayout3;
         this.e = frameLayout4;
         this.f = imageView;
@@ -62,13 +62,13 @@ public final class DateTodayNotificationLayoutBinding implements ViewBinding {
                                 if (imageView2 != null) {
                                     ImageView imageView3 = (ImageView) view.findViewById(R.id.img_notification_bg);
                                     if (imageView3 != null) {
-                                        RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(2131369318);
+                                        RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_header);
                                         if (relativeLayout != null) {
-                                            ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(2131369470);
-                                            if (shapeConstraintLayout != null) {
-                                                TextView textView = (TextView) view.findViewById(2131372876);
+                                            ShapeConstraintLayout findViewById = view.findViewById(2131369470);
+                                            if (findViewById != null) {
+                                                TextView textView = (TextView) view.findViewById(R.id.tv_user_info);
                                                 if (textView != null) {
-                                                    return new DateTodayNotificationLayoutBinding((ShapeConstraintLayout) view, constraintLayout, frameLayout, frameLayout2, frameLayout3, frameLayout4, imageView, imageView2, imageView3, relativeLayout, shapeConstraintLayout, textView);
+                                                    return new DateTodayNotificationLayoutBinding((ShapeConstraintLayout) view, constraintLayout, frameLayout, frameLayout2, frameLayout3, frameLayout4, imageView, imageView2, imageView3, relativeLayout, findViewById, textView);
                                                 }
                                                 str = "tvUserInfo";
                                             } else {

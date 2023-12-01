@@ -6,10 +6,10 @@ import com.bumptech.glide.ListPreloader;
 public class FixedPreloadSizeProvider<T> implements ListPreloader.PreloadSizeProvider<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int[] f21102a;
+    private final int[] f7496a;
 
     @Override // com.bumptech.glide.ListPreloader.PreloadSizeProvider
     public int[] a(T t, int i, int i2) {
-        return this.f21102a;
+        return this.f7496a;
     }
 }

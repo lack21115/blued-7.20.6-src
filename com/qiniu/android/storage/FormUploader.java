@@ -2,7 +2,6 @@ package com.qiniu.android.storage;
 
 import android.os.Process;
 import android.util.Log;
-import com.alipay.sdk.cons.c;
 import com.qiniu.android.collect.LogHandler;
 import com.qiniu.android.collect.UploadInfo;
 import com.qiniu.android.collect.UploadInfoElementCollector;
@@ -19,9 +18,8 @@ import java.io.File;
 import java.io.IOException;
 import org.json.JSONObject;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/qiniu/android/storage/FormUploader.class */
-public final class FormUploader {
+final class FormUploader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.qiniu.android.storage.FormUploader$2  reason: invalid class name */
@@ -146,7 +144,7 @@ public final class FormUploader {
         postArgs.params = stringMap;
         String upHost = configuration.zone.upHost(upToken.token, configuration.useHttps, (String) null);
         logHandler.send("target_key", str);
-        logHandler.send("up_type", c.f4616c);
+        logHandler.send("up_type", "form");
         logHandler.send("tid", Long.valueOf(Process.myTid()));
         UpToken.setCurrent_region_id(logHandler, upHost);
         logHandler.send("target_region_id", DnsPrefetcher.target_region_id);
@@ -209,7 +207,7 @@ public final class FormUploader {
         if (configuration.zone.preQuery(uplogHandler, upToken.token)) {
             String upHost = configuration.zone.upHost(upToken.token, configuration.useHttps, (String) null);
             logHandler.send("target_key", str);
-            logHandler.send("up_type", c.f4616c);
+            logHandler.send("up_type", "form");
             logHandler.send("tid", Long.valueOf(Process.myTid()));
             UpToken.setCurrent_region_id(logHandler, upHost);
             logHandler.send("target_region_id", DnsPrefetcher.target_region_id);

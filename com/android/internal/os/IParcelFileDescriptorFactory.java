@@ -42,10 +42,10 @@ public interface IParcelFileDescriptorFactory extends IInterface {
                     obtain.writeInt(i);
                     this.mRemote.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
-                    ParcelFileDescriptor createFromParcel = obtain2.readInt() != 0 ? ParcelFileDescriptor.CREATOR.createFromParcel(obtain2) : null;
+                    ParcelFileDescriptor parcelFileDescriptor = obtain2.readInt() != 0 ? (ParcelFileDescriptor) ParcelFileDescriptor.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return parcelFileDescriptor;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -85,7 +85,7 @@ public interface IParcelFileDescriptorFactory extends IInterface {
                     parcel2.writeInt(1);
                     open.writeToParcel(parcel2, 1);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

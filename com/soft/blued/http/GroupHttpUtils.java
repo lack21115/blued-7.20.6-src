@@ -2,14 +2,13 @@ package com.soft.blued.http;
 
 import android.content.Context;
 import android.provider.SearchIndexablesContract;
-import com.amap.api.services.district.DistrictSearchQuery;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedHttpTools;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.module.common.url.BluedHttpUrl;
 import com.blued.android.module.common.utils.CommonPreferences;
+import com.cdo.oaps.ad.OapsKey;
 import com.sina.weibo.sdk.constant.WBPageConstants;
 import com.soft.blued.utils.Logger;
 import com.soft.blued.utils.StringUtils;
@@ -19,54 +18,54 @@ import java.util.Map;
 public class GroupHttpUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f29658a = GroupHttpUtils.class.getSimpleName();
+    private static final String f15968a = GroupHttpUtils.class.getSimpleName();
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
         HttpManager.a(BluedHttpUrl.q() + "/blued/qiniu?filter=token&action=groups&gid=" + str, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).h();
     }
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("filter", str2);
         HttpManager.a(BluedHttpUrl.q() + "/groups/" + str, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        a2.put("size", str3);
+        a2.put(OapsKey.KEY_SIZE, str3);
         HttpManager.a(BluedHttpUrl.q() + "/groups/users/" + str + "/information", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, String str4, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put(SearchIndexablesContract.RawData.COLUMN_KEYWORDS, str);
         a2.put("sort", str2);
         a2.put(WBPageConstants.ParamKey.PAGE, str3);
-        a2.put("size", str4);
+        a2.put(OapsKey.KEY_SIZE, str4);
         HttpManager.a(BluedHttpUrl.q() + "/groups/search", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, String str4, String str5, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         if (!StringUtils.d(str2)) {
             a2.put("name", str);
         }
         a2.put("description", str2);
-        a2.put(DistrictSearchQuery.KEYWORDS_CITY, str3);
+        a2.put("city", str3);
         a2.put("longitude", str4);
         a2.put("latitude", str5);
         HttpManager.b(BluedHttpUrl.q() + "/groups", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String[] strArr, IRequestHost iRequestHost) {
-        Map<String, String[]> c2 = BluedHttpTools.c();
+        Map c2 = BluedHttpTools.c();
         c2.put("target_id", strArr);
-        HttpManager.b(BluedHttpUrl.q() + "/groups/" + str + "/members?http_method_override=DELETE", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a((Map<String, ?>) c2)).h();
+        HttpManager.b(BluedHttpUrl.q() + "/groups/" + str + "/members?http_method_override=DELETE", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(c2)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, Object obj, IRequestHost iRequestHost) {
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("groups", obj);
         HttpManager.b(BluedHttpUrl.q() + "/groups/users/" + str + "/setting?http_method_override=PUT", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
@@ -79,12 +78,12 @@ public class GroupHttpUtils {
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String[] strArr, boolean z) {
         String str2 = BluedHttpUrl.q() + "/groups/" + str + "/members";
         if (!z) {
-            Map<String, String> a2 = BluedHttpTools.a();
+            Map a2 = BluedHttpTools.a();
             a2.put("target_id", strArr[0]);
             HttpManager.b(str2, bluedUIHttpResponse).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
             return;
         }
-        Map<String, String[]> c2 = BluedHttpTools.c();
+        Map c2 = BluedHttpTools.c();
         c2.put("target_id", strArr);
         if (strArr != null && strArr.length > 0) {
             int i = 0;
@@ -93,33 +92,33 @@ public class GroupHttpUtils {
                 if (i2 >= strArr.length) {
                     break;
                 }
-                Logger.b(f29658a, "inGroupForInvite  group   target_id", Integer.valueOf(i2), ":", strArr[i2]);
+                Logger.b(f15968a, "inGroupForInvite  group   target_id", Integer.valueOf(i2), ":", strArr[i2]);
                 i = i2 + 1;
             }
         }
-        HttpManager.b(str2, bluedUIHttpResponse).b(BluedHttpTools.a(true)).a(BluedHttpTools.a((Map<String, ?>) c2)).h();
+        HttpManager.b(str2, bluedUIHttpResponse).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(c2)).h();
     }
 
     public static void b(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         HttpManager.a(BluedHttpUrl.q() + "/groups/" + str + "/me", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void b(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("message", str2);
         HttpManager.b(BluedHttpUrl.q() + "/groups/" + str + "/members", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void b(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put(SearchIndexablesContract.RawData.COLUMN_KEYWORDS, str2);
         a2.put("filter", str3);
         HttpManager.a(BluedHttpUrl.q() + "/groups/" + str + "/members/search", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void b(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, String str4, String str5, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         if (!StringUtils.d(str2)) {
             a2.put("name", str2);
         }
@@ -127,7 +126,7 @@ public class GroupHttpUtils {
             a2.put("description", str3);
         }
         if (!StringUtils.d(str4)) {
-            a2.put(DistrictSearchQuery.KEYWORDS_CITY, str4);
+            a2.put("city", str4);
         }
         if (!StringUtils.d(str5)) {
             a2.put("type", str5);
@@ -136,7 +135,7 @@ public class GroupHttpUtils {
     }
 
     public static void c(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         if (!StringUtils.d(str)) {
             a2.put("name", str);
         }
@@ -148,23 +147,23 @@ public class GroupHttpUtils {
     }
 
     public static void c(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("members", str2);
         a2.put("is_vip", str3);
         HttpManager.a(BluedHttpUrl.q() + "/groups/" + str + "/members/upgrade", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void c(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, String str4, String str5, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("sort", str2);
         a2.put(WBPageConstants.ParamKey.PAGE, str3);
-        a2.put("size", str4);
+        a2.put(OapsKey.KEY_SIZE, str4);
         a2.put("filter", str5);
         HttpManager.a(BluedHttpUrl.q() + "/groups/" + str + "/members", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void d(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         if (!StringUtils.d(str)) {
             a2.put("description", str);
         }
@@ -172,23 +171,23 @@ public class GroupHttpUtils {
     }
 
     public static void d(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("iid", str2);
         HttpManager.b(BluedHttpUrl.q() + "/groups/users/" + str + "/information", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void d(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("iid", str2);
         a2.put("filter", str3);
         HttpManager.b(BluedHttpUrl.q() + "/groups/users/" + str + "/information", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void d(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, String str4, String str5, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("filter", str);
         a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        a2.put("size", str3);
+        a2.put(OapsKey.KEY_SIZE, str3);
         a2.put("location", str4);
         a2.put("type", str5);
         HttpManager.a(BluedHttpUrl.q() + "/groups", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
@@ -199,10 +198,10 @@ public class GroupHttpUtils {
     }
 
     public static void e(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("filter", "location");
         a2.put(WBPageConstants.ParamKey.PAGE, str);
-        a2.put("size", str2);
+        a2.put(OapsKey.KEY_SIZE, str2);
         a2.put("location", "");
         a2.put("type", "");
         a2.put("sort", "distance");
@@ -216,53 +215,53 @@ public class GroupHttpUtils {
     }
 
     public static void f(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("reason", str2);
         HttpManager.b(BluedHttpUrl.q() + "/blued/objectionable/groups/" + str, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void g(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         HttpManager.a(BluedHttpUrl.q() + "/groups/users/" + str, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void g(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("target_id", str2);
         HttpManager.b(BluedHttpUrl.q() + "/groups/" + str + "/admins", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void h(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         HttpManager.a(BluedHttpUrl.q() + "/groups/" + str + "/admins", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void h(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("target_id", str2);
         HttpManager.b(BluedHttpUrl.q() + "/groups/" + str + "/admins?http_method_override=DELETE", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void i(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("filter", str);
         a2.put("return", "force");
         HttpManager.a(BluedHttpUrl.q() + "/groups/classify", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void i(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         HttpManager.b(BluedHttpUrl.q() + "/groups/users/" + str + "/information/" + str2 + "?http_method_override=PUT", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void j(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         HttpManager.b(BluedHttpUrl.q() + "/groups/users/" + str + "/information/clean", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void j(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(ReqAckPackage.REQ_RESPONSE_KEY.AVATAR, str);
+        Map a2 = BluedHttpTools.a();
+        a2.put("avatar", str);
         a2.put("gid", str2);
         HttpManager.b(BluedHttpUrl.q() + "/groups/" + str2 + "/attachments", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }

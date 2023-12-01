@@ -9,11 +9,11 @@ import android.text.TextUtils;
 public class b implements IInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private IBinder f39000a;
+    private IBinder f25309a;
     private String b;
 
     private b(IBinder iBinder, String str) {
-        this.f39000a = iBinder;
+        this.f25309a = iBinder;
         this.b = str;
     }
 
@@ -40,7 +40,7 @@ public class b implements IInterface {
             if (!TextUtils.isEmpty(str3)) {
                 obtain.writeString(str3);
             }
-            this.f39000a.transact(i, obtain, obtain2, 0);
+            this.f25309a.transact(i, obtain, obtain2, 0);
             obtain2.readException();
             return obtain2.readString();
         } catch (Throwable th) {
@@ -56,6 +56,6 @@ public class b implements IInterface {
 
     @Override // android.os.IInterface
     public IBinder asBinder() {
-        return this.f39000a;
+        return this.f25309a;
     }
 }

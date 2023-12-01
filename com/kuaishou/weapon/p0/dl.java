@@ -8,7 +8,7 @@ import android.os.Process;
 public final class dl {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f23826a;
+    private static a f10218a;
 
     /* loaded from: source-7994992-dex2jar.jar:com/kuaishou/weapon/p0/dl$a.class */
     public enum a {
@@ -34,7 +34,7 @@ public final class dl {
 
     private static a c(Context context) {
         a aVar;
-        a aVar2 = f23826a;
+        a aVar2 = f10218a;
         if (aVar2 != null) {
             return aVar2;
         }
@@ -43,26 +43,26 @@ public final class dl {
                 if (Build.VERSION.SDK_INT >= 21) {
                     try {
                         Class<?> cls = Class.forName("dalvik.system.VMRuntime");
-                        f23826a = ((Boolean) cls.getDeclaredMethod("is64Bit", new Class[0]).invoke(cls.getDeclaredMethod("getRuntime", new Class[0]).invoke(cls, new Object[0]), new Object[0])).booleanValue() ? a.ARM64_V8A : a.ARMEABI_V7A;
+                        f10218a = ((Boolean) cls.getDeclaredMethod("is64Bit", new Class[0]).invoke(cls.getDeclaredMethod("getRuntime", new Class[0]).invoke(cls, new Object[0]), new Object[0])).booleanValue() ? a.ARM64_V8A : a.ARMEABI_V7A;
                     } catch (Throwable th) {
                         th.printStackTrace();
                         try {
-                            f23826a = context.getApplicationInfo().nativeLibraryDir.contains("arm64") ? a.ARM64_V8A : a.UNKNOWN;
+                            f10218a = context.getApplicationInfo().nativeLibraryDir.contains("arm64") ? a.ARM64_V8A : a.UNKNOWN;
                         } catch (Throwable th2) {
                             th2.printStackTrace();
                             aVar = a.UNKNOWN;
                         }
                     }
                 }
-                return f23826a;
+                return f10218a;
             } else if (Process.is64Bit()) {
                 aVar = a.ARM64_V8A;
             }
-            f23826a = aVar;
-            return f23826a;
+            f10218a = aVar;
+            return f10218a;
         }
         aVar = a.ARMEABI_V7A;
-        f23826a = aVar;
-        return f23826a;
+        f10218a = aVar;
+        return f10218a;
     }
 }

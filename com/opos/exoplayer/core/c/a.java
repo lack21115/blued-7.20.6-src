@@ -7,22 +7,22 @@ import com.opos.exoplayer.core.i.u;
 public final class a implements l {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f25079a;
+    public final int f11391a;
     public final int[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final long[] f25080c;
+    public final long[] f11392c;
     public final long[] d;
     public final long[] e;
     private final long f;
 
     public a(int[] iArr, long[] jArr, long[] jArr2, long[] jArr3) {
         this.b = iArr;
-        this.f25080c = jArr;
+        this.f11392c = jArr;
         this.d = jArr2;
         this.e = jArr3;
         int length = iArr.length;
-        this.f25079a = length;
+        this.f11391a = length;
         if (length > 0) {
             this.f = jArr2[length - 1] + jArr3[length - 1];
         } else {
@@ -47,11 +47,11 @@ public final class a implements l {
     @Override // com.opos.exoplayer.core.c.l
     public l.a b(long j) {
         int a2 = a(j);
-        m mVar = new m(this.e[a2], this.f25080c[a2]);
-        if (mVar.b >= j || a2 == this.f25079a - 1) {
+        m mVar = new m(this.e[a2], this.f11392c[a2]);
+        if (mVar.b >= j || a2 == this.f11391a - 1) {
             return new l.a(mVar);
         }
         int i = a2 + 1;
-        return new l.a(mVar, new m(this.e[i], this.f25080c[i]));
+        return new l.a(mVar, new m(this.e[i], this.f11392c[i]));
     }
 }

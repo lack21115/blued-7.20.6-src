@@ -27,19 +27,16 @@ public final class BlockRunner$maybeRun$1 extends SuspendLambda implements Funct
         this.this$0 = blockRunner;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        BlockRunner$maybeRun$1 blockRunner$maybeRun$1 = new BlockRunner$maybeRun$1(this.this$0, continuation);
+        Continuation<Unit> blockRunner$maybeRun$1 = new BlockRunner$maybeRun$1(this.this$0, continuation);
         blockRunner$maybeRun$1.L$0 = obj;
         return blockRunner$maybeRun$1;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((BlockRunner$maybeRun$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         CoroutineLiveData coroutineLiveData;
         Function2 function2;
@@ -62,6 +59,6 @@ public final class BlockRunner$maybeRun$1 extends SuspendLambda implements Funct
         }
         function0 = ((BlockRunner) this.this$0).onDone;
         function0.invoke();
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

@@ -20,7 +20,7 @@ public class ds {
         intent.putExtra("content_id", adContentData.S());
         intent.putExtra("sdk_version", "13.4.61.304");
         intent.putExtra(com.huawei.openalliance.ad.constant.at.e, adContentData.B());
-        intent.putExtra("request_id", adContentData.E());
+        intent.putExtra(com.huawei.openalliance.ad.constant.at.g, adContentData.E());
         intent.putExtra(com.huawei.openalliance.ad.constant.at.y, context.getPackageName());
         intent.putExtra(com.huawei.openalliance.ad.constant.at.N, adContentData.ao());
         intent.putExtra(com.huawei.openalliance.ad.constant.at.O, adContentData.ap());
@@ -37,7 +37,7 @@ public class ds {
             jSONObject.put(com.huawei.openalliance.ad.constant.at.k, adContentData.v());
             jSONObject.put("unique_id", adContentData.T());
             Code(jSONObject, fwVar);
-            com.huawei.openalliance.ad.ipc.h.Code(context, adContentData.ak()).Code(com.huawei.openalliance.ad.constant.p.f22952a, jSONObject.toString(), null, null);
+            com.huawei.openalliance.ad.ipc.h.Code(context, adContentData.ak()).Code(com.huawei.openalliance.ad.constant.p.f9344a, jSONObject.toString(), null, null);
         } catch (JSONException e) {
             ge.I(Code, "startAdActivityViaAidl, e:" + e.getClass().getSimpleName());
         }
@@ -104,7 +104,7 @@ public class ds {
         jSONObject.put("content_id", adContentData.S());
         jSONObject.put("sdk_version", "13.4.61.304");
         jSONObject.put(com.huawei.openalliance.ad.constant.at.e, adContentData.B());
-        jSONObject.put("request_id", adContentData.E());
+        jSONObject.put(com.huawei.openalliance.ad.constant.at.g, adContentData.E());
         jSONObject.put(com.huawei.openalliance.ad.constant.at.N, adContentData.ao());
         jSONObject.put(com.huawei.openalliance.ad.constant.at.O, adContentData.ap());
         jSONObject.put(com.huawei.openalliance.ad.constant.at.C, adContentData.az());

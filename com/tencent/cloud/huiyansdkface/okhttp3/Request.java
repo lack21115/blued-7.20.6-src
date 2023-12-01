@@ -14,11 +14,11 @@ import java.util.Map;
 public final class Request {
 
     /* renamed from: a  reason: collision with root package name */
-    final HttpUrl f35881a;
+    final HttpUrl f22190a;
     final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    final Headers f35882c;
+    final Headers f22191c;
     final RequestBody d;
     final Map<Class<?>, Object> e;
     private volatile CacheControl f;
@@ -27,38 +27,38 @@ public final class Request {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        HttpUrl f35883a;
+        HttpUrl f22192a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        Headers.Builder f35884c;
+        Headers.Builder f22193c;
         RequestBody d;
         Map<Class<?>, Object> e;
 
         public Builder() {
             this.e = Collections.emptyMap();
             this.b = "GET";
-            this.f35884c = new Headers.Builder();
+            this.f22193c = new Headers.Builder();
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Type inference failed for: r0v11, types: [java.util.Map] */
         Builder(Request request) {
             this.e = Collections.emptyMap();
-            this.f35883a = request.f35881a;
+            this.f22192a = request.f22190a;
             this.b = request.b;
             this.d = request.d;
             this.e = request.e.isEmpty() ? Collections.emptyMap() : new LinkedHashMap(request.e);
-            this.f35884c = request.f35882c.newBuilder();
+            this.f22193c = request.f22191c.newBuilder();
         }
 
         public Builder addHeader(String str, String str2) {
-            this.f35884c.add(str, str2);
+            this.f22193c.add(str, str2);
             return this;
         }
 
         public Request build() {
-            if (this.f35883a != null) {
+            if (this.f22192a != null) {
                 return new Request(this);
             }
             throw new IllegalStateException("url == null");
@@ -86,12 +86,12 @@ public final class Request {
         }
 
         public Builder header(String str, String str2) {
-            this.f35884c.set(str, str2);
+            this.f22193c.set(str, str2);
             return this;
         }
 
         public Builder headers(Headers headers) {
-            this.f35884c = headers.newBuilder();
+            this.f22193c = headers.newBuilder();
             return this;
         }
 
@@ -126,7 +126,7 @@ public final class Request {
         }
 
         public Builder removeHeader(String str) {
-            this.f35884c.removeAll(str);
+            this.f22193c.removeAll(str);
             return this;
         }
 
@@ -155,7 +155,7 @@ public final class Request {
 
         public Builder url(HttpUrl httpUrl) {
             if (httpUrl != null) {
-                this.f35883a = httpUrl;
+                this.f22192a = httpUrl;
                 return this;
             }
             throw new NullPointerException("url == null");
@@ -194,9 +194,9 @@ public final class Request {
     }
 
     Request(Builder builder) {
-        this.f35881a = builder.f35883a;
+        this.f22190a = builder.f22192a;
         this.b = builder.b;
-        this.f35882c = builder.f35884c.build();
+        this.f22191c = builder.f22193c.build();
         this.d = builder.d;
         this.e = Util.immutableMap(builder.e);
     }
@@ -210,25 +210,25 @@ public final class Request {
         if (cacheControl != null) {
             return cacheControl;
         }
-        CacheControl parse = CacheControl.parse(this.f35882c);
+        CacheControl parse = CacheControl.parse(this.f22191c);
         this.f = parse;
         return parse;
     }
 
     public String header(String str) {
-        return this.f35882c.get(str);
+        return this.f22191c.get(str);
     }
 
     public Headers headers() {
-        return this.f35882c;
+        return this.f22191c;
     }
 
     public List<String> headers(String str) {
-        return this.f35882c.values(str);
+        return this.f22191c.values(str);
     }
 
     public boolean isHttps() {
-        return this.f35881a.isHttps();
+        return this.f22190a.isHttps();
     }
 
     public String method() {
@@ -248,10 +248,10 @@ public final class Request {
     }
 
     public String toString() {
-        return "Request{method=" + this.b + ", url=" + this.f35881a + ", tags=" + this.e + '}';
+        return "Request{method=" + this.b + ", url=" + this.f22190a + ", tags=" + this.e + '}';
     }
 
     public HttpUrl url() {
-        return this.f35881a;
+        return this.f22190a;
     }
 }

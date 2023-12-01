@@ -1,13 +1,12 @@
 package okhttp3.internal.http2;
 
-import android.net.http.Headers;
-import android.provider.Downloads;
+import com.alipay.sdk.cons.b;
+import com.alipay.sdk.cons.c;
+import com.alipay.sdk.packet.e;
+import com.alipay.sdk.widget.j;
+import com.android.internal.util.cm.QSConstants;
 import com.anythink.core.api.ATCustomRuleKeys;
-import com.baidu.mobads.sdk.internal.ch;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.meizu.cloud.pushsdk.platform.message.BasicPushStatus;
-import com.ss.android.socialbase.downloader.utils.DownloadUtils;
-import com.tencent.tencentmap.mapsdk.maps.TencentMapServiceProtocol;
 import io.grpc.internal.GrpcUtil;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,20 +25,14 @@ import okio.Source;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Hpack.class */
 public final class Hpack {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final Header[] f43908a = {new Header(Header.f, ""), new Header(Header.f43907c, "GET"), new Header(Header.f43907c, "POST"), new Header(Header.d, BridgeUtil.SPLIT_MARK), new Header(Header.d, "/index.html"), new Header(Header.e, "http"), new Header(Header.e, "https"), new Header(Header.b, BasicPushStatus.SUCCESS_CODE), new Header(Header.b, "204"), new Header(Header.b, "206"), new Header(Header.b, "304"), new Header(Header.b, "400"), new Header(Header.b, ch.b), new Header(Header.b, "500"), new Header("accept-charset", ""), new Header(GrpcUtil.CONTENT_ACCEPT_ENCODING, "gzip, deflate"), new Header("accept-language", ""), new Header(Headers.ACCEPT_RANGES, ""), new Header("accept", ""), new Header("access-control-allow-origin", ""), new Header(ATCustomRuleKeys.AGE, ""), new Header("allow", ""), new Header(TencentMapServiceProtocol.SERVICE_NAME_AUTHORIZATION, ""), new Header("cache-control", ""), new Header(Headers.CONTENT_DISPOSITION, ""), new Header("content-encoding", ""), new Header("content-language", ""), new Header(Headers.CONTENT_LEN, ""), new Header("content-location", ""), new Header("content-range", ""), new Header("content-type", ""), new Header("cookie", ""), new Header("date", ""), new Header(Headers.ETAG, ""), new Header("expect", ""), new Header("expires", ""), new Header("from", ""), new Header("host", ""), new Header("if-match", ""), new Header(DownloadUtils.IF_MODIFIED_SINCE, ""), new Header("if-none-match", ""), new Header("if-range", ""), new Header("if-unmodified-since", ""), new Header("last-modified", ""), new Header("link", ""), new Header("location", ""), new Header("max-forwards", ""), new Header(Headers.PROXY_AUTHENTICATE, ""), new Header("proxy-authorization", ""), new Header("range", ""), new Header(Downloads.Impl.COLUMN_REFERER, ""), new Header("refresh", ""), new Header("retry-after", ""), new Header("server", ""), new Header(Headers.SET_COOKIE, ""), new Header("strict-transport-security", ""), new Header(Headers.TRANSFER_ENCODING, ""), new Header("user-agent", ""), new Header("vary", ""), new Header("via", ""), new Header(Headers.WWW_AUTHENTICATE, "")};
+    static final Header[] a = {new Header(Header.f, ""), new Header(Header.c, "GET"), new Header(Header.c, GrpcUtil.HTTP_METHOD), new Header(Header.d, BridgeUtil.SPLIT_MARK), new Header(Header.d, "/index.html"), new Header(Header.e, "http"), new Header(Header.e, b.a), new Header(Header.b, "200"), new Header(Header.b, "204"), new Header(Header.b, "206"), new Header(Header.b, "304"), new Header(Header.b, "400"), new Header(Header.b, "404"), new Header(Header.b, "500"), new Header("accept-charset", ""), new Header(GrpcUtil.CONTENT_ACCEPT_ENCODING, "gzip, deflate"), new Header("accept-language", ""), new Header("accept-ranges", ""), new Header("accept", ""), new Header("access-control-allow-origin", ""), new Header(ATCustomRuleKeys.AGE, ""), new Header("allow", ""), new Header("authorization", ""), new Header("cache-control", ""), new Header("content-disposition", ""), new Header(GrpcUtil.CONTENT_ENCODING, ""), new Header("content-language", ""), new Header("content-length", ""), new Header("content-location", ""), new Header("content-range", ""), new Header(e.d, ""), new Header("cookie", ""), new Header("date", ""), new Header("etag", ""), new Header("expect", ""), new Header("expires", ""), new Header("from", ""), new Header(c.f, ""), new Header("if-match", ""), new Header("if-modified-since", ""), new Header("if-none-match", ""), new Header("if-range", ""), new Header("if-unmodified-since", ""), new Header("last-modified", ""), new Header("link", ""), new Header(QSConstants.TILE_LOCATION, ""), new Header("max-forwards", ""), new Header("proxy-authenticate", ""), new Header("proxy-authorization", ""), new Header("range", ""), new Header("referer", ""), new Header(j.l, ""), new Header("retry-after", ""), new Header("server", ""), new Header("set-cookie", ""), new Header("strict-transport-security", ""), new Header("transfer-encoding", ""), new Header("user-agent", ""), new Header("vary", ""), new Header("via", ""), new Header("www-authenticate", "")};
     static final Map<ByteString, Integer> b = a();
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Hpack$Reader.class */
     static final class Reader {
-
-        /* renamed from: a  reason: collision with root package name */
-        Header[] f43909a;
+        Header[] a;
         int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        int f43910c;
+        int c;
         int d;
         private final List<Header> e;
         private final BufferedSource f;
@@ -49,9 +42,9 @@ public final class Hpack {
         Reader(int i, int i2, Source source) {
             this.e = new ArrayList();
             Header[] headerArr = new Header[8];
-            this.f43909a = headerArr;
+            this.a = headerArr;
             this.b = headerArr.length - 1;
-            this.f43910c = 0;
+            this.c = 0;
             this.d = 0;
             this.g = i;
             this.h = i2;
@@ -68,15 +61,15 @@ public final class Hpack {
             if (i > 0) {
                 int i3 = i;
                 int i4 = 0;
-                for (int length = this.f43909a.length - 1; length >= this.b && i3 > 0; length--) {
-                    i3 -= this.f43909a[length].i;
-                    this.d -= this.f43909a[length].i;
-                    this.f43910c--;
+                for (int length = this.a.length - 1; length >= this.b && i3 > 0; length--) {
+                    i3 -= this.a[length].i;
+                    this.d -= this.a[length].i;
+                    this.c--;
                     i4++;
                 }
-                Header[] headerArr = this.f43909a;
+                Header[] headerArr = this.a;
                 int i5 = this.b;
-                System.arraycopy(headerArr, i5 + 1, headerArr, i5 + 1 + i4, this.f43910c);
+                System.arraycopy(headerArr, i5 + 1, headerArr, i5 + 1 + i4, this.c);
                 this.b += i4;
                 i2 = i4;
             }
@@ -88,43 +81,43 @@ public final class Hpack {
             int i2 = header.i;
             int i3 = i2;
             if (i != -1) {
-                i3 = i2 - this.f43909a[c(i)].i;
+                i3 = i2 - this.a[c(i)].i;
             }
             int i4 = this.h;
             if (i3 > i4) {
                 e();
                 return;
             }
-            int a2 = a((this.d + i3) - i4);
+            int a = a((this.d + i3) - i4);
             if (i == -1) {
-                int i5 = this.f43910c;
-                Header[] headerArr = this.f43909a;
+                int i5 = this.c;
+                Header[] headerArr = this.a;
                 if (i5 + 1 > headerArr.length) {
                     Header[] headerArr2 = new Header[headerArr.length * 2];
                     System.arraycopy(headerArr, 0, headerArr2, headerArr.length, headerArr.length);
-                    this.b = this.f43909a.length - 1;
-                    this.f43909a = headerArr2;
+                    this.b = this.a.length - 1;
+                    this.a = headerArr2;
                 }
                 int i6 = this.b;
                 this.b = i6 - 1;
-                this.f43909a[i6] = header;
-                this.f43910c++;
+                this.a[i6] = header;
+                this.c++;
             } else {
-                this.f43909a[i + c(i) + a2] = header;
+                this.a[i + c(i) + a] = header;
             }
             this.d += i3;
         }
 
         private void b(int i) throws IOException {
             if (g(i)) {
-                this.e.add(Hpack.f43908a[i]);
+                this.e.add(Hpack.a[i]);
                 return;
             }
-            int c2 = c(i - Hpack.f43908a.length);
-            if (c2 >= 0) {
-                Header[] headerArr = this.f43909a;
-                if (c2 < headerArr.length) {
-                    this.e.add(headerArr[c2]);
+            int c = c(i - Hpack.a.length);
+            if (c >= 0) {
+                Header[] headerArr = this.a;
+                if (c < headerArr.length) {
+                    this.e.add(headerArr[c]);
                     return;
                 }
             }
@@ -152,9 +145,9 @@ public final class Hpack {
         }
 
         private void e() {
-            Arrays.fill(this.f43909a, (Object) null);
-            this.b = this.f43909a.length - 1;
-            this.f43910c = 0;
+            Arrays.fill(this.a, (Object) null);
+            this.b = this.a.length - 1;
+            this.c = 0;
             this.d = 0;
         }
 
@@ -164,13 +157,13 @@ public final class Hpack {
 
         private ByteString f(int i) throws IOException {
             if (g(i)) {
-                return Hpack.f43908a[i].g;
+                return Hpack.a[i].g;
             }
-            int c2 = c(i - Hpack.f43908a.length);
-            if (c2 >= 0) {
-                Header[] headerArr = this.f43909a;
-                if (c2 < headerArr.length) {
-                    return headerArr[c2].g;
+            int c = c(i - Hpack.a.length);
+            if (c >= 0) {
+                Header[] headerArr = this.a;
+                if (c < headerArr.length) {
+                    return headerArr[c].g;
                 }
             }
             throw new IOException("Header index too large " + (i + 1));
@@ -185,7 +178,7 @@ public final class Hpack {
         }
 
         private boolean g(int i) {
-            return i >= 0 && i <= Hpack.f43908a.length - 1;
+            return i >= 0 && i <= Hpack.a.length - 1;
         }
 
         private int h() throws IOException {
@@ -223,9 +216,9 @@ public final class Hpack {
                 } else if ((readByte & 64) == 64) {
                     e(a(readByte, 63) - 1);
                 } else if ((readByte & 32) == 32) {
-                    int a2 = a(readByte, 31);
-                    this.h = a2;
-                    if (a2 < 0 || a2 > this.g) {
+                    int a = a(readByte, 31);
+                    this.h = a;
+                    if (a < 0 || a > this.g) {
                         throw new IOException("Invalid dynamic table size update " + this.h);
                     }
                     d();
@@ -246,21 +239,17 @@ public final class Hpack {
         ByteString c() throws IOException {
             int h = h();
             boolean z = (h & 128) == 128;
-            int a2 = a(h, 127);
-            return z ? ByteString.of(Huffman.a().a(this.f.readByteArray(a2))) : this.f.readByteString(a2);
+            int a = a(h, 127);
+            return z ? ByteString.of(Huffman.a().a(this.f.readByteArray(a))) : this.f.readByteString(a);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Hpack$Writer.class */
     public static final class Writer {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f43911a;
+        int a;
         int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        Header[] f43912c;
+        Header[] c;
         int d;
         int e;
         int f;
@@ -272,11 +261,11 @@ public final class Hpack {
         Writer(int i, boolean z, Buffer buffer) {
             this.i = Integer.MAX_VALUE;
             Header[] headerArr = new Header[8];
-            this.f43912c = headerArr;
+            this.c = headerArr;
             this.d = headerArr.length - 1;
             this.e = 0;
             this.f = 0;
-            this.f43911a = i;
+            this.a = i;
             this.b = i;
             this.h = z;
             this.g = buffer;
@@ -288,8 +277,8 @@ public final class Hpack {
         }
 
         private void a() {
-            Arrays.fill(this.f43912c, (Object) null);
-            this.d = this.f43912c.length - 1;
+            Arrays.fill(this.c, (Object) null);
+            this.d = this.c.length - 1;
             this.e = 0;
             this.f = 0;
         }
@@ -303,16 +292,16 @@ public final class Hpack {
             }
             b((this.f + i) - i2);
             int i3 = this.e;
-            Header[] headerArr = this.f43912c;
+            Header[] headerArr = this.c;
             if (i3 + 1 > headerArr.length) {
                 Header[] headerArr2 = new Header[headerArr.length * 2];
                 System.arraycopy(headerArr, 0, headerArr2, headerArr.length, headerArr.length);
-                this.d = this.f43912c.length - 1;
-                this.f43912c = headerArr2;
+                this.d = this.c.length - 1;
+                this.c = headerArr2;
             }
             int i4 = this.d;
             this.d = i4 - 1;
-            this.f43912c[i4] = header;
+            this.c[i4] = header;
             this.e++;
             this.f += i;
         }
@@ -322,16 +311,16 @@ public final class Hpack {
             if (i > 0) {
                 int i3 = i;
                 int i4 = 0;
-                for (int length = this.f43912c.length - 1; length >= this.d && i3 > 0; length--) {
-                    i3 -= this.f43912c[length].i;
-                    this.f -= this.f43912c[length].i;
+                for (int length = this.c.length - 1; length >= this.d && i3 > 0; length--) {
+                    i3 -= this.c[length].i;
+                    this.f -= this.c[length].i;
                     this.e--;
                     i4++;
                 }
-                Header[] headerArr = this.f43912c;
+                Header[] headerArr = this.c;
                 int i5 = this.d;
                 System.arraycopy(headerArr, i5 + 1, headerArr, i5 + 1 + i4, this.e);
-                Header[] headerArr2 = this.f43912c;
+                Header[] headerArr2 = this.c;
                 int i6 = this.d;
                 Arrays.fill(headerArr2, i6 + 1, i6 + 1 + i4, (Object) null);
                 this.d += i4;
@@ -354,7 +343,7 @@ public final class Hpack {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public void a(int i) {
-            this.f43911a = i;
+            this.a = i;
             int min = Math.min(i, 16384);
             int i2 = this.b;
             if (i2 == min) {
@@ -414,9 +403,9 @@ public final class Hpack {
                 if (num != null) {
                     i = num.intValue() + 1;
                     if (i > 1 && i < 8) {
-                        if (Util.a(Hpack.f43908a[i - 1].h, byteString)) {
+                        if (Util.a(Hpack.a[i - 1].h, byteString)) {
                             i2 = i;
-                        } else if (Util.a(Hpack.f43908a[i].h, byteString)) {
+                        } else if (Util.a(Hpack.a[i].h, byteString)) {
                             i2 = i;
                             i++;
                         }
@@ -431,7 +420,7 @@ public final class Hpack {
                 int i7 = i2;
                 if (i == -1) {
                     int i8 = this.d + 1;
-                    int length = this.f43912c.length;
+                    int length = this.c.length;
                     while (true) {
                         i6 = i;
                         i7 = i2;
@@ -439,15 +428,15 @@ public final class Hpack {
                             break;
                         }
                         int i9 = i2;
-                        if (Util.a(this.f43912c[i8].g, asciiLowercase)) {
-                            if (Util.a(this.f43912c[i8].h, byteString)) {
-                                i6 = Hpack.f43908a.length + (i8 - this.d);
+                        if (Util.a(this.c[i8].g, asciiLowercase)) {
+                            if (Util.a(this.c[i8].h, byteString)) {
+                                i6 = Hpack.a.length + (i8 - this.d);
                                 i7 = i2;
                                 break;
                             }
                             i9 = i2;
                             if (i2 == -1) {
-                                i9 = (i8 - this.d) + Hpack.f43908a.length;
+                                i9 = (i8 - this.d) + Hpack.a.length;
                             }
                         }
                         i8++;
@@ -461,7 +450,7 @@ public final class Hpack {
                     a(asciiLowercase);
                     a(byteString);
                     a(header);
-                } else if (!asciiLowercase.startsWith(Header.f43906a) || Header.f.equals(asciiLowercase)) {
+                } else if (!asciiLowercase.startsWith(Header.a) || Header.f.equals(asciiLowercase)) {
                     a(i7, 63, 64);
                     a(byteString);
                     a(header);
@@ -491,16 +480,16 @@ public final class Hpack {
     }
 
     private static Map<ByteString, Integer> a() {
-        LinkedHashMap linkedHashMap = new LinkedHashMap(f43908a.length);
+        LinkedHashMap linkedHashMap = new LinkedHashMap(a.length);
         int i = 0;
         while (true) {
             int i2 = i;
-            Header[] headerArr = f43908a;
+            Header[] headerArr = a;
             if (i2 >= headerArr.length) {
                 return Collections.unmodifiableMap(linkedHashMap);
             }
             if (!linkedHashMap.containsKey(headerArr[i2].g)) {
-                linkedHashMap.put(f43908a[i2].g, Integer.valueOf(i2));
+                linkedHashMap.put(a[i2].g, Integer.valueOf(i2));
             }
             i = i2 + 1;
         }

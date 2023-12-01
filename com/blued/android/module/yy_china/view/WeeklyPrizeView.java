@@ -30,13 +30,9 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/WeeklyPrizeView.class */
 public final class WeeklyPrizeView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewWeeklyPrizeBinding f18030a;
+    private ViewWeeklyPrizeBinding a;
     private YYTaskRewardModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseFragment f18031c;
+    private BaseFragment c;
     private YYTaskRewardDialog d;
     private ShapeConstraintLayout e;
 
@@ -50,14 +46,14 @@ public final class WeeklyPrizeView extends LinearLayout {
 
     public WeeklyPrizeView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        ViewWeeklyPrizeBinding a2 = ViewWeeklyPrizeBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18030a = a2;
-        DailyPrizeView dailyPrizeView = a2.f16886a;
+        ViewWeeklyPrizeBinding a = ViewWeeklyPrizeBinding.a(LayoutInflater.from(getContext()), this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
+        DailyPrizeView dailyPrizeView = a.a;
         if (dailyPrizeView != null) {
             dailyPrizeView.setCirclePointVisible(8);
         }
-        DailyPrizeView dailyPrizeView2 = this.f18030a.f16886a;
+        DailyPrizeView dailyPrizeView2 = this.a.a;
         if (dailyPrizeView2 != null) {
             dailyPrizeView2.setPrizeValueVisible(false);
         }
@@ -71,21 +67,21 @@ public final class WeeklyPrizeView extends LinearLayout {
 
     private final String a(int i, String str) {
         if (i == 0) {
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String string = getResources().getString(R.string.yy_weekly_task_title);
             Intrinsics.c(string, "resources.getString(R.string.yy_weekly_task_title)");
             String format = String.format(string, Arrays.copyOf(new Object[]{str}, 1));
             Intrinsics.c(format, "format(format, *args)");
             return format;
         } else if (i == 1) {
-            StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
             String string2 = getResources().getString(R.string.yy_weekly_task_complete_title);
             Intrinsics.c(string2, "resources.getString(R.st…ekly_task_complete_title)");
             String format2 = String.format(string2, Arrays.copyOf(new Object[]{str}, 1));
             Intrinsics.c(format2, "format(format, *args)");
             return format2;
         } else if (i != 2) {
-            StringCompanionObject stringCompanionObject3 = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject3 = StringCompanionObject.a;
             String string3 = getResources().getString(R.string.yy_weekly_task_title);
             Intrinsics.c(string3, "resources.getString(R.string.yy_weekly_task_title)");
             String format3 = String.format(string3, Arrays.copyOf(new Object[]{str}, 1));
@@ -106,7 +102,7 @@ public final class WeeklyPrizeView extends LinearLayout {
         if (yYTaskRewardDialog == null) {
             return;
         }
-        yYTaskRewardDialog.a(this.f18031c, this.e, this.b);
+        yYTaskRewardDialog.a(this.c, this.e, this.b);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -115,14 +111,14 @@ public final class WeeklyPrizeView extends LinearLayout {
         if (yYTaskRewardModel2 != null) {
             yYTaskRewardModel2.status = 2;
         }
-        TextView textView = this.f18030a.e;
+        TextView textView = this.a.e;
         YYTaskRewardModel yYTaskRewardModel3 = this.b;
         Integer valueOf = yYTaskRewardModel3 == null ? null : Integer.valueOf(yYTaskRewardModel3.status);
         Intrinsics.a(valueOf);
         int intValue = valueOf.intValue();
         YYTaskRewardModel yYTaskRewardModel4 = this.b;
         textView.setText(a(intValue, String.valueOf(yYTaskRewardModel4 == null ? null : Integer.valueOf(yYTaskRewardModel4.condition))));
-        TextView textView2 = this.f18030a.b;
+        TextView textView2 = this.a.b;
         YYTaskRewardModel yYTaskRewardModel5 = this.b;
         boolean z = true;
         if (yYTaskRewardModel5 == null || yYTaskRewardModel5.status != 1) {
@@ -148,7 +144,7 @@ public final class WeeklyPrizeView extends LinearLayout {
             return;
         }
         int i = yYTaskRewardModel.level;
-        BaseFragment baseFragment = this$0.f18031c;
+        BaseFragment baseFragment = this$0.c;
         final ActivityFragmentActive fragmentActive = baseFragment == null ? null : baseFragment.getFragmentActive();
         BluedUIHttpResponse<BluedEntityA<Object>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<Object>>(this$0, fragmentActive) { // from class: com.blued.android.module.yy_china.view.WeeklyPrizeView$1$1$1
             final /* synthetic */ WeeklyPrizeView b;
@@ -165,38 +161,38 @@ public final class WeeklyPrizeView extends LinearLayout {
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 YYTaskRewardModel yYTaskRewardModel2;
                 YYTaskRewardModel.this.status = 2;
-                this.b.getBinding().f16886a.a(true);
+                this.b.getBinding().a.a(true);
                 WeeklyPrizeView weeklyPrizeView = this.b;
                 yYTaskRewardModel2 = weeklyPrizeView.b;
                 weeklyPrizeView.a(yYTaskRewardModel2);
                 this.b.a();
             }
         };
-        BaseFragment baseFragment2 = this$0.f18031c;
+        BaseFragment baseFragment2 = this$0.c;
         YYRoomHttpUtils.i("2", String.valueOf(i), (BluedUIHttpResponse) bluedUIHttpResponse, baseFragment2 == null ? null : baseFragment2.getFragmentActive());
     }
 
     public final void a(YYTaskRewardModel yYTaskRewardModel, BaseFragment baseFragment, ShapeConstraintLayout shapeConstraintLayout, YYTaskRewardDialog yYTaskRewardDialog) {
         this.b = yYTaskRewardModel;
-        this.f18031c = baseFragment;
+        this.c = baseFragment;
         this.e = shapeConstraintLayout;
         this.d = yYTaskRewardDialog;
         if (yYTaskRewardModel != null) {
             getBinding().e.setText(a(yYTaskRewardModel.status, String.valueOf(yYTaskRewardModel.condition)));
             getBinding().d.setText(Intrinsics.a(BridgeUtil.SPLIT_MARK, (Object) Integer.valueOf(yYTaskRewardModel.condition)));
             int i = 0;
-            getBinding().f16886a.a(yYTaskRewardModel.status == 2);
+            getBinding().a.a(yYTaskRewardModel.status == 2);
             TextView textView = getBinding().b;
             if (yYTaskRewardModel.status != 1) {
                 i = 8;
             }
             textView.setVisibility(i);
         }
-        this.f18030a.f16886a.setRootView(shapeConstraintLayout);
-        this.f18030a.f16886a.setDV(yYTaskRewardDialog);
-        this.f18030a.f16886a.a(yYTaskRewardModel, 2);
-        this.f18030a.f16886a.a(baseFragment);
-        this.f18030a.f16886a.setOpenPrizeListener(new DailyPrizeView.OpenPrizeListener() { // from class: com.blued.android.module.yy_china.view.WeeklyPrizeView$setTaskReward$2
+        this.a.a.setRootView(shapeConstraintLayout);
+        this.a.a.setDV(yYTaskRewardDialog);
+        this.a.a.a(yYTaskRewardModel, 2);
+        this.a.a.a(baseFragment);
+        this.a.a.setOpenPrizeListener(new DailyPrizeView.OpenPrizeListener() { // from class: com.blued.android.module.yy_china.view.WeeklyPrizeView$setTaskReward$2
             @Override // com.blued.android.module.yy_china.view.DailyPrizeView.OpenPrizeListener
             public void a(YYTaskRewardModel yYTaskRewardModel2) {
                 WeeklyPrizeView.this.a(yYTaskRewardModel2);
@@ -205,15 +201,15 @@ public final class WeeklyPrizeView extends LinearLayout {
     }
 
     public final ViewWeeklyPrizeBinding getBinding() {
-        return this.f18030a;
+        return this.a;
     }
 
     public final void setBinding(ViewWeeklyPrizeBinding viewWeeklyPrizeBinding) {
         Intrinsics.e(viewWeeklyPrizeBinding, "<set-?>");
-        this.f18030a = viewWeeklyPrizeBinding;
+        this.a = viewWeeklyPrizeBinding;
     }
 
     public final void setCurrentScore(String str) {
-        this.f18030a.f16887c.setText(str);
+        this.a.c.setText(str);
     }
 }

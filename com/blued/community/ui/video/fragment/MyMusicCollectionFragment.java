@@ -35,11 +35,11 @@ import java.util.List;
 public class MyMusicCollectionFragment extends MvpFragment<MyMusicCollectionPresent> {
 
     /* renamed from: a  reason: collision with root package name */
-    private CommonTopTitleNoTrans f20371a;
+    private CommonTopTitleNoTrans f6765a;
     private SearchView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f20372c;
+    private RecyclerView f6766c;
     private SmartRefreshLayout d;
     private IAudioPlayer e;
     private MyMusicCollectionAdapter f;
@@ -52,7 +52,7 @@ public class MyMusicCollectionFragment extends MvpFragment<MyMusicCollectionPres
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i2) {
                 Tracker.onClick(dialogInterface, i2);
-                MyMusicCollectionFragment.this.j().d(MyMusicCollectionFragment.this.f.getData().get(i).music_id);
+                ((MyMusicCollectionPresent) MyMusicCollectionFragment.this.j()).d(MyMusicCollectionFragment.this.f.getData().get(i).music_id);
                 MyMusicCollectionFragment.this.f.remove(i);
             }
         }, getContext().getResources().getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
@@ -63,9 +63,9 @@ public class MyMusicCollectionFragment extends MvpFragment<MyMusicCollectionPres
     }
 
     private void b() {
-        this.f20371a = (CommonTopTitleNoTrans) this.i.findViewById(R.id.top_title);
-        this.b = (SearchView) this.i.findViewById(R.id.search_view);
-        this.f20372c = (RecyclerView) this.i.findViewById(R.id.recycler_view);
+        this.f6765a = this.i.findViewById(R.id.top_title);
+        this.b = this.i.findViewById(R.id.search_view);
+        this.f6766c = (RecyclerView) this.i.findViewById(R.id.recycler_view);
         this.d = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
     }
 
@@ -93,7 +93,6 @@ public class MyMusicCollectionFragment extends MvpFragment<MyMusicCollectionPres
         getActivity().finish();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         b();
@@ -101,22 +100,22 @@ public class MyMusicCollectionFragment extends MvpFragment<MyMusicCollectionPres
         CustomProgressDialog customProgressDialog = new CustomProgressDialog(getContext());
         this.k = customProgressDialog;
         customProgressDialog.setCanceledOnTouchOutside(true);
-        this.f20371a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.video.fragment.MyMusicCollectionFragment.1
+        this.f6765a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.video.fragment.MyMusicCollectionFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 MyMusicCollectionFragment.this.t();
             }
         });
-        this.f20372c.setLayoutManager(new LinearLayoutManager(getContext()));
+        this.f6766c.setLayoutManager(new LinearLayoutManager(getContext()));
         MyMusicCollectionAdapter myMusicCollectionAdapter = new MyMusicCollectionAdapter(getContext(), getFragmentActive());
         this.f = myMusicCollectionAdapter;
-        this.f20372c.setAdapter(myMusicCollectionAdapter);
+        this.f6766c.setAdapter(myMusicCollectionAdapter);
         NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(getContext());
         this.g = noDataAndLoadFailView;
         noDataAndLoadFailView.setNoDataImg(R.drawable.icon_no_data_posted);
         this.g.setNoDataStr(R.string.no_content_for_now);
-        this.f.setEmptyView(this.g);
+        this.f.setEmptyView((View) this.g);
         this.f.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.video.fragment.MyMusicCollectionFragment.2
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
@@ -149,35 +148,31 @@ public class MyMusicCollectionFragment extends MvpFragment<MyMusicCollectionPres
             @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 MusicManager.a(MyMusicCollectionFragment.this.e);
-                MyMusicCollectionFragment.this.j().e();
+                ((MyMusicCollectionPresent) MyMusicCollectionFragment.this.j()).e();
             }
         });
         this.f.setLoadMoreView(new BluedAdapterLoadMoreView());
         this.f.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.video.fragment.MyMusicCollectionFragment.4
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
-                MyMusicCollectionFragment.this.j().f();
+                ((MyMusicCollectionPresent) MyMusicCollectionFragment.this.j()).f();
             }
-        }, this.f20372c);
+        }, this.f6766c);
         this.b.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.blued.community.ui.video.fragment.MyMusicCollectionFragment.5
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a() {
                 KeyboardUtils.a(MyMusicCollectionFragment.this.getActivity());
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
-                MyMusicCollectionFragment.this.j().e(str);
-                MyMusicCollectionFragment.this.j().e();
+                ((MyMusicCollectionPresent) MyMusicCollectionFragment.this.j()).e(str);
+                ((MyMusicCollectionPresent) MyMusicCollectionFragment.this.j()).e();
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
             }
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
         if (str == null) {
@@ -202,28 +197,23 @@ public class MyMusicCollectionFragment extends MvpFragment<MyMusicCollectionPres
         this.f.setNewData(list);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
         this.g = null;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_my_music_collection;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void l() {
         this.d.i();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         IAudioPlayer iAudioPlayer = this.e;
@@ -232,7 +222,6 @@ public class MyMusicCollectionFragment extends MvpFragment<MyMusicCollectionPres
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         MyMusicCollectionAdapter myMusicCollectionAdapter;
         super.onPause();
@@ -243,7 +232,6 @@ public class MyMusicCollectionFragment extends MvpFragment<MyMusicCollectionPres
         MusicManager.a(this.e);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
         this.f.setEnableLoadMore(false);

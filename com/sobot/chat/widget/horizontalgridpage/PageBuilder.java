@@ -1,5 +1,7 @@
 package com.sobot.chat.widget.horizontalgridpage;
 
+import android.R;
+
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/horizontalgridpage/PageBuilder.class */
 public class PageBuilder {
     private int[] grid;
@@ -17,7 +19,7 @@ public class PageBuilder {
     public static class Builder {
         private int indicatorSize = 10;
         private int[] indicatorMargins = {5, 5, 5, 5};
-        private int[] indicatorRes = {17301609, 17301611};
+        private int[] indicatorRes = {R.drawable.presence_invisible, R.drawable.presence_online};
         private int indicatorGravity = 17;
         private int pageMargin = 0;
         private int[] grid = {3, 4};

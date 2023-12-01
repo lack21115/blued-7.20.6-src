@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f24979a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    private static final char[] f11291a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     public static final String a(String str) throws NoSuchAlgorithmException {
         if (TextUtils.isEmpty(str)) {
@@ -41,7 +41,7 @@ public class k {
             }
             int i3 = bArr[i2] & 255;
             int i4 = i2 * 2;
-            char[] cArr2 = f24979a;
+            char[] cArr2 = f11291a;
             cArr[i4] = cArr2[i3 >>> 4];
             cArr[i4 + 1] = cArr2[i3 & 15];
             i = i2 + 1;

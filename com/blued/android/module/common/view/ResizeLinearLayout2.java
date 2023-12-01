@@ -11,9 +11,7 @@ import skin.support.widget.SkinCompatBackgroundHelper;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/ResizeLinearLayout2.class */
 public class ResizeLinearLayout2 extends KeyboardListenLinearLayout implements BluedSkinSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int[] f11033a;
+    private int[] a;
     private SkinCompatBackgroundHelper b;
 
     public ResizeLinearLayout2(Context context) {
@@ -26,7 +24,7 @@ public class ResizeLinearLayout2 extends KeyboardListenLinearLayout implements B
 
     public ResizeLinearLayout2(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f11033a = new int[4];
+        this.a = new int[4];
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
         this.b = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, 0);
@@ -44,9 +42,9 @@ public class ResizeLinearLayout2 extends KeyboardListenLinearLayout implements B
     @Override // android.view.View
     public final boolean fitSystemWindows(Rect rect) {
         if (Build.VERSION.SDK_INT >= 19) {
-            this.f11033a[0] = rect.left;
-            this.f11033a[1] = rect.top;
-            this.f11033a[2] = rect.right;
+            this.a[0] = rect.left;
+            this.a[1] = rect.top;
+            this.a[2] = rect.right;
             rect.left = 0;
             rect.top = 0;
             rect.right = 0;
@@ -58,9 +56,9 @@ public class ResizeLinearLayout2 extends KeyboardListenLinearLayout implements B
     public final WindowInsets onApplyWindowInsets(WindowInsets windowInsets) {
         WindowInsets windowInsets2 = windowInsets;
         if (Build.VERSION.SDK_INT >= 20) {
-            this.f11033a[0] = windowInsets.getSystemWindowInsetLeft();
-            this.f11033a[1] = windowInsets.getSystemWindowInsetTop();
-            this.f11033a[2] = windowInsets.getSystemWindowInsetRight();
+            this.a[0] = windowInsets.getSystemWindowInsetLeft();
+            this.a[1] = windowInsets.getSystemWindowInsetTop();
+            this.a[2] = windowInsets.getSystemWindowInsetRight();
             windowInsets2 = super.onApplyWindowInsets(windowInsets.replaceSystemWindowInsets(0, 0, 0, windowInsets.getSystemWindowInsetBottom()));
         }
         return windowInsets2;

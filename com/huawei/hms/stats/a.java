@@ -11,7 +11,7 @@ import com.huawei.hms.support.log.HMSLog;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f22868a;
+    public static int f9260a;
     public static final Object b = new Object();
 
     public static boolean a(Context context) {
@@ -61,35 +61,35 @@ public class a {
     public static boolean c(Context context) {
         synchronized (b) {
             boolean z = true;
-            if (f22868a == 0) {
+            if (f9260a == 0) {
                 if (context == null) {
                     return true;
                 }
                 if (a(context)) {
                     HMSLog.i("AnalyticsSwitchHolder", "Builder->biReportSetting :true");
-                    f22868a = 1;
+                    f9260a = 1;
                 } else if (b(context)) {
                     HMSLog.i("AnalyticsSwitchHolder", "Builder->biSetting :true");
-                    f22868a = 2;
+                    f9260a = 2;
                 } else if ("CN".equalsIgnoreCase(GrsApp.getInstance().getIssueCountryCode(context))) {
-                    f22868a = 1;
+                    f9260a = 1;
                 } else {
                     HMSLog.i("AnalyticsSwitchHolder", "not ChinaROM");
                     try {
                         int i = Settings.Secure.getInt(context.getContentResolver(), "hw_app_analytics_state");
                         HMSLog.i("AnalyticsSwitchHolder", "hw_app_analytics_state value is " + i);
                         if (i == 1) {
-                            f22868a = 1;
+                            f9260a = 1;
                         } else {
-                            f22868a = 2;
+                            f9260a = 2;
                         }
                     } catch (Settings.SettingNotFoundException e) {
                         HMSLog.i("AnalyticsSwitchHolder", "Get OOBE failed");
-                        f22868a = 2;
+                        f9260a = 2;
                     }
                 }
             }
-            if (f22868a == 1) {
+            if (f9260a == 1) {
                 z = false;
             }
             return z;

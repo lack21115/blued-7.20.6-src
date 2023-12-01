@@ -6,18 +6,18 @@ import android.content.Context;
 public class u implements c0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f42203a = "sdk.debug";
+    public String f28512a = "sdk.debug";
     public e0 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f42204c;
+    public boolean f28513c;
     public boolean d;
     public Context e;
 
     public u(Context context, e0 e0Var) {
         this.e = context.getApplicationContext();
         this.b = (e0) o1.a(e0Var);
-        a(this.f42203a);
+        a(this.f28512a);
     }
 
     @Override // com.zx.a.I8b7.c0
@@ -64,7 +64,7 @@ public class u implements c0 {
         int i2 = i & 240;
         boolean z = false;
         if (i2 == 0 || i2 == 32) {
-            if (this.f42204c || this.d) {
+            if (this.f28513c || this.d) {
                 z = true;
             }
             return z;

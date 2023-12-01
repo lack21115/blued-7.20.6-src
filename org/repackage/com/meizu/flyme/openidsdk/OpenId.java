@@ -2,18 +2,14 @@ package org.repackage.com.meizu.flyme.openidsdk;
 
 /* loaded from: source-3503164-dex2jar.jar:org/repackage/com/meizu/flyme/openidsdk/OpenId.class */
 class OpenId {
-
-    /* renamed from: a  reason: collision with root package name */
-    long f44106a;
+    long a;
     String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    String f44107c;
+    String c;
     int d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public OpenId(String str) {
-        this.f44107c = str;
+        this.c = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -23,7 +19,7 @@ class OpenId {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(long j) {
-        this.f44106a = j;
+        this.a = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -33,11 +29,11 @@ class OpenId {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a() {
-        return this.f44106a > System.currentTimeMillis();
+        return this.a > System.currentTimeMillis();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b() {
-        this.f44106a = 0L;
+        this.a = 0L;
     }
 }

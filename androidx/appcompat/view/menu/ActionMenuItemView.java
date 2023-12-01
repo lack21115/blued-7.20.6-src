@@ -23,11 +23,11 @@ import com.bytedance.applog.tracker.Tracker;
 public class ActionMenuItemView extends AppCompatTextView implements View.OnClickListener, MenuView.ItemView, ActionMenuView.ActionMenuChildView {
 
     /* renamed from: a  reason: collision with root package name */
-    MenuItemImpl f1654a;
+    MenuItemImpl f1606a;
     MenuBuilder.ItemInvoker b;
 
     /* renamed from: c  reason: collision with root package name */
-    PopupCallback f1655c;
+    PopupCallback f1607c;
     private CharSequence d;
     private Drawable e;
     private ForwardingListener f;
@@ -45,8 +45,8 @@ public class ActionMenuItemView extends AppCompatTextView implements View.OnClic
 
         @Override // androidx.appcompat.widget.ForwardingListener
         public ShowableListMenu getPopup() {
-            if (ActionMenuItemView.this.f1655c != null) {
-                return ActionMenuItemView.this.f1655c.getPopup();
+            if (ActionMenuItemView.this.f1607c != null) {
+                return ActionMenuItemView.this.f1607c.getPopup();
             }
             return null;
         }
@@ -56,7 +56,7 @@ public class ActionMenuItemView extends AppCompatTextView implements View.OnClic
             boolean z = false;
             if (ActionMenuItemView.this.b != null) {
                 z = false;
-                if (ActionMenuItemView.this.b.invokeItem(ActionMenuItemView.this.f1654a)) {
+                if (ActionMenuItemView.this.b.invokeItem(ActionMenuItemView.this.f1606a)) {
                     ShowableListMenu popup = getPopup();
                     z = false;
                     if (popup != null) {
@@ -111,7 +111,7 @@ public class ActionMenuItemView extends AppCompatTextView implements View.OnClic
         boolean isEmpty = TextUtils.isEmpty(this.d);
         boolean z = true;
         if (this.e != null) {
-            if (this.f1654a.showsTextAsAction()) {
+            if (this.f1606a.showsTextAsAction()) {
                 z = true;
                 if (!this.g) {
                     if (this.h) {
@@ -123,15 +123,15 @@ public class ActionMenuItemView extends AppCompatTextView implements View.OnClic
         }
         boolean z2 = (!isEmpty) & z;
         setText(z2 ? this.d : null);
-        CharSequence contentDescription = this.f1654a.getContentDescription();
+        CharSequence contentDescription = this.f1606a.getContentDescription();
         if (TextUtils.isEmpty(contentDescription)) {
-            setContentDescription(z2 ? null : this.f1654a.getTitle());
+            setContentDescription(z2 ? null : this.f1606a.getTitle());
         } else {
             setContentDescription(contentDescription);
         }
-        CharSequence tooltipText = this.f1654a.getTooltipText();
+        CharSequence tooltipText = this.f1606a.getTooltipText();
         if (TextUtils.isEmpty(tooltipText)) {
-            TooltipCompat.setTooltipText(this, z2 ? null : this.f1654a.getTitle());
+            TooltipCompat.setTooltipText(this, z2 ? null : this.f1606a.getTitle());
         } else {
             TooltipCompat.setTooltipText(this, tooltipText);
         }
@@ -139,7 +139,7 @@ public class ActionMenuItemView extends AppCompatTextView implements View.OnClic
 
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
     public MenuItemImpl getItemData() {
-        return this.f1654a;
+        return this.f1606a;
     }
 
     public boolean hasText() {
@@ -148,7 +148,7 @@ public class ActionMenuItemView extends AppCompatTextView implements View.OnClic
 
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
     public void initialize(MenuItemImpl menuItemImpl, int i) {
-        this.f1654a = menuItemImpl;
+        this.f1606a = menuItemImpl;
         setIcon(menuItemImpl.getIcon());
         setTitle(menuItemImpl.a(this));
         setId(menuItemImpl.getItemId());
@@ -166,7 +166,7 @@ public class ActionMenuItemView extends AppCompatTextView implements View.OnClic
 
     @Override // androidx.appcompat.widget.ActionMenuView.ActionMenuChildView
     public boolean needsDividerBefore() {
-        return hasText() && this.f1654a.getIcon() == null;
+        return hasText() && this.f1606a.getIcon() == null;
     }
 
     @Override // android.view.View.OnClickListener
@@ -174,11 +174,11 @@ public class ActionMenuItemView extends AppCompatTextView implements View.OnClic
         Tracker.onClick(view);
         MenuBuilder.ItemInvoker itemInvoker = this.b;
         if (itemInvoker != null) {
-            itemInvoker.invokeItem(this.f1654a);
+            itemInvoker.invokeItem(this.f1606a);
         }
     }
 
-    @Override // android.view.View
+    @Override // android.widget.TextView, android.view.View
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         this.g = a();
@@ -214,7 +214,7 @@ public class ActionMenuItemView extends AppCompatTextView implements View.OnClic
     @Override // android.widget.TextView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         ForwardingListener forwardingListener;
-        if (this.f1654a.hasSubMenu() && (forwardingListener = this.f) != null && forwardingListener.onTouch(this, motionEvent)) {
+        if (this.f1606a.hasSubMenu() && (forwardingListener = this.f) != null && forwardingListener.onTouch(this, motionEvent)) {
             return true;
         }
         return super.onTouchEvent(motionEvent);
@@ -236,7 +236,7 @@ public class ActionMenuItemView extends AppCompatTextView implements View.OnClic
     public void setExpandedFormat(boolean z) {
         if (this.h != z) {
             this.h = z;
-            MenuItemImpl menuItemImpl = this.f1654a;
+            MenuItemImpl menuItemImpl = this.f1606a;
             if (menuItemImpl != null) {
                 menuItemImpl.actionFormatChanged();
             }
@@ -280,7 +280,7 @@ public class ActionMenuItemView extends AppCompatTextView implements View.OnClic
     }
 
     public void setPopupCallback(PopupCallback popupCallback) {
-        this.f1655c = popupCallback;
+        this.f1607c = popupCallback;
     }
 
     @Override // androidx.appcompat.view.menu.MenuView.ItemView

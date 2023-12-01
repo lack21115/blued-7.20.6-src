@@ -22,8 +22,9 @@ import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/io/CharSource.class */
 public abstract class CharSource {
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/io/CharSource$AsByteSource.class */
-    final class AsByteSource extends ByteSource {
+    public final class AsByteSource extends ByteSource {
         final Charset charset;
 
         AsByteSource(Charset charset) {
@@ -187,8 +188,9 @@ public abstract class CharSource {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/io/CharSource$EmptyCharSource.class */
-    static final class EmptyCharSource extends StringCharSource {
+    public static final class EmptyCharSource extends StringCharSource {
         private static final EmptyCharSource INSTANCE = new EmptyCharSource();
 
         private EmptyCharSource() {

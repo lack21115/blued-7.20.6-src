@@ -4,7 +4,6 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.os.Bundle;
 import android.os.SystemClock;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.storage.PersistStorage;
 import com.tencent.liteav.base.system.LiteavSystemInfo;
 import com.tencent.liteav.base.util.LiteavLog;
@@ -28,11 +27,11 @@ import java.util.concurrent.atomic.AtomicLong;
 public final class x {
 
     /* renamed from: a  reason: collision with root package name */
-    String f37043a;
+    String f23352a;
     final Bundle b;
 
     /* renamed from: c  reason: collision with root package name */
-    com.tencent.liteav.base.util.b f37044c;
+    com.tencent.liteav.base.util.b f23353c;
     MediaCodec d;
     bf.a e;
     VideoEncodeParams f;
@@ -72,7 +71,7 @@ public final class x {
         this.o = iVideoReporter;
         this.b = bundle;
         this.p = streamType;
-        this.f37043a = "SurfaceInputVideoEncoder_" + streamType + BridgeUtil.UNDERLINE_STR + hashCode();
+        this.f23352a = "SurfaceInputVideoEncoder_" + streamType + "_" + hashCode();
     }
 
     private boolean a(MediaCodec mediaCodec, MediaFormat mediaFormat) {
@@ -80,11 +79,11 @@ public final class x {
             return false;
         }
         try {
-            LiteavLog.i(this.f37043a, "configure format: %s", mediaFormat);
+            LiteavLog.i(this.f23352a, "configure format: %s", mediaFormat);
             mediaCodec.configure(mediaFormat, null, null, 1);
             return true;
         } catch (Exception e) {
-            LiteavLog.e(this.f37043a, "configure failed.", e);
+            LiteavLog.e(this.f23352a, "configure failed.", e);
             return false;
         }
     }
@@ -118,7 +117,7 @@ public final class x {
             if (i != 0) {
                 int length = bArr.length - i;
                 byte[] bArr2 = new byte[length];
-                System.arraycopy((Object) bArr, i, (Object) bArr2, 0, length);
+                System.arraycopy(bArr, i, bArr2, 0, length);
                 return bArr2;
             }
         }
@@ -131,12 +130,12 @@ public final class x {
         try {
             str2 = createEncoderByType.getName();
         } catch (Exception e) {
-            LiteavLog.w(this.f37043a, "mediaCodec getName failed.", e);
+            LiteavLog.w(this.f23352a, "mediaCodec getName failed.", e);
             str2 = null;
         }
-        LiteavLog.d(this.f37043a, "codecName=".concat(String.valueOf(str2)));
+        LiteavLog.d(this.f23352a, "codecName=".concat(String.valueOf(str2)));
         if (str2 != null && str2.equals("OMX.google.h264.encoder")) {
-            LiteavLog.w(this.f37043a, "will be destroyed codecName=".concat(String.valueOf(str2)));
+            LiteavLog.w(this.f23352a, "will be destroyed codecName=".concat(String.valueOf(str2)));
             a(createEncoderByType);
             throw new IOException("this is a Google H264 soft encoder. cancel use MediaCodec.");
         }
@@ -184,7 +183,7 @@ public final class x {
             i6 = i3;
         }
         byte[] bArr2 = new byte[i5 + (arrayList.size() * 4)];
-        Iterator<E> it = arrayList.iterator();
+        Iterator it = arrayList.iterator();
         int i10 = 0;
         while (true) {
             int i11 = i10;
@@ -195,10 +194,10 @@ public final class x {
             int i12 = iArr[1] - iArr[0];
             ByteBuffer order = ByteBuffer.wrap(new byte[4]).order(ByteOrder.BIG_ENDIAN);
             order.putInt(i12);
-            System.arraycopy((Object) order.array(), 0, (Object) bArr2, i11, 4);
+            System.arraycopy(order.array(), 0, bArr2, i11, 4);
             int i13 = iArr[0];
             int i14 = i11 + 4;
-            System.arraycopy((Object) bArr, i13, (Object) bArr2, i14, i12);
+            System.arraycopy(bArr, i13, bArr2, i14, i12);
             i10 = i14 + i12;
         }
     }
@@ -214,17 +213,17 @@ public final class x {
                 if (dequeueOutputBuffer == -1) {
                     break;
                 } else if (dequeueOutputBuffer == -3) {
-                    LiteavLog.i(this.f37043a, "encoder output buffers changed");
+                    LiteavLog.i(this.f23352a, "encoder output buffers changed");
                 } else if (dequeueOutputBuffer == -2) {
                     try {
                         MediaFormat outputFormat = this.d.getOutputFormat();
                         if (this.e != null) {
                             this.e.onOutputFormatChanged(outputFormat);
                         }
-                        LiteavLog.i(this.f37043a, "encoder output format changed: %s", outputFormat);
+                        LiteavLog.i(this.f23352a, "encoder output format changed: %s", outputFormat);
                     } catch (Throwable th) {
                         a(th.getMessage());
-                        LiteavLog.e(this.f37043a, "getOutputFormat failed.", th);
+                        LiteavLog.e(this.f23352a, "getOutputFormat failed.", th);
                     }
                 } else if (dequeueOutputBuffer < 0) {
                     a("dequeueOutputBuffer return ".concat(String.valueOf(dequeueOutputBuffer)));
@@ -256,8 +255,8 @@ public final class x {
                                 if ((bufferInfo.flags & 1) > 0) {
                                     byte[] bArr4 = this.q;
                                     bArr3 = new byte[bArr4.length + bArr2.length];
-                                    System.arraycopy((Object) bArr4, 0, (Object) bArr3, 0, bArr4.length);
-                                    System.arraycopy((Object) bArr2, 0, (Object) bArr3, this.q.length, bArr2.length);
+                                    System.arraycopy(bArr4, 0, bArr3, 0, bArr4.length);
+                                    System.arraycopy(bArr2, 0, bArr3, this.q.length, bArr2.length);
                                 }
                             }
                             if ((bufferInfo.flags & 2) > 0) {
@@ -341,7 +340,7 @@ public final class x {
                                     z = true;
                                 } else {
                                     if (!this.f.enableBFrame && !this.B && encodedVideoFrame.pts < this.A) {
-                                        LiteavLog.i(this.f37043a, "has B frame,isEnablesBframe=%b,mLastPresentationTimestamp=%d,packet.pts=%d", Boolean.valueOf(this.f.enableBFrame), Long.valueOf(this.A), Long.valueOf(encodedVideoFrame.pts));
+                                        LiteavLog.i(this.f23352a, "has B frame,isEnablesBframe=%b,mLastPresentationTimestamp=%d,packet.pts=%d", Boolean.valueOf(this.f.enableBFrame), Long.valueOf(this.A), Long.valueOf(encodedVideoFrame.pts));
                                         this.B = true;
                                         PersistStorage persistStorage = new PersistStorage(PersistStorage.GLOBAL_DOMAIN);
                                         persistStorage.put("Liteav.Video.android.local.rtc.enable.high.profile", 0);
@@ -364,25 +363,25 @@ public final class x {
                             this.d.releaseOutputBuffer(dequeueOutputBuffer, false);
                         } catch (Throwable th2) {
                             a(th2.getMessage());
-                            LiteavLog.e(this.f37043a, "releaseOutputBuffer failed.", th2);
+                            LiteavLog.e(this.f23352a, "releaseOutputBuffer failed.", th2);
                         }
                     } catch (Throwable th3) {
                         a(th3.getMessage());
-                        LiteavLog.e(this.f37043a, "getOutputBuffer failed.", th3);
+                        LiteavLog.e(this.f23352a, "getOutputBuffer failed.", th3);
                     }
                 }
             } catch (Throwable th4) {
                 a(th4.getMessage());
-                LiteavLog.e(this.f37043a, "dequeueOutputBuffer failed.", th4);
+                LiteavLog.e(this.f23352a, "dequeueOutputBuffer failed.", th4);
             }
         }
         synchronized (this.w) {
             if (this.w.size() != 0) {
                 int i2 = this.f.fps != 0 ? 500 / this.f.fps : 10;
                 if (LiteavSystemInfo.getSystemOSVersionInt() < 29) {
-                    this.f37044c.postDelayed(this.n, i2);
-                } else if (!this.f37044c.hasCallbacks(this.n)) {
-                    this.f37044c.postDelayed(this.n, i2);
+                    this.f23353c.postDelayed(this.n, i2);
+                } else if (!this.f23353c.hasCallbacks(this.n)) {
+                    this.f23353c.postDelayed(this.n, i2);
                 }
             }
         }
@@ -435,7 +434,7 @@ public final class x {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a() {
         if (this.h != null) {
-            LiteavLog.i(this.f37043a, "stopEosTimer");
+            LiteavLog.i(this.f23352a, "stopEosTimer");
             this.h.a();
             this.h = null;
         }
@@ -443,7 +442,7 @@ public final class x {
 
     public final void a(long j) {
         if (this.f.fullIFrame) {
-            this.f37044c.a(ad.a(this));
+            this.f23353c.a(ad.a(this));
         }
         synchronized (this.w) {
             if (this.w.isEmpty()) {
@@ -451,11 +450,11 @@ public final class x {
             }
             this.w.addLast(Long.valueOf(j));
             if (this.w.size() > 30) {
-                LiteavLog.e(this.f37043a, "too much unencoded frame, hw encoder error");
-                this.f37044c.post(this.m);
+                LiteavLog.e(this.f23352a, "too much unencoded frame, hw encoder error");
+                this.f23353c.post(this.m);
             }
         }
-        this.f37044c.postDelayed(this.n, 10L);
+        this.f23353c.postDelayed(this.n, 10L);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -464,18 +463,18 @@ public final class x {
             try {
                 mediaCodec.stop();
             } catch (Exception e) {
-                LiteavLog.e(this.f37043a, "destroy mediaCodec stop failed.", e);
+                LiteavLog.e(this.f23352a, "destroy mediaCodec stop failed.", e);
             }
             try {
                 mediaCodec.release();
             } catch (Exception e2) {
-                LiteavLog.e(this.f37043a, "destroy mediaCodec release failed.", e2);
+                LiteavLog.e(this.f23352a, "destroy mediaCodec release failed.", e2);
             }
         }
     }
 
     public final void a(String str) {
-        this.f37044c.post(ag.a(this, str));
+        this.f23353c.post(ag.a(this, str));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -488,7 +487,7 @@ public final class x {
             bundle.putInt(MediaCodec.PARAMETER_KEY_REQUEST_SYNC_FRAME, 0);
             this.d.setParameters(bundle);
         } catch (Throwable th) {
-            LiteavLog.e(this.f37043a, "requestSyncFrame failed.", th);
+            LiteavLog.e(this.f23352a, "requestSyncFrame failed.", th);
         }
     }
 }

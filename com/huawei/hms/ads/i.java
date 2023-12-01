@@ -23,11 +23,11 @@ public class i implements p {
     private Location Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private RequestOptions.Builder f22494a;
+    private RequestOptions.Builder f8886a;
     private List<Integer> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f22495c;
+    private String f8887c;
     private SearchInfo d;
     private boolean e;
 
@@ -39,10 +39,10 @@ public class i implements p {
     @Override // com.huawei.hms.ads.p
     public void B(Integer num) {
         if (num == null || num.intValue() == -1 || num.intValue() == 0 || num.intValue() == 1) {
-            if (this.f22494a == null) {
-                this.f22494a = new RequestOptions.Builder();
+            if (this.f8886a == null) {
+                this.f8886a = new RequestOptions.Builder();
             }
-            this.f22494a.setTagForUnderAgeOfPromise(num);
+            this.f8886a.setTagForUnderAgeOfPromise(num);
             return;
         }
         ge.V(Code, "Invalid value setTagForUnderAgeOfPromise: " + num);
@@ -54,15 +54,15 @@ public class i implements p {
             ge.V(Code, "Invalid value passed to setAppLang");
             return;
         }
-        if (this.f22494a == null) {
-            this.f22494a = new RequestOptions.Builder();
+        if (this.f8886a == null) {
+            this.f8886a = new RequestOptions.Builder();
         }
-        this.f22494a.setAppLang(str);
+        this.f8886a.setAppLang(str);
     }
 
     @Override // com.huawei.hms.ads.p
     public RequestOptions C() {
-        RequestOptions.Builder builder = this.f22494a;
+        RequestOptions.Builder builder = this.f8886a;
         if (builder != null) {
             return builder.build();
         }
@@ -76,14 +76,14 @@ public class i implements p {
             ge.Z(Code, "Invalid value passed to setSupportFa: " + num);
             return;
         }
-        if (this.f22494a == null) {
-            this.f22494a = new RequestOptions.Builder();
+        if (this.f8886a == null) {
+            this.f8886a = new RequestOptions.Builder();
         }
         if (num == null) {
-            this.f22494a.setSupportFa(null);
+            this.f8886a.setSupportFa(null);
             return;
         }
-        RequestOptions.Builder builder = this.f22494a;
+        RequestOptions.Builder builder = this.f8886a;
         if (num.intValue() != 1) {
             z = false;
         }
@@ -96,10 +96,10 @@ public class i implements p {
             ge.V(Code, "Invalid value passed to setAppCountry");
             return;
         }
-        if (this.f22494a == null) {
-            this.f22494a = new RequestOptions.Builder();
+        if (this.f8886a == null) {
+            this.f8886a = new RequestOptions.Builder();
         }
-        this.f22494a.setAppCountry(str);
+        this.f8886a.setAppCountry(str);
     }
 
     @Override // com.huawei.hms.ads.p
@@ -123,27 +123,27 @@ public class i implements p {
             ge.V(Code, "Invalid appInfo");
             return;
         }
-        if (this.f22494a == null) {
-            this.f22494a = new RequestOptions.Builder();
+        if (this.f8886a == null) {
+            this.f8886a = new RequestOptions.Builder();
         }
-        this.f22494a.setApp(app);
+        this.f8886a.setApp(app);
     }
 
     @Override // com.huawei.hms.ads.p
     public void Code(SearchInfo searchInfo) {
-        if (this.f22494a == null) {
-            this.f22494a = new RequestOptions.Builder();
+        if (this.f8886a == null) {
+            this.f8886a = new RequestOptions.Builder();
         }
-        this.f22494a.setSearchInfo(searchInfo);
+        this.f8886a.setSearchInfo(searchInfo);
     }
 
     @Override // com.huawei.hms.ads.p
     public void Code(Integer num) {
         if (num == null || num.intValue() == -1 || num.intValue() == 0 || num.intValue() == 1) {
-            if (this.f22494a == null) {
-                this.f22494a = new RequestOptions.Builder();
+            if (this.f8886a == null) {
+                this.f8886a = new RequestOptions.Builder();
             }
-            this.f22494a.setTagForChildProtection(num);
+            this.f8886a.setTagForChildProtection(num);
             return;
         }
         ge.V(Code, "Invalid value setTagForChildProtection: " + num);
@@ -176,10 +176,10 @@ public class i implements p {
 
     @Override // com.huawei.hms.ads.p
     public void D(String str) {
-        if (this.f22494a == null) {
-            this.f22494a = new RequestOptions.Builder();
+        if (this.f8886a == null) {
+            this.f8886a = new RequestOptions.Builder();
         }
-        this.f22494a.setSearchTerm(str);
+        this.f8886a.setSearchTerm(str);
     }
 
     @Override // com.huawei.hms.ads.p
@@ -200,10 +200,10 @@ public class i implements p {
     @Override // com.huawei.hms.ads.p
     public void I(Integer num) {
         if (num == null || 1 == num.intValue() || num.intValue() == 0) {
-            if (this.f22494a == null) {
-                this.f22494a = new RequestOptions.Builder();
+            if (this.f8886a == null) {
+                this.f8886a = new RequestOptions.Builder();
             }
-            this.f22494a.setHwNonPersonalizedAd(num);
+            this.f8886a.setHwNonPersonalizedAd(num);
             return;
         }
         ge.Z(Code, "Invalid value passed to setHwNonPersonalizedAd: " + num);
@@ -226,10 +226,10 @@ public class i implements p {
 
     @Override // com.huawei.hms.ads.p
     public void L(String str) {
-        if (this.f22494a == null) {
-            this.f22494a = new RequestOptions.Builder();
+        if (this.f8886a == null) {
+            this.f8886a = new RequestOptions.Builder();
         }
-        this.f22494a.setConsent(str);
+        this.f8886a.setConsent(str);
     }
 
     @Override // com.huawei.hms.ads.p
@@ -238,10 +238,10 @@ public class i implements p {
             return;
         }
         if ("W".equals(str) || ContentClassification.AD_CONTENT_CLASSIFICATION_PI.equals(str) || ContentClassification.AD_CONTENT_CLASSIFICATION_J.equals(str) || "A".equals(str)) {
-            if (this.f22494a == null) {
-                this.f22494a = new RequestOptions.Builder();
+            if (this.f8886a == null) {
+                this.f8886a = new RequestOptions.Builder();
             }
-            this.f22494a.setAdContentClassification(str);
+            this.f8886a.setAdContentClassification(str);
             return;
         }
         ge.V(Code, "Invalid value  setAdContentClassification: " + str);
@@ -260,10 +260,10 @@ public class i implements p {
     @Override // com.huawei.hms.ads.p
     public void V(Integer num) {
         if (num == null || 1 == num.intValue() || num.intValue() == 0) {
-            if (this.f22494a == null) {
-                this.f22494a = new RequestOptions.Builder();
+            if (this.f8886a == null) {
+                this.f8886a = new RequestOptions.Builder();
             }
-            this.f22494a.setNonPersonalizedAd(num);
+            this.f8886a.setNonPersonalizedAd(num);
             return;
         }
         ge.Z(Code, "Invalid value passed to setNonPersonalizedAd: " + num);
@@ -276,10 +276,10 @@ public class i implements p {
 
     @Override // com.huawei.hms.ads.p
     public void V(boolean z) {
-        if (this.f22494a == null) {
-            this.f22494a = new RequestOptions.Builder();
+        if (this.f8886a == null) {
+            this.f8886a = new RequestOptions.Builder();
         }
-        this.f22494a.setRequestLocation(Boolean.valueOf(z));
+        this.f8886a.setRequestLocation(Boolean.valueOf(z));
     }
 
     @Override // com.huawei.hms.ads.p
@@ -290,10 +290,10 @@ public class i implements p {
     @Override // com.huawei.hms.ads.p
     public void Z(Integer num) {
         if (num == null || 1 == num.intValue() || num.intValue() == 0) {
-            if (this.f22494a == null) {
-                this.f22494a = new RequestOptions.Builder();
+            if (this.f8886a == null) {
+                this.f8886a = new RequestOptions.Builder();
             }
-            this.f22494a.setThirdNonPersonalizedAd(num);
+            this.f8886a.setThirdNonPersonalizedAd(num);
             return;
         }
         ge.Z(Code, "Invalid value passed to setThirdNonPersonalizedAd: " + num);
@@ -306,12 +306,12 @@ public class i implements p {
 
     @Override // com.huawei.hms.ads.p
     public String a() {
-        return this.f22495c;
+        return this.f8887c;
     }
 
     @Override // com.huawei.hms.ads.p
     public void a(String str) {
-        this.f22495c = str;
+        this.f8887c = str;
     }
 
     @Override // com.huawei.hms.ads.p

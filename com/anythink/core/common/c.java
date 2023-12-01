@@ -13,22 +13,16 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c.class */
 public class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f6565a = c.class.getSimpleName();
+    public static String a = c.class.getSimpleName();
     private static volatile c f;
     ConcurrentHashMap<String, Long> b = new ConcurrentHashMap<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    ConcurrentHashMap<String, Long> f6566c = new ConcurrentHashMap<>();
+    ConcurrentHashMap<String, Long> c = new ConcurrentHashMap<>();
     Map<String, a> d = new ConcurrentHashMap(5);
     Map<String, Map<String, Long>> e;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        String f6568a;
+        String a;
         long b;
     }
 
@@ -51,7 +45,7 @@ public class c {
     }
 
     private void b(String str, long j) {
-        this.f6566c.put(str, Long.valueOf(j));
+        this.c.put(str, Long.valueOf(j));
     }
 
     public final void a(String str) {
@@ -91,7 +85,7 @@ public class c {
             if (aVar == null) {
                 aVar2 = new a();
             }
-            aVar2.f6568a = adError.getPlatformCode();
+            aVar2.a = adError.getPlatformCode();
             aVar2.b = j;
             this.d.put(str, aVar2);
         }
@@ -130,7 +124,7 @@ public class c {
         }
         if (b.contains(Integer.valueOf(i2))) {
             Map<String, Long> map = this.e.get(String.valueOf(aiVar.c()));
-            return (map == null || (l = map.get(aVar.f6568a)) == null || aVar.b + l.longValue() < System.currentTimeMillis()) ? false : true;
+            return (map == null || (l = map.get(aVar.a)) == null || aVar.b + l.longValue() < System.currentTimeMillis()) ? false : true;
         }
         StringBuilder sb = new StringBuilder("The current load mode is: ");
         sb.append(i2);
@@ -157,8 +151,8 @@ public class c {
         if (aiVar.I() == 0) {
             return false;
         }
-        if (this.f6566c.get(aiVar.t()) != null) {
-            j = this.f6566c.get(aiVar.t()).longValue();
+        if (this.c.get(aiVar.t()) != null) {
+            j = this.c.get(aiVar.t()).longValue();
         }
         return j + aiVar.I() >= System.currentTimeMillis();
     }

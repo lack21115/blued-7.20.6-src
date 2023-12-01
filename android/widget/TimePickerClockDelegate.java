@@ -22,7 +22,6 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.RadialTimePickerView;
 import android.widget.TimePicker;
 import com.android.internal.R;
-import com.google.android.material.timepicker.TimeModel;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Iterator;
@@ -259,7 +258,7 @@ public class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelega
             }
         };
         TypedArray obtainStyledAttributes = this.mContext.obtainStyledAttributes(attributeSet, R.styleable.TimePicker, i, i2);
-        LayoutInflater layoutInflater = (LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater layoutInflater = (LayoutInflater) this.mContext.getSystemService("layout_inflater");
         Resources resources = this.mContext.getResources();
         this.mSelectHours = resources.getString(R.string.select_hours);
         this.mSelectMinutes = resources.getString(R.string.select_minutes);
@@ -285,8 +284,8 @@ public class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelega
         this.mHourView.setMinWidth(computeStableWidth(this.mHourView, 24));
         this.mMinuteView.setMinWidth(computeStableWidth(this.mMinuteView, 60));
         int color = obtainStyledAttributes.getColor(11, resources.getColor(R.color.timepicker_default_selector_color_material));
-        this.mHourView.setTextColor(ColorStateList.addFirstIfMissing(this.mHourView.getTextColors(), 16842913, color));
-        this.mMinuteView.setTextColor(ColorStateList.addFirstIfMissing(this.mMinuteView.getTextColors(), 16842913, color));
+        this.mHourView.setTextColor(ColorStateList.addFirstIfMissing(this.mHourView.getTextColors(), R.attr.state_selected, color));
+        this.mMinuteView.setTextColor(ColorStateList.addFirstIfMissing(this.mMinuteView.getTextColors(), R.attr.state_selected, color));
         this.mAmPmLayout = this.mHeaderView.findViewById(R.id.ampm_layout);
         this.mAmLabel = (CheckedTextView) this.mAmPmLayout.findViewById(R.id.am_label);
         this.mAmLabel.setText(amPmStrings[0]);
@@ -301,7 +300,7 @@ public class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelega
         }
         obtainStyledAttributes.recycle();
         TypedValue typedValue = new TypedValue();
-        context.getTheme().resolveAttribute(16842803, typedValue, true);
+        context.getTheme().resolveAttribute(R.attr.disabledAlpha, typedValue, true);
         this.mDisabledAlpha = typedValue.getFloat();
         this.mRadialTimePickerView = (RadialTimePickerView) inflate.findViewById(R.id.radial_picker);
         setupListeners();
@@ -326,7 +325,7 @@ public class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelega
                 deleteLastTypedKey();
                 return false;
             }
-            this.mDelegator.announceForAccessibility(String.format(TimeModel.NUMBER_FORMAT, Integer.valueOf(getValFromKeyCode(i))));
+            this.mDelegator.announceForAccessibility(String.format("%d", Integer.valueOf(getValFromKeyCode(i))));
             if (isTypedTimeFullyLegal()) {
                 if (!this.mIs24HourView && this.mTypedTimes.size() <= 3) {
                     this.mTypedTimes.add(this.mTypedTimes.size() - 1, 7);
@@ -344,7 +343,7 @@ public class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelega
         int i2 = 0;
         int i3 = 0;
         while (i3 < i) {
-            textView.setText(String.format(TimeModel.ZERO_LEADING_NUMBER_FORMAT, Integer.valueOf(i3)));
+            textView.setText(String.format("%02d", Integer.valueOf(i3)));
             textView.measure(0, 0);
             int measuredWidth = textView.getMeasuredWidth();
             int i4 = i2;
@@ -672,7 +671,7 @@ public class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelega
         if (i == 67) {
             if (this.mInKbMode && !this.mTypedTimes.isEmpty()) {
                 int deleteLastTypedKey = deleteLastTypedKey();
-                this.mDelegator.announceForAccessibility(String.format(this.mDeletedKeyFormat, deleteLastTypedKey == getAmOrPmKeyCode(0) ? this.mAmText : deleteLastTypedKey == getAmOrPmKeyCode(1) ? this.mPmText : String.format(TimeModel.NUMBER_FORMAT, Integer.valueOf(getValFromKeyCode(deleteLastTypedKey)))));
+                this.mDelegator.announceForAccessibility(String.format(this.mDeletedKeyFormat, deleteLastTypedKey == getAmOrPmKeyCode(0) ? this.mAmText : deleteLastTypedKey == getAmOrPmKeyCode(1) ? this.mPmText : String.format("%d", Integer.valueOf(getValFromKeyCode(deleteLastTypedKey)))));
                 updateDisplay(true);
             }
         } else if (i == 7 || i == 8 || i == 9 || i == 10 || i == 11 || i == 12 || i == 13 || i == 14 || i == 15 || i == 16 || (!this.mIs24HourView && (i == getAmOrPmKeyCode(0) || i == getAmOrPmKeyCode(1)))) {
@@ -777,8 +776,8 @@ public class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelega
         }
         boolean[] zArr = {false, false};
         int[] enteredTime = getEnteredTime(zArr);
-        String str = zArr[0] ? TimeModel.ZERO_LEADING_NUMBER_FORMAT : "%2d";
-        String str2 = zArr[1] ? TimeModel.ZERO_LEADING_NUMBER_FORMAT : "%2d";
+        String str = zArr[0] ? "%02d" : "%2d";
+        String str2 = zArr[1] ? "%02d" : "%2d";
         String replace = enteredTime[0] == -1 ? this.mDoublePlaceholderText : String.format(str, Integer.valueOf(enteredTime[0])).replace(' ', this.mPlaceholderText);
         String replace2 = enteredTime[1] == -1 ? this.mDoublePlaceholderText : String.format(str2, Integer.valueOf(enteredTime[1])).replace(' ', this.mPlaceholderText);
         this.mHourView.setText(replace);
@@ -808,7 +807,7 @@ public class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelega
 
     private void updateHeaderHour(int i, boolean z) {
         int i2;
-        char c2;
+        char c;
         boolean z2;
         int modulo12;
         char charAt;
@@ -817,7 +816,7 @@ public class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelega
         int i3 = 0;
         while (true) {
             i2 = i3;
-            c2 = 0;
+            c = 0;
             z2 = false;
             if (i2 >= length) {
                 break;
@@ -828,27 +827,27 @@ public class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelega
             }
             i3 = i2 + 1;
         }
-        c2 = charAt;
+        c = charAt;
         z2 = false;
         if (i2 + 1 < length) {
-            c2 = charAt;
+            c = charAt;
             z2 = false;
             if (charAt == bestDateTimePattern.charAt(i2 + 1)) {
                 z2 = true;
-                c2 = charAt;
+                c = charAt;
             }
         }
-        String str = z2 ? TimeModel.ZERO_LEADING_NUMBER_FORMAT : TimeModel.NUMBER_FORMAT;
+        String str = z2 ? "%02d" : "%d";
         if (this.mIs24HourView) {
             modulo12 = i;
-            if (c2 == 'k') {
+            if (c == 'k') {
                 modulo12 = i;
                 if (i == 0) {
                     modulo12 = 24;
                 }
             }
         } else {
-            modulo12 = modulo12(i, c2 == 'K');
+            modulo12 = modulo12(i, c == 'K');
         }
         String format = String.format(str, Integer.valueOf(modulo12));
         this.mHourView.setText(format);
@@ -862,7 +861,7 @@ public class TimePickerClockDelegate extends TimePicker.AbstractTimePickerDelega
         if (i == 60) {
             i2 = 0;
         }
-        String format = String.format(this.mCurrentLocale, TimeModel.ZERO_LEADING_NUMBER_FORMAT, Integer.valueOf(i2));
+        String format = String.format(this.mCurrentLocale, "%02d", Integer.valueOf(i2));
         this.mMinuteView.setText(format);
         if (z) {
             tryAnnounceForAccessibility(format, false);

@@ -16,47 +16,39 @@ import kotlinx.coroutines.flow.FlowCollector;
 @DebugMetadata(b = "AdxBaseManager.kt", c = {223}, d = "invokeSuspend", e = "com.blued.android.module.common.adx.base.AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1")
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/base/AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1.class */
 public final class AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1 extends SuspendLambda implements Function2<FlowCollector<? super ADEvent>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f10496a;
+    int a;
     final /* synthetic */ Flow b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private /* synthetic */ Object f10497c;
+    private /* synthetic */ Object c;
 
     @Metadata
     /* renamed from: com.blued.android.module.common.adx.base.AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/base/AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1$1.class */
     public static final class AnonymousClass1 implements FlowCollector<IBaseAd> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FlowCollector f10498a;
+        final /* synthetic */ FlowCollector a;
 
         @Metadata
         @DebugMetadata(b = "AdxBaseManager.kt", c = {136, 136}, d = "emit", e = "com.blued.android.module.common.adx.base.AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1$1")
         /* renamed from: com.blued.android.module.common.adx.base.AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/base/AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1$1$1.class */
-        public static final class C02171 extends ContinuationImpl {
-
-            /* renamed from: a  reason: collision with root package name */
-            /* synthetic */ Object f10499a;
+        public static final class C00931 extends ContinuationImpl {
+            /* synthetic */ Object a;
             int b;
             Object d;
 
-            public C02171(Continuation continuation) {
+            public C00931(Continuation continuation) {
                 super(continuation);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Object invokeSuspend(Object obj) {
-                this.f10499a = obj;
+                this.a = obj;
                 this.b |= Integer.MIN_VALUE;
                 return AnonymousClass1.this.emit(null, this);
             }
         }
 
         public AnonymousClass1(FlowCollector flowCollector) {
-            this.f10498a = flowCollector;
+            this.a = flowCollector;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
@@ -85,32 +77,32 @@ public final class AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(FlowCollector<? super ADEvent> flowCollector, Continuation<? super Unit> continuation) {
-        return ((AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1) create(flowCollector, continuation)).invokeSuspend(Unit.f42314a);
+        return ((AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1) create(flowCollector, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1 adxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1 = new AdxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1(this.b, continuation);
-        adxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1.f10497c = obj;
+        adxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1.c = obj;
         return adxBaseManager$runParallelPrice$job$1$invokeSuspend$$inlined$transform$1;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f10496a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
-            FlowCollector flowCollector = (FlowCollector) this.f10497c;
-            this.f10496a = 1;
-            if (this.b.a(new AnonymousClass1(flowCollector), this) == a2) {
-                return a2;
+            FlowCollector flowCollector = (FlowCollector) this.c;
+            this.a = 1;
+            if (this.b.a(new AnonymousClass1(flowCollector), this) == a) {
+                return a;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

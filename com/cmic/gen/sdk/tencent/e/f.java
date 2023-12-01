@@ -3,6 +3,7 @@ package com.cmic.gen.sdk.tencent.e;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import com.huawei.hms.framework.common.ContainerUtils;
 
 /* loaded from: source-7206380-dex2jar.jar:com/cmic/gen/sdk/tencent/e/f.class */
 public class f {
@@ -36,7 +37,7 @@ public class f {
         try {
             PackageInfo c2 = c(context);
             if (c2 != null) {
-                return d(context) + "&" + c2.versionName;
+                return d(context) + ContainerUtils.FIELD_DELIMITER + c2.versionName;
             }
             return "";
         } catch (Exception e) {

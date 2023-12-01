@@ -28,11 +28,11 @@ public final class g extends b {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f7376a;
+    public final long f4537a;
     public final long b;
 
     private g(long j, long j2) {
-        this.f7376a = j;
+        this.f4537a = j;
         this.b = j2;
     }
 
@@ -54,7 +54,7 @@ public final class g extends b {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(this.f7376a);
+        parcel.writeLong(this.f4537a);
         parcel.writeLong(this.b);
     }
 }

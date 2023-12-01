@@ -1,6 +1,7 @@
 package com.amap.api.col.p0003sl;
 
 import java.util.List;
+import javax.microedition.khronos.opengles.GL10;
 
 /* renamed from: com.amap.api.col.3sl.li  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/li.class */
@@ -8,7 +9,7 @@ public final class li extends lf {
     private static li b = new li();
 
     private li() {
-        super(5120);
+        super(GL10.GL_BYTE);
     }
 
     private static String a(String str) {
@@ -33,7 +34,7 @@ public final class li extends lf {
                 return null;
             }
             a();
-            int a2 = lp.a((nb) this.f5361a, bArr);
+            int a = lp.a((nb) this.a, bArr);
             int[] iArr = new int[size];
             int i = 0;
             while (true) {
@@ -42,16 +43,16 @@ public final class li extends lf {
                     break;
                 }
                 lm lmVar = list.get(i2);
-                iArr[i2] = lu.a(this.f5361a, (byte) lmVar.a(), lu.a(this.f5361a, lmVar.b()));
+                iArr[i2] = lu.a(this.a, (byte) lmVar.a(), lu.a(this.a, lmVar.b()));
                 i = i2 + 1;
             }
-            int a3 = lp.a(this.f5361a, iArr);
+            int a2 = lp.a(this.a, iArr);
             int i3 = 0;
             if (bArr2 != null) {
-                i3 = lp.b(this.f5361a, bArr2);
+                i3 = lp.b(this.a, bArr2);
             }
-            this.f5361a.c(lp.a(this.f5361a, a2, i3, a3));
-            return this.f5361a.c();
+            this.a.c(lp.a(this.a, a, i3, a2));
+            return this.a.c();
         } catch (Throwable th) {
             mt.a(th);
             return null;
@@ -61,8 +62,8 @@ public final class li extends lf {
     public final byte[] c() {
         super.a();
         try {
-            this.f5361a.c(ms.a(this.f5361a, mr.a(), this.f5361a.a(mr.f()), this.f5361a.a(mr.c()), (byte) mr.m(), this.f5361a.a(mr.i()), this.f5361a.a(mr.h()), this.f5361a.a(a(mr.g())), this.f5361a.a(a(mr.j())), mq.a(mr.n()), this.f5361a.a(mr.l()), this.f5361a.a(mr.k()), this.f5361a.a(mr.d()), this.f5361a.a(mr.e())));
-            return this.f5361a.c();
+            this.a.c(ms.a(this.a, mr.a(), this.a.a(mr.f()), this.a.a(mr.c()), (byte) mr.m(), this.a.a(mr.i()), this.a.a(mr.h()), this.a.a(a(mr.g())), this.a.a(a(mr.j())), mq.a(mr.n()), this.a.a(mr.l()), this.a.a(mr.k()), this.a.a(mr.d()), this.a.a(mr.e())));
+            return this.a.c();
         } catch (Exception e) {
             mt.a(e);
             return null;

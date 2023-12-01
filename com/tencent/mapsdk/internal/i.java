@@ -6,7 +6,7 @@ import java.nio.ByteBuffer;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f37539a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    private static final char[] f23848a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
     public static final byte[] b = new byte[0];
 
     public static byte a(char c2) {
@@ -34,7 +34,7 @@ public class i {
     }
 
     public static String a(byte b2) {
-        char[] cArr = f37539a;
+        char[] cArr = f23848a;
         return new String(new char[]{cArr[((byte) (b2 >>> 4)) & 15], cArr[b2 & 15]});
     }
 
@@ -59,7 +59,7 @@ public class i {
             }
             byte b2 = bArr[i2];
             int i3 = i2 * 2;
-            char[] cArr2 = f37539a;
+            char[] cArr2 = f23848a;
             cArr[i3 + 1] = cArr2[b2 & 15];
             cArr[i3 + 0] = cArr2[((byte) (b2 >>> 4)) & 15];
             i = i2 + 1;

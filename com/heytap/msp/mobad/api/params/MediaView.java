@@ -30,9 +30,8 @@ public class MediaView extends FrameLayout {
         setBackgroundColor(-16777216);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int makeMeasureSpec;
         int makeMeasureSpec2;
         int mode = View.MeasureSpec.getMode(i);

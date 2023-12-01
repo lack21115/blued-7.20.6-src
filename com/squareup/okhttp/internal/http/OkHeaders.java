@@ -1,6 +1,5 @@
 package com.squareup.okhttp.internal.http;
 
-import com.android.internal.telephony.PhoneConstants;
 import com.anythink.expressad.foundation.g.f.g.c;
 import com.google.common.net.HttpHeaders;
 import com.squareup.okhttp.Authenticator;
@@ -86,7 +85,7 @@ public final class OkHeaders {
     }
 
     public static boolean hasVaryAll(Headers headers) {
-        return varyFields(headers).contains(PhoneConstants.APN_TYPE_ALL);
+        return varyFields(headers).contains("*");
     }
 
     public static boolean hasVaryAll(Response response) {
@@ -95,7 +94,7 @@ public final class OkHeaders {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static boolean isEndToEnd(String str) {
-        return ("Connection".equalsIgnoreCase(str) || c.f7906c.equalsIgnoreCase(str) || HttpHeaders.PROXY_AUTHENTICATE.equalsIgnoreCase(str) || HttpHeaders.PROXY_AUTHORIZATION.equalsIgnoreCase(str) || HttpHeaders.TE.equalsIgnoreCase(str) || "Trailers".equalsIgnoreCase(str) || "Transfer-Encoding".equalsIgnoreCase(str) || HttpHeaders.UPGRADE.equalsIgnoreCase(str)) ? false : true;
+        return ("Connection".equalsIgnoreCase(str) || c.f5066c.equalsIgnoreCase(str) || HttpHeaders.PROXY_AUTHENTICATE.equalsIgnoreCase(str) || HttpHeaders.PROXY_AUTHORIZATION.equalsIgnoreCase(str) || HttpHeaders.TE.equalsIgnoreCase(str) || "Trailers".equalsIgnoreCase(str) || "Transfer-Encoding".equalsIgnoreCase(str) || HttpHeaders.UPGRADE.equalsIgnoreCase(str)) ? false : true;
     }
 
     public static List<Challenge> parseChallenges(Headers headers, String str) {

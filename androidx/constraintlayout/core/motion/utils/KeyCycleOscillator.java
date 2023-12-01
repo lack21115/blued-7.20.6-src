@@ -14,30 +14,30 @@ public abstract class KeyCycleOscillator {
     private CurveFit b;
 
     /* renamed from: c  reason: collision with root package name */
-    private CycleOscillator f2036c;
+    private CycleOscillator f1988c;
     private String d;
     private int e = 0;
     private String f = null;
     public int mVariesBy = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    ArrayList<WavePoint> f2035a = new ArrayList<>();
+    ArrayList<WavePoint> f1987a = new ArrayList<>();
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/core/motion/utils/KeyCycleOscillator$CoreSpline.class */
     static class CoreSpline extends KeyCycleOscillator {
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f2038c;
+        int f1990c;
 
         public CoreSpline(String str) {
             this.b = str;
-            this.f2038c = TypedValues.CycleType.CC.getId(str);
+            this.f1990c = TypedValues.CycleType.CC.getId(str);
         }
 
         @Override // androidx.constraintlayout.core.motion.utils.KeyCycleOscillator
         public void setProperty(MotionWidget motionWidget, float f) {
-            motionWidget.setValue(this.f2038c, get(f));
+            motionWidget.setValue(this.f1990c, get(f));
         }
     }
 
@@ -46,11 +46,11 @@ public abstract class KeyCycleOscillator {
     public static class CycleOscillator {
 
         /* renamed from: a  reason: collision with root package name */
-        Oscillator f2039a;
+        Oscillator f1991a;
         float[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        double[] f2040c;
+        double[] f1992c;
         float[] d;
         float[] e;
         float[] f;
@@ -67,7 +67,7 @@ public abstract class KeyCycleOscillator {
 
         CycleOscillator(int i, String str, int i2, int i3) {
             Oscillator oscillator = new Oscillator();
-            this.f2039a = oscillator;
+            this.f1991a = oscillator;
             this.n = 0;
             this.o = 1;
             this.p = 2;
@@ -75,7 +75,7 @@ public abstract class KeyCycleOscillator {
             this.m = i2;
             oscillator.setType(i, str);
             this.b = new float[i3];
-            this.f2040c = new double[i3];
+            this.f1992c = new double[i3];
             this.d = new float[i3];
             this.e = new float[i3];
             this.f = new float[i3];
@@ -99,8 +99,8 @@ public abstract class KeyCycleOscillator {
                 dArr[2] = 0.0d;
             }
             double d2 = f;
-            double value = this.f2039a.getValue(d2, this.j[1]);
-            double slope = this.f2039a.getSlope(d2, this.j[1], this.k[1]);
+            double value = this.f1991a.getValue(d2, this.j[1]);
+            double slope = this.f1991a.getSlope(d2, this.j[1], this.k[1]);
             double[] dArr2 = this.k;
             return dArr2[0] + (value * dArr2[2]) + (slope * this.j[2]);
         }
@@ -116,11 +116,11 @@ public abstract class KeyCycleOscillator {
                 dArr[2] = this.b[0];
             }
             double[] dArr2 = this.j;
-            return dArr2[0] + (this.f2039a.getValue(f, dArr2[1]) * this.j[2]);
+            return dArr2[0] + (this.f1991a.getValue(f, dArr2[1]) * this.j[2]);
         }
 
         public void setPoint(int i, int i2, float f, float f2, float f3, float f4) {
-            this.f2040c[i] = i2 / 100.0d;
+            this.f1992c[i] = i2 / 100.0d;
             this.d[i] = f;
             this.e[i] = f2;
             this.f[i] = f3;
@@ -129,17 +129,17 @@ public abstract class KeyCycleOscillator {
 
         public void setup(float f) {
             this.l = f;
-            double[][] dArr = (double[][]) Array.newInstance(Double.TYPE, this.f2040c.length, 3);
+            double[][] dArr = (double[][]) Array.newInstance(Double.TYPE, this.f1992c.length, 3);
             float[] fArr = this.b;
             this.j = new double[fArr.length + 2];
             this.k = new double[fArr.length + 2];
-            if (this.f2040c[0] > 0.0d) {
-                this.f2039a.addPoint(0.0d, this.d[0]);
+            if (this.f1992c[0] > 0.0d) {
+                this.f1991a.addPoint(0.0d, this.d[0]);
             }
-            double[] dArr2 = this.f2040c;
+            double[] dArr2 = this.f1992c;
             int length = dArr2.length - 1;
             if (dArr2[length] < 1.0d) {
-                this.f2039a.addPoint(1.0d, this.d[length]);
+                this.f1991a.addPoint(1.0d, this.d[length]);
             }
             int i = 0;
             while (true) {
@@ -150,11 +150,11 @@ public abstract class KeyCycleOscillator {
                 dArr[i2][0] = this.e[i2];
                 dArr[i2][1] = this.f[i2];
                 dArr[i2][2] = this.b[i2];
-                this.f2039a.addPoint(this.f2040c[i2], this.d[i2]);
+                this.f1991a.addPoint(this.f1992c[i2], this.d[i2]);
                 i = i2 + 1;
             }
-            this.f2039a.normalize();
-            double[] dArr3 = this.f2040c;
+            this.f1991a.normalize();
+            double[] dArr3 = this.f1992c;
             if (dArr3.length > 1) {
                 this.i = CurveFit.get(0, dArr3, dArr);
             } else {
@@ -180,11 +180,11 @@ public abstract class KeyCycleOscillator {
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f2041c;
+        int f1993c;
 
         public PathRotateSet(String str) {
             this.b = str;
-            this.f2041c = TypedValues.CycleType.CC.getId(str);
+            this.f1993c = TypedValues.CycleType.CC.getId(str);
         }
 
         public void setPathRotate(MotionWidget motionWidget, float f, double d, double d2) {
@@ -193,7 +193,7 @@ public abstract class KeyCycleOscillator {
 
         @Override // androidx.constraintlayout.core.motion.utils.KeyCycleOscillator
         public void setProperty(MotionWidget motionWidget, float f) {
-            motionWidget.setValue(this.f2041c, get(f));
+            motionWidget.setValue(this.f1993c, get(f));
         }
     }
 
@@ -202,18 +202,18 @@ public abstract class KeyCycleOscillator {
     public static class WavePoint {
 
         /* renamed from: a  reason: collision with root package name */
-        int f2042a;
+        int f1994a;
         float b;
 
         /* renamed from: c  reason: collision with root package name */
-        float f2043c;
+        float f1995c;
         float d;
         float e;
 
         public WavePoint(int i, float f, float f2, float f3, float f4) {
-            this.f2042a = i;
+            this.f1994a = i;
             this.b = f4;
-            this.f2043c = f2;
+            this.f1995c = f2;
             this.d = f;
             this.e = f3;
         }
@@ -227,7 +227,7 @@ public abstract class KeyCycleOscillator {
     }
 
     public float get(float f) {
-        return (float) this.f2036c.getValues(f);
+        return (float) this.f1988c.getValues(f);
     }
 
     public CurveFit getCurveFit() {
@@ -235,11 +235,11 @@ public abstract class KeyCycleOscillator {
     }
 
     public float getSlope(float f) {
-        return (float) this.f2036c.getSlope(f);
+        return (float) this.f1988c.getSlope(f);
     }
 
     public void setPoint(int i, int i2, String str, int i3, float f, float f2, float f3, float f4) {
-        this.f2035a.add(new WavePoint(i, f, f2, f3, f4));
+        this.f1987a.add(new WavePoint(i, f, f2, f3, f4));
         if (i3 != -1) {
             this.mVariesBy = i3;
         }
@@ -248,7 +248,7 @@ public abstract class KeyCycleOscillator {
     }
 
     public void setPoint(int i, int i2, String str, int i3, float f, float f2, float f3, float f4, Object obj) {
-        this.f2035a.add(new WavePoint(i, f, f2, f3, f4));
+        this.f1987a.add(new WavePoint(i, f, f2, f3, f4));
         if (i3 != -1) {
             this.mVariesBy = i3;
         }
@@ -265,34 +265,34 @@ public abstract class KeyCycleOscillator {
     }
 
     public void setup(float f) {
-        int size = this.f2035a.size();
+        int size = this.f1987a.size();
         if (size == 0) {
             return;
         }
-        Collections.sort(this.f2035a, new Comparator<WavePoint>() { // from class: androidx.constraintlayout.core.motion.utils.KeyCycleOscillator.1
+        Collections.sort(this.f1987a, new Comparator<WavePoint>() { // from class: androidx.constraintlayout.core.motion.utils.KeyCycleOscillator.1
             @Override // java.util.Comparator
             public int compare(WavePoint wavePoint, WavePoint wavePoint2) {
-                return Integer.compare(wavePoint.f2042a, wavePoint2.f2042a);
+                return Integer.compare(wavePoint.f1994a, wavePoint2.f1994a);
             }
         });
         double[] dArr = new double[size];
         double[][] dArr2 = (double[][]) Array.newInstance(Double.TYPE, size, 3);
-        this.f2036c = new CycleOscillator(this.e, this.f, this.mVariesBy, size);
-        Iterator<WavePoint> it = this.f2035a.iterator();
+        this.f1988c = new CycleOscillator(this.e, this.f, this.mVariesBy, size);
+        Iterator<WavePoint> it = this.f1987a.iterator();
         int i = 0;
         while (true) {
             int i2 = i;
             if (!it.hasNext()) {
-                this.f2036c.setup(f);
+                this.f1988c.setup(f);
                 this.b = CurveFit.get(0, dArr, dArr2);
                 return;
             }
             WavePoint next = it.next();
             dArr[i2] = next.d * 0.01d;
             dArr2[i2][0] = next.b;
-            dArr2[i2][1] = next.f2043c;
+            dArr2[i2][1] = next.f1995c;
             dArr2[i2][2] = next.e;
-            this.f2036c.setPoint(i2, next.f2042a, next.d, next.f2043c, next.e, next.b);
+            this.f1988c.setPoint(i2, next.f1994a, next.d, next.f1995c, next.e, next.b);
             i = i2 + 1;
         }
     }
@@ -300,10 +300,10 @@ public abstract class KeyCycleOscillator {
     public String toString() {
         String str = this.d;
         DecimalFormat decimalFormat = new DecimalFormat("##.##");
-        Iterator<WavePoint> it = this.f2035a.iterator();
+        Iterator<WavePoint> it = this.f1987a.iterator();
         while (it.hasNext()) {
             WavePoint next = it.next();
-            str = str + "[" + next.f2042a + " , " + decimalFormat.format(next.b) + "] ";
+            str = str + "[" + next.f1994a + " , " + decimalFormat.format(next.b) + "] ";
         }
         return str;
     }

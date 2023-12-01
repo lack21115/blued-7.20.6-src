@@ -21,7 +21,7 @@ public class NotificationCompat {
     /* loaded from: source-8756600-dex2jar.jar:androidx/media/app/NotificationCompat$DecoratedMediaCustomViewStyle.class */
     public static class DecoratedMediaCustomViewStyle extends MediaStyle {
         private void a(RemoteViews remoteViews) {
-            remoteViews.setInt(R.id.status_bar_latest_event_content, "setBackgroundColor", this.f2367a.getColor() != 0 ? this.f2367a.getColor() : this.f2367a.mContext.getResources().getColor(R.color.notification_material_background_media_default_color));
+            remoteViews.setInt(R.id.status_bar_latest_event_content, "setBackgroundColor", this.f2319a.getColor() != 0 ? this.f2319a.getColor() : this.f2319a.mContext.getResources().getColor(R.color.notification_material_background_media_default_color));
         }
 
         @Override // androidx.media.app.NotificationCompat.MediaStyle
@@ -40,7 +40,7 @@ public class NotificationCompat {
 
         @Override // androidx.media.app.NotificationCompat.MediaStyle
         int b() {
-            return this.f2367a.getContentView() != null ? R.layout.notification_template_media_custom : super.b();
+            return this.f2319a.getContentView() != null ? R.layout.notification_template_media_custom : super.b();
         }
 
         @Override // androidx.media.app.NotificationCompat.MediaStyle, androidx.core.app.NotificationCompat.Style
@@ -48,7 +48,7 @@ public class NotificationCompat {
             if (Build.VERSION.SDK_INT >= 24) {
                 return null;
             }
-            RemoteViews bigContentView = this.f2367a.getBigContentView() != null ? this.f2367a.getBigContentView() : this.f2367a.getContentView();
+            RemoteViews bigContentView = this.f2319a.getBigContentView() != null ? this.f2319a.getBigContentView() : this.f2319a.getContentView();
             if (bigContentView == null) {
                 return null;
             }
@@ -65,23 +65,23 @@ public class NotificationCompat {
             if (Build.VERSION.SDK_INT >= 24) {
                 return null;
             }
-            boolean z = this.f2367a.getContentView() != null;
+            boolean z = this.f2319a.getContentView() != null;
             if (Build.VERSION.SDK_INT < 21) {
                 RemoteViews c2 = c();
                 if (z) {
-                    buildIntoRemoteViews(c2, this.f2367a.getContentView());
+                    buildIntoRemoteViews(c2, this.f2319a.getContentView());
                     return c2;
                 }
                 return null;
             }
             boolean z2 = true;
             if (!z) {
-                z2 = this.f2367a.getBigContentView() != null;
+                z2 = this.f2319a.getBigContentView() != null;
             }
             if (z2) {
                 RemoteViews c3 = c();
                 if (z) {
-                    buildIntoRemoteViews(c3, this.f2367a.getContentView());
+                    buildIntoRemoteViews(c3, this.f2319a.getContentView());
                 }
                 a(c3);
                 return c3;
@@ -94,7 +94,7 @@ public class NotificationCompat {
             if (Build.VERSION.SDK_INT >= 24) {
                 return null;
             }
-            RemoteViews headsUpContentView = this.f2367a.getHeadsUpContentView() != null ? this.f2367a.getHeadsUpContentView() : this.f2367a.getContentView();
+            RemoteViews headsUpContentView = this.f2319a.getHeadsUpContentView() != null ? this.f2319a.getHeadsUpContentView() : this.f2319a.getContentView();
             if (headsUpContentView == null) {
                 return null;
             }
@@ -123,7 +123,7 @@ public class NotificationCompat {
 
         private RemoteViews a(NotificationCompat.Action action) {
             boolean z = action.getActionIntent() == null;
-            RemoteViews remoteViews = new RemoteViews(this.f2367a.mContext.getPackageName(), R.layout.notification_media_action);
+            RemoteViews remoteViews = new RemoteViews(this.f2319a.mContext.getPackageName(), R.layout.notification_media_action);
             remoteViews.setImageViewResource(R.id.action0, action.getIcon());
             if (!z) {
                 remoteViews.setOnClickPendingIntent(R.id.action0, action.getActionIntent());
@@ -189,7 +189,7 @@ public class NotificationCompat {
 
         RemoteViews c() {
             RemoteViews applyStandardTemplate = applyStandardTemplate(false, b(), true);
-            int size = this.f2367a.mActions.size();
+            int size = this.f2319a.mActions.size();
             int[] iArr = this.e;
             int min = iArr == null ? 0 : Math.min(iArr.length, 3);
             applyStandardTemplate.removeAllViews(R.id.media_actions);
@@ -202,7 +202,7 @@ public class NotificationCompat {
                     } else if (i2 >= size) {
                         throw new IllegalArgumentException(String.format("setShowActionsInCompactView: action %d out of bounds (max %d)", Integer.valueOf(i2), Integer.valueOf(size - 1)));
                     } else {
-                        applyStandardTemplate.addView(R.id.media_actions, a(this.f2367a.mActions.get(this.e[i2])));
+                        applyStandardTemplate.addView(R.id.media_actions, a(this.f2319a.mActions.get(this.e[i2])));
                         i = i2 + 1;
                     }
                 }
@@ -215,12 +215,12 @@ public class NotificationCompat {
             applyStandardTemplate.setViewVisibility(R.id.end_padder, 8);
             applyStandardTemplate.setViewVisibility(R.id.cancel_action, 0);
             applyStandardTemplate.setOnClickPendingIntent(R.id.cancel_action, this.h);
-            applyStandardTemplate.setInt(R.id.cancel_action, "setAlpha", this.f2367a.mContext.getResources().getInteger(R.integer.cancel_button_image_alpha));
+            applyStandardTemplate.setInt(R.id.cancel_action, "setAlpha", this.f2319a.mContext.getResources().getInteger(R.integer.cancel_button_image_alpha));
             return applyStandardTemplate;
         }
 
         RemoteViews d() {
-            int min = Math.min(this.f2367a.mActions.size(), 5);
+            int min = Math.min(this.f2319a.mActions.size(), 5);
             RemoteViews applyStandardTemplate = applyStandardTemplate(false, a(min), false);
             applyStandardTemplate.removeAllViews(R.id.media_actions);
             if (min > 0) {
@@ -230,7 +230,7 @@ public class NotificationCompat {
                     if (i2 >= min) {
                         break;
                     }
-                    applyStandardTemplate.addView(R.id.media_actions, a(this.f2367a.mActions.get(i2)));
+                    applyStandardTemplate.addView(R.id.media_actions, a(this.f2319a.mActions.get(i2)));
                     i = i2 + 1;
                 }
             }
@@ -239,7 +239,7 @@ public class NotificationCompat {
                 return applyStandardTemplate;
             }
             applyStandardTemplate.setViewVisibility(R.id.cancel_action, 0);
-            applyStandardTemplate.setInt(R.id.cancel_action, "setAlpha", this.f2367a.mContext.getResources().getInteger(R.integer.cancel_button_image_alpha));
+            applyStandardTemplate.setInt(R.id.cancel_action, "setAlpha", this.f2319a.mContext.getResources().getInteger(R.integer.cancel_button_image_alpha));
             applyStandardTemplate.setOnClickPendingIntent(R.id.cancel_action, this.h);
             return applyStandardTemplate;
         }

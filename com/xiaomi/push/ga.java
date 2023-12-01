@@ -12,34 +12,34 @@ import org.xmlpull.v1.XmlPullParserFactory;
 public final class ga {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f41428a = 5000;
+    private static int f27737a = 5000;
 
     /* renamed from: a  reason: collision with other field name */
-    private static Vector<String> f502a = new Vector<>();
+    private static Vector<String> f455a = new Vector<>();
     private static int b = 330000;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f41429c = 600000;
+    private static int f27738c = 600000;
     private static int d = 330000;
 
     static {
         int next;
         try {
-            ClassLoader[] m11808a = m11808a();
-            int length = m11808a.length;
+            ClassLoader[] m8758a = m8758a();
+            int length = m8758a.length;
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= length) {
                     return;
                 }
-                Enumeration<URL> resources = m11808a[i2].getResources("META-INF/smack-config.xml");
+                Enumeration<URL> resources = m8758a[i2].getResources("META-INF/smack-config.xml");
                 while (resources.hasMoreElements()) {
                     InputStream inputStream = null;
                     try {
                         InputStream openStream = resources.nextElement().openStream();
                         XmlPullParser newPullParser = XmlPullParserFactory.newInstance().newPullParser();
-                        newPullParser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, true);
+                        newPullParser.setFeature("http://xmlpull.org/v1/doc/features.html#process-namespaces", true);
                         newPullParser.setInput(openStream, "UTF-8");
                         int eventType = newPullParser.getEventType();
                         do {
@@ -47,11 +47,11 @@ public final class ga {
                                 if (newPullParser.getName().equals("className")) {
                                     a(newPullParser);
                                 } else if (newPullParser.getName().equals("packetReplyTimeout")) {
-                                    f41428a = a(newPullParser, f41428a);
+                                    f27737a = a(newPullParser, f27737a);
                                 } else if (newPullParser.getName().equals("keepAliveInterval")) {
                                     b = a(newPullParser, b);
                                 } else if (newPullParser.getName().equals("mechName")) {
-                                    f502a.add(newPullParser.nextText());
+                                    f455a.add(newPullParser.nextText());
                                 }
                             }
                             next = newPullParser.next();
@@ -90,7 +90,7 @@ public final class ga {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static String m11807a() {
+    public static String m8757a() {
         return "3.1.0";
     }
 
@@ -104,7 +104,7 @@ public final class ga {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static ClassLoader[] m11808a() {
+    private static ClassLoader[] m8758a() {
         ClassLoader classLoader = ga.class.getClassLoader();
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
         ArrayList arrayList = new ArrayList();
@@ -118,6 +118,6 @@ public final class ga {
     }
 
     public static int b() {
-        return f41429c;
+        return f27738c;
     }
 }

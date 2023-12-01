@@ -8,11 +8,11 @@ import java.util.Map;
 public class va<K, V> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedHashMap<K, V> f38067a;
+    private final LinkedHashMap<K, V> f24376a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f38068c;
+    private int f24377c;
     private int d;
     private int e;
     private int f;
@@ -23,8 +23,8 @@ public class va<K, V> {
         if (i <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.f38068c = i;
-        this.f38067a = new LinkedHashMap<>(0, 0.75f, true);
+        this.f24377c = i;
+        this.f24376a = new LinkedHashMap<>(0, 0.75f, true);
     }
 
     private int b(K k, V v) {
@@ -55,7 +55,7 @@ public class va<K, V> {
         synchronized (this) {
             this.d++;
             this.b += b(k, v);
-            put = this.f38067a.put(k, v);
+            put = this.f24376a.put(k, v);
             if (put != null) {
                 this.b -= b(k, put);
             }
@@ -63,7 +63,7 @@ public class va<K, V> {
         if (put != null) {
             a(false, k, put, v);
         }
-        b(this.f38068c);
+        b(this.f24377c);
         return put;
     }
 
@@ -72,7 +72,7 @@ public class va<K, V> {
             throw new IllegalArgumentException("maxSize <= 0");
         }
         synchronized (this) {
-            this.f38068c = i;
+            this.f24377c = i;
         }
         b(i);
     }
@@ -84,7 +84,7 @@ public class va<K, V> {
         V put;
         if (k != null) {
             synchronized (this) {
-                V v = this.f38067a.get(k);
+                V v = this.f24376a.get(k);
                 if (v != null) {
                     this.g++;
                     return v;
@@ -96,9 +96,9 @@ public class va<K, V> {
                 }
                 synchronized (this) {
                     this.e++;
-                    put = this.f38067a.put(k, a2);
+                    put = this.f24376a.put(k, a2);
                     if (put != null) {
-                        this.f38067a.put(k, put);
+                        this.f24376a.put(k, put);
                     } else {
                         this.b += b(k, a2);
                     }
@@ -107,7 +107,7 @@ public class va<K, V> {
                     a(false, k, a2, put);
                     return put;
                 }
-                b(this.f38068c);
+                b(this.f24377c);
                 return a2;
             }
         }
@@ -135,7 +135,7 @@ public class va<K, V> {
             int r0 = r0.b     // Catch: java.lang.Throwable -> Lab
             if (r0 < 0) goto L84
             r0 = r6
-            java.util.LinkedHashMap<K, V> r0 = r0.f38067a     // Catch: java.lang.Throwable -> Lab
+            java.util.LinkedHashMap<K, V> r0 = r0.f24376a     // Catch: java.lang.Throwable -> Lab
             boolean r0 = r0.isEmpty()     // Catch: java.lang.Throwable -> Lab
             if (r0 == 0) goto L1a
             r0 = r6
@@ -147,13 +147,13 @@ public class va<K, V> {
             r1 = r7
             if (r0 <= r1) goto L81
             r0 = r6
-            java.util.LinkedHashMap<K, V> r0 = r0.f38067a     // Catch: java.lang.Throwable -> Lab
+            java.util.LinkedHashMap<K, V> r0 = r0.f24376a     // Catch: java.lang.Throwable -> Lab
             boolean r0 = r0.isEmpty()     // Catch: java.lang.Throwable -> Lab
             if (r0 == 0) goto L2f
             goto L81
         L2f:
             r0 = r6
-            java.util.LinkedHashMap<K, V> r0 = r0.f38067a     // Catch: java.lang.Throwable -> Lab
+            java.util.LinkedHashMap<K, V> r0 = r0.f24376a     // Catch: java.lang.Throwable -> Lab
             java.util.Set r0 = r0.entrySet()     // Catch: java.lang.Throwable -> Lab
             java.util.Iterator r0 = r0.iterator()     // Catch: java.lang.Throwable -> Lab
             java.lang.Object r0 = r0.next()     // Catch: java.lang.Throwable -> Lab
@@ -166,7 +166,7 @@ public class va<K, V> {
             java.lang.Object r0 = r0.getValue()     // Catch: java.lang.Throwable -> Lab
             r9 = r0
             r0 = r6
-            java.util.LinkedHashMap<K, V> r0 = r0.f38067a     // Catch: java.lang.Throwable -> Lab
+            java.util.LinkedHashMap<K, V> r0 = r0.f24376a     // Catch: java.lang.Throwable -> Lab
             r1 = r8
             java.lang.Object r0 = r0.remove(r1)     // Catch: java.lang.Throwable -> Lab
             r0 = r6
@@ -242,7 +242,7 @@ public class va<K, V> {
         V remove;
         if (k != null) {
             synchronized (this) {
-                remove = this.f38067a.remove(k);
+                remove = this.f24376a.remove(k);
                 if (remove != null) {
                     this.b -= b(k, remove);
                 }
@@ -266,7 +266,7 @@ public class va<K, V> {
     public final int e() {
         int i;
         synchronized (this) {
-            i = this.f38068c;
+            i = this.f24377c;
         }
         return i;
     }
@@ -298,7 +298,7 @@ public class va<K, V> {
     public final Map<K, V> i() {
         LinkedHashMap linkedHashMap;
         synchronized (this) {
-            linkedHashMap = new LinkedHashMap(this.f38067a);
+            linkedHashMap = new LinkedHashMap(this.f24376a);
         }
         return linkedHashMap;
     }
@@ -308,7 +308,7 @@ public class va<K, V> {
         synchronized (this) {
             int i = this.g;
             int i2 = this.h + i;
-            format = String.format(Locale.US, "LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", Integer.valueOf(this.f38068c), Integer.valueOf(this.g), Integer.valueOf(this.h), Integer.valueOf(i2 != 0 ? (i * 100) / i2 : 0));
+            format = String.format(Locale.US, "LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", Integer.valueOf(this.f24377c), Integer.valueOf(this.g), Integer.valueOf(this.h), Integer.valueOf(i2 != 0 ? (i * 100) / i2 : 0));
         }
         return format;
     }

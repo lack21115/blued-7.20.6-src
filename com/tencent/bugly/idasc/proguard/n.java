@@ -6,7 +6,7 @@ import java.nio.ByteBuffer;
 public final class n {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f35326a;
+    private static final byte[] f21635a;
     private static final byte[] b;
 
     static {
@@ -17,7 +17,7 @@ public final class n {
         while (true) {
             int i2 = i;
             if (i2 >= 256) {
-                f35326a = bArr2;
+                f21635a = bArr2;
                 b = bArr3;
                 return;
             }
@@ -46,7 +46,7 @@ public final class n {
     public static byte[] a(ByteBuffer byteBuffer) {
         int position = byteBuffer.position();
         byte[] bArr = new byte[position];
-        System.arraycopy((Object) byteBuffer.array(), 0, (Object) bArr, 0, position);
+        System.arraycopy(byteBuffer.array(), 0, bArr, 0, position);
         return bArr;
     }
 }

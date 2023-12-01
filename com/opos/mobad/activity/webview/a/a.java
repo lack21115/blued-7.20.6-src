@@ -17,11 +17,11 @@ import org.json.JSONObject;
 public class a implements com.opos.mobad.activity.webview.b.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private e f25632a;
+    private e f11944a;
     private AdItemData b;
 
     /* renamed from: c  reason: collision with root package name */
-    private MaterialData f25633c;
+    private MaterialData f11945c;
     private d d;
     private volatile Context e;
     private WebDataHepler f;
@@ -32,7 +32,7 @@ public class a implements com.opos.mobad.activity.webview.b.b {
     }
 
     private void a(String str, AdItemData adItemData) {
-        b.InterfaceC0687b k = f.k();
+        b.InterfaceC0517b k = f.k();
         if (this.e == null) {
             return;
         }
@@ -68,7 +68,7 @@ public class a implements com.opos.mobad.activity.webview.b.b {
         if (this.e != null) {
             d dVar = this.d;
             Context context = this.e;
-            MaterialData materialData = this.f25633c;
+            MaterialData materialData = this.f11945c;
             if (dVar.a(context, str, str2, str3, materialData != null ? materialData.q() : "", str4, str5)) {
                 a(str, this.b);
                 StringBuilder sb3 = new StringBuilder();
@@ -96,10 +96,10 @@ public class a implements com.opos.mobad.activity.webview.b.b {
             sb.append("loadUrl=");
             sb.append(str != null ? str : com.igexin.push.core.b.l);
             com.opos.cmn.an.f.a.b("AdJsListener", sb.toString());
-            if (com.opos.cmn.an.c.a.a(str) || this.f25632a == null) {
+            if (com.opos.cmn.an.c.a.a(str) || this.f11944a == null) {
                 return;
             }
-            this.f25632a.a(str);
+            this.f11944a.a(str);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("AdJsListener", "", (Throwable) e);
         }
@@ -115,11 +115,11 @@ public class a implements com.opos.mobad.activity.webview.b.b {
     }
 
     public void a(e eVar, WebDataHepler webDataHepler, d dVar) {
-        this.f25632a = eVar;
+        this.f11944a = eVar;
         this.f = webDataHepler;
         AdItemData a2 = webDataHepler.a();
         this.b = a2;
-        this.f25633c = a2.i().get(0);
+        this.f11945c = a2.i().get(0);
         this.d = dVar;
     }
 
@@ -137,20 +137,20 @@ public class a implements com.opos.mobad.activity.webview.b.b {
     @Override // com.opos.mobad.activity.webview.b.b
     public void a(String str, String str2, String str3, String str4, int i) {
         com.opos.cmn.an.f.a.b("AdJsListener", "actionDownload pkgName :" + str2 + ",actionType:" + i + ",url:" + str);
-        if (this.f25632a == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (this.f11944a == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
             return;
         }
         switch (i) {
             case 1:
             case 3:
                 a(str2, this.b);
-                this.f25632a.a(str, str2, str3, str4);
+                this.f11944a.a(str, str2, str3, str4);
                 return;
             case 2:
-                this.f25632a.b(str);
+                this.f11944a.b(str);
                 return;
             case 4:
-                this.f25632a.c(str);
+                this.f11944a.c(str);
                 return;
             case 5:
                 a(str);
@@ -176,7 +176,7 @@ public class a implements com.opos.mobad.activity.webview.b.b {
     public void a(String str, boolean z, String str2, String str3) {
         try {
             if (this.f != null) {
-                a(str, this.f.b(), this.f25633c.t(), str2, str3);
+                a(str, this.f.b(), this.f11945c.t(), str2, str3);
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.b("AdJsListener", "", e);
@@ -225,7 +225,7 @@ public class a implements com.opos.mobad.activity.webview.b.b {
                             }
                         });
                     }
-                }, this.f25633c.q());
+                }, this.f11945c.q());
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("AdJsListener", "", (Throwable) e);
@@ -239,20 +239,20 @@ public class a implements com.opos.mobad.activity.webview.b.b {
 
     @Override // com.opos.mobad.activity.webview.b.b
     public String c(String str, String str2) {
-        if (this.f25632a == null) {
+        if (this.f11944a == null) {
             return "";
         }
         String str3 = "";
         if (!TextUtils.isEmpty(str)) {
             str3 = "";
             if (!TextUtils.isEmpty(str2)) {
-                com.opos.mobad.cmn.service.a.b a2 = this.f25632a.a(str, str2);
-                if (a2 != null && a2.f25920a == 102) {
-                    this.f25632a.a(str, str2, "", "");
+                com.opos.mobad.cmn.service.a.b a2 = this.f11944a.a(str, str2);
+                if (a2 != null && a2.f12232a == 102) {
+                    this.f11944a.a(str, str2, "", "");
                 }
                 try {
                     JSONObject jSONObject = new JSONObject();
-                    jSONObject.put("dlStatus", a2 != null ? a2.f25920a : 0);
+                    jSONObject.put("dlStatus", a2 != null ? a2.f12232a : 0);
                     int i = 0;
                     if (a2 != null) {
                         i = a2.b;
@@ -272,8 +272,8 @@ public class a implements com.opos.mobad.activity.webview.b.b {
     @Override // com.opos.mobad.activity.webview.b.b
     public void c() {
         try {
-            if (this.f25632a != null) {
-                this.f25632a.a();
+            if (this.f11944a != null) {
+                this.f11944a.a();
             }
             if (this.g != null) {
                 this.g.a();

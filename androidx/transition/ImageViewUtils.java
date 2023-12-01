@@ -10,17 +10,17 @@ import java.lang.reflect.Field;
 class ImageViewUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f3454a = true;
+    private static boolean f3406a = true;
     private static Field b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f3455c;
+    private static boolean f3407c;
 
     private ImageViewUtils() {
     }
 
     private static void a() {
-        if (f3455c) {
+        if (f3407c) {
             return;
         }
         try {
@@ -29,7 +29,7 @@ class ImageViewUtils {
             declaredField.setAccessible(true);
         } catch (NoSuchFieldException e) {
         }
-        f3455c = true;
+        f3407c = true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -77,11 +77,11 @@ class ImageViewUtils {
     }
 
     private static void b(ImageView imageView, Matrix matrix) {
-        if (f3454a) {
+        if (f3406a) {
             try {
                 imageView.animateTransform(matrix);
             } catch (NoSuchMethodError e) {
-                f3454a = false;
+                f3406a = false;
             }
         }
     }

@@ -18,7 +18,7 @@ import java.util.List;
 public abstract class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f22811a;
+    private static String f9203a;
 
     private static String a() {
         try {
@@ -56,17 +56,17 @@ public abstract class d {
     }
 
     public static String a(Context context) {
-        if (TextUtils.isEmpty(f22811a)) {
+        if (TextUtils.isEmpty(f9203a)) {
             String b = b(context);
-            f22811a = b;
+            f9203a = b;
             if (TextUtils.isEmpty(b)) {
                 String a2 = a();
-                f22811a = a2;
+                f9203a = a2;
                 return a2;
             }
-            return f22811a;
+            return f9203a;
         }
-        return f22811a;
+        return f9203a;
     }
 
     private static String b(Context context) {

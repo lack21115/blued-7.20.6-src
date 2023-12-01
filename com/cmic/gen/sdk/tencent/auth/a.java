@@ -3,6 +3,7 @@ package com.cmic.gen.sdk.tencent.auth;
 import android.content.Context;
 import com.cmic.gen.sdk.tencent.b;
 import com.cmic.gen.sdk.tencent.e.l;
+import com.huawei.hms.ads.fw;
 import com.meizu.cloud.pushsdk.platform.message.BasicPushStatus;
 import java.util.UUID;
 import org.json.JSONObject;
@@ -11,10 +12,10 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static a f21593c;
+    private static a f7987c;
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.cmic.gen.sdk.tencent.c.c.a f21594a = com.cmic.gen.sdk.tencent.c.c.a.a();
+    private final com.cmic.gen.sdk.tencent.c.c.a f7988a = com.cmic.gen.sdk.tencent.c.c.a.a();
     private final Context b;
 
     private a(Context context) {
@@ -22,18 +23,18 @@ public class a {
     }
 
     public static a a(Context context) {
-        if (f21593c == null) {
+        if (f7987c == null) {
             synchronized (a.class) {
                 try {
-                    if (f21593c == null) {
-                        f21593c = new a(context);
+                    if (f7987c == null) {
+                        f7987c = new a(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f21593c;
+        return f7987c;
     }
 
     private void a(com.cmic.gen.sdk.tencent.a aVar) {
@@ -72,7 +73,7 @@ public class a {
             }
         }
         byte[] a2 = com.cmic.gen.sdk.tencent.e.a.a();
-        aVar.a(b.a.f21612a, bArr);
+        aVar.a(b.a.f8006a, bArr);
         aVar.a(b.a.b, a2);
         aVar.a("authType", "3");
     }
@@ -86,7 +87,7 @@ public class a {
         }
         String b = aVar.b(com.tencent.tendinsv.b.x, "");
         if (c2 == 3) {
-            bVar.a("103000", "true", aVar, d.a(b));
+            bVar.a("103000", fw.Code, aVar, d.a(b));
         } else {
             b(aVar, bVar);
         }
@@ -112,7 +113,7 @@ public class a {
             }
             aVar.a("userCapaid", str);
         }
-        this.f21594a.a(aVar, new com.cmic.gen.sdk.tencent.c.c.d() { // from class: com.cmic.gen.sdk.tencent.auth.a.1
+        this.f7988a.a(aVar, new com.cmic.gen.sdk.tencent.c.c.d() { // from class: com.cmic.gen.sdk.tencent.auth.a.1
             @Override // com.cmic.gen.sdk.tencent.c.c.d
             public void a(String str2, String str3, JSONObject jSONObject) {
                 a.this.a(aVar, bVar, str2, str3, jSONObject);

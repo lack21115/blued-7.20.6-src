@@ -45,9 +45,8 @@ public class StTypeButton extends View {
         this.rectF = new RectF(f3, f4 - f5, (2.0f * f5) + f3, f4 + f5);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.button_type == 1) {
             this.mPaint.setAntiAlias(true);
@@ -115,9 +114,8 @@ public class StTypeButton extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int i3 = this.button_size;
         setMeasuredDimension(i3, i3);

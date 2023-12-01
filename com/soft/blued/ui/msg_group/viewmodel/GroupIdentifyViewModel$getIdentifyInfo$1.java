@@ -14,7 +14,7 @@ import kotlinx.coroutines.CoroutineScope;
 final class GroupIdentifyViewModel$getIdentifyInfo$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f32846a;
+    int f19155a;
     final /* synthetic */ GroupIdentifyViewModel b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -24,13 +24,11 @@ final class GroupIdentifyViewModel$getIdentifyInfo$1 extends SuspendLambda imple
         this.b = groupIdentifyViewModel;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((GroupIdentifyViewModel$getIdentifyInfo$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new GroupIdentifyViewModel$getIdentifyInfo$1(this.b, continuation);
     }
@@ -40,7 +38,6 @@ final class GroupIdentifyViewModel$getIdentifyInfo$1 extends SuspendLambda imple
     /* JADX WARN: Removed duplicated region for block: B:36:0x0145  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x01a3  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x01c7  */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

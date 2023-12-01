@@ -53,11 +53,11 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
     private AppInfo S;
 
     /* renamed from: a  reason: collision with root package name */
-    private c f23000a;
+    private c f9392a;
     private a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private k f23001c;
+    private k f9393c;
     private k d;
     private int e;
     private AdContentData f;
@@ -410,7 +410,7 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
     }
 
     private void Code(k kVar) {
-        a.C0442a Code = this.F.Code(getContext(), kVar);
+        a.C0272a Code = this.F.Code(getContext(), kVar);
         setTextColor(Code.V);
         setProgressDrawable(Code.Code);
         Code(getContext(), this.h, kVar);
@@ -432,7 +432,7 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
         } else {
             if (!ai.I(getContext())) {
                 long leftSize = getLeftSize();
-                c cVar = this.f23000a;
+                c cVar = this.f9392a;
                 if (cVar == null) {
                     V();
                     return;
@@ -480,7 +480,7 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
             h();
             ge.V("AppDownBtn", "appInfo is empty");
             return false;
-        } else if (this.f23001c == k.INSTALLED || this.S.o()) {
+        } else if (this.f9393c == k.INSTALLED || this.S.o()) {
             return true;
         } else {
             String r = this.S.r();
@@ -523,17 +523,17 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
         int i;
         k kVar;
         if (ge.Code()) {
-            k kVar2 = this.f23001c;
+            k kVar2 = this.f9393c;
             k kVar3 = this.d;
             AppInfo appInfo = this.S;
             ge.Code("AppDownBtn", "processStatus, status:%s, preStatus:%s, packageName:%s", kVar2, kVar3, appInfo == null ? null : appInfo.Code());
         }
-        if (F() && this.f23001c != k.INSTALLED) {
+        if (F() && this.f9393c != k.INSTALLED) {
             Code(k.DOWNLOAD);
             return;
         }
         Context context = getContext();
-        a.C0442a Code = this.F.Code(getContext(), this.f23001c);
+        a.C0272a Code = this.F.Code(getContext(), this.f9393c);
         setTextColor(Code.V);
         if (this.q) {
             int i2 = this.e;
@@ -544,7 +544,7 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
                 setProgressDrawable(drawable);
             }
         }
-        switch (AnonymousClass4.Code[this.f23001c.ordinal()]) {
+        switch (AnonymousClass4.Code[this.f9393c.ordinal()]) {
             case 1:
                 Code(context, this.h, k.DOWNLOAD);
                 return;
@@ -656,8 +656,8 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
 
     private void d() {
         AppDownloadTask task;
-        ge.Code("AppDownBtn", "doClickAction, status:" + this.f23001c);
-        int i = AnonymousClass4.Code[this.f23001c.ordinal()];
+        ge.Code("AppDownBtn", "doClickAction, status:" + this.f9393c);
+        int i = AnonymousClass4.Code[this.f9393c.ordinal()];
         if (i == 1) {
             if (!com.huawei.openalliance.ad.utils.e.Code() && k()) {
                 ge.V("AppDownBtn", "not allowed");
@@ -822,9 +822,9 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
 
     public void B() {
         if (ge.Code()) {
-            ge.Code("AppDownBtn", "downloadApp, status:%s", this.f23001c);
+            ge.Code("AppDownBtn", "downloadApp, status:%s", this.f9393c);
         }
-        if ((this.f23001c == k.DOWNLOAD || this.f23001c == k.PAUSE) && this.S != null) {
+        if ((this.f9393c == k.DOWNLOAD || this.f9393c == k.PAUSE) && this.S != null) {
             AppDownloadTask task = getTask();
             if (task == null) {
                 com.huawei.openalliance.ad.download.app.g.I().Code(o());
@@ -844,8 +844,8 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
         String str = null;
         AppDownloadTask appDownloadTask = null;
         if (appInfo == null) {
-            this.d = this.f23001c;
-            this.f23001c = kVar;
+            this.d = this.f9393c;
+            this.f9393c = kVar;
         } else {
             String Code2 = appInfo.Code();
             if (com.huawei.openalliance.ad.utils.e.V(getContext(), this.S.Code()) != null) {
@@ -854,13 +854,13 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
                 appDownloadTask = getTask();
                 Code = appDownloadTask != null ? Code(appDownloadTask, Code2, false) : k.DOWNLOAD;
             }
-            this.d = this.f23001c;
-            this.f23001c = Code;
+            this.d = this.f9393c;
+            this.f9393c = Code;
             I(appDownloadTask);
             str = Code2;
         }
-        ge.Code("AppDownBtn", "refreshStatus, status:%s, pkg:%s", this.f23001c, str);
-        return this.f23001c;
+        ge.Code("AppDownBtn", "refreshStatus, status:%s, pkg:%s", this.f9393c, str);
+        return this.f9393c;
     }
 
     @Override // com.huawei.hms.ads.kz
@@ -886,10 +886,10 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
             @Override // java.lang.Runnable
             public void run() {
                 AppDownloadButton.this.Code();
-                if (AppDownloadButton.this.L == null || AppDownloadButton.this.d == AppDownloadButton.this.f23001c) {
+                if (AppDownloadButton.this.L == null || AppDownloadButton.this.d == AppDownloadButton.this.f9393c) {
                     return;
                 }
-                AppDownloadButton.this.L.Code(AppDownloadButton.this.f23001c);
+                AppDownloadButton.this.L.Code(AppDownloadButton.this.f9393c);
             }
         });
     }
@@ -920,10 +920,10 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
             @Override // java.lang.Runnable
             public void run() {
                 AppDownloadButton.this.Code();
-                if (AppDownloadButton.this.L == null || AppDownloadButton.this.d == AppDownloadButton.this.f23001c) {
+                if (AppDownloadButton.this.L == null || AppDownloadButton.this.d == AppDownloadButton.this.f9393c) {
                     return;
                 }
-                AppDownloadButton.this.L.Code(AppDownloadButton.this.f23001c);
+                AppDownloadButton.this.L.Code(AppDownloadButton.this.f9393c);
             }
         });
     }
@@ -1048,7 +1048,7 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
             public void run() {
                 AppDownloadButton.this.Code();
                 if (AppDownloadButton.this.L != null) {
-                    AppDownloadButton.this.L.Code(AppDownloadButton.this.f23001c);
+                    AppDownloadButton.this.L.Code(AppDownloadButton.this.f9393c);
                 }
             }
         });
@@ -1065,7 +1065,7 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
             public void run() {
                 AppDownloadButton.this.Code();
                 if (AppDownloadButton.this.L != null) {
-                    AppDownloadButton.this.L.Code(AppDownloadButton.this.f23001c);
+                    AppDownloadButton.this.L.Code(AppDownloadButton.this.f9393c);
                 }
             }
         });
@@ -1103,7 +1103,7 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
             i();
             if (a()) {
                 str = "open harmony service";
-            } else if (this.f23001c == k.INSTALLED) {
+            } else if (this.f9393c == k.INSTALLED) {
                 d();
                 return;
             } else if (L()) {
@@ -1127,16 +1127,15 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
     }
 
     public k getStatus() {
-        return this.f23001c;
+        return this.f9393c;
     }
 
     public com.huawei.openalliance.ad.views.a getStyle() {
         return this.F;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         try {
             if (ge.Code()) {
@@ -1166,7 +1165,7 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
             i();
             if (a()) {
                 str = "open harmony service";
-            } else if (this.f23001c == k.INSTALLED) {
+            } else if (this.f9393c == k.INSTALLED) {
                 d();
                 return;
             } else if (L()) {
@@ -1185,9 +1184,8 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
         ge.V("AppDownBtn", str);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         try {
             if (ge.Code()) {
@@ -1202,10 +1200,9 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
-        ge.V("AppDownBtn", "onVisibilityChanged, status:" + this.f23001c);
+    protected void onVisibilityChanged(View view, int i) {
+        ge.V("AppDownBtn", "onVisibilityChanged, status:" + this.f9393c);
         super.onVisibilityChanged(view, i);
         ba.Code(new Runnable() { // from class: com.huawei.openalliance.ad.views.AppDownloadButton.5
             @Override // java.lang.Runnable
@@ -1268,7 +1265,7 @@ public class AppDownloadButton extends ProgressButton implements kz, com.huawei.
     }
 
     public void setOnNonWifiDownloadListener(c cVar) {
-        this.f23000a = cVar;
+        this.f9392a = cVar;
     }
 
     @Override // com.huawei.hms.ads.kz

@@ -24,11 +24,11 @@ import java.util.List;
 public class HomeGuideFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int[] f30340a;
+    private final int[] f16650a;
     private final int[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int[] f30341c;
+    private final int[] f16651c;
     private final int d;
     private View e;
     private ViewPager f;
@@ -45,13 +45,13 @@ public class HomeGuideFragment extends BaseFragment {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= HomeGuideFragment.this.f30340a.length) {
+                if (i2 >= HomeGuideFragment.this.f16650a.length) {
                     return;
                 }
                 GuideBean guideBean = new GuideBean();
-                guideBean.f30345a = HomeGuideFragment.this.f30340a[i2];
+                guideBean.f16655a = HomeGuideFragment.this.f16650a[i2];
                 guideBean.b = HomeGuideFragment.this.b[i2];
-                guideBean.f30346c = HomeGuideFragment.this.f30341c[i2];
+                guideBean.f16656c = HomeGuideFragment.this.f16651c[i2];
                 this.b.add(guideBean);
                 i = i2 + 1;
             }
@@ -59,12 +59,13 @@ public class HomeGuideFragment extends BaseFragment {
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return HomeGuideFragment.this.f30340a.length;
+            return HomeGuideFragment.this.f16650a.length;
         }
 
+        /* JADX WARN: Type inference failed for: r0v0, types: [com.soft.blued.ui.find.fragment.GuideItemFragment, androidx.fragment.app.Fragment] */
         @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
-            GuideItemFragment guideItemFragment = new GuideItemFragment();
+            ?? guideItemFragment = new GuideItemFragment();
             Bundle bundle = new Bundle();
             bundle.putSerializable("data", this.b.get(i));
             guideItemFragment.setArguments(bundle);
@@ -76,23 +77,23 @@ public class HomeGuideFragment extends BaseFragment {
     public static class GuideBean implements Serializable {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f30345a;
+        public int f16655a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f30346c;
+        public int f16656c;
     }
 
     public HomeGuideFragment() {
         int[] iArr = {R.drawable.home_guide_1, R.drawable.home_guide_2};
-        this.f30340a = iArr;
+        this.f16650a = iArr;
         this.b = new int[]{R.string.guide_700_title_1, R.string.guide_700_title_2};
-        this.f30341c = new int[]{R.string.guide_700_desc_1, R.string.guide_700_desc_2};
+        this.f16651c = new int[]{R.string.guide_700_desc_1, R.string.guide_700_desc_2};
         this.d = iArr.length - 1;
     }
 
     private void a() {
-        this.f = (ViewPager) this.e.findViewById(2131373209);
+        this.f = (ViewPager) this.e.findViewById(R.id.view_pager);
         this.g = (TextView) this.e.findViewById(R.id.tv_go);
         this.f.setAdapter(new GlidePagerAdapter(getChildFragmentManager()));
         this.g.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.HomeGuideFragment.1
@@ -131,12 +132,10 @@ public class HomeGuideFragment extends BaseFragment {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         try {
             this.e = layoutInflater.inflate(R.layout.dialog_fragment_home_guide, (ViewGroup) null);
@@ -145,13 +144,12 @@ public class HomeGuideFragment extends BaseFragment {
             this.e = new RelativeLayout(getContext());
             getActivity().finish();
         }
-        CommunityManager.f19086a.a().e(true);
+        CommunityManager.a.a().e(true);
         return this.e;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
-        CommunityManager.f19086a.a().e(false);
+        CommunityManager.a.a().e(false);
     }
 }

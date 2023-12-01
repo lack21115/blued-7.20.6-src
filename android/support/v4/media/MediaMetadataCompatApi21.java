@@ -6,9 +6,8 @@ import android.media.Rating;
 import android.os.Parcel;
 import java.util.Set;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:android/support/v4/media/MediaMetadataCompatApi21.class */
-public class MediaMetadataCompatApi21 {
+class MediaMetadataCompatApi21 {
 
     /* loaded from: source-8756600-dex2jar.jar:android/support/v4/media/MediaMetadataCompatApi21$Builder.class */
     public static class Builder {

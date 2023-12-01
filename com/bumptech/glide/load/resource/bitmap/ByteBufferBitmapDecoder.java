@@ -12,19 +12,19 @@ import java.nio.ByteBuffer;
 public class ByteBufferBitmapDecoder implements ResourceDecoder<ByteBuffer, Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Downsampler f20941a;
+    private final Downsampler f7335a;
 
     public ByteBufferBitmapDecoder(Downsampler downsampler) {
-        this.f20941a = downsampler;
+        this.f7335a = downsampler;
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<Bitmap> a(ByteBuffer byteBuffer, int i, int i2, Options options) throws IOException {
-        return this.f20941a.a(ByteBufferUtil.b(byteBuffer), i, i2, options);
+        return this.f7335a.a(ByteBufferUtil.b(byteBuffer), i, i2, options);
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public boolean a(ByteBuffer byteBuffer, Options options) {
-        return this.f20941a.a(byteBuffer);
+        return this.f7335a.a(byteBuffer);
     }
 }

@@ -44,9 +44,8 @@ public interface IPhoneSubInfo extends IInterface {
         static final int TRANSACTION_getVoiceMailNumber = 19;
         static final int TRANSACTION_getVoiceMailNumberForSubscriber = 20;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/telephony/IPhoneSubInfo$Stub$Proxy.class */
-        public static class Proxy implements IPhoneSubInfo {
+        private static class Proxy implements IPhoneSubInfo {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -751,7 +750,7 @@ public interface IPhoneSubInfo extends IInterface {
                     parcel2.writeNoException();
                     parcel2.writeString(iccSimChallengeResponse);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

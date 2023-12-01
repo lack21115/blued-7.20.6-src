@@ -9,11 +9,11 @@ import java.util.TreeMap;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f7899a;
+    public final int f5059a;
     public final byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final Map<String, String> f7900c;
+    public final Map<String, String> f5060c;
     public final List<com.anythink.expressad.foundation.g.f.c.c> d;
 
     public c(int i, byte[] bArr, List<com.anythink.expressad.foundation.g.f.c.c> list) {
@@ -21,9 +21,9 @@ public final class c {
     }
 
     private c(int i, byte[] bArr, Map<String, String> map, List<com.anythink.expressad.foundation.g.f.c.c> list) {
-        this.f7899a = i;
+        this.f5059a = i;
         this.b = bArr;
-        this.f7900c = map;
+        this.f5060c = map;
         if (list == null) {
             this.d = null;
         } else {

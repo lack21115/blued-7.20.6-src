@@ -85,11 +85,11 @@ public class LineNumberReader extends BufferedReader {
                 if (i4 >= read) {
                     return read;
                 }
-                char c2 = cArr[i + i4];
-                if (c2 == '\r') {
+                char c = cArr[i + i4];
+                if (c == '\r') {
                     this.lineNumber++;
                     this.lastWasCR = true;
-                } else if (c2 == '\n') {
+                } else if (c == '\n') {
                     if (!this.lastWasCR) {
                         this.lineNumber++;
                     }

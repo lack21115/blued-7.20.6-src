@@ -14,11 +14,11 @@ import java.util.regex.Pattern;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7647a = "rgb";
+    private static final String f4808a = "rgb";
     private static final String b = "rgba";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f7648c = Pattern.compile("^rgb\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3})\\)$");
+    private static final Pattern f4809c = Pattern.compile("^rgb\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3})\\)$");
     private static final Pattern d = Pattern.compile("^rgba\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3}),(\\d{1,3})\\)$");
     private static final Pattern e = Pattern.compile("^rgba\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3}),(\\d*\\.?\\d*?)\\)$");
     private static final Map<String, Integer> f;
@@ -214,8 +214,8 @@ public final class e {
             if (matcher.matches()) {
                 return a(z ? (int) (Float.parseFloat(matcher.group(4)) * 255.0f) : Integer.parseInt(matcher.group(4), 10), Integer.parseInt(matcher.group(1), 10), Integer.parseInt(matcher.group(2), 10), Integer.parseInt(matcher.group(3), 10));
             }
-        } else if (replace.startsWith(f7647a)) {
-            Matcher matcher2 = f7648c.matcher(replace);
+        } else if (replace.startsWith(f4808a)) {
+            Matcher matcher2 = f4809c.matcher(replace);
             if (matcher2.matches()) {
                 return a(Integer.parseInt(matcher2.group(1), 10), Integer.parseInt(matcher2.group(2), 10), Integer.parseInt(matcher2.group(3), 10));
             }

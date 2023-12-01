@@ -29,13 +29,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRegularEventRanklistDialogFragment.class */
 public class LiveRegularEventRanklistDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f13236a = "LID";
+    public static String a = "LID";
     ILiveHostDialog b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public RenrenPullToRefreshListView f13237c;
+    public RenrenPullToRefreshListView c;
     public ListView d;
     public LiveRankGuestListItemAdapter e;
     public TextView f;
@@ -57,7 +53,7 @@ public class LiveRegularEventRanklistDialogFragment extends BaseDialogFragment {
 
     private void h() {
         if (getArguments() != null) {
-            this.m = getArguments().getLong(f13236a);
+            this.m = getArguments().getLong(a);
             this.n = getArguments().getString("activity_id");
         }
     }
@@ -69,13 +65,11 @@ public class LiveRegularEventRanklistDialogFragment extends BaseDialogFragment {
             this.h++;
         }
         LiveRoomHttpUtils.a(new BluedUIHttpResponse<BluedEntity<BluedLiveRankListData, LiveEventRankExtra>>() { // from class: com.blued.android.module.live_china.fragment.LiveRegularEventRanklistDialogFragment.3
-
-            /* renamed from: a  reason: collision with root package name */
-            boolean f13240a = false;
+            boolean a = false;
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                this.f13240a = true;
+                this.a = true;
                 LiveRegularEventRanklistDialogFragment.this.h--;
                 return super.onUIFailure(i, str);
             }
@@ -83,7 +77,7 @@ public class LiveRegularEventRanklistDialogFragment extends BaseDialogFragment {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                if (this.f13240a) {
+                if (this.a) {
                     LiveRegularEventRanklistDialogFragment.this.f();
                 } else if (LiveRegularEventRanklistDialogFragment.this.e.getCount() == 0) {
                     LiveRegularEventRanklistDialogFragment.this.d();
@@ -91,13 +85,13 @@ public class LiveRegularEventRanklistDialogFragment extends BaseDialogFragment {
                     LiveRegularEventRanklistDialogFragment.this.g();
                 }
                 if (LiveRegularEventRanklistDialogFragment.this.i) {
-                    LiveRegularEventRanklistDialogFragment.this.f13237c.o();
+                    LiveRegularEventRanklistDialogFragment.this.c.o();
                 } else {
-                    LiveRegularEventRanklistDialogFragment.this.f13237c.p();
+                    LiveRegularEventRanklistDialogFragment.this.c.p();
                 }
-                LiveRegularEventRanklistDialogFragment.this.f13237c.q();
-                LiveRegularEventRanklistDialogFragment.this.f13237c.j();
-                this.f13240a = false;
+                LiveRegularEventRanklistDialogFragment.this.c.q();
+                LiveRegularEventRanklistDialogFragment.this.c.j();
+                this.a = false;
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -133,32 +127,31 @@ public class LiveRegularEventRanklistDialogFragment extends BaseDialogFragment {
     public void d() {
         this.j.setVisibility(0);
         this.k.setVisibility(8);
-        this.f13237c.setVisibility(8);
+        this.c.setVisibility(8);
         this.l.setVisibility(8);
     }
 
     public void e() {
         this.l.setVisibility(0);
         this.k.setVisibility(8);
-        this.f13237c.setVisibility(8);
+        this.c.setVisibility(8);
         this.j.setVisibility(8);
     }
 
     public void f() {
         this.k.setVisibility(0);
         this.l.setVisibility(8);
-        this.f13237c.setVisibility(8);
+        this.c.setVisibility(8);
         this.j.setVisibility(8);
     }
 
     public void g() {
-        this.f13237c.setVisibility(0);
+        this.c.setVisibility(0);
         this.l.setVisibility(8);
         this.k.setVisibility(8);
         this.j.setVisibility(8);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         boolean C = LiveFloatManager.a().C();
         View inflate = getActivity().getLayoutInflater().inflate(C ? R.layout.dialog_live_regular_event_rank_land : R.layout.dialog_live_regular_event_rank, (ViewGroup) null);
@@ -182,7 +175,7 @@ public class LiveRegularEventRanklistDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.g = getActivity();
         View inflate = layoutInflater.inflate(R.layout.dialog_live_regular_event_rank, viewGroup);
@@ -190,11 +183,11 @@ public class LiveRegularEventRanklistDialogFragment extends BaseDialogFragment {
         this.k = inflate.findViewById(R.id.ll_error);
         this.l = inflate.findViewById(R.id.loading_view);
         RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) inflate.findViewById(R.id.rptrlv_live_list);
-        this.f13237c = renrenPullToRefreshListView;
+        this.c = renrenPullToRefreshListView;
         renrenPullToRefreshListView.setRefreshEnabled(false);
-        this.d = (ListView) this.f13237c.getRefreshableView();
+        this.d = (ListView) this.c.getRefreshableView();
         this.f = (TextView) inflate.findViewById(R.id.tv_rank_title);
-        this.f13237c.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.blued.android.module.live_china.fragment.LiveRegularEventRanklistDialogFragment.1
+        this.c.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.blued.android.module.live_china.fragment.LiveRegularEventRanklistDialogFragment.1
             @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 LiveRegularEventRanklistDialogFragment.this.a(true);
@@ -214,16 +207,16 @@ public class LiveRegularEventRanklistDialogFragment extends BaseDialogFragment {
         if (iLiveHostDialog != null) {
             iLiveHostDialog.a();
         }
-        this.f13237c.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.fragment.LiveRegularEventRanklistDialogFragment.2
+        this.c.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.fragment.LiveRegularEventRanklistDialogFragment.2
             @Override // java.lang.Runnable
             public void run() {
-                LiveRegularEventRanklistDialogFragment.this.f13237c.k();
+                LiveRegularEventRanklistDialogFragment.this.c.k();
             }
         }, 100L);
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         ILiveHostDialog iLiveHostDialog = this.b;

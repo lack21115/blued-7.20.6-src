@@ -32,11 +32,11 @@ public class ForegroundBusDelegate implements IBridgeActivityDelegate {
     public static final String INNER_PKG_NAME = "INNER_PACKAGE_NAME";
 
     /* renamed from: a  reason: collision with root package name */
-    private RequestHeader f22400a;
+    private RequestHeader f8792a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ForegroundInnerHeader f22401c = new ForegroundInnerHeader();
+    private ForegroundInnerHeader f8793c = new ForegroundInnerHeader();
     private ResponseHeader d;
     private WeakReference<Activity> e;
     private boolean f;
@@ -59,9 +59,9 @@ public class ForegroundBusDelegate implements IBridgeActivityDelegate {
     }
 
     private void a() {
-        Map<String, String> mapFromForegroundRequestHeader = HiAnalyticsUtil.getInstance().getMapFromForegroundRequestHeader(this.f22400a);
+        Map<String, String> mapFromForegroundRequestHeader = HiAnalyticsUtil.getInstance().getMapFromForegroundRequestHeader(this.f8792a);
         mapFromForegroundRequestHeader.put("direction", HiAnalyticsConstant.Direction.REQUEST);
-        mapFromForegroundRequestHeader.put("version", HiAnalyticsUtil.versionCodeToName(String.valueOf(this.f22400a.getKitSdkVersion())));
+        mapFromForegroundRequestHeader.put("version", HiAnalyticsUtil.versionCodeToName(String.valueOf(this.f8792a.getKitSdkVersion())));
         if (g() != null) {
             HiAnalyticsUtil.getInstance().onNewEvent(g().getApplicationContext(), HiAnalyticsConstant.HMS_SDK_BASE_ACTIVITY_STARTED, mapFromForegroundRequestHeader);
         }
@@ -84,7 +84,7 @@ public class ForegroundBusDelegate implements IBridgeActivityDelegate {
         if (g == null) {
             return;
         }
-        BusResponseCallback b = b(this.f22401c.getResponseCallbackKey());
+        BusResponseCallback b = b(this.f8793c.getResponseCallbackKey());
         if (b != null) {
             BusResponseResult innerError = b.innerError(this.e.get(), i, str);
             if (innerError == null) {
@@ -106,9 +106,9 @@ public class ForegroundBusDelegate implements IBridgeActivityDelegate {
     }
 
     private void a(String str) {
-        Map<String, String> mapFromForegroundRequestHeader = HiAnalyticsUtil.getInstance().getMapFromForegroundRequestHeader(this.f22400a);
+        Map<String, String> mapFromForegroundRequestHeader = HiAnalyticsUtil.getInstance().getMapFromForegroundRequestHeader(this.f8792a);
         mapFromForegroundRequestHeader.put("direction", HiAnalyticsConstant.Direction.RESPONSE);
-        mapFromForegroundRequestHeader.put("version", HiAnalyticsUtil.versionCodeToName(String.valueOf(this.f22400a.getKitSdkVersion())));
+        mapFromForegroundRequestHeader.put("version", HiAnalyticsUtil.versionCodeToName(String.valueOf(this.f8792a.getKitSdkVersion())));
         ResponseHeader responseHeader = this.d;
         if (responseHeader != null) {
             mapFromForegroundRequestHeader.put(HiAnalyticsConstant.HaKey.BI_KEY_RESULT, String.valueOf(responseHeader.getStatusCode()));
@@ -124,16 +124,16 @@ public class ForegroundBusDelegate implements IBridgeActivityDelegate {
     }
 
     private void b() {
-        Map<String, String> mapFromForegroundRequestHeader = HiAnalyticsUtil.getInstance().getMapFromForegroundRequestHeader(this.f22400a);
+        Map<String, String> mapFromForegroundRequestHeader = HiAnalyticsUtil.getInstance().getMapFromForegroundRequestHeader(this.f8792a);
         mapFromForegroundRequestHeader.put("direction", HiAnalyticsConstant.Direction.REQUEST);
-        mapFromForegroundRequestHeader.put("version", HiAnalyticsUtil.versionCodeToName(String.valueOf(this.f22400a.getKitSdkVersion())));
+        mapFromForegroundRequestHeader.put("version", HiAnalyticsUtil.versionCodeToName(String.valueOf(this.f8792a.getKitSdkVersion())));
         if (g() != null) {
             HiAnalyticsUtil.getInstance().onNewEvent(g().getApplicationContext(), HiAnalyticsConstant.HMS_SDK_BASE_START_CORE_ACTIVITY, mapFromForegroundRequestHeader);
         }
     }
 
     private void c() {
-        if (this.f22400a != null) {
+        if (this.f8792a != null) {
             a(HiAnalyticsConstant.HMS_SDK_BASE_ACTIVITY_STARTED);
         }
     }
@@ -148,7 +148,7 @@ public class ForegroundBusDelegate implements IBridgeActivityDelegate {
         } else if (this.f) {
             h();
         } else if (!Util.isAvailableLibExist(g().getApplicationContext())) {
-            if (HuaweiApiAvailability.getInstance().isHuaweiMobileServicesAvailable(g().getApplicationContext(), this.f22401c.getApkVersion()) == 0) {
+            if (HuaweiApiAvailability.getInstance().isHuaweiMobileServicesAvailable(g().getApplicationContext(), this.f8793c.getApkVersion()) == 0) {
                 h();
                 return;
             }
@@ -156,7 +156,7 @@ public class ForegroundBusDelegate implements IBridgeActivityDelegate {
             a(0, "apk version is invalid");
         } else {
             MyAvailableCallBack myAvailableCallBack = new MyAvailableCallBack();
-            AvailableAdapter availableAdapter = new AvailableAdapter(this.f22401c.getApkVersion());
+            AvailableAdapter availableAdapter = new AvailableAdapter(this.f8793c.getApkVersion());
             int isHuaweiMobileServicesAvailable = availableAdapter.isHuaweiMobileServicesAvailable(g());
             if (isHuaweiMobileServicesAvailable == 0) {
                 myAvailableCallBack.onComplete(isHuaweiMobileServicesAvailable);
@@ -193,7 +193,7 @@ public class ForegroundBusDelegate implements IBridgeActivityDelegate {
             return;
         }
         String packageName = this.f ? g.getPackageName() : HMSPackageManager.getInstance(g.getApplicationContext()).getHMSPackageNameForMultiService();
-        Intent intent = new Intent(this.f22401c.getAction());
+        Intent intent = new Intent(this.f8793c.getAction());
         intent.putExtra(HMS_FOREGROUND_REQ_BODY, this.b);
         try {
             intent.setPackage(packageName);
@@ -202,7 +202,7 @@ public class ForegroundBusDelegate implements IBridgeActivityDelegate {
         }
         intent.putExtra(BridgeActivity.EXTRA_IS_FULLSCREEN, UIUtil.isActivityFullscreen(g));
         intent.setClassName(packageName, "com.huawei.hms.core.activity.UiJumpActivity");
-        intent.putExtra(HMS_FOREGROUND_REQ_HEADER, this.f22400a.toJson());
+        intent.putExtra(HMS_FOREGROUND_REQ_HEADER, this.f8792a.toJson());
         intent.putExtra("intent.extra.hms.core.DELEGATE_NAME", "com.huawei.hms.core.activity.ForegroundBus");
         try {
             b();
@@ -224,19 +224,19 @@ public class ForegroundBusDelegate implements IBridgeActivityDelegate {
         Intent intent = activity.getIntent();
         String stringExtra = intent.getStringExtra(HMS_FOREGROUND_REQ_HEADER);
         RequestHeader requestHeader = new RequestHeader();
-        this.f22400a = requestHeader;
+        this.f8792a = requestHeader;
         if (!requestHeader.fromJson(stringExtra)) {
             a(0, "header is invalid");
             return;
         }
         this.b = intent.getStringExtra(HMS_FOREGROUND_REQ_BODY);
-        ForegroundInnerHeader foregroundInnerHeader = this.f22401c;
+        ForegroundInnerHeader foregroundInnerHeader = this.f8793c;
         if (foregroundInnerHeader == null) {
             a(0, "inner header is invalid");
             return;
         }
         foregroundInnerHeader.fromJson(intent.getStringExtra(HMS_FOREGROUND_REQ_INNER));
-        if (TextUtils.isEmpty(this.f22400a.getApiName())) {
+        if (TextUtils.isEmpty(this.f8792a.getApiName())) {
             a(0, "action is invalid");
             return;
         }
@@ -264,7 +264,7 @@ public class ForegroundBusDelegate implements IBridgeActivityDelegate {
                 JsonUtil.jsonToEntity(stringExtra, responseHeader);
             }
             d();
-            BusResponseCallback b = b(this.f22401c.getResponseCallbackKey());
+            BusResponseCallback b = b(this.f8793c.getResponseCallbackKey());
             if (b == null) {
                 a(i2, intent);
                 return true;

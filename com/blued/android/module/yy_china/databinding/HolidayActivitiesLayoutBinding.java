@@ -12,20 +12,16 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/HolidayActivitiesLayoutBinding.class */
 public final class HolidayActivitiesLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ProgressBar f16557a;
+    public final ProgressBar a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16558c;
+    public final TextView c;
     private final ConstraintLayout d;
 
     private HolidayActivitiesLayoutBinding(ConstraintLayout constraintLayout, ProgressBar progressBar, ImageView imageView, TextView textView) {
         this.d = constraintLayout;
-        this.f16557a = progressBar;
+        this.a = progressBar;
         this.b = imageView;
-        this.f16558c = textView;
+        this.c = textView;
     }
 
     public static HolidayActivitiesLayoutBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -56,7 +52,6 @@ public final class HolidayActivitiesLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.d;

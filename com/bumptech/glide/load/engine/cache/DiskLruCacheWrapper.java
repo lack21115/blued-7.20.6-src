@@ -12,17 +12,17 @@ public class DiskLruCacheWrapper implements DiskCache {
     private final File b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f20828c;
+    private final long f7222c;
     private DiskLruCache e;
     private final DiskCacheWriteLocker d = new DiskCacheWriteLocker();
 
     /* renamed from: a  reason: collision with root package name */
-    private final SafeKeyGenerator f20827a = new SafeKeyGenerator();
+    private final SafeKeyGenerator f7221a = new SafeKeyGenerator();
 
     @Deprecated
     protected DiskLruCacheWrapper(File file, long j) {
         this.b = file;
-        this.f20828c = j;
+        this.f7222c = j;
     }
 
     public static DiskCache a(File file, long j) {
@@ -33,7 +33,7 @@ public class DiskLruCacheWrapper implements DiskCache {
         DiskLruCache diskLruCache;
         synchronized (this) {
             if (this.e == null) {
-                this.e = DiskLruCache.a(this.b, 1, 1, this.f20828c);
+                this.e = DiskLruCache.a(this.b, 1, 1, this.f7222c);
             }
             diskLruCache = this.e;
         }
@@ -48,7 +48,7 @@ public class DiskLruCacheWrapper implements DiskCache {
 
     @Override // com.bumptech.glide.load.engine.cache.DiskCache
     public File a(Key key) {
-        String a2 = this.f20827a.a(key);
+        String a2 = this.f7221a.a(key);
         if (Log.isLoggable("DiskLruCacheWrapper", 2)) {
             Log.v("DiskLruCacheWrapper", "Get: Obtained: " + a2 + " for for Key: " + key);
         }
@@ -84,7 +84,7 @@ public class DiskLruCacheWrapper implements DiskCache {
     @Override // com.bumptech.glide.load.engine.cache.DiskCache
     public void a(Key key, DiskCache.Writer writer) {
         DiskLruCache b;
-        String a2 = this.f20827a.a(key);
+        String a2 = this.f7221a.a(key);
         this.d.a(a2);
         try {
             if (Log.isLoggable("DiskLruCacheWrapper", 2)) {
@@ -121,7 +121,7 @@ public class DiskLruCacheWrapper implements DiskCache {
     @Override // com.bumptech.glide.load.engine.cache.DiskCache
     public void delete(Key key) {
         try {
-            b().c(this.f20827a.a(key));
+            b().c(this.f7221a.a(key));
         } catch (IOException e) {
             if (Log.isLoggable("DiskLruCacheWrapper", 5)) {
                 Log.w("DiskLruCacheWrapper", "Unable to delete from disk cache", e);

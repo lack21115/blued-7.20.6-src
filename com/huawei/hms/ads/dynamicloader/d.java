@@ -13,7 +13,7 @@ import java.util.List;
 public class d extends PathClassLoader {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22469a = d.class.getSimpleName();
+    private static final String f8861a = d.class.getSimpleName();
 
     public d(String str, ClassLoader classLoader) {
         super(str, classLoader);
@@ -56,27 +56,26 @@ public class d extends PathClassLoader {
             try {
                 a(arrayList, systemClassLoader.getResources(str));
             } catch (IOException e) {
-                str2 = f22469a;
+                str2 = f8861a;
                 str3 = "Add Enumeration failed.";
             }
             a(arrayList, findResources(str));
             return Collections.enumeration(arrayList);
         }
-        str2 = f22469a;
+        str2 = f8861a;
         str3 = "Failed to get SystemClassLoader";
         aa.c(str2, str3);
         a(arrayList, findResources(str));
         return Collections.enumeration(arrayList);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.lang.ClassLoader
-    public final Class loadClass(String str, boolean z) throws ClassNotFoundException {
+    protected final Class loadClass(String str, boolean z) throws ClassNotFoundException {
         if (str.startsWith("java.")) {
             try {
                 return super.loadClass(str, z);
             } catch (ClassNotFoundException e) {
-                aa.c(f22469a, "Load class failed.");
+                aa.c(f8861a, "Load class failed.");
             }
         }
         try {

@@ -1,6 +1,7 @@
 package com.kwad.sdk.api.loader;
 
 import com.google.common.net.HttpHeaders;
+import com.huawei.openalliance.ad.utils.ay;
 import com.kwad.sdk.api.core.TLSConnectionUtils;
 import com.sobot.chat.core.channel.Const;
 import java.io.Closeable;
@@ -114,7 +115,7 @@ public final class i {
     private static HttpURLConnection bb(String str) {
         HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
         TLSConnectionUtils.wrapHttpURLConnection(httpURLConnection);
-        httpURLConnection.setRequestProperty(HttpHeaders.ACCEPT_LANGUAGE, "zh-CN");
+        httpURLConnection.setRequestProperty(HttpHeaders.ACCEPT_LANGUAGE, ay.Code);
         httpURLConnection.setConnectTimeout(10000);
         httpURLConnection.setReadTimeout(Const.SOCKET_CHECK_CHANNEL);
         httpURLConnection.setUseCaches(false);

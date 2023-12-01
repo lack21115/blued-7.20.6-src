@@ -3,9 +3,9 @@ package com.bytedance.pangle.e;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.pangle.util.MethodUtils;
 import com.bytedance.pangle.util.i;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 import java.io.File;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f21384a = 1;
+    public static int f7778a = 1;
     public static int b = 2;
 
     public static SharedPreferences a(Context context) {
@@ -31,7 +31,7 @@ public final class b {
     }
 
     public static String a(String str) {
-        String substring = str.substring(str.lastIndexOf(BridgeUtil.SPLIT_MARK) + 1);
+        String substring = str.substring(str.lastIndexOf("/") + 1);
         String substring2 = substring.substring(substring.lastIndexOf("."));
         String str2 = Build.VERSION.SDK_INT >= 26 ? ShareConstants.ODEX_SUFFIX : ShareConstants.DEX_SUFFIX;
         String str3 = substring;
@@ -45,7 +45,7 @@ public final class b {
     }
 
     public static void a(String str, String str2) {
-        a.a(a(str, str2, f21384a));
+        a.a(a(str, str2, f7778a));
     }
 
     public static boolean a(String str, String... strArr) {
@@ -87,10 +87,10 @@ public final class b {
             arrayList.add("--runtime-arg");
             arrayList.add("-classpath");
             arrayList.add("--runtime-arg");
-            arrayList.add("&");
+            arrayList.add(ContainerUtils.FIELD_DELIMITER);
         }
         arrayList.add("--instruction-set=" + a());
-        if (i == f21384a) {
+        if (i == f7778a) {
             if (i.h()) {
                 arrayList.add("--compiler-filter=quicken");
             } else {

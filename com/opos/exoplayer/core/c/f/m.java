@@ -9,11 +9,11 @@ import java.util.Collections;
 public final class m implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f25212a;
+    private final String f11524a;
     private final com.opos.exoplayer.core.i.m b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.opos.exoplayer.core.i.l f25213c;
+    private final com.opos.exoplayer.core.i.l f11525c;
     private com.opos.exoplayer.core.c.n d;
     private Format e;
     private String f;
@@ -33,15 +33,15 @@ public final class m implements h {
     private int t;
 
     public m(String str) {
-        this.f25212a = str;
+        this.f11524a = str;
         com.opos.exoplayer.core.i.m mVar = new com.opos.exoplayer.core.i.m(1024);
         this.b = mVar;
-        this.f25213c = new com.opos.exoplayer.core.i.l(mVar.f25496a);
+        this.f11525c = new com.opos.exoplayer.core.i.l(mVar.f11808a);
     }
 
     private void a(int i) {
         this.b.a(i);
-        this.f25213c.a(this.b.f25496a);
+        this.f11525c.a(this.b.f11808a);
     }
 
     private void a(com.opos.exoplayer.core.i.l lVar) {
@@ -68,7 +68,7 @@ public final class m implements h {
         if ((b & 7) == 0) {
             this.b.c(b >> 3);
         } else {
-            lVar.a(this.b.f25496a, 0, i * 8);
+            lVar.a(this.b.f11808a, 0, i * 8);
             this.b.c(0);
         }
         this.d.a(this.b, i);
@@ -102,7 +102,7 @@ public final class m implements h {
             lVar.a(b);
             byte[] bArr = new byte[(d + 7) / 8];
             lVar.a(bArr, 0, d);
-            Format a2 = Format.a(this.f, "audio/mp4a-latm", null, -1, -1, this.t, this.r, Collections.singletonList(bArr), null, 0, this.f25212a);
+            Format a2 = Format.a(this.f, "audio/mp4a-latm", null, -1, -1, this.t, this.r, Collections.singletonList(bArr), null, 0, this.f11524a);
             if (!a2.equals(this.e)) {
                 this.e = a2;
                 this.s = 1024000000 / a2.s;
@@ -213,19 +213,19 @@ public final class m implements h {
                 } else if (i == 2) {
                     int g2 = ((this.j & (-225)) << 8) | mVar.g();
                     this.i = g2;
-                    if (g2 > this.b.f25496a.length) {
+                    if (g2 > this.b.f11808a.length) {
                         a(this.i);
                     }
                     this.h = 0;
                     this.g = 3;
                 } else if (i == 3) {
                     int min = Math.min(mVar.b(), this.i - this.h);
-                    mVar.a(this.f25213c.f25494a, this.h, min);
+                    mVar.a(this.f11525c.f11806a, this.h, min);
                     int i2 = min + this.h;
                     this.h = i2;
                     if (i2 == this.i) {
-                        this.f25213c.a(0);
-                        a(this.f25213c);
+                        this.f11525c.a(0);
+                        a(this.f11525c);
                         this.g = 0;
                     }
                 }

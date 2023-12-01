@@ -57,8 +57,8 @@ public final class c extends com.igexin.push.core.a.a {
                             break;
                         }
                         JSONObject jSONObject2 = new JSONObject();
-                        jSONObject2.put("appid", arrayList.get(i2).f23462c);
-                        jSONObject2.put("name", arrayList.get(i2).f23461a);
+                        jSONObject2.put("appid", arrayList.get(i2).f9854c);
+                        jSONObject2.put("name", arrayList.get(i2).f9853a);
                         jSONObject2.put("version", arrayList.get(i2).b);
                         jSONObject2.put("versionName", arrayList.get(i2).d);
                         jSONArray.put(jSONObject2);
@@ -95,7 +95,7 @@ public final class c extends com.igexin.push.core.a.a {
                     String next = keys.next();
                     JSONObject jSONObject = a3.getJSONObject(next);
                     com.igexin.c.a.c.a.a("LoginResult|send unFeedback taskid = ".concat(String.valueOf(next)), new Object[0]);
-                    jSONObject.put("appid", com.igexin.push.core.e.f23495a);
+                    jSONObject.put("appid", com.igexin.push.core.e.f9887a);
                     FeedbackImpl.getInstance().feedbackMultiBrandMessageAction(jSONObject, jSONObject.getString("multaid"));
                     keys.remove();
                 }
@@ -109,12 +109,12 @@ public final class c extends com.igexin.push.core.a.a {
 
     private void d() {
         com.igexin.c.a.c.a.d.a().a("[LoginResult] Login successed with cid = " + com.igexin.push.core.e.A);
-        com.igexin.push.c.c cVar = c.b.f23335a;
-        cVar.f23328c = System.currentTimeMillis();
+        com.igexin.push.c.c cVar = c.b.f9727a;
+        cVar.f9720c = System.currentTimeMillis();
         if (cVar.b) {
-            com.igexin.c.a.c.a.a(com.igexin.push.c.c.f23327a, "loginRsp| enter polling");
+            com.igexin.c.a.c.a.a(com.igexin.push.c.c.f9719a, "loginRsp| enter polling");
             cVar.e = new com.igexin.push.c.e();
-            d.a.f23611a.g();
+            d.a.f10003a.g();
             cVar.d = 0;
         } else {
             cVar.b();
@@ -163,7 +163,7 @@ public final class c extends com.igexin.push.core.a.a {
         Message obtain = Message.obtain();
         obtain.what = com.igexin.push.core.b.S;
         obtain.obj = new Object();
-        d.a.f23474a.a(obtain);
+        d.a.f9866a.a(obtain);
         GTBoater.getInstance().initialize();
         if (com.igexin.assist.sdk.a.a().c()) {
             com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new AnonymousClass2(), false, true);
@@ -237,12 +237,12 @@ public final class c extends com.igexin.push.core.a.a {
                 return true;
             }
             com.igexin.c.a.c.a.d.a().a("[LoginResult] Login successed with cid = " + com.igexin.push.core.e.A);
-            com.igexin.push.c.c cVar = c.b.f23335a;
-            cVar.f23328c = System.currentTimeMillis();
+            com.igexin.push.c.c cVar = c.b.f9727a;
+            cVar.f9720c = System.currentTimeMillis();
             if (cVar.b) {
-                com.igexin.c.a.c.a.a(com.igexin.push.c.c.f23327a, "loginRsp| enter polling");
+                com.igexin.c.a.c.a.a(com.igexin.push.c.c.f9719a, "loginRsp| enter polling");
                 cVar.e = new com.igexin.push.c.e();
-                d.a.f23611a.g();
+                d.a.f10003a.g();
                 cVar.d = 0;
             } else {
                 cVar.b();
@@ -291,7 +291,7 @@ public final class c extends com.igexin.push.core.a.a {
             Message obtain = Message.obtain();
             obtain.what = com.igexin.push.core.b.S;
             obtain.obj = new Object();
-            d.a.f23474a.a(obtain);
+            d.a.f9866a.a(obtain);
             GTBoater.getInstance().initialize();
             if (com.igexin.assist.sdk.a.a().c()) {
                 com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new AnonymousClass2(), false, true);

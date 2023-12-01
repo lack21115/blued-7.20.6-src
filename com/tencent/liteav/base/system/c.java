@@ -5,13 +5,13 @@ package com.tencent.liteav.base.system;
 public final /* synthetic */ class c implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final c f36307a = new c();
+    private static final c f22616a = new c();
 
     private c() {
     }
 
     public static Runnable a() {
-        return f36307a;
+        return f22616a;
     }
 
     @Override // java.lang.Runnable

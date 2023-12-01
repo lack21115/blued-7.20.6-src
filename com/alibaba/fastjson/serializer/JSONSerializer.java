@@ -486,36 +486,36 @@ public class JSONSerializer {
         StringCodec.instance.write(this, str);
     }
 
-    public char writeAfter(Object obj, char c2) {
+    public char writeAfter(Object obj, char c) {
         List<AfterFilter> list = this.afterFilters;
-        char c3 = c2;
+        char c2 = c;
         if (list != null) {
             Iterator<AfterFilter> it = list.iterator();
             while (true) {
-                c3 = c2;
+                c2 = c;
                 if (!it.hasNext()) {
                     break;
                 }
-                c2 = it.next().writeAfter(this, obj, c2);
+                c = it.next().writeAfter(this, obj, c);
             }
         }
-        return c3;
+        return c2;
     }
 
-    public char writeBefore(Object obj, char c2) {
+    public char writeBefore(Object obj, char c) {
         List<BeforeFilter> list = this.beforeFilters;
-        char c3 = c2;
+        char c2 = c;
         if (list != null) {
             Iterator<BeforeFilter> it = list.iterator();
             while (true) {
-                c3 = c2;
+                c2 = c;
                 if (!it.hasNext()) {
                     break;
                 }
-                c2 = it.next().writeBefore(this, obj, c2);
+                c = it.next().writeBefore(this, obj, c);
             }
         }
-        return c3;
+        return c2;
     }
 
     public boolean writeDirect() {
@@ -523,9 +523,9 @@ public class JSONSerializer {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public final void writeKeyValue(char c2, String str, Object obj) {
-        if (c2 != 0) {
-            this.out.write(c2);
+    public final void writeKeyValue(char c, String str, Object obj) {
+        if (c != 0) {
+            this.out.write(c);
         }
         this.out.writeFieldName(str);
         write(obj);

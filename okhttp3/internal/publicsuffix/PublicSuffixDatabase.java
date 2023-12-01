@@ -15,13 +15,9 @@ import okio.Okio;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/publicsuffix/PublicSuffixDatabase.class */
 public final class PublicSuffixDatabase {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f43979a = {42};
+    private static final byte[] a = {42};
     private static final String[] b = new String[0];
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String[] f43980c = {PhoneConstants.APN_TYPE_ALL};
+    private static final String[] c = {PhoneConstants.APN_TYPE_ALL};
     private static final PublicSuffixDatabase d = new PublicSuffixDatabase();
     private final AtomicBoolean e = new AtomicBoolean(false);
     private final CountDownLatch f = new CountDownLatch(1);

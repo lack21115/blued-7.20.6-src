@@ -15,23 +15,23 @@ public class g {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f27676a;
+        static final /* synthetic */ int[] f13988a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[PLVideoEncodeSetting.ProfileMode.values().length];
-            f27676a = iArr;
+            f13988a = iArr;
             try {
                 iArr[PLVideoEncodeSetting.ProfileMode.BASELINE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f27676a[PLVideoEncodeSetting.ProfileMode.MAIN.ordinal()] = 2;
+                f13988a[PLVideoEncodeSetting.ProfileMode.MAIN.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f27676a[PLVideoEncodeSetting.ProfileMode.HIGH.ordinal()] = 3;
+                f13988a[PLVideoEncodeSetting.ProfileMode.HIGH.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -61,7 +61,7 @@ public class g {
     }
 
     public static int a(PLVideoEncodeSetting.ProfileMode profileMode) {
-        int i = AnonymousClass1.f27676a[profileMode.ordinal()];
+        int i = AnonymousClass1.f13988a[profileMode.ordinal()];
         int i2 = 2;
         if (i != 1) {
             if (i != 2) {

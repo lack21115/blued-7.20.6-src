@@ -16,25 +16,25 @@ import java.util.Set;
 public class n {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22558a = n.class.getSimpleName();
+    private static final String f8950a = n.class.getSimpleName();
     private static final String b = "presplits";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f22559c = ",";
+    private static final String f8951c = ",";
 
     private static HashMap<String, String> a(Context context, String str) {
         PackageInfo packageInfo;
         ApplicationInfo applicationInfo;
         HashMap<String, String> hashMap = new HashMap<>();
         if (Build.VERSION.SDK_INT < 21) {
-            aa.c(f22558a, "The minSdkVersion for split feature is 21, the current api level is too low.");
+            aa.c(f8950a, "The minSdkVersion for split feature is 21, the current api level is too low.");
             return hashMap;
         }
         try {
             packageInfo = context.getPackageManager().getPackageInfo(str, 128);
             applicationInfo = context.getPackageManager().getApplicationInfo(str, 128);
         } catch (PackageManager.NameNotFoundException e) {
-            String str2 = f22558a;
+            String str2 = f8950a;
             aa.c(str2, "getSourceDir:cannot find the package:" + str + " info." + e.getClass().getSimpleName());
         }
         if (packageInfo.splitNames != null && applicationInfo.splitSourceDirs != null) {
@@ -50,7 +50,7 @@ public class n {
             }
             return hashMap;
         }
-        aa.c(f22558a, "splitNames or splitSourceDirs is null.");
+        aa.c(f8950a, "splitNames or splitSourceDirs is null.");
         return hashMap;
     }
 
@@ -62,7 +62,7 @@ public class n {
             }
             String string = applicationInfo.metaData.getString(b);
             if (TextUtils.isEmpty(string)) {
-                aa.b(f22558a, "No metadata: presplits found.");
+                aa.b(f8950a, "No metadata: presplits found.");
                 return hashSet;
             }
             String[] split = string.split(",");
@@ -96,7 +96,7 @@ public class n {
         try {
             applicationInfo = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128);
         } catch (PackageManager.NameNotFoundException e) {
-            String str2 = f22558a;
+            String str2 = f8950a;
             aa.d(str2, "getMetaSplits:cannot find the package:" + str + "info." + e.getClass().getSimpleName());
             applicationInfo = null;
         }

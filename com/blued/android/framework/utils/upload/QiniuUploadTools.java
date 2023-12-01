@@ -5,7 +5,6 @@ import com.blued.android.framework.utils.Logger;
 import com.blued.android.framework.utils.ThreadUtils;
 import com.blued.android.statistics.BluedStatistics;
 import com.blued.android.statistics.biz.Event;
-import com.igexin.push.core.b;
 import com.qiniu.android.common.FixedZone;
 import com.qiniu.android.http.ResponseInfo;
 import com.qiniu.android.storage.Configuration;
@@ -58,13 +57,12 @@ public class QiniuUploadTools {
     public static void a(Configuration configuration, File file, String str, String str2, final QiNiuListener qiNiuListener) {
         final long currentTimeMillis = System.currentTimeMillis();
         (configuration == null ? new UploadManager() : new UploadManager(configuration, 3)).put(file, str, str2, new UpCompletionHandler() { // from class: com.blued.android.framework.utils.upload.QiniuUploadTools.4
-            @Override // com.qiniu.android.storage.UpCompletionHandler
             public void complete(String str3, ResponseInfo responseInfo, JSONObject jSONObject) {
                 long currentTimeMillis2 = System.currentTimeMillis();
-                String jSONObject2 = jSONObject == null ? b.l : jSONObject.toString();
+                String jSONObject2 = jSONObject == null ? "null" : jSONObject.toString();
                 if (responseInfo != null && responseInfo.isOK()) {
-                    Event c2 = BluedStatistics.c();
-                    c2.a("QN_UPLOAD", 0L, 0, "time=" + (currentTimeMillis2 - currentTimeMillis) + ",reqId=" + responseInfo.reqId);
+                    Event c = BluedStatistics.c();
+                    c.a("QN_UPLOAD", 0L, 0, "time=" + (currentTimeMillis2 - currentTimeMillis) + ",reqId=" + responseInfo.reqId);
                     Logger.a("QiniuUploadUtils", "response = ", jSONObject2);
                     try {
                         String string = jSONObject.getString("name");
@@ -83,21 +81,20 @@ public class QiniuUploadTools {
                     }
                 }
                 if (responseInfo != null) {
-                    Event c3 = BluedStatistics.c();
-                    c3.a("QN_UPLOAD", 0L, 1, "time=" + (currentTimeMillis2 - currentTimeMillis) + ",code=" + responseInfo.statusCode + ",reqId=" + responseInfo.reqId);
+                    Event c2 = BluedStatistics.c();
+                    c2.a("QN_UPLOAD", 0L, 1, "time=" + (currentTimeMillis2 - currentTimeMillis) + ",code=" + responseInfo.statusCode + ",reqId=" + responseInfo.reqId);
                 } else {
-                    Event c4 = BluedStatistics.c();
-                    c4.a("QN_UPLOAD", 0L, 1, "time=" + (currentTimeMillis2 - currentTimeMillis));
+                    Event c3 = BluedStatistics.c();
+                    c3.a("QN_UPLOAD", 0L, 1, "time=" + (currentTimeMillis2 - currentTimeMillis));
                 }
-                String responseInfo2 = responseInfo == null ? b.l : responseInfo.toString();
+                String responseInfo2 = responseInfo == null ? "null" : responseInfo.toString();
                 Logger.a("QiniuUploadUtils", " Fail info = " + responseInfo2 + " | response = " + jSONObject2);
                 QiNiuListener qiNiuListener2 = qiNiuListener;
                 if (qiNiuListener2 != null) {
                     qiNiuListener2.a(str3);
                 }
             }
-        }, new UploadOptions(new HashMap(), null, false, new UpProgressHandler() { // from class: com.blued.android.framework.utils.upload.QiniuUploadTools.5
-            @Override // com.qiniu.android.storage.UpProgressHandler
+        }, new UploadOptions(new HashMap(), (String) null, false, new UpProgressHandler() { // from class: com.blued.android.framework.utils.upload.QiniuUploadTools.5
             public void progress(String str3, double d) {
                 QiNiuListener qiNiuListener2 = QiNiuListener.this;
                 if (qiNiuListener2 != null) {
@@ -105,7 +102,6 @@ public class QiniuUploadTools {
                 }
             }
         }, new UpCancellationSignal() { // from class: com.blued.android.framework.utils.upload.QiniuUploadTools.6
-            @Override // com.qiniu.android.http.CancellationHandler
             public boolean isCancelled() {
                 return QiNiuListener.this.a();
             }
@@ -115,14 +111,13 @@ public class QiniuUploadTools {
     public static void a(Configuration configuration, byte[] bArr, String str, String str2, final QiNiuListener qiNiuListener) {
         final long currentTimeMillis = System.currentTimeMillis();
         (configuration == null ? new UploadManager() : new UploadManager(configuration, 3)).put(bArr, str, str2, new UpCompletionHandler() { // from class: com.blued.android.framework.utils.upload.QiniuUploadTools.1
-            @Override // com.qiniu.android.storage.UpCompletionHandler
             public void complete(final String str3, ResponseInfo responseInfo, JSONObject jSONObject) {
-                String jSONObject2 = jSONObject == null ? b.l : jSONObject.toString();
+                String jSONObject2 = jSONObject == null ? "null" : jSONObject.toString();
                 long currentTimeMillis2 = System.currentTimeMillis();
                 if (responseInfo != null && responseInfo.isOK()) {
                     Logger.a("QiniuUploadUtils", "response = ", jSONObject2);
-                    Event c2 = BluedStatistics.c();
-                    c2.a("QN_UPLOAD", 0L, 0, "time=" + (currentTimeMillis2 - currentTimeMillis) + ",reqId=" + responseInfo.reqId);
+                    Event c = BluedStatistics.c();
+                    c.a("QN_UPLOAD", 0L, 0, "time=" + (currentTimeMillis2 - currentTimeMillis) + ",reqId=" + responseInfo.reqId);
                     try {
                         final String string = jSONObject.getString("name");
                         Logger.a("QiniuUploadUtils", "name = ", string);
@@ -144,13 +139,13 @@ public class QiniuUploadTools {
                     }
                 }
                 if (responseInfo != null) {
-                    Event c3 = BluedStatistics.c();
-                    c3.a("QN_UPLOAD", 0L, 1, "time=" + (currentTimeMillis2 - currentTimeMillis) + ",code=" + responseInfo.statusCode + ",reqId=" + responseInfo.reqId);
+                    Event c2 = BluedStatistics.c();
+                    c2.a("QN_UPLOAD", 0L, 1, "time=" + (currentTimeMillis2 - currentTimeMillis) + ",code=" + responseInfo.statusCode + ",reqId=" + responseInfo.reqId);
                 } else {
-                    Event c4 = BluedStatistics.c();
-                    c4.a("QN_UPLOAD", 0L, 1, "time=" + (currentTimeMillis2 - currentTimeMillis));
+                    Event c3 = BluedStatistics.c();
+                    c3.a("QN_UPLOAD", 0L, 1, "time=" + (currentTimeMillis2 - currentTimeMillis));
                 }
-                String responseInfo2 = responseInfo == null ? b.l : responseInfo.toString();
+                String responseInfo2 = responseInfo == null ? "null" : responseInfo.toString();
                 Logger.a("QiniuUploadUtils", " Fail info = " + responseInfo2 + " | response = " + jSONObject2);
                 ThreadUtils.a(new Runnable() { // from class: com.blued.android.framework.utils.upload.QiniuUploadTools.1.2
                     @Override // java.lang.Runnable
@@ -161,8 +156,7 @@ public class QiniuUploadTools {
                     }
                 });
             }
-        }, new UploadOptions(new HashMap(), null, false, new UpProgressHandler() { // from class: com.blued.android.framework.utils.upload.QiniuUploadTools.2
-            @Override // com.qiniu.android.storage.UpProgressHandler
+        }, new UploadOptions(new HashMap(), (String) null, false, new UpProgressHandler() { // from class: com.blued.android.framework.utils.upload.QiniuUploadTools.2
             public void progress(final String str3, final double d) {
                 ThreadUtils.a(new Runnable() { // from class: com.blued.android.framework.utils.upload.QiniuUploadTools.2.1
                     @Override // java.lang.Runnable
@@ -174,7 +168,6 @@ public class QiniuUploadTools {
                 });
             }
         }, new UpCancellationSignal() { // from class: com.blued.android.framework.utils.upload.QiniuUploadTools.3
-            @Override // com.qiniu.android.http.CancellationHandler
             public boolean isCancelled() {
                 return QiNiuListener.this.a();
             }

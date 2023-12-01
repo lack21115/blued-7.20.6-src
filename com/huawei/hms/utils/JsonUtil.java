@@ -152,7 +152,7 @@ public class JsonUtil {
         AccessController.doPrivileged(new PrivilegedAction() { // from class: com.huawei.hms.utils.JsonUtil.1
             @Override // java.security.PrivilegedAction
             public Object run() {
-                Field.this.setAccessible(z);
+                field.setAccessible(z);
                 return null;
             }
         });

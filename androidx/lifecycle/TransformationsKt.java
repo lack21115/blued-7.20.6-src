@@ -15,27 +15,27 @@ public final class TransformationsKt {
         return distinctUntilChanged;
     }
 
-    public static final <X, Y> LiveData<Y> map(LiveData<X> liveData, final Function1<? super X, ? extends Y> transform) {
+    public static final <X, Y> LiveData<Y> map(LiveData<X> liveData, final Function1<? super X, ? extends Y> function1) {
         Intrinsics.e(liveData, "<this>");
-        Intrinsics.e(transform, "transform");
+        Intrinsics.e(function1, "transform");
         LiveData<Y> map = Transformations.map(liveData, new Function() { // from class: androidx.lifecycle.TransformationsKt$map$1
             /* JADX WARN: Type inference failed for: r0v2, types: [Y, java.lang.Object] */
             @Override // androidx.arch.core.util.Function
             public final Y apply(X x) {
-                return transform.invoke(x);
+                return function1.invoke(x);
             }
         });
         Intrinsics.c(map, "crossinline transform: (…p(this) { transform(it) }");
         return map;
     }
 
-    public static final <X, Y> LiveData<Y> switchMap(LiveData<X> liveData, final Function1<? super X, ? extends LiveData<Y>> transform) {
+    public static final <X, Y> LiveData<Y> switchMap(LiveData<X> liveData, final Function1<? super X, ? extends LiveData<Y>> function1) {
         Intrinsics.e(liveData, "<this>");
-        Intrinsics.e(transform, "transform");
+        Intrinsics.e(function1, "transform");
         LiveData<Y> switchMap = Transformations.switchMap(liveData, new Function() { // from class: androidx.lifecycle.TransformationsKt$switchMap$1
             @Override // androidx.arch.core.util.Function
             public final LiveData<Y> apply(X x) {
-                return (LiveData) transform.invoke(x);
+                return (LiveData) function1.invoke(x);
             }
 
             @Override // androidx.arch.core.util.Function

@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import com.bytedance.applog.network.RangersHttpException;
 import com.bytedance.applog.scheme.BuildConfig;
 import com.bytedance.applog.util.SimulateLaunchActivity;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.umeng.analytics.pro.bh;
 import java.util.HashMap;
 import org.json.JSONArray;
@@ -19,17 +20,17 @@ public class q1 {
     public static JSONObject e;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f21290a = "https://databyterangers.com.cn";
+    public String f7684a = "https://databyterangers.com.cn";
     public final c b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final p2 f21291c;
+    public final p2 f7685c;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/q1$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f21292a;
+        public String f7686a;
         public byte[] b;
 
         public a(int i) {
@@ -38,7 +39,7 @@ public class q1 {
 
     public q1(c cVar) {
         this.b = cVar;
-        this.f21291c = new p2(cVar);
+        this.f7685c = new p2(cVar);
     }
 
     public static String a(String str, String[] strArr) {
@@ -83,7 +84,7 @@ public class q1 {
         if (sb == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
             return;
         }
-        sb.append(sb.toString().indexOf(63) < 0 ? "?" : "&");
+        sb.append(sb.toString().indexOf(63) < 0 ? "?" : ContainerUtils.FIELD_DELIMITER);
         sb.append(str);
         sb.append("=");
         sb.append(Uri.encode(str2));
@@ -134,7 +135,7 @@ public class q1 {
     }
 
     public String a(int i, String str, HashMap<String, String> hashMap, byte[] bArr) {
-        return a(i, str, hashMap, bArr, 0, -1).f21292a;
+        return a(i, str, hashMap, bArr, 0, -1).f7686a;
     }
 
     public final HashMap<String, String> a() {
@@ -173,11 +174,11 @@ public class q1 {
                     String str9 = str7;
                     StringBuilder sb = new StringBuilder();
                     String str10 = str7;
-                    sb.append(this.f21290a);
+                    sb.append(this.f7684a);
                     String str11 = str7;
                     sb.append("/simulator/limited_mobile/try_link");
                     String str12 = str7;
-                    a2 = a(1, sb.toString(), a4, this.f21291c.b(jSONObject2.toString()));
+                    a2 = a(1, sb.toString(), a4, this.f7685c.b(jSONObject2.toString()));
                     jSONObject = new JSONObject(a2);
                     i3 = jSONObject.getJSONObject("data").getInt("retry");
                 } catch (Exception e2) {
@@ -234,7 +235,7 @@ public class q1 {
             jSONObject.put("header", a2);
             jSONObject.put(SimulateLaunchActivity.KEY_QR_PARAM, str4);
             try {
-                str5 = a(1, this.f21290a + "/simulator/mobile/login", a(), this.f21291c.b(jSONObject.toString()));
+                str5 = a(1, this.f7684a + "/simulator/mobile/login", a(), this.f7685c.b(jSONObject.toString()));
             } catch (RangersHttpException e2) {
                 str5 = null;
             }
@@ -267,7 +268,7 @@ public class q1 {
             com.bytedance.applog.network.INetworkClient r0 = r0.getNetClient()     // Catch: java.lang.Exception -> L1f
             r1 = r6
             r2 = r5
-            com.bytedance.bdtracker.p2 r2 = r2.f21291c     // Catch: java.lang.Exception -> L1f
+            com.bytedance.bdtracker.p2 r2 = r2.f7685c     // Catch: java.lang.Exception -> L1f
             r3 = r7
             java.lang.String r3 = r3.toString()     // Catch: java.lang.Exception -> L1f
             byte[] r2 = r2.b(r3)     // Catch: java.lang.Exception -> L1f
@@ -350,7 +351,7 @@ public class q1 {
         HashMap<String, String> a2 = a();
         a2.put("Cookie", str);
         try {
-            if (new JSONObject(a(1, this.f21290a + "/simulator/mobile/log", a2, this.f21291c.b(jSONObject2.toString()))).getJSONObject("data").getBoolean("keep")) {
+            if (new JSONObject(a(1, this.f7684a + "/simulator/mobile/log", a2, this.f7685c.b(jSONObject2.toString()))).getJSONObject("data").getBoolean("keep")) {
                 return true;
             }
             this.b.setRangersEventVerifyEnable(false, str);

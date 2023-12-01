@@ -8,11 +8,11 @@ import java.util.Iterator;
 public final class ab {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f40039a = 5;
+    private static int f26348a = 5;
     private static final ArrayList<a> b = new ArrayList<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final ArrayList<a> f40040c = new ArrayList<>();
+    private static final ArrayList<a> f26349c = new ArrayList<>();
     private static final Object d = new Object();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/impl/utils/ab$a.class */
@@ -24,19 +24,20 @@ public final class ab {
         void c();
     }
 
+    /* JADX WARN: Type inference failed for: r0v23, types: [com.tencent.txcopyrightedmedia.impl.utils.ab$1] */
     public static a a(a aVar) {
         a next;
         a next2;
         synchronized (d) {
-            Iterator<a> it = f40040c.iterator();
+            Iterator<a> it = f26349c.iterator();
             do {
                 if (!it.hasNext()) {
                     Iterator<a> it2 = b.iterator();
                     do {
                         if (!it2.hasNext()) {
                             b.add(aVar);
-                            int i = f40039a - 1;
-                            f40039a = i;
+                            int i = f26348a - 1;
+                            f26348a = i;
                             if (i >= 0) {
                                 aVar.b();
                                 new Thread() { // from class: com.tencent.txcopyrightedmedia.impl.utils.ab.1
@@ -50,20 +51,20 @@ public final class ab {
                                                     return;
                                                 } else {
                                                     aVar2 = (a) ab.b.remove(0);
-                                                    ab.f40040c.add(aVar2);
+                                                    ab.f26349c.add(aVar2);
                                                 }
                                             }
                                             if (aVar2 != null) {
                                                 aVar2.c();
                                                 synchronized (ab.d) {
-                                                    ab.f40040c.remove(aVar2);
+                                                    ab.f26349c.remove(aVar2);
                                                 }
                                             }
                                         }
                                     }
                                 }.start();
                             } else {
-                                f40039a = 0;
+                                f26348a = 0;
                                 aVar.b();
                             }
                             return null;
@@ -85,8 +86,8 @@ public final class ab {
     }
 
     static /* synthetic */ int e() {
-        int i = f40039a + 1;
-        f40039a = i;
+        int i = f26348a + 1;
+        f26348a = i;
         return i;
     }
 }

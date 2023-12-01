@@ -28,6 +28,7 @@ import android.view.accessibility.AccessibilityNodeProvider;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.AbsoluteLayout;
+import com.android.internal.R;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.util.Map;
@@ -232,7 +233,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     }
 
     public WebView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842885);
+        this(context, attributeSet, R.attr.webViewStyle);
     }
 
     public WebView(Context context, AttributeSet attributeSet, int i) {
@@ -430,9 +431,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         this.mProvider.getScrollDelegate().computeScroll();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public int computeVerticalScrollExtent() {
+    protected int computeVerticalScrollExtent() {
         return this.mProvider.getScrollDelegate().computeVerticalScrollExtent();
     }
 
@@ -793,16 +793,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         return this.mProvider.getViewDelegate().onKeyUp(i, keyEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.AbsoluteLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         this.mProvider.getViewDelegate().onMeasure(i, i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onOverScrolled(int i, int i2, boolean z, boolean z2) {
+    protected void onOverScrolled(int i, int i2, boolean z, boolean z2) {
         this.mProvider.getViewDelegate().onOverScrolled(i, i2, z, z2);
     }
 

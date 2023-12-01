@@ -9,11 +9,11 @@ import java.util.concurrent.TimeUnit;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static c f1344a;
+    public static c f1296a;
     public static f b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f1345c = false;
+    public static boolean f1297c = false;
     public ScheduledExecutorService d;
     public boolean e = true;
 
@@ -25,10 +25,10 @@ public class c {
         c cVar;
         synchronized (c.class) {
             try {
-                if (f1344a == null) {
-                    f1344a = new c();
+                if (f1296a == null) {
+                    f1296a = new c();
                 }
-                cVar = f1344a;
+                cVar = f1296a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -37,10 +37,10 @@ public class c {
     }
 
     public static void a(Context context) {
-        if (f1345c) {
+        if (f1297c) {
             return;
         }
-        f1345c = true;
+        f1297c = true;
         f a2 = f.a();
         b = a2;
         a2.a(context);

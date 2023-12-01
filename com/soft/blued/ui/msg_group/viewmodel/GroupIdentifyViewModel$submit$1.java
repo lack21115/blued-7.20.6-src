@@ -14,11 +14,11 @@ import kotlinx.coroutines.CoroutineScope;
 final class GroupIdentifyViewModel$submit$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f32847a;
+    int f19156a;
     final /* synthetic */ GroupIdentifyViewModel b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ String f32848c;
+    final /* synthetic */ String f19157c;
     final /* synthetic */ String d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -26,26 +26,23 @@ final class GroupIdentifyViewModel$submit$1 extends SuspendLambda implements Fun
     public GroupIdentifyViewModel$submit$1(GroupIdentifyViewModel groupIdentifyViewModel, String str, String str2, Continuation<? super GroupIdentifyViewModel$submit$1> continuation) {
         super(2, continuation);
         this.b = groupIdentifyViewModel;
-        this.f32848c = str;
+        this.f19157c = str;
         this.d = str2;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((GroupIdentifyViewModel$submit$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new GroupIdentifyViewModel$submit$1(this.b, this.f32848c, this.d, continuation);
+        return new GroupIdentifyViewModel$submit$1(this.b, this.f19157c, this.d, continuation);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x0096  */
     /* JADX WARN: Removed duplicated region for block: B:25:0x00c4  */
     /* JADX WARN: Removed duplicated region for block: B:32:0x0131  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x015f  */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

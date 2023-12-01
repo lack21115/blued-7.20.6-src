@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import com.bytedance.pangle.Zeus;
 import com.bytedance.pangle.log.ZeusLogger;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedOutputStream;
 import java.io.Closeable;
 import java.io.File;
@@ -113,6 +114,6 @@ public final class g {
     }
 
     private static int b(String str, int i) {
-        return a((str + "-" + i) + ".dex.number");
+        return a((str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i) + ".dex.number");
     }
 }

@@ -22,9 +22,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemLuckyBagTab.class */
 public final class FitemLuckyBagTab extends FreedomItem {
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f12539c;
+    private final String c;
     private boolean d;
     private final boolean e;
     private boolean f;
@@ -40,7 +38,7 @@ public final class FitemLuckyBagTab extends FreedomItem {
     public FitemLuckyBagTab(int i, String name, boolean z, boolean z2) {
         Intrinsics.e(name, "name");
         this.b = i;
-        this.f12539c = name;
+        this.c = name;
         this.d = z;
         this.e = z2;
         this.g = 12.0f;
@@ -62,41 +60,41 @@ public final class FitemLuckyBagTab extends FreedomItem {
         float floatValue = ((Float) animatedValue).floatValue();
         float f = this$0.i;
         tvParams.bottomMargin = (int) (f + ((this$0.j - f) * floatValue));
-        textView.setLayoutParams(tvParams);
+        textView.setLayoutParams((ViewGroup.LayoutParams) tvParams);
         float f2 = this$0.g;
         textView.setTextSize(f2 + ((this$0.h - f2) * floatValue));
         float f3 = this$0.k;
         indicateParams.width = (int) (f3 + ((this$0.l - f3) * floatValue));
-        view.setLayoutParams(indicateParams);
+        view.setLayoutParams((ViewGroup.LayoutParams) indicateParams);
         float f4 = this$0.m;
         view.setTranslationY(f4 + ((this$0.n - f4) * interpolator.getInterpolation(floatValue)));
     }
 
     private final void h() {
         if (this.i == 0.0f) {
-            this.i = DensityUtils.a(this.f10935a.f10931a.b, 7.0f);
-            this.j = DensityUtils.a(this.f10935a.f10931a.b, 13.0f);
-            this.l = DensityUtils.a(this.f10935a.f10931a.b, 14.0f);
-            this.m = DensityUtils.a(this.f10935a.f10931a.b, 9.0f);
+            this.i = DensityUtils.a(this.a.a.b, 7.0f);
+            this.j = DensityUtils.a(this.a.a.b, 13.0f);
+            this.l = DensityUtils.a(this.a.a.b, 14.0f);
+            this.m = DensityUtils.a(this.a.a.b, 9.0f);
         }
     }
 
     private final void i() {
-        if (this.f10935a == null) {
+        if (this.a == null) {
             return;
         }
-        final TextView textView = (TextView) this.f10935a.a(R.id.tv_name);
-        ViewGroup.LayoutParams layoutParams = textView.getLayoutParams();
+        final TextView textView = (TextView) this.a.a(R.id.tv_name);
+        ConstraintLayout.LayoutParams layoutParams = textView.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        final ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
-        final View a2 = this.f10935a.a(R.id.view_indicate);
-        ViewGroup.LayoutParams layoutParams3 = a2.getLayoutParams();
+        final ConstraintLayout.LayoutParams layoutParams2 = layoutParams;
+        final View a = this.a.a(R.id.view_indicate);
+        ConstraintLayout.LayoutParams layoutParams3 = a.getLayoutParams();
         if (layoutParams3 == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        final ConstraintLayout.LayoutParams layoutParams4 = (ConstraintLayout.LayoutParams) layoutParams3;
+        final ConstraintLayout.LayoutParams layoutParams4 = layoutParams3;
         final DecelerateInterpolator decelerateInterpolator = new DecelerateInterpolator(1.5f);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.f ? 0.0f : 1.0f, this.f ? 1.0f : 0.0f);
         ofFloat.setDuration(400L);
@@ -104,13 +102,13 @@ public final class FitemLuckyBagTab extends FreedomItem {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemLuckyBagTab$-PdoA5ZVJikUs9x2AAWF5GyOa1c
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FitemLuckyBagTab.a(ConstraintLayout.LayoutParams.this, this, textView, layoutParams4, a2, decelerateInterpolator, valueAnimator);
+                FitemLuckyBagTab.a(layoutParams2, this, textView, layoutParams4, a, decelerateInterpolator, valueAnimator);
             }
         });
         ofFloat.start();
-        ObjectAnimator.ofArgb(textView, "TextColor", this.f ? ContextCompat.getColor(this.f10935a.f10931a.b, R.color.white) : ContextCompat.getColor(this.f10935a.f10931a.b, R.color.syc_dark_B542D7), this.f ? ContextCompat.getColor(this.f10935a.f10931a.b, R.color.syc_dark_B542D7) : ContextCompat.getColor(this.f10935a.f10931a.b, R.color.white)).setDuration(400L).start();
+        ObjectAnimator.ofArgb(textView, "TextColor", this.f ? ContextCompat.getColor(this.a.a.b, R.color.white) : ContextCompat.getColor(this.a.a.b, R.color.syc_dark_B542D7), this.f ? ContextCompat.getColor(this.a.a.b, R.color.syc_dark_B542D7) : ContextCompat.getColor(this.a.a.b, R.color.white)).setDuration(400L).start();
         textView.getPaint().setFakeBoldText(this.f);
-        this.f10935a.itemView.setElevation(this.f ? 1.0f : 0.0f);
+        this.a.itemView.setElevation(this.f ? 1.0f : 0.0f);
     }
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
@@ -122,8 +120,8 @@ public final class FitemLuckyBagTab extends FreedomItem {
     public void a(Context context, BaseViewHolder vh, List<FreedomItem> list, int i) {
         Intrinsics.e(context, "context");
         Intrinsics.e(vh, "vh");
-        TextView textView = (TextView) this.f10935a.a(R.id.tv_name);
-        textView.setText(this.f12539c);
+        TextView textView = (TextView) this.a.a(R.id.tv_name);
+        textView.setText(this.c);
         if (this.d) {
             vh.c(R.id.iv_tag, R.drawable.live_lucky_bag_tag_new);
         } else if (this.e) {
@@ -131,27 +129,27 @@ public final class FitemLuckyBagTab extends FreedomItem {
         } else {
             vh.c(R.id.iv_tag, R.color.transparent);
         }
-        ViewGroup.LayoutParams layoutParams = textView.getLayoutParams();
+        ConstraintLayout.LayoutParams layoutParams = textView.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
-        View a2 = this.f10935a.a(R.id.view_indicate);
-        ViewGroup.LayoutParams layoutParams3 = a2.getLayoutParams();
+        ConstraintLayout.LayoutParams layoutParams2 = layoutParams;
+        View a = this.a.a(R.id.view_indicate);
+        ConstraintLayout.LayoutParams layoutParams3 = a.getLayoutParams();
         if (layoutParams3 == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        ConstraintLayout.LayoutParams layoutParams4 = (ConstraintLayout.LayoutParams) layoutParams3;
+        ConstraintLayout.LayoutParams layoutParams4 = layoutParams3;
         h();
         layoutParams2.bottomMargin = (int) (this.f ? this.j : this.i);
-        textView.setLayoutParams(layoutParams2);
+        textView.setLayoutParams((ViewGroup.LayoutParams) layoutParams2);
         textView.setTextSize(this.f ? this.h : this.g);
         textView.getPaint().setFakeBoldText(this.f);
-        textView.setTextColor(ContextCompat.getColor(this.f10935a.f10931a.b, this.f ? R.color.syc_dark_B542D7 : R.color.white));
+        textView.setTextColor(ContextCompat.getColor(this.a.a.b, this.f ? R.color.syc_dark_B542D7 : R.color.white));
         layoutParams4.width = (int) (this.f ? this.l : this.k);
-        a2.setLayoutParams(layoutParams4);
-        a2.setTranslationY(this.f ? this.n : this.m);
-        this.f10935a.itemView.setElevation(this.f ? 1.0f : 0.0f);
+        a.setLayoutParams((ViewGroup.LayoutParams) layoutParams4);
+        a.setTranslationY(this.f ? this.n : this.m);
+        this.a.itemView.setElevation(this.f ? 1.0f : 0.0f);
     }
 
     public final void e() {
@@ -163,12 +161,12 @@ public final class FitemLuckyBagTab extends FreedomItem {
         if (this.d) {
             this.d = false;
             if (this.e) {
-                BaseViewHolder baseViewHolder = this.f10935a;
+                BaseViewHolder baseViewHolder = this.a;
                 if (baseViewHolder != null) {
                     baseViewHolder.c(R.id.iv_tag, R.drawable.live_lucky_bag_tag_luck);
                 }
             } else {
-                BaseViewHolder baseViewHolder2 = this.f10935a;
+                BaseViewHolder baseViewHolder2 = this.a;
                 if (baseViewHolder2 != null) {
                     baseViewHolder2.c(R.id.iv_tag, R.color.transparent);
                 }
@@ -185,9 +183,9 @@ public final class FitemLuckyBagTab extends FreedomItem {
     }
 
     public final int g() {
-        if (this.f10935a == null) {
+        if (this.a == null) {
             return 0;
         }
-        return this.f10935a.itemView.getLeft();
+        return this.a.itemView.getLeft();
     }
 }

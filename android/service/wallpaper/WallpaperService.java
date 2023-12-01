@@ -110,27 +110,22 @@ public abstract class WallpaperService extends Service {
                 this.mRequestedFormat = 2;
             }
 
-            @Override // android.view.SurfaceHolder
             public boolean isCreating() {
                 return Engine.this.mIsCreating;
             }
 
-            @Override // com.android.internal.view.BaseSurfaceHolder
             public boolean onAllowLockCanvas() {
                 return Engine.this.mDrawingAllowed;
             }
 
-            @Override // com.android.internal.view.BaseSurfaceHolder
             public void onRelayoutContainer() {
                 Engine.this.mCaller.sendMessage(Engine.this.mCaller.obtainMessage(10000));
             }
 
-            @Override // com.android.internal.view.BaseSurfaceHolder
             public void onUpdateSurface() {
                 Engine.this.mCaller.sendMessage(Engine.this.mCaller.obtainMessage(10000));
             }
 
-            @Override // com.android.internal.view.BaseSurfaceHolder, android.view.SurfaceHolder
             public void setFixedSize(int i, int i2) {
                 if (!Engine.this.mFixedSizeAllowed) {
                     throw new UnsupportedOperationException("Wallpapers currently only support sizing from layout");
@@ -138,13 +133,11 @@ public abstract class WallpaperService extends Service {
                 super.setFixedSize(i, i2);
             }
 
-            @Override // android.view.SurfaceHolder
             public void setKeepScreenOn(boolean z) {
                 throw new UnsupportedOperationException("Wallpapers do not support keep screen on");
             }
         };
         final BaseIWindow mWindow = new BaseIWindow() { // from class: android.service.wallpaper.WallpaperService.Engine.2
-            @Override // com.android.internal.view.BaseIWindow, android.view.IWindow
             public void dispatchAppVisibility(boolean z) {
                 if (Engine.this.mIWallpaperEngine.mIsPreview) {
                     return;
@@ -152,7 +145,6 @@ public abstract class WallpaperService extends Service {
                 Engine.this.mCaller.sendMessage(Engine.this.mCaller.obtainMessageI(10010, z ? 1 : 0));
             }
 
-            @Override // com.android.internal.view.BaseIWindow, android.view.IWindow
             public void dispatchWallpaperCommand(String str, int i, int i2, int i3, Bundle bundle, boolean z) {
                 synchronized (Engine.this.mLock) {
                     WallpaperCommand wallpaperCommand = new WallpaperCommand();
@@ -162,13 +154,12 @@ public abstract class WallpaperService extends Service {
                     wallpaperCommand.z = i3;
                     wallpaperCommand.extras = bundle;
                     wallpaperCommand.sync = z;
-                    Message obtainMessage = Engine.this.mCaller.obtainMessage(WallpaperService.MSG_WALLPAPER_COMMAND);
+                    Message obtainMessage = Engine.this.mCaller.obtainMessage((int) WallpaperService.MSG_WALLPAPER_COMMAND);
                     obtainMessage.obj = wallpaperCommand;
                     Engine.this.mCaller.sendMessage(obtainMessage);
                 }
             }
 
-            @Override // com.android.internal.view.BaseIWindow, android.view.IWindow
             public void dispatchWallpaperOffsets(float f, float f2, float f3, float f4, boolean z) {
                 synchronized (Engine.this.mLock) {
                     Engine.this.mPendingXOffset = f;
@@ -180,19 +171,17 @@ public abstract class WallpaperService extends Service {
                     }
                     if (!Engine.this.mOffsetMessageEnqueued) {
                         Engine.this.mOffsetMessageEnqueued = true;
-                        Engine.this.mCaller.sendMessage(Engine.this.mCaller.obtainMessage(WallpaperService.MSG_WALLPAPER_OFFSETS));
+                        Engine.this.mCaller.sendMessage(Engine.this.mCaller.obtainMessage((int) WallpaperService.MSG_WALLPAPER_OFFSETS));
                     }
                 }
             }
 
-            @Override // com.android.internal.view.BaseIWindow, android.view.IWindow
             public void moved(int i, int i2) {
-                Engine.this.mCaller.sendMessage(Engine.this.mCaller.obtainMessageII(WallpaperService.MSG_WINDOW_MOVED, i, i2));
+                Engine.this.mCaller.sendMessage(Engine.this.mCaller.obtainMessageII((int) WallpaperService.MSG_WINDOW_MOVED, i, i2));
             }
 
-            @Override // com.android.internal.view.BaseIWindow, android.view.IWindow
             public void resized(Rect rect, Rect rect2, Rect rect3, Rect rect4, Rect rect5, boolean z, Configuration configuration) {
-                Engine.this.mCaller.sendMessage(Engine.this.mCaller.obtainMessageI(WallpaperService.MSG_WINDOW_RESIZED, z ? 1 : 0));
+                Engine.this.mCaller.sendMessage(Engine.this.mCaller.obtainMessageI((int) WallpaperService.MSG_WINDOW_RESIZED, z ? 1 : 0));
             }
         };
         private final DisplayManager.DisplayListener mDisplayListener = new DisplayManager.DisplayListener() { // from class: android.service.wallpaper.WallpaperService.Engine.3
@@ -254,7 +243,7 @@ public abstract class WallpaperService extends Service {
                     this.mPendingMove = null;
                 }
             }
-            this.mCaller.sendMessage(this.mCaller.obtainMessageO(WallpaperService.MSG_TOUCH_EVENT, motionEvent));
+            this.mCaller.sendMessage(this.mCaller.obtainMessageO((int) WallpaperService.MSG_TOUCH_EVENT, motionEvent));
         }
 
         void attach(IWallpaperEngineWrapper iWallpaperEngineWrapper) {
@@ -641,7 +630,6 @@ public abstract class WallpaperService extends Service {
         }
 
         /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-        @Override // com.android.internal.os.HandlerCaller.Callback
         public void executeMessage(Message message) {
             switch (message.what) {
                 case 10:

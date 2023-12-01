@@ -3,7 +3,6 @@ package android.location;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
-import com.alipay.sdk.util.i;
 import java.util.Locale;
 
 /* loaded from: source-9557208-dex2jar.jar:android/location/Country.class */
@@ -94,7 +93,7 @@ public class Country implements Parcelable {
     }
 
     public String toString() {
-        return "Country {ISO=" + this.mCountryIso + ", source=" + this.mSource + ", time=" + this.mTimestamp + i.d;
+        return "Country {ISO=" + this.mCountryIso + ", source=" + this.mSource + ", time=" + this.mTimestamp + "}";
     }
 
     @Override // android.os.Parcelable

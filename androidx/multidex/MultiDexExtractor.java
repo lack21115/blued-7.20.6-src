@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.util.Log;
-import com.alipay.sdk.util.e;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 import java.io.BufferedOutputStream;
 import java.io.Closeable;
@@ -28,11 +27,11 @@ import java.util.zip.ZipOutputStream;
 final class MultiDexExtractor implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final File f3180a;
+    private final File f3132a;
     private final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final File f3181c;
+    private final File f3133c;
     private final RandomAccessFile d;
     private final FileChannel e;
     private final FileLock f;
@@ -51,8 +50,8 @@ final class MultiDexExtractor implements Closeable {
     /* JADX INFO: Access modifiers changed from: package-private */
     public MultiDexExtractor(File file, File file2) throws IOException {
         Log.i("MultiDex", "MultiDexExtractor(" + file.getPath() + ", " + file2.getPath() + ")");
-        this.f3180a = file;
-        this.f3181c = file2;
+        this.f3132a = file;
+        this.f3133c = file2;
         this.b = b(file);
         File file3 = new File(file2, "MultiDex.lock");
         RandomAccessFile randomAccessFile = new RandomAccessFile(file3, "rw");
@@ -87,15 +86,15 @@ final class MultiDexExtractor implements Closeable {
     }
 
     private List<ExtractedDex> a() throws IOException {
-        String str = this.f3180a.getName() + ".classes";
+        String str = this.f3132a.getName() + ".classes";
         b();
         ArrayList arrayList = new ArrayList();
-        ZipFile zipFile = new ZipFile(this.f3180a);
+        ZipFile zipFile = new ZipFile(this.f3132a);
         try {
             ZipEntry entry = zipFile.getEntry("classes2" + ShareConstants.DEX_SUFFIX);
             int i = 2;
             while (entry != null) {
-                ExtractedDex extractedDex = new ExtractedDex(this.f3181c, str + i + ".zip");
+                ExtractedDex extractedDex = new ExtractedDex(this.f3133c, str + i + ".zip");
                 arrayList.add(extractedDex);
                 Log.i("MultiDex", "Extraction is needed for file " + extractedDex);
                 boolean z = false;
@@ -110,7 +109,7 @@ final class MultiDexExtractor implements Closeable {
                     }
                     StringBuilder sb = new StringBuilder();
                     sb.append("Extraction ");
-                    sb.append(z ? "succeeded" : e.f4661a);
+                    sb.append(z ? "succeeded" : "failed");
                     sb.append(" '");
                     sb.append(extractedDex.getAbsolutePath());
                     sb.append("': length ");
@@ -150,12 +149,12 @@ final class MultiDexExtractor implements Closeable {
 
     private List<ExtractedDex> a(Context context, String str) throws IOException {
         Log.i("MultiDex", "loading existing secondary dex files");
-        String str2 = this.f3180a.getName() + ".classes";
+        String str2 = this.f3132a.getName() + ".classes";
         SharedPreferences a2 = a(context);
         int i = a2.getInt(str + "dex.number", 1);
         ArrayList arrayList = new ArrayList(i - 1);
         for (int i2 = 2; i2 <= i; i2++) {
-            ExtractedDex extractedDex = new ExtractedDex(this.f3181c, str2 + i2 + ".zip");
+            ExtractedDex extractedDex = new ExtractedDex(this.f3133c, str2 + i2 + ".zip");
             if (!extractedDex.isFile()) {
                 throw new IOException("Missing extracted secondary dex file '" + extractedDex.getPath() + "'");
             }
@@ -249,14 +248,14 @@ final class MultiDexExtractor implements Closeable {
     }
 
     private void b() {
-        File[] listFiles = this.f3181c.listFiles(new FileFilter() { // from class: androidx.multidex.MultiDexExtractor.1
+        File[] listFiles = this.f3133c.listFiles(new FileFilter() { // from class: androidx.multidex.MultiDexExtractor.1
             @Override // java.io.FileFilter
             public boolean accept(File file) {
                 return !file.getName().equals("MultiDex.lock");
             }
         });
         if (listFiles == null) {
-            Log.w("MultiDex", "Failed to list secondary dex dir content (" + this.f3181c.getPath() + ").");
+            Log.w("MultiDex", "Failed to list secondary dex dir content (" + this.f3133c.getPath() + ").");
             return;
         }
         int length = listFiles.length;
@@ -280,16 +279,16 @@ final class MultiDexExtractor implements Closeable {
     /* JADX INFO: Access modifiers changed from: package-private */
     public List<? extends File> a(Context context, String str, boolean z) throws IOException {
         List<ExtractedDex> list;
-        Log.i("MultiDex", "MultiDexExtractor.load(" + this.f3180a.getPath() + ", " + z + ", " + str + ")");
+        Log.i("MultiDex", "MultiDexExtractor.load(" + this.f3132a.getPath() + ", " + z + ", " + str + ")");
         if (this.f.isValid()) {
-            if (z || a(context, this.f3180a, this.b, str)) {
+            if (z || a(context, this.f3132a, this.b, str)) {
                 if (z) {
                     Log.i("MultiDex", "Forced extraction must be performed.");
                 } else {
                     Log.i("MultiDex", "Detected that extraction must be performed.");
                 }
                 List<ExtractedDex> a2 = a();
-                a(context, str, a(this.f3180a), this.b, a2);
+                a(context, str, a(this.f3132a), this.b, a2);
                 list = a2;
             } else {
                 try {
@@ -297,7 +296,7 @@ final class MultiDexExtractor implements Closeable {
                 } catch (IOException e) {
                     Log.w("MultiDex", "Failed to reload existing extracted secondary dex files, falling back to fresh extraction", e);
                     List<ExtractedDex> a3 = a();
-                    a(context, str, a(this.f3180a), this.b, a3);
+                    a(context, str, a(this.f3132a), this.b, a3);
                     list = a3;
                 }
             }

@@ -17,12 +17,12 @@ public class a {
 
     /* renamed from: com.kwad.components.core.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/b/a$a.class */
-    static final class C0510a extends SQLiteOpenHelper {
+    static final class C0340a extends SQLiteOpenHelper {
         private static int HE = 1;
         private String HF;
         private String HG;
 
-        public C0510a(Context context) {
+        public C0340a(Context context) {
             super(context, "ksadcache.db", null, HE);
             this.HF = "CREATE TABLE IF NOT EXISTS ksad_ad_cache (creativeId VARCHAR PRIMARY KEY NOT NULL, posId TEXT, adJson TEXT, ecpm INTEGER, playAgainJson TEXT, adSenseJson TEXT, createTime INTEGER, expireTime INTEGER)";
             this.HG = "CREATE TABLE IF NOT EXISTS ksad_ad_cache_strategy(posId VARCHAR PRIMARY KEY NOT NULL, cacheSize INTEGER, cacheSecond INTEGER, strategyCode INTEGER, enable INTEGER)";
@@ -40,7 +40,7 @@ public class a {
     }
 
     private a(Context context) {
-        this.HC = new C0510a(context).getWritableDatabase();
+        this.HC = new C0340a(context).getWritableDatabase();
     }
 
     private <T extends h> void b(List<T> list, String str) {

@@ -106,23 +106,23 @@ public class b {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Not initialized variable reg: 7, insn: 0x00c3: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r7 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:61:0x00c3 */
     public static byte[] a(InputStream inputStream) {
-        AutoCloseable autoCloseable;
-        AutoCloseable autoCloseable2;
-        Throwable th;
         ByteArrayOutputStream byteArrayOutputStream;
+        ByteArrayOutputStream byteArrayOutputStream2;
+        Throwable th;
+        ByteArrayOutputStream byteArrayOutputStream3;
         try {
             try {
                 try {
-                    byteArrayOutputStream = new ByteArrayOutputStream(8192);
+                    byteArrayOutputStream3 = new ByteArrayOutputStream(8192);
                 } catch (FileNotFoundException e) {
                     e = e;
-                    byteArrayOutputStream = null;
+                    byteArrayOutputStream3 = null;
                 } catch (IOException e2) {
                     e = e2;
-                    byteArrayOutputStream = null;
+                    byteArrayOutputStream3 = null;
                 } catch (Throwable th2) {
                     th = th2;
-                    autoCloseable2 = null;
+                    byteArrayOutputStream2 = null;
                     if (inputStream != 0) {
                         try {
                             inputStream.close();
@@ -130,9 +130,9 @@ public class b {
                             e3.printStackTrace();
                         }
                     }
-                    if (autoCloseable2 != null) {
+                    if (byteArrayOutputStream2 != null) {
                         try {
-                            autoCloseable2.close();
+                            byteArrayOutputStream2.close();
                         } catch (IOException e4) {
                             e4.printStackTrace();
                         }
@@ -146,10 +146,10 @@ public class b {
                         if (read == -1) {
                             break;
                         }
-                        byteArrayOutputStream.write(bArr, 0, read);
+                        byteArrayOutputStream3.write(bArr, 0, read);
                     }
-                    byteArrayOutputStream.flush();
-                    byte[] byteArray = byteArrayOutputStream.toByteArray();
+                    byteArrayOutputStream3.flush();
+                    byte[] byteArray = byteArrayOutputStream3.toByteArray();
                     if (inputStream != 0) {
                         try {
                             inputStream.close();
@@ -157,7 +157,7 @@ public class b {
                             e5.printStackTrace();
                         }
                     }
-                    byteArrayOutputStream.close();
+                    byteArrayOutputStream3.close();
                     return byteArray;
                 } catch (FileNotFoundException e6) {
                     e = e6;
@@ -169,8 +169,8 @@ public class b {
                             e7.printStackTrace();
                         }
                     }
-                    if (byteArrayOutputStream != null) {
-                        byteArrayOutputStream.close();
+                    if (byteArrayOutputStream3 != null) {
+                        byteArrayOutputStream3.close();
                         return null;
                     }
                     return null;
@@ -184,8 +184,8 @@ public class b {
                             e9.printStackTrace();
                         }
                     }
-                    if (byteArrayOutputStream != null) {
-                        byteArrayOutputStream.close();
+                    if (byteArrayOutputStream3 != null) {
+                        byteArrayOutputStream3.close();
                         return null;
                     }
                     return null;
@@ -195,7 +195,7 @@ public class b {
                 return inputStream;
             }
         } catch (Throwable th3) {
-            autoCloseable2 = autoCloseable;
+            byteArrayOutputStream2 = byteArrayOutputStream;
             th = th3;
         }
     }

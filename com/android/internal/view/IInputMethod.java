@@ -288,7 +288,7 @@ public interface IInputMethod extends IInterface {
                     return true;
                 case 6:
                     parcel.enforceInterface(DESCRIPTOR);
-                    createSession(parcel.readInt() != 0 ? InputChannel.CREATOR.createFromParcel(parcel) : null, IInputSessionCallback.Stub.asInterface(parcel.readStrongBinder()));
+                    createSession(parcel.readInt() != 0 ? (InputChannel) InputChannel.CREATOR.createFromParcel(parcel) : null, IInputSessionCallback.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
                 case 7:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -300,17 +300,17 @@ public interface IInputMethod extends IInterface {
                     return true;
                 case 9:
                     parcel.enforceInterface(DESCRIPTOR);
-                    showSoftInput(parcel.readInt(), parcel.readInt() != 0 ? ResultReceiver.CREATOR.createFromParcel(parcel) : null);
+                    showSoftInput(parcel.readInt(), parcel.readInt() != 0 ? (ResultReceiver) ResultReceiver.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 10:
                     parcel.enforceInterface(DESCRIPTOR);
-                    hideSoftInput(parcel.readInt(), parcel.readInt() != 0 ? ResultReceiver.CREATOR.createFromParcel(parcel) : null);
+                    hideSoftInput(parcel.readInt(), parcel.readInt() != 0 ? (ResultReceiver) ResultReceiver.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 11:
                     parcel.enforceInterface(DESCRIPTOR);
                     changeInputMethodSubtype(parcel.readInt() != 0 ? InputMethodSubtype.CREATOR.createFromParcel(parcel) : null);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

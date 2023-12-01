@@ -13,7 +13,7 @@ import java.io.IOException;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static GtHttpClient f22027a = new GtHttpClient.Builder().addInterceptor(new LoggerInterceptor(a.C0352a.f22034a.f22033a)).addInterceptor(new Interceptor() { // from class: com.getui.gtc.h.d.1
+    public static GtHttpClient f8420a = new GtHttpClient.Builder().addInterceptor(new LoggerInterceptor(a.C0182a.f8427a.f8426a)).addInterceptor(new Interceptor() { // from class: com.getui.gtc.h.d.1
         @Override // com.getui.gtc.base.http.Interceptor
         public final Response intercept(Interceptor.Chain chain) throws IOException {
             if (NetworkUtil.isNetWorkAvailable(GtcProvider.context())) {

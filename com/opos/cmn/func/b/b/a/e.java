@@ -4,7 +4,7 @@ package com.opos.cmn.func.b.b.a;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public final a f24848a;
+    public final a f11160a;
     public final int b;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/func/b/b/a/e$a.class */
@@ -12,6 +12,6 @@ public class e {
     }
 
     public String toString() {
-        return "HttpStatConfig{sampleRatio=" + this.b + ", statisticCallback=" + this.f24848a + '}';
+        return "HttpStatConfig{sampleRatio=" + this.b + ", statisticCallback=" + this.f11160a + '}';
     }
 }

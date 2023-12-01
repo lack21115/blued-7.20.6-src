@@ -12,9 +12,9 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.text.TextUtils;
 import com.baidu.mobads.sdk.internal.bw;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.cdo.oaps.ad.OapsKey;
 import com.google.common.net.HttpHeaders;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.oplus.quickgame.sdk.QuickGame;
 import com.oplus.quickgame.sdk.engine.callback.Callback;
 import com.oplus.quickgame.sdk.engine.observer.RequestObserver;
@@ -27,30 +27,29 @@ import java.util.Map;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Handler f24418a;
+    private static Handler f10731a;
     private static Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static com.oplus.quickgame.sdk.engine.callback.a f24419c = new com.oplus.quickgame.sdk.engine.callback.a();
+    private static com.oplus.quickgame.sdk.engine.callback.a f10732c = new com.oplus.quickgame.sdk.engine.callback.a();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/oplus/quickgame/sdk/engine/utils/j$a.class */
-    public static final class a implements Runnable {
+    static final class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f24420a;
+        final /* synthetic */ Context f10733a;
         final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Map f24421c;
+        final /* synthetic */ Map f10734c;
         final /* synthetic */ Map d;
         final /* synthetic */ Map e;
         final /* synthetic */ Map f;
 
         a(Context context, String str, Map map, Map map2, Map map3, Map map4) {
-            this.f24420a = context;
+            this.f10733a = context;
             this.b = str;
-            this.f24421c = map;
+            this.f10734c = map;
             this.d = map2;
             this.e = map3;
             this.f = map4;
@@ -58,30 +57,29 @@ public class j {
 
         @Override // java.lang.Runnable
         public void run() {
-            if (n.g(this.f24420a)) {
-                j.c(this.b, this.f24420a, this.f24421c, this.d, this.e, this.f);
+            if (n.g(this.f10733a)) {
+                j.c(this.b, this.f10733a, this.f10734c, this.d, this.e, this.f);
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/oplus/quickgame/sdk/engine/utils/j$b.class */
-    public static final class b implements Runnable {
+    static final class b implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f24422a;
+        final /* synthetic */ String f10735a;
         final /* synthetic */ Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Map f24423c;
+        final /* synthetic */ Map f10736c;
         final /* synthetic */ Map d;
         final /* synthetic */ Map e;
         final /* synthetic */ Map f;
 
         b(String str, Context context, Map map, Map map2, Map map3, Map map4) {
-            this.f24422a = str;
+            this.f10735a = str;
             this.b = context;
-            this.f24423c = map;
+            this.f10736c = map;
             this.d = map2;
             this.e = map3;
             this.f = map4;
@@ -89,7 +87,7 @@ public class j {
 
         @Override // java.lang.Runnable
         public void run() {
-            j.d(this.f24422a, this.b, this.f24423c, this.d, this.e, this.f);
+            j.d(this.f10735a, this.b, this.f10736c, this.d, this.e, this.f);
         }
     }
 
@@ -98,11 +96,11 @@ public class j {
     public static final class c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f24424a;
+        final /* synthetic */ Context f10737a;
         final /* synthetic */ Intent b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Callback f24425c;
+        final /* synthetic */ Callback f10738c;
 
         /* loaded from: source-8303388-dex2jar.jar:com/oplus/quickgame/sdk/engine/utils/j$c$a.class */
         class a implements Runnable {
@@ -111,23 +109,23 @@ public class j {
 
             @Override // java.lang.Runnable
             public void run() {
-                j.b(c.this.f24425c);
+                j.b(c.this.f10738c);
             }
         }
 
         c(Context context, Intent intent, Callback callback) {
-            this.f24424a = context;
+            this.f10737a = context;
             this.b = intent;
-            this.f24425c = callback;
+            this.f10738c = callback;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             try {
-                this.f24424a.startActivity(this.b);
-                j.f24418a.post(new a());
+                this.f10737a.startActivity(this.b);
+                j.f10731a.post(new a());
             } catch (Exception e) {
-                j.c(this.f24425c, e);
+                j.c(this.f10738c, e);
             }
         }
     }
@@ -137,17 +135,17 @@ public class j {
     public static final class d implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Callback f24427a;
+        final /* synthetic */ Callback f10740a;
         final /* synthetic */ Throwable b;
 
         d(Callback callback, Throwable th) {
-            this.f24427a = callback;
+            this.f10740a = callback;
             this.b = th;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            j.d(this.f24427a, this.b);
+            j.d(this.f10740a, this.b);
         }
     }
 
@@ -174,14 +172,14 @@ public class j {
 
     private static Uri a(String str, String str2) {
         Uri parse = Uri.parse(str);
-        return Uri.parse("content://xgame_" + parse.getScheme() + BridgeUtil.UNDERLINE_STR + parse.getHost() + BridgeUtil.SPLIT_MARK + str2);
+        return Uri.parse("content://xgame_" + parse.getScheme() + "_" + parse.getHost() + "/" + str2);
     }
 
     private static String a(Map<String, ?> map) {
         StringBuilder sb = new StringBuilder();
         for (String str : map.keySet()) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
             sb.append(str);
             sb.append("=");
@@ -212,8 +210,8 @@ public class j {
 
     public static void a(Context context, String str, Map<String, String> map, Map<String, String> map2, Map<String, String> map3, Map<String, String> map4, Callback callback) {
         b();
-        f24419c.a(callback);
-        f24418a.post(new b(str, context, map2, map, map3, map4));
+        f10732c.a(callback);
+        f10731a.post(new b(str, context, map2, map, map3, map4));
     }
 
     private static void a(Exception exc, Context context, String str, Callback callback) {
@@ -268,7 +266,7 @@ public class j {
 
     private static Uri b(String str, String str2) {
         Uri parse = Uri.parse(str);
-        return Uri.parse("content://xgame_preload_" + parse.getScheme() + BridgeUtil.UNDERLINE_STR + parse.getHost() + BridgeUtil.SPLIT_MARK + str2);
+        return Uri.parse("content://xgame_preload_" + parse.getScheme() + "_" + parse.getHost() + "/" + str2);
     }
 
     private static Map<String, Object> b(Map<String, String> map) {
@@ -282,13 +280,13 @@ public class j {
     private static void b() {
         synchronized (j.class) {
             try {
-                if (f24418a == null) {
+                if (f10731a == null) {
                     HandlerThread handlerThread = new HandlerThread("xgame-req");
                     handlerThread.start();
                     if (handlerThread.getLooper() != null) {
-                        f24418a = new Handler(handlerThread.getLooper());
+                        f10731a = new Handler(handlerThread.getLooper());
                     } else {
-                        f24418a = new Handler();
+                        f10731a = new Handler();
                     }
                 }
             } catch (Throwable th) {
@@ -317,13 +315,13 @@ public class j {
                         map4.put("in_tsf", "1");
                         str2 = " reqAsync in deep link";
                     }
-                    f24419c.a(callback2);
-                    f24418a.post(new a(context, str, map2, map, map3, map4));
+                    f10732c.a(callback2);
+                    f10731a.post(new a(context, str, map2, map, map3, map4));
                 }
                 i.a("QgRouterManager", str2);
                 callback2 = a2;
-                f24419c.a(callback2);
-                f24418a.post(new a(context, str, map2, map, map3, map4));
+                f10732c.a(callback2);
+                f10731a.post(new a(context, str, map2, map, map3, map4));
             } catch (Throwable th) {
                 throw th;
             }
@@ -341,7 +339,7 @@ public class j {
     /* JADX INFO: Access modifiers changed from: private */
     public static void c(Callback callback, Throwable th) {
         if (l.a()) {
-            f24418a.post(new d(callback, th));
+            f10731a.post(new d(callback, th));
         } else {
             d(callback, th);
         }
@@ -370,18 +368,18 @@ public class j {
                         String str5 = (String) b2.get(HttpHeaders.ReferrerPolicyValues.ORIGIN);
                         Uri a2 = a(str, f.a(context, str4, a(b2)));
                         ContentValues a3 = a(context, str, map, map2, map3, map4, str4, str5);
-                        context.getContentResolver().registerContentObserver(a2, false, new RequestObserver(context, b2, f24419c, a2));
+                        context.getContentResolver().registerContentObserver(a2, false, new RequestObserver(context, b2, f10732c, a2));
                         context.getContentResolver().insert(a2, a3);
                     }
                 } catch (IllegalArgumentException e2) {
                     if (e2.getMessage().contains("Unknown URL content") && str.startsWith("hap://")) {
-                        a(e2, context, str, f24419c);
+                        a(e2, context, str, f10732c);
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(str);
                         sb = sb2;
                         str3 = " do jump exception 1: ";
                     } else {
-                        c(f24419c, e2);
+                        c(f10732c, e2);
                         StringBuilder sb3 = new StringBuilder();
                         sb3.append(str);
                         str3 = " do jump exception 2: ";
@@ -394,13 +392,13 @@ public class j {
                     return;
                 } catch (SecurityException e3) {
                     if (e3.getMessage().contains("Failed to find provider xgame_hap_game") && str.startsWith("hap://")) {
-                        a(e3, context, str, f24419c);
+                        a(e3, context, str, f10732c);
                         StringBuilder sb4 = new StringBuilder();
                         sb4.append(str);
                         sb = sb4;
                         str2 = " do jump exception 3: ";
                     } else {
-                        c(f24419c, e3);
+                        c(f10732c, e3);
                         StringBuilder sb5 = new StringBuilder();
                         sb5.append(str);
                         str2 = " do jump exception 4: ";
@@ -413,7 +411,7 @@ public class j {
                     return;
                 }
             } catch (Throwable th) {
-                c(f24419c, th);
+                c(f10732c, th);
                 StringBuilder sb6 = new StringBuilder();
                 sb6.append(str);
                 sb6.append(" do jump exception 5: ");
@@ -432,7 +430,7 @@ public class j {
         String str52 = (String) b22.get(HttpHeaders.ReferrerPolicyValues.ORIGIN);
         Uri a22 = a(str, f.a(context, str42, a(b22)));
         ContentValues a32 = a(context, str, map, map2, map3, map4, str42, str52);
-        context.getContentResolver().registerContentObserver(a22, false, new RequestObserver(context, b22, f24419c, a22));
+        context.getContentResolver().registerContentObserver(a22, false, new RequestObserver(context, b22, f10732c, a22));
         context.getContentResolver().insert(a22, a32);
     }
 
@@ -461,11 +459,11 @@ public class j {
                     String str3 = (String) b2.get(HttpHeaders.ReferrerPolicyValues.ORIGIN);
                     Uri b3 = b(str, f.a(context, str2, a(b2)));
                     ContentValues a2 = a(context, str, map, map2, map3, map4, str2, str3);
-                    context.getContentResolver().registerContentObserver(b3, false, new RequestObserver(context, b2, f24419c, b3));
+                    context.getContentResolver().registerContentObserver(b3, false, new RequestObserver(context, b2, f10732c, b3));
                     context.getContentResolver().insert(b3, a2);
                 }
             } catch (Throwable th) {
-                c(f24419c, th);
+                c(f10732c, th);
                 return;
             }
         }
@@ -477,7 +475,7 @@ public class j {
         String str32 = (String) b22.get(HttpHeaders.ReferrerPolicyValues.ORIGIN);
         Uri b32 = b(str, f.a(context, str22, a(b22)));
         ContentValues a22 = a(context, str, map, map2, map3, map4, str22, str32);
-        context.getContentResolver().registerContentObserver(b32, false, new RequestObserver(context, b22, f24419c, b32));
+        context.getContentResolver().registerContentObserver(b32, false, new RequestObserver(context, b22, f10732c, b32));
         context.getContentResolver().insert(b32, a22);
     }
 }

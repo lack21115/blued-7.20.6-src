@@ -10,11 +10,11 @@ import org.json.JSONObject;
 public class k0 implements o0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f22760a = b.i();
+    public Context f9152a = b.i();
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public JSONObject f22761c;
+    public JSONObject f9153c;
     public String d;
     public String e;
     public String f;
@@ -23,7 +23,7 @@ public class k0 implements o0 {
 
     public k0(String str, JSONObject jSONObject, String str2, String str3, long j) {
         this.b = str;
-        this.f22761c = jSONObject;
+        this.f9153c = jSONObject;
         this.d = str2;
         this.e = str3;
         this.f = String.valueOf(j);
@@ -40,14 +40,14 @@ public class k0 implements o0 {
         z.c("hmsSdk", "Begin to run EventRecordTask...");
         int h = b.h();
         int k = c.k(this.d, this.e);
-        if (r0.a(this.f22760a, "stat_v2_1", h * 1048576)) {
+        if (r0.a(this.f9152a, "stat_v2_1", h * 1048576)) {
             z.c("hmsSdk", "stat sp file reach max limited size, discard new event");
             i0.a().a("", "alltype");
             return;
         }
         q qVar = new q();
         qVar.b(this.b);
-        qVar.a(this.f22761c.toString());
+        qVar.a(this.f9153c.toString());
         qVar.d(this.e);
         qVar.c(this.f);
         qVar.f(this.g);
@@ -56,7 +56,7 @@ public class k0 implements o0 {
         try {
             JSONObject d = qVar.d();
             String a2 = v0.a(this.d, this.e);
-            String a3 = h0.a(this.f22760a, "stat_v2_1", a2, "");
+            String a3 = h0.a(this.f9152a, "stat_v2_1", a2, "");
             try {
                 jSONArray = !TextUtils.isEmpty(a3) ? new JSONArray(a3) : new JSONArray();
             } catch (JSONException e) {
@@ -64,7 +64,7 @@ public class k0 implements o0 {
                 jSONArray = new JSONArray();
             }
             jSONArray.put(d);
-            h0.b(this.f22760a, "stat_v2_1", a2, jSONArray.toString());
+            h0.b(this.f9152a, "stat_v2_1", a2, jSONArray.toString());
             if (jSONArray.toString().length() > k * 1024) {
                 i0.a().a(this.d, this.e);
             }

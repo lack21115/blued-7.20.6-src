@@ -36,7 +36,7 @@ public abstract class ForwardingSortedMap<K, V> extends ForwardingMap<K, V> impl
         return delegate().firstKey();
     }
 
-    @Override // java.util.SortedMap, java.util.NavigableMap
+    @Override // java.util.SortedMap
     public SortedMap<K, V> headMap(K k) {
         return delegate().headMap(k);
     }
@@ -65,12 +65,12 @@ public abstract class ForwardingSortedMap<K, V> extends ForwardingMap<K, V> impl
         return tailMap(k).headMap(k2);
     }
 
-    @Override // java.util.SortedMap, java.util.NavigableMap
+    @Override // java.util.SortedMap
     public SortedMap<K, V> subMap(K k, K k2) {
         return delegate().subMap(k, k2);
     }
 
-    @Override // java.util.SortedMap, java.util.NavigableMap
+    @Override // java.util.SortedMap
     public SortedMap<K, V> tailMap(K k) {
         return delegate().tailMap(k);
     }

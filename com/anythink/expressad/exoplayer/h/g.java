@@ -4,15 +4,15 @@ package com.anythink.expressad.exoplayer.h;
 public final class g implements z {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final z[] f7455a;
+    protected final z[] f4616a;
 
     public g(z[] zVarArr) {
-        this.f7455a = zVarArr;
+        this.f4616a = zVarArr;
     }
 
     @Override // com.anythink.expressad.exoplayer.h.z
     public final void a_(long j) {
-        z[] zVarArr = this.f7455a;
+        z[] zVarArr = this.f4616a;
         int length = zVarArr.length;
         int i = 0;
         while (true) {
@@ -36,7 +36,7 @@ public final class g implements z {
             if (e == Long.MIN_VALUE) {
                 return z3;
             }
-            z[] zVarArr = this.f7455a;
+            z[] zVarArr = this.f4616a;
             int length = zVarArr.length;
             int i = 0;
             boolean z4 = false;
@@ -68,7 +68,7 @@ public final class g implements z {
     @Override // com.anythink.expressad.exoplayer.h.z
     public final long d() {
         long j;
-        z[] zVarArr = this.f7455a;
+        z[] zVarArr = this.f4616a;
         int length = zVarArr.length;
         int i = 0;
         long j2 = Long.MAX_VALUE;
@@ -94,7 +94,7 @@ public final class g implements z {
     @Override // com.anythink.expressad.exoplayer.h.z
     public final long e() {
         long j;
-        z[] zVarArr = this.f7455a;
+        z[] zVarArr = this.f4616a;
         int length = zVarArr.length;
         int i = 0;
         long j2 = Long.MAX_VALUE;

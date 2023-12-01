@@ -12,7 +12,7 @@ import android.os.Looper;
 public class c0 extends d2 {
 
     /* renamed from: c  reason: collision with root package name */
-    public LocationManager f3769c;
+    public LocationManager f3721c;
     public Handler d;
     public volatile Location f;
     public volatile int g = 2;
@@ -37,7 +37,7 @@ public class c0 extends d2 {
                 } else {
                     int unused = c0.this.g;
                 }
-                c0.this.f3769c.requestLocationUpdates(str, 1000L, 0.0f, c0.this.h, c0.this.d.getLooper());
+                c0.this.f3721c.requestLocationUpdates(str, 1000L, 0.0f, c0.this.h, c0.this.d.getLooper());
             } catch (Throwable th) {
                 j0.a("ArGpsProvider", "No Permission,can not add location listener", th);
             }
@@ -48,7 +48,7 @@ public class c0 extends d2 {
     public class b implements LocationListener {
 
         /* renamed from: a  reason: collision with root package name */
-        public long f3771a = 0;
+        public long f3723a = 0;
 
         public b() {
         }
@@ -58,12 +58,12 @@ public class c0 extends d2 {
             if (location != null) {
                 try {
                     if ("gps".equals(location.getProvider())) {
-                        if (i0.f3836a || Build.VERSION.SDK_INT < 18 || !location.isFromMockProvider()) {
+                        if (i0.f3788a || Build.VERSION.SDK_INT < 18 || !location.isFromMockProvider()) {
                             long currentTimeMillis = System.currentTimeMillis();
-                            if (Math.abs(currentTimeMillis - this.f3771a) < 1000) {
+                            if (Math.abs(currentTimeMillis - this.f3723a) < 1000) {
                                 return;
                             }
-                            this.f3771a = currentTimeMillis;
+                            this.f3723a = currentTimeMillis;
                             c0.this.f = location;
                             float speed = location.hasSpeed() ? location.getSpeed() : -1.0f;
                             if (b0.b() != null) {
@@ -91,8 +91,8 @@ public class c0 extends d2 {
     }
 
     public c0() {
-        this.f3769c = null;
-        this.f3769c = (LocationManager) q2.a().getSystemService("location");
+        this.f3721c = null;
+        this.f3721c = (LocationManager) q2.a().getSystemService("location");
     }
 
     @Override // c.t.m.g.e2
@@ -116,7 +116,7 @@ public class c0 extends d2 {
     @Override // c.t.m.g.e2
     public void d() {
         try {
-            this.f3769c.removeUpdates(this.h);
+            this.f3721c.removeUpdates(this.h);
         } catch (Throwable th) {
             j0.a("ArGpsProvider", "remove updates error.", th);
         }

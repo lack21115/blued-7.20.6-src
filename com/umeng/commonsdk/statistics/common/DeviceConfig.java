@@ -20,9 +20,9 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
-import com.android.internal.telephony.PhoneConstants;
 import com.google.android.material.timepicker.TimeModel;
 import com.meizu.cloud.pushsdk.notification.model.AdvanceSetting;
+import com.ss.android.download.api.constant.BaseConstants;
 import com.tencent.tendinsv.utils.r;
 import com.umeng.analytics.pro.y;
 import com.umeng.commonsdk.UMConfigure;
@@ -747,7 +747,7 @@ public class DeviceConfig {
                 windowManager.getDefaultDisplay().getMetrics(displayMetrics);
                 int i = displayMetrics.widthPixels;
                 int i2 = displayMetrics.heightPixels;
-                return String.valueOf(i2) + PhoneConstants.APN_TYPE_ALL + String.valueOf(i);
+                return String.valueOf(i2) + "*" + String.valueOf(i);
             }
             return "";
         } catch (Throwable th) {
@@ -1331,7 +1331,7 @@ public class DeviceConfig {
             }
             if (FieldManager.allow(com.umeng.commonsdk.utils.d.G)) {
                 try {
-                    SharedPreferences sharedPreferences = context.getSharedPreferences(h.f40924a, 0);
+                    SharedPreferences sharedPreferences = context.getSharedPreferences(h.f27233a, 0);
                     if (sharedPreferences != null) {
                         sOAID = sharedPreferences.getString(h.b, "");
                     }
@@ -1450,7 +1450,7 @@ public class DeviceConfig {
             }
             return str;
         }
-        return r.f39112a;
+        return r.f25421a;
     }
 
     public static String getSubOSVersion(Context context) {
@@ -1479,7 +1479,7 @@ public class DeviceConfig {
         try {
             Calendar calendar = Calendar.getInstance(getLocale(context));
             if (calendar != null) {
-                return calendar.getTimeZone().getRawOffset() / 3600000;
+                return calendar.getTimeZone().getRawOffset() / BaseConstants.Time.HOUR;
             }
             return 8;
         } catch (Throwable th) {

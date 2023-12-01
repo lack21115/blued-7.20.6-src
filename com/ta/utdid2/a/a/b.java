@@ -6,17 +6,17 @@ import java.io.UnsupportedEncodingException;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f34892a = !b.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f21201a = !b.class.desiredAssertionStatus();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/ta/utdid2/a/a/b$a.class */
     public static abstract class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f34893a;
+        public int f21202a;
 
         /* renamed from: a  reason: collision with other field name */
-        public byte[] f52a;
+        public byte[] f5a;
 
         a() {
         }
@@ -25,20 +25,20 @@ public class b {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.ta.utdid2.a.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/ta/utdid2/a/a/b$b.class */
-    public static class C0891b extends a {
+    public static class C0721b extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final int[] f34894a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -2, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+        private static final int[] f21203a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -2, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
         private static final int[] b = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -2, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, 63, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 
         /* renamed from: c  reason: collision with root package name */
-        private final int[] f34895c;
+        private final int[] f21204c;
         private int state;
         private int value;
 
-        public C0891b(int i, byte[] bArr) {
-            this.f52a = bArr;
-            this.f34895c = (i & 8) == 0 ? f34894a : b;
+        public C0721b(int i, byte[] bArr) {
+            this.f5a = bArr;
+            this.f21204c = (i & 8) == 0 ? f21203a : b;
             this.state = 0;
             this.value = 0;
         }
@@ -54,8 +54,8 @@ public class b {
             }
             int i8 = i2 + i;
             int i9 = this.value;
-            byte[] bArr2 = this.f52a;
-            int[] iArr = this.f34895c;
+            byte[] bArr2 = this.f5a;
+            int[] iArr = this.f21204c;
             int i10 = 0;
             int i11 = i9;
             int i12 = i;
@@ -190,7 +190,7 @@ public class b {
             if (!z) {
                 this.state = i7;
                 this.value = i3;
-                this.f34893a = i4;
+                this.f21202a = i4;
                 return true;
             } else if (i7 == 1) {
                 this.state = 6;
@@ -209,7 +209,7 @@ public class b {
                     return false;
                 }
                 this.state = i7;
-                this.f34893a = i4;
+                this.f21202a = i4;
                 return true;
             }
         }
@@ -220,36 +220,36 @@ public class b {
     public static class c extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ boolean f34896a = !b.class.desiredAssertionStatus();
+        static final /* synthetic */ boolean f21205a = !b.class.desiredAssertionStatus();
         private static final byte[] b = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47};
 
         /* renamed from: c  reason: collision with root package name */
-        private static final byte[] f34897c = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 45, 95};
+        private static final byte[] f21206c = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 45, 95};
 
         /* renamed from: b  reason: collision with other field name */
-        int f53b;
+        int f6b;
 
         /* renamed from: b  reason: collision with other field name */
-        public final boolean f54b;
+        public final boolean f7b;
 
         /* renamed from: c  reason: collision with other field name */
-        public final boolean f55c;
+        public final boolean f8c;
         private int count;
         public final boolean d;
 
         /* renamed from: d  reason: collision with other field name */
-        private final byte[] f56d;
+        private final byte[] f9d;
         private final byte[] e;
 
         public c(int i, byte[] bArr) {
-            this.f52a = bArr;
-            this.f54b = (i & 1) == 0;
-            this.f55c = (i & 2) == 0;
+            this.f5a = bArr;
+            this.f7b = (i & 1) == 0;
+            this.f8c = (i & 2) == 0;
             this.d = (i & 4) != 0;
-            this.e = (i & 8) == 0 ? b : f34897c;
-            this.f56d = new byte[2];
-            this.f53b = 0;
-            this.count = this.f55c ? 19 : -1;
+            this.e = (i & 8) == 0 ? b : f21206c;
+            this.f9d = new byte[2];
+            this.f6b = 0;
+            this.count = this.f8c ? 19 : -1;
         }
 
         /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
@@ -287,13 +287,13 @@ public class b {
     }
 
     public static byte[] decode(byte[] bArr, int i, int i2, int i3) {
-        C0891b c0891b = new C0891b(i3, new byte[(i2 * 3) / 4]);
-        if (c0891b.a(bArr, i, i2, true)) {
-            if (c0891b.f34893a == c0891b.f52a.length) {
-                return c0891b.f52a;
+        C0721b c0721b = new C0721b(i3, new byte[(i2 * 3) / 4]);
+        if (c0721b.a(bArr, i, i2, true)) {
+            if (c0721b.f21202a == c0721b.f5a.length) {
+                return c0721b.f5a;
             }
-            byte[] bArr2 = new byte[c0891b.f34893a];
-            System.arraycopy((Object) c0891b.f52a, 0, (Object) bArr2, 0, c0891b.f34893a);
+            byte[] bArr2 = new byte[c0721b.f21202a];
+            System.arraycopy(c0721b.f5a, 0, bArr2, 0, c0721b.f21202a);
             return bArr2;
         }
         throw new IllegalArgumentException("bad base-64");
@@ -307,7 +307,7 @@ public class b {
         int i4;
         c cVar = new c(i3, null);
         int i5 = (i2 / 3) * 4;
-        if (cVar.f54b) {
+        if (cVar.f7b) {
             i4 = i5;
             if (i2 % 3 > 0) {
                 i4 = i5 + 4;
@@ -317,23 +317,23 @@ public class b {
             i4 = i6 != 1 ? i6 != 2 ? i5 : i5 + 3 : i5 + 2;
         }
         int i7 = i4;
-        if (cVar.f55c) {
+        if (cVar.f8c) {
             i7 = i4;
             if (i2 > 0) {
                 i7 = i4 + ((((i2 - 1) / 57) + 1) * (cVar.d ? 2 : 1));
             }
         }
-        cVar.f52a = new byte[i7];
+        cVar.f5a = new byte[i7];
         cVar.a(bArr, i, i2, true);
-        if (f34892a || cVar.f34893a == i7) {
-            return cVar.f52a;
+        if (f21201a || cVar.f21202a == i7) {
+            return cVar.f5a;
         }
         throw new AssertionError();
     }
 
     public static String encodeToString(byte[] bArr, int i) {
         try {
-            return new String(encode(bArr, i), "US-ASCII");
+            return new String(encode(bArr, i), com.anythink.expressad.exoplayer.b.i);
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }

@@ -14,11 +14,11 @@ import java.util.Map;
 public class eo extends Notification.Builder {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f41378a;
+    private Context f27687a;
 
     public eo(Context context) {
         super(context);
-        this.f41378a = context;
+        this.f27687a = context;
     }
 
     public int a(Resources resources, String str, String str2, String str3) {
@@ -33,7 +33,7 @@ public class eo extends Notification.Builder {
     }
 
     protected Context a() {
-        return this.f41378a;
+        return this.f27687a;
     }
 
     @Override // android.app.Notification.Builder
@@ -56,7 +56,7 @@ public class eo extends Notification.Builder {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public eo mo11720a(String str) {
+    public eo mo8670a(String str) {
         if (!TextUtils.isEmpty(str)) {
             try {
                 bi.a((Object) this, "setColor", Integer.valueOf(Color.parseColor(str)));
@@ -74,12 +74,12 @@ public class eo extends Notification.Builder {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: a */
-    public void mo11718a() {
+    public void mo8668a() {
     }
 
     @Override // android.app.Notification.Builder
     public Notification build() {
-        mo11718a();
+        mo8668a();
         return super.build();
     }
 }

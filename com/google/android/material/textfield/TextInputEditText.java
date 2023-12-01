@@ -116,9 +116,8 @@ public class TextInputEditText extends AppCompatEditText {
         return this.textInputLayoutFocusedRectEnabled;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         TextInputLayout textInputLayout = getTextInputLayout();
         if (textInputLayout != null && textInputLayout.isProvidingHint() && super.getHint() == null && ManufacturerUtils.isMeizuDevice()) {
@@ -135,7 +134,7 @@ public class TextInputEditText extends AppCompatEditText {
         return onCreateInputConnection;
     }
 
-    @Override // android.widget.EditText, android.widget.TextView, android.view.View
+    @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         TextInputLayout textInputLayout = getTextInputLayout();

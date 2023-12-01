@@ -4,20 +4,20 @@ package com.anythink.expressad.foundation.d;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f7764a;
+    private int f4925a;
     private String b;
 
     public b(int i, String str) {
-        this.f7764a = i;
+        this.f4925a = i;
         this.b = str;
     }
 
     private int a() {
-        return this.f7764a;
+        return this.f4925a;
     }
 
     private void a(int i) {
-        this.f7764a = i;
+        this.f4925a = i;
     }
 
     private void a(String str) {

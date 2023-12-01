@@ -1,9 +1,6 @@
 package java.util.logging;
 
-import android.os.BatteryManager;
-import com.baidu.mobads.sdk.internal.bq;
-import com.huawei.hms.push.constant.RemoteMessageConst;
-import com.j256.ormlite.stmt.query.SimpleComparison;
+import com.anythink.core.common.c.d;
 import java.text.MessageFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -17,9 +14,9 @@ public class XMLFormatter extends Formatter {
         while (true) {
             int i3 = i2;
             if (i3 >= i) {
-                sb.append(SimpleComparison.LESS_THAN_OPERATION).append(str).append(SimpleComparison.GREATER_THAN_OPERATION);
+                sb.append("<").append(str).append(">");
                 sb.append(obj);
-                sb.append("</").append(str).append(SimpleComparison.GREATER_THAN_OPERATION);
+                sb.append("</").append(str).append(">");
                 sb.append(System.lineSeparator());
                 return;
             }
@@ -51,7 +48,7 @@ public class XMLFormatter extends Formatter {
             return;
         }
         append(sb, 1, "message", str);
-        append(sb, 1, "key", message);
+        append(sb, 1, d.a.b, message);
         append(sb, 1, "catalog", logRecord.getResourceBundleName());
     }
 
@@ -93,9 +90,9 @@ public class XMLFormatter extends Formatter {
         append(sb, 1, "millis", Long.valueOf(millis));
         append(sb, 1, "sequence", Long.valueOf(logRecord.getSequenceNumber()));
         if (logRecord.getLoggerName() != null) {
-            append(sb, 1, bq.f9354a, logRecord.getLoggerName());
+            append(sb, 1, "logger", logRecord.getLoggerName());
         }
-        append(sb, 1, BatteryManager.EXTRA_LEVEL, logRecord.getLevel().getName());
+        append(sb, 1, "level", logRecord.getLevel().getName());
         if (logRecord.getSourceClassName() != null) {
             append(sb, 1, "class", logRecord.getSourceClassName());
         }
@@ -113,7 +110,7 @@ public class XMLFormatter extends Formatter {
                 if (i2 >= length) {
                     break;
                 }
-                append(sb, 1, RemoteMessageConst.MessageBody.PARAM, parameters[i2]);
+                append(sb, 1, "param", parameters[i2]);
                 i = i2 + 1;
             }
         }

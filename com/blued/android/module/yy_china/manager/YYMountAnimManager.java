@@ -16,6 +16,7 @@ import com.blued.android.module.yy_china.R;
 import com.blued.android.module.yy_china.fragment.BaseYYStudioFragment;
 import com.blued.android.module.yy_china.model.YYMountModel;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import java.util.ArrayList;
 import kotlin.Metadata;
@@ -24,13 +25,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYMountAnimManager.class */
 public final class YYMountAnimManager implements LiveAnimationListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final BaseYYStudioFragment f17560a;
+    private final BaseYYStudioFragment a;
     private final LiveAnimationView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final TextView f17561c;
+    private final TextView c;
     private final ArrayList<YYMountModel> d;
     private final ArrayList<YYMountModel> e;
     private YYMountModel f;
@@ -41,9 +38,9 @@ public final class YYMountAnimManager implements LiveAnimationListener {
         Intrinsics.e(fragment, "fragment");
         Intrinsics.e(mAniView, "mAniView");
         Intrinsics.e(mMount, "mMount");
-        this.f17560a = fragment;
+        this.a = fragment;
         this.b = mAniView;
-        this.f17561c = mMount;
+        this.c = mMount;
         this.d = new ArrayList<>();
         this.e = new ArrayList<>();
     }
@@ -121,7 +118,7 @@ public final class YYMountAnimManager implements LiveAnimationListener {
 
     @Override // com.blued.android.module.live.base.view.animation.LiveAnimationListener
     public void a() {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f17561c, "alpha", 0.0f, 1.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.c, "alpha", 0.0f, 1.0f);
         ofFloat.setDuration(1000L);
         ofFloat.start();
         YYMountModel yYMountModel = this.g;
@@ -132,8 +129,7 @@ public final class YYMountAnimManager implements LiveAnimationListener {
         YYMountModel f = f();
         String mounts_icon = f == null ? null : f.getMounts_icon();
         Intrinsics.a((Object) mounts_icon);
-        ImageLoader.a(fragmentActive, mounts_icon).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.manager.YYMountAnimManager$onAnimationStart$1$1
-            @Override // com.bumptech.glide.request.target.Target
+        ImageLoader.a(fragmentActive, mounts_icon).a((Target) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.manager.YYMountAnimManager$onAnimationStart$1$1
             /* renamed from: a */
             public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
                 Intrinsics.e(resource, "resource");
@@ -188,10 +184,10 @@ public final class YYMountAnimManager implements LiveAnimationListener {
 
     @Override // com.blued.android.module.live.base.view.animation.LiveAnimationListener
     public void b() {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f17561c, "alpha", 1.0f, 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.c, "alpha", 1.0f, 0.0f);
         ofFloat.setDuration(200L);
         ofFloat.start();
-        this.f17561c.setBackgroundResource(R.color.transparent);
+        this.c.setBackgroundResource(R.color.transparent);
         this.g = null;
         this.h = false;
         this.b.setOnClickListener(null);
@@ -204,15 +200,15 @@ public final class YYMountAnimManager implements LiveAnimationListener {
             return;
         }
         if (StringUtils.b(model.getMarqText())) {
-            this.f17561c.setText("");
+            this.c.setText("");
         } else {
-            this.f17561c.setText(model.getMarqText());
+            this.c.setText(model.getMarqText());
         }
-        this.b.a(this.f17560a.getFragmentActive(), "", "", model.getMounts_img(), "", LiveAnimationViewFactory.ScaleType.FIT_CENTER, this);
+        this.b.a(this.a.getFragmentActive(), "", "", model.getMounts_img(), "", LiveAnimationViewFactory.ScaleType.FIT_CENTER, this);
     }
 
     public final BaseYYStudioFragment c() {
-        return this.f17560a;
+        return this.a;
     }
 
     public final void c(YYMountModel model) {
@@ -229,15 +225,15 @@ public final class YYMountAnimManager implements LiveAnimationListener {
         this.b.removeAllViews();
         this.b.a(7);
         if (StringUtils.b(model.getMarqText())) {
-            this.f17561c.setText("");
+            this.c.setText("");
         } else {
-            this.f17561c.setText(model.getMarqText());
+            this.c.setText(model.getMarqText());
         }
-        this.b.a(this.f17560a.getFragmentActive(), "", "", model.getMounts_img(), "", LiveAnimationViewFactory.ScaleType.FIT_CENTER, this);
+        this.b.a(this.a.getFragmentActive(), "", "", model.getMounts_img(), "", LiveAnimationViewFactory.ScaleType.FIT_CENTER, this);
     }
 
     public final TextView d() {
-        return this.f17561c;
+        return this.c;
     }
 
     public final ArrayList<YYMountModel> e() {

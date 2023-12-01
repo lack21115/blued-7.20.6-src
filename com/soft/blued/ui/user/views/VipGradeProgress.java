@@ -27,14 +27,14 @@ import kotlin.jvm.internal.Intrinsics;
 public final class VipGradeProgress extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f34406a = new Companion(null);
+    public static final Companion f20715a = new Companion(null);
     private final int A;
     private final int B;
     private final int C;
     private Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Paint f34407c;
+    private Paint f20716c;
     private Paint d;
     private Paint e;
     private int f;
@@ -95,10 +95,10 @@ public final class VipGradeProgress extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public VipGradeProgress(Context context, AttributeSet attrs) {
-        super(context, attrs);
+    public VipGradeProgress(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
         Intrinsics.e(context, "context");
-        Intrinsics.e(attrs, "attrs");
+        Intrinsics.e(attributeSet, "attrs");
         this.f = Color.parseColor("#379FFB");
         this.g = Color.parseColor("#1270E5");
         this.o = true;
@@ -114,10 +114,10 @@ public final class VipGradeProgress extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public VipGradeProgress(Context context, AttributeSet attrs, int i) {
-        super(context, attrs, i);
+    public VipGradeProgress(Context context, AttributeSet attributeSet, int i) {
+        super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        Intrinsics.e(attrs, "attrs");
+        Intrinsics.e(attributeSet, "attrs");
         this.f = Color.parseColor("#379FFB");
         this.g = Color.parseColor("#1270E5");
         this.o = true;
@@ -146,11 +146,11 @@ public final class VipGradeProgress extends View {
             paint2.setStyle(Paint.Style.FILL);
         }
         Paint paint3 = new Paint(1);
-        this.f34407c = paint3;
+        this.f20716c = paint3;
         if (paint3 != null) {
             paint3.setColor(this.g);
         }
-        Paint paint4 = this.f34407c;
+        Paint paint4 = this.f20716c;
         if (paint4 != null) {
             paint4.setStyle(Paint.Style.FILL);
         }
@@ -192,7 +192,7 @@ public final class VipGradeProgress extends View {
             int i5 = this.y;
             if (i4 != i5) {
                 this.g = i5;
-                Paint paint2 = this.f34407c;
+                Paint paint2 = this.f20716c;
                 if (paint2 != null) {
                     paint2.setColor(i5);
                 }
@@ -217,7 +217,7 @@ public final class VipGradeProgress extends View {
             int i9 = this.w;
             if (i8 != i9) {
                 this.g = i9;
-                Paint paint5 = this.f34407c;
+                Paint paint5 = this.f20716c;
                 if (paint5 != null) {
                     paint5.setColor(i9);
                 }
@@ -242,7 +242,7 @@ public final class VipGradeProgress extends View {
             int i13 = this.C;
             if (i12 != i13) {
                 this.g = i13;
-                Paint paint8 = this.f34407c;
+                Paint paint8 = this.f20716c;
                 if (paint8 != null) {
                     paint8.setColor(i13);
                 }
@@ -268,7 +268,7 @@ public final class VipGradeProgress extends View {
             int i17 = this.A;
             if (i16 != i17) {
                 this.g = i17;
-                Paint paint11 = this.f34407c;
+                Paint paint11 = this.f20716c;
                 if (paint11 != null) {
                     paint11.setColor(i17);
                 }
@@ -324,9 +324,8 @@ public final class VipGradeProgress extends View {
         return this.t;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         Paint paint;
         Paint paint2;
         OnDropLickListener onDropLickListener;
@@ -342,7 +341,7 @@ public final class VipGradeProgress extends View {
         }
         e();
         List<String> list2 = this.i;
-        if (list2 == null || (paint = this.b) == null || (paint2 = this.f34407c) == null || list2.isEmpty()) {
+        if (list2 == null || (paint = this.b) == null || (paint2 = this.f20716c) == null || list2.isEmpty()) {
             return;
         }
         if (this.r == 0.0f) {
@@ -354,17 +353,18 @@ public final class VipGradeProgress extends View {
         paint.setStrokeWidth(this.k / 2.0f);
         canvas.drawLine(this.q, getHeight() / 2.0f, this.q + this.r, getHeight() / 2.0f, paint);
         paint2.setStrokeWidth(this.k / 2.0f);
-        Iterator<String> it = list2.iterator();
+        Iterator<T> it = list2.iterator();
         int i2 = 0;
         while (true) {
             int i3 = i2;
             if (!it.hasNext()) {
                 return;
             }
-            it.next();
+            Object next = it.next();
             if (i3 < 0) {
                 CollectionsKt.c();
             }
+            String str = (String) next;
             if (i3 <= this.m || i3 == this.n) {
                 if (i3 == this.n) {
                     canvas.drawCircle(this.q + (this.l * i3), getHeight() / 2.0f, DensityUtil.a(3.5f), paint2);
@@ -399,9 +399,8 @@ public final class VipGradeProgress extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         setMeasuredDimension(i, i2);
         List<String> list = this.i;
         if (list == null || list.isEmpty()) {
@@ -423,10 +422,10 @@ public final class VipGradeProgress extends View {
     }
 
     @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent event) {
-        Intrinsics.e(event, "event");
-        if (event.getAction() == 1) {
-            float x = event.getX() / this.l;
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        Intrinsics.e(motionEvent, "event");
+        if (motionEvent.getAction() == 1) {
+            float x = motionEvent.getX() / this.l;
             int i = (int) (x + (((double) (x - ((float) ((int) x)))) > 0.5d ? 1 : 0));
             this.n = i;
             OnDropLickListener onDropLickListener = this.t;

@@ -2,7 +2,6 @@ package com.umeng.commonsdk.debug;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.android.internal.telephony.PhoneConstants;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.commonsdk.statistics.internal.StatTracer;
 
@@ -29,8 +28,8 @@ public class SelfChecker {
                     }
                     i = i2 + 1;
                 } catch (Throwable th) {
-                    UMLog.mutlInfo(2, PhoneConstants.APN_TYPE_ALL + FILELIST[i2]);
-                    UMRTLog.i(UMRTLog.RTLOG_TAG, PhoneConstants.APN_TYPE_ALL + FILELIST[i2]);
+                    UMLog.mutlInfo(2, "*" + FILELIST[i2]);
+                    UMRTLog.i(UMRTLog.RTLOG_TAG, "*" + FILELIST[i2]);
                     z = false;
                 }
             }

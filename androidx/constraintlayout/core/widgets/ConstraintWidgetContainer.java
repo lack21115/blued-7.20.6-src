@@ -6,7 +6,6 @@ import androidx.constraintlayout.core.SolverVariable;
 import androidx.constraintlayout.core.widgets.ConstraintWidget;
 import androidx.constraintlayout.core.widgets.analyzer.BasicMeasure;
 import androidx.constraintlayout.core.widgets.analyzer.DependencyGraph;
-import com.alipay.sdk.util.i;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,7 +28,7 @@ public class ConstraintWidgetContainer extends WidgetContainer {
     private int Z;
 
     /* renamed from: a  reason: collision with root package name */
-    BasicMeasure f2123a;
+    BasicMeasure f2075a;
     private boolean aa;
     private int ab;
     private boolean ac;
@@ -51,7 +50,7 @@ public class ConstraintWidgetContainer extends WidgetContainer {
     public int mWrapFixedWidth;
 
     public ConstraintWidgetContainer() {
-        this.f2123a = new BasicMeasure(this);
+        this.f2075a = new BasicMeasure(this);
         this.mDependencyGraph = new DependencyGraph(this);
         this.O = null;
         this.aa = false;
@@ -80,7 +79,7 @@ public class ConstraintWidgetContainer extends WidgetContainer {
 
     public ConstraintWidgetContainer(int i, int i2) {
         super(i, i2);
-        this.f2123a = new BasicMeasure(this);
+        this.f2075a = new BasicMeasure(this);
         this.mDependencyGraph = new DependencyGraph(this);
         this.O = null;
         this.aa = false;
@@ -109,7 +108,7 @@ public class ConstraintWidgetContainer extends WidgetContainer {
 
     public ConstraintWidgetContainer(int i, int i2, int i3, int i4) {
         super(i, i2, i3, i4);
-        this.f2123a = new BasicMeasure(this);
+        this.f2075a = new BasicMeasure(this);
         this.mDependencyGraph = new DependencyGraph(this);
         this.O = null;
         this.aa = false;
@@ -138,7 +137,7 @@ public class ConstraintWidgetContainer extends WidgetContainer {
 
     public ConstraintWidgetContainer(String str, int i, int i2) {
         super(i, i2);
-        this.f2123a = new BasicMeasure(this);
+        this.f2075a = new BasicMeasure(this);
         this.mDependencyGraph = new DependencyGraph(this);
         this.O = null;
         this.aa = false;
@@ -535,7 +534,7 @@ public class ConstraintWidgetContainer extends WidgetContainer {
             it.next().getSceneString(sb);
             sb.append(",\n");
         }
-        sb.append(i.d);
+        sb.append("}");
     }
 
     public LinearSystem getSystem() {
@@ -609,7 +608,7 @@ public class ConstraintWidgetContainer extends WidgetContainer {
     public long measure(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {
         this.Q = i8;
         this.R = i9;
-        return this.f2123a.solverMeasure(this, i, i8, i9, i2, i3, i4, i5, i6, i7);
+        return this.f2075a.solverMeasure(this, i, i8, i9, i2, i3, i4, i5, i6, i7);
     }
 
     public boolean optimizeFor(int i) {
@@ -684,6 +683,6 @@ public class ConstraintWidgetContainer extends WidgetContainer {
     }
 
     public void updateHierarchy() {
-        this.f2123a.updateHierarchy(this);
+        this.f2075a.updateHierarchy(this);
     }
 }

@@ -24,8 +24,8 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
     public static final int CLOSE_TYPE_FIELD_NUMBER = 1;
     private static final CommonAlert DEFAULT_INSTANCE = new CommonAlert();
     private static final Parser<CommonAlert> PARSER = new AbstractParser<CommonAlert>() { // from class: cn.irisgw.live.CommonAlert.1
-        @Override // com.google.protobuf.Parser
-        public CommonAlert parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public CommonAlert m1622parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new CommonAlert(codedInputStream, extensionRegistryLite);
         }
     };
@@ -49,9 +49,8 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         public static final int Manual_VALUE = 0;
         private final int value;
         private static final Internal.EnumLiteMap<AlertCloseType> internalValueMap = new Internal.EnumLiteMap<AlertCloseType>() { // from class: cn.irisgw.live.CommonAlert.AlertCloseType.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.google.protobuf.Internal.EnumLiteMap
-            public AlertCloseType findValueByNumber(int i) {
+            /* renamed from: findValueByNumber */
+            public AlertCloseType m1624findValueByNumber(int i) {
                 return AlertCloseType.forNumber(i);
             }
         };
@@ -72,7 +71,7 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         }
 
         public static final Descriptors.EnumDescriptor getDescriptor() {
-            return CommonAlert.getDescriptor().getEnumTypes().get(1);
+            return (Descriptors.EnumDescriptor) CommonAlert.getDescriptor().getEnumTypes().get(1);
         }
 
         public static Internal.EnumLiteMap<AlertCloseType> internalGetValueMap() {
@@ -91,12 +90,10 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumDescriptor getDescriptorForType() {
             return getDescriptor();
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
         public final int getNumber() {
             if (this != UNRECOGNIZED) {
                 return this.value;
@@ -104,10 +101,9 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumValueDescriptor getValueDescriptor() {
             if (this != UNRECOGNIZED) {
-                return getDescriptor().getValues().get(ordinal());
+                return (Descriptors.EnumValueDescriptor) getDescriptor().getValues().get(ordinal());
             }
             throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
         }
@@ -135,9 +131,8 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         public static final int Url_VALUE = 1;
         private final int value;
         private static final Internal.EnumLiteMap<AlertJumpType> internalValueMap = new Internal.EnumLiteMap<AlertJumpType>() { // from class: cn.irisgw.live.CommonAlert.AlertJumpType.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.google.protobuf.Internal.EnumLiteMap
-            public AlertJumpType findValueByNumber(int i) {
+            /* renamed from: findValueByNumber */
+            public AlertJumpType m1626findValueByNumber(int i) {
                 return AlertJumpType.forNumber(i);
             }
         };
@@ -171,7 +166,7 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         }
 
         public static final Descriptors.EnumDescriptor getDescriptor() {
-            return CommonAlert.getDescriptor().getEnumTypes().get(0);
+            return (Descriptors.EnumDescriptor) CommonAlert.getDescriptor().getEnumTypes().get(0);
         }
 
         public static Internal.EnumLiteMap<AlertJumpType> internalGetValueMap() {
@@ -190,12 +185,10 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumDescriptor getDescriptorForType() {
             return getDescriptor();
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
         public final int getNumber() {
             if (this != UNRECOGNIZED) {
                 return this.value;
@@ -203,10 +196,9 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumValueDescriptor getValueDescriptor() {
             if (this != UNRECOGNIZED) {
-                return getDescriptor().getValues().get(ordinal());
+                return (Descriptors.EnumValueDescriptor) getDescriptor().getValues().get(ordinal());
             }
             throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
         }
@@ -230,8 +222,8 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         private volatile Object url_;
         private static final AlertResource DEFAULT_INSTANCE = new AlertResource();
         private static final Parser<AlertResource> PARSER = new AbstractParser<AlertResource>() { // from class: cn.irisgw.live.CommonAlert.AlertResource.1
-            @Override // com.google.protobuf.Parser
-            public AlertResource parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public AlertResource m1635parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new AlertResource(codedInputStream, extensionRegistryLite);
             }
         };
@@ -270,22 +262,22 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
                 boolean unused = AlertResource.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m1637addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public AlertResource build() {
-                AlertResource buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public AlertResource m1639build() {
+                AlertResource m1641buildPartial = m1641buildPartial();
+                if (m1641buildPartial.isInitialized()) {
+                    return m1641buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m1641buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public AlertResource buildPartial() {
+            /* renamed from: buildPartial */
+            public AlertResource m1641buildPartial() {
                 AlertResource alertResource = new AlertResource(this);
                 alertResource.url_ = this.url_;
                 alertResource.jumpUid_ = this.jumpUid_;
@@ -297,8 +289,8 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
                 return alertResource;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m1645clear() {
                 super.clear();
                 this.url_ = "";
                 this.jumpUid_ = 0;
@@ -309,8 +301,8 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m1647clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -344,8 +336,8 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m1650clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -355,18 +347,16 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m1656clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public AlertResource getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public AlertResource m1658getDefaultInstanceForType() {
                 return AlertResource.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_CommonAlert_AlertResource_descriptor;
             }
@@ -462,12 +452,10 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_CommonAlert_AlertResource_fieldAccessorTable.ensureFieldAccessorsInitialized(AlertResource.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -497,18 +485,18 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
                 if (alertResource.getLinkType() != 0) {
                     setLinkType(alertResource.getLinkType());
                 }
-                mergeUnknownFields(alertResource.unknownFields);
+                m1667mergeUnknownFields(alertResource.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.CommonAlert.AlertResource.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.CommonAlert.AlertResource.Builder m1664mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -553,11 +541,11 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CommonAlert.AlertResource.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CommonAlert$AlertResource$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CommonAlert.AlertResource.Builder.m1664mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CommonAlert$AlertResource$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m1663mergeFrom(Message message) {
                 if (message instanceof AlertResource) {
                     return mergeFrom((AlertResource) message);
                 }
@@ -565,13 +553,13 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m1667mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m1669setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -640,13 +628,13 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m1671setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m1673setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
 
@@ -732,66 +720,65 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m1634toBuilder();
         }
 
         public static Builder newBuilder(AlertResource alertResource) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(alertResource);
+            return DEFAULT_INSTANCE.m1634toBuilder().mergeFrom(alertResource);
         }
 
         public static AlertResource parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (AlertResource) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static AlertResource parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (AlertResource) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static AlertResource parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (AlertResource) PARSER.parseFrom(byteString);
         }
 
         public static AlertResource parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (AlertResource) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static AlertResource parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (AlertResource) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static AlertResource parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (AlertResource) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static AlertResource parseFrom(InputStream inputStream) throws IOException {
-            return (AlertResource) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static AlertResource parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (AlertResource) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static AlertResource parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (AlertResource) PARSER.parseFrom(byteBuffer);
         }
 
         public static AlertResource parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (AlertResource) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static AlertResource parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (AlertResource) PARSER.parseFrom(bArr);
         }
 
         public static AlertResource parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (AlertResource) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<AlertResource> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -803,8 +790,8 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public AlertResource getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public AlertResource m1629getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -877,12 +864,10 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return this.linkType_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<AlertResource> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -919,7 +904,6 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return serializedSize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
@@ -946,7 +930,6 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -956,12 +939,10 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_CommonAlert_AlertResource_fieldAccessorTable.ensureFieldAccessorsInitialized(AlertResource.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -974,28 +955,26 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m1632newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m1631newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new AlertResource();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m1634toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getUrlBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.url_);
@@ -1054,9 +1033,8 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         public static final int Web_VALUE = 1;
         private final int value;
         private static final Internal.EnumLiteMap<AlertResourceType> internalValueMap = new Internal.EnumLiteMap<AlertResourceType>() { // from class: cn.irisgw.live.CommonAlert.AlertResourceType.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.google.protobuf.Internal.EnumLiteMap
-            public AlertResourceType findValueByNumber(int i) {
+            /* renamed from: findValueByNumber */
+            public AlertResourceType m1675findValueByNumber(int i) {
                 return AlertResourceType.forNumber(i);
             }
         };
@@ -1077,7 +1055,7 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         }
 
         public static final Descriptors.EnumDescriptor getDescriptor() {
-            return CommonAlert.getDescriptor().getEnumTypes().get(2);
+            return (Descriptors.EnumDescriptor) CommonAlert.getDescriptor().getEnumTypes().get(2);
         }
 
         public static Internal.EnumLiteMap<AlertResourceType> internalGetValueMap() {
@@ -1096,12 +1074,10 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumDescriptor getDescriptorForType() {
             return getDescriptor();
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
         public final int getNumber() {
             if (this != UNRECOGNIZED) {
                 return this.value;
@@ -1109,10 +1085,9 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumValueDescriptor getValueDescriptor() {
             if (this != UNRECOGNIZED) {
-                return getDescriptor().getValues().get(ordinal());
+                return (Descriptors.EnumValueDescriptor) getDescriptor().getValues().get(ordinal());
             }
             throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
         }
@@ -1155,22 +1130,22 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             boolean unused = CommonAlert.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m1677addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public CommonAlert build() {
-            CommonAlert buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public CommonAlert m1679build() {
+            CommonAlert m1681buildPartial = m1681buildPartial();
+            if (m1681buildPartial.isInitialized()) {
+                return m1681buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m1681buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public CommonAlert buildPartial() {
+        /* renamed from: buildPartial */
+        public CommonAlert m1681buildPartial() {
             CommonAlert commonAlert = new CommonAlert(this);
             commonAlert.closeType_ = this.closeType_;
             commonAlert.resourceType_ = this.resourceType_;
@@ -1185,8 +1160,8 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return commonAlert;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m1685clear() {
             super.clear();
             this.closeType_ = 0;
             this.resourceType_ = 0;
@@ -1206,13 +1181,13 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m1687clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m1690clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -1239,10 +1214,9 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m1696clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.CommonAlertOrBuilder
@@ -1260,12 +1234,11 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return this.closeType_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public CommonAlert getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public CommonAlert m1698getDefaultInstanceForType() {
             return CommonAlert.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_CommonAlert_descriptor;
         }
@@ -1293,7 +1266,7 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         public AlertResourceOrBuilder getResourceOrBuilder() {
             SingleFieldBuilderV3<AlertResource, AlertResource.Builder, AlertResourceOrBuilder> singleFieldBuilderV3 = this.resourceBuilder_;
             if (singleFieldBuilderV3 != null) {
-                return singleFieldBuilderV3.getMessageOrBuilder();
+                return (AlertResourceOrBuilder) singleFieldBuilderV3.getMessageOrBuilder();
             }
             AlertResource alertResource = this.resource_;
             AlertResource alertResource2 = alertResource;
@@ -1328,12 +1301,10 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return (this.resourceBuilder_ == null && this.resource_ == null) ? false : true;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_CommonAlert_fieldAccessorTable.ensureFieldAccessorsInitialized(CommonAlert.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -1354,18 +1325,18 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             if (commonAlert.getShowCloseBtn()) {
                 setShowCloseBtn(commonAlert.getShowCloseBtn());
             }
-            mergeUnknownFields(commonAlert.unknownFields);
+            m1707mergeUnknownFields(commonAlert.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.CommonAlert.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.CommonAlert.Builder m1704mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -1410,11 +1381,11 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CommonAlert.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CommonAlert$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CommonAlert.Builder.m1704mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CommonAlert$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m1703mergeFrom(Message message) {
             if (message instanceof CommonAlert) {
                 return mergeFrom((CommonAlert) message);
             }
@@ -1430,7 +1401,7 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             }
             AlertResource alertResource2 = this.resource_;
             if (alertResource2 != null) {
-                this.resource_ = AlertResource.newBuilder(alertResource2).mergeFrom(alertResource).buildPartial();
+                this.resource_ = AlertResource.newBuilder(alertResource2).mergeFrom(alertResource).m1641buildPartial();
             } else {
                 this.resource_ = alertResource;
             }
@@ -1438,8 +1409,8 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m1707mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -1458,23 +1429,23 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m1709setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m1711setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
         public Builder setResource(AlertResource.Builder builder) {
             SingleFieldBuilderV3<AlertResource, AlertResource.Builder, AlertResourceOrBuilder> singleFieldBuilderV3 = this.resourceBuilder_;
             if (singleFieldBuilderV3 != null) {
-                singleFieldBuilderV3.setMessage(builder.build());
+                singleFieldBuilderV3.setMessage(builder.m1639build());
                 return this;
             }
-            this.resource_ = builder.build();
+            this.resource_ = builder.m1639build();
             onChanged();
             return this;
         }
@@ -1514,8 +1485,8 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m1713setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -1543,12 +1514,12 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
                         } else if (readTag == 16) {
                             this.resourceType_ = codedInputStream.readEnum();
                         } else if (readTag == 26) {
-                            AlertResource.Builder builder = this.resource_ != null ? this.resource_.toBuilder() : null;
-                            AlertResource alertResource = (AlertResource) codedInputStream.readMessage(AlertResource.parser(), extensionRegistryLite);
-                            this.resource_ = alertResource;
-                            if (builder != null) {
-                                builder.mergeFrom(alertResource);
-                                this.resource_ = builder.buildPartial();
+                            AlertResource.Builder m1634toBuilder = this.resource_ != null ? this.resource_.m1634toBuilder() : null;
+                            AlertResource readMessage = codedInputStream.readMessage(AlertResource.parser(), extensionRegistryLite);
+                            this.resource_ = readMessage;
+                            if (m1634toBuilder != null) {
+                                m1634toBuilder.mergeFrom(readMessage);
+                                this.resource_ = m1634toBuilder.m1641buildPartial();
                             }
                         } else if (readTag == 32) {
                             this.showCloseBtn_ = codedInputStream.readBool();
@@ -1582,66 +1553,65 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m1621toBuilder();
     }
 
     public static Builder newBuilder(CommonAlert commonAlert) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(commonAlert);
+        return DEFAULT_INSTANCE.m1621toBuilder().mergeFrom(commonAlert);
     }
 
     public static CommonAlert parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (CommonAlert) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static CommonAlert parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CommonAlert) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static CommonAlert parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (CommonAlert) PARSER.parseFrom(byteString);
     }
 
     public static CommonAlert parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (CommonAlert) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static CommonAlert parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (CommonAlert) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static CommonAlert parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CommonAlert) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static CommonAlert parseFrom(InputStream inputStream) throws IOException {
-        return (CommonAlert) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static CommonAlert parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CommonAlert) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static CommonAlert parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (CommonAlert) PARSER.parseFrom(byteBuffer);
     }
 
     public static CommonAlert parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (CommonAlert) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static CommonAlert parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (CommonAlert) PARSER.parseFrom(bArr);
     }
 
     public static CommonAlert parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (CommonAlert) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<CommonAlert> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1671,12 +1641,11 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         return this.closeType_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public CommonAlert getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public CommonAlert m1616getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<CommonAlert> getParserForType() {
         return PARSER;
     }
@@ -1711,7 +1680,6 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         return this.resourceType_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1744,7 +1712,6 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         return this.showCloseBtn_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1754,7 +1721,6 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         return this.resource_ != null;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1769,12 +1735,10 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         return hashBoolean;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_CommonAlert_fieldAccessorTable.ensureFieldAccessorsInitialized(CommonAlert.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1787,28 +1751,26 @@ public final class CommonAlert extends GeneratedMessageV3 implements CommonAlert
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m1619newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m1618newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new CommonAlert();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m1621toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (this.closeType_ != AlertCloseType.Manual.getNumber()) {
             codedOutputStream.writeEnum(1, this.closeType_);

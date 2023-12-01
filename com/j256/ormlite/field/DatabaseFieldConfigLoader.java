@@ -1,5 +1,6 @@
 package com.j256.ormlite.field;
 
+import com.huawei.hms.ads.fw;
 import com.j256.ormlite.misc.SqlExceptionUtil;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -83,11 +84,11 @@ public class DatabaseFieldConfigLoader {
         Enum[] enumArr;
         if (str.equals(FIELD_NAME_FIELD_NAME)) {
             databaseFieldConfig.setFieldName(str2);
-        } else if (str.equals("columnName")) {
+        } else if (str.equals(FIELD_NAME_COLUMN_NAME)) {
             databaseFieldConfig.setColumnName(str2);
         } else if (str.equals(FIELD_NAME_DATA_PERSISTER)) {
             databaseFieldConfig.setDataPersister(DataType.valueOf(str2).getDataPersister());
-        } else if (str.equals("defaultValue")) {
+        } else if (str.equals(FIELD_NAME_DEFAULT_VALUE)) {
             databaseFieldConfig.setDefaultValue(str2);
         } else if (str.equals("width")) {
             databaseFieldConfig.setWidth(Integer.parseInt(str2));
@@ -207,7 +208,7 @@ public class DatabaseFieldConfigLoader {
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.getColumnName() != null) {
-            bufferedWriter.append("columnName").append('=').append((CharSequence) databaseFieldConfig.getColumnName());
+            bufferedWriter.append(FIELD_NAME_COLUMN_NAME).append('=').append((CharSequence) databaseFieldConfig.getColumnName());
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.getDataPersister() != DEFAULT_DATA_PERSISTER) {
@@ -234,7 +235,7 @@ public class DatabaseFieldConfigLoader {
             }
         }
         if (databaseFieldConfig.getDefaultValue() != null) {
-            bufferedWriter.append("defaultValue").append('=').append((CharSequence) databaseFieldConfig.getDefaultValue());
+            bufferedWriter.append(FIELD_NAME_DEFAULT_VALUE).append('=').append((CharSequence) databaseFieldConfig.getDefaultValue());
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.getWidth() != 0) {
@@ -246,11 +247,11 @@ public class DatabaseFieldConfigLoader {
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isId()) {
-            bufferedWriter.append("id").append('=').append("true");
+            bufferedWriter.append("id").append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isGeneratedId()) {
-            bufferedWriter.append(FIELD_NAME_GENERATED_ID).append('=').append("true");
+            bufferedWriter.append(FIELD_NAME_GENERATED_ID).append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.getGeneratedIdSequence() != null) {
@@ -258,11 +259,11 @@ public class DatabaseFieldConfigLoader {
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isForeign()) {
-            bufferedWriter.append(FIELD_NAME_FOREIGN).append('=').append("true");
+            bufferedWriter.append(FIELD_NAME_FOREIGN).append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isUseGetSet()) {
-            bufferedWriter.append(FIELD_NAME_USE_GET_SET).append('=').append("true");
+            bufferedWriter.append(FIELD_NAME_USE_GET_SET).append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.getUnknownEnumValue() != null) {
@@ -270,7 +271,7 @@ public class DatabaseFieldConfigLoader {
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isThrowIfNull()) {
-            bufferedWriter.append(FIELD_NAME_THROW_IF_NULL).append('=').append("true");
+            bufferedWriter.append(FIELD_NAME_THROW_IF_NULL).append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.getFormat() != null) {
@@ -278,11 +279,11 @@ public class DatabaseFieldConfigLoader {
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isUnique()) {
-            bufferedWriter.append(FIELD_NAME_UNIQUE).append('=').append("true");
+            bufferedWriter.append(FIELD_NAME_UNIQUE).append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isUniqueCombo()) {
-            bufferedWriter.append(FIELD_NAME_UNIQUE_COMBO).append('=').append("true");
+            bufferedWriter.append(FIELD_NAME_UNIQUE_COMBO).append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         String indexName = databaseFieldConfig.getIndexName(str);
@@ -296,7 +297,7 @@ public class DatabaseFieldConfigLoader {
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isForeignAutoRefresh()) {
-            bufferedWriter.append(FIELD_NAME_FOREIGN_AUTO_REFRESH).append('=').append("true");
+            bufferedWriter.append(FIELD_NAME_FOREIGN_AUTO_REFRESH).append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.getMaxForeignAutoRefreshLevel() != -1) {
@@ -308,7 +309,7 @@ public class DatabaseFieldConfigLoader {
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isAllowGeneratedIdInsert()) {
-            bufferedWriter.append(FIELD_NAME_ALLOW_GENERATED_ID_INSERT).append('=').append("true");
+            bufferedWriter.append(FIELD_NAME_ALLOW_GENERATED_ID_INSERT).append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.getColumnDefinition() != null) {
@@ -316,11 +317,11 @@ public class DatabaseFieldConfigLoader {
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isForeignAutoCreate()) {
-            bufferedWriter.append(FIELD_NAME_FOREIGN_AUTO_CREATE).append('=').append("true");
+            bufferedWriter.append(FIELD_NAME_FOREIGN_AUTO_CREATE).append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isVersion()) {
-            bufferedWriter.append("version").append('=').append("true");
+            bufferedWriter.append("version").append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         String foreignColumnName = databaseFieldConfig.getForeignColumnName();
@@ -329,15 +330,15 @@ public class DatabaseFieldConfigLoader {
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isReadOnly()) {
-            bufferedWriter.append(FIELD_NAME_READ_ONLY).append('=').append("true");
+            bufferedWriter.append(FIELD_NAME_READ_ONLY).append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isForeignCollection()) {
-            bufferedWriter.append(FIELD_NAME_FOREIGN_COLLECTION).append('=').append("true");
+            bufferedWriter.append(FIELD_NAME_FOREIGN_COLLECTION).append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.isForeignCollectionEager()) {
-            bufferedWriter.append(FIELD_NAME_FOREIGN_COLLECTION_EAGER).append('=').append("true");
+            bufferedWriter.append(FIELD_NAME_FOREIGN_COLLECTION_EAGER).append('=').append(fw.Code);
             bufferedWriter.newLine();
         }
         if (databaseFieldConfig.getForeignCollectionMaxEagerLevel() != 1) {

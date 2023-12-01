@@ -6,10 +6,10 @@ import android.os.Looper;
 public abstract class d2 extends e2 {
     public int a(Looper looper) {
         synchronized (this.b) {
-            if (this.f3801a) {
+            if (this.f3753a) {
                 return -1;
             }
-            this.f3801a = true;
+            this.f3753a = true;
             if (g3.a()) {
                 a();
             }

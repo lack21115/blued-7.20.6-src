@@ -4,10 +4,10 @@ package com.tencent.liteav.videoconsumer.decoder;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final char[] f36744a = new char[50];
+    private final char[] f23053a = new char[50];
     private int b;
 
     public final String toString() {
-        return new String(this.f36744a, 0, this.b);
+        return new String(this.f23053a, 0, this.b);
     }
 }

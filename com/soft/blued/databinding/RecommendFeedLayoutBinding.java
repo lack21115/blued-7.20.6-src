@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class RecommendFeedLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29575a;
+    private final LinearLayout f15885a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29575a;
+        return this.f15885a;
     }
 }

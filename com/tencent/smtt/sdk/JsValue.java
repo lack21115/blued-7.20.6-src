@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 public class JsValue {
 
     /* renamed from: a  reason: collision with root package name */
-    private final JsContext f38707a;
+    private final JsContext f25016a;
     private final IX5JsValue b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/JsValue$a.class */
@@ -40,7 +40,7 @@ public class JsValue {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public JsValue(JsContext jsContext, IX5JsValue iX5JsValue) {
-        this.f38707a = jsContext;
+        this.f25016a = jsContext;
         this.b = iX5JsValue;
     }
 
@@ -53,7 +53,7 @@ public class JsValue {
         if (iX5JsValue == null) {
             return null;
         }
-        return new JsValue(this.f38707a, iX5JsValue);
+        return new JsValue(this.f25016a, iX5JsValue);
     }
 
     public JsValue call(Object... objArr) {
@@ -65,7 +65,7 @@ public class JsValue {
     }
 
     public JsContext context() {
-        return this.f38707a;
+        return this.f25016a;
     }
 
     public boolean isArray() {

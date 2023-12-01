@@ -10,13 +10,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogTakeOffMaskBinding.class */
 public final class DialogTakeOffMaskBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16417a;
+    public final View a;
     public final ShapeConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16418c;
+    public final ShapeTextView c;
     public final ShapeTextView d;
     public final TextView e;
     public final TextView f;
@@ -24,9 +20,9 @@ public final class DialogTakeOffMaskBinding implements ViewBinding {
 
     private DialogTakeOffMaskBinding(ConstraintLayout constraintLayout, View view, ShapeConstraintLayout shapeConstraintLayout, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, TextView textView, TextView textView2) {
         this.g = constraintLayout;
-        this.f16417a = view;
+        this.a = view;
         this.b = shapeConstraintLayout;
-        this.f16418c = shapeTextView;
+        this.c = shapeTextView;
         this.d = shapeTextView2;
         this.e = textView;
         this.f = textView2;
@@ -67,7 +63,6 @@ public final class DialogTakeOffMaskBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

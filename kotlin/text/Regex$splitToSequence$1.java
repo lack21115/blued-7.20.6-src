@@ -12,13 +12,9 @@ import kotlin.sequences.SequenceScope;
 @DebugMetadata(b = "Regex.kt", c = {276, 284, 288}, d = "invokeSuspend", e = "kotlin.text.Regex$splitToSequence$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlin/text/Regex$splitToSequence$1.class */
 final class Regex$splitToSequence$1 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super String>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42737a;
+    Object a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f42738c;
+    int c;
     final /* synthetic */ Regex d;
     final /* synthetic */ CharSequence e;
     final /* synthetic */ int f;
@@ -35,7 +31,7 @@ final class Regex$splitToSequence$1 extends RestrictedSuspendLambda implements F
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(SequenceScope<? super String> sequenceScope, Continuation<? super Unit> continuation) {
-        return ((Regex$splitToSequence$1) create(sequenceScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((Regex$splitToSequence$1) create(sequenceScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

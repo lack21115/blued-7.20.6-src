@@ -15,7 +15,6 @@ import com.anythink.expressad.exoplayer.i.a;
 import com.anythink.expressad.exoplayer.i.e;
 import com.anythink.expressad.exoplayer.i.f;
 import com.anythink.expressad.exoplayer.m;
-import dalvik.bytecode.Opcodes;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -29,29 +28,29 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class c extends com.anythink.expressad.exoplayer.i.e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final float f7527a = 0.98f;
+    private static final float f4688a = 0.98f;
     private static final int[] b = new int[0];
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7528c = 1000;
+    private static final int f4689c = 1000;
     private final f.a d;
-    private final AtomicReference<C0136c> e;
+    private final AtomicReference<C0065c> e;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/i/c$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7529a;
+        public final int f4690a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final String f7530c;
+        public final String f4691c;
 
         public a(int i, int i2, String str) {
-            this.f7529a = i;
+            this.f4690a = i;
             this.b = i2;
-            this.f7530c = str;
+            this.f4691c = str;
         }
 
         public final boolean equals(Object obj) {
@@ -62,13 +61,13 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                 return false;
             }
             a aVar = (a) obj;
-            return this.f7529a == aVar.f7529a && this.b == aVar.b && TextUtils.equals(this.f7530c, aVar.f7530c);
+            return this.f4690a == aVar.f4690a && this.b == aVar.b && TextUtils.equals(this.f4691c, aVar.f4691c);
         }
 
         public final int hashCode() {
-            int i = this.f7529a;
+            int i = this.f4690a;
             int i2 = this.b;
-            String str = this.f7530c;
+            String str = this.f4691c;
             return (((i * 31) + i2) * 31) + (str != null ? str.hashCode() : 0);
         }
     }
@@ -78,18 +77,18 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
     public static final class b implements Comparable<b> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final C0136c f7531a;
+        private final C0065c f4692a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f7532c;
+        private final int f4693c;
         private final int d;
         private final int e;
         private final int f;
         private final int g;
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
-        public b(m mVar, C0136c c0136c, int i) {
+        public b(m mVar, C0065c c0065c, int i) {
             throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge I and Z\r\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.copyTypes(TypeTransformer.java:311)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.fixTypes(TypeTransformer.java:226)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:207)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\r\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\r\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\r\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\r\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\r\n");
         }
 
@@ -102,8 +101,8 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             if (i != i2) {
                 return c.a(i, i2);
             }
-            int i3 = this.f7532c;
-            int i4 = bVar.f7532c;
+            int i3 = this.f4693c;
+            int i4 = bVar.f4693c;
             if (i3 != i4) {
                 return c.a(i3, i4);
             }
@@ -112,7 +111,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             if (i5 != i6) {
                 return c.a(i5, i6);
             }
-            if (this.f7531a.m) {
+            if (this.f4692a.m) {
                 return c.a(bVar.g, this.g);
             }
             int i7 = 1;
@@ -139,21 +138,21 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                 return false;
             }
             b bVar = (b) obj;
-            return this.b == bVar.b && this.f7532c == bVar.f7532c && this.d == bVar.d && this.e == bVar.e && this.f == bVar.f && this.g == bVar.g;
+            return this.b == bVar.b && this.f4693c == bVar.f4693c && this.d == bVar.d && this.e == bVar.e && this.f == bVar.f && this.g == bVar.g;
         }
 
         public final int hashCode() {
-            return (((((((((this.b * 31) + this.f7532c) * 31) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g;
+            return (((((((((this.b * 31) + this.f4693c) * 31) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g;
         }
     }
 
     /* renamed from: com.anythink.expressad.exoplayer.i.c$c  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/i/c$c.class */
-    public static final class C0136c implements Parcelable {
+    public static final class C0065c implements Parcelable {
         public final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final String f7534c;
+        public final String f4695c;
         public final boolean d;
         public final int e;
         public final int f;
@@ -172,36 +171,36 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         private final SparseBooleanArray s;
 
         /* renamed from: a  reason: collision with root package name */
-        public static final C0136c f7533a = new C0136c();
-        public static final Parcelable.Creator<C0136c> CREATOR = new Parcelable.Creator<C0136c>() { // from class: com.anythink.expressad.exoplayer.i.c.c.1
-            private static C0136c a(Parcel parcel) {
-                return new C0136c(parcel);
+        public static final C0065c f4694a = new C0065c();
+        public static final Parcelable.Creator<C0065c> CREATOR = new Parcelable.Creator<C0065c>() { // from class: com.anythink.expressad.exoplayer.i.c.c.1
+            private static C0065c a(Parcel parcel) {
+                return new C0065c(parcel);
             }
 
-            private static C0136c[] a(int i) {
-                return new C0136c[i];
-            }
-
-            @Override // android.os.Parcelable.Creator
-            public final /* synthetic */ C0136c createFromParcel(Parcel parcel) {
-                return new C0136c(parcel);
+            private static C0065c[] a(int i) {
+                return new C0065c[i];
             }
 
             @Override // android.os.Parcelable.Creator
-            public final /* bridge */ /* synthetic */ C0136c[] newArray(int i) {
-                return new C0136c[i];
+            public final /* synthetic */ C0065c createFromParcel(Parcel parcel) {
+                return new C0065c(parcel);
+            }
+
+            @Override // android.os.Parcelable.Creator
+            public final /* bridge */ /* synthetic */ C0065c[] newArray(int i) {
+                return new C0065c[i];
             }
         };
 
-        private C0136c() {
+        private C0065c() {
             this(new SparseArray(), new SparseBooleanArray(), null, null, false, 0, false, false, true, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, true, true, Integer.MAX_VALUE, Integer.MAX_VALUE, true, 0);
         }
 
-        C0136c(Parcel parcel) {
+        C0065c(Parcel parcel) {
             this.r = a(parcel);
             this.s = parcel.readSparseBooleanArray();
             this.b = parcel.readString();
-            this.f7534c = parcel.readString();
+            this.f4695c = parcel.readString();
             this.d = com.anythink.expressad.exoplayer.k.af.a(parcel);
             this.e = parcel.readInt();
             this.m = com.anythink.expressad.exoplayer.k.af.a(parcel);
@@ -218,11 +217,11 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             this.q = parcel.readInt();
         }
 
-        C0136c(SparseArray<Map<af, e>> sparseArray, SparseBooleanArray sparseBooleanArray, String str, String str2, boolean z, int i, boolean z2, boolean z3, boolean z4, int i2, int i3, int i4, boolean z5, boolean z6, int i5, int i6, boolean z7, int i7) {
+        C0065c(SparseArray<Map<af, e>> sparseArray, SparseBooleanArray sparseBooleanArray, String str, String str2, boolean z, int i, boolean z2, boolean z3, boolean z4, int i2, int i3, int i4, boolean z5, boolean z6, int i5, int i6, boolean z7, int i7) {
             this.r = sparseArray;
             this.s = sparseBooleanArray;
             this.b = com.anythink.expressad.exoplayer.k.af.b(str);
-            this.f7534c = com.anythink.expressad.exoplayer.k.af.b(str2);
+            this.f4695c = com.anythink.expressad.exoplayer.k.af.b(str2);
             this.d = z;
             this.e = i;
             this.m = z2;
@@ -401,7 +400,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                 r0 = 1
                 return r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.anythink.expressad.exoplayer.i.c.C0136c.a(java.util.Map, java.util.Map):boolean");
+            throw new UnsupportedOperationException("Method not decompiled: com.anythink.expressad.exoplayer.i.c.C0065c.a(java.util.Map, java.util.Map):boolean");
         }
 
         public final boolean a(int i) {
@@ -439,7 +438,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                 Method dump skipped, instructions count: 507
                 To view this dump change 'Code comments level' option to 'DEBUG'
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.anythink.expressad.exoplayer.i.c.C0136c.equals(java.lang.Object):boolean");
+            throw new UnsupportedOperationException("Method not decompiled: com.anythink.expressad.exoplayer.i.c.C0065c.equals(java.lang.Object):boolean");
         }
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -458,7 +457,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                 if (i3 >= size) {
                     parcel.writeSparseBooleanArray(this.s);
                     parcel.writeString(this.b);
-                    parcel.writeString(this.f7534c);
+                    parcel.writeString(this.f4695c);
                     com.anythink.expressad.exoplayer.k.af.a(parcel, this.d);
                     parcel.writeInt(this.e);
                     com.anythink.expressad.exoplayer.k.af.a(parcel, this.m);
@@ -493,11 +492,11 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        private final SparseArray<Map<af, e>> f7535a;
+        private final SparseArray<Map<af, e>> f4696a;
         private final SparseBooleanArray b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f7536c;
+        private String f4697c;
         private String d;
         private boolean e;
         private int f;
@@ -515,32 +514,32 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         private int r;
 
         public d() {
-            this(C0136c.f7533a);
+            this(C0065c.f4694a);
         }
 
-        private d(C0136c c0136c) {
-            this.f7535a = a(c0136c.r);
-            this.b = c0136c.s.m1030clone();
-            this.f7536c = c0136c.b;
-            this.d = c0136c.f7534c;
-            this.e = c0136c.d;
-            this.f = c0136c.e;
-            this.g = c0136c.m;
-            this.h = c0136c.n;
-            this.i = c0136c.o;
-            this.j = c0136c.f;
-            this.k = c0136c.g;
-            this.l = c0136c.h;
-            this.m = c0136c.i;
-            this.n = c0136c.p;
-            this.o = c0136c.j;
-            this.p = c0136c.k;
-            this.q = c0136c.l;
-            this.r = c0136c.q;
+        private d(C0065c c0065c) {
+            this.f4696a = a(c0065c.r);
+            this.b = c0065c.s.m1026clone();
+            this.f4697c = c0065c.b;
+            this.d = c0065c.f4695c;
+            this.e = c0065c.d;
+            this.f = c0065c.e;
+            this.g = c0065c.m;
+            this.h = c0065c.n;
+            this.i = c0065c.o;
+            this.j = c0065c.f;
+            this.k = c0065c.g;
+            this.l = c0065c.h;
+            this.m = c0065c.i;
+            this.n = c0065c.p;
+            this.o = c0065c.j;
+            this.p = c0065c.k;
+            this.q = c0065c.l;
+            this.r = c0065c.q;
         }
 
-        /* synthetic */ d(C0136c c0136c, byte b) {
-            this(c0136c);
+        /* synthetic */ d(C0065c c0065c, byte b) {
+            this(c0065c);
         }
 
         private static SparseArray<Map<af, e>> a(SparseArray<Map<af, e>> sparseArray) {
@@ -575,7 +574,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         }
 
         private d a(String str) {
-            this.f7536c = str;
+            this.f4697c = str;
             return this;
         }
 
@@ -595,7 +594,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         }
 
         private d c() {
-            return a(Opcodes.OP_NEW_ARRAY_JUMBO, 719);
+            return a(1279, 719);
         }
 
         private d c(int i) {
@@ -637,44 +636,44 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         }
 
         public final d a() {
-            if (this.f7535a.size() == 0) {
+            if (this.f4696a.size() == 0) {
                 return this;
             }
-            this.f7535a.clear();
+            this.f4696a.clear();
             return this;
         }
 
         public final d a(int i) {
-            Map<af, e> map = this.f7535a.get(i);
+            Map<af, e> map = this.f4696a.get(i);
             if (map != null) {
                 if (map.isEmpty()) {
                     return this;
                 }
-                this.f7535a.remove(i);
+                this.f4696a.remove(i);
             }
             return this;
         }
 
         public final d a(int i, af afVar) {
-            Map<af, e> map = this.f7535a.get(i);
+            Map<af, e> map = this.f4696a.get(i);
             if (map != null) {
                 if (!map.containsKey(afVar)) {
                     return this;
                 }
                 map.remove(afVar);
                 if (map.isEmpty()) {
-                    this.f7535a.remove(i);
+                    this.f4696a.remove(i);
                 }
             }
             return this;
         }
 
         public final d a(int i, af afVar, e eVar) {
-            Map<af, e> map = this.f7535a.get(i);
+            Map<af, e> map = this.f4696a.get(i);
             HashMap hashMap = map;
             if (map == null) {
                 hashMap = new HashMap();
-                this.f7535a.put(i, hashMap);
+                this.f4696a.put(i, hashMap);
             }
             if (hashMap.containsKey(afVar) && com.anythink.expressad.exoplayer.k.af.a(hashMap.get(afVar), eVar)) {
                 return this;
@@ -695,8 +694,8 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             return this;
         }
 
-        public final C0136c b() {
-            return new C0136c(this.f7535a, this.b, this.f7536c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q, this.r);
+        public final C0065c b() {
+            return new C0065c(this.f4696a, this.b, this.f4697c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q, this.r);
         }
 
         public final d b(int i) {
@@ -730,24 +729,24 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         };
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7537a;
+        public final int f4698a;
         public final int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f7538c;
+        public final int f4699c;
 
         private e(int i, int... iArr) {
-            this.f7537a = i;
+            this.f4698a = i;
             int[] copyOf = Arrays.copyOf(iArr, iArr.length);
             this.b = copyOf;
-            this.f7538c = iArr.length;
+            this.f4699c = iArr.length;
             Arrays.sort(copyOf);
         }
 
         e(Parcel parcel) {
-            this.f7537a = parcel.readInt();
+            this.f4698a = parcel.readInt();
             int readByte = parcel.readByte();
-            this.f7538c = readByte;
+            this.f4699c = readByte;
             int[] iArr = new int[readByte];
             this.b = iArr;
             parcel.readIntArray(iArr);
@@ -782,16 +781,16 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                 return false;
             }
             e eVar = (e) obj;
-            return this.f7537a == eVar.f7537a && Arrays.equals(this.b, eVar.b);
+            return this.f4698a == eVar.f4698a && Arrays.equals(this.b, eVar.b);
         }
 
         public final int hashCode() {
-            return (this.f7537a * 31) + Arrays.hashCode(this.b);
+            return (this.f4698a * 31) + Arrays.hashCode(this.b);
         }
 
         @Override // android.os.Parcelable
         public final void writeToParcel(Parcel parcel, int i) {
-            parcel.writeInt(this.f7537a);
+            parcel.writeInt(this.f4698a);
             parcel.writeInt(this.b.length);
             parcel.writeIntArray(this.b);
         }
@@ -803,11 +802,11 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
 
     private c(f.a aVar) {
         this.d = aVar;
-        this.e = new AtomicReference<>(C0136c.f7533a);
+        this.e = new AtomicReference<>(C0065c.f4694a);
     }
 
     private c(com.anythink.expressad.exoplayer.j.d dVar) {
-        this(new a.C0135a(dVar));
+        this(new a.C0064a(dVar));
     }
 
     static /* synthetic */ int a(int i, int i2) {
@@ -840,7 +839,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i >= aeVar.f7417a) {
+            if (i >= aeVar.f4578a) {
                 return i3;
             }
             int i4 = i3;
@@ -927,14 +926,14 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         throw new UnsupportedOperationException("Method not decompiled: com.anythink.expressad.exoplayer.i.c.a(boolean, int, int, int, int):android.graphics.Point");
     }
 
-    private static f a(af afVar, int[][] iArr, int i, C0136c c0136c, f.a aVar) {
+    private static f a(af afVar, int[][] iArr, int i, C0065c c0065c, f.a aVar) {
         f fVar;
         String str;
         int[] a2;
         int a3;
-        if (!c0136c.m && aVar != null) {
-            int i2 = c0136c.o ? 24 : 16;
-            boolean z = c0136c.n && (i & i2) != 0;
+        if (!c0065c.m && aVar != null) {
+            int i2 = c0065c.o ? 24 : 16;
+            boolean z = c0065c.n && (i & i2) != 0;
             int i3 = 0;
             while (true) {
                 int i4 = i3;
@@ -943,13 +942,13 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                 }
                 ae a4 = afVar.a(i4);
                 int[] iArr2 = iArr[i4];
-                int i5 = c0136c.f;
-                int i6 = c0136c.g;
-                int i7 = c0136c.h;
-                int i8 = c0136c.j;
-                int i9 = c0136c.k;
-                boolean z2 = c0136c.l;
-                if (a4.f7417a < 2) {
+                int i5 = c0065c.f;
+                int i6 = c0065c.g;
+                int i7 = c0065c.h;
+                int i8 = c0065c.j;
+                int i9 = c0065c.k;
+                boolean z2 = c0065c.l;
+                if (a4.f4578a < 2) {
                     a2 = b;
                 } else {
                     List<Integer> a5 = a(a4, i8, i9, z2);
@@ -984,12 +983,12 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         fVar = null;
         f fVar2 = fVar;
         if (fVar == null) {
-            fVar2 = a(afVar, iArr, c0136c);
+            fVar2 = a(afVar, iArr, c0065c);
         }
         return fVar2;
     }
 
-    private static f a(af afVar, int[][] iArr, C0136c c0136c) {
+    private static f a(af afVar, int[][] iArr, C0065c c0065c) {
         boolean z;
         ae aeVar = null;
         int i = 0;
@@ -998,25 +997,25 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         int i4 = -1;
         for (int i5 = 0; i5 < afVar.b; i5++) {
             ae a2 = afVar.a(i5);
-            List<Integer> a3 = a(a2, c0136c.j, c0136c.k, c0136c.l);
+            List<Integer> a3 = a(a2, c0065c.j, c0065c.k, c0065c.l);
             int[] iArr2 = iArr[i5];
             int i6 = 0;
-            while (i6 < a2.f7417a) {
+            while (i6 < a2.f4578a) {
                 ae aeVar2 = aeVar;
                 int i7 = i;
                 int i8 = i2;
                 int i9 = i3;
                 int i10 = i4;
-                if (a(iArr2[i6], c0136c.p)) {
+                if (a(iArr2[i6], c0065c.p)) {
                     m a4 = a2.a(i6);
-                    boolean z2 = a3.contains(Integer.valueOf(i6)) && (a4.m == -1 || a4.m <= c0136c.f) && ((a4.n == -1 || a4.n <= c0136c.g) && (a4.d == -1 || a4.d <= c0136c.h));
+                    boolean z2 = a3.contains(Integer.valueOf(i6)) && (a4.m == -1 || a4.m <= c0065c.f) && ((a4.n == -1 || a4.n <= c0065c.g) && (a4.d == -1 || a4.d <= c0065c.h));
                     if (!z2) {
                         aeVar2 = aeVar;
                         i7 = i;
                         i8 = i2;
                         i9 = i3;
                         i10 = i4;
-                        if (!c0136c.i) {
+                        if (!c0065c.i) {
                         }
                     }
                     int i11 = z2 ? 2 : 1;
@@ -1027,7 +1026,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                     }
                     boolean z3 = i12 > i2;
                     if (i12 == i2) {
-                        if (c0136c.m) {
+                        if (c0065c.m) {
                             if (b(a4.d, i4) < 0) {
                                 z = true;
                                 z3 = z;
@@ -1081,7 +1080,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         return new com.anythink.expressad.exoplayer.i.d(aeVar, i);
     }
 
-    private static f a(af afVar, int[][] iArr, C0136c c0136c, f.a aVar) {
+    private static f a(af afVar, int[][] iArr, C0065c c0065c, f.a aVar) {
         int[] iArr2;
         b bVar = null;
         int i = -1;
@@ -1090,12 +1089,12 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             ae a2 = afVar.a(i3);
             int[] iArr3 = iArr[i3];
             int i4 = 0;
-            while (i4 < a2.f7417a) {
+            while (i4 < a2.f4578a) {
                 int i5 = i;
                 b bVar2 = bVar;
                 int i6 = i2;
-                if (a(iArr3[i4], c0136c.p)) {
-                    b bVar3 = new b(a2.a(i4), c0136c, iArr3[i4]);
+                if (a(iArr3[i4], c0065c.p)) {
+                    b bVar3 = new b(a2.a(i4), c0065c, iArr3[i4]);
                     if (bVar != null) {
                         i5 = i;
                         bVar2 = bVar;
@@ -1117,14 +1116,14 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             return null;
         }
         ae a3 = afVar.a(i);
-        if (!c0136c.m && aVar != null) {
+        if (!c0065c.m && aVar != null) {
             int[] iArr4 = iArr[i];
-            boolean z = c0136c.n;
+            boolean z = c0065c.n;
             HashSet hashSet = new HashSet();
             a aVar2 = null;
             int i7 = 0;
             int i8 = 0;
-            while (i7 < a3.f7417a) {
+            while (i7 < a3.f4578a) {
                 m a4 = a3.a(i7);
                 a aVar3 = new a(a4.u, a4.v, z ? null : a4.h);
                 int i9 = i8;
@@ -1148,7 +1147,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                 int i11 = 0;
                 while (true) {
                     iArr2 = iArr5;
-                    if (i11 >= a3.f7417a) {
+                    if (i11 >= a3.f4578a) {
                         break;
                     }
                     int i12 = i10;
@@ -1171,12 +1170,12 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
 
     private static List<Integer> a(ae aeVar, int i, int i2, boolean z) {
         int i3;
-        ArrayList arrayList = new ArrayList(aeVar.f7417a);
+        ArrayList arrayList = new ArrayList(aeVar.f4578a);
         int i4 = 0;
         int i5 = 0;
         while (true) {
             int i6 = i5;
-            if (i6 >= aeVar.f7417a) {
+            if (i6 >= aeVar.f4578a) {
                 break;
             }
             arrayList.add(Integer.valueOf(i6));
@@ -1189,7 +1188,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             int i7 = Integer.MAX_VALUE;
             while (true) {
                 i3 = i7;
-                if (i4 >= aeVar.f7417a) {
+                if (i4 >= aeVar.f4578a) {
                     break;
                 }
                 m a2 = aeVar.a(i4);
@@ -1200,9 +1199,9 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                         Point a3 = a(z, i, i2, a2.m, a2.n);
                         int i9 = a2.m * a2.n;
                         i8 = i3;
-                        if (a2.m >= ((int) (a3.x * f7527a))) {
+                        if (a2.m >= ((int) (a3.x * f4688a))) {
                             i8 = i3;
-                            if (a2.n >= ((int) (a3.y * f7527a))) {
+                            if (a2.n >= ((int) (a3.y * f4688a))) {
                                 i8 = i3;
                                 if (i9 < i3) {
                                     i8 = i9;
@@ -1237,16 +1236,16 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         a(d().a(i, afVar, eVar));
     }
 
-    private void a(C0136c c0136c) {
-        com.anythink.expressad.exoplayer.k.a.a(c0136c);
-        if (this.e.getAndSet(c0136c).equals(c0136c)) {
+    private void a(C0065c c0065c) {
+        com.anythink.expressad.exoplayer.k.a.a(c0065c);
+        if (this.e.getAndSet(c0065c).equals(c0065c)) {
             return;
         }
         b();
     }
 
     private void a(d dVar) {
-        C0136c b2 = dVar.b();
+        C0065c b2 = dVar.b();
         com.anythink.expressad.exoplayer.k.a.a(b2);
         if (this.e.getAndSet(b2).equals(b2)) {
             return;
@@ -1287,12 +1286,12 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
     }
 
     private static boolean a(m mVar) {
-        return TextUtils.isEmpty(mVar.A) || a(mVar, com.anythink.expressad.exoplayer.b.f7166ar);
+        return TextUtils.isEmpty(mVar.A) || a(mVar, com.anythink.expressad.exoplayer.b.f4327ar);
     }
 
     private static boolean a(m mVar, int i, a aVar) {
-        if (a(i, false) && mVar.u == aVar.f7529a && mVar.v == aVar.b) {
-            return aVar.f7530c == null || TextUtils.equals(aVar.f7530c, mVar.h);
+        if (a(i, false) && mVar.u == aVar.f4690a && mVar.v == aVar.b) {
+            return aVar.f4691c == null || TextUtils.equals(aVar.f4691c, mVar.h);
         }
         return false;
     }
@@ -1340,7 +1339,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         a aVar = null;
         int i = 0;
         int i2 = 0;
-        while (i < aeVar.f7417a) {
+        while (i < aeVar.f4578a) {
             m a2 = aeVar.a(i);
             a aVar2 = new a(a2.u, a2.v, z ? null : a2.h);
             int i3 = i2;
@@ -1362,7 +1361,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             int[] iArr2 = new int[i2];
             int i4 = 0;
             int i5 = 0;
-            while (i5 < aeVar.f7417a) {
+            while (i5 < aeVar.f4578a) {
                 int i6 = i4;
                 if (a(aeVar.a(i5), iArr[i5], (a) com.anythink.expressad.exoplayer.k.a.a(aVar))) {
                     iArr2[i4] = i5;
@@ -1378,7 +1377,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
 
     private static int[] a(ae aeVar, int[] iArr, boolean z, int i, int i2, int i3, int i4, int i5, int i6, boolean z2) {
         String str;
-        if (aeVar.f7417a < 2) {
+        if (aeVar.f4578a < 2) {
             return b;
         }
         List<Integer> a2 = a(aeVar, i5, i6, z2);
@@ -1425,7 +1424,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    private com.anythink.expressad.exoplayer.i.f[] a(com.anythink.expressad.exoplayer.i.e.a r10, int[][][] r11, int[] r12, com.anythink.expressad.exoplayer.i.c.C0136c r13) {
+    private com.anythink.expressad.exoplayer.i.f[] a(com.anythink.expressad.exoplayer.i.e.a r10, int[][][] r11, int[] r12, com.anythink.expressad.exoplayer.i.c.C0065c r13) {
         /*
             Method dump skipped, instructions count: 854
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -1448,12 +1447,12 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         return c().b(i, afVar);
     }
 
-    private static f b(af afVar, int[][] iArr, int i, C0136c c0136c, f.a aVar) {
+    private static f b(af afVar, int[][] iArr, int i, C0065c c0065c, f.a aVar) {
         String str;
         int[] a2;
         int a3;
-        int i2 = c0136c.o ? 24 : 16;
-        boolean z = c0136c.n && (i & i2) != 0;
+        int i2 = c0065c.o ? 24 : 16;
+        boolean z = c0065c.n && (i & i2) != 0;
         int i3 = 0;
         while (true) {
             int i4 = i3;
@@ -1462,13 +1461,13 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             }
             ae a4 = afVar.a(i4);
             int[] iArr2 = iArr[i4];
-            int i5 = c0136c.f;
-            int i6 = c0136c.g;
-            int i7 = c0136c.h;
-            int i8 = c0136c.j;
-            int i9 = c0136c.k;
-            boolean z2 = c0136c.l;
-            if (a4.f7417a < 2) {
+            int i5 = c0065c.f;
+            int i6 = c0065c.g;
+            int i7 = c0065c.h;
+            int i8 = c0065c.j;
+            int i9 = c0065c.k;
+            boolean z2 = c0065c.l;
+            if (a4.f4578a < 2) {
                 a2 = b;
             } else {
                 List<Integer> a5 = a(a4, i8, i9, z2);
@@ -1507,7 +1506,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
-    private static f b(af afVar, int[][] iArr, C0136c c0136c) {
+    private static f b(af afVar, int[][] iArr, C0065c c0065c) {
         throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge I and Z\r\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.copyTypes(TypeTransformer.java:311)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.fixTypes(TypeTransformer.java:226)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:207)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\r\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\r\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\r\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\r\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\r\n");
     }
 
@@ -1543,11 +1542,11 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         return i2 > i ? -1 : 0;
     }
 
-    private C0136c c() {
+    private C0065c c() {
         return this.e.get();
     }
 
-    private static f c(af afVar, int[][] iArr, C0136c c0136c) {
+    private static f c(af afVar, int[][] iArr, C0065c c0065c) {
         ae aeVar = null;
         int i = 0;
         int i2 = 0;
@@ -1555,11 +1554,11 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             ae a2 = afVar.a(i3);
             int[] iArr2 = iArr[i3];
             int i4 = 0;
-            while (i4 < a2.f7417a) {
+            while (i4 < a2.f4578a) {
                 ae aeVar2 = aeVar;
                 int i5 = i;
                 int i6 = i2;
-                if (a(iArr2[i4], c0136c.p)) {
+                if (a(iArr2[i4], c0065c.p)) {
                     int i7 = (a2.a(i4).z & 1) != 0 ? 2 : 1;
                     int i8 = i7;
                     if (a(iArr2[i4], false)) {
@@ -1618,7 +1617,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         int[] a2;
         int i5;
         e.a aVar2 = aVar;
-        C0136c c0136c = this.e.get();
+        C0065c c0065c = this.e.get();
         int a3 = aVar.a();
         int a4 = aVar.a();
         f[] fVarArr = new f[a4];
@@ -1644,15 +1643,15 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                     f[] fVarArr2 = fVarArr;
                     int i12 = i6;
                     boolean z5 = z4;
-                    if (!c0136c.m) {
+                    if (!c0065c.m) {
                         i10 = a3;
                         i11 = a4;
                         fVarArr2 = fVarArr;
                         i12 = i6;
                         z5 = z4;
                         if (aVar3 != null) {
-                            int i13 = c0136c.o ? 24 : 16;
-                            boolean z6 = c0136c.n && (i9 & i13) != 0;
+                            int i13 = c0065c.o ? 24 : 16;
+                            boolean z6 = c0065c.n && (i9 & i13) != 0;
                             int i14 = 0;
                             while (true) {
                                 i10 = a3;
@@ -1665,14 +1664,14 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                                 }
                                 ae a5 = b2.a(i14);
                                 int[] iArr4 = iArr3[i14];
-                                int i15 = c0136c.f;
-                                int i16 = c0136c.g;
-                                int i17 = c0136c.h;
-                                int i18 = c0136c.j;
-                                int i19 = c0136c.k;
-                                boolean z7 = c0136c.l;
+                                int i15 = c0065c.f;
+                                int i16 = c0065c.g;
+                                int i17 = c0065c.h;
+                                int i18 = c0065c.j;
+                                int i19 = c0065c.k;
+                                boolean z7 = c0065c.l;
                                 fVarArr2 = fVarArr;
-                                if (a5.f7417a < 2) {
+                                if (a5.f4578a < 2) {
                                     a2 = b;
                                 } else {
                                     List<Integer> a6 = a(a5, i18, i19, z7);
@@ -1724,7 +1723,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
                     i4 = i10;
                     f fVar2 = fVar;
                     if (fVar == null) {
-                        fVar2 = a(b2, iArr3, c0136c);
+                        fVar2 = a(b2, iArr3, c0065c);
                     }
                     fVarArr2[i6] = fVar2;
                     i3 = i6;
@@ -1758,7 +1757,7 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             if (a8 == 1) {
                 z = z10;
                 if (!z8) {
-                    fVarArr[i24] = a(aVar2.b(i24), iArr[i24], c0136c, z4 ? null : this.d);
+                    fVarArr[i24] = a(aVar2.b(i24), iArr[i24], c0065c, z4 ? null : this.d);
                     if (fVarArr[i24] != null) {
                         z8 = true;
                         z = z10;
@@ -1770,12 +1769,12 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             } else if (a8 == 2) {
                 z = z10;
             } else if (a8 != 3) {
-                fVarArr[i24] = c(aVar2.b(i24), iArr[i24], c0136c);
+                fVarArr[i24] = c(aVar2.b(i24), iArr[i24], c0065c);
                 z = z10;
             } else {
                 z = z10;
                 if (!z10) {
-                    fVarArr[i24] = b(aVar2.b(i24), iArr[i24], c0136c);
+                    fVarArr[i24] = b(aVar2.b(i24), iArr[i24], c0065c);
                     z = fVarArr[i24] != null;
                 }
             }
@@ -1788,18 +1787,18 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
             if (i26 >= a3) {
                 break;
             }
-            if (c0136c.a(i26)) {
+            if (c0065c.a(i26)) {
                 fVarArr[i26] = null;
             } else {
                 af b3 = aVar2.b(i26);
-                if (c0136c.a(i26, b3)) {
-                    e b4 = c0136c.b(i26, b3);
+                if (c0065c.a(i26, b3)) {
+                    e b4 = c0065c.b(i26, b3);
                     if (b4 == null) {
                         fVarArr[i26] = null;
-                    } else if (b4.f7538c == 1) {
-                        fVarArr[i26] = new com.anythink.expressad.exoplayer.i.d(b3.a(b4.f7537a), b4.b[0]);
+                    } else if (b4.f4699c == 1) {
+                        fVarArr[i26] = new com.anythink.expressad.exoplayer.i.d(b3.a(b4.f4698a), b4.b[0]);
                     } else {
-                        fVarArr[i26] = ((f.a) com.anythink.expressad.exoplayer.k.a.a(this.d)).a(b3.a(b4.f7537a), b4.b);
+                        fVarArr[i26] = ((f.a) com.anythink.expressad.exoplayer.k.a.a(this.d)).a(b3.a(b4.f4698a), b4.b);
                     }
                 }
             }
@@ -1810,10 +1809,10 @@ public final class c extends com.anythink.expressad.exoplayer.i.e {
         while (true) {
             int i28 = i27;
             if (i28 >= a3) {
-                a(aVar2, iArr, aaVarArr, fVarArr, c0136c.q);
+                a(aVar2, iArr, aaVarArr, fVarArr, c0065c.q);
                 return Pair.create(aaVarArr, fVarArr);
             }
-            aaVarArr[i28] = !c0136c.a(i28) && (aVar2.a(i28) == 5 || fVarArr[i28] != null) ? aa.f7156a : null;
+            aaVarArr[i28] = !c0065c.a(i28) && (aVar2.a(i28) == 5 || fVarArr[i28] != null) ? aa.f4317a : null;
             i27 = i28 + 1;
         }
     }

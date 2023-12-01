@@ -10,18 +10,18 @@ import org.json.JSONObject;
 class ag implements NativeCPUManager.DataPostBackListener {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Object f9302a;
+    final /* synthetic */ Object f6462a;
     final /* synthetic */ ad b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ag(ad adVar, Object obj) {
         this.b = adVar;
-        this.f9302a = obj;
+        this.f6462a = obj;
     }
 
     @Override // com.baidu.mobads.sdk.api.NativeCPUManager.DataPostBackListener
     public void postback(JSONObject jSONObject) {
-        Object obj = this.f9302a;
+        Object obj = this.f6462a;
         if (obj instanceof Activity) {
             View findViewById = ((Activity) obj).findViewById(17);
             if (findViewById instanceof WebView) {

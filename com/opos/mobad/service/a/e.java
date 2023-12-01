@@ -1,6 +1,7 @@
 package com.opos.mobad.service.a;
 
 import android.content.Context;
+import android.net.http.Headers;
 import android.os.Bundle;
 import android.text.TextUtils;
 import com.opos.cmn.func.b.b.d;
@@ -35,11 +36,11 @@ import org.json.JSONException;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f27294a = n.HORIZONTAL.a();
+    public static final int f13606a = n.HORIZONTAL.a();
     public static final int b = n.VERTICAL.a();
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f27295c;
+    private Context f13607c;
     private int d;
     private String e;
     private String f;
@@ -62,28 +63,28 @@ public class e {
     static /* synthetic */ class AnonymousClass5 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f27300a;
+        static final /* synthetic */ int[] f13612a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[j.values().length];
-            f27300a = iArr;
+            f13612a = iArr;
             try {
                 iArr[j.BIDDING_MODE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f27300a[j.PERCENTAGE_MODE.ordinal()] = 2;
+                f13612a[j.PERCENTAGE_MODE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f27300a[j.UNKNOWN_MODE.ordinal()] = 3;
+                f13612a[j.UNKNOWN_MODE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f27300a[j.RANKER_MODE.ordinal()] = 4;
+                f13612a[j.RANKER_MODE.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -93,11 +94,11 @@ public class e {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f27301a;
+        public final int f13613a;
         public final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final long f27302c;
+        public final long f13614c;
         public final int d;
         public final int e;
         public final int f;
@@ -108,9 +109,9 @@ public class e {
         }
 
         public a(int i, String str, int i2, long j, int i3, int i4, int i5) {
-            this.f27301a = i;
+            this.f13613a = i;
             this.b = str;
-            this.f27302c = j;
+            this.f13614c = j;
             this.d = i3;
             this.e = i4;
             this.f = i2;
@@ -118,7 +119,7 @@ public class e {
         }
 
         public String toString() {
-            return "channel:" + this.f27301a + ",posId:" + this.b + ",percnet:" + this.f + ",timeout:" + this.f27302c;
+            return "channel:" + this.f13613a + ",posId:" + this.b + ",percnet:" + this.f + ",timeout:" + this.f13614c;
         }
     }
 
@@ -126,18 +127,18 @@ public class e {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final List<a> f27303a;
+        public final List<a> f13615a;
         public final a b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final long f27304c;
+        public final long f13616c;
         public final long d;
         public final int e;
 
         public b(List<a> list, int i, a aVar, long j, long j2) {
-            this.f27303a = list;
+            this.f13615a = list;
             this.b = aVar;
-            this.f27304c = j;
+            this.f13616c = j;
             this.d = j2;
             this.e = i;
         }
@@ -147,7 +148,7 @@ public class e {
         }
 
         public String toString() {
-            return "DispatchChannelStrategy{channelList=" + this.f27303a + ", baseChannel=" + this.b + ", unionTimeout=" + this.f27304c + ", strategyVersion=" + this.d + ", dispatch=" + this.e + '}';
+            return "DispatchChannelStrategy{channelList=" + this.f13615a + ", baseChannel=" + this.b + ", unionTimeout=" + this.f13616c + ", strategyVersion=" + this.d + ", dispatch=" + this.e + '}';
         }
     }
 
@@ -156,11 +157,11 @@ public class e {
     public static class c {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Map<Integer, com.opos.mobad.m.a.e> f27305a;
+        private final Map<Integer, com.opos.mobad.m.a.e> f13617a;
         private final com.opos.mobad.m.a.b b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final long f27306c;
+        private final long f13618c;
         private final long d;
         private final long e;
         private final String f;
@@ -171,16 +172,16 @@ public class e {
         }
 
         public c(List<com.opos.mobad.m.a.e> list, com.opos.mobad.m.a.b bVar, long j, long j2, long j3, String str, List<o> list2) {
-            this.f27305a = new HashMap();
+            this.f13617a = new HashMap();
             if (list != null && list.size() > 0) {
                 for (com.opos.mobad.m.a.e eVar : list) {
                     if (e.b(eVar.e)) {
-                        this.f27305a.put(Integer.valueOf(eVar.e.a()), eVar);
+                        this.f13617a.put(Integer.valueOf(eVar.e.a()), eVar);
                     }
                 }
             }
             this.b = bVar;
-            this.f27306c = j;
+            this.f13618c = j;
             this.d = j2;
             this.e = j3;
             this.f = str;
@@ -203,8 +204,8 @@ public class e {
         }
 
         public boolean a() {
-            com.opos.cmn.an.f.a.b("DispatchController", "current:" + System.currentTimeMillis() + ", exp:" + this.f27306c);
-            return System.currentTimeMillis() >= this.f27306c;
+            com.opos.cmn.an.f.a.b("DispatchController", "current:" + System.currentTimeMillis() + ", exp:" + this.f13618c);
+            return System.currentTimeMillis() >= this.f13618c;
         }
 
         public boolean b() {
@@ -226,7 +227,7 @@ public class e {
         for (String str : bundle.keySet()) {
             PosInfo posInfo = (PosInfo) bundle.getParcelable(str);
             try {
-                hashMap.put(str, new f(posInfo.b, s.f26363c.a(posInfo.f27134a)));
+                hashMap.put(str, new f(posInfo.b, s.f12675c.a(posInfo.f13446a)));
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.b("DispatchController", "decode local fail", e);
             }
@@ -243,13 +244,13 @@ public class e {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(final a.InterfaceC0645a interfaceC0645a) {
+    public void a(final a.InterfaceC0475a interfaceC0475a) {
         com.opos.cmn.an.f.a.a("DispatchController", "init from local");
         this.h.a(new d.a() { // from class: com.opos.mobad.service.a.e.1
             @Override // com.opos.mobad.service.a.d.a
             public void a() {
                 com.opos.cmn.an.f.a.a("DispatchController", "read app info local fail");
-                interfaceC0645a.b();
+                interfaceC0475a.b();
                 e.this.a();
             }
 
@@ -259,11 +260,11 @@ public class e {
                 e.this.a(rVar.f, rVar.i, j, rVar.h.longValue(), rVar.j != null ? rVar.j.longValue() : 0L, rVar.k, rVar.l);
                 com.opos.mobad.service.c.b.a().a(e.this.v());
                 if (e.this.k != null && e.this.k.a()) {
-                    e.this.b(interfaceC0645a);
+                    e.this.b(interfaceC0475a);
                     return;
                 }
                 com.opos.cmn.an.f.a.a("DispatchController", "do not need to refresh");
-                interfaceC0645a.b();
+                interfaceC0475a.b();
             }
         });
         w();
@@ -311,18 +312,18 @@ public class e {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void b(final a.InterfaceC0645a interfaceC0645a) {
+    public void b(final a.InterfaceC0475a interfaceC0475a) {
         com.opos.cmn.an.j.b.b(new Runnable() { // from class: com.opos.mobad.service.a.e.4
             @Override // java.lang.Runnable
             public void run() {
                 int i;
                 com.opos.cmn.func.b.b.e a2;
-                p.a c2 = new p.a().a(e.this.e).b(e.this.f).a(Integer.valueOf(e.this.d)).b(Integer.valueOf(e.this.g)).a(Long.valueOf(e.this.o)).c(e.this.f27295c.getPackageName());
+                p.a c2 = new p.a().a(e.this.e).b(e.this.f).a(Integer.valueOf(e.this.d)).b(Integer.valueOf(e.this.g)).a(Long.valueOf(e.this.o)).c(e.this.f13607c.getPackageName());
                 try {
-                    h b2 = new h.a().a(new g.a().b(com.opos.mobad.service.e.a.a().e()).a(com.opos.mobad.service.e.a.a().k()).c(com.opos.cmn.f.a.a(e.this.f27295c)).d(com.opos.mobad.service.e.a.a().f()).e(com.opos.mobad.service.e.a.a().g()).f(com.opos.mobad.service.e.a.a().h()).a(Boolean.valueOf(com.opos.mobad.service.e.a.a().j())).b(Boolean.valueOf(com.opos.mobad.service.e.a.a().d())).g(com.opos.mobad.service.e.a.a().l()).b()).a(new i.a().c(com.opos.cmn.an.b.c.c()).a(com.opos.cmn.an.b.d.b()).b(com.opos.cmn.an.b.d.a()).b()).b(com.opos.cmn.an.b.a.a(e.this.f27295c)).a(com.opos.cmn.an.b.c.a()).b();
+                    h b2 = new h.a().a(new g.a().b(com.opos.mobad.service.e.a.a().e()).a(com.opos.mobad.service.e.a.a().k()).c(com.opos.cmn.f.a.a(e.this.f13607c)).d(com.opos.mobad.service.e.a.a().f()).e(com.opos.mobad.service.e.a.a().g()).f(com.opos.mobad.service.e.a.a().h()).a(Boolean.valueOf(com.opos.mobad.service.e.a.a().j())).b(Boolean.valueOf(com.opos.mobad.service.e.a.a().d())).g(com.opos.mobad.service.e.a.a().l()).b()).a(new i.a().c(com.opos.cmn.an.b.c.c()).a(com.opos.cmn.an.b.d.b()).b(com.opos.cmn.an.b.d.a()).b()).b(com.opos.cmn.an.b.a.a(e.this.f13607c)).a(com.opos.cmn.an.b.c.a()).b();
                     k b3 = new k.a().a(Boolean.valueOf(com.opos.mobad.service.f.a.a().c())).b(com.opos.mobad.service.f.a.a().b()).a(com.opos.mobad.service.f.a.a().d()).b();
                     x b4 = new x.a().a(Boolean.valueOf(com.opos.mobad.service.f.a.a().e())).b(com.opos.mobad.service.f.a.a().g()).a(com.opos.mobad.service.f.a.a().f()).b();
-                    m b5 = new m.a().a(Integer.valueOf(com.opos.cmn.i.h.a(e.this.f27295c))).a(com.opos.cmn.i.h.b(e.this.f27295c)).b();
+                    m b5 = new m.a().a(Integer.valueOf(com.opos.cmn.i.h.a(e.this.f13607c))).a(com.opos.cmn.i.h.b(e.this.f13607c)).b();
                     t tVar = null;
                     String c3 = com.opos.mobad.service.a.a().c();
                     i = -1;
@@ -343,19 +344,19 @@ public class e {
                     com.opos.cmn.an.f.a.a("DispatchController", "refresh request", b6);
                     HashMap hashMap = new HashMap();
                     hashMap.put("Content-Type", "application/x-protobuf");
-                    hashMap.put("Route-Data", com.opos.cmn.biz.a.e.a(e.this.f27295c));
-                    d.a b7 = new d.a().a(p.f26357c.b((com.heytap.nearx.a.a.e<p>) b6)).a(hashMap).b(e.this.y());
+                    hashMap.put("Route-Data", com.opos.cmn.biz.a.e.a(e.this.f13607c));
+                    d.a b7 = new d.a().a(p.f12669c.b((com.heytap.nearx.a.a.e<p>) b6)).a(hashMap).b(e.this.y());
                     b7.a("POST");
-                    a2 = com.opos.cmn.func.b.b.b.a().a(e.this.f27295c, b7.a());
+                    a2 = com.opos.cmn.func.b.b.b.a().a(e.this.f13607c, b7.a());
                 } catch (Throwable th) {
                     com.opos.cmn.an.f.a.a("", "", th);
                 }
-                if (a2 == null || 200 != a2.f24862a) {
+                if (a2 == null || 200 != a2.f11174a) {
                     com.opos.cmn.an.f.a.a("DispatchController", "get dispatch fail code:", a2);
-                    interfaceC0645a.b();
+                    interfaceC0475a.b();
                     return;
                 }
-                q a5 = q.f26359c.a(a2.f24863c);
+                q a5 = q.f12671c.a(a2.f11175c);
                 if (a5 == null) {
                     com.opos.cmn.an.f.a.a("DispatchController", "get dispatch parse fail");
                     return;
@@ -364,7 +365,7 @@ public class e {
                 e.this.a(a5);
                 e.this.j = Integer.valueOf(i);
                 com.opos.mobad.service.c.b.a().a(e.this.v());
-                interfaceC0645a.a();
+                interfaceC0475a.a();
             }
         });
     }
@@ -383,7 +384,7 @@ public class e {
                 return null;
             }
             try {
-                return new f(posInfo.b, s.f26363c.a(posInfo.f27134a));
+                return new f(posInfo.b, s.f12675c.a(posInfo.f13446a));
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.b("DispatchController", "decode pos fail" + str, e);
                 return null;
@@ -410,11 +411,11 @@ public class e {
     private void x() {
         this.i = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.a.e.3
             @Override // com.opos.cmn.i.a.b
-            public void a(a.InterfaceC0645a interfaceC0645a) {
+            public void a(a.InterfaceC0475a interfaceC0475a) {
                 if (e.this.n.get() || !e.this.n.compareAndSet(false, true)) {
-                    e.this.b(interfaceC0645a);
+                    e.this.b(interfaceC0475a);
                 } else {
-                    e.this.a(interfaceC0645a);
+                    e.this.a(interfaceC0475a);
                 }
             }
         }, 30000, 300000);
@@ -426,21 +427,21 @@ public class e {
     }
 
     private void z() {
-        if (this.f27295c == null || !this.k.a() || this.i == null) {
+        if (this.f13607c == null || !this.k.a() || this.i == null) {
             return;
         }
-        com.opos.cmn.an.f.a.b("DispatchController", "refresh");
+        com.opos.cmn.an.f.a.b("DispatchController", Headers.REFRESH);
         this.i.a();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
-        if (r4.f27307a.o != null) goto L7;
+        if (r4.f13619a.o != null) goto L7;
      */
     /* JADX WARN: Code restructure failed: missing block: B:13:0x003f, code lost:
-        r4 = r4.f27307a.o;
+        r4 = r4.f13619a.o;
      */
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0020, code lost:
-        if (r4.f27307a.o != null) goto L7;
+        if (r4.f13619a.o != null) goto L7;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -463,7 +464,7 @@ public class e {
             r0 = r4
             if (r0 == 0) goto L4a
             r0 = r4
-            com.opos.mobad.m.a.s r0 = r0.f27307a
+            com.opos.mobad.m.a.s r0 = r0.f13619a
             com.opos.mobad.m.a.n r0 = r0.o
             if (r0 == 0) goto L4a
             goto L3f
@@ -476,12 +477,12 @@ public class e {
             r0 = r4
             if (r0 == 0) goto L4a
             r0 = r4
-            com.opos.mobad.m.a.s r0 = r0.f27307a
+            com.opos.mobad.m.a.s r0 = r0.f13619a
             com.opos.mobad.m.a.n r0 = r0.o
             if (r0 == 0) goto L4a
         L3f:
             r0 = r4
-            com.opos.mobad.m.a.s r0 = r0.f27307a
+            com.opos.mobad.m.a.s r0 = r0.f13619a
             com.opos.mobad.m.a.n r0 = r0.o
             r4 = r0
             goto L4e
@@ -522,14 +523,14 @@ public class e {
 
     public void a() {
         com.opos.cmn.i.a aVar;
-        if (this.f27295c == null || (aVar = this.i) == null) {
+        if (this.f13607c == null || (aVar = this.i) == null) {
             return;
         }
         aVar.a();
     }
 
     public void a(Context context, String str, String str2, int i, int i2, long j) {
-        this.f27295c = context;
+        this.f13607c = context;
         this.e = str;
         this.f = str2;
         this.d = i;
@@ -554,7 +555,7 @@ public class e {
         if (1 == i) {
             return this.e;
         }
-        com.opos.mobad.m.a.e eVar = (com.opos.mobad.m.a.e) this.k.f27305a.get(Integer.valueOf(i));
+        com.opos.mobad.m.a.e eVar = (com.opos.mobad.m.a.e) this.k.f13617a.get(Integer.valueOf(i));
         if (eVar == null) {
             return null;
         }
@@ -568,11 +569,11 @@ public class e {
     public boolean b(String str) {
         Map<String, f> map = this.l.get();
         f c2 = map == null ? c(str) : map.get(str);
-        return ((c2 == null || c2.f27307a.u == null) ? s.k : c2.f27307a.u).booleanValue();
+        return ((c2 == null || c2.f13619a.u == null) ? s.k : c2.f13619a.u).booleanValue();
     }
 
     public String c(int i) {
-        com.opos.mobad.m.a.e eVar = (com.opos.mobad.m.a.e) this.k.f27305a.get(Integer.valueOf(i));
+        com.opos.mobad.m.a.e eVar = (com.opos.mobad.m.a.e) this.k.f13617a.get(Integer.valueOf(i));
         if (eVar == null) {
             return null;
         }

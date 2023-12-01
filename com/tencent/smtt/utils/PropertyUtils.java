@@ -8,13 +8,13 @@ import java.lang.reflect.Method;
 public class PropertyUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Class f38926a;
+    private static Class f25235a;
     private static Method b;
 
     static {
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
-            f38926a = cls;
+            f25235a = cls;
             b = cls.getDeclaredMethod(MonitorConstants.CONNECT_TYPE_GET, String.class, String.class);
         } catch (Throwable th) {
             th.printStackTrace();
@@ -22,7 +22,7 @@ public class PropertyUtils {
     }
 
     private static String a(String str, String str2) {
-        Class cls = f38926a;
+        Class cls = f25235a;
         if (cls != null) {
             Method method = b;
             if (method == null) {

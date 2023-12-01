@@ -7,7 +7,7 @@ import com.tencent.qmsp.oaid2.j0;
 public class k0 implements b, j0.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public IVendorCallback f38486a;
+    public IVendorCallback f24795a;
     public j0 b;
 
     @Override // com.tencent.qmsp.oaid2.b
@@ -18,7 +18,7 @@ public class k0 implements b, j0.b {
 
     @Override // com.tencent.qmsp.oaid2.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f38486a = iVendorCallback;
+        this.f24795a = iVendorCallback;
         j0 j0Var = new j0(context, this);
         this.b = j0Var;
         j0Var.c();
@@ -26,7 +26,7 @@ public class k0 implements b, j0.b {
 
     @Override // com.tencent.qmsp.oaid2.j0.b
     public void a(j0 j0Var) {
-        IVendorCallback iVendorCallback = this.f38486a;
+        IVendorCallback iVendorCallback = this.f24795a;
         if (iVendorCallback != null) {
             iVendorCallback.onResult(e(), d(), a());
         }

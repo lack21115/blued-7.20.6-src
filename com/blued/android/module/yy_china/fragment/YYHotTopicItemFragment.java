@@ -38,13 +38,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYHotTopicItemFragment.class */
 public final class YYHotTopicItemFragment extends MvpFragment<YYHotTopicPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17291a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private FragmentYyHotTopicItemBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final TopicAdapter f17292c = new TopicAdapter(this);
+    private final TopicAdapter c = new TopicAdapter(this);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYHotTopicItemFragment$Companion.class */
@@ -61,15 +57,13 @@ public final class YYHotTopicItemFragment extends MvpFragment<YYHotTopicPresente
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYHotTopicItemFragment$TopicAdapter.class */
     public final class TopicAdapter extends BaseMultiItemQuickAdapter<HotTopicItemModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYHotTopicItemFragment f17293a;
+        final /* synthetic */ YYHotTopicItemFragment a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public TopicAdapter(YYHotTopicItemFragment this$0) {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f17293a = this$0;
+            this.a = this$0;
             addItemType(0, R.layout.item_yy_hot_topic_item);
         }
 
@@ -85,28 +79,28 @@ public final class YYHotTopicItemFragment extends MvpFragment<YYHotTopicPresente
         }
 
         private final void b(BaseViewHolder baseViewHolder, final HotTopicItemModel hotTopicItemModel) {
-            final ItemYyHotTopicItemBinding a2 = ItemYyHotTopicItemBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
+            final ItemYyHotTopicItemBinding a = ItemYyHotTopicItemBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
             if (hotTopicItemModel == null) {
                 return;
             }
-            final YYHotTopicItemFragment yYHotTopicItemFragment = this.f17293a;
-            ImageLoader.a(yYHotTopicItemFragment.getFragmentActive(), hotTopicItemModel.getAvatar()).c().b(R.drawable.user_bg_round).a(a2.b);
-            a2.d.setText(hotTopicItemModel.getName());
-            a2.d.setTextColor(a2.d.getContext().getResources().getColor(BluedSkinUtils.c() ? R.color.syc_dark_222222 : R.color.white));
-            a2.e.setText(Intrinsics.a(hotTopicItemModel.getRoom_online(), (Object) "人"));
-            a2.f16742c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYHotTopicItemFragment$TopicAdapter$-VCvK8ZL_BAG5OQMafox1Qk3Jgw
+            final YYHotTopicItemFragment yYHotTopicItemFragment = this.a;
+            ImageLoader.a(yYHotTopicItemFragment.getFragmentActive(), hotTopicItemModel.getAvatar()).c().b(R.drawable.user_bg_round).a(a.b);
+            a.d.setText(hotTopicItemModel.getName());
+            a.d.setTextColor(a.d.getContext().getResources().getColor(BluedSkinUtils.c() ? R.color.syc_dark_222222 : R.color.white));
+            a.e.setText(Intrinsics.a(hotTopicItemModel.getRoom_online(), (Object) "人"));
+            a.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYHotTopicItemFragment$TopicAdapter$-VCvK8ZL_BAG5OQMafox1Qk3Jgw
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYHotTopicItemFragment.TopicAdapter.a(YYHotTopicItemFragment.this, hotTopicItemModel, view);
                 }
             });
-            SVGAParser.a(SVGAParser.f15958a.b(), "yy_hot_topic_smale.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.yy_china.fragment.YYHotTopicItemFragment$TopicAdapter$bindData$1$2
+            SVGAParser.a(SVGAParser.a.b(), "yy_hot_topic_smale.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.yy_china.fragment.YYHotTopicItemFragment$TopicAdapter$bindData$1$2
                 @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
                 public void onComplete(SVGAVideoEntity videoItem) {
                     Intrinsics.e(videoItem, "videoItem");
-                    ItemYyHotTopicItemBinding.this.f16741a.setImageDrawable(new SVGADrawable(videoItem));
-                    ItemYyHotTopicItemBinding.this.f16741a.a();
+                    ItemYyHotTopicItemBinding.this.a.setImageDrawable(new SVGADrawable(videoItem));
+                    ItemYyHotTopicItemBinding.this.a.a();
                 }
 
                 @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
@@ -116,7 +110,6 @@ public final class YYHotTopicItemFragment extends MvpFragment<YYHotTopicPresente
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, HotTopicItemModel item) {
             Intrinsics.e(helper, "helper");
@@ -135,13 +128,13 @@ public final class YYHotTopicItemFragment extends MvpFragment<YYHotTopicPresente
         SmartRefreshLayout smartRefreshLayout2;
         FragmentYyHotTopicItemBinding fragmentYyHotTopicItemBinding = this.b;
         if (fragmentYyHotTopicItemBinding != null && (smartRefreshLayout2 = fragmentYyHotTopicItemBinding.d) != null) {
-            smartRefreshLayout2.j();
+            smartRefreshLayout2.g();
         }
         FragmentYyHotTopicItemBinding fragmentYyHotTopicItemBinding2 = this.b;
         if (fragmentYyHotTopicItemBinding2 != null && (smartRefreshLayout = fragmentYyHotTopicItemBinding2.d) != null) {
             smartRefreshLayout.h();
         }
-        if (this.f17292c.getData().size() > 0) {
+        if (this.c.getData().size() > 0) {
             FragmentYyHotTopicItemBinding fragmentYyHotTopicItemBinding3 = this.b;
             if (fragmentYyHotTopicItemBinding3 == null || (noDataAndLoadFailView = fragmentYyHotTopicItemBinding3.b) == null) {
                 return;
@@ -184,7 +177,7 @@ public final class YYHotTopicItemFragment extends MvpFragment<YYHotTopicPresente
                 public void a(List<HotTopicItemModel> list2) {
                     YYHotTopicItemFragment.TopicAdapter topicAdapter;
                     Intrinsics.e(list2, "list");
-                    topicAdapter = YYHotTopicItemFragment.this.f17292c;
+                    topicAdapter = YYHotTopicItemFragment.this.c;
                     topicAdapter.setNewData(list2);
                 }
             });
@@ -210,14 +203,14 @@ public final class YYHotTopicItemFragment extends MvpFragment<YYHotTopicPresente
         NoDataAndLoadFailView noDataAndLoadFailView2;
         FragmentYyHotTopicItemBinding a2 = FragmentYyHotTopicItemBinding.a(this.i);
         this.b = a2;
-        RecyclerView recyclerView = a2 == null ? null : a2.f16514c;
+        RecyclerView recyclerView = a2 == null ? null : a2.c;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         }
         FragmentYyHotTopicItemBinding fragmentYyHotTopicItemBinding = this.b;
-        RecyclerView recyclerView2 = fragmentYyHotTopicItemBinding == null ? null : fragmentYyHotTopicItemBinding.f16514c;
+        RecyclerView recyclerView2 = fragmentYyHotTopicItemBinding == null ? null : fragmentYyHotTopicItemBinding.c;
         if (recyclerView2 != null) {
-            recyclerView2.setAdapter(this.f17292c);
+            recyclerView2.setAdapter(this.c);
         }
         FragmentYyHotTopicItemBinding fragmentYyHotTopicItemBinding2 = this.b;
         TextView textView3 = fragmentYyHotTopicItemBinding2 == null ? null : fragmentYyHotTopicItemBinding2.e;
@@ -238,10 +231,10 @@ public final class YYHotTopicItemFragment extends MvpFragment<YYHotTopicPresente
                 textView2.setTextColor(getResources().getColor(R.color.syc_dark_0a0a0a));
             }
             FragmentYyHotTopicItemBinding fragmentYyHotTopicItemBinding6 = this.b;
-            ShapeHelper.b(fragmentYyHotTopicItemBinding6 == null ? null : fragmentYyHotTopicItemBinding6.f16513a, R.color.white);
+            ShapeHelper.b(fragmentYyHotTopicItemBinding6 == null ? null : fragmentYyHotTopicItemBinding6.a, R.color.white);
         } else {
             FragmentYyHotTopicItemBinding fragmentYyHotTopicItemBinding7 = this.b;
-            ShapeHelper.b(fragmentYyHotTopicItemBinding7 == null ? null : fragmentYyHotTopicItemBinding7.f16513a, R.color.white_alpha10);
+            ShapeHelper.b(fragmentYyHotTopicItemBinding7 == null ? null : fragmentYyHotTopicItemBinding7.a, R.color.white_alpha10);
             FragmentYyHotTopicItemBinding fragmentYyHotTopicItemBinding8 = this.b;
             if (fragmentYyHotTopicItemBinding8 != null && (textView = fragmentYyHotTopicItemBinding8.e) != null) {
                 textView.setTextColor(getResources().getColor(R.color.white));
@@ -252,13 +245,11 @@ public final class YYHotTopicItemFragment extends MvpFragment<YYHotTopicPresente
             return;
         }
         smartRefreshLayout.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYHotTopicItemFragment$initView$1
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYHotTopicItemFragment.this.j().f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYHotTopicItemFragment.this.j().e();
@@ -294,7 +285,7 @@ public final class YYHotTopicItemFragment extends MvpFragment<YYHotTopicPresente
         if (fragmentYyHotTopicItemBinding == null || (smartRefreshLayout = fragmentYyHotTopicItemBinding.d) == null) {
             return;
         }
-        smartRefreshLayout.l(true);
+        smartRefreshLayout.b(true);
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
@@ -305,6 +296,6 @@ public final class YYHotTopicItemFragment extends MvpFragment<YYHotTopicPresente
         if (fragmentYyHotTopicItemBinding == null || (smartRefreshLayout = fragmentYyHotTopicItemBinding.d) == null) {
             return;
         }
-        smartRefreshLayout.l(false);
+        smartRefreshLayout.b(false);
     }
 }

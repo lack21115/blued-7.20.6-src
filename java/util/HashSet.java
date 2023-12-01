@@ -58,12 +58,12 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         return this.backingMap.put(e, this) == null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.backingMap.clear();
     }
@@ -78,7 +78,7 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         return this.backingMap.containsKey(obj);
     }
@@ -87,7 +87,7 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
         return new HashMap<>(i, f);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         return this.backingMap.isEmpty();
     }
@@ -97,12 +97,12 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
         return this.backingMap.keySet().iterator();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         return this.backingMap.remove(obj) != null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.backingMap.size();
     }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class UserLabelTextViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29603a;
+    private final FrameLayout f15913a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29603a;
+        return this.f15913a;
     }
 }

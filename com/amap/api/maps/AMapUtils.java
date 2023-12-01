@@ -47,14 +47,12 @@ public class AMapUtils {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/AMapUtils$a.class */
     public static final class a extends Thread {
-
-        /* renamed from: a  reason: collision with root package name */
-        String f5509a;
+        String a;
         Context b;
 
         public a(String str, Context context) {
-            this.f5509a = "";
-            this.f5509a = str;
+            this.a = "";
+            this.a = str;
             if (context != null) {
                 this.b = context.getApplicationContext();
             }
@@ -64,7 +62,7 @@ public class AMapUtils {
         public final void run() {
             if (this.b != null) {
                 try {
-                    hp.a(this.b, new ia.a(this.f5509a, "9.3.1", w.f5440c).a(new String[]{"com.amap.api.maps"}).a(), "", (Map<String, String>) null);
+                    hp.a(this.b, new ia.a(this.a, "9.3.1", w.c).a(new String[]{"com.amap.api.maps"}).a(), "", (Map<String, String>) null);
                     interrupt();
                 } catch (hn e) {
                     e.printStackTrace();
@@ -97,7 +95,7 @@ public class AMapUtils {
         try {
             Intent intent = new Intent("android.intent.action.VIEW");
             intent.addFlags(276824064);
-            intent.addCategory(Intent.CATEGORY_DEFAULT);
+            intent.addCategory("android.intent.category.DEFAULT");
             intent.setData(Uri.parse(b(routePara, context, i)));
             intent.setPackage("com.autonavi.minimap");
             new a("oan", context).start();
@@ -219,7 +217,7 @@ public class AMapUtils {
         try {
             Intent intent = new Intent("android.intent.action.VIEW");
             intent.addFlags(276824064);
-            intent.addCategory(Intent.CATEGORY_DEFAULT);
+            intent.addCategory("android.intent.category.DEFAULT");
             intent.setData(Uri.parse("http://wap.amap.com/"));
             new a("glaa", context).start();
             context.startActivity(intent);
@@ -243,7 +241,7 @@ public class AMapUtils {
         try {
             Intent intent = new Intent("android.intent.action.VIEW");
             intent.addFlags(276824064);
-            intent.addCategory(Intent.CATEGORY_DEFAULT);
+            intent.addCategory("android.intent.category.DEFAULT");
             intent.setData(Uri.parse(a(naviPara, context)));
             intent.setPackage("com.autonavi.minimap");
             new a("oan", context).start();
@@ -264,7 +262,7 @@ public class AMapUtils {
         try {
             Intent intent = new Intent("android.intent.action.VIEW");
             intent.addFlags(276824064);
-            intent.addCategory(Intent.CATEGORY_DEFAULT);
+            intent.addCategory("android.intent.category.DEFAULT");
             intent.setData(Uri.parse(a(poiPara, context)));
             intent.setPackage("com.autonavi.minimap");
             new a("oan", context).start();

@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveConstellationHonourSpokenViewBinding.class */
 public final class LiveConstellationHonourSpokenViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12171a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12172c;
+    public final ImageView c;
     public final ImageView d;
     public final View e;
     public final LinearLayout f;
@@ -33,9 +29,9 @@ public final class LiveConstellationHonourSpokenViewBinding implements ViewBindi
 
     private LiveConstellationHonourSpokenViewBinding(RelativeLayout relativeLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, View view, LinearLayout linearLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7) {
         this.n = relativeLayout;
-        this.f12171a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f12172c = imageView3;
+        this.c = imageView3;
         this.d = imageView4;
         this.e = view;
         this.f = linearLayout;
@@ -126,7 +122,6 @@ public final class LiveConstellationHonourSpokenViewBinding implements ViewBindi
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.n;

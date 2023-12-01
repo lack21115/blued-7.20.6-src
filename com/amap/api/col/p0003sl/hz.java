@@ -3,7 +3,6 @@ package com.amap.api.col.p0003sl;
 import android.content.Context;
 import android.net.Proxy;
 import android.os.Build;
-import com.igexin.push.core.b;
 import java.net.Proxy;
 import java.net.ProxySelector;
 import java.net.URI;
@@ -22,7 +21,7 @@ public final class hz {
         }
         String str2 = str;
         if (str == null) {
-            str2 = b.l;
+            str2 = "null";
         }
         return str2;
     }

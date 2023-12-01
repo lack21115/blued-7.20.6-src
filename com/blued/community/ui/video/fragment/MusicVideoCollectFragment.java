@@ -49,11 +49,11 @@ import java.util.List;
 public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPresent> implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private CommonTopTitleNoTrans f20364a;
+    private CommonTopTitleNoTrans f6758a;
     private ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f20365c;
+    private ImageView f6759c;
     private TextView d;
     private TextView e;
     private ImageView f;
@@ -94,7 +94,7 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
     }
 
     private void b() {
-        this.f20364a = (CommonTopTitleNoTrans) this.i.findViewById(R.id.top_title);
+        this.f6758a = this.i.findViewById(R.id.top_title);
         this.q = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
         this.p = (CoordinatorLayout) this.i.findViewById(R.id.coordinator);
         this.n = (AppBarLayout) this.i.findViewById(R.id.appbar);
@@ -102,7 +102,7 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
         ImageView imageView = (ImageView) this.i.findViewById(R.id.iv_music_bg);
         this.b = imageView;
         imageView.setOnClickListener(this);
-        this.f20365c = (ImageView) this.i.findViewById(R.id.iv_music_play);
+        this.f6759c = (ImageView) this.i.findViewById(R.id.iv_music_play);
         this.d = (TextView) this.i.findViewById(R.id.tv_music_name);
         TextView textView = (TextView) this.i.findViewById(R.id.tv_music_author);
         this.e = textView;
@@ -110,9 +110,9 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
         ImageView imageView2 = (ImageView) this.i.findViewById(R.id.iv_music_author);
         this.f = imageView2;
         imageView2.setOnClickListener(this);
-        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) this.i.findViewById(R.id.sll_collection);
-        this.l = shapeLinearLayout;
-        shapeLinearLayout.setOnClickListener(this);
+        ShapeLinearLayout findViewById = this.i.findViewById(R.id.sll_collection);
+        this.l = findViewById;
+        findViewById.setOnClickListener(this);
         this.g = (ImageView) this.i.findViewById(R.id.iv_collection);
         this.k = (TextView) this.i.findViewById(R.id.tv_collection);
         this.o = (RecyclerView) this.i.findViewById(R.id.recycler_view);
@@ -144,18 +144,17 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
     }
 
     private void d() {
-        this.f20365c.setImageResource(R.drawable.video_scan_music_pause_icon);
-        MusicManager.a(this.s, j().p().music_url, j().p().music_id);
+        this.f6759c.setImageResource(R.drawable.video_scan_music_pause_icon);
+        MusicManager.a(this.s, ((MusicVideoCollectPresent) j()).p().music_url, ((MusicVideoCollectPresent) j()).p().music_id);
         this.w = true;
     }
 
     private void e() {
-        this.f20365c.setImageResource(R.drawable.video_scan_music_play_icon);
+        this.f6759c.setImageResource(R.drawable.video_scan_music_play_icon);
         MusicManager.a(this.s);
         this.w = false;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         b();
@@ -163,7 +162,7 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
         CustomProgressDialog customProgressDialog = new CustomProgressDialog(getContext());
         this.v = customProgressDialog;
         customProgressDialog.setCanceledOnTouchOutside(true);
-        this.f20364a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.video.fragment.MusicVideoCollectFragment.1
+        this.f6758a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.video.fragment.MusicVideoCollectFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -174,7 +173,7 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
         MusicVideoCollectAdapter musicVideoCollectAdapter = new MusicVideoCollectAdapter(getContext(), getFragmentActive());
         this.t = musicVideoCollectAdapter;
         this.o.setAdapter(musicVideoCollectAdapter);
-        SpacesItemDecoration spacesItemDecoration = new SpacesItemDecoration(DensityUtils.a(getContext(), 1.5f));
+        RecyclerView.ItemDecoration spacesItemDecoration = new SpacesItemDecoration(DensityUtils.a(getContext(), 1.5f));
         spacesItemDecoration.a(5);
         spacesItemDecoration.a(true, true, true, true);
         spacesItemDecoration.a(0, 0, 0, 0);
@@ -183,16 +182,16 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
         this.u = noDataAndLoadFailView;
         noDataAndLoadFailView.setNoDataImg(R.drawable.icon_no_data_posted);
         this.u.setNoDataStr(R.string.no_content_for_now);
-        this.t.setEmptyView(this.u);
+        this.t.setEmptyView((View) this.u);
         this.r.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.blued.community.ui.video.fragment.MusicVideoCollectFragment.2
             @Override // com.blued.community.view.FloatFooterView.OnBtnClickListener
             public void onPostFeedClick() {
                 ProgressDialog progressDialog = MusicVideoCollectFragment.this.v;
                 MusicVideoCollectFragment musicVideoCollectFragment = MusicVideoCollectFragment.this;
-                MusicManager.a(progressDialog, musicVideoCollectFragment, musicVideoCollectFragment.j().p().music_url, MusicVideoCollectFragment.this.j().p().music_id, new MusicManager.ICallBack() { // from class: com.blued.community.ui.video.fragment.MusicVideoCollectFragment.2.1
+                MusicManager.a(progressDialog, musicVideoCollectFragment, ((MusicVideoCollectPresent) musicVideoCollectFragment.j()).p().music_url, ((MusicVideoCollectPresent) MusicVideoCollectFragment.this.j()).p().music_id, new MusicManager.ICallBack() { // from class: com.blued.community.ui.video.fragment.MusicVideoCollectFragment.2.1
                     @Override // com.blued.community.ui.video.manager.MusicManager.ICallBack
                     public void a(String str) {
-                        ShortVideoProxy.e().a(MusicVideoCollectFragment.this, 6, str, MusicVideoCollectFragment.this.j().p().music_name, 209);
+                        ShortVideoProxy.e().a(MusicVideoCollectFragment.this, 6, str, ((MusicVideoCollectPresent) MusicVideoCollectFragment.this.j()).p().music_name, 209);
                     }
                 });
             }
@@ -205,14 +204,14 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
         this.q.a(new OnRefreshListener() { // from class: com.blued.community.ui.video.fragment.MusicVideoCollectFragment.3
             @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
-                MusicVideoCollectFragment.this.j().e();
+                ((MusicVideoCollectPresent) MusicVideoCollectFragment.this.j()).e();
             }
         });
         this.t.setLoadMoreView(new BluedAdapterLoadMoreView());
         this.t.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.video.fragment.MusicVideoCollectFragment.4
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
-                MusicVideoCollectFragment.this.j().f();
+                ((MusicVideoCollectPresent) MusicVideoCollectFragment.this.j()).f();
             }
         }, this.o);
         this.n.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() { // from class: com.blued.community.ui.video.fragment.-$$Lambda$MusicVideoCollectFragment$t0T9Vl-if9AEftmN8AsfygguUR8
@@ -240,7 +239,6 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
         this.t.a(videoScanMusic.main_tid);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
         if (str == null) {
@@ -265,33 +263,28 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
         this.t.setNewData(list);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
         this.u = null;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_music_video_collect;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void l() {
         this.q.i();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
-        StvResultModel stvResultModel;
+        StvResultModel serializableExtra;
         super.onActivityResult(i, i2, intent);
-        if (i2 == -1 && i == 209 && intent != null && (stvResultModel = (StvResultModel) intent.getSerializableExtra("result_model")) != null && stvResultModel.a()) {
-            FeedAddPostFragment.a(getContext(), stvResultModel);
+        if (i2 == -1 && i == 209 && intent != null && (serializableExtra = intent.getSerializableExtra("result_model")) != null && serializableExtra.a()) {
+            FeedAddPostFragment.a(getContext(), serializableExtra);
         }
         super.onActivityResult(i, i2, intent);
     }
@@ -303,13 +296,12 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
         if (id == R.id.iv_music_bg) {
             c();
         } else if (id == R.id.tv_music_author || id == R.id.iv_music_author) {
-            CommunityServiceManager.b().a(getContext(), j().p().music_uid, "PAGE_MUSIC_VIDEO_COLLECT");
+            CommunityServiceManager.b().a(getContext(), ((MusicVideoCollectPresent) j()).p().music_uid, "PAGE_MUSIC_VIDEO_COLLECT");
         } else if (id == R.id.sll_collection) {
-            j().m();
+            ((MusicVideoCollectPresent) j()).m();
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         IAudioPlayer iAudioPlayer = this.s;
@@ -318,7 +310,6 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         if (this.s != null) {
@@ -326,7 +317,6 @@ public class MusicVideoCollectFragment extends MvpFragment<MusicVideoCollectPres
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
         this.t.setEnableLoadMore(false);

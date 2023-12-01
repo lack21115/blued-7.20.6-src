@@ -11,7 +11,7 @@ import android.view.ViewParent;
 public abstract class VirtualLayout extends ConstraintHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f2291a;
+    private boolean f2243a;
     private boolean b;
 
     public VirtualLayout(Context context) {
@@ -43,7 +43,7 @@ public abstract class VirtualLayout extends ConstraintHelper {
             }
             int index = obtainStyledAttributes.getIndex(i2);
             if (index == R.styleable.ConstraintLayout_Layout_android_visibility) {
-                this.f2291a = true;
+                this.f2243a = true;
             } else if (index == R.styleable.ConstraintLayout_Layout_android_elevation) {
                 this.b = true;
             }
@@ -60,7 +60,7 @@ public abstract class VirtualLayout extends ConstraintHelper {
     @Override // androidx.constraintlayout.widget.ConstraintHelper, android.view.View
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if (!this.f2291a && !this.b) {
+        if (!this.f2243a && !this.b) {
             return;
         }
         ViewParent parent = getParent();
@@ -78,7 +78,7 @@ public abstract class VirtualLayout extends ConstraintHelper {
             }
             View viewById = constraintLayout.getViewById(this.j[i2]);
             if (viewById != null) {
-                if (this.f2291a) {
+                if (this.f2243a) {
                     viewById.setVisibility(visibility);
                 }
                 if (this.b && elevation > 0.0f && Build.VERSION.SDK_INT >= 21) {

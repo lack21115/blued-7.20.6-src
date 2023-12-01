@@ -6,8 +6,9 @@ import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okio/RealBufferedSink.class */
-final class RealBufferedSink implements BufferedSink {
+public final class RealBufferedSink implements BufferedSink {
     public final Buffer buffer = new Buffer();
     boolean closed;
     public final Sink sink;

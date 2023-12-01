@@ -7,11 +7,11 @@ import java.util.List;
 public final /* synthetic */ class fj implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCThumbnailGenerator f40383a;
+    private final UGCThumbnailGenerator f26692a;
     private final List b;
 
     private fj(UGCThumbnailGenerator uGCThumbnailGenerator, List list) {
-        this.f40383a = uGCThumbnailGenerator;
+        this.f26692a = uGCThumbnailGenerator;
         this.b = list;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class fj implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCThumbnailGenerator.lambda$setVideoSourceList$1(this.f40383a, this.b);
+        UGCThumbnailGenerator.lambda$setVideoSourceList$1(this.f26692a, this.b);
     }
 }

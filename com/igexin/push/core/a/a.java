@@ -4,17 +4,17 @@ package com.igexin.push.core.a;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected boolean f23394a;
+    protected boolean f9786a;
 
     private void d() {
-        if (this.f23394a) {
+        if (this.f9786a) {
             return;
         }
-        this.f23394a = true;
+        this.f9786a = true;
     }
 
     private boolean e() {
-        return this.f23394a;
+        return this.f9786a;
     }
 
     public abstract void a();

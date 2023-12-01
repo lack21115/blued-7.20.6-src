@@ -22,7 +22,7 @@ public class FaceDetectFragment_ViewBinding implements Unbinder {
         faceDetectFragment.flPreview = (FrameLayout) Utils.a(view, R.id.fl_preview, "field 'flPreview'", FrameLayout.class);
         faceDetectFragment.abortVerify = (TextView) Utils.a(view, R.id.abort_verify, "field 'abortVerify'", TextView.class);
         faceDetectFragment.mTextureView = (TextureView) Utils.a(view, 2131370638, "field 'mTextureView'", TextureView.class);
-        faceDetectFragment.tvTips = (TextView) Utils.a(view, 2131372745, "field 'tvTips'", TextView.class);
+        faceDetectFragment.tvTips = (TextView) Utils.a(view, R.id.tv_tips, "field 'tvTips'", TextView.class);
     }
 
     @Override // butterknife.Unbinder

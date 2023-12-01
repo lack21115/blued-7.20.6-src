@@ -10,11 +10,11 @@ import java.util.HashMap;
 final class t implements r.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ s f41086a;
+    final /* synthetic */ s f27395a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public t(s sVar) {
-        this.f41086a = sVar;
+        this.f27395a = sVar;
     }
 
     @Override // com.vivo.push.d.r.a
@@ -28,9 +28,9 @@ final class t implements r.a {
         }
         HashMap hashMap = new HashMap();
         hashMap.put("srt", "1");
-        hashMap.put("message_id", String.valueOf(this.f41086a.b.f()));
-        context = this.f41086a.f41085c.f41105a;
-        context2 = this.f41086a.f41085c.f41105a;
+        hashMap.put("message_id", String.valueOf(this.f27395a.b.f()));
+        context = this.f27395a.f27394c.f27414a;
+        context2 = this.f27395a.f27394c.f27414a;
         String b = com.vivo.push.util.z.b(context, context2.getPackageName());
         if (!TextUtils.isEmpty(b)) {
             hashMap.put("app_id", b);
@@ -45,9 +45,9 @@ final class t implements r.a {
         Context context;
         Context context2;
         HashMap hashMap = new HashMap();
-        hashMap.put(IntentConstant.MESSAGE_ID, String.valueOf(this.f41086a.b.f()));
-        context = this.f41086a.f41085c.f41105a;
-        context2 = this.f41086a.f41085c.f41105a;
+        hashMap.put(IntentConstant.MESSAGE_ID, String.valueOf(this.f27395a.b.f()));
+        context = this.f27395a.f27394c.f27414a;
+        context2 = this.f27395a.f27394c.f27414a;
         String b = com.vivo.push.util.z.b(context, context2.getPackageName());
         if (!TextUtils.isEmpty(b)) {
             hashMap.put("remoteAppId", b);

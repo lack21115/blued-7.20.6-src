@@ -15,7 +15,7 @@ import java.util.Map;
 public final class FragmentManagerViewModel extends ViewModel {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ViewModelProvider.Factory f2993a = new ViewModelProvider.Factory() { // from class: androidx.fragment.app.FragmentManagerViewModel.1
+    private static final ViewModelProvider.Factory f2945a = new ViewModelProvider.Factory() { // from class: androidx.fragment.app.FragmentManagerViewModel.1
         @Override // androidx.lifecycle.ViewModelProvider.Factory
         public <T extends ViewModel> T create(Class<T> cls) {
             return new FragmentManagerViewModel(true);
@@ -25,7 +25,7 @@ public final class FragmentManagerViewModel extends ViewModel {
     private final HashMap<String, Fragment> b = new HashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private final HashMap<String, FragmentManagerViewModel> f2994c = new HashMap<>();
+    private final HashMap<String, FragmentManagerViewModel> f2946c = new HashMap<>();
     private final HashMap<String, ViewModelStore> d = new HashMap<>();
     private boolean f = false;
     private boolean g = false;
@@ -38,7 +38,7 @@ public final class FragmentManagerViewModel extends ViewModel {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static FragmentManagerViewModel a(ViewModelStore viewModelStore) {
-        return (FragmentManagerViewModel) new ViewModelProvider(viewModelStore, f2993a).get(FragmentManagerViewModel.class);
+        return (FragmentManagerViewModel) new ViewModelProvider(viewModelStore, f2945a).get(FragmentManagerViewModel.class);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -65,7 +65,7 @@ public final class FragmentManagerViewModel extends ViewModel {
     @Deprecated
     public void a(FragmentManagerNonConfig fragmentManagerNonConfig) {
         this.b.clear();
-        this.f2994c.clear();
+        this.f2946c.clear();
         this.d.clear();
         if (fragmentManagerNonConfig != null) {
             Collection<Fragment> a2 = fragmentManagerNonConfig.a();
@@ -81,7 +81,7 @@ public final class FragmentManagerViewModel extends ViewModel {
                 for (Map.Entry<String, FragmentManagerNonConfig> entry : b.entrySet()) {
                     FragmentManagerViewModel fragmentManagerViewModel = new FragmentManagerViewModel(this.e);
                     fragmentManagerViewModel.a(entry.getValue());
-                    this.f2994c.put(entry.getKey(), fragmentManagerViewModel);
+                    this.f2946c.put(entry.getKey(), fragmentManagerViewModel);
                 }
             }
             Map<String, ViewModelStore> c2 = fragmentManagerNonConfig.c();
@@ -118,11 +118,11 @@ public final class FragmentManagerViewModel extends ViewModel {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Deprecated
     public FragmentManagerNonConfig c() {
-        if (this.b.isEmpty() && this.f2994c.isEmpty() && this.d.isEmpty()) {
+        if (this.b.isEmpty() && this.f2946c.isEmpty() && this.d.isEmpty()) {
             return null;
         }
         HashMap hashMap = new HashMap();
-        for (Map.Entry<String, FragmentManagerViewModel> entry : this.f2994c.entrySet()) {
+        for (Map.Entry<String, FragmentManagerViewModel> entry : this.f2946c.entrySet()) {
             FragmentManagerNonConfig c2 = entry.getValue().c();
             if (c2 != null) {
                 hashMap.put(entry.getKey(), c2);
@@ -151,11 +151,11 @@ public final class FragmentManagerViewModel extends ViewModel {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FragmentManagerViewModel d(Fragment fragment) {
-        FragmentManagerViewModel fragmentManagerViewModel = this.f2994c.get(fragment.mWho);
+        FragmentManagerViewModel fragmentManagerViewModel = this.f2946c.get(fragment.mWho);
         FragmentManagerViewModel fragmentManagerViewModel2 = fragmentManagerViewModel;
         if (fragmentManagerViewModel == null) {
             fragmentManagerViewModel2 = new FragmentManagerViewModel(this.e);
-            this.f2994c.put(fragment.mWho, fragmentManagerViewModel2);
+            this.f2946c.put(fragment.mWho, fragmentManagerViewModel2);
         }
         return fragmentManagerViewModel2;
     }
@@ -179,7 +179,7 @@ public final class FragmentManagerViewModel extends ViewModel {
             return false;
         }
         FragmentManagerViewModel fragmentManagerViewModel = (FragmentManagerViewModel) obj;
-        return this.b.equals(fragmentManagerViewModel.b) && this.f2994c.equals(fragmentManagerViewModel.f2994c) && this.d.equals(fragmentManagerViewModel.d);
+        return this.b.equals(fragmentManagerViewModel.b) && this.f2946c.equals(fragmentManagerViewModel.f2946c) && this.d.equals(fragmentManagerViewModel.d);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -187,10 +187,10 @@ public final class FragmentManagerViewModel extends ViewModel {
         if (FragmentManager.a(3)) {
             Log.d("FragmentManager", "Clearing non-config state for " + fragment);
         }
-        FragmentManagerViewModel fragmentManagerViewModel = this.f2994c.get(fragment.mWho);
+        FragmentManagerViewModel fragmentManagerViewModel = this.f2946c.get(fragment.mWho);
         if (fragmentManagerViewModel != null) {
             fragmentManagerViewModel.onCleared();
-            this.f2994c.remove(fragment.mWho);
+            this.f2946c.remove(fragment.mWho);
         }
         ViewModelStore viewModelStore = this.d.get(fragment.mWho);
         if (viewModelStore != null) {
@@ -200,7 +200,7 @@ public final class FragmentManagerViewModel extends ViewModel {
     }
 
     public int hashCode() {
-        return (((this.b.hashCode() * 31) + this.f2994c.hashCode()) * 31) + this.d.hashCode();
+        return (((this.b.hashCode() * 31) + this.f2946c.hashCode()) * 31) + this.d.hashCode();
     }
 
     @Override // androidx.lifecycle.ViewModel
@@ -223,7 +223,7 @@ public final class FragmentManagerViewModel extends ViewModel {
             }
         }
         sb.append(") Child Non Config (");
-        Iterator<String> it2 = this.f2994c.keySet().iterator();
+        Iterator<String> it2 = this.f2946c.keySet().iterator();
         while (it2.hasNext()) {
             sb.append(it2.next());
             if (it2.hasNext()) {

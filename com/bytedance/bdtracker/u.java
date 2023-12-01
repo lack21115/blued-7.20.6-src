@@ -6,7 +6,7 @@ public class u extends t {
     public u(v vVar) {
         super(vVar);
         long j = vVar.d.e.getLong("app_log_last_config_time", 0L);
-        this.f21307c = j;
+        this.f7701c = j;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:101:0x0215 A[EXC_TOP_SPLITTER, SYNTHETIC] */

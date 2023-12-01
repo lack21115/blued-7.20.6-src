@@ -10,17 +10,17 @@ public class v1 implements u1 {
     public class a implements d3.c {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Bundle f4020a;
+        public final /* synthetic */ Bundle f3972a;
         public final /* synthetic */ t1 b;
 
         public a(v1 v1Var, Bundle bundle, t1 t1Var) {
-            this.f4020a = bundle;
+            this.f3972a = bundle;
             this.b = t1Var;
         }
 
         @Override // c.t.m.g.d3.c
         public void a(String str) {
-            this.f4020a.putString("msg_fail", str);
+            this.f3972a.putString("msg_fail", str);
             t1 t1Var = this.b;
             if (t1Var != null) {
                 t1Var.a(str);
@@ -29,7 +29,7 @@ public class v1 implements u1 {
 
         @Override // c.t.m.g.d3.c
         public void b(String str) {
-            this.f4020a.putString("msg_suc", str);
+            this.f3972a.putString("msg_suc", str);
             t1 t1Var = this.b;
             if (t1Var != null) {
                 t1Var.b(str);

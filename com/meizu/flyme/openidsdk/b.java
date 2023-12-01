@@ -12,12 +12,12 @@ public class b {
     public BroadcastReceiver f;
 
     /* renamed from: a  reason: collision with root package name */
-    public OpenId f24197a = new OpenId("udid");
+    public OpenId f10582a = new OpenId("udid");
     public OpenId b = new OpenId("oaid");
     public OpenId d = new OpenId("vaid");
 
     /* renamed from: c  reason: collision with root package name */
-    public OpenId f24198c = new OpenId("aaid");
+    public OpenId f10583c = new OpenId("aaid");
 
     public static native ValueData a(Cursor cursor);
 

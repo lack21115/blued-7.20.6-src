@@ -161,7 +161,7 @@ class DropdownMenuEndIconDelegate extends EndIconDelegate {
         int boxBackgroundMode = this.textInputLayout.getBoxBackgroundMode();
         MaterialShapeDrawable boxBackground = this.textInputLayout.getBoxBackground();
         int color = MaterialColors.getColor(autoCompleteTextView, R.attr.colorControlHighlight);
-        ?? r0 = {new int[]{16842919}, new int[0]};
+        ?? r0 = {new int[]{android.R.attr.state_pressed}, new int[0]};
         if (boxBackgroundMode == 2) {
             addRippleEffectOnOutlinedLayout(autoCompleteTextView, color, r0, boxBackground);
         } else if (boxBackgroundMode == 1) {
@@ -344,7 +344,7 @@ class DropdownMenuEndIconDelegate extends EndIconDelegate {
         this.outlinedPopupBackground = popUpMaterialShapeDrawable;
         StateListDrawable stateListDrawable = new StateListDrawable();
         this.filledPopupBackground = stateListDrawable;
-        stateListDrawable.addState(new int[]{16842922}, popUpMaterialShapeDrawable);
+        stateListDrawable.addState(new int[]{android.R.attr.state_above_anchor}, popUpMaterialShapeDrawable);
         this.filledPopupBackground.addState(new int[0], popUpMaterialShapeDrawable2);
         this.textInputLayout.setEndIconDrawable(this.customEndIcon == 0 ? IS_LOLLIPOP ? R.drawable.mtrl_dropdown_arrow : R.drawable.mtrl_ic_arrow_drop_down : this.customEndIcon);
         this.textInputLayout.setEndIconContentDescription(this.textInputLayout.getResources().getText(R.string.exposed_dropdown_menu_content_description));

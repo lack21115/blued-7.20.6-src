@@ -11,16 +11,17 @@ import android.net.wifi.WifiManager;
 import android.os.Handler;
 import android.provider.Settings;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.ib;
-import com.amap.api.col.p0003sl.iw;
-import com.amap.api.col.p0003sl.kc;
-import com.amap.api.col.p0003sl.mq;
+import com.amap.api.col.3sl.ib;
+import com.amap.api.col.3sl.iw;
+import com.amap.api.col.3sl.kc;
+import com.amap.api.col.3sl.mq;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClientOption;
 import com.autonavi.aps.amapapi.restruct.e;
 import com.autonavi.aps.amapapi.restruct.g;
 import com.autonavi.aps.amapapi.restruct.i;
 import com.autonavi.aps.amapapi.trans.f;
+import com.autonavi.base.amap.mapcore.tools.GLMapStaticValue;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -38,11 +39,11 @@ public final class b {
     private static volatile boolean S = false;
 
     /* renamed from: a  reason: collision with root package name */
-    Context f9222a = null;
+    Context f6382a = null;
     ConnectivityManager b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    i f9223c = null;
+    i f6383c = null;
     e d = null;
     com.autonavi.aps.amapapi.storage.a e = null;
     com.autonavi.aps.amapapi.trans.e f = null;
@@ -83,23 +84,23 @@ public final class b {
     public static final /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f9224a;
+        static final /* synthetic */ int[] f6384a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[AMapLocationClientOption.GeoLanguage.values().length];
-            f9224a = iArr;
+            f6384a = iArr;
             try {
                 iArr[AMapLocationClientOption.GeoLanguage.DEFAULT.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f9224a[AMapLocationClientOption.GeoLanguage.ZH.ordinal()] = 2;
+                f6384a[AMapLocationClientOption.GeoLanguage.ZH.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f9224a[AMapLocationClientOption.GeoLanguage.EN.ordinal()] = 3;
+                f6384a[AMapLocationClientOption.GeoLanguage.EN.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -122,20 +123,20 @@ public final class b {
                     return;
                 }
                 if (!action.equals(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION)) {
-                    if (!action.equals(WifiManager.WIFI_STATE_CHANGED_ACTION) || b.this.f9223c == null) {
+                    if (!action.equals(WifiManager.WIFI_STATE_CHANGED_ACTION) || b.this.f6383c == null) {
                         return;
                     }
-                    b.this.f9223c.j();
+                    b.this.f6383c.j();
                     return;
                 }
-                if (b.this.f9223c != null) {
-                    b.this.f9223c.i();
+                if (b.this.f6383c != null) {
+                    b.this.f6383c.i();
                 }
                 try {
-                    if (intent.getExtras() == null || !intent.getExtras().getBoolean("resultsUpdated", true) || b.this.f9223c == null) {
+                    if (intent.getExtras() == null || !intent.getExtras().getBoolean("resultsUpdated", true) || b.this.f6383c == null) {
                         return;
                     }
-                    b.this.f9223c.h();
+                    b.this.f6383c.h();
                 } catch (Throwable th) {
                 }
             } catch (Throwable th2) {
@@ -162,16 +163,16 @@ public final class b {
     private com.autonavi.aps.amapapi.model.a a(com.autonavi.aps.amapapi.model.a aVar, kc kcVar, com.autonavi.aps.amapapi.a aVar2) {
         if (kcVar != null) {
             try {
-                if (kcVar.f5264a != null && kcVar.f5264a.length != 0) {
+                if (kcVar.a != null && kcVar.a.length != 0) {
                     com.autonavi.aps.amapapi.trans.e eVar = new com.autonavi.aps.amapapi.trans.e();
-                    String str = new String(kcVar.f5264a, "UTF-8");
+                    String str = new String(kcVar.a, "UTF-8");
                     if (str.contains("\"status\":\"0\"")) {
-                        com.autonavi.aps.amapapi.model.a a2 = eVar.a(str, this.f9222a, kcVar, aVar2);
+                        com.autonavi.aps.amapapi.model.a a2 = eVar.a(str, this.f6382a, kcVar, aVar2);
                         a2.h(this.w.toString());
                         return a2;
                     } else if (str.contains("</body></html>")) {
                         aVar.setErrorCode(5);
-                        if (this.f9223c == null || !this.f9223c.a(this.b)) {
+                        if (this.f6383c == null || !this.f6383c.a(this.b)) {
                             aVar2.f("#0502");
                             this.o.append("请求可能被劫持了#0502");
                             com.autonavi.aps.amapapi.utils.g.a((String) null, 2052);
@@ -214,7 +215,7 @@ public final class b {
             sb.delete(0, sb.length());
         }
         sb.append(this.d.m());
-        sb.append(this.f9223c.o());
+        sb.append(this.f6383c.o());
         return sb;
     }
 
@@ -268,17 +269,17 @@ public final class b {
         boolean z = arrayList == null || arrayList.isEmpty();
         if (e == null && f == null && z) {
             if (this.b == null) {
-                this.b = (ConnectivityManager) com.autonavi.aps.amapapi.utils.i.a(this.f9222a, Context.CONNECTIVITY_SERVICE);
+                this.b = (ConnectivityManager) com.autonavi.aps.amapapi.utils.i.a(this.f6382a, Context.CONNECTIVITY_SERVICE);
             }
             if (com.autonavi.aps.amapapi.utils.i.c() >= 31) {
-                if (com.autonavi.aps.amapapi.utils.i.a(this.f9222a) && !this.f9223c.l()) {
+                if (com.autonavi.aps.amapapi.utils.i.a(this.f6382a) && !this.f6383c.l()) {
                     this.z = 18;
                     this.o.append("飞行模式下关闭了WIFI开关，请关闭飞行模式或者打开WIFI开关#1802");
                     com.autonavi.aps.amapapi.utils.g.a((String) null, 2132);
                     aVar.f("#1802");
                     return "";
                 }
-            } else if (com.autonavi.aps.amapapi.utils.i.a(this.f9222a) && !this.f9223c.k()) {
+            } else if (com.autonavi.aps.amapapi.utils.i.a(this.f6382a) && !this.f6383c.k()) {
                 this.z = 18;
                 this.o.append("飞行模式下关闭了WIFI开关，请关闭飞行模式或者打开WIFI开关#1801");
                 com.autonavi.aps.amapapi.utils.g.a((String) null, 2132);
@@ -287,7 +288,7 @@ public final class b {
             }
             if (com.autonavi.aps.amapapi.utils.i.c() >= 28) {
                 if (this.J == null) {
-                    this.J = (LocationManager) this.f9222a.getApplicationContext().getSystemService("location");
+                    this.J = (LocationManager) this.f6382a.getApplicationContext().getSystemService("location");
                 }
                 if (!((Boolean) com.autonavi.aps.amapapi.utils.e.a(this.J, "isLocationEnabled", new Object[0])).booleanValue()) {
                     this.z = 12;
@@ -297,13 +298,13 @@ public final class b {
                     return "";
                 }
             }
-            if (!com.autonavi.aps.amapapi.utils.i.e(this.f9222a)) {
+            if (!com.autonavi.aps.amapapi.utils.i.e(this.f6382a)) {
                 this.z = 12;
                 this.o.append("定位权限被禁用,请授予应用定位权限#1201");
                 aVar.f("#1201");
                 com.autonavi.aps.amapapi.utils.g.a((String) null, 2121);
                 return "";
-            } else if (com.autonavi.aps.amapapi.utils.i.c() >= 24 && com.autonavi.aps.amapapi.utils.i.c() < 28 && Settings.Secure.getInt(this.f9222a.getContentResolver(), Settings.Secure.LOCATION_MODE, 0) == 0) {
+            } else if (com.autonavi.aps.amapapi.utils.i.c() >= 24 && com.autonavi.aps.amapapi.utils.i.c() < 28 && Settings.Secure.getInt(this.f6382a.getContentResolver(), Settings.Secure.LOCATION_MODE, 0) == 0) {
                 this.z = 12;
                 aVar.f("#1206");
                 this.o.append("定位服务没有开启，请在设置中打开定位服务开关#1206");
@@ -311,8 +312,8 @@ public final class b {
                 return "";
             } else {
                 String k = this.d.k();
-                String d = this.f9223c.d();
-                if (this.f9223c.a(this.b) && d != null) {
+                String d = this.f6383c.d();
+                if (this.f6383c.a(this.b) && d != null) {
                     this.z = 12;
                     aVar.f("#1202");
                     this.o.append("获取基站与获取WIFI的权限都被禁用，请在安全软件中打开应用的定位权限#1202");
@@ -320,7 +321,7 @@ public final class b {
                     return "";
                 } else if (k != null) {
                     this.z = 12;
-                    if (this.f9223c.k()) {
+                    if (this.f6383c.k()) {
                         aVar.f("#1205");
                         this.o.append("获取的WIFI列表为空，并且获取基站权限被禁用，请在安全软件中打开应用的定位权限#1205");
                     } else {
@@ -329,24 +330,24 @@ public final class b {
                     }
                     com.autonavi.aps.amapapi.utils.g.a((String) null, 2121);
                     return "";
-                } else if (!this.f9223c.k() && !this.d.n()) {
+                } else if (!this.f6383c.k() && !this.d.n()) {
                     this.z = 19;
                     aVar.f("#1901");
                     this.o.append("没有检查到SIM卡，并且WIFI开关关闭，请打开WIFI开关或者插入SIM卡#1901");
                     com.autonavi.aps.amapapi.utils.g.a((String) null, 2133);
                     return "";
                 } else {
-                    if (this.f9223c.k()) {
+                    if (this.f6383c.k()) {
                         aVar.f("#1302");
-                        if (this.f9223c.c() != null) {
+                        if (this.f6383c.c() != null) {
                             this.o.append("获取到的基站和WIFI信息均为空，请检查是否授予APP定位权限");
-                            if (!com.autonavi.aps.amapapi.utils.i.f(this.f9222a)) {
+                            if (!com.autonavi.aps.amapapi.utils.i.f(this.f6382a)) {
                                 this.o.append("或后台运行没有后台定位权限");
                             }
                             this.o.append("#1302");
                         } else {
                             this.o.append("获取到的基站和WIFI信息均为空，请移动到有WIFI的区域，若确定当前区域有WIFI，请检查是否授予APP定位权限");
-                            if (!com.autonavi.aps.amapapi.utils.i.f(this.f9222a)) {
+                            if (!com.autonavi.aps.amapapi.utils.i.f(this.f6382a)) {
                                 this.o.append("或后台运行没有后台定位权限");
                             }
                             this.o.append("#1302");
@@ -361,7 +362,7 @@ public final class b {
                 }
             }
         }
-        WifiInfo m = this.f9223c.m();
+        WifiInfo m = this.f6383c.m();
         this.u = m;
         this.v = i.a(m);
         String str2 = "cgi";
@@ -380,7 +381,7 @@ public final class b {
                     if (!this.v) {
                         aVar.f("#0202");
                         this.o.append("当前基站为伪基站，并且搜到的WIFI数量不足，请移动到WIFI比较丰富的区域#0202");
-                        com.autonavi.aps.amapapi.utils.g.a((String) null, 2022);
+                        com.autonavi.aps.amapapi.utils.g.a((String) null, (int) GLMapStaticValue.MAP_PARAMETERNAME_CLEAR_INDOORBUILDING_LAST);
                         return "";
                     } else if (this.g.get(0).h) {
                         aVar.f("#0202");
@@ -403,25 +404,25 @@ public final class b {
                 str = format + "wifi";
             } else {
                 this.z = 2;
-                if (this.f9223c.k()) {
+                if (this.f6383c.k()) {
                     aVar.f("#0204");
                     this.o.append("当前基站为伪基站,并且没有搜索到WIFI，请移动到WIFI比较丰富的区域#0204");
                 } else {
                     aVar.f("#0203");
                     this.o.append("当前基站为伪基站,并且关闭了WIFI开关，请在设置中打开WIFI开关#0203");
                 }
-                com.autonavi.aps.amapapi.utils.g.a((String) null, 2022);
+                com.autonavi.aps.amapapi.utils.g.a((String) null, (int) GLMapStaticValue.MAP_PARAMETERNAME_CLEAR_INDOORBUILDING_LAST);
                 str = "";
             }
         } else if (h == 1) {
             str = "";
             if (e != null) {
                 StringBuilder sb2 = new StringBuilder();
-                sb2.append(e.f9246a);
+                sb2.append(e.f6406a);
                 sb2.append("#");
                 sb2.append(e.b);
                 sb2.append("#");
-                sb2.append(e.f9247c);
+                sb2.append(e.f6407c);
                 sb2.append("#");
                 sb2.append(e.d);
                 sb2.append("#");
@@ -440,7 +441,7 @@ public final class b {
             str = "";
             if (e != null) {
                 StringBuilder sb3 = new StringBuilder();
-                sb3.append(e.f9246a);
+                sb3.append(e.f6406a);
                 sb3.append("#");
                 sb3.append(e.b);
                 sb3.append("#");
@@ -513,7 +514,7 @@ public final class b {
             r4 = r0
             r0 = r6
             if (r0 == 0) goto L31
-            int[] r0 = com.autonavi.aps.amapapi.b.AnonymousClass1.f9224a
+            int[] r0 = com.autonavi.aps.amapapi.b.AnonymousClass1.f6384a
             r1 = r3
             com.amap.api.location.AMapLocationClientOption r1 = r1.i
             com.amap.api.location.AMapLocationClientOption$GeoLanguage r1 = r1.getGeoLanguage()
@@ -569,7 +570,7 @@ public final class b {
                 intentFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
                 this.I.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
             }
-            this.f9222a.registerReceiver(this.h, this.I);
+            this.f6382a.registerReceiver(this.h, this.I);
         } catch (Throwable th) {
             com.autonavi.aps.amapapi.utils.b.a(th, "Aps", "initBroadcastListener");
         }
@@ -582,7 +583,7 @@ public final class b {
         if (this.i == null) {
             this.i = new AMapLocationClientOption();
         }
-        this.l.a(this.f9222a, this.i.isNeedAddress(), this.i.isOffset(), this.d, this.f9223c, this.b, this.E, this.Q);
+        this.l.a(this.f6382a, this.i.isNeedAddress(), this.i.isOffset(), this.d, this.f6383c, this.b, this.E, this.Q);
         return this.l.a();
     }
 
@@ -591,7 +592,7 @@ public final class b {
     }
 
     private void o() {
-        i iVar = this.f9223c;
+        i iVar = this.f6383c;
         if (iVar == null) {
             return;
         }
@@ -599,7 +600,7 @@ public final class b {
     }
 
     private boolean p() {
-        ArrayList<mq> e = this.f9223c.e();
+        ArrayList<mq> e = this.f6383c.e();
         this.g = e;
         return e == null || e.size() <= 0;
     }
@@ -631,7 +632,7 @@ public final class b {
 
     public final com.autonavi.aps.amapapi.model.a a(double d, double d2) {
         try {
-            String a2 = this.n.a(this.f9222a, d, d2);
+            String a2 = this.n.a(this.f6382a, d, d2);
             if (a2.contains("\"status\":\"1\"")) {
                 com.autonavi.aps.amapapi.model.a a3 = this.f.a(a2);
                 a3.setLatitude(d);
@@ -671,13 +672,13 @@ public final class b {
     }
 
     public final com.autonavi.aps.amapapi.model.a a(boolean z) {
-        if (this.f9223c.n()) {
+        if (this.f6383c.n()) {
             return a(15, "networkLocation has been mocked!#1502");
         }
         if (TextUtils.isEmpty(this.N)) {
             return a(this.z, this.o.toString());
         }
-        com.autonavi.aps.amapapi.model.a a2 = this.e.a(this.f9222a, this.N, this.w, true, z);
+        com.autonavi.aps.amapapi.model.a a2 = this.e.a(this.f6382a, this.N, this.w, true, z);
         if (com.autonavi.aps.amapapi.utils.i.a(a2)) {
             d(a2);
         }
@@ -690,12 +691,12 @@ public final class b {
         } else {
             aVar.e("first");
         }
-        if (this.f9222a == null) {
+        if (this.f6382a == null) {
             aVar.f("#0101");
             this.o.append("context is null#0101");
             com.autonavi.aps.amapapi.utils.g.a((String) null, 2011);
             return a(1, this.o.toString());
-        } else if (this.f9223c.n()) {
+        } else if (this.f6383c.n()) {
             aVar.f("#1502");
             return a(15, "networkLocation has been mocked!#1502");
         } else {
@@ -723,18 +724,18 @@ public final class b {
 
     public final void a(Context context) {
         try {
-            if (this.f9222a != null) {
+            if (this.f6382a != null) {
                 return;
             }
             this.D = new com.autonavi.aps.amapapi.filters.a();
             Context applicationContext = context.getApplicationContext();
-            this.f9222a = applicationContext;
+            this.f6382a = applicationContext;
             com.autonavi.aps.amapapi.utils.i.b(applicationContext);
-            if (this.f9223c == null) {
-                this.f9223c = new i(this.f9222a, (WifiManager) com.autonavi.aps.amapapi.utils.i.a(this.f9222a, "wifi"), this.P);
+            if (this.f6383c == null) {
+                this.f6383c = new i(this.f6382a, (WifiManager) com.autonavi.aps.amapapi.utils.i.a(this.f6382a, "wifi"), this.P);
             }
             if (this.d == null) {
-                this.d = new e(this.f9222a, this.P);
+                this.d = new e(this.f6382a, this.P);
             }
             this.Q = new g(context, this.P);
             if (this.e == null) {
@@ -758,11 +759,11 @@ public final class b {
             return;
         }
         com.autonavi.aps.amapapi.restruct.f fVar = new com.autonavi.aps.amapapi.restruct.f();
-        fVar.f9252a = aMapLocation.getLocationType();
+        fVar.f6412a = aMapLocation.getLocationType();
         fVar.d = aMapLocation.getTime();
         fVar.e = (int) aMapLocation.getAccuracy();
         fVar.b = aMapLocation.getLatitude();
-        fVar.f9253c = aMapLocation.getLongitude();
+        fVar.f6413c = aMapLocation.getLongitude();
         if (aMapLocation.getLocationType() == 1) {
             this.Q.a(fVar);
         }
@@ -773,7 +774,7 @@ public final class b {
         if (aMapLocationClientOption == null) {
             this.i = new AMapLocationClientOption();
         }
-        i iVar = this.f9223c;
+        i iVar = this.f6383c;
         if (iVar != null) {
             this.i.isWifiActiveScan();
             iVar.a(this.i.isWifiScan(), this.i.isMockEnable(), AMapLocationClientOption.isOpenAlwaysScanWifi(), aMapLocationClientOption.getScanWifiInterval());
@@ -796,8 +797,8 @@ public final class b {
             fVar.d = aVar.getTime();
             fVar.e = (int) aVar.getAccuracy();
             fVar.b = aVar.getLatitude();
-            fVar.f9253c = aVar.getLongitude();
-            fVar.f9252a = i;
+            fVar.f6413c = aVar.getLongitude();
+            fVar.f6412a = i;
             fVar.g = Integer.parseInt(aVar.d());
             fVar.h = aVar.l();
             this.Q.b(fVar);
@@ -805,10 +806,10 @@ public final class b {
     }
 
     public final void b() {
-        this.n = com.autonavi.aps.amapapi.trans.c.a(this.f9222a);
+        this.n = com.autonavi.aps.amapapi.trans.c.a(this.f6382a);
         i();
         if (this.b == null) {
-            this.b = (ConnectivityManager) com.autonavi.aps.amapapi.utils.i.a(this.f9222a, Context.CONNECTIVITY_SERVICE);
+            this.b = (ConnectivityManager) com.autonavi.aps.amapapi.utils.i.a(this.f6382a, Context.CONNECTIVITY_SERVICE);
         }
         if (this.l == null) {
             this.l = new f();
@@ -827,8 +828,8 @@ public final class b {
         if (this.t) {
             l();
         }
-        this.f9223c.b(this.t);
-        this.g = this.f9223c.e();
+        this.f6383c.b(this.t);
+        this.g = this.f6383c.e();
         this.d.a(true, p());
         String c2 = c(aVar);
         this.N = c2;
@@ -840,20 +841,20 @@ public final class b {
 
     public final void b(com.autonavi.aps.amapapi.model.a aVar) {
         if (com.autonavi.aps.amapapi.utils.i.a(aVar)) {
-            this.e.a(this.N, this.w, aVar, this.f9222a, true);
+            this.e.a(this.N, this.w, aVar, this.f6382a, true);
         }
     }
 
     public final void c() {
         if (this.A == null) {
-            this.A = new com.autonavi.aps.amapapi.restruct.b(this.f9222a);
+            this.A = new com.autonavi.aps.amapapi.restruct.b(this.f6382a);
         }
         l();
-        this.f9223c.b(false);
-        this.g = this.f9223c.e();
+        this.f6383c.b(false);
+        this.g = this.f6383c.e();
         this.d.a(false, p());
-        this.e.a(this.f9222a);
-        b(this.f9222a);
+        this.e.a(this.f6382a);
+        b(this.f6382a);
         this.y = true;
     }
 
@@ -889,13 +890,13 @@ public final class b {
 
     public final void g() {
         try {
-            if (this.f9222a == null) {
+            if (this.f6382a == null) {
                 return;
             }
             if (this.T == null) {
-                this.T = new c(this.f9222a);
+                this.T = new c(this.f6382a);
             }
-            this.T.a(this.d, this.f9223c, this.P);
+            this.T.a(this.d, this.f6383c, this.P);
         } catch (Throwable th) {
             iw.c(th, "as", "stc");
         }

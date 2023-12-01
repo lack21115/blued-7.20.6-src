@@ -2,8 +2,9 @@ package androidx.lifecycle;
 
 import androidx.lifecycle.Lifecycle;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/lifecycle/SingleGeneratedAdapterObserver.class */
-class SingleGeneratedAdapterObserver implements LifecycleEventObserver {
+public class SingleGeneratedAdapterObserver implements LifecycleEventObserver {
     private final GeneratedAdapter mGeneratedAdapter;
 
     /* JADX INFO: Access modifiers changed from: package-private */

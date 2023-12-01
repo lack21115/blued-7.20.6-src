@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.android.internal.R;
 import com.android.internal.app.AlertController;
 import com.android.internal.location.GpsNetInitiatedHandler;
+import com.android.internal.util.cm.QSConstants;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/app/NetInitiatedActivity.class */
 public class NetInitiatedActivity extends AlertActivity implements DialogInterface.OnClickListener {
@@ -61,7 +62,7 @@ public class NetInitiatedActivity extends AlertActivity implements DialogInterfa
     /* JADX INFO: Access modifiers changed from: private */
     public void sendUserResponse(int i) {
         Log.d(TAG, "sendUserResponse, response: " + i);
-        ((LocationManager) getSystemService("location")).sendNiResponse(this.notificationId, i);
+        ((LocationManager) getSystemService(QSConstants.TILE_LOCATION)).sendNiResponse(this.notificationId, i);
     }
 
     private void showNIError() {
@@ -94,24 +95,22 @@ public class NetInitiatedActivity extends AlertActivity implements DialogInterfa
         alertParams.mNegativeButtonText = String.format(applicationContext.getString(R.string.gpsVerifNo), new Object[0]);
         alertParams.mNegativeButtonListener = this;
         this.notificationId = intent.getIntExtra("notif_id", -1);
-        this.timeout = intent.getIntExtra("timeout", this.default_response_timeout);
+        this.timeout = intent.getIntExtra(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, this.default_response_timeout);
         this.default_response = intent.getIntExtra(GpsNetInitiatedHandler.NI_INTENT_KEY_DEFAULT_RESPONSE, 1);
         Log.d(TAG, "onCreate() : notificationId: " + this.notificationId + " timeout: " + this.timeout + " default_response:" + this.default_response);
         this.mHandler.sendMessageDelayed(this.mHandler.obtainMessage(1), this.timeout * 1000);
         setupAlert();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onPause() {
+    protected void onPause() {
         super.onPause();
         Log.d(TAG, "onPause");
         unregisterReceiver(this.mNetInitiatedReceiver);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onResume() {
+    protected void onResume() {
         super.onResume();
         Log.d(TAG, "onResume");
         registerReceiver(this.mNetInitiatedReceiver, new IntentFilter(GpsNetInitiatedHandler.ACTION_NI_VERIFY));

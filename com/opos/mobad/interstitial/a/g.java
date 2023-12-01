@@ -16,8 +16,8 @@ public class g extends b {
     private Bitmap n;
     private RelativeLayout o;
 
-    public g(Context context, int i, a.InterfaceC0708a interfaceC0708a) {
-        super(context, i, interfaceC0708a);
+    public g(Context context, int i, a.InterfaceC0538a interfaceC0538a) {
+        super(context, i, interfaceC0538a);
         this.n = null;
     }
 
@@ -126,11 +126,11 @@ public class g extends b {
         a(this.h, a2.f);
         a(a2.o);
         List<com.opos.mobad.n.d.g> list = a2.g;
-        if (list == null || list.size() <= 0 || list.get(0) == null || TextUtils.isEmpty(list.get(0).f26633a)) {
+        if (list == null || list.size() <= 0 || list.get(0) == null || TextUtils.isEmpty(list.get(0).f12945a)) {
             return;
         }
         float b = b(a2);
-        Bitmap a3 = com.opos.mobad.cmn.a.b.g.a(list.get(0).f26633a, com.opos.cmn.an.h.f.a.a(this.k, 240.0f), com.opos.cmn.an.h.f.a.a(this.k, b));
+        Bitmap a3 = com.opos.mobad.cmn.a.b.g.a(list.get(0).f12945a, com.opos.cmn.an.h.f.a.a(this.k, 240.0f), com.opos.cmn.an.h.f.a.a(this.k, b));
         this.n = a3;
         if (a3 != null) {
             RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) this.m.getLayoutParams();

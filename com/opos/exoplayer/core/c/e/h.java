@@ -14,11 +14,11 @@ import java.util.List;
 final class h extends i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f25172a = u.f("Opus");
+    private static final int f11484a = u.f("Opus");
     private static final byte[] b = {79, 112, 117, 115, 72, 101, 97, 100};
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f25173c;
+    private boolean f11485c;
 
     private long a(byte[] bArr) {
         int i;
@@ -60,21 +60,21 @@ final class h extends i {
     public void a(boolean z) {
         super.a(z);
         if (z) {
-            this.f25173c = false;
+            this.f11485c = false;
         }
     }
 
     @Override // com.opos.exoplayer.core.c.e.i
     protected boolean a(m mVar, long j, i.a aVar) {
         boolean z = true;
-        if (this.f25173c) {
-            if (mVar.o() != f25172a) {
+        if (this.f11485c) {
+            if (mVar.o() != f11484a) {
                 z = false;
             }
             mVar.c(0);
             return z;
         }
-        byte[] copyOf = Arrays.copyOf(mVar.f25496a, mVar.c());
+        byte[] copyOf = Arrays.copyOf(mVar.f11808a, mVar.c());
         byte b2 = copyOf[9];
         byte b3 = copyOf[11];
         byte b4 = copyOf[10];
@@ -82,13 +82,13 @@ final class h extends i {
         arrayList.add(copyOf);
         a(arrayList, ((b3 & 255) << 8) | (b4 & 255));
         a(arrayList, 3840);
-        aVar.f25176a = Format.a(null, "audio/opus", null, -1, -1, b2 & 255, 48000, arrayList, null, 0, null);
-        this.f25173c = true;
+        aVar.f11488a = Format.a(null, "audio/opus", null, -1, -1, b2 & 255, 48000, arrayList, null, 0, null);
+        this.f11485c = true;
         return true;
     }
 
     @Override // com.opos.exoplayer.core.c.e.i
     protected long b(m mVar) {
-        return b(a(mVar.f25496a));
+        return b(a(mVar.f11808a));
     }
 }

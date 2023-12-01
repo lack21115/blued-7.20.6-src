@@ -37,7 +37,7 @@ public class LiveMakeLoverMatchPresent extends MvpPresenter {
     }
 
     public void a(String str, String str2) {
-        LiveRoomInfo a2 = LiveRoomInfo.a();
+        LiveRoomInfo a = LiveRoomInfo.a();
         Activity h = h();
         LiveUserRelationshipUtils.IAddOrRemoveAttentionDone iAddOrRemoveAttentionDone = new LiveUserRelationshipUtils.IAddOrRemoveAttentionDone() { // from class: com.blued.android.module.live_china.presenter.LiveMakeLoverMatchPresent.1
             @Override // com.blued.android.module.live.base.utils.LiveUserRelationshipUtils.IAddOrRemoveAttentionDone
@@ -65,7 +65,7 @@ public class LiveMakeLoverMatchPresent extends MvpPresenter {
                 LiveMakeLoverMatchPresent.this.b("MAKE_LOVER_RELATION_ADD", false);
             }
         };
-        a2.a(h, iAddOrRemoveAttentionDone, str2, "liveanchor_" + str, g());
+        a.a(h, iAddOrRemoveAttentionDone, str2, "liveanchor_" + str, g());
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpPresenter

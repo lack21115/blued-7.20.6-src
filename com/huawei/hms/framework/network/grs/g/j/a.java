@@ -2,7 +2,6 @@ package com.huawei.hms.framework.network.grs.g.j;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.common.StringUtils;
 import com.huawei.hms.framework.network.grs.GrsApp;
@@ -17,7 +16,7 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22715a = "a";
+    private static final String f9107a = "a";
     private static d b;
 
     public static d a(Context context) {
@@ -27,7 +26,7 @@ public class a {
                 if (dVar != null) {
                     return dVar;
                 }
-                String a2 = c.a(GrsApp.getInstance().getBrand(BridgeUtil.SPLIT_MARK) + "grs_sdk_server_config.json", context);
+                String a2 = c.a(GrsApp.getInstance().getBrand("/") + "grs_sdk_server_config.json", context);
                 if (TextUtils.isEmpty(a2)) {
                     return null;
                 }
@@ -58,7 +57,7 @@ public class a {
                     b.a(jSONObject.getString("grs_query_endpoint_2.0"));
                     b.a(jSONObject.getInt("grs_query_timeout"));
                 } catch (JSONException e) {
-                    Logger.w(f22715a, "getGrsServerBean catch JSONException: %s", StringUtils.anonymizeMessage(e.getMessage()));
+                    Logger.w(f9107a, "getGrsServerBean catch JSONException: %s", StringUtils.anonymizeMessage(e.getMessage()));
                 }
                 return b;
             } catch (Throwable th) {

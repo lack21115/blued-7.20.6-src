@@ -7,16 +7,13 @@ import android.view.MotionEvent;
 import com.alipay.sdk.sys.a;
 import com.alipay.sdk.util.n;
 import com.bytedance.applog.tracker.Tracker;
+import javax.xml.transform.OutputKeys;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/H5PayActivity.class */
 public class H5PayActivity extends Activity {
-
-    /* renamed from: a  reason: collision with root package name */
-    private com.alipay.sdk.widget.g f4575a;
+    private com.alipay.sdk.widget.g a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f4576c;
+    private String c;
     private String d;
     private String e;
     private boolean f;
@@ -31,7 +28,7 @@ public class H5PayActivity extends Activity {
     }
 
     public void a() {
-        Object obj = PayTask.f4584a;
+        Object obj = PayTask.a;
         synchronized (obj) {
             try {
                 obj.notify();
@@ -54,7 +51,7 @@ public class H5PayActivity extends Activity {
 
     @Override // android.app.Activity
     public void onBackPressed() {
-        com.alipay.sdk.widget.g gVar = this.f4575a;
+        com.alipay.sdk.widget.g gVar = this.a;
         if (gVar instanceof com.alipay.sdk.widget.h) {
             gVar.b();
             return;
@@ -71,14 +68,13 @@ public class H5PayActivity extends Activity {
         super.onConfigurationChanged(configuration);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle) {
         b();
         super.onCreate(bundle);
         try {
-            com.alipay.sdk.sys.a a2 = a.C0050a.a(getIntent());
-            if (a2 == null) {
+            com.alipay.sdk.sys.a a = a.C0010a.a(getIntent());
+            if (a == null) {
                 finish();
                 return;
             }
@@ -96,26 +92,26 @@ public class H5PayActivity extends Activity {
                     return;
                 }
                 this.d = extras.getString("cookie", null);
-                this.f4576c = extras.getString("method", null);
+                this.c = extras.getString("method", null);
                 this.e = extras.getString("title", null);
-                this.g = extras.getString("version", com.huawei.hms.ads.dynamicloader.b.f);
+                this.g = extras.getString(OutputKeys.VERSION, "v1");
                 this.f = extras.getBoolean("backisexit", false);
                 try {
-                    if (com.huawei.hms.ads.dynamicloader.b.g.equals(this.g)) {
-                        com.alipay.sdk.widget.j jVar = new com.alipay.sdk.widget.j(this, a2);
+                    if ("v2".equals(this.g)) {
+                        com.alipay.sdk.widget.j jVar = new com.alipay.sdk.widget.j(this, a);
                         setContentView(jVar);
-                        jVar.a(this.e, this.f4576c, this.f);
+                        jVar.a(this.e, this.c, this.f);
                         jVar.a(this.b);
-                        this.f4575a = jVar;
+                        this.a = jVar;
                         return;
                     }
-                    com.alipay.sdk.widget.h hVar = new com.alipay.sdk.widget.h(this, a2);
-                    this.f4575a = hVar;
+                    com.alipay.sdk.widget.h hVar = new com.alipay.sdk.widget.h(this, a);
+                    this.a = hVar;
                     setContentView(hVar);
-                    this.f4575a.a(this.b, this.d);
-                    this.f4575a.a(this.b);
+                    this.a.a(this.b, this.d);
+                    this.a.a(this.b);
                 } catch (Throwable th) {
-                    com.alipay.sdk.app.statistic.a.a(a2, com.alipay.sdk.app.statistic.c.b, "GetInstalledAppEx", th);
+                    com.alipay.sdk.app.statistic.a.a(a, com.alipay.sdk.app.statistic.c.b, "GetInstalledAppEx", th);
                     finish();
                 }
             } catch (Exception e) {
@@ -130,7 +126,7 @@ public class H5PayActivity extends Activity {
     @Override // android.app.Activity
     public void onDestroy() {
         super.onDestroy();
-        com.alipay.sdk.widget.g gVar = this.f4575a;
+        com.alipay.sdk.widget.g gVar = this.a;
         if (gVar != null) {
             gVar.a();
         }
@@ -142,7 +138,7 @@ public class H5PayActivity extends Activity {
             super.setRequestedOrientation(i);
         } catch (Throwable th) {
             try {
-                com.alipay.sdk.app.statistic.a.a(a.C0050a.a(getIntent()), com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.u, th);
+                com.alipay.sdk.app.statistic.a.a(a.C0010a.a(getIntent()), com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.u, th);
             } catch (Throwable th2) {
             }
         }

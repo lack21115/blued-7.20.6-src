@@ -105,7 +105,7 @@ public final class ManagedChannelServiceConfig {
         }
 
         public int hashCode() {
-            return Objects.hashCode(this.timeoutNanos, this.waitForReady, this.maxInboundMessageSize, this.maxOutboundMessageSize, this.retryPolicy, this.hedgingPolicy);
+            return Objects.hashCode(new Object[]{this.timeoutNanos, this.waitForReady, this.maxInboundMessageSize, this.maxOutboundMessageSize, this.retryPolicy, this.hedgingPolicy});
         }
 
         public String toString() {
@@ -229,7 +229,7 @@ public final class ManagedChannelServiceConfig {
     }
 
     public int hashCode() {
-        return Objects.hashCode(this.serviceMethodMap, this.serviceMap, this.retryThrottling, this.loadBalancingConfig);
+        return Objects.hashCode(new Object[]{this.serviceMethodMap, this.serviceMap, this.retryThrottling, this.loadBalancingConfig});
     }
 
     public String toString() {

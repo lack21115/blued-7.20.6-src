@@ -11,7 +11,7 @@ public final class t implements f {
     public static final float b = 8.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final float f7218c = 0.1f;
+    public static final float f4379c = 0.1f;
     public static final float d = 8.0f;
     public static final float e = 0.1f;
     public static final int f = -1;
@@ -32,10 +32,10 @@ public final class t implements f {
     private int m = -1;
 
     public t() {
-        ByteBuffer byteBuffer = f7181a;
+        ByteBuffer byteBuffer = f4342a;
         this.p = byteBuffer;
         this.q = byteBuffer.asShortBuffer();
-        this.r = f7181a;
+        this.r = f4342a;
         this.n = -1;
     }
 
@@ -153,7 +153,7 @@ public final class t implements f {
     @Override // com.anythink.expressad.exoplayer.b.f
     public final ByteBuffer f() {
         ByteBuffer byteBuffer = this.r;
-        this.r = f7181a;
+        this.r = f4342a;
         return byteBuffer;
     }
 
@@ -176,7 +176,7 @@ public final class t implements f {
                 sVar.b();
             }
         }
-        this.r = f7181a;
+        this.r = f4342a;
         this.s = 0L;
         this.t = 0L;
         this.u = false;
@@ -189,10 +189,10 @@ public final class t implements f {
         this.i = -1;
         this.j = -1;
         this.m = -1;
-        ByteBuffer byteBuffer = f7181a;
+        ByteBuffer byteBuffer = f4342a;
         this.p = byteBuffer;
         this.q = byteBuffer.asShortBuffer();
-        this.r = f7181a;
+        this.r = f4342a;
         this.n = -1;
         this.o = null;
         this.s = 0L;

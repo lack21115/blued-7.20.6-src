@@ -21,6 +21,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import com.bytedance.applog.tracker.Tracker;
+import com.bytedance.applog.util.WebViewJsUtil;
 import com.google.common.net.HttpHeaders;
 import com.web.library.groups.webviewsdk.c.c;
 import com.web.library.groups.webviewsdk.c.d;
@@ -36,11 +37,11 @@ import java.util.Map;
 public class WMWebView extends WebView {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f41154a;
+    private Context f27463a;
     private com.web.library.groups.webviewsdk.core.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ValueCallback<Uri> f41155c;
+    private ValueCallback<Uri> f27464c;
     private ValueCallback<Uri[]> d;
     private final int e;
     private String f;
@@ -100,10 +101,10 @@ public class WMWebView extends WebView {
 
         @Override // android.webkit.WebChromeClient
         public final boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> valueCallback, WebChromeClient.FileChooserParams fileChooserParams) {
-            if (WMWebView.this.f41154a instanceof Activity) {
+            if (WMWebView.this.f27463a instanceof Activity) {
                 WMWebView.this.d = valueCallback;
                 try {
-                    ((Activity) WMWebView.this.f41154a).startActivityForResult(fileChooserParams.createIntent(), 10011);
+                    ((Activity) WMWebView.this.f27463a).startActivityForResult(fileChooserParams.createIntent(), 10011);
                     return true;
                 } catch (ActivityNotFoundException e) {
                     WMWebView.this.d = null;
@@ -113,14 +114,13 @@ public class WMWebView extends WebView {
             return false;
         }
 
-        @Override // android.webkit.WebChromeClient
         public final void openFileChooser(ValueCallback<Uri> valueCallback, String str, String str2) {
-            if (WMWebView.this.f41154a instanceof Activity) {
-                WMWebView.this.f41155c = valueCallback;
+            if (WMWebView.this.f27463a instanceof Activity) {
+                WMWebView.this.f27464c = valueCallback;
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
                 intent.setType("image/*");
-                ((Activity) WMWebView.this.f41154a).startActivityForResult(Intent.createChooser(intent, "File Chooser"), 10011);
+                ((Activity) WMWebView.this.f27463a).startActivityForResult(Intent.createChooser(intent, "File Chooser"), 10011);
             }
         }
     }
@@ -195,7 +195,7 @@ public class WMWebView extends WebView {
                 return true;
             } else {
                 if (!str.startsWith("https://www.weimob.com")) {
-                    if (str.startsWith("tel:")) {
+                    if (str.startsWith(com.tencent.smtt.sdk.WebView.SCHEME_TEL)) {
                         if (WMWebView.this.b != null) {
                             WMWebView.this.b.callPhone(str);
                             return true;
@@ -253,7 +253,7 @@ public class WMWebView extends WebView {
 
     public WMWebView(Context context) {
         super(context);
-        this.f41154a = null;
+        this.f27463a = null;
         this.e = 10011;
         this.f = "";
         this.g = false;
@@ -263,7 +263,7 @@ public class WMWebView extends WebView {
 
     public WMWebView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f41154a = null;
+        this.f27463a = null;
         this.e = 10011;
         this.f = "";
         this.g = false;
@@ -273,7 +273,7 @@ public class WMWebView extends WebView {
 
     public WMWebView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f41154a = null;
+        this.f27463a = null;
         this.e = 10011;
         this.f = "";
         this.g = false;
@@ -305,7 +305,7 @@ public class WMWebView extends WebView {
     }
 
     private void a(Context context) {
-        this.f41154a = context;
+        this.f27463a = context;
         b();
         a(getSettings());
         WebViewSdk.getInstance().setOnAppTicketChangeListener(new WebViewSdk.a() { // from class: com.web.library.groups.webviewsdk.core.WMWebView.1
@@ -332,7 +332,7 @@ public class WMWebView extends WebView {
     }
 
     private void b() {
-        setWebViewClient(new b(this.f41154a));
+        setWebViewClient(new b(this.f27463a));
         WebSettings settings = getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setUseWideViewPort(true);
@@ -346,11 +346,11 @@ public class WMWebView extends WebView {
         settings.setDomStorageEnabled(true);
         settings.setDatabaseEnabled(true);
         settings.setDatabaseEnabled(true);
-        String path = this.f41154a.getDir(WebParameter.PATH_DATABASE, 0).getPath();
+        String path = this.f27463a.getDir(WebParameter.PATH_DATABASE, 0).getPath();
         settings.setGeolocationEnabled(true);
         settings.setGeolocationDatabasePath(path);
         settings.setAppCacheEnabled(true);
-        settings.setAppCachePath(this.f41154a.getApplicationContext().getDir("cache", 0).getPath());
+        settings.setAppCachePath(this.f27463a.getApplicationContext().getDir("cache", 0).getPath());
         settings.setAllowFileAccess(true);
         if (Build.VERSION.SDK_INT >= 21) {
             getSettings().setMixedContentMode(0);
@@ -390,7 +390,7 @@ public class WMWebView extends WebView {
                 String url = copyBackForwardList.getItemAtIndex(i) == null ? null : copyBackForwardList.getItemAtIndex(i).getUrl();
                 if (d.a(url) || (!url.startsWith("https://wx.tenpay.com/") && !url.startsWith("weixin://") && !url.contains("/checkPayStatus"))) {
                     break;
-                } else if (i == 0 && (context2 = this.f41154a) != null && (context2 instanceof Activity)) {
+                } else if (i == 0 && (context2 = this.f27463a) != null && (context2 instanceof Activity)) {
                     ((Activity) context2).finish();
                     return;
                 } else {
@@ -400,7 +400,7 @@ public class WMWebView extends WebView {
                 break;
             }
         }
-        if (i >= 0 || (context = this.f41154a) == null || !(context instanceof Activity)) {
+        if (i >= 0 || (context = this.f27463a) == null || !(context instanceof Activity)) {
             goBackOrForward((-currentIndex) + i);
         } else {
             ((Activity) context).finish();
@@ -421,7 +421,7 @@ public class WMWebView extends WebView {
                 str2 = str;
                 if (!str.startsWith("weixin://")) {
                     str2 = str;
-                    if (!str.startsWith("javascript:")) {
+                    if (!str.startsWith(WebViewJsUtil.JS_URL_PREFIX)) {
                         str2 = str;
                         if (!d.a(appTicket)) {
                             WebViewSdk.getInstance().setWebUrl(str);
@@ -445,17 +445,17 @@ public class WMWebView extends WebView {
                     this.d = null;
                     return;
                 }
-                this.f41155c.onReceiveValue(null);
-                this.f41155c = null;
+                this.f27464c.onReceiveValue(null);
+                this.f27464c = null;
             }
-        } else if (c.a(this.f41154a, this.h)) {
-            if (this.f41155c == null && this.d == null) {
+        } else if (c.a(this.f27463a, this.h)) {
+            if (this.f27464c == null && this.d == null) {
                 return;
             }
             Uri data = intent.getData();
             Uri uri = data;
             if (data != null) {
-                String a2 = com.web.library.groups.webviewsdk.c.b.a(this.f41154a, data);
+                String a2 = com.web.library.groups.webviewsdk.c.b.a(this.f27463a, data);
                 uri = data;
                 if (a2 != null) {
                     uri = Uri.fromFile(new File(a2));
@@ -469,8 +469,8 @@ public class WMWebView extends WebView {
                     this.d = null;
                     return;
                 }
-                this.f41155c.onReceiveValue(uri);
-                this.f41155c = null;
+                this.f27464c.onReceiveValue(uri);
+                this.f27464c = null;
             }
         }
     }

@@ -18,9 +18,8 @@ public interface IBluetoothSap extends IInterface {
         static final int TRANSACTION_getConnectionState_1 = 2;
         static final int TRANSACTION_getDevicesMatchingConnectionStates_3 = 4;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/bluetooth/IBluetoothSap$Stub$Proxy.class */
-        public static class Proxy implements IBluetoothSap {
+        private static class Proxy implements IBluetoothSap {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

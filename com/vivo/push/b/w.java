@@ -4,16 +4,16 @@ package com.vivo.push.b;
 public final class w extends com.vivo.push.o {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f41056a;
+    private int f27365a;
 
     public w() {
         super(2011);
-        this.f41056a = 0;
+        this.f27365a = 0;
     }
 
     @Override // com.vivo.push.o
     public final void c(com.vivo.push.a aVar) {
-        aVar.a("com.bbk.push.ikey.MODE_TYPE", this.f41056a);
+        aVar.a("com.bbk.push.ikey.MODE_TYPE", this.f27365a);
     }
 
     @Override // com.vivo.push.o
@@ -22,12 +22,12 @@ public final class w extends com.vivo.push.o {
     }
 
     public final int d() {
-        return this.f41056a;
+        return this.f27365a;
     }
 
     @Override // com.vivo.push.o
     public final void d(com.vivo.push.a aVar) {
-        this.f41056a = aVar.b("com.bbk.push.ikey.MODE_TYPE", 0);
+        this.f27365a = aVar.b("com.bbk.push.ikey.MODE_TYPE", 0);
     }
 
     @Override // com.vivo.push.o

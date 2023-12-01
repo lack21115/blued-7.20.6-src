@@ -5,6 +5,7 @@ import android.content.ComponentName;
 import android.content.IntentFilter;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.content.res.ThemeConfig;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.os.Build;
@@ -20,11 +21,9 @@ import android.util.Log;
 import android.util.Pair;
 import android.util.Slog;
 import android.util.TypedValue;
-import com.alipay.sdk.util.i;
 import com.android.internal.R;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.XmlUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.open.SocialConstants;
 import com.umeng.analytics.pro.d;
 import com.umeng.commonsdk.framework.UMModuleRegister;
@@ -556,7 +555,7 @@ public class PackageParser {
         }
 
         public String toString() {
-            return "Package{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.packageName + i.d;
+            return "Package{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.packageName + "}";
         }
     }
 
@@ -682,7 +681,7 @@ public class PackageParser {
         }
 
         public String toString() {
-            return "Permission{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.info.name + i.d;
+            return "Permission{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.info.name + "}";
         }
     }
 
@@ -707,7 +706,7 @@ public class PackageParser {
         }
 
         public String toString() {
-            return "PermissionGroup{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.info.name + i.d;
+            return "PermissionGroup{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.info.name + "}";
         }
     }
 
@@ -871,7 +870,7 @@ public class PackageParser {
         char charAt = charSequence2.charAt(0);
         if (str == null || charAt != ':') {
             String validateName = validateName(charSequence2, true);
-            if (validateName == null || "system".equals(charSequence2)) {
+            if (validateName == null || ThemeConfig.SYSTEM_DEFAULT.equals(charSequence2)) {
                 return charSequence2.intern();
             }
             strArr[0] = "Invalid " + str2 + " name " + charSequence2 + " in package " + str + ": " + validateName;
@@ -891,7 +890,7 @@ public class PackageParser {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static String buildProcessName(String str, String str2, CharSequence charSequence, int i, String[] strArr, String[] strArr2) {
-        if ((i & 8) == 0 || "system".equals(charSequence)) {
+        if ((i & 8) == 0 || ThemeConfig.SYSTEM_DEFAULT.equals(charSequence)) {
             if (strArr != null) {
                 int length = strArr.length;
                 while (true) {
@@ -954,18 +953,18 @@ public class PackageParser {
                     ArrayList<ZipEntry> arrayList = new ArrayList();
                     arrayList.add(findEntry);
                     if ((i & 1) == 0) {
-                        Iterator<ZipEntry> it = strictJarFile3.iterator();
+                        Iterator it = strictJarFile3.iterator();
                         while (it.hasNext()) {
-                            ZipEntry next = it.next();
-                            if (!next.isDirectory() && !next.getName().startsWith("META-INF/") && !next.getName().equals("AndroidManifest.xml")) {
-                                arrayList.add(next);
+                            ZipEntry zipEntry = (ZipEntry) it.next();
+                            if (!zipEntry.isDirectory() && !zipEntry.getName().startsWith("META-INF/") && !zipEntry.getName().equals("AndroidManifest.xml")) {
+                                arrayList.add(zipEntry);
                             }
                         }
                     }
-                    for (ZipEntry zipEntry : arrayList) {
-                        Certificate[][] loadCertificates = loadCertificates(strictJarFile3, zipEntry);
+                    for (ZipEntry zipEntry2 : arrayList) {
+                        Certificate[][] loadCertificates = loadCertificates(strictJarFile3, zipEntry2);
                         if (ArrayUtils.isEmpty(loadCertificates)) {
-                            throw new PackageParserException(PackageManager.INSTALL_PARSE_FAILED_NO_CERTIFICATES, "Package " + absolutePath + " has no certificates at entry " + zipEntry.getName());
+                            throw new PackageParserException(PackageManager.INSTALL_PARSE_FAILED_NO_CERTIFICATES, "Package " + absolutePath + " has no certificates at entry " + zipEntry2.getName());
                         }
                         Signature[] convertToSignatures = convertToSignatures(loadCertificates);
                         if (r6.mCertificates == null) {
@@ -981,7 +980,7 @@ public class PackageParser {
                                 }
                             }
                         } else if (!Signature.areExactMatch(r6.mSignatures, convertToSignatures)) {
-                            throw new PackageParserException(PackageManager.INSTALL_PARSE_FAILED_INCONSISTENT_CERTIFICATES, "Package " + absolutePath + " has mismatched certificates at entry " + zipEntry.getName());
+                            throw new PackageParserException(PackageManager.INSTALL_PARSE_FAILED_INCONSISTENT_CERTIFICATES, "Package " + absolutePath + " has mismatched certificates at entry " + zipEntry2.getName());
                         }
                     }
                     closeQuietly(strictJarFile3);
@@ -1994,7 +1993,7 @@ public class PackageParser {
     private boolean parseBaseApplication(Package r11, Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, int i, String[] strArr) throws XmlPullParserException, IOException {
         ApplicationInfo applicationInfo = r11.applicationInfo;
         String str = r11.applicationInfo.packageName;
-        applicationInfo.isThemeable = isPackageThemeable(str, resources.getStringArray(R.array.non_themeable_packages));
+        applicationInfo.isThemeable = isPackageThemeable(str, resources.getStringArray(17235988));
         TypedArray obtainAttributes = resources.obtainAttributes(attributeSet, R.styleable.AndroidManifestApplication);
         String nonConfigurationString = obtainAttributes.getNonConfigurationString(3, 0);
         if (nonConfigurationString != null) {
@@ -3218,7 +3217,7 @@ public class PackageParser {
                     while (entries.hasMoreElements()) {
                         String name = entries.nextElement().getName();
                         if (name.startsWith("assets/overlays/") && name.length() > 16) {
-                            hashSet.add(name.split(BridgeUtil.SPLIT_MARK)[2]);
+                            hashSet.add(name.split("/")[2]);
                         }
                     }
                     if (zipFile != null) {

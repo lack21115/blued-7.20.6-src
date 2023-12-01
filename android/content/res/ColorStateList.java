@@ -81,7 +81,7 @@ public class ColorStateList implements Parcelable {
             int i4 = i3;
             if (i4 >= states.length) {
                 ?? r0 = new int[states.length + 1];
-                System.arraycopy(states, 0, (Object) r0, 1, states.length);
+                System.arraycopy(states, 0, r0, 1, states.length);
                 int[] iArr = new int[1];
                 iArr[0] = i;
                 r0[0] = iArr;

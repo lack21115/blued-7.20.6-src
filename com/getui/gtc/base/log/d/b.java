@@ -8,11 +8,11 @@ import java.util.List;
 public final class b implements a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<ILogController> f21918a = new ArrayList();
+    private final List<ILogController> f8311a = new ArrayList();
 
     @Override // com.getui.gtc.base.log.d.a
     public final void a(int i, String str, String str2, Throwable th) {
-        for (ILogController iLogController : this.f21918a) {
+        for (ILogController iLogController : this.f8311a) {
             try {
                 if (iLogController.isLoggable(i, str)) {
                     iLogController.log(i, str, str2, th);
@@ -28,13 +28,13 @@ public final class b implements a {
         if (iLogController == null) {
             return;
         }
-        this.f21918a.add(iLogController);
+        this.f8311a.add(iLogController);
     }
 
     @Override // com.getui.gtc.base.log.d.a
     public final void b(ILogController iLogController) {
-        if (this.f21918a.contains(iLogController)) {
-            this.f21918a.remove(iLogController);
+        if (this.f8311a.contains(iLogController)) {
+            this.f8311a.remove(iLogController);
         }
     }
 }

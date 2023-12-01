@@ -6,7 +6,7 @@ import java.nio.ByteBuffer;
 /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/gl/c/l.class */
 public class l extends k {
     public byte[] h() {
-        GLES20.glBindFramebuffer(36160, this.f27721a);
+        GLES20.glBindFramebuffer(36160, this.f14033a);
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, this.b, 0);
         ByteBuffer allocate = ByteBuffer.allocate(this.i * 4 * this.j);
         GLES20.glReadPixels(0, 0, this.i, this.j, 6408, 5121, allocate);

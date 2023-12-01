@@ -13,6 +13,7 @@ import android.view.animation.AnimationSet;
 import android.view.animation.ScaleAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import androidx.constraintlayout.motion.widget.Key;
 import com.kwad.sdk.R;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/feed/a/d.class */
@@ -100,7 +101,7 @@ public final class d extends FrameLayout {
     }
 
     private Animator d(View view) {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, "rotation", 0.0f, -10.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, Key.ROTATION, 0.0f, -10.0f);
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(view, "translationX", 0.0f, -com.kwad.sdk.c.kwai.a.a(getContext(), 9.5f));
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(view, "translationY", 0.0f, -com.kwad.sdk.c.kwai.a.a(getContext(), 9.5f));
         AnimatorSet animatorSet = new AnimatorSet();
@@ -110,7 +111,7 @@ public final class d extends FrameLayout {
     }
 
     private Animator e(View view) {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, "rotation", -10.0f, 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, Key.ROTATION, -10.0f, 0.0f);
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(view, "translationX", -com.kwad.sdk.c.kwai.a.a(getContext(), 9.5f), 0.0f);
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(view, "translationY", -com.kwad.sdk.c.kwai.a.a(getContext(), 9.5f), 0.0f);
         AnimatorSet animatorSet = new AnimatorSet();

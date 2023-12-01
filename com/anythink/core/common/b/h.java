@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Debug;
 import android.os.Process;
 import android.text.TextUtils;
-import com.huawei.hms.framework.common.hianalytics.CrashHianalyticsData;
+import com.android.internal.content.NativeLibraryHelper;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.Thread;
@@ -25,19 +25,15 @@ import org.json.JSONObject;
 public class h implements Thread.UncaughtExceptionHandler {
     private static volatile h d;
     private Thread.UncaughtExceptionHandler b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f6526c;
+    private Context c;
     private SharedPreferences e;
-    private final String f = CrashHianalyticsData.CRASH_TYPE;
+    private final String f = "crash_type";
     private final String g = "crash_msg";
-    private final String h = e.f6488c;
-
-    /* renamed from: a  reason: collision with root package name */
-    String f6525a = "com.anythink";
+    private final String h = e.c;
+    String a = "com.anythink";
 
     private h(Context context) {
-        this.f6526c = context;
+        this.c = context;
         this.e = context.getSharedPreferences(g.t, 0);
     }
 
@@ -65,7 +61,7 @@ public class h implements Thread.UncaughtExceptionHandler {
             if (!TextUtils.isEmpty(obj)) {
                 try {
                     JSONObject jSONObject = new JSONObject(obj);
-                    com.anythink.core.common.j.c.a(jSONObject.optString(CrashHianalyticsData.CRASH_TYPE), jSONObject.optString("crash_msg"), jSONObject.optString(e.f6488c));
+                    com.anythink.core.common.j.c.a(jSONObject.optString("crash_type"), jSONObject.optString("crash_msg"), jSONObject.optString(e.c));
                 } catch (Exception e) {
                 }
             }
@@ -81,9 +77,9 @@ public class h implements Thread.UncaughtExceptionHandler {
             if (a(b)) {
                 String b2 = b(b);
                 JSONObject jSONObject = new JSONObject();
-                jSONObject.put(CrashHianalyticsData.CRASH_TYPE, URLEncoder.encode(b2));
+                jSONObject.put("crash_type", URLEncoder.encode(b2));
                 jSONObject.put("crash_msg", URLEncoder.encode(b() + "\n" + b));
-                jSONObject.put(e.f6488c, n.a().r());
+                jSONObject.put(e.c, n.a().r());
                 SharedPreferences.Editor edit = this.e.edit();
                 edit.putString(System.currentTimeMillis() + "_crash", jSONObject.toString());
                 edit.commit();
@@ -93,9 +89,9 @@ public class h implements Thread.UncaughtExceptionHandler {
     }
 
     private boolean a(String str) {
-        com.anythink.core.c.a b = com.anythink.core.c.b.a(this.f6526c).b(n.a().p());
+        com.anythink.core.c.a b = com.anythink.core.c.b.a(this.c).b(n.a().p());
         if (b == null) {
-            return str.contains(this.f6525a);
+            return str.contains(this.a);
         } else if (b.x() == 0) {
             return false;
         } else {
@@ -130,8 +126,8 @@ public class h implements Thread.UncaughtExceptionHandler {
             HashMap hashMap = new HashMap(4);
             int i = 0;
             for (Map.Entry<Thread, StackTraceElement[]> entry : allStackTraces.entrySet()) {
-                if (entry.getKey().getName().startsWith("anythink")) {
-                    String str = key.getName() + "-" + key.getState();
+                if (entry.getKey().getName().startsWith(g.n)) {
+                    String str = key.getName() + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + key.getState();
                     if (hashMap.containsKey(str)) {
                         hashMap.put(str, Integer.valueOf(((Integer) hashMap.get(str)).intValue() + 1));
                     } else {
@@ -143,7 +139,7 @@ public class h implements Thread.UncaughtExceptionHandler {
             JSONObject jSONObject = new JSONObject(hashMap);
             jSONObject.put("anythink_thread_count", i);
             try {
-                ActivityManager activityManager = (ActivityManager) this.f6526c.getSystemService("activity");
+                ActivityManager activityManager = (ActivityManager) this.c.getSystemService("activity");
                 Debug.MemoryInfo[] processMemoryInfo = activityManager.getProcessMemoryInfo(new int[]{Process.myPid()});
                 if (processMemoryInfo.length > 0) {
                     int totalPss = processMemoryInfo[0].getTotalPss();
@@ -267,7 +263,7 @@ public class h implements Thread.UncaughtExceptionHandler {
             if (!TextUtils.isEmpty(obj)) {
                 try {
                     JSONObject jSONObject = new JSONObject(obj);
-                    com.anythink.core.common.j.c.a(jSONObject.optString(CrashHianalyticsData.CRASH_TYPE), jSONObject.optString("crash_msg"), jSONObject.optString(e.f6488c));
+                    com.anythink.core.common.j.c.a(jSONObject.optString("crash_type"), jSONObject.optString("crash_msg"), jSONObject.optString(e.c));
                 } catch (Exception e) {
                 }
             }
@@ -278,7 +274,7 @@ public class h implements Thread.UncaughtExceptionHandler {
     }
 
     public final void a() {
-        com.anythink.core.c.a b = com.anythink.core.c.b.a(this.f6526c).b(n.a().p());
+        com.anythink.core.c.a b = com.anythink.core.c.b.a(this.c).b(n.a().p());
         if (b == null || b.x() != 0) {
             try {
                 com.anythink.core.common.k.b.a.a().a(new Runnable() { // from class: com.anythink.core.common.b.h.1
@@ -306,9 +302,9 @@ public class h implements Thread.UncaughtExceptionHandler {
             if (a(b)) {
                 String b2 = b(b);
                 JSONObject jSONObject = new JSONObject();
-                jSONObject.put(CrashHianalyticsData.CRASH_TYPE, URLEncoder.encode(b2));
+                jSONObject.put("crash_type", URLEncoder.encode(b2));
                 jSONObject.put("crash_msg", URLEncoder.encode(b() + "\n" + b));
-                jSONObject.put(e.f6488c, n.a().r());
+                jSONObject.put(e.c, n.a().r());
                 SharedPreferences.Editor edit = this.e.edit();
                 edit.putString(System.currentTimeMillis() + "_crash", jSONObject.toString());
                 edit.commit();

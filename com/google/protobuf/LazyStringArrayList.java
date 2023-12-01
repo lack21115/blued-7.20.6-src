@@ -197,7 +197,7 @@ public class LazyStringArrayList extends AbstractProtobufList<String> implements
         return addAll;
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean addAll(Collection<? extends String> collection) {
         return addAll(size(), collection);
     }
@@ -228,14 +228,14 @@ public class LazyStringArrayList extends AbstractProtobufList<String> implements
         return new ByteStringListView(this);
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
         ensureIsMutable();
         this.list.clear();
         this.modCount++;
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
     public /* bridge */ /* synthetic */ boolean equals(Object obj) {
         return super.equals(obj);
     }
@@ -298,7 +298,7 @@ public class LazyStringArrayList extends AbstractProtobufList<String> implements
         return isModifiable() ? new UnmodifiableLazyStringList(this) : this;
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
     public /* bridge */ /* synthetic */ int hashCode() {
         return super.hashCode();
     }
@@ -339,17 +339,17 @@ public class LazyStringArrayList extends AbstractProtobufList<String> implements
         return asString(remove);
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public /* bridge */ /* synthetic */ boolean remove(Object obj) {
         return super.remove(obj);
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public /* bridge */ /* synthetic */ boolean removeAll(Collection collection) {
         return super.removeAll(collection);
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public /* bridge */ /* synthetic */ boolean retainAll(Collection collection) {
         return super.retainAll(collection);
     }

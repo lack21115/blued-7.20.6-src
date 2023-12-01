@@ -97,7 +97,7 @@ public class BaseImageLoadingListener implements PreProcessImageLoadingListener 
     @Override // com.blued.android.core.imagecache.ImageLoadingListener
     public void a(String str, RecyclingImageView recyclingImageView, LoadOptions loadOptions, FailReason failReason) {
         String str2 = FailReason.a(AppInfo.d(), failReason, true) + ", uri:" + str;
-        if (ImageLoaderUtils.f9582a) {
+        if (ImageLoaderUtils.a) {
             Log.e("BaseImageLoading", str2);
         }
         if (recyclingImageView != null) {

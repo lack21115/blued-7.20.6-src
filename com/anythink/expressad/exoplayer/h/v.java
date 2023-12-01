@@ -12,11 +12,11 @@ import java.util.Collections;
 public final class v extends f<Integer> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7510a = -1;
+    private static final int f4671a = -1;
     private final s[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<s> f7511c;
+    private final ArrayList<s> f4672c;
     private final h d;
     private com.anythink.expressad.exoplayer.ae e;
     private Object f;
@@ -27,20 +27,20 @@ public final class v extends f<Integer> {
     public static final class a extends IOException {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f7512a = 0;
+        public static final int f4673a = 0;
         public final int b = 0;
 
         @Retention(RetentionPolicy.SOURCE)
         /* renamed from: com.anythink.expressad.exoplayer.h.v$a$a  reason: collision with other inner class name */
         /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/h/v$a$a.class */
-        public @interface InterfaceC0134a {
+        public @interface InterfaceC0063a {
         }
     }
 
     private v(h hVar, s... sVarArr) {
         this.b = sVarArr;
         this.d = hVar;
-        this.f7511c = new ArrayList<>(Arrays.asList(sVarArr));
+        this.f4672c = new ArrayList<>(Arrays.asList(sVarArr));
         this.g = -1;
     }
 
@@ -74,12 +74,12 @@ public final class v extends f<Integer> {
         if (this.h != null) {
             return;
         }
-        this.f7511c.remove(sVar);
+        this.f4672c.remove(sVar);
         if (sVar == this.b[0]) {
             this.e = aeVar;
             this.f = obj;
         }
-        if (this.f7511c.isEmpty()) {
+        if (this.f4672c.isEmpty()) {
             a(this.e, this.f);
         }
     }
@@ -106,8 +106,8 @@ public final class v extends f<Integer> {
         this.f = null;
         this.g = -1;
         this.h = null;
-        this.f7511c.clear();
-        Collections.addAll(this.f7511c, this.b);
+        this.f4672c.clear();
+        Collections.addAll(this.f4672c, this.b);
     }
 
     @Override // com.anythink.expressad.exoplayer.h.s
@@ -120,7 +120,7 @@ public final class v extends f<Integer> {
             if (i2 >= sVarArr.length) {
                 return;
             }
-            sVarArr[i2].a(uVar.f7508a[i2]);
+            sVarArr[i2].a(uVar.f4669a[i2]);
             i = i2 + 1;
         }
     }
@@ -153,12 +153,12 @@ public final class v extends f<Integer> {
             this.h = aVar;
         }
         if (this.h == null) {
-            this.f7511c.remove(sVar);
+            this.f4672c.remove(sVar);
             if (sVar == this.b[0]) {
                 this.e = aeVar;
                 this.f = obj;
             }
-            if (this.f7511c.isEmpty()) {
+            if (this.f4672c.isEmpty()) {
                 a(this.e, this.f);
             }
         }

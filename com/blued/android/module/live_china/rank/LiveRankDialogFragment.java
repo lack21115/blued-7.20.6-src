@@ -1,6 +1,5 @@
 package com.blued.android.module.live_china.rank;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,6 +17,7 @@ import android.widget.RelativeLayout;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -49,14 +49,10 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/rank/LiveRankDialogFragment.class */
 public final class LiveRankDialogFragment extends BaseDialogFragment implements OnClickCallback {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14067a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private int b;
     private MyPagerAdapter d;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Lazy f14068c = LazyKt.a(new Function0<DialogLiveRankAllBinding>() { // from class: com.blued.android.module.live_china.rank.LiveRankDialogFragment$vb$2
+    private final Lazy c = LazyKt.a(new Function0<DialogLiveRankAllBinding>() { // from class: com.blued.android.module.live_china.rank.LiveRankDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -98,34 +94,29 @@ public final class LiveRankDialogFragment extends BaseDialogFragment implements 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/rank/LiveRankDialogFragment$MyPagerAdapter.class */
     public final class MyPagerAdapter extends PagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveRankDialogFragment f14069a;
+        final /* synthetic */ LiveRankDialogFragment a;
 
         public MyPagerAdapter(LiveRankDialogFragment this$0) {
             Intrinsics.e(this$0, "this$0");
-            this.f14069a = this$0;
+            this.a = this$0;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
             container.removeView((View) object);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f14069a.e;
+            return this.a.e;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup container, int i) {
             Intrinsics.e(container, "container");
-            if (((View) this.f14069a.f.get(String.valueOf(i))) == null) {
-                this.f14069a.f.put(String.valueOf(i), i == 2 ? this.f14069a.b(container, i) : this.f14069a.a(container, i));
+            if (((View) this.a.f.get(String.valueOf(i))) == null) {
+                this.a.f.put(String.valueOf(i), i == 2 ? this.a.b(container, i) : this.a.a(container, i));
             }
-            View view = (View) this.f14069a.f.get(String.valueOf(i));
+            View view = (View) this.a.f.get(String.valueOf(i));
             if ((view == null ? null : view.getParent()) != null) {
                 ViewParent parent = view.getParent();
                 if (parent == null) {
@@ -138,7 +129,6 @@ public final class LiveRankDialogFragment extends BaseDialogFragment implements 
             return view;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object object) {
             Intrinsics.e(view, "view");
             Intrinsics.e(object, "object");
@@ -191,33 +181,31 @@ public final class LiveRankDialogFragment extends BaseDialogFragment implements 
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(position, "position");
         HashMap<String, LiveProtos.Status> hashMap = this$0.i;
-        F f = position.first;
-        if (f == 0) {
+        Object obj = position.first;
+        if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
         }
-        String str = (String) f;
-        S s = position.second;
-        if (s == 0) {
+        String str = (String) obj;
+        Object obj2 = position.second;
+        if (obj2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.das.live.LiveProtos.Status");
         }
-        hashMap.put(str, (LiveProtos.Status) s);
+        hashMap.put(str, (LiveProtos.Status) obj2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogLiveRankAllBinding d() {
-        return (DialogLiveRankAllBinding) this.f14068c.getValue();
+        return (DialogLiveRankAllBinding) this.c.getValue();
     }
 
     private final void e() {
-        LiveRankDialogFragment liveRankDialogFragment = this;
-        LiveEventBus.get(LiveEventBusUtil.ab, Pair.class).observe(liveRankDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.rank.-$$Lambda$LiveRankDialogFragment$wXNLc0uvl5UBvHHx_2SjfrPHIFg
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get(LiveEventBusUtil.ab, Pair.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.rank.-$$Lambda$LiveRankDialogFragment$wXNLc0uvl5UBvHHx_2SjfrPHIFg
             public final void onChanged(Object obj) {
                 LiveRankDialogFragment.a(LiveRankDialogFragment.this, (Pair) obj);
             }
         });
-        LiveEventBus.get(LiveEventBusUtil.ac, Pair.class).observe(liveRankDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.rank.-$$Lambda$LiveRankDialogFragment$zrJwc1QlztsgygkMFNhmBGA736A
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusUtil.ac, Pair.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.rank.-$$Lambda$LiveRankDialogFragment$zrJwc1QlztsgygkMFNhmBGA736A
             public final void onChanged(Object obj) {
                 LiveRankDialogFragment.b(LiveRankDialogFragment.this, (Pair) obj);
             }
@@ -228,9 +216,9 @@ public final class LiveRankDialogFragment extends BaseDialogFragment implements 
         d().h.getLayoutParams().height = DensityUtils.a(getActivity());
         d().e.setVisibility(0);
         if (this.b == 1) {
-            StatusBarHelper.a((Activity) getActivity(), false);
+            StatusBarHelper.a(getActivity(), false);
         }
-        d().g.f12401a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.rank.-$$Lambda$LiveRankDialogFragment$I3u4gC24DkEjUpEspwbMRCpXNUA
+        d().g.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.rank.-$$Lambda$LiveRankDialogFragment$I3u4gC24DkEjUpEspwbMRCpXNUA
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveRankDialogFragment.a(LiveRankDialogFragment.this, view);
@@ -241,8 +229,8 @@ public final class LiveRankDialogFragment extends BaseDialogFragment implements 
     }
 
     private final void g() {
-        d().f11814c.a(new String[]{"主播榜", "用户榜", "公会榜"});
-        d().f11814c.setClickListener(new Function1<Integer, Unit>() { // from class: com.blued.android.module.live_china.rank.LiveRankDialogFragment$initPager$1
+        d().c.a(new String[]{"主播榜", "用户榜", "公会榜"});
+        d().c.setClickListener(new Function1<Integer, Unit>() { // from class: com.blued.android.module.live_china.rank.LiveRankDialogFragment$initPager$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -257,7 +245,7 @@ public final class LiveRankDialogFragment extends BaseDialogFragment implements 
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(Integer num) {
                 a(num.intValue());
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         this.d = new MyPagerAdapter(this);
@@ -265,15 +253,12 @@ public final class LiveRankDialogFragment extends BaseDialogFragment implements 
         ImageLoader.a((IRequestHost) null, "https://web.bldimg.com/image-manager/1689660130_95972.webp").g().a(d().b);
         EventTrackLive.a(LiveProtos.Event.LIVE_SHOW_PAGE_LIVER_PAGE_SHOW, this.h.get(0));
         d().d.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.rank.LiveRankDialogFragment$initPager$2
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 DialogLiveRankAllBinding d;
                 DialogLiveRankAllBinding d2;
@@ -293,7 +278,7 @@ public final class LiveRankDialogFragment extends BaseDialogFragment implements 
                 d = LiveRankDialogFragment.this.d();
                 d.d.setCurrentItem(i);
                 d2 = LiveRankDialogFragment.this.d();
-                d2.f11814c.setToolBtnSelect(i);
+                d2.c.setToolBtnSelect(i);
                 if (i == 0) {
                     d3 = LiveRankDialogFragment.this.d();
                     RelativeLayout relativeLayout = d3.f;
@@ -353,7 +338,6 @@ public final class LiveRankDialogFragment extends BaseDialogFragment implements 
     public void onClick(View view, int i, BaseViewHolder baseViewHolder) {
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         WindowManager windowManager;
         Display defaultDisplay;
@@ -387,16 +371,15 @@ public final class LiveRankDialogFragment extends BaseDialogFragment implements 
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDismiss(DialogInterface dialog) {
         Intrinsics.e(dialog, "dialog");
         if (this.b == 1) {
-            StatusBarHelper.a((Activity) getActivity(), true);
+            StatusBarHelper.a(getActivity(), true);
         }
         super.onDismiss(dialog);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

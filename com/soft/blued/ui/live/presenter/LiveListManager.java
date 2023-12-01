@@ -12,11 +12,11 @@ import com.soft.blued.ui.live.contract.LiveListContract;
 public class LiveListManager implements LiveListContract.ServicePresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    private static LiveListManager f31282a;
+    private static LiveListManager f17592a;
     private LiveListPresenterHolder b = new LiveListPresenterHolder();
 
     /* renamed from: c  reason: collision with root package name */
-    private LiveListContract.IPresenter f31283c;
+    private LiveListContract.IPresenter f17593c;
 
     private LiveListManager() {
     }
@@ -24,10 +24,10 @@ public class LiveListManager implements LiveListContract.ServicePresenter {
     public static LiveListManager a() {
         synchronized (LiveListManager.class) {
             try {
-                if (f31282a == null) {
+                if (f17592a == null) {
                     synchronized (LiveListManager.class) {
-                        if (f31282a == null) {
-                            f31282a = new LiveListManager();
+                        if (f17592a == null) {
+                            f17592a = new LiveListManager();
                         }
                     }
                 }
@@ -35,14 +35,14 @@ public class LiveListManager implements LiveListContract.ServicePresenter {
                 throw th;
             }
         }
-        return f31282a;
+        return f17592a;
     }
 
     public BluedLiveState a(String str, int i) {
         LiveListPresenterHolder liveListPresenterHolder = this.b;
         if (liveListPresenterHolder != null) {
             LiveListContract.IPresenter a2 = liveListPresenterHolder.a(str, i);
-            this.f31283c = a2;
+            this.f17593c = a2;
             if (a2 != null) {
                 return a2.a();
             }
@@ -75,7 +75,7 @@ public class LiveListManager implements LiveListContract.ServicePresenter {
         LiveListPresenterHolder liveListPresenterHolder = this.b;
         if (liveListPresenterHolder != null) {
             LiveListContract.IPresenter a2 = liveListPresenterHolder.a(str, i);
-            this.f31283c = a2;
+            this.f17593c = a2;
             if (a2 != null) {
                 a2.a(iView);
             }
@@ -86,7 +86,7 @@ public class LiveListManager implements LiveListContract.ServicePresenter {
         LiveListPresenterHolder liveListPresenterHolder = this.b;
         if (liveListPresenterHolder != null) {
             LiveListContract.IPresenter a2 = liveListPresenterHolder.a(str, i);
-            this.f31283c = a2;
+            this.f17593c = a2;
             if (a2 != null) {
                 a2.a(z);
             }
@@ -97,7 +97,7 @@ public class LiveListManager implements LiveListContract.ServicePresenter {
         LiveListPresenterHolder liveListPresenterHolder = this.b;
         if (liveListPresenterHolder != null) {
             LiveListContract.IPresenter a2 = liveListPresenterHolder.a(str, i);
-            this.f31283c = a2;
+            this.f17593c = a2;
             if (a2 != null) {
                 a2.b();
             }
@@ -108,7 +108,7 @@ public class LiveListManager implements LiveListContract.ServicePresenter {
         LiveListPresenterHolder liveListPresenterHolder = this.b;
         if (liveListPresenterHolder != null) {
             LiveListContract.IPresenter a2 = liveListPresenterHolder.a(str, i);
-            this.f31283c = a2;
+            this.f17593c = a2;
             if (a2 != null) {
                 return a2.d();
             }
@@ -128,7 +128,7 @@ public class LiveListManager implements LiveListContract.ServicePresenter {
         LiveListPresenterHolder liveListPresenterHolder = this.b;
         if (liveListPresenterHolder != null) {
             LiveListContract.IPresenter a2 = liveListPresenterHolder.a(str, i);
-            this.f31283c = a2;
+            this.f17593c = a2;
             if (a2 != null) {
                 a2.f();
             }

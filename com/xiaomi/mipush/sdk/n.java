@@ -10,10 +10,10 @@ import com.xiaomi.push.bi;
 public class n {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f41231a = -1;
+    private static int f27540a = -1;
 
     public static ag a(Context context) {
-        return m11491a(context) ? ag.HUAWEI : c(context) ? ag.OPPO : d(context) ? ag.VIVO : ag.OTHER;
+        return m8441a(context) ? ag.HUAWEI : c(context) ? ag.OPPO : d(context) ? ag.VIVO : ag.OTHER;
     }
 
     private static boolean a() {
@@ -30,7 +30,7 @@ public class n {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m11491a(Context context) {
+    public static boolean m8441a(Context context) {
         try {
             if (context.getPackageManager().getServiceInfo(new ComponentName("com.huawei.hwid", "com.huawei.hms.core.service.HMSCoreService"), 128) != null) {
                 return a();
@@ -43,25 +43,25 @@ public class n {
 
     public static boolean b(Context context) {
         Object a2 = bi.a(bi.a("com.google.android.gms.common.GoogleApiAvailability", "getInstance", new Object[0]), "isGooglePlayServicesAvailable", context);
-        Object a3 = bi.a("com.google.android.gms.common.ConnectionResult", com.alipay.security.mobile.module.http.model.c.g);
+        Object a3 = bi.a("com.google.android.gms.common.ConnectionResult", "SUCCESS");
         if (a3 == null || !(a3 instanceof Integer)) {
             com.xiaomi.channel.commonutils.logger.b.c("google service is not avaliable");
-            f41231a = 0;
+            f27540a = 0;
             return false;
         }
         int intValue = ((Integer) Integer.class.cast(a3)).intValue();
         if (a2 != null) {
             if (a2 instanceof Integer) {
-                f41231a = ((Integer) Integer.class.cast(a2)).intValue() == intValue ? 1 : 0;
+                f27540a = ((Integer) Integer.class.cast(a2)).intValue() == intValue ? 1 : 0;
             } else {
-                f41231a = 0;
+                f27540a = 0;
                 com.xiaomi.channel.commonutils.logger.b.c("google service is not avaliable");
             }
         }
         StringBuilder sb = new StringBuilder("is google service can be used");
-        sb.append(f41231a > 0);
+        sb.append(f27540a > 0);
         com.xiaomi.channel.commonutils.logger.b.c(sb.toString());
-        return f41231a > 0;
+        return f27540a > 0;
     }
 
     public static boolean c(Context context) {

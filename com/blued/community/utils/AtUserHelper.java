@@ -28,18 +28,18 @@ import java.util.regex.Pattern;
 public class AtUserHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f20449a = Pattern.compile("[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+");
+    private static final Pattern f6843a = Pattern.compile("[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+");
     private static final Pattern b = Pattern.compile("@([^\\s`~\\!@#\\$%\\^&\\*\\(\\)\\+=\\|'\\:;'\\,\\[\\]\\.\\<\\>/\\?！@#￥%……（）——\\{\\}【】‘；：”“’。，、？]+)");
 
     /* loaded from: source-7206380-dex2jar.jar:com/blued/community/utils/AtUserHelper$AtUserForegroundColorSpan.class */
     public static class AtUserForegroundColorSpan extends ForegroundColorSpan {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f20455a;
+        public String f6849a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f20456c;
+        public String f6850c;
 
         public AtUserForegroundColorSpan(int i) {
             super(i);
@@ -59,7 +59,7 @@ public class AtUserHelper {
         if (editable instanceof SpannableStringBuilder) {
             SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) editable;
             for (AtUserForegroundColorSpan atUserForegroundColorSpan : (AtUserForegroundColorSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), AtUserForegroundColorSpan.class)) {
-                editable.replace(spannableStringBuilder.getSpanStart(atUserForegroundColorSpan), spannableStringBuilder.getSpanEnd(atUserForegroundColorSpan), atUserForegroundColorSpan.f20456c);
+                editable.replace(spannableStringBuilder.getSpanStart(atUserForegroundColorSpan), spannableStringBuilder.getSpanEnd(atUserForegroundColorSpan), atUserForegroundColorSpan.f6850c);
             }
         }
         return editable;
@@ -96,9 +96,9 @@ public class AtUserHelper {
                     int end = i3 + ((matcher.end() - matcher.start()) - str.length());
                     if (i != 0) {
                         AtUserForegroundColorSpan atUserForegroundColorSpan = new AtUserForegroundColorSpan(i);
-                        atUserForegroundColorSpan.f20455a = group;
+                        atUserForegroundColorSpan.f6849a = group;
                         atUserForegroundColorSpan.b = group2;
-                        atUserForegroundColorSpan.f20456c = matcher.group();
+                        atUserForegroundColorSpan.f6850c = matcher.group();
                         spannableStringBuilder.setSpan(atUserForegroundColorSpan, start, length, 33);
                     }
                     i4 = end;
@@ -107,10 +107,10 @@ public class AtUserHelper {
                             @Override // android.text.style.ClickableSpan
                             public void onClick(View view) {
                                 Selection.removeSelection((Spannable) ((TextView) view).getText());
-                                String str2 = String.this;
+                                String str2 = group2;
                                 String str3 = str2;
                                 if (!TextUtils.isEmpty(str2)) {
-                                    str3 = EncryptTool.a(String.this);
+                                    str3 = EncryptTool.a(group2);
                                 }
                                 atUserLinkOnClickListener.onClick(str3, group);
                             }
@@ -263,7 +263,7 @@ public class AtUserHelper {
         if (TextUtils.isEmpty(charSequence)) {
             return charSequence;
         }
-        Matcher matcher = f20449a.matcher(charSequence);
+        Matcher matcher = f6843a.matcher(charSequence);
         ArrayList arrayList2 = null;
         while (true) {
             arrayList = arrayList2;

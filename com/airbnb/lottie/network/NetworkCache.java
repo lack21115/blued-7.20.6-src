@@ -13,23 +13,21 @@ import java.io.InputStream;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/network/NetworkCache.class */
 class NetworkCache {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f4395a;
+    private final Context a;
     private final String b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public NetworkCache(Context context, String str) {
-        this.f4395a = context.getApplicationContext();
+        this.a = context.getApplicationContext();
         this.b = str;
     }
 
     private File a(String str) throws FileNotFoundException {
-        File file = new File(this.f4395a.getCacheDir(), a(str, FileExtension.JSON, false));
+        File file = new File(this.a.getCacheDir(), a(str, FileExtension.JSON, false));
         if (file.exists()) {
             return file;
         }
-        File file2 = new File(this.f4395a.getCacheDir(), a(str, FileExtension.ZIP, false));
+        File file2 = new File(this.a.getCacheDir(), a(str, FileExtension.ZIP, false));
         if (file2.exists()) {
             return file2;
         }
@@ -40,20 +38,20 @@ class NetworkCache {
         StringBuilder sb = new StringBuilder();
         sb.append("lottie_cache_");
         sb.append(str.replaceAll("\\W+", ""));
-        sb.append(z ? fileExtension.a() : fileExtension.f4394c);
+        sb.append(z ? fileExtension.a() : fileExtension.c);
         return sb.toString();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Pair<FileExtension, InputStream> a() {
         try {
-            File a2 = a(this.b);
-            if (a2 == null) {
+            File a = a(this.b);
+            if (a == null) {
                 return null;
             }
-            FileInputStream fileInputStream = new FileInputStream(a2);
-            FileExtension fileExtension = a2.getAbsolutePath().endsWith(".zip") ? FileExtension.ZIP : FileExtension.JSON;
-            Logger.a("Cache hit for " + this.b + " at " + a2.getAbsolutePath());
+            FileInputStream fileInputStream = new FileInputStream(a);
+            FileExtension fileExtension = a.getAbsolutePath().endsWith(".zip") ? FileExtension.ZIP : FileExtension.JSON;
+            Logger.a("Cache hit for " + this.b + " at " + a.getAbsolutePath());
             return new Pair<>(fileExtension, fileInputStream);
         } catch (FileNotFoundException e) {
             return null;
@@ -62,7 +60,7 @@ class NetworkCache {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public File a(InputStream inputStream, FileExtension fileExtension) throws IOException {
-        File file = new File(this.f4395a.getCacheDir(), a(this.b, fileExtension, true));
+        File file = new File(this.a.getCacheDir(), a(this.b, fileExtension, true));
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             byte[] bArr = new byte[1024];
@@ -82,7 +80,7 @@ class NetworkCache {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(FileExtension fileExtension) {
-        File file = new File(this.f4395a.getCacheDir(), a(this.b, fileExtension, true));
+        File file = new File(this.a.getCacheDir(), a(this.b, fileExtension, true));
         File file2 = new File(file.getAbsolutePath().replace(a.e, ""));
         boolean renameTo = file.renameTo(file2);
         Logger.a("Copying temp file to real file (" + file2 + ")");

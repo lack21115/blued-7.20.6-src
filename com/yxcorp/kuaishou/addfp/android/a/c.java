@@ -1,6 +1,7 @@
 package com.yxcorp.kuaishou.addfp.android.a;
 
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -13,15 +14,15 @@ public class c {
     private static boolean d = true;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41851a;
+    private String f28160a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ReentrantLock f41852c;
+    private ReentrantLock f28161c;
 
     private c() {
         this.b = "";
-        this.f41852c = new ReentrantLock();
+        this.f28161c = new ReentrantLock();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:31:0x0074 A[Catch: all -> 0x00f1, TRY_ENTER, TryCatch #3 {all -> 0x00f1, blocks: (B:2:0x0000, B:15:0x002c, B:19:0x003c, B:21:0x0044, B:23:0x0051, B:25:0x005e, B:31:0x0074, B:33:0x0084, B:47:0x00c1, B:49:0x00cc, B:53:0x00d7, B:55:0x00e2, B:7:0x000f), top: B:69:0x0000 }] */
@@ -43,7 +44,7 @@ public class c {
     }
 
     private static String a(String str) {
-        return TextUtils.isEmpty(str) ? "KWE_N" : str.replace("=", "").replace("&", "");
+        return TextUtils.isEmpty(str) ? "KWE_N" : str.replace("=", "").replace(ContainerUtils.FIELD_DELIMITER, "");
     }
 
     public static void a(JSONObject jSONObject) {
@@ -120,12 +121,12 @@ public class c {
     }
 
     public static c c() {
-        return b.f41850a;
+        return b.f28159a;
     }
 
     public String a() {
         try {
-            return !TextUtils.isEmpty(this.f41851a) ? this.f41851a : "KWE_N";
+            return !TextUtils.isEmpty(this.f28160a) ? this.f28160a : "KWE_N";
         } catch (Throwable th) {
             th.printStackTrace();
             return "KWE_N";
@@ -150,6 +151,6 @@ public class c {
     }
 
     public void b(String str) {
-        this.f41851a = str;
+        this.f28160a = str;
     }
 }

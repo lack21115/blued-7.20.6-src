@@ -4,18 +4,18 @@ package com.tencent.liteav.txcvodplayer.c;
 public final /* synthetic */ class c implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f36547a;
+    private final a f22856a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f36548c;
+    private final String f22857c;
     private final String d;
     private final String e;
 
     private c(a aVar, int i, String str, String str2, String str3) {
-        this.f36547a = aVar;
+        this.f22856a = aVar;
         this.b = i;
-        this.f36548c = str;
+        this.f22857c = str;
         this.d = str2;
         this.e = str3;
     }
@@ -26,6 +26,6 @@ public final /* synthetic */ class c implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        a.a(this.f36547a, this.b, this.f36548c, this.d, this.e);
+        a.a(this.f22856a, this.b, this.f22857c, this.d, this.e);
     }
 }

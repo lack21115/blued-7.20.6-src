@@ -10,12 +10,12 @@ import java.util.Iterator;
 public class g extends Reader {
 
     /* renamed from: a  reason: collision with root package name */
-    final g f28209a;
+    final g f14520a;
     private InputStream b;
 
     public g(InputStream inputStream) {
         super(inputStream);
-        this.f28209a = this;
+        this.f14520a = this;
         this.b = inputStream;
     }
 

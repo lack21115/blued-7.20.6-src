@@ -1,5 +1,7 @@
 package android.util;
 
+import android.R;
+
 /* loaded from: source-9557208-dex2jar.jar:android/util/StateSet.class */
 public class StateSet {
     public static final int[] WILD_CARD = new int[0];
@@ -15,19 +17,19 @@ public class StateSet {
                 return sb.toString();
             }
             switch (iArr[i2]) {
-                case 16842908:
+                case R.attr.state_focused /* 16842908 */:
                     sb.append("F ");
                     break;
-                case 16842909:
+                case R.attr.state_window_focused /* 16842909 */:
                     sb.append("W ");
                     break;
-                case 16842910:
+                case R.attr.state_enabled /* 16842910 */:
                     sb.append("E ");
                     break;
-                case 16842913:
+                case R.attr.state_selected /* 16842913 */:
                     sb.append("S ");
                     break;
-                case 16842919:
+                case R.attr.state_pressed /* 16842919 */:
                     sb.append("P ");
                     break;
             }

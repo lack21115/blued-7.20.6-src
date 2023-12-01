@@ -14,13 +14,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/HorizonScrollTextView.class */
 public class HorizonScrollTextView extends AppCompatTextView implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f14307a;
+    public boolean a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f14308c;
+    private float c;
     private float d;
     private float e;
     private float f;
@@ -49,14 +45,12 @@ public class HorizonScrollTextView extends AppCompatTextView implements View.OnC
                 return new SavedState[i];
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        public boolean f14309a;
+        public boolean a;
         public float b;
 
         private SavedState(Parcel parcel) {
             super(parcel);
-            this.f14309a = false;
+            this.a = false;
             this.b = 0.0f;
             parcel.readBooleanArray(null);
             this.b = parcel.readFloat();
@@ -64,25 +58,25 @@ public class HorizonScrollTextView extends AppCompatTextView implements View.OnC
 
         SavedState(Parcelable parcelable) {
             super(parcelable);
-            this.f14309a = false;
+            this.a = false;
             this.b = 0.0f;
         }
 
         @Override // android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeBooleanArray(new boolean[]{this.f14309a});
+            parcel.writeBooleanArray(new boolean[]{this.a});
             parcel.writeFloat(this.b);
         }
     }
 
     public HorizonScrollTextView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14308c = 0.0f;
+        this.c = 0.0f;
         this.d = 0.0f;
         this.e = 0.0f;
         this.f = 0.0f;
-        this.f14307a = false;
+        this.a = false;
         this.g = "";
         c();
         this.b = context;
@@ -90,11 +84,11 @@ public class HorizonScrollTextView extends AppCompatTextView implements View.OnC
 
     public HorizonScrollTextView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14308c = 0.0f;
+        this.c = 0.0f;
         this.d = 0.0f;
         this.e = 0.0f;
         this.f = 0.0f;
-        this.f14307a = false;
+        this.a = false;
         this.g = "";
         c();
         this.b = context;
@@ -105,34 +99,33 @@ public class HorizonScrollTextView extends AppCompatTextView implements View.OnC
     }
 
     public void a() {
-        this.f14307a = true;
+        this.a = true;
         invalidate();
     }
 
     public void b() {
-        this.f14307a = false;
+        this.a = false;
         invalidate();
     }
 
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
-        if (this.f14307a) {
+        if (this.a) {
             b();
         } else {
             a();
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
     public void onDraw(Canvas canvas) {
         canvas.drawBitmap(this.i, this.f, 0.0f, this.h);
         canvas.drawText(this.g, this.d, this.e, this.h);
-        if (this.f14307a) {
+        if (this.a) {
             float f = this.d - 3.0f;
             this.d = f;
             this.f -= 3.0f;
-            if (f <= (-this.f14308c)) {
+            if (f <= (-this.c)) {
                 this.d = this.i.getWidth() + AppMethods.a(8);
                 this.f = 0.0f;
                 b();
@@ -145,7 +138,6 @@ public class HorizonScrollTextView extends AppCompatTextView implements View.OnC
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
     public void onRestoreInstanceState(Parcelable parcelable) {
         if (!(parcelable instanceof SavedState)) {
             super.onRestoreInstanceState(parcelable);
@@ -154,14 +146,13 @@ public class HorizonScrollTextView extends AppCompatTextView implements View.OnC
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
         this.d = savedState.b;
-        this.f14307a = savedState.f14309a;
+        this.a = savedState.a;
     }
 
-    @Override // android.widget.TextView, android.view.View
     public Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
         savedState.b = this.d;
-        savedState.f14309a = this.f14307a;
+        savedState.a = this.a;
         return savedState;
     }
 

@@ -1,5 +1,6 @@
 package com.baidu.mobads.sdk.internal;
 
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -13,28 +14,28 @@ import javax.net.ssl.HttpsURLConnection;
 public class cn {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile cn f9387a;
+    private static volatile cn f6547a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f9388c;
+    private boolean f6548c;
 
     private cn() {
     }
 
     public static cn a() {
-        if (f9387a == null) {
+        if (f6547a == null) {
             synchronized (cn.class) {
                 try {
-                    if (f9387a == null) {
-                        f9387a = new cn();
+                    if (f6547a == null) {
+                        f6547a = new cn();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f9387a;
+        return f6547a;
     }
 
     private Boolean a(String str, String str2) {
@@ -60,7 +61,7 @@ public class cn {
                 sb.append(entry.getKey());
                 sb.append("=");
                 sb.append(entry.getValue());
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             } catch (Exception e) {
                 bq.a().c(e);
             }
@@ -91,7 +92,7 @@ public class cn {
     }
 
     public void a(boolean z) {
-        this.f9388c = z;
+        this.f6548c = z;
     }
 
     public Boolean b(String str) {
@@ -103,7 +104,7 @@ public class cn {
     }
 
     public boolean b() {
-        return this.f9388c;
+        return this.f6548c;
     }
 
     public String c(String str) {

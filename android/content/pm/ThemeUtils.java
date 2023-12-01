@@ -423,8 +423,8 @@ public class ThemeUtils {
 
     public static Map<String, String> getDefaultComponents(Context context) {
         String defaultThemePackageName = getDefaultThemePackageName(context);
-        List<String> supportedComponents = getSupportedComponents(context, "system");
-        List<String> supportedComponents2 = "system".equals(defaultThemePackageName) ? null : getSupportedComponents(context, defaultThemePackageName);
+        List<String> supportedComponents = getSupportedComponents(context, ThemeConfig.SYSTEM_DEFAULT);
+        List<String> supportedComponents2 = ThemeConfig.SYSTEM_DEFAULT.equals(defaultThemePackageName) ? null : getSupportedComponents(context, defaultThemePackageName);
         HashMap hashMap = new HashMap(supportedComponents.size());
         if (supportedComponents2 != null) {
             for (String str : supportedComponents2) {
@@ -433,7 +433,7 @@ public class ThemeUtils {
         }
         for (String str2 : supportedComponents) {
             if (!hashMap.containsKey(str2)) {
-                hashMap.put(str2, "system");
+                hashMap.put(str2, ThemeConfig.SYSTEM_DEFAULT);
             }
         }
         return hashMap;
@@ -442,13 +442,13 @@ public class ThemeUtils {
     public static String getDefaultThemePackageName(Context context) {
         String string = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.DEFAULT_THEME_PACKAGE);
         if (TextUtils.isEmpty(string)) {
-            return "system";
+            return ThemeConfig.SYSTEM_DEFAULT;
         }
         try {
-            return context.getPackageManager().getPackageInfo(string, 0) != null ? string : "system";
+            return context.getPackageManager().getPackageInfo(string, 0) != null ? string : ThemeConfig.SYSTEM_DEFAULT;
         } catch (PackageManager.NameNotFoundException e) {
             Log.w(TAG, "Default theme " + string + " not found", e);
-            return "system";
+            return ThemeConfig.SYSTEM_DEFAULT;
         }
     }
 
@@ -499,11 +499,11 @@ public class ThemeUtils {
     }
 
     public static String getLockscreenWallpaperPath(AssetManager assetManager) throws IOException {
-        String firstNonEmptyAsset = getFirstNonEmptyAsset(assetManager.list("lockscreen"));
+        String firstNonEmptyAsset = getFirstNonEmptyAsset(assetManager.list(LOCKSCREEN_WALLPAPER_PATH));
         if (firstNonEmptyAsset == null) {
             return null;
         }
-        return "lockscreen" + File.separator + firstNonEmptyAsset;
+        return LOCKSCREEN_WALLPAPER_PATH + File.separator + firstNonEmptyAsset;
     }
 
     public static String getOverlayPathToTarget(String str) {
@@ -518,7 +518,7 @@ public class ThemeUtils {
         int i;
         int i2;
         int hashCode = r3.manifestDigest != null ? r3.manifestDigest.hashCode() : 0;
-        ZipEntry findEntry = strictJarFile.findEntry("META-INF/MANIFEST.MF");
+        ZipEntry findEntry = strictJarFile.findEntry(MANIFEST_NAME);
         int i3 = hashCode;
         if (findEntry != null) {
             try {

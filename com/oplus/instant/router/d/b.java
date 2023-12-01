@@ -1,5 +1,6 @@
 package com.oplus.instant.router.d;
 
+import android.app.backup.FullBackup;
 import android.text.TextUtils;
 import com.cdo.oaps.ad.OapsKey;
 import com.cdo.oaps.ad.OapsWrapper;
@@ -14,11 +15,11 @@ import java.util.Map;
 public class b extends Instant.Builder {
 
     /* renamed from: a  reason: collision with root package name */
-    Map<String, String> f24287a = new HashMap();
+    Map<String, String> f10600a = new HashMap();
     Map<String, String> b = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    Map<String, String> f24288c = null;
+    Map<String, String> f10601c = null;
     Map<String, String> d = null;
     Callback e;
     String f;
@@ -60,10 +61,10 @@ public class b extends Instant.Builder {
 
     @Override // com.oplus.instant.router.Instant.Builder
     public Instant.Builder putStat(String str, String str2) {
-        if (this.f24288c == null) {
-            this.f24288c = new HashMap();
+        if (this.f10601c == null) {
+            this.f10601c = new HashMap();
         }
-        this.f24288c.put(str, str2);
+        this.f10601c.put(str, str2);
         return this;
     }
 
@@ -75,34 +76,34 @@ public class b extends Instant.Builder {
 
     @Override // com.oplus.instant.router.Instant.Builder
     public Instant.Builder setExtra(String str) {
-        this.f24287a.put("ext", str);
+        this.f10600a.put("ext", str);
         return this;
     }
 
     @Override // com.oplus.instant.router.Instant.Builder
     public Instant.Builder setFrom(String str) {
-        this.f24287a.put("f", str);
+        this.f10600a.put(FullBackup.DATA_TREE_TOKEN, str);
         return this;
     }
 
     @Override // com.oplus.instant.router.Instant.Builder
     @Deprecated
     public Instant.Builder setPackage(String str) {
-        this.f24287a.put("pkg", str);
+        this.f10600a.put("pkg", str);
         return this;
     }
 
     @Override // com.oplus.instant.router.Instant.Builder
     @Deprecated
     public Instant.Builder setPage(String str) {
-        this.f24287a.put(WBPageConstants.ParamKey.PAGE, str);
+        this.f10600a.put(WBPageConstants.ParamKey.PAGE, str);
         return this;
     }
 
     @Override // com.oplus.instant.router.Instant.Builder
     @Deprecated
     public Instant.Builder setPath(String str) {
-        this.f24287a.put(OapsWrapper.KEY_PATH, str);
+        this.f10600a.put(OapsWrapper.KEY_PATH, str);
         return this;
     }
 

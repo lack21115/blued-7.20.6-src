@@ -115,7 +115,7 @@ public class FileSizeUtil {
                 long j;
                 HttpURLConnection httpURLConnection2 = null;
                 try {
-                    url = new URL(String.this);
+                    url = new URL(str);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                     url = null;

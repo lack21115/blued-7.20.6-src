@@ -3,7 +3,6 @@ package com.tencent.tmsbeacon.event.c;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tmsbeacon.base.util.c;
 import com.tencent.tmsbeacon.event.open.EventType;
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, g> f39564a = new ConcurrentHashMap(5);
+    private static final Map<String, g> f25873a = new ConcurrentHashMap(5);
     private static volatile Handler b;
     private final Context g;
     private final String h;
@@ -24,7 +23,7 @@ public class g {
     private SharedPreferences n;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f39565c = "normal_log_id";
+    private final String f25874c = "normal_log_id";
     private final String d = "realtime_log_id";
     private final String e = "immediate_log_id";
     private final String f = "on_date";
@@ -40,7 +39,7 @@ public class g {
         private volatile long b = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        private volatile long f39566c = 0;
+        private volatile long f25875c = 0;
         private volatile long d = 0;
 
         public a() {
@@ -52,16 +51,16 @@ public class g {
                 long j = g.this.l.get();
                 long j2 = g.this.k.get();
                 long j3 = g.this.m.get();
-                if (this.b == j && this.f39566c == j2 && this.d == j3) {
+                if (this.b == j && this.f25875c == j2 && this.d == j3) {
                     return;
                 }
                 this.b = j;
-                this.f39566c = j2;
+                this.f25875c = j2;
                 this.d = j3;
                 g gVar = g.this;
                 SharedPreferences.Editor edit = gVar.a(gVar.g).edit();
                 if (com.tencent.tmsbeacon.base.util.b.a(edit)) {
-                    edit.putString("on_date", g.this.j).putLong("realtime_log_id", this.b).putLong("normal_log_id", this.f39566c).putLong("immediate_log_id", this.d).apply();
+                    edit.putString("on_date", g.this.j).putLong("realtime_log_id", this.b).putLong("normal_log_id", this.f25875c).putLong("immediate_log_id", this.d).apply();
                 }
             }
         }
@@ -71,43 +70,43 @@ public class g {
     public static /* synthetic */ class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f39567a;
+        public static final /* synthetic */ int[] f25876a;
 
         static {
             EventType.values();
             int[] iArr = new int[6];
-            f39567a = iArr;
+            f25876a = iArr;
             try {
                 EventType eventType = EventType.NORMAL;
                 iArr[0] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f39567a;
+                int[] iArr2 = f25876a;
                 EventType eventType2 = EventType.DT_NORMAL;
                 iArr2[2] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f39567a;
+                int[] iArr3 = f25876a;
                 EventType eventType3 = EventType.REALTIME;
                 iArr3[1] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                int[] iArr4 = f39567a;
+                int[] iArr4 = f25876a;
                 EventType eventType4 = EventType.DT_REALTIME;
                 iArr4[3] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                int[] iArr5 = f39567a;
+                int[] iArr5 = f25876a;
                 EventType eventType5 = EventType.IMMEDIATE_MSF;
                 iArr5[5] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                int[] iArr6 = f39567a;
+                int[] iArr6 = f25876a;
                 EventType eventType6 = EventType.IMMEDIATE_WNS;
                 iArr6[4] = 6;
             } catch (NoSuchFieldError e6) {
@@ -123,7 +122,7 @@ public class g {
     /* JADX INFO: Access modifiers changed from: private */
     public SharedPreferences a(Context context) {
         if (this.n == null) {
-            this.n = context.getSharedPreferences("b_log_ID_tmsbeacon_" + com.tencent.tmsbeacon.a.c.b.c(context) + BridgeUtil.UNDERLINE_STR + this.h, 0);
+            this.n = context.getSharedPreferences("b_log_ID_tmsbeacon_" + com.tencent.tmsbeacon.a.c.b.c(context) + "_" + this.h, 0);
         }
         return this.n;
     }
@@ -132,7 +131,7 @@ public class g {
         g gVar;
         synchronized (g.class) {
             try {
-                Map<String, g> map = f39564a;
+                Map<String, g> map = f25873a;
                 g gVar2 = map.get(str);
                 gVar = gVar2;
                 if (gVar2 == null) {
@@ -147,7 +146,7 @@ public class g {
     }
 
     private String a(EventType eventType) {
-        switch (b.f39567a[eventType.ordinal()]) {
+        switch (b.f25876a[eventType.ordinal()]) {
             case 1:
             case 2:
                 return String.valueOf(this.k.incrementAndGet());

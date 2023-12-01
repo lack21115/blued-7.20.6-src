@@ -38,11 +38,11 @@ import java.util.Map;
 public class d implements com.tencent.thumbplayer.adapter.a, c.k {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.tencent.thumbplayer.e.b f39198a;
+    private com.tencent.thumbplayer.e.b f25507a;
     private com.tencent.thumbplayer.e.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f39199c;
+    private Context f25508c;
     private com.tencent.thumbplayer.adapter.a.b d;
     private TPPlayerState e;
     private boolean f;
@@ -57,7 +57,7 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/adapter/d$a.class */
-    public class a implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, c.i, c.j, c.l, c.m, c.n, c.o, c.p {
+    public class a implements c.a, c.b, c.InterfaceC0843c, c.d, c.e, c.f, c.g, c.h, c.i, c.j, c.l, c.m, c.n, c.o, c.p {
         private a() {
         }
 
@@ -126,7 +126,7 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
             return d.this.b(tPPostProcessFrameBuffer);
         }
 
-        @Override // com.tencent.thumbplayer.adapter.a.c.InterfaceC1013c
+        @Override // com.tencent.thumbplayer.adapter.a.c.InterfaceC0843c
         public void b() {
             d.this.x();
         }
@@ -139,15 +139,15 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
 
     public d(Context context, com.tencent.thumbplayer.e.b bVar) {
         com.tencent.thumbplayer.e.b bVar2 = new com.tencent.thumbplayer.e.b(bVar, "TPPlayerAdapter");
-        this.f39198a = bVar2;
+        this.f25507a = bVar2;
         this.b = new com.tencent.thumbplayer.e.a(bVar2);
-        this.f39199c = context;
+        this.f25508c = context;
         TPPlayerState tPPlayerState = new TPPlayerState();
         this.e = tPPlayerState;
         tPPlayerState.setOnPlayerStateChangeListener(this);
         this.i = new c();
         this.h = new a();
-        this.g = new g(this.f39198a.a());
+        this.g = new g(this.f25507a.a());
         this.j = new i(this.e);
         this.l = new b();
     }
@@ -166,14 +166,14 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
         }
         if (i == 1) {
             this.b.c("to create androidPlayer");
-            bVar2 = com.tencent.thumbplayer.adapter.a.d.a(this.f39199c, this.i.p(), bVar);
+            bVar2 = com.tencent.thumbplayer.adapter.a.d.a(this.f25508c, this.i.p(), bVar);
         } else {
             if (i == 2) {
                 this.b.c("to create thumbPlayer");
-                context = this.f39199c;
+                context = this.f25508c;
             } else if (i == 3) {
                 this.b.c("to create thumbPlayer software dec");
-                context = this.f39199c;
+                context = this.f25508c;
             } else {
                 this.b.c("to create no Player");
                 bVar2 = null;
@@ -331,7 +331,7 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
         String a2;
         bVar.a((c.h) this.h);
         bVar.a((c.i) this.h);
-        bVar.a((c.InterfaceC1013c) this.h);
+        bVar.a((c.InterfaceC0843c) this.h);
         bVar.a((c.f) this.h);
         bVar.a((c.j) this.h);
         bVar.a((c.p) this.h);
@@ -376,8 +376,8 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
                 while (true) {
                     if (it.hasNext()) {
                         c.d next = it.next();
-                        if (!TextUtils.isEmpty(next.f39197c) && next.f39197c.equals(tPTrackInfo.name)) {
-                            bVar.a(next.f39196a, next.d, next.b, next.f39197c);
+                        if (!TextUtils.isEmpty(next.f25506c) && next.f25506c.equals(tPTrackInfo.name)) {
+                            bVar.a(next.f25505a, next.d, next.b, next.f25506c);
                             break;
                         }
                     }
@@ -388,7 +388,7 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
                     if (it2.hasNext()) {
                         c.a next2 = it2.next();
                         if (!TextUtils.isEmpty(next2.b) && next2.b.equals(tPTrackInfo.name)) {
-                            bVar.a(next2.f39190a, next2.d, next2.b, next2.f39191c);
+                            bVar.a(next2.f25499a, next2.d, next2.b, next2.f25500c);
                             break;
                         }
                     }
@@ -396,10 +396,10 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
             }
             i2 = i3 + 1;
         }
-        Iterator<c.C1014c> it3 = this.i.c().iterator();
+        Iterator<c.C0844c> it3 = this.i.c().iterator();
         while (it3.hasNext()) {
-            c.C1014c next3 = it3.next();
-            if (next3.f39195c.isSelected) {
+            c.C0844c next3 = it3.next();
+            if (next3.f25504c.isSelected) {
                 TPTrackInfo[] r = bVar.r();
                 if (r == null) {
                     this.b.e("playerTrackInfoList is null.");
@@ -408,7 +408,7 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
                     while (true) {
                         int i5 = i4;
                         if (i5 < r.length) {
-                            if (next3.f39195c.name.equals(r[i5].name)) {
+                            if (next3.f25504c.name.equals(r[i5].name)) {
                                 bVar.a(i5, next3.b);
                             }
                             i4 = i5 + 1;
@@ -418,7 +418,7 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
             }
         }
         if (this.i.k() != null) {
-            bVar.a(this.i.k().f39192a, this.i.k().b, this.i.k().f39193c);
+            bVar.a(this.i.k().f25501a, this.i.k().b, this.i.k().f25502c);
         }
         bVar.a(this.i.g());
         if (this.i.h() != 0.0f) {
@@ -463,7 +463,7 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
             this.d.k();
             this.d.l();
         }
-        com.tencent.thumbplayer.adapter.a.b a2 = a(i, this.f39198a);
+        com.tencent.thumbplayer.adapter.a.b a2 = a(i, this.f25507a);
         this.d = a2;
         if (a2 == null) {
             throw new RuntimeException("error , create player failed");
@@ -693,8 +693,8 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
     }
 
     @Override // com.tencent.thumbplayer.adapter.a.b
-    public void a(c.InterfaceC1013c interfaceC1013c) {
-        this.g.a(interfaceC1013c);
+    public void a(c.InterfaceC0843c interfaceC0843c) {
+        this.g.a(interfaceC0843c);
     }
 
     @Override // com.tencent.thumbplayer.adapter.a.b
@@ -870,14 +870,14 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
         if (iTPRichMediaSynchronizer == null) {
             com.tencent.thumbplayer.f.a aVar = this.n;
             if (aVar != null) {
-                aVar.a((a.InterfaceC1019a) null);
+                aVar.a((a.InterfaceC0849a) null);
             }
             this.n = null;
         } else if (iTPRichMediaSynchronizer instanceof com.tencent.thumbplayer.f.a) {
             com.tencent.thumbplayer.f.a aVar2 = (com.tencent.thumbplayer.f.a) iTPRichMediaSynchronizer;
             this.n = aVar2;
-            aVar2.a(new a.InterfaceC1019a() { // from class: com.tencent.thumbplayer.adapter.d.1
-                @Override // com.tencent.thumbplayer.f.a.InterfaceC1019a
+            aVar2.a(new a.InterfaceC0849a() { // from class: com.tencent.thumbplayer.adapter.d.1
+                @Override // com.tencent.thumbplayer.f.a.InterfaceC0849a
                 public long a(ITPRichMediaSynchronizer iTPRichMediaSynchronizer2) {
                     return d.this.n();
                 }
@@ -887,12 +887,12 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
 
     @Override // com.tencent.thumbplayer.adapter.a.b
     public void a(com.tencent.thumbplayer.e.b bVar) {
-        this.f39198a.a(bVar, "TPPlayerAdapter");
-        this.b.a(this.f39198a);
-        this.g.a(this.f39198a.a());
+        this.f25507a.a(bVar, "TPPlayerAdapter");
+        this.b.a(this.f25507a);
+        this.g.a(this.f25507a.a());
         com.tencent.thumbplayer.adapter.a.b bVar2 = this.d;
         if (bVar2 != null) {
-            bVar2.a(this.f39198a);
+            bVar2.a(this.f25507a);
         }
     }
 
@@ -1124,7 +1124,7 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
         } else if (!this.i.f()) {
             throw new IOException("error , prepare , data source invalid");
         } else {
-            com.tencent.thumbplayer.adapter.a.b a2 = a(z(), this.f39198a);
+            com.tencent.thumbplayer.adapter.a.b a2 = a(z(), this.f25507a);
             this.d = a2;
             if (a2 == null) {
                 throw new RuntimeException("error , create player failed");
@@ -1142,7 +1142,7 @@ public class d implements com.tencent.thumbplayer.adapter.a, c.k {
         } else if (!this.i.f()) {
             throw new IllegalStateException("error , prepare , state invalid , data source invalid");
         } else {
-            com.tencent.thumbplayer.adapter.a.b a2 = a(z(), this.f39198a);
+            com.tencent.thumbplayer.adapter.a.b a2 = a(z(), this.f25507a);
             this.d = a2;
             if (a2 == null) {
                 throw new RuntimeException("error , create player failed");

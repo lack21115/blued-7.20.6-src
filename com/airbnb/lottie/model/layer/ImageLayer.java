@@ -31,7 +31,7 @@ public class ImageLayer extends BaseLayer {
     }
 
     private Bitmap f() {
-        return this.b.e(this.f4380c.g());
+        return this.b.e(this.c.g());
     }
 
     @Override // com.airbnb.lottie.model.layer.BaseLayer, com.airbnb.lottie.animation.content.DrawingContent
@@ -40,7 +40,7 @@ public class ImageLayer extends BaseLayer {
         Bitmap f = f();
         if (f != null) {
             rectF.set(0.0f, 0.0f, f.getWidth() * Utils.a(), f.getHeight() * Utils.a());
-            this.f4379a.mapRect(rectF);
+            this.a.mapRect(rectF);
         }
     }
 
@@ -62,7 +62,7 @@ public class ImageLayer extends BaseLayer {
         if (f == null || f.isRecycled()) {
             return;
         }
-        float a2 = Utils.a();
+        float a = Utils.a();
         this.e.setAlpha(i);
         BaseKeyframeAnimation<ColorFilter, ColorFilter> baseKeyframeAnimation = this.h;
         if (baseKeyframeAnimation != null) {
@@ -71,7 +71,7 @@ public class ImageLayer extends BaseLayer {
         canvas.save();
         canvas.concat(matrix);
         this.f.set(0, 0, f.getWidth(), f.getHeight());
-        this.g.set(0, 0, (int) (f.getWidth() * a2), (int) (f.getHeight() * a2));
+        this.g.set(0, 0, (int) (f.getWidth() * a), (int) (f.getHeight() * a));
         canvas.drawBitmap(f, this.f, this.g, this.e);
         canvas.restore();
     }

@@ -37,6 +37,8 @@ import com.anythink.expressad.videocommon.b.i;
 import com.anythink.expressad.widget.FeedBackButton;
 import com.baidu.mobads.sdk.internal.bw;
 import com.bytedance.applog.tracker.Tracker;
+import com.huawei.hms.ads.fw;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.File;
 import java.util.HashMap;
 import org.json.JSONObject;
@@ -121,7 +123,7 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
             }
             String encodeToString = Base64.encodeToString(str.getBytes(), 2);
             j.a();
-            j.a((WebView) AnythinkH5EndCardView.this.s, AbsFeedBackForH5.f7096a, encodeToString);
+            j.a((WebView) AnythinkH5EndCardView.this.s, AbsFeedBackForH5.f4258a, encodeToString);
         }
 
         @Override // com.anythink.expressad.foundation.f.a
@@ -139,7 +141,7 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
             }
             String encodeToString = Base64.encodeToString(str.getBytes(), 2);
             j.a();
-            j.a((WebView) AnythinkH5EndCardView.this.s, AbsFeedBackForH5.f7096a, encodeToString);
+            j.a((WebView) AnythinkH5EndCardView.this.s, AbsFeedBackForH5.f4258a, encodeToString);
         }
 
         @Override // com.anythink.expressad.foundation.f.a
@@ -157,7 +159,7 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
             }
             String encodeToString = Base64.encodeToString(str.getBytes(), 2);
             j.a();
-            j.a((WebView) AnythinkH5EndCardView.this.s, AbsFeedBackForH5.f7096a, encodeToString);
+            j.a((WebView) AnythinkH5EndCardView.this.s, AbsFeedBackForH5.f4258a, encodeToString);
         }
     }
 
@@ -213,28 +215,28 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
     public static final class c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private AnythinkH5EndCardView f8460a;
+        private AnythinkH5EndCardView f5620a;
         private int b;
 
         public c(AnythinkH5EndCardView anythinkH5EndCardView, int i) {
-            this.f8460a = anythinkH5EndCardView;
+            this.f5620a = anythinkH5EndCardView;
             this.b = i;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            AnythinkH5EndCardView anythinkH5EndCardView = this.f8460a;
+            AnythinkH5EndCardView anythinkH5EndCardView = this.f5620a;
             if (anythinkH5EndCardView == null || anythinkH5EndCardView.b == null) {
                 return;
             }
             try {
-                if (this.f8460a.M) {
+                if (this.f5620a.M) {
                     o.b(AnythinkBaseView.TAG, "insertEndCardReadyState hasInsertLoadEndCardReport true return");
                     return;
                 }
-                AnythinkH5EndCardView.n(this.f8460a);
-                if (w.b(this.f8460a.b.I())) {
-                    this.f8460a.b.I().contains(".zip");
+                AnythinkH5EndCardView.n(this.f5620a);
+                if (w.b(this.f5620a.b.I())) {
+                    this.f5620a.b.I().contains(".zip");
                 }
             } catch (Throwable th) {
                 o.b(AnythinkBaseView.TAG, th.getMessage(), th);
@@ -477,7 +479,7 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
                 if (I.contains("wfr=1") || (a2 != null && a2.o() > 0)) {
                     o.d(AnythinkBaseView.TAG, "需要上报endcard加载时间");
                     if (I.contains("wfr=1")) {
-                        String[] split = I.split("&");
+                        String[] split = I.split(ContainerUtils.FIELD_DELIMITER);
                         if (split != null && split.length > 0) {
                             int length = split.length;
                             int i = 0;
@@ -548,14 +550,14 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("orientation", str);
-            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, "true");
+            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, fw.Code);
         } catch (Exception e2) {
             e2.printStackTrace();
         }
         HashMap hashMap = new HashMap();
-        hashMap.put(CallMraidJS.f7085a, "Interstitial");
+        hashMap.put(CallMraidJS.f4247a, CallMraidJS.j);
         hashMap.put("state", "default");
-        hashMap.put(CallMraidJS.f7086c, "true");
+        hashMap.put(CallMraidJS.f4248c, fw.Code);
         hashMap.put(CallMraidJS.d, jSONObject);
         if (anythinkH5EndCardView.getContext() instanceof Activity) {
             float e3 = k.e(anythinkH5EndCardView.getContext());
@@ -570,7 +572,7 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
         CallMraidJS.getInstance().fireSetDefaultPosition(anythinkH5EndCardView.s, windVaneWebView.getLeft(), anythinkH5EndCardView.s.getTop(), anythinkH5EndCardView.s.getWidth(), anythinkH5EndCardView.s.getHeight());
         CallMraidJS.getInstance().fireSetCurrentPosition(anythinkH5EndCardView.s, windVaneWebView2.getLeft(), anythinkH5EndCardView.s.getTop(), anythinkH5EndCardView.s.getWidth(), anythinkH5EndCardView.s.getHeight());
         CallMraidJS.getInstance().fireChangeEventForPropertys(anythinkH5EndCardView.s, hashMap);
-        CallMraidJS.getInstance().fireAudioVolumeChange(anythinkH5EndCardView.s, MraidVolumeChangeReceiver.f7090a);
+        CallMraidJS.getInstance().fireAudioVolumeChange(anythinkH5EndCardView.s, MraidVolumeChangeReceiver.f4252a);
         CallMraidJS.getInstance().fireReadyEvent(anythinkH5EndCardView.s);
     }
 
@@ -655,14 +657,14 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("orientation", str);
-            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, "true");
+            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, fw.Code);
         } catch (Exception e2) {
             e2.printStackTrace();
         }
         HashMap hashMap = new HashMap();
-        hashMap.put(CallMraidJS.f7085a, "Interstitial");
+        hashMap.put(CallMraidJS.f4247a, CallMraidJS.j);
         hashMap.put("state", "default");
-        hashMap.put(CallMraidJS.f7086c, "true");
+        hashMap.put(CallMraidJS.f4248c, fw.Code);
         hashMap.put(CallMraidJS.d, jSONObject);
         if (getContext() instanceof Activity) {
             float e3 = k.e(getContext());
@@ -677,7 +679,7 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
         CallMraidJS.getInstance().fireSetDefaultPosition(this.s, windVaneWebView.getLeft(), this.s.getTop(), this.s.getWidth(), this.s.getHeight());
         CallMraidJS.getInstance().fireSetCurrentPosition(this.s, windVaneWebView2.getLeft(), this.s.getTop(), this.s.getWidth(), this.s.getHeight());
         CallMraidJS.getInstance().fireChangeEventForPropertys(this.s, hashMap);
-        CallMraidJS.getInstance().fireAudioVolumeChange(this.s, MraidVolumeChangeReceiver.f7090a);
+        CallMraidJS.getInstance().fireAudioVolumeChange(this.s, MraidVolumeChangeReceiver.f4252a);
         CallMraidJS.getInstance().fireReadyEvent(this.s);
     }
 
@@ -720,7 +722,7 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
                     return this.b.P();
                 } catch (Throwable th) {
                     P = G2;
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         th.printStackTrace();
                         return G2;
                     }
@@ -843,7 +845,7 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
     public void init(Context context) {
         int findLayout = findLayout(A);
         if (findLayout >= 0) {
-            View inflate = this.f8441c.inflate(findLayout, (ViewGroup) null);
+            View inflate = this.f5601c.inflate(findLayout, (ViewGroup) null);
             this.p = inflate;
             try {
                 this.r = (ImageView) inflate.findViewById(findID("anythink_windwv_close"));
@@ -913,9 +915,8 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
         orientation(configuration);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         if (i != 0 || this.ab) {
             return;
@@ -933,7 +934,7 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
             return;
         }
         if (z) {
-            CallMraidJS.getInstance().fireSetIsViewable(this.s, "true");
+            CallMraidJS.getInstance().fireSetIsViewable(this.s, fw.Code);
         } else {
             CallMraidJS.getInstance().fireSetIsViewable(this.s, "false");
         }
@@ -1009,7 +1010,7 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
                         return;
                     }
                     AnythinkH5EndCardView.this.e.a(127, "");
-                    AnythinkH5EndCardView.this.reportRenderResult(com.alipay.sdk.util.e.f4661a, 6);
+                    AnythinkH5EndCardView.this.reportRenderResult("failed", 6);
                 }
 
                 @Override // com.anythink.expressad.atsignalcommon.a.b, com.anythink.expressad.atsignalcommon.windvane.e
@@ -1061,7 +1062,7 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
                     if (this.J && w.b(I) && (I.contains("wfr=1") || (a3 != null && a3.o() > 0))) {
                         o.d(AnythinkBaseView.TAG, "需要上报endcard加载时间");
                         if (I.contains("wfr=1")) {
-                            String[] split = I.split("&");
+                            String[] split = I.split(ContainerUtils.FIELD_DELIMITER);
                             if (split != null && split.length > 0) {
                                 int length = split.length;
                                 int i = 0;
@@ -1194,7 +1195,7 @@ public class AnythinkH5EndCardView extends AnythinkBaseView implements IMraidJSB
             String I = this.b.I();
             int i = 15;
             if (w.b(I) && I.contains("wfl=1")) {
-                String[] split = I.split("&");
+                String[] split = I.split(ContainerUtils.FIELD_DELIMITER);
                 int i2 = 15;
                 if (split != null) {
                     i2 = 15;

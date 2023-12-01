@@ -16,11 +16,11 @@ import com.soft.blued.R;
 public final class FragmentHelloCallNewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f28849a;
+    public final LinearLayout f15159a;
     public final FloatFooterView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f28850c;
+    public final ImageView f15160c;
     public final LinearLayout d;
     public final ConstraintLayout e;
     public final PullToRefreshRecyclerView f;
@@ -32,9 +32,9 @@ public final class FragmentHelloCallNewBinding implements ViewBinding {
 
     private FragmentHelloCallNewBinding(ConstraintLayout constraintLayout, LinearLayout linearLayout, FloatFooterView floatFooterView, ImageView imageView, LinearLayout linearLayout2, ConstraintLayout constraintLayout2, PullToRefreshRecyclerView pullToRefreshRecyclerView, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView, ShapeTextView shapeTextView, ShapeTextView shapeTextView2) {
         this.k = constraintLayout;
-        this.f28849a = linearLayout;
+        this.f15159a = linearLayout;
         this.b = floatFooterView;
-        this.f28850c = imageView;
+        this.f15160c = imageView;
         this.d = linearLayout2;
         this.e = constraintLayout2;
         this.f = pullToRefreshRecyclerView;
@@ -56,17 +56,17 @@ public final class FragmentHelloCallNewBinding implements ViewBinding {
                     if (linearLayout2 != null) {
                         ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.linearLayout2);
                         if (constraintLayout != null) {
-                            PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) view.findViewById(2131366898);
-                            if (pullToRefreshRecyclerView != null) {
-                                CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370749);
-                                if (commonTopTitleNoTrans != null) {
+                            PullToRefreshRecyclerView findViewById = view.findViewById(R.id.list_view);
+                            if (findViewById != null) {
+                                CommonTopTitleNoTrans findViewById2 = view.findViewById(R.id.top_title);
+                                if (findViewById2 != null) {
                                     TextView textView = (TextView) view.findViewById(R.id.tv_filter);
                                     if (textView != null) {
-                                        ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_sort_left);
-                                        if (shapeTextView != null) {
-                                            ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.tv_sort_right);
-                                            if (shapeTextView2 != null) {
-                                                return new FragmentHelloCallNewBinding((ConstraintLayout) view, linearLayout, floatFooterView, imageView, linearLayout2, constraintLayout, pullToRefreshRecyclerView, commonTopTitleNoTrans, textView, shapeTextView, shapeTextView2);
+                                        ShapeTextView findViewById3 = view.findViewById(R.id.tv_sort_left);
+                                        if (findViewById3 != null) {
+                                            ShapeTextView findViewById4 = view.findViewById(R.id.tv_sort_right);
+                                            if (findViewById4 != null) {
+                                                return new FragmentHelloCallNewBinding((ConstraintLayout) view, linearLayout, floatFooterView, imageView, linearLayout2, constraintLayout, findViewById, findViewById2, textView, findViewById3, findViewById4);
                                             }
                                             str = "tvSortRight";
                                         } else {

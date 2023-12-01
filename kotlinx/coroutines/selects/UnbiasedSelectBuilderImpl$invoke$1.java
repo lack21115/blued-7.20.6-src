@@ -10,21 +10,17 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/selects/UnbiasedSelectBuilderImpl$invoke$1.class */
 final class UnbiasedSelectBuilderImpl$invoke$1 extends Lambda implements Function0<Unit> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ SelectClause0 f43602a;
+    final /* synthetic */ SelectClause0 a;
     final /* synthetic */ UnbiasedSelectBuilderImpl<R> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Function1<Continuation<? super R>, Object> f43603c;
+    final /* synthetic */ Function1<Continuation<? super R>, Object> c;
 
     public final void a() {
-        this.f43602a.a(this.b.a(), this.f43603c);
+        this.a.a(this.b.a(), this.c);
     }
 
     @Override // kotlin.jvm.functions.Function0
     public /* synthetic */ Unit invoke() {
         a();
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

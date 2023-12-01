@@ -20,11 +20,11 @@ public class RecyclerViewAccessibilityDelegate extends AccessibilityDelegateComp
     public static class ItemDelegate extends AccessibilityDelegateCompat {
 
         /* renamed from: a  reason: collision with root package name */
-        final RecyclerViewAccessibilityDelegate f3338a;
+        final RecyclerViewAccessibilityDelegate f3290a;
         private Map<View, AccessibilityDelegateCompat> b = new WeakHashMap();
 
         public ItemDelegate(RecyclerViewAccessibilityDelegate recyclerViewAccessibilityDelegate) {
-            this.f3338a = recyclerViewAccessibilityDelegate;
+            this.f3290a = recyclerViewAccessibilityDelegate;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -65,11 +65,11 @@ public class RecyclerViewAccessibilityDelegate extends AccessibilityDelegateComp
 
         @Override // androidx.core.view.AccessibilityDelegateCompat
         public void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
-            if (this.f3338a.shouldIgnore() || this.f3338a.mRecyclerView.getLayoutManager() == null) {
+            if (this.f3290a.shouldIgnore() || this.f3290a.mRecyclerView.getLayoutManager() == null) {
                 super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfoCompat);
                 return;
             }
-            this.f3338a.mRecyclerView.getLayoutManager().onInitializeAccessibilityNodeInfoForItem(view, accessibilityNodeInfoCompat);
+            this.f3290a.mRecyclerView.getLayoutManager().onInitializeAccessibilityNodeInfoForItem(view, accessibilityNodeInfoCompat);
             AccessibilityDelegateCompat accessibilityDelegateCompat = this.b.get(view);
             if (accessibilityDelegateCompat != null) {
                 accessibilityDelegateCompat.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfoCompat);
@@ -96,7 +96,7 @@ public class RecyclerViewAccessibilityDelegate extends AccessibilityDelegateComp
 
         @Override // androidx.core.view.AccessibilityDelegateCompat
         public boolean performAccessibilityAction(View view, int i, Bundle bundle) {
-            if (this.f3338a.shouldIgnore() || this.f3338a.mRecyclerView.getLayoutManager() == null) {
+            if (this.f3290a.shouldIgnore() || this.f3290a.mRecyclerView.getLayoutManager() == null) {
                 return super.performAccessibilityAction(view, i, bundle);
             }
             AccessibilityDelegateCompat accessibilityDelegateCompat = this.b.get(view);
@@ -107,7 +107,7 @@ public class RecyclerViewAccessibilityDelegate extends AccessibilityDelegateComp
             } else if (super.performAccessibilityAction(view, i, bundle)) {
                 return true;
             }
-            return this.f3338a.mRecyclerView.getLayoutManager().performAccessibilityActionForItem(view, i, bundle);
+            return this.f3290a.mRecyclerView.getLayoutManager().performAccessibilityActionForItem(view, i, bundle);
         }
 
         @Override // androidx.core.view.AccessibilityDelegateCompat

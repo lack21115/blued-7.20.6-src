@@ -24,11 +24,11 @@ import com.soft.blued.utils.StringUtils;
 public class EcologyPopView extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34366a;
+    public Context f20675a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f34367c;
+    private ImageView f20676c;
     private LinearLayout d;
     private ShapeTextView e;
     private LinearLayout f;
@@ -58,13 +58,13 @@ public class EcologyPopView extends LinearLayout {
 
     private void a() {
         this.n = findViewById(2131368824);
-        this.f34367c = (ImageView) findViewById(2131364488);
+        this.f20676c = (ImageView) findViewById(R.id.img_close);
         this.d = (LinearLayout) findViewById(R.id.ll_result_option);
-        this.e = (ShapeTextView) findViewById(R.id.tv_back);
+        this.e = findViewById(R.id.tv_back);
         this.f = (LinearLayout) findViewById(R.id.ll_quest_option);
-        this.g = (ShapeTextView) findViewById(R.id.tv_is_trash);
-        this.h = (ShapeTextView) findViewById(R.id.tv_no_trash);
-        this.i = (ShapeTextView) findViewById(R.id.tv_no_idea);
+        this.g = findViewById(R.id.tv_is_trash);
+        this.h = findViewById(R.id.tv_no_trash);
+        this.i = findViewById(R.id.tv_no_idea);
         a(this.g, 2131102360);
         a(this.h, 2131102360);
         a(this.i, 2131102360);
@@ -93,7 +93,7 @@ public class EcologyPopView extends LinearLayout {
     }
 
     private void b(ShapeTextView shapeTextView, int i) {
-        ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, i);
+        ShapeHelper.a(shapeTextView, i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -124,13 +124,12 @@ public class EcologyPopView extends LinearLayout {
         }
         UserHttpUtils.a(this.j, i, new BluedUIHttpResponse<BluedEntityA<EcoVoteJsonParse>>(this.l) { // from class: com.soft.blued.ui.user.views.EcologyPopView.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<EcoVoteJsonParse> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                EcoVoteJsonParse ecoVoteJsonParse = bluedEntityA.data.get(0);
+                EcoVoteJsonParse ecoVoteJsonParse = (EcoVoteJsonParse) bluedEntityA.data.get(0);
                 if (ecoVoteJsonParse == null || StringUtils.d(ecoVoteJsonParse.next_uid) || "0".equals(ecoVoteJsonParse.next_uid)) {
                     EcologyPopView.this.f.setVisibility(8);
                     EcologyPopView.this.d.setVisibility(0);
@@ -140,16 +139,14 @@ public class EcologyPopView extends LinearLayout {
                 if (EcologyPopView.this.m != null) {
                     EcologyPopView.this.m.onClick(EcologyPopView.this);
                 }
-                UserInfoFragmentNew.a(EcologyPopView.this.f34366a, EcologyPopView.this.k);
+                UserInfoFragmentNew.a(EcologyPopView.this.f20675a, EcologyPopView.this.k);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 EcologyPopView.this.n.setVisibility(8);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 EcologyPopView.this.n.setVisibility(0);
@@ -158,7 +155,7 @@ public class EcologyPopView extends LinearLayout {
     }
 
     public void a(Context context) {
-        this.f34366a = context;
+        this.f20675a = context;
         this.b = LayoutInflater.from(context).inflate(R.layout.view_ecology_pop, this);
         a();
         this.g.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.views.-$$Lambda$EcologyPopView$ofBMmRhjY0qX8yGo544fnXbnVF8
@@ -185,7 +182,7 @@ public class EcologyPopView extends LinearLayout {
                 EcologyPopView.this.b(view);
             }
         });
-        this.f34367c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.views.-$$Lambda$EcologyPopView$gzClnMZrzXwxO7HdGnyFIGHFoaE
+        this.f20676c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.views.-$$Lambda$EcologyPopView$gzClnMZrzXwxO7HdGnyFIGHFoaE
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 EcologyPopView.this.a(view);
@@ -201,17 +198,16 @@ public class EcologyPopView extends LinearLayout {
         setVisibility(0);
         this.f.setVisibility(0);
         this.d.setVisibility(8);
-        this.f34367c.setVisibility(8);
+        this.f20676c.setVisibility(8);
     }
 
     public void getConfig() {
         UserHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<EcoVoteJsonParse>>(this.l) { // from class: com.soft.blued.ui.user.views.EcologyPopView.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<EcoVoteJsonParse> bluedEntityA) {
                 EcoVoteJsonParse ecoVoteJsonParse;
-                if (bluedEntityA == null || !bluedEntityA.hasData() || (ecoVoteJsonParse = bluedEntityA.data.get(0)) == null) {
+                if (bluedEntityA == null || !bluedEntityA.hasData() || (ecoVoteJsonParse = (EcoVoteJsonParse) bluedEntityA.data.get(0)) == null) {
                     return;
                 }
                 EcologyPopView.this.e.setText(ecoVoteJsonParse.voted_button1);
@@ -220,13 +216,11 @@ public class EcologyPopView extends LinearLayout {
                 EcologyPopView.this.i.setText(ecoVoteJsonParse.vote_option3);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 EcologyPopView.this.n.setVisibility(8);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 EcologyPopView.this.n.setVisibility(0);

@@ -50,7 +50,7 @@ public final class EglBase14 extends EglBase {
         if (context == null || context.egl14Context != EGL14.EGL_NO_CONTEXT) {
             EGLContext eGLContext = context == null ? EGL14.EGL_NO_CONTEXT : context.egl14Context;
             synchronized (EglBase.lock) {
-                eglCreateContext = EGL14.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, new int[]{12440, 2, 12344}, 0);
+                eglCreateContext = EGL14.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, new int[]{12440, 2, EGL14.EGL_NONE}, 0);
             }
             if (eglCreateContext != EGL14.EGL_NO_CONTEXT) {
                 return eglCreateContext;
@@ -68,7 +68,7 @@ public final class EglBase14 extends EglBase {
         if (this.eglSurface != EGL14.EGL_NO_SURFACE) {
             throw new RuntimeException("Already has an EGLSurface");
         }
-        this.eglSurface = EGL14.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344}, 0);
+        this.eglSurface = EGL14.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{EGL14.EGL_NONE}, 0);
         int eglGetError = EGL14.eglGetError();
         if (this.eglSurface == EGL14.EGL_NO_SURFACE || eglGetError != 12288) {
             throw new RuntimeException("Failed to create window surface: 0x" + Integer.toHexString(eglGetError));
@@ -124,7 +124,7 @@ public final class EglBase14 extends EglBase {
         if (this.eglSurface != EGL14.EGL_NO_SURFACE) {
             throw new RuntimeException("Already has an EGLSurface");
         }
-        this.eglSurface = EGL14.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{12375, i, 12374, i2, 12344}, 0);
+        this.eglSurface = EGL14.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{EGL14.EGL_WIDTH, i, EGL14.EGL_HEIGHT, i2, EGL14.EGL_NONE}, 0);
         int eglGetError = EGL14.eglGetError();
         if (this.eglSurface == EGL14.EGL_NO_SURFACE || eglGetError != 12288) {
             throw new RuntimeException("Failed to create pixel buffer surface with size " + i + "x" + i2 + ": 0x" + Integer.toHexString(eglGetError));
@@ -168,7 +168,7 @@ public final class EglBase14 extends EglBase {
         }
         synchronized (EglBase.lock) {
             EGLContext eglGetCurrentContext = EGL14.eglGetCurrentContext();
-            EGLSurface eglGetCurrentSurface = EGL14.eglGetCurrentSurface(12377);
+            EGLSurface eglGetCurrentSurface = EGL14.eglGetCurrentSurface(EGL14.EGL_DRAW);
             if (eglGetCurrentContext == this.eglContext && eglGetCurrentSurface == this.eglSurface) {
                 return;
             }
@@ -203,14 +203,14 @@ public final class EglBase14 extends EglBase {
     @Override // com.zego.zegoavkit2.screencapture.ve_gl.EglBase
     public int surfaceHeight() {
         int[] iArr = new int[1];
-        EGL14.eglQuerySurface(this.eglDisplay, this.eglSurface, 12374, iArr, 0);
+        EGL14.eglQuerySurface(this.eglDisplay, this.eglSurface, EGL14.EGL_HEIGHT, iArr, 0);
         return iArr[0];
     }
 
     @Override // com.zego.zegoavkit2.screencapture.ve_gl.EglBase
     public int surfaceWidth() {
         int[] iArr = new int[1];
-        EGL14.eglQuerySurface(this.eglDisplay, this.eglSurface, 12375, iArr, 0);
+        EGL14.eglQuerySurface(this.eglDisplay, this.eglSurface, EGL14.EGL_WIDTH, iArr, 0);
         return iArr[0];
     }
 

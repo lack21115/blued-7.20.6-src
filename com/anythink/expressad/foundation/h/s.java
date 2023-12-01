@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 import com.anythink.expressad.out.p;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.ss.android.download.api.constant.BaseConstants;
 import java.io.File;
 import java.util.Iterator;
@@ -17,21 +16,21 @@ import java.util.List;
 public final class s extends f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f7972a = false;
+    public static boolean f5132a = false;
     public static char[] b = {'a', 'n', 'd', 'r', 'o', 'i', 'd', 'c', 'o', 'n', 't', 'e', 'n', 't', 'p', 'm', 'g', 'e', 't', 'C', 'o', 'n', 't', 'e', 'x', 't'};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7973c = "SDKUtil";
+    private static final String f5133c = "SDKUtil";
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/foundation/h/s$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final String f7974a = "com.android.vending";
+        public static final String f5134a = "com.android.vending";
         public static final String b = "market";
 
         /* renamed from: c  reason: collision with root package name */
-        public static final String f7975c = "play.google.com";
+        public static final String f5135c = "play.google.com";
         public static final String d = "market.android.com";
         public static final String e = "google.com";
         public static final String f = "market://";
@@ -54,7 +53,7 @@ public final class s extends f {
         public static boolean a(Context context, String str, p.c cVar) {
             try {
                 if (!b(str)) {
-                    str = c(str) ? "market://".concat(String.valueOf(str.substring(str.indexOf(g)))) : null;
+                    str = c(str) ? f.concat(String.valueOf(str.substring(str.indexOf(g)))) : null;
                 }
                 if (TextUtils.isEmpty(str)) {
                     return false;
@@ -66,7 +65,7 @@ public final class s extends f {
                 s.a(cVar);
                 return true;
             } catch (Throwable th) {
-                o.d(s.f7973c, Log.getStackTraceString(th));
+                o.d(s.f5133c, Log.getStackTraceString(th));
                 return false;
             }
         }
@@ -87,7 +86,7 @@ public final class s extends f {
                 }
                 return Uri.parse(str).getScheme().equals("market");
             } catch (Throwable th) {
-                o.d(s.f7973c, Log.getStackTraceString(th));
+                o.d(s.f5133c, Log.getStackTraceString(th));
                 return false;
             }
         }
@@ -98,12 +97,12 @@ public final class s extends f {
                     return false;
                 }
                 Uri parse = Uri.parse(str);
-                if (parse.getHost().equals("play.google.com")) {
+                if (parse.getHost().equals(f5135c)) {
                     return true;
                 }
-                return parse.getHost().equals("market.android.com");
+                return parse.getHost().equals(d);
             } catch (Throwable th) {
-                o.d(s.f7973c, Log.getStackTraceString(th));
+                o.d(s.f5133c, Log.getStackTraceString(th));
                 return false;
             }
         }
@@ -113,7 +112,7 @@ public final class s extends f {
                 return str;
             }
             if (c(str)) {
-                return "market://".concat(String.valueOf(str.substring(str.indexOf(g))));
+                return f.concat(String.valueOf(str.substring(str.indexOf(g))));
             }
             return null;
         }
@@ -131,13 +130,13 @@ public final class s extends f {
         File a2 = com.anythink.expressad.foundation.g.c.d.a(com.anythink.expressad.foundation.g.c.a.ANYTHINK_700_IMG);
         if (TextUtils.isEmpty(str)) {
             sb = "";
-        } else if (str.lastIndexOf(BridgeUtil.SPLIT_MARK) == -1) {
+        } else if (str.lastIndexOf("/") == -1) {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(str.hashCode());
             sb = sb2.toString();
         } else {
             StringBuilder sb3 = new StringBuilder();
-            sb3.append(str.hashCode() + str.substring(str.lastIndexOf(BridgeUtil.SPLIT_MARK) + 1).hashCode());
+            sb3.append(str.hashCode() + str.substring(str.lastIndexOf("/") + 1).hashCode());
             sb = sb3.toString();
         }
         return new File(a2, sb).getAbsolutePath();
@@ -147,7 +146,7 @@ public final class s extends f {
         if (context == null) {
             return;
         }
-        if (f7972a) {
+        if (f5132a) {
             a(context, str, cVar2);
             return;
         }
@@ -223,13 +222,13 @@ public final class s extends f {
         if (TextUtils.isEmpty(str)) {
             return "";
         }
-        if (str.lastIndexOf(BridgeUtil.SPLIT_MARK) == -1) {
+        if (str.lastIndexOf("/") == -1) {
             StringBuilder sb = new StringBuilder();
             sb.append(str.hashCode());
             return sb.toString();
         }
         StringBuilder sb2 = new StringBuilder();
-        sb2.append(str.hashCode() + str.substring(str.lastIndexOf(BridgeUtil.SPLIT_MARK) + 1).hashCode());
+        sb2.append(str.hashCode() + str.substring(str.lastIndexOf("/") + 1).hashCode());
         return sb2.toString();
     }
 
@@ -242,7 +241,7 @@ public final class s extends f {
             if (queryIntentActivities.size() > 0) {
                 z = true;
             }
-            if (!str.startsWith("market://")) {
+            if (!str.startsWith(a.f)) {
                 if (str.startsWith("https://play.google.com/")) {
                     b(context, BaseConstants.MARKET_PREFIX.concat(String.valueOf(str.replace("https://play.google.com/store/apps/details?id=", ""))), cVar);
                 }
@@ -253,8 +252,8 @@ public final class s extends f {
                 while (true) {
                     if (!it.hasNext()) {
                         break;
-                    } else if (it.next().activityInfo.packageName.equals("com.android.vending")) {
-                        intent.setClassName("com.android.vending", "com.android.vending.AssetBrowserActivity");
+                    } else if (it.next().activityInfo.packageName.equals(a.f5134a)) {
+                        intent.setClassName(a.f5134a, "com.android.vending.AssetBrowserActivity");
                         break;
                     }
                 }
@@ -266,7 +265,7 @@ public final class s extends f {
                 }
             }
         } catch (Exception e2) {
-            o.d(f7973c, e2.getMessage());
+            o.d(f5133c, e2.getMessage());
         }
     }
 }

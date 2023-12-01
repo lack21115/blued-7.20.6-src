@@ -15,25 +15,25 @@ import java.nio.ByteBuffer;
 public class g extends f {
 
     /* renamed from: a  reason: collision with root package name */
-    public a.a.a.a.a.a.a f1273a;
+    public a.a.a.a.a.a.a f1225a;
     public volatile a b;
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/a/j/g$a.class */
     public static class a extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public WeakReference<g> f1274a;
+        public WeakReference<g> f1226a;
 
         public a(Looper looper, g gVar) {
             super(looper);
-            this.f1274a = new WeakReference<>(gVar);
+            this.f1226a = new WeakReference<>(gVar);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             int i = message.what;
             Object obj = message.obj;
-            g gVar = this.f1274a.get();
+            g gVar = this.f1226a.get();
             if (gVar == null) {
                 a.a.a.a.a.e.e.f.d("YUVDataTransfer", "EncoderHandler.handleMessage: encoder is null");
             } else if (i == 0) {
@@ -50,9 +50,9 @@ public class g extends f {
     public final void a() {
         f.a aVar = this.w;
         if (aVar.g) {
-            this.f1273a = new a.a.a.a.a.a.j.i.a(aVar);
+            this.f1225a = new a.a.a.a.a.a.j.i.a(aVar);
         } else {
-            this.f1273a = new e(aVar);
+            this.f1225a = new e(aVar);
         }
         a.a.a.a.a.a.c cVar = this.v;
         if (cVar != null) {
@@ -69,7 +69,7 @@ public class g extends f {
     @Override // a.a.a.a.a.a.j.f
     public void a(int i) {
         synchronized (this) {
-            a.a.a.a.a.a.a aVar = this.f1273a;
+            a.a.a.a.a.a.a aVar = this.f1225a;
             if (aVar != null) {
                 aVar.a(i);
             }
@@ -111,14 +111,14 @@ public class g extends f {
         if (aVar != null) {
             aVar.a(watermarkSetting);
         }
-        a.a.a.a.a.a.a aVar2 = this.f1273a;
+        a.a.a.a.a.a.a aVar2 = this.f1225a;
         if (aVar2 != null) {
             aVar2.a(watermarkSetting);
         }
     }
 
     public final void a(PLAVFrame pLAVFrame) {
-        a.a.a.a.a.a.a aVar = this.f1273a;
+        a.a.a.a.a.a.a aVar = this.f1225a;
         if (aVar != null) {
             aVar.a(pLAVFrame, this.w, false);
         }
@@ -127,22 +127,22 @@ public class g extends f {
     @Override // a.a.a.a.a.a.j.f
     public void a(ByteBuffer byteBuffer, int i, long j) {
         synchronized (this) {
-            if (this.t == a.a.a.a.a.f.c.RUNNING && this.f1273a != null && this.b != null && !a.a.a.a.a.a.j.a.a().b()) {
+            if (this.t == a.a.a.a.a.f.c.RUNNING && this.f1225a != null && this.b != null && !a.a.a.a.a.a.j.a.a().b()) {
                 this.y++;
                 if (h.d() && this.y % 2 == 0) {
                     a.a.a.a.a.e.e.f.c("YUVDataTransfer", "Drop the in frame");
-                    this.w.f1271a.e().l++;
-                    this.w.f1271a.e().w++;
+                    this.w.f1223a.e().l++;
+                    this.w.f1223a.e().w++;
                     return;
                 }
-                PLAVFrame b = this.f1273a.b(byteBuffer.capacity());
+                PLAVFrame b = this.f1225a.b(byteBuffer.capacity());
                 if (b != null) {
                     b.fillFrame(byteBuffer, byteBuffer.capacity(), j);
                     this.b.sendMessage(this.b.obtainMessage(2, b));
                 } else {
                     a.a.a.a.a.e.e.f.b("YUVDataTransfer", "inputFrame is null. so drop the frame...");
-                    this.w.f1271a.e().l++;
-                    this.w.f1271a.e().w++;
+                    this.w.f1223a.e().l++;
+                    this.w.f1223a.e().w++;
                 }
             }
         }
@@ -152,22 +152,22 @@ public class g extends f {
     public void a(byte[] bArr, long j) {
         synchronized (this) {
             a.a.a.a.a.e.e.f.a("YUVDataTransfer", "onPreviewFrame + bytes.len:" + bArr.length + ",ts:" + j);
-            if (this.t == a.a.a.a.a.f.c.RUNNING && this.f1273a != null && this.b != null && !a.a.a.a.a.a.j.a.a().b()) {
+            if (this.t == a.a.a.a.a.f.c.RUNNING && this.f1225a != null && this.b != null && !a.a.a.a.a.a.j.a.a().b()) {
                 this.y++;
                 if (h.d() && this.y % 2 == 0) {
                     a.a.a.a.a.e.e.f.c("YUVDataTransfer", "Drop the in frame");
-                    this.w.f1271a.e().l++;
-                    this.w.f1271a.e().w++;
+                    this.w.f1223a.e().l++;
+                    this.w.f1223a.e().w++;
                     return;
                 }
-                PLAVFrame b = this.f1273a.b(bArr.length);
+                PLAVFrame b = this.f1225a.b(bArr.length);
                 if (b != null) {
                     b.fillFrame(bArr, j);
                     this.b.sendMessage(this.b.obtainMessage(2, b));
                 } else {
                     a.a.a.a.a.e.e.f.a("YUVDataTransfer", "inputFrame is null. so drop the frame...");
-                    this.w.f1271a.e().l++;
-                    this.w.f1271a.e().w++;
+                    this.w.f1223a.e().l++;
+                    this.w.f1223a.e().w++;
                 }
                 a.a.a.a.a.e.e.f.a("YUVDataTransfer", "onPreviewFrame -");
             }
@@ -186,10 +186,10 @@ public class g extends f {
     }
 
     public final void b() {
-        a.a.a.a.a.a.a aVar = this.f1273a;
+        a.a.a.a.a.a.a aVar = this.f1225a;
         if (aVar != null) {
             aVar.b();
-            this.f1273a = null;
+            this.f1225a = null;
         }
     }
 
@@ -216,10 +216,10 @@ public class g extends f {
 
     public final void d(boolean z) {
         Looper.myLooper().quit();
-        a.a.a.a.a.a.a aVar = this.f1273a;
+        a.a.a.a.a.a.a aVar = this.f1225a;
         if (aVar != null && z) {
             aVar.a();
-            this.f1273a.a(true);
+            this.f1225a.a(true);
         }
         b();
         a.a.a.a.a.a.c cVar = this.v;

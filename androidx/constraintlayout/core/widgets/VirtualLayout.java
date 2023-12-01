@@ -19,7 +19,7 @@ public class VirtualLayout extends HelperWidget {
     private int Z = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    protected BasicMeasure.Measure f2129a = new BasicMeasure.Measure();
+    protected BasicMeasure.Measure f2081a = new BasicMeasure.Measure();
     BasicMeasure.Measurer O = null;
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -27,15 +27,15 @@ public class VirtualLayout extends HelperWidget {
         while (this.O == null && getParent() != null) {
             this.O = ((ConstraintWidgetContainer) getParent()).getMeasurer();
         }
-        this.f2129a.horizontalBehavior = dimensionBehaviour;
-        this.f2129a.verticalBehavior = dimensionBehaviour2;
-        this.f2129a.horizontalDimension = i;
-        this.f2129a.verticalDimension = i2;
-        this.O.measure(constraintWidget, this.f2129a);
-        constraintWidget.setWidth(this.f2129a.measuredWidth);
-        constraintWidget.setHeight(this.f2129a.measuredHeight);
-        constraintWidget.setHasBaseline(this.f2129a.measuredHasBaseline);
-        constraintWidget.setBaselineDistance(this.f2129a.measuredBaseline);
+        this.f2081a.horizontalBehavior = dimensionBehaviour;
+        this.f2081a.verticalBehavior = dimensionBehaviour2;
+        this.f2081a.horizontalDimension = i;
+        this.f2081a.verticalDimension = i2;
+        this.O.measure(constraintWidget, this.f2081a);
+        constraintWidget.setWidth(this.f2081a.measuredWidth);
+        constraintWidget.setHeight(this.f2081a.measuredHeight);
+        constraintWidget.setHasBaseline(this.f2081a.measuredHasBaseline);
+        constraintWidget.setBaselineDistance(this.f2081a.measuredBaseline);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -72,14 +72,14 @@ public class VirtualLayout extends HelperWidget {
                     if (dimensionBehaviour2 == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT) {
                         dimensionBehaviour4 = ConstraintWidget.DimensionBehaviour.WRAP_CONTENT;
                     }
-                    this.f2129a.horizontalBehavior = dimensionBehaviour3;
-                    this.f2129a.verticalBehavior = dimensionBehaviour4;
-                    this.f2129a.horizontalDimension = constraintWidget.getWidth();
-                    this.f2129a.verticalDimension = constraintWidget.getHeight();
-                    measurer.measure(constraintWidget, this.f2129a);
-                    constraintWidget.setWidth(this.f2129a.measuredWidth);
-                    constraintWidget.setHeight(this.f2129a.measuredHeight);
-                    constraintWidget.setBaselineDistance(this.f2129a.measuredBaseline);
+                    this.f2081a.horizontalBehavior = dimensionBehaviour3;
+                    this.f2081a.verticalBehavior = dimensionBehaviour4;
+                    this.f2081a.horizontalDimension = constraintWidget.getWidth();
+                    this.f2081a.verticalDimension = constraintWidget.getHeight();
+                    measurer.measure(constraintWidget, this.f2081a);
+                    constraintWidget.setWidth(this.f2081a.measuredWidth);
+                    constraintWidget.setHeight(this.f2081a.measuredHeight);
+                    constraintWidget.setBaselineDistance(this.f2081a.measuredBaseline);
                 }
             }
             i = i2 + 1;

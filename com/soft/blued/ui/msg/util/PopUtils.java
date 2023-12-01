@@ -1,9 +1,9 @@
 package com.soft.blued.ui.msg.util;
 
 import android.content.Context;
+import android.provider.Downloads;
 import android.view.View;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.enums.PopupAnimation;
 import com.blued.android.framework.ui.xpop.enums.PopupPosition;
 import com.blued.android.module.common.extensions.BluedViewExtKt;
@@ -16,15 +16,15 @@ import kotlin.jvm.internal.Intrinsics;
 public final class PopUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final PopUtils f32602a = new PopUtils();
+    public static final PopUtils f18911a = new PopUtils();
 
     private PopUtils() {
     }
 
-    public final void a(Context context, String hint, View atView) {
+    public final void a(Context context, String str, View view) {
         Intrinsics.e(context, "context");
-        Intrinsics.e(hint, "hint");
-        Intrinsics.e(atView, "atView");
-        new XPopup.Builder(context).a(atView).a(PopupAnimation.ScaleAlphaFromCenter).b(false).a(PopupPosition.Bottom).d((Boolean) false).c(BluedViewExtKt.a(-8)).a((BasePopupView) new GuideCenterDownBluedPop(context, hint)).h();
+        Intrinsics.e(str, Downloads.Impl.COLUMN_FILE_NAME_HINT);
+        Intrinsics.e(view, "atView");
+        new XPopup.Builder(context).a(view).a(PopupAnimation.a).b(false).a(PopupPosition.d).d(false).c(BluedViewExtKt.a(-8)).a(new GuideCenterDownBluedPop(context, str)).h();
     }
 }

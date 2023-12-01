@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.view.View;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -26,7 +27,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import java.util.Collection;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
@@ -39,15 +39,11 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleMyManagementFragment.class */
 public final class CircleMyManagementFragment extends MVVMBaseFragment<CircleMyManagementViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f19221c;
+    private final ViewBindingProperty c;
     private CircleListAdapter d;
     private NoDataAndLoadFailView e;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(CircleMyManagementFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FragmentCircleMyManagementBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19220a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleMyManagementFragment$Companion.class */
@@ -67,7 +63,7 @@ public final class CircleMyManagementFragment extends MVVMBaseFragment<CircleMyM
 
     public CircleMyManagementFragment() {
         super(R.layout.fragment_circle_my_management);
-        this.f19221c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<CircleMyManagementFragment, FragmentCircleMyManagementBinding>() { // from class: com.blued.community.ui.circle.fragment.CircleMyManagementFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<CircleMyManagementFragment, FragmentCircleMyManagementBinding>() { // from class: com.blued.community.ui.circle.fragment.CircleMyManagementFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentCircleMyManagementBinding invoke(CircleMyManagementFragment fragment) {
@@ -131,11 +127,11 @@ public final class CircleMyManagementFragment extends MVVMBaseFragment<CircleMyM
             Intrinsics.c("circleListAdapter");
             circleListAdapter3 = null;
         }
-        circleListAdapter3.addData((Collection) list);
+        circleListAdapter3.addData(list);
     }
 
     private final FragmentCircleMyManagementBinding p() {
-        return (FragmentCircleMyManagementBinding) this.f19221c.b(this, b[0]);
+        return (FragmentCircleMyManagementBinding) this.c.b(this, b[0]);
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -143,7 +139,7 @@ public final class CircleMyManagementFragment extends MVVMBaseFragment<CircleMyM
         SmartRefreshLayout smartRefreshLayout;
         FragmentCircleMyManagementBinding p = p();
         if (p != null && (smartRefreshLayout = p.b) != null) {
-            smartRefreshLayout.j();
+            smartRefreshLayout.g();
         }
         CircleListAdapter circleListAdapter = this.d;
         CircleListAdapter circleListAdapter2 = circleListAdapter;
@@ -176,11 +172,11 @@ public final class CircleMyManagementFragment extends MVVMBaseFragment<CircleMyM
         if (p == null) {
             return;
         }
-        p.f18835c.a();
-        CommonTopTitleNoTrans commonTopTitleNoTrans = p.f18835c;
+        p.c.a();
+        CommonTopTitleNoTrans commonTopTitleNoTrans = p.c;
         Context context = getContext();
         commonTopTitleNoTrans.setCenterText((context == null || (resources = context.getResources()) == null) ? null : resources.getString(R.string.managed_circle));
-        p.f18835c.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleMyManagementFragment$A6aWkoAc4LvZw3-PDX4tC-ApcG0
+        p.c.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleMyManagementFragment$A6aWkoAc4LvZw3-PDX4tC-ApcG0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CircleMyManagementFragment.a(CircleMyManagementFragment.this, view);
@@ -222,9 +218,8 @@ public final class CircleMyManagementFragment extends MVVMBaseFragment<CircleMyM
             noDataAndLoadFailView8 = null;
         }
         circleListAdapter2.setEmptyView(noDataAndLoadFailView8);
-        p.b.l(false);
+        p.b.b(false);
         p.b.a(new OnRefreshListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleMyManagementFragment$kapakDpqNqmS7AYpa-uEATEAfV0
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public final void onRefresh(RefreshLayout refreshLayout) {
                 CircleMyManagementFragment.a(CircleMyManagementFragment.this, refreshLayout);
             }
@@ -236,21 +231,20 @@ public final class CircleMyManagementFragment extends MVVMBaseFragment<CircleMyM
             circleListAdapter4 = null;
         }
         circleListAdapter4.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleMyManagementFragment$rqjse5CLJxME6bXRx_rLjXpLeJc
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public final void onLoadMoreRequested() {
                 CircleMyManagementFragment.a(CircleMyManagementFragment.this);
             }
-        }, p.f18834a);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        }, p.a);
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
-        RecyclerView recyclerView = p.f18834a;
+        RecyclerView recyclerView = p.a;
         CircleListAdapter circleListAdapter5 = this.d;
         if (circleListAdapter5 == null) {
             Intrinsics.c("circleListAdapter");
             circleListAdapter5 = null;
         }
         recyclerView.setAdapter(circleListAdapter5);
-        p.f18834a.setLayoutManager(linearLayoutManager);
+        p.a.setLayoutManager(linearLayoutManager);
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -263,7 +257,7 @@ public final class CircleMyManagementFragment extends MVVMBaseFragment<CircleMyM
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        LifecycleExtKt.a(this, j().d(), new CircleMyManagementFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a((LifecycleOwner) this, j().d(), new CircleMyManagementFragment$liveDataObserver$1(this));
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment

@@ -6,14 +6,14 @@ import java.io.UnsupportedEncodingException;
 public class Base64 {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f38916a = !Base64.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f25225a = !Base64.class.desiredAssertionStatus();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/utils/Base64$a.class */
     public static abstract class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public byte[] f38917a;
+        public byte[] f25226a;
         public int b;
 
         a() {
@@ -28,7 +28,7 @@ public class Base64 {
         private static final byte[] i = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 45, 95};
 
         /* renamed from: c  reason: collision with root package name */
-        int f38918c;
+        int f25227c;
         public final boolean d;
         public final boolean e;
         public final boolean f;
@@ -37,13 +37,13 @@ public class Base64 {
         private final byte[] l;
 
         public b(int i2, byte[] bArr) {
-            this.f38917a = bArr;
+            this.f25226a = bArr;
             this.d = (i2 & 1) == 0;
             this.e = (i2 & 2) == 0;
             this.f = (i2 & 4) != 0;
             this.l = (i2 & 8) == 0 ? h : i;
             this.j = new byte[2];
-            this.f38918c = 0;
+            this.f25227c = 0;
             this.k = this.e ? 19 : -1;
         }
 
@@ -97,17 +97,17 @@ public class Base64 {
                 i7 = i4 + ((((i2 - 1) / 57) + 1) * (bVar.f ? 2 : 1));
             }
         }
-        bVar.f38917a = new byte[i7];
+        bVar.f25226a = new byte[i7];
         bVar.a(bArr, i, i2, true);
-        if (f38916a || bVar.b == i7) {
-            return bVar.f38917a;
+        if (f25225a || bVar.b == i7) {
+            return bVar.f25226a;
         }
         throw new AssertionError();
     }
 
     public static String encodeToString(byte[] bArr, int i) {
         try {
-            return new String(a(bArr, i), "US-ASCII");
+            return new String(a(bArr, i), com.anythink.expressad.exoplayer.b.i);
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }

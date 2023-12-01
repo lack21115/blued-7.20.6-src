@@ -9,11 +9,11 @@ import java.net.URLEncoder;
 public class w {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f21538a = "utf-8";
+    private static final String f7932a = "utf-8";
     private static final String b = "?&scheme=gamecenter";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f21539c = "&jump_from_where=from_gc_sdk_start_up";
+    private static final String f7933c = "&jump_from_where=from_gc_sdk_start_up";
     private static final String d = "&params=";
     private static final String e = "&detailId=";
     private static final String f = "&url=";

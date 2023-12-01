@@ -68,7 +68,7 @@ public interface IProxyPortListener extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     setProxyPort(parcel.readInt());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

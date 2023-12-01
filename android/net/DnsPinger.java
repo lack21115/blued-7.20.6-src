@@ -6,6 +6,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
 import android.util.Log;
+import com.autonavi.base.ae.gmap.glanimation.AbstractAdglAnimation;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -199,7 +200,7 @@ public final class DnsPinger extends Handler {
                         sendMessageDelayed(obtainMessage(ACTION_LISTEN_FOR_RESPONSE, this.mEventCounter, 0), 200L);
                         return;
                     } catch (IOException e2) {
-                        sendResponse(message.arg1, -9999, -2);
+                        sendResponse(message.arg1, AbstractAdglAnimation.INVALIDE_VALUE, -2);
                         return;
                     }
                 }

@@ -12,22 +12,16 @@ import kotlin.jvm.internal.Ref;
 /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$lambda-10$$inlined$collect$1  reason: invalid class name */
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$runningFold$lambda-10$$inlined$collect$1.class */
 public final class FlowKt__TransformKt$runningFold$lambda10$$inlined$collect$1<T> implements FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Ref.ObjectRef f43329a;
+    final /* synthetic */ Ref.ObjectRef a;
     final /* synthetic */ Function3 b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ FlowCollector f43330c;
+    final /* synthetic */ FlowCollector c;
 
     @Metadata
     @DebugMetadata(b = "Transform.kt", c = {135, 136}, d = "emit", e = "kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$lambda-10$$inlined$collect$1")
     /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$lambda-10$$inlined$collect$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$runningFold$lambda-10$$inlined$collect$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43331a;
+        /* synthetic */ Object a;
         int b;
         Object d;
         Object e;
@@ -38,16 +32,16 @@ public final class FlowKt__TransformKt$runningFold$lambda10$$inlined$collect$1<T
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43331a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return FlowKt__TransformKt$runningFold$lambda10$$inlined$collect$1.this.emit(null, this);
         }
     }
 
     public FlowKt__TransformKt$runningFold$lambda10$$inlined$collect$1(Ref.ObjectRef objectRef, Function3 function3, FlowCollector flowCollector) {
-        this.f43329a = objectRef;
+        this.a = objectRef;
         this.b = function3;
-        this.f43330c = flowCollector;
+        this.c = flowCollector;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */

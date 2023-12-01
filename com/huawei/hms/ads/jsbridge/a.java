@@ -15,34 +15,34 @@ import java.util.concurrent.TimeoutException;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile String f22510a;
+    private volatile String f8902a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.huawei.hms.ads.jsbridge.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/jsbridge/a$a.class */
-    public static class CallableC0416a implements Callable<String> {
+    public static class CallableC0246a implements Callable<String> {
 
         /* renamed from: a  reason: collision with root package name */
-        private IWebView f22511a;
+        private IWebView f8903a;
         private WebView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f22512c;
+        private boolean f8904c;
 
-        CallableC0416a(WebView webView) {
+        CallableC0246a(WebView webView) {
             this.b = webView;
         }
 
-        CallableC0416a(IWebView iWebView) {
-            this.f22512c = true;
-            this.f22511a = iWebView;
+        CallableC0246a(IWebView iWebView) {
+            this.f8904c = true;
+            this.f8903a = iWebView;
         }
 
         @Override // java.util.concurrent.Callable
         /* renamed from: a */
         public String call() {
-            if (this.f22512c) {
-                IWebView iWebView = this.f22511a;
+            if (this.f8904c) {
+                IWebView iWebView = this.f8903a;
                 if (iWebView != null) {
                     return iWebView.getUrl();
                 }
@@ -75,7 +75,7 @@ public class a {
 
     private static String b(WebView webView) {
         try {
-            return a(new FutureTask(new CallableC0416a(webView))).get(1L, TimeUnit.SECONDS);
+            return a(new FutureTask(new CallableC0246a(webView))).get(1L, TimeUnit.SECONDS);
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
             b.b("Exception will waiting: " + e.getMessage());
             b.b("exception or timeout while waiting for url");
@@ -85,7 +85,7 @@ public class a {
 
     private static String b(IWebView iWebView) {
         try {
-            return a(new FutureTask(new CallableC0416a(iWebView))).get(1L, TimeUnit.SECONDS);
+            return a(new FutureTask(new CallableC0246a(iWebView))).get(1L, TimeUnit.SECONDS);
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
             b.b("Exception will waiting: " + e.getMessage());
             b.b("exception or timeout while waiting for url");
@@ -97,7 +97,7 @@ public class a {
         if (webView == null) {
             return null;
         }
-        String str = this.f22510a;
+        String str = this.f8902a;
         if (str != null) {
             return str;
         }
@@ -109,7 +109,7 @@ public class a {
         if (iWebView == null) {
             return null;
         }
-        String str = this.f22510a;
+        String str = this.f8902a;
         return str != null ? str : b(iWebView);
     }
 }

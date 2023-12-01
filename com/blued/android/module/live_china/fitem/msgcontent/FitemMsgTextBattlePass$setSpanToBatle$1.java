@@ -21,13 +21,9 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/msgcontent/FitemMsgTextBattlePass$setSpanToBatle$1.class */
 public final class FitemMsgTextBattlePass$setSpanToBatle$1 extends Lambda implements Function1<DslSpannableStringBuilder, Unit> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ FitemMsgTextBattlePass f12608a;
+    final /* synthetic */ FitemMsgTextBattlePass a;
     final /* synthetic */ Integer b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ String f12609c;
+    final /* synthetic */ String c;
     final /* synthetic */ Integer d;
     final /* synthetic */ String e;
     final /* synthetic */ Context f;
@@ -37,9 +33,9 @@ public final class FitemMsgTextBattlePass$setSpanToBatle$1 extends Lambda implem
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FitemMsgTextBattlePass$setSpanToBatle$1(FitemMsgTextBattlePass fitemMsgTextBattlePass, Integer num, String str, Integer num2, String str2, Context context, TextView textView) {
         super(1);
-        this.f12608a = fitemMsgTextBattlePass;
+        this.a = fitemMsgTextBattlePass;
         this.b = num;
-        this.f12609c = str;
+        this.c = str;
         this.d = num2;
         this.e = str2;
         this.f = context;
@@ -52,12 +48,12 @@ public final class FitemMsgTextBattlePass$setSpanToBatle$1 extends Lambda implem
         Intrinsics.e(context, "$context");
         Intrinsics.e(tv, "$tv");
         Intrinsics.e(goods_icon, "$goods_icon");
-        FrameLayout frameLayout = (FrameLayout) this$0.f10935a.a(R.id.fl_icon_root);
+        FrameLayout frameLayout = (FrameLayout) this$0.a.a(R.id.fl_icon_root);
         if (frameLayout == null) {
             return;
         }
         FitemMsgGift.Companion companion = FitemMsgGift.b;
-        IRequestHost iRequestHost = this$0.f10935a.b;
+        IRequestHost iRequestHost = this$0.a.b;
         Intrinsics.c(iRequestHost, "viewHolder.requestHost");
         companion.a(context, iRequestHost, tv, frameLayout, i, i2, goods_icon);
     }
@@ -76,10 +72,10 @@ public final class FitemMsgTextBattlePass$setSpanToBatle$1 extends Lambda implem
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
-        String k = this.f12608a.k();
+        String k = this.a.k();
         if (k != null) {
             buildSpannableString.a(k, new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgTextBattlePass$setSpanToBatle$1$2$1
                 public final void a(DslSpanBuilder addText) {
@@ -92,7 +88,7 @@ public final class FitemMsgTextBattlePass$setSpanToBatle$1 extends Lambda implem
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                     a(dslSpanBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
         }
@@ -107,12 +103,12 @@ public final class FitemMsgTextBattlePass$setSpanToBatle$1 extends Lambda implem
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         Integer num = this.b;
         if (num != null) {
-            FitemMsgTextBattlePass fitemMsgTextBattlePass = this.f12608a;
+            FitemMsgTextBattlePass fitemMsgTextBattlePass = this.a;
             int intValue = num.intValue();
             StringBuilder sb = new StringBuilder();
             sb.append(' ');
@@ -130,7 +126,7 @@ public final class FitemMsgTextBattlePass$setSpanToBatle$1 extends Lambda implem
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                     a(dslSpanBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
         }
@@ -145,7 +141,7 @@ public final class FitemMsgTextBattlePass$setSpanToBatle$1 extends Lambda implem
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         Integer num2 = this.b;
@@ -167,13 +163,13 @@ public final class FitemMsgTextBattlePass$setSpanToBatle$1 extends Lambda implem
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                     a(dslSpanBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
         }
-        final String str2 = this.f12609c;
+        final String str2 = this.c;
         if (str2 != null) {
-            final FitemMsgTextBattlePass fitemMsgTextBattlePass2 = this.f12608a;
+            final FitemMsgTextBattlePass fitemMsgTextBattlePass2 = this.a;
             final Context context = this.f;
             final TextView textView = this.g;
             buildSpannableString.a(new ColorDrawable(), 0, 0, FitemMsgGift.b.c(), FitemMsgGift.b.b(), new VerticalCenterImageSpan.SpanDrawCallback() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgTextBattlePass$setSpanToBatle$1$FVTZRpupbdWG2_23tzWg8FYPaz8
@@ -198,7 +194,7 @@ public final class FitemMsgTextBattlePass$setSpanToBatle$1 extends Lambda implem
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -206,6 +202,6 @@ public final class FitemMsgTextBattlePass$setSpanToBatle$1 extends Lambda implem
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
         a(dslSpannableStringBuilder);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

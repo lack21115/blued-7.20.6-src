@@ -8,9 +8,7 @@ import kotlin.ranges.ClosedRange;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/ComparableRange.class */
 class ComparableRange<T extends Comparable<? super T>> implements ClosedRange<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final T f42575a;
+    private final T a;
     private final T b;
 
     public boolean a() {
@@ -35,7 +33,7 @@ class ComparableRange<T extends Comparable<? super T>> implements ClosedRange<T>
 
     @Override // kotlin.ranges.ClosedRange
     public T getStart() {
-        return this.f42575a;
+        return this.a;
     }
 
     public int hashCode() {

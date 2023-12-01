@@ -3,6 +3,7 @@ package com.soft.blued.http.api;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.core.net.HttpRequestWrapper;
+import com.blued.android.core.net.HttpResponseHandler;
 import com.blued.android.framework.http.BluedHttpTools;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
@@ -32,7 +33,7 @@ import kotlinx.coroutines.CancellableContinuationImpl;
 public final class ApiUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final ApiUtils f29672a = new ApiUtils();
+    public static final ApiUtils f15982a = new ApiUtils();
 
     private ApiUtils() {
     }
@@ -48,7 +49,7 @@ public final class ApiUtils {
                 return;
             case 79599:
                 if (str.equals("PUT")) {
-                    a(Intrinsics.a(str2, (Object) "?http_method_override=PUT"), hashMap, z, bluedUIHttpResponse);
+                    a(Intrinsics.a(str2, "?http_method_override=PUT"), hashMap, z, bluedUIHttpResponse);
                     return;
                 }
                 return;
@@ -60,7 +61,7 @@ public final class ApiUtils {
                 return;
             case 2012838315:
                 if (str.equals("DELETE")) {
-                    a(Intrinsics.a(str2, (Object) "?http_method_override=DELETE"), hashMap, z, bluedUIHttpResponse);
+                    a(Intrinsics.a(str2, "?http_method_override=DELETE"), hashMap, z, bluedUIHttpResponse);
                     return;
                 }
                 return;
@@ -70,7 +71,7 @@ public final class ApiUtils {
     }
 
     private final void a(String str, HashMap<String, String> hashMap, boolean z, BluedUIHttpResponse<BluedEntityA<?>> bluedUIHttpResponse) {
-        HttpRequestWrapper b = HttpManager.b(str, bluedUIHttpResponse);
+        HttpRequestWrapper b = HttpManager.b(str, (HttpResponseHandler) bluedUIHttpResponse);
         HashMap<String, String> hashMap2 = hashMap;
         if (!(hashMap2 == null || hashMap2.isEmpty())) {
             if (hashMap.containsKey("JSON")) {
@@ -94,7 +95,7 @@ public final class ApiUtils {
                 return;
             case 79599:
                 if (str.equals("PUT")) {
-                    b(Intrinsics.a(str2, (Object) "?http_method_override=PUT"), hashMap, z, bluedUIHttpResponse);
+                    b(Intrinsics.a(str2, "?http_method_override=PUT"), hashMap, z, bluedUIHttpResponse);
                     return;
                 }
                 return;
@@ -106,7 +107,7 @@ public final class ApiUtils {
                 return;
             case 2012838315:
                 if (str.equals("DELETE")) {
-                    b(Intrinsics.a(str2, (Object) "?http_method_override=DELETE"), hashMap, z, bluedUIHttpResponse);
+                    b(Intrinsics.a(str2, "?http_method_override=DELETE"), hashMap, z, bluedUIHttpResponse);
                     return;
                 }
                 return;
@@ -116,7 +117,7 @@ public final class ApiUtils {
     }
 
     private final void b(String str, HashMap<String, String> hashMap, boolean z, BluedUIHttpResponse<BluedEntity<?, ?>> bluedUIHttpResponse) {
-        HttpRequestWrapper b = HttpManager.b(str, bluedUIHttpResponse);
+        HttpRequestWrapper b = HttpManager.b(str, (HttpResponseHandler) bluedUIHttpResponse);
         if (hashMap.containsKey("JSON")) {
             b.a(hashMap.get("JSON"));
         } else {
@@ -127,7 +128,7 @@ public final class ApiUtils {
     }
 
     private final void c(String str, HashMap<String, String> hashMap, boolean z, BluedUIHttpResponse<BluedEntityA<?>> bluedUIHttpResponse) {
-        HttpRequestWrapper a2 = HttpManager.a(str, bluedUIHttpResponse);
+        HttpRequestWrapper a2 = HttpManager.a(str, (HttpResponseHandler) bluedUIHttpResponse);
         HashMap<String, String> hashMap2 = hashMap;
         if (!(hashMap2 == null || hashMap2.isEmpty())) {
             a2.a(hashMap2);
@@ -137,7 +138,7 @@ public final class ApiUtils {
     }
 
     private final void d(String str, HashMap<String, String> hashMap, boolean z, BluedUIHttpResponse<BluedEntity<?, ?>> bluedUIHttpResponse) {
-        HttpRequestWrapper a2 = HttpManager.a(str, bluedUIHttpResponse);
+        HttpRequestWrapper a2 = HttpManager.a(str, (HttpResponseHandler) bluedUIHttpResponse);
         HashMap<String, String> hashMap2 = hashMap;
         if (!(hashMap2 == null || hashMap2.isEmpty())) {
             a2.a(hashMap2);
@@ -146,78 +147,77 @@ public final class ApiUtils {
         a2.h();
     }
 
+    /* JADX WARN: Type inference failed for: r0v6, types: [com.soft.blued.http.api.ApiUtils$send$2$1] */
     public final Object a(String str, final String str2, HashMap<String, String> hashMap, final boolean z, final boolean z2, Class<?> cls, Continuation<? super BluedEntityA<?>> continuation) {
-        CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.a(continuation), 1);
+        CancellableContinuation cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.a(continuation), 1);
         cancellableContinuationImpl.e();
-        final CancellableContinuationImpl cancellableContinuationImpl2 = cancellableContinuationImpl;
+        final CancellableContinuation cancellableContinuation = cancellableContinuationImpl;
         if (AppInfo.m()) {
-            Logger.c("KT_API", "url :" + str2 + "  -  params -> " + ((Object) AppInfo.f().toJson(hashMap)) + "   internalError: " + z2 + " verifyToken: " + z);
+            Logger.c("KT_API", new Object[]{"url :" + str2 + "  -  params -> " + ((Object) AppInfo.f().toJson(hashMap)) + "   internalError: " + z2 + " verifyToken: " + z});
         }
-        ApiUtils apiUtils = f29672a;
-        BluedUIHttpResponse<BluedEntityA<?>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<?>>() { // from class: com.soft.blued.http.api.ApiUtils$send$2$1
+        ApiUtils apiUtils = f15982a;
+        ?? r0 = new BluedUIHttpResponse<BluedEntityA<?>>() { // from class: com.soft.blued.http.api.ApiUtils$send$2$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<?> bluedEntityA) {
                 if (bluedEntityA == null) {
                     return;
                 }
-                CancellableContinuation<BluedEntityA<?>> cancellableContinuation = cancellableContinuationImpl2;
+                CancellableContinuation<BluedEntityA<?>> cancellableContinuation2 = cancellableContinuation;
                 final String str3 = str2;
-                cancellableContinuation.a((CancellableContinuation<BluedEntityA<?>>) bluedEntityA, (Function1<? super Throwable, Unit>) new Function1<Throwable, Unit>() { // from class: com.soft.blued.http.api.ApiUtils$send$2$1$onUIUpdate$1$1
+                cancellableContinuation2.a(bluedEntityA, new Function1<Throwable, Unit>() { // from class: com.soft.blued.http.api.ApiUtils$send$2$1$onUIUpdate$1$1
                     /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
                         super(1);
                     }
 
-                    public final void a(Throwable it) {
-                        Intrinsics.e(it, "it");
+                    public final void a(Throwable th) {
+                        Intrinsics.e(th, "it");
                         if (AppInfo.m()) {
-                            Logger.c("KT_API", String.this + "  requestCancel : " + ((Object) it.getMessage()));
+                            Logger.c("KT_API", new Object[]{str3 + "  requestCancel : " + ((Object) th.getMessage())});
                         }
                     }
 
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* synthetic */ Unit invoke(Throwable th) {
-                        a(th);
-                        return Unit.f42314a;
+                    public /* synthetic */ Object invoke(Object obj) {
+                        a((Throwable) obj);
+                        return Unit.a;
                     }
                 });
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str3) {
-                Logger.c("KT_API", "send error -> code :" + i + "    msg : " + ((Object) str3) + ", verifyToken : " + z);
-                BluedEntityA<?> bluedEntityA = new BluedEntityA<>();
+                Logger.c("KT_API", new Object[]{"send error -> code :" + i + "    msg : " + ((Object) str3) + ", verifyToken : " + z});
+                BluedEntityA bluedEntityA = new BluedEntityA();
                 bluedEntityA.code = i;
                 bluedEntityA.message = str3;
-                CancellableContinuation<BluedEntityA<?>> cancellableContinuation = cancellableContinuationImpl2;
+                CancellableContinuation<BluedEntityA<?>> cancellableContinuation2 = cancellableContinuation;
                 final String str4 = str2;
-                cancellableContinuation.a((CancellableContinuation<BluedEntityA<?>>) bluedEntityA, (Function1<? super Throwable, Unit>) new Function1<Throwable, Unit>() { // from class: com.soft.blued.http.api.ApiUtils$send$2$1$onUIFailure$1
+                cancellableContinuation2.a(bluedEntityA, new Function1<Throwable, Unit>() { // from class: com.soft.blued.http.api.ApiUtils$send$2$1$onUIFailure$1
                     /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
                         super(1);
                     }
 
-                    public final void a(Throwable it) {
-                        Intrinsics.e(it, "it");
+                    public final void a(Throwable th) {
+                        Intrinsics.e(th, "it");
                         if (AppInfo.m()) {
-                            Logger.c("KT_API", String.this + "  requestCancel : " + ((Object) it.getMessage()));
+                            Logger.c("KT_API", new Object[]{str4 + "  requestCancel : " + ((Object) th.getMessage())});
                         }
                     }
 
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* synthetic */ Unit invoke(Throwable th) {
-                        a(th);
-                        return Unit.f42314a;
+                    public /* synthetic */ Object invoke(Object obj) {
+                        a((Throwable) obj);
+                        return Unit.a;
                     }
                 });
                 return z2;
             }
         };
-        bluedUIHttpResponse.setDataType(C$Gson$Types.newParameterizedTypeWithOwner(null, BluedEntityA.class, cls));
-        Unit unit = Unit.f42314a;
-        apiUtils.a(str, str2, hashMap, z, bluedUIHttpResponse);
+        r0.setDataType(C$Gson$Types.newParameterizedTypeWithOwner(null, BluedEntityA.class, cls));
+        Unit unit = Unit.a;
+        apiUtils.a(str, str2, hashMap, z, (BluedUIHttpResponse) r0);
         Object h = cancellableContinuationImpl.h();
         if (h == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
@@ -225,76 +225,75 @@ public final class ApiUtils {
         return h;
     }
 
+    /* JADX WARN: Type inference failed for: r0v6, types: [com.soft.blued.http.api.ApiUtils$sendWithExtra$2$1] */
     public final Object a(String str, final String str2, HashMap<String, String> hashMap, boolean z, final boolean z2, Type type, Type type2, Continuation<? super BluedEntity<?, ?>> continuation) {
-        CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.a(continuation), 1);
+        CancellableContinuation cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.a(continuation), 1);
         cancellableContinuationImpl.e();
-        final CancellableContinuationImpl cancellableContinuationImpl2 = cancellableContinuationImpl;
+        final CancellableContinuation cancellableContinuation = cancellableContinuationImpl;
         if (AppInfo.m()) {
-            Logger.c("KT_API", "url :" + str2 + "  -  params -> " + ((Object) AppInfo.f().toJson(hashMap)) + "   internalError: " + z2 + " verifyToken: " + z);
+            Logger.c("KT_API", new Object[]{"url :" + str2 + "  -  params -> " + ((Object) AppInfo.f().toJson(hashMap)) + "   internalError: " + z2 + " verifyToken: " + z});
         }
-        ApiUtils apiUtils = f29672a;
-        BluedUIHttpResponse<BluedEntity<?, ?>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntity<?, ?>>() { // from class: com.soft.blued.http.api.ApiUtils$sendWithExtra$2$1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        ApiUtils apiUtils = f15982a;
+        ?? r0 = new BluedUIHttpResponse<BluedEntity<?, ?>>() { // from class: com.soft.blued.http.api.ApiUtils$sendWithExtra$2$1
             public boolean onUIFailure(int i, String str3) {
-                Logger.c("KT_API", "send error -> code :" + i + "    msg : " + ((Object) str3));
-                BluedEntity<?, ?> bluedEntity = new BluedEntity<>();
+                Logger.c("KT_API", new Object[]{"send error -> code :" + i + "    msg : " + ((Object) str3)});
+                BluedEntity bluedEntity = new BluedEntity();
                 bluedEntity.code = i;
                 bluedEntity.message = str3;
-                CancellableContinuation<BluedEntity<?, ?>> cancellableContinuation = cancellableContinuationImpl2;
+                CancellableContinuation<BluedEntity<?, ?>> cancellableContinuation2 = cancellableContinuation;
                 final String str4 = str2;
-                cancellableContinuation.a((CancellableContinuation<BluedEntity<?, ?>>) bluedEntity, (Function1<? super Throwable, Unit>) new Function1<Throwable, Unit>() { // from class: com.soft.blued.http.api.ApiUtils$sendWithExtra$2$1$onUIFailure$1
+                cancellableContinuation2.a(bluedEntity, new Function1<Throwable, Unit>() { // from class: com.soft.blued.http.api.ApiUtils$sendWithExtra$2$1$onUIFailure$1
                     /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
                         super(1);
                     }
 
-                    public final void a(Throwable it) {
-                        Intrinsics.e(it, "it");
+                    public final void a(Throwable th) {
+                        Intrinsics.e(th, "it");
                         if (AppInfo.m()) {
-                            Logger.c("KT_API", String.this + "  requestCancel : " + ((Object) it.getMessage()));
+                            Logger.c("KT_API", new Object[]{str4 + "  requestCancel : " + ((Object) th.getMessage())});
                         }
                     }
 
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* synthetic */ Unit invoke(Throwable th) {
-                        a(th);
-                        return Unit.f42314a;
+                    public /* synthetic */ Object invoke(Object obj) {
+                        a((Throwable) obj);
+                        return Unit.a;
                     }
                 });
                 return z2;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<?, ?> bluedEntity) {
                 if (bluedEntity == null) {
                     return;
                 }
-                CancellableContinuation<BluedEntity<?, ?>> cancellableContinuation = cancellableContinuationImpl2;
+                CancellableContinuation<BluedEntity<?, ?>> cancellableContinuation2 = cancellableContinuation;
                 final String str3 = str2;
-                cancellableContinuation.a((CancellableContinuation<BluedEntity<?, ?>>) bluedEntity, (Function1<? super Throwable, Unit>) new Function1<Throwable, Unit>() { // from class: com.soft.blued.http.api.ApiUtils$sendWithExtra$2$1$onUIUpdate$1$1
+                cancellableContinuation2.a(bluedEntity, new Function1<Throwable, Unit>() { // from class: com.soft.blued.http.api.ApiUtils$sendWithExtra$2$1$onUIUpdate$1$1
                     /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
                         super(1);
                     }
 
-                    public final void a(Throwable it) {
-                        Intrinsics.e(it, "it");
+                    public final void a(Throwable th) {
+                        Intrinsics.e(th, "it");
                         if (AppInfo.m()) {
-                            Logger.c("KT_API", String.this + "  requestCancel : " + ((Object) it.getMessage()));
+                            Logger.c("KT_API", new Object[]{str3 + "  requestCancel : " + ((Object) th.getMessage())});
                         }
                     }
 
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* synthetic */ Unit invoke(Throwable th) {
-                        a(th);
-                        return Unit.f42314a;
+                    public /* synthetic */ Object invoke(Object obj) {
+                        a((Throwable) obj);
+                        return Unit.a;
                     }
                 });
             }
         };
-        bluedUIHttpResponse.setDataType(C$Gson$Types.newParameterizedTypeWithOwner(null, BluedEntity.class, f29672a.b(type), f29672a.b(type2)));
-        Unit unit = Unit.f42314a;
-        apiUtils.b(str, str2, hashMap, z, bluedUIHttpResponse);
+        r0.setDataType(C$Gson$Types.newParameterizedTypeWithOwner(null, BluedEntity.class, f15982a.b(type), f15982a.b(type2)));
+        Unit unit = Unit.a;
+        apiUtils.b(str, str2, hashMap, z, (BluedUIHttpResponse) r0);
         Object h = cancellableContinuationImpl.h();
         if (h == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
@@ -302,26 +301,26 @@ public final class ApiUtils {
         return h;
     }
 
-    public final Type a(int i, ParameterizedType type) {
-        Intrinsics.e(type, "type");
-        Type[] actualTypeArguments = type.getActualTypeArguments();
+    public final Type a(int i, ParameterizedType parameterizedType) {
+        Intrinsics.e(parameterizedType, "type");
+        Type[] actualTypeArguments = parameterizedType.getActualTypeArguments();
         if (i >= 0 && i < actualTypeArguments.length) {
-            Type type2 = actualTypeArguments[i];
-            Type type3 = type2;
-            if (type2 instanceof WildcardType) {
-                type3 = ((WildcardType) type2).getUpperBounds()[0];
+            Type type = actualTypeArguments[i];
+            Type type2 = type;
+            if (type instanceof WildcardType) {
+                type2 = ((WildcardType) type).getUpperBounds()[0];
             }
-            return type3;
+            return type2;
         }
-        throw new IllegalArgumentException(("Index " + i + " not in range [0," + actualTypeArguments.length + ") for " + type).toString());
+        throw new IllegalArgumentException(("Index " + i + " not in range [0," + actualTypeArguments.length + ") for " + parameterizedType).toString());
     }
 
-    public final boolean a(Class<?> clazz) {
-        Intrinsics.e(clazz, "clazz");
-        if (Intrinsics.a(clazz, Boolean.TYPE) ? true : Intrinsics.a(clazz, Float.TYPE) ? true : Intrinsics.a(clazz, Integer.TYPE) ? true : Intrinsics.a(clazz, String.class) ? true : Intrinsics.a(clazz, Double.TYPE) ? true : Intrinsics.a(clazz, Short.TYPE) ? true : Intrinsics.a(clazz, Long.TYPE) ? true : Intrinsics.a(clazz, Character.class) ? true : Intrinsics.a(clazz, Integer.class)) {
+    public final boolean a(Class<?> cls) {
+        Intrinsics.e(cls, "clazz");
+        if (Intrinsics.a(cls, Boolean.TYPE) ? true : Intrinsics.a(cls, Float.TYPE) ? true : Intrinsics.a(cls, Integer.TYPE) ? true : Intrinsics.a(cls, String.class) ? true : Intrinsics.a(cls, Double.TYPE) ? true : Intrinsics.a(cls, Short.TYPE) ? true : Intrinsics.a(cls, Long.TYPE) ? true : Intrinsics.a(cls, Character.class) ? true : Intrinsics.a(cls, Integer.class)) {
             return true;
         }
-        return Intrinsics.a(clazz, Byte.TYPE);
+        return Intrinsics.a(cls, Byte.TYPE);
     }
 
     public final boolean a(Type type) {
@@ -363,7 +362,7 @@ public final class ApiUtils {
     }
 
     public final Class<?> b(Type type) {
-        Intrinsics.a((Object) type, "type == null");
+        Intrinsics.a(type, "type == null");
         if (type instanceof Class) {
             return (Class) type;
         }
@@ -396,13 +395,13 @@ public final class ApiUtils {
         }
     }
 
-    public final Type b(int i, ParameterizedType type) {
-        Intrinsics.e(type, "type");
-        Type type2 = type.getActualTypeArguments()[i];
-        Type type3 = type2;
-        if (type2 instanceof WildcardType) {
-            type3 = ((WildcardType) type2).getLowerBounds()[0];
+    public final Type b(int i, ParameterizedType parameterizedType) {
+        Intrinsics.e(parameterizedType, "type");
+        Type type = parameterizedType.getActualTypeArguments()[i];
+        Type type2 = type;
+        if (type instanceof WildcardType) {
+            type2 = ((WildcardType) type).getLowerBounds()[0];
         }
-        return type3;
+        return type2;
     }
 }

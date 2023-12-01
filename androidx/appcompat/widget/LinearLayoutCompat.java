@@ -1,5 +1,6 @@
 package androidx.appcompat.widget;
 
+import android.R;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Canvas;
@@ -13,7 +14,6 @@ import android.view.inspector.InspectionCompanion;
 import android.view.inspector.PropertyMapper;
 import android.view.inspector.PropertyReader;
 import android.widget.LinearLayout;
-import androidx.appcompat.R;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import com.google.android.material.badge.BadgeDrawable;
@@ -62,11 +62,11 @@ public class LinearLayoutCompat extends ViewGroup {
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<LinearLayoutCompat> {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1827a = false;
+        private boolean f1779a = false;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1828c;
+        private int f1780c;
         private int d;
         private int e;
         private int f;
@@ -77,20 +77,20 @@ public class LinearLayoutCompat extends ViewGroup {
 
         @Override // android.view.inspector.InspectionCompanion
         public void mapProperties(PropertyMapper propertyMapper) {
-            this.b = propertyMapper.mapBoolean("baselineAligned", 16843046);
-            this.f1828c = propertyMapper.mapInt("baselineAlignedChildIndex", 16843047);
-            this.d = propertyMapper.mapGravity("gravity", 16842927);
-            this.e = propertyMapper.mapIntEnum("orientation", 16842948, new IntFunction<String>() { // from class: androidx.appcompat.widget.LinearLayoutCompat.InspectionCompanion.1
+            this.b = propertyMapper.mapBoolean("baselineAligned", R.attr.baselineAligned);
+            this.f1780c = propertyMapper.mapInt("baselineAlignedChildIndex", R.attr.baselineAlignedChildIndex);
+            this.d = propertyMapper.mapGravity("gravity", R.attr.gravity);
+            this.e = propertyMapper.mapIntEnum("orientation", R.attr.orientation, new IntFunction<String>() { // from class: androidx.appcompat.widget.LinearLayoutCompat.InspectionCompanion.1
                 @Override // java.util.function.IntFunction
                 public String apply(int i) {
                     return i != 0 ? i != 1 ? String.valueOf(i) : "vertical" : "horizontal";
                 }
             });
-            this.f = propertyMapper.mapFloat("weightSum", 16843048);
-            this.g = propertyMapper.mapObject("divider", R.attr.divider);
-            this.h = propertyMapper.mapInt("dividerPadding", R.attr.dividerPadding);
-            this.i = propertyMapper.mapBoolean("measureWithLargestChild", R.attr.measureWithLargestChild);
-            this.j = propertyMapper.mapIntFlag("showDividers", R.attr.showDividers, new IntFunction<Set<String>>() { // from class: androidx.appcompat.widget.LinearLayoutCompat.InspectionCompanion.2
+            this.f = propertyMapper.mapFloat("weightSum", R.attr.weightSum);
+            this.g = propertyMapper.mapObject("divider", androidx.appcompat.R.attr.divider);
+            this.h = propertyMapper.mapInt("dividerPadding", androidx.appcompat.R.attr.dividerPadding);
+            this.i = propertyMapper.mapBoolean("measureWithLargestChild", androidx.appcompat.R.attr.measureWithLargestChild);
+            this.j = propertyMapper.mapIntFlag("showDividers", androidx.appcompat.R.attr.showDividers, new IntFunction<Set<String>>() { // from class: androidx.appcompat.widget.LinearLayoutCompat.InspectionCompanion.2
                 @Override // java.util.function.IntFunction
                 public Set<String> apply(int i) {
                     HashSet hashSet = new HashSet();
@@ -109,16 +109,16 @@ public class LinearLayoutCompat extends ViewGroup {
                     return hashSet;
                 }
             });
-            this.f1827a = true;
+            this.f1779a = true;
         }
 
         @Override // android.view.inspector.InspectionCompanion
         public void readProperties(LinearLayoutCompat linearLayoutCompat, PropertyReader propertyReader) {
-            if (!this.f1827a) {
+            if (!this.f1779a) {
                 throw new InspectionCompanion.UninitializedPropertyMapException();
             }
             propertyReader.readBoolean(this.b, linearLayoutCompat.isBaselineAligned());
-            propertyReader.readInt(this.f1828c, linearLayoutCompat.getBaselineAlignedChildIndex());
+            propertyReader.readInt(this.f1780c, linearLayoutCompat.getBaselineAlignedChildIndex());
             propertyReader.readGravity(this.d, linearLayoutCompat.getGravity());
             propertyReader.readIntEnum(this.e, linearLayoutCompat.getOrientation());
             propertyReader.readFloat(this.f, linearLayoutCompat.getWeightSum());
@@ -171,26 +171,26 @@ public class LinearLayoutCompat extends ViewGroup {
         this.mBaselineAlignedChildIndex = -1;
         this.mBaselineChildTop = 0;
         this.mGravity = BadgeDrawable.TOP_START;
-        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, attributeSet, R.styleable.LinearLayoutCompat, i, 0);
-        ViewCompat.saveAttributeDataForStyleable(this, context, R.styleable.LinearLayoutCompat, attributeSet, obtainStyledAttributes.getWrappedTypeArray(), i, 0);
-        int i2 = obtainStyledAttributes.getInt(R.styleable.LinearLayoutCompat_android_orientation, -1);
+        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, attributeSet, androidx.appcompat.R.styleable.LinearLayoutCompat, i, 0);
+        ViewCompat.saveAttributeDataForStyleable(this, context, androidx.appcompat.R.styleable.LinearLayoutCompat, attributeSet, obtainStyledAttributes.getWrappedTypeArray(), i, 0);
+        int i2 = obtainStyledAttributes.getInt(androidx.appcompat.R.styleable.LinearLayoutCompat_android_orientation, -1);
         if (i2 >= 0) {
             setOrientation(i2);
         }
-        int i3 = obtainStyledAttributes.getInt(R.styleable.LinearLayoutCompat_android_gravity, -1);
+        int i3 = obtainStyledAttributes.getInt(androidx.appcompat.R.styleable.LinearLayoutCompat_android_gravity, -1);
         if (i3 >= 0) {
             setGravity(i3);
         }
-        boolean z = obtainStyledAttributes.getBoolean(R.styleable.LinearLayoutCompat_android_baselineAligned, true);
+        boolean z = obtainStyledAttributes.getBoolean(androidx.appcompat.R.styleable.LinearLayoutCompat_android_baselineAligned, true);
         if (!z) {
             setBaselineAligned(z);
         }
-        this.mWeightSum = obtainStyledAttributes.getFloat(R.styleable.LinearLayoutCompat_android_weightSum, -1.0f);
-        this.mBaselineAlignedChildIndex = obtainStyledAttributes.getInt(R.styleable.LinearLayoutCompat_android_baselineAlignedChildIndex, -1);
-        this.mUseLargestChild = obtainStyledAttributes.getBoolean(R.styleable.LinearLayoutCompat_measureWithLargestChild, false);
-        setDividerDrawable(obtainStyledAttributes.getDrawable(R.styleable.LinearLayoutCompat_divider));
-        this.mShowDividers = obtainStyledAttributes.getInt(R.styleable.LinearLayoutCompat_showDividers, 0);
-        this.mDividerPadding = obtainStyledAttributes.getDimensionPixelSize(R.styleable.LinearLayoutCompat_dividerPadding, 0);
+        this.mWeightSum = obtainStyledAttributes.getFloat(androidx.appcompat.R.styleable.LinearLayoutCompat_android_weightSum, -1.0f);
+        this.mBaselineAlignedChildIndex = obtainStyledAttributes.getInt(androidx.appcompat.R.styleable.LinearLayoutCompat_android_baselineAlignedChildIndex, -1);
+        this.mUseLargestChild = obtainStyledAttributes.getBoolean(androidx.appcompat.R.styleable.LinearLayoutCompat_measureWithLargestChild, false);
+        setDividerDrawable(obtainStyledAttributes.getDrawable(androidx.appcompat.R.styleable.LinearLayoutCompat_divider));
+        this.mShowDividers = obtainStyledAttributes.getInt(androidx.appcompat.R.styleable.LinearLayoutCompat_showDividers, 0);
+        this.mDividerPadding = obtainStyledAttributes.getDimensionPixelSize(androidx.appcompat.R.styleable.LinearLayoutCompat_dividerPadding, 0);
         obtainStyledAttributes.recycle();
     }
 
@@ -242,9 +242,8 @@ public class LinearLayoutCompat extends ViewGroup {
         view.layout(i, i2, i3 + i, i4 + i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return layoutParams instanceof LayoutParams;
     }
 
@@ -781,9 +780,8 @@ public class LinearLayoutCompat extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         if (this.mDivider == null) {
             return;
         }

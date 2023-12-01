@@ -11,22 +11,22 @@ public class GifHeaderParser {
     private ByteBuffer b;
 
     /* renamed from: c  reason: collision with root package name */
-    private GifHeader f20690c;
+    private GifHeader f7084c;
 
     /* renamed from: a  reason: collision with root package name */
-    private final byte[] f20689a = new byte[256];
+    private final byte[] f7083a = new byte[256];
     private int d = 0;
 
     private void a(int i) {
         boolean z = false;
-        while (!z && !o() && this.f20690c.f20688c <= i) {
+        while (!z && !o() && this.f7084c.f7082c <= i) {
             int m = m();
             if (m == 33) {
                 int m2 = m();
                 if (m2 == 1) {
                     k();
                 } else if (m2 == 249) {
-                    this.f20690c.d = new GifFrame();
+                    this.f7084c.d = new GifFrame();
                     e();
                 } else if (m2 == 254) {
                     k();
@@ -41,7 +41,7 @@ public class GifHeaderParser {
                         if (i3 >= 11) {
                             break;
                         }
-                        sb.append((char) this.f20689a[i3]);
+                        sb.append((char) this.f7083a[i3]);
                         i2 = i3 + 1;
                     }
                     if (sb.toString().equals("NETSCAPE2.0")) {
@@ -51,12 +51,12 @@ public class GifHeaderParser {
                     }
                 }
             } else if (m == 44) {
-                if (this.f20690c.d == null) {
-                    this.f20690c.d = new GifFrame();
+                if (this.f7084c.d == null) {
+                    this.f7084c.d = new GifFrame();
                 }
                 f();
             } else if (m != 59) {
-                this.f20690c.b = 1;
+                this.f7084c.b = 1;
             } else {
                 z = true;
             }
@@ -87,15 +87,15 @@ public class GifHeaderParser {
             if (Log.isLoggable("GifHeaderParser", 3)) {
                 Log.d("GifHeaderParser", "Format Error Reading Color Table", e);
             }
-            this.f20690c.b = 1;
+            this.f7084c.b = 1;
         }
         return iArr;
     }
 
     private void c() {
         this.b = null;
-        Arrays.fill(this.f20689a, (byte) 0);
-        this.f20690c = new GifHeader();
+        Arrays.fill(this.f7083a, (byte) 0);
+        this.f7084c = new GifHeader();
         this.d = 0;
     }
 
@@ -106,12 +106,12 @@ public class GifHeaderParser {
     private void e() {
         m();
         int m = m();
-        this.f20690c.d.g = (m & 28) >> 2;
+        this.f7084c.d.g = (m & 28) >> 2;
         boolean z = true;
-        if (this.f20690c.d.g == 0) {
-            this.f20690c.d.g = 1;
+        if (this.f7084c.d.g == 0) {
+            this.f7084c.d.g = 1;
         }
-        GifFrame gifFrame = this.f20690c.d;
+        GifFrame gifFrame = this.f7084c.d;
         if ((m & 1) == 0) {
             z = false;
         }
@@ -121,46 +121,46 @@ public class GifHeaderParser {
         if (n < 2) {
             i = 10;
         }
-        this.f20690c.d.i = i * 10;
-        this.f20690c.d.h = m();
+        this.f7084c.d.i = i * 10;
+        this.f7084c.d.h = m();
         m();
     }
 
     private void f() {
-        this.f20690c.d.f20685a = n();
-        this.f20690c.d.b = n();
-        this.f20690c.d.f20686c = n();
-        this.f20690c.d.d = n();
+        this.f7084c.d.f7079a = n();
+        this.f7084c.d.b = n();
+        this.f7084c.d.f7080c = n();
+        this.f7084c.d.d = n();
         int m = m();
         boolean z = false;
         boolean z2 = (m & 128) != 0;
         int pow = (int) Math.pow(2.0d, (m & 7) + 1);
-        GifFrame gifFrame = this.f20690c.d;
+        GifFrame gifFrame = this.f7084c.d;
         if ((m & 64) != 0) {
             z = true;
         }
         gifFrame.e = z;
         if (z2) {
-            this.f20690c.d.k = b(pow);
+            this.f7084c.d.k = b(pow);
         } else {
-            this.f20690c.d.k = null;
+            this.f7084c.d.k = null;
         }
-        this.f20690c.d.j = this.b.position();
+        this.f7084c.d.j = this.b.position();
         j();
         if (o()) {
             return;
         }
-        this.f20690c.f20688c++;
-        this.f20690c.e.add(this.f20690c.d);
+        this.f7084c.f7082c++;
+        this.f7084c.e.add(this.f7084c.d);
     }
 
     private void g() {
         do {
             l();
-            byte[] bArr = this.f20689a;
+            byte[] bArr = this.f7083a;
             if (bArr[0] == 1) {
                 byte b = bArr[1];
-                this.f20690c.m = ((bArr[2] & 255) << 8) | (b & 255);
+                this.f7084c.m = ((bArr[2] & 255) << 8) | (b & 255);
             }
             if (this.d <= 0) {
                 return;
@@ -180,27 +180,27 @@ public class GifHeaderParser {
             i = i2 + 1;
         }
         if (!sb.toString().startsWith("GIF")) {
-            this.f20690c.b = 1;
+            this.f7084c.b = 1;
             return;
         }
         i();
-        if (!this.f20690c.h || o()) {
+        if (!this.f7084c.h || o()) {
             return;
         }
-        GifHeader gifHeader = this.f20690c;
-        gifHeader.f20687a = b(gifHeader.i);
-        GifHeader gifHeader2 = this.f20690c;
-        gifHeader2.l = gifHeader2.f20687a[this.f20690c.j];
+        GifHeader gifHeader = this.f7084c;
+        gifHeader.f7081a = b(gifHeader.i);
+        GifHeader gifHeader2 = this.f7084c;
+        gifHeader2.l = gifHeader2.f7081a[this.f7084c.j];
     }
 
     private void i() {
-        this.f20690c.f = n();
-        this.f20690c.g = n();
+        this.f7084c.f = n();
+        this.f7084c.g = n();
         int m = m();
-        this.f20690c.h = (m & 128) != 0;
-        this.f20690c.i = (int) Math.pow(2.0d, (m & 7) + 1);
-        this.f20690c.j = m();
-        this.f20690c.k = m();
+        this.f7084c.h = (m & 128) != 0;
+        this.f7084c.i = (int) Math.pow(2.0d, (m & 7) + 1);
+        this.f7084c.j = m();
+        this.f7084c.k = m();
     }
 
     private void j() {
@@ -232,13 +232,13 @@ public class GifHeaderParser {
                 }
                 int i4 = i2;
                 i2 = this.d - i;
-                this.b.get(this.f20689a, i, i2);
+                this.b.get(this.f7083a, i, i2);
                 i += i2;
             } catch (Exception e) {
                 if (Log.isLoggable("GifHeaderParser", 3)) {
                     Log.d("GifHeaderParser", "Error Reading Block n: " + i + " count: " + i3 + " blockSize: " + this.d, e);
                 }
-                this.f20690c.b = 1;
+                this.f7084c.b = 1;
                 return;
             }
         }
@@ -248,7 +248,7 @@ public class GifHeaderParser {
         try {
             return this.b.get() & 255;
         } catch (Exception e) {
-            this.f20690c.b = 1;
+            this.f7084c.b = 1;
             return 0;
         }
     }
@@ -258,7 +258,7 @@ public class GifHeaderParser {
     }
 
     private boolean o() {
-        return this.f20690c.b != 0;
+        return this.f7084c.b != 0;
     }
 
     public GifHeaderParser a(ByteBuffer byteBuffer) {
@@ -272,22 +272,22 @@ public class GifHeaderParser {
 
     public void a() {
         this.b = null;
-        this.f20690c = null;
+        this.f7084c = null;
     }
 
     public GifHeader b() {
         if (this.b != null) {
             if (o()) {
-                return this.f20690c;
+                return this.f7084c;
             }
             h();
             if (!o()) {
                 d();
-                if (this.f20690c.f20688c < 0) {
-                    this.f20690c.b = 1;
+                if (this.f7084c.f7082c < 0) {
+                    this.f7084c.b = 1;
                 }
             }
-            return this.f20690c;
+            return this.f7084c;
         }
         throw new IllegalStateException("You must call setData() before parseHeader()");
     }

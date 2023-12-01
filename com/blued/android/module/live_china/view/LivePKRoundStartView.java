@@ -14,17 +14,12 @@ import android.widget.ImageView;
 import com.blued.android.module.common.view.ScanningImageView;
 import com.blued.android.module.live_china.R;
 import com.bytedance.applog.tracker.Tracker;
-import com.igexin.push.config.c;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKRoundStartView.class */
 public class LivePKRoundStartView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    Runnable f14815a;
+    Runnable a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f14816c;
+    private ImageView c;
     private ImageView d;
     private ImageView e;
     private ImageView f;
@@ -34,19 +29,15 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
     /* renamed from: com.blued.android.module.live_china.view.LivePKRoundStartView$6  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKRoundStartView$6.class */
     class AnonymousClass6 implements ValueAnimator.AnimatorUpdateListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f14824a;
+        final /* synthetic */ int a;
         final /* synthetic */ int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ LivePKRoundStartView f14825c;
+        final /* synthetic */ LivePKRoundStartView c;
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            ImageView imageView = this.f14825c.f;
-            int i = this.f14824a;
+            ImageView imageView = this.c.f;
+            int i = this.a;
             imageView.setX(i + ((this.b - i) * floatValue));
         }
     }
@@ -54,9 +45,7 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
     /* renamed from: com.blued.android.module.live_china.view.LivePKRoundStartView$7  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKRoundStartView$7.class */
     class AnonymousClass7 implements Animator.AnimatorListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LivePKRoundStartView f14826a;
+        final /* synthetic */ LivePKRoundStartView a;
 
         @Override // android.animation.Animator.AnimatorListener
         public void onAnimationCancel(Animator animator) {
@@ -64,8 +53,8 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
 
         @Override // android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            this.f14826a.f.setVisibility(8);
-            this.f14826a.a();
+            this.a.f.setVisibility(8);
+            this.a.a();
         }
 
         @Override // android.animation.Animator.AnimatorListener
@@ -74,7 +63,7 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
 
         @Override // android.animation.Animator.AnimatorListener
         public void onAnimationStart(Animator animator) {
-            this.f14826a.f.setVisibility(0);
+            this.a.f.setVisibility(0);
         }
     }
 
@@ -85,7 +74,7 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
     public LivePKRoundStartView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.h = false;
-        this.f14815a = new Runnable() { // from class: com.blued.android.module.live_china.view.LivePKRoundStartView.8
+        this.a = new Runnable() { // from class: com.blued.android.module.live_china.view.LivePKRoundStartView.8
             @Override // java.lang.Runnable
             public void run() {
                 LivePKRoundStartView.this.setVisibility(8);
@@ -120,7 +109,7 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
     private void b() {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_round_start_view, this);
         this.b = (ImageView) findViewById(R.id.iv_left);
-        this.f14816c = (ImageView) findViewById(R.id.iv_middle);
+        this.c = (ImageView) findViewById(R.id.iv_middle);
         this.d = (ImageView) findViewById(R.id.iv_right);
         this.e = (ImageView) findViewById(R.id.iv_bg);
         this.f = (ImageView) findViewById(R.id.iv_light);
@@ -131,7 +120,7 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
             public void a() {
                 LivePKRoundStartView.this.b.setVisibility(8);
                 LivePKRoundStartView.this.d.setVisibility(8);
-                LivePKRoundStartView.this.f14816c.setVisibility(8);
+                LivePKRoundStartView.this.c.setVisibility(8);
             }
 
             @Override // android.animation.Animator.AnimatorListener
@@ -142,9 +131,9 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
             public void onAnimationEnd(Animator animator) {
                 LivePKRoundStartView.this.b.setVisibility(0);
                 LivePKRoundStartView.this.d.setVisibility(0);
-                LivePKRoundStartView.this.f14816c.setVisibility(0);
+                LivePKRoundStartView.this.c.setVisibility(0);
                 LivePKRoundStartView livePKRoundStartView = LivePKRoundStartView.this;
-                livePKRoundStartView.postDelayed(livePKRoundStartView.f14815a, 500L);
+                livePKRoundStartView.postDelayed(livePKRoundStartView.a, 500L);
             }
 
             @Override // android.animation.Animator.AnimatorListener
@@ -160,7 +149,7 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
 
     public void a() {
         this.h = false;
-        removeCallbacks(this.f14815a);
+        removeCallbacks(this.a);
         setVisibility(8);
     }
 
@@ -179,7 +168,7 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
         }
         this.b.setVisibility(8);
         this.d.setVisibility(8);
-        this.f14816c.setVisibility(8);
+        this.c.setVisibility(8);
         this.e.setVisibility(8);
         this.f.setVisibility(8);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
@@ -208,15 +197,15 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
                 LivePKRoundStartView.this.d.setX(i2 + ((i6 - i8) * floatValue));
                 LivePKRoundStartView.this.b.setAlpha(floatValue);
                 LivePKRoundStartView.this.d.setAlpha(floatValue);
-                ImageView imageView = LivePKRoundStartView.this.f14816c;
+                ImageView imageView = LivePKRoundStartView.this.c;
                 float f = 0.0f;
                 int i9 = ((floatValue - 0.5f) > 0.0f ? 1 : ((floatValue - 0.5f) == 0.0f ? 0 : -1));
                 if (i9 > 0) {
                     f = floatValue;
                 }
                 imageView.setAlpha(f);
-                LivePKRoundStartView.this.f14816c.setScaleX(i9 > 0 ? (floatValue * (-1.5f)) + 2.5f : 2.5f);
-                ImageView imageView2 = LivePKRoundStartView.this.f14816c;
+                LivePKRoundStartView.this.c.setScaleX(i9 > 0 ? (floatValue * (-1.5f)) + 2.5f : 2.5f);
+                ImageView imageView2 = LivePKRoundStartView.this.c;
                 float f2 = 2.5f;
                 if (i9 > 0) {
                     f2 = 2.5f + (floatValue * (-1.5f));
@@ -243,7 +232,7 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
             public void onAnimationStart(Animator animator) {
                 LivePKRoundStartView.this.b.setVisibility(0);
                 LivePKRoundStartView.this.d.setVisibility(0);
-                LivePKRoundStartView.this.f14816c.setVisibility(0);
+                LivePKRoundStartView.this.c.setVisibility(0);
                 LivePKRoundStartView.this.e.setVisibility(8);
                 LivePKRoundStartView.this.f.setVisibility(8);
             }
@@ -273,7 +262,7 @@ public class LivePKRoundStartView extends FrameLayout implements View.OnClickLis
             public void onAnimationEnd(Animator animator) {
                 LivePKRoundStartView.this.e.setVisibility(8);
                 ScanningImageView scanningImageView = (ScanningImageView) LivePKRoundStartView.this.findViewById(R.id.scanning_image_view);
-                scanningImageView.setDuration(c.j);
+                scanningImageView.setDuration(1500L);
                 scanningImageView.setView(LivePKRoundStartView.this);
                 scanningImageView.setSrcBitmap(LivePKRoundStartView.a((View) LivePKRoundStartView.this));
                 scanningImageView.a();

@@ -8,9 +8,7 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/i.class */
 public abstract class i<T extends k> implements Serializable {
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f6662c = 1;
+    public static final int c = 1;
     public static final int d = 2;
     public static final int e = 3;
     public static final int f = 4;

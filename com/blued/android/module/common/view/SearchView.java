@@ -30,13 +30,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/SearchView.class */
 public class SearchView extends LinearLayout implements BluedSkinSupportable, SearchTaskTool.TaskListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f11043a;
+    public View a;
     public LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f11044c;
+    private View c;
     private SearchEditText d;
     private ImageView e;
     private ImageView f;
@@ -75,14 +71,14 @@ public class SearchView extends LinearLayout implements BluedSkinSupportable, Se
 
     public SearchView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f11043a = null;
+        this.a = null;
         this.u = true;
         this.k = context;
         a(context, attributeSet);
     }
 
     public void a(Context context, AttributeSet attributeSet) {
-        if (this.f11043a != null) {
+        if (this.a != null) {
             return;
         }
         this.k = context;
@@ -97,11 +93,11 @@ public class SearchView extends LinearLayout implements BluedSkinSupportable, Se
         obtainStyledAttributes.recycle();
         this.b = LayoutInflater.from(this.k);
         View rootView = getRootView();
-        this.f11043a = rootView;
+        this.a = rootView;
         this.t = (ShapeLinearLayout) rootView.findViewById(R.id.edit_lay);
-        this.s = (RelativeLayout) this.f11043a.findViewById(R.id.rl_root);
-        this.f11044c = this.f11043a.findViewById(R.id.search_mask_layer);
-        SearchEditText searchEditText = (SearchEditText) this.f11043a.findViewById(R.id.search_edt);
+        this.s = (RelativeLayout) this.a.findViewById(R.id.rl_root);
+        this.c = this.a.findViewById(R.id.search_mask_layer);
+        SearchEditText searchEditText = (SearchEditText) this.a.findViewById(R.id.search_edt);
         this.d = searchEditText;
         float f = this.q;
         if (f != 0.0f) {
@@ -127,14 +123,14 @@ public class SearchView extends LinearLayout implements BluedSkinSupportable, Se
         if (f2 >= 0.0f) {
             setDelaymillis(f2);
         }
-        this.e = (ImageView) this.f11043a.findViewById(R.id.search_del);
-        this.f = (ImageView) this.f11043a.findViewById(R.id.search_icon);
-        this.g = (TextView) this.f11043a.findViewById(R.id.search_cancel);
+        this.e = (ImageView) this.a.findViewById(R.id.search_del);
+        this.f = (ImageView) this.a.findViewById(R.id.search_icon);
+        this.g = (TextView) this.a.findViewById(R.id.search_cancel);
         if (this.m) {
             this.d.setFocusable(false);
-            this.f11044c.setVisibility(0);
+            this.c.setVisibility(0);
         } else {
-            this.f11044c.setVisibility(8);
+            this.c.setVisibility(8);
             this.g.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.common.view.SearchView.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -172,7 +168,7 @@ public class SearchView extends LinearLayout implements BluedSkinSupportable, Se
                     Tracker.onClick(view);
                     SearchView.this.d.setFocusableInTouchMode(true);
                     SearchView.this.d.requestFocus();
-                    ((InputMethodManager) SearchView.this.getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(SearchView.this.d, 0);
+                    ((InputMethodManager) SearchView.this.getContext().getSystemService("input_method")).showSoftInput(SearchView.this.d, 0);
                 }
             });
             this.d.a(this);
@@ -187,7 +183,7 @@ public class SearchView extends LinearLayout implements BluedSkinSupportable, Se
                 }
             });
         }
-        addView(this.f11043a);
+        addView(this.a);
     }
 
     @Override // com.blued.android.framework.utils.SearchTaskTool.TaskListener
@@ -208,7 +204,7 @@ public class SearchView extends LinearLayout implements BluedSkinSupportable, Se
                 if (this.h) {
                     return;
                 }
-                final int a2 = DensityUtils.a(getContext(), 45.0f);
+                final int a = DensityUtils.a(getContext(), 45.0f);
                 int width = this.t.getWidth();
                 if (width != 0) {
                     this.i = z;
@@ -216,9 +212,9 @@ public class SearchView extends LinearLayout implements BluedSkinSupportable, Se
                         this.l = width;
                     }
                     if (z) {
-                        i = width - a2;
+                        i = width - a;
                     } else {
-                        i = width + a2;
+                        i = width + a;
                         this.d.setFocusableInTouchMode(false);
                     }
                     ValueAnimator ofInt = ValueAnimator.ofInt(width, i);
@@ -246,7 +242,7 @@ public class SearchView extends LinearLayout implements BluedSkinSupportable, Se
                             ViewGroup.LayoutParams layoutParams = SearchView.this.t.getLayoutParams();
                             if (SearchView.this.i) {
                                 if (layoutParams != null) {
-                                    layoutParams.width = SearchView.this.l - a2;
+                                    layoutParams.width = SearchView.this.l - a;
                                     SearchView.this.t.setLayoutParams(layoutParams);
                                 }
                             } else if (layoutParams != null) {
@@ -288,7 +284,7 @@ public class SearchView extends LinearLayout implements BluedSkinSupportable, Se
     }
 
     public View getSearchRootView() {
-        return this.f11043a;
+        return this.a;
     }
 
     public void setDelaymillis(long j) {
@@ -304,8 +300,8 @@ public class SearchView extends LinearLayout implements BluedSkinSupportable, Se
 
     public void setMaskLayerOnClickListener(View.OnClickListener onClickListener) {
         if (onClickListener != null) {
-            this.f11044c.setVisibility(0);
-            this.f11044c.setOnClickListener(onClickListener);
+            this.c.setVisibility(0);
+            this.c.setOnClickListener(onClickListener);
         }
     }
 

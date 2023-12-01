@@ -13,13 +13,13 @@ import java.util.List;
 public class ba {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile ba f41625a;
+    private static volatile ba f27934a;
 
     /* renamed from: a  reason: collision with other field name */
-    protected SharedPreferences f997a;
+    protected SharedPreferences f950a;
 
     /* renamed from: a  reason: collision with other field name */
-    private HashSet<a> f998a = new HashSet<>();
+    private HashSet<a> f951a = new HashSet<>();
     protected SharedPreferences b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/service/ba$a.class */
@@ -49,23 +49,23 @@ public class ba {
     }
 
     private ba(Context context) {
-        this.f997a = context.getSharedPreferences("mipush_oc_normal", 0);
+        this.f950a = context.getSharedPreferences("mipush_oc_normal", 0);
         this.b = context.getSharedPreferences("mipush_oc_custom", 0);
     }
 
     public static ba a(Context context) {
-        if (f41625a == null) {
+        if (f27934a == null) {
             synchronized (ba.class) {
                 try {
-                    if (f41625a == null) {
-                        f41625a = new ba(context);
+                    if (f27934a == null) {
+                        f27934a = new ba(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f41625a;
+        return f27934a;
     }
 
     private String a(int i) {
@@ -98,18 +98,18 @@ public class ba {
     public int a(int i, int i2) {
         try {
             String a2 = a(i);
-            return this.b.contains(a2) ? this.b.getInt(a2, 0) : this.f997a.contains(a2) ? this.f997a.getInt(a2, 0) : i2;
+            return this.b.contains(a2) ? this.b.getInt(a2, 0) : this.f950a.contains(a2) ? this.f950a.getInt(a2, 0) : i2;
         } catch (Exception e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a(i + " oc int error " + e);
+            com.xiaomi.channel.commonutils.logger.b.m8344a(i + " oc int error " + e);
             return i2;
         }
     }
 
     public int a(hm hmVar, int i) {
         try {
-            return this.f997a.getInt(a(hmVar), i);
+            return this.f950a.getInt(a(hmVar), i);
         } catch (Exception e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a(hmVar + " version error " + e);
+            com.xiaomi.channel.commonutils.logger.b.m8344a(hmVar + " version error " + e);
             return i;
         }
     }
@@ -117,9 +117,9 @@ public class ba {
     public long a(int i, long j) {
         try {
             String a2 = a(i);
-            return this.b.contains(a2) ? this.b.getLong(a2, 0L) : this.f997a.contains(a2) ? this.f997a.getLong(a2, 0L) : j;
+            return this.b.contains(a2) ? this.b.getLong(a2, 0L) : this.f950a.contains(a2) ? this.f950a.getLong(a2, 0L) : j;
         } catch (Exception e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a(i + " oc long error " + e);
+            com.xiaomi.channel.commonutils.logger.b.m8344a(i + " oc long error " + e);
             return j;
         }
     }
@@ -127,23 +127,23 @@ public class ba {
     public String a(int i, String str) {
         try {
             String a2 = a(i);
-            return this.b.contains(a2) ? this.b.getString(a2, null) : this.f997a.contains(a2) ? this.f997a.getString(a2, null) : str;
+            return this.b.contains(a2) ? this.b.getString(a2, null) : this.f950a.contains(a2) ? this.f950a.getString(a2, null) : str;
         } catch (Exception e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a(i + " oc string error " + e);
+            com.xiaomi.channel.commonutils.logger.b.m8344a(i + " oc string error " + e);
             return str;
         }
     }
 
     public void a() {
         synchronized (this) {
-            this.f998a.clear();
+            this.f951a.clear();
         }
     }
 
     public void a(a aVar) {
         synchronized (this) {
-            if (!this.f998a.contains(aVar)) {
-                this.f998a.add(aVar);
+            if (!this.f951a.contains(aVar)) {
+                this.f951a.add(aVar);
             }
         }
     }
@@ -168,10 +168,10 @@ public class ba {
 
     public void a(List<Pair<hm, Integer>> list, List<Pair<Integer, Object>> list2) {
         if (com.xiaomi.push.ac.a(list) || com.xiaomi.push.ac.a(list2)) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("not update oc, because versions or configs are empty");
+            com.xiaomi.channel.commonutils.logger.b.m8344a("not update oc, because versions or configs are empty");
             return;
         }
-        SharedPreferences.Editor edit = this.f997a.edit();
+        SharedPreferences.Editor edit = this.f950a.edit();
         edit.clear();
         for (Pair<hm, Integer> pair : list) {
             if (pair.first != null && pair.second != null) {
@@ -189,9 +189,9 @@ public class ba {
     public boolean a(int i, boolean z) {
         try {
             String a2 = a(i);
-            return this.b.contains(a2) ? this.b.getBoolean(a2, false) : this.f997a.contains(a2) ? this.f997a.getBoolean(a2, false) : z;
+            return this.b.contains(a2) ? this.b.getBoolean(a2, false) : this.f950a.contains(a2) ? this.f950a.getBoolean(a2, false) : z;
         } catch (Exception e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a(i + " oc boolean error " + e);
+            com.xiaomi.channel.commonutils.logger.b.m8344a(i + " oc boolean error " + e);
             return z;
         }
     }
@@ -201,7 +201,7 @@ public class ba {
         com.xiaomi.channel.commonutils.logger.b.c("OC_Callback : receive new oc data");
         HashSet hashSet = new HashSet();
         synchronized (this) {
-            hashSet.addAll(this.f998a);
+            hashSet.addAll(this.f951a);
         }
         Iterator it = hashSet.iterator();
         while (it.hasNext()) {

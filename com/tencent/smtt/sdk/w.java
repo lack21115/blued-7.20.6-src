@@ -10,30 +10,30 @@ import java.nio.channels.FileLock;
 public class w {
 
     /* renamed from: a  reason: collision with root package name */
-    private static w f38913a;
+    private static w f25222a;
     private static FileLock e;
     private x b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f38914c;
+    private boolean f25223c;
     private boolean d;
 
     private w() {
     }
 
     public static w a() {
-        if (f38913a == null) {
+        if (f25222a == null) {
             synchronized (w.class) {
                 try {
-                    if (f38913a == null) {
-                        f38913a = new w();
+                    if (f25222a == null) {
+                        f25222a = new w();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f38913a;
+        return f25222a;
     }
 
     public x a(boolean z) {
@@ -81,14 +81,14 @@ public class w {
     }
 
     public boolean b() {
-        if (QbSdk.f38714a) {
+        if (QbSdk.f25023a) {
             return false;
         }
-        return this.f38914c;
+        return this.f25223c;
     }
 
     public x c() {
-        if (QbSdk.f38714a) {
+        if (QbSdk.f25023a) {
             return null;
         }
         return this.b;

@@ -21,11 +21,11 @@ public class e {
     volatile boolean C;
 
     /* renamed from: a  reason: collision with root package name */
-    private final EfsReporter f21816a;
+    private final EfsReporter f8209a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public e(final Context context, EfsReporter efsReporter) {
-        this.f21816a = efsReporter;
+        this.f8209a = efsReporter;
         String uMId = UMUtils.getUMId(context);
         this.C = !TextUtils.isEmpty(uMId);
         if (!this.C) {
@@ -36,7 +36,7 @@ public class e {
                         if (bh.g.equals(str)) {
                             HashMap hashMap = new HashMap(1);
                             hashMap.put(UMCrash.KEY_HEADER_UMID, str2);
-                            e.this.f21816a.addPublicParams(hashMap);
+                            e.this.f8209a.addPublicParams(hashMap);
                             synchronized (e.class) {
                                 e.b(e.this);
                             }
@@ -59,7 +59,7 @@ public class e {
         }
         HashMap hashMap = new HashMap(1);
         hashMap.put(UMCrash.KEY_HEADER_UMID, uMId);
-        this.f21816a.addPublicParams(hashMap);
+        this.f8209a.addPublicParams(hashMap);
     }
 
     static /* synthetic */ boolean b(e eVar) {
@@ -70,7 +70,7 @@ public class e {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a(EfsJSONLog efsJSONLog) {
         try {
-            this.f21816a.send(efsJSONLog);
+            this.f8209a.send(efsJSONLog);
         } catch (Throwable th) {
             f.a("send", th);
         }

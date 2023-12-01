@@ -11,12 +11,12 @@ class CheckableWrapperView extends WrapperView implements Checkable {
 
     @Override // android.widget.Checkable
     public boolean isChecked() {
-        return ((Checkable) this.f10346a).isChecked();
+        return ((Checkable) this.a).isChecked();
     }
 
     @Override // android.widget.Checkable
     public void setChecked(boolean z) {
-        ((Checkable) this.f10346a).setChecked(z);
+        ((Checkable) this.a).setChecked(z);
     }
 
     @Override // android.widget.Checkable

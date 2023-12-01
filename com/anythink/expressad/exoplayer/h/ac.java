@@ -15,7 +15,7 @@ public final class ac implements r, t.a<b> {
     final com.anythink.expressad.exoplayer.m b;
 
     /* renamed from: c  reason: collision with root package name */
-    final boolean f7407c;
+    final boolean f4568c;
     boolean d;
     boolean e;
     boolean f;
@@ -31,14 +31,14 @@ public final class ac implements r, t.a<b> {
     private final ArrayList<a> o = new ArrayList<>();
 
     /* renamed from: a  reason: collision with root package name */
-    final com.anythink.expressad.exoplayer.j.t f7406a = new com.anythink.expressad.exoplayer.j.t("Loader:SingleSampleMediaPeriod");
+    final com.anythink.expressad.exoplayer.j.t f4567a = new com.anythink.expressad.exoplayer.j.t("Loader:SingleSampleMediaPeriod");
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/h/ac$a.class */
     final class a implements y {
         private static final int b = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        private static final int f7408c = 1;
+        private static final int f4569c = 1;
         private static final int d = 2;
         private int e;
         private boolean f;
@@ -75,7 +75,7 @@ public final class ac implements r, t.a<b> {
                 eVar.b(4);
                 return -4;
             } else if (z || i == 0) {
-                nVar.f7721a = ac.this.b;
+                nVar.f4882a = ac.this.b;
                 this.e = 1;
                 return -5;
             } else if (ac.this.e) {
@@ -108,10 +108,10 @@ public final class ac implements r, t.a<b> {
 
         @Override // com.anythink.expressad.exoplayer.h.y
         public final void c() {
-            if (ac.this.f7407c) {
+            if (ac.this.f4568c) {
                 return;
             }
-            ac.this.f7406a.c();
+            ac.this.f4567a.c();
         }
     }
 
@@ -119,15 +119,15 @@ public final class ac implements r, t.a<b> {
     static final class b implements t.c {
 
         /* renamed from: a  reason: collision with root package name */
-        public final com.anythink.expressad.exoplayer.j.k f7410a;
+        public final com.anythink.expressad.exoplayer.j.k f4571a;
         private final com.anythink.expressad.exoplayer.j.h b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f7411c;
+        private int f4572c;
         private byte[] d;
 
         public b(com.anythink.expressad.exoplayer.j.k kVar, com.anythink.expressad.exoplayer.j.h hVar) {
-            this.f7410a = kVar;
+            this.f4571a = kVar;
             this.b = hVar;
         }
 
@@ -138,18 +138,18 @@ public final class ac implements r, t.a<b> {
         @Override // com.anythink.expressad.exoplayer.j.t.c
         public final void b() {
             int i = 0;
-            this.f7411c = 0;
+            this.f4572c = 0;
             try {
-                this.b.a(this.f7410a);
+                this.b.a(this.f4571a);
                 while (i != -1) {
-                    int i2 = this.f7411c + i;
-                    this.f7411c = i2;
+                    int i2 = this.f4572c + i;
+                    this.f4572c = i2;
                     if (this.d == null) {
                         this.d = new byte[1024];
                     } else if (i2 == this.d.length) {
                         this.d = Arrays.copyOf(this.d, this.d.length * 2);
                     }
-                    i = this.b.a(this.d, this.f7411c, this.d.length - this.f7411c);
+                    i = this.b.a(this.d, this.f4572c, this.d.length - this.f4572c);
                 }
             } finally {
                 com.anythink.expressad.exoplayer.k.af.a(this.b);
@@ -164,7 +164,7 @@ public final class ac implements r, t.a<b> {
         this.p = j;
         this.l = i2;
         this.m = aVar2;
-        this.f7407c = z;
+        this.f4568c = z;
         this.n = new af(new ae(mVar));
         aVar2.a();
     }
@@ -173,8 +173,8 @@ public final class ac implements r, t.a<b> {
     private int a2(b bVar, long j, long j2, IOException iOException) {
         int i2 = this.q + 1;
         this.q = i2;
-        boolean z = this.f7407c && i2 >= this.l;
-        this.m.a(bVar.f7410a, 1, -1, this.b, 0, null, 0L, this.p, j, j2, bVar.f7411c, iOException, z);
+        boolean z = this.f4568c && i2 >= this.l;
+        this.m.a(bVar.f4571a, 1, -1, this.b, 0, null, 0L, this.p, j, j2, bVar.f4572c, iOException, z);
         if (z) {
             this.e = true;
             return 2;
@@ -184,15 +184,15 @@ public final class ac implements r, t.a<b> {
 
     /* renamed from: a  reason: avoid collision after fix types in other method */
     private void a2(b bVar, long j, long j2) {
-        this.m.a(bVar.f7410a, 1, -1, this.b, 0, null, 0L, this.p, j, j2, bVar.f7411c);
-        this.h = bVar.f7411c;
+        this.m.a(bVar.f4571a, 1, -1, this.b, 0, null, 0L, this.p, j, j2, bVar.f4572c);
+        this.h = bVar.f4572c;
         this.g = bVar.d;
         this.e = true;
         this.f = true;
     }
 
     private void b(b bVar, long j, long j2) {
-        this.m.b(bVar.f7410a, 1, -1, null, 0, null, 0L, this.p, j, j2, bVar.f7411c);
+        this.m.b(bVar.f4571a, 1, -1, null, 0, null, 0L, this.p, j, j2, bVar.f4572c);
     }
 
     @Override // com.anythink.expressad.exoplayer.j.t.a
@@ -200,8 +200,8 @@ public final class ac implements r, t.a<b> {
         b bVar2 = bVar;
         int i2 = this.q + 1;
         this.q = i2;
-        boolean z = this.f7407c && i2 >= this.l;
-        this.m.a(bVar2.f7410a, 1, -1, this.b, 0, null, 0L, this.p, j, j2, bVar2.f7411c, iOException, z);
+        boolean z = this.f4568c && i2 >= this.l;
+        this.m.a(bVar2.f4571a, 1, -1, this.b, 0, null, 0L, this.p, j, j2, bVar2.f4572c, iOException, z);
         if (z) {
             this.e = true;
             return 2;
@@ -252,8 +252,8 @@ public final class ac implements r, t.a<b> {
     @Override // com.anythink.expressad.exoplayer.j.t.a
     public final /* synthetic */ void a(b bVar, long j, long j2) {
         b bVar2 = bVar;
-        this.m.a(bVar2.f7410a, 1, -1, this.b, 0, null, 0L, this.p, j, j2, bVar2.f7411c);
-        this.h = bVar2.f7411c;
+        this.m.a(bVar2.f4571a, 1, -1, this.b, 0, null, 0L, this.p, j, j2, bVar2.f4572c);
+        this.h = bVar2.f4572c;
         this.g = bVar2.d;
         this.e = true;
         this.f = true;
@@ -262,7 +262,7 @@ public final class ac implements r, t.a<b> {
     @Override // com.anythink.expressad.exoplayer.j.t.a
     public final /* synthetic */ void a(b bVar, long j, long j2, boolean z) {
         b bVar2 = bVar;
-        this.m.b(bVar2.f7410a, 1, -1, null, 0, null, 0L, this.p, j, j2, bVar2.f7411c);
+        this.m.b(bVar2.f4571a, 1, -1, null, 0, null, 0L, this.p, j, j2, bVar2.f4572c);
     }
 
     @Override // com.anythink.expressad.exoplayer.h.r, com.anythink.expressad.exoplayer.h.z
@@ -299,10 +299,10 @@ public final class ac implements r, t.a<b> {
 
     @Override // com.anythink.expressad.exoplayer.h.r, com.anythink.expressad.exoplayer.h.z
     public final boolean c(long j) {
-        if (this.e || this.f7406a.a()) {
+        if (this.e || this.f4567a.a()) {
             return false;
         }
-        this.m.a(this.j, 1, -1, this.b, 0, null, 0L, this.p, this.f7406a.a(new b(this.j, this.k.a()), this, this.l));
+        this.m.a(this.j, 1, -1, this.b, 0, null, 0L, this.p, this.f4567a.a(new b(this.j, this.k.a()), this, this.l));
         return true;
     }
 
@@ -313,11 +313,11 @@ public final class ac implements r, t.a<b> {
 
     @Override // com.anythink.expressad.exoplayer.h.r, com.anythink.expressad.exoplayer.h.z
     public final long e() {
-        return (this.e || this.f7406a.a()) ? Long.MIN_VALUE : 0L;
+        return (this.e || this.f4567a.a()) ? Long.MIN_VALUE : 0L;
     }
 
     public final void f() {
-        this.f7406a.a((t.d) null);
+        this.f4567a.a((t.d) null);
         this.m.b();
     }
 }

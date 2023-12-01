@@ -8,13 +8,9 @@ import com.chad.library.adapter.base.entity.MultiItemEntity;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/menu/ActionSheetItem.class */
 public abstract class ActionSheetItem<VB extends ViewBinding> implements MultiItemEntity {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected VB f11204a;
+    protected VB a;
     protected int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected BluedActionSheet.Builder f11205c;
+    protected BluedActionSheet.Builder c;
     public BluedActionSheet.OnClickActionSheetListener d;
     public BluedActionSheet.ActionSheetListener e;
 
@@ -22,26 +18,26 @@ public abstract class ActionSheetItem<VB extends ViewBinding> implements MultiIt
 
     public void a(ActionSheetViewHolder actionSheetViewHolder) {
         VB vb = (VB) actionSheetViewHolder.a();
-        this.f11204a = vb;
+        this.a = vb;
         vb.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.common.widget.menu.ActionSheetItem.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 if (ActionSheetItem.this.d != null) {
-                    ActionSheetItem.this.d.onClickActionSheet(ActionSheetItem.this.f11205c.b());
-                    if (ActionSheetItem.this.f11205c.c()) {
-                        ActionSheetItem.this.f11205c.e();
+                    ActionSheetItem.this.d.onClickActionSheet(ActionSheetItem.this.c.b());
+                    if (ActionSheetItem.this.c.c()) {
+                        ActionSheetItem.this.c.e();
                     }
                 }
                 if (ActionSheetItem.this.e != null) {
-                    ActionSheetItem.this.e.a(ActionSheetItem.this.f11205c.b(), ActionSheetItem.this.b);
-                    if (ActionSheetItem.this.f11205c.c()) {
-                        ActionSheetItem.this.f11205c.e();
+                    ActionSheetItem.this.e.a(ActionSheetItem.this.c.b(), ActionSheetItem.this.b);
+                    if (ActionSheetItem.this.c.c()) {
+                        ActionSheetItem.this.c.e();
                     }
                 }
             }
         });
-        a((ActionSheetItem<VB>) this.f11204a);
+        a((ActionSheetItem<VB>) this.a);
     }
 
     public ActionSheetItem b(BluedActionSheet.OnClickActionSheetListener onClickActionSheetListener) {

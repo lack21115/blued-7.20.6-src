@@ -38,9 +38,7 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/rank/LiveRankTipsDialogFragment.class */
 public final class LiveRankTipsDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14073a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<LiveAllStationRankTipBinding>() { // from class: com.blued.android.module.live_china.rank.LiveRankTipsDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -53,9 +51,7 @@ public final class LiveRankTipsDialogFragment extends BaseDialogFragment {
             return LiveAllStationRankTipBinding.a(LayoutInflater.from(LiveRankTipsDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f14074c = "";
+    private String c = "";
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/rank/LiveRankTipsDialogFragment$Companion.class */
@@ -84,9 +80,9 @@ public final class LiveRankTipsDialogFragment extends BaseDialogFragment {
     public static final void a(final LiveRankTipsDialogFragment this$0) {
         Intrinsics.e(this$0, "this$0");
         final Ref.IntRef intRef = new Ref.IntRef();
-        intRef.f42543a = this$0.d().b.getWidth();
+        intRef.a = this$0.d().b.getWidth();
         final ImageSize imageSize = new ImageSize();
-        ImageFileLoader.a(this$0.a()).a(this$0.f14074c).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.rank.-$$Lambda$LiveRankTipsDialogFragment$OQOACRdMBMQ9eIIdpbcw-rw_j8o
+        ImageFileLoader.a(this$0.a()).a(this$0.c).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.rank.-$$Lambda$LiveRankTipsDialogFragment$OQOACRdMBMQ9eIIdpbcw-rw_j8o
             @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
             public final void onUIFinish(File file, Exception exc) {
                 LiveRankTipsDialogFragment.a(LiveRankTipsDialogFragment.this, imageSize, intRef, file, exc);
@@ -112,10 +108,10 @@ public final class LiveRankTipsDialogFragment extends BaseDialogFragment {
         this$0.d().b.setZoomEnabled(false);
         float a2 = imageSize.a();
         float f = 1.0f;
-        if (width.f42543a > 0) {
+        if (width.a > 0) {
             f = 1.0f;
             if (a2 > 0.0f) {
-                f = (width.f42543a * 1.0f) / a2;
+                f = (width.a * 1.0f) / a2;
             }
         }
         this$0.d().b.a(ImageSource.b(file.getAbsolutePath()), new ImageViewState(f, new PointF(0.0f, 0.0f), 0));
@@ -135,10 +131,10 @@ public final class LiveRankTipsDialogFragment extends BaseDialogFragment {
         if (arguments != null) {
             String string = arguments.getString("link", "");
             Intrinsics.c(string, "it.getString(\"link\", \"\")");
-            this.f14074c = string;
+            this.c = string;
         }
-        d().f12121a.setVisibility(0);
-        d().f12121a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.rank.-$$Lambda$LiveRankTipsDialogFragment$xVPJJ_6pX_VyhSmmGXtRt8CIBtY
+        d().a.setVisibility(0);
+        d().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.rank.-$$Lambda$LiveRankTipsDialogFragment$xVPJJ_6pX_VyhSmmGXtRt8CIBtY
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveRankTipsDialogFragment.a(LiveRankTipsDialogFragment.this, view);
@@ -152,12 +148,10 @@ public final class LiveRankTipsDialogFragment extends BaseDialogFragment {
         });
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismissAllowingStateLoss() {
         super.dismissAllowingStateLoss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int i = AppInfo.l;
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -170,7 +164,7 @@ public final class LiveRankTipsDialogFragment extends BaseDialogFragment {
             }
         });
         dialog.requestWindowFeature(1);
-        dialog.setContentView(d().f12122c, new ViewGroup.LayoutParams(i, -1));
+        dialog.setContentView(d().c, new ViewGroup.LayoutParams(i, -1));
         Window window = dialog.getWindow();
         Intrinsics.a(window);
         window.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#80000000")));
@@ -188,12 +182,12 @@ public final class LiveRankTipsDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onStart() {
         super.onStart();
         Dialog dialog = getDialog();
@@ -211,7 +205,6 @@ public final class LiveRankTipsDialogFragment extends BaseDialogFragment {
         window2.setAttributes(attributes);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

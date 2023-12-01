@@ -11,15 +11,13 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePlanetAreaView$setData$1.class */
 public final class LivePlanetAreaView$setData$1 extends ImageLoadResult {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ LivePlanetAreaView f14862a;
+    final /* synthetic */ LivePlanetAreaView a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LivePlanetAreaView$setData$1(LivePlanetAreaView livePlanetAreaView, IRequestHost iRequestHost) {
         super(iRequestHost);
-        this.f14862a = livePlanetAreaView;
+        this.a = livePlanetAreaView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -35,7 +33,7 @@ public final class LivePlanetAreaView$setData$1 extends ImageLoadResult {
         livePlanetAreaItemBinding2 = this$0.i;
         int width2 = width + livePlanetAreaItemBinding2.b.getWidth() + DensityUtils.a(this$0.getContext(), 1.9f);
         livePlanetAreaItemBinding3 = this$0.i;
-        int width3 = livePlanetAreaItemBinding3.f12358a.getWidth();
+        int width3 = livePlanetAreaItemBinding3.a.getWidth();
         if (width2 <= width3) {
             livePlanetAreaItemBinding5 = this$0.i;
             livePlanetAreaItemBinding5.k.setTranslationX(0.0f);
@@ -48,9 +46,9 @@ public final class LivePlanetAreaView$setData$1 extends ImageLoadResult {
     @Override // com.blued.android.core.image.ImageLoadResult
     public void a() {
         LivePlanetAreaItemBinding livePlanetAreaItemBinding;
-        livePlanetAreaItemBinding = this.f14862a.i;
+        livePlanetAreaItemBinding = this.a.i;
         ImageView imageView = livePlanetAreaItemBinding.j;
-        final LivePlanetAreaView livePlanetAreaView = this.f14862a;
+        final LivePlanetAreaView livePlanetAreaView = this.a;
         imageView.post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LivePlanetAreaView$setData$1$vJIUnIBoOWZfBgcLJJ3eSzwy2vY
             @Override // java.lang.Runnable
             public final void run() {

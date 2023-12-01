@@ -232,12 +232,12 @@ public final class ConcurrentHashMultiset<E> extends AbstractMultiset<E> impleme
         throw new UnsupportedOperationException("Method not decompiled: com.google.common.collect.ConcurrentHashMultiset.add(java.lang.Object, int):int");
     }
 
-    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.countMap.clear();
     }
 
-    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public /* bridge */ /* synthetic */ boolean contains(@NullableDecl Object obj) {
         return super.contains(obj);
     }
@@ -358,12 +358,12 @@ public final class ConcurrentHashMultiset<E> extends AbstractMultiset<E> impleme
         return super.entrySet();
     }
 
-    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         return this.countMap.isEmpty();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, com.google.common.collect.Multiset
     public Iterator<E> iterator() {
         return Multisets.iteratorImpl(this);
     }
@@ -653,7 +653,7 @@ public final class ConcurrentHashMultiset<E> extends AbstractMultiset<E> impleme
         throw new UnsupportedOperationException("Method not decompiled: com.google.common.collect.ConcurrentHashMultiset.setCount(java.lang.Object, int, int):boolean");
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public int size() {
         Iterator<AtomicInteger> it = this.countMap.values().iterator();
         long j = 0;
@@ -666,12 +666,12 @@ public final class ConcurrentHashMultiset<E> extends AbstractMultiset<E> impleme
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         return snapshot().toArray();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         return (T[]) snapshot().toArray(tArr);
     }

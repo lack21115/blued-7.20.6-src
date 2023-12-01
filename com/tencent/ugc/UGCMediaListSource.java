@@ -61,19 +61,19 @@ public class UGCMediaListSource {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public long f40203a;
+        public long f26512a;
         public long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f40204c;
+        public boolean f26513c;
         public float d;
         public String e;
         public String f;
 
         private a() {
-            this.f40203a = 0L;
+            this.f26512a = 0L;
             this.b = 0L;
-            this.f40204c = false;
+            this.f26513c = false;
             this.d = 25.0f;
         }
 
@@ -118,7 +118,7 @@ public class UGCMediaListSource {
             for (PixelFrame pixelFrame2 : this.mTailPixelFrameList) {
                 if (pixelFrame2 instanceof e.b) {
                     e.b bVar = (e.b) pixelFrame2;
-                    pixelFrame = bVar.f36634a.a(bVar.getGLContext());
+                    pixelFrame = bVar.f22943a.a(bVar.getGLContext());
                 } else {
                     LiteavLog.w(this.mTAG, "addVideoTailFrameListToQueue: pixelFrame is not TextureFrame");
                     pixelFrame = new PixelFrame(pixelFrame2);
@@ -392,7 +392,7 @@ public class UGCMediaListSource {
             if (audioDurationMs != 0) {
                 z = true;
             }
-            aVar.f40204c = z;
+            aVar.f26513c = z;
             aVar.d = fFmpegMediaRetriever.getFPS();
             aVar.f = fFmpegMediaRetriever.getVideoMimeType();
         }
@@ -415,7 +415,7 @@ public class UGCMediaListSource {
     /* JADX INFO: Access modifiers changed from: private */
     public boolean hasAudioDataInternal() {
         for (a aVar : this.mMediaInfoList) {
-            if (aVar.f40204c) {
+            if (aVar.f26513c) {
                 return true;
             }
         }
@@ -744,7 +744,7 @@ public class UGCMediaListSource {
             a mediaInfo = getMediaInfo(str);
             String str2 = this.mTAG;
             LiteavLog.i(str2, str + "getMediaInfo duration = " + mediaInfo.b);
-            mediaInfo.f40203a = this.mTotalDuration;
+            mediaInfo.f26512a = this.mTotalDuration;
             mediaInfo.e = str;
             this.mTotalDuration = this.mTotalDuration + mediaInfo.b;
             this.mMediaInfoList.add(mediaInfo);

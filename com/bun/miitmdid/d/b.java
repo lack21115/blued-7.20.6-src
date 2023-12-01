@@ -4,7 +4,7 @@ package com.bun.miitmdid.d;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f21161a = "#PART#".getBytes();
+    public static final byte[] f7555a = "#PART#".getBytes();
 
     public static native String a(String str);
 

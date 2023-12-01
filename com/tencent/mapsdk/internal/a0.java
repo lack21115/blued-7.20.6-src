@@ -24,11 +24,11 @@ public class a0 {
     public static final int d = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private j0 f37281a;
+    private j0 f23590a;
     private TencentMap.SnapshotReadyCallback b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private Handler f37282c = new a(Looper.getMainLooper());
+    private Handler f23591c = new a(Looper.getMainLooper());
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/a0$a.class */
     public class a extends Handler {
@@ -49,12 +49,12 @@ public class a0 {
     }
 
     public a0(j0 j0Var) {
-        this.f37281a = null;
-        this.f37281a = j0Var;
+        this.f23590a = null;
+        this.f23590a = j0Var;
     }
 
     private void a(Handler handler, Bitmap.Config config, int i) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -62,7 +62,7 @@ public class a0 {
     }
 
     public final float a(LatLng latLng, LatLng latLng2) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return -1.0f;
         }
@@ -70,7 +70,7 @@ public class a0 {
     }
 
     public final int a(CameraUpdate cameraUpdate) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return Integer.MIN_VALUE;
         }
@@ -78,7 +78,7 @@ public class a0 {
     }
 
     public final int a(CameraUpdate cameraUpdate, long j, TencentMap.CancelableCallback cancelableCallback) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return Integer.MIN_VALUE;
         }
@@ -86,14 +86,14 @@ public class a0 {
     }
 
     public int a(String str) {
-        if (this.f37281a == null || f7.b(str)) {
+        if (this.f23590a == null || f7.b(str)) {
             return -1;
         }
-        return this.f37281a.a(str);
+        return this.f23590a.a(str);
     }
 
     public CameraPosition a(List<u4> list, List<LatLng> list2, int i, int i2, int i3, int i4) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return null;
         }
@@ -101,7 +101,7 @@ public class a0 {
     }
 
     public CustomLayer a(CustomLayerOptions customLayerOptions) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return null;
         }
@@ -109,7 +109,7 @@ public class a0 {
     }
 
     public TileOverlay a(TileOverlayOptions tileOverlayOptions) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return null;
         }
@@ -117,7 +117,7 @@ public class a0 {
     }
 
     public final String a(LatLng latLng) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return null;
         }
@@ -125,13 +125,13 @@ public class a0 {
     }
 
     public void a() {
-        if (this.f37281a != null) {
-            this.f37281a = null;
+        if (this.f23590a != null) {
+            this.f23590a = null;
         }
     }
 
     public void a(float f, float f2, boolean z) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -139,7 +139,7 @@ public class a0 {
     }
 
     public void a(int i) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -147,7 +147,7 @@ public class a0 {
     }
 
     public void a(int i, int i2) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -155,7 +155,7 @@ public class a0 {
     }
 
     public final void a(TencentMap.OnCameraChangeListener onCameraChangeListener) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -163,14 +163,14 @@ public class a0 {
     }
 
     public final void a(TencentMap.OnCompassClickedListener onCompassClickedListener) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var != null) {
             j0Var.setOnCompassClickedListener(onCompassClickedListener);
         }
     }
 
     public final void a(TencentMap.OnIndoorStateChangeListener onIndoorStateChangeListener) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -178,7 +178,7 @@ public class a0 {
     }
 
     public final void a(TencentMap.OnInfoWindowClickListener onInfoWindowClickListener) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -186,7 +186,7 @@ public class a0 {
     }
 
     public final void a(TencentMap.OnMapClickListener onMapClickListener) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -194,14 +194,14 @@ public class a0 {
     }
 
     public void a(TencentMap.OnMapLoadedCallback onMapLoadedCallback) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var != null) {
             j0Var.addOnMapLoadedCallback(onMapLoadedCallback);
         }
     }
 
     public final void a(TencentMap.OnMapLongClickListener onMapLongClickListener) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -209,7 +209,7 @@ public class a0 {
     }
 
     public final void a(TencentMap.OnMapPoiClickListener onMapPoiClickListener) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -217,7 +217,7 @@ public class a0 {
     }
 
     public final void a(TencentMap.OnMarkerClickListener onMarkerClickListener) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -225,7 +225,7 @@ public class a0 {
     }
 
     public final void a(TencentMap.OnScaleViewChangedListener onScaleViewChangedListener) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -233,7 +233,7 @@ public class a0 {
     }
 
     public void a(TencentMap.OnTrafficEventClickListener onTrafficEventClickListener) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -241,22 +241,22 @@ public class a0 {
     }
 
     public void a(TencentMap.SnapshotReadyCallback snapshotReadyCallback, Bitmap.Config config, int i) {
-        if (this.f37281a == null || snapshotReadyCallback == null) {
+        if (this.f23590a == null || snapshotReadyCallback == null) {
             return;
         }
         this.b = snapshotReadyCallback;
-        a(this.f37282c, config, i);
+        a(this.f23591c, config, i);
     }
 
     public void a(Language language) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var != null) {
             j0Var.setForeignLanguage(language);
         }
     }
 
     public final void a(LatLng latLng, LatLng latLng2, float f) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -264,7 +264,7 @@ public class a0 {
     }
 
     public void a(LatLngBounds latLngBounds, int i) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -272,7 +272,7 @@ public class a0 {
     }
 
     public final void a(TencentMapGestureListener tencentMapGestureListener) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -283,11 +283,11 @@ public class a0 {
         if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
             return;
         }
-        this.f37281a.setIndoorFloor(str, str2);
+        this.f23590a.setIndoorFloor(str, str2);
     }
 
     public void a(boolean z) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -295,7 +295,7 @@ public class a0 {
     }
 
     public CameraPosition b() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return null;
         }
@@ -305,7 +305,7 @@ public class a0 {
     @Deprecated
     public String b(LatLng latLng) {
         IndoorBuilding c2;
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null || (c2 = j0Var.c()) == null) {
             return null;
         }
@@ -317,28 +317,28 @@ public class a0 {
     }
 
     public void b(int i) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var != null) {
             j0Var.setIndoorFloor(i);
         }
     }
 
     public void b(TencentMap.OnMapLoadedCallback onMapLoadedCallback) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var != null) {
             j0Var.removeOnMapLoadedCallback(onMapLoadedCallback);
         }
     }
 
     public void b(Language language) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var != null) {
             j0Var.a(language);
         }
     }
 
     public final void b(TencentMapGestureListener tencentMapGestureListener) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -346,7 +346,7 @@ public class a0 {
     }
 
     public final void b(String str) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -354,7 +354,7 @@ public class a0 {
     }
 
     public void b(boolean z) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -362,7 +362,7 @@ public class a0 {
     }
 
     public String c() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return null;
         }
@@ -370,7 +370,7 @@ public class a0 {
     }
 
     public final void c(int i) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -378,14 +378,14 @@ public class a0 {
     }
 
     public void c(boolean z) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var != null) {
             j0Var.setIndoorEnabled(z);
         }
     }
 
     public int d() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var != null) {
             return j0Var.getIndoorFloorId();
         }
@@ -393,7 +393,7 @@ public class a0 {
     }
 
     public final void d(int i) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -401,7 +401,7 @@ public class a0 {
     }
 
     public final void d(boolean z) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -409,7 +409,7 @@ public class a0 {
     }
 
     public final void e(int i) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -417,14 +417,14 @@ public class a0 {
     }
 
     public void e(boolean z) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var != null) {
             j0Var.a(z);
         }
     }
 
     public String[] e() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var != null) {
             return j0Var.h();
         }
@@ -432,12 +432,12 @@ public class a0 {
     }
 
     public Language f() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         return j0Var != null ? j0Var.getLanguage() : Language.zh;
     }
 
     public final void f(int i) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -445,14 +445,14 @@ public class a0 {
     }
 
     public void f(boolean z) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var != null) {
             j0Var.setOnTapMapViewInfoWindowHidden(z);
         }
     }
 
     public final int g() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return -1;
         }
@@ -460,7 +460,7 @@ public class a0 {
     }
 
     public void g(boolean z) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -468,7 +468,7 @@ public class a0 {
     }
 
     public final int h() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return 1000;
         }
@@ -476,7 +476,7 @@ public class a0 {
     }
 
     public final void h(boolean z) {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -484,7 +484,7 @@ public class a0 {
     }
 
     public final float i() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return -1.0f;
         }
@@ -492,7 +492,7 @@ public class a0 {
     }
 
     public final float j() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return -1.0f;
         }
@@ -500,12 +500,12 @@ public class a0 {
     }
 
     public String k() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         return j0Var == null ? "" : j0Var.getVersion();
     }
 
     public boolean l() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return false;
         }
@@ -513,7 +513,7 @@ public class a0 {
     }
 
     public boolean m() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var != null) {
             return j0Var.b();
         }
@@ -521,7 +521,7 @@ public class a0 {
     }
 
     public final boolean n() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return false;
         }
@@ -529,7 +529,7 @@ public class a0 {
     }
 
     public void o() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -537,7 +537,7 @@ public class a0 {
     }
 
     public void p() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -545,7 +545,7 @@ public class a0 {
     }
 
     public void q() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -553,7 +553,7 @@ public class a0 {
     }
 
     public void r() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -561,7 +561,7 @@ public class a0 {
     }
 
     public void s() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -569,7 +569,7 @@ public class a0 {
     }
 
     public void t() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }
@@ -577,7 +577,7 @@ public class a0 {
     }
 
     public final void u() {
-        j0 j0Var = this.f37281a;
+        j0 j0Var = this.f23590a;
         if (j0Var == null) {
             return;
         }

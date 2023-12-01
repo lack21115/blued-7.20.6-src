@@ -10,7 +10,7 @@ import android.content.Context;
 public class StreamingEnv {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f27829a = false;
+    public static boolean f14141a = false;
     public static boolean b = true;
 
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/streaming/StreamingEnv$a.class */
@@ -18,18 +18,18 @@ public class StreamingEnv {
     }
 
     public static void a() {
-        if (!f27829a) {
+        if (!f14141a) {
             throw new IllegalStateException("You must initialize StreamingEnv by StreamingEnv#init first!");
         }
     }
 
     public static void a(Context context, a aVar) {
         e.d.c("StreamingEnv", "init");
-        if (f27829a) {
+        if (f14141a) {
             e.d.d("StreamingEnv", "ignore since had been initialized!");
             return;
         }
-        f27829a = true;
+        f14141a = true;
         b.a(context);
         a.a.a.a.a.n.b.a(context);
         f.a(context);
@@ -43,7 +43,7 @@ public class StreamingEnv {
     }
 
     public static void checkAuthentication(PLAuthenticationResultCallback pLAuthenticationResultCallback) {
-        if (f27829a) {
+        if (f14141a) {
             a.a.a.a.a.n.b.a().a(pLAuthenticationResultCallback);
         } else {
             e.d.e("StreamingEnv", "Should StreamingEnv.init first!");

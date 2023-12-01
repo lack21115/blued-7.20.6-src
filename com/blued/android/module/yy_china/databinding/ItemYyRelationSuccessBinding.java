@@ -9,17 +9,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyRelationSuccessBinding.class */
 public final class ItemYyRelationSuccessBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16793a;
+    public final ShapeTextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16794c;
+    private final ConstraintLayout c;
 
     private ItemYyRelationSuccessBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, TextView textView) {
-        this.f16794c = constraintLayout;
-        this.f16793a = shapeTextView;
+        this.c = constraintLayout;
+        this.a = shapeTextView;
         this.b = textView;
     }
 
@@ -38,9 +34,8 @@ public final class ItemYyRelationSuccessBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16794c;
+        return this.c;
     }
 }

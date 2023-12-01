@@ -6,7 +6,7 @@ import java.util.TimerTask;
 final class SobotInertiaTimerTask extends TimerTask {
 
     /* renamed from: a  reason: collision with root package name */
-    float f28237a = 2.14748365E9f;
+    float f14548a = 2.14748365E9f;
     final SobotWheelView loopView;
     final float velocityY;
 
@@ -20,21 +20,21 @@ final class SobotInertiaTimerTask extends TimerTask {
     public final void run() {
         float f;
         float f2;
-        if (this.f28237a == 2.14748365E9f) {
+        if (this.f14548a == 2.14748365E9f) {
             if (Math.abs(this.velocityY) <= 2000.0f) {
-                this.f28237a = this.velocityY;
+                this.f14548a = this.velocityY;
             } else if (this.velocityY > 0.0f) {
-                this.f28237a = 2000.0f;
+                this.f14548a = 2000.0f;
             } else {
-                this.f28237a = -2000.0f;
+                this.f14548a = -2000.0f;
             }
         }
-        if (Math.abs(this.f28237a) >= 0.0f && Math.abs(this.f28237a) <= 20.0f) {
+        if (Math.abs(this.f14548a) >= 0.0f && Math.abs(this.f14548a) <= 20.0f) {
             this.loopView.cancelFuture();
             this.loopView.handler.sendEmptyMessage(2000);
             return;
         }
-        int i = (int) ((this.f28237a * 10.0f) / 1000.0f);
+        int i = (int) ((this.f14548a * 10.0f) / 1000.0f);
         SobotWheelView sobotWheelView = this.loopView;
         float f3 = sobotWheelView.totalScrollY;
         float f4 = i;
@@ -56,18 +56,18 @@ final class SobotInertiaTimerTask extends TimerTask {
                 }
             }
             if (this.loopView.totalScrollY <= f) {
-                this.f28237a = 40.0f;
+                this.f14548a = 40.0f;
                 this.loopView.totalScrollY = (int) f;
             } else if (this.loopView.totalScrollY >= f2) {
                 this.loopView.totalScrollY = (int) f2;
-                this.f28237a = -40.0f;
+                this.f14548a = -40.0f;
             }
         }
-        float f7 = this.f28237a;
+        float f7 = this.f14548a;
         if (f7 < 0.0f) {
-            this.f28237a = f7 + 20.0f;
+            this.f14548a = f7 + 20.0f;
         } else {
-            this.f28237a = f7 - 20.0f;
+            this.f14548a = f7 - 20.0f;
         }
         this.loopView.handler.sendEmptyMessage(1000);
     }

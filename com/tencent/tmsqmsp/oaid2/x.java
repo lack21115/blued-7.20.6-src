@@ -12,12 +12,12 @@ public class x {
     public BroadcastReceiver f;
 
     /* renamed from: a  reason: collision with root package name */
-    public w f39668a = new w("udid");
+    public w f25977a = new w("udid");
     public w b = new w("oaid");
     public w d = new w("vaid");
 
     /* renamed from: c  reason: collision with root package name */
-    public w f39669c = new w("aaid");
+    public w f25978c = new w("aaid");
 
     public static final x a() {
         if (g == null) {
@@ -44,13 +44,13 @@ public class x {
             cursor.moveToFirst();
             int columnIndex = cursor.getColumnIndex("value");
             if (columnIndex >= 0) {
-                zVar.f39671c = cursor.getString(columnIndex);
+                zVar.f25980c = cursor.getString(columnIndex);
             } else {
                 b("parseValue fail, index < 0.");
             }
             int columnIndex2 = cursor.getColumnIndex("code");
             if (columnIndex2 >= 0) {
-                zVar.f39670a = cursor.getInt(columnIndex2);
+                zVar.f25979a = cursor.getInt(columnIndex2);
             } else {
                 b("parseCode fail, index < 0.");
             }
@@ -76,10 +76,10 @@ public class x {
             return this.d;
         }
         if ("aaid".equals(str)) {
-            return this.f39669c;
+            return this.f25978c;
         }
         if ("udid".equals(str)) {
-            return this.f39668a;
+            return this.f25977a;
         }
         return null;
     }

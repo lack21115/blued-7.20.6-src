@@ -6,14 +6,12 @@ import java.util.Locale;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/f.class */
 public final class f {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6809a = "MD5";
+    public static final String a = "MD5";
     private static char[] b = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     public static String a(String str) {
         try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            MessageDigest messageDigest = MessageDigest.getInstance(a);
             messageDigest.reset();
             messageDigest.update(str.getBytes());
             byte[] digest = messageDigest.digest();
@@ -54,7 +52,7 @@ public final class f {
 
     public static String b(String str) {
         try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            MessageDigest messageDigest = MessageDigest.getInstance(a);
             messageDigest.reset();
             messageDigest.update(str.getBytes());
             byte[] digest = messageDigest.digest();
@@ -95,7 +93,7 @@ public final class f {
 
     public static String c(String str) {
         try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            MessageDigest messageDigest = MessageDigest.getInstance(a);
             messageDigest.update(str.getBytes());
             byte[] digest = messageDigest.digest();
             StringBuilder sb = new StringBuilder(digest.length * 2);

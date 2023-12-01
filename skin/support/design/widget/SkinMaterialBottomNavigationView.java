@@ -4,22 +4,18 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import com.android.internal.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import skin.support.content.res.SkinCompatResources;
-import skin.support.design.R;
 import skin.support.widget.SkinCompatBackgroundHelper;
 import skin.support.widget.SkinCompatHelper;
 import skin.support.widget.SkinCompatSupportable;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/design/widget/SkinMaterialBottomNavigationView.class */
 public class SkinMaterialBottomNavigationView extends BottomNavigationView implements SkinCompatSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final int[] f44233a = {-16842910};
-    private static final int[] b = {16842912};
-
-    /* renamed from: c  reason: collision with root package name */
-    private SkinCompatBackgroundHelper f44234c;
+    private static final int[] a = {-16842910};
+    private static final int[] b = {R.attr.state_checked};
+    private SkinCompatBackgroundHelper c;
     private int d;
     private int e;
     private int f;
@@ -28,13 +24,14 @@ public class SkinMaterialBottomNavigationView extends BottomNavigationView imple
         this(context, attributeSet, 0);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public SkinMaterialBottomNavigationView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.d = 0;
         this.e = 0;
         this.f = 0;
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
-        this.f44234c = skinCompatBackgroundHelper;
+        this.c = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, i);
         this.f = c();
         this.f = c();
@@ -47,9 +44,9 @@ public class SkinMaterialBottomNavigationView extends BottomNavigationView imple
         TypedValue typedValue = new TypedValue();
         if (getContext().getTheme().resolveAttribute(i, typedValue, true)) {
             ColorStateList d = SkinCompatResources.d(getContext(), typedValue.resourceId);
-            int c2 = SkinCompatResources.c(getContext(), this.f);
+            int c = SkinCompatResources.c(getContext(), this.f);
             int defaultColor = d.getDefaultColor();
-            return new ColorStateList(new int[]{f44233a, b, EMPTY_STATE_SET}, new int[]{d.getColorForState(f44233a, defaultColor), c2, defaultColor});
+            return new ColorStateList(new int[]{a, b, EMPTY_STATE_SET}, new int[]{d.getColorForState(a, defaultColor), c, defaultColor});
         }
         return null;
     }
@@ -64,7 +61,7 @@ public class SkinMaterialBottomNavigationView extends BottomNavigationView imple
         int b3 = SkinCompatHelper.b(this.f);
         this.f = b3;
         if (b3 != 0) {
-            setItemTextColor(a(16842808));
+            setItemTextColor(a(R.attr.textColorSecondary));
         }
     }
 
@@ -78,13 +75,13 @@ public class SkinMaterialBottomNavigationView extends BottomNavigationView imple
         int b3 = SkinCompatHelper.b(this.f);
         this.f = b3;
         if (b3 != 0) {
-            setItemIconTintList(a(16842808));
+            setItemIconTintList(a(R.attr.textColorSecondary));
         }
     }
 
     private int c() {
         TypedValue typedValue = new TypedValue();
-        if (getContext().getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true)) {
+        if (getContext().getTheme().resolveAttribute(skin.support.design.R.attr.colorPrimary, typedValue, true)) {
             return typedValue.resourceId;
         }
         return 0;
@@ -92,7 +89,7 @@ public class SkinMaterialBottomNavigationView extends BottomNavigationView imple
 
     @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
-        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.f44234c;
+        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.c;
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a();
         }
@@ -100,10 +97,9 @@ public class SkinMaterialBottomNavigationView extends BottomNavigationView imple
         a();
     }
 
-    @Override // android.view.View
     public void setBackgroundResource(int i) {
         super.setBackgroundResource(i);
-        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.f44234c;
+        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.c;
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a(i);
         }

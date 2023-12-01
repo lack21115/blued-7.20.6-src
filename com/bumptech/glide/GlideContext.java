@@ -18,11 +18,11 @@ import java.util.Map;
 public class GlideContext extends ContextWrapper {
 
     /* renamed from: a  reason: collision with root package name */
-    static final TransitionOptions<?, ?> f20651a = new GenericTransitionOptions();
+    static final TransitionOptions<?, ?> f7045a = new GenericTransitionOptions();
     private final ArrayPool b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Registry f20652c;
+    private final Registry f7046c;
     private final ImageViewTargetFactory d;
     private final Glide.RequestOptionsFactory e;
     private final List<RequestListener<Object>> f;
@@ -35,7 +35,7 @@ public class GlideContext extends ContextWrapper {
     public GlideContext(Context context, ArrayPool arrayPool, Registry registry, ImageViewTargetFactory imageViewTargetFactory, Glide.RequestOptionsFactory requestOptionsFactory, Map<Class<?>, TransitionOptions<?, ?>> map, List<RequestListener<Object>> list, Engine engine, boolean z, int i) {
         super(context.getApplicationContext());
         this.b = arrayPool;
-        this.f20652c = registry;
+        this.f7046c = registry;
         this.d = imageViewTargetFactory;
         this.e = requestOptionsFactory;
         this.f = list;
@@ -63,7 +63,7 @@ public class GlideContext extends ContextWrapper {
         }
         TransitionOptions<?, ?> transitionOptions3 = transitionOptions2;
         if (transitionOptions2 == null) {
-            transitionOptions3 = f20651a;
+            transitionOptions3 = f7045a;
         }
         return (TransitionOptions<?, T>) transitionOptions3;
     }
@@ -92,7 +92,7 @@ public class GlideContext extends ContextWrapper {
     }
 
     public Registry d() {
-        return this.f20652c;
+        return this.f7046c;
     }
 
     public int e() {

@@ -3,7 +3,6 @@ package com.oplus.log;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.oplus.log.c;
 import com.oplus.log.d.k;
 import com.oplus.log.env.oversea.AreaEnv;
@@ -14,11 +13,11 @@ import java.net.URLEncoder;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24370a = g.class.getName();
+    private static final String f10683a = g.class.getName();
     private static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f24371c = "222%23";
+    private static String f10684c = "222%23";
     private static String d;
 
     private static String a() {
@@ -52,15 +51,15 @@ public class g {
         String a2 = bVar.a() == null ? "" : bVar.a();
         String b2 = bVar.b() == null ? "" : bVar.b();
         String c2 = bVar.c() == null ? "" : bVar.c();
-        return a2 + BridgeUtil.SPLIT_MARK + b2 + BridgeUtil.SPLIT_MARK + c2;
+        return a2 + "/" + b2 + "/" + c2;
     }
 
     private static String a(String str) {
         try {
             if (TextUtils.isEmpty(d)) {
-                d = f24371c + com.oplus.log.d.a.a("puwQbwBb9CMen91BMLD+UA==", str);
+                d = f10684c + com.oplus.log.d.a.a("puwQbwBb9CMen91BMLD+UA==", str);
             }
-            if (!TextUtils.isEmpty(d) && !f24371c.equals(d)) {
+            if (!TextUtils.isEmpty(d) && !f10684c.equals(d)) {
                 return d;
             }
         } catch (Exception e) {
@@ -72,7 +71,7 @@ public class g {
     }
 
     public static String a(String str, String str2, c.a aVar, c.b bVar, String str3) {
-        return ((a() + "/usertrace/log/business/config").replace("business", str) + "?subType=" + str2 + "&imei=" + b(a(aVar)) + "&openId=" + a(a(bVar)) + "&tracePkg=" + str3).replaceAll(" ", BridgeUtil.UNDERLINE_STR);
+        return ((a() + "/usertrace/log/business/config").replace("business", str) + "?subType=" + str2 + "&imei=" + b(a(aVar)) + "&openId=" + a(a(bVar)) + "&tracePkg=" + str3).replaceAll(" ", "_");
     }
 
     public static String a(String str, String str2, String str3, int i, String str4, String str5, c.a aVar, c.b bVar, String str6) {
@@ -109,7 +108,7 @@ public class g {
             sb.append("&errorMsg=");
             sb.append(str4);
         }
-        return sb.toString().replaceAll(" ", BridgeUtil.UNDERLINE_STR);
+        return sb.toString().replaceAll(" ", "_");
     }
 
     public static String a(String str, String str2, String str3, int i, String str4, String str5, c.a aVar, c.b bVar, String str6, String str7, String str8, long j, String str9, String str10, a aVar2) {
@@ -160,7 +159,7 @@ public class g {
         }
         String sb2 = sb.toString();
         aVar2.a("NearX-HLog", "签名后请求空格替换前参数: data: ".concat(String.valueOf(sb2)));
-        String replaceAll = sb2.replaceAll(" ", BridgeUtil.UNDERLINE_STR);
+        String replaceAll = sb2.replaceAll(" ", "_");
         aVar2.a("NearX-HLog", "签名后请求空格替换后参数: data: ".concat(String.valueOf(replaceAll)));
         return replaceAll;
     }
@@ -168,9 +167,9 @@ public class g {
     private static String b(String str) {
         try {
             if (TextUtils.isEmpty(b)) {
-                b = f24371c + com.oplus.log.d.a.a("puwQbwBb9CMen91BMLD+UA==", str);
+                b = f10684c + com.oplus.log.d.a.a("puwQbwBb9CMen91BMLD+UA==", str);
             }
-            if (!TextUtils.isEmpty(b) && !f24371c.equals(b)) {
+            if (!TextUtils.isEmpty(b) && !f10684c.equals(b)) {
                 return b;
             }
         } catch (Exception e) {

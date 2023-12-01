@@ -6,18 +6,18 @@ import java.util.Arrays;
 final class v {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f25237a;
+    public byte[] f11549a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f25238c;
+    private final int f11550c;
     private boolean d;
     private boolean e;
 
     public v(int i, int i2) {
-        this.f25238c = i;
+        this.f11550c = i;
         byte[] bArr = new byte[i2 + 3];
-        this.f25237a = bArr;
+        this.f11549a = bArr;
         bArr[2] = (byte) 1;
     }
 
@@ -29,7 +29,7 @@ final class v {
     public void a(int i) {
         boolean z = true;
         com.opos.exoplayer.core.i.a.b(!this.d);
-        if (i != this.f25238c) {
+        if (i != this.f11550c) {
             z = false;
         }
         this.d = z;
@@ -42,13 +42,13 @@ final class v {
     public void a(byte[] bArr, int i, int i2) {
         if (this.d) {
             int i3 = i2 - i;
-            byte[] bArr2 = this.f25237a;
+            byte[] bArr2 = this.f11549a;
             int length = bArr2.length;
             int i4 = this.b;
             if (length < i4 + i3) {
-                this.f25237a = Arrays.copyOf(bArr2, (i4 + i3) * 2);
+                this.f11549a = Arrays.copyOf(bArr2, (i4 + i3) * 2);
             }
-            System.arraycopy((Object) bArr, i, (Object) this.f25237a, this.b, i3);
+            System.arraycopy(bArr, i, this.f11549a, this.b, i3);
             this.b = i3 + this.b;
         }
     }

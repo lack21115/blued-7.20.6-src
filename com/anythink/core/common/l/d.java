@@ -27,13 +27,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/l/d.class */
 public class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6835a = d.class.getSimpleName();
+    public static final String a = d.class.getSimpleName();
     String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    ai f6836c;
+    ai c;
     com.anythink.core.common.e.e d;
     String e;
     int f;
@@ -51,71 +47,64 @@ public class d {
     String r;
     boolean s;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.core.common.l.d$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/l/d$1.class */
-    public final class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ATBaseAdAdapter f6837a;
+    final class AnonymousClass1 implements Runnable {
+        final /* synthetic */ ATBaseAdAdapter a;
         final /* synthetic */ ai b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Map f6838c;
+        final /* synthetic */ Map c;
 
         AnonymousClass1(ATBaseAdAdapter aTBaseAdAdapter, ai aiVar, Map map) {
-            this.f6837a = aTBaseAdAdapter;
+            this.a = aTBaseAdAdapter;
             this.b = aiVar;
-            this.f6838c = map;
+            this.c = map;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             if (d.this.h != null) {
-                d.this.h.a(this.f6837a);
+                d.this.h.a(this.a);
             }
-            Context a2 = d.a(d.this);
-            if (a2 == null) {
+            Context a = d.a(d.this);
+            if (a == null) {
                 if (d.this.h != null) {
                     com.anythink.core.common.l.a aVar = new com.anythink.core.common.l.a();
-                    aVar.f6831a = 0;
-                    aVar.f6832c = SystemClock.elapsedRealtime() - d.this.k;
+                    aVar.a = 0;
+                    aVar.c = SystemClock.elapsedRealtime() - d.this.k;
                     aVar.b = ErrorCode.getErrorCode(ErrorCode.adapterInnerError, "", "Request Context is null! Please check the Ad init Context.");
-                    d.this.a(this.f6837a, aVar);
+                    d.this.a(this.a, aVar);
                     return;
                 }
                 return;
             }
-            d.a(d.this, a2, this.b, this.f6837a);
+            d.a(d.this, a, this.b, this.a);
             try {
                 Map<String, Object> b = d.b(d.this);
-                d.this.g = this.f6837a;
-                this.f6837a.internalLoad(a2, this.f6838c, b, new a(d.this, d.this, this.f6837a, (byte) 0));
-                com.anythink.core.common.e.e trackingInfo = this.f6837a.getTrackingInfo();
-                trackingInfo.g(this.f6837a.getNetworkPlacementId());
+                d.this.g = this.a;
+                this.a.internalLoad(a, this.c, b, new a(d.this, d.this, this.a, (byte) 0));
+                com.anythink.core.common.e.e trackingInfo = this.a.getTrackingInfo();
+                trackingInfo.g(this.a.getNetworkPlacementId());
                 if (d.this.h != null) {
                     d.this.h.b(trackingInfo);
                 }
             } catch (Throwable th) {
                 com.anythink.core.common.l.a aVar2 = new com.anythink.core.common.l.a();
-                aVar2.f6831a = 0;
-                aVar2.f6832c = SystemClock.elapsedRealtime() - d.this.k;
+                aVar2.a = 0;
+                aVar2.c = SystemClock.elapsedRealtime() - d.this.k;
                 aVar2.b = ErrorCode.getErrorCode(ErrorCode.adapterInnerError, "", th.getMessage());
-                d.this.a(this.f6837a, aVar2);
+                d.this.a(this.a, aVar2);
             }
         }
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/l/d$a.class */
     public final class a implements ATCustomLoadListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        ATBaseAdAdapter f6842a;
+        ATBaseAdAdapter a;
         d b;
 
         private a(d dVar, ATBaseAdAdapter aTBaseAdAdapter) {
             this.b = dVar;
-            this.f6842a = aTBaseAdAdapter;
+            this.a = aTBaseAdAdapter;
         }
 
         /* synthetic */ a(d dVar, d dVar2, ATBaseAdAdapter aTBaseAdAdapter, byte b) {
@@ -128,10 +117,10 @@ public class d {
                 @Override // java.lang.Runnable
                 public final void run() {
                     synchronized (a.this) {
-                        if (a.this.b != null && a.this.f6842a != null) {
-                            a.this.b.a(a.this.f6842a, baseAdArr);
+                        if (a.this.b != null && a.this.a != null) {
+                            a.this.b.a(a.this.a, baseAdArr);
                             a.this.b = null;
-                            a.this.f6842a = null;
+                            a.this.a = null;
                         }
                     }
                 }
@@ -144,7 +133,7 @@ public class d {
                 @Override // java.lang.Runnable
                 public final void run() {
                     synchronized (a.this) {
-                        if (a.this.b != null && a.this.f6842a != null) {
+                        if (a.this.b != null && a.this.a != null) {
                             a.this.b.q();
                         }
                     }
@@ -158,14 +147,14 @@ public class d {
                 @Override // java.lang.Runnable
                 public final void run() {
                     synchronized (a.this) {
-                        if (a.this.b != null && a.this.f6842a != null) {
+                        if (a.this.b != null && a.this.a != null) {
                             com.anythink.core.common.l.a aVar = new com.anythink.core.common.l.a();
-                            aVar.f6831a = 0;
+                            aVar.a = 0;
                             aVar.b = ErrorCode.getErrorCode(ErrorCode.noADError, str, str2);
-                            aVar.f6832c = SystemClock.elapsedRealtime() - d.this.k;
-                            a.this.b.a(a.this.f6842a, aVar);
+                            aVar.c = SystemClock.elapsedRealtime() - d.this.k;
+                            a.this.b.a(a.this.a, aVar);
                             a.this.b = null;
-                            a.this.f6842a = null;
+                            a.this.a = null;
                         }
                     }
                 }
@@ -174,7 +163,7 @@ public class d {
     }
 
     public d(ai aiVar, int i) {
-        this.f6836c = aiVar;
+        this.c = aiVar;
         this.q = i;
         this.e = aiVar.t();
         this.r = this.e + BridgeUtil.UNDERLINE_STR + hashCode();
@@ -187,7 +176,7 @@ public class d {
             context2 = n.a().E();
         }
         if (ATSDK.isNetworkLogDebug()) {
-            Log.d(f6835a, "requestContext = ".concat(String.valueOf(context2)));
+            Log.d(a, "requestContext = ".concat(String.valueOf(context2)));
         }
         return context2;
     }
@@ -204,7 +193,7 @@ public class d {
         if (com.anythink.core.c.a.am()) {
             p a2 = p.a(n.a().g());
             try {
-                if (a2.c(aiVar.c()) || !aTBaseAdAdapter.setUserDataConsent(context, a2.c(), ATSDK.isEUTraffic(this.o.f6833a))) {
+                if (a2.c(aiVar.c()) || !aTBaseAdAdapter.setUserDataConsent(context, a2.c(), ATSDK.isEUTraffic(this.o.a))) {
                     return;
                 }
                 a2.b(aiVar.c());
@@ -277,7 +266,7 @@ public class d {
         if (com.anythink.core.c.a.am()) {
             p a2 = p.a(n.a().g());
             try {
-                if (a2.c(aiVar.c()) || !aTBaseAdAdapter.setUserDataConsent(context, a2.c(), ATSDK.isEUTraffic(dVar.o.f6833a))) {
+                if (a2.c(aiVar.c()) || !aTBaseAdAdapter.setUserDataConsent(context, a2.c(), ATSDK.isEUTraffic(dVar.o.a))) {
                     return;
                 }
                 a2.b(aiVar.c());
@@ -338,32 +327,32 @@ public class d {
 
     private Map<String, Object> k() {
         com.anythink.core.c.d dVar = this.o.e;
-        String str = this.o.f6834c;
+        String str = this.o.c;
         if (dVar == null) {
             return new HashMap();
         }
-        Map<String, Object> a2 = dVar.a(this.b, str, this.f6836c);
-        int c2 = this.f6836c.c();
+        Map<String, Object> a2 = dVar.a(this.b, str, this.c);
+        int c = this.c.c();
         int i = 0;
-        if (c2 == 2) {
-            com.anythink.core.c.a b = com.anythink.core.c.b.a(this.o.f6833a).b(n.a().p());
+        if (c == 2) {
+            com.anythink.core.c.a b = com.anythink.core.c.b.a(this.o.a).b(n.a().p());
             if (b != null) {
                 a2.put(g.k.p, Boolean.valueOf(b.j() == 1));
             }
-        } else if (c2 == 6) {
-            JSONObject a3 = com.anythink.core.common.k.g.a(this.o.f6833a, str, this.b, dVar.X(), this.f);
+        } else if (c == 6) {
+            JSONObject a3 = com.anythink.core.common.k.g.a(this.o.a, str, this.b, dVar.X(), this.f);
             if (dVar.av() == 1) {
                 a2.put("tp_info", a3.toString());
             }
         }
-        if (t.a(this.f6836c) && this.o.e.aq() == 1) {
-            ae a4 = com.anythink.core.a.a.a(this.o.f6833a).a(this.b);
+        if (t.a(this.c) && this.o.e.aq() == 1) {
+            ae a4 = com.anythink.core.a.a.a(this.o.a).a(this.b);
             if (a4 != null) {
-                i = a4.f6623c;
+                i = a4.c;
             }
             a2.put(g.k.k, Integer.valueOf(i));
             synchronized (v.a().a(this.b)) {
-                String a5 = v.a().a(this.b, this.f6836c.c());
+                String a5 = v.a().a(this.b, this.c.c());
                 if (!TextUtils.isEmpty(a5)) {
                     a2.put(g.k.l, a5);
                 }
@@ -389,7 +378,7 @@ public class d {
             context2 = n.a().E();
         }
         if (ATSDK.isNetworkLogDebug()) {
-            Log.d(f6835a, "requestContext = ".concat(String.valueOf(context2)));
+            Log.d(a, "requestContext = ".concat(String.valueOf(context2)));
         }
         return context2;
     }
@@ -488,7 +477,7 @@ public class d {
                 com.anythink.core.common.c.a().a(this.e, currentTimeMillis, aVar.b);
             }
             aVar.d = this.d;
-            aVar.e = this.f6836c;
+            aVar.e = this.c;
             if (this.h != null) {
                 this.h.a(this.r, aVar);
             }
@@ -512,16 +501,16 @@ public class d {
         boolean z;
         String str;
         this.s = true;
-        com.anythink.core.common.e.b a2 = com.anythink.core.common.a.a().a(this.b, this.f6836c);
+        com.anythink.core.common.e.b a2 = com.anythink.core.common.a.a().a(this.b, this.c);
         if (a2 != null && a2.a()) {
             b bVar = this.h;
             if (bVar != null) {
                 bVar.b(a2.e().getTrackingInfo());
             }
-            b(a2.e(), this.f6836c);
+            b(a2.e(), this.c);
             return;
         }
-        m N = this.f6836c.N();
+        m N = this.c.N();
         if (N == null || !N.s) {
             baseAd = null;
             aTBaseAdAdapter = null;
@@ -542,19 +531,19 @@ public class d {
         if (aTBaseAdAdapter == null) {
             aTBaseAdAdapter2 = aTBaseAdAdapter;
             if (!z) {
-                aTBaseAdAdapter2 = i.a(this.f6836c);
+                aTBaseAdAdapter2 = i.a(this.c);
             }
         }
         if (aTBaseAdAdapter2 == null) {
             if (this.h != null) {
                 com.anythink.core.common.l.a aVar2 = new com.anythink.core.common.l.a();
-                aVar2.f6831a = 0;
-                aVar2.f6832c = z ? this.f6836c.k() : 0L;
+                aVar2.a = 0;
+                aVar2.c = z ? this.c.k() : 0L;
                 String str2 = z ? ErrorCode.c2sBiddingCacheError : "2002";
                 if (z) {
                     str = "";
                 } else {
-                    str = this.f6836c.h() + " does not exist!";
+                    str = this.c.h() + " does not exist!";
                 }
                 aVar2.b = ErrorCode.getErrorCode(str2, "", str);
                 a((ATBaseAdAdapter) null, aVar2);
@@ -563,21 +552,21 @@ public class d {
             return;
         }
         try {
-            com.anythink.core.common.k.d.a(this.f6836c.c(), aTBaseAdAdapter2.getNetworkSDKVersion());
+            com.anythink.core.common.k.d.a(this.c.c(), aTBaseAdAdapter2.getNetworkSDKVersion());
         } catch (Throwable th) {
         }
-        com.anythink.core.common.e.e a3 = s.a(aTBaseAdAdapter2, this.d, this.f6836c);
+        com.anythink.core.common.e.e a3 = s.a(aTBaseAdAdapter2, this.d, this.c);
         this.d = a3;
         b bVar2 = this.h;
         if (bVar2 != null) {
             bVar2.a(a3);
         }
-        long B = this.f6836c.B();
+        long B = this.c.B();
         if (B != -1) {
             this.m = p();
             n.a().a(this.m, B);
         }
-        long q = this.f6836c.q();
+        long q = this.c.q();
         if (q != -1) {
             this.n = p();
             n.a().a(this.n, q);
@@ -588,7 +577,7 @@ public class d {
             aTBaseAdAdapter2.refreshActivityContext((Activity) context);
         }
         if (!z) {
-            AnonymousClass1 anonymousClass1 = new AnonymousClass1(aTBaseAdAdapter2, this.f6836c, k());
+            AnonymousClass1 anonymousClass1 = new AnonymousClass1(aTBaseAdAdapter2, this.c, k());
             if (TextUtils.equals(String.valueOf(this.o.e.X()), "2")) {
                 n.a().a(anonymousClass1);
                 return;
@@ -616,8 +605,8 @@ public class d {
             this.p = Boolean.FALSE;
             this.j = true;
             com.anythink.core.common.l.a aVar = new com.anythink.core.common.l.a();
-            aVar.f6831a = 0;
-            aVar.f6832c = SystemClock.elapsedRealtime() - this.k;
+            aVar.a = 0;
+            aVar.c = SystemClock.elapsedRealtime() - this.k;
             aVar.b = ErrorCode.getErrorCode(ErrorCode.timeOutError, "", "");
             a(this.g, aVar);
         }
@@ -640,6 +629,6 @@ public class d {
     }
 
     public final ai h() {
-        return this.f6836c;
+        return this.c;
     }
 }

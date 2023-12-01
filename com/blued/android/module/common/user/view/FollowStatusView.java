@@ -13,37 +13,33 @@ import com.blued.android.module.common.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/user/view/FollowStatusView.class */
 public class FollowStatusView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f10857a;
+    public Context a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public LayoutInflater f10858c;
+    public LayoutInflater c;
     private TextView d;
     private ShapeLinearLayout e;
 
     public FollowStatusView(Context context) {
         super(context);
-        this.f10857a = context;
+        this.a = context;
         a();
     }
 
     public FollowStatusView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f10857a = context;
+        this.a = context;
         a();
     }
 
     public FollowStatusView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f10857a = context;
+        this.a = context;
         a();
     }
 
     private void a() {
-        LayoutInflater from = LayoutInflater.from(this.f10857a);
-        this.f10858c = from;
+        LayoutInflater from = LayoutInflater.from(this.a);
+        this.c = from;
         View inflate = from.inflate(R.layout.view_follow_status, this);
         this.b = inflate;
         this.d = (TextView) inflate.findViewById(R.id.tv_text);
@@ -56,25 +52,25 @@ public class FollowStatusView extends LinearLayout {
 
     private void b() {
         ShapeHelper.d(this.e, R.color.syc_a_50);
-        this.d.setTextColor(BluedSkinUtils.a(this.f10857a, R.color.syc_a));
+        this.d.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_a));
         this.d.setText(R.string.attention);
     }
 
     private void c() {
         ShapeHelper.d(this.e, R.color.syc_a_50);
-        this.d.setTextColor(BluedSkinUtils.a(this.f10857a, R.color.syc_a));
+        this.d.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_a));
         this.d.setText(R.string.being_followed);
     }
 
     private void d() {
         ShapeHelper.d(this.e, R.color.syc_k_50);
-        this.d.setTextColor(BluedSkinUtils.a(this.f10857a, R.color.syc_k));
+        this.d.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_k));
         this.d.setText(R.string.followed);
     }
 
     private void e() {
         ShapeHelper.d(this.e, R.color.syc_k_50);
-        this.d.setTextColor(BluedSkinUtils.a(this.f10857a, R.color.syc_k));
+        this.d.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_k));
         this.d.setText(R.string.follow_eachother);
     }
 

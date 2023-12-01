@@ -27,9 +27,7 @@ import java.util.Map;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveRoomUtils.class */
 public class LiveRoomUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static Map<String, LiveTabData> f14192a = new HashMap();
+    public static Map<String, LiveTabData> a = new HashMap();
 
     public static String a(long j) {
         if (j < 10000) {
@@ -47,11 +45,11 @@ public class LiveRoomUtils {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        LiveTabData liveTabData = f14192a.get(str);
+        LiveTabData liveTabData = a.get(str);
         LiveTabData liveTabData2 = liveTabData;
         if (liveTabData == null) {
             liveTabData2 = new LiveTabData();
-            f14192a.put(str, liveTabData2);
+            a.put(str, liveTabData2);
         }
         if (liveTabData2.getDatas() == null) {
             liveTabData2.setDatas(new ArrayList());
@@ -144,11 +142,11 @@ public class LiveRoomUtils {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        LiveTabData liveTabData = f14192a.get(str);
+        LiveTabData liveTabData = a.get(str);
         LiveTabData liveTabData2 = liveTabData;
         if (liveTabData == null) {
             liveTabData2 = new LiveTabData();
-            f14192a.put(str, liveTabData2);
+            a.put(str, liveTabData2);
         }
         liveTabData2.setCommonModel(liveListCommonModel);
     }
@@ -157,11 +155,11 @@ public class LiveRoomUtils {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        LiveTabData liveTabData = f14192a.get(str);
+        LiveTabData liveTabData = a.get(str);
         LiveTabData liveTabData2 = liveTabData;
         if (liveTabData == null) {
             liveTabData2 = new LiveTabData();
-            f14192a.put(str, liveTabData2);
+            a.put(str, liveTabData2);
         }
         if (liveTabData2.getDatas() == null) {
             liveTabData2.setDatas(new ArrayList());
@@ -174,11 +172,11 @@ public class LiveRoomUtils {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        LiveTabData liveTabData = f14192a.get(str);
+        LiveTabData liveTabData = a.get(str);
         LiveTabData liveTabData2 = liveTabData;
         if (liveTabData == null) {
             liveTabData2 = new LiveTabData();
-            f14192a.put(str, liveTabData2);
+            a.put(str, liveTabData2);
         }
         if (liveTabData2.getExtraDatas() == null) {
             liveTabData2.setExtraDatas(new ArrayList());
@@ -192,11 +190,11 @@ public class LiveRoomUtils {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        LiveTabData liveTabData = f14192a.get(str);
+        LiveTabData liveTabData = a.get(str);
         LiveTabData liveTabData2 = liveTabData;
         if (liveTabData == null) {
             liveTabData2 = new LiveTabData();
-            f14192a.put(str, liveTabData2);
+            a.put(str, liveTabData2);
         }
         if (liveTabData2.getExtraDatas() == null) {
             liveTabData2.setExtraDatas(new ArrayList());
@@ -209,11 +207,11 @@ public class LiveRoomUtils {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        LiveTabData liveTabData = f14192a.get(str);
+        LiveTabData liveTabData = a.get(str);
         LiveTabData liveTabData2 = liveTabData;
         if (liveTabData == null) {
             liveTabData2 = new LiveTabData();
-            f14192a.put(str, liveTabData2);
+            a.put(str, liveTabData2);
         }
         if (liveTabData2.getAdapterData() == null) {
             liveTabData2.setAdapterData(new ArrayList());
@@ -227,11 +225,11 @@ public class LiveRoomUtils {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        LiveTabData liveTabData = f14192a.get(str);
+        LiveTabData liveTabData = a.get(str);
         LiveTabData liveTabData2 = liveTabData;
         if (liveTabData == null) {
             liveTabData2 = new LiveTabData();
-            f14192a.put(str, liveTabData2);
+            a.put(str, liveTabData2);
         }
         if (liveTabData2.getAdapterData() == null) {
             liveTabData2.setAdapterData(new ArrayList());
@@ -244,11 +242,11 @@ public class LiveRoomUtils {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        LiveTabData liveTabData = f14192a.get(str);
+        LiveTabData liveTabData = a.get(str);
         LiveTabData liveTabData2 = liveTabData;
         if (liveTabData == null) {
             liveTabData2 = new LiveTabData();
-            f14192a.put(str, liveTabData2);
+            a.put(str, liveTabData2);
         }
         return liveTabData2.getCommonModel();
     }

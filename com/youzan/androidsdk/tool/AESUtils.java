@@ -1,5 +1,6 @@
 package com.youzan.androidsdk.tool;
 
+import com.anythink.expressad.d.a.b;
 import java.util.Map;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
@@ -28,7 +29,7 @@ public class AESUtils {
     public static String encoder(Map<String, String> map) {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            if (!entry.getKey().equals("sign")) {
+            if (!entry.getKey().equals(b.d)) {
                 sb.append(entry.getValue());
             }
         }

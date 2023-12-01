@@ -6,7 +6,6 @@ import android.content.res.Resources;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.ContextThemeWrapper;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -51,7 +50,7 @@ public class e extends ContextThemeWrapper {
     }
 
     private String makeSubName(String str) {
-        return getPluginDirName() + BridgeUtil.UNDERLINE_STR + str;
+        return getPluginDirName() + "_" + str;
     }
 
     @Override // android.content.ContextWrapper, android.content.Context

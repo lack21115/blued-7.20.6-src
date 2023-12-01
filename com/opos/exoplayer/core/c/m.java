@@ -4,15 +4,15 @@ package com.opos.exoplayer.core.c;
 public final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final m f25252a = new m(0, 0);
+    public static final m f11564a = new m(0, 0);
     public final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final long f25253c;
+    public final long f11565c;
 
     public m(long j, long j2) {
         this.b = j;
-        this.f25253c = j2;
+        this.f11565c = j2;
     }
 
     public boolean equals(Object obj) {
@@ -26,7 +26,7 @@ public final class m {
                 m mVar = (m) obj;
                 z = false;
                 if (this.b == mVar.b) {
-                    if (this.f25253c != mVar.f25253c) {
+                    if (this.f11565c != mVar.f11565c) {
                         return false;
                     }
                 }
@@ -38,10 +38,10 @@ public final class m {
     }
 
     public int hashCode() {
-        return (((int) this.b) * 31) + ((int) this.f25253c);
+        return (((int) this.b) * 31) + ((int) this.f11565c);
     }
 
     public String toString() {
-        return "[timeUs=" + this.b + ", position=" + this.f25253c + "]";
+        return "[timeUs=" + this.b + ", position=" + this.f11565c + "]";
     }
 }

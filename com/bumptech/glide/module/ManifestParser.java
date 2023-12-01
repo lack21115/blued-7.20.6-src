@@ -13,10 +13,10 @@ import java.util.List;
 public final class ManifestParser {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f21027a;
+    private final Context f7421a;
 
     public ManifestParser(Context context) {
-        this.f21027a = context;
+        this.f7421a = context;
     }
 
     private static GlideModule a(String str) {
@@ -53,7 +53,7 @@ public final class ManifestParser {
         }
         ArrayList arrayList = new ArrayList();
         try {
-            ApplicationInfo applicationInfo = this.f21027a.getPackageManager().getApplicationInfo(this.f21027a.getPackageName(), 128);
+            ApplicationInfo applicationInfo = this.f7421a.getPackageManager().getApplicationInfo(this.f7421a.getPackageName(), 128);
             if (applicationInfo.metaData == null) {
                 if (Log.isLoggable("ManifestParser", 3)) {
                     Log.d("ManifestParser", "Got null app info metadata");

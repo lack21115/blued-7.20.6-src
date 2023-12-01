@@ -18,11 +18,11 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
     private static final String d = "ChunkSampleStream";
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f7431a;
+    public final int f4592a;
     long b;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f7432c;
+    boolean f4593c;
     private final int[] e;
     private final m[] f;
     private final boolean[] g;
@@ -46,16 +46,16 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
     public final class a implements y {
 
         /* renamed from: a  reason: collision with root package name */
-        public final f<T> f7433a;
+        public final f<T> f4594a;
 
         /* renamed from: c  reason: collision with root package name */
-        private final x f7434c;
+        private final x f4595c;
         private final int d;
         private boolean e;
 
         public a(f<T> fVar, x xVar, int i) {
-            this.f7433a = fVar;
-            this.f7434c = xVar;
+            this.f4594a = fVar;
+            this.f4595c = xVar;
             this.d = i;
         }
 
@@ -75,14 +75,14 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
         @Override // com.anythink.expressad.exoplayer.h.y
         public final int a(long j) {
             int i;
-            if (!f.this.f7432c || j <= this.f7434c.g()) {
-                int a2 = this.f7434c.a(j, true);
+            if (!f.this.f4593c || j <= this.f4595c.g()) {
+                int a2 = this.f4595c.a(j, true);
                 i = a2;
                 if (a2 == -1) {
                     i = 0;
                 }
             } else {
-                i = this.f7434c.k();
+                i = this.f4595c.k();
             }
             if (i > 0) {
                 d();
@@ -95,7 +95,7 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
             if (f.this.a()) {
                 return -3;
             }
-            int a2 = this.f7434c.a(nVar, eVar, z, f.this.f7432c, f.this.b);
+            int a2 = this.f4595c.a(nVar, eVar, z, f.this.f4593c, f.this.b);
             if (a2 == -4) {
                 d();
             }
@@ -104,10 +104,10 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
 
         @Override // com.anythink.expressad.exoplayer.h.y
         public final boolean b() {
-            if (f.this.f7432c) {
+            if (f.this.f4593c) {
                 return true;
             }
-            return !f.this.a() && this.f7434c.c();
+            return !f.this.a() && this.f4595c.c();
         }
 
         @Override // com.anythink.expressad.exoplayer.h.y
@@ -121,7 +121,7 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
     }
 
     private f(int i, int[] iArr, m[] mVarArr, T t, z.a<f<T>> aVar, com.anythink.expressad.exoplayer.j.b bVar, long j, int i2, t.a aVar2) {
-        this.f7431a = i;
+        this.f4592a = i;
         this.e = iArr;
         this.f = mVarArr;
         this.h = t;
@@ -247,9 +247,9 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
             r1 = r21
             com.anythink.expressad.exoplayer.j.k r1 = r1.b
             r2 = r21
-            int r2 = r2.f7425c
+            int r2 = r2.f4586c
             r3 = r20
-            int r3 = r3.f7431a
+            int r3 = r3.f4592a
             r4 = r21
             com.anythink.expressad.exoplayer.m r4 = r4.d
             r5 = r21
@@ -333,13 +333,13 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
 
     /* renamed from: a  reason: avoid collision after fix types in other method */
     private void a2(c cVar, long j, long j2) {
-        this.j.a(cVar.b, cVar.f7425c, this.f7431a, cVar.d, cVar.e, cVar.f, cVar.g, cVar.h, j, j2, cVar.d());
+        this.j.a(cVar.b, cVar.f4586c, this.f4592a, cVar.d, cVar.e, cVar.f, cVar.g, cVar.h, j, j2, cVar.d());
         this.i.a(this);
     }
 
     /* renamed from: a  reason: avoid collision after fix types in other method */
     private void a2(c cVar, long j, long j2, boolean z) {
-        this.j.b(cVar.b, cVar.f7425c, this.f7431a, cVar.d, cVar.e, cVar.f, cVar.g, cVar.h, j, j2, cVar.d());
+        this.j.b(cVar.b, cVar.f4586c, this.f4592a, cVar.d, cVar.e, cVar.f, cVar.g, cVar.h, j, j2, cVar.d());
         if (z) {
             return;
         }
@@ -437,7 +437,7 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
                 }
                 aVar = this.n.get(i2);
                 int i3 = (aVar.g > j ? 1 : (aVar.g == j ? 0 : -1));
-                if (i3 != 0 || aVar.f7422a != com.anythink.expressad.exoplayer.b.b) {
+                if (i3 != 0 || aVar.f4583a != com.anythink.expressad.exoplayer.b.b) {
                     aVar = null;
                     if (i3 > 0) {
                         break;
@@ -471,7 +471,7 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
             }
         } else {
             this.u = j;
-            this.f7432c = false;
+            this.f4593c = false;
             this.n.clear();
             if (this.l.a()) {
                 this.l.b();
@@ -496,7 +496,7 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
         com.anythink.expressad.exoplayer.h.b.a aVar = this.n.get(i);
         m mVar = aVar.d;
         if (!mVar.equals(this.s)) {
-            this.j.a(this.f7431a, mVar, aVar.e, aVar.f, aVar.g);
+            this.j.a(this.f4592a, mVar, aVar.e, aVar.f, aVar.g);
         }
         this.s = mVar;
     }
@@ -555,7 +555,7 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
         if (a()) {
             return 0;
         }
-        if (!this.f7432c || j <= this.p.g()) {
+        if (!this.f4593c || j <= this.p.g()) {
             int a2 = this.p.a(j, true);
             if (a2 != -1) {
                 i = a2;
@@ -589,7 +589,7 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
         if (a()) {
             return -3;
         }
-        int a2 = this.p.a(nVar, eVar, z, this.f7432c, this.b);
+        int a2 = this.p.a(nVar, eVar, z, this.f4593c, this.b);
         if (a2 == -4) {
             a(this.p.e(), 1);
         }
@@ -599,14 +599,14 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
     @Override // com.anythink.expressad.exoplayer.j.t.a
     public final /* synthetic */ void a(c cVar, long j, long j2) {
         c cVar2 = cVar;
-        this.j.a(cVar2.b, cVar2.f7425c, this.f7431a, cVar2.d, cVar2.e, cVar2.f, cVar2.g, cVar2.h, j, j2, cVar2.d());
+        this.j.a(cVar2.b, cVar2.f4586c, this.f4592a, cVar2.d, cVar2.e, cVar2.f, cVar2.g, cVar2.h, j, j2, cVar2.d());
         this.i.a(this);
     }
 
     @Override // com.anythink.expressad.exoplayer.j.t.a
     public final /* synthetic */ void a(c cVar, long j, long j2, boolean z) {
         c cVar2 = cVar;
-        this.j.b(cVar2.b, cVar2.f7425c, this.f7431a, cVar2.d, cVar2.e, cVar2.f, cVar2.g, cVar2.h, j, j2, cVar2.d());
+        this.j.b(cVar2.b, cVar2.f4586c, this.f4592a, cVar2.d, cVar2.e, cVar2.f, cVar2.g, cVar2.h, j, j2, cVar2.d());
         if (z) {
             return;
         }
@@ -659,13 +659,13 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
         if (this.n.isEmpty()) {
             this.u = this.v;
         }
-        this.f7432c = false;
-        this.j.a(this.f7431a, d2.g, j2);
+        this.f4593c = false;
+        this.j.a(this.f4592a, d2.g, j2);
     }
 
     @Override // com.anythink.expressad.exoplayer.h.y
     public final boolean b() {
-        if (this.f7432c) {
+        if (this.f4593c) {
             return true;
         }
         return !a() && this.p.c();
@@ -680,7 +680,7 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
     @Override // com.anythink.expressad.exoplayer.h.z
     public final boolean c(long j) {
         boolean z = false;
-        if (this.f7432c || this.l.a()) {
+        if (this.f4593c || this.l.a()) {
             return false;
         }
         boolean a2 = a();
@@ -688,13 +688,13 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
             j();
         }
         boolean z2 = this.m.b;
-        c cVar = this.m.f7430a;
+        c cVar = this.m.f4591a;
         e eVar = this.m;
-        eVar.f7430a = null;
+        eVar.f4591a = null;
         eVar.b = false;
         if (z2) {
             this.u = com.anythink.expressad.exoplayer.b.b;
-            this.f7432c = true;
+            this.f4593c = true;
             return true;
         } else if (cVar == null) {
             return false;
@@ -711,14 +711,14 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
                 aVar.a(this.r);
                 this.n.add(aVar);
             }
-            this.j.a(cVar.b, cVar.f7425c, this.f7431a, cVar.d, cVar.e, cVar.f, cVar.g, cVar.h, this.l.a(cVar, this, this.k));
+            this.j.a(cVar.b, cVar.f4586c, this.f4592a, cVar.d, cVar.e, cVar.f, cVar.g, cVar.h, this.l.a(cVar, this, this.k));
             return true;
         }
     }
 
     @Override // com.anythink.expressad.exoplayer.h.z
     public final long d() {
-        if (this.f7432c) {
+        if (this.f4593c) {
             return Long.MIN_VALUE;
         }
         if (a()) {
@@ -746,7 +746,7 @@ public final class f<T extends g> implements y, z, t.a<c>, t.d {
         if (a()) {
             return this.u;
         }
-        if (this.f7432c) {
+        if (this.f4593c) {
             return Long.MIN_VALUE;
         }
         return j().h;

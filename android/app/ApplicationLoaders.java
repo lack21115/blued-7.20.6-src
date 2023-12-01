@@ -4,9 +4,8 @@ import android.os.Trace;
 import android.util.ArrayMap;
 import dalvik.system.PathClassLoader;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/app/ApplicationLoaders.class */
-public class ApplicationLoaders {
+class ApplicationLoaders {
     private static final ApplicationLoaders gApplicationLoaders = new ApplicationLoaders();
     private final ArrayMap<String, ClassLoader> mLoaders = new ArrayMap<>();
 

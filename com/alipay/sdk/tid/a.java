@@ -9,18 +9,14 @@ import java.lang.ref.WeakReference;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/tid/a.class */
 public final class a extends SQLiteOpenHelper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f4652a = "msp.db";
+    private static final String a = "msp.db";
     private static final int b = 1;
-
-    /* renamed from: c  reason: collision with root package name */
-    private WeakReference<Context> f4653c;
+    private WeakReference<Context> c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public a(Context context) {
-        super(context, f4652a, null, 1);
-        this.f4653c = new WeakReference<>(context);
+        super(context, a, (SQLiteDatabase.CursorFactory) null, 1);
+        this.c = new WeakReference<>(context);
     }
 
     private String c(String str, String str2) {

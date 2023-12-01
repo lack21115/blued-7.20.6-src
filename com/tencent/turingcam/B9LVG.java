@@ -7,18 +7,18 @@ import java.util.Collection;
 public final class B9LVG extends SkEpO {
 
     /* renamed from: a  reason: collision with root package name */
-    static ArrayList<Bi3eT> f39807a;
+    static ArrayList<Bi3eT> f26116a;
     static byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f39808c = "";
+    public String f26117c = "";
     public ArrayList<Bi3eT> d = null;
     public byte[] e = null;
     public SWw7W f = null;
 
     static {
         ArrayList<Bi3eT> arrayList = new ArrayList<>();
-        f39807a = arrayList;
+        f26116a = arrayList;
         arrayList.add(new Bi3eT());
         b = r0;
         byte[] bArr = {0};
@@ -26,7 +26,7 @@ public final class B9LVG extends SkEpO {
 
     @Override // com.tencent.turingcam.SkEpO
     public void a(ShGzN shGzN) {
-        shGzN.a(this.f39808c, 0);
+        shGzN.a(this.f26117c, 0);
         shGzN.a((Collection) this.d, 1);
         byte[] bArr = this.e;
         if (bArr != null) {

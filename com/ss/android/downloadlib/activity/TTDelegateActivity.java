@@ -12,7 +12,6 @@ import android.view.MotionEvent;
 import android.view.Window;
 import android.view.WindowManager;
 import androidx.core.app.ActivityCompat;
-import com.android.internal.util.cm.SpamFilter;
 import com.bytedance.applog.tracker.Tracker;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.ss.android.download.api.config.gm;
@@ -71,7 +70,7 @@ public class TTDelegateActivity extends Activity implements ActivityCompat.OnReq
     private void b() {
         CharSequence charSequence;
         long longExtra = this.mb.getLongExtra(EventConstants.ExtraJson.MODEL_ID, 0L);
-        String stringExtra = this.mb.getStringExtra(SpamFilter.SpamContract.NotificationTable.MESSAGE_TEXT);
+        String stringExtra = this.mb.getStringExtra("message_text");
         String stringExtra2 = this.mb.getStringExtra("positive_button_text");
         String stringExtra3 = this.mb.getStringExtra("negative_button_text");
         int intExtra = this.mb.getIntExtra("type", 0);
@@ -173,7 +172,7 @@ public class TTDelegateActivity extends Activity implements ActivityCompat.OnReq
             b.putExtra("negative_button_text", str3);
         }
         if (!TextUtils.isEmpty(str)) {
-            b.putExtra(SpamFilter.SpamContract.NotificationTable.MESSAGE_TEXT, str);
+            b.putExtra("message_text", str);
         }
         b.putExtra(EventConstants.ExtraJson.MODEL_ID, mbVar.ox());
         if (x.getContext() != null) {

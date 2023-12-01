@@ -9,11 +9,11 @@ import com.tencent.beacon.module.ModuleName;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile c f34939a;
+    private static volatile c f21248a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private byte f34940c;
+    private byte f21249c;
     private String d;
     private String f;
     private long g;
@@ -26,31 +26,31 @@ public class c {
     private boolean m = true;
 
     public c() {
-        this.f34940c = (byte) -1;
+        this.f21249c = (byte) -1;
         this.d = "";
         this.f = "";
-        this.f34940c = (byte) 1;
+        this.f21249c = (byte) 1;
         this.d = "beacon";
         this.f = "unknown";
     }
 
     public static c d() {
-        if (f34939a == null) {
+        if (f21248a == null) {
             synchronized (c.class) {
                 try {
-                    if (f34939a == null) {
-                        f34939a = new c();
+                    if (f21248a == null) {
+                        f21248a = new c();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f34939a;
+        return f21248a;
     }
 
     public BeaconModule a(ModuleName moduleName) {
-        return BeaconModule.f35077a.get(moduleName);
+        return BeaconModule.f21386a.get(moduleName);
     }
 
     public String a() {
@@ -133,7 +133,7 @@ public class c {
     public byte h() {
         byte b;
         synchronized (this) {
-            b = this.f34940c;
+            b = this.f21249c;
         }
         return b;
     }

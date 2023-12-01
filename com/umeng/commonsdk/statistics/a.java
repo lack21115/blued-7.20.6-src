@@ -4,9 +4,9 @@ package com.umeng.commonsdk.statistics;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f40898a = "native";
+    public static String f27207a = "native";
     public static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f40899c;
+    public static int f27208c;
 }

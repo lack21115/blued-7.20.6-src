@@ -163,8 +163,7 @@ public class ThreadedRenderer extends HardwareRenderer {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static void invokeFunctor(long j, boolean z) {
+    static void invokeFunctor(long j, boolean z) {
         nInvokeFunctor(j, z);
     }
 
@@ -283,9 +282,8 @@ public class ThreadedRenderer extends HardwareRenderer {
         view.mRecreateDisplayList = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void buildLayer(RenderNode renderNode) {
+    void buildLayer(RenderNode renderNode) {
         nBuildLayer(this.mNativeProxy, renderNode.getNativeDisplayList());
     }
 
@@ -301,17 +299,15 @@ public class ThreadedRenderer extends HardwareRenderer {
         return HardwareLayer.adoptTextureLayer(this, nCreateTextureLayer(this.mNativeProxy));
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void destroy() {
+    void destroy() {
         this.mInitialized = false;
         updateEnabledState(null);
         nDestroy(this.mNativeProxy);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void destroyHardwareResources(View view) {
+    void destroyHardwareResources(View view) {
         destroyResources(view);
         nDestroyHardwareResources(this.mNativeProxy);
     }
@@ -322,9 +318,8 @@ public class ThreadedRenderer extends HardwareRenderer {
         nDetachSurfaceTexture(this.mNativeProxy, j);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void draw(View view, View.AttachInfo attachInfo, HardwareRenderer.HardwareDrawCallbacks hardwareDrawCallbacks) {
+    void draw(View view, View.AttachInfo attachInfo, HardwareRenderer.HardwareDrawCallbacks hardwareDrawCallbacks) {
         attachInfo.mIgnoreDirtyState = true;
         long frameTimeNanos = this.mChoreographer.getFrameTimeNanos();
         attachInfo.mDrawingTime = frameTimeNanos / 1000000;
@@ -346,7 +341,7 @@ public class ThreadedRenderer extends HardwareRenderer {
                 if (i2 >= size) {
                     break;
                 }
-                registerAnimatingRenderNode(attachInfo.mPendingAnimatingRenderNodes.get(i2));
+                registerAnimatingRenderNode((RenderNode) attachInfo.mPendingAnimatingRenderNodes.get(i2));
                 i = i2 + 1;
             }
             attachInfo.mPendingAnimatingRenderNodes.clear();
@@ -363,16 +358,14 @@ public class ThreadedRenderer extends HardwareRenderer {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void dumpGfxInfo(PrintWriter printWriter, FileDescriptor fileDescriptor) {
+    void dumpGfxInfo(PrintWriter printWriter, FileDescriptor fileDescriptor) {
         printWriter.flush();
         nDumpProfileInfo(this.mNativeProxy, fileDescriptor);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void fence() {
+    void fence() {
         nFence(this.mNativeProxy);
     }
 
@@ -385,21 +378,18 @@ public class ThreadedRenderer extends HardwareRenderer {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public int getHeight() {
+    int getHeight() {
         return this.mHeight;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public int getWidth() {
+    int getWidth() {
         return this.mWidth;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public boolean initialize(Surface surface) throws Surface.OutOfResourcesException {
+    boolean initialize(Surface surface) throws Surface.OutOfResourcesException {
         this.mInitialized = true;
         updateEnabledState(surface);
         boolean nInitialize = nInitialize(this.mNativeProxy, surface);
@@ -407,21 +397,18 @@ public class ThreadedRenderer extends HardwareRenderer {
         return nInitialize;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void invalidate(Surface surface) {
+    void invalidate(Surface surface) {
         updateSurface(surface);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void invalidateRoot() {
+    void invalidateRoot() {
         this.mRootNodeNeedsUpdate = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public boolean loadSystemProperties() {
+    boolean loadSystemProperties() {
         boolean nLoadSystemProperties = nLoadSystemProperties(this.mNativeProxy);
         boolean checkIfProfilingRequested = checkIfProfilingRequested();
         if (checkIfProfilingRequested != this.mProfilingEnabled) {
@@ -445,9 +432,8 @@ public class ThreadedRenderer extends HardwareRenderer {
         nCancelLayerUpdate(this.mNativeProxy, hardwareLayer.getDeferredLayerUpdater());
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public boolean pauseSurface(Surface surface) {
+    boolean pauseSurface(Surface surface) {
         return nPauseSurface(this.mNativeProxy, surface);
     }
 
@@ -457,26 +443,22 @@ public class ThreadedRenderer extends HardwareRenderer {
         nPushLayerUpdate(this.mNativeProxy, hardwareLayer.getDeferredLayerUpdater());
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void registerAnimatingRenderNode(RenderNode renderNode) {
+    void registerAnimatingRenderNode(RenderNode renderNode) {
         nRegisterAnimatingRenderNode(this.mRootNode.mNativeRenderNode, renderNode.mNativeRenderNode);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void setName(String str) {
+    void setName(String str) {
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void setOpaque(boolean z) {
+    void setOpaque(boolean z) {
         nSetOpaque(this.mNativeProxy, z && !this.mHasInsets);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void setup(int i, int i2, Rect rect) {
+    void setup(int i, int i2, Rect rect) {
         float f = i / 2.0f;
         this.mWidth = i;
         this.mHeight = i2;
@@ -498,15 +480,13 @@ public class ThreadedRenderer extends HardwareRenderer {
         nSetup(this.mNativeProxy, this.mSurfaceWidth, this.mSurfaceHeight, f, this.mLightY, this.mLightZ, this.mLightRadius, this.mAmbientShadowAlpha, this.mSpotShadowAlpha);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void stopDrawing() {
+    void stopDrawing() {
         nStopDrawing(this.mNativeProxy);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareRenderer
-    public void updateSurface(Surface surface) throws Surface.OutOfResourcesException {
+    void updateSurface(Surface surface) throws Surface.OutOfResourcesException {
         updateEnabledState(surface);
         nUpdateSurface(this.mNativeProxy, surface);
     }

@@ -35,11 +35,11 @@ public final class FitemRandomGiftProbabilityItem extends FreedomItem {
             vh.c(R.id.rl_current_probability);
             return;
         }
-        BaseViewHolder a2 = vh.a(R.id.tv_current_probability, (CharSequence) this.b.getCurrent_random_weight());
+        BaseViewHolder a = vh.a(R.id.tv_current_probability, (CharSequence) this.b.getCurrent_random_weight());
         int i2 = R.id.iv_up_arrows;
         if (this.b.is_percent_fly() == 1) {
             z = true;
         }
-        a2.b(i2, z).d(R.id.rl_current_probability).b(R.id.tv_current_probability, ContextCompat.getColor(vh.f10931a.b, this.b.is_percent_fly() == 1 ? R.color.syc_dark_FF7B00 : R.color.syc_dark_222));
+        a.b(i2, z).d(R.id.rl_current_probability).b(R.id.tv_current_probability, ContextCompat.getColor(vh.a.b, this.b.is_percent_fly() == 1 ? R.color.syc_dark_FF7B00 : R.color.syc_dark_222));
     }
 }

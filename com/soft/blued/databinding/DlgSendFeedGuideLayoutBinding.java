@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DlgSendFeedGuideLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28735a;
+    private final FrameLayout f15045a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28735a;
+        return this.f15045a;
     }
 }

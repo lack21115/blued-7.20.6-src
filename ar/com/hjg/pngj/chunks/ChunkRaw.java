@@ -12,11 +12,11 @@ import java.util.zip.CRC32;
 public class ChunkRaw {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f3659a;
+    public final int f3611a;
     public final byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f3660c;
+    public final String f3612c;
     public byte[] d;
     public byte[] e;
     private long f;
@@ -26,8 +26,8 @@ public class ChunkRaw {
         this.d = null;
         this.f = 0L;
         this.e = new byte[4];
-        this.f3659a = i;
-        this.f3660c = str;
+        this.f3611a = i;
+        this.f3612c = str;
         this.b = ChunkHelper.a(str);
         int i2 = 0;
         while (true) {
@@ -56,7 +56,7 @@ public class ChunkRaw {
         CRC32 crc32 = new CRC32();
         this.g = crc32;
         crc32.update(this.b, 0, 4);
-        int i = this.f3659a;
+        int i = this.f3611a;
         if (i > 0) {
             this.g.update(this.d, 0, i);
         }
@@ -65,8 +65,8 @@ public class ChunkRaw {
 
     public void a() {
         byte[] bArr = this.d;
-        if (bArr == null || bArr.length < this.f3659a) {
-            this.d = new byte[this.f3659a];
+        if (bArr == null || bArr.length < this.f3611a) {
+            this.d = new byte[this.f3611a];
         }
     }
 
@@ -76,11 +76,11 @@ public class ChunkRaw {
 
     public void a(OutputStream outputStream) {
         b(outputStream);
-        int i = this.f3659a;
+        int i = this.f3611a;
         if (i > 0) {
             byte[] bArr = this.d;
             if (bArr == null) {
-                throw new PngjOutputException("cannot write chunk, raw chunk data is null [" + this.f3660c + "]");
+                throw new PngjOutputException("cannot write chunk, raw chunk data is null [" + this.f3612c + "]");
             }
             PngHelperInternal.a(outputStream, bArr, 0, i);
         }
@@ -106,11 +106,11 @@ public class ChunkRaw {
 
     public void b(OutputStream outputStream) {
         if (this.b.length == 4) {
-            PngHelperInternal.a(outputStream, this.f3659a);
+            PngHelperInternal.a(outputStream, this.f3611a);
             PngHelperInternal.a(outputStream, this.b);
             return;
         }
-        throw new PngjOutputException("bad chunkid [" + this.f3660c + "]");
+        throw new PngjOutputException("bad chunkid [" + this.f3612c + "]");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -132,12 +132,12 @@ public class ChunkRaw {
         }
         if (obj != null && getClass() == obj.getClass()) {
             ChunkRaw chunkRaw = (ChunkRaw) obj;
-            String str = this.f3660c;
+            String str = this.f3612c;
             if (str == null) {
-                if (chunkRaw.f3660c != null) {
+                if (chunkRaw.f3612c != null) {
                     return false;
                 }
-            } else if (!str.equals(chunkRaw.f3660c)) {
+            } else if (!str.equals(chunkRaw.f3612c)) {
                 return false;
             }
             return this.f == chunkRaw.f;
@@ -146,13 +146,13 @@ public class ChunkRaw {
     }
 
     public int hashCode() {
-        String str = this.f3660c;
+        String str = this.f3612c;
         int hashCode = str == null ? 0 : str.hashCode();
         long j = this.f;
         return ((hashCode + 31) * 31) + ((int) (j ^ (j >>> 32)));
     }
 
     public String toString() {
-        return "chunkid=" + ChunkHelper.a(this.b) + " len=" + this.f3659a;
+        return "chunkid=" + ChunkHelper.a(this.b) + " len=" + this.f3611a;
     }
 }

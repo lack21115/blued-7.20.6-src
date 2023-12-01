@@ -19,11 +19,11 @@ import java.util.Map;
 public final class af {
 
     /* renamed from: a  reason: collision with root package name */
-    static af f35219a;
+    static af f21528a;
     protected Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Map<String, String> f35220c = null;
+    public Map<String, String> f21529c = null;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public af(Context context) {
@@ -34,8 +34,8 @@ public final class af {
         URLConnection openConnection;
         try {
             URL url = new URL(str2);
-            if (an.f35241a != null) {
-                openConnection = url.openConnection(an.f35241a);
+            if (an.f21550a != null) {
+                openConnection = url.openConnection(an.f21550a);
             } else if (str == null || !str.toLowerCase(Locale.US).contains("wap")) {
                 openConnection = url.openConnection();
             } else {

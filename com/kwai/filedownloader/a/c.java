@@ -90,7 +90,7 @@ public final class c implements a {
     }
 
     @Override // com.kwai.filedownloader.a.a
-    public final a.InterfaceC0584a Hx() {
+    public final a.InterfaceC0414a Hx() {
         return this.aGx.a(this.aGw.aGt, this.aGw.aGu);
     }
 

@@ -6,10 +6,12 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.ConfigurationInfo;
 import android.content.pm.PackageManager;
+import android.content.res.ThemeConfig;
 import android.os.Build;
 import android.os.Process;
 import android.provider.Settings;
 import android.text.TextUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedReader;
 import java.io.Closeable;
 import java.io.IOException;
@@ -172,8 +174,8 @@ public class k {
         int myPid = Process.myPid();
         StringBuilder sb = new StringBuilder();
         a(myPid, sb, "main", 50, 'D');
-        a(myPid, sb, "system", 50, 'W');
-        a(myPid, sb, com.umeng.analytics.pro.d.f40716ar, 50, 'I');
+        a(myPid, sb, ThemeConfig.SYSTEM_DEFAULT, 50, 'W');
+        a(myPid, sb, com.umeng.analytics.pro.d.f27025ar, 50, 'I');
         sb.append("\n");
         return sb.toString();
     }
@@ -187,7 +189,7 @@ public class k {
             String string2 = sharedPreferences.getString("deviceId", null);
             str = string2;
             if (string2 == null) {
-                str = UUID.randomUUID().toString().replaceAll("-", "");
+                str = UUID.randomUUID().toString().replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
                 SharedPreferences.Editor edit = sharedPreferences.edit();
                 edit.putString("deviceId", str);
                 edit.apply();

@@ -13,7 +13,6 @@ public final class LiveFootPrintViewModel extends BaseListViewModel<LiveFootPrin
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListViewModel
     public void requestData() {
         a(true);
     }

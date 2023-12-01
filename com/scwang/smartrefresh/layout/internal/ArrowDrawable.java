@@ -9,7 +9,7 @@ public class ArrowDrawable extends PaintDrawable {
     private int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27994c = 0;
+    private int f14306c = 0;
     private Path d = new Path();
 
     @Override // android.graphics.drawable.Drawable
@@ -17,7 +17,7 @@ public class ArrowDrawable extends PaintDrawable {
         Rect bounds = getBounds();
         int width = bounds.width();
         int height = bounds.height();
-        if (this.b != width || this.f27994c != height) {
+        if (this.b != width || this.f14306c != height) {
             int i = (width * 30) / 225;
             this.d.reset();
             double d = i;
@@ -44,8 +44,8 @@ public class ArrowDrawable extends PaintDrawable {
             this.d.lineTo(f8, f3);
             this.d.close();
             this.b = width;
-            this.f27994c = height;
+            this.f14306c = height;
         }
-        canvas.drawPath(this.d, this.f27995a);
+        canvas.drawPath(this.d, this.f14307a);
     }
 }

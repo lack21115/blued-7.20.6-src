@@ -10,7 +10,8 @@ import android.os.Message;
 import android.text.TextUtils;
 import android.widget.ImageView;
 import androidx.fragment.app.Fragment;
-import com.anythink.expressad.d.a.b;
+import com.android.internal.widget.LockPatternUtils;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
@@ -76,13 +77,9 @@ public class YYRoomInfoManager {
     private int[] G;
     private int[] H;
     private int I;
-
-    /* renamed from: a  reason: collision with root package name */
-    public YYUserInfo f17578a;
+    public YYUserInfo a;
     public boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f17579c;
+    public int c;
     public long d;
     public long e;
     public String f;
@@ -110,20 +107,18 @@ public class YYRoomInfoManager {
     /* renamed from: com.blued.android.module.yy_china.manager.YYRoomInfoManager$12  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYRoomInfoManager$12.class */
     static /* synthetic */ class AnonymousClass12 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f17583a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[YYConstants.AnchormanPKStatus.values().length];
-            f17583a = iArr;
+            a = iArr;
             try {
                 iArr[YYConstants.AnchormanPKStatus.Punish.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f17583a[YYConstants.AnchormanPKStatus.Fighting.ordinal()] = 2;
+                a[YYConstants.AnchormanPKStatus.Fighting.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -132,14 +127,12 @@ public class YYRoomInfoManager {
     /* renamed from: com.blued.android.module.yy_china.manager.YYRoomInfoManager$2  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYRoomInfoManager$2.class */
     class AnonymousClass2 extends CountDownTimer {
-
-        /* renamed from: a  reason: collision with root package name */
-        YYRoomModel f17584a;
+        YYRoomModel a;
 
         @Override // android.os.CountDownTimer
         public void onFinish() {
             Logger.e("timer", "onFinish ... ");
-            YYRoomModel yYRoomModel = this.f17584a;
+            YYRoomModel yYRoomModel = this.a;
             if (yYRoomModel != null) {
                 yYRoomModel.setTimerFinished(true);
             }
@@ -150,7 +143,7 @@ public class YYRoomInfoManager {
         @Override // android.os.CountDownTimer
         public void onTick(long j) {
             int i = (int) (j / 1000);
-            YYRoomModel yYRoomModel = this.f17584a;
+            YYRoomModel yYRoomModel = this.a;
             if (yYRoomModel != null) {
                 yYRoomModel.setTimerFinished(false);
             }
@@ -162,20 +155,16 @@ public class YYRoomInfoManager {
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYRoomInfoManager$Manager.class */
     public static class Manager {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static YYRoomInfoManager f17595a = new YYRoomInfoManager();
+        public static YYRoomInfoManager a = new YYRoomInfoManager();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYRoomInfoManager$YYHandler.class */
     public static class YYHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private WeakReference<YYRoomInfoManager> f17596a;
+        private WeakReference<YYRoomInfoManager> a;
 
         public YYHandler(YYRoomInfoManager yYRoomInfoManager) {
-            this.f17596a = new WeakReference<>(yYRoomInfoManager);
+            this.a = new WeakReference<>(yYRoomInfoManager);
         }
 
         @Override // android.os.Handler
@@ -184,24 +173,24 @@ public class YYRoomInfoManager {
                 removeMessages(1);
                 Message obtain = Message.obtain();
                 obtain.what = 1;
-                if (this.f17596a.get() == null || !this.f17596a.get().N()) {
+                if (this.a.get() == null || !this.a.get().N()) {
                     return;
                 }
                 removeMessages(1);
                 sendMessageDelayed(obtain, 1000L);
             } else if (message.what == 2) {
-                if (this.f17596a.get() != null) {
+                if (this.a.get() != null) {
                     LiveEventBus.get("event_ktv_up_to_mic_song").post("");
                 }
-            } else if (message.what != 3 || this.f17596a.get() == null) {
+            } else if (message.what != 3 || this.a.get() == null) {
             } else {
-                this.f17596a.get().a(true);
+                this.a.get().a(true);
             }
         }
     }
 
     private YYRoomInfoManager() {
-        this.f17579c = 1;
+        this.c = 1;
         this.A = 0L;
         this.B = "";
         this.f = "";
@@ -222,7 +211,7 @@ public class YYRoomInfoManager {
         long j = this.e;
         if (j > -1) {
             this.e = j + 1;
-            LiveEventBus.get("EVENT_EVEN_HOST_CREATE_TIME").post(String.format("%02d:%02d:%02d", Long.valueOf(this.e / b.P), Long.valueOf((this.e / 60) % 60), Long.valueOf(this.e % 60)));
+            LiveEventBus.get("EVENT_EVEN_HOST_CREATE_TIME").post(String.format("%02d:%02d:%02d", Long.valueOf(this.e / 3600), Long.valueOf((this.e / 60) % 60), Long.valueOf(this.e % 60)));
             return true;
         }
         return false;
@@ -230,14 +219,12 @@ public class YYRoomInfoManager {
 
     private void b(final BaseFragmentActivity baseFragmentActivity, String str, String str2) {
         YYRoomHttpUtils.c(str, str2, new BluedUIHttpResponse<BluedEntity<YYRoomModel, YYExRoomModel>>(null) { // from class: com.blued.android.module.yy_china.manager.YYRoomInfoManager.8
-
-            /* renamed from: a  reason: collision with root package name */
-            Dialog f17592a = null;
+            Dialog a = null;
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str3) {
-                DialogUtils.b(this.f17592a);
-                YYStudioErrorFragment.a(baseFragmentActivity, str3);
+                DialogUtils.b(this.a);
+                YYStudioErrorFragment.a((Context) baseFragmentActivity, str3);
                 LiveEventBus.get("notify_close_jump_room").post("");
                 return true;
             }
@@ -245,15 +232,15 @@ public class YYRoomInfoManager {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
-                DialogUtils.b(this.f17592a);
+                DialogUtils.b(this.a);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                Dialog a2 = DialogUtils.a(baseFragmentActivity);
-                this.f17592a = a2;
-                DialogUtils.a(a2);
+                Dialog a = DialogUtils.a((Context) baseFragmentActivity);
+                this.a = a;
+                DialogUtils.a(a);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -273,7 +260,7 @@ public class YYRoomInfoManager {
                         singleData.chat_room_list_stealth = yYExRoomModel.getChat_room_list_stealth();
                     }
                     YYRoomInfoManager.this.a(singleData);
-                    YYRoomInfoManager.this.c(baseFragmentActivity);
+                    YYRoomInfoManager.this.c((Context) baseFragmentActivity);
                     YYRoomInfoManager.this.d = System.currentTimeMillis();
                 }
             }
@@ -286,29 +273,29 @@ public class YYRoomInfoManager {
             a(context);
             YYSeatMemberModel seatMember = this.m.getSeatMember(k());
             if (seatMember != null) {
-                this.f17578a.is_mic = "1";
-                this.f17578a.is_open_mic = seatMember.is_open_mic;
+                this.a.is_mic = "1";
+                this.a.is_open_mic = seatMember.is_open_mic;
                 return;
             }
-            this.f17578a.is_open_mic = 0;
-            this.f17578a.is_mic = "0";
-            this.f17578a.mute = this.m.mute;
+            this.a.is_open_mic = 0;
+            this.a.is_mic = "0";
+            this.a.mute = this.m.mute;
             return;
         }
         BaseYYStudioFragment.b(context, false);
         YYUserInfo yYUserInfo = new YYUserInfo();
-        this.f17578a = yYUserInfo;
+        this.a = yYUserInfo;
         yYUserInfo.setUid(k());
-        this.f17578a.setName(l());
-        this.f17578a.setAvatar(m());
-        this.f17578a.is_open_mic = 0;
-        this.f17578a.is_mic = "0";
-        this.f17578a.chat_anchor = this.m.chat_anchor;
-        this.f17578a.mute = this.m.mute;
+        this.a.setName(l());
+        this.a.setAvatar(m());
+        this.a.is_open_mic = 0;
+        this.a.is_mic = "0";
+        this.a.chat_anchor = this.m.chat_anchor;
+        this.a.mute = this.m.mute;
     }
 
     public static YYRoomInfoManager e() {
-        return Manager.f17595a;
+        return Manager.a;
     }
 
     private LiveUserRelationshipUtils.IAddOrRemoveAttentionDone i(final String str) {
@@ -397,7 +384,7 @@ public class YYRoomInfoManager {
             return;
         }
         this.k.removeMessages(2);
-        this.k.sendEmptyMessageDelayed(2, 30000L);
+        this.k.sendEmptyMessageDelayed(2, LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS);
     }
 
     public void H() {
@@ -473,6 +460,7 @@ public class YYRoomInfoManager {
         YYPayUtils.a(i, i2, intent, baseFragment);
     }
 
+    /* JADX WARN: Type inference failed for: r1v4, types: [com.blued.android.module.yy_china.manager.YYRoomInfoManager$3] */
     public void a(long j) {
         if (j > 0 && !this.v) {
             this.v = true;
@@ -518,6 +506,7 @@ public class YYRoomInfoManager {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r1v7, types: [com.blued.android.module.yy_china.manager.YYRoomInfoManager$5] */
     public void a(long j, int i) {
         if (j <= 0) {
             return;
@@ -558,6 +547,7 @@ public class YYRoomInfoManager {
         }.start();
     }
 
+    /* JADX WARN: Type inference failed for: r1v4, types: [com.blued.android.module.yy_china.manager.YYRoomInfoManager$6] */
     public void a(long j, final YYConstants.AnchormanPKStatus anchormanPKStatus) {
         if (j <= 0) {
             return;
@@ -586,7 +576,7 @@ public class YYRoomInfoManager {
                 String format = TimeAndDateUtils.k.get().format(Long.valueOf(j2));
                 StringBuilder sb2 = sb;
                 sb2.delete(0, sb2.length());
-                int i = AnonymousClass12.f17583a[anchormanPKStatus.ordinal()];
+                int i = AnonymousClass12.a[anchormanPKStatus.ordinal()];
                 if (i == 1) {
                     sb.append("互动  ");
                 } else if (i == 2) {
@@ -602,13 +592,13 @@ public class YYRoomInfoManager {
     public void a(Context context) {
         BaseYYStudioFragment.a(context, false);
         YYUserInfo yYUserInfo = new YYUserInfo();
-        this.f17578a = yYUserInfo;
+        this.a = yYUserInfo;
         yYUserInfo.setUid(k());
-        this.f17578a.setName(l());
-        this.f17578a.setAvatar(m());
-        this.f17578a.is_open_mic = 1;
-        this.f17578a.is_mic = "1";
-        this.f17578a.chat_anchor = "1";
+        this.a.setName(l());
+        this.a.setAvatar(m());
+        this.a.is_open_mic = 1;
+        this.a.is_mic = "1";
+        this.a.chat_anchor = "1";
     }
 
     public void a(Context context, String str, String str2, IRequestHost iRequestHost) {
@@ -646,16 +636,17 @@ public class YYRoomInfoManager {
         a(baseFragmentActivity, str, str2, z, "", null);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(BaseFragmentActivity baseFragmentActivity, String str, String str2, boolean z, String str3, YYJoinRoomJumpInfoMode yYJoinRoomJumpInfoMode) {
-        if (baseFragmentActivity == null || StringUtils.a("0", str)) {
+        if (baseFragmentActivity == 0 || StringUtils.a("0", str)) {
             return;
         }
         a(str3);
         if (yYJoinRoomJumpInfoMode != null) {
             a(yYJoinRoomJumpInfoMode);
         }
-        boolean a2 = NoDoubleClickUtils.a();
-        if (z || !a2) {
+        boolean a = NoDoubleClickUtils.a();
+        if (z || !a) {
             YYRoomModel b = e().b();
             if (b == null) {
                 LiveLogUtils.a("YYRoomInfoManager --> intoRoomBySource --> 进入直播间 room_id：" + str);
@@ -666,7 +657,7 @@ public class YYRoomInfoManager {
                 this.B = str2;
                 if (AudioChannelManager.j().n()) {
                     AudioChannelManager.j().k();
-                    e().b(baseFragmentActivity);
+                    e().b((Context) baseFragmentActivity);
                     return;
                 }
                 Fragment findFragmentByTag = baseFragmentActivity.getSupportFragmentManager().findFragmentByTag("init_fragment");
@@ -674,7 +665,7 @@ public class YYRoomInfoManager {
                     if (!TextUtils.equals(baseFragmentActivity.getClass().getName(), "com.soft.blued.ui.home.HomeActivity")) {
                         baseFragmentActivity.finish();
                     }
-                    e().b(baseFragmentActivity);
+                    e().b((Context) baseFragmentActivity);
                 }
             } else if (TextUtils.equals(b.uid, e().k())) {
                 LiveLogUtils.a("YYRoomInfoManager --> intoRoomBySource --> 主播自己切换直播间 失败：");
@@ -691,7 +682,7 @@ public class YYRoomInfoManager {
                     return;
                 }
                 if (TextUtils.equals(str2, "broadcast_cp_vip")) {
-                    YYJumpLoadingFragment.a(baseFragmentActivity);
+                    YYJumpLoadingFragment.a((Context) baseFragmentActivity);
                 }
                 ((BaseYYStudioFragment) findFragmentByTag2).ah = str;
                 baseFragmentActivity.finish();
@@ -809,6 +800,7 @@ public class YYRoomInfoManager {
         return this.m;
     }
 
+    /* JADX WARN: Type inference failed for: r1v4, types: [com.blued.android.module.yy_china.manager.YYRoomInfoManager$4] */
     public void b(long j) {
         if (j > 0 && !this.w) {
             this.w = true;
@@ -887,6 +879,7 @@ public class YYRoomInfoManager {
         return iYYRoomInfoCallback == null ? "" : iYYRoomInfoCallback.a(i);
     }
 
+    /* JADX WARN: Type inference failed for: r1v2, types: [com.blued.android.module.yy_china.manager.YYRoomInfoManager$7] */
     public void c(long j) {
         if (j <= 0) {
             return;
@@ -925,21 +918,21 @@ public class YYRoomInfoManager {
         if (yYRoomModel == null || yYRoomModel.stage_info == null) {
             return 0;
         }
-        float a2 = StringUtils.a(this.m.stage_info.total_score, 0.0f);
+        float a = StringUtils.a(this.m.stage_info.total_score, 0.0f);
         double d = i;
-        if (d >= (90.0f * a2) / 100.0d) {
+        if (d >= (90.0f * a) / 100.0d) {
             return 90;
         }
-        if (d >= (80.0f * a2) / 100.0d) {
+        if (d >= (80.0f * a) / 100.0d) {
             return 80;
         }
-        if (d >= (70.0f * a2) / 100.0d) {
+        if (d >= (70.0f * a) / 100.0d) {
             return 70;
         }
-        if (d >= (60.0f * a2) / 100.0d) {
+        if (d >= (60.0f * a) / 100.0d) {
             return 60;
         }
-        return d >= ((double) (a2 * 50.0f)) / 100.0d ? 50 : 40;
+        return d >= ((double) (a * 50.0f)) / 100.0d ? 50 : 40;
     }
 
     public Application d() {
@@ -989,7 +982,7 @@ public class YYRoomInfoManager {
     public boolean h() {
         if (b() != null) {
             YYSeatMemberModel seatMember = b().getSeatMember(k());
-            return seatMember != null && seatMember.mic_position == ((!TextUtils.equals(this.m.chat_type, "6") && !TextUtils.equals(this.m.chat_type, "2") && !TextUtils.equals(this.m.chat_type, "3") && !TextUtils.equals(this.m.chat_type, "4") && !TextUtils.equals(this.m.chat_type, "5") && !TextUtils.equals(this.m.chat_type, "10")) ? 0 : 1);
+            return seatMember != null && seatMember.mic_position == ((!TextUtils.equals(this.m.chat_type, ATAdConst.ATDevFrameworkType.FLUTTER) && !TextUtils.equals(this.m.chat_type, "2") && !TextUtils.equals(this.m.chat_type, "3") && !TextUtils.equals(this.m.chat_type, "4") && !TextUtils.equals(this.m.chat_type, "5") && !TextUtils.equals(this.m.chat_type, "10")) ? 0 : 1);
         }
         return false;
     }
@@ -999,7 +992,7 @@ public class YYRoomInfoManager {
     }
 
     public boolean i() {
-        YYUserInfo yYUserInfo = this.f17578a;
+        YYUserInfo yYUserInfo = this.a;
         if (yYUserInfo == null) {
             return false;
         }
@@ -1007,7 +1000,7 @@ public class YYRoomInfoManager {
     }
 
     public boolean j() {
-        YYUserInfo yYUserInfo = this.f17578a;
+        YYUserInfo yYUserInfo = this.a;
         if (yYUserInfo == null) {
             return false;
         }
@@ -1100,14 +1093,14 @@ public class YYRoomInfoManager {
     public void x() {
         ClientSendMessTaskNewModel.Companion.a(null);
         this.m = null;
-        this.f17578a = null;
-        if (YYMusicManager.f11418a.c().a() != null) {
-            AudioChannelManager.j().d(StringUtils.a(YYMusicManager.f11418a.c().a().music_id, 0));
+        this.a = null;
+        if (YYMusicManager.a.c().a() != null) {
+            AudioChannelManager.j().d(StringUtils.a(YYMusicManager.a.c().a().music_id, 0));
         }
-        YYMusicManager.f11418a.c().a((LiveMusicModel) null);
-        YYMusicManager.f11418a.c().a((YYKtvMusicModel) null);
-        YYMusicManager.f11418a.c().a((List<? extends YYKtvMusicModel>) null);
-        YYVipNotifyManager.f17597a.a().a();
+        YYMusicManager.a.c().a((LiveMusicModel) null);
+        YYMusicManager.a.c().a((YYKtvMusicModel) null);
+        YYMusicManager.a.c().a((List<? extends YYKtvMusicModel>) null);
+        YYVipNotifyManager.a.a().a();
         CountDownTimer countDownTimer = this.p;
         if (countDownTimer != null) {
             countDownTimer.cancel();

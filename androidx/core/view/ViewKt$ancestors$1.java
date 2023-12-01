@@ -1,6 +1,7 @@
 package androidx.core.view;
 
 import android.view.ViewParent;
+import com.kuaishou.weapon.p0.bp;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
@@ -15,9 +16,8 @@ final /* synthetic */ class ViewKt$ancestors$1 extends FunctionReferenceImpl imp
         super(1, ViewParent.class, "getParent", "getParent()Landroid/view/ViewParent;", 0);
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public final ViewParent invoke(ViewParent p0) {
-        Intrinsics.e(p0, "p0");
-        return p0.getParent();
+    public final ViewParent invoke(ViewParent viewParent) {
+        Intrinsics.e(viewParent, bp.g);
+        return viewParent.getParent();
     }
 }

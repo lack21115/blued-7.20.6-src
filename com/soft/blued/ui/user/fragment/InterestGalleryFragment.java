@@ -39,11 +39,11 @@ import java.util.List;
 public class InterestGalleryFragment extends BaseFragment implements PictureTabAdapter.MyItemClickListener, InterestGalleryContract.IView {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f33866a = 4;
+    private final int f20175a = 4;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f33867c;
+    private Context f20176c;
     private TextView d;
     private ImageView e;
     private ViewPager f;
@@ -66,11 +66,11 @@ public class InterestGalleryFragment extends BaseFragment implements PictureTabA
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f33875c;
+        private int f20184c;
 
         public GridItemSpaceDecoration(int i, int i2) {
             this.b = i;
-            this.f33875c = i2;
+            this.f20184c = i2;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
@@ -78,11 +78,11 @@ public class InterestGalleryFragment extends BaseFragment implements PictureTabA
             int childAdapterPosition = recyclerView.getChildAdapterPosition(view);
             int i = this.b;
             int i2 = childAdapterPosition % i;
-            rect.left = (this.f33875c * i2) / i;
-            int i3 = this.f33875c;
+            rect.left = (this.f20184c * i2) / i;
+            int i3 = this.f20184c;
             rect.right = i3 - (((i2 + 1) * i3) / this.b);
             if (childAdapterPosition >= this.b) {
-                rect.top = this.f33875c * 2;
+                rect.top = this.f20184c * 2;
             }
         }
     }
@@ -92,14 +92,14 @@ public class InterestGalleryFragment extends BaseFragment implements PictureTabA
     public class TabIndicatorAdapter extends FragmentPagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        PicturesWallFragment f33876a;
+        PicturesWallFragment f20185a;
 
         public TabIndicatorAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
         }
 
         public PicturesWallFragment a() {
-            return this.f33876a;
+            return this.f20185a;
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter
@@ -125,7 +125,7 @@ public class InterestGalleryFragment extends BaseFragment implements PictureTabA
         public void setPrimaryItem(ViewGroup viewGroup, int i, Object obj) {
             super.setPrimaryItem(viewGroup, i, obj);
             if (obj instanceof PicturesWallFragment) {
-                this.f33876a = (PicturesWallFragment) obj;
+                this.f20185a = (PicturesWallFragment) obj;
             }
         }
     }
@@ -135,9 +135,9 @@ public class InterestGalleryFragment extends BaseFragment implements PictureTabA
             return;
         }
         this.q = new ArrayList();
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(R.id.cttnt_title);
-        this.k = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setCenterText(R.string.interest_gallery);
+        CommonTopTitleNoTrans findViewById = view.findViewById(R.id.cttnt_title);
+        this.k = findViewById;
+        findViewById.setCenterText((int) R.string.interest_gallery);
         this.k.setLeftImg(2131233902);
         this.k.a();
         this.k.setCenterClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.InterestGalleryFragment.1
@@ -154,16 +154,16 @@ public class InterestGalleryFragment extends BaseFragment implements PictureTabA
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
                 Tracker.onClick(view2);
-                ((Activity) InterestGalleryFragment.this.f33867c).finish();
+                ((Activity) InterestGalleryFragment.this.f20176c).finish();
             }
         });
         this.d = (TextView) view.findViewById(R.id.tv_divider);
-        this.i = (LinearLayout) view.findViewById(2131363930);
+        this.i = (LinearLayout) view.findViewById(R.id.fl_tab);
         this.h = (FrameLayout) view.findViewById(R.id.fl_progress);
         this.e = (ImageView) view.findViewById(R.id.iv_open_tabs);
         this.f = (ViewPager) view.findViewById(R.id.vp_picture_pages);
-        this.l = (TabTitleTrackIndicatorWithDot) view.findViewById(R.id.tttiwd_picture_tabs);
-        this.j = (NoDataAndLoadFailView) view.findViewById(R.id.ll_no_internet);
+        this.l = view.findViewById(R.id.tttiwd_picture_tabs);
+        this.j = view.findViewById(R.id.ll_no_internet);
         TabIndicatorAdapter tabIndicatorAdapter = new TabIndicatorAdapter(getFragmentManager());
         this.o = tabIndicatorAdapter;
         this.f.setAdapter(tabIndicatorAdapter);
@@ -193,11 +193,11 @@ public class InterestGalleryFragment extends BaseFragment implements PictureTabA
     }
 
     private void b() {
-        View inflate = LayoutInflater.from(this.f33867c).inflate(R.layout.pop_window_interest_pictures_tab, (ViewGroup) null);
+        View inflate = LayoutInflater.from(this.f20176c).inflate(R.layout.pop_window_interest_pictures_tab, (ViewGroup) null);
         ImageView imageView = (ImageView) inflate.findViewById(2131365207);
         RecyclerView recyclerView = (RecyclerView) inflate.findViewById(R.id.rv_tab_grid);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this.f33867c, 4);
-        GridItemSpaceDecoration gridItemSpaceDecoration = new GridItemSpaceDecoration(4, DensityUtils.a(this.f33867c, 7.5f));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this.f20176c, 4);
+        GridItemSpaceDecoration gridItemSpaceDecoration = new GridItemSpaceDecoration(4, DensityUtils.a(this.f20176c, 7.5f));
         PopupWindow popupWindow = new PopupWindow(-1, -2);
         this.g = popupWindow;
         popupWindow.setContentView(inflate);
@@ -206,7 +206,7 @@ public class InterestGalleryFragment extends BaseFragment implements PictureTabA
         this.g.setBackgroundDrawable(new BitmapDrawable());
         this.g.setOutsideTouchable(true);
         this.g.update();
-        PictureTabAdapter pictureTabAdapter = new PictureTabAdapter(this.f33867c, this.q);
+        PictureTabAdapter pictureTabAdapter = new PictureTabAdapter(this.f20176c, this.q);
         this.n = pictureTabAdapter;
         recyclerView.setAdapter(pictureTabAdapter);
         recyclerView.setLayoutManager(gridLayoutManager);
@@ -270,22 +270,19 @@ public class InterestGalleryFragment extends BaseFragment implements PictureTabA
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.f33867c = context;
+        this.f20176c = context;
         if (getArguments() != null) {
             this.p = getArguments().getString("tab_id", "0");
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         InstantLog.a("picture_lib_in");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = layoutInflater.inflate(R.layout.fragment_interest_gallery, viewGroup, false);
         this.m = new InterestGalleryPresenter(this, getFragmentActive());
@@ -293,14 +290,12 @@ public class InterestGalleryFragment extends BaseFragment implements PictureTabA
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         AlbumViewDataManager.a().a(false);
         InstantLog.a("picture_lib_out");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         this.m.ar_();

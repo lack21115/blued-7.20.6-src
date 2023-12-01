@@ -23,13 +23,9 @@ public class DriveStep implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5708a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5709c;
+    private String c;
     private float d;
     private float e;
     private float f;
@@ -51,9 +47,9 @@ public class DriveStep implements Parcelable {
         this.i = new ArrayList();
         this.l = new ArrayList();
         this.m = new ArrayList();
-        this.f5708a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5709c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readFloat();
         this.e = parcel.readFloat();
         this.f = parcel.readFloat();
@@ -88,7 +84,7 @@ public class DriveStep implements Parcelable {
     }
 
     public String getInstruction() {
-        return this.f5708a;
+        return this.a;
     }
 
     public String getOrientation() {
@@ -100,7 +96,7 @@ public class DriveStep implements Parcelable {
     }
 
     public String getRoad() {
-        return this.f5709c;
+        return this.c;
     }
 
     public List<RouteSearchCity> getRouteSearchCityList() {
@@ -140,7 +136,7 @@ public class DriveStep implements Parcelable {
     }
 
     public void setInstruction(String str) {
-        this.f5708a = str;
+        this.a = str;
     }
 
     public void setOrientation(String str) {
@@ -152,7 +148,7 @@ public class DriveStep implements Parcelable {
     }
 
     public void setRoad(String str) {
-        this.f5709c = str;
+        this.c = str;
     }
 
     public void setRouteSearchCityList(List<RouteSearchCity> list) {
@@ -177,9 +173,9 @@ public class DriveStep implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5708a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5709c);
+        parcel.writeString(this.c);
         parcel.writeFloat(this.d);
         parcel.writeFloat(this.e);
         parcel.writeFloat(this.f);

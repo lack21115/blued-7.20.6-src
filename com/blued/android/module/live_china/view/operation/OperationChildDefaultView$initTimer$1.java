@@ -14,21 +14,17 @@ import kotlin.math.MathKt;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/operation/OperationChildDefaultView$initTimer$1.class */
 public final class OperationChildDefaultView$initTimer$1 extends CountDownTimer {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Ref.LongRef f15364a;
+    final /* synthetic */ Ref.LongRef a;
     final /* synthetic */ OperationChildDefaultView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ LiveRoomOperationModel f15365c;
+    final /* synthetic */ LiveRoomOperationModel c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public OperationChildDefaultView$initTimer$1(Ref.LongRef longRef, OperationChildDefaultView operationChildDefaultView, LiveRoomOperationModel liveRoomOperationModel) {
-        super(longRef.f42544a, 1000L);
-        this.f15364a = longRef;
+        super(longRef.a, 1000L);
+        this.a = longRef;
         this.b = operationChildDefaultView;
-        this.f15365c = liveRoomOperationModel;
+        this.c = liveRoomOperationModel;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -43,7 +39,7 @@ public final class OperationChildDefaultView$initTimer$1 extends CountDownTimer 
     public void onFinish() {
         this.b.a();
         final OperationChildDefaultView operationChildDefaultView = this.b;
-        final LiveRoomOperationModel liveRoomOperationModel = this.f15365c;
+        final LiveRoomOperationModel liveRoomOperationModel = this.c;
         operationChildDefaultView.post(new Runnable() { // from class: com.blued.android.module.live_china.view.operation.-$$Lambda$OperationChildDefaultView$initTimer$1$Sga3FH5RmWMETQr2WRjGYYNtvto
             @Override // java.lang.Runnable
             public final void run() {
@@ -55,11 +51,11 @@ public final class OperationChildDefaultView$initTimer$1 extends CountDownTimer 
     @Override // android.os.CountDownTimer
     public void onTick(long j) {
         LiveOperationChildDefaultViewBinding vb;
-        String a2;
+        String a;
         long b = MathKt.b(j);
         vb = this.b.getVb();
         TextView textView = vb.e;
-        a2 = this.b.a(this.f15365c, b);
-        textView.setText(a2);
+        a = this.b.a(this.c, b);
+        textView.setText(a);
     }
 }

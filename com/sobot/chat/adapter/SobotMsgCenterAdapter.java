@@ -37,7 +37,7 @@ public class SobotMsgCenterAdapter extends SobotBaseAdapter<SobotMsgCenterModel>
             this.sobot_tv_content = (TextView) view.findViewById(ResourceUtils.getIdByName(context, "id", "sobot_tv_content"));
             this.sobot_tv_date = (TextView) view.findViewById(ResourceUtils.getIdByName(context, "id", "sobot_tv_date"));
             this.sobot_iv_face = (ImageView) view.findViewById(ResourceUtils.getIdByName(context, "id", "sobot_iv_face"));
-            this.defaultFaceId = ResourceUtils.getIdByName(context, i.f7952c, "sobot_chatting_default_head");
+            this.defaultFaceId = ResourceUtils.getIdByName(context, i.f5112c, "sobot_chatting_default_head");
         }
 
         private void setUnReadNum(TextView textView, int i) {
@@ -46,13 +46,13 @@ public class SobotMsgCenterAdapter extends SobotBaseAdapter<SobotMsgCenterModel>
                 return;
             }
             if (i <= 9) {
-                textView.setBackgroundResource(ResourceUtils.getIdByName(this.context, i.f7952c, "sobot_message_bubble_1"));
+                textView.setBackgroundResource(ResourceUtils.getIdByName(this.context, i.f5112c, "sobot_message_bubble_1"));
                 textView.setText(i + "");
             } else if (i <= 9 || i > 99) {
-                textView.setBackgroundResource(ResourceUtils.getIdByName(this.context, i.f7952c, "sobot_message_bubble_3"));
+                textView.setBackgroundResource(ResourceUtils.getIdByName(this.context, i.f5112c, "sobot_message_bubble_3"));
                 textView.setText("99+");
             } else {
-                textView.setBackgroundResource(ResourceUtils.getIdByName(this.context, i.f7952c, "sobot_message_bubble_2"));
+                textView.setBackgroundResource(ResourceUtils.getIdByName(this.context, i.f5112c, "sobot_message_bubble_2"));
                 textView.setText(i + "");
             }
             textView.setVisibility(0);

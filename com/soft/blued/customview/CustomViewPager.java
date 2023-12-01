@@ -12,22 +12,21 @@ import skin.support.widget.SkinCompatBackgroundHelper;
 public class CustomViewPager extends ViewPager implements BluedSkinSupportable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Rect f28403a;
+    private Rect f14713a;
     private SkinCompatBackgroundHelper b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f28404c;
+    private boolean f14714c;
 
     public CustomViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f28404c = true;
+        this.f14714c = true;
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
         this.b = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, 0);
-        this.f28403a = new Rect();
+        this.f14713a = new Rect();
     }
 
-    @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.b;
         if (skinCompatBackgroundHelper != null) {
@@ -38,7 +37,7 @@ public class CustomViewPager extends ViewPager implements BluedSkinSupportable {
     @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         try {
-            if ((this.f28403a == null || !this.f28403a.contains((int) motionEvent.getX(), (int) motionEvent.getY())) && this.f28404c) {
+            if ((this.f14713a == null || !this.f14713a.contains((int) motionEvent.getX(), (int) motionEvent.getY())) && this.f14714c) {
                 return super.onInterceptTouchEvent(motionEvent);
             }
             return false;
@@ -66,10 +65,10 @@ public class CustomViewPager extends ViewPager implements BluedSkinSupportable {
     }
 
     public void setIgnoreRect(Rect rect) {
-        this.f28403a = rect;
+        this.f14713a = rect;
     }
 
     public void setScrollEnable(boolean z) {
-        this.f28404c = z;
+        this.f14714c = z;
     }
 }

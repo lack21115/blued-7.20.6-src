@@ -4,10 +4,10 @@ package com.tencent.liteav.videoproducer.producer;
 final /* synthetic */ class aw implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37140a;
+    private final f f23449a;
 
     private aw(f fVar) {
-        this.f37140a = fVar;
+        this.f23449a = fVar;
     }
 
     public static Runnable a(f fVar) {
@@ -16,6 +16,6 @@ final /* synthetic */ class aw implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f.f(this.f37140a);
+        f.f(this.f23449a);
     }
 }

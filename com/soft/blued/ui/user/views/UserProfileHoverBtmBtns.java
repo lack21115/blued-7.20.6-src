@@ -26,11 +26,11 @@ import com.soft.blued.utils.Logger;
 public class UserProfileHoverBtmBtns extends LinearLayout implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34392a;
+    public Context f20701a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f34393c;
+    private View f20702c;
     private ImageView d;
     private TextView e;
     private View f;
@@ -87,7 +87,7 @@ public class UserProfileHoverBtmBtns extends LinearLayout implements View.OnClic
                 }
             }
         };
-        this.f34392a = context;
+        this.f20701a = context;
         a();
     }
 
@@ -132,13 +132,13 @@ public class UserProfileHoverBtmBtns extends LinearLayout implements View.OnClic
                 }
             }
         };
-        this.f34392a = context;
+        this.f20701a = context;
         a();
     }
 
     private void c(final View view) {
         Logger.c("hover_btns", " startBtmBtnShowAnim()");
-        ValueAnimator ofInt = ObjectAnimator.ofInt(DensityUtils.a(this.f34392a, -80.0f), 0);
+        ValueAnimator ofInt = ObjectAnimator.ofInt(DensityUtils.a(this.f20701a, -80.0f), 0);
         ofInt.setDuration(200L);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.user.views.UserProfileHoverBtmBtns.1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -154,7 +154,7 @@ public class UserProfileHoverBtmBtns extends LinearLayout implements View.OnClic
 
     private void d(final View view) {
         Logger.c("hover_btns", " startBtmBtnHideAnim()");
-        ValueAnimator ofInt = ObjectAnimator.ofInt(0, DensityUtils.a(this.f34392a, -80.0f));
+        ValueAnimator ofInt = ObjectAnimator.ofInt(0, DensityUtils.a(this.f20701a, -80.0f));
         ofInt.setDuration(200L);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.user.views.UserProfileHoverBtmBtns.2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -170,16 +170,16 @@ public class UserProfileHoverBtmBtns extends LinearLayout implements View.OnClic
 
     public void a() {
         Logger.c("hover_btns", " initView()");
-        View inflate = LayoutInflater.from(this.f34392a).inflate(R.layout.view_hover_btm_btns, (ViewGroup) this, true);
+        View inflate = LayoutInflater.from(this.f20701a).inflate(R.layout.view_hover_btm_btns, (ViewGroup) this, true);
         this.b = inflate;
         this.p = inflate.findViewById(2131367622);
-        this.f34393c = this.b.findViewById(2131367957);
+        this.f20702c = this.b.findViewById(R.id.ll_left);
         this.d = (ImageView) this.b.findViewById(R.id.img_left);
-        this.e = (TextView) this.b.findViewById(2131371781);
-        this.f = this.b.findViewById(2131368197);
-        this.g = (ImageView) this.b.findViewById(2131364661);
-        this.h = (TextView) this.b.findViewById(2131372451);
-        this.f34393c.setOnClickListener(this);
+        this.e = (TextView) this.b.findViewById(R.id.tv_left);
+        this.f = this.b.findViewById(R.id.ll_right);
+        this.g = (ImageView) this.b.findViewById(R.id.img_right);
+        this.h = (TextView) this.b.findViewById(R.id.tv_right);
+        this.f20702c.setOnClickListener(this);
         this.f.setOnClickListener(this);
     }
 
@@ -252,7 +252,7 @@ public class UserProfileHoverBtmBtns extends LinearLayout implements View.OnClic
         }
         View.OnClickListener onClickListener2 = this.m;
         if (onClickListener2 != null) {
-            onClickListener2.onClick(this.f34393c);
+            onClickListener2.onClick(this.f20702c);
         }
     }
 

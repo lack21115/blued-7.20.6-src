@@ -13,17 +13,17 @@ import org.json.JSONObject;
 public abstract class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final a f21245a = new a(null);
+    public static final a f7639a = new a(null);
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/l$a.class */
     public static final class a {
         public /* synthetic */ a(DefaultConstructorMarker defaultConstructorMarker) {
         }
 
-        public final <T extends l> T a(JSONObject jSONObject, Class<T> clazz) {
-            Intrinsics.d(clazz, "clazz");
+        public final <T extends l> T a(JSONObject jSONObject, Class<T> cls) {
+            Intrinsics.d(cls, "clazz");
             if (jSONObject != null) {
-                T newInstance = clazz.getConstructor(new Class[0]).newInstance(new Object[0]);
+                T newInstance = cls.getConstructor(new Class[0]).newInstance(new Object[0]);
                 Intrinsics.b(newInstance, "clazz.getConstructor().newInstance()");
                 T t = newInstance;
                 t.a(jSONObject);
@@ -43,9 +43,9 @@ public abstract class l {
         Iterator<String> keys = a2.keys();
         Intrinsics.b(keys, "keys()");
         while (keys.hasNext()) {
-            String key = keys.next();
-            Intrinsics.b(key, "key");
-            hashMap.put(key, a2.optString(key, null));
+            String next = keys.next();
+            Intrinsics.b(next, "key");
+            hashMap.put(next, a2.optString(next, null));
         }
         return hashMap;
     }

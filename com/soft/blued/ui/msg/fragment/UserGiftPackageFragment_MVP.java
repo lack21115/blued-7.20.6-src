@@ -14,7 +14,6 @@ public final class UserGiftPackageFragment_MVP implements MvpDispatcher {
         userGiftPackageFragment.v();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     public void a(MvpFragment mvpFragment, String str, List list) {
         UserGiftPackageFragment userGiftPackageFragment = (UserGiftPackageFragment) mvpFragment;
         if (list != null && list.size() > 0) {

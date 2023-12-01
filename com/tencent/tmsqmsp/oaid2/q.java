@@ -14,13 +14,13 @@ public interface q extends IInterface {
 
         /* renamed from: com.tencent.tmsqmsp.oaid2.q$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/oaid2/q$a$a.class */
-        public static class C1041a implements q {
+        public static class C0871a implements q {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f39659a;
+            public IBinder f25968a;
 
-            public C1041a(IBinder iBinder) {
-                this.f39659a = iBinder;
+            public C0871a(IBinder iBinder) {
+                this.f25968a = iBinder;
             }
 
             @Override // com.tencent.tmsqmsp.oaid2.q
@@ -30,7 +30,7 @@ public interface q extends IInterface {
                 try {
                     try {
                         obtain.writeInterfaceToken("com.bun.lib.MsaIdInterface");
-                        this.f39659a.transact(3, obtain, obtain2, 0);
+                        this.f25968a.transact(3, obtain, obtain2, 0);
                         obtain2.readException();
                         return obtain2.readString();
                     } catch (RemoteException e) {
@@ -47,7 +47,7 @@ public interface q extends IInterface {
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f39659a;
+                return this.f25968a;
             }
 
             @Override // com.tencent.tmsqmsp.oaid2.q
@@ -58,7 +58,7 @@ public interface q extends IInterface {
                 try {
                     try {
                         obtain.writeInterfaceToken("com.bun.lib.MsaIdInterface");
-                        this.f39659a.transact(2, obtain, obtain2, 0);
+                        this.f25968a.transact(2, obtain, obtain2, 0);
                         obtain2.readException();
                         if (obtain2.readInt() != 0) {
                             z = true;
@@ -83,7 +83,7 @@ public interface q extends IInterface {
                 try {
                     try {
                         obtain.writeInterfaceToken("com.bun.lib.MsaIdInterface");
-                        this.f39659a.transact(5, obtain, obtain2, 0);
+                        this.f25968a.transact(5, obtain, obtain2, 0);
                         obtain2.readException();
                         return obtain2.readString();
                     } catch (RemoteException e) {
@@ -104,7 +104,7 @@ public interface q extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.bun.lib.MsaIdInterface");
-                    this.f39659a.transact(6, obtain, obtain2, 0);
+                    this.f25968a.transact(6, obtain, obtain2, 0);
                     obtain2.readException();
                 } catch (RemoteException e) {
                     e.printStackTrace();
@@ -135,7 +135,7 @@ public interface q extends IInterface {
                     java.lang.String r1 = "com.bun.lib.MsaIdInterface"
                     r0.writeInterfaceToken(r1)     // Catch: java.lang.Throwable -> L32 android.os.RemoteException -> L37
                     r0 = r6
-                    android.os.IBinder r0 = r0.f39659a     // Catch: java.lang.Throwable -> L32 android.os.RemoteException -> L37
+                    android.os.IBinder r0 = r0.f25968a     // Catch: java.lang.Throwable -> L32 android.os.RemoteException -> L37
                     r1 = 1
                     r2 = r9
                     r3 = r10
@@ -174,7 +174,7 @@ public interface q extends IInterface {
                     r0 = r11
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.tencent.tmsqmsp.oaid2.q.a.C1041a.g():boolean");
+                throw new UnsupportedOperationException("Method not decompiled: com.tencent.tmsqmsp.oaid2.q.a.C0871a.g():boolean");
             }
         }
 
@@ -183,7 +183,7 @@ public interface q extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.bun.lib.MsaIdInterface");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof q)) ? new C1041a(iBinder) : (q) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof q)) ? new C0871a(iBinder) : (q) queryLocalInterface;
         }
     }
 

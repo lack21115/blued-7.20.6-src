@@ -18,13 +18,9 @@ import java.io.File;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/presenter/AuthPreviewPresenter.class */
 public class AuthPreviewPresenter extends ShortVideoBasePresent<IAuthPreviewView> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f15764a = AuthPreviewPresenter.class.getSimpleName();
+    private static final String a = AuthPreviewPresenter.class.getSimpleName();
     private GestureDetector b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private File f15765c;
+    private File c;
     private String d;
     private int e;
     private Bundle i;
@@ -81,7 +77,7 @@ public class AuthPreviewPresenter extends ShortVideoBasePresent<IAuthPreviewView
             bundle2 = D().getArguments();
         }
         if (bundle2 == null) {
-            StvLogUtils.a(f15764a + "EditPresenter bundle == null!!!", new Object[0]);
+            StvLogUtils.a(a + "EditPresenter bundle == null!!!", new Object[0]);
             b(R.string.common_net_error);
             D().b();
             return;
@@ -94,9 +90,9 @@ public class AuthPreviewPresenter extends ShortVideoBasePresent<IAuthPreviewView
             return;
         }
         File file = new File(string);
-        this.f15765c = file;
+        this.c = file;
         if (!file.exists()) {
-            StvLogUtils.a(f15764a + "EditPresenter commonModel 视频文件不存在！！！", new Object[0]);
+            StvLogUtils.a(a + "EditPresenter commonModel 视频文件不存在！！！", new Object[0]);
             b(R.string.common_net_error);
             D().b();
             return;
@@ -186,7 +182,7 @@ public class AuthPreviewPresenter extends ShortVideoBasePresent<IAuthPreviewView
     }
 
     public void h() {
-        File file = this.f15765c;
+        File file = this.c;
         if (file != null) {
             file.delete();
         }
@@ -205,7 +201,7 @@ public class AuthPreviewPresenter extends ShortVideoBasePresent<IAuthPreviewView
             @Override // com.blued.android.module.base.http.PublishProxy.IUploadAuthVideoListener
             public void a(String str, double d) {
                 if (!a() && d <= 1.0d) {
-                    StvLogUtils.a(AuthPreviewPresenter.f15764a + "percent = " + d, new Object[0]);
+                    StvLogUtils.a(AuthPreviewPresenter.a + "percent = " + d, new Object[0]);
                     int i = (int) (100.0d * d);
                     if (i == 100 || i > 99) {
                         AuthPreviewPresenter.this.D().a(99.0f);
@@ -218,7 +214,7 @@ public class AuthPreviewPresenter extends ShortVideoBasePresent<IAuthPreviewView
             @Override // com.blued.android.module.base.http.PublishProxy.IUploadAuthVideoListener
             public boolean a() {
                 if (AuthPreviewPresenter.this.D() == null || AuthPreviewPresenter.this.D().getActivity() == null || AuthPreviewPresenter.this.D().getActivity().isFinishing()) {
-                    StvLogUtils.a(AuthPreviewPresenter.f15764a + " getView() == null!!!", new Object[0]);
+                    StvLogUtils.a(AuthPreviewPresenter.a + " getView() == null!!!", new Object[0]);
                     return true;
                 }
                 return false;

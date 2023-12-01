@@ -7,47 +7,47 @@ import java.util.Map;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f24646a;
+    private String f10959a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, String> f24647c;
+    private Map<String, String> f10960c;
     private byte[] d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/biz/monitor/b/b$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f24648a;
+        private String f10961a;
         private String b = "GET";
 
         /* renamed from: c  reason: collision with root package name */
-        private Map<String, String> f24649c = new HashMap();
+        private Map<String, String> f10962c = new HashMap();
         private byte[] d = null;
 
         public a(String str) {
-            this.f24648a = str;
+            this.f10961a = str;
         }
 
         public a a(Map<String, String> map) {
-            this.f24649c = map;
+            this.f10962c = map;
             return this;
         }
 
         public b a() {
-            return new b(this.f24648a, this.b, this.f24649c, this.d);
+            return new b(this.f10961a, this.b, this.f10962c, this.d);
         }
     }
 
     private b(String str, String str2, Map<String, String> map, byte[] bArr) {
-        this.f24646a = str;
+        this.f10959a = str;
         this.b = str2;
-        this.f24647c = map;
+        this.f10960c = map;
         this.d = bArr;
     }
 
     public String a() {
-        return this.f24646a;
+        return this.f10959a;
     }
 
     public String b() {
@@ -55,7 +55,7 @@ public class b {
     }
 
     public Map<String, String> c() {
-        return this.f24647c;
+        return this.f10960c;
     }
 
     public byte[] d() {

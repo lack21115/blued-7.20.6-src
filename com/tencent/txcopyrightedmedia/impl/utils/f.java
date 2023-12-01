@@ -9,11 +9,11 @@ import com.tencent.txcopyrightedmedia.TXCopyrightedMedia;
 public final class f extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f40098a;
+    private b f26407a;
 
     public f(Context context, b bVar) {
         super(context, "m4a_media", null, 5);
-        this.f40098a = bVar;
+        this.f26407a = bVar;
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
@@ -32,7 +32,7 @@ public final class f extends SQLiteOpenHelper {
 
     @Override // android.database.sqlite.SQLiteOpenHelper
     public final void onUpgrade(SQLiteDatabase sQLiteDatabase, int i, int i2) {
-        b bVar = this.f40098a;
+        b bVar = this.f26407a;
         int b = (bVar != null ? bVar.d : new g(TXCopyrightedMedia.instance().getApplicationContext())).b();
         int i3 = b;
         if (b == -1) {

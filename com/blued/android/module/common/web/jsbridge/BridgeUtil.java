@@ -174,11 +174,11 @@ public class BridgeUtil {
     }
 
     public static void webViewLoadJs(WebView webView, String str) {
-        Tracker.loadUrl(webView, "javascript:" + (("var newscript = document.createElement(\"script\");newscript.src=\"" + str + "\";") + "document.scripts[0].parentNode.insertBefore(newscript,document.scripts[0]);"));
+        Tracker.loadUrl(webView, JAVASCRIPT_STR + (("var newscript = document.createElement(\"script\");newscript.src=\"" + str + "\";") + "document.scripts[0].parentNode.insertBefore(newscript,document.scripts[0]);"));
     }
 
     public static void webViewLoadLocalJs(WebView webView, String str) {
         String assetFile2Str = assetFile2Str(webView.getContext(), str);
-        Tracker.loadUrl(webView, "javascript:" + assetFile2Str);
+        Tracker.loadUrl(webView, JAVASCRIPT_STR + assetFile2Str);
     }
 }

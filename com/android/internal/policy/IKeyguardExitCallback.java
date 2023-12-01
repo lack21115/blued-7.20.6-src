@@ -72,7 +72,7 @@ public interface IKeyguardExitCallback extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     onKeyguardExitResult(parcel.readInt() != 0);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

@@ -41,7 +41,7 @@ public class LiveListHotPresenter extends MvpPresenter {
                     this.h.setPage(this.h.getPage() - 1);
                     return;
                 } else if (iFetchDataListener != null) {
-                    iFetchDataListener.a("HOT_LIST", null);
+                    iFetchDataListener.a("HOT_LIST", (List) null);
                     return;
                 } else {
                     return;
@@ -52,23 +52,23 @@ public class LiveListHotPresenter extends MvpPresenter {
             }
             if (this.h.getPage() == 1) {
                 this.l.clear();
-                if (bluedEntity.extra != null && bluedEntity.extra.fresh_beans_list != null) {
-                    this.l.addAll(bluedEntity.extra.fresh_beans_list);
+                if (bluedEntity.extra != null && ((LiveListRankFlagExtra) bluedEntity.extra).fresh_beans_list != null) {
+                    this.l.addAll(((LiveListRankFlagExtra) bluedEntity.extra).fresh_beans_list);
                 }
                 this.m.clear();
-                if (bluedEntity.extra != null && bluedEntity.extra.official_list != null) {
-                    this.m.addAll(bluedEntity.extra.official_list);
+                if (bluedEntity.extra != null && ((LiveListRankFlagExtra) bluedEntity.extra).official_list != null) {
+                    this.m.addAll(((LiveListRankFlagExtra) bluedEntity.extra).official_list);
                 }
                 this.n.clear();
-                if (bluedEntity.extra != null && bluedEntity.extra.hotpk_list != null) {
-                    this.n.addAll(bluedEntity.extra.hotpk_list);
+                if (bluedEntity.extra != null && ((LiveListRankFlagExtra) bluedEntity.extra).hotpk_list != null) {
+                    this.n.addAll(((LiveListRankFlagExtra) bluedEntity.extra).hotpk_list);
                 }
                 this.k.clear();
-                if (bluedEntity.extra != null && bluedEntity.extra.hot_list_diversion != null) {
-                    this.k.addAll(bluedEntity.extra.hot_list_diversion);
+                if (bluedEntity.extra != null && ((LiveListRankFlagExtra) bluedEntity.extra).hot_list_diversion != null) {
+                    this.k.addAll(((LiveListRankFlagExtra) bluedEntity.extra).hot_list_diversion);
                 }
                 if (bluedEntity.extra != null) {
-                    this.o = bluedEntity.extra.pkhasmore;
+                    this.o = ((LiveListRankFlagExtra) bluedEntity.extra).pkhasmore;
                 }
                 if (this.k.size() > 0) {
                     int i = 0;
@@ -165,7 +165,7 @@ public class LiveListHotPresenter extends MvpPresenter {
                 LiveListCommonModel liveListCommonModel = this.h;
                 liveListCommonModel.setPage(liveListCommonModel.getPage() - 1);
             }
-            AppMethods.a((CharSequence) h().getString(2131887272));
+            AppMethods.a(h().getString(2131887272));
         }
     }
 
@@ -197,7 +197,7 @@ public class LiveListHotPresenter extends MvpPresenter {
             if (!this.h.getHasData() && this.h.getPage() != 1) {
                 LiveListCommonModel liveListCommonModel2 = this.h;
                 liveListCommonModel2.setPage(liveListCommonModel2.getPage() - 1);
-                AppMethods.a((CharSequence) h().getResources().getString(2131887275));
+                AppMethods.a(h().getResources().getString(2131887275));
                 b("", false);
                 return;
             }
@@ -206,7 +206,6 @@ public class LiveListHotPresenter extends MvpPresenter {
         c(iFetchDataListener);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         this.h = new LiveListCommonModel();
@@ -218,31 +217,26 @@ public class LiveListHotPresenter extends MvpPresenter {
         this.n = new ArrayList();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         a(true, iFetchDataListener);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
         a(false, iFetchDataListener);
     }
 
     public void c(final IFetchDataListener iFetchDataListener) {
         BluedUIHttpResponse<BluedEntity<BluedLiveListData, LiveListRankFlagExtra>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntity<BluedLiveListData, LiveListRankFlagExtra>>("hot_live_list", null) { // from class: com.soft.blued.ui.live.presenter.LiveListHotPresenter.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUICache(BluedEntity<BluedLiveListData, LiveListRankFlagExtra> bluedEntity) {
                 super.onUICache(bluedEntity);
                 LiveListHotPresenter.this.a(bluedEntity, iFetchDataListener);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 LiveListHotPresenter.this.a((BluedEntity<BluedLiveListData, LiveListRankFlagExtra>) null, iFetchDataListener);
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 IFetchDataListener iFetchDataListener2 = iFetchDataListener;
                 if (iFetchDataListener2 != null) {
@@ -250,7 +244,6 @@ public class LiveListHotPresenter extends MvpPresenter {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<BluedLiveListData, LiveListRankFlagExtra> bluedEntity) {
                 LiveListHotPresenter.this.a(bluedEntity, iFetchDataListener);
             }
@@ -263,7 +256,6 @@ public class LiveListHotPresenter extends MvpPresenter {
         LiveHttpUtils.a(bluedUIHttpResponse, this.h.getPage() + "", (IRequestHost) null);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public boolean c() {
         return false;
     }

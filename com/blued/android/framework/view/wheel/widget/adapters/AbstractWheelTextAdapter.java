@@ -9,13 +9,9 @@ import android.widget.TextView;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/wheel/widget/adapters/AbstractWheelTextAdapter.class */
 public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected Context f10362a;
+    protected Context a;
     protected LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected int f10363c;
+    protected int c;
     protected int d;
     protected int e;
     private int f;
@@ -27,7 +23,7 @@ public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
             }
             return null;
         }
-        return new TextView(this.f10362a);
+        return new TextView(this.a);
     }
 
     private TextView a(View view, int i) {
@@ -54,21 +50,21 @@ public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
         }
         View view2 = view;
         if (view == null) {
-            view2 = a(this.f10363c, viewGroup);
+            view2 = a(this.c, viewGroup);
         }
-        TextView a2 = a(view2, this.d);
-        a2.setTextSize(this.f);
-        a2.setGravity(17);
-        a2.setLines(2);
-        if (a2 != null) {
-            CharSequence a3 = a(i);
-            CharSequence charSequence = a3;
-            if (a3 == null) {
+        TextView a = a(view2, this.d);
+        a.setTextSize(this.f);
+        a.setGravity(17);
+        a.setLines(2);
+        if (a != null) {
+            CharSequence a2 = a(i);
+            CharSequence charSequence = a2;
+            if (a2 == null) {
                 charSequence = "";
             }
-            a2.setText(charSequence);
-            if (this.f10363c == -1) {
-                a(a2);
+            a.setText(charSequence);
+            if (this.c == -1) {
+                a(a);
             }
         }
         return view2;

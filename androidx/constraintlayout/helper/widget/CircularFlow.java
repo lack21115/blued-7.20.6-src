@@ -15,11 +15,11 @@ import java.util.Arrays;
 public class CircularFlow extends VirtualLayout {
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f2156c;
+    private static int f2108c;
     private static float d;
 
     /* renamed from: a  reason: collision with root package name */
-    ConstraintLayout f2157a;
+    ConstraintLayout f2109a;
     int b;
     private float[] e;
     private int[] f;
@@ -43,7 +43,7 @@ public class CircularFlow extends VirtualLayout {
     }
 
     private void a() {
-        this.f2157a = (ConstraintLayout) getParent();
+        this.f2109a = (ConstraintLayout) getParent();
         int i = 0;
         while (true) {
             int i2 = i;
@@ -51,9 +51,9 @@ public class CircularFlow extends VirtualLayout {
                 b();
                 return;
             }
-            View viewById = this.f2157a.getViewById(this.j[i2]);
+            View viewById = this.f2109a.getViewById(this.j[i2]);
             if (viewById != null) {
-                int i3 = f2156c;
+                int i3 = f2108c;
                 float f = d;
                 int[] iArr = this.f;
                 if (iArr == null || i2 >= iArr.length) {
@@ -242,7 +242,7 @@ public class CircularFlow extends VirtualLayout {
                 this.s = valueOf;
                 setDefaultAngle(valueOf.floatValue());
             } else if (index == R.styleable.ConstraintLayout_Layout_circularflow_defaultRadius) {
-                Integer valueOf2 = Integer.valueOf(obtainStyledAttributes.getDimensionPixelSize(index, f2156c));
+                Integer valueOf2 = Integer.valueOf(obtainStyledAttributes.getDimensionPixelSize(index, f2108c));
                 this.t = valueOf2;
                 setDefaultRadius(valueOf2.intValue());
             }
@@ -316,9 +316,9 @@ public class CircularFlow extends VirtualLayout {
             return removeView;
         }
         ConstraintSet constraintSet = new ConstraintSet();
-        constraintSet.clone(this.f2157a);
+        constraintSet.clone(this.f2109a);
         constraintSet.clear(view.getId(), 8);
-        constraintSet.applyTo(this.f2157a);
+        constraintSet.applyTo(this.f2109a);
         float[] fArr = this.e;
         if (removeView < fArr.length) {
             this.e = a(fArr, removeView);
@@ -338,7 +338,7 @@ public class CircularFlow extends VirtualLayout {
     }
 
     public void setDefaultRadius(int i) {
-        f2156c = i;
+        f2108c = i;
     }
 
     public void updateAngle(View view, float f) {

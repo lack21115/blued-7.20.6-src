@@ -28,14 +28,12 @@ public class YYTypefaceUtils {
     /* renamed from: com.blued.android.module.yy_china.test.YYTypefaceUtils$2  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/test/YYTypefaceUtils$2.class */
     class AnonymousClass2 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View.OnClickListener f17817a;
+        final /* synthetic */ View.OnClickListener a;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            View.OnClickListener onClickListener = this.f17817a;
+            View.OnClickListener onClickListener = this.a;
             if (onClickListener != null) {
                 onClickListener.onClick(view);
             }
@@ -45,14 +43,12 @@ public class YYTypefaceUtils {
     /* renamed from: com.blued.android.module.yy_china.test.YYTypefaceUtils$3  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/test/YYTypefaceUtils$3.class */
     class AnonymousClass3 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View.OnClickListener f17818a;
+        final /* synthetic */ View.OnClickListener a;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            View.OnClickListener onClickListener = this.f17818a;
+            View.OnClickListener onClickListener = this.a;
             if (onClickListener != null) {
                 onClickListener.onClick(view);
             }

@@ -8,9 +8,8 @@ public abstract class Keyframe implements Cloneable {
     Class mValueType;
     boolean mValueWasSetOnStart;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/animation/Keyframe$FloatKeyframe.class */
-    public static class FloatKeyframe extends Keyframe {
+    static class FloatKeyframe extends Keyframe {
         float mValue;
 
         FloatKeyframe(float f) {
@@ -53,9 +52,8 @@ public abstract class Keyframe implements Cloneable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/animation/Keyframe$IntKeyframe.class */
-    public static class IntKeyframe extends Keyframe {
+    static class IntKeyframe extends Keyframe {
         int mValue;
 
         IntKeyframe(float f) {
@@ -98,9 +96,8 @@ public abstract class Keyframe implements Cloneable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/animation/Keyframe$ObjectKeyframe.class */
-    public static class ObjectKeyframe extends Keyframe {
+    static class ObjectKeyframe extends Keyframe {
         Object mValue;
 
         ObjectKeyframe(float f, Object obj) {

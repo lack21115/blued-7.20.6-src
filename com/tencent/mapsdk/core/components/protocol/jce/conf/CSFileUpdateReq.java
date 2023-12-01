@@ -10,7 +10,7 @@ import java.util.Collection;
 public final class CSFileUpdateReq extends MapJceStruct {
 
     /* renamed from: c  reason: collision with root package name */
-    public static ArrayList<FileUpdateReq> f37265c = new ArrayList<>();
+    public static ArrayList<FileUpdateReq> f23574c = new ArrayList<>();
     public String sAppId;
     public String sCity;
     public String sEngineVersion;
@@ -19,7 +19,7 @@ public final class CSFileUpdateReq extends MapJceStruct {
     public ArrayList<FileUpdateReq> vItems;
 
     static {
-        f37265c.add(new FileUpdateReq());
+        f23574c.add(new FileUpdateReq());
     }
 
     public CSFileUpdateReq() {
@@ -53,7 +53,7 @@ public final class CSFileUpdateReq extends MapJceStruct {
 
     @Override // com.tencent.mapsdk.internal.p
     public void readFrom(m mVar) {
-        this.vItems = (ArrayList) mVar.a((m) f37265c, 0, true);
+        this.vItems = (ArrayList) mVar.a((m) f23574c, 0, true);
         this.sAppId = mVar.b(1, false);
         this.sSDKVersion = mVar.b(2, false);
         this.sCity = mVar.b(3, false);

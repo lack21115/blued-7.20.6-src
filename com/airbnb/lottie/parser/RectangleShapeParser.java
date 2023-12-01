@@ -7,6 +7,8 @@ import com.airbnb.lottie.model.animatable.AnimatableFloatValue;
 import com.airbnb.lottie.model.animatable.AnimatablePointValue;
 import com.airbnb.lottie.model.animatable.AnimatableValue;
 import com.airbnb.lottie.model.content.RectangleShape;
+import com.anythink.core.common.b.g;
+import com.anythink.core.common.g.c;
 import java.io.IOException;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -33,7 +35,7 @@ public class RectangleShapeParser {
                             if (hashCode == 115 && nextName.equals("s")) {
                                 z2 = true;
                             }
-                        } else if (nextName.equals("r")) {
+                        } else if (nextName.equals(g.o.o)) {
                             z2 = true;
                         }
                     } else if (nextName.equals("nm")) {
@@ -42,7 +44,7 @@ public class RectangleShapeParser {
                 } else if (nextName.equals("hd")) {
                     z2 = true;
                 }
-            } else if (nextName.equals("p")) {
+            } else if (nextName.equals(c.W)) {
                 z2 = true;
             }
             if (!z2) {

@@ -5,43 +5,43 @@ public final class bn extends m implements Cloneable {
     static byte[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte f35301a;
+    public byte f21610a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public byte[] f35302c;
+    public byte[] f21611c;
 
     public bn() {
-        this.f35301a = (byte) 0;
+        this.f21610a = (byte) 0;
         this.b = "";
-        this.f35302c = null;
+        this.f21611c = null;
     }
 
     public bn(byte b, String str, byte[] bArr) {
-        this.f35301a = (byte) 0;
+        this.f21610a = (byte) 0;
         this.b = "";
-        this.f35302c = null;
-        this.f35301a = b;
+        this.f21611c = null;
+        this.f21610a = b;
         this.b = str;
-        this.f35302c = bArr;
+        this.f21611c = bArr;
     }
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(k kVar) {
-        this.f35301a = kVar.a(this.f35301a, 0, true);
+        this.f21610a = kVar.a(this.f21610a, 0, true);
         this.b = kVar.b(1, true);
         if (d == null) {
             d = r0;
             byte[] bArr = {0};
         }
-        this.f35302c = kVar.c(2, false);
+        this.f21611c = kVar.c(2, false);
     }
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(l lVar) {
-        lVar.a(this.f35301a, 0);
+        lVar.a(this.f21610a, 0);
         lVar.a(this.b, 1);
-        byte[] bArr = this.f35302c;
+        byte[] bArr = this.f21611c;
         if (bArr != null) {
             lVar.a(bArr, 2);
         }

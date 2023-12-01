@@ -1,5 +1,6 @@
 package com.cmic.gen.sdk.tencent.c.b;
 
+import com.huawei.hms.framework.common.ContainerUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -10,7 +11,7 @@ public class h extends a {
 
     @Override // com.cmic.gen.sdk.tencent.c.b.g
     protected String a(String str) {
-        return this.b + this.f21630c + this.d + this.e + this.f + this.g + this.h + this.i + this.j + this.m + this.n + str + this.o + this.q + this.r + this.s + this.t + this.u + this.v + this.x + this.y + this.w;
+        return this.b + this.f8024c + this.d + this.e + this.f + this.g + this.h + this.i + this.j + this.m + this.n + str + this.o + this.q + this.r + this.s + this.t + this.u + this.v + this.x + this.y + this.w;
     }
 
     @Override // com.cmic.gen.sdk.tencent.c.b.a
@@ -22,9 +23,9 @@ public class h extends a {
     public JSONObject b() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("ver", this.f21629a);
+            jSONObject.put("ver", this.f8023a);
             jSONObject.put("sdkver", this.b);
-            jSONObject.put("appid", this.f21630c);
+            jSONObject.put("appid", this.f8024c);
             jSONObject.put("imsi", this.d);
             jSONObject.put("operatortype", this.e);
             jSONObject.put("networktype", this.f);
@@ -37,7 +38,7 @@ public class h extends a {
             jSONObject.put("msgid", this.m);
             jSONObject.put("timestamp", this.n);
             jSONObject.put("subimsi", this.o);
-            jSONObject.put("sign", this.p);
+            jSONObject.put(com.anythink.expressad.d.a.b.d, this.p);
             jSONObject.put("apppackage", this.q);
             jSONObject.put("appsign", this.r);
             jSONObject.put("ipv4_list", this.s);
@@ -55,7 +56,7 @@ public class h extends a {
     }
 
     public String toString() {
-        return this.f21629a + "&" + this.b + "&" + this.f21630c + "&" + this.d + "&" + this.e + "&" + this.f + "&" + this.g + "&" + this.h + "&" + this.i + "&" + this.j + "&" + this.k + "&" + this.l + "&" + this.m + "&" + this.n + "&" + this.o + "&" + this.p + "&" + this.q + "&" + this.r + "&&" + this.s + "&" + this.t + "&" + this.u + "&" + this.v + "&" + this.x + "&" + this.y + "&" + this.w;
+        return this.f8023a + ContainerUtils.FIELD_DELIMITER + this.b + ContainerUtils.FIELD_DELIMITER + this.f8024c + ContainerUtils.FIELD_DELIMITER + this.d + ContainerUtils.FIELD_DELIMITER + this.e + ContainerUtils.FIELD_DELIMITER + this.f + ContainerUtils.FIELD_DELIMITER + this.g + ContainerUtils.FIELD_DELIMITER + this.h + ContainerUtils.FIELD_DELIMITER + this.i + ContainerUtils.FIELD_DELIMITER + this.j + ContainerUtils.FIELD_DELIMITER + this.k + ContainerUtils.FIELD_DELIMITER + this.l + ContainerUtils.FIELD_DELIMITER + this.m + ContainerUtils.FIELD_DELIMITER + this.n + ContainerUtils.FIELD_DELIMITER + this.o + ContainerUtils.FIELD_DELIMITER + this.p + ContainerUtils.FIELD_DELIMITER + this.q + ContainerUtils.FIELD_DELIMITER + this.r + "&&" + this.s + ContainerUtils.FIELD_DELIMITER + this.t + ContainerUtils.FIELD_DELIMITER + this.u + ContainerUtils.FIELD_DELIMITER + this.v + ContainerUtils.FIELD_DELIMITER + this.x + ContainerUtils.FIELD_DELIMITER + this.y + ContainerUtils.FIELD_DELIMITER + this.w;
     }
 
     public void v(String str) {

@@ -24,17 +24,17 @@ public class ActivatingData extends a implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f26456a;
+    public final String f12768a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final List<ApkSignerData> f26457c;
+    public final List<ApkSignerData> f12769c;
     public final int d;
 
     public ActivatingData(String str, String str2, List<ApkSignerData> list, int i) {
-        this.f26456a = str;
+        this.f12768a = str;
         this.b = str2;
-        this.f26457c = list;
+        this.f12769c = list;
         this.d = i;
     }
 
@@ -44,14 +44,14 @@ public class ActivatingData extends a implements Parcelable {
     }
 
     public String toString() {
-        return "ActivatingData{pkgName=" + this.f26456a + ", target='" + this.b + "', apkSignerDataList=" + this.f26457c + ", minVerCode=" + this.d + '}';
+        return "ActivatingData{pkgName=" + this.f12768a + ", target='" + this.b + "', apkSignerDataList=" + this.f12769c + ", minVerCode=" + this.d + '}';
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f26456a);
+        parcel.writeString(this.f12768a);
         parcel.writeString(this.b);
-        parcel.writeList(this.f26457c);
+        parcel.writeList(this.f12769c);
         parcel.writeInt(this.d);
     }
 }

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import com.igexin.assist.util.AssistUtils;
 import java.util.Set;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/FixedBadParcelHelper.class */
@@ -30,7 +29,7 @@ public class FixedBadParcelHelper {
     public static boolean a() {
         String str = Build.MANUFACTURER;
         Log.b("FixedBadParcelHelper", "isRealmeNew manufacturer=" + str);
-        boolean z = !TextUtils.isEmpty(str) && (str.toLowerCase().contains("realme") || str.toLowerCase().contains(AssistUtils.BRAND_OPPO) || str.toLowerCase().contains(AssistUtils.BRAND_VIVO) || str.toLowerCase().contains(AssistUtils.BRAND_HW) || str.toLowerCase().contains("samsung") || str.toLowerCase().contains(AssistUtils.BRAND_XIAOMI) || str.toLowerCase().contains("acer"));
+        boolean z = !TextUtils.isEmpty(str) && (str.toLowerCase().contains("realme") || str.toLowerCase().contains("oppo") || str.toLowerCase().contains("vivo") || str.toLowerCase().contains("huawei") || str.toLowerCase().contains("samsung") || str.toLowerCase().contains("xiaomi") || str.toLowerCase().contains("acer"));
         Log.b("FixedBadParcelHelper", "isRealmeNew isContain=" + z);
         return z;
     }

@@ -4,16 +4,16 @@ package com.tencent.cloud.huiyansdkface.facelight.api.result;
 public class WbFaceWillModeResult {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f35528a;
+    private String f21837a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f35529c;
+    private String f21838c;
     private String d;
     private String e;
 
     public String getFaceCode() {
-        return this.f35529c;
+        return this.f21838c;
     }
 
     public String getFaceMsg() {
@@ -25,7 +25,7 @@ public class WbFaceWillModeResult {
     }
 
     public String getWillCode() {
-        return this.f35528a;
+        return this.f21837a;
     }
 
     public String getWillMsg() {
@@ -33,7 +33,7 @@ public class WbFaceWillModeResult {
     }
 
     public void setFaceCode(String str) {
-        this.f35529c = str;
+        this.f21838c = str;
     }
 
     public void setFaceMsg(String str) {
@@ -45,7 +45,7 @@ public class WbFaceWillModeResult {
     }
 
     public void setWillCode(String str) {
-        this.f35528a = str;
+        this.f21837a = str;
     }
 
     public void setWillMsg(String str) {
@@ -53,6 +53,6 @@ public class WbFaceWillModeResult {
     }
 
     public String toString() {
-        return "WbFaceWillModeResult{willCode='" + this.f35528a + "', willMsg='" + this.b + "', faceCode='" + this.f35529c + "', faceMsg='" + this.d + "', videoPath='" + this.e + "'}";
+        return "WbFaceWillModeResult{willCode='" + this.f21837a + "', willMsg='" + this.b + "', faceCode='" + this.f21838c + "', faceMsg='" + this.d + "', videoPath='" + this.e + "'}";
     }
 }

@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class UserinfoFeedScrollObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static UserinfoFeedScrollObserver f34245a = new UserinfoFeedScrollObserver();
+    private static UserinfoFeedScrollObserver f20554a = new UserinfoFeedScrollObserver();
     private ArrayList<IUserinFeedScrollObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/observer/UserinfoFeedScrollObserver$IUserinFeedScrollObserver.class */
@@ -20,7 +20,7 @@ public class UserinfoFeedScrollObserver {
     }
 
     public static UserinfoFeedScrollObserver a() {
-        return f34245a;
+        return f20554a;
     }
 
     public void a(RecyclerView recyclerView, int i, int i2) {

@@ -23,13 +23,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/pop/GestureAnimTipView.class */
 public final class GestureAnimTipView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public TextView f11224a;
+    public TextView a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public ShapeLinearLayout f11225c;
+    public ShapeLinearLayout c;
     public ImageView d;
     public ImageView e;
     private final long f;
@@ -145,7 +141,7 @@ public final class GestureAnimTipView extends LinearLayout {
     }
 
     public final ShapeLinearLayout getBubble() {
-        ShapeLinearLayout shapeLinearLayout = this.f11225c;
+        ShapeLinearLayout shapeLinearLayout = this.c;
         if (shapeLinearLayout != null) {
             return shapeLinearLayout;
         }
@@ -172,7 +168,7 @@ public final class GestureAnimTipView extends LinearLayout {
     }
 
     public final TextView getTxt() {
-        TextView textView = this.f11224a;
+        TextView textView = this.a;
         if (textView != null) {
             return textView;
         }
@@ -187,7 +183,7 @@ public final class GestureAnimTipView extends LinearLayout {
 
     public final void setBubble(ShapeLinearLayout shapeLinearLayout) {
         Intrinsics.e(shapeLinearLayout, "<set-?>");
-        this.f11225c = shapeLinearLayout;
+        this.c = shapeLinearLayout;
     }
 
     public final void setImg(ImageView imageView) {
@@ -213,6 +209,6 @@ public final class GestureAnimTipView extends LinearLayout {
 
     public final void setTxt(TextView textView) {
         Intrinsics.e(textView, "<set-?>");
-        this.f11224a = textView;
+        this.a = textView;
     }
 }

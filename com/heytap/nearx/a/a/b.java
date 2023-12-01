@@ -13,24 +13,24 @@ public abstract class b<M extends b<M, B>, B extends a<M, B>> implements Seriali
     private static final long serialVersionUID = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    transient int f22257a = 0;
+    transient int f8649a = 0;
     protected transient int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private final transient e<M> f22258c;
+    private final transient e<M> f8650c;
     private final transient ByteString d;
 
     /* loaded from: source-7994992-dex2jar.jar:com/heytap/nearx/a/a/b$a.class */
     public static abstract class a<T extends b<T, B>, B extends a<T, B>> {
 
         /* renamed from: a  reason: collision with root package name */
-        Buffer f22259a;
+        Buffer f8651a;
         g b;
 
         public final a<T, B> a(int i, com.heytap.nearx.a.a.a aVar, Object obj) {
             if (this.b == null) {
                 Buffer buffer = new Buffer();
-                this.f22259a = buffer;
+                this.f8651a = buffer;
                 this.b = new g(buffer);
             }
             try {
@@ -45,7 +45,7 @@ public abstract class b<M extends b<M, B>, B extends a<M, B>> implements Seriali
             if (byteString.size() > 0) {
                 if (this.b == null) {
                     Buffer buffer = new Buffer();
-                    this.f22259a = buffer;
+                    this.f8651a = buffer;
                     this.b = new g(buffer);
                 }
                 try {
@@ -59,7 +59,7 @@ public abstract class b<M extends b<M, B>, B extends a<M, B>> implements Seriali
         }
 
         public final ByteString a() {
-            Buffer buffer = this.f22259a;
+            Buffer buffer = this.f8651a;
             return buffer != null ? buffer.clone().readByteString() : ByteString.EMPTY;
         }
     }
@@ -71,7 +71,7 @@ public abstract class b<M extends b<M, B>, B extends a<M, B>> implements Seriali
         if (byteString == null) {
             throw new NullPointerException("unknownFields == null");
         }
-        this.f22258c = eVar;
+        this.f8650c = eVar;
         this.d = byteString;
     }
 
@@ -81,11 +81,11 @@ public abstract class b<M extends b<M, B>, B extends a<M, B>> implements Seriali
     }
 
     public final byte[] b() {
-        return this.f22258c.b((e<M>) this);
+        return this.f8650c.b((e<M>) this);
     }
 
     public String toString() {
-        return this.f22258c.c(this);
+        return this.f8650c.c(this);
     }
 
     protected final Object writeReplace() throws ObjectStreamException {

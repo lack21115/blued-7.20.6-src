@@ -1,5 +1,6 @@
 package com.kwad.sdk.kwai.kwai;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -111,7 +112,7 @@ public final class c {
             return;
         }
         e eVar = new e(wrapContextIfNeed, adTemplate, z, z2, z3);
-        View findViewById = currentActivity.getWindow().getDecorView().findViewById(16908290);
+        View findViewById = currentActivity.getWindow().getDecorView().findViewById(R.id.content);
         if (findViewById instanceof FrameLayout) {
             eVar.a((FrameLayout) findViewById);
             this.YK = eVar;

@@ -18,24 +18,16 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adapter/CommonAdapter.class */
 public abstract class CommonAdapter<T> extends BaseAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f10437a;
+    public Context a;
     protected final List<T> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public MultiItemTypeSupport<T> f10438c;
+    public MultiItemTypeSupport<T> c;
     private int d;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adapter/CommonAdapter$ViewHolder.class */
     public static class ViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        public int f10439a;
+        public int a;
         public int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public int f10440c;
+        public int c;
         private SparseArray<View> d;
         private View e;
 
@@ -43,10 +35,10 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
             this.d = new SparseArray<>();
             View inflate = LayoutInflater.from(context).inflate(i, viewGroup, false);
             this.e = inflate;
-            this.f10439a = i;
+            this.a = i;
             inflate.setTag(this);
             this.b = i2;
-            this.f10440c = i3;
+            this.c = i3;
         }
 
         public View a() {
@@ -82,9 +74,9 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
         }
 
         public ViewHolder a(int i, View.OnClickListener onClickListener) {
-            View a2 = a(i);
-            if (a2 != null) {
-                a2.setOnClickListener(onClickListener);
+            View a = a(i);
+            if (a != null) {
+                a.setOnClickListener(onClickListener);
             }
             return this;
         }
@@ -128,9 +120,9 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
         }
 
         public ViewHolder b(int i, int i2) {
-            View a2 = a(i);
-            if (a2 != null) {
-                a2.setVisibility(i2);
+            View a = a(i);
+            if (a != null) {
+                a.setVisibility(i2);
             }
             return this;
         }
@@ -144,9 +136,9 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
         }
 
         public ViewHolder c(int i, int i2) {
-            View a2 = a(i);
-            if (a2 != null) {
-                a2.setBackgroundResource(i2);
+            View a = a(i);
+            if (a != null) {
+                a.setBackgroundResource(i2);
             }
             return this;
         }
@@ -174,7 +166,7 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
 
     public CommonAdapter(int i) {
         this.b = new ArrayList();
-        this.f10437a = AppInfo.d();
+        this.a = AppInfo.d();
         this.d = i;
     }
 
@@ -187,12 +179,12 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
 
     public CommonAdapter(List<T> list, MultiItemTypeSupport<T> multiItemTypeSupport) {
         this(list, 0);
-        this.f10438c = multiItemTypeSupport;
+        this.c = multiItemTypeSupport;
     }
 
     public ViewHolder a(int i, View view, ViewGroup viewGroup, int i2) {
-        MultiItemTypeSupport<T> multiItemTypeSupport = this.f10438c;
-        return multiItemTypeSupport != null ? a(this.f10437a, view, viewGroup, multiItemTypeSupport.a(i, this.b.get(i)), i, i2) : a(this.f10437a, view, viewGroup, this.d, i2, i);
+        MultiItemTypeSupport<T> multiItemTypeSupport = this.c;
+        return multiItemTypeSupport != null ? a(this.a, view, viewGroup, multiItemTypeSupport.a(i, this.b.get(i)), i, i2) : a(this.a, view, viewGroup, this.d, i2, i);
     }
 
     ViewHolder a(Context context, View view, ViewGroup viewGroup, int i, int i2, int i3) {
@@ -200,10 +192,10 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
             return new ViewHolder(context, viewGroup, i, i2, i3);
         }
         ViewHolder viewHolder = (ViewHolder) view.getTag();
-        if (viewHolder.f10439a != i) {
+        if (viewHolder.a != i) {
             return new ViewHolder(context, viewGroup, i, i2, i3);
         }
-        viewHolder.f10440c = i3;
+        viewHolder.c = i3;
         return viewHolder;
     }
 
@@ -247,25 +239,25 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public int getItemViewType(int i) {
-        if (this.f10438c == null) {
+        if (this.c == null) {
             return i >= this.b.size() ? 0 : 1;
         } else if (i >= this.b.size()) {
             return 0;
         } else {
-            return this.f10438c.b(i, this.b.get(i));
+            return this.c.b(i, this.b.get(i));
         }
     }
 
     @Override // android.widget.Adapter
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ViewHolder a2 = a(i, view, viewGroup, getCount());
-        a(a2, getItem(i), i);
-        return a2.a();
+        ViewHolder a = a(i, view, viewGroup, getCount());
+        a(a, getItem(i), i);
+        return a.a();
     }
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public int getViewTypeCount() {
-        MultiItemTypeSupport<T> multiItemTypeSupport = this.f10438c;
+        MultiItemTypeSupport<T> multiItemTypeSupport = this.c;
         if (multiItemTypeSupport != null) {
             return multiItemTypeSupport.a();
         }

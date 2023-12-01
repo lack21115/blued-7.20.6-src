@@ -155,13 +155,13 @@ public final class MoreTypes {
     public static class ComparedElements {
 
         /* renamed from: a  reason: collision with root package name */
-        final Element f22214a;
+        final Element f8607a;
         final ImmutableList<TypeMirror> aArguments;
         final Element b;
         final ImmutableList<TypeMirror> bArguments;
 
         ComparedElements(Element element, ImmutableList<TypeMirror> immutableList, Element element2, ImmutableList<TypeMirror> immutableList2) {
-            this.f22214a = element;
+            this.f8607a = element;
             this.aArguments = immutableList;
             this.b = element2;
             this.bArguments = immutableList2;
@@ -173,7 +173,7 @@ public final class MoreTypes {
             }
             ComparedElements comparedElements = (ComparedElements) obj;
             int size = this.aArguments.size();
-            if (!this.f22214a.equals(comparedElements.f22214a) || !this.b.equals(comparedElements.b) || size != this.bArguments.size()) {
+            if (!this.f8607a.equals(comparedElements.f8607a) || !this.b.equals(comparedElements.b) || size != this.bArguments.size()) {
                 return false;
             }
             int i = 0;
@@ -190,7 +190,7 @@ public final class MoreTypes {
         }
 
         public int hashCode() {
-            return (this.f22214a.hashCode() * 31) + this.b.hashCode();
+            return (this.f8607a.hashCode() * 31) + this.b.hashCode();
         }
     }
 

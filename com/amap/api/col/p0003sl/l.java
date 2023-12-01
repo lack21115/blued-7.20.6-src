@@ -93,6 +93,7 @@ import com.autonavi.amap.mapcore.AbstractCameraUpdateMessage;
 import com.autonavi.amap.mapcore.DPoint;
 import com.autonavi.amap.mapcore.IPoint;
 import com.autonavi.amap.mapcore.VirtualEarthProjection;
+import com.autonavi.amap.mapcore.interfaces.IMapConfig;
 import com.autonavi.base.ae.gmap.AMapAppRequestParam;
 import com.autonavi.base.ae.gmap.GLMapEngine;
 import com.autonavi.base.ae.gmap.GLMapRender;
@@ -118,7 +119,6 @@ import com.autonavi.base.amap.mapcore.Rectangle;
 import com.autonavi.base.amap.mapcore.interfaces.IAMapListener;
 import com.autonavi.base.amap.mapcore.message.AbstractGestureMapMessage;
 import com.autonavi.base.amap.mapcore.tools.GLConvertUtil;
-import com.uc.crashsdk.export.LogType;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -157,9 +157,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
     private Rect X;
     private int Y;
     private MyTrafficStyle Z;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected boolean f5294a;
+    protected boolean a;
     private Lock aA;
     private int aB;
     private int aC;
@@ -203,9 +201,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
     private y ao;
     private boolean ap;
     private float aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    private float f5295ar;
+    private float ar;
     private float as;
     private boolean at;
     private boolean au;
@@ -222,9 +218,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
     private long be;
     private at bf;
     private IPoint[] bg;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected at f5296c;
+    protected at c;
     dn d;
     protected Context e;
     protected GLMapEngine f;
@@ -254,9 +248,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/l$a.class */
     public static abstract class a implements Runnable {
         boolean b;
-
-        /* renamed from: c  reason: collision with root package name */
-        boolean f5344c;
+        boolean c;
         int d;
         int e;
         int f;
@@ -267,7 +259,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
 
         private a() {
             this.b = false;
-            this.f5344c = false;
+            this.c = false;
             this.h = 0;
             this.i = 0;
         }
@@ -289,24 +281,24 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
 
         public final void a(at atVar) {
+            List a;
             List a2;
-            List a3;
             if (l.this.b == null || !l.this.b.isIndoorEnable()) {
                 return;
             }
             final ee e = l.this.C.e();
             if (atVar == null) {
                 try {
-                    List a4 = l.this.u.a(AMap.OnIndoorBuildingActiveListener.class.hashCode());
-                    if (a4 != null && a4.size() > 0) {
-                        synchronized (a4) {
+                    List a3 = l.this.u.a(AMap.OnIndoorBuildingActiveListener.class.hashCode());
+                    if (a3 != null && a3.size() > 0) {
+                        synchronized (a3) {
                             int i = 0;
                             while (true) {
                                 int i2 = i;
-                                if (i2 >= a4.size()) {
+                                if (i2 >= a3.size()) {
                                     break;
                                 }
-                                ((AMap.OnIndoorBuildingActiveListener) a4.get(i2)).OnIndoorBuilding(atVar);
+                                ((AMap.OnIndoorBuildingActiveListener) a3.get(i2)).OnIndoorBuilding(atVar);
                                 i = i2 + 1;
                             }
                         }
@@ -314,8 +306,8 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                 } catch (Throwable th) {
                     th.printStackTrace();
                 }
-                if (l.this.f5296c != null) {
-                    l.this.f5296c.g = null;
+                if (l.this.c != null) {
+                    l.this.c.g = null;
                 }
                 if (e.b()) {
                     l.this.j.post(new Runnable() { // from class: com.amap.api.col.3sl.l.b.1
@@ -327,15 +319,15 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                 }
                 l.this.b.maxZoomLevel = l.this.b.isSetLimitZoomLevel() ? l.this.b.getMaxZoomLevel() : 20.0f;
                 try {
-                    if (!l.this.z.isZoomControlsEnabled() || (a2 = l.this.u.a(AMapWidgetListener.class.hashCode())) == null || a2.size() <= 0) {
+                    if (!l.this.z.isZoomControlsEnabled() || (a = l.this.u.a(AMapWidgetListener.class.hashCode())) == null || a.size() <= 0) {
                         return;
                     }
-                    synchronized (a2) {
+                    synchronized (a) {
                         int i3 = 0;
                         while (true) {
                             int i4 = i3;
-                            if (i4 < a2.size()) {
-                                ((AMapWidgetListener) a2.get(i4)).invalidateZoomController(l.this.b.getSZ());
+                            if (i4 < a.size()) {
+                                ((AMapWidgetListener) a.get(i4)).invalidateZoomController(l.this.b.getSZ());
                                 i3 = i4 + 1;
                             }
                         }
@@ -359,31 +351,31 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                     }
                 }
             }
-            if (atVar == null || l.this.f5296c == null || l.this.f5296c.activeFloorIndex == atVar.activeFloorIndex || !e.b()) {
-                if (atVar != null && (l.this.f5296c == null || !l.this.f5296c.poiid.equals(atVar.poiid) || l.this.f5296c.g == null)) {
-                    l.this.f5296c = atVar;
+            if (atVar == null || l.this.c == null || l.this.c.activeFloorIndex == atVar.activeFloorIndex || !e.b()) {
+                if (atVar != null && (l.this.c == null || !l.this.c.poiid.equals(atVar.poiid) || l.this.c.g == null)) {
+                    l.this.c = atVar;
                     if (l.this.b != null) {
-                        if (l.this.f5296c.g == null) {
-                            l.this.f5296c.g = new Point();
+                        if (l.this.c.g == null) {
+                            l.this.c.g = new Point();
                         }
                         DPoint mapGeoCenter = l.this.b.getMapGeoCenter();
                         if (mapGeoCenter != null) {
-                            l.this.f5296c.g.x = (int) mapGeoCenter.x;
-                            l.this.f5296c.g.y = (int) mapGeoCenter.y;
+                            l.this.c.g.x = (int) mapGeoCenter.x;
+                            l.this.c.g.y = (int) mapGeoCenter.y;
                         }
                     }
                 }
                 try {
-                    List a5 = l.this.u.a(AMap.OnIndoorBuildingActiveListener.class.hashCode());
-                    if (a5 != null && a5.size() > 0) {
-                        synchronized (a5) {
+                    List a4 = l.this.u.a(AMap.OnIndoorBuildingActiveListener.class.hashCode());
+                    if (a4 != null && a4.size() > 0) {
+                        synchronized (a4) {
                             int i7 = 0;
                             while (true) {
                                 int i8 = i7;
-                                if (i8 >= a5.size()) {
+                                if (i8 >= a4.size()) {
                                     break;
                                 }
-                                ((AMap.OnIndoorBuildingActiveListener) a5.get(i8)).OnIndoorBuilding(atVar);
+                                ((AMap.OnIndoorBuildingActiveListener) a4.get(i8)).OnIndoorBuilding(atVar);
                                 i7 = i8 + 1;
                             }
                         }
@@ -394,15 +386,15 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                         f = l.this.b.getMaxZoomLevel();
                     }
                     mapConfig.maxZoomLevel = f;
-                    if (l.this.z.isZoomControlsEnabled() && (a3 = l.this.u.a(AMapWidgetListener.class.hashCode())) != null && a3.size() > 0) {
-                        synchronized (a3) {
+                    if (l.this.z.isZoomControlsEnabled() && (a2 = l.this.u.a(AMapWidgetListener.class.hashCode())) != null && a2.size() > 0) {
+                        synchronized (a2) {
                             int i9 = 0;
                             while (true) {
                                 int i10 = i9;
-                                if (i10 >= a3.size()) {
+                                if (i10 >= a2.size()) {
                                     break;
                                 }
-                                ((AMapWidgetListener) a3.get(i10)).invalidateZoomController(l.this.b.getSZ());
+                                ((AMapWidgetListener) a2.get(i10)).invalidateZoomController(l.this.b.getSZ());
                                 i9 = i10 + 1;
                             }
                         }
@@ -415,8 +407,8 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                             @Override // java.lang.Runnable
                             public final void run() {
                                 try {
-                                    e.a(l.this.f5296c.floor_names);
-                                    e.a(l.this.f5296c.activeFloorName);
+                                    e.a(l.this.c.floor_names);
+                                    e.a(l.this.c.activeFloorName);
                                     if (e.b()) {
                                         return;
                                     }
@@ -449,11 +441,11 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
 
         @Override // com.amap.api.col.p0003sl.ee.a
         public final void a(int i) {
-            if (l.this.f5296c != null) {
-                l.this.f5296c.activeFloorIndex = l.this.f5296c.floor_indexs[i];
-                l.this.f5296c.activeFloorName = l.this.f5296c.floor_names[i];
+            if (l.this.c != null) {
+                l.this.c.activeFloorIndex = l.this.c.floor_indexs[i];
+                l.this.c.activeFloorName = l.this.c.floor_names[i];
                 try {
-                    l.this.setIndoorBuildingInfo(l.this.f5296c);
+                    l.this.setIndoorBuildingInfo(l.this.c);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
@@ -466,13 +458,11 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/l$d.class */
     public final class d implements Runnable {
         private Context b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private AMap.OnCacheRemoveListener f5350c;
+        private AMap.OnCacheRemoveListener c;
 
         public d(Context context, AMap.OnCacheRemoveListener onCacheRemoveListener) {
             this.b = context;
-            this.f5350c = onCacheRemoveListener;
+            this.c = onCacheRemoveListener;
         }
 
         public final boolean equals(Object obj) {
@@ -505,7 +495,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
     public l(IGLSurfaceView iGLSurfaceView, Context context, boolean z) {
         this.t = null;
         this.u = new q();
-        this.f5294a = false;
+        this.a = false;
         this.A = false;
         this.E = false;
         this.G = new AtomicBoolean(false);
@@ -537,7 +527,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.am = -1L;
         this.ap = false;
         this.aq = 0.0f;
-        this.f5295ar = 1.0f;
+        this.ar = 1.0f;
         this.as = 1.0f;
         this.at = true;
         this.au = false;
@@ -778,7 +768,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             public final void run() {
                 super.run();
                 try {
-                    l.this.setTrafficEnabled(this.f5344c);
+                    l.this.setTrafficEnabled(this.c);
                 } catch (Throwable th) {
                     th.printStackTrace();
                 }
@@ -806,14 +796,14 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             @Override // com.amap.api.col.p0003sl.l.a, java.lang.Runnable
             public final void run() {
                 super.run();
-                l.this.setMapCustomEnable(this.f5344c);
+                l.this.setMapCustomEnable(this.c);
             }
         };
         this.aN = new a() { // from class: com.amap.api.col.3sl.l.37
             @Override // com.amap.api.col.p0003sl.l.a, java.lang.Runnable
             public final void run() {
                 super.run();
-                l.this.a(this.g, this.f5344c);
+                l.this.a(this.g, this.c);
             }
         };
         this.aO = new a() { // from class: com.amap.api.col.3sl.l.38
@@ -821,7 +811,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             public final void run() {
                 super.run();
                 try {
-                    l.this.setMapTextEnable(this.f5344c);
+                    l.this.setMapTextEnable(this.c);
                 } catch (Throwable th) {
                     th.printStackTrace();
                 }
@@ -832,7 +822,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             public final void run() {
                 super.run();
                 try {
-                    l.this.setRoadArrowEnable(this.f5344c);
+                    l.this.setRoadArrowEnable(this.c);
                 } catch (Throwable th) {
                     th.printStackTrace();
                 }
@@ -843,7 +833,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             public final void run() {
                 super.run();
                 try {
-                    l.this.setNaviLabelEnable(this.f5344c, this.h, this.i);
+                    l.this.setNaviLabelEnable(this.c, this.h, this.i);
                 } catch (Throwable th) {
                     th.printStackTrace();
                 }
@@ -854,7 +844,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             public final void run() {
                 super.run();
                 try {
-                    l.this.setConstructingRoadEnable(this.f5344c);
+                    l.this.setConstructingRoadEnable(this.c);
                 } catch (Throwable th) {
                     th.printStackTrace();
                 }
@@ -875,7 +865,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             @Override // com.amap.api.col.p0003sl.l.a, java.lang.Runnable
             public final void run() {
                 super.run();
-                l.this.b(this.g, this.f5344c);
+                l.this.b(this.g, this.c);
             }
         };
         this.aU = new a() { // from class: com.amap.api.col.3sl.l.5
@@ -883,7 +873,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             public final void run() {
                 super.run();
                 try {
-                    l.this.setIndoorEnabled(this.f5344c);
+                    l.this.setIndoorEnabled(this.c);
                 } catch (Throwable th) {
                     th.printStackTrace();
                 }
@@ -903,7 +893,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             @Override // com.amap.api.col.p0003sl.l.a, java.lang.Runnable
             public final void run() {
                 super.run();
-                l.this.c(this.g, this.f5344c);
+                l.this.c(this.g, this.c);
             }
         };
         this.aY = "";
@@ -926,9 +916,9 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.s = -1;
         this.e = context;
         hy a2 = hx.a(context, dw.a());
-        if (a2.f5127a == hx.c.SuccessCode) {
+        if (a2.a == hx.c.SuccessCode) {
             dy.a(context);
-            dy.a(dx.f4872c, "init map delegate");
+            dy.a(dx.c, "init map delegate");
         }
         com.autonavi.extra.b bVar = new com.autonavi.extra.b();
         this.aX = bVar;
@@ -969,7 +959,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         k kVar = new k(this, this.e, mapConfig != null ? mapConfig.isAbroadEnable() : false);
         this.aH = kVar;
         kVar.a(this);
-        if (a2.f5127a != hx.c.SuccessCode) {
+        if (a2.a != hx.c.SuccessCode) {
             this.b.setMapEnable(false);
         }
         this.F = this.f.getEngineIDWithType(1);
@@ -999,7 +989,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                 mapViewInitParam.screenHeight = i3;
                 mapViewInitParam.screenScale = f;
                 mapViewInitParam.textScale = this.as * f;
-                mapViewInitParam.mapZoomScale = this.f5295ar;
+                mapViewInitParam.mapZoomScale = this.ar;
                 mapViewInitParam.taskThreadCount = 3;
                 this.f.createAMapEngineWithFrame(mapViewInitParam);
                 GLMapState mapState = this.f.getMapState(engineIDWithType);
@@ -1008,8 +998,8 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                 mapState.setMapAngle(this.b.getSR());
                 mapState.setMapGeoCenter(this.b.getSX(), this.b.getSY());
                 this.f.setMapState(engineIDWithType, mapState);
-                this.f5295ar = mapState.calMapZoomScalefactor(i2, i3, i5);
-                this.f.setOvelayBundle(engineIDWithType, new GLOverlayBundle<>(engineIDWithType, this));
+                this.ar = mapState.calMapZoomScalefactor(i2, i3, i5);
+                this.f.setOvelayBundle(engineIDWithType, new GLOverlayBundle(engineIDWithType, this));
                 i4 = engineIDWithType;
             }
         }
@@ -1058,7 +1048,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
 
     private void a(final int i, final int i2, final int i3, final int i4, final boolean z, final boolean z2, final StyleItem[] styleItemArr) {
         synchronized (this) {
-            if (this.ax && this.aw && this.f5294a) {
+            if (this.ax && this.aw && this.a) {
                 e(i3);
                 queueEvent(new Runnable() { // from class: com.amap.api.col.3sl.l.13
                     @Override // java.lang.Runnable
@@ -1464,7 +1454,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                 if (!marker.isViewMode() && (position = marker.getPosition()) != null) {
                     IPoint obtain2 = IPoint.obtain();
                     latlon2Geo(position.latitude, position.longitude, obtain2);
-                    moveCamera(ak.a(obtain2));
+                    moveCamera(ak.a((Point) obtain2));
                 }
                 return z;
             } catch (Throwable th) {
@@ -1549,20 +1539,20 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
     }
 
     private void f() {
-        GLMapState gLMapState;
+        GLMapState newMapState;
         GLMapEngine gLMapEngine = this.f;
-        if (gLMapEngine == null || (gLMapState = (GLMapState) gLMapEngine.getNewMapState(this.F)) == null) {
+        if (gLMapEngine == null || (newMapState = gLMapEngine.getNewMapState(this.F)) == null) {
             return;
         }
         IPoint obtain = IPoint.obtain();
-        gLMapState.recalculate();
-        gLMapState.getMapGeoCenter(obtain);
+        newMapState.recalculate();
+        newMapState.getMapGeoCenter(obtain);
         this.b.setSX(obtain.x);
         this.b.setSY(obtain.y);
-        this.b.setSZ(gLMapState.getMapZoomer());
-        this.b.setSC(gLMapState.getCameraDegree());
-        this.b.setSR(gLMapState.getMapAngle());
-        gLMapState.recycle();
+        this.b.setSZ(newMapState.getMapZoomer());
+        this.b.setSC(newMapState.getCameraDegree());
+        this.b.setSR(newMapState.getMapAngle());
+        newMapState.recycle();
         obtain.recycle();
     }
 
@@ -1705,8 +1695,8 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                     return;
                 }
                 try {
-                    if (l.this.f5296c != null) {
-                        l.this.setIndoorBuildingInfo(l.this.f5296c);
+                    if (l.this.c != null) {
+                        l.this.setIndoorBuildingInfo(l.this.c);
                     }
                 } catch (Throwable th) {
                     th.printStackTrace();
@@ -1779,7 +1769,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         } catch (Throwable th) {
             th.printStackTrace();
         }
-        this.b.setLimitIPoints(null);
+        this.b.setLimitIPoints((IPoint[]) null);
     }
 
     private void q() {
@@ -1837,7 +1827,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             });
             return;
         }
-        this.aN.f5344c = z;
+        this.aN.c = z;
         this.aN.b = true;
         this.aN.g = i;
     }
@@ -1886,7 +1876,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         a(czVar.c(), false);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void accelerateNetworkInChinese(boolean z) {
         com.autonavi.extra.b bVar = this.aX;
         if (bVar != null) {
@@ -1894,7 +1883,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addAMapAppResourceListener(AMap.AMapAppResourceRequestListener aMapAppResourceRequestListener) {
         q qVar = this.u;
         if (qVar != null) {
@@ -1902,19 +1890,18 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final Arc addArc(ArcOptions arcOptions) throws RemoteException {
         if (arcOptions == null) {
             return null;
         }
         try {
             resetRenderTime();
-            ArcOptions m2395clone = arcOptions.m2395clone();
+            ArcOptions m8838clone = arcOptions.m8838clone();
             String createId = this.D.createId("ARC");
-            Arc arc = new Arc(this.D, m2395clone, createId);
+            Arc arc = new Arc(this.D, m8838clone, createId);
             Arc arc2 = arc;
             if (this.D != null) {
-                arc2 = (Arc) this.D.addOverlayObject(createId, arc, m2395clone);
+                arc2 = (Arc) this.D.addOverlayObject(createId, arc, m8838clone);
             }
             return arc2;
         } catch (Throwable th) {
@@ -1923,7 +1910,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final BuildingOverlay addBuildingOverlay() {
         try {
             dt.h(this.e);
@@ -1951,19 +1937,18 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final Circle addCircle(CircleOptions circleOptions) throws RemoteException {
         if (circleOptions == null) {
             return null;
         }
         try {
             resetRenderTime();
-            CircleOptions m2401clone = circleOptions.m2401clone();
+            CircleOptions m8844clone = circleOptions.m8844clone();
             String createId = this.D.createId("CIRCLE");
-            Circle circle = new Circle(this.D, m2401clone, createId);
+            Circle circle = new Circle(this.D, m8844clone, createId);
             Circle circle2 = circle;
             if (this.D != null) {
-                circle2 = (Circle) this.D.addOverlayObject(createId, circle, m2401clone);
+                circle2 = (Circle) this.D.addOverlayObject(createId, circle, m8844clone);
             }
             return circle2;
         } catch (Throwable th) {
@@ -1972,7 +1957,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final CrossOverlay addCrossVector(CrossOverlayOptions crossOverlayOptions) {
         if (crossOverlayOptions == null || crossOverlayOptions.getRes() == null) {
             return null;
@@ -1995,7 +1979,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return new CrossOverlay(crossOverlayOptions, crossVectorOverlay);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final GL3DModel addGLModel(GL3DModelOptions gL3DModelOptions) {
         resetRenderTime();
         String createId = this.D.createId("GL3DMODEL");
@@ -2004,7 +1987,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return gL3DModel;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void addGestureMapMessage(int i, AbstractGestureMapMessage abstractGestureMapMessage) {
         if (!this.aw || this.f == null) {
             return;
@@ -2018,19 +2000,18 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final GroundOverlay addGroundOverlay(GroundOverlayOptions groundOverlayOptions) throws RemoteException {
         if (groundOverlayOptions == null) {
             return null;
         }
         try {
             resetRenderTime();
-            GroundOverlayOptions m2403clone = groundOverlayOptions.m2403clone();
+            GroundOverlayOptions m8846clone = groundOverlayOptions.m8846clone();
             String createId = this.D.createId("GROUNDOVERLAY");
-            GroundOverlay groundOverlay = new GroundOverlay(this.D, m2403clone, createId);
+            GroundOverlay groundOverlay = new GroundOverlay(this.D, m8846clone, createId);
             GroundOverlay groundOverlay2 = groundOverlay;
             if (this.D != null) {
-                groundOverlay2 = (GroundOverlay) this.D.addOverlayObject(createId, groundOverlay, m2403clone);
+                groundOverlay2 = (GroundOverlay) this.D.addOverlayObject(createId, groundOverlay, m8846clone);
             }
             return groundOverlay2;
         } catch (Throwable th) {
@@ -2039,7 +2020,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final HeatMapGridLayer addHeatMapGridLayer(HeatMapGridLayerOptions heatMapGridLayerOptions) throws RemoteException {
         try {
             resetRenderTime();
@@ -2054,7 +2034,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final HeatMapLayer addHeatMapLayer(HeatMapLayerOptions heatMapLayerOptions) throws RemoteException {
         try {
             resetRenderTime();
@@ -2069,7 +2048,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final MVTTileOverlay addMVTTileOverlay(MVTTileOverlayOptions mVTTileOverlayOptions) throws RemoteException {
         try {
             String createId = this.D.createId("MVTTILEOVERLAY");
@@ -2082,14 +2060,13 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final Marker addMarker(MarkerOptions markerOptions) throws RemoteException {
         try {
             resetRenderTime();
-            MarkerOptions m2412clone = markerOptions.m2412clone();
+            MarkerOptions m8855clone = markerOptions.m8855clone();
             String createId = this.D.createId("MARKER");
-            Marker marker = new Marker(this.D, m2412clone, createId);
-            this.D.addOverlayObject(createId, marker, m2412clone);
+            Marker marker = new Marker(this.D, m8855clone, createId);
+            this.D.addOverlayObject(createId, marker, m8855clone);
             return marker;
         } catch (Throwable th) {
             dw.a(th);
@@ -2099,7 +2076,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final ArrayList<Marker> addMarkers(ArrayList<MarkerOptions> arrayList, boolean z) throws RemoteException {
         try {
             resetRenderTime();
@@ -2140,19 +2116,18 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final MultiPointOverlay addMultiPointOverlay(MultiPointOverlayOptions multiPointOverlayOptions) throws RemoteException {
         if (multiPointOverlayOptions == null) {
             return null;
         }
         try {
             resetRenderTime();
-            MultiPointOverlayOptions m2413clone = multiPointOverlayOptions.m2413clone();
+            MultiPointOverlayOptions m8856clone = multiPointOverlayOptions.m8856clone();
             String createId = this.D.createId("MULTIOVERLAY");
-            MultiPointOverlay multiPointOverlay = new MultiPointOverlay(this.D, m2413clone, createId);
+            MultiPointOverlay multiPointOverlay = new MultiPointOverlay(this.D, m8856clone, createId);
             MultiPointOverlay multiPointOverlay2 = multiPointOverlay;
             if (this.D != null) {
-                multiPointOverlay2 = (MultiPointOverlay) this.D.addOverlayObject(createId, multiPointOverlay, m2413clone);
+                multiPointOverlay2 = (MultiPointOverlay) this.D.addOverlayObject(createId, multiPointOverlay, m8856clone);
             }
             return multiPointOverlay2;
         } catch (Throwable th) {
@@ -2160,24 +2135,22 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final RouteOverlay addNaviRouteOverlay() {
         return null;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final NavigateArrow addNavigateArrow(NavigateArrowOptions navigateArrowOptions) throws RemoteException {
         if (navigateArrowOptions == null) {
             return null;
         }
         try {
             resetRenderTime();
-            NavigateArrowOptions m2416clone = navigateArrowOptions.m2416clone();
+            NavigateArrowOptions m8859clone = navigateArrowOptions.m8859clone();
             String createId = this.D.createId("NAVIGATEARROW");
-            NavigateArrow navigateArrow = new NavigateArrow(this.D, m2416clone, createId);
+            NavigateArrow navigateArrow = new NavigateArrow(this.D, m8859clone, createId);
             NavigateArrow navigateArrow2 = navigateArrow;
             if (this.D != null) {
-                navigateArrow2 = (NavigateArrow) this.D.addOverlayObject(createId, navigateArrow, m2416clone);
+                navigateArrow2 = (NavigateArrow) this.D.addOverlayObject(createId, navigateArrow, m8859clone);
             }
             return navigateArrow2;
         } catch (Throwable th) {
@@ -2186,7 +2159,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addOnCameraChangeListener(AMap.OnCameraChangeListener onCameraChangeListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -2194,7 +2166,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addOnIndoorBuildingActiveListener(AMap.OnIndoorBuildingActiveListener onIndoorBuildingActiveListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -2202,7 +2173,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addOnInfoWindowClickListener(AMap.OnInfoWindowClickListener onInfoWindowClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -2210,7 +2180,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addOnMapClickListener(AMap.OnMapClickListener onMapClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -2218,7 +2187,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addOnMapLoadedListener(AMap.OnMapLoadedListener onMapLoadedListener) {
         q qVar = this.u;
         if (qVar != null) {
@@ -2226,7 +2194,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addOnMapLongClickListener(AMap.OnMapLongClickListener onMapLongClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -2234,7 +2201,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addOnMapTouchListener(AMap.OnMapTouchListener onMapTouchListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -2242,7 +2208,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addOnMarkerClickListener(AMap.OnMarkerClickListener onMarkerClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -2250,7 +2215,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addOnMarkerDragListener(AMap.OnMarkerDragListener onMarkerDragListener) {
         q qVar = this.u;
         if (qVar != null) {
@@ -2258,7 +2222,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addOnMyLocationChangeListener(AMap.OnMyLocationChangeListener onMyLocationChangeListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -2266,7 +2229,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addOnPOIClickListener(AMap.OnPOIClickListener onPOIClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -2274,7 +2236,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void addOnPolylineClickListener(AMap.OnPolylineClickListener onPolylineClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -2282,7 +2243,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void addOverlayTexture(int i, GLTextureProperty gLTextureProperty) {
         GLOverlayBundle overlayBundle;
         try {
@@ -2296,7 +2256,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final ParticleOverlay addParticleOverlay(ParticleOverlayOptions particleOverlayOptions) {
         if (particleOverlayOptions == null) {
             return null;
@@ -2313,19 +2272,18 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final Polygon addPolygon(PolygonOptions polygonOptions) throws RemoteException {
         if (polygonOptions == null) {
             return null;
         }
         try {
             resetRenderTime();
-            PolygonOptions m2420clone = polygonOptions.m2420clone();
+            PolygonOptions m8863clone = polygonOptions.m8863clone();
             String createId = this.D.createId("POLYGON");
-            Polygon polygon = new Polygon(this.D, m2420clone, createId);
+            Polygon polygon = new Polygon(this.D, m8863clone, createId);
             Polygon polygon2 = polygon;
             if (this.D != null) {
-                polygon2 = (Polygon) this.D.addOverlayObject(createId, polygon, m2420clone);
+                polygon2 = (Polygon) this.D.addOverlayObject(createId, polygon, m8863clone);
             }
             return polygon2;
         } catch (Throwable th) {
@@ -2336,7 +2294,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final Polyline addPolyline(PolylineOptions polylineOptions) throws RemoteException {
         if (polylineOptions == null) {
             return null;
@@ -2353,24 +2310,22 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final Text addText(TextOptions textOptions) throws RemoteException {
         try {
             resetRenderTime();
             String createId = this.D.createId("TEXT");
-            TextOptions m2425clone = textOptions.m2425clone();
-            MarkerOptions a2 = cn.a(m2425clone);
+            TextOptions m8868clone = textOptions.m8868clone();
+            MarkerOptions a2 = cn.a(m8868clone);
             Marker marker = new Marker(this.D, a2, createId);
-            marker.setObject(m2425clone.getObject());
+            marker.setObject(m8868clone.getObject());
             this.D.addOverlayObject(createId, marker, a2);
-            return new Text(marker, m2425clone);
+            return new Text(marker, m8868clone);
         } catch (Throwable th) {
             dw.a(th);
             return null;
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final TileOverlay addTileOverlay(TileOverlayOptions tileOverlayOptions) throws RemoteException {
         try {
             TileProvider tileProvider = tileOverlayOptions.getTileProvider();
@@ -2387,12 +2342,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.mapcore.interfaces.IAMapListener
     public final void afterAnimation() {
         redrawInfoWindow();
     }
 
-    @Override // com.autonavi.base.amap.mapcore.interfaces.IAMapListener
     public final void afterDrawFrame(int i, GLMapState gLMapState) {
         float mapZoomer = gLMapState.getMapZoomer();
         GLMapEngine gLMapEngine = this.f;
@@ -2413,7 +2366,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.az = true;
     }
 
-    @Override // com.autonavi.base.amap.mapcore.interfaces.IAMapListener
     public final void afterDrawLabel(int i, GLMapState gLMapState) {
         j();
         com.autonavi.extra.b bVar = this.aX;
@@ -2431,7 +2383,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.mapcore.interfaces.IAMapListener
     public final void afterRendererOver(int i, GLMapState gLMapState) {
         GLMapEngine gLMapEngine = this.f;
         if (gLMapEngine != null) {
@@ -2448,7 +2399,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void animateCamera(CameraUpdate cameraUpdate) throws RemoteException {
         if (cameraUpdate == null) {
             return;
@@ -2456,12 +2406,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         animateCamera(cameraUpdate.getCameraUpdateFactoryDelegate());
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void animateCamera(AbstractCameraUpdateMessage abstractCameraUpdateMessage) throws RemoteException {
         animateCameraWithDurationAndCallback(abstractCameraUpdateMessage, 250L, (AMap.CancelableCallback) null);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void animateCameraWithCallback(CameraUpdate cameraUpdate, AMap.CancelableCallback cancelableCallback) throws RemoteException {
         if (cameraUpdate == null) {
             return;
@@ -2469,7 +2417,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         animateCameraWithDurationAndCallback(cameraUpdate, 250L, cancelableCallback);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void animateCameraWithDurationAndCallback(CameraUpdate cameraUpdate, long j, AMap.CancelableCallback cancelableCallback) {
         if (cameraUpdate == null) {
             return;
@@ -2477,7 +2424,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         animateCameraWithDurationAndCallback(cameraUpdate.getCameraUpdateFactoryDelegate(), j, cancelableCallback);
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void animateCameraWithDurationAndCallback(AbstractCameraUpdateMessage abstractCameraUpdateMessage, long j, AMap.CancelableCallback cancelableCallback) {
         if (abstractCameraUpdateMessage == null || this.G.get() || this.f == null) {
             return;
@@ -2531,7 +2477,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             });
             return;
         }
-        this.aT.f5344c = z;
+        this.aT.c = z;
         this.aT.b = true;
         this.aT.g = i;
     }
@@ -2545,7 +2491,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         b(true);
     }
 
-    @Override // com.autonavi.base.amap.mapcore.interfaces.IAMapListener
     public final void beforeDrawLabel(int i, GLMapState gLMapState) {
         j();
         GLMapEngine gLMapEngine = this.f;
@@ -2578,12 +2523,11 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             });
             return;
         }
-        this.aW.f5344c = z;
+        this.aW.c = z;
         this.aW.b = true;
         this.aW.g = i;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final Pair<Float, LatLng> calculateZoomToSpanLevel(int i, int i2, int i3, int i4, LatLng latLng, LatLng latLng2) {
         if (latLng != null && latLng2 != null && i == i2 && i2 == i3 && i3 == i4 && latLng.latitude == latLng2.latitude && latLng.longitude == latLng2.longitude) {
             return new Pair<>(Float.valueOf(getMaxZoomLevel()), latLng);
@@ -2600,11 +2544,11 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         builder.include(latLng);
         builder.include(latLng2);
         GLMapState gLMapState = new GLMapState(this.F, this.f.getNativeInstance());
-        Pair<Float, IPoint> a2 = dw.a(mapConfig, i, i2, i3, i4, builder.build(), getMapWidth(), getMapHeight());
+        Pair<Float, IPoint> a2 = dw.a((IMapConfig) mapConfig, i, i2, i3, i4, builder.build(), getMapWidth(), getMapHeight());
         gLMapState.recycle();
         if (a2 != null) {
             DPoint obtain2 = DPoint.obtain();
-            GLMapState.geo2LonLat(a2.second.x, a2.second.y, obtain2);
+            GLMapState.geo2LonLat(((IPoint) a2.second).x, ((IPoint) a2.second).y, obtain2);
             Pair<Float, LatLng> pair2 = new Pair<>(a2.first, new LatLng(obtain2.y, obtain2.x));
             obtain2.recycle();
             return pair2;
@@ -2612,18 +2556,16 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return null;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final boolean canShowIndoorSwitch() {
         at atVar;
-        if (getZoomLevel() < 17.0f || (atVar = this.f5296c) == null || atVar.g == null) {
+        if (getZoomLevel() < 17.0f || (atVar = this.c) == null || atVar.g == null) {
             return false;
         }
         FPoint obtain = FPoint.obtain();
-        a(this.f5296c.g.x, this.f5296c.g.y, obtain);
+        a(this.c.g.x, this.c.g.y, obtain);
         return this.X.contains((int) obtain.x, (int) obtain.y);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final boolean canStopMapRender() {
         GLMapEngine gLMapEngine = this.f;
         if (gLMapEngine != null) {
@@ -2633,12 +2575,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return true;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void changeGLOverlayIndex() {
         this.D.changeOverlayIndex();
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void changeLogoIconStyle(String str, boolean z, int i) {
         eh ehVar = this.C;
         if (ehVar != null) {
@@ -2650,7 +2590,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void changeMapLogo(int i, boolean z) {
         if (this.G.get()) {
             return;
@@ -2665,7 +2604,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void changeSize(int i, int i2) {
         MapConfig mapConfig = this.b;
         if (mapConfig != null) {
@@ -2676,17 +2614,16 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void changeSurface(int i, GL10 gl10, int i2, int i3) {
         WindowManager windowManager;
-        String str = dx.f4872c;
+        String str = dx.c;
         dy.a(str, "changeSurface " + i2 + " " + i3);
         this.az = false;
         if (!this.aw) {
             createSurface(i, gl10, null);
         }
         y yVar = this.ao;
-        if (yVar != null && this.e != null && ((this.g != yVar.b() || this.h != this.ao.c()) && (windowManager = (WindowManager) this.e.getSystemService(Context.WINDOW_SERVICE)) != null)) {
+        if (yVar != null && this.e != null && ((this.g != yVar.b() || this.h != this.ao.c()) && (windowManager = (WindowManager) this.e.getSystemService("window")) != null)) {
             Display defaultDisplay = windowManager.getDefaultDisplay();
             DisplayMetrics displayMetrics = new DisplayMetrics();
             if (defaultDisplay != null) {
@@ -2698,11 +2635,11 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.h = i3;
         this.X = new Rect(0, 0, i2, i3);
         this.F = a(i, new Rect(0, 0, this.g, this.h), this.g, this.h);
-        dy.a(dx.f4872c, "create engine with frame complete");
+        dy.a(dx.c, "create engine with frame complete");
         if (!this.ax) {
             MapConfig mapConfig = this.b;
             if (mapConfig != null) {
-                mapConfig.setMapZoomScale(this.f5295ar);
+                mapConfig.setMapZoomScale(this.ar);
                 this.b.setMapWidth(i2);
                 this.b.setMapHeight(i3);
             }
@@ -2725,7 +2662,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             this.b.setAnchorY(i3 >> 1);
         }
         this.f.setProjectionCenter(this.F, this.b.getAnchorX(), this.b.getAnchorY());
-        this.f5294a = true;
+        this.a = true;
         if (this.aT.b) {
             this.aT.run();
         }
@@ -2781,7 +2718,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         redrawInfoWindow();
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void changeSurface(GL10 gl10, int i, int i2) {
         try {
             changeSurface(1, gl10, i, i2);
@@ -2791,7 +2727,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void checkMapState(IGLMapState iGLMapState) {
         if (this.b == null || this.G.get()) {
             return;
@@ -2817,7 +2752,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                 iPointArr[1] = obtain2;
                 this.b.setLimitIPoints(iPointArr);
             }
-            float a2 = dw.a(this.b, iPointArr[0].x, iPointArr[0].y, iPointArr[1].x, iPointArr[1].y, getMapWidth(), getMapHeight());
+            float a2 = dw.a((IMapConfig) this.b, iPointArr[0].x, iPointArr[0].y, iPointArr[1].x, iPointArr[1].y, getMapWidth(), getMapHeight());
             float mapZoomer = iGLMapState.getMapZoomer();
             if (this.b.isSetLimitZoomLevel()) {
                 float maxZoomLevel = this.b.getMaxZoomLevel();
@@ -2832,7 +2767,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             iGLMapState.setMapZoomer(a2);
             IPoint obtain3 = IPoint.obtain();
             iGLMapState.getMapGeoCenter(obtain3);
-            int[] a3 = dw.a(iPointArr[0].x, iPointArr[0].y, iPointArr[1].x, iPointArr[1].y, this.b, iGLMapState, obtain3.x, obtain3.y);
+            int[] a3 = dw.a(iPointArr[0].x, iPointArr[0].y, iPointArr[1].x, iPointArr[1].y, (IMapConfig) this.b, iGLMapState, obtain3.x, obtain3.y);
             iGLMapState.setMapGeoCenter(a3[0], a3[1]);
             obtain3.recycle();
         } catch (Throwable th) {
@@ -2840,12 +2775,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final float checkZoomLevel(float f) throws RemoteException {
-        return dw.a(this.b, f);
+        return dw.a((IMapConfig) this.b, f);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void clear() throws RemoteException {
         try {
             clear(false);
@@ -2856,7 +2789,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void clear(boolean z) throws RemoteException {
         try {
             hideInfoWindow();
@@ -2890,12 +2822,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void clearTileCache() {
         this.D.clearTileCache();
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final long createGLOverlay(int i) {
         GLMapEngine gLMapEngine = this.f;
         if (gLMapEngine != null) {
@@ -2904,7 +2834,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return 0L;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final String createId(String str) {
         IGlOverlayLayer iGlOverlayLayer = this.D;
         if (iGlOverlayLayer != null) {
@@ -2913,34 +2842,33 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return null;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void createSurface(int i, GL10 gl10, EGLConfig eGLConfig) {
         synchronized (this) {
-            dy.a(dx.f4872c, "createSurface");
+            dy.a(dx.c, "createSurface");
             this.aI = System.currentTimeMillis();
             if (this.Y == 3) {
                 this.C.d().a(ec.b);
             } else {
-                this.C.d().a(ec.f4881a);
+                this.C.d().a(ec.a);
             }
             this.ax = false;
             this.g = this.B.getWidth();
             this.h = this.B.getHeight();
             this.az = false;
             AeUtil.loadLib(this.e);
-            dy.a(dx.f4872c, "load lib complete");
+            dy.a(dx.c, "load lib complete");
             AeUtil.initCrashHandle(this.e);
             GLMapEngine.InitParam initResource = AeUtil.initResource(this.e);
-            dy.a(dx.f4872c, "load res complete");
+            dy.a(dx.c, "load res complete");
             this.f.createAMapInstance(initResource);
-            dy.a(dx.f4872c, "create engine complete");
+            dy.a(dx.c, "create engine complete");
             this.aF = new cp();
-            dy.a(dx.f4872c, "init shader complete");
+            dy.a(dx.c, "init shader complete");
             if (this.aX != null) {
                 this.aX.i();
             }
             this.aw = true;
-            this.l = gl10.glGetString(7937);
+            this.l = gl10.glGetString(GL10.GL_RENDERER);
             GLMapState mapState = this.f.getMapState(this.F);
             if (mapState != null && mapState.getNativeInstance() != 0) {
                 mapState.setMapGeoCenter((int) this.b.getSX(), (int) this.b.getSY());
@@ -2964,7 +2892,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void createSurface(GL10 gl10, EGLConfig eGLConfig) {
         try {
             this.am = Thread.currentThread().getId();
@@ -2980,10 +2907,9 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void destroy() {
         this.G.set(true);
-        dy.a(dx.f4872c, "destroy map");
+        dy.a(dx.c, "destroy map");
         try {
             if (this.L != null) {
                 this.L.deactivate();
@@ -3020,7 +2946,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             }
             dk.b();
             if (this.f != null) {
-                this.f.setMapListener(null);
+                this.f.setMapListener((IAMapListener) null);
                 this.f.releaseNetworkState();
                 queueEvent(new Runnable() { // from class: com.amap.api.col.3sl.l.33
                     @Override // java.lang.Runnable
@@ -3076,7 +3002,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void destroySurface(int i) {
         this.aA.lock();
         try {
@@ -3093,7 +3018,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                     if (this.bc > 0) {
                         dt.a(this.e, this.bc);
                     }
-                    dy.a(dx.f4872c, "destroy engine complete");
+                    dy.a(dx.c, "destroy engine complete");
                 }
                 if (this.aX != null) {
                     this.aX.f();
@@ -3111,14 +3036,13 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void drawFrame(GL10 gl10) {
         if (this.G.get() || this.f == null || EGL14.eglGetCurrentContext() == EGL14.EGL_NO_CONTEXT) {
             return;
         }
         MapConfig mapConfig = this.b;
         if (mapConfig != null && !mapConfig.isMapEnable()) {
-            GLES20.glClear(LogType.UNEXP_RESTART);
+            GLES20.glClear(16640);
             return;
         }
         a(this.F);
@@ -3160,7 +3084,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void geo2Latlng(int i, int i2, DPoint dPoint) {
         DPoint pixelsToLatLong = VirtualEarthProjection.pixelsToLatLong(i, i2, 20);
         dPoint.x = pixelsToLatLong.x;
@@ -3168,23 +3091,19 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         pixelsToLatLong.recycle();
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void geo2Map(int i, int i2, FPoint fPoint) {
         fPoint.x = (int) (i - this.b.getSX());
         fPoint.y = (int) (i2 - this.b.getSY());
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final com.autonavi.extra.b getAMapExtraInterfaceManager() {
         return this.aX;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final Projection getAMapProjection() throws RemoteException {
         return new Projection(this.y);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final UiSettings getAMapUiSettings() throws RemoteException {
         if (this.x == null) {
             this.x = new UiSettings(this.z);
@@ -3192,17 +3111,14 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return this.x;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final AMapCameraInfo getCamerInfo() {
         return null;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final float getCameraAngle() {
         return getCameraDegree(this.F);
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final float getCameraDegree(int i) {
         MapConfig mapConfig = this.b;
         if (mapConfig != null) {
@@ -3211,12 +3127,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return 0.0f;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final CameraPosition getCameraPosition() throws RemoteException {
         return getCameraPositionPrj(this.I);
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final CameraPosition getCameraPositionPrj(boolean z) {
         LatLng g;
         try {
@@ -3245,12 +3159,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final Context getContext() {
         return this.e;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final String getCurrentWorldVectorMapStyle() {
         try {
             if (this.aX != null) {
@@ -3264,38 +3176,32 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final k getCustomStyleManager() {
         return this.aH;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final int getEngineIDWithGestureInfo(EAMapPlatformGestureInfo eAMapPlatformGestureInfo) {
         GLMapEngine gLMapEngine = this.f;
         return gLMapEngine != null ? gLMapEngine.getEngineIDWithGestureInfo(eAMapPlatformGestureInfo) : this.F;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final float[] getFinalMatrix() {
         MapConfig mapConfig = this.b;
         return mapConfig != null ? mapConfig.getMvpMatrix() : this.m;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final GLMapEngine getGLMapEngine() {
         return this.f;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final View getGLMapView() {
-        IGLSurfaceView iGLSurfaceView = this.B;
-        if (iGLSurfaceView instanceof View) {
-            return (View) iGLSurfaceView;
+        View view = this.B;
+        if (view instanceof View) {
+            return view;
         }
         return null;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void getGeoCenter(int i, IPoint iPoint) {
         MapConfig mapConfig = this.b;
         if (mapConfig != null) {
@@ -3304,12 +3210,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final IGlOverlayLayer getGlOverlayLayer() {
         return this.D;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final long getGlOverlayMgrPtr() {
         GLMapEngine gLMapEngine = this.f;
         if (gLMapEngine != null) {
@@ -3318,17 +3222,14 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return 0L;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final InfoWindowAnimationManager getInfoWindowAnimationManager() {
         return null;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final au getInfoWindowDelegate() {
         return this.w;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void getLatLng2Map(double d2, double d3, FPoint fPoint) {
         IPoint obtain = IPoint.obtain();
         latlon2Geo(d2, d3, obtain);
@@ -3336,7 +3237,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         obtain.recycle();
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void getLatLng2Pixel(double d2, double d3, IPoint iPoint) {
         if (this.G.get() || !this.aw || this.f == null) {
             return;
@@ -3346,11 +3246,11 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
             FPoint obtain = FPoint.obtain();
             a(latLongToPixels.x, latLongToPixels.y, obtain);
             if (obtain.x == -10000.0f && obtain.y == -10000.0f) {
-                GLMapState gLMapState = (GLMapState) this.f.getNewMapState(this.F);
-                gLMapState.setCameraDegree(0.0f);
-                gLMapState.recalculate();
-                gLMapState.p20ToScreenPoint(latLongToPixels.x, latLongToPixels.y, obtain);
-                gLMapState.recycle();
+                GLMapState newMapState = this.f.getNewMapState(this.F);
+                newMapState.setCameraDegree(0.0f);
+                newMapState.recalculate();
+                newMapState.p20ToScreenPoint(latLongToPixels.x, latLongToPixels.y, obtain);
+                newMapState.recycle();
             }
             iPoint.x = (int) obtain.x;
             iPoint.y = (int) obtain.y;
@@ -3360,7 +3260,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void getLatLngRect(DPoint[] dPointArr) {
         try {
             Rectangle geoRectangle = this.b.getGeoRectangle();
@@ -3382,7 +3281,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final float getLogoMarginRate(int i) {
         eh ehVar = this.C;
         if (ehVar != null) {
@@ -3391,7 +3289,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return 0.0f;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final int getLogoPosition() {
         try {
             return this.z.getLogoPosition();
@@ -3402,12 +3299,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final Handler getMainHandler() {
         return this.j;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final float getMapAngle(int i) {
         MapConfig mapConfig = this.b;
         if (mapConfig != null) {
@@ -3416,14 +3311,13 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return 0.0f;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final LatLngBounds getMapBounds(LatLng latLng, float f, float f2, float f3) {
         int mapWidth = getMapWidth();
         int mapHeight = getMapHeight();
         if (mapWidth <= 0 || mapHeight <= 0 || this.G.get()) {
             return null;
         }
-        float a2 = dw.a(this.b, f);
+        float a2 = dw.a((IMapConfig) this.b, f);
         GLMapState gLMapState = new GLMapState(this.F, this.f.getNativeInstance());
         if (latLng != null) {
             IPoint obtain = IPoint.obtain();
@@ -3445,12 +3339,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return LatLngBounds.builder().include(latLng3).include(latLng2).build();
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final MapConfig getMapConfig() {
         return this.b;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final String getMapContentApprovalNumber() {
         MapConfig mapConfig = this.b;
         if (mapConfig == null || mapConfig.isCustomStyleEnable()) {
@@ -3461,12 +3353,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return !TextUtils.isEmpty(a2) ? a2 : "GS(2021)5875号 | GS(2020)2189号";
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final int getMapHeight() {
         return this.h;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void getMapPrintScreen(AMap.onMapPrintScreenListener onmapprintscreenlistener) {
         try {
             this.u.a(Integer.valueOf(AMap.onMapPrintScreenListener.class.hashCode()), (Integer) onmapprintscreenlistener);
@@ -3478,7 +3368,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final GLMapState getMapProjection() {
         GLMapEngine gLMapEngine = this.f;
         if (gLMapEngine != null) {
@@ -3487,7 +3376,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return null;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final List<Marker> getMapScreenMarkers() throws RemoteException {
         if (dw.a(getMapWidth(), getMapHeight()) && !this.G.get()) {
             return this.D.getMapScreenMarkers();
@@ -3495,7 +3383,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return new ArrayList();
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void getMapScreenShot(AMap.OnMapScreenShotListener onMapScreenShotListener, boolean z) {
         try {
             this.u.a(Integer.valueOf(AMap.OnMapScreenShotListener.class.hashCode()), (Integer) onMapScreenShotListener);
@@ -3507,32 +3394,26 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final int getMapTextZIndex() throws RemoteException {
         return this.af;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final int getMapType() throws RemoteException {
         return this.Y;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final int getMapWidth() {
         return this.g;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final float getMapZoomScale() {
-        return this.f5295ar;
+        return this.ar;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final int getMaskLayerType() {
         return this.ah;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final float getMaxZoomLevel() {
         try {
             if (this.b != null) {
@@ -3545,7 +3426,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final float getMinZoomLevel() {
         try {
             if (this.b != null) {
@@ -3558,15 +3438,13 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final Location getMyLocation() throws RemoteException {
         if (this.L != null) {
-            return this.t.f5410a;
+            return this.t.a;
         }
         return null;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final MyLocationStyle getMyLocationStyle() throws RemoteException {
         ck ckVar = this.K;
         if (ckVar != null) {
@@ -3575,12 +3453,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return null;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final int getNativeEngineID() {
         return this.F;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final long getNativeMapController() {
         GLMapEngine gLMapEngine = this.f;
         if (gLMapEngine != null) {
@@ -3589,7 +3465,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return 0L;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final AMap.OnCameraChangeListener getOnCameraChangeListener() throws RemoteException {
         try {
             List a2 = this.u.a(AMap.OnCameraChangeListener.class.hashCode());
@@ -3602,7 +3477,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void getPixel2Geo(int i, int i2, IPoint iPoint) {
         GLMapEngine gLMapEngine;
         GLMapState mapState;
@@ -3612,7 +3486,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         mapState.screenToP20Point(i, i2, iPoint);
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void getPixel2LatLng(int i, int i2, DPoint dPoint) {
         GLMapEngine gLMapEngine;
         GLMapState mapState;
@@ -3628,7 +3501,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         pixelsToLatLong.recycle();
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final float getPreciseLevel(int i) {
         MapConfig mapConfig = this.b;
         if (mapConfig != null) {
@@ -3637,28 +3509,23 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return 0.0f;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final IProjectionDelegate getProjection() throws RemoteException {
         return this.y;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final float[] getProjectionMatrix() {
         MapConfig mapConfig = this.b;
         return mapConfig != null ? mapConfig.getProjectionMatrix() : this.o;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final Rect getRect() {
         return this.X;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final int getRenderMode() {
         return this.B.getRenderMode();
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final int getSX() {
         MapConfig mapConfig = this.b;
         if (mapConfig != null) {
@@ -3667,7 +3534,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return -1;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final int getSY() {
         MapConfig mapConfig = this.b;
         if (mapConfig != null) {
@@ -3676,14 +3542,12 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return -1;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final String getSatelliteImageApprovalNumber() {
         dt.e(this.e);
         String a2 = dm.a(this.e, "approval_number", "si", "");
         return !TextUtils.isEmpty(a2) ? a2 : "GS(2021)1328号";
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final float getScalePerPixel() throws RemoteException {
         try {
             return ((float) ((((Math.cos((getCameraPosition().target.latitude * 3.141592653589793d) / 180.0d) * 2.0d) * 3.141592653589793d) * 6378137.0d) / (Math.pow(2.0d, getZoomLevel()) * 256.0d))) * getMapZoomScale();
@@ -3695,24 +3559,20 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final float getSkyHeight() {
         return this.b.getSkyHeight();
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final String getTerrainApprovalNumber() {
         dt.f(this.e);
         String a2 = dm.a(this.e, "approval_number", "te", "");
         return !TextUtils.isEmpty(a2) ? a2 : "GS(2021)6352号";
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final IUiSettingsDelegate getUiSettings() {
         return this.z;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final float getUnitLengthByZoom(int i) {
         GLMapState gLMapState = new GLMapState(this.F, this.f.getNativeInstance());
         gLMapState.setMapZoomer(i);
@@ -3722,7 +3582,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return gLUnitWithWin;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final View getView() throws RemoteException {
         eh ehVar = this.C;
         if (ehVar != null) {
@@ -3731,43 +3590,37 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return null;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final float[] getViewMatrix() {
         MapConfig mapConfig = this.b;
         return mapConfig != null ? mapConfig.getViewMatrix() : this.n;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final Point getWaterMarkerPositon() {
         eh ehVar = this.C;
         return ehVar != null ? ehVar.a() : new Point();
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final String getWorldVectorMapLanguage() {
         return this.aY;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final String getWorldVectorMapStyle() {
         return this.aZ;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final float getZoomLevel() {
         return c();
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final float getZoomToSpanLevel(LatLng latLng, LatLng latLng2) {
         try {
             MapConfig mapConfig = getMapConfig();
             if (latLng == null || latLng2 == null || !this.aw || this.G.get()) {
                 return mapConfig.getSZ();
             }
-            Pair<Float, IPoint> a2 = dw.a(mapConfig, 0, 0, 0, 0, new LatLngBounds.Builder().include(latLng).include(latLng2).build(), getMapWidth(), getMapHeight());
+            Pair<Float, IPoint> a2 = dw.a((IMapConfig) mapConfig, 0, 0, 0, 0, new LatLngBounds.Builder().include(latLng).include(latLng2).build(), getMapWidth(), getMapHeight());
             if (a2 != null) {
-                return a2.first.floatValue();
+                return ((Float) a2.first).floatValue();
             }
             GLMapState gLMapState = new GLMapState(this.F, this.f.getNativeInstance());
             float mapZoomer = gLMapState.getMapZoomer();
@@ -3779,7 +3632,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void hideInfoWindow() {
         au auVar = this.w;
         if (auVar != null) {
@@ -3787,32 +3639,26 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final boolean isIndoorEnabled() throws RemoteException {
         return this.b.isIndoorEnable();
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final boolean isLockMapAngle(int i) {
         return g(i);
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final boolean isLockMapCameraDegree(int i) {
         return false;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final boolean isMaploaded() {
         return this.J;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final boolean isMyLocationEnabled() throws RemoteException {
         return this.E;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final boolean isTouchPoiEnable() {
         MapConfig mapConfig = this.b;
         if (mapConfig != null) {
@@ -3821,24 +3667,20 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return true;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final boolean isTrafficEnabled() throws RemoteException {
         return this.b.isTrafficEnabled();
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final boolean isUseAnchor() {
         return this.I;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void latlon2Geo(double d2, double d3, IPoint iPoint) {
         Point latLongToPixels = VirtualEarthProjection.latLongToPixels(d2, d3, 20);
         iPoint.x = latLongToPixels.x;
         iPoint.y = latLongToPixels.y;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void loadWorldVectorMap(boolean z) {
         MapConfig mapConfig = this.b;
         if (mapConfig != null) {
@@ -3846,13 +3688,11 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void map2Geo(float f, float f2, IPoint iPoint) {
         iPoint.x = (int) (f + this.b.getSX());
         iPoint.y = (int) (f2 + this.b.getSY());
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void moveCamera(CameraUpdate cameraUpdate) throws RemoteException {
         if (cameraUpdate == null) {
             return;
@@ -3864,7 +3704,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void moveCamera(AbstractCameraUpdateMessage abstractCameraUpdateMessage) throws RemoteException {
         if (this.f == null || this.G.get()) {
             return;
@@ -3900,7 +3739,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.f.addMessage(abstractCameraUpdateMessage2, false);
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void onAMapAppResourceRequest(AMapAppRequestParam aMapAppRequestParam) {
         q qVar = this.u;
         if (qVar == null) {
@@ -3913,26 +3751,22 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void onActivityPause() {
         this.H = true;
         c(this.F);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void onActivityResume() {
         this.H = false;
         d(this.F);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void onChangeFinish() {
         Message obtainMessage = this.j.obtainMessage();
         obtainMessage.what = 11;
         this.j.sendMessage(obtainMessage);
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final boolean onDoubleTap(int i, MotionEvent motionEvent) {
         if (this.aw) {
             a((int) motionEvent.getX(), (int) motionEvent.getY());
@@ -3941,7 +3775,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return false;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void onFling() {
         IGlOverlayLayer iGlOverlayLayer = this.D;
         if (iGlOverlayLayer != null) {
@@ -3950,7 +3783,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.T = true;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void onIndoorBuildingActivity(int i, byte[] bArr) {
         at atVar;
         if (bArr != null) {
@@ -3958,7 +3790,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                 if (bArr.length > 0) {
                     at atVar2 = new at();
                     byte b2 = bArr[0];
-                    atVar2.f4748a = new String(bArr, 1, b2, "utf-8");
+                    atVar2.a = new String(bArr, 1, b2, "utf-8");
                     int i2 = b2 + 1;
                     int i3 = i2 + 1;
                     byte b3 = bArr[i2];
@@ -3978,15 +3810,15 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                     byte b6 = bArr[i9];
                     atVar2.h = new String(bArr, i10, b6, "utf-8");
                     int i11 = i10 + b6;
-                    atVar2.f4749c = GLConvertUtil.getInt(bArr, i11);
+                    atVar2.c = GLConvertUtil.getInt(bArr, i11);
                     int i12 = i11 + 4;
-                    atVar2.floor_indexs = new int[atVar2.f4749c];
-                    atVar2.floor_names = new String[atVar2.f4749c];
-                    atVar2.d = new String[atVar2.f4749c];
+                    atVar2.floor_indexs = new int[atVar2.c];
+                    atVar2.floor_names = new String[atVar2.c];
+                    atVar2.d = new String[atVar2.c];
                     int i13 = 0;
                     while (true) {
                         int i14 = i13;
-                        if (i14 >= atVar2.f4749c) {
+                        if (i14 >= atVar2.c) {
                             break;
                         }
                         atVar2.floor_indexs[i14] = GLConvertUtil.getInt(bArr, i12);
@@ -4052,7 +3884,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         });
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void onLongPress(int i, MotionEvent motionEvent) {
         try {
             this.Q = false;
@@ -4116,12 +3947,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.mapcore.interfaces.IAMapListener
     public final void onMapBlankClick(double d2, double d3) {
         a(d2, d3);
     }
 
-    @Override // com.autonavi.base.amap.mapcore.interfaces.IAMapListener
     public final void onMapPOIClick(MapPoi mapPoi) {
         List a2 = this.u.a(AMap.OnPOIClickListener.class.hashCode());
         if (a2 == null || a2.size() <= 0 || mapPoi == null) {
@@ -4133,7 +3962,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.j.sendMessage(obtain);
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void onPause() {
         f();
         IGlOverlayLayer iGlOverlayLayer = this.D;
@@ -4142,7 +3970,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void onResume() {
         try {
             this.an.setRenderFps(15.0f);
@@ -4158,7 +3985,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final boolean onSingleTapConfirmed(int i, MotionEvent motionEvent) {
         if (this.aw) {
             try {
@@ -4178,7 +4004,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return false;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (!this.H && this.aw && this.at) {
             this.bd.mGestureState = 3;
@@ -4228,7 +4053,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return false;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void pixel2Map(int i, int i2, PointF pointF) {
         if (!this.aw || this.H || this.f == null) {
             return;
@@ -4240,7 +4064,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         obtain.recycle();
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void post(Runnable runnable) {
         IGLSurfaceView iGLSurfaceView = this.B;
         if (iGLSurfaceView != null) {
@@ -4248,7 +4071,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void queueEvent(Runnable runnable) {
         try {
             long id = Thread.currentThread().getId();
@@ -4260,14 +4082,12 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void redrawInfoWindow() {
         if (!this.G.get() && this.aw) {
             this.j.sendEmptyMessage(18);
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void refreshLogo() {
         eh ehVar = this.C;
         if (ehVar != null) {
@@ -4275,11 +4095,9 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void reloadMap() {
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void reloadMapCustomStyle() {
         k kVar = this.aH;
         if (kVar != null) {
@@ -4287,7 +4105,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeAMapAppResourceListener(AMap.AMapAppResourceRequestListener aMapAppResourceRequestListener) {
         q qVar = this.u;
         if (qVar != null) {
@@ -4295,7 +4112,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void removeEngineGLOverlay(final BaseMapOverlay baseMapOverlay) {
         if (this.f != null) {
             queueEvent(new Runnable() { // from class: com.amap.api.col.3sl.l.35
@@ -4307,7 +4123,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final boolean removeGLModel(String str) {
         try {
             this.D.removeOverlay(str);
@@ -4319,13 +4134,11 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final boolean removeGLOverlay(String str) throws RemoteException {
         resetRenderTime();
         return this.D.removeOverlay(str);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeOnCameraChangeListener(AMap.OnCameraChangeListener onCameraChangeListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -4333,7 +4146,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeOnIndoorBuildingActiveListener(AMap.OnIndoorBuildingActiveListener onIndoorBuildingActiveListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -4341,7 +4153,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeOnInfoWindowClickListener(AMap.OnInfoWindowClickListener onInfoWindowClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -4349,7 +4160,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeOnMapClickListener(AMap.OnMapClickListener onMapClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -4357,7 +4167,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeOnMapLoadedListener(AMap.OnMapLoadedListener onMapLoadedListener) {
         q qVar = this.u;
         if (qVar != null) {
@@ -4365,7 +4174,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeOnMapLongClickListener(AMap.OnMapLongClickListener onMapLongClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -4373,7 +4181,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeOnMapTouchListener(AMap.OnMapTouchListener onMapTouchListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -4381,7 +4188,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeOnMarkerClickListener(AMap.OnMarkerClickListener onMarkerClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -4389,7 +4195,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeOnMarkerDragListener(AMap.OnMarkerDragListener onMarkerDragListener) {
         q qVar = this.u;
         if (qVar != null) {
@@ -4397,7 +4202,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeOnMyLocationChangeListener(AMap.OnMyLocationChangeListener onMyLocationChangeListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -4405,7 +4209,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeOnPOIClickListener(AMap.OnPOIClickListener onPOIClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -4413,7 +4216,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removeOnPolylineClickListener(AMap.OnPolylineClickListener onPolylineClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -4421,12 +4223,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removecache() throws RemoteException {
         removecache(null);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void removecache(AMap.OnCacheRemoveListener onCacheRemoveListener) throws RemoteException {
         if (this.j == null || this.f == null) {
             return;
@@ -4442,12 +4242,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void renderSurface(GL10 gl10) {
         drawFrame(gl10);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void requestRender() {
         GLMapRender gLMapRender = this.an;
         if (gLMapRender == null || gLMapRender.isRenderPause()) {
@@ -4456,7 +4254,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.B.requestRender();
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void resetMinMaxZoomPreference() {
         List a2;
         this.b.resetMinMaxZoomPreference();
@@ -4479,7 +4276,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void resetRenderTime() {
         GLMapRender gLMapRender = this.an;
         if (gLMapRender != null) {
@@ -4487,7 +4283,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void resetRenderTimeLongLong() {
         GLMapRender gLMapRender = this.an;
         if (gLMapRender != null) {
@@ -4495,7 +4290,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void set3DBuildingEnabled(boolean z) throws RemoteException {
         try {
             c(this.F);
@@ -4506,7 +4300,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setAMapGestureListener(AMapGestureListener aMapGestureListener) {
         y yVar = this.ao;
         if (yVar != null) {
@@ -4515,7 +4308,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setCenterToPixel(int i, int i2) throws RemoteException {
         this.I = true;
         this.aC = i;
@@ -4541,7 +4333,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setConstructingRoadEnable(final boolean z) {
         try {
             if (this.aw && this.ax) {
@@ -4558,7 +4349,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                 });
                 return;
             }
-            this.aR.f5344c = z;
+            this.aR.c = z;
             this.aR.b = true;
             this.aR.g = this.F;
         } catch (Throwable th) {
@@ -4566,7 +4357,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setCustomMapStyle(CustomMapStyleOptions customMapStyleOptions) {
         if (customMapStyleOptions != null) {
             try {
@@ -4589,12 +4379,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         resetRenderTime();
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void setCustomMapStyle(boolean z, byte[] bArr) {
         a(z, bArr, false);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setCustomMapStyleID(String str) {
         if (TextUtils.isEmpty(str) || str.equals(this.b.getCustomStyleID())) {
             return;
@@ -4603,7 +4391,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.A = true;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setCustomMapStylePath(String str) {
         if (TextUtils.isEmpty(str) || str.equals(this.b.getCustomStylePath())) {
             return;
@@ -4612,12 +4399,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.A = true;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setCustomRenderer(CustomRenderer customRenderer) throws RemoteException {
         this.ag = customRenderer;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setCustomTextureResourcePath(String str) {
         if (TextUtils.isEmpty(str)) {
             return;
@@ -4625,14 +4410,12 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.b.setCustomTextureResourcePath(str);
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void setGestureStatus(int i, int i2) {
         if (this.aB == 0 || i2 != 5) {
             this.aB = i2;
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void setHideLogoEnble(boolean z) {
         MapConfig mapConfig = this.b;
         if (mapConfig != null) {
@@ -4643,29 +4426,27 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setIndoorBuildingInfo(IndoorBuildingInfo indoorBuildingInfo) throws RemoteException {
         if (this.G.get() || indoorBuildingInfo == null || indoorBuildingInfo.activeFloorName == null || indoorBuildingInfo.poiid == null) {
             return;
         }
-        this.f5296c = (at) indoorBuildingInfo;
+        this.c = (at) indoorBuildingInfo;
         resetRenderTime();
         queueEvent(new Runnable() { // from class: com.amap.api.col.3sl.l.30
             @Override // java.lang.Runnable
             public final void run() {
                 if (l.this.f != null) {
-                    l.this.f.setIndoorBuildingToBeActive(l.this.F, l.this.f5296c.activeFloorName, l.this.f5296c.activeFloorIndex, l.this.f5296c.poiid);
+                    l.this.f.setIndoorBuildingToBeActive(l.this.F, l.this.c.activeFloorName, l.this.c.activeFloorIndex, l.this.c.poiid);
                 }
             }
         });
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setIndoorEnabled(final boolean z) throws RemoteException {
         List a2;
         try {
             if (!this.aw || this.G.get()) {
-                this.aU.f5344c = z;
+                this.aU.c = z;
                 this.aU.b = true;
                 this.aU.g = this.F;
                 return;
@@ -4708,7 +4489,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setInfoWindowAdapter(AMap.CommonInfoWindowAdapter commonInfoWindowAdapter) throws RemoteException {
         au auVar;
         if (this.G.get() || (auVar = this.w) == null) {
@@ -4717,7 +4497,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         auVar.a(commonInfoWindowAdapter);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setInfoWindowAdapter(AMap.InfoWindowAdapter infoWindowAdapter) throws RemoteException {
         au auVar;
         if (this.G.get() || (auVar = this.w) == null) {
@@ -4726,7 +4505,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         auVar.a(infoWindowAdapter);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setLoadOfflineData(final boolean z) throws RemoteException {
         queueEvent(new Runnable() { // from class: com.amap.api.col.3sl.l.23
             @Override // java.lang.Runnable
@@ -4738,7 +4516,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         });
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setLocationSource(LocationSource locationSource) throws RemoteException {
         try {
             if (this.G.get()) {
@@ -4760,7 +4537,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void setLogoBottomMargin(int i) {
         eh ehVar = this.C;
         if (ehVar != null) {
@@ -4768,7 +4544,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void setLogoLeftMargin(int i) {
         eh ehVar = this.C;
         if (ehVar != null) {
@@ -4776,7 +4551,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void setLogoMarginRate(int i, float f) {
         eh ehVar = this.C;
         if (ehVar != null) {
@@ -4784,7 +4558,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void setLogoPosition(int i) {
         eh ehVar = this.C;
         if (ehVar != null) {
@@ -4792,7 +4565,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMapCustomEnable(boolean z) {
         if (z) {
             o();
@@ -4800,11 +4572,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         setMapCustomEnable(z, false);
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void setMapCustomEnable(boolean z, boolean z2) {
         if (!this.aw || this.G.get()) {
             this.aM.b = true;
-            this.aM.f5344c = z;
+            this.aM.c = z;
             return;
         }
         boolean z3 = z2 ? z2 : false;
@@ -4829,7 +4600,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.A = false;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void setMapEnable(boolean z) {
         MapConfig mapConfig = this.b;
         if (mapConfig != null) {
@@ -4837,14 +4607,13 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMapLanguage(String str) {
         MapConfig mapConfig;
         if (TextUtils.isEmpty(str) || (mapConfig = this.b) == null || mapConfig.isCustomStyleEnable() || this.b.getMapLanguage().equals(str)) {
             return;
         }
         if (!str.equals("en")) {
-            this.b.setMapLanguage("zh_cn");
+            this.b.setMapLanguage(AMap.CHINESE);
             this.af = 0;
         } else {
             if (this.Y != 1) {
@@ -4866,7 +4635,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMapStatusLimits(LatLngBounds latLngBounds) {
         try {
             this.b.setLimitLatLngBounds(latLngBounds);
@@ -4877,7 +4645,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMapTextEnable(final boolean z) throws RemoteException {
         try {
             if (this.aw && this.ax) {
@@ -4894,7 +4661,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                 });
                 return;
             }
-            this.aO.f5344c = z;
+            this.aO.c = z;
             this.aO.b = true;
             this.aO.g = this.F;
         } catch (Throwable th) {
@@ -4902,13 +4669,11 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMapTextZIndex(int i) throws RemoteException {
         this.af = i;
         this.i = false;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMapType(int i) throws RemoteException {
         MapConfig mapConfig;
         if (i != this.Y || ((mapConfig = this.b) != null && mapConfig.isCustomStyleEnable())) {
@@ -4917,7 +4682,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void setMapWidgetListener(AMapWidgetListener aMapWidgetListener) {
         try {
             if (this.u != null) {
@@ -4927,21 +4691,17 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMaskLayerParams(int i, int i2, int i3, int i4, int i5, long j) {
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMaxZoomLevel(float f) {
         this.b.setMaxZoomLevel(f);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMinZoomLevel(float f) {
         this.b.setMinZoomLevel(f);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMyLocationEnabled(boolean z) throws RemoteException {
         if (this.G.get()) {
             return;
@@ -4976,7 +4736,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMyLocationRotateAngle(float f) throws RemoteException {
         try {
             if (this.K != null) {
@@ -4987,7 +4746,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMyLocationStyle(MyLocationStyle myLocationStyle) throws RemoteException {
         if (this.G.get()) {
             return;
@@ -5011,7 +4769,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setMyLocationType(int i) throws RemoteException {
         try {
             if (this.K == null || this.K.a() == null) {
@@ -5024,7 +4781,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setNaviLabelEnable(final boolean z, final int i, final int i2) throws RemoteException {
         try {
             if (this.aw && this.ax) {
@@ -5041,7 +4797,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                 });
                 return;
             }
-            this.aQ.f5344c = z;
+            this.aQ.c = z;
             this.aQ.h = i;
             this.aQ.i = i2;
             this.aQ.b = true;
@@ -5051,7 +4807,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnCameraChangeListener(AMap.OnCameraChangeListener onCameraChangeListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -5059,7 +4814,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnIndoorBuildingActiveListener(AMap.OnIndoorBuildingActiveListener onIndoorBuildingActiveListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -5067,7 +4821,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnInfoWindowClickListener(AMap.OnInfoWindowClickListener onInfoWindowClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -5075,7 +4828,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnMapClickListener(AMap.OnMapClickListener onMapClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -5083,7 +4835,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnMapLongClickListener(AMap.OnMapLongClickListener onMapLongClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -5091,7 +4842,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnMapTouchListener(AMap.OnMapTouchListener onMapTouchListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -5099,7 +4849,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnMaploadedListener(AMap.OnMapLoadedListener onMapLoadedListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -5107,7 +4856,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnMarkerClickListener(AMap.OnMarkerClickListener onMarkerClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -5115,7 +4863,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnMarkerDragListener(AMap.OnMarkerDragListener onMarkerDragListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -5123,12 +4870,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnMultiPointClickListener(AMap.OnMultiPointClickListener onMultiPointClickListener) {
         this.aG = onMultiPointClickListener;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnMyLocationChangeListener(AMap.OnMyLocationChangeListener onMyLocationChangeListener) {
         q qVar = this.u;
         if (qVar != null) {
@@ -5136,7 +4881,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnPOIClickListener(AMap.OnPOIClickListener onPOIClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -5144,7 +4888,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setOnPolylineClickListener(AMap.OnPolylineClickListener onPolylineClickListener) throws RemoteException {
         q qVar = this.u;
         if (qVar != null) {
@@ -5152,7 +4895,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setRenderFps(int i) {
         try {
             if (i == -1) {
@@ -5167,7 +4909,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setRenderMode(int i) {
         try {
             if (this.B != null) {
@@ -5177,7 +4918,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setRoadArrowEnable(final boolean z) throws RemoteException {
         try {
             if (this.aw && this.ax) {
@@ -5194,7 +4934,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                 });
                 return;
             }
-            this.aP.f5344c = z;
+            this.aP.c = z;
             this.aP.b = true;
             this.aP.g = this.F;
         } catch (Throwable th) {
@@ -5202,7 +4942,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setRunLowFrame(boolean z) {
         if (z) {
             return;
@@ -5216,7 +4955,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void setTerrainAuth(boolean z) {
         GLMapEngine gLMapEngine;
         if (this.G.get() || (gLMapEngine = this.f) == null) {
@@ -5225,7 +4963,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         gLMapEngine.setTerrainAuth(z);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setTouchPoiEnable(boolean z) {
         MapConfig mapConfig = this.b;
         if (mapConfig != null) {
@@ -5233,7 +4970,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setTrafficEnabled(final boolean z) throws RemoteException {
         try {
             if (this.aw && !this.G.get()) {
@@ -5255,7 +4991,7 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
                 });
                 return;
             }
-            this.aJ.f5344c = z;
+            this.aJ.c = z;
             this.aJ.b = true;
             this.aJ.g = this.F;
         } catch (Throwable th) {
@@ -5263,7 +4999,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setTrafficStyleWithTextureData(final byte[] bArr) {
         if (this.G.get()) {
             return;
@@ -5291,7 +5026,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setVisibilityEx(int i) {
         IGLSurfaceView iGLSurfaceView = this.B;
         if (iGLSurfaceView != null) {
@@ -5303,7 +5037,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setWorldVectorMapStyle(String str) {
         if (a(false, true) || TextUtils.isEmpty(str) || this.b == null || this.aZ.equals(str)) {
             return;
@@ -5316,11 +5049,9 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         resetRenderTime();
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setZOrderOnTop(boolean z) throws RemoteException {
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void setZoomPosition(int i) {
         eh ehVar;
         if (this.G.get() || (ehVar = this.C) == null) {
@@ -5329,12 +5060,10 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         ehVar.a(Integer.valueOf(i));
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void setZoomScaleParam(float f) {
-        this.f5295ar = f;
+        this.ar = f;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void showCompassEnabled(boolean z) {
         eh ehVar;
         if (this.G.get() || (ehVar = this.C) == null) {
@@ -5343,7 +5072,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         ehVar.d(Boolean.valueOf(z));
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void showIndoorSwitchControlsEnabled(boolean z) {
         eh ehVar;
         if (this.G.get() || (ehVar = this.C) == null) {
@@ -5352,7 +5080,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         ehVar.a(Boolean.valueOf(z));
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void showInfoWindow(BaseOverlay baseOverlay) throws RemoteException {
         au auVar;
         if (baseOverlay == null || (auVar = this.w) == null) {
@@ -5365,7 +5092,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void showInfoWindow(BaseOverlayImp baseOverlayImp) throws RemoteException {
         au auVar;
         if (baseOverlayImp == null || (auVar = this.w) == null) {
@@ -5378,7 +5104,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void showLogoEnabled(boolean z) {
         if (this.G.get()) {
             return;
@@ -5386,7 +5111,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         this.C.f(Boolean.valueOf(z));
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void showMyLocationButtonEnabled(boolean z) {
         eh ehVar;
         if (this.G.get() || (ehVar = this.C) == null) {
@@ -5395,7 +5119,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         ehVar.c(Boolean.valueOf(z));
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void showMyLocationOverlay(Location location) throws RemoteException {
         if (location == null) {
             return;
@@ -5435,7 +5158,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void showScaleEnabled(boolean z) {
         eh ehVar;
         if (this.G.get() || (ehVar = this.C) == null) {
@@ -5444,7 +5166,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         ehVar.e(Boolean.valueOf(z));
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void showZoomControlsEnabled(boolean z) {
         eh ehVar;
         if (this.G.get() || (ehVar = this.C) == null) {
@@ -5453,7 +5174,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         ehVar.b(Boolean.valueOf(z));
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IAMap
     public final void stopAnimation() throws RemoteException {
         try {
             if (this.f != null) {
@@ -5465,7 +5185,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final float toMapLenWithWin(int i) {
         GLMapEngine gLMapEngine;
         if (!this.aw || this.H || (gLMapEngine = this.f) == null) {
@@ -5474,7 +5193,6 @@ public final class l implements ct.a, k.a, IAMapDelegate, IAMapListener {
         return gLMapEngine.getMapState(this.F).getGLUnitWithWin(i);
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IAMapDelegate
     public final void zoomOut(int i) {
         if (this.aw && ((int) c()) > this.b.getMinZoomLevel()) {
             try {

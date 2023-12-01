@@ -4,11 +4,11 @@ package com.tencent.cloud.huiyansdkface.facelight.api.result;
 public class WbCusFaceVerifyResult {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f35523a;
+    private String f21832a;
     private String b;
 
     public String getEncryptAESKey() {
-        return this.f35523a;
+        return this.f21832a;
     }
 
     public String getIdentityStr() {
@@ -16,7 +16,7 @@ public class WbCusFaceVerifyResult {
     }
 
     public void setEncryptAESKey(String str) {
-        this.f35523a = str;
+        this.f21832a = str;
     }
 
     public void setIdentityStr(String str) {

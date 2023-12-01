@@ -19,7 +19,7 @@ public class h {
     g L;
 
     /* renamed from: a  reason: collision with root package name */
-    String f26634a;
+    String f12946a;
     String b;
     g g;
     String i;
@@ -41,7 +41,7 @@ public class h {
     String z;
 
     /* renamed from: c  reason: collision with root package name */
-    List<g> f26635c = new ArrayList();
+    List<g> f12947c = new ArrayList();
     List<g> d = new ArrayList();
     List<String> e = new ArrayList();
     boolean f = false;
@@ -53,7 +53,7 @@ public class h {
     public d a() {
         List<g> list;
         g gVar = this.j;
-        if ((gVar == null || TextUtils.isEmpty(gVar.f26633a)) && ((list = this.f26635c) == null || list.size() <= 0)) {
+        if ((gVar == null || TextUtils.isEmpty(gVar.f12945a)) && ((list = this.f12947c) == null || list.size() <= 0)) {
             return null;
         }
         return new d(this);
@@ -86,12 +86,12 @@ public class h {
     }
 
     public h a(String str) {
-        this.f26634a = str;
+        this.f12946a = str;
         return this;
     }
 
     public h a(String str, String str2) {
-        this.f26635c.add(TextUtils.isEmpty(str2) ? new g(str) : new g(str, str2));
+        this.f12947c.add(TextUtils.isEmpty(str2) ? new g(str) : new g(str, str2));
         return this;
     }
 
@@ -120,7 +120,7 @@ public class h {
 
     public e b() {
         g gVar = this.k;
-        if (gVar == null || TextUtils.isEmpty(gVar.f26633a)) {
+        if (gVar == null || TextUtils.isEmpty(gVar.f12945a)) {
             return null;
         }
         return new e(this);

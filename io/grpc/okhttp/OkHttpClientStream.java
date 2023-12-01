@@ -1,6 +1,5 @@
 package io.grpc.okhttp;
 
-import android.provider.ContactsContract;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.io.BaseEncoding;
@@ -313,7 +312,7 @@ public class OkHttpClientStream extends AbstractClientStream {
 
     @Override // io.grpc.internal.ClientStream
     public void setAuthority(String str) {
-        this.authority = (String) Preconditions.checkNotNull(str, ContactsContract.Directory.DIRECTORY_AUTHORITY);
+        this.authority = (String) Preconditions.checkNotNull(str, "authority");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

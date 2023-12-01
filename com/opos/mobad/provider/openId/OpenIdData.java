@@ -21,17 +21,17 @@ public class OpenIdData implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public String f27120a;
+    public String f13432a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f27121c;
+    public String f13433c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public OpenIdData(String str, String str2, String str3) {
-        this.f27120a = str;
+        this.f13432a = str;
         this.b = str2;
-        this.f27121c = str3;
+        this.f13433c = str3;
     }
 
     @Override // android.os.Parcelable
@@ -41,8 +41,8 @@ public class OpenIdData implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(TextUtils.isEmpty(this.f27120a) ? "" : this.f27120a);
+        parcel.writeString(TextUtils.isEmpty(this.f13432a) ? "" : this.f13432a);
         parcel.writeString(TextUtils.isEmpty(this.b) ? "" : this.b);
-        parcel.writeString(TextUtils.isEmpty(this.f27121c) ? "" : this.f27121c);
+        parcel.writeString(TextUtils.isEmpty(this.f13433c) ? "" : this.f13433c);
     }
 }

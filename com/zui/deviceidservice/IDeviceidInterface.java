@@ -15,10 +15,10 @@ public interface IDeviceidInterface extends IInterface {
         static class Proxy implements IDeviceidInterface {
 
             /* renamed from: a  reason: collision with root package name */
-            private IBinder f42093a;
+            private IBinder f28402a;
 
             Proxy(IBinder iBinder) {
-                this.f42093a = iBinder;
+                this.f28402a = iBinder;
             }
 
             @Override // com.zui.deviceidservice.IDeviceidInterface

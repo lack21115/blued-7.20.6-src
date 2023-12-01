@@ -6,9 +6,7 @@ import android.os.Bundle;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/toast/ActivityStack.class */
 final class ActivityStack implements Application.ActivityLifecycleCallbacks {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Activity f9748a;
+    private Activity a;
 
     ActivityStack() {
     }
@@ -21,7 +19,7 @@ final class ActivityStack implements Application.ActivityLifecycleCallbacks {
     }
 
     public Activity a() {
-        return this.f9748a;
+        return this.a;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -34,15 +32,15 @@ final class ActivityStack implements Application.ActivityLifecycleCallbacks {
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityPaused(Activity activity) {
-        if (this.f9748a != activity) {
+        if (this.a != activity) {
             return;
         }
-        this.f9748a = null;
+        this.a = null;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityResumed(Activity activity) {
-        this.f9748a = activity;
+        this.a = activity;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks

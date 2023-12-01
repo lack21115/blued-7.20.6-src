@@ -41,15 +41,15 @@ public class AnythinkClickCTAView extends AnythinkBaseView implements f {
     public final class AnonymousClass1 implements h {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ViewGroup f8442a;
+        final /* synthetic */ ViewGroup f5602a;
 
         AnonymousClass1(ViewGroup viewGroup) {
-            this.f8442a = viewGroup;
+            this.f5602a = viewGroup;
         }
 
         @Override // com.anythink.expressad.video.dynview.f.h
         public final void a(a aVar) {
-            this.f8442a.addView(aVar.a());
+            this.f5602a.addView(aVar.a());
             AnythinkClickCTAView anythinkClickCTAView = AnythinkClickCTAView.this;
             anythinkClickCTAView.f = anythinkClickCTAView.f();
             AnythinkClickCTAView anythinkClickCTAView2 = AnythinkClickCTAView.this;
@@ -74,7 +74,7 @@ public class AnythinkClickCTAView extends AnythinkBaseView implements f {
     private void a() {
         int findLayout = findLayout(n);
         if (findLayout >= 0) {
-            this.f8441c.inflate(findLayout, this);
+            this.f5601c.inflate(findLayout, this);
             this.f = f();
             c();
             setWrapContent();
@@ -152,9 +152,8 @@ public class AnythinkClickCTAView extends AnythinkBaseView implements f {
         this.e.a(105, jSONObject);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.anythink.expressad.video.module.AnythinkBaseView
-    public final void c() {
+    protected final void c() {
         super.c();
         if (this.f) {
             if (this.b != null && this.b.j()) {
@@ -187,9 +186,8 @@ public class AnythinkClickCTAView extends AnythinkBaseView implements f {
     public void init(Context context) {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         ObjectAnimator objectAnimator = this.x;
         if (objectAnimator != null) {
@@ -201,9 +199,8 @@ public class AnythinkClickCTAView extends AnythinkBaseView implements f {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         ObjectAnimator objectAnimator = this.x;
         if (objectAnimator != null) {
@@ -240,7 +237,7 @@ public class AnythinkClickCTAView extends AnythinkBaseView implements f {
             } else {
                 int findLayout = findLayout(n);
                 if (findLayout >= 0) {
-                    this.f8441c.inflate(findLayout, this);
+                    this.f5601c.inflate(findLayout, this);
                     this.f = f();
                     c();
                     setWrapContent();
@@ -251,7 +248,7 @@ public class AnythinkClickCTAView extends AnythinkBaseView implements f {
                 if (TextUtils.isEmpty(this.b.bd())) {
                     b();
                 } else {
-                    com.anythink.expressad.foundation.g.d.b.a(this.f8440a.getApplicationContext()).a(this.b.bd(), new e(this.p, this.b, this.t) { // from class: com.anythink.expressad.video.module.AnythinkClickCTAView.5
+                    com.anythink.expressad.foundation.g.d.b.a(this.f5600a.getApplicationContext()).a(this.b.bd(), new e(this.p, this.b, this.t) { // from class: com.anythink.expressad.video.module.AnythinkClickCTAView.5
                         @Override // com.anythink.expressad.video.module.a.a.e, com.anythink.expressad.foundation.g.d.c
                         public final void a(String str, String str2) {
                             super.a(str, str2);

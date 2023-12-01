@@ -29,7 +29,7 @@ import java.util.List;
 public final class q {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23666a = "Task145PhoneDataUtils";
+    private static final String f10058a = "Task145PhoneDataUtils";
 
     private static int a() {
         try {
@@ -41,7 +41,7 @@ public final class q {
                         InetAddress address = interfaceAddress.getAddress();
                         short networkPrefixLength = interfaceAddress.getNetworkPrefixLength();
                         if (!address.isLoopbackAddress() && (address instanceof Inet4Address)) {
-                            com.igexin.c.a.c.a.b(f23666a, "IPv4 maskLength: ".concat(String.valueOf((int) networkPrefixLength)));
+                            com.igexin.c.a.c.a.b(f10058a, "IPv4 maskLength: ".concat(String.valueOf((int) networkPrefixLength)));
                             if (networkPrefixLength > 0) {
                                 return networkPrefixLength;
                             }
@@ -72,17 +72,17 @@ public final class q {
         r7 = r0;
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x0063, code lost:
-        if (r0.contains(com.blued.android.module.common.web.jsbridge.BridgeUtil.SPLIT_MARK) == false) goto L30;
+        if (r0.contains("/") == false) goto L30;
      */
     /* JADX WARN: Code restructure failed: missing block: B:23:0x0066, code lost:
-        r7 = r0.split(com.blued.android.module.common.web.jsbridge.BridgeUtil.SPLIT_MARK)[0];
+        r7 = r0.split("/")[0];
      */
     /* JADX WARN: Code restructure failed: missing block: B:25:0x0071, code lost:
         r4 = r7;
         r7 = r4;
      */
     /* JADX WARN: Code restructure failed: missing block: B:26:0x0074, code lost:
-        com.igexin.c.a.c.a.b(com.igexin.push.f.q.f23666a, "new get self iv4 by sl, ip = ".concat(java.lang.String.valueOf(r4)));
+        com.igexin.c.a.c.a.b(com.igexin.push.f.q.f10058a, "new get self iv4 by sl, ip = ".concat(java.lang.String.valueOf(r4)));
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -216,15 +216,15 @@ public final class q {
     }
 
     private static v c(Context context) {
-        com.igexin.c.a.c.a.b(f23666a, "SLMA getDhcpWifiInfo.");
+        com.igexin.c.a.c.a.b(f10058a, "SLMA getDhcpWifiInfo.");
         v vVar = new v();
         try {
             CommonUtil.hasPermission(context, "android.permission.ACCESS_WIFI_STATE", false);
             DhcpInfo dhcpInfo = ((WifiManager) context.getSystemService("wifi")).getDhcpInfo();
-            vVar.f23464a = a(dhcpInfo.gateway);
+            vVar.f9856a = a(dhcpInfo.gateway);
             vVar.b = a(dhcpInfo.ipAddress);
             int i = dhcpInfo.netmask;
-            vVar.f23465c = a();
+            vVar.f9857c = a();
             return vVar;
         } catch (Throwable th) {
             com.igexin.c.a.c.a.a(th);
@@ -259,9 +259,9 @@ public final class q {
             long j2 = j;
             if (!it.hasNext()) {
                 com.igexin.push.core.b.d dVar = new com.igexin.push.core.b.d();
-                dVar.f23435a = i;
+                dVar.f9827a = i;
                 dVar.b = i2;
-                dVar.f23436c = i3;
+                dVar.f9828c = i3;
                 dVar.d = j2;
                 dVar.e = i4;
                 return dVar;

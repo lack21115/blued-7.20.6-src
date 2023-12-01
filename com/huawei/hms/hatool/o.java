@@ -4,11 +4,11 @@ package com.huawei.hms.hatool;
 public abstract class o implements s {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f22777a;
+    public String f9169a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f22778c;
+    public String f9170c;
     public String d;
     public String e;
     public String f;
@@ -18,7 +18,7 @@ public abstract class o implements s {
     }
 
     public void b(String str) {
-        this.f22777a = str;
+        this.f9169a = str;
     }
 
     public void c(String str) {
@@ -30,7 +30,7 @@ public abstract class o implements s {
     }
 
     public void e(String str) {
-        this.f22778c = str;
+        this.f9170c = str;
     }
 
     public void f(String str) {

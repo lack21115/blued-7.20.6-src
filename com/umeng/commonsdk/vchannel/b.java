@@ -11,10 +11,10 @@ public class b {
     private String b;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f40971a = "_$unknown";
+    private String f27280a = "_$unknown";
 
     /* renamed from: c  reason: collision with root package name */
-    private long f40972c = 0;
+    private long f27281c = 0;
     private long d = 0;
     private String e = a.j;
     private Map<String, Object> f = null;
@@ -24,15 +24,15 @@ public class b {
     }
 
     public String a() {
-        return this.f40971a;
+        return this.f27280a;
     }
 
     public void a(long j) {
-        this.f40972c = j;
+        this.f27281c = j;
     }
 
     public void a(String str) {
-        this.f40971a = str;
+        this.f27280a = str;
     }
 
     public void a(Map<String, Object> map) {
@@ -40,7 +40,7 @@ public class b {
     }
 
     public long b() {
-        return this.f40972c;
+        return this.f27281c;
     }
 
     public Map<String, Object> c() {
@@ -50,10 +50,10 @@ public class b {
     public JSONObject d() {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("id", this.f40971a);
+            jSONObject.put("id", this.f27280a);
             jSONObject.put("pn", this.b);
             jSONObject.put("ds", this.d);
-            jSONObject.put("ts", this.f40972c);
+            jSONObject.put("ts", this.f27281c);
             if (this.f != null && this.f.size() > 0) {
                 for (String str : this.f.keySet()) {
                     jSONObject.put(str, this.f.get(str));
@@ -76,9 +76,9 @@ public class b {
     public String toString() {
         Object obj;
         StringBuilder sb = new StringBuilder("[");
-        sb.append("id:" + this.f40971a + ",");
+        sb.append("id:" + this.f27280a + ",");
         sb.append("pn:" + this.b + ",");
-        sb.append("ts:" + this.f40972c + ",");
+        sb.append("ts:" + this.f27281c + ",");
         Map<String, Object> map = this.f;
         if (map != null && map.size() > 0) {
             for (String str : this.f.keySet()) {

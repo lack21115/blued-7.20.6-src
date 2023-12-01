@@ -305,7 +305,7 @@ public class MenuInflater {
         r8 = r14;
      */
     /* JADX WARN: Code restructure failed: missing block: B:29:0x010c, code lost:
-        if (r8.equals("menu") == false) goto L30;
+        if (r8.equals(android.view.MenuInflater.XML_MENU) == false) goto L30;
      */
     /* JADX WARN: Code restructure failed: missing block: B:30:0x010f, code lost:
         r0 = r0.addSubMenuItem();
@@ -377,7 +377,7 @@ public class MenuInflater {
         r8 = r14;
      */
     /* JADX WARN: Code restructure failed: missing block: B:51:0x01ec, code lost:
-        if (r0.equals("menu") == false) goto L60;
+        if (r0.equals(android.view.MenuInflater.XML_MENU) == false) goto L60;
      */
     /* JADX WARN: Code restructure failed: missing block: B:52:0x01ef, code lost:
         r12 = true;

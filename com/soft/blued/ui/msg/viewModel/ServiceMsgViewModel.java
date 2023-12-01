@@ -12,7 +12,6 @@ import com.soft.blued.ui.msg.model.ServiceMsgModel;
 import com.soft.blued.user.BluedConfig;
 import com.soft.blued.utils.BluedPreferences;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
@@ -24,31 +23,31 @@ public final class ServiceMsgViewModel extends BaseListViewModel<ServiceMsgModel
     private ChattingModel b;
 
     /* renamed from: a  reason: collision with root package name */
-    private List<ChattingModel> f32617a = new ArrayList();
+    private List<ChattingModel> f18926a = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    private String f32618c = "";
+    private String f18927c = "";
     private MutableLiveData<Boolean> d = new MutableLiveData<>();
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ServiceMsgViewModel this$0) {
-        Intrinsics.e(this$0, "this$0");
-        List<ChattingModel> list = this$0.f32617a;
-        this$0.a(list, list.size() == this$0.getMPageSize());
-        if (!this$0.f32617a.isEmpty()) {
-            List<ChattingModel> list2 = this$0.f32617a;
-            this$0.b = list2.get(list2.size() - 1);
+    public static final void a(ServiceMsgViewModel serviceMsgViewModel) {
+        Intrinsics.e(serviceMsgViewModel, "this$0");
+        List<ChattingModel> list = serviceMsgViewModel.f18926a;
+        serviceMsgViewModel.a(list, list.size() == serviceMsgViewModel.getMPageSize());
+        if (!serviceMsgViewModel.f18926a.isEmpty()) {
+            List<ChattingModel> list2 = serviceMsgViewModel.f18926a;
+            serviceMsgViewModel.b = list2.get(list2.size() - 1);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final ServiceMsgViewModel this$0, List list) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(final ServiceMsgViewModel serviceMsgViewModel, List list) {
+        Intrinsics.e(serviceMsgViewModel, "this$0");
         if (list == null) {
             return;
         }
-        this$0.a().clear();
-        List<ChattingModel> a2 = this$0.a();
+        serviceMsgViewModel.a().clear();
+        List<ChattingModel> a2 = serviceMsgViewModel.a();
         ArrayList arrayList = new ArrayList();
         for (Object obj : list) {
             ChattingModel chattingModel = (ChattingModel) obj;
@@ -99,22 +98,22 @@ public final class ServiceMsgViewModel extends BaseListViewModel<ServiceMsgModel
     }
 
     public final List<ChattingModel> a() {
-        return this.f32617a;
+        return this.f18926a;
     }
 
     public final void a(ChattingModel chattingModel) {
         this.b = chattingModel;
     }
 
-    public final void a(List<ChattingModel> serviceMsgList, boolean z) {
-        Intrinsics.e(serviceMsgList, "serviceMsgList");
-        if (serviceMsgList.size() > 0) {
-            List<ChattingModel> list = serviceMsgList;
-            ArrayList arrayList = new ArrayList(CollectionsKt.a((Iterable) list, 10));
-            for (ChattingModel chattingModel : list) {
+    public final void a(List<ChattingModel> list, boolean z) {
+        Intrinsics.e(list, "serviceMsgList");
+        if (list.size() > 0) {
+            List<ChattingModel> list2 = list;
+            ArrayList arrayList = new ArrayList(CollectionsKt.a(list2, 10));
+            for (ChattingModel chattingModel : list2) {
                 arrayList.add(b(chattingModel));
             }
-            List c2 = CollectionsKt.c((Collection) CollectionsKt.j((Iterable) arrayList));
+            List c2 = CollectionsKt.c(CollectionsKt.j(arrayList));
             ChattingModel b = b();
             if (b != null && c2.contains(b(b))) {
                 c2.remove(b(b));
@@ -124,8 +123,8 @@ public final class ServiceMsgViewModel extends BaseListViewModel<ServiceMsgModel
             loadListSucceed(new ArrayList(), z);
         }
         boolean z2 = true;
-        c().setValue(Boolean.valueOf((serviceMsgList.size() <= 1 || !BluedPreferences.eQ()) ? false : false));
-        Log.e("lyl", Intrinsics.a("size  >>>>   ", (Object) Integer.valueOf(serviceMsgList.size())));
+        c().setValue(Boolean.valueOf((list.size() <= 1 || !BluedPreferences.eQ()) ? false : false));
+        Log.e("lyl", Intrinsics.a("size  >>>>   ", Integer.valueOf(list.size())));
     }
 
     public final ChattingModel b() {
@@ -136,28 +135,24 @@ public final class ServiceMsgViewModel extends BaseListViewModel<ServiceMsgModel
         return this.d;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseViewModel
     public void init(Bundle bundle) {
         super.init(bundle);
         String obj = BluedConfig.a().b().official_account.toString();
         if (obj.length() > 0) {
             String substring = obj.substring(1, obj.length() - 1);
             Intrinsics.c(substring, "this as java.lang.String…ing(startIndex, endIndex)");
-            this.f32618c = substring;
+            this.f18927c = substring;
         }
         Log.e("LiangYunLong", obj);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListViewModel
     public void refreshData() {
         this.b = null;
         super.refreshData();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListViewModel
     public void requestData() {
-        ChatManager.getInstance().loadServiceSessionMsgList((short) 2, this.f32618c, this.b, getMPageSize(), new FetchDataListener() { // from class: com.soft.blued.ui.msg.viewModel.-$$Lambda$ServiceMsgViewModel$HU2ls_Tj13OlXIXooLKCUbWN9ys
-            @Override // com.blued.android.chat.listener.FetchDataListener
+        ChatManager.getInstance().loadServiceSessionMsgList((short) 2, this.f18927c, this.b, getMPageSize(), new FetchDataListener() { // from class: com.soft.blued.ui.msg.viewModel.-$$Lambda$ServiceMsgViewModel$HU2ls_Tj13OlXIXooLKCUbWN9ys
             public final void onFetchData(Object obj) {
                 ServiceMsgViewModel.a(ServiceMsgViewModel.this, (List) obj);
             }

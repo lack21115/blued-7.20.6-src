@@ -7,13 +7,13 @@ import kotlin.Metadata;
 public final class ScrollEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f32665a;
+    private final boolean f18974a;
 
     public ScrollEvent(boolean z) {
-        this.f32665a = z;
+        this.f18974a = z;
     }
 
     public final boolean a() {
-        return this.f32665a;
+        return this.f18974a;
     }
 }

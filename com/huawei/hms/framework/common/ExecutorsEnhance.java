@@ -89,9 +89,8 @@ public class ExecutorsEnhance {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/framework/common/ExecutorsEnhance$FinalizableDelegatedExecutorService.class */
-    public static class FinalizableDelegatedExecutorService extends DelegatedExecutorService {
+    static class FinalizableDelegatedExecutorService extends DelegatedExecutorService {
         FinalizableDelegatedExecutorService(ExecutorService executorService) {
             super(executorService);
         }

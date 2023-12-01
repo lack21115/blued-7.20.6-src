@@ -7,13 +7,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
+import com.alipay.sdk.cons.c;
+import com.android.ims.ImsConferenceState;
 import com.app.share.model.ShareEntity;
-import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.Hashids;
@@ -45,6 +45,7 @@ import com.blued.android.module.live_china.msg.LiveEventBusUtil;
 import com.blued.android.module.live_china.observer.LiveRefreshUIObserver;
 import com.blued.android.module.live_china.observer.LiveTagsSetSelectedTab;
 import com.blued.android.module.live_china.same.tip.CommonAlertDialog;
+import com.blued.android.module.yy_china.R;
 import com.blued.android.module.yy_china.fragment.YYApplyFragment;
 import com.blued.android.module.yy_china.fragment.YYChatRoomsListFragment;
 import com.blued.android.module.yy_china.fragment.YYFullServiceSquareFragment;
@@ -81,14 +82,11 @@ import com.blued.das.client.feed.FeedProtos;
 import com.blued.das.client.socialnet.SocialNetWorkProtos;
 import com.blued.das.vip.VipProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.huawei.openalliance.ad.constant.s;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.sobot.chat.ZCSobotApi;
 import com.sobot.chat.api.enumtype.SobotChatTitleDisplayMode;
 import com.sobot.chat.api.model.Information;
-import com.soft.blued.R;
 import com.soft.blued.app.BluedApplicationLike;
-import com.soft.blued.constant.EventBusConstant;
 import com.soft.blued.log.bytedance.CallEventUtils;
 import com.soft.blued.log.mobevent.MobEventUtils;
 import com.soft.blued.sdk.ui.SDKPayFragment;
@@ -373,7 +371,7 @@ public class BluedURIRouterAdapter {
 
     public static boolean openBaseExplore(Context context, int i) {
         if (BluedConfig.a().K()) {
-            CircleTypeListFragment.f19307a.a(context, i, FeedProtos.SourcePage.UNKNOWN_SOURCE_PAGE);
+            CircleTypeListFragment.a.a(context, i, FeedProtos.SourcePage.UNKNOWN_SOURCE_PAGE);
             return true;
         }
         ToastUtils.a(context.getString(2131887260));
@@ -382,16 +380,15 @@ public class BluedURIRouterAdapter {
 
     @Deprecated
     public static boolean openBluedPay(Context context, int i, String str, String str2, String str3, String str4) {
-        SDKPayFragment.a(context, 0L, i, null, null, str, str2, str3, str4);
+        SDKPayFragment.a(context, 0L, i, (String) null, (String) null, str, str2, str3, str4);
         return true;
     }
 
     public static boolean openCallAlert(final Context context) {
         CallHelloManager.a().a(context, (IRequestHost) null, 9, new CallHelloManager.ToOpenListener() { // from class: com.blued.android.similarity_operation_provider.BluedURIRouterAdapter.16
-            @Override // com.soft.blued.ui.find.manager.CallHelloManager.ToOpenListener
             public void done(boolean z) {
                 if (z) {
-                    CallHelloManager.a().a(Context.this, (IRequestHost) null, false, 9);
+                    CallHelloManager.a().a(context, (IRequestHost) null, false, 9);
                 }
             }
         });
@@ -413,11 +410,11 @@ public class BluedURIRouterAdapter {
             ToastUtils.a(context.getString(2131887260));
             return true;
         }
-        String a2 = EncryptTool.a(str);
+        String a = EncryptTool.a(str);
         if (i2 != 1) {
             CircleNewFragment.a(context);
         }
-        CircleDetailsFragment.a(context, a2, i, CircleConstants.CIRCLE_FROM_PAGE.LINK, i3, i4 == 1);
+        CircleDetailsFragment.a(context, a, i, CircleConstants.CIRCLE_FROM_PAGE.LINK, i3, i4 == 1);
         return true;
     }
 
@@ -446,24 +443,24 @@ public class BluedURIRouterAdapter {
     public static boolean openDiscoveryNotice(Context context) {
         Bundle bundle = new Bundle();
         bundle.putString("to_message_tab", "0");
-        HomeArgumentHelper.a(context, "msg", bundle);
+        HomeArgumentHelper.a(context, c.b, bundle);
         return true;
     }
 
     public static boolean openDiscoveryNoticeZan(Context context) {
         Bundle bundle = new Bundle();
         bundle.putString("to_message_tab", "0");
-        HomeArgumentHelper.a(context, "msg", bundle);
+        HomeArgumentHelper.a(context, c.b, bundle);
         return true;
     }
 
     public static boolean openDiscoveryPage(Context context, final int i, int i2) {
-        HomeArgumentHelper.a(context, IAdInterListener.AdProdType.PRODUCT_FEEDS, (Bundle) null);
+        HomeArgumentHelper.a(context, "feed", (Bundle) null);
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.similarity_operation_provider.BluedURIRouterAdapter.5
             @Override // java.lang.Runnable
             public void run() {
-                if (HomeActivity.f30985c != null) {
-                    ((DiscoverSquareViewModel) ViewModelProviders.of(HomeActivity.f30985c).get(DiscoverSquareViewModel.class)).f29844a.postValue(Integer.valueOf(i));
+                if (HomeActivity.c != null) {
+                    ViewModelProviders.of(HomeActivity.c).get(DiscoverSquareViewModel.class).a.postValue(Integer.valueOf(i));
                 }
             }
         }, 500L);
@@ -495,12 +492,12 @@ public class BluedURIRouterAdapter {
         } else {
             eventLogData.setSourcePage(FeedProtos.SourcePage.FEED_MSG);
         }
-        EventDetailsFragment.f19534a.a(context, str, eventLogData);
+        EventDetailsFragment.a.a(context, str, eventLogData);
         return true;
     }
 
     public static boolean openEventList(Context context) {
-        EventListFragment.f19546a.a(context);
+        EventListFragment.a.a(context);
         return true;
     }
 
@@ -515,7 +512,7 @@ public class BluedURIRouterAdapter {
     }
 
     public static boolean openFeedBubbleState(Context context) {
-        FeedPostSignStateFragment.f20033a.a(context, 10);
+        FeedPostSignStateFragment.a.a(context, 10);
         return true;
     }
 
@@ -533,26 +530,26 @@ public class BluedURIRouterAdapter {
                 }
             }, 300L);
         } else if (i2 == 3) {
-            HomeArgumentHelper.a(context, IAdInterListener.AdProdType.PRODUCT_FEEDS, (Bundle) null);
+            HomeArgumentHelper.a(context, "feed", (Bundle) null);
             AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.similarity_operation_provider.BluedURIRouterAdapter.3
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (HomeActivity.f30985c != null) {
-                        ((DiscoverSquareViewModel) ViewModelProviders.of(HomeActivity.f30985c).get(DiscoverSquareViewModel.class)).f29844a.postValue(1);
+                    if (HomeActivity.c != null) {
+                        ViewModelProviders.of(HomeActivity.c).get(DiscoverSquareViewModel.class).a.postValue(1);
                     }
                 }
             }, 300L);
         } else if (i2 == 2) {
-            HotFeedFragment.f20141a.a(context);
+            HotFeedFragment.a.a(context);
         } else if (i2 == 1) {
             MessagePageFragment.b = 0;
             Bundle bundle = new Bundle();
             bundle.putString("to_message_tab", "0");
             Log.v("drb", "跳转到首页");
-            HomeArgumentHelper.a(context, "msg", bundle);
+            HomeArgumentHelper.a(context, c.b, bundle);
         }
         if (TextUtils.equals(str3, "like")) {
-            HomeArgumentHelper.a(context, IAdInterListener.AdProdType.PRODUCT_FEEDS, (Bundle) null);
+            HomeArgumentHelper.a(context, "feed", (Bundle) null);
         }
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.similarity_operation_provider.BluedURIRouterAdapter.4
             @Override // java.lang.Runnable
@@ -601,14 +598,14 @@ public class BluedURIRouterAdapter {
     }
 
     public static boolean openFlutterFeedExposure(Context context, String str, String str2) {
-        String a2 = EncryptTool.a(str);
-        LogUtils.c("openFlutterFeedExposure:" + a2 + ", origin:" + str);
-        return openFlutterFeedExposureWithId(context, a2, str2);
+        String a = EncryptTool.a(str);
+        LogUtils.c("openFlutterFeedExposure:" + a + ", origin:" + str);
+        return openFlutterFeedExposureWithId(context, a, str2);
     }
 
     public static boolean openFlutterFeedExposureWithId(Context context, String str, String str2) {
         if (str != null) {
-            SuperExposureFragment.f33968a.a(context, str, str2);
+            SuperExposureFragment.a.a(context, str, str2);
             return true;
         }
         return true;
@@ -649,7 +646,7 @@ public class BluedURIRouterAdapter {
         Bundle bundle = new Bundle();
         bundle.putString("arg_open_homeactivity_ope", "ope_group_notification");
         bundle.putString("to_message_tab", "0");
-        HomeArgumentHelper.a(context, "msg", bundle);
+        HomeArgumentHelper.a(context, c.b, bundle);
         return true;
     }
 
@@ -674,7 +671,7 @@ public class BluedURIRouterAdapter {
     public static boolean openHomePageToLiveList(Context context, int i, final String str, String str2) {
         Bundle bundle = new Bundle();
         bundle.putString("arg_open_homeactivity_ope", "ope_livelist");
-        bundle.putString("live_from", s.B);
+        bundle.putString("live_from", "web");
         bundle.putString("live_pay_beans_details", str2);
         HomeArgumentHelper.a(context, "live", bundle);
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.similarity_operation_provider.BluedURIRouterAdapter.1
@@ -689,7 +686,7 @@ public class BluedURIRouterAdapter {
     public static boolean openHomepageMessage(Context context, String str) {
         Bundle bundle = new Bundle();
         bundle.putString("details", str);
-        HomeArgumentHelper.a(context, "msg", bundle);
+        HomeArgumentHelper.a(context, c.b, bundle);
         return true;
     }
 
@@ -771,9 +768,9 @@ public class BluedURIRouterAdapter {
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.similarity_operation_provider.BluedURIRouterAdapter.9
             @Override // java.lang.Runnable
             public void run() {
-                Activity activity = Context.this;
-                if (BDActivityManager.f34819a.a() != null) {
-                    activity = BDActivityManager.f34819a.a();
+                Activity activity = context;
+                if (BDActivityManager.a.a() != null) {
+                    activity = BDActivityManager.a.a();
                 }
                 if (activity instanceof BaseFragmentActivity) {
                     FindSearchMapFragment.a((BaseFragmentActivity) activity, 2);
@@ -811,8 +808,8 @@ public class BluedURIRouterAdapter {
             VIPCenterNewFragment.a(context, -1, str2);
             return true;
         }
-        int a2 = SafeUtils.a(str);
-        VIPCenterNewFragment.a(context, (a2 == 0 || a2 == 1) ? 0 : 1, str2);
+        int a = SafeUtils.a(str);
+        VIPCenterNewFragment.a(context, (a == 0 || a == 1) ? 0 : 1, str2);
         return true;
     }
 
@@ -869,7 +866,7 @@ public class BluedURIRouterAdapter {
     }
 
     public static boolean openNearbyPeopleCloseRedPackGuide(Context context) {
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_RED_PACK_GUIDE_STATE).post(true);
+        LiveEventBus.get("refresh_red_pack_guide_state").post(true);
         return true;
     }
 
@@ -884,19 +881,19 @@ public class BluedURIRouterAdapter {
     }
 
     public static boolean openOnlineService(Context context, boolean z) {
-        String c2;
+        String c;
         Information information = new Information();
-        information.setApp_key(context.getString(R.string.sobot_app_key));
+        information.setApp_key(context.getString(2131891773));
         information.setShowLeftBackPop(true);
         information.setShowSatisfaction(true);
         information.setHideMenuLeave(false);
         if (UserInfoUtils.f()) {
-            c2 = UserInfoUtils.c();
+            c = UserInfoUtils.c();
         } else {
-            c2 = System.currentTimeMillis() + "";
+            c = System.currentTimeMillis() + "";
         }
         try {
-            information.setPartnerid(new Hashids("2765", 24).a(Long.parseLong(c2)));
+            information.setPartnerid(new Hashids("2765", 24).a(Long.parseLong(c)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -967,7 +964,7 @@ public class BluedURIRouterAdapter {
     }
 
     public static boolean openServiceCenter(Context context) {
-        ServiceHelper.f33645a.a(context);
+        ServiceHelper.a.a(context);
         return true;
     }
 
@@ -980,9 +977,9 @@ public class BluedURIRouterAdapter {
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.similarity_operation_provider.BluedURIRouterAdapter.12
             @Override // java.lang.Runnable
             public void run() {
-                Activity activity = Context.this;
-                if (BDActivityManager.f34819a.a() != null) {
-                    activity = BDActivityManager.f34819a.a();
+                Activity activity = context;
+                if (BDActivityManager.a.a() != null) {
+                    activity = BDActivityManager.a.a();
                 }
                 if (activity instanceof BaseFragmentActivity) {
                     FindSearchMapFragment.a((BaseFragmentActivity) activity, 1);
@@ -1066,7 +1063,7 @@ public class BluedURIRouterAdapter {
             Bundle bundle = new Bundle();
             UserBasicModel userBasicModel = new UserBasicModel();
             userBasicModel.uid = UserInfo.getInstance().getLoginUserInfo().uid;
-            bundle.putSerializable("user", userBasicModel);
+            bundle.putSerializable(ImsConferenceState.USER, userBasicModel);
             bundle.putString("userfrom", str3);
             bundle.putInt("tab", i2);
             bundle.putString("user_to", str4);
@@ -1077,7 +1074,7 @@ public class BluedURIRouterAdapter {
             Bundle bundle2 = new Bundle();
             UserBasicModel userBasicModel2 = new UserBasicModel();
             userBasicModel2.uid = str6;
-            bundle2.putSerializable("user", userBasicModel2);
+            bundle2.putSerializable(ImsConferenceState.USER, userBasicModel2);
             bundle2.putString("userfrom", str3);
             bundle2.putInt("tab", i2);
             TerminalActivity.a(bundle2);
@@ -1092,7 +1089,7 @@ public class BluedURIRouterAdapter {
             } catch (Exception e) {
                 str5 = "";
             }
-            bundle3.putString(ContactsContract.Contacts.AggregationSuggestions.PARAMETER_MATCH_NICKNAME, str5);
+            bundle3.putString("nickname", str5);
             bundle3.putBoolean("if_from_name", true);
             bundle3.putString("userfrom", str3);
             bundle3.putInt("tab", i2);
@@ -1237,12 +1234,12 @@ public class BluedURIRouterAdapter {
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.similarity_operation_provider.BluedURIRouterAdapter.13
             @Override // java.lang.Runnable
             public void run() {
-                Activity activity = Context.this;
-                if (BDActivityManager.f34819a.a() != null) {
-                    activity = BDActivityManager.f34819a.a();
+                Activity activity = context;
+                if (BDActivityManager.a.a() != null) {
+                    activity = BDActivityManager.a.a();
                 }
                 if (LiveRoomManager.a().l()) {
-                    AppMethods.a((CharSequence) activity.getString(2131893071));
+                    AppMethods.a((CharSequence) activity.getString(R.string.yy_living_toast));
                 } else if (activity instanceof BaseFragmentActivity) {
                     if (!TextUtils.isEmpty(str4)) {
                         YYRoomInfoManager.e().a(new YYJoinRoomJumpInfoMode(0, str4));
@@ -1259,17 +1256,17 @@ public class BluedURIRouterAdapter {
         if (TextUtils.isEmpty(str)) {
             str4 = "web_chat_room";
         }
-        YYChatRoomsListFragment.f17120a.a(context, str4, str2, str3);
+        YYChatRoomsListFragment.a.a(context, str4, str2, str3);
         return true;
     }
 
     public static boolean openYYFullServiceSquare(Context context) {
-        YYFullServiceSquareFragment.f17240a.a(context);
+        YYFullServiceSquareFragment.a.a(context);
         return true;
     }
 
     public static boolean openYYHotTopicList(Context context) {
-        YYHotTopicListFragment.f17297a.a(context);
+        YYHotTopicListFragment.a.a(context);
         return true;
     }
 
@@ -1335,12 +1332,12 @@ public class BluedURIRouterAdapter {
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.similarity_operation_provider.BluedURIRouterAdapter.15
             @Override // java.lang.Runnable
             public void run() {
-                Activity activity = Context.this;
-                if (BDActivityManager.f34819a.a() != null) {
-                    activity = BDActivityManager.f34819a.a();
+                Activity activity = context;
+                if (BDActivityManager.a.a() != null) {
+                    activity = BDActivityManager.a.a();
                 }
                 if (activity instanceof BaseFragmentActivity) {
-                    Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + str3));
+                    Intent intent = new Intent("android.intent.action.SENDTO", Uri.parse("smsto:" + str3));
                     intent.putExtra("sms_body", str2);
                     activity.startActivity(intent);
                 }
@@ -1359,12 +1356,12 @@ public class BluedURIRouterAdapter {
         if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
             return true;
         }
-        String format = String.format(context.getString(2131887810), str2);
-        CommonAlertDialog.a(context, context.getString(R.string.map_tips), format + String.format(context.getString(2131887811), str3), context.getString(2131887809), new DialogInterface.OnClickListener() { // from class: com.blued.android.similarity_operation_provider.BluedURIRouterAdapter.14
+        String format = String.format(context.getString(com.blued.community.R.string.event_report_confirm_dialog_content_1), str2);
+        CommonAlertDialog.a(context, context.getString(2131890560), format + String.format(context.getString(com.blued.community.R.string.event_report_confirm_dialog_content_2), str3), context.getString(com.blued.community.R.string.event_report_confirm_dialog_btn), new DialogInterface.OnClickListener() { // from class: com.blued.android.similarity_operation_provider.BluedURIRouterAdapter.14
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                LiveEventBus.get(EventBusConstant.KEY_EVENT_REPORT_CONFIRM_DIALOG).post(String.this);
+                LiveEventBus.get("event_report_confirm_dialog").post(String.this);
             }
         }, null, 1);
         return true;
@@ -1373,7 +1370,7 @@ public class BluedURIRouterAdapter {
     public static boolean showGroupRecoverPrivilege(Context context) {
         long eF = BluedPreferences.eF();
         if (eF == 0 || eF + 86400000 < System.currentTimeMillis()) {
-            GroupHelper.f32827a.a(context);
+            GroupHelper.a.a(context);
             return true;
         }
         return true;
@@ -1391,7 +1388,7 @@ public class BluedURIRouterAdapter {
 
     public static boolean showTaskFloatView(Context context, int i, String str, int i2, int i3, String str2, String str3) {
         String str4 = TAG;
-        Logger.c(str4, "showTaskFloatView :jump_url: " + str2);
+        Logger.c(str4, new Object[]{"showTaskFloatView :jump_url: " + str2});
         if (!TextUtils.isEmpty(str2)) {
             Uri f = BluedURIRouter.a().f(str2);
             if (f != null) {
@@ -1423,7 +1420,7 @@ public class BluedURIRouterAdapter {
     }
 
     public static boolean startVIPPay(Context context, String str, String str2, String str3, String str4, String str5, String str6, int i, LiveChargeCouponModel liveChargeCouponModel) {
-        String a2 = EncryptTool.a(str2);
+        String a = EncryptTool.a(str2);
         GoodsOptionBasic goodsOptionBasic = new GoodsOptionBasic();
         goodsOptionBasic.id = Integer.valueOf(str).intValue();
         if (i > 0) {
@@ -1435,7 +1432,7 @@ public class BluedURIRouterAdapter {
         if (liveChargeCouponModel != null && i > 0) {
             liveChargeCouponModel.realPayMoney = i;
         }
-        PayPreOrderFragment.a(context, goodsOptionBasic, str5, a2, str3, str4, str6, 0, 0, liveChargeCouponModel, 0, null);
+        PayPreOrderFragment.a(context, goodsOptionBasic, str5, a, str3, str4, str6, 0, 0, liveChargeCouponModel, 0, (IRequestHost) null);
         return true;
     }
 }

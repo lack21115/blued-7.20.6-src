@@ -1,7 +1,5 @@
 package java.util;
 
-import com.igexin.push.core.b;
-
 /* loaded from: source-2895416-dex2jar.jar:java/util/Objects.class */
 public final class Objects {
     private Objects() {
@@ -48,7 +46,7 @@ public final class Objects {
     }
 
     public static String toString(Object obj) {
-        return obj == null ? b.l : obj.toString();
+        return obj == null ? "null" : obj.toString();
     }
 
     public static String toString(Object obj, String str) {

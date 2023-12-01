@@ -81,7 +81,7 @@ public final class Iterables {
         return new FluentIterable<T>() { // from class: com.google.common.collect.Iterables.8
             @Override // java.lang.Iterable
             public Iterator<T> iterator() {
-                Iterable iterable2 = Iterable.this;
+                Iterable iterable2 = iterable;
                 return iterable2 instanceof Queue ? new ConsumingQueueIterator((Queue) iterable2) : Iterators.consumingIterator(iterable2.iterator());
             }
 
@@ -101,12 +101,12 @@ public final class Iterables {
         return new FluentIterable<T>() { // from class: com.google.common.collect.Iterables.1
             @Override // java.lang.Iterable
             public Iterator<T> iterator() {
-                return Iterators.cycle(Iterable.this);
+                return Iterators.cycle(iterable);
             }
 
             @Override // com.google.common.collect.FluentIterable
             public String toString() {
-                return Iterable.this.toString() + " (cycled)";
+                return iterable.toString() + " (cycled)";
             }
         };
     }
@@ -129,7 +129,7 @@ public final class Iterables {
         return new FluentIterable<T>() { // from class: com.google.common.collect.Iterables.4
             @Override // java.lang.Iterable
             public Iterator<T> iterator() {
-                return Iterators.filter(Iterable.this.iterator(), predicate);
+                return Iterators.filter(iterable.iterator(), predicate);
             }
         };
     }
@@ -232,7 +232,7 @@ public final class Iterables {
         return new FluentIterable<T>() { // from class: com.google.common.collect.Iterables.7
             @Override // java.lang.Iterable
             public Iterator<T> iterator() {
-                return Iterators.limit(Iterable.this.iterator(), i);
+                return Iterators.limit(iterable.iterator(), i);
             }
         };
     }
@@ -243,7 +243,7 @@ public final class Iterables {
         return new UnmodifiableIterable(new FluentIterable<T>() { // from class: com.google.common.collect.Iterables.9
             @Override // java.lang.Iterable
             public Iterator<T> iterator() {
-                return Iterators.mergeSorted(Iterables.transform(Iterable.this, Iterables.toIterator()), comparator);
+                return Iterators.mergeSorted(Iterables.transform(iterable, Iterables.toIterator()), comparator);
             }
         });
     }
@@ -254,7 +254,7 @@ public final class Iterables {
         return new FluentIterable<List<T>>() { // from class: com.google.common.collect.Iterables.3
             @Override // java.lang.Iterable
             public Iterator<List<T>> iterator() {
-                return Iterators.paddedPartition(Iterable.this.iterator(), i);
+                return Iterators.paddedPartition(iterable.iterator(), i);
             }
         };
     }
@@ -265,7 +265,7 @@ public final class Iterables {
         return new FluentIterable<List<T>>() { // from class: com.google.common.collect.Iterables.2
             @Override // java.lang.Iterable
             public Iterator<List<T>> iterator() {
-                return Iterators.partition(Iterable.this.iterator(), i);
+                return Iterators.partition(iterable.iterator(), i);
             }
         };
     }
@@ -343,7 +343,7 @@ public final class Iterables {
         return new FluentIterable<T>() { // from class: com.google.common.collect.Iterables.6
             @Override // java.lang.Iterable
             public Iterator<T> iterator() {
-                Iterable iterable2 = Iterable.this;
+                Iterable iterable2 = iterable;
                 if (iterable2 instanceof List) {
                     List list = (List) iterable2;
                     return list.subList(Math.min(list.size(), i), list.size()).iterator();
@@ -434,7 +434,7 @@ public final class Iterables {
         return new FluentIterable<T>() { // from class: com.google.common.collect.Iterables.5
             @Override // java.lang.Iterable
             public Iterator<T> iterator() {
-                return Iterators.transform(Iterable.this.iterator(), function);
+                return Iterators.transform(iterable.iterator(), function);
             }
         };
     }

@@ -13,11 +13,11 @@ import java.util.List;
 public class as implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ ao f41213a;
+    final /* synthetic */ ao f27522a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public as(ao aoVar) {
-        this.f41213a = aoVar;
+        this.f27522a = aoVar;
     }
 
     @Override // android.content.ServiceConnection
@@ -25,26 +25,26 @@ public class as implements ServiceConnection {
         List<Message> list;
         List list2;
         Messenger messenger;
-        synchronized (this.f41213a) {
-            this.f41213a.f135a = new Messenger(iBinder);
-            this.f41213a.f41208c = false;
-            list = this.f41213a.f138a;
+        synchronized (this.f27522a) {
+            this.f27522a.f88a = new Messenger(iBinder);
+            this.f27522a.f27517c = false;
+            list = this.f27522a.f91a;
             for (Message message : list) {
                 try {
-                    messenger = this.f41213a.f135a;
+                    messenger = this.f27522a.f88a;
                     messenger.send(message);
                 } catch (RemoteException e) {
                     com.xiaomi.channel.commonutils.logger.b.a(e);
                 }
             }
-            list2 = this.f41213a.f138a;
+            list2 = this.f27522a.f91a;
             list2.clear();
         }
     }
 
     @Override // android.content.ServiceConnection
     public void onServiceDisconnected(ComponentName componentName) {
-        this.f41213a.f135a = null;
-        this.f41213a.f41208c = false;
+        this.f27522a.f88a = null;
+        this.f27522a.f27517c = false;
     }
 }

@@ -10,9 +10,8 @@ import java.lang.reflect.Method;
 /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/base/util/BundleCompat.class */
 public final class BundleCompat {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/base/util/BundleCompat$BundleCompatBaseImpl.class */
-    public static class BundleCompatBaseImpl {
+    static class BundleCompatBaseImpl {
         private static final String TAG = "BundleCompatBaseImpl";
         private static Method sGetIBinderMethod;
         private static boolean sGetIBinderMethodFetched;

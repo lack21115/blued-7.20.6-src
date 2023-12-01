@@ -45,12 +45,12 @@ public class FontsContractCompat {
         public static final int STATUS_WRONG_CERTIFICATES = 1;
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f2540a;
+        private final int f2492a;
         private final FontInfo[] b;
 
         @Deprecated
         public FontFamilyResult(int i, FontInfo[] fontInfoArr) {
-            this.f2540a = i;
+            this.f2492a = i;
             this.b = fontInfoArr;
         }
 
@@ -64,7 +64,7 @@ public class FontsContractCompat {
         }
 
         public int getStatusCode() {
-            return this.f2540a;
+            return this.f2492a;
         }
     }
 
@@ -72,19 +72,19 @@ public class FontsContractCompat {
     public static class FontInfo {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Uri f2541a;
+        private final Uri f2493a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f2542c;
+        private final int f2494c;
         private final boolean d;
         private final int e;
 
         @Deprecated
         public FontInfo(Uri uri, int i, int i2, boolean z, int i3) {
-            this.f2541a = (Uri) Preconditions.checkNotNull(uri);
+            this.f2493a = (Uri) Preconditions.checkNotNull(uri);
             this.b = i;
-            this.f2542c = i2;
+            this.f2494c = i2;
             this.d = z;
             this.e = i3;
         }
@@ -103,11 +103,11 @@ public class FontsContractCompat {
         }
 
         public Uri getUri() {
-            return this.f2541a;
+            return this.f2493a;
         }
 
         public int getWeight() {
-            return this.f2542c;
+            return this.f2494c;
         }
 
         public boolean isItalic() {

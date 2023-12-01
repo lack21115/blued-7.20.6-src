@@ -6,15 +6,15 @@ import java.io.ByteArrayOutputStream;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public final f f21840a;
+    public final f f8233a;
     public ByteArrayOutputStream b;
 
     /* renamed from: c  reason: collision with root package name */
-    public a f21841c;
+    public a f8234c;
     private final String d;
 
     public h(f fVar, String str) {
-        this.f21840a = fVar;
+        this.f8233a = fVar;
         this.d = str;
     }
 

@@ -8,11 +8,11 @@ import java.io.BufferedOutputStream;
 final class f implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    PAMsgListener f21861a;
+    PAMsgListener f8254a;
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f21862c;
+    String f8255c;
     BufferedOutputStream d;
 
     /* JADX WARN: Removed duplicated region for block: B:50:0x0100  */
@@ -35,14 +35,14 @@ final class f implements d {
             if (this.b) {
                 Log.e("PerformanceAnalyze", b.toString());
             }
-            if (this.f21862c != null) {
+            if (this.f8255c != null) {
                 try {
                     BufferedOutputStream bufferedOutputStream = this.d;
                     bufferedOutputStream.write((b.toString() + "\n").getBytes());
                 } catch (Exception e) {
                 }
             }
-            this.f21861a.msg(b);
+            this.f8254a.msg(b);
         }
     }
 }

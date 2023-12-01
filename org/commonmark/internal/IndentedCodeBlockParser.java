@@ -15,22 +15,20 @@ import org.commonmark.parser.block.ParserState;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/IndentedCodeBlockParser.class */
 public class IndentedCodeBlockParser extends AbstractBlockParser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final IndentedCodeBlock f44020a = new IndentedCodeBlock();
+    private final IndentedCodeBlock a = new IndentedCodeBlock();
     private final List<CharSequence> b = new ArrayList();
 
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/IndentedCodeBlockParser$Factory.class */
     public static class Factory extends AbstractBlockParserFactory {
         @Override // org.commonmark.parser.block.BlockParserFactory
         public BlockStart a(ParserState parserState, MatchedBlockParser matchedBlockParser) {
-            return (parserState.f() < Parsing.f44049a || parserState.g() || (parserState.h().c() instanceof Paragraph)) ? BlockStart.f() : BlockStart.a(new IndentedCodeBlockParser()).b(parserState.e() + Parsing.f44049a);
+            return (parserState.f() < Parsing.a || parserState.g() || (parserState.h().c() instanceof Paragraph)) ? BlockStart.f() : BlockStart.a(new IndentedCodeBlockParser()).b(parserState.e() + Parsing.a);
         }
     }
 
     @Override // org.commonmark.parser.block.BlockParser
     public BlockContinue a(ParserState parserState) {
-        return parserState.f() >= Parsing.f44049a ? BlockContinue.b(parserState.e() + Parsing.f44049a) : parserState.g() ? BlockContinue.a(parserState.d()) : BlockContinue.d();
+        return parserState.f() >= Parsing.a ? BlockContinue.b(parserState.e() + Parsing.a) : parserState.g() ? BlockContinue.a(parserState.d()) : BlockContinue.d();
     }
 
     @Override // org.commonmark.parser.block.AbstractBlockParser, org.commonmark.parser.block.BlockParser
@@ -54,7 +52,7 @@ public class IndentedCodeBlockParser extends AbstractBlockParser {
         while (true) {
             int i3 = i2;
             if (i3 >= i + 1) {
-                this.f44020a.a(sb.toString());
+                this.a.a(sb.toString());
                 return;
             }
             sb.append(this.b.get(i3));
@@ -65,6 +63,6 @@ public class IndentedCodeBlockParser extends AbstractBlockParser {
 
     @Override // org.commonmark.parser.block.BlockParser
     public Block c() {
-        return this.f44020a;
+        return this.a;
     }
 }

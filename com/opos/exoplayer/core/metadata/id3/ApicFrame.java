@@ -23,26 +23,26 @@ public final class ApicFrame extends Id3Frame {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25524a;
+    public final String f11836a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f25525c;
+    public final int f11837c;
     public final byte[] d;
 
     ApicFrame(Parcel parcel) {
-        super(com.anythink.expressad.exoplayer.g.b.a.f7343a);
-        this.f25524a = parcel.readString();
+        super(com.anythink.expressad.exoplayer.g.b.a.f4504a);
+        this.f11836a = parcel.readString();
         this.b = parcel.readString();
-        this.f25525c = parcel.readInt();
+        this.f11837c = parcel.readInt();
         this.d = parcel.createByteArray();
     }
 
     public ApicFrame(String str, String str2, int i, byte[] bArr) {
-        super(com.anythink.expressad.exoplayer.g.b.a.f7343a);
-        this.f25524a = str;
+        super(com.anythink.expressad.exoplayer.g.b.a.f4504a);
+        this.f11836a = str;
         this.b = str2;
-        this.f25525c = i;
+        this.f11837c = i;
         this.d = bArr;
     }
 
@@ -56,9 +56,9 @@ public final class ApicFrame extends Id3Frame {
                 }
                 ApicFrame apicFrame = (ApicFrame) obj;
                 z = false;
-                if (this.f25525c == apicFrame.f25525c) {
+                if (this.f11837c == apicFrame.f11837c) {
                     z = false;
-                    if (u.a(this.f25524a, apicFrame.f25524a)) {
+                    if (u.a(this.f11836a, apicFrame.f11836a)) {
                         z = false;
                         if (u.a(this.b, apicFrame.b)) {
                             if (!Arrays.equals(this.d, apicFrame.d)) {
@@ -75,8 +75,8 @@ public final class ApicFrame extends Id3Frame {
     }
 
     public int hashCode() {
-        int i = this.f25525c;
-        String str = this.f25524a;
+        int i = this.f11837c;
+        String str = this.f11836a;
         int i2 = 0;
         int hashCode = str != null ? str.hashCode() : 0;
         String str2 = this.b;
@@ -88,9 +88,9 @@ public final class ApicFrame extends Id3Frame {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f25524a);
+        parcel.writeString(this.f11836a);
         parcel.writeString(this.b);
-        parcel.writeInt(this.f25525c);
+        parcel.writeInt(this.f11837c);
         parcel.writeByteArray(this.d);
     }
 }

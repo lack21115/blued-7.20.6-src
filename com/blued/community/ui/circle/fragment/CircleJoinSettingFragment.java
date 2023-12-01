@@ -16,13 +16,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleJoinSettingFragment.class */
 public class CircleJoinSettingFragment extends MvpFragment<CircleJoinSettingPresenter> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private CommonTopTitleNoTrans f19206a;
+    private CommonTopTitleNoTrans a;
     private LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f19207c;
+    private ImageView c;
     private LinearLayout d;
     private ImageView e;
     private boolean f = false;
@@ -35,11 +31,11 @@ public class CircleJoinSettingFragment extends MvpFragment<CircleJoinSettingPres
     }
 
     private void c() {
-        this.f19206a = (CommonTopTitleNoTrans) this.i.findViewById(R.id.title);
+        this.a = (CommonTopTitleNoTrans) this.i.findViewById(R.id.title);
         LinearLayout linearLayout = (LinearLayout) this.i.findViewById(R.id.ll_direct);
         this.b = linearLayout;
         linearLayout.setOnClickListener(this);
-        this.f19207c = (ImageView) this.i.findViewById(R.id.iv_direct);
+        this.c = (ImageView) this.i.findViewById(R.id.iv_direct);
         LinearLayout linearLayout2 = (LinearLayout) this.i.findViewById(R.id.ll_apply);
         this.d = linearLayout2;
         linearLayout2.setOnClickListener(this);
@@ -51,13 +47,13 @@ public class CircleJoinSettingFragment extends MvpFragment<CircleJoinSettingPres
         super.a(bundle);
         c();
         if (CommunityPreferences.c()) {
-            this.f19207c.setVisibility(0);
+            this.c.setVisibility(0);
             this.e.setVisibility(8);
         } else {
-            this.f19207c.setVisibility(8);
+            this.c.setVisibility(8);
             this.e.setVisibility(0);
         }
-        this.f19206a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleJoinSettingFragment.1
+        this.a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleJoinSettingFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -89,13 +85,13 @@ public class CircleJoinSettingFragment extends MvpFragment<CircleJoinSettingPres
         Tracker.onClick(view);
         int id = view.getId();
         if (id == R.id.ll_direct) {
-            this.f19207c.setVisibility(0);
+            this.c.setVisibility(0);
             this.e.setVisibility(8);
             this.g = "1";
             this.f = true;
             CommunityPreferences.a("1".equals("1"));
         } else if (id == R.id.ll_apply) {
-            this.f19207c.setVisibility(8);
+            this.c.setVisibility(8);
             this.e.setVisibility(0);
             this.g = "0";
             this.f = true;

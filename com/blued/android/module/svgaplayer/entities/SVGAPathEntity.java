@@ -1,9 +1,8 @@
 package com.blued.android.module.svgaplayer.entities;
 
 import android.graphics.Path;
-import androidx.exifinterface.media.ExifInterface;
+import com.amap.api.col.p0003sl.iu;
 import com.blued.android.module.svgaplayer.utils.SVGAPoint;
-import com.umeng.analytics.pro.bh;
 import java.util.Set;
 import java.util.StringTokenizer;
 import kotlin.Metadata;
@@ -13,14 +12,12 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/entities/SVGAPathEntity.class */
 public final class SVGAPathEntity {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f16002a;
+    private final String a;
     private Path b;
 
     public SVGAPathEntity(String originValue) {
         Intrinsics.e(originValue, "originValue");
-        this.f16002a = StringsKt.c((CharSequence) originValue, (CharSequence) ",", false, 2, (Object) null) ? StringsKt.a(originValue, ",", " ", false, 4, (Object) null) : originValue;
+        this.a = StringsKt.c((CharSequence) originValue, (CharSequence) ",", false, 2, (Object) null) ? StringsKt.a(originValue, ",", " ", false, 4, (Object) null) : originValue;
     }
 
     private final void a(Path path, String str, StringTokenizer stringTokenizer) {
@@ -121,17 +118,17 @@ public final class SVGAPathEntity {
         }
         if (Intrinsics.a((Object) str, (Object) "H")) {
             path.lineTo(f, sVGAPoint.b());
-        } else if (Intrinsics.a((Object) str, (Object) "h")) {
+        } else if (Intrinsics.a((Object) str, (Object) iu.g)) {
             path.rLineTo(f, 0.0f);
         }
-        if (Intrinsics.a((Object) str, (Object) ExifInterface.GPS_MEASUREMENT_INTERRUPTED)) {
+        if (Intrinsics.a((Object) str, (Object) "V")) {
             path.lineTo(sVGAPoint.a(), f);
         } else if (Intrinsics.a((Object) str, (Object) "v")) {
             path.rLineTo(0.0f, f);
         }
         if (Intrinsics.a((Object) str, (Object) "Z")) {
             path.close();
-        } else if (Intrinsics.a((Object) str, (Object) bh.aG)) {
+        } else if (Intrinsics.a((Object) str, (Object) "z")) {
             path.close();
         }
     }
@@ -145,15 +142,15 @@ public final class SVGAPathEntity {
             return;
         }
         Path path2 = new Path();
-        StringTokenizer stringTokenizer = new StringTokenizer(this.f16002a, "MLHVCSQRAZmlhvcsqraz", true);
+        StringTokenizer stringTokenizer = new StringTokenizer(this.a, "MLHVCSQRAZmlhvcsqraz", true);
         String str = "";
         while (stringTokenizer.hasMoreTokens()) {
             String segment = stringTokenizer.nextToken();
             Intrinsics.c(segment, "segment");
             if (!(segment.length() == 0)) {
-                set = SVGAPathEntityKt.f16003a;
+                set = SVGAPathEntityKt.a;
                 if (set.contains(segment)) {
-                    if (Intrinsics.a((Object) segment, (Object) "Z") || Intrinsics.a((Object) segment, (Object) bh.aG)) {
+                    if (Intrinsics.a((Object) segment, (Object) "Z") || Intrinsics.a((Object) segment, (Object) "z")) {
                         a(path2, segment, new StringTokenizer("", ""));
                     }
                     str = segment;

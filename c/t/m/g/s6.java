@@ -4,7 +4,7 @@ package c.t.m.g;
 public class s6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f3985a = new byte[0];
+    public static final byte[] f3937a = new byte[0];
 
     public static byte[] a(int i) {
         byte[] bArr = new byte[2];
@@ -23,15 +23,15 @@ public class s6 {
 
     public static byte[] a(byte[] bArr, String str) {
         if (bArr == null || bArr.length == 0) {
-            return f3985a;
+            return f3937a;
         }
         byte[] a2 = v2.a(r2.a(bArr), str);
         if (a2 == null || a2.length == 0) {
-            return f3985a;
+            return f3937a;
         }
         byte[] bArr2 = new byte[a2.length + 2];
-        System.arraycopy((Object) a(a2.length), 0, (Object) bArr2, 0, 2);
-        System.arraycopy((Object) a2, 0, (Object) bArr2, 2, a2.length);
+        System.arraycopy(a(a2.length), 0, bArr2, 0, 2);
+        System.arraycopy(a2, 0, bArr2, 2, a2.length);
         return bArr2;
     }
 }

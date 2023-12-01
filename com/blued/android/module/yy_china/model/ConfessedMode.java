@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.model;
 
+import $r8;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
@@ -153,7 +154,7 @@ public final class ConfessedMode {
     }
 
     public int hashCode() {
-        return (((((((((((((((this.confession_user.hashCode() * 31) + this.being_confession_user_to.hashCode()) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.position_end_time)) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.confession_duration)) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.confession_score)) * 31) + this.score) * 31) + this.difference) * 31) + this.ranking) * 31) + this.declare.hashCode();
+        return (((((((((((((((this.confession_user.hashCode() * 31) + this.being_confession_user_to.hashCode()) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.position_end_time)) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.confession_duration)) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.confession_score)) * 31) + this.score) * 31) + this.difference) * 31) + this.ranking) * 31) + this.declare.hashCode();
     }
 
     public String toString() {

@@ -1,8 +1,6 @@
 package com.sobot.chat.utils;
 
-import com.alipay.sdk.util.i;
 import com.anythink.expressad.video.dynview.a.a;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.umeng.analytics.pro.bh;
 import java.util.List;
 
@@ -59,9 +57,9 @@ public class WriteTxtToStringOrJson {
         while (true) {
             int i2 = i;
             if (i2 >= list.size()) {
-                stringBuffer.append(i.d);
+                stringBuffer.append("}");
                 System.out.println(stringBuffer.toString());
-                WriteFile.writeStringToFile(str + BridgeUtil.SPLIT_MARK + version_path + "/sobot_android_strings_" + str2 + ".json", stringBuffer.toString(), true);
+                WriteFile.writeStringToFile(str + "/" + version_path + "/sobot_android_strings_" + str2 + ".json", stringBuffer.toString(), true);
                 return;
             }
             if (i2 == list.size() - 1) {

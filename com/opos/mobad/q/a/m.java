@@ -14,7 +14,7 @@ import java.util.Map;
 public abstract class m implements e {
 
     /* renamed from: a  reason: collision with root package name */
-    private AdItemData f27229a;
+    private AdItemData f13541a;
     private MaterialData b;
     public final com.opos.mobad.q.a.a l;
     protected j m;
@@ -22,11 +22,11 @@ public abstract class m implements e {
     protected long o = -1;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/q/a/m$a.class */
-    public interface a extends com.opos.mobad.ad.h, a.InterfaceC0724a, j.a {
+    public interface a extends com.opos.mobad.ad.h, a.InterfaceC0554a, j.a {
     }
 
-    public m(Context context, String str, com.opos.mobad.cmn.a.a aVar, b.InterfaceC0687b interfaceC0687b, final a aVar2) {
-        this.l = new com.opos.mobad.q.a.a(context, str, aVar, interfaceC0687b, aVar2);
+    public m(Context context, String str, com.opos.mobad.cmn.a.a aVar, b.InterfaceC0517b interfaceC0517b, final a aVar2) {
+        this.l = new com.opos.mobad.q.a.a(context, str, aVar, interfaceC0517b, aVar2);
         this.m = new j(context, str, aVar2);
         this.n = new l(context, new com.opos.mobad.ad.h() { // from class: com.opos.mobad.q.a.m.1
             @Override // com.opos.mobad.ad.h
@@ -52,13 +52,13 @@ public abstract class m implements e {
         return 10410;
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void a(int i, String str) {
         com.opos.cmn.an.f.a.b("UniversalPresenter", "onError" + i);
         this.m.a(a(i), str);
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void a(long j, long j2) {
         com.opos.cmn.an.f.a.b("UniversalPresenter", "onComplete" + j);
         this.o = j2;
@@ -71,7 +71,7 @@ public abstract class m implements e {
         this.l.a(view);
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void a(View view, int[] iArr, boolean z) {
     }
 
@@ -91,7 +91,7 @@ public abstract class m implements e {
     }
 
     public void a(AdItemData adItemData, MaterialData materialData, long j, int i, int i2) {
-        this.f27229a = adItemData;
+        this.f13541a = adItemData;
         this.b = materialData;
         this.o = -1L;
         this.l.a(adItemData, materialData, i, i2);
@@ -106,7 +106,7 @@ public abstract class m implements e {
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean a(View view, int[] iArr, com.opos.mobad.cmn.a.b.a aVar, a.c cVar) {
         com.opos.cmn.an.f.a.b("UniversalPresenter", "onClick" + aVar);
-        if (com.opos.mobad.cmn.a.b.g.a(this.f27229a, aVar)) {
+        if (com.opos.mobad.cmn.a.b.g.a(this.f13541a, aVar)) {
             Map<String, String> map = null;
             long j = this.o;
             if (j > 0) {
@@ -123,17 +123,17 @@ public abstract class m implements e {
         return false;
     }
 
-    @Override // com.opos.mobad.o.c.a.InterfaceC0721a
+    @Override // com.opos.mobad.o.c.a.InterfaceC0551a
     public void a_(View view, int[] iArr) {
         a(view, iArr, com.opos.mobad.cmn.a.b.a.Pendant);
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void b(int i) {
         this.l.a(i);
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void b(long j, long j2) {
     }
 
@@ -143,12 +143,12 @@ public abstract class m implements e {
         this.n.e();
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void c(int i) {
         this.l.d(i);
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void c(long j, long j2) {
     }
 
@@ -156,7 +156,7 @@ public abstract class m implements e {
         this.l.b(i);
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void d(long j, long j2) {
         com.opos.cmn.an.f.a.b("UniversalPresenter", "onProcess =" + j + ",duration =" + j2);
         this.o = j;
@@ -164,24 +164,24 @@ public abstract class m implements e {
         this.n.a(j);
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void d(View view, int[] iArr) {
         com.opos.cmn.an.f.a.b("UniversalPresenter", "onCloseClick");
         this.l.a(false, iArr);
         this.m.a(view, iArr, this.o);
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void e() {
         this.l.a();
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void e(View view, int[] iArr) {
         a(view, iArr, com.opos.mobad.cmn.a.b.a.Video);
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void f(View view, int[] iArr) {
         a(view, iArr, com.opos.mobad.cmn.a.b.a.ClickBt);
     }
@@ -192,12 +192,12 @@ public abstract class m implements e {
         this.m.a((View) null, (int[]) null, this.o);
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void g(View view, int[] iArr) {
         a(view, iArr, com.opos.mobad.cmn.a.b.a.NonClickBt);
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void h(View view, int[] iArr) {
         l lVar = this.n;
         if (lVar != null) {
@@ -205,16 +205,16 @@ public abstract class m implements e {
         }
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void i(View view, int[] iArr) {
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void j(View view, int[] iArr) {
         a(view, iArr, com.opos.mobad.cmn.a.b.a.FloatLayerNonClickBt);
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void k(View view, int[] iArr) {
         a(view, iArr, com.opos.mobad.cmn.a.b.a.FloatLayerClickBt);
     }

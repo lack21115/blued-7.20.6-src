@@ -3,10 +3,12 @@ package androidx.lifecycle;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
+import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScopeKt;
+import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.DisposableHandle;
 
@@ -17,11 +19,11 @@ public final class EmittedSource implements DisposableHandle {
     private final MediatorLiveData<?> mediator;
     private final LiveData<?> source;
 
-    public EmittedSource(LiveData<?> source, MediatorLiveData<?> mediator) {
-        Intrinsics.e(source, "source");
-        Intrinsics.e(mediator, "mediator");
-        this.source = source;
-        this.mediator = mediator;
+    public EmittedSource(LiveData<?> liveData, MediatorLiveData<?> mediatorLiveData) {
+        Intrinsics.e(liveData, "source");
+        Intrinsics.e(mediatorLiveData, "mediator");
+        this.source = liveData;
+        this.mediator = mediatorLiveData;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -33,13 +35,12 @@ public final class EmittedSource implements DisposableHandle {
         this.disposed = true;
     }
 
-    @Override // kotlinx.coroutines.DisposableHandle
     public void dispose() {
-        BuildersKt.a(CoroutineScopeKt.a(Dispatchers.b().a()), null, null, new EmittedSource$dispose$1(this, null), 3, null);
+        BuildersKt.a(CoroutineScopeKt.a(Dispatchers.b().a()), (CoroutineContext) null, (CoroutineStart) null, new EmittedSource$dispose$1(this, null), 3, (Object) null);
     }
 
     public final Object disposeNow(Continuation<? super Unit> continuation) {
         Object a2 = BuildersKt.a(Dispatchers.b().a(), new EmittedSource$disposeNow$2(this, null), continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        return a2 == IntrinsicsKt.a() ? a2 : Unit.a;
     }
 }

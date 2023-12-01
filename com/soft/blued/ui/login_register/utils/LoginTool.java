@@ -18,6 +18,7 @@ import com.blued.android.module.device_identity.library.BluedDeviceIdentity;
 import com.blued.login.auto.LoginServiceManager;
 import com.blued.login.utils.LoginHelper;
 import com.bytedance.applog.tracker.Tracker;
+import com.cdo.oaps.ad.OapsKey;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.qq.e.comm.managers.GDTAdSdk;
 import com.soft.blued.BluedConstant;
@@ -38,7 +39,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class LoginTool {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final LoginTool f31584a = new LoginTool();
+    public static final LoginTool f17894a = new LoginTool();
 
     private LoginTool() {
     }
@@ -49,7 +50,7 @@ public final class LoginTool {
             AppInfo.t();
             AppInfo.q();
             AppInfo.s();
-            BluedDeviceIdentity.a().a(AppInfo.d(), Intrinsics.a(BluedHttpUrl.q(), (Object) "/blued/device"), 2);
+            BluedDeviceIdentity.a().a(AppInfo.d(), Intrinsics.a(BluedHttpUrl.q(), "/blued/device"), 2);
             InitTaskUtil.initBluedAPM();
             InitTaskUtil.initUMeng();
             InitTaskUtil.initMap();
@@ -83,11 +84,11 @@ public final class LoginTool {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(View contentView, CheckBox checkBox, CompoundButton compoundButton, boolean z) {
+    public static final void a(View view, CheckBox checkBox, CompoundButton compoundButton, boolean z) {
         Tracker.onCheckedChanged(compoundButton, z);
-        Intrinsics.e(contentView, "$contentView");
+        Intrinsics.e(view, "$contentView");
         if (z) {
-            LoginServiceManager.a().a("check_term", contentView.getContext(), checkBox);
+            LoginServiceManager.a().a("check_term", view.getContext(), checkBox);
         }
         LiveEventBus.get(EventBusConstant.KEY_EVENT_LOGIN_CHECK).post(Boolean.valueOf(z));
     }
@@ -102,7 +103,7 @@ public final class LoginTool {
     public static final void c(Context context, View view) {
         Tracker.onClick(view);
         String language = BlueAppChatLocal.getLanguage();
-        WebViewShowInfoFragment.show(context, Intrinsics.a((Object) language, (Object) "en") ? H5Url.a(86) : Intrinsics.a((Object) language, (Object) a.V) ? H5Url.a(85) : H5Url.a(87), 0);
+        WebViewShowInfoFragment.show(context, Intrinsics.a(language, "en") ? H5Url.a(86) : Intrinsics.a(language, a.V) ? H5Url.a(85) : H5Url.a(87), 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -121,74 +122,74 @@ public final class LoginTool {
     public static final void f(Context context, View view) {
         Tracker.onClick(view);
         String language = BlueAppChatLocal.getLanguage();
-        WebViewShowInfoFragment.show(context, Intrinsics.a((Object) language, (Object) "en") ? H5Url.a(86) : Intrinsics.a((Object) language, (Object) a.V) ? H5Url.a(85) : H5Url.a(87), 0);
+        WebViewShowInfoFragment.show(context, Intrinsics.a(language, "en") ? H5Url.a(86) : Intrinsics.a(language, a.V) ? H5Url.a(85) : H5Url.a(87), 0);
     }
 
     public final CommonGuidePop a(Context context) {
         Intrinsics.e(context, "context");
         String string = context.getString(2131890420);
         Intrinsics.c(string, "context.getString(R.string.login_check_argument)");
-        CommonGuidePop commonGuidePop = new CommonGuidePop(context, string, NinePatchUtils.GuideArrowPosition.LEFT, 2131232896);
+        CommonGuidePop commonGuidePop = new CommonGuidePop(context, string, NinePatchUtils.GuideArrowPosition.a, 2131232896);
         commonGuidePop.setClickThrough(true);
         commonGuidePop.setDismissOnTouchOutside(false);
         commonGuidePop.setOffsetX(-DensityUtils.a(context, 15.0f));
         return commonGuidePop;
     }
 
-    public final void a(final View contentView, boolean z) {
-        Intrinsics.e(contentView, "contentView");
-        View findViewById = contentView.findViewById(2131372705);
+    public final void a(final View view, boolean z) {
+        Intrinsics.e(view, "contentView");
+        View findViewById = view.findViewById(2131372705);
         Intrinsics.c(findViewById, "contentView.findViewById(R.id.tv_terms)");
         TextView textView = (TextView) findViewById;
-        View findViewById2 = contentView.findViewById(2131372706);
+        View findViewById2 = view.findViewById(2131372706);
         Intrinsics.c(findViewById2, "contentView.findViewById(R.id.tv_terms_en)");
         LoginServiceManager.a().a(textView, (TextView) findViewById2, z);
-        final CheckBox checkBox = (CheckBox) contentView.findViewById(2131364005).findViewById(2131362774);
+        final CheckBox checkBox = (CheckBox) view.findViewById(2131364005).findViewById(2131362774);
         checkBox.setChecked(true);
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$dLwmDeV6QUt7IONWbFCsbzqe7fU
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public final void onCheckedChanged(CompoundButton compoundButton, boolean z2) {
-                LoginTool.a(View.this, checkBox, compoundButton, z2);
+                LoginTool.a(view, checkBox, compoundButton, z2);
             }
         });
     }
 
-    public final void a(CheckBox cb, CommonGuidePop rulePop, View view) {
-        Intrinsics.e(cb, "cb");
-        Intrinsics.e(rulePop, "rulePop");
-        if (cb.isChecked()) {
-            rulePop.p();
+    public final void a(CheckBox checkBox, CommonGuidePop commonGuidePop, View view) {
+        Intrinsics.e(checkBox, OapsKey.KEY_CALLBACK);
+        Intrinsics.e(commonGuidePop, "rulePop");
+        if (checkBox.isChecked()) {
+            commonGuidePop.p();
             return;
         }
-        if (!rulePop.s()) {
-            CommonGuidePop.t.a(rulePop, new SimpleCallback(), cb, 0L);
+        if (!commonGuidePop.s()) {
+            CommonGuidePop.t.a(commonGuidePop, new SimpleCallback(), checkBox, 0L);
         }
         if (view == null) {
             return;
         }
-        view.startAnimation(LoginHelper.f20590a.a(3));
+        view.startAnimation(LoginHelper.f6984a.a(3));
     }
 
-    public final void a(TextView tvTerms, TextView tvTermsEn, boolean z) {
-        Intrinsics.e(tvTerms, "tvTerms");
-        Intrinsics.e(tvTermsEn, "tvTermsEn");
+    public final void a(TextView textView, TextView textView2, boolean z) {
+        Intrinsics.e(textView, "tvTerms");
+        Intrinsics.e(textView2, "tvTermsEn");
         final Context d = AppInfo.d();
         if (BlueAppChatLocal.isZh()) {
-            tvTermsEn.setVisibility(8);
-            tvTerms.setVisibility(0);
-            TypefaceUtils.a(d, tvTerms, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$kI4qh0MFNYDd9HF9spc45RyMxDQ
+            textView2.setVisibility(8);
+            textView.setVisibility(0);
+            TypefaceUtils.a(d, textView, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$kI4qh0MFNYDd9HF9spc45RyMxDQ
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LoginTool.a(Context.this, view);
                 }
             }, new TypefaceUtils.SpannIndex(7, 18), new TypefaceUtils.SpannIndex(29, 49), z);
-            TypefaceUtils.a(d, tvTerms, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$TSFKtSN-bJy_5moqkPCDSaqAVpg
+            TypefaceUtils.a(d, textView, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$TSFKtSN-bJy_5moqkPCDSaqAVpg
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LoginTool.b(Context.this, view);
                 }
             }, new TypefaceUtils.SpannIndex(19, 29), new TypefaceUtils.SpannIndex(51, 89), z);
-            TypefaceUtils.a(d, tvTerms, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$d6FdYkmNyKqs0E3bXP1439nL4q8
+            TypefaceUtils.a(d, textView, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$d6FdYkmNyKqs0E3bXP1439nL4q8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LoginTool.c(Context.this, view);
@@ -196,21 +197,21 @@ public final class LoginTool {
             }, new TypefaceUtils.SpannIndex(29, 40), new TypefaceUtils.SpannIndex(91, 123), z);
             return;
         }
-        tvTermsEn.setVisibility(0);
-        tvTerms.setVisibility(8);
-        TypefaceUtils.a(d, tvTermsEn, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$5dGPbuayXBVODhKNrAOisi9NeX0
+        textView2.setVisibility(0);
+        textView.setVisibility(8);
+        TypefaceUtils.a(d, textView2, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$5dGPbuayXBVODhKNrAOisi9NeX0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LoginTool.d(Context.this, view);
             }
         }, new TypefaceUtils.SpannIndex(7, 18), new TypefaceUtils.SpannIndex(29, 49), z);
-        TypefaceUtils.a(d, tvTermsEn, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$GoeP5MQBYYd0HwjjU90GwLCK1sI
+        TypefaceUtils.a(d, textView2, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$GoeP5MQBYYd0HwjjU90GwLCK1sI
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LoginTool.e(Context.this, view);
             }
         }, new TypefaceUtils.SpannIndex(19, 29), new TypefaceUtils.SpannIndex(51, 89), z);
-        TypefaceUtils.a(d, tvTermsEn, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$w8LSBTBFii5toU63r-zsgm1rgVw
+        TypefaceUtils.a(d, textView2, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.utils.-$$Lambda$LoginTool$w8LSBTBFii5toU63r-zsgm1rgVw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LoginTool.f(Context.this, view);

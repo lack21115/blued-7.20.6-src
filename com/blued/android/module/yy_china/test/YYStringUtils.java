@@ -24,13 +24,9 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/test/YYStringUtils.class */
 public class YYStringUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f17810a = Pattern.compile("[^一-龥]");
+    private static final Pattern a = Pattern.compile("[^一-龥]");
     private static final Pattern b = Pattern.compile("((http[s]{0,1}|blued)://|www\\.)[A-Za-z0-9\\.\\?\\-_~!@#$%^&/:=]+[A-Za-z0-9/#]");
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f17811c = Pattern.compile(AtRegExpUtils.AT_USERNAME_PATTERN2);
+    private static final Pattern c = Pattern.compile(AtRegExpUtils.AT_USERNAME_PATTERN2);
     private static final Pattern d = Pattern.compile("@([^\\s`~\\!@#\\$%\\^&\\*\\(\\)\\+=\\|'\\:;'\\,\\[\\]\\.\\<\\>/\\?！@#￥%……（）——\\{\\}【】‘；：”“’。，、？]+)");
     private static final Pattern e = Pattern.compile("[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+");
 
@@ -48,7 +44,7 @@ public class YYStringUtils {
         if (TextUtils.isEmpty(charSequence)) {
             return charSequence;
         }
-        Matcher matcher = f17811c.matcher(charSequence);
+        Matcher matcher = c.matcher(charSequence);
         int i = 0;
         SpannableStringBuilder spannableStringBuilder2 = null;
         while (true) {

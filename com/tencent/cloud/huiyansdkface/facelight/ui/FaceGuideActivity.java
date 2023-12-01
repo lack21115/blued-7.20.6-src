@@ -31,7 +31,7 @@ import java.util.Properties;
 public class FaceGuideActivity extends com.tencent.cloud.huiyansdkface.facelight.ui.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f35659a;
+    private static int f21968a;
     private d b;
     private c d;
     private LinearLayout e;
@@ -58,7 +58,7 @@ public class FaceGuideActivity extends com.tencent.cloud.huiyansdkface.facelight
     private boolean z;
 
     /* renamed from: c  reason: collision with root package name */
-    private e f35660c = new e(Const.SOCKET_CHECK_CHANNEL);
+    private e f21969c = new e(Const.SOCKET_CHECK_CHANNEL);
     private View.OnClickListener A = new View.OnClickListener() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.FaceGuideActivity.1
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
@@ -79,11 +79,11 @@ public class FaceGuideActivity extends com.tencent.cloud.huiyansdkface.facelight
     public static class a implements c.b {
 
         /* renamed from: a  reason: collision with root package name */
-        private d f35670a;
+        private d f21979a;
         private Activity b;
 
         public a(d dVar, Activity activity) {
-            this.f35670a = dVar;
+            this.f21979a = dVar;
             this.b = activity;
         }
 
@@ -91,11 +91,11 @@ public class FaceGuideActivity extends com.tencent.cloud.huiyansdkface.facelight
         public void a() {
             WLogger.e("FaceGuideActivity", "onHomePressed");
             KycWaSDK.getInstance().trackCustomKVEvent(this.b.getApplicationContext(), "authpage_exit_self", "点击home键返回", null);
-            this.f35670a.e(true);
-            if (this.f35670a.y() != null) {
+            this.f21979a.e(true);
+            if (this.f21979a.y() != null) {
                 WbFaceVerifyResult wbFaceVerifyResult = new WbFaceVerifyResult();
                 wbFaceVerifyResult.setIsSuccess(false);
-                wbFaceVerifyResult.setOrderNo(this.f35670a.w());
+                wbFaceVerifyResult.setOrderNo(this.f21979a.w());
                 wbFaceVerifyResult.setSign(null);
                 WbFaceError wbFaceError = new WbFaceError();
                 wbFaceError.setDomain(WbFaceError.WBFaceErrorDomainNativeProcess);
@@ -105,8 +105,8 @@ public class FaceGuideActivity extends com.tencent.cloud.huiyansdkface.facelight
                 wbFaceVerifyResult.setError(wbFaceError);
                 Properties properties = new Properties();
                 properties.setProperty("errorDesc", wbFaceError.toString());
-                this.f35670a.a(this.b, WbFaceError.WBFaceErrorCodeUserCancle, properties);
-                this.f35670a.y().onFinish(wbFaceVerifyResult);
+                this.f21979a.a(this.b, WbFaceError.WBFaceErrorCodeUserCancle, properties);
+                this.f21979a.y().onFinish(wbFaceVerifyResult);
             }
             this.b.finish();
         }
@@ -124,7 +124,7 @@ public class FaceGuideActivity extends com.tencent.cloud.huiyansdkface.facelight
         this.x = J;
         if (WbCloudFaceContant.BLACK.equals(J)) {
             i = R.style.wbcfFaceProtocolThemeBlack;
-        } else if ("custom".equals(this.x)) {
+        } else if (WbCloudFaceContant.CUSTOM.equals(this.x)) {
             i = R.style.wbcfFaceProtocolThemeCustom;
         } else {
             WLogger.e("FaceGuideActivity", "set default WHITE");
@@ -264,7 +264,7 @@ public class FaceGuideActivity extends com.tencent.cloud.huiyansdkface.facelight
         TextView textView;
         int i;
         this.j.setEnabled(true);
-        if (this.x.equals("custom")) {
+        if (this.x.equals(WbCloudFaceContant.CUSTOM)) {
             this.j.setTextColor(getResources().getColor(R.color.wbcf_custom_auth_btn_text_checked));
             textView = this.j;
             i = R.drawable.wbcf_custom_auth_btn_checked;
@@ -280,7 +280,7 @@ public class FaceGuideActivity extends com.tencent.cloud.huiyansdkface.facelight
         TextView textView;
         int i;
         this.j.setEnabled(false);
-        if (this.x.equals("custom")) {
+        if (this.x.equals(WbCloudFaceContant.CUSTOM)) {
             this.j.setTextColor(getResources().getColor(R.color.wbcf_custom_auth_btn_text_unchecked));
             textView = this.j;
             i = R.drawable.wbcf_custom_auth_btn_unchecked;
@@ -393,7 +393,7 @@ public class FaceGuideActivity extends com.tencent.cloud.huiyansdkface.facelight
         if (cVar != null) {
             cVar.b();
         }
-        this.f35660c.a();
+        this.f21969c.a();
     }
 
     @Override // android.app.Activity
@@ -404,14 +404,14 @@ public class FaceGuideActivity extends com.tencent.cloud.huiyansdkface.facelight
         if (cVar != null) {
             cVar.a();
         }
-        this.f35660c.a(getApplicationContext());
+        this.f21969c.a(getApplicationContext());
     }
 
     @Override // android.app.Activity
     public void onStart() {
         WLogger.d("FaceGuideActivity", "onStart");
         super.onStart();
-        f35659a++;
+        f21968a++;
         long X = d.z().e().X();
         this.w = new CountDownTimer(X, X) { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.FaceGuideActivity.9
             @Override // android.os.CountDownTimer
@@ -434,8 +434,8 @@ public class FaceGuideActivity extends com.tencent.cloud.huiyansdkface.facelight
             countDownTimer.cancel();
             this.w = null;
         }
-        int i = f35659a - 1;
-        f35659a = i;
+        int i = f21968a - 1;
+        f21968a = i;
         if (i != 0) {
             WLogger.e("FaceGuideActivity", "not same activity");
         } else if (this.y) {

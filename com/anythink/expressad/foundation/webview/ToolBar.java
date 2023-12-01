@@ -1,6 +1,7 @@
 package com.anythink.expressad.foundation.webview;
 
 import android.content.Context;
+import android.net.http.Headers;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -26,19 +27,19 @@ public class ToolBar extends LinearLayout {
         setPadding(0, b, 0, b);
         ImageView imageView = (ImageView) b();
         imageView.setTag("backward");
-        imageView.setImageDrawable(getResources().getDrawable(getResources().getIdentifier("anythink_expressad_backward", i.f7952c, com.anythink.expressad.foundation.b.a.b().a())));
+        imageView.setImageDrawable(getResources().getDrawable(getResources().getIdentifier("anythink_expressad_backward", i.f5112c, com.anythink.expressad.foundation.b.a.b().a())));
         addView(imageView);
         ImageView imageView2 = (ImageView) b();
         imageView2.setTag("forward");
-        imageView2.setImageDrawable(getResources().getDrawable(getResources().getIdentifier("anythink_expressad_forward", i.f7952c, com.anythink.expressad.foundation.b.a.b().a())));
+        imageView2.setImageDrawable(getResources().getDrawable(getResources().getIdentifier("anythink_expressad_forward", i.f5112c, com.anythink.expressad.foundation.b.a.b().a())));
         addView(imageView2);
         ImageView imageView3 = (ImageView) b();
-        imageView3.setTag("refresh");
-        imageView3.setImageDrawable(getResources().getDrawable(getResources().getIdentifier("anythink_expressad_refresh", i.f7952c, com.anythink.expressad.foundation.b.a.b().a())));
+        imageView3.setTag(Headers.REFRESH);
+        imageView3.setImageDrawable(getResources().getDrawable(getResources().getIdentifier("anythink_expressad_refresh", i.f5112c, com.anythink.expressad.foundation.b.a.b().a())));
         addView(imageView3);
         ImageView imageView4 = (ImageView) b();
         imageView4.setTag("exits");
-        imageView4.setImageDrawable(getResources().getDrawable(getResources().getIdentifier("anythink_expressad_exits", i.f7952c, com.anythink.expressad.foundation.b.a.b().a())));
+        imageView4.setImageDrawable(getResources().getDrawable(getResources().getIdentifier("anythink_expressad_exits", i.f5112c, com.anythink.expressad.foundation.b.a.b().a())));
         addView(imageView4);
     }
 

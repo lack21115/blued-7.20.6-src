@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemChoosePayPlatformBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29161a;
+    private final ConstraintLayout f15471a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29161a;
+        return this.f15471a;
     }
 }

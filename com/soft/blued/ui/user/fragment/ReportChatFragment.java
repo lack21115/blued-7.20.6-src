@@ -26,11 +26,11 @@ import com.soft.blued.ui.user.observer.ReportObserver;
 public class ReportChatFragment extends ReportFragmentNew {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f33914a;
+    public String f20223a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Context f33915c;
+    public Context f20224c;
 
     public static void a(Context context, String str, String str2, int i, String str3) {
         Bundle bundle = new Bundle();
@@ -43,7 +43,7 @@ public class ReportChatFragment extends ReportFragmentNew {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str) {
-        Context context = this.f33915c;
+        Context context = this.f20224c;
         CommonAlertDialog.a(context, (View) null, context.getResources().getString(R.string.report_failed), str, "", new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.3
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -65,20 +65,19 @@ public class ReportChatFragment extends ReportFragmentNew {
                 if (this.b != 7) {
                     str = "";
                 }
-                ChatHttpUtils.a(this.f33915c, new BluedUIHttpResponse(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.2
+                ChatHttpUtils.a(this.f20224c, new BluedUIHttpResponse(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.2
 
                     /* renamed from: a  reason: collision with root package name */
-                    boolean f33921a = false;
+                    boolean f20230a = false;
                     String b = "";
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public boolean onUIFailure(int i2, String str3, String str4) {
-                        if (BluedHttpUtils.a(null, i2, str4).first.intValue() == 0) {
+                        if (((Integer) BluedHttpUtils.a((Throwable) null, i2, str4).first).intValue() == 0) {
                             return super.onUIFailure(i2, str3, str4);
                         }
                         switch (i2) {
                             case 403001:
-                                CommonAlertDialog.a(ReportChatFragment.this.f33915c, ReportChatFragment.this.f33915c.getResources().getString(R.string.submission_failed), ReportChatFragment.this.f33915c.getResources().getString(R.string.submission_failed_details), ReportChatFragment.this.f33915c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.2.3
+                                CommonAlertDialog.a(ReportChatFragment.this.f20224c, ReportChatFragment.this.f20224c.getResources().getString(R.string.submission_failed), ReportChatFragment.this.f20224c.getResources().getString(R.string.submission_failed_details), ReportChatFragment.this.f20224c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.2.3
                                     @Override // android.content.DialogInterface.OnClickListener
                                     public void onClick(DialogInterface dialogInterface, int i3) {
                                         Tracker.onClick(dialogInterface, i3);
@@ -86,7 +85,7 @@ public class ReportChatFragment extends ReportFragmentNew {
                                 }, (DialogInterface.OnDismissListener) null, 1);
                                 return true;
                             case 403002:
-                                CommonAlertDialog.a(ReportChatFragment.this.f33915c, ReportChatFragment.this.f33915c.getResources().getString(R.string.submission_failed), str3, ReportChatFragment.this.f33915c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.2.4
+                                CommonAlertDialog.a(ReportChatFragment.this.f20224c, ReportChatFragment.this.f20224c.getResources().getString(R.string.submission_failed), str3, ReportChatFragment.this.f20224c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.2.4
                                     @Override // android.content.DialogInterface.OnClickListener
                                     public void onClick(DialogInterface dialogInterface, int i3) {
                                         Tracker.onClick(dialogInterface, i3);
@@ -94,22 +93,20 @@ public class ReportChatFragment extends ReportFragmentNew {
                                 }, (DialogInterface.OnDismissListener) null, 1);
                                 return true;
                             default:
-                                this.f33921a = true;
+                                this.f20230a = true;
                                 this.b = str3;
                                 return true;
                         }
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public void onUIFinish() {
                         super.onUIFinish();
-                        if (this.f33921a) {
+                        if (this.f20230a) {
                             ReportChatFragment.this.a(this.b);
                         }
                         DialogUtils.b(ReportChatFragment.this.h);
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public void onUIUpdate(BluedEntity bluedEntity) {
                         if (ReportChatFragment.this.e != 7) {
                             AppMethods.d((int) R.string.biao_report_ok);
@@ -119,7 +116,7 @@ public class ReportChatFragment extends ReportFragmentNew {
                         if (ReportFragmentNew.d != null) {
                             ReportFragmentNew.d.clear();
                         }
-                        CommonAlertDialog.a(ReportChatFragment.this.f33915c, (View) null, ReportChatFragment.this.getResources().getString(R.string.report_success_title), ReportChatFragment.this.getResources().getString(R.string.report_success_desc), ReportChatFragment.this.getResources().getString(2131887320), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.2.1
+                        CommonAlertDialog.a(ReportChatFragment.this.f20224c, (View) null, ReportChatFragment.this.getResources().getString(R.string.report_success_title), ReportChatFragment.this.getResources().getString(R.string.report_success_desc), ReportChatFragment.this.getResources().getString(2131887320), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.2.1
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i2) {
                                 Tracker.onClick(dialogInterface, i2);
@@ -134,12 +131,12 @@ public class ReportChatFragment extends ReportFragmentNew {
                             }
                         }, false);
                     }
-                }, this.f33914a, strArr, this.e, this.f, "", 0L, this.b, str, "", "", 0, getFragmentActive());
+                }, this.f20223a, strArr, this.e, this.f, "", 0L, this.b, str, "", "", 0, getFragmentActive());
                 return;
             }
             return;
         }
-        ReportJsonModel reportJsonModel = (ReportJsonModel) AppInfo.f().fromJson(this.f33914a, (Class<Object>) ReportJsonModel.class);
+        ReportJsonModel reportJsonModel = (ReportJsonModel) AppInfo.f().fromJson(this.f20223a, (Class<Object>) ReportJsonModel.class);
         reportJsonModel.report_type = this.b;
         reportJsonModel.reason = str;
         if (this.b == 7) {
@@ -150,14 +147,13 @@ public class ReportChatFragment extends ReportFragmentNew {
             reportJsonModel.attachments = strArr;
         }
         MsgGroupHttpUtils.c(getFragmentActive(), AppInfo.f().toJson(reportJsonModel), new BluedUIHttpResponse(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str3, String str4) {
-                if (BluedHttpUtils.a(null, i2, str4).first.intValue() == 0) {
+                if (((Integer) BluedHttpUtils.a((Throwable) null, i2, str4).first).intValue() == 0) {
                     return super.onUIFailure(i2, str3, str4);
                 }
                 switch (i2) {
                     case 403001:
-                        CommonAlertDialog.a(ReportChatFragment.this.f33915c, ReportChatFragment.this.f33915c.getResources().getString(R.string.submission_failed), ReportChatFragment.this.f33915c.getResources().getString(R.string.submission_failed_details), ReportChatFragment.this.f33915c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.1.3
+                        CommonAlertDialog.a(ReportChatFragment.this.f20224c, ReportChatFragment.this.f20224c.getResources().getString(R.string.submission_failed), ReportChatFragment.this.f20224c.getResources().getString(R.string.submission_failed_details), ReportChatFragment.this.f20224c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.1.3
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i3) {
                                 Tracker.onClick(dialogInterface, i3);
@@ -165,7 +161,7 @@ public class ReportChatFragment extends ReportFragmentNew {
                         }, (DialogInterface.OnDismissListener) null, 1);
                         return true;
                     case 403002:
-                        CommonAlertDialog.a(ReportChatFragment.this.f33915c, ReportChatFragment.this.f33915c.getResources().getString(R.string.submission_failed), str3, ReportChatFragment.this.f33915c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.1.4
+                        CommonAlertDialog.a(ReportChatFragment.this.f20224c, ReportChatFragment.this.f20224c.getResources().getString(R.string.submission_failed), str3, ReportChatFragment.this.f20224c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.1.4
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i3) {
                                 Tracker.onClick(dialogInterface, i3);
@@ -178,7 +174,6 @@ public class ReportChatFragment extends ReportFragmentNew {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 DialogUtils.b(ReportChatFragment.this.h);
@@ -188,12 +183,11 @@ public class ReportChatFragment extends ReportFragmentNew {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 if (ReportFragmentNew.d != null) {
                     ReportFragmentNew.d.clear();
                 }
-                CommonAlertDialog.a(ReportChatFragment.this.f33915c, (View) null, ReportChatFragment.this.getResources().getString(R.string.report_success_title), ReportChatFragment.this.getResources().getString(R.string.report_success_desc), ReportChatFragment.this.getResources().getString(2131887320), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.1.1
+                CommonAlertDialog.a(ReportChatFragment.this.f20224c, (View) null, ReportChatFragment.this.getResources().getString(R.string.report_success_title), ReportChatFragment.this.getResources().getString(R.string.report_success_desc), ReportChatFragment.this.getResources().getString(2131887320), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportChatFragment.1.1
                     @Override // android.content.DialogInterface.OnClickListener
                     public void onClick(DialogInterface dialogInterface, int i2) {
                         Tracker.onClick(dialogInterface, i2);
@@ -211,7 +205,7 @@ public class ReportChatFragment extends ReportFragmentNew {
         });
     }
 
-    @Override // com.soft.blued.ui.user.fragment.ReportFragmentNew, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.user.fragment.ReportFragmentNew
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i == 1) {
@@ -227,11 +221,11 @@ public class ReportChatFragment extends ReportFragmentNew {
         }
     }
 
-    @Override // com.soft.blued.ui.user.fragment.ReportFragmentNew, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.user.fragment.ReportFragmentNew
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33915c = getActivity();
+        this.f20224c = getActivity();
         if (getArguments() != null) {
-            this.f33914a = getArguments().getString("KEY_CHAT_CONTENT");
+            this.f20223a = getArguments().getString("KEY_CHAT_CONTENT");
             this.f = getArguments().getString("KEY_REPORT_TARGET_ID");
             this.e = getArguments().getInt("KEY_REPORT_TARGET");
             this.g = getArguments().getString("KEY_REPORT_TARGET_TEXT");
@@ -239,7 +233,7 @@ public class ReportChatFragment extends ReportFragmentNew {
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.soft.blued.ui.user.fragment.ReportFragmentNew, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.user.fragment.ReportFragmentNew
     public void onDestroy() {
         super.onDestroy();
     }

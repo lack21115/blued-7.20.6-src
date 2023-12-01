@@ -10,11 +10,11 @@ import com.opos.exoplayer.core.i.m;
 public abstract class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private final e f25174a = new e();
+    private final e f11486a = new e();
     private n b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.exoplayer.core.c.g f25175c;
+    private com.opos.exoplayer.core.c.g f11487c;
     private g d;
     private long e;
     private long f;
@@ -31,7 +31,7 @@ public abstract class i {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        Format f25176a;
+        Format f11488a;
         g b;
 
         a() {
@@ -66,31 +66,31 @@ public abstract class i {
         b bVar;
         boolean z = true;
         while (z) {
-            if (!this.f25174a.a(fVar)) {
+            if (!this.f11486a.a(fVar)) {
                 this.h = 3;
                 return -1;
             }
             this.k = fVar.c() - this.f;
-            boolean a2 = a(this.f25174a.c(), this.f, this.j);
+            boolean a2 = a(this.f11486a.c(), this.f, this.j);
             z = a2;
             if (a2) {
                 this.f = fVar.c();
                 z = a2;
             }
         }
-        this.i = this.j.f25176a.s;
+        this.i = this.j.f11488a.s;
         if (!this.m) {
-            this.b.a(this.j.f25176a);
+            this.b.a(this.j.f11488a);
             this.m = true;
         }
         if (this.j.b != null) {
             bVar = this.j.b;
         } else if (fVar.d() != -1) {
-            f b2 = this.f25174a.b();
-            this.d = new c(this.f, fVar.d(), this, b2.i + b2.h, b2.f25171c);
+            f b2 = this.f11486a.b();
+            this.d = new c(this.f, fVar.d(), this, b2.i + b2.h, b2.f11483c);
             this.j = null;
             this.h = 2;
-            this.f25174a.d();
+            this.f11486a.d();
             return 0;
         } else {
             bVar = new b();
@@ -98,29 +98,29 @@ public abstract class i {
         this.d = bVar;
         this.j = null;
         this.h = 2;
-        this.f25174a.d();
+        this.f11486a.d();
         return 0;
     }
 
     private int b(com.opos.exoplayer.core.c.f fVar, com.opos.exoplayer.core.c.k kVar) {
         long a2 = this.d.a(fVar);
         if (a2 >= 0) {
-            kVar.f25249a = a2;
+            kVar.f11561a = a2;
             return 1;
         }
         if (a2 < -1) {
             c(-(a2 + 2));
         }
         if (!this.l) {
-            this.f25175c.a(this.d.c());
+            this.f11487c.a(this.d.c());
             this.l = true;
         }
-        if (this.k <= 0 && !this.f25174a.a(fVar)) {
+        if (this.k <= 0 && !this.f11486a.a(fVar)) {
             this.h = 3;
             return -1;
         }
         this.k = 0L;
-        m c2 = this.f25174a.c();
+        m c2 = this.f11486a.c();
         long b2 = b(c2);
         if (b2 >= 0) {
             long j = this.g;
@@ -159,7 +159,7 @@ public abstract class i {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a(long j, long j2) {
-        this.f25174a.a();
+        this.f11486a.a();
         if (j == 0) {
             a(!this.l);
         } else if (this.h != 0) {
@@ -170,7 +170,7 @@ public abstract class i {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(com.opos.exoplayer.core.c.g gVar, n nVar) {
-        this.f25175c = gVar;
+        this.f11487c = gVar;
         this.b = nVar;
         a(true);
     }

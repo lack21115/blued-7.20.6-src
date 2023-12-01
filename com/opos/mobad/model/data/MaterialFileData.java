@@ -26,15 +26,15 @@ public class MaterialFileData extends a implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private String f26478a;
+    private String f12790a;
     private String b;
 
     public String a() {
-        return this.f26478a;
+        return this.f12790a;
     }
 
     public void a(String str) {
-        this.f26478a = str;
+        this.f12790a = str;
     }
 
     public String b() {
@@ -51,12 +51,12 @@ public class MaterialFileData extends a implements Parcelable {
     }
 
     public String toString() {
-        return "MaterialFileData{filePath='" + this.f26478a + "', md5='" + this.b + "'}";
+        return "MaterialFileData{filePath='" + this.f12790a + "', md5='" + this.b + "'}";
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f26478a);
+        parcel.writeString(this.f12790a);
         parcel.writeString(this.b);
     }
 }

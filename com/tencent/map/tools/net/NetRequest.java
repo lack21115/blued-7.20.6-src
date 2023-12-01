@@ -11,6 +11,7 @@ import com.tencent.mapsdk.internal.tb;
 import com.tencent.mapsdk.internal.ub;
 import com.tencent.mapsdk.internal.vb;
 import com.tencent.mapsdk.internal.xb;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -336,7 +337,7 @@ public class NetRequest {
     public NetRequest setStart(String str) {
         if (!TextUtils.isEmpty(str)) {
             Map<String, String> map = this.mapHeaders;
-            map.put("Range", "bytes=" + str + "-");
+            map.put("Range", "bytes=" + str + Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         }
         return this;
     }

@@ -6,7 +6,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.TransparentActivity;
@@ -39,7 +41,7 @@ public final class OpenCallTwiceDialogFragment extends MVIBaseFragment<EmptyMviV
     private final ViewBindingProperty d;
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f32375c = {Reflection.a(new PropertyReference1Impl(OpenCallTwiceDialogFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/PopOpenCallTwiceBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f18685c = {(KProperty) Reflection.a(new PropertyReference1Impl(OpenCallTwiceDialogFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/PopOpenCallTwiceBinding;", 0))};
     public static final Companion b = new Companion(null);
     private static final String e = "button_str";
     private static final String f = "button_img";
@@ -60,13 +62,13 @@ public final class OpenCallTwiceDialogFragment extends MVIBaseFragment<EmptyMviV
             return OpenCallTwiceDialogFragment.e;
         }
 
-        public final void a(Context context, String buttonStr, String buttonImg, int i, boolean z) {
+        public final void a(Context context, String str, String str2, int i, boolean z) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(buttonStr, "buttonStr");
-            Intrinsics.e(buttonImg, "buttonImg");
+            Intrinsics.e(str, "buttonStr");
+            Intrinsics.e(str2, "buttonImg");
             Bundle bundle = new Bundle();
-            bundle.putString(a(), buttonStr);
-            bundle.putString(b(), buttonImg);
+            bundle.putString(a(), str);
+            bundle.putString(b(), str2);
             bundle.putInt(c(), i);
             bundle.putBoolean(d(), z);
             TransparentActivity.a(bundle);
@@ -87,18 +89,18 @@ public final class OpenCallTwiceDialogFragment extends MVIBaseFragment<EmptyMviV
     }
 
     public OpenCallTwiceDialogFragment() {
-        super(R.layout.pop_open_call_twice);
-        this.d = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<OpenCallTwiceDialogFragment, PopOpenCallTwiceBinding>() { // from class: com.soft.blued.ui.msg.fragment.OpenCallTwiceDialogFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.pop_open_call_twice);
+        this.d = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<OpenCallTwiceDialogFragment, PopOpenCallTwiceBinding>() { // from class: com.soft.blued.ui.msg.fragment.OpenCallTwiceDialogFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/msg/fragment/OpenCallTwiceDialogFragment;)Lcom/soft/blued/databinding/PopOpenCallTwiceBinding; */
             /* renamed from: a */
-            public final PopOpenCallTwiceBinding invoke(OpenCallTwiceDialogFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return PopOpenCallTwiceBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<OpenCallTwiceDialogFragment, PopOpenCallTwiceBinding>() { // from class: com.soft.blued.ui.msg.fragment.OpenCallTwiceDialogFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/msg/fragment/OpenCallTwiceDialogFragment;)Lcom/soft/blued/databinding/PopOpenCallTwiceBinding; */
             /* renamed from: a */
-            public final PopOpenCallTwiceBinding invoke(OpenCallTwiceDialogFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return PopOpenCallTwiceBinding.a(fragment.requireView());
             }
@@ -106,36 +108,36 @@ public final class OpenCallTwiceDialogFragment extends MVIBaseFragment<EmptyMviV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FragmentActivity it) {
-        Intrinsics.e(it, "$it");
-        it.finish();
-        ActivityChangeAnimationUtils.h(it);
+    public static final void a(FragmentActivity fragmentActivity) {
+        Intrinsics.e(fragmentActivity, "$it");
+        fragmentActivity.finish();
+        ActivityChangeAnimationUtils.h(fragmentActivity);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(Ref.BooleanRef isSecret, Ref.IntRef fromPage, OpenCallTwiceDialogFragment this$0, View view) {
+    public static final void a(Ref.BooleanRef booleanRef, Ref.IntRef intRef, OpenCallTwiceDialogFragment openCallTwiceDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(isSecret, "$isSecret");
-        Intrinsics.e(fromPage, "$fromPage");
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(booleanRef, "$isSecret");
+        Intrinsics.e(intRef, "$fromPage");
+        Intrinsics.e(openCallTwiceDialogFragment, "this$0");
         EventTrackGuy.a(GuyProtos.Event.CALL_MORE_TIMES_POP_TWO_CLICK);
-        CallHelloManager.a().a((Context) HomeActivity.f30985c, (IRequestHost) null, isSecret.f42538a, fromPage.f42543a, true);
-        this$0.f();
+        CallHelloManager.a().a((Context) HomeActivity.f17295c, (IRequestHost) null, booleanRef.a, intRef.a, true);
+        openCallTwiceDialogFragment.f();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(Ref.BooleanRef isSecret, Ref.IntRef fromPage, OpenCallTwiceDialogFragment this$0, View view) {
+    public static final void b(Ref.BooleanRef booleanRef, Ref.IntRef intRef, OpenCallTwiceDialogFragment openCallTwiceDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(isSecret, "$isSecret");
-        Intrinsics.e(fromPage, "$fromPage");
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(booleanRef, "$isSecret");
+        Intrinsics.e(intRef, "$fromPage");
+        Intrinsics.e(openCallTwiceDialogFragment, "this$0");
         EventTrackGuy.a(GuyProtos.Event.CALL_MORE_TIMES_POP_ONE_CLICK);
-        CallHelloManager.a().a((Context) HomeActivity.f30985c, (IRequestHost) null, isSecret.f42538a, fromPage.f42543a, false);
-        this$0.f();
+        CallHelloManager.a().a((Context) HomeActivity.f17295c, (IRequestHost) null, booleanRef.a, intRef.a, false);
+        openCallTwiceDialogFragment.f();
     }
 
     private final PopOpenCallTwiceBinding e() {
-        return (PopOpenCallTwiceBinding) this.d.b(this, f32375c[0]);
+        return (PopOpenCallTwiceBinding) this.d.b(this, f18685c[0]);
     }
 
     private final void f() {
@@ -151,7 +153,6 @@ public final class OpenCallTwiceDialogFragment extends MVIBaseFragment<EmptyMviV
         }, 200L);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         String string;
         ShapeTextView shapeTextView;
@@ -167,8 +168,8 @@ public final class OpenCallTwiceDialogFragment extends MVIBaseFragment<EmptyMviV
             Intrinsics.c(str, "getString(BUTTON_STR, \"\")");
             string = arguments.getString(f, "");
             Intrinsics.c(string, "getString(BUTTON_IMG, \"\")");
-            intRef.f42543a = arguments.getInt(g);
-            booleanRef.f42538a = arguments.getBoolean(h);
+            intRef.a = arguments.getInt(g);
+            booleanRef.a = arguments.getBoolean(h);
         }
         PopOpenCallTwiceBinding e2 = e();
         if (e2 != null) {
@@ -177,7 +178,7 @@ public final class OpenCallTwiceDialogFragment extends MVIBaseFragment<EmptyMviV
                 e2.b.setText(str2);
             }
             if (!TextUtils.isEmpty(string)) {
-                ImageLoader.a((IRequestHost) null, string).a(e2.f29551c);
+                ImageLoader.a((IRequestHost) null, string).a(e2.f15861c);
             }
         }
         PopOpenCallTwiceBinding e3 = e();
@@ -185,33 +186,30 @@ public final class OpenCallTwiceDialogFragment extends MVIBaseFragment<EmptyMviV
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$OpenCallTwiceDialogFragment$qmNmq26VujxIG2DTLAvA-H4dlD0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    OpenCallTwiceDialogFragment.a(Ref.BooleanRef.this, intRef, this, view);
+                    OpenCallTwiceDialogFragment.a(booleanRef, intRef, this, view);
                 }
             });
         }
         PopOpenCallTwiceBinding e4 = e();
-        if (e4 != null && (shapeTextView = e4.f29550a) != null) {
+        if (e4 != null && (shapeTextView = e4.f15860a) != null) {
             shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$OpenCallTwiceDialogFragment$3uT8pq4wbvHeH4T5Ho0k2aOajmY
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    OpenCallTwiceDialogFragment.b(Ref.BooleanRef.this, intRef, this, view);
+                    OpenCallTwiceDialogFragment.b(booleanRef, intRef, this, view);
                 }
             });
         }
         EventTrackGuy.a(GuyProtos.Event.CALL_MORE_TIMES_POP_SHOW);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         f();
         return true;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void v() {
         super.v();
         ActivityChangeAnimationUtils.h(getActivity());

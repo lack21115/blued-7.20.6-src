@@ -1,7 +1,7 @@
 package c.t.m.g;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.anythink.pd.ExHandler;
 import com.tencent.qimei.upload.BuildConfig;
 import java.util.HashMap;
 import org.json.JSONObject;
@@ -10,11 +10,11 @@ import org.json.JSONObject;
 public class u3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f4006a;
+    public int f3958a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f4007c;
+    public String f3959c;
     public String d;
     public String e;
     public String f;
@@ -30,11 +30,11 @@ public class u3 {
     public String a() {
         if (TextUtils.isEmpty(this.n)) {
             StringBuilder sb = new StringBuilder();
-            if (TextUtils.isEmpty(c4.f3775a)) {
+            if (TextUtils.isEmpty(c4.f3727a)) {
                 sb.append(t0.b());
             } else {
-                sb.append(c4.f3775a);
-                sb.append(BridgeUtil.UNDERLINE_STR);
+                sb.append(c4.f3727a);
+                sb.append("_");
                 sb.append(t0.b());
             }
             this.n = g6.a(sb.toString());
@@ -43,7 +43,7 @@ public class u3 {
     }
 
     public void a(int i) {
-        this.f4006a = i;
+        this.f3958a = i;
     }
 
     public void a(long j) {
@@ -118,14 +118,14 @@ public class u3 {
 
     public String f() {
         HashMap hashMap = new HashMap();
-        hashMap.put("imei", "");
+        hashMap.put(ExHandler.JSON_REQUEST_IMEI, "");
         hashMap.put("imsi", "");
         hashMap.put("qq", n());
         hashMap.put("mac", "");
-        hashMap.put(BuildConfig.SDK_ID, c4.f3775a);
+        hashMap.put(BuildConfig.SDK_ID, c4.f3727a);
         hashMap.put("q16", c4.b);
-        hashMap.put("q36", c4.f3776c);
-        hashMap.put(com.anythink.expressad.foundation.g.a.bj, ";" + l());
+        hashMap.put("q36", c4.f3728c);
+        hashMap.put(com.anythink.expressad.foundation.g.a.bj, com.huawei.openalliance.ad.constant.t.aE + l());
         hashMap.put("idfv", TextUtils.isEmpty(l()) ? b() : "");
         return new JSONObject(hashMap).toString();
     }
@@ -138,7 +138,7 @@ public class u3 {
     }
 
     public void g(String str) {
-        this.f4007c = str;
+        this.f3959c = str;
     }
 
     public long h() {
@@ -173,17 +173,17 @@ public class u3 {
     }
 
     public int m() {
-        return this.f4006a;
+        return this.f3958a;
     }
 
     public String n() {
         String a2 = d6.a("LocationSDK", "location_device_id", "");
         String str = a2;
-        if (!TextUtils.isEmpty(this.f4007c)) {
-            if ("0123456789ABCDEF".equals(this.f4007c)) {
+        if (!TextUtils.isEmpty(this.f3959c)) {
+            if ("0123456789ABCDEF".equals(this.f3959c)) {
                 return a2;
             }
-            str = this.f4007c;
+            str = this.f3959c;
         }
         return str;
     }

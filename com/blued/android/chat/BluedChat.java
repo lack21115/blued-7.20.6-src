@@ -104,7 +104,7 @@ public class BluedChat {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x0052 -> B:31:0x003c). Please submit an issue!!! */
     public void stopIMService(Context context) {
         synchronized (this) {
-            Logger.a(TAG, "stopIMService()");
+            Logger.a(TAG, new Object[]{"stopIMService()"});
             if (BluedApplicationLike.isMainApplication(context)) {
                 if (ServiceUtils.a()) {
                     AutoStartService.stopService(context);

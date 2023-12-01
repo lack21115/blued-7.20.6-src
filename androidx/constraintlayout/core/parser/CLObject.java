@@ -1,6 +1,5 @@
 package androidx.constraintlayout.core.parser;
 
-import com.alipay.sdk.util.i;
 import java.util.Iterator;
 
 /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/core/parser/CLObject.class */
@@ -10,21 +9,21 @@ public class CLObject extends CLContainer implements Iterable<CLKey> {
     class CLObjectIterator implements Iterator {
 
         /* renamed from: a  reason: collision with root package name */
-        CLObject f2075a;
+        CLObject f2027a;
         int b = 0;
 
         public CLObjectIterator(CLObject cLObject) {
-            this.f2075a = cLObject;
+            this.f2027a = cLObject;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.b < this.f2075a.size();
+            return this.b < this.f2027a.size();
         }
 
         @Override // java.util.Iterator
         public Object next() {
-            CLKey cLKey = (CLKey) this.f2075a.f2071a.get(this.b);
+            CLKey cLKey = (CLKey) this.f2027a.f2023a.get(this.b);
             this.b++;
             return cLKey;
         }
@@ -51,7 +50,7 @@ public class CLObject extends CLContainer implements Iterable<CLKey> {
     public String toFormattedJSON(int i, int i2) {
         StringBuilder sb = new StringBuilder(b());
         sb.append("{\n");
-        Iterator<CLElement> it = this.f2071a.iterator();
+        Iterator<CLElement> it = this.f2023a.iterator();
         boolean z = true;
         while (it.hasNext()) {
             CLElement next = it.next();
@@ -64,14 +63,14 @@ public class CLObject extends CLContainer implements Iterable<CLKey> {
         }
         sb.append("\n");
         a(sb, i);
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 
     @Override // androidx.constraintlayout.core.parser.CLElement
     public String toJSON() {
         StringBuilder sb = new StringBuilder(b() + "{ ");
-        Iterator<CLElement> it = this.f2071a.iterator();
+        Iterator<CLElement> it = this.f2023a.iterator();
         boolean z = true;
         while (it.hasNext()) {
             CLElement next = it.next();

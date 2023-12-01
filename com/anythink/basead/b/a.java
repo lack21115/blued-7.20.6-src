@@ -5,7 +5,7 @@ public final class a {
 
     /* renamed from: com.anythink.basead.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/b/a$a.class */
-    public static final class C0070a {
+    public static final class C0030a {
         public static final String A = "pkg";
         public static final String B = "cap";
         public static final String C = "pacing";
@@ -14,13 +14,9 @@ public final class a {
         public static final String F = "click_mode";
         public static final String G = "CREATE TABLE IF NOT EXISTS my_offer_info (topon_pl_id TEXT,offer_id TEXT,creative_id TEXT,title TEXT,desc TEXT,icon_url TEXT,image_url TEXT,endcard_image_url TEXT,adchoice_url TEXT,cta TEXT,video_url TEXT,click_type INTEGER,preview_url TEXT,deeplink_url TEXT,click_url TEXT,notice_url TEXT,video_start_tk_url TEXT,video_25_tk_url TEXT,video_50_tk_url TEXT,video_75_tk_url TEXT,video_end_tk_url TEXT,endcard_show_tk_url TEXT,endcard_close_tk_url TEXT,impression_tk_url TEXT,click_tk_url TEXT,pkg TEXT,cap INTEGER,pacing INTEGER,offer_type INTERGR,update_time INTEGER )";
         public static final String H = "alter table my_offer_info add column click_mode INTEGER";
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f5876a = "my_offer_info";
+        public static final String a = "my_offer_info";
         public static final String b = "topon_pl_id";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f5877c = "offer_id";
+        public static final String c = "offer_id";
         public static final String d = "creative_id";
         public static final String e = "title";
         public static final String f = "desc";

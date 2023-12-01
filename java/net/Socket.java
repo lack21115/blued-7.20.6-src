@@ -407,7 +407,7 @@ public class Socket implements Closeable {
 
     public boolean getOOBInline() throws SocketException {
         checkOpenAndCreate(true);
-        return ((Boolean) this.impl.getOption(4099)).booleanValue();
+        return ((Boolean) this.impl.getOption(SocketOptions.SO_OOBINLINE)).booleanValue();
     }
 
     public OutputStream getOutputStream() throws IOException {
@@ -468,7 +468,7 @@ public class Socket implements Closeable {
         int intValue;
         synchronized (this) {
             checkOpenAndCreate(true);
-            intValue = ((Integer) this.impl.getOption(4102)).intValue();
+            intValue = ((Integer) this.impl.getOption(SocketOptions.SO_TIMEOUT)).intValue();
         }
         return intValue;
     }
@@ -534,7 +534,7 @@ public class Socket implements Closeable {
 
     public void setOOBInline(boolean z) throws SocketException {
         checkOpenAndCreate(true);
-        this.impl.setOption(4099, Boolean.valueOf(z));
+        this.impl.setOption(SocketOptions.SO_OOBINLINE, Boolean.valueOf(z));
     }
 
     public void setPerformancePreferences(int i, int i2, int i3) {
@@ -583,7 +583,7 @@ public class Socket implements Closeable {
             if (i < 0) {
                 throw new IllegalArgumentException("timeout < 0");
             }
-            this.impl.setOption(4102, Integer.valueOf(i));
+            this.impl.setOption(SocketOptions.SO_TIMEOUT, Integer.valueOf(i));
         }
     }
 

@@ -16,20 +16,20 @@ public class a {
     private static volatile a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte[] f25945c = new byte[0];
+    private static final byte[] f12257c = new byte[0];
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f25946a;
+    private Context f12258a;
     private com.opos.cmn.func.dl.a d;
     private b e;
-    private InterfaceC0689a f;
+    private InterfaceC0519a f;
     private ConcurrentHashMap<String, DownloadRequest> g = new ConcurrentHashMap<>();
     private boolean h = false;
     private AtomicBoolean i = new AtomicBoolean(false);
 
     /* renamed from: com.opos.mobad.d.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/d/a$a.class */
-    public interface InterfaceC0689a {
+    public interface InterfaceC0519a {
         void a(String str);
 
         void a(String str, int i, long j, long j2);
@@ -54,7 +54,7 @@ public class a {
         }
 
         private boolean a(DownloadRequest downloadRequest) {
-            return (downloadRequest == null || TextUtils.isEmpty(downloadRequest.f24869a) || !a.this.g.containsKey(downloadRequest.f24869a)) ? false : true;
+            return (downloadRequest == null || TextUtils.isEmpty(downloadRequest.f11181a) || !a.this.g.containsKey(downloadRequest.f11181a)) ? false : true;
         }
 
         @Override // com.opos.cmn.func.dl.base.b
@@ -62,7 +62,7 @@ public class a {
             if (!a(downloadRequest) || a.this.f == null || downloadResponse == null) {
                 return;
             }
-            a.this.f.a(downloadRequest.f24869a, downloadResponse.f24874c, downloadResponse.d);
+            a.this.f.a(downloadRequest.f11181a, downloadResponse.f11186c, downloadResponse.d);
         }
 
         @Override // com.opos.cmn.func.dl.base.b
@@ -72,9 +72,9 @@ public class a {
                 return;
             }
             if (dlException.a() == 1013) {
-                a.this.f.c(downloadRequest.f24869a);
+                a.this.f.c(downloadRequest.f11181a);
             } else {
-                a.this.f.a(downloadRequest.f24869a, dlException.a(), downloadResponse.f24874c, downloadResponse.d);
+                a.this.f.a(downloadRequest.f11181a, dlException.a(), downloadResponse.f11186c, downloadResponse.d);
             }
         }
 
@@ -83,7 +83,7 @@ public class a {
             if (!a(downloadRequest) || a.this.f == null || downloadResponse == null) {
                 return;
             }
-            a.this.f.b(downloadRequest.f24869a, downloadResponse.f24874c, downloadResponse.d);
+            a.this.f.b(downloadRequest.f11181a, downloadResponse.f11186c, downloadResponse.d);
         }
 
         @Override // com.opos.cmn.func.dl.base.b
@@ -91,7 +91,7 @@ public class a {
             if (!a(downloadRequest) || a.this.f == null || downloadResponse == null) {
                 return;
             }
-            a.this.f.b(downloadRequest.f24869a, downloadResponse.f24874c, downloadResponse.d);
+            a.this.f.b(downloadRequest.f11181a, downloadResponse.f11186c, downloadResponse.d);
         }
 
         @Override // com.opos.cmn.func.dl.base.b
@@ -99,7 +99,7 @@ public class a {
             if (!a(downloadRequest) || a.this.f == null || downloadResponse == null) {
                 return;
             }
-            a.this.f.c(downloadRequest.f24869a, downloadResponse.f24874c, downloadResponse.d);
+            a.this.f.c(downloadRequest.f11181a, downloadResponse.f11186c, downloadResponse.d);
         }
 
         @Override // com.opos.cmn.func.dl.base.b
@@ -107,8 +107,8 @@ public class a {
             if (!a(downloadRequest) || a.this.f == null || downloadResponse == null) {
                 return;
             }
-            a.this.f.d(downloadRequest.f24869a, downloadResponse.f24874c, downloadResponse.d);
-            a.this.f(downloadRequest.f24869a);
+            a.this.f.d(downloadRequest.f11181a, downloadResponse.f11186c, downloadResponse.d);
+            a.this.f(downloadRequest.f11181a);
         }
 
         @Override // com.opos.cmn.func.dl.base.b
@@ -117,8 +117,8 @@ public class a {
             if (!a(downloadRequest) || a.this.f == null) {
                 return;
             }
-            a.this.f.b(downloadRequest.f24869a);
-            a.this.f(downloadRequest.f24869a);
+            a.this.f.b(downloadRequest.f11181a);
+            a.this.f(downloadRequest.f11181a);
         }
     }
 
@@ -127,14 +127,14 @@ public class a {
             return;
         }
         Context applicationContext = context.getApplicationContext();
-        this.f25946a = applicationContext;
+        this.f12258a = applicationContext;
         this.d = new com.opos.cmn.func.dl.a(applicationContext);
         this.e = new b();
     }
 
     public static a a(Context context) {
         if (b == null) {
-            synchronized (f25945c) {
+            synchronized (f12257c) {
                 if (b == null) {
                     b = new a(context);
                 }
@@ -147,7 +147,7 @@ public class a {
         if (this.i.get()) {
             return;
         }
-        a(3, (InterfaceC0689a) null);
+        a(3, (InterfaceC0519a) null);
     }
 
     private void e(String str) {
@@ -173,14 +173,14 @@ public class a {
         try {
             b();
             com.opos.cmn.an.f.a.b("DownloadApkTool", "add download request:" + str);
-            if (!this.h && !"WIFI".equalsIgnoreCase(com.opos.cmn.an.h.c.a.f(this.f25946a))) {
+            if (!this.h && !"WIFI".equalsIgnoreCase(com.opos.cmn.an.h.c.a.f(this.f12258a))) {
                 this.h = true;
             }
-            DownloadRequest.a c2 = new DownloadRequest.a(str).a(this.h).b(com.opos.cmn.d.a.b(this.f25946a)).c(com.opos.cmn.d.b.a(str)).b(false).c(true);
+            DownloadRequest.a c2 = new DownloadRequest.a(str).a(this.h).b(com.opos.cmn.d.a.b(this.f12258a)).c(com.opos.cmn.d.b.a(str)).b(false).c(true);
             if (!TextUtils.isEmpty(str2)) {
                 c2.a(str2);
             }
-            DownloadRequest a2 = c2.a(this.f25946a);
+            DownloadRequest a2 = c2.a(this.f12258a);
             this.g.put(str, a2);
             this.d.a(a2);
             if (this.f != null) {
@@ -208,11 +208,11 @@ public class a {
         }
     }
 
-    public void a(int i, InterfaceC0689a interfaceC0689a) {
+    public void a(int i, InterfaceC0519a interfaceC0519a) {
         if (this.i.compareAndSet(false, true)) {
             com.opos.cmn.an.f.a.b("DownloadApkTool", "init download apk manager");
-            this.f = interfaceC0689a;
-            e(com.opos.cmn.d.a.b(this.f25946a));
+            this.f = interfaceC0519a;
+            e(com.opos.cmn.d.a.b(this.f12258a));
             DownloadConfig downloadConfig = new DownloadConfig();
             downloadConfig.a(i).a(true).a(0.005f, 1000, 524288);
             this.d.a(downloadConfig);

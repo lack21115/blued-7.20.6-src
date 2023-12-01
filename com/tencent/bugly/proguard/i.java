@@ -13,14 +13,14 @@ import java.util.Map;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private ByteBuffer f35386a;
+    private ByteBuffer f21695a;
     private String b = "GBK";
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/bugly/proguard/i$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public byte f35387a;
+        public byte f21696a;
         public int b;
     }
 
@@ -28,12 +28,12 @@ public final class i {
     }
 
     public i(byte[] bArr) {
-        this.f35386a = ByteBuffer.wrap(bArr);
+        this.f21695a = ByteBuffer.wrap(bArr);
     }
 
     public i(byte[] bArr, int i) {
         ByteBuffer wrap = ByteBuffer.wrap(bArr);
-        this.f35386a = wrap;
+        this.f21695a = wrap;
         wrap.position(4);
     }
 
@@ -45,8 +45,8 @@ public final class i {
             return d;
         }
         a aVar = new a();
-        a(aVar, this.f35386a);
-        byte b = aVar.f35387a;
+        a(aVar, this.f21695a);
+        byte b = aVar.f21696a;
         if (b != 4) {
             if (b != 5) {
                 if (b == 12) {
@@ -54,9 +54,9 @@ public final class i {
                 }
                 throw new g("type mismatch.");
             }
-            return this.f35386a.getDouble();
+            return this.f21695a.getDouble();
         }
-        return this.f35386a.getFloat();
+        return this.f21695a.getFloat();
     }
 
     private float a(float f, int i, boolean z) {
@@ -67,20 +67,20 @@ public final class i {
             return f;
         }
         a aVar = new a();
-        a(aVar, this.f35386a);
-        byte b = aVar.f35387a;
+        a(aVar, this.f21695a);
+        byte b = aVar.f21696a;
         if (b != 4) {
             if (b == 12) {
                 return 0.0f;
             }
             throw new g("type mismatch.");
         }
-        return this.f35386a.getFloat();
+        return this.f21695a.getFloat();
     }
 
     private static int a(a aVar, ByteBuffer byteBuffer) {
         byte b = byteBuffer.get();
-        aVar.f35387a = (byte) (b & 15);
+        aVar.f21696a = (byte) (b & 15);
         aVar.b = (b & 240) >> 4;
         if (aVar.b == 15) {
             aVar.b = byteBuffer.get();
@@ -99,8 +99,8 @@ public final class i {
         V value = next.getValue();
         if (a(i)) {
             a aVar = new a();
-            a(aVar, this.f35386a);
-            if (aVar.f35387a != 8) {
+            a(aVar, this.f21695a);
+            if (aVar.f21696a != 8) {
                 throw new g("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -125,9 +125,9 @@ public final class i {
     private void a() {
         a aVar = new a();
         do {
-            a(aVar, this.f35386a);
-            a(aVar.f35387a);
-        } while (aVar.f35387a != 11);
+            a(aVar, this.f21695a);
+            a(aVar.f21696a);
+        } while (aVar.f21696a != 11);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -135,41 +135,41 @@ public final class i {
     private void a(byte b) {
         switch (b) {
             case 0:
-                ByteBuffer byteBuffer = this.f35386a;
+                ByteBuffer byteBuffer = this.f21695a;
                 byteBuffer.position(byteBuffer.position() + 1);
                 return;
             case 1:
-                ByteBuffer byteBuffer2 = this.f35386a;
+                ByteBuffer byteBuffer2 = this.f21695a;
                 byteBuffer2.position(byteBuffer2.position() + 2);
                 return;
             case 2:
-                ByteBuffer byteBuffer3 = this.f35386a;
+                ByteBuffer byteBuffer3 = this.f21695a;
                 byteBuffer3.position(byteBuffer3.position() + 4);
                 return;
             case 3:
-                ByteBuffer byteBuffer4 = this.f35386a;
+                ByteBuffer byteBuffer4 = this.f21695a;
                 byteBuffer4.position(byteBuffer4.position() + 8);
                 return;
             case 4:
-                ByteBuffer byteBuffer5 = this.f35386a;
+                ByteBuffer byteBuffer5 = this.f21695a;
                 byteBuffer5.position(byteBuffer5.position() + 4);
                 return;
             case 5:
-                ByteBuffer byteBuffer6 = this.f35386a;
+                ByteBuffer byteBuffer6 = this.f21695a;
                 byteBuffer6.position(byteBuffer6.position() + 8);
                 return;
             case 6:
-                byte b2 = this.f35386a.get();
+                byte b2 = this.f21695a.get();
                 byte b3 = b2;
                 if (b2 < 0) {
                     b3 = b2 + 256;
                 }
-                ByteBuffer byteBuffer7 = this.f35386a;
+                ByteBuffer byteBuffer7 = this.f21695a;
                 byteBuffer7.position(byteBuffer7.position() + b3);
                 return;
             case 7:
-                int i = this.f35386a.getInt();
-                ByteBuffer byteBuffer8 = this.f35386a;
+                int i = this.f21695a.getInt();
+                ByteBuffer byteBuffer8 = this.f21695a;
                 byteBuffer8.position(byteBuffer8.position() + i);
                 return;
             case 8:
@@ -181,8 +181,8 @@ public final class i {
                         return;
                     }
                     a aVar = new a();
-                    a(aVar, this.f35386a);
-                    a(aVar.f35387a);
+                    a(aVar, this.f21695a);
+                    a(aVar.f21696a);
                     i2 = i3 + 1;
                 }
             case 9:
@@ -194,8 +194,8 @@ public final class i {
                         return;
                     }
                     a aVar2 = new a();
-                    a(aVar2, this.f35386a);
-                    a(aVar2.f35387a);
+                    a(aVar2, this.f21695a);
+                    a(aVar2.f21696a);
                     i4 = i5 + 1;
                 }
             case 10:
@@ -206,14 +206,14 @@ public final class i {
                 return;
             case 13:
                 a aVar3 = new a();
-                a(aVar3, this.f35386a);
-                if (aVar3.f35387a == 0) {
+                a(aVar3, this.f21695a);
+                if (aVar3.f21696a == 0) {
                     int a4 = a(0, 0, true);
-                    ByteBuffer byteBuffer9 = this.f35386a;
+                    ByteBuffer byteBuffer9 = this.f21695a;
                     byteBuffer9.position(byteBuffer9.position() + a4);
                     return;
                 }
-                throw new g("skipField with invalid type, type value: " + ((int) b) + ", " + ((int) aVar3.f35387a));
+                throw new g("skipField with invalid type, type value: " + ((int) b) + ", " + ((int) aVar3.f21696a));
             default:
                 throw new g("invalid type.");
         }
@@ -223,12 +223,12 @@ public final class i {
         try {
             a aVar = new a();
             while (true) {
-                int a2 = a(aVar, this.f35386a.duplicate());
-                if (i <= aVar.b || aVar.f35387a == 11) {
+                int a2 = a(aVar, this.f21695a.duplicate());
+                if (i <= aVar.b || aVar.f21696a == 11) {
                     break;
                 }
-                this.f35386a.position(this.f35386a.position() + a2);
-                a(aVar.f35387a);
+                this.f21695a.position(this.f21695a.position() + a2);
+                a(aVar.f21696a);
             }
             return i == aVar.b;
         } catch (g | BufferUnderflowException e) {
@@ -252,8 +252,8 @@ public final class i {
             return null;
         }
         a aVar = new a();
-        a(aVar, this.f35386a);
-        if (aVar.f35387a != 9) {
+        a(aVar, this.f21695a);
+        if (aVar.f21696a != 9) {
             throw new g("type mismatch.");
         }
         int a2 = a(0, 0, true);
@@ -276,8 +276,8 @@ public final class i {
         boolean[] zArr;
         if (a(i)) {
             a aVar = new a();
-            a(aVar, this.f35386a);
-            if (aVar.f35387a != 9) {
+            a(aVar, this.f21695a);
+            if (aVar.f21696a != 9) {
                 throw new g("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -307,8 +307,8 @@ public final class i {
         short[] sArr;
         if (a(i)) {
             a aVar = new a();
-            a(aVar, this.f35386a);
-            if (aVar.f35387a != 9) {
+            a(aVar, this.f21695a);
+            if (aVar.f21696a != 9) {
                 throw new g("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -338,8 +338,8 @@ public final class i {
         int[] iArr;
         if (a(i)) {
             a aVar = new a();
-            a(aVar, this.f35386a);
-            if (aVar.f35387a != 9) {
+            a(aVar, this.f21695a);
+            if (aVar.f21696a != 9) {
                 throw new g("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -369,8 +369,8 @@ public final class i {
         long[] jArr;
         if (a(i)) {
             a aVar = new a();
-            a(aVar, this.f35386a);
-            if (aVar.f35387a != 9) {
+            a(aVar, this.f21695a);
+            if (aVar.f21696a != 9) {
                 throw new g("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -400,8 +400,8 @@ public final class i {
         float[] fArr;
         if (a(i)) {
             a aVar = new a();
-            a(aVar, this.f35386a);
-            if (aVar.f35387a != 9) {
+            a(aVar, this.f21695a);
+            if (aVar.f21696a != 9) {
                 throw new g("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -431,8 +431,8 @@ public final class i {
         double[] dArr;
         if (a(i)) {
             a aVar = new a();
-            a(aVar, this.f35386a);
-            if (aVar.f35387a != 9) {
+            a(aVar, this.f21695a);
+            if (aVar.f21696a != 9) {
                 throw new g("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -466,15 +466,15 @@ public final class i {
             return b;
         }
         a aVar = new a();
-        a(aVar, this.f35386a);
-        byte b2 = aVar.f35387a;
+        a(aVar, this.f21695a);
+        byte b2 = aVar.f21696a;
         if (b2 != 0) {
             if (b2 == 12) {
                 return (byte) 0;
             }
             throw new g("type mismatch.");
         }
-        return this.f35386a.get();
+        return this.f21695a.get();
     }
 
     public final int a(int i, int i2, boolean z) {
@@ -485,8 +485,8 @@ public final class i {
             return i;
         }
         a aVar = new a();
-        a(aVar, this.f35386a);
-        byte b = aVar.f35387a;
+        a(aVar, this.f21695a);
+        byte b = aVar.f21696a;
         if (b != 0) {
             if (b != 1) {
                 if (b != 2) {
@@ -495,11 +495,11 @@ public final class i {
                     }
                     throw new g("type mismatch.");
                 }
-                return this.f35386a.getInt();
+                return this.f21695a.getInt();
             }
-            return this.f35386a.getShort();
+            return this.f21695a.getShort();
         }
-        return this.f35386a.get();
+        return this.f21695a.get();
     }
 
     public final int a(String str) {
@@ -516,12 +516,12 @@ public final class i {
             return j;
         }
         a aVar = new a();
-        a(aVar, this.f35386a);
-        byte b2 = aVar.f35387a;
+        a(aVar, this.f21695a);
+        byte b2 = aVar.f21696a;
         if (b2 == 0) {
-            b = this.f35386a.get();
+            b = this.f21695a.get();
         } else if (b2 == 1) {
-            b = this.f35386a.getShort();
+            b = this.f21695a.getShort();
         } else if (b2 != 2) {
             if (b2 != 3) {
                 if (b2 == 12) {
@@ -529,9 +529,9 @@ public final class i {
                 }
                 throw new g("type mismatch.");
             }
-            return this.f35386a.getLong();
+            return this.f21695a.getLong();
         } else {
-            b = this.f35386a.getInt();
+            b = this.f21695a.getInt();
         }
         return b;
     }
@@ -546,8 +546,8 @@ public final class i {
         try {
             k kVar2 = (k) kVar.getClass().newInstance();
             a aVar = new a();
-            a(aVar, this.f35386a);
-            if (aVar.f35387a == 10) {
+            a(aVar, this.f21695a);
+            if (aVar.f21696a == 10) {
                 kVar2.a(this);
                 a();
                 return kVar2;
@@ -632,8 +632,8 @@ public final class i {
             return s;
         }
         a aVar = new a();
-        a(aVar, this.f35386a);
-        byte b = aVar.f35387a;
+        a(aVar, this.f21695a);
+        byte b = aVar.f21696a;
         if (b != 0) {
             if (b != 1) {
                 if (b == 12) {
@@ -641,17 +641,17 @@ public final class i {
                 }
                 throw new g("type mismatch.");
             }
-            return this.f35386a.getShort();
+            return this.f21695a.getShort();
         }
-        return this.f35386a.get();
+        return this.f21695a.get();
     }
 
     public final void a(byte[] bArr) {
-        ByteBuffer byteBuffer = this.f35386a;
+        ByteBuffer byteBuffer = this.f21695a;
         if (byteBuffer != null) {
             byteBuffer.clear();
         }
-        this.f35386a = ByteBuffer.wrap(bArr);
+        this.f21695a = ByteBuffer.wrap(bArr);
     }
 
     public final boolean a(int i, boolean z) {
@@ -666,28 +666,28 @@ public final class i {
             return null;
         }
         a aVar = new a();
-        a(aVar, this.f35386a);
-        byte b = aVar.f35387a;
+        a(aVar, this.f21695a);
+        byte b = aVar.f21696a;
         if (b == 6) {
-            byte b2 = this.f35386a.get();
+            byte b2 = this.f21695a.get();
             byte b3 = b2;
             if (b2 < 0) {
                 b3 = b2 + 256;
             }
             byte[] bArr = new byte[b3];
-            this.f35386a.get(bArr);
+            this.f21695a.get(bArr);
             try {
                 return new String(bArr, this.b);
             } catch (UnsupportedEncodingException e) {
                 return new String(bArr);
             }
         } else if (b == 7) {
-            int i2 = this.f35386a.getInt();
+            int i2 = this.f21695a.getInt();
             if (i2 > 104857600 || i2 < 0) {
                 throw new g("String too long: " + i2);
             }
             byte[] bArr2 = new byte[i2];
-            this.f35386a.get(bArr2);
+            this.f21695a.get(bArr2);
             try {
                 return new String(bArr2, this.b);
             } catch (UnsupportedEncodingException e2) {
@@ -706,22 +706,22 @@ public final class i {
             return null;
         }
         a aVar = new a();
-        a(aVar, this.f35386a);
-        byte b = aVar.f35387a;
+        a(aVar, this.f21695a);
+        byte b = aVar.f21696a;
         if (b != 9) {
             if (b == 13) {
                 a aVar2 = new a();
-                a(aVar2, this.f35386a);
-                if (aVar2.f35387a != 0) {
-                    throw new g("type mismatch, tag: " + i + ", type: " + ((int) aVar.f35387a) + ", " + ((int) aVar2.f35387a));
+                a(aVar2, this.f21695a);
+                if (aVar2.f21696a != 0) {
+                    throw new g("type mismatch, tag: " + i + ", type: " + ((int) aVar.f21696a) + ", " + ((int) aVar2.f21696a));
                 }
                 int a2 = a(0, 0, true);
                 if (a2 >= 0) {
                     byte[] bArr = new byte[a2];
-                    this.f35386a.get(bArr);
+                    this.f21695a.get(bArr);
                     return bArr;
                 }
-                throw new g("invalid size, tag: " + i + ", type: " + ((int) aVar.f35387a) + ", " + ((int) aVar2.f35387a) + ", size: " + a2);
+                throw new g("invalid size, tag: " + i + ", type: " + ((int) aVar.f21696a) + ", " + ((int) aVar2.f21696a) + ", size: " + a2);
             }
             throw new g("type mismatch.");
         }

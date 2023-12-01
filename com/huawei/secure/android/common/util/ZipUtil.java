@@ -16,11 +16,11 @@ import java.util.zip.ZipInputStream;
 public class ZipUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23156a = "ZipUtil";
+    private static final String f9548a = "ZipUtil";
     private static final int b = 104857600;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f23157c = 100;
+    private static final int f9549c = 100;
     private static final int d = 4096;
     private static final String e = "../";
     private static final String f = "..\\";
@@ -61,7 +61,7 @@ public class ZipUtil {
         if (TextUtils.isEmpty(str) || !e(str)) {
             return;
         }
-        Log.e(f23156a, "IllegalArgumentException--path is not a standard path");
+        Log.e(f9548a, "IllegalArgumentException--path is not a standard path");
         throw new IllegalArgumentException("path is not a standard path");
     }
 
@@ -87,15 +87,15 @@ public class ZipUtil {
 
     private static boolean a(String str, String str2, long j, int i) throws SecurityCommonException {
         if (TextUtils.isEmpty(str) || e(str)) {
-            LogsUtil.e(f23156a, "zip file is not valid");
+            LogsUtil.e(f9548a, "zip file is not valid");
             return false;
         } else if (TextUtils.isEmpty(str2) || e(str2)) {
-            LogsUtil.e(f23156a, "target directory is not valid");
+            LogsUtil.e(f9548a, "target directory is not valid");
             return false;
         } else if (a(str, j, i)) {
             return true;
         } else {
-            LogsUtil.e(f23156a, "zip file contains valid chars or too many files");
+            LogsUtil.e(f9548a, "zip file contains valid chars or too many files");
             throw new SecurityCommonException("unsecure zipfile!");
         }
     }
@@ -107,7 +107,7 @@ public class ZipUtil {
             }
             return true;
         } catch (Exception e2) {
-            LogsUtil.e(f23156a, "unzip fail delete file failed" + e2.getMessage());
+            LogsUtil.e(f9548a, "unzip fail delete file failed" + e2.getMessage());
             return false;
         }
     }
@@ -128,7 +128,7 @@ public class ZipUtil {
             try {
                 return file.createNewFile();
             } catch (IOException e2) {
-                Log.e(f23156a, "createOrExistsFile IOException ");
+                Log.e(f9548a, "createOrExistsFile IOException ");
                 return false;
             }
         }
@@ -146,7 +146,7 @@ public class ZipUtil {
         if (file == null || file.delete()) {
             return;
         }
-        LogsUtil.e(f23156a, "delete file error");
+        LogsUtil.e(f9548a, "delete file error");
     }
 
     private static String d(String str) {
@@ -161,7 +161,7 @@ public class ZipUtil {
         if (file == null || file.exists() || file.mkdirs()) {
             return;
         }
-        LogsUtil.e(f23156a, "mkdirs error , files exists or IOException.");
+        LogsUtil.e(f9548a, "mkdirs error , files exists or IOException.");
     }
 
     private static void e(File file) {
@@ -194,7 +194,7 @@ public class ZipUtil {
 
     private static boolean e(String str) {
         if (TextUtils.isEmpty(str)) {
-            Log.e(f23156a, "isContainInvalidStr: name is null");
+            Log.e(f9548a, "isContainInvalidStr: name is null");
             return true;
         }
         boolean z = true;

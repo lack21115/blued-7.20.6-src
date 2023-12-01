@@ -35,12 +35,11 @@ public final class YYRedPackageItemAdapter extends BaseQuickAdapter<YYRedPackage
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, YYRedPackageDetails yYRedPackageDetails) {
         ImageView imageView = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.item_background_view);
         ImageView imageView2 = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.img_value_info);
-        RecyclerView recyclerView = baseViewHolder == null ? null : (RecyclerView) baseViewHolder.getView(R.id.rv_gift_list);
+        RecyclerView view = baseViewHolder == null ? null : baseViewHolder.getView(R.id.rv_gift_list);
         TextView textView = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_package_value);
         TextView textView2 = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_package_count);
         if (textView != null) {
@@ -51,19 +50,18 @@ public final class YYRedPackageItemAdapter extends BaseQuickAdapter<YYRedPackage
         }
         boolean z = false;
         if ((yYRedPackageDetails == null ? null : yYRedPackageDetails.getGoods_lists()) != null) {
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.mContext);
+            RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this.mContext);
             linearLayoutManager.setOrientation(0);
-            if (recyclerView != null) {
-                recyclerView.setLayoutManager(linearLayoutManager);
+            if (view != null) {
+                view.setLayoutManager(linearLayoutManager);
             }
-            YYRedPackageGiftAdapter yYRedPackageGiftAdapter = new YYRedPackageGiftAdapter();
-            if (recyclerView != null) {
-                recyclerView.setAdapter(yYRedPackageGiftAdapter);
+            RecyclerView.Adapter yYRedPackageGiftAdapter = new YYRedPackageGiftAdapter();
+            if (view != null) {
+                view.setAdapter(yYRedPackageGiftAdapter);
             }
             yYRedPackageGiftAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYRedPackageItemAdapter$XGzlgBckb3UzieRs9eX86V5q858
-                @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
-                public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                    YYRedPackageItemAdapter.a(BaseViewHolder.this, this, baseQuickAdapter, view, i);
+                public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view2, int i) {
+                    YYRedPackageItemAdapter.a(baseViewHolder, this, baseQuickAdapter, view2, i);
                 }
             });
             yYRedPackageGiftAdapter.setNewData(yYRedPackageDetails.getGoods_lists());

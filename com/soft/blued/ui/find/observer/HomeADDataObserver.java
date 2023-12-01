@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class HomeADDataObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HomeADDataObserver f30619a = new HomeADDataObserver();
+    private static HomeADDataObserver f16929a = new HomeADDataObserver();
     private ArrayList<IHomeADDataObserver> b = new ArrayList<>();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/observer/HomeADDataObserver$IHomeADDataObserver.class */
@@ -19,7 +19,7 @@ public class HomeADDataObserver {
     }
 
     public static HomeADDataObserver a() {
-        return f30619a;
+        return f16929a;
     }
 
     public void b() {

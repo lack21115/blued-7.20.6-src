@@ -5,21 +5,20 @@ import java.util.LinkedList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/cy.class */
-public class cy implements Comparable<cy> {
+class cy implements Comparable<cy> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f41323a;
+    protected int f27632a;
 
     /* renamed from: a  reason: collision with other field name */
-    private long f276a;
+    private long f229a;
 
     /* renamed from: a  reason: collision with other field name */
-    String f277a;
+    String f230a;
 
     /* renamed from: a  reason: collision with other field name */
-    private final LinkedList<co> f278a;
+    private final LinkedList<co> f231a;
 
     public cy() {
         this(null, 0);
@@ -30,10 +29,10 @@ public class cy implements Comparable<cy> {
     }
 
     public cy(String str, int i) {
-        this.f278a = new LinkedList<>();
-        this.f276a = 0L;
-        this.f277a = str;
-        this.f41323a = i;
+        this.f231a = new LinkedList<>();
+        this.f229a = 0L;
+        this.f230a = str;
+        this.f27632a = i;
     }
 
     @Override // java.lang.Comparable
@@ -42,20 +41,20 @@ public class cy implements Comparable<cy> {
         if (cyVar == null) {
             return 1;
         }
-        return cyVar.f41323a - this.f41323a;
+        return cyVar.f27632a - this.f27632a;
     }
 
     public cy a(JSONObject jSONObject) {
         synchronized (this) {
-            this.f276a = jSONObject.getLong("tt");
-            this.f41323a = jSONObject.getInt(com.anythink.expressad.d.a.b.R);
-            this.f277a = jSONObject.getString("host");
+            this.f229a = jSONObject.getLong("tt");
+            this.f27632a = jSONObject.getInt(com.anythink.expressad.d.a.b.R);
+            this.f230a = jSONObject.getString("host");
             JSONArray jSONArray = jSONObject.getJSONArray("ah");
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 < jSONArray.length()) {
-                    this.f278a.add(new co().a(jSONArray.getJSONObject(i2)));
+                    this.f231a.add(new co().a(jSONArray.getJSONObject(i2)));
                     i = i2 + 1;
                 }
             }
@@ -67,13 +66,13 @@ public class cy implements Comparable<cy> {
         JSONObject jSONObject;
         synchronized (this) {
             jSONObject = new JSONObject();
-            jSONObject.put("tt", this.f276a);
-            jSONObject.put(com.anythink.expressad.d.a.b.R, this.f41323a);
-            jSONObject.put("host", this.f277a);
+            jSONObject.put("tt", this.f229a);
+            jSONObject.put(com.anythink.expressad.d.a.b.R, this.f27632a);
+            jSONObject.put("host", this.f230a);
             JSONArray jSONArray = new JSONArray();
-            Iterator<co> it = this.f278a.iterator();
+            Iterator<co> it = this.f231a.iterator();
             while (it.hasNext()) {
-                jSONArray.put(it.next().m11586a());
+                jSONArray.put(it.next().m8536a());
             }
             jSONObject.put("ah", jSONArray);
         }
@@ -84,31 +83,31 @@ public class cy implements Comparable<cy> {
     public void a(co coVar) {
         synchronized (this) {
             if (coVar != null) {
-                this.f278a.add(coVar);
+                this.f231a.add(coVar);
                 int a2 = coVar.a();
                 if (a2 > 0) {
-                    this.f41323a += coVar.a();
+                    this.f27632a += coVar.a();
                 } else {
                     int i = 0;
-                    int size = this.f278a.size();
+                    int size = this.f231a.size();
                     while (true) {
                         int i2 = size - 1;
-                        if (i2 < 0 || this.f278a.get(i2).a() >= 0) {
+                        if (i2 < 0 || this.f231a.get(i2).a() >= 0) {
                             break;
                         }
                         i++;
                         size = i2;
                     }
-                    this.f41323a += a2 * i;
+                    this.f27632a += a2 * i;
                 }
-                if (this.f278a.size() > 30) {
-                    this.f41323a -= this.f278a.remove().a();
+                if (this.f231a.size() > 30) {
+                    this.f27632a -= this.f231a.remove().a();
                 }
             }
         }
     }
 
     public String toString() {
-        return this.f277a + ":" + this.f41323a;
+        return this.f230a + ":" + this.f27632a;
     }
 }

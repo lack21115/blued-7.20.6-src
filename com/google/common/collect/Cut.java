@@ -1,6 +1,5 @@
 package com.google.common.collect;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Booleans;
 import java.io.Serializable;
@@ -167,7 +166,7 @@ public abstract class Cut<C extends Comparable> implements Serializable, Compara
         }
 
         public String toString() {
-            return BridgeUtil.SPLIT_MARK + this.endpoint + "\\";
+            return "/" + this.endpoint + "\\";
         }
 
         @Override // com.google.common.collect.Cut
@@ -342,7 +341,7 @@ public abstract class Cut<C extends Comparable> implements Serializable, Compara
         }
 
         public String toString() {
-            return "\\" + this.endpoint + BridgeUtil.SPLIT_MARK;
+            return "\\" + this.endpoint + "/";
         }
 
         @Override // com.google.common.collect.Cut

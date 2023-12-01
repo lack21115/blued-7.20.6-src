@@ -7,7 +7,7 @@ public interface k {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final l f7321a;
+        public final l f4482a;
         public final l b;
 
         public a(l lVar) {
@@ -15,7 +15,7 @@ public interface k {
         }
 
         public a(l lVar, l lVar2) {
-            this.f7321a = (l) com.anythink.expressad.exoplayer.k.a.a(lVar);
+            this.f4482a = (l) com.anythink.expressad.exoplayer.k.a.a(lVar);
             this.b = (l) com.anythink.expressad.exoplayer.k.a.a(lVar2);
         }
 
@@ -27,18 +27,18 @@ public interface k {
                 return false;
             }
             a aVar = (a) obj;
-            return this.f7321a.equals(aVar.f7321a) && this.b.equals(aVar.b);
+            return this.f4482a.equals(aVar.f4482a) && this.b.equals(aVar.b);
         }
 
         public final int hashCode() {
-            return (this.f7321a.hashCode() * 31) + this.b.hashCode();
+            return (this.f4482a.hashCode() * 31) + this.b.hashCode();
         }
 
         public final String toString() {
             String str;
             StringBuilder sb = new StringBuilder("[");
-            sb.append(this.f7321a);
-            if (this.f7321a.equals(this.b)) {
+            sb.append(this.f4482a);
+            if (this.f4482a.equals(this.b)) {
                 str = "";
             } else {
                 str = ", " + this.b;
@@ -53,7 +53,7 @@ public interface k {
     public static final class b implements k {
 
         /* renamed from: a  reason: collision with root package name */
-        private final long f7322a;
+        private final long f4483a;
         private final a b;
 
         private b(long j) {
@@ -61,8 +61,8 @@ public interface k {
         }
 
         public b(long j, long j2) {
-            this.f7322a = j;
-            this.b = new a(j2 == 0 ? l.f7323a : new l(0L, j2));
+            this.f4483a = j;
+            this.b = new a(j2 == 0 ? l.f4484a : new l(0L, j2));
         }
 
         @Override // com.anythink.expressad.exoplayer.e.k
@@ -77,7 +77,7 @@ public interface k {
 
         @Override // com.anythink.expressad.exoplayer.e.k
         public final long b() {
-            return this.f7322a;
+            return this.f4483a;
         }
     }
 

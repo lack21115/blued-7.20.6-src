@@ -2,23 +2,21 @@ package org.commonmark.node;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/node/Text.class */
 public class Text extends Node {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f44068a;
+    private String a;
 
     public Text() {
     }
 
     public Text(String str) {
-        this.f44068a = str;
+        this.a = str;
     }
 
     public String a() {
-        return this.f44068a;
+        return this.a;
     }
 
     public void a(String str) {
-        this.f44068a = str;
+        this.a = str;
     }
 
     @Override // org.commonmark.node.Node
@@ -28,6 +26,6 @@ public class Text extends Node {
 
     @Override // org.commonmark.node.Node
     protected String aF_() {
-        return "literal=" + this.f44068a;
+        return "literal=" + this.a;
     }
 }

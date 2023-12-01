@@ -25,13 +25,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYSetRelationshipView.class */
 public class YYSetRelationshipView extends RelativeLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogSetRelationshipBinding f18479a;
+    private DialogSetRelationshipBinding a;
     private BaseYYStudioFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TimeAdapter f18480c;
+    private TimeAdapter c;
     private TypeAdapter d;
     private YYSetRelationTypeModel e;
     private YYSetRelationTypeModel f;
@@ -50,22 +46,21 @@ public class YYSetRelationshipView extends RelativeLayout implements View.OnClic
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final YYSetRelationTypeModel yYSetRelationTypeModel) {
-            ItemRelationshipTimeBinding a2 = ItemRelationshipTimeBinding.a(baseViewHolder.itemView);
+            ItemRelationshipTimeBinding a = ItemRelationshipTimeBinding.a(baseViewHolder.itemView);
             if (yYSetRelationTypeModel.equals(YYSetRelationshipView.this.e)) {
-                ShapeHelper.b(a2.f16648a, R.color.transparent);
-                ShapeHelper.a(a2.f16648a, YYSetRelationshipView.this.getResources().getDrawable(R.drawable.shape_mb_272727));
-                ShapeHelper.a((ShapeHelper.ShapeView) a2.f16648a, R.color.syc_dark_b);
+                ShapeHelper.b(a.a, R.color.transparent);
+                ShapeHelper.a(a.a, YYSetRelationshipView.this.getResources().getDrawable(R.drawable.shape_mb_272727));
+                ShapeHelper.a((ShapeHelper.ShapeView) a.a, R.color.syc_dark_b);
             } else {
-                ShapeHelper.a(a2.f16648a, (Drawable) null);
-                ShapeHelper.b(a2.f16648a, R.color.syc_272727);
-                ShapeHelper.a((ShapeHelper.ShapeView) a2.f16648a, R.color.syc_dark_j);
-                ShapeHelper.a((ShapeHelper.ShapeView) a2.f16648a, 100.0f);
+                ShapeHelper.a(a.a, (Drawable) null);
+                ShapeHelper.b(a.a, R.color.syc_272727);
+                ShapeHelper.a((ShapeHelper.ShapeView) a.a, R.color.syc_dark_j);
+                ShapeHelper.a((ShapeHelper.ShapeView) a.a, 100.0f);
             }
-            a2.f16648a.setText(String.format(YYSetRelationshipView.this.getResources().getString(R.string.yy_day), yYSetRelationTypeModel.getContent()));
-            a2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYSetRelationshipView.TimeAdapter.1
+            a.a.setText(String.format(YYSetRelationshipView.this.getResources().getString(R.string.yy_day), yYSetRelationTypeModel.getContent()));
+            a.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYSetRelationshipView.TimeAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
@@ -84,21 +79,20 @@ public class YYSetRelationshipView extends RelativeLayout implements View.OnClic
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final YYSetRelationTypeModel yYSetRelationTypeModel) {
-            ItemRelationshipTypeBinding a2 = ItemRelationshipTypeBinding.a(baseViewHolder.itemView);
+            ItemRelationshipTypeBinding a = ItemRelationshipTypeBinding.a(baseViewHolder.itemView);
             if (yYSetRelationTypeModel.equals(YYSetRelationshipView.this.f)) {
-                ShapeHelper.a((ShapeHelper.ShapeView) a2.f16652a, R.color.syc_dark_b);
-                ShapeHelper.a(a2.f16652a, YYSetRelationshipView.this.getResources().getDrawable(R.drawable.shape_mb_272727));
+                ShapeHelper.a((ShapeHelper.ShapeView) a.a, R.color.syc_dark_b);
+                ShapeHelper.a(a.a, YYSetRelationshipView.this.getResources().getDrawable(R.drawable.shape_mb_272727));
             } else {
-                ShapeHelper.a(a2.f16652a, (Drawable) null);
-                ShapeHelper.b(a2.f16652a, R.color.syc_272727);
-                ShapeHelper.a((ShapeHelper.ShapeView) a2.f16652a, R.color.syc_dark_j);
-                ShapeHelper.a((ShapeHelper.ShapeView) a2.f16652a, 100.0f);
+                ShapeHelper.a(a.a, (Drawable) null);
+                ShapeHelper.b(a.a, R.color.syc_272727);
+                ShapeHelper.a((ShapeHelper.ShapeView) a.a, R.color.syc_dark_j);
+                ShapeHelper.a((ShapeHelper.ShapeView) a.a, 100.0f);
             }
-            a2.f16652a.setText(yYSetRelationTypeModel.getContent());
-            a2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYSetRelationshipView.TypeAdapter.1
+            a.a.setText(yYSetRelationTypeModel.getContent());
+            a.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYSetRelationshipView.TypeAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
@@ -119,21 +113,21 @@ public class YYSetRelationshipView extends RelativeLayout implements View.OnClic
 
     public YYSetRelationshipView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f18479a = DialogSetRelationshipBinding.a(LayoutInflater.from(context), this, true);
+        this.a = DialogSetRelationshipBinding.a(LayoutInflater.from(context), this, true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
-        this.f18479a.b.setLayoutManager(linearLayoutManager);
-        this.f18479a.f16411a.setLayoutManager(new LinearLayoutManager(getContext()));
-        this.f18479a.f16412c.setOnClickListener(this);
+        this.a.b.setLayoutManager(linearLayoutManager);
+        this.a.a.setLayoutManager(new LinearLayoutManager(getContext()));
+        this.a.c.setOnClickListener(this);
     }
 
     public void a(BaseYYStudioFragment baseYYStudioFragment, String str, SetRelationShipListener setRelationShipListener) {
         this.b = baseYYStudioFragment;
         this.g = setRelationShipListener;
-        this.f18480c = new TimeAdapter();
-        this.f18479a.b.setAdapter(this.f18480c);
+        this.c = new TimeAdapter();
+        this.a.b.setAdapter(this.c);
         this.d = new TypeAdapter();
-        this.f18479a.f16411a.setAdapter(this.d);
+        this.a.a.setAdapter(this.d);
         YYRoomHttpUtils.Q(str, new BluedUIHttpResponse<BluedEntityA<YYSetTypesModel>>(baseYYStudioFragment.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYSetRelationshipView.1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -151,7 +145,7 @@ public class YYSetRelationshipView extends RelativeLayout implements View.OnClic
                     return;
                 }
                 YYSetRelationshipView.this.e = singleData.getDuration().get(0);
-                YYSetRelationshipView.this.f18480c.setNewData(singleData.getDuration());
+                YYSetRelationshipView.this.c.setNewData(singleData.getDuration());
             }
         }, baseYYStudioFragment.getFragmentActive());
     }

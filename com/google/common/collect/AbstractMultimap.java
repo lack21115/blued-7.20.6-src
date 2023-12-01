@@ -64,12 +64,12 @@ public abstract class AbstractMultimap<K, V> implements Multimap<K, V> {
         public Values() {
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             AbstractMultimap.this.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(@NullableDecl Object obj) {
             return AbstractMultimap.this.containsValue(obj);
         }
@@ -79,7 +79,7 @@ public abstract class AbstractMultimap<K, V> implements Multimap<K, V> {
             return AbstractMultimap.this.valueIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return AbstractMultimap.this.size();
         }

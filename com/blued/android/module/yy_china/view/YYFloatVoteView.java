@@ -21,13 +21,9 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYFloatVoteView.class */
 public class YYFloatVoteView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f18159a;
+    private BaseYYStudioFragment a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f18160c;
+    private ImageView c;
 
     public YYFloatVoteView(Context context) {
         super(context);
@@ -48,9 +44,9 @@ public class YYFloatVoteView extends FrameLayout {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_float_vote, (ViewGroup) this, true);
         this.b = (TextView) findViewById(R.id.tv_vote_time);
         ImageView imageView = (ImageView) findViewById(R.id.to_vote);
-        this.f18160c = imageView;
+        this.c = imageView;
         imageView.setEnabled(true);
-        this.f18160c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYFloatVoteView.1
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYFloatVoteView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -64,9 +60,8 @@ public class YYFloatVoteView extends FrameLayout {
     }
 
     public void a(BaseYYStudioFragment baseYYStudioFragment) {
-        this.f18159a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         LiveEventBus.get("show_vote_time", String.class).observe(baseYYStudioFragment, new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYFloatVoteView.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 if (TextUtils.isEmpty(str)) {

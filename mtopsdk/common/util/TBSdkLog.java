@@ -1,28 +1,23 @@
 package mtopsdk.common.util;
 
 import android.util.Log;
-import androidx.exifinterface.media.ExifInterface;
 import java.util.HashMap;
 import java.util.Map;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/common/util/TBSdkLog.class */
 public class TBSdkLog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f43691a = true;
+    private static boolean a = true;
     private static boolean b = true;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static LogEnable f43692c = LogEnable.DebugEnable;
+    private static LogEnable c = LogEnable.DebugEnable;
     private static Map d = new HashMap(5);
 
     /* loaded from: source-3503164-dex2jar.jar:mtopsdk/common/util/TBSdkLog$LogEnable.class */
     public enum LogEnable {
-        VerboseEnable(ExifInterface.GPS_MEASUREMENT_INTERRUPTED),
+        VerboseEnable("V"),
         DebugEnable("D"),
         InfoEnable("I"),
         WarnEnable("W"),
-        ErrorEnable(ExifInterface.LONGITUDE_EAST),
+        ErrorEnable("E"),
         NoneEnable("L");
         
         private String g;
@@ -80,13 +75,13 @@ public class TBSdkLog {
     }
 
     public static void a(String str, String str2, String str3) {
-        if (a(LogEnable.DebugEnable) && f43691a) {
+        if (a(LogEnable.DebugEnable) && a) {
             Log.d(str, a(str2, str3));
         }
     }
 
     public static void a(String str, String str2, String str3, Throwable th) {
-        if (a(LogEnable.WarnEnable) && f43691a) {
+        if (a(LogEnable.WarnEnable) && a) {
             Log.w(str, a(str2, str3), th);
         }
     }
@@ -96,12 +91,12 @@ public class TBSdkLog {
     }
 
     public static void a(boolean z) {
-        f43691a = z;
+        a = z;
         Log.d("mtopsdk.TBSdkLog", "[setPrintLog] printLog=" + z);
     }
 
     public static boolean a(LogEnable logEnable) {
-        return logEnable.ordinal() >= f43692c.ordinal();
+        return logEnable.ordinal() >= c.ordinal();
     }
 
     public static void b(String str, String str2) {
@@ -109,13 +104,13 @@ public class TBSdkLog {
     }
 
     public static void b(String str, String str2, String str3) {
-        if (a(LogEnable.InfoEnable) && f43691a) {
+        if (a(LogEnable.InfoEnable) && a) {
             Log.i(str, a(str2, str3));
         }
     }
 
     public static void b(String str, String str2, String str3, Throwable th) {
-        if (a(LogEnable.ErrorEnable) && f43691a) {
+        if (a(LogEnable.ErrorEnable) && a) {
             Log.e(str, a(str2, str3), th);
         }
     }
@@ -129,7 +124,7 @@ public class TBSdkLog {
     }
 
     public static void c(String str, String str2, String str3) {
-        if (a(LogEnable.WarnEnable) && f43691a) {
+        if (a(LogEnable.WarnEnable) && a) {
             Log.w(str, a(str2, str3));
         }
     }
@@ -139,7 +134,7 @@ public class TBSdkLog {
     }
 
     public static void d(String str, String str2, String str3) {
-        if (a(LogEnable.ErrorEnable) && f43691a) {
+        if (a(LogEnable.ErrorEnable) && a) {
             Log.e(str, a(str2, str3));
         }
     }

@@ -9,14 +9,14 @@ import java.util.HashMap;
 public final class MtmV0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f39895a = kC0XR.a(kC0XR.A0);
+    public static final String f26204a = kC0XR.a(kC0XR.A0);
     public static final String b = kC0XR.a(kC0XR.B0);
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f39896c = false;
+    public static boolean f26205c = false;
 
     public static String a(Context context) {
-        File dir = context.getDir(f39895a, 0);
+        File dir = context.getDir(f26204a, 0);
         if (dir == null) {
             return "";
         }
@@ -34,10 +34,10 @@ public final class MtmV0 {
 
     public static void a(Context context, fenkF fenkf) {
         try {
-            if (f39896c) {
+            if (f26205c) {
                 return;
             }
-            f39896c = true;
+            f26205c = true;
             long a2 = fenkf.a(context, "502");
             int myUid = Process.myUid();
             if (a2 == 0 || myUid == 0 || myUid == a2) {

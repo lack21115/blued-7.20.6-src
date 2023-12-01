@@ -16,12 +16,12 @@ import javax.crypto.Cipher;
 public class bp extends File {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9351a = "LocalApkFile";
+    public static final String f6511a = "LocalApkFile";
     private static final long b = 6916965592955692235L;
     private static ClassLoader h;
 
     /* renamed from: c  reason: collision with root package name */
-    private bu f9352c;
+    private bu f6512c;
     private Class<?> d;
     private Context e;
     private PublicKey f;
@@ -48,7 +48,7 @@ public class bp extends File {
         this.e = null;
         this.g = bq.a();
         this.e = context;
-        this.f9352c = buVar;
+        this.f6512c = buVar;
         if (buVar != null) {
             try {
                 this.f = c("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBcp8gg3O7bjdnz+pSxg+JH/mbcKfm7dEjcRqVNAFwG7bTpLwDQh40bZJzrcBKQWbD6kArR6TPuQUCMQ09/y55Vk1P2Kq7vJGGisFpjlqv2qlg8drLdhXkLQUt/SeZVJgT+CNxVbuzxAF61EEf8M0MHi1I2dm6n6lOA6fomiCD9wIDAQAB");
@@ -80,7 +80,7 @@ public class bp extends File {
     private Class<?> b(File file) {
         Class<?> cls;
         bq bqVar = this.g;
-        bqVar.a(f9351a, "Android version:" + bj.a(this.e).c());
+        bqVar.a(f6511a, "Android version:" + bj.a(this.e).c());
         Class<?> cls2 = null;
         try {
             synchronized (bw.class) {
@@ -91,17 +91,17 @@ public class bp extends File {
                     String str = w.aC;
                     h = an.a(absolutePath, absolutePath2, (String) null, classLoader);
                     bq bqVar2 = this.g;
-                    bqVar2.a(f9351a, "dexPath=" + absolutePath + ", cl=" + classLoader + ", dir=" + absolutePath2 + ", len=" + file.length() + ", list=" + file.list());
+                    bqVar2.a(f6511a, "dexPath=" + absolutePath + ", cl=" + classLoader + ", dir=" + absolutePath2 + ", len=" + file.length() + ", list=" + file.list());
                     cls = Class.forName(str, true, h);
                 } finally {
                 }
             }
             cls2 = cls;
         } catch (Exception e) {
-            this.g.a(f9351a, e.getMessage());
+            this.g.a(f6511a, e.getMessage());
         }
         bq bqVar3 = this.g;
-        bqVar3.a(f9351a, "jar.path=" + file.getAbsolutePath() + ", clz=" + cls2);
+        bqVar3.a(f6511a, "jar.path=" + file.getAbsolutePath() + ", clz=" + cls2);
         return cls2;
     }
 
@@ -142,7 +142,7 @@ public class bp extends File {
             }
             if (listFiles[i2].getAbsolutePath().contains("__xadsdk__remote__final__")) {
                 bq bqVar = this.g;
-                bqVar.a(f9351a, "clearDexCacheFiles-->" + i2 + "--" + listFiles[i2].getAbsolutePath());
+                bqVar.a(f6511a, "clearDexCacheFiles-->" + i2 + "--" + listFiles[i2].getAbsolutePath());
                 listFiles[i2].delete();
             }
             i = i2 + 1;
@@ -151,12 +151,12 @@ public class bp extends File {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a() {
-        if (this.f9352c == null) {
-            this.g.a(f9351a, "built-in apk, no need to check");
+        if (this.f6512c == null) {
+            this.g.a(f6511a, "built-in apk, no need to check");
             return;
         }
         String a2 = a(new File(getAbsolutePath()));
-        String b2 = b(this.f9352c.d());
+        String b2 = b(this.f6512c.d());
         if (a2.equalsIgnoreCase(b2)) {
             return;
         }
@@ -183,7 +183,7 @@ public class bp extends File {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public double c() {
-        bu buVar = this.f9352c;
+        bu buVar = this.f6512c;
         if (buVar == null) {
             return 0.0d;
         }

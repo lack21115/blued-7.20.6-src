@@ -60,13 +60,13 @@ public class ImsConferenceState implements Parcelable {
                 return 5;
             }
             i = 4;
-            if (!str.equals("connected")) {
+            if (!str.equals(STATUS_CONNECTED)) {
                 i = 4;
                 if (!str.equals(STATUS_MUTED_VIA_FOCUS)) {
                     i = 4;
                     if (!str.equals(STATUS_DISCONNECTING)) {
                         i = 4;
-                        if (str.equals("disconnected")) {
+                        if (str.equals(STATUS_DISCONNECTED)) {
                             return 6;
                         }
                     }

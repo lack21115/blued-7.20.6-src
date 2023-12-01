@@ -3,7 +3,7 @@ package com.tencent.beacon.base.net.b;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import com.anythink.core.api.ATAdConst;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.beacon.a.b.g;
 import com.tencent.beacon.a.c.f;
 import com.tencent.beacon.e.h;
@@ -17,7 +17,7 @@ import java.util.Map;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, String> f34974a;
+    private static Map<String, String> f21283a;
 
     public static RequestPackage a(int i, byte[] bArr, Map<String, String> map, String str) {
         com.tencent.beacon.a.c.c d = com.tencent.beacon.a.c.c.d();
@@ -42,19 +42,19 @@ public final class d {
         Map<String, String> map;
         synchronized (d.class) {
             try {
-                if (f34974a == null) {
+                if (f21283a == null) {
                     HashMap hashMap = new HashMap(4);
-                    f34974a = hashMap;
+                    f21283a = hashMap;
                     hashMap.put("wup_version", "3.0");
-                    f34974a.put("TYPE_COMPRESS", String.valueOf(2));
-                    f34974a.put("encr_type", "rsapost");
-                    f34974a.put("Content-Type", "jce");
+                    f21283a.put("TYPE_COMPRESS", String.valueOf(2));
+                    f21283a.put("encr_type", "rsapost");
+                    f21283a.put("Content-Type", "jce");
                     h b = h.b();
                     if (b != null) {
-                        f34974a.put("bea_key", b.d());
+                        f21283a.put("bea_key", b.d());
                     }
                 }
-                map = f34974a;
+                map = f21283a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -73,27 +73,27 @@ public final class d {
             int length = valueOf.trim().length();
             if (length <= 0 || !a(valueOf)) {
                 com.tencent.beacon.base.util.c.e("[core] '%s' should be ASCII code in 32-126!", valueOf);
-                g.e().a(ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB, "[event] eventName: " + str + ", key: " + valueOf + " should be ASCII code in 32-126!");
+                g.e().a("102", "[event] eventName: " + str + ", key: " + valueOf + " should be ASCII code in 32-126!");
             } else {
                 String trim = valueOf.trim();
                 String str2 = trim;
                 if (length > 64) {
                     str2 = trim.substring(0, 64);
                     String str3 = "[event] eventName: " + str + ", key: " + str2 + " should be less than 64!";
-                    g.e().a(ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB, str3);
+                    g.e().a("102", str3);
                     com.tencent.beacon.base.util.e.a(str3);
                 }
-                String replace = str2.replace("|", "%7C").replace("&", "%26").replace("=", "%3D");
+                String replace = str2.replace("|", "%7C").replace(ContainerUtils.FIELD_DELIMITER, "%26").replace("=", "%3D");
                 String valueOf2 = String.valueOf(entry.getValue());
                 String trim2 = valueOf2 == null ? "" : valueOf2.trim();
                 String str4 = trim2;
                 if (trim2.length() > 10240) {
                     String str5 = "[event] eventName: " + str + ", key: " + replace + "'s value > 10K.";
-                    g.e().a(ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_NORMAL, str5);
+                    g.e().a("103", str5);
                     com.tencent.beacon.base.util.e.a(str5);
                     str4 = trim2.substring(0, 10240);
                 }
-                String replace2 = str4.replace('\n', ' ').replace('\r', ' ').replace("|", "%7C").replace("&", "%26").replace("=", "%3D");
+                String replace2 = str4.replace('\n', ' ').replace('\r', ' ').replace("|", "%7C").replace(ContainerUtils.FIELD_DELIMITER, "%26").replace("=", "%3D");
                 hashMap.put(replace, replace2);
                 i += replace.length() + replace2.length();
             }
@@ -187,12 +187,12 @@ public final class d {
                 com.tencent.beacon.base.util.c.e("[core] '%s' should be ASCII code in 32-126!", key);
             } else {
                 String trim = key.trim();
-                sb.append("&");
-                sb.append(trim.replace("|", "%7C").replace("&", "%26").replace("=", "%3D"));
+                sb.append(ContainerUtils.FIELD_DELIMITER);
+                sb.append(trim.replace("|", "%7C").replace(ContainerUtils.FIELD_DELIMITER, "%26").replace("=", "%3D"));
                 sb.append("=");
                 String value = entry.getValue();
                 if (value != null) {
-                    sb.append(value.trim().replace('\n', ' ').replace('\r', ' ').replace("|", "%7C").replace("&", "%26").replace("=", "%3D"));
+                    sb.append(value.trim().replace('\n', ' ').replace('\r', ' ').replace("|", "%7C").replace(ContainerUtils.FIELD_DELIMITER, "%26").replace("=", "%3D"));
                 }
             }
         }

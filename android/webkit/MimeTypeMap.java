@@ -1,6 +1,8 @@
 package android.webkit;
 
 import android.text.TextUtils;
+import com.android.internal.http.multipart.FilePart;
+import com.android.internal.http.multipart.StringPart;
 import java.util.regex.Pattern;
 import libcore.net.MimeUtils;
 
@@ -59,7 +61,7 @@ public class MimeTypeMap {
 
     String remapGenericMimeType(String str, String str2, String str3) {
         String str4;
-        if ("text/plain".equals(str) || "application/octet-stream".equals(str)) {
+        if (StringPart.DEFAULT_CONTENT_TYPE.equals(str) || FilePart.DEFAULT_CONTENT_TYPE.equals(str)) {
             String str5 = null;
             if (str3 != null) {
                 str5 = URLUtil.parseContentDisposition(str3);
@@ -73,7 +75,7 @@ public class MimeTypeMap {
                 str4 = mimeTypeFromExtension;
             }
         } else if ("text/vnd.wap.wml".equals(str)) {
-            return "text/plain";
+            return StringPart.DEFAULT_CONTENT_TYPE;
         } else {
             str4 = str;
             if ("application/vnd.wap.xhtml+xml".equals(str)) {

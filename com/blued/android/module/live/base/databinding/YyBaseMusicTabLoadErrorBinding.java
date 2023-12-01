@@ -8,14 +8,12 @@ import com.blued.android.module.live.base.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/databinding/YyBaseMusicTabLoadErrorBinding.class */
 public final class YyBaseMusicTabLoadErrorBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f11400a;
+    public final ShapeTextView a;
     private final FrameLayout b;
 
     private YyBaseMusicTabLoadErrorBinding(FrameLayout frameLayout, ShapeTextView shapeTextView) {
         this.b = frameLayout;
-        this.f11400a = shapeTextView;
+        this.a = shapeTextView;
     }
 
     public static YyBaseMusicTabLoadErrorBinding a(View view) {
@@ -26,7 +24,6 @@ public final class YyBaseMusicTabLoadErrorBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("tvReload"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.b;

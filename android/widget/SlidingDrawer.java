@@ -154,10 +154,10 @@ public class SlidingDrawer extends ViewGroup {
         this.mContentId = resourceId2;
         float f = getResources().getDisplayMetrics().density;
         this.mTapThreshold = (int) ((6.0f * f) + 0.5f);
-        this.mMaximumTapVelocity = (int) ((100.0f * f) + 0.5f);
+        this.mMaximumTapVelocity = (int) ((MAXIMUM_TAP_VELOCITY * f) + 0.5f);
         this.mMaximumMinorVelocity = (int) ((MAXIMUM_MINOR_VELOCITY * f) + 0.5f);
-        this.mMaximumMajorVelocity = (int) ((200.0f * f) + 0.5f);
-        this.mMaximumAcceleration = (int) ((2000.0f * f) + 0.5f);
+        this.mMaximumMajorVelocity = (int) ((MAXIMUM_MAJOR_VELOCITY * f) + 0.5f);
+        this.mMaximumAcceleration = (int) ((MAXIMUM_ACCELERATION * f) + 0.5f);
         this.mVelocityUnits = (int) ((1000.0f * f) + 0.5f);
         obtainStyledAttributes.recycle();
         setAlwaysDrawnWithCacheEnabled(false);

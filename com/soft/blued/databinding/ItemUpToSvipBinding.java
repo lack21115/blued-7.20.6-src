@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemUpToSvipBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29332a;
+    private final LinearLayout f15642a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29332a;
+        return this.f15642a;
     }
 }

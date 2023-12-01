@@ -13,10 +13,10 @@ import java.util.LinkedList;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static b f27330a;
+    private static b f13642a;
 
     /* renamed from: c  reason: collision with root package name */
-    private h f27331c = new h(15);
+    private h f13643c = new h(15);
     private LruCache<String, com.opos.mobad.service.j.b<Integer>> b = new LruCache<>(50);
 
     private b() {
@@ -24,15 +24,15 @@ public class b {
 
     public static final b a() {
         b bVar;
-        b bVar2 = f27330a;
+        b bVar2 = f13642a;
         if (bVar2 == null) {
             synchronized (b.class) {
                 try {
-                    b bVar3 = f27330a;
+                    b bVar3 = f13642a;
                     bVar = bVar3;
                     if (bVar3 == null) {
                         bVar = new b();
-                        f27330a = bVar;
+                        f13642a = bVar;
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -56,7 +56,7 @@ public class b {
             LinkedList linkedList = new LinkedList();
             LinkedList linkedList2 = new LinkedList();
             linkedList2.add(new i(com.anythink.expressad.foundation.g.a.bM));
-            linkedList2.add(this.f27331c);
+            linkedList2.add(this.f13643c);
             linkedList.add(new g(new f(linkedList2)));
             final i iVar = new i(com.anythink.expressad.foundation.g.a.bM);
             linkedList.add(iVar);

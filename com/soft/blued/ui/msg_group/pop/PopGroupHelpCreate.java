@@ -42,10 +42,10 @@ public final class PopGroupHelpCreate extends CenterPopupView {
     private final IRequestHost h;
     private final ViewBindingProperty i;
     private final ArrayList<GroupApplyResp.User> j;
-    static final /* synthetic */ KProperty<Object>[] d = {Reflection.a(new PropertyReference1Impl(PopGroupHelpCreate.class, "vb", "getVb()Lcom/soft/blued/databinding/PopGroupHelpCreateBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] d = {(KProperty) Reflection.a(new PropertyReference1Impl(PopGroupHelpCreate.class, "vb", "getVb()Lcom/soft/blued/databinding/PopGroupHelpCreateBinding;", 0))};
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Companion f32798c = new Companion(null);
+    public static final Companion f19107c = new Companion(null);
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/pop/PopGroupHelpCreate$Companion.class */
@@ -58,49 +58,49 @@ public final class PopGroupHelpCreate extends CenterPopupView {
         }
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x006c -> B:6:0x0039). Please submit an issue!!! */
-        public final void a(Context context, String code, String groupId) {
+        public final void a(Context context, String str, String str2) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(code, "code");
-            Intrinsics.e(groupId, "groupId");
+            Intrinsics.e(str, "code");
+            Intrinsics.e(str2, "groupId");
             Object systemService = context.getSystemService(Context.CLIPBOARD_SERVICE);
             if (systemService == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.content.ClipboardManager");
             }
             try {
-                ((ClipboardManager) systemService).setPrimaryClip(ClipData.newPlainText("Label", code));
+                ((ClipboardManager) systemService).setPrimaryClip(ClipData.newPlainText("Label", str));
             } catch (Exception e) {
             }
-            new XPopup.Builder(context).a(PopupAnimation.ScaleAlphaFromCenter).d((Boolean) true).a((BasePopupView) new PopGroupCommandSend(context, groupId)).h();
+            new XPopup.Builder(context).a(PopupAnimation.a).d(true).a(new PopGroupCommandSend(context, str2)).h();
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public PopGroupHelpCreate(Context context, int i, String groupId, GroupApplyResp resp, IRequestHost requestHost) {
+    public PopGroupHelpCreate(Context context, int i, String str, GroupApplyResp groupApplyResp, IRequestHost iRequestHost) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(groupId, "groupId");
-        Intrinsics.e(resp, "resp");
-        Intrinsics.e(requestHost, "requestHost");
+        Intrinsics.e(str, "groupId");
+        Intrinsics.e(groupApplyResp, "resp");
+        Intrinsics.e(iRequestHost, "requestHost");
         this.e = i;
-        this.f = groupId;
-        this.g = resp;
-        this.h = requestHost;
+        this.f = str;
+        this.g = groupApplyResp;
+        this.h = iRequestHost;
+        BasePopupView basePopupView = (BasePopupView) this;
         this.i = new CustomViewBindingProperty(new Function1<PopGroupHelpCreate, PopGroupHelpCreateBinding>() { // from class: com.soft.blued.ui.msg_group.pop.PopGroupHelpCreate$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
-            public final PopGroupHelpCreateBinding invoke(PopGroupHelpCreate popView) {
-                Intrinsics.e(popView, "popView");
-                return PopGroupHelpCreateBinding.a(popView.getPopupImplView());
+            public final PopGroupHelpCreateBinding invoke(PopGroupHelpCreate popGroupHelpCreate) {
+                Intrinsics.e(popGroupHelpCreate, "popView");
+                return PopGroupHelpCreateBinding.a(popGroupHelpCreate.getPopupImplView());
             }
         });
         this.j = new ArrayList<>();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(PopGroupHelpCreate this$0, View view) {
+    public static final void a(PopGroupHelpCreate popGroupHelpCreate, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(popGroupHelpCreate, "this$0");
+        popGroupHelpCreate.p();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -167,7 +167,7 @@ public final class PopGroupHelpCreate extends CenterPopupView {
             if (r0 == 0) goto L81
             r0 = r5
             r0.p()
-            com.soft.blued.ui.msg_group.pop.PopGroupHelpCreate$Companion r0 = com.soft.blued.ui.msg_group.pop.PopGroupHelpCreate.f32798c
+            com.soft.blued.ui.msg_group.pop.PopGroupHelpCreate$Companion r0 = com.soft.blued.ui.msg_group.pop.PopGroupHelpCreate.f19107c
             r6 = r0
             r0 = r5
             android.content.Context r0 = r0.getContext()
@@ -196,30 +196,29 @@ public final class PopGroupHelpCreate extends CenterPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(PopGroupHelpCreate this$0, View view) {
+    public static final void b(PopGroupHelpCreate popGroupHelpCreate, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_JOIN_LIMIT_POP_INVITE_CLICK, Intrinsics.a(this$0.f, (Object) ""));
-        this$0.p();
-        Companion companion = f32798c;
-        Context context = this$0.getContext();
+        Intrinsics.e(popGroupHelpCreate, "this$0");
+        EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_JOIN_LIMIT_POP_INVITE_CLICK, Intrinsics.a(popGroupHelpCreate.f, ""));
+        popGroupHelpCreate.p();
+        Companion companion = f19107c;
+        Context context = popGroupHelpCreate.getContext();
         Intrinsics.c(context, "context");
-        companion.a(context, this$0.g.getCode(), this$0.f);
+        companion.a(context, popGroupHelpCreate.g.getCode(), popGroupHelpCreate.f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(PopGroupHelpCreate this$0, View view) {
+    public static final void c(PopGroupHelpCreate popGroupHelpCreate, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(popGroupHelpCreate, "this$0");
         EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_INVITE_TASK_DOING_POP_BUY_CLICK);
-        PayUtils.a(this$0.getContext(), 0, "groups_task_doing", 34, VipProtos.FromType.UNKNOWN_FROM);
+        PayUtils.a(popGroupHelpCreate.getContext(), 0, "groups_task_doing", 34, VipProtos.FromType.UNKNOWN_FROM);
     }
 
     private final PopGroupHelpCreateBinding getVb() {
         return (PopGroupHelpCreateBinding) this.i.b(this, d[0]);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         int i;
         List<GroupApplyResp.User> users;
@@ -261,13 +260,13 @@ public final class PopGroupHelpCreate extends CenterPopupView {
         }
         vb.e.setLayoutManager(new GridLayoutManager(getContext(), 3));
         vb.e.setAdapter(groupHelpAdapter);
-        vb.f29527a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$PopGroupHelpCreate$8HKncEmRtXCfjPRCEkNTRgSojGA
+        vb.f15837a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$PopGroupHelpCreate$8HKncEmRtXCfjPRCEkNTRgSojGA
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PopGroupHelpCreate.a(PopGroupHelpCreate.this, view);
             }
         });
-        vb.f29528c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$PopGroupHelpCreate$d4MXtFMpg-aS5WVlLNnGHyd1AOk
+        vb.f15838c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$PopGroupHelpCreate$d4MXtFMpg-aS5WVlLNnGHyd1AOk
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PopGroupHelpCreate.b(PopGroupHelpCreate.this, view);
@@ -288,7 +287,6 @@ public final class PopGroupHelpCreate extends CenterPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_group_help_create;
     }

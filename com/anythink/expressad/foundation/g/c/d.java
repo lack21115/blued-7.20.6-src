@@ -12,23 +12,23 @@ import java.util.List;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7842a = "AnythinkDirManager";
+    private static final String f5002a = "AnythinkDirManager";
     private static d d;
     private f b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ArrayList<a> f7843c = new ArrayList<>();
+    private ArrayList<a> f5003c = new ArrayList<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/foundation/g/c/d$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public com.anythink.expressad.foundation.g.c.a f7844a;
+        public com.anythink.expressad.foundation.g.c.a f5004a;
         public File b;
 
         public a(com.anythink.expressad.foundation.g.c.a aVar, File file) {
-            this.f7844a = aVar;
+            this.f5004a = aVar;
             this.b = file;
         }
     }
@@ -45,7 +45,7 @@ public final class d {
                     r.a(com.anythink.expressad.foundation.b.a.b().d());
                 }
                 if (d == null) {
-                    Log.e(f7842a, "mDirectoryManager == null");
+                    Log.e(f5002a, "mDirectoryManager == null");
                 }
                 dVar = d;
             } catch (Throwable th) {
@@ -58,19 +58,19 @@ public final class d {
     public static File a(com.anythink.expressad.foundation.g.c.a aVar) {
         a next;
         try {
-            if (a() == null || a().f7843c == null || a().f7843c.size() <= 0) {
+            if (a() == null || a().f5003c == null || a().f5003c.size() <= 0) {
                 return null;
             }
-            Iterator<a> it = a().f7843c.iterator();
+            Iterator<a> it = a().f5003c.iterator();
             do {
                 if (!it.hasNext()) {
                     return null;
                 }
                 next = it.next();
-            } while (!next.f7844a.equals(aVar));
+            } while (!next.f5004a.equals(aVar));
             return next.b;
         } catch (Throwable th) {
-            o.b(f7842a, th.getMessage(), th);
+            o.b(f5002a, th.getMessage(), th);
             return null;
         }
     }
@@ -101,7 +101,7 @@ public final class d {
         }
         File file = new File(str);
         if (!file.exists() ? file.mkdirs() : true) {
-            this.f7843c.add(new a(eVar.a(), file));
+            this.f5003c.add(new a(eVar.a(), file));
             List<e> d2 = eVar.d();
             if (d2 != null) {
                 for (e eVar2 : d2) {

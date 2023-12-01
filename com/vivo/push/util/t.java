@@ -20,7 +20,7 @@ import java.util.Locale;
 public final class t {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Boolean f41144a;
+    private static Boolean f27453a;
     private static String b;
 
     /* JADX WARN: Code restructure failed: missing block: B:21:0x0094, code lost:
@@ -125,7 +125,7 @@ public final class t {
             try {
                 try {
                     try {
-                        cursor = context.getContentResolver().query(com.vivo.push.p.f41113a, null, null, null, null);
+                        cursor = context.getContentResolver().query(com.vivo.push.p.f27422a, null, null, null, null);
                         try {
                         } catch (Throwable th) {
                             th = th;
@@ -233,7 +233,7 @@ public final class t {
     }
 
     public static boolean c(Context context) {
-        Boolean bool = f41144a;
+        Boolean bool = f27453a;
         if (bool != null) {
             return bool.booleanValue();
         }
@@ -250,7 +250,7 @@ public final class t {
             }
         }
         Boolean valueOf = Boolean.valueOf("BCC35D4D3606F154F0402AB7634E8490C0B244C2675C3C6238986987024F0C02".equals(g(context, str)));
-        f41144a = valueOf;
+        f27453a = valueOf;
         return valueOf.booleanValue();
     }
 

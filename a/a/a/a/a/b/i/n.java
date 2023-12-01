@@ -9,11 +9,11 @@ import java.nio.ByteBuffer;
 public class n extends g {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1331a;
+    public int f1283a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f1332c;
+    public int f1284c;
     public int d;
     public int q;
     public String r;
@@ -44,8 +44,8 @@ public class n extends g {
 
     @Override // a.a.a.a.a.b.i.g
     public void b(int i) {
-        GLES20.glBindFramebuffer(36160, this.f1331a);
-        GLES20.glFramebufferRenderbuffer(36160, 36064, 36161, this.f1332c);
+        GLES20.glBindFramebuffer(36160, this.f1283a);
+        GLES20.glFramebufferRenderbuffer(36160, 36064, 36161, this.f1284c);
         super.b(i);
         if (a.a.a.a.a.a.h.f.b()) {
             GLES20.glBindBuffer(GLES30.GL_PIXEL_PACK_BUFFER, this.b);
@@ -56,7 +56,7 @@ public class n extends g {
 
     public final boolean b(int i, int i2, int i3) {
         int a2 = a.a.a.a.a.a.h.f.a(i3, i, i2);
-        this.f1332c = a2;
+        this.f1284c = a2;
         return a2 != 0;
     }
 
@@ -67,26 +67,26 @@ public class n extends g {
 
     @Override // a.a.a.a.a.b.i.g
     public float[] e() {
-        return k.f1328c;
+        return k.f1280c;
     }
 
     @Override // a.a.a.a.a.b.i.g
     public void g() {
         super.g();
-        int i = this.f1331a;
+        int i = this.f1283a;
         if (i != 0) {
             GLES20.glDeleteFramebuffers(1, new int[]{i}, 0);
-            this.f1331a = 0;
+            this.f1283a = 0;
         }
         int i2 = this.b;
         if (i2 != 0) {
             GLES20.glDeleteBuffers(1, new int[]{i2}, 0);
             this.b = 0;
         }
-        int i3 = this.f1332c;
+        int i3 = this.f1284c;
         if (i3 != 0) {
             GLES20.glDeleteRenderbuffers(1, new int[]{i3}, 0);
-            this.f1332c = 0;
+            this.f1284c = 0;
         }
     }
 
@@ -96,8 +96,8 @@ public class n extends g {
             return (ByteBuffer) GLES30.glMapBufferRange(GLES30.GL_PIXEL_PACK_BUFFER, 0, this.e * this.f * this.d, 1);
         }
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(this.e * this.f * this.d);
-        GLES20.glBindFramebuffer(36160, this.f1331a);
-        GLES20.glFramebufferRenderbuffer(36160, 36064, 36161, this.f1332c);
+        GLES20.glBindFramebuffer(36160, this.f1283a);
+        GLES20.glFramebufferRenderbuffer(36160, 36064, 36161, this.f1284c);
         GLES20.glReadPixels(0, 0, this.e, this.f, this.q, 5121, allocateDirect);
         GLES20.glBindFramebuffer(36160, 0);
         return allocateDirect;
@@ -112,6 +112,6 @@ public class n extends g {
     }
 
     public final void o() {
-        this.f1331a = a.a.a.a.a.a.h.f.c();
+        this.f1283a = a.a.a.a.a.a.h.f.c();
     }
 }

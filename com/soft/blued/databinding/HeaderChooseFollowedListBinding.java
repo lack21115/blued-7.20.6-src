@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class HeaderChooseFollowedListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29055a;
+    private final LinearLayout f15365a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29055a;
+        return this.f15365a;
     }
 }

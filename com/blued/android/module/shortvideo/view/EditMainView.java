@@ -19,22 +19,16 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/EditMainView.class */
 public class EditMainView extends FrameLayout implements View.OnClickListener, EventObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TextView f15890a;
+    private TextView a;
     private CheckBox b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15891c;
+    private View c;
     private EditPresenter d;
     private int e;
 
     /* renamed from: com.blued.android.module.shortvideo.view.EditMainView$3  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/EditMainView$3.class */
     static /* synthetic */ class AnonymousClass3 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f15894a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x004d -> B:37:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0051 -> B:33:0x001f). Please submit an issue!!! */
@@ -43,29 +37,29 @@ public class EditMainView extends FrameLayout implements View.OnClickListener, E
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x005d -> B:35:0x0040). Please submit an issue!!! */
         static {
             int[] iArr = new int[EventType.VALUE.values().length];
-            f15894a = iArr;
+            a = iArr;
             try {
                 iArr[EventType.VALUE.CONFIG_FILTER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f15894a[EventType.VALUE.CONFIG_COVER.ordinal()] = 2;
+                a[EventType.VALUE.CONFIG_COVER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f15894a[EventType.VALUE.CONFIG_VOLUME.ordinal()] = 3;
+                a[EventType.VALUE.CONFIG_VOLUME.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f15894a[EventType.VALUE.HIDE_COVER.ordinal()] = 4;
+                a[EventType.VALUE.HIDE_COVER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f15894a[EventType.VALUE.SAVE_FILTER.ordinal()] = 5;
+                a[EventType.VALUE.SAVE_FILTER.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f15894a[EventType.VALUE.SAVE_VOLUME.ordinal()] = 6;
+                a[EventType.VALUE.SAVE_VOLUME.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -87,24 +81,24 @@ public class EditMainView extends FrameLayout implements View.OnClickListener, E
 
     private void g() {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.edit_main_view, this);
-        this.f15891c = inflate;
-        this.f15890a = (TextView) inflate.findViewById(R.id.stv_edit_finish);
-        this.b = (CheckBox) this.f15891c.findViewById(R.id.stv_delete_auto_cb);
+        this.c = inflate;
+        this.a = (TextView) inflate.findViewById(R.id.stv_edit_finish);
+        this.b = (CheckBox) this.c.findViewById(R.id.stv_delete_auto_cb);
     }
 
     private void h() {
         this.b.setVisibility(0);
-        this.f15890a.setText(R.string.stv_send);
+        this.a.setText(R.string.stv_send);
     }
 
     private void i() {
         this.b.setVisibility(8);
-        this.f15890a.setText(R.string.stv_send);
+        this.a.setText(R.string.stv_send);
     }
 
     private void j() {
         this.b.setVisibility(8);
-        this.f15890a.setText(R.string.stv_upload);
+        this.a.setText(R.string.stv_upload);
     }
 
     public void a() {
@@ -146,7 +140,7 @@ public class EditMainView extends FrameLayout implements View.OnClickListener, E
 
     @Override // com.blued.android.module.shortvideo.observer.EventObserver
     public void a(EventType.VALUE value) {
-        switch (AnonymousClass3.f15894a[value.ordinal()]) {
+        switch (AnonymousClass3.a[value.ordinal()]) {
             case 1:
             case 2:
             case 3:
@@ -164,7 +158,7 @@ public class EditMainView extends FrameLayout implements View.OnClickListener, E
 
     public void a(EditPresenter editPresenter) {
         this.d = editPresenter;
-        this.f15890a.setOnClickListener(this);
+        this.a.setOnClickListener(this);
     }
 
     public void b() {

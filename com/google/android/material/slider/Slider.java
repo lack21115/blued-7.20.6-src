@@ -29,7 +29,7 @@ public class Slider extends BaseSlider<Slider, OnChangeListener, OnSliderTouchLi
 
     public Slider(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{16842788});
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{android.R.attr.value});
         if (obtainStyledAttributes.hasValue(0)) {
             setValue(obtainStyledAttributes.getFloat(0, 0.0f));
         }
@@ -56,7 +56,7 @@ public class Slider extends BaseSlider<Slider, OnChangeListener, OnSliderTouchLi
         return super.dispatchKeyEvent(keyEvent);
     }
 
-    @Override // com.google.android.material.slider.BaseSlider
+    @Override // com.google.android.material.slider.BaseSlider, android.view.View
     public /* bridge */ /* synthetic */ CharSequence getAccessibilityClassName() {
         return super.getAccessibilityClassName();
     }

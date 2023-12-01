@@ -7,11 +7,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public abstract class OnBackPressedCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f1494a;
+    private boolean f1446a;
     private CopyOnWriteArrayList<Cancellable> b = new CopyOnWriteArrayList<>();
 
     public OnBackPressedCallback(boolean z) {
-        this.f1494a = z;
+        this.f1446a = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -27,7 +27,7 @@ public abstract class OnBackPressedCallback {
     public abstract void handleOnBackPressed();
 
     public final boolean isEnabled() {
-        return this.f1494a;
+        return this.f1446a;
     }
 
     public final void remove() {
@@ -38,6 +38,6 @@ public abstract class OnBackPressedCallback {
     }
 
     public final void setEnabled(boolean z) {
-        this.f1494a = z;
+        this.f1446a = z;
     }
 }

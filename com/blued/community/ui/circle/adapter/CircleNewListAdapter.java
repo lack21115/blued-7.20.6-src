@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
@@ -20,34 +19,31 @@ import com.blued.community.ui.circle.view.CircleJoinView;
 import com.blued.das.client.feed.FeedProtos;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/adapter/CircleNewListAdapter.class */
 public final class CircleNewListAdapter extends BaseQuickAdapter<MyCircleModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f19120a;
+    private final Context a;
     private final IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f19121c;
+    private int c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CircleNewListAdapter(Context context, IRequestHost fragmentActive) {
-        super(R.layout.item_circle_new_list, null);
+        super(R.layout.item_circle_new_list, (List) null);
         Intrinsics.e(context, "context");
         Intrinsics.e(fragmentActive, "fragmentActive");
-        this.f19120a = context;
+        this.a = context;
         this.b = fragmentActive;
-        this.f19121c = -1;
+        this.c = -1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(MyCircleModel myCircleModel, CircleNewListAdapter this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        myCircleModel.classify_id = this$0.f19121c;
+        myCircleModel.classify_id = this$0.c;
         CircleDetailsFragment.a(this$0.mContext, myCircleModel, CircleConstants.CIRCLE_FROM_PAGE.CIRCLE_MORE_LIST);
     }
 
@@ -62,7 +58,7 @@ public final class CircleNewListAdapter extends BaseQuickAdapter<MyCircleModel, 
         }
         Intrinsics.c(cjvJoin, "cjvJoin");
         this$0.a(cjvJoin, myCircleModel);
-        myCircleModel.classify_id = this$0.f19121c;
+        myCircleModel.classify_id = this$0.c;
         EventTrackFeed.b(FeedProtos.Event.CIRCLE_JOIN_BTN_CLICK, FeedProtos.CircleSource.CIRCLE_MORE_LIST, myCircleModel);
     }
 
@@ -84,11 +80,11 @@ public final class CircleNewListAdapter extends BaseQuickAdapter<MyCircleModel, 
     private final void a(final CircleJoinView circleJoinView, final MyCircleModel myCircleModel) {
         FragmentManager fragmentManager;
         if (this.mContext instanceof AppCompatActivity) {
-            Context context = this.mContext;
-            if (context == null) {
+            AppCompatActivity appCompatActivity = this.mContext;
+            if (appCompatActivity == null) {
                 throw new NullPointerException("null cannot be cast to non-null type androidx.appcompat.app.AppCompatActivity");
             }
-            fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
+            fragmentManager = appCompatActivity.getSupportFragmentManager();
         } else {
             fragmentManager = null;
         }
@@ -102,11 +98,10 @@ public final class CircleNewListAdapter extends BaseQuickAdapter<MyCircleModel, 
     }
 
     public final void a(int i) {
-        this.f19121c = i;
+        this.c = i;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final MyCircleModel myCircleModel) {
         if (baseViewHolder == null || myCircleModel == null) {
@@ -145,10 +140,10 @@ public final class CircleNewListAdapter extends BaseQuickAdapter<MyCircleModel, 
             }
         });
         if (!myCircleModel.isDraw) {
-            EventTrackFeed.a(FeedProtos.Event.CIRCLE_DRAW, myCircleModel.circle_id, FeedProtos.CircleSource.CIRCLE_MORE_LIST, myCircleModel.isJoin(), myCircleModel.allow_join == 0, this.f19121c);
+            EventTrackFeed.a(FeedProtos.Event.CIRCLE_DRAW, myCircleModel.circle_id, FeedProtos.CircleSource.CIRCLE_MORE_LIST, myCircleModel.isJoin(), myCircleModel.allow_join == 0, this.c);
             myCircleModel.isDraw = true;
         }
-        ((ConstraintLayout) baseViewHolder.getView(R.id.view_content)).setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.adapter.-$$Lambda$CircleNewListAdapter$IxWVQ-xU85t8UR0yKPyUBbz2W5Y
+        baseViewHolder.getView(R.id.view_content).setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.adapter.-$$Lambda$CircleNewListAdapter$IxWVQ-xU85t8UR0yKPyUBbz2W5Y
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CircleNewListAdapter.a(MyCircleModel.this, this, view);
@@ -157,6 +152,6 @@ public final class CircleNewListAdapter extends BaseQuickAdapter<MyCircleModel, 
     }
 
     public final Context getContext() {
-        return this.f19120a;
+        return this.a;
     }
 }

@@ -6,7 +6,7 @@ import java.util.Random;
 public final class p {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f23665a = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz`~!@#$%^&*()-_=+[{}];:'/?.>,<".toCharArray();
+    private static final char[] f10057a = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz`~!@#$%^&*()-_=+[{}];:'/?.>,<".toCharArray();
 
     public static String a() {
         StringBuilder sb = new StringBuilder(16);
@@ -17,7 +17,7 @@ public final class p {
             if (i2 >= 16) {
                 return sb.toString();
             }
-            char[] cArr = f23665a;
+            char[] cArr = f10057a;
             sb.append(cArr[random.nextInt(cArr.length)]);
             i = i2 + 1;
         }

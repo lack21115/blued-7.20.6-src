@@ -14,7 +14,7 @@ import androidx.constraintlayout.widget.VirtualLayout;
 public class MotionPlaceholder extends VirtualLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    Placeholder f2162a;
+    Placeholder f2114a;
 
     public MotionPlaceholder(Context context) {
         super(context);
@@ -41,7 +41,7 @@ public class MotionPlaceholder extends VirtualLayout {
 
     @Override // androidx.constraintlayout.widget.ConstraintHelper, android.view.View
     public void onMeasure(int i, int i2) {
-        onMeasure(this.f2162a, i, i2);
+        onMeasure(this.f2114a, i, i2);
     }
 
     @Override // androidx.constraintlayout.widget.VirtualLayout

@@ -9,9 +9,7 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/CollectionToArray.class */
 public final class CollectionToArray {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Object[] f42530a = new Object[0];
+    private static final Object[] a = new Object[0];
 
     public static final Object[] a(Collection<?> collection) {
         Object[] objArr;
@@ -51,7 +49,7 @@ public final class CollectionToArray {
                 }
             }
         }
-        return f42530a;
+        return a;
     }
 
     public static final Object[] a(Collection<?> collection, Object[] objArr) {

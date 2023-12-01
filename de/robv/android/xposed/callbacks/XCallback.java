@@ -16,9 +16,8 @@ public abstract class XCallback implements Comparable<XCallback> {
         public final Object[] callbacks;
         private Bundle extra;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-259656-dex2jar.jar:de/robv/android/xposed/callbacks/XCallback$Param$SerializeWrapper.class */
-        public static class SerializeWrapper implements Serializable {
+        private static class SerializeWrapper implements Serializable {
             private static final long serialVersionUID = 1;
             private final Object object;
 

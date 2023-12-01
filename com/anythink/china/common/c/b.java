@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
+import com.anythink.china.common.d;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.k.f;
 import java.io.File;
@@ -11,9 +12,7 @@ import java.util.UUID;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/common/c/b.class */
 public final class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f6315a = "anythink_myoffer_download";
+    private static final String a = "anythink_myoffer_download";
 
     private static File a(File file) {
         StringBuilder sb = new StringBuilder();
@@ -54,7 +53,7 @@ public final class b {
                     file2 = file;
                     if (file != null) {
                         file2 = file;
-                        file2 = new File(file, f6315a);
+                        file2 = new File(file, a);
                     }
                 }
             } catch (Throwable th) {
@@ -62,7 +61,7 @@ public final class b {
         }
         File file4 = file2;
         if (file2 == null) {
-            file4 = new File(e().getFilesDir().getAbsoluteFile() + File.separator + f6315a);
+            file4 = new File(e().getFilesDir().getAbsoluteFile() + File.separator + a);
         }
         return file4.getAbsolutePath();
     }
@@ -84,7 +83,7 @@ public final class b {
     }
 
     private static long c() {
-        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+        if ("mounted".equals(Environment.getExternalStorageState())) {
             try {
                 StatFs statFs = new StatFs(Environment.getExternalStorageDirectory().getPath());
                 return statFs.getAvailableBlocks() * statFs.getBlockSize();
@@ -120,7 +119,7 @@ public final class b {
     }
 
     private static boolean f() {
-        return Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState());
+        return "mounted".equals(Environment.getExternalStorageState());
     }
 
     private static boolean g() {
@@ -129,7 +128,7 @@ public final class b {
             return false;
         }
         try {
-            return e.getPackageManager().checkPermission("android.permission.WRITE_EXTERNAL_STORAGE", e.getPackageName()) == 0;
+            return e.getPackageManager().checkPermission(d.b, e.getPackageName()) == 0;
         } catch (Exception e2) {
             e2.printStackTrace();
             return false;

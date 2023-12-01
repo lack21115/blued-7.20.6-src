@@ -13,7 +13,7 @@ public class ta {
 
     private static double a(p5 p5Var, p5 p5Var2) {
         double d = p5Var2.b - p5Var.b;
-        double d2 = p5Var2.f37683c - p5Var.f37683c;
+        double d2 = p5Var2.f23992c - p5Var.f23992c;
         return Math.sqrt((d * d) + (d2 * d2));
     }
 

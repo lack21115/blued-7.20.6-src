@@ -23,7 +23,6 @@ import com.anythink.core.common.b.n;
 import com.anythink.core.common.e.i;
 import com.anythink.core.common.k.h;
 import com.anythink.core.common.m;
-import com.ss.android.downloadad.api.constant.AdBaseConstants;
 import java.io.File;
 import java.util.Collections;
 import java.util.HashMap;
@@ -35,13 +34,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/common/a.class */
 public class a implements g {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6275a = a.class.getSimpleName();
+    public static final String a = a.class.getSimpleName();
     public static final String b = "action_offer_download_start";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f6276c = "action_offer_download_end";
+    public static final String c = "action_offer_download_end";
     public static final String d = "action_offer_install_start";
     public static final String e = "action_offer_install_successful";
     public static final String f = "receiver_extra_offer_id";
@@ -60,7 +55,7 @@ public class a implements g {
     private ServiceConnection w = new ServiceConnection() { // from class: com.anythink.china.common.a.1
         @Override // android.content.ServiceConnection
         public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            String str = a.f6275a;
+            String str = a.a;
             try {
                 a.this.u = (ApkDownloadService.a) iBinder;
             } catch (Throwable th) {
@@ -70,26 +65,26 @@ public class a implements g {
 
         @Override // android.content.ServiceConnection
         public final void onServiceDisconnected(ComponentName componentName) {
-            String str = a.f6275a;
+            String str = a.a;
             a.this.u = null;
         }
     };
     private List<e> j = Collections.synchronizedList(new LinkedList());
     private ConcurrentHashMap<String, e> k = new ConcurrentHashMap<>();
     private ConcurrentHashMap<String, e> l = new ConcurrentHashMap<>();
-    private ConcurrentHashMap<String, a.InterfaceC0088a> m = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<String, a.InterfaceC0048a> m = new ConcurrentHashMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.china.common.a$3  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/common/a$3.class */
-    public final class AnonymousClass3 implements a.InterfaceC0088a {
+    public final class AnonymousClass3 implements a.InterfaceC0048a {
         AnonymousClass3() {
         }
 
-        @Override // com.anythink.china.common.a.a.InterfaceC0088a
+        @Override // com.anythink.china.common.a.a.InterfaceC0048a
         public final void a(final e eVar, final long j) {
-            String str = a.f6275a;
-            Log.i(str, "onSuccess: " + eVar.f6303c);
+            String str = a.a;
+            Log.i(str, "onSuccess: " + eVar.c);
             n.a().a(new Runnable() { // from class: com.anythink.china.common.a.3.2
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -100,7 +95,7 @@ public class a implements g {
                     }
                     a.this.n.put(eVar.n, eVar);
                     Intent intent = new Intent();
-                    intent.setAction(a.f6276c);
+                    intent.setAction(a.c);
                     intent.setPackage(a.this.i.getPackageName());
                     intent.putExtra(a.f, eVar.f);
                     intent.putExtra(a.g, eVar.m);
@@ -108,22 +103,22 @@ public class a implements g {
                     a.this.b(eVar);
                     com.anythink.china.common.b.a.a(a.this.i).c(eVar);
                     com.anythink.china.common.b.a.a(a.this.i).a(eVar);
-                    com.anythink.core.common.j.c.a(eVar.f6302a, eVar.f, eVar.b, 2, (String) null, j, eVar.h);
+                    com.anythink.core.common.j.c.a(eVar.a, eVar.f, eVar.b, 2, (String) null, j, eVar.h);
                     a.this.b();
                 }
             });
         }
 
-        @Override // com.anythink.china.common.a.a.InterfaceC0088a
+        @Override // com.anythink.china.common.a.a.InterfaceC0048a
         public final void a(final e eVar, final long j, final long j2) {
-            String str = a.f6275a;
+            String str = a.a;
             new StringBuilder("onStartBefore: ").append(eVar.b);
             n.a().a(new Runnable() { // from class: com.anythink.china.common.a.3.1
                 @Override // java.lang.Runnable
                 public final void run() {
                     if (j < j2) {
                         a aVar = a.this;
-                        aVar.d("正在下载： " + eVar.f6303c);
+                        aVar.d("正在下载： " + eVar.c);
                         com.anythink.china.common.b.a.a(a.this.i).c(eVar);
                         com.anythink.china.common.b.a.a(a.this.i).a(eVar, j, j2);
                     }
@@ -133,14 +128,14 @@ public class a implements g {
                     intent.putExtra(a.f, eVar.f);
                     intent.putExtra(a.g, eVar.m);
                     m.a(a.this.i).a(intent);
-                    com.anythink.core.common.j.c.a(eVar.f6302a, eVar.f, eVar.b, 1, (String) null, 0L, j2);
+                    com.anythink.core.common.j.c.a(eVar.a, eVar.f, eVar.b, 1, (String) null, 0L, j2);
                 }
             });
         }
 
-        @Override // com.anythink.china.common.a.a.InterfaceC0088a
+        @Override // com.anythink.china.common.a.a.InterfaceC0048a
         public final void a(final e eVar, final long j, final long j2, final int i) {
-            String str = a.f6275a;
+            String str = a.a;
             n.a().a(new Runnable() { // from class: com.anythink.china.common.a.3.5
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -148,27 +143,27 @@ public class a implements g {
                     com.anythink.china.common.b.a.a(a.this.i).c(eVar);
                     int i2 = i;
                     if (i2 == 2) {
-                        String str2 = a.f6275a;
-                        Log.e(str2, "(" + eVar.f6303c + ") pause download");
+                        String str2 = a.a;
+                        Log.e(str2, "(" + eVar.c + ") pause download");
                         com.anythink.china.common.b.a.a(a.this.i).a(eVar, j, j2);
                         a.this.b();
                     } else if (i2 == 3) {
-                        String str3 = a.f6275a;
-                        Log.e(str3, "(" + eVar.f6303c + ") stop download");
+                        String str3 = a.a;
+                        Log.e(str3, "(" + eVar.c + ") stop download");
                     }
                 }
             });
         }
 
-        @Override // com.anythink.china.common.a.a.InterfaceC0088a
+        @Override // com.anythink.china.common.a.a.InterfaceC0048a
         public final void a(final e eVar, final String str) {
-            String str2 = a.f6275a;
-            Log.e(str2, "(" + eVar.f6303c + ") download fail: " + str);
+            String str2 = a.a;
+            Log.e(str2, "(" + eVar.c + ") download fail: " + str);
             n.a().a(new Runnable() { // from class: com.anythink.china.common.a.3.4
                 @Override // java.lang.Runnable
                 public final void run() {
                     a aVar = a.this;
-                    aVar.d("下载失败： " + eVar.f6303c);
+                    aVar.d("下载失败： " + eVar.c);
                     a.this.m.remove(eVar.n);
                     a.this.k.remove(eVar.n);
                     if (a.this.q == null) {
@@ -177,13 +172,13 @@ public class a implements g {
                     a.this.q.put(eVar.n, eVar);
                     com.anythink.china.common.b.a.a(a.this.i).c(eVar);
                     com.anythink.china.common.b.a.a(a.this.i).a(eVar, 0L, 100L);
-                    com.anythink.core.common.j.c.a(eVar.f6302a, eVar.f, eVar.b, 3, str, 0L, eVar.h);
+                    com.anythink.core.common.j.c.a(eVar.a, eVar.f, eVar.b, 3, str, 0L, eVar.h);
                     a.this.b();
                 }
             });
         }
 
-        @Override // com.anythink.china.common.a.a.InterfaceC0088a
+        @Override // com.anythink.china.common.a.a.InterfaceC0048a
         public final void b(final e eVar, final long j, final long j2) {
             n.a().a(new Runnable() { // from class: com.anythink.china.common.a.3.3
                 @Override // java.lang.Runnable
@@ -208,8 +203,8 @@ public class a implements g {
                     Iterator it = a.this.q.entrySet().iterator();
                     while (it.hasNext()) {
                         e eVar = (e) ((Map.Entry) it.next()).getValue();
-                        String str = a.f6275a;
-                        Log.i(str, "(" + eVar.f6303c + ") retry to download");
+                        String str = a.a;
+                        Log.i(str, "(" + eVar.c + ") retry to download");
                         eVar.e();
                         a.this.d(eVar);
                         it.remove();
@@ -233,7 +228,7 @@ public class a implements g {
                 @Override // android.content.BroadcastReceiver
                 public final void onReceive(Context context2, Intent intent) {
                     try {
-                        ConnectivityManager connectivityManager = (ConnectivityManager) context2.getSystemService(Context.CONNECTIVITY_SERVICE);
+                        ConnectivityManager connectivityManager = (ConnectivityManager) context2.getSystemService("connectivity");
                         if (connectivityManager == null || !h.a("android.permission.ACCESS_NETWORK_STATE", context2)) {
                             return;
                         }
@@ -276,7 +271,7 @@ public class a implements g {
 
     private static void a(e eVar, boolean z) {
         if (eVar.l != null) {
-            eVar.l.a(eVar.j, eVar.f6302a, eVar.b, z);
+            eVar.l.a(eVar.j, eVar.a, eVar.b, z);
         }
     }
 
@@ -304,14 +299,14 @@ public class a implements g {
             }
             Intent intent = new Intent();
             intent.setClass(this.i, ApkDownloadService.class);
-            intent.putExtra(ApkDownloadService.f6317a, eVar.n);
+            intent.putExtra(ApkDownloadService.a, eVar.n);
             this.i.bindService(intent, this.w, 1);
         } catch (Throwable th) {
         }
     }
 
     private static String f(e eVar) {
-        return com.anythink.china.common.c.b.a(eVar.n) + ".apk";
+        return com.anythink.china.common.c.b.a(eVar.n) + com.anythink.china.common.a.a.g;
     }
 
     private void g() {
@@ -325,8 +320,8 @@ public class a implements g {
             }
             this.t = new b();
             IntentFilter intentFilter = new IntentFilter();
-            intentFilter.addAction(Intent.ACTION_PACKAGE_ADDED);
-            intentFilter.addAction(Intent.ACTION_PACKAGE_REPLACED);
+            intentFilter.addAction("android.intent.action.PACKAGE_ADDED");
+            intentFilter.addAction("android.intent.action.PACKAGE_REPLACED");
             intentFilter.addDataScheme("package");
             this.i.registerReceiver(this.t, intentFilter);
         } catch (Throwable th) {
@@ -371,10 +366,10 @@ public class a implements g {
             File file = new File(com.anythink.china.common.c.b.a(eVar.n) + com.anythink.china.common.a.a.e);
             File file2 = new File(com.anythink.china.common.c.b.a(eVar.n) + com.anythink.china.common.a.a.f);
             if (file.exists() && file2.exists()) {
-                String str = f6275a;
-                Log.i(str, "(" + eVar.f6303c + ") is downloading, do nothing");
+                String str = a;
+                Log.i(str, "(" + eVar.c + ") is downloading, do nothing");
                 StringBuilder sb = new StringBuilder("正在下载中： ");
-                sb.append(eVar.f6303c);
+                sb.append(eVar.c);
                 d(sb.toString());
                 return;
             }
@@ -390,10 +385,10 @@ public class a implements g {
                 com.anythink.china.common.b.a.a(this.i).a(eVar, 0L, 100L, true);
                 return;
             } else if (TextUtils.equals(eVar.n, this.j.get(i2).n)) {
-                String str2 = f6275a;
-                Log.i(str2, "(" + eVar.f6303c + ") is waiting for downloading, do nothing");
+                String str2 = a;
+                Log.i(str2, "(" + eVar.c + ") is waiting for downloading, do nothing");
                 StringBuilder sb2 = new StringBuilder("等待下载： ");
-                sb2.append(eVar.f6303c);
+                sb2.append(eVar.c);
                 d(sb2.toString());
                 return;
             } else {
@@ -408,22 +403,22 @@ public class a implements g {
         try {
             if (str2.equals(e.a.FAIL.toString()) && this.q != null && this.q.containsKey(str)) {
                 e eVar2 = this.q.get(str);
-                String str3 = f6275a;
-                Log.i(str3, "(" + eVar2.f6303c + ") onCleanNotification: download fail");
+                String str3 = a;
+                Log.i(str3, "(" + eVar2.c + ") onCleanNotification: download fail");
                 com.anythink.china.common.b.a.a(this.i).c(eVar2);
                 this.q.remove(str);
             }
             if (str2.equals(e.a.FINISH.toString()) && this.n != null && this.n.containsKey(str)) {
                 e eVar3 = this.n.get(str);
-                String str4 = f6275a;
-                Log.i(str4, "(" + eVar3.f6303c + ") onCleanNotification: download success");
+                String str4 = a;
+                Log.i(str4, "(" + eVar3.c + ") onCleanNotification: download success");
                 com.anythink.china.common.b.a.a(this.i).c(eVar3);
                 this.n.remove(str);
             }
             if (str2.equals(e.a.INSTALLED.toString()) && this.p != null && this.p.containsKey(str)) {
                 e eVar4 = this.p.get(str);
-                String str5 = f6275a;
-                Log.i(str5, "(" + eVar4.f6303c + ") onCleanNotification: install success");
+                String str5 = a;
+                Log.i(str5, "(" + eVar4.c + ") onCleanNotification: install success");
                 com.anythink.china.common.b.a.a(this.i).c(eVar4);
                 this.p.remove(str);
             }
@@ -434,8 +429,8 @@ public class a implements g {
                 this.u.c(eVar.n);
             }
             this.l.remove(str);
-            String str6 = f6275a;
-            Log.i(str6, "(" + eVar.f6303c + ") onCleanNotification: stop download");
+            String str6 = a;
+            Log.i(str6, "(" + eVar.c + ") onCleanNotification: stop download");
         } catch (Throwable th) {
             th.printStackTrace();
         }
@@ -453,7 +448,7 @@ public class a implements g {
                         return;
                     }
                     remove.e();
-                    Log.i(f6275a, "(" + remove.f6303c + ") onClickNotification: download fail to retry");
+                    Log.i(a, "(" + remove.c + ") onClickNotification: download fail to retry");
                     d(remove);
                 }
             } else if (str2.equals(e.a.FINISH.toString())) {
@@ -463,7 +458,7 @@ public class a implements g {
                         com.anythink.china.common.b.a.a(this.i).a(i);
                         return;
                     }
-                    Log.i(f6275a, "(" + eVar2.f6303c + ") onClickNotification: start intall");
+                    Log.i(a, "(" + eVar2.c + ") onClickNotification: start intall");
                     com.anythink.china.common.b.a.a(this.i).c(eVar2);
                     com.anythink.china.common.b.a.a(this.i).a(eVar2);
                     b(eVar2);
@@ -475,7 +470,7 @@ public class a implements g {
                         com.anythink.china.common.b.a.a(this.i).a(i);
                         return;
                     }
-                    Log.i(f6275a, "(" + eVar3.f6303c + ") onClickNotification: start open");
+                    Log.i(a, "(" + eVar3.c + ") onClickNotification: start open");
                     com.anythink.china.common.b.a.a(this.i).c(eVar3);
                     a(eVar3, true);
                 }
@@ -485,7 +480,7 @@ public class a implements g {
                     com.anythink.china.common.b.a.a(this.i).a(i);
                 } else if (!eVar4.d() || eVar4.q == 2) {
                 } else {
-                    Log.i(f6275a, "(" + eVar4.f6303c + ") onClickNotification: pause download");
+                    Log.i(a, "(" + eVar4.c + ") onClickNotification: pause download");
                     if (this.u != null) {
                         this.u.b(eVar4.n);
                     }
@@ -497,7 +492,7 @@ public class a implements g {
                     com.anythink.china.common.b.a.a(this.i).a(i);
                     return;
                 }
-                Log.i(f6275a, "(" + eVar5.f6303c + ") onClickNotification: resume download");
+                Log.i(a, "(" + eVar5.c + ") onClickNotification: resume download");
                 d(eVar5);
             } else if (str2.equals(e.a.IDLE.toString())) {
                 synchronized (this.j) {
@@ -512,7 +507,7 @@ public class a implements g {
                             if (next.q == 2) {
                                 return;
                             }
-                            Log.i(f6275a, "(" + next.f6303c + ") onClickNotification: pause download");
+                            Log.i(a, "(" + next.c + ") onClickNotification: pause download");
                             this.j.remove(next);
                             eVar = next;
                         }
@@ -540,7 +535,7 @@ public class a implements g {
 
     @Override // com.anythink.china.common.a.g
     public final boolean a(String str) {
-        String str2 = com.anythink.china.common.c.b.a(str) + ".apk";
+        String str2 = com.anythink.china.common.c.b.a(str) + com.anythink.china.common.a.a.g;
         if (TextUtils.isEmpty(str2)) {
             return false;
         }
@@ -604,7 +599,7 @@ public class a implements g {
                     } else {
                         Intent intent = new Intent();
                         intent.setClass(this.i, ApkDownloadService.class);
-                        intent.putExtra(ApkDownloadService.f6317a, remove.n);
+                        intent.putExtra(ApkDownloadService.a, remove.n);
                         this.i.bindService(intent, this.w, 1);
                     }
                 } catch (Throwable th) {
@@ -636,8 +631,8 @@ public class a implements g {
             if (this.t == null) {
                 this.t = new b();
                 IntentFilter intentFilter = new IntentFilter();
-                intentFilter.addAction(Intent.ACTION_PACKAGE_ADDED);
-                intentFilter.addAction(Intent.ACTION_PACKAGE_REPLACED);
+                intentFilter.addAction("android.intent.action.PACKAGE_ADDED");
+                intentFilter.addAction("android.intent.action.PACKAGE_REPLACED");
                 intentFilter.addDataScheme("package");
                 this.i.registerReceiver(this.t, intentFilter);
             }
@@ -647,7 +642,7 @@ public class a implements g {
         if (TextUtils.isEmpty(f3)) {
             return;
         }
-        new StringBuilder("install: ").append(eVar.f6303c);
+        new StringBuilder("install: ").append(eVar.c);
         File file = new File(f3);
         try {
             Intent intent2 = new Intent("android.intent.action.VIEW");
@@ -655,15 +650,15 @@ public class a implements g {
             if (Build.VERSION.SDK_INT >= 24) {
                 intent2.addFlags(1);
                 Context context = this.i;
-                intent2.setDataAndType(FileProvider.getUriForFile(context, this.i.getPackageName() + ".anythink.fileProvider", file), AdBaseConstants.MIME_APK);
+                intent2.setDataAndType(FileProvider.getUriForFile(context, this.i.getPackageName() + ".anythink.fileProvider", file), "application/vnd.android.package-archive");
             } else {
-                intent2.setDataAndType(Uri.parse("file://".concat(String.valueOf(f3))), AdBaseConstants.MIME_APK);
+                intent2.setDataAndType(Uri.parse("file://".concat(String.valueOf(f3))), "application/vnd.android.package-archive");
             }
             this.i.startActivity(intent2);
-            com.anythink.core.common.j.c.a(eVar.f6302a, eVar.f, eVar.b, 4, (String) null, 0L, file.length());
+            com.anythink.core.common.j.c.a(eVar.a, eVar.f, eVar.b, 4, (String) null, 0L, file.length());
         } catch (Throwable th2) {
             th2.printStackTrace();
-            com.anythink.core.common.j.c.a(eVar.f6302a, eVar.f, eVar.b, 10, th2.getMessage(), 0L, file.length());
+            com.anythink.core.common.j.c.a(eVar.a, eVar.f, eVar.b, 10, th2.getMessage(), 0L, file.length());
         }
     }
 
@@ -692,7 +687,7 @@ public class a implements g {
                 intent.putExtra(f, eVar.f);
                 intent.putExtra(g, eVar.m);
                 m.a(this.i).a(intent);
-                com.anythink.core.common.j.c.a(eVar.f6302a, eVar.f, eVar.b, 5, (String) null, 0L, 0L);
+                com.anythink.core.common.j.c.a(eVar.a, eVar.f, eVar.b, 5, (String) null, 0L, 0L);
                 if (this.o.size() == 0) {
                     try {
                         if (this.t != null) {
@@ -709,7 +704,7 @@ public class a implements g {
         }
     }
 
-    public final a.InterfaceC0088a c(String str) {
+    public final a.InterfaceC0048a c(String str) {
         return this.m.get(str);
     }
 
@@ -719,7 +714,7 @@ public class a implements g {
         if (TextUtils.isEmpty(f2)) {
             return;
         }
-        new StringBuilder("install: ").append(eVar.f6303c);
+        new StringBuilder("install: ").append(eVar.c);
         File file = new File(f2);
         try {
             Intent intent = new Intent("android.intent.action.VIEW");
@@ -727,15 +722,15 @@ public class a implements g {
             if (Build.VERSION.SDK_INT >= 24) {
                 intent.addFlags(1);
                 Context context = this.i;
-                intent.setDataAndType(FileProvider.getUriForFile(context, this.i.getPackageName() + ".anythink.fileProvider", file), AdBaseConstants.MIME_APK);
+                intent.setDataAndType(FileProvider.getUriForFile(context, this.i.getPackageName() + ".anythink.fileProvider", file), "application/vnd.android.package-archive");
             } else {
-                intent.setDataAndType(Uri.parse("file://".concat(String.valueOf(f2))), AdBaseConstants.MIME_APK);
+                intent.setDataAndType(Uri.parse("file://".concat(String.valueOf(f2))), "application/vnd.android.package-archive");
             }
             this.i.startActivity(intent);
-            com.anythink.core.common.j.c.a(eVar.f6302a, eVar.f, eVar.b, 4, (String) null, 0L, file.length());
+            com.anythink.core.common.j.c.a(eVar.a, eVar.f, eVar.b, 4, (String) null, 0L, file.length());
         } catch (Throwable th) {
             th.printStackTrace();
-            com.anythink.core.common.j.c.a(eVar.f6302a, eVar.f, eVar.b, 10, th.getMessage(), 0L, file.length());
+            com.anythink.core.common.j.c.a(eVar.a, eVar.f, eVar.b, 10, th.getMessage(), 0L, file.length());
         }
     }
 

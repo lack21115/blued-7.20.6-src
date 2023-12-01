@@ -15,19 +15,19 @@ import java.util.List;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final List<Integer> f36234a = new ArrayList(0);
+    private static final List<Integer> f22543a = new ArrayList(0);
     private Context b;
     private b e;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.tencent.liteav.audio.earmonitor.a.a.a f36235c = null;
+    private com.tencent.liteav.audio.earmonitor.a.a.a f22544c = null;
     private boolean d = false;
     private IBinder f = null;
     private ServiceConnection g = new ServiceConnection() { // from class: com.tencent.liteav.audio.earmonitor.a.b.a.d.1
         @Override // android.content.ServiceConnection
         public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            d.this.f36235c = a.AbstractBinderC0921a.a(iBinder);
-            if (d.this.f36235c != null) {
+            d.this.f22544c = a.AbstractBinderC0751a.a(iBinder);
+            if (d.this.f22544c != null) {
                 d.this.d = true;
                 d.this.e.a(0);
                 d dVar = d.this;
@@ -38,7 +38,7 @@ public final class d {
 
         @Override // android.content.ServiceConnection
         public final void onServiceDisconnected(ComponentName componentName) {
-            d.this.f36235c = null;
+            d.this.f22544c = null;
             d.this.d = false;
             d.this.e.a(4);
         }
@@ -68,7 +68,7 @@ public final class d {
         this.b = null;
         b a2 = b.a();
         this.e = a2;
-        a2.f36227a = eVar;
+        a2.f22536a = eVar;
         this.b = context;
     }
 
@@ -86,10 +86,10 @@ public final class d {
 
     static /* synthetic */ void a(d dVar, String str, String str2) {
         try {
-            if (dVar.f36235c == null || !dVar.d) {
+            if (dVar.f22544c == null || !dVar.d) {
                 return;
             }
-            dVar.f36235c.a(str, str2);
+            dVar.f22544c.a(str, str2);
         } catch (RemoteException e) {
             LiteavLog.e("HwAudioKit.HwAudioKit", "isFeatureSupported,RemoteException ex : %s", e.getMessage());
         }
@@ -120,10 +120,10 @@ public final class d {
             return false;
         }
         try {
-            if (this.f36235c == null || !this.d) {
+            if (this.f22544c == null || !this.d) {
                 return false;
             }
-            return this.f36235c.a(aVar.mFeatureType);
+            return this.f22544c.a(aVar.mFeatureType);
         } catch (RemoteException e) {
             LiteavLog.e("HwAudioKit.HwAudioKit", "isFeatureSupported,RemoteException ex : %s", e.getMessage());
             return false;

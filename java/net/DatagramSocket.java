@@ -281,7 +281,7 @@ public class DatagramSocket implements Closeable {
         int intValue;
         synchronized (this) {
             checkOpen();
-            intValue = ((Integer) this.impl.getOption(4102)).intValue();
+            intValue = ((Integer) this.impl.getOption(SocketOptions.SO_TIMEOUT)).intValue();
         }
         return intValue;
     }
@@ -410,7 +410,7 @@ public class DatagramSocket implements Closeable {
                 throw new IllegalArgumentException("timeout < 0");
             }
             checkOpen();
-            this.impl.setOption(4102, Integer.valueOf(i));
+            this.impl.setOption(SocketOptions.SO_TIMEOUT, Integer.valueOf(i));
         }
     }
 

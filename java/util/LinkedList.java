@@ -369,7 +369,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         this.modCount++;
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         return addLastImpl(e);
     }
@@ -423,7 +423,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         return true;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         int size = collection.size();
         if (size == 0) {
@@ -458,7 +458,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         addLastImpl(e);
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         if (this.size > 0) {
             this.size = 0;
@@ -482,7 +482,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         Link<E> link = this.voidLink.next;
         if (obj != null) {
@@ -729,7 +729,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         return link.data;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         return removeFirstOccurrenceImpl(obj);
     }
@@ -790,12 +790,12 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         return e2;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.size;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         int i = 0;
         Object[] objArr = new Object[this.size];
@@ -810,7 +810,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v21, types: [java.lang.Object[]] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         int i = 0;
         T[] tArr2 = tArr;

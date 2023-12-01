@@ -7,11 +7,11 @@ import java.util.Map;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile boolean f40814a = true;
+    private static volatile boolean f27123a = true;
     private static volatile boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile boolean f40815c = true;
+    private static volatile boolean f27124c = true;
     private static volatile boolean d = true;
     private static Object e;
     private static Map<String, Boolean> f;
@@ -33,7 +33,7 @@ public class b {
     public static boolean a() {
         boolean z;
         synchronized (e) {
-            z = f40814a;
+            z = f27123a;
         }
         return z;
     }
@@ -57,7 +57,7 @@ public class b {
     public static boolean c() {
         boolean z;
         synchronized (e) {
-            z = f40815c;
+            z = f27124c;
         }
         return z;
     }

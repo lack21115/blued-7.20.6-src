@@ -10,9 +10,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "Delay.kt", c = {155}, d = "awaitCancellation", e = "kotlinx.coroutines.DelayKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/DelayKt$awaitCancellation$1.class */
 public final class DelayKt$awaitCancellation$1 extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    /* synthetic */ Object f42807a;
+    /* synthetic */ Object a;
     int b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -22,7 +20,7 @@ public final class DelayKt$awaitCancellation$1 extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        this.f42807a = obj;
+        this.a = obj;
         this.b |= Integer.MIN_VALUE;
         return DelayKt.a(this);
     }

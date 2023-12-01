@@ -9,8 +9,6 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.web.cache.DiskLruCache;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
-import com.youzan.spiderman.utils.Stone;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,19 +21,15 @@ import okio.ByteString;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/web/cache/BluedWebViewCache.class */
 public class BluedWebViewCache {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static ArrayList<String> f10393a = new ArrayList<>();
+    private static ArrayList<String> a = new ArrayList<>();
     private static ArrayList<String> b = new ArrayList<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static DiskLruCache f10394c;
+    private static DiskLruCache c;
     private static final Map<String, String> d;
 
     static {
         HashMap hashMap = new HashMap();
         d = hashMap;
-        hashMap.put(Stone.JS_SUFFIX, "text/javascript");
+        hashMap.put("js", "text/javascript");
     }
 
     private BluedWebViewCache() {
@@ -49,14 +43,14 @@ public class BluedWebViewCache {
         }
         Uri url = webResourceRequest.getUrl();
         String method = webResourceRequest.getMethod();
-        if (url == null || !method.equalsIgnoreCase(MonitorConstants.CONNECT_TYPE_GET) || f10393a.size() == 0 || b.size() == 0) {
+        if (url == null || !method.equalsIgnoreCase("get") || a.size() == 0 || b.size() == 0) {
             return null;
         }
         String uri = url.toString();
-        if (f10393a.contains(url.getAuthority())) {
+        if (a.contains(url.getAuthority())) {
             z = true;
         } else {
-            Iterator<String> it = f10393a.iterator();
+            Iterator<String> it = a.iterator();
             do {
                 z = false;
                 if (!it.hasNext()) {
@@ -118,7 +112,7 @@ public class BluedWebViewCache {
     }
 
     private static File a() {
-        return new File(((Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) || !Environment.isExternalStorageRemovable()) && AppInfo.d().getExternalCacheDir() != null) ? AppInfo.d().getExternalCacheDir() : AppInfo.d().getCacheDir(), "webview_cache");
+        return new File((("mounted".equals(Environment.getExternalStorageState()) || !Environment.isExternalStorageRemovable()) && AppInfo.d().getExternalCacheDir() != null) ? AppInfo.d().getExternalCacheDir() : AppInfo.d().getCacheDir(), "webview_cache");
     }
 
     private static String a(String str) {
@@ -135,17 +129,17 @@ public class BluedWebViewCache {
                     break;
                 }
                 String str = strArr[i2];
-                if (!f10393a.contains(str)) {
-                    f10393a.add(str);
+                if (!a.contains(str)) {
+                    a.add(str);
                 }
                 i = i2 + 1;
             }
         }
-        if (f10393a.size() <= 0 || f10394c != null) {
+        if (a.size() <= 0 || c != null) {
             return;
         }
         try {
-            f10394c = DiskLruCache.a(a(), 1, 1, 10485760L);
+            c = DiskLruCache.a(a(), 1, 1, 10485760L);
         } catch (IOException e) {
             if (AppInfo.m()) {
                 e.printStackTrace();
@@ -171,7 +165,7 @@ public class BluedWebViewCache {
     }
 
     private static InputStream b(String str) {
-        DiskLruCache diskLruCache = f10394c;
+        DiskLruCache diskLruCache = c;
         if (diskLruCache != null) {
             try {
                 DiskLruCache.Snapshot a2 = diskLruCache.a(a(str));
@@ -211,7 +205,7 @@ public class BluedWebViewCache {
 
     @Nullable
     private static boolean c(String str) {
-        DiskLruCache diskLruCache = f10394c;
+        DiskLruCache diskLruCache = c;
         boolean z = false;
         if (diskLruCache != null) {
             boolean z2 = false;
@@ -228,7 +222,7 @@ public class BluedWebViewCache {
                     }
                 }
                 z2 = z3;
-                f10394c.a();
+                c.a();
                 return z3;
             } catch (Exception e) {
                 z = z2;

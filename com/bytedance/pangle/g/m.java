@@ -6,19 +6,19 @@ import java.nio.ByteBuffer;
 final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ByteBuffer f21422a;
+    public final ByteBuffer f7816a;
     public final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final long f21423c;
+    public final long f7817c;
     public final long d;
     public final ByteBuffer e;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public m(ByteBuffer byteBuffer, long j, long j2, long j3, ByteBuffer byteBuffer2) {
-        this.f21422a = byteBuffer;
+        this.f7816a = byteBuffer;
         this.b = j;
-        this.f21423c = j2;
+        this.f7817c = j2;
         this.d = j3;
         this.e = byteBuffer2;
     }

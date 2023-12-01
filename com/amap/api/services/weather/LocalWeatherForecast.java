@@ -22,13 +22,9 @@ public class LocalWeatherForecast implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5799a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5800c;
+    private String c;
     private String d;
     private List<LocalDayWeatherForecast> e;
 
@@ -38,9 +34,9 @@ public class LocalWeatherForecast implements Parcelable {
 
     public LocalWeatherForecast(Parcel parcel) {
         this.e = new ArrayList();
-        this.f5799a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5800c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readString();
         this.e = parcel.readArrayList(LocalWeatherForecast.class.getClassLoader());
     }
@@ -51,7 +47,7 @@ public class LocalWeatherForecast implements Parcelable {
     }
 
     public String getAdCode() {
-        return this.f5800c;
+        return this.c;
     }
 
     public String getCity() {
@@ -59,7 +55,7 @@ public class LocalWeatherForecast implements Parcelable {
     }
 
     public String getProvince() {
-        return this.f5799a;
+        return this.a;
     }
 
     public String getReportTime() {
@@ -71,7 +67,7 @@ public class LocalWeatherForecast implements Parcelable {
     }
 
     public void setAdCode(String str) {
-        this.f5800c = str;
+        this.c = str;
     }
 
     public void setCity(String str) {
@@ -79,7 +75,7 @@ public class LocalWeatherForecast implements Parcelable {
     }
 
     public void setProvince(String str) {
-        this.f5799a = str;
+        this.a = str;
     }
 
     public void setReportTime(String str) {
@@ -92,9 +88,9 @@ public class LocalWeatherForecast implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5799a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5800c);
+        parcel.writeString(this.c);
         parcel.writeString(this.d);
         parcel.writeList(this.e);
     }

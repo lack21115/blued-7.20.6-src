@@ -16,11 +16,11 @@ public class XRoundedImageView extends AppCompatImageView {
     private static final ImageView.ScaleType[] k = {ImageView.ScaleType.MATRIX, ImageView.ScaleType.FIT_XY, ImageView.ScaleType.FIT_START, ImageView.ScaleType.FIT_CENTER, ImageView.ScaleType.FIT_END, ImageView.ScaleType.CENTER, ImageView.ScaleType.CENTER_CROP, ImageView.ScaleType.CENTER_INSIDE};
 
     /* renamed from: a  reason: collision with root package name */
-    private int f28545a;
+    private int f14855a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28546c;
+    private int f14856c;
     private int d;
     private int e;
     private int f;
@@ -35,7 +35,7 @@ public class XRoundedImageView extends AppCompatImageView {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f28547a;
+        static final /* synthetic */ int[] f14857a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -45,33 +45,33 @@ public class XRoundedImageView extends AppCompatImageView {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[ImageView.ScaleType.values().length];
-            f28547a = iArr;
+            f14857a = iArr;
             try {
                 iArr[ImageView.ScaleType.CENTER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f28547a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
+                f14857a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f28547a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
+                f14857a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f28547a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
+                f14857a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f28547a[ImageView.ScaleType.FIT_START.ordinal()] = 5;
+                f14857a[ImageView.ScaleType.FIT_START.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f28547a[ImageView.ScaleType.FIT_END.ordinal()] = 6;
+                f14857a[ImageView.ScaleType.FIT_END.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f28547a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
+                f14857a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -97,19 +97,19 @@ public class XRoundedImageView extends AppCompatImageView {
         }
         int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(3, 0);
         if (dimensionPixelSize > 0) {
-            this.f28545a = dimensionPixelSize;
+            this.f14855a = dimensionPixelSize;
             this.b = dimensionPixelSize;
-            this.f28546c = dimensionPixelSize;
+            this.f14856c = dimensionPixelSize;
             this.d = dimensionPixelSize;
         }
-        this.f28545a = obtainStyledAttributes.getDimensionPixelSize(5, dimensionPixelSize);
+        this.f14855a = obtainStyledAttributes.getDimensionPixelSize(5, dimensionPixelSize);
         this.b = obtainStyledAttributes.getDimensionPixelSize(4, dimensionPixelSize);
-        this.f28546c = obtainStyledAttributes.getDimensionPixelSize(7, dimensionPixelSize);
+        this.f14856c = obtainStyledAttributes.getDimensionPixelSize(7, dimensionPixelSize);
         this.d = obtainStyledAttributes.getDimensionPixelSize(6, dimensionPixelSize);
         this.e = obtainStyledAttributes.getDimensionPixelSize(2, 0);
         this.f = obtainStyledAttributes.getColor(1, -16777216);
         obtainStyledAttributes.recycle();
-        this.g = ((this.f28545a + this.b) + this.f28546c) + this.d > 0 ? true : z;
+        this.g = ((this.f14855a + this.b) + this.f14856c) + this.d > 0 ? true : z;
     }
 
     public int getBorder() {
@@ -131,7 +131,7 @@ public class XRoundedImageView extends AppCompatImageView {
         if (!this.g || drawable == null) {
             this.i = drawable;
         } else {
-            this.i = XRoundedDrawable.a(drawable, this.j, this.e, this.f, this.f28545a, this.b, this.f28546c, this.d);
+            this.i = XRoundedDrawable.a(drawable, this.j, this.e, this.f, this.f14855a, this.b, this.f14856c, this.d);
         }
         super.setBackgroundDrawable(this.i);
     }
@@ -175,9 +175,9 @@ public class XRoundedImageView extends AppCompatImageView {
     }
 
     public void setCornerRadius(int i) {
-        this.f28545a = i;
+        this.f14855a = i;
         this.b = i;
-        this.f28546c = i;
+        this.f14856c = i;
         this.d = i;
         Drawable drawable = this.h;
         if (drawable instanceof XRoundedDrawable) {
@@ -194,7 +194,7 @@ public class XRoundedImageView extends AppCompatImageView {
     @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageBitmap(Bitmap bitmap) {
         if (bitmap != null) {
-            XRoundedDrawable xRoundedDrawable = new XRoundedDrawable(bitmap, this.e, this.f, this.f28545a, this.b, this.f28546c, this.d);
+            XRoundedDrawable xRoundedDrawable = new XRoundedDrawable(bitmap, this.e, this.f, this.f14855a, this.b, this.f14856c, this.d);
             this.h = xRoundedDrawable;
             ImageView.ScaleType scaleType = this.j;
             if (scaleType != null) {
@@ -209,10 +209,10 @@ public class XRoundedImageView extends AppCompatImageView {
     @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageDrawable(Drawable drawable) {
         if (drawable != null) {
-            Drawable a2 = XRoundedDrawable.a(drawable, this.j, this.e, this.f, this.f28545a, this.b, this.f28546c, this.d);
+            IRecyclingDrawable a2 = XRoundedDrawable.a(drawable, this.j, this.e, this.f, this.f14855a, this.b, this.f14856c, this.d);
             this.h = a2;
             if ((drawable instanceof IRecyclingDrawable) && (a2 instanceof IRecyclingDrawable) && drawable != a2) {
-                ((IRecyclingDrawable) a2).a(((IRecyclingDrawable) drawable).b());
+                a2.a(((IRecyclingDrawable) drawable).b());
             }
         } else {
             this.h = null;
@@ -231,9 +231,9 @@ public class XRoundedImageView extends AppCompatImageView {
                 ((XRoundedDrawable) drawable).a(this.j);
                 ((XRoundedDrawable) this.i).a(this.e);
                 ((XRoundedDrawable) this.i).b(this.f);
-                ((XRoundedDrawable) this.i).g(this.f28545a);
+                ((XRoundedDrawable) this.i).g(this.f14855a);
                 ((XRoundedDrawable) this.i).f(this.b);
-                ((XRoundedDrawable) this.i).e(this.f28546c);
+                ((XRoundedDrawable) this.i).e(this.f14856c);
                 ((XRoundedDrawable) this.i).d(this.d);
             } else {
                 setBackgroundDrawable(drawable);
@@ -255,7 +255,7 @@ public class XRoundedImageView extends AppCompatImageView {
         }
         if (this.j != scaleType) {
             this.j = scaleType;
-            switch (AnonymousClass1.f28547a[scaleType.ordinal()]) {
+            switch (AnonymousClass1.f14857a[scaleType.ordinal()]) {
                 case 1:
                 case 2:
                 case 3:

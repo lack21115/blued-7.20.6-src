@@ -1,8 +1,8 @@
 package com.amap.api.col.p0003sl;
 
-import android.app.backup.FullBackup;
 import android.content.Context;
 import android.os.Handler;
+import com.alipay.sdk.sys.a;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.trace.TraceLocation;
 import java.util.ArrayList;
@@ -97,7 +97,7 @@ public final class hj extends hh<List<TraceLocation>, List<LatLng>> implements R
                     jSONObject.put("tm", 1);
                     j = time;
                 }
-                jSONObject.put(FullBackup.SHAREDPREFS_TREE_TOKEN, (int) traceLocation.getSpeed());
+                jSONObject.put("sp", (int) traceLocation.getSpeed());
                 j3 = j;
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -106,7 +106,7 @@ public final class hj extends hh<List<TraceLocation>, List<LatLng>> implements R
             i++;
             j2 = j3;
         }
-        this.h = getURL() + "&" + jSONArray.toString();
+        this.h = getURL() + a.b + jSONArray.toString();
         return jSONArray.toString();
     }
 
@@ -123,8 +123,8 @@ public final class hj extends hh<List<TraceLocation>, List<LatLng>> implements R
     @Override // com.amap.api.col.p0003sl.kb
     public final String getURL() {
         String str = "key=" + ho.f(this.g);
-        String a2 = hr.a();
-        return "http://restsdk.amap.com/v4/grasproad/driving?" + str + "&ts=".concat(String.valueOf(a2)) + "&scode=".concat(String.valueOf(hr.a(this.g, a2, str)));
+        String a = hr.a();
+        return "http://restsdk.amap.com/v4/grasproad/driving?" + str + "&ts=".concat(String.valueOf(a)) + "&scode=".concat(String.valueOf(hr.a(this.g, a, str)));
     }
 
     @Override // com.amap.api.col.p0003sl.kb

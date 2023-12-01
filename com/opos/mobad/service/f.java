@@ -9,11 +9,11 @@ import com.opos.mobad.service.j.n;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile f f27348a = new f();
+    private static volatile f f13660a = new f();
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.service.a.e f27349c = new com.opos.mobad.service.a.e();
+    private com.opos.mobad.service.a.e f13661c = new com.opos.mobad.service.a.e();
     private com.opos.mobad.service.d.a d = new com.opos.mobad.service.d.a();
     private com.opos.mobad.service.a.b e = new com.opos.mobad.service.a.b();
     private com.opos.mobad.service.b.a g = new com.opos.mobad.service.b.a();
@@ -24,7 +24,7 @@ public class f {
     }
 
     public static final com.opos.mobad.service.a.b a() {
-        return f27348a.e;
+        return f13660a.e;
     }
 
     private static void a(final Context context) {
@@ -41,7 +41,7 @@ public class f {
 
     private void a(Context context, String str, String str2, int i, int i2, long j) {
         com.opos.mobad.service.c.b.a().a(context);
-        this.f27349c.a(context, str, str2, i2, i, j);
+        this.f13661c.a(context, str, str2, i2, i, j);
         this.d.a(context, str, str2, i2, i);
         com.opos.mobad.service.a.c.a().a(context, str, i, i2);
     }
@@ -62,15 +62,15 @@ public class f {
         });
     }
 
-    public static final void a(Context context, boolean z, boolean z2, boolean z3, int i, a.c cVar, a.g gVar, a.InterfaceC0735a interfaceC0735a, a.f fVar, a.b bVar) {
-        f27348a.b(context, z, z2, z3, i, cVar, gVar, interfaceC0735a, fVar, bVar);
+    public static final void a(Context context, boolean z, boolean z2, boolean z3, int i, a.c cVar, a.g gVar, a.InterfaceC0565a interfaceC0565a, a.f fVar, a.b bVar) {
+        f13660a.b(context, z, z2, z3, i, cVar, gVar, interfaceC0565a, fVar, bVar);
     }
 
     public static final com.opos.mobad.service.a.e b() {
-        return f27348a.f27349c;
+        return f13660a.f13661c;
     }
 
-    private void b(Context context, boolean z, boolean z2, boolean z3, int i, a.c cVar, a.g gVar, a.InterfaceC0735a interfaceC0735a, a.f fVar, a.b bVar) {
+    private void b(Context context, boolean z, boolean z2, boolean z3, int i, a.c cVar, a.g gVar, a.InterfaceC0565a interfaceC0565a, a.f fVar, a.b bVar) {
         synchronized (this) {
             if (!this.b) {
                 try {
@@ -82,12 +82,12 @@ public class f {
                     a(applicationContext);
                     com.opos.mobad.service.e.a.a().a(applicationContext, z3);
                     com.opos.mobad.service.e.a.a().a(z2);
-                    a(applicationContext, interfaceC0735a.a(), interfaceC0735a.b(), fVar.a(), 0, 0L);
-                    com.opos.mobad.service.i.d.a().a(applicationContext, interfaceC0735a.a(), fVar.a(), fVar.c());
+                    a(applicationContext, interfaceC0565a.a(), interfaceC0565a.b(), fVar.a(), 0, 0L);
+                    com.opos.mobad.service.i.d.a().a(applicationContext, interfaceC0565a.a(), fVar.a(), fVar.c());
                     if (!com.opos.cmn.an.f.a.b(applicationContext)) {
                         com.opos.cmn.an.e.c.a().a(applicationContext);
                     }
-                    com.opos.mobad.service.f.a.a().a(applicationContext, cVar, gVar, interfaceC0735a, fVar, null, bVar);
+                    com.opos.mobad.service.f.a.a().a(applicationContext, cVar, gVar, interfaceC0565a, fVar, null, bVar);
                     com.opos.cmn.c.a.b();
                     n.a().a(applicationContext.getApplicationContext());
                     this.b = true;
@@ -103,18 +103,18 @@ public class f {
     }
 
     public static final com.opos.mobad.service.d.a c() {
-        return f27348a.d;
+        return f13660a.d;
     }
 
     public static final boolean d() {
-        return f27348a.b;
+        return f13660a.b;
     }
 
     public static final void e() {
         synchronized (f.class) {
             try {
-                f fVar = f27348a;
-                f27348a = new f();
+                f fVar = f13660a;
+                f13660a = new f();
                 fVar.f();
             } catch (Throwable th) {
                 throw th;

@@ -29,9 +29,7 @@ public class ConscryptEngineSocket extends OpenSSLSocketImpl implements SSLParam
     private BufferAllocator bufferAllocator;
     private final ConscryptEngine engine;
     private final Object handshakeLock;
-
-    /* renamed from: in  reason: collision with root package name */
-    private SSLInputStream f44090in;
+    private SSLInputStream in;
     private SSLOutputStream out;
     private int state;
     private final Object stateLock;
@@ -416,7 +414,7 @@ public class ConscryptEngineSocket extends OpenSSLSocketImpl implements SSLParam
                         }
                         z = true;
                     }
-                } else if (this.f44090in.processDataFromSocket(EmptyArray.BYTE, 0, 0) < 0) {
+                } else if (this.in.processDataFromSocket(EmptyArray.BYTE, 0, 0) < 0) {
                     throw SSLUtils.toSSLHandshakeException(new EOFException("connection closed"));
                 }
             } catch (SSLException e) {
@@ -580,7 +578,7 @@ public class ConscryptEngineSocket extends OpenSSLSocketImpl implements SSLParam
                 try {
                     super.close();
                 } finally {
-                    SSLInputStream sSLInputStream = this.f44090in;
+                    SSLInputStream sSLInputStream = this.in;
                     if (sSLInputStream != null) {
                         sSLInputStream.release();
                     }
@@ -588,13 +586,13 @@ public class ConscryptEngineSocket extends OpenSSLSocketImpl implements SSLParam
             } catch (Throwable th) {
                 try {
                     super.close();
-                    SSLInputStream sSLInputStream2 = this.f44090in;
+                    SSLInputStream sSLInputStream2 = this.in;
                     if (sSLInputStream2 != null) {
                         sSLInputStream2.release();
                     }
                     throw th;
                 } finally {
-                    SSLInputStream sSLInputStream3 = this.f44090in;
+                    SSLInputStream sSLInputStream3 = this.in;
                     if (sSLInputStream3 != null) {
                         sSLInputStream3.release();
                     }
@@ -659,7 +657,7 @@ public class ConscryptEngineSocket extends OpenSSLSocketImpl implements SSLParam
     public final InputStream getInputStream() throws IOException {
         checkOpen();
         waitForHandshake();
-        return this.f44090in;
+        return this.in;
     }
 
     @Override // javax.net.ssl.SSLSocket
@@ -807,7 +805,7 @@ public class ConscryptEngineSocket extends OpenSSLSocketImpl implements SSLParam
                     if (this.state == 0) {
                         this.state = 2;
                         this.engine.beginHandshake();
-                        this.f44090in = new SSLInputStream();
+                        this.in = new SSLInputStream();
                         this.out = new SSLOutputStream();
                         doHandshake();
                     }

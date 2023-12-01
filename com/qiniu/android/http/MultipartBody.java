@@ -172,14 +172,14 @@ public final class MultipartBody extends RequestBody {
     }
 
     private long writeOrCountBytes(BufferedSink bufferedSink, boolean z) throws IOException {
-        Buffer buffer;
-        Buffer buffer2;
+        BufferedSink bufferedSink2;
+        BufferedSink bufferedSink3;
         if (z) {
-            buffer = new Buffer();
-            buffer2 = buffer;
+            bufferedSink2 = new Buffer();
+            bufferedSink3 = bufferedSink2;
         } else {
-            buffer = bufferedSink;
-            buffer2 = null;
+            bufferedSink2 = bufferedSink;
+            bufferedSink3 = null;
         }
         int size = this.parts.size();
         long j = 0;
@@ -187,23 +187,23 @@ public final class MultipartBody extends RequestBody {
         while (true) {
             int i2 = i;
             if (i2 >= size) {
-                buffer.write(DASHDASH);
-                buffer.write(this.boundary);
-                buffer.write(DASHDASH);
-                buffer.write(CRLF);
+                bufferedSink2.write(DASHDASH);
+                bufferedSink2.write(this.boundary);
+                bufferedSink2.write(DASHDASH);
+                bufferedSink2.write(CRLF);
                 long j2 = j;
                 if (z) {
-                    j2 = j + buffer2.size();
-                    buffer2.clear();
+                    j2 = j + bufferedSink3.size();
+                    bufferedSink3.clear();
                 }
                 return j2;
             }
             Part part = this.parts.get(i2);
             Headers headers = part.headers;
             RequestBody requestBody = part.body;
-            buffer.write(DASHDASH);
-            buffer.write(this.boundary);
-            buffer.write(CRLF);
+            bufferedSink2.write(DASHDASH);
+            bufferedSink2.write(this.boundary);
+            bufferedSink2.write(CRLF);
             if (headers != null) {
                 int size2 = headers.size();
                 int i3 = 0;
@@ -212,28 +212,28 @@ public final class MultipartBody extends RequestBody {
                     if (i4 >= size2) {
                         break;
                     }
-                    buffer.writeUtf8(headers.name(i4)).write(COLONSPACE).writeUtf8(headers.value(i4)).write(CRLF);
+                    bufferedSink2.writeUtf8(headers.name(i4)).write(COLONSPACE).writeUtf8(headers.value(i4)).write(CRLF);
                     i3 = i4 + 1;
                 }
             }
             MediaType contentType = requestBody.contentType();
             if (contentType != null) {
-                buffer.writeUtf8("Content-Type: ").writeUtf8(contentType.toString()).write(CRLF);
+                bufferedSink2.writeUtf8("Content-Type: ").writeUtf8(contentType.toString()).write(CRLF);
             }
             long contentLength = requestBody.contentLength();
             if (contentLength != -1) {
-                buffer.writeUtf8("Content-Length: ").writeDecimalLong(contentLength).write(CRLF);
+                bufferedSink2.writeUtf8("Content-Length: ").writeDecimalLong(contentLength).write(CRLF);
             } else if (z) {
-                buffer2.clear();
+                bufferedSink3.clear();
                 return -1L;
             }
-            buffer.write(CRLF);
+            bufferedSink2.write(CRLF);
             if (z) {
                 j += contentLength;
             } else {
-                requestBody.writeTo(buffer);
+                requestBody.writeTo(bufferedSink2);
             }
-            buffer.write(CRLF);
+            bufferedSink2.write(CRLF);
             i = i2 + 1;
         }
     }
@@ -242,7 +242,6 @@ public final class MultipartBody extends RequestBody {
         return this.boundary.utf8();
     }
 
-    @Override // okhttp3.RequestBody
     public long contentLength() throws IOException {
         long j = this.contentLength;
         if (j != -1) {
@@ -253,7 +252,6 @@ public final class MultipartBody extends RequestBody {
         return writeOrCountBytes;
     }
 
-    @Override // okhttp3.RequestBody
     public MediaType contentType() {
         return this.contentType;
     }
@@ -274,7 +272,6 @@ public final class MultipartBody extends RequestBody {
         return this.originalType;
     }
 
-    @Override // okhttp3.RequestBody
     public void writeTo(BufferedSink bufferedSink) throws IOException {
         writeOrCountBytes(bufferedSink, false);
     }

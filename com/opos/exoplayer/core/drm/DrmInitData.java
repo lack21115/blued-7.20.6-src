@@ -25,11 +25,11 @@ public final class DrmInitData implements Parcelable, Comparator<SchemeData> {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25267a;
+    public final String f11579a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final SchemeData[] f25268c;
+    private final SchemeData[] f11580c;
     private int d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/drm/DrmInitData$SchemeData.class */
@@ -49,19 +49,19 @@ public final class DrmInitData implements Parcelable, Comparator<SchemeData> {
         };
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f25269a;
+        public final String f11581a;
         public final byte[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final boolean f25270c;
+        public final boolean f11582c;
         private int d;
         private final UUID e;
 
         SchemeData(Parcel parcel) {
             this.e = new UUID(parcel.readLong(), parcel.readLong());
-            this.f25269a = parcel.readString();
+            this.f11581a = parcel.readString();
             this.b = parcel.createByteArray();
-            this.f25270c = parcel.readByte() != 0;
+            this.f11582c = parcel.readByte() != 0;
         }
 
         public SchemeData(UUID uuid, String str, byte[] bArr) {
@@ -70,9 +70,9 @@ public final class DrmInitData implements Parcelable, Comparator<SchemeData> {
 
         public SchemeData(UUID uuid, String str, byte[] bArr, boolean z) {
             this.e = (UUID) com.opos.exoplayer.core.i.a.a(uuid);
-            this.f25269a = (String) com.opos.exoplayer.core.i.a.a(str);
+            this.f11581a = (String) com.opos.exoplayer.core.i.a.a(str);
             this.b = bArr;
-            this.f25270c = z;
+            this.f11582c = z;
         }
 
         @Override // android.os.Parcelable
@@ -86,7 +86,7 @@ public final class DrmInitData implements Parcelable, Comparator<SchemeData> {
                 if (obj != this) {
                     SchemeData schemeData = (SchemeData) obj;
                     z = false;
-                    if (this.f25269a.equals(schemeData.f25269a)) {
+                    if (this.f11581a.equals(schemeData.f11581a)) {
                         z = false;
                         if (u.a(this.e, schemeData.e)) {
                             if (!Arrays.equals(this.b, schemeData.b)) {
@@ -104,7 +104,7 @@ public final class DrmInitData implements Parcelable, Comparator<SchemeData> {
 
         public int hashCode() {
             if (this.d == 0) {
-                this.d = (((this.e.hashCode() * 31) + this.f25269a.hashCode()) * 31) + Arrays.hashCode(this.b);
+                this.d = (((this.e.hashCode() * 31) + this.f11581a.hashCode()) * 31) + Arrays.hashCode(this.b);
             }
             return this.d;
         }
@@ -113,24 +113,24 @@ public final class DrmInitData implements Parcelable, Comparator<SchemeData> {
         public void writeToParcel(Parcel parcel, int i) {
             parcel.writeLong(this.e.getMostSignificantBits());
             parcel.writeLong(this.e.getLeastSignificantBits());
-            parcel.writeString(this.f25269a);
+            parcel.writeString(this.f11581a);
             parcel.writeByteArray(this.b);
-            parcel.writeByte(this.f25270c ? (byte) 1 : (byte) 0);
+            parcel.writeByte(this.f11582c ? (byte) 1 : (byte) 0);
         }
     }
 
     DrmInitData(Parcel parcel) {
-        this.f25267a = parcel.readString();
+        this.f11579a = parcel.readString();
         SchemeData[] schemeDataArr = (SchemeData[]) parcel.createTypedArray(SchemeData.CREATOR);
-        this.f25268c = schemeDataArr;
+        this.f11580c = schemeDataArr;
         this.b = schemeDataArr.length;
     }
 
     private DrmInitData(String str, boolean z, SchemeData... schemeDataArr) {
-        this.f25267a = str;
+        this.f11579a = str;
         SchemeData[] schemeDataArr2 = z ? (SchemeData[]) schemeDataArr.clone() : schemeDataArr;
         Arrays.sort(schemeDataArr2, this);
-        this.f25268c = schemeDataArr2;
+        this.f11580c = schemeDataArr2;
         this.b = schemeDataArr2.length;
     }
 
@@ -153,11 +153,11 @@ public final class DrmInitData implements Parcelable, Comparator<SchemeData> {
     }
 
     public SchemeData a(int i) {
-        return this.f25268c[i];
+        return this.f11580c[i];
     }
 
     public DrmInitData a(String str) {
-        return u.a(this.f25267a, str) ? this : new DrmInitData(str, false, this.f25268c);
+        return u.a(this.f11579a, str) ? this : new DrmInitData(str, false, this.f11580c);
     }
 
     @Override // android.os.Parcelable
@@ -176,8 +176,8 @@ public final class DrmInitData implements Parcelable, Comparator<SchemeData> {
                 }
                 DrmInitData drmInitData = (DrmInitData) obj;
                 z = false;
-                if (u.a(this.f25267a, drmInitData.f25267a)) {
-                    if (!Arrays.equals(this.f25268c, drmInitData.f25268c)) {
+                if (u.a(this.f11579a, drmInitData.f11579a)) {
+                    if (!Arrays.equals(this.f11580c, drmInitData.f11580c)) {
                         return false;
                     }
                 }
@@ -190,15 +190,15 @@ public final class DrmInitData implements Parcelable, Comparator<SchemeData> {
 
     public int hashCode() {
         if (this.d == 0) {
-            String str = this.f25267a;
-            this.d = ((str == null ? 0 : str.hashCode()) * 31) + Arrays.hashCode(this.f25268c);
+            String str = this.f11579a;
+            this.d = ((str == null ? 0 : str.hashCode()) * 31) + Arrays.hashCode(this.f11580c);
         }
         return this.d;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f25267a);
-        parcel.writeTypedArray(this.f25268c, 0);
+        parcel.writeString(this.f11579a);
+        parcel.writeTypedArray(this.f11580c, 0);
     }
 }

@@ -41,11 +41,11 @@ import java.util.Properties;
 public class FaceProtocalActivity extends com.tencent.cloud.huiyansdkface.facelight.ui.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f35671a;
+    private static int f21980a;
     private d b;
 
     /* renamed from: c  reason: collision with root package name */
-    private e f35672c = new e(Const.SOCKET_CHECK_CHANNEL);
+    private e f21981c = new e(Const.SOCKET_CHECK_CHANNEL);
     private c d;
     private LinearLayout e;
     private ImageView f;
@@ -60,11 +60,11 @@ public class FaceProtocalActivity extends com.tencent.cloud.huiyansdkface.faceli
     public static class a implements c.b {
 
         /* renamed from: a  reason: collision with root package name */
-        private d f35678a;
+        private d f21987a;
         private Activity b;
 
         public a(d dVar, Activity activity) {
-            this.f35678a = dVar;
+            this.f21987a = dVar;
             this.b = activity;
         }
 
@@ -72,11 +72,11 @@ public class FaceProtocalActivity extends com.tencent.cloud.huiyansdkface.faceli
         public void a() {
             WLogger.d("FaceProtocalActivity", "onHomePressed");
             KycWaSDK.getInstance().trackCustomKVEvent(this.b, "authpage_detailpage_exit_self", "点击home键返回", null);
-            this.f35678a.e(true);
-            if (this.f35678a.y() != null) {
+            this.f21987a.e(true);
+            if (this.f21987a.y() != null) {
                 WbFaceVerifyResult wbFaceVerifyResult = new WbFaceVerifyResult();
                 wbFaceVerifyResult.setIsSuccess(false);
-                wbFaceVerifyResult.setOrderNo(this.f35678a.w());
+                wbFaceVerifyResult.setOrderNo(this.f21987a.w());
                 wbFaceVerifyResult.setSign(null);
                 WbFaceError wbFaceError = new WbFaceError();
                 wbFaceError.setDomain(WbFaceError.WBFaceErrorDomainNativeProcess);
@@ -86,8 +86,8 @@ public class FaceProtocalActivity extends com.tencent.cloud.huiyansdkface.faceli
                 wbFaceVerifyResult.setError(wbFaceError);
                 Properties properties = new Properties();
                 properties.setProperty("errorDesc", wbFaceError.toString());
-                this.f35678a.a(this.b, WbFaceError.WBFaceErrorCodeUserCancle, properties);
-                this.f35678a.y().onFinish(wbFaceVerifyResult);
+                this.f21987a.a(this.b, WbFaceError.WBFaceErrorCodeUserCancle, properties);
+                this.f21987a.y().onFinish(wbFaceVerifyResult);
             }
             this.b.finish();
         }
@@ -105,7 +105,7 @@ public class FaceProtocalActivity extends com.tencent.cloud.huiyansdkface.faceli
         this.i = J;
         if (WbCloudFaceContant.BLACK.equals(J)) {
             i = R.style.wbcfFaceProtocolThemeBlack;
-        } else if ("custom".equals(this.i)) {
+        } else if (WbCloudFaceContant.CUSTOM.equals(this.i)) {
             i = R.style.wbcfFaceProtocolThemeCustom;
         } else {
             WLogger.e("FaceProtocalActivity", "set default WHITE");
@@ -162,7 +162,7 @@ public class FaceProtocalActivity extends com.tencent.cloud.huiyansdkface.faceli
         KycWaSDK.getInstance().trackCustomKVEvent(getApplicationContext(), "authpage_detailpage_enter", this.h, null);
         this.f = (ImageView) findViewById(R.id.wbcf_protocol_back);
         if (!this.i.equals(WbCloudFaceContant.WHITE)) {
-            if (this.i.equals("custom")) {
+            if (this.i.equals(WbCloudFaceContant.CUSTOM)) {
                 mutate = DrawableCompat.wrap(ContextCompat.getDrawable(this, R.mipmap.wbcf_back)).mutate();
                 resources = getResources();
                 i = R.color.wbcf_custom_auth_back_tint;
@@ -343,7 +343,7 @@ public class FaceProtocalActivity extends com.tencent.cloud.huiyansdkface.faceli
         d z = d.z();
         this.b = z;
         z.e(false);
-        f35671a++;
+        f21980a++;
         b();
         super.onCreate(bundle);
         setContentView(R.layout.wbcf_face_protocol_layout);
@@ -367,7 +367,7 @@ public class FaceProtocalActivity extends com.tencent.cloud.huiyansdkface.faceli
         if (cVar != null) {
             cVar.b();
         }
-        this.f35672c.a();
+        this.f21981c.a();
     }
 
     @Override // android.app.Activity
@@ -378,7 +378,7 @@ public class FaceProtocalActivity extends com.tencent.cloud.huiyansdkface.faceli
         if (cVar != null) {
             cVar.a();
         }
-        this.f35672c.a(getApplicationContext());
+        this.f21981c.a(getApplicationContext());
     }
 
     @Override // android.app.Activity
@@ -391,8 +391,8 @@ public class FaceProtocalActivity extends com.tencent.cloud.huiyansdkface.faceli
     public void onStop() {
         WLogger.i("FaceProtocalActivity", "onStop");
         super.onStop();
-        int i = f35671a - 1;
-        f35671a = i;
+        int i = f21980a - 1;
+        f21980a = i;
         if (i != 0) {
             WLogger.e("FaceProtocalActivity", "not same activity ");
         } else if (this.j) {

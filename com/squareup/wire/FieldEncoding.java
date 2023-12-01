@@ -37,7 +37,7 @@ public enum FieldEncoding {
                         if (i == 5) {
                             return FieldEncoding.FIXED32;
                         }
-                        throw new ProtocolException(Intrinsics.a("Unexpected FieldEncoding: ", (Object) Integer.valueOf(i)));
+                        throw new ProtocolException(Intrinsics.a("Unexpected FieldEncoding: ", Integer.valueOf(i)));
                     }
                     return FieldEncoding.LENGTH_DELIMITED;
                 }

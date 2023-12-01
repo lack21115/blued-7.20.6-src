@@ -27,7 +27,7 @@ public final class gf implements com.kwad.sdk.core.d<AdStyleInfo.PlayDetailInfo.
             patchAdInfo.weakStyleAdMark = "";
         }
         patchAdInfo.weakStyleAppearTime = jSONObject.optLong("weakStyleAppearTime");
-        patchAdInfo.weakStyleEnableClose = jSONObject.optBoolean("weakStyleEnableClose", new Boolean("true").booleanValue());
+        patchAdInfo.weakStyleEnableClose = jSONObject.optBoolean("weakStyleEnableClose", new Boolean(com.huawei.hms.ads.fw.Code).booleanValue());
         patchAdInfo.typePortrait = jSONObject.optInt("typePortrait");
         patchAdInfo.strongStyleCardUrl = jSONObject.optString("strongStyleCardUrl");
         if (patchAdInfo.strongStyleCardUrl == JSONObject.NULL) {
@@ -46,7 +46,7 @@ public final class gf implements com.kwad.sdk.core.d<AdStyleInfo.PlayDetailInfo.
         if (patchAdInfo.strongStyleAdMark == JSONObject.NULL) {
             patchAdInfo.strongStyleAdMark = "";
         }
-        patchAdInfo.strongStyleEnableClose = jSONObject.optBoolean("strongStyleEnableClose", new Boolean("true").booleanValue());
+        patchAdInfo.strongStyleEnableClose = jSONObject.optBoolean("strongStyleEnableClose", new Boolean(com.huawei.hms.ads.fw.Code).booleanValue());
         patchAdInfo.weakStyleShowTime = jSONObject.optLong("weakStyleShowTime");
         patchAdInfo.strongStyleShowTime = jSONObject.optLong("strongStyleShowTime");
     }

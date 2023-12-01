@@ -15,7 +15,6 @@ import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.activity.PreloadFragment;
 import com.blued.android.module.common.user.model.UserInfo;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import com.soft.blued.R;
 import com.soft.blued.ui.user.observer.FollowAndFansSelectedTabObserver;
@@ -138,10 +137,9 @@ public class FollowedTabsFragment extends PreloadFragment implements FollowAndFa
             return;
         }
         TextView textView = this.t;
-        textView.setText(string + " " + i + BridgeUtil.SPLIT_MARK + i2);
+        textView.setText(string + " " + i + "/" + i2);
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         FragmentActivity activity = getActivity();
         this.k = activity;
@@ -163,19 +161,16 @@ public class FollowedTabsFragment extends PreloadFragment implements FollowAndFa
         this.n.setCurrentItem(i);
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         SecretlyFollowedObserver.a().b(this);
         FollowAndFansSelectedTabObserver.a().b(this);
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

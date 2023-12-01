@@ -14,11 +14,11 @@ import com.qq.e.comm.util.GDTLogger;
 public abstract class AbstractAD<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    public T f27851a;
+    public T f14163a;
     private volatile boolean e;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f27852c = false;
+    private volatile boolean f14164c = false;
     private volatile boolean d = false;
     private final Handler b = new Handler(Looper.getMainLooper());
 
@@ -41,27 +41,27 @@ public abstract class AbstractAD<T> {
                             public void run() {
                                 try {
                                     if (pOFactory == null) {
-                                        AbstractAD.this.f27852c = true;
+                                        AbstractAD.this.f14164c = true;
                                         AbstractAD.this.a(ErrorCode.PLUGIN_INIT_ERROR);
                                         return;
                                     }
-                                    AbstractAD.this.f27851a = (T) AbstractAD.this.a(context, pOFactory, a2, str, str2);
-                                    AbstractAD.this.f27852c = true;
-                                    if (AbstractAD.this.f27851a == null) {
+                                    AbstractAD.this.f14163a = (T) AbstractAD.this.a(context, pOFactory, a2, str, str2);
+                                    AbstractAD.this.f14164c = true;
+                                    if (AbstractAD.this.f14163a == null) {
                                         AbstractAD.this.a(ErrorCode.POFACTORY_GET_INTERFACE_ERROR);
                                     } else {
-                                        AbstractAD.this.a((AbstractAD) AbstractAD.this.f27851a);
+                                        AbstractAD.this.a((AbstractAD) AbstractAD.this.f14163a);
                                     }
                                 } catch (Throwable th) {
                                     GDTLogger.e("初始化错误：初始化广告实例时发生异常", th);
-                                    AbstractAD.this.f27852c = true;
+                                    AbstractAD.this.f14164c = true;
                                     AbstractAD.this.a(2001);
                                 }
                             }
                         });
                     } catch (Throwable th) {
                         GDTLogger.e("初始化错误：初始化插件时发生异常", th);
-                        AbstractAD.this.f27852c = true;
+                        AbstractAD.this.f14164c = true;
                         AbstractAD.this.a(ErrorCode.PLUGIN_INIT_ERROR);
                     }
                 }
@@ -118,6 +118,6 @@ public abstract class AbstractAD<T> {
     protected abstract void b(int i);
 
     public final boolean b() {
-        return this.f27852c;
+        return this.f14164c;
     }
 }

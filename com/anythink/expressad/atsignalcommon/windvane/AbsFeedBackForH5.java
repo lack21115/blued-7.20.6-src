@@ -11,11 +11,11 @@ import org.json.JSONObject;
 public abstract class AbsFeedBackForH5 extends l {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7096a = "onFeedbackAlertStatusNotify";
+    public static final String f4258a = "onFeedbackAlertStatusNotify";
     public static final String b = "status";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7097c = 1;
+    public static final int f4259c = 1;
     public static final int d = 2;
     private static int i = 0;
     private static int j = 1;
@@ -95,7 +95,7 @@ public abstract class AbsFeedBackForH5 extends l {
                 String optString = jSONObject.optString("key", "");
                 com.anythink.expressad.foundation.f.b a2 = com.anythink.expressad.foundation.f.b.a();
                 int i2 = optInt == 1 ? 8 : 0;
-                WindVaneWebView windVaneWebView = aVar.f7101a;
+                WindVaneWebView windVaneWebView = aVar.f4263a;
                 com.anythink.expressad.foundation.f.a.a a3 = a2.a(optString);
                 if (a3.c() != null) {
                     a3.a(i2);
@@ -144,7 +144,7 @@ public abstract class AbsFeedBackForH5 extends l {
             if (!TextUtils.isEmpty(str)) {
                 JSONObject jSONObject = new JSONObject(str);
                 jSONObject.optInt("deviceMotionUpdateInterval", 1);
-                com.anythink.expressad.atsignalcommon.c.a.a().a(obj, ((a) obj).f7101a, jSONObject.optString("oldCache", ""), jSONObject.optString("cache", ""));
+                com.anythink.expressad.atsignalcommon.c.a.a().a(obj, ((a) obj).f4263a, jSONObject.optString("oldCache", ""), jSONObject.optString("cache", ""));
             }
             callbackSuccess(obj);
         } catch (Throwable th) {
@@ -156,7 +156,7 @@ public abstract class AbsFeedBackForH5 extends l {
     public void stopShake(Object obj, String str) {
         try {
             if (!TextUtils.isEmpty(str)) {
-                com.anythink.expressad.atsignalcommon.c.a.a().a(obj, ((a) obj).f7101a, new JSONObject(str).optString("cache", ""));
+                com.anythink.expressad.atsignalcommon.c.a.a().a(obj, ((a) obj).f4263a, new JSONObject(str).optString("cache", ""));
             }
             callbackSuccess(obj);
         } catch (Throwable th) {

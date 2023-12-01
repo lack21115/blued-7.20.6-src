@@ -19,7 +19,6 @@ import com.google.protobuf.UnknownFieldSet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/irisgw/live/WishingContestText.class */
 public final class WishingContestText extends GeneratedMessageV3 implements WishingContestTextOrBuilder {
@@ -63,8 +62,8 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
     private volatile Object userName_;
     private static final WishingContestText DEFAULT_INSTANCE = new WishingContestText();
     private static final Parser<WishingContestText> PARSER = new AbstractParser<WishingContestText>() { // from class: cn.irisgw.live.WishingContestText.1
-        @Override // com.google.protobuf.Parser
-        public WishingContestText parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public WishingContestText m8264parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new WishingContestText(codedInputStream, extensionRegistryLite);
         }
     };
@@ -140,14 +139,14 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
 
         public Builder addAllChatFrameBorderColor(Iterable<String> iterable) {
             ensureChatFrameBorderColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameBorderColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameBorderColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameFrameColor(Iterable<String> iterable) {
             ensureChatFrameFrameColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameFrameColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameFrameColor_);
             onChanged();
             return this;
         }
@@ -155,7 +154,7 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         public Builder addChatFrameBorderColor(String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.add((LazyStringList) str);
+                this.chatFrameBorderColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -176,7 +175,7 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         public Builder addChatFrameFrameColor(String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.add((LazyStringList) str);
+                this.chatFrameFrameColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -194,22 +193,22 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m8266addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public WishingContestText build() {
-            WishingContestText buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public WishingContestText m8268build() {
+            WishingContestText m8270buildPartial = m8270buildPartial();
+            if (m8270buildPartial.isInitialized()) {
+                return m8270buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m8270buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public WishingContestText buildPartial() {
+        /* renamed from: buildPartial */
+        public WishingContestText m8270buildPartial() {
             WishingContestText wishingContestText = new WishingContestText(this);
             wishingContestText.event_ = this.event_;
             wishingContestText.url_ = this.url_;
@@ -241,8 +240,8 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             return wishingContestText;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m8274clear() {
             super.clear();
             this.event_ = 0;
             this.url_ = "";
@@ -311,8 +310,8 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m8276clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -352,8 +351,8 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m8279clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -387,10 +386,9 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m8285clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.WishingContestTextOrBuilder
@@ -427,7 +425,7 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
 
         @Override // cn.irisgw.live.WishingContestTextOrBuilder
         public String getChatFrameBorderColor(int i) {
-            return this.chatFrameBorderColor_.get(i);
+            return (String) this.chatFrameBorderColor_.get(i);
         }
 
         @Override // cn.irisgw.live.WishingContestTextOrBuilder
@@ -441,13 +439,14 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         }
 
         @Override // cn.irisgw.live.WishingContestTextOrBuilder
-        public ProtocolStringList getChatFrameBorderColorList() {
+        /* renamed from: getChatFrameBorderColorList */
+        public ProtocolStringList mo8255getChatFrameBorderColorList() {
             return this.chatFrameBorderColor_.getUnmodifiableView();
         }
 
         @Override // cn.irisgw.live.WishingContestTextOrBuilder
         public String getChatFrameFrameColor(int i) {
-            return this.chatFrameFrameColor_.get(i);
+            return (String) this.chatFrameFrameColor_.get(i);
         }
 
         @Override // cn.irisgw.live.WishingContestTextOrBuilder
@@ -461,7 +460,8 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         }
 
         @Override // cn.irisgw.live.WishingContestTextOrBuilder
-        public ProtocolStringList getChatFrameFrameColorList() {
+        /* renamed from: getChatFrameFrameColorList */
+        public ProtocolStringList mo8256getChatFrameFrameColorList() {
             return this.chatFrameFrameColor_.getUnmodifiableView();
         }
 
@@ -487,12 +487,11 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public WishingContestText getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public WishingContestText m8287getDefaultInstanceForType() {
             return WishingContestText.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_WishingContestText_descriptor;
         }
@@ -625,12 +624,10 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_WishingContestText_fieldAccessorTable.ensureFieldAccessorsInitialized(WishingContestText.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -713,18 +710,18 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             if (wishingContestText.getType() != 0) {
                 setType(wishingContestText.getType());
             }
-            mergeUnknownFields(wishingContestText.unknownFields);
+            m8296mergeUnknownFields(wishingContestText.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.WishingContestText.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.WishingContestText.Builder m8293mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -769,11 +766,11 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.WishingContestText.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.WishingContestText$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.WishingContestText.Builder.m8293mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.WishingContestText$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m8292mergeFrom(Message message) {
             if (message instanceof WishingContestText) {
                 return mergeFrom((WishingContestText) message);
             }
@@ -781,8 +778,8 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m8296mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -820,7 +817,7 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         public Builder setChatFrameBorderColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.set(i, (int) str);
+                this.chatFrameBorderColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -830,7 +827,7 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         public Builder setChatFrameFrameColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.set(i, (int) str);
+                this.chatFrameFrameColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -862,8 +859,8 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m8298setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -929,8 +926,8 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m8300setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -952,8 +949,8 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m8302setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
 
@@ -1070,7 +1067,7 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
                                 this.chatFrameFrameColor_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.chatFrameFrameColor_.add((LazyStringList) readStringRequireUtf8);
+                            this.chatFrameFrameColor_.add(readStringRequireUtf8);
                             z2 = z4;
                             continue;
                         case 122:
@@ -1080,7 +1077,7 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
                                 this.chatFrameBorderColor_ = new LazyStringArrayList();
                                 z5 = z2 | true;
                             }
-                            this.chatFrameBorderColor_.add((LazyStringList) readStringRequireUtf82);
+                            this.chatFrameBorderColor_.add(readStringRequireUtf82);
                             z2 = z5;
                             continue;
                         case 128:
@@ -1141,73 +1138,72 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m8263toBuilder();
     }
 
     public static Builder newBuilder(WishingContestText wishingContestText) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(wishingContestText);
+        return DEFAULT_INSTANCE.m8263toBuilder().mergeFrom(wishingContestText);
     }
 
     public static WishingContestText parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (WishingContestText) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static WishingContestText parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (WishingContestText) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static WishingContestText parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (WishingContestText) PARSER.parseFrom(byteString);
     }
 
     public static WishingContestText parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (WishingContestText) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static WishingContestText parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (WishingContestText) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static WishingContestText parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (WishingContestText) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static WishingContestText parseFrom(InputStream inputStream) throws IOException {
-        return (WishingContestText) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static WishingContestText parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (WishingContestText) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static WishingContestText parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (WishingContestText) PARSER.parseFrom(byteBuffer);
     }
 
     public static WishingContestText parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (WishingContestText) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static WishingContestText parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (WishingContestText) PARSER.parseFrom(bArr);
     }
 
     public static WishingContestText parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (WishingContestText) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<WishingContestText> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof WishingContestText) {
             WishingContestText wishingContestText = (WishingContestText) obj;
-            return getEvent() == wishingContestText.getEvent() && getUrl().equals(wishingContestText.getUrl()) && getScreenType() == wishingContestText.getScreenType() && getUid() == wishingContestText.getUid() && getUserName().equals(wishingContestText.getUserName()) && getAnchor() == wishingContestText.getAnchor() && getAnchorName().equals(wishingContestText.getAnchorName()) && getLid() == wishingContestText.getLid() && getGoodsId() == wishingContestText.getGoodsId() && getGoodsCount() == wishingContestText.getGoodsCount() && getGoodsName().equals(wishingContestText.getGoodsName()) && getGoodsUrl().equals(wishingContestText.getGoodsUrl()) && getChatFrameIcon().equals(wishingContestText.getChatFrameIcon()) && getChatFrameFrameColorList().equals(wishingContestText.getChatFrameFrameColorList()) && getChatFrameBorderColorList().equals(wishingContestText.getChatFrameBorderColorList()) && getHide() == wishingContestText.getHide() && getAnchorBeans() == wishingContestText.getAnchorBeans() && getType() == wishingContestText.getType() && this.unknownFields.equals(wishingContestText.unknownFields);
+            return getEvent() == wishingContestText.getEvent() && getUrl().equals(wishingContestText.getUrl()) && getScreenType() == wishingContestText.getScreenType() && getUid() == wishingContestText.getUid() && getUserName().equals(wishingContestText.getUserName()) && getAnchor() == wishingContestText.getAnchor() && getAnchorName().equals(wishingContestText.getAnchorName()) && getLid() == wishingContestText.getLid() && getGoodsId() == wishingContestText.getGoodsId() && getGoodsCount() == wishingContestText.getGoodsCount() && getGoodsName().equals(wishingContestText.getGoodsName()) && getGoodsUrl().equals(wishingContestText.getGoodsUrl()) && getChatFrameIcon().equals(wishingContestText.getChatFrameIcon()) && mo8256getChatFrameFrameColorList().equals(wishingContestText.mo8256getChatFrameFrameColorList()) && mo8255getChatFrameBorderColorList().equals(wishingContestText.mo8255getChatFrameBorderColorList()) && getHide() == wishingContestText.getHide() && getAnchorBeans() == wishingContestText.getAnchorBeans() && getType() == wishingContestText.getType() && this.unknownFields.equals(wishingContestText.unknownFields);
         }
         return super.equals(obj);
     }
@@ -1246,7 +1242,7 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
 
     @Override // cn.irisgw.live.WishingContestTextOrBuilder
     public String getChatFrameBorderColor(int i) {
-        return this.chatFrameBorderColor_.get(i);
+        return (String) this.chatFrameBorderColor_.get(i);
     }
 
     @Override // cn.irisgw.live.WishingContestTextOrBuilder
@@ -1260,13 +1256,14 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
     }
 
     @Override // cn.irisgw.live.WishingContestTextOrBuilder
-    public ProtocolStringList getChatFrameBorderColorList() {
+    /* renamed from: getChatFrameBorderColorList */
+    public ProtocolStringList mo8255getChatFrameBorderColorList() {
         return this.chatFrameBorderColor_;
     }
 
     @Override // cn.irisgw.live.WishingContestTextOrBuilder
     public String getChatFrameFrameColor(int i) {
-        return this.chatFrameFrameColor_.get(i);
+        return (String) this.chatFrameFrameColor_.get(i);
     }
 
     @Override // cn.irisgw.live.WishingContestTextOrBuilder
@@ -1280,7 +1277,8 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
     }
 
     @Override // cn.irisgw.live.WishingContestTextOrBuilder
-    public ProtocolStringList getChatFrameFrameColorList() {
+    /* renamed from: getChatFrameFrameColorList */
+    public ProtocolStringList mo8256getChatFrameFrameColorList() {
         return this.chatFrameFrameColor_;
     }
 
@@ -1306,8 +1304,8 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public WishingContestText getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public WishingContestText m8258getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1380,7 +1378,6 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         return this.lid_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<WishingContestText> getParserForType() {
         return PARSER;
     }
@@ -1390,7 +1387,6 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         return this.screenType_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1456,7 +1452,7 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         for (int i22 = 0; i22 < this.chatFrameFrameColor_.size(); i22++) {
             i21 += computeStringSizeNoTag(this.chatFrameFrameColor_.getRaw(i22));
         }
-        int size = getChatFrameFrameColorList().size();
+        int size = mo8256getChatFrameFrameColorList().size();
         int i23 = 0;
         int i24 = 0;
         while (true) {
@@ -1467,7 +1463,7 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
             i23 += computeStringSizeNoTag(this.chatFrameBorderColor_.getRaw(i25));
             i24 = i25 + 1;
         }
-        int size2 = i20 + i21 + (size * 1) + i23 + (getChatFrameBorderColorList().size() * 1);
+        int size2 = i20 + i21 + (size * 1) + i23 + (mo8255getChatFrameBorderColorList().size() * 1);
         boolean z = this.hide_;
         int i26 = size2;
         if (z) {
@@ -1498,7 +1494,6 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         return this.uid_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1547,7 +1542,6 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1555,23 +1549,21 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         int hashCode = ((((((((((((((((((((((((((((((((((((((((((((((((((((779 + getDescriptor().hashCode()) * 37) + 1) * 53) + getEvent()) * 37) + 2) * 53) + getUrl().hashCode()) * 37) + 3) * 53) + getScreenType()) * 37) + 4) * 53) + getUid()) * 37) + 5) * 53) + getUserName().hashCode()) * 37) + 6) * 53) + getAnchor()) * 37) + 7) * 53) + getAnchorName().hashCode()) * 37) + 8) * 53) + getLid()) * 37) + 9) * 53) + getGoodsId()) * 37) + 10) * 53) + getGoodsCount()) * 37) + 11) * 53) + getGoodsName().hashCode()) * 37) + 12) * 53) + getGoodsUrl().hashCode()) * 37) + 13) * 53) + getChatFrameIcon().hashCode();
         int i = hashCode;
         if (getChatFrameFrameColorCount() > 0) {
-            i = (((hashCode * 37) + 14) * 53) + getChatFrameFrameColorList().hashCode();
+            i = (((hashCode * 37) + 14) * 53) + mo8256getChatFrameFrameColorList().hashCode();
         }
         int i2 = i;
         if (getChatFrameBorderColorCount() > 0) {
-            i2 = (((i * 37) + 15) * 53) + getChatFrameBorderColorList().hashCode();
+            i2 = (((i * 37) + 15) * 53) + mo8255getChatFrameBorderColorList().hashCode();
         }
         int hashBoolean = (((((((((((((i2 * 37) + 16) * 53) + Internal.hashBoolean(getHide())) * 37) + 17) * 53) + getAnchorBeans()) * 37) + 18) * 53) + getType()) * 29) + this.unknownFields.hashCode();
         this.memoizedHashCode = hashBoolean;
         return hashBoolean;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_WishingContestText_fieldAccessorTable.ensureFieldAccessorsInitialized(WishingContestText.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1584,28 +1576,26 @@ public final class WishingContestText extends GeneratedMessageV3 implements Wish
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m8261newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m8260newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new WishingContestText();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m8263toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i;
         int i2 = this.event_;

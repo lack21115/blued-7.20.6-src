@@ -6,11 +6,11 @@ import android.text.TextUtils;
 public final class p extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23355a = 9;
+    public static final int f9747a = 9;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f23356c = "";
+    public String f9748c = "";
     public String d = "";
     public String e = "";
 
@@ -34,7 +34,7 @@ public final class p extends c {
         if (bArr.length > 8) {
             int i3 = bArr[8] & 255;
             if (i3 > 0) {
-                this.f23356c = a(bArr, 9, i3);
+                this.f9748c = a(bArr, 9, i3);
                 i2 = 9 + i3;
             }
         } else {
@@ -58,28 +58,28 @@ public final class p extends c {
     @Override // com.igexin.push.c.c.c
     public final byte[] b() {
         if (TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.e)) {
-            byte[] bytes = this.f23356c.getBytes();
+            byte[] bytes = this.f9748c.getBytes();
             byte[] bArr = new byte[bytes.length + 8 + 1];
             com.igexin.c.a.b.g.a(this.b, bArr, 0);
             bArr[8] = (byte) bytes.length;
-            System.arraycopy((Object) bytes, 0, (Object) bArr, 9, bytes.length);
+            System.arraycopy(bytes, 0, bArr, 9, bytes.length);
             return bArr;
         }
-        byte[] bytes2 = this.f23356c.getBytes();
+        byte[] bytes2 = this.f9748c.getBytes();
         byte[] bytes3 = this.d.getBytes();
         byte[] bytes4 = this.e.getBytes();
         byte[] bArr2 = new byte[bytes2.length + 8 + bytes3.length + bytes4.length + 3];
         com.igexin.c.a.b.g.a(this.b, bArr2, 0);
         bArr2[8] = (byte) bytes2.length;
-        System.arraycopy((Object) bytes2, 0, (Object) bArr2, 9, bytes2.length);
+        System.arraycopy(bytes2, 0, bArr2, 9, bytes2.length);
         int length = bytes2.length + 9;
         int length2 = bytes3.length;
         int i = length + 1;
         bArr2[length] = (byte) length2;
-        System.arraycopy((Object) bytes3, 0, (Object) bArr2, i, bytes3.length);
+        System.arraycopy(bytes3, 0, bArr2, i, bytes3.length);
         int length3 = i + bytes3.length;
         bArr2[length3] = (byte) bytes4.length;
-        System.arraycopy((Object) bytes4, 0, (Object) bArr2, length3 + 1, bytes4.length);
+        System.arraycopy(bytes4, 0, bArr2, length3 + 1, bytes4.length);
         return bArr2;
     }
 }

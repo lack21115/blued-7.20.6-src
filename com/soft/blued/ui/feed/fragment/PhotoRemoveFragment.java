@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.ui.BaseFragment;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.community.ui.send.manager.SelectPhotoManager;
 import com.blued.community.ui.send.model.ChildImageInfo;
@@ -26,11 +25,11 @@ import java.util.List;
 public class PhotoRemoveFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f29969a;
+    private View f16279a;
     private HackyViewPager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImagePagerAdapter f29970c;
+    private ImagePagerAdapter f16280c;
     private View d;
     private ImageView e;
     private ImageView f;
@@ -63,7 +62,7 @@ public class PhotoRemoveFragment extends BaseFragment implements View.OnClickLis
     }
 
     private void a() {
-        View findViewById = this.f29969a.findViewById(2131370694);
+        View findViewById = this.f16279a.findViewById(2131370694);
         this.d = findViewById;
         this.e = (ImageView) findViewById.findViewById(2131363120);
         this.g = (TextView) this.d.findViewById(2131363108);
@@ -71,7 +70,7 @@ public class PhotoRemoveFragment extends BaseFragment implements View.OnClickLis
         this.e.setOnClickListener(this);
         this.f.setOnClickListener(this);
         TextView textView = this.g;
-        textView.setText((this.h + 1) + BridgeUtil.SPLIT_MARK + this.i.size());
+        textView.setText((this.h + 1) + "/" + this.i.size());
     }
 
     private void b() {
@@ -84,9 +83,9 @@ public class PhotoRemoveFragment extends BaseFragment implements View.OnClickLis
     }
 
     private void c() {
-        this.b = (HackyViewPager) this.f29969a.findViewById(2131368810);
+        this.b = (HackyViewPager) this.f16279a.findViewById(2131368810);
         ImagePagerAdapter imagePagerAdapter = new ImagePagerAdapter(getChildFragmentManager());
-        this.f29970c = imagePagerAdapter;
+        this.f16280c = imagePagerAdapter;
         this.b.setAdapter(imagePagerAdapter);
         this.b.setCurrentItem(this.h);
         this.b.setOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoRemoveFragment.1
@@ -102,7 +101,7 @@ public class PhotoRemoveFragment extends BaseFragment implements View.OnClickLis
             public void onPageSelected(int i) {
                 PhotoRemoveFragment.this.h = i;
                 TextView textView = PhotoRemoveFragment.this.g;
-                textView.setText((PhotoRemoveFragment.this.h + 1) + BridgeUtil.SPLIT_MARK + PhotoRemoveFragment.this.i.size());
+                textView.setText((PhotoRemoveFragment.this.h + 1) + "/" + PhotoRemoveFragment.this.i.size());
             }
         });
     }
@@ -122,16 +121,16 @@ public class PhotoRemoveFragment extends BaseFragment implements View.OnClickLis
                     int currentItem = PhotoRemoveFragment.this.b.getCurrentItem();
                     SelectPhotoManager.a().a(((ChildImageInfo) PhotoRemoveFragment.this.i.get(currentItem)).mImagePath);
                     PhotoRemoveFragment.this.i.remove(currentItem);
-                    PhotoRemoveFragment.this.b.setAdapter(PhotoRemoveFragment.this.f29970c);
+                    PhotoRemoveFragment.this.b.setAdapter(PhotoRemoveFragment.this.f16280c);
                     PhotoRemoveFragment.this.b.setCurrentItem(currentItem);
                     if (currentItem != PhotoRemoveFragment.this.i.size()) {
                         TextView textView = PhotoRemoveFragment.this.g;
-                        textView.setText((currentItem + 1) + BridgeUtil.SPLIT_MARK + PhotoRemoveFragment.this.i.size());
+                        textView.setText((currentItem + 1) + "/" + PhotoRemoveFragment.this.i.size());
                     } else if (PhotoRemoveFragment.this.i.size() == 0) {
                         PhotoRemoveFragment.this.g.setText("1/1");
                     } else {
                         TextView textView2 = PhotoRemoveFragment.this.g;
-                        textView2.setText(PhotoRemoveFragment.this.i.size() + BridgeUtil.SPLIT_MARK + PhotoRemoveFragment.this.i.size());
+                        textView2.setText(PhotoRemoveFragment.this.i.size() + "/" + PhotoRemoveFragment.this.i.size());
                     }
                     if (currentItem == PhotoRemoveFragment.this.i.size() && PhotoRemoveFragment.this.i.size() == 0) {
                         PhotoRemoveFragment.this.getActivity().finish();
@@ -141,22 +140,20 @@ public class PhotoRemoveFragment extends BaseFragment implements View.OnClickLis
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View view = this.f29969a;
+        View view = this.f16279a;
         if (view == null) {
-            this.f29969a = layoutInflater.inflate(R.layout.fragment_feed_photo_remove, viewGroup, false);
+            this.f16279a = layoutInflater.inflate(R.layout.fragment_feed_photo_remove, viewGroup, false);
             b();
             c();
             a();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f29969a.getParent()).removeView(this.f29969a);
+            ((ViewGroup) this.f16279a.getParent()).removeView(this.f16279a);
         }
-        return this.f29969a;
+        return this.f16279a;
     }
 }

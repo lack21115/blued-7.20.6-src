@@ -7,20 +7,20 @@ import android.os.SystemClock;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static long f7856a;
+    private static long f5016a;
     private static long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static long f7857c;
+    private static long f5017c;
 
     /* renamed from: com.anythink.expressad.foundation.g.f.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/foundation/g/f/a$a.class */
-    static final class C0146a {
+    static final class C0075a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static a f7859a = new a((byte) 0);
+        private static a f5019a = new a((byte) 0);
 
-        private C0146a() {
+        private C0075a() {
         }
     }
 
@@ -32,7 +32,7 @@ public final class a {
     }
 
     public static a a() {
-        return C0146a.f7859a;
+        return C0075a.f5019a;
     }
 
     public static long b() {
@@ -41,21 +41,21 @@ public final class a {
 
     private void c() {
         synchronized (this) {
-            if (f7856a == 0) {
-                f7856a = SystemClock.elapsedRealtime();
-                f7857c = TrafficStats.getTotalRxBytes();
+            if (f5016a == 0) {
+                f5016a = SystemClock.elapsedRealtime();
+                f5017c = TrafficStats.getTotalRxBytes();
             }
         }
     }
 
     private void d() {
         synchronized (this) {
-            if (f7856a != 0 && f7857c != 0) {
-                long elapsedRealtime = SystemClock.elapsedRealtime() - f7856a;
+            if (f5016a != 0 && f5017c != 0) {
+                long elapsedRealtime = SystemClock.elapsedRealtime() - f5016a;
                 if (elapsedRealtime != 0) {
                     try {
                         if (TrafficStats.getTotalRxBytes() != -1) {
-                            long totalRxBytes = ((TrafficStats.getTotalRxBytes() - f7857c) * 1000) / elapsedRealtime;
+                            long totalRxBytes = ((TrafficStats.getTotalRxBytes() - f5017c) * 1000) / elapsedRealtime;
                             if (totalRxBytes == 0) {
                                 b = 1L;
                             } else {
@@ -75,8 +75,8 @@ public final class a {
 
     private void e() {
         synchronized (this) {
-            f7857c = 0L;
-            f7856a = 0L;
+            f5017c = 0L;
+            f5016a = 0L;
         }
     }
 }

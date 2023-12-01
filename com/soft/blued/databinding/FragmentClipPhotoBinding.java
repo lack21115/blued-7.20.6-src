@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentClipPhotoBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28800a;
+    private final FrameLayout f15110a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28800a;
+        return this.f15110a;
     }
 }

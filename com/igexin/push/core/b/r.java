@@ -6,15 +6,15 @@ import com.igexin.push.extension.mod.BaseActionBean;
 public final class r extends BaseActionBean {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f23458a;
+    public String f9850a;
     public boolean b;
 
     private String a() {
-        return this.f23458a;
+        return this.f9850a;
     }
 
     private void a(String str) {
-        this.f23458a = str;
+        this.f9850a = str;
     }
 
     private void a(boolean z) {

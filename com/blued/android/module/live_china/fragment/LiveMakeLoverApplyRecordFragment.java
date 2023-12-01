@@ -17,13 +17,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveMakeLoverApplyRecordFragment.class */
 public class LiveMakeLoverApplyRecordFragment extends MvpFragment<LiveMakeLoverApplyRecordPresent> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    TextView f13029a;
+    TextView a;
     ViewPager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    View f13030c;
+    View c;
     TextView d;
     View e;
     View f;
@@ -36,15 +32,12 @@ public class LiveMakeLoverApplyRecordFragment extends MvpFragment<LiveMakeLoverA
     private int p = -1;
     private int q = -1;
     private ViewPager.OnPageChangeListener r = new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.fragment.LiveMakeLoverApplyRecordFragment.1
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrolled(int i, float f, int i2) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
             LiveMakeLoverApplyRecordFragment.this.a(i);
         }
@@ -52,26 +45,21 @@ public class LiveMakeLoverApplyRecordFragment extends MvpFragment<LiveMakeLoverA
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveMakeLoverApplyRecordFragment$MyAdapter.class */
     public class MyAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        FragmentManager f13032a;
+        FragmentManager a;
 
         public MyAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
-            this.f13032a = fragmentManager;
+            this.a = fragmentManager;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             super.destroyItem(viewGroup, i, obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return LiveMakeLoverApplyRecordFragment.this.l;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             if (i == 0) {
                 Bundle bundle = new Bundle();
@@ -103,9 +91,9 @@ public class LiveMakeLoverApplyRecordFragment extends MvpFragment<LiveMakeLoverA
     }
 
     private void d() {
-        this.f13029a = (TextView) this.i.findViewById(R.id.tv_title);
-        this.b = (ViewPager) this.i.findViewById(R.id.view_pager);
-        this.f13030c = this.i.findViewById(R.id.ll_selected);
+        this.a = (TextView) this.i.findViewById(R.id.tv_title);
+        this.b = this.i.findViewById(R.id.view_pager);
+        this.c = this.i.findViewById(R.id.ll_selected);
         this.d = (TextView) this.i.findViewById(R.id.tv_selected_title);
         this.e = this.i.findViewById(R.id.ll_selected_line);
         this.f = this.i.findViewById(R.id.ll_select);
@@ -115,7 +103,7 @@ public class LiveMakeLoverApplyRecordFragment extends MvpFragment<LiveMakeLoverA
         this.m = myAdapter;
         this.b.setAdapter(myAdapter);
         this.b.setOnPageChangeListener(this.r);
-        this.f13030c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
         this.f.setOnClickListener(this);
         a(0);
     }
@@ -166,7 +154,7 @@ public class LiveMakeLoverApplyRecordFragment extends MvpFragment<LiveMakeLoverA
 
     public LiveMakeLoverDialogFragment b() {
         if (getParentFragment() instanceof LiveMakeLoverDialogFragment) {
-            return (LiveMakeLoverDialogFragment) getParentFragment();
+            return getParentFragment();
         }
         return null;
     }
@@ -209,7 +197,7 @@ public class LiveMakeLoverApplyRecordFragment extends MvpFragment<LiveMakeLoverA
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         c();
@@ -220,7 +208,7 @@ public class LiveMakeLoverApplyRecordFragment extends MvpFragment<LiveMakeLoverA
         super.p();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
     }

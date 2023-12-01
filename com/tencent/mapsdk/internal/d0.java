@@ -71,16 +71,16 @@ public class d0 implements ce, d9, h8, l5, oe {
     public class a implements te {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37380a;
+        public final /* synthetic */ boolean f23689a;
 
         public a(boolean z) {
-            this.f37380a = z;
+            this.f23689a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.te
         public void a() {
             PointF o = d0.this.o();
-            d0.this.a(o.x, o.y, this.f37380a);
+            d0.this.a(o.x, o.y, this.f23689a);
             d0.this.b(this);
         }
     }
@@ -226,18 +226,18 @@ public class d0 implements ce, d9, h8, l5, oe {
         public final /* synthetic */ GeoPoint b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ float f37383c;
+        public final /* synthetic */ float f23692c;
         public final /* synthetic */ Runnable d;
 
         public g(GeoPoint geoPoint, float f, Runnable runnable) {
             this.b = geoPoint;
-            this.f37383c = f;
+            this.f23692c = f;
             this.d = runnable;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            d0.this.b(this.b, this.f37383c, this.d);
+            d0.this.b(this.b, this.f23692c, this.d);
         }
     }
 
@@ -336,7 +336,7 @@ public class d0 implements ce, d9, h8, l5, oe {
             if (runnable != null) {
                 a9 a9Var = new a9(runnable);
                 a9Var.e = true;
-                a9Var.f37292c = 0L;
+                a9Var.f23601c = 0L;
                 b(a9Var);
                 return;
             }
@@ -347,7 +347,7 @@ public class d0 implements ce, d9, h8, l5, oe {
         if (runnable != null) {
             a9 a9Var2 = new a9(runnable);
             a9Var2.e = true;
-            a9Var2.f37292c = 0L;
+            a9Var2.f23601c = 0L;
             b(a9Var2);
         }
     }
@@ -478,7 +478,7 @@ public class d0 implements ce, d9, h8, l5, oe {
     }
 
     private void c(a9 a9Var) {
-        int i = a9Var.f37291a;
+        int i = a9Var.f23600a;
         if (i == 2) {
             a1 a1Var = this.w;
             if (a1Var == null || a1Var.getMapRenderView() == null) {
@@ -968,7 +968,7 @@ public class d0 implements ce, d9, h8, l5, oe {
         b(new a9(101, new double[]{d2, d3, d4, d8, d7}));
         a9 a9Var = new a9(runnable);
         a9Var.e = false;
-        a9Var.f37292c = 0L;
+        a9Var.f23601c = 0L;
         b(a9Var);
     }
 
@@ -1215,7 +1215,7 @@ public class d0 implements ce, d9, h8, l5, oe {
             double r1 = r1.b
             int r1 = (int) r1
             r2 = r7
-            double r2 = r2.f37683c
+            double r2 = r2.f23992c
             int r2 = (int) r2
             boolean r0 = r0.contains(r1, r2)
             if (r0 == 0) goto L21
@@ -1258,7 +1258,7 @@ public class d0 implements ce, d9, h8, l5, oe {
             r9 = r0
         L57:
             r0 = r7
-            double r0 = r0.f37683c
+            double r0 = r0.f23992c
             r13 = r0
             r0 = r8
             int r0 = r0.top
@@ -1298,10 +1298,10 @@ public class d0 implements ce, d9, h8, l5, oe {
             r0.b = r1
             r0 = r7
             r1 = r7
-            double r1 = r1.f37683c
+            double r1 = r1.f23992c
             r2 = r11
             double r1 = r1 - r2
-            r0.f37683c = r1
+            r0.f23992c = r1
             r0 = r6
             r1 = r16
             r2 = r7
@@ -1525,7 +1525,7 @@ public class d0 implements ce, d9, h8, l5, oe {
         p5 a2 = this.z.a(geoPoint);
         p5 a3 = this.z.a(geoPoint2);
         double d2 = a3.b - a2.b;
-        double d3 = a3.f37683c - a2.f37683c;
+        double d3 = a3.f23992c - a2.f23992c;
         return Math.sqrt((d2 * d2) + (d3 * d3));
     }
 
@@ -1597,10 +1597,10 @@ public class d0 implements ce, d9, h8, l5, oe {
         double centerX = rect.centerX();
         double d2 = a2.b;
         double centerY = rect.centerY();
-        double d3 = a2.f37683c;
+        double d3 = a2.f23992c;
         p5 a3 = t4Var.a(h());
         a3.b -= centerX - d2;
-        a3.f37683c -= centerY - d3;
+        a3.f23992c -= centerY - d3;
         a(t4Var.a(a3));
     }
 
@@ -1713,7 +1713,7 @@ public class d0 implements ce, d9, h8, l5, oe {
         p5 a3 = this.z.a(geoPoint);
         if (this.A != null) {
             double abs = Math.abs(a2.b - a3.b);
-            double abs2 = Math.abs(a2.f37683c - a3.f37683c);
+            double abs2 = Math.abs(a2.f23992c - a3.f23992c);
             if (abs > this.A.width() || abs2 > this.A.height()) {
                 z = false;
                 return (contains || z) ? false : true;
@@ -1745,7 +1745,7 @@ public class d0 implements ce, d9, h8, l5, oe {
         if (d2 < 0.0d) {
             d3 = Math.abs(d2);
         }
-        double d4 = a3.f37683c - a2.f37683c;
+        double d4 = a3.f23992c - a2.f23992c;
         double d5 = d4;
         if (d4 < 0.0d) {
             d5 = Math.abs(d4);

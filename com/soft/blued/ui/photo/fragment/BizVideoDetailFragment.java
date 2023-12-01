@@ -9,7 +9,7 @@ import com.soft.blued.log.InstantLog;
 public class BizVideoDetailFragment extends VideoDetailFragment {
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f33059c;
+    public boolean f19368c;
     private int d;
     private String e;
     private String f;
@@ -43,7 +43,6 @@ public class BizVideoDetailFragment extends VideoDetailFragment {
         return videoPlayConfig;
     }
 
-    @Override // com.blued.android.module.player.media.fragment.VideoDetailFragment
     public void a() {
         this.d = getArguments() != null ? getArguments().getInt("come_code") : 0;
         this.e = getArguments() != null ? getArguments().getString("key_feed_id") : "";
@@ -58,30 +57,26 @@ public class BizVideoDetailFragment extends VideoDetailFragment {
         }
     }
 
-    @Override // com.blued.android.module.player.media.fragment.VideoDetailFragment, androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
-        if (this.f33059c) {
+        if (this.f19368c) {
             b().c();
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         getActivity().getWindow().setFlags(128, 128);
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.module.player.media.fragment.VideoDetailFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         e();
         super.onResume();
     }
 
-    @Override // com.blued.android.module.player.media.fragment.VideoDetailFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
-        this.f33059c = z;
+        this.f19368c = z;
         if (!z || b() == null) {
             return;
         }

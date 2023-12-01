@@ -19,10 +19,10 @@ public final class DebugStringsKt {
             return continuation.toString();
         }
         try {
-            Result.Companion companion = Result.f42293a;
+            Result.Companion companion = Result.a;
             f = Result.f(continuation + '@' + a((Object) continuation));
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             f = Result.f(ResultKt.a(th));
         }
         if (Result.c(f) != null) {

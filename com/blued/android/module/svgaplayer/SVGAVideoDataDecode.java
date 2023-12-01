@@ -1,7 +1,6 @@
 package com.blued.android.module.svgaplayer;
 
 import android.graphics.Bitmap;
-import com.anythink.expressad.foundation.d.d;
 import com.blued.android.module.svgaplayer.bitmap.SVGABitmapByteArrayDecoder;
 import com.blued.android.module.svgaplayer.bitmap.SVGABitmapFileDecoder;
 import com.blued.android.module.svgaplayer.entities.SVGAVideoData;
@@ -31,14 +30,12 @@ import org.json.JSONObject;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGAVideoDataDecode.class */
 public final class SVGAVideoDataDecode {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final SVGAVideoDataDecode f15977a;
+    public static final SVGAVideoDataDecode a;
     private static final String b;
 
     static {
         SVGAVideoDataDecode sVGAVideoDataDecode = new SVGAVideoDataDecode();
-        f15977a = sVGAVideoDataDecode;
+        a = sVGAVideoDataDecode;
         String simpleName = sVGAVideoDataDecode.getClass().getSimpleName();
         Intrinsics.c(simpleName, "this::class.java.simpleName");
         b = simpleName;
@@ -48,7 +45,7 @@ public final class SVGAVideoDataDecode {
     }
 
     private final Bitmap a(SVGAVideoData sVGAVideoData, byte[] bArr, String str) {
-        Bitmap a2 = SVGABitmapByteArrayDecoder.f15984a.a(bArr, sVGAVideoData.k(), sVGAVideoData.j());
+        Bitmap a2 = SVGABitmapByteArrayDecoder.a.a(bArr, sVGAVideoData.k(), sVGAVideoData.j());
         Bitmap bitmap = a2;
         if (a2 == null) {
             bitmap = a(str, sVGAVideoData.k(), sVGAVideoData.j());
@@ -57,15 +54,15 @@ public final class SVGAVideoDataDecode {
     }
 
     private final Bitmap a(String str, int i, int i2) {
-        return SVGABitmapFileDecoder.f15985a.a(str, i, i2);
+        return SVGABitmapFileDecoder.a.a(str, i, i2);
     }
 
     private final String a(File file, String str, String str2) {
         if (file == null) {
-            LogUtils.f16034a.d(b, "generateBitmapFilePath:: cacheDir is null");
+            LogUtils.a.d(b, "generateBitmapFilePath:: cacheDir is null");
             return "";
         }
-        LogUtils.f16034a.a(b, "generateBitmapFilePath:: cacheDir=" + file.getAbsolutePath() + ", imgName=" + str + ", imgKey=" + str2);
+        LogUtils.a.a(b, "generateBitmapFilePath:: cacheDir=" + file.getAbsolutePath() + ", imgName=" + str + ", imgKey=" + str2);
         String str3 = file.getAbsolutePath() + '/' + str;
         String str4 = str3 + ".png";
         String str5 = file.getAbsolutePath() + '/' + str2 + ".png";
@@ -89,12 +86,12 @@ public final class SVGAVideoDataDecode {
             if (byteArray.length >= 4) {
                 List<Byte> a2 = ArraysKt.a(byteArray, new IntRange(0, 3));
                 if (a2.get(0).byteValue() != 73 || a2.get(1).byteValue() != 68 || a2.get(2).byteValue() != 51) {
-                    SVGAVideoDataDecode sVGAVideoDataDecode = f15977a;
+                    SVGAVideoDataDecode sVGAVideoDataDecode = a;
                     File i = sVGAVideoData.i();
                     String utf8 = entry.getValue().utf8();
                     String key = entry.getKey();
                     Intrinsics.c(key, "entry.key");
-                    Bitmap a3 = f15977a.a(sVGAVideoData, byteArray, sVGAVideoDataDecode.a(i, utf8, key));
+                    Bitmap a3 = a.a(sVGAVideoData, byteArray, sVGAVideoDataDecode.a(i, utf8, key));
                     if (a3 != null) {
                         HashMap<String, Bitmap> h = sVGAVideoData.h();
                         String key2 = entry.getKey();
@@ -127,7 +124,7 @@ public final class SVGAVideoDataDecode {
             sVGAVideoData.a(new SVGARect(0.0d, 0.0d, optJSONObject.optDouble("width", 0.0d), optJSONObject.optDouble("height", 0.0d)));
         }
         sVGAVideoData.a(jSONObject.optInt("fps", 20));
-        sVGAVideoData.b(jSONObject.optInt(d.j, 0));
+        sVGAVideoData.b(jSONObject.optInt("frames", 0));
     }
 
     private final void b(SVGAVideoData sVGAVideoData, MovieEntity movieEntity) {
@@ -156,7 +153,7 @@ public final class SVGAVideoDataDecode {
         Intrinsics.c(keys, "imgJson.keys()");
         while (keys.hasNext()) {
             String imgKey = keys.next();
-            SVGAVideoDataDecode sVGAVideoDataDecode = f15977a;
+            SVGAVideoDataDecode sVGAVideoDataDecode = a;
             File i = sVGAVideoData.i();
             String obj = optJSONObject.get(imgKey).toString();
             Intrinsics.c(imgKey, "imgKey");
@@ -165,7 +162,7 @@ public final class SVGAVideoDataDecode {
                 return;
             }
             String a3 = StringsKt.a(imgKey, ".matte", "", false, 4, (Object) null);
-            Bitmap a4 = f15977a.a(a2, sVGAVideoData.k(), sVGAVideoData.j());
+            Bitmap a4 = a.a(a2, sVGAVideoData.k(), sVGAVideoData.j());
             if (a4 != null) {
                 sVGAVideoData.h().put(a3, a4);
             }
@@ -198,7 +195,7 @@ public final class SVGAVideoDataDecode {
         sVGAVideoData.a(entity);
         MovieParams movieParams = entity.params;
         if (movieParams != null) {
-            f15977a.a(sVGAVideoData, movieParams);
+            a.a(sVGAVideoData, movieParams);
         }
         try {
             a(sVGAVideoData, entity);
@@ -214,7 +211,7 @@ public final class SVGAVideoDataDecode {
     public final SVGAVideoData a(JSONObject json, File cacheDir, int i, int i2) {
         Intrinsics.e(json, "json");
         Intrinsics.e(cacheDir, "cacheDir");
-        LogUtils logUtils = LogUtils.f16034a;
+        LogUtils logUtils = LogUtils.a;
         String str = b;
         logUtils.a(str, "decode:: json=" + json + ", cacheDir=" + cacheDir + ", frameWidth=" + i + ", frameHeight=" + i2);
         SVGAVideoData sVGAVideoData = new SVGAVideoData();
@@ -223,7 +220,7 @@ public final class SVGAVideoDataDecode {
         sVGAVideoData.a(cacheDir);
         JSONObject optJSONObject = json.optJSONObject("movie");
         if (optJSONObject == null) {
-            LogUtils.f16034a.d(b, "decode:: error no movie data ");
+            LogUtils.a.d(b, "decode:: error no movie data ");
             return sVGAVideoData;
         }
         a(sVGAVideoData, optJSONObject);

@@ -7,14 +7,12 @@ import mtopsdk.mtop.domain.IMTOPDataObject;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/common/ApiID.class */
 public class ApiID implements IMTOPDataObject {
-
-    /* renamed from: a  reason: collision with root package name */
-    private MtopProxy f43706a;
+    private MtopProxy a;
     private volatile a b;
 
     public ApiID(a aVar, MtopProxy mtopProxy) {
         this.b = aVar;
-        this.f43706a = mtopProxy;
+        this.a = mtopProxy;
     }
 
     public a a() {
@@ -35,6 +33,6 @@ public class ApiID implements IMTOPDataObject {
     }
 
     public String toString() {
-        return "ApiID [call=" + this.b + ", mtopProxy=" + this.f43706a + "]";
+        return "ApiID [call=" + this.b + ", mtopProxy=" + this.a + "]";
     }
 }

@@ -15,68 +15,68 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/adapter/MsgMenuPopAdapter.class */
 public final class MsgMenuPopAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public MsgMenuPopAdapter(List<String> data) {
-        super(R.layout.item_msg_menu_pop, data);
-        Intrinsics.e(data, "data");
+    public MsgMenuPopAdapter(List<String> list) {
+        super(R.layout.item_msg_menu_pop, list);
+        Intrinsics.e(list, "data");
     }
 
     private final void a(ShapeTextView shapeTextView) {
-        ShapeTextView shapeTextView2 = shapeTextView;
-        ShapeHelper.a(shapeTextView2, 0.0f, 0.0f, 0.0f, 0.0f);
-        ShapeHelper.b(shapeTextView2, 2131101827);
+        ShapeHelper.ShapeView shapeView = (ShapeHelper.ShapeView) shapeTextView;
+        ShapeHelper.a(shapeView, 0.0f, 0.0f, 0.0f, 0.0f);
+        ShapeHelper.b(shapeView, 2131101827);
     }
 
     private final void b(ShapeTextView shapeTextView) {
-        ShapeTextView shapeTextView2 = shapeTextView;
-        ShapeHelper.a(shapeTextView2, 0.0f, BluedViewExtKt.a(3.0f), 0.0f, BluedViewExtKt.a(3.0f));
-        ShapeHelper.b(shapeTextView2, 2131101827);
+        ShapeHelper.ShapeView shapeView = (ShapeHelper.ShapeView) shapeTextView;
+        ShapeHelper.a(shapeView, 0.0f, BluedViewExtKt.a(3.0f), 0.0f, BluedViewExtKt.a(3.0f));
+        ShapeHelper.b(shapeView, 2131101827);
     }
 
     private final void c(ShapeTextView shapeTextView) {
-        ShapeTextView shapeTextView2 = shapeTextView;
-        ShapeHelper.a(shapeTextView2, BluedViewExtKt.a(3.0f), 0.0f, BluedViewExtKt.a(3.0f), 0.0f);
-        ShapeHelper.b(shapeTextView2, 2131101827);
+        ShapeHelper.ShapeView shapeView = (ShapeHelper.ShapeView) shapeTextView;
+        ShapeHelper.a(shapeView, BluedViewExtKt.a(3.0f), 0.0f, BluedViewExtKt.a(3.0f), 0.0f);
+        ShapeHelper.b(shapeView, 2131101827);
     }
 
     private final void d(ShapeTextView shapeTextView) {
-        ShapeTextView shapeTextView2 = shapeTextView;
-        ShapeHelper.a(shapeTextView2, BluedViewExtKt.a(3.0f));
-        ShapeHelper.b(shapeTextView2, 2131101827);
+        ShapeHelper.ShapeView shapeView = (ShapeHelper.ShapeView) shapeTextView;
+        ShapeHelper.a(shapeView, BluedViewExtKt.a(3.0f));
+        ShapeHelper.b(shapeView, 2131101827);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, String item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        ShapeTextView tv = (ShapeTextView) helper.getView(2131371023);
-        tv.setText(item);
+    public void convert(BaseViewHolder baseViewHolder, String str) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(str, "item");
+        ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.tv_btn);
+        shapeTextView.setText(str);
         if (getData().size() == 1) {
-            Intrinsics.c(tv, "tv");
-            d(tv);
+            Intrinsics.c(shapeTextView, "tv");
+            d(shapeTextView);
         } else {
-            int adapterPosition = helper.getAdapterPosition();
+            int adapterPosition = baseViewHolder.getAdapterPosition();
             if (adapterPosition == 0) {
-                Intrinsics.c(tv, "tv");
-                c(tv);
+                Intrinsics.c(shapeTextView, "tv");
+                c(shapeTextView);
             } else if (adapterPosition == getData().size() - 1) {
-                Intrinsics.c(tv, "tv");
-                b(tv);
+                Intrinsics.c(shapeTextView, "tv");
+                b(shapeTextView);
             } else {
-                a(tv);
+                a(shapeTextView);
             }
         }
-        ViewGroup.LayoutParams layoutParams = tv.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams = shapeTextView.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
         }
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
-        if (helper.getAdapterPosition() == getData().size() - 1) {
+        if (baseViewHolder.getAdapterPosition() == getData().size() - 1) {
             marginLayoutParams.rightMargin = 0;
         } else {
             marginLayoutParams.rightMargin = BluedViewExtKt.a(1);
         }
-        tv.setLayoutParams(marginLayoutParams);
+        shapeTextView.setLayoutParams(marginLayoutParams);
     }
 }

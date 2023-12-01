@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutSecondFlowRefreshBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29430a;
+    private final FrameLayout f15740a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29430a;
+        return this.f15740a;
     }
 }

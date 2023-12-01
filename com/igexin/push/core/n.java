@@ -11,6 +11,7 @@ import com.igexin.push.extension.mod.BaseActionBean;
 import com.igexin.push.extension.mod.PushMessageInterface;
 import com.igexin.push.extension.mod.PushTaskBean;
 import com.igexin.sdk.main.FeedbackImpl;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -30,15 +31,15 @@ public final class n {
     private static volatile n f;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Map<String, PushMessageInterface> f23579c;
+    private final Map<String, PushMessageInterface> f9971c;
 
     /* renamed from: a  reason: collision with root package name */
-    protected HashMap<String, String> f23578a = new HashMap<>();
+    protected HashMap<String, String> f9970a = new HashMap<>();
     private final Map<String, String> e = new ConcurrentHashMap();
 
     private n() {
         d = new HashSet();
-        this.f23579c = new HashMap();
+        this.f9971c = new HashMap();
         d.add(b.q);
         d.add("notification");
         d.add(b.n);
@@ -84,7 +85,7 @@ public final class n {
         if (TextUtils.isEmpty(str) || !d.contains(str)) {
             return null;
         }
-        PushMessageInterface pushMessageInterface = this.f23579c.get(str);
+        PushMessageInterface pushMessageInterface = this.f9971c.get(str);
         if (pushMessageInterface != null) {
             return pushMessageInterface;
         }
@@ -159,40 +160,40 @@ public final class n {
         }
         switch (z) {
             case false:
-                this.f23579c.put(b.q, new com.igexin.push.core.a.c.f());
+                this.f9971c.put(b.q, new com.igexin.push.core.a.c.f());
                 break;
             case true:
-                this.f23579c.put("notification", new com.igexin.push.core.a.c.g());
+                this.f9971c.put("notification", new com.igexin.push.core.a.c.g());
                 break;
             case true:
-                this.f23579c.put(b.n, new com.igexin.push.core.a.c.l());
+                this.f9971c.put(b.n, new com.igexin.push.core.a.c.l());
                 break;
             case true:
-                this.f23579c.put(b.o, new com.igexin.push.core.a.c.j());
+                this.f9971c.put(b.o, new com.igexin.push.core.a.c.j());
                 break;
             case true:
-                this.f23579c.put(b.p, new com.igexin.push.core.a.c.i());
+                this.f9971c.put(b.p, new com.igexin.push.core.a.c.i());
                 break;
             case true:
-                this.f23579c.put(b.l, new com.igexin.push.core.a.c.e());
+                this.f9971c.put(b.l, new com.igexin.push.core.a.c.e());
                 break;
             case true:
-                this.f23579c.put(b.r, new com.igexin.push.core.a.c.k());
+                this.f9971c.put(b.r, new com.igexin.push.core.a.c.k());
                 break;
             case true:
-                this.f23579c.put(b.s, new com.igexin.push.core.a.c.a());
+                this.f9971c.put(b.s, new com.igexin.push.core.a.c.a());
                 break;
             case true:
-                this.f23579c.put(b.u, new com.igexin.push.core.a.c.d());
+                this.f9971c.put(b.u, new com.igexin.push.core.a.c.d());
                 break;
             case true:
-                this.f23579c.put(b.v, new com.igexin.push.core.a.c.c());
+                this.f9971c.put(b.v, new com.igexin.push.core.a.c.c());
                 break;
             case true:
-                this.f23579c.put(b.t, new com.igexin.push.core.a.c.b());
+                this.f9971c.put(b.t, new com.igexin.push.core.a.c.b());
                 break;
         }
-        return this.f23579c.get(str);
+        return this.f9971c.get(str);
     }
 
     private static void b(String str, String str2) {
@@ -223,8 +224,8 @@ public final class n {
             }
             if (jSONObject2.has("duration")) {
                 String string = jSONObject2.getString("duration");
-                if (string.contains("-")) {
-                    int indexOf = string.indexOf("-");
+                if (string.contains(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) {
+                    int indexOf = string.indexOf(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     String substring = string.substring(0, indexOf);
                     String substring2 = string.substring(indexOf + 1, string.length());
                     hashMap.put("startTime", substring);
@@ -561,7 +562,7 @@ public final class n {
                     }
                 } else {
                     String string2 = ((JSONObject) jSONArray.get(i2)).getString("type");
-                    if (!this.f23578a.containsKey(string2) && !d.contains(string2)) {
+                    if (!this.f9970a.containsKey(string2) && !d.contains(string2)) {
                         com.igexin.c.a.c.a.a("PushMessageExecutor|" + string2 + " not support~", new Object[0]);
                         return false;
                     }

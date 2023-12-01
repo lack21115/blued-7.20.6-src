@@ -12,7 +12,7 @@ import java.net.URL;
 public class UrlLoader implements ModelLoader<URL, InputStream> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ModelLoader<GlideUrl, InputStream> f20929a;
+    private final ModelLoader<GlideUrl, InputStream> f7323a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/stream/UrlLoader$StreamFactory.class */
     public static class StreamFactory implements ModelLoaderFactory<URL, InputStream> {
@@ -27,12 +27,12 @@ public class UrlLoader implements ModelLoader<URL, InputStream> {
     }
 
     public UrlLoader(ModelLoader<GlideUrl, InputStream> modelLoader) {
-        this.f20929a = modelLoader;
+        this.f7323a = modelLoader;
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public ModelLoader.LoadData<InputStream> a(URL url, int i, int i2, Options options) {
-        return this.f20929a.a(new GlideUrl(url), i, i2, options);
+        return this.f7323a.a(new GlideUrl(url), i, i2, options);
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader

@@ -1,5 +1,6 @@
 package org.apache.commons.codec.digest;
 
+import com.anythink.core.common.k.f;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
@@ -37,7 +38,7 @@ public class DigestUtils {
     }
 
     private static MessageDigest getMd5Digest() {
-        return getDigest("MD5");
+        return getDigest(f.a);
     }
 
     private static MessageDigest getSha256Digest() {

@@ -9,16 +9,16 @@ import java.lang.reflect.Field;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f24790a;
+    private Context f11102a;
     private com.opos.cmn.e.a.c.b.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Toast f24791c;
+    private Toast f11103c;
 
     public b(Context context, com.opos.cmn.e.a.c.b.a aVar) {
-        this.f24790a = context.getApplicationContext();
+        this.f11102a = context.getApplicationContext();
         this.b = aVar;
-        this.f24791c = new Toast(this.f24790a);
+        this.f11103c = new Toast(this.f11102a);
     }
 
     private Object a(Object obj, String str) {
@@ -49,7 +49,7 @@ public class b {
             r4 = this;
             r0 = r4
             r1 = r4
-            android.widget.Toast r1 = r1.f24791c     // Catch: java.lang.Exception -> L2a
+            android.widget.Toast r1 = r1.f11103c     // Catch: java.lang.Exception -> L2a
             java.lang.String r2 = "mTN"
             java.lang.Object r0 = r0.a(r1, r2)     // Catch: java.lang.Exception -> L2a
             r5 = r0
@@ -110,12 +110,12 @@ public class b {
 
     public void a(int i) {
         com.opos.cmn.an.f.a.b("CustomToast", "setDuration duration=" + i);
-        this.f24791c.setDuration(i);
+        this.f11103c.setDuration(i);
     }
 
     public void a(int i, int i2, int i3) {
         com.opos.cmn.an.f.a.b("CustomToast", "setGravity gravity=" + i + ",xOffset=" + i2 + ",yOffset=" + i3);
-        this.f24791c.setGravity(i, i2, i3);
+        this.f11103c.setGravity(i, i2, i3);
     }
 
     public void a(View view) {
@@ -124,17 +124,17 @@ public class b {
         sb.append(view != null ? view : com.igexin.push.core.b.l);
         com.opos.cmn.an.f.a.b("CustomToast", sb.toString());
         if (view != null) {
-            this.f24791c.setView(view);
+            this.f11103c.setView(view);
         }
     }
 
     public void b() {
         com.opos.cmn.an.f.a.b("CustomToast", "show");
-        this.f24791c.show();
+        this.f11103c.show();
     }
 
     public void c() {
         com.opos.cmn.an.f.a.b("CustomToast", com.anythink.expressad.d.a.b.dO);
-        this.f24791c.cancel();
+        this.f11103c.cancel();
     }
 }

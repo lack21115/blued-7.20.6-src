@@ -15,11 +15,11 @@ import android.util.SparseIntArray;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f39433a = -1;
+    private static int f25742a = -1;
     private static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f39434c = -1;
+    private static int f25743c = -1;
     private static final SparseIntArray d;
 
     static {
@@ -43,13 +43,13 @@ public class h {
     }
 
     public static int a(Context context) {
-        int i = f39433a;
+        int i = f25742a;
         if (i <= 0 || b) {
             if (context == null) {
                 return -1;
             }
             int g = g(context);
-            f39433a = g;
+            f25742a = g;
             return g;
         }
         return i;
@@ -105,22 +105,22 @@ public class h {
     }
 
     public static boolean c(Context context) {
-        int i = f39434c;
+        int i = f25743c;
         if (i != -1 && !b) {
             return i == 1;
         }
         if (context != null) {
             try {
                 NetworkInfo f = f(context);
-                f39434c = 0;
+                f25743c = 0;
                 if (f != null && f.getState() == NetworkInfo.State.CONNECTED) {
-                    f39434c = 1;
+                    f25743c = 1;
                 }
             } catch (Exception e) {
                 TPLogUtil.e("TPNetWorkUtils", e.getMessage());
             }
         }
-        return f39434c == 1;
+        return f25743c == 1;
     }
 
     private static int d(Context context) {

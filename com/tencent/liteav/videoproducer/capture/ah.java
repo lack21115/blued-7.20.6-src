@@ -14,11 +14,11 @@ import com.tencent.liteav.videoproducer.capture.VirtualCamera;
 public final class ah implements CaptureSourceInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    VirtualCamera f36864a;
+    VirtualCamera f23173a;
     VirtualCamera.VirtualCameraParams b;
 
     /* renamed from: c  reason: collision with root package name */
-    public CaptureSourceInterface f36865c;
+    public CaptureSourceInterface f23174c;
     CaptureSourceInterface.CaptureParams d;
     CaptureSourceInterface.a e;
     final Looper f;
@@ -33,16 +33,16 @@ public final class ah implements CaptureSourceInterface {
     final com.tencent.liteav.videobase.utils.f m = new com.tencent.liteav.videobase.utils.f("CaptureController", 1000, new f.a(this) { // from class: com.tencent.liteav.videoproducer.capture.ai
 
         /* renamed from: a  reason: collision with root package name */
-        private final ah f36869a;
+        private final ah f23178a;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         {
-            this.f36869a = this;
+            this.f23178a = this;
         }
 
         @Override // com.tencent.liteav.videobase.utils.f.a
         public final void a(double d) {
-            this.f36869a.h.updateStatus(com.tencent.liteav.videobase.videobase.i.b, Double.valueOf(d));
+            this.f23178a.h.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_CAPTURE_REAL_FRAME_RATE, Double.valueOf(d));
         }
     });
 
@@ -125,7 +125,7 @@ public final class ah implements CaptureSourceInterface {
             return;
         }
         ahVar.k = a.PAUSED;
-        CaptureSourceInterface captureSourceInterface = ahVar.f36865c;
+        CaptureSourceInterface captureSourceInterface = ahVar.f23174c;
         if (captureSourceInterface != null) {
             captureSourceInterface.pause();
         }
@@ -134,11 +134,11 @@ public final class ah implements CaptureSourceInterface {
             return;
         }
         if (ahVar.b == null) {
-            ahVar.a(null, 5, ahVar.d.f36846c, ahVar.d.d);
+            ahVar.a(null, 5, ahVar.d.f23155c, ahVar.d.d);
         } else {
-            ahVar.f36864a = new VirtualCamera(ahVar.f, ahVar.h);
+            ahVar.f23173a = new VirtualCamera(ahVar.f, ahVar.h);
         }
-        VirtualCamera virtualCamera = ahVar.f36864a;
+        VirtualCamera virtualCamera = ahVar.f23173a;
         if (virtualCamera != null) {
             virtualCamera.start(ahVar.i, ahVar.b, ahVar.n);
         }

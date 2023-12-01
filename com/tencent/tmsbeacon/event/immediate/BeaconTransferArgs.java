@@ -4,14 +4,14 @@ package com.tencent.tmsbeacon.event.immediate;
 public abstract class BeaconTransferArgs {
 
     /* renamed from: a  reason: collision with root package name */
-    private byte[] f39577a;
+    private byte[] f25886a;
     private String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private String f39578c = "";
+    private String f25887c = "";
 
     public BeaconTransferArgs(byte[] bArr) {
-        this.f39577a = bArr;
+        this.f25886a = bArr;
     }
 
     public String getAppkey() {
@@ -21,11 +21,11 @@ public abstract class BeaconTransferArgs {
     public abstract String getCommand();
 
     public byte[] getData() {
-        return this.f39577a;
+        return this.f25886a;
     }
 
     public String getEventCode() {
-        return this.f39578c;
+        return this.f25887c;
     }
 
     public void setAppkey(String str) {
@@ -35,10 +35,10 @@ public abstract class BeaconTransferArgs {
     public abstract void setCommand(String str);
 
     public void setData(byte[] bArr) {
-        this.f39577a = bArr;
+        this.f25886a = bArr;
     }
 
     public void setEventCode(String str) {
-        this.f39578c = str;
+        this.f25887c = str;
     }
 }

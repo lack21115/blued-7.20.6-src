@@ -20,7 +20,6 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import com.android.internal.R;
 import com.android.internal.widget.ExploreByTouchHelper;
-import com.google.android.material.timepicker.TimeModel;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Formatter;
@@ -183,7 +182,7 @@ public class SimpleMonthView extends View {
     }
 
     public SimpleMonthView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843612);
+        this(context, attributeSet, R.attr.datePickerStyle);
     }
 
     public SimpleMonthView(Context context, AttributeSet attributeSet, int i) {
@@ -245,7 +244,7 @@ public class SimpleMonthView extends View {
             } else {
                 this.mDayNumberPaint.setColor(this.mNormalTextColor);
             }
-            canvas.drawText(String.format(TimeModel.NUMBER_FORMAT, Integer.valueOf(i3)), i4, i, (i3 < this.mEnabledDayStart || i3 > this.mEnabledDayEnd) ? this.mDayNumberDisabledPaint : this.mDayNumberPaint);
+            canvas.drawText(String.format("%d", Integer.valueOf(i3)), i4, i, (i3 < this.mEnabledDayStart || i3 > this.mEnabledDayEnd) ? this.mDayNumberDisabledPaint : this.mDayNumberPaint);
             int i5 = findDayOffset + 1;
             findDayOffset = i5;
             int i6 = i;
@@ -540,7 +539,7 @@ public class SimpleMonthView extends View {
         this.mMonthDayLabelPaint.setColor(this.mNormalTextColor);
         this.mDisabledTextColor = colorStateList.getColorForState(EMPTY_STATE_SET, resources.getColor(R.color.datepicker_default_disabled_text_color_holo_light));
         this.mDayNumberDisabledPaint.setColor(this.mDisabledTextColor);
-        this.mSelectedDayColor = colorStateList.getColorForState(ENABLED_SELECTED_STATE_SET, resources.getColor(17170450));
+        this.mSelectedDayColor = colorStateList.getColorForState(ENABLED_SELECTED_STATE_SET, resources.getColor(R.color.holo_blue_light));
         this.mDayNumberSelectedPaint.setColor(this.mSelectedDayColor);
         this.mDayNumberSelectedPaint.setAlpha(60);
     }

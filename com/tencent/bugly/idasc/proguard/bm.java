@@ -7,26 +7,26 @@ import java.util.Collection;
 public final class bm extends m implements Cloneable {
 
     /* renamed from: c  reason: collision with root package name */
-    static ArrayList<String> f35299c;
+    static ArrayList<String> f21608c;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f35300a = "";
+    public String f21609a = "";
     public ArrayList<String> b = null;
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(k kVar) {
-        this.f35300a = kVar.b(0, true);
-        if (f35299c == null) {
+        this.f21609a = kVar.b(0, true);
+        if (f21608c == null) {
             ArrayList<String> arrayList = new ArrayList<>();
-            f35299c = arrayList;
+            f21608c = arrayList;
             arrayList.add("");
         }
-        this.b = (ArrayList) kVar.a((k) f35299c, 1, false);
+        this.b = (ArrayList) kVar.a((k) f21608c, 1, false);
     }
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(l lVar) {
-        lVar.a(this.f35300a, 0);
+        lVar.a(this.f21609a, 0);
         ArrayList<String> arrayList = this.b;
         if (arrayList != null) {
             lVar.a((Collection) arrayList, 1);

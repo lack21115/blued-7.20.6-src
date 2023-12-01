@@ -4,17 +4,17 @@ package com.tencent.cloud.huiyansdkface.facelight.api.result;
 public class WbSimpleModeResult {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f35530a;
+    private String f21839a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f35531c;
+    private String f21840c;
     private String d;
     private String e;
     private String f;
 
     public String getEncryptAESKey() {
-        return this.f35530a;
+        return this.f21839a;
     }
 
     public String getIdentifyStr() {
@@ -26,7 +26,7 @@ public class WbSimpleModeResult {
     }
 
     public String getUserImageString() {
-        return this.f35531c;
+        return this.f21840c;
     }
 
     public String getUserVideoRotate() {
@@ -38,7 +38,7 @@ public class WbSimpleModeResult {
     }
 
     public void setEncryptAESKey(String str) {
-        this.f35530a = str;
+        this.f21839a = str;
     }
 
     public void setIdentifyStr(String str) {
@@ -50,7 +50,7 @@ public class WbSimpleModeResult {
     }
 
     public void setUserImageString(String str) {
-        this.f35531c = str;
+        this.f21840c = str;
     }
 
     public void setUserVideoRotate(String str) {

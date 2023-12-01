@@ -4,7 +4,7 @@ package com.tencent.mapsdk.internal;
 public interface i2 {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f37544c = "business_conf";
+    public static final String f23853c = "business_conf";
 
     <T extends p2> T a();
 }

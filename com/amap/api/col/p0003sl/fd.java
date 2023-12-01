@@ -6,13 +6,11 @@ import com.amap.api.services.core.ServiceSettings;
 /* renamed from: com.amap.api.col.3sl.fd  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fd.class */
 public final class fd {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String[] f4952a = {"com.amap.api.services", "com.amap.api.search.admic"};
+    public static final String[] a = {"com.amap.api.services", "com.amap.api.search.admic"};
 
     public static ia a(boolean z) {
         try {
-            return new ia.a("sea", "9.3.1", "AMAP SDK Android Search 9.3.1").a(f4952a).a(z).a("9.3.1").a();
+            return new ia.a("sea", "9.3.1", "AMAP SDK Android Search 9.3.1").a(a).a(z).a("9.3.1").a();
         } catch (hn e) {
             fe.a(e, "ConfigableConst", "getSDKInfo");
             return null;

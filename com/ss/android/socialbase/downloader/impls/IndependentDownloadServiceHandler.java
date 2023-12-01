@@ -31,22 +31,22 @@ public class IndependentDownloadServiceHandler extends AbsDownloadServiceHandler
     private int logLevel = -1;
 
     private void resumePendingTaskForIndependent() {
-        SparseArray<List<DownloadTask>> m1029clone;
+        SparseArray<List<DownloadTask>> m1025clone;
         try {
             synchronized (this.pendingTasks) {
-                m1029clone = this.pendingTasks.m1029clone();
+                m1025clone = this.pendingTasks.m1025clone();
                 this.pendingTasks.clear();
             }
-            if (m1029clone == null || m1029clone.size() <= 0 || DownloadComponentManager.getDownloadEngine() == null) {
+            if (m1025clone == null || m1025clone.size() <= 0 || DownloadComponentManager.getDownloadEngine() == null) {
                 return;
             }
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= m1029clone.size()) {
+                if (i2 >= m1025clone.size()) {
                     return;
                 }
-                List<DownloadTask> list = m1029clone.get(m1029clone.keyAt(i2));
+                List<DownloadTask> list = m1025clone.get(m1025clone.keyAt(i2));
                 if (list != null) {
                     for (DownloadTask downloadTask : list) {
                         try {

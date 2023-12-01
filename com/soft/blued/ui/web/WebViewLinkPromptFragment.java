@@ -26,11 +26,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class WebViewLinkPromptFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f34478a = new Companion(null);
+    public static final Companion f20787a = new Companion(null);
     private FragmentWebLinkPromptBinding b;
 
     /* renamed from: c  reason: collision with root package name */
-    private WebLinkManager.LinkType f34479c = WebLinkManager.LinkType.NORMAL;
+    private WebLinkManager.LinkType f20788c = WebLinkManager.LinkType.NORMAL;
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/web/WebViewLinkPromptFragment$Companion.class */
@@ -43,14 +43,14 @@ public final class WebViewLinkPromptFragment extends BaseFragment {
         }
 
         @JvmStatic
-        public final void a(Context context, String web_url, String centerName, boolean z, int i, boolean z2, WebLinkManager.LinkType linkType) {
+        public final void a(Context context, String str, String str2, boolean z, int i, boolean z2, WebLinkManager.LinkType linkType) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(web_url, "web_url");
-            Intrinsics.e(centerName, "centerName");
+            Intrinsics.e(str, "web_url");
+            Intrinsics.e(str2, "centerName");
             Intrinsics.e(linkType, "linkType");
             Bundle bundle = new Bundle();
-            bundle.putString("web_url", web_url);
-            bundle.putString("title_name", centerName);
+            bundle.putString("web_url", str);
+            bundle.putString("title_name", str2);
             bundle.putInt("from_tag", i);
             bundle.putBoolean("auto_finish", z);
             bundle.putBoolean("Screen_Invasion", z2);
@@ -62,14 +62,14 @@ public final class WebViewLinkPromptFragment extends BaseFragment {
 
     @JvmStatic
     public static final void a(Context context, String str, String str2, boolean z, int i, boolean z2, WebLinkManager.LinkType linkType) {
-        f34478a.a(context, str, str2, z, i, z2, linkType);
+        f20787a.a(context, str, str2, z, i, z2, linkType);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(WebViewLinkPromptFragment this$0, View view) {
+    public static final void a(WebViewLinkPromptFragment webViewLinkPromptFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(webViewLinkPromptFragment, "this$0");
+        FragmentActivity activity = webViewLinkPromptFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -77,14 +77,14 @@ public final class WebViewLinkPromptFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(WebViewLinkPromptFragment this$0, View view) {
+    public static final void b(WebViewLinkPromptFragment webViewLinkPromptFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Bundle arguments = this$0.getArguments();
+        Intrinsics.e(webViewLinkPromptFragment, "this$0");
+        Bundle arguments = webViewLinkPromptFragment.getArguments();
         if (arguments != null) {
-            WebViewShowInfoFragment.a(this$0.getActivity(), arguments.getString("web_url"), arguments.getString("title_name"), arguments.getBoolean("auto_finish"), arguments.getInt("from_tag"), arguments.getBoolean("Screen_Invasion"), false);
+            WebViewShowInfoFragment.a(webViewLinkPromptFragment.getActivity(), arguments.getString("web_url"), arguments.getString("title_name"), arguments.getBoolean("auto_finish"), arguments.getInt("from_tag"), arguments.getBoolean("Screen_Invasion"), false);
         }
-        FragmentActivity activity = this$0.getActivity();
+        FragmentActivity activity = webViewLinkPromptFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -115,26 +115,26 @@ public final class WebViewLinkPromptFragment extends BaseFragment {
             layoutParams2.setMargins(0, a2, 0, 0);
             commonTopTitleNoTrans.setLayoutParams(layoutParams2);
         }
-        if (this.f34479c != WebLinkManager.LinkType.NORMAL) {
-            if (this.f34479c == WebLinkManager.LinkType.BLACK) {
-                fragmentWebLinkPromptBinding.f29036a.setImageResource(R.drawable.icon_web_link_prompt_black);
+        if (this.f20788c != WebLinkManager.LinkType.NORMAL) {
+            if (this.f20788c == WebLinkManager.LinkType.BLACK) {
+                fragmentWebLinkPromptBinding.f15346a.setImageResource(R.drawable.icon_web_link_prompt_black);
                 fragmentWebLinkPromptBinding.f.setVisibility(8);
                 fragmentWebLinkPromptBinding.e.setText(getString(R.string.web_link_prompt_forbidden));
                 fragmentWebLinkPromptBinding.d.setText(getString(R.string.web_link_prompt_forbidden_desc));
-                fragmentWebLinkPromptBinding.f29037c.setVisibility(8);
+                fragmentWebLinkPromptBinding.f15347c.setVisibility(8);
                 return;
             }
             return;
         }
-        fragmentWebLinkPromptBinding.f29036a.setImageResource(R.drawable.icon_web_link_prompt_normal);
+        fragmentWebLinkPromptBinding.f15346a.setImageResource(R.drawable.icon_web_link_prompt_normal);
         fragmentWebLinkPromptBinding.f.setVisibility(0);
         TextView textView = fragmentWebLinkPromptBinding.f;
         Bundle arguments = getArguments();
         textView.setText((arguments == null || (string = arguments.getString("web_url")) == null) ? "" : string);
         fragmentWebLinkPromptBinding.e.setText(getString(R.string.web_link_prompt_non_official));
         fragmentWebLinkPromptBinding.d.setText(getString(R.string.web_link_prompt_non_official_desc));
-        fragmentWebLinkPromptBinding.f29037c.setVisibility(0);
-        fragmentWebLinkPromptBinding.f29037c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.web.-$$Lambda$WebViewLinkPromptFragment$z5-IFaTM6VnGG6WuRQW0TJrDQlg
+        fragmentWebLinkPromptBinding.f15347c.setVisibility(0);
+        fragmentWebLinkPromptBinding.f15347c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.web.-$$Lambda$WebViewLinkPromptFragment$z5-IFaTM6VnGG6WuRQW0TJrDQlg
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WebViewLinkPromptFragment.b(WebViewLinkPromptFragment.this, view);
@@ -142,15 +142,14 @@ public final class WebViewLinkPromptFragment extends BaseFragment {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
-    public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
-        Intrinsics.e(inflater, "inflater");
-        View inflate = inflater.inflate(R.layout.fragment_web_link_prompt, (ViewGroup) null);
+    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        Intrinsics.e(layoutInflater, "inflater");
+        View inflate = layoutInflater.inflate(R.layout.fragment_web_link_prompt, (ViewGroup) null);
         this.b = FragmentWebLinkPromptBinding.a(inflate);
         Bundle arguments = getArguments();
         Object obj = arguments == null ? null : arguments.get("link_type");
         if (obj != null) {
-            this.f34479c = (WebLinkManager.LinkType) obj;
+            this.f20788c = (WebLinkManager.LinkType) obj;
             a();
             return inflate;
         }

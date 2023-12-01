@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.lifecycle.Observer;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -54,13 +55,9 @@ import java.util.Locale;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYBottomView.class */
 public class YYBottomView extends LinearLayout implements View.OnClickListener, RoleStatusObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f18067a;
+    private BaseYYStudioFragment a;
     private ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f18068c;
+    private ImageView c;
     private ImageView d;
     private ImageView e;
     private ImageView f;
@@ -85,14 +82,13 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
     public YYBottomView(Context context) {
         super(context);
         this.t = new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYBottomView.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 if (YYRoomInfoManager.e().b() != null) {
                     YYBottomView.this.n.removeAllViews();
                     YYBottomView.this.o.removeAllViews();
                     YYBottomView yYBottomView = YYBottomView.this;
-                    yYBottomView.a(yYBottomView.f18067a, false);
+                    yYBottomView.a(yYBottomView.a, false);
                 }
             }
         };
@@ -105,14 +101,13 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
     public YYBottomView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.t = new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYBottomView.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 if (YYRoomInfoManager.e().b() != null) {
                     YYBottomView.this.n.removeAllViews();
                     YYBottomView.this.o.removeAllViews();
                     YYBottomView yYBottomView = YYBottomView.this;
-                    yYBottomView.a(yYBottomView.f18067a, false);
+                    yYBottomView.a(yYBottomView.a, false);
                 }
             }
         };
@@ -125,14 +120,13 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
     public YYBottomView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.t = new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYBottomView.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 if (YYRoomInfoManager.e().b() != null) {
                     YYBottomView.this.n.removeAllViews();
                     YYBottomView.this.o.removeAllViews();
                     YYBottomView yYBottomView = YYBottomView.this;
-                    yYBottomView.a(yYBottomView.f18067a, false);
+                    yYBottomView.a(yYBottomView.a, false);
                 }
             }
         };
@@ -180,7 +174,7 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
 
     private void a(FrameLayout frameLayout, boolean z, int i, String str) {
         YYRoomModel b;
-        if (z || (b = YYRoomInfoManager.e().b()) == null || !TextUtils.equals(b.chat_type, "6")) {
+        if (z || (b = YYRoomInfoManager.e().b()) == null || !TextUtils.equals(b.chat_type, ATAdConst.ATDevFrameworkType.FLUTTER)) {
             return;
         }
         if (YYRoomInfoManager.e().j() || YYRoomInfoManager.e().y()) {
@@ -194,7 +188,7 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
             this.s.setPadding(DensityUtils.a(getContext(), 15.0f), DensityUtils.a(getContext(), 8.0f), DensityUtils.a(getContext(), 15.0f), 0);
             this.s.setTextColor(getResources().getColor(R.color.syc_EAEAEA));
             this.s.a(R.drawable.guide_blue_bubble_down, NinePatchUtils.GuideArrowPosition.CENTER);
-            a(this.s, this.f, frameLayout, 0.5f);
+            a((View) this.s, this.f, (ViewGroup) frameLayout, 0.5f);
             postDelayed(new Runnable() { // from class: com.blued.android.module.yy_china.view.YYBottomView.4
                 @Override // java.lang.Runnable
                 public void run() {
@@ -220,10 +214,10 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
 
     private void b(int i) {
         YYRoomModel b;
-        if (this.f18067a == null || (b = YYRoomInfoManager.e().b()) == null) {
+        if (this.a == null || (b = YYRoomInfoManager.e().b()) == null) {
             return;
         }
-        YYRoomHttpUtils.d(b.room_id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<ToolkitMode, YYExtoolBoxModel>>(this.f18067a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYBottomView.3
+        YYRoomHttpUtils.d(b.room_id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<ToolkitMode, YYExtoolBoxModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYBottomView.3
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<ToolkitMode, YYExtoolBoxModel> bluedEntity) {
                 if (bluedEntity == null || !bluedEntity.hasData()) {
@@ -251,12 +245,12 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
                     }
                 }
                 YYExtoolBoxModel yYExtoolBoxModel = bluedEntity.extra;
-                if (yYExtoolBoxModel != null && !YYBottomView.this.f18067a.F) {
+                if (yYExtoolBoxModel != null && !YYBottomView.this.a.F) {
                     YYBottomView.this.v = yYExtoolBoxModel.getBubble_message();
                 }
                 YYBottomView.this.i();
             }
-        }, (IRequestHost) this.f18067a.getFragmentActive());
+        }, (IRequestHost) this.a.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -274,7 +268,7 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
     private void c() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_bottom_menu_layout, (ViewGroup) this, true);
         this.b = (ShapeTextView) findViewById(R.id.tv_chat);
-        this.f18068c = (ImageView) findViewById(R.id.iv_pulbic_message);
+        this.c = (ImageView) findViewById(R.id.iv_pulbic_message);
         this.d = (ImageView) findViewById(R.id.iv_gift);
         this.e = (ImageView) findViewById(R.id.iv_recharge);
         this.f = (ImageView) findViewById(R.id.iv_tool_box);
@@ -287,7 +281,7 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
         this.j = (ShapeTextView) findViewById(R.id.img_pk_dot);
         this.l = new YYMicrophoneView(getContext());
         this.b.setOnClickListener(this);
-        this.f18068c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
         this.d.setOnClickListener(this);
         this.e.setOnClickListener(this);
         this.f.setOnClickListener(this);
@@ -298,14 +292,14 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
         this.n.addView(this.p);
         this.n.setVisibility(0);
         this.o.setVisibility(0);
-        this.f18068c.setVisibility(0);
+        this.c.setVisibility(0);
         this.b.setVisibility(8);
         this.o.addView(this.l);
     }
 
     private void e() {
         this.o.setVisibility(8);
-        this.f18068c.setVisibility(8);
+        this.c.setVisibility(8);
         this.b.setVisibility(0);
         this.n.addView(this.l);
     }
@@ -316,34 +310,34 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
             if (action_type != 2) {
                 YYRoomInfoManager.e().c().a(getContext(), this.w.getLink_url(), 0);
             } else {
-                YYRoomPKFragmentNew.b.a().show(this.f18067a.getParentFragmentManager(), "pk_dialog");
+                YYRoomPKFragmentNew.b.a().show(this.a.getParentFragmentManager(), "pk_dialog");
             }
         } else if (YYRoomInfoManager.e().b() == null) {
         } else {
             YYWebViewDialogFragment yYWebViewDialogFragment = new YYWebViewDialogFragment();
-            yYWebViewDialogFragment.a(this.f18067a, this.w.getLink_url());
-            yYWebViewDialogFragment.show(this.f18067a.getParentFragmentManager(), "inner_web_dialog");
+            yYWebViewDialogFragment.a(this.a, this.w.getLink_url());
+            yYWebViewDialogFragment.show(this.a.getParentFragmentManager(), "inner_web_dialog");
         }
     }
 
     private void g() {
         this.q.setVisibility(8);
         YYToolBoxView yYToolBoxView = new YYToolBoxView(getContext());
-        yYToolBoxView.a(this.f18067a, new YYToolBoxView.OnItemCLickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYBottomView$DKsz-GDfwcrUG0KE5Z0RfwSrrkA
+        yYToolBoxView.a(this.a, new YYToolBoxView.OnItemCLickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYBottomView$DKsz-GDfwcrUG0KE5Z0RfwSrrkA
             @Override // com.blued.android.module.yy_china.view.YYToolBoxView.OnItemCLickListener
             public final void onItemClick(ToolMode toolMode) {
                 YYBottomView.this.b(toolMode);
             }
         });
-        this.f18067a.a(yYToolBoxView, -2);
+        this.a.a(yYToolBoxView, -2);
     }
 
     private void getButtonConfig() {
         final YYRoomModel b;
-        if (this.f18067a == null || (b = YYRoomInfoManager.e().b()) == null) {
+        if (this.a == null || (b = YYRoomInfoManager.e().b()) == null) {
             return;
         }
-        YYRoomHttpUtils.x(b.room_id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYButtonConfigModel>>(this.f18067a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYBottomView.2
+        YYRoomHttpUtils.x(b.room_id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYButtonConfigModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYBottomView.2
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -360,7 +354,7 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
                 } else {
                     YYBottomView.this.i.setVisibility(8);
                 }
-                ImageLoader.a(YYBottomView.this.f18067a.getFragmentActive(), YYBottomView.this.w.getIcon()).b(R.drawable.icon_exploration_entrance).a(YYBottomView.this.h);
+                ImageLoader.a(YYBottomView.this.a.getFragmentActive(), YYBottomView.this.w.getIcon()).b(R.drawable.icon_exploration_entrance).a(YYBottomView.this.h);
                 boolean z = SharedPreferencesUtils.b().getBoolean(YYBottomView.this.w.getIcon(), false);
                 ShapeTextView shapeTextView = YYBottomView.this.j;
                 if (!z) {
@@ -368,7 +362,7 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
                 }
                 shapeTextView.setVisibility(i);
             }
-        }, this.f18067a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     private void h() {
@@ -383,7 +377,7 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
         YYExtraBubbleModel yYExtraBubbleModel = this.v;
         if (yYExtraBubbleModel != null && yYExtraBubbleModel.id != i2 && !this.v.showed) {
             this.q.setVisibility(8);
-            a((FrameLayout) this.f18067a.f17010c.findViewById(R.id.fra_add_view_layout), this.f18067a.F, this.v.id, this.v.contents);
+            a((FrameLayout) this.a.c.findViewById(R.id.fra_add_view_layout), this.a.F, this.v.id, this.v.contents);
             return;
         }
         TextView textView = this.q;
@@ -402,7 +396,7 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
             }
             this.v.showed = true;
         }
-        a(this.s);
+        a((View) this.s);
         this.s = null;
         i();
     }
@@ -458,8 +452,8 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
 
     public void a(BaseYYStudioFragment baseYYStudioFragment, boolean z) {
         YYRoomModel b;
-        this.f18067a = baseYYStudioFragment;
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        this.a = baseYYStudioFragment;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo == null || (b = YYRoomInfoManager.e().b()) == null) {
             return;
         }
@@ -498,7 +492,7 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
             AudioChannelManager.j().d();
             AudioChannelManager.j().a(21);
             a(true);
-            this.f18067a.M();
+            this.a.M();
         } else if (!TextUtils.equals("1", str)) {
             a(true);
         } else {
@@ -506,7 +500,7 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
                 EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_MIKE_SUCCESS_SHOW, YYRoomInfoManager.e().b().room_id, YYRoomInfoManager.e().b().uid);
             }
             AudioChannelManager.j().a(20);
-            this.f18067a.e(YYRoomInfoManager.e().f17578a.push_url);
+            this.a.e(YYRoomInfoManager.e().a.push_url);
             a(false);
         }
     }
@@ -542,12 +536,12 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
         YYRoomModel b;
         Tracker.onClick(view);
         int id = view.getId();
-        if (ClickUtils.a(id) || this.f18067a == null || (b = YYRoomInfoManager.e().b()) == null) {
+        if (ClickUtils.a(id) || this.a == null || (b = YYRoomInfoManager.e().b()) == null) {
             return;
         }
         if (id == R.id.tv_chat || id == R.id.iv_pulbic_message) {
             EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_SEND_MSG_CLICK, b.room_id, b.uid);
-            this.f18067a.a("", "");
+            this.a.a("", "");
         } else if (id == R.id.iv_gift) {
             EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_GIFT_CLICK, b.room_id, b.uid);
             String str = "";
@@ -557,9 +551,9 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
                     str = b.music.uid;
                 }
             }
-            this.f18067a.a(true, "gift_icon", str);
+            this.a.a(true, "gift_icon", str);
             if (YYRoomInfoManager.e().b().round_end_time != 0) {
-                new YYPackGiftDialog().show(this.f18067a.getChildFragmentManager(), "YYPackGiftDialog");
+                new YYPackGiftDialog().show(this.a.getChildFragmentManager(), "YYPackGiftDialog");
             }
         } else if (id == R.id.iv_recharge) {
             h();
@@ -569,7 +563,7 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
                     SharedPreferencesUtils.b().edit().putString("yy_FirstRechargeNotie", new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Long.valueOf(System.currentTimeMillis()))).apply();
                 }
             }
-            this.f18067a.t();
+            this.a.t();
             if (b != null) {
                 EventTrackYY.d(ChatRoomProtos.Event.SINGLE_ROOM_PAY_ICON_CLICK, b.room_id, b.uid);
             }
@@ -587,7 +581,7 @@ public class YYBottomView extends LinearLayout implements View.OnClickListener, 
             }
             this.j.setVisibility(8);
             SharedPreferencesUtils.b().edit().putBoolean(this.w.getIcon(), true).commit();
-            this.f18067a.y();
+            this.a.y();
             f();
         }
     }

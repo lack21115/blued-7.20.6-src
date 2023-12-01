@@ -3,8 +3,6 @@ package android.net.http;
 import android.net.ParseException;
 import android.net.WebAddress;
 import android.webkit.CookieManager;
-import com.alipay.sdk.app.statistic.c;
-import com.android.internal.R;
 import com.google.common.net.HttpHeaders;
 import java.io.IOException;
 import java.io.InputStream;
@@ -109,7 +107,7 @@ public class RequestHandle {
         if (str4 == null) {
             return KD(H(str), str3 + ":" + H(str2));
         }
-        if (str4.equalsIgnoreCase(c.d)) {
+        if (str4.equalsIgnoreCase("auth")) {
             return KD(H(str), str3 + ":" + str5 + ":" + str6 + ":" + str4 + ":" + H(str2));
         }
         return null;
@@ -221,7 +219,7 @@ public class RequestHandle {
         int i2 = this.mRedirectCount + 1;
         this.mRedirectCount = i2;
         if (i2 == 16) {
-            this.mRequest.error(-9, R.string.httpErrorRedirectLoop);
+            this.mRequest.error(-9, 17039793);
             return false;
         }
         if (this.mUrl.startsWith("https:") && str.startsWith("http:")) {

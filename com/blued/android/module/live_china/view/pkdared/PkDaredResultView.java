@@ -18,17 +18,14 @@ import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.utils.DensityUtils;
 import com.blued.android.module.live_china.R;
 import com.blued.android.module.live_china.observer.PkDaredObserver;
+import java.net.HttpURLConnection;
 import java.text.DecimalFormat;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredResultView.class */
 public class PkDaredResultView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f15416a;
+    private IRequestHost a;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f15417c;
+    private final int c;
     private final int d;
     private int e;
     private TextView f;
@@ -55,7 +52,7 @@ public class PkDaredResultView extends RelativeLayout {
     public PkDaredResultView(Context context) {
         super(context);
         this.b = 11;
-        this.f15417c = 21;
+        this.c = 21;
         this.d = 31;
         this.e = 0;
         this.r = 5000;
@@ -69,7 +66,7 @@ public class PkDaredResultView extends RelativeLayout {
     public PkDaredResultView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = 11;
-        this.f15417c = 21;
+        this.c = 21;
         this.d = 31;
         this.e = 0;
         this.r = 5000;
@@ -83,7 +80,7 @@ public class PkDaredResultView extends RelativeLayout {
     public PkDaredResultView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = 11;
-        this.f15417c = 21;
+        this.c = 21;
         this.d = 31;
         this.e = 0;
         this.r = 5000;
@@ -97,7 +94,7 @@ public class PkDaredResultView extends RelativeLayout {
     public PkDaredResultView(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
         this.b = 11;
-        this.f15417c = 21;
+        this.c = 21;
         this.d = 31;
         this.e = 0;
         this.r = 5000;
@@ -172,9 +169,9 @@ public class PkDaredResultView extends RelativeLayout {
         this.k.setScaleY(0.44f);
         this.k.setImageResource(R.drawable.live_pk_dared_result_win_icon);
         this.g.setAlpha(1.0f);
-        if (this.f15416a != null) {
+        if (this.a != null) {
             this.l.setVisibility(0);
-            ImageLoader.c(this.f15416a, "live_pk_dared_win_star.png").e(this.l.hashCode()).g(-1).a(this.l);
+            ImageLoader.c(this.a, "live_pk_dared_win_star.png").e(this.l.hashCode()).g(-1).a(this.l);
         } else {
             this.l.setVisibility(8);
         }
@@ -183,8 +180,8 @@ public class PkDaredResultView extends RelativeLayout {
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 super.onAnimationEnd(animator);
-                if (PkDaredResultView.this.f15416a != null) {
-                    ImageLoader.c(PkDaredResultView.this.f15416a, "live_pk_dared_win_highlight.png").e(PkDaredResultView.this.m.hashCode()).g(1).a(PkDaredResultView.this.m);
+                if (PkDaredResultView.this.a != null) {
+                    ImageLoader.c(PkDaredResultView.this.a, "live_pk_dared_win_highlight.png").e(PkDaredResultView.this.m.hashCode()).g(1).a(PkDaredResultView.this.m);
                 }
             }
         });
@@ -227,7 +224,7 @@ public class PkDaredResultView extends RelativeLayout {
         this.h.setAlpha(1.0f);
         this.j.animate().alpha(1.0f).setDuration(200L);
         this.q.animate().rotationX(0.0f).setDuration(1200L).setInterpolator(this.y);
-        a(this.n, 400, 400);
+        a(this.n, HttpURLConnection.HTTP_BAD_REQUEST, HttpURLConnection.HTTP_BAD_REQUEST);
         a(this.o, 520, 500);
         a(this.p, 640, 600);
     }
@@ -251,7 +248,7 @@ public class PkDaredResultView extends RelativeLayout {
     }
 
     public void a(int i, boolean z, String str, int i2, String str2, IRequestHost iRequestHost, int i3, int i4, int i5, int i6) {
-        this.f15416a = iRequestHost;
+        this.a = iRequestHost;
         this.r = i3 * 1000;
         this.s = i4 * 1000;
         this.t = i5 * 1000;

@@ -22,42 +22,39 @@ import com.blued.android.core.net.IRequestHost;
 import com.blued.android.module.live_china.R;
 import com.blued.android.module.live_china.model.PropModule;
 import com.blued.android.module.live_china.observer.PkDaredObserver;
+import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredNoticeItemView.class */
 public class PkDaredNoticeItemView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f15397a;
+    public int a;
     private List<View> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DecelerateInterpolator f15398c;
+    private DecelerateInterpolator c;
     private AccelerateInterpolator d;
     private Runnable e;
 
     public PkDaredNoticeItemView(Context context) {
         super(context);
-        this.f15398c = new DecelerateInterpolator(1.7f);
+        this.c = new DecelerateInterpolator(1.7f);
         this.d = new AccelerateInterpolator(1.7f);
-        this.f15397a = 0;
+        this.a = 0;
         a(context);
     }
 
     public PkDaredNoticeItemView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f15398c = new DecelerateInterpolator(1.7f);
+        this.c = new DecelerateInterpolator(1.7f);
         this.d = new AccelerateInterpolator(1.7f);
-        this.f15397a = 0;
+        this.a = 0;
         a(context);
     }
 
     public PkDaredNoticeItemView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f15398c = new DecelerateInterpolator(1.7f);
+        this.c = new DecelerateInterpolator(1.7f);
         this.d = new AccelerateInterpolator(1.7f);
-        this.f15397a = 0;
+        this.a = 0;
         a(context);
     }
 
@@ -90,7 +87,7 @@ public class PkDaredNoticeItemView extends FrameLayout {
             View view = this.b.get(i2);
             view.setAlpha(0.0f);
             view.setTranslationX(getWidth());
-            view.animate().alpha(1.0f).translationX(0.0f).setDuration((i2 * 120) + 400).setStartDelay((i2 * 100) + 100).setInterpolator(this.f15398c).setListener(null);
+            view.animate().alpha(1.0f).translationX(0.0f).setDuration((i2 * 120) + HttpURLConnection.HTTP_BAD_REQUEST).setStartDelay((i2 * 100) + 100).setInterpolator(this.c).setListener(null);
             i = i2 + 1;
         }
     }
@@ -182,7 +179,7 @@ public class PkDaredNoticeItemView extends FrameLayout {
                 PkDaredNoticeItemView.this.a(i);
             }
         });
-        this.f15397a = 1;
+        this.a = 1;
     }
 
     /* renamed from: b */
@@ -192,7 +189,7 @@ public class PkDaredNoticeItemView extends FrameLayout {
         if (list == null || list.isEmpty()) {
             return;
         }
-        this.f15397a = 2;
+        this.a = 2;
         int i = 0;
         while (true) {
             int i2 = i;
@@ -206,7 +203,7 @@ public class PkDaredNoticeItemView extends FrameLayout {
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         super.onAnimationEnd(animator);
-                        PkDaredNoticeItemView.this.f15397a = 3;
+                        PkDaredNoticeItemView.this.a = 3;
                         PkDaredNoticeItemView.this.setVisibility(8);
                         PkDaredObserver.a().a(PkDaredNoticeItemView.this);
                     }

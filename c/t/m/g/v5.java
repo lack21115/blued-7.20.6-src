@@ -14,7 +14,7 @@ import java.util.List;
 public class v5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f4028a = false;
+    public static boolean f3980a = false;
 
     public static int a(CellLocation cellLocation) {
         if (cellLocation instanceof CdmaCellLocation) {
@@ -42,7 +42,7 @@ public class v5 {
         if (telephonyManager != null) {
             try {
                 if (telephonyManager.getSimState() == 5) {
-                    boolean a2 = a(t3Var.f3992a);
+                    boolean a2 = a(t3Var.f3944a);
                     boolean z = false;
                     if (cellLocation == null) {
                         z = false;
@@ -53,10 +53,10 @@ public class v5 {
                             }
                         }
                     }
-                    f4028a = z;
+                    f3980a = z;
                 }
             } catch (Exception e) {
-                f4028a = true;
+                f3980a = true;
             }
         }
     }
@@ -150,7 +150,7 @@ public class v5 {
         if (b6.a(a5Var)) {
             return false;
         }
-        return a(a5Var.f3749a.ordinal(), a5Var.b, a5Var.f3750c, a5Var.d, a5Var.f);
+        return a(a5Var.f3701a.ordinal(), a5Var.b, a5Var.f3702c, a5Var.d, a5Var.f);
     }
 
     public static int b(int i, SignalStrength signalStrength, SignalStrength signalStrength2) {

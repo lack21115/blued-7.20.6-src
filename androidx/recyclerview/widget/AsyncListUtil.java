@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.TileList;
 public class AsyncListUtil<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    final Class<T> f3225a;
+    final Class<T> f3177a;
     final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    final DataCallback<T> f3226c;
+    final DataCallback<T> f3178c;
     final ViewCallback d;
     final TileList<T> e;
     final ThreadUtil.MainThreadCallback<T> f;
@@ -100,10 +100,10 @@ public class AsyncListUtil<T> {
     private final ThreadUtil.BackgroundCallback<T> r = new ThreadUtil.BackgroundCallback<T>() { // from class: androidx.recyclerview.widget.AsyncListUtil.2
 
         /* renamed from: a  reason: collision with root package name */
-        final SparseBooleanArray f3228a = new SparseBooleanArray();
+        final SparseBooleanArray f3180a = new SparseBooleanArray();
 
         /* renamed from: c  reason: collision with root package name */
-        private TileList.Tile<T> f3229c;
+        private TileList.Tile<T> f3181c;
         private int d;
         private int e;
         private int f;
@@ -114,12 +114,12 @@ public class AsyncListUtil<T> {
         }
 
         private TileList.Tile<T> a() {
-            TileList.Tile<T> tile = this.f3229c;
+            TileList.Tile<T> tile = this.f3181c;
             if (tile != null) {
-                this.f3229c = tile.f3360a;
+                this.f3181c = tile.f3312a;
                 return tile;
             }
-            return new TileList.Tile<>(AsyncListUtil.this.f3225a, AsyncListUtil.this.b);
+            return new TileList.Tile<>(AsyncListUtil.this.f3177a, AsyncListUtil.this.b);
         }
 
         private void a(int i, int i2, int i3, boolean z) {
@@ -135,24 +135,24 @@ public class AsyncListUtil<T> {
         }
 
         private void a(TileList.Tile<T> tile) {
-            this.f3228a.put(tile.mStartPosition, true);
+            this.f3180a.put(tile.mStartPosition, true);
             AsyncListUtil.this.f.addTile(this.d, tile);
         }
 
         private boolean b(int i) {
-            return this.f3228a.get(i);
+            return this.f3180a.get(i);
         }
 
         private void c(int i) {
-            this.f3228a.delete(i);
+            this.f3180a.delete(i);
             AsyncListUtil.this.f.removeTile(this.d, i);
         }
 
         private void d(int i) {
-            int maxCachedTiles = AsyncListUtil.this.f3226c.getMaxCachedTiles();
-            while (this.f3228a.size() >= maxCachedTiles) {
-                int keyAt = this.f3228a.keyAt(0);
-                SparseBooleanArray sparseBooleanArray = this.f3228a;
+            int maxCachedTiles = AsyncListUtil.this.f3178c.getMaxCachedTiles();
+            while (this.f3180a.size() >= maxCachedTiles) {
+                int keyAt = this.f3180a.keyAt(0);
+                SparseBooleanArray sparseBooleanArray = this.f3180a;
                 int keyAt2 = sparseBooleanArray.keyAt(sparseBooleanArray.size() - 1);
                 int i2 = this.f - keyAt;
                 int i3 = keyAt2 - this.g;
@@ -177,23 +177,23 @@ public class AsyncListUtil<T> {
             TileList.Tile<T> a2 = a();
             a2.mStartPosition = i;
             a2.mItemCount = Math.min(AsyncListUtil.this.b, this.e - a2.mStartPosition);
-            AsyncListUtil.this.f3226c.fillData(a2.mItems, a2.mStartPosition, a2.mItemCount);
+            AsyncListUtil.this.f3178c.fillData(a2.mItems, a2.mStartPosition, a2.mItemCount);
             d(i2);
             a(a2);
         }
 
         @Override // androidx.recyclerview.widget.ThreadUtil.BackgroundCallback
         public void recycleTile(TileList.Tile<T> tile) {
-            AsyncListUtil.this.f3226c.recycleData(tile.mItems, tile.mItemCount);
-            tile.f3360a = this.f3229c;
-            this.f3229c = tile;
+            AsyncListUtil.this.f3178c.recycleData(tile.mItems, tile.mItemCount);
+            tile.f3312a = this.f3181c;
+            this.f3181c = tile;
         }
 
         @Override // androidx.recyclerview.widget.ThreadUtil.BackgroundCallback
         public void refresh(int i) {
             this.d = i;
-            this.f3228a.clear();
-            this.e = AsyncListUtil.this.f3226c.refreshData();
+            this.f3180a.clear();
+            this.e = AsyncListUtil.this.f3178c.refreshData();
             AsyncListUtil.this.f.updateItemCount(this.d, this.e);
         }
 
@@ -256,9 +256,9 @@ public class AsyncListUtil<T> {
     }
 
     public AsyncListUtil(Class<T> cls, int i, DataCallback<T> dataCallback, ViewCallback viewCallback) {
-        this.f3225a = cls;
+        this.f3177a = cls;
         this.b = i;
-        this.f3226c = dataCallback;
+        this.f3178c = dataCallback;
         this.d = viewCallback;
         this.e = new TileList<>(i);
         MessageThreadUtil messageThreadUtil = new MessageThreadUtil();

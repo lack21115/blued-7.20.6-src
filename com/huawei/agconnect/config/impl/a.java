@@ -14,11 +14,11 @@ import java.util.Map;
 public class a extends AGConnectApp {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, AGConnectApp> f22328a = new HashMap();
+    private static final Map<String, AGConnectApp> f8720a = new HashMap();
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f22329c;
+    private static String f8721c;
     private AGConnectServicesConfig d;
 
     private a(Context context, String str) {
@@ -26,7 +26,7 @@ public class a extends AGConnectApp {
     }
 
     public static AGConnectApp a() {
-        return a(f22329c);
+        return a(f8721c);
     }
 
     public static AGConnectApp a(Context context) {
@@ -35,7 +35,7 @@ public class a extends AGConnectApp {
             context = applicationContext;
         }
         String packageName = context.getPackageName();
-        f22329c = packageName;
+        f8721c = packageName;
         return a(context, packageName);
     }
 
@@ -45,9 +45,9 @@ public class a extends AGConnectApp {
             throw new IllegalArgumentException("packageName can not be empty");
         }
         synchronized (b) {
-            aGConnectApp = f22328a.get(str);
+            aGConnectApp = f8720a.get(str);
             if (aGConnectApp == null) {
-                f22328a.put(str, new a(context, str));
+                f8720a.put(str, new a(context, str));
             }
         }
         return aGConnectApp;
@@ -56,7 +56,7 @@ public class a extends AGConnectApp {
     public static AGConnectApp a(String str) {
         AGConnectApp aGConnectApp;
         synchronized (b) {
-            aGConnectApp = f22328a.get(str);
+            aGConnectApp = f8720a.get(str);
             if (aGConnectApp == null) {
                 throw new IllegalStateException("you should call AGConnectApp.initialize first");
             }

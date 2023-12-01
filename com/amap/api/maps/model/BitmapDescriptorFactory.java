@@ -174,6 +174,6 @@ public final class BitmapDescriptorFactory {
     }
 
     public static Context getContext() {
-        return aa.f4728a;
+        return aa.a;
     }
 }

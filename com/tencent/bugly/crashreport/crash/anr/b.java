@@ -37,7 +37,7 @@ public final class b implements ac {
     private static b m;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Context f35153c;
+    private final Context f21462c;
     private final com.tencent.bugly.crashreport.common.info.a d;
     private final w e;
     private String f;
@@ -47,13 +47,13 @@ public final class b implements ac {
     private int k;
 
     /* renamed from: a  reason: collision with root package name */
-    private AtomicInteger f35152a = new AtomicInteger(0);
+    private AtomicInteger f21461a = new AtomicInteger(0);
     private long b = -1;
     private boolean i = true;
     private ActivityManager.ProcessErrorStateInfo l = new ActivityManager.ProcessErrorStateInfo();
 
     private b(Context context, com.tencent.bugly.crashreport.common.strategy.a aVar, com.tencent.bugly.crashreport.common.info.a aVar2, w wVar, com.tencent.bugly.crashreport.crash.b bVar) {
-        this.f35153c = z.a(context);
+        this.f21462c = z.a(context);
         this.f = context.getDir("bugly", 0).getAbsolutePath();
         this.d = aVar2;
         this.e = wVar;
@@ -105,7 +105,7 @@ public final class b implements ac {
             crashDetailBean.G = this.d.j();
             crashDetailBean.H = this.d.l();
             if (!com.tencent.bugly.crashreport.common.info.b.m()) {
-                crashDetailBean.w = z.a(this.f35153c, c.e, (String) null);
+                crashDetailBean.w = z.a(this.f21462c, c.e, (String) null);
             }
             crashDetailBean.b = 3;
             crashDetailBean.e = this.d.h();
@@ -122,19 +122,19 @@ public final class b implements ac {
                 i = crashDetailBean.q.indexOf("\n");
             }
             crashDetailBean.p = i > 0 ? crashDetailBean.q.substring(0, i) : "GET_FAIL";
-            crashDetailBean.r = aVar.f35151c;
+            crashDetailBean.r = aVar.f21460c;
             if (crashDetailBean.q != null) {
                 crashDetailBean.u = z.a(crashDetailBean.q.getBytes());
             }
             crashDetailBean.z = aVar.b;
-            crashDetailBean.A = aVar.f35150a;
+            crashDetailBean.A = aVar.f21459a;
             crashDetailBean.B = "main(1)";
             crashDetailBean.I = this.d.s();
             crashDetailBean.h = this.d.p();
             crashDetailBean.i = this.d.B();
             crashDetailBean.v = aVar.d;
             crashDetailBean.L = this.d.o;
-            crashDetailBean.M = this.d.f35129a;
+            crashDetailBean.M = this.d.f21438a;
             crashDetailBean.N = this.d.a();
             if (!com.tencent.bugly.crashreport.common.info.b.m()) {
                 this.g.d(crashDetailBean);
@@ -162,8 +162,8 @@ public final class b implements ac {
 
     private boolean a(Context context, String str, ActivityManager.ProcessErrorStateInfo processErrorStateInfo, long j, Map<String, String> map) {
         a aVar = new a();
-        aVar.f35151c = j;
-        aVar.f35150a = processErrorStateInfo != null ? processErrorStateInfo.processName : AppInfo.a(Process.myPid());
+        aVar.f21460c = j;
+        aVar.f21459a = processErrorStateInfo != null ? processErrorStateInfo.processName : AppInfo.a(Process.myPid());
         aVar.f = processErrorStateInfo != null ? processErrorStateInfo.shortMsg : "";
         aVar.e = processErrorStateInfo != null ? processErrorStateInfo.longMsg : "";
         aVar.b = map;
@@ -184,7 +184,7 @@ public final class b implements ac {
         if (TextUtils.isEmpty(aVar.g)) {
             aVar.g = "main stack is null , some error may be encountered.";
         }
-        x.c("anr tm:%d\ntr:%s\nproc:%s\nmain stack:%s\nsMsg:%s\n lMsg:%s\n threads:%d", Long.valueOf(aVar.f35151c), aVar.d, aVar.f35150a, aVar.g, aVar.f, aVar.e, Integer.valueOf(aVar.b == null ? 0 : aVar.b.size()));
+        x.c("anr tm:%d\ntr:%s\nproc:%s\nmain stack:%s\nsMsg:%s\n lMsg:%s\n threads:%d", Long.valueOf(aVar.f21460c), aVar.d, aVar.f21459a, aVar.g, aVar.f, aVar.e, Integer.valueOf(aVar.b == null ? 0 : aVar.b.size()));
         x.a("found visiable anr , start to upload!", new Object[0]);
         CrashDetailBean a2 = a(aVar);
         if (a2 == null) {
@@ -192,7 +192,7 @@ public final class b implements ac {
             return false;
         }
         c.a().a(a2);
-        if (a2.f35141a >= 0) {
+        if (a2.f21450a >= 0) {
             x.a("backup anr record success!", new Object[0]);
         } else {
             x.d("backup anr record fail!", new Object[0]);
@@ -206,12 +206,12 @@ public final class b implements ac {
         } else {
             String str2 = this.f;
             aVar.d = new File(str2, "bugly_trace_" + j + ".txt").getAbsolutePath();
-            this.f35152a.set(3);
-            if (a(str, aVar.d, aVar.f35150a)) {
+            this.f21461a.set(3);
+            if (a(str, aVar.d, aVar.f21459a)) {
                 x.a("backup trace success", new Object[0]);
             }
         }
-        com.tencent.bugly.crashreport.crash.b.a("ANR", z.a(), aVar.f35150a, "main", aVar.g, a2);
+        com.tencent.bugly.crashreport.crash.b.a("ANR", z.a(), aVar.f21459a, "main", aVar.g, a2);
         if (!this.g.a(a2)) {
             this.g.a(a2, m.ag, true);
         }
@@ -529,15 +529,15 @@ public final class b implements ac {
 
     public final void a(String str) {
         synchronized (this) {
-            if (this.f35152a.get() != 0) {
+            if (this.f21461a.get() != 0) {
                 x.c("trace started return ", new Object[0]);
                 return;
             }
-            this.f35152a.set(1);
+            this.f21461a.set(1);
             try {
                 x.c("read trace first dump for create time!", new Object[0]);
                 TraceFileHelper.a readFirstDumpInfo = TraceFileHelper.readFirstDumpInfo(str, false);
-                long j = readFirstDumpInfo != null ? readFirstDumpInfo.f35149c : -1L;
+                long j = readFirstDumpInfo != null ? readFirstDumpInfo.f21458c : -1L;
                 long j2 = j;
                 if (j == -1) {
                     x.d("trace dump fail could not get time!", new Object[0]);
@@ -547,10 +547,10 @@ public final class b implements ac {
                     x.d("should not process ANR too Fre in %d", 10000);
                 } else {
                     this.b = j2;
-                    this.f35152a.set(1);
+                    this.f21461a.set(1);
                     Map<String, String> a2 = z.a(c.f, false);
                     if (a2 != null && a2.size() > 0) {
-                        ActivityManager.ProcessErrorStateInfo a3 = a(this.f35153c, 10000L);
+                        ActivityManager.ProcessErrorStateInfo a3 = a(this.f21462c, 10000L);
                         this.l = a3;
                         if (a3 == null) {
                             x.c("proc state is unvisiable!", new Object[0]);
@@ -558,7 +558,7 @@ public final class b implements ac {
                             x.c("not mind proc!", this.l.processName);
                         } else {
                             x.a("found visiable anr , start to process!", new Object[0]);
-                            a(this.f35153c, str, this.l, j2, a2);
+                            a(this.f21462c, str, this.l, j2, a2);
                         }
                     }
                     x.d("can't get all thread skip this anr", new Object[0]);
@@ -586,7 +586,7 @@ public final class b implements ac {
     }
 
     public final boolean a() {
-        return this.f35152a.get() != 0;
+        return this.f21461a.get() != 0;
     }
 
     @Override // com.tencent.bugly.proguard.ac
@@ -605,7 +605,7 @@ public final class b implements ac {
             hashMap = hashMap2;
         }
         x.c("onThreadBlock found visiable anr , start to process!", new Object[0]);
-        a(this.f35153c, "", null, System.currentTimeMillis(), hashMap);
+        a(this.f21462c, "", null, System.currentTimeMillis(), hashMap);
         return true;
     }
 

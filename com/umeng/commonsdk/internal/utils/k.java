@@ -17,11 +17,11 @@ public class k {
     public static final String b = "_dsk_s";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f40885c = "_thm_z";
+    public static final String f27194c = "_thm_z";
     public static final String d = "_gdf_r";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40884a = at.b().b(at.s);
+    public static final String f27193a = at.b().b(at.s);
     private static Object e = new Object();
 
     public static int a(String str, String str2) throws IOException {
@@ -63,12 +63,12 @@ public class k {
 
     public static String a(Context context) {
         try {
-            SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f40884a, 0);
+            SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f27193a, 0);
             if (sharedPreferences != null) {
                 JSONObject jSONObject = new JSONObject();
                 synchronized (e) {
                     jSONObject.put(b, sharedPreferences.getString(b, ""));
-                    jSONObject.put(f40885c, sharedPreferences.getString(f40885c, ""));
+                    jSONObject.put(f27194c, sharedPreferences.getString(f27194c, ""));
                     jSONObject.put(d, sharedPreferences.getString(d, ""));
                 }
                 return jSONObject.toString();
@@ -115,11 +115,11 @@ public class k {
     /* JADX INFO: Access modifiers changed from: private */
     public static void b(Context context, String[] strArr) {
         SharedPreferences sharedPreferences;
-        if (context == null || (sharedPreferences = context.getApplicationContext().getSharedPreferences(f40884a, 0)) == null) {
+        if (context == null || (sharedPreferences = context.getApplicationContext().getSharedPreferences(f27193a, 0)) == null) {
             return;
         }
         synchronized (e) {
-            sharedPreferences.edit().putString(b, strArr[0]).putString(f40885c, strArr[1]).putString(d, strArr[2]).commit();
+            sharedPreferences.edit().putString(b, strArr[0]).putString(f27194c, strArr[1]).putString(d, strArr[2]).commit();
         }
     }
 
@@ -225,7 +225,7 @@ public class k {
     public static boolean c(Context context) {
         boolean z = false;
         if (context != null) {
-            SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f40884a, 0);
+            SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f27193a, 0);
             z = false;
             if (sharedPreferences != null) {
                 z = false;

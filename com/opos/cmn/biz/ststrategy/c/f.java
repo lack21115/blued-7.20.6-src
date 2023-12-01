@@ -8,7 +8,7 @@ import com.opos.cmn.envdev.api.EnvDevConfig;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24706a = f.class.getSimpleName();
+    private static final String f11018a = f.class.getSimpleName();
 
     public static String a(Context context) {
         String str = "";
@@ -22,7 +22,7 @@ public class f {
                 return com.opos.cmn.biz.d.b.a.a(context);
             }
             String a2 = com.opos.cmn.biz.d.b.a.a(context);
-            String str3 = f24706a;
+            String str3 = f11018a;
             com.opos.cmn.an.f.a.b(str3, "getSTConfigUrl pub=" + a2);
             str2 = str;
         }
@@ -35,7 +35,7 @@ public class f {
 
     public static boolean b(Context context) {
         boolean a2 = com.opos.cmn.biz.d.b.a.a();
-        String str = f24706a;
+        String str = f11018a;
         com.opos.cmn.an.f.a.b(str, "isOverseas=" + a2);
         return a2;
     }
@@ -45,16 +45,16 @@ public class f {
         if (context != null) {
             try {
             } catch (Exception e) {
-                com.opos.cmn.an.f.a.c(f24706a, "", e);
+                com.opos.cmn.an.f.a.c(f11018a, "", e);
             }
             if (com.opos.cmn.biz.a.d.a(context).equalsIgnoreCase(d.b(context))) {
                 z = true;
-                com.opos.cmn.an.f.a.b(f24706a, "isLastRegion=" + z);
+                com.opos.cmn.an.f.a.b(f11018a, "isLastRegion=" + z);
                 return z;
             }
         }
         z = false;
-        com.opos.cmn.an.f.a.b(f24706a, "isLastRegion=" + z);
+        com.opos.cmn.an.f.a.b(f11018a, "isLastRegion=" + z);
         return z;
     }
 }

@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import com.oplus.quickgame.sdk.hall.Constant;
 import com.umeng.analytics.pro.bh;
 import com.umeng.commonsdk.framework.UMModuleRegister;
+import com.xiaomi.mipush.sdk.Constants;
 import com.youzan.androidsdk.tool.AppSigning;
 import com.zx.a.I8b7.u1;
 import java.util.Collections;
@@ -26,11 +27,11 @@ public class t2 {
     public static String B;
 
     /* renamed from: a  reason: collision with root package name */
-    public static Context f42201a;
+    public static Context f28510a;
     public static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f42202c = "";
+    public static String f28511c = "";
     public static String d = "";
     public static String e;
     public static String f = "";
@@ -75,37 +76,37 @@ public class t2 {
         if (TextUtils.isEmpty(str)) {
             return "";
         }
-        String[] split = str.split("-");
+        String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         return split.length == 2 ? split[0] : "";
     }
 
     public static void a(Context context) throws Exception {
         Context applicationContext = context.getApplicationContext();
-        f42201a = applicationContext;
+        f28510a = applicationContext;
         g = applicationContext.getPackageName();
-        i1.c(f42201a);
-        f = i1.a(f42201a);
+        i1.c(f28510a);
+        f = i1.a(f28510a);
         StringBuilder a2 = m2.a("initAppId: ");
         a2.append(f);
         z1.a(a2.toString());
-        b(f42201a);
+        b(f28510a);
         if (TextUtils.isEmpty(h)) {
             b();
         } else {
             String a3 = k.a(d3.b() + Build.MODEL, AppSigning.SHA256);
-            String[] split = h.split("-");
+            String[] split = h.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             if (split.length < 2) {
                 StringBuilder a4 = m2.a("ZXID 检测到老版本LID:");
                 a4.append(h);
                 m.a(a4.toString());
-                h += "-" + a3;
-                u1 u1Var = u1.a.f42208a;
-                b3 b3Var = u1Var.f42207a;
+                h += Constants.ACCEPT_TIME_SEPARATOR_SERVER + a3;
+                u1 u1Var = u1.a.f28517a;
+                b3 b3Var = u1Var.f28516a;
                 String str = h;
                 b3Var.getClass();
                 if (!TextUtils.equals(str, h)) {
                     h = str;
-                    u1Var.f42207a.a(0, str, true);
+                    u1Var.f28516a.a(0, str, true);
                 }
                 StringBuilder a5 = m2.a("ZXID 兼容老版本LID后重新生成LID:");
                 a5.append(h);
@@ -113,7 +114,7 @@ public class t2 {
             } else if (TextUtils.equals(a3, split[1])) {
                 m.a("ZXID LID校验通过!");
             } else {
-                b3 b3Var2 = u1.a.f42208a.f42207a;
+                b3 b3Var2 = u1.a.f28517a.f28516a;
                 if (b3Var2.b == null) {
                     b3Var2.b = b3Var2.d();
                 }
@@ -146,12 +147,12 @@ public class t2 {
     }
 
     public static void b() {
-        String str = UUID.randomUUID().toString().replaceAll("-", "") + "-" + k.a(d3.b() + Build.MODEL, AppSigning.SHA256);
-        u1 u1Var = u1.a.f42208a;
-        u1Var.f42207a.getClass();
+        String str = UUID.randomUUID().toString().replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "") + Constants.ACCEPT_TIME_SEPARATOR_SERVER + k.a(d3.b() + Build.MODEL, AppSigning.SHA256);
+        u1 u1Var = u1.a.f28517a;
+        u1Var.f28516a.getClass();
         if (!TextUtils.equals(str, h)) {
             h = str;
-            u1Var.f42207a.a(0, str, true);
+            u1Var.f28516a.a(0, str, true);
         }
         m.a("ZXID 生成LID:" + str);
     }

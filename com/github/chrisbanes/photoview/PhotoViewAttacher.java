@@ -17,11 +17,11 @@ import android.widget.OverScroller;
 public class PhotoViewAttacher implements View.OnLayoutChangeListener, View.OnTouchListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private static float f22045a = 3.0f;
+    private static float f8438a = 3.0f;
     private static float b = 1.75f;
 
     /* renamed from: c  reason: collision with root package name */
-    private static float f22046c = 1.0f;
+    private static float f8439c = 1.0f;
     private static int d = 200;
     private static int e = 1;
     private OnScaleChangedListener A;
@@ -40,9 +40,9 @@ public class PhotoViewAttacher implements View.OnLayoutChangeListener, View.OnTo
     private View.OnLongClickListener z;
     private Interpolator f = new AccelerateDecelerateInterpolator();
     private int g = d;
-    private float h = f22046c;
+    private float h = f8439c;
     private float i = b;
-    private float j = f22045a;
+    private float j = f8438a;
     private boolean k = true;
     private boolean l = false;
     private final Matrix p = new Matrix();
@@ -105,28 +105,28 @@ public class PhotoViewAttacher implements View.OnLayoutChangeListener, View.OnTo
     public static /* synthetic */ class AnonymousClass4 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f22050a;
+        static final /* synthetic */ int[] f8443a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[ImageView.ScaleType.values().length];
-            f22050a = iArr;
+            f8443a = iArr;
             try {
                 iArr[ImageView.ScaleType.FIT_CENTER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f22050a[ImageView.ScaleType.FIT_START.ordinal()] = 2;
+                f8443a[ImageView.ScaleType.FIT_START.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f22050a[ImageView.ScaleType.FIT_END.ordinal()] = 3;
+                f8443a[ImageView.ScaleType.FIT_END.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f22050a[ImageView.ScaleType.FIT_XY.ordinal()] = 4;
+                f8443a[ImageView.ScaleType.FIT_XY.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -138,14 +138,14 @@ public class PhotoViewAttacher implements View.OnLayoutChangeListener, View.OnTo
         private final float b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final float f22052c;
+        private final float f8445c;
         private final long d = System.currentTimeMillis();
         private final float e;
         private final float f;
 
         public AnimatedZoomRunnable(float f, float f2, float f3, float f4) {
             this.b = f3;
-            this.f22052c = f4;
+            this.f8445c = f4;
             this.e = f;
             this.f = f2;
         }
@@ -158,7 +158,7 @@ public class PhotoViewAttacher implements View.OnLayoutChangeListener, View.OnTo
         public void run() {
             float a2 = a();
             float f = this.e;
-            PhotoViewAttacher.this.J.a((f + ((this.f - f) * a2)) / PhotoViewAttacher.this.e(), this.b, this.f22052c);
+            PhotoViewAttacher.this.J.a((f + ((this.f - f) * a2)) / PhotoViewAttacher.this.e(), this.b, this.f8445c);
             if (a2 < 1.0f) {
                 Compat.a(PhotoViewAttacher.this.m, this);
             }
@@ -171,7 +171,7 @@ public class PhotoViewAttacher implements View.OnLayoutChangeListener, View.OnTo
         private final OverScroller b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f22054c;
+        private int f8447c;
         private int d;
 
         public FlingRunnable(Context context) {
@@ -209,7 +209,7 @@ public class PhotoViewAttacher implements View.OnLayoutChangeListener, View.OnTo
                 i7 = round2;
                 i8 = i7;
             }
-            this.f22054c = round;
+            this.f8447c = round;
             this.d = round2;
             if (round == i5 && round2 == i8) {
                 return;
@@ -222,9 +222,9 @@ public class PhotoViewAttacher implements View.OnLayoutChangeListener, View.OnTo
             if (!this.b.isFinished() && this.b.computeScrollOffset()) {
                 int currX = this.b.getCurrX();
                 int currY = this.b.getCurrY();
-                PhotoViewAttacher.this.r.postTranslate(this.f22054c - currX, this.d - currY);
+                PhotoViewAttacher.this.r.postTranslate(this.f8447c - currX, this.d - currY);
                 PhotoViewAttacher.this.l();
-                this.f22054c = currX;
+                this.f8447c = currX;
                 this.d = currY;
                 Compat.a(PhotoViewAttacher.this.m, this);
             }
@@ -243,7 +243,7 @@ public class PhotoViewAttacher implements View.OnLayoutChangeListener, View.OnTo
         GestureDetector gestureDetector = new GestureDetector(imageView.getContext(), new GestureDetector.SimpleOnGestureListener() { // from class: com.github.chrisbanes.photoview.PhotoViewAttacher.2
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
             public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
-                if (PhotoViewAttacher.this.B == null || PhotoViewAttacher.this.e() > PhotoViewAttacher.f22046c || motionEvent.getPointerCount() > PhotoViewAttacher.e || motionEvent2.getPointerCount() > PhotoViewAttacher.e) {
+                if (PhotoViewAttacher.this.B == null || PhotoViewAttacher.this.e() > PhotoViewAttacher.f8439c || motionEvent.getPointerCount() > PhotoViewAttacher.e || motionEvent2.getPointerCount() > PhotoViewAttacher.e) {
                     return false;
                 }
                 return PhotoViewAttacher.this.B.a(motionEvent, motionEvent2, f, f2);
@@ -364,7 +364,7 @@ public class PhotoViewAttacher implements View.OnLayoutChangeListener, View.OnTo
             if (((int) this.G) % 180 != 0) {
                 rectF = new RectF(0.0f, 0.0f, f3, f);
             }
-            int i = AnonymousClass4.f22050a[this.I.ordinal()];
+            int i = AnonymousClass4.f8443a[this.I.ordinal()];
             if (i == 1) {
                 this.p.setRectToRect(rectF, rectF2, Matrix.ScaleToFit.CENTER);
             } else if (i == 2) {
@@ -428,7 +428,7 @@ public class PhotoViewAttacher implements View.OnLayoutChangeListener, View.OnTo
         float width = b2.width();
         float b3 = b(this.m);
         if (height <= b3) {
-            int i = AnonymousClass4.f22050a[this.I.ordinal()];
+            int i = AnonymousClass4.f8443a[this.I.ordinal()];
             if (i != 2) {
                 if (i != 3) {
                     f5 = (b3 - height) / 2.0f;
@@ -454,7 +454,7 @@ public class PhotoViewAttacher implements View.OnLayoutChangeListener, View.OnTo
         }
         float a2 = a(this.m);
         if (width <= a2) {
-            int i2 = AnonymousClass4.f22050a[this.I.ordinal()];
+            int i2 = AnonymousClass4.f8443a[this.I.ordinal()];
             if (i2 != 2) {
                 if (i2 != 3) {
                     f3 = (a2 - width) / 2.0f;

@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.provider.SearchIndexablesContract;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.collection.ArrayMap;
 import androidx.fragment.app.FragmentActivity;
-import com.android.internal.telephony.PhoneConstants;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.data.SessionHeader;
 import com.blued.android.chat.listener.FetchDataListener;
@@ -53,6 +53,7 @@ import com.soft.blued.ui.web.WebViewShowInfoFragment;
 import com.soft.blued.utils.BluedPreferences;
 import com.soft.blued.utils.Logger;
 import com.soft.blued.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -64,11 +65,11 @@ public class LoginRegisterTools {
     private static String p = LoginRegisterTools.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f31399a = "re_type";
+    public static String f17709a = "re_type";
     public static String b = "re_type_three";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f31400c = "re_captcha";
+    public static String f17710c = "re_captcha";
     public static String d = "re_token";
     public static String e = "re_phone";
     public static String f = "re_email";
@@ -88,17 +89,15 @@ public class LoginRegisterTools {
         AnonymousClass13() {
         }
 
-        @Override // com.blued.android.chat.listener.FetchDataListener
         /* renamed from: a */
         public void onFetchData(final Map<String, SessionModel> map) {
             LoginRegisterHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<RemindSettingModel>>() { // from class: com.soft.blued.ui.login_register.LoginRegisterTools.13.1
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<RemindSettingModel> bluedEntityA) {
                     List<RemindSettingModel.GroupInfo> groups;
                     if (bluedEntityA != null) {
                         try {
-                            if (!bluedEntityA.hasData() || (groups = bluedEntityA.data.get(0).getGroups()) == null) {
+                            if (!bluedEntityA.hasData() || (groups = ((RemindSettingModel) bluedEntityA.data.get(0)).getGroups()) == null) {
                                 return;
                             }
                             ArrayList<RemindSettingModel.GroupInfo> arrayList = new ArrayList();
@@ -107,7 +106,7 @@ public class LoginRegisterTools {
                                 if (map != null) {
                                     SessionModel sessionModel = (SessionModel) map.get(SessionHeader.getSessionKey(3, parseLong));
                                     if (sessionModel != null && sessionModel.sessionSettingModel != null) {
-                                        SessionSettingModel sessionSettingModel = (SessionSettingModel) sessionModel.sessionSettingModel;
+                                        SessionSettingModel sessionSettingModel = sessionModel.sessionSettingModel;
                                         if (sessionSettingModel.getRemindAudio() != groupInfo.nodisturb) {
                                             sessionSettingModel.setRemindAudio(groupInfo.nodisturb);
                                             ChatManager.getInstance().setSessionSetting((short) 3, parseLong, sessionSettingModel);
@@ -150,7 +149,7 @@ public class LoginRegisterTools {
         smOption.setOrganization("qRLrIEyYwqE1vOhOACQy");
         smOption.setMode(SmCaptchaWebView.MODE_SLIDE);
         smOption.setAppId("1");
-        smOption.setChannel(AppInfo.f9487c);
+        smOption.setChannel(AppInfo.c);
         if (!BlueAppLocal.d()) {
             HashMap hashMap = new HashMap();
             hashMap.put("lang", "en");
@@ -226,14 +225,14 @@ public class LoginRegisterTools {
     }
 
     public static String a(String str, String str2) {
-        return str + "-" + str2;
+        return str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str2;
     }
 
     public static String a(String str, String str2, String str3) {
         Gson f2 = AppInfo.f();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("access_token", str);
-        arrayMap.put("user_id", str2);
+        arrayMap.put(SearchIndexablesContract.RawData.COLUMN_USER_ID, str2);
         arrayMap.put("three_type", str3);
         return f2.toJson(arrayMap);
     }
@@ -263,7 +262,7 @@ public class LoginRegisterTools {
                         if (CardDialog.Builder.this.d() == 0) {
                             String b2 = LoginRegisterTools.b();
                             if (StringUtils.d(b2)) {
-                                TerminalActivity.d(context, LinkMobileFragment.class, null);
+                                TerminalActivity.d(context, LinkMobileFragment.class, (Bundle) null);
                                 return;
                             }
                             String[] g2 = LoginRegisterTools.g(b2);
@@ -275,7 +274,7 @@ public class LoginRegisterTools {
                     String d2 = LoginRegisterTools.d();
                     Bundle bundle = new Bundle();
                     bundle.putString(LoginRegisterTools.f, d2);
-                    bundle.putInt(LoginRegisterTools.f31399a, 0);
+                    bundle.putInt(LoginRegisterTools.f17709a, 0);
                     if (!TextUtils.isEmpty(d2)) {
                         TerminalActivity.d(context, LinkMobileSuccessFragment.class, bundle);
                         return;
@@ -293,7 +292,7 @@ public class LoginRegisterTools {
 
     public static void a(Context context, String str, String str2) {
         Bundle bundle = new Bundle();
-        bundle.putInt(f31399a, 1);
+        bundle.putInt(f17709a, 1);
         bundle.putString(g, str);
         bundle.putString(e, str2);
         TerminalActivity.d(context, LinkMobileSuccessFragment.class, bundle);
@@ -309,22 +308,20 @@ public class LoginRegisterTools {
     public static void a(FragmentActivity fragmentActivity) {
         final String string = fragmentActivity.getResources().getString(2131886661);
         CommonShowBottomWindow.a(fragmentActivity, fragmentActivity.getResources().getStringArray(R.array.login_forgetsecret_phone_email), new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.login_register.LoginRegisterTools.7
-            @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
             public void a(ActionSheet actionSheet, int i2) {
                 if (i2 == 0) {
                     EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.FIND_PWD_BY_PHONE);
-                    WebViewShowInfoFragment.a(AppInfo.d(), BluedHttpUrl.b(), String.this, 1);
+                    WebViewShowInfoFragment.a(AppInfo.d(), BluedHttpUrl.b(), string, 1);
                 } else if (i2 == 1) {
                     EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.FIND_PWD_BY_REG_EMAIL);
-                    WebViewShowInfoFragment.a(AppInfo.d(), BluedHttpUrl.c(), String.this, 1);
+                    WebViewShowInfoFragment.a(AppInfo.d(), BluedHttpUrl.c(), string, 1);
                 } else if (i2 != 2) {
                 } else {
                     EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.FIND_PWD_BY_SAFE_EMAIL);
-                    WebViewShowInfoFragment.a(AppInfo.d(), BluedHttpUrl.d(), String.this, 1);
+                    WebViewShowInfoFragment.a(AppInfo.d(), BluedHttpUrl.d(), string, 1);
                 }
             }
 
-            @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
             public void a(ActionSheet actionSheet, boolean z) {
             }
         });
@@ -361,17 +358,15 @@ public class LoginRegisterTools {
 
     public static void b(final FragmentActivity fragmentActivity) {
         CommonShowBottomWindow.a(fragmentActivity, new String[]{fragmentActivity.getResources().getStringArray(R.array.login_question)[0]}, new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.login_register.LoginRegisterTools.8
-            @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
             public void a(ActionSheet actionSheet, int i2) {
                 if (i2 == 0) {
                     LoginRegisterTools.a(FragmentActivity.this);
                 } else if (i2 != 1) {
                 } else {
-                    ServiceHelper.f33645a.a(FragmentActivity.this);
+                    ServiceHelper.f19954a.a(FragmentActivity.this);
                 }
             }
 
-            @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
             public void a(ActionSheet actionSheet, boolean z) {
             }
         });
@@ -461,7 +456,7 @@ public class LoginRegisterTools {
             String substring2 = stringBuffer.substring(stringBuffer.length() - 4, stringBuffer.length());
             StringBuffer stringBuffer2 = new StringBuffer();
             for (int i2 = 0; i2 < stringBuffer.length() - 7; i2++) {
-                stringBuffer2.append(PhoneConstants.APN_TYPE_ALL);
+                stringBuffer2.append("*");
             }
             return substring + stringBuffer2.toString() + substring2;
         } catch (Exception e2) {
@@ -472,18 +467,16 @@ public class LoginRegisterTools {
 
     public static void e() {
         ChatManager.getInstance().getSessionSettingModel((short) 1, 2L, new FetchDataListener<SessionSettingBaseModel>() { // from class: com.soft.blued.ui.login_register.LoginRegisterTools.12
-            @Override // com.blued.android.chat.listener.FetchDataListener
             /* renamed from: a */
             public void onFetchData(SessionSettingBaseModel sessionSettingBaseModel) {
                 LoginRegisterHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<RemindSettingModel>>() { // from class: com.soft.blued.ui.login_register.LoginRegisterTools.12.1
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<RemindSettingModel> bluedEntityA) {
                         if (bluedEntityA != null) {
                             try {
                                 if (bluedEntityA.hasData()) {
                                     boolean z = false;
-                                    RemindSettingModel remindSettingModel = bluedEntityA.data.get(0);
+                                    RemindSettingModel remindSettingModel = (RemindSettingModel) bluedEntityA.data.get(0);
                                     BluedPreferences.p("1".equals(remindSettingModel.is_other_message_push));
                                     BluedPreferences.m("1".equals(remindSettingModel.getIs_push_content()));
                                     BluedPreferences.k("1".equals(remindSettingModel.getIs_open_sound()));
@@ -540,8 +533,8 @@ public class LoginRegisterTools {
         String[] strArr2 = strArr;
         if (!StringUtils.d(str)) {
             strArr2 = strArr;
-            if (str.contains("-")) {
-                String[] split = str.split("-");
+            if (str.contains(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) {
+                String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 strArr2 = strArr;
                 if (split.length == 2) {
                     strArr2 = split;

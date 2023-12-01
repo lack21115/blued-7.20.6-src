@@ -61,12 +61,11 @@ public class LicenseChecker {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/sdk/common/LicenseChecker$e.class */
-    public static final class e {
+    static final class e {
 
         /* renamed from: a  reason: collision with root package name */
-        public static LicenseChecker f36425a = new LicenseChecker();
+        public static LicenseChecker f22734a = new LicenseChecker();
     }
 
     static {
@@ -74,7 +73,7 @@ public class LicenseChecker {
     }
 
     public static LicenseChecker getInstance() {
-        return e.f36425a;
+        return e.f22734a;
     }
 
     private static native String nativeGetAppId();

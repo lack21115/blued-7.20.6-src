@@ -6,11 +6,11 @@ import com.tencent.qimei.strategy.terminal.ITerminalStrategy;
 public class a implements ITerminalStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f38439a = true;
+    public boolean f24748a = true;
     public boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f38440c = true;
+    public boolean f24749c = true;
     public boolean d = true;
     public boolean e = true;
     public boolean f = true;
@@ -58,7 +58,7 @@ public class a implements ITerminalStrategy {
 
     @Override // com.tencent.qimei.strategy.terminal.ITerminalStrategy
     public ITerminalStrategy enableIMSI(boolean z) {
-        this.f38440c = z;
+        this.f24749c = z;
         return this;
     }
 
@@ -70,7 +70,7 @@ public class a implements ITerminalStrategy {
 
     @Override // com.tencent.qimei.strategy.terminal.ITerminalStrategy
     public ITerminalStrategy enableOAID(boolean z) {
-        this.f38439a = z;
+        this.f24748a = z;
         return this;
     }
 

@@ -70,19 +70,16 @@ public final class VideoCallbackServant {
         }
     };
     private final IVideoCallback mStub = new IVideoCallback.Stub() { // from class: android.telecom.VideoCallbackServant.2
-        @Override // com.android.internal.telecom.IVideoCallback
         public void changeCallDataUsage(int i) throws RemoteException {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.argi1 = i;
             VideoCallbackServant.this.mHandler.obtainMessage(4, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void changeCameraCapabilities(CameraCapabilities cameraCapabilities) throws RemoteException {
             VideoCallbackServant.this.mHandler.obtainMessage(5, cameraCapabilities).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void changePeerDimensions(int i, int i2) throws RemoteException {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.argi1 = i;
@@ -90,24 +87,20 @@ public final class VideoCallbackServant {
             VideoCallbackServant.this.mHandler.obtainMessage(3, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void changeVideoQuality(int i) throws RemoteException {
             VideoCallbackServant.this.mHandler.obtainMessage(6, i, 0).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void handleCallSessionEvent(int i) throws RemoteException {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.argi1 = i;
             VideoCallbackServant.this.mHandler.obtainMessage(2, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void receiveSessionModifyRequest(VideoProfile videoProfile) throws RemoteException {
             VideoCallbackServant.this.mHandler.obtainMessage(0, videoProfile).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void receiveSessionModifyResponse(int i, VideoProfile videoProfile, VideoProfile videoProfile2) throws RemoteException {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.argi1 = i;

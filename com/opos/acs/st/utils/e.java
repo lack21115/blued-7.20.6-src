@@ -10,10 +10,10 @@ import java.util.Map;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f24465a = "ReportErrorEngine";
+    private static String f10778a = "ReportErrorEngine";
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile e f24466c;
+    private static volatile e f10779c;
     private static byte[] d = new byte[1];
     private Context b;
 
@@ -25,19 +25,19 @@ public final class e {
     }
 
     public static e a(Context context) {
-        if (f24466c == null) {
+        if (f10779c == null) {
             synchronized (d) {
-                if (f24466c == null) {
-                    f24466c = new e(context);
+                if (f10779c == null) {
+                    f10779c = new e(context);
                 }
             }
         }
-        return f24466c;
+        return f10779c;
     }
 
     public static void a(Map map) {
         try {
-            String str = f24465a;
+            String str = f10778a;
             StringBuilder sb = new StringBuilder("errorMap=");
             sb.append(map != null ? map : com.igexin.push.core.b.l);
             d.a(str, sb.toString());
@@ -46,11 +46,11 @@ public final class e {
                 try {
                     RequestStatisticManager.getInstance().report(a2);
                 } catch (Exception e) {
-                    d.c(f24465a, "report error Exception", e);
+                    d.c(f10778a, "report error Exception", e);
                 }
             }
         } catch (Exception e2) {
-            d.c(f24465a, "reportOneRecord error Exception", e2);
+            d.c(f10778a, "reportOneRecord error Exception", e2);
         }
     }
 
@@ -58,19 +58,19 @@ public final class e {
         boolean z;
         try {
             if ("WIFI".equalsIgnoreCase(h.a(this.b))) {
-                d.a(f24465a, "is wifi");
+                d.a(f10778a, "is wifi");
                 z = true;
             } else {
-                d.a(f24465a, "is not wifi");
+                d.a(f10778a, "is not wifi");
                 z = false;
             }
             if (z) {
                 RequestStatisticManager.getInstance().reportCacheIfNeed();
             } else {
-                d.a(f24465a, "is not wifi");
+                d.a(f10778a, "is not wifi");
             }
         } catch (Exception e) {
-            d.c(f24465a, "report all error Exception", e);
+            d.c(f10778a, "report all error Exception", e);
         }
     }
 }

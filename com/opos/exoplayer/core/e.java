@@ -4,11 +4,11 @@ package com.opos.exoplayer.core;
 public class e implements n {
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.opos.exoplayer.core.h.j f25272a;
+    private final com.opos.exoplayer.core.h.j f11584a;
     private final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f25273c;
+    private final long f11585c;
     private final long d;
     private final long e;
     private final int f;
@@ -30,9 +30,9 @@ public class e implements n {
     }
 
     public e(com.opos.exoplayer.core.h.j jVar, int i, int i2, int i3, int i4, int i5, boolean z, com.opos.exoplayer.core.i.p pVar) {
-        this.f25272a = jVar;
+        this.f11584a = jVar;
         this.b = i * 1000;
-        this.f25273c = i2 * 1000;
+        this.f11585c = i2 * 1000;
         this.d = i3 * 1000;
         this.e = i4 * 1000;
         this.f = i5;
@@ -48,7 +48,7 @@ public class e implements n {
         }
         this.j = false;
         if (z) {
-            this.f25272a.d();
+            this.f11584a.d();
         }
     }
 
@@ -82,19 +82,19 @@ public class e implements n {
             i2 = a(sVarArr, gVar);
         }
         this.i = i2;
-        this.f25272a.a(i2);
+        this.f11584a.a(i2);
     }
 
     @Override // com.opos.exoplayer.core.n
     public boolean a(long j, float f) {
         boolean z;
         boolean z2;
-        boolean z3 = this.f25272a.e() >= this.i;
+        boolean z3 = this.f11584a.e() >= this.i;
         boolean z4 = this.j;
         if (this.g) {
             z = true;
             if (j >= this.b) {
-                if (j <= this.f25273c && z4 && !z3) {
+                if (j <= this.f11585c && z4 && !z3) {
                     z = true;
                 }
                 z = false;
@@ -103,7 +103,7 @@ public class e implements n {
             if (!z3) {
                 z = true;
                 if (j >= this.b) {
-                    if (j <= this.f25273c && z4) {
+                    if (j <= this.f11585c && z4) {
                         z = true;
                     }
                 }
@@ -129,7 +129,7 @@ public class e implements n {
         if (j2 <= 0 || b >= j2) {
             return true;
         }
-        return !this.g && this.f25272a.e() >= this.i;
+        return !this.g && this.f11584a.e() >= this.i;
     }
 
     @Override // com.opos.exoplayer.core.n
@@ -144,7 +144,7 @@ public class e implements n {
 
     @Override // com.opos.exoplayer.core.n
     public com.opos.exoplayer.core.h.b d() {
-        return this.f25272a;
+        return this.f11584a;
     }
 
     @Override // com.opos.exoplayer.core.n

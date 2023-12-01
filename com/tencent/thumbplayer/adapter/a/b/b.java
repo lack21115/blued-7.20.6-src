@@ -59,7 +59,7 @@ import java.util.Set;
 public class b implements com.tencent.thumbplayer.adapter.a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    static final Set<Integer> f39167a = new HashSet<Integer>() { // from class: com.tencent.thumbplayer.adapter.a.b.b.8
+    static final Set<Integer> f25476a = new HashSet<Integer>() { // from class: com.tencent.thumbplayer.adapter.a.b.b.8
         {
             add(503);
         }
@@ -67,7 +67,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
     private TPNativePlayer b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TPNativePlayerInitConfig f39168c;
+    private TPNativePlayerInitConfig f25477c;
     private a d;
     private g e;
     private com.tencent.thumbplayer.adapter.a.a f;
@@ -84,12 +84,12 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
         public void onASyncCallResult(int i, long j, int i2, int i3) {
             com.tencent.thumbplayer.e.a aVar = b.this.h;
             aVar.c("onASyncCallResult, callType:" + i + ", opaque:" + j + ", errorType:" + i2 + ", errorCode:" + i3);
-            C1012b c1012b = new C1012b();
-            c1012b.f39177a = i;
-            c1012b.b = j;
-            c1012b.f39178c = i2;
-            c1012b.d = i3;
-            a(1, c1012b);
+            C0842b c0842b = new C0842b();
+            c0842b.f25486a = i;
+            c0842b.b = j;
+            c0842b.f25487c = i2;
+            c0842b.d = i3;
+            a(1, c0842b);
         }
 
         @Override // com.tencent.thumbplayer.core.player.ITPNativePlayerMessageCallback
@@ -104,7 +104,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
             com.tencent.thumbplayer.e.a aVar = b.this.h;
             aVar.c("onError, msgType:" + i + ", errorCode:" + i2);
             c cVar = new c();
-            cVar.f39179a = i;
+            cVar.f25488a = i;
             cVar.b = i2;
             a(4, cVar);
         }
@@ -118,9 +118,9 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
                 return;
             }
             d dVar = new d();
-            dVar.f39180a = i;
+            dVar.f25489a = i;
             dVar.b = j;
-            dVar.f39181c = j2;
+            dVar.f25490c = j2;
             a(2, dVar);
         }
 
@@ -131,7 +131,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
                 aVar.c("onInfoObject, infoType:" + i + ", objParam:" + obj);
             }
             e eVar = new e();
-            eVar.f39182a = i;
+            eVar.f25491a = i;
             eVar.b = obj;
             a(3, eVar);
         }
@@ -202,31 +202,31 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
             b.this.e.a(TPNativeKeyMapUtil.toTPIntValue(TPNativeKeyMap.MapErrorType.class, i), i2, 0L, 0L);
         }
 
-        private void a(C1012b c1012b) {
-            int i = c1012b.f39177a;
+        private void a(C0842b c0842b) {
+            int i = c0842b.f25486a;
             if (i == 1) {
                 b.this.b();
             } else if (i != 2) {
-                b.this.a(c1012b);
+                b.this.a(c0842b);
             } else {
                 b.this.c();
             }
         }
 
         private void a(d dVar) {
-            int i = dVar.f39180a;
+            int i = dVar.f25489a;
             if (i == 154) {
                 b.this.d();
             } else if (i != 250) {
-                b.this.a(dVar.f39180a, dVar);
+                b.this.a(dVar.f25489a, dVar);
             } else {
-                b.this.a(dVar.b, dVar.f39181c);
+                b.this.a(dVar.b, dVar.f25490c);
             }
         }
 
         private void a(e eVar) {
-            if (eVar.f39182a != 502) {
-                b.this.a(eVar.f39182a, eVar);
+            if (eVar.f25491a != 502) {
+                b.this.a(eVar.f25491a, eVar);
             } else if (eVar.b instanceof String) {
                 b.this.g.subtitleData = (String) eVar.b;
                 b.this.e.a(b.this.g);
@@ -245,14 +245,14 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
             }
             int i = message.what;
             if (i == 1) {
-                a((C1012b) message.obj);
+                a((C0842b) message.obj);
             } else if (i == 2) {
                 a((d) message.obj);
             } else if (i == 3) {
                 a((e) message.obj);
             } else if (i == 4) {
                 c cVar = (c) message.obj;
-                a(cVar.f39179a, cVar.b);
+                a(cVar.f25488a, cVar.b);
             } else if (i == 5) {
                 a((TPDetailInfo) message.obj);
             } else {
@@ -264,15 +264,15 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
 
     /* renamed from: com.tencent.thumbplayer.adapter.a.b.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/adapter/a/b/b$b.class */
-    public static class C1012b {
+    public static class C0842b {
         @TPCommonEnum.NativeMsgInfo
 
         /* renamed from: a  reason: collision with root package name */
-        int f39177a;
+        int f25486a;
         long b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f39178c;
+        int f25487c;
         int d;
     }
 
@@ -280,7 +280,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
     public static class c {
 
         /* renamed from: a  reason: collision with root package name */
-        int f39179a;
+        int f25488a;
         int b;
     }
 
@@ -288,18 +288,18 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
     public static class d {
 
         /* renamed from: a  reason: collision with root package name */
-        int f39180a;
+        int f25489a;
         long b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f39181c;
+        long f25490c;
     }
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/adapter/a/b/b$e.class */
     public static class e {
 
         /* renamed from: a  reason: collision with root package name */
-        int f39182a;
+        int f25491a;
         Object b;
     }
 
@@ -314,7 +314,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
         this.b.setPostProcessFrameCallback(this.m);
         this.b.setDemuxerCallback(this.n);
         this.b.setEventRecordCallback(this.o);
-        this.f39168c = new TPNativePlayerInitConfig();
+        this.f25477c = new TPNativePlayerInitConfig();
         this.e = new g(this.h.b());
         Looper myLooper = Looper.myLooper();
         if (myLooper != null) {
@@ -379,7 +379,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
             return;
         }
         long j = dVar.b;
-        long j2 = dVar.f39181c;
+        long j2 = dVar.f25490c;
         if (tPIntValue == 203) {
             cls = TPNativeKeyMap.MapAudioDecoderType.class;
         } else if (tPIntValue != 204) {
@@ -434,7 +434,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
         if (convertToNativeOptionalId.a()) {
             this.h.e("player optionalIdMapping boolean is invalid, not found in array, id: ".concat(String.valueOf(i)));
         } else if (convertToNativeOptionalId.b() == 3) {
-            this.f39168c.setBool(convertToNativeOptionalId.c(), optionalParamBoolean.value);
+            this.f25477c.setBool(convertToNativeOptionalId.c(), optionalParamBoolean.value);
         } else {
             com.tencent.thumbplayer.e.a aVar = this.h;
             aVar.e("optionID type:" + convertToNativeOptionalId.b() + " is not implement");
@@ -446,7 +446,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
         if (convertToNativeOptionalId.a()) {
             this.h.e("player optionalIdMapping float is invalid, not found in array, id: ".concat(String.valueOf(i)));
         } else if (7 == convertToNativeOptionalId.b()) {
-            this.f39168c.setFloat(convertToNativeOptionalId.c(), optionalParamFloat.value);
+            this.f25477c.setFloat(convertToNativeOptionalId.c(), optionalParamFloat.value);
         } else {
             com.tencent.thumbplayer.e.a aVar = this.h;
             aVar.e("optionID:" + convertToNativeOptionalId.c() + " is not float");
@@ -462,16 +462,16 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
         int b = convertToNativeOptionalId.b();
         boolean z = true;
         if (b == 1) {
-            this.f39168c.setLong(convertToNativeOptionalId.c(), optionalParamLong.value);
+            this.f25477c.setLong(convertToNativeOptionalId.c(), optionalParamLong.value);
         } else if (b == 3) {
-            TPNativePlayerInitConfig tPNativePlayerInitConfig = this.f39168c;
+            TPNativePlayerInitConfig tPNativePlayerInitConfig = this.f25477c;
             int c2 = convertToNativeOptionalId.c();
             if (optionalParamLong.value <= 0) {
                 z = false;
             }
             tPNativePlayerInitConfig.setBool(c2, z);
         } else if (b == 4) {
-            this.f39168c.setInt(convertToNativeOptionalId.c(), (int) optionalParamLong.value);
+            this.f25477c.setInt(convertToNativeOptionalId.c(), (int) optionalParamLong.value);
         } else {
             this.h.e("optionID type:" + convertToNativeOptionalId.b() + " is not implement");
         }
@@ -486,9 +486,9 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
         } else {
             int c2 = convertToNativeOptionalId.c();
             if (c2 == 126) {
-                this.f39168c.setObject(convertToNativeOptionalId.c(), com.tencent.thumbplayer.adapter.a.b.c.a((TPJitterBufferConfig) optionalParamObject.objectValue));
+                this.f25477c.setObject(convertToNativeOptionalId.c(), com.tencent.thumbplayer.adapter.a.b.c.a((TPJitterBufferConfig) optionalParamObject.objectValue));
             } else if (c2 == 414) {
-                this.f39168c.setObject(convertToNativeOptionalId.c(), com.tencent.thumbplayer.adapter.a.b.c.a((TPAudioAttributes) optionalParamObject.objectValue));
+                this.f25477c.setObject(convertToNativeOptionalId.c(), com.tencent.thumbplayer.adapter.a.b.c.a((TPAudioAttributes) optionalParamObject.objectValue));
             } else {
                 com.tencent.thumbplayer.e.a aVar = this.h;
                 aVar.e("optionID type:" + convertToNativeOptionalId.b() + " is not implement");
@@ -512,7 +512,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
                 if (i3 >= optionalParamQueueInt.queueValue.length) {
                     return;
                 }
-                this.f39168c.addQueueInt(convertToNativeOptionalId.c(), optionalParamQueueInt.queueValue[i3]);
+                this.f25477c.addQueueInt(convertToNativeOptionalId.c(), optionalParamQueueInt.queueValue[i3]);
                 i2 = i3 + 1;
             }
         }
@@ -534,7 +534,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
                 if (i3 >= optionalParamQueueString.queueValue.length) {
                     return;
                 }
-                this.f39168c.addQueueString(convertToNativeOptionalId.c(), optionalParamQueueString.queueValue[i3]);
+                this.f25477c.addQueueString(convertToNativeOptionalId.c(), optionalParamQueueString.queueValue[i3]);
                 i2 = i3 + 1;
             }
         }
@@ -545,7 +545,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
         if (convertToNativeOptionalId.a()) {
             this.h.e("player optionalIdMapping string is invalid, not found in array, id: ".concat(String.valueOf(i)));
         } else if (2 == convertToNativeOptionalId.b()) {
-            this.f39168c.setString(convertToNativeOptionalId.c(), optionalParamString.value);
+            this.f25477c.setString(convertToNativeOptionalId.c(), optionalParamString.value);
         } else {
             com.tencent.thumbplayer.e.a aVar = this.h;
             aVar.e("optionID:" + convertToNativeOptionalId.c() + " is not string");
@@ -558,8 +558,8 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(C1012b c1012b) {
-        this.e.a(TPNativeKeyMapUtil.toTPIntValue(TPNativeKeyMap.MapMsgInfo.class, c1012b.f39177a), c1012b.f39178c, c1012b.d, Long.valueOf(c1012b.b));
+    public void a(C0842b c0842b) {
+        this.e.a(TPNativeKeyMapUtil.toTPIntValue(TPNativeKeyMap.MapMsgInfo.class, c0842b.f25486a), c0842b.f25487c, c0842b.d, Long.valueOf(c0842b.b));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -630,7 +630,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean d(int i) {
-        return f39167a.contains(Integer.valueOf(i));
+        return f25476a.contains(Integer.valueOf(i));
     }
 
     @Override // com.tencent.thumbplayer.adapter.a.b
@@ -758,8 +758,8 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
     }
 
     @Override // com.tencent.thumbplayer.adapter.a.b
-    public void a(c.InterfaceC1013c interfaceC1013c) {
-        this.e.a(interfaceC1013c);
+    public void a(c.InterfaceC0843c interfaceC0843c) {
+        this.e.a(interfaceC0843c);
     }
 
     @Override // com.tencent.thumbplayer.adapter.a.b
@@ -1112,7 +1112,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
     public void f() {
         this.h.c(bc.b.Code);
         a();
-        this.b.setInitConfig(this.f39168c);
+        this.b.setInitConfig(this.f25477c);
         if (this.b.prepare() != 0) {
             throw new IllegalStateException("prepare failed!!");
         }
@@ -1122,7 +1122,7 @@ public class b implements com.tencent.thumbplayer.adapter.a.b {
     public void g() {
         this.h.c("prepareAsync");
         a();
-        this.b.setInitConfig(this.f39168c);
+        this.b.setInitConfig(this.f25477c);
         if (this.b.prepareAsync() != 0) {
             throw new IllegalStateException("prepareAsync failed!!");
         }

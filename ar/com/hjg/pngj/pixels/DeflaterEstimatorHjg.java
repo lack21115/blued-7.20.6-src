@@ -4,5 +4,5 @@ package ar.com.hjg.pngj.pixels;
 public final class DeflaterEstimatorHjg {
 
     /* renamed from: a  reason: collision with root package name */
-    static final int f3675a = Math.max(6, 2);
+    static final int f3627a = Math.max(6, 2);
 }

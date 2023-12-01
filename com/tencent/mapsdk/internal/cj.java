@@ -14,14 +14,14 @@ import java.io.InputStream;
 public class cj implements zd {
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f37379c;
+    private Context f23688c;
     private final float d;
     private String e;
     private String f;
 
     public cj(Context context, String str) {
         Context applicationContext = context.getApplicationContext();
-        this.f37379c = applicationContext;
+        this.f23688c = applicationContext;
         this.d = g7.d(applicationContext);
         this.e = str;
     }
@@ -30,14 +30,14 @@ public class cj implements zd {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        InputStream c2 = ha.c(mc.b(this.f37379c).c(this.e) + str);
+        InputStream c2 = ha.c(mc.b(this.f23688c).c(this.e) + str);
         InputStream inputStream = c2;
         if (c2 == null) {
-            inputStream = ha.c(mc.b(this.f37379c).a(this.e) + str);
+            inputStream = ha.c(mc.b(this.f23688c).a(this.e) + str);
         }
         InputStream inputStream2 = inputStream;
         if (inputStream == null) {
-            inputStream2 = ha.c(mc.b(this.f37379c).a() + str);
+            inputStream2 = ha.c(mc.b(this.f23688c).a() + str);
         }
         InputStream inputStream3 = inputStream2;
         if (inputStream2 == null) {
@@ -49,7 +49,7 @@ public class cj implements zd {
         InputStream inputStream4 = inputStream3;
         if (inputStream3 == null) {
             if (jc.a() != null) {
-                Context context = this.f37379c;
+                Context context = this.f23688c;
                 inputStream4 = jc.a(context, jc.a() + str);
             } else {
                 inputStream4 = inputStream3;
@@ -60,11 +60,11 @@ public class cj implements zd {
         }
         InputStream inputStream5 = inputStream4;
         if (inputStream4 == null) {
-            inputStream5 = jc.b(this.f37379c, str);
+            inputStream5 = jc.b(this.f23688c, str);
         }
         InputStream inputStream6 = inputStream5;
         if (inputStream5 == null) {
-            inputStream6 = jc.a(this.f37379c, str);
+            inputStream6 = jc.a(this.f23688c, str);
         }
         if (inputStream6 == null) {
             return null;
@@ -95,7 +95,7 @@ public class cj implements zd {
         } else {
             iconImageInfo.scale = this.d;
         }
-        if (this.f37379c != null && a2 == null) {
+        if (this.f23688c != null && a2 == null) {
             try {
                 if (str.startsWith("poi_icon") || str.startsWith(k4.r)) {
                     a2 = a(f7.g(str) + k4.s);
@@ -106,7 +106,7 @@ public class cj implements zd {
                     return;
                 }
                 iconImageInfo.bitmap = a(str);
-                if (!str.equals(zd.f38161a) && !str.equals(zd.b)) {
+                if (!str.equals(zd.f24470a) && !str.equals(zd.b)) {
                     iconImageInfo.scale = 1.0f;
                     return;
                 }

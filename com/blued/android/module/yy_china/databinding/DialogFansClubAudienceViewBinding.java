@@ -15,13 +15,9 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogFansClubAudienceViewBinding.class */
 public final class DialogFansClubAudienceViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ProgressBar f16330a;
+    public final ProgressBar a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeableImageView f16331c;
+    public final ShapeableImageView c;
     public final ShapeableImageView d;
     public final ImageView e;
     public final ConstraintLayout f;
@@ -47,9 +43,9 @@ public final class DialogFansClubAudienceViewBinding implements ViewBinding {
 
     private DialogFansClubAudienceViewBinding(ConstraintLayout constraintLayout, ProgressBar progressBar, View view, ShapeableImageView shapeableImageView, ShapeableImageView shapeableImageView2, ImageView imageView, ConstraintLayout constraintLayout2, YYFansLevelView yYFansLevelView, YYFansLevelView yYFansLevelView2, LinearLayout linearLayout, SmartRefreshLayout smartRefreshLayout, ConstraintLayout constraintLayout3, ConstraintLayout constraintLayout4, ConstraintLayout constraintLayout5, RecyclerView recyclerView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10) {
         this.y = constraintLayout;
-        this.f16330a = progressBar;
+        this.a = progressBar;
         this.b = view;
-        this.f16331c = shapeableImageView;
+        this.c = shapeableImageView;
         this.d = shapeableImageView2;
         this.e = imageView;
         this.f = constraintLayout2;
@@ -79,30 +75,30 @@ public final class DialogFansClubAudienceViewBinding implements ViewBinding {
         if (progressBar != null) {
             View findViewById = view.findViewById(R.id.cover_view);
             if (findViewById != null) {
-                ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.img_host_avatar);
-                if (shapeableImageView != null) {
-                    ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.img_my_avatar);
-                    if (shapeableImageView2 != null) {
+                ShapeableImageView findViewById2 = view.findViewById(R.id.img_host_avatar);
+                if (findViewById2 != null) {
+                    ShapeableImageView findViewById3 = view.findViewById(R.id.img_my_avatar);
+                    if (findViewById3 != null) {
                         ImageView imageView = (ImageView) view.findViewById(R.id.img_q_a);
                         if (imageView != null) {
-                            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_author_view);
-                            if (constraintLayout != null) {
+                            ConstraintLayout findViewById4 = view.findViewById(R.id.ll_author_view);
+                            if (findViewById4 != null) {
                                 YYFansLevelView yYFansLevelView = (YYFansLevelView) view.findViewById(R.id.ll_fans_level);
                                 if (yYFansLevelView != null) {
                                     YYFansLevelView yYFansLevelView2 = (YYFansLevelView) view.findViewById(R.id.ll_level);
                                     if (yYFansLevelView2 != null) {
                                         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_rank_info);
                                         if (linearLayout != null) {
-                                            SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.ll_refresh_view);
-                                            if (smartRefreshLayout != null) {
-                                                ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.ll_top_rank);
-                                                if (constraintLayout2 != null) {
-                                                    ConstraintLayout constraintLayout3 = (ConstraintLayout) view.findViewById(R.id.root_cover_view);
-                                                    if (constraintLayout3 != null) {
-                                                        ConstraintLayout constraintLayout4 = (ConstraintLayout) view.findViewById(R.id.root_view);
-                                                        if (constraintLayout4 != null) {
-                                                            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_fans_list);
-                                                            if (recyclerView != null) {
+                                            SmartRefreshLayout findViewById5 = view.findViewById(R.id.ll_refresh_view);
+                                            if (findViewById5 != null) {
+                                                ConstraintLayout findViewById6 = view.findViewById(R.id.ll_top_rank);
+                                                if (findViewById6 != null) {
+                                                    ConstraintLayout findViewById7 = view.findViewById(R.id.root_cover_view);
+                                                    if (findViewById7 != null) {
+                                                        ConstraintLayout findViewById8 = view.findViewById(R.id.root_view);
+                                                        if (findViewById8 != null) {
+                                                            RecyclerView findViewById9 = view.findViewById(R.id.rv_fans_list);
+                                                            if (findViewById9 != null) {
                                                                 TextView textView = (TextView) view.findViewById(R.id.tv_author_name);
                                                                 if (textView != null) {
                                                                     TextView textView2 = (TextView) view.findViewById(R.id.tv_consumption);
@@ -123,7 +119,7 @@ public final class DialogFansClubAudienceViewBinding implements ViewBinding {
                                                                                                 if (textView9 != null) {
                                                                                                     TextView textView10 = (TextView) view.findViewById(R.id.tv_user_name);
                                                                                                     if (textView10 != null) {
-                                                                                                        return new DialogFansClubAudienceViewBinding((ConstraintLayout) view, progressBar, findViewById, shapeableImageView, shapeableImageView2, imageView, constraintLayout, yYFansLevelView, yYFansLevelView2, linearLayout, smartRefreshLayout, constraintLayout2, constraintLayout3, constraintLayout4, recyclerView, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10);
+                                                                                                        return new DialogFansClubAudienceViewBinding((ConstraintLayout) view, progressBar, findViewById, findViewById2, findViewById3, imageView, findViewById4, yYFansLevelView, yYFansLevelView2, linearLayout, findViewById5, findViewById6, findViewById7, findViewById8, findViewById9, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10);
                                                                                                     }
                                                                                                     str = "tvUserName";
                                                                                                 } else {
@@ -198,7 +194,6 @@ public final class DialogFansClubAudienceViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.y;

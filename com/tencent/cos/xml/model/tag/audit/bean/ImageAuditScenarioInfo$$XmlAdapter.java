@@ -40,6 +40,7 @@ public class ImageAuditScenarioInfo$$XmlAdapter implements IXmlAdapter<ImageAudi
             }
         });
         this.childElementBinders.put("OcrResults", new ChildElementBinder<ImageAuditScenarioInfo>() { // from class: com.tencent.cos.xml.model.tag.audit.bean.ImageAuditScenarioInfo$$XmlAdapter.4
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, ImageAuditScenarioInfo imageAuditScenarioInfo, String str) throws IOException, XmlPullParserException {
                 if (imageAuditScenarioInfo.ocrResults == null) {
@@ -49,6 +50,7 @@ public class ImageAuditScenarioInfo$$XmlAdapter implements IXmlAdapter<ImageAudi
             }
         });
         this.childElementBinders.put("ObjectResults", new ChildElementBinder<ImageAuditScenarioInfo>() { // from class: com.tencent.cos.xml.model.tag.audit.bean.ImageAuditScenarioInfo$$XmlAdapter.5
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, ImageAuditScenarioInfo imageAuditScenarioInfo, String str) throws IOException, XmlPullParserException {
                 if (imageAuditScenarioInfo.objectResults == null) {

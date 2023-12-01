@@ -15,11 +15,11 @@ import java.security.spec.X509EncodedKeySpec;
 public class EncryptUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23087a = "EncryptUtil";
+    private static final String f9479a = "EncryptUtil";
     private static final String b = "RSA";
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f23088c = false;
+    private static boolean f9480c = false;
     private static boolean d = true;
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
@@ -46,19 +46,19 @@ public class EncryptUtil {
     }
 
     public static SecureRandom genSecureRandom() {
-        if (f23088c) {
+        if (f9480c) {
             return a();
         }
         try {
             return Build.VERSION.SDK_INT >= 26 ? SecureRandom.getInstanceStrong() : SecureRandom.getInstance("SHA1PRNG");
         } catch (NoSuchAlgorithmException e) {
-            b.b(f23087a, "genSecureRandom: NoSuchAlgorithmException");
+            b.b(f9479a, "genSecureRandom: NoSuchAlgorithmException");
             return null;
         }
     }
 
     public static byte[] generateSecureRandom(int i) {
-        if (f23088c) {
+        if (f9480c) {
             return a(i);
         }
         byte[] bArr = new byte[i];
@@ -68,7 +68,7 @@ public class EncryptUtil {
                 secureRandom = SecureRandom.getInstanceStrong();
             }
         } catch (NoSuchAlgorithmException e) {
-            b.b(f23087a, "getSecureRandomBytes: NoSuchAlgorithmException");
+            b.b(f9479a, "getSecureRandomBytes: NoSuchAlgorithmException");
             secureRandom = null;
         }
         SecureRandom secureRandom2 = secureRandom;
@@ -76,10 +76,10 @@ public class EncryptUtil {
             try {
                 secureRandom2 = SecureRandom.getInstance("SHA1PRNG");
             } catch (NoSuchAlgorithmException e2) {
-                b.b(f23087a, "getSecureRandomBytes getInstance: NoSuchAlgorithmException");
+                b.b(f9479a, "getSecureRandomBytes getInstance: NoSuchAlgorithmException");
                 return new byte[0];
             } catch (Exception e3) {
-                b.b(f23087a, "getSecureRandomBytes getInstance: exception : " + e3.getMessage());
+                b.b(f9479a, "getSecureRandomBytes getInstance: exception : " + e3.getMessage());
                 return new byte[0];
             }
         }
@@ -96,14 +96,14 @@ public class EncryptUtil {
             try {
                 return KeyFactory.getInstance(b).generatePrivate(new PKCS8EncodedKeySpec(Base64.decode(str, 0)));
             } catch (GeneralSecurityException e) {
-                b.b(f23087a, "load Key Exception:" + e.getMessage());
+                b.b(f9479a, "load Key Exception:" + e.getMessage());
                 return null;
             }
         } catch (IllegalArgumentException e2) {
-            b.b(f23087a, "base64 decode IllegalArgumentException");
+            b.b(f9479a, "base64 decode IllegalArgumentException");
             return null;
         } catch (Exception e3) {
-            b.b(f23087a, "base64 decode Exception" + e3.getMessage());
+            b.b(f9479a, "base64 decode Exception" + e3.getMessage());
             return null;
         }
     }
@@ -113,24 +113,24 @@ public class EncryptUtil {
             try {
                 return (RSAPublicKey) KeyFactory.getInstance(b).generatePublic(new X509EncodedKeySpec(Base64.decode(str, 0)));
             } catch (GeneralSecurityException e) {
-                b.b(f23087a, "load Key Exception:" + e.getMessage());
+                b.b(f9479a, "load Key Exception:" + e.getMessage());
                 return null;
             }
         } catch (IllegalArgumentException e2) {
-            b.b(f23087a, "base64 decode IllegalArgumentException");
+            b.b(f9479a, "base64 decode IllegalArgumentException");
             return null;
         } catch (Exception e3) {
-            b.b(f23087a, "base64 decode Exception" + e3.getMessage());
+            b.b(f9479a, "base64 decode Exception" + e3.getMessage());
             return null;
         }
     }
 
     public static boolean isBouncycastleFlag() {
-        return f23088c;
+        return f9480c;
     }
 
     public static void setBouncycastleFlag(boolean z) {
-        b.c(f23087a, "setBouncycastleFlag: " + z);
-        f23088c = z;
+        b.c(f9479a, "setBouncycastleFlag: " + z);
+        f9480c = z;
     }
 }

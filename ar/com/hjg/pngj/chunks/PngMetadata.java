@@ -4,7 +4,7 @@ package ar.com.hjg.pngj.chunks;
 public class PngMetadata {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ChunksList f3671a;
+    private final ChunksList f3623a;
     private final boolean b;
 
     /* renamed from: ar.com.hjg.pngj.chunks.PngMetadata$1  reason: invalid class name */
@@ -12,16 +12,16 @@ public class PngMetadata {
     class AnonymousClass1 implements ChunkPredicate {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PngChunk f3672a;
+        final /* synthetic */ PngChunk f3624a;
 
         @Override // ar.com.hjg.pngj.chunks.ChunkPredicate
         public boolean a(PngChunk pngChunk) {
-            return ChunkHelper.a(this.f3672a, pngChunk);
+            return ChunkHelper.a(this.f3624a, pngChunk);
         }
     }
 
     public PngMetadata(ChunksList chunksList) {
-        this.f3671a = chunksList;
+        this.f3623a = chunksList;
         if (chunksList instanceof ChunksListForWrite) {
             this.b = false;
         } else {

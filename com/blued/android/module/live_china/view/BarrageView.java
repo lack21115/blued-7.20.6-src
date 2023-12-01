@@ -44,13 +44,9 @@ import java.util.Random;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/BarrageView.class */
 public class BarrageView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    public BaseFragment f14220a;
+    public BaseFragment a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public boolean f14221c;
+    public boolean c;
     private List<Bubble> d;
     private List<Bubble> e;
     private Random f;
@@ -70,32 +66,24 @@ public class BarrageView extends View {
     /* renamed from: com.blued.android.module.live_china.view.BarrageView$3  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/BarrageView$3.class */
     class AnonymousClass3 implements ImageFileLoader.OnLoadFileListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f14224a;
+        final /* synthetic */ int a;
         final /* synthetic */ LiveChattingModel b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ BarrageView f14225c;
+        final /* synthetic */ BarrageView c;
 
         @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
         public void onUIFinish(File file, Exception exc) {
-            Map<String, String> a2 = BluedHttpTools.a();
-            a2.put("ifSuccess", this.f14224a + "");
-            this.f14225c.a(this.b, 2, a2, "");
+            Map<String, String> a = BluedHttpTools.a();
+            a.put("ifSuccess", this.a + "");
+            this.c.a(this.b, 2, a, "");
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/BarrageView$Bubble.class */
     public class Bubble {
-
-        /* renamed from: a  reason: collision with root package name */
-        public LiveChattingModel f14227a;
+        public LiveChattingModel a;
         public String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f14228c;
+        public String c;
         public int d;
         public String e;
         public String f;
@@ -120,7 +108,7 @@ public class BarrageView extends View {
 
         private Bubble() {
             this.b = "";
-            this.f14228c = "";
+            this.c = "";
             this.e = "";
             this.f = "";
             this.g = "";
@@ -147,25 +135,25 @@ public class BarrageView extends View {
                 imageView2.setVisibility(8);
             }
             BitmapUtils.a(BarrageView.this.h, imageView, this.d);
-            LiveNobleModel b = BarrageView.this.b(this.f14227a);
+            LiveNobleModel b = BarrageView.this.b(this.a);
             if (b == null || TextUtils.isEmpty(this.k)) {
                 imageView3.setVisibility(8);
             } else {
-                Bitmap a2 = BitmapUtils.a(this.k, DensityUtils.a(AppInfo.d(), 30.0f));
-                if (b == null || b.getNameplate_img_width().intValue() <= 0 || b.getNameplate_img_height().intValue() <= 0 || a2 == null) {
+                Bitmap a = BitmapUtils.a(this.k, DensityUtils.a(AppInfo.d(), 30.0f));
+                if (b == null || b.getNameplate_img_width().intValue() <= 0 || b.getNameplate_img_height().intValue() <= 0 || a == null) {
                     imageView3.setVisibility(8);
                 } else {
-                    int a3 = AppMethods.a(15);
-                    int intValue = (b.getNameplate_img_width().intValue() * a3) / b.getNameplate_img_height().intValue();
+                    int a2 = AppMethods.a(15);
+                    int intValue = (b.getNameplate_img_width().intValue() * a2) / b.getNameplate_img_height().intValue();
                     ViewGroup.LayoutParams layoutParams = imageView3.getLayoutParams();
                     layoutParams.width = intValue;
-                    layoutParams.height = a3;
+                    layoutParams.height = a2;
                     imageView3.setLayoutParams(layoutParams);
                     imageView3.setVisibility(0);
-                    imageView3.setImageBitmap(a2);
+                    imageView3.setImageBitmap(a);
                 }
             }
-            LiveFansLevelModel i = LiveMsgManager.i(this.f14227a);
+            LiveFansLevelModel i = LiveMsgManager.i(this.a);
             if (i.in_fan_club != 0) {
                 liveFansLevelView.setFansLevel(i);
                 liveFansLevelView.setVisibility(0);
@@ -232,7 +220,7 @@ public class BarrageView extends View {
             ImageView imageView = (ImageView) this.t.findViewById(R.id.img_header);
             TextView textView = (TextView) this.t.findViewById(R.id.tv_name);
             TextView textView2 = (TextView) this.t.findViewById(R.id.tv_content);
-            ImageLoader.a((IRequestHost) null, this.f14228c).b(R.drawable.user_bg_round).c().a(imageView);
+            ImageLoader.a((IRequestHost) null, this.c).b(R.drawable.user_bg_round).c().a(imageView);
             textView.setText(this.e);
             textView2.setText(this.f);
         }
@@ -295,7 +283,7 @@ public class BarrageView extends View {
         this.k = new int[]{0, 40, 80, 120};
         this.l = 0;
         this.b = 4;
-        this.f14221c = true;
+        this.c = true;
         this.q = 130;
         this.h = context;
         a();
@@ -310,7 +298,7 @@ public class BarrageView extends View {
         this.k = new int[]{0, 40, 80, 120};
         this.l = 0;
         this.b = 4;
-        this.f14221c = true;
+        this.c = true;
         this.q = 130;
         this.h = context;
         a();
@@ -325,7 +313,7 @@ public class BarrageView extends View {
         this.k = new int[]{0, 40, 80, 120};
         this.l = 0;
         this.b = 4;
-        this.f14221c = true;
+        this.c = true;
         this.q = 130;
         this.h = context;
         a();
@@ -354,14 +342,14 @@ public class BarrageView extends View {
         setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.view.BarrageView.1
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view2, MotionEvent motionEvent) {
-                if (BarrageView.this.f14220a != null) {
+                if (BarrageView.this.a != null) {
                     String b = BarrageView.this.b((int) motionEvent.getY());
                     if (TextUtils.isEmpty(b)) {
                         return false;
                     }
-                    UserCardDialogFragment userCardDialogFragment = new UserCardDialogFragment(BarrageView.this.f14220a);
+                    UserCardDialogFragment userCardDialogFragment = new UserCardDialogFragment(BarrageView.this.a);
                     userCardDialogFragment.e(b);
-                    userCardDialogFragment.show(BarrageView.this.f14220a.getFragmentManager(), "userCardDialog");
+                    userCardDialogFragment.show(BarrageView.this.a.getFragmentManager(), "userCardDialog");
                     return false;
                 }
                 return false;
@@ -411,10 +399,10 @@ public class BarrageView extends View {
             if (i5 >= this.k.length) {
                 break;
             }
-            int a2 = DensityUtils.a(this.h, iArr[i5]);
-            int a3 = DensityUtils.a(this.h, this.k[i5]);
+            int a = DensityUtils.a(this.h, iArr[i5]);
+            int a2 = DensityUtils.a(this.h, this.k[i5]);
             int i6 = this.l;
-            if (i >= a2 && i <= a3 + i6) {
+            if (i >= a && i <= a2 + i6) {
                 i2 = i5;
                 i3 = 0;
                 break;
@@ -462,14 +450,14 @@ public class BarrageView extends View {
             bubble.t = this.o;
         }
         bubble.a(this.g);
-        bubble.f14227a = liveChattingModel;
+        bubble.a = liveChattingModel;
         bubble.b = liveChattingModel.fromId + "";
         bubble.q = liveChattingModel.fromPrivilege == 1;
         bubble.e = LiveCloakingUtil.a(liveChattingModel.fromNickName, bubble.q);
         bubble.g = liveChattingModel.fromVBadge + "";
         bubble.f = liveChattingModel.msgContent;
         bubble.j = i;
-        bubble.f14228c = liveChattingModel.fromAvatar;
+        bubble.c = liveChattingModel.fromAvatar;
         bubble.h = liveChattingModel.fromLiveManager;
         LiveFansLevelModel i2 = LiveMsgManager.i(liveChattingModel);
         if (i2 != null) {
@@ -565,7 +553,7 @@ public class BarrageView extends View {
                 i = i2 + 1;
             }
             String stringBuffer2 = stringBuffer.toString();
-            if (!this.f14221c || this.b <= 1) {
+            if (!this.c || this.b <= 1) {
                 if (stringBuffer2.contains("0")) {
                     if (stringBuffer2.contains("1")) {
                         if (stringBuffer2.contains("2")) {
@@ -623,6 +611,6 @@ public class BarrageView extends View {
     }
 
     public void setBaseFragment(BaseFragment baseFragment) {
-        this.f14220a = baseFragment;
+        this.a = baseFragment;
     }
 }

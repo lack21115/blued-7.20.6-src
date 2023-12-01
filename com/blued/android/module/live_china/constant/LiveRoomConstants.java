@@ -2,9 +2,7 @@ package com.blued.android.module.live_china.constant;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/constant/LiveRoomConstants.class */
 public class LiveRoomConstants {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f11735a = 32;
+    public static int a = 32;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/constant/LiveRoomConstants$ANCHOR_INVITE.class */
     public interface ANCHOR_INVITE {

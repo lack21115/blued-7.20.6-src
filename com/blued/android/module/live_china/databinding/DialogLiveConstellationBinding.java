@@ -45,17 +45,13 @@ public final class DialogLiveConstellationBinding implements ViewBinding {
     public final TextView X;
     public final ShapeTextView Y;
     public final ShapeTextView Z;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f11753a;
+    public final ConstraintLayout a;
     public final View aa;
     public final View ab;
     public final View ac;
     private final ConstraintLayout ad;
     public final ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeConstraintLayout f11754c;
+    public final ShapeConstraintLayout c;
     public final Group d;
     public final Group e;
     public final Group f;
@@ -82,9 +78,9 @@ public final class DialogLiveConstellationBinding implements ViewBinding {
 
     private DialogLiveConstellationBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ShapeConstraintLayout shapeConstraintLayout, Group group, Group group2, Group group3, Group group4, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, ImageView imageView10, ImageView imageView11, ImageView imageView12, ImageView imageView13, ImageView imageView14, ImageView imageView15, ImageView imageView16, ImageView imageView17, ShapeLinearLayout shapeLinearLayout, LinearLayout linearLayout, SlopeLoadingView slopeLoadingView, NestedScrollView nestedScrollView, RecyclerView recyclerView, RecyclerView recyclerView2, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, TextView textView15, TextView textView16, TextView textView17, TextView textView18, TextView textView19, TextView textView20, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, View view, View view2, View view3) {
         this.ad = constraintLayout;
-        this.f11753a = constraintLayout2;
+        this.a = constraintLayout2;
         this.b = constraintLayout3;
-        this.f11754c = shapeConstraintLayout;
+        this.c = shapeConstraintLayout;
         this.d = group;
         this.e = group2;
         this.f = group3;
@@ -153,20 +149,20 @@ public final class DialogLiveConstellationBinding implements ViewBinding {
 
     public static DialogLiveConstellationBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.cl_avatar);
-        if (constraintLayout != null) {
-            ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.cl_content);
-            if (constraintLayout2 != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.cl_avatar);
+        if (findViewById != null) {
+            ConstraintLayout findViewById2 = view.findViewById(R.id.cl_content);
+            if (findViewById2 != null) {
                 ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.cl_stage);
                 if (shapeConstraintLayout != null) {
-                    Group group = (Group) view.findViewById(R.id.group_current_anchor);
-                    if (group != null) {
-                        Group group2 = (Group) view.findViewById(R.id.group_empty);
-                        if (group2 != null) {
-                            Group group3 = (Group) view.findViewById(R.id.group_gift_num);
-                            if (group3 != null) {
-                                Group group4 = (Group) view.findViewById(R.id.group_table);
-                                if (group4 != null) {
+                    Group findViewById3 = view.findViewById(R.id.group_current_anchor);
+                    if (findViewById3 != null) {
+                        Group findViewById4 = view.findViewById(R.id.group_empty);
+                        if (findViewById4 != null) {
+                            Group findViewById5 = view.findViewById(R.id.group_gift_num);
+                            if (findViewById5 != null) {
+                                Group findViewById6 = view.findViewById(R.id.group_table);
+                                if (findViewById6 != null) {
                                     ImageView imageView = (ImageView) view.findViewById(R.id.iv_anchor_avatar);
                                     if (imageView != null) {
                                         ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_anchor_avatar_frame);
@@ -207,12 +203,12 @@ public final class DialogLiveConstellationBinding implements ViewBinding {
                                                                                                             if (linearLayout != null) {
                                                                                                                 SlopeLoadingView slopeLoadingView = (SlopeLoadingView) view.findViewById(R.id.loading);
                                                                                                                 if (slopeLoadingView != null) {
-                                                                                                                    NestedScrollView nestedScrollView = (NestedScrollView) view.findViewById(R.id.nsv_content);
-                                                                                                                    if (nestedScrollView != null) {
-                                                                                                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_tab_list);
-                                                                                                                        if (recyclerView != null) {
-                                                                                                                            RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rv_user_list);
-                                                                                                                            if (recyclerView2 != null) {
+                                                                                                                    NestedScrollView findViewById7 = view.findViewById(R.id.nsv_content);
+                                                                                                                    if (findViewById7 != null) {
+                                                                                                                        RecyclerView findViewById8 = view.findViewById(R.id.rv_tab_list);
+                                                                                                                        if (findViewById8 != null) {
+                                                                                                                            RecyclerView findViewById9 = view.findViewById(R.id.rv_user_list);
+                                                                                                                            if (findViewById9 != null) {
                                                                                                                                 TextView textView = (TextView) view.findViewById(R.id.tv_anchor_nickname);
                                                                                                                                 if (textView != null) {
                                                                                                                                     TextView textView2 = (TextView) view.findViewById(R.id.tv_avatar_title);
@@ -257,13 +253,13 @@ public final class DialogLiveConstellationBinding implements ViewBinding {
                                                                                                                                                                                                                 if (shapeTextView != null) {
                                                                                                                                                                                                                     ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.view_cursor);
                                                                                                                                                                                                                     if (shapeTextView2 != null) {
-                                                                                                                                                                                                                        View findViewById = view.findViewById(R.id.view_dot);
-                                                                                                                                                                                                                        if (findViewById != null) {
-                                                                                                                                                                                                                            View findViewById2 = view.findViewById(R.id.view_line_table_head_top);
-                                                                                                                                                                                                                            if (findViewById2 != null) {
-                                                                                                                                                                                                                                View findViewById3 = view.findViewById(R.id.view_space);
-                                                                                                                                                                                                                                if (findViewById3 != null) {
-                                                                                                                                                                                                                                    return new DialogLiveConstellationBinding((ConstraintLayout) view, constraintLayout, constraintLayout2, shapeConstraintLayout, group, group2, group3, group4, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, imageView13, imageView14, imageView15, imageView16, imageView17, shapeLinearLayout, linearLayout, slopeLoadingView, nestedScrollView, recyclerView, recyclerView2, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, shapeTextView, shapeTextView2, findViewById, findViewById2, findViewById3);
+                                                                                                                                                                                                                        View findViewById10 = view.findViewById(R.id.view_dot);
+                                                                                                                                                                                                                        if (findViewById10 != null) {
+                                                                                                                                                                                                                            View findViewById11 = view.findViewById(R.id.view_line_table_head_top);
+                                                                                                                                                                                                                            if (findViewById11 != null) {
+                                                                                                                                                                                                                                View findViewById12 = view.findViewById(R.id.view_space);
+                                                                                                                                                                                                                                if (findViewById12 != null) {
+                                                                                                                                                                                                                                    return new DialogLiveConstellationBinding((ConstraintLayout) view, findViewById, findViewById2, shapeConstraintLayout, findViewById3, findViewById4, findViewById5, findViewById6, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, imageView13, imageView14, imageView15, imageView16, imageView17, shapeLinearLayout, linearLayout, slopeLoadingView, findViewById7, findViewById8, findViewById9, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, shapeTextView, shapeTextView2, findViewById10, findViewById11, findViewById12);
                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                 str = "viewSpace";
                                                                                                                                                                                                                             } else {
@@ -431,7 +427,6 @@ public final class DialogLiveConstellationBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.ad;

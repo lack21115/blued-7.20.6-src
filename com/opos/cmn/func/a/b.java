@@ -4,11 +4,11 @@ package com.opos.cmn.func.a;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f24807a;
+    public final boolean f11119a;
     public final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f24808c;
+    public final int f11120c;
     public final long d;
     public final String e;
 
@@ -16,22 +16,22 @@ public class b {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f24809a = false;
+        private boolean f11121a = false;
         private long b = -1;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f24810c = -1;
+        private int f11122c = -1;
         private long d = -1;
         private String e = "";
 
         public a a(int i) {
-            this.f24810c = i;
+            this.f11122c = i;
             return this;
         }
 
         public a a(int i, String str) {
-            if (this.f24810c == -1) {
-                this.f24810c = i;
+            if (this.f11122c == -1) {
+                this.f11122c = i;
                 this.e = str;
             }
             return this;
@@ -48,7 +48,7 @@ public class b {
         }
 
         public a a(boolean z) {
-            this.f24809a = z;
+            this.f11121a = z;
             return this;
         }
 
@@ -63,14 +63,14 @@ public class b {
     }
 
     public b(a aVar) {
-        this.f24807a = aVar.f24809a;
+        this.f11119a = aVar.f11121a;
         this.b = aVar.b;
-        this.f24808c = aVar.f24810c;
+        this.f11120c = aVar.f11122c;
         this.d = aVar.d;
         this.e = aVar.e;
     }
 
     public String toString() {
-        return "DownloadResponse{success=" + this.f24807a + ", contentLength=" + this.b + ", errorCode=" + this.f24808c + ", traffic=" + this.d + ", message=" + this.e + '}';
+        return "DownloadResponse{success=" + this.f11119a + ", contentLength=" + this.b + ", errorCode=" + this.f11120c + ", traffic=" + this.d + ", message=" + this.e + '}';
     }
 }

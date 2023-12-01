@@ -11,35 +11,35 @@ import com.xiaomi.clientreport.manager.ClientReportClient;
 public class em {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile em f41375a;
+    private static volatile em f27684a;
 
     /* renamed from: a  reason: collision with other field name */
-    private Context f390a;
+    private Context f343a;
 
     private em(Context context) {
-        this.f390a = context;
+        this.f343a = context;
     }
 
     public static em a(Context context) {
-        if (f41375a == null) {
+        if (f27684a == null) {
             synchronized (em.class) {
                 try {
-                    if (f41375a == null) {
-                        f41375a = new em(context);
+                    if (f27684a == null) {
+                        f27684a = new em(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f41375a;
+        return f27684a;
     }
 
     private void a(com.xiaomi.clientreport.data.a aVar) {
         if (aVar instanceof PerfClientReport) {
-            ClientReportClient.reportPerf(this.f390a, (PerfClientReport) aVar);
+            ClientReportClient.reportPerf(this.f343a, (PerfClientReport) aVar);
         } else if (aVar instanceof EventClientReport) {
-            ClientReportClient.reportEvent(this.f390a, (EventClientReport) aVar);
+            ClientReportClient.reportEvent(this.f343a, (EventClientReport) aVar);
         }
     }
 
@@ -47,7 +47,7 @@ public class em {
         if (i < 0 || j2 < 0 || j <= 0) {
             return;
         }
-        PerfClientReport a2 = el.a(this.f390a, i, j, j2);
+        PerfClientReport a2 = el.a(this.f343a, i, j, j2);
         a2.setAppPackageName(str);
         a2.setSdkVersion("5_1_0-C");
         a(a2);
@@ -57,21 +57,21 @@ public class em {
         if (intent == null) {
             return;
         }
-        a(str, el.m11715a(intent.getIntExtra("eventMessageType", -1)), intent.getStringExtra("messageId"), i, System.currentTimeMillis(), str2);
+        a(str, el.m8665a(intent.getIntExtra("eventMessageType", -1)), intent.getStringExtra("messageId"), i, System.currentTimeMillis(), str2);
     }
 
     public void a(String str, Intent intent, String str2) {
         if (intent == null) {
             return;
         }
-        a(str, el.m11715a(intent.getIntExtra("eventMessageType", -1)), intent.getStringExtra("messageId"), 5001, System.currentTimeMillis(), str2);
+        a(str, el.m8665a(intent.getIntExtra("eventMessageType", -1)), intent.getStringExtra("messageId"), 5001, System.currentTimeMillis(), str2);
     }
 
     public void a(String str, String str2, String str3, int i, long j, String str4) {
         if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
             return;
         }
-        EventClientReport a2 = el.a(this.f390a, str2, str3, i, j, str4);
+        EventClientReport a2 = el.a(this.f343a, str2, str3, i, j, str4);
         a2.setAppPackageName(str);
         a2.setSdkVersion("5_1_0-C");
         a(a2);

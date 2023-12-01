@@ -7,20 +7,18 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import androidx.appcompat.widget.AppCompatSpinner;
-import skin.support.appcompat.R;
+import com.android.internal.R;
 import skin.support.content.res.SkinCompatVectorResources;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/widget/SkinCompatSpinner.class */
 public class SkinCompatSpinner extends AppCompatSpinner implements SkinCompatSupportable {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String f44287c = SkinCompatSpinner.class.getSimpleName();
-    private static final int[] d = {16843505};
+    private static final String c = SkinCompatSpinner.class.getSimpleName();
+    private static final int[] d = {R.attr.spinnerMode};
     private SkinCompatBackgroundHelper e;
     private int f;
 
     public SkinCompatSpinner(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.spinnerStyle);
+        this(context, attributeSet, skin.support.appcompat.R.attr.spinnerStyle);
     }
 
     public SkinCompatSpinner(Context context, AttributeSet attributeSet, int i) {
@@ -32,12 +30,13 @@ public class SkinCompatSpinner extends AppCompatSpinner implements SkinCompatSup
     }
 
     /* JADX WARN: Finally extract failed */
+    /* JADX WARN: Multi-variable type inference failed */
     public SkinCompatSpinner(Context context, AttributeSet attributeSet, int i, int i2, Resources.Theme theme) {
         super(context, attributeSet, i, i2, theme);
         TypedArray typedArray;
         int i3;
         this.f = 0;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.Spinner, i, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, skin.support.appcompat.R.styleable.Spinner, i, 0);
         if (getPopupContext() != null) {
             int i4 = i2;
             if (i2 == -1) {
@@ -55,7 +54,7 @@ public class SkinCompatSpinner extends AppCompatSpinner implements SkinCompatSup
                             }
                             i4 = i3;
                         } catch (Exception e) {
-                            Log.i(f44287c, "Could not read android:spinnerMode", e);
+                            Log.i(c, "Could not read android:spinnerMode", e);
                             i4 = i2;
                             typedArray = typedArray2 != null ? typedArray2 : typedArray;
                         }
@@ -75,8 +74,8 @@ public class SkinCompatSpinner extends AppCompatSpinner implements SkinCompatSup
                 }
             }
             if (i4 == 1) {
-                TypedArray obtainStyledAttributes2 = getPopupContext().obtainStyledAttributes(attributeSet, R.styleable.Spinner, i, 0);
-                this.f = obtainStyledAttributes2.getResourceId(R.styleable.Spinner_android_popupBackground, 0);
+                TypedArray obtainStyledAttributes2 = getPopupContext().obtainStyledAttributes(attributeSet, skin.support.appcompat.R.styleable.Spinner, i, 0);
+                this.f = obtainStyledAttributes2.getResourceId(skin.support.appcompat.R.styleable.Spinner_android_popupBackground, 0);
                 obtainStyledAttributes2.recycle();
             }
         }
@@ -103,7 +102,6 @@ public class SkinCompatSpinner extends AppCompatSpinner implements SkinCompatSup
         b();
     }
 
-    @Override // androidx.appcompat.widget.AppCompatSpinner, android.widget.Spinner
     public void setPopupBackgroundResource(int i) {
         super.setPopupBackgroundResource(i);
         this.f = i;

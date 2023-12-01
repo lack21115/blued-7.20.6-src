@@ -7,9 +7,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/MultiCallback.class */
 public class MultiCallback implements Drawable.Callback {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final CopyOnWriteArrayList<CallbackWeakReference> f44166a;
+    private final CopyOnWriteArrayList<CallbackWeakReference> a;
     private final boolean b;
 
     /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/MultiCallback$CallbackWeakReference.class */
@@ -35,7 +33,7 @@ public class MultiCallback implements Drawable.Callback {
     }
 
     public MultiCallback(boolean z) {
-        this.f44166a = new CopyOnWriteArrayList<>();
+        this.a = new CopyOnWriteArrayList<>();
         this.b = z;
     }
 
@@ -44,13 +42,13 @@ public class MultiCallback implements Drawable.Callback {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f44166a.size()) {
+            if (i2 >= this.a.size()) {
                 return;
             }
-            CallbackWeakReference callbackWeakReference = this.f44166a.get(i2);
+            CallbackWeakReference callbackWeakReference = this.a.get(i2);
             Drawable.Callback callback = callbackWeakReference.get();
             if (callback == null) {
-                this.f44166a.remove(callbackWeakReference);
+                this.a.remove(callbackWeakReference);
             } else if (this.b && (callback instanceof View)) {
                 ((View) callback).invalidate();
             } else {
@@ -65,15 +63,15 @@ public class MultiCallback implements Drawable.Callback {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f44166a.size()) {
+            if (i2 >= this.a.size()) {
                 return;
             }
-            CallbackWeakReference callbackWeakReference = this.f44166a.get(i2);
+            CallbackWeakReference callbackWeakReference = this.a.get(i2);
             Drawable.Callback callback = callbackWeakReference.get();
             if (callback != null) {
                 callback.scheduleDrawable(drawable, runnable, j);
             } else {
-                this.f44166a.remove(callbackWeakReference);
+                this.a.remove(callbackWeakReference);
             }
             i = i2 + 1;
         }
@@ -84,15 +82,15 @@ public class MultiCallback implements Drawable.Callback {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f44166a.size()) {
+            if (i2 >= this.a.size()) {
                 return;
             }
-            CallbackWeakReference callbackWeakReference = this.f44166a.get(i2);
+            CallbackWeakReference callbackWeakReference = this.a.get(i2);
             Drawable.Callback callback = callbackWeakReference.get();
             if (callback != null) {
                 callback.unscheduleDrawable(drawable, runnable);
             } else {
-                this.f44166a.remove(callbackWeakReference);
+                this.a.remove(callbackWeakReference);
             }
             i = i2 + 1;
         }

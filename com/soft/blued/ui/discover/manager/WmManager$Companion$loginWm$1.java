@@ -27,14 +27,13 @@ public final class WmManager$Companion$loginWm$1 extends StringHttpResponseHandl
         webViewSdk.setAppTicket(str2);
     }
 
-    @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
     /* renamed from: a */
     public void onSuccess(final String str) {
-        Log.v("drb", String.valueOf(Intrinsics.a("loginWm:", (Object) str)));
+        Log.v("drb", String.valueOf(Intrinsics.a("loginWm:", str)));
         new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.soft.blued.ui.discover.manager.-$$Lambda$WmManager$Companion$loginWm$1$TkZVxIS70NPdE20KKaHFdhvp18I
             @Override // java.lang.Runnable
             public final void run() {
-                WmManager$Companion$loginWm$1.b(String.this);
+                WmManager$Companion$loginWm$1.b(str);
             }
         });
     }

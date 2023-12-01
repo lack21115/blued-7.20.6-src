@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class ViewPreloadSizeProvider<T> implements ListPreloader.PreloadSizeProvider<T>, SizeReadyCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private int[] f21111a;
+    private int[] f7505a;
     private SizeViewTarget b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/util/ViewPreloadSizeProvider$SizeViewTarget.class */
@@ -32,13 +32,13 @@ public class ViewPreloadSizeProvider<T> implements ListPreloader.PreloadSizeProv
 
     @Override // com.bumptech.glide.request.target.SizeReadyCallback
     public void a(int i, int i2) {
-        this.f21111a = new int[]{i, i2};
+        this.f7505a = new int[]{i, i2};
         this.b = null;
     }
 
     @Override // com.bumptech.glide.ListPreloader.PreloadSizeProvider
     public int[] a(T t, int i, int i2) {
-        int[] iArr = this.f21111a;
+        int[] iArr = this.f7505a;
         if (iArr == null) {
             return null;
         }

@@ -48,7 +48,6 @@ public final class ClientCalls {
                 this.done = false;
             }
 
-            @Override // io.grpc.ClientCall.Listener
             public void onClose(Status status, Metadata metadata) {
                 Preconditions.checkState(!this.done, "ClientCall already closed");
                 if (status.isOk()) {
@@ -59,11 +58,9 @@ public final class ClientCalls {
                 this.done = true;
             }
 
-            @Override // io.grpc.ClientCall.Listener
             public void onHeaders(Metadata metadata) {
             }
 
-            @Override // io.grpc.ClientCall.Listener
             public void onMessage(T t) {
                 Preconditions.checkState(!this.done, "ClientCall already closed");
                 BlockingResponseStream.this.buffer.add(t);
@@ -282,22 +279,18 @@ public final class ClientCalls {
             this.call = clientCall;
         }
 
-        @Override // com.google.common.util.concurrent.AbstractFuture
         public void interruptTask() {
-            this.call.cancel("GrpcFuture was cancelled", null);
+            this.call.cancel("GrpcFuture was cancelled", (Throwable) null);
         }
 
-        @Override // com.google.common.util.concurrent.AbstractFuture
         public String pendingToString() {
             return MoreObjects.toStringHelper(this).add("clientCall", this.call).toString();
         }
 
-        @Override // com.google.common.util.concurrent.AbstractFuture
         public boolean set(@Nullable RespT respt) {
             return super.set(respt);
         }
 
-        @Override // com.google.common.util.concurrent.AbstractFuture
         public boolean setException(Throwable th) {
             return super.setException(th);
         }
@@ -329,7 +322,6 @@ public final class ClientCalls {
             callToStreamObserverAdapter.freeze();
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onClose(Status status, Metadata metadata) {
             if (status.isOk()) {
                 this.observer.onCompleted();
@@ -338,11 +330,9 @@ public final class ClientCalls {
             }
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onHeaders(Metadata metadata) {
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onMessage(RespT respt) {
             if (this.firstResponseReceived && !((CallToStreamObserverAdapter) this.adapter).streamingResponse) {
                 throw Status.INTERNAL.withDescription("More than one responses received for unary or client-streaming call").asRuntimeException();
@@ -354,7 +344,6 @@ public final class ClientCalls {
             }
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onReady() {
             if (((CallToStreamObserverAdapter) this.adapter).onReadyHandler != null) {
                 ((CallToStreamObserverAdapter) this.adapter).onReadyHandler.run();
@@ -442,7 +431,6 @@ public final class ClientCalls {
             this.responseFuture = grpcFuture;
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onClose(Status status, Metadata metadata) {
             if (!status.isOk()) {
                 this.responseFuture.setException(status.asRuntimeException(metadata));
@@ -454,11 +442,9 @@ public final class ClientCalls {
             this.responseFuture.set(this.value);
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onHeaders(Metadata metadata) {
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onMessage(RespT respt) {
             if (this.value != null) {
                 throw Status.INTERNAL.withDescription("More than one value received for unary call").asRuntimeException();
@@ -593,7 +579,7 @@ public final class ClientCalls {
 
     private static RuntimeException cancelThrow(ClientCall<?, ?> clientCall, Throwable th) {
         try {
-            clientCall.cancel(null, th);
+            clientCall.cancel((String) null, th);
         } catch (Throwable th2) {
             logger.log(Level.SEVERE, "RuntimeException encountered while closing call", th2);
         }
@@ -631,18 +617,18 @@ public final class ClientCalls {
     private static StatusRuntimeException toStatusRuntimeException(Throwable th) {
         Throwable th2 = (Throwable) Preconditions.checkNotNull(th, "t");
         while (true) {
-            Throwable th3 = th2;
-            if (th3 == null) {
+            StatusRuntimeException statusRuntimeException = th2;
+            if (statusRuntimeException == null) {
                 return Status.UNKNOWN.withDescription("unexpected exception").withCause(th).asRuntimeException();
             }
-            if (th3 instanceof StatusException) {
-                StatusException statusException = (StatusException) th3;
+            if (statusRuntimeException instanceof StatusException) {
+                StatusException statusException = (StatusException) statusRuntimeException;
                 return new StatusRuntimeException(statusException.getStatus(), statusException.getTrailers());
-            } else if (th3 instanceof StatusRuntimeException) {
-                StatusRuntimeException statusRuntimeException = (StatusRuntimeException) th3;
-                return new StatusRuntimeException(statusRuntimeException.getStatus(), statusRuntimeException.getTrailers());
+            } else if (statusRuntimeException instanceof StatusRuntimeException) {
+                StatusRuntimeException statusRuntimeException2 = statusRuntimeException;
+                return new StatusRuntimeException(statusRuntimeException2.getStatus(), statusRuntimeException2.getTrailers());
             } else {
-                th2 = th3.getCause();
+                th2 = statusRuntimeException.getCause();
             }
         }
     }

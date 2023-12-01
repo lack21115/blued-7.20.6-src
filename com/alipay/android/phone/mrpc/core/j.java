@@ -1,5 +1,6 @@
 package com.alipay.android.phone.mrpc.core;
 
+import com.efs.sdk.base.Constants;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.UUID;
@@ -24,8 +25,8 @@ public final class j extends a {
         oVar.a(this.e);
         oVar.a(this.f);
         oVar.a("id", String.valueOf(this.d));
-        oVar.a("operationType", this.f4510c);
-        oVar.a("gzip", String.valueOf(this.g.d()));
+        oVar.a("operationType", this.c);
+        oVar.a(Constants.CP_GZIP, String.valueOf(this.g.d()));
         oVar.a((Header) new BasicHeader("uuid", UUID.randomUUID().toString()));
         List<Header> b = this.g.c().b();
         if (b != null && !b.isEmpty()) {

@@ -3,7 +3,6 @@ package com.tencent.mapsdk.internal;
 import android.content.Context;
 import android.os.Build;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,10 +14,10 @@ import java.util.zip.ZipFile;
 public class la {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f37617a = "LibaryLoaderHelper";
+    private static final String f23926a = "LibaryLoaderHelper";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final /* synthetic */ boolean f37618c = !la.class.desiredAssertionStatus();
+    public static final /* synthetic */ boolean f23927c = !la.class.desiredAssertionStatus();
     private static boolean b = false;
 
     public static File a(Context context) {
@@ -30,11 +29,11 @@ public class la {
     }
 
     private static ZipEntry a(ZipFile zipFile, String str) {
-        ZipEntry entry = zipFile.getEntry("lib/" + Build.CPU_ABI + BridgeUtil.SPLIT_MARK + System.mapLibraryName(str));
+        ZipEntry entry = zipFile.getEntry("lib/" + Build.CPU_ABI + "/" + System.mapLibraryName(str));
         if (entry != null) {
             return entry;
         }
-        return zipFile.getEntry("lib/" + Build.CPU_ABI2 + BridgeUtil.SPLIT_MARK + System.mapLibraryName(str));
+        return zipFile.getEntry("lib/" + Build.CPU_ABI2 + "/" + System.mapLibraryName(str));
     }
 
     private static void a(File file) {
@@ -50,19 +49,19 @@ public class la {
                     }
                     File file2 = listFiles[i2];
                     file2.getName();
-                    if (!file2.delete() && Log.isLoggable(f37617a, 6)) {
-                        Log.e(f37617a, "Failed to remove " + file2.getAbsolutePath());
+                    if (!file2.delete() && Log.isLoggable(f23926a, 6)) {
+                        Log.e(f23926a, "Failed to remove " + file2.getAbsolutePath());
                     }
                     i = i2 + 1;
                 }
             }
-            if (file.delete() || !Log.isLoggable(f37617a, 6)) {
+            if (file.delete() || !Log.isLoggable(f23926a, 6)) {
                 return;
             }
-            Log.e(f37617a, "Failed to remove " + file.getAbsolutePath());
+            Log.e(f23926a, "Failed to remove " + file.getAbsolutePath());
         } catch (Exception e) {
-            if (Log.isLoggable(f37617a, 6)) {
-                Log.e(f37617a, "Failed to remove old libs, ", e);
+            if (Log.isLoggable(f23926a, 6)) {
+                Log.e(f23926a, "Failed to remove old libs, ", e);
             }
         }
     }
@@ -97,10 +96,10 @@ public class la {
                 String name = a3.getName();
                 if (name == null || (!name.contains("../") && !name.contains(".."))) {
                     File a4 = a(context, str);
-                    if (Log.isLoggable(f37617a, 4)) {
-                        Log.i(f37617a, "Extracting native libraries into " + a4.getAbsolutePath());
+                    if (Log.isLoggable(f23926a, 4)) {
+                        Log.i(f23926a, "Extracting native libraries into " + a4.getAbsolutePath());
                     }
-                    if (!f37618c && a4.exists()) {
+                    if (!f23927c && a4.exists()) {
                         throw new AssertionError();
                     }
                     try {
@@ -148,8 +147,8 @@ public class la {
                             inputStream = null;
                         }
                     } catch (IOException e) {
-                        if (a4.exists() && !a4.delete() && Log.isLoggable(f37617a, 6)) {
-                            Log.e(f37617a, "Failed to delete " + a4.getAbsolutePath());
+                        if (a4.exists() && !a4.delete() && Log.isLoggable(f23926a, 6)) {
+                            Log.e(f23926a, "Failed to delete " + a4.getAbsolutePath());
                         }
                         zipFile.close();
                         throw e;
@@ -160,8 +159,8 @@ public class la {
             a(a2);
             return false;
         } catch (IOException e2) {
-            if (Log.isLoggable(f37617a, 6)) {
-                Log.e(f37617a, "Failed to unpack native libraries", e2);
+            if (Log.isLoggable(f23926a, 6)) {
+                Log.e(f23926a, "Failed to unpack native libraries", e2);
             }
             a(a2);
             return false;
@@ -169,11 +168,11 @@ public class la {
     }
 
     public static boolean b(Context context, String str) {
-        if (f37618c || context != null) {
+        if (f23927c || context != null) {
             File a2 = a(context, str);
             boolean exists = a2.exists();
-            if (Log.isLoggable(f37617a, 4)) {
-                Log.i(f37617a, "libary:" + a2.getAbsolutePath() + " is exist:" + exists);
+            if (Log.isLoggable(f23926a, 4)) {
+                Log.i(f23926a, "libary:" + a2.getAbsolutePath() + " is exist:" + exists);
             }
             if (exists || b(context)) {
                 try {

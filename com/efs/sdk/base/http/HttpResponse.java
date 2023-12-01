@@ -27,7 +27,7 @@ public class HttpResponse extends d<Map<String, String>> {
     }
 
     public String getReqUrl() {
-        return !((Map) this.extra).containsKey("req_url") ? "" : (String) ((Map) this.extra).get("req_url");
+        return !((Map) this.extra).containsKey(KEY_REQUEST_URL) ? "" : (String) ((Map) this.extra).get(KEY_REQUEST_URL);
     }
 
     public void setBizCode(String str) {
@@ -48,7 +48,7 @@ public class HttpResponse extends d<Map<String, String>> {
         if (str2.contains("?")) {
             str3 = str2.substring(0, str2.indexOf("?"));
         }
-        ((Map) this.extra).put("req_url", str3);
+        ((Map) this.extra).put(KEY_REQUEST_URL, str3);
     }
 
     public String toString() {

@@ -19,11 +19,11 @@ import java.util.ArrayList;
 public class LiveRecyclerAdapter extends BaseQuickAdapter<UserFindResult, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f30056a;
+    public Context f16366a;
 
     public LiveRecyclerAdapter(Context context) {
         super(R.layout.item_nearby_live_recycler_view, new ArrayList());
-        this.f30056a = context;
+        this.f16366a = context;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -42,7 +42,7 @@ public class LiveRecyclerAdapter extends BaseQuickAdapter<UserFindResult, BaseVi
                     for (int i = 0; i < LiveRecyclerAdapter.this.mData.size(); i++) {
                         arrayList.add(new LiveRoomData(((UserFindResult) LiveRecyclerAdapter.this.mData.get(i)).live, 0, ((UserFindResult) LiveRecyclerAdapter.this.mData.get(i)).source, ((UserFindResult) LiveRecyclerAdapter.this.mData.get(i)).uid, ((UserFindResult) LiveRecyclerAdapter.this.mData.get(i)).name, ((UserFindResult) LiveRecyclerAdapter.this.mData.get(i)).avatar, ((UserFindResult) LiveRecyclerAdapter.this.mData.get(i)).vbadge));
                     }
-                    LiveRoomInfoChannel.a(LiveRecyclerAdapter.this.f30056a, new LiveRoomData(userFindResult.live, 0, userFindResult.source, userFindResult.uid, userFindResult.name, userFindResult.avatar, userFindResult.vbadge), -1, arrayList);
+                    LiveRoomInfoChannel.a(LiveRecyclerAdapter.this.f16366a, new LiveRoomData(userFindResult.live, 0, userFindResult.source, userFindResult.uid, userFindResult.name, userFindResult.avatar, userFindResult.vbadge), -1, arrayList);
                 }
             });
             ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.img_live_frame);

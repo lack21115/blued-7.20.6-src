@@ -2,8 +2,10 @@ package com.blued.android.module.live_china.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 import androidx.fragment.app.DialogFragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -40,15 +42,11 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveHostFinishDetailItemFragment.class */
 public final class LiveHostFinishDetailItemFragment extends MVVMBaseFragment<LiveHostFinishDetailViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f12968c;
+    private final ViewBindingProperty c;
     private LiveHostFinishDetailViewModel.ApiState d;
     private BaseQuickAdapter<LiveFinishData, BaseViewHolder> e;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(LiveHostFinishDetailItemFragment.class, "vb", "getVb()Lcom/blued/android/module/live_china/databinding/LiveHostFinishDetailItemLayoutBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12967a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveHostFinishDetailItemFragment$Companion.class */
@@ -71,7 +69,7 @@ public final class LiveHostFinishDetailItemFragment extends MVVMBaseFragment<Liv
 
     public LiveHostFinishDetailItemFragment() {
         super(R.layout.live_host_finish_detail_item_layout);
-        this.f12968c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LiveHostFinishDetailItemFragment, LiveHostFinishDetailItemLayoutBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailItemFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LiveHostFinishDetailItemFragment, LiveHostFinishDetailItemLayoutBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailItemFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final LiveHostFinishDetailItemLayoutBinding invoke(LiveHostFinishDetailItemFragment fragment) {
@@ -120,7 +118,7 @@ public final class LiveHostFinishDetailItemFragment extends MVVMBaseFragment<Liv
         LiveHostFinishDetailViewModel.ApiState apiState = this.d;
         if (apiState != null) {
             LiveHostFinishDetailItemLayoutBinding p = p();
-            RecyclerView recyclerView = p == null ? null : p.f12246c;
+            RecyclerView recyclerView = p == null ? null : p.c;
             if (recyclerView != null) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
             }
@@ -130,7 +128,7 @@ public final class LiveHostFinishDetailItemFragment extends MVVMBaseFragment<Liv
             Intrinsics.c(fragmentActive, "fragmentActive");
             a(new LiveFinishDetailAdapter(requireContext, fragmentActive, apiState));
             LiveHostFinishDetailItemLayoutBinding p2 = p();
-            RecyclerView recyclerView2 = p2 == null ? null : p2.f12246c;
+            RecyclerView recyclerView2 = p2 == null ? null : p2.c;
             if (recyclerView2 != null) {
                 recyclerView2.setAdapter(q());
             }
@@ -144,13 +142,11 @@ public final class LiveHostFinishDetailItemFragment extends MVVMBaseFragment<Liv
             return;
         }
         smartRefreshLayout.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailItemFragment$initView$3
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 LiveHostFinishDetailItemFragment.this.b(false);
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 LiveHostFinishDetailItemFragment.this.b(true);
@@ -160,21 +156,21 @@ public final class LiveHostFinishDetailItemFragment extends MVVMBaseFragment<Liv
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void g() {
-        SmartRefreshLayout smartRefreshLayout;
-        if (!Intrinsics.a(this.d, LiveHostFinishDetailViewModel.ApiState.ApiGiverFrom.f15467a)) {
+        View view;
+        if (!Intrinsics.a(this.d, LiveHostFinishDetailViewModel.ApiState.ApiGiverFrom.a)) {
             b(true);
             return;
         }
         LiveHostFinishDetailItemLayoutBinding p = p();
-        if (p == null || (smartRefreshLayout = p.b) == null) {
+        if (p == null || (view = p.b) == null) {
             return;
         }
-        BluedViewExKt.a(smartRefreshLayout);
+        BluedViewExKt.a(view);
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        LifecycleExtKt.a(this, a().g(), new Function1<List<? extends LiveFinishData>, Unit>() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailItemFragment$liveDataObserver$1
+        LifecycleExtKt.a((LifecycleOwner) this, a().g(), new Function1<List<? extends LiveFinishData>, Unit>() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailItemFragment$liveDataObserver$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -182,8 +178,8 @@ public final class LiveHostFinishDetailItemFragment extends MVVMBaseFragment<Liv
 
             public final void a(List<LiveFinishData> list) {
                 LinearLayout linearLayout;
-                RecyclerView recyclerView;
-                RecyclerView recyclerView2;
+                View view;
+                View view2;
                 LinearLayout linearLayout2;
                 SmartRefreshLayout smartRefreshLayout;
                 SmartRefreshLayout smartRefreshLayout2;
@@ -201,30 +197,30 @@ public final class LiveHostFinishDetailItemFragment extends MVVMBaseFragment<Liv
                 }
                 LiveHostFinishDetailItemLayoutBinding p2 = LiveHostFinishDetailItemFragment.this.p();
                 if (p2 != null && (smartRefreshLayout2 = p2.b) != null) {
-                    smartRefreshLayout2.j();
+                    smartRefreshLayout2.g();
                 }
                 LiveHostFinishDetailItemLayoutBinding p3 = LiveHostFinishDetailItemFragment.this.p();
                 if (p3 != null && (smartRefreshLayout = p3.b) != null) {
-                    smartRefreshLayout.l(e.getHasMore());
+                    smartRefreshLayout.b(e.getHasMore());
                 }
                 if (list.size() == 0) {
                     LiveHostFinishDetailItemLayoutBinding p4 = LiveHostFinishDetailItemFragment.this.p();
-                    if (p4 != null && (linearLayout2 = p4.f12245a) != null) {
+                    if (p4 != null && (linearLayout2 = p4.a) != null) {
                         BluedViewExKt.b(linearLayout2);
                     }
                     LiveHostFinishDetailItemLayoutBinding p5 = LiveHostFinishDetailItemFragment.this.p();
-                    if (p5 == null || (recyclerView2 = p5.f12246c) == null) {
+                    if (p5 == null || (view2 = p5.c) == null) {
                         return;
                     }
-                    BluedViewExKt.a(recyclerView2);
+                    BluedViewExKt.a(view2);
                     return;
                 }
                 LiveHostFinishDetailItemLayoutBinding p6 = LiveHostFinishDetailItemFragment.this.p();
-                if (p6 != null && (recyclerView = p6.f12246c) != null) {
-                    BluedViewExKt.b(recyclerView);
+                if (p6 != null && (view = p6.c) != null) {
+                    BluedViewExKt.b(view);
                 }
                 LiveHostFinishDetailItemLayoutBinding p7 = LiveHostFinishDetailItemFragment.this.p();
-                if (p7 == null || (linearLayout = p7.f12245a) == null) {
+                if (p7 == null || (linearLayout = p7.a) == null) {
                     return;
                 }
                 BluedViewExKt.a(linearLayout);
@@ -233,13 +229,13 @@ public final class LiveHostFinishDetailItemFragment extends MVVMBaseFragment<Liv
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(List<? extends LiveFinishData> list) {
                 a(list);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
 
     public final LiveHostFinishDetailItemLayoutBinding p() {
-        return (LiveHostFinishDetailItemLayoutBinding) this.f12968c.b(this, b[0]);
+        return (LiveHostFinishDetailItemLayoutBinding) this.c.b(this, b[0]);
     }
 
     public final BaseQuickAdapter<LiveFinishData, BaseViewHolder> q() {

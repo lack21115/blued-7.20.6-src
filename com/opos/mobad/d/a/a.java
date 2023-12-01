@@ -16,11 +16,11 @@ import java.util.HashSet;
 public class a implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private NotificationManager f25948a;
+    private NotificationManager f12260a;
     private NotificationCompat.Builder b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Notification f25949c;
+    private Notification f12261c;
     private Notification d;
     private RemoteViews e;
     private Context f;
@@ -29,8 +29,8 @@ public class a implements c {
 
     public a(Context context, e eVar) {
         this.f = context;
-        this.f25948a = (NotificationManager) context.getSystemService("notification");
-        this.f25949c = a(eVar, eVar.b, true, false);
+        this.f12260a = (NotificationManager) context.getSystemService("notification");
+        this.f12261c = a(eVar, eVar.b, true, false);
         this.d = Build.VERSION.SDK_INT >= 23 ? a(eVar, true, false, true) : a(eVar, false, true, true);
         this.g = new f(this.f);
     }
@@ -38,13 +38,13 @@ public class a implements c {
     private Notification a(e eVar, boolean z, boolean z2, boolean z3) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this.f);
         this.b = builder;
-        builder.setSmallIcon(eVar.f25959a);
+        builder.setSmallIcon(eVar.f12271a);
         this.b.setAutoCancel(z);
         this.b.setOngoing(z2);
         this.b.setOnlyAlertOnce(true);
         this.b.setContentTitle(z3 ? "应用下载完成" : "应用下载");
         if (Build.VERSION.SDK_INT >= 26) {
-            NotificationChannel notificationChannel = new NotificationChannel(eVar.f25960c, eVar.d, eVar.e);
+            NotificationChannel notificationChannel = new NotificationChannel(eVar.f12272c, eVar.d, eVar.e);
             notificationChannel.enableVibration(false);
             notificationChannel.setLockscreenVisibility(-1);
             notificationChannel.setSound(null, null);
@@ -52,8 +52,8 @@ public class a implements c {
             if (Build.VERSION.SDK_INT >= 29) {
                 notificationChannel.setImportance(2);
             }
-            this.b.setChannelId(eVar.f25960c);
-            this.f25948a.createNotificationChannel(notificationChannel);
+            this.b.setChannelId(eVar.f12272c);
+            this.f12260a.createNotificationChannel(notificationChannel);
         }
         return this.b.build();
     }
@@ -64,12 +64,12 @@ public class a implements c {
             this.d.deleteIntent = pendingIntent;
         }
         this.d.contentView = this.e;
-        this.f25948a.notify(i, this.d);
+        this.f12260a.notify(i, this.d);
     }
 
     private void b(int i) {
-        this.f25949c.contentView = this.e;
-        this.f25948a.notify(i, this.f25949c);
+        this.f12261c.contentView = this.e;
+        this.f12260a.notify(i, this.f12261c);
     }
 
     @Override // com.opos.mobad.d.a.c
@@ -79,7 +79,7 @@ public class a implements c {
         if (hashSet != null) {
             hashSet.clear();
         }
-        NotificationManager notificationManager = this.f25948a;
+        NotificationManager notificationManager = this.f12260a;
         if (notificationManager != null) {
             notificationManager.cancelAll();
         }
@@ -93,7 +93,7 @@ public class a implements c {
         if (hashSet != null) {
             hashSet.remove(Integer.valueOf(i));
         }
-        NotificationManager notificationManager = this.f25948a;
+        NotificationManager notificationManager = this.f12260a;
         if (notificationManager != null) {
             notificationManager.cancel(i);
         }
@@ -105,10 +105,10 @@ public class a implements c {
 
     @Override // com.opos.mobad.d.a.c
     public void a(int i, c.a aVar) {
-        if (aVar.f25954c == 105) {
-            a(aVar.f25953a, aVar.b, aVar.f25954c, aVar.e, aVar.f, aVar.g, i, aVar.d);
+        if (aVar.f12266c == 105) {
+            a(aVar.f12265a, aVar.b, aVar.f12266c, aVar.e, aVar.f, aVar.g, i, aVar.d);
         } else {
-            a(aVar.f25953a, aVar.b, aVar.f25954c, aVar.e, aVar.f, i, aVar.d);
+            a(aVar.f12265a, aVar.b, aVar.f12266c, aVar.e, aVar.f, i, aVar.d);
         }
     }
 

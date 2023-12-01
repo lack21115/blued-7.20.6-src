@@ -17,8 +17,6 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
-import com.anythink.expressad.d.a.b;
-import com.anythink.expressad.foundation.h.i;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.module.live.base.R;
@@ -26,9 +24,7 @@ import com.blued.android.module.live.base.R;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/animation/SuperCarView.class */
 public class SuperCarView extends BaseLiveAnimationView {
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f11513c;
+    private LayoutInflater c;
     private View d;
     private ImageView e;
     private ImageView f;
@@ -58,7 +54,7 @@ public class SuperCarView extends BaseLiveAnimationView {
 
     private void e() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f11513c = from;
+        this.c = from;
         View inflate = from.inflate(R.layout.layout_sports_car_anim, (ViewGroup) null);
         this.d = inflate;
         this.e = (ImageView) inflate.findViewById(R.id.super_car);
@@ -84,8 +80,8 @@ public class SuperCarView extends BaseLiveAnimationView {
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
                 SuperCarView.this.d.setVisibility(8);
-                if (SuperCarView.this.f11493a != null) {
-                    SuperCarView.this.f11493a.b();
+                if (SuperCarView.this.a != null) {
+                    SuperCarView.this.a.b();
                 }
             }
 
@@ -123,7 +119,7 @@ public class SuperCarView extends BaseLiveAnimationView {
         this.i.setVisibility(0);
         this.o = new AnimationDrawable();
         for (int i = 0; i <= 36; i++) {
-            this.o.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("lightning_" + i, i.f7952c, this.b.getPackageName())), 50);
+            this.o.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("lightning_" + i, "drawable", this.b.getPackageName())), 50);
         }
         this.o.setOneShot(true);
         this.i.setImageDrawable(this.o);
@@ -135,7 +131,7 @@ public class SuperCarView extends BaseLiveAnimationView {
                 SuperCarView.this.i.clearAnimation();
                 SuperCarView.this.o = null;
             }
-        }, b.aC);
+        }, 1800L);
     }
 
     @Override // com.blued.android.module.live.base.view.animation.BaseLiveAnimationView
@@ -173,8 +169,8 @@ public class SuperCarView extends BaseLiveAnimationView {
 
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationStart(Animation animation) {
-                if (SuperCarView.this.f11493a != null) {
-                    SuperCarView.this.f11493a.a();
+                if (SuperCarView.this.a != null) {
+                    SuperCarView.this.a.a();
                 }
                 SuperCarView.this.a(new DecelerateInterpolator(), 1000L);
             }

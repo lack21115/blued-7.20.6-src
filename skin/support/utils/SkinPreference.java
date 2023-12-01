@@ -5,32 +5,28 @@ import android.content.SharedPreferences;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/utils/SkinPreference.class */
 public class SkinPreference {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static SkinPreference f44250a;
+    private static SkinPreference a;
     private final Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final SharedPreferences f44251c;
+    private final SharedPreferences c;
     private final SharedPreferences.Editor d;
 
     private SkinPreference(Context context) {
         this.b = context;
         SharedPreferences sharedPreferences = context.getSharedPreferences("meta-data", 0);
-        this.f44251c = sharedPreferences;
+        this.c = sharedPreferences;
         this.d = sharedPreferences.edit();
     }
 
     public static SkinPreference a() {
-        return f44250a;
+        return a;
     }
 
     public static void a(Context context) {
-        if (f44250a == null) {
+        if (a == null) {
             synchronized (SkinPreference.class) {
                 try {
-                    if (f44250a == null) {
-                        f44250a = new SkinPreference(context.getApplicationContext());
+                    if (a == null) {
+                        a = new SkinPreference(context.getApplicationContext());
                     }
                 } finally {
                 }
@@ -49,7 +45,7 @@ public class SkinPreference {
     }
 
     public String b() {
-        return this.f44251c.getString("skin-name", "");
+        return this.c.getString("skin-name", "");
     }
 
     public SkinPreference b(String str) {
@@ -58,11 +54,11 @@ public class SkinPreference {
     }
 
     public int c() {
-        return this.f44251c.getInt("skin-strategy", -1);
+        return this.c.getInt("skin-strategy", -1);
     }
 
     public String d() {
-        return this.f44251c.getString("skin-user-theme-json", "");
+        return this.c.getString("skin-user-theme-json", "");
     }
 
     public void e() {

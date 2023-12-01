@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.view.shimmer.ShimmerTextView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMsgShimmerTextView.class */
 public class LiveMsgShimmerTextView extends ShimmerTextView {
-
-    /* renamed from: a  reason: collision with root package name */
-    Path f14610a;
+    Path a;
     Path b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LinearGradient f14611c;
+    private LinearGradient c;
     private Paint d;
     private Paint e;
     private int f;
@@ -29,21 +25,21 @@ public class LiveMsgShimmerTextView extends ShimmerTextView {
 
     public LiveMsgShimmerTextView(Context context) {
         super(context);
-        this.f14610a = new Path();
+        this.a = new Path();
         this.b = new Path();
         b();
     }
 
     public LiveMsgShimmerTextView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14610a = new Path();
+        this.a = new Path();
         this.b = new Path();
         b();
     }
 
     public LiveMsgShimmerTextView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14610a = new Path();
+        this.a = new Path();
         this.b = new Path();
         b();
     }
@@ -73,7 +69,7 @@ public class LiveMsgShimmerTextView extends ShimmerTextView {
         return this.d;
     }
 
-    @Override // com.blued.android.module.live_china.view.shimmer.ShimmerTextView, android.widget.TextView, android.view.View
+    @Override // com.blued.android.module.live_china.view.shimmer.ShimmerTextView
     public void onDraw(Canvas canvas) {
         int i = this.i;
         if (i > 0) {
@@ -97,20 +93,19 @@ public class LiveMsgShimmerTextView extends ShimmerTextView {
             int i5 = this.f;
             path.addRoundRect(f5, f6, f7, f8, i5, i5, Path.Direction.CW);
             this.b.close();
-            this.f14610a.reset();
-            Path path2 = this.f14610a;
+            this.a.reset();
+            Path path2 = this.a;
             float f9 = this.h;
             float f10 = this.i;
             int i6 = this.f;
             path2.addRoundRect(0.0f, 0.0f, f9, f10, i6, i6, Path.Direction.CW);
-            this.f14610a.op(this.b, Path.Op.DIFFERENCE);
-            this.f14610a.close();
-            canvas.drawPath(this.f14610a, getBorderPaint());
+            this.a.op(this.b, Path.Op.DIFFERENCE);
+            this.a.close();
+            canvas.drawPath(this.a, getBorderPaint());
         }
         super.onDraw(canvas);
     }
 
-    @Override // androidx.appcompat.widget.AppCompatTextView, android.widget.TextView, android.view.View
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         int i5 = i3 - i;
@@ -120,7 +115,7 @@ public class LiveMsgShimmerTextView extends ShimmerTextView {
         this.h = i5;
         this.i = getMeasuredHeight();
         int i6 = this.i;
-        this.f14611c = new LinearGradient(0.0f, i6, this.h, i6, new int[]{-8242447, -2775041, -8242447}, (float[]) null, Shader.TileMode.REPEAT);
-        getBorderPaint().setShader(this.f14611c);
+        this.c = new LinearGradient(0.0f, i6, this.h, i6, new int[]{-8242447, -2775041, -8242447}, (float[]) null, Shader.TileMode.REPEAT);
+        getBorderPaint().setShader(this.c);
     }
 }

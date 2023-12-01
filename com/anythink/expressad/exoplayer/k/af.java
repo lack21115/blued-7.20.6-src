@@ -13,8 +13,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
 import java.io.File;
@@ -41,11 +41,11 @@ import java.util.regex.Pattern;
 public final class af {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7632a;
+    public static final int f4793a;
     public static final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7633c;
+    public static final String f4794c;
     public static final String d;
     public static final String e;
     private static final String f = "Util";
@@ -55,11 +55,11 @@ public final class af {
     private static final int[] j;
 
     static {
-        f7632a = (Build.VERSION.SDK_INT == 25 && Build.VERSION.CODENAME.charAt(0) == 'O') ? 26 : Build.VERSION.SDK_INT;
+        f4793a = (Build.VERSION.SDK_INT == 25 && Build.VERSION.CODENAME.charAt(0) == 'O') ? 26 : Build.VERSION.SDK_INT;
         b = Build.DEVICE;
-        f7633c = Build.MANUFACTURER;
+        f4794c = Build.MANUFACTURER;
         d = Build.MODEL;
-        e = b + ", " + d + ", " + f7633c + ", " + f7632a;
+        e = b + ", " + d + ", " + f4794c + ", " + f4793a;
         g = Pattern.compile("(\\d\\d\\d\\d)\\-(\\d\\d)\\-(\\d\\d)[Tt](\\d\\d):(\\d\\d):(\\d\\d)([\\.,](\\d+))?([Zz]|((\\+|\\-)(\\d?\\d):?(\\d\\d)))?");
         h = Pattern.compile("^(-)?P(([0-9]*)Y)?(([0-9]*)M)?(([0-9]*)D)?(T(([0-9]*)H)?(([0-9]*)M)?(([0-9.]*)S)?)?$");
         i = Pattern.compile("%([A-Fa-f0-9]{2})");
@@ -205,7 +205,7 @@ public final class af {
     }
 
     public static long a(long j2, com.anythink.expressad.exoplayer.ac acVar, long j3, long j4) {
-        if (com.anythink.expressad.exoplayer.ac.f7157a.equals(acVar)) {
+        if (com.anythink.expressad.exoplayer.ac.f4318a.equals(acVar)) {
             return j2;
         }
         long j5 = acVar.f;
@@ -229,7 +229,7 @@ public final class af {
     }
 
     public static ComponentName a(Context context, Intent intent) {
-        return f7632a >= 26 ? context.startForegroundService(intent) : context.startService(intent);
+        return f4793a >= 26 ? context.startForegroundService(intent) : context.startService(intent);
     }
 
     public static Point a(Context context) {
@@ -237,11 +237,11 @@ public final class af {
     }
 
     private static Point a(Context context, Display display) {
-        if (f7632a < 25 && display.getDisplayId() == 0) {
-            if ("Sony".equals(f7633c) && d.startsWith("BRAVIA") && context.getPackageManager().hasSystemFeature("com.sony.dtv.hardware.panel.qfhd")) {
+        if (f4793a < 25 && display.getDisplayId() == 0) {
+            if ("Sony".equals(f4794c) && d.startsWith("BRAVIA") && context.getPackageManager().hasSystemFeature("com.sony.dtv.hardware.panel.qfhd")) {
                 return new Point(3840, 2160);
             }
-            if (("NVIDIA".equals(f7633c) && d.contains("SHIELD")) || ("philips".equals(d(f7633c)) && (d.startsWith("QM1") || d.equals("QV151E") || d.equals("TPM171E")))) {
+            if (("NVIDIA".equals(f4794c) && d.contains("SHIELD")) || ("philips".equals(d(f4794c)) && (d.startsWith("QM1") || d.equals("QV151E") || d.equals("TPM171E")))) {
                 String str = null;
                 try {
                     Class<?> cls = Class.forName("android.os.SystemProperties");
@@ -266,7 +266,7 @@ public final class af {
             }
         }
         Point point = new Point();
-        int i2 = f7632a;
+        int i2 = f4793a;
         if (i2 >= 23) {
             Display.Mode mode = display.getMode();
             point.x = mode.getPhysicalWidth();
@@ -292,7 +292,7 @@ public final class af {
         } catch (PackageManager.NameNotFoundException e2) {
             str2 = "?";
         }
-        return str + BridgeUtil.SPLIT_MARK + str2 + " (Linux;Android " + Build.VERSION.RELEASE + ") ExoPlayerLib/2.8.4";
+        return str + "/" + str2 + " (Linux;Android " + Build.VERSION.RELEASE + ") ExoPlayerLib/2.8.4";
     }
 
     private static String a(String str, int i2) {
@@ -368,7 +368,7 @@ public final class af {
         return Executors.newSingleThreadExecutor(new ThreadFactory() { // from class: com.anythink.expressad.exoplayer.k.af.1
             @Override // java.util.concurrent.ThreadFactory
             public final Thread newThread(Runnable runnable) {
-                return new Thread(runnable, String.this);
+                return new Thread(runnable, str);
             }
         });
     }
@@ -899,7 +899,7 @@ public final class af {
             if (matcher.group(9) != null && !matcher.group(9).equalsIgnoreCase("Z")) {
                 int parseInt = (Integer.parseInt(matcher.group(12)) * 60) + Integer.parseInt(matcher.group(13));
                 i2 = parseInt;
-                if ("-".equals(matcher.group(11))) {
+                if (Constants.ACCEPT_TIME_SEPARATOR_SERVER.equals(matcher.group(11))) {
                     i2 = parseInt * (-1);
                 }
             }

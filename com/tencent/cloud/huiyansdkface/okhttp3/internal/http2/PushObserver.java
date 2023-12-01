@@ -8,7 +8,7 @@ import java.util.List;
 public interface PushObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final PushObserver f36015a = new PushObserver() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.internal.http2.PushObserver.1
+    public static final PushObserver f22324a = new PushObserver() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.internal.http2.PushObserver.1
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.http2.PushObserver
         public boolean onData(int i, BufferedSource bufferedSource, int i2, boolean z) throws IOException {
             bufferedSource.skip(i2);

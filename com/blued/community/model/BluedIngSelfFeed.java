@@ -390,7 +390,6 @@ public class BluedIngSelfFeed extends BluedADExtra implements MultiItemEntity, S
         return imageMogr != null ? z ? (imageMogr.multiple == null || this.imagemogr2_long_pic.multiple.length <= i || TextUtils.isEmpty(this.imagemogr2_long_pic.multiple[i])) ? "" : this.imagemogr2_long_pic.multiple[i] : !TextUtils.isEmpty(imageMogr.single) ? this.imagemogr2_long_pic.single : "" : "";
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         int i = this.feed_type;
         if (i != -99) {

@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class bd {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile bd f36911a;
+    private static volatile bd f23220a;
     private final Context b;
     private MediaProjection g;
     private com.tencent.liteav.base.util.r h;
@@ -37,7 +37,7 @@ public class bd {
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private final Handler f36912c = new com.tencent.liteav.base.util.b(Looper.getMainLooper());
+    private final Handler f23221c = new com.tencent.liteav.base.util.b(Looper.getMainLooper());
     private final com.tencent.liteav.base.util.j d = new com.tencent.liteav.base.util.j();
 
     /* renamed from: com.tencent.liteav.videoproducer.capture.bd$1  reason: invalid class name */
@@ -58,11 +58,11 @@ public class bd {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public Surface f36915a;
+        public Surface f23224a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f36916c;
+        public int f23225c;
         public b d;
         public VirtualDisplay e;
 
@@ -89,24 +89,24 @@ public class bd {
     }
 
     public static bd a(Context context) {
-        if (f36911a == null) {
+        if (f23220a == null) {
             synchronized (bd.class) {
                 try {
-                    if (f36911a == null) {
-                        f36911a = new bd(context);
+                    if (f23220a == null) {
+                        f23220a = new bd(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f36911a;
+        return f23220a;
     }
 
     private void a() {
         for (a aVar : this.e.values()) {
             if (aVar.e == null) {
-                aVar.e = this.g.createVirtualDisplay("TXCScreenCapture", aVar.b, aVar.f36916c, 1, 1, aVar.f36915a, (VirtualDisplay.Callback) null, (Handler) null);
+                aVar.e = this.g.createVirtualDisplay("TXCScreenCapture", aVar.b, aVar.f23225c, 1, 1, aVar.f23224a, (VirtualDisplay.Callback) null, (Handler) null);
                 LiteavLog.i("VirtualDisplayManager", "create VirtualDisplay " + aVar.e);
                 if (aVar.d != null) {
                     aVar.d.a(true, false);
@@ -130,7 +130,7 @@ public class bd {
         }
         LiteavLog.i("VirtualDisplayManager", "Got session ".concat(String.valueOf(mediaProjection)));
         bdVar.g = mediaProjection;
-        mediaProjection.registerCallback(bdVar.k, bdVar.f36912c);
+        mediaProjection.registerCallback(bdVar.k, bdVar.f23221c);
         bdVar.a();
         com.tencent.liteav.base.util.r rVar = new com.tencent.liteav.base.util.r(Looper.getMainLooper(), bdVar.l);
         bdVar.h = rVar;
@@ -159,9 +159,9 @@ public class bd {
             return;
         }
         a aVar = new a((byte) 0);
-        aVar.f36915a = surface;
+        aVar.f23224a = surface;
         aVar.b = i;
-        aVar.f36916c = i2;
+        aVar.f23225c = i2;
         aVar.d = bVar;
         aVar.e = null;
         bdVar.e.put(surface, aVar);

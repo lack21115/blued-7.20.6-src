@@ -125,7 +125,7 @@ public final class Usage extends GeneratedMessageV3 implements UsageOrBuilder {
         public Builder addRequirements(String str) {
             if (str != null) {
                 ensureRequirementsIsMutable();
-                this.requirements_.add((LazyStringList) str);
+                this.requirements_.add(str);
                 onChanged();
                 return this;
             }
@@ -291,8 +291,8 @@ public final class Usage extends GeneratedMessageV3 implements UsageOrBuilder {
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -329,7 +329,7 @@ public final class Usage extends GeneratedMessageV3 implements UsageOrBuilder {
 
         @Override // com.google.api.UsageOrBuilder
         public String getRequirements(int i) {
-            return this.requirements_.get(i);
+            return (String) this.requirements_.get(i);
         }
 
         @Override // com.google.api.UsageOrBuilder
@@ -556,7 +556,7 @@ public final class Usage extends GeneratedMessageV3 implements UsageOrBuilder {
         public Builder setRequirements(int i, String str) {
             if (str != null) {
                 ensureRequirementsIsMutable();
-                this.requirements_.set(i, (int) str);
+                this.requirements_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -603,6 +603,7 @@ public final class Usage extends GeneratedMessageV3 implements UsageOrBuilder {
         this.producerNotificationChannel_ = "";
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private Usage(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
         this();
         if (extensionRegistryLite == null) {
@@ -624,7 +625,7 @@ public final class Usage extends GeneratedMessageV3 implements UsageOrBuilder {
                                 this.requirements_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.requirements_.add((LazyStringList) readStringRequireUtf8);
+                            this.requirements_.add(readStringRequireUtf8);
                             z2 = z4;
                         } else if (readTag == 50) {
                             boolean z5 = z2;
@@ -786,7 +787,7 @@ public final class Usage extends GeneratedMessageV3 implements UsageOrBuilder {
 
     @Override // com.google.api.UsageOrBuilder
     public String getRequirements(int i) {
-        return this.requirements_.get(i);
+        return (String) this.requirements_.get(i);
     }
 
     @Override // com.google.api.UsageOrBuilder

@@ -16,11 +16,11 @@ import org.json.JSONObject;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24704a = e.class.getSimpleName();
+    private static final String f11016a = e.class.getSimpleName();
     private static final ReentrantReadWriteLock b = new ReentrantReadWriteLock();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final ReentrantReadWriteLock f24705c = new ReentrantReadWriteLock();
+    private static final ReentrantReadWriteLock f11017c = new ReentrantReadWriteLock();
     private static STConfigEntity d = null;
 
     public static int a(Context context, JSONObject jSONObject) {
@@ -28,19 +28,19 @@ public class e {
         if (context != null && jSONObject != null) {
             try {
             } catch (JSONException e) {
-                com.opos.cmn.an.f.a.c(f24704a, "", e);
+                com.opos.cmn.an.f.a.c(f11016a, "", e);
             }
             if (jSONObject.has("data") && !jSONObject.isNull("data")) {
                 JSONObject jSONObject2 = jSONObject.getJSONObject("data");
                 if (jSONObject2.has("currTime") && !jSONObject2.isNull("currTime")) {
                     i = jSONObject2.getInt("currTime");
-                    com.opos.cmn.an.f.a.b(f24704a, "currTime=" + i);
+                    com.opos.cmn.an.f.a.b(f11016a, "currTime=" + i);
                     return i;
                 }
             }
         }
         i = 0;
-        com.opos.cmn.an.f.a.b(f24704a, "currTime=" + i);
+        com.opos.cmn.an.f.a.b(f11016a, "currTime=" + i);
         return i;
     }
 
@@ -62,10 +62,10 @@ public class e {
             if (context != null) {
                 try {
                     if (a() == null) {
-                        com.opos.cmn.an.f.a.b(f24704a, "sSTConfigEntity=null!set it.");
+                        com.opos.cmn.an.f.a.b(f11016a, "sSTConfigEntity=null!set it.");
                         STConfigEntity a3 = g.a(context);
                         if (a() != null || a3 == null) {
-                            com.opos.cmn.an.f.a.c(f24704a, "getSTConfigEntity != null || tempSTConfigEntity == null");
+                            com.opos.cmn.an.f.a.c(f11016a, "getSTConfigEntity != null || tempSTConfigEntity == null");
                         } else {
                             a(a3);
                         }
@@ -85,7 +85,7 @@ public class e {
         if (context != null) {
             jSONObject = null;
             if (eVar != null) {
-                InputStream inputStream = eVar.f24863c;
+                InputStream inputStream = eVar.f11175c;
                 jSONObject = null;
                 if (inputStream != null) {
                     byte[] a2 = a(inputStream);
@@ -108,17 +108,17 @@ public class e {
                                                         JSONObject jSONObject4 = jSONObject3.getJSONObject("strategy");
                                                         if (jSONObject4.has("nxLimit") && !jSONObject4.isNull("nxLimit")) {
                                                             long j = jSONObject4.getLong("nxLimit");
-                                                            com.opos.cmn.an.f.a.b(f24704a, "set ntLimit=" + j);
+                                                            com.opos.cmn.an.f.a.b(f11016a, "set ntLimit=" + j);
                                                             d.a(context, j);
                                                         }
                                                         if (jSONObject4.has("dtLimit") && !jSONObject4.isNull("dtLimit")) {
                                                             int i2 = jSONObject4.getInt("dtLimit");
-                                                            com.opos.cmn.an.f.a.b(f24704a, "set dtLimit=" + i2);
+                                                            com.opos.cmn.an.f.a.b(f11016a, "set dtLimit=" + i2);
                                                             d.a(context, i2);
                                                         }
                                                         if (jSONObject4.has("blackListLimit") && !jSONObject4.isNull("blackListLimit")) {
                                                             int i3 = jSONObject4.getInt("blackListLimit");
-                                                            com.opos.cmn.an.f.a.b(f24704a, "set blaLimit=" + i3);
+                                                            com.opos.cmn.an.f.a.b(f11016a, "set blaLimit=" + i3);
                                                             d.b(context, i3);
                                                         }
                                                     }
@@ -127,13 +127,13 @@ public class e {
                                             } catch (Exception e) {
                                                 e = e;
                                                 jSONObject = jSONObject2;
-                                                com.opos.cmn.an.f.a.c(f24704a, "", e);
-                                                com.opos.cmn.an.f.a.b(f24704a, "netResponseToJsonObject result:" + jSONObject);
+                                                com.opos.cmn.an.f.a.c(f11016a, "", e);
+                                                com.opos.cmn.an.f.a.b(f11016a, "netResponseToJsonObject result:" + jSONObject);
                                                 return jSONObject;
                                             }
                                         } else if (-3 != i) {
                                             String string = jSONObject2.getString("msg");
-                                            String str = f24704a;
+                                            String str = f11016a;
                                             StringBuilder sb = new StringBuilder();
                                             sb.append("netResponseToJsonObject code=");
                                             sb.append(i);
@@ -160,7 +160,7 @@ public class e {
                 }
             }
         }
-        com.opos.cmn.an.f.a.b(f24704a, "netResponseToJsonObject result:" + jSONObject);
+        com.opos.cmn.an.f.a.b(f11016a, "netResponseToJsonObject result:" + jSONObject);
         return jSONObject;
     }
 
@@ -186,7 +186,7 @@ public class e {
         FileOutputStream fileOutputStream3 = null;
         try {
             try {
-                f24705c.writeLock().lock();
+                f11017c.writeLock().lock();
                 FileOutputStream openFileOutput = context.openFileOutput(d(context), 0);
                 if (openFileOutput != null) {
                     openFileOutput.write(bArr, 0, bArr.length);
@@ -194,7 +194,7 @@ public class e {
                     fileOutputStream = openFileOutput;
                     fileOutputStream2 = openFileOutput;
                     fileOutputStream3 = openFileOutput;
-                    com.opos.cmn.an.f.a.b(f24704a, "fileOutputStream flush!!!");
+                    com.opos.cmn.an.f.a.b(f11016a, "fileOutputStream flush!!!");
                     z2 = true;
                 }
                 z = z2;
@@ -204,14 +204,14 @@ public class e {
                         z = z2;
                     } catch (IOException e) {
                         e = e;
-                        com.opos.cmn.an.f.a.c(f24704a, "", e);
+                        com.opos.cmn.an.f.a.c(f11016a, "", e);
                         z = z2;
-                        f24705c.writeLock().unlock();
+                        f11017c.writeLock().unlock();
                         return z;
                     }
                 }
             } catch (FileNotFoundException e2) {
-                com.opos.cmn.an.f.a.c(f24704a, "", e2);
+                com.opos.cmn.an.f.a.c(f11016a, "", e2);
                 z = false;
                 if (fileOutputStream3 != null) {
                     try {
@@ -220,14 +220,14 @@ public class e {
                     } catch (IOException e3) {
                         e = e3;
                         z2 = false;
-                        com.opos.cmn.an.f.a.c(f24704a, "", e);
+                        com.opos.cmn.an.f.a.c(f11016a, "", e);
                         z = z2;
-                        f24705c.writeLock().unlock();
+                        f11017c.writeLock().unlock();
                         return z;
                     }
                 }
             } catch (IOException e4) {
-                com.opos.cmn.an.f.a.c(f24704a, "", e4);
+                com.opos.cmn.an.f.a.c(f11016a, "", e4);
                 z = false;
                 if (fileOutputStream2 != null) {
                     try {
@@ -236,24 +236,24 @@ public class e {
                     } catch (IOException e5) {
                         e = e5;
                         z2 = false;
-                        com.opos.cmn.an.f.a.c(f24704a, "", e);
+                        com.opos.cmn.an.f.a.c(f11016a, "", e);
                         z = z2;
-                        f24705c.writeLock().unlock();
+                        f11017c.writeLock().unlock();
                         return z;
                     }
                 }
             }
-            f24705c.writeLock().unlock();
+            f11017c.writeLock().unlock();
             return z;
         } catch (Throwable th) {
             if (fileOutputStream != null) {
                 try {
                     fileOutputStream.close();
                 } catch (IOException e6) {
-                    com.opos.cmn.an.f.a.c(f24704a, "", e6);
+                    com.opos.cmn.an.f.a.c(f11016a, "", e6);
                 }
             }
-            f24705c.writeLock().unlock();
+            f11017c.writeLock().unlock();
             throw th;
         }
     }
@@ -273,7 +273,7 @@ public class e {
                 byteArrayOutputStream.write(bArr, 0, read);
             }
         } catch (Exception e) {
-            com.opos.cmn.an.f.a.c(f24704a, "", e);
+            com.opos.cmn.an.f.a.c(f11016a, "", e);
             return null;
         }
     }
@@ -311,7 +311,7 @@ public class e {
             try {
                 return new File(context.getFilesDir(), d(context)).exists();
             } catch (Exception e) {
-                com.opos.cmn.an.f.a.c(f24704a, "", e);
+                com.opos.cmn.an.f.a.c(f11016a, "", e);
                 return false;
             }
         }
@@ -321,14 +321,14 @@ public class e {
     private static boolean c(Context context, JSONObject jSONObject) {
         byte[] d2;
         boolean a2 = (context == null || jSONObject == null || (d2 = d(context, jSONObject)) == null || d2.length <= 0) ? false : a(context, d2);
-        String str = f24704a;
+        String str = f11016a;
         com.opos.cmn.an.f.a.b(str, "savejsonObjectSTConfig to file result: " + a2);
         return a2;
     }
 
     public static String d(Context context) {
         String str = (context == null || !f.b(context)) ? "acs_st_config_merge.ini" : "acs_st_config_overseas_merge.ini";
-        String str2 = f24704a;
+        String str2 = f11016a;
         com.opos.cmn.an.f.a.b(str2, "getSTConfigFileName=" + str);
         return str;
     }
@@ -363,7 +363,7 @@ public class e {
             goto L2f
         L23:
             r4 = move-exception
-            java.lang.String r0 = com.opos.cmn.biz.ststrategy.c.e.f24704a
+            java.lang.String r0 = com.opos.cmn.biz.ststrategy.c.e.f11016a
             java.lang.String r1 = ""
             r2 = r4
             com.opos.cmn.an.f.a.c(r0, r1, r2)
@@ -371,7 +371,7 @@ public class e {
             r0 = 0
             r4 = r0
         L2f:
-            java.lang.String r0 = com.opos.cmn.biz.ststrategy.c.e.f24704a
+            java.lang.String r0 = com.opos.cmn.biz.ststrategy.c.e.f11016a
             r6 = r0
             java.lang.StringBuilder r0 = new java.lang.StringBuilder
             r1 = r0

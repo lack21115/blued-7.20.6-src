@@ -1,8 +1,6 @@
 package java.text;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.cdo.oaps.ad.OapsKey;
-import com.sobot.network.http.model.SobotProgress;
+import com.anythink.core.common.g.c;
 import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
@@ -32,9 +30,9 @@ public abstract class NumberFormat extends Format {
     /* loaded from: source-2895416-dex2jar.jar:java/text/NumberFormat$Field.class */
     public static class Field extends Format.Field {
         private static final long serialVersionUID = 7494728892700160890L;
-        public static final Field SIGN = new Field("sign");
-        public static final Field INTEGER = new Field(TypedValues.Custom.S_INT);
-        public static final Field FRACTION = new Field(SobotProgress.FRACTION);
+        public static final Field SIGN = new Field(c.Y);
+        public static final Field INTEGER = new Field("integer");
+        public static final Field FRACTION = new Field("fraction");
         public static final Field EXPONENT = new Field("exponent");
         public static final Field EXPONENT_SIGN = new Field("exponent sign");
         public static final Field EXPONENT_SYMBOL = new Field("exponent symbol");
@@ -42,7 +40,7 @@ public abstract class NumberFormat extends Format {
         public static final Field GROUPING_SEPARATOR = new Field("grouping separator");
         public static final Field PERCENT = new Field("percent");
         public static final Field PERMILLE = new Field("per mille");
-        public static final Field CURRENCY = new Field(OapsKey.KEY_CURRENCY_CODE);
+        public static final Field CURRENCY = new Field("currency");
 
         protected Field(String str) {
             super(str);

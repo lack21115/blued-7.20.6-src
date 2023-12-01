@@ -28,62 +28,61 @@ public final class SuperExposureFragment$createAdapter$1 extends CommonAdapter<S
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(SuperExposurePayItemModel model, int i, SuperExposureFragment this$0, View view) {
+    public static final void a(SuperExposurePayItemModel superExposurePayItemModel, int i, SuperExposureFragment superExposureFragment, View view) {
         FragmentSuperExposureBinding x;
         Tracker.onClick(view);
-        Intrinsics.e(model, "$model");
-        Intrinsics.e(this$0, "this$0");
-        if (TextUtils.isEmpty(model.content)) {
-            if (i != this$0.s()) {
-                x = this$0.x();
+        Intrinsics.e(superExposurePayItemModel, "$model");
+        Intrinsics.e(superExposureFragment, "this$0");
+        if (TextUtils.isEmpty(superExposurePayItemModel.content)) {
+            if (i != superExposureFragment.s()) {
+                x = superExposureFragment.x();
                 LinearLayout linearLayout = x == null ? null : x.ah;
                 if (linearLayout != null) {
                     linearLayout.setVisibility(8);
                 }
             }
-            this$0.b(i);
-            if (this$0.t() >= 0) {
-                this$0.u().get(this$0.t()).money = "0";
+            superExposureFragment.b(i);
+            if (superExposureFragment.t() >= 0) {
+                superExposureFragment.u().get(superExposureFragment.t()).money = "0";
             }
-            if (this$0.w().get(model.id) != null) {
-                this$0.a(this$0.w().get(model.id));
+            if (superExposureFragment.w().get(superExposurePayItemModel.id) != null) {
+                superExposureFragment.a(superExposureFragment.w().get(superExposurePayItemModel.id));
             } else {
-                this$0.f(model.id);
-                this$0.b((SuperExposureCouponModel) null);
+                superExposureFragment.f(superExposurePayItemModel.id);
+                superExposureFragment.b((SuperExposureCouponModel) null);
             }
         } else {
-            this$0.c(i);
-            this$0.a(model);
-            this$0.b((SuperExposureCouponModel) null);
+            superExposureFragment.c(i);
+            superExposureFragment.a(superExposurePayItemModel);
+            superExposureFragment.b((SuperExposureCouponModel) null);
         }
-        this$0.M();
-        this$0.v().a(this$0.u());
+        superExposureFragment.M();
+        superExposureFragment.v().a(superExposureFragment.u());
     }
 
-    @Override // com.blued.android.module.common.adapter.CommonAdapter
-    public void a(CommonAdapter.ViewHolder holder, final SuperExposurePayItemModel model, final int i) {
-        Intrinsics.e(holder, "holder");
-        Intrinsics.e(model, "model");
-        holder.c(R.id.item_super_exposure_pay_content_layout, i == this.d.s() ? 2131237220 : 2131237219).b(R.id.item_super_exposure_pay_corner, TextUtils.isEmpty(model.corner) ? 8 : 0).a(R.id.item_super_exposure_pay_corner, model.corner).a(R.id.item_super_exposure_pay_price, model.money).a(R.id.item_super_exposure_pay_origin_price, model.originalShow).a(R.id.item_super_exposure_pay_label_tv, model.label).b(R.id.item_super_exposure_pay_origin_price, TextUtils.isEmpty(model.originalShow) ? 8 : 0);
-        if (model.storage_num > 0) {
-            holder.b(2131372734, 0).a(2131372734, String.valueOf(model.storage_num));
+    public void a(CommonAdapter.ViewHolder viewHolder, final SuperExposurePayItemModel superExposurePayItemModel, final int i) {
+        Intrinsics.e(viewHolder, "holder");
+        Intrinsics.e(superExposurePayItemModel, "model");
+        viewHolder.c((int) R.id.item_super_exposure_pay_content_layout, i == this.d.s() ? 2131237220 : 2131237219).b((int) R.id.item_super_exposure_pay_corner, TextUtils.isEmpty(superExposurePayItemModel.corner) ? 8 : 0).a((int) R.id.item_super_exposure_pay_corner, superExposurePayItemModel.corner).a((int) R.id.item_super_exposure_pay_price, superExposurePayItemModel.money).a((int) R.id.item_super_exposure_pay_origin_price, superExposurePayItemModel.originalShow).a((int) R.id.item_super_exposure_pay_label_tv, superExposurePayItemModel.label).b((int) R.id.item_super_exposure_pay_origin_price, TextUtils.isEmpty(superExposurePayItemModel.originalShow) ? 8 : 0);
+        if (superExposurePayItemModel.storage_num > 0) {
+            viewHolder.b((int) R.id.tv_times, 0).a((int) R.id.tv_times, String.valueOf(superExposurePayItemModel.storage_num));
         } else {
-            holder.b(2131372734, 8);
+            viewHolder.b((int) R.id.tv_times, 8);
         }
-        TextView textView = (TextView) holder.a(R.id.item_super_exposure_pay_origin_price);
+        TextView textView = (TextView) viewHolder.a((int) R.id.item_super_exposure_pay_origin_price);
         TextPaint paint = textView == null ? null : textView.getPaint();
         if (paint != null) {
             paint.setFlags(16);
         }
-        if (!TextUtils.isEmpty(model.content)) {
+        if (!TextUtils.isEmpty(superExposurePayItemModel.content)) {
             this.d.c(i);
         }
-        if (!TextUtils.isEmpty(model.content) && !TextUtils.isEmpty(model.money)) {
-            String str = model.money;
+        if (!TextUtils.isEmpty(superExposurePayItemModel.content) && !TextUtils.isEmpty(superExposurePayItemModel.money)) {
+            String str = superExposurePayItemModel.money;
             Intrinsics.c(str, "model.money");
             if (((int) Double.parseDouble(str)) > 0) {
-                holder.b(R.id.item_super_exposure_pay_define_price_layout, 0).b(R.id.item_super_exposure_pay_define_edit, 8);
-                View a2 = holder.a();
+                viewHolder.b((int) R.id.item_super_exposure_pay_define_price_layout, 0).b((int) R.id.item_super_exposure_pay_define_edit, 8);
+                View a2 = viewHolder.a();
                 final SuperExposureFragment superExposureFragment = this.d;
                 a2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperExposureFragment$createAdapter$1$F8X4nQ887MGxRpimcsvGaPAcEgk
                     @Override // android.view.View.OnClickListener
@@ -93,8 +92,8 @@ public final class SuperExposureFragment$createAdapter$1 extends CommonAdapter<S
                 });
             }
         }
-        holder.b(R.id.item_super_exposure_pay_define_price_layout, 8).b(R.id.item_super_exposure_pay_define_edit, 0);
-        View a22 = holder.a();
+        viewHolder.b((int) R.id.item_super_exposure_pay_define_price_layout, 8).b((int) R.id.item_super_exposure_pay_define_edit, 0);
+        View a22 = viewHolder.a();
         final SuperExposureFragment superExposureFragment2 = this.d;
         a22.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperExposureFragment$createAdapter$1$F8X4nQ887MGxRpimcsvGaPAcEgk
             @Override // android.view.View.OnClickListener

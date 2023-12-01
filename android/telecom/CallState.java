@@ -1,5 +1,7 @@
 package android.telecom;
 
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
+
 /* loaded from: source-9557208-dex2jar.jar:android/telecom/CallState.class */
 public final class CallState {
     public static final int ABORTED = 8;
@@ -39,7 +41,7 @@ public final class CallState {
             case 9:
                 return "DISCONNECTING";
             default:
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 }

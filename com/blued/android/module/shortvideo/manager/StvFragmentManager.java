@@ -14,27 +14,25 @@ import java.util.Map;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/manager/StvFragmentManager.class */
 public class StvFragmentManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static StvFragmentManager f15748a;
+    private static StvFragmentManager a;
     private List<String> b = new LinkedList();
 
     private StvFragmentManager() {
     }
 
     public static StvFragmentManager a() {
-        if (f15748a == null) {
+        if (a == null) {
             synchronized (StvFragmentManager.class) {
                 try {
-                    if (f15748a == null) {
-                        f15748a = new StvFragmentManager();
+                    if (a == null) {
+                        a = new StvFragmentManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f15748a;
+        return a;
     }
 
     public void a(String str) {

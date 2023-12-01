@@ -11,18 +11,18 @@ import android.os.Handler;
 public class q4 extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final t3 f3947a;
+    public final t3 f3899a;
     public boolean b;
 
     public q4(t3 t3Var) {
-        this.f3947a = t3Var;
+        this.f3899a = t3Var;
     }
 
     public void a() {
         if (this.b) {
             this.b = false;
             try {
-                this.f3947a.f3992a.unregisterReceiver(this);
+                this.f3899a.f3944a.unregisterReceiver(this);
             } catch (Exception e) {
             }
         }
@@ -31,7 +31,7 @@ public class q4 extends BroadcastReceiver {
     public final void a(Handler handler) {
         if (handler != null) {
             try {
-                this.f3947a.f3992a.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"), null, handler);
+                this.f3899a.f3944a.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"), null, handler);
             } catch (Exception e) {
             }
         }
@@ -52,11 +52,11 @@ public class q4 extends BroadcastReceiver {
         }
         try {
             if (intent.getBooleanExtra(ConnectivityManager.EXTRA_NO_CONNECTIVITY, false)) {
-                this.f3947a.a((Object) (-1));
+                this.f3899a.a((Object) (-1));
             } else if (a6.c(context)) {
-                this.f3947a.a((Object) 1);
+                this.f3899a.a((Object) 1);
             } else {
-                this.f3947a.a((Object) 0);
+                this.f3899a.a((Object) 0);
             }
         } catch (Exception e) {
         }

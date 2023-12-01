@@ -17,7 +17,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.android.internal.R;
-import com.anythink.expressad.exoplayer.b;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -75,7 +74,7 @@ public class LocalePicker extends ListFragment {
             z = true;
         }
         List<LocaleInfo> allAssetLocales = getAllAssetLocales(context, z);
-        final LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService("layout_inflater");
         return new ArrayAdapter<LocaleInfo>(context, i, i2, allAssetLocales) { // from class: com.android.internal.app.LocalePicker.1
             @Override // android.widget.ArrayAdapter, android.widget.Adapter
             public View getView(int i3, View view, ViewGroup viewGroup) {
@@ -111,7 +110,7 @@ public class LocalePicker extends ListFragment {
         Iterator<String> it = localeArray.iterator();
         while (it.hasNext()) {
             Locale forLanguageTag = Locale.forLanguageTag(it.next().replace('_', '-'));
-            if (forLanguageTag != null && !b.f7166ar.equals(forLanguageTag.getLanguage()) && !forLanguageTag.getLanguage().isEmpty() && !forLanguageTag.getCountry().isEmpty()) {
+            if (forLanguageTag != null && !"und".equals(forLanguageTag.getLanguage()) && !forLanguageTag.getLanguage().isEmpty() && !forLanguageTag.getCountry().isEmpty()) {
                 if (arrayList.isEmpty()) {
                     arrayList.add(new LocaleInfo(toTitleCase(forLanguageTag.getDisplayLanguage(forLanguageTag)), forLanguageTag));
                 } else {

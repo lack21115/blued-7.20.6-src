@@ -17,11 +17,11 @@ import java.util.Iterator;
 public final class m extends e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7961a = 1;
+    public static final int f5121a = 1;
     public static final int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7962c = 3;
+    public static final int f5122c = 3;
     public static final int d = 4;
     public static final String e = "/download/.at";
     public static final String f = "/atdownload";
@@ -31,11 +31,11 @@ public final class m extends e {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f7963a = 448;
+        public static final int f5123a = 448;
         public static final int b = 256;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f7964c = 128;
+        public static final int f5124c = 128;
         public static final int d = 64;
         public static final int e = 56;
         public static final int f = 32;
@@ -133,7 +133,7 @@ public final class m extends e {
                         e2.printStackTrace();
                     }
                 } catch (Exception e3) {
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         e3.printStackTrace();
                     }
                 }
@@ -286,7 +286,7 @@ public final class m extends e {
         FileOutputStream fileOutputStream2;
         FileInputStream fileInputStream2;
         try {
-            if (r.f7970a) {
+            if (r.f5130a) {
                 fileInputStream = new FileInputStream(str);
                 try {
                     fileOutputStream2 = new FileOutputStream(str2);
@@ -447,7 +447,7 @@ public final class m extends e {
                     m.a(com.anythink.expressad.foundation.g.c.d.b(com.anythink.expressad.foundation.g.c.a.ANYTHINK_RES_MANAGER_DIR), aVar.b());
                     m.a(System.currentTimeMillis() - (aVar.n() * 1000));
                 } catch (Exception e2) {
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         e2.printStackTrace();
                     }
                 }

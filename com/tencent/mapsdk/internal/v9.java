@@ -15,11 +15,11 @@ public class v9 extends n9 {
     private static final za.k<za.m<Bitmap>> h;
 
     /* renamed from: a  reason: collision with root package name */
-    public final AtomicInteger f38065a = new AtomicInteger();
+    public final AtomicInteger f24374a = new AtomicInteger();
     public Bitmap b;
 
     /* renamed from: c  reason: collision with root package name */
-    public byte[] f38066c;
+    public byte[] f24375c;
     private int d;
     private String e;
 
@@ -39,7 +39,7 @@ public class v9 extends n9 {
     }
 
     public v9(byte[] bArr) {
-        this.f38066c = bArr;
+        this.f24375c = bArr;
         if (bArr != null) {
             a(bArr);
         }
@@ -48,7 +48,7 @@ public class v9 extends n9 {
     private void i() {
         byte[] bArr;
         Bitmap bitmap = this.b;
-        if (bitmap == null && (bArr = this.f38066c) != null) {
+        if (bitmap == null && (bArr = this.f24375c) != null) {
             this.d = bArr.length;
         }
         if (bitmap == null || bitmap.isRecycled()) {
@@ -85,7 +85,7 @@ public class v9 extends n9 {
         if (bArr == null || bArr.length <= 0) {
             return;
         }
-        this.f38066c = bArr;
+        this.f24375c = bArr;
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         try {
@@ -98,7 +98,7 @@ public class v9 extends n9 {
             return;
         }
         za.e eVar = g;
-        eVar.f38150a = i2;
+        eVar.f24459a = i2;
         eVar.b = i;
         Bitmap bitmap = null;
         boolean z = false;
@@ -137,7 +137,7 @@ public class v9 extends n9 {
         } catch (Exception e2) {
             na.a("BD", "BitmapData opts decodingByteArray exception: ", e2.fillInStackTrace());
         }
-        this.f38066c = null;
+        this.f24375c = null;
         j();
         i();
     }
@@ -145,7 +145,7 @@ public class v9 extends n9 {
     @Override // com.tencent.mapsdk.internal.n9
     public byte[] b() {
         ByteArrayOutputStream byteArrayOutputStream;
-        byte[] bArr = this.f38066c;
+        byte[] bArr = this.f24375c;
         if (bArr != null) {
             return bArr;
         }
@@ -178,7 +178,7 @@ public class v9 extends n9 {
         if (bitmap == null || bitmap.isRecycled()) {
             return;
         }
-        int decrementAndGet = this.f38065a.decrementAndGet();
+        int decrementAndGet = this.f24374a.decrementAndGet();
         ra.b g2 = ra.g("BD");
         g2.a("decrement refCount:" + decrementAndGet + " id = " + e());
     }
@@ -186,7 +186,7 @@ public class v9 extends n9 {
     public Bitmap d() {
         synchronized (this) {
             if (this.b == null) {
-                a(this.f38066c);
+                a(this.f24375c);
             }
             Bitmap bitmap = this.b;
             if (bitmap == null || !bitmap.isRecycled()) {
@@ -205,7 +205,7 @@ public class v9 extends n9 {
         if (bitmap == null || bitmap.isRecycled()) {
             return;
         }
-        int incrementAndGet = this.f38065a.incrementAndGet();
+        int incrementAndGet = this.f24374a.incrementAndGet();
         ra.b g2 = ra.g("BD");
         g2.a("increment refCount:" + incrementAndGet + " id = " + e());
     }
@@ -215,18 +215,18 @@ public class v9 extends n9 {
         if (bitmap != null) {
             return bitmap.isRecycled();
         }
-        byte[] bArr = this.f38066c;
+        byte[] bArr = this.f24375c;
         return bArr == null || bArr.length == 0;
     }
 
     public boolean h() {
         Bitmap bitmap = this.b;
         boolean z = false;
-        if (bitmap != null && !bitmap.isRecycled() && this.f38065a.decrementAndGet() <= 0) {
+        if (bitmap != null && !bitmap.isRecycled() && this.f24374a.decrementAndGet() <= 0) {
             this.b.recycle();
             ra.g("BD").a("recycle out");
         }
-        this.f38066c = null;
+        this.f24375c = null;
         Bitmap bitmap2 = this.b;
         if (bitmap2 == null || bitmap2.isRecycled()) {
             z = true;

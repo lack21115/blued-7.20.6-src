@@ -10,78 +10,78 @@ public final class Target {
     public static final Target VIBRANT;
 
     /* renamed from: a  reason: collision with root package name */
-    final float[] f3195a;
+    final float[] f3147a;
     final float[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    final float[] f3196c;
+    final float[] f3148c;
     boolean d;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/palette/graphics/Target$Builder.class */
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Target f3197a;
+        private final Target f3149a;
 
         public Builder() {
-            this.f3197a = new Target();
+            this.f3149a = new Target();
         }
 
         public Builder(Target target) {
-            this.f3197a = new Target(target);
+            this.f3149a = new Target(target);
         }
 
         public Target build() {
-            return this.f3197a;
+            return this.f3149a;
         }
 
         public Builder setExclusive(boolean z) {
-            this.f3197a.d = z;
+            this.f3149a.d = z;
             return this;
         }
 
         public Builder setLightnessWeight(float f) {
-            this.f3197a.f3196c[1] = f;
+            this.f3149a.f3148c[1] = f;
             return this;
         }
 
         public Builder setMaximumLightness(float f) {
-            this.f3197a.b[2] = f;
+            this.f3149a.b[2] = f;
             return this;
         }
 
         public Builder setMaximumSaturation(float f) {
-            this.f3197a.f3195a[2] = f;
+            this.f3149a.f3147a[2] = f;
             return this;
         }
 
         public Builder setMinimumLightness(float f) {
-            this.f3197a.b[0] = f;
+            this.f3149a.b[0] = f;
             return this;
         }
 
         public Builder setMinimumSaturation(float f) {
-            this.f3197a.f3195a[0] = f;
+            this.f3149a.f3147a[0] = f;
             return this;
         }
 
         public Builder setPopulationWeight(float f) {
-            this.f3197a.f3196c[2] = f;
+            this.f3149a.f3148c[2] = f;
             return this;
         }
 
         public Builder setSaturationWeight(float f) {
-            this.f3197a.f3196c[0] = f;
+            this.f3149a.f3148c[0] = f;
             return this;
         }
 
         public Builder setTargetLightness(float f) {
-            this.f3197a.b[1] = f;
+            this.f3149a.b[1] = f;
             return this;
         }
 
         public Builder setTargetSaturation(float f) {
-            this.f3197a.f3195a[1] = f;
+            this.f3149a.f3147a[1] = f;
             return this;
         }
     }
@@ -115,9 +115,9 @@ public final class Target {
 
     Target() {
         float[] fArr = new float[3];
-        this.f3195a = fArr;
+        this.f3147a = fArr;
         this.b = new float[3];
-        this.f3196c = new float[3];
+        this.f3148c = new float[3];
         this.d = true;
         a(fArr);
         a(this.b);
@@ -126,17 +126,17 @@ public final class Target {
 
     Target(Target target) {
         float[] fArr = new float[3];
-        this.f3195a = fArr;
+        this.f3147a = fArr;
         this.b = new float[3];
-        this.f3196c = new float[3];
+        this.f3148c = new float[3];
         this.d = true;
-        System.arraycopy((Object) target.f3195a, 0, (Object) fArr, 0, fArr.length);
+        System.arraycopy(target.f3147a, 0, fArr, 0, fArr.length);
         float[] fArr2 = target.b;
         float[] fArr3 = this.b;
-        System.arraycopy((Object) fArr2, 0, (Object) fArr3, 0, fArr3.length);
-        float[] fArr4 = target.f3196c;
-        float[] fArr5 = this.f3196c;
-        System.arraycopy((Object) fArr4, 0, (Object) fArr5, 0, fArr5.length);
+        System.arraycopy(fArr2, 0, fArr3, 0, fArr3.length);
+        float[] fArr4 = target.f3148c;
+        float[] fArr5 = this.f3148c;
+        System.arraycopy(fArr4, 0, fArr5, 0, fArr5.length);
     }
 
     private static void a(Target target) {
@@ -152,7 +152,7 @@ public final class Target {
     }
 
     private void b() {
-        float[] fArr = this.f3196c;
+        float[] fArr = this.f3148c;
         fArr[0] = 0.24f;
         fArr[1] = 0.52f;
         fArr[2] = 0.24f;
@@ -172,13 +172,13 @@ public final class Target {
     }
 
     private static void d(Target target) {
-        float[] fArr = target.f3195a;
+        float[] fArr = target.f3147a;
         fArr[0] = 0.35f;
         fArr[1] = 1.0f;
     }
 
     private static void e(Target target) {
-        float[] fArr = target.f3195a;
+        float[] fArr = target.f3147a;
         fArr[1] = 0.3f;
         fArr[2] = 0.4f;
     }
@@ -186,7 +186,7 @@ public final class Target {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
         float f;
-        int length = this.f3196c.length;
+        int length = this.f3148c.length;
         int i = 0;
         float f2 = 0.0f;
         while (true) {
@@ -194,7 +194,7 @@ public final class Target {
             if (i >= length) {
                 break;
             }
-            float f3 = this.f3196c[i];
+            float f3 = this.f3148c[i];
             float f4 = f;
             if (f3 > 0.0f) {
                 f4 = f + f3;
@@ -205,14 +205,14 @@ public final class Target {
         if (f == 0.0f) {
             return;
         }
-        int length2 = this.f3196c.length;
+        int length2 = this.f3148c.length;
         int i2 = 0;
         while (true) {
             int i3 = i2;
             if (i3 >= length2) {
                 return;
             }
-            float[] fArr = this.f3196c;
+            float[] fArr = this.f3148c;
             if (fArr[i3] > 0.0f) {
                 fArr[i3] = fArr[i3] / f;
             }
@@ -221,7 +221,7 @@ public final class Target {
     }
 
     public float getLightnessWeight() {
-        return this.f3196c[1];
+        return this.f3148c[1];
     }
 
     public float getMaximumLightness() {
@@ -229,7 +229,7 @@ public final class Target {
     }
 
     public float getMaximumSaturation() {
-        return this.f3195a[2];
+        return this.f3147a[2];
     }
 
     public float getMinimumLightness() {
@@ -237,15 +237,15 @@ public final class Target {
     }
 
     public float getMinimumSaturation() {
-        return this.f3195a[0];
+        return this.f3147a[0];
     }
 
     public float getPopulationWeight() {
-        return this.f3196c[2];
+        return this.f3148c[2];
     }
 
     public float getSaturationWeight() {
-        return this.f3196c[0];
+        return this.f3148c[0];
     }
 
     public float getTargetLightness() {
@@ -253,7 +253,7 @@ public final class Target {
     }
 
     public float getTargetSaturation() {
-        return this.f3195a[1];
+        return this.f3147a[1];
     }
 
     public boolean isExclusive() {

@@ -14,6 +14,8 @@ import android.text.style.StrikethroughSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TextAppearanceSpan;
 import android.text.style.UnderlineSpan;
+import com.cdo.oaps.ad.OapsKey;
+import com.huawei.openalliance.ad.constant.t;
 import com.sobot.chat.utils.ScreenUtils;
 import com.sobot.chat.utils.StringUtils;
 import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
@@ -42,7 +44,7 @@ public class SobotCustomTagHandler implements Html.TagHandler {
     }
 
     private void analysisStyle(SobotHtmlLabelBean sobotHtmlLabelBean, String str) {
-        String[] split = str.split(";");
+        String[] split = str.split(t.aE);
         HashMap hashMap = new HashMap();
         if (split != null) {
             int length = split.length;
@@ -385,10 +387,10 @@ public class SobotCustomTagHandler implements Html.TagHandler {
         sobotHtmlLabelBean.tag = str;
         if (NEW_FONT.equals(str)) {
             this.attributes.get("color");
-            this.attributes.get("size");
+            this.attributes.get(OapsKey.KEY_SIZE);
         } else if (NEW_SPAN.equals(str)) {
             TextUtils.isEmpty(this.attributes.get("color"));
-            TextUtils.isEmpty(this.attributes.get("size"));
+            TextUtils.isEmpty(this.attributes.get(OapsKey.KEY_SIZE));
             String str2 = this.attributes.get("style");
             if (!TextUtils.isEmpty(str2)) {
                 analysisStyle(sobotHtmlLabelBean, str2);

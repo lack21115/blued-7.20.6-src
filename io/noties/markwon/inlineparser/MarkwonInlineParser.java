@@ -167,12 +167,12 @@ public class MarkwonInlineParser implements MarkwonInlineParserContext, InlinePa
         @Override // org.commonmark.parser.InlineParserFactory
         public InlineParser create(InlineParserContext inlineParserContext) {
             ArrayList arrayList;
-            List<DelimiterProcessor> a2 = inlineParserContext.a();
-            int size = a2 != null ? a2.size() : 0;
+            List<DelimiterProcessor> a = inlineParserContext.a();
+            int size = a != null ? a.size() : 0;
             if (size > 0) {
                 arrayList = new ArrayList(size + this.delimiterProcessors.size());
                 arrayList.addAll(this.delimiterProcessors);
-                arrayList.addAll(a2);
+                arrayList.addAll(a);
             } else {
                 arrayList = this.delimiterProcessors;
             }
@@ -188,11 +188,11 @@ public class MarkwonInlineParser implements MarkwonInlineParserContext, InlinePa
         this.specialCharacters = calculateSpecialCharacters(this.inlineProcessors.keySet(), this.delimiterProcessors.keySet());
     }
 
-    private static void addDelimiterProcessorForChar(char c2, DelimiterProcessor delimiterProcessor, Map<Character, DelimiterProcessor> map) {
-        if (map.put(Character.valueOf(c2), delimiterProcessor) == null) {
+    private static void addDelimiterProcessorForChar(char c, DelimiterProcessor delimiterProcessor, Map<Character, DelimiterProcessor> map) {
+        if (map.put(Character.valueOf(c), delimiterProcessor) == null) {
             return;
         }
-        throw new IllegalArgumentException("Delimiter processor conflict with delimiter char '" + c2 + "'");
+        throw new IllegalArgumentException("Delimiter processor conflict with delimiter char '" + c + "'");
     }
 
     private static void addDelimiterProcessors(Iterable<DelimiterProcessor> iterable, Map<Character, DelimiterProcessor> map) {
@@ -261,8 +261,8 @@ public class MarkwonInlineParser implements MarkwonInlineParserContext, InlinePa
         return new FactoryBuilderImpl();
     }
 
-    private Node parseDelimiters(DelimiterProcessor delimiterProcessor, char c2) {
-        DelimiterData scanDelimiters = scanDelimiters(delimiterProcessor, c2);
+    private Node parseDelimiters(DelimiterProcessor delimiterProcessor, char c) {
+        DelimiterData scanDelimiters = scanDelimiters(delimiterProcessor, c);
         if (scanDelimiters == null) {
             return null;
         }
@@ -271,7 +271,7 @@ public class MarkwonInlineParser implements MarkwonInlineParserContext, InlinePa
         int i3 = i2 + i;
         this.index = i3;
         Text text = text(this.input, i2, i3);
-        Delimiter delimiter = new Delimiter(text, c2, scanDelimiters.canOpen, scanDelimiters.canClose, this.lastDelimiter);
+        Delimiter delimiter = new Delimiter(text, c, scanDelimiters.canOpen, scanDelimiters.canClose, this.lastDelimiter);
         this.lastDelimiter = delimiter;
         delimiter.g = i;
         this.lastDelimiter.h = i;
@@ -341,7 +341,7 @@ public class MarkwonInlineParser implements MarkwonInlineParserContext, InlinePa
     }
 
     private void removeDelimiterAndNode(Delimiter delimiter) {
-        delimiter.f44009a.l();
+        delimiter.a.l();
         removeDelimiter(delimiter);
     }
 
@@ -472,23 +472,23 @@ public class MarkwonInlineParser implements MarkwonInlineParserContext, InlinePa
             return 0;
         }
         int i = this.index + 1;
-        int a2 = LinkScanner.a(this.input, i);
-        int i2 = a2 - i;
-        if (a2 == -1 || i2 > 999 || a2 >= this.input.length() || this.input.charAt(a2) != ']') {
+        int a = LinkScanner.a(this.input, i);
+        int i2 = a - i;
+        if (a == -1 || i2 > 999 || a >= this.input.length() || this.input.charAt(a) != ']') {
             return 0;
         }
-        this.index = a2 + 1;
+        this.index = a + 1;
         return i2 + 2;
     }
 
     @Override // io.noties.markwon.inlineparser.MarkwonInlineParserContext
     public String parseLinkTitle() {
-        int c2 = LinkScanner.c(this.input, this.index);
-        if (c2 == -1) {
+        int c = LinkScanner.c(this.input, this.index);
+        if (c == -1) {
             return null;
         }
-        String substring = this.input.substring(this.index + 1, c2 - 1);
-        this.index = c2;
+        String substring = this.input.substring(this.index + 1, c - 1);
+        this.index = c;
         return Escaping.b(substring);
     }
 
@@ -520,8 +520,8 @@ public class MarkwonInlineParser implements MarkwonInlineParserContext, InlinePa
             delimiter3 = delimiter4.e;
         }
         while (delimiter2 != null) {
-            char c2 = delimiter2.b;
-            DelimiterProcessor delimiterProcessor = this.delimiterProcessors.get(Character.valueOf(c2));
+            char c = delimiter2.b;
+            DelimiterProcessor delimiterProcessor = this.delimiterProcessors.get(Character.valueOf(c));
             if (!delimiter2.d || delimiterProcessor == null) {
                 delimiter2 = delimiter2.f;
             } else {
@@ -531,12 +531,12 @@ public class MarkwonInlineParser implements MarkwonInlineParserContext, InlinePa
                 boolean z3 = false;
                 while (true) {
                     z = z3;
-                    if (delimiter5 == null || delimiter5 == delimiter || delimiter5 == hashMap.get(Character.valueOf(c2))) {
+                    if (delimiter5 == null || delimiter5 == delimiter || delimiter5 == hashMap.get(Character.valueOf(c))) {
                         break;
                     }
                     int i2 = i;
                     boolean z4 = z;
-                    if (delimiter5.f44010c) {
+                    if (delimiter5.c) {
                         i2 = i;
                         z4 = z;
                         if (delimiter5.b == openingCharacter) {
@@ -558,8 +558,8 @@ public class MarkwonInlineParser implements MarkwonInlineParserContext, InlinePa
                 }
                 z2 = false;
                 if (z2) {
-                    Text text = delimiter5.f44009a;
-                    Text text2 = delimiter2.f44009a;
+                    Text text = delimiter5.a;
+                    Text text2 = delimiter2.a;
                     delimiter5.g -= i;
                     delimiter2.g -= i;
                     text.a(text.a().substring(0, text.a().length() - i));
@@ -577,8 +577,8 @@ public class MarkwonInlineParser implements MarkwonInlineParserContext, InlinePa
                     }
                 } else {
                     if (!z) {
-                        hashMap.put(Character.valueOf(c2), delimiter2.e);
-                        if (!delimiter2.f44010c) {
+                        hashMap.put(Character.valueOf(c), delimiter2.e);
+                        if (!delimiter2.c) {
                             removeDelimiterKeepNode(delimiter2);
                         }
                     }

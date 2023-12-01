@@ -39,13 +39,13 @@ public class HttpConfig implements PinProvider {
     private String z;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f36081c = false;
+    private volatile boolean f22390c = false;
     private volatile boolean d = false;
     private volatile PinCheckMode e = PinCheckMode.ENABLE;
     private PinManager g = new PinManager();
 
     /* renamed from: a  reason: collision with root package name */
-    Map<String, String> f36080a = new HashMap();
+    Map<String, String> f22389a = new HashMap();
     Map<String, String> b = new HashMap();
     private int j = 10000;
     private int k = 10000;
@@ -60,11 +60,11 @@ public class HttpConfig implements PinProvider {
         private static ConfigInheritSwitch s = new ConfigInheritSwitch();
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f36082a = true;
+        public boolean f22391a = true;
         public boolean b = true;
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f36083c = true;
+        public boolean f22392c = true;
         public boolean d = true;
         public boolean e = true;
         public boolean f = true;
@@ -86,11 +86,11 @@ public class HttpConfig implements PinProvider {
     public static class LogConfig {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f36084a = false;
+        private boolean f22393a = false;
         private boolean b = false;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f36085c = false;
+        private boolean f22394c = false;
         private int d = 3072;
         private WeLog.Level e = WeLog.Level.NONE;
 
@@ -103,7 +103,7 @@ public class HttpConfig implements PinProvider {
         }
 
         public boolean isCutLongStr() {
-            return this.f36085c;
+            return this.f22394c;
         }
 
         public boolean isLogWithTag() {
@@ -111,7 +111,7 @@ public class HttpConfig implements PinProvider {
         }
 
         public boolean isPrettyLog() {
-            return this.f36084a;
+            return this.f22393a;
         }
     }
 
@@ -131,15 +131,15 @@ public class HttpConfig implements PinProvider {
     public static class Proxy {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f36088a;
+        private String f22397a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f36089c;
+        private String f22398c;
         private String d;
 
         public Proxy setIp(String str) {
-            this.f36088a = str;
+            this.f22397a = str;
             return this;
         }
 
@@ -154,20 +154,20 @@ public class HttpConfig implements PinProvider {
         }
 
         public Proxy setUserName(String str) {
-            this.f36089c = str;
+            this.f22398c = str;
             return this;
         }
     }
 
     private HttpConfig a(Map<String, ?> map, boolean z) {
         if (z) {
-            this.f36080a.clear();
+            this.f22389a.clear();
         }
         for (Map.Entry<String, ?> entry : map.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
             if (key != null && value != null) {
-                this.f36080a.put(key, value.toString());
+                this.f22389a.put(key, value.toString());
             }
         }
         return this;
@@ -206,17 +206,17 @@ public class HttpConfig implements PinProvider {
         if (configInheritSwitch == null) {
             configInheritSwitch2 = ConfigInheritSwitch.s;
         }
-        if (configInheritSwitch2.f36083c && (map = this.b) != null) {
+        if (configInheritSwitch2.f22392c && (map = this.b) != null) {
             weConfig.params(map);
         }
         if (configInheritSwitch2.b) {
-            weConfig.header(this.f36080a);
+            weConfig.header(this.f22389a);
         }
         if (configInheritSwitch2.e && (str3 = this.i) != null) {
             weConfig.baseUrl(str3);
         }
         if (configInheritSwitch2.d) {
-            weConfig.setCertVerify(this.f36081c);
+            weConfig.setCertVerify(this.f22390c);
             if (this.d) {
                 weConfig.pinProvider(this);
             } else if (str == null) {
@@ -237,11 +237,11 @@ public class HttpConfig implements PinProvider {
         if (configInheritSwitch2.j && (weCookie = this.q) != null) {
             weConfig.cookie(weCookie);
         }
-        if (configInheritSwitch2.f36082a && (typeAdapter = this.r) != null) {
+        if (configInheritSwitch2.f22391a && (typeAdapter = this.r) != null) {
             weConfig.adapter(typeAdapter);
         }
         if (configInheritSwitch2.k && (proxy = this.s) != null) {
-            weConfig.proxy(proxy.f36088a, this.s.b, this.s.f36089c, this.s.d);
+            weConfig.proxy(proxy.f22397a, this.s.b, this.s.f22398c, this.s.d);
         }
         if (configInheritSwitch2.p && (context = this.x) != null && (str2 = this.y) != null) {
             weConfig.clientCertPath(context, str2, this.z, this.A);
@@ -410,7 +410,7 @@ public class HttpConfig implements PinProvider {
     }
 
     public Map<String, String> getCommonHeaders() {
-        return Collections.unmodifiableMap(this.f36080a);
+        return Collections.unmodifiableMap(this.f22389a);
     }
 
     public Map<String, String> getCommonParams() {
@@ -452,9 +452,9 @@ public class HttpConfig implements PinProvider {
             return logConfig;
         }
         logConfig.e = builder.e;
-        logConfig.f36085c = this.p.f36134c;
+        logConfig.f22394c = this.p.f22443c;
         logConfig.b = this.p.b;
-        logConfig.f36084a = this.p.f36133a;
+        logConfig.f22393a = this.p.f22442a;
         logConfig.d = this.p.d;
         return logConfig;
     }
@@ -522,7 +522,7 @@ public class HttpConfig implements PinProvider {
     }
 
     public boolean isCertVerify() {
-        return this.f36081c;
+        return this.f22390c;
     }
 
     public boolean isUsePinProvider() {
@@ -556,7 +556,7 @@ public class HttpConfig implements PinProvider {
     }
 
     public HttpConfig setCertVerify(boolean z) {
-        this.f36081c = z;
+        this.f22390c = z;
         return this;
     }
 

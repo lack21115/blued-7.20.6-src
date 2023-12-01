@@ -1,6 +1,7 @@
 package com.huawei.hms.hatool;
 
 import android.util.Pair;
+import com.xiaomi.mipush.sdk.Constants;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashSet;
@@ -25,7 +26,7 @@ public abstract class v0 {
         if ("_default_config_tag".equals(str)) {
             return new Pair<>(str, "");
         }
-        String[] split = str.split("-");
+        String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         if (split.length > 2) {
             String str4 = split[split.length - 1];
             String substring = str.substring(0, (str.length() - str4.length()) - 1);
@@ -46,14 +47,14 @@ public abstract class v0 {
         if ("_default_config_tag".equals(str)) {
             return str;
         }
-        return str + "-" + str2;
+        return str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str2;
     }
 
     public static String a(String str, String str2, String str3) {
         if ("_default_config_tag".equals(str)) {
             return "_default_config_tag#" + str3;
         }
-        return str + "-" + str2 + "#" + str3;
+        return str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str2 + "#" + str3;
     }
 
     public static Set<String> a(Set<String> set) {
@@ -65,11 +66,11 @@ public abstract class v0 {
             if ("_default_config_tag".equals(str)) {
                 hashSet.add("_default_config_tag");
             } else {
-                String str2 = str + "-oper";
-                String str3 = str + "-maint";
+                String str2 = str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + "oper";
+                String str3 = str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + "maint";
                 hashSet.add(str2);
                 hashSet.add(str3);
-                hashSet.add(str + "-diffprivacy");
+                hashSet.add(str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + "diffprivacy");
             }
         }
         return hashSet;

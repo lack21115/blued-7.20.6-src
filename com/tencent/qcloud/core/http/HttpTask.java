@@ -12,11 +12,11 @@ import com.tencent.qcloud.core.common.QCloudProgressListener;
 import com.tencent.qcloud.core.common.QCloudServiceException;
 import com.tencent.qcloud.core.task.QCloudTask;
 import com.tencent.qcloud.core.task.TaskExecutors;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 import okio.Buffer;
 
@@ -32,7 +32,7 @@ public final class HttpTask<T> extends QCloudTask<HttpResult<T>> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public HttpTask(HttpRequest<T> httpRequest, QCloudCredentialProvider qCloudCredentialProvider, NetworkClient networkClient) {
-        super("HttpTask-" + httpRequest.tag() + "-" + increments.getAndIncrement(), httpRequest.tag());
+        super("HttpTask-" + httpRequest.tag() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + increments.getAndIncrement(), httpRequest.tag());
         this.mProgressListener = new QCloudProgressListener() { // from class: com.tencent.qcloud.core.http.HttpTask.1
             @Override // com.tencent.qcloud.core.common.QCloudProgressListener
             public void onProgress(long j, long j2) {
@@ -48,7 +48,7 @@ public final class HttpTask<T> extends QCloudTask<HttpResult<T>> {
     }
 
     private void calculateContentMD5() throws QCloudClientException {
-        RequestBody requestBody = this.httpRequest.getRequestBody();
+        QCloudDigistListener requestBody = this.httpRequest.getRequestBody();
         if (requestBody == null) {
             throw new QCloudClientException(new IllegalArgumentException("get md5 canceled, request body is null."));
         }
@@ -58,7 +58,7 @@ public final class HttpTask<T> extends QCloudTask<HttpResult<T>> {
                     ((MultipartStreamRequestBody) this.httpRequest.getRequestBody()).addMd5();
                     return;
                 } else {
-                    this.httpRequest.addHeader("Content-MD5", ((QCloudDigistListener) requestBody).onGetMd5());
+                    this.httpRequest.addHeader("Content-MD5", requestBody.onGetMd5());
                     return;
                 }
             } catch (IOException e) {
@@ -124,7 +124,7 @@ public final class HttpTask<T> extends QCloudTask<HttpResult<T>> {
         }
         if (this.httpRequest.getRequestBody() instanceof ReactiveBody) {
             try {
-                ((ReactiveBody) this.httpRequest.getRequestBody()).prepare();
+                this.httpRequest.getRequestBody().prepare();
             } catch (IOException e) {
                 throw new QCloudClientException(e);
             }
@@ -142,7 +142,7 @@ public final class HttpTask<T> extends QCloudTask<HttpResult<T>> {
             this.metrics.onSignRequestEnd();
         }
         if (this.httpRequest.getRequestBody() instanceof ProgressBody) {
-            ((ProgressBody) this.httpRequest.getRequestBody()).setProgressListener(this.mProgressListener);
+            this.httpRequest.getRequestBody().setProgressListener(this.mProgressListener);
         }
         try {
             try {
@@ -152,7 +152,7 @@ public final class HttpTask<T> extends QCloudTask<HttpResult<T>> {
                 httpResult2 = this.httpResult;
                 if (this.httpRequest.getRequestBody() instanceof ReactiveBody) {
                     try {
-                        ((ReactiveBody) this.httpRequest.getRequestBody()).end(this.httpResult);
+                        this.httpRequest.getRequestBody().end(this.httpResult);
                     } catch (IOException e2) {
                         e2.printStackTrace();
                     }
@@ -173,7 +173,7 @@ public final class HttpTask<T> extends QCloudTask<HttpResult<T>> {
                 HttpResult<T> httpResult3 = this.httpResult;
                 if (this.httpRequest.getRequestBody() instanceof ReactiveBody) {
                     try {
-                        ((ReactiveBody) this.httpRequest.getRequestBody()).end(this.httpResult);
+                        this.httpRequest.getRequestBody().end(this.httpResult);
                     } catch (IOException e4) {
                         e4.printStackTrace();
                     }
@@ -192,7 +192,7 @@ public final class HttpTask<T> extends QCloudTask<HttpResult<T>> {
         } catch (Throwable th) {
             if (this.httpRequest.getRequestBody() instanceof ReactiveBody) {
                 try {
-                    ((ReactiveBody) this.httpRequest.getRequestBody()).end(this.httpResult);
+                    this.httpRequest.getRequestBody().end(this.httpResult);
                 } catch (IOException e5) {
                     e5.printStackTrace();
                 }

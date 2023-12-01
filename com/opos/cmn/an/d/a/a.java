@@ -13,13 +13,13 @@ import com.igexin.push.core.b;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static AssetManager f24490a;
+    private static AssetManager f10803a;
 
     public static AssetManager a(Context context) {
-        if (f24490a == null && context != null) {
-            f24490a = context.getApplicationContext().getAssets();
+        if (f10803a == null && context != null) {
+            f10803a = context.getApplicationContext().getAssets();
         }
-        return f24490a;
+        return f10803a;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x0044  */

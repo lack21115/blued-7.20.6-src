@@ -11,11 +11,11 @@ import org.json.JSONObject;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f38825a;
+    private String f25134a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Integer f38826c;
+    private Integer f25135c;
     private String d;
     private String e;
     private Integer f;
@@ -26,14 +26,14 @@ public class c {
         JSONObject jSONObject = new JSONObject();
         JSONObject jSONObject2 = new JSONObject();
         try {
-            if (!TextUtils.isEmpty(this.f38825a)) {
-                jSONObject2.put("PP", this.f38825a);
+            if (!TextUtils.isEmpty(this.f25134a)) {
+                jSONObject2.put("PP", this.f25134a);
             }
             if (!TextUtils.isEmpty(this.b)) {
                 jSONObject2.put("PPVN", this.b);
             }
-            if (this.f38826c != null) {
-                jSONObject2.put("ADRV", this.f38826c);
+            if (this.f25135c != null) {
+                jSONObject2.put("ADRV", this.f25135c);
             }
             if (!TextUtils.isEmpty(this.d)) {
                 jSONObject2.put("MODEL", this.d);
@@ -68,11 +68,11 @@ public class c {
     }
 
     public void a(Integer num) {
-        this.f38826c = num;
+        this.f25135c = num;
     }
 
     public void a(String str) {
-        this.f38825a = str;
+        this.f25134a = str;
     }
 
     public void a(List<Integer> list) {

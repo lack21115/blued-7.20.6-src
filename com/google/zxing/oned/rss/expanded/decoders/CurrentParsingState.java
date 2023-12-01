@@ -1,14 +1,12 @@
 package com.google.zxing.oned.rss.expanded.decoders;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/google/zxing/oned/rss/expanded/decoders/CurrentParsingState.class */
-public final class CurrentParsingState {
+final class CurrentParsingState {
     private int position = 0;
     private State encoding = State.NUMERIC;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/google/zxing/oned/rss/expanded/decoders/CurrentParsingState$State.class */
-    public enum State {
+    enum State {
         NUMERIC,
         ALPHA,
         ISO_IEC_646

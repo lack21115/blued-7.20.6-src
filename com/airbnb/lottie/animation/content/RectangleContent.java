@@ -17,23 +17,19 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/content/RectangleContent.class */
 public class RectangleContent implements KeyPathElementContent, PathContent, BaseKeyframeAnimation.AnimationListener {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f4288c;
+    private final String c;
     private final boolean d;
     private final LottieDrawable e;
     private final BaseKeyframeAnimation<?, PointF> f;
     private final BaseKeyframeAnimation<?, PointF> g;
     private final BaseKeyframeAnimation<?, Float> h;
     private boolean j;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Path f4287a = new Path();
+    private final Path a = new Path();
     private final RectF b = new RectF();
     private CompoundTrimPathContent i = new CompoundTrimPathContent();
 
     public RectangleContent(LottieDrawable lottieDrawable, BaseLayer baseLayer, RectangleShape rectangleShape) {
-        this.f4288c = rectangleShape.a();
+        this.c = rectangleShape.a();
         this.d = rectangleShape.e();
         this.e = lottieDrawable;
         this.f = rectangleShape.d().a();
@@ -95,18 +91,18 @@ public class RectangleContent implements KeyPathElementContent, PathContent, Bas
 
     @Override // com.airbnb.lottie.animation.content.Content
     public String b() {
-        return this.f4288c;
+        return this.c;
     }
 
     @Override // com.airbnb.lottie.animation.content.PathContent
     public Path e() {
         if (this.j) {
-            return this.f4287a;
+            return this.a;
         }
-        this.f4287a.reset();
+        this.a.reset();
         if (this.d) {
             this.j = true;
-            return this.f4287a;
+            return this.a;
         }
         PointF g = this.g.g();
         float f = g.x / 2.0f;
@@ -119,26 +115,26 @@ public class RectangleContent implements KeyPathElementContent, PathContent, Bas
             f3 = min;
         }
         PointF g2 = this.f.g();
-        this.f4287a.moveTo(g2.x + f, (g2.y - f2) + f3);
-        this.f4287a.lineTo(g2.x + f, (g2.y + f2) - f3);
+        this.a.moveTo(g2.x + f, (g2.y - f2) + f3);
+        this.a.lineTo(g2.x + f, (g2.y + f2) - f3);
         int i2 = (f3 > 0.0f ? 1 : (f3 == 0.0f ? 0 : -1));
         if (i2 > 0) {
             RectF rectF = this.b;
             float f4 = g2.x;
             float f5 = f3 * 2.0f;
             rectF.set((f4 + f) - f5, (g2.y + f2) - f5, g2.x + f, g2.y + f2);
-            this.f4287a.arcTo(this.b, 0.0f, 90.0f, false);
+            this.a.arcTo(this.b, 0.0f, 90.0f, false);
         }
-        this.f4287a.lineTo((g2.x - f) + f3, g2.y + f2);
+        this.a.lineTo((g2.x - f) + f3, g2.y + f2);
         if (i2 > 0) {
             RectF rectF2 = this.b;
             float f6 = g2.x;
             float f7 = g2.y;
             float f8 = f3 * 2.0f;
             rectF2.set(f6 - f, (f7 + f2) - f8, (g2.x - f) + f8, g2.y + f2);
-            this.f4287a.arcTo(this.b, 90.0f, 90.0f, false);
+            this.a.arcTo(this.b, 90.0f, 90.0f, false);
         }
-        this.f4287a.lineTo(g2.x - f, (g2.y - f2) + f3);
+        this.a.lineTo(g2.x - f, (g2.y - f2) + f3);
         if (i2 > 0) {
             RectF rectF3 = this.b;
             float f9 = g2.x;
@@ -146,19 +142,19 @@ public class RectangleContent implements KeyPathElementContent, PathContent, Bas
             float f11 = g2.x;
             float f12 = f3 * 2.0f;
             rectF3.set(f9 - f, f10 - f2, (f11 - f) + f12, (g2.y - f2) + f12);
-            this.f4287a.arcTo(this.b, 180.0f, 90.0f, false);
+            this.a.arcTo(this.b, 180.0f, 90.0f, false);
         }
-        this.f4287a.lineTo((g2.x + f) - f3, g2.y - f2);
+        this.a.lineTo((g2.x + f) - f3, g2.y - f2);
         if (i2 > 0) {
             RectF rectF4 = this.b;
             float f13 = g2.x;
             float f14 = f3 * 2.0f;
             rectF4.set((f13 + f) - f14, g2.y - f2, g2.x + f, (g2.y - f2) + f14);
-            this.f4287a.arcTo(this.b, 270.0f, 90.0f, false);
+            this.a.arcTo(this.b, 270.0f, 90.0f, false);
         }
-        this.f4287a.close();
-        this.i.a(this.f4287a);
+        this.a.close();
+        this.i.a(this.a);
         this.j = true;
-        return this.f4287a;
+        return this.a;
     }
 }

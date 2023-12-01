@@ -1,5 +1,6 @@
 package com.opos.exoplayer.core.a;
 
+import android.bluetooth.BluetoothClass;
 import com.blued.das.live.LiveProtos;
 import com.opos.exoplayer.core.Format;
 import com.opos.exoplayer.core.drm.DrmInitData;
@@ -9,41 +10,41 @@ import java.nio.ByteBuffer;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f25004a = {1, 2, 3, 6};
+    private static final int[] f11316a = {1, 2, 3, 6};
     private static final int[] b = {48000, 44100, 32000};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int[] f25005c = {24000, 22050, 16000};
+    private static final int[] f11317c = {24000, 22050, 16000};
     private static final int[] d = {2, 1, 2, 3, 3, 4, 4, 5};
     private static final int[] e = {32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320, 384, 448, 512, 576, 640};
     private static final int[] f = {69, 87, 104, 121, 139, 174, 208, 243, 278, 348, 417, LiveProtos.Event.LIVE_GIFT_WALL_PAGE_HISTORY_ONE_CLICK_VALUE, LiveProtos.Event.LIVE_KEYBOARD_BARRAGE_CLICK_VALUE, LiveProtos.Event.LIVE_BLIND_BOX_TAB_SEND_CLICK_VALUE, 835, 975, 1114, 1253, 1393};
 
     /* renamed from: com.opos.exoplayer.core.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/a/a$a.class */
-    public static final class C0648a {
+    public static final class C0478a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f25006a;
+        public final String f11318a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f25007c;
+        public final int f11319c;
         public final int d;
         public final int e;
         public final int f;
 
-        private C0648a(String str, int i, int i2, int i3, int i4, int i5) {
-            this.f25006a = str;
+        private C0478a(String str, int i, int i2, int i3, int i4, int i5) {
+            this.f11318a = str;
             this.b = i;
             this.d = i2;
-            this.f25007c = i3;
+            this.f11319c = i3;
             this.e = i4;
             this.f = i5;
         }
     }
 
     public static int a() {
-        return 1536;
+        return BluetoothClass.Device.Major.IMAGING;
     }
 
     private static int a(int i, int i2) {
@@ -70,7 +71,7 @@ public final class a {
     public static int a(ByteBuffer byteBuffer) {
         int i = 6;
         if (((byteBuffer.get(byteBuffer.position() + 4) & 192) >> 6) != 3) {
-            i = f25004a[(byteBuffer.get(byteBuffer.position() + 4) & 48) >> 4];
+            i = f11316a[(byteBuffer.get(byteBuffer.position() + 4) & 48) >> 4];
         }
         return i * 256;
     }
@@ -94,7 +95,7 @@ public final class a {
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
-    public static C0648a a(com.opos.exoplayer.core.i.l lVar) {
+    public static C0478a a(com.opos.exoplayer.core.i.l lVar) {
         throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge I and Z\r\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.copyTypes(TypeTransformer.java:311)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.fixTypes(TypeTransformer.java:226)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:207)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\r\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\r\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\r\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\r\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\r\n");
     }
 

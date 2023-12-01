@@ -7,12 +7,10 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.services.district.DistrictSearchQuery;
+import com.anythink.core.common.c.g;
 import com.anythink.core.common.g.c;
 import com.autonavi.aps.amapapi.utils.b;
 import com.autonavi.aps.amapapi.utils.i;
-import com.baidu.mobads.sdk.internal.bw;
-import com.sina.weibo.sdk.constant.WBPageConstants;
-import com.umeng.analytics.pro.d;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/location/AMapLocation.class */
@@ -21,11 +19,11 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
     public static final String COORD_TYPE_WGS84 = "WGS84";
     public static final Parcelable.Creator<AMapLocation> CREATOR = new Parcelable.Creator<AMapLocation>() { // from class: com.amap.api.location.AMapLocation.1
         private static AMapLocation a(Parcel parcel) {
-            AMapLocation aMapLocation = new AMapLocation(Location.CREATOR.createFromParcel(parcel));
+            AMapLocation aMapLocation = new AMapLocation((Location) Location.CREATOR.createFromParcel(parcel));
             aMapLocation.h = parcel.readString();
             aMapLocation.i = parcel.readString();
             aMapLocation.B = parcel.readString();
-            aMapLocation.f5471a = parcel.readString();
+            aMapLocation.a = parcel.readString();
             aMapLocation.e = parcel.readString();
             aMapLocation.g = parcel.readString();
             aMapLocation.k = parcel.readString();
@@ -115,13 +113,9 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
     private String G;
     private int H;
     private int I;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected String f5471a;
+    protected String a;
     protected String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    AMapLocationQualityReport f5472c;
+    AMapLocationQualityReport c;
     private String d;
     private String e;
     private String f;
@@ -161,7 +155,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
         this.n = "";
         this.o = true;
         this.p = 0;
-        this.q = bw.o;
+        this.q = "success";
         this.r = "";
         this.s = 0;
         this.t = 0.0d;
@@ -176,9 +170,9 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
         this.D = false;
         this.E = "";
         this.F = false;
-        this.f5471a = "";
+        this.a = "";
         this.b = "";
-        this.f5472c = new AMapLocationQualityReport();
+        this.c = new AMapLocationQualityReport();
         this.G = COORD_TYPE_GCJ02;
         this.H = 1;
         this.t = location.getLatitude();
@@ -205,7 +199,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
         this.n = "";
         this.o = true;
         this.p = 0;
-        this.q = bw.o;
+        this.q = "success";
         this.r = "";
         this.s = 0;
         this.t = 0.0d;
@@ -220,9 +214,9 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
         this.D = false;
         this.E = "";
         this.F = false;
-        this.f5471a = "";
+        this.a = "";
         this.b = "";
-        this.f5472c = new AMapLocationQualityReport();
+        this.c = new AMapLocationQualityReport();
         this.G = COORD_TYPE_GCJ02;
         this.H = 1;
         this.z = str;
@@ -230,7 +224,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:14:0x011f -> B:3:0x0005). Please submit an issue!!! */
     /* renamed from: clone */
-    public AMapLocation m2371clone() {
+    public AMapLocation m8814clone() {
         try {
             super.clone();
         } catch (Throwable th) {
@@ -242,7 +236,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
             aMapLocation.setAdCode(this.h);
             aMapLocation.setAddress(this.i);
             aMapLocation.setAoiName(this.B);
-            aMapLocation.setBuildingId(this.f5471a);
+            aMapLocation.setBuildingId(this.a);
             aMapLocation.setCity(this.e);
             aMapLocation.setCityCode(this.g);
             aMapLocation.setCountry(this.k);
@@ -264,8 +258,8 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
             aMapLocation.setStreet(this.m);
             aMapLocation.setDescription(this.E);
             aMapLocation.setExtras(getExtras());
-            if (this.f5472c != null) {
-                aMapLocation.setLocationQualityReport(this.f5472c.m2379clone());
+            if (this.c != null) {
+                aMapLocation.setLocationQualityReport(this.c.m8822clone());
             }
             aMapLocation.setCoordType(this.G);
             aMapLocation.setTrustedLevel(this.H);
@@ -310,7 +304,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
     }
 
     public String getBuildingId() {
-        return this.f5471a;
+        return this.a;
     }
 
     public String getCity() {
@@ -378,7 +372,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
     }
 
     public AMapLocationQualityReport getLocationQualityReport() {
-        return this.f5472c;
+        return this.c;
     }
 
     public int getLocationType() {
@@ -432,6 +426,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
         return this.F;
     }
 
+    @Override // android.location.Location
     public boolean isMock() {
         return this.D;
     }
@@ -476,7 +471,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
     }
 
     public void setBuildingId(String str) {
-        this.f5471a = str;
+        this.a = str;
     }
 
     public void setCity(String str) {
@@ -560,7 +555,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
         if (aMapLocationQualityReport == null) {
             return;
         }
-        this.f5472c = aMapLocationQualityReport;
+        this.c = aMapLocationQualityReport;
     }
 
     public void setLocationType(int i) {
@@ -572,6 +567,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
         this.u = d;
     }
 
+    @Override // android.location.Location
     public void setMock(boolean z) {
         this.D = z;
     }
@@ -632,40 +628,40 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
                 }
                 jSONObject.put("citycode", this.g);
                 jSONObject.put("adcode", this.h);
-                jSONObject.put("country", this.k);
+                jSONObject.put(DistrictSearchQuery.KEYWORDS_COUNTRY, this.k);
                 jSONObject.put(DistrictSearchQuery.KEYWORDS_PROVINCE, this.d);
                 jSONObject.put(DistrictSearchQuery.KEYWORDS_CITY, this.e);
                 jSONObject.put(DistrictSearchQuery.KEYWORDS_DISTRICT, this.f);
                 jSONObject.put("road", this.l);
                 jSONObject.put("street", this.m);
                 jSONObject.put("number", this.n);
-                jSONObject.put(WBPageConstants.ParamKey.POINAME, this.j);
-                jSONObject.put("errorCode", this.p);
+                jSONObject.put("poiname", this.j);
+                jSONObject.put(MyLocationStyle.ERROR_CODE, this.p);
                 jSONObject.put(MyLocationStyle.ERROR_INFO, this.q);
                 jSONObject.put(MyLocationStyle.LOCATION_TYPE, this.s);
                 jSONObject.put("locationDetail", this.r);
                 jSONObject.put("aoiname", this.B);
                 jSONObject.put("address", this.i);
-                jSONObject.put(WBPageConstants.ParamKey.POIID, this.f5471a);
+                jSONObject.put("poiid", this.a);
                 jSONObject.put("floor", this.b);
                 jSONObject.put("description", this.E);
             } else if (i != 2) {
                 if (i != 3) {
                     return jSONObject;
                 }
-                jSONObject.put(d.M, getProvider());
+                jSONObject.put("provider", getProvider());
                 jSONObject.put(c.C, getLongitude());
-                jSONObject.put("lat", getLatitude());
+                jSONObject.put(c.B, getLatitude());
                 jSONObject.put("accuracy", getAccuracy());
                 jSONObject.put("isOffset", this.o);
                 jSONObject.put("isFixLastLocation", this.F);
                 jSONObject.put("coordType", this.G);
                 return jSONObject;
             }
-            jSONObject.put("time", getTime());
-            jSONObject.put(d.M, getProvider());
+            jSONObject.put(g.a.g, getTime());
+            jSONObject.put("provider", getProvider());
             jSONObject.put(c.C, getLongitude());
-            jSONObject.put("lat", getLatitude());
+            jSONObject.put(c.B, getLatitude());
             jSONObject.put("accuracy", getAccuracy());
             jSONObject.put("isOffset", this.o);
             jSONObject.put("isFixLastLocation", this.F);
@@ -714,7 +710,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
             stringBuffer.append("street=" + this.m + "#");
             stringBuffer.append("streetNum=" + this.n + "#");
             stringBuffer.append("aoiName=" + this.B + "#");
-            stringBuffer.append("poiid=" + this.f5471a + "#");
+            stringBuffer.append("poiid=" + this.a + "#");
             stringBuffer.append("floor=" + this.b + "#");
             stringBuffer.append("errorCode=" + this.p + "#");
             stringBuffer.append("errorInfo=" + this.q + "#");
@@ -736,7 +732,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
             parcel.writeString(this.h);
             parcel.writeString(this.i);
             parcel.writeString(this.B);
-            parcel.writeString(this.f5471a);
+            parcel.writeString(this.a);
             parcel.writeString(this.e);
             parcel.writeString(this.g);
             parcel.writeString(this.k);

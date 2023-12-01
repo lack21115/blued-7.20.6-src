@@ -277,7 +277,7 @@ public class MediaFocusControl implements PendingIntent.OnFinished {
         this.mContentResolver = this.mContext.getContentResolver();
         this.mVolumeController = volumeController;
         this.mAudioService = audioService;
-        this.mMediaEventWakeLock = ((PowerManager) this.mContext.getSystemService("power")).newWakeLock(1, "handleMediaEvent");
+        this.mMediaEventWakeLock = ((PowerManager) this.mContext.getSystemService(Context.POWER_SERVICE)).newWakeLock(1, "handleMediaEvent");
         ((TelephonyManager) this.mContext.getSystemService("phone")).listen(this.mPhoneStateListener, 32);
         this.mAppOps = (AppOpsManager) this.mContext.getSystemService(Context.APP_OPS_SERVICE);
         this.mKeyguardManager = (KeyguardManager) this.mContext.getSystemService(Context.KEYGUARD_SERVICE);
@@ -1123,7 +1123,7 @@ public class MediaFocusControl implements PendingIntent.OnFinished {
     private void startVoiceBasedInteractions(boolean z) {
         Intent intent;
         boolean z2 = true;
-        PowerManager powerManager = (PowerManager) this.mContext.getSystemService("power");
+        PowerManager powerManager = (PowerManager) this.mContext.getSystemService(Context.POWER_SERVICE);
         boolean z3 = this.mKeyguardManager != null && this.mKeyguardManager.isKeyguardLocked();
         if (z3 || !powerManager.isScreenOn()) {
             intent = new Intent(RecognizerIntent.ACTION_VOICE_SEARCH_HANDS_FREE);

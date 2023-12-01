@@ -13,39 +13,34 @@ import com.blued.android.module.player.media.model.VideoPlayConfig;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/adapter/AlbumPreviewBaseAdapter.class */
 public class AlbumPreviewBaseAdapter extends FragmentStatePagerAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IAlbumPreviewBaseCallback f15535a;
+    private IAlbumPreviewBaseCallback a;
 
     public AlbumPreviewBaseAdapter(FragmentManager fragmentManager, IAlbumPreviewBaseCallback iAlbumPreviewBaseCallback) {
         super(fragmentManager);
-        this.f15535a = iAlbumPreviewBaseCallback;
+        this.a = iAlbumPreviewBaseCallback;
     }
 
-    @Override // androidx.fragment.app.FragmentStatePagerAdapter, androidx.viewpager.widget.PagerAdapter
     public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
         super.destroyItem(viewGroup, i, obj);
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public int getCount() {
-        return this.f15535a.a();
+        return this.a.a();
     }
 
-    @Override // androidx.fragment.app.FragmentStatePagerAdapter
     public Fragment getItem(int i) {
-        MediaInfo a2 = this.f15535a.a(i);
-        if (a2 != null) {
-            String str = !TextUtils.isEmpty(a2.imgUri) ? a2.imgUri : a2.imagePath;
+        MediaInfo a = this.a.a(i);
+        if (a != null) {
+            String str = !TextUtils.isEmpty(a.imgUri) ? a.imgUri : a.imagePath;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = a2.path;
+                str2 = a.path;
             }
-            if (a2.media_type == AlbumPreviewBasePresenter.g()) {
+            if (a.media_type == AlbumPreviewBasePresenter.g()) {
                 VideoPlayConfig videoPlayConfig = new VideoPlayConfig();
-                videoPlayConfig.f15652a = str2;
-                videoPlayConfig.b = a2.path;
-                videoPlayConfig.y = a2;
+                videoPlayConfig.a = str2;
+                videoPlayConfig.b = a.path;
+                videoPlayConfig.y = a;
                 videoPlayConfig.o = false;
                 videoPlayConfig.p = false;
                 videoPlayConfig.q = true;
@@ -53,7 +48,7 @@ public class AlbumPreviewBaseAdapter extends FragmentStatePagerAdapter {
                 videoPlayConfig.m = true;
                 videoPlayConfig.j = true;
                 videoPlayConfig.v = true;
-                return this.f15535a.a(videoPlayConfig);
+                return this.a.a(videoPlayConfig);
             }
             return PhotoDetailFragment.a(str2, null, false);
         }

@@ -28,13 +28,13 @@ public class AudioRouteManager extends n.a {
     private m.a mSwitcher = null;
     private String mCurrentRouteConfig = "";
     private final Runnable mForceUpdateRouteRunnable = c.a(this);
-    private m.a.InterfaceC0924a mSwitcherListener = new m.a.InterfaceC0924a() { // from class: com.tencent.liteav.audio.route.AudioRouteManager.1
-        @Override // com.tencent.liteav.audio.route.m.a.InterfaceC0924a
+    private m.a.InterfaceC0754a mSwitcherListener = new m.a.InterfaceC0754a() { // from class: com.tencent.liteav.audio.route.AudioRouteManager.1
+        @Override // com.tencent.liteav.audio.route.m.a.InterfaceC0754a
         public final void a(b.a aVar) {
             AudioRouteManager.nativeNotifyAudioRouteChangedFromJava(AudioRouteManager.this.mNativeAudioRouteManager, aVar.ordinal());
         }
 
-        @Override // com.tencent.liteav.audio.route.m.a.InterfaceC0924a
+        @Override // com.tencent.liteav.audio.route.m.a.InterfaceC0754a
         public final void b(b.a aVar) {
             if (aVar != b.a.BLUETOOTH_HEADSET) {
                 Log.w(AudioRouteManager.TAG, "switch to %s failed, do nothing", aVar);
@@ -199,7 +199,7 @@ public class AudioRouteManager extends n.a {
             com.tencent.liteav.audio.route.l r0 = r0.mAudioRouteSupervisor
             r10 = r0
             r0 = r10
-            boolean r0 = r0.f36265c
+            boolean r0 = r0.f22574c
             if (r0 != 0) goto L33
             java.lang.String r0 = "AudioRouteSupervisor"
             java.lang.String r1 = "error in setHandFreeModeEnabled(), it's not been initialized yet"
@@ -230,15 +230,15 @@ public class AudioRouteManager extends n.a {
             goto La4
         L60:
             r0 = r9
-            int r0 = r0.f36252c
+            int r0 = r0.f22561c
             r1 = r10
-            int r1 = r1.f36252c
+            int r1 = r1.f22561c
             int r0 = java.lang.Math.min(r0, r1)
             r6 = r0
             r0 = r9
-            int r0 = r0.f36252c
+            int r0 = r0.f22561c
             r1 = r10
-            int r1 = r1.f36252c
+            int r1 = r1.f22561c
             int r0 = java.lang.Math.max(r0, r1)
             r7 = r0
             r0 = r5
@@ -252,7 +252,7 @@ public class AudioRouteManager extends n.a {
         L89:
             r0 = r9
             r1 = r8
-            r0.f36252c = r1
+            r0.f22561c = r1
             r0 = r5
             if (r0 == 0) goto L97
             goto L99
@@ -262,7 +262,7 @@ public class AudioRouteManager extends n.a {
         L99:
             r0 = r10
             r1 = r6
-            r0.f36252c = r1
+            r0.f22561c = r1
             r0 = 1
             r6 = r0
             goto Lb3
@@ -319,15 +319,15 @@ public class AudioRouteManager extends n.a {
         this.mCurrentAudioIOScene = a.STOPPED;
         this.mExpectedAudioIOScene = a.STOPPED;
         n nVar = this.mBroadcastReceiver;
-        if (nVar.f36272a != null) {
+        if (nVar.f22581a != null) {
             try {
-                nVar.f36272a.unregisterReceiver(nVar);
+                nVar.f22581a.unregisterReceiver(nVar);
             } catch (Exception e2) {
             }
             if (nVar.b != null) {
                 n.b bVar = nVar.b;
-                synchronized (bVar.f36275c) {
-                    if (bVar.f36274a != null && bVar.b != null) {
+                synchronized (bVar.f22584c) {
+                    if (bVar.f22583a != null && bVar.b != null) {
                         bVar.b();
                         bVar.b = null;
                     }
@@ -336,9 +336,9 @@ public class AudioRouteManager extends n.a {
             }
         }
         l lVar = this.mAudioRouteSupervisor;
-        if (lVar.f36265c) {
+        if (lVar.f22574c) {
             lVar.b.clear();
-            lVar.f36265c = false;
+            lVar.f22574c = false;
         } else {
             Log.w("AudioRouteSupervisor", "error in uninitialize(), it's not been initialized yet", new Object[0]);
         }

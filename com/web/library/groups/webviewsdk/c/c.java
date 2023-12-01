@@ -12,19 +12,19 @@ import androidx.core.content.PermissionChecker;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final SimpleArrayMap<String, Integer> f41153a;
+    private static final SimpleArrayMap<String, Integer> f27462a;
 
     static {
         SimpleArrayMap<String, Integer> simpleArrayMap = new SimpleArrayMap<>(8);
-        f41153a = simpleArrayMap;
+        f27462a = simpleArrayMap;
         simpleArrayMap.put(Manifest.permission.ADD_VOICEMAIL, 14);
-        f41153a.put(Manifest.permission.BODY_SENSORS, 20);
-        f41153a.put(Manifest.permission.READ_CALL_LOG, 16);
-        f41153a.put("android.permission.READ_EXTERNAL_STORAGE", 16);
-        f41153a.put(Manifest.permission.USE_SIP, 9);
-        f41153a.put(Manifest.permission.WRITE_CALL_LOG, 16);
-        f41153a.put(Manifest.permission.SYSTEM_ALERT_WINDOW, 23);
-        f41153a.put(Manifest.permission.WRITE_SETTINGS, 23);
+        f27462a.put(Manifest.permission.BODY_SENSORS, 20);
+        f27462a.put(Manifest.permission.READ_CALL_LOG, 16);
+        f27462a.put("android.permission.READ_EXTERNAL_STORAGE", 16);
+        f27462a.put(Manifest.permission.USE_SIP, 9);
+        f27462a.put(Manifest.permission.WRITE_CALL_LOG, 16);
+        f27462a.put(Manifest.permission.SYSTEM_ALERT_WINDOW, 23);
+        f27462a.put(Manifest.permission.WRITE_SETTINGS, 23);
     }
 
     private static boolean a(Context context, String str) {
@@ -59,7 +59,7 @@ public final class c {
     }
 
     private static boolean a(String str) {
-        Integer num = f41153a.get(str);
+        Integer num = f27462a.get(str);
         return num == null || Build.VERSION.SDK_INT >= num.intValue();
     }
 

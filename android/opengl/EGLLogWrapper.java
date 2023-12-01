@@ -1,6 +1,5 @@
 package android.opengl;
 
-import com.alipay.sdk.util.i;
 import com.igexin.push.core.b;
 import java.io.IOException;
 import java.io.Writer;
@@ -8,9 +7,8 @@ import javax.microedition.khronos.egl.EGL;
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGL11;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/opengl/EGLLogWrapper.class */
-public class EGLLogWrapper implements EGL11 {
+class EGLLogWrapper implements EGL11 {
     private int mArgCount;
     boolean mCheckError;
     private EGL10 mEgl10;
@@ -143,9 +141,9 @@ public class EGLLogWrapper implements EGL11 {
                 return "EGL_BAD_NATIVE_WINDOW";
             case 12300:
                 return "EGL_BAD_PARAMETER";
-            case 12301:
+            case EGL14.EGL_BAD_SURFACE /* 12301 */:
                 return "EGL_BAD_SURFACE";
-            case 12302:
+            case EGL14.EGL_CONTEXT_LOST /* 12302 */:
                 return "EGL_CONTEXT_LOST";
             default:
                 return getHex(i);
@@ -192,7 +190,7 @@ public class EGLLogWrapper implements EGL11 {
         while (true) {
             int i4 = i3;
             if (i4 >= i) {
-                sb.append(i.d);
+                sb.append("}");
                 return sb.toString();
             }
             int i5 = i2 + i4;
@@ -215,7 +213,7 @@ public class EGLLogWrapper implements EGL11 {
         while (true) {
             int i4 = i3;
             if (i4 >= i) {
-                sb.append(i.d);
+                sb.append("}");
                 return sb.toString();
             }
             int i5 = i2 + i4;
@@ -486,7 +484,6 @@ public class EGLLogWrapper implements EGL11 {
         return eglQuerySurface;
     }
 
-    @Override // javax.microedition.khronos.egl.EGL10
     public boolean eglReleaseThread() {
         begin("eglReleaseThread");
         end();

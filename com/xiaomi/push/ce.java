@@ -8,12 +8,12 @@ import com.xiaomi.push.ch;
 public class ce extends ch.e {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41301a;
+    private String f27610a;
 
     public ce(String str, ContentValues contentValues, String str2) {
         super(str, contentValues);
-        this.f41301a = "MessageInsertJob";
-        this.f41301a = str2;
+        this.f27610a = "MessageInsertJob";
+        this.f27610a = str2;
     }
 
     public static ce a(Context context, String str, hk hkVar) {
@@ -27,7 +27,7 @@ public class ce extends ch.e {
         contentValues.put("messageItemId", hkVar.d());
         contentValues.put("messageItem", a2);
         contentValues.put("appId", bv.a(context).b());
-        contentValues.put("packageName", bv.a(context).m11558a());
+        contentValues.put("packageName", bv.a(context).m8508a());
         contentValues.put("createTimeStamp", Long.valueOf(System.currentTimeMillis()));
         contentValues.put("uploadTimestamp", (Integer) 0);
         return new ce(str, contentValues, "a job build to insert message to db");

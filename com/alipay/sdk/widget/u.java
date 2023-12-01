@@ -5,30 +5,28 @@ import java.util.Stack;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/widget/u.class */
 public class u {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Stack<p> f4701a = new Stack<>();
+    private Stack<p> a = new Stack<>();
 
     public p a() {
-        return this.f4701a.pop();
+        return this.a.pop();
     }
 
     public void a(p pVar) {
-        this.f4701a.push(pVar);
+        this.a.push(pVar);
     }
 
     public boolean b() {
-        return this.f4701a.isEmpty();
+        return this.a.isEmpty();
     }
 
     public void c() {
         if (b()) {
             return;
         }
-        Iterator<p> it = this.f4701a.iterator();
+        Iterator<p> it = this.a.iterator();
         while (it.hasNext()) {
             it.next().a();
         }
-        this.f4701a.clear();
+        this.a.clear();
     }
 }

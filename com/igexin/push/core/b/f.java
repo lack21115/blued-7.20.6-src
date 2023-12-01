@@ -6,18 +6,18 @@ import java.util.List;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f23439a;
+    public String f9831a;
     public List<String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f23440c;
+    public int f9832c;
 
     private String a() {
-        return this.f23439a;
+        return this.f9831a;
     }
 
     private void a(String str) {
-        this.f23439a = str;
+        this.f9831a = str;
     }
 
     private void a(List<String> list) {
@@ -29,14 +29,14 @@ public final class f {
     }
 
     private int c() {
-        return this.f23440c;
+        return this.f9832c;
     }
 
     private void d() {
-        this.f23440c++;
+        this.f9832c++;
     }
 
     private void e() {
-        this.f23440c--;
+        this.f9832c--;
     }
 }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemLiveFollowOnlineLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CardView f29211a;
+    private final CardView f15521a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f29211a;
+        return this.f15521a;
     }
 }

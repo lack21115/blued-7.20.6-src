@@ -8,37 +8,37 @@ import java.util.Comparator;
 public final class y {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Comparator<a> f7683a = new Comparator<a>() { // from class: com.anythink.expressad.exoplayer.k.y.1
+    private static final Comparator<a> f4844a = new Comparator<a>() { // from class: com.anythink.expressad.exoplayer.k.y.1
         private static int a(a aVar, a aVar2) {
-            return aVar.f7685a - aVar2.f7685a;
+            return aVar.f4846a - aVar2.f4846a;
         }
 
         @Override // java.util.Comparator
         public final /* bridge */ /* synthetic */ int compare(a aVar, a aVar2) {
-            return aVar.f7685a - aVar2.f7685a;
+            return aVar.f4846a - aVar2.f4846a;
         }
     };
     private static final Comparator<a> b = new Comparator<a>() { // from class: com.anythink.expressad.exoplayer.k.y.2
         private static int a(a aVar, a aVar2) {
-            if (aVar.f7686c < aVar2.f7686c) {
+            if (aVar.f4847c < aVar2.f4847c) {
                 return -1;
             }
-            return aVar2.f7686c < aVar.f7686c ? 1 : 0;
+            return aVar2.f4847c < aVar.f4847c ? 1 : 0;
         }
 
         @Override // java.util.Comparator
         public final /* bridge */ /* synthetic */ int compare(a aVar, a aVar2) {
             a aVar3 = aVar;
             a aVar4 = aVar2;
-            if (aVar3.f7686c < aVar4.f7686c) {
+            if (aVar3.f4847c < aVar4.f4847c) {
                 return -1;
             }
-            return aVar4.f7686c < aVar3.f7686c ? 1 : 0;
+            return aVar4.f4847c < aVar3.f4847c ? 1 : 0;
         }
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7684c = -1;
+    private static final int f4845c = -1;
     private static final int d = 0;
     private static final int e = 1;
     private static final int f = 5;
@@ -54,11 +54,11 @@ public final class y {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f7685a;
+        public int f4846a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public float f7686c;
+        public float f4847c;
 
         private a() {
         }
@@ -74,7 +74,7 @@ public final class y {
 
     private void b() {
         if (this.j != 1) {
-            Collections.sort(this.h, f7683a);
+            Collections.sort(this.h, f4844a);
             this.j = 1;
         }
     }
@@ -97,20 +97,20 @@ public final class y {
             a aVar = this.h.get(i2);
             i += aVar.b;
             if (i >= f2 * 0.5f) {
-                return aVar.f7686c;
+                return aVar.f4847c;
             }
         }
         if (this.h.isEmpty()) {
             return Float.NaN;
         }
         ArrayList<a> arrayList = this.h;
-        return arrayList.get(arrayList.size() - 1).f7686c;
+        return arrayList.get(arrayList.size() - 1).f4847c;
     }
 
     public final void a(int i, float f2) {
         a aVar;
         if (this.j != 1) {
-            Collections.sort(this.h, f7683a);
+            Collections.sort(this.h, f4844a);
             this.j = 1;
         }
         int i2 = this.m;
@@ -124,9 +124,9 @@ public final class y {
         }
         int i4 = this.k;
         this.k = i4 + 1;
-        aVar.f7685a = i4;
+        aVar.f4846a = i4;
         aVar.b = i;
-        aVar.f7686c = f2;
+        aVar.f4847c = f2;
         this.h.add(aVar);
         this.l += i;
         while (true) {

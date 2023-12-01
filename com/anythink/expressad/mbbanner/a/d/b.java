@@ -24,7 +24,7 @@ import java.util.TimerTask;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8024a = b.class.getSimpleName();
+    private static final String f5184a = b.class.getSimpleName();
     private Context b;
     private e d;
     private com.anythink.expressad.mbbanner.a.e.a e;
@@ -32,7 +32,7 @@ public class b {
     private d g;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f8025c = 0;
+    private int f5185c = 0;
     private volatile boolean h = false;
     private Timer i = new Timer();
     private volatile List<String> j = new ArrayList();
@@ -45,10 +45,10 @@ public class b {
     final class AnonymousClass1 extends TimerTask {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f8026a;
+        final /* synthetic */ String f5186a;
 
         AnonymousClass1(String str) {
-            this.f8026a = str;
+            this.f5186a = str;
         }
 
         @Override // java.util.TimerTask, java.lang.Runnable
@@ -57,7 +57,7 @@ public class b {
                 return;
             }
             b.b(b.this);
-            b.this.a(this.f8026a, -1, "", false);
+            b.this.a(this.f5186a, -1, "", false);
         }
     }
 
@@ -66,21 +66,21 @@ public class b {
     final class AnonymousClass2 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.d f8027a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.d f5187a;
 
         AnonymousClass2(com.anythink.expressad.foundation.d.d dVar) {
-            this.f8027a = dVar;
+            this.f5187a = dVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            o.b(b.f8024a, "在单独子线程保存数据库 开始");
-            com.anythink.expressad.foundation.d.d dVar = this.f8027a;
-            if (dVar != null && dVar.J != null && this.f8027a.J.size() > 0) {
+            o.b(b.f5184a, "在单独子线程保存数据库 开始");
+            com.anythink.expressad.foundation.d.d dVar = this.f5187a;
+            if (dVar != null && dVar.J != null && this.f5187a.J.size() > 0) {
                 Context unused = b.this.b;
                 com.anythink.expressad.mbbanner.a.e.b.a();
             }
-            o.b(b.f8024a, "在单独子线程保存数据库 完成");
+            o.b(b.f5184a, "在单独子线程保存数据库 完成");
         }
     }
 
@@ -171,13 +171,13 @@ public class b {
             try {
                 if (dVar.J != null && dVar.J.size() > 0) {
                     ArrayList<com.anythink.expressad.foundation.d.c> arrayList2 = dVar.J;
-                    String str = f8024a;
+                    String str = f5184a;
                     o.b(str, "getNeedShowList 总共返回的campaign有：" + arrayList2.size());
                     int i = 0;
                     while (true) {
                         int i2 = i;
                         if (i2 >= arrayList2.size()) {
-                            String str2 = f8024a;
+                            String str2 = f5184a;
                             o.b(str2, "getNeedShowList 返回有以下带有视频素材的campaign：" + arrayList.size());
                             return arrayList;
                         }
@@ -208,7 +208,7 @@ public class b {
             return;
         }
         if ((this.k || this.l) && this.j.size() == 0) {
-            o.b(f8024a, "在子线程处理业务逻辑 完成");
+            o.b(f5184a, "在子线程处理业务逻辑 完成");
             this.h = true;
             this.m = true;
             this.i.cancel();
@@ -238,8 +238,8 @@ public class b {
     }
 
     private void b(String str) {
-        o.b(f8024a, "在子线程处理业务逻辑 完成");
-        o.b(f8024a, "downloadResource--> Fail");
+        o.b(f5184a, "在子线程处理业务逻辑 完成");
+        o.b(f5184a, "downloadResource--> Fail");
         this.h = true;
         this.e.b(this.f, str);
         this.g.a(str);
@@ -253,7 +253,7 @@ public class b {
     }
 
     private void b(String str, List<com.anythink.expressad.foundation.d.c> list) {
-        int i = this.f8025c;
+        int i = this.f5185c;
         int i2 = i;
         if (list != null) {
             i2 = i;
@@ -268,10 +268,10 @@ public class b {
         }
         int i3 = i2;
         if (i2 > this.d.c()) {
-            o.b(f8024a, "saveNextOffset 重置offset为0");
+            o.b(f5184a, "saveNextOffset 重置offset为0");
             i3 = 0;
         }
-        o.b(f8024a, "saveNextOffset 算出 下次的offset是:".concat(String.valueOf(i3)));
+        o.b(f5184a, "saveNextOffset 算出 下次的offset是:".concat(String.valueOf(i3)));
         if (w.b(str)) {
             this.d.a(i3);
         }
@@ -306,17 +306,17 @@ public class b {
     public final void a(String str, int i, String str2, boolean z) {
         if (!z) {
             if (i == -1) {
-                String str3 = f8024a;
+                String str3 = f5184a;
                 o.d(str3, " unitId =" + str + " --> time out!");
             }
             this.i.cancel();
-            o.b(f8024a, "在子线程处理业务逻辑 完成");
-            o.b(f8024a, "downloadResource--> Fail");
+            o.b(f5184a, "在子线程处理业务逻辑 完成");
+            o.b(f5184a, "downloadResource--> Fail");
             this.h = true;
             this.e.b(this.f, str);
             this.g.a(str);
         } else if (i == 1) {
-            o.b(f8024a, "downloadResource--> Success Image");
+            o.b(f5184a, "downloadResource--> Success Image");
             synchronized (this) {
                 this.j.remove(str2);
                 if (this.j.size() == 0) {
@@ -324,11 +324,11 @@ public class b {
                 }
             }
         } else if (i == 2) {
-            o.b(f8024a, "downloadResource--> Success banner_html");
+            o.b(f5184a, "downloadResource--> Success banner_html");
             this.l = true;
             a(str);
         } else if (i == 3) {
-            o.b(f8024a, "downloadResource--> Success banner_url");
+            o.b(f5184a, "downloadResource--> Success banner_url");
             this.k = true;
             a(str);
         }
@@ -345,15 +345,15 @@ public class b {
         List<com.anythink.expressad.foundation.d.c> a2 = a(dVar);
         new Thread(new AnonymousClass2(dVar)).start();
         if (a2.size() == 0) {
-            o.b(f8024a, "tryDownloadOnLoadSuccess 返回的campaign 没有符合下载规则的");
-            this.e.a(this.f, com.anythink.expressad.reward.a.d.f8113a, str);
+            o.b(f5184a, "tryDownloadOnLoadSuccess 返回的campaign 没有符合下载规则的");
+            this.e.a(this.f, com.anythink.expressad.reward.a.d.f5273a, str);
             this.g.a(str);
             return;
         }
-        o.b(f8024a, "在子线程处理业务逻辑 开始");
+        o.b(f5184a, "在子线程处理业务逻辑 开始");
         this.i.schedule(new AnonymousClass1(str), 60000L);
         this.d.a(dVar.c());
-        int i = this.f8025c;
+        int i = this.f5185c;
         int i2 = i;
         try {
             if (a2.size() > 0) {
@@ -361,10 +361,10 @@ public class b {
             }
             int i3 = i2;
             if (i2 > this.d.c()) {
-                o.b(f8024a, "saveNextOffset 重置offset为0");
+                o.b(f5184a, "saveNextOffset 重置offset为0");
                 i3 = 0;
             }
-            o.b(f8024a, "saveNextOffset 算出 下次的offset是:".concat(String.valueOf(i3)));
+            o.b(f5184a, "saveNextOffset 算出 下次的offset是:".concat(String.valueOf(i3)));
             if (w.b(str)) {
                 this.d.a(i3);
             }

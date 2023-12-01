@@ -27,11 +27,11 @@ import java.util.Map;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f25817a = com.opos.cmn.an.a.b.a("aGV5dGFwX3VuaW9uX3Rva2Vu");
+    private static final String f12129a = com.opos.cmn.an.a.b.a("aGV5dGFwX3VuaW9uX3Rva2Vu");
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f25818c;
+    private String f12130c;
     private com.opos.mobad.cmn.a.d d;
     private b e;
 
@@ -41,7 +41,7 @@ public class a {
     public static /* synthetic */ class AnonymousClass6 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f25829a;
+        static final /* synthetic */ int[] f12141a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x004d -> B:37:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0051 -> B:33:0x001f). Please submit an issue!!! */
@@ -50,29 +50,29 @@ public class a {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x005d -> B:35:0x0040). Please submit an issue!!! */
         static {
             int[] iArr = new int[com.opos.mobad.cmn.a.b.a.values().length];
-            f25829a = iArr;
+            f12141a = iArr;
             try {
                 iArr[com.opos.mobad.cmn.a.b.a.Video.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f25829a[com.opos.mobad.cmn.a.b.a.ClickBt.ordinal()] = 2;
+                f12141a[com.opos.mobad.cmn.a.b.a.ClickBt.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f25829a[com.opos.mobad.cmn.a.b.a.NonClickBt.ordinal()] = 3;
+                f12141a[com.opos.mobad.cmn.a.b.a.NonClickBt.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f25829a[com.opos.mobad.cmn.a.b.a.FloatLayerClickBt.ordinal()] = 4;
+                f12141a[com.opos.mobad.cmn.a.b.a.FloatLayerClickBt.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f25829a[com.opos.mobad.cmn.a.b.a.FloatLayerNonClickBt.ordinal()] = 5;
+                f12141a[com.opos.mobad.cmn.a.b.a.FloatLayerNonClickBt.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f25829a[com.opos.mobad.cmn.a.b.a.Pendant.ordinal()] = 6;
+                f12141a[com.opos.mobad.cmn.a.b.a.Pendant.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -80,7 +80,7 @@ public class a {
 
     /* renamed from: com.opos.mobad.cmn.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/cmn/a/a$a.class */
-    public interface InterfaceC0679a {
+    public interface InterfaceC0509a {
         void a();
 
         void b();
@@ -90,7 +90,7 @@ public class a {
     public interface b {
         void a();
 
-        void a(InterfaceC0679a interfaceC0679a);
+        void a(InterfaceC0509a interfaceC0509a);
     }
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/cmn/a/a$c.class */
@@ -105,11 +105,11 @@ public class a {
     public static class d {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f25830a;
+        private String f12142a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f25831c;
+        private String f12143c;
         private Signature d;
 
         public d(Signature signature) {
@@ -117,14 +117,14 @@ public class a {
         }
 
         public String a() {
-            if (TextUtils.isEmpty(this.f25830a)) {
+            if (TextUtils.isEmpty(this.f12142a)) {
                 try {
-                    this.f25830a = k.a("md5", this.d);
+                    this.f12142a = k.a("md5", this.d);
                 } catch (Exception e) {
                     com.opos.cmn.an.f.a.b("AdHandler", "", e);
                 }
             }
-            return this.f25830a;
+            return this.f12142a;
         }
 
         public String b() {
@@ -139,27 +139,27 @@ public class a {
         }
 
         public String c() {
-            if (TextUtils.isEmpty(this.f25831c)) {
+            if (TextUtils.isEmpty(this.f12143c)) {
                 try {
-                    this.f25831c = k.a(at.aq, this.d);
+                    this.f12143c = k.a(at.aq, this.d);
                 } catch (Exception e) {
                     com.opos.cmn.an.f.a.b("AdHandler", "", e);
                 }
             }
-            return this.f25831c;
+            return this.f12143c;
         }
     }
 
     public a(Context context, String str, com.opos.mobad.cmn.a.d dVar) {
         this.b = com.opos.mobad.service.b.a(context);
-        this.f25818c = str;
+        this.f12130c = str;
         this.d = dVar;
     }
 
     private int a(ApkSignerData apkSignerData, List<d> list) {
         int i;
         int i2;
-        if (TextUtils.isEmpty(apkSignerData.f26464a) && TextUtils.isEmpty(apkSignerData.b) && TextUtils.isEmpty(apkSignerData.f26465c)) {
+        if (TextUtils.isEmpty(apkSignerData.f12776a) && TextUtils.isEmpty(apkSignerData.b) && TextUtils.isEmpty(apkSignerData.f12777c)) {
             return -1;
         }
         int i3 = 0;
@@ -170,7 +170,7 @@ public class a {
                 break;
             }
             d dVar = list.get(i);
-            if ((TextUtils.isEmpty(apkSignerData.f26464a) || apkSignerData.f26464a.equals(dVar.a())) && ((TextUtils.isEmpty(apkSignerData.b) || apkSignerData.b.equals(dVar.b())) && (TextUtils.isEmpty(apkSignerData.f26465c) || apkSignerData.f26465c.equals(dVar.c())))) {
+            if ((TextUtils.isEmpty(apkSignerData.f12776a) || apkSignerData.f12776a.equals(dVar.a())) && ((TextUtils.isEmpty(apkSignerData.b) || apkSignerData.b.equals(dVar.b())) && (TextUtils.isEmpty(apkSignerData.f12777c) || apkSignerData.f12777c.equals(dVar.c())))) {
                 break;
             }
             i3 = i + 1;
@@ -199,7 +199,7 @@ public class a {
         }
     }
 
-    private void a(final int i, final AdItemData adItemData, final MaterialData materialData, final boolean z, final int[] iArr, final Map<String, String> map, final com.opos.mobad.service.g.a aVar, final boolean z2, final b.InterfaceC0687b interfaceC0687b, final com.opos.mobad.cmn.a.b bVar, final c cVar) {
+    private void a(final int i, final AdItemData adItemData, final MaterialData materialData, final boolean z, final int[] iArr, final Map<String, String> map, final com.opos.mobad.service.g.a aVar, final boolean z2, final b.InterfaceC0517b interfaceC0517b, final com.opos.mobad.cmn.a.b bVar, final c cVar) {
         com.opos.cmn.an.j.b.d(new Runnable() { // from class: com.opos.mobad.cmn.a.a.2
             @Override // java.lang.Runnable
             public void run() {
@@ -207,40 +207,40 @@ public class a {
                 adItemData.b();
                 switch (i) {
                     case 1:
-                        a.this.d(adItemData, materialData, z, iArr, map, aVar, (b.InterfaceC0687b) null, bVar, cVar);
+                        a.this.d(adItemData, materialData, z, iArr, map, aVar, (b.InterfaceC0517b) null, bVar, cVar);
                         return;
                     case 2:
                         if (com.opos.cmn.an.h.d.a.d(a.this.b, materialData.k())) {
-                            a.this.a(adItemData, materialData, z, iArr, map, aVar, interfaceC0687b, bVar, cVar);
+                            a.this.a(adItemData, materialData, z, iArr, map, aVar, interfaceC0517b, bVar, cVar);
                             return;
                         } else if (1 == materialData.L()) {
                             a aVar2 = a.this;
                             AdItemData adItemData2 = adItemData;
                             MaterialData materialData2 = materialData;
-                            aVar2.a(adItemData2, materialData2, materialData2.t(), z, iArr, (Map<String, String>) map, aVar, interfaceC0687b, false, cVar);
+                            aVar2.a(adItemData2, materialData2, materialData2.t(), z, iArr, (Map<String, String>) map, aVar, interfaceC0517b, false, cVar);
                             return;
                         } else if (2 == materialData.L()) {
-                            a.this.a(adItemData, materialData, z, iArr, map, aVar, z2, interfaceC0687b, bVar, cVar);
+                            a.this.a(adItemData, materialData, z, iArr, map, aVar, z2, interfaceC0517b, bVar, cVar);
                             return;
                         } else if (3 == materialData.L()) {
                             a aVar3 = a.this;
                             AdItemData adItemData3 = adItemData;
                             MaterialData materialData3 = materialData;
-                            aVar3.a(adItemData3, materialData3, materialData3.t(), z, iArr, (Map<String, String>) map, aVar, interfaceC0687b, true, cVar);
+                            aVar3.a(adItemData3, materialData3, materialData3.t(), z, iArr, (Map<String, String>) map, aVar, interfaceC0517b, true, cVar);
                             return;
                         } else {
                             a aVar4 = a.this;
                             AdItemData adItemData4 = adItemData;
                             MaterialData materialData4 = materialData;
-                            aVar4.a(adItemData4, materialData4, materialData4.t(), z, iArr, map, aVar, interfaceC0687b, materialData.R(), materialData.S(), bVar, cVar);
+                            aVar4.a(adItemData4, materialData4, materialData4.t(), z, iArr, map, aVar, interfaceC0517b, materialData.R(), materialData.S(), bVar, cVar);
                             return;
                         }
                     case 3:
                         if (com.opos.cmn.an.h.d.a.d(a.this.b, materialData.k())) {
-                            a.this.a(adItemData, materialData, z, iArr, map, aVar, interfaceC0687b, bVar, cVar);
+                            a.this.a(adItemData, materialData, z, iArr, map, aVar, interfaceC0517b, bVar, cVar);
                             return;
                         } else {
-                            a.this.b(adItemData, materialData, z, iArr, map, aVar, interfaceC0687b, bVar, cVar);
+                            a.this.b(adItemData, materialData, z, iArr, map, aVar, interfaceC0517b, bVar, cVar);
                             return;
                         }
                     case 4:
@@ -250,10 +250,10 @@ public class a {
                         a.this.c(adItemData, materialData, z, iArr, map, aVar, bVar, cVar);
                         return;
                     case 6:
-                        a.this.c(adItemData, materialData, z, iArr, map, aVar, (b.InterfaceC0687b) null, bVar, cVar);
+                        a.this.c(adItemData, materialData, z, iArr, map, aVar, (b.InterfaceC0517b) null, bVar, cVar);
                         return;
                     case 7:
-                        a.this.e(adItemData, materialData, z, iArr, map, aVar, (b.InterfaceC0687b) null, bVar, cVar);
+                        a.this.e(adItemData, materialData, z, iArr, map, aVar, (b.InterfaceC0517b) null, bVar, cVar);
                         return;
                     default:
                         a.this.a(0, -2, cVar);
@@ -263,20 +263,20 @@ public class a {
         });
     }
 
-    private void a(AdItemData adItemData, MaterialData materialData, b.InterfaceC0687b interfaceC0687b) {
+    private void a(AdItemData adItemData, MaterialData materialData, b.InterfaceC0517b interfaceC0517b) {
         if (adItemData == null || materialData == null) {
             return;
         }
-        com.opos.cmn.an.f.a.b("AdHandler", "pkgInstallListener :" + interfaceC0687b);
-        if (interfaceC0687b == null) {
+        com.opos.cmn.an.f.a.b("AdHandler", "pkgInstallListener :" + interfaceC0517b);
+        if (interfaceC0517b == null) {
             com.opos.mobad.cmn.service.pkginstall.b.a(this.b).a(materialData.k(), adItemData);
         } else {
-            com.opos.mobad.cmn.service.pkginstall.b.a(this.b).a(materialData.k(), interfaceC0687b, adItemData);
+            com.opos.mobad.cmn.service.pkginstall.b.a(this.b).a(materialData.k(), interfaceC0517b, adItemData);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(AdItemData adItemData, MaterialData materialData, String str, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, b.InterfaceC0687b interfaceC0687b, String str2, String str3, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    public void a(AdItemData adItemData, MaterialData materialData, String str, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, b.InterfaceC0517b interfaceC0517b, String str2, String str3, com.opos.mobad.cmn.a.b bVar, c cVar) {
         if (adItemData == null || materialData == null) {
             return;
         }
@@ -284,7 +284,7 @@ public class a {
         sb.append("handleDLApkAndSTEvent pkgName=");
         sb.append(materialData.k());
         sb.append(",posId=");
-        sb.append(this.f25818c);
+        sb.append(this.f12130c);
         sb.append(",channelPkg=");
         sb.append(str != null ? str : com.igexin.push.core.b.l);
         sb.append(",trackContent=");
@@ -303,8 +303,8 @@ public class a {
         if (!com.opos.cmn.an.c.a.a(str)) {
             hashMap.put("dlChannel", str);
         }
-        if (this.d.a(this.b, materialData.k(), this.f25818c, str, materialData.q(), str2, str3)) {
-            a(adItemData, materialData, interfaceC0687b);
+        if (this.d.a(this.b, materialData.k(), this.f12130c, str, materialData.q(), str2, str3)) {
+            a(adItemData, materialData, interfaceC0517b);
             hashMap.put("jumpRet", "1");
             aVar.a(a.b.MARKET).a("1");
             com.opos.cmn.an.f.a.a("AdHandler", "handleDLApkAndSTEvent pkgName" + materialData.k() + " = true");
@@ -315,16 +315,16 @@ public class a {
             com.opos.cmn.an.f.a.a("AdHandler", "handleDLApkAndSTEvent pkgName=" + materialData.k() + " = false");
             a(1, -2, cVar);
         }
-        com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, adItemData, materialData, z, iArr, hashMap);
+        com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, adItemData, materialData, z, iArr, hashMap);
         aVar.a(this.b);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(AdItemData adItemData, MaterialData materialData, String str, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, b.InterfaceC0687b interfaceC0687b, boolean z2, c cVar) {
+    public void a(AdItemData adItemData, MaterialData materialData, String str, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, b.InterfaceC0517b interfaceC0517b, boolean z2, c cVar) {
         if (adItemData == null || materialData == null) {
             return;
         }
-        com.opos.cmn.an.f.a.b("AdHandler", "handleDeeplinkDLApkAndSTEvent pkgName=" + materialData.k() + ",posId=" + this.f25818c + ",isSafeJump = " + z2);
+        com.opos.cmn.an.f.a.b("AdHandler", "handleDeeplinkDLApkAndSTEvent pkgName=" + materialData.k() + ",posId=" + this.f12130c + ",isSafeJump = " + z2);
         HashMap hashMap = new HashMap();
         if (map != null && map.size() > 0) {
             hashMap.putAll(map);
@@ -334,7 +334,7 @@ public class a {
         }
         com.opos.mobad.cmn.a.d dVar = this.d;
         if (z2 ? dVar.e(this.b, materialData.M()) : dVar.d(this.b, materialData.M())) {
-            a(adItemData, materialData, interfaceC0687b);
+            a(adItemData, materialData, interfaceC0517b);
             hashMap.put("jumpRet", "1");
             aVar.a(a.b.MARKET).a("1");
             com.opos.cmn.an.f.a.b("AdHandler", "handleDeeplinkDLApkAndSTEvent pkgName" + materialData.k() + " = true");
@@ -345,21 +345,21 @@ public class a {
             com.opos.cmn.an.f.a.b("AdHandler", "handleDeeplinkDLApkAndSTEvent pkgName=" + materialData.k() + " = false");
             a(1, -1, cVar);
         }
-        com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, adItemData, materialData, z, iArr, hashMap);
+        com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, adItemData, materialData, z, iArr, hashMap);
         aVar.a(this.b);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(AdItemData adItemData, MaterialData materialData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    public void a(AdItemData adItemData, MaterialData materialData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         int I = materialData.I();
-        if (!(I != 1 ? I != 2 ? false : a(adItemData, materialData, z, iArr, map, aVar, bVar, cVar) : b(adItemData, materialData, z, iArr, map, aVar, bVar, cVar)) || interfaceC0687b == null) {
+        if (!(I != 1 ? I != 2 ? false : a(adItemData, materialData, z, iArr, map, aVar, bVar, cVar) : b(adItemData, materialData, z, iArr, map, aVar, bVar, cVar)) || interfaceC0517b == null) {
             return;
         }
-        interfaceC0687b.b(adItemData, materialData.k());
+        interfaceC0517b.b(adItemData, materialData.k());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(final AdItemData adItemData, final MaterialData materialData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, final b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    public void a(final AdItemData adItemData, final MaterialData materialData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, final b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         if (adItemData == null || materialData == null) {
             return;
         }
@@ -382,16 +382,16 @@ public class a {
             if (z2 || TextUtils.isEmpty(a2) || TextUtils.isEmpty(c2)) {
                 hashMap.put("jumpRet", "0");
                 aVar.a(a.b.DOWNLOADER).a("0");
-                com.opos.mobad.cmn.a.b.d.d(this.b, this.f25818c, adItemData, materialData, z, iArr, hashMap);
+                com.opos.mobad.cmn.a.b.d.d(this.b, this.f12130c, adItemData, materialData, z, iArr, hashMap);
                 a(7, -1, cVar);
             } else {
-                a(adItemData, materialData, new b.InterfaceC0687b() { // from class: com.opos.mobad.cmn.a.a.4
-                    @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+                a(adItemData, materialData, new b.InterfaceC0517b() { // from class: com.opos.mobad.cmn.a.a.4
+                    @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
                     public void a(AdItemData adItemData2, String str) {
                         com.opos.cmn.an.f.a.b("AdHandler", "notifyInstallCompletedEvent pkgName = " + str);
-                        b.InterfaceC0687b interfaceC0687b2 = interfaceC0687b;
-                        if (interfaceC0687b2 != null) {
-                            interfaceC0687b2.a(adItemData2, str);
+                        b.InterfaceC0517b interfaceC0517b2 = interfaceC0517b;
+                        if (interfaceC0517b2 != null) {
+                            interfaceC0517b2.a(adItemData2, str);
                         }
                         if (materialData.Q() != null && materialData.Q().size() > 0) {
                             com.opos.mobad.service.g.b.a().a(materialData.Q()).a(a.this.b);
@@ -399,19 +399,19 @@ public class a {
                         com.opos.mobad.cmn.service.a.a.a(a.this.b).c(str);
                     }
 
-                    @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+                    @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
                     public void b(AdItemData adItemData2, String str) {
-                        b.InterfaceC0687b interfaceC0687b2 = interfaceC0687b;
-                        if (interfaceC0687b2 != null) {
-                            interfaceC0687b2.b(adItemData2, str);
+                        b.InterfaceC0517b interfaceC0517b2 = interfaceC0517b;
+                        if (interfaceC0517b2 != null) {
+                            interfaceC0517b2.b(adItemData2, str);
                         }
                     }
 
-                    @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+                    @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
                     public void c(AdItemData adItemData2, String str) {
-                        b.InterfaceC0687b interfaceC0687b2 = interfaceC0687b;
-                        if (interfaceC0687b2 != null) {
-                            interfaceC0687b2.c(adItemData2, str);
+                        b.InterfaceC0517b interfaceC0517b2 = interfaceC0517b;
+                        if (interfaceC0517b2 != null) {
+                            interfaceC0517b2.c(adItemData2, str);
                         }
                     }
 
@@ -502,7 +502,7 @@ public class a {
                 });
                 hashMap.put("jumpRet", "1");
                 aVar.a(a.b.DOWNLOADER).a("1");
-                com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, adItemData, materialData, z, iArr, hashMap);
+                com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, adItemData, materialData, z, iArr, hashMap);
                 a(7, cVar);
             }
             aVar.a(this.b);
@@ -511,25 +511,25 @@ public class a {
         }
     }
 
-    private void a(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.cmn.a.b.a aVar, com.opos.mobad.service.g.a aVar2, boolean z2, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
-        switch (AnonymousClass6.f25829a[aVar.ordinal()]) {
+    private void a(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.cmn.a.b.a aVar, com.opos.mobad.service.g.a aVar2, boolean z2, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+        switch (AnonymousClass6.f12141a[aVar.ordinal()]) {
             case 1:
-                d(adItemData, z, iArr, map, aVar2, z2, interfaceC0687b, bVar, cVar);
+                d(adItemData, z, iArr, map, aVar2, z2, interfaceC0517b, bVar, cVar);
                 return;
             case 2:
-                b(adItemData, z, iArr, map, aVar2, z2, interfaceC0687b, bVar, cVar);
+                b(adItemData, z, iArr, map, aVar2, z2, interfaceC0517b, bVar, cVar);
                 return;
             case 3:
-                c(adItemData, z, iArr, map, aVar2, z2, interfaceC0687b, bVar, cVar);
+                c(adItemData, z, iArr, map, aVar2, z2, interfaceC0517b, bVar, cVar);
                 return;
             case 4:
-                e(adItemData, z, iArr, map, aVar2, z2, interfaceC0687b, bVar, cVar);
+                e(adItemData, z, iArr, map, aVar2, z2, interfaceC0517b, bVar, cVar);
                 return;
             case 5:
-                f(adItemData, z, iArr, map, aVar2, z2, interfaceC0687b, bVar, cVar);
+                f(adItemData, z, iArr, map, aVar2, z2, interfaceC0517b, bVar, cVar);
                 return;
             case 6:
-                a(adItemData, z, iArr, map, aVar2, z2, interfaceC0687b, bVar, cVar);
+                a(adItemData, z, iArr, map, aVar2, z2, interfaceC0517b, bVar, cVar);
                 return;
             default:
                 return;
@@ -537,7 +537,7 @@ public class a {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.cmn.a.b.a aVar, boolean z2, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    public void a(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.cmn.a.b.a aVar, boolean z2, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         com.opos.mobad.service.g.a a2 = com.opos.mobad.service.g.b.a();
         if (adItemData != null) {
             try {
@@ -545,7 +545,7 @@ public class a {
                 if (materialData != null) {
                     if (materialData.p() != null && materialData.p().size() > 0) {
                         if (bVar != null && bVar.b) {
-                            a2.a(bVar.f25833c);
+                            a2.a(bVar.f12145c);
                         } else if (map != null && map.size() > 0) {
                             String str = map.get("vPlyPos");
                             if (!TextUtils.isEmpty(str)) {
@@ -563,43 +563,43 @@ public class a {
                 com.opos.cmn.an.f.a.a("AdHandler", "", (Throwable) e2);
             }
         }
-        a(adItemData, z, iArr, map, aVar, a2, z2, interfaceC0687b, bVar, cVar);
+        a(adItemData, z, iArr, map, aVar, a2, z2, interfaceC0517b, bVar, cVar);
     }
 
-    private void a(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    private void a(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         MaterialData materialData;
         com.opos.cmn.an.f.a.b("AdHandler", "handlePendantAdClickActionAndStEvent adItemData=", adItemData);
         if (adItemData == null || (materialData = adItemData.i().get(0)) == null) {
             return;
         }
-        aVar.a(a.EnumC0736a.PENDANT).a(iArr);
+        aVar.a(a.EnumC0566a.PENDANT).a(iArr);
         HashMap hashMap = new HashMap();
         if (map != null && !map.isEmpty()) {
             hashMap.putAll(map);
         }
         com.opos.mobad.cmn.a.b.d.a(hashMap, "6", String.valueOf(materialData.ab().b()));
-        a(materialData.ab().b(), adItemData, materialData, z, iArr, hashMap, aVar, z2, interfaceC0687b, bVar, cVar);
+        a(materialData.ab().b(), adItemData, materialData, z, iArr, hashMap, aVar, z2, interfaceC0517b, bVar, cVar);
     }
 
-    private void a(String str, AdItemData adItemData, boolean z, b.InterfaceC0687b interfaceC0687b, EventDescription eventDescription) {
+    private void a(String str, AdItemData adItemData, boolean z, b.InterfaceC0517b interfaceC0517b, EventDescription eventDescription) {
         if (com.opos.cmn.an.c.a.a(str) || adItemData == null || adItemData.i() == null || adItemData.i().size() <= 0) {
             return;
         }
         try {
             com.opos.cmn.an.f.a.b("AdHandler", "loadWebPage url=" + str);
-            String a2 = -1 != com.opos.mobad.cmn.a.b.f.c(str) ? com.opos.mobad.cmn.a.b.f.a(adItemData, str, this.f25818c) : "";
+            String a2 = -1 != com.opos.mobad.cmn.a.b.f.c(str) ? com.opos.mobad.cmn.a.b.f.a(adItemData, str, this.f12130c) : "";
             String a3 = com.opos.mobad.cmn.a.b.f.a(this.b, str, (int[]) null, 0L);
-            if (interfaceC0687b != null) {
-                com.opos.mobad.cmn.a.b.f.a(interfaceC0687b);
+            if (interfaceC0517b != null) {
+                com.opos.mobad.cmn.a.b.f.a(interfaceC0517b);
             }
-            this.d.a(this.b, this.f25818c, a3, adItemData, a2, eventDescription);
+            this.d.a(this.b, this.f12130c, a3, adItemData, a2, eventDescription);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("AdHandler", "", (Throwable) e);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(String str, AdItemData adItemData, boolean z, int[] iArr, com.opos.mobad.service.g.a aVar, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    public void a(String str, AdItemData adItemData, boolean z, int[] iArr, com.opos.mobad.service.g.a aVar, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         if (com.opos.cmn.an.c.a.a(str) || adItemData == null || adItemData.i() == null || adItemData.i().size() <= 0) {
             return;
         }
@@ -614,7 +614,7 @@ public class a {
             } else {
                 aVar.a(a.b.WEB_VIEW).a("1");
             }
-            b(str, adItemData, z, iArr, aVar, interfaceC0687b, bVar, cVar);
+            b(str, adItemData, z, iArr, aVar, interfaceC0517b, bVar, cVar);
             aVar.a(this.b);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("AdHandler", "", (Throwable) e);
@@ -640,13 +640,13 @@ public class a {
             if (queryIntentServices != null && queryIntentServices.size() == 1) {
                 intent.putExtra("from", this.b.getPackageName());
                 this.b.startService(intent);
-                com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, str2, 0);
+                com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, str2, 0);
                 return;
             }
-            com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, str2, 6);
+            com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, str2, 6);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.b("AdHandler", "", e);
-            com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, str2, 7);
+            com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, str2, 7);
         }
     }
 
@@ -681,7 +681,7 @@ public class a {
                 com.opos.cmn.an.f.a.b("AdHandler", "handleDeepLinkAndSTEvent open deeplink fail.open homepage");
                 return b2;
             }
-            com.opos.mobad.cmn.a.b.d.c(this.b, this.f25818c, adItemData, materialData, z, iArr, map);
+            com.opos.mobad.cmn.a.b.d.c(this.b, this.f12130c, adItemData, materialData, z, iArr, map);
             aVar.a(a.b.DEEP_LINK).a("1");
             aVar.a(this.b);
             StringBuilder sb = new StringBuilder();
@@ -698,12 +698,12 @@ public class a {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void b(AdItemData adItemData, MaterialData materialData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    public void b(AdItemData adItemData, MaterialData materialData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         if (adItemData == null || materialData == null) {
             return;
         }
         com.opos.cmn.an.f.a.b("AdHandler", "handleMiddlePageDLApkAndSTEvent");
-        a(materialData.m(), adItemData, z, iArr, aVar, interfaceC0687b, bVar, cVar);
+        a(materialData.m(), adItemData, z, iArr, aVar, interfaceC0517b, bVar, cVar);
         HashMap hashMap = new HashMap();
         if (map != null && map.size() > 0) {
             hashMap.putAll(map);
@@ -711,44 +711,44 @@ public class a {
         if (!com.opos.cmn.an.c.a.a(materialData.t())) {
             hashMap.put("dlChannel", materialData.t());
         }
-        com.opos.mobad.cmn.a.b.d.b(this.b, this.f25818c, adItemData, materialData, z, iArr, hashMap);
+        com.opos.mobad.cmn.a.b.d.b(this.b, this.f12130c, adItemData, materialData, z, iArr, hashMap);
     }
 
-    private void b(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    private void b(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         MaterialData materialData;
         com.opos.cmn.an.f.a.b("AdHandler", "handleButtonAdClickActionAndSTEvent adItemData=", adItemData);
         if (adItemData == null || (materialData = adItemData.i().get(0)) == null) {
             return;
         }
-        aVar.a(a.EnumC0736a.BUTTON).a(iArr);
+        aVar.a(a.EnumC0566a.BUTTON).a(iArr);
         HashMap hashMap = new HashMap();
         if (map != null && !map.isEmpty()) {
             hashMap.putAll(map);
         }
         com.opos.mobad.cmn.a.b.d.a(hashMap, "1", String.valueOf(materialData.e()));
-        a(materialData.e(), adItemData, materialData, z, iArr, hashMap, aVar, z2, interfaceC0687b, bVar, cVar);
+        a(materialData.e(), adItemData, materialData, z, iArr, hashMap, aVar, z2, interfaceC0517b, bVar, cVar);
     }
 
-    private void b(String str, AdItemData adItemData, boolean z, int[] iArr, com.opos.mobad.service.g.a aVar, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    private void b(String str, AdItemData adItemData, boolean z, int[] iArr, com.opos.mobad.service.g.a aVar, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         if (com.opos.cmn.an.c.a.a(str) || adItemData == null || adItemData.i() == null || adItemData.i().size() <= 0) {
             a(3, -1, cVar);
             return;
         }
         try {
             com.opos.cmn.an.f.a.b("AdHandler", "loadWebPage url=" + str);
-            String a2 = -1 != com.opos.mobad.cmn.a.b.f.c(str) ? com.opos.mobad.cmn.a.b.f.a(adItemData, str, this.f25818c) : "";
+            String a2 = -1 != com.opos.mobad.cmn.a.b.f.c(str) ? com.opos.mobad.cmn.a.b.f.a(adItemData, str, this.f12130c) : "";
             String a3 = com.opos.mobad.service.g.b.a(this.b, str, aVar);
-            if (interfaceC0687b != null) {
-                com.opos.mobad.cmn.a.b.f.a(interfaceC0687b);
+            if (interfaceC0517b != null) {
+                com.opos.mobad.cmn.a.b.f.a(interfaceC0517b);
             }
             if (bVar != null && adItemData.i().get(0).d() == 13) {
-                this.d.a(this.b, this.f25818c, a3, adItemData, a2, bVar.f25832a, bVar.d);
+                this.d.a(this.b, this.f12130c, a3, adItemData, a2, bVar.f12144a, bVar.d);
             } else if (adItemData.R() == 1) {
                 if (com.opos.mobad.o.e.b.a(adItemData.i().get(0).b())) {
                     a(8, cVar);
                     return;
                 }
-                this.d.a(this.b, this.f25818c, a3, adItemData, a2, (EventDescription) null);
+                this.d.a(this.b, this.f12130c, a3, adItemData, a2, (EventDescription) null);
                 a(3, cVar);
                 if (adItemData.V() == 2) {
                     com.opos.mobad.service.i.d.a().c().c(adItemData.i().get(0).aa(), 2);
@@ -756,7 +756,7 @@ public class a {
                 }
                 return;
             } else {
-                this.d.a(this.b, this.f25818c, a3, adItemData, a2, (EventDescription) null);
+                this.d.a(this.b, this.f12130c, a3, adItemData, a2, (EventDescription) null);
             }
             a(3, cVar);
         } catch (Exception e) {
@@ -846,7 +846,7 @@ public class a {
                 com.opos.cmn.an.f.a.b("AdHandler", "handleDetailPageAndSTEvent targetUrl=" + m + " success.");
                 a(5, cVar);
             }
-            com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, adItemData, materialData, z, iArr, hashMap);
+            com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, adItemData, materialData, z, iArr, hashMap);
             aVar.a(this.b);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("AdHandler", "", (Throwable) e);
@@ -854,7 +854,7 @@ public class a {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void c(final AdItemData adItemData, final MaterialData materialData, final boolean z, final int[] iArr, Map<String, String> map, final com.opos.mobad.service.g.a aVar, final b.InterfaceC0687b interfaceC0687b, final com.opos.mobad.cmn.a.b bVar, final c cVar) {
+    public void c(final AdItemData adItemData, final MaterialData materialData, final boolean z, final int[] iArr, Map<String, String> map, final com.opos.mobad.service.g.a aVar, final b.InterfaceC0517b interfaceC0517b, final com.opos.mobad.cmn.a.b bVar, final c cVar) {
         if (adItemData == null || materialData == null) {
             return;
         }
@@ -868,7 +868,7 @@ public class a {
                     @Override // com.opos.mobad.cmn.a.d.a
                     public void a() {
                         hashMap.put("jumpRet", "1");
-                        com.opos.mobad.cmn.a.b.d.a(a.this.b, a.this.f25818c, adItemData, materialData, z, iArr, hashMap);
+                        com.opos.mobad.cmn.a.b.d.a(a.this.b, a.this.f12130c, adItemData, materialData, z, iArr, hashMap);
                         aVar.a(a.b.INSTANT).a("1");
                         aVar.a(a.this.b);
                         a.this.a(6, cVar);
@@ -877,41 +877,41 @@ public class a {
 
                     @Override // com.opos.mobad.cmn.a.d.a
                     public void a(int i, String str) {
-                        a.this.a(materialData.m(), adItemData, z, iArr, aVar, interfaceC0687b, bVar, cVar);
+                        a.this.a(materialData.m(), adItemData, z, iArr, aVar, interfaceC0517b, bVar, cVar);
                         Map map2 = hashMap;
                         map2.put("jumpRet", i + "");
-                        com.opos.mobad.cmn.a.b.d.a(a.this.b, a.this.f25818c, adItemData, materialData, z, iArr, hashMap);
+                        com.opos.mobad.cmn.a.b.d.a(a.this.b, a.this.f12130c, adItemData, materialData, z, iArr, hashMap);
                         com.opos.cmn.an.f.a.a("AdHandler", "handleInstantAndSTEvent open instant fail.open web, code:" + i + ",msg:" + str);
                     }
                 }, materialData.q());
                 return;
             }
-            a(materialData.m(), adItemData, z, iArr, aVar, interfaceC0687b, bVar, cVar);
+            a(materialData.m(), adItemData, z, iArr, aVar, interfaceC0517b, bVar, cVar);
             hashMap.put("jumpRet", "0");
-            com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, adItemData, materialData, z, iArr, hashMap);
+            com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, adItemData, materialData, z, iArr, hashMap);
             com.opos.cmn.an.f.a.b("AdHandler", "handleInstantAndSTEvent open instant fail.open web");
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("AdHandler", "", (Throwable) e);
         }
     }
 
-    private void c(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    private void c(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         MaterialData materialData;
         com.opos.cmn.an.f.a.b("AdHandler", "handleExtraAdClickActionAndStEvent adItemData=", adItemData);
         if (adItemData == null || (materialData = adItemData.i().get(0)) == null) {
             return;
         }
-        aVar.a(a.EnumC0736a.EXTRA).a(iArr);
+        aVar.a(a.EnumC0566a.EXTRA).a(iArr);
         HashMap hashMap = new HashMap();
         if (map != null && !map.isEmpty()) {
             hashMap.putAll(map);
         }
         com.opos.mobad.cmn.a.b.d.a(hashMap, "2", String.valueOf(materialData.J()));
-        a(materialData.J(), adItemData, materialData, z, iArr, hashMap, aVar, z2, interfaceC0687b, bVar, cVar);
+        a(materialData.J(), adItemData, materialData, z, iArr, hashMap, aVar, z2, interfaceC0517b, bVar, cVar);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void d(AdItemData adItemData, MaterialData materialData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    public void d(AdItemData adItemData, MaterialData materialData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         String str;
         if (adItemData == null || materialData == null) {
             return;
@@ -919,11 +919,11 @@ public class a {
         try {
             String s = materialData.s();
             if (com.opos.cmn.an.c.a.a(s) || !this.d.b(this.b, s)) {
-                a(materialData.m(), adItemData, z, iArr, aVar, interfaceC0687b, bVar, cVar);
-                com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, adItemData, materialData, z, iArr, map);
+                a(materialData.m(), adItemData, z, iArr, aVar, interfaceC0517b, bVar, cVar);
+                com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, adItemData, materialData, z, iArr, map);
                 str = "handleDeepLinkAndSTEvent open deeplink fail.open web";
             } else {
-                com.opos.mobad.cmn.a.b.d.c(this.b, this.f25818c, adItemData, materialData, z, iArr, map);
+                com.opos.mobad.cmn.a.b.d.c(this.b, this.f12130c, adItemData, materialData, z, iArr, map);
                 aVar.a(a.b.DEEP_LINK).a("1");
                 aVar.a(this.b);
                 a(5, cVar);
@@ -935,23 +935,23 @@ public class a {
         }
     }
 
-    private void d(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    private void d(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         MaterialData materialData;
         com.opos.cmn.an.f.a.b("AdHandler", "handleVideoAdClickActionAndSTEvent adItemData=", adItemData);
         if (adItemData == null || (materialData = adItemData.i().get(0)) == null) {
             return;
         }
-        aVar.a(a.EnumC0736a.VIDEO).a(iArr);
+        aVar.a(a.EnumC0566a.VIDEO).a(iArr);
         HashMap hashMap = new HashMap();
         if (map != null && !map.isEmpty()) {
             hashMap.putAll(map);
         }
         com.opos.mobad.cmn.a.b.d.a(hashMap, "3", String.valueOf(materialData.K()));
-        a(materialData.K(), adItemData, materialData, z, iArr, hashMap, aVar, z2, interfaceC0687b, bVar, cVar);
+        a(materialData.K(), adItemData, materialData, z, iArr, hashMap, aVar, z2, interfaceC0517b, bVar, cVar);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void e(AdItemData adItemData, MaterialData materialData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    public void e(AdItemData adItemData, MaterialData materialData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         String str;
         if (adItemData == null || materialData == null) {
             return;
@@ -962,23 +962,23 @@ public class a {
                 hashMap.putAll(map);
             }
             if (TextUtils.isEmpty(adItemData.Z()) || TextUtils.isEmpty(materialData.ag())) {
-                a(materialData.m(), adItemData, z, iArr, aVar, interfaceC0687b, bVar, cVar);
+                a(materialData.m(), adItemData, z, iArr, aVar, interfaceC0517b, bVar, cVar);
                 hashMap.put("jumpRet", "0");
-                com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, adItemData, materialData, z, iArr, hashMap);
+                com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, adItemData, materialData, z, iArr, hashMap);
                 com.opos.cmn.an.f.a.b("AdHandler", "handleMiniProgramAndSTEvent error param instant fail.open web");
                 return;
             }
             if (this.d.a(this.b, adItemData.Z(), materialData.ag(), materialData.ah())) {
                 hashMap.put("jumpRet", "1");
-                com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, adItemData, materialData, z, iArr, hashMap);
+                com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, adItemData, materialData, z, iArr, hashMap);
                 aVar.a(a.b.MINI_PROGRAM).a("1");
                 aVar.a(this.b);
                 a(9, cVar);
                 str = "handleMiniProgramAndSTEvent open success.";
             } else {
-                a(materialData.m(), adItemData, z, iArr, aVar, interfaceC0687b, bVar, cVar);
+                a(materialData.m(), adItemData, z, iArr, aVar, interfaceC0517b, bVar, cVar);
                 hashMap.put("jumpRet", "0");
-                com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, adItemData, materialData, z, iArr, hashMap);
+                com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, adItemData, materialData, z, iArr, hashMap);
                 str = "handleMiniProgramAndSTEvent open fail.open web";
             }
             com.opos.cmn.an.f.a.a("AdHandler", str);
@@ -987,34 +987,34 @@ public class a {
         }
     }
 
-    private void e(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    private void e(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         MaterialData materialData;
         com.opos.cmn.an.f.a.b("AdHandler", "handleFloatLayerAdClickActionAndStEvent adItemData=", adItemData);
         if (adItemData == null || (materialData = adItemData.i().get(0)) == null) {
             return;
         }
-        aVar.a(a.EnumC0736a.FLOATLAYER_BUTTON).a(iArr);
+        aVar.a(a.EnumC0566a.FLOATLAYER_BUTTON).a(iArr);
         HashMap hashMap = new HashMap();
         if (map != null && !map.isEmpty()) {
             hashMap.putAll(map);
         }
         com.opos.mobad.cmn.a.b.d.a(hashMap, "4", String.valueOf(materialData.V()));
-        a(materialData.V(), adItemData, materialData, z, iArr, hashMap, aVar, z2, interfaceC0687b, bVar, cVar);
+        a(materialData.V(), adItemData, materialData, z, iArr, hashMap, aVar, z2, interfaceC0517b, bVar, cVar);
     }
 
-    private void f(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar, c cVar) {
+    private void f(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.service.g.a aVar, boolean z2, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar, c cVar) {
         MaterialData materialData;
         com.opos.cmn.an.f.a.b("AdHandler", "handleFloatLayerExtraAdClickActionAndStEvent adItemData=", adItemData);
         if (adItemData == null || (materialData = adItemData.i().get(0)) == null) {
             return;
         }
-        aVar.a(a.EnumC0736a.FLOATLAYER_EXTRA).a(iArr);
+        aVar.a(a.EnumC0566a.FLOATLAYER_EXTRA).a(iArr);
         HashMap hashMap = new HashMap();
         if (map != null && !map.isEmpty()) {
             hashMap.putAll(map);
         }
         com.opos.mobad.cmn.a.b.d.a(hashMap, "5", String.valueOf(materialData.W()));
-        a(materialData.W(), adItemData, materialData, z, iArr, hashMap, aVar, z2, interfaceC0687b, bVar, cVar);
+        a(materialData.W(), adItemData, materialData, z, iArr, hashMap, aVar, z2, interfaceC0517b, bVar, cVar);
     }
 
     public void a() {
@@ -1030,58 +1030,58 @@ public class a {
             return;
         }
         ActivatingData G = adItemData.G();
-        if (G == null || TextUtils.isEmpty(G.b) || TextUtils.isEmpty(G.f26456a)) {
-            com.opos.mobad.cmn.a.b.d.a(this.b, this.f25818c, (String) null, 2);
+        if (G == null || TextUtils.isEmpty(G.b) || TextUtils.isEmpty(G.f12768a)) {
+            com.opos.mobad.cmn.a.b.d.a(this.b, this.f12130c, (String) null, 2);
         } else if (a(G)) {
-            a(G.b, G.f26456a);
+            a(G.b, G.f12768a);
         }
     }
 
-    public void a(AdItemData adItemData, boolean z, b.InterfaceC0687b interfaceC0687b, EventDescription eventDescription) {
+    public void a(AdItemData adItemData, boolean z, b.InterfaceC0517b interfaceC0517b, EventDescription eventDescription) {
         if (adItemData != null) {
             try {
                 if (adItemData.i() == null || adItemData.i().size() <= 0) {
                     return;
                 }
-                a(adItemData.i().get(0).w(), adItemData, z, interfaceC0687b, eventDescription);
+                a(adItemData.i().get(0).w(), adItemData, z, interfaceC0517b, eventDescription);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.a("AdHandler", "", (Throwable) e);
             }
         }
     }
 
-    public void a(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.cmn.a.b.a aVar, View view, b.InterfaceC0687b interfaceC0687b, com.opos.mobad.cmn.a.b bVar) {
-        a(adItemData, z, iArr, map, aVar, view, interfaceC0687b, bVar, (c) null);
+    public void a(AdItemData adItemData, boolean z, int[] iArr, Map<String, String> map, com.opos.mobad.cmn.a.b.a aVar, View view, b.InterfaceC0517b interfaceC0517b, com.opos.mobad.cmn.a.b bVar) {
+        a(adItemData, z, iArr, map, aVar, view, interfaceC0517b, bVar, (c) null);
     }
 
-    public void a(final AdItemData adItemData, final boolean z, final int[] iArr, Map<String, String> map, final com.opos.mobad.cmn.a.b.a aVar, View view, final b.InterfaceC0687b interfaceC0687b, final com.opos.mobad.cmn.a.b bVar, final c cVar) {
+    public void a(final AdItemData adItemData, final boolean z, final int[] iArr, Map<String, String> map, final com.opos.mobad.cmn.a.b.a aVar, View view, final b.InterfaceC0517b interfaceC0517b, final com.opos.mobad.cmn.a.b bVar, final c cVar) {
         final HashMap hashMap = new HashMap();
         if (map != null && !map.isEmpty()) {
             hashMap.putAll(map);
         }
         com.opos.mobad.cmn.a.b.d.b(hashMap, o.a(this.b, view) ? "1" : "2");
         if (!com.opos.mobad.cmn.a.b.f.a(this.b, adItemData, aVar)) {
-            a(adItemData, z, iArr, (Map<String, String>) hashMap, aVar, false, interfaceC0687b, bVar, cVar);
+            a(adItemData, z, iArr, (Map<String, String>) hashMap, aVar, false, interfaceC0517b, bVar, cVar);
             return;
         }
         b bVar2 = this.e;
         if (bVar2 != null) {
-            bVar2.a(new InterfaceC0679a() { // from class: com.opos.mobad.cmn.a.a.1
-                @Override // com.opos.mobad.cmn.a.a.InterfaceC0679a
+            bVar2.a(new InterfaceC0509a() { // from class: com.opos.mobad.cmn.a.a.1
+                @Override // com.opos.mobad.cmn.a.a.InterfaceC0509a
                 public void a() {
                     com.opos.cmn.an.f.a.b("AdHandler", "download confirm");
                     com.opos.mobad.cmn.a.b.f.a(false);
-                    a.this.a(adItemData, z, iArr, (Map<String, String>) hashMap, aVar, false, interfaceC0687b, bVar, cVar);
+                    a.this.a(adItemData, z, iArr, (Map<String, String>) hashMap, aVar, false, interfaceC0517b, bVar, cVar);
                 }
 
-                @Override // com.opos.mobad.cmn.a.a.InterfaceC0679a
+                @Override // com.opos.mobad.cmn.a.a.InterfaceC0509a
                 public void b() {
                     com.opos.cmn.an.f.a.b("AdHandler", "download cancel");
-                    a.this.a(adItemData, z, iArr, (Map<String, String>) hashMap, aVar, true, interfaceC0687b, bVar, cVar);
+                    a.this.a(adItemData, z, iArr, (Map<String, String>) hashMap, aVar, true, interfaceC0517b, bVar, cVar);
                 }
             });
         } else {
-            a(adItemData, z, iArr, (Map<String, String>) hashMap, aVar, false, interfaceC0687b, bVar, cVar);
+            a(adItemData, z, iArr, (Map<String, String>) hashMap, aVar, false, interfaceC0517b, bVar, cVar);
         }
     }
 

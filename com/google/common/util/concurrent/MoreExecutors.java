@@ -444,7 +444,7 @@ public final class MoreExecutors {
         return new Executor() { // from class: com.google.common.util.concurrent.MoreExecutors.2
             @Override // java.util.concurrent.Executor
             public void execute(Runnable runnable) {
-                Executor.this.execute(Callables.threadRenaming(runnable, supplier));
+                executor.execute(Callables.threadRenaming(runnable, supplier));
             }
         };
     }
@@ -506,7 +506,7 @@ public final class MoreExecutors {
         submit.addListener(new Runnable() { // from class: com.google.common.util.concurrent.MoreExecutors.1
             @Override // java.lang.Runnable
             public void run() {
-                BlockingQueue.this.add(submit);
+                blockingQueue.add(submit);
             }
         }, directExecutor());
         return submit;

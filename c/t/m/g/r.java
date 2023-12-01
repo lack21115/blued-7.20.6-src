@@ -4,11 +4,11 @@ package c.t.m.g;
 public class r {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f3953a = 5;
+    public static int f3905a = 5;
     public static int b = 10;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f3954c = 25;
+    public static int f3906c = 25;
     public static float d = 0.9f;
     public static double[][] e;
     public static double[][] f;

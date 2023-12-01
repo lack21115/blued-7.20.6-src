@@ -4,16 +4,16 @@ package com.tencent.liteav.videoproducer.encoder;
 public final /* synthetic */ class ao implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ai f36987a;
+    private final ai f23296a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f36988c;
+    private final int f23297c;
 
     private ao(ai aiVar, int i, int i2) {
-        this.f36987a = aiVar;
+        this.f23296a = aiVar;
         this.b = i;
-        this.f36988c = i2;
+        this.f23297c = i2;
     }
 
     public static Runnable a(ai aiVar, int i, int i2) {
@@ -22,6 +22,6 @@ public final /* synthetic */ class ao implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ai.a(this.f36987a, this.b, this.f36988c);
+        ai.a(this.f23296a, this.b, this.f23297c);
     }
 }

@@ -13,14 +13,14 @@ import java.util.concurrent.Callable;
 public class a extends com.opos.mobad.l.b implements com.opos.mobad.ad.e.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f26271a;
+    private final Context f12583a;
     private final b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f26272c;
+    private final String f12584c;
     private final com.opos.mobad.ad.e.f d;
     private int g;
-    private a.C0707a h;
+    private a.C0537a h;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.mobad.k.a$2  reason: invalid class name */
@@ -30,17 +30,17 @@ public class a extends com.opos.mobad.l.b implements com.opos.mobad.ad.e.a {
         }
 
         @Override // com.opos.mobad.model.b.a
-        public void a(final int i, final a.C0707a c0707a) {
-            if (c0707a == null || c0707a.f26482a.a() != 1) {
+        public void a(final int i, final a.C0537a c0537a) {
+            if (c0537a == null || c0537a.f12794a.a() != 1) {
                 a.this.c(new Callable<Boolean>() { // from class: com.opos.mobad.k.a.2.1
                     @Override // java.util.concurrent.Callable
                     /* renamed from: a */
                     public Boolean call() throws Exception {
                         a.this.g = i;
-                        if (c0707a != null) {
-                            a.this.h = c0707a;
+                        if (c0537a != null) {
+                            a.this.h = c0537a;
                             com.opos.cmn.an.f.a.b("InterHotSplash$StateAd", "fetchAd success");
-                            final f.a a2 = f.a(a.this.d, c0707a);
+                            final f.a a2 = f.a(a.this.d, c0537a);
                             if (a2 != null) {
                                 a.this.a(new Runnable() { // from class: com.opos.mobad.k.a.2.1.1
                                     @Override // java.lang.Runnable
@@ -57,8 +57,8 @@ public class a extends com.opos.mobad.l.b implements com.opos.mobad.ad.e.a {
                 });
                 return;
             }
-            com.opos.mobad.service.a.a().a(a.this.f26272c, 6, c0707a.b.f(), c0707a.b.b(), c0707a.f26483c.aa(), c0707a.b.a(), c0707a.b.J());
-            a.this.g = c0707a.f26482a.c();
+            com.opos.mobad.service.a.a().a(a.this.f12584c, 6, c0537a.b.f(), c0537a.b.b(), c0537a.f12795c.aa(), c0537a.b.a(), c0537a.b.J());
+            a.this.g = c0537a.f12794a.c();
             a.this.c(-1, com.opos.cmn.a.a(-1));
         }
 
@@ -75,10 +75,10 @@ public class a extends com.opos.mobad.l.b implements com.opos.mobad.ad.e.a {
     public a(Context context, String str, com.opos.mobad.cmn.a.d dVar, com.opos.mobad.ad.e.c cVar, com.opos.mobad.ad.e.f fVar) {
         super(cVar);
         Context a2 = com.opos.mobad.service.b.a(context.getApplicationContext());
-        this.f26271a = a2;
-        this.f26272c = str;
+        this.f12583a = a2;
+        this.f12584c = str;
         this.d = fVar;
-        this.b = new b(this.f26271a, str, new com.opos.mobad.cmn.a.a(a2, str, dVar), new d() { // from class: com.opos.mobad.k.a.1
+        this.b = new b(this.f12583a, str, new com.opos.mobad.cmn.a.a(a2, str, dVar), new d() { // from class: com.opos.mobad.k.a.1
             @Override // com.opos.mobad.cmn.a.a.a.b
             public void a(int i, String str2) {
                 a.this.c(i, str2);
@@ -104,7 +104,7 @@ public class a extends com.opos.mobad.l.b implements com.opos.mobad.ad.e.a {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(f.a aVar) {
         if (this.b != null) {
-            this.b.a(aVar, g.a(this.f26271a, aVar.b, null), e.a(aVar, this.f26271a, aVar.f26293a), b(aVar));
+            this.b.a(aVar, g.a(this.f12583a, aVar.b, null), e.a(aVar, this.f12583a, aVar.f12605a), b(aVar));
         }
     }
 
@@ -149,7 +149,7 @@ public class a extends com.opos.mobad.l.b implements com.opos.mobad.ad.e.a {
     @Override // com.opos.mobad.l.j
     public boolean b(String str, int i) {
         this.g = 0;
-        com.opos.mobad.model.b.a(this.f26271a.getApplicationContext()).a(this.f26271a, this.f26272c, 6, str, i, new AnonymousClass2());
+        com.opos.mobad.model.b.a(this.f12583a.getApplicationContext()).a(this.f12583a, this.f12584c, 6, str, i, new AnonymousClass2());
         return true;
     }
 
@@ -168,14 +168,14 @@ public class a extends com.opos.mobad.l.b implements com.opos.mobad.ad.e.a {
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public int f() {
-        a.C0707a c0707a;
-        return (!e() || (c0707a = this.h) == null) ? super.f() : c0707a.b.X();
+        a.C0537a c0537a;
+        return (!e() || (c0537a = this.h) == null) ? super.f() : c0537a.b.X();
     }
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public int g() {
-        a.C0707a c0707a;
-        return (!e() || (c0707a = this.h) == null) ? super.g() : c0707a.b.Y();
+        a.C0537a c0537a;
+        return (!e() || (c0537a = this.h) == null) ? super.g() : c0537a.b.Y();
     }
 
     @Override // com.opos.mobad.ad.e.b

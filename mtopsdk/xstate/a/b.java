@@ -19,9 +19,9 @@ public abstract class b extends Binder implements a {
     public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
         if (i == 1) {
             parcel.enforceInterface("mtopsdk.xstate.aidl.IXState");
-            String a2 = a(parcel.readString());
+            String a = a(parcel.readString());
             parcel2.writeNoException();
-            parcel2.writeString(a2);
+            parcel2.writeString(a);
             return true;
         } else if (i == 2) {
             parcel.enforceInterface("mtopsdk.xstate.aidl.IXState");

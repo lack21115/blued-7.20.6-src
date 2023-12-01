@@ -21,7 +21,6 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.CalendarView;
 import com.android.internal.R;
-import com.google.android.material.timepicker.TimeModel;
 import java.util.Calendar;
 import java.util.Locale;
 import libcore.icu.LocaleData;
@@ -334,7 +333,7 @@ public class CalendarViewLegacyDelegate extends CalendarView.AbstractCalendarVie
             this.mFocusDay = new boolean[this.mNumCells];
             int i4 = 0;
             if (CalendarViewLegacyDelegate.this.mShowWeekNumber) {
-                this.mDayNumbers[0] = String.format(Locale.getDefault(), TimeModel.NUMBER_FORMAT, Integer.valueOf(CalendarViewLegacyDelegate.this.mTempDate.get(3)));
+                this.mDayNumbers[0] = String.format(Locale.getDefault(), "%d", Integer.valueOf(CalendarViewLegacyDelegate.this.mTempDate.get(3)));
                 i4 = 0 + 1;
             }
             CalendarViewLegacyDelegate.this.mTempDate.add(5, CalendarViewLegacyDelegate.this.mFirstDayOfWeek - CalendarViewLegacyDelegate.this.mTempDate.get(7));
@@ -349,7 +348,7 @@ public class CalendarViewLegacyDelegate extends CalendarView.AbstractCalendarVie
                 if (CalendarViewLegacyDelegate.this.mTempDate.before(CalendarViewLegacyDelegate.this.mMinDate) || CalendarViewLegacyDelegate.this.mTempDate.after(CalendarViewLegacyDelegate.this.mMaxDate)) {
                     this.mDayNumbers[i4] = "";
                 } else {
-                    this.mDayNumbers[i4] = String.format(Locale.getDefault(), TimeModel.NUMBER_FORMAT, Integer.valueOf(CalendarViewLegacyDelegate.this.mTempDate.get(5)));
+                    this.mDayNumbers[i4] = String.format(Locale.getDefault(), "%d", Integer.valueOf(CalendarViewLegacyDelegate.this.mTempDate.get(5)));
                 }
                 CalendarViewLegacyDelegate.this.mTempDate.add(5, 1);
                 i4++;
@@ -526,7 +525,7 @@ public class CalendarViewLegacyDelegate extends CalendarView.AbstractCalendarVie
         this.mWeekSeparatorLineColor = obtainStyledAttributes.getColor(9, 0);
         this.mWeekNumberColor = obtainStyledAttributes.getColor(8, 0);
         this.mSelectedDateVerticalBar = obtainStyledAttributes.getDrawable(10);
-        this.mDateTextAppearanceResId = obtainStyledAttributes.getResourceId(12, 16973894);
+        this.mDateTextAppearanceResId = obtainStyledAttributes.getResourceId(12, R.style.TextAppearance_Small);
         updateDateTextSize();
         this.mWeekDayTextAppearanceResId = obtainStyledAttributes.getResourceId(11, -1);
         obtainStyledAttributes.recycle();
@@ -536,9 +535,9 @@ public class CalendarViewLegacyDelegate extends CalendarView.AbstractCalendarVie
         this.mBottomBuffer = (int) TypedValue.applyDimension(1, 20.0f, displayMetrics);
         this.mSelectedDateVerticalBarWidth = (int) TypedValue.applyDimension(1, 6.0f, displayMetrics);
         this.mWeekSeperatorLineWidth = (int) TypedValue.applyDimension(1, 1.0f, displayMetrics);
-        View inflate = ((LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.calendar_view, (ViewGroup) null, false);
+        View inflate = ((LayoutInflater) this.mContext.getSystemService("layout_inflater")).inflate(R.layout.calendar_view, (ViewGroup) null, false);
         this.mDelegator.addView(inflate);
-        this.mListView = (ListView) this.mDelegator.findViewById(16908298);
+        this.mListView = (ListView) this.mDelegator.findViewById(R.id.list);
         this.mDayNamesHeader = (ViewGroup) inflate.findViewById(R.id.day_names);
         this.mMonthName = (TextView) inflate.findViewById(R.id.month_name);
         setUpHeader();
@@ -570,7 +569,7 @@ public class CalendarViewLegacyDelegate extends CalendarView.AbstractCalendarVie
         if (calendar.before(this.mMinDate)) {
             throw new IllegalArgumentException("fromDate: " + this.mMinDate.getTime() + " does not precede toDate: " + calendar.getTime());
         }
-        return (int) ((((calendar.getTimeInMillis() + calendar.getTimeZone().getOffset(calendar.getTimeInMillis())) - (this.mMinDate.getTimeInMillis() + this.mMinDate.getTimeZone().getOffset(this.mMinDate.getTimeInMillis()))) + ((this.mMinDate.get(7) - this.mFirstDayOfWeek) * 86400000)) / 604800000);
+        return (int) ((((calendar.getTimeInMillis() + calendar.getTimeZone().getOffset(calendar.getTimeInMillis())) - (this.mMinDate.getTimeInMillis() + this.mMinDate.getTimeZone().getOffset(this.mMinDate.getTimeInMillis()))) + ((this.mMinDate.get(7) - this.mFirstDayOfWeek) * MILLIS_IN_DAY)) / MILLIS_IN_WEEK);
     }
 
     private void goTo(Calendar calendar, boolean z, boolean z2, boolean z3) {

@@ -8,7 +8,7 @@ public final class g {
     @SerializedName("enable_upload")
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f41753a;
+    private boolean f28062a;
     @SerializedName("url_pattern")
     private List<String> b;
 
@@ -17,11 +17,11 @@ public final class g {
     }
 
     public final void a(boolean z) {
-        this.f41753a = false;
+        this.f28062a = false;
     }
 
     public final boolean a() {
-        return this.f41753a;
+        return this.f28062a;
     }
 
     public final List<String> b() {

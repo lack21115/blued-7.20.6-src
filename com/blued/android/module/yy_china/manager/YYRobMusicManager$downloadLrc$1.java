@@ -16,19 +16,15 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYRobMusicManager$downloadLrc$1.class */
 public final class YYRobMusicManager$downloadLrc$1 extends FileHttpResponseHandler {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ String f17571a;
+    final /* synthetic */ String a;
     final /* synthetic */ boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ YYRobMusicManager f17572c;
+    final /* synthetic */ YYRobMusicManager c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public YYRobMusicManager$downloadLrc$1(String str, boolean z, YYRobMusicManager yYRobMusicManager) {
-        this.f17571a = str;
+        this.a = str;
         this.b = z;
-        this.f17572c = yYRobMusicManager;
+        this.c = yYRobMusicManager;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -69,9 +65,9 @@ public final class YYRobMusicManager$downloadLrc$1 extends FileHttpResponseHandl
     public void onSuccess(final File file) {
         Intrinsics.e(file, "file");
         Handler n = AppInfo.n();
-        final String str = this.f17571a;
+        final String str = this.a;
         final boolean z = this.b;
-        final YYRobMusicManager yYRobMusicManager = this.f17572c;
+        final YYRobMusicManager yYRobMusicManager = this.c;
         n.post(new Runnable() { // from class: com.blued.android.module.yy_china.manager.-$$Lambda$YYRobMusicManager$downloadLrc$1$aUd4SMAN4Nc9Xj1wYYNvQ_SarpA
             @Override // java.lang.Runnable
             public final void run() {

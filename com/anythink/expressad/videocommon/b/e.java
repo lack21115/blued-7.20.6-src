@@ -12,11 +12,11 @@ import java.util.concurrent.TimeUnit;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8734a = "DownLoadManager";
+    private static final String f5894a = "DownLoadManager";
     private static e b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ThreadPoolExecutor f8735c;
+    private ThreadPoolExecutor f5895c;
     private boolean d = false;
     private ConcurrentHashMap<String, n> e = new ConcurrentHashMap<>();
     private Map<String, List<Map<String, c>>> f;
@@ -25,7 +25,7 @@ public class e {
 
     private e() {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 15, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new ThreadPoolExecutor.DiscardPolicy());
-        this.f8735c = threadPoolExecutor;
+        this.f5895c = threadPoolExecutor;
         threadPoolExecutor.allowCoreThreadTimeOut(true);
     }
 
@@ -49,7 +49,7 @@ public class e {
             return null;
         }
         if (!this.e.containsKey(str)) {
-            n nVar = new n(cVar, this.f8735c, str, i);
+            n nVar = new n(cVar, this.f5895c, str, i);
             if (bVar != null) {
                 nVar.a(bVar);
             }
@@ -78,7 +78,7 @@ public class e {
                 nVar.a();
             }
         } catch (Exception e) {
-            com.anythink.expressad.foundation.h.o.d(f8734a, e.getMessage());
+            com.anythink.expressad.foundation.h.o.d(f5894a, e.getMessage());
             try {
                 if (TextUtils.isEmpty(str)) {
                     return;
@@ -95,7 +95,7 @@ public class e {
                     nVar.a();
                 }
             } catch (Exception e2) {
-                com.anythink.expressad.foundation.h.o.d(f8734a, e2.getMessage());
+                com.anythink.expressad.foundation.h.o.d(f5894a, e2.getMessage());
             }
         }
     }
@@ -158,7 +158,7 @@ public class e {
             return null;
         }
         if (!this.e.containsKey(str)) {
-            n nVar = new n(list, this.f8735c, str, i);
+            n nVar = new n(list, this.f5895c, str, i);
             if (bVar != null) {
                 nVar.a(bVar);
             }
@@ -205,7 +205,7 @@ public class e {
             }
             return false;
         } catch (Exception e) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
                 return false;
             }
@@ -277,7 +277,7 @@ public class e {
                         }
                     }
                 } catch (Exception e) {
-                    com.anythink.expressad.foundation.h.o.d(f8734a, e.getMessage());
+                    com.anythink.expressad.foundation.h.o.d(f5894a, e.getMessage());
                     try {
                         if (!TextUtils.isEmpty(key)) {
                             com.anythink.expressad.d.b.a();
@@ -293,7 +293,7 @@ public class e {
                             }
                         }
                     } catch (Exception e2) {
-                        com.anythink.expressad.foundation.h.o.d(f8734a, e2.getMessage());
+                        com.anythink.expressad.foundation.h.o.d(f5894a, e2.getMessage());
                     }
                 }
             }

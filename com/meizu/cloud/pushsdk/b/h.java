@@ -4,7 +4,7 @@ package com.meizu.cloud.pushsdk.b;
 public class h<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private T f23992a;
+    private T f10381a;
     private T b;
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -17,7 +17,7 @@ public class h<T> {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public T c() {
-        T t = this.f23992a;
+        T t = this.f10381a;
         return t != null ? t : this.b;
     }
 }

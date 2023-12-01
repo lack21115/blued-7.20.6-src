@@ -7,11 +7,11 @@ import com.tencent.ugc.UGCVideoProcessor;
 public final /* synthetic */ class fw implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCVideoProcessor f40400a;
+    private final UGCVideoProcessor f26709a;
     private final UGCVideoProcessor.VideoProcessListener b;
 
     private fw(UGCVideoProcessor uGCVideoProcessor, UGCVideoProcessor.VideoProcessListener videoProcessListener) {
-        this.f40400a = uGCVideoProcessor;
+        this.f26709a = uGCVideoProcessor;
         this.b = videoProcessListener;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class fw implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40400a.mVideoProcessListener = this.b;
+        this.f26709a.mVideoProcessListener = this.b;
     }
 }

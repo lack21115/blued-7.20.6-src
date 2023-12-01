@@ -38,7 +38,7 @@ public class StringsKt__IndentKt extends StringsKt__AppendableKt {
         int length = str.length();
         int length2 = newIndent.length();
         int size = g.size();
-        Function1<String, String> c2 = c(newIndent);
+        Function1<String, String> c = c(newIndent);
         int b = CollectionsKt.b((List) g);
         ArrayList arrayList4 = new ArrayList();
         for (String str5 : list) {
@@ -49,10 +49,10 @@ public class StringsKt__IndentKt extends StringsKt__AppendableKt {
             if ((i == 0 || i == b) && StringsKt.a((CharSequence) str6)) {
                 str2 = null;
             } else {
-                String c3 = StringsKt.c(str6, intValue);
+                String c2 = StringsKt.c(str6, intValue);
                 str2 = str6;
-                if (c3 != null) {
-                    str2 = c2.invoke(c3);
+                if (c2 != null) {
+                    str2 = c.invoke(c2);
                     if (str2 == null) {
                         str2 = str6;
                     }

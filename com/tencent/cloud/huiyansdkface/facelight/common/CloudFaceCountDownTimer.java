@@ -8,11 +8,11 @@ import android.os.SystemClock;
 public abstract class CloudFaceCountDownTimer {
 
     /* renamed from: a  reason: collision with root package name */
-    private final long f35583a;
+    private final long f21892a;
     private final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f35584c;
+    private long f21893c;
     private boolean d = false;
     private Handler e = new Handler() { // from class: com.tencent.cloud.huiyansdkface.facelight.common.CloudFaceCountDownTimer.1
         @Override // android.os.Handler
@@ -21,7 +21,7 @@ public abstract class CloudFaceCountDownTimer {
                 if (CloudFaceCountDownTimer.this.d) {
                     return;
                 }
-                long elapsedRealtime = CloudFaceCountDownTimer.this.f35584c - SystemClock.elapsedRealtime();
+                long elapsedRealtime = CloudFaceCountDownTimer.this.f21893c - SystemClock.elapsedRealtime();
                 if (elapsedRealtime <= 0) {
                     CloudFaceCountDownTimer.this.onFinish();
                 } else if (elapsedRealtime < CloudFaceCountDownTimer.this.b) {
@@ -40,7 +40,7 @@ public abstract class CloudFaceCountDownTimer {
     };
 
     public CloudFaceCountDownTimer(long j, long j2) {
-        this.f35583a = j;
+        this.f21892a = j;
         this.b = j2;
     }
 
@@ -58,11 +58,11 @@ public abstract class CloudFaceCountDownTimer {
     public final CloudFaceCountDownTimer start() {
         synchronized (this) {
             this.d = false;
-            if (this.f35583a <= 0) {
+            if (this.f21892a <= 0) {
                 onFinish();
                 return this;
             }
-            this.f35584c = SystemClock.elapsedRealtime() + this.f35583a;
+            this.f21893c = SystemClock.elapsedRealtime() + this.f21892a;
             this.e.sendMessage(this.e.obtainMessage(1));
             return this;
         }

@@ -4,13 +4,9 @@ import com.amap.api.services.core.LatLonPoint;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/ChargeStationInfo.class */
 public class ChargeStationInfo {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f5682a;
+    private int a;
     private LatLonPoint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LatLonPoint f5683c;
+    private LatLonPoint c;
     private String d;
     private String e;
     private String f;
@@ -50,7 +46,7 @@ public class ChargeStationInfo {
     }
 
     public LatLonPoint getProjectivePoint() {
-        return this.f5683c;
+        return this.c;
     }
 
     public int getRemainingCapacity() {
@@ -62,7 +58,7 @@ public class ChargeStationInfo {
     }
 
     public int getStepIndex() {
-        return this.f5682a;
+        return this.a;
     }
 
     public int getVoltage() {
@@ -98,7 +94,7 @@ public class ChargeStationInfo {
     }
 
     public void setProjectivePoint(LatLonPoint latLonPoint) {
-        this.f5683c = latLonPoint;
+        this.c = latLonPoint;
     }
 
     public void setRemainingCapacity(int i) {
@@ -110,7 +106,7 @@ public class ChargeStationInfo {
     }
 
     public void setStepIndex(int i) {
-        this.f5682a = i;
+        this.a = i;
     }
 
     public void setVoltage(int i) {

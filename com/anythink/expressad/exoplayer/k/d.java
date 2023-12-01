@@ -13,10 +13,10 @@ public final class d {
     private static final int j = 31;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f7643a = {0, 0, 0, 1};
+    private static final byte[] f4804a = {0, 0, 0, 1};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int[] f7644c = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, 16000, 12000, 11025, 8000, 7350};
+    private static final int[] f4805c = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, 16000, 12000, 11025, 8000, 7350};
     private static final int[] e = {0, 1, 2, 3, 4, 5, 6, 8, -1, -1, -1, 7, 8, -1, 8, -1};
 
     private d() {
@@ -24,7 +24,7 @@ public final class d {
 
     private static int a(byte[] bArr, int i2) {
         int length = bArr.length;
-        int length2 = f7643a.length;
+        int length2 = f4804a.length;
         while (i2 <= length - length2) {
             if (b(bArr, i2)) {
                 return i2;
@@ -210,7 +210,7 @@ public final class d {
         int i4 = 0;
         int i5 = -1;
         while (true) {
-            int[] iArr = f7644c;
+            int[] iArr = f4805c;
             if (i4 >= iArr.length) {
                 break;
             }
@@ -238,10 +238,10 @@ public final class d {
     }
 
     public static byte[] a(byte[] bArr, int i2, int i3) {
-        byte[] bArr2 = f7643a;
+        byte[] bArr2 = f4804a;
         byte[] bArr3 = new byte[bArr2.length + i3];
-        System.arraycopy((Object) bArr2, 0, (Object) bArr3, 0, bArr2.length);
-        System.arraycopy((Object) bArr, i2, (Object) bArr3, f7643a.length, i3);
+        System.arraycopy(bArr2, 0, bArr3, 0, bArr2.length);
+        System.arraycopy(bArr, i2, bArr3, f4804a.length, i3);
         return bArr3;
     }
 
@@ -255,13 +255,13 @@ public final class d {
     }
 
     private static boolean b(byte[] bArr, int i2) {
-        if (bArr.length - i2 <= f7643a.length) {
+        if (bArr.length - i2 <= f4804a.length) {
             return false;
         }
         int i3 = 0;
         while (true) {
             int i4 = i3;
-            byte[] bArr2 = f7643a;
+            byte[] bArr2 = f4804a;
             if (i4 >= bArr2.length) {
                 return true;
             }
@@ -286,7 +286,7 @@ public final class d {
         int i2 = 0;
         do {
             arrayList.add(Integer.valueOf(i2));
-            a2 = a(bArr, i2 + f7643a.length);
+            a2 = a(bArr, i2 + f4804a.length);
             i2 = a2;
         } while (a2 != -1);
         ?? r0 = new byte[arrayList.size()];
@@ -299,7 +299,7 @@ public final class d {
             int intValue = ((Integer) arrayList.get(i4)).intValue();
             int intValue2 = (i4 < arrayList.size() - 1 ? ((Integer) arrayList.get(i4 + 1)).intValue() : bArr.length) - intValue;
             byte[] bArr2 = new byte[intValue2];
-            System.arraycopy((Object) bArr, intValue, (Object) bArr2, 0, intValue2);
+            System.arraycopy(bArr, intValue, bArr2, 0, intValue2);
             r0[i4] = bArr2;
             i3 = i4 + 1;
         }
@@ -311,6 +311,6 @@ public final class d {
             return rVar.c(24);
         }
         a.a(c2 < 13);
-        return f7644c[c2];
+        return f4805c[c2];
     }
 }

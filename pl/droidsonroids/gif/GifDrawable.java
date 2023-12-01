@@ -27,13 +27,9 @@ import pl.droidsonroids.gif.transforms.Transform;
 
 /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/GifDrawable.class */
 public class GifDrawable extends Drawable implements Animatable, MediaController.MediaPlayerControl {
-
-    /* renamed from: a  reason: collision with root package name */
-    final ScheduledThreadPoolExecutor f44129a;
+    final ScheduledThreadPoolExecutor a;
     volatile boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    long f44130c;
+    long c;
     protected final Paint d;
     final Bitmap e;
     final GifInfoHandle f;
@@ -54,14 +50,12 @@ public class GifDrawable extends Drawable implements Animatable, MediaController
     /* renamed from: pl.droidsonroids.gif.GifDrawable$3  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/GifDrawable$3.class */
     class AnonymousClass3 extends SafeRunnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f44133a;
+        final /* synthetic */ int a;
         final /* synthetic */ GifDrawable b;
 
         @Override // pl.droidsonroids.gif.SafeRunnable
         public void a() {
-            this.b.f.b(this.f44133a, this.b.e);
+            this.b.f.b(this.a, this.b.e);
             this.b.i.sendEmptyMessageAtTime(-1, 0L);
         }
     }
@@ -76,9 +70,9 @@ public class GifDrawable extends Drawable implements Animatable, MediaController
 
     public GifDrawable(Resources resources, int i) throws Resources.NotFoundException, IOException {
         this(resources.openRawResourceFd(i));
-        float a2 = GifViewUtils.a(resources, i);
-        this.r = (int) (this.f.o() * a2);
-        this.q = (int) (this.f.n() * a2);
+        float a = GifViewUtils.a(resources, i);
+        this.r = (int) (this.f.o() * a);
+        this.q = (int) (this.f.n() * a);
     }
 
     public GifDrawable(String str) throws IOException {
@@ -87,13 +81,13 @@ public class GifDrawable extends Drawable implements Animatable, MediaController
 
     GifDrawable(GifInfoHandle gifInfoHandle, GifDrawable gifDrawable, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor, boolean z) {
         this.b = true;
-        this.f44130c = Long.MIN_VALUE;
+        this.c = Long.MIN_VALUE;
         this.k = new Rect();
         this.d = new Paint(6);
         this.g = new ConcurrentLinkedQueue<>();
         this.o = new RenderTask(this);
         this.h = z;
-        this.f44129a = scheduledThreadPoolExecutor == null ? GifRenderingExecutor.a() : scheduledThreadPoolExecutor;
+        this.a = scheduledThreadPoolExecutor == null ? GifRenderingExecutor.a() : scheduledThreadPoolExecutor;
         this.f = gifInfoHandle;
         Bitmap bitmap = null;
         if (gifDrawable != null) {
@@ -155,12 +149,12 @@ public class GifDrawable extends Drawable implements Animatable, MediaController
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(long j) {
         if (this.h) {
-            this.f44130c = 0L;
+            this.c = 0L;
             this.i.sendEmptyMessageAtTime(-1, 0L);
             return;
         }
         g();
-        this.j = this.f44129a.schedule(this.o, Math.max(j, 0L), TimeUnit.MILLISECONDS);
+        this.j = this.a.schedule(this.o, Math.max(j, 0L), TimeUnit.MILLISECONDS);
     }
 
     public boolean a() {
@@ -168,7 +162,7 @@ public class GifDrawable extends Drawable implements Animatable, MediaController
     }
 
     public void b() {
-        this.f44129a.execute(new SafeRunnable(this) { // from class: pl.droidsonroids.gif.GifDrawable.1
+        this.a.execute(new SafeRunnable(this) { // from class: pl.droidsonroids.gif.GifDrawable.1
             @Override // pl.droidsonroids.gif.SafeRunnable
             public void a() {
                 if (GifDrawable.this.f.c()) {
@@ -220,12 +214,12 @@ public class GifDrawable extends Drawable implements Animatable, MediaController
             this.d.setColorFilter(null);
         }
         if (this.h && this.b) {
-            long j = this.f44130c;
+            long j = this.c;
             if (j != Long.MIN_VALUE) {
                 long max = Math.max(0L, j - SystemClock.uptimeMillis());
-                this.f44130c = Long.MIN_VALUE;
-                this.f44129a.remove(this.o);
-                this.j = this.f44129a.schedule(this.o, max, TimeUnit.MILLISECONDS);
+                this.c = Long.MIN_VALUE;
+                this.a.remove(this.o);
+                this.j = this.a.schedule(this.o, max, TimeUnit.MILLISECONDS);
             }
         }
     }
@@ -306,9 +300,8 @@ public class GifDrawable extends Drawable implements Animatable, MediaController
         return colorStateList != null && colorStateList.isStateful();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
+    protected void onBoundsChange(Rect rect) {
         this.k.set(rect);
         Transform transform = this.s;
         if (transform != null) {
@@ -316,9 +309,8 @@ public class GifDrawable extends Drawable implements Animatable, MediaController
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.drawable.Drawable
-    public boolean onStateChange(int[] iArr) {
+    protected boolean onStateChange(int[] iArr) {
         PorterDuff.Mode mode;
         ColorStateList colorStateList = this.l;
         if (colorStateList == null || (mode = this.n) == null) {
@@ -338,11 +330,11 @@ public class GifDrawable extends Drawable implements Animatable, MediaController
         if (i < 0) {
             throw new IllegalArgumentException("Position is not positive");
         }
-        this.f44129a.execute(new SafeRunnable(this) { // from class: pl.droidsonroids.gif.GifDrawable.2
+        this.a.execute(new SafeRunnable(this) { // from class: pl.droidsonroids.gif.GifDrawable.2
             @Override // pl.droidsonroids.gif.SafeRunnable
             public void a() {
                 GifDrawable.this.f.a(i, GifDrawable.this.e);
-                this.f44170c.i.sendEmptyMessageAtTime(-1, 0L);
+                this.c.i.sendEmptyMessageAtTime(-1, 0L);
             }
         });
     }
@@ -403,7 +395,7 @@ public class GifDrawable extends Drawable implements Animatable, MediaController
         return visible;
     }
 
-    @Override // android.graphics.drawable.Animatable
+    @Override // android.graphics.drawable.Animatable, android.widget.MediaController.MediaPlayerControl
     public void start() {
         synchronized (this) {
             if (this.b) {

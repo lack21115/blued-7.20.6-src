@@ -11,18 +11,18 @@ import java.util.Map;
 class k extends j {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<String, String> f22339a;
+    private final Map<String, String> f8731a;
     private final Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    private g f22340c;
+    private g f8732c;
     private boolean d;
     private final String e;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public k(Context context, String str) {
         super(context, str);
-        this.f22339a = new HashMap();
+        this.f8731a = new HashMap();
         this.b = new Object();
         this.d = true;
         this.e = str;
@@ -34,11 +34,11 @@ class k extends j {
             if (a2 == null || a3 == null || a4 == null || a5 == null) {
                 this.d = false;
             } else {
-                this.f22340c = new f(a2, a3, a4, a5);
+                this.f8732c = new f(a2, a3, a4, a5);
             }
         } catch (IllegalArgumentException | NoSuchAlgorithmException | InvalidKeySpecException e) {
             Log.e("SecurityResourcesReader", "Exception when reading the 'K&I' for 'Config'.");
-            this.f22340c = null;
+            this.f8732c = null;
         }
     }
 
@@ -54,12 +54,12 @@ class k extends j {
                 str2 = a2;
             }
             return str2;
-        } else if (this.f22340c == null) {
+        } else if (this.f8732c == null) {
             Log.e("SecurityResourcesReader", "KEY is null return def directly");
             return str2;
         } else {
             synchronized (this.b) {
-                String str3 = this.f22339a.get(str);
+                String str3 = this.f8731a.get(str);
                 if (str3 != null) {
                     return str3;
                 }
@@ -67,8 +67,8 @@ class k extends j {
                 if (a3 == null) {
                     return str2;
                 }
-                String a4 = this.f22340c.a(a3, str2);
-                this.f22339a.put(str, a4);
+                String a4 = this.f8732c.a(a3, str2);
+                this.f8731a.put(str, a4);
                 return a4;
             }
         }

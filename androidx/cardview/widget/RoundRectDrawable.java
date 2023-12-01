@@ -16,10 +16,10 @@ import android.graphics.drawable.Drawable;
 public class RoundRectDrawable extends Drawable {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f1936a;
+    private float f1888a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final RectF f1937c;
+    private final RectF f1889c;
     private final Rect d;
     private float e;
     private ColorStateList h;
@@ -32,9 +32,9 @@ public class RoundRectDrawable extends Drawable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public RoundRectDrawable(ColorStateList colorStateList, float f) {
-        this.f1936a = f;
+        this.f1888a = f;
         a(colorStateList);
-        this.f1937c = new RectF();
+        this.f1889c = new RectF();
         this.d = new Rect();
     }
 
@@ -59,12 +59,12 @@ public class RoundRectDrawable extends Drawable {
         if (rect == null) {
             rect2 = getBounds();
         }
-        this.f1937c.set(rect2.left, rect2.top, rect2.right, rect2.bottom);
+        this.f1889c.set(rect2.left, rect2.top, rect2.right, rect2.bottom);
         this.d.set(rect2);
         if (this.f) {
-            float a2 = RoundRectDrawableWithShadow.a(this.e, this.f1936a, this.g);
-            this.d.inset((int) Math.ceil(RoundRectDrawableWithShadow.b(this.e, this.f1936a, this.g)), (int) Math.ceil(a2));
-            this.f1937c.set(this.d);
+            float a2 = RoundRectDrawableWithShadow.a(this.e, this.f1888a, this.g);
+            this.d.inset((int) Math.ceil(RoundRectDrawableWithShadow.b(this.e, this.f1888a, this.g)), (int) Math.ceil(a2));
+            this.f1889c.set(this.d);
         }
     }
 
@@ -75,10 +75,10 @@ public class RoundRectDrawable extends Drawable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(float f) {
-        if (f == this.f1936a) {
+        if (f == this.f1888a) {
             return;
         }
-        this.f1936a = f;
+        this.f1888a = f;
         a((Rect) null);
         invalidateSelf();
     }
@@ -105,8 +105,8 @@ public class RoundRectDrawable extends Drawable {
             paint.setColorFilter(this.i);
             z = true;
         }
-        RectF rectF = this.f1937c;
-        float f = this.f1936a;
+        RectF rectF = this.f1889c;
+        float f = this.f1888a;
         canvas.drawRoundRect(rectF, f, f, paint);
         if (z) {
             paint.setColorFilter(null);
@@ -124,11 +124,11 @@ public class RoundRectDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void getOutline(Outline outline) {
-        outline.setRoundRect(this.d, this.f1936a);
+        outline.setRoundRect(this.d, this.f1888a);
     }
 
     public float getRadius() {
-        return this.f1936a;
+        return this.f1888a;
     }
 
     @Override // android.graphics.drawable.Drawable

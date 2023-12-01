@@ -46,20 +46,20 @@ public final class p {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f8080a;
+        private int f5240a;
         private int b;
 
         private d(int i, int i2) {
-            this.f8080a = i;
+            this.f5240a = i;
             this.b = i2;
         }
 
         private int a() {
-            return this.f8080a;
+            return this.f5240a;
         }
 
         private void a(int i) {
-            this.f8080a = i;
+            this.f5240a = i;
         }
 
         private int b() {

@@ -7,10 +7,10 @@ import com.tencent.liteav.beauty.b.f;
 final /* synthetic */ class g implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f.a f36382a;
+    private final f.a f22691a;
 
     private g(f.a aVar) {
-        this.f36382a = aVar;
+        this.f22691a = aVar;
     }
 
     public static Runnable a(f.a aVar) {
@@ -19,8 +19,8 @@ final /* synthetic */ class g implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f.a aVar = this.f36382a;
-        GLES20.glUniform1f(aVar.f36380a, aVar.f36381c / aVar.mOutputSize.f36340a);
+        f.a aVar = this.f22691a;
+        GLES20.glUniform1f(aVar.f22689a, aVar.f22690c / aVar.mOutputSize.f22649a);
         GLES20.glUniform1f(aVar.b, aVar.d / aVar.mOutputSize.b);
     }
 }

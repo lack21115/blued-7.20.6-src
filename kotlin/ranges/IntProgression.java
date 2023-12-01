@@ -9,13 +9,9 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/IntProgression.class */
 public class IntProgression implements Iterable<Integer>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42576a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f42577c;
+    private final int c;
     private final int d;
 
     @Metadata
@@ -41,7 +37,7 @@ public class IntProgression implements Iterable<Integer>, KMappedMarker {
             throw new IllegalArgumentException("Step must be greater than Int.MIN_VALUE to avoid overflow on negation.");
         }
         this.b = i;
-        this.f42577c = ProgressionUtilKt.a(i, i2, i3);
+        this.c = ProgressionUtilKt.a(i, i2, i3);
         this.d = i3;
     }
 
@@ -50,7 +46,7 @@ public class IntProgression implements Iterable<Integer>, KMappedMarker {
     }
 
     public final int b() {
-        return this.f42577c;
+        return this.c;
     }
 
     public final int c() {
@@ -60,11 +56,11 @@ public class IntProgression implements Iterable<Integer>, KMappedMarker {
     @Override // java.lang.Iterable
     /* renamed from: d */
     public IntIterator iterator() {
-        return new IntProgressionIterator(this.b, this.f42577c, this.d);
+        return new IntProgressionIterator(this.b, this.c, this.d);
     }
 
     public boolean e() {
-        return this.d > 0 ? this.b > this.f42577c : this.b < this.f42577c;
+        return this.d > 0 ? this.b > this.c : this.b < this.c;
     }
 
     public boolean equals(Object obj) {
@@ -73,7 +69,7 @@ public class IntProgression implements Iterable<Integer>, KMappedMarker {
                 return true;
             }
             IntProgression intProgression = (IntProgression) obj;
-            return this.b == intProgression.b && this.f42577c == intProgression.f42577c && this.d == intProgression.d;
+            return this.b == intProgression.b && this.c == intProgression.c && this.d == intProgression.d;
         }
         return false;
     }
@@ -82,7 +78,7 @@ public class IntProgression implements Iterable<Integer>, KMappedMarker {
         if (e()) {
             return -1;
         }
-        return (((this.b * 31) + this.f42577c) * 31) + this.d;
+        return (((this.b * 31) + this.c) * 31) + this.d;
     }
 
     public String toString() {
@@ -92,14 +88,14 @@ public class IntProgression implements Iterable<Integer>, KMappedMarker {
             sb = new StringBuilder();
             sb.append(this.b);
             sb.append("..");
-            sb.append(this.f42577c);
+            sb.append(this.c);
             sb.append(" step ");
             i = this.d;
         } else {
             sb = new StringBuilder();
             sb.append(this.b);
             sb.append(" downTo ");
-            sb.append(this.f42577c);
+            sb.append(this.c);
             sb.append(" step ");
             i = -this.d;
         }

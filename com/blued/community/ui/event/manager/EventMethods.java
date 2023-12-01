@@ -13,7 +13,7 @@ import java.util.Objects;
 public class EventMethods {
     public static int a(EventDetailsModel eventDetailsModel) {
         int i;
-        boolean s = CommunityManager.f19086a.a().s();
+        boolean s = CommunityManager.a.a().s();
         int i2 = eventDetailsModel.status;
         int i3 = 0;
         if (i2 == 0) {

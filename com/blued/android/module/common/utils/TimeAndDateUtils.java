@@ -3,13 +3,12 @@ package com.blued.android.module.common.utils;
 import android.content.Context;
 import android.content.res.Resources;
 import android.text.TextUtils;
-import com.anythink.expressad.d.a.b;
+import com.anythink.core.common.b.g;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.framework.utils.StringUtils;
 import com.blued.android.module.common.R;
-import com.cdo.oaps.ad.wrapper.BaseWrapper;
-import com.igexin.push.config.c;
+import java.net.HttpURLConnection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -20,9 +19,7 @@ import java.util.TimeZone;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/TimeAndDateUtils.class */
 public class TimeAndDateUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ThreadLocal<SimpleDateFormat> f10913a = new ThreadLocal<SimpleDateFormat>() { // from class: com.blued.android.module.common.utils.TimeAndDateUtils.1
+    public static final ThreadLocal<SimpleDateFormat> a = new ThreadLocal<SimpleDateFormat>() { // from class: com.blued.android.module.common.utils.TimeAndDateUtils.1
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.lang.ThreadLocal
         /* renamed from: a */
@@ -38,9 +35,7 @@ public class TimeAndDateUtils {
             return new SimpleDateFormat("yyyy", BlueAppLocal.c());
         }
     };
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final ThreadLocal<SimpleDateFormat> f10914c = new ThreadLocal<SimpleDateFormat>() { // from class: com.blued.android.module.common.utils.TimeAndDateUtils.3
+    public static final ThreadLocal<SimpleDateFormat> c = new ThreadLocal<SimpleDateFormat>() { // from class: com.blued.android.module.common.utils.TimeAndDateUtils.3
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.lang.ThreadLocal
         /* renamed from: a */
@@ -156,7 +151,7 @@ public class TimeAndDateUtils {
         }
         int i10 = 0;
         for (int i11 = i2; i11 < i9; i11++) {
-            if ((i11 % 4 != 0 || i11 % 100 == 0) && i11 % 400 != 0) {
+            if ((i11 % 4 != 0 || i11 % 100 == 0) && i11 % HttpURLConnection.HTTP_BAD_REQUEST != 0) {
                 i4 = i10;
                 i5 = 365;
             } else {
@@ -275,7 +270,7 @@ public class TimeAndDateUtils {
         StringBuilder sb2;
         String str;
         StringBuilder sb3;
-        long j3 = j2 / b.P;
+        long j3 = j2 / 3600;
         if (j3 > 9) {
             sb = new StringBuilder();
             sb.append(j3);
@@ -286,7 +281,7 @@ public class TimeAndDateUtils {
             sb.append(j3);
         }
         String sb4 = sb.toString();
-        long j4 = j2 % b.P;
+        long j4 = j2 % 3600;
         long j5 = j4 / 60;
         if (j5 > 9) {
             sb2 = new StringBuilder();
@@ -304,7 +299,7 @@ public class TimeAndDateUtils {
         } else {
             str = "0" + j6;
         }
-        if (z || j2 >= b.P) {
+        if (z || j2 >= 3600) {
             sb3 = new StringBuilder();
             sb3.append(sb4);
             sb3.append(":");
@@ -329,7 +324,7 @@ public class TimeAndDateUtils {
         if (j3 <= 60000) {
             stringBuffer.append(context.getResources().getString(R.string.now));
         } else if (j3 < 3600000) {
-            if (j3 < c.l) {
+            if (j3 < 120000) {
                 String string = context.getResources().getString(R.string.befor_minute_single);
                 stringBuffer.append(String.format(string, ((j3 / 60) / 1000) + ""));
             } else {
@@ -361,7 +356,7 @@ public class TimeAndDateUtils {
             } else {
                 stringBuffer.append(new SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.ENGLISH).format(calendar.getTime()));
             }
-        } else if (j3 < 7200000) {
+        } else if (j3 < g.e.a) {
             String string4 = context.getResources().getString(R.string.befor_hour_single);
             stringBuffer.append(String.format(string4, j5 + ""));
         } else {
@@ -487,7 +482,7 @@ public class TimeAndDateUtils {
         if (currentTimeMillis <= 60000) {
             stringBuffer.append(context.getResources().getString(R.string.now));
         } else if (currentTimeMillis < 3600000) {
-            if (currentTimeMillis < c.l) {
+            if (currentTimeMillis < 120000) {
                 String string = context.getResources().getString(R.string.befor_minute_single);
                 stringBuffer.append(String.format(string, ((currentTimeMillis / 60) / 1000) + ""));
             } else {
@@ -496,7 +491,7 @@ public class TimeAndDateUtils {
             }
         } else if (currentTimeMillis >= 86400000) {
             stringBuffer.append("");
-        } else if (currentTimeMillis < 7200000) {
+        } else if (currentTimeMillis < g.e.a) {
             String string3 = context.getResources().getString(R.string.befor_hour_single);
             stringBuffer.append(String.format(string3, j3 + ""));
         } else {
@@ -762,7 +757,7 @@ public class TimeAndDateUtils {
                     stringBuffer.append(String.format(string2, j10 + ""));
                 }
             } else if (abs < 3600000) {
-                if (abs < c.l) {
+                if (abs < 120000) {
                     String string3 = context.getResources().getString(R.string.befor_minute_single);
                     stringBuffer.append(String.format(string3, ((abs / 60) / 1000) + ""));
                 } else {
@@ -770,7 +765,7 @@ public class TimeAndDateUtils {
                     stringBuffer.append(String.format(string4, ((abs / 60) / 1000) + ""));
                 }
             } else if (abs < 86400000) {
-                if (abs < 7200000) {
+                if (abs < g.e.a) {
                     String string5 = context.getResources().getString(R.string.befor_hour_single);
                     stringBuffer.append(String.format(string5, j6 + ""));
                 } else {
@@ -784,7 +779,7 @@ public class TimeAndDateUtils {
                 String string8 = context.getResources().getString(R.string.befor_day);
                 stringBuffer.append(String.format(string8, j3 + ""));
             } else {
-                stringBuffer.append(String.format(context.getResources().getString(R.string.befor_day), BaseWrapper.ENTER_ID_TOOLKIT));
+                stringBuffer.append(String.format(context.getResources().getString(R.string.befor_day), "30"));
             }
             return stringBuffer.toString();
         }
@@ -796,7 +791,7 @@ public class TimeAndDateUtils {
     }
 
     public static boolean f(long j2) {
-        return f10913a.get().format(new Date()).equals(f10913a.get().format(new Date(j2)));
+        return a.get().format(new Date()).equals(a.get().format(new Date(j2)));
     }
 
     public static String g(Context context, long j2) {
@@ -820,13 +815,13 @@ public class TimeAndDateUtils {
                 stringBuffer.append(String.format(context.getResources().getString(R.string.befor_second), j10 + ""));
             }
         } else if (currentTimeMillis < 3600000) {
-            if (currentTimeMillis < c.l) {
+            if (currentTimeMillis < 120000) {
                 stringBuffer.append(String.format(context.getResources().getString(R.string.befor_minute_single), ((currentTimeMillis / 60) / 1000) + ""));
             } else {
                 stringBuffer.append(String.format(context.getResources().getString(R.string.befor_minute), ((currentTimeMillis / 60) / 1000) + ""));
             }
         } else if (currentTimeMillis < 86400000) {
-            if (currentTimeMillis < 7200000) {
+            if (currentTimeMillis < g.e.a) {
                 stringBuffer.append(String.format(context.getResources().getString(R.string.befor_hour_single), j6 + ""));
             } else {
                 stringBuffer.append(String.format(context.getResources().getString(R.string.befor_hour), j6 + ""));
@@ -869,7 +864,7 @@ public class TimeAndDateUtils {
             if (abs < 3600000) {
                 if (abs < 60000) {
                     stringBuffer.append(context.getResources().getString(R.string.now));
-                } else if (abs < c.l) {
+                } else if (abs < 120000) {
                     String string = context.getResources().getString(R.string.befor_minute_single);
                     stringBuffer.append(String.format(string, (((abs / 60) / 1000) + 1) + ""));
                 } else {
@@ -877,7 +872,7 @@ public class TimeAndDateUtils {
                     stringBuffer.append(String.format(string2, ((abs / 60) / 1000) + ""));
                 }
             } else if (abs < 86400000) {
-                if (abs < 7200000) {
+                if (abs < g.e.a) {
                     String string3 = context.getResources().getString(R.string.befor_hour_single);
                     stringBuffer.append(String.format(string3, j4 + ""));
                 } else {
@@ -904,7 +899,7 @@ public class TimeAndDateUtils {
         GregorianCalendar gregorianCalendar = new GregorianCalendar();
         gregorianCalendar.setTime(date2);
         gregorianCalendar.add(5, -1);
-        return f10913a.get().format(date).equals(f10913a.get().format(gregorianCalendar.getTime()));
+        return a.get().format(date).equals(a.get().format(gregorianCalendar.getTime()));
     }
 
     public static long i(long j2) {

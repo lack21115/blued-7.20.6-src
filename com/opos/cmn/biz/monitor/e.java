@@ -2,6 +2,7 @@ package com.opos.cmn.biz.monitor;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.UUID;
@@ -10,17 +11,17 @@ import java.util.UUID;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24662a = e.class.getSimpleName();
+    private static final String f10975a = e.class.getSimpleName();
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/biz/monitor/e$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f24663a;
+        public final String f10976a;
         public final boolean b;
 
         public a(String str, boolean z) {
-            this.f24663a = str;
+            this.f10976a = str;
             this.b = z;
         }
     }
@@ -28,7 +29,7 @@ public class e {
     public static a a(Context context, String str, MonitorEvent monitorEvent) {
         String[] strArr;
         String str2 = str;
-        for (String str3 : c.f24661a) {
+        for (String str3 : c.f10974a) {
             String b = b(context, str3, monitorEvent);
             if (b != null) {
                 str2 = a(str2, str3, b(b));
@@ -39,7 +40,7 @@ public class e {
 
     public static String a(Context context) {
         String h = com.opos.cmn.an.h.c.a.h(context);
-        return ("none".equals(h) || TextUtils.isEmpty(h)) ? "UNKNOWN" : h.toUpperCase();
+        return ("none".equals(h) || TextUtils.isEmpty(h)) ? GrsBaseInfo.CountryCodeSource.UNKNOWN : h.toUpperCase();
     }
 
     public static String a(String str, String str2, String str3) {
@@ -377,7 +378,7 @@ public class e {
                     return String.valueOf(b);
                 } catch (Exception e) {
                     e = e;
-                    str2 = f24662a;
+                    str2 = f10975a;
                     str3 = "get width fail";
                     com.opos.cmn.an.f.a.b(str2, str3, e);
                     return String.valueOf(0);
@@ -388,7 +389,7 @@ public class e {
                     return String.valueOf(b);
                 } catch (Exception e2) {
                     e = e2;
-                    str2 = f24662a;
+                    str2 = f10975a;
                     str3 = "get height fail";
                     com.opos.cmn.an.f.a.b(str2, str3, e);
                     return String.valueOf(0);
@@ -464,7 +465,7 @@ public class e {
         try {
             return System.getProperty("http.agent");
         } catch (Exception e) {
-            com.opos.cmn.an.f.a.c(f24662a, "getUA", e);
+            com.opos.cmn.an.f.a.c(f10975a, "getUA", e);
             return "";
         }
     }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopVipInvisibleBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29566a;
+    private final LinearLayout f15876a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29566a;
+        return this.f15876a;
     }
 }

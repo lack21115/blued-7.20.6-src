@@ -41,7 +41,7 @@ public class FilteredEntryMultimap<K, V> extends AbstractMultimap<K, V> implemen
         @Override // com.google.common.collect.Maps.ViewCachingAbstractMap
         Set<Map.Entry<K, Collection<V>>> createEntrySet() {
             return new Maps.EntrySet<K, Collection<V>>() { // from class: com.google.common.collect.FilteredEntryMultimap.AsMap.1EntrySetImpl
-                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
                 public Iterator<Map.Entry<K, Collection<V>>> iterator() {
                     return new AbstractIterator<Map.Entry<K, Collection<V>>>() { // from class: com.google.common.collect.FilteredEntryMultimap.AsMap.1EntrySetImpl.1
                         final Iterator<Map.Entry<K, Collection<V>>> backingIterator;
@@ -81,7 +81,7 @@ public class FilteredEntryMultimap<K, V> extends AbstractMultimap<K, V> implemen
                     return FilteredEntryMultimap.this.removeEntriesIf(Predicates.not(Predicates.in(collection)));
                 }
 
-                @Override // com.google.common.collect.Maps.EntrySet, java.util.AbstractCollection, java.util.Collection, java.util.List
+                @Override // com.google.common.collect.Maps.EntrySet, java.util.AbstractCollection, java.util.Collection, java.util.Set
                 public int size() {
                     return Iterators.size(iterator());
                 }
@@ -111,7 +111,7 @@ public class FilteredEntryMultimap<K, V> extends AbstractMultimap<K, V> implemen
         @Override // com.google.common.collect.Maps.ViewCachingAbstractMap
         Collection<Collection<V>> createValues() {
             return new Maps.Values<K, Collection<V>>() { // from class: com.google.common.collect.FilteredEntryMultimap.AsMap.1ValuesImpl
-                @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
                 public boolean remove(@NullableDecl Object obj) {
                     if (obj instanceof Collection) {
                         Collection collection = (Collection) obj;
@@ -133,12 +133,12 @@ public class FilteredEntryMultimap<K, V> extends AbstractMultimap<K, V> implemen
                     return false;
                 }
 
-                @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
                 public boolean removeAll(Collection<?> collection) {
                     return FilteredEntryMultimap.this.removeEntriesIf(Maps.valuePredicateOnEntries(Predicates.in(collection)));
                 }
 
-                @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
                 public boolean retainAll(Collection<?> collection) {
                     return FilteredEntryMultimap.this.removeEntriesIf(Maps.valuePredicateOnEntries(Predicates.not(Predicates.in(collection))));
                 }
@@ -203,7 +203,7 @@ public class FilteredEntryMultimap<K, V> extends AbstractMultimap<K, V> implemen
                     });
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
                 public Iterator<Multiset.Entry<K>> iterator() {
                     return Keys.this.entryIterator();
                 }
@@ -223,7 +223,7 @@ public class FilteredEntryMultimap<K, V> extends AbstractMultimap<K, V> implemen
                     return removeEntriesIf(Predicates.not(Predicates.in(collection)));
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
                 public int size() {
                     return FilteredEntryMultimap.this.keySet().size();
                 }

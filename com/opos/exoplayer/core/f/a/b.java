@@ -19,16 +19,16 @@ import java.util.List;
 public final class b extends e {
 
     /* renamed from: a  reason: collision with root package name */
-    private final m f25333a = new m();
+    private final m f11645a = new m();
     private final l b = new l();
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f25334c;
+    private final int f11646c;
     private final a[] d;
     private a e;
     private List<com.opos.exoplayer.core.f.b> f;
     private List<com.opos.exoplayer.core.f.b> g;
-    private C0661b h;
+    private C0491b h;
     private int i;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -36,11 +36,11 @@ public final class b extends e {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f25335a = a(2, 2, 2, 0);
+        public static final int f11647a = a(2, 2, 2, 0);
         public static final int b = a(0, 0, 0, 0);
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f25336c;
+        public static final int f11648c;
         private static final int[] d;
         private static final int[] e;
         private static final int[] f;
@@ -74,7 +74,7 @@ public final class b extends e {
 
         static {
             int a2 = a(0, 0, 0, 3);
-            f25336c = a2;
+            f11648c = a2;
             d = new int[]{0, 0, 0, 0, 0, 2, 0};
             e = new int[]{0, 0, 0, 0, 0, 0, 2};
             f = new int[]{3, 3, 3, 3, 3, 3, 1};
@@ -221,7 +221,7 @@ public final class b extends e {
             if (this.C != -1 && this.D != i2) {
                 this.m.setSpan(new ForegroundColorSpan(this.D), this.C, this.m.length(), 33);
             }
-            if (i2 != f25335a) {
+            if (i2 != f11647a) {
                 this.C = this.m.length();
                 this.D = i2;
             }
@@ -285,7 +285,7 @@ public final class b extends e {
             if (i8 != 0 && this.x != i8) {
                 this.x = i8;
                 int i11 = i8 - 1;
-                a(h[i11], f25336c, g[i11], 0, e[i11], f[i11], d[i11]);
+                a(h[i11], f11648c, g[i11], 0, e[i11], f[i11], d[i11]);
             }
             if (i9 == 0 || this.y == i9) {
                 return;
@@ -293,7 +293,7 @@ public final class b extends e {
             this.y = i9;
             int i12 = i9 - 1;
             a(0, 1, 1, false, false, j[i12], i[i12]);
-            a(f25335a, k[i12], b);
+            a(f11647a, k[i12], b);
         }
 
         public boolean a() {
@@ -319,7 +319,7 @@ public final class b extends e {
             this.y = 0;
             int i2 = b;
             this.z = i2;
-            this.D = f25335a;
+            this.D = f11647a;
             this.F = i2;
         }
 
@@ -392,25 +392,25 @@ public final class b extends e {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.exoplayer.core.f.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/f/a/b$b.class */
-    public static final class C0661b {
+    public static final class C0491b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25337a;
+        public final int f11649a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final byte[] f25338c;
+        public final byte[] f11650c;
         int d = 0;
 
-        public C0661b(int i, int i2) {
-            this.f25337a = i;
+        public C0491b(int i, int i2) {
+            this.f11649a = i;
             this.b = i2;
-            this.f25338c = new byte[(i2 * 2) - 1];
+            this.f11650c = new byte[(i2 * 2) - 1];
         }
     }
 
     public b(int i) {
-        this.f25334c = i == -1 ? 1 : i;
+        this.f11646c = i == -1 ? 1 : i;
         this.d = new a[8];
         int i2 = 0;
         while (true) {
@@ -808,9 +808,9 @@ public final class b extends e {
         String str;
         String str2;
         if (this.h.d != (this.h.b * 2) - 1) {
-            str2 = "DtvCcPacket ended prematurely; size is " + ((this.h.b * 2) - 1) + ", but current index is " + this.h.d + " (sequence number " + this.h.f25337a + "); ignoring packet";
+            str2 = "DtvCcPacket ended prematurely; size is " + ((this.h.b * 2) - 1) + ", but current index is " + this.h.d + " (sequence number " + this.h.f11649a + "); ignoring packet";
         } else {
-            this.b.a(this.h.f25338c, this.h.d);
+            this.b.a(this.h.f11650c, this.h.d);
             int c2 = this.b.c(3);
             int c3 = this.b.c(5);
             int i = c2;
@@ -819,7 +819,7 @@ public final class b extends e {
                 i = c2 + this.b.c(6);
             }
             if (c3 != 0) {
-                if (i == this.f25334c) {
+                if (i == this.f11646c) {
                     boolean z = false;
                     while (this.b.a() > 0) {
                         int c4 = this.b.c(8);
@@ -947,14 +947,14 @@ public final class b extends e {
 
     @Override // com.opos.exoplayer.core.f.a.e
     protected void a(h hVar) {
-        this.f25333a.a(hVar.b.array(), hVar.b.limit());
-        while (this.f25333a.b() >= 3) {
-            int g = this.f25333a.g() & 7;
+        this.f11645a.a(hVar.b.array(), hVar.b.limit());
+        while (this.f11645a.b() >= 3) {
+            int g = this.f11645a.g() & 7;
             int i = g & 3;
             boolean z = false;
             boolean z2 = (g & 4) == 4;
-            byte g2 = (byte) this.f25333a.g();
-            byte g3 = (byte) this.f25333a.g();
+            byte g2 = (byte) this.f11645a.g();
+            byte g3 = (byte) this.f11645a.g();
             if (i == 2 || i == 3) {
                 if (z2) {
                     if (i == 3) {
@@ -964,31 +964,31 @@ public final class b extends e {
                         if (i2 == 0) {
                             i3 = 64;
                         }
-                        C0661b c0661b = new C0661b((g2 & 192) >> 6, i3);
-                        this.h = c0661b;
-                        byte[] bArr = c0661b.f25338c;
-                        C0661b c0661b2 = this.h;
-                        int i4 = c0661b2.d;
-                        c0661b2.d = i4 + 1;
+                        C0491b c0491b = new C0491b((g2 & 192) >> 6, i3);
+                        this.h = c0491b;
+                        byte[] bArr = c0491b.f11650c;
+                        C0491b c0491b2 = this.h;
+                        int i4 = c0491b2.d;
+                        c0491b2.d = i4 + 1;
                         bArr[i4] = g3;
                     } else {
                         if (i == 2) {
                             z = true;
                         }
                         com.opos.exoplayer.core.i.a.a(z);
-                        C0661b c0661b3 = this.h;
-                        if (c0661b3 == null) {
+                        C0491b c0491b3 = this.h;
+                        if (c0491b3 == null) {
                             com.opos.cmn.an.f.a.d("Cea708Decoder", "Encountered DTVCC_PACKET_DATA before DTVCC_PACKET_START");
                         } else {
-                            byte[] bArr2 = c0661b3.f25338c;
-                            C0661b c0661b4 = this.h;
-                            int i5 = c0661b4.d;
-                            c0661b4.d = i5 + 1;
+                            byte[] bArr2 = c0491b3.f11650c;
+                            C0491b c0491b4 = this.h;
+                            int i5 = c0491b4.d;
+                            c0491b4.d = i5 + 1;
                             bArr2[i5] = g2;
-                            byte[] bArr3 = this.h.f25338c;
-                            C0661b c0661b5 = this.h;
-                            int i6 = c0661b5.d;
-                            c0661b5.d = i6 + 1;
+                            byte[] bArr3 = this.h.f11650c;
+                            C0491b c0491b5 = this.h;
+                            int i6 = c0491b5.d;
+                            c0491b5.d = i6 + 1;
                             bArr3[i6] = g3;
                         }
                     }

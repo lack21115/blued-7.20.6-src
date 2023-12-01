@@ -12,12 +12,8 @@ public class SecurityRequestAuth implements IRequestAuth {
     /* renamed from: b  reason: collision with other field name */
     private String f43b;
     private Object b = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Object f4504c = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private Class f4503a = null;
+    private Object c = null;
+    private Class a = null;
 
     /* renamed from: a  reason: collision with other field name */
     private Field f41a = null;
@@ -66,7 +62,7 @@ public class SecurityRequestAuth implements IRequestAuth {
         if (this.f43b == null) {
             i.a("SecurityRequestAuth", "There is no appkey,please check it!");
             return null;
-        } else if (str == null || this.b == null || (cls = this.f4503a) == null || this.f41a == null || this.f44b == null || this.f45c == null || this.f42a == null || this.f4504c == null) {
+        } else if (str == null || this.b == null || (cls = this.a) == null || this.f41a == null || this.f44b == null || this.f45c == null || this.f42a == null || this.c == null) {
             return null;
         } else {
             try {
@@ -74,7 +70,7 @@ public class SecurityRequestAuth implements IRequestAuth {
                 this.f41a.set(newInstance, this.f43b);
                 ((Map) this.f44b.get(newInstance)).put("INPUT", str);
                 this.f45c.set(newInstance, Integer.valueOf(this.z));
-                return (String) this.f42a.invoke(this.f4504c, newInstance, this.Z);
+                return (String) this.f42a.invoke(this.c, newInstance, this.Z);
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;

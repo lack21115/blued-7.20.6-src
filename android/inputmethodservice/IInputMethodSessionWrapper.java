@@ -80,7 +80,7 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
     }
 
     public IInputMethodSessionWrapper(Context context, InputMethodSession inputMethodSession, InputChannel inputChannel) {
-        this.mCaller = new HandlerCaller(context, null, this, true);
+        this.mCaller = new HandlerCaller(context, (Looper) null, this, true);
         this.mInputMethodSession = inputMethodSession;
         this.mChannel = inputChannel;
         if (inputChannel != null) {
@@ -100,17 +100,14 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
         }
     }
 
-    @Override // com.android.internal.view.IInputMethodSession
     public void appPrivateCommand(String str, Bundle bundle) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageOO(100, str, bundle));
     }
 
-    @Override // com.android.internal.view.IInputMethodSession
     public void displayCompletions(CompletionInfo[] completionInfoArr) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageO(65, completionInfoArr));
     }
 
-    @Override // com.android.internal.os.HandlerCaller.Callback
     public void executeMessage(Message message) {
         boolean z = true;
         if (this.mInputMethodSession == null) {
@@ -168,12 +165,10 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
         }
     }
 
-    @Override // com.android.internal.view.IInputMethodSession
     public void finishInput() {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessage(60));
     }
 
-    @Override // com.android.internal.view.IInputMethodSession
     public void finishSession() {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessage(110));
     }
@@ -182,32 +177,26 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
         return this.mInputMethodSession;
     }
 
-    @Override // com.android.internal.view.IInputMethodSession
     public void toggleSoftInput(int i, int i2) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageII(105, i, i2));
     }
 
-    @Override // com.android.internal.view.IInputMethodSession
     public void updateCursor(Rect rect) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageO(95, rect));
     }
 
-    @Override // com.android.internal.view.IInputMethodSession
     public void updateCursorAnchorInfo(CursorAnchorInfo cursorAnchorInfo) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageO(99, cursorAnchorInfo));
     }
 
-    @Override // com.android.internal.view.IInputMethodSession
     public void updateExtractedText(int i, ExtractedText extractedText) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageIO(67, i, extractedText));
     }
 
-    @Override // com.android.internal.view.IInputMethodSession
     public void updateSelection(int i, int i2, int i3, int i4, int i5, int i6) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageIIIIII(90, i, i2, i3, i4, i5, i6));
     }
 
-    @Override // com.android.internal.view.IInputMethodSession
     public void viewClicked(boolean z) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageI(115, z ? 1 : 0));
     }

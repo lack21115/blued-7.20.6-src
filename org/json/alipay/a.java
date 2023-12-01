@@ -6,12 +6,10 @@ import java.util.Collection;
 
 /* loaded from: source-3503164-dex2jar.jar:org/json/alipay/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ArrayList f44094a;
+    private ArrayList a;
 
     public a() {
-        this.f44094a = new ArrayList();
+        this.a = new ArrayList();
     }
 
     public a(Object obj) {
@@ -26,7 +24,7 @@ public class a {
             if (i2 >= length) {
                 return;
             }
-            this.f44094a.add(Array.get(obj, i2));
+            this.a.add(Array.get(obj, i2));
             i = i2 + 1;
         }
     }
@@ -36,54 +34,54 @@ public class a {
     }
 
     public a(Collection collection) {
-        this.f44094a = collection == null ? new ArrayList() : new ArrayList(collection);
+        this.a = collection == null ? new ArrayList() : new ArrayList(collection);
     }
 
     public a(c cVar) {
         this();
-        char c2;
+        char c;
         ArrayList arrayList;
         Object d;
-        char c3 = cVar.c();
-        if (c3 == '[') {
-            c2 = ']';
-        } else if (c3 != '(') {
+        char c2 = cVar.c();
+        if (c2 == '[') {
+            c = ']';
+        } else if (c2 != '(') {
             throw cVar.a("A JSONArray text must start with '['");
         } else {
-            c2 = ')';
+            c = ')';
         }
         if (cVar.c() == ']') {
             return;
         }
         do {
             cVar.a();
-            char c4 = cVar.c();
+            char c3 = cVar.c();
             cVar.a();
-            if (c4 == ',') {
-                arrayList = this.f44094a;
+            if (c3 == ',') {
+                arrayList = this.a;
                 d = null;
             } else {
-                arrayList = this.f44094a;
+                arrayList = this.a;
                 d = cVar.d();
             }
             arrayList.add(d);
-            char c5 = cVar.c();
-            if (c5 != ')') {
-                if (c5 != ',' && c5 != ';') {
-                    if (c5 != ']') {
+            char c4 = cVar.c();
+            if (c4 != ')') {
+                if (c4 != ',' && c4 != ';') {
+                    if (c4 != ']') {
                         throw cVar.a("Expected a ',' or ']'");
                     }
                 }
             }
-            if (c2 == c5) {
+            if (c == c4) {
                 return;
             }
-            throw cVar.a("Expected a '" + new Character(c2) + "'");
+            throw cVar.a("Expected a '" + new Character(c) + "'");
         } while (cVar.c() != ']');
     }
 
     private String a(String str) {
-        int size = this.f44094a.size();
+        int size = this.a.size();
         StringBuffer stringBuffer = new StringBuffer();
         int i = 0;
         while (true) {
@@ -94,17 +92,17 @@ public class a {
             if (i2 > 0) {
                 stringBuffer.append(str);
             }
-            stringBuffer.append(b.a(this.f44094a.get(i2)));
+            stringBuffer.append(b.a(this.a.get(i2)));
             i = i2 + 1;
         }
     }
 
     public final int a() {
-        return this.f44094a.size();
+        return this.a.size();
     }
 
     public final Object a(int i) {
-        Object obj = (i < 0 || i >= this.f44094a.size()) ? null : this.f44094a.get(i);
+        Object obj = (i < 0 || i >= this.a.size()) ? null : this.a.get(i);
         if (obj != null) {
             return obj;
         }

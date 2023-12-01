@@ -11,11 +11,11 @@ import java.util.Map;
 class ResourcesFlusher {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Field f1595a;
+    private static Field f1547a;
     private static boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Class<?> f1596c;
+    private static Class<?> f1548c;
     private static boolean d;
     private static Field e;
     private static boolean f;
@@ -43,13 +43,13 @@ class ResourcesFlusher {
         LongSparseArray longSparseArray;
         if (!d) {
             try {
-                f1596c = Class.forName("android.content.res.ThemedResourceCache");
+                f1548c = Class.forName("android.content.res.ThemedResourceCache");
             } catch (ClassNotFoundException e2) {
                 Log.e("ResourcesFlusher", "Could not find ThemedResourceCache class", e2);
             }
             d = true;
         }
-        Class<?> cls = f1596c;
+        Class<?> cls = f1548c;
         if (cls == null) {
             return;
         }
@@ -83,14 +83,14 @@ class ResourcesFlusher {
         if (!b) {
             try {
                 Field declaredField = Resources.class.getDeclaredField("mDrawableCache");
-                f1595a = declaredField;
+                f1547a = declaredField;
                 declaredField.setAccessible(true);
             } catch (NoSuchFieldException e2) {
                 Log.e("ResourcesFlusher", "Could not retrieve Resources#mDrawableCache field", e2);
             }
             b = true;
         }
-        Field field = f1595a;
+        Field field = f1547a;
         if (field != null) {
             try {
                 map = (Map) field.get(resources);
@@ -108,14 +108,14 @@ class ResourcesFlusher {
         if (!b) {
             try {
                 Field declaredField = Resources.class.getDeclaredField("mDrawableCache");
-                f1595a = declaredField;
+                f1547a = declaredField;
                 declaredField.setAccessible(true);
             } catch (NoSuchFieldException e2) {
                 Log.e("ResourcesFlusher", "Could not retrieve Resources#mDrawableCache field", e2);
             }
             b = true;
         }
-        Field field = f1595a;
+        Field field = f1547a;
         Object obj = null;
         if (field != null) {
             try {
@@ -159,14 +159,14 @@ class ResourcesFlusher {
         if (!b) {
             try {
                 Field declaredField2 = obj.getClass().getDeclaredField("mDrawableCache");
-                f1595a = declaredField2;
+                f1547a = declaredField2;
                 declaredField2.setAccessible(true);
             } catch (NoSuchFieldException e4) {
                 Log.e("ResourcesFlusher", "Could not retrieve ResourcesImpl#mDrawableCache field", e4);
             }
             b = true;
         }
-        Field field2 = f1595a;
+        Field field2 = f1547a;
         Object obj2 = null;
         if (field2 != null) {
             try {

@@ -1,5 +1,6 @@
 package java.sql;
 
+import com.android.ims.ImsConferenceState;
 import dalvik.system.VMStack;
 import java.io.PrintStream;
 import java.io.PrintWriter;
@@ -44,7 +45,7 @@ public class DriverManager {
     public static Connection getConnection(String str, String str2, String str3) throws SQLException {
         Properties properties = new Properties();
         if (str2 != null) {
-            properties.setProperty("user", str2);
+            properties.setProperty(ImsConferenceState.USER, str2);
         }
         if (str3 != null) {
             properties.setProperty("password", str3);

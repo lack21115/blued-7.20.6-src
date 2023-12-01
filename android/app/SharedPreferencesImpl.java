@@ -347,6 +347,7 @@ public final class SharedPreferencesImpl implements SharedPreferences {
         return new File(file.getPath() + ".bak");
     }
 
+    /* JADX WARN: Type inference failed for: r0v5, types: [android.app.SharedPreferencesImpl$1] */
     private void startLoadFromDisk() {
         synchronized (this) {
             this.mLoaded = false;

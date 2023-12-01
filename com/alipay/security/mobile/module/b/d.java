@@ -4,26 +4,24 @@ import android.content.Context;
 import android.os.Build;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
-import com.kuaishou.weapon.p0.bh;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
+import com.android.internal.telephony.PhoneConstants;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import java.io.File;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/security/mobile/module/b/d.class */
 public final class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static d f4707a = new d();
+    private static d a = new d();
 
     private d() {
     }
 
     public static d a() {
-        return f4707a;
+        return a;
     }
 
     private static String a(String str, String str2) {
         try {
-            return (String) Class.forName("android.os.SystemProperties").getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class, String.class).invoke(null, str, str2);
+            return (String) Class.forName("android.os.SystemProperties").getMethod("get", String.class, String.class).invoke(null, str, str2);
         } catch (Exception e) {
             return str2;
         }
@@ -36,7 +34,7 @@ public final class d {
             if (Build.HARDWARE.contains("goldfish") || Build.PRODUCT.contains("sdk") || Build.FINGERPRINT.contains("generic")) {
                 return true;
             }
-            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
+            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY);
             if (telephonyManager != null) {
                 String deviceId = telephonyManager.getDeviceId();
                 if (deviceId != null && (length = deviceId.length()) != 0) {
@@ -65,7 +63,7 @@ public final class d {
     }
 
     public static String b() {
-        return "android";
+        return MsgBackupManager.PLATFORM_ANDROID;
     }
 
     public static boolean c() {
@@ -76,7 +74,7 @@ public final class d {
                 return false;
             }
             try {
-                if (new File(new String[]{"/system/bin/", "/system/xbin/", "/system/sbin/", "/sbin/", "/vendor/bin/"}[i2] + bh.y).exists()) {
+                if (new File(new String[]{"/system/bin/", "/system/xbin/", "/system/sbin/", "/sbin/", "/vendor/bin/"}[i2] + "su").exists()) {
                     return true;
                 }
                 i = i2 + 1;

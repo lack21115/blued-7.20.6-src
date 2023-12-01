@@ -6,12 +6,12 @@ import android.os.SystemClock;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f39428a;
+    private long f25737a;
     private long b;
 
     public void a() {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        this.f39428a = elapsedRealtime;
+        this.f25737a = elapsedRealtime;
         this.b = elapsedRealtime;
     }
 
@@ -24,7 +24,7 @@ public class d {
     }
 
     public long d() {
-        return SystemClock.elapsedRealtime() - this.f39428a;
+        return SystemClock.elapsedRealtime() - this.f25737a;
     }
 
     public long e() {

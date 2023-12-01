@@ -12,11 +12,11 @@ import java.util.Map;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private a f27217a;
+    private a f13529a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f27218c;
+    private String f13530c;
     private AdItemData d;
     private MaterialData e;
     private long h;
@@ -38,9 +38,9 @@ public class j {
     }
 
     public j(Context context, String str, a aVar) {
-        this.f27217a = aVar;
+        this.f13529a = aVar;
         this.b = context;
-        this.f27218c = str;
+        this.f13530c = str;
     }
 
     private Map<String, String> a(String str, long j, long j2) {
@@ -63,7 +63,7 @@ public class j {
     }
 
     private void a(boolean z, String str, int i, long j) {
-        com.opos.mobad.cmn.a.b.d.b(this.b, this.f27218c, this.d, this.e, z, a(str, i, j));
+        com.opos.mobad.cmn.a.b.d.b(this.b, this.f13530c, this.d, this.e, z, a(str, i, j));
     }
 
     private boolean a(long j, long j2, float f) {
@@ -96,8 +96,8 @@ public class j {
         com.opos.mobad.service.c.a(new Runnable() { // from class: com.opos.mobad.q.a.j.1
             @Override // java.lang.Runnable
             public void run() {
-                if (j.this.f27217a != null) {
-                    j.this.f27217a.b();
+                if (j.this.f13529a != null) {
+                    j.this.f13529a.b();
                 }
             }
         });
@@ -143,15 +143,15 @@ public class j {
             if (this.g) {
                 return;
             }
-            com.opos.mobad.cmn.a.b.d.a(this.b, this.f27218c, this.d, this.e, true, String.valueOf(this.k), i);
+            com.opos.mobad.cmn.a.b.d.a(this.b, this.f13530c, this.d, this.e, true, String.valueOf(this.k), i);
             final String a2 = com.opos.mobad.cmn.a.b.f.a(i);
             com.opos.mobad.service.c.a(new Runnable() { // from class: com.opos.mobad.q.a.j.3
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (j.this.g || j.this.f27217a == null) {
+                    if (j.this.g || j.this.f13529a == null) {
                         return;
                     }
-                    a aVar = j.this.f27217a;
+                    a aVar = j.this.f13529a;
                     StringBuilder sb = new StringBuilder();
                     sb.append("code=");
                     sb.append(i);
@@ -184,8 +184,8 @@ public class j {
             com.opos.mobad.service.c.a(new Runnable() { // from class: com.opos.mobad.q.a.j.2
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (j.this.f27217a != null) {
-                        j.this.f27217a.c();
+                    if (j.this.f13529a != null) {
+                        j.this.f13529a.c();
                     }
                 }
             });
@@ -261,10 +261,10 @@ public class j {
             com.opos.mobad.service.c.a(new Runnable() { // from class: com.opos.mobad.q.a.j.4
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (j.this.g || j.this.f27217a == null) {
+                    if (j.this.g || j.this.f13529a == null) {
                         return;
                     }
-                    j.this.f27217a.b(j);
+                    j.this.f13529a.b(j);
                 }
             });
         } catch (Exception e) {

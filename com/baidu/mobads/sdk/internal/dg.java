@@ -15,7 +15,7 @@ public class dg {
     private static final int f = 5;
 
     /* renamed from: c  reason: collision with root package name */
-    private RelativeLayout f9418c;
+    private RelativeLayout f6578c;
     private TextView d;
     private CountDownTimer e;
     private dj g;
@@ -23,7 +23,7 @@ public class dg {
     private Boolean k;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f9417a = "html5_intersitial";
+    public final String f6577a = "html5_intersitial";
     private boolean h = false;
     private boolean i = false;
     protected final bq b = bq.a();
@@ -37,13 +37,13 @@ public class dg {
 
     private View f() {
         this.e = new di(this, 6000L, 1000L).start();
-        return this.f9418c;
+        return this.f6578c;
     }
 
     private void g() {
-        RelativeLayout relativeLayout = this.f9418c;
+        RelativeLayout relativeLayout = this.f6578c;
         if (relativeLayout != null && relativeLayout.getParent() != null) {
-            ((ViewGroup) this.f9418c.getParent()).removeView(this.f9418c);
+            ((ViewGroup) this.f6578c.getParent()).removeView(this.f6578c);
         }
         if (this.e != null) {
             this.b.a("cancel countDownTimer before it finished");

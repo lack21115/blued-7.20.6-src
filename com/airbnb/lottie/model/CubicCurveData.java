@@ -4,32 +4,28 @@ import android.graphics.PointF;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/CubicCurveData.class */
 public class CubicCurveData {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final PointF f4313a;
+    private final PointF a;
     private final PointF b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final PointF f4314c;
+    private final PointF c;
 
     public CubicCurveData() {
-        this.f4313a = new PointF();
+        this.a = new PointF();
         this.b = new PointF();
-        this.f4314c = new PointF();
+        this.c = new PointF();
     }
 
     public CubicCurveData(PointF pointF, PointF pointF2, PointF pointF3) {
-        this.f4313a = pointF;
+        this.a = pointF;
         this.b = pointF2;
-        this.f4314c = pointF3;
+        this.c = pointF3;
     }
 
     public PointF a() {
-        return this.f4313a;
+        return this.a;
     }
 
     public void a(float f, float f2) {
-        this.f4313a.set(f, f2);
+        this.a.set(f, f2);
     }
 
     public PointF b() {
@@ -41,10 +37,10 @@ public class CubicCurveData {
     }
 
     public PointF c() {
-        return this.f4314c;
+        return this.c;
     }
 
     public void c(float f, float f2) {
-        this.f4314c.set(f, f2);
+        this.c.set(f, f2);
     }
 }

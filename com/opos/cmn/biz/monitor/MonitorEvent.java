@@ -27,11 +27,11 @@ public class MonitorEvent implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private int f24609a;
+    private int f10922a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f24610c;
+    private int f10923c;
     private int d;
     private int e;
     private String f;
@@ -48,16 +48,16 @@ public class MonitorEvent implements Parcelable {
         
 
         /* renamed from: c  reason: collision with root package name */
-        private String f24612c;
+        private String f10925c;
 
         a(String str) {
-            this.f24612c = "";
-            this.f24612c = str;
+            this.f10925c = "";
+            this.f10925c = str;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public String a() {
-            return this.f24612c;
+            return this.f10925c;
         }
     }
 
@@ -66,13 +66,13 @@ public class MonitorEvent implements Parcelable {
         private a i;
 
         /* renamed from: a  reason: collision with root package name */
-        private int f24613a = -1;
-        private int b = com.anythink.expressad.video.bt.a.c.f8290a;
+        private int f10926a = -1;
+        private int b = com.anythink.expressad.video.bt.a.c.f5450a;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f24614c = com.anythink.expressad.video.bt.a.c.f8290a;
-        private int d = com.anythink.expressad.video.bt.a.c.f8290a;
-        private int e = com.anythink.expressad.video.bt.a.c.f8290a;
+        private int f10927c = com.anythink.expressad.video.bt.a.c.f5450a;
+        private int d = com.anythink.expressad.video.bt.a.c.f5450a;
+        private int e = com.anythink.expressad.video.bt.a.c.f5450a;
         private c f = c.OTHER;
         private d g = d.OTHER;
         private int h = 1;
@@ -81,7 +81,7 @@ public class MonitorEvent implements Parcelable {
 
         public b a(int i) {
             if (i >= 0) {
-                this.f24613a = i;
+                this.f10926a = i;
             }
             return this;
         }
@@ -89,7 +89,7 @@ public class MonitorEvent implements Parcelable {
         public b a(int i, int i2, int i3, int i4) {
             if (i >= 0 && i2 >= 0 && i3 >= 0 && i4 >= 0) {
                 this.b = i;
-                this.f24614c = i2;
+                this.f10927c = i2;
                 this.d = i3;
                 this.e = i4;
             }
@@ -124,7 +124,7 @@ public class MonitorEvent implements Parcelable {
 
         public MonitorEvent a() {
             a aVar = this.i;
-            return new MonitorEvent(this.f24613a, this.b, this.f24614c, this.d, this.e, this.f.a(), this.g.a(), this.h, aVar != null ? aVar.a() : "", this.j, this.k);
+            return new MonitorEvent(this.f10926a, this.b, this.f10927c, this.d, this.e, this.f.a(), this.g.a(), this.h, aVar != null ? aVar.a() : "", this.j, this.k);
         }
     }
 
@@ -172,10 +172,10 @@ public class MonitorEvent implements Parcelable {
     }
 
     private MonitorEvent(int i, int i2, int i3, int i4, int i5, String str, String str2, int i6, String str3, String str4, List<String> list) {
-        this.f24609a = -1;
-        this.f24609a = i;
+        this.f10922a = -1;
+        this.f10922a = i;
         this.b = i2;
-        this.f24610c = i3;
+        this.f10923c = i3;
         this.d = i4;
         this.e = i5;
         this.f = str;
@@ -187,7 +187,7 @@ public class MonitorEvent implements Parcelable {
     }
 
     public int a() {
-        return this.f24609a;
+        return this.f10922a;
     }
 
     public int b() {
@@ -195,7 +195,7 @@ public class MonitorEvent implements Parcelable {
     }
 
     public int c() {
-        return this.f24610c;
+        return this.f10923c;
     }
 
     public int d() {
@@ -253,9 +253,9 @@ public class MonitorEvent implements Parcelable {
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeList(this.k);
-        parcel.writeInt(this.f24609a);
+        parcel.writeInt(this.f10922a);
         parcel.writeInt(this.b);
-        parcel.writeInt(this.f24610c);
+        parcel.writeInt(this.f10923c);
         parcel.writeInt(this.d);
         parcel.writeInt(this.e);
         parcel.writeString(this.f);

@@ -9,19 +9,19 @@ import com.huawei.hms.support.log.HMSLog;
 public class AvailableUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Object f22412a = new Object();
+    public static final Object f8804a = new Object();
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f22413c = false;
+    public static boolean f8805c = false;
 
     public static boolean isInstallerLibExist(Context context) {
         boolean z;
         if (b) {
-            HMSLog.i("AvailableUtil", "installerInit exist: " + f22413c);
-            return f22413c;
+            HMSLog.i("AvailableUtil", "installerInit exist: " + f8805c);
+            return f8805c;
         }
-        synchronized (f22412a) {
+        synchronized (f8804a) {
             if (!b) {
                 PackageManager packageManager = context.getPackageManager();
                 if (packageManager == null) {
@@ -33,7 +33,7 @@ public class AvailableUtil {
                         HMSLog.e("AvailableUtil", "In isInstallerLibExist, Failed to find class UpdateManager.");
                         z = false;
                     }
-                    f22413c = z;
+                    f8805c = z;
                     b = true;
                 } else {
                     try {
@@ -60,12 +60,12 @@ public class AvailableUtil {
                         HMSLog.e("AvailableUtil", "In isInstallerLibExist, Failed to read meta data for the availableHMSCoreInstaller.", e3);
                         z = false;
                     }
-                    f22413c = z;
+                    f8805c = z;
                     b = true;
                 }
             }
         }
-        HMSLog.i("AvailableUtil", "available exist: " + f22413c);
-        return f22413c;
+        HMSLog.i("AvailableUtil", "available exist: " + f8805c);
+        return f8805c;
     }
 }

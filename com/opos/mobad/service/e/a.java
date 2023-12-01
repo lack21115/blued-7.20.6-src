@@ -15,11 +15,11 @@ import com.opos.mobad.provider.openId.OpenIdData;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile a f27334a;
+    private static volatile a f13646a;
     private volatile com.opos.mobad.provider.openId.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f27335c;
+    private Context f13647c;
     private com.opos.cmn.i.a i;
     private com.opos.cmn.i.a j;
     private com.opos.cmn.i.a k;
@@ -61,15 +61,15 @@ public class a {
 
     public static a a() {
         a aVar;
-        a aVar2 = f27334a;
+        a aVar2 = f13646a;
         if (aVar2 == null) {
             synchronized (a.class) {
                 try {
-                    a aVar3 = f27334a;
+                    a aVar3 = f13646a;
                     aVar = aVar3;
                     if (aVar3 == null) {
                         aVar = new a();
-                        f27334a = aVar;
+                        f13646a = aVar;
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -203,20 +203,20 @@ public class a {
     }
 
     private void o() {
-        if (this.f27335c == null) {
+        if (this.f13647c == null) {
             return;
         }
         this.k.a();
     }
 
     private void p() {
-        if (TextUtils.isEmpty(this.d) && TextUtils.isEmpty(this.e) && this.f27335c != null) {
+        if (TextUtils.isEmpty(this.d) && TextUtils.isEmpty(this.e) && this.f13647c != null) {
             this.i.a();
         }
     }
 
     private void q() {
-        Context context = this.f27335c;
+        Context context = this.f13647c;
         if (context == null) {
             return;
         }
@@ -225,7 +225,7 @@ public class a {
                 @Override // java.lang.Runnable
                 public void run() {
                     try {
-                        a.this.l = a.this.a(a.this.f27335c).b();
+                        a.this.l = a.this.a(a.this.f13647c).b();
                     } catch (Exception e) {
                         com.opos.cmn.an.f.a.a("IdentityIdManager", "update status error" + e);
                     }
@@ -237,7 +237,7 @@ public class a {
     }
 
     private void r() {
-        if (TextUtils.isEmpty(this.h) && this.f27335c != null && s() && t()) {
+        if (TextUtils.isEmpty(this.h) && this.f13647c != null && s() && t()) {
             this.j.a();
         }
     }
@@ -247,7 +247,7 @@ public class a {
     }
 
     private boolean t() {
-        return com.opos.cmn.an.h.d.a.a(this.f27335c, "android.permission.READ_PHONE_STATE") || com.opos.cmn.an.h.d.a.a(this.f27335c, "android.permission.READ_EXTERNAL_STORAGE");
+        return com.opos.cmn.an.h.d.a.a(this.f13647c, "android.permission.READ_PHONE_STATE") || com.opos.cmn.an.h.d.a.a(this.f13647c, "android.permission.READ_EXTERNAL_STORAGE");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -255,16 +255,16 @@ public class a {
         com.opos.cmn.an.f.a.b("IdentityIdManager", "start getOpenId");
         long elapsedRealtime = SystemClock.elapsedRealtime();
         try {
-            OpenIdData a2 = a(this.f27335c).a();
+            OpenIdData a2 = a(this.f13647c).a();
             if (a2 == null) {
                 com.opos.cmn.an.f.a.b("IdentityIdManager", "openIdData == null");
                 return null;
             }
-            String str = a2.f27120a;
+            String str = a2.f13432a;
             if (!TextUtils.isEmpty(str)) {
                 this.d = str;
             }
-            String str2 = a2.f27121c;
+            String str2 = a2.f13433c;
             if (!TextUtils.isEmpty(str2)) {
                 this.f = str2;
             }
@@ -284,7 +284,7 @@ public class a {
         com.opos.cmn.an.f.a.b("IdentityIdManager", "start getCryptClientId");
         long elapsedRealtime = SystemClock.elapsedRealtime();
         try {
-            String c2 = a(this.f27335c).c();
+            String c2 = a(this.f13647c).c();
             if (TextUtils.isEmpty(c2)) {
                 com.opos.cmn.an.f.a.b("IdentityIdManager", "clientIdData == null");
                 return null;
@@ -298,38 +298,38 @@ public class a {
     }
 
     public void a(Context context, boolean z) {
-        this.f27335c = context.getApplicationContext();
+        this.f13647c = context.getApplicationContext();
         this.p = z;
         this.i = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.e.a.1
             @Override // com.opos.cmn.i.a.b
-            public void a(final a.InterfaceC0645a interfaceC0645a) {
+            public void a(final a.InterfaceC0475a interfaceC0475a) {
                 com.opos.cmn.an.f.a.b("IdentityIdManager", "init");
                 com.opos.cmn.an.j.b.c(new Runnable() { // from class: com.opos.mobad.service.e.a.1.1
                     @Override // java.lang.Runnable
                     public void run() {
                         try {
-                            if (!b.e(a.this.f27335c)) {
+                            if (!b.e(a.this.f13647c)) {
                                 com.opos.cmn.an.f.a.a("IdentityIdManager", "unsupport id");
                             } else if (a.this.u() == null) {
                                 com.opos.cmn.an.f.a.b("IdentityIdManager", "openIdData == null");
-                                if (interfaceC0645a != null) {
-                                    interfaceC0645a.b();
+                                if (interfaceC0475a != null) {
+                                    interfaceC0475a.b();
                                     return;
                                 }
                                 return;
                             } else {
                                 com.opos.cmn.an.f.a.b("IdentityIdManager", "init succ");
                             }
-                            String b = a.this.b(a.this.f27335c);
+                            String b = a.this.b(a.this.f13647c);
                             if (!TextUtils.isEmpty(b)) {
                                 a.this.g = b;
                             }
                             a.this.b();
                             a.this.c();
-                            interfaceC0645a.a();
+                            interfaceC0475a.a();
                         } catch (Exception e) {
                             com.opos.cmn.an.f.a.a("IdentityIdManager", "init error" + e);
-                            interfaceC0645a.b();
+                            interfaceC0475a.b();
                         }
                     }
                 });
@@ -337,7 +337,7 @@ public class a {
         }, Integer.MAX_VALUE, 0);
         this.j = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.e.a.2
             @Override // com.opos.cmn.i.a.b
-            public void a(final a.InterfaceC0645a interfaceC0645a) {
+            public void a(final a.InterfaceC0475a interfaceC0475a) {
                 com.opos.cmn.an.f.a.b("IdentityIdManager", "initClientId");
                 com.opos.cmn.an.j.b.c(new Runnable() { // from class: com.opos.mobad.service.e.a.2.1
                     @Override // java.lang.Runnable
@@ -345,16 +345,16 @@ public class a {
                         try {
                             if (!TextUtils.isEmpty(a.this.v())) {
                                 com.opos.cmn.an.f.a.b("IdentityIdManager", "init clienitid succ");
-                                interfaceC0645a.a();
+                                interfaceC0475a.a();
                                 return;
                             }
                             com.opos.cmn.an.f.a.b("IdentityIdManager", "clientIdData == null");
-                            if (interfaceC0645a != null) {
-                                interfaceC0645a.b();
+                            if (interfaceC0475a != null) {
+                                interfaceC0475a.b();
                             }
                         } catch (Exception e) {
                             com.opos.cmn.an.f.a.a("IdentityIdManager", "init error" + e);
-                            interfaceC0645a.b();
+                            interfaceC0475a.b();
                         }
                     }
                 });
@@ -362,7 +362,7 @@ public class a {
         }, Integer.MAX_VALUE, 0);
         this.k = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.e.a.3
             @Override // com.opos.cmn.i.a.b
-            public void a(a.InterfaceC0645a interfaceC0645a) {
+            public void a(a.InterfaceC0475a interfaceC0475a) {
             }
         }, Integer.MAX_VALUE, 0);
         p();
@@ -394,7 +394,7 @@ public class a {
         String str = this.o;
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
-            Context context = this.f27335c;
+            Context context = this.f13647c;
             if (context == null) {
                 return "";
             }
@@ -448,12 +448,12 @@ public class a {
     }
 
     public String m() {
-        return (TextUtils.isEmpty(this.h) && this.f27335c != null && s() && t()) ? v() : this.h;
+        return (TextUtils.isEmpty(this.h) && this.f13647c != null && s() && t()) ? v() : this.h;
     }
 
     public String n() {
         Context context;
-        if (TextUtils.isEmpty(this.d) && TextUtils.isEmpty(this.e) && (context = this.f27335c) != null && b.e(context)) {
+        if (TextUtils.isEmpty(this.d) && TextUtils.isEmpty(this.e) && (context = this.f13647c) != null && b.e(context)) {
             u();
         }
         return this.d;

@@ -1,5 +1,6 @@
 package com.tencent.liteav.sdkcommon;
 
+import android.R;
 import android.content.Context;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
@@ -19,7 +20,7 @@ public final class g {
     final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    WindowManager f36436c;
+    WindowManager f22745c;
     WindowManager.LayoutParams d;
     WindowManager.LayoutParams e;
     View f;
@@ -33,7 +34,7 @@ public final class g {
     final a p;
 
     /* renamed from: a  reason: collision with root package name */
-    final DisplayMetrics f36435a = new DisplayMetrics();
+    final DisplayMetrics f22744a = new DisplayMetrics();
     boolean m = false;
     private final int q = 100;
     final Rect o = new Rect(0, 0, 0, 0);
@@ -44,13 +45,12 @@ public final class g {
         void a(int i);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/sdkcommon/g$b.class */
-    public final class b implements View.OnTouchListener {
+    final class b implements View.OnTouchListener {
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f36438c;
+        private int f22747c;
 
         private b() {
         }
@@ -65,55 +65,54 @@ public final class g {
             int action = motionEvent.getAction();
             if (action == 0) {
                 this.b = (int) motionEvent.getRawX();
-                this.f36438c = (int) motionEvent.getRawY();
+                this.f22747c = (int) motionEvent.getRawY();
             } else if (action == 2) {
                 int rawX = (int) motionEvent.getRawX();
                 int rawY = (int) motionEvent.getRawY();
                 int i = this.b;
-                int i2 = this.f36438c;
+                int i2 = this.f22747c;
                 g.this.d.x += rawX - i;
                 g.this.d.y += rawY - i2;
                 this.b = rawX;
-                this.f36438c = rawY;
+                this.f22747c = rawY;
                 if (g.this.d.x < 0) {
                     g.this.d.x = 0;
                 }
                 if (g.this.d.y < 0) {
                     g.this.d.y = 0;
                 }
-                if (g.this.d.x + g.this.o.right > g.this.f36435a.widthPixels) {
-                    g.this.d.width = g.this.f36435a.widthPixels - g.this.d.x;
+                if (g.this.d.x + g.this.o.right > g.this.f22744a.widthPixels) {
+                    g.this.d.width = g.this.f22744a.widthPixels - g.this.d.x;
                 } else {
                     g.this.d.width = g.this.o.right;
                 }
-                if (g.this.d.y + 100 > g.this.f36435a.heightPixels) {
-                    g.this.d.height = g.this.f36435a.heightPixels - g.this.d.y;
+                if (g.this.d.y + 100 > g.this.f22744a.heightPixels) {
+                    g.this.d.height = g.this.f22744a.heightPixels - g.this.d.y;
                 } else {
                     g.this.d.height = 100;
                 }
-                g.this.f36436c.updateViewLayout(view, g.this.d);
+                g.this.f22745c.updateViewLayout(view, g.this.d);
                 g.this.e.x = g.this.d.x;
                 g.this.e.y = g.this.d.y + g.this.d.height;
-                if (g.this.e.x + g.this.o.right > g.this.f36435a.widthPixels) {
-                    g.this.e.width = g.this.f36435a.widthPixels - g.this.e.x;
+                if (g.this.e.x + g.this.o.right > g.this.f22744a.widthPixels) {
+                    g.this.e.width = g.this.f22744a.widthPixels - g.this.e.x;
                 } else {
                     g.this.e.width = g.this.o.right;
                 }
-                if (g.this.e.y + g.this.o.bottom > g.this.f36435a.heightPixels) {
-                    g.this.e.height = g.this.f36435a.heightPixels - g.this.e.y;
+                if (g.this.e.y + g.this.o.bottom > g.this.f22744a.heightPixels) {
+                    g.this.e.height = g.this.f22744a.heightPixels - g.this.e.y;
                 } else {
                     g.this.e.height = g.this.o.bottom;
                 }
-                g.this.f36436c.updateViewLayout(g.this.g, g.this.e);
+                g.this.f22745c.updateViewLayout(g.this.g, g.this.e);
             }
             view.performClick();
             return false;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/sdkcommon/g$c.class */
-    public final class c implements AdapterView.OnItemSelectedListener {
+    final class c implements AdapterView.OnItemSelectedListener {
         private c() {
         }
 
@@ -142,7 +141,7 @@ public final class g {
     public g(Context context, a aVar) {
         this.b = context;
         this.p = aVar;
-        this.k = new ArrayAdapter<>(this.b, 17367048);
+        this.k = new ArrayAdapter<>(this.b, R.layout.simple_spinner_item);
     }
 
     public final int a(int i) {

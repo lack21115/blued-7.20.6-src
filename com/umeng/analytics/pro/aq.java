@@ -7,11 +7,11 @@ import android.content.SharedPreferences;
 public class aq {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40628a = "cl_count";
+    public static final String f26937a = "cl_count";
     public static final String b = "interval_";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f40629c = "config_ts";
+    public static final String f26938c = "config_ts";
     public static final String d = "iucc_s1";
     public static final String e = "iucc_s2";
     public static final String f = "sdk_type_ver";

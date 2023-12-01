@@ -25,11 +25,11 @@ import java.util.concurrent.Executor;
 public class Engine implements EngineJobListener, EngineResource.ResourceListener, MemoryCache.ResourceRemovedListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final boolean f20764a = Log.isLoggable("Engine", 2);
+    private static final boolean f7158a = Log.isLoggable("Engine", 2);
     private final Jobs b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final EngineKeyFactory f20765c;
+    private final EngineKeyFactory f7159c;
     private final MemoryCache d;
     private final EngineJobFactory e;
     private final ResourceRecycler f;
@@ -42,26 +42,26 @@ public class Engine implements EngineJobListener, EngineResource.ResourceListene
     public static class DecodeJobFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        final DecodeJob.DiskCacheProvider f20766a;
+        final DecodeJob.DiskCacheProvider f7160a;
         final Pools.Pool<DecodeJob<?>> b = FactoryPools.a(150, new FactoryPools.Factory<DecodeJob<?>>() { // from class: com.bumptech.glide.load.engine.Engine.DecodeJobFactory.1
             @Override // com.bumptech.glide.util.pool.FactoryPools.Factory
             /* renamed from: a */
             public DecodeJob<?> b() {
-                return new DecodeJob<>(DecodeJobFactory.this.f20766a, DecodeJobFactory.this.b);
+                return new DecodeJob<>(DecodeJobFactory.this.f7160a, DecodeJobFactory.this.b);
             }
         });
 
         /* renamed from: c  reason: collision with root package name */
-        private int f20767c;
+        private int f7161c;
 
         DecodeJobFactory(DecodeJob.DiskCacheProvider diskCacheProvider) {
-            this.f20766a = diskCacheProvider;
+            this.f7160a = diskCacheProvider;
         }
 
         <R> DecodeJob<R> a(GlideContext glideContext, Object obj, EngineKey engineKey, Key key, int i, int i2, Class<?> cls, Class<R> cls2, Priority priority, DiskCacheStrategy diskCacheStrategy, Map<Class<?>, Transformation<?>> map, boolean z, boolean z2, boolean z3, Options options, DecodeJob.Callback<R> callback) {
             DecodeJob decodeJob = (DecodeJob) Preconditions.a(this.b.acquire());
-            int i3 = this.f20767c;
-            this.f20767c = i3 + 1;
+            int i3 = this.f7161c;
+            this.f7161c = i3 + 1;
             return decodeJob.a(glideContext, obj, engineKey, key, i, i2, cls, cls2, priority, diskCacheStrategy, map, z, z2, z3, options, callback, i3);
         }
     }
@@ -71,11 +71,11 @@ public class Engine implements EngineJobListener, EngineResource.ResourceListene
     public static class EngineJobFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        final GlideExecutor f20769a;
+        final GlideExecutor f7163a;
         final GlideExecutor b;
 
         /* renamed from: c  reason: collision with root package name */
-        final GlideExecutor f20770c;
+        final GlideExecutor f7164c;
         final GlideExecutor d;
         final EngineJobListener e;
         final EngineResource.ResourceListener f;
@@ -83,14 +83,14 @@ public class Engine implements EngineJobListener, EngineResource.ResourceListene
             @Override // com.bumptech.glide.util.pool.FactoryPools.Factory
             /* renamed from: a */
             public EngineJob<?> b() {
-                return new EngineJob<>(EngineJobFactory.this.f20769a, EngineJobFactory.this.b, EngineJobFactory.this.f20770c, EngineJobFactory.this.d, EngineJobFactory.this.e, EngineJobFactory.this.f, EngineJobFactory.this.g);
+                return new EngineJob<>(EngineJobFactory.this.f7163a, EngineJobFactory.this.b, EngineJobFactory.this.f7164c, EngineJobFactory.this.d, EngineJobFactory.this.e, EngineJobFactory.this.f, EngineJobFactory.this.g);
             }
         });
 
         EngineJobFactory(GlideExecutor glideExecutor, GlideExecutor glideExecutor2, GlideExecutor glideExecutor3, GlideExecutor glideExecutor4, EngineJobListener engineJobListener, EngineResource.ResourceListener resourceListener) {
-            this.f20769a = glideExecutor;
+            this.f7163a = glideExecutor;
             this.b = glideExecutor2;
-            this.f20770c = glideExecutor3;
+            this.f7164c = glideExecutor3;
             this.d = glideExecutor4;
             this.e = engineJobListener;
             this.f = resourceListener;
@@ -106,11 +106,11 @@ public class Engine implements EngineJobListener, EngineResource.ResourceListene
     public static class LazyDiskCacheProvider implements DecodeJob.DiskCacheProvider {
 
         /* renamed from: a  reason: collision with root package name */
-        private final DiskCache.Factory f20772a;
+        private final DiskCache.Factory f7166a;
         private volatile DiskCache b;
 
         LazyDiskCacheProvider(DiskCache.Factory factory) {
-            this.f20772a = factory;
+            this.f7166a = factory;
         }
 
         @Override // com.bumptech.glide.load.engine.DecodeJob.DiskCacheProvider
@@ -118,7 +118,7 @@ public class Engine implements EngineJobListener, EngineResource.ResourceListene
             if (this.b == null) {
                 synchronized (this) {
                     if (this.b == null) {
-                        this.b = this.f20772a.a();
+                        this.b = this.f7166a.a();
                     }
                     if (this.b == null) {
                         this.b = new DiskCacheAdapter();
@@ -134,16 +134,16 @@ public class Engine implements EngineJobListener, EngineResource.ResourceListene
         private final EngineJob<?> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final ResourceCallback f20774c;
+        private final ResourceCallback f7168c;
 
         LoadStatus(ResourceCallback resourceCallback, EngineJob<?> engineJob) {
-            this.f20774c = resourceCallback;
+            this.f7168c = resourceCallback;
             this.b = engineJob;
         }
 
         public void a() {
             synchronized (Engine.this) {
-                this.b.c(this.f20774c);
+                this.b.c(this.f7168c);
             }
         }
     }
@@ -154,7 +154,7 @@ public class Engine implements EngineJobListener, EngineResource.ResourceListene
         activeResources = activeResources == null ? new ActiveResources(z) : activeResources;
         this.i = activeResources;
         activeResources.a(this);
-        this.f20765c = engineKeyFactory == null ? new EngineKeyFactory() : engineKeyFactory;
+        this.f7159c = engineKeyFactory == null ? new EngineKeyFactory() : engineKeyFactory;
         this.b = jobs == null ? new Jobs() : jobs;
         this.e = engineJobFactory == null ? new EngineJobFactory(glideExecutor, glideExecutor2, glideExecutor3, glideExecutor4, this, this) : engineJobFactory;
         this.h = decodeJobFactory == null ? new DecodeJobFactory(this.g) : decodeJobFactory;
@@ -170,7 +170,7 @@ public class Engine implements EngineJobListener, EngineResource.ResourceListene
         EngineJob<?> a2 = this.b.a(engineKey, z6);
         if (a2 != null) {
             a2.a(resourceCallback, executor);
-            if (f20764a) {
+            if (f7158a) {
                 a("Added to existing load", j, engineKey);
             }
             return new LoadStatus(resourceCallback, a2);
@@ -180,7 +180,7 @@ public class Engine implements EngineJobListener, EngineResource.ResourceListene
         this.b.a((Key) engineKey, (EngineJob<?>) a3);
         a3.a(resourceCallback, executor);
         a3.b(a4);
-        if (f20764a) {
+        if (f7158a) {
             a("Started new load", j, engineKey);
         }
         return new LoadStatus(resourceCallback, a3);
@@ -198,14 +198,14 @@ public class Engine implements EngineJobListener, EngineResource.ResourceListene
         if (z) {
             EngineResource<?> a2 = a(engineKey);
             if (a2 != null) {
-                if (f20764a) {
+                if (f7158a) {
                     a("Loaded resource from active resources", j, engineKey);
                 }
                 return a2;
             }
             EngineResource<?> b = b(engineKey);
             if (b != null) {
-                if (f20764a) {
+                if (f7158a) {
                     a("Loaded resource from cache", j, engineKey);
                 }
                 return b;
@@ -237,8 +237,8 @@ public class Engine implements EngineJobListener, EngineResource.ResourceListene
     }
 
     public <R> LoadStatus a(GlideContext glideContext, Object obj, Key key, int i, int i2, Class<?> cls, Class<R> cls2, Priority priority, DiskCacheStrategy diskCacheStrategy, Map<Class<?>, Transformation<?>> map, boolean z, boolean z2, Options options, boolean z3, boolean z4, boolean z5, boolean z6, ResourceCallback resourceCallback, Executor executor) {
-        long a2 = f20764a ? LogTime.a() : 0L;
-        EngineKey a3 = this.f20765c.a(obj, key, i, i2, map, cls, cls2, options);
+        long a2 = f7158a ? LogTime.a() : 0L;
+        EngineKey a3 = this.f7159c.a(obj, key, i, i2, map, cls, cls2, options);
         synchronized (this) {
             EngineResource<?> a4 = a(a3, z3, a2);
             if (a4 == null) {

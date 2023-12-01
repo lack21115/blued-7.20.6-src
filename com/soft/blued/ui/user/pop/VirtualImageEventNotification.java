@@ -17,7 +17,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class VirtualImageEventNotification extends CenterPopupView {
 
     /* renamed from: c  reason: collision with root package name */
-    private final IRequestHost f34254c;
+    private final IRequestHost f20563c;
     private String d;
     private String e;
     private OnEventClickListener f;
@@ -29,37 +29,36 @@ public final class VirtualImageEventNotification extends CenterPopupView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public VirtualImageEventNotification(Context context, IRequestHost requestHost, String pictureUrl, String str, OnEventClickListener onEventClickListener) {
+    public VirtualImageEventNotification(Context context, IRequestHost iRequestHost, String str, String str2, OnEventClickListener onEventClickListener) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(requestHost, "requestHost");
-        Intrinsics.e(pictureUrl, "pictureUrl");
-        this.f34254c = requestHost;
-        this.d = pictureUrl;
-        this.e = str;
+        Intrinsics.e(iRequestHost, "requestHost");
+        Intrinsics.e(str, "pictureUrl");
+        this.f20563c = iRequestHost;
+        this.d = str;
+        this.e = str2;
         this.f = onEventClickListener;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VirtualImageEventNotification this$0, View view) {
+    public static final void a(VirtualImageEventNotification virtualImageEventNotification, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(virtualImageEventNotification, "this$0");
+        virtualImageEventNotification.p();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(VirtualImageEventNotification this$0, View view) {
+    public static final void b(VirtualImageEventNotification virtualImageEventNotification, View view) {
         OnEventClickListener onEventClickListener;
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        String str = this$0.e;
-        if (str != null && (onEventClickListener = this$0.f) != null) {
+        Intrinsics.e(virtualImageEventNotification, "this$0");
+        String str = virtualImageEventNotification.e;
+        if (str != null && (onEventClickListener = virtualImageEventNotification.f) != null) {
             onEventClickListener.a(str);
         }
-        this$0.p();
+        virtualImageEventNotification.p();
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         ((FrameLayout) findViewById(R.id.fl_event_close)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.pop.-$$Lambda$VirtualImageEventNotification$BULH_32zdpL_2bLpYjvxaLo6pPE
@@ -75,15 +74,14 @@ public final class VirtualImageEventNotification extends CenterPopupView {
                 VirtualImageEventNotification.b(VirtualImageEventNotification.this, view);
             }
         });
-        ImageLoader.a(this.f34254c, this.d).a(imageView);
+        ImageLoader.a(this.f20563c, this.d).a(imageView);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.layout_virtual_image_event;
     }
 
     public final IRequestHost getRequestHost() {
-        return this.f34254c;
+        return this.f20563c;
     }
 }

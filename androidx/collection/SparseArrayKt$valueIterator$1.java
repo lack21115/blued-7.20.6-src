@@ -10,12 +10,12 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 public final class SparseArrayKt$valueIterator$1<T> implements Iterator<T>, KMappedMarker {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ SparseArrayCompat f1967a;
+    final /* synthetic */ SparseArrayCompat f1919a;
     private int b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SparseArrayKt$valueIterator$1(SparseArrayCompat<T> sparseArrayCompat) {
-        this.f1967a = sparseArrayCompat;
+        this.f1919a = sparseArrayCompat;
     }
 
     public final int getIndex() {
@@ -24,12 +24,12 @@ public final class SparseArrayKt$valueIterator$1<T> implements Iterator<T>, KMap
 
     @Override // java.util.Iterator
     public boolean hasNext() {
-        return this.b < this.f1967a.size();
+        return this.b < this.f1919a.size();
     }
 
     @Override // java.util.Iterator
     public T next() {
-        SparseArrayCompat sparseArrayCompat = this.f1967a;
+        SparseArrayCompat sparseArrayCompat = this.f1919a;
         int i = this.b;
         this.b = i + 1;
         return (T) sparseArrayCompat.valueAt(i);

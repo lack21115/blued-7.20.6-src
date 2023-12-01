@@ -20,7 +20,7 @@ import org.json.JSONObject;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24130a = e.class.getSimpleName();
+    private static final String f10515a = e.class.getSimpleName();
 
     public static long a(String str) {
         long j;
@@ -136,7 +136,7 @@ public class e {
             try {
                 jSONObject.put(str, a2);
             } catch (JSONException e) {
-                c.a(f24130a, "Could not put key '%s' and value '%s' into new JSONObject: %s", str, a2, e);
+                c.a(f10515a, "Could not put key '%s' and value '%s' into new JSONObject: %s", str, a2, e);
                 e.printStackTrace();
             }
         }
@@ -149,17 +149,17 @@ public class e {
 
     public static boolean a(Context context) {
         try {
-            c.c(f24130a, "Checking tracker internet connectivity.", new Object[0]);
+            c.c(f10515a, "Checking tracker internet connectivity.", new Object[0]);
             ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
             if (connectivityManager == null) {
                 return false;
             }
             NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
             boolean z = activeNetworkInfo != null && activeNetworkInfo.isConnected();
-            c.b(f24130a, "Tracker connection online: %s", Boolean.valueOf(z));
+            c.b(f10515a, "Tracker connection online: %s", Boolean.valueOf(z));
             return z;
         } catch (Exception e) {
-            c.a(f24130a, "Security exception checking connection: %s", e.toString());
+            c.a(f10515a, "Security exception checking connection: %s", e.toString());
             return true;
         }
     }
@@ -176,7 +176,7 @@ public class e {
             }
             return null;
         } catch (Exception e) {
-            c.a(f24130a, "getCarrier: %s", e.toString());
+            c.a(f10515a, "getCarrier: %s", e.toString());
             return null;
         }
     }
@@ -189,7 +189,7 @@ public class e {
             }
             return null;
         } catch (Exception e) {
-            String str = f24130a;
+            String str = f10515a;
             c.a(str, "getOperator error " + e.getMessage(), new Object[0]);
             return null;
         }
@@ -209,9 +209,9 @@ public class e {
             defaultDisplay.getSize(point);
             return point;
         } catch (Exception e) {
-            c.a(f24130a, "Display.getSize isn't available on older devices.", new Object[0]);
+            c.a(f10515a, "Display.getSize isn't available on older devices.", new Object[0]);
             if (display == null) {
-                c.a(f24130a, "error get display", new Object[0]);
+                c.a(f10515a, "error get display", new Object[0]);
                 return point;
             }
             point.x = display.getWidth();

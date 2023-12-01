@@ -98,7 +98,7 @@ public class ReflectUtil {
                     }
                 }
             }
-            mtopRequest.f43745a = hashMap;
+            mtopRequest.a = hashMap;
             mtopRequest.c(a((Map) hashMap));
         } catch (Exception e) {
             TBSdkLog.b("mtopsdk.ReflectUtil", "parseParams failed.", e);

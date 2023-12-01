@@ -4,7 +4,7 @@ package com.soft.blued.ui.pay.alipay;
 public final class Base64 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f32994a = new byte[128];
+    private static final byte[] f19303a = new byte[128];
     private static final char[] b = new char[64];
 
     static {
@@ -17,7 +17,7 @@ public final class Base64 {
             if (i5 >= 128) {
                 break;
             }
-            f32994a[i5] = -1;
+            f19303a[i5] = -1;
             i4 = i5 + 1;
         }
         int i6 = 90;
@@ -26,7 +26,7 @@ public final class Base64 {
             if (i7 < 65) {
                 break;
             }
-            f32994a[i7] = (byte) (i7 - 65);
+            f19303a[i7] = (byte) (i7 - 65);
             i6 = i7 - 1;
         }
         int i8 = 122;
@@ -36,7 +36,7 @@ public final class Base64 {
             if (i9 < 97) {
                 break;
             }
-            f32994a[i9] = (byte) ((i9 - 97) + 26);
+            f19303a[i9] = (byte) ((i9 - 97) + 26);
             i8 = i9 - 1;
         }
         int i10 = 57;
@@ -45,10 +45,10 @@ public final class Base64 {
             if (i11 < 48) {
                 break;
             }
-            f32994a[i11] = (byte) ((i11 - 48) + 52);
+            f19303a[i11] = (byte) ((i11 - 48) + 52);
             i10 = i11 - 1;
         }
-        byte[] bArr = f32994a;
+        byte[] bArr = f19303a;
         bArr[43] = 62;
         bArr[47] = 63;
         int i12 = 0;

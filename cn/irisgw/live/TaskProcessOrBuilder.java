@@ -12,5 +12,6 @@ public interface TaskProcessOrBuilder extends MessageOrBuilder {
 
     int getTaskListCount();
 
-    List<String> getTaskListList();
+    /* renamed from: getTaskListList */
+    List<String> mo7589getTaskListList();
 }

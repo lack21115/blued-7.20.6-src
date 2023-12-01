@@ -16,13 +16,9 @@ import java.util.Random;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveShakeScrollView.class */
 public class LiveShakeScrollView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    EventCallback f14925a;
+    EventCallback a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f14926c;
+    private RecyclerView c;
     private LiveShakeScrollAdapter d;
     private int e;
     private int f;
@@ -39,16 +35,13 @@ public class LiveShakeScrollView extends FrameLayout {
         public RecyclerViewTouchDisabler() {
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
         public boolean onInterceptTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
             return true;
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
         public void onRequestDisallowInterceptTouchEvent(boolean z) {
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
         public void onTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
         }
     }
@@ -69,39 +62,37 @@ public class LiveShakeScrollView extends FrameLayout {
         this.h = new Integer[]{Integer.valueOf(R.drawable.live_shake_num_0), Integer.valueOf(R.drawable.live_shake_num_1), Integer.valueOf(R.drawable.live_shake_num_2), Integer.valueOf(R.drawable.live_shake_num_3), Integer.valueOf(R.drawable.live_shake_num_4), Integer.valueOf(R.drawable.live_shake_num_5), Integer.valueOf(R.drawable.live_shake_num_6), Integer.valueOf(R.drawable.live_shake_num_7), Integer.valueOf(R.drawable.live_shake_num_8), Integer.valueOf(R.drawable.live_shake_num_9)};
         this.b = context;
         LayoutInflater.from(context).inflate(R.layout.live_shake_scroll_view, this);
-        this.f14926c = (RecyclerView) findViewById(R.id.recy_view);
+        this.c = findViewById(R.id.recy_view);
         ScrollSpeedLinearLayoutManger scrollSpeedLinearLayoutManger = new ScrollSpeedLinearLayoutManger(context);
         scrollSpeedLinearLayoutManger.a();
         scrollSpeedLinearLayoutManger.setReverseLayout(true);
-        this.f14926c.setLayoutManager(scrollSpeedLinearLayoutManger);
+        this.c.setLayoutManager(scrollSpeedLinearLayoutManger);
         LiveShakeScrollAdapter liveShakeScrollAdapter = new LiveShakeScrollAdapter(context);
         this.d = liveShakeScrollAdapter;
-        this.f14926c.setAdapter(liveShakeScrollAdapter);
-        this.f14926c.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.view.LiveShakeScrollView.1
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+        this.c.setAdapter(liveShakeScrollAdapter);
+        this.c.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.view.LiveShakeScrollView.1
             public void onScrollStateChanged(RecyclerView recyclerView, int i2) {
                 super.onScrollStateChanged(recyclerView, i2);
-                if (i2 == 0 && LiveShakeScrollView.this.f14925a != null) {
-                    LiveShakeScrollView.this.f14925a.a();
+                if (i2 == 0 && LiveShakeScrollView.this.a != null) {
+                    LiveShakeScrollView.this.a.a();
                 }
             }
 
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
                 super.onScrolled(recyclerView, i2, i3);
             }
         });
-        this.f14926c.addOnItemTouchListener(new RecyclerViewTouchDisabler());
+        this.c.addOnItemTouchListener(new RecyclerViewTouchDisabler());
     }
 
     private void setPosition(final int i) {
-        this.f14926c.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.LiveShakeScrollView.2
+        this.c.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.LiveShakeScrollView.2
             @Override // java.lang.Runnable
             public void run() {
                 LiveShakeScrollView.this.g = i;
                 LiveShakeScrollView liveShakeScrollView = LiveShakeScrollView.this;
                 liveShakeScrollView.f = liveShakeScrollView.g;
-                LiveShakeScrollView.this.f14926c.smoothScrollToPosition(LiveShakeScrollView.this.f);
+                LiveShakeScrollView.this.c.smoothScrollToPosition(LiveShakeScrollView.this.f);
             }
         }, 500L);
     }
@@ -188,6 +179,6 @@ public class LiveShakeScrollView extends FrameLayout {
     }
 
     public void setEventCallback(EventCallback eventCallback) {
-        this.f14925a = eventCallback;
+        this.a = eventCallback;
     }
 }

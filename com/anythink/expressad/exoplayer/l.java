@@ -6,11 +6,11 @@ import java.util.HashSet;
 public final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7689a = "ExoPlayer";
+    public static final String f4850a = "ExoPlayer";
     public static final String b = "2.8.4";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7690c = "ExoPlayerLib/2.8.4";
+    public static final String f4851c = "ExoPlayerLib/2.8.4";
     public static final int d = 2008004;
     public static final boolean e = true;
     public static final boolean f = true;

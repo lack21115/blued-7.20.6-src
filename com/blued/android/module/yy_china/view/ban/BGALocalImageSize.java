@@ -2,24 +2,20 @@ package com.blued.android.module.yy_china.view.ban;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/ban/BGALocalImageSize.class */
 public class BGALocalImageSize {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f18614a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f18615c;
+    private float c;
     private float d;
 
     public BGALocalImageSize(int i, int i2, float f, float f2) {
-        this.f18614a = i;
+        this.a = i;
         this.b = i2;
-        this.f18615c = f;
+        this.c = f;
         this.d = f2;
     }
 
     public int a() {
-        return this.f18614a;
+        return this.a;
     }
 
     public int b() {
@@ -27,7 +23,7 @@ public class BGALocalImageSize {
     }
 
     public float c() {
-        return this.f18615c;
+        return this.c;
     }
 
     public float d() {

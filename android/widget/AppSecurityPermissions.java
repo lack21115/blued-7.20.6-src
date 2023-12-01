@@ -152,7 +152,7 @@ public class AppSecurityPermissions {
                         PermissionItemView.this.setVisibility(8);
                     }
                 });
-                builder.setPositiveButton(17039370, (DialogInterface.OnClickListener) null);
+                builder.setPositiveButton(R.string.ok, (DialogInterface.OnClickListener) null);
             }
         }
 
@@ -221,7 +221,7 @@ public class AppSecurityPermissions {
                     TextUtils.writeToParcel(charSequence, obtain, 0);
                     obtain.setDataPosition(0);
                     obtain.recycle();
-                    spannableStringBuilder2.append(TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(obtain));
+                    spannableStringBuilder2.append((CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(obtain));
                     spannableStringBuilder2.append(charSequence2);
                     spannableStringBuilder = spannableStringBuilder2;
                 }
@@ -239,7 +239,7 @@ public class AppSecurityPermissions {
         this.mPermComparator = new PermissionInfoComparator();
         this.mPermsList = new ArrayList();
         this.mContext = context;
-        this.mInflater = (LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.mInflater = (LayoutInflater) this.mContext.getSystemService("layout_inflater");
         this.mPm = this.mContext.getPackageManager();
         this.mNewPermPrefix = this.mContext.getText(R.string.perms_new_perm_prefix);
     }
@@ -425,7 +425,7 @@ public class AppSecurityPermissions {
     }
 
     public static View getPermissionItemView(Context context, CharSequence charSequence, CharSequence charSequence2, boolean z) {
-        return getPermissionItemViewOld(context, (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE), charSequence, charSequence2, z, context.getDrawable(z ? 17302317 : 17302593));
+        return getPermissionItemViewOld(context, (LayoutInflater) context.getSystemService("layout_inflater"), charSequence, charSequence2, z, context.getDrawable(z ? 17302317 : 17302593));
     }
 
     private static PermissionItemView getPermissionItemView(Context context, LayoutInflater layoutInflater, MyPermissionGroupInfo myPermissionGroupInfo, MyPermissionInfo myPermissionInfo, boolean z, CharSequence charSequence, String str, boolean z2) {

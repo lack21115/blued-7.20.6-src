@@ -20,10 +20,10 @@ public class ByteBufferFileLoader implements ModelLoader<File, ByteBuffer> {
     public static final class ByteBufferFetcher implements DataFetcher<ByteBuffer> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final File f20866a;
+        private final File f7260a;
 
         ByteBufferFetcher(File file) {
-            this.f20866a = file;
+            this.f7260a = file;
         }
 
         @Override // com.bumptech.glide.load.data.DataFetcher
@@ -33,7 +33,7 @@ public class ByteBufferFileLoader implements ModelLoader<File, ByteBuffer> {
         @Override // com.bumptech.glide.load.data.DataFetcher
         public void a(Priority priority, DataFetcher.DataCallback<? super ByteBuffer> dataCallback) {
             try {
-                dataCallback.a((DataFetcher.DataCallback<? super ByteBuffer>) ByteBufferUtil.a(this.f20866a));
+                dataCallback.a((DataFetcher.DataCallback<? super ByteBuffer>) ByteBufferUtil.a(this.f7260a));
             } catch (IOException e) {
                 if (Log.isLoggable("ByteBufferFileLoader", 3)) {
                     Log.d("ByteBufferFileLoader", "Failed to obtain ByteBuffer for file", e);

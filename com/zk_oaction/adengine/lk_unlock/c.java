@@ -12,11 +12,11 @@ import org.xmlpull.v1.XmlPullParser;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    protected com.zk_oaction.adengine.lk_view.f f41986a;
+    protected com.zk_oaction.adengine.lk_view.f f28295a;
     private com.zk_oaction.adengine.lk_sdk.c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.zk_oaction.adengine.lk_view.d f41987c;
+    private com.zk_oaction.adengine.lk_view.d f28296c;
     private ArrayList<com.zk_oaction.adengine.lk_sdk.interfaces.b> d = new ArrayList<>();
     private boolean e;
     private g f;
@@ -51,8 +51,8 @@ public class c {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.zk_oaction.adengine.lk_unlock.c$c  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_unlock/c$c.class */
-    public class C1111c implements com.zk_oaction.adengine.lk_sdk.interfaces.c<XmlPullParser, Void> {
-        C1111c() {
+    public class C0941c implements com.zk_oaction.adengine.lk_sdk.interfaces.c<XmlPullParser, Void> {
+        C0941c() {
         }
 
         @Override // com.zk_oaction.adengine.lk_sdk.interfaces.c
@@ -103,7 +103,7 @@ public class c {
 
     public c(com.zk_oaction.adengine.lk_sdk.c cVar) {
         this.b = cVar;
-        this.f41987c = cVar.m;
+        this.f28296c = cVar.m;
         c();
     }
 
@@ -111,11 +111,11 @@ public class c {
     public void a(XmlPullParser xmlPullParser) {
         com.zk_oaction.adengine.lk_view.g gVar = new com.zk_oaction.adengine.lk_view.g(this.b);
         if (gVar.b(xmlPullParser, "Image")) {
-            com.zk_oaction.adengine.lk_view.f fVar = this.f41986a;
+            com.zk_oaction.adengine.lk_view.f fVar = this.f28295a;
             if (fVar != null) {
                 gVar.a(fVar);
             } else {
-                this.f41987c.a((com.zk_oaction.adengine.lk_sdk.interfaces.b) gVar);
+                this.f28296c.a((com.zk_oaction.adengine.lk_sdk.interfaces.b) gVar);
             }
             this.d.add(gVar);
         }
@@ -125,11 +125,11 @@ public class c {
     public void b(XmlPullParser xmlPullParser) {
         com.zk_oaction.adengine.lk_view.e eVar = new com.zk_oaction.adengine.lk_view.e(this.b);
         if (eVar.b(xmlPullParser, "Frame")) {
-            com.zk_oaction.adengine.lk_view.f fVar = this.f41986a;
+            com.zk_oaction.adengine.lk_view.f fVar = this.f28295a;
             if (fVar != null) {
                 eVar.a(fVar);
             } else {
-                this.f41987c.a((com.zk_oaction.adengine.lk_sdk.interfaces.b) eVar);
+                this.f28296c.a((com.zk_oaction.adengine.lk_sdk.interfaces.b) eVar);
             }
             this.d.add(eVar);
         }
@@ -140,7 +140,7 @@ public class c {
         this.g = hashMap;
         hashMap.put("Image", new a());
         this.g.put("Frame", new b());
-        this.g.put("Text", new C1111c());
+        this.g.put("Text", new C0941c());
         this.g.put("ImageNumber", new d());
         this.g.put("Group", new e());
         this.g.put("Trigger", new f());
@@ -150,11 +150,11 @@ public class c {
     public void c(XmlPullParser xmlPullParser) {
         m mVar = new m(this.b);
         if (mVar.b(xmlPullParser, "Text")) {
-            com.zk_oaction.adengine.lk_view.f fVar = this.f41986a;
+            com.zk_oaction.adengine.lk_view.f fVar = this.f28295a;
             if (fVar != null) {
                 mVar.a(fVar);
             } else {
-                this.f41987c.a((com.zk_oaction.adengine.lk_sdk.interfaces.b) mVar);
+                this.f28296c.a((com.zk_oaction.adengine.lk_sdk.interfaces.b) mVar);
             }
             this.d.add(mVar);
         }
@@ -164,11 +164,11 @@ public class c {
     public void d(XmlPullParser xmlPullParser) {
         i iVar = new i(this.b);
         if (iVar.b(xmlPullParser, "ImageNumber")) {
-            com.zk_oaction.adengine.lk_view.f fVar = this.f41986a;
+            com.zk_oaction.adengine.lk_view.f fVar = this.f28295a;
             if (fVar != null) {
                 iVar.a(fVar);
             } else {
-                this.f41987c.a((com.zk_oaction.adengine.lk_sdk.interfaces.b) iVar);
+                this.f28296c.a((com.zk_oaction.adengine.lk_sdk.interfaces.b) iVar);
             }
             this.d.add(iVar);
         }
@@ -178,11 +178,11 @@ public class c {
     public void e(XmlPullParser xmlPullParser) {
         com.zk_oaction.adengine.lk_view.f fVar = new com.zk_oaction.adengine.lk_view.f(this.b);
         if (fVar.a(xmlPullParser, "Group")) {
-            com.zk_oaction.adengine.lk_view.f fVar2 = this.f41986a;
+            com.zk_oaction.adengine.lk_view.f fVar2 = this.f28295a;
             if (fVar2 != null) {
                 fVar.a(fVar2);
             } else {
-                this.f41987c.a(fVar);
+                this.f28296c.a(fVar);
             }
             this.d.add(fVar);
         }
@@ -221,7 +221,7 @@ public class c {
     }
 
     public void a(com.zk_oaction.adengine.lk_view.f fVar) {
-        this.f41986a = fVar;
+        this.f28295a = fVar;
     }
 
     public void a(boolean z) {

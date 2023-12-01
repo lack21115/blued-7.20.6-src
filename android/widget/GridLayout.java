@@ -6,7 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Insets;
 import android.graphics.Paint;
-import android.media.AudioSystem;
 import android.util.AttributeSet;
 import android.util.LogPrinter;
 import android.util.Pair;
@@ -17,7 +16,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.RemoteViews;
 import com.android.internal.R;
-import com.j256.ormlite.stmt.query.SimpleComparison;
+import com.android.internal.content.NativeLibraryHelper;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -330,7 +329,7 @@ public class GridLayout extends ViewGroup {
                 }
                 int i2 = arc.span.min;
                 int i3 = arc.span.max;
-                sb2.append(i2 < i3 ? str + i3 + "-" + str + i2 + SimpleComparison.GREATER_THAN_EQUAL_TO_OPERATION + arc.value.value : str + i2 + "-" + str + i3 + SimpleComparison.LESS_THAN_EQUAL_TO_OPERATION + (-i));
+                sb2.append(i2 < i3 ? str + i3 + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + str + i2 + ">=" + arc.value.value : str + i2 + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + str + i3 + "<=" + (-i));
             }
             return sb2.toString();
         }
@@ -1095,7 +1094,7 @@ public class GridLayout extends ViewGroup {
         private static final int DEFAULT_HEIGHT = -2;
         private static final int DEFAULT_MARGIN = Integer.MIN_VALUE;
         private static final int DEFAULT_ROW = Integer.MIN_VALUE;
-        private static final Interval DEFAULT_SPAN = new Interval(Integer.MIN_VALUE, AudioSystem.DEVICE_IN_COMMUNICATION);
+        private static final Interval DEFAULT_SPAN = new Interval(Integer.MIN_VALUE, -2147483647);
         private static final int DEFAULT_SPAN_SIZE = DEFAULT_SPAN.size();
         private static final int DEFAULT_WIDTH = -2;
         private static final int GRAVITY = 0;

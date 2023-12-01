@@ -9,7 +9,7 @@ import java.util.Iterator;
 public final class n implements o {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f41141a = "(" + Process.myPid() + ")";
+    private static final String f27450a = "(" + Process.myPid() + ")";
 
     private void a(Context context, String str, int i) {
         com.vivo.push.b.n nVar = new com.vivo.push.b.n();
@@ -38,13 +38,13 @@ public final class n implements o {
     @Override // com.vivo.push.util.o
     public final int a(String str, String str2) {
         String concat = "VivoPush.".concat(String.valueOf(str));
-        return Log.e(concat, f41141a + str2);
+        return Log.e(concat, f27450a + str2);
     }
 
     @Override // com.vivo.push.util.o
     public final int a(String str, String str2, Throwable th) {
         String concat = "VivoPush.".concat(String.valueOf(str));
-        return Log.e(concat, f41141a + str2, th);
+        return Log.e(concat, f27450a + str2, th);
     }
 
     @Override // com.vivo.push.util.o
@@ -67,14 +67,14 @@ public final class n implements o {
     @Override // com.vivo.push.util.o
     public final int b(String str, String str2) {
         String concat = "VivoPush.".concat(String.valueOf(str));
-        return Log.w(concat, f41141a + str2);
+        return Log.w(concat, f27450a + str2);
     }
 
     @Override // com.vivo.push.util.o
     public final int b(String str, String str2, Throwable th) {
         if (p.a()) {
             String concat = "VivoPush.".concat(String.valueOf(str));
-            return Log.i(concat, f41141a + str2, th);
+            return Log.i(concat, f27450a + str2, th);
         }
         return -1;
     }
@@ -89,7 +89,7 @@ public final class n implements o {
     @Override // com.vivo.push.util.o
     public final int c(String str, String str2) {
         String concat = "VivoPush.".concat(String.valueOf(str));
-        return Log.d(concat, f41141a + str2);
+        return Log.d(concat, f27450a + str2);
     }
 
     @Override // com.vivo.push.util.o
@@ -103,7 +103,7 @@ public final class n implements o {
     public final int d(String str, String str2) {
         if (p.a()) {
             String concat = "VivoPush.".concat(String.valueOf(str));
-            return Log.i(concat, f41141a + str2);
+            return Log.i(concat, f27450a + str2);
         }
         return -1;
     }
@@ -112,7 +112,7 @@ public final class n implements o {
     public final int e(String str, String str2) {
         if (p.a()) {
             String concat = "VivoPush.".concat(String.valueOf(str));
-            return Log.v(concat, f41141a + str2);
+            return Log.v(concat, f27450a + str2);
         }
         return -1;
     }

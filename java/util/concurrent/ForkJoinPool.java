@@ -1,6 +1,5 @@
 package java.util.concurrent;
 
-import com.tencent.tinker.loader.shareutil.ShareElfFile;
 import java.lang.Thread;
 import java.security.PrivilegedAction;
 import java.util.ArrayList;
@@ -122,7 +121,7 @@ public class ForkJoinPool extends AbstractExecutorService {
         private static final long serialVersionUID = -7721805057305804111L;
 
         EmptyTask() {
-            this.status = ShareElfFile.SectionHeader.SHF_MASKPROC;
+            this.status = -268435456;
         }
 
         @Override // java.util.concurrent.ForkJoinTask
@@ -1143,7 +1142,7 @@ public class ForkJoinPool extends AbstractExecutorService {
             long j2 = i4;
             workQueue.nextWait = i6;
             workQueue.eventCount = Integer.MIN_VALUE | i4;
-            if (U.compareAndSwapLong(this, CTL, j, j2 | ((j - 281474976710656L) & (-4294967296L)))) {
+            if (U.compareAndSwapLong(this, CTL, j, j2 | ((j - AC_UNIT) & (-4294967296L)))) {
                 return 0;
             }
             workQueue.eventCount = i4;
@@ -1162,7 +1161,7 @@ public class ForkJoinPool extends AbstractExecutorService {
             if (i >= 0 || (32768 & i) == 0 || (i2 = (int) j) < 0) {
                 return;
             }
-        } while (!U.compareAndSwapLong(this, CTL, j, ((((i + 1) & 65535) | ((65536 + i) & (-65536))) << 32) | i2));
+        } while (!U.compareAndSwapLong(this, CTL, j, ((((i + 1) & 65535) | ((65536 + i) & UAC_MASK)) << 32) | i2));
         ForkJoinWorkerThread forkJoinWorkerThread = null;
         try {
             ForkJoinWorkerThreadFactory forkJoinWorkerThreadFactory = this.factory;
@@ -1322,7 +1321,7 @@ public class ForkJoinPool extends AbstractExecutorService {
                                     unsafe = U;
                                     j = CTL;
                                     j2 = this.ctl;
-                                } while (!unsafe.compareAndSwapLong(this, j, j2, (281474976710655L & j2) | ((AC_MASK & j2) + 281474976710656L)));
+                                } while (!unsafe.compareAndSwapLong(this, j, j2, (281474976710655L & j2) | ((AC_MASK & j2) + AC_UNIT)));
                             } else {
                                 j3 = this.ctl;
                                 i5 = i7;
@@ -1787,7 +1786,7 @@ public class ForkJoinPool extends AbstractExecutorService {
             unsafe = U;
             j = CTL;
             j2 = this.ctl;
-        } while (!unsafe.compareAndSwapLong(this, j, j2, (281474976710655L & j2) | ((AC_MASK & j2) + 281474976710656L)));
+        } while (!unsafe.compareAndSwapLong(this, j, j2, (281474976710655L & j2) | ((AC_MASK & j2) + AC_UNIT)));
     }
 
     public <T> T invoke(ForkJoinTask<T> forkJoinTask) {
@@ -1850,13 +1849,15 @@ public class ForkJoinPool extends AbstractExecutorService {
         return (STOP_BIT & j) != 0 && ((short) ((int) (j >>> 32))) + this.parallelism > 0;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.util.concurrent.AbstractExecutorService
-    protected <T> RunnableFuture<T> newTaskFor(Runnable runnable, T t) {
+    public <T> RunnableFuture<T> newTaskFor(Runnable runnable, T t) {
         return new ForkJoinTask.AdaptedRunnable(runnable, t);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.util.concurrent.AbstractExecutorService
-    protected <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
+    public <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
         return new ForkJoinTask.AdaptedCallable(callable);
     }
 
@@ -2106,8 +2107,8 @@ public class ForkJoinPool extends AbstractExecutorService {
         }
         short s2 = (short) (j >>> 32);
         if (s2 >= 0 && ((int) (j >> 48)) + s > 1) {
-            return U.compareAndSwapLong(this, CTL, j, ((j - 281474976710656L) & AC_MASK) | (281474976710655L & j));
-        } else if (s2 + s >= 32767 || !U.compareAndSwapLong(this, CTL, j, ((4294967296L + j) & TC_MASK) | ((-281470681743361L) & j))) {
+            return U.compareAndSwapLong(this, CTL, j, ((j - AC_UNIT) & AC_MASK) | (281474976710655L & j));
+        } else if (s2 + s >= 32767 || !U.compareAndSwapLong(this, CTL, j, ((TC_UNIT + j) & TC_MASK) | ((-281470681743361L) & j))) {
             return false;
         } else {
             ForkJoinWorkerThread forkJoinWorkerThread = null;

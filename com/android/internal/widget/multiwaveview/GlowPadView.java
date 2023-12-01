@@ -301,7 +301,7 @@ public class GlowPadView extends View {
             this.mOuterRadius = Math.max(this.mOuterRing.getWidth(), this.mOuterRing.getHeight()) / 2.0f;
         }
         if (this.mSnapMargin == 0.0f) {
-            this.mSnapMargin = TypedValue.applyDimension(1, 20.0f, getContext().getResources().getDisplayMetrics());
+            this.mSnapMargin = TypedValue.applyDimension(1, SNAP_MARGIN_DEFAULT, getContext().getResources().getDisplayMetrics());
         }
         if (this.mInnerRadius == 0.0f) {
             this.mInnerRadius = this.mHandleDrawable.getWidth() / 10.0f;
@@ -460,7 +460,7 @@ public class GlowPadView extends View {
     }
 
     private float getScaledGlowRadiusSquared() {
-        return square(AccessibilityManager.getInstance(this.mContext).isEnabled() ? 1.3f * this.mGlowRadius : this.mGlowRadius);
+        return square(AccessibilityManager.getInstance(this.mContext).isEnabled() ? TAP_RADIUS_SCALE_ACCESSIBILITY_ENABLED * this.mGlowRadius : this.mGlowRadius);
     }
 
     private float getSliceAngle() {
@@ -945,7 +945,7 @@ public class GlowPadView extends View {
 
     private void vibrate() {
         boolean z = true;
-        if (Settings.System.getIntForUser(this.mContext.getContentResolver(), Settings.System.HAPTIC_FEEDBACK_ENABLED, 1, -2) == 0) {
+        if (Settings.System.getIntForUser(this.mContext.getContentResolver(), "haptic_feedback_enabled", 1, -2) == 0) {
             z = false;
         }
         if (this.mVibrator == null || !z) {
@@ -1243,7 +1243,7 @@ public class GlowPadView extends View {
 
     public void setVibrateEnabled(boolean z) {
         if (z && this.mVibrator == null) {
-            this.mVibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+            this.mVibrator = (Vibrator) getContext().getSystemService("vibrator");
         } else {
             this.mVibrator = null;
         }

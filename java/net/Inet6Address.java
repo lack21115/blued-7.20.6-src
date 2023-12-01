@@ -1,6 +1,5 @@
 package java.net;
 
-import android.net.ProxyInfo;
 import android.system.OsConstants;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -12,7 +11,7 @@ import java.util.Enumeration;
 /* loaded from: source-2895416-dex2jar.jar:java/net/Inet6Address.class */
 public final class Inet6Address extends InetAddress {
     public static final InetAddress ANY = new Inet6Address(new byte[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, null, 0);
-    public static final InetAddress LOOPBACK = new Inet6Address(new byte[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, ProxyInfo.LOCAL_HOST, 0);
+    public static final InetAddress LOOPBACK = new Inet6Address(new byte[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, "localhost", 0);
     private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("ipaddress", byte[].class), new ObjectStreamField("scope_id", Integer.TYPE), new ObjectStreamField("scope_id_set", Boolean.TYPE), new ObjectStreamField("scope_ifname_set", Boolean.TYPE), new ObjectStreamField("ifname", String.class)};
     private static final long serialVersionUID = 6880410070516793377L;
     private String ifname;

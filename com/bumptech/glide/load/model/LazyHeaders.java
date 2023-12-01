@@ -10,25 +10,25 @@ import java.util.Map;
 public final class LazyHeaders implements Headers {
 
     /* renamed from: c  reason: collision with root package name */
-    private final Map<String, List<LazyHeaderFactory>> f20878c;
+    private final Map<String, List<LazyHeaderFactory>> f7272c;
     private volatile Map<String, String> d;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/LazyHeaders$Builder.class */
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final String f20879a = b();
+        private static final String f7273a = b();
         private static final Map<String, List<LazyHeaderFactory>> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f20880c = true;
+        private boolean f7274c = true;
         private Map<String, List<LazyHeaderFactory>> d = b;
         private boolean e = true;
 
         static {
             HashMap hashMap = new HashMap(2);
-            if (!TextUtils.isEmpty(f20879a)) {
-                hashMap.put("User-Agent", Collections.singletonList(new StringHeaderFactory(f20879a)));
+            if (!TextUtils.isEmpty(f7273a)) {
+                hashMap.put("User-Agent", Collections.singletonList(new StringHeaderFactory(f7273a)));
             }
             b = Collections.unmodifiableMap(hashMap);
         }
@@ -57,7 +57,7 @@ public final class LazyHeaders implements Headers {
         }
 
         public LazyHeaders a() {
-            this.f20880c = true;
+            this.f7274c = true;
             return new LazyHeaders(this.d);
         }
     }
@@ -66,35 +66,35 @@ public final class LazyHeaders implements Headers {
     static final class StringHeaderFactory implements LazyHeaderFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f20881a;
+        private final String f7275a;
 
         StringHeaderFactory(String str) {
-            this.f20881a = str;
+            this.f7275a = str;
         }
 
         @Override // com.bumptech.glide.load.model.LazyHeaderFactory
         public String a() {
-            return this.f20881a;
+            return this.f7275a;
         }
 
         public boolean equals(Object obj) {
             if (obj instanceof StringHeaderFactory) {
-                return this.f20881a.equals(((StringHeaderFactory) obj).f20881a);
+                return this.f7275a.equals(((StringHeaderFactory) obj).f7275a);
             }
             return false;
         }
 
         public int hashCode() {
-            return this.f20881a.hashCode();
+            return this.f7275a.hashCode();
         }
 
         public String toString() {
-            return "StringHeaderFactory{value='" + this.f20881a + "'}";
+            return "StringHeaderFactory{value='" + this.f7275a + "'}";
         }
     }
 
     LazyHeaders(Map<String, List<LazyHeaderFactory>> map) {
-        this.f20878c = Collections.unmodifiableMap(map);
+        this.f7272c = Collections.unmodifiableMap(map);
     }
 
     private String a(List<LazyHeaderFactory> list) {
@@ -119,7 +119,7 @@ public final class LazyHeaders implements Headers {
 
     private Map<String, String> b() {
         HashMap hashMap = new HashMap();
-        for (Map.Entry<String, List<LazyHeaderFactory>> entry : this.f20878c.entrySet()) {
+        for (Map.Entry<String, List<LazyHeaderFactory>> entry : this.f7272c.entrySet()) {
             String a2 = a(entry.getValue());
             if (!TextUtils.isEmpty(a2)) {
                 hashMap.put(entry.getKey(), a2);
@@ -142,16 +142,16 @@ public final class LazyHeaders implements Headers {
 
     public boolean equals(Object obj) {
         if (obj instanceof LazyHeaders) {
-            return this.f20878c.equals(((LazyHeaders) obj).f20878c);
+            return this.f7272c.equals(((LazyHeaders) obj).f7272c);
         }
         return false;
     }
 
     public int hashCode() {
-        return this.f20878c.hashCode();
+        return this.f7272c.hashCode();
     }
 
     public String toString() {
-        return "LazyHeaders{headers=" + this.f20878c + '}';
+        return "LazyHeaders{headers=" + this.f7272c + '}';
     }
 }

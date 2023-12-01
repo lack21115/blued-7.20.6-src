@@ -28,13 +28,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYGiftPKResult.class */
 public class YYGiftPKResult extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TextView f18183a;
+    private TextView a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f18184c;
+    private ImageView c;
     private RecyclerView d;
     private GiftPkAdapter e;
     private BaseYYStudioFragment f;
@@ -47,7 +43,6 @@ public class YYGiftPKResult extends LinearLayout {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYPkGoodItemModel yYPkGoodItemModel) {
             TextView textView = (TextView) baseViewHolder.getView(R.id.tv_index);
@@ -84,16 +79,16 @@ public class YYGiftPKResult extends LinearLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_gift_pk_result, (ViewGroup) this, true);
-        this.f18183a = (TextView) findViewById(R.id.tv_pk_user);
+        this.a = (TextView) findViewById(R.id.tv_pk_user);
         this.b = (ImageView) findViewById(R.id.iv_pk_user);
-        this.f18184c = (ImageView) findViewById(R.id.iv_pk_close);
-        this.d = (RecyclerView) findViewById(R.id.rv_result_list);
+        this.c = (ImageView) findViewById(R.id.iv_pk_close);
+        this.d = findViewById(R.id.rv_result_list);
         this.e = new GiftPkAdapter();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
         this.d.setLayoutManager(linearLayoutManager);
         this.d.setAdapter(this.e);
-        this.f18184c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYGiftPKResult.1
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYGiftPKResult.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -120,7 +115,7 @@ public class YYGiftPKResult extends LinearLayout {
                 YYPkDetailsModel singleData = bluedEntityA.getSingleData();
                 YYUserInfo yYUserInfo = singleData.user;
                 if (yYUserInfo != null) {
-                    YYGiftPKResult.this.f18183a.setText(yYUserInfo.getName());
+                    YYGiftPKResult.this.a.setText(yYUserInfo.getName());
                     ImageLoader.a(YYGiftPKResult.this.f.getFragmentActive(), yYUserInfo.getAvatar()).a(YYGiftPKResult.this.b);
                 }
                 YYGiftPKResult.this.e.setNewData(singleData.event);

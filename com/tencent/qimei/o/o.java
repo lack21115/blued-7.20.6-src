@@ -4,12 +4,12 @@ package com.tencent.qimei.o;
 public class o implements com.tencent.qimei.d.c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f38388a;
+    public final /* synthetic */ String f24697a;
     public final /* synthetic */ r b;
 
     public o(r rVar, String str) {
         this.b = rVar;
-        this.f38388a = str;
+        this.f24697a = str;
     }
 
     @Override // com.tencent.qimei.d.c
@@ -20,6 +20,6 @@ public class o implements com.tencent.qimei.d.c {
     @Override // com.tencent.qimei.d.c
     public void a(String str, String... strArr) {
         r.b(this.b);
-        this.b.a(str, this.f38388a);
+        this.b.a(str, this.f24697a);
     }
 }

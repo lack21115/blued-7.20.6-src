@@ -2,49 +2,48 @@ package com.blued.android.core.image.apng.io;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/apng/io/ByteBufferWriter.class */
 public class ByteBufferWriter implements Writer {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected ByteBuffer f9550a;
+    protected ByteBuffer a;
 
     public ByteBufferWriter() {
-        c(10240);
+        c(GL10.GL_TEXTURE_MAG_FILTER);
     }
 
     public int a() {
-        return this.f9550a.position();
+        return this.a.position();
     }
 
     public void a(byte b) {
-        this.f9550a.put(b);
+        this.a.put(b);
     }
 
     public void a(byte[] bArr) {
-        this.f9550a.put(bArr);
+        this.a.put(bArr);
     }
 
     public byte[] b() {
-        return this.f9550a.array();
+        return this.a.array();
     }
 
     @Override // com.blued.android.core.image.apng.io.Writer
     public void c() {
-        this.f9550a.clear();
+        this.a.clear();
     }
 
     public void c(int i) {
-        ByteBuffer byteBuffer = this.f9550a;
+        ByteBuffer byteBuffer = this.a;
         if (byteBuffer == null || i > byteBuffer.capacity()) {
             ByteBuffer allocate = ByteBuffer.allocate(i);
-            this.f9550a = allocate;
+            this.a = allocate;
             allocate.order(ByteOrder.LITTLE_ENDIAN);
         }
-        this.f9550a.clear();
+        this.a.clear();
     }
 
     public void d(int i) {
-        this.f9550a.position(i + a());
+        this.a.position(i + a());
     }
 }

@@ -9,7 +9,7 @@ import com.baidu.mobads.sdk.api.ScreenVideoAdListener;
 public class de extends dm {
 
     /* renamed from: a  reason: collision with root package name */
-    private FullScreenVideoAd.FullScreenVideoAdListener f9415a;
+    private FullScreenVideoAd.FullScreenVideoAdListener f6575a;
 
     public de(Context context, String str, boolean z) {
         super(context, str, z, IAdInterListener.AdProdType.PRODUCT_FULLSCREENVIDEO);
@@ -19,13 +19,13 @@ public class de extends dm {
     public void a(ScreenVideoAdListener screenVideoAdListener) {
         super.a(screenVideoAdListener);
         if (screenVideoAdListener instanceof FullScreenVideoAd.FullScreenVideoAdListener) {
-            this.f9415a = (FullScreenVideoAd.FullScreenVideoAdListener) screenVideoAdListener;
+            this.f6575a = (FullScreenVideoAd.FullScreenVideoAdListener) screenVideoAdListener;
         }
     }
 
     @Override // com.baidu.mobads.sdk.internal.dm, com.baidu.mobads.sdk.internal.bf
     protected void f(String str) {
-        FullScreenVideoAd.FullScreenVideoAdListener fullScreenVideoAdListener = this.f9415a;
+        FullScreenVideoAd.FullScreenVideoAdListener fullScreenVideoAdListener = this.f6575a;
         if (fullScreenVideoAdListener != null) {
             fullScreenVideoAdListener.onAdSkip(Float.parseFloat(str));
         }

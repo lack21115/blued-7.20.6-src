@@ -12,13 +12,9 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/ItemNearbyTransformersFullBinding.class */
 public final class ItemNearbyTransformersFullBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f19009a;
+    public final ImageView a;
     public final ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f19010c;
+    public final ShapeTextView c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -26,9 +22,9 @@ public final class ItemNearbyTransformersFullBinding implements ViewBinding {
 
     private ItemNearbyTransformersFullBinding(ConstraintLayout constraintLayout, ImageView imageView, ConstraintLayout constraintLayout2, ShapeTextView shapeTextView, TextView textView, TextView textView2, TextView textView3) {
         this.g = constraintLayout;
-        this.f19009a = imageView;
+        this.a = imageView;
         this.b = constraintLayout2;
-        this.f19010c = shapeTextView;
+        this.c = shapeTextView;
         this.d = textView;
         this.e = textView2;
         this.f = textView3;
@@ -50,8 +46,8 @@ public final class ItemNearbyTransformersFullBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.iv_header);
         if (imageView != null) {
-            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.root_layout);
-            if (constraintLayout != null) {
+            ConstraintLayout findViewById = view.findViewById(R.id.root_layout);
+            if (findViewById != null) {
                 ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_btn);
                 if (shapeTextView != null) {
                     TextView textView = (TextView) view.findViewById(R.id.tv_date);
@@ -60,7 +56,7 @@ public final class ItemNearbyTransformersFullBinding implements ViewBinding {
                         if (textView2 != null) {
                             TextView textView3 = (TextView) view.findViewById(R.id.tv_title);
                             if (textView3 != null) {
-                                return new ItemNearbyTransformersFullBinding((ConstraintLayout) view, imageView, constraintLayout, shapeTextView, textView, textView2, textView3);
+                                return new ItemNearbyTransformersFullBinding((ConstraintLayout) view, imageView, findViewById, shapeTextView, textView, textView2, textView3);
                             }
                             str = "tvTitle";
                         } else {
@@ -81,7 +77,6 @@ public final class ItemNearbyTransformersFullBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

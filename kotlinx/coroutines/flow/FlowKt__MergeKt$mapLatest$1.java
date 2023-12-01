@@ -16,13 +16,9 @@ import kotlin.jvm.functions.Function3;
 @DebugMetadata(b = "Merge.kt", c = {217, 217}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__MergeKt$mapLatest$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__MergeKt$mapLatest$1.class */
 public final class FlowKt__MergeKt$mapLatest$1<R, T> extends SuspendLambda implements Function3<FlowCollector<? super R>, T, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43230a;
+    int a;
     /* synthetic */ Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Function2<T, Continuation<? super R>, Object> f43231c;
+    final /* synthetic */ Function2<T, Continuation<? super R>, Object> c;
     private /* synthetic */ Object d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -30,7 +26,7 @@ public final class FlowKt__MergeKt$mapLatest$1<R, T> extends SuspendLambda imple
     /* JADX WARN: Multi-variable type inference failed */
     public FlowKt__MergeKt$mapLatest$1(Function2<? super T, ? super Continuation<? super R>, ? extends Object> function2, Continuation<? super FlowKt__MergeKt$mapLatest$1> continuation) {
         super(3, continuation);
-        this.f43231c = function2;
+        this.c = function2;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -40,33 +36,33 @@ public final class FlowKt__MergeKt$mapLatest$1<R, T> extends SuspendLambda imple
     }
 
     public final Object a(FlowCollector<? super R> flowCollector, T t, Continuation<? super Unit> continuation) {
-        FlowKt__MergeKt$mapLatest$1 flowKt__MergeKt$mapLatest$1 = new FlowKt__MergeKt$mapLatest$1(this.f43231c, continuation);
+        FlowKt__MergeKt$mapLatest$1 flowKt__MergeKt$mapLatest$1 = new FlowKt__MergeKt$mapLatest$1(this.c, continuation);
         flowKt__MergeKt$mapLatest$1.d = flowCollector;
         flowKt__MergeKt$mapLatest$1.b = t;
-        return flowKt__MergeKt$mapLatest$1.invokeSuspend(Unit.f42314a);
+        return flowKt__MergeKt$mapLatest$1.invokeSuspend(Unit.a);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         FlowCollector flowCollector;
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f43230a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
             flowCollector = (FlowCollector) this.d;
             Object obj2 = this.b;
             this.d = flowCollector;
-            this.f43230a = 1;
-            Object invoke = this.f43231c.invoke(obj2, this);
+            this.a = 1;
+            Object invoke = this.c.invoke(obj2, this);
             obj = invoke;
-            if (invoke == a2) {
-                return a2;
+            if (invoke == a) {
+                return a;
             }
         } else if (i != 1) {
             if (i == 2) {
                 ResultKt.a(obj);
-                return Unit.f42314a;
+                return Unit.a;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
@@ -74,10 +70,10 @@ public final class FlowKt__MergeKt$mapLatest$1<R, T> extends SuspendLambda imple
             ResultKt.a(obj);
         }
         this.d = null;
-        this.f43230a = 2;
-        if (flowCollector.emit(obj, this) == a2) {
-            return a2;
+        this.a = 2;
+        if (flowCollector.emit(obj, this) == a) {
+            return a;
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

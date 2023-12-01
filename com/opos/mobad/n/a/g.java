@@ -11,7 +11,7 @@ import com.sina.weibo.sdk.constant.WBConstants;
 public class g extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private Paint f26502a;
+    private Paint f12814a;
     private Paint b;
 
     public g(Context context) {
@@ -21,10 +21,10 @@ public class g extends View {
     public g(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         Paint paint = new Paint();
-        this.f26502a = paint;
+        this.f12814a = paint;
         paint.setAntiAlias(true);
-        this.f26502a.setStyle(Paint.Style.STROKE);
-        this.f26502a.setColor(486539264);
+        this.f12814a.setStyle(Paint.Style.STROKE);
+        this.f12814a.setColor(486539264);
         Paint paint2 = new Paint();
         this.b = paint2;
         paint2.setAntiAlias(true);
@@ -38,14 +38,14 @@ public class g extends View {
         canvas.save();
         float f = (i * 1157) / 1080;
         float f2 = i3;
-        canvas.drawCircle(f, f2, 239.0f * b, this.f26502a);
-        canvas.drawCircle(f, f2, 277.0f * b, this.f26502a);
-        canvas.drawCircle(f, f2, 316.0f * b, this.f26502a);
-        canvas.drawCircle(f, f2, 353.0f * b, this.f26502a);
-        canvas.drawCircle(f, f2, 391.0f * b, this.f26502a);
-        canvas.drawCircle(f, f2, 429.0f * b, this.f26502a);
-        canvas.drawCircle(f, f2, 467.0f * b, this.f26502a);
-        canvas.drawCircle(f, f2, b * 505.0f, this.f26502a);
+        canvas.drawCircle(f, f2, 239.0f * b, this.f12814a);
+        canvas.drawCircle(f, f2, 277.0f * b, this.f12814a);
+        canvas.drawCircle(f, f2, 316.0f * b, this.f12814a);
+        canvas.drawCircle(f, f2, 353.0f * b, this.f12814a);
+        canvas.drawCircle(f, f2, 391.0f * b, this.f12814a);
+        canvas.drawCircle(f, f2, 429.0f * b, this.f12814a);
+        canvas.drawCircle(f, f2, 467.0f * b, this.f12814a);
+        canvas.drawCircle(f, f2, b * 505.0f, this.f12814a);
         canvas.restore();
     }
 
@@ -72,9 +72,8 @@ public class g extends View {
         canvas.restore();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int width = getWidth();
         int height = getHeight();
         a(canvas, width, height);

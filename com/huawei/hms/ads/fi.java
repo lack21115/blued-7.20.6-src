@@ -13,11 +13,11 @@ public class fi {
     private int S;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22481a;
+    private int f8873a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f22482c;
+    private int f8874c;
     private int d = GLES11Ext.GL_TEXTURE_EXTERNAL_OES;
     private final float[] e = new float[9];
     private float[] f = {-0.00390625f, -0.00390625f, 0.0f, -0.00390625f, 0.00390625f, -0.00390625f, -0.00390625f, 0.0f, 0.0f, 0.0f, 0.00390625f, 0.0f, -0.00390625f, 0.00390625f, 0.0f, 0.00390625f, 0.00390625f, 0.00390625f};
@@ -36,7 +36,7 @@ public class fi {
         }
         this.D = -1;
         this.L = -1;
-        this.f22481a = -1;
+        this.f8873a = -1;
     }
 
     private void B() {
@@ -44,7 +44,7 @@ public class fi {
         this.b = glGetAttribLocation;
         Code(glGetAttribLocation, "positionLocation");
         int glGetAttribLocation2 = GLES20.glGetAttribLocation(this.C, "textureCoordLocation");
-        this.f22482c = glGetAttribLocation2;
+        this.f8874c = glGetAttribLocation2;
         Code(glGetAttribLocation2, "textureCoordLocation");
         int glGetUniformLocation = GLES20.glGetUniformLocation(this.C, "matrixLocation");
         this.S = glGetUniformLocation;
@@ -60,7 +60,7 @@ public class fi {
         if (i >= 0) {
             GLES20.glUniform1fv(i, 9, this.e, 0);
             GLES20.glUniform2fv(this.L, 9, this.f, 0);
-            GLES20.glUniform1f(this.f22481a, this.g);
+            GLES20.glUniform1f(this.f8873a, this.g);
         }
     }
 
@@ -117,9 +117,9 @@ public class fi {
         Code("rv - 1");
         GLES20.glVertexAttribPointer(this.b, fjVar.B(), 5126, false, fjVar.C(), (Buffer) fjVar.V());
         Code("rv - 2");
-        GLES20.glEnableVertexAttribArray(this.f22482c);
+        GLES20.glEnableVertexAttribArray(this.f8874c);
         Code("rv - 3");
-        GLES20.glVertexAttribPointer(this.f22482c, 2, 5126, false, fjVar.L(), (Buffer) fjVar.F());
+        GLES20.glVertexAttribPointer(this.f8874c, 2, 5126, false, fjVar.L(), (Buffer) fjVar.F());
         Code("rv - 4");
     }
 
@@ -155,9 +155,9 @@ public class fi {
         this.L = glGetUniformLocation;
         Code(glGetUniformLocation, "textureOffsetLocation");
         int glGetUniformLocation2 = GLES20.glGetUniformLocation(this.C, "colorAdjustLocation");
-        this.f22481a = glGetUniformLocation2;
+        this.f8873a = glGetUniformLocation2;
         Code(glGetUniformLocation2, "colorAdjustLocation");
-        System.arraycopy((Object) new float[]{0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f}, 0, (Object) this.e, 0, 9);
+        System.arraycopy(new float[]{0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f}, 0, this.e, 0, 9);
         this.g = 0.0f;
     }
 
@@ -165,7 +165,7 @@ public class fi {
         GLES20.glDrawArrays(5, fjVar.I(), fjVar.Z());
         Code("pr4 - 1");
         GLES20.glDisableVertexAttribArray(this.b);
-        GLES20.glDisableVertexAttribArray(this.f22482c);
+        GLES20.glDisableVertexAttribArray(this.f8874c);
         GLES20.glBindTexture(this.d, 0);
         GLES20.glUseProgram(0);
     }

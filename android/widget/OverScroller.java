@@ -8,6 +8,7 @@ import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 import android.widget.Scroller;
+import com.android.internal.util.cm.PowerMenuConstants;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/OverScroller.class */
 public class OverScroller {
@@ -74,7 +75,7 @@ public class OverScroller {
                 while (true) {
                     f = f5 + ((f8 - f5) / 2.0f);
                     f2 = 3.0f * f * (1.0f - f);
-                    float f9 = ((((1.0f - f) * 0.175f) + (P2 * f)) * f2) + (f * f * f);
+                    float f9 = ((((1.0f - f) * P1) + (P2 * f)) * f2) + (f * f * f);
                     if (Math.abs(f9 - f7) < 1.0E-5d) {
                         break;
                     } else if (f9 > f7) {
@@ -83,12 +84,12 @@ public class OverScroller {
                         f5 = f;
                     }
                 }
-                SPLINE_POSITION[i2] = ((((1.0f - f) * 0.5f) + f) * f2) + (f * f * f);
+                SPLINE_POSITION[i2] = ((((1.0f - f) * START_TENSION) + f) * f2) + (f * f * f);
                 float f10 = 1.0f;
                 while (true) {
                     f3 = f6 + ((f10 - f6) / 2.0f);
                     f4 = 3.0f * f3 * (1.0f - f3);
-                    float f11 = ((((1.0f - f3) * 0.5f) + f3) * f4) + (f3 * f3 * f3);
+                    float f11 = ((((1.0f - f3) * START_TENSION) + f3) * f4) + (f3 * f3 * f3);
                     if (Math.abs(f11 - f7) < 1.0E-5d) {
                         break;
                     } else if (f11 > f7) {
@@ -97,14 +98,14 @@ public class OverScroller {
                         f6 = f3;
                     }
                 }
-                SPLINE_TIME[i2] = ((((1.0f - f3) * 0.175f) + (P2 * f3)) * f4) + (f3 * f3 * f3);
+                SPLINE_TIME[i2] = ((((1.0f - f3) * P1) + (P2 * f3)) * f4) + (f3 * f3 * f3);
                 i = i2 + 1;
             }
         }
 
         SplineOverScroller(Context context) {
             this.mPhysicalCoeff = 386.0878f * context.getResources().getDisplayMetrics().density * 160.0f * 0.84f;
-            this.mPm = (PowerManager) context.getSystemService("power");
+            this.mPm = (PowerManager) context.getSystemService(PowerMenuConstants.GLOBAL_ACTION_KEY_POWER);
         }
 
         private void adjustDuration(int i, int i2, int i3) {
@@ -128,7 +129,10 @@ public class OverScroller {
         }
 
         private static float getDeceleration(int i) {
-            return i > 0 ? -2000.0f : 2000.0f;
+            if (i > 0) {
+                return -2000.0f;
+            }
+            return GRAVITY;
         }
 
         private double getSplineDeceleration(int i) {

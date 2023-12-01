@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentHotManBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28852a;
+    private final LinearLayout f15162a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28852a;
+        return this.f15162a;
     }
 }

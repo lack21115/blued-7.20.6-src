@@ -25,11 +25,11 @@ import org.json.JSONObject;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27565a;
+    private Context f13877a;
     private a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.qiniu.pili.droid.shortvideo.process.a.b f27566c;
+    private com.qiniu.pili.droid.shortvideo.process.a.b f13878c;
     private com.qiniu.pili.droid.shortvideo.transcoder.a d;
     private com.qiniu.pili.droid.shortvideo.process.a.a e;
     private com.qiniu.pili.droid.shortvideo.f.f f;
@@ -40,7 +40,7 @@ public class k {
         private List<Bitmap> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f27570c;
+        private int f13882c;
         private boolean d;
         private String e;
         private PLVideoSaveListener f;
@@ -48,7 +48,7 @@ public class k {
 
         public a(List<Bitmap> list, int i, boolean z, String str, PLVideoSaveListener pLVideoSaveListener) {
             this.b = list;
-            this.f27570c = i;
+            this.f13882c = i;
             this.d = z;
             this.e = str;
             this.f = pLVideoSaveListener;
@@ -74,7 +74,7 @@ public class k {
         public void run() {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             com.qiniu.pili.droid.shortvideo.encode.b bVar = new com.qiniu.pili.droid.shortvideo.encode.b();
-            bVar.a(this.f27570c);
+            bVar.a(this.f13882c);
             bVar.a(this.d);
             bVar.a(byteArrayOutputStream);
             Handler handler = new Handler(Looper.getMainLooper());
@@ -137,7 +137,7 @@ public class k {
     public k(Context context) {
         com.qiniu.pili.droid.shortvideo.f.e.t.c("ShortVideoComposerCore", "init +");
         Context applicationContext = context.getApplicationContext();
-        this.f27565a = applicationContext;
+        this.f13877a = applicationContext;
         l.a(applicationContext);
         com.qiniu.pili.droid.shortvideo.f.e.t.c("ShortVideoComposerCore", "init -");
     }
@@ -231,10 +231,10 @@ public class k {
 
     public boolean a(List<String> list, String str, PLVideoEncodeSetting pLVideoEncodeSetting, PLVideoSaveListener pLVideoSaveListener) {
         if (u.a().a(b.a.compose_video, pLVideoSaveListener)) {
-            if (this.f27566c == null) {
-                this.f27566c = new com.qiniu.pili.droid.shortvideo.process.a.b();
+            if (this.f13878c == null) {
+                this.f13878c = new com.qiniu.pili.droid.shortvideo.process.a.b();
             }
-            return this.f27566c.a(list, str, pLVideoEncodeSetting, pLVideoSaveListener);
+            return this.f13878c.a(list, str, pLVideoEncodeSetting, pLVideoSaveListener);
         }
         return false;
     }
@@ -262,7 +262,7 @@ public class k {
     }
 
     public void b() {
-        com.qiniu.pili.droid.shortvideo.process.a.b bVar = this.f27566c;
+        com.qiniu.pili.droid.shortvideo.process.a.b bVar = this.f13878c;
         if (bVar != null) {
             bVar.a();
         }
@@ -270,10 +270,10 @@ public class k {
 
     public boolean b(List<PLVideoRange> list, String str, PLVideoEncodeSetting pLVideoEncodeSetting, PLVideoSaveListener pLVideoSaveListener) {
         if (u.a().a(b.a.compose_trim_video, pLVideoSaveListener)) {
-            if (this.f27566c == null) {
-                this.f27566c = new com.qiniu.pili.droid.shortvideo.process.a.b();
+            if (this.f13878c == null) {
+                this.f13878c = new com.qiniu.pili.droid.shortvideo.process.a.b();
             }
-            return this.f27566c.b(list, str, pLVideoEncodeSetting, pLVideoSaveListener);
+            return this.f13878c.b(list, str, pLVideoEncodeSetting, pLVideoSaveListener);
         }
         return false;
     }

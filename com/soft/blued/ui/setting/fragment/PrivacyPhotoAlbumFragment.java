@@ -26,6 +26,7 @@ import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.imagecache.LoadOptions;
 import com.blued.android.core.imagecache.RecyclingUtils;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -74,7 +75,7 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private PrivacyPhotoAlbumContract.IPresenter f33536c;
+    private PrivacyPhotoAlbumContract.IPresenter f19845c;
     private LayoutInflater d;
     private View e;
     private CommonTopTitleNoTrans f;
@@ -102,8 +103,7 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
     private boolean B = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public BluedUIHttpResponse f33535a = new BluedUIHttpResponse<BluedEntityA<UserInfoEntity>>() { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.7
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
+    public BluedUIHttpResponse f19844a = new BluedUIHttpResponse<BluedEntityA<UserInfoEntity>>() { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.7
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<UserInfoEntity> bluedEntityA) {
             if (bluedEntityA == null) {
@@ -111,7 +111,7 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                 return;
             }
             DialogUtils.b(PrivacyPhotoAlbumFragment.this.g);
-            UserInfoEntity userInfoEntity = bluedEntityA.data.get(0);
+            UserInfoEntity userInfoEntity = (UserInfoEntity) bluedEntityA.data.get(0);
             if (userInfoEntity == null) {
                 AppMethods.d(2131888227);
                 return;
@@ -129,15 +129,15 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
     public class AnonymousClass5 implements QiniuUploadTools.QiNiuListener {
 
         /* renamed from: a  reason: collision with root package name */
-        double f33542a = 0.0d;
+        double f19851a = 0.0d;
         final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f33543c;
+        final /* synthetic */ String f19852c;
 
         AnonymousClass5(String str, String str2) {
             this.b = str;
-            this.f33543c = str2;
+            this.f19852c = str2;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -150,9 +150,9 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
             int b = PrivacyPhotoAlbumFragment.this.b(str);
             if (d2 >= 100.0d) {
                 ((BluedAlbum) PrivacyPhotoAlbumFragment.this.q.get(b)).setProgress("99%");
-            } else if (d > this.f33542a) {
+            } else if (d > this.f19851a) {
                 ((BluedAlbum) PrivacyPhotoAlbumFragment.this.q.get(b)).setProgress(sb2);
-                this.f33542a = d;
+                this.f19851a = d;
             }
             PrivacyPhotoAlbumFragment.this.r.notifyDataSetChanged();
         }
@@ -164,12 +164,11 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void b(String str) {
-            AppMethods.a((CharSequence) PrivacyPhotoAlbumFragment.this.getResources().getString(2131887272));
+            AppMethods.a(PrivacyPhotoAlbumFragment.this.getResources().getString(2131887272));
             ((BluedAlbum) PrivacyPhotoAlbumFragment.this.q.get(PrivacyPhotoAlbumFragment.this.b(str))).setProgress(PrivacyPhotoAlbumFragment.this.getResources().getString(R.string.failure));
             PrivacyPhotoAlbumFragment.this.r.notifyDataSetChanged();
         }
 
-        @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
         public void a(final String str) {
             PrivacyPhotoAlbumFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$PrivacyPhotoAlbumFragment$5$-RG1rj3v4bq07T0gNjMfd0o6VKU
                 @Override // java.lang.Runnable
@@ -179,7 +178,6 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
             });
         }
 
-        @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
         public void a(final String str, final double d) {
             if (PrivacyPhotoAlbumFragment.this.y) {
                 return;
@@ -192,11 +190,10 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
             });
         }
 
-        @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
         public void a(final String str, final String str2) {
             PrivacyPhotoAlbumFragment privacyPhotoAlbumFragment = PrivacyPhotoAlbumFragment.this;
             final String str3 = this.b;
-            final String str4 = this.f33543c;
+            final String str4 = this.f19852c;
             privacyPhotoAlbumFragment.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$PrivacyPhotoAlbumFragment$5$AaUkE7cEtNH7BjVPsuaXMvktBO4
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -205,7 +202,6 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
             });
         }
 
-        @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
         public boolean a() {
             return false;
         }
@@ -217,14 +213,12 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
         private MyPullDownListener() {
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void a() {
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void b() {
             PrivacyPhotoAlbumFragment.a(PrivacyPhotoAlbumFragment.this, 1);
-            PrivacyPhotoAlbumFragment.this.f33536c.a(PrivacyPhotoAlbumFragment.this.u, 30);
+            PrivacyPhotoAlbumFragment.this.f19845c.a(PrivacyPhotoAlbumFragment.this.u, 30);
         }
     }
 
@@ -233,7 +227,7 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
         private LayoutInflater b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ImageView f33549c;
+        private ImageView f19858c;
         private TextView d;
         private TextView e;
         private TextView f;
@@ -245,11 +239,11 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
         class AnonymousClass1 implements View.OnClickListener {
 
             /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ BluedAlbum f33550a;
+            final /* synthetic */ BluedAlbum f19859a;
             final /* synthetic */ int b;
 
             AnonymousClass1(BluedAlbum bluedAlbum, int i) {
-                this.f33550a = bluedAlbum;
+                this.f19859a = bluedAlbum;
                 this.b = i;
             }
 
@@ -257,9 +251,8 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
             public void onClick(View view) {
                 Tracker.onClick(view);
                 EventTrackVIP.a(VipProtos.Event.VIP_PRIVACY_PHOTO_LOCKED_CLICK);
-                if (TextUtils.isEmpty(this.f33550a.getUrl())) {
+                if (TextUtils.isEmpty(this.f19859a.getUrl())) {
                     CommonShowBottomWindow.a((FragmentActivity) PrivacyPhotoAlbumFragment.this.b, new String[]{PrivacyPhotoAlbumFragment.this.getResources().getString(2131891328)}, new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.PhotoAlbumGirdAdapter.1.2
-                        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, int i) {
                             if (i != 0) {
                                 return;
@@ -268,7 +261,6 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                             PayUtils.a(PrivacyPhotoAlbumFragment.this.b, 0, "privacy_photo_locked_renew", 25, VipProtos.FromType.PRIVACY_PHOTO_LOCKED_RENEW);
                         }
 
-                        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, boolean z) {
                         }
                     });
@@ -278,7 +270,6 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                 stringArray[0] = PrivacyPhotoAlbumFragment.this.getResources().getString(2131891328);
                 stringArray[1] = PrivacyPhotoAlbumFragment.this.getResources().getString(R.string.privacy_photo_album_look_big_pic);
                 CommonShowBottomWindow.a((FragmentActivity) PrivacyPhotoAlbumFragment.this.b, stringArray, new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.PhotoAlbumGirdAdapter.1.1
-                    @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                     public void a(ActionSheet actionSheet, int i) {
                         if (i == 0) {
                             EventTrackVIP.a(VipProtos.Event.VIP_PRIVACY_PHOTO_LOCKED_RENEW_CLICK);
@@ -291,7 +282,7 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                                 @Override // android.content.DialogInterface.OnClickListener
                                 public void onClick(DialogInterface dialogInterface, int i2) {
                                     Tracker.onClick(dialogInterface, i2);
-                                    PrivacyPhotoAlbumFragment.this.f33536c.a(AnonymousClass1.this.f33550a.getPid());
+                                    PrivacyPhotoAlbumFragment.this.f19845c.a(AnonymousClass1.this.f19859a.getPid());
                                 }
                             }, PrivacyPhotoAlbumFragment.this.getResources().getString(R.string.privacy_photo_album_delete_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                         } else {
@@ -317,7 +308,6 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                         }
                     }
 
-                    @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                     public void a(ActionSheet actionSheet, boolean z) {
                     }
                 });
@@ -329,35 +319,33 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
         class AnonymousClass4 implements View.OnClickListener {
 
             /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ BluedAlbum f33559a;
+            final /* synthetic */ BluedAlbum f19868a;
             final /* synthetic */ int b;
 
             AnonymousClass4(BluedAlbum bluedAlbum, int i) {
-                this.f33559a = bluedAlbum;
+                this.f19868a = bluedAlbum;
                 this.b = i;
             }
 
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                PrivacyPhotoAlbumFragment.this.t = this.f33559a;
+                PrivacyPhotoAlbumFragment.this.t = this.f19868a;
                 PrivacyPhotoAlbumFragment.this.t.position = this.b;
                 UserRestrictedDescModel userRestrictedDescModel = UserInfo.getInstance().getLoginUserInfo().restricted_desc;
-                if (TextUtils.isEmpty(this.f33559a.getUrl())) {
+                if (TextUtils.isEmpty(this.f19868a.getUrl())) {
                     if (userRestrictedDescModel == null) {
                         PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.PhotoAlbumGirdAdapter.4.1
-                            @Override // com.blued.android.framework.permission.PermissionCallbacks
                             public void U_() {
                                 PhotoSelectFragment.a(PrivacyPhotoAlbumFragment.this, 2, 22);
                             }
 
-                            @Override // com.blued.android.framework.permission.PermissionCallbacks
                             public void a(String[] strArr) {
                             }
                         });
                         return;
                     } else if (userRestrictedDescModel.isExist("photo")) {
-                        AppMethods.a((CharSequence) userRestrictedDescModel.getPhoto_desc());
+                        AppMethods.a(userRestrictedDescModel.getPhoto_desc());
                         return;
                     } else {
                         return;
@@ -373,16 +361,13 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                     }
                 }
                 CommonShowBottomWindow.a((FragmentActivity) PrivacyPhotoAlbumFragment.this.b, stringArray, iArr, "#8F8F91", new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.PhotoAlbumGirdAdapter.4.2
-                    @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                     public void a(ActionSheet actionSheet, int i) {
                         if (i == 0) {
                             PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.PhotoAlbumGirdAdapter.4.2.1
-                                @Override // com.blued.android.framework.permission.PermissionCallbacks
                                 public void U_() {
                                     PhotoSelectFragment.a(PrivacyPhotoAlbumFragment.this, 2, 22);
                                 }
 
-                                @Override // com.blued.android.framework.permission.PermissionCallbacks
                                 public void a(String[] strArr) {
                                 }
                             });
@@ -394,7 +379,7 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                                 @Override // android.content.DialogInterface.OnClickListener
                                 public void onClick(DialogInterface dialogInterface, int i2) {
                                     Tracker.onClick(dialogInterface, i2);
-                                    PrivacyPhotoAlbumFragment.this.f33536c.a(AnonymousClass4.this.f33559a.getPid());
+                                    PrivacyPhotoAlbumFragment.this.f19845c.a(AnonymousClass4.this.f19868a.getPid());
                                 }
                             }, PrivacyPhotoAlbumFragment.this.getResources().getString(R.string.privacy_photo_album_delete_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                         } else {
@@ -420,7 +405,6 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                         }
                     }
 
-                    @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                     public void a(ActionSheet actionSheet, boolean z) {
                     }
                 });
@@ -454,9 +438,9 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView.getLayoutParams();
             layoutParams.height = PrivacyPhotoAlbumFragment.this.s;
             this.d.setLayoutParams(layoutParams);
-            this.e = (TextView) inflate.findViewById(2131372318);
+            this.e = (TextView) inflate.findViewById(R.id.tv_progress);
             ImageView imageView = (ImageView) inflate.findViewById(2131364232);
-            this.f33549c = imageView;
+            this.f19858c = imageView;
             FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) imageView.getLayoutParams();
             layoutParams2.height = PrivacyPhotoAlbumFragment.this.s;
             this.d.setLayoutParams(layoutParams2);
@@ -482,9 +466,9 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
             }
             linearLayout.setOnClickListener(new AnonymousClass1(bluedAlbum, i));
             if (TextUtils.isEmpty(bluedAlbum.getUrl())) {
-                this.f33549c.setImageResource(2131232686);
+                this.f19858c.setImageResource(R.drawable.feed_photo_add);
             } else {
-                ImageLoader.a(PrivacyPhotoAlbumFragment.this.getFragmentActive(), bluedAlbum.getUrl()).b(2131232686).a(6.0f).a(this.f33549c);
+                ImageLoader.a(PrivacyPhotoAlbumFragment.this.getFragmentActive(), bluedAlbum.getUrl()).b((int) R.drawable.feed_photo_add).a(6.0f).a(this.f19858c);
             }
             this.d.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.PhotoAlbumGirdAdapter.2
                 @Override // android.view.View.OnClickListener
@@ -508,7 +492,7 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                     }
                 }
             });
-            this.f33549c.setOnClickListener(new AnonymousClass4(bluedAlbum, i));
+            this.f19858c.setOnClickListener(new AnonymousClass4(bluedAlbum, i));
             if (i == this.g) {
                 inflate.setVisibility(4);
             }
@@ -528,26 +512,23 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
     }
 
     private void a(final String str, final String str2, final int i) {
-        LoginRegisterHttpUtils.a(this.b, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.4
+        LoginRegisterHttpUtils.a(this.b, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                BluedAlbum bluedAlbum = bluedEntityA.data.get(0);
+                BluedAlbum bluedAlbum = (BluedAlbum) bluedEntityA.data.get(0);
                 ((BluedAlbum) PrivacyPhotoAlbumFragment.this.q.get(i)).key = bluedAlbum.key;
                 PrivacyPhotoAlbumFragment.this.a(str, bluedAlbum, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str3) {
                 PrivacyPhotoAlbumFragment.this.A = true;
                 return super.onUIFailure(i2, str3);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 if (PrivacyPhotoAlbumFragment.this.A) {
@@ -556,22 +537,20 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 PrivacyPhotoAlbumFragment.this.A = false;
                 ((BluedAlbum) PrivacyPhotoAlbumFragment.this.q.get(i)).setProgress("0%");
-                ((BluedAlbum) PrivacyPhotoAlbumFragment.this.q.get(i)).setUrl(RecyclingUtils.Scheme.FILE.b(str));
+                ((BluedAlbum) PrivacyPhotoAlbumFragment.this.q.get(i)).setUrl(RecyclingUtils.Scheme.c.b(str));
                 PrivacyPhotoAlbumFragment.this.r.notifyDataSetChanged();
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final String str, String str2, String str3, final String str4) {
-        ProfileHttpUtils.a(this.b, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.6
+        ProfileHttpUtils.a(this.b, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.6
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 BluedAlbum bluedAlbum;
@@ -579,19 +558,19 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                 ((BluedAlbum) PrivacyPhotoAlbumFragment.this.q.get(b)).setProgress("100%");
                 PrivacyPhotoAlbumFragment.this.r.notifyDataSetChanged();
                 if (bluedEntityA.data != null && bluedEntityA.data.size() > 0) {
-                    BluedAlbum bluedAlbum2 = bluedEntityA.data.get(0);
+                    BluedAlbum bluedAlbum2 = (BluedAlbum) bluedEntityA.data.get(0);
                     ((BluedAlbum) PrivacyPhotoAlbumFragment.this.q.get(b)).setPid(bluedAlbum2.getPid());
                     ((BluedAlbum) PrivacyPhotoAlbumFragment.this.q.get(b)).setProgress("");
                     ((BluedAlbum) PrivacyPhotoAlbumFragment.this.q.get(b)).audit_status = bluedAlbum2.audit_status;
                     PrivacyPhotoAlbumFragment.this.r.notifyDataSetChanged();
                     List<BluedAlbum> album = UserInfo.getInstance().getLoginUserInfo().getAlbum();
                     if (album.size() > b) {
-                        bluedAlbum = album.get(b);
+                        bluedAlbum = (BluedAlbum) album.get(b);
                     } else {
                         bluedAlbum = new BluedAlbum();
                         album.add(bluedAlbum);
                     }
-                    bluedAlbum.setUrl(RecyclingUtils.Scheme.FILE.b(str));
+                    bluedAlbum.setUrl(RecyclingUtils.Scheme.c.b(str));
                     bluedAlbum.setPid(bluedAlbum2.getPid());
                     bluedAlbum.audit_status = bluedAlbum2.audit_status;
                     for (BluedAlbum bluedAlbum3 : album) {
@@ -599,16 +578,14 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                     }
                 }
                 AppMethods.d((int) R.string.new_pics);
-                UserHttpUtils.a(PrivacyPhotoAlbumFragment.this.b, PrivacyPhotoAlbumFragment.this.f33535a, UserInfo.getInstance().getLoginUserInfo().getName(), PrivacyPhotoAlbumFragment.this.getFragmentActive());
+                UserHttpUtils.a(PrivacyPhotoAlbumFragment.this.b, PrivacyPhotoAlbumFragment.this.f19844a, UserInfo.getInstance().getLoginUserInfo().getName(), (IRequestHost) PrivacyPhotoAlbumFragment.this.getFragmentActive());
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str5) {
                 PrivacyPhotoAlbumFragment.this.B = true;
                 return super.onUIFailure(i, str5);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 if (PrivacyPhotoAlbumFragment.this.B) {
@@ -617,12 +594,11 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 PrivacyPhotoAlbumFragment.this.B = false;
             }
-        }, str2, str3, getFragmentActive());
+        }, str2, str3, (IRequestHost) getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -644,9 +620,9 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
     }
 
     private void g() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.e.findViewById(2131370749);
-        this.f = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.e.findViewById(R.id.top_title);
+        this.f = findViewById;
+        findViewById.a();
         this.f.setCenterText(getString(R.string.private_album));
         this.f.setLeftClickListener(this);
         View inflate = this.d.inflate(R.layout.header_privacy_photo_album, (ViewGroup) null);
@@ -658,9 +634,9 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
             this.n.setChecked(false);
         }
         this.k = (TextView) this.h.findViewById(R.id.tv_sticker);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.e.findViewById(R.id.rprlv_authed_users_list);
-        this.j = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(false);
+        RenrenPullToRefreshListView findViewById2 = this.e.findViewById(R.id.rprlv_authed_users_list);
+        this.j = findViewById2;
+        findViewById2.setRefreshEnabled(false);
         ListView listView = (ListView) this.j.getRefreshableView();
         this.i = listView;
         listView.addHeaderView(this.h);
@@ -685,7 +661,7 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
 
     private void h() {
         this.s = (this.b.getResources().getDisplayMetrics().widthPixels - DensityUtils.a(this.b, 66.0f)) / 3;
-        this.p = (PhotoGridView) this.e.findViewById(2131364131);
+        this.p = (PhotoGridView) this.e.findViewById(R.id.grid_view);
         PhotoAlbumGirdAdapter photoAlbumGirdAdapter = new PhotoAlbumGirdAdapter(this.b);
         this.r = photoAlbumGirdAdapter;
         this.p.setAdapter((ListAdapter) photoAlbumGirdAdapter);
@@ -693,14 +669,14 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
     }
 
     private void i() {
-        this.f33536c.a(this.u, 30);
+        this.f19845c.a(this.u, 30);
     }
 
     private void j() {
         this.w.a(new PrivacyPhotoAlbumAuthedUsersItemAdapter.OnDeleteClickListener() { // from class: com.soft.blued.ui.setting.fragment.PrivacyPhotoAlbumFragment.1
             @Override // com.soft.blued.ui.setting.adapter.PrivacyPhotoAlbumAuthedUsersItemAdapter.OnDeleteClickListener
             public void a(String str, int i) {
-                PrivacyPhotoAlbumFragment.this.f33536c.a(str, i);
+                PrivacyPhotoAlbumFragment.this.f19845c.a(str, i);
             }
         });
         this.j.setOnPullDownListener(new MyPullDownListener());
@@ -709,7 +685,7 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
                 Tracker.onCheckedChanged(compoundButton, z);
-                PrivacyPhotoAlbumFragment.this.f33536c.a(z);
+                PrivacyPhotoAlbumFragment.this.f19845c.a(z);
                 PrivacyPhotoAlbumFragment.this.w.a(z);
                 if (!z) {
                     PrivacyPhotoAlbumFragment.this.k.setTextColor(PrivacyPhotoAlbumFragment.this.b.getResources().getColor(2131101291));
@@ -785,7 +761,7 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
 
     @Override // com.soft.blued.ui.setting.Contract.PrivacyPhotoAlbumContract.IView
     public void a(List<UserFindResult> list) {
-        if (this.f33536c.c()) {
+        if (this.f19845c.c()) {
             this.j.o();
         } else {
             this.j.p();
@@ -826,7 +802,7 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
 
     public void e() {
         int i;
-        LinkedList album = UserInfo.getInstance().getLoginUserInfo().getAlbum();
+        List<BluedAlbum> album = UserInfo.getInstance().getLoginUserInfo().getAlbum();
         if (album != null) {
             i = album.size();
         } else {
@@ -841,11 +817,11 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
                 break;
             }
             BluedAlbum bluedAlbum = new BluedAlbum();
-            bluedAlbum.setPid(album.get(i3).getPid());
-            bluedAlbum.setUrl(album.get(i3).getUrl());
-            bluedAlbum.id = album.get(i3).id;
-            bluedAlbum.key = album.get(i3).key;
-            bluedAlbum.audit_status = album.get(i3).audit_status;
+            bluedAlbum.setPid(((BluedAlbum) album.get(i3)).getPid());
+            bluedAlbum.setUrl(((BluedAlbum) album.get(i3)).getUrl());
+            bluedAlbum.id = ((BluedAlbum) album.get(i3)).id;
+            bluedAlbum.key = ((BluedAlbum) album.get(i3)).key;
+            bluedAlbum.audit_status = ((BluedAlbum) album.get(i3)).audit_status;
             this.q.add(bluedAlbum);
             i2 = i3 + 1;
         }
@@ -899,12 +875,11 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                PrivacyPhotoAlbumFragment.this.f33536c.b();
+                PrivacyPhotoAlbumFragment.this.f19845c.b();
             }
         }, this.b.getResources().getString(2131886885), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1 && i == 22 && intent != null) {
             String stringExtra = intent.getStringExtra("photo_path");
@@ -930,7 +905,6 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.e;
         if (view == null) {
@@ -938,7 +912,7 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
             FragmentActivity activity = getActivity();
             this.b = activity;
             this.d = LayoutInflater.from(activity);
-            this.f33536c = new PrivacyPhotoAlbumPresenter(this.b, this, getFragmentActive());
+            this.f19845c = new PrivacyPhotoAlbumPresenter(this.b, this, getFragmentActive());
             g();
             h();
             i();
@@ -948,7 +922,6 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
         return this.e;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         this.y = true;
@@ -967,7 +940,6 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         e();
@@ -977,10 +949,9 @@ public class PrivacyPhotoAlbumFragment extends BaseFragment implements View.OnCl
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         j();
-        this.f33536c.ar_();
+        this.f19845c.ar_();
     }
 }

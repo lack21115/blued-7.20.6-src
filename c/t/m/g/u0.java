@@ -12,11 +12,11 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class u0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f4002a;
+    public Context f3954a;
     public final LinkedBlockingQueue<IBinder> b = new LinkedBlockingQueue<>(1);
 
     /* renamed from: c  reason: collision with root package name */
-    public ServiceConnection f4003c = new a();
+    public ServiceConnection f3955c = new a();
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/u0$a.class */
     public class a implements ServiceConnection {
@@ -37,18 +37,18 @@ public class u0 {
     }
 
     public u0(Context context) {
-        this.f4002a = context;
+        this.f3954a = context;
     }
 
     public void a(v0.b bVar) {
         try {
-            this.f4002a.getPackageManager().getPackageInfo("com.asus.msa.SupplementaryDID", 0);
+            this.f3954a.getPackageManager().getPackageInfo("com.asus.msa.SupplementaryDID", 0);
         } catch (Exception e) {
         }
         Intent intent = new Intent();
         intent.setAction("com.asus.msa.action.ACCESS_DID");
         intent.setComponent(new ComponentName("com.asus.msa.SupplementaryDID", "com.asus.msa.SupplementaryDID.SupplementaryDIDService"));
-        if (this.f4002a.bindService(intent, this.f4003c, 1)) {
+        if (this.f3954a.bindService(intent, this.f3955c, 1)) {
             try {
                 f1 f1Var = new f1(this.b.take());
                 String e2 = f1Var.e();

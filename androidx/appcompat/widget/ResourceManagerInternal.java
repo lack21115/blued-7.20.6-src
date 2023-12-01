@@ -41,10 +41,10 @@ public final class ResourceManagerInternal {
     private ResourceManagerHooks j;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final PorterDuff.Mode f1848a = PorterDuff.Mode.SRC_IN;
+    private static final PorterDuff.Mode f1800a = PorterDuff.Mode.SRC_IN;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final ColorFilterLruCache f1849c = new ColorFilterLruCache(6);
+    private static final ColorFilterLruCache f1801c = new ColorFilterLruCache(6);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/ResourceManagerInternal$AsldcInflateDelegate.class */
@@ -256,7 +256,7 @@ public final class ResourceManagerInternal {
             return;
         }
         if (tintInfo.mHasTintList || tintInfo.mHasTintMode) {
-            drawable.setColorFilter(a(tintInfo.mHasTintList ? tintInfo.mTintList : null, tintInfo.mHasTintMode ? tintInfo.mTintMode : f1848a, iArr));
+            drawable.setColorFilter(a(tintInfo.mHasTintList ? tintInfo.mTintList : null, tintInfo.mHasTintMode ? tintInfo.mTintMode : f1800a, iArr));
         } else {
             drawable.clearColorFilter();
         }
@@ -270,7 +270,7 @@ public final class ResourceManagerInternal {
             resourceManagerInternal.a("vector", new VdcInflateDelegate());
             resourceManagerInternal.a("animated-vector", new AvdcInflateDelegate());
             resourceManagerInternal.a("animated-selector", new AsldcInflateDelegate());
-            resourceManagerInternal.a(i.f7952c, new DrawableDelegate());
+            resourceManagerInternal.a(i.f5112c, new DrawableDelegate());
         }
     }
 
@@ -427,11 +427,11 @@ public final class ResourceManagerInternal {
         PorterDuffColorFilter porterDuffColorFilter;
         synchronized (ResourceManagerInternal.class) {
             try {
-                PorterDuffColorFilter a2 = f1849c.a(i, mode);
+                PorterDuffColorFilter a2 = f1801c.a(i, mode);
                 porterDuffColorFilter = a2;
                 if (a2 == null) {
                     porterDuffColorFilter = new PorterDuffColorFilter(i, mode);
-                    f1849c.a(i, mode, porterDuffColorFilter);
+                    f1801c.a(i, mode, porterDuffColorFilter);
                 }
             } catch (Throwable th) {
                 throw th;

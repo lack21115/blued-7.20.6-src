@@ -763,7 +763,7 @@ public final class DescriptorProtos {
             public Builder addReservedName(String str) {
                 if (str != null) {
                     ensureReservedNameIsMutable();
-                    this.reservedName_.add((LazyStringList) str);
+                    this.reservedName_.add(str);
                     onChanged();
                     return this;
                 }
@@ -1135,8 +1135,8 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -1438,7 +1438,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.DescriptorProtos.DescriptorProtoOrBuilder
             public String getReservedName(int i) {
-                return this.reservedName_.get(i);
+                return (String) this.reservedName_.get(i);
             }
 
             @Override // com.google.protobuf.DescriptorProtos.DescriptorProtoOrBuilder
@@ -2149,7 +2149,7 @@ public final class DescriptorProtos {
             public Builder setReservedName(int i, String str) {
                 if (str != null) {
                     ensureReservedNameIsMutable();
-                    this.reservedName_.set(i, (int) str);
+                    this.reservedName_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -2345,8 +2345,8 @@ public final class DescriptorProtos {
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
                 /* renamed from: clone */
-                public Builder mo1800clone() {
-                    return (Builder) super.mo1800clone();
+                public Builder mo2030clone() {
+                    return (Builder) super.mo2030clone();
                 }
 
                 @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -2867,9 +2867,8 @@ public final class DescriptorProtos {
                 return new Builder(builderParent);
             }
 
-            /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.google.protobuf.GeneratedMessageV3
-            public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+            protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
                 return new ExtensionRange();
             }
 
@@ -3023,8 +3022,8 @@ public final class DescriptorProtos {
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
                 /* renamed from: clone */
-                public Builder mo1800clone() {
-                    return (Builder) super.mo1800clone();
+                public Builder mo2030clone() {
+                    return (Builder) super.mo2030clone();
                 }
 
                 @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -3411,9 +3410,8 @@ public final class DescriptorProtos {
                 return new Builder(builderParent);
             }
 
-            /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.google.protobuf.GeneratedMessageV3
-            public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+            protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
                 return new ReservedRange();
             }
 
@@ -3458,6 +3456,7 @@ public final class DescriptorProtos {
             this.reservedName_ = LazyStringArrayList.EMPTY;
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private DescriptorProto(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             MessageOptions.Builder builder;
@@ -3942,7 +3941,7 @@ public final class DescriptorProtos {
 
         @Override // com.google.protobuf.DescriptorProtos.DescriptorProtoOrBuilder
         public String getReservedName(int i) {
-            return this.reservedName_.get(i);
+            return (String) this.reservedName_.get(i);
         }
 
         @Override // com.google.protobuf.DescriptorProtos.DescriptorProtoOrBuilder
@@ -4233,9 +4232,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new DescriptorProto();
         }
 
@@ -4565,7 +4563,7 @@ public final class DescriptorProtos {
             public Builder addReservedName(String str) {
                 if (str != null) {
                     ensureReservedNameIsMutable();
-                    this.reservedName_.add((LazyStringList) str);
+                    this.reservedName_.add(str);
                     onChanged();
                     return this;
                 }
@@ -4854,8 +4852,8 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -4929,7 +4927,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.DescriptorProtos.EnumDescriptorProtoOrBuilder
             public String getReservedName(int i) {
-                return this.reservedName_.get(i);
+                return (String) this.reservedName_.get(i);
             }
 
             @Override // com.google.protobuf.DescriptorProtos.EnumDescriptorProtoOrBuilder
@@ -5296,7 +5294,7 @@ public final class DescriptorProtos {
             public Builder setReservedName(int i, String str) {
                 if (str != null) {
                     ensureReservedNameIsMutable();
-                    this.reservedName_.set(i, (int) str);
+                    this.reservedName_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -5476,8 +5474,8 @@ public final class DescriptorProtos {
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
                 /* renamed from: clone */
-                public Builder mo1800clone() {
-                    return (Builder) super.mo1800clone();
+                public Builder mo2030clone() {
+                    return (Builder) super.mo2030clone();
                 }
 
                 @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -5864,9 +5862,8 @@ public final class DescriptorProtos {
                 return new Builder(builderParent);
             }
 
-            /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.google.protobuf.GeneratedMessageV3
-            public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+            protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
                 return new EnumReservedRange();
             }
 
@@ -5906,6 +5903,7 @@ public final class DescriptorProtos {
             this.reservedName_ = LazyStringArrayList.EMPTY;
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private EnumDescriptorProto(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             EnumOptions.Builder builder;
@@ -6156,7 +6154,7 @@ public final class DescriptorProtos {
 
         @Override // com.google.protobuf.DescriptorProtos.EnumDescriptorProtoOrBuilder
         public String getReservedName(int i) {
-            return this.reservedName_.get(i);
+            return (String) this.reservedName_.get(i);
         }
 
         @Override // com.google.protobuf.DescriptorProtos.EnumDescriptorProtoOrBuilder
@@ -6357,9 +6355,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new EnumDescriptorProto();
         }
 
@@ -6701,7 +6698,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
+            public Builder mo2030clone() {
                 return (Builder) super.clone();
             }
 
@@ -6999,6 +6996,7 @@ public final class DescriptorProtos {
             this.uninterpretedOption_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private EnumOptions(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -7294,9 +7292,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new EnumOptions();
         }
 
@@ -7502,8 +7499,8 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -8083,9 +8080,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new EnumValueDescriptorProto();
         }
 
@@ -8364,7 +8360,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
+            public Builder mo2030clone() {
                 return (Builder) super.clone();
             }
 
@@ -8642,6 +8638,7 @@ public final class DescriptorProtos {
             this.uninterpretedOption_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private EnumValueOptions(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -8909,9 +8906,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new EnumValueOptions();
         }
 
@@ -9179,7 +9175,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
+            public Builder mo2030clone() {
                 return (Builder) super.clone();
             }
 
@@ -9437,6 +9433,7 @@ public final class DescriptorProtos {
             this.uninterpretedOption_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private ExtensionRangeOptions(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -9683,9 +9680,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new ExtensionRangeOptions();
         }
 
@@ -10033,8 +10029,8 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -11451,9 +11447,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new FieldDescriptorProto();
         }
 
@@ -11887,7 +11882,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
+            public Builder mo2030clone() {
                 return (Builder) super.clone();
             }
 
@@ -12427,6 +12422,7 @@ public final class DescriptorProtos {
             this.uninterpretedOption_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private FieldOptions(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -12846,9 +12842,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new FieldOptions();
         }
 
@@ -13202,7 +13197,7 @@ public final class DescriptorProtos {
             public Builder addDependency(String str) {
                 if (str != null) {
                     ensureDependencyIsMutable();
-                    this.dependency_.add((LazyStringList) str);
+                    this.dependency_.add(str);
                     onChanged();
                     return this;
                 }
@@ -13779,8 +13774,8 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -13790,7 +13785,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.DescriptorProtos.FileDescriptorProtoOrBuilder
             public String getDependency(int i) {
-                return this.dependency_.get(i);
+                return (String) this.dependency_.get(i);
             }
 
             @Override // com.google.protobuf.DescriptorProtos.FileDescriptorProtoOrBuilder
@@ -14518,7 +14513,7 @@ public final class DescriptorProtos {
             public Builder setDependency(int i, String str) {
                 if (str != null) {
                     ensureDependencyIsMutable();
-                    this.dependency_.set(i, (int) str);
+                    this.dependency_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -14789,6 +14784,7 @@ public final class DescriptorProtos {
             this.syntax_ = "";
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private FileDescriptorProto(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             FileOptions.Builder builder;
@@ -15136,7 +15132,7 @@ public final class DescriptorProtos {
 
         @Override // com.google.protobuf.DescriptorProtos.FileDescriptorProtoOrBuilder
         public String getDependency(int i) {
-            return this.dependency_.get(i);
+            return (String) this.dependency_.get(i);
         }
 
         @Override // com.google.protobuf.DescriptorProtos.FileDescriptorProtoOrBuilder
@@ -15655,9 +15651,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new FileDescriptorProto();
         }
 
@@ -16043,8 +16038,8 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -16278,6 +16273,7 @@ public final class DescriptorProtos {
             this.file_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private FileDescriptorSet(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -16522,9 +16518,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new FileDescriptorSet();
         }
 
@@ -17162,7 +17157,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
+            public Builder mo2030clone() {
                 return (Builder) super.clone();
             }
 
@@ -18265,6 +18260,7 @@ public final class DescriptorProtos {
             this.uninterpretedOption_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private FileOptions(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -19271,9 +19267,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new FileOptions();
         }
 
@@ -19659,8 +19654,8 @@ public final class DescriptorProtos {
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
                 /* renamed from: clone */
-                public Builder mo1800clone() {
-                    return (Builder) super.mo1800clone();
+                public Builder mo2030clone() {
+                    return (Builder) super.mo2030clone();
                 }
 
                 @Override // com.google.protobuf.DescriptorProtos.GeneratedCodeInfo.AnnotationOrBuilder
@@ -20254,9 +20249,8 @@ public final class DescriptorProtos {
                 return new Builder(builderParent);
             }
 
-            /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.google.protobuf.GeneratedMessageV3
-            public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+            protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
                 return new Annotation();
             }
 
@@ -20507,8 +20501,8 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.DescriptorProtos.GeneratedCodeInfoOrBuilder
@@ -20732,6 +20726,7 @@ public final class DescriptorProtos {
             this.annotation_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private GeneratedCodeInfo(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -20965,9 +20960,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new GeneratedCodeInfo();
         }
 
@@ -21297,7 +21291,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
+            public Builder mo2030clone() {
                 return (Builder) super.clone();
             }
 
@@ -21635,6 +21629,7 @@ public final class DescriptorProtos {
             this.uninterpretedOption_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private MessageOptions(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -21980,9 +21975,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new MessageOptions();
         }
 
@@ -22260,8 +22254,8 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.DescriptorProtos.MethodDescriptorProtoOrBuilder
@@ -23087,9 +23081,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new MethodDescriptorProto();
         }
 
@@ -23415,7 +23408,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
+            public Builder mo2030clone() {
                 return (Builder) super.clone();
             }
 
@@ -23794,6 +23787,7 @@ public final class DescriptorProtos {
             this.uninterpretedOption_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private MethodOptions(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -24101,9 +24095,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new MethodOptions();
         }
 
@@ -24291,8 +24284,8 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -24826,9 +24819,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new OneofDescriptorProto();
         }
 
@@ -25086,7 +25078,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
+            public Builder mo2030clone() {
                 return (Builder) super.clone();
             }
 
@@ -25344,6 +25336,7 @@ public final class DescriptorProtos {
             this.uninterpretedOption_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private OneofOptions(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -25590,9 +25583,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new OneofOptions();
         }
 
@@ -25891,8 +25883,8 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -26267,6 +26259,7 @@ public final class DescriptorProtos {
             this.method_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private ServiceDescriptorProto(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             ServiceOptions.Builder builder;
@@ -26610,9 +26603,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new ServiceDescriptorProto();
         }
 
@@ -26903,7 +26895,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
+            public Builder mo2030clone() {
                 return (Builder) super.clone();
             }
 
@@ -27181,6 +27173,7 @@ public final class DescriptorProtos {
             this.uninterpretedOption_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private ServiceOptions(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -27450,9 +27443,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new ServiceOptions();
         }
 
@@ -27703,8 +27695,8 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -28030,7 +28022,7 @@ public final class DescriptorProtos {
                 public Builder addLeadingDetachedComments(String str) {
                     if (str != null) {
                         ensureLeadingDetachedCommentsIsMutable();
-                        this.leadingDetachedComments_.add((LazyStringList) str);
+                        this.leadingDetachedComments_.add(str);
                         onChanged();
                         return this;
                     }
@@ -28171,8 +28163,8 @@ public final class DescriptorProtos {
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
                 /* renamed from: clone */
-                public Builder mo1800clone() {
-                    return (Builder) super.mo1800clone();
+                public Builder mo2030clone() {
+                    return (Builder) super.mo2030clone();
                 }
 
                 @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -28212,7 +28204,7 @@ public final class DescriptorProtos {
 
                 @Override // com.google.protobuf.DescriptorProtos.SourceCodeInfo.LocationOrBuilder
                 public String getLeadingDetachedComments(int i) {
-                    return this.leadingDetachedComments_.get(i);
+                    return (String) this.leadingDetachedComments_.get(i);
                 }
 
                 @Override // com.google.protobuf.DescriptorProtos.SourceCodeInfo.LocationOrBuilder
@@ -28450,7 +28442,7 @@ public final class DescriptorProtos {
                 public Builder setLeadingDetachedComments(int i, String str) {
                     if (str != null) {
                         ensureLeadingDetachedCommentsIsMutable();
-                        this.leadingDetachedComments_.set(i, (int) str);
+                        this.leadingDetachedComments_.set(i, str);
                         onChanged();
                         return this;
                     }
@@ -28760,7 +28752,7 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.DescriptorProtos.SourceCodeInfo.LocationOrBuilder
             public String getLeadingDetachedComments(int i) {
-                return this.leadingDetachedComments_.get(i);
+                return (String) this.leadingDetachedComments_.get(i);
             }
 
             @Override // com.google.protobuf.DescriptorProtos.SourceCodeInfo.LocationOrBuilder
@@ -28961,9 +28953,8 @@ public final class DescriptorProtos {
                 return new Builder(builderParent);
             }
 
-            /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.google.protobuf.GeneratedMessageV3
-            public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+            protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
                 return new Location();
             }
 
@@ -29057,6 +29048,7 @@ public final class DescriptorProtos {
             this.location_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private SourceCodeInfo(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -29290,9 +29282,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new SourceCodeInfo();
         }
 
@@ -29646,8 +29637,8 @@ public final class DescriptorProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder
@@ -30179,8 +30170,8 @@ public final class DescriptorProtos {
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
                 /* renamed from: clone */
-                public Builder mo1800clone() {
-                    return (Builder) super.mo1800clone();
+                public Builder mo2030clone() {
+                    return (Builder) super.mo2030clone();
                 }
 
                 @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -30632,9 +30623,8 @@ public final class DescriptorProtos {
                 return new Builder(builderParent);
             }
 
-            /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.google.protobuf.GeneratedMessageV3
-            public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+            protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
                 return new NamePart();
             }
 
@@ -30676,6 +30666,7 @@ public final class DescriptorProtos {
             this.aggregateValue_ = "";
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private UninterpretedOption(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             if (extensionRegistryLite == null) {
@@ -31112,9 +31103,8 @@ public final class DescriptorProtos {
             return new Builder(builderParent);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.google.protobuf.GeneratedMessageV3
-        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+        protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new UninterpretedOption();
         }
 

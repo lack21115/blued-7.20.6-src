@@ -14,7 +14,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
+import com.android.internal.R;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -38,13 +40,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYHolidayActivities.class */
 public final class YYHolidayActivities extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private HolidayActivitiesLayoutBinding f18223a;
+    private HolidayActivitiesLayoutBinding a;
     private BaseYYStudioFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f18224c;
+    private final int c;
     private String d;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
@@ -63,16 +61,16 @@ public final class YYHolidayActivities extends ConstraintLayout {
     public YYHolidayActivities(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        HolidayActivitiesLayoutBinding a2 = HolidayActivitiesLayoutBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18223a = a2;
-        this.f18224c = DensityUtils.a(getContext(), 5.0f);
+        HolidayActivitiesLayoutBinding a = HolidayActivitiesLayoutBinding.a(LayoutInflater.from(getContext()), (ViewGroup) this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
+        this.c = DensityUtils.a(getContext(), 5.0f);
         this.d = "";
-        int a3 = DensityUtils.a(getContext(), 47.0f);
-        int a4 = DensityUtils.a(getContext(), 10.0f);
-        ViewGroup.LayoutParams layoutParams = this.f18223a.f16557a.getLayoutParams();
-        layoutParams.width = a3;
-        layoutParams.height = a4;
+        int a2 = DensityUtils.a(getContext(), 47.0f);
+        int a3 = DensityUtils.a(getContext(), 10.0f);
+        ViewGroup.LayoutParams layoutParams = this.a.a.getLayoutParams();
+        layoutParams.width = a2;
+        layoutParams.height = a3;
     }
 
     private final GradientDrawable a(int i, int i2, float f) {
@@ -89,19 +87,17 @@ public final class YYHolidayActivities extends ConstraintLayout {
             return;
         }
         Observable observable = LiveEventBus.get("room_activity_entrance", IMJsonContents96Model.class);
-        BaseYYStudioFragment baseYYStudioFragment = this.b;
-        Intrinsics.a(baseYYStudioFragment);
-        observable.observe(baseYYStudioFragment, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYHolidayActivities$PWeNjlQJ3_63M617eUsx202J5jM
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = this.b;
+        Intrinsics.a(lifecycleOwner);
+        observable.observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYHolidayActivities$PWeNjlQJ3_63M617eUsx202J5jM
             public final void onChanged(Object obj) {
                 YYHolidayActivities.a(YYHolidayActivities.this, (IMJsonContents96Model) obj);
             }
         });
         Observable observable2 = LiveEventBus.get("play_activity_animation", IMJsonContents97Model.class);
-        BaseYYStudioFragment baseYYStudioFragment2 = this.b;
-        Intrinsics.a(baseYYStudioFragment2);
-        observable2.observe(baseYYStudioFragment2, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYHolidayActivities$BAVGNFlbnkt66bCWcjjor8eZLho
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner2 = this.b;
+        Intrinsics.a(lifecycleOwner2);
+        observable2.observe(lifecycleOwner2, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYHolidayActivities$BAVGNFlbnkt66bCWcjjor8eZLho
             public final void onChanged(Object obj) {
                 YYHolidayActivities.a(YYHolidayActivities.this, (IMJsonContents97Model) obj);
             }
@@ -148,8 +144,8 @@ public final class YYHolidayActivities extends ConstraintLayout {
         this$0.setVisibility(0);
         this$0.d = iMJsonContents96Model.getLink();
         BaseYYStudioFragment baseYYStudioFragment = this$0.b;
-        ImageLoader.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), iMJsonContents96Model.getIcon()).a(this$0.f18223a.b);
-        TextView textView = this$0.f18223a.f16558c;
+        ImageLoader.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), iMJsonContents96Model.getIcon()).a(this$0.a.b);
+        TextView textView = this$0.a.c;
         StringBuilder sb = new StringBuilder();
         sb.append(iMJsonContents96Model.getNum());
         sb.append('/');
@@ -157,8 +153,8 @@ public final class YYHolidayActivities extends ConstraintLayout {
         textView.setText(sb.toString());
         this$0.setProgressTextColor(iMJsonContents96Model.getFont_color());
         this$0.a(iMJsonContents96Model.getProgress_bg_color(), iMJsonContents96Model.getProgress_start_color(), iMJsonContents96Model.getProgress_end_color());
-        this$0.f18223a.f16557a.setMax(iMJsonContents96Model.getTotal());
-        this$0.f18223a.f16557a.setProgress(iMJsonContents96Model.getNum());
+        this$0.a.a.setMax(iMJsonContents96Model.getTotal());
+        this$0.a.a.setProgress(iMJsonContents96Model.getNum());
         BaseYYStudioFragment baseYYStudioFragment2 = this$0.b;
         if (baseYYStudioFragment2 == null) {
             return;
@@ -195,10 +191,10 @@ public final class YYHolidayActivities extends ConstraintLayout {
     }
 
     private final void a(String str, String str2, String str3) {
-        LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{a(Color.parseColor(str), Color.parseColor(str), this.f18224c), new ScaleDrawable(a(Color.parseColor(str2), Color.parseColor(str3), this.f18224c), 3, 1.0f, 0.5f)});
-        layerDrawable.setId(0, 16908288);
-        layerDrawable.setId(1, 16908301);
-        this.f18223a.f16557a.setProgressDrawable(layerDrawable);
+        LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{a(Color.parseColor(str), Color.parseColor(str), this.c), new ScaleDrawable(a(Color.parseColor(str2), Color.parseColor(str3), this.c), 3, 1.0f, 0.5f)});
+        layerDrawable.setId(0, R.id.background);
+        layerDrawable.setId(1, R.id.progress);
+        this.a.a.setProgressDrawable(layerDrawable);
     }
 
     private final void b() {
@@ -229,7 +225,7 @@ public final class YYHolidayActivities extends ConstraintLayout {
     }
 
     private final void setProgressTextColor(String str) {
-        this.f18223a.f16558c.setTextColor(Color.parseColor(str));
+        this.a.c.setTextColor(Color.parseColor(str));
     }
 
     public final void a(BaseYYStudioFragment attachFragment) {

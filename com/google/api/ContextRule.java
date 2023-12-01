@@ -138,7 +138,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
         public Builder addAllowedRequestExtensions(String str) {
             if (str != null) {
                 ensureAllowedRequestExtensionsIsMutable();
-                this.allowedRequestExtensions_.add((LazyStringList) str);
+                this.allowedRequestExtensions_.add(str);
                 onChanged();
                 return this;
             }
@@ -159,7 +159,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
         public Builder addAllowedResponseExtensions(String str) {
             if (str != null) {
                 ensureAllowedResponseExtensionsIsMutable();
-                this.allowedResponseExtensions_.add((LazyStringList) str);
+                this.allowedResponseExtensions_.add(str);
                 onChanged();
                 return this;
             }
@@ -180,7 +180,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
         public Builder addProvided(String str) {
             if (str != null) {
                 ensureProvidedIsMutable();
-                this.provided_.add((LazyStringList) str);
+                this.provided_.add(str);
                 onChanged();
                 return this;
             }
@@ -206,7 +206,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
         public Builder addRequested(String str) {
             if (str != null) {
                 ensureRequestedIsMutable();
-                this.requested_.add((LazyStringList) str);
+                this.requested_.add(str);
                 onChanged();
                 return this;
             }
@@ -323,13 +323,13 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.api.ContextRuleOrBuilder
         public String getAllowedRequestExtensions(int i) {
-            return this.allowedRequestExtensions_.get(i);
+            return (String) this.allowedRequestExtensions_.get(i);
         }
 
         @Override // com.google.api.ContextRuleOrBuilder
@@ -349,7 +349,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
 
         @Override // com.google.api.ContextRuleOrBuilder
         public String getAllowedResponseExtensions(int i) {
-            return this.allowedResponseExtensions_.get(i);
+            return (String) this.allowedResponseExtensions_.get(i);
         }
 
         @Override // com.google.api.ContextRuleOrBuilder
@@ -379,7 +379,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
 
         @Override // com.google.api.ContextRuleOrBuilder
         public String getProvided(int i) {
-            return this.provided_.get(i);
+            return (String) this.provided_.get(i);
         }
 
         @Override // com.google.api.ContextRuleOrBuilder
@@ -399,7 +399,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
 
         @Override // com.google.api.ContextRuleOrBuilder
         public String getRequested(int i) {
-            return this.requested_.get(i);
+            return (String) this.requested_.get(i);
         }
 
         @Override // com.google.api.ContextRuleOrBuilder
@@ -573,7 +573,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
         public Builder setAllowedRequestExtensions(int i, String str) {
             if (str != null) {
                 ensureAllowedRequestExtensionsIsMutable();
-                this.allowedRequestExtensions_.set(i, (int) str);
+                this.allowedRequestExtensions_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -583,7 +583,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
         public Builder setAllowedResponseExtensions(int i, String str) {
             if (str != null) {
                 ensureAllowedResponseExtensionsIsMutable();
-                this.allowedResponseExtensions_.set(i, (int) str);
+                this.allowedResponseExtensions_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -598,7 +598,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
         public Builder setProvided(int i, String str) {
             if (str != null) {
                 ensureProvidedIsMutable();
-                this.provided_.set(i, (int) str);
+                this.provided_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -613,7 +613,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
         public Builder setRequested(int i, String str) {
             if (str != null) {
                 ensureRequestedIsMutable();
-                this.requested_.set(i, (int) str);
+                this.requested_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -678,7 +678,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
                                     this.requested_ = new LazyStringArrayList();
                                     z4 = z2 | true;
                                 }
-                                this.requested_.add((LazyStringList) readStringRequireUtf8);
+                                this.requested_.add(readStringRequireUtf8);
                                 z2 = z4;
                             } else if (readTag == 26) {
                                 String readStringRequireUtf82 = codedInputStream.readStringRequireUtf8();
@@ -687,7 +687,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
                                     this.provided_ = new LazyStringArrayList();
                                     z5 = z2 | true;
                                 }
-                                this.provided_.add((LazyStringList) readStringRequireUtf82);
+                                this.provided_.add(readStringRequireUtf82);
                                 z2 = z5;
                             } else if (readTag == 34) {
                                 String readStringRequireUtf83 = codedInputStream.readStringRequireUtf8();
@@ -696,7 +696,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
                                     this.allowedRequestExtensions_ = new LazyStringArrayList();
                                     z6 = z2 | true;
                                 }
-                                this.allowedRequestExtensions_.add((LazyStringList) readStringRequireUtf83);
+                                this.allowedRequestExtensions_.add(readStringRequireUtf83);
                                 z2 = z6;
                             } else if (readTag == 42) {
                                 String readStringRequireUtf84 = codedInputStream.readStringRequireUtf8();
@@ -705,7 +705,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
                                     this.allowedResponseExtensions_ = new LazyStringArrayList();
                                     z7 = z2 | true;
                                 }
-                                this.allowedResponseExtensions_.add((LazyStringList) readStringRequireUtf84);
+                                this.allowedResponseExtensions_.add(readStringRequireUtf84);
                                 z2 = z7;
                             } else if (!parseUnknownField(codedInputStream, newBuilder, extensionRegistryLite, readTag)) {
                             }
@@ -838,7 +838,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
 
     @Override // com.google.api.ContextRuleOrBuilder
     public String getAllowedRequestExtensions(int i) {
-        return this.allowedRequestExtensions_.get(i);
+        return (String) this.allowedRequestExtensions_.get(i);
     }
 
     @Override // com.google.api.ContextRuleOrBuilder
@@ -858,7 +858,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
 
     @Override // com.google.api.ContextRuleOrBuilder
     public String getAllowedResponseExtensions(int i) {
-        return this.allowedResponseExtensions_.get(i);
+        return (String) this.allowedResponseExtensions_.get(i);
     }
 
     @Override // com.google.api.ContextRuleOrBuilder
@@ -888,7 +888,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
 
     @Override // com.google.api.ContextRuleOrBuilder
     public String getProvided(int i) {
-        return this.provided_.get(i);
+        return (String) this.provided_.get(i);
     }
 
     @Override // com.google.api.ContextRuleOrBuilder
@@ -908,7 +908,7 @@ public final class ContextRule extends GeneratedMessageV3 implements ContextRule
 
     @Override // com.google.api.ContextRuleOrBuilder
     public String getRequested(int i) {
-        return this.requested_.get(i);
+        return (String) this.requested_.get(i);
     }
 
     @Override // com.google.api.ContextRuleOrBuilder

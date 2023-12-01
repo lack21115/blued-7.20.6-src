@@ -3,10 +3,7 @@ package com.blued.android.chat.grpc.backup;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
-import android.speech.tts.TextToSpeech;
 import android.text.TextUtils;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.data.SessionHeader;
 import com.blued.android.chat.grpc.PrivateChatManager;
@@ -19,9 +16,6 @@ import com.blued.android.chat.grpc.utils.ChatLog;
 import com.blued.android.chat.model.ChattingModel;
 import com.blued.android.chat.model.SessionModel;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.huawei.hms.push.constant.RemoteMessageConst;
-import com.tencent.lbssearch.object.param.Geo2AddressParam;
-import com.youzan.androidsdk.tool.WebParameter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -165,7 +159,7 @@ public class MsgBackupManager {
                         }
                         break;
                     case 104431:
-                        if (simpleName.equals(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL)) {
+                        if (simpleName.equals("int")) {
                             z2 = true;
                             break;
                         }
@@ -177,13 +171,13 @@ public class MsgBackupManager {
                         }
                         break;
                     case 64711720:
-                        if (simpleName.equals(TypedValues.Custom.S_BOOLEAN)) {
+                        if (simpleName.equals("boolean")) {
                             z2 = false;
                             break;
                         }
                         break;
                     case 109413500:
-                        if (simpleName.equals(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT)) {
+                        if (simpleName.equals("short")) {
                             z2 = true;
                             break;
                         }
@@ -220,8 +214,8 @@ public class MsgBackupManager {
             str2 = "msgTimestamp";
             str3 = "loadName=" + str + " and sessionId = " + j + " and msgTimestamp > " + j2;
         } else {
-            str2 = RemoteMessageConst.SEND_TIME;
-            str3 = "sessionId = " + j + " and " + RemoteMessageConst.SEND_TIME + " > " + j2;
+            str2 = "sendTime";
+            str3 = "sessionId = " + j + " and sendTime > " + j2;
         }
         String str4 = "select * from " + name + " where " + str3 + " order by " + str2 + " ASC limit 1000";
         ArrayList arrayList = new ArrayList();
@@ -381,7 +375,7 @@ public class MsgBackupManager {
                 try {
                     TempSessionInfo tempSessionInfo = new TempSessionInfo();
                     tempSessionInfo.sessionType = rawQuery.getShort(rawQuery.getColumnIndex("sessionType"));
-                    tempSessionInfo.sessionId = rawQuery.getLong(rawQuery.getColumnIndex(TextToSpeech.Engine.KEY_PARAM_SESSION_ID));
+                    tempSessionInfo.sessionId = rawQuery.getLong(rawQuery.getColumnIndex("sessionId"));
                     tempSessionInfo.msgCnt = rawQuery.getInt(rawQuery.getColumnIndex("msgCnt"));
                     hashMap.put(Long.valueOf(tempSessionInfo.sessionId), tempSessionInfo);
                 } catch (Throwable th) {
@@ -436,8 +430,8 @@ public class MsgBackupManager {
                 if (uid < 0) {
                     return;
                 }
-                if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-                    String str2 = PrivateChatManager.getInstance().getChatAppInfo().context.getCacheDir() + File.separator + "blued" + File.separator + WebParameter.PATH_DATABASE;
+                if (Environment.getExternalStorageState().equals("mounted")) {
+                    String str2 = PrivateChatManager.getInstance().getChatAppInfo().context.getCacheDir() + File.separator + "blued" + File.separator + "database";
                     String str3 = "android_" + uid;
                     File file = new File(str2);
                     if (!file.exists()) {
@@ -548,7 +542,7 @@ public class MsgBackupManager {
                     boolean unused3 = MsgBackupManager.isRunning = false;
                     return;
                 }
-                if ("android".equals(str2)) {
+                if (MsgBackupManager.PLATFORM_ANDROID.equals(str2)) {
                     MsgBackupManager.this.restoreFromDb(file, reserveListener, AndroidSessionDbModel.class, AndroidMsgDbModel.class, str3);
                 } else if (MsgBackupManager.PLATFORM_IOS.equals(str2)) {
                     MsgBackupManager.this.restoreFromDb(file, reserveListener, IOSSessionDbModel.class, IOSMsgDbModel.class, str3);

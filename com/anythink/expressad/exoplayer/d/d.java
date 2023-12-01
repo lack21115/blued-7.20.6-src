@@ -24,11 +24,11 @@ import java.util.UUID;
 public final class d<T extends i> implements b.c<T>, g<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7249a = "PRCustomData";
+    public static final String f4410a = "PRCustomData";
     public static final int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7250c = 1;
+    public static final int f4411c = 1;
     public static final int d = 2;
     public static final int e = 3;
     public static final int f = 3;
@@ -89,12 +89,12 @@ public final class d<T extends i> implements b.c<T>, g<T> {
 
     /* renamed from: com.anythink.expressad.exoplayer.d.d$d  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/d/d$d.class */
-    public static final class C0124d extends Exception {
-        private C0124d(UUID uuid) {
+    public static final class C0053d extends Exception {
+        private C0053d(UUID uuid) {
             super("Media does not support uuid: ".concat(String.valueOf(uuid)));
         }
 
-        /* synthetic */ C0124d(UUID uuid, byte b) {
+        /* synthetic */ C0053d(UUID uuid, byte b) {
             this(uuid);
         }
     }
@@ -165,7 +165,7 @@ public final class d<T extends i> implements b.c<T>, g<T> {
             hashMap = null;
         } else {
             HashMap hashMap2 = new HashMap();
-            hashMap2.put(f7249a, str);
+            hashMap2.put(f4410a, str);
             hashMap = hashMap2;
         }
         return a(com.anythink.expressad.exoplayer.b.bl, nVar, hashMap);
@@ -178,7 +178,7 @@ public final class d<T extends i> implements b.c<T>, g<T> {
             hashMap = null;
         } else {
             HashMap hashMap2 = new HashMap();
-            hashMap2.put(f7249a, str);
+            hashMap2.put(f4410a, str);
             hashMap = hashMap2;
         }
         d<k> a2 = a(com.anythink.expressad.exoplayer.b.bl, nVar, hashMap);
@@ -227,7 +227,7 @@ public final class d<T extends i> implements b.c<T>, g<T> {
             if (!a2.a(uuid)) {
                 z2 = com.anythink.expressad.exoplayer.b.bj.equals(uuid) && a2.a(com.anythink.expressad.exoplayer.b.bi);
             }
-            if (z2 && (a2.f7256c != null || z)) {
+            if (z2 && (a2.f4417c != null || z)) {
                 arrayList.add(a2);
             }
             i = i2 + 1;
@@ -243,11 +243,11 @@ public final class d<T extends i> implements b.c<T>, g<T> {
                     break;
                 }
                 e.a aVar = (e.a) arrayList.get(i4);
-                int b2 = aVar.a() ? com.anythink.expressad.exoplayer.e.a.h.b(aVar.f7256c) : -1;
-                if (af.f7632a < 23 && b2 == 0) {
+                int b2 = aVar.a() ? com.anythink.expressad.exoplayer.e.a.h.b(aVar.f4417c) : -1;
+                if (af.f4793a < 23 && b2 == 0) {
                     return aVar;
                 }
-                if (af.f7632a >= 23 && b2 == 1) {
+                if (af.f4793a >= 23 && b2 == 1) {
                     return aVar;
                 }
                 i3 = i4 + 1;
@@ -300,15 +300,15 @@ public final class d<T extends i> implements b.c<T>, g<T> {
         if (this.t == null) {
             aVar = a(eVar, this.i, false);
             if (aVar == null) {
-                C0124d c0124d = new C0124d(this.i, (byte) 0);
-                this.m.a(c0124d);
-                return new h(new f.a(c0124d));
+                C0053d c0053d = new C0053d(this.i, (byte) 0);
+                this.m.a(c0053d);
+                return new h(new f.a(c0053d));
             }
         } else {
             aVar = null;
         }
         if (this.n) {
-            byte[] bArr = aVar != null ? aVar.f7256c : null;
+            byte[] bArr = aVar != null ? aVar.f4417c : null;
             Iterator<com.anythink.expressad.exoplayer.d.b<T>> it = this.p.iterator();
             do {
                 bVar = null;
@@ -383,10 +383,10 @@ public final class d<T extends i> implements b.c<T>, g<T> {
             }
             Log.w(h, "DrmInitData only contains common PSSH SchemeData. Assuming support for: " + this.i);
         }
-        String str = eVar.f7253a;
+        String str = eVar.f4414a;
         if (str == null || com.anythink.expressad.exoplayer.b.bd.equals(str)) {
             return true;
         }
-        return !(com.anythink.expressad.exoplayer.b.be.equals(str) || com.anythink.expressad.exoplayer.b.bg.equals(str) || com.anythink.expressad.exoplayer.b.bf.equals(str)) || af.f7632a >= 25;
+        return !(com.anythink.expressad.exoplayer.b.be.equals(str) || com.anythink.expressad.exoplayer.b.bg.equals(str) || com.anythink.expressad.exoplayer.b.bf.equals(str)) || af.f4793a >= 25;
     }
 }

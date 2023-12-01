@@ -188,7 +188,7 @@ public class ImageRequest extends Request<Bitmap> {
             r5 = r0
             goto L4b
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.mokee.volley.toolbox.ImageRequest.m8073clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.mokee.volley.toolbox.ImageRequest.m11296clinit():void");
     }
 
     public ImageRequest(String str, Response.Listener<Bitmap> listener, int i, int i2, Bitmap.Config config, Response.ErrorListener errorListener) {
@@ -275,15 +275,15 @@ public class ImageRequest extends Request<Bitmap> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.mokee.volley.Request
     public Response<Bitmap> parseNetworkResponse(NetworkResponse networkResponse) {
-        Response<Bitmap> a2;
+        Response<Bitmap> a;
         synchronized (p) {
             try {
-                a2 = a(networkResponse);
+                a = a(networkResponse);
             } catch (OutOfMemoryError e) {
                 VolleyLog.e(u, Integer.valueOf(networkResponse.data.length), getUrl());
                 return Response.error(new ParseError(e));
             }
         }
-        return a2;
+        return a;
     }
 }

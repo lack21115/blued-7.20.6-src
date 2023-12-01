@@ -3,13 +3,14 @@ package com.oplus.quickgame.sdk.engine.utils;
 import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.HashMap;
 
 /* loaded from: source-8303388-dex2jar.jar:com/oplus/quickgame/sdk/engine/utils/d.class */
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HashMap<String, String> f24407a = new HashMap<>(8);
+    private static HashMap<String, String> f10720a = new HashMap<>(8);
 
     /* loaded from: source-8303388-dex2jar.jar:com/oplus/quickgame/sdk/engine/utils/d$a.class */
     public enum a {
@@ -55,7 +56,7 @@ public class d {
         if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
             return;
         }
-        f24407a.put(str, str2);
+        f10720a.put(str, str2);
     }
 
     public static boolean a(a aVar) {
@@ -85,7 +86,7 @@ public class d {
     public static boolean a(a aVar, Context context) {
         int a2;
         String c2 = c(aVar == a.INSTALL ? "xgame_install_imei_range_2" : "xgame_open_imei_range_2");
-        String[] split = !TextUtils.isEmpty(c2) ? c2.split("-") : null;
+        String[] split = !TextUtils.isEmpty(c2) ? c2.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER) : null;
         if (split == null || split.length < 2) {
             return false;
         }
@@ -152,6 +153,6 @@ public class d {
     }
 
     private static String c(String str) {
-        return TextUtils.isEmpty(str) ? "" : f24407a.get(str);
+        return TextUtils.isEmpty(str) ? "" : f10720a.get(str);
     }
 }

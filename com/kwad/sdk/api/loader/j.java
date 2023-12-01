@@ -90,12 +90,12 @@ public final class j {
         }
     }
 
-    private static void a(int i, a.C0549a c0549a, long j, int i2, String str) {
-        if (c0549a == null) {
+    private static void a(int i, a.C0379a c0379a, long j, int i2, String str) {
+        if (c0379a == null) {
             return;
         }
         try {
-            JSONObject json = new a((byte) 0).aT(i).aU(ZG).bc(c0549a.sdkVersion).bd(c0549a.Zl).H(j).aV(i2).be(str).toJson();
+            JSONObject json = new a((byte) 0).aT(i).aU(ZG).bc(c0379a.sdkVersion).bd(c0379a.Zl).H(j).aV(i2).be(str).toJson();
             StringBuilder sb = new StringBuilder("status:");
             sb.append(i);
             sb.append("--jo:");
@@ -105,32 +105,32 @@ public final class j {
         }
     }
 
-    public static void a(a.C0549a c0549a) {
+    public static void a(a.C0379a c0379a) {
         ZG++;
-        a(1, c0549a, 0L, 0, "");
+        a(1, c0379a, 0L, 0, "");
     }
 
-    public static void a(a.C0549a c0549a, int i, String str) {
-        a(4, c0549a, 0L, i, str);
+    public static void a(a.C0379a c0379a, int i, String str) {
+        a(4, c0379a, 0L, i, str);
     }
 
-    public static void a(a.C0549a c0549a, long j) {
-        a(2, c0549a, j, 0, "");
+    public static void a(a.C0379a c0379a, long j) {
+        a(2, c0379a, j, 0, "");
     }
 
-    public static void a(a.C0549a c0549a, long j, String str) {
-        a(3, c0549a, j, 0, str);
+    public static void a(a.C0379a c0379a, long j, String str) {
+        a(3, c0379a, j, 0, str);
     }
 
-    public static void b(a.C0549a c0549a) {
-        a(5, c0549a, 0L, 0, "");
+    public static void b(a.C0379a c0379a) {
+        a(5, c0379a, 0L, 0, "");
     }
 
-    public static void b(a.C0549a c0549a, int i, String str) {
-        a(7, c0549a, 0L, i, str);
+    public static void b(a.C0379a c0379a, int i, String str) {
+        a(7, c0379a, 0L, i, str);
     }
 
-    public static void b(a.C0549a c0549a, long j) {
-        a(6, c0549a, j, 0, "");
+    public static void b(a.C0379a c0379a, long j) {
+        a(6, c0379a, j, 0, "");
     }
 }

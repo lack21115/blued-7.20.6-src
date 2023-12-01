@@ -1,7 +1,5 @@
 package com.tencent.tencentmap.mapsdk.maps.model;
 
-import org.apache.commons.codec.CharEncoding;
-
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/tencentmap/mapsdk/maps/model/MapRouteSectionWithName.class */
 public class MapRouteSectionWithName {
     public static final int kMaxRoadNameLength = 128;
@@ -21,7 +19,7 @@ public class MapRouteSectionWithName {
     private byte[] stringToBytes(String str) {
         if (str != null) {
             try {
-                return str.getBytes(CharEncoding.UTF_16LE);
+                return str.getBytes("UTF-16LE");
             } catch (Exception e) {
             }
         }
@@ -30,15 +28,15 @@ public class MapRouteSectionWithName {
 
     public byte[] toBytes() {
         byte[] bArr = new byte[byteLength()];
-        System.arraycopy((Object) intToBytes(this.startNum), 0, (Object) bArr, 0, 4);
-        System.arraycopy((Object) intToBytes(this.endNum), 0, (Object) bArr, 4, 4);
-        System.arraycopy((Object) intToBytes(this.color), 0, (Object) bArr, 8, 4);
+        System.arraycopy(intToBytes(this.startNum), 0, bArr, 0, 4);
+        System.arraycopy(intToBytes(this.endNum), 0, bArr, 4, 4);
+        System.arraycopy(intToBytes(this.color), 0, bArr, 8, 4);
         byte[] stringToBytes = stringToBytes(this.roadName);
         if (stringToBytes.length < 128) {
-            System.arraycopy((Object) stringToBytes, 0, (Object) bArr, 12, stringToBytes.length);
+            System.arraycopy(stringToBytes, 0, bArr, 12, stringToBytes.length);
             return bArr;
         }
-        System.arraycopy((Object) stringToBytes, 0, (Object) bArr, 12, 128);
+        System.arraycopy(stringToBytes, 0, bArr, 12, 128);
         return bArr;
     }
 }

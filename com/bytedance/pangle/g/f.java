@@ -3,7 +3,6 @@ package com.bytedance.pangle.g;
 import android.util.ArrayMap;
 import android.util.Pair;
 import android.util.SparseArray;
-import android.widget.ExpandableListView;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -21,28 +20,27 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/g/f.class */
-public final class f {
+final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    static final HashMap<String, SparseArray<m>> f21413a = new HashMap<>();
+    static final HashMap<String, SparseArray<m>> f7807a = new HashMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/g/f$a.class */
     public static final class a implements j {
 
         /* renamed from: a  reason: collision with root package name */
-        private final MessageDigest[] f21414a;
+        private final MessageDigest[] f7808a;
 
         a(MessageDigest[] messageDigestArr) {
-            this.f21414a = messageDigestArr;
+            this.f7808a = messageDigestArr;
         }
 
         @Override // com.bytedance.pangle.g.j
         public final void a(ByteBuffer byteBuffer) {
             ByteBuffer slice = byteBuffer.slice();
-            MessageDigest[] messageDigestArr = this.f21414a;
+            MessageDigest[] messageDigestArr = this.f7808a;
             int length = messageDigestArr.length;
             int i = 0;
             while (true) {
@@ -187,13 +185,13 @@ public final class f {
     private static void a(Map<Integer, byte[]> map, FileDescriptor fileDescriptor, m mVar) {
         int i;
         l lVar = new l(fileDescriptor, 0L, mVar.b);
-        l lVar2 = new l(fileDescriptor, mVar.f21423c, mVar.d - mVar.f21423c);
+        l lVar2 = new l(fileDescriptor, mVar.f7817c, mVar.d - mVar.f7817c);
         ByteBuffer duplicate = mVar.e.duplicate();
         duplicate.order(ByteOrder.LITTLE_ENDIAN);
         long j = mVar.b;
         s.a(duplicate);
         int position = duplicate.position();
-        if (j < 0 || j > ExpandableListView.PACKED_POSITION_VALUE_NULL) {
+        if (j < 0 || j > 4294967295L) {
             throw new IllegalArgumentException("uint32 value of out range: ".concat(String.valueOf(j)));
         }
         duplicate.putInt(duplicate.position() + position + 16, (int) j);
@@ -276,7 +274,7 @@ public final class f {
         }
         ByteBuffer order = ByteBuffer.wrap(bArr).order(ByteOrder.LITTLE_ENDIAN);
         order.position(32);
-        if (order.getLong() == j - (mVar.f21423c - mVar.b)) {
+        if (order.getLong() == j - (mVar.f7817c - mVar.b)) {
             return Arrays.copyOfRange(bArr, 0, 32);
         }
         throw new SecurityException("APK content size did not verify");

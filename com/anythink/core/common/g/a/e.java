@@ -13,29 +13,25 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/g/a/e.class */
 public final class e extends c {
-
-    /* renamed from: a  reason: collision with root package name */
-    List<f> f6717a;
+    List<f> a;
     boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f6718c = getClass().getSimpleName();
+    private final String c = getClass().getSimpleName();
 
     public e(List<f> list) {
-        this.f6717a = list;
+        this.a = list;
     }
 
     private String a(boolean z) {
         JSONObject jSONObject = new JSONObject();
         JSONObject g = super.g();
-        JSONObject a2 = com.anythink.core.common.g.c.a();
+        JSONObject a = com.anythink.core.common.g.c.a();
         g.put("app_id", n.a().p());
         g.put(com.anythink.core.common.g.c.T, this.i);
         g.put(com.anythink.core.common.g.c.V, this.j);
-        Iterator<String> keys = a2.keys();
+        Iterator<String> keys = a.keys();
         while (keys.hasNext()) {
             String next = keys.next();
-            g.put(next, a2.opt(next));
+            g.put(next, a.opt(next));
         }
         Map<String, Object> m = n.a().m();
         if (m != null) {
@@ -53,29 +49,29 @@ public final class e extends c {
             } catch (Throwable th) {
             }
         }
-        String a3 = com.anythink.core.common.k.c.a(g.toString());
+        String a2 = com.anythink.core.common.k.c.a(g.toString());
         JSONArray jSONArray = new JSONArray();
-        List<f> list = this.f6717a;
+        List<f> list = this.a;
         if (list != null) {
             for (f fVar : list) {
-                JSONObject a4 = fVar.a();
-                if (z && a4 != null) {
+                JSONObject a3 = fVar.a();
+                if (z && a3 != null) {
                     try {
-                        a4.put(com.anythink.core.common.g.c.U, 1);
+                        a3.put(com.anythink.core.common.g.c.U, 1);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
-                jSONArray.put(a4);
+                jSONArray.put(a3);
             }
         }
-        String a5 = com.anythink.core.common.k.c.a(jSONArray.toString());
-        String c2 = com.anythink.core.common.k.f.c(n.a().q() + "api_ver=1.0&common=" + a3 + "&data=" + a5);
+        String a4 = com.anythink.core.common.k.c.a(jSONArray.toString());
+        String c = com.anythink.core.common.k.f.c(n.a().q() + "api_ver=1.0&common=" + a2 + "&data=" + a4);
         try {
-            jSONObject.put("common", a3);
-            jSONObject.put("data", a5);
+            jSONObject.put(com.anythink.core.common.g.c.Z, a2);
+            jSONObject.put("data", a4);
             jSONObject.put(com.anythink.core.common.g.c.O, "1.0");
-            jSONObject.put("sign", c2);
+            jSONObject.put(com.anythink.core.common.g.c.Y, c);
         } catch (Exception e2) {
         }
         return jSONObject.toString();
@@ -87,7 +83,7 @@ public final class e extends c {
             return;
         }
         String str4 = str3 + ":" + i;
-        List<f> list = this.f6717a;
+        List<f> list = this.a;
         com.anythink.core.common.j.c.a("tk", str, str2, str4, (String) null, String.valueOf(list != null ? list.size() : 0), "1");
         u.a().a(3, "", "", a(true), o.a(1000));
     }
@@ -104,7 +100,7 @@ public final class e extends c {
 
     @Override // com.anythink.core.common.g.a.c
     public final byte[] e() {
-        List<f> list = this.f6717a;
+        List<f> list = this.a;
         return (list == null || list.size() <= 0) ? new byte[0] : a(a(false));
     }
 

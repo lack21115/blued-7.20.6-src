@@ -19,28 +19,25 @@ import java.util.Map;
 public class KSATBiddingNotice implements ATBiddingNotice {
 
     /* renamed from: a  reason: collision with root package name */
-    Object f8980a;
+    Object f6140a;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public KSATBiddingNotice(Object obj) {
-        this.f8980a = obj;
+        this.f6140a = obj;
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public ATAdConst.CURRENCY getNoticePriceCurrency() {
         return ATAdConst.CURRENCY.RMB_CENT;
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public void notifyBidDisplay(boolean z, double d) {
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public void notifyBidLoss(String str, double d, Map<String, Object> map) {
         synchronized (this) {
             if (ATSDK.isNetworkLogDebug()) {
                 StringBuilder sb = new StringBuilder();
-                sb.append(this.f8980a != null ? this.f8980a.getClass().getSimpleName() : "");
+                sb.append(this.f6140a != null ? this.f6140a.getClass().getSimpleName() : "");
                 sb.append(": notifyBidLoss lossCode:");
                 sb.append(str);
                 sb.append(",winPrice:");
@@ -54,133 +51,132 @@ public class KSATBiddingNotice implements ATBiddingNotice {
                 i = 3;
             }
             try {
-                if (this.f8980a instanceof KsRewardVideoAd) {
-                    ((KsRewardVideoAd) this.f8980a).reportAdExposureFailed(i, adExposureFailedReason);
+                if (this.f6140a instanceof KsRewardVideoAd) {
+                    ((KsRewardVideoAd) this.f6140a).reportAdExposureFailed(i, adExposureFailedReason);
                     return;
                 }
             } catch (Throwable th) {
             }
             try {
-                if (this.f8980a instanceof KsInterstitialAd) {
-                    ((KsInterstitialAd) this.f8980a).reportAdExposureFailed(i, adExposureFailedReason);
+                if (this.f6140a instanceof KsInterstitialAd) {
+                    ((KsInterstitialAd) this.f6140a).reportAdExposureFailed(i, adExposureFailedReason);
                     return;
                 }
             } catch (Throwable th2) {
             }
             try {
-                if (this.f8980a instanceof KsFullScreenVideoAd) {
-                    ((KsFullScreenVideoAd) this.f8980a).reportAdExposureFailed(i, adExposureFailedReason);
+                if (this.f6140a instanceof KsFullScreenVideoAd) {
+                    ((KsFullScreenVideoAd) this.f6140a).reportAdExposureFailed(i, adExposureFailedReason);
                     return;
                 }
             } catch (Throwable th3) {
             }
             try {
-                if (this.f8980a instanceof KsDrawAd) {
-                    ((KsDrawAd) this.f8980a).reportAdExposureFailed(i, adExposureFailedReason);
+                if (this.f6140a instanceof KsDrawAd) {
+                    ((KsDrawAd) this.f6140a).reportAdExposureFailed(i, adExposureFailedReason);
                     return;
                 }
             } catch (Throwable th4) {
             }
             try {
-                if (this.f8980a instanceof KsFeedAd) {
-                    ((KsFeedAd) this.f8980a).reportAdExposureFailed(i, adExposureFailedReason);
+                if (this.f6140a instanceof KsFeedAd) {
+                    ((KsFeedAd) this.f6140a).reportAdExposureFailed(i, adExposureFailedReason);
                     return;
                 }
             } catch (Throwable th5) {
             }
             try {
-                if (this.f8980a instanceof KsNativeAd) {
-                    ((KsNativeAd) this.f8980a).reportAdExposureFailed(i, adExposureFailedReason);
+                if (this.f6140a instanceof KsNativeAd) {
+                    ((KsNativeAd) this.f6140a).reportAdExposureFailed(i, adExposureFailedReason);
                     return;
                 }
             } catch (Throwable th6) {
             }
-            this.f8980a = null;
+            this.f6140a = null;
         }
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public void notifyBidWin(double d) {
         synchronized (this) {
             double d2 = d * 100.0d;
             if (ATSDK.isNetworkLogDebug()) {
                 StringBuilder sb = new StringBuilder();
-                sb.append(this.f8980a != null ? this.f8980a.getClass().getSimpleName() : "");
+                sb.append(this.f6140a != null ? this.f6140a.getClass().getSimpleName() : "");
                 sb.append(": notifyBidWin : second price:");
                 sb.append(d2);
                 Log.i("KSATBiddingNotice", sb.toString());
             }
             try {
-                if (this.f8980a instanceof KsRewardVideoAd) {
+                if (this.f6140a instanceof KsRewardVideoAd) {
                     if (ATSDK.isNetworkLogDebug()) {
-                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsRewardVideoAd) this.f8980a).getECPM());
+                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsRewardVideoAd) this.f6140a).getECPM());
                     }
-                    ((KsRewardVideoAd) this.f8980a).setBidEcpm((int) d2);
+                    ((KsRewardVideoAd) this.f6140a).setBidEcpm((int) d2);
                     return;
                 }
             } catch (Throwable th) {
             }
             try {
-                if (this.f8980a instanceof KsInterstitialAd) {
+                if (this.f6140a instanceof KsInterstitialAd) {
                     if (ATSDK.isNetworkLogDebug()) {
-                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsInterstitialAd) this.f8980a).getECPM());
+                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsInterstitialAd) this.f6140a).getECPM());
                     }
-                    ((KsInterstitialAd) this.f8980a).setBidEcpm((int) d2);
+                    ((KsInterstitialAd) this.f6140a).setBidEcpm((int) d2);
                     return;
                 }
             } catch (Throwable th2) {
             }
             try {
-                if (this.f8980a instanceof KsFullScreenVideoAd) {
+                if (this.f6140a instanceof KsFullScreenVideoAd) {
                     if (ATSDK.isNetworkLogDebug()) {
-                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsFullScreenVideoAd) this.f8980a).getECPM());
+                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsFullScreenVideoAd) this.f6140a).getECPM());
                     }
-                    ((KsFullScreenVideoAd) this.f8980a).setBidEcpm((int) d2);
+                    ((KsFullScreenVideoAd) this.f6140a).setBidEcpm((int) d2);
                     return;
                 }
             } catch (Throwable th3) {
             }
             try {
-                if (this.f8980a instanceof KsDrawAd) {
+                if (this.f6140a instanceof KsDrawAd) {
                     if (ATSDK.isNetworkLogDebug()) {
-                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsDrawAd) this.f8980a).getECPM());
+                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsDrawAd) this.f6140a).getECPM());
                     }
-                    ((KsDrawAd) this.f8980a).setBidEcpm((int) d2);
+                    ((KsDrawAd) this.f6140a).setBidEcpm((int) d2);
                     return;
                 }
             } catch (Throwable th4) {
             }
             try {
-                if (this.f8980a instanceof KsFeedAd) {
+                if (this.f6140a instanceof KsFeedAd) {
                     if (ATSDK.isNetworkLogDebug()) {
-                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsFeedAd) this.f8980a).getECPM());
+                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsFeedAd) this.f6140a).getECPM());
                     }
-                    ((KsFeedAd) this.f8980a).setBidEcpm((int) d2);
+                    ((KsFeedAd) this.f6140a).setBidEcpm((int) d2);
                     return;
                 }
             } catch (Throwable th5) {
             }
             try {
-                if (this.f8980a instanceof KsNativeAd) {
+                if (this.f6140a instanceof KsNativeAd) {
                     if (ATSDK.isNetworkLogDebug()) {
-                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsNativeAd) this.f8980a).getECPM());
+                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsNativeAd) this.f6140a).getECPM());
                     }
-                    ((KsNativeAd) this.f8980a).setBidEcpm((int) d2);
+                    ((KsNativeAd) this.f6140a).setBidEcpm((int) d2);
                     return;
                 }
             } catch (Throwable th6) {
             }
             try {
-                if (this.f8980a instanceof KsSplashScreenAd) {
+                if (this.f6140a instanceof KsSplashScreenAd) {
                     if (ATSDK.isNetworkLogDebug()) {
-                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsSplashScreenAd) this.f8980a).getECPM());
+                        Log.i("KSATBiddingNotice", "Origin price:" + ((KsSplashScreenAd) this.f6140a).getECPM());
                     }
-                    ((KsSplashScreenAd) this.f8980a).setBidEcpm((int) d2);
+                    ((KsSplashScreenAd) this.f6140a).setBidEcpm((int) d2);
                     return;
                 }
             } catch (Throwable th7) {
             }
-            this.f8980a = null;
+            this.f6140a = null;
         }
     }
 }

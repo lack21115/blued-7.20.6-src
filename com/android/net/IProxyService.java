@@ -31,7 +31,7 @@ public interface IProxyService extends IInterface {
             }
 
             public String getInterfaceDescriptor() {
-                return "com.android.net.IProxyService";
+                return Stub.DESCRIPTOR;
             }
 
             @Override // com.android.net.IProxyService
@@ -39,7 +39,7 @@ public interface IProxyService extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken("com.android.net.IProxyService");
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     this.mRemote.transact(1, obtain, obtain2, 0);
@@ -55,7 +55,7 @@ public interface IProxyService extends IInterface {
             public void setPacFile(String str) throws RemoteException {
                 Parcel obtain = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken("com.android.net.IProxyService");
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     obtain.writeString(str);
                     this.mRemote.transact(2, obtain, null, 1);
                 } finally {
@@ -67,7 +67,7 @@ public interface IProxyService extends IInterface {
             public void startPacSystem() throws RemoteException {
                 Parcel obtain = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken("com.android.net.IProxyService");
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(3, obtain, null, 1);
                 } finally {
                     obtain.recycle();
@@ -78,7 +78,7 @@ public interface IProxyService extends IInterface {
             public void stopPacSystem() throws RemoteException {
                 Parcel obtain = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken("com.android.net.IProxyService");
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(4, obtain, null, 1);
                 } finally {
                     obtain.recycle();
@@ -87,14 +87,14 @@ public interface IProxyService extends IInterface {
         }
 
         public Stub() {
-            attachInterface(this, "com.android.net.IProxyService");
+            attachInterface(this, DESCRIPTOR);
         }
 
         public static IProxyService asInterface(IBinder iBinder) {
             if (iBinder == null) {
                 return null;
             }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.android.net.IProxyService");
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
             return (queryLocalInterface == null || !(queryLocalInterface instanceof IProxyService)) ? new Proxy(iBinder) : (IProxyService) queryLocalInterface;
         }
 
@@ -107,25 +107,25 @@ public interface IProxyService extends IInterface {
         public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
             switch (i) {
                 case 1:
-                    parcel.enforceInterface("com.android.net.IProxyService");
+                    parcel.enforceInterface(DESCRIPTOR);
                     String resolvePacFile = resolvePacFile(parcel.readString(), parcel.readString());
                     parcel2.writeNoException();
                     parcel2.writeString(resolvePacFile);
                     return true;
                 case 2:
-                    parcel.enforceInterface("com.android.net.IProxyService");
+                    parcel.enforceInterface(DESCRIPTOR);
                     setPacFile(parcel.readString());
                     return true;
                 case 3:
-                    parcel.enforceInterface("com.android.net.IProxyService");
+                    parcel.enforceInterface(DESCRIPTOR);
                     startPacSystem();
                     return true;
                 case 4:
-                    parcel.enforceInterface("com.android.net.IProxyService");
+                    parcel.enforceInterface(DESCRIPTOR);
                     stopPacSystem();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
-                    parcel2.writeString("com.android.net.IProxyService");
+                case 1598968902:
+                    parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:
                     return super.onTransact(i, parcel, parcel2, i2);

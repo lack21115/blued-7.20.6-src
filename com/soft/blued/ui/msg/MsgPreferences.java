@@ -6,7 +6,7 @@ import com.blued.android.module.common.utils.BluedSharedPreferences;
 public class MsgPreferences {
 
     /* renamed from: a  reason: collision with root package name */
-    public static BluedSharedPreferences f31887a;
+    public static BluedSharedPreferences f18197a;
     public static String b = "MSG_FILTER_NEW_MSG_GUIDE";
 
     public static void a() {
@@ -26,9 +26,9 @@ public class MsgPreferences {
     }
 
     private static BluedSharedPreferences d() {
-        if (f31887a == null) {
-            f31887a = BluedSharedPreferences.a();
+        if (f18197a == null) {
+            f18197a = BluedSharedPreferences.a();
         }
-        return f31887a;
+        return f18197a;
     }
 }

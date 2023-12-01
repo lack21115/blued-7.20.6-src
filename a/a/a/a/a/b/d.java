@@ -6,11 +6,11 @@ import com.qiniu.pili.droid.streaming.CameraStreamingSetting;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f1302a;
+    public boolean f1254a;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public volatile boolean f1303c = true;
+    public volatile boolean f1255c = true;
     public boolean d;
     public CameraStreamingSetting.CAMERA_FACING_ID e;
 
@@ -19,17 +19,17 @@ public class d {
     }
 
     public void a(boolean z) {
-        this.f1302a = z;
+        this.f1254a = z;
     }
 
     public boolean a() {
-        if (this.f1303c) {
+        if (this.f1255c) {
             boolean z = false;
-            this.f1303c = false;
+            this.f1255c = false;
             if (this.e == CameraStreamingSetting.CAMERA_FACING_ID.CAMERA_FACING_FRONT) {
                 if (this.b) {
-                    z = this.f1302a;
-                } else if (!this.f1302a) {
+                    z = this.f1254a;
+                } else if (!this.f1254a) {
                     z = true;
                 }
                 this.d = z;
@@ -46,7 +46,7 @@ public class d {
     }
 
     public void c(boolean z) {
-        this.f1303c = z;
+        this.f1255c = z;
     }
 
     public boolean d(boolean z) {

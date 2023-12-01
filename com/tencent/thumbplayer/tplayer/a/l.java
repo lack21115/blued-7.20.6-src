@@ -4,11 +4,11 @@ package com.tencent.thumbplayer.tplayer.a;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f39396a = 0;
+    public long f25705a = 0;
     public long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f39397c = 0;
+    public long f25706c = 0;
     public long d = 0;
     public String e = "";
     public int f = -1;

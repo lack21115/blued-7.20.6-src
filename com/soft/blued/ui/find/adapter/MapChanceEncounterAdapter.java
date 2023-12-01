@@ -32,58 +32,58 @@ import com.soft.blued.ui.user.presenter.PayUtils;
 public class MapChanceEncounterAdapter extends BaseQuickAdapter<MapChanceEncounterModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30058a;
+    private Context f16368a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f30059c;
+    private boolean f16369c;
 
     public MapChanceEncounterAdapter(Context context, IRequestHost iRequestHost, boolean z) {
         super((int) R.layout.item_chance_counter_user);
-        this.f30058a = context;
-        this.f30059c = z;
+        this.f16368a = context;
+        this.f16369c = z;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, final MapChanceEncounterModel mapChanceEncounterModel) {
-        ImageView imageView = (ImageView) baseViewHolder.getView(2131365082);
+        ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_avatar);
         ImageLoader.a(this.b, mapChanceEncounterModel.avatar).c().b(2131237310).d(2131237310).a(imageView);
-        baseViewHolder.setText(2131372721, TimeAndDateUtils.a(AppInfo.d(), TimeAndDateUtils.c(mapChanceEncounterModel.last_meet_time)));
-        String string = this.f30058a.getString(R.string.chance_encounter_times);
+        baseViewHolder.setText(R.id.tv_time, TimeAndDateUtils.a(AppInfo.d(), TimeAndDateUtils.c(mapChanceEncounterModel.last_meet_time)));
+        String string = this.f16368a.getString(R.string.chance_encounter_times);
         baseViewHolder.setText(R.id.tv_number_of_times, String.format(string, mapChanceEncounterModel.meet_count + ""));
-        ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.btn_to_chat);
+        ShapeTextView view = baseViewHolder.getView(R.id.btn_to_chat);
         a(mapChanceEncounterModel.label, (LinearLayout) baseViewHolder.getView(R.id.ll_tag_view));
         EventTrackVIP.b(VipProtos.Event.MAP_FIND_PASSBY_POP_USER_SHOW, UserInfo.getInstance().getLoginUserInfo().vip_grade, mapChanceEncounterModel.uid);
-        String str = this.f30059c ? "msg_pass" : "map_pass";
+        String str = this.f16369c ? "msg_pass" : "map_pass";
         final String str2 = str;
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.MapChanceEncounterAdapter.1
             @Override // android.view.View.OnClickListener
-            public void onClick(View view) {
-                Tracker.onClick(view);
+            public void onClick(View view2) {
+                Tracker.onClick(view2);
                 EventTrackVIP.b(VipProtos.Event.MAP_FIND_PASSBY_POP_USER_PHOTO_CLICK, UserInfo.getInstance().getLoginUserInfo().vip_grade, mapChanceEncounterModel.uid);
                 if (baseViewHolder.getLayoutPosition() > 0 && UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
-                    PayUtils.a(MapChanceEncounterAdapter.this.f30058a, 2, str2, -1, VipProtos.FromType.FIND_MAP_PASS);
+                    PayUtils.a(MapChanceEncounterAdapter.this.f16368a, 2, str2, -1, VipProtos.FromType.FIND_MAP_PASS);
                 } else if (TextUtils.isEmpty(mapChanceEncounterModel.uid)) {
                 } else {
-                    UserInfoFragmentNew.a(MapChanceEncounterAdapter.this.f30058a, mapChanceEncounterModel.uid, "");
+                    UserInfoFragmentNew.a(MapChanceEncounterAdapter.this.f16368a, mapChanceEncounterModel.uid, "");
                 }
             }
         });
         final String str3 = str;
-        shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.MapChanceEncounterAdapter.2
+        view.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.MapChanceEncounterAdapter.2
             @Override // android.view.View.OnClickListener
-            public void onClick(View view) {
-                Tracker.onClick(view);
+            public void onClick(View view2) {
+                Tracker.onClick(view2);
                 EventTrackVIP.b(VipProtos.Event.MAP_FIND_PASSBY_POP_USER_CHAT_CLICK, UserInfo.getInstance().getLoginUserInfo().vip_grade, mapChanceEncounterModel.uid);
                 if (baseViewHolder.getLayoutPosition() > 0 && UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
-                    PayUtils.a(MapChanceEncounterAdapter.this.f30058a, 2, str3, -1, VipProtos.FromType.FIND_MAP_PASS);
+                    PayUtils.a(MapChanceEncounterAdapter.this.f16368a, 2, str3, -1, VipProtos.FromType.FIND_MAP_PASS);
                 } else if (TextUtils.isEmpty(mapChanceEncounterModel.uid)) {
                 } else {
                     LogData logData = new LogData();
                     logData.from = "none";
-                    ChatHelperV4.a().a(MapChanceEncounterAdapter.this.f30058a, Long.parseLong(mapChanceEncounterModel.uid), "", mapChanceEncounterModel.avatar, 0, 0, 0, 0, "", false, 0, 0, logData, new MsgSourceEntity(MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE, ""));
+                    ChatHelperV4.a().a(MapChanceEncounterAdapter.this.f16368a, Long.parseLong(mapChanceEncounterModel.uid), "", mapChanceEncounterModel.avatar, 0, 0, 0, 0, "", false, 0, 0, logData, new MsgSourceEntity(MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE, ""));
                 }
             }
         });
@@ -98,7 +98,7 @@ public class MapChanceEncounterAdapter extends BaseQuickAdapter<MapChanceEncount
         linearLayout.setVisibility(0);
         linearLayout.removeAllViews();
         for (String str : strArr) {
-            View inflate = LayoutInflater.from(this.f30058a).inflate(R.layout.tag_map_chance_encounter_user, (ViewGroup) null);
+            View inflate = LayoutInflater.from(this.f16368a).inflate(R.layout.tag_map_chance_encounter_user, (ViewGroup) null);
             ((TextView) inflate.findViewById(2131372684)).setText(str);
             linearLayout.addView(inflate);
         }

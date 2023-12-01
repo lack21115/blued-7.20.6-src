@@ -16,9 +16,8 @@ public final class b {
     static int atN = 80;
     static int port = 80;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/ip/direct/b$a.class */
-    public static final class a extends Thread {
+    static final class a extends Thread {
         LinkedList atP = new LinkedList();
         volatile boolean atQ = false;
         Selector atO = Selector.open();
@@ -30,8 +29,8 @@ public final class b {
         private void AU() {
             synchronized (this.atP) {
                 while (this.atP.size() > 0) {
-                    C0576b c0576b = (C0576b) this.atP.removeFirst();
-                    c0576b.atS.register(this.atO, 8, c0576b);
+                    C0406b c0406b = (C0406b) this.atP.removeFirst();
+                    c0406b.atS.register(this.atO, 8, c0406b);
                 }
             }
         }
@@ -41,37 +40,37 @@ public final class b {
             while (it.hasNext()) {
                 SelectionKey next = it.next();
                 it.remove();
-                C0576b c0576b = (C0576b) next.attachment();
+                C0406b c0406b = (C0406b) next.attachment();
                 SocketChannel socketChannel = (SocketChannel) next.channel();
                 try {
                     if (socketChannel.finishConnect()) {
                         next.cancel();
-                        c0576b.atW = SystemClock.elapsedRealtime();
+                        c0406b.atW = SystemClock.elapsedRealtime();
                         socketChannel.close();
                     }
                 } catch (Throwable th) {
                     bi.c(socketChannel);
-                    c0576b.atT = th;
+                    c0406b.atT = th;
                 }
             }
         }
 
-        final void a(C0576b c0576b) {
+        final void a(C0406b c0406b) {
             SocketChannel socketChannel;
             try {
                 socketChannel = SocketChannel.open();
                 try {
                     socketChannel.configureBlocking(false);
-                    boolean connect = socketChannel.connect(c0576b.atR);
-                    c0576b.atS = socketChannel;
-                    c0576b.atV = SystemClock.elapsedRealtime();
+                    boolean connect = socketChannel.connect(c0406b.atR);
+                    c0406b.atS = socketChannel;
+                    c0406b.atV = SystemClock.elapsedRealtime();
                     if (connect) {
-                        c0576b.atW = c0576b.atV;
+                        c0406b.atW = c0406b.atV;
                         bi.c(socketChannel);
                         return;
                     }
                     synchronized (this.atP) {
-                        this.atP.add(c0576b);
+                        this.atP.add(c0406b);
                     }
                     if (this.atO != null) {
                         try {
@@ -82,7 +81,7 @@ public final class b {
                 } catch (Throwable th2) {
                     th = th2;
                     bi.c(socketChannel);
-                    c0576b.atT = th;
+                    c0406b.atT = th;
                 }
             } catch (Throwable th3) {
                 th = th3;
@@ -131,7 +130,7 @@ public final class b {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.sdk.ip.direct.b$b  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/ip/direct/b$b.class */
-    public static final class C0576b {
+    public static final class C0406b {
         InetSocketAddress atR;
         SocketChannel atS;
         Throwable atT;
@@ -141,7 +140,7 @@ public final class b {
         boolean atX = false;
         private boolean success;
 
-        C0576b(String str) {
+        C0406b(String str) {
             try {
                 this.atR = new InetSocketAddress(InetAddress.getByName(str), b.port);
             } catch (Throwable th) {
@@ -198,10 +197,10 @@ public final class b {
                         return cVar;
                     }
                 }
-                C0576b c0576b = new C0576b(str);
-                linkedList.add(c0576b);
+                C0406b c0406b = new C0406b(str);
+                linkedList.add(c0406b);
                 try {
-                    aVar.a(c0576b);
+                    aVar.a(c0406b);
                 } catch (Throwable th3) {
                     th3.printStackTrace();
                 }
@@ -212,14 +211,14 @@ public final class b {
                 aVar.shutdown();
                 aVar.join();
                 float f = 0.0f;
-                Iterator<E> it = linkedList.iterator();
+                Iterator it = linkedList.iterator();
                 boolean z = true;
                 while (it.hasNext()) {
-                    C0576b c0576b2 = (C0576b) it.next();
-                    c0576b2.AW();
-                    z &= c0576b2.success;
+                    C0406b c0406b2 = (C0406b) it.next();
+                    c0406b2.AW();
+                    z &= c0406b2.success;
                     cVar.bk(z);
-                    f += c0576b2.atU;
+                    f += c0406b2.atU;
                 }
                 com.kwad.sdk.core.d.b.d("IpDirect_Ping", "sum:" + f + "*size:" + linkedList.size());
                 cVar.i(f / ((float) linkedList.size()));

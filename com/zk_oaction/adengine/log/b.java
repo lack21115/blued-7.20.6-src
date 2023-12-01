@@ -6,8 +6,8 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
+import android.provider.SearchIndexablesContract;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.wrapper_oaction.ZkViewSDK;
 import java.io.File;
 import java.util.Map;
@@ -17,11 +17,11 @@ import org.json.JSONObject;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static b f42088a;
+    private static b f28397a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Handler f42089c;
+    private Handler f28398c;
     private HandlerThread d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/log/b$a.class */
@@ -34,7 +34,7 @@ public class b {
         public void handleMessage(Message message) {
             super.handleMessage(message);
             if (message.what == 1) {
-                b.this.a((C1118b) message.obj);
+                b.this.a((C0948b) message.obj);
             }
         }
     }
@@ -42,14 +42,14 @@ public class b {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.zk_oaction.adengine.log.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/log/b$b.class */
-    public class C1118b {
+    public class C0948b {
 
         /* renamed from: a  reason: collision with root package name */
-        Map f42091a;
+        Map f28400a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f42092c;
+        String f28401c;
         int d;
         String e;
         String f;
@@ -58,10 +58,10 @@ public class b {
         String i;
         String j;
 
-        private C1118b(b bVar) {
+        private C0948b(b bVar) {
         }
 
-        /* synthetic */ C1118b(b bVar, a aVar) {
+        /* synthetic */ C0948b(b bVar, a aVar) {
             this(bVar);
         }
     }
@@ -70,14 +70,14 @@ public class b {
         HandlerThread handlerThread = new HandlerThread("postlog");
         this.d = handlerThread;
         handlerThread.start();
-        this.f42089c = new a(this.d.getLooper());
+        this.f28398c = new a(this.d.getLooper());
     }
 
     public static b a() {
-        if (f42088a == null) {
-            f42088a = new b();
+        if (f28397a == null) {
+            f28397a = new b();
         }
-        return f42088a;
+        return f28397a;
     }
 
     private String a(String str) {
@@ -86,8 +86,8 @@ public class b {
                 return "no_res_id";
             }
             String str2 = str;
-            if (!str.endsWith(BridgeUtil.SPLIT_MARK)) {
-                str2 = str + BridgeUtil.SPLIT_MARK;
+            if (!str.endsWith("/")) {
+                str2 = str + "/";
             }
             File[] listFiles = new File(str2 + "res_id_info").listFiles();
             return (listFiles == null || listFiles.length <= 0) ? "no_res_id" : listFiles[0].getName();
@@ -98,21 +98,21 @@ public class b {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x00db -> B:9:0x00c5). Please submit an issue!!! */
-    public void a(C1118b c1118b) {
+    public void a(C0948b c0948b) {
         try {
             JSONObject jSONObject = new JSONObject();
-            if (TextUtils.isEmpty(c1118b.b)) {
-                c1118b.b = a(c1118b.f42092c);
+            if (TextUtils.isEmpty(c0948b.b)) {
+                c0948b.b = a(c0948b.f28401c);
             }
-            jSONObject.put("action_message", c1118b.i);
-            jSONObject.put("res_id", c1118b.b);
-            jSONObject.put("ad_id", c1118b.f);
-            jSONObject.put("user_id", c1118b.e);
-            jSONObject.put("action_time", c1118b.h);
-            jSONObject.put("res_type", c1118b.d);
-            jSONObject.put("scene", c1118b.g);
-            jSONObject.put("action", c1118b.j);
-            String aVar = new com.zk_oaction.adengine.log.a(this.b, 3, "hd_log_info", jSONObject.toString(), c1118b.e).toString();
+            jSONObject.put("action_message", c0948b.i);
+            jSONObject.put("res_id", c0948b.b);
+            jSONObject.put("ad_id", c0948b.f);
+            jSONObject.put(SearchIndexablesContract.RawData.COLUMN_USER_ID, c0948b.e);
+            jSONObject.put("action_time", c0948b.h);
+            jSONObject.put("res_type", c0948b.d);
+            jSONObject.put("scene", c0948b.g);
+            jSONObject.put("action", c0948b.j);
+            String aVar = new com.zk_oaction.adengine.log.a(this.b, 3, "hd_log_info", jSONObject.toString(), c0948b.e).toString();
             JSONObject jSONObject2 = new JSONObject();
             long currentTimeMillis = System.currentTimeMillis();
             try {
@@ -121,7 +121,7 @@ public class b {
                 jSONObject2.put("json", aVar);
             } catch (Exception e) {
             }
-            ZkViewSDK.a().a(c1118b.f42091a, jSONObject2.toString());
+            ZkViewSDK.a().a(c0948b.f28400a, jSONObject2.toString());
         } catch (Throwable th) {
             th.printStackTrace();
         }
@@ -146,20 +146,20 @@ public class b {
         if (this.b == null) {
             a(context);
         }
-        C1118b c1118b = new C1118b(this, null);
-        c1118b.f42091a = map;
-        c1118b.b = str3;
-        c1118b.f42092c = str2;
-        c1118b.e = str5;
-        c1118b.f = str4;
-        c1118b.d = i;
-        c1118b.h = j;
-        c1118b.i = str;
-        c1118b.g = str6;
-        c1118b.j = str7;
+        C0948b c0948b = new C0948b(this, null);
+        c0948b.f28400a = map;
+        c0948b.b = str3;
+        c0948b.f28401c = str2;
+        c0948b.e = str5;
+        c0948b.f = str4;
+        c0948b.d = i;
+        c0948b.h = j;
+        c0948b.i = str;
+        c0948b.g = str6;
+        c0948b.j = str7;
         Message obtain = Message.obtain();
-        obtain.obj = c1118b;
+        obtain.obj = c0948b;
         obtain.what = 1;
-        this.f42089c.sendMessage(obtain);
+        this.f28398c.sendMessage(obtain);
     }
 }

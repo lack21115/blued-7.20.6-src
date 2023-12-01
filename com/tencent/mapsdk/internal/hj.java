@@ -1,6 +1,7 @@
 package com.tencent.mapsdk.internal;
 
 import android.content.Context;
+import android.opengl.EGL14;
 import android.opengl.GLDebugHelper;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -50,10 +51,10 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
     public abstract class b implements f {
 
         /* renamed from: a  reason: collision with root package name */
-        public int[] f37531a;
+        public int[] f23840a;
 
         public b(int[] iArr) {
-            this.f37531a = a(iArr);
+            this.f23840a = a(iArr);
         }
 
         private int[] a(int[] iArr) {
@@ -63,7 +64,7 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
             int length = iArr.length;
             int[] iArr2 = new int[length + 2];
             int i = length - 1;
-            System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i);
+            System.arraycopy(iArr, 0, iArr2, 0, i);
             iArr2[i] = 12352;
             iArr2[length] = 4;
             iArr2[length + 1] = 12344;
@@ -73,11 +74,11 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
         @Override // com.tencent.mapsdk.internal.hj.f
         public EGLConfig a(EGL10 egl10, EGLDisplay eGLDisplay) {
             int[] iArr = new int[1];
-            if (egl10.eglChooseConfig(eGLDisplay, this.f37531a, null, 0, iArr)) {
+            if (egl10.eglChooseConfig(eGLDisplay, this.f23840a, null, 0, iArr)) {
                 int i = iArr[0];
                 if (i > 0) {
                     EGLConfig[] eGLConfigArr = new EGLConfig[i];
-                    if (egl10.eglChooseConfig(eGLDisplay, this.f37531a, eGLConfigArr, i, iArr)) {
+                    if (egl10.eglChooseConfig(eGLDisplay, this.f23840a, eGLConfigArr, i, iArr)) {
                         EGLConfig a2 = a(egl10, eGLDisplay, eGLConfigArr);
                         if (a2 != null) {
                             return a2;
@@ -98,7 +99,7 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
     public class c extends b {
 
         /* renamed from: c  reason: collision with root package name */
-        private int[] f37532c;
+        private int[] f23841c;
         public int d;
         public int e;
         public int f;
@@ -107,8 +108,8 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
         public int i;
 
         public c(int i, int i2, int i3, int i4, int i5, int i6) {
-            super(new int[]{12324, i, 12323, i2, 12322, i3, 12321, i4, 12325, i5, 12326, i6, 12344});
-            this.f37532c = new int[1];
+            super(new int[]{EGL14.EGL_RED_SIZE, i, EGL14.EGL_GREEN_SIZE, i2, EGL14.EGL_BLUE_SIZE, i3, EGL14.EGL_ALPHA_SIZE, i4, EGL14.EGL_DEPTH_SIZE, i5, EGL14.EGL_STENCIL_SIZE, i6, EGL14.EGL_NONE});
+            this.f23841c = new int[1];
             this.d = i;
             this.e = i2;
             this.f = i3;
@@ -118,7 +119,7 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
         }
 
         private int a(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i, int i2) {
-            return egl10.eglGetConfigAttrib(eGLDisplay, eGLConfig, i, this.f37532c) ? this.f37532c[0] : i2;
+            return egl10.eglGetConfigAttrib(eGLDisplay, eGLConfig, i, this.f23841c) ? this.f23841c[0] : i2;
         }
 
         @Override // com.tencent.mapsdk.internal.hj.b
@@ -131,13 +132,13 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
                     return null;
                 }
                 EGLConfig eGLConfig = eGLConfigArr[i2];
-                int a2 = a(egl10, eGLDisplay, eGLConfig, 12325, 0);
-                int a3 = a(egl10, eGLDisplay, eGLConfig, 12326, 0);
+                int a2 = a(egl10, eGLDisplay, eGLConfig, EGL14.EGL_DEPTH_SIZE, 0);
+                int a3 = a(egl10, eGLDisplay, eGLConfig, EGL14.EGL_STENCIL_SIZE, 0);
                 if (a2 >= this.h && a3 >= this.i) {
-                    int a4 = a(egl10, eGLDisplay, eGLConfig, 12324, 0);
-                    int a5 = a(egl10, eGLDisplay, eGLConfig, 12323, 0);
-                    int a6 = a(egl10, eGLDisplay, eGLConfig, 12322, 0);
-                    int a7 = a(egl10, eGLDisplay, eGLConfig, 12321, 0);
+                    int a4 = a(egl10, eGLDisplay, eGLConfig, EGL14.EGL_RED_SIZE, 0);
+                    int a5 = a(egl10, eGLDisplay, eGLConfig, EGL14.EGL_GREEN_SIZE, 0);
+                    int a6 = a(egl10, eGLDisplay, eGLConfig, EGL14.EGL_BLUE_SIZE, 0);
+                    int a7 = a(egl10, eGLDisplay, eGLConfig, EGL14.EGL_ALPHA_SIZE, 0);
                     if (a4 == this.d && a5 == this.e && a6 == this.f && a7 == this.g) {
                         return eGLConfig;
                     }
@@ -151,15 +152,15 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
     public class d implements g {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f37533a;
+        private int f23842a;
 
         private d() {
-            this.f37533a = 12440;
+            this.f23842a = 12440;
         }
 
         @Override // com.tencent.mapsdk.internal.hj.g
         public EGLContext a(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig eGLConfig) {
-            int[] iArr = {this.f37533a, hj.this.p, 12344};
+            int[] iArr = {this.f23842a, hj.this.p, EGL14.EGL_NONE};
             EGLContext eGLContext = EGL10.EGL_NO_CONTEXT;
             if (hj.this.p == 0) {
                 iArr = null;
@@ -223,17 +224,17 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
     public static class i {
 
         /* renamed from: a  reason: collision with root package name */
-        private WeakReference<hj> f37534a;
+        private WeakReference<hj> f23843a;
         public EGL10 b;
 
         /* renamed from: c  reason: collision with root package name */
-        public EGLDisplay f37535c;
+        public EGLDisplay f23844c;
         public EGLSurface d;
         public EGLConfig e;
         public EGLContext f;
 
         public i(WeakReference<hj> weakReference) {
-            this.f37534a = weakReference;
+            this.f23843a = weakReference;
         }
 
         public static String a(String str, int i) {
@@ -258,17 +259,17 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
             if (eGLSurface2 == null || eGLSurface2 == (eGLSurface = EGL10.EGL_NO_SURFACE)) {
                 return;
             }
-            this.b.eglMakeCurrent(this.f37535c, eGLSurface, eGLSurface, EGL10.EGL_NO_CONTEXT);
-            hj hjVar = this.f37534a.get();
+            this.b.eglMakeCurrent(this.f23844c, eGLSurface, eGLSurface, EGL10.EGL_NO_CONTEXT);
+            hj hjVar = this.f23843a.get();
             if (hjVar != null) {
-                hjVar.m.a(this.b, this.f37535c, this.d);
+                hjVar.m.a(this.b, this.f23844c, this.d);
             }
             this.d = null;
         }
 
         public GL a() {
             GL gl = this.f.getGL();
-            hj hjVar = this.f37534a.get();
+            hj hjVar = this.f23843a.get();
             GL gl2 = gl;
             if (hjVar != null) {
                 GL gl3 = gl;
@@ -293,12 +294,12 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
 
         public boolean b() {
             if (this.b != null) {
-                if (this.f37535c != null) {
+                if (this.f23844c != null) {
                     if (this.e != null) {
                         d();
-                        hj hjVar = this.f37534a.get();
+                        hj hjVar = this.f23843a.get();
                         if (hjVar != null) {
-                            this.d = hjVar.m.a(this.b, this.f37535c, this.e, hjVar.getHolder());
+                            this.d = hjVar.m.a(this.b, this.f23844c, this.e, hjVar.getHolder());
                         } else {
                             this.d = null;
                         }
@@ -309,7 +310,7 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
                                 return false;
                             }
                             return false;
-                        } else if (this.b.eglMakeCurrent(this.f37535c, eGLSurface, eGLSurface, this.f)) {
+                        } else if (this.b.eglMakeCurrent(this.f23844c, eGLSurface, eGLSurface, this.f)) {
                             return true;
                         } else {
                             a("EGLHelper", "eglMakeCurrent", this.b.eglGetError());
@@ -329,16 +330,16 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
 
         public void e() {
             if (this.f != null) {
-                hj hjVar = this.f37534a.get();
+                hj hjVar = this.f23843a.get();
                 if (hjVar != null) {
-                    hjVar.l.a(this.b, this.f37535c, this.f);
+                    hjVar.l.a(this.b, this.f23844c, this.f);
                 }
                 this.f = null;
             }
-            EGLDisplay eGLDisplay = this.f37535c;
+            EGLDisplay eGLDisplay = this.f23844c;
             if (eGLDisplay != null) {
                 this.b.eglTerminate(eGLDisplay);
-                this.f37535c = null;
+                this.f23844c = null;
             }
         }
 
@@ -346,20 +347,20 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
             EGL10 egl10 = (EGL10) EGLContext.getEGL();
             this.b = egl10;
             EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
-            this.f37535c = eglGetDisplay;
+            this.f23844c = eglGetDisplay;
             if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
                 throw new RuntimeException("eglGetDisplay failed");
             }
             if (!this.b.eglInitialize(eglGetDisplay, new int[2])) {
                 throw new RuntimeException("eglInitialize failed");
             }
-            hj hjVar = this.f37534a.get();
+            hj hjVar = this.f23843a.get();
             if (hjVar == null) {
                 this.e = null;
                 this.f = null;
             } else {
-                this.e = hjVar.k.a(this.b, this.f37535c);
-                this.f = hjVar.l.a(this.b, this.f37535c, this.e);
+                this.e = hjVar.k.a(this.b, this.f23844c);
+                this.f = hjVar.l.a(this.b, this.f23844c, this.e);
             }
             EGLContext eGLContext = this.f;
             if (eGLContext == null || eGLContext == EGL10.EGL_NO_CONTEXT) {
@@ -370,7 +371,7 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
         }
 
         public int g() {
-            if (this.b.eglSwapBuffers(this.f37535c, this.d)) {
+            if (this.b.eglSwapBuffers(this.f23844c, this.d)) {
                 return 12288;
             }
             return this.b.eglGetError();
@@ -382,7 +383,7 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
         private long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f37536c;
+        private boolean f23845c;
         private boolean d;
         private boolean e;
         private boolean f;
@@ -437,7 +438,7 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
                             boolean z13 = z7;
                             boolean z14 = z6;
                             boolean z15 = z4;
-                            while (!this.f37536c) {
+                            while (!this.f23845c) {
                                 if (this.s.isEmpty()) {
                                     boolean z16 = this.f;
                                     boolean z17 = this.e;
@@ -824,7 +825,7 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
 
         public void g() {
             synchronized (hj.F) {
-                this.f37536c = true;
+                this.f23845c = true;
                 hj.F.notifyAll();
                 while (!this.d) {
                     try {
@@ -902,11 +903,11 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
         private static final String i = "Q3Dimension MSM7500 ";
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f37537a;
+        private boolean f23846a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f37538c;
+        private boolean f23847c;
         private boolean d;
         private boolean e;
         private j f;
@@ -915,12 +916,12 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
         }
 
         private void a() {
-            if (this.f37537a) {
+            if (this.f23846a) {
                 return;
             }
             this.b = 131072;
             this.d = true;
-            this.f37537a = true;
+            this.f23846a = true;
         }
 
         public void a(j jVar) {
@@ -934,7 +935,7 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
 
         public void a(GL10 gl10) {
             synchronized (this) {
-                if (!this.f37538c) {
+                if (!this.f23847c) {
                     a();
                     String glGetString = gl10.glGetString(7937);
                     if (this.b < 131072) {
@@ -942,7 +943,7 @@ public class hj extends SurfaceView implements SurfaceHolder.Callback {
                         notifyAll();
                     }
                     this.e = !this.d;
-                    this.f37538c = true;
+                    this.f23847c = true;
                 }
             }
         }

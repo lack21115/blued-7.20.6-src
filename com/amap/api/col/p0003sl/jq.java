@@ -3,9 +3,7 @@ package com.amap.api.col.p0003sl;
 /* renamed from: com.amap.api.col.3sl.jq  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jq.class */
 public final class jq {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static int f5214a = 4;
+    private static int a = 4;
 
     public static byte[] a(byte[] bArr, byte[] bArr2) {
         int i;
@@ -13,7 +11,7 @@ public final class jq {
             return bArr;
         }
         int length = bArr.length;
-        int i2 = f5214a;
+        int i2 = a;
         int i3 = ((length / i2) + 1) * i2;
         byte[] bArr3 = new byte[i3];
         System.arraycopy((Object) bArr, 0, (Object) bArr3, 0, bArr.length);

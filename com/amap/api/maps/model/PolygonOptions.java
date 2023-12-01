@@ -2,6 +2,7 @@ package com.amap.api.maps.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.view.View;
 import com.amap.api.col.p0003sl.dw;
 import com.amap.api.maps.model.AMapPara;
 import com.amap.api.maps.model.BaseOptions;
@@ -12,12 +13,10 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/PolygonOptions.class */
 public final class PolygonOptions extends BaseOptions implements Parcelable, Cloneable {
     public static final PolygonOptionsCreator CREATOR = new PolygonOptionsCreator();
-
-    /* renamed from: a  reason: collision with root package name */
-    String f5536a;
+    String a;
     private float strokeWidth = 10.0f;
-    private int strokeColor = -16777216;
-    private int fillColor = -16777216;
+    private int strokeColor = View.MEASURED_STATE_MASK;
+    private int fillColor = View.MEASURED_STATE_MASK;
     private float zIndex = 0.0f;
     private boolean isVisible = true;
     private boolean isUsePolylineStroke = true;
@@ -152,7 +151,7 @@ public final class PolygonOptions extends BaseOptions implements Parcelable, Clo
     }
 
     /* renamed from: clone */
-    public final PolygonOptions m2420clone() {
+    public final PolygonOptions m8863clone() {
         try {
             super.clone();
         } catch (CloneNotSupportedException e) {
@@ -166,7 +165,7 @@ public final class PolygonOptions extends BaseOptions implements Parcelable, Clo
         polygonOptions.zIndex = this.zIndex;
         polygonOptions.isVisible = this.isVisible;
         polygonOptions.holeOptions = this.holeOptions;
-        polygonOptions.f5536a = this.f5536a;
+        polygonOptions.a = this.a;
         polygonOptions.isUsePolylineStroke = this.isUsePolylineStroke;
         polygonOptions.lineJoinType = this.lineJoinType;
         polygonOptions.nLineCapType = this.nLineCapType;
@@ -293,7 +292,7 @@ public final class PolygonOptions extends BaseOptions implements Parcelable, Clo
         parcel.writeInt(this.fillColor);
         parcel.writeFloat(this.zIndex);
         parcel.writeByte(this.isVisible ? (byte) 1 : (byte) 0);
-        parcel.writeString(this.f5536a);
+        parcel.writeString(this.a);
         parcel.writeList(this.holeOptions);
         parcel.writeInt(this.lineJoinType.getTypeValue());
         parcel.writeByte(this.isUsePolylineStroke ? (byte) 1 : (byte) 0);

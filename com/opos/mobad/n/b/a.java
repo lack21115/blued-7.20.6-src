@@ -22,7 +22,7 @@ import com.opos.mobad.n.g.y;
 public class a implements com.opos.mobad.n.a {
     private int e;
     private Context f;
-    private a.InterfaceC0708a g;
+    private a.InterfaceC0538a g;
     private int h;
     private int i;
     private com.opos.mobad.n.d.d j;
@@ -39,11 +39,11 @@ public class a implements com.opos.mobad.n.a {
     private com.opos.mobad.c.a v;
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile boolean f26564a = false;
+    private volatile boolean f12876a = false;
     private int b = 360;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f26565c = 60;
+    private int f12877c = 60;
     private int d = 0;
     private boolean q = false;
 
@@ -67,7 +67,7 @@ public class a implements com.opos.mobad.n.a {
             @Override // java.lang.Runnable
             public void run() {
                 Bitmap bitmap2;
-                if (a.this.f26564a || (bitmap2 = bitmap) == null || bitmap2.isRecycled()) {
+                if (a.this.f12876a || (bitmap2 = bitmap) == null || bitmap2.isRecycled()) {
                     return;
                 }
                 a.this.s.setImageBitmap(bitmap);
@@ -100,9 +100,9 @@ public class a implements com.opos.mobad.n.a {
         if (this.t == null) {
             return;
         }
-        if (gVar != null && !TextUtils.isEmpty(gVar.f26633a)) {
+        if (gVar != null && !TextUtils.isEmpty(gVar.f12945a)) {
             this.t.setVisibility(0);
-            a(gVar, this.v, this.f26564a);
+            a(gVar, this.v, this.f12876a);
             return;
         }
         this.t.setVisibility(8);
@@ -119,8 +119,8 @@ public class a implements com.opos.mobad.n.a {
             return;
         }
         int a2 = com.opos.cmn.an.h.f.a.a(this.f, 48.0f);
-        aVar.a(gVar.f26633a, gVar.b, a2, a2, new a.InterfaceC0676a() { // from class: com.opos.mobad.n.b.a.4
-            @Override // com.opos.mobad.c.a.InterfaceC0676a
+        aVar.a(gVar.f12945a, gVar.b, a2, a2, new a.InterfaceC0506a() { // from class: com.opos.mobad.n.b.a.4
+            @Override // com.opos.mobad.c.a.InterfaceC0506a
             public void a(int i, Bitmap bitmap) {
                 if (z) {
                     return;
@@ -146,7 +146,7 @@ public class a implements com.opos.mobad.n.a {
             ajVar2 = aj.a(this.f);
         }
         Context context = this.f;
-        int i = ajVar2.f26797a;
+        int i = ajVar2.f13109a;
         int i2 = ajVar2.b;
         int i3 = this.b;
         this.r = new j(context, new j.a(i, i2, i3, i3 / this.e));
@@ -184,7 +184,7 @@ public class a implements com.opos.mobad.n.a {
             @Override // java.lang.Runnable
             public void run() {
                 Bitmap bitmap2;
-                if (a.this.f26564a || (bitmap2 = bitmap) == null || bitmap2.isRecycled()) {
+                if (a.this.f12876a || (bitmap2 = bitmap) == null || bitmap2.isRecycled()) {
                     return;
                 }
                 a.this.k.setImageBitmap(bitmap);
@@ -227,7 +227,7 @@ public class a implements com.opos.mobad.n.a {
             return;
         }
         if (dVar.g != null && dVar.g.size() > 0) {
-            this.o.a(dVar, this.v, this.f26564a, 3000);
+            this.o.a(dVar, this.v, this.f12876a, 3000);
             return;
         }
         com.opos.cmn.an.f.a.b("BannerBigImage", "imgList is null");
@@ -256,10 +256,10 @@ public class a implements com.opos.mobad.n.a {
             return;
         }
         this.k.setScaleType(ImageView.ScaleType.FIT_XY);
-        this.v.a(dVar.g.get(0).f26633a, dVar.g.get(0).b, this.b, this.f26565c, new a.InterfaceC0676a() { // from class: com.opos.mobad.n.b.a.6
-            @Override // com.opos.mobad.c.a.InterfaceC0676a
+        this.v.a(dVar.g.get(0).f12945a, dVar.g.get(0).b, this.b, this.f12877c, new a.InterfaceC0506a() { // from class: com.opos.mobad.n.b.a.6
+            @Override // com.opos.mobad.c.a.InterfaceC0506a
             public void a(int i, Bitmap bitmap) {
-                if (a.this.f26564a) {
+                if (a.this.f12876a) {
                     return;
                 }
                 if (dVar.g.get(0) == null) {
@@ -282,7 +282,7 @@ public class a implements com.opos.mobad.n.a {
         Context context;
         float f;
         this.b = com.opos.cmn.an.h.f.a.a(this.f, 360.0f);
-        this.f26565c = com.opos.cmn.an.h.f.a.a(this.f, 60.0f);
+        this.f12877c = com.opos.cmn.an.h.f.a.a(this.f, 60.0f);
         int i = this.i;
         if (i != 0) {
             f = 91.43f;
@@ -294,7 +294,7 @@ public class a implements com.opos.mobad.n.a {
                     context = this.f;
                     f = 48.0f;
                 }
-                this.e = this.f26565c;
+                this.e = this.f12877c;
             }
             context = this.f;
         } else {
@@ -302,7 +302,7 @@ public class a implements com.opos.mobad.n.a {
             f = 106.67f;
         }
         this.d = com.opos.cmn.an.h.f.a.a(context, f);
-        this.e = this.f26565c;
+        this.e = this.f12877c;
     }
 
     private void g() {
@@ -335,7 +335,7 @@ public class a implements com.opos.mobad.n.a {
         this.m = relativeLayout;
         relativeLayout.setId(View.generateViewId());
         this.m.setBackgroundColor(this.f.getResources().getColor(R.color.opos_mobad_root_bg_color));
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(this.b, this.f26565c);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(this.b, this.f12877c);
         this.m.setVisibility(4);
         this.l.addView(this.m, layoutParams);
         if (this.i == 3) {
@@ -393,7 +393,7 @@ public class a implements com.opos.mobad.n.a {
     }
 
     private void l() {
-        y b = y.b(this.f, this.d, this.f26565c, false);
+        y b = y.b(this.f, this.d, this.f12877c, false);
         this.o = b;
         b.setId(View.generateViewId());
         int i = this.d;
@@ -404,13 +404,13 @@ public class a implements com.opos.mobad.n.a {
         ImageView imageView = new ImageView(this.f);
         this.k = imageView;
         imageView.setId(View.generateViewId());
-        this.m.addView(this.k, new RelativeLayout.LayoutParams(this.d, this.f26565c));
+        this.m.addView(this.k, new RelativeLayout.LayoutParams(this.d, this.f12877c));
     }
 
     private void n() {
         final com.opos.mobad.c.d.a aVar = new com.opos.mobad.c.d.a(this.f);
-        aVar.a(new a.InterfaceC0678a() { // from class: com.opos.mobad.n.b.a.3
-            @Override // com.opos.mobad.c.d.a.InterfaceC0678a
+        aVar.a(new a.InterfaceC0508a() { // from class: com.opos.mobad.n.b.a.3
+            @Override // com.opos.mobad.c.d.a.InterfaceC0508a
             public void a(boolean z) {
                 if (a.this.j == null) {
                     return;
@@ -419,7 +419,7 @@ public class a implements com.opos.mobad.n.a {
                     if (a.this.g != null) {
                         a.this.g.b();
                     }
-                    aVar.a((a.InterfaceC0678a) null);
+                    aVar.a((a.InterfaceC0508a) null);
                 }
                 com.opos.cmn.an.f.a.b("BannerBigImage", "blockBigImage7 onWindowVisibilityChanged：" + z);
             }
@@ -437,22 +437,22 @@ public class a implements com.opos.mobad.n.a {
     }
 
     @Override // com.opos.mobad.n.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.g = interfaceC0708a;
-        this.n.a(interfaceC0708a);
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.g = interfaceC0538a;
+        this.n.a(interfaceC0538a);
         y yVar = this.o;
         if (yVar != null) {
-            yVar.a(interfaceC0708a);
+            yVar.a(interfaceC0538a);
         }
         e eVar = this.u;
         if (eVar != null) {
-            eVar.a(interfaceC0708a);
+            eVar.a(interfaceC0538a);
         }
     }
 
     @Override // com.opos.mobad.n.a
     public void a(h hVar) {
-        a.InterfaceC0708a interfaceC0708a;
+        a.InterfaceC0538a interfaceC0538a;
         String str;
         if (hVar == null) {
             str = "data is null";
@@ -462,10 +462,10 @@ public class a implements com.opos.mobad.n.a {
                 str = "adShowData is null";
             } else if (this.i != 3 && (a2.g == null || a2.g.size() <= 0)) {
                 str = "imgList is null";
-            } else if (this.i != 3 || (a2.m != null && !TextUtils.isEmpty(a2.m.f26633a))) {
+            } else if (this.i != 3 || (a2.m != null && !TextUtils.isEmpty(a2.m.f12945a))) {
                 com.opos.cmn.an.f.a.b("BannerBigImage", "render");
-                if (this.j == null && (interfaceC0708a = this.g) != null) {
-                    interfaceC0708a.e();
+                if (this.j == null && (interfaceC0538a = this.g) != null) {
+                    interfaceC0538a.e();
                 }
                 this.j = a2;
                 j jVar = this.r;
@@ -499,7 +499,7 @@ public class a implements com.opos.mobad.n.a {
     public void d() {
         com.opos.cmn.an.f.a.b("BannerBigImage", "destroy");
         this.j = null;
-        this.f26564a = true;
+        this.f12876a = true;
         j jVar = this.r;
         if (jVar != null) {
             jVar.removeAllViews();

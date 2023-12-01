@@ -15,22 +15,22 @@ import java.util.List;
 public class AreaCodeSelectorAdapter extends BaseAdapter implements AreaCodeIndexer {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LayoutInflater f31354a;
+    private final LayoutInflater f17664a;
     private List<AreaCode> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f31355c;
+    private Context f17665c;
     private ArrayMap<String, Integer> d = new ArrayMap<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/login_register/AreaCode/AreaCodeSelectorAdapter$ViewHolder.class */
     static class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        TextView f31356a;
+        TextView f17666a;
         TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        TextView f31357c;
+        TextView f17667c;
 
         ViewHolder() {
         }
@@ -38,8 +38,8 @@ public class AreaCodeSelectorAdapter extends BaseAdapter implements AreaCodeInde
 
     public AreaCodeSelectorAdapter(Context context, List<AreaCode> list) {
         this.b = list;
-        this.f31355c = context;
-        this.f31354a = LayoutInflater.from(context);
+        this.f17665c = context;
+        this.f17664a = LayoutInflater.from(context);
         int i = 0;
         while (true) {
             int i2 = i;
@@ -89,18 +89,18 @@ public class AreaCodeSelectorAdapter extends BaseAdapter implements AreaCodeInde
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
         if (view == null) {
-            view = this.f31354a.inflate(R.layout.areacode_list_item, viewGroup, false);
+            view = this.f17664a.inflate(R.layout.areacode_list_item, viewGroup, false);
             viewHolder = new ViewHolder();
-            viewHolder.f31356a = (TextView) view.findViewById(2131370806);
+            viewHolder.f17666a = (TextView) view.findViewById(R.id.tvName);
             viewHolder.b = (TextView) view.findViewById(R.id.tvSection);
-            viewHolder.f31357c = (TextView) view.findViewById(R.id.tvCode);
+            viewHolder.f17667c = (TextView) view.findViewById(R.id.tvCode);
             view.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) view.getTag();
         }
         AreaCode areaCode = this.b.get(i);
-        viewHolder.f31356a.setText(areaCode.getName());
-        viewHolder.f31357c.setText(areaCode.getCode());
+        viewHolder.f17666a.setText(areaCode.getName());
+        viewHolder.f17667c.setText(areaCode.getCode());
         String upperCase = areaCode.getSort().toUpperCase();
         if (i == 0) {
             a(viewHolder.b, upperCase);

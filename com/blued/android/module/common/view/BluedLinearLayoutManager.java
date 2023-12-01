@@ -16,7 +16,6 @@ public class BluedLinearLayoutManager extends LinearLayoutManager {
         super(context, attributeSet, i, i2);
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         try {
             super.onLayoutChildren(recycler, state);
@@ -25,7 +24,6 @@ public class BluedLinearLayoutManager extends LinearLayoutManager {
         }
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void scrollToPosition(int i) {
         try {
             super.scrollToPosition(i);
@@ -34,7 +32,6 @@ public class BluedLinearLayoutManager extends LinearLayoutManager {
         }
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public boolean supportsPredictiveItemAnimations() {
         return false;
     }

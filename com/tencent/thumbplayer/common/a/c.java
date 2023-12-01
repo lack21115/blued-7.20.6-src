@@ -1,6 +1,5 @@
 package com.tencent.thumbplayer.common.a;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.thumbplayer.api.TPNativeException;
 import com.tencent.thumbplayer.api.capability.TPCapability;
 import com.tencent.thumbplayer.api.capability.TPVCodecCapabilityForGet;
@@ -16,15 +15,15 @@ public class c {
     private void a(d.a aVar, a aVar2) {
         TPVCodecCapabilityForGet b = b();
         if (b != null) {
-            aVar.f39271a = b.getMaxProfile();
+            aVar.f25580a = b.getMaxProfile();
             aVar.b = b.getMaxLevel();
         }
         aVar.a(aVar2);
     }
 
     private void a(d.b bVar, a aVar) {
-        bVar.f39274c = TPSystemInfo.SDK_INT;
-        bVar.f39273a = UUID.randomUUID().toString() + System.nanoTime() + BridgeUtil.UNDERLINE_STR + TPPlayerConfig.getPlatform();
+        bVar.f25583c = TPSystemInfo.SDK_INT;
+        bVar.f25582a = UUID.randomUUID().toString() + System.nanoTime() + "_" + TPPlayerConfig.getPlatform();
         bVar.b = TPPlayerConfig.getPlatform();
         bVar.d = String.format("Android %s", TPSystemInfo.getOsVersion());
         bVar.e = String.format("%s_%s", TPSystemInfo.getDeviceManufacturer(), TPSystemInfo.getDeviceName());
@@ -35,25 +34,25 @@ public class c {
     private void a(d.c cVar, a aVar) {
         TPVCodecCapabilityForGet e = e();
         if (e != null) {
-            cVar.f39275a = e.getMaxProfile();
+            cVar.f25584a = e.getMaxProfile();
             cVar.b = e.getMaxLevel();
         }
         cVar.a(aVar);
     }
 
-    private void a(d.C1017d c1017d, a aVar) {
+    private void a(d.C0847d c0847d, a aVar) {
         TPVCodecCapabilityForGet d = d();
         if (d != null) {
-            c1017d.f39277a = d.getMaxProfile();
-            c1017d.b = d.getMaxLevel();
+            c0847d.f25586a = d.getMaxProfile();
+            c0847d.b = d.getMaxLevel();
         }
-        c1017d.a(aVar);
+        c0847d.a(aVar);
     }
 
     private void a(d.e eVar, a aVar) {
         TPVCodecCapabilityForGet c2 = c();
         if (c2 != null) {
-            eVar.f39279a = c2.getMaxProfile();
+            eVar.f25588a = c2.getMaxProfile();
             eVar.b = c2.getMaxLevel();
         }
         eVar.a(aVar);

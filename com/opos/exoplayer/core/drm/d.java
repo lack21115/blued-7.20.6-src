@@ -6,14 +6,14 @@ import android.media.MediaCrypto;
 public final class d implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final MediaCrypto f25271a;
+    private final MediaCrypto f11583a;
     private final boolean b;
 
     public MediaCrypto a() {
-        return this.f25271a;
+        return this.f11583a;
     }
 
     public boolean a(String str) {
-        return !this.b && this.f25271a.requiresSecureDecoderComponent(str);
+        return !this.b && this.f11583a.requiresSecureDecoderComponent(str);
     }
 }

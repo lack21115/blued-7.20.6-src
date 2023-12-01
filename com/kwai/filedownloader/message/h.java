@@ -267,17 +267,17 @@ public abstract class h extends MessageSnapshot {
 
     /* renamed from: com.kwai.filedownloader.message.h$h  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/message/h$h.class */
-    public static final class C0592h extends d {
+    public static final class C0422h extends d {
         private final int aHZ;
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0592h(int i, int i2, Throwable th, int i3) {
+        public C0422h(int i, int i2, Throwable th, int i3) {
             super(i, i2, th);
             this.aHZ = i3;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0592h(Parcel parcel) {
+        public C0422h(Parcel parcel) {
             super(parcel);
             this.aHZ = parcel.readInt();
         }

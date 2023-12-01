@@ -3,7 +3,6 @@ package com.tencent.bugly.idasc.proguard;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,17 +17,17 @@ import java.util.Map;
 public final class u {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f35342a = System.currentTimeMillis();
+    public static final long f21651a = System.currentTimeMillis();
     private static u b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f35343c;
+    private Context f21652c;
     private SharedPreferences f;
     private Map<Integer, Map<String, t>> e = new HashMap();
     private String d = aa.b().d;
 
     private u(Context context) {
-        this.f35343c = context;
+        this.f21652c = context;
         this.f = context.getSharedPreferences("crashrecord", 0);
     }
 
@@ -70,15 +69,15 @@ public final class u {
             try {
                 try {
                     try {
-                        objectOutputStream2 = new ObjectOutputStream(new FileOutputStream(new File(this.f35343c.getDir("crashrecord", 0), String.valueOf(i))));
+                        objectOutputStream2 = new ObjectOutputStream(new FileOutputStream(new File(this.f21652c.getDir("crashrecord", 0), String.valueOf(i))));
                     } catch (IOException e) {
                         e = e;
                         objectOutputStream = null;
                     } catch (Throwable th) {
                         th = th;
-                        AutoCloseable autoCloseable = null;
+                        ObjectOutputStream objectOutputStream3 = null;
                         if (0 != 0) {
-                            autoCloseable.close();
+                            objectOutputStream3.close();
                         }
                         throw th;
                     }
@@ -89,7 +88,7 @@ public final class u {
                         objectOutputStream = objectOutputStream2;
                         e = e2;
                         e.printStackTrace();
-                        ObjectOutputStream objectOutputStream3 = objectOutputStream;
+                        ObjectOutputStream objectOutputStream4 = objectOutputStream;
                         al.a("open record file error", new Object[0]);
                         if (objectOutputStream != null) {
                             objectOutputStream.close();
@@ -130,7 +129,7 @@ public final class u {
                     if (tVar.b != null && tVar.b.equalsIgnoreCase(this.d) && tVar.d > 0) {
                         arrayList.add(tVar);
                     }
-                    if (tVar.f35341c + 86400000 < currentTimeMillis) {
+                    if (tVar.f21650c + 86400000 < currentTimeMillis) {
                         arrayList2.add(tVar);
                     }
                 }
@@ -139,7 +138,7 @@ public final class u {
                     d.removeAll(arrayList2);
                     a(i, (int) d);
                     return false;
-                } else if (arrayList.size() <= 0 || ((t) arrayList.get(arrayList.size() - 1)).f35341c + 86400000 >= currentTimeMillis) {
+                } else if (arrayList.size() <= 0 || ((t) arrayList.get(arrayList.size() - 1)).f21650c + 86400000 >= currentTimeMillis) {
                     return true;
                 } else {
                     d.clear();
@@ -181,7 +180,7 @@ public final class u {
         ak.a().a(new Runnable() { // from class: com.tencent.bugly.idasc.proguard.u.1
 
             /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ int f35344a = 1004;
+            final /* synthetic */ int f21653a = 1004;
 
             @Override // java.lang.Runnable
             public final void run() {
@@ -190,26 +189,26 @@ public final class u {
                     if (TextUtils.isEmpty(u.this.d)) {
                         return;
                     }
-                    List d = u.this.d(this.f35344a);
+                    List d = u.this.d(this.f21653a);
                     List<t> list = d;
                     if (d == null) {
                         list = new ArrayList();
                     }
-                    if (u.this.e.get(Integer.valueOf(this.f35344a)) == null) {
-                        u.this.e.put(Integer.valueOf(this.f35344a), new HashMap());
+                    if (u.this.e.get(Integer.valueOf(this.f21653a)) == null) {
+                        u.this.e.put(Integer.valueOf(this.f21653a), new HashMap());
                     }
-                    if (((Map) u.this.e.get(Integer.valueOf(this.f35344a))).get(u.this.d) == null) {
+                    if (((Map) u.this.e.get(Integer.valueOf(this.f21653a))).get(u.this.d) == null) {
                         tVar = new t();
-                        tVar.f35340a = this.f35344a;
-                        tVar.g = u.f35342a;
+                        tVar.f21649a = this.f21653a;
+                        tVar.g = u.f21651a;
                         tVar.b = u.this.d;
                         tVar.f = aa.b().o;
                         tVar.e = aa.b().h;
-                        tVar.f35341c = System.currentTimeMillis();
+                        tVar.f21650c = System.currentTimeMillis();
                         tVar.d = i;
-                        ((Map) u.this.e.get(Integer.valueOf(this.f35344a))).put(u.this.d, tVar);
+                        ((Map) u.this.e.get(Integer.valueOf(this.f21653a))).put(u.this.d, tVar);
                     } else {
-                        tVar = (t) ((Map) u.this.e.get(Integer.valueOf(this.f35344a))).get(u.this.d);
+                        tVar = (t) ((Map) u.this.e.get(Integer.valueOf(this.f21653a))).get(u.this.d);
                         tVar.d = i;
                     }
                     ArrayList arrayList = new ArrayList();
@@ -230,7 +229,7 @@ public final class u {
                     if (!z) {
                         list.add(tVar);
                     }
-                    u.this.a(this.f35344a, (int) list);
+                    u.this.a(this.f21653a, (int) list);
                 } catch (Exception e) {
                     al.e("saveCrashRecord failed", new Object[0]);
                 }
@@ -246,7 +245,7 @@ public final class u {
                 SharedPreferences sharedPreferences = this.f;
                 StringBuilder sb = new StringBuilder();
                 sb.append(i);
-                sb.append(BridgeUtil.UNDERLINE_STR);
+                sb.append("_");
                 sb.append(this.d);
                 z = sharedPreferences.getBoolean(sb.toString(), true);
                 z2 = z;
@@ -255,7 +254,7 @@ public final class u {
                     public final void run() {
                         boolean c2 = u.this.c(i);
                         SharedPreferences.Editor edit = u.this.f.edit();
-                        edit.putBoolean(i + BridgeUtil.UNDERLINE_STR + u.this.d, !c2).commit();
+                        edit.putBoolean(i + "_" + u.this.d, !c2).commit();
                     }
                 });
             } catch (Exception e) {

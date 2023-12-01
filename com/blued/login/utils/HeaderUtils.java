@@ -2,7 +2,6 @@ package com.blued.login.utils;
 
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.framework.http.BluedHttpTools;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -34,17 +33,15 @@ public class HeaderUtils {
         Log.v("HeaderUtils", "localImagePath=" + str);
         a(new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>() { // from class: com.blued.login.utils.HeaderUtils.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                final BluedAlbum bluedAlbum = bluedEntityA.data.get(0);
+                final BluedAlbum bluedAlbum = (BluedAlbum) bluedEntityA.data.get(0);
                 ThreadManager.a().a(new ThreadExecutor("uploadQiNiuForRegHead") { // from class: com.blued.login.utils.HeaderUtils.1.1
-                    @Override // com.blued.android.framework.pool.ThreadExecutor
                     public void execute() {
-                        HeaderUtils.b(String.this, bluedAlbum);
+                        HeaderUtils.b(str, bluedAlbum);
                     }
                 });
             }
@@ -52,8 +49,8 @@ public class HeaderUtils {
     }
 
     private static void a(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(ReqAckPackage.REQ_RESPONSE_KEY.AVATAR, str2);
+        Map a2 = BluedHttpTools.a();
+        a2.put("avatar", str2);
         a2.put("pid", str3);
         HttpManager.b(BluedHttpUrl.q() + "/users/" + str + "/avatar?http_method_override=PUT", bluedUIHttpResponse).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
@@ -66,25 +63,20 @@ public class HeaderUtils {
     /* JADX INFO: Access modifiers changed from: private */
     public static void b(String str, BluedAlbum bluedAlbum) {
         QiniuUploadUtils.a(str, bluedAlbum, new QiniuUploadTools.QiNiuListener() { // from class: com.blued.login.utils.HeaderUtils.2
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, double d) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(final String str2, String str3) {
                 ThreadManager.a().a(new ThreadExecutor("synServerForRegHead") { // from class: com.blued.login.utils.HeaderUtils.2.1
-                    @Override // com.blued.android.framework.pool.ThreadExecutor
                     public void execute() {
                         HeaderUtils.b(str2, UserInfo.getInstance().getLoginUserInfo().getUid());
                     }
                 });
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public boolean a() {
                 return false;
             }
@@ -95,10 +87,9 @@ public class HeaderUtils {
     public static void b(final String str, String str2) {
         a(str2, str, "", new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>() { // from class: com.blued.login.utils.HeaderUtils.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
-                UserInfo.getInstance().getLoginUserInfo().setAvatar(String.this);
+                UserInfo.getInstance().getLoginUserInfo().setAvatar(str);
                 HeaderUtils.b();
             }
         });

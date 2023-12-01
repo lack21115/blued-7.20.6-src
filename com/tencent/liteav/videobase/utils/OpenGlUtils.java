@@ -30,28 +30,28 @@ public class OpenGlUtils {
     public static final /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f36649a;
+        static final /* synthetic */ int[] f22958a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[Rotation.values().length];
-            f36649a = iArr;
+            f22958a = iArr;
             try {
                 iArr[Rotation.ROTATION_90.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f36649a[Rotation.ROTATION_180.ordinal()] = 2;
+                f22958a[Rotation.ROTATION_180.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f36649a[Rotation.ROTATION_270.ordinal()] = 3;
+                f22958a[Rotation.ROTATION_270.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f36649a[Rotation.NORMAL.ordinal()] = 4;
+                f22958a[Rotation.NORMAL.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -85,7 +85,7 @@ public class OpenGlUtils {
     }
 
     public static FloatBuffer createNormalCubeVerticesBuffer() {
-        return (FloatBuffer) ByteBuffer.allocateDirect(GLConstants.f36598c.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer().put(GLConstants.f36598c).position(0);
+        return (FloatBuffer) ByteBuffer.allocateDirect(GLConstants.f22907c.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer().put(GLConstants.f22907c).position(0);
     }
 
     public static int createTexture(int i, int i2, int i3, int i4) {
@@ -165,10 +165,10 @@ public class OpenGlUtils {
     public static void initTextureCoordsBuffer(float[] fArr, Rotation rotation, boolean z, boolean z2) {
         float[] fArr2 = GLConstants.d;
         if (rotation != null) {
-            int i = AnonymousClass1.f36649a[rotation.ordinal()];
+            int i = AnonymousClass1.f22958a[rotation.ordinal()];
             fArr2 = i != 1 ? i != 2 ? i != 3 ? GLConstants.d : GLConstants.e : GLConstants.g : GLConstants.f;
         }
-        System.arraycopy((Object) fArr2, 0, (Object) fArr, 0, fArr2.length);
+        System.arraycopy(fArr2, 0, fArr, 0, fArr2.length);
         if (z) {
             fArr[0] = flip(fArr[0]);
             fArr[2] = flip(fArr[2]);
@@ -263,10 +263,10 @@ public class OpenGlUtils {
     }
 
     public static Point reverseMappingPoint(GLConstants.GLScaleType gLScaleType, Rotation rotation, Point point, n nVar, n nVar2) {
-        float f = (nVar2.f36340a * 1.0f) / nVar.f36340a;
+        float f = (nVar2.f22649a * 1.0f) / nVar.f22649a;
         float f2 = (nVar2.b * 1.0f) / nVar.b;
         Matrix matrix = new Matrix();
-        matrix.setTranslate((-nVar.f36340a) / 2.0f, (-nVar.b) / 2.0f);
+        matrix.setTranslate((-nVar.f22649a) / 2.0f, (-nVar.b) / 2.0f);
         if (gLScaleType == GLConstants.GLScaleType.CENTER_CROP) {
             float min = Math.min(f, f2);
             matrix.postScale(min, min);
@@ -278,9 +278,9 @@ public class OpenGlUtils {
         }
         matrix.postRotate(360 - rotation.mValue);
         if (rotation == Rotation.ROTATION_90 || rotation == Rotation.ROTATION_270) {
-            matrix.postTranslate(nVar2.b / 2.0f, nVar2.f36340a / 2.0f);
+            matrix.postTranslate(nVar2.b / 2.0f, nVar2.f22649a / 2.0f);
         } else {
-            matrix.postTranslate(nVar2.f36340a / 2.0f, nVar2.b / 2.0f);
+            matrix.postTranslate(nVar2.f22649a / 2.0f, nVar2.b / 2.0f);
         }
         float[] fArr = new float[2];
         matrix.mapPoints(fArr, new float[]{point.x, point.y});

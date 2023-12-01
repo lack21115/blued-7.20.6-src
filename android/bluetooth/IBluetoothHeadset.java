@@ -38,9 +38,8 @@ public interface IBluetoothHeadset extends IInterface {
         static final int TRANSACTION_stopScoUsingVirtualVoiceCall = 20;
         static final int TRANSACTION_stopVoiceRecognition = 9;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/bluetooth/IBluetoothHeadset$Stub$Proxy.class */
-        public static class Proxy implements IBluetoothHeadset {
+        private static class Proxy implements IBluetoothHeadset {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

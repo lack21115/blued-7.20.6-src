@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 public abstract class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public b f42109a;
+    public b f28418a;
 
     public abstract String a();
 
@@ -14,7 +14,7 @@ public abstract class c {
     }
 
     public final SQLiteDatabase b() {
-        b bVar = this.f42109a;
+        b bVar = this.f28418a;
         if (bVar != null) {
             return bVar.b().getReadableDatabase();
         }
@@ -27,7 +27,7 @@ public abstract class c {
     public abstract String c();
 
     public final SQLiteDatabase d() {
-        b bVar = this.f42109a;
+        b bVar = this.f28418a;
         if (bVar != null) {
             return bVar.b().getWritableDatabase();
         }

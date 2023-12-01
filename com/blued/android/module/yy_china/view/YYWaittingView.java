@@ -17,13 +17,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYWaittingView.class */
 public class YYWaittingView extends FrameLayout implements View.OnClickListener, WaittingCountObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f18560a;
+    private BaseYYStudioFragment a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f18561c;
+    private int c;
 
     public YYWaittingView(Context context) {
         this(context, null);
@@ -35,7 +31,7 @@ public class YYWaittingView extends FrameLayout implements View.OnClickListener,
 
     public YYWaittingView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f18561c = 0;
+        this.c = 0;
         a();
     }
 
@@ -47,7 +43,7 @@ public class YYWaittingView extends FrameLayout implements View.OnClickListener,
 
     @Override // com.blued.android.module.yy_china.observer.WaittingCountObserver
     public void a(int i) {
-        this.f18561c = i;
+        this.c = i;
         int i2 = i;
         if (i > 99) {
             i2 = 99;
@@ -56,11 +52,11 @@ public class YYWaittingView extends FrameLayout implements View.OnClickListener,
     }
 
     public void a(BaseYYStudioFragment baseYYStudioFragment) {
-        this.f18560a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         if (YYRoomInfoManager.e().b() != null) {
-            this.f18561c = YYRoomInfoManager.e().b().getWaittingCount();
+            this.c = YYRoomInfoManager.e().b().getWaittingCount();
         }
-        a(this.f18561c);
+        a(this.c);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -74,7 +70,7 @@ public class YYWaittingView extends FrameLayout implements View.OnClickListener,
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
-        this.f18560a.u();
+        this.a.u();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

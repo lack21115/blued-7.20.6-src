@@ -14,11 +14,11 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
     private int m = 16;
 
     /* renamed from: a  reason: collision with root package name */
-    int[] f2000a = new int[16];
+    int[] f1952a = new int[16];
     int[] b = new int[16];
 
     /* renamed from: c  reason: collision with root package name */
-    int[] f2001c = new int[16];
+    int[] f1953c = new int[16];
     float[] d = new float[16];
     int[] e = new int[16];
     int[] f = new int[16];
@@ -34,7 +34,7 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
 
     private void a() {
         int i = this.l * 2;
-        this.f2001c = Arrays.copyOf(this.f2001c, i);
+        this.f1953c = Arrays.copyOf(this.f1953c, i);
         this.d = Arrays.copyOf(this.d, i);
         this.e = Arrays.copyOf(this.e, i);
         this.f = Arrays.copyOf(this.f, i);
@@ -46,14 +46,14 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
                 this.l = i;
                 return;
             }
-            this.f2001c[i3] = -1;
+            this.f1953c[i3] = -1;
             this.b[i3] = -1;
             i2 = i3 + 1;
         }
     }
 
     private void a(int i, SolverVariable solverVariable, float f) {
-        this.f2001c[i] = solverVariable.id;
+        this.f1953c[i] = solverVariable.id;
         this.d[i] = f;
         this.e[i] = -1;
         this.f[i] = -1;
@@ -64,14 +64,14 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
 
     private void a(SolverVariable solverVariable) {
         int i = solverVariable.id % this.m;
-        int i2 = this.f2000a[i];
+        int i2 = this.f1952a[i];
         if (i2 == -1) {
             return;
         }
         int i3 = solverVariable.id;
         int i4 = i2;
-        if (this.f2001c[i2] == i3) {
-            int[] iArr = this.f2000a;
+        if (this.f1953c[i2] == i3) {
+            int[] iArr = this.f1952a;
             int[] iArr2 = this.b;
             iArr[i] = iArr2[i2];
             iArr2[i2] = -1;
@@ -79,14 +79,14 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
         }
         while (true) {
             int[] iArr3 = this.b;
-            if (iArr3[i4] == -1 || this.f2001c[iArr3[i4]] == i3) {
+            if (iArr3[i4] == -1 || this.f1953c[iArr3[i4]] == i3) {
                 break;
             }
             i4 = iArr3[i4];
         }
         int[] iArr4 = this.b;
         int i5 = iArr4[i4];
-        if (i5 == -1 || this.f2001c[i5] != i3) {
+        if (i5 == -1 || this.f1953c[i5] != i3) {
             return;
         }
         iArr4[i4] = iArr4[i5];
@@ -96,7 +96,7 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
     private void a(SolverVariable solverVariable, int i) {
         int[] iArr;
         int i2 = solverVariable.id % this.m;
-        int[] iArr2 = this.f2000a;
+        int[] iArr2 = this.f1952a;
         int i3 = iArr2[i2];
         int i4 = i3;
         if (i3 == -1) {
@@ -121,7 +121,7 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
             if (i2 >= this.l) {
                 return -1;
             }
-            if (this.f2001c[i2] == -1) {
+            if (this.f1953c[i2] == -1) {
                 return i2;
             }
             i = i2 + 1;
@@ -194,7 +194,7 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
             if (i5 >= this.l) {
                 break;
             }
-            this.f2001c[i5] = -1;
+            this.f1953c[i5] = -1;
             this.b[i5] = -1;
             i4 = i5 + 1;
         }
@@ -206,7 +206,7 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
                 this.h = -1;
                 return;
             }
-            this.f2000a[i7] = -1;
+            this.f1952a[i7] = -1;
             i6 = i7 + 1;
         }
     }
@@ -284,7 +284,7 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
                 return null;
             }
             if (i5 == i && i3 != -1) {
-                return this.i.d[this.f2001c[i3]];
+                return this.i.d[this.f1953c[i3]];
             }
             i3 = this.f[i3];
             if (i3 == -1) {
@@ -321,23 +321,23 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
             return -1;
         }
         int i = solverVariable.id;
-        int i2 = this.f2000a[i % this.m];
+        int i2 = this.f1952a[i % this.m];
         if (i2 == -1) {
             return -1;
         }
         int i3 = i2;
-        if (this.f2001c[i2] == i) {
+        if (this.f1953c[i2] == i) {
             return i2;
         }
         while (true) {
             int[] iArr = this.b;
-            if (iArr[i3] == -1 || this.f2001c[iArr[i3]] == i) {
+            if (iArr[i3] == -1 || this.f1953c[iArr[i3]] == i) {
                 break;
             }
             i3 = iArr[i3];
         }
         int[] iArr2 = this.b;
-        if (iArr2[i3] != -1 && this.f2001c[iArr2[i3]] == i) {
+        if (iArr2[i3] != -1 && this.f1953c[iArr2[i3]] == i) {
             return iArr2[i3];
         }
         return -1;
@@ -393,11 +393,11 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
             i = i5;
             if (i2 >= i3) {
                 break;
-            } else if (this.f2001c[i4] == solverVariable.id) {
+            } else if (this.f1953c[i4] == solverVariable.id) {
                 this.d[i4] = f;
                 return;
             } else {
-                if (this.f2001c[i4] < solverVariable.id) {
+                if (this.f1953c[i4] < solverVariable.id) {
                     i5 = i4;
                 }
                 i4 = this.f[i4];
@@ -422,7 +422,7 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
         if (this.h == indexOf) {
             this.h = this.f[indexOf];
         }
-        this.f2001c[indexOf] = -1;
+        this.f1953c[indexOf] = -1;
         int[] iArr = this.e;
         if (iArr[indexOf] != -1) {
             int[] iArr2 = this.f;
@@ -463,13 +463,13 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
                 int indexOf = indexOf(variable);
                 String str5 = str4 + "[p: ";
                 if (this.e[indexOf] != -1) {
-                    str = str5 + this.i.d[this.f2001c[this.e[indexOf]]];
+                    str = str5 + this.i.d[this.f1953c[this.e[indexOf]]];
                 } else {
                     str = str5 + "none";
                 }
                 String str6 = str + ", n: ";
                 if (this.f[indexOf] != -1) {
-                    str2 = str6 + this.i.d[this.f2001c[this.f[indexOf]]];
+                    str2 = str6 + this.i.d[this.f1953c[this.f[indexOf]]];
                 } else {
                     str2 = str6 + "none";
                 }
@@ -481,8 +481,8 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
 
     @Override // androidx.constraintlayout.core.ArrayRow.ArrayRowVariables
     public float use(ArrayRow arrayRow, boolean z) {
-        float f = get(arrayRow.f1986a);
-        remove(arrayRow.f1986a, z);
+        float f = get(arrayRow.f1938a);
+        remove(arrayRow.f1938a, z);
         SolverVariableValues solverVariableValues = (SolverVariableValues) arrayRow.variables;
         int currentSize = solverVariableValues.getCurrentSize();
         int i = solverVariableValues.h;
@@ -490,8 +490,8 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
         int i3 = 0;
         while (i2 < currentSize) {
             int i4 = i2;
-            if (solverVariableValues.f2001c[i3] != -1) {
-                add(this.i.d[solverVariableValues.f2001c[i3]], solverVariableValues.d[i3] * f, z);
+            if (solverVariableValues.f1953c[i3] != -1) {
+                add(this.i.d[solverVariableValues.f1953c[i3]], solverVariableValues.d[i3] * f, z);
                 i4 = i2 + 1;
             }
             i3++;

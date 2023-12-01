@@ -12,13 +12,9 @@ import com.blued.android.framework.view.pulltorefresh.PullToRefreshBase;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/RotateLoadingLayout.class */
 public class RotateLoadingLayout extends LoadingLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Animation f10287a;
+    private final Animation a;
     private final Matrix b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f10288c;
+    private float c;
     private float d;
     private final boolean e;
 
@@ -29,15 +25,15 @@ public class RotateLoadingLayout extends LoadingLayout {
         this.b = new Matrix();
         this.mHeaderImage.setImageMatrix(this.b);
         RotateAnimation rotateAnimation = new RotateAnimation(0.0f, 720.0f, 1, 0.5f, 1, 0.5f);
-        this.f10287a = rotateAnimation;
+        this.a = rotateAnimation;
         rotateAnimation.setInterpolator(ANIMATION_INTERPOLATOR);
         if (this.isHeaderStyleEnabled) {
-            this.f10287a.setDuration(30L);
+            this.a.setDuration(30L);
         } else {
-            this.f10287a.setDuration(1000L);
+            this.a.setDuration(1000L);
         }
-        this.f10287a.setRepeatCount(-1);
-        this.f10287a.setRepeatMode(1);
+        this.a.setRepeatCount(-1);
+        this.a.setRepeatMode(1);
     }
 
     private void a() {
@@ -56,14 +52,14 @@ public class RotateLoadingLayout extends LoadingLayout {
     @Override // com.blued.android.framework.view.pulltorefresh.LoadingLayout
     public void onLoadingDrawableSet(Drawable drawable) {
         if (drawable != null) {
-            this.f10288c = Math.round(drawable.getIntrinsicWidth() / 2.0f);
+            this.c = Math.round(drawable.getIntrinsicWidth() / 2.0f);
             this.d = Math.round(drawable.getIntrinsicHeight() / 2.0f);
         }
     }
 
     @Override // com.blued.android.framework.view.pulltorefresh.LoadingLayout
     protected void onPullImpl(float f) {
-        this.b.setRotate(this.e ? f * 90.0f : Math.max(0.0f, Math.min(180.0f, (f * 360.0f) - 180.0f)), this.f10288c, this.d);
+        this.b.setRotate(this.e ? f * 90.0f : Math.max(0.0f, Math.min(180.0f, (f * 360.0f) - 180.0f)), this.c, this.d);
         this.mHeaderImage.setImageMatrix(this.b);
     }
 
@@ -73,7 +69,7 @@ public class RotateLoadingLayout extends LoadingLayout {
 
     @Override // com.blued.android.framework.view.pulltorefresh.LoadingLayout
     protected void refreshingImpl() {
-        this.mHeaderImage.startAnimation(this.f10287a);
+        this.mHeaderImage.startAnimation(this.a);
     }
 
     @Override // com.blued.android.framework.view.pulltorefresh.LoadingLayout

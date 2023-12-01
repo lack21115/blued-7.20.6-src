@@ -6,11 +6,11 @@ import android.os.Build;
 public final class CancellationSignal {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f2505a;
+    private boolean f2457a;
     private OnCancelListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Object f2506c;
+    private Object f2458c;
     private boolean d;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/os/CancellationSignal$OnCancelListener.class */
@@ -29,13 +29,13 @@ public final class CancellationSignal {
 
     public void cancel() {
         synchronized (this) {
-            if (this.f2505a) {
+            if (this.f2457a) {
                 return;
             }
-            this.f2505a = true;
+            this.f2457a = true;
             this.d = true;
             OnCancelListener onCancelListener = this.b;
-            Object obj = this.f2506c;
+            Object obj = this.f2458c;
             if (onCancelListener != null) {
                 try {
                     onCancelListener.onCancel();
@@ -63,14 +63,14 @@ public final class CancellationSignal {
             return null;
         }
         synchronized (this) {
-            if (this.f2506c == null) {
+            if (this.f2458c == null) {
                 android.os.CancellationSignal cancellationSignal = new android.os.CancellationSignal();
-                this.f2506c = cancellationSignal;
-                if (this.f2505a) {
+                this.f2458c = cancellationSignal;
+                if (this.f2457a) {
                     cancellationSignal.cancel();
                 }
             }
-            obj = this.f2506c;
+            obj = this.f2458c;
         }
         return obj;
     }
@@ -78,7 +78,7 @@ public final class CancellationSignal {
     public boolean isCanceled() {
         boolean z;
         synchronized (this) {
-            z = this.f2505a;
+            z = this.f2457a;
         }
         return z;
     }
@@ -90,7 +90,7 @@ public final class CancellationSignal {
                 return;
             }
             this.b = onCancelListener;
-            if (!this.f2505a || onCancelListener == null) {
+            if (!this.f2457a || onCancelListener == null) {
                 return;
             }
             onCancelListener.onCancel();

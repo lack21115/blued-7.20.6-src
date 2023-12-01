@@ -9,11 +9,11 @@ import java.util.regex.Pattern;
 public class d implements FileFilter {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ e f34941a;
+    final /* synthetic */ e f21250a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public d(e eVar) {
-        this.f34941a = eVar;
+        this.f21250a = eVar;
     }
 
     @Override // java.io.FileFilter

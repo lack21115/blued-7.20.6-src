@@ -8,19 +8,19 @@ public class n0 implements b {
     public static Class b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static Object f38494c;
+    public static Object f24803c;
     public static Method d;
     public static Method e;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f38495a;
+    public Context f24804a;
 
     public n0() {
         try {
             c.c("xm start");
             Class<?> cls = Class.forName("com.android.id.impl.IdProviderImpl");
             b = cls;
-            f38494c = cls.newInstance();
+            f24803c = cls.newInstance();
             d = b.getMethod("getOAID", Context.class);
             e = b.getMethod("getAAID", Context.class);
         } catch (Exception e2) {
@@ -31,11 +31,11 @@ public class n0 implements b {
     @Override // com.tencent.qmsp.oaid2.b
     public String a() {
         Method method;
-        Object obj = f38494c;
+        Object obj = f24803c;
         if (obj == null || (method = d) == null) {
             return null;
         }
-        return a(this.f38495a, obj, method);
+        return a(this.f24804a, obj, method);
     }
 
     public final String a(Context context, Object obj, Method method) {
@@ -55,22 +55,22 @@ public class n0 implements b {
 
     @Override // com.tencent.qmsp.oaid2.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f38495a = context;
+        this.f24804a = context;
     }
 
     @Override // com.tencent.qmsp.oaid2.b
     public String d() {
         Method method;
-        Object obj = f38494c;
+        Object obj = f24803c;
         if (obj == null || (method = e) == null) {
             return null;
         }
-        return a(this.f38495a, obj, method);
+        return a(this.f24804a, obj, method);
     }
 
     @Override // com.tencent.qmsp.oaid2.b
     public boolean e() {
-        return (b == null || f38494c == null) ? false : true;
+        return (b == null || f24803c == null) ? false : true;
     }
 
     @Override // com.tencent.qmsp.oaid2.b

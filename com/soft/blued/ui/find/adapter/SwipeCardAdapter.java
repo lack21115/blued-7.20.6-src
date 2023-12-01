@@ -35,7 +35,7 @@ public class SwipeCardAdapter extends BaseAdapter {
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private SwipeFlingAdapterView f30145c;
+    private SwipeFlingAdapterView f16455c;
     private View.OnClickListener d;
     private ActivityFragmentActive e;
     private Dialog f;
@@ -43,7 +43,7 @@ public class SwipeCardAdapter extends BaseAdapter {
     private int m;
 
     /* renamed from: a  reason: collision with root package name */
-    public List<BluedRecommendUsers> f30144a = new ArrayList();
+    public List<BluedRecommendUsers> f16454a = new ArrayList();
     private List<BluedRecommendUsers> g = new ArrayList();
     private int h = 0;
     private boolean j = false;
@@ -59,11 +59,11 @@ public class SwipeCardAdapter extends BaseAdapter {
     class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public TextView f30149a;
+        public TextView f16459a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public TextView f30150c;
+        public TextView f16460c;
         public TextView d;
         public ImageView e;
         public TextView f;
@@ -76,9 +76,9 @@ public class SwipeCardAdapter extends BaseAdapter {
         public ImageView m;
 
         private ViewHolder() {
-            this.f30149a = null;
+            this.f16459a = null;
             this.b = null;
-            this.f30150c = null;
+            this.f16460c = null;
             this.d = null;
             this.e = null;
             this.f = null;
@@ -94,7 +94,7 @@ public class SwipeCardAdapter extends BaseAdapter {
     public SwipeCardAdapter(Context context, SwipeFlingAdapterView swipeFlingAdapterView, View.OnClickListener onClickListener, ActivityFragmentActive activityFragmentActive, Dialog dialog) {
         this.i = 0;
         this.b = context;
-        this.f30145c = swipeFlingAdapterView;
+        this.f16455c = swipeFlingAdapterView;
         this.d = onClickListener;
         this.e = activityFragmentActive;
         this.f = dialog;
@@ -117,19 +117,19 @@ public class SwipeCardAdapter extends BaseAdapter {
 
     public void a(List<BluedRecommendUsers> list) {
         this.l.clear();
-        this.f30144a.clear();
+        this.f16454a.clear();
         this.m = 0;
         if (list != null && list.size() > 0) {
             for (int i = 0; i < list.size(); i++) {
                 BluedRecommendUsers bluedRecommendUsers = list.get(i);
                 if (!this.l.contains(bluedRecommendUsers.uid)) {
-                    this.f30144a.add(bluedRecommendUsers);
+                    this.f16454a.add(bluedRecommendUsers);
                     this.l.add(bluedRecommendUsers.uid);
                 }
             }
         }
-        this.f30145c.setTag(R.id.current_index, Integer.valueOf(a()));
-        this.f30145c.setTag(R.id.total_szie, Integer.valueOf(this.f30144a.size()));
+        this.f16455c.setTag(R.id.current_index, Integer.valueOf(a()));
+        this.f16455c.setTag(R.id.total_szie, Integer.valueOf(this.f16454a.size()));
         c(this.h);
     }
 
@@ -145,10 +145,10 @@ public class SwipeCardAdapter extends BaseAdapter {
 
     public void b(int i) {
         List<BluedRecommendUsers> list;
-        if (i < 0 || (list = this.f30144a) == null || i >= list.size()) {
+        if (i < 0 || (list = this.f16454a) == null || i >= list.size()) {
             return;
         }
-        InstantLog.c("target_from_guide", this.f30144a.get(i).uid);
+        InstantLog.c("target_from_guide", this.f16454a.get(i).uid);
     }
 
     public void b(List<BluedRecommendUsers> list) {
@@ -163,14 +163,14 @@ public class SwipeCardAdapter extends BaseAdapter {
                 if (this.l.contains(bluedRecommendUsers.uid)) {
                     this.m++;
                 } else {
-                    this.f30144a.add(bluedRecommendUsers);
+                    this.f16454a.add(bluedRecommendUsers);
                     this.l.add(bluedRecommendUsers.uid);
                 }
                 i = i2 + 1;
             }
         }
-        this.f30145c.setTag(R.id.current_index, Integer.valueOf(a()));
-        this.f30145c.setTag(R.id.total_szie, Integer.valueOf(this.f30144a.size()));
+        this.f16455c.setTag(R.id.current_index, Integer.valueOf(a()));
+        this.f16455c.setTag(R.id.total_szie, Integer.valueOf(this.f16454a.size()));
         c(this.h);
     }
 
@@ -179,7 +179,7 @@ public class SwipeCardAdapter extends BaseAdapter {
         this.h = i;
         Logger.b("swipecard", "pointerForward", Integer.valueOf(i));
         c(this.h);
-        if (this.k == null || this.f30144a.size() - 1 != this.h || this.j) {
+        if (this.k == null || this.f16454a.size() - 1 != this.h || this.j) {
             return;
         }
         this.k.a();
@@ -189,11 +189,11 @@ public class SwipeCardAdapter extends BaseAdapter {
         int i2;
         int i3;
         this.h = i;
-        if (i < 0 || i >= this.f30144a.size()) {
+        if (i < 0 || i >= this.f16454a.size()) {
             return;
         }
         this.g.clear();
-        this.g.add(this.f30144a.get(this.h));
+        this.g.add(this.f16454a.get(this.h));
         int i4 = this.h;
         while (true) {
             int i5 = i4 + 1;
@@ -202,8 +202,8 @@ public class SwipeCardAdapter extends BaseAdapter {
                 break;
             }
             i4 = i5;
-            if (i5 < this.f30144a.size()) {
-                this.g.add(this.f30144a.get(i5));
+            if (i5 < this.f16454a.size()) {
+                this.g.add(this.f16454a.get(i5));
                 i4 = i5;
             }
         }
@@ -213,20 +213,20 @@ public class SwipeCardAdapter extends BaseAdapter {
             if (i2 < i3 - (this.i / 2)) {
                 break;
             } else if (i2 >= 0) {
-                this.g.add(this.f30144a.get(i2));
+                this.g.add(this.f16454a.get(i2));
             }
         }
-        SwipeFlingAdapterView swipeFlingAdapterView = this.f30145c;
+        SwipeFlingAdapterView swipeFlingAdapterView = this.f16455c;
         if (swipeFlingAdapterView != null) {
             swipeFlingAdapterView.setTag(R.id.current_index, Integer.valueOf(i3));
-            this.f30145c.setTag(R.id.total_szie, Integer.valueOf(this.f30144a.size()));
+            this.f16455c.setTag(R.id.total_szie, Integer.valueOf(this.f16454a.size()));
         }
         notifyDataSetChanged();
-        final BluedRecommendUsers bluedRecommendUsers = this.f30144a.get(this.h);
-        this.f30145c.post(new Runnable() { // from class: com.soft.blued.ui.find.adapter.SwipeCardAdapter.1
+        final BluedRecommendUsers bluedRecommendUsers = this.f16454a.get(this.h);
+        this.f16455c.post(new Runnable() { // from class: com.soft.blued.ui.find.adapter.SwipeCardAdapter.1
             @Override // java.lang.Runnable
             public void run() {
-                if (SwipeCardAdapter.this.f30145c.getVisibility() != 0 || bluedRecommendUsers.isSwipeVisibility) {
+                if (SwipeCardAdapter.this.f16455c.getVisibility() != 0 || bluedRecommendUsers.isSwipeVisibility) {
                     return;
                 }
                 bluedRecommendUsers.isSwipeVisibility = true;
@@ -261,19 +261,19 @@ public class SwipeCardAdapter extends BaseAdapter {
         if (view == null) {
             viewHolder = new ViewHolder();
             view2 = LayoutInflater.from(this.b).inflate(R.layout.fragment_recommend_card_view, viewGroup, false);
-            viewHolder.f30149a = (TextView) view2.findViewById(R.id.card_name);
+            viewHolder.f16459a = (TextView) view2.findViewById(R.id.card_name);
             viewHolder.e = (ImageView) view2.findViewById(R.id.card_role);
-            viewHolder.f30150c = (TextView) view2.findViewById(R.id.card_last_operate);
+            viewHolder.f16460c = (TextView) view2.findViewById(R.id.card_last_operate);
             viewHolder.b = (TextView) view2.findViewById(R.id.card_distance);
-            viewHolder.h = (ImageView) view2.findViewById(2131368929);
+            viewHolder.h = (ImageView) view2.findViewById(R.id.portrait);
             viewHolder.d = (TextView) view2.findViewById(R.id.card_index);
             viewHolder.f = (TextView) view2.findViewById(R.id.card_city);
-            viewHolder.g = (ImageView) view2.findViewById(2131362970);
+            viewHolder.g = (ImageView) view2.findViewById(R.id.close_btn);
             viewHolder.j = (ImageView) view2.findViewById(R.id.card_icon_attention);
             viewHolder.k = (TextView) view2.findViewById(R.id.card_tv_attention);
             viewHolder.i = (RelativeLayout) view2.findViewById(R.id.attention_lay);
-            viewHolder.l = (ImageView) view2.findViewById(2131364720);
-            viewHolder.m = (ImageView) view2.findViewById(2131364459);
+            viewHolder.l = (ImageView) view2.findViewById(R.id.img_verify);
+            viewHolder.m = (ImageView) view2.findViewById(R.id.img_blued_medal);
         } else {
             view2 = view;
             viewHolder = (ViewHolder) view.getTag();
@@ -281,7 +281,7 @@ public class SwipeCardAdapter extends BaseAdapter {
         final BluedRecommendUsers bluedRecommendUsers = this.g.get(i);
         viewHolder.g.setOnClickListener(this.d);
         ImageLoader.a(this.e, AvatarUtils.a(0, bluedRecommendUsers.avatar)).c().b(2131237310).a(viewHolder.h);
-        viewHolder.f30149a.setText(bluedRecommendUsers.name);
+        viewHolder.f16459a.setText(bluedRecommendUsers.name);
         if ("0.5".equals(bluedRecommendUsers.role)) {
             viewHolder.e.setImageResource(R.drawable.icon_userinfo_role_5);
         } else if ("1".equals(bluedRecommendUsers.role)) {
@@ -296,7 +296,7 @@ public class SwipeCardAdapter extends BaseAdapter {
             viewHolder.b.setText(DistanceUtils.a(bluedRecommendUsers.distance, BlueAppLocal.c(), true));
         }
         if (!StringUtils.d(bluedRecommendUsers.last_operate)) {
-            viewHolder.f30150c.setText(TimeAndDateUtils.f(this.b, TimeAndDateUtils.c(bluedRecommendUsers.last_operate)));
+            viewHolder.f16460c.setText(TimeAndDateUtils.f(this.b, TimeAndDateUtils.c(bluedRecommendUsers.last_operate)));
         }
         viewHolder.d.setText(String.format(this.b.getString(R.string.card_user_index), bluedRecommendUsers.age, StringUtils.a(bluedRecommendUsers.height, BlueAppLocal.c(), true), StringUtils.b(bluedRecommendUsers.weight, BlueAppLocal.c(), true)));
         viewHolder.f.setText(AreaUtils.getAreaTxt(bluedRecommendUsers.city_settled, BlueAppLocal.c()));
@@ -305,7 +305,7 @@ public class SwipeCardAdapter extends BaseAdapter {
             viewHolder.m.setVisibility(8);
         } else {
             viewHolder.m.setVisibility(0);
-            ImageLoader.a(this.e, bluedRecommendUsers.blued_pic).b(R.drawable.blued_medal_default).a(viewHolder.m);
+            ImageLoader.a(this.e, bluedRecommendUsers.blued_pic).b((int) R.drawable.blued_medal_default).a(viewHolder.m);
         }
         viewHolder.i.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.SwipeCardAdapter.2
             @Override // android.view.View.OnClickListener
@@ -326,8 +326,8 @@ public class SwipeCardAdapter extends BaseAdapter {
                             @Override // com.soft.blued.utils.UserRelationshipUtils.IAddOrRemoveAttentionDone
                             public void a(String str) {
                                 bluedRecommendUsers.relationship = str;
-                                SwipeCardAdapter.this.f30144a.get(SwipeCardAdapter.this.h).relationship = str;
-                                SwipeCardAdapter.this.f30145c.f28663a = null;
+                                SwipeCardAdapter.this.f16454a.get(SwipeCardAdapter.this.h).relationship = str;
+                                SwipeCardAdapter.this.f16455c.f14973a = null;
                                 SwipeCardAdapter.this.notifyDataSetChanged();
                             }
 
@@ -339,8 +339,8 @@ public class SwipeCardAdapter extends BaseAdapter {
                             @Override // com.soft.blued.utils.UserRelationshipUtils.IAddOrRemoveAttentionDone
                             public void b(String str) {
                                 bluedRecommendUsers.relationship = str;
-                                SwipeCardAdapter.this.f30144a.get(SwipeCardAdapter.this.h).relationship = str;
-                                SwipeCardAdapter.this.f30145c.f28663a = null;
+                                SwipeCardAdapter.this.f16454a.get(SwipeCardAdapter.this.h).relationship = str;
+                                SwipeCardAdapter.this.f16455c.f14973a = null;
                                 SwipeCardAdapter.this.notifyDataSetChanged();
                             }
 

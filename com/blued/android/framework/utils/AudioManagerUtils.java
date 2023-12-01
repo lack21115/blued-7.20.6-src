@@ -14,9 +14,7 @@ import com.blued.android.core.utils.Log;
 public class AudioManagerUtils {
     private static final String b = AudioManagerUtils.class.getSimpleName();
     private static AudioManagerUtils g;
-
-    /* renamed from: c  reason: collision with root package name */
-    private AudioManager f10071c;
+    private AudioManager c;
     private AudioFocusRequest d;
     private boolean e = false;
     private Handler f = new Handler(Looper.getMainLooper(), new Handler.Callback() { // from class: com.blued.android.framework.utils.AudioManagerUtils.1
@@ -37,9 +35,7 @@ public class AudioManagerUtils {
             return false;
         }
     });
-
-    /* renamed from: a  reason: collision with root package name */
-    AudioManager.OnAudioFocusChangeListener f10070a = new AudioManager.OnAudioFocusChangeListener() { // from class: com.blued.android.framework.utils.AudioManagerUtils.2
+    AudioManager.OnAudioFocusChangeListener a = new AudioManager.OnAudioFocusChangeListener() { // from class: com.blued.android.framework.utils.AudioManagerUtils.2
         @Override // android.media.AudioManager.OnAudioFocusChangeListener
         public void onAudioFocusChange(int i) {
         }
@@ -70,19 +66,19 @@ public class AudioManagerUtils {
         if (this.e) {
             return;
         }
-        if (this.f10071c == null) {
-            this.f10071c = (AudioManager) AppInfo.d().getSystemService("audio");
+        if (this.c == null) {
+            this.c = (AudioManager) AppInfo.d().getSystemService("audio");
         }
-        if (this.f10071c != null) {
+        if (this.c != null) {
             try {
                 if (Build.VERSION.SDK_INT < 26) {
-                    requestAudioFocus = this.f10071c.requestAudioFocus(this.f10070a, 3, 2);
+                    requestAudioFocus = this.c.requestAudioFocus(this.a, 3, 2);
                     str = " requestAudioFocus: SDK_INT < 26,";
                 } else {
                     if (this.d == null) {
-                        this.d = new AudioFocusRequest.Builder(2).setAudioAttributes(new AudioAttributes.Builder().setUsage(1).setContentType(3).build()).setAcceptsDelayedFocusGain(true).setOnAudioFocusChangeListener(this.f10070a).build();
+                        this.d = new AudioFocusRequest.Builder(2).setAudioAttributes(new AudioAttributes.Builder().setUsage(1).setContentType(3).build()).setAcceptsDelayedFocusGain(true).setOnAudioFocusChangeListener(this.a).build();
                     }
-                    requestAudioFocus = this.f10071c.requestAudioFocus(this.d);
+                    requestAudioFocus = this.c.requestAudioFocus(this.d);
                     str = " requestAudioFocus: SDK_INT >= 26,";
                 }
                 if (requestAudioFocus == 1) {
@@ -103,19 +99,19 @@ public class AudioManagerUtils {
         int abandonAudioFocusRequest;
         String str;
         if (this.e) {
-            if (this.f10071c == null) {
-                this.f10071c = (AudioManager) AppInfo.d().getSystemService("audio");
+            if (this.c == null) {
+                this.c = (AudioManager) AppInfo.d().getSystemService("audio");
             }
-            if (this.f10071c != null) {
+            if (this.c != null) {
                 try {
                     if (Build.VERSION.SDK_INT < 26) {
-                        abandonAudioFocusRequest = this.f10071c.abandonAudioFocus(this.f10070a);
+                        abandonAudioFocusRequest = this.c.abandonAudioFocus(this.a);
                         str = " abandonAudioFocus: SDK_INT < 26,";
                     } else {
                         if (this.d == null) {
-                            this.d = new AudioFocusRequest.Builder(2).setAudioAttributes(new AudioAttributes.Builder().setUsage(1).setContentType(3).build()).setOnAudioFocusChangeListener(this.f10070a).setAcceptsDelayedFocusGain(true).build();
+                            this.d = new AudioFocusRequest.Builder(2).setAudioAttributes(new AudioAttributes.Builder().setUsage(1).setContentType(3).build()).setOnAudioFocusChangeListener(this.a).setAcceptsDelayedFocusGain(true).build();
                         }
-                        abandonAudioFocusRequest = this.f10071c.abandonAudioFocusRequest(this.d);
+                        abandonAudioFocusRequest = this.c.abandonAudioFocusRequest(this.d);
                         str = " abandonAudioFocus: SDK_INT >= 26,";
                     }
                     if (abandonAudioFocusRequest == 1) {

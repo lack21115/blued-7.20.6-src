@@ -13,25 +13,25 @@ public enum DownloadPriority {
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f37259a;
+        public static final /* synthetic */ int[] f23568a;
 
         static {
             DownloadPriority.values();
             int[] iArr = new int[4];
-            f37259a = iArr;
+            f23568a = iArr;
             try {
                 DownloadPriority downloadPriority = DownloadPriority.HIGH;
                 iArr[1] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f37259a;
+                int[] iArr2 = f23568a;
                 DownloadPriority downloadPriority2 = DownloadPriority.LOW;
                 iArr2[3] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f37259a;
+                int[] iArr3 = f23568a;
                 DownloadPriority downloadPriority3 = DownloadPriority.MIDDLE;
                 iArr3[2] = 3;
             } catch (NoSuchFieldError e3) {

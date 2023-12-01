@@ -3,18 +3,17 @@ package com.amap.api.maps.model;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.view.View;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/ArcOptions.class */
 public final class ArcOptions extends BaseOptions implements Parcelable, Cloneable {
     public static final ArcOptionsCreator CREATOR = new ArcOptionsCreator();
-
-    /* renamed from: a  reason: collision with root package name */
-    String f5518a;
+    String a;
     private LatLng endpoint;
     private LatLng passedpoint;
     private LatLng startpoint;
     private float strokeWidth = 10.0f;
-    private int strokeColor = -16777216;
+    private int strokeColor = View.MEASURED_STATE_MASK;
     private float zIndex = 0.0f;
     private boolean isVisible = true;
 
@@ -23,14 +22,14 @@ public final class ArcOptions extends BaseOptions implements Parcelable, Cloneab
     }
 
     /* renamed from: clone */
-    public final ArcOptions m2395clone() {
+    public final ArcOptions m8838clone() {
         try {
             super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
         ArcOptions arcOptions = new ArcOptions();
-        arcOptions.f5518a = this.f5518a;
+        arcOptions.a = this.a;
         arcOptions.startpoint = this.startpoint;
         arcOptions.passedpoint = this.passedpoint;
         arcOptions.endpoint = this.endpoint;
@@ -119,7 +118,7 @@ public final class ArcOptions extends BaseOptions implements Parcelable, Cloneab
         parcel.writeInt(this.strokeColor);
         parcel.writeFloat(this.zIndex);
         parcel.writeByte(this.isVisible ? (byte) 1 : (byte) 0);
-        parcel.writeString(this.f5518a);
+        parcel.writeString(this.a);
     }
 
     public final ArcOptions zIndex(float f) {

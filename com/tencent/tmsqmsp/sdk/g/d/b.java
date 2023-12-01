@@ -14,28 +14,28 @@ public class b {
     private static String e = "com.mdid.msa";
 
     /* renamed from: a  reason: collision with root package name */
-    private c f39776a;
+    private c f26085a;
     private ServiceConnection b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f39777c;
+    private Context f26086c;
     private com.tencent.tmsqmsp.sdk.g.d.a d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/g/d/b$a.class */
     public class a implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        public c f39778a;
+        public c f26087a;
 
         public a(b bVar, c cVar) {
-            this.f39778a = cVar;
+            this.f26087a = cVar;
         }
 
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             synchronized (this) {
-                b.this.d = a.AbstractBinderC1054a.a(iBinder);
-                new d(b.this.d, this.f39778a).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
+                b.this.d = a.AbstractBinderC0884a.a(iBinder);
+                new d(b.this.d, this.f26087a).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
             }
         }
 
@@ -50,8 +50,8 @@ public class b {
         if (context == null) {
             throw new NullPointerException("Context can not be null.");
         }
-        this.f39777c = context;
-        this.f39776a = cVar;
+        this.f26086c = context;
+        this.f26085a = cVar;
         this.b = new a(this, cVar);
     }
 
@@ -92,7 +92,7 @@ public class b {
         intent.setClassName("com.mdid.msa", "com.mdid.msa.service.MsaIdService");
         intent.setAction("com.bun.msa.action.bindto.service");
         intent.putExtra("com.bun.msa.param.pkgname", str);
-        if (this.f39777c.bindService(intent, this.b, 1) || (cVar = this.f39776a) == null) {
+        if (this.f26086c.bindService(intent, this.b, 1) || (cVar = this.f26085a) == null) {
             return;
         }
         cVar.g();
@@ -127,7 +127,7 @@ public class b {
                 aVar.e();
                 ServiceConnection serviceConnection = this.b;
                 if (serviceConnection != null) {
-                    this.f39777c.unbindService(serviceConnection);
+                    this.f26086c.unbindService(serviceConnection);
                 }
             } catch (Exception e2) {
             }

@@ -1,7 +1,6 @@
 package com.blued.android.module.live_china.view;
 
 import android.content.Context;
-import android.service.notification.Condition;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -18,6 +17,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import com.android.internal.util.cm.SpamFilter;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
@@ -33,6 +34,7 @@ import com.blued.android.framework.utils.StringUtils;
 import com.blued.android.framework.web.BluedWebView;
 import com.blued.android.module.common.web.LoaderConstants;
 import com.blued.android.module.common.web.jsbridge.BridgeManager;
+import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.web.jsbridge.CallBackFunction;
 import com.blued.android.module.live.base.model.LiveGiftNumberModel;
 import com.blued.android.module.live_china.R;
@@ -48,10 +50,7 @@ import com.blued.android.module.live_china.utils.LiveGiftPayTools;
 import com.blued.android.module.live_china.view.PopLiveActivityWebView;
 import com.blued.android.module.live_china.web.LiveWebCallBack;
 import com.bytedance.applog.tracker.Tracker;
-import com.huawei.openalliance.ad.constant.s;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.oplus.quickgame.sdk.hall.Constant;
-import com.soft.blued.constant.EventBusConstant;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -62,13 +61,9 @@ public class PopLiveActivityWebView extends FrameLayout {
     private HTMLNoticeModel C;
     private int D;
     private PopLiveWebEvent E;
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f15046a;
+    public View a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f15047c;
+    public View c;
     public Context d;
     public LayoutInflater e;
     private View f;
@@ -146,7 +141,7 @@ public class PopLiveActivityWebView extends FrameLayout {
                 String str10 = bluedUrlParser.b().get("from");
                 String str11 = str10;
                 if (TextUtils.isEmpty(str10)) {
-                    str11 = s.B;
+                    str11 = "web";
                 }
                 PlayingOnliveFragment.a(PopLiveActivityWebView.this.getContext(), new LiveRoomData(CommonTools.a(str7), 0, str11, str9, "", "", 0));
                 return true;
@@ -162,7 +157,7 @@ public class PopLiveActivityWebView extends FrameLayout {
                 if (bluedUrlParser.b() != null) {
                     String str12 = bluedUrlParser.b().get("goods_id");
                     str2 = bluedUrlParser.b().get("goods_name");
-                    i2 = Integer.parseInt(bluedUrlParser.b().get("count"));
+                    i2 = Integer.parseInt(bluedUrlParser.b().get(SpamFilter.SpamContract.NotificationTable.COUNT));
                     str3 = bluedUrlParser.b().get("images_static");
                     str4 = bluedUrlParser.b().get("fun");
                     str5 = bluedUrlParser.b().get("errfun");
@@ -190,9 +185,9 @@ public class PopLiveActivityWebView extends FrameLayout {
                 if (bluedUrlParser.b() != null) {
                     LiveRewardConfigModel liveRewardConfigModel = new LiveRewardConfigModel();
                     liveRewardConfigModel.beans = Integer.parseInt(bluedUrlParser.b().get(ReqAckPackage.REQ_RESPONSE_KEY.BEANS));
-                    liveRewardConfigModel.count = Integer.parseInt(bluedUrlParser.b().get("count"));
-                    liveRewardConfigModel.condition = bluedUrlParser.b().get(Condition.SCHEME);
-                    liveRewardConfigModel.size = bluedUrlParser.b().get("size");
+                    liveRewardConfigModel.count = Integer.parseInt(bluedUrlParser.b().get(SpamFilter.SpamContract.NotificationTable.COUNT));
+                    liveRewardConfigModel.condition = bluedUrlParser.b().get("condition");
+                    liveRewardConfigModel.size = bluedUrlParser.b().get(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE);
                     liveRewardConfigModel.hb_beans_id = Integer.parseInt(bluedUrlParser.b().get("id"));
                     PopLiveActivityWebView.this.a(liveRewardConfigModel);
                     return true;
@@ -210,7 +205,7 @@ public class PopLiveActivityWebView extends FrameLayout {
                 return false;
             } else {
                 if (bluedUrlParser.b() != null) {
-                    str = bluedUrlParser.b().get(Constant.Param.KEY_URL);
+                    str = bluedUrlParser.b().get("weburl");
                     i = StringUtils.a(bluedUrlParser.b().get("flag"), 0);
                 } else {
                     str = "";
@@ -265,9 +260,9 @@ public class PopLiveActivityWebView extends FrameLayout {
             PopLiveActivityWebView.this.u = true;
             if (PopLiveActivityWebView.this.D != -1) {
                 if (PopLiveActivityWebView.this.D == 0) {
-                    PopLiveActivityWebView.this.f15047c.startAnimation(AnimationUtils.loadAnimation(PopLiveActivityWebView.this.d, R.anim.pop_down_in));
+                    PopLiveActivityWebView.this.c.startAnimation(AnimationUtils.loadAnimation(PopLiveActivityWebView.this.d, R.anim.pop_down_in));
                 } else {
-                    PopLiveActivityWebView.this.f15047c.startAnimation(AnimationUtils.loadAnimation(PopLiveActivityWebView.this.d, R.anim.push_center_in));
+                    PopLiveActivityWebView.this.c.startAnimation(AnimationUtils.loadAnimation(PopLiveActivityWebView.this.d, R.anim.push_center_in));
                 }
             }
         }
@@ -316,23 +311,23 @@ public class PopLiveActivityWebView extends FrameLayout {
     private void h() {
         this.e = LayoutInflater.from(this.d);
         a();
-        this.b = this.f15046a.findViewById(R.id.tv_bg);
-        this.k = (ProgressBar) this.f15046a.findViewById(R.id.pro_bar);
+        this.b = this.a.findViewById(R.id.tv_bg);
+        this.k = (ProgressBar) this.a.findViewById(R.id.pro_bar);
         this.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopLiveActivityWebView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
             }
         });
-        View findViewById = this.f15046a.findViewById(R.id.ll_content);
-        this.f15047c = findViewById;
+        View findViewById = this.a.findViewById(R.id.ll_content);
+        this.c = findViewById;
         findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopLiveActivityWebView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
             }
         });
-        this.o = (ImageView) this.f15046a.findViewById(R.id.live_activity_close);
+        this.o = (ImageView) this.a.findViewById(R.id.live_activity_close);
         this.p = (FrameLayout) findViewById(R.id.live_activity_result_layout);
         this.q = (ImageView) findViewById(R.id.live_activity_result_image);
         this.r = (TextView) findViewById(R.id.live_activity_result_text);
@@ -366,8 +361,8 @@ public class PopLiveActivityWebView extends FrameLayout {
     }
 
     private void j() {
-        this.m = (CardView) this.f15046a.findViewById(R.id.live_activity_cardView);
-        WebView webView = (WebView) this.f15046a.findViewById(R.id.live_activity_webview);
+        this.m = this.a.findViewById(R.id.live_activity_cardView);
+        WebView webView = (WebView) this.a.findViewById(R.id.live_activity_webview);
         this.n = webView;
         webView.setLongClickable(true);
         this.n.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.module.live_china.view.PopLiveActivityWebView.7
@@ -393,7 +388,7 @@ public class PopLiveActivityWebView extends FrameLayout {
     }
 
     public void a() {
-        this.f15046a = this.e.inflate(R.layout.pop_live_activity, this);
+        this.a = this.e.inflate(R.layout.pop_live_activity, this);
     }
 
     public void a(Fragment fragment) {
@@ -408,11 +403,11 @@ public class PopLiveActivityWebView extends FrameLayout {
         Fragment fragment = this.t;
         if ((fragment instanceof BaseFragment) || (fragment instanceof BaseDialogFragment)) {
             ActivityFragmentActive activityFragmentActive = null;
-            Fragment fragment2 = this.t;
-            if (fragment2 instanceof BaseFragment) {
-                activityFragmentActive = ((BaseFragment) fragment2).getFragmentActive();
-            } else if (fragment2 instanceof BaseDialogFragment) {
-                activityFragmentActive = ((BaseDialogFragment) fragment2).a();
+            BaseDialogFragment baseDialogFragment = this.t;
+            if (baseDialogFragment instanceof BaseFragment) {
+                activityFragmentActive = ((BaseFragment) baseDialogFragment).getFragmentActive();
+            } else if (baseDialogFragment instanceof BaseDialogFragment) {
+                activityFragmentActive = baseDialogFragment.a();
             }
             long d = LiveRoomManager.a().d();
             String g = LiveRoomManager.a().g();
@@ -434,11 +429,11 @@ public class PopLiveActivityWebView extends FrameLayout {
                                     return;
                                 }
                                 WebView webView = PopLiveActivityWebView.this.n;
-                                Tracker.loadUrl(webView, "javascript:" + str);
+                                Tracker.loadUrl(webView, BridgeUtil.JAVASCRIPT_STR + str);
                             } else if (TextUtils.isEmpty(str2)) {
                             } else {
                                 WebView webView2 = PopLiveActivityWebView.this.n;
-                                Tracker.loadUrl(webView2, "javascript:" + str2);
+                                Tracker.loadUrl(webView2, BridgeUtil.JAVASCRIPT_STR + str2);
                             }
                         }
                     });
@@ -459,11 +454,11 @@ public class PopLiveActivityWebView extends FrameLayout {
         Fragment fragment = this.t;
         if ((fragment instanceof BaseFragment) || (fragment instanceof BaseDialogFragment)) {
             ActivityFragmentActive activityFragmentActive = null;
-            Fragment fragment2 = this.t;
-            if (fragment2 instanceof BaseFragment) {
-                activityFragmentActive = ((BaseFragment) fragment2).getFragmentActive();
-            } else if (fragment2 instanceof BaseDialogFragment) {
-                activityFragmentActive = ((BaseDialogFragment) fragment2).a();
+            BaseDialogFragment baseDialogFragment = this.t;
+            if (baseDialogFragment instanceof BaseFragment) {
+                activityFragmentActive = ((BaseFragment) baseDialogFragment).getFragmentActive();
+            } else if (baseDialogFragment instanceof BaseDialogFragment) {
+                activityFragmentActive = baseDialogFragment.a();
             }
             long d = LiveRoomManager.a().d();
             String g = LiveRoomManager.a().g();
@@ -515,8 +510,8 @@ public class PopLiveActivityWebView extends FrameLayout {
             cardView.setRadius(this.A);
         }
         this.k.setVisibility(0);
-        this.f15047c.setVisibility(0);
-        this.f15047c.clearAnimation();
+        this.c.setVisibility(0);
+        this.c.clearAnimation();
         this.n.stopLoading();
         if (z) {
             this.n.setVisibility(4);
@@ -530,7 +525,7 @@ public class PopLiveActivityWebView extends FrameLayout {
         }
         if (i == 0) {
             this.b.setVisibility(8);
-            LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_SHOW_DIALOG).post(true);
+            LiveEventBus.get("live_show_dialog").post(true);
         } else {
             this.b.setVisibility(0);
         }
@@ -561,7 +556,7 @@ public class PopLiveActivityWebView extends FrameLayout {
         } else if (i == 2) {
             AppMethods.d(R.string.live_top_up_success);
         }
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_PLAYING_HIDE_ACTIVITY_POP).post(false);
+        LiveEventBus.get("live_playing_hide_activity_pop").post(false);
     }
 
     public void b(String str, int i) {
@@ -573,10 +568,10 @@ public class PopLiveActivityWebView extends FrameLayout {
     }
 
     public void d() {
-        if (this.f15047c.getVisibility() == 8) {
+        if (this.c.getVisibility() == 8) {
             return;
         }
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_SHOW_DIALOG).post(false);
+        LiveEventBus.get("live_show_dialog").post(false);
         if (this.D != -1) {
             AlphaAnimation alphaAnimation = new AlphaAnimation(0.5f, 0.0f);
             alphaAnimation.setDuration(300L);
@@ -597,11 +592,11 @@ public class PopLiveActivityWebView extends FrameLayout {
                 }
             });
             if (this.D == 0) {
-                this.f15047c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.pop_down_out));
+                this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.pop_down_out));
             } else {
-                this.f15047c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_out));
+                this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_out));
             }
-            this.f15047c.setVisibility(8);
+            this.c.setVisibility(8);
             this.o.setVisibility(8);
         }
         PopLiveWebEvent popLiveWebEvent = this.E;

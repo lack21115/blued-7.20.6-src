@@ -6,15 +6,15 @@ import android.os.MessageQueue;
 public class h implements MessageQueue.IdleHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ j f38374a;
+    public final /* synthetic */ j f24683a;
 
     public h(j jVar) {
-        this.f38374a = jVar;
+        this.f24683a = jVar;
     }
 
     @Override // android.os.MessageQueue.IdleHandler
     public boolean queueIdle() {
-        this.f38374a.b();
+        this.f24683a.b();
         return false;
     }
 }

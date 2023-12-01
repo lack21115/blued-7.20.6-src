@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentServerHeadChangeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28969a;
+    private final LinearLayout f15279a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28969a;
+        return this.f15279a;
     }
 }

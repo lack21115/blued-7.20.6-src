@@ -14,11 +14,11 @@ import java.util.regex.Pattern;
 public class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f24049a = new byte[0];
+    public static final byte[] f10438a = new byte[0];
     public static final String[] b = new String[0];
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Charset f24050c = Charset.forName("UTF-8");
+    public static final Charset f10439c = Charset.forName("UTF-8");
     public static final TimeZone d = TimeZone.getTimeZone("GMT");
     private static final Pattern e = Pattern.compile("([0-9a-fA-F]*:[0-9a-fA-F:.]*)|([\\d.]+)");
 

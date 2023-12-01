@@ -104,9 +104,8 @@ public class ViewOverlayApi14 implements ViewOverlayImpl {
             super.addView(view);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.ViewGroup, android.view.View
-        public void dispatchDraw(Canvas canvas) {
+        protected void dispatchDraw(Canvas canvas) {
             int[] iArr;
             int[] iArr2;
             this.hostView.getLocationOnScreen(new int[2]);
@@ -166,9 +165,8 @@ public class ViewOverlayApi14 implements ViewOverlayImpl {
             invalidate(drawable.getBounds());
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.ViewGroup, android.view.View
-        public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         }
 
         public void remove(Drawable drawable) {
@@ -186,9 +184,8 @@ public class ViewOverlayApi14 implements ViewOverlayImpl {
             disposeIfEmpty();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.View
-        public boolean verifyDrawable(Drawable drawable) {
+        protected boolean verifyDrawable(Drawable drawable) {
             if (super.verifyDrawable(drawable)) {
                 return true;
             }

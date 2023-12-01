@@ -18,10 +18,10 @@ import javax.net.ssl.X509TrustManager;
 public class c implements X509TrustManager {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23119c = "WebViewX509TrustManger";
+    private static final String f9511c = "WebViewX509TrustManger";
 
     /* renamed from: a  reason: collision with root package name */
-    private X509Certificate f23120a;
+    private X509Certificate f9512a;
     private List<X509TrustManager> b = new ArrayList();
 
     public c(Context context) {
@@ -30,7 +30,7 @@ public class c implements X509TrustManager {
         }
         com.huawei.secure.android.common.ssl.util.c.a(context);
         X509Certificate b = new j(context).b();
-        this.f23120a = b;
+        this.f9512a = b;
         if (b == null) {
             throw new NullPointerException("WebViewX509TrustManger cannot get cbg root ca");
         }
@@ -38,7 +38,7 @@ public class c implements X509TrustManager {
 
     @Override // javax.net.ssl.X509TrustManager
     public void checkClientTrusted(X509Certificate[] x509CertificateArr, String str) throws CertificateException {
-        g.c(f23119c, "checkClientTrusted");
+        g.c(f9511c, "checkClientTrusted");
         if (this.b.isEmpty()) {
             throw new CertificateException("checkClientTrusted CertificateException");
         }
@@ -47,7 +47,7 @@ public class c implements X509TrustManager {
 
     @Override // javax.net.ssl.X509TrustManager
     public void checkServerTrusted(X509Certificate[] x509CertificateArr, String str) throws CertificateException {
-        g.c(f23119c, "checkServerTrusted");
+        g.c(f9511c, "checkServerTrusted");
         boolean z = false;
         int i = 0;
         while (true) {
@@ -55,7 +55,7 @@ public class c implements X509TrustManager {
             if (i2 >= x509CertificateArr.length) {
                 break;
             }
-            g.a(f23119c, "checkServerTrusted " + i2 + " : " + x509CertificateArr[i2].getIssuerDN().getName());
+            g.a(f9511c, "checkServerTrusted " + i2 + " : " + x509CertificateArr[i2].getIssuerDN().getName());
             i = i2 + 1;
         }
         X509Certificate[] x509CertificateArr2 = new X509Certificate[x509CertificateArr.length];
@@ -70,18 +70,18 @@ public class c implements X509TrustManager {
         }
         CertificateException e = new CertificateException("CBG root CA CertificateException");
         try {
-            z = com.huawei.secure.android.common.ssl.util.b.a(this.f23120a, x509CertificateArr2);
+            z = com.huawei.secure.android.common.ssl.util.b.a(this.f9512a, x509CertificateArr2);
         } catch (InvalidKeyException e2) {
-            g.b(f23119c, "checkServerTrusted InvalidKeyException: " + e2.getMessage());
+            g.b(f9511c, "checkServerTrusted InvalidKeyException: " + e2.getMessage());
         } catch (NoSuchAlgorithmException e3) {
-            g.b(f23119c, "checkServerTrusted NoSuchAlgorithmException: " + e3.getMessage());
+            g.b(f9511c, "checkServerTrusted NoSuchAlgorithmException: " + e3.getMessage());
         } catch (NoSuchProviderException e4) {
-            g.b(f23119c, "checkServerTrusted NoSuchProviderException: " + e4.getMessage());
+            g.b(f9511c, "checkServerTrusted NoSuchProviderException: " + e4.getMessage());
         } catch (SignatureException e5) {
-            g.b(f23119c, "checkServerTrusted SignatureException: " + e5.getMessage());
+            g.b(f9511c, "checkServerTrusted SignatureException: " + e5.getMessage());
         } catch (CertificateException e6) {
             e = e6;
-            g.b(f23119c, "checkServerTrusted CertificateException: " + e.getMessage());
+            g.b(f9511c, "checkServerTrusted CertificateException: " + e.getMessage());
         }
         if (!z) {
             throw e;
@@ -97,7 +97,7 @@ public class c implements X509TrustManager {
             }
             return (X509Certificate[]) arrayList.toArray(new X509Certificate[arrayList.size()]);
         } catch (Exception e) {
-            g.b(f23119c, "getAcceptedIssuers exception : " + e.getMessage());
+            g.b(f9511c, "getAcceptedIssuers exception : " + e.getMessage());
             return new X509Certificate[0];
         }
     }

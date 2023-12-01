@@ -11,7 +11,7 @@ public abstract class BaseRewardAd implements IBaseAd {
     public static final int DEFAULT_PRIORITY = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    private LoadAdParams f27931a = null;
+    private LoadAdParams f14243a = null;
 
     public BaseRewardAd(Context context, String str, String str2, String str3) {
     }
@@ -26,7 +26,7 @@ public abstract class BaseRewardAd implements IBaseAd {
     public abstract long getExpireTimestamp();
 
     public LoadAdParams getLoadAdParams() {
-        return this.f27931a;
+        return this.f14243a;
     }
 
     public int getRewardAdType() {
@@ -56,7 +56,7 @@ public abstract class BaseRewardAd implements IBaseAd {
     }
 
     public void setLoadAdParams(LoadAdParams loadAdParams) {
-        this.f27931a = loadAdParams;
+        this.f14243a = loadAdParams;
     }
 
     @Override // com.qq.e.mediation.interfaces.IBaseAd

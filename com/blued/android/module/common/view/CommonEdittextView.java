@@ -14,13 +14,9 @@ import com.blued.android.module.common.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/CommonEdittextView.class */
 public class CommonEdittextView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f10969a;
+    private View a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ShapeFrameLayout f10970c;
+    private ShapeFrameLayout c;
     private ShapeFrameLayout d;
     private TextView e;
     private LinearLayout f;
@@ -50,14 +46,14 @@ public class CommonEdittextView extends LinearLayout {
 
     public void a(AttributeSet attributeSet) {
         View inflate = LayoutInflater.from(this.b).inflate(R.layout.view_commont_edittext, this);
-        this.f10969a = inflate;
+        this.a = inflate;
         this.f = (LinearLayout) inflate.findViewById(R.id.root_view);
-        this.f10970c = (ShapeFrameLayout) this.f10969a.findViewById(R.id.sfl_areacode);
-        this.d = (ShapeFrameLayout) this.f10969a.findViewById(R.id.sfl_input);
-        ShapeHelper.b(this.f10970c, R.color.syc_x);
+        this.c = (ShapeFrameLayout) this.a.findViewById(R.id.sfl_areacode);
+        this.d = (ShapeFrameLayout) this.a.findViewById(R.id.sfl_input);
+        ShapeHelper.b(this.c, R.color.syc_x);
         ShapeHelper.b(this.d, R.color.syc_x);
-        this.e = (TextView) this.f10969a.findViewById(R.id.tv_areacode);
-        this.g = (ClearEditText) this.f10969a.findViewById(R.id.edittext);
+        this.e = (TextView) this.a.findViewById(R.id.tv_areacode);
+        this.g = (ClearEditText) this.a.findViewById(R.id.edittext);
         if (attributeSet != null) {
             TypedArray obtainAttributes = getResources().obtainAttributes(attributeSet, R.styleable.CommonEdittextView);
             int resourceId = obtainAttributes.getResourceId(R.styleable.CommonEdittextView_hint_text, -1);
@@ -95,11 +91,11 @@ public class CommonEdittextView extends LinearLayout {
 
     public void setIfShowAreaCode(boolean z) {
         if (z) {
-            this.f10970c.setVisibility(0);
+            this.c.setVisibility(0);
             this.e.setVisibility(0);
             return;
         }
-        this.f10970c.setVisibility(8);
+        this.c.setVisibility(8);
         this.e.setVisibility(8);
     }
 }

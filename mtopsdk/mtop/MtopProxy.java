@@ -58,7 +58,7 @@ public class MtopProxy extends MtopProxyBase {
         if (SwitchConfig.a().b()) {
             return;
         }
-        this.e.f43709a = ProtocolEnum.HTTP;
+        this.e.a = ProtocolEnum.HTTP;
     }
 
     public ApiID a(Handler handler) {
@@ -68,12 +68,12 @@ public class MtopProxy extends MtopProxyBase {
             a(this.d != null ? new MtopResponse(this.d.a(), this.d.b(), g.b(), g.c()) : new MtopResponse(g.b(), g.c()));
             return new ApiID(null, this);
         }
-        Map a2 = this.i.a(this);
-        if (a2 == null) {
+        Map a = this.i.a(this);
+        if (a == null) {
             a(new MtopResponse(this.d.a(), this.d.b(), "ANDROID_SYS_GENERATE_MTOP_SIGN_ERROR", "生成Mtop签名sign失败"));
             return new ApiID(null, this);
         }
-        return this.j.a(this, a2, handler);
+        return this.j.a(this, a, handler);
     }
 
     public MtopResponse a() {
@@ -84,14 +84,14 @@ public class MtopProxy extends MtopProxyBase {
             a(mtopResponse);
             return mtopResponse;
         }
-        Map a2 = this.i.a(this);
-        if (a2 == null) {
+        Map a = this.i.a(this);
+        if (a == null) {
             return new MtopResponse(this.d.a(), this.d.b(), "ANDROID_SYS_GENERATE_MTOP_SIGN_ERROR", "生成Mtop签名sign失败");
         }
-        MtopResponse a3 = this.j.a(this, a2);
-        this.h.f = a3.a();
+        MtopResponse a2 = this.j.a(this, a);
+        this.h.f = a2.a();
         this.h.h();
-        a3.a(this.h);
-        return a3;
+        a2.a(this.h);
+        return a2;
     }
 }

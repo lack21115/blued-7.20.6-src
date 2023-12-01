@@ -7,9 +7,8 @@ import java.util.List;
 import java.util.ServiceConfigurationError;
 import java.util.ServiceLoader;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8829756-dex2jar.jar:io/grpc/ServiceProviders.class */
-public final class ServiceProviders {
+final class ServiceProviders {
 
     /* loaded from: source-8829756-dex2jar.jar:io/grpc/ServiceProviders$PriorityAccessor.class */
     public interface PriorityAccessor<T> {

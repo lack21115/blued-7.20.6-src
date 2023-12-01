@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ViewCommonLargeDividerBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29614a;
+    private final FrameLayout f15924a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29614a;
+        return this.f15924a;
     }
 }

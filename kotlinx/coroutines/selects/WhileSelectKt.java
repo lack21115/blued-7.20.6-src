@@ -28,16 +28,16 @@ public final class WhileSelectKt {
             kotlinx.coroutines.selects.WhileSelectKt$whileSelect$1 r0 = (kotlinx.coroutines.selects.WhileSelectKt$whileSelect$1) r0
             r7 = r0
             r0 = r7
-            int r0 = r0.f43611c
+            int r0 = r0.c
             r1 = -2147483648(0xffffffff80000000, float:-0.0)
             r0 = r0 & r1
             if (r0 == 0) goto L26
             r0 = r7
             r1 = r7
-            int r1 = r1.f43611c
+            int r1 = r1.c
             r2 = -2147483648(0xffffffff80000000, float:-0.0)
             int r1 = r1 + r2
-            r0.f43611c = r1
+            r0.c = r1
             r0 = r7
             r5 = r0
             goto L2f
@@ -54,7 +54,7 @@ public final class WhileSelectKt {
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r8 = r0
             r0 = r5
-            int r0 = r0.f43611c
+            int r0 = r0.c
             r6 = r0
             r0 = r6
             if (r0 == 0) goto L60
@@ -62,7 +62,7 @@ public final class WhileSelectKt {
             r1 = 1
             if (r0 != r1) goto L56
             r0 = r5
-            java.lang.Object r0 = r0.f43610a
+            java.lang.Object r0 = r0.a
             kotlin.jvm.functions.Function1 r0 = (kotlin.jvm.functions.Function1) r0
             r4 = r0
             r0 = r7
@@ -80,10 +80,10 @@ public final class WhileSelectKt {
         L64:
             r0 = r5
             r1 = r4
-            r0.f43610a = r1
+            r0.a = r1
             r0 = r5
             r1 = 1
-            r0.f43611c = r1
+            r0.c = r1
             r0 = r5
             kotlin.coroutines.Continuation r0 = (kotlin.coroutines.Continuation) r0
             r9 = r0
@@ -123,7 +123,7 @@ public final class WhileSelectKt {
             if (r0 == 0) goto Lb8
             goto L64
         Lb8:
-            kotlin.Unit r0 = kotlin.Unit.f42314a
+            kotlin.Unit r0 = kotlin.Unit.a
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.selects.WhileSelectKt.a(kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");

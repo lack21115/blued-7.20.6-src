@@ -4,14 +4,14 @@ package com.meizu.flyme.openidsdk;
 public class ValueData {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f24195a;
+    public String f10580a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f24196c = System.currentTimeMillis() + 86400000;
+    public long f10581c = System.currentTimeMillis() + 86400000;
 
     public ValueData(String str, int i) {
-        this.f24195a = str;
+        this.f10580a = str;
         this.b = i;
     }
 

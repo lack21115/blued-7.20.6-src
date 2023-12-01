@@ -21,22 +21,18 @@ public class GifAnimationMetaData implements Parcelable, Serializable {
         }
     };
     private static final long serialVersionUID = 5692363926580237325L;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f44127a;
+    private final int a;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f44128c;
+    private final int c;
     private final int d;
     private final int e;
     private final long f;
     private final long g;
 
     private GifAnimationMetaData(Parcel parcel) {
-        this.f44127a = parcel.readInt();
+        this.a = parcel.readInt();
         this.b = parcel.readInt();
-        this.f44128c = parcel.readInt();
+        this.c = parcel.readInt();
         this.d = parcel.readInt();
         this.e = parcel.readInt();
         this.g = parcel.readLong();
@@ -53,8 +49,8 @@ public class GifAnimationMetaData implements Parcelable, Serializable {
     }
 
     public String toString() {
-        int i = this.f44127a;
-        String format = String.format(Locale.ENGLISH, "GIF: size: %dx%d, frames: %d, loops: %s, duration: %d", Integer.valueOf(this.d), Integer.valueOf(this.f44128c), Integer.valueOf(this.e), i == 0 ? "Infinity" : Integer.toString(i), Integer.valueOf(this.b));
+        int i = this.a;
+        String format = String.format(Locale.ENGLISH, "GIF: size: %dx%d, frames: %d, loops: %s, duration: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), Integer.valueOf(this.e), i == 0 ? "Infinity" : Integer.toString(i), Integer.valueOf(this.b));
         String str = format;
         if (a()) {
             str = "Animated " + format;
@@ -64,9 +60,9 @@ public class GifAnimationMetaData implements Parcelable, Serializable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f44127a);
+        parcel.writeInt(this.a);
         parcel.writeInt(this.b);
-        parcel.writeInt(this.f44128c);
+        parcel.writeInt(this.c);
         parcel.writeInt(this.d);
         parcel.writeInt(this.e);
         parcel.writeLong(this.g);

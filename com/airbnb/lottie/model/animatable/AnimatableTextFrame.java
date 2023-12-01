@@ -24,7 +24,7 @@ public class AnimatableTextFrame extends BaseAnimatableValue<DocumentData, Docum
     @Override // com.airbnb.lottie.model.animatable.AnimatableValue
     /* renamed from: d */
     public TextKeyframeAnimation a() {
-        return new TextKeyframeAnimation(this.f4334a);
+        return new TextKeyframeAnimation(this.a);
     }
 
     @Override // com.airbnb.lottie.model.animatable.BaseAnimatableValue

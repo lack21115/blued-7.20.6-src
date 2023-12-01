@@ -12,15 +12,11 @@ import java.lang.ref.WeakReference;
 /* renamed from: com.amap.api.col.3sl.r  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/r.class */
 public final class r extends Thread {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static int f5414c = 0;
+    private static int c = 0;
     private static int d = 3;
     private static long e = 30000;
     private static boolean g = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    private WeakReference<Context> f5415a;
+    private WeakReference<Context> a;
     private IAMapDelegate b;
     private a f = null;
     private Handler h = new Handler(Looper.getMainLooper()) { // from class: com.amap.api.col.3sl.r.1
@@ -32,7 +28,7 @@ public final class r extends Thread {
             }
             if (r.this.f == null) {
                 r rVar = r.this;
-                rVar.f = new a(rVar.b, r.this.f5415a == null ? null : (Context) r.this.f5415a.get());
+                rVar.f = new a(rVar.b, r.this.a == null ? null : (Context) r.this.a.get());
             }
             du.a().a(r.this.f);
         }
@@ -41,18 +37,14 @@ public final class r extends Thread {
     /* renamed from: com.amap.api.col.3sl.r$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/r$a.class */
     static final class a extends lc {
-
-        /* renamed from: a  reason: collision with root package name */
-        private WeakReference<IAMapDelegate> f5417a;
+        private WeakReference<IAMapDelegate> a;
         private WeakReference<Context> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private s f5418c;
+        private s c;
 
         public a(IAMapDelegate iAMapDelegate, Context context) {
-            this.f5417a = null;
+            this.a = null;
             this.b = null;
-            this.f5417a = new WeakReference<>(iAMapDelegate);
+            this.a = new WeakReference<>(iAMapDelegate);
             if (context != null) {
                 this.b = new WeakReference<>(context);
             }
@@ -60,8 +52,8 @@ public final class r extends Thread {
 
         private void a() {
             final IAMapDelegate iAMapDelegate;
-            WeakReference<IAMapDelegate> weakReference = this.f5417a;
-            if (weakReference == null || weakReference.get() == null || (iAMapDelegate = this.f5417a.get()) == null || iAMapDelegate.getMapConfig() == null) {
+            WeakReference<IAMapDelegate> weakReference = this.a;
+            if (weakReference == null || weakReference.get() == null || (iAMapDelegate = this.a.get()) == null || iAMapDelegate.getMapConfig() == null) {
                 return;
             }
             iAMapDelegate.queueEvent(new Runnable() { // from class: com.amap.api.col.3sl.r.a.1
@@ -89,14 +81,14 @@ public final class r extends Thread {
                 if (r.g) {
                     return;
                 }
-                if (this.f5418c == null && this.b != null && this.b.get() != null) {
-                    this.f5418c = new s(this.b.get(), "");
+                if (this.c == null && this.b != null && this.b.get() != null) {
+                    this.c = new s(this.b.get(), "");
                 }
                 r.b();
-                if (r.f5414c > r.d) {
+                if (r.c > r.d) {
                     r.e();
                     a();
-                } else if (this.f5418c == null || (d = this.f5418c.d()) == null) {
+                } else if (this.c == null || (d = this.c.d()) == null) {
                 } else {
                     if (!d.d) {
                         a();
@@ -112,17 +104,17 @@ public final class r extends Thread {
     }
 
     public r(Context context, IAMapDelegate iAMapDelegate) {
-        this.f5415a = null;
+        this.a = null;
         if (context != null) {
-            this.f5415a = new WeakReference<>(context);
+            this.a = new WeakReference<>(context);
         }
         this.b = iAMapDelegate;
         f();
     }
 
     static /* synthetic */ int b() {
-        int i = f5414c;
-        f5414c = i + 1;
+        int i = c;
+        c = i + 1;
         return i;
     }
 
@@ -132,7 +124,7 @@ public final class r extends Thread {
     }
 
     private static void f() {
-        f5414c = 0;
+        c = 0;
         g = false;
     }
 
@@ -150,7 +142,7 @@ public final class r extends Thread {
     @Override // java.lang.Thread
     public final void interrupt() {
         this.b = null;
-        this.f5415a = null;
+        this.a = null;
         Handler handler = this.h;
         if (handler != null) {
             handler.removeCallbacksAndMessages(null);

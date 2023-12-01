@@ -13,35 +13,35 @@ public abstract class MapCollections<K, V> {
     MapCollections<K, V>.EntrySet b;
 
     /* renamed from: c  reason: collision with root package name */
-    MapCollections<K, V>.KeySet f1955c;
+    MapCollections<K, V>.KeySet f1907c;
     MapCollections<K, V>.ValuesCollection d;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/collection/MapCollections$ArrayIterator.class */
     final class ArrayIterator<T> implements Iterator<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        final int f1956a;
+        final int f1908a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f1957c;
+        int f1909c;
         boolean d = false;
 
         ArrayIterator(int i) {
-            this.f1956a = i;
+            this.f1908a = i;
             this.b = MapCollections.this.a();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1957c < this.b;
+            return this.f1909c < this.b;
         }
 
         @Override // java.util.Iterator
         public T next() {
             if (hasNext()) {
-                T t = (T) MapCollections.this.a(this.f1957c, this.f1956a);
-                this.f1957c++;
+                T t = (T) MapCollections.this.a(this.f1909c, this.f1908a);
+                this.f1909c++;
                 this.d = true;
                 return t;
             }
@@ -53,21 +53,20 @@ public abstract class MapCollections<K, V> {
             if (!this.d) {
                 throw new IllegalStateException();
             }
-            int i = this.f1957c - 1;
-            this.f1957c = i;
+            int i = this.f1909c - 1;
+            this.f1909c = i;
             this.b--;
             this.d = false;
             MapCollections.this.a(i);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/collection/MapCollections$EntrySet.class */
-    public final class EntrySet implements Set<Map.Entry<K, V>> {
+    final class EntrySet implements Set<Map.Entry<K, V>> {
         EntrySet() {
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public /* bridge */ /* synthetic */ boolean add(Object obj) {
             return add((Map.Entry) ((Map.Entry) obj));
         }
@@ -76,7 +75,7 @@ public abstract class MapCollections<K, V> {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean addAll(Collection<? extends Map.Entry<K, V>> collection) {
             int a2 = MapCollections.this.a();
             for (Map.Entry<K, V> entry : collection) {
@@ -85,12 +84,12 @@ public abstract class MapCollections<K, V> {
             return a2 != MapCollections.this.a();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public void clear() {
             MapCollections.this.c();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean contains(Object obj) {
             if (obj instanceof Map.Entry) {
                 Map.Entry entry = (Map.Entry) obj;
@@ -103,7 +102,7 @@ public abstract class MapCollections<K, V> {
             return false;
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             Iterator<?> it = collection.iterator();
             while (it.hasNext()) {
@@ -114,12 +113,12 @@ public abstract class MapCollections<K, V> {
             return true;
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean equals(Object obj) {
             return MapCollections.equalsSetHelper(this, obj);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public int hashCode() {
             int i = 0;
             for (int a2 = MapCollections.this.a() - 1; a2 >= 0; a2--) {
@@ -130,7 +129,7 @@ public abstract class MapCollections<K, V> {
             return i;
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean isEmpty() {
             return MapCollections.this.a() == 0;
         }
@@ -140,74 +139,73 @@ public abstract class MapCollections<K, V> {
             return new MapIterator();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean remove(Object obj) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set, java.util.Collection, java.util.List
+        @Override // java.util.Set, java.util.Collection
         public int size() {
             return MapCollections.this.a();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public Object[] toArray() {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             throw new UnsupportedOperationException();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/collection/MapCollections$KeySet.class */
-    public final class KeySet implements Set<K> {
+    final class KeySet implements Set<K> {
         KeySet() {
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean add(K k) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean addAll(Collection<? extends K> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public void clear() {
             MapCollections.this.c();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean contains(Object obj) {
             return MapCollections.this.a(obj) >= 0;
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             return MapCollections.containsAllHelper(MapCollections.this.b(), collection);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean equals(Object obj) {
             return MapCollections.equalsSetHelper(this, obj);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public int hashCode() {
             int i = 0;
             for (int a2 = MapCollections.this.a() - 1; a2 >= 0; a2--) {
@@ -217,7 +215,7 @@ public abstract class MapCollections<K, V> {
             return i;
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean isEmpty() {
             return MapCollections.this.a() == 0;
         }
@@ -227,7 +225,7 @@ public abstract class MapCollections<K, V> {
             return new ArrayIterator(0);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean remove(Object obj) {
             int a2 = MapCollections.this.a(obj);
             if (a2 >= 0) {
@@ -237,27 +235,27 @@ public abstract class MapCollections<K, V> {
             return false;
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             return MapCollections.removeAllHelper(MapCollections.this.b(), collection);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             return MapCollections.retainAllHelper(MapCollections.this.b(), collection);
         }
 
-        @Override // java.util.Set, java.util.Collection, java.util.List
+        @Override // java.util.Set, java.util.Collection
         public int size() {
             return MapCollections.this.a();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public Object[] toArray() {
             return MapCollections.this.toArrayHelper(0);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             return (T[]) MapCollections.this.toArrayHelper(tArr, 0);
         }
@@ -267,19 +265,19 @@ public abstract class MapCollections<K, V> {
     final class MapIterator implements Iterator<Map.Entry<K, V>>, Map.Entry<K, V> {
 
         /* renamed from: a  reason: collision with root package name */
-        int f1960a;
+        int f1912a;
 
         /* renamed from: c  reason: collision with root package name */
-        boolean f1961c = false;
+        boolean f1913c = false;
         int b = -1;
 
         MapIterator() {
-            this.f1960a = MapCollections.this.a() - 1;
+            this.f1912a = MapCollections.this.a() - 1;
         }
 
         @Override // java.util.Map.Entry
         public boolean equals(Object obj) {
-            if (this.f1961c) {
+            if (this.f1913c) {
                 if (obj instanceof Map.Entry) {
                     Map.Entry entry = (Map.Entry) obj;
                     boolean z = false;
@@ -298,7 +296,7 @@ public abstract class MapCollections<K, V> {
 
         @Override // java.util.Map.Entry
         public K getKey() {
-            if (this.f1961c) {
+            if (this.f1913c) {
                 return (K) MapCollections.this.a(this.b, 0);
             }
             throw new IllegalStateException("This container does not support retaining Map.Entry objects");
@@ -306,7 +304,7 @@ public abstract class MapCollections<K, V> {
 
         @Override // java.util.Map.Entry
         public V getValue() {
-            if (this.f1961c) {
+            if (this.f1913c) {
                 return (V) MapCollections.this.a(this.b, 1);
             }
             throw new IllegalStateException("This container does not support retaining Map.Entry objects");
@@ -314,12 +312,12 @@ public abstract class MapCollections<K, V> {
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.b < this.f1960a;
+            return this.b < this.f1912a;
         }
 
         @Override // java.util.Map.Entry
         public int hashCode() {
-            if (this.f1961c) {
+            if (this.f1913c) {
                 int i = 0;
                 Object a2 = MapCollections.this.a(this.b, 0);
                 Object a3 = MapCollections.this.a(this.b, 1);
@@ -336,7 +334,7 @@ public abstract class MapCollections<K, V> {
         public Map.Entry<K, V> next() {
             if (hasNext()) {
                 this.b++;
-                this.f1961c = true;
+                this.f1913c = true;
                 return this;
             }
             throw new NoSuchElementException();
@@ -344,18 +342,18 @@ public abstract class MapCollections<K, V> {
 
         @Override // java.util.Iterator
         public void remove() {
-            if (!this.f1961c) {
+            if (!this.f1913c) {
                 throw new IllegalStateException();
             }
             MapCollections.this.a(this.b);
             this.b--;
-            this.f1960a--;
-            this.f1961c = false;
+            this.f1912a--;
+            this.f1913c = false;
         }
 
         @Override // java.util.Map.Entry
         public V setValue(V v) {
-            if (this.f1961c) {
+            if (this.f1913c) {
                 return (V) MapCollections.this.a(this.b, (int) v);
             }
             throw new IllegalStateException("This container does not support retaining Map.Entry objects");
@@ -366,33 +364,32 @@ public abstract class MapCollections<K, V> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/collection/MapCollections$ValuesCollection.class */
-    public final class ValuesCollection implements Collection<V> {
+    final class ValuesCollection implements Collection<V> {
         ValuesCollection() {
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean add(V v) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean addAll(Collection<? extends V> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public void clear() {
             MapCollections.this.c();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean contains(Object obj) {
             return MapCollections.this.b(obj) >= 0;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             Iterator<?> it = collection.iterator();
             while (it.hasNext()) {
@@ -403,7 +400,7 @@ public abstract class MapCollections<K, V> {
             return true;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean isEmpty() {
             return MapCollections.this.a() == 0;
         }
@@ -413,7 +410,7 @@ public abstract class MapCollections<K, V> {
             return new ArrayIterator(1);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean remove(Object obj) {
             int b = MapCollections.this.b(obj);
             if (b >= 0) {
@@ -423,7 +420,7 @@ public abstract class MapCollections<K, V> {
             return false;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             int a2 = MapCollections.this.a();
             int i = 0;
@@ -443,7 +440,7 @@ public abstract class MapCollections<K, V> {
             return z;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             int a2 = MapCollections.this.a();
             int i = 0;
@@ -463,17 +460,17 @@ public abstract class MapCollections<K, V> {
             return z;
         }
 
-        @Override // java.util.Collection, java.util.List
+        @Override // java.util.Collection
         public int size() {
             return MapCollections.this.a();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public Object[] toArray() {
             return MapCollections.this.toArrayHelper(1);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             return (T[]) MapCollections.this.toArrayHelper(tArr, 1);
         }
@@ -553,10 +550,10 @@ public abstract class MapCollections<K, V> {
     }
 
     public Set<K> getKeySet() {
-        if (this.f1955c == null) {
-            this.f1955c = new KeySet();
+        if (this.f1907c == null) {
+            this.f1907c = new KeySet();
         }
-        return this.f1955c;
+        return this.f1907c;
     }
 
     public Collection<V> getValues() {

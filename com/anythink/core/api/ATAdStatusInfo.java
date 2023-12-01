@@ -1,7 +1,5 @@
 package com.anythink.core.api;
 
-import com.igexin.push.core.b;
-
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/api/ATAdStatusInfo.class */
 public class ATAdStatusInfo {
     private ATAdInfo mATTopAdInfo;
@@ -34,7 +32,7 @@ public class ATAdStatusInfo {
         sb.append(", topAdInfo=");
         ATAdInfo aTAdInfo = this.mATTopAdInfo;
         if (aTAdInfo == null) {
-            aTAdInfo = b.l;
+            aTAdInfo = "null";
         }
         sb.append(aTAdInfo);
         sb.append('}');

@@ -44,7 +44,7 @@ public class TXVideoInfoReader {
         private final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private volatile Bitmap f40199c;
+        private volatile Bitmap f26508c;
         private final int d;
 
         public a(String str) {
@@ -88,61 +88,61 @@ public class TXVideoInfoReader {
                             TXVideoInfoReader.this.mMainHandler.post(new Runnable(this, str) { // from class: com.tencent.ugc.bq
 
                                 /* renamed from: a  reason: collision with root package name */
-                                private final TXVideoInfoReader.a f40269a;
+                                private final TXVideoInfoReader.a f26578a;
                                 private final String b;
 
                                 /* JADX INFO: Access modifiers changed from: package-private */
                                 {
-                                    this.f40269a = this;
+                                    this.f26578a = this;
                                     this.b = str;
                                 }
 
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    TXVideoInfoReader.a.a(this.f40269a, this.b);
+                                    TXVideoInfoReader.a.a(this.f26578a, this.b);
                                 }
                             });
                         }
                     } else {
                         bitmap = null;
-                        if (this.f40199c != null) {
+                        if (this.f26508c != null) {
                             bitmap = null;
-                            if (!this.f40199c.isRecycled()) {
+                            if (!this.f26508c.isRecycled()) {
                                 LiteavLog.i("TXVideoInfoReader", "copy last image");
-                                bitmap = this.f40199c.copy(this.f40199c.getConfig(), true);
+                                bitmap = this.f26508c.copy(this.f26508c.getConfig(), true);
                             }
                         }
                     }
                 }
-                this.f40199c = bitmap;
+                this.f26508c = bitmap;
                 TXVideoInfoReader.this.mRetryTimes.set(0);
                 if (TXVideoInfoReader.this.mListener != null && TXVideoInfoReader.this.mCount > 0 && TXVideoInfoReader.this.mListener.hashCode() == this.d && (onSampleProgrocess = (OnSampleProgrocess) TXVideoInfoReader.this.mListener.get()) != null) {
                     final Bitmap bitmap2 = bitmap;
                     TXVideoInfoReader.this.mMainHandler.post(new Runnable(onSampleProgrocess, i2, bitmap2) { // from class: com.tencent.ugc.bp
 
                         /* renamed from: a  reason: collision with root package name */
-                        private final TXVideoInfoReader.OnSampleProgrocess f40267a;
+                        private final TXVideoInfoReader.OnSampleProgrocess f26576a;
                         private final int b;
 
                         /* renamed from: c  reason: collision with root package name */
-                        private final Bitmap f40268c;
+                        private final Bitmap f26577c;
 
                         /* JADX INFO: Access modifiers changed from: package-private */
                         {
-                            this.f40267a = onSampleProgrocess;
+                            this.f26576a = onSampleProgrocess;
                             this.b = i2;
-                            this.f40268c = bitmap2;
+                            this.f26577c = bitmap2;
                         }
 
                         @Override // java.lang.Runnable
                         public final void run() {
-                            this.f40267a.sampleProcess(this.b, this.f40268c);
+                            this.f26576a.sampleProcess(this.b, this.f26577c);
                         }
                     });
                 }
                 i = i2 + 1;
             }
-            this.f40199c = null;
+            this.f26508c = null;
             build.release();
         }
     }

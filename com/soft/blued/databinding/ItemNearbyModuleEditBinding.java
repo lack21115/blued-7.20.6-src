@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemNearbyModuleEditBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29264a;
+    private final LinearLayout f15574a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29264a;
+        return this.f15574a;
     }
 }

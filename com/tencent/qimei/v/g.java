@@ -7,9 +7,9 @@ import java.util.concurrent.ConcurrentHashMap;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static Map<String, String> f38426a = new ConcurrentHashMap();
+    public static Map<String, String> f24735a = new ConcurrentHashMap();
 
     public static String a(String str) {
-        return f38426a.get(str);
+        return f24735a.get(str);
     }
 }

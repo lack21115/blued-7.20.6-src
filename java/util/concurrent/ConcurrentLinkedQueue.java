@@ -21,9 +21,8 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
     private volatile transient Node<E> head;
     private volatile transient Node<E> tail;
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-2895416-dex2jar.jar:java/util/concurrent/ConcurrentLinkedQueue$Itr.class */
-    public class Itr implements Iterator<E> {
+    private class Itr implements Iterator<E> {
         private Node<E> lastRet;
         private E nextItem;
         private Node<E> nextNode;
@@ -219,12 +218,12 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         }
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         return offer(e);
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         if (collection == this) {
             throw new IllegalArgumentException();
@@ -283,7 +282,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         return true;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         if (obj == null) {
             return false;
@@ -330,7 +329,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         return null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         return first() == null;
     }
@@ -340,6 +339,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         return new Itr();
     }
 
+    @Override // java.util.Queue, java.util.concurrent.BlockingQueue
     public boolean offer(E e) {
         checkNotNull(e);
         Node<E> node = new Node<>(e);
@@ -403,6 +403,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         return e;
     }
 
+    @Override // java.util.Queue
     public E poll() {
         while (true) {
             Node<E> node = this.head;
@@ -431,7 +432,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         if (obj == null) {
             return false;
@@ -457,7 +458,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         int i;
         int i2 = 0;
@@ -491,7 +492,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         return node3;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         ArrayList arrayList = new ArrayList();
         Node<E> first = first();
@@ -508,7 +509,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         Node<E> first = first();
         int i = 0;

@@ -9,38 +9,38 @@ import com.xiaomi.push.service.XMPushService;
 public class bt extends XMPushService.j {
 
     /* renamed from: a  reason: collision with root package name */
-    private fj f41651a;
+    private fj f27960a;
 
     /* renamed from: a  reason: collision with other field name */
-    private XMPushService f1026a;
+    private XMPushService f979a;
 
     public bt(XMPushService xMPushService, fj fjVar) {
         super(4);
-        this.f1026a = null;
-        this.f1026a = xMPushService;
-        this.f41651a = fjVar;
+        this.f979a = null;
+        this.f979a = xMPushService;
+        this.f27960a = fjVar;
     }
 
     @Override // com.xiaomi.push.service.XMPushService.j
     /* renamed from: a */
-    public String mo12102a() {
+    public String mo9052a() {
         return "send a message.";
     }
 
     @Override // com.xiaomi.push.service.XMPushService.j
     /* renamed from: a */
-    public void mo11743a() {
+    public void mo8693a() {
         try {
-            if (this.f41651a != null) {
-                this.f1026a.a(this.f41651a);
-                if (this.f41651a.f450a != null) {
-                    this.f41651a.f450a.d = System.currentTimeMillis();
-                    ao.a(this.f1026a, "coord_up", this.f41651a.f450a);
+            if (this.f27960a != null) {
+                this.f979a.a(this.f27960a);
+                if (this.f27960a.f403a != null) {
+                    this.f27960a.f403a.d = System.currentTimeMillis();
+                    ao.a(this.f979a, "coord_up", this.f27960a.f403a);
                 }
             }
         } catch (gf e) {
             com.xiaomi.channel.commonutils.logger.b.a(e);
-            this.f1026a.a(10, e);
+            this.f979a.a(10, e);
         }
     }
 }

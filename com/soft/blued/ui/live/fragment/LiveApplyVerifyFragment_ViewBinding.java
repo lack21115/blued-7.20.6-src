@@ -13,7 +13,7 @@ public class LiveApplyVerifyFragment_ViewBinding implements Unbinder {
 
     public LiveApplyVerifyFragment_ViewBinding(LiveApplyVerifyFragment liveApplyVerifyFragment, View view) {
         this.b = liveApplyVerifyFragment;
-        liveApplyVerifyFragment.top_title = (CommonTopTitleNoTrans) Utils.a(view, 2131370749, "field 'top_title'", CommonTopTitleNoTrans.class);
+        liveApplyVerifyFragment.top_title = (CommonTopTitleNoTrans) Utils.a(view, R.id.top_title, "field 'top_title'", CommonTopTitleNoTrans.class);
         liveApplyVerifyFragment.tv_tip_1 = (TextView) Utils.a(view, R.id.tv_tip_1, "field 'tv_tip_1'", TextView.class);
     }
 

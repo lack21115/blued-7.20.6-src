@@ -19,7 +19,7 @@ public class DataMessageProcessor implements Processor {
     /* JADX INFO: Access modifiers changed from: private */
     public void revokeMessage(Context context, DataMessage dataMessage) {
         if (context == null) {
-            LogUtil.d(b.f7836a);
+            LogUtil.d(b.f4996a);
             return;
         }
         LogUtil.d("Receive revokeMessage  extra : " + dataMessage.getStatisticsExtra() + "notifyId :" + dataMessage.getNotifyID() + "messageId : " + dataMessage.getTaskID());

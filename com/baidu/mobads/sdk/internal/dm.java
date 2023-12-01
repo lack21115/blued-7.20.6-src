@@ -17,7 +17,7 @@ import org.json.JSONObject;
 public class dm extends bf {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f9424a;
+    private boolean f6584a;
     private int q;
     private String r;
     private ScreenVideoAdListener s;
@@ -37,7 +37,7 @@ public class dm extends bf {
         super(context);
         this.q = 3;
         this.r = str;
-        this.f9424a = z;
+        this.f6584a = z;
         this.t = str2;
     }
 
@@ -254,7 +254,7 @@ public class dm extends bf {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("timeout", 8000);
-            jSONObject.put("useSurfaceView", this.f9424a);
+            jSONObject.put("useSurfaceView", this.f6584a);
             jSONObject.put("downloadConfirmPolicy", this.q);
             jSONObject.put("userid", this.w);
             jSONObject.put("extra", this.x);

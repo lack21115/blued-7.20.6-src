@@ -20,8 +20,8 @@ import com.blued.android.framework.utils.Logger;
 import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.common.utils.click.SingleClickProxy;
 import com.blued.android.module.yy_china.R;
-import com.blued.android.module.yy_china.fragment.BaseFullScreenDialog;
 import com.blued.android.module.yy_china.fragment.BaseYYStudioFragment;
+import com.blued.android.module.yy_china.fragment.YYBaseFansDialog;
 import com.blued.android.module.yy_china.fragment.YYFansClubAudienceViewDialog;
 import com.blued.android.module.yy_china.fragment.YYFansClubHostViewDialog;
 import com.blued.android.module.yy_china.fragment.YYFansWelfareDialog;
@@ -41,13 +41,9 @@ import com.tencent.trtc.TRTCCloudDef;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYStudioTitleView.class */
 public class YYStudioTitleView extends RelativeLayout implements View.OnClickListener, FollowStatusObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected ShapeTextView f18502a;
+    protected ShapeTextView a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f18503c;
+    private ImageView c;
     private ImageView d;
     private ShapeTextView e;
     private ImageView f;
@@ -85,8 +81,8 @@ public class YYStudioTitleView extends RelativeLayout implements View.OnClickLis
     private void b() {
         LayoutInflater.from(getContext()).inflate(R.layout.layout_yy_studio_title, (ViewGroup) this, true);
         this.j = (RelativeLayout) findViewById(R.id.title_root_layout);
-        this.f18502a = (ShapeTextView) findViewById(R.id.tv_report);
-        this.f18503c = (ImageView) findViewById(R.id.iv_owner_pic);
+        this.a = (ShapeTextView) findViewById(R.id.tv_report);
+        this.c = (ImageView) findViewById(R.id.iv_owner_pic);
         this.b = (ImageView) findViewById(R.id.iv_more);
         this.d = (ImageView) findViewById(R.id.iv_net);
         this.h = (TextView) findViewById(R.id.tv_net);
@@ -100,12 +96,12 @@ public class YYStudioTitleView extends RelativeLayout implements View.OnClickLis
         this.g.setOnClickListener(this);
         this.b.setOnClickListener(new SingleClickProxy(this, 500L, null));
         this.e.setOnClickListener(this);
-        this.f18503c.setOnClickListener(this);
-        this.f18502a.setOnClickListener(this);
+        this.c.setOnClickListener(this);
+        this.a.setOnClickListener(this);
         this.f.setOnClickListener(new SingleClickProxy(this, 500L, null));
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (YYRoomInfoManager.e().y()) {
-            this.f18502a.setVisibility(8);
+            this.a.setVisibility(8);
             this.l.setVisibility(0);
             if (TextUtils.equals(b.chat_type, "9")) {
                 this.b.setImageResource(R.drawable.icon_yy_3_point);
@@ -114,7 +110,7 @@ public class YYStudioTitleView extends RelativeLayout implements View.OnClickLis
             }
         } else {
             this.b.setImageResource(R.drawable.icon_yy_3_point);
-            this.f18502a.setVisibility(0);
+            this.a.setVisibility(0);
             this.l.setVisibility(8);
         }
         b(b);
@@ -169,7 +165,7 @@ public class YYStudioTitleView extends RelativeLayout implements View.OnClickLis
         if (b == null) {
             return;
         }
-        ImageLoader.a(this.m.getFragmentActive(), b.avatar).b(R.drawable.user_bg_round).a(this.f18503c);
+        ImageLoader.a(this.m.getFragmentActive(), b.avatar).b(R.drawable.user_bg_round).a(this.c);
         b(b);
         this.e.setText(UserRelationshipUtils.a(getContext(), b.relationship));
         this.g.setText(b.room_name);
@@ -187,10 +183,10 @@ public class YYStudioTitleView extends RelativeLayout implements View.OnClickLis
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YYStudioTitleView.this.g.getLayoutParams();
                 int measuredWidth = YYStudioTitleView.this.g.getMeasuredWidth();
                 Logger.e("YYStudioTitleView", "width = " + measuredWidth);
-                int a2 = DensityUtils.a(YYStudioTitleView.this.getContext(), 80.0f);
-                Logger.e("YYStudioTitleView", "100dp = " + a2);
-                if (measuredWidth > a2) {
-                    layoutParams.width = a2;
+                int a = DensityUtils.a(YYStudioTitleView.this.getContext(), 80.0f);
+                Logger.e("YYStudioTitleView", "100dp = " + a);
+                if (measuredWidth > a) {
+                    layoutParams.width = a;
                 } else {
                     layoutParams.width = measuredWidth;
                 }
@@ -218,7 +214,6 @@ public class YYStudioTitleView extends RelativeLayout implements View.OnClickLis
         this.k.a(baseYYStudioFragment);
         this.l.a(this.m);
         LiveEventBus.get("notify_room_rename", String.class).observe(baseYYStudioFragment, new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYStudioTitleView.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 Logger.e("YYStudioTitleView", "rename ... " + str);
@@ -226,7 +221,6 @@ public class YYStudioTitleView extends RelativeLayout implements View.OnClickLis
             }
         });
         LiveEventBus.get("has_fans_group", String.class).observe(baseYYStudioFragment, new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYStudioTitleView.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 Logger.e("YYStudioTitleView", "has fans ticket ... " + str);
@@ -294,7 +288,7 @@ public class YYStudioTitleView extends RelativeLayout implements View.OnClickLis
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         ChatRoomProtos.UserType userType;
-        BaseFullScreenDialog yYFansWelfareDialog;
+        YYBaseFansDialog yYFansWelfareDialog;
         Tracker.onClick(view);
         if (view.getId() == R.id.iv_more) {
             this.m.B();
@@ -324,7 +318,7 @@ public class YYStudioTitleView extends RelativeLayout implements View.OnClickLis
             String str = b3.uid;
             String str2 = b3.name;
             String str3 = b3.avatar;
-            baseYYStudioFragment.a(str, str2, str3, YYRoomInfoManager.e().f17578a.chat_anchor + "", true);
+            baseYYStudioFragment.a(str, str2, str3, YYRoomInfoManager.e().a.chat_anchor + "", true);
         } else if (view.getId() == R.id.tv_report) {
             YYRoomModel b4 = YYRoomInfoManager.e().b();
             if (b4 != null) {

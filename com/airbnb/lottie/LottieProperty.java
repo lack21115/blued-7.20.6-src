@@ -9,13 +9,9 @@ public interface LottieProperty {
     public static final Float A;
     public static final ColorFilter B;
     public static final Integer[] C;
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Integer f4254a = 1;
+    public static final Integer a = 1;
     public static final Integer b = 2;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final Integer f4255c = 3;
+    public static final Integer c = 3;
     public static final Integer d = 4;
     public static final PointF e = new PointF();
     public static final PointF f = new PointF();

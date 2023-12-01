@@ -18,25 +18,25 @@ import java.util.TreeMap;
 public class LyricsBorSinglisView extends AbstractLrcView {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f23708a;
+    private boolean f10100a;
     private int[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f23709c;
+    private float f10101c;
 
     public LyricsBorSinglisView(Context context) {
         super(context);
-        this.f23708a = true;
+        this.f10100a = true;
         this.b = new int[]{Color.parseColor("#80000000"), Color.parseColor("#80000000")};
-        this.f23709c = a(getContext(), 10.0f);
+        this.f10101c = a(getContext(), 10.0f);
         a(context);
     }
 
     public LyricsBorSinglisView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f23708a = true;
+        this.f10100a = true;
         this.b = new int[]{Color.parseColor("#80000000"), Color.parseColor("#80000000")};
-        this.f23709c = a(getContext(), 10.0f);
+        this.f10101c = a(getContext(), 10.0f);
         a(context);
     }
 

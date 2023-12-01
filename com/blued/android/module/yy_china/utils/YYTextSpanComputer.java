@@ -23,16 +23,12 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/utils/YYTextSpanComputer.class */
 public final class YYTextSpanComputer {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final SpannableStringBuilder f17887a;
+    private final SpannableStringBuilder a;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/utils/YYTextSpanComputer$Builder.class */
     public static final class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final ArrayList<SpannableString> f17888a = new ArrayList<>();
+        private final ArrayList<SpannableString> a = new ArrayList<>();
         private final ArrayList<CharacterStyle> b = new ArrayList<>();
 
         public final Builder a(Context con, String mes, int i, int i2) {
@@ -41,7 +37,7 @@ public final class YYTextSpanComputer {
             SpannableString spannableString = new SpannableString(mes);
             ShapeTextFontSpan shapeTextFontSpan = new ShapeTextFontSpan(con, i, i2);
             spannableString.setSpan(shapeTextFontSpan, 0, mes.length(), 33);
-            this.f17888a.add(spannableString);
+            this.a.add(spannableString);
             this.b.add(shapeTextFontSpan);
             return this;
         }
@@ -53,7 +49,7 @@ public final class YYTextSpanComputer {
             SpannableString spannableString = new SpannableString(mes);
             FansFontSpan fansFontSpan = new FansFontSpan(con, i, levelName, z);
             spannableString.setSpan(fansFontSpan, 0, mes.length(), 33);
-            this.f17888a.add(spannableString);
+            this.a.add(spannableString);
             this.b.add(fansFontSpan);
             return this;
         }
@@ -63,7 +59,7 @@ public final class YYTextSpanComputer {
             SpannableString spannableString = new SpannableString("1");
             CenterAlignImageSpan centerAlignImageSpan = new CenterAlignImageSpan(newBitmap);
             spannableString.setSpan(centerAlignImageSpan, 0, 1, 33);
-            this.f17888a.add(spannableString);
+            this.a.add(spannableString);
             this.b.add(centerAlignImageSpan);
             return this;
         }
@@ -74,14 +70,14 @@ public final class YYTextSpanComputer {
             SpannableString spannableString = new SpannableString("1");
             CenterAlignUrlImageSpan centerAlignUrlImageSpan = new CenterAlignUrlImageSpan(new WeakReference(tv), iRequestHost, i, i2, url);
             spannableString.setSpan(centerAlignUrlImageSpan, 0, 1, 33);
-            this.f17888a.add(spannableString);
+            this.a.add(spannableString);
             this.b.add(centerAlignUrlImageSpan);
             return this;
         }
 
         public final Builder a(String mes) {
             Intrinsics.e(mes, "mes");
-            this.f17888a.add(new SpannableString(mes));
+            this.a.add(new SpannableString(mes));
             this.b.add(null);
             return this;
         }
@@ -91,7 +87,7 @@ public final class YYTextSpanComputer {
             SpannableString spannableString = new SpannableString(mes);
             GradientFontSpan gradientFontSpan = new GradientFontSpan(i, i2);
             spannableString.setSpan(gradientFontSpan, 0, mes.length(), 33);
-            this.f17888a.add(spannableString);
+            this.a.add(spannableString);
             this.b.add(gradientFontSpan);
             return this;
         }
@@ -102,13 +98,13 @@ public final class YYTextSpanComputer {
         }
 
         public final ArrayList<SpannableString> a() {
-            return this.f17888a;
+            return this.a;
         }
 
         public final void a(SpannableString spa, CharacterStyle span) {
             Intrinsics.e(spa, "spa");
             Intrinsics.e(span, "span");
-            this.f17888a.add(spa);
+            this.a.add(spa);
             this.b.add(span);
         }
 
@@ -122,7 +118,7 @@ public final class YYTextSpanComputer {
     }
 
     public YYTextSpanComputer() {
-        this.f17887a = new SpannableStringBuilder();
+        this.a = new SpannableStringBuilder();
     }
 
     private YYTextSpanComputer(Builder builder) {
@@ -150,30 +146,30 @@ public final class YYTextSpanComputer {
                 }
                 i2 = i3 + 1;
                 if (z2) {
-                    this.f17887a.append((CharSequence) builder.a().get(i3));
+                    this.a.append((CharSequence) builder.a().get(i3));
                 } else {
                     CharacterStyle characterStyle = builder.b().get(i3);
                     if (characterStyle == null) {
                         f = f2 + ((int) paint.measureText(builder.a().get(i3).toString())) + 1;
-                        this.f17887a.append((CharSequence) builder.a().get(i3));
+                        this.a.append((CharSequence) builder.a().get(i3));
                         z = z2;
                     } else if (characterStyle instanceof CenterAlignImageSpan) {
                         f = ((CenterAlignImageSpan) characterStyle).getDrawable() instanceof BitmapDrawable ? f2 + ((BitmapDrawable) drawable).getBitmap().getWidth() + 2 : f2;
-                        this.f17887a.append((CharSequence) builder.a().get(i3));
+                        this.a.append((CharSequence) builder.a().get(i3));
                         z = z2;
                     } else if (characterStyle instanceof CenterAlignUrlImageSpan) {
                         f = f2 + ((CenterAlignUrlImageSpan) characterStyle).b();
-                        this.f17887a.append((CharSequence) builder.a().get(i3));
+                        this.a.append((CharSequence) builder.a().get(i3));
                         z = z2;
                     } else if (characterStyle instanceof FansFontSpan) {
                         f = f2 + ((FansFontSpan) characterStyle).d() + 2;
-                        this.f17887a.append((CharSequence) builder.a().get(i3));
+                        this.a.append((CharSequence) builder.a().get(i3));
                         z = z2;
                     } else if (characterStyle instanceof ShapeTextFontSpan) {
                         ShapeTextFontSpan shapeTextFontSpan = (ShapeTextFontSpan) characterStyle;
                         Intrinsics.c(builder.a().get(i3).toString(), "builder.spStrs[i].toString()");
                         f = f2 + shapeTextFontSpan.a(spannableString);
-                        this.f17887a.append((CharSequence) builder.a().get(i3));
+                        this.a.append((CharSequence) builder.a().get(i3));
                         z = z2;
                     } else {
                         z = z2;
@@ -184,7 +180,7 @@ public final class YYTextSpanComputer {
                             float measureText = paint.measureText(spannableString2);
                             float f3 = i;
                             if (f2 > f3) {
-                                this.f17887a.append((CharSequence) builder.a().get(i3));
+                                this.a.append((CharSequence) builder.a().get(i3));
                                 z = z2;
                                 f = f2;
                             } else {
@@ -195,16 +191,16 @@ public final class YYTextSpanComputer {
                                     SpannableString spannableString3 = new SpannableString(spannableString2.subSequence(0, length2));
                                     GradientFontSpan gradientFontSpan = (GradientFontSpan) characterStyle;
                                     spannableString3.setSpan(new GradientFontSpan(gradientFontSpan.a(), gradientFontSpan.b()), 0, length2, 33);
-                                    this.f17887a.append((CharSequence) spannableString3);
+                                    this.a.append((CharSequence) spannableString3);
                                     SpannableString spannableString4 = new SpannableString(spannableString2.subSequence(length2, spannableString2.length()));
                                     if (length2 == 0) {
                                         spannableString4.setSpan(new GradientFontSpan(gradientFontSpan.a(), gradientFontSpan.b()), 0, spannableString4.length(), 33);
                                     } else {
                                         spannableString4.setSpan(new GradientFontSpan(gradientFontSpan.b(), gradientFontSpan.b()), 0, spannableString4.length(), 33);
                                     }
-                                    this.f17887a.append((CharSequence) spannableString4);
+                                    this.a.append((CharSequence) spannableString4);
                                 } else {
-                                    this.f17887a.append((CharSequence) builder.a().get(i3));
+                                    this.a.append((CharSequence) builder.a().get(i3));
                                 }
                                 z = true;
                             }
@@ -229,6 +225,6 @@ public final class YYTextSpanComputer {
     }
 
     public final SpannableStringBuilder a() {
-        return this.f17887a;
+        return this.a;
     }
 }

@@ -53,11 +53,11 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
     private volatile boolean Y;
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile boolean f27590a;
+    private volatile boolean f13902a;
     private volatile boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f27591c;
+    private volatile boolean f13903c;
     private volatile boolean d;
     private com.qiniu.pili.droid.shortvideo.a.a.b e;
     private com.qiniu.pili.droid.shortvideo.encode.a f;
@@ -68,8 +68,8 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
     private final Object T = new Object();
     private int V = 0;
     private int W = 0;
-    private a.InterfaceC0745a Z = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.core.p.1
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a Z = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.core.p.1
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.n;
             eVar.c("ShortVideoRecorderCore", "got video format:" + mediaFormat.toString());
@@ -78,7 +78,7 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
             p.this.r();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
             synchronized (p.this.T) {
                 p.this.z = new com.qiniu.pili.droid.shortvideo.gl.b.c(p.this.J, surface, p.this.K.getVideoEncodingWidth(), p.this.K.getVideoEncodingHeight(), p.this.n.getDisplayMode());
@@ -88,7 +88,7 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
             p.this.z.a();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             if (p.this.l) {
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.h;
@@ -97,11 +97,11 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.h;
             eVar.c("ShortVideoRecorderCore", "video encoder started: " + z);
-            p.this.f27591c = z;
+            p.this.f13903c = z;
             if (z || p.this.s == null) {
                 return;
             }
@@ -110,13 +110,13 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
             QosManager.a().a(6);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.h.c("ShortVideoRecorderCore", "video encoder stopped.");
             if (p.this.z != null) {
                 p.this.z.b();
             }
-            p.this.f27591c = false;
+            p.this.f13903c = false;
             p.this.d = false;
             p.this.s();
         }
@@ -206,7 +206,7 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
 
     @Override // com.qiniu.pili.droid.shortvideo.a.a.b.a
     public void a(int i, int i2, int i3, int i4) {
-        if (this.g && !this.b && this.f27590a) {
+        if (this.g && !this.b && this.f13902a) {
             this.b = true;
             q();
         }
@@ -393,7 +393,7 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
         synchronized (this) {
             c2 = super.c();
             if (c2) {
-                this.f27591c = false;
+                this.f13903c = false;
                 this.f.c();
                 this.U = 0L;
                 this.V = 0;
@@ -413,7 +413,7 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
 
     @Override // com.qiniu.pili.droid.shortvideo.core.j
     protected boolean d() {
-        return this.f27591c && this.j;
+        return this.f13903c && this.j;
     }
 
     public void e(boolean z) {
@@ -493,7 +493,7 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
         if (pLEffectPlugin != null) {
             i = pLEffectPlugin.onDrawFrame(i, i2, i3, j, fArr);
         }
-        synchronized (com.qiniu.pili.droid.shortvideo.f.d.f27670a) {
+        synchronized (com.qiniu.pili.droid.shortvideo.f.d.f13982a) {
             int i4 = i;
             if (this.G != null) {
                 int onDrawFrame = this.G.onDrawFrame(i, i2, i3, j, fArr);
@@ -511,7 +511,7 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
         if (this.O && this.P) {
             b(a2, i2, i3, j);
         }
-        if (this.f27591c && this.j && !this.D.a()) {
+        if (this.f13903c && this.j && !this.D.a()) {
             long j2 = (long) (j / this.t);
             com.qiniu.pili.droid.shortvideo.f.e.d.a("ShortVideoRecorderCore", "video frame captured texId:" + a2 + " width:" + i2 + " height:" + i3 + " ts:" + j2);
             if (this.K.IsConstFrameRateEnabled()) {
@@ -574,7 +574,7 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
         if (pLVideoFilterListener != null) {
             pLVideoFilterListener.onSurfaceCreated();
         }
-        this.f27590a = true;
+        this.f13902a = true;
     }
 
     @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
@@ -588,7 +588,7 @@ public class p extends j implements PLVideoFilterListener, b.a, i.a {
         if (pLVideoFilterListener != null) {
             pLVideoFilterListener.onSurfaceDestroy();
         }
-        this.f27590a = false;
+        this.f13902a = false;
         com.qiniu.pili.droid.shortvideo.gl.texread.d dVar = this.A;
         if (dVar != null) {
             dVar.a();

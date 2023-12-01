@@ -10,11 +10,11 @@ import java.util.concurrent.Executor;
 public class UrlRequestBuilderImpl extends UrlRequest.Builder {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f38794a = UrlRequestBuilderImpl.class.getSimpleName();
+    private static final String f25103a = UrlRequestBuilderImpl.class.getSimpleName();
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final UrlRequest.Callback f38795c;
+    private final UrlRequest.Callback f25104c;
     private final Executor d;
     private String e;
     private boolean g;
@@ -36,7 +36,7 @@ public class UrlRequestBuilderImpl extends UrlRequest.Builder {
             throw new NullPointerException("Executor is required.");
         }
         this.b = str;
-        this.f38795c = callback;
+        this.f25104c = callback;
         this.d = executor;
     }
 
@@ -62,34 +62,34 @@ public class UrlRequestBuilderImpl extends UrlRequest.Builder {
             return null;
         }
         DexLoader b = a2.c().b();
-        Class<Integer> cls = Integer.TYPE;
-        Class<Boolean> cls2 = Boolean.TYPE;
+        Class<?> cls = Integer.TYPE;
+        Class<?> cls2 = Boolean.TYPE;
         String str = this.b;
         int i = this.h;
-        UrlRequest urlRequest = (UrlRequest) b.invokeStaticMethod("com.tencent.smtt.net.X5UrlRequestProvider", "GetX5UrlRequestProvider", new Class[]{String.class, cls, UrlRequest.Callback.class, Executor.class, cls2, String.class, ArrayList.class, String.class, byte[].class, String.class, String.class}, str, Integer.valueOf(i), this.f38795c, this.d, Boolean.valueOf(this.g), this.e, this.f, this.i, this.j, this.k, this.l);
+        UrlRequest urlRequest = (UrlRequest) b.invokeStaticMethod("com.tencent.smtt.net.X5UrlRequestProvider", "GetX5UrlRequestProvider", new Class[]{String.class, cls, UrlRequest.Callback.class, Executor.class, cls2, String.class, ArrayList.class, String.class, byte[].class, String.class, String.class}, str, Integer.valueOf(i), this.f25104c, this.d, Boolean.valueOf(this.g), this.e, this.f, this.i, this.j, this.k, this.l);
         UrlRequest urlRequest2 = urlRequest;
         if (urlRequest == null) {
-            Class<Integer> cls3 = Integer.TYPE;
-            Class<Boolean> cls4 = Boolean.TYPE;
+            Class<?> cls3 = Integer.TYPE;
+            Class<?> cls4 = Boolean.TYPE;
             String str2 = this.b;
             int i2 = this.h;
-            urlRequest2 = (UrlRequest) b.invokeStaticMethod("com.tencent.smtt.net.X5UrlRequestProvider", "GetX5UrlRequestProvider", new Class[]{String.class, cls3, UrlRequest.Callback.class, Executor.class, cls4, String.class, ArrayList.class, String.class}, str2, Integer.valueOf(i2), this.f38795c, this.d, Boolean.valueOf(this.g), this.e, this.f, this.i);
+            urlRequest2 = (UrlRequest) b.invokeStaticMethod("com.tencent.smtt.net.X5UrlRequestProvider", "GetX5UrlRequestProvider", new Class[]{String.class, cls3, UrlRequest.Callback.class, Executor.class, cls4, String.class, ArrayList.class, String.class}, str2, Integer.valueOf(i2), this.f25104c, this.d, Boolean.valueOf(this.g), this.e, this.f, this.i);
         }
         UrlRequest urlRequest3 = urlRequest2;
         if (urlRequest2 == null) {
-            Class<Integer> cls5 = Integer.TYPE;
-            Class<Boolean> cls6 = Boolean.TYPE;
+            Class<?> cls5 = Integer.TYPE;
+            Class<?> cls6 = Boolean.TYPE;
             String str3 = this.b;
             int i3 = this.h;
-            urlRequest3 = (UrlRequest) b.invokeStaticMethod("com.tencent.smtt.net.X5UrlRequestProvider", "GetX5UrlRequestProvider", new Class[]{String.class, cls5, UrlRequest.Callback.class, Executor.class, cls6, String.class, ArrayList.class}, str3, Integer.valueOf(i3), this.f38795c, this.d, Boolean.valueOf(this.g), this.e, this.f);
+            urlRequest3 = (UrlRequest) b.invokeStaticMethod("com.tencent.smtt.net.X5UrlRequestProvider", "GetX5UrlRequestProvider", new Class[]{String.class, cls5, UrlRequest.Callback.class, Executor.class, cls6, String.class, ArrayList.class}, str3, Integer.valueOf(i3), this.f25104c, this.d, Boolean.valueOf(this.g), this.e, this.f);
         }
         UrlRequest urlRequest4 = urlRequest3;
         if (urlRequest3 == null) {
-            Class<Integer> cls7 = Integer.TYPE;
-            Class<Boolean> cls8 = Boolean.TYPE;
+            Class<?> cls7 = Integer.TYPE;
+            Class<?> cls8 = Boolean.TYPE;
             String str4 = this.b;
             int i4 = this.h;
-            urlRequest4 = (UrlRequest) b.invokeStaticMethod("com.tencent.tbs.tbsshell.WebCoreProxy", "UrlRequest_getX5UrlRequestProvider", new Class[]{String.class, cls7, UrlRequest.Callback.class, Executor.class, cls8, String.class, ArrayList.class, String.class, byte[].class, String.class, String.class}, str4, Integer.valueOf(i4), this.f38795c, this.d, Boolean.valueOf(this.g), this.e, this.f, this.i, this.j, this.k, this.l);
+            urlRequest4 = (UrlRequest) b.invokeStaticMethod("com.tencent.tbs.tbsshell.WebCoreProxy", "UrlRequest_getX5UrlRequestProvider", new Class[]{String.class, cls7, UrlRequest.Callback.class, Executor.class, cls8, String.class, ArrayList.class, String.class, byte[].class, String.class, String.class}, str4, Integer.valueOf(i4), this.f25104c, this.d, Boolean.valueOf(this.g), this.e, this.f, this.i, this.j, this.k, this.l);
         }
         if (urlRequest4 != null) {
             return urlRequest4;

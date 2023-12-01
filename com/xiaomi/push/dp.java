@@ -9,13 +9,13 @@ import com.xiaomi.push.ai;
 public class dp {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile dp f41341a;
+    private static volatile dp f27650a;
 
     /* renamed from: a  reason: collision with other field name */
-    private Context f308a;
+    private Context f261a;
 
     /* renamed from: a  reason: collision with other field name */
-    private a f309a;
+    private a f262a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/dp$a.class */
     public interface a {
@@ -23,7 +23,7 @@ public class dp {
     }
 
     private dp(Context context) {
-        this.f308a = context;
+        this.f261a = context;
     }
 
     public static int a(int i) {
@@ -31,34 +31,34 @@ public class dp {
     }
 
     public static dp a(Context context) {
-        if (f41341a == null) {
+        if (f27650a == null) {
             synchronized (dp.class) {
                 try {
-                    if (f41341a == null) {
-                        f41341a = new dp(context);
+                    if (f27650a == null) {
+                        f27650a = new dp(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f41341a;
+        return f27650a;
     }
 
     private void a(com.xiaomi.push.service.ba baVar, ai aiVar, boolean z) {
         if (baVar.a(hl.UploadSwitch.a(), true)) {
-            dt dtVar = new dt(this.f308a);
+            dt dtVar = new dt(this.f261a);
             if (z) {
                 aiVar.a((ai.a) dtVar, a(baVar.a(hl.UploadFrequency.a(), 86400)));
             } else {
-                aiVar.m11502a((ai.a) dtVar);
+                aiVar.m8452a((ai.a) dtVar);
             }
         }
     }
 
     private boolean a() {
         try {
-            ((Application) (this.f308a instanceof Application ? this.f308a : this.f308a.getApplicationContext())).registerActivityLifecycleCallbacks(new dj(this.f308a, String.valueOf(System.currentTimeMillis() / 1000)));
+            ((Application) (this.f261a instanceof Application ? this.f261a : this.f261a.getApplicationContext())).registerActivityLifecycleCallbacks(new dj(this.f261a, String.valueOf(System.currentTimeMillis() / 1000)));
             return true;
         } catch (Exception e) {
             com.xiaomi.channel.commonutils.logger.b.a(e);
@@ -69,9 +69,9 @@ public class dp {
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         a aVar;
-        ai a2 = ai.a(this.f308a);
-        com.xiaomi.push.service.ba a3 = com.xiaomi.push.service.ba.a(this.f308a);
-        SharedPreferences sharedPreferences = this.f308a.getSharedPreferences("mipush_extra", 0);
+        ai a2 = ai.a(this.f261a);
+        com.xiaomi.push.service.ba a3 = com.xiaomi.push.service.ba.a(this.f261a);
+        SharedPreferences sharedPreferences = this.f261a.getSharedPreferences("mipush_extra", 0);
         long currentTimeMillis = System.currentTimeMillis();
         long j = sharedPreferences.getLong("first_try_ts", currentTimeMillis);
         if (j == currentTimeMillis) {
@@ -83,9 +83,9 @@ public class dp {
         a(a3, a2, false);
         if (a3.a(hl.StorageCollectionSwitch.a(), true)) {
             int a4 = a(a3.a(hl.StorageCollectionFrequency.a(), 86400));
-            a2.a(new ds(this.f308a, a4), a4, 0);
+            a2.a(new ds(this.f261a, a4), a4, 0);
         }
-        if (j.m12048a(this.f308a) && (aVar = this.f309a) != null) {
+        if (j.m8998a(this.f261a) && (aVar = this.f262a) != null) {
             aVar.a();
         }
         if (a3.a(hl.ActivityTSSwitch.a(), false)) {
@@ -95,7 +95,7 @@ public class dp {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public void m11625a() {
-        ai.a(this.f308a).a(new dq(this));
+    public void m8575a() {
+        ai.a(this.f261a).a(new dq(this));
     }
 }

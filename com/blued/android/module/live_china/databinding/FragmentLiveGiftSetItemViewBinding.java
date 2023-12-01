@@ -17,13 +17,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FragmentLiveGiftSetItemViewBinding.class */
 public final class FragmentLiveGiftSetItemViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeFrameLayout f11936a;
+    public final ShapeFrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f11937c;
+    public final LinearLayout c;
     public final LinearLayout d;
     public final ProgressBar e;
     public final RecyclerView f;
@@ -36,9 +32,9 @@ public final class FragmentLiveGiftSetItemViewBinding implements ViewBinding {
 
     private FragmentLiveGiftSetItemViewBinding(NestedScrollView nestedScrollView, ShapeFrameLayout shapeFrameLayout, ImageView imageView, LinearLayout linearLayout, LinearLayout linearLayout2, ProgressBar progressBar, RecyclerView recyclerView, RecyclerView recyclerView2, ShapeFrameLayout shapeFrameLayout2, BamTextView bamTextView, ShapeTextView shapeTextView, TextView textView) {
         this.l = nestedScrollView;
-        this.f11936a = shapeFrameLayout;
+        this.a = shapeFrameLayout;
         this.b = imageView;
-        this.f11937c = linearLayout;
+        this.c = linearLayout;
         this.d = linearLayout2;
         this.e = progressBar;
         this.f = recyclerView;
@@ -73,10 +69,10 @@ public final class FragmentLiveGiftSetItemViewBinding implements ViewBinding {
                     if (linearLayout2 != null) {
                         ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.pro_bar);
                         if (progressBar != null) {
-                            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_extra);
-                            if (recyclerView != null) {
-                                RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rv_list);
-                                if (recyclerView2 != null) {
+                            RecyclerView findViewById = view.findViewById(R.id.rv_extra);
+                            if (findViewById != null) {
+                                RecyclerView findViewById2 = view.findViewById(R.id.rv_list);
+                                if (findViewById2 != null) {
                                     ShapeFrameLayout shapeFrameLayout2 = (ShapeFrameLayout) view.findViewById(R.id.sf_task);
                                     if (shapeFrameLayout2 != null) {
                                         BamTextView bamTextView = (BamTextView) view.findViewById(R.id.tv_all_send);
@@ -85,7 +81,7 @@ public final class FragmentLiveGiftSetItemViewBinding implements ViewBinding {
                                             if (shapeTextView != null) {
                                                 TextView textView = (TextView) view.findViewById(R.id.tv_des);
                                                 if (textView != null) {
-                                                    return new FragmentLiveGiftSetItemViewBinding((NestedScrollView) view, shapeFrameLayout, imageView, linearLayout, linearLayout2, progressBar, recyclerView, recyclerView2, shapeFrameLayout2, bamTextView, shapeTextView, textView);
+                                                    return new FragmentLiveGiftSetItemViewBinding((NestedScrollView) view, shapeFrameLayout, imageView, linearLayout, linearLayout2, progressBar, findViewById, findViewById2, shapeFrameLayout2, bamTextView, shapeTextView, textView);
                                                 }
                                                 str = "tvDes";
                                             } else {
@@ -121,7 +117,6 @@ public final class FragmentLiveGiftSetItemViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public NestedScrollView getRoot() {
         return this.l;

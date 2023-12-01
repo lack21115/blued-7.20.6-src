@@ -16,8 +16,7 @@ import android.speech.tts.ITextToSpeechCallback;
 import android.speech.tts.ITextToSpeechService;
 import android.text.TextUtils;
 import android.util.Log;
-import com.alipay.sdk.util.i;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.tencent.thumbplayer.api.TPErrorCode;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -312,7 +311,7 @@ public class TextToSpeech {
         public boolean system;
 
         public String toString() {
-            return "EngineInfo{name=" + this.name + i.d;
+            return "EngineInfo{name=" + this.name + "}";
         }
     }
 
@@ -442,7 +441,7 @@ public class TextToSpeech {
     }
 
     public static int getMaxSpeechInputLength() {
-        return 4000;
+        return TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -866,7 +865,7 @@ public class TextToSpeech {
                             }
                             String defaultVoiceNameFor = iTextToSpeechService.getDefaultVoiceNameFor(iSO3Language, str, variant);
                             if (TextUtils.isEmpty(defaultVoiceNameFor)) {
-                                Log.w(TextToSpeech.TAG, "Couldn't find the default voice for " + iSO3Language + BridgeUtil.SPLIT_MARK + str + BridgeUtil.SPLIT_MARK + variant);
+                                Log.w(TextToSpeech.TAG, "Couldn't find the default voice for " + iSO3Language + "/" + str + "/" + variant);
                                 return -2;
                             } else if (iTextToSpeechService.loadVoice(TextToSpeech.this.getCallerIdentity(), defaultVoiceNameFor) == -1) {
                                 return -2;

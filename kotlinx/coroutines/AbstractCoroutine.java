@@ -53,16 +53,16 @@ public abstract class AbstractCoroutine<T> extends JobSupport implements Continu
             return;
         }
         CompletedExceptionally completedExceptionally = (CompletedExceptionally) obj;
-        a(completedExceptionally.f42791a, completedExceptionally.b());
+        a(completedExceptionally.a, completedExceptionally.b());
     }
 
     @Override // kotlinx.coroutines.JobSupport
     public String c() {
-        String a2 = CoroutineContextKt.a(this.b);
-        if (a2 == null) {
+        String a = CoroutineContextKt.a(this.b);
+        if (a == null) {
             return super.c();
         }
-        return '\"' + a2 + "\":" + super.c();
+        return '\"' + a + "\":" + super.c();
     }
 
     protected void c(Object obj) {
@@ -82,7 +82,7 @@ public abstract class AbstractCoroutine<T> extends JobSupport implements Continu
     @Override // kotlin.coroutines.Continuation
     public final void resumeWith(Object obj) {
         Object g = g(CompletionStateKt.a(obj, null, 1, null));
-        if (g == JobSupportKt.f42845a) {
+        if (g == JobSupportKt.a) {
             return;
         }
         c(g);

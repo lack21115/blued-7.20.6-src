@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.blued.android.framework.utils.Logger;
@@ -45,31 +46,25 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMaskedChoseMicDialog.class */
 public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogMaskedChoseMicBinding f18298a;
+    private DialogMaskedChoseMicBinding a;
     private String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    private final MaskedChoseMicAdapter f18299c = new MaskedChoseMicAdapter(this);
+    private final MaskedChoseMicAdapter c = new MaskedChoseMicAdapter(this);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMaskedChoseMicDialog$AdMode.class */
     public static final class AdMode {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final String f18300a;
+        private final String a;
         private final String b;
 
         public AdMode(String uid, String num) {
             Intrinsics.e(uid, "uid");
             Intrinsics.e(num, "num");
-            this.f18300a = uid;
+            this.a = uid;
             this.b = num;
         }
 
         public final String a() {
-            return this.f18300a;
+            return this.a;
         }
 
         public boolean equals(Object obj) {
@@ -78,32 +73,30 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
             }
             if (obj instanceof AdMode) {
                 AdMode adMode = (AdMode) obj;
-                return Intrinsics.a((Object) this.f18300a, (Object) adMode.f18300a) && Intrinsics.a((Object) this.b, (Object) adMode.b);
+                return Intrinsics.a((Object) this.a, (Object) adMode.a) && Intrinsics.a((Object) this.b, (Object) adMode.b);
             }
             return false;
         }
 
         public int hashCode() {
-            return (this.f18300a.hashCode() * 31) + this.b.hashCode();
+            return (this.a.hashCode() * 31) + this.b.hashCode();
         }
 
         public String toString() {
-            return "AdMode(uid=" + this.f18300a + ", num=" + this.b + ')';
+            return "AdMode(uid=" + this.a + ", num=" + this.b + ')';
         }
     }
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMaskedChoseMicDialog$MaskedChoseMicAdapter.class */
     public final class MaskedChoseMicAdapter extends BaseQuickAdapter<AdMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYMaskedChoseMicDialog f18301a;
+        final /* synthetic */ YYMaskedChoseMicDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public MaskedChoseMicAdapter(YYMaskedChoseMicDialog this$0) {
             super(R.layout.item_masked_info_mic);
             Intrinsics.e(this$0, "this$0");
-            this.f18301a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -124,18 +117,17 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final AdMode item) {
             List<YYSeatMemberModel> list;
             Intrinsics.e(item, "item");
             Intrinsics.a(baseViewHolder);
-            ItemMaskedInfoMicBinding a2 = ItemMaskedInfoMicBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper!!.itemView)");
-            if (StringUtils.a(this.f18301a.b, item.a())) {
-                a2.b.setVisibility(0);
-                ConstraintLayout root = a2.getRoot();
-                final YYMaskedChoseMicDialog yYMaskedChoseMicDialog = this.f18301a;
+            ItemMaskedInfoMicBinding a = ItemMaskedInfoMicBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper!!.itemView)");
+            if (StringUtils.a(this.a.b, item.a())) {
+                a.b.setVisibility(0);
+                ConstraintLayout root = a.getRoot();
+                final YYMaskedChoseMicDialog yYMaskedChoseMicDialog = this.a;
                 root.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMaskedChoseMicDialog$MaskedChoseMicAdapter$m6Nhg1DKiXgK24rBM6cbVDCCFHU
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -143,9 +135,9 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
                     }
                 });
             } else {
-                a2.b.setVisibility(4);
-                ConstraintLayout root2 = a2.getRoot();
-                final YYMaskedChoseMicDialog yYMaskedChoseMicDialog2 = this.f18301a;
+                a.b.setVisibility(4);
+                ConstraintLayout root2 = a.getRoot();
+                final YYMaskedChoseMicDialog yYMaskedChoseMicDialog2 = this.a;
                 root2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMaskedChoseMicDialog$MaskedChoseMicAdapter$jJoWfTbPfGrTo0t2Hb5ZrYbt4mU
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -160,7 +152,7 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
             for (YYSeatMemberModel yYSeatMemberModel : list) {
                 if (StringUtils.a(item.a(), yYSeatMemberModel.getUid())) {
                     int indexOf = list.indexOf(yYSeatMemberModel);
-                    TextView textView = a2.f16627c;
+                    TextView textView = a.c;
                     textView.setText(indexOf + "号麦位");
                 }
             }
@@ -196,7 +188,7 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
         yYPayRequestModel.room_id = b == null ? null : b.room_id;
         yYPayRequestModel.target_uid = this.b;
         yYPayRequestModel.pay_from = 1;
-        YYPayUtils.a(yYPayRequestModel, YYConstants.PayFromSource.Pay_Gift, this, a(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.view.YYMaskedChoseMicDialog$buyGift$1
+        YYPayUtils.a(yYPayRequestModel, YYConstants.PayFromSource.Pay_Gift, (Fragment) this, a(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.view.YYMaskedChoseMicDialog$buyGift$1
             @Override // com.blued.android.module.yy_china.utils.YYPayUtils.PayGiftStatusListener
             public void a(int i, String errorMessage) {
                 Intrinsics.e(errorMessage, "errorMessage");
@@ -224,13 +216,13 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void c(YYMaskedChoseMicDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f().f16363c.setVisibility(8);
+        this$0.f().c.setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void d(YYMaskedChoseMicDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f().f16363c.setVisibility(0);
+        this$0.f().c.setVisibility(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -244,7 +236,7 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
     }
 
     private final DialogMaskedChoseMicBinding f() {
-        DialogMaskedChoseMicBinding dialogMaskedChoseMicBinding = this.f18298a;
+        DialogMaskedChoseMicBinding dialogMaskedChoseMicBinding = this.a;
         Intrinsics.a(dialogMaskedChoseMicBinding);
         return dialogMaskedChoseMicBinding;
     }
@@ -266,14 +258,14 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
                 YYMaskedChoseMicDialog.a(view);
             }
         });
-        f().f16362a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMaskedChoseMicDialog$LaxqEpQ6nEoh0nkjDU5oZ7so7Wk
+        f().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMaskedChoseMicDialog$LaxqEpQ6nEoh0nkjDU5oZ7so7Wk
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYMaskedChoseMicDialog.b(YYMaskedChoseMicDialog.this, view);
             }
         });
         f().i.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
-        f().i.setAdapter(this.f18299c);
+        f().i.setAdapter(this.c);
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b != null && (list = b.mics) != null) {
             ArrayList arrayList = new ArrayList();
@@ -284,7 +276,7 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
                     arrayList.add(new AdMode(uid, String.valueOf(list.indexOf(yYSeatMemberModel) + 1)));
                 }
             }
-            this.f18299c.setNewData(arrayList);
+            this.c.setNewData(arrayList);
         }
         f().g.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMaskedChoseMicDialog$DscdxCHAITarTP2aXz7P2jSUXjQ
             @Override // android.view.View.OnClickListener
@@ -303,7 +295,7 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
             return;
         }
         ShapeTextView shapeTextView = f().j;
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         Resources resources = getResources();
         int i = R.string.use_masked_guide;
         YYRoomModel b3 = YYRoomInfoManager.e().b();
@@ -317,7 +309,7 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
         Intrinsics.c(format, "format(format, *args)");
         shapeTextView.setText(format);
         TextView textView = f().k;
-        StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
         StringBuilder sb = new StringBuilder();
         sb.append("价值");
         YYGiftModel goods_info2 = veiledRoomInfoMode.getGoods_info();
@@ -361,7 +353,6 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
         a("", false, veiledRoomInfoMode.getGoods_info());
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         Logger.a(Intrinsics.a("web dialog onActivityResult: ", (Object) Integer.valueOf(i)), new Object[0]);
@@ -397,11 +388,11 @@ public final class YYMaskedChoseMicDialog extends BaseFullScreenDialog {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_masked_chose_mic, viewGroup, true);
-        this.f18298a = DialogMaskedChoseMicBinding.a(inflate);
+        this.a = DialogMaskedChoseMicBinding.a(inflate);
         g();
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b == null) {

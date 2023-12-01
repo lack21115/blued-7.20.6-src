@@ -48,11 +48,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class HuaweiApi<TOption extends Api.ApiOptions> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f22620a;
+    private Context f9012a;
     private TOption b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f22621c;
+    private Context f9013c;
     private AbstractClientBuilder<?, TOption> d;
     private String e;
     private String f;
@@ -73,10 +73,10 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
         public final Queue<TaskApiCallbackWrapper> callbackWaitQueue = new LinkedList();
 
         /* renamed from: a  reason: collision with root package name */
-        private final Queue<TaskApiCallbackWrapper> f22624a = new LinkedList();
+        private final Queue<TaskApiCallbackWrapper> f9016a = new LinkedList();
 
         /* renamed from: c  reason: collision with root package name */
-        private ConnectionResult f22625c = null;
+        private ConnectionResult f9017c = null;
 
         RequestHandler(HuaweiApi<OptionsT> huaweiApi) {
             this.d = huaweiApi;
@@ -138,7 +138,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
             return new TaskApiCallbackWrapper(taskApiCallWrapper, new AnyClient.CallBack() { // from class: com.huawei.hms.common.HuaweiApi.RequestHandler.1
 
                 /* renamed from: a  reason: collision with root package name */
-                private AtomicBoolean f22626a = new AtomicBoolean(true);
+                private AtomicBoolean f9018a = new AtomicBoolean(true);
 
                 @Override // com.huawei.hms.common.internal.AnyClient.CallBack
                 public void onCallback(IMessageEntity iMessageEntity, String str) {
@@ -154,7 +154,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
                     if (!TextUtils.isEmpty(responseHeader.getResolution())) {
                         HMSLog.e("HuaweiApi", "Response has resolution: " + responseHeader.getResolution());
                     }
-                    if (this.f22626a.compareAndSet(true, false)) {
+                    if (this.f9018a.compareAndSet(true, false)) {
                         b.a(RequestHandler.this.d.getContext(), responseHeader, String.valueOf(RequestHandler.this.d.getKitSdkVersion()));
                     }
                     taskApiCallWrapper.getTaskApiCall().onResponse(RequestHandler.this.b, responseHeader, str, taskApiCallWrapper.getTaskCompletionSource());
@@ -164,8 +164,8 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void b() {
-            this.f22625c = null;
-            this.f22624a.clear();
+            this.f9017c = null;
+            this.f9016a.clear();
             for (TaskApiCallbackWrapper taskApiCallbackWrapper : this.callbackWaitQueue) {
                 postMessage(taskApiCallbackWrapper);
             }
@@ -174,15 +174,15 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void b(ConnectionResult connectionResult) {
-            this.f22625c = connectionResult;
+            this.f9017c = connectionResult;
             Iterator<TaskApiCallbackWrapper> it = this.callbackWaitQueue.iterator();
             boolean z = true;
             while (true) {
                 boolean z2 = z;
                 if (!it.hasNext()) {
                     this.callbackWaitQueue.clear();
-                    this.f22624a.clear();
-                    this.f22625c = null;
+                    this.f9016a.clear();
+                    this.f9017c = null;
                     this.b.disconnect();
                     return;
                 }
@@ -191,21 +191,21 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
                 responseHeader.setTransactionId(a2.getTaskApiCall().getTransactionId());
                 b.a(this.d.getContext(), responseHeader, String.valueOf(this.d.getKitSdkVersion()));
                 boolean z3 = z2;
-                if (this.f22625c.getResolution() != null) {
+                if (this.f9017c.getResolution() != null) {
                     z3 = z2;
                     if (z2) {
-                        responseHeader.setParcelable(this.f22625c.getResolution());
+                        responseHeader.setParcelable(this.f9017c.getResolution());
                         z3 = false;
                         if (Util.isAvailableLibExist(this.d.getContext())) {
                             z3 = false;
-                            if (this.f22625c.getErrorCode() == 26) {
+                            if (this.f9017c.getErrorCode() == 26) {
                                 responseHeader.setResolution(CommonCode.Resolution.HAS_RESOLUTION);
                                 z3 = false;
                             }
                         }
                     }
                 }
-                int errorCode = this.f22625c.getErrorCode();
+                int errorCode = this.f9017c.getErrorCode();
                 if (errorCode == 30 || errorCode == 31) {
                     responseHeader.setErrorCode(errorCode);
                 }
@@ -217,16 +217,16 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
         /* JADX INFO: Access modifiers changed from: private */
         public void c() {
             HMSLog.i("HuaweiApi", "wait queue size = " + this.callbackWaitQueue.size());
-            HMSLog.i("HuaweiApi", "run queue size = " + this.f22624a.size());
+            HMSLog.i("HuaweiApi", "run queue size = " + this.f9016a.size());
             for (TaskApiCallbackWrapper taskApiCallbackWrapper : this.callbackWaitQueue) {
                 a(taskApiCallbackWrapper);
             }
-            for (TaskApiCallbackWrapper taskApiCallbackWrapper2 : this.f22624a) {
+            for (TaskApiCallbackWrapper taskApiCallbackWrapper2 : this.f9016a) {
                 a(taskApiCallbackWrapper2);
             }
             this.callbackWaitQueue.clear();
-            this.f22624a.clear();
-            this.f22625c = null;
+            this.f9016a.clear();
+            this.f9017c = null;
             this.b.disconnect();
         }
 
@@ -259,7 +259,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
         void a(TaskApiCallWrapper taskApiCallWrapper) {
             HMSLog.i("HuaweiApi", "sendRequest");
             TaskApiCallbackWrapper b = b(taskApiCallWrapper);
-            int hmsVersionCode = HMSPackageManager.getInstance(((HuaweiApi) this.d).f22620a).getHmsVersionCode();
+            int hmsVersionCode = HMSPackageManager.getInstance(((HuaweiApi) this.d).f9012a).getHmsVersionCode();
             if ((hmsVersionCode < 40000000 && hmsVersionCode > 0) && this.b.isConnected() && !((HuaweiApi) this.d).m && ((BaseHmsClient) this.b).getAdapter().getServiceAction().equals("com.huawei.hms.core.aidlservice")) {
                 int requestHmsVersionCode = this.b.getRequestHmsVersionCode();
                 if (requestHmsVersionCode <= taskApiCallWrapper.getTaskApiCall().getMinApkVersion()) {
@@ -279,7 +279,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
             }
             HMSLog.i("HuaweiApi", "isConnected:false.");
             this.callbackWaitQueue.add(b);
-            ConnectionResult connectionResult = this.f22625c;
+            ConnectionResult connectionResult = this.f9017c;
             if (connectionResult == null || connectionResult.getErrorCode() == 0) {
                 RequestManager.addRequestToQueue(this);
                 AnyClient anyClient = this.b;
@@ -289,8 +289,8 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
                 a(taskApiCallWrapper.getTaskApiCall().getMinApkVersion(), b);
                 return;
             }
-            HMSLog.i("HuaweiApi", "onConnectionFailed, ErrorCode:" + this.f22625c.getErrorCode());
-            onConnectionFailed(this.f22625c);
+            HMSLog.i("HuaweiApi", "onConnectionFailed, ErrorCode:" + this.f9017c.getErrorCode());
+            onConnectionFailed(this.f9017c);
         }
 
         public AnyClient getClient() {
@@ -338,12 +338,12 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
 
         public void postMessage(final TaskApiCallbackWrapper taskApiCallbackWrapper) {
             RequestManager.addToConnectedReqMap(taskApiCallbackWrapper.a().getTaskApiCall().getTransactionId(), this);
-            this.f22624a.add(taskApiCallbackWrapper);
+            this.f9016a.add(taskApiCallbackWrapper);
             String uri = taskApiCallbackWrapper.a().getTaskApiCall().getUri();
-            String packageName = (((HuaweiApi) this.d).f22621c == null ? this.d.getContext() : ((HuaweiApi) this.d).f22621c).getPackageName();
-            if (((HuaweiApi) this.d).f22621c != null) {
+            String packageName = (((HuaweiApi) this.d).f9013c == null ? this.d.getContext() : ((HuaweiApi) this.d).f9013c).getPackageName();
+            if (((HuaweiApi) this.d).f9013c != null) {
                 HuaweiApi<OptionsT> huaweiApi = this.d;
-                huaweiApi.b(((HuaweiApi) huaweiApi).f22621c);
+                huaweiApi.b(((HuaweiApi) huaweiApi).f9013c);
             }
             final RequestHeader requestHeader = new RequestHeader();
             requestHeader.setSrvName(uri.split("\\.")[0]);
@@ -367,7 +367,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
                     RequestManager.getHandler().post(new Runnable() { // from class: com.huawei.hms.common.HuaweiApi.RequestHandler.2.1
                         @Override // java.lang.Runnable
                         public void run() {
-                            RequestHandler.this.f22624a.remove(taskApiCallbackWrapper);
+                            RequestHandler.this.f9016a.remove(taskApiCallbackWrapper);
                         }
                     });
                 }
@@ -380,11 +380,11 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
     public static class RequestRunnable<OptionsT extends Api.ApiOptions> implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private final HuaweiApi<OptionsT> f22634a;
+        private final HuaweiApi<OptionsT> f9026a;
         private final TaskApiCallWrapper b;
 
         public RequestRunnable(HuaweiApi<OptionsT> huaweiApi, TaskApiCallWrapper taskApiCallWrapper) {
-            this.f22634a = huaweiApi;
+            this.f9026a = huaweiApi;
             this.b = taskApiCallWrapper;
         }
 
@@ -405,7 +405,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
 
         @Override // java.lang.Runnable
         public void run() {
-            RequestHandler requestHandler = new RequestHandler(this.f22634a);
+            RequestHandler requestHandler = new RequestHandler(this.f9026a);
             try {
                 requestHandler.a(this.b);
             } catch (RuntimeException e) {
@@ -418,16 +418,16 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
     public static class TaskApiCallbackWrapper {
 
         /* renamed from: a  reason: collision with root package name */
-        private final TaskApiCallWrapper f22635a;
+        private final TaskApiCallWrapper f9027a;
         private final AnyClient.CallBack b;
 
         TaskApiCallbackWrapper(TaskApiCallWrapper taskApiCallWrapper, AnyClient.CallBack callBack) {
-            this.f22635a = taskApiCallWrapper;
+            this.f9027a = taskApiCallWrapper;
             this.b = callBack;
         }
 
         TaskApiCallWrapper a() {
-            return this.f22635a;
+            return this.f9027a;
         }
 
         AnyClient.CallBack b() {
@@ -479,7 +479,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
     }
 
     private void a(Context context, Api<TOption> api, TOption toption, AbstractClientBuilder abstractClientBuilder, int i, String str) {
-        this.f22620a = context.getApplicationContext();
+        this.f9012a = context.getApplicationContext();
         this.b = toption;
         this.d = abstractClientBuilder;
         b(context);
@@ -535,7 +535,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
             taskCompletionSource.setException(new ApiException(Status.FAILURE));
             return taskCompletionSource.getTask();
         }
-        b.a(this.f22620a, taskApiCall.getUri(), TextUtils.isEmpty(this.g.getSubAppID()) ? this.f : this.g.getSubAppID(), taskApiCall.getTransactionId(), String.valueOf(getKitSdkVersion()));
+        b.a(this.f9012a, taskApiCall.getUri(), TextUtils.isEmpty(this.g.getSubAppID()) ? this.f : this.g.getSubAppID(), taskApiCall.getTransactionId(), String.valueOf(getKitSdkVersion()));
         if (this.n == null) {
             this.n = RequestManager.getInstance();
         }
@@ -560,13 +560,13 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
 
     /* JADX WARN: Type inference failed for: r0v2, types: [com.huawei.hms.common.internal.AnyClient] */
     public AnyClient getClient(Looper looper, RequestHandler requestHandler) {
-        return this.d.buildClient(this.f22620a, getClientSetting(), requestHandler, requestHandler);
+        return this.d.buildClient(this.f9012a, getClientSetting(), requestHandler, requestHandler);
     }
 
     protected ClientSettings getClientSetting() {
-        ClientSettings clientSettings = new ClientSettings(this.f22620a.getPackageName(), this.f22620a.getClass().getName(), getScopes(), this.e, null, this.g);
+        ClientSettings clientSettings = new ClientSettings(this.f9012a.getPackageName(), this.f9012a.getClass().getName(), getScopes(), this.e, null, this.g);
         if (!this.m) {
-            this.l = HMSPackageManager.getInstance(this.f22620a).getHMSPackageNameForMultiService();
+            this.l = HMSPackageManager.getInstance(this.f9012a).getHMSPackageNameForMultiService();
             HMSLog.i("HuaweiApi", "No setInnerHms, hms pkg name is " + this.l);
         }
         clientSettings.setInnerHmsPkg(this.l);
@@ -579,7 +579,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
     }
 
     public Context getContext() {
-        return this.f22620a;
+        return this.f9012a;
     }
 
     public int getKitSdkVersion() {
@@ -603,11 +603,11 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
     }
 
     public void setHostContext(Context context) {
-        this.f22621c = context;
+        this.f9013c = context;
     }
 
     public void setInnerHms() {
-        this.l = this.f22620a.getPackageName();
+        this.l = this.f9012a.getPackageName();
         this.m = true;
         HMSLog.i("HuaweiApi", "<setInnerHms> init inner hms pkg info:" + this.l);
     }

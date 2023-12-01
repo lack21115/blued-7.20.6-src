@@ -26,7 +26,6 @@ import com.blued.community.track.EventTrackFeed;
 import com.blued.community.ui.event.model.EventLogData;
 import com.blued.community.utils.CommEventBusUtil;
 import com.blued.das.client.feed.FeedProtos;
-import com.igexin.c.a.c.a.d;
 import java.io.Serializable;
 import kotlin.Lazy;
 import kotlin.LazyKt;
@@ -39,9 +38,7 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/fragment/EventSignDlgFragment.class */
 public final class EventSignDlgFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19553a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<FragmentEventSignBinding>() { // from class: com.blued.community.ui.event.fragment.EventSignDlgFragment$viewBinding$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -54,9 +51,7 @@ public final class EventSignDlgFragment extends BottomSheetDialogFragment {
             return FragmentEventSignBinding.a(LayoutInflater.from(EventSignDlgFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f19554c = "";
+    private String c = "";
     private int d;
     private EventLogData e;
 
@@ -78,7 +73,7 @@ public final class EventSignDlgFragment extends BottomSheetDialogFragment {
             EventSignDlgFragment eventSignDlgFragment = new EventSignDlgFragment();
             Bundle bundle = new Bundle();
             bundle.putString("aid", aid);
-            bundle.putSerializable(d.d, eventLogData);
+            bundle.putSerializable("log_data", eventLogData);
             eventSignDlgFragment.setArguments(bundle);
             eventSignDlgFragment.show(fragmentManager, EventSignDlgFragment.class.getSimpleName());
             EventTrackFeed.a(FeedProtos.Event.ACTIVITY_SIGN_IN_PANEL_SHOW, eventLogData);
@@ -92,7 +87,7 @@ public final class EventSignDlgFragment extends BottomSheetDialogFragment {
         Intrinsics.e(this$0, "this$0");
         AnimationSet animationSet = new AnimationSet(true);
         ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 1.154f, 1.0f, 1.154f, 1, 0.5f, 1, 0.5f);
-        innerScale.setInterpolator((Interpolator) interpolator.f42545a);
+        innerScale.setInterpolator((Interpolator) interpolator.a);
         animationSet.addAnimation(scaleAnimation);
         animationSet.addAnimation(new AlphaAnimation(1.0f, 0.0f));
         animationSet.setDuration(750L);
@@ -151,16 +146,16 @@ public final class EventSignDlgFragment extends BottomSheetDialogFragment {
     }
 
     private final void l() {
-        if (CommunityManager.f19086a.a().s()) {
-            h().f18859c.setImageResource(R.drawable.event_sign_dlg_bg_dark);
+        if (CommunityManager.a.a().s()) {
+            h().c.setImageResource(R.drawable.event_sign_dlg_bg_dark);
             h().f.setTextColor(getResources().getColor(R.color.syc_EAEAEA));
             h().b.setTextColor(getResources().getColor(R.color.syc_D0D0D0));
         } else {
-            h().f18859c.setImageResource(R.drawable.event_sign_dlg_bg);
+            h().c.setImageResource(R.drawable.event_sign_dlg_bg);
             h().f.setTextColor(getResources().getColor(R.color.syc_dark_0a0a0a));
             h().b.setTextColor(getResources().getColor(R.color.syc_dark_j));
         }
-        h().f18858a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventSignDlgFragment$pQ2kRA_Dz6ipAdaTWDd8qlX3K8k
+        h().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventSignDlgFragment$pQ2kRA_Dz6ipAdaTWDd8qlX3K8k
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 EventSignDlgFragment.a(EventSignDlgFragment.this, view);
@@ -186,15 +181,15 @@ public final class EventSignDlgFragment extends BottomSheetDialogFragment {
     /* JADX WARN: Type inference failed for: r1v1, types: [android.view.animation.AccelerateDecelerateInterpolator, T] */
     public final void m() {
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = new AccelerateDecelerateInterpolator();
+        objectRef.a = new AccelerateDecelerateInterpolator();
         final ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 1.1f, 1.0f, 1.1f, 1, 0.5f, 1, 0.5f);
-        scaleAnimation.setInterpolator((Interpolator) objectRef.f42545a);
+        scaleAnimation.setInterpolator((Interpolator) objectRef.a);
         scaleAnimation.setDuration(500L);
         scaleAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.community.ui.event.fragment.EventSignDlgFragment$startAnim2$1
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
                 ScaleAnimation scaleAnimation2 = new ScaleAnimation(1.1f, 1.0f, 1.1f, 1.0f, 1, 0.5f, 1, 0.5f);
-                scaleAnimation2.setInterpolator(objectRef.f42545a);
+                scaleAnimation2.setInterpolator(objectRef.a);
                 scaleAnimation2.setDuration(500L);
                 this.h().d.startAnimation(scaleAnimation2);
             }
@@ -222,7 +217,7 @@ public final class EventSignDlgFragment extends BottomSheetDialogFragment {
     }
 
     private final void o() {
-        EventHttpUtils eventHttpUtils = EventHttpUtils.f19079a;
+        EventHttpUtils eventHttpUtils = EventHttpUtils.a;
         final ActivityFragmentActive a2 = a();
         eventHttpUtils.e(new BluedUIHttpResponse<BluedEntityA<Object>>(a2) { // from class: com.blued.community.ui.event.fragment.EventSignDlgFragment$onClickSign$1
             /* JADX INFO: Access modifiers changed from: protected */
@@ -231,7 +226,7 @@ public final class EventSignDlgFragment extends BottomSheetDialogFragment {
             public void onUIUpdate(BluedEntityA<Object> parseData) {
                 Intrinsics.e(parseData, "parseData");
                 ToastUtils.a(R.string.sign_in_success);
-                CommEventBusUtil.f20461a.c(EventSignDlgFragment.this.i());
+                CommEventBusUtil.a.c(EventSignDlgFragment.this.i());
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -240,7 +235,7 @@ public final class EventSignDlgFragment extends BottomSheetDialogFragment {
                 EventTrackFeed.a(z ? FeedProtos.Event.ACTIVITY_SIGN_IN_PANEL_SUCCESS : FeedProtos.Event.ACTIVITY_SIGN_IN_PANEL_FAIL, EventSignDlgFragment.this.k());
                 EventSignDlgFragment.this.n();
             }
-        }, this.f19554c, a());
+        }, this.c, a());
         EventTrackFeed.a(FeedProtos.Event.ACTIVITY_SIGN_IN_PANEL_NOW_CLICK, this.e);
     }
 
@@ -250,7 +245,7 @@ public final class EventSignDlgFragment extends BottomSheetDialogFragment {
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f19554c = str;
+        this.c = str;
     }
 
     public final void b(int i) {
@@ -262,7 +257,7 @@ public final class EventSignDlgFragment extends BottomSheetDialogFragment {
     }
 
     public final String i() {
-        return this.f19554c;
+        return this.c;
     }
 
     public final int j() {
@@ -273,7 +268,7 @@ public final class EventSignDlgFragment extends BottomSheetDialogFragment {
         return this.e;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
@@ -283,7 +278,7 @@ public final class EventSignDlgFragment extends BottomSheetDialogFragment {
             String string = arguments.getString("aid", "");
             Intrinsics.c(string, "it.getString(\"aid\", \"\")");
             a(string);
-            Serializable serializable = arguments.getSerializable(d.d);
+            Serializable serializable = arguments.getSerializable("log_data");
             if (serializable == null) {
                 throw new NullPointerException("null cannot be cast to non-null type com.blued.community.ui.event.model.EventLogData");
             }

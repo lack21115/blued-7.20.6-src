@@ -6,11 +6,11 @@ import com.opos.exoplayer.core.i.u;
 final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f25150a;
+    public final int f11462a;
     public final long[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int[] f25151c;
+    public final int[] f11463c;
     public final int d;
     public final long[] e;
     public final int[] f;
@@ -21,12 +21,12 @@ final class m {
         com.opos.exoplayer.core.i.a.a(jArr.length == jArr2.length);
         com.opos.exoplayer.core.i.a.a(iArr2.length == jArr2.length);
         this.b = jArr;
-        this.f25151c = iArr;
+        this.f11463c = iArr;
         this.d = i;
         this.e = jArr2;
         this.f = iArr2;
         this.g = j;
-        this.f25150a = jArr.length;
+        this.f11462a = jArr.length;
     }
 
     public int a(long j) {

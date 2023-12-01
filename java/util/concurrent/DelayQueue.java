@@ -96,7 +96,7 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E> implements B
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public /* bridge */ /* synthetic */ boolean add(Object obj) {
         return add((DelayQueue<E>) ((Delayed) obj));
     }
@@ -105,7 +105,7 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E> implements B
         return offer((DelayQueue<E>) e);
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();
@@ -290,7 +290,7 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E> implements B
         return Integer.MAX_VALUE;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();
@@ -344,7 +344,7 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E> implements B
         throw new UnsupportedOperationException("Method not decompiled: java.util.concurrent.DelayQueue.removeEQ(java.lang.Object):void");
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();
@@ -389,7 +389,7 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E> implements B
         return this.q.poll();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();
@@ -400,7 +400,7 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E> implements B
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();

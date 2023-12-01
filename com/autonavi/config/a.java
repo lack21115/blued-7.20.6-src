@@ -4,6 +4,6 @@ package com.autonavi.config;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f9288a = "AMapSDK_MAP_v9_3_1";
+    public static String f6448a = "AMapSDK_MAP_v9_3_1";
     public static boolean b = false;
 }

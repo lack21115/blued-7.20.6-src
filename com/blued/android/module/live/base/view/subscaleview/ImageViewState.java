@@ -5,28 +5,24 @@ import java.io.Serializable;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/subscaleview/ImageViewState.class */
 public class ImageViewState implements Serializable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final float f11552a;
+    private final float a;
     private final float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final float f11553c;
+    private final float c;
     private final int d;
 
     public ImageViewState(float f, PointF pointF, int i) {
-        this.f11552a = f;
+        this.a = f;
         this.b = pointF.x;
-        this.f11553c = pointF.y;
+        this.c = pointF.y;
         this.d = i;
     }
 
     public float a() {
-        return this.f11552a;
+        return this.a;
     }
 
     public PointF b() {
-        return new PointF(this.b, this.f11553c);
+        return new PointF(this.b, this.c);
     }
 
     public int c() {

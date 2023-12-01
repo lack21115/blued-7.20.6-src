@@ -17,26 +17,21 @@ import com.blued.android.module.live_china.msg.LiveMsgSendManager;
 import com.blued.android.module.live_china.utils.LiveRoomHttpUtils;
 import com.blued.android.module.live_china.utils.LiveUtils;
 import com.google.gson.JsonSyntaxException;
-import com.igexin.push.config.c;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/LiveGuideListManager.class */
 public class LiveGuideListManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LiveBaseFragment f13654a;
+    private LiveBaseFragment a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Handler f13655c = new Handler();
+    private Handler c = new Handler();
     private List<LiveGuideModel> d = new ArrayList();
     private boolean e = true;
     private List<LiveChattingModel> f = new ArrayList();
 
     public LiveGuideListManager(LiveBaseFragment liveBaseFragment, boolean z) {
-        this.f13654a = liveBaseFragment;
+        this.a = liveBaseFragment;
         this.b = z;
         a();
         c();
@@ -54,7 +49,7 @@ public class LiveGuideListManager {
             long j = liveChattingModel.msgId;
             liveChattingModel.msgId = 0L;
             this.d.add(new LiveGuideModel());
-            Handler handler = this.f13655c;
+            Handler handler = this.c;
             if (handler != null) {
                 handler.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.manager.-$$Lambda$LiveGuideListManager$tmQKXVh93d1CYF55o4U779qObBw
                     @Override // java.lang.Runnable
@@ -68,7 +63,7 @@ public class LiveGuideListManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(List<LiveGuideModel> list) {
-        if (this.f13655c == null || list == null || list.isEmpty()) {
+        if (this.c == null || list == null || list.isEmpty()) {
             return;
         }
         if (this.d == null) {
@@ -82,15 +77,15 @@ public class LiveGuideListManager {
     private LiveChattingModel b(String str) {
         if (this.b || !(LiveRoomManager.a().p() == null || LiveRoomManager.a().p().profile == null)) {
             long g = this.b ? LiveRoomInfo.a().g() : LiveRoomManager.a().f();
-            String c2 = this.b ? LiveRoomInfo.a().c() : LiveRoomManager.a().p().profile.name;
+            String c = this.b ? LiveRoomInfo.a().c() : LiveRoomManager.a().p().profile.name;
             String d = this.b ? LiveRoomInfo.a().d() : LiveRoomManager.a().p().profile.avatar;
             int r = this.b ? LiveRoomInfo.a().r() : LiveRoomManager.a().p().anchor_rich_level;
             SessionProfileModel sessionProfileModel = new SessionProfileModel();
-            sessionProfileModel.nickname = c2;
+            sessionProfileModel.nickname = c;
             sessionProfileModel.avatar = d;
             LiveChattingModel copy = LiveChattingModel.copy(ChatHelper.getChattingModelForSendmsg(LiveRoomManager.a().d(), (short) 1, str, sessionProfileModel, "", LiveRoomManager.a().j()));
             copy.fromId = g;
-            copy.fromNickName = c2;
+            copy.fromNickName = c;
             copy.fromRichLevel = r;
             return copy;
         }
@@ -112,13 +107,13 @@ public class LiveGuideListManager {
                 LiveGuideListManager.this.j(liveGuideModel);
             }
         };
-        if (this.f13655c.postDelayed(liveGuideModel.task, liveGuideModel.getNextTime())) {
+        if (this.c.postDelayed(liveGuideModel.task, liveGuideModel.getNextTime())) {
             this.d.add(liveGuideModel);
         }
     }
 
     private void c() {
-        LiveRoomHttpUtils.E(new BluedUIHttpResponse<BluedEntityA<LiveGuideModel>>(this.f13654a.getFragmentActive()) { // from class: com.blued.android.module.live_china.manager.LiveGuideListManager.1
+        LiveRoomHttpUtils.E(new BluedUIHttpResponse<BluedEntityA<LiveGuideModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.manager.LiveGuideListManager.1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -160,7 +155,7 @@ public class LiveGuideListManager {
         }
         for (LiveGuideModel liveGuideModel : this.d) {
             if (liveGuideModel != null && liveGuideModel.task != null) {
-                this.f13655c.removeCallbacks(liveGuideModel.task);
+                this.c.removeCallbacks(liveGuideModel.task);
                 AppInfo.n().removeCallbacks(liveGuideModel.task);
             }
         }
@@ -284,7 +279,7 @@ public class LiveGuideListManager {
             b = h(liveGuideModel);
         } else {
             b = g(liveGuideModel);
-            b.msgId = c.j;
+            b.msgId = 1500L;
         }
         if (b == null) {
             return;
@@ -366,7 +361,7 @@ public class LiveGuideListManager {
             return !TextUtils.isEmpty(liveGuideModel.content) ? liveGuideModel.content : "";
         }
         try {
-            liveAnnounceInfoModel = (LiveAnnounceInfoModel) AppInfo.f().fromJson(liveGuideModel.extra, (Class<Object>) LiveAnnounceInfoModel.class);
+            liveAnnounceInfoModel = (LiveAnnounceInfoModel) AppInfo.f().fromJson(liveGuideModel.extra, LiveAnnounceInfoModel.class);
         } catch (JsonSyntaxException e) {
             e.printStackTrace();
             liveAnnounceInfoModel = null;
@@ -374,15 +369,15 @@ public class LiveGuideListManager {
         if (liveAnnounceInfoModel == null || liveAnnounceInfoModel.controller != 1) {
             return "";
         }
-        String a2 = liveAnnounceInfoModel.live_time_controller == 1 ? LiveUtils.a(liveAnnounceInfoModel) : "";
+        String a = liveAnnounceInfoModel.live_time_controller == 1 ? LiveUtils.a(liveAnnounceInfoModel) : "";
         String str = liveAnnounceInfoModel.notice_controller == 1 ? liveAnnounceInfoModel.notice : "";
-        if (TextUtils.isEmpty(a2) && TextUtils.isEmpty(str)) {
+        if (TextUtils.isEmpty(a) && TextUtils.isEmpty(str)) {
             return "";
         }
-        if (!TextUtils.isEmpty(a2) && TextUtils.isEmpty(str)) {
-            return a2 + "直播";
-        } else if (!TextUtils.isEmpty(a2) || TextUtils.isEmpty(str)) {
-            return a2 + "直播，" + liveAnnounceInfoModel.notice;
+        if (!TextUtils.isEmpty(a) && TextUtils.isEmpty(str)) {
+            return a + "直播";
+        } else if (!TextUtils.isEmpty(a) || TextUtils.isEmpty(str)) {
+            return a + "直播，" + liveAnnounceInfoModel.notice;
         } else {
             return liveAnnounceInfoModel.notice;
         }
@@ -391,7 +386,7 @@ public class LiveGuideListManager {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void j(final LiveGuideModel liveGuideModel) {
         a(liveGuideModel.id);
-        LiveRoomHttpUtils.a(Integer.valueOf(liveGuideModel.id), Integer.valueOf(liveGuideModel.type), Integer.valueOf(liveGuideModel.sub_type), liveGuideModel.content, new BluedUIHttpResponse<BluedEntityA<LiveGuideModel>>(this.f13654a.getFragmentActive()) { // from class: com.blued.android.module.live_china.manager.LiveGuideListManager.2
+        LiveRoomHttpUtils.a(Integer.valueOf(liveGuideModel.id), Integer.valueOf(liveGuideModel.type), Integer.valueOf(liveGuideModel.sub_type), liveGuideModel.content, new BluedUIHttpResponse<BluedEntityA<LiveGuideModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.manager.LiveGuideListManager.2
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -438,7 +433,7 @@ public class LiveGuideListManager {
 
     public void a() {
         d();
-        this.f13655c.removeCallbacksAndMessages(null);
+        this.c.removeCallbacksAndMessages(null);
     }
 
     public void a(int i) {
@@ -454,7 +449,7 @@ public class LiveGuideListManager {
             }
             LiveGuideModel liveGuideModel = this.d.get(i3);
             if (liveGuideModel != null && liveGuideModel.id == i && liveGuideModel.task != null) {
-                this.f13655c.removeCallbacks(liveGuideModel.task);
+                this.c.removeCallbacks(liveGuideModel.task);
                 AppInfo.n().removeCallbacks(liveGuideModel.task);
                 liveGuideModel.task = null;
                 this.d.remove(i3);
@@ -486,7 +481,7 @@ public class LiveGuideListManager {
                 if (str.equals(liveGuideModel.getGuideType())) {
                     i3 = i2;
                     if (liveGuideModel.task != null) {
-                        this.f13655c.removeCallbacks(liveGuideModel.task);
+                        this.c.removeCallbacks(liveGuideModel.task);
                         AppInfo.n().removeCallbacks(liveGuideModel.task);
                         liveGuideModel.task = null;
                         this.d.remove(i2);

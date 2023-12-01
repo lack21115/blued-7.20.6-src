@@ -4,9 +4,9 @@ package com.soft.blued.ui.msg.event;
 public class KeepScreenEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f32327a;
+    public boolean f18637a;
 
     public KeepScreenEvent(boolean z) {
-        this.f32327a = z;
+        this.f18637a = z;
     }
 }

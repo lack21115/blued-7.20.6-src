@@ -25,11 +25,11 @@ import java.util.List;
 public class SearchUserFragment extends MvpFragment<SearchAllPresenter> {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f30546a = 1;
+    private int f16856a = 1;
     private int b = 10;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f30547c = true;
+    private boolean f16857c = true;
     private String d;
     private SearchNewAdapter e;
     @BindView
@@ -69,23 +69,22 @@ public class SearchUserFragment extends MvpFragment<SearchAllPresenter> {
         this.refreshLayout.a(new OnRefreshLoadMoreListener() { // from class: com.soft.blued.ui.find.fragment.SearchUserFragment.2
             @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
-                SearchAllPresenter j = SearchUserFragment.this.j();
+                SearchAllPresenter searchAllPresenter = (SearchAllPresenter) SearchUserFragment.this.j();
                 String str = SearchUserFragment.this.d;
-                j.a(str, SearchUserFragment.this.f30546a + "");
+                searchAllPresenter.a(str, SearchUserFragment.this.f16856a + "");
             }
 
             @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
-                SearchUserFragment.this.f30546a = 1;
-                SearchAllPresenter j = SearchUserFragment.this.j();
+                SearchUserFragment.this.f16856a = 1;
+                SearchAllPresenter searchAllPresenter = (SearchAllPresenter) SearchUserFragment.this.j();
                 String str = SearchUserFragment.this.d;
-                j.a(str, SearchUserFragment.this.f30546a + "");
+                searchAllPresenter.a(str, SearchUserFragment.this.f16856a + "");
             }
         });
         this.refreshLayout.i();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         this.d = getArguments().getString(UserDictionary.Words.WORD);
@@ -93,12 +92,10 @@ public class SearchUserFragment extends MvpFragment<SearchAllPresenter> {
         c();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, List list) {
         super.a(str, list);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
         this.refreshLayout.h();
@@ -107,14 +104,14 @@ public class SearchUserFragment extends MvpFragment<SearchAllPresenter> {
             this.refreshLayout.l(false);
             return;
         }
-        this.f30546a++;
+        this.f16856a++;
         this.refreshLayout.l(true);
     }
 
     public void a(List<UserFindResult> list) {
         this.llSearchEmpty.setVisibility(8);
         this.userList.setVisibility(0);
-        if (this.f30546a == 1) {
+        if (this.f16856a == 1) {
             this.e.a(list, this.d);
         } else {
             this.e.b(list, this.d);
@@ -128,22 +125,18 @@ public class SearchUserFragment extends MvpFragment<SearchAllPresenter> {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_search_list;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void g_(String str) {
         super.g_(str);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public String h() {
         return "SearchUserFragment";
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void l() {
     }
 }

@@ -29,8 +29,8 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
     private float proportionY_;
     private static final TagLocationExtra DEFAULT_INSTANCE = new TagLocationExtra();
     private static final Parser<TagLocationExtra> PARSER = new AbstractParser<TagLocationExtra>() { // from class: cn.irisgw.live.TagLocationExtra.1
-        @Override // com.google.protobuf.Parser
-        public TagLocationExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public TagLocationExtra m7547parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new TagLocationExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -61,22 +61,22 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
             boolean unused = TagLocationExtra.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m7549addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public TagLocationExtra build() {
-            TagLocationExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public TagLocationExtra m7551build() {
+            TagLocationExtra m7553buildPartial = m7553buildPartial();
+            if (m7553buildPartial.isInitialized()) {
+                return m7553buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m7553buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public TagLocationExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public TagLocationExtra m7553buildPartial() {
             TagLocationExtra tagLocationExtra = new TagLocationExtra(this);
             tagLocationExtra.proportionX_ = this.proportionX_;
             tagLocationExtra.proportionY_ = this.proportionY_;
@@ -86,8 +86,8 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
             return tagLocationExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m7557clear() {
             super.clear();
             this.proportionX_ = 0.0f;
             this.proportionY_ = 0.0f;
@@ -102,8 +102,8 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m7559clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -113,8 +113,8 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m7562clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -130,10 +130,9 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m7568clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.TagLocationExtraOrBuilder
@@ -141,12 +140,11 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
             return this.add_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public TagLocationExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public TagLocationExtra m7570getDefaultInstanceForType() {
             return TagLocationExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_TagLocationExtra_descriptor;
         }
@@ -183,12 +181,10 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
             return this.proportionY_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_TagLocationExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(TagLocationExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -210,18 +206,18 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
             if (tagLocationExtra.getAdd() != 0) {
                 setAdd(tagLocationExtra.getAdd());
             }
-            mergeUnknownFields(tagLocationExtra.unknownFields);
+            m7579mergeUnknownFields(tagLocationExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.TagLocationExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.TagLocationExtra.Builder m7576mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -266,11 +262,11 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.TagLocationExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.TagLocationExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.TagLocationExtra.Builder.m7576mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.TagLocationExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m7575mergeFrom(Message message) {
             if (message instanceof TagLocationExtra) {
                 return mergeFrom((TagLocationExtra) message);
             }
@@ -278,8 +274,8 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m7579mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -289,8 +285,8 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m7581setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -325,13 +321,13 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m7583setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m7585setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -391,66 +387,65 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m7546toBuilder();
     }
 
     public static Builder newBuilder(TagLocationExtra tagLocationExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(tagLocationExtra);
+        return DEFAULT_INSTANCE.m7546toBuilder().mergeFrom(tagLocationExtra);
     }
 
     public static TagLocationExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (TagLocationExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static TagLocationExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (TagLocationExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static TagLocationExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (TagLocationExtra) PARSER.parseFrom(byteString);
     }
 
     public static TagLocationExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (TagLocationExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static TagLocationExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (TagLocationExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static TagLocationExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (TagLocationExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static TagLocationExtra parseFrom(InputStream inputStream) throws IOException {
-        return (TagLocationExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static TagLocationExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (TagLocationExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static TagLocationExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (TagLocationExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static TagLocationExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (TagLocationExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static TagLocationExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (TagLocationExtra) PARSER.parseFrom(bArr);
     }
 
     public static TagLocationExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (TagLocationExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<TagLocationExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -467,8 +462,8 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
         return this.add_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public TagLocationExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public TagLocationExtra m7541getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -494,7 +489,6 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<TagLocationExtra> getParserForType() {
         return PARSER;
     }
@@ -509,7 +503,6 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
         return this.proportionY_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -539,12 +532,10 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -554,12 +545,10 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_TagLocationExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(TagLocationExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -572,28 +561,26 @@ public final class TagLocationExtra extends GeneratedMessageV3 implements TagLoc
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m7544newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m7543newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new TagLocationExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m7546toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         float f = this.proportionX_;
         if (f != 0.0f) {

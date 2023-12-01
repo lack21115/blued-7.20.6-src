@@ -6,6 +6,7 @@ import android.os.Process;
 import cn.com.chinatelecom.account.api.a.b;
 import cn.com.chinatelecom.account.api.e.d;
 import cn.com.chinatelecom.account.api.e.g;
+import com.xiaomi.mipush.sdk.Constants;
 import java.security.interfaces.RSAPublicKey;
 
 /* loaded from: source-8756600-dex2jar.jar:cn/com/chinatelecom/account/api/ClientUtils.class */
@@ -80,7 +81,7 @@ public final class ClientUtils {
     }
 
     public static String getOs() {
-        return getMobileBrand() + "-" + getModel() + "-A:" + Build.VERSION.RELEASE;
+        return getMobileBrand() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + getModel() + "-A:" + Build.VERSION.RELEASE;
     }
 
     public static String getPID() {

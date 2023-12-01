@@ -25,16 +25,14 @@ import java.io.File;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/modules/PublishModule.class */
 public class PublishModule {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f18633a = PublishModule.class.getSimpleName();
+    public static final String a = PublishModule.class.getSimpleName();
     static IPublish b = new IPublish() { // from class: com.blued.android.modules.PublishModule.1
         /* JADX INFO: Access modifiers changed from: private */
         public void a(final Context context, final String str, final int i, BluedAlbum bluedAlbum, final PublishProxy.IUploadAuthVideoListener iUploadAuthVideoListener) {
             QiniuUploadUtils.a(StvMediaUtils.b(str), bluedAlbum, new QiniuUploadTools.QiNiuListener() { // from class: com.blued.android.modules.PublishModule.1.2
                 @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
                 public void a(String str2) {
-                    Logger.b(PublishModule.f18633a, "uploadQiNiu = onFailure", str2);
+                    Logger.b(PublishModule.a, new Object[]{"uploadQiNiu = onFailure", str2});
                     iUploadAuthVideoListener.a(-1, str2);
                 }
 
@@ -45,7 +43,7 @@ public class PublishModule {
 
                 @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
                 public void a(String str2, String str3) {
-                    Logger.b(PublishModule.f18633a, "uploadQiNiu = onSuccess", str2);
+                    Logger.b(PublishModule.a, new Object[]{"uploadQiNiu = onSuccess", str2});
                     if (iUploadAuthVideoListener.a()) {
                         return;
                     }
@@ -62,39 +60,35 @@ public class PublishModule {
         /* JADX INFO: Access modifiers changed from: private */
         public void a(Context context, final String str, String str2, int i, final PublishProxy.IUploadAuthVideoListener iUploadAuthVideoListener) {
             FlashVideoHttpUtils.a(context, new BluedUIHttpResponse<BluedEntity<BluedIngSelfFeed, BluedIngSelfFeed>>() { // from class: com.blued.android.modules.PublishModule.1.3
-
-                /* renamed from: a  reason: collision with root package name */
-                boolean f18638a = false;
+                boolean a = false;
                 int b = -1;
-
-                /* renamed from: c  reason: collision with root package name */
-                String f18639c = "";
+                String c = "";
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i2, String str3) {
-                    Logger.b(PublishModule.f18633a, "getTokenForVideoAuth = onFailure | statusCode =", Integer.valueOf(i2), " | errorMessage = ", str3);
-                    this.f18638a = true;
+                    Logger.b(PublishModule.a, new Object[]{"getTokenForVideoAuth = onFailure | statusCode =", Integer.valueOf(i2), " | errorMessage = ", str3});
+                    this.a = true;
                     this.b = i2;
-                    this.f18639c = str3;
+                    this.c = str3;
                     return super.onUIFailure(i2, str3);
                 }
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
-                    if (this.f18638a) {
-                        iUploadAuthVideoListener.a(this.b, this.f18639c);
+                    if (this.a) {
+                        iUploadAuthVideoListener.a(this.b, this.c);
                     }
                 }
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
-                    Logger.b(PublishModule.f18633a, " synPhotoServer onStart()");
+                    Logger.b(PublishModule.a, new Object[]{" synPhotoServer onStart()"});
                     super.onUIStart();
                 }
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity<BluedIngSelfFeed, BluedIngSelfFeed> bluedEntity) {
-                    Logger.b(PublishModule.f18633a, "synPhotoServer = onSuccess");
+                    Logger.b(PublishModule.a, new Object[]{"synPhotoServer = onSuccess"});
                     try {
                         if (BluedHttpUtils.a(bluedEntity.code, bluedEntity.message)) {
                             StvThreadPoolHelper.a().a((Runnable) new StvThreadPoolHelper.StvThread(new Runnable() { // from class: com.blued.android.modules.PublishModule.1.3.1
@@ -114,7 +108,7 @@ public class PublishModule {
                             iUploadAuthVideoListener.b();
                         }
                     } catch (Exception e) {
-                        Logger.b(PublishModule.f18633a, "e = ", e);
+                        Logger.b(PublishModule.a, new Object[]{"e = ", e});
                         e.printStackTrace();
                     }
                 }
@@ -168,22 +162,18 @@ public class PublishModule {
                 return;
             }
             AppHttpUtils.a((Context) null, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>() { // from class: com.blued.android.modules.PublishModule.1.1
-
-                /* renamed from: a  reason: collision with root package name */
-                boolean f18634a = false;
+                boolean a = false;
                 int b = -1;
-
-                /* renamed from: c  reason: collision with root package name */
-                String f18635c = "";
+                String c = "";
 
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                     if (!BluedHttpUtils.a(bluedEntityA.code, bluedEntityA.message)) {
-                        iUploadAuthVideoListener.a(this.b, this.f18635c);
+                        iUploadAuthVideoListener.a(this.b, this.c);
                     } else if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
-                        iUploadAuthVideoListener.a(this.b, this.f18635c);
+                        iUploadAuthVideoListener.a(this.b, this.c);
                     } else {
                         a(context, str, i, bluedEntityA.data.get(0), iUploadAuthVideoListener);
                     }
@@ -191,17 +181,17 @@ public class PublishModule {
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i2, String str2) {
-                    Logger.b(PublishModule.f18633a, "getTokenForVideoAuth = onFailure | statusCode =", Integer.valueOf(i2), " | errorMessage = ", str2);
-                    this.f18634a = true;
+                    Logger.b(PublishModule.a, new Object[]{"getTokenForVideoAuth = onFailure | statusCode =", Integer.valueOf(i2), " | errorMessage = ", str2});
+                    this.a = true;
                     this.b = i2;
-                    this.f18635c = str2;
+                    this.c = str2;
                     return super.onUIFailure(i2, str2);
                 }
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
-                    if (this.f18634a) {
-                        iUploadAuthVideoListener.a(this.b, this.f18635c);
+                    if (this.a) {
+                        iUploadAuthVideoListener.a(this.b, this.c);
                     }
                 }
             });

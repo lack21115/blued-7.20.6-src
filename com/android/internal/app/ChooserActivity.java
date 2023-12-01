@@ -16,7 +16,7 @@ public class ChooserActivity extends ResolverActivity {
 
     private void modifyTargetIntent(Intent intent) {
         String action = intent.getAction();
-        if (Intent.ACTION_SEND.equals(action) || Intent.ACTION_SEND_MULTIPLE.equals(action)) {
+        if ("android.intent.action.SEND".equals(action) || "android.intent.action.SEND_MULTIPLE".equals(action)) {
             intent.addFlags(134742016);
         }
     }
@@ -92,7 +92,7 @@ public class ChooserActivity extends ResolverActivity {
             return;
         }
         try {
-            this.mChosenComponentSender.sendIntent(this, -1, new Intent().putExtra(Intent.EXTRA_CHOSEN_COMPONENT, component), null, null);
+            this.mChosenComponentSender.sendIntent(this, -1, new Intent().putExtra("android.intent.extra.CHOSEN_COMPONENT", component), null, null);
         } catch (IntentSender.SendIntentException e) {
             Slog.e(TAG, "Unable to launch supplied IntentSender to report the chosen component: " + e);
         }
@@ -102,7 +102,7 @@ public class ChooserActivity extends ResolverActivity {
     @Override // com.android.internal.app.ResolverActivity, android.app.Activity
     public void onCreate(Bundle bundle) {
         Intent intent = getIntent();
-        Parcelable parcelableExtra = intent.getParcelableExtra(Intent.EXTRA_INTENT);
+        Parcelable parcelableExtra = intent.getParcelableExtra("android.intent.extra.INTENT");
         if (!(parcelableExtra instanceof Intent)) {
             Log.w(TAG, "Target is not an intent: " + parcelableExtra);
             finish();
@@ -113,13 +113,13 @@ public class ChooserActivity extends ResolverActivity {
         if (intent2 != null) {
             modifyTargetIntent(intent2);
         }
-        this.mReplacementExtras = intent.getBundleExtra(Intent.EXTRA_REPLACEMENT_EXTRAS);
-        CharSequence charSequenceExtra = intent.getCharSequenceExtra(Intent.EXTRA_TITLE);
+        this.mReplacementExtras = intent.getBundleExtra("android.intent.extra.REPLACEMENT_EXTRAS");
+        CharSequence charSequenceExtra = intent.getCharSequenceExtra("android.intent.extra.TITLE");
         int i = 0;
         if (charSequenceExtra == null) {
             i = 17040727;
         }
-        Parcelable[] parcelableArrayExtra = intent.getParcelableArrayExtra(Intent.EXTRA_INITIAL_INTENTS);
+        Parcelable[] parcelableArrayExtra = intent.getParcelableArrayExtra("android.intent.extra.INITIAL_INTENTS");
         Intent[] intentArr = null;
         if (parcelableArrayExtra != null) {
             Intent[] intentArr2 = new Intent[parcelableArrayExtra.length];
@@ -142,7 +142,7 @@ public class ChooserActivity extends ResolverActivity {
                 }
             }
         }
-        this.mChosenComponentSender = (IntentSender) intent.getParcelableExtra(Intent.EXTRA_CHOSEN_COMPONENT_INTENT_SENDER);
+        this.mChosenComponentSender = (IntentSender) intent.getParcelableExtra("android.intent.extra.CHOSEN_COMPONENT_INTENT_SENDER");
         setSafeForwardingMode(true);
         super.onCreate(bundle, intent2, charSequenceExtra, i, intentArr, null, false);
     }

@@ -11,21 +11,21 @@ import android.graphics.drawable.Drawable;
 public class c extends Drawable {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f38910a;
+    private float f25219a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f38911c;
+    private float f25220c;
     private float d;
     private Path e;
     private Paint f;
     private RectF g;
 
     public c(int i, float f, float f2, float f3, float f4) {
-        this.f38910a = f;
+        this.f25219a = f;
         this.b = f2;
         this.d = f3;
-        this.f38911c = f4;
+        this.f25220c = f4;
         Paint paint = new Paint();
         this.f = paint;
         paint.setStyle(Paint.Style.FILL);
@@ -49,10 +49,10 @@ public class c extends Drawable {
         this.e.reset();
         Path path = this.e;
         RectF rectF = this.g;
-        float f = this.f38910a;
+        float f = this.f25219a;
         float f2 = this.b;
         float f3 = this.d;
-        float f4 = this.f38911c;
+        float f4 = this.f25220c;
         path.addRoundRect(rectF, new float[]{f, f, f2, f2, f3, f3, f4, f4}, Path.Direction.CCW);
         this.e.close();
         canvas.drawPath(this.e, this.f);

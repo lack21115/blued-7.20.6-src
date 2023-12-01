@@ -2,6 +2,8 @@ package com.blued.community.http;
 
 import android.text.TextUtils;
 import com.amap.api.services.district.DistrictSearchQuery;
+import com.android.internal.util.cm.QSConstants;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedHttpTools;
@@ -10,8 +12,6 @@ import com.blued.android.module.common.url.BluedHttpUrl;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.community.auto.CommunityServiceManager;
 import com.blued.community.ui.event.model.EventPostModel;
-import com.sina.weibo.sdk.constant.WBConstants;
-import com.sina.weibo.sdk.constant.WBPageConstants;
 import java.util.Map;
 import kotlin.Deprecated;
 import kotlin.Metadata;
@@ -21,9 +21,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/http/EventHttpUtils.class */
 public final class EventHttpUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final EventHttpUtils f19079a = new EventHttpUtils();
+    public static final EventHttpUtils a = new EventHttpUtils();
 
     private EventHttpUtils() {
     }
@@ -44,7 +42,7 @@ public final class EventHttpUtils {
         ajaxParams.put("quota_num", String.valueOf(model.quota_num));
         if (model.mode_id == 1) {
             ajaxParams.put(DistrictSearchQuery.KEYWORDS_CITY, model.city);
-            ajaxParams.put("location", model.location);
+            ajaxParams.put(QSConstants.TILE_LOCATION, model.location);
             ajaxParams.put("location_detail", model.location_detail);
             if (!TextUtils.isEmpty(model.longitude)) {
                 ajaxParams.put("longitude", model.longitude);
@@ -89,8 +87,8 @@ public final class EventHttpUtils {
         String a2 = Intrinsics.a(CommunityHttpUtils.a(), (Object) "/users/activity/subscribe?filter=get");
         Map<String, String> ajaxParams = BluedHttpTools.a();
         Intrinsics.c(ajaxParams, "ajaxParams");
-        ajaxParams.put(WBPageConstants.ParamKey.PAGE, String.valueOf(i));
-        ajaxParams.put("size", String.valueOf(i2));
+        ajaxParams.put("page", String.valueOf(i));
+        ajaxParams.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, String.valueOf(i2));
         HttpManager.a(a2, ajaxCallBack, iRequestHost).b(BluedHttpTools.a(true)).a(ajaxParams).h();
     }
 
@@ -99,7 +97,7 @@ public final class EventHttpUtils {
         Intrinsics.e(filter, "filter");
         Map<String, String> ajaxParams = BluedHttpTools.a();
         Intrinsics.c(ajaxParams, "ajaxParams");
-        ajaxParams.put(WBPageConstants.ParamKey.PAGE, String.valueOf(i));
+        ajaxParams.put("page", String.valueOf(i));
         ajaxParams.put("filter", filter);
         HttpManager.a(Intrinsics.a(CommunityHttpUtils.a(), (Object) "/users/activity"), ajaxCallBack, iRequestHost).b(BluedHttpTools.a(true)).a(ajaxParams).h();
     }
@@ -112,7 +110,7 @@ public final class EventHttpUtils {
         Intrinsics.e(city_longitude, "city_longitude");
         Map<String, String> ajaxParams = BluedHttpTools.a();
         Intrinsics.c(ajaxParams, "ajaxParams");
-        ajaxParams.put(WBPageConstants.ParamKey.PAGE, String.valueOf(i));
+        ajaxParams.put("page", String.valueOf(i));
         ajaxParams.put("latitude", latitude);
         ajaxParams.put("longitude", longitude);
         if (TextUtils.isEmpty(city_latitude) || TextUtils.isEmpty(city_longitude)) {
@@ -142,7 +140,7 @@ public final class EventHttpUtils {
         Intrinsics.e(evaluateId, "evaluateId");
         Map<String, String> ajaxParams = BluedHttpTools.a();
         Intrinsics.c(ajaxParams, "ajaxParams");
-        ajaxParams.put(WBConstants.GAME_PARAMS_SCORE, String.valueOf(i));
+        ajaxParams.put("score", String.valueOf(i));
         String str = evaluateId;
         if (evaluateId.length() > 0) {
             String substring = evaluateId.substring(evaluateId.length() - 1, evaluateId.length());
@@ -187,8 +185,8 @@ public final class EventHttpUtils {
             ajaxParams.put("activity_uid", str2);
         }
         Intrinsics.c(ajaxParams, "ajaxParams");
-        ajaxParams.put(WBPageConstants.ParamKey.PAGE, String.valueOf(i));
-        ajaxParams.put("size", String.valueOf(i2));
+        ajaxParams.put("page", String.valueOf(i));
+        ajaxParams.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, String.valueOf(i2));
         HttpManager.a(a2, ajaxCallBack, iRequestHost).b(BluedHttpTools.a(true)).a(ajaxParams).h();
     }
 

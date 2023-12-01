@@ -14,7 +14,6 @@ import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageFileLoader;
 import com.blued.android.core.net.IRequestHost;
-import com.blued.android.core.ui.BaseFragmentActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.framework.http.parser.BluedEntityA;
@@ -68,11 +67,11 @@ import java.util.ArrayList;
 public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, UserRelationshipUtils.IAddOrRemoveAttentionDone {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34278a;
+    public Context f20587a;
     public IUserInfoNewContract.IView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public IRequestHost f34279c;
+    public IRequestHost f20588c;
     public Dialog d;
     public boolean e;
     public String f;
@@ -92,22 +91,20 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<UserInfoEntity> parseData(String str) {
             if (UserInfoNewPresenter.this.e) {
                 FileCache.a(UserInfoFragmentNew.class.getSimpleName(), str);
             }
-            return (BluedEntityA) super.parseData(str);
+            return super.parseData(str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<UserInfoEntity> bluedEntityA) {
             if (bluedEntityA == null || !bluedEntityA.hasData()) {
                 AppMethods.d(2131888227);
             } else {
-                UserInfoNewPresenter.this.l = bluedEntityA.data.get(0);
+                UserInfoNewPresenter.this.l = (UserInfoEntity) bluedEntityA.data.get(0);
                 if (UserInfoNewPresenter.this.l != null) {
                     UserInfoNewPresenter.this.e = UserInfo.getInstance().getLoginUserInfo().getUid().equals(UserInfoNewPresenter.this.l.uid);
                     if (UserInfoNewPresenter.this.e) {
@@ -135,7 +132,7 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
                         }
                         UserInfoNewPresenter.this.q();
                     }
-                    if (!TextUtils.isEmpty(UserInfoNewPresenter.this.l.uid) && SubscribeNumberManager.f32449a.a(UserInfoNewPresenter.this.l.uid, (Short) 2)) {
+                    if (!TextUtils.isEmpty(UserInfoNewPresenter.this.l.uid) && SubscribeNumberManager.f18759a.a(UserInfoNewPresenter.this.l.uid, (Short) 2)) {
                         UserInfoNewPresenter userInfoNewPresenter = UserInfoNewPresenter.this;
                         userInfoNewPresenter.c(userInfoNewPresenter.l.uid);
                     }
@@ -148,22 +145,20 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
             UserInfoNewPresenter.this.b.a(UserInfoNewPresenter.this.l, 200);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             UserInfoNewPresenter.this.b.a(UserInfoNewPresenter.this.l, i);
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
         }
     }
 
     public UserInfoNewPresenter(Context context, IUserInfoNewContract.IView iView, String str, boolean z, boolean z2, boolean z3, IRequestHost iRequestHost, MsgSourceEntity msgSourceEntity, UserBasicModel userBasicModel) {
-        this.f34278a = context;
+        this.f20587a = context;
         this.b = iView;
-        this.f34279c = iRequestHost;
+        this.f20588c = iRequestHost;
         this.f = str;
         this.g = z;
         this.h = z2;
@@ -181,10 +176,10 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
         Bitmap decodeFile = BitmapFactory.decodeFile(file.getAbsolutePath());
         int min = Math.min(decodeFile.getWidth(), decodeFile.getHeight());
         double d = min > 540 ? min / LiveProtos.Event.LIVE_BAG_CHAT_MARK_SHOW_VALUE : 1.0d;
-        Bitmap a2 = BitmapUtils.a(this.f34278a, TypefaceUtils.a(this.f34278a, this.l.name, d));
+        Bitmap a2 = BitmapUtils.a(this.f20587a, TypefaceUtils.a(this.f20587a, this.l.name, d));
         Bitmap bitmap = decodeFile;
         if (a2 != null) {
-            bitmap = this.e ? decodeFile : BitmapUtils.a(this.f34278a, decodeFile, a2, (int) (Math.max(d, 1.0d) * 10.0d), (int) (Math.max(d, 1.0d) * 10.0d));
+            bitmap = this.e ? decodeFile : BitmapUtils.a(this.f20587a, decodeFile, a2, (int) (Math.max(d, 1.0d) * 10.0d), (int) (Math.max(d, 1.0d) * 10.0d));
         }
         if (bitmap == null) {
             return;
@@ -195,23 +190,19 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, BluedAlbum bluedAlbum) {
         QiniuUploadUtils.a(str, bluedAlbum, new QiniuUploadTools.QiNiuListener() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.7
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2) {
-                if (UserInfoNewPresenter.this.f34279c.isActive()) {
+                if (UserInfoNewPresenter.this.f20588c.isActive()) {
                     DialogUtils.b(UserInfoNewPresenter.this.d);
                 }
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, double d) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, String str3) {
                 UserInfoNewPresenter.this.f(str2);
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public boolean a() {
                 return false;
             }
@@ -220,9 +211,8 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f(final String str) {
-        MineHttpUtils.d(this.f34278a, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(this.f34279c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.8
+        MineHttpUtils.d(this.f20587a, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(this.f20588c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.8
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 UserInfoNewPresenter.this.l.background_photo = str;
@@ -231,32 +221,29 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
                 AppMethods.d((int) R.string.profile_background_upload_success);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 return super.onUIFailure(i, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(UserInfoNewPresenter.this.d);
             }
-        }, str, this.f34279c);
+        }, str, this.f20588c);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void g(String str) {
-        BlackConfirmUtil.f34325a.a(this.f34278a, str, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.11
+        BlackConfirmUtil.f20634a.a(this.f20587a, str, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.11
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                UserHttpUtils.b(UserInfoNewPresenter.this.f34278a, new BluedUIHttpResponse<BluedEntityA<Object>>(UserInfoNewPresenter.this.f34279c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.11.1
+                UserHttpUtils.b(UserInfoNewPresenter.this.f20587a, new BluedUIHttpResponse<BluedEntityA<Object>>(UserInfoNewPresenter.this.f20588c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.11.1
 
                     /* renamed from: a  reason: collision with root package name */
-                    boolean f34283a;
+                    boolean f20592a;
 
                     /* JADX INFO: Access modifiers changed from: protected */
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                         AppMethods.d((int) R.string.add_black_success);
@@ -275,21 +262,19 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
                         UserInfoNewPresenter.this.b.b();
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public boolean onUIFailure(int i2, String str2) {
                         if (i2 == 403902) {
-                            this.f34283a = true;
+                            this.f20592a = true;
                             return true;
                         }
                         return super.onUIFailure(i2, str2);
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public void onUIFinish() {
                         DialogUtils.b(UserInfoNewPresenter.this.d);
-                        if (this.f34283a) {
-                            BlackConfirmUtil.f34325a.a(UserInfoNewPresenter.this.f34278a);
-                            this.f34283a = false;
+                        if (this.f20592a) {
+                            BlackConfirmUtil.f20634a.a(UserInfoNewPresenter.this.f20587a);
+                            this.f20592a = false;
                             if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 2) {
                                 InstantLog.a("profile_max_blacklist", 1);
                                 EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PROFILE_MAX_BLACKLIST, 1);
@@ -301,12 +286,11 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
                         super.onUIFinish();
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public void onUIStart() {
                         DialogUtils.a(UserInfoNewPresenter.this.d);
                         super.onUIStart();
                     }
-                }, UserInfo.getInstance().getLoginUserInfo().getUid(), UserInfoNewPresenter.this.l.uid, UserInfoNewPresenter.this.f34279c);
+                }, UserInfo.getInstance().getLoginUserInfo().getUid(), UserInfoNewPresenter.this.l.uid, UserInfoNewPresenter.this.f20588c);
             }
         });
     }
@@ -319,10 +303,9 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
         }
         SessionModel snapSessionModel = ChatManager.getInstance().getSnapSessionModel((short) 2, Long.valueOf(this.l.uid).longValue());
         if (snapSessionModel != null) {
-            this.m = (SessionSettingModel) snapSessionModel.sessionSettingModel;
+            this.m = snapSessionModel.sessionSettingModel;
         } else {
             ChatManager.getInstance().getSessionSettingModel((short) 2, Long.valueOf(this.l.uid).longValue(), new FetchDataListener<SessionSettingBaseModel>() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.16
-                @Override // com.blued.android.chat.listener.FetchDataListener
                 /* renamed from: a */
                 public void onFetchData(SessionSettingBaseModel sessionSettingBaseModel) {
                     UserInfoNewPresenter.this.m = (SessionSettingModel) sessionSettingBaseModel;
@@ -364,41 +347,37 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
 
     public void a(boolean z) {
         if (!z) {
-            UserHttpUtils.h(new BluedUIHttpResponse(this.f34279c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.20
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
+            UserHttpUtils.h(new BluedUIHttpResponse(this.f20588c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.20
                 public boolean onUIFailure(int i, String str, String str2) {
                     if (i == 10001) {
-                        AppMethods.a((CharSequence) UserInfoNewPresenter.this.f34278a.getString(R.string.invisible_to_him_full));
+                        AppMethods.a(UserInfoNewPresenter.this.f20587a.getString(R.string.invisible_to_him_full));
                         EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PERSONAL_MORE_HIDE_LIMIT_SHOW, UserInfoNewPresenter.this.e().uid);
                         return true;
                     }
                     return true;
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity bluedEntity) {
                     UserInfoNewPresenter.this.l.stealth_status = 1;
                     UserInfoNewPresenter.this.b.a(UserInfoNewPresenter.this.l);
-                    AppMethods.a((CharSequence) UserInfoNewPresenter.this.f34278a.getString(R.string.invisible_to_him_success));
+                    AppMethods.a(UserInfoNewPresenter.this.f20587a.getString(R.string.invisible_to_him_success));
                     EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PERSONAL_MORE_HIDE_SUCCESS_SHOW, UserInfoNewPresenter.this.e().uid);
                 }
-            }, this.l.uid, this.f34279c);
+            }, this.l.uid, this.f20588c);
             return;
         }
         ArrayList arrayList = new ArrayList();
         arrayList.add(this.l.uid);
-        UserHttpUtils.a(new BluedUIHttpResponse(this.f34279c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.19
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        UserHttpUtils.a(new BluedUIHttpResponse(this.f20588c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.19
             public void onUIUpdate(BluedEntity bluedEntity) {
                 UserInfoNewPresenter.this.l.stealth_status = 0;
                 UserInfoNewPresenter.this.b.a(UserInfoNewPresenter.this.l);
-                AppMethods.a((CharSequence) UserInfoNewPresenter.this.f34278a.getString(R.string.invisible_to_him_cancel));
+                AppMethods.a(UserInfoNewPresenter.this.f20587a.getString(R.string.invisible_to_him_cancel));
                 EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PERSONAL_MORE_HIDE_CANCEL_SUCCESS_SHOW, UserInfoNewPresenter.this.e().uid);
             }
-        }, arrayList, this.f34279c);
+        }, arrayList, this.f20588c);
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
     }
 
@@ -420,16 +399,15 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        UserHttpUtils.f(new BluedUIHttpResponse<BluedEntityA<ServiceMenuModel>>(this.f34279c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.3
+        UserHttpUtils.f(new BluedUIHttpResponse<BluedEntityA<ServiceMenuModel>>(this.f20588c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<ServiceMenuModel> bluedEntityA) {
                 if (bluedEntityA != null) {
                     UserInfoNewPresenter.this.b.a(bluedEntityA.data);
                 }
             }
-        }, str, this.f34279c);
+        }, str, this.f20588c);
     }
 
     public void d() {
@@ -439,47 +417,42 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
         }
         UserHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<UserFindResult>>(this.b.c()) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserFindResult> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
                     UserInfoNewPresenter.this.b.a(bluedEntityA.data, bluedEntityA.hasMore());
                 } else {
-                    ToastUtils.a(UserInfoNewPresenter.this.f34278a.getString(R.string.user_no_recommend_users));
+                    ToastUtils.a(UserInfoNewPresenter.this.f20587a.getString(R.string.user_no_recommend_users));
                 }
             }
         }, this.b.c(), this.l.uid, "1", "10");
     }
 
     public void d(final String str) {
-        LoginRegisterHttpUtils.a(this.f34278a, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(this.f34279c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.6
+        LoginRegisterHttpUtils.a(this.f20587a, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(this.f20588c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.6
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                UserInfoNewPresenter.this.a(str, bluedEntityA.data.get(0));
+                UserInfoNewPresenter.this.a(str, (BluedAlbum) bluedEntityA.data.get(0));
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 return super.onUIFailure(i, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(UserInfoNewPresenter.this.d);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(UserInfoNewPresenter.this.d);
             }
-        }, this.f34279c);
+        }, this.f20588c);
     }
 
     public UserInfoEntity e() {
@@ -509,20 +482,18 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
         if (LiveFloatManager.a().x()) {
             return;
         }
-        YYRoomInfoManager.e().a((BaseFragmentActivity) this.f34278a, str, "personal_yy_icon");
+        YYRoomInfoManager.e().a(this.f20587a, str, "personal_yy_icon");
     }
 
     public void f() {
-        Context context = this.f34278a;
-        CommonAlertDialog.a(context, context.getResources().getString(R.string.common_string_notice), 20, (String) null, (String) null, (String) null, this.l.note, this.f34278a.getString(R.string.please_input_user_comment), new CommonAlertDialog.TextOnClickListener() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.4
-            @Override // com.blued.android.module.common.widget.dialog.CommonAlertDialog.TextOnClickListener
+        Context context = this.f20587a;
+        CommonAlertDialog.a(context, context.getResources().getString(R.string.common_string_notice), 20, (String) null, (String) null, (String) null, this.l.note, this.f20587a.getString(R.string.please_input_user_comment), new CommonAlertDialog.TextOnClickListener() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.4
             public void a(final String str) {
                 if (str.equals(UserInfoNewPresenter.this.l.note)) {
                     AppMethods.d((int) R.string.please_input_user_comment);
                 } else {
-                    MineHttpUtils.h(UserInfoNewPresenter.this.f34278a, new BluedUIHttpResponse<BluedEntityA<Object>>(UserInfoNewPresenter.this.f34279c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.4.1
+                    MineHttpUtils.h(UserInfoNewPresenter.this.f20587a, new BluedUIHttpResponse<BluedEntityA<Object>>(UserInfoNewPresenter.this.f20588c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.4.1
                         /* JADX INFO: Access modifiers changed from: protected */
-                        @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         /* renamed from: a */
                         public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                             AppMethods.d((int) R.string.modify_note_success);
@@ -531,18 +502,16 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
                             UserInfoNewPresenter.this.h(str);
                         }
 
-                        @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public void onUIFinish() {
                             DialogUtils.b(UserInfoNewPresenter.this.d);
                             super.onUIFinish();
                         }
 
-                        @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public void onUIStart() {
                             DialogUtils.a(UserInfoNewPresenter.this.d);
                             super.onUIStart();
                         }
-                    }, UserInfo.getInstance().getLoginUserInfo().getUid(), str, UserInfoNewPresenter.this.l.uid, UserInfoNewPresenter.this.f34279c);
+                    }, UserInfo.getInstance().getLoginUserInfo().getUid(), str, UserInfoNewPresenter.this.l.uid, UserInfoNewPresenter.this.f20588c);
                 }
             }
         }, (DialogInterface.OnClickListener) null);
@@ -568,34 +537,30 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
     }
 
     public void i() {
-        UserHttpUtils.c(new BluedUIHttpResponse<BluedEntityA>(this.f34279c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.5
+        UserHttpUtils.c(new BluedUIHttpResponse<BluedEntityA>(this.f20588c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.5
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
-                AppMethods.d(2131887470);
+                AppMethods.d((int) R.string.del_success);
                 UserInfoNewPresenter.this.l.background_photo = "";
                 UserInfoNewPresenter.this.l.background_photo_auditing = 0;
                 UserInfoNewPresenter.this.b.a(UserInfoNewPresenter.this.l);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(UserInfoNewPresenter.this.d);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(UserInfoNewPresenter.this.d);
             }
-        }, this.f34279c);
+        }, this.f20588c);
     }
 
     public void j() {
         ImageFileLoader.a((IRequestHost) null).b(AvatarUtils.a(3, this.l.background_photo)).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.user.presenter.-$$Lambda$UserInfoNewPresenter$Aij8wt4Bso5z1BQI7f0wX7qWlWE
-            @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
             public final void onUIFinish(File file, Exception exc) {
                 UserInfoNewPresenter.this.a(file, exc);
             }
@@ -606,7 +571,7 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
         if (this.l == null || g()) {
             return;
         }
-        UserRelationshipUtils.a(this.f34278a, this, this.l.uid, this.l.relationship, this.f, this.f34279c, false);
+        UserRelationshipUtils.a(this.f20587a, this, this.l.uid, this.l.relationship, this.f, this.f20588c, false);
     }
 
     public void l() {
@@ -614,14 +579,13 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
         if (userInfoEntity != null) {
             if ("0".equals(userInfoEntity.in_blacklist)) {
                 ChatManager.getInstance().getSessionSettingModel((short) 2, Long.parseLong(this.l.uid), new FetchDataListener<SessionSettingBaseModel>() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.9
-                    @Override // com.blued.android.chat.listener.FetchDataListener
                     /* renamed from: a */
                     public void onFetchData(final SessionSettingBaseModel sessionSettingBaseModel) {
                         AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.9.1
                             @Override // java.lang.Runnable
                             public void run() {
                                 if (sessionSettingBaseModel instanceof SessionSettingModel) {
-                                    UserInfoNewPresenter.this.g(((SessionSettingModel) sessionSettingBaseModel).getSessionCommonStatus());
+                                    UserInfoNewPresenter.this.g(sessionSettingBaseModel.getSessionCommonStatus());
                                 } else {
                                     UserInfoNewPresenter.this.g("0");
                                 }
@@ -632,9 +596,8 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
                 return;
             }
             DialogUtils.a(this.d);
-            UserHttpUtils.c(this.f34278a, new BluedUIHttpResponse<BluedEntityA<Object>>(this.f34279c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.10
+            UserHttpUtils.c(this.f20587a, new BluedUIHttpResponse<BluedEntityA<Object>>(this.f20588c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.10
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                     AppMethods.d((int) R.string.remove_black_success);
@@ -651,51 +614,45 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
                     }
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                     DialogUtils.b(UserInfoNewPresenter.this.d);
                     super.onUIFinish();
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
                     super.onUIStart();
                 }
-            }, UserInfo.getInstance().getLoginUserInfo().getUid(), this.l.uid, this.f34279c);
+            }, UserInfo.getInstance().getLoginUserInfo().getUid(), this.l.uid, this.f20588c);
         }
     }
 
     public void m() {
         ProfileHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.12
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<Object> parseData(String str) {
-                return (BluedEntityA) super.parseData(str);
+                return super.parseData(str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 try {
                     if (bluedEntityA == null) {
-                        AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                        AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                         return;
                     }
                     UserInfoNewPresenter.this.a(UserInfoNewPresenter.this.l);
                     AppMethods.d((int) R.string.operation_successful);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                    AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(UserInfoNewPresenter.this.d);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 DialogUtils.a(UserInfoNewPresenter.this.d);
             }
@@ -705,40 +662,35 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
     public void n() {
         MineHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.13
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<Object> parseData(String str) {
-                return (BluedEntityA) super.parseData(str);
+                return super.parseData(str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 try {
                     if (bluedEntityA == null) {
-                        AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                        AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                         return;
                     }
                     UserInfoNewPresenter.this.a(UserInfoNewPresenter.this.l);
                     AppMethods.d((int) R.string.operation_successful);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                    AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                AppMethods.a((CharSequence) str);
+                AppMethods.a(str);
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(UserInfoNewPresenter.this.d);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 DialogUtils.a(UserInfoNewPresenter.this.d);
             }
@@ -746,7 +698,7 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
     }
 
     public void o() {
-        UserHttpUtils.a(this.f34278a, new UserRelationshipUtils.IAddOrRemoveAttentionDone() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.14
+        UserHttpUtils.a(this.f20587a, new UserRelationshipUtils.IAddOrRemoveAttentionDone() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.14
             @Override // com.soft.blued.utils.UserRelationshipUtils.IAddOrRemoveAttentionDone
             public void a() {
             }
@@ -769,13 +721,12 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
             @Override // com.soft.blued.utils.UserRelationshipUtils.IAddOrRemoveAttentionDone
             public void c() {
             }
-        }, this.l.uid, this.f, this.f34279c);
+        }, this.l.uid, this.f, this.f20588c);
     }
 
     public void p() {
-        UserHttpUtils.a(this.l.uid, this.f34279c, new BluedUIHttpResponse<BluedEntityA<UserInfoEntity>>() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.15
+        UserHttpUtils.a(this.l.uid, this.f20588c, new BluedUIHttpResponse<BluedEntityA<UserInfoEntity>>() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.15
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserInfoEntity> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
@@ -789,25 +740,24 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
     }
 
     public void q() {
-        ProfileHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<MultiHeadMigration.DataBean>>(this.f34279c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.17
+        ProfileHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<MultiHeadMigration.DataBean>>(this.f20588c) { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.17
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<MultiHeadMigration.DataBean> bluedEntityA) {
                 if (bluedEntityA != null) {
-                    MultiHeadMigration.DataBean singleData = bluedEntityA.getSingleData();
-                    if (!UserInfoNewPresenter.this.e || singleData == null) {
+                    MultiHeadMigration.DataBean dataBean = (MultiHeadMigration.DataBean) bluedEntityA.getSingleData();
+                    if (!UserInfoNewPresenter.this.e || dataBean == null) {
                         return;
                     }
-                    if (singleData.vip_grade != 0 && singleData.vip_avatar_num > 0) {
-                        AppMethods.a((CharSequence) UserInfoNewPresenter.this.f34278a.getResources().getString(R.string.privacy_photo_album_moved_toast));
-                    } else if (singleData.vip_grade != 0 || singleData.vip_avatar_num <= 0) {
+                    if (dataBean.vip_grade != 0 && dataBean.vip_avatar_num > 0) {
+                        AppMethods.a(UserInfoNewPresenter.this.f20587a.getResources().getString(R.string.privacy_photo_album_moved_toast));
+                    } else if (dataBean.vip_grade != 0 || dataBean.vip_avatar_num <= 0) {
                     } else {
-                        AppMethods.a((CharSequence) UserInfoNewPresenter.this.f34278a.getResources().getString(R.string.privacy_photo_album_moved_toast_vip));
+                        AppMethods.a(UserInfoNewPresenter.this.f20587a.getResources().getString(R.string.privacy_photo_album_moved_toast_vip));
                     }
                 }
             }
-        }, UserInfo.getInstance().getLoginUserInfo().uid, this.f34279c);
+        }, UserInfo.getInstance().getLoginUserInfo().uid, this.f20588c);
     }
 
     public void r() {
@@ -815,7 +765,6 @@ public class UserInfoNewPresenter implements IUserInfoNewContract.IPresenter, Us
             return;
         }
         ChatHttpUtils.a(this.l.uid + "", "user", new BluedUIHttpResponse() { // from class: com.soft.blued.ui.user.presenter.UserInfoNewPresenter.18
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 if (UserInfoNewPresenter.this.l != null) {
                     UserInfoNewPresenter.this.l.poke_days = 0;

@@ -23,7 +23,6 @@ public class CouponPresenter extends MvpPresenter {
     private BluedUIHttpResponse c(final IFetchDataListener iFetchDataListener) {
         return new BluedUIHttpResponse<BluedEntityA<BluedCoupon>>("coupon_list", g()) { // from class: com.soft.blued.ui.pay.presenter.CouponPresenter.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedCoupon> bluedEntityA) {
                 if (bluedEntityA != null) {
@@ -34,8 +33,8 @@ public class CouponPresenter extends MvpPresenter {
                             if (i2 >= bluedEntityA.data.size()) {
                                 break;
                             }
-                            if (CouponPresenter.this.n == bluedEntityA.data.get(i2).id && bluedEntityA.data.get(i2).is_available == 1) {
-                                bluedEntityA.data.get(i2).ifChoosed = true;
+                            if (CouponPresenter.this.n == ((BluedCoupon) bluedEntityA.data.get(i2)).id && ((BluedCoupon) bluedEntityA.data.get(i2)).is_available == 1) {
+                                ((BluedCoupon) bluedEntityA.data.get(i2)).ifChoosed = true;
                             }
                             i = i2 + 1;
                         }
@@ -45,7 +44,6 @@ public class CouponPresenter extends MvpPresenter {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 iFetchDataListener.a(z);
@@ -55,7 +53,6 @@ public class CouponPresenter extends MvpPresenter {
                 CouponPresenter.this.h--;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 iFetchDataListener.a();
@@ -63,7 +60,6 @@ public class CouponPresenter extends MvpPresenter {
         };
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         if (bundle != null) {
@@ -73,12 +69,10 @@ public class CouponPresenter extends MvpPresenter {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         PayHttpUtils.a(c(iFetchDataListener), this.h, this.i, this.k, this.o, g());
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
         this.h++;
         PayHttpUtils.a(c(iFetchDataListener), this.h, this.i, this.k, this.o, g());

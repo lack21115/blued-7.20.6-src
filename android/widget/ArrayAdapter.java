@@ -147,7 +147,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
 
     private void init(Context context, int i, int i2, List<T> list) {
         this.mContext = context;
-        this.mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.mInflater = (LayoutInflater) context.getSystemService("layout_inflater");
         this.mDropDownResource = i;
         this.mResource = i;
         this.mObjects = list;

@@ -4,7 +4,6 @@ import android.net.wifi.WifiEnterpriseConfig;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.text.TextUtils;
-import android.view.WindowManager;
 import com.tencent.liteav.base.Log;
 import com.tencent.liteav.base.annotations.JNINamespace;
 import com.tencent.liteav.base.system.LiteavSystemInfo;
@@ -60,17 +59,17 @@ public class HttpClientAndroid {
     public static final class a extends Authenticator {
 
         /* renamed from: a  reason: collision with root package name */
-        String f36283a;
+        String f22592a;
         String b;
 
         a(String str, String str2) {
-            this.f36283a = str;
+            this.f22592a = str;
             this.b = str2;
         }
 
         @Override // java.net.Authenticator
         protected final PasswordAuthentication getPasswordAuthentication() {
-            return new PasswordAuthentication(this.f36283a, this.b.toCharArray());
+            return new PasswordAuthentication(this.f22592a, this.b.toCharArray());
         }
     }
 
@@ -78,11 +77,11 @@ public class HttpClientAndroid {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        int f36284a;
+        int f22593a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f36285c;
+        int f22594c;
         boolean d;
         int e;
         String f;
@@ -90,9 +89,9 @@ public class HttpClientAndroid {
         String h;
 
         b(int i, int i2, int i3, boolean z, int i4, String str, String str2, String str3) {
-            this.f36284a = i;
+            this.f22593a = i;
             this.b = i2;
-            this.f36285c = i3;
+            this.f22594c = i3;
             this.d = z;
             this.e = i4;
             this.f = str;
@@ -113,17 +112,17 @@ public class HttpClientAndroid {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        long f36288a;
+        long f22597a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f36289c;
+        String f22598c;
         byte[] d;
         Map<String, String> e;
 
         d(String str, String str2, byte[] bArr, Map<String, String> map) {
             this.b = str;
-            this.f36289c = str2;
+            this.f22598c = str2;
             this.d = bArr;
             this.e = map;
         }
@@ -138,17 +137,17 @@ public class HttpClientAndroid {
         }
 
         final String c() {
-            return TextUtils.isEmpty(this.f36289c) ? "" : "POST".equalsIgnoreCase(this.f36289c) ? "POST" : "GET".equalsIgnoreCase(this.f36289c) ? "GET" : "";
+            return TextUtils.isEmpty(this.f22598c) ? "" : "POST".equalsIgnoreCase(this.f22598c) ? "POST" : "GET".equalsIgnoreCase(this.f22598c) ? "GET" : "";
         }
 
         public final String toString() {
             StringBuilder sb = new StringBuilder("Request{requestId=");
-            sb.append(this.f36288a);
+            sb.append(this.f22597a);
             sb.append(", url='");
             sb.append(this.b);
             sb.append('\'');
             sb.append(", method='");
-            sb.append(this.f36289c);
+            sb.append(this.f22598c);
             sb.append('\'');
             sb.append(", body.size=");
             sb.append(a() ? this.d.length : 0);
@@ -163,10 +162,10 @@ public class HttpClientAndroid {
     public static final class e {
 
         /* renamed from: c  reason: collision with root package name */
-        ByteBuffer f36291c;
+        ByteBuffer f22600c;
 
         /* renamed from: a  reason: collision with root package name */
-        g f36290a = g.kUnknownError;
+        g f22599a = g.kUnknownError;
         String b = "";
         int d = 0;
         String e = "";
@@ -207,7 +206,7 @@ public class HttpClientAndroid {
         kSystemConnectRefused(1008),
         kSystemProtocolError(1009),
         kSystemSSLError(1010),
-        kUnknownError(WindowManager.LayoutParams.LAST_SUB_WINDOW);
+        kUnknownError(1999);
         
         final int nativeValue;
 
@@ -258,7 +257,7 @@ public class HttpClientAndroid {
         URL url = new URL(dVar.b.replace(" ", "%20"));
         HttpURLConnection httpURLConnection = proxy != null ? (HttpURLConnection) url.openConnection(proxy) : (HttpURLConnection) url.openConnection();
         httpURLConnection.setInstanceFollowRedirects(true);
-        httpURLConnection.setConnectTimeout(this.mHttpConfig.f36284a);
+        httpURLConnection.setConnectTimeout(this.mHttpConfig.f22593a);
         httpURLConnection.setReadTimeout(this.mHttpConfig.b);
         httpURLConnection.setRequestProperty("Accept-Encoding", WifiEnterpriseConfig.IDENTITY_KEY);
         httpURLConnection.setRequestMethod(dVar.c());
@@ -266,7 +265,7 @@ public class HttpClientAndroid {
             httpURLConnection.setDoOutput(true);
         }
         if (this.mHttpConfig.d) {
-            httpURLConnection.setRequestProperty("Connection", com.anythink.expressad.foundation.g.f.g.c.f7906c);
+            httpURLConnection.setRequestProperty("Connection", com.anythink.expressad.foundation.g.f.g.c.f5066c);
         }
         if (dVar.e != null && !dVar.e.isEmpty()) {
             for (Map.Entry<String, String> entry : dVar.e.entrySet()) {
@@ -292,7 +291,7 @@ public class HttpClientAndroid {
     private void doOnCallback(f fVar, long j, e eVar) {
         synchronized (this.mLocker) {
             if (checkNativeValid() && checkRequestValid(j) && eVar != null) {
-                nativeOnCallback(this.mNativeHttpClientAndroidJni, c.RUNNING_REPEAT == this.mInternalState, fVar.nativeValue, j, eVar.f36290a.nativeValue, eVar.b, eVar.g, eVar.f36291c, eVar.e, eVar.f, eVar.d);
+                nativeOnCallback(this.mNativeHttpClientAndroidJni, c.RUNNING_REPEAT == this.mInternalState, fVar.nativeValue, j, eVar.f22599a.nativeValue, eVar.b, eVar.g, eVar.f22600c, eVar.e, eVar.f, eVar.d);
             }
         }
     }
@@ -321,7 +320,7 @@ public class HttpClientAndroid {
                     } catch (Exception e2) {
                         e2.printStackTrace();
                         LiteavLog.e(TAG, "Do read data failed. Catch error when reading.");
-                        eVar.f36290a = getStatusCode(e2);
+                        eVar.f22599a = getStatusCode(e2);
                         eVar.b = e2.toString();
                         doOnCallback(f.DISCONNECTED, j, eVar);
                         doCleanById(j, true);
@@ -330,8 +329,8 @@ public class HttpClientAndroid {
                 } while (read > 0 && checkRequestValid(j));
                 int size = byteArrayOutputStream.size();
                 if (size > 0) {
-                    eVar.f36291c = ByteBuffer.allocateDirect(size);
-                    eVar.f36291c.put(byteArrayOutputStream.toByteArray(), 0, size);
+                    eVar.f22600c = ByteBuffer.allocateDirect(size);
+                    eVar.f22600c.put(byteArrayOutputStream.toByteArray(), 0, size);
                     eVar.d = size;
                 }
             } else {
@@ -339,14 +338,14 @@ public class HttpClientAndroid {
                 try {
                     int read2 = inputStream.read(bArr2);
                     if (read2 > 0) {
-                        eVar.f36291c = ByteBuffer.allocateDirect(read2);
-                        eVar.f36291c.put(bArr2, 0, read2);
+                        eVar.f22600c = ByteBuffer.allocateDirect(read2);
+                        eVar.f22600c.put(bArr2, 0, read2);
                         eVar.d = read2;
                     }
                 } catch (Exception e3) {
                     e3.printStackTrace();
                     LiteavLog.e(TAG, "Do read data failed. Catch error when reading.");
-                    eVar.f36290a = getStatusCode(e3);
+                    eVar.f22599a = getStatusCode(e3);
                     eVar.b = e3.toString();
                     doOnCallback(f.DISCONNECTED, j, eVar);
                     doCleanById(j, true);
@@ -367,7 +366,7 @@ public class HttpClientAndroid {
         } catch (Exception e4) {
             e4.printStackTrace();
             LiteavLog.e(TAG, "Do read data failed. Fail to get InputStream.");
-            eVar.f36290a = getStatusCode(e4);
+            eVar.f22599a = getStatusCode(e4);
             eVar.b = e4.toString();
             doOnCallback(f.DISCONNECTED, j, eVar);
             doCleanById(j, true);
@@ -377,7 +376,7 @@ public class HttpClientAndroid {
     /* JADX INFO: Access modifiers changed from: private */
     public void doRequest(d dVar) {
         boolean z;
-        if (!checkRequestValid(dVar.f36288a)) {
+        if (!checkRequestValid(dVar.f22597a)) {
             LiteavLog.w(TAG, "Do send failed. ignore request when cancelled. request:".concat(String.valueOf(dVar)));
             return;
         }
@@ -412,31 +411,31 @@ public class HttpClientAndroid {
                 }
             }
             try {
-                eVar.f36290a = getStatusCode(this.mConnection.getResponseCode());
+                eVar.f22599a = getStatusCode(this.mConnection.getResponseCode());
                 eVar.b = this.mConnection.getResponseMessage();
                 eVar.e = parseHostAddress(this.mConnection.getURL().getHost());
                 eVar.g = this.mConnection.getURL().getPort();
                 eVar.f = getResponseHeaders(this.mConnection.getHeaderFields());
-                if (checkRequestValid(dVar.f36288a)) {
-                    doReadData(dVar.f36288a, eVar);
+                if (checkRequestValid(dVar.f22597a)) {
+                    doReadData(dVar.f22597a, eVar);
                 } else {
                     LiteavLog.w(TAG, "Do send failed. Invalid request, abort request.");
                 }
             } catch (Exception e4) {
                 e4.printStackTrace();
                 LiteavLog.e(TAG, "Do send failed. Catch error.");
-                eVar.f36290a = getStatusCode(e4);
+                eVar.f22599a = getStatusCode(e4);
                 eVar.b = e4.toString();
-                doOnCallback(f.DISCONNECTED, dVar.f36288a, eVar);
-                doCleanById(dVar.f36288a, true);
+                doOnCallback(f.DISCONNECTED, dVar.f22597a, eVar);
+                doCleanById(dVar.f22597a, true);
             }
         } catch (Exception e5) {
             e5.printStackTrace();
             LiteavLog.e(TAG, "Do send failed. Fail to create http connection.");
-            eVar.f36290a = getStatusCode(e5);
+            eVar.f22599a = getStatusCode(e5);
             eVar.b = e5.toString();
-            doOnCallback(f.DISCONNECTED, dVar.f36288a, eVar);
-            doCleanById(dVar.f36288a, true);
+            doOnCallback(f.DISCONNECTED, dVar.f22597a, eVar);
+            doCleanById(dVar.f22597a, true);
         }
     }
 
@@ -571,7 +570,7 @@ public class HttpClientAndroid {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void lambda$doReadData$3(HttpClientAndroid httpClientAndroid, e eVar, long j) {
         e eVar2 = new e();
-        eVar2.f36290a = eVar.f36290a;
+        eVar2.f22599a = eVar.f22599a;
         httpClientAndroid.doReadData(j, eVar2);
     }
 

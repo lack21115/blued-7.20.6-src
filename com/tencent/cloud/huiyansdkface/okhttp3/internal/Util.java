@@ -37,16 +37,15 @@ import java.util.regex.Pattern;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
-import org.apache.commons.codec.CharEncoding;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okhttp3/internal/Util.class */
 public final class Util {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f35904a;
+    public static final byte[] f22213a;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final ResponseBody f35905c;
+    public static final ResponseBody f22214c;
     public static final RequestBody d;
     private static final Method r;
     private static final Pattern s;
@@ -58,8 +57,8 @@ public final class Util {
     private static final ByteString m = ByteString.decodeHex("ffff0000");
     public static final Charset e = Charset.forName("UTF-8");
     public static final Charset f = Charset.forName("ISO-8859-1");
-    private static final Charset n = Charset.forName(CharEncoding.UTF_16BE);
-    private static final Charset o = Charset.forName(CharEncoding.UTF_16LE);
+    private static final Charset n = Charset.forName("UTF-16BE");
+    private static final Charset o = Charset.forName("UTF-16LE");
     private static final Charset p = Charset.forName("UTF-32BE");
     private static final Charset q = Charset.forName("UTF-32LE");
     public static final TimeZone g = TimeZone.getTimeZone("GMT");
@@ -72,10 +71,10 @@ public final class Util {
 
     static {
         byte[] bArr = new byte[0];
-        f35904a = bArr;
+        f22213a = bArr;
         Method method = null;
-        f35905c = ResponseBody.create((MediaType) null, bArr);
-        d = RequestBody.create((MediaType) null, f35904a);
+        f22214c = ResponseBody.create((MediaType) null, bArr);
+        d = RequestBody.create((MediaType) null, f22213a);
         try {
             method = Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class);
         } catch (Exception e2) {
@@ -154,7 +153,7 @@ public final class Util {
      */
     /* JADX WARN: Code restructure failed: missing block: B:58:0x0131, code lost:
         r0 = r12 - r14;
-        java.lang.System.arraycopy((java.lang.Object) r0, r14, (java.lang.Object) r0, 16 - r0, r0);
+        java.lang.System.arraycopy(r0, r14, r0, 16 - r0, r0);
         java.util.Arrays.fill(r0, r14, (16 - r12) + r14, (byte) 0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:60:0x015c, code lost:
@@ -663,7 +662,7 @@ public final class Util {
         return new ThreadFactory() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.internal.Util.2
             @Override // java.util.concurrent.ThreadFactory
             public Thread newThread(Runnable runnable) {
-                Thread thread = new Thread(runnable, String.this);
+                Thread thread = new Thread(runnable, str);
                 thread.setDaemon(z);
                 return thread;
             }
@@ -673,7 +672,7 @@ public final class Util {
     public static Headers toHeaders(List<Header> list) {
         Headers.Builder builder = new Headers.Builder();
         for (Header header : list) {
-            Internal.f35902a.addLenient(builder, header.g.utf8(), header.h.utf8());
+            Internal.f22211a.addLenient(builder, header.g.utf8(), header.h.utf8());
         }
         return builder.build();
     }

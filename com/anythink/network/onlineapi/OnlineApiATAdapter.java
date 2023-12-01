@@ -3,7 +3,6 @@ package com.anythink.network.onlineapi;
 import android.content.Context;
 import com.anythink.basead.d.b;
 import com.anythink.basead.d.e;
-import com.anythink.core.common.b.g;
 import com.anythink.core.common.e.j;
 import com.anythink.nativead.unitgroup.api.CustomNativeAdapter;
 import java.util.Map;
@@ -12,36 +11,32 @@ import java.util.Map;
 public class OnlineApiATAdapter extends CustomNativeAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    e f9043a;
+    e f6203a;
     j b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f9044c;
+    String f6204c;
 
     private void a(Context context, Map<String, Object> map) {
-        this.f9044c = map.get("unit_id") != null ? map.get("unit_id").toString() : "";
-        this.b = (j) map.get(g.k.f6515a);
-        this.f9043a = new e(context, b.a.ONLINE_API_OFFER_REQUEST_TYPE, this.b);
+        this.f6204c = map.get("unit_id") != null ? map.get("unit_id").toString() : "";
+        this.b = (j) map.get("basead_params");
+        this.f6203a = new e(context, b.a.b, this.b);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
-        if (this.f9043a != null) {
-            this.f9043a = null;
+        if (this.f6203a != null) {
+            this.f6203a = null;
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return "";
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
-        return this.f9044c;
+        return this.f6204c;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return "";
     }
@@ -51,7 +46,6 @@ public class OnlineApiATAdapter extends CustomNativeAdapter {
     /* JADX WARN: Removed duplicated region for block: B:22:0x00c8  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x00cf  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x00da  */
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

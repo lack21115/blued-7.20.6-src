@@ -1,12 +1,12 @@
 package io.grpc.okhttp;
 
 import com.google.common.base.Preconditions;
-import com.squareup.okhttp.CipherSuite;
 import com.squareup.okhttp.TlsVersion;
 import io.grpc.InternalChannelz;
 import io.grpc.InternalMetadata;
 import io.grpc.Metadata;
 import io.grpc.internal.TransportFrameUtil;
+import io.grpc.okhttp.internal.CipherSuite;
 import io.grpc.okhttp.internal.ConnectionSpec;
 import io.grpc.okhttp.internal.framed.Header;
 import java.net.Socket;
@@ -48,7 +48,7 @@ public class Utils {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static ConnectionSpec convertSpec(com.squareup.okhttp.ConnectionSpec connectionSpec) {
         Preconditions.checkArgument(connectionSpec.isTls(), "plaintext ConnectionSpec is not accepted");
-        List<TlsVersion> tlsVersions = connectionSpec.tlsVersions();
+        List tlsVersions = connectionSpec.tlsVersions();
         int size = tlsVersions.size();
         String[] strArr = new String[size];
         int i = 0;
@@ -57,19 +57,19 @@ public class Utils {
             if (i2 >= size) {
                 break;
             }
-            strArr[i2] = tlsVersions.get(i2).javaName();
+            strArr[i2] = ((TlsVersion) tlsVersions.get(i2)).javaName();
             i = i2 + 1;
         }
-        List<CipherSuite> cipherSuites = connectionSpec.cipherSuites();
+        List cipherSuites = connectionSpec.cipherSuites();
         int size2 = cipherSuites.size();
-        io.grpc.okhttp.internal.CipherSuite[] cipherSuiteArr = new io.grpc.okhttp.internal.CipherSuite[size2];
+        CipherSuite[] cipherSuiteArr = new CipherSuite[size2];
         int i3 = 0;
         while (true) {
             int i4 = i3;
             if (i4 >= size2) {
                 return new ConnectionSpec.Builder(connectionSpec.isTls()).supportsTlsExtensions(connectionSpec.supportsTlsExtensions()).tlsVersions(strArr).cipherSuites(cipherSuiteArr).build();
             }
-            cipherSuiteArr[i4] = io.grpc.okhttp.internal.CipherSuite.valueOf(cipherSuites.get(i4).name());
+            cipherSuiteArr[i4] = CipherSuite.valueOf(((com.squareup.okhttp.CipherSuite) cipherSuites.get(i4)).name());
             i3 = i4 + 1;
         }
     }

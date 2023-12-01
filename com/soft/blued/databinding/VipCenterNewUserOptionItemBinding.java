@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class VipCenterNewUserOptionItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29637a;
+    private final LinearLayout f15947a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29637a;
+        return this.f15947a;
     }
 }

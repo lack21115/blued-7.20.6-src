@@ -206,7 +206,7 @@ public class PLDroidStreamingCore {
             aVOptions.outputUrl += rtmpOptions;
         }
         getDomain(this.currentUrl);
-        if (a.a.a.a.a.n.b.f1464a) {
+        if (a.a.a.a.a.n.b.f1416a) {
             Integer[] quicConfig = getQuicConfig();
             if (quicConfig.length == 2) {
                 int intValue = quicConfig[0].intValue();
@@ -246,7 +246,7 @@ public class PLDroidStreamingCore {
 
     public static void updateOutputUrl(AVOptions aVOptions) throws IOException {
         aVOptions.sendTimeout = StreamingProfile.getSendTimeout();
-        if (a.a.a.a.a.n.b.f1464a && !a.a.a.a.a.c.a.a().b()) {
+        if (a.a.a.a.a.n.b.f1416a && !a.a.a.a.a.c.a.a().b()) {
             try {
                 aVOptions.outputUrl = getOutputUrlByZeus(aVOptions.outputUrl);
             } catch (URISyntaxException e) {

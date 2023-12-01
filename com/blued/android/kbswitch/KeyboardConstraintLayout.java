@@ -33,13 +33,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/kbswitch/KeyboardConstraintLayout.class */
 public final class KeyboardConstraintLayout extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TransitionSet f10415a;
+    private TransitionSet a;
     private final ConstraintSet b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintSet f10416c;
+    private final ConstraintSet c;
     private final ConstraintSet d;
     private KBConstants.KeyboardStatus e;
     private KBConstants.KeyboardStatus f;
@@ -57,16 +53,14 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/kbswitch/KeyboardConstraintLayout$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f10417a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[KBConstants.KeyboardStatus.values().length];
             iArr[KBConstants.KeyboardStatus.KB_STATUS_NONE.ordinal()] = 1;
             iArr[KBConstants.KeyboardStatus.KB_STATUS_KEYBOARD.ordinal()] = 2;
             iArr[KBConstants.KeyboardStatus.KB_STATUS_PANEL.ordinal()] = 3;
-            f10417a = iArr;
+            a = iArr;
         }
     }
 
@@ -89,15 +83,15 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
         TransitionSet transitionSet = new TransitionSet();
         transitionSet.setOrdering(0);
         transitionSet.addTransition(new ChangeBounds());
-        this.f10415a = transitionSet;
+        this.a = transitionSet;
         this.b = new ConstraintSet();
-        this.f10416c = new ConstraintSet();
+        this.c = new ConstraintSet();
         this.d = new ConstraintSet();
         this.e = KBConstants.KeyboardStatus.KB_STATUS_NONE;
         this.f = KBConstants.KeyboardStatus.KB_STATUS_NONE;
         this.h = new Rect();
         Activity activity = context instanceof Activity ? (Activity) context : null;
-        this.p = activity == null ? null : KeyboardHelper.f10418a.a(activity);
+        this.p = activity == null ? null : KeyboardHelper.a.a(activity);
         try {
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.KeyboardConstraintLayout);
             Intrinsics.c(obtainStyledAttributes, "context.obtainStyledAttr…KeyboardConstraintLayout)");
@@ -109,7 +103,7 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
             Integer valueOf2 = Integer.valueOf(obtainStyledAttributes.getResourceId(R.styleable.KeyboardConstraintLayout_kb_expand_panel_constraint, -1));
             valueOf2 = valueOf2.intValue() > 0 ? valueOf2 : null;
             if (valueOf2 != null) {
-                this.f10416c.load(context, valueOf2.intValue());
+                this.c.load(context, valueOf2.intValue());
             }
             Integer valueOf3 = Integer.valueOf(obtainStyledAttributes.getResourceId(R.styleable.KeyboardConstraintLayout_kb_reset_constraint, -1));
             Integer num = valueOf3.intValue() > 0 ? valueOf3 : null;
@@ -155,25 +149,25 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
         TransitionSet transitionSet = new TransitionSet();
         transitionSet.setOrdering(0);
         transitionSet.addTransition(new ChangeBounds());
-        this.f10415a = transitionSet;
+        this.a = transitionSet;
         View view = this.l;
         if (view == null) {
             return;
         }
         ViewGroup viewGroup = this.m;
         if (viewGroup == null || i == 0) {
-            this.f10415a.addTransition(new CustomTransition().addTarget(view));
+            this.a.addTransition(new CustomTransition().addTarget(view));
         } else if (viewGroup == null) {
         } else {
             if (viewGroup.getChildCount() <= 0) {
-                this.f10415a.addTransition(new CustomTransition().addTarget(view));
+                this.a.addTransition(new CustomTransition().addTarget(view));
                 return;
             }
             if (i - (view.getBottom() - viewGroup.getChildAt(viewGroup.getChildCount() - 1).getBottom()) <= 0) {
-                this.f10415a.addTransition(new CustomTransition().addTarget(view));
+                this.a.addTransition(new CustomTransition().addTarget(view));
                 return;
             }
-            TransitionSet addTarget = this.f10415a.addTarget(view);
+            TransitionSet addTarget = this.a.addTarget(view);
             View view2 = this.o;
             View view3 = view2;
             if (view2 == null) {
@@ -258,8 +252,8 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
     }
 
     private final void f() {
-        KeyboardConstraintLayout keyboardConstraintLayout = this;
-        int childCount = keyboardConstraintLayout.getChildCount();
+        ViewGroup viewGroup = (ViewGroup) this;
+        int childCount = viewGroup.getChildCount();
         if (childCount <= 0) {
             return;
         }
@@ -268,18 +262,18 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
         boolean z2 = false;
         while (true) {
             int i2 = i + 1;
-            View childAt = keyboardConstraintLayout.getChildAt(i);
+            View childAt = viewGroup.getChildAt(i);
             Intrinsics.c(childAt, "getChildAt(index)");
             ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
             if (layoutParams == null) {
                 throw new NullPointerException("null cannot be cast to non-null type com.blued.android.kbswitch.IKBLayoutParams");
             }
-            int a2 = ((IKBLayoutParams) layoutParams).a();
-            if (a2 != 1) {
-                if (a2 != 2) {
-                    if (a2 == 3) {
+            int a = ((IKBLayoutParams) layoutParams).a();
+            if (a != 1) {
+                if (a != 2) {
+                    if (a == 3) {
                         this.n = childAt;
-                    } else if (a2 == 5) {
+                    } else if (a == 5) {
                         this.j = childAt;
                     }
                 } else if (z2) {
@@ -326,24 +320,19 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // androidx.constraintlayout.widget.ConstraintLayout, android.view.ViewGroup
     /* renamed from: a */
-    public KBLayoutParams generateDefaultLayoutParams() {
+    public KBLayoutParams m9486generateDefaultLayoutParams() {
         return new KBLayoutParams(-2, -2);
     }
 
-    @Override // androidx.constraintlayout.widget.ConstraintLayout, android.view.ViewGroup
     /* renamed from: a */
-    public KBLayoutParams generateLayoutParams(AttributeSet attributeSet) {
+    public KBLayoutParams m9487generateLayoutParams(AttributeSet attributeSet) {
         Context context = getContext();
         Intrinsics.c(context, "context");
         return new KBLayoutParams(context, attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // androidx.constraintlayout.widget.ConstraintLayout, android.view.ViewGroup
-    /* renamed from: a */
-    public KBLayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected KBLayoutParams a(ViewGroup.LayoutParams layoutParams) {
         return layoutParams instanceof ConstraintLayout.LayoutParams ? new KBLayoutParams((ConstraintLayout.LayoutParams) layoutParams) : new KBLayoutParams(layoutParams);
     }
 
@@ -380,7 +369,7 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
                 }
                 View view = this.j;
                 if (view != null) {
-                    ConstraintSet constraintSet2 = this.f10416c;
+                    ConstraintSet constraintSet2 = this.c;
                     View view2 = this.o;
                     View view3 = view2;
                     if (view2 == null) {
@@ -389,7 +378,7 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
                     }
                     constraintSet2.setMargin(view3.getId(), 3, (getHeight() - view.getBottom()) - helper.e());
                 }
-                ConstraintSet constraintSet3 = this.f10416c;
+                ConstraintSet constraintSet3 = this.c;
                 if (i == 5 && (keyboardHelper = this.p) != null) {
                     a(keyboardHelper.e());
                 }
@@ -462,17 +451,17 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
             }
         }
         if (this.e != this.f) {
-            this.f10415a.setDuration(j);
-            this.f10415a.setInterpolator(timeInterpolator);
-            TransitionManager.beginDelayedTransition(this, this.f10415a);
+            this.a.setDuration(j);
+            this.a.setInterpolator(timeInterpolator);
+            TransitionManager.beginDelayedTransition((ViewGroup) this, this.a);
         } else if (UtilsKt.a(KBConstants.KeyboardStatus.KB_STATUS_KEYBOARD, this.e, this.f) || UtilsKt.a(KBConstants.KeyboardStatus.KB_STATUS_PANEL, this.e, this.f)) {
-            this.f10415a.setDuration(125L);
-            this.f10415a.setInterpolator((TimeInterpolator) new LinearInterpolator());
-            TransitionManager.beginDelayedTransition(this, this.f10415a);
+            this.a.setDuration(125L);
+            this.a.setInterpolator(new LinearInterpolator());
+            TransitionManager.beginDelayedTransition((ViewGroup) this, this.a);
         }
         View view11 = this.l;
         if (view11 != null) {
-            int i2 = WhenMappings.f10417a[this.f.ordinal()];
+            int i2 = WhenMappings.a[this.f.ordinal()];
             int i3 = 0;
             if (i2 != 1) {
                 if (i2 == 2) {
@@ -490,15 +479,15 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
     }
 
     public final EditText b() {
-        KeyboardConstraintLayout keyboardConstraintLayout = this;
-        int childCount = keyboardConstraintLayout.getChildCount();
+        ViewGroup viewGroup = (ViewGroup) this;
+        int childCount = viewGroup.getChildCount();
         EditText editText = null;
         EditText editText2 = null;
         if (childCount > 0) {
             int i = 0;
             while (true) {
                 int i2 = i + 1;
-                View childAt = keyboardConstraintLayout.getChildAt(i);
+                View childAt = viewGroup.getChildAt(i);
                 Intrinsics.c(childAt, "getChildAt(index)");
                 ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
                 if (layoutParams == null) {
@@ -529,7 +518,6 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
         return this.l;
     }
 
-    @Override // androidx.constraintlayout.widget.ConstraintLayout, android.view.ViewGroup
     public boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return layoutParams instanceof KBLayoutParams;
     }
@@ -542,9 +530,7 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
         return b(view);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View child, long j) {
+    protected boolean drawChild(Canvas canvas, View child, long j) {
         View view;
         Intrinsics.e(canvas, "canvas");
         Intrinsics.e(child, "child");
@@ -573,8 +559,8 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
     public final List<Pair<View, View>> e() {
         List<Pair<View, View>> list;
         KeyboardConstraintLayout keyboardConstraintLayout = this;
-        KeyboardConstraintLayout keyboardConstraintLayout2 = keyboardConstraintLayout;
-        int childCount = keyboardConstraintLayout2.getChildCount();
+        ViewGroup viewGroup = (ViewGroup) keyboardConstraintLayout;
+        int childCount = viewGroup.getChildCount();
         if (childCount <= 0) {
             return null;
         }
@@ -582,7 +568,7 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
         int i = 0;
         while (true) {
             int i2 = i + 1;
-            View childAt = keyboardConstraintLayout2.getChildAt(i);
+            View childAt = viewGroup.getChildAt(i);
             Intrinsics.c(childAt, "getChildAt(index)");
             ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
             if (layoutParams == null) {
@@ -610,6 +596,18 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
         }
     }
 
+    public /* synthetic */ ViewGroup.LayoutParams generateDefaultLayoutParams() {
+        return (ViewGroup.LayoutParams) m9486generateDefaultLayoutParams();
+    }
+
+    public /* synthetic */ ViewGroup.LayoutParams generateLayoutParams(AttributeSet attributeSet) {
+        return (ViewGroup.LayoutParams) m9487generateLayoutParams(attributeSet);
+    }
+
+    public /* synthetic */ ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+        return (ViewGroup.LayoutParams) a(layoutParams);
+    }
+
     public final KeyboardHelper getKeyboardHelper() {
         return this.p;
     }
@@ -624,9 +622,7 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
         return view2;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         KeyboardHelper keyboardHelper = this.p;
         if (keyboardHelper == null) {
@@ -635,15 +631,12 @@ public final class KeyboardConstraintLayout extends ConstraintLayout {
         keyboardHelper.a(this);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public void onFinishInflate() {
+    protected void onFinishInflate() {
         super.onFinishInflate();
         f();
         a(this, 0, 1, null);
     }
 
-    @Override // androidx.constraintlayout.widget.ConstraintLayout, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         g();

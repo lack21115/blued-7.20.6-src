@@ -1,7 +1,6 @@
 package com.blued.android.module.live_china.view;
 
 import android.content.Context;
-import android.media.MediaMetadataEditor;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ListView;
@@ -23,6 +22,6 @@ public class LiveListView extends ListView {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ListView, android.widget.AbsListView, android.view.View
     public void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(MediaMetadataEditor.KEY_EDITABLE_MASK, Integer.MIN_VALUE));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(536870911, Integer.MIN_VALUE));
     }
 }

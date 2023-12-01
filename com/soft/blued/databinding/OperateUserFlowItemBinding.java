@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeTextView;
 public final class OperateUserFlowItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeTextView f29498a;
+    private final ShapeTextView f15808a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeTextView getRoot() {
-        return this.f29498a;
+        return this.f15808a;
     }
 }

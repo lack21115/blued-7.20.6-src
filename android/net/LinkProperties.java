@@ -3,7 +3,6 @@ package android.net;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
@@ -631,7 +630,7 @@ public final class LinkProperties implements Parcelable {
             }
             str12 = str13 + "] ";
         }
-        return "{" + str + str3 + str10 + str5 + str6 + str7 + str8 + str11 + str12 + i.d;
+        return "{" + str + str3 + str10 + str5 + str6 + str7 + str8 + str11 + str12 + "}";
     }
 
     @Override // android.os.Parcelable

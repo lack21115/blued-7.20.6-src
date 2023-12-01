@@ -30,13 +30,9 @@ import java.util.Iterator;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYSetSoloGiftView.class */
 public class YYSetSoloGiftView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f18486a;
+    private BaseYYStudioFragment a;
     private PopupWindow b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private HashSet<String> f18487c;
+    private HashSet<String> c;
     private YYRoomModel d;
     private ViewYyCreateSoloGiftBinding e;
 
@@ -59,10 +55,10 @@ public class YYSetSoloGiftView extends LinearLayout {
         this.e = ViewYyCreateSoloGiftBinding.a(LayoutInflater.from(getContext()), this, true);
         if (YYRoomInfoManager.e().y()) {
             this.e.g.setEnabled(false);
-            this.e.f16902a.setVisibility(8);
+            this.e.a.setVisibility(8);
             this.e.b.setVisibility(0);
             this.e.e.setVisibility(8);
-            this.e.f16903c.setVisibility(8);
+            this.e.c.setVisibility(8);
             this.e.i.setText(getResources().getString(R.string.yy_not_gift));
             this.e.g.setText(getResources().getString(R.string.yy_set_up_gift));
             ShapeHelper.a(this.e.f, R.color.syc_272727, R.color.syc_272727);
@@ -70,8 +66,8 @@ public class YYSetSoloGiftView extends LinearLayout {
         } else {
             this.e.b.setVisibility(8);
             this.e.e.setVisibility(0);
-            this.e.f16903c.setVisibility(8);
-            this.e.f16902a.setVisibility(0);
+            this.e.c.setVisibility(8);
+            this.e.a.setVisibility(0);
             this.e.i.setText(getResources().getString(R.string.yy_send_gift_and_enter));
             this.e.g.setText(getResources().getString(R.string.yy_send_gifts));
             ShapeHelper.a(this.e.f, R.color.syc_tran20_00E0AB, R.color.syc_tran20_3883FD);
@@ -83,11 +79,11 @@ public class YYSetSoloGiftView extends LinearLayout {
                 YYSetSoloGiftView.this.d();
             }
         });
-        this.e.f16903c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYSetSoloGiftView.2
+        this.e.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYSetSoloGiftView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                YYSetSoloGiftView.this.f18487c.clear();
+                YYSetSoloGiftView.this.c.clear();
                 YYSetSoloGiftView.this.b();
             }
         });
@@ -95,28 +91,28 @@ public class YYSetSoloGiftView extends LinearLayout {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                if (YYSetSoloGiftView.this.f18486a != null) {
-                    YYSetSoloGiftView.this.f18486a.y();
+                if (YYSetSoloGiftView.this.a != null) {
+                    YYSetSoloGiftView.this.a.y();
                 }
                 if (YYRoomInfoManager.e().y()) {
                     YYSetSoloGiftView.this.c();
                     return;
                 }
                 EventTrackYY.d(ChatRoomProtos.Event.SINGLE_ROOM_GIFT_SEND_CLICK, YYSetSoloGiftView.this.d.room_id, YYSetSoloGiftView.this.d.uid);
-                YYSetSoloGiftView.this.f18486a.a(true, "", YYSetSoloGiftView.this.getGoodsId(), YYSetSoloGiftView.this.d == null ? "" : YYSetSoloGiftView.this.d.uid);
+                YYSetSoloGiftView.this.a.a(true, "", YYSetSoloGiftView.this.getGoodsId(), YYSetSoloGiftView.this.d == null ? "" : YYSetSoloGiftView.this.d.uid);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
-        HashSet<String> hashSet = this.f18487c;
+        HashSet<String> hashSet = this.c;
         boolean z = (hashSet == null || hashSet.isEmpty()) ? false : true;
         this.e.g.setEnabled(z);
         this.e.b.setVisibility(z ? 8 : 0);
         this.e.e.setVisibility(z ? 0 : 8);
-        this.e.f16902a.setVisibility(z ? 0 : 8);
-        this.e.f16903c.setVisibility(z ? 0 : 8);
+        this.e.a.setVisibility(z ? 0 : 8);
+        this.e.c.setVisibility(z ? 0 : 8);
         ShapeHelper.a(this.e.f, R.color.syc_tran20_00E0AB, R.color.syc_tran20_3883FD);
         ShapeHelper.a(this.e.g, z ? R.color.syc_00E0AB : R.color.syc_272727, z ? R.color.syc_3883FD : R.color.syc_272727);
     }
@@ -127,7 +123,7 @@ public class YYSetSoloGiftView extends LinearLayout {
         if (yYRoomModel == null) {
             return;
         }
-        YYRoomHttpUtils.a(yYRoomModel.room_id, 2, "", getGoodsId(), new BluedUIHttpResponse<BluedEntityA<Object>>(this.f18486a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYSetSoloGiftView.5
+        YYRoomHttpUtils.a(yYRoomModel.room_id, 2, "", getGoodsId(), new BluedUIHttpResponse<BluedEntityA<Object>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYSetSoloGiftView.5
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -137,27 +133,29 @@ public class YYSetSoloGiftView extends LinearLayout {
                 }
                 LiveEventBus.get("event_solo_set_gift").post("");
             }
-        }, this.f18486a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v0, types: [android.view.View, com.blued.android.module.yy_china.view.YYWishListView] */
     public void d() {
-        YYWishListView yYWishListView = new YYWishListView(getContext());
-        yYWishListView.a(this.f18486a, this.f18487c);
+        ?? yYWishListView = new YYWishListView(getContext());
+        yYWishListView.a(this.a, this.c);
         yYWishListView.setOkListener(new YYWishListView.OnConfirmListener() { // from class: com.blued.android.module.yy_china.view.YYSetSoloGiftView.6
             @Override // com.blued.android.module.yy_china.view.YYWishListView.OnConfirmListener
             public void a(YYGiftModel yYGiftModel, int i) {
                 if (yYGiftModel == null) {
                     return;
                 }
-                YYSetSoloGiftView.this.f18487c.add(yYGiftModel.goods_id);
+                YYSetSoloGiftView.this.c.add(yYGiftModel.goods_id);
                 ImageLoader.a((IRequestHost) null, yYGiftModel.images_static).a(YYSetSoloGiftView.this.e.d);
                 YYSetSoloGiftView.this.e.h.setText(yYGiftModel.name);
                 YYSetSoloGiftView.this.b();
                 YYSetSoloGiftView.this.b.dismiss();
             }
         });
-        this.b = new PopupwindowFactory.Builder(getContext()).a(yYWishListView).a(80).c(-2).b(-1).d(R.color.transparent).h();
+        this.b = new PopupwindowFactory.Builder(getContext()).a((View) yYWishListView).a(80).c(-2).b(-1).d(R.color.transparent).h();
     }
 
     private void getGiftInfo() {
@@ -165,7 +163,7 @@ public class YYSetSoloGiftView extends LinearLayout {
         if (yYRoomModel == null) {
             return;
         }
-        YYRoomHttpUtils.S(yYRoomModel.room_id, new BluedUIHttpResponse<BluedEntityA<YYWishGoodsModel>>(this.f18486a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYSetSoloGiftView.4
+        YYRoomHttpUtils.S(yYRoomModel.room_id, new BluedUIHttpResponse<BluedEntityA<YYWishGoodsModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYSetSoloGiftView.4
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -174,25 +172,25 @@ public class YYSetSoloGiftView extends LinearLayout {
                 if (bluedEntityA == null || !bluedEntityA.hasData() || (singleData = bluedEntityA.getSingleData()) == null) {
                     return;
                 }
-                if (YYSetSoloGiftView.this.f18487c == null) {
-                    YYSetSoloGiftView.this.f18487c = new HashSet();
+                if (YYSetSoloGiftView.this.c == null) {
+                    YYSetSoloGiftView.this.c = new HashSet();
                 }
-                YYSetSoloGiftView.this.f18487c.add(singleData.goods_id);
+                YYSetSoloGiftView.this.c.add(singleData.goods_id);
                 ImageLoader.a((IRequestHost) null, singleData.images_static).a(YYSetSoloGiftView.this.e.d);
                 YYSetSoloGiftView.this.e.h.setText(singleData.name);
             }
-        }, this.f18486a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public String getGoodsId() {
-        HashSet<String> hashSet = this.f18487c;
+        HashSet<String> hashSet = this.c;
         String str = "";
         if (hashSet != null) {
             if (hashSet.isEmpty()) {
                 return "";
             }
-            Iterator<String> it = this.f18487c.iterator();
+            Iterator<String> it = this.c.iterator();
             str = "";
             if (it.hasNext()) {
                 str = it.next();
@@ -202,15 +200,15 @@ public class YYSetSoloGiftView extends LinearLayout {
     }
 
     public void a(BaseYYStudioFragment baseYYStudioFragment) {
-        this.f18486a = baseYYStudioFragment;
-        this.f18487c = new HashSet<>();
+        this.a = baseYYStudioFragment;
+        this.c = new HashSet<>();
         this.d = YYRoomInfoManager.e().b();
         if (YYRoomInfoManager.e().y()) {
             return;
         }
         this.e.b.setVisibility(8);
         this.e.e.setVisibility(0);
-        this.e.f16903c.setVisibility(8);
+        this.e.c.setVisibility(8);
         this.e.g.setEnabled(true);
         getGiftInfo();
     }

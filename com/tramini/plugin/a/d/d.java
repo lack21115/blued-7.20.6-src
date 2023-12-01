@@ -1,6 +1,7 @@
 package com.tramini.plugin.a.d;
 
 import android.content.Context;
+import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
 import com.tramini.plugin.a.g.h;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,7 +49,7 @@ public final class d extends a {
             jSONObject.put("package_name", com.tramini.plugin.a.g.e.c(b));
             jSONObject.put("app_vn", com.tramini.plugin.a.g.e.b(b));
             jSONObject.put("app_vc", com.tramini.plugin.a.g.e.a(b));
-            jSONObject.put("sdk_ver", "1.0.2");
+            jSONObject.put(HiAnalyticsConstant.BI_KEY_SDK_VER, "1.0.2");
             jSONObject.put("android_id", com.tramini.plugin.a.g.e.d(b));
             if (!h.a(b)) {
                 obj = "0";

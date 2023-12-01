@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentTxSplashBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28991a;
+    private final ConstraintLayout f15301a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28991a;
+        return this.f15301a;
     }
 }

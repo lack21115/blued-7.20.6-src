@@ -7,9 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/comparisons/ReverseOrderComparator.class */
 final class ReverseOrderComparator implements Comparator<Comparable<? super Object>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ReverseOrderComparator f42442a = new ReverseOrderComparator();
+    public static final ReverseOrderComparator a = new ReverseOrderComparator();
 
     private ReverseOrderComparator() {
     }
@@ -23,6 +21,6 @@ final class ReverseOrderComparator implements Comparator<Comparable<? super Obje
     }
 
     public final Comparator<Comparable<Object>> reversed() {
-        return NaturalOrderComparator.f42441a;
+        return NaturalOrderComparator.a;
     }
 }

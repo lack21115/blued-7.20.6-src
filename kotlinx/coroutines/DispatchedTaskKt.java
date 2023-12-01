@@ -13,16 +13,16 @@ import kotlinx.coroutines.internal.ThreadContextKt;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/DispatchedTaskKt.class */
 public final class DispatchedTaskKt {
     private static final void a(DispatchedTask<?> dispatchedTask) {
-        EventLoop a2 = ThreadLocalEventLoop.f42855a.a();
-        if (a2.f()) {
-            a2.a(dispatchedTask);
+        EventLoop a = ThreadLocalEventLoop.a.a();
+        if (a.f()) {
+            a.a(dispatchedTask);
             return;
         }
-        a2.a(true);
+        a.a(true);
         try {
             a(dispatchedTask, dispatchedTask.b(), true);
             do {
-            } while (a2.e());
+            } while (a.e());
         } finally {
             try {
             } finally {
@@ -41,7 +41,7 @@ public final class DispatchedTaskKt {
         if (i != 4) {
             z = false;
         }
-        if (z || !(b instanceof DispatchedContinuation) || a(i) != a(dispatchedTask.f42808a)) {
+        if (z || !(b instanceof DispatchedContinuation) || a(i) != a(dispatchedTask.a)) {
             a(dispatchedTask, b, z);
             return;
         }
@@ -57,12 +57,12 @@ public final class DispatchedTaskKt {
     public static final <T> void a(DispatchedTask<? super T> dispatchedTask, Continuation<? super T> continuation, boolean z) {
         Object b;
         Object g = dispatchedTask.g();
-        Throwable c2 = dispatchedTask.c(g);
-        if (c2 != null) {
-            Result.Companion companion = Result.f42293a;
-            b = ResultKt.a(c2);
+        Throwable c = dispatchedTask.c(g);
+        if (c != null) {
+            Result.Companion companion = Result.a;
+            b = ResultKt.a(c);
         } else {
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             b = dispatchedTask.b(g);
         }
         Object f = Result.f(b);
@@ -71,20 +71,20 @@ public final class DispatchedTaskKt {
             return;
         }
         DispatchedContinuation dispatchedContinuation = (DispatchedContinuation) continuation;
-        Continuation<T> continuation2 = dispatchedContinuation.f43523c;
+        Continuation<T> continuation2 = dispatchedContinuation.c;
         Object obj = dispatchedContinuation.e;
         CoroutineContext context = continuation2.getContext();
-        Object a2 = ThreadContextKt.a(context, obj);
-        UndispatchedCoroutine<?> a3 = a2 != ThreadContextKt.f43565a ? CoroutineContextKt.a(continuation2, context, a2) : null;
+        Object a = ThreadContextKt.a(context, obj);
+        UndispatchedCoroutine<?> a2 = a != ThreadContextKt.a ? CoroutineContextKt.a(continuation2, context, a) : null;
         try {
-            dispatchedContinuation.f43523c.resumeWith(f);
-            Unit unit = Unit.f42314a;
-            if (a3 == null || a3.q()) {
-                ThreadContextKt.b(context, a2);
+            dispatchedContinuation.c.resumeWith(f);
+            Unit unit = Unit.a;
+            if (a2 == null || a2.q()) {
+                ThreadContextKt.b(context, a);
             }
         } catch (Throwable th) {
-            if (a3 == null || a3.q()) {
-                ThreadContextKt.b(context, a2);
+            if (a2 == null || a2.q()) {
+                ThreadContextKt.b(context, a);
             }
             throw th;
         }

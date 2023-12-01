@@ -6,9 +6,7 @@ import android.util.Log;
 /* renamed from: com.amap.api.col.3sl.dc  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/dc.class */
 public final class dc {
-
-    /* renamed from: a  reason: collision with root package name */
-    static String f4845a;
+    static String a;
 
     static {
         StringBuilder sb = new StringBuilder();
@@ -16,7 +14,7 @@ public final class dc {
         while (true) {
             int i2 = i;
             if (i2 >= 80) {
-                f4845a = sb.toString();
+                a = sb.toString();
                 return;
             } else {
                 sb.append("=");
@@ -26,24 +24,24 @@ public final class dc {
     }
 
     public static void a() {
-        c(f4845a);
+        c(a);
         c("当前使用的自定义地图样式文件和目前版本不匹配，请到官网(lbs.amap.com)更新新版样式文件");
-        c(f4845a);
+        c(a);
     }
 
     public static void a(Context context, String str) {
-        c(f4845a);
+        c(a);
         if (context != null) {
             b("key:" + ho.f(context));
         }
         c(str);
-        c(f4845a);
+        c(a);
     }
 
     public static void a(String str) {
-        c(f4845a);
+        c(a);
         c(str);
-        c(f4845a);
+        c(a);
     }
 
     private static void b(String str) {

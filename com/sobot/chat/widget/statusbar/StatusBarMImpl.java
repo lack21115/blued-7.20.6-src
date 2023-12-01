@@ -1,5 +1,6 @@
 package com.sobot.chat.widget.statusbar;
 
+import android.R;
 import android.view.View;
 import android.view.Window;
 
@@ -10,7 +11,7 @@ class StatusBarMImpl implements IStatusBar {
         window.clearFlags(67108864);
         window.addFlags(Integer.MIN_VALUE);
         window.setStatusBarColor(i);
-        View findViewById = window.findViewById(16908290);
+        View findViewById = window.findViewById(R.id.content);
         if (findViewById != null) {
             findViewById.setForeground(null);
         }

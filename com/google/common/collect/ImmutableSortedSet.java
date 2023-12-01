@@ -310,7 +310,7 @@ public abstract class ImmutableSortedSet<E> extends ImmutableSortedSetFauxveride
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract int indexOf(@NullableDecl Object obj);
 
-    @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
     public abstract UnmodifiableIterator<E> iterator();
 
     public E last() {
@@ -333,7 +333,7 @@ public abstract class ImmutableSortedSet<E> extends ImmutableSortedSetFauxveride
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.NavigableSet
+    @Override // java.util.NavigableSet, java.util.SortedSet
     public ImmutableSortedSet<E> subSet(E e, E e2) {
         return subSet((boolean) e, true, (boolean) e2, false);
     }

@@ -2,7 +2,6 @@ package com.sina.weibo.sdk.call;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.sina.weibo.sdk.constant.WBPageConstants;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -87,7 +86,7 @@ public final class WeiboPageUtils {
     }
 
     public static void viewNearPhotoList(Context context, String str, String str2, Integer num, String str3) throws WeiboNotInstalledException {
-        viewPagePhotoList(context, "100101" + str + BridgeUtil.UNDERLINE_STR + str2, "nearphoto", "周边热图", num, str3);
+        viewPagePhotoList(context, "100101" + str + "_" + str2, "nearphoto", "周边热图", num, str3);
     }
 
     public static void viewNearbyPeople(Context context, Position position, String str) throws WeiboNotInstalledException {
@@ -259,7 +258,7 @@ public final class WeiboPageUtils {
     }
 
     public static void viewPoiPage(Context context, String str, String str2, String str3, String str4) throws WeiboNotInstalledException {
-        viewPageInfo(context, "100101" + str + BridgeUtil.UNDERLINE_STR + str2, str3, str4);
+        viewPageInfo(context, "100101" + str + "_" + str2, str3, str4);
     }
 
     public static void viewPoiPhotoList(Context context, String str, Integer num, String str2) throws WeiboNotInstalledException {

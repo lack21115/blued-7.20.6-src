@@ -15,7 +15,6 @@ import okhttp3.OkHttpClient;
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qcloud/core/http/OkHttpClientImpl.class */
 public class OkHttpClientImpl extends NetworkClient {
     private EventListener.Factory mEventListenerFactory = new EventListener.Factory() { // from class: com.tencent.qcloud.core.http.OkHttpClientImpl.1
-        @Override // okhttp3.EventListener.Factory
         public EventListener create(Call call) {
             return new CallMetricsListener(call);
         }

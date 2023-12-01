@@ -7,16 +7,16 @@ import com.tencent.liteav.videobase.base.GLConstants;
 public final /* synthetic */ class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f36696a;
+    private final a f23005a;
     private final GLConstants.PixelFormatType b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final GLConstants.PixelBufferType f36697c;
+    private final GLConstants.PixelBufferType f23006c;
 
     private b(a aVar, GLConstants.PixelFormatType pixelFormatType, GLConstants.PixelBufferType pixelBufferType) {
-        this.f36696a = aVar;
+        this.f23005a = aVar;
         this.b = pixelFormatType;
-        this.f36697c = pixelBufferType;
+        this.f23006c = pixelBufferType;
     }
 
     public static Runnable a(a aVar, GLConstants.PixelFormatType pixelFormatType, GLConstants.PixelBufferType pixelBufferType) {
@@ -25,6 +25,6 @@ public final /* synthetic */ class b implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        a.a(this.f36696a, this.b, this.f36697c);
+        a.a(this.f23005a, this.b, this.f23006c);
     }
 }

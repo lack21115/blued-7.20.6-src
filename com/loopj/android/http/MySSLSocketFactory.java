@@ -1,5 +1,6 @@
 package com.loopj.android.http;
 
+import com.blued.das.live.LiveProtos;
 import java.io.IOException;
 import java.net.Socket;
 import java.security.KeyManagementException;
@@ -201,7 +202,7 @@ public class MySSLSocketFactory extends SSLSocketFactory {
             MySSLSocketFactory mySSLSocketFactory = new MySSLSocketFactory(keyStore);
             SchemeRegistry schemeRegistry = new SchemeRegistry();
             schemeRegistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
-            schemeRegistry.register(new Scheme("https", mySSLSocketFactory, 443));
+            schemeRegistry.register(new Scheme("https", mySSLSocketFactory, (int) LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE));
             BasicHttpParams basicHttpParams = new BasicHttpParams();
             HttpProtocolParams.setVersion(basicHttpParams, HttpVersion.HTTP_1_1);
             HttpProtocolParams.setContentCharset(basicHttpParams, "UTF-8");

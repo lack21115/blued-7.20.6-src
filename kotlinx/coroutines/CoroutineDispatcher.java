@@ -20,7 +20,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/CoroutineDispatcher$Key.class */
     public static final class Key extends AbstractCoroutineContextKey<ContinuationInterceptor, CoroutineDispatcher> {
         private Key() {
-            super(ContinuationInterceptor.f42453a, new Function1<CoroutineContext.Element, CoroutineDispatcher>() { // from class: kotlinx.coroutines.CoroutineDispatcher.Key.1
+            super(ContinuationInterceptor.a, new Function1<CoroutineContext.Element, CoroutineDispatcher>() { // from class: kotlinx.coroutines.CoroutineDispatcher.Key.1
                 @Override // kotlin.jvm.functions.Function1
                 /* renamed from: a */
                 public final CoroutineDispatcher invoke(CoroutineContext.Element element) {
@@ -38,7 +38,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
     }
 
     public CoroutineDispatcher() {
-        super(ContinuationInterceptor.f42453a);
+        super(ContinuationInterceptor.a);
     }
 
     public abstract void dispatch(CoroutineContext coroutineContext, Runnable runnable);

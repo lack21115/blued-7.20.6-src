@@ -11,22 +11,22 @@ import java.util.ArrayList;
 public class TintContextWrapper extends ContextWrapper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f1895a = new Object();
+    private static final Object f1847a = new Object();
     private static ArrayList<WeakReference<TintContextWrapper>> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Resources f1896c;
+    private final Resources f1848c;
     private final Resources.Theme d;
 
     private TintContextWrapper(Context context) {
         super(context);
         if (!VectorEnabledTintResources.shouldBeUsed()) {
-            this.f1896c = new TintResources(this, context.getResources());
+            this.f1848c = new TintResources(this, context.getResources());
             this.d = null;
             return;
         }
         VectorEnabledTintResources vectorEnabledTintResources = new VectorEnabledTintResources(this, context.getResources());
-        this.f1896c = vectorEnabledTintResources;
+        this.f1848c = vectorEnabledTintResources;
         Resources.Theme newTheme = vectorEnabledTintResources.newTheme();
         this.d = newTheme;
         newTheme.setTo(context.getTheme());
@@ -82,7 +82,7 @@ public class TintContextWrapper extends ContextWrapper {
 
     public static Context wrap(Context context) {
         if (a(context)) {
-            synchronized (f1895a) {
+            synchronized (f1847a) {
                 if (b != null) {
                     int size = b.size();
                     while (true) {
@@ -122,12 +122,12 @@ public class TintContextWrapper extends ContextWrapper {
 
     @Override // android.content.ContextWrapper, android.content.Context
     public AssetManager getAssets() {
-        return this.f1896c.getAssets();
+        return this.f1848c.getAssets();
     }
 
     @Override // android.content.ContextWrapper, android.content.Context
     public Resources getResources() {
-        return this.f1896c;
+        return this.f1848c;
     }
 
     @Override // android.content.ContextWrapper, android.content.Context

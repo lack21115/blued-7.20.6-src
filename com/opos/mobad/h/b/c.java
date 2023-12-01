@@ -19,11 +19,11 @@ import java.util.List;
 public class c extends g.a implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private AdItemData f26165a;
+    private AdItemData f12477a;
     private MaterialData b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<com.opos.mobad.ad.c.e> f26166c = null;
+    private List<com.opos.mobad.ad.c.e> f12478c = null;
     private List<com.opos.mobad.ad.c.e> d = null;
     private final long e = SystemClock.elapsedRealtime();
     private Context f;
@@ -34,15 +34,15 @@ public class c extends g.a implements h {
     static class a implements com.opos.mobad.ad.c.b {
 
         /* renamed from: a  reason: collision with root package name */
-        private AppPrivacyData f26167a;
+        private AppPrivacyData f12479a;
 
         public a(AppPrivacyData appPrivacyData) {
-            this.f26167a = appPrivacyData;
+            this.f12479a = appPrivacyData;
         }
 
         @Override // com.opos.mobad.ad.c.b
         public String a() {
-            AppPrivacyData appPrivacyData = this.f26167a;
+            AppPrivacyData appPrivacyData = this.f12479a;
             if (appPrivacyData == null) {
                 return null;
             }
@@ -51,21 +51,21 @@ public class c extends g.a implements h {
 
         @Override // com.opos.mobad.ad.c.b
         public String b() {
-            AppPrivacyData appPrivacyData = this.f26167a;
+            AppPrivacyData appPrivacyData = this.f12479a;
             if (appPrivacyData == null) {
                 return null;
             }
-            return appPrivacyData.f26469c;
+            return appPrivacyData.f12781c;
         }
     }
 
     public c(com.opos.mobad.cmn.a.a aVar, AdItemData adItemData, Context context, String str, com.opos.mobad.ad.privacy.b bVar) {
-        this.f26165a = adItemData;
+        this.f12477a = adItemData;
         this.f = context.getApplicationContext();
         this.b = adItemData.i().get(0);
         this.g = new d(context, aVar, adItemData, str, bVar);
-        if (this.f26165a.O() != null) {
-            this.h = new a(this.f26165a.O());
+        if (this.f12477a.O() != null) {
+            this.h = new a(this.f12477a.O());
         }
     }
 
@@ -117,13 +117,13 @@ public class c extends g.a implements h {
     public List<com.opos.mobad.ad.c.e> c() {
         List<MaterialData> i;
         List<MaterialFileData> j;
-        if (this.f26166c == null && (i = this.f26165a.i()) != null && i.size() > 0) {
+        if (this.f12478c == null && (i = this.f12477a.i()) != null && i.size() > 0) {
             for (MaterialData materialData : i) {
                 if (materialData != null && (j = materialData.j()) != null && j.size() > 0) {
-                    this.f26166c = new ArrayList();
+                    this.f12478c = new ArrayList();
                     for (MaterialFileData materialFileData : j) {
                         if (materialFileData != null) {
-                            this.f26166c.add(new b(materialFileData));
+                            this.f12478c.add(new b(materialFileData));
                         }
                     }
                 }
@@ -131,10 +131,10 @@ public class c extends g.a implements h {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("getIconFiles =");
-        List<com.opos.mobad.ad.c.e> list = this.f26166c;
+        List<com.opos.mobad.ad.c.e> list = this.f12478c;
         sb.append(list != null ? Integer.valueOf(list.size()) : com.igexin.push.core.b.l);
         com.opos.cmn.an.f.a.b("NativeAdvanceData", sb.toString());
-        return this.f26166c;
+        return this.f12478c;
     }
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
@@ -149,7 +149,7 @@ public class c extends g.a implements h {
     public List<com.opos.mobad.ad.c.e> d() {
         List<MaterialData> i;
         List<MaterialFileData> f;
-        if (this.d == null && (i = this.f26165a.i()) != null && i.size() > 0) {
+        if (this.d == null && (i = this.f12477a.i()) != null && i.size() > 0) {
             for (MaterialData materialData : i) {
                 if (materialData != null && materialData.d() != 13 && (f = materialData.f()) != null && f.size() > 0) {
                     this.d = new ArrayList();
@@ -176,12 +176,12 @@ public class c extends g.a implements h {
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public int f() {
-        return this.f26165a.X();
+        return this.f12477a.X();
     }
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public int g() {
-        return this.f26165a.Y();
+        return this.f12477a.Y();
     }
 
     @Override // com.opos.mobad.ad.c.h
@@ -191,7 +191,7 @@ public class c extends g.a implements h {
 
     @Override // com.opos.mobad.ad.c.h
     public com.opos.mobad.ad.c.e i() {
-        MaterialFileData l = this.f26165a.l();
+        MaterialFileData l = this.f12477a.l();
         b bVar = l != null ? new b(l) : null;
         StringBuilder sb = new StringBuilder();
         sb.append("getLogoFile=");
@@ -202,17 +202,17 @@ public class c extends g.a implements h {
 
     @Override // com.opos.mobad.ad.c.h
     public boolean j() {
-        return SystemClock.elapsedRealtime() - this.e <= ((long) ((this.f26165a.p() * 60) * 1000));
+        return SystemClock.elapsedRealtime() - this.e <= ((long) ((this.f12477a.p() * 60) * 1000));
     }
 
     @Override // com.opos.mobad.ad.c.h
     public String k() {
-        return this.f26165a.n();
+        return this.f12477a.n();
     }
 
     @Override // com.opos.mobad.ad.c.h
     public String l() {
-        String a2 = com.opos.mobad.cmn.a.b.g.a(this.f, this.f26165a, false);
+        String a2 = com.opos.mobad.cmn.a.b.g.a(this.f, this.f12477a, false);
         com.opos.cmn.an.f.a.b("NativeAdvanceData", "getClickBnText=" + a2);
         return a2;
     }

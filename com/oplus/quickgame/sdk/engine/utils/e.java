@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.text.TextUtils;
+import com.anythink.pd.ExHandler;
 import com.heytap.baselib.utils.ClientIdUtils;
 import com.oplus.quickgame.sdk.engine.ui.MD5Util;
 
@@ -14,11 +15,11 @@ import com.oplus.quickgame.sdk.engine.ui.MD5Util;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f24410a = "";
+    private static String f10723a = "";
     private static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f24411c = false;
+    private static boolean f10724c = false;
     private static String e = "";
     private static boolean f;
     private static Handler g;
@@ -26,23 +27,22 @@ public class e {
     private static Object d = new Object();
     private static final Object i = new Object();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/oplus/quickgame/sdk/engine/utils/e$a.class */
-    public static final class a implements Runnable {
+    static final class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f24412a;
+        final /* synthetic */ Context f10725a;
 
         a(Context context) {
-            this.f24412a = context;
+            this.f10725a = context;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             try {
                 if (TextUtils.isEmpty(e.e)) {
-                    e.e(this.f24412a);
-                    String unused = e.e = com.oplus.stdid.sdk.a.e(this.f24412a);
+                    e.e(this.f10725a);
+                    String unused = e.e = com.oplus.stdid.sdk.a.e(this.f10725a);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -51,20 +51,20 @@ public class e {
     }
 
     private static void a(Context context, h hVar) {
-        String str = f24410a;
+        String str = f10723a;
         String clientId = ClientIdUtils.INSTANCE.getClientId(context);
         if (!b(clientId) || TextUtils.equals(clientId, str)) {
             return;
         }
         a(context, clientId);
-        f24410a = clientId;
+        f10723a = clientId;
         hVar.a(str, clientId);
     }
 
     private static void a(Context context, String str) {
         String b2 = b.b(MD5Util.md5Hex(context.getPackageName()), str);
         SharedPreferences.Editor edit = context.getSharedPreferences("com.nearme.common.util.DeviceUtil", 0).edit();
-        edit.putString("imei", b2);
+        edit.putString(ExHandler.JSON_REQUEST_IMEI, b2);
         edit.commit();
     }
 
@@ -93,14 +93,14 @@ public class e {
         }
         synchronized (e.class) {
             try {
-                if (!b(f24410a)) {
+                if (!b(f10723a)) {
                     String c2 = c(context);
-                    f24410a = c2;
+                    f10723a = c2;
                     if (!b(c2)) {
                         String clientId = ClientIdUtils.INSTANCE.getClientId(context);
-                        f24410a = clientId;
+                        f10723a = clientId;
                         if (b(clientId)) {
-                            a(context, f24410a);
+                            a(context, f10723a);
                         }
                     }
                 }
@@ -116,7 +116,7 @@ public class e {
                 throw th2;
             }
         }
-        return f24410a;
+        return f10723a;
     }
 
     private static boolean b(String str) {
@@ -128,7 +128,7 @@ public class e {
     }
 
     private static String c(Context context) {
-        String string = context.getSharedPreferences("com.nearme.common.util.DeviceUtil", 0).getString("imei", f24410a);
+        String string = context.getSharedPreferences("com.nearme.common.util.DeviceUtil", 0).getString(ExHandler.JSON_REQUEST_IMEI, f10723a);
         if (TextUtils.isEmpty(string)) {
             return "";
         }
@@ -150,13 +150,13 @@ public class e {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void e(Context context) {
-        if (f24411c) {
+        if (f10724c) {
             return;
         }
         synchronized (d) {
-            if (!f24411c) {
+            if (!f10724c) {
                 com.oplus.stdid.sdk.a.b(context);
-                f24411c = true;
+                f10724c = true;
             }
         }
     }

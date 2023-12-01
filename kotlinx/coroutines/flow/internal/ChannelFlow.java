@@ -25,18 +25,14 @@ import kotlinx.coroutines.flow.FlowCollector;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/ChannelFlow.class */
 public abstract class ChannelFlow<T> implements FusibleFlow<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final CoroutineContext f43446a;
+    public final CoroutineContext a;
     public final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final BufferOverflow f43447c;
+    public final BufferOverflow c;
 
     public ChannelFlow(CoroutineContext coroutineContext, int i, BufferOverflow bufferOverflow) {
-        this.f43446a = coroutineContext;
+        this.a = coroutineContext;
         this.b = i;
-        this.f43447c = bufferOverflow;
+        this.c = bufferOverflow;
         if (DebugKt.a()) {
             if (!(this.b != -1)) {
                 throw new AssertionError();
@@ -45,8 +41,8 @@ public abstract class ChannelFlow<T> implements FusibleFlow<T> {
     }
 
     static /* synthetic */ Object a(ChannelFlow channelFlow, FlowCollector flowCollector, Continuation continuation) {
-        Object a2 = CoroutineScopeKt.a(new ChannelFlow$collect$2(flowCollector, channelFlow, null), continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        Object a = CoroutineScopeKt.a(new ChannelFlow$collect$2(flowCollector, channelFlow, null), continuation);
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -62,7 +58,7 @@ public abstract class ChannelFlow<T> implements FusibleFlow<T> {
     }
 
     public ReceiveChannel<T> a(CoroutineScope coroutineScope) {
-        return ProduceKt.a(coroutineScope, this.f43446a, c(), this.f43447c, CoroutineStart.ATOMIC, null, b(), 16, null);
+        return ProduceKt.a(coroutineScope, this.a, c(), this.c, CoroutineStart.ATOMIC, null, b(), 16, null);
     }
 
     protected abstract ChannelFlow<T> a(CoroutineContext coroutineContext, int i, BufferOverflow bufferOverflow);
@@ -74,7 +70,7 @@ public abstract class ChannelFlow<T> implements FusibleFlow<T> {
                 throw new AssertionError();
             }
         }
-        CoroutineContext plus = coroutineContext.plus(this.f43446a);
+        CoroutineContext plus = coroutineContext.plus(this.a);
         if (bufferOverflow == BufferOverflow.SUSPEND) {
             int i2 = this.b;
             if (i2 != -3) {
@@ -101,9 +97,9 @@ public abstract class ChannelFlow<T> implements FusibleFlow<T> {
                     }
                 }
             }
-            bufferOverflow = this.f43447c;
+            bufferOverflow = this.c;
         }
-        return (Intrinsics.a(plus, this.f43446a) && i == this.b && bufferOverflow == this.f43447c) ? this : a(plus, i, bufferOverflow);
+        return (Intrinsics.a(plus, this.a) && i == this.b && bufferOverflow == this.c) ? this : a(plus, i, bufferOverflow);
     }
 
     public final Function2<ProducerScope<? super T>, Continuation<? super Unit>, Object> b() {
@@ -121,19 +117,19 @@ public abstract class ChannelFlow<T> implements FusibleFlow<T> {
 
     public String toString() {
         ArrayList arrayList = new ArrayList(4);
-        String a2 = a();
-        if (a2 != null) {
-            arrayList.add(a2);
+        String a = a();
+        if (a != null) {
+            arrayList.add(a);
         }
-        if (this.f43446a != EmptyCoroutineContext.f42457a) {
-            arrayList.add(Intrinsics.a("context=", (Object) this.f43446a));
+        if (this.a != EmptyCoroutineContext.a) {
+            arrayList.add(Intrinsics.a("context=", (Object) this.a));
         }
         int i = this.b;
         if (i != -3) {
             arrayList.add(Intrinsics.a("capacity=", (Object) Integer.valueOf(i)));
         }
-        if (this.f43447c != BufferOverflow.SUSPEND) {
-            arrayList.add(Intrinsics.a("onBufferOverflow=", (Object) this.f43447c));
+        if (this.c != BufferOverflow.SUSPEND) {
+            arrayList.add(Intrinsics.a("onBufferOverflow=", (Object) this.c));
         }
         return DebugStringsKt.b(this) + '[' + CollectionsKt.a(arrayList, ", ", null, null, 0, null, null, 62, null) + ']';
     }

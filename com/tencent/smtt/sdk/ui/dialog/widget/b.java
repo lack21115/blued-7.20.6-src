@@ -1,5 +1,6 @@
 package com.tencent.smtt.sdk.ui.dialog.widget;
 
+import android.R;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.StateListDrawable;
@@ -9,11 +10,11 @@ import android.widget.Button;
 public class b extends Button {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f38908a;
+    private int f25217a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f38909c;
+    private float f25218c;
     private float d;
     private float e;
     private float f;
@@ -26,11 +27,11 @@ public class b extends Button {
         this.g = null;
         this.h = null;
         this.i = null;
-        this.f38909c = f;
+        this.f25218c = f;
         this.d = f2;
         this.e = f3;
         this.f = f4;
-        this.f38908a = i;
+        this.f25217a = i;
         this.b = Color.parseColor("#D0D0D0");
         a();
     }
@@ -60,25 +61,24 @@ public class b extends Button {
     }
 
     public void a() {
-        c cVar = new c(this.f38908a, this.f38909c, this.d, this.e, this.f);
+        c cVar = new c(this.f25217a, this.f25218c, this.d, this.e, this.f);
         this.g = cVar;
         cVar.a(getWidth(), getHeight());
-        c cVar2 = new c(1342177280 | (this.f38908a & 16777215), this.f38909c, this.d, this.e, this.f);
+        c cVar2 = new c(1342177280 | (this.f25217a & 16777215), this.f25218c, this.d, this.e, this.f);
         this.h = cVar2;
         cVar2.a(getWidth(), getHeight());
-        c cVar3 = new c(this.b, this.f38909c, this.d, this.e, this.f);
+        c cVar3 = new c(this.b, this.f25218c, this.d, this.e, this.f);
         this.i = cVar3;
         cVar3.a(getWidth(), getHeight());
         StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.addState(new int[]{16842910, -16842919}, this.g);
-        stateListDrawable.addState(new int[]{16842910, 16842919}, this.h);
+        stateListDrawable.addState(new int[]{R.attr.state_enabled, -16842919}, this.g);
+        stateListDrawable.addState(new int[]{R.attr.state_enabled, R.attr.state_pressed}, this.h);
         stateListDrawable.addState(new int[]{-16842910}, this.i);
         setBackgroundDrawable(stateListDrawable);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         c cVar = this.g;
         if (cVar != null) {

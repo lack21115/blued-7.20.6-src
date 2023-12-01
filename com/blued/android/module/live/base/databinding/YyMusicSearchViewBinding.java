@@ -12,13 +12,9 @@ import com.blued.android.module.live.base.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/databinding/YyMusicSearchViewBinding.class */
 public final class YyMusicSearchViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final EditText f11404a;
+    public final EditText a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f11405c;
+    public final FrameLayout c;
     public final LinearLayout d;
     public final FlowLayout e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class YyMusicSearchViewBinding implements ViewBinding {
 
     private YyMusicSearchViewBinding(LinearLayout linearLayout, EditText editText, ImageView imageView, FrameLayout frameLayout, LinearLayout linearLayout2, FlowLayout flowLayout, TextView textView, TextView textView2) {
         this.h = linearLayout;
-        this.f11404a = editText;
+        this.a = editText;
         this.b = imageView;
-        this.f11405c = frameLayout;
+        this.c = frameLayout;
         this.d = linearLayout2;
         this.e = flowLayout;
         this.f = textView;
@@ -76,7 +72,6 @@ public final class YyMusicSearchViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.h;

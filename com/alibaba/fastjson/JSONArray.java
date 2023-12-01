@@ -38,7 +38,7 @@ public class JSONArray extends JSON implements Serializable, Cloneable, List<Obj
         this.list.add(i, obj);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean add(Object obj) {
         return this.list.add(obj);
     }
@@ -48,12 +48,12 @@ public class JSONArray extends JSON implements Serializable, Cloneable, List<Obj
         return this.list.addAll(i, collection);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean addAll(Collection<? extends Object> collection) {
         return this.list.addAll(collection);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public void clear() {
         this.list.clear();
     }
@@ -62,17 +62,17 @@ public class JSONArray extends JSON implements Serializable, Cloneable, List<Obj
         return new JSONArray(new ArrayList(this.list));
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean contains(Object obj) {
         return this.list.contains(obj);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean containsAll(Collection<?> collection) {
         return this.list.containsAll(collection);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean equals(Object obj) {
         return this.list.equals(obj);
     }
@@ -266,7 +266,7 @@ public class JSONArray extends JSON implements Serializable, Cloneable, List<Obj
         return TypeUtils.castToTimestamp(get(i));
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public int hashCode() {
         return this.list.hashCode();
     }
@@ -276,7 +276,7 @@ public class JSONArray extends JSON implements Serializable, Cloneable, List<Obj
         return this.list.indexOf(obj);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean isEmpty() {
         return this.list.isEmpty();
     }
@@ -306,17 +306,17 @@ public class JSONArray extends JSON implements Serializable, Cloneable, List<Obj
         return this.list.remove(i);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean remove(Object obj) {
         return this.list.remove(obj);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         return this.list.removeAll(collection);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean retainAll(Collection<?> collection) {
         return this.list.retainAll(collection);
     }
@@ -350,7 +350,7 @@ public class JSONArray extends JSON implements Serializable, Cloneable, List<Obj
         this.relatedArray = obj;
     }
 
-    @Override // java.util.List
+    @Override // java.util.List, java.util.Collection
     public int size() {
         return this.list.size();
     }
@@ -360,12 +360,12 @@ public class JSONArray extends JSON implements Serializable, Cloneable, List<Obj
         return this.list.subList(i, i2);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public Object[] toArray() {
         return this.list.toArray();
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         return (T[]) this.list.toArray(tArr);
     }

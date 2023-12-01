@@ -4,11 +4,11 @@ package com.umeng.analytics.pro;
 public class ak {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f40621a = "umid";
+    public static String f26930a = "umid";
     public static String b = "appkey";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f40622c = "appVersion";
+    public static String f26931c = "appVersion";
     public static String d = "sdkVersion";
     public static String e = "channel";
     public static String f = "osVersion";

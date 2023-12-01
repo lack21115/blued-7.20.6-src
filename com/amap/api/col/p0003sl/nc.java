@@ -17,9 +17,7 @@ public class nc {
             return a();
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ThreadLocal<Charset> f5405a = new ThreadLocal<Charset>() { // from class: com.amap.api.col.3sl.nc.2
+    public static final ThreadLocal<Charset> a = new ThreadLocal<Charset>() { // from class: com.amap.api.col.3sl.nc.2
         private static Charset a() {
             return Charset.forName("UTF-8");
         }
@@ -29,7 +27,5 @@ public class nc {
             return a();
         }
     };
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final ThreadLocal<CharBuffer> f5406c = new ThreadLocal<>();
+    private static final ThreadLocal<CharBuffer> c = new ThreadLocal<>();
 }

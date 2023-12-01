@@ -17,44 +17,44 @@ import org.json.JSONObject;
 public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.meizu.cloud.pushsdk.handler.a f24131a;
+    private com.meizu.cloud.pushsdk.handler.a f10516a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private SparseArray<String> f24132c;
+    private SparseArray<String> f10517c;
 
     public a(Context context, com.meizu.cloud.pushsdk.handler.a aVar) {
         if (context == null) {
             throw new IllegalArgumentException("Context must not be null.");
         }
         this.b = context.getApplicationContext();
-        this.f24131a = aVar;
+        this.f10516a = aVar;
         SparseArray<String> sparseArray = new SparseArray<>();
-        this.f24132c = sparseArray;
+        this.f10517c = sparseArray;
         sparseArray.put(2, "MESSAGE_TYPE_PUSH_SERVICE_V2");
-        this.f24132c.put(4, "MESSAGE_TYPE_PUSH_SERVICE_V3");
-        this.f24132c.put(16, "MESSAGE_TYPE_REGISTER");
-        this.f24132c.put(32, "MESSAGE_TYPE_UNREGISTER");
-        this.f24132c.put(8, "MESSAGE_TYPE_THROUGH");
-        this.f24132c.put(64, "MESSAGE_TYPE_NOTIFICATION_CLICK");
-        this.f24132c.put(128, "MESSAGE_TYPE_NOTIFICATION_DELETE");
-        this.f24132c.put(256, "MESSAGE_TYPE_PUSH_SWITCH_STATUS");
-        this.f24132c.put(512, "MESSAGE_TYPE_PUSH_REGISTER_STATUS");
-        this.f24132c.put(2048, "MESSAGE_TYPE_PUSH_SUBTAGS_STATUS");
-        this.f24132c.put(1024, "MESSAGE_TYPE_PUSH_UNREGISTER_STATUS");
-        this.f24132c.put(4096, "MESSAGE_TYPE_PUSH_SUBALIAS_STATUS");
-        this.f24132c.put(8192, "MESSAGE_TYPE_SCHEDULE_NOTIFICATION");
-        this.f24132c.put(16384, "MESSAGE_TYPE_RECEIVE_NOTIFY_MESSAGE");
-        this.f24132c.put(32768, "MESSAGE_TYPE_NOTIFICATION_STATE");
-        this.f24132c.put(65536, "MESSAGE_TYPE_UPLOAD_FILE_LOG");
-        this.f24132c.put(131072, "MESSAGE_TYPE_NOTIFICATION_ARRIVED");
-        this.f24132c.put(262144, "MESSAGE_TYPE_NOTIFICATION_WITHDRAW");
-        this.f24132c.put(524288, "MESSAGE_TYPE_BRIGHT_NOTIFICATION");
-        this.f24132c.put(1048576, "MESSAGE_TYPE_NOTIFICATION_CLOSE");
+        this.f10517c.put(4, "MESSAGE_TYPE_PUSH_SERVICE_V3");
+        this.f10517c.put(16, "MESSAGE_TYPE_REGISTER");
+        this.f10517c.put(32, "MESSAGE_TYPE_UNREGISTER");
+        this.f10517c.put(8, "MESSAGE_TYPE_THROUGH");
+        this.f10517c.put(64, "MESSAGE_TYPE_NOTIFICATION_CLICK");
+        this.f10517c.put(128, "MESSAGE_TYPE_NOTIFICATION_DELETE");
+        this.f10517c.put(256, "MESSAGE_TYPE_PUSH_SWITCH_STATUS");
+        this.f10517c.put(512, "MESSAGE_TYPE_PUSH_REGISTER_STATUS");
+        this.f10517c.put(2048, "MESSAGE_TYPE_PUSH_SUBTAGS_STATUS");
+        this.f10517c.put(1024, "MESSAGE_TYPE_PUSH_UNREGISTER_STATUS");
+        this.f10517c.put(4096, "MESSAGE_TYPE_PUSH_SUBALIAS_STATUS");
+        this.f10517c.put(8192, "MESSAGE_TYPE_SCHEDULE_NOTIFICATION");
+        this.f10517c.put(16384, "MESSAGE_TYPE_RECEIVE_NOTIFY_MESSAGE");
+        this.f10517c.put(32768, "MESSAGE_TYPE_NOTIFICATION_STATE");
+        this.f10517c.put(65536, "MESSAGE_TYPE_UPLOAD_FILE_LOG");
+        this.f10517c.put(131072, "MESSAGE_TYPE_NOTIFICATION_ARRIVED");
+        this.f10517c.put(262144, "MESSAGE_TYPE_NOTIFICATION_WITHDRAW");
+        this.f10517c.put(524288, "MESSAGE_TYPE_BRIGHT_NOTIFICATION");
+        this.f10517c.put(1048576, "MESSAGE_TYPE_NOTIFICATION_CLOSE");
     }
 
     private String a(int i) {
-        return this.f24132c.get(i);
+        return this.f10517c.get(i);
     }
 
     private boolean a(String str, MessageV3 messageV3, String str2) {
@@ -245,7 +245,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public com.meizu.cloud.pushsdk.handler.a c() {
-        return this.f24131a;
+        return this.f10516a;
     }
 
     protected abstract T c(Intent intent);

@@ -12,21 +12,17 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveGiftSetTaskItemBinding.class */
 public final class LiveGiftSetTaskItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12231a;
+    public final ImageView a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f12232c;
+    public final TextView c;
     public final TextView d;
     private final RelativeLayout e;
 
     private LiveGiftSetTaskItemBinding(RelativeLayout relativeLayout, ImageView imageView, FrameLayout frameLayout, TextView textView, TextView textView2) {
         this.e = relativeLayout;
-        this.f12231a = imageView;
+        this.a = imageView;
         this.b = frameLayout;
-        this.f12232c = textView;
+        this.c = textView;
         this.d = textView2;
     }
 
@@ -67,7 +63,6 @@ public final class LiveGiftSetTaskItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.e;

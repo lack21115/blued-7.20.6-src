@@ -1,7 +1,5 @@
 package org.json;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.baidu.mobads.sdk.api.IAdInterListener;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -82,7 +80,7 @@ public class JSONArray {
         Object obj = get(i);
         Boolean bool = JSON.toBoolean(obj);
         if (bool == null) {
-            throw JSON.typeMismatch(Integer.valueOf(i), obj, TypedValues.Custom.S_BOOLEAN);
+            throw JSON.typeMismatch(Integer.valueOf(i), obj, "boolean");
         }
         return bool.booleanValue();
     }
@@ -100,7 +98,7 @@ public class JSONArray {
         Object obj = get(i);
         Integer integer = JSON.toInteger(obj);
         if (integer == null) {
-            throw JSON.typeMismatch(Integer.valueOf(i), obj, IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL);
+            throw JSON.typeMismatch(Integer.valueOf(i), obj, "int");
         }
         return integer.intValue();
     }

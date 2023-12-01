@@ -1,12 +1,12 @@
 package com.blued.android.module.live_china.fragment;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
@@ -26,6 +26,7 @@ import android.widget.TextView;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.viewpager.widget.ViewPager;
+import com.alipay.sdk.util.i;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.chat.data.JoinLiveResult;
 import com.blued.android.chat.data.LiveChatStatistics;
@@ -178,9 +179,7 @@ import com.blued.android.module.live_china.view.PopRankingListView;
 import com.blued.android.module.live_china.view.WishingWellView;
 import com.blued.das.live.LiveProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.huawei.openalliance.ad.constant.s;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -250,9 +249,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
     public FrameLayout ao;
     public FrameLayout ap;
     public FrameLayout aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    public FrameLayout f13343ar;
+    public FrameLayout ar;
     public FrameLayout as;
     public FrameLayout at;
     public TextureView au;
@@ -337,7 +334,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
     public int cm;
 
     /* renamed from: cn  reason: collision with root package name */
-    public LiveOperationManager f13344cn;
+    public LiveOperationManager f49cn;
     public LivePushGuideView co;
     public boolean cq;
     public long cs;
@@ -439,13 +436,9 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
     /* renamed from: com.blued.android.module.live_china.fragment.PlayingOnliveFragment$18  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/PlayingOnliveFragment$18.class */
     public class AnonymousClass18 implements ViewPager.OnPageChangeListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f13355a = 0;
+        int a = 0;
         int b = 0;
-
-        /* renamed from: c  reason: collision with root package name */
-        boolean f13356c = false;
+        boolean c = false;
 
         AnonymousClass18() {
         }
@@ -455,21 +448,19 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
             PlayingOnliveFragment.this.cM = null;
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
-            this.f13356c = false;
+            this.c = false;
             this.b = 0;
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrolled(int i, float f, int i2) {
             if (PushGuideObserver.d().a()) {
                 return;
             }
             boolean z = PlayingOnliveFragment.this.E.getResources().getConfiguration().orientation == 1;
-            if (!this.f13356c && this.f13355a == PlayingOnliveFragment.this.aP.getCount() - 1 && z) {
+            if (!this.c && this.a == PlayingOnliveFragment.this.aP.getCount() - 1 && z) {
                 if (f != 1.0d && i2 != 0) {
-                    this.f13356c = true;
+                    this.c = true;
                     this.b = 0;
                     return;
                 }
@@ -487,15 +478,14 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
                             }
                         });
                     }
-                    this.f13356c = true;
+                    this.c = true;
                     this.b = 0;
                 }
             }
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
-            this.f13355a = i;
+            this.a = i;
             if (i == 0) {
                 PlayingOnliveFragment.this.ab = true;
                 PlayingOnliveFragment.cB = 0;
@@ -518,18 +508,16 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
     /* renamed from: com.blued.android.module.live_china.fragment.PlayingOnliveFragment$25  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/PlayingOnliveFragment$25.class */
     class AnonymousClass25 implements LiveRegularEventRanklistDialogFragment.ILiveHostDialog {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PlayingOnliveFragment f13366a;
+        final /* synthetic */ PlayingOnliveFragment a;
 
         @Override // com.blued.android.module.live_china.fragment.LiveRegularEventRanklistDialogFragment.ILiveHostDialog
         public void a() {
-            this.f13366a.bk();
+            this.a.bk();
         }
 
         @Override // com.blued.android.module.live_china.fragment.LiveRegularEventRanklistDialogFragment.ILiveHostDialog
         public void b() {
-            this.f13366a.bl();
+            this.a.bl();
         }
     }
 
@@ -537,12 +525,10 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
     /* renamed from: com.blued.android.module.live_china.fragment.PlayingOnliveFragment$43  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/PlayingOnliveFragment$43.class */
     public class AnonymousClass43 implements QueueFileDownloader.QueueFileListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveOneKissModel f13389a;
+        final /* synthetic */ LiveOneKissModel a;
 
         AnonymousClass43(LiveOneKissModel liveOneKissModel) {
-            this.f13389a = liveOneKissModel;
+            this.a = liveOneKissModel;
         }
 
         @Override // com.blued.android.core.net.http.QueueFileDownloader.QueueFileListener
@@ -558,20 +544,20 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
                         Log.i("==ppp", "showLiveKissDialog 6:" + i);
                         if (i >= 0) {
                             LiveOneKissModel liveOneKissModel = new LiveOneKissModel();
-                            liveOneKissModel.animation = AnonymousClass43.this.f13389a.animation;
-                            liveOneKissModel.delay = AnonymousClass43.this.f13389a.delay;
-                            liveOneKissModel.duration = AnonymousClass43.this.f13389a.duration;
-                            liveOneKissModel.goods_id = AnonymousClass43.this.f13389a.goods_id;
-                            liveOneKissModel.goods_name = AnonymousClass43.this.f13389a.goods_name;
-                            liveOneKissModel.goods_icon = AnonymousClass43.this.f13389a.goods_icon;
-                            liveOneKissModel.pop = AnonymousClass43.this.f13389a.pop;
-                            liveOneKissModel.isChargeTo = AnonymousClass43.this.f13389a.isChargeTo;
+                            liveOneKissModel.animation = AnonymousClass43.this.a.animation;
+                            liveOneKissModel.delay = AnonymousClass43.this.a.delay;
+                            liveOneKissModel.duration = AnonymousClass43.this.a.duration;
+                            liveOneKissModel.goods_id = AnonymousClass43.this.a.goods_id;
+                            liveOneKissModel.goods_name = AnonymousClass43.this.a.goods_name;
+                            liveOneKissModel.goods_icon = AnonymousClass43.this.a.goods_icon;
+                            liveOneKissModel.pop = AnonymousClass43.this.a.pop;
+                            liveOneKissModel.isChargeTo = AnonymousClass43.this.a.isChargeTo;
                             PlayingOnliveFragment.this.cJ = new LiveKissDialogFragment();
                             PlayingOnliveFragment.this.cJ.a(new LiveKissDialogFragment.EventCallBack() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveFragment.43.1.1
                                 @Override // com.blued.android.module.live_china.fragment.LiveKissDialogFragment.EventCallBack
                                 public void a() {
                                     if (LiveRoomManager.a().p() != null) {
-                                        LiveRoomManager.a().p().liveOneKissModel = AnonymousClass43.this.f13389a;
+                                        LiveRoomManager.a().p().liveOneKissModel = AnonymousClass43.this.a;
                                     }
                                     PlayingOnliveFragment.this.b(true);
                                 }
@@ -618,7 +604,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         LiveRoomData liveRoomData2;
         synchronized (PlayingOnliveFragment.class) {
             try {
-                if (!LiveFloatManager.a().z() || TextUtils.equals(liveRoomData.comeCode, s.B)) {
+                if (!LiveFloatManager.a().z() || TextUtils.equals(liveRoomData.comeCode, "web")) {
                     if (list != null && list != LiveDataListManager.a().b()) {
                         LiveDataListManager.a().a(list);
                     }
@@ -660,7 +646,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
     public /* synthetic */ void a(LiveCloseReason liveCloseReason, LiveChatStatistics liveChatStatistics) {
         getActivity().setRequestedOrientation(1);
         aZ();
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         if (liveCloseReason == LiveCloseReason.CLOSED_BY_MANAGER) {
             LiveRouteUtil.a(this, !TextUtils.isEmpty(liveChatStatistics.title) ? liveChatStatistics.title : getString(R.string.Live_applyHost_wormNotice), !TextUtils.isEmpty(liveChatStatistics.audience_message) ? liveChatStatistics.audience_message : null);
         } else {
@@ -721,12 +707,12 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         if (!TextUtils.isEmpty(str) && (muteLiveAudioModel.source_uid.equals(LiveRoomManager.a().g()) || muteLiveAudioModel.target_uid.equals(LiveRoomManager.a().g()))) {
             ToastUtils.a(str, 0);
         }
-        LiveSetDataObserver a2 = LiveSetDataObserver.a();
+        LiveSetDataObserver a = LiveSetDataObserver.a();
         String str2 = muteLiveAudioModel.target_uid;
         if (muteLiveAudioModel.target_status == 0) {
             z = true;
         }
-        a2.a(str2, z);
+        a.a(str2, z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -763,8 +749,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
     }
 
     private void bg() {
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_SHOW_DIALOG, Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveFragment.3
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("live_show_dialog", Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveFragment.3
             /* renamed from: a */
             public void onChanged(Boolean bool) {
                 if (bool.booleanValue()) {
@@ -774,8 +759,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
                 }
             }
         });
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_RANKING_DIALOG, Integer.class).observe(this, new Observer<Integer>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveFragment.4
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("live_ranking_dialog", Integer.class).observe(this, new Observer<Integer>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveFragment.4
             /* renamed from: a */
             public void onChanged(Integer num) {
                 if (LiveRoomManager.a().p() == null) {
@@ -795,7 +779,6 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
             }
         });
         LiveEventBus.get("live_pk_dialog", LivePkBannerModel.class).observe(this, new Observer<LivePkBannerModel>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveFragment.5
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(LivePkBannerModel livePkBannerModel) {
                 if (livePkBannerModel == null || LiveRoomManager.a().p() == null) {
@@ -810,14 +793,12 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
             }
         });
         LiveEventBus.get("live_half_web_close", Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveFragment.6
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Boolean bool) {
                 PlayingOnliveFragment.this.R();
             }
         });
         LiveEventBus.get("live_auto_scroll_next", Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveFragment.7
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Boolean bool) {
                 if (PlayingOnliveFragment.this.t != LiveRoomManager.a().d()) {
@@ -831,68 +812,57 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
             }
         });
         LiveEventBus.get(LiveEventBusUtil.v, Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFragment$HampizH1-RH04qRKx5xjRW9zFS0
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFragment.this.e((Boolean) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.t, Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFragment$oeKgiDZcKQC9Hh8tOj_i03L8krQ
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFragment.this.d((Boolean) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.y, String.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$cMuNPmiocMwgCKr3hcVkLzvYALI
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFragment.this.i((String) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.A, DefinedRankInfo.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFragment$cCu-dv-lmbV2-bJa2krHHs8tN_Y
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFragment.this.a((DefinedRankInfo) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.B, String.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFragment$WFfnfC7Bzq6dU9HCgac8Aoaz-LY
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFragment.this.j((String) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.C, LiveRoomFunctionItemModel.class).observe(this, new $$Lambda$vp9O66ly_kNLGZHZsc8Knor7gPc(this));
         LiveEventBus.get("live_multi_pk_stop", Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$Vsw9m84978fWYJBmumcpgQi3MqU
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFragment.this.c(((Boolean) obj).booleanValue());
             }
         });
         LiveEventBus.get("live_multi_pk_rank", LivePkBannerModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$2DWjIpxNpsewUb7qDqlNrQuDIe4
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFragment.this.a((LivePkBannerModel) obj);
             }
         });
         LiveEventBus.get("live_attention_relation_changed", RelationInfo.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$Mmz_vt40CgQLAtmRlHRcENo6Rt4
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFragment.this.a((RelationInfo) obj);
             }
         });
         LiveEventBus.get("live_shout_card_success", Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFragment$eFXm8PnGz1o7OMqiqLQug1GLiGc
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFragment.this.c((Boolean) obj);
             }
         });
         LiveEventBus.get("live_noble_update", Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFragment$HZhr-XX1QaNlyN02ub4kf4_CvH8
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFragment.this.b((Boolean) obj);
             }
         });
         LiveEventBus.get("send_gift_success", Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFragment$aK6JIGzpmAfQBOFxfRis4-rzexs
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFragment.this.a((Boolean) obj);
             }
@@ -951,7 +921,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         this.ao = (FrameLayout) this.b.findViewById(R.id.fl_RemoteGLSurfaceViewA);
         this.ap = (FrameLayout) this.b.findViewById(R.id.fl_RemoteGLSurfaceViewB);
         this.aq = (FrameLayout) this.b.findViewById(R.id.fl_RemoteGLSurfaceViewC);
-        this.f13343ar = (FrameLayout) this.b.findViewById(R.id.fl_RemoteGLSurfaceViewD);
+        this.ar = (FrameLayout) this.b.findViewById(R.id.fl_RemoteGLSurfaceViewD);
         this.as = (FrameLayout) this.b.findViewById(R.id.fl_RemoteGLSurfaceViewE);
         this.at = (FrameLayout) this.b.findViewById(R.id.fl_RemoteGLSurfaceViewF);
         this.au = (TextureView) this.b.findViewById(R.id.RemoteGLSurfaceViewA);
@@ -1009,16 +979,16 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         this.O = this.b.findViewById(R.id.view_dating_bg);
         k();
         if (this.x) {
-            this.f12722c.setShakeWidth(DensityUtils.a(this.E, 50.0f));
+            this.c.setShakeWidth(DensityUtils.a(this.E, 50.0f));
         }
         this.F = (ImageView) this.b.findViewById(R.id.img_header_bg);
         this.S = this.b.findViewById(R.id.live_loading_layout);
         this.T = (TextView) this.b.findViewById(R.id.live_loading_text);
-        this.af = DialogUtils.a(getActivity());
+        this.af = DialogUtils.a((Context) getActivity());
         this.G = (ImageView) this.b.findViewById(R.id.all_gif_view);
         this.H = (ImageView) this.b.findViewById(R.id.grab_box_gif_view);
         this.I = (GrabBoxNumView) this.b.findViewById(R.id.grab_box_num_view);
-        this.aO = (ViewPager) this.b.findViewById(R.id.live_view_pager);
+        this.aO = this.b.findViewById(R.id.live_view_pager);
         this.P = (LiveAnimationView) this.b.findViewById(R.id.live_animation_layou);
         this.Q = (LiveAnimationView) this.b.findViewById(R.id.live_universal_animation);
         this.bf = (LinearLayout) this.b.findViewById(R.id.live_pk_root_layout);
@@ -1164,7 +1134,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
                         return;
                     }
                     stringBuffer.append(bluedEntity.getSingleData().like_style.random[i2]);
-                    stringBuffer.append(";");
+                    stringBuffer.append(i.b);
                     i = i2 + 1;
                 }
             }
@@ -1180,7 +1150,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                     return;
                 }
-                LiveCloakingUtil.f14157a = LiveCloakingUtil.a(bluedEntityA.getSingleData());
+                LiveCloakingUtil.a = LiveCloakingUtil.a(bluedEntityA.getSingleData());
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -1467,7 +1437,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         }
         Bundle bundle = new Bundle();
         bundle.putString("UID", LiveRoomManager.a().g());
-        bundle.putLong(LiveRankGuestDialogFragment.f13189a, this.t);
+        bundle.putLong(LiveRankGuestDialogFragment.a, this.t);
         bundle.putBoolean("isMakeLover", aC());
         LiveRankGuestDialogFragment liveRankGuestDialogFragment = new LiveRankGuestDialogFragment();
         this.ac = liveRankGuestDialogFragment;
@@ -1637,7 +1607,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
             @Override // java.lang.Runnable
             public void run() {
                 if (i == 0) {
-                    if (PlayingOnliveFragment.this.K.f13687a == 1) {
+                    if (PlayingOnliveFragment.this.K.a == 1) {
                         PlayingOnliveFragment.this.T.setText(R.string.live_anchor_leave);
                     } else {
                         PlayingOnliveFragment.this.T.setText(R.string.liveVideo_livingView_tips_isConnecting);
@@ -1713,24 +1683,22 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         textView.setText(e + BridgeUtil.SPLIT_MARK + i);
         editText.setSelection(str5.length());
         editText.addTextChangedListener(new TextWatcher() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveFragment.37
-
-            /* renamed from: a  reason: collision with root package name */
-            public int f13380a;
+            public int a;
             public int b;
 
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
                 try {
                     editText.removeTextChangedListener(this);
-                    this.f13380a = editText.getSelectionStart();
+                    this.a = editText.getSelectionStart();
                     this.b = editText.getSelectionEnd();
                     while (CommonStringUtils.a(editable) > i) {
-                        editable.delete(this.f13380a - 1, this.b);
-                        this.f13380a--;
+                        editable.delete(this.a - 1, this.b);
+                        this.a--;
                         this.b--;
                     }
                     textView.setText(CommonStringUtils.a(editable) + BridgeUtil.SPLIT_MARK + i);
-                    editText.setSelection(this.f13380a);
+                    editText.setSelection(this.a);
                     editText.addTextChangedListener(this);
                 } catch (Exception e2) {
                     e2.printStackTrace();
@@ -1770,9 +1738,8 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         this.cx.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.blued.android.module.live_china.fragment.LiveBaseFragment
-    public void a(Bundle bundle) {
+    protected void a(Bundle bundle) {
         super.a(bundle);
         bi();
         b(this.R);
@@ -1792,15 +1759,15 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
     public void a(LiveDefaultGiftModel liveDefaultGiftModel) {
         FragmentTransaction beginTransaction = getChildFragmentManager().beginTransaction();
         beginTransaction.setCustomAnimations(R.anim.anim_gift_bottom_in, R.anim.anim_gift_bottom_out);
-        LiveGiftFragment liveGiftFragment = (LiveGiftFragment) getChildFragmentManager().findFragmentByTag("LiveGift");
-        this.cw = liveGiftFragment;
-        if (liveGiftFragment == null) {
-            LiveGiftFragment liveGiftFragment2 = new LiveGiftFragment();
-            this.cw = liveGiftFragment2;
-            liveGiftFragment2.a((BaseFragment) this);
+        LiveGiftFragment findFragmentByTag = getChildFragmentManager().findFragmentByTag("LiveGift");
+        this.cw = findFragmentByTag;
+        if (findFragmentByTag == null) {
+            LiveGiftFragment liveGiftFragment = new LiveGiftFragment();
+            this.cw = liveGiftFragment;
+            liveGiftFragment.a((BaseFragment) this);
             beginTransaction.add(R.id.live_gift_container_layout_id, this.cw, "LiveGift");
         } else {
-            beginTransaction.show(liveGiftFragment);
+            beginTransaction.show(findFragmentByTag);
         }
         this.cw.a((Object) liveDefaultGiftModel);
         beginTransaction.commitAllowingStateLoss();
@@ -1965,7 +1932,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
             public void run() {
                 String str;
                 if (CommonTools.a(PlayingOnliveFragment.this)) {
-                    KeyboardUtils.a(PlayingOnliveFragment.this.getActivity());
+                    KeyboardUtils.a((Activity) PlayingOnliveFragment.this.getActivity());
                     LiveRoomCloseReason liveRoomCloseReason2 = liveRoomCloseReason;
                     if (liveRoomCloseReason2 != null && liveRoomCloseReason2.errorCode == 400006) {
                         PlayingOnliveFragment.this.aw();
@@ -2020,7 +1987,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
                 aH();
             } else if (!z) {
             } else {
-                LiveGoodsWallDialogFragment.f12934a.a(getChildFragmentManager());
+                LiveGoodsWallDialogFragment.a.a(getChildFragmentManager());
             }
         }
     }
@@ -2086,15 +2053,15 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
     public void a(Object obj) {
         FragmentTransaction beginTransaction = getChildFragmentManager().beginTransaction();
         beginTransaction.setCustomAnimations(R.anim.anim_gift_bottom_in, R.anim.anim_gift_bottom_out);
-        LiveGiftFragment liveGiftFragment = (LiveGiftFragment) getChildFragmentManager().findFragmentByTag("LiveGift");
-        this.cw = liveGiftFragment;
-        if (liveGiftFragment == null) {
-            LiveGiftFragment liveGiftFragment2 = new LiveGiftFragment();
-            this.cw = liveGiftFragment2;
-            liveGiftFragment2.a((BaseFragment) this);
+        LiveGiftFragment findFragmentByTag = getChildFragmentManager().findFragmentByTag("LiveGift");
+        this.cw = findFragmentByTag;
+        if (findFragmentByTag == null) {
+            LiveGiftFragment liveGiftFragment = new LiveGiftFragment();
+            this.cw = liveGiftFragment;
+            liveGiftFragment.a((BaseFragment) this);
             beginTransaction.add(R.id.live_gift_container_layout_id, this.cw, "LiveGift");
         } else {
-            beginTransaction.show(liveGiftFragment);
+            beginTransaction.show(findFragmentByTag);
         }
         this.cw.a(obj);
         beginTransaction.commitAllowingStateLoss();
@@ -2144,7 +2111,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
             bundle.putString("uid", LiveRoomManager.a().g());
             bundle.putLong("lid", this.t);
             bundle.putShort(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE, this.s);
-            bundle.putInt(BatteryManager.EXTRA_LEVEL, LiveRoomManager.a().p().level);
+            bundle.putInt("level", LiveRoomManager.a().p().level);
             bundle.putBoolean("DefaultTagFansGroup", z);
             LiveFansGuestDialogFragment liveFansGuestDialogFragment2 = new LiveFansGuestDialogFragment();
             this.ae = liveFansGuestDialogFragment2;
@@ -2167,8 +2134,8 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
 
     @Override // com.blued.android.module.live_china.observer.ZanRefreshObserver.IZanRefreshObserver
     public void a(String[] strArr) {
-        if (this.f12722c != null) {
-            this.f12722c.a(strArr);
+        if (this.c != null) {
+            this.c.a(strArr);
         }
     }
 
@@ -2271,7 +2238,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
 
     @Override // com.blued.android.module.live_china.observer.LiveRefreshUIObserver.ILiveRefreshUIObserver
     public void aN() {
-        j(!TextUtils.isEmpty(WishingWellView.f15314a) ? WishingWellView.f15314a : !TextUtils.isEmpty(LiveRoomManager.a().p().entrance_url) ? LiveRoomManager.a().p().entrance_url : LiveRoomInfo.a().j() ? "https://activity-test.blued.cn/hd/2021/wishing-well/star-site?blued_mode=hide_nav" : "https://activity.blued.cn/hd/2021/wishing-well/star-site?blued_mode=hide_nav");
+        j(!TextUtils.isEmpty(WishingWellView.a) ? WishingWellView.a : !TextUtils.isEmpty(LiveRoomManager.a().p().entrance_url) ? LiveRoomManager.a().p().entrance_url : LiveRoomInfo.a().j() ? "https://activity-test.blued.cn/hd/2021/wishing-well/star-site?blued_mode=hide_nav" : "https://activity.blued.cn/hd/2021/wishing-well/star-site?blued_mode=hide_nav");
         LiveEventBus.get("live_hide_wishing_welldot").post(true);
     }
 
@@ -2550,9 +2517,8 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         this.cF.c();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.blued.android.module.live_china.fragment.LiveBaseFragment
-    public void a_(LiveChattingModel liveChattingModel) {
+    protected void a_(LiveChattingModel liveChattingModel) {
         if (liveChattingModel == null) {
             return;
         }
@@ -2591,8 +2557,8 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
 
     @Override // com.blued.android.module.live_china.observer.LiveRefreshUIObserver.ILiveRefreshUIObserver
     public void ag() {
-        LiveMakeLoverFansModel a2 = this.bY.a(LiveRoomInfo.a().f());
-        if (a2 == null || a2.lamp != 1) {
+        LiveMakeLoverFansModel a = this.bY.a(LiveRoomInfo.a().f());
+        if (a == null || a.lamp != 1) {
             return;
         }
         this.bW.d();
@@ -2675,8 +2641,8 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         this.ax = new TextureView(getContext());
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
         layoutParams.gravity = 17;
-        this.f13343ar.removeAllViews();
-        this.f13343ar.addView(this.ax, layoutParams);
+        this.ar.removeAllViews();
+        this.ar.addView(this.ax, layoutParams);
     }
 
     public void aq() {
@@ -2971,8 +2937,8 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
 
     @Override // com.blued.android.module.live_china.observer.LiveRefreshUIObserver.ILiveRefreshUIObserver
     public void bb() {
-        if (this.f12722c != null) {
-            this.f12722c.a(true, LiveRoomInfo.a().r());
+        if (this.c != null) {
+            this.c.a(true, LiveRoomInfo.a().r());
         }
         LiveMsgSendManager.a().a(this.cU);
         if (this.cU) {
@@ -3430,17 +3396,17 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
     @Override // com.blued.android.module.live_china.observer.LiveRefreshUIObserver.ILiveRefreshUIObserver
     public void j(int i) {
         this.bW.c();
-        LiveMakeLoverFansModel a2 = this.bY.a(i);
-        if (a2 == null || a2.isEmpty()) {
+        LiveMakeLoverFansModel a = this.bY.a(i);
+        if (a == null || a.isEmpty()) {
             return;
         }
         if (LiveRoomManager.a().p() != null) {
-            EventTrackLive.d(LiveProtos.Event.USER_MIKE_USER_PHOTO_DOUBLE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), a2.uid);
+            EventTrackLive.d(LiveProtos.Event.USER_MIKE_USER_PHOTO_DOUBLE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), a.uid);
         }
-        String str = a2.pic;
+        String str = a.pic;
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
-            str2 = a2.avatar;
+            str2 = a.avatar;
         }
         if (TextUtils.isEmpty(str2)) {
             Log.i("==makelover==", "photo is empty");
@@ -3501,7 +3467,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
             }
             Logger.a("drb", "显示键盘");
             aa = true;
-            if (dialogWith6PW == null || dialogWith6PW.f14128a == null || !dialogWith6PW.f14128a.isShowing()) {
+            if (dialogWith6PW == null || dialogWith6PW.a == null || !dialogWith6PW.a.isShowing()) {
                 AlertDialog alertDialog = this.cx;
                 z = alertDialog == null || !alertDialog.isShowing();
             } else {
@@ -3546,9 +3512,8 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.blued.android.module.live_china.fragment.LiveBaseFragment
-    public void l() {
+    protected void l() {
         super.l();
         this.E = getActivity();
         LiveRankGuestDialogFragment.e = 0;
@@ -3581,10 +3546,10 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         this.aV = liveRoomData.hasTransition;
         Logger.a("rrb", "initData mLiveListPosition = ", Integer.valueOf(this.aX));
         Log.v("pk", "mSessionId:" + this.t + " -- uid:" + LiveRoomInfo.a().f());
-        LiveRoomConstants.f11735a = 32;
+        LiveRoomConstants.a = 32;
         if (!this.ab && !this.x) {
             LiveOperationManager liveOperationManager = new LiveOperationManager(this, false);
-            this.f13344cn = liveOperationManager;
+            this.f49cn = liveOperationManager;
             liveOperationManager.c();
         }
         be();
@@ -3599,9 +3564,8 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.blued.android.module.live_china.fragment.LiveBaseFragment
-    public void m() {
+    protected void m() {
         super.m();
         ZanRefreshObserver.a().a(this);
         LiveRefreshUIObserver.a().a(this);
@@ -3612,9 +3576,8 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         x();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.blued.android.module.live_china.fragment.LiveBaseFragment
-    public void n() {
+    protected void n() {
         super.n();
         postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFragment$xg0s6MQAyW6VDFgztavO9M_dZK0
             @Override // java.lang.Runnable
@@ -3624,7 +3587,6 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         }, 4000L);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1 && i == 10111) {
             this.V = intent.getStringArrayExtra("CHOOSED_UID");
@@ -3694,8 +3656,8 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
     public void onClick(View view) {
         Tracker.onClick(view);
         if (view.getId() == R.id.live_like_view) {
-            if (this.f12722c != null) {
-                this.f12722c.a(true, LiveRoomInfo.a().r());
+            if (this.c != null) {
+                this.c.a(true, LiveRoomInfo.a().r());
             }
             LiveMsgSendManager.a().a(false);
         } else if (view.getId() == R.id.live_msg_send_emotion) {
@@ -3742,7 +3704,6 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         });
     }
 
-    @Override // androidx.fragment.app.Fragment, android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
         int i = configuration.orientation;
         if (i == 1) {
@@ -3757,7 +3718,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         super.onConfigurationChanged(configuration);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         getActivity().getWindow().setSoftInputMode(19);
         Logger.a("drb", "onCreate");
@@ -3768,7 +3729,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.module.live_china.fragment.LiveBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.live_china.fragment.LiveBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         LiveFloatManager.a().b(false);
@@ -3833,7 +3794,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         LiveEventBus.get(LiveEventBusUtil.C, LiveRoomFunctionItemModel.class).removeObserver(new $$Lambda$vp9O66ly_kNLGZHZsc8Knor7gPc(this));
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         Dialog dialog;
         Dialog dialog2;
@@ -3870,7 +3831,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
             this.cJ.dismiss();
         }
         if (this.L != null && !this.x) {
-            this.L.f13726a = true;
+            this.L.a = true;
         }
         Logger.a("drb", "onPause");
     }
@@ -3880,7 +3841,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         LiveEventBusUtil.a(LiveChattingModel.copy(chattingModel), false);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         this.aR = true;
@@ -3894,7 +3855,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         LiveSetDataObserver.a().d(0);
         this.K.f();
         if (this.L != null && !this.x) {
-            this.L.f13726a = false;
+            this.L.a = false;
         }
         LiveFloatManager.a().f();
         if (this.aS) {
@@ -3908,7 +3869,7 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         Logger.a("drb", "onResume");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onStop() {
         super.onStop();
         if (!this.x) {
@@ -3925,10 +3886,10 @@ public class PlayingOnliveFragment extends LiveBaseFragment implements View.OnCl
         Logger.a("drb", "onStop");
     }
 
-    @Override // com.blued.android.module.live_china.fragment.LiveBaseFragment, com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.live_china.fragment.LiveBaseFragment, com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
-        this.af = DialogUtils.a(getActivity());
+        this.af = DialogUtils.a((Context) getActivity());
         LiveModePagerAdapter liveModePagerAdapter = new LiveModePagerAdapter(getChildFragmentManager(), this);
         this.aP = liveModePagerAdapter;
         this.aO.setAdapter(liveModePagerAdapter);

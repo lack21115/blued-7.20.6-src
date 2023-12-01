@@ -7,13 +7,9 @@ import mtopsdk.common.util.StringUtils;
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/domain/MtopRequest.class */
 public class MtopRequest implements Serializable, IMTOPDataObject {
     private static final long serialVersionUID = -439476282014493612L;
-
-    /* renamed from: a  reason: collision with root package name */
-    public Map f43745a;
+    public Map a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f43746c;
+    private String c;
     private String d = "{}";
     private boolean e;
     private boolean f;
@@ -31,11 +27,11 @@ public class MtopRequest implements Serializable, IMTOPDataObject {
     }
 
     public String b() {
-        return this.f43746c;
+        return this.c;
     }
 
     public void b(String str) {
-        this.f43746c = str;
+        this.c = str;
     }
 
     public void b(boolean z) {
@@ -55,17 +51,17 @@ public class MtopRequest implements Serializable, IMTOPDataObject {
     }
 
     public boolean e() {
-        return StringUtils.a(this.b) && StringUtils.a(this.f43746c) && StringUtils.a(this.d);
+        return StringUtils.a(this.b) && StringUtils.a(this.c) && StringUtils.a(this.d);
     }
 
     public String f() {
-        if (StringUtils.b(this.b) || StringUtils.b(this.f43746c)) {
+        if (StringUtils.b(this.b) || StringUtils.b(this.c)) {
             return null;
         }
-        return StringUtils.a(this.b, this.f43746c);
+        return StringUtils.a(this.b, this.c);
     }
 
     public String toString() {
-        return "MtopRequest [ apiName=" + this.b + ", version=" + this.f43746c + ", data=" + this.d + ", needEcode=" + this.e + ", needSession=" + this.f + "]";
+        return "MtopRequest [ apiName=" + this.b + ", version=" + this.c + ", data=" + this.d + ", needEcode=" + this.e + ", needSession=" + this.f + "]";
     }
 }

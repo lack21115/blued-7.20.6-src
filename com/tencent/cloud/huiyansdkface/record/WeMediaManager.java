@@ -7,12 +7,12 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public class WeMediaManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f36056a = "WeMediaManager";
+    private static String f22365a = "WeMediaManager";
     private static WeMediaManager i = new WeMediaManager();
     private WeWrapMp4Jni b = new WeWrapMp4Jni();
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f36057c = false;
+    private boolean f22366c = false;
     private WeMediaCodec d = null;
     private int e = 0;
     private boolean f = false;
@@ -58,14 +58,14 @@ public class WeMediaManager {
     }
 
     public void init(int i2) {
-        WLogger.i(f36056a, "init");
+        WLogger.i(f22365a, "init");
         this.h = i2 + 1;
-        String str = f36056a;
+        String str = f22365a;
         WLogger.i(str, "init maxFrameNum=" + this.h);
     }
 
     public void onPreviewFrame(byte[] bArr) {
-        if (this.f36057c) {
+        if (this.f22366c) {
             this.d.onPreviewFrame(bArr);
         }
     }
@@ -79,20 +79,20 @@ public class WeMediaManager {
     }
 
     public void start(WbRecordFinishListener wbRecordFinishListener) {
-        String str = f36056a;
+        String str = f22365a;
         WLogger.i(str, "WeMediaManager start " + System.currentTimeMillis());
-        if (this.f36057c) {
+        if (this.f22366c) {
             return;
         }
-        this.f36057c = true;
+        this.f22366c = true;
         this.d.start(wbRecordFinishListener);
     }
 
     public void stop(boolean z) {
-        String str = f36056a;
+        String str = f22365a;
         WLogger.i(str, "WeMediaManager stop " + System.currentTimeMillis());
-        if (this.f36057c) {
-            this.f36057c = false;
+        if (this.f22366c) {
+            this.f22366c = false;
             this.d.stop();
         }
     }

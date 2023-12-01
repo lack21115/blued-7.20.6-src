@@ -12,17 +12,17 @@ import android.text.TextUtils;
 public final class g1 implements IInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    public IBinder f3816a;
+    public IBinder f3768a;
     public Context b;
 
     public g1(IBinder iBinder, Context context) {
-        this.f3816a = iBinder;
+        this.f3768a = iBinder;
         this.b = context;
     }
 
     @Override // android.os.IInterface
     public IBinder asBinder() {
-        return this.f3816a;
+        return this.f3768a;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:4:0x002c, code lost:
@@ -45,7 +45,7 @@ public final class g1 implements IInterface {
             java.lang.String r1 = "com.uodis.opendevice.aidl.OpenDeviceIdentifierService"
             r0.writeInterfaceToken(r1)     // Catch: java.lang.Throwable -> L48
             r0 = r6
-            android.os.IBinder r0 = r0.f3816a     // Catch: java.lang.Throwable -> L48
+            android.os.IBinder r0 = r0.f3768a     // Catch: java.lang.Throwable -> L48
             r1 = 1
             r2 = r9
             r3 = r10
@@ -87,7 +87,7 @@ public final class g1 implements IInterface {
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.uodis.opendevice.aidl.OpenDeviceIdentifierService");
-            this.f3816a.transact(1, obtain, obtain2, 0);
+            this.f3768a.transact(1, obtain, obtain2, 0);
             obtain2.readException();
             str = obtain2.readString();
         } catch (Throwable th) {

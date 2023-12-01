@@ -5,9 +5,7 @@ import androidx.collection.SparseArrayCompat;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/manager/EmojiTree.class */
 public final class EmojiTree {
-
-    /* renamed from: a  reason: collision with root package name */
-    private EmojiNode f11146a = new EmojiNode(null);
+    private EmojiNode a = new EmojiNode(null);
     private LruCache<CharSequence, Emoji> b = new LruCache<CharSequence, Emoji>(200) { // from class: com.blued.android.module.common.widget.emoji.manager.EmojiTree.1
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.util.LruCache
@@ -27,9 +25,7 @@ public final class EmojiTree {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/manager/EmojiTree$EmojiNode.class */
     public static class EmojiNode {
-
-        /* renamed from: a  reason: collision with root package name */
-        final SparseArrayCompat<EmojiNode> f11148a = new SparseArrayCompat<>();
+        final SparseArrayCompat<EmojiNode> a = new SparseArrayCompat<>();
         private Emoji b;
 
         EmojiNode(Emoji emoji) {
@@ -40,36 +36,36 @@ public final class EmojiTree {
             return this.b;
         }
 
-        EmojiNode a(char c2) {
-            return this.f11148a.get(c2);
+        EmojiNode a(char c) {
+            return (EmojiNode) this.a.get(c);
         }
 
-        void a(char c2, Emoji emoji) {
-            EmojiNode emojiNode = this.f11148a.get(c2);
+        void a(char c, Emoji emoji) {
+            EmojiNode emojiNode = (EmojiNode) this.a.get(c);
             if (emojiNode != null) {
                 emojiNode.a(emoji);
                 return;
             }
-            this.f11148a.put(c2, new EmojiNode(emoji));
+            this.a.put(c, new EmojiNode(emoji));
         }
 
         void a(Emoji emoji) {
             this.b = emoji;
         }
 
-        EmojiNode b(char c2) {
-            EmojiNode emojiNode = this.f11148a.get(c2);
+        EmojiNode b(char c) {
+            EmojiNode emojiNode = (EmojiNode) this.a.get(c);
             EmojiNode emojiNode2 = emojiNode;
             if (emojiNode == null) {
                 emojiNode2 = new EmojiNode(null);
-                this.f11148a.put(c2, emojiNode2);
+                this.a.put(c, emojiNode2);
             }
             return emojiNode2;
         }
     }
 
     public Emoji a(CharSequence charSequence) {
-        EmojiNode emojiNode = this.f11146a;
+        EmojiNode emojiNode = this.a;
         Emoji emoji = null;
         int i = 0;
         while (true) {
@@ -89,22 +85,22 @@ public final class EmojiTree {
     }
 
     public void a() {
-        this.f11146a = new EmojiNode(null);
+        this.a = new EmojiNode(null);
     }
 
     public void a(Emoji emoji) {
-        String a2 = emoji.a();
-        EmojiNode emojiNode = this.f11146a;
+        String a = emoji.a();
+        EmojiNode emojiNode = this.a;
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= a2.length() - 1) {
+            if (i2 >= a.length() - 1) {
                 break;
             }
-            emojiNode = emojiNode.b(a2.charAt(i2));
+            emojiNode = emojiNode.b(a.charAt(i2));
             i = i2 + 1;
         }
-        emojiNode.a(a2.charAt(a2.length() - 1), emoji);
+        emojiNode.a(a.charAt(a.length() - 1), emoji);
         for (Emoji emoji2 : emoji.c()) {
             a(emoji2);
         }

@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
 import com.xiaomi.channel.commonutils.logger.LoggerInterface;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -24,58 +25,58 @@ import java.util.List;
 public class dh implements LoggerInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile dh f41335a;
+    private static volatile dh f27644a;
 
     /* renamed from: a  reason: collision with other field name */
-    private Context f301a;
+    private Context f254a;
 
     /* renamed from: a  reason: collision with other field name */
-    private Handler f302a;
+    private Handler f255a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41336c = "";
+    private String f27645c = "";
 
     /* renamed from: a  reason: collision with other field name */
-    private static final SimpleDateFormat f299a = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss aaa");
+    private static final SimpleDateFormat f252a = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss aaa");
 
     /* renamed from: a  reason: collision with other field name */
-    public static String f298a = "/MiPushLog";
+    public static String f251a = "/MiPushLog";
 
     /* renamed from: a  reason: collision with other field name */
-    private static List<Pair<String, Throwable>> f300a = Collections.synchronizedList(new ArrayList());
+    private static List<Pair<String, Throwable>> f253a = Collections.synchronizedList(new ArrayList());
 
     private dh(Context context) {
-        this.f301a = context;
+        this.f254a = context;
         if (context.getApplicationContext() != null) {
-            this.f301a = context.getApplicationContext();
+            this.f254a = context.getApplicationContext();
         }
-        this.b = this.f301a.getPackageName() + "-" + Process.myPid();
+        this.b = this.f254a.getPackageName() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + Process.myPid();
         HandlerThread handlerThread = new HandlerThread("Log2FileHandlerThread");
         handlerThread.start();
-        this.f302a = new Handler(handlerThread.getLooper());
+        this.f255a = new Handler(handlerThread.getLooper());
     }
 
     public static dh a(Context context) {
-        if (f41335a == null) {
+        if (f27644a == null) {
             synchronized (dh.class) {
                 try {
-                    if (f41335a == null) {
-                        f41335a = new dh(context);
+                    if (f27644a == null) {
+                        f27644a = new dh(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f41335a;
+        return f27644a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Not initialized variable reg: 16, insn: 0x02cc: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r16 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:105:0x02c9 */
     /* JADX WARN: Not initialized variable reg: 17, insn: 0x02c9: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r17 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:105:0x02c9 */
     /* renamed from: a  reason: collision with other method in class */
-    public void m11621a() {
+    public void m8571a() {
         RandomAccessFile randomAccessFile;
         RandomAccessFile randomAccessFile2;
         FileLock fileLock;
@@ -86,10 +87,10 @@ public class dh implements LoggerInterface {
         try {
             try {
                 try {
-                    if (TextUtils.isEmpty(this.f41336c) && (externalFilesDir = this.f301a.getExternalFilesDir(null)) != null) {
-                        this.f41336c = externalFilesDir.getAbsolutePath();
+                    if (TextUtils.isEmpty(this.f27645c) && (externalFilesDir = this.f254a.getExternalFilesDir(null)) != null) {
+                        this.f27645c = externalFilesDir.getAbsolutePath();
                     }
-                    File file = new File(this.f41336c + f298a);
+                    File file = new File(this.f27645c + f251a);
                     if ((!file.exists() || !file.isDirectory()) && !file.mkdirs()) {
                         Log.w(this.b, "Create mipushlog directory fail.");
                         return;
@@ -103,9 +104,9 @@ public class dh implements LoggerInterface {
                         fileLock2 = randomAccessFile2.getChannel().lock();
                         try {
                             BufferedWriter bufferedWriter3 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(file, "log1.txt"), true)));
-                            while (!f300a.isEmpty()) {
+                            while (!f253a.isEmpty()) {
                                 try {
-                                    Pair<String, Throwable> remove = f300a.remove(0);
+                                    Pair<String, Throwable> remove = f253a.remove(0);
                                     String str = remove.first;
                                     String str2 = str;
                                     if (remove.second != null) {
@@ -216,7 +217,7 @@ public class dh implements LoggerInterface {
 
     @Override // com.xiaomi.channel.commonutils.logger.LoggerInterface
     public final void log(String str, Throwable th) {
-        this.f302a.post(new di(this, str, th));
+        this.f255a.post(new di(this, str, th));
     }
 
     @Override // com.xiaomi.channel.commonutils.logger.LoggerInterface

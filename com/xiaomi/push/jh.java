@@ -4,13 +4,13 @@ package com.xiaomi.push;
 public final class jh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f41551a;
+    public final String f27860a;
 
     public jh() {
         this("");
     }
 
     public jh(String str) {
-        this.f41551a = str;
+        this.f27860a = str;
     }
 }

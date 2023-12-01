@@ -9,16 +9,16 @@ import java.nio.channels.FileLock;
 public class e implements f {
 
     /* renamed from: a  reason: collision with root package name */
-    private RandomAccessFile f26216a;
+    private RandomAccessFile f12528a;
     private FileChannel b;
 
     /* renamed from: c  reason: collision with root package name */
-    private FileLock f26217c;
+    private FileLock f12529c;
 
     public e(File file) {
         try {
             RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
-            this.f26216a = randomAccessFile;
+            this.f12528a = randomAccessFile;
             this.b = randomAccessFile.getChannel();
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("FileLockEngine", "FileLockEngine", (Throwable) e);
@@ -28,7 +28,7 @@ public class e implements f {
     public e(String str) {
         try {
             RandomAccessFile randomAccessFile = new RandomAccessFile(str, "rw");
-            this.f26216a = randomAccessFile;
+            this.f12528a = randomAccessFile;
             this.b = randomAccessFile.getChannel();
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("FileLockEngine", "FileLockEngine", (Throwable) e);
@@ -41,7 +41,7 @@ public class e implements f {
         FileChannel fileChannel = this.b;
         if (fileChannel != null) {
             try {
-                this.f26217c = fileChannel.lock();
+                this.f12529c = fileChannel.lock();
                 z = true;
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.a("FileLockEngine", "acquireFileLock", (Throwable) e);
@@ -57,14 +57,14 @@ public class e implements f {
     @Override // com.opos.mobad.i.a.f
     public void b() {
         try {
-            if (this.f26217c != null) {
-                this.f26217c.release();
+            if (this.f12529c != null) {
+                this.f12529c.release();
             }
             if (this.b != null) {
                 this.b.close();
             }
-            if (this.f26216a != null) {
-                this.f26216a.close();
+            if (this.f12528a != null) {
+                this.f12528a.close();
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("FileLockEngine", "releaseFileLock", (Throwable) e);

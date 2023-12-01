@@ -18,11 +18,11 @@ public class ii {
     public static final String Z = "com.iab.omid.library.huawei.adsession.video";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f22496a = "com.iab.omid.library.huawei.adsession.media.MediaEvents";
+    public static final String f8888a = "com.iab.omid.library.huawei.adsession.media.MediaEvents";
     public static final String b = "com.iab.omid.library.huawei.adsession.media.PlayerState";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f22497c = "com.iab.omid.library.huawei.adsession.media.Position";
+    public static final String f8889c = "com.iab.omid.library.huawei.adsession.media.Position";
     public static final String d = "com.iab.omid.library.huawei.adsession.media.VastProperties";
     public static final String e = "com.iab.omid.library.huawei.adsession.AdEvents";
     public static final String f = "com.iab.omid.library.huawei.adsession.AdSession";

@@ -19,10 +19,10 @@ public final class DummySurface extends Surface {
     private static int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f25561c;
+    private static boolean f11873c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f25562a;
+    public final boolean f11874a;
     private final a d;
     private boolean e;
 
@@ -31,11 +31,11 @@ public final class DummySurface extends Surface {
     public static class a extends HandlerThread implements SurfaceTexture.OnFrameAvailableListener, Handler.Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int[] f25563a;
+        private final int[] f11875a;
         private EGLDisplay b;
 
         /* renamed from: c  reason: collision with root package name */
-        private EGLContext f25564c;
+        private EGLContext f11876c;
         private EGLSurface d;
         private Handler e;
         private SurfaceTexture f;
@@ -45,26 +45,26 @@ public final class DummySurface extends Surface {
 
         public a() {
             super("dummySurface");
-            this.f25563a = new int[1];
+            this.f11875a = new int[1];
         }
 
         private void b() {
             try {
                 if (this.f != null) {
                     this.f.release();
-                    GLES20.glDeleteTextures(1, this.f25563a, 0);
+                    GLES20.glDeleteTextures(1, this.f11875a, 0);
                 }
             } finally {
                 EGLSurface eGLSurface = this.d;
                 if (eGLSurface != null) {
                     EGL14.eglDestroySurface(this.b, eGLSurface);
                 }
-                EGLContext eGLContext = this.f25564c;
+                EGLContext eGLContext = this.f11876c;
                 if (eGLContext != null) {
                     EGL14.eglDestroyContext(this.b, eGLContext);
                 }
                 this.d = null;
-                this.f25564c = null;
+                this.f11876c = null;
                 this.b = null;
                 this.i = null;
                 this.f = null;
@@ -80,22 +80,22 @@ public final class DummySurface extends Surface {
             com.opos.exoplayer.core.i.a.b(EGL14.eglInitialize(this.b, iArr, 0, iArr, 1), "eglInitialize failed");
             EGLConfig[] eGLConfigArr = new EGLConfig[1];
             int[] iArr2 = new int[1];
-            com.opos.exoplayer.core.i.a.b(EGL14.eglChooseConfig(this.b, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12327, 12344, 12339, 4, 12344}, 0, eGLConfigArr, 0, 1, iArr2, 0) && iArr2[0] > 0 && eGLConfigArr[0] != null, "eglChooseConfig failed");
+            com.opos.exoplayer.core.i.a.b(EGL14.eglChooseConfig(this.b, new int[]{EGL14.EGL_RENDERABLE_TYPE, 4, EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_ALPHA_SIZE, 8, EGL14.EGL_DEPTH_SIZE, 0, EGL14.EGL_CONFIG_CAVEAT, EGL14.EGL_NONE, EGL14.EGL_SURFACE_TYPE, 4, EGL14.EGL_NONE}, 0, eGLConfigArr, 0, 1, iArr2, 0) && iArr2[0] > 0 && eGLConfigArr[0] != null, "eglChooseConfig failed");
             EGLConfig eGLConfig = eGLConfigArr[0];
-            EGLContext eglCreateContext = EGL14.eglCreateContext(this.b, eGLConfig, EGL14.EGL_NO_CONTEXT, i == 0 ? new int[]{12440, 2, 12344} : new int[]{12440, 2, 12992, 1, 12344}, 0);
-            this.f25564c = eglCreateContext;
+            EGLContext eglCreateContext = EGL14.eglCreateContext(this.b, eGLConfig, EGL14.EGL_NO_CONTEXT, i == 0 ? new int[]{12440, 2, EGL14.EGL_NONE} : new int[]{12440, 2, 12992, 1, EGL14.EGL_NONE}, 0);
+            this.f11876c = eglCreateContext;
             com.opos.exoplayer.core.i.a.b(eglCreateContext != null, "eglCreateContext failed");
             if (i == 1) {
                 eGLSurface = EGL14.EGL_NO_SURFACE;
             } else {
-                EGLSurface eglCreatePbufferSurface = EGL14.eglCreatePbufferSurface(this.b, eGLConfig, i == 2 ? new int[]{12375, 1, 12374, 1, 12992, 1, 12344} : new int[]{12375, 1, 12374, 1, 12344}, 0);
+                EGLSurface eglCreatePbufferSurface = EGL14.eglCreatePbufferSurface(this.b, eGLConfig, i == 2 ? new int[]{EGL14.EGL_WIDTH, 1, EGL14.EGL_HEIGHT, 1, 12992, 1, EGL14.EGL_NONE} : new int[]{EGL14.EGL_WIDTH, 1, EGL14.EGL_HEIGHT, 1, EGL14.EGL_NONE}, 0);
                 this.d = eglCreatePbufferSurface;
                 com.opos.exoplayer.core.i.a.b(eglCreatePbufferSurface != null, "eglCreatePbufferSurface failed");
                 eGLSurface = this.d;
             }
-            com.opos.exoplayer.core.i.a.b(EGL14.eglMakeCurrent(this.b, eGLSurface, eGLSurface, this.f25564c), "eglMakeCurrent failed");
-            GLES20.glGenTextures(1, this.f25563a, 0);
-            SurfaceTexture surfaceTexture = new SurfaceTexture(this.f25563a[0]);
+            com.opos.exoplayer.core.i.a.b(EGL14.eglMakeCurrent(this.b, eGLSurface, eGLSurface, this.f11876c), "eglMakeCurrent failed");
+            GLES20.glGenTextures(1, this.f11875a, 0);
+            SurfaceTexture surfaceTexture = new SurfaceTexture(this.f11875a[0]);
             this.f = surfaceTexture;
             surfaceTexture.setOnFrameAvailableListener(this);
             SurfaceTexture surfaceTexture2 = this.f;
@@ -201,7 +201,7 @@ public final class DummySurface extends Surface {
     private DummySurface(a aVar, SurfaceTexture surfaceTexture, boolean z) {
         super(surfaceTexture);
         this.d = aVar;
-        this.f25562a = z;
+        this.f11874a = z;
     }
 
     public static DummySurface a(Context context, boolean z) {
@@ -216,7 +216,7 @@ public final class DummySurface extends Surface {
     }
 
     private static void a() {
-        if (u.f25510a < 17) {
+        if (u.f11822a < 17) {
             throw new UnsupportedOperationException("Unsupported prior to API level 17");
         }
     }
@@ -226,9 +226,9 @@ public final class DummySurface extends Surface {
         synchronized (DummySurface.class) {
             try {
                 z = false;
-                if (!f25561c) {
-                    b = u.f25510a < 24 ? 0 : b(context);
-                    f25561c = true;
+                if (!f11873c) {
+                    b = u.f11822a < 24 ? 0 : b(context);
+                    f11873c = true;
                 }
                 if (b != 0) {
                     z = true;
@@ -249,7 +249,7 @@ public final class DummySurface extends Surface {
     */
     private static int b(android.content.Context r3) {
         /*
-            int r0 = com.opos.exoplayer.core.i.u.f25510a
+            int r0 = com.opos.exoplayer.core.i.u.f11822a
             r4 = r0
             r0 = 0
             r5 = r0
@@ -259,7 +259,7 @@ public final class DummySurface extends Surface {
             r0 = r5
             r4 = r0
             java.lang.String r0 = "samsung"
-            java.lang.String r1 = com.opos.exoplayer.core.i.u.f25511c
+            java.lang.String r1 = com.opos.exoplayer.core.i.u.f11823c
             boolean r0 = r0.equals(r1)
             if (r0 != 0) goto L65
             java.lang.String r0 = "XT1650"
@@ -269,7 +269,7 @@ public final class DummySurface extends Surface {
             r0 = 0
             return r0
         L26:
-            int r0 = com.opos.exoplayer.core.i.u.f25510a
+            int r0 = com.opos.exoplayer.core.i.u.f11822a
             r1 = 26
             if (r0 >= r1) goto L3c
             r0 = r5

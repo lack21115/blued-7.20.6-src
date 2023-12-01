@@ -22,26 +22,26 @@ public class Fade extends Visibility {
     public static class FadeAnimatorListener extends AnimatorListenerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        private final View f3440a;
+        private final View f3392a;
         private boolean b = false;
 
         FadeAnimatorListener(View view) {
-            this.f3440a = view;
+            this.f3392a = view;
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            ViewUtils.a(this.f3440a, 1.0f);
+            ViewUtils.a(this.f3392a, 1.0f);
             if (this.b) {
-                this.f3440a.setLayerType(0, null);
+                this.f3392a.setLayerType(0, null);
             }
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationStart(Animator animator) {
-            if (ViewCompat.hasOverlappingRendering(this.f3440a) && this.f3440a.getLayerType() == 0) {
+            if (ViewCompat.hasOverlappingRendering(this.f3392a) && this.f3392a.getLayerType() == 0) {
                 this.b = true;
-                this.f3440a.setLayerType(2, null);
+                this.f3392a.setLayerType(2, null);
             }
         }
     }
@@ -77,7 +77,7 @@ public class Fade extends Visibility {
             return null;
         }
         ViewUtils.a(view, f);
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, ViewUtils.f3501a, f2);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, ViewUtils.f3453a, f2);
         ofFloat.addListener(new FadeAnimatorListener(view));
         addListener(new TransitionListenerAdapter() { // from class: androidx.transition.Fade.1
             @Override // androidx.transition.TransitionListenerAdapter, androidx.transition.Transition.TransitionListener

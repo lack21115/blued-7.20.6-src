@@ -17,7 +17,7 @@ final class c implements Runnable {
     public final void run() {
         List list;
         ArrayList<OAuthListener> arrayList = new ArrayList();
-        list = this.g.f.f38173c;
+        list = this.g.f.f24482c;
         arrayList.addAll(list);
         for (OAuthListener oAuthListener : arrayList) {
             oAuthListener.onQrcodeScanned();

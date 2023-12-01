@@ -13,23 +13,23 @@ import org.json.JSONObject;
 public class l5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f3874a;
+    public int f3826a;
     public final ArrayList<TencentPoi> b = new ArrayList<>();
 
     /* renamed from: c  reason: collision with root package name */
-    public p5 f3875c;
+    public p5 f3827c;
 
     public l5() {
     }
 
     public l5(JSONObject jSONObject) throws JSONException {
-        this.f3874a = jSONObject.optInt("stat");
+        this.f3826a = jSONObject.optInt("stat");
         if (jSONObject.has("subnation")) {
-            this.f3875c = new p5(jSONObject.optJSONObject("subnation"));
+            this.f3827c = new p5(jSONObject.optJSONObject("subnation"));
         } else if (jSONObject.has("results")) {
-            this.f3875c = a(jSONObject.optJSONArray("results"));
+            this.f3827c = a(jSONObject.optJSONArray("results"));
         } else {
-            this.f3875c = p5.n;
+            this.f3827c = p5.n;
             jSONObject.toString();
         }
         JSONArray optJSONArray = jSONObject.optJSONArray("poilist");
@@ -56,8 +56,8 @@ public class l5 {
             return null;
         }
         l5 l5Var2 = new l5();
-        l5Var2.f3874a = l5Var.f3874a;
-        l5Var2.f3875c = p5.a(l5Var.f3875c);
+        l5Var2.f3826a = l5Var.f3826a;
+        l5Var2.f3827c = p5.a(l5Var.f3827c);
         Iterator<TencentPoi> it = l5Var.b.iterator();
         while (it.hasNext()) {
             l5Var2.b.add(new o5(it.next()));
@@ -73,11 +73,11 @@ public class l5 {
         }
         int length = jSONArray.length();
         if (length > 0 && (optJSONObject = jSONArray.optJSONObject(0)) != null) {
-            a2.f3933a = optJSONObject.optString("n", null);
+            a2.f3885a = optJSONObject.optString("n", null);
             a2.e = optJSONObject.optString("p", null);
             a2.f = optJSONObject.optString("c", null);
             a2.g = optJSONObject.optString("d", null);
-            a2.f3934c = optJSONObject.optString("adcode", null);
+            a2.f3886c = optJSONObject.optString("adcode", null);
         }
         if (length > 1) {
             JSONObject optJSONObject2 = jSONArray.optJSONObject(1);
@@ -97,9 +97,9 @@ public class l5 {
                 k5 k5Var = new k5(jSONArray.optJSONObject(i));
                 arrayList.add(k5Var);
                 if ("ST".equals(k5Var.b)) {
-                    a2.j = k5Var.f3865a;
+                    a2.j = k5Var.f3817a;
                 } else if ("ST_NO".equals(k5Var.b)) {
-                    a2.k = k5Var.f3865a;
+                    a2.k = k5Var.f3817a;
                 }
             }
             a2.m.putParcelableArrayList(TencentLocation.EXTRA_ADDRDESP_OTHERS_RESULTS, arrayList);
@@ -110,7 +110,7 @@ public class l5 {
     public String toString() {
         StringBuilder sb = new StringBuilder("DetailsData{");
         sb.append("subnation=");
-        sb.append(this.f3875c);
+        sb.append(this.f3827c);
         sb.append(",");
         sb.append("poilist=[");
         Iterator<TencentPoi> it = this.b.iterator();
@@ -119,7 +119,7 @@ public class l5 {
             sb.append(",");
         }
         sb.append("]");
-        sb.append(com.alipay.sdk.util.i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

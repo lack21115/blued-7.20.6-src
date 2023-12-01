@@ -24,25 +24,25 @@ public class b extends AbstractNetAdapter {
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f39499a;
+        public static final /* synthetic */ int[] f25808a;
 
         static {
             BodyType.values();
             int[] iArr = new int[3];
-            f39499a = iArr;
+            f25808a = iArr;
             try {
                 BodyType bodyType = BodyType.DATA;
                 iArr[2] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f39499a;
+                int[] iArr2 = f25808a;
                 BodyType bodyType2 = BodyType.FORM;
                 iArr2[1] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f39499a;
+                int[] iArr3 = f25808a;
                 BodyType bodyType3 = BodyType.JSON;
                 iArr3[0] = 3;
             } catch (NoSuchFieldError e3) {
@@ -120,7 +120,7 @@ public class b extends AbstractNetAdapter {
     }
 
     private byte[] buildBody(e eVar) throws UnsupportedEncodingException {
-        int i = a.f39499a[eVar.a().ordinal()];
+        int i = a.f25808a[eVar.a().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {

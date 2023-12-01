@@ -9,15 +9,15 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class b {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final b f22607c = new b();
+    public static final b f8999c = new b();
     public static final Object d = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    public final AtomicBoolean f22608a = new AtomicBoolean(false);
+    public final AtomicBoolean f9000a = new AtomicBoolean(false);
     public List<Activity> b = new ArrayList(1);
 
     public AtomicBoolean a() {
-        return this.f22608a;
+        return this.f9000a;
     }
 
     public void a(Activity activity) {
@@ -32,7 +32,7 @@ public class b {
     }
 
     public void a(boolean z) {
-        this.f22608a.set(z);
+        this.f9000a.set(z);
     }
 
     public void b(Activity activity) {

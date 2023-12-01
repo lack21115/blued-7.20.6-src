@@ -43,7 +43,7 @@ public abstract class b extends a implements View.OnClickListener, com.kwad.sdk.
         }
         bi();
         boolean z = true;
-        a.C0519a ap = new a.C0519a(getContext()).I(this.mAdTemplate).an(5).ao(i).b(this.mApkDownloadHelper).ap(view == this.eH ? 1 : 2);
+        a.C0349a ap = new a.C0349a(getContext()).I(this.mAdTemplate).an(5).ao(i).b(this.mApkDownloadHelper).ap(view == this.eH ? 1 : 2);
         if (view != this.eH) {
             z = false;
         }

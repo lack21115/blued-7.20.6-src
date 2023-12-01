@@ -14,13 +14,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveBeautyToolBarView.class */
 public class LiveBeautyToolBarView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14386a;
+    private Context a;
     private LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f14387c;
+    private LinearLayout c;
     private FrameLayout d;
     private TextView e;
     private View f;
@@ -54,11 +50,11 @@ public class LiveBeautyToolBarView extends FrameLayout implements View.OnClickLi
 
     public LiveBeautyToolBarView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14386a = context;
+        this.a = context;
         LayoutInflater from = LayoutInflater.from(context);
         this.b = from;
         from.inflate(R.layout.live_beauty_tool_bar_view, this);
-        this.f14387c = (LinearLayout) findViewById(R.id.root_view);
+        this.c = (LinearLayout) findViewById(R.id.root_view);
         this.d = (FrameLayout) findViewById(R.id.layout1);
         this.e = (TextView) findViewById(R.id.text1);
         this.f = findViewById(R.id.view1);
@@ -84,7 +80,7 @@ public class LiveBeautyToolBarView extends FrameLayout implements View.OnClickLi
     }
 
     public void a() {
-        String[] stringArray = this.f14386a.getResources().getStringArray(R.array.live_beauty_title);
+        String[] stringArray = this.a.getResources().getStringArray(R.array.live_beauty_title);
         int i = 0;
         while (true) {
             int i2 = i;
@@ -129,40 +125,40 @@ public class LiveBeautyToolBarView extends FrameLayout implements View.OnClickLi
     public void setToolBtnSelect(int i) {
         Log.v("pk", "setToolBtnSelect:" + i);
         if (i == 0) {
-            this.e.setTextColor(this.f14386a.getResources().getColor(R.color.syc_a));
+            this.e.setTextColor(this.a.getResources().getColor(R.color.syc_a));
             this.f.setVisibility(0);
-            this.i.setTextColor(this.f14386a.getResources().getColor(R.color.syc_h));
+            this.i.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.j.setVisibility(8);
-            this.m.setTextColor(this.f14386a.getResources().getColor(R.color.syc_h));
+            this.m.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.n.setVisibility(8);
-            this.q.setTextColor(this.f14386a.getResources().getColor(R.color.syc_h));
+            this.q.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.r.setVisibility(8);
         } else if (i == 1) {
-            this.e.setTextColor(this.f14386a.getResources().getColor(R.color.syc_h));
+            this.e.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.f.setVisibility(8);
-            this.i.setTextColor(this.f14386a.getResources().getColor(R.color.syc_a));
+            this.i.setTextColor(this.a.getResources().getColor(R.color.syc_a));
             this.j.setVisibility(0);
-            this.m.setTextColor(this.f14386a.getResources().getColor(R.color.syc_h));
+            this.m.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.n.setVisibility(8);
-            this.q.setTextColor(this.f14386a.getResources().getColor(R.color.syc_h));
+            this.q.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.r.setVisibility(8);
         } else if (i == 2) {
-            this.e.setTextColor(this.f14386a.getResources().getColor(R.color.syc_h));
+            this.e.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.f.setVisibility(8);
-            this.i.setTextColor(this.f14386a.getResources().getColor(R.color.syc_h));
+            this.i.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.j.setVisibility(8);
-            this.m.setTextColor(this.f14386a.getResources().getColor(R.color.syc_a));
+            this.m.setTextColor(this.a.getResources().getColor(R.color.syc_a));
             this.n.setVisibility(0);
-            this.q.setTextColor(this.f14386a.getResources().getColor(R.color.syc_h));
+            this.q.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.r.setVisibility(8);
         } else if (i == 3) {
-            this.e.setTextColor(this.f14386a.getResources().getColor(R.color.syc_h));
+            this.e.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.f.setVisibility(8);
-            this.i.setTextColor(this.f14386a.getResources().getColor(R.color.syc_h));
+            this.i.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.j.setVisibility(8);
-            this.m.setTextColor(this.f14386a.getResources().getColor(R.color.syc_h));
+            this.m.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.n.setVisibility(8);
-            this.q.setTextColor(this.f14386a.getResources().getColor(R.color.syc_a));
+            this.q.setTextColor(this.a.getResources().getColor(R.color.syc_a));
             this.r.setVisibility(0);
         }
     }

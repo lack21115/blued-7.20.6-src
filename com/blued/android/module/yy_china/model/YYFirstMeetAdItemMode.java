@@ -70,7 +70,6 @@ public final class YYFirstMeetAdItemMode implements MultiItemEntity {
         return this.goods_info;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

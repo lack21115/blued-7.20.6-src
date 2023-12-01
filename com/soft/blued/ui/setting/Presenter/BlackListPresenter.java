@@ -15,11 +15,11 @@ import java.util.List;
 public class BlackListPresenter implements IBlackListContract.IPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    BluedUIHttpResponse f33224a;
+    BluedUIHttpResponse f19533a;
     private IBlackListContract.IView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f33225c;
+    private Context f19534c;
     private IRequestHost d;
     private int e;
     private int f;
@@ -28,11 +28,10 @@ public class BlackListPresenter implements IBlackListContract.IPresenter {
 
     public BlackListPresenter(Context context, IRequestHost iRequestHost, IBlackListContract.IView iView, int i) {
         this.e = 10;
-        this.f33224a = new BluedUIHttpResponse<BluedEntityA<BluedBlackList>>(this.d) { // from class: com.soft.blued.ui.setting.Presenter.BlackListPresenter.1
+        this.f19533a = new BluedUIHttpResponse<BluedEntityA<BluedBlackList>>(this.d) { // from class: com.soft.blued.ui.setting.Presenter.BlackListPresenter.1
             private boolean b;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedBlackList> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
@@ -56,7 +55,6 @@ public class BlackListPresenter implements IBlackListContract.IPresenter {
                 BlackListPresenter.this.b.a(bluedEntityA.data);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str) {
                 this.b = true;
                 if (BlackListPresenter.this.f != 1) {
@@ -65,7 +63,6 @@ public class BlackListPresenter implements IBlackListContract.IPresenter {
                 return super.onUIFailure(i2, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 BlackListPresenter.this.b.c();
                 if (BlackListPresenter.this.h != null && BlackListPresenter.this.h.size() != 0) {
@@ -78,7 +75,7 @@ public class BlackListPresenter implements IBlackListContract.IPresenter {
                 super.onUIFinish();
             }
         };
-        this.f33225c = context;
+        this.f19534c = context;
         this.d = iRequestHost;
         this.b = iView;
         if (i > 0) {
@@ -97,7 +94,7 @@ public class BlackListPresenter implements IBlackListContract.IPresenter {
         }
         if (!this.g && (i = this.f) != 1) {
             this.f = i - 1;
-            AppMethods.a((CharSequence) this.f33225c.getResources().getString(2131887275));
+            AppMethods.a(this.f19534c.getResources().getString(2131887275));
             this.b.c();
             return;
         }
@@ -106,7 +103,7 @@ public class BlackListPresenter implements IBlackListContract.IPresenter {
         } else {
             str = "0";
         }
-        MineHttpUtils.g(this.f33225c, this.f33224a, UserInfo.getInstance().getLoginUserInfo().getUid(), str, this.e + "", this.d);
+        MineHttpUtils.g(this.f19534c, this.f19533a, UserInfo.getInstance().getLoginUserInfo().getUid(), str, this.e + "", this.d);
     }
 
     static /* synthetic */ int e(BlackListPresenter blackListPresenter) {
@@ -115,7 +112,6 @@ public class BlackListPresenter implements IBlackListContract.IPresenter {
         return i;
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
     }
 

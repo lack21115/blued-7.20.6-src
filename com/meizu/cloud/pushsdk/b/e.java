@@ -17,11 +17,11 @@ import java.util.Date;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SimpleDateFormat f23987a = new SimpleDateFormat("yyyy-MM-dd");
+    private final SimpleDateFormat f10376a = new SimpleDateFormat("yyyy-MM-dd");
     private final d b = new d("lo");
 
     /* renamed from: c  reason: collision with root package name */
-    private BufferedWriter f23988c;
+    private BufferedWriter f10377c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/meizu/cloud/pushsdk/b/e$a.class */
@@ -41,11 +41,11 @@ public class e {
     }
 
     public void a() throws IOException {
-        BufferedWriter bufferedWriter = this.f23988c;
+        BufferedWriter bufferedWriter = this.f10377c;
         if (bufferedWriter != null) {
             bufferedWriter.flush();
-            this.f23988c.close();
-            this.f23988c = null;
+            this.f10377c.close();
+            this.f10377c = null;
         }
     }
 
@@ -71,7 +71,7 @@ public class e {
         if (!file.exists() && !file.mkdirs()) {
             throw new IOException("create " + str + " dir failed!!!");
         }
-        String format = this.f23987a.format(new Date());
+        String format = this.f10376a.format(new Date());
         File file2 = new File(str, format + ".log.txt");
         if (!file2.exists()) {
             if (file2.createNewFile()) {
@@ -80,13 +80,13 @@ public class e {
                 Log.e("EncryptionWriter", "create new file " + format + " failed !!!");
             }
         }
-        this.f23988c = new BufferedWriter(new FileWriter(file2, true));
+        this.f10377c = new BufferedWriter(new FileWriter(file2, true));
     }
 
     public void a(String str, String str2, String str3) throws IOException {
-        if (this.f23988c != null) {
-            this.f23988c.write(this.b.a((str + str2 + " " + str3).getBytes()));
-            this.f23988c.write(IOUtils.LINE_SEPARATOR_WINDOWS);
+        if (this.f10377c != null) {
+            this.f10377c.write(this.b.a((str + str2 + " " + str3).getBytes()));
+            this.f10377c.write(IOUtils.LINE_SEPARATOR_WINDOWS);
         }
     }
 }

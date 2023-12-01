@@ -23,7 +23,6 @@ import android.widget.TextView;
 import com.blued.android.framework.utils.DensityUtils;
 import com.blued.android.framework.utils.KeyboardUtils;
 import com.blued.android.module.common.user.UserInfoHelper;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.bytedance.applog.tracker.Tracker;
 import com.jungly.gridpasswordview.GridPasswordView;
@@ -50,15 +49,15 @@ public class CommonAlertDialog2 {
 
     public static DialogWith6PW a(Context context, String str, String str2, boolean z, final boolean z2, boolean z3, boolean z4, boolean z5, final PWDListener pWDListener, DialogInterface.OnCancelListener onCancelListener) {
         final DialogWith6PW dialogWith6PW = new DialogWith6PW();
-        View inflate = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(2131559637, (ViewGroup) null);
+        View inflate = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.item_dialog_6numpw, (ViewGroup) null);
         final TextView textView = (TextView) inflate.findViewById(2131371164);
-        GridPasswordView gridPasswordView = (GridPasswordView) inflate.findViewById(2131364109);
+        GridPasswordView gridPasswordView = (GridPasswordView) inflate.findViewById(R.id.gpv_customUi);
         ((ImeDelBugFixedEditText) gridPasswordView.findViewById(2131364751)).setImeOptions(33554432);
-        ViewGroup viewGroup = (ViewGroup) inflate.findViewById(2131373077);
-        final CheckBox checkBox = (CheckBox) inflate.findViewById(2131362776);
+        ViewGroup viewGroup = (ViewGroup) inflate.findViewById(R.id.vg_remember_check);
+        final CheckBox checkBox = (CheckBox) inflate.findViewById(R.id.cbx_need_next);
         TextView textView2 = (TextView) inflate.findViewById(2131372754);
-        TextView textView3 = (TextView) inflate.findViewById(2131372759);
-        TextView textView4 = (TextView) inflate.findViewById(2131371993);
+        TextView textView3 = (TextView) inflate.findViewById(R.id.tv_title_cutline);
+        TextView textView4 = (TextView) inflate.findViewById(R.id.tv_msg);
         if (TextUtils.isEmpty(str)) {
             textView2.setVisibility(8);
             textView3.setVisibility(8);
@@ -88,24 +87,24 @@ public class CommonAlertDialog2 {
             @Override // com.jungly.gridpasswordview.GridPasswordView.OnPasswordChangedListener
             public void a(String str3) {
                 if (str3.length() < 6) {
-                    TextView.this.setOnClickListener(null);
-                    TextView.this.setTextColor(Color.parseColor("#c0c0c0"));
+                    textView.setOnClickListener(null);
+                    textView.setTextColor(Color.parseColor("#c0c0c0"));
                 }
             }
 
             @Override // com.jungly.gridpasswordview.GridPasswordView.OnPasswordChangedListener
             public void b(final String str3) {
-                TextView.this.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.view.dialog.CommonAlertDialog2.3.1
+                textView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.view.dialog.CommonAlertDialog2.3.1
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view) {
                         Tracker.onClick(view);
                         pWDListener.onClick(str3, checkBox.isChecked(), dialogWith6PW);
-                        if (z2 && dialogWith6PW.f34868a != null && dialogWith6PW.f34868a.isShowing()) {
-                            dialogWith6PW.f34868a.dismiss();
+                        if (z2 && dialogWith6PW.f21177a != null && dialogWith6PW.f21177a.isShowing()) {
+                            dialogWith6PW.f21177a.dismiss();
                         }
                     }
                 });
-                TextView.this.setTextColor(Color.parseColor("#3494f4"));
+                textView.setTextColor(Color.parseColor("#3494f4"));
             }
         });
         textView.requestFocus();
@@ -120,10 +119,10 @@ public class CommonAlertDialog2 {
         }
         create.setCanceledOnTouchOutside(z5);
         create.show();
-        dialogWith6PW.f34868a = create;
+        dialogWith6PW.f21177a = create;
         dialogWith6PW.b = gridPasswordView;
         dialogWith6PW.d = textView4;
-        dialogWith6PW.f34869c = textView2;
+        dialogWith6PW.f21178c = textView2;
         dialogWith6PW.e = (ScrollView) inflate.findViewById(2131369639);
         return dialogWith6PW;
     }
@@ -136,9 +135,9 @@ public class CommonAlertDialog2 {
         final EditText editText = (EditText) inflate.findViewById(R.id.edit_text);
         editText.requestFocus();
         editText.setSingleLine(true);
-        ((TextView) inflate.findViewById(2131371264)).setText(str2);
+        ((TextView) inflate.findViewById(R.id.tv_description)).setText(str2);
         int i = StringUtils.i(str);
-        textView.setText(i + BridgeUtil.SPLIT_MARK + 20);
+        textView.setText(i + "/20");
         editText.setText(str);
         editText.setHint(R.string.max_input_20_char);
         editText.setSelection(str.length());
@@ -151,23 +150,23 @@ public class CommonAlertDialog2 {
         editText.addTextChangedListener(new TextWatcher() { // from class: com.soft.blued.view.dialog.CommonAlertDialog2.1
 
             /* renamed from: c  reason: collision with root package name */
-            private int f34857c;
+            private int f21166c;
             private int d;
 
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
                 try {
-                    EditText.this.removeTextChangedListener(this);
-                    this.f34857c = EditText.this.getSelectionStart();
-                    this.d = EditText.this.getSelectionEnd();
+                    editText.removeTextChangedListener(this);
+                    this.f21166c = editText.getSelectionStart();
+                    this.d = editText.getSelectionEnd();
                     while (StringUtils.a(editable) > 20) {
-                        editable.delete(this.f34857c - 1, this.d);
-                        this.f34857c--;
+                        editable.delete(this.f21166c - 1, this.d);
+                        this.f21166c--;
                         this.d--;
                     }
-                    textView.setText(StringUtils.a(editable) + BridgeUtil.SPLIT_MARK + 20);
-                    EditText.this.setSelection(this.f34857c);
-                    EditText.this.addTextChangedListener(this);
+                    textView.setText(StringUtils.a(editable) + "/20");
+                    editText.setSelection(this.f21166c);
+                    editText.addTextChangedListener(this);
                 } catch (Exception e) {
                     e.printStackTrace();
                     textView.setText("");

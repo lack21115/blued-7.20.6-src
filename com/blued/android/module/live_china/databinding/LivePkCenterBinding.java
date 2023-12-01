@@ -11,13 +11,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LivePkCenterBinding.class */
 public final class LivePkCenterBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeFrameLayout f12316a;
+    public final ShapeFrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12317c;
+    public final ImageView c;
     public final LinearLayout d;
     public final ImageView e;
     public final View f;
@@ -31,9 +27,9 @@ public final class LivePkCenterBinding implements ViewBinding {
 
     private LivePkCenterBinding(FrameLayout frameLayout, ShapeFrameLayout shapeFrameLayout, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, ImageView imageView3, View view, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, LinearLayout linearLayout2, ShapeTextView shapeTextView) {
         this.m = frameLayout;
-        this.f12316a = shapeFrameLayout;
+        this.a = shapeFrameLayout;
         this.b = imageView;
-        this.f12317c = imageView2;
+        this.c = imageView2;
         this.d = linearLayout;
         this.e = imageView3;
         this.f = view;
@@ -110,7 +106,6 @@ public final class LivePkCenterBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.m;

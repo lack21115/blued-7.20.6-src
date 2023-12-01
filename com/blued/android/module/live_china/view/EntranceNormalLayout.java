@@ -21,13 +21,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/EntranceNormalLayout.class */
 public class EntranceNormalLayout extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f14270a;
+    public View a;
     public Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f14271c;
+    private View c;
     private ImageView d;
     private ImageView e;
     private TextView f;
@@ -89,28 +85,28 @@ public class EntranceNormalLayout extends LinearLayout {
                 this.e.setVisibility(8);
             }
             BitmapUtils.a(this.b, this.d, liveChattingModel.fromRichLevel);
-            this.f14271c.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
-            View view = this.f14271c;
-            view.layout(0, 0, view.getMeasuredWidth(), this.f14271c.getMeasuredHeight());
-            a(this.f14271c.getMeasuredWidth(), liveChattingModel).start();
+            this.c.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
+            View view = this.c;
+            view.layout(0, 0, view.getMeasuredWidth(), this.c.getMeasuredHeight());
+            a(this.c.getMeasuredWidth(), liveChattingModel).start();
         }
     }
 
     private void b() {
         a();
-        View findViewById = this.f14270a.findViewById(R.id.fl_main);
-        this.f14271c = findViewById;
+        View findViewById = this.a.findViewById(R.id.fl_main);
+        this.c = findViewById;
         findViewById.setVisibility(4);
-        this.f = (TextView) this.f14271c.findViewById(R.id.tv_name);
-        this.g = (TextView) this.f14271c.findViewById(R.id.tv_content);
-        this.d = (ImageView) this.f14271c.findViewById(R.id.img_rich_rank);
-        this.e = (ImageView) this.f14271c.findViewById(R.id.img_manager_icon);
+        this.f = (TextView) this.c.findViewById(R.id.tv_name);
+        this.g = (TextView) this.c.findViewById(R.id.tv_content);
+        this.d = (ImageView) this.c.findViewById(R.id.img_rich_rank);
+        this.e = (ImageView) this.c.findViewById(R.id.img_manager_icon);
         this.j = new ArrayList();
     }
 
     public AnimatorSet a(float f, final LiveChattingModel liveChattingModel) {
         ValueAnimator ofFloat;
-        this.f14271c.setVisibility(0);
+        this.c.setVisibility(0);
         new ObjectAnimator();
         float f2 = -f;
         ValueAnimator ofFloat2 = ObjectAnimator.ofFloat(f2, 0.0f);
@@ -118,10 +114,10 @@ public class EntranceNormalLayout extends LinearLayout {
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) EntranceNormalLayout.this.f14271c.getLayoutParams();
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) EntranceNormalLayout.this.c.getLayoutParams();
                 layoutParams.leftMargin = (int) floatValue;
-                EntranceNormalLayout.this.f14271c.setAlpha(1.0f);
-                EntranceNormalLayout.this.f14271c.setLayoutParams(layoutParams);
+                EntranceNormalLayout.this.c.setAlpha(1.0f);
+                EntranceNormalLayout.this.c.setLayoutParams(layoutParams);
             }
         });
         ofFloat2.setDuration(this.h);
@@ -131,10 +127,10 @@ public class EntranceNormalLayout extends LinearLayout {
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) EntranceNormalLayout.this.f14271c.getLayoutParams();
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) EntranceNormalLayout.this.c.getLayoutParams();
                 layoutParams.leftMargin = (int) floatValue;
-                EntranceNormalLayout.this.f14271c.setAlpha(1.0f);
-                EntranceNormalLayout.this.f14271c.setLayoutParams(layoutParams);
+                EntranceNormalLayout.this.c.setAlpha(1.0f);
+                EntranceNormalLayout.this.c.setLayoutParams(layoutParams);
             }
         });
         List<LiveChattingModel> list = this.j;
@@ -147,9 +143,9 @@ public class EntranceNormalLayout extends LinearLayout {
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public void onAnimationUpdate(ValueAnimator valueAnimator) {
                     float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                    LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) EntranceNormalLayout.this.f14271c.getLayoutParams();
+                    LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) EntranceNormalLayout.this.c.getLayoutParams();
                     layoutParams.leftMargin = (int) floatValue;
-                    EntranceNormalLayout.this.f14271c.setLayoutParams(layoutParams);
+                    EntranceNormalLayout.this.c.setLayoutParams(layoutParams);
                 }
             });
         } else {
@@ -158,7 +154,7 @@ public class EntranceNormalLayout extends LinearLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.view.EntranceNormalLayout.4
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    EntranceNormalLayout.this.f14271c.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                    EntranceNormalLayout.this.c.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 }
             });
         }
@@ -169,7 +165,7 @@ public class EntranceNormalLayout extends LinearLayout {
         arrayList.add(ofFloat);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(arrayList);
-        this.f14271c.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.EntranceNormalLayout.5
+        this.c.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.EntranceNormalLayout.5
             @Override // java.lang.Runnable
             public void run() {
                 if (EntranceNormalLayout.this.j.size() > 0) {
@@ -185,6 +181,6 @@ public class EntranceNormalLayout extends LinearLayout {
     }
 
     public void a() {
-        this.f14270a = LayoutInflater.from(this.b).inflate(R.layout.item_entrance_normal, this);
+        this.a = LayoutInflater.from(this.b).inflate(R.layout.item_entrance_normal, this);
     }
 }

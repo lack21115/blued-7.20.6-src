@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import androidx.lifecycle.Observer;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
@@ -66,7 +67,6 @@ import com.blued.android.module.yy_china.utils.YYRoomHttpUtils;
 import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.igexin.push.config.c;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.tencent.trtc.TRTCCloudDef;
 import java.util.List;
@@ -74,20 +74,15 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/trtc_audio/float_window/AudioFloatWindow.class */
 public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleStatusObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f17819a;
+    public static int a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private FloatWindow f17820c;
+    private FloatWindow c;
     private FrameLayout d;
     private ImageView e;
     private ImageView f;
     private ImageView g;
     private String h = "";
     private Observer<YYMsgKickInfoExtra> i = new Observer<YYMsgKickInfoExtra>() { // from class: com.blued.android.module.yy_china.trtc_audio.float_window.AudioFloatWindow.1
-        @Override // androidx.lifecycle.Observer
         /* renamed from: a */
         public void onChanged(YYMsgKickInfoExtra yYMsgKickInfoExtra) {
             if (yYMsgKickInfoExtra == null) {
@@ -102,7 +97,6 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
         }
     };
     private Observer<YYImModel> j = new Observer<YYImModel>() { // from class: com.blued.android.module.yy_china.trtc_audio.float_window.AudioFloatWindow.2
-        @Override // androidx.lifecycle.Observer
         /* renamed from: a */
         public void onChanged(YYImModel yYImModel) {
             if (yYImModel == null) {
@@ -112,7 +106,6 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
         }
     };
     private Observer<YYMsgPkRoomExtra> k = new Observer<YYMsgPkRoomExtra>() { // from class: com.blued.android.module.yy_china.trtc_audio.float_window.AudioFloatWindow.3
-        @Override // androidx.lifecycle.Observer
         /* renamed from: a */
         public void onChanged(YYMsgPkRoomExtra yYMsgPkRoomExtra) {
             if (yYMsgPkRoomExtra == null) {
@@ -122,7 +115,6 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
         }
     };
     private Observer<YYMsgPkRoomExtra> l = new Observer<YYMsgPkRoomExtra>() { // from class: com.blued.android.module.yy_china.trtc_audio.float_window.AudioFloatWindow.4
-        @Override // androidx.lifecycle.Observer
         /* renamed from: a */
         public void onChanged(YYMsgPkRoomExtra yYMsgPkRoomExtra) {
             if (yYMsgPkRoomExtra == null) {
@@ -132,7 +124,6 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
         }
     };
     private Observer<YYGlobalMsgModel> m = new Observer<YYGlobalMsgModel>() { // from class: com.blued.android.module.yy_china.trtc_audio.float_window.AudioFloatWindow.5
-        @Override // androidx.lifecycle.Observer
         /* renamed from: a */
         public void onChanged(YYGlobalMsgModel yYGlobalMsgModel) {
             YYMsgMuteExtra yYMsgMuteExtra;
@@ -140,17 +131,17 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                 return;
             }
             LiveLogUtils.a("AudioFloatWindow --> globalObserver --> 收到全局消息 ... type：" + yYGlobalMsgModel.type);
-            if (yYGlobalMsgModel.type == 7 && (yYMsgMuteExtra = (YYMsgMuteExtra) AppInfo.f().fromJson(yYGlobalMsgModel.body, (Class<Object>) YYMsgMuteExtra.class)) != null) {
+            if (yYGlobalMsgModel.type == 7 && (yYMsgMuteExtra = (YYMsgMuteExtra) AppInfo.f().fromJson(yYGlobalMsgModel.body, YYMsgMuteExtra.class)) != null) {
                 if (TextUtils.equals(yYMsgMuteExtra.target_uid, YYRoomInfoManager.e().k())) {
-                    if (YYRoomInfoManager.e().f17578a != null) {
-                        YYRoomInfoManager.e().f17578a.is_mic = "0";
-                        YYRoomInfoManager.e().f17578a.is_open_mic = 0;
+                    if (YYRoomInfoManager.e().a != null) {
+                        YYRoomInfoManager.e().a.is_mic = "0";
+                        YYRoomInfoManager.e().a.is_open_mic = 0;
                     }
                     YYObserverManager.a().a("0");
                     return;
                 }
                 YYAudioConfig yYAudioConfig = new YYAudioConfig();
-                yYAudioConfig.f17862c = yYMsgMuteExtra.target_uid;
+                yYAudioConfig.c = yYMsgMuteExtra.target_uid;
                 AudioChannelManager.j().b(5, AppInfo.f().toJson(yYAudioConfig));
                 if (AppInfo.h >= 713040) {
                     TRTCSendLeaveMsg tRTCSendLeaveMsg = new TRTCSendLeaveMsg();
@@ -162,31 +153,29 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
         }
     };
     private Observer<String> n = new Observer<String>() { // from class: com.blued.android.module.yy_china.trtc_audio.float_window.AudioFloatWindow.6
-        @Override // androidx.lifecycle.Observer
         /* renamed from: a */
         public void onChanged(String str) {
             Logger.e("xpm", "KEY_EVENT_LIVE_MUSIC_CHANGED");
-            LiveMusicModel a2 = YYMusicManager.f11418a.c().a();
+            LiveMusicModel a2 = YYMusicManager.a.c().a();
             if (a2 == null || a2.playStatus != 3) {
                 return;
             }
-            YYKtvMusicModel a3 = YYMusicManager.f11418a.c().a(a2.music_id);
+            YYKtvMusicModel a3 = YYMusicManager.a.c().a(a2.music_id);
             if (a3 != null) {
                 AudioFloatWindow.this.a(a3);
                 return;
             }
-            YYMusicManager.f11418a.c().a((List<? extends YYKtvMusicModel>) null);
-            YYMusicManager.f11418a.c().a((YYKtvMusicModel) null);
-            YYMusicManager.f11418a.c().a((LiveMusicModel) null);
+            YYMusicManager.a.c().a((List<? extends YYKtvMusicModel>) null);
+            YYMusicManager.a.c().a((YYKtvMusicModel) null);
+            YYMusicManager.a.c().a((LiveMusicModel) null);
         }
     };
     private Observer<TrtcSongScoreModel> o = new Observer<TrtcSongScoreModel>() { // from class: com.blued.android.module.yy_china.trtc_audio.float_window.AudioFloatWindow.7
-        @Override // androidx.lifecycle.Observer
         /* renamed from: a */
         public void onChanged(TrtcSongScoreModel trtcSongScoreModel) {
             YYRoomInfoManager.e().a(trtcSongScoreModel);
             AudioFloatWindow audioFloatWindow = AudioFloatWindow.this;
-            audioFloatWindow.b("7", trtcSongScoreModel.gotTotalScore + "");
+            audioFloatWindow.b(ATAdConst.ATDevFrameworkType.ADOBIE_AIR, trtcSongScoreModel.gotTotalScore + "");
         }
     };
     private long p = 0;
@@ -201,7 +190,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
     public void a(LiveMusicModel liveMusicModel) {
         Logger.e("xpm", "onUIUpdate");
         liveMusicModel.playStatus = 2;
-        YYMusicManager.f11418a.c().a(liveMusicModel);
+        YYMusicManager.a.c().a(liveMusicModel);
         AudioChannelManager.j().a(1, liveMusicModel.file_url);
     }
 
@@ -211,7 +200,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
             return;
         }
         Logger.e("xpm", "playMusic");
-        YYMusicManager.f11418a.c().a(yYKtvMusicModel);
+        YYMusicManager.a.c().a(yYKtvMusicModel);
         a(yYKtvMusicModel.sheetId, yYKtvMusicModel.musicId, yYKtvMusicModel.musicName, yYKtvMusicModel.artist, yYKtvMusicModel.duration, yYKtvMusicModel.coverUrl);
     }
 
@@ -219,7 +208,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
     public void a(String str, final YYUserInfo yYUserInfo) {
         long currentTimeMillis = System.currentTimeMillis();
         long j = this.p;
-        if (j <= 0 || currentTimeMillis - j < c.l) {
+        if (j <= 0 || currentTimeMillis - j < 120000) {
             return;
         }
         YYRoomHttpUtils.r(str, new BluedUIHttpResponse<BluedEntityA<YYHeartModel>>(null) { // from class: com.blued.android.module.yy_china.trtc_audio.float_window.AudioFloatWindow.12
@@ -278,7 +267,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str6) {
                 AppMethods.a((CharSequence) str6);
-                YYMusicManager.f11418a.c().a((YYKtvMusicModel) null);
+                YYMusicManager.a.c().a((YYKtvMusicModel) null);
                 return true;
             }
 
@@ -382,10 +371,10 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
 
     private void f() {
         Logger.e("AudioFloatWindow", "showFloatView() ... ");
-        if (f17819a > 0) {
+        if (a > 0) {
             return;
         }
-        f17819a = 0;
+        a = 0;
         YYObserverManager.a().a(this);
         AudioChannelManager.j().b(j());
         AudioChannelManager.j().a(l());
@@ -409,10 +398,10 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                 YYRoomInfoManager.e().b(AudioFloatWindow.this.b);
             }
         });
-        this.f17820c = floatWindow;
+        this.c = floatWindow;
         floatWindow.a(true);
-        this.f17820c.a();
-        this.f17820c.a(0);
+        this.c.a();
+        this.c.a(0);
         Logger.e("AudioFloatWindow", "showFloatView() ... 1");
     }
 
@@ -420,15 +409,15 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
     public void g() {
         LiveLogUtils.a("AudioFloatWindow --> hideFloatView --> 隐藏悬浮窗 ---> room_id：" + this.h);
         i();
-        FloatWindow floatWindow = this.f17820c;
+        FloatWindow floatWindow = this.c;
         if (floatWindow != null) {
             floatWindow.b();
-            this.f17820c = null;
+            this.c = null;
         }
         YYObserverManager.a().b(this);
         AudioChannelManager.j().a((IAudioContract.AppHandoverListener) null);
         AudioChannelManager.j().m();
-        AudioChannelManager.j().f17847a = false;
+        AudioChannelManager.j().a = false;
     }
 
     private void h() {
@@ -436,7 +425,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
     }
 
     private void i() {
-        Logger.e(Context.WINDOW_SERVICE, "unRegisterBus ... ");
+        Logger.e("window", "unRegisterBus ... ");
         LiveEventBus.get("event_request_float_permission", FloatPermissionEvent.class).removeObserver(this);
         LiveEventBus.get("close_living_room", YYMsgKickInfoExtra.class).removeObserver(this.i);
         LiveEventBus.get("display_emoji_image", YYImModel.class).removeObserver(this.j);
@@ -473,7 +462,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                     AudioFloatWindow.this.c(b.publish_url);
                     LiveLogUtils.a("AudioFloatWindow --> onSwitchRole -->  主播开始推流 ... publish url: " + b.publish_url);
                 } else {
-                    YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+                    YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
                     if (yYUserInfo == null) {
                         return;
                     }
@@ -504,7 +493,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                 if (YYRoomInfoManager.e().b() == null || YYRoomInfoManager.e().b().music == null || YYRoomInfoManager.e().b().getNormalKtv().booleanValue()) {
                     return;
                 }
-                YYMusicManager.f11418a.c().a(trtcAudioFrameModel, StringUtils.a(YYRoomInfoManager.e().b().music.uid, YYRoomInfoManager.e().k()));
+                YYMusicManager.a.c().a(trtcAudioFrameModel, StringUtils.a(YYRoomInfoManager.e().b().music.uid, YYRoomInfoManager.e().k()));
             }
 
             @Override // com.blued.android.module.yy_china.trtc_audio.IAudioContract.IAudioCallback
@@ -524,17 +513,17 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                 LiveLogUtils.a("AudioFloatWindow --> onRecvCustomCmdMsg --> userId：" + str + "；cmdID：" + i);
                 if (TextUtils.equals(str, YYRoomInfoManager.e().b().uid)) {
                     if (i == 1) {
-                        if (TextUtils.isEmpty(str2) || (yYAudioConfig = (YYAudioConfig) AppInfo.f().fromJson(str2, (Class<Object>) YYAudioConfig.class)) == null) {
+                        if (TextUtils.isEmpty(str2) || (yYAudioConfig = (YYAudioConfig) AppInfo.f().fromJson(str2, YYAudioConfig.class)) == null) {
                             return;
                         }
-                        AudioChannelManager.j().a(yYAudioConfig.b, yYAudioConfig.f17861a);
+                        AudioChannelManager.j().a(yYAudioConfig.b, yYAudioConfig.a);
                     } else if (i == 2) {
                         AudioChannelManager.j().l();
                     } else if (i == 3) {
-                        YYAudioConfig yYAudioConfig2 = (YYAudioConfig) AppInfo.f().fromJson(str2, (Class<Object>) YYAudioConfig.class);
-                        if (yYAudioConfig2 != null && TextUtils.equals(YYRoomInfoManager.e().k(), yYAudioConfig2.f17862c)) {
+                        YYAudioConfig yYAudioConfig2 = (YYAudioConfig) AppInfo.f().fromJson(str2, YYAudioConfig.class);
+                        if (yYAudioConfig2 != null && TextUtils.equals(YYRoomInfoManager.e().k(), yYAudioConfig2.c)) {
                             if (YYRoomInfoManager.e().i()) {
-                                LiveLogUtils.a("AudioFloatWindow --> onRecvCustomCmdMsg --> EXIT_ROOM --> 用户停止推流 ... uid: " + yYAudioConfig2.f17862c);
+                                LiveLogUtils.a("AudioFloatWindow --> onRecvCustomCmdMsg --> EXIT_ROOM --> 用户停止推流 ... uid: " + yYAudioConfig2.c);
                                 AudioChannelManager.j().d();
                             }
                             AudioFloatWindow.this.m();
@@ -542,11 +531,11 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                     } else if (i != 5) {
                     } else {
                         LiveLogUtils.a("AudioFloatWindow --> onRecvCustomCmdMsg --> LEAVE_MIC ... 麦上用户被抱下麦 uid：" + YYRoomInfoManager.e().k());
-                        YYAudioConfig yYAudioConfig3 = (YYAudioConfig) AppInfo.f().fromJson(str2, (Class<Object>) YYAudioConfig.class);
-                        if (yYAudioConfig3 != null && TextUtils.equals(yYAudioConfig3.f17862c, YYRoomInfoManager.e().k())) {
-                            if (YYRoomInfoManager.e().f17578a != null) {
-                                YYRoomInfoManager.e().f17578a.is_mic = "0";
-                                YYRoomInfoManager.e().f17578a.is_open_mic = 0;
+                        YYAudioConfig yYAudioConfig3 = (YYAudioConfig) AppInfo.f().fromJson(str2, YYAudioConfig.class);
+                        if (yYAudioConfig3 != null && TextUtils.equals(yYAudioConfig3.c, YYRoomInfoManager.e().k())) {
+                            if (YYRoomInfoManager.e().a != null) {
+                                YYRoomInfoManager.e().a.is_mic = "0";
+                                YYRoomInfoManager.e().a.is_open_mic = 0;
                             }
                             AudioFloatWindow.this.a("0");
                         }
@@ -560,7 +549,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                 LiveLogUtils.a("AudioFloatWindow --> onRecvSEIMsg --> userId：" + str + "；cmdID：" + i + "; message：" + str2);
                 switch (i) {
                     case 1:
-                        if (TextUtils.isEmpty(str2) || (tRTCSendPKMuteMsg = (TRTCSendPKMuteMsg) AppInfo.f().fromJson(str2, (Class<Object>) TRTCSendPKMuteMsg.class)) == null) {
+                        if (TextUtils.isEmpty(str2) || (tRTCSendPKMuteMsg = (TRTCSendPKMuteMsg) AppInfo.f().fromJson(str2, TRTCSendPKMuteMsg.class)) == null) {
                             return;
                         }
                         if (YYRoomInfoManager.e().b() == null || !YYRoomInfoManager.e().b().pk_has_connected) {
@@ -575,7 +564,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                         return;
                     case 3:
                         LiveLogUtils.a("AudioFloatWindow --> onRecvSEIMsg --> EXIT_ROOM ... 用户被踢出房间 uid：" + YYRoomInfoManager.e().k());
-                        TRTCSendLeaveMsg tRTCSendLeaveMsg = (TRTCSendLeaveMsg) AppInfo.f().fromJson(str2, (Class<Object>) TRTCSendLeaveMsg.class);
+                        TRTCSendLeaveMsg tRTCSendLeaveMsg = (TRTCSendLeaveMsg) AppInfo.f().fromJson(str2, TRTCSendLeaveMsg.class);
                         if (tRTCSendLeaveMsg != null && TextUtils.equals(YYRoomInfoManager.e().k(), tRTCSendLeaveMsg.uid)) {
                             AudioFloatWindow.this.k();
                             if (YYRoomInfoManager.e().i()) {
@@ -591,11 +580,11 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                         return;
                     case 5:
                         LiveLogUtils.a("AudioFloatWindow --> onRecvSEIMsg --> LEAVE_MIC ... 麦上用户被抱下麦 uid：" + YYRoomInfoManager.e().k());
-                        TRTCSendLeaveMsg tRTCSendLeaveMsg2 = (TRTCSendLeaveMsg) AppInfo.f().fromJson(str2, (Class<Object>) TRTCSendLeaveMsg.class);
+                        TRTCSendLeaveMsg tRTCSendLeaveMsg2 = (TRTCSendLeaveMsg) AppInfo.f().fromJson(str2, TRTCSendLeaveMsg.class);
                         if (tRTCSendLeaveMsg2 != null && TextUtils.equals(tRTCSendLeaveMsg2.uid, YYRoomInfoManager.e().k())) {
-                            if (YYRoomInfoManager.e().f17578a != null) {
-                                YYRoomInfoManager.e().f17578a.is_mic = "0";
-                                YYRoomInfoManager.e().f17578a.is_open_mic = 0;
+                            if (YYRoomInfoManager.e().a != null) {
+                                YYRoomInfoManager.e().a.is_mic = "0";
+                                YYRoomInfoManager.e().a.is_open_mic = 0;
                             }
                             AudioFloatWindow.this.k();
                             AudioFloatWindow.this.a("0");
@@ -603,7 +592,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                         }
                         return;
                     case 6:
-                        TrtcSongScoreModel trtcSongScoreModel = (TrtcSongScoreModel) AppInfo.f().fromJson(str2, (Class<Object>) TrtcSongScoreModel.class);
+                        TrtcSongScoreModel trtcSongScoreModel = (TrtcSongScoreModel) AppInfo.f().fromJson(str2, TrtcSongScoreModel.class);
                         if (trtcSongScoreModel == null) {
                             return;
                         }
@@ -627,7 +616,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                         AudioFloatWindow.this.c();
                         return;
                     case 8:
-                        TRTCSendPKMicrophoneStatusMsg tRTCSendPKMicrophoneStatusMsg = (TRTCSendPKMicrophoneStatusMsg) AppInfo.f().fromJson(str2, (Class<Object>) TRTCSendPKMicrophoneStatusMsg.class);
+                        TRTCSendPKMicrophoneStatusMsg tRTCSendPKMicrophoneStatusMsg = (TRTCSendPKMicrophoneStatusMsg) AppInfo.f().fromJson(str2, TRTCSendPKMicrophoneStatusMsg.class);
                         if (tRTCSendPKMicrophoneStatusMsg == null) {
                             return;
                         }
@@ -647,7 +636,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                         }
                         return;
                     case 9:
-                        TRTCSendPKMicrophoneStatusMsg tRTCSendPKMicrophoneStatusMsg2 = (TRTCSendPKMicrophoneStatusMsg) AppInfo.f().fromJson(str2, (Class<Object>) TRTCSendPKMicrophoneStatusMsg.class);
+                        TRTCSendPKMicrophoneStatusMsg tRTCSendPKMicrophoneStatusMsg2 = (TRTCSendPKMicrophoneStatusMsg) AppInfo.f().fromJson(str2, TRTCSendPKMicrophoneStatusMsg.class);
                         if (tRTCSendPKMicrophoneStatusMsg2 != null && YYRoomInfoManager.e().i() && TextUtils.equals(tRTCSendPKMicrophoneStatusMsg2.userId, YYRoomInfoManager.e().k())) {
                             LiveLogUtils.a("AudioFloatWindow --> onRecvSEIMsg --> MICROPHONE_ENABLE --> 房主禁、解 麦上用户麦克风状态：" + str2);
                             if (tRTCSendPKMicrophoneStatusMsg2.status == 0) {
@@ -664,7 +653,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
 
             @Override // com.blued.android.module.yy_china.trtc_audio.IAudioContract.IAudioCallback
             public void a(String str, boolean z) {
-                YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+                YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
                 YYRoomModel b = YYRoomInfoManager.e().b();
                 if (b == null || !YYRoomInfoManager.e().i() || TextUtils.equals(b.uid, yYUserInfo.getUid())) {
                     return;
@@ -731,22 +720,22 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
         return new IAudioContract.AppHandoverListener() { // from class: com.blued.android.module.yy_china.trtc_audio.float_window.AudioFloatWindow.13
             @Override // com.blued.android.module.yy_china.trtc_audio.IAudioContract.AppHandoverListener
             public void a() {
-                if (AudioFloatWindow.this.f17820c != null) {
-                    Logger.e(Context.WINDOW_SERVICE, "onAppBack ... ");
+                if (AudioFloatWindow.this.c != null) {
+                    Logger.e("window", "onAppBack ... ");
                     LiveLogUtils.a("AudioFloatWindow --> setHandoverListener --> 直播间进入 后台 ... ");
                     AudioManagerUtils.a().a(false);
-                    AudioFloatWindow.this.f17820c.b();
+                    AudioFloatWindow.this.c.b();
                 }
-                NotificationService.a(AudioFloatWindow.this.b, YYRoomInfoManager.e().f17578a);
+                NotificationService.a(AudioFloatWindow.this.b, YYRoomInfoManager.e().a);
             }
 
             @Override // com.blued.android.module.yy_china.trtc_audio.IAudioContract.AppHandoverListener
             public void b() {
-                if (AudioFloatWindow.this.f17820c != null) {
-                    Logger.e(Context.WINDOW_SERVICE, "onAppFore ... ");
+                if (AudioFloatWindow.this.c != null) {
+                    Logger.e("window", "onAppFore ... ");
                     LiveLogUtils.a("AudioFloatWindow --> setHandoverListener --> 直播间恢复 前台 ... ");
                     AudioManagerUtils.a().b();
-                    AudioFloatWindow.this.f17820c.a();
+                    AudioFloatWindow.this.c.a();
                 }
                 AudioFloatWindow.this.n();
                 NotificationService.a(AudioFloatWindow.this.b);
@@ -788,7 +777,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
                     list.get(1).itemType = 3;
                 }
                 b.setSeatList(list);
-                YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+                YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
                 if (yYUserInfo == null) {
                     return;
                 }
@@ -863,14 +852,13 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
     @Override // com.blued.android.module.yy_china.observer.RoleStatusObserver
     public void a(int i) {
         Logger.e("sdk", "AudioFloatWindow notifyMicStatus status ---> " + i);
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo != null) {
             LiveLogUtils.a("AudioFloatWindow --> notifyMicStatus --> is_open_mic：" + i + "；uid：" + yYUserInfo.getUid());
             yYUserInfo.is_open_mic = i;
         }
     }
 
-    @Override // androidx.lifecycle.Observer
     /* renamed from: a */
     public void onChanged(FloatPermissionEvent floatPermissionEvent) {
         int i = floatPermissionEvent.status;
@@ -892,15 +880,15 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
         if (!TextUtils.equals("2", str) && !TextUtils.equals("0", str)) {
             if (TextUtils.equals("1", str)) {
                 AudioChannelManager.j().a(20);
-                c(YYRoomInfoManager.e().f17578a.push_url);
+                c(YYRoomInfoManager.e().a.push_url);
                 return;
             }
             return;
         }
         AudioChannelManager.j().d();
         AudioChannelManager.j().a(21);
-        if (YYRoomInfoManager.e().f17578a != null) {
-            YYRoomInfoManager.e().f17578a.push_url = "";
+        if (YYRoomInfoManager.e().a != null) {
+            YYRoomInfoManager.e().a.push_url = "";
         }
         c();
     }
@@ -917,7 +905,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
             AudioChannelManager.j().c();
             return;
         }
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo != null) {
             if (!TextUtils.equals(yYUserInfo.chat_anchor, "1")) {
                 LiveLogUtils.a("AudioFloatWindow --> closeRoom --> 非主播 --> leaveChannel --> room_id：" + b.room_id);
@@ -933,7 +921,7 @@ public class AudioFloatWindow implements Observer<FloatPermissionEvent>, RoleSta
     }
 
     public void c() {
-        YYMusicManager.f11418a.c().a((LiveMusicModel) null);
+        YYMusicManager.a.c().a((LiveMusicModel) null);
         AudioChannelManager.j().d(1);
         LiveEventBus.get("live_music_changed").post("");
         LiveEventBus.get("live_music_exit").post("");

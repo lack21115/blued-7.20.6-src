@@ -6,11 +6,11 @@ import androidx.core.graphics.ColorUtils;
 class CamColor {
 
     /* renamed from: a  reason: collision with root package name */
-    private final float f2422a;
+    private final float f2374a;
     private final float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final float f2423c;
+    private final float f2375c;
     private final float d;
     private final float e;
     private final float f;
@@ -19,9 +19,9 @@ class CamColor {
     private final float i;
 
     CamColor(float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9) {
-        this.f2422a = f;
+        this.f2374a = f;
         this.b = f2;
-        this.f2423c = f3;
+        this.f2375c = f3;
         this.d = f4;
         this.e = f5;
         this.f = f6;
@@ -32,7 +32,7 @@ class CamColor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int a(float f, float f2, float f3) {
-        return a(f, f2, f3, ViewingConditions.f2443a);
+        return a(f, f2, f3, ViewingConditions.f2395a);
     }
 
     static int a(float f, float f2, float f3, ViewingConditions viewingConditions) {
@@ -64,14 +64,14 @@ class CamColor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static CamColor a(int i) {
-        return a(i, ViewingConditions.f2443a);
+        return a(i, ViewingConditions.f2395a);
     }
 
     static CamColor a(int i, ViewingConditions viewingConditions) {
         float f;
         float pow;
         float[] c2 = CamUtils.c(i);
-        float[][] fArr = CamUtils.f2424a;
+        float[][] fArr = CamUtils.f2376a;
         float f2 = c2[0];
         float f3 = fArr[0][0];
         float f4 = c2[1];
@@ -132,7 +132,7 @@ class CamColor {
     }
 
     private static CamColor b(float f, float f2, float f3) {
-        return b(f, f2, f3, ViewingConditions.f2443a);
+        return b(f, f2, f3, ViewingConditions.f2395a);
     }
 
     private static CamColor b(float f, float f2, float f3, ViewingConditions viewingConditions) {
@@ -195,7 +195,7 @@ class CamColor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public float a() {
-        return this.f2422a;
+        return this.f2374a;
     }
 
     float a(CamColor camColor) {
@@ -248,7 +248,7 @@ class CamColor {
     }
 
     float c() {
-        return this.f2423c;
+        return this.f2375c;
     }
 
     float d() {
@@ -264,6 +264,6 @@ class CamColor {
     }
 
     int g() {
-        return a(ViewingConditions.f2443a);
+        return a(ViewingConditions.f2395a);
     }
 }

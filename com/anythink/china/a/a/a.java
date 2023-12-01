@@ -6,12 +6,10 @@ import android.os.Parcel;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/a/a/a.class */
 public final class a implements IInterface {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IBinder f6216a;
+    private IBinder a;
 
     public a(IBinder iBinder) {
-        this.f6216a = iBinder;
+        this.a = iBinder;
     }
 
     public final String a() {
@@ -20,7 +18,7 @@ public final class a implements IInterface {
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.asus.msa.SupplementaryDID.IDidAidlInterface");
-            this.f6216a.transact(3, obtain, obtain2, 0);
+            this.a.transact(3, obtain, obtain2, 0);
             obtain2.readException();
             str = obtain2.readString();
         } catch (Throwable th) {
@@ -36,6 +34,6 @@ public final class a implements IInterface {
 
     @Override // android.os.IInterface
     public final IBinder asBinder() {
-        return this.f6216a;
+        return this.a;
     }
 }

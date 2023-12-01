@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -129,12 +130,12 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
     private int E;
 
     /* renamed from: a  reason: collision with root package name */
-    public MsgHelloAdapter f31849a;
+    public MsgHelloAdapter f18159a;
     @BindView
     public TranslationAnimHintView bottom_hint_view;
 
     /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f31850c;
+    private LayoutInflater f18160c;
     @BindView
     public View cover_view;
     private ListView d;
@@ -179,7 +180,6 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             Tracker.onClick(dialogInterface, i);
             MsgFragment.this.s.show();
             ThreadManager.a().a(new ThreadExecutor("ClearChatList") { // from class: com.soft.blued.ui.msg.MsgFragment.22.1
-                @Override // com.blued.android.framework.pool.ThreadExecutor
                 public void execute() {
                     ChatManager.getInstance().deleteAllSessions();
                     BluedStatistics.c().a("DELETE_SESSION_SUCCESS", 0L, 0, "delete all session");
@@ -245,18 +245,18 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
 
         public HeaderViewHolder_ViewBinding(HeaderViewHolder headerViewHolder, View view) {
             this.b = headerViewHolder;
-            headerViewHolder.header_root = (RelativeLayout) Utils.a(view, 2131364229, "field 'header_root'", RelativeLayout.class);
+            headerViewHolder.header_root = (RelativeLayout) Utils.a(view, R.id.header_root, "field 'header_root'", RelativeLayout.class);
             headerViewHolder.ll_nodata_chats = (NoDataAndLoadFailView) Utils.a(view, R.id.ll_nodata_chats, "field 'll_nodata_chats'", NoDataAndLoadFailView.class);
             headerViewHolder.searchLayout = (ShapeLinearLayout) Utils.a(view, R.id.search_layout, "field 'searchLayout'", ShapeLinearLayout.class);
             headerViewHolder.stub_push_remind = (ViewStub) Utils.a(view, R.id.stub_push_remind, "field 'stub_push_remind'", ViewStub.class);
             headerViewHolder.stub_push_remind_permanent = (ViewStub) Utils.a(view, R.id.stub_push_remind_permanent, "field 'stub_push_remind_permanent'", ViewStub.class);
-            headerViewHolder.llHello = (LinearLayout) Utils.a(view, 2131367899, "field 'llHello'", LinearLayout.class);
+            headerViewHolder.llHello = (LinearLayout) Utils.a(view, R.id.ll_hello, "field 'llHello'", LinearLayout.class);
             headerViewHolder.gtvHelloTitle = (TextView) Utils.a(view, R.id.gtv_hello_title, "field 'gtvHelloTitle'", TextView.class);
-            headerViewHolder.tvMore = (TextView) Utils.a(view, 2131371973, "field 'tvMore'", TextView.class);
-            headerViewHolder.ivMore = (ImageView) Utils.a(view, 2131365652, "field 'ivMore'", ImageView.class);
+            headerViewHolder.tvMore = (TextView) Utils.a(view, R.id.tv_more, "field 'tvMore'", TextView.class);
+            headerViewHolder.ivMore = (ImageView) Utils.a(view, R.id.iv_more, "field 'ivMore'", ImageView.class);
             headerViewHolder.rvHello = (RecyclerView) Utils.a(view, R.id.hello_recycler_view, "field 'rvHello'", RecyclerView.class);
             headerViewHolder.rlHelloEmpty = (RelativeLayout) Utils.a(view, R.id.rl_hello_empty, "field 'rlHelloEmpty'", RelativeLayout.class);
-            headerViewHolder.mScrollView = (HorizontalScrollView) Utils.a(view, 2131369645, "field 'mScrollView'", HorizontalScrollView.class);
+            headerViewHolder.mScrollView = (HorizontalScrollView) Utils.a(view, R.id.scroll_view, "field 'mScrollView'", HorizontalScrollView.class);
             headerViewHolder.tvHelloMore = (VerticalTextView) Utils.a(view, R.id.tv_hello_more, "field 'tvHelloMore'", VerticalTextView.class);
             headerViewHolder.layoutNewHello = (ConstraintLayout) Utils.a(view, R.id.layout_new_hello, "field 'layoutNewHello'", ConstraintLayout.class);
             headerViewHolder.rtvMultiple = (RiseNumberTextView) Utils.a(view, R.id.rtv_multiple, "field 'rtvMultiple'", RiseNumberTextView.class);
@@ -389,7 +389,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             MsgFragment.this.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg.MsgFragment.IgnoredNoReadMsgObserver.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    MsgFragment.this.j().x();
+                    ((MsgPresenter) MsgFragment.this.j()).x();
                 }
             }, 600L);
         }
@@ -471,7 +471,6 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         private MsgConnectListener() {
         }
 
-        @Override // com.blued.android.chat.StableIMConnectListener
         public void onUIConnected() {
             Logger.c("MsgFragment", "onUIConnected-----");
             if (MsgFragment.this.l == null || MsgFragment.this.l.anim_hint_view == null || MsgFragment.this.getContext() == null) {
@@ -480,7 +479,6 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             MsgFragment.this.l.anim_hint_view.a(4);
         }
 
-        @Override // com.blued.android.chat.StableIMConnectListener
         public void onUIConnecting() {
             Logger.c("MsgFragment", "onUIConnecting-----");
             if (MsgFragment.this.l == null || MsgFragment.this.l.anim_hint_view == null || MsgFragment.this.getContext() == null) {
@@ -489,7 +487,6 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             MsgFragment.this.l.anim_hint_view.a(4, MsgFragment.this.getContext().getResources().getString(R.string.chat_connecting));
         }
 
-        @Override // com.blued.android.chat.StableIMConnectListener
         public void onUIDisconnected() {
             Logger.c("MsgFragment", "onUIDisconnected-----");
             if (MsgFragment.this.l == null || MsgFragment.this.l.anim_hint_view == null || MsgFragment.this.getContext() == null) {
@@ -498,7 +495,6 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             MsgFragment.this.l.anim_hint_view.a(4, MsgFragment.this.getContext().getResources().getString(R.string.chat_disconnect));
         }
 
-        @Override // com.blued.android.chat.StableIMConnectListener
         public void onUIReceiving() {
             Logger.c("MsgFragment", "onUIReceiving-----");
             if (MsgFragment.this.l == null || MsgFragment.this.l.anim_hint_view == null || MsgFragment.this.getContext() == null) {
@@ -522,6 +518,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         ImageLoader.a(getFragmentActive(), UserInfo.getInstance().getLoginUserInfo().avatar).b(2131237310).c().a(this.p.header_view);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void G() {
         this.r = new PrivacySettingPresenter(getActivity(), getFragmentActive(), this);
         if (BluedPreferences.ax()) {
@@ -549,9 +546,9 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         this.f.tv_item4.setText(R.string.biao_v4_right_pup_four_close);
         if (BluedPreferences.dv()) {
             TranslationAnimHintView.HintInfo hintInfo = new TranslationAnimHintView.HintInfo();
-            hintInfo.f11074a = 3;
+            hintInfo.a = 3;
             hintInfo.b = getContext().getString(R.string.msg_secreting);
-            hintInfo.f11075c = new View.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgFragment.6
+            hintInfo.c = new View.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgFragment.6
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
@@ -567,9 +564,9 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         ChatFriendListAdapter chatFriendListAdapter = new ChatFriendListAdapter(getFragmentActive(), this);
         this.q = chatFriendListAdapter;
         this.d.setAdapter((ListAdapter) chatFriendListAdapter);
-        this.q.f31972a = j();
-        this.d.setOnItemClickListener(j());
-        this.d.setOnItemLongClickListener(j());
+        this.q.f18282a = (MsgPresenter) j();
+        this.d.setOnItemClickListener((AdapterView.OnItemClickListener) j());
+        this.d.setOnItemLongClickListener((AdapterView.OnItemLongClickListener) j());
         this.d.setOnScrollListener(this);
     }
 
@@ -578,17 +575,15 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         this.pullRefresh.p();
         this.d = (ListView) this.pullRefresh.getRefreshableView();
         this.pullRefresh.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.soft.blued.ui.msg.MsgFragment.7
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 MsgFragment.this.b();
-                MsgFragment.this.j().z();
+                ((MsgPresenter) MsgFragment.this.j()).z();
             }
 
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void b() {
             }
         });
-        View inflate = this.f31850c.inflate(R.layout.layout_msg_list_head_view, (ViewGroup) null);
+        View inflate = this.f18160c.inflate(R.layout.layout_msg_list_head_view, (ViewGroup) null);
         this.k = inflate;
         this.d.addHeaderView(inflate);
         HeaderViewHolder headerViewHolder = new HeaderViewHolder();
@@ -616,17 +611,17 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         linearLayoutManager.setOrientation(0);
         this.l.rvHello.setLayoutManager(linearLayoutManager);
         MsgHelloAdapter msgHelloAdapter = new MsgHelloAdapter(getFragmentActive(), getContext());
-        this.f31849a = msgHelloAdapter;
+        this.f18159a = msgHelloAdapter;
         msgHelloAdapter.setHeaderAndEmpty(true);
         if (this.A) {
-            this.f31849a.addHeaderView(this.m);
-            ViewGroup.LayoutParams layoutParams = this.f31849a.getHeaderLayout().getLayoutParams();
+            this.f18159a.addHeaderView(this.m);
+            ViewGroup.LayoutParams layoutParams = this.f18159a.getHeaderLayout().getLayoutParams();
             layoutParams.width = DensityUtils.a(getContext(), 77.0f);
-            this.f31849a.getHeaderLayout().setLayoutParams(layoutParams);
+            this.f18159a.getHeaderLayout().setLayoutParams(layoutParams);
         } else {
             this.n.setVisibility(0);
         }
-        this.l.rvHello.setAdapter(this.f31849a);
+        this.l.rvHello.setAdapter(this.f18159a);
         this.l.llHello.setVisibility(8);
         this.l.rvHello.setVisibility(8);
         this.l.layoutNewHello.setVisibility(8);
@@ -690,7 +685,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
     public void N() {
         CallMeStatusData b2 = CallHelloManager.a().b();
         if (b2 == null || b2.call_status != 5) {
-            CallHelloManager.a().a(getContext(), getFragmentActive(), 2, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.msg.MsgFragment.12
+            CallHelloManager.a().a(getContext(), (IRequestHost) getFragmentActive(), 2, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.msg.MsgFragment.12
                 @Override // com.soft.blued.ui.find.manager.CallHelloManager.ToOpenListener
                 public void done(boolean z) {
                     if (z) {
@@ -701,7 +696,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             return;
         }
         HelloStateDialogFragment.a(getContext(), b2);
-        CallHelloManager.a().a(getContext(), getFragmentActive(), 2, (CallHelloManager.ToOpenListener) null);
+        CallHelloManager.a().a(getContext(), (IRequestHost) getFragmentActive(), 2, (CallHelloManager.ToOpenListener) null);
     }
 
     private void O() {
@@ -712,7 +707,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         if (!this.A ? this.n.getVisibility() != 0 : this.m.getVisibility() != 0) {
             z = false;
         }
-        if (!z && this.f31849a.getData().size() <= 0) {
+        if (!z && this.f18159a.getData().size() <= 0) {
             this.l.llHello.setVisibility(8);
             this.l.rvHello.setVisibility(8);
             this.l.rlHelloEmpty.setVisibility(8);
@@ -720,7 +715,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         }
         this.l.llHello.setVisibility(0);
         this.l.rvHello.setVisibility(0);
-        if (this.f31849a.getData().size() > 0) {
+        if (this.f18159a.getData().size() > 0) {
             this.l.rlHelloEmpty.setVisibility(8);
         } else {
             this.l.rlHelloEmpty.setVisibility(0);
@@ -738,7 +733,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             public void onClick(View view2) {
                 Tracker.onClick(view2);
                 MsgFragment.this.msg_filter_guide_iv.setVisibility(8);
-                MsgFragment.this.j().m();
+                ((MsgPresenter) MsgFragment.this.j()).m();
             }
         });
         postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg.MsgFragment.20
@@ -747,7 +742,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
                 if (MsgFragment.this.msg_filter_guide_iv != null) {
                     MsgFragment.this.msg_filter_guide_iv.setVisibility(8);
                 }
-                MsgFragment.this.j().m();
+                ((MsgPresenter) MsgFragment.this.j()).m();
             }
         }, 5000L);
     }
@@ -793,14 +788,12 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         if (msgListCheatDialog == null || !msgListCheatDialog.s()) {
             this.C = new MsgListCheatDialog(getContext(), msgListCheatModel);
             new XPopup.Builder(getContext()).a(new SimpleCallback() { // from class: com.soft.blued.ui.msg.MsgFragment.4
-                @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
                 public void c(BasePopupView basePopupView) {
                     super.c(basePopupView);
                     EventTrackMessage.a(MessageProtos.Event.MSG_LIST_SAFE_WARN_SHOW);
                     BluedPreferences.x(msgListCheatModel.getVersion());
                 }
 
-                @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
                 public void d(BasePopupView basePopupView) {
                     Log.e("xxx", "onDismiss dateTodayItemIndex=" + MsgFragment.this.E);
                     if (MsgFragment.this.E >= 0) {
@@ -812,14 +805,14 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
                         }, 500L);
                     }
                 }
-            }).c((Boolean) false).b((Boolean) false).d((Boolean) true).a(PopupAnimation.ScaleAlphaFromCenter).a((BasePopupView) this.C).h();
+            }).c(false).b(false).d(true).a(PopupAnimation.a).a(this.C).h();
         }
     }
 
     private void a(boolean z, int i) {
         ChatFriendListAdapter chatFriendListAdapter = this.q;
         if (chatFriendListAdapter != null) {
-            chatFriendListAdapter.a(j().s(), z);
+            chatFriendListAdapter.a(((MsgPresenter) j()).s(), z);
             this.q.notifyDataSetChanged();
         }
         b(z, i);
@@ -834,9 +827,9 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             this.l.ll_nodata_chats.d();
         } else {
             if (z) {
-                this.l.ll_nodata_chats.setNoDataStr(R.string.no_filter_chats);
+                this.l.ll_nodata_chats.setNoDataStr((int) R.string.no_filter_chats);
             } else {
-                this.l.ll_nodata_chats.setNoDataStr(R.string.no_chats);
+                this.l.ll_nodata_chats.setNoDataStr((int) R.string.no_chats);
             }
             this.l.ll_nodata_chats.a();
         }
@@ -845,17 +838,17 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
 
     @Override // com.soft.blued.ui.msg.contract.IMsgFilterCallback
     public boolean A() {
-        return j().o();
+        return ((MsgPresenter) j()).o();
     }
 
     @Override // com.soft.blued.ui.msg.contract.IMsgFilterCallback
     public boolean B() {
-        return j().p();
+        return ((MsgPresenter) j()).p();
     }
 
     @Override // com.soft.blued.ui.msg.contract.IMsgFilterCallback
     public boolean C() {
-        return j().t();
+        return ((MsgPresenter) j()).t();
     }
 
     @Override // com.soft.blued.ui.setting.Contract.IPrivacySettingContract.IView
@@ -868,12 +861,11 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         return false;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         this.s = DialogUtils.a(getContext());
         LayoutInflater from = LayoutInflater.from(getContext());
-        this.f31850c = from;
+        this.f18160c = from;
         this.e = (ViewGroup) from.inflate(R.layout.fragment_main_msg_right_menu, (ViewGroup) null);
         MenuViewHolder menuViewHolder = new MenuViewHolder();
         this.f = menuViewHolder;
@@ -930,7 +922,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             return;
         }
         headerViewHolder.layoutNewHello.setVisibility(8);
-        this.f31849a.setNewData(bluedEntity.data);
+        this.f18159a.setNewData(bluedEntity.data);
         this.l.llHello.setVisibility(0);
         this.l.rvHello.setVisibility(0);
         if (bluedEntity.hasMore()) {
@@ -1009,7 +1001,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(Boolean bool) {
-        if (this.f31849a == null) {
+        if (this.f18159a == null) {
             return;
         }
         if (this.A) {
@@ -1030,7 +1022,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(Integer num) {
-        a(j().t(), num.intValue());
+        a(((MsgPresenter) j()).t(), num.intValue());
     }
 
     @Override // com.soft.blued.ui.setting.Contract.IPrivacySettingContract.IView
@@ -1039,7 +1031,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(List<VipUpgradeModel> list) {
-        VipUpgradeDialogFragment.f34178a.a(getContext(), getParentFragmentManager(), list, 2, j().v(), j().u(), VipProtos.FromType.UNKNOWN_FROM);
+        VipUpgradeDialogFragment.f20487a.a(getContext(), getParentFragmentManager(), list, 2, ((MsgPresenter) j()).v(), ((MsgPresenter) j()).u(), VipProtos.FromType.UNKNOWN_FROM);
     }
 
     @Override // com.soft.blued.ui.find.observer.CallHelloObserver.ICallHelloObserver
@@ -1067,7 +1059,6 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
         View view = this.k;
@@ -1093,7 +1084,6 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         ((ViewGroup) this.m.getParent()).removeView(this.m);
     }
 
-    @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
         HeaderViewHolder headerViewHolder = this.l;
         if (headerViewHolder != null) {
@@ -1105,7 +1095,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
     }
 
     public void b() {
-        j().y();
+        ((MsgPresenter) j()).y();
     }
 
     @Override // com.soft.blued.ui.find.observer.CallHelloObserver.ICallHelloObserver
@@ -1145,7 +1135,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
                 }
             }
             this.p.fm_header_shape.setVisibility(8);
-            CallHelloManager.a().a(getContext(), getFragmentActive(), 2);
+            CallHelloManager.a().a(getContext(), (IRequestHost) getFragmentActive(), 2);
             return;
         }
         this.p.fm_header_shape.setVisibility(0);
@@ -1226,20 +1216,20 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         }
         DateTodayGuidePop dateTodayGuidePop = this.D;
         if (dateTodayGuidePop == null || !dateTodayGuidePop.s()) {
-            DateTodayManager.f32404a.g();
+            DateTodayManager.f18714a.g();
             int[] iArr = new int[2];
             View childAt = this.d.getChildAt(num.intValue() + this.d.getHeaderViewsCount());
             if (childAt != null) {
                 childAt.getLocationInWindow(iArr);
                 this.D = new DateTodayGuidePop(context, iArr[1]);
-                new XPopup.Builder(context).d((Boolean) false).a((BasePopupView) this.D).h();
+                new XPopup.Builder(context).d(false).a(this.D).h();
             }
         }
     }
 
     @Override // com.soft.blued.ui.msg.contract.IMsgFilterCallback
     public void b(boolean z) {
-        j().a(z);
+        ((MsgPresenter) j()).a(z);
     }
 
     @Override // com.soft.blued.ui.setting.Contract.IPrivacySettingContract.IView
@@ -1253,8 +1243,8 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
                 @Override // java.lang.Runnable
                 public void run() {
                     final MsgBoxGuidePop msgBoxGuidePop = new MsgBoxGuidePop(MsgFragment.this.getContext());
-                    new XPopup.Builder(MsgFragment.this.getContext()).a((BasePopupView) msgBoxGuidePop).h();
-                    TextView textView = msgBoxGuidePop.f32494c;
+                    new XPopup.Builder(MsgFragment.this.getContext()).a(msgBoxGuidePop).h();
+                    TextView textView = msgBoxGuidePop.f18803c;
                     if (textView == null || MsgFragment.this.e == null) {
                         return;
                     }
@@ -1323,7 +1313,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             textView2.setText(floatValue + "x");
         }
         this.o.tv_call_me_btn.setBackgroundResource(R.drawable.icon_call_me_default);
-        CallHelloManager.a().a(getContext(), getFragmentActive(), 2);
+        CallHelloManager.a().a(getContext(), (IRequestHost) getFragmentActive(), 2);
     }
 
     @Override // com.soft.blued.ui.home.HomeTabClick.TabClickListener
@@ -1334,19 +1324,19 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             if (listView != null) {
                 listView.smoothScrollToPosition(0);
             }
-            j().z();
+            ((MsgPresenter) j()).z();
         }
     }
 
     @Override // com.soft.blued.ui.msg.contract.IMsgFilterCallback
     public void c(boolean z) {
-        j().b(z);
+        ((MsgPresenter) j()).b(z);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void d() {
         TranslationAnimHintView.HintInfo hintInfo = new TranslationAnimHintView.HintInfo();
-        hintInfo.f11074a = 5;
+        hintInfo.a = 5;
         hintInfo.b = getContext().getString(R.string.msg_deleted_for_risk_users);
         hintInfo.f = true;
         this.bottom_hint_view.a(hintInfo);
@@ -1362,7 +1352,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
 
     @Override // com.soft.blued.ui.msg.contract.IMsgFilterCallback
     public void d(boolean z) {
-        j().c(z);
+        ((MsgPresenter) j()).c(z);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -1375,13 +1365,13 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
 
     @Override // com.soft.blued.ui.msg.contract.IMsgFilterCallback
     public void e(boolean z) {
-        j().E();
+        ((MsgPresenter) j()).E();
         View view = this.msg_filter_guide_iv;
         if (view != null && view.getVisibility() == 0) {
             this.msg_filter_guide_iv.setVisibility(8);
         }
         if (z) {
-            j().m();
+            ((MsgPresenter) j()).m();
         }
     }
 
@@ -1389,7 +1379,6 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
     public void f(boolean z) {
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_msg;
     }
@@ -1432,7 +1421,6 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
     public void o(boolean z) {
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         if (b) {
@@ -1449,7 +1437,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             EventTrackMessage.a(MessageProtos.Event.MSG_MORE_OPEN_LOOK_QUIET);
             this.g.d();
             if (!BluedPreferences.av() && UserInfo.getInstance().getLoginUserInfo().vip_grade != 2 && BluedConfig.a().g().is_view_secretly == 0) {
-                j().a(13, "chat_msg_quiet_all");
+                ((MsgPresenter) j()).a(13, "chat_msg_quiet_all");
                 InstantLog.a("msg_view_secretly_all_click", 0);
                 return;
             }
@@ -1475,7 +1463,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
                 if (imageView == null || !(imageView instanceof ImageView)) {
                     return;
                 }
-                imageView.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_title_filter_off));
+                imageView.setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.icon_title_filter_off));
                 return;
             case R.id.tv_item1 /* 2131371743 */:
                 EventTrackMessage.a(MessageProtos.Event.MSG_MORE_IGNORE_UNREAD);
@@ -1486,29 +1474,29 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
                         Tracker.onClick(dialogInterface, i);
                         ChatManager.getInstance().ignoredNoReadNumAll();
                     }
-                }, getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                }, getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                 return;
             case R.id.tv_item2 /* 2131371744 */:
                 EventTrackMessage.a(MessageProtos.Event.MSG_MORE_CLEAR);
                 this.g.d();
-                CommonAlertDialog.a(getContext(), getContext().getResources().getString(R.string.biao_new_signin_tip), getContext().getResources().getString(R.string.biao_v4_clear_friend_list), getContext().getResources().getString(2131887281), new AnonymousClass22(), getContext().getResources().getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                CommonAlertDialog.a(getContext(), getContext().getResources().getString(R.string.biao_new_signin_tip), getContext().getResources().getString(R.string.biao_v4_clear_friend_list), getContext().getResources().getString(2131887281), new AnonymousClass22(), getContext().getResources().getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                 return;
             case R.id.tv_item3 /* 2131371745 */:
                 this.g.d();
-                TerminalActivity.d(getActivity(), RemindSettingFragment.class, null);
+                TerminalActivity.d(getActivity(), RemindSettingFragment.class, (Bundle) null);
                 return;
             default:
                 return;
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.z = (MsgListViewModel) new ViewModelProvider(this).get(MsgListViewModel.class);
         LiveEventBus.get(EventBusConstant.KEY_EVENT_CLICK_RIGHT_POP_MENU, View.class).observe(this, new MenuObserver());
         LiveEventBus.get(EventBusConstant.KEY_EVENT_CLEAR_MESSAGE_CHAT, Void.class).observe(this, new IgnoredNoReadMsgObserver());
-        ((HomeViewModel) ViewModelProviders.of(getActivity()).get(HomeViewModel.class)).f31047a.observe(this, new Observer<Integer>() { // from class: com.soft.blued.ui.msg.MsgFragment.1
+        ((HomeViewModel) ViewModelProviders.of(getActivity()).get(HomeViewModel.class)).f17357a.observe(this, new Observer<Integer>() { // from class: com.soft.blued.ui.msg.MsgFragment.1
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Integer num) {
@@ -1519,20 +1507,20 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Void r3) {
-                MsgFragment.this.j().y();
+                ((MsgPresenter) MsgFragment.this.j()).y();
             }
         });
-        LiveEventBus.get(DateTodayManager.f32404a.t(), Void.class).observe(this, new Observer<Void>() { // from class: com.soft.blued.ui.msg.MsgFragment.3
+        LiveEventBus.get(DateTodayManager.f18714a.t(), Void.class).observe(this, new Observer<Void>() { // from class: com.soft.blued.ui.msg.MsgFragment.3
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Void r6) {
                 MsgFragment.this.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg.MsgFragment.3.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        DateTodayConfigModel b2 = DateTodayManager.f32404a.b();
+                        DateTodayConfigModel b2 = DateTodayManager.f18714a.b();
                         if (b2 != null) {
-                            long l = DateTodayManager.f32404a.l();
-                            int u = DateTodayManager.f32404a.u();
+                            long l = DateTodayManager.f18714a.l();
+                            int u = DateTodayManager.f18714a.u();
                             StringBuilder sb = new StringBuilder();
                             sb.append("nextShowTime=");
                             sb.append(l);
@@ -1542,9 +1530,9 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
                             if (l > System.currentTimeMillis() || u >= 3 || b2.getFunction_evaluation() == null || MsgFragment.this.getContext() == null) {
                                 return;
                             }
-                            new XPopup.Builder(MsgFragment.this.getContext()).a((BasePopupView) new DateTodayFunctionalEvaluationPop(MsgFragment.this.getContext(), b2.getFunction_evaluation(), MsgFragment.this.getFragmentActive())).h();
-                            DateTodayManager.f32404a.c(u + 1);
-                            DateTodayManager.f32404a.s();
+                            new XPopup.Builder(MsgFragment.this.getContext()).a(new DateTodayFunctionalEvaluationPop(MsgFragment.this.getContext(), b2.getFunction_evaluation(), MsgFragment.this.getFragmentActive())).h();
+                            DateTodayManager.f18714a.c(u + 1);
+                            DateTodayManager.f18714a.s();
                         }
                     }
                 }, 200L);
@@ -1558,23 +1546,20 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
-        j().D();
+        ((MsgPresenter) j()).D();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         CommonNotification.a();
         InstantLog.a("session_list_show");
-        j().C();
+        ((MsgPresenter) j()).C();
         this.pullRefresh.setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101796));
         this.z.f();
         applySkin();
@@ -1589,7 +1574,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         if (TextUtils.isEmpty(string)) {
             return;
         }
-        j().e(this.B);
+        ((MsgPresenter) j()).e(this.B);
         getActivity().setIntent(new Intent());
     }
 
@@ -1604,21 +1589,18 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
     public void onScrollStateChanged(AbsListView absListView, int i) {
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         ChatManager.getInstance().registerIMStatusListener(this.t);
-        j().A();
+        ((MsgPresenter) j()).A();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
-        j().B();
+        ((MsgPresenter) j()).B();
         ChatManager.getInstance().unregisterIMStatusListener(this.t);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         view.setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
@@ -1626,11 +1608,10 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         PushChecker.a().a(this.l.anim_hint_view, 2, MessageProtos.WarnTime.TOAST_MSG);
         H();
         if (M()) {
-            j().z();
+            ((MsgPresenter) j()).z();
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean q() {
         return true;
     }
@@ -1655,7 +1636,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
         this.v = 0;
         while (true) {
             int i = firstVisiblePosition + 1;
-            if (i >= j().h.a().size() + 1) {
+            if (i >= ((MsgPresenter) j()).h.a().size() + 1) {
                 return;
             }
             firstVisiblePosition = i;
@@ -1663,7 +1644,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
                 if (this.v == i) {
                     firstVisiblePosition = i;
                 } else {
-                    SessionModel sessionModel = j().h.a().get(i - 1);
+                    SessionModel sessionModel = ((MsgPresenter) j()).h.a().get(i - 1);
                     firstVisiblePosition = i;
                     if (sessionModel != null) {
                         firstVisiblePosition = i;
@@ -1699,7 +1680,7 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
                 }
                 if (MsgFragment.this.msg_filter_guide_iv.getVisibility() == 0) {
                     MsgFragment.this.msg_filter_guide_iv.setVisibility(8);
-                    MsgFragment.this.j().m();
+                    ((MsgPresenter) MsgFragment.this.j()).m();
                     return true;
                 }
                 return true;
@@ -1714,6 +1695,6 @@ public class MsgFragment extends MvpFragment<MsgPresenter> implements View.OnCli
 
     @Override // com.soft.blued.ui.msg.contract.IMsgFilterCallback
     public boolean z() {
-        return j().n();
+        return ((MsgPresenter) j()).n();
     }
 }

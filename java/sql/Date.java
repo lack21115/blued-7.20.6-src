@@ -1,5 +1,8 @@
 package java.sql;
 
+import com.amap.api.services.core.AMapException;
+import com.android.internal.content.NativeLibraryHelper;
+
 @FindBugsSuppressWarnings({"NM_SAME_SIMPLE_NAME_AS_SUPERCLASS"})
 /* loaded from: source-2895416-dex2jar.jar:java/sql/Date.class */
 public class Date extends java.util.Date {
@@ -34,11 +37,11 @@ public class Date extends java.util.Date {
         if (str.length() > 10) {
             throw new IllegalArgumentException();
         }
-        String[] split = str.split("-");
+        String[] split = str.split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
         if (split.length != 3) {
             throw new IllegalArgumentException();
         }
-        return new Date(Integer.parsePositiveInt(split[0]) - 1900, Integer.parsePositiveInt(split[1]) - 1, Integer.parsePositiveInt(split[2]));
+        return new Date(Integer.parsePositiveInt(split[0]) - AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR, Integer.parsePositiveInt(split[1]) - 1, Integer.parsePositiveInt(split[2]));
     }
 
     @Override // java.util.Date
@@ -85,7 +88,7 @@ public class Date extends java.util.Date {
     @Override // java.util.Date
     public String toString() {
         StringBuilder sb = new StringBuilder(10);
-        format(getYear() + 1900, 4, sb);
+        format(getYear() + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR, 4, sb);
         sb.append('-');
         format(getMonth() + 1, 2, sb);
         sb.append('-');

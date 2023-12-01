@@ -24,6 +24,6 @@ final /* synthetic */ class LiveTabFragmentNew$liveDataObserver$2 extends Functi
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(List<? extends LiveTwoFloorModel> list) {
         a(list);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

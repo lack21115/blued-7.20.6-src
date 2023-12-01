@@ -9,9 +9,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import sun.misc.Unsafe;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/protobuf/UnsafeUtil.class */
-public final class UnsafeUtil {
+final class UnsafeUtil {
     static final boolean IS_BIG_ENDIAN;
     private static final int STRIDE = 8;
     private static final int STRIDE_ALIGNMENT_MASK = 7;
@@ -264,12 +263,12 @@ public final class UnsafeUtil {
 
         @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
         public void copyMemory(long j, byte[] bArr, long j2, long j3) {
-            this.unsafe.copyMemory(null, j, bArr, UnsafeUtil.BYTE_ARRAY_BASE_OFFSET + j2, j3);
+            this.unsafe.copyMemory((Object) null, j, bArr, UnsafeUtil.BYTE_ARRAY_BASE_OFFSET + j2, j3);
         }
 
         @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
         public void copyMemory(byte[] bArr, long j, long j2, long j3) {
-            this.unsafe.copyMemory(bArr, UnsafeUtil.BYTE_ARRAY_BASE_OFFSET + j, null, j2, j3);
+            this.unsafe.copyMemory(bArr, UnsafeUtil.BYTE_ARRAY_BASE_OFFSET + j, (Object) null, j2, j3);
         }
 
         @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
@@ -486,7 +485,7 @@ public final class UnsafeUtil {
     }
 
     static void copyMemory(byte[] bArr, long j, byte[] bArr2, long j2, long j3) {
-        System.arraycopy((Object) bArr, (int) j, (Object) bArr2, (int) j2, (int) j3);
+        System.arraycopy(bArr, (int) j, bArr2, (int) j2, (int) j3);
     }
 
     private static boolean determineAndroidSupportByAddressSize(Class<?> cls) {

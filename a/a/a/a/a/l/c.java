@@ -26,11 +26,11 @@ import java.nio.ByteBuffer;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public MediaProjectionManager f1445a;
+    public MediaProjectionManager f1397a;
     public a.a.a.a.a.l.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    public ScreenSetting f1446c;
+    public ScreenSetting f1398c;
     public PLScreenYUVCapturerListener d;
     public d e;
     public h f;
@@ -75,17 +75,17 @@ public class c {
     public static class HandlerC0018c extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public WeakReference<c> f1449a;
+        public WeakReference<c> f1401a;
 
         public HandlerC0018c(Looper looper, c cVar) {
             super(looper);
-            this.f1449a = new WeakReference<>(cVar);
+            this.f1401a = new WeakReference<>(cVar);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             int i = message.what;
-            c cVar = this.f1449a.get();
+            c cVar = this.f1401a.get();
             e eVar = e.g;
             eVar.c("ScreenYUVCapturerCore", "GLHandler what:" + i + ",capturer=" + cVar);
             if (cVar == null) {
@@ -125,7 +125,7 @@ public class c {
                 return;
             }
             MediaProjectionManager mediaProjectionManager = (MediaProjectionManager) activity.getSystemService(Context.MEDIA_PROJECTION_SERVICE);
-            this.f1445a = mediaProjectionManager;
+            this.f1397a = mediaProjectionManager;
             activity.startActivityForResult(mediaProjectionManager.createScreenCaptureIntent(), 2008);
             e.g.c("ScreenYUVCapturerCore", "requestScreenCapture -");
         }
@@ -146,7 +146,7 @@ public class c {
                 e.g.d("ScreenYUVCapturerCore", "you have prepared already!");
                 return;
             }
-            this.f1446c = screenSetting;
+            this.f1398c = screenSetting;
             this.d = pLScreenYUVCapturerListener;
             HandlerThread handlerThread = new HandlerThread("ScreenYUVCapturerCore");
             handlerThread.start();
@@ -163,17 +163,17 @@ public class c {
                 e.g.e("ScreenYUVCapturerCore", "param error, screen recorder init failed!");
                 return false;
             }
-            MediaProjection mediaProjection = this.f1445a.getMediaProjection(i2, intent);
+            MediaProjection mediaProjection = this.f1397a.getMediaProjection(i2, intent);
             if (mediaProjection == null) {
                 e.g.e("ScreenYUVCapturerCore", "something is wrong, screen recorder init failed!");
                 return false;
             }
-            ScreenSetting screenSetting = this.f1446c;
+            ScreenSetting screenSetting = this.f1398c;
             if (screenSetting == null) {
                 e.g.e("ScreenYUVCapturerCore", "please invoke prepare interface first!");
                 return false;
             }
-            this.b = new a.a.a.a.a.l.b(screenSetting.getWidth(), this.f1446c.getHeight(), this.f1446c.getDpi(), mediaProjection);
+            this.b = new a.a.a.a.a.l.b(screenSetting.getWidth(), this.f1398c.getHeight(), this.f1398c.getDpi(), mediaProjection);
             this.d.onReady();
             e.g.c("ScreenYUVCapturerCore", "onActivityResult -");
             return true;
@@ -218,13 +218,13 @@ public class c {
         this.n = f.a((int) GLES11Ext.GL_TEXTURE_EXTERNAL_OES);
         SurfaceTexture surfaceTexture = new SurfaceTexture(this.n);
         this.j = surfaceTexture;
-        surfaceTexture.setDefaultBufferSize(this.f1446c.getWidth(), this.f1446c.getHeight());
+        surfaceTexture.setDefaultBufferSize(this.f1398c.getWidth(), this.f1398c.getHeight());
         this.i = new Surface(this.j);
         this.j.setOnFrameAvailableListener(new a());
         this.k = new a.a.a.a.a.b.i.q.a();
         a.a.a.a.a.b.i.a aVar = new a.a.a.a.a.b.i.a();
         this.l = aVar;
-        aVar.a(0, this.f1446c.getWidth(), this.f1446c.getHeight());
+        aVar.a(0, this.f1398c.getWidth(), this.f1398c.getHeight());
         this.o = true;
         new Handler(Looper.getMainLooper()).post(new b());
     }
@@ -232,8 +232,8 @@ public class c {
     public final void f() {
         this.j.updateTexImage();
         this.j.getTransformMatrix(this.m);
-        ByteBuffer a2 = this.k.a(this.l.b(this.n, this.m), this.f1446c.getWidth(), this.f1446c.getHeight());
-        this.d.onFrameAvailable(a2, a2.capacity(), this.f1446c.getWidth(), this.f1446c.getHeight());
+        ByteBuffer a2 = this.k.a(this.l.b(this.n, this.m), this.f1398c.getWidth(), this.f1398c.getHeight());
+        this.d.onFrameAvailable(a2, a2.capacity(), this.f1398c.getWidth(), this.f1398c.getHeight());
     }
 
     public final void g() {

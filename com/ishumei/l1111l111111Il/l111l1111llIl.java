@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Base64;
+import com.huawei.openalliance.ad.constant.t;
 import com.ishumei.l111l1111l1Il.l111l11111I1l;
 import com.ishumei.smantifraud.SmAntiFraud;
 import java.io.IOException;
@@ -13,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.json.JSONObject;
 
 /* loaded from: source-7994992-dex2jar.jar:com/ishumei/l1111l111111Il/l111l1111llIl.class */
-public class l111l1111llIl implements l1111l111111Il.InterfaceC0452l1111l111111Il, l1111l111111Il.l111l11111lIl {
+public class l111l1111llIl implements l1111l111111Il.InterfaceC0282l1111l111111Il, l1111l111111Il.l111l11111lIl {
     private static final int l1111l111111Il = -1;
     private static final int l111l11111I1l = -3;
     private static int l111l11111Il = -4;
@@ -36,7 +37,7 @@ public class l111l1111llIl implements l1111l111111Il.InterfaceC0452l1111l111111I
         private String l111l1111lIl;
         private l111l11111lIl l11l1111I11l;
         private String l11l1111I1l;
-        private InterfaceC0452l1111l111111Il l11l1111lIIl;
+        private InterfaceC0282l1111l111111Il l11l1111lIIl;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.ishumei.l1111l111111Il.l111l1111llIl$l1111l111111Il$1  reason: invalid class name */
@@ -64,7 +65,7 @@ public class l111l1111llIl implements l1111l111111Il.InterfaceC0452l1111l111111I
 
         /* renamed from: com.ishumei.l1111l111111Il.l111l1111llIl$l1111l111111Il$l1111l111111Il  reason: collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/ishumei/l1111l111111Il/l111l1111llIl$l1111l111111Il$l1111l111111Il.class */
-        public interface InterfaceC0452l1111l111111Il {
+        public interface InterfaceC0282l1111l111111Il {
             String l111l11111Il();
         }
 
@@ -76,12 +77,12 @@ public class l111l1111llIl implements l1111l111111Il.InterfaceC0452l1111l111111I
         public l1111l111111Il() {
         }
 
-        l1111l111111Il(InterfaceC0452l1111l111111Il interfaceC0452l1111l111111Il, l111l11111lIl l111l11111lil, boolean z, int i, l111l11111I1l.l1111l111111Il<?> l1111l111111il, String str) {
+        l1111l111111Il(InterfaceC0282l1111l111111Il interfaceC0282l1111l111111Il, l111l11111lIl l111l11111lil, boolean z, int i, l111l11111I1l.l1111l111111Il<?> l1111l111111il, String str) {
             this.l111l1111lI1l = null;
             this.l111l1111lIl = null;
             this.l11l1111I11l = null;
             this.l111l11111I1l = null;
-            this.l11l1111lIIl = interfaceC0452l1111l111111Il;
+            this.l11l1111lIIl = interfaceC0282l1111l111111Il;
             this.l11l1111I11l = l111l11111lil;
             this.l1111l111111Il = true;
             this.l111l11111lIl = 1;
@@ -275,7 +276,7 @@ public class l111l1111llIl implements l1111l111111Il.InterfaceC0452l1111l111111I
                 try {
                     return "D" + com.ishumei.l111l1111llIl.l111l1111lIl.l111l11111lIl(com.ishumei.l111l11111lIl.l111l11111I1l.l1111l111111Il().l1111l111111Il(new IllegalAccessException(l111l11111Il2)).getBytes());
                 } catch (Exception e) {
-                    return "D" + Base64.encodeToString((l111l11111Il2 + ";" + e).getBytes(), 0);
+                    return "D" + Base64.encodeToString((l111l11111Il2 + t.aE + e).getBytes(), 0);
                 }
             }
             String l1111l111111Il2 = com.ishumei.l1111l111111Il.l1111l111111Il.l1111l111111Il().l1111l111111Il(SmAntiFraud.option.l11l1111lIIl() ? 1 : 0);
@@ -298,7 +299,7 @@ public class l111l1111llIl implements l1111l111111Il.InterfaceC0452l1111l111111I
         }
     }
 
-    @Override // com.ishumei.l1111l111111Il.l111l1111llIl.l1111l111111Il.InterfaceC0452l1111l111111Il
+    @Override // com.ishumei.l1111l111111Il.l111l1111llIl.l1111l111111Il.InterfaceC0282l1111l111111Il
     public String l111l11111Il() {
         com.ishumei.l111l11111lIl.l111l11111lIl l111l11111lIl2 = com.ishumei.l111l11111lIl.l1111l111111Il.l1111l111111Il().l111l11111lIl();
         int i = 0;

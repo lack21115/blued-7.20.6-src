@@ -22,7 +22,7 @@ public class r8 extends t8 {
     }
 
     public int b(float f) {
-        int i = this.f38021a;
+        int i = this.f24330a;
         if (i == 2) {
             if (this.j) {
                 this.j = false;
@@ -55,7 +55,7 @@ public class r8 extends t8 {
             return y8Var2 == null ? h2 + ((int) (f4 * (h3 - h2))) : ((Number) y8Var2.a(f4, Integer.valueOf(h2), Integer.valueOf(h3))).intValue();
         } else if (f >= 1.0f) {
             s8.b bVar3 = (s8.b) this.e.get(i - 2);
-            s8.b bVar4 = (s8.b) this.e.get(this.f38021a - 1);
+            s8.b bVar4 = (s8.b) this.e.get(this.f24330a - 1);
             int h4 = bVar3.h();
             int h5 = bVar4.h();
             float b3 = bVar3.b();
@@ -72,7 +72,7 @@ public class r8 extends t8 {
             s8.b bVar5 = (s8.b) this.e.get(0);
             int i2 = 1;
             while (true) {
-                int i3 = this.f38021a;
+                int i3 = this.f24330a;
                 if (i2 >= i3) {
                     return ((Number) this.e.get(i3 - 1).e()).intValue();
                 }

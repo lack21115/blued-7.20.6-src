@@ -16,9 +16,7 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/dialog/CommonDialogFragment.class */
 public abstract class CommonDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f10640a = "enable_drag";
+    public static String a = "enable_drag";
     private boolean b = false;
 
     private void a(final SmartDragLayout smartDragLayout) {
@@ -71,7 +69,6 @@ public abstract class CommonDialogFragment extends BaseDialogFragment {
         return true;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         Dialog dialog = new Dialog(getActivity(), R.style.FilterDialogFragment);
         dialog.getWindow().addFlags(Integer.MIN_VALUE);
@@ -79,7 +76,7 @@ public abstract class CommonDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         if (g()) {
             getActivity().getWindow().setSoftInputMode(48);
@@ -93,7 +90,7 @@ public abstract class CommonDialogFragment extends BaseDialogFragment {
         window.setBackgroundDrawable(new ColorDrawable(0));
         window.setLayout(e(), f());
         Bundle arguments = getArguments();
-        if (arguments != null && arguments.containsKey(f10640a)) {
+        if (arguments != null && arguments.containsKey(a)) {
             this.b = true;
         }
         View view = null;

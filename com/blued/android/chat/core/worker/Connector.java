@@ -3,7 +3,8 @@ package com.blued.android.chat.core.worker;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.SparseArray;
-import com.anythink.expressad.video.module.a.a.m;
+import com.android.ims.ImsConferenceState;
+import com.android.internal.widget.LockPatternUtils;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.IMDebuger;
 import com.blued.android.chat.core.pack.BaseAckPackage;
@@ -84,7 +85,7 @@ public class Connector extends BaseWorker implements PackageHandler, TimeoutUtil
                 IMDebuger.setImStatus("connecting");
                 connectListener.onConnecting();
             } else if (connectState == ConnectState.CONNECTED) {
-                IMDebuger.setImStatus("connected");
+                IMDebuger.setImStatus(ImsConferenceState.STATUS_CONNECTED);
                 this.connPackSendRetryCount = 0;
                 connectListener.onConnected();
             }
@@ -204,7 +205,7 @@ public class Connector extends BaseWorker implements PackageHandler, TimeoutUtil
         }
         this.connPackLocalId = ChatHelper.getLocalId();
         this.linker.sendPackage(connPackage);
-        TimeoutUtils.addTimeoutPackage(this.connPackLocalId, connPackage, 30000L, this);
+        TimeoutUtils.addTimeoutPackage(this.connPackLocalId, connPackage, LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS, this);
         return true;
     }
 
@@ -248,7 +249,7 @@ public class Connector extends BaseWorker implements PackageHandler, TimeoutUtil
                 Log.v(TAG, "waiting disconnect package");
             }
             synchronized (this.disconnectWaiting) {
-                this.disconnectWaiting.wait(m.ag);
+                this.disconnectWaiting.wait(3000L);
             }
             if (ChatManager.debug) {
                 Log.v(TAG, "receive disconnect package, stop wait");

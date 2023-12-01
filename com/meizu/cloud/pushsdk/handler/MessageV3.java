@@ -3,6 +3,7 @@ package com.meizu.cloud.pushsdk.handler;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.d.f.e;
@@ -109,7 +110,7 @@ public class MessageV3 implements Parcelable {
         messageV3.setTaskId(str3);
         messageV3.setTitle(mPushMessage.getTitle());
         messageV3.setContent(mPushMessage.getContent());
-        messageV3.setIsDiscard("true".equals(mPushMessage.getIsDiscard()));
+        messageV3.setIsDiscard(fw.Code.equals(mPushMessage.getIsDiscard()));
         messageV3.setClickType(Integer.valueOf(mPushMessage.getClickType()).intValue());
         messageV3.setWhiteList(false);
         messageV3.setDelayedReportMillis(0L);

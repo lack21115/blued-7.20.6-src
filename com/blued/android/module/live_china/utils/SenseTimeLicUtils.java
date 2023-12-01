@@ -9,17 +9,15 @@ import com.blued.android.module.live_china.model.STMessageModel;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/SenseTimeLicUtils.class */
 public class SenseTimeLicUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static boolean f14197a = false;
+    public static boolean a = false;
 
     public static void a(String str) {
-        if (TextUtils.isEmpty(str) || f14197a) {
+        if (TextUtils.isEmpty(str) || a) {
             return;
         }
-        f14197a = true;
+        a = true;
         try {
-            final STMessageModel sTMessageModel = (STMessageModel) AppInfo.f().fromJson(str, (Class<Object>) STMessageModel.class);
+            final STMessageModel sTMessageModel = (STMessageModel) AppInfo.f().fromJson(str, STMessageModel.class);
             if (sTMessageModel == null || TextUtils.isEmpty(sTMessageModel.url)) {
                 return;
             }

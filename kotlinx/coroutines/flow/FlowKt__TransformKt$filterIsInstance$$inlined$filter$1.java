@@ -11,27 +11,21 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$filterIsInstance$$inlined$filter$1.class */
 public final class FlowKt__TransformKt$filterIsInstance$$inlined$filter$1 implements Flow<Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Flow f43293a;
+    final /* synthetic */ Flow a;
 
     @Metadata
     /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$filterIsInstance$$inlined$filter$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$filterIsInstance$$inlined$filter$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43294a;
+        /* synthetic */ Object a;
         int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ FlowKt__TransformKt$filterIsInstance$$inlined$filter$1 f43295c;
+        final /* synthetic */ FlowKt__TransformKt$filterIsInstance$$inlined$filter$1 c;
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43294a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
-            return this.f43295c.a(null, this);
+            return this.c.a(null, this);
         }
     }
 
@@ -39,18 +33,14 @@ public final class FlowKt__TransformKt$filterIsInstance$$inlined$filter$1 implem
     /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$filterIsInstance$$inlined$filter$1$2  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$filterIsInstance$$inlined$filter$1$2.class */
     public static final class AnonymousClass2 implements FlowCollector<Object> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FlowCollector f43296a;
+        final /* synthetic */ FlowCollector a;
 
         @Metadata
         @DebugMetadata(b = "Transform.kt", c = {137}, d = "emit", e = "kotlinx.coroutines.flow.FlowKt__TransformKt$filterIsInstance$$inlined$filter$1$2")
         /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$filterIsInstance$$inlined$filter$1$2$1  reason: invalid class name */
         /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$filterIsInstance$$inlined$filter$1$2$1.class */
         public static final class AnonymousClass1 extends ContinuationImpl {
-
-            /* renamed from: a  reason: collision with root package name */
-            /* synthetic */ Object f43297a;
+            /* synthetic */ Object a;
             int b;
 
             public AnonymousClass1(Continuation continuation) {
@@ -59,14 +49,14 @@ public final class FlowKt__TransformKt$filterIsInstance$$inlined$filter$1 implem
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Object invokeSuspend(Object obj) {
-                this.f43297a = obj;
+                this.a = obj;
                 this.b |= Integer.MIN_VALUE;
                 return AnonymousClass2.this.emit(null, this);
             }
         }
 
         public AnonymousClass2(FlowCollector flowCollector) {
-            this.f43296a = flowCollector;
+            this.a = flowCollector;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
@@ -108,7 +98,7 @@ public final class FlowKt__TransformKt$filterIsInstance$$inlined$filter$1 implem
                 r7 = r0
             L35:
                 r0 = r7
-                java.lang.Object r0 = r0.f43297a
+                java.lang.Object r0 = r0.a
                 r10 = r0
                 java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
                 r9 = r0
@@ -133,7 +123,7 @@ public final class FlowKt__TransformKt$filterIsInstance$$inlined$filter$1 implem
                 r0 = r10
                 kotlin.ResultKt.a(r0)
                 r0 = r5
-                kotlinx.coroutines.flow.FlowCollector r0 = r0.f43296a
+                kotlinx.coroutines.flow.FlowCollector r0 = r0.a
                 r10 = r0
                 r0 = r7
                 kotlin.coroutines.Continuation r0 = (kotlin.coroutines.Continuation) r0
@@ -159,7 +149,7 @@ public final class FlowKt__TransformKt$filterIsInstance$$inlined$filter$1 implem
                 r0 = r9
                 return r0
             L9d:
-                kotlin.Unit r0 = kotlin.Unit.f42314a
+                kotlin.Unit r0 = kotlin.Unit.a
                 return r0
             */
             throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.flow.FlowKt__TransformKt$filterIsInstance$$inlined$filter$1.AnonymousClass2.emit(java.lang.Object, kotlin.coroutines.Continuation):java.lang.Object");
@@ -168,9 +158,9 @@ public final class FlowKt__TransformKt$filterIsInstance$$inlined$filter$1 implem
 
     @Override // kotlinx.coroutines.flow.Flow
     public Object a(FlowCollector<? super Object> flowCollector, Continuation continuation) {
-        Flow flow = this.f43293a;
+        Flow flow = this.a;
         Intrinsics.d();
-        Object a2 = flow.a(new AnonymousClass2(flowCollector), continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        Object a = flow.a(new AnonymousClass2(flowCollector), continuation);
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 }

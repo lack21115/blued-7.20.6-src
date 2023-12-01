@@ -27,13 +27,9 @@ public class TruckRouteRestult implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private RouteSearch.TruckRouteQuery f5775a;
+    private RouteSearch.TruckRouteQuery a;
     private List<TruckPath> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LatLonPoint f5776c;
+    private LatLonPoint c;
     private LatLonPoint d;
 
     public TruckRouteRestult() {
@@ -41,7 +37,7 @@ public class TruckRouteRestult implements Parcelable {
 
     protected TruckRouteRestult(Parcel parcel) {
         this.b = parcel.createTypedArrayList(TruckPath.CREATOR);
-        this.f5776c = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
+        this.c = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
         this.d = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
     }
 
@@ -55,7 +51,7 @@ public class TruckRouteRestult implements Parcelable {
     }
 
     public LatLonPoint getStartPos() {
-        return this.f5776c;
+        return this.c;
     }
 
     public LatLonPoint getTargetPos() {
@@ -63,7 +59,7 @@ public class TruckRouteRestult implements Parcelable {
     }
 
     public RouteSearch.TruckRouteQuery getTruckQuery() {
-        return this.f5775a;
+        return this.a;
     }
 
     public void setPaths(List<TruckPath> list) {
@@ -71,7 +67,7 @@ public class TruckRouteRestult implements Parcelable {
     }
 
     public void setStartPos(LatLonPoint latLonPoint) {
-        this.f5776c = latLonPoint;
+        this.c = latLonPoint;
     }
 
     public void setTargetPos(LatLonPoint latLonPoint) {
@@ -79,13 +75,13 @@ public class TruckRouteRestult implements Parcelable {
     }
 
     public void setTruckQuery(RouteSearch.TruckRouteQuery truckRouteQuery) {
-        this.f5775a = truckRouteQuery;
+        this.a = truckRouteQuery;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeTypedList(this.b);
-        parcel.writeParcelable(this.f5776c, i);
+        parcel.writeParcelable(this.c, i);
         parcel.writeParcelable(this.d, i);
     }
 }

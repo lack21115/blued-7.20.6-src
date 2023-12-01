@@ -20,10 +20,8 @@ import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
-import com.amap.api.col.p0003sl.iu;
-import com.android.internal.telephony.PhoneConstants;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.util.SensitiveUtils;
+import com.cdo.oaps.ad.OapsKey;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import com.tencent.tendinsv.utils.r;
 import com.umeng.analytics.pro.at;
@@ -746,7 +744,7 @@ public class UMUtils {
             windowManager.getDefaultDisplay().getMetrics(displayMetrics);
             int i = displayMetrics.widthPixels;
             int i2 = displayMetrics.heightPixels;
-            return String.valueOf(i2) + PhoneConstants.APN_TYPE_ALL + String.valueOf(i);
+            return String.valueOf(i2) + "*" + String.valueOf(i);
         } catch (Exception e) {
             if (AnalyticsConstants.UM_DEBUG) {
                 Log.e(TAG, "get display resolution e is " + e);
@@ -934,7 +932,7 @@ public class UMUtils {
                         } else {
                             String subProcessName = UMFrUtils.getSubProcessName(context);
                             Context applicationContext = context.getApplicationContext();
-                            sharedPreferences = applicationContext.getSharedPreferences(subProcessName + BridgeUtil.UNDERLINE_STR + KEY_SHARED_PREFERENCES_NAME, 0);
+                            sharedPreferences = applicationContext.getSharedPreferences(subProcessName + "_" + KEY_SHARED_PREFERENCES_NAME, 0);
                         }
                         if (sharedPreferences != null) {
                             return sharedPreferences.getString(str, null);
@@ -998,10 +996,10 @@ public class UMUtils {
         String str = null;
         if (FieldManager.allow(d.G)) {
             try {
-                SharedPreferences sharedPreferences = context.getSharedPreferences(h.f40924a, 0);
+                SharedPreferences sharedPreferences = context.getSharedPreferences(h.f27233a, 0);
                 str = null;
                 if (sharedPreferences != null) {
-                    str = sharedPreferences.getString(h.f40925c, "");
+                    str = sharedPreferences.getString(h.f27234c, "");
                 }
             } catch (Throwable th) {
                 return null;
@@ -1034,7 +1032,7 @@ public class UMUtils {
                 try {
                     String property = buildProp.getProperty("ro.miui.ui.version.name");
                     if (!TextUtils.isEmpty(property)) {
-                        str = r.f39112a;
+                        str = r.f25421a;
                     } else if (isFlyMe()) {
                         str = "Flyme";
                     } else if (TextUtils.isEmpty(getYunOSVersion(buildProp))) {
@@ -1301,7 +1299,7 @@ public class UMUtils {
         }
         Class<?> cls = getClass("com.umeng.analytics.game.GameSdkVersion");
         if (cls != null) {
-            stringBuffer.append("g");
+            stringBuffer.append(OapsKey.KEY_GRADE);
             try {
                 String str = (String) cls.getDeclaredField("SDK_VERSION").get(cls);
                 if (!TextUtils.isEmpty(str)) {
@@ -1349,7 +1347,7 @@ public class UMUtils {
             Class<?> cls5 = getClass("com.umeng.a");
             if (cls5 != null) {
                 try {
-                    String str4 = (String) cls5.getDeclaredField("g").get(cls5);
+                    String str4 = (String) cls5.getDeclaredField(OapsKey.KEY_GRADE).get(cls5);
                     if (!TextUtils.isEmpty(str4)) {
                         VALUE_SHARE_VERSION = str4;
                         if (UMConfigure.isDebugLog()) {
@@ -1369,7 +1367,7 @@ public class UMUtils {
             }
         }
         if (getClass("com.umeng.error.UMError") != null) {
-            stringBuffer.append(iu.h);
+            stringBuffer.append("e");
         }
         if (getClass("com.umeng.umzid.ZIDManager") != null) {
             stringBuffer.append(bh.aG);
@@ -1484,8 +1482,8 @@ public class UMUtils {
         if (TextUtils.isEmpty(stringBuffer)) {
             return;
         }
-        com.umeng.commonsdk.statistics.b.f40900a = stringBuffer.toString();
-        Log.i(AnalyticsConstants.LOG_TAG, "module init:" + com.umeng.commonsdk.statistics.b.f40900a);
+        com.umeng.commonsdk.statistics.b.f27209a = stringBuffer.toString();
+        Log.i(AnalyticsConstants.LOG_TAG, "module init:" + com.umeng.commonsdk.statistics.b.f27209a);
     }
 
     public static void setAppkey(Context context, String str) {
@@ -1556,7 +1554,7 @@ public class UMUtils {
                         } else {
                             String subProcessName = UMFrUtils.getSubProcessName(context);
                             Context applicationContext = context.getApplicationContext();
-                            sharedPreferences = applicationContext.getSharedPreferences(subProcessName + BridgeUtil.UNDERLINE_STR + KEY_SHARED_PREFERENCES_NAME, 0);
+                            sharedPreferences = applicationContext.getSharedPreferences(subProcessName + "_" + KEY_SHARED_PREFERENCES_NAME, 0);
                         }
                         if (sharedPreferences != null) {
                             sharedPreferences.edit().putString(str, str2).commit();

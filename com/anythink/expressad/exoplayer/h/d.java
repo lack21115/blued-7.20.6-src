@@ -6,11 +6,11 @@ import com.anythink.expressad.exoplayer.h.r;
 public final class d implements r, r.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final r f7439a;
+    public final r f4600a;
     long b;
 
     /* renamed from: c  reason: collision with root package name */
-    long f7440c;
+    long f4601c;
     private r.a d;
     private a[] e = new a[0];
     private long f;
@@ -19,13 +19,13 @@ public final class d implements r, r.a {
     final class a implements y {
 
         /* renamed from: a  reason: collision with root package name */
-        public final y f7441a;
+        public final y f4602a;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f7442c;
+        private boolean f4603c;
 
         public a(y yVar) {
-            this.f7441a = yVar;
+            this.f4602a = yVar;
         }
 
         @Override // com.anythink.expressad.exoplayer.h.y
@@ -33,7 +33,7 @@ public final class d implements r, r.a {
             if (d.this.f()) {
                 return -3;
             }
-            return this.f7441a.a(j);
+            return this.f4602a.a(j);
         }
 
         @Override // com.anythink.expressad.exoplayer.h.y
@@ -41,53 +41,53 @@ public final class d implements r, r.a {
             if (d.this.f()) {
                 return -3;
             }
-            if (this.f7442c) {
+            if (this.f4603c) {
                 eVar.a(4);
                 return -4;
             }
-            int a2 = this.f7441a.a(nVar, eVar, z);
+            int a2 = this.f4602a.a(nVar, eVar, z);
             if (a2 == -5) {
-                com.anythink.expressad.exoplayer.m mVar = nVar.f7721a;
+                com.anythink.expressad.exoplayer.m mVar = nVar.f4882a;
                 if (mVar.x == 0 && mVar.y == 0) {
                     return -5;
                 }
                 int i = 0;
                 int i2 = d.this.b != 0 ? 0 : mVar.x;
-                if (d.this.f7440c == Long.MIN_VALUE) {
+                if (d.this.f4601c == Long.MIN_VALUE) {
                     i = mVar.y;
                 }
-                nVar.f7721a = mVar.a(i2, i);
+                nVar.f4882a = mVar.a(i2, i);
                 return -5;
-            } else if (d.this.f7440c == Long.MIN_VALUE || ((a2 != -4 || eVar.f < d.this.f7440c) && !(a2 == -3 && d.this.d() == Long.MIN_VALUE))) {
+            } else if (d.this.f4601c == Long.MIN_VALUE || ((a2 != -4 || eVar.f < d.this.f4601c) && !(a2 == -3 && d.this.d() == Long.MIN_VALUE))) {
                 return a2;
             } else {
                 eVar.a();
                 eVar.a(4);
-                this.f7442c = true;
+                this.f4603c = true;
                 return -4;
             }
         }
 
         public final void a() {
-            this.f7442c = false;
+            this.f4603c = false;
         }
 
         @Override // com.anythink.expressad.exoplayer.h.y
         public final boolean b() {
-            return !d.this.f() && this.f7441a.b();
+            return !d.this.f() && this.f4602a.b();
         }
 
         @Override // com.anythink.expressad.exoplayer.h.y
         public final void c() {
-            this.f7441a.c();
+            this.f4602a.c();
         }
     }
 
     public d(r rVar, boolean z, long j, long j2) {
-        this.f7439a = rVar;
+        this.f4600a = rVar;
         this.f = z ? j : -9223372036854775807L;
         this.b = j;
-        this.f7440c = j2;
+        this.f4601c = j2;
     }
 
     private static boolean a(long j, com.anythink.expressad.exoplayer.i.f[] fVarArr) {
@@ -112,7 +112,7 @@ public final class d implements r, r.a {
     private com.anythink.expressad.exoplayer.ac b(long j, com.anythink.expressad.exoplayer.ac acVar) {
         long a2 = com.anythink.expressad.exoplayer.k.af.a(acVar.f, j - this.b);
         long j2 = acVar.g;
-        long j3 = this.f7440c;
+        long j3 = this.f4601c;
         long a3 = com.anythink.expressad.exoplayer.k.af.a(j2, j3 == Long.MIN_VALUE ? Long.MAX_VALUE : j3 - j);
         return (a2 == acVar.f && a3 == acVar.g) ? acVar : new com.anythink.expressad.exoplayer.ac(a2, a3);
     }
@@ -129,12 +129,12 @@ public final class d implements r, r.a {
         }
         long a2 = com.anythink.expressad.exoplayer.k.af.a(acVar.f, j - this.b);
         long j3 = acVar.g;
-        long j4 = this.f7440c;
+        long j4 = this.f4601c;
         long a3 = com.anythink.expressad.exoplayer.k.af.a(j3, j4 == Long.MIN_VALUE ? Long.MAX_VALUE : j4 - j);
         if (a2 != acVar.f || a3 != acVar.g) {
             acVar = new com.anythink.expressad.exoplayer.ac(a2, a3);
         }
-        return this.f7439a.a(j, acVar);
+        return this.f4600a.a(j, acVar);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:31:0x00e9  */
@@ -155,23 +155,23 @@ public final class d implements r, r.a {
 
     @Override // com.anythink.expressad.exoplayer.h.r
     public final void a() {
-        this.f7439a.a();
+        this.f4600a.a();
     }
 
     public final void a(long j, long j2) {
         this.b = j;
-        this.f7440c = j2;
+        this.f4601c = j2;
     }
 
     @Override // com.anythink.expressad.exoplayer.h.r
     public final void a(long j, boolean z) {
-        this.f7439a.a(j, z);
+        this.f4600a.a(j, z);
     }
 
     @Override // com.anythink.expressad.exoplayer.h.r
     public final void a(r.a aVar, long j) {
         this.d = aVar;
-        this.f7439a.a(this, j);
+        this.f4600a.a(this, j);
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
@@ -187,7 +187,7 @@ public final class d implements r, r.a {
 
     @Override // com.anythink.expressad.exoplayer.h.r, com.anythink.expressad.exoplayer.h.z
     public final void a_(long j) {
-        this.f7439a.a_(j);
+        this.f4600a.a_(j);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x006a, code lost:
@@ -234,7 +234,7 @@ public final class d implements r, r.a {
             goto L17
         L34:
             r0 = r5
-            com.anythink.expressad.exoplayer.h.r r0 = r0.f7439a
+            com.anythink.expressad.exoplayer.h.r r0 = r0.f4600a
             r1 = r6
             long r0 = r0.b(r1)
             r10 = r0
@@ -250,7 +250,7 @@ public final class d implements r, r.a {
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 < 0) goto L70
             r0 = r5
-            long r0 = r0.f7440c
+            long r0 = r0.f4601c
             r6 = r0
             r0 = r6
             r1 = -9223372036854775808
@@ -276,7 +276,7 @@ public final class d implements r, r.a {
 
     @Override // com.anythink.expressad.exoplayer.h.r
     public final af b() {
-        return this.f7439a.b();
+        return this.f4600a.b();
     }
 
     @Override // com.anythink.expressad.exoplayer.h.r
@@ -287,12 +287,12 @@ public final class d implements r, r.a {
             long c2 = c();
             return c2 != com.anythink.expressad.exoplayer.b.b ? c2 : j;
         }
-        long c3 = this.f7439a.c();
+        long c3 = this.f4600a.c();
         if (c3 == com.anythink.expressad.exoplayer.b.b) {
             return com.anythink.expressad.exoplayer.b.b;
         }
         com.anythink.expressad.exoplayer.k.a.b(c3 >= this.b);
-        long j2 = this.f7440c;
+        long j2 = this.f4601c;
         boolean z = true;
         if (j2 != Long.MIN_VALUE) {
             z = c3 <= j2;
@@ -303,14 +303,14 @@ public final class d implements r, r.a {
 
     @Override // com.anythink.expressad.exoplayer.h.r, com.anythink.expressad.exoplayer.h.z
     public final boolean c(long j) {
-        return this.f7439a.c(j);
+        return this.f4600a.c(j);
     }
 
     @Override // com.anythink.expressad.exoplayer.h.r, com.anythink.expressad.exoplayer.h.z
     public final long d() {
-        long d = this.f7439a.d();
+        long d = this.f4600a.d();
         if (d != Long.MIN_VALUE) {
-            long j = this.f7440c;
+            long j = this.f4601c;
             if (j == Long.MIN_VALUE || d < j) {
                 return d;
             }
@@ -321,9 +321,9 @@ public final class d implements r, r.a {
 
     @Override // com.anythink.expressad.exoplayer.h.r, com.anythink.expressad.exoplayer.h.z
     public final long e() {
-        long e = this.f7439a.e();
+        long e = this.f4600a.e();
         if (e != Long.MIN_VALUE) {
-            long j = this.f7440c;
+            long j = this.f4601c;
             if (j == Long.MIN_VALUE || e < j) {
                 return e;
             }

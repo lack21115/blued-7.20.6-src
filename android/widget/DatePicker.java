@@ -19,7 +19,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.CalendarView;
 import android.widget.NumberPicker;
 import com.android.internal.R;
-import com.google.android.material.timepicker.TimeModel;
 import java.text.DateFormat;
 import java.text.DateFormatSymbols;
 import java.text.ParseException;
@@ -168,7 +167,7 @@ public class DatePicker extends FrameLayout {
             String string2 = obtainStyledAttributes.getString(5);
             int resourceId = obtainStyledAttributes.getResourceId(19, R.layout.date_picker_legacy);
             obtainStyledAttributes.recycle();
-            ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(resourceId, (ViewGroup) this.mDelegator, true);
+            ((LayoutInflater) context.getSystemService("layout_inflater")).inflate(resourceId, (ViewGroup) this.mDelegator, true);
             NumberPicker.OnValueChangeListener onValueChangeListener = new NumberPicker.OnValueChangeListener() { // from class: android.widget.DatePicker.DatePickerSpinnerDelegate.1
                 @Override // android.widget.NumberPicker.OnValueChangeListener
                 public void onValueChange(NumberPicker numberPicker, int i5, int i6) {
@@ -539,7 +538,7 @@ public class DatePicker extends FrameLayout {
                 if (i2 >= this.mNumberOfMonths) {
                     return;
                 }
-                this.mShortMonths[i2] = String.format(TimeModel.NUMBER_FORMAT, Integer.valueOf(i2 + 1));
+                this.mShortMonths[i2] = String.format("%d", Integer.valueOf(i2 + 1));
                 i = i2 + 1;
             }
         }
@@ -660,7 +659,7 @@ public class DatePicker extends FrameLayout {
     }
 
     public DatePicker(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843612);
+        this(context, attributeSet, R.attr.datePickerStyle);
     }
 
     public DatePicker(Context context, AttributeSet attributeSet, int i) {

@@ -15,19 +15,15 @@ import java.util.Map;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/utils/LiveSettingConfig.class */
 public class LiveSettingConfig {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LiveSettingConfigModel f11465a;
+    private LiveSettingConfigModel a;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/utils/LiveSettingConfig$SettingConfig.class */
     public static class SettingConfig {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static LiveSettingConfig f11472a = new LiveSettingConfig();
+        public static LiveSettingConfig a = new LiveSettingConfig();
     }
 
     public static LiveSettingConfig a() {
-        return SettingConfig.f11472a;
+        return SettingConfig.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -60,8 +56,8 @@ public class LiveSettingConfig {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(String str, String str2, final String str3) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("zip", str2);
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("zip", str2);
         HttpManager.b(str, new BluedUIHttpResponse<BluedEntityA<Object>>(null) { // from class: com.blued.android.module.live.base.utils.LiveSettingConfig.4
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -72,7 +68,7 @@ public class LiveSettingConfig {
                     file.delete();
                 }
             }
-        }).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        }).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public void a(String str) {
@@ -84,9 +80,9 @@ public class LiveSettingConfig {
                 if (bluedEntityA == null || !bluedEntityA.hasData() || bluedEntityA.getSingleData() == null) {
                     return;
                 }
-                LiveSettingConfig.this.f11465a = bluedEntityA.getSingleData();
-                if (LiveSettingConfig.this.f11465a != null) {
-                    Log.i("==xpmm", "updateSettingConfig :" + LiveSettingConfig.this.f11465a.log);
+                LiveSettingConfig.this.a = bluedEntityA.getSingleData();
+                if (LiveSettingConfig.this.a != null) {
+                    Log.i("==xpmm", "updateSettingConfig :" + LiveSettingConfig.this.a.log);
                 }
             }
         }).b(BluedHttpTools.a(true)).h();
@@ -110,7 +106,7 @@ public class LiveSettingConfig {
     }
 
     public boolean b() {
-        LiveSettingConfigModel liveSettingConfigModel = this.f11465a;
+        LiveSettingConfigModel liveSettingConfigModel = this.a;
         boolean z = false;
         if (liveSettingConfigModel == null) {
             return false;
@@ -122,7 +118,7 @@ public class LiveSettingConfig {
     }
 
     public boolean c() {
-        LiveSettingConfigModel liveSettingConfigModel = this.f11465a;
+        LiveSettingConfigModel liveSettingConfigModel = this.a;
         boolean z = false;
         if (liveSettingConfigModel == null) {
             return false;

@@ -1,23 +1,21 @@
 package com.tencent.turingface.sdk.mfa;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/turingface/sdk/mfa/HOiEc.class */
 public final class HOiEc {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f39881a;
+    public static final String f26190a;
     public static final String b;
 
     static {
         StringBuilder b2 = com.tencent.turingcam.oqKCa.b("mpdc_");
-        b2.append(com.tencent.turingcam.oqKCa.f39831a);
-        b2.append(BridgeUtil.UNDERLINE_STR);
+        b2.append(com.tencent.turingcam.oqKCa.f26140a);
+        b2.append("_");
         b2.append(1);
-        f39881a = b2.toString();
+        f26190a = b2.toString();
         StringBuilder b3 = com.tencent.turingcam.oqKCa.b("mpdc_r_");
-        b3.append(com.tencent.turingcam.oqKCa.f39831a);
-        b3.append(BridgeUtil.UNDERLINE_STR);
+        b3.append(com.tencent.turingcam.oqKCa.f26140a);
+        b3.append("_");
         b3.append(1);
         b = b3.toString();
     }

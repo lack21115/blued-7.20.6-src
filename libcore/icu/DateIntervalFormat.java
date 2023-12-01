@@ -1,6 +1,5 @@
 package libcore.icu;
 
-import android.text.format.Time;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -68,7 +67,7 @@ public final class DateIntervalFormat {
 
     public static String formatDateRange(long j, long j2, int i, String str) {
         if ((i & 8192) != 0) {
-            str = Time.TIMEZONE_UTC;
+            str = "UTC";
         }
         return formatDateRange(Locale.getDefault(), str != null ? TimeZone.getTimeZone(str) : TimeZone.getDefault(), j, j2, i);
     }
@@ -190,7 +189,7 @@ public final class DateIntervalFormat {
     }
 
     private static int julianDay(Calendar calendar) {
-        return ((int) (((calendar.getTimeInMillis() + calendar.get(15)) + calendar.get(16)) / 86400000)) + 2440588;
+        return ((int) (((calendar.getTimeInMillis() + calendar.get(15)) + calendar.get(16)) / 86400000)) + EPOCH_JULIAN_DAY;
     }
 
     private static boolean onTheHour(Calendar calendar) {

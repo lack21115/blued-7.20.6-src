@@ -4,11 +4,11 @@ package com.github.mikephil.charting.model;
 public class GradientColor {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22167a;
+    private int f8560a;
     private int b;
 
     public int a() {
-        return this.f22167a;
+        return this.f8560a;
     }
 
     public int b() {

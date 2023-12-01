@@ -1,6 +1,7 @@
 package com.opos.acs.st.utils;
 
 import android.content.Context;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +32,7 @@ public class ErrorContants {
 
     public static Map errorContantseMap(Context context, String str) {
         HashMap hashMap = new HashMap();
-        hashMap.put("net", h.a(context));
+        hashMap.put(TKDownloadReason.KSAD_TK_NET, h.a(context));
         String str2 = str;
         if (str == null) {
             str2 = "";

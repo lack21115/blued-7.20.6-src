@@ -23,7 +23,7 @@ public final class ShortArrayCodeOutput extends CodeCursor {
         short[] sArr = this.array;
         if (sArr.length - cursor < i) {
             short[] sArr2 = new short[sArr.length + (sArr.length >> 1)];
-            System.arraycopy((Object) sArr, 0, (Object) sArr2, 0, cursor);
+            System.arraycopy(sArr, 0, sArr2, 0, cursor);
             this.array = sArr2;
         }
     }
@@ -35,7 +35,7 @@ public final class ShortArrayCodeOutput extends CodeCursor {
             return sArr;
         }
         short[] sArr2 = new short[cursor];
-        System.arraycopy((Object) sArr, 0, (Object) sArr2, 0, cursor);
+        System.arraycopy(sArr, 0, sArr2, 0, cursor);
         return sArr2;
     }
 

@@ -12,11 +12,11 @@ import com.soft.blued.R;
 public final class FragmentAdTestBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f28778a;
+    public final ShapeTextView f15088a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f28779c;
+    public final ImageView f15089c;
     public final ImageView d;
     public final ImageView e;
     public final LinearLayout f;
@@ -28,9 +28,9 @@ public final class FragmentAdTestBinding implements ViewBinding {
 
     private FragmentAdTestBinding(LinearLayout linearLayout, ShapeTextView shapeTextView, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5, CommonTopTitleNoTrans commonTopTitleNoTrans) {
         this.k = linearLayout;
-        this.f28778a = shapeTextView;
+        this.f15088a = shapeTextView;
         this.b = imageView;
-        this.f28779c = imageView2;
+        this.f15089c = imageView2;
         this.d = imageView3;
         this.e = imageView4;
         this.f = linearLayout2;
@@ -42,8 +42,8 @@ public final class FragmentAdTestBinding implements ViewBinding {
 
     public static FragmentAdTestBinding a(View view) {
         String str;
-        ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(2131362611);
-        if (shapeTextView != null) {
+        ShapeTextView findViewById = view.findViewById(R.id.btn_ok);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_splash_ref);
             if (imageView != null) {
                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_splash_ref_banner1);
@@ -60,9 +60,9 @@ public final class FragmentAdTestBinding implements ViewBinding {
                                     if (linearLayout3 != null) {
                                         LinearLayout linearLayout4 = (LinearLayout) view.findViewById(R.id.ll_ref_top);
                                         if (linearLayout4 != null) {
-                                            CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370749);
-                                            if (commonTopTitleNoTrans != null) {
-                                                return new FragmentAdTestBinding((LinearLayout) view, shapeTextView, imageView, imageView2, imageView3, imageView4, linearLayout, linearLayout2, linearLayout3, linearLayout4, commonTopTitleNoTrans);
+                                            CommonTopTitleNoTrans findViewById2 = view.findViewById(R.id.top_title);
+                                            if (findViewById2 != null) {
+                                                return new FragmentAdTestBinding((LinearLayout) view, findViewById, imageView, imageView2, imageView3, imageView4, linearLayout, linearLayout2, linearLayout3, linearLayout4, findViewById2);
                                             }
                                             str = "topTitle";
                                         } else {

@@ -14,17 +14,17 @@ public abstract class EasyAdapter<T> extends MultiItemTypeAdapter<T> {
     public static final class AnonymousClass1 implements ItemDelegate<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ EasyAdapter f23929a;
+        final /* synthetic */ EasyAdapter f10318a;
 
         @Override // com.lxj.easyadapter.ItemDelegate
         public int a() {
-            return this.f23929a.a();
+            return this.f10318a.a();
         }
 
         @Override // com.lxj.easyadapter.ItemDelegate
-        public void a(ViewHolder holder, T t, int i) {
-            Intrinsics.d(holder, "holder");
-            this.f23929a.a(holder, (ViewHolder) t, i);
+        public void a(ViewHolder viewHolder, T t, int i) {
+            Intrinsics.d(viewHolder, "holder");
+            this.f10318a.a(viewHolder, (ViewHolder) t, i);
         }
 
         @Override // com.lxj.easyadapter.ItemDelegate

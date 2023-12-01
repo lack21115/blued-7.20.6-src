@@ -90,20 +90,20 @@ public class GsmAlphabet {
     private GsmAlphabet() {
     }
 
-    public static int charToGsm(char c2) {
+    public static int charToGsm(char c) {
         try {
-            return charToGsm(c2, false);
+            return charToGsm(c, false);
         } catch (EncodeException e) {
             return sCharsToGsmTables[0].get(32, 32);
         }
     }
 
-    public static int charToGsm(char c2, boolean z) throws EncodeException {
-        int i = sCharsToGsmTables[0].get(c2, -1);
+    public static int charToGsm(char c, boolean z) throws EncodeException {
+        int i = sCharsToGsmTables[0].get(c, -1);
         if (i == -1) {
-            if (sCharsToShiftTables[0].get(c2, -1) == -1) {
+            if (sCharsToShiftTables[0].get(c, -1) == -1) {
                 if (z) {
-                    throw new EncodeException(c2);
+                    throw new EncodeException(c);
                 }
                 return sCharsToGsmTables[0].get(32, 32);
             }
@@ -112,8 +112,8 @@ public class GsmAlphabet {
         return i;
     }
 
-    public static int charToGsmExtended(char c2) {
-        int i = sCharsToShiftTables[0].get(c2, -1);
+    public static int charToGsmExtended(char c) {
+        int i = sCharsToShiftTables[0].get(c, -1);
         int i2 = i;
         if (i == -1) {
             i2 = sCharsToGsmTables[0].get(32, 32);
@@ -121,23 +121,23 @@ public class GsmAlphabet {
         return i2;
     }
 
-    public static int countGsmSeptets(char c2) {
+    public static int countGsmSeptets(char c) {
         try {
-            return countGsmSeptets(c2, false);
+            return countGsmSeptets(c, false);
         } catch (EncodeException e) {
             return 0;
         }
     }
 
-    public static int countGsmSeptets(char c2, boolean z) throws EncodeException {
-        if (sCharsToGsmTables[0].get(c2, -1) != -1) {
+    public static int countGsmSeptets(char c, boolean z) throws EncodeException {
+        if (sCharsToGsmTables[0].get(c, -1) != -1) {
             return 1;
         }
-        if (sCharsToShiftTables[0].get(c2, -1) != -1) {
+        if (sCharsToShiftTables[0].get(c, -1) != -1) {
             return 2;
         }
         if (z) {
-            throw new EncodeException(c2);
+            throw new EncodeException(c);
         }
         return 1;
     }
@@ -473,19 +473,19 @@ public class GsmAlphabet {
     }
 
     public static char gsmExtendedToChar(int i) {
-        char c2;
+        char c;
         if (i == 27) {
-            c2 = ' ';
+            c = ' ';
         } else if (i < 0 || i >= 128) {
             return ' ';
         } else {
             char charAt = sLanguageShiftTables[0].charAt(i);
-            c2 = charAt;
+            c = charAt;
             if (charAt == ' ') {
                 return sLanguageTables[0].charAt(i);
             }
         }
-        return c2;
+        return c;
     }
 
     public static char gsmToChar(int i) {
@@ -495,8 +495,8 @@ public class GsmAlphabet {
         return sLanguageTables[0].charAt(i);
     }
 
-    public static boolean isGsmSeptets(char c2) {
-        return (sCharsToGsmTables[0].get(c2, -1) == -1 && sCharsToShiftTables[0].get(c2, -1) == -1) ? false : true;
+    public static boolean isGsmSeptets(char c) {
+        return (sCharsToGsmTables[0].get(c, -1) == -1 && sCharsToShiftTables[0].get(c, -1) == -1) ? false : true;
     }
 
     private static void packSmsChar(byte[] bArr, int i, int i2) {

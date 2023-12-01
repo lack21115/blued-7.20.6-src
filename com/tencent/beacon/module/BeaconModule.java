@@ -8,7 +8,7 @@ import java.util.Map;
 public interface BeaconModule {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map<ModuleName, BeaconModule> f35077a = new HashMap();
+    public static final Map<ModuleName, BeaconModule> f21386a = new HashMap();
 
     void a(Context context);
 }

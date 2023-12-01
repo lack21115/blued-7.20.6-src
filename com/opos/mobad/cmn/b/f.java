@@ -15,17 +15,17 @@ public class f {
     private Activity b;
 
     /* renamed from: c  reason: collision with root package name */
-    private e.a f25912c;
+    private e.a f12224c;
     private com.opos.mobad.activity.webview.b.d d;
     private com.opos.mobad.service.event.c e;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f25911a = false;
+    private boolean f12223a = false;
     private b f = new b() { // from class: com.opos.mobad.cmn.b.f.2
         @Override // com.opos.mobad.cmn.b.b
         public void b() {
             Activity activity = f.this.b;
-            if (f.this.f25911a || activity == null || activity.isFinishing() || activity.isDestroyed()) {
+            if (f.this.f12223a || activity == null || activity.isFinishing() || activity.isDestroyed()) {
                 return;
             }
             com.opos.cmn.an.f.a.b("PrivacyWebPresenter", "finish remote");
@@ -35,7 +35,7 @@ public class f {
 
     public f(EventDescription eventDescription) {
         this.d = new e.a(eventDescription);
-        this.e = a.a(a.C0684a.a(eventDescription), this.f);
+        this.e = a.a(a.C0514a.a(eventDescription), this.f);
         com.opos.mobad.activity.webview.b.d dVar = this.d;
         if (dVar != null) {
             dVar.d();
@@ -54,8 +54,8 @@ public class f {
     }
 
     public void a() {
-        this.f25911a = true;
-        this.f25912c.a();
+        this.f12223a = true;
+        this.f12224c.a();
         com.opos.mobad.activity.webview.b.d dVar = this.d;
         if (dVar != null) {
             dVar.e();
@@ -67,7 +67,7 @@ public class f {
 
     public void a(Activity activity, int i, ComplianceInfo complianceInfo) {
         String str;
-        if (this.f25911a) {
+        if (this.f12223a) {
             return;
         }
         if (activity == null) {
@@ -77,13 +77,13 @@ public class f {
             e.a a2 = com.opos.mobad.o.d.e.a(activity.getApplicationContext(), a(activity, i), a(complianceInfo, i), i == 4 ? complianceInfo.c() : null, new e.b() { // from class: com.opos.mobad.cmn.b.f.1
                 @Override // com.opos.mobad.o.d.e.b
                 public void a() {
-                    if (f.this.f25911a) {
+                    if (f.this.f12223a) {
                         return;
                     }
                     f.this.f.b();
                 }
             });
-            this.f25912c = a2;
+            this.f12224c = a2;
             activity.setContentView(a2);
             return;
         } else {

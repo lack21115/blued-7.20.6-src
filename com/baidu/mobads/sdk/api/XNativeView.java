@@ -201,9 +201,8 @@ public class XNativeView extends RelativeLayout implements View.OnClickListener 
         feedPortraitVideoView.handleFeedCover(this.mCurrentNativeItem);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         XNativeViewManager.getInstance().addItem(this);
     }
@@ -213,9 +212,8 @@ public class XNativeView extends RelativeLayout implements View.OnClickListener 
         Tracker.onClick(view);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         XNativeViewManager.getInstance().removeNativeView(this);
     }

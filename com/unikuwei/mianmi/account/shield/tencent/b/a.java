@@ -4,8 +4,8 @@ package com.unikuwei.mianmi.account.shield.tencent.b;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f40984a = new byte[0];
-    public static final Object[] b = {b.f40985a};
+    public static final byte[] f27293a = new byte[0];
+    public static final Object[] b = {b.f27294a};
 
     public static Object a(int i) {
         return b[i];

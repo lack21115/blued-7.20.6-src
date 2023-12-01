@@ -19,12 +19,10 @@ public interface IMonitor extends IInterface {
 
         /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/IMonitor$Stub$a.class */
         static class a implements IMonitor {
-
-            /* renamed from: a  reason: collision with root package name */
-            private IBinder f4450a;
+            private IBinder a;
 
             a(IBinder iBinder) {
-                this.f4450a = iBinder;
+                this.a = iBinder;
             }
 
             @Override // com.alibaba.mtl.appmonitor.IMonitor
@@ -36,7 +34,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     boolean z = false;
-                    this.f4450a.transact(27, obtain, obtain2, 0);
+                    this.a.transact(27, obtain, obtain2, 0);
                     obtain2.readException();
                     if (obtain2.readInt() != 0) {
                         z = true;
@@ -61,7 +59,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str2);
                     obtain.writeString(str3);
                     obtain.writeString(str4);
-                    this.f4450a.transact(30, obtain, obtain2, 0);
+                    this.a.transact(30, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -80,7 +78,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str3);
                     obtain.writeString(str4);
                     obtain.writeString(str5);
-                    this.f4450a.transact(31, obtain, obtain2, 0);
+                    this.a.transact(31, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -96,7 +94,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeString(str);
                     obtain.writeString(str2);
-                    this.f4450a.transact(28, obtain, obtain2, 0);
+                    this.a.transact(28, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -113,7 +111,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     obtain.writeString(str3);
-                    this.f4450a.transact(29, obtain, obtain2, 0);
+                    this.a.transact(29, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -128,7 +126,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeInt(i);
-                    this.f4450a.transact(26, obtain, obtain2, 0);
+                    this.a.transact(26, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -143,7 +141,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeInt(i);
-                    this.f4450a.transact(25, obtain, obtain2, 0);
+                    this.a.transact(25, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -153,7 +151,7 @@ public interface IMonitor extends IInterface {
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f4450a;
+                return this.a;
             }
 
             @Override // com.alibaba.mtl.appmonitor.IMonitor
@@ -165,7 +163,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     boolean z = false;
-                    this.f4450a.transact(18, obtain, obtain2, 0);
+                    this.a.transact(18, obtain, obtain2, 0);
                     obtain2.readException();
                     if (obtain2.readInt() != 0) {
                         z = true;
@@ -189,7 +187,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     obtain.writeDouble(d);
-                    this.f4450a.transact(19, obtain, obtain2, 0);
+                    this.a.transact(19, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -207,7 +205,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str2);
                     obtain.writeString(str3);
                     obtain.writeDouble(d);
-                    this.f4450a.transact(20, obtain, obtain2, 0);
+                    this.a.transact(20, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -222,7 +220,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeInt(i);
-                    this.f4450a.transact(17, obtain, obtain2, 0);
+                    this.a.transact(17, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -237,7 +235,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeInt(i);
-                    this.f4450a.transact(16, obtain, obtain2, 0);
+                    this.a.transact(16, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -251,7 +249,7 @@ public interface IMonitor extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
-                    this.f4450a.transact(15, obtain, obtain2, 0);
+                    this.a.transact(15, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -266,7 +264,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeInt(z ? 1 : 0);
-                    this.f4450a.transact(2, obtain, obtain2, 0);
+                    this.a.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -280,7 +278,7 @@ public interface IMonitor extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
-                    this.f4450a.transact(1, obtain, obtain2, 0);
+                    this.a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -297,7 +295,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     boolean z = false;
-                    this.f4450a.transact(23, obtain, obtain2, 0);
+                    this.a.transact(23, obtain, obtain2, 0);
                     obtain2.readException();
                     if (obtain2.readInt() != 0) {
                         z = true;
@@ -321,7 +319,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     obtain.writeDouble(d);
-                    this.f4450a.transact(24, obtain, obtain2, 0);
+                    this.a.transact(24, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -336,7 +334,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeInt(i);
-                    this.f4450a.transact(22, obtain, obtain2, 0);
+                    this.a.transact(22, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -351,7 +349,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeInt(i);
-                    this.f4450a.transact(21, obtain, obtain2, 0);
+                    this.a.transact(21, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -373,7 +371,7 @@ public interface IMonitor extends IInterface {
                     } else {
                         obtain.writeInt(0);
                     }
-                    this.f4450a.transact(9, obtain, obtain2, 0);
+                    this.a.transact(9, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -400,7 +398,7 @@ public interface IMonitor extends IInterface {
                         i = 0;
                     }
                     obtain.writeInt(i);
-                    this.f4450a.transact(10, obtain, obtain2, 0);
+                    this.a.transact(10, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -428,7 +426,7 @@ public interface IMonitor extends IInterface {
                     } else {
                         obtain.writeInt(0);
                     }
-                    this.f4450a.transact(11, obtain, obtain2, 0);
+                    this.a.transact(11, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -461,7 +459,7 @@ public interface IMonitor extends IInterface {
                         i = 0;
                     }
                     obtain.writeInt(i);
-                    this.f4450a.transact(12, obtain, obtain2, 0);
+                    this.a.transact(12, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -476,7 +474,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeString(str);
-                    this.f4450a.transact(4, obtain, obtain2, 0);
+                    this.a.transact(4, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -494,7 +492,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     obtain.writeString(str3);
-                    this.f4450a.transact(3, obtain, obtain2, 0);
+                    this.a.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -509,7 +507,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeInt(i);
-                    this.f4450a.transact(6, obtain, obtain2, 0);
+                    this.a.transact(6, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -524,7 +522,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeInt(i);
-                    this.f4450a.transact(7, obtain, obtain2, 0);
+                    this.a.transact(7, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -540,7 +538,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeInt(i);
                     obtain.writeInt(i2);
-                    this.f4450a.transact(8, obtain, obtain2, 0);
+                    this.a.transact(8, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -557,7 +555,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     obtain.writeString(str3);
-                    this.f4450a.transact(32, obtain, obtain2, 0);
+                    this.a.transact(32, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -574,7 +572,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     boolean z = false;
-                    this.f4450a.transact(36, obtain, obtain2, 0);
+                    this.a.transact(36, obtain, obtain2, 0);
                     obtain2.readException();
                     if (obtain2.readInt() != 0) {
                         z = true;
@@ -598,7 +596,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     obtain.writeDouble(d);
-                    this.f4450a.transact(37, obtain, obtain2, 0);
+                    this.a.transact(37, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -621,7 +619,7 @@ public interface IMonitor extends IInterface {
                         obtain.writeInt(0);
                     }
                     obtain.writeDouble(d);
-                    this.f4450a.transact(38, obtain, obtain2, 0);
+                    this.a.transact(38, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -649,7 +647,7 @@ public interface IMonitor extends IInterface {
                     } else {
                         obtain.writeInt(0);
                     }
-                    this.f4450a.transact(39, obtain, obtain2, 0);
+                    this.a.transact(39, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -666,7 +664,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     obtain.writeString(str3);
-                    this.f4450a.transact(33, obtain, obtain2, 0);
+                    this.a.transact(33, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -681,7 +679,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeInt(i);
-                    this.f4450a.transact(35, obtain, obtain2, 0);
+                    this.a.transact(35, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -696,7 +694,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeInt(i);
-                    this.f4450a.transact(34, obtain, obtain2, 0);
+                    this.a.transact(34, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -717,7 +715,7 @@ public interface IMonitor extends IInterface {
                         obtain.writeInt(0);
                     }
                     obtain.writeString(str);
-                    this.f4450a.transact(40, obtain, obtain2, 0);
+                    this.a.transact(40, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -738,7 +736,7 @@ public interface IMonitor extends IInterface {
                         obtain.writeInt(0);
                     }
                     obtain.writeString(str);
-                    this.f4450a.transact(41, obtain, obtain2, 0);
+                    this.a.transact(41, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -752,7 +750,7 @@ public interface IMonitor extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
-                    this.f4450a.transact(5, obtain, obtain2, 0);
+                    this.a.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -766,7 +764,7 @@ public interface IMonitor extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
-                    this.f4450a.transact(14, obtain, obtain2, 0);
+                    this.a.transact(14, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -781,7 +779,7 @@ public interface IMonitor extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.alibaba.mtl.appmonitor.IMonitor");
                     obtain.writeMap(map);
-                    this.f4450a.transact(13, obtain, obtain2, 0);
+                    this.a.transact(13, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -800,7 +798,7 @@ public interface IMonitor extends IInterface {
                     obtain.writeDouble(d);
                     obtain.writeDouble(d2);
                     obtain.writeDouble(d3);
-                    this.f4450a.transact(42, obtain, obtain2, 0);
+                    this.a.transact(42, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();

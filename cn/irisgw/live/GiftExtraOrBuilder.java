@@ -31,7 +31,8 @@ public interface GiftExtraOrBuilder extends MessageOrBuilder {
 
     int getBgColorCount();
 
-    List<String> getBgColorList();
+    /* renamed from: getBgColorList */
+    List<String> mo2660getBgColorList();
 
     String getBgImg();
 
@@ -53,7 +54,8 @@ public interface GiftExtraOrBuilder extends MessageOrBuilder {
 
     int getChatFrameBorderColorCount();
 
-    List<String> getChatFrameBorderColorList();
+    /* renamed from: getChatFrameBorderColorList */
+    List<String> mo2661getChatFrameBorderColorList();
 
     ByteString getChatFrameBytes();
 
@@ -65,7 +67,8 @@ public interface GiftExtraOrBuilder extends MessageOrBuilder {
 
     int getChatFrameFrameColorCount();
 
-    List<String> getChatFrameFrameColorList();
+    /* renamed from: getChatFrameFrameColorList */
+    List<String> mo2662getChatFrameFrameColorList();
 
     int getChatFrameGradientType();
 

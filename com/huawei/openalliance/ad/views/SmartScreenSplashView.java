@@ -51,11 +51,11 @@ public class SmartScreenSplashView extends RelativeLayout implements lh, ls {
     private gz S;
 
     /* renamed from: a  reason: collision with root package name */
-    private View f23042a;
+    private View f9434a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private lj f23043c;
+    private lj f9435c;
     private TextView d;
     private PPSCircleProgressBar e;
     private PPSLabelView f;
@@ -266,9 +266,9 @@ public class SmartScreenSplashView extends RelativeLayout implements lh, ls {
         } else if (ljVar == null || !(ljVar instanceof View)) {
         } else {
             View view = (View) ljVar;
-            this.f23043c = ljVar;
+            this.f9435c = ljVar;
             ljVar.setAudioFocusType(this.q);
-            Code(this.f23043c);
+            Code(this.f9435c);
             ViewParent parent = view.getParent();
             if (parent == this.i) {
                 view.setVisibility(0);
@@ -289,7 +289,7 @@ public class SmartScreenSplashView extends RelativeLayout implements lh, ls {
 
     @Override // com.huawei.hms.ads.lh
     public void Code(lu luVar) {
-        View view = this.f23042a;
+        View view = this.f9434a;
         if (view != null) {
             view.setVisibility(0);
             new jk(this.Code, luVar).V();
@@ -366,7 +366,7 @@ public class SmartScreenSplashView extends RelativeLayout implements lh, ls {
         if (sloganView != null) {
             sloganView.V();
         }
-        View view = this.f23042a;
+        View view = this.f9434a;
         if (view != null) {
             view.setVisibility(8);
         }
@@ -375,7 +375,7 @@ public class SmartScreenSplashView extends RelativeLayout implements lh, ls {
     @Override // com.huawei.hms.ads.ls
     public void destroyView() {
         ge.V("SmartScreenSplashView", "destroyView ");
-        lj ljVar = this.f23043c;
+        lj ljVar = this.f9435c;
         if (ljVar != null) {
             ljVar.destroyView();
         }
@@ -442,7 +442,7 @@ public class SmartScreenSplashView extends RelativeLayout implements lh, ls {
     @Override // com.huawei.hms.ads.ls
     public void pauseView() {
         ge.V("SmartScreenSplashView", "pauseView ");
-        lj ljVar = this.f23043c;
+        lj ljVar = this.f9435c;
         if (ljVar != null) {
             ljVar.pauseView();
         }
@@ -461,7 +461,7 @@ public class SmartScreenSplashView extends RelativeLayout implements lh, ls {
     @Override // com.huawei.hms.ads.ls
     public void resumeView() {
         ge.V("SmartScreenSplashView", "resumeView ");
-        lj ljVar = this.f23043c;
+        lj ljVar = this.f9435c;
         if (ljVar != null) {
             ljVar.resumeView();
         }
@@ -508,7 +508,7 @@ public class SmartScreenSplashView extends RelativeLayout implements lh, ls {
 
     public void setAudioFocusType(int i) {
         this.q = i;
-        lj ljVar = this.f23043c;
+        lj ljVar = this.f9435c;
         if (ljVar != null) {
             ljVar.setAudioFocusType(i);
         }
@@ -541,7 +541,7 @@ public class SmartScreenSplashView extends RelativeLayout implements lh, ls {
 
     public void setSloganView(View view) {
         if (view != null) {
-            this.f23042a = view;
+            this.f9434a = view;
             view.setVisibility(8);
         }
     }

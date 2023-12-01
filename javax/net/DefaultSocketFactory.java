@@ -5,9 +5,8 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-2895416-dex2jar.jar:javax/net/DefaultSocketFactory.class */
-public final class DefaultSocketFactory extends SocketFactory {
+final class DefaultSocketFactory extends SocketFactory {
     @Override // javax.net.SocketFactory
     public Socket createSocket() throws IOException {
         return new Socket();

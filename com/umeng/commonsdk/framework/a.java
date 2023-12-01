@@ -31,17 +31,17 @@ import java.util.concurrent.locks.ReentrantLock;
 public class a implements UMImprintChangeCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HandlerThread f40854a;
+    private static HandlerThread f27163a;
     private static Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Handler f40855c;
+    private static Handler f27164c;
     private static final int d = 200;
     private static final int e = 273;
     private static final int f = 274;
     private static final int g = 512;
     private static final int h = 769;
-    private static FileObserverC1081a i;
+    private static FileObserverC0911a i;
     private static ConnectivityManager j;
     private static IntentFilter k;
     private static volatile boolean l = false;
@@ -60,8 +60,8 @@ public class a implements UMImprintChangeCallback {
 
     /* renamed from: com.umeng.commonsdk.framework.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/framework/a$a.class */
-    static class FileObserverC1081a extends FileObserver {
-        public FileObserverC1081a(String str) {
+    static class FileObserverC0911a extends FileObserver {
+        public FileObserverC0911a(String str) {
             super(str);
         }
 
@@ -98,21 +98,21 @@ public class a implements UMImprintChangeCallback {
                 j = (ConnectivityManager) appContext.getSystemService(Context.CONNECTIVITY_SERVICE);
             }
         }
-        f40855c = handler;
+        f27164c = handler;
         try {
-            if (f40854a == null) {
+            if (f27163a == null) {
                 HandlerThread handlerThread = new HandlerThread("NetWorkSender");
-                f40854a = handlerThread;
+                f27163a = handlerThread;
                 handlerThread.start();
                 if (i == null) {
-                    FileObserverC1081a fileObserverC1081a = new FileObserverC1081a(UMFrUtils.getEnvelopeDirPath(context));
-                    i = fileObserverC1081a;
-                    fileObserverC1081a.startWatching();
+                    FileObserverC0911a fileObserverC0911a = new FileObserverC0911a(UMFrUtils.getEnvelopeDirPath(context));
+                    i = fileObserverC0911a;
+                    fileObserverC0911a.startWatching();
                     ULog.d("--->>> FileMonitor has already started!");
                 }
                 j();
                 if (b == null) {
-                    b = new Handler(f40854a.getLooper()) { // from class: com.umeng.commonsdk.framework.a.3
+                    b = new Handler(f27163a.getLooper()) { // from class: com.umeng.commonsdk.framework.a.3
                         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x003f -> B:16:0x0036). Please submit an issue!!! */
                         @Override // android.os.Handler
                         public void handleMessage(Message message) {
@@ -343,14 +343,14 @@ public class a implements UMImprintChangeCallback {
     }
 
     private static void k() {
-        if (f40854a != null) {
-            f40854a = null;
+        if (f27163a != null) {
+            f27163a = null;
         }
         if (b != null) {
             b = null;
         }
-        if (f40855c != null) {
-            f40855c = null;
+        if (f27164c != null) {
+            f27164c = null;
         }
     }
 

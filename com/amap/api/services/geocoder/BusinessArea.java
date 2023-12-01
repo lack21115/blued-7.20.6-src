@@ -25,16 +25,14 @@ public class BusinessArea implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private LatLonPoint f5628a;
+    private LatLonPoint a;
     private String b;
 
     public BusinessArea() {
     }
 
     public BusinessArea(Parcel parcel) {
-        this.f5628a = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
+        this.a = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
         this.b = parcel.readString();
     }
 
@@ -44,7 +42,7 @@ public class BusinessArea implements Parcelable {
     }
 
     public LatLonPoint getCenterPoint() {
-        return this.f5628a;
+        return this.a;
     }
 
     public String getName() {
@@ -52,7 +50,7 @@ public class BusinessArea implements Parcelable {
     }
 
     public void setCenterPoint(LatLonPoint latLonPoint) {
-        this.f5628a = latLonPoint;
+        this.a = latLonPoint;
     }
 
     public void setName(String str) {
@@ -61,7 +59,7 @@ public class BusinessArea implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f5628a, i);
+        parcel.writeParcelable(this.a, i);
         parcel.writeString(this.b);
     }
 }

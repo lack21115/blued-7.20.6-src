@@ -8,11 +8,11 @@ import java.util.concurrent.ScheduledExecutorService;
 public class BeaconConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f39581a;
+    private final int f25890a;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f39582c;
+    private final boolean f25891c;
     private final boolean d;
     private final long e;
     private final long f;
@@ -44,11 +44,11 @@ public class BeaconConfig {
         private String k;
 
         /* renamed from: a  reason: collision with root package name */
-        private int f39583a = 10000;
+        private int f25892a = 10000;
         private boolean b = true;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f39584c = true;
+        private boolean f25893c = true;
         private boolean d = true;
         private boolean f = true;
         private boolean l = false;
@@ -66,7 +66,7 @@ public class BeaconConfig {
         private String x = "";
 
         public Builder auditEnable(boolean z) {
-            this.f39584c = z;
+            this.f25893c = z;
             return this;
         }
 
@@ -80,7 +80,7 @@ public class BeaconConfig {
             if (scheduledExecutorService != null) {
                 a.a(scheduledExecutorService);
             }
-            return new BeaconConfig(this.f39583a, this.b, this.f39584c, this.d, this.h, this.i, this.f, this.g, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q, this.r, this.s, this.t, this.u, this.v, this.w, this.x);
+            return new BeaconConfig(this.f25892a, this.b, this.f25893c, this.d, this.h, this.i, this.f, this.g, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q, this.r, this.s, this.t, this.u, this.v, this.w, this.x);
         }
 
         @Deprecated
@@ -109,7 +109,7 @@ public class BeaconConfig {
         }
 
         public Builder maxDBCount(int i) {
-            this.f39583a = i;
+            this.f25892a = i;
             return this;
         }
 
@@ -215,9 +215,9 @@ public class BeaconConfig {
     }
 
     public BeaconConfig(int i, boolean z, boolean z2, boolean z3, long j, long j2, boolean z4, AbstractNetAdapter abstractNetAdapter, String str, String str2, boolean z5, boolean z6, boolean z7, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12) {
-        this.f39581a = i;
+        this.f25890a = i;
         this.b = z;
-        this.f39582c = z2;
+        this.f25891c = z2;
         this.d = z3;
         this.e = j;
         this.f = j2;
@@ -273,7 +273,7 @@ public class BeaconConfig {
     }
 
     public int getMaxDBCount() {
-        return this.f39581a;
+        return this.f25890a;
     }
 
     public String getMeid() {
@@ -309,7 +309,7 @@ public class BeaconConfig {
     }
 
     public boolean isAuditEnable() {
-        return this.f39582c;
+        return this.f25891c;
     }
 
     public boolean isBidEnable() {
@@ -337,6 +337,6 @@ public class BeaconConfig {
     }
 
     public String toString() {
-        return "BeaconConfig{maxDBCount=" + this.f39581a + ", eventReportEnable=" + this.b + ", auditEnable=" + this.f39582c + ", bidEnable=" + this.d + ", realtimePollingTime=" + this.e + ", normalPollingTIme=" + this.f + ", httpAdapter=" + this.h + ", uploadHost='" + this.i + "', configHost='" + this.j + "', forceEnableAtta=" + this.k + ", enableQmsp=" + this.l + ", pagePathEnable=" + this.m + ", androidID=" + this.n + "', imei='" + this.o + "', imei2='" + this.p + "', imsi='" + this.q + "', meid='" + this.r + "', model='" + this.s + "', mac='" + this.t + "', wifiMacAddress='" + this.u + "', wifiSSID='" + this.v + "', oaid='" + this.w + "'}";
+        return "BeaconConfig{maxDBCount=" + this.f25890a + ", eventReportEnable=" + this.b + ", auditEnable=" + this.f25891c + ", bidEnable=" + this.d + ", realtimePollingTime=" + this.e + ", normalPollingTIme=" + this.f + ", httpAdapter=" + this.h + ", uploadHost='" + this.i + "', configHost='" + this.j + "', forceEnableAtta=" + this.k + ", enableQmsp=" + this.l + ", pagePathEnable=" + this.m + ", androidID=" + this.n + "', imei='" + this.o + "', imei2='" + this.p + "', imsi='" + this.q + "', meid='" + this.r + "', model='" + this.s + "', mac='" + this.t + "', wifiMacAddress='" + this.u + "', wifiSSID='" + this.v + "', oaid='" + this.w + "'}";
     }
 }

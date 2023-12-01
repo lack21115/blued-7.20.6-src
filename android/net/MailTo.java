@@ -1,5 +1,6 @@
 package android.net;
 
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -29,7 +30,7 @@ public class MailTo {
             MailTo mailTo = new MailTo();
             String query = parse.getQuery();
             if (query != null) {
-                String[] split = query.split("&");
+                String[] split = query.split(ContainerUtils.FIELD_DELIMITER);
                 int length = split.length;
                 int i = 0;
                 while (true) {

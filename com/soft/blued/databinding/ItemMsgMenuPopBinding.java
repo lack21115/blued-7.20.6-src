@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeTextView;
 public final class ItemMsgMenuPopBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeTextView f29253a;
+    private final ShapeTextView f15563a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeTextView getRoot() {
-        return this.f29253a;
+        return this.f15563a;
     }
 }

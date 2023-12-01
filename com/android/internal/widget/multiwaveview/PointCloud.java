@@ -142,7 +142,7 @@ public class PointCloud {
                 return;
             }
             Point point = arrayList.get(i2);
-            float interp = interp(4.0f, MIN_POINT_SIZE, point.radius / this.mOuterRadius);
+            float interp = interp(MAX_POINT_SIZE, MIN_POINT_SIZE, point.radius / this.mOuterRadius);
             float f = point.x + this.mCenterX;
             float f2 = point.y + this.mCenterY;
             int alphaForPoint = getAlphaForPoint(point);
@@ -151,7 +151,7 @@ public class PointCloud {
                     canvas.save(1);
                     float intrinsicWidth = this.mDrawable.getIntrinsicWidth();
                     float intrinsicHeight = this.mDrawable.getIntrinsicHeight();
-                    float f3 = interp / 4.0f;
+                    float f3 = interp / MAX_POINT_SIZE;
                     canvas.scale(f3, f3, f, f2);
                     canvas.translate(f - (intrinsicWidth * 0.5f), f2 - (intrinsicHeight * 0.5f));
                     this.mDrawable.setAlpha(alphaForPoint);

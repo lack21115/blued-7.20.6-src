@@ -7,17 +7,17 @@ import com.tencent.liteav.videoconsumer.renderer.VideoRenderListener;
 final /* synthetic */ class af implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37113a;
+    private final f f23422a;
     private final GLConstants.PixelFormatType b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final GLConstants.PixelBufferType f37114c;
+    private final GLConstants.PixelBufferType f23423c;
     private final VideoRenderListener d;
 
     private af(f fVar, GLConstants.PixelFormatType pixelFormatType, GLConstants.PixelBufferType pixelBufferType, VideoRenderListener videoRenderListener) {
-        this.f37113a = fVar;
+        this.f23422a = fVar;
         this.b = pixelFormatType;
-        this.f37114c = pixelBufferType;
+        this.f23423c = pixelBufferType;
         this.d = videoRenderListener;
     }
 
@@ -27,6 +27,6 @@ final /* synthetic */ class af implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f.a(this.f37113a, this.b, this.f37114c, this.d);
+        f.a(this.f23422a, this.b, this.f23423c, this.d);
     }
 }

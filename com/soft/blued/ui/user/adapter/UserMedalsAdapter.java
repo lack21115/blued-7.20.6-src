@@ -21,11 +21,11 @@ import java.util.List;
 public class UserMedalsAdapter extends RecyclerView.Adapter<MedalViewHolder> implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f33761a;
+    private LayoutInflater f20070a;
     private List<AnchorMedal> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f33762c;
+    private Context f20071c;
     private IRequestHost d;
     private RecyclerViewItemClickListener e;
 
@@ -34,12 +34,12 @@ public class UserMedalsAdapter extends RecyclerView.Adapter<MedalViewHolder> imp
     public class MedalViewHolder extends RecyclerView.ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f33763a;
+        public ImageView f20072a;
         public LinearLayout b;
 
         public MedalViewHolder(View view) {
             super(view);
-            this.f33763a = (ImageView) view.findViewById(2131364603);
+            this.f20072a = (ImageView) view.findViewById(R.id.img_medal);
             this.b = (LinearLayout) view.findViewById(2131367715);
         }
     }
@@ -50,14 +50,14 @@ public class UserMedalsAdapter extends RecyclerView.Adapter<MedalViewHolder> imp
     }
 
     public UserMedalsAdapter(IRequestHost iRequestHost, Context context, List<AnchorMedal> list) {
-        this.f33762c = context;
+        this.f20071c = context;
         this.d = iRequestHost;
-        this.f33761a = LayoutInflater.from(context);
+        this.f20070a = LayoutInflater.from(context);
         this.b = list;
     }
 
     public View a() {
-        return this.f33761a.inflate(R.layout.item_user_anchor_medal, (ViewGroup) null);
+        return this.f20070a.inflate(R.layout.item_user_anchor_medal, (ViewGroup) null);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -76,7 +76,7 @@ public class UserMedalsAdapter extends RecyclerView.Adapter<MedalViewHolder> imp
             if (StringUtils.d(anchorMedal.pic)) {
                 return;
             }
-            ImageLoader.a(this.d, anchorMedal.pic).b(2131230936).a(medalViewHolder.f33763a);
+            ImageLoader.a(this.d, anchorMedal.pic).b(2131230936).a(medalViewHolder.f20072a);
             medalViewHolder.b.setTag(Integer.valueOf(i));
         }
     }

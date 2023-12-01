@@ -13,9 +13,7 @@ public class InputStreamReader extends Reader {
     private final ByteBuffer bytes;
     private CharsetDecoder decoder;
     private boolean endOfInput;
-
-    /* renamed from: in  reason: collision with root package name */
-    private InputStream f42256in;
+    private InputStream in;
 
     public InputStreamReader(InputStream inputStream) {
         this(inputStream, Charset.defaultCharset());
@@ -28,7 +26,7 @@ public class InputStreamReader extends Reader {
         if (str == null) {
             throw new NullPointerException("charsetName == null");
         }
-        this.f42256in = inputStream;
+        this.in = inputStream;
         try {
             this.decoder = Charset.forName(str).newDecoder().onMalformedInput(CodingErrorAction.REPLACE).onUnmappableCharacter(CodingErrorAction.REPLACE);
             this.bytes.limit(0);
@@ -41,7 +39,7 @@ public class InputStreamReader extends Reader {
         super(inputStream);
         this.endOfInput = false;
         this.bytes = ByteBuffer.allocate(8192);
-        this.f42256in = inputStream;
+        this.in = inputStream;
         this.decoder = charset.newDecoder().onMalformedInput(CodingErrorAction.REPLACE).onUnmappableCharacter(CodingErrorAction.REPLACE);
         this.bytes.limit(0);
     }
@@ -51,13 +49,13 @@ public class InputStreamReader extends Reader {
         this.endOfInput = false;
         this.bytes = ByteBuffer.allocate(8192);
         charsetDecoder.averageCharsPerByte();
-        this.f42256in = inputStream;
+        this.in = inputStream;
         this.decoder = charsetDecoder;
         this.bytes.limit(0);
     }
 
     private boolean isOpen() {
-        return this.f42256in != null;
+        return this.in != null;
     }
 
     @Override // java.io.Reader, java.io.Closeable, java.lang.AutoCloseable
@@ -67,9 +65,9 @@ public class InputStreamReader extends Reader {
                 this.decoder.reset();
             }
             this.decoder = null;
-            if (this.f42256in != null) {
-                this.f42256in.close();
-                this.f42256in = null;
+            if (this.in != null) {
+                this.in.close();
+                this.in = null;
             }
         }
     }
@@ -83,17 +81,17 @@ public class InputStreamReader extends Reader {
 
     @Override // java.io.Reader
     public int read() throws IOException {
-        char c2 = 65535;
+        char c = 65535;
         synchronized (this.lock) {
             if (!isOpen()) {
                 throw new IOException("InputStreamReader is closed");
             }
             char[] cArr = new char[1];
             if (read(cArr, 0, 1) != -1) {
-                c2 = cArr[0];
+                c = cArr[0];
             }
         }
-        return c2;
+        return c;
     }
 
     @Override // java.io.Reader
@@ -116,13 +114,13 @@ public class InputStreamReader extends Reader {
                     }
                     if (z2) {
                         try {
-                            if (this.f42256in.available() == 0 && wrap.position() > i) {
+                            if (this.in.available() == 0 && wrap.position() > i) {
                                 coderResult = coderResult2;
                                 break;
                             }
                         } catch (IOException e) {
                         }
-                        int read = this.f42256in.read(this.bytes.array(), this.bytes.arrayOffset() + this.bytes.limit(), this.bytes.capacity() - this.bytes.limit());
+                        int read = this.in.read(this.bytes.array(), this.bytes.arrayOffset() + this.bytes.limit(), this.bytes.capacity() - this.bytes.limit());
                         if (read != -1) {
                             coderResult = coderResult2;
                             if (read == 0) {
@@ -170,7 +168,7 @@ public class InputStreamReader extends Reader {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0034, code lost:
-        if (r4.f42256in.available() > 0) goto L19;
+        if (r4.in.available() > 0) goto L19;
      */
     @Override // java.io.Reader
     /*
@@ -188,7 +186,7 @@ public class InputStreamReader extends Reader {
             r0 = r7
             monitor-enter(r0)
             r0 = r4
-            java.io.InputStream r0 = r0.f42256in     // Catch: java.lang.Throwable -> L1a
+            java.io.InputStream r0 = r0.in     // Catch: java.lang.Throwable -> L1a
             if (r0 != 0) goto L21
             java.io.IOException r0 = new java.io.IOException     // Catch: java.lang.Throwable -> L1a
             r1 = r0
@@ -207,7 +205,7 @@ public class InputStreamReader extends Reader {
             boolean r0 = r0.hasRemaining()     // Catch: java.lang.Throwable -> L1a java.io.IOException -> L3d
             if (r0 != 0) goto L37
             r0 = r4
-            java.io.InputStream r0 = r0.f42256in     // Catch: java.lang.Throwable -> L1a java.io.IOException -> L3d
+            java.io.InputStream r0 = r0.in     // Catch: java.lang.Throwable -> L1a java.io.IOException -> L3d
             int r0 = r0.available()     // Catch: java.lang.Throwable -> L1a java.io.IOException -> L3d
             r5 = r0
             r0 = r5

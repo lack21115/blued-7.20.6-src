@@ -21,6 +21,6 @@ final /* synthetic */ class EventAddPostFragment$liveDataObserver$2 extends Func
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(EventAddPostTypeExtra eventAddPostTypeExtra) {
         a(eventAddPostTypeExtra);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

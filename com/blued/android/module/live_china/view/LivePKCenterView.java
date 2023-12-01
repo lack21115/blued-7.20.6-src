@@ -49,13 +49,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKCenterView.class */
 public final class LivePKCenterView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14695a;
+    private final Context a;
     private final Lazy b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveConnectionView f14696c;
+    private LiveConnectionView c;
     private ILiveConnectionStateListener d;
     private LiveInteractionModel e;
     private IRequestHost f;
@@ -76,7 +72,7 @@ public final class LivePKCenterView extends FrameLayout {
     public LivePKCenterView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f14695a = mContext;
+        this.a = mContext;
         this.b = LazyKt.a(new Function0<LivePkCenterBinding>() { // from class: com.blued.android.module.live_china.view.LivePKCenterView$mBinding$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -86,9 +82,9 @@ public final class LivePKCenterView extends FrameLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LivePkCenterBinding invoke() {
-                LivePkCenterBinding a2 = LivePkCenterBinding.a(LayoutInflater.from(LivePKCenterView.this.getMContext()).inflate(R.layout.live_pk_center, LivePKCenterView.this));
-                Intrinsics.c(a2, "bind(rootView)");
-                return a2;
+                LivePkCenterBinding a = LivePkCenterBinding.a(LayoutInflater.from(LivePKCenterView.this.getMContext()).inflate(R.layout.live_pk_center, LivePKCenterView.this));
+                Intrinsics.c(a, "bind(rootView)");
+                return a;
             }
         });
         f();
@@ -114,14 +110,14 @@ public final class LivePKCenterView extends FrameLayout {
                 AppMethods.a((CharSequence) liveInteractionModel3.whole_pk.alert_message);
                 return;
             }
-            LiveConnectionView liveConnectionView = this.f14696c;
+            LiveConnectionView liveConnectionView = this.c;
             Intrinsics.a(liveConnectionView);
             liveConnectionView.setPKCurrentModel(1);
             a(new ILiveConnectionAnimListener() { // from class: com.blued.android.module.live_china.view.LivePKCenterView$clickToWholePk$1
                 @Override // com.blued.android.module.live_china.view.ILiveConnectionAnimListener
                 public void onAnimationEnd() {
                     LiveConnectionView liveConnectionView2;
-                    liveConnectionView2 = LivePKCenterView.this.f14696c;
+                    liveConnectionView2 = LivePKCenterView.this.c;
                     if (liveConnectionView2 == null) {
                         return;
                     }
@@ -149,7 +145,7 @@ public final class LivePKCenterView extends FrameLayout {
         Intrinsics.e(this$0, "this$0");
         ShapeTextView shapeTextView = this$0.getMBinding().l;
         Intrinsics.c(shapeTextView, "mBinding.viewDot");
-        BluedViewExKt.a(shapeTextView);
+        BluedViewExKt.a((View) shapeTextView);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -167,7 +163,7 @@ public final class LivePKCenterView extends FrameLayout {
                     @Override // com.blued.android.module.live_china.view.ILiveConnectionAnimListener
                     public void onAnimationEnd() {
                         LiveConnectionView liveConnectionView;
-                        liveConnectionView = LivePKCenterView.this.f14696c;
+                        liveConnectionView = LivePKCenterView.this.c;
                         if (liveConnectionView == null) {
                             return;
                         }
@@ -224,7 +220,7 @@ public final class LivePKCenterView extends FrameLayout {
                     public void onAnimationEnd() {
                         LiveConnectionView liveConnectionView;
                         EventTrackLive.b(LiveProtos.Event.LIVE_MANY_CONNECT_CLICK, LiveRoomManager.a().e());
-                        liveConnectionView = LivePKCenterView.this.f14696c;
+                        liveConnectionView = LivePKCenterView.this.c;
                         if (liveConnectionView == null) {
                             return;
                         }
@@ -286,7 +282,7 @@ public final class LivePKCenterView extends FrameLayout {
                 LivePKCenterView.this.b(view);
             }
         });
-        getMBinding().f12317c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LivePKCenterView$VHVd61renOZVzN72H5NGyhyiwDw
+        getMBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LivePKCenterView$VHVd61renOZVzN72H5NGyhyiwDw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LivePKCenterView.this.c(view);
@@ -344,7 +340,7 @@ public final class LivePKCenterView extends FrameLayout {
         }
         LiveInteractionModel liveInteractionModel4 = this.e;
         if (liveInteractionModel4 != null && (liveInteractionDetailModel2 = liveInteractionModel4.multi_ligature) != null && (str2 = liveInteractionDetailModel2.pic) != null) {
-            ImageLoader.a((IRequestHost) null, str2).a(getMBinding().f12317c);
+            ImageLoader.a((IRequestHost) null, str2).a(getMBinding().c);
         }
         LiveInteractionModel liveInteractionModel5 = this.e;
         if (liveInteractionModel5 == null || (liveInteractionDetailModel = liveInteractionModel5.challenge_pk) == null || (str = liveInteractionDetailModel.pic) == null) {
@@ -359,12 +355,12 @@ public final class LivePKCenterView extends FrameLayout {
     }
 
     public final void a(final ILiveConnectionAnimListener iLiveConnectionAnimListener) {
-        if (getMBinding().f12316a.getVisibility() == 8) {
+        if (getMBinding().a.getVisibility() == 8) {
             return;
         }
-        getMBinding().f12316a.setVisibility(8);
-        Animation loadAnimation = AnimationUtils.loadAnimation(this.f14695a, R.anim.push_bottom_out);
-        getMBinding().f12316a.startAnimation(loadAnimation);
+        getMBinding().a.setVisibility(8);
+        Animation loadAnimation = AnimationUtils.loadAnimation(this.a, R.anim.push_bottom_out);
+        getMBinding().a.startAnimation(loadAnimation);
         loadAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.module.live_china.view.LivePKCenterView$dismiss$1
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
@@ -396,22 +392,21 @@ public final class LivePKCenterView extends FrameLayout {
 
     public final void a(LiveConnectionView liveConnectionView) {
         RecordingOnliveFragment recordingOnliveFragment;
-        this.f14696c = liveConnectionView;
+        this.c = liveConnectionView;
         this.d = liveConnectionView;
-        if (liveConnectionView != null && (recordingOnliveFragment = liveConnectionView.f14428a) != null) {
+        if (liveConnectionView != null && (recordingOnliveFragment = liveConnectionView.a) != null) {
             this.f = recordingOnliveFragment.getFragmentActive();
         }
-        if (!LiveRoomPreferences.Q() || this.f14696c == null) {
+        if (!LiveRoomPreferences.Q() || this.c == null) {
             return;
         }
         ShapeTextView shapeTextView = getMBinding().l;
         Intrinsics.c(shapeTextView, "mBinding.viewDot");
-        BluedViewExKt.b(shapeTextView);
+        BluedViewExKt.b((View) shapeTextView);
         Observable observable = LiveEventBus.get(LiveEventBusUtil.D, Object.class);
-        LiveConnectionView liveConnectionView2 = this.f14696c;
+        LiveConnectionView liveConnectionView2 = this.c;
         Intrinsics.a(liveConnectionView2);
-        observable.observe(liveConnectionView2.f14428a, new Observer() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LivePKCenterView$DgDrLrzqH5uP-JnRa6TADJzb4ao
-            @Override // androidx.lifecycle.Observer
+        observable.observe(liveConnectionView2.a, new Observer() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LivePKCenterView$DgDrLrzqH5uP-JnRa6TADJzb4ao
             public final void onChanged(Object obj) {
                 LivePKCenterView.a(LivePKCenterView.this, obj);
             }
@@ -420,10 +415,10 @@ public final class LivePKCenterView extends FrameLayout {
 
     public final void a(final boolean z) {
         setVisibility(0);
-        getMBinding().f12316a.setVisibility(0);
-        getMBinding().f12316a.clearAnimation();
-        Animation loadAnimation = AnimationUtils.loadAnimation(this.f14695a, R.anim.push_bottom_in);
-        getMBinding().f12316a.startAnimation(loadAnimation);
+        getMBinding().a.setVisibility(0);
+        getMBinding().a.clearAnimation();
+        Animation loadAnimation = AnimationUtils.loadAnimation(this.a, R.anim.push_bottom_in);
+        getMBinding().a.startAnimation(loadAnimation);
         loadAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.module.live_china.view.LivePKCenterView$show$1
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
@@ -461,9 +456,9 @@ public final class LivePKCenterView extends FrameLayout {
     }
 
     public final void c() {
-        LiveConnectionView liveConnectionView = this.f14696c;
+        LiveConnectionView liveConnectionView = this.c;
         Intrinsics.a(liveConnectionView);
-        final ActivityFragmentActive fragmentActive = liveConnectionView.f14428a.getFragmentActive();
+        final ActivityFragmentActive fragmentActive = liveConnectionView.a.getFragmentActive();
         LiveRoomHttpUtils.d(new BluedUIHttpResponse<BluedEntity<LiveFriendExtraModel, LiveFriendExtraModel>>(fragmentActive) { // from class: com.blued.android.module.live_china.view.LivePKCenterView$startMakeFriend$1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
@@ -487,7 +482,7 @@ public final class LivePKCenterView extends FrameLayout {
                 final LivePKCenterView livePKCenterView = LivePKCenterView.this;
                 livePKCenterView.a(new ILiveConnectionAnimListener() { // from class: com.blued.android.module.live_china.view.LivePKCenterView$startMakeFriend$1$onUIUpdate$1
                     /* JADX WARN: Code restructure failed: missing block: B:4:0x000a, code lost:
-                        r0 = r5.f14696c;
+                        r0 = r5.c;
                      */
                     @Override // com.blued.android.module.live_china.view.ILiveConnectionAnimListener
                     /*
@@ -510,7 +505,7 @@ public final class LivePKCenterView extends FrameLayout {
                             return
                         L17:
                             r0 = r6
-                            com.blued.android.module.live_china.fragment.RecordingOnliveFragment r0 = r0.f14428a
+                            com.blued.android.module.live_china.fragment.RecordingOnliveFragment r0 = r0.a
                             r6 = r0
                             r0 = r6
                             if (r0 != 0) goto L21
@@ -550,9 +545,9 @@ public final class LivePKCenterView extends FrameLayout {
     }
 
     public final void d() {
-        LiveConnectionView liveConnectionView = this.f14696c;
+        LiveConnectionView liveConnectionView = this.c;
         Intrinsics.a(liveConnectionView);
-        final ActivityFragmentActive fragmentActive = liveConnectionView.f14428a.getFragmentActive();
+        final ActivityFragmentActive fragmentActive = liveConnectionView.a.getFragmentActive();
         BluedUIHttpResponse<BluedEntity<BluedEntityBaseExtra, LiveDaredPKExtraModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntity<BluedEntityBaseExtra, LiveDaredPKExtraModel>>(fragmentActive) { // from class: com.blued.android.module.live_china.view.LivePKCenterView$startDaredPk$1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
@@ -586,9 +581,9 @@ public final class LivePKCenterView extends FrameLayout {
                 });
             }
         };
-        LiveConnectionView liveConnectionView2 = this.f14696c;
+        LiveConnectionView liveConnectionView2 = this.c;
         Intrinsics.a(liveConnectionView2);
-        LiveRoomHttpUtils.c(bluedUIHttpResponse, liveConnectionView2.f14428a.getFragmentActive());
+        LiveRoomHttpUtils.c(bluedUIHttpResponse, liveConnectionView2.a.getFragmentActive());
     }
 
     public final void e() {
@@ -627,10 +622,10 @@ public final class LivePKCenterView extends FrameLayout {
                 LivePKCenterView.this.g();
             }
         });
-        return Unit.f42314a;
+        return Unit.a;
     }
 
     public final Context getMContext() {
-        return this.f14695a;
+        return this.a;
     }
 }

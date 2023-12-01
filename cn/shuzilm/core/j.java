@@ -5,7 +5,7 @@ final class j implements Runnable {
     @Override // java.lang.Runnable
     public void run() {
         try {
-            System.loadLibrary(com.umeng.analytics.pro.d.W);
+            System.loadLibrary("du");
         } catch (Throwable th) {
             th.printStackTrace();
         }

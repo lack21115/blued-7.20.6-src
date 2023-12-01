@@ -37,7 +37,7 @@ public final class b {
     public static final int Z = 9;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f7165a = Long.MIN_VALUE;
+    public static final long f4326a = Long.MIN_VALUE;
     public static final int aA = -5;
     public static final int aB = 0;
     public static final int aC = 1;
@@ -83,7 +83,7 @@ public final class b {
     public static final int aq = 4;
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final String f7166ar = "und";
+    public static final String f4327ar = "und";
     public static final int as = 0;
     public static final int at = 1;
     public static final int au = 2;
@@ -126,7 +126,7 @@ public final class b {
     public static final int bz = 6;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7167c = -1;
+    public static final int f4328c = -1;
     public static final int d = -1;
     public static final int e = -1;
     public static final int f = -1;
@@ -159,7 +159,7 @@ public final class b {
     @Retention(RetentionPolicy.SOURCE)
     /* renamed from: com.anythink.expressad.exoplayer.b$b  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/b$b.class */
-    public @interface InterfaceC0121b {
+    public @interface InterfaceC0050b {
     }
 
     @Retention(RetentionPolicy.SOURCE)
@@ -228,7 +228,7 @@ public final class b {
     }
 
     static {
-        C = af.f7632a < 23 ? 1020 : 6396;
+        C = af.f4793a < 23 ? 1020 : 6396;
         bh = new UUID(0L, 0L);
         bi = new UUID(1186680826959645954L, -5988876978535335093L);
         bj = new UUID(-2129748144642739255L, 8654423357094679310L);

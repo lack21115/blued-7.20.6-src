@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
@@ -23,11 +24,11 @@ import com.soft.blued.http.LoginRegisterHttpUtils;
 public class ScanLoginFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f33125a;
+    public static String f19434a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f33126c;
+    private TextView f19435c;
     private TextView d;
     private TextView e;
     private TextView f;
@@ -66,13 +67,12 @@ public class ScanLoginFragment extends BaseFragment implements View.OnClickListe
 
     private void a() {
         TextView textView = (TextView) this.h.findViewById(R.id.scan_qr_login_close);
-        this.f33126c = textView;
+        this.f19435c = textView;
         textView.setOnClickListener(this);
     }
 
     private void a(String str) {
         LoginRegisterHttpUtils.a(this.b, new BluedUIHttpResponse() { // from class: com.soft.blued.ui.qr_scan.ScanLoginFragment.3
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 ScanLoginFragment.this.d.setVisibility(0);
                 ScanLoginFragment.this.d.setTextColor(ScanLoginFragment.this.b.getResources().getColor(2131101275));
@@ -80,24 +80,21 @@ public class ScanLoginFragment extends BaseFragment implements View.OnClickListe
                 return super.onUIFailure(i, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(ScanLoginFragment.this.g);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(ScanLoginFragment.this.g);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
-                AppMethods.a((CharSequence) "登录成功");
+                AppMethods.a("登录成功");
                 ScanLoginFragment.this.getActivity().finish();
             }
-        }, str, getFragmentActive());
+        }, str, (IRequestHost) getFragmentActive());
     }
 
     private void b() {
@@ -113,7 +110,7 @@ public class ScanLoginFragment extends BaseFragment implements View.OnClickListe
         Bundle arguments = getArguments();
         this.i = arguments;
         if (arguments != null) {
-            this.j = arguments.getString(f33125a);
+            this.j = arguments.getString(f19434a);
         }
         this.n.post(this.o);
     }
@@ -144,7 +141,6 @@ public class ScanLoginFragment extends BaseFragment implements View.OnClickListe
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
         View view = this.h;
@@ -159,13 +155,11 @@ public class ScanLoginFragment extends BaseFragment implements View.OnClickListe
         return this.h;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         this.k = true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (this.k) {

@@ -7,7 +7,7 @@ public enum ac implements com.heytap.nearx.a.a.i {
     
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<ac> f25695c = com.heytap.nearx.a.a.e.a(ac.class);
+    public static final com.heytap.nearx.a.a.e<ac> f12007c = com.heytap.nearx.a.a.e.a(ac.class);
     private final int d;
 
     ac(int i) {

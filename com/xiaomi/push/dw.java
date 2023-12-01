@@ -14,7 +14,7 @@ public class dw {
     }
 
     public static String a(String str) {
-        return Base64.encodeToString(bn.m11549a(str), 2);
+        return Base64.encodeToString(bn.m8499a(str), 2);
     }
 
     public static String a(HashMap<String, String> hashMap) {

@@ -10,7 +10,7 @@ import com.anythink.expressad.foundation.h.o;
 public class ATNativeAdvancedWebview extends WindVaneWebView {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7051a = ATNativeAdvancedWebview.class.getSimpleName();
+    private static final String f4213a = ATNativeAdvancedWebview.class.getSimpleName();
     private c b;
 
     public ATNativeAdvancedWebview(Context context) {
@@ -18,16 +18,14 @@ public class ATNativeAdvancedWebview extends WindVaneWebView {
         setBackgroundColor(0);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         registerNetWorkReceiver();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         unregisterNetWorkReceiver();
     }
@@ -41,7 +39,7 @@ public class ATNativeAdvancedWebview extends WindVaneWebView {
             intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
             getContext().registerReceiver(this.b, intentFilter);
         } catch (Throwable th) {
-            o.a(f7051a, th.getMessage());
+            o.a(f4213a, th.getMessage());
         }
     }
 
@@ -52,7 +50,7 @@ public class ATNativeAdvancedWebview extends WindVaneWebView {
                 getContext().unregisterReceiver(this.b);
             }
         } catch (Throwable th) {
-            o.a(f7051a, th.getMessage());
+            o.a(f4213a, th.getMessage());
         }
     }
 }

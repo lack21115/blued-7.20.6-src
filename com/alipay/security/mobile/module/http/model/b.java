@@ -12,7 +12,7 @@ public class b {
         if (dataReportResult == null) {
             return null;
         }
-        cVar.f4718a = dataReportResult.success;
+        cVar.a = dataReportResult.success;
         cVar.b = dataReportResult.resultCode;
         Map<String, String> map = dataReportResult.resultData;
         if (map != null) {
@@ -47,12 +47,12 @@ public class b {
         if (dVar == null) {
             return null;
         }
-        dataReportRequest.os = dVar.f4720a;
+        dataReportRequest.os = dVar.a;
         dataReportRequest.rpcVersion = dVar.j;
         dataReportRequest.bizType = "1";
         dataReportRequest.bizData = new HashMap();
         dataReportRequest.bizData.put("apdid", dVar.b);
-        dataReportRequest.bizData.put("apdidToken", dVar.f4721c);
+        dataReportRequest.bizData.put("apdidToken", dVar.c);
         dataReportRequest.bizData.put("umidToken", dVar.d);
         dataReportRequest.bizData.put("dynamicKey", dVar.e);
         dataReportRequest.deviceData = dVar.f;

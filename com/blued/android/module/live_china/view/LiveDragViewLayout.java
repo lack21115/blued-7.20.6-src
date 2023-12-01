@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.same.Logger;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveDragViewLayout.class */
 public class LiveDragViewLayout extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewDragHelper f14459a;
+    private ViewDragHelper a;
     private Point b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f14460c;
+    private View c;
     private int d;
     private OnLayoutStateListener e;
     private boolean f;
@@ -54,7 +50,6 @@ public class LiveDragViewLayout extends LinearLayout {
         this.q = true;
         this.r = false;
         this.s = new ViewDragHelper.Callback() { // from class: com.blued.android.module.live_china.view.LiveDragViewLayout.1
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int clampViewPositionVertical(View view, int i, int i2) {
                 if (LiveDragViewLayout.this.q) {
                     if (LiveDragViewLayout.this.p) {
@@ -70,13 +65,11 @@ public class LiveDragViewLayout extends LinearLayout {
                 return 0;
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int getViewVerticalDragRange(View view) {
                 LiveDragViewLayout.this.a(view);
                 return LiveDragViewLayout.this.getMeasuredHeight();
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewDragStateChanged(int i) {
                 super.onViewDragStateChanged(i);
                 Logger.a("drb", "onViewDragStateChanged = ", Integer.valueOf(i));
@@ -96,7 +89,6 @@ public class LiveDragViewLayout extends LinearLayout {
                 }
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewPositionChanged(View view, int i, int i2, int i3, int i4) {
                 super.onViewPositionChanged(view, i, i2, i3, i4);
                 LiveDragViewLayout.this.j = i2;
@@ -115,13 +107,12 @@ public class LiveDragViewLayout extends LinearLayout {
                 }
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewReleased(View view, float f, float f2) {
                 super.onViewReleased(view, f, f2);
                 boolean z = true;
                 if (view.getTop() <= 0) {
                     int i = (-view.getTop()) > ((LiveDragViewLayout.this.p || ((-f2) > 5000.0f ? 1 : ((-f2) == 5000.0f ? 0 : -1)) <= 0) ? (int) (((double) LiveDragViewLayout.this.d) * 0.5d) : 0) ? -LiveDragViewLayout.this.d : LiveDragViewLayout.this.b.y != 0 ? LiveDragViewLayout.this.b.y : LiveDragViewLayout.this.b.y;
-                    LiveDragViewLayout.this.f14459a.settleCapturedViewAt(view.getLeft(), i);
+                    LiveDragViewLayout.this.a.settleCapturedViewAt(view.getLeft(), i);
                     LiveDragViewLayout.this.invalidate();
                     if (LiveDragViewLayout.this.b.y != 0) {
                         LiveDragViewLayout liveDragViewLayout = LiveDragViewLayout.this;
@@ -138,7 +129,7 @@ public class LiveDragViewLayout extends LinearLayout {
                 }
                 int i2 = view.getTop() > ((LiveDragViewLayout.this.p || (f2 > 5000.0f ? 1 : (f2 == 5000.0f ? 0 : -1)) <= 0) ? (int) (((double) LiveDragViewLayout.this.d) * 0.5d) : 0) ? LiveDragViewLayout.this.d : LiveDragViewLayout.this.b.y != 0 ? LiveDragViewLayout.this.b.y : LiveDragViewLayout.this.b.y;
                 Logger.a("pk", "settleTop = " + i2);
-                LiveDragViewLayout.this.f14459a.settleCapturedViewAt(view.getLeft(), i2);
+                LiveDragViewLayout.this.a.settleCapturedViewAt(view.getLeft(), i2);
                 LiveDragViewLayout.this.invalidate();
                 if (LiveDragViewLayout.this.b.y != 0) {
                     LiveDragViewLayout liveDragViewLayout3 = LiveDragViewLayout.this;
@@ -158,7 +149,6 @@ public class LiveDragViewLayout extends LinearLayout {
                 LiveDragViewLayout.this.g = 1;
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public boolean tryCaptureView(View view, int i) {
                 LiveDragViewLayout.this.a(view);
                 return LiveDragViewLayout.this.r;
@@ -168,7 +158,7 @@ public class LiveDragViewLayout extends LinearLayout {
     }
 
     private void a() {
-        this.f14459a = ViewDragHelper.create(this, 1.0f, this.s);
+        this.a = ViewDragHelper.create(this, 1.0f, this.s);
         this.d = getResources().getDisplayMetrics().heightPixels;
         this.b = new Point();
     }
@@ -178,7 +168,7 @@ public class LiveDragViewLayout extends LinearLayout {
         if (this.k != null || view == null) {
             return;
         }
-        this.k = (RecyclerView) view.findViewById(R.id.live_msg_content_pullrefresh);
+        this.k = view.findViewById(R.id.live_msg_content_pullrefresh);
         this.l = view.findViewById(R.id.live_make_friend_list_view);
         this.m = view.findViewById(R.id.live_activity_web_view);
         this.o = view.findViewById(R.id.live_defined_rank_layout_id);
@@ -202,7 +192,7 @@ public class LiveDragViewLayout extends LinearLayout {
     @Override // android.view.View
     public void computeScroll() {
         super.computeScroll();
-        if (this.f14459a.continueSettling(true)) {
+        if (this.a.continueSettling(true)) {
             invalidate();
         }
     }
@@ -211,7 +201,7 @@ public class LiveDragViewLayout extends LinearLayout {
     @Override // android.view.View
     public void onFinishInflate() {
         super.onFinishInflate();
-        this.f14460c = getChildAt(0);
+        this.c = getChildAt(0);
     }
 
     @Override // android.view.ViewGroup
@@ -232,7 +222,7 @@ public class LiveDragViewLayout extends LinearLayout {
                                 return false;
                             }
                         }
-                        return this.f14459a.shouldInterceptTouchEvent(motionEvent);
+                        return this.a.shouldInterceptTouchEvent(motionEvent);
                     }
                     return false;
                 }
@@ -247,13 +237,13 @@ public class LiveDragViewLayout extends LinearLayout {
     @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
-        this.b.x = this.f14460c.getLeft();
-        this.b.y = this.f14460c.getTop();
+        this.b.x = this.c.getLeft();
+        this.b.y = this.c.getTop();
         int i5 = this.j;
         if (i5 >= 0) {
-            this.f14460c.layout(0, i5, this.h, this.i + i5);
+            this.c.layout(0, i5, this.h, this.i + i5);
         } else {
-            this.f14460c.layout(0, i5, this.h, this.i - (-i5));
+            this.c.layout(0, i5, this.h, this.i - (-i5));
         }
     }
 
@@ -269,7 +259,7 @@ public class LiveDragViewLayout extends LinearLayout {
 
     @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        this.f14459a.processTouchEvent(motionEvent);
+        this.a.processTouchEvent(motionEvent);
         return true;
     }
 

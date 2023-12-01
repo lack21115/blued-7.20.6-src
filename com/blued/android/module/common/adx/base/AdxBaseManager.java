@@ -30,14 +30,10 @@ import kotlinx.coroutines.flow.Flow;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/base/AdxBaseManager.class */
 public abstract class AdxBaseManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f10448a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private Deferred<Unit> g;
     private ArrayList<BluedADExtra> b = new ArrayList<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private ArrayList<BluedADExtra> f10449c = new ArrayList<>();
+    private ArrayList<BluedADExtra> c = new ArrayList<>();
     private final ArrayList<BluedADExtra> d = new ArrayList<>();
     private final ArrayList<BluedADExtra> e = new ArrayList<>();
     private final ArrayList<BluedADExtra> f = new ArrayList<>();
@@ -159,7 +155,7 @@ public abstract class AdxBaseManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a() {
-        this.f10449c.clear();
+        this.c.clear();
         this.d.clear();
         this.e.clear();
         this.f.clear();
@@ -234,10 +230,10 @@ public abstract class AdxBaseManager {
         a("---- 任务超时 ----");
         a("现在要找到一个价格最高且有物料的广告进行展示");
         a("结算二价");
-        BluedADExtra c2 = c();
-        if (c2 != null) {
-            a("最后展示的广告：", c2);
-            d(c2);
+        BluedADExtra c = c();
+        if (c != null) {
+            a("最后展示的广告：", c);
+            d(c);
             return;
         }
         a("最后没有广告可以展示");
@@ -350,7 +346,7 @@ public abstract class AdxBaseManager {
             } catch (Exception e) {
                 a(Intrinsics.a("异常：", (Object) e));
             }
-            Iterator<BluedADExtra> it3 = this.f10449c.iterator();
+            Iterator<BluedADExtra> it3 = this.c.iterator();
             do {
                 bluedADExtra3 = null;
                 if (!it3.hasNext()) {
@@ -363,7 +359,7 @@ public abstract class AdxBaseManager {
                 a(Intrinsics.a("===「埋点」广告_父竞价失败 资源位id：", (Object) h()));
                 EventTrackSettings.a(LoginAndRegisterProtos.Event.AD_BIDDING_FAIL_ALL, h());
             }
-            ArrayList<BluedADExtra> arrayList = this.f10449c;
+            ArrayList<BluedADExtra> arrayList = this.c;
             if (!(arrayList instanceof Collection) || !arrayList.isEmpty()) {
                 for (BluedADExtra bluedADExtra7 : arrayList) {
                     if (!(bluedADExtra7.hasMaterial && bluedADExtra7.price <= 0.0f)) {
@@ -482,14 +478,14 @@ public abstract class AdxBaseManager {
         while (it.hasNext()) {
             BluedADExtra next = it.next();
             if (next.is_bidding()) {
-                this.f10449c.add(next);
+                this.c.add(next);
             } else {
                 this.d.add(next);
             }
             a(String.valueOf(next));
         }
         a("*****竞价广告列表*****");
-        Iterator<BluedADExtra> it2 = this.f10449c.iterator();
+        Iterator<BluedADExtra> it2 = this.c.iterator();
         while (it2.hasNext()) {
             a(String.valueOf(it2.next()));
         }

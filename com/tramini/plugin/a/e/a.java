@@ -1,7 +1,7 @@
 package com.tramini.plugin.a.e;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import com.tramini.plugin.a.c.a;
 import com.tramini.plugin.a.e.f;
@@ -18,7 +18,7 @@ import org.json.JSONObject;
 public final class a extends f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40513a = JSONObject.class.getName();
+    private static final String f26822a = JSONObject.class.getName();
 
     private static com.tramini.plugin.a.c.a a(Object obj, String str, String[] strArr, JSONObject jSONObject, JSONArray jSONArray, String str2) {
         JSONObject jSONObject2;
@@ -216,10 +216,10 @@ public final class a extends f {
                 com.tramini.plugin.a.c.a aVar = new com.tramini.plugin.a.c.a();
                 if (jSONObject3.length() <= 0) {
                     if (jSONObject2 == null) {
-                        aVar.b = new a.C1068a("1", "");
+                        aVar.b = new a.C0898a("1", "");
                         return aVar;
                     }
-                    aVar.b = new a.C1068a("2", jSONObject2.toString());
+                    aVar.b = new a.C0898a("2", jSONObject2.toString());
                     return aVar;
                 }
                 if (!TextUtils.isEmpty(str3) && TextUtils.isEmpty(jSONObject3.optString(str3, "")) && !TextUtils.isEmpty(str4)) {
@@ -236,7 +236,7 @@ public final class a extends f {
                 if (jSONObject2 != null && !TextUtils.isEmpty(str5)) {
                     jSONObject3.put(str5, com.tramini.plugin.a.g.c.a(jSONObject2.toString().getBytes()));
                 }
-                aVar.f40498a = jSONObject3;
+                aVar.f26807a = jSONObject3;
                 return aVar;
             } catch (Throwable th3) {
                 return null;
@@ -371,7 +371,7 @@ public final class a extends f {
                 Object obj2 = field.get(obj);
                 if (obj2 != null) {
                     if (!field.getType().getName().equals("interface") && !obj2.getClass().getName().startsWith(str2)) {
-                        if (field.getType().getName().equals(f40513a)) {
+                        if (field.getType().getName().equals(f26822a)) {
                             JSONObject jSONObject = (JSONObject) obj2;
                             if (jSONObject.has(str)) {
                                 return jSONObject;
@@ -453,11 +453,11 @@ public final class a extends f {
                 z = true;
                 break;
         }
-        return z ? (z || z) ? e(c(str.replace("\\\\\\\\x", "%").replaceAll("\\\\x", "%").replaceAll("\\\\n", ""))) : !z ? e(c(str)) : e(c(str.replace("x22", "\"").replace("x26", "&").replace("x27", "'").replace("x3c", SimpleComparison.LESS_THAN_OPERATION).replace("x3d", "=").replace("x3e", SimpleComparison.GREATER_THAN_OPERATION))) : str.replace("\\/", BridgeUtil.SPLIT_MARK);
+        return z ? (z || z) ? e(c(str.replace("\\\\\\\\x", "%").replaceAll("\\\\x", "%").replaceAll("\\\\n", ""))) : !z ? e(c(str)) : e(c(str.replace("x22", "\"").replace("x26", ContainerUtils.FIELD_DELIMITER).replace("x27", "'").replace("x3c", SimpleComparison.LESS_THAN_OPERATION).replace("x3d", "=").replace("x3e", SimpleComparison.GREATER_THAN_OPERATION))) : str.replace("\\/", "/");
     }
 
     private static String e(String str) {
-        return str.replaceAll("&amp;", "&").replaceAll("&quot;", "\"");
+        return str.replaceAll("&amp;", ContainerUtils.FIELD_DELIMITER).replaceAll("&quot;", "\"");
     }
 
     /* JADX WARN: Removed duplicated region for block: B:49:0x00d0 A[SYNTHETIC] */

@@ -5,9 +5,7 @@ import java.lang.ref.WeakReference;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/MemoryRequest.class */
 public class MemoryRequest {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SparseArray<WeakReference<MemoryListener>> f9594a = new SparseArray<>();
+    private SparseArray<WeakReference<MemoryListener>> a = new SparseArray<>();
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/MemoryRequest$MemoryListener.class */
     public interface MemoryListener {
@@ -17,16 +15,14 @@ public class MemoryRequest {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/MemoryRequest$SingletonCreator.class */
     public static class SingletonCreator {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final MemoryRequest f9595a = new MemoryRequest();
+        private static final MemoryRequest a = new MemoryRequest();
 
         private SingletonCreator() {
         }
     }
 
     public static MemoryRequest a() {
-        return SingletonCreator.f9595a;
+        return SingletonCreator.a;
     }
 
     public void a(int i) {
@@ -35,7 +31,7 @@ public class MemoryRequest {
 
     public void a(MemoryListener memoryListener) {
         if (memoryListener != null) {
-            this.f9594a.put(memoryListener.hashCode(), new WeakReference<>(memoryListener));
+            this.a.put(memoryListener.hashCode(), new WeakReference<>(memoryListener));
         }
     }
 
@@ -44,11 +40,11 @@ public class MemoryRequest {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f9594a.size()) {
+            if (i2 >= this.a.size()) {
                 System.gc();
                 return;
             }
-            MemoryListener memoryListener = this.f9594a.valueAt(i2).get();
+            MemoryListener memoryListener = this.a.valueAt(i2).get();
             if (memoryListener != null) {
                 memoryListener.a();
             }
@@ -58,7 +54,7 @@ public class MemoryRequest {
 
     public void b(MemoryListener memoryListener) {
         if (memoryListener != null) {
-            this.f9594a.remove(memoryListener.hashCode());
+            this.a.remove(memoryListener.hashCode());
         }
     }
 }

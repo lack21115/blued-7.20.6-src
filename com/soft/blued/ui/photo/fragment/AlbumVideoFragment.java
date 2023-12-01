@@ -1,6 +1,5 @@
 package com.soft.blued.ui.photo.fragment;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -24,7 +23,7 @@ import com.blued.android.module.player.media.view.ViewDragHelperLayout;
 public class AlbumVideoFragment extends BaseFragment {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f33049c = VideoDetailFragment.class.getSimpleName();
+    private static final String f19358c = VideoDetailFragment.class.getSimpleName();
     private View d;
     private ViewDragHelperLayout e;
     private LinearLayout f;
@@ -36,8 +35,7 @@ public class AlbumVideoFragment extends BaseFragment {
     private boolean k = false;
 
     /* renamed from: a  reason: collision with root package name */
-    ViewDragHelperLayout.OnLayoutStateListener f33050a = new ViewDragHelperLayout.OnLayoutStateListener() { // from class: com.soft.blued.ui.photo.fragment.AlbumVideoFragment.1
-        @Override // com.blued.android.module.player.media.view.ViewDragHelperLayout.OnLayoutStateListener
+    ViewDragHelperLayout.OnLayoutStateListener f19359a = new ViewDragHelperLayout.OnLayoutStateListener() { // from class: com.soft.blued.ui.photo.fragment.AlbumVideoFragment.1
         public void a() {
             if (AlbumVideoFragment.this.getActivity() != null) {
                 AlbumVideoFragment.this.getActivity().finish();
@@ -46,13 +44,11 @@ public class AlbumVideoFragment extends BaseFragment {
             EventCallbackObserver.a().b();
         }
 
-        @Override // com.blued.android.module.player.media.view.ViewDragHelperLayout.OnLayoutStateListener
         public void a(int i) {
             AlbumVideoFragment.this.g.g();
             EventCallbackObserver.a().a(i);
         }
 
-        @Override // com.blued.android.module.player.media.view.ViewDragHelperLayout.OnLayoutStateListener
         public void b() {
             if (!AlbumVideoFragment.this.g.i()) {
                 AlbumVideoFragment.this.g.c();
@@ -60,31 +56,29 @@ public class AlbumVideoFragment extends BaseFragment {
             EventCallbackObserver.a().c();
         }
 
-        @Override // com.blued.android.module.player.media.view.ViewDragHelperLayout.OnLayoutStateListener
         public void c() {
         }
 
-        @Override // com.blued.android.module.player.media.view.ViewDragHelperLayout.OnLayoutStateListener
         public void d() {
         }
     };
     View.OnLongClickListener b = new View.OnLongClickListener() { // from class: com.soft.blued.ui.photo.fragment.AlbumVideoFragment.2
         @Override // android.view.View.OnLongClickListener
         public boolean onLongClick(View view) {
-            EventCallbackObserver.a().a(AlbumVideoFragment.this.l.b, AlbumVideoFragment.this.l.f15652a, Integer.valueOf(AlbumVideoFragment.this.l.a()), Integer.valueOf(AlbumVideoFragment.this.l.b()));
+            EventCallbackObserver.a().a(new Object[]{AlbumVideoFragment.this.l.b, AlbumVideoFragment.this.l.a, Integer.valueOf(AlbumVideoFragment.this.l.a()), Integer.valueOf(AlbumVideoFragment.this.l.b())});
             return false;
         }
     };
 
     private void c() {
-        this.e = (ViewDragHelperLayout) this.d.findViewById(2131373158);
+        this.e = this.d.findViewById(2131373158);
         this.f = (LinearLayout) this.d.findViewById(2131373092);
         this.h = (ViewGroup) this.d.findViewById(2131370507);
         LayoutInflater.from(getActivity()).inflate(2131560860, this.h);
-        this.g = (PLVideoPageView) this.h.findViewById(2131373091);
+        this.g = this.h.findViewById(2131373091);
         this.e.setScrollDisable(this.l.r);
         if (this.l.r) {
-            this.e.setOnLayoutStateListener(this.f33050a);
+            this.e.setOnLayoutStateListener(this.f19359a);
         }
     }
 
@@ -116,7 +110,7 @@ public class AlbumVideoFragment extends BaseFragment {
         VideoPlayConfig serializable = getArguments() != null ? getArguments().getSerializable("video_config_data") : null;
         this.l = serializable;
         if (serializable == null || TextUtils.isEmpty(serializable.b)) {
-            LogUtils.c(f33049c + " VideoDetailConfig is null || mConfigInfo.videoUrl == null");
+            LogUtils.c(new Object[]{f19358c + " VideoDetailConfig is null || mConfigInfo.videoUrl == null"});
         } else if ("http".contains(this.l.b)) {
         } else {
             int[] c2 = Tools.c(this.l.b);
@@ -129,24 +123,21 @@ public class AlbumVideoFragment extends BaseFragment {
         return true;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         d();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         EventCallbackObserver.a().d();
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.d;
         if (view == null) {
             this.d = layoutInflater.inflate(2131559333, viewGroup, false);
-            StatusBarHelper.a((Activity) getActivity());
+            StatusBarHelper.a(getActivity());
             a();
             c();
         } else if (view.getParent() != null) {
@@ -156,7 +147,6 @@ public class AlbumVideoFragment extends BaseFragment {
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         PLVideoPageView pLVideoPageView = this.g;
@@ -165,7 +155,6 @@ public class AlbumVideoFragment extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         Log.v("drb", "onPause");
@@ -177,7 +166,6 @@ public class AlbumVideoFragment extends BaseFragment {
         this.k = true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (getUserVisibleHint()) {
@@ -189,7 +177,6 @@ public class AlbumVideoFragment extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         if (this.j) {

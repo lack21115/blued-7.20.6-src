@@ -25,13 +25,9 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/MarqueeView.class */
 public class MarqueeView extends ViewFlipper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f14968a;
+    private int a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14969c;
+    private int c;
     private int d;
     private String e;
     private boolean f;
@@ -50,19 +46,15 @@ public class MarqueeView extends ViewFlipper {
     /* renamed from: com.blued.android.module.live_china.view.MarqueeView$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/MarqueeView$1.class */
     class AnonymousClass1 implements ViewTreeObserver.OnGlobalLayoutListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f14970a;
+        final /* synthetic */ String a;
         final /* synthetic */ int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int f14971c;
+        final /* synthetic */ int c;
         final /* synthetic */ MarqueeView d;
 
         @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
         public void onGlobalLayout() {
             this.d.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-            this.d.a(this.f14970a, this.b, this.f14971c);
+            this.d.a(this.a, this.b, this.c);
         }
     }
 
@@ -72,9 +64,9 @@ public class MarqueeView extends ViewFlipper {
 
     public MarqueeView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14968a = 4000;
+        this.a = 4000;
         this.b = false;
-        this.f14969c = 1000;
+        this.c = 1000;
         this.d = 12;
         this.f = false;
         this.g = 19;
@@ -113,13 +105,13 @@ public class MarqueeView extends ViewFlipper {
     }
 
     private void a(Context context, AttributeSet attributeSet, int i) {
-        setFlipInterval(this.f14968a);
+        setFlipInterval(this.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, int i, int i2) {
         int i3;
-        CharSequence a2 = LiveRoomInfo.a().a(str, "#ffd452", new LiveRoomConstants.ClickAtLinkListener() { // from class: com.blued.android.module.live_china.view.MarqueeView.2
+        CharSequence a = LiveRoomInfo.a().a(str, "#ffd452", new LiveRoomConstants.ClickAtLinkListener() { // from class: com.blued.android.module.live_china.view.MarqueeView.2
             @Override // com.blued.android.module.live_china.constant.LiveRoomConstants.ClickAtLinkListener
             public void a(String str2, String str3) {
                 if (MarqueeView.this.o != null) {
@@ -135,7 +127,7 @@ public class MarqueeView extends ViewFlipper {
                 }
             }
         });
-        int length = a2.length();
+        int length = a.length();
         Context context = getContext();
         int i4 = this.q;
         int b = DensityUtils.b(context, i4 > 580 ? 720.0f : i4);
@@ -160,7 +152,7 @@ public class MarqueeView extends ViewFlipper {
                 if (i12 >= length) {
                     i13 = length;
                 }
-                Matcher matcher = Pattern.compile("[a-z0-9]").matcher(a2.subSequence(i10 == 0 ? 0 : i10, i13));
+                Matcher matcher = Pattern.compile("[a-z0-9]").matcher(a.subSequence(i10 == 0 ? 0 : i10, i13));
                 int i14 = 0;
                 while (true) {
                     i3 = i14;
@@ -172,15 +164,15 @@ public class MarqueeView extends ViewFlipper {
                 }
                 int i15 = i13 + i3;
                 if (i15 >= length) {
-                    arrayList.add(a2.subSequence(i10, length));
+                    arrayList.add(a.subSequence(i10, length));
                     break;
                 } else {
-                    arrayList.add(a2.subSequence(i10, i15));
+                    arrayList.add(a.subSequence(i10, i15));
                     i8 = i11;
                 }
             }
         } else {
-            arrayList.add(a2);
+            arrayList.add(a);
         }
         if (this.m == null) {
             this.m = new ArrayList();
@@ -223,9 +215,9 @@ public class MarqueeView extends ViewFlipper {
                         return;
                     }
                     MarqueeView marqueeView = MarqueeView.this;
-                    TextView a2 = marqueeView.a((CharSequence) marqueeView.m.get(MarqueeView.this.l));
-                    if (a2.getParent() == null) {
-                        MarqueeView.this.addView(a2);
+                    TextView a = marqueeView.a((CharSequence) marqueeView.m.get(MarqueeView.this.l));
+                    if (a.getParent() == null) {
+                        MarqueeView.this.addView(a);
                     }
                 }
 
@@ -252,12 +244,12 @@ public class MarqueeView extends ViewFlipper {
     private void c(int i, int i2) {
         Animation loadAnimation = AnimationUtils.loadAnimation(getContext(), i);
         if (this.b) {
-            loadAnimation.setDuration(this.f14969c);
+            loadAnimation.setDuration(this.c);
         }
         setInAnimation(loadAnimation);
         Animation loadAnimation2 = AnimationUtils.loadAnimation(getContext(), i2);
         if (this.b) {
-            loadAnimation2.setDuration(this.f14969c);
+            loadAnimation2.setDuration(this.c);
         }
         setOutAnimation(loadAnimation2);
     }

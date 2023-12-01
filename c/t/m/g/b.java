@@ -10,7 +10,6 @@ import android.text.TextUtils;
 import android.util.LruCache;
 import android.util.Pair;
 import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -22,7 +21,7 @@ public class b {
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public e f3754c;
+    public e f3706c;
     public HandlerThread d;
     public volatile Location e;
     public volatile Location f;
@@ -32,7 +31,7 @@ public class b {
     public LruCache<String, Pair<Double, Double>> j;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f3753a = new byte[0];
+    public byte[] f3705a = new byte[0];
     public long k = 180000;
     public long l = 0;
     public long m = 0;
@@ -48,7 +47,7 @@ public class b {
         this.j = new LruCache<>(100);
         String str = "";
         try {
-            if (!j.f3844a) {
+            if (!j.f3796a) {
                 str = "";
                 if (!j.b) {
                     str = z2.a(this.b, "data").getAbsolutePath();
@@ -59,12 +58,12 @@ public class b {
                 str2 = this.b.getFilesDir().getAbsolutePath() + "/data/";
             }
             if (!TextUtils.isEmpty(str2)) {
-                this.f3754c = new e(this.b, str2);
+                this.f3706c = new e(this.b, str2);
                 e();
             }
             o = this;
         } catch (Throwable th) {
-            this.f3754c = null;
+            this.f3706c = null;
         }
     }
 
@@ -88,20 +87,20 @@ public class b {
     }
 
     public void a(int i, long j, Object obj) {
-        synchronized (this.f3753a) {
+        synchronized (this.f3705a) {
             try {
-                this.f3754c.a(i, j, obj);
+                this.f3706c.a(i, j, obj);
             }
         }
     }
 
     public void a(int i, Location location) {
-        synchronized (this.f3753a) {
+        synchronized (this.f3705a) {
             if (c()) {
                 if (location != null && "gps".equals(location.getProvider())) {
                     if (j.h || Build.VERSION.SDK_INT < 18 || !location.isFromMockProvider()) {
-                        if (this.f3754c != null) {
-                            this.f3754c.a(i, location);
+                        if (this.f3706c != null) {
+                            this.f3706c.a(i, location);
                         }
                         if (!k3.a(location.getAltitude(), 0.0d) || !k3.a(location.getSpeed(), 0.0d)) {
                             this.e = a(this.e, location);
@@ -116,11 +115,11 @@ public class b {
     }
 
     public void a(long j, int i, double d, double d2, double d3) {
-        synchronized (this.f3753a) {
+        synchronized (this.f3705a) {
             if (c()) {
                 g3.a();
-                if (this.f3754c != null) {
-                    this.f3754c.a(j, i, d, d2, d3);
+                if (this.f3706c != null) {
+                    this.f3706c.a(j, i, d, d2, d3);
                 }
             }
         }
@@ -132,22 +131,22 @@ public class b {
     }
 
     public void a(Looper looper) {
-        synchronized (this.f3753a) {
+        synchronized (this.f3705a) {
             d();
-            if (this.f3754c != null) {
+            if (this.f3706c != null) {
                 Looper looper2 = looper;
                 if (looper == null) {
                     HandlerThread b = a3.b("th_loc_extra");
                     this.d = b;
                     looper2 = b.getLooper();
                 }
-                this.f3754c.a(looper2);
+                this.f3706c.a(looper2);
             }
         }
     }
 
     public void a(c cVar) {
-        synchronized (this.f3753a) {
+        synchronized (this.f3705a) {
             j.i = cVar;
             if (g3.a()) {
                 cVar.f();
@@ -160,12 +159,12 @@ public class b {
     }
 
     public void a(d dVar, List<d> list) {
-        synchronized (this.f3753a) {
+        synchronized (this.f3705a) {
             if (c()) {
                 ArrayList arrayList = new ArrayList();
                 for (d dVar2 : list) {
-                    if (i.a(dVar2.f, dVar2.f3781a, dVar2.b, dVar2.f3782c, dVar2.e)) {
-                        if (a(dVar2.f3782c + BridgeUtil.UNDERLINE_STR + dVar2.e, this.e)) {
+                    if (i.a(dVar2.f, dVar2.f3733a, dVar2.b, dVar2.f3734c, dVar2.e)) {
+                        if (a(dVar2.f3734c + "_" + dVar2.e, this.e)) {
                             arrayList.add(dVar2);
                         }
                     }
@@ -181,8 +180,8 @@ public class b {
     }
 
     public void a(String str, String str2) {
-        synchronized (this.f3753a) {
-            if (this.f3754c == null || m3.a(str2)) {
+        synchronized (this.f3705a) {
+            if (this.f3706c == null || m3.a(str2)) {
                 return;
             }
             g3.a();
@@ -191,7 +190,7 @@ public class b {
             } else if ("D_FC_SRC".equals(str)) {
                 k.b(str2);
             } else if ("D_POS_COLL".equals(str)) {
-                j.f3845c = Boolean.parseBoolean(str2.toLowerCase());
+                j.f3797c = Boolean.parseBoolean(str2.toLowerCase());
             } else if ("D_WRITE_MAC".equals(str)) {
                 j.d = Boolean.parseBoolean(str2.toLowerCase());
             } else if ("D_UP_NET".equals(str)) {
@@ -208,9 +207,9 @@ public class b {
                 if (m3.a(str2)) {
                     str2 = "";
                 }
-                m.f3878a = str2;
+                m.f3830a = str2;
             } else {
-                this.f3754c.a(str, str2);
+                this.f3706c.a(str, str2);
             }
         }
     }
@@ -218,7 +217,7 @@ public class b {
     public void a(List<ScanResult> list) {
         long currentTimeMillis;
         boolean a2;
-        synchronized (this.f3753a) {
+        synchronized (this.f3705a) {
             if (c()) {
                 try {
                     currentTimeMillis = System.currentTimeMillis();
@@ -227,10 +226,10 @@ public class b {
                 } catch (Throwable th) {
                 }
                 if (!a2 || currentTimeMillis - this.m <= 30000) {
-                    if (this.f3754c != null) {
-                        this.f3754c.a(list);
+                    if (this.f3706c != null) {
+                        this.f3706c.a(list);
                     }
-                    if (this.f3754c != null && this.e != null && !m3.a((Collection) list)) {
+                    if (this.f3706c != null && this.e != null && !m3.a((Collection) list)) {
                         if (list.size() == 1) {
                             if ("123456789abc".equals(list.get(0).BSSID.toLowerCase())) {
                                 return;
@@ -245,7 +244,7 @@ public class b {
                             this.m = currentTimeMillis;
                             this.i = list;
                         }
-                        this.f3754c.a(this.e, list, currentTimeMillis - this.l < this.k ? this.g : null);
+                        this.f3706c.a(this.e, list, currentTimeMillis - this.l < this.k ? this.g : null);
                     }
                 }
             }
@@ -278,7 +277,7 @@ public class b {
     }
 
     public boolean c() {
-        e eVar = this.f3754c;
+        e eVar = this.f3706c;
         if (eVar == null) {
             return false;
         }
@@ -304,9 +303,9 @@ public class b {
     }
 
     public void f() {
-        synchronized (this.f3753a) {
-            if (this.f3754c != null && this.f3754c.b()) {
-                this.f3754c.c();
+        synchronized (this.f3705a) {
+            if (this.f3706c != null && this.f3706c.b()) {
+                this.f3706c.c();
             }
             if (this.d != null) {
                 a3.a("th_loc_extra", 300L);
@@ -317,7 +316,7 @@ public class b {
     }
 
     public final void g() {
-        if (!m3.b(this.f3754c, this.e) || m3.a((Collection) this.g)) {
+        if (!m3.b(this.f3706c, this.e) || m3.a((Collection) this.g)) {
             return;
         }
         if (j.f && n.a(this.b) == 3) {
@@ -327,7 +326,7 @@ public class b {
         if (currentTimeMillis - this.l < this.k) {
             this.n = currentTimeMillis;
             this.f = a(this.f, this.e);
-            this.f3754c.a(this.e, (List<ScanResult>) null, this.g);
+            this.f3706c.a(this.e, (List<ScanResult>) null, this.g);
         }
     }
 }

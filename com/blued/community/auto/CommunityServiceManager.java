@@ -5,13 +5,9 @@ import java.util.ServiceLoader;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/auto/CommunityServiceManager.class */
 public class CommunityServiceManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static ICommunityConfigService f18780a;
+    private static ICommunityConfigService a;
     private static ICommunityShowPageService b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static ICommunityLocationService f18781c;
+    private static ICommunityLocationService c;
     private static ICommunityTrackService d;
     private static ICommunityOtherService e;
 
@@ -19,19 +15,19 @@ public class CommunityServiceManager {
         ICommunityConfigService iCommunityConfigService;
         synchronized (CommunityServiceManager.class) {
             try {
-                if (f18780a != null && !(f18780a instanceof CommunityServiceDefaultImpl)) {
-                    return f18780a;
+                if (a != null && !(a instanceof CommunityServiceDefaultImpl)) {
+                    return a;
                 }
                 Iterator it = ServiceLoader.load(ICommunityConfigService.class).iterator();
                 do {
                     if (!it.hasNext()) {
                         ICommunityConfigService iCommunityConfigService2 = (ICommunityConfigService) Class.forName("com.soft.blued.ui.community.auto.CommunityConfigServiceImpl").newInstance();
-                        f18780a = iCommunityConfigService2;
+                        a = iCommunityConfigService2;
                         return iCommunityConfigService2;
                     }
                     iCommunityConfigService = (ICommunityConfigService) it.next();
                 } while (!"MAIN".equals(iCommunityConfigService.a()));
-                f18780a = iCommunityConfigService;
+                a = iCommunityConfigService;
                 return iCommunityConfigService;
             } catch (Throwable th) {
                 throw th;
@@ -67,19 +63,19 @@ public class CommunityServiceManager {
         ICommunityLocationService iCommunityLocationService;
         synchronized (CommunityServiceManager.class) {
             try {
-                if (f18781c != null && !(f18781c instanceof CommunityServiceDefaultImpl)) {
-                    return f18781c;
+                if (c != null && !(c instanceof CommunityServiceDefaultImpl)) {
+                    return c;
                 }
                 Iterator it = ServiceLoader.load(ICommunityLocationService.class).iterator();
                 do {
                     if (!it.hasNext()) {
                         ICommunityLocationService iCommunityLocationService2 = (ICommunityLocationService) Class.forName("com.soft.blued.ui.community.auto.CommunityLocationServiceImpl").newInstance();
-                        f18781c = iCommunityLocationService2;
+                        c = iCommunityLocationService2;
                         return iCommunityLocationService2;
                     }
                     iCommunityLocationService = (ICommunityLocationService) it.next();
                 } while (!"MAIN".equals(iCommunityLocationService.a()));
-                f18781c = iCommunityLocationService;
+                c = iCommunityLocationService;
                 return iCommunityLocationService;
             } catch (Throwable th) {
                 throw th;

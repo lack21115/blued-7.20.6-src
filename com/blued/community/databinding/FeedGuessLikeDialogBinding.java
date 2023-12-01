@@ -11,13 +11,9 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FeedGuessLikeDialogBinding.class */
 public final class FeedGuessLikeDialogBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f18819a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f18820c;
+    public final LinearLayout c;
     public final TextView d;
     public final TextView e;
     public final ShapeTextView f;
@@ -28,9 +24,9 @@ public final class FeedGuessLikeDialogBinding implements ViewBinding {
 
     private FeedGuessLikeDialogBinding(ShapeLinearLayout shapeLinearLayout, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, TextView textView, TextView textView2, ShapeTextView shapeTextView, TextView textView3, TextView textView4, TextView textView5) {
         this.j = shapeLinearLayout;
-        this.f18819a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f18820c = linearLayout;
+        this.c = linearLayout;
         this.d = textView;
         this.e = textView2;
         this.f = shapeTextView;
@@ -89,7 +85,6 @@ public final class FeedGuessLikeDialogBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeLinearLayout getRoot() {
         return this.j;

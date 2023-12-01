@@ -10,19 +10,15 @@ import android.widget.TextView;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/LinkMovementClickMethod.class */
 public class LinkMovementClickMethod extends LinkMovementMethod {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static LinkMovementClickMethod f10887c;
-
-    /* renamed from: a  reason: collision with root package name */
-    private long f10888a;
+    private static LinkMovementClickMethod c;
+    private long a;
     private boolean b;
 
     public static LinkMovementClickMethod a() {
-        if (f10887c == null) {
-            f10887c = new LinkMovementClickMethod();
+        if (c == null) {
+            c = new LinkMovementClickMethod();
         }
-        return f10887c;
+        return c;
     }
 
     public boolean b() {
@@ -45,12 +41,12 @@ public class LinkMovementClickMethod extends LinkMovementMethod {
                 Object[] objArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
                 if (objArr.length != 0) {
                     if (action == 1) {
-                        if (System.currentTimeMillis() - this.f10888a < 500) {
+                        if (System.currentTimeMillis() - this.a < 500) {
                             objArr[0].onClick(textView);
                         }
                     } else if (action == 0) {
                         Selection.setSelection(spannable, spannable.getSpanStart(objArr[0]), spannable.getSpanEnd(objArr[0]));
-                        this.f10888a = System.currentTimeMillis();
+                        this.a = System.currentTimeMillis();
                     }
                     this.b = true;
                     return true;

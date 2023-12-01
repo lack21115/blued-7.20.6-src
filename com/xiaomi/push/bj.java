@@ -6,63 +6,63 @@ import java.util.LinkedList;
 public class bj {
 
     /* renamed from: a  reason: collision with root package name */
-    private LinkedList<a> f41284a = new LinkedList<>();
+    private LinkedList<a> f27593a = new LinkedList<>();
 
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/bj$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final bj f41285a = new bj();
+        private static final bj f27594a = new bj();
 
         /* renamed from: a  reason: collision with other field name */
-        public int f220a;
+        public int f173a;
 
         /* renamed from: a  reason: collision with other field name */
-        public Object f221a;
+        public Object f174a;
 
         /* renamed from: a  reason: collision with other field name */
-        public String f222a;
+        public String f175a;
 
         a(int i, Object obj) {
-            this.f220a = i;
-            this.f221a = obj;
+            this.f173a = i;
+            this.f174a = obj;
         }
     }
 
     public static bj a() {
-        return a.f41285a;
+        return a.f27594a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private void m11541a() {
-        if (this.f41284a.size() > 100) {
-            this.f41284a.removeFirst();
+    private void m8491a() {
+        if (this.f27593a.size() > 100) {
+            this.f27593a.removeFirst();
         }
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public int m11542a() {
+    public int m8492a() {
         int size;
         synchronized (this) {
-            size = this.f41284a.size();
+            size = this.f27593a.size();
         }
         return size;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public LinkedList<a> m11543a() {
+    public LinkedList<a> m8493a() {
         LinkedList<a> linkedList;
         synchronized (this) {
-            linkedList = this.f41284a;
-            this.f41284a = new LinkedList<>();
+            linkedList = this.f27593a;
+            this.f27593a = new LinkedList<>();
         }
         return linkedList;
     }
 
     public void a(Object obj) {
         synchronized (this) {
-            this.f41284a.add(new a(0, obj));
-            m11541a();
+            this.f27593a.add(new a(0, obj));
+            m8491a();
         }
     }
 }

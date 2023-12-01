@@ -2,6 +2,7 @@ package com.kuaishou.weapon.p0;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -25,7 +26,7 @@ import javax.net.ssl.X509TrustManager;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    static TrustManager[] f23841a = {new X509TrustManager() { // from class: com.kuaishou.weapon.p0.l.1
+    static TrustManager[] f10233a = {new X509TrustManager() { // from class: com.kuaishou.weapon.p0.l.1
         @Override // javax.net.ssl.X509TrustManager
         public final void checkClientTrusted(X509Certificate[] x509CertificateArr, String str) {
         }
@@ -46,7 +47,7 @@ public class l {
     static SSLSocketFactory b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23842c = "gzip";
+    private static final String f10234c = "gzip";
     private static final int d = 1024;
     private static volatile l f;
     private static Context g;
@@ -100,7 +101,7 @@ public class l {
                 try {
                     if (b == null) {
                         SSLContext sSLContext = SSLContext.getInstance("TLS");
-                        sSLContext.init(null, f23841a, new SecureRandom());
+                        sSLContext.init(null, f10233a, new SecureRandom());
                         b = sSLContext.getSocketFactory();
                     }
                     if (b != null) {
@@ -200,7 +201,7 @@ public class l {
                 return str2.substring(1);
             }
             Map.Entry<String, String> next = it.next();
-            str = str2 + "&" + next.getKey() + "=" + next.getValue();
+            str = str2 + ContainerUtils.FIELD_DELIMITER + next.getKey() + "=" + next.getValue();
         }
     }
 

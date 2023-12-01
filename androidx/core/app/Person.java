@@ -9,11 +9,11 @@ import androidx.core.graphics.drawable.IconCompat;
 public class Person {
 
     /* renamed from: a  reason: collision with root package name */
-    CharSequence f2387a;
+    CharSequence f2339a;
     IconCompat b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f2388c;
+    String f2340c;
     String d;
     boolean e;
     boolean f;
@@ -22,11 +22,11 @@ public class Person {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        CharSequence f2389a;
+        CharSequence f2341a;
         IconCompat b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f2390c;
+        String f2342c;
         String d;
         boolean e;
         boolean f;
@@ -35,9 +35,9 @@ public class Person {
         }
 
         Builder(Person person) {
-            this.f2389a = person.f2387a;
+            this.f2341a = person.f2339a;
             this.b = person.b;
-            this.f2390c = person.f2388c;
+            this.f2342c = person.f2340c;
             this.d = person.d;
             this.e = person.e;
             this.f = person.f;
@@ -68,20 +68,20 @@ public class Person {
         }
 
         public Builder setName(CharSequence charSequence) {
-            this.f2389a = charSequence;
+            this.f2341a = charSequence;
             return this;
         }
 
         public Builder setUri(String str) {
-            this.f2390c = str;
+            this.f2342c = str;
             return this;
         }
     }
 
     Person(Builder builder) {
-        this.f2387a = builder.f2389a;
+        this.f2339a = builder.f2341a;
         this.b = builder.b;
-        this.f2388c = builder.f2390c;
+        this.f2340c = builder.f2342c;
         this.d = builder.d;
         this.e = builder.e;
         this.f = builder.f;
@@ -109,11 +109,11 @@ public class Person {
     }
 
     public CharSequence getName() {
-        return this.f2387a;
+        return this.f2339a;
     }
 
     public String getUri() {
-        return this.f2388c;
+        return this.f2340c;
     }
 
     public boolean isBot() {
@@ -125,12 +125,12 @@ public class Person {
     }
 
     public String resolveToLegacyUri() {
-        String str = this.f2388c;
+        String str = this.f2340c;
         if (str != null) {
             return str;
         }
-        if (this.f2387a != null) {
-            return "name:" + ((Object) this.f2387a);
+        if (this.f2339a != null) {
+            return "name:" + ((Object) this.f2339a);
         }
         return "";
     }
@@ -145,10 +145,10 @@ public class Person {
 
     public Bundle toBundle() {
         Bundle bundle = new Bundle();
-        bundle.putCharSequence("name", this.f2387a);
+        bundle.putCharSequence("name", this.f2339a);
         IconCompat iconCompat = this.b;
         bundle.putBundle("icon", iconCompat != null ? iconCompat.toBundle() : null);
-        bundle.putString("uri", this.f2388c);
+        bundle.putString("uri", this.f2340c);
         bundle.putString("key", this.d);
         bundle.putBoolean("isBot", this.e);
         bundle.putBoolean("isImportant", this.f);
@@ -157,9 +157,9 @@ public class Person {
 
     public PersistableBundle toPersistableBundle() {
         PersistableBundle persistableBundle = new PersistableBundle();
-        CharSequence charSequence = this.f2387a;
+        CharSequence charSequence = this.f2339a;
         persistableBundle.putString("name", charSequence != null ? charSequence.toString() : null);
-        persistableBundle.putString("uri", this.f2388c);
+        persistableBundle.putString("uri", this.f2340c);
         persistableBundle.putString("key", this.d);
         persistableBundle.putBoolean("isBot", this.e);
         persistableBundle.putBoolean("isImportant", this.f);

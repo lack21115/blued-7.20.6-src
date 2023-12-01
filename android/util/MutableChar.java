@@ -4,7 +4,7 @@ package android.util;
 public final class MutableChar {
     public char value;
 
-    public MutableChar(char c2) {
-        this.value = c2;
+    public MutableChar(char c) {
+        this.value = c;
     }
 }

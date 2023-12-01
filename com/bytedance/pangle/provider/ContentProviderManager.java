@@ -38,16 +38,16 @@ public class ContentProviderManager {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final b f21458a;
+        public final b f7852a;
         public final ProviderInfo b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final PluginContentProvider f21459c;
+        public final PluginContentProvider f7853c;
 
         public a(b bVar, ProviderInfo providerInfo, PluginContentProvider pluginContentProvider) {
             this.b = providerInfo;
-            this.f21458a = bVar;
-            this.f21459c = pluginContentProvider;
+            this.f7852a = bVar;
+            this.f7853c = pluginContentProvider;
         }
     }
 
@@ -55,31 +55,31 @@ public class ContentProviderManager {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f21460a;
+        public final String f7854a;
         public final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final String f21461c;
+        public final String f7855c;
 
         public b(String str, String str2, String str3) {
-            this.f21460a = str2;
+            this.f7854a = str2;
             this.b = str3;
-            this.f21461c = str;
+            this.f7855c = str;
         }
 
         public boolean equals(Object obj) {
             if (obj instanceof b) {
                 b bVar = (b) obj;
-                return TextUtils.equals(this.f21461c, bVar.f21461c) && TextUtils.equals(this.b, bVar.b) && TextUtils.equals(this.f21460a, bVar.f21460a);
+                return TextUtils.equals(this.f7855c, bVar.f7855c) && TextUtils.equals(this.b, bVar.b) && TextUtils.equals(this.f7854a, bVar.f7854a);
             }
             return false;
         }
 
         public int hashCode() {
             if (Build.VERSION.SDK_INT >= 19) {
-                return Objects.hash(this.f21460a, this.b, this.f21461c);
+                return Objects.hash(this.f7854a, this.b, this.f7855c);
             }
-            return (this.f21460a + this.b + this.f21460a).hashCode();
+            return (this.f7854a + this.b + this.f7854a).hashCode();
         }
     }
 
@@ -172,7 +172,7 @@ public class ContentProviderManager {
         if (aVar == null) {
             return null;
         }
-        return aVar.f21459c;
+        return aVar.f7853c;
     }
 
     public Map<String, c> getSystemProviderInfoMap() {

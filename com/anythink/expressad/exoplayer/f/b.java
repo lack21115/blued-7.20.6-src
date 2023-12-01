@@ -84,35 +84,35 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
 
     /* renamed from: com.anythink.expressad.exoplayer.f.b$b  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/f/b$b.class */
-    public static final class C0127b extends Exception {
+    public static final class C0056b extends Exception {
         private static final int e = -50000;
         private static final int f = -49999;
         private static final int g = -49998;
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f7331a;
+        public final String f4492a;
         public final boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final String f7332c;
+        public final String f4493c;
         public final String d;
 
-        public C0127b(m mVar, Throwable th, boolean z, int i) {
+        public C0056b(m mVar, Throwable th, boolean z, int i) {
             super("Decoder init failed: [" + i + "], " + mVar, th);
-            this.f7331a = mVar.h;
+            this.f4492a = mVar.h;
             this.b = z;
-            this.f7332c = null;
+            this.f4493c = null;
             String str = i < 0 ? "neg_" : "";
             this.d = "com.google.android.exoplayer.MediaCodecTrackRenderer_" + str + Math.abs(i);
         }
 
-        public C0127b(m mVar, Throwable th, boolean z, String str) {
+        public C0056b(m mVar, Throwable th, boolean z, String str) {
             super("Decoder init failed: " + str + ", " + mVar, th);
-            this.f7331a = mVar.h;
+            this.f4492a = mVar.h;
             this.b = z;
-            this.f7332c = str;
+            this.f4493c = str;
             String str2 = null;
-            if (af.f7632a >= 21) {
+            if (af.f4793a >= 21) {
                 str2 = null;
                 if (th instanceof MediaCodec.CodecException) {
                     str2 = ((MediaCodec.CodecException) th).getDiagnosticInfo();
@@ -151,7 +151,7 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
 
     public b(int i, com.anythink.expressad.exoplayer.f.c cVar, g<k> gVar, boolean z2) {
         super(i);
-        com.anythink.expressad.exoplayer.k.a.b(af.f7632a >= 16);
+        com.anythink.expressad.exoplayer.k.a.b(af.f4793a >= 16);
         this.E = (com.anythink.expressad.exoplayer.f.c) com.anythink.expressad.exoplayer.k.a.a(cVar);
         this.F = gVar;
         this.G = false;
@@ -179,14 +179,14 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
     }
 
     private void D() {
-        if (af.f7632a < 21) {
+        if (af.f4793a < 21) {
             this.aa = this.P.getInputBuffers();
             this.ab = this.P.getOutputBuffers();
         }
     }
 
     private void E() {
-        if (af.f7632a < 21) {
+        if (af.f4793a < 21) {
             this.aa = null;
             this.ab = null;
         }
@@ -223,7 +223,7 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
     }
 
     private void K() {
-        if (af.f7632a < 21) {
+        if (af.f4793a < 21) {
             this.ab = this.P.getOutputBuffers();
         }
     }
@@ -239,7 +239,7 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
     }
 
     private static boolean M() {
-        if ("Amazon".equals(af.f7633c)) {
+        if ("Amazon".equals(af.f4794c)) {
             return "AFTM".equals(af.d) || "AFTB".equals(af.d);
         }
         return false;
@@ -258,16 +258,16 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
         return a2;
     }
 
-    private void a(C0127b c0127b) {
-        throw com.anythink.expressad.exoplayer.g.a(c0127b, s());
+    private void a(C0056b c0056b) {
+        throw com.anythink.expressad.exoplayer.g.a(c0056b, s());
     }
 
     private static boolean a(String str) {
-        if (af.f7632a >= 18) {
-            if (af.f7632a == 18 && ("OMX.SEC.avc.dec".equals(str) || "OMX.SEC.avc.dec.secure".equals(str))) {
+        if (af.f4793a >= 18) {
+            if (af.f4793a == 18 && ("OMX.SEC.avc.dec".equals(str) || "OMX.SEC.avc.dec.secure".equals(str))) {
                 return true;
             }
-            if (af.f7632a == 19 && af.d.startsWith("SM-G800")) {
+            if (af.f4793a == 19 && af.d.startsWith("SM-G800")) {
                 return "OMX.Exynos.avc.dec".equals(str) || "OMX.Exynos.avc.dec.secure".equals(str);
             }
             return false;
@@ -276,14 +276,14 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
     }
 
     private static boolean a(String str, m mVar) {
-        return af.f7632a < 21 && mVar.j.isEmpty() && "OMX.MTK.VIDEO.DECODER.AVC".equals(str);
+        return af.f4793a < 21 && mVar.j.isEmpty() && "OMX.MTK.VIDEO.DECODER.AVC".equals(str);
     }
 
     private static int b(String str) {
-        if (af.f7632a <= 25 && "OMX.Exynos.avc.dec.secure".equals(str) && (af.d.startsWith("SM-T585") || af.d.startsWith("SM-A510") || af.d.startsWith("SM-A520") || af.d.startsWith("SM-J700"))) {
+        if (af.f4793a <= 25 && "OMX.Exynos.avc.dec.secure".equals(str) && (af.d.startsWith("SM-T585") || af.d.startsWith("SM-A510") || af.d.startsWith("SM-A520") || af.d.startsWith("SM-J700"))) {
             return 2;
         }
-        if (af.f7632a < 24) {
+        if (af.f4793a < 24) {
             if ("OMX.Nvidia.h264.decode".equals(str) || "OMX.Nvidia.h264.decode.secure".equals(str)) {
                 return ("flounder".equals(af.b) || "flounder_lte".equals(af.b) || "grouper".equals(af.b) || "tilapia".equals(af.b)) ? 1 : 0;
             }
@@ -293,7 +293,7 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
     }
 
     private ByteBuffer b(int i) {
-        return af.f7632a >= 21 ? this.P.getInputBuffer(i) : this.aa[i];
+        return af.f4793a >= 21 ? this.P.getInputBuffer(i) : this.aa[i];
     }
 
     private boolean b(long j, long j2) {
@@ -328,7 +328,7 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
                     a(this.P, outputFormat);
                     return true;
                 } else if (dequeueOutputBuffer == -3) {
-                    if (af.f7632a < 21) {
+                    if (af.f4793a < 21) {
                         this.ab = this.P.getOutputBuffers();
                         return true;
                     }
@@ -351,7 +351,7 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
                 return false;
             } else {
                 this.ae = dequeueOutputBuffer;
-                ByteBuffer outputBuffer = af.f7632a >= 21 ? this.P.getOutputBuffer(dequeueOutputBuffer) : this.ab[dequeueOutputBuffer];
+                ByteBuffer outputBuffer = af.f4793a >= 21 ? this.P.getOutputBuffer(dequeueOutputBuffer) : this.ab[dequeueOutputBuffer];
                 this.af = outputBuffer;
                 if (outputBuffer != null) {
                     outputBuffer.position(this.L.offset);
@@ -404,15 +404,15 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
     }
 
     private static boolean b(com.anythink.expressad.exoplayer.f.a aVar) {
-        String str = aVar.f7330c;
-        if (af.f7632a > 17 || !("OMX.rk.video_decoder.avc".equals(str) || "OMX.allwinner.video.decoder.avc".equals(str))) {
-            return "Amazon".equals(af.f7633c) && "AFTS".equals(af.d) && aVar.h;
+        String str = aVar.f4491c;
+        if (af.f4793a > 17 || !("OMX.rk.video_decoder.avc".equals(str) || "OMX.allwinner.video.decoder.avc".equals(str))) {
+            return "Amazon".equals(af.f4794c) && "AFTS".equals(af.d) && aVar.h;
         }
         return true;
     }
 
     private static boolean b(String str, m mVar) {
-        return af.f7632a <= 18 && mVar.u == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str);
+        return af.f4793a <= 18 && mVar.u == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str);
     }
 
     private boolean b(boolean z2) {
@@ -430,12 +430,12 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
     }
 
     private ByteBuffer c(int i) {
-        return af.f7632a >= 21 ? this.P.getOutputBuffer(i) : this.ab[i];
+        return af.f4793a >= 21 ? this.P.getOutputBuffer(i) : this.ab[i];
     }
 
     private static boolean c(String str) {
-        if (af.f7632a > 23 || !"OMX.google.vorbis.decoder".equals(str)) {
-            if (af.f7632a > 19 || !"hb2000".equals(af.b)) {
+        if (af.f4793a > 23 || !"OMX.google.vorbis.decoder".equals(str)) {
+            if (af.f4793a > 19 || !"hb2000".equals(af.b)) {
                 return false;
             }
             return "OMX.amlogic.avc.decoder.awesome".equals(str) || "OMX.amlogic.avc.decoder.awesome.secure".equals(str);
@@ -460,7 +460,7 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
     }
 
     private static boolean d(String str) {
-        return af.f7632a == 21 && "OMX.google.aac.decoder".equals(str);
+        return af.f4793a == 21 && "OMX.google.aac.decoder".equals(str);
     }
 
     public void A() {
@@ -470,7 +470,7 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
         this.ao = false;
         this.ag = false;
         this.K.clear();
-        if (af.f7632a < 21) {
+        if (af.f4793a < 21) {
             this.aa = null;
             this.ab = null;
         }
@@ -604,7 +604,7 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
                 }
                 return;
             }
-            b(this.J.f7721a);
+            b(this.J.f4882a);
         }
         x();
         if (this.P != null) {
@@ -620,7 +620,7 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
         this.I.a();
         int a3 = a(this.J, this.I, false);
         if (a3 == -5) {
-            b(this.J.f7721a);
+            b(this.J.f4882a);
         } else if (a3 == -4) {
             com.anythink.expressad.exoplayer.k.a.b(this.I.c());
             this.am = true;
@@ -783,7 +783,7 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
             }
             z2 = a3;
             mediaCrypto = a2;
-            if ("Amazon".equals(af.f7633c) && ("AFTM".equals(af.d) || "AFTB".equals(af.d))) {
+            if ("Amazon".equals(af.f4794c) && ("AFTM".equals(af.d) || "AFTB".equals(af.d))) {
                 int e2 = this.N.e();
                 if (e2 == 1) {
                     throw com.anythink.expressad.exoplayer.g.a(this.N.f(), s());
@@ -806,29 +806,29 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
                     com.anythink.expressad.exoplayer.f.a a5 = a(this.E, this.M, false);
                     this.Q = a5;
                     if (a5 != null) {
-                        Log.w(r, "Drm session requires secure decoder for " + str + ", but no secure decoder available. Trying to proceed with " + this.Q.f7330c + ".");
+                        Log.w(r, "Drm session requires secure decoder for " + str + ", but no secure decoder available. Trying to proceed with " + this.Q.f4491c + ".");
                     }
                 }
             } catch (d.b e3) {
-                a(new C0127b(this.M, e3, z2, -49998));
+                a(new C0056b(this.M, e3, z2, -49998));
             }
             if (this.Q == null) {
-                a(new C0127b(this.M, (Throwable) null, z2, -49999));
+                a(new C0056b(this.M, (Throwable) null, z2, -49999));
             }
         }
         if (a(this.Q)) {
-            String str2 = this.Q.f7330c;
-            this.R = (af.f7632a <= 25 && "OMX.Exynos.avc.dec.secure".equals(str2) && (af.d.startsWith("SM-T585") || af.d.startsWith("SM-A510") || af.d.startsWith("SM-A520") || af.d.startsWith("SM-J700"))) ? 2 : (af.f7632a >= 24 || !(("OMX.Nvidia.h264.decode".equals(str2) || "OMX.Nvidia.h264.decode.secure".equals(str2)) && ("flounder".equals(af.b) || "flounder_lte".equals(af.b) || "grouper".equals(af.b) || "tilapia".equals(af.b)))) ? 0 : 1;
-            this.S = af.f7632a < 21 && this.M.j.isEmpty() && "OMX.MTK.VIDEO.DECODER.AVC".equals(str2);
-            this.T = af.f7632a < 18 || (af.f7632a == 18 && ("OMX.SEC.avc.dec".equals(str2) || "OMX.SEC.avc.dec.secure".equals(str2))) || (af.f7632a == 19 && af.d.startsWith("SM-G800") && ("OMX.Exynos.avc.dec".equals(str2) || "OMX.Exynos.avc.dec.secure".equals(str2)));
+            String str2 = this.Q.f4491c;
+            this.R = (af.f4793a <= 25 && "OMX.Exynos.avc.dec.secure".equals(str2) && (af.d.startsWith("SM-T585") || af.d.startsWith("SM-A510") || af.d.startsWith("SM-A520") || af.d.startsWith("SM-J700"))) ? 2 : (af.f4793a >= 24 || !(("OMX.Nvidia.h264.decode".equals(str2) || "OMX.Nvidia.h264.decode.secure".equals(str2)) && ("flounder".equals(af.b) || "flounder_lte".equals(af.b) || "grouper".equals(af.b) || "tilapia".equals(af.b)))) ? 0 : 1;
+            this.S = af.f4793a < 21 && this.M.j.isEmpty() && "OMX.MTK.VIDEO.DECODER.AVC".equals(str2);
+            this.T = af.f4793a < 18 || (af.f4793a == 18 && ("OMX.SEC.avc.dec".equals(str2) || "OMX.SEC.avc.dec.secure".equals(str2))) || (af.f4793a == 19 && af.d.startsWith("SM-G800") && ("OMX.Exynos.avc.dec".equals(str2) || "OMX.Exynos.avc.dec.secure".equals(str2)));
             com.anythink.expressad.exoplayer.f.a aVar = this.Q;
-            String str3 = aVar.f7330c;
-            this.U = (af.f7632a <= 17 && ("OMX.rk.video_decoder.avc".equals(str3) || "OMX.allwinner.video.decoder.avc".equals(str3))) || ("Amazon".equals(af.f7633c) && "AFTS".equals(af.d) && aVar.h);
-            this.V = (af.f7632a <= 23 && "OMX.google.vorbis.decoder".equals(str2)) || (af.f7632a <= 19 && "hb2000".equals(af.b) && ("OMX.amlogic.avc.decoder.awesome".equals(str2) || "OMX.amlogic.avc.decoder.awesome.secure".equals(str2)));
-            this.W = af.f7632a == 21 && "OMX.google.aac.decoder".equals(str2);
+            String str3 = aVar.f4491c;
+            this.U = (af.f4793a <= 17 && ("OMX.rk.video_decoder.avc".equals(str3) || "OMX.allwinner.video.decoder.avc".equals(str3))) || ("Amazon".equals(af.f4794c) && "AFTS".equals(af.d) && aVar.h);
+            this.V = (af.f4793a <= 23 && "OMX.google.vorbis.decoder".equals(str2)) || (af.f4793a <= 19 && "hb2000".equals(af.b) && ("OMX.amlogic.avc.decoder.awesome".equals(str2) || "OMX.amlogic.avc.decoder.awesome.secure".equals(str2)));
+            this.W = af.f4793a == 21 && "OMX.google.aac.decoder".equals(str2);
             m mVar2 = this.M;
             boolean z3 = false;
-            if (af.f7632a <= 18) {
+            if (af.f4793a <= 18) {
                 z3 = false;
                 if (mVar2.u == 1) {
                     z3 = false;
@@ -851,18 +851,18 @@ public abstract class b extends com.anythink.expressad.exoplayer.a {
                 ad.a();
                 long elapsedRealtime2 = SystemClock.elapsedRealtime();
                 a(str2, elapsedRealtime2, elapsedRealtime2 - elapsedRealtime);
-                if (af.f7632a < 21) {
+                if (af.f4793a < 21) {
                     this.aa = this.P.getInputBuffers();
                     this.ab = this.P.getOutputBuffers();
                 }
             } catch (Exception e4) {
-                a(new C0127b(this.M, e4, z2, str2));
+                a(new C0056b(this.M, e4, z2, str2));
             }
             this.ac = a_() == 2 ? SystemClock.elapsedRealtime() + 1000 : -9223372036854775807L;
             G();
             H();
             this.ap = true;
-            this.q.f7224a++;
+            this.q.f4385a++;
         }
     }
 

@@ -15,8 +15,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.viewpager.widget.PagerAdapter;
+import com.amap.api.fence.GeoFence;
 import com.amap.api.location.CoordinateConverter;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
@@ -83,7 +86,6 @@ import com.blued.das.client.feed.FeedProtos;
 import com.blued.das.client.socialnet.SocialNetWorkProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.igexin.c.a.c.a.d;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -106,9 +108,7 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/fragment/EventDetailsFragment.class */
 public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsViewModel> implements View.OnClickListener {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f19535c;
+    private final ViewBindingProperty c;
     private BasePopupView d;
     private final Lazy e;
     private final Lazy f;
@@ -127,9 +127,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
     private boolean s;
     private BottomMenuPop t;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(EventDetailsFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FragmentEventDetailsBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19534a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/fragment/EventDetailsFragment$Companion.class */
@@ -148,7 +146,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             }
             Bundle bundle = new Bundle();
             bundle.putString("event_id", str);
-            bundle.putSerializable(d.d, eventLogData);
+            bundle.putSerializable("log_data", eventLogData);
             TerminalActivity.a(bundle);
             TerminalActivity.d(context, EventDetailsFragment.class, bundle);
         }
@@ -157,9 +155,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/fragment/EventDetailsFragment$MyAdapter.class */
     public static final class MyAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final List<String> f19536a;
+        private final List<String> a;
         private final List<Fragment> b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -168,33 +164,28 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             Intrinsics.e(fm, "fm");
             Intrinsics.e(mTabs, "mTabs");
             Intrinsics.e(mTabsFragments, "mTabsFragments");
-            this.f19536a = mTabs;
+            this.a = mTabs;
             this.b = mTabsFragments;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
             super.destroyItem(container, i, object);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f19536a.size();
+            return this.a.size();
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             return this.b.get(i);
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public long getItemId(int i) {
             return this.b.get(i).hashCode();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getItemPosition(Object object) {
             Intrinsics.e(object, "object");
             if (object instanceof Fragment) {
@@ -207,12 +198,10 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             return super.getItemPosition(object);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return this.f19536a.get(i);
+            return this.a.get(i);
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup container, int i) {
             Intrinsics.e(container, "container");
             Object instantiateItem = super.instantiateItem(container, i);
@@ -223,7 +212,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
 
     public EventDetailsFragment() {
         super(R.layout.fragment_event_details);
-        this.f19535c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<EventDetailsFragment, FragmentEventDetailsBinding>() { // from class: com.blued.community.ui.event.fragment.EventDetailsFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<EventDetailsFragment, FragmentEventDetailsBinding>() { // from class: com.blued.community.ui.event.fragment.EventDetailsFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentEventDetailsBinding invoke(EventDetailsFragment fragment) {
@@ -357,7 +346,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void F() {
-        EventHttpUtils eventHttpUtils = EventHttpUtils.f19079a;
+        EventHttpUtils eventHttpUtils = EventHttpUtils.a;
         final ActivityFragmentActive fragmentActive = getFragmentActive();
         eventHttpUtils.e(new BluedUIHttpResponse<BluedEntityA<Object>>(fragmentActive) { // from class: com.blued.community.ui.event.fragment.EventDetailsFragment$requestSignIn$1
             /* JADX INFO: Access modifiers changed from: protected */
@@ -367,7 +356,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
                 EventDetailsViewModel j;
                 Intrinsics.e(parseData, "parseData");
                 ToastUtils.a(R.string.sign_in_success);
-                CommEventBusUtil commEventBusUtil = CommEventBusUtil.f20461a;
+                CommEventBusUtil commEventBusUtil = CommEventBusUtil.a;
                 j = EventDetailsFragment.this.j();
                 commEventBusUtil.c(j.i());
             }
@@ -383,7 +372,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         if (eventLogData2 != null) {
             eventLogData2.setSourcePage(FeedProtos.SourcePage.ACTIVITY_DETAIL);
         }
-        EventUserInfoDlgFragment.f19559a.a(getParentFragmentManager(), a().j().uid, a().i(), this.q);
+        EventUserInfoDlgFragment.a.a(getParentFragmentManager(), a().j().uid, a().i(), this.q);
     }
 
     private final void H() {
@@ -397,7 +386,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             return;
         }
         if (EventMethods.a(a().j().uid) || a().j().join_num > 0) {
-            EventMemberFragment.Companion companion = EventMemberFragment.f19551a;
+            EventMemberFragment.Companion companion = EventMemberFragment.a;
             String i = a().i();
             String str = a().j().uid;
             Intrinsics.c(str, "mViewModel.eventData.uid");
@@ -406,15 +395,15 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
     }
 
     private final void J() {
-        EventDetailsModel value;
+        EventDetailsModel eventDetailsModel;
         this.s = true;
         EventTrackFeed.l(FeedProtos.Event.ACTIVITY_DETAIL_EVALUATE_CLICK, a().i());
         EventTrackFeed.j(FeedProtos.Event.ACTIVITY_COMMENT_CLICK, a().i());
         FragmentManager fragmentManager = getFragmentManager();
-        if (fragmentManager == null || (value = a().d().getValue()) == null) {
+        if (fragmentManager == null || (eventDetailsModel = (EventDetailsModel) a().d().getValue()) == null) {
             return;
         }
-        EventScoreDialogFragment.f19526a.a(value, fragmentManager);
+        EventScoreDialogFragment.a.a(eventDetailsModel, fragmentManager);
     }
 
     private final void K() {
@@ -442,9 +431,9 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         if (s == null) {
             return;
         }
-        s.f18851a.setVisibility(8);
+        s.a.setVisibility(8);
         this.k.cancel();
-        s.f18851a.clearAnimation();
+        s.a.clearAnimation();
         Timer timer = this.m;
         if (timer == null) {
             return;
@@ -454,7 +443,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
 
     private final void N() {
         EventTrackFeed.j(FeedProtos.Event.ACTIVITY_SHARE_CLICK, a().i());
-        CommunityShareUtils.b().a(getContext(), a().d().getValue());
+        CommunityShareUtils.b().a(getContext(), (EventDetailsModel) a().d().getValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -495,7 +484,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         if (s != null && s.q.getVisibility() == 0) {
             tabPageIndicatorWithDot.f = i;
             this.j = i;
-            int a2 = StatusBarHelper.a((Context) getActivity()) + s.M.getHeight();
+            int a2 = StatusBarHelper.a(getActivity()) + s.M.getHeight();
             if (i == 0) {
                 int[] iArr = new int[2];
                 s.q.getLocationOnScreen(iArr);
@@ -503,7 +492,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             } else if (i != 1) {
             } else {
                 int[] iArr2 = new int[2];
-                s.f18853c.getLocationOnScreen(iArr2);
+                s.c.getLocationOnScreen(iArr2);
                 s.R.smoothScrollBy(0, (iArr2[1] - a2) - this.n);
             }
         }
@@ -521,13 +510,13 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         float f = 1;
         float f2 = intValue;
         float f3 = f2 / 24;
-        ViewGroup.LayoutParams layoutParams = viewBinding.f18851a.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams = viewBinding.a.getLayoutParams();
         if (this$0.getActivity() != null) {
             layoutParams.width = i + DensityUtils.a(this$0.getActivity(), f2);
             layoutParams.height = i2 + DensityUtils.a(this$0.getActivity(), f2);
-            ShapeHelper.a(viewBinding.f18851a, layoutParams.width);
-            viewBinding.f18851a.setLayoutParams(layoutParams);
-            viewBinding.f18851a.setAlpha(f - f3);
+            ShapeHelper.a(viewBinding.a, layoutParams.width);
+            viewBinding.a.setLayoutParams(layoutParams);
+            viewBinding.a.setAlpha(f - f3);
         }
     }
 
@@ -538,14 +527,14 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         if (viewBinding.q.getVisibility() == 0) {
             int[] iArr = new int[2];
             viewBinding.q.getLocationOnScreen(iArr);
-            if (iArr[1] <= StatusBarHelper.a((Context) this$0.getActivity()) + viewBinding.M.getHeight()) {
+            if (iArr[1] <= StatusBarHelper.a(this$0.getActivity()) + viewBinding.M.getHeight()) {
                 viewBinding.r.setVisibility(0);
             } else {
                 viewBinding.r.setVisibility(4);
             }
             int[] iArr2 = new int[2];
-            viewBinding.f18853c.getLocationOnScreen(iArr2);
-            if (iArr2[1] <= StatusBarHelper.a((Context) this$0.getActivity()) + viewBinding.M.getHeight() + this$0.n) {
+            viewBinding.c.getLocationOnScreen(iArr2);
+            if (iArr2[1] <= StatusBarHelper.a(this$0.getActivity()) + viewBinding.M.getHeight() + this$0.n) {
                 viewBinding.S.f = 1;
                 viewBinding.S.a(1);
                 viewBinding.S.postInvalidate();
@@ -656,7 +645,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
     public static final void a(EventDetailsFragment this$0, Ref.ObjectRef userModel, View view) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(userModel, "$userModel");
-        this$0.a(((UserBasicModel) userModel.f42545a).uid);
+        this$0.a(((UserBasicModel) userModel.a).uid);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -710,7 +699,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         Intrinsics.e(model, "$model");
         Intrinsics.e(this$0, "this$0");
         EventTrackFeed.h(FeedProtos.Event.ACTIVITY_DETAIL_PHOTO_CLICK, model.id, (String) baseQuickAdapter.getItem(i));
-        CommunityServiceManager.b().a(this$0.getActivity(), model.scene_images, i, 0, (LoadOptions) null);
+        CommunityServiceManager.b().a((Context) this$0.getActivity(), model.scene_images, i, 0, (LoadOptions) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -720,7 +709,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             return;
         }
         Bundle bundle = new Bundle();
-        bundle.putString("from", "event");
+        bundle.putString("from", GeoFence.BUNDLE_KEY_FENCESTATUS);
         bundle.putString("event_id", a().j().id);
         CommunityServiceManager.b().a(getContext(), bundle);
     }
@@ -737,7 +726,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         if (eventLogData2 != null) {
             eventLogData2.setSourcePage(FeedProtos.SourcePage.ACTIVITY_DETAIL);
         }
-        EventUserInfoDlgFragment.f19559a.a(getParentFragmentManager(), str, a().i(), this.q);
+        EventUserInfoDlgFragment.a.a(getParentFragmentManager(), str, a().i(), this.q);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -748,13 +737,12 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         }
         if (!(!list.isEmpty())) {
             s.q.setVisibility(8);
-            s.f18853c.setVisibility(8);
+            s.c.setVisibility(8);
             return;
         }
-        s.f18853c.setVisibility(0);
+        s.c.setVisibility(0);
         r().setNewData(list);
         r().setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$l9zggLltiAaRPZFL-4uCk4Y5Obs
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 EventDetailsFragment.a(EventDetailsFragment.this, baseQuickAdapter, view, i);
             }
@@ -809,7 +797,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         if (eventLogData != null) {
             eventLogData.setSourcePage(FeedProtos.SourcePage.ACTIVITY_FEED_DETAIL);
         }
-        Companion companion = f19534a;
+        Companion companion = a;
         Context requireContext = this$0.requireContext();
         Intrinsics.c(requireContext, "requireContext()");
         companion.a(requireContext, eventDetailsModel.id, this$0.q);
@@ -848,7 +836,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             textView2.setText(context2 == null ? null : context2.getString(R.string.event_score_none));
         } else {
             TextView textView3 = s.aD;
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String string = requireContext().getString(R.string.event_details_score);
             Intrinsics.c(string, "requireContext().getStri…ring.event_details_score)");
             String format = String.format(string, Arrays.copyOf(new Object[]{Float.valueOf(eventDetailsModel.score)}, 1));
@@ -871,7 +859,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             s.ag.setVisibility(8);
         } else {
             TextView textView4 = s.ag;
-            StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
             String string2 = getString(R.string.feed_ip_location);
             Intrinsics.c(string2, "getString(R.string.feed_ip_location)");
             String format2 = String.format(string2, Arrays.copyOf(new Object[]{eventDetailsModel.ip_location}, 1));
@@ -923,7 +911,6 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             EventTrackFeed.j(FeedProtos.Event.ACTIVITY_DETAIL_MORE_BTN_SHOW, a().j().id);
         }
         q().setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$LSiQ2gUhSDsnSoilCEFQ0nBaVbk
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 EventDetailsFragment.b(EventDetailsFragment.this, baseQuickAdapter, view, i);
             }
@@ -981,7 +968,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             if (eventLogData != null) {
                 eventLogData.setSourcePage(FeedProtos.SourcePage.ACTIVITY_DETAIL);
             }
-            EventSignDlgFragment.f19553a.a(getParentFragmentManager(), a().i(), this.q);
+            EventSignDlgFragment.a.a(getParentFragmentManager(), a().i(), this.q);
             CommunityPreferences.h(a().i());
         }
     }
@@ -1009,7 +996,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         }
         this.r = EventMethods.a(eventDetailsModel);
         if (eventDetailsModel.status == 1 && eventDetailsModel.apply_status == 1 && eventDetailsModel.is_sign_in == 1 && eventDetailsModel.evaluate_status == 0) {
-            this.r = CommunityManager.f19086a.a().s() ? R.drawable.icon_event_signed_dark : R.drawable.icon_event_signed;
+            this.r = CommunityManager.a.a().s() ? R.drawable.icon_event_signed_dark : R.drawable.icon_event_signed;
         }
         if (this.r == 0) {
             s.x.setVisibility(8);
@@ -1055,11 +1042,11 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
                 return;
             }
             final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-            objectRef.f42545a = eventDetailsModel.joiners.get(i2);
+            objectRef.a = eventDetailsModel.joiners.get(i2);
             View inflate = getLayoutInflater().inflate(R.layout.item_event_detail_joiners, (ViewGroup) null);
             inflate.setPadding(0, 0, a2, 0);
-            ImageLoader.a(getFragmentActive(), ((UserBasicModel) objectRef.f42545a).avatar).b(R.drawable.user_bg_round).c().a((ImageView) inflate.findViewById(R.id.item_event_detail_joiner_avatar));
-            ((TextView) inflate.findViewById(R.id.item_event_detail_joiner_name)).setText(((UserBasicModel) objectRef.f42545a).name);
+            ImageLoader.a(getFragmentActive(), ((UserBasicModel) objectRef.a).avatar).b(R.drawable.user_bg_round).c().a((ImageView) inflate.findViewById(R.id.item_event_detail_joiner_avatar));
+            ((TextView) inflate.findViewById(R.id.item_event_detail_joiner_name)).setText(((UserBasicModel) objectRef.a).name);
             inflate.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$Y4fiE5ACU8c1a14spdLhVwVWH78
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -1101,7 +1088,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             return;
         }
         TextView textView = s.n;
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = getString(R.string.event_signed_num);
         Intrinsics.c(string, "getString(R.string.event_signed_num)");
         String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(eventDetailsModel.activity_sign_num)}, 1));
@@ -1218,7 +1205,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             s.ao.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$rN_5uv0kx_KUwfviTrBoVyogw54
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    EventDetailsFragment.a(Context.this, eventDetailsModel, view);
+                    EventDetailsFragment.a(context, eventDetailsModel, view);
                 }
             });
         } else if (eventDetailsModel.mode_id == 1) {
@@ -1266,7 +1253,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         if (context == null) {
             return;
         }
-        EventListFragment.f19546a.a(context);
+        EventListFragment.a.a(context);
         EventTrackFeed.j(FeedProtos.Event.ACTIVITY_DETAIL_MORE_BTN_CLICK, this$0.a().j().id);
     }
 
@@ -1330,7 +1317,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
     }
 
     private final FragmentEventDetailsBinding s() {
-        return (FragmentEventDetailsBinding) this.f19535c.b(this, b[0]);
+        return (FragmentEventDetailsBinding) this.c.b(this, b[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1361,27 +1348,23 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
     }
 
     private final void v() {
-        EventDetailsFragment eventDetailsFragment = this;
-        LiveEventBus.get("EVENT_BUS_ACTIVITY_SIGN_IN_SUCCESS", String.class).observe(eventDetailsFragment, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$WlXc2SU-FmSHAzaRB-ydnNwhJkQ
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("EVENT_BUS_ACTIVITY_SIGN_IN_SUCCESS", String.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$WlXc2SU-FmSHAzaRB-ydnNwhJkQ
             public final void onChanged(Object obj) {
                 EventDetailsFragment.a(EventDetailsFragment.this, (String) obj);
             }
         });
-        LiveEventBus.get("EVENT_BUS_ACTIVITY_SUBSCRIBE_SUCCESS", String.class).observe(eventDetailsFragment, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$oaGIM9Y29eWSjDoxgEwMEcYESdc
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("EVENT_BUS_ACTIVITY_SUBSCRIBE_SUCCESS", String.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$oaGIM9Y29eWSjDoxgEwMEcYESdc
             public final void onChanged(Object obj) {
                 EventDetailsFragment.b(EventDetailsFragment.this, (String) obj);
             }
         });
-        LiveEventBus.get("EVENT_BUS_ACTIVITY_CANCEL_SUBSCRIBE", String.class).observe(eventDetailsFragment, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$v3d2pk6_VLGZY_nFdexQsIilEzM
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("EVENT_BUS_ACTIVITY_CANCEL_SUBSCRIBE", String.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$v3d2pk6_VLGZY_nFdexQsIilEzM
             public final void onChanged(Object obj) {
                 EventDetailsFragment.c(EventDetailsFragment.this, (String) obj);
             }
         });
-        LiveEventBus.get("EVENT_BUS_ACTIVITY_SCORED", EventDetailsModel.class).observe(eventDetailsFragment, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$QUNX0NGLN-84E1e009tOB4GxNl4
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("EVENT_BUS_ACTIVITY_SCORED", EventDetailsModel.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$QUNX0NGLN-84E1e009tOB4GxNl4
             public final void onChanged(Object obj) {
                 EventDetailsFragment.b(EventDetailsFragment.this, (EventDetailsModel) obj);
             }
@@ -1393,7 +1376,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         if (s == null || getContext() == null) {
             return;
         }
-        s.Y.getLayoutParams().height = StatusBarHelper.a((Context) getActivity());
+        s.Y.getLayoutParams().height = StatusBarHelper.a(getActivity());
         s.V.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$-pW2DMuct_e8sMfyjb-eug_uJe8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -1428,7 +1411,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         this.t = new BottomMenuPop(context);
         ArrayList arrayList = new ArrayList();
         BottomMenuPop.MenuItemInfo menuItemInfo = new BottomMenuPop.MenuItemInfo();
-        menuItemInfo.f11214a = context.getString(R.string.event_cancel_registration);
+        menuItemInfo.a = context.getString(R.string.event_cancel_registration);
         menuItemInfo.b = R.color.syc_h;
         menuItemInfo.d = new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$j6WEvJiCEZkA1XQtjJuXi_6ottY
             @Override // android.view.View.OnClickListener
@@ -1437,7 +1420,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
             }
         };
         BottomMenuPop.MenuItemInfo menuItemInfo2 = new BottomMenuPop.MenuItemInfo();
-        menuItemInfo2.f11214a = context.getString(R.string.report);
+        menuItemInfo2.a = context.getString(R.string.report);
         menuItemInfo2.b = R.color.syc_h;
         menuItemInfo2.d = new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$ZCRTpPo2b7AtmwJHO-srdyIhBLY
             @Override // android.view.View.OnClickListener
@@ -1496,13 +1479,13 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         t2.add(string2);
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
-        MyAdapter myAdapter = new MyAdapter(childFragmentManager, t(), u());
+        PagerAdapter myAdapter = new MyAdapter(childFragmentManager, t(), u());
         CustomViewPager customViewPager = new CustomViewPager(getContext(), null);
         customViewPager.setAdapter(myAdapter);
         s.S.setViewPager(customViewPager);
         FragmentManager childFragmentManager2 = getChildFragmentManager();
         Intrinsics.c(childFragmentManager2, "childFragmentManager");
-        MyAdapter myAdapter2 = new MyAdapter(childFragmentManager2, t(), u());
+        PagerAdapter myAdapter2 = new MyAdapter(childFragmentManager2, t(), u());
         CustomViewPager customViewPager2 = new CustomViewPager(getContext(), null);
         customViewPager2.setAdapter(myAdapter2);
         s.T.setViewPager(customViewPager2);
@@ -1535,11 +1518,11 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         ShapeFrameLayout shapeFrameLayout2;
         ShapeLinearLayout shapeLinearLayout;
         Context context;
-        StatusBarHelper.a((Activity) getActivity(), false);
+        StatusBarHelper.a(getActivity(), false);
         w();
         Bundle arguments = getArguments();
         if (arguments != null) {
-            this.q = (EventLogData) arguments.getSerializable(d.d);
+            this.q = (EventLogData) arguments.getSerializable("log_data");
         }
         final FragmentEventDetailsBinding s = s();
         if (s != null && (context = getContext()) != null) {
@@ -1567,7 +1550,7 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
                     EventDetailsFragment.a(EventDetailsFragment.this, s);
                 }
             });
-            if (CommunityManager.f19086a.a().s()) {
+            if (CommunityManager.a.a().s()) {
                 s.S.setRealTextColor(R.color.syc_EAEAEA);
                 s.S.setRealTabTextColorUnfocused(R.color.syc_dark_989898);
                 s.T.setRealTextColor(R.color.syc_EAEAEA);
@@ -1640,16 +1623,15 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        EventDetailsFragment eventDetailsFragment = this;
-        LifecycleExtKt.a(eventDetailsFragment, a().d(), new EventDetailsFragment$liveDataObserver$1(this));
-        LifecycleExtKt.a(eventDetailsFragment, a().f(), new EventDetailsFragment$liveDataObserver$2(this));
-        LifecycleExtKt.a(eventDetailsFragment, a().g(), new EventDetailsFragment$liveDataObserver$3(this));
-        LifecycleExtKt.a(eventDetailsFragment, a().p(), new EventDetailsFragment$liveDataObserver$4(this));
-        LifecycleExtKt.a(eventDetailsFragment, a().o(), new EventDetailsFragment$liveDataObserver$5(this));
-        LifecycleExtKt.a(eventDetailsFragment, a().e(), new EventDetailsFragment$liveDataObserver$6(this));
-        LifecycleExtKt.a(eventDetailsFragment, a().h(), new EventDetailsFragment$liveDataObserver$7(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, a().d(), new EventDetailsFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, a().f(), new EventDetailsFragment$liveDataObserver$2(this));
+        LifecycleExtKt.a(lifecycleOwner, a().g(), new EventDetailsFragment$liveDataObserver$3(this));
+        LifecycleExtKt.a(lifecycleOwner, a().p(), new EventDetailsFragment$liveDataObserver$4(this));
+        LifecycleExtKt.a(lifecycleOwner, a().o(), new EventDetailsFragment$liveDataObserver$5(this));
+        LifecycleExtKt.a(lifecycleOwner, a().e(), new EventDetailsFragment$liveDataObserver$6(this));
+        LifecycleExtKt.a(lifecycleOwner, a().h(), new EventDetailsFragment$liveDataObserver$7(this));
         LiveEventBus.get("event_examine_user", Boolean.TYPE).observeForever(new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventDetailsFragment$dN0xYRVtRfl6DF0LNJAu5kYiPEc
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 EventDetailsFragment.a(EventDetailsFragment.this, (Boolean) obj);
             }
@@ -1691,12 +1673,12 @@ public final class EventDetailsFragment extends MVVMBaseFragment<EventDetailsVie
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroyView() {
         super.onDestroyView();
-        FragmentActivity activity = getActivity();
+        Activity activity = getActivity();
         if (activity != null) {
-            StatusBarHelper.a((Activity) activity, true);
+            StatusBarHelper.a(activity, true);
         }
         M();
         Timer timer = this.m;

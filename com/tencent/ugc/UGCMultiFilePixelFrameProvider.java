@@ -55,7 +55,7 @@ public class UGCMultiFilePixelFrameProvider implements UGCFrameQueue.UGCFrameQue
     private PixelFrame copyPixelFrame(PixelFrame pixelFrame) {
         if (pixelFrame instanceof e.b) {
             e.b bVar = (e.b) pixelFrame;
-            return bVar.f36634a.a(bVar.getGLContext());
+            return bVar.f22943a.a(bVar.getGLContext());
         }
         return null;
     }

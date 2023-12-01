@@ -10,21 +10,17 @@ import com.blued.android.module.yy_china.view.YYBaseUserHeadView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyRelationshipRoomUsersItemBinding.class */
 public final class ItemYyRelationshipRoomUsersItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16804a;
+    public final ShapeTextView a;
     public final YYBaseUserHeadView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16805c;
+    public final TextView c;
     public final TextView d;
     private final ConstraintLayout e;
 
     private ItemYyRelationshipRoomUsersItemBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, YYBaseUserHeadView yYBaseUserHeadView, TextView textView, TextView textView2) {
         this.e = constraintLayout;
-        this.f16804a = shapeTextView;
+        this.a = shapeTextView;
         this.b = yYBaseUserHeadView;
-        this.f16805c = textView;
+        this.c = textView;
         this.d = textView2;
     }
 
@@ -53,7 +49,6 @@ public final class ItemYyRelationshipRoomUsersItemBinding implements ViewBinding
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.e;

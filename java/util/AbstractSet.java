@@ -2,7 +2,7 @@ package java.util;
 
 /* loaded from: source-2895416-dex2jar.jar:java/util/AbstractSet.class */
 public abstract class AbstractSet<E> extends AbstractCollection<E> implements Set<E> {
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean equals(Object obj) {
         boolean z;
         boolean z2 = false;
@@ -28,7 +28,7 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
         return z2;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public int hashCode() {
         int i = 0;
         Iterator<E> it = iterator();
@@ -39,7 +39,7 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
         return i;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         boolean z;
         boolean z2 = false;

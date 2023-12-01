@@ -12,11 +12,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class BluedBus {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<Class, List<SubscriberMethod>> f28297a = new HashMap();
+    private Map<Class, List<SubscriberMethod>> f14607a = new HashMap();
     private Map<String, CopyOnWriteArrayList<Subscription>> b = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<Class, List<String>> f28298c = new HashMap();
+    private Map<Class, List<String>> f14608c = new HashMap();
     private final MainThreadSupport d;
     private final Poster e;
 
@@ -40,7 +40,7 @@ public class BluedBus {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(PendingPost pendingPost) {
-        Object[] objArr = pendingPost.f28302a;
+        Object[] objArr = pendingPost.f14612a;
         Subscription subscription = pendingPost.b;
         PendingPost.a(pendingPost);
         a(subscription, objArr);
@@ -48,7 +48,7 @@ public class BluedBus {
 
     void a(Subscription subscription, Object[] objArr) {
         try {
-            subscription.b.f28305a.invoke(subscription.f28306a, objArr);
+            subscription.b.f14615a.invoke(subscription.f14616a, objArr);
         } catch (Exception e) {
             Logger.a("drb", "Exception = ", e);
         }

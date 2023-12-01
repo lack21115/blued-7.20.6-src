@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.map.lib.models.GeoPoint;
 import com.tencent.map.lib.models.PolygonInfo;
 import com.tencent.map.tools.Callback;
@@ -88,11 +87,11 @@ public class Cif implements AoiLayer {
         public final /* synthetic */ List b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ List f37556c;
+        public final /* synthetic */ List f23865c;
 
         public c(List list, List list2) {
             this.b = list;
-            this.f37556c = list2;
+            this.f23865c = list2;
         }
 
         @Override // com.tencent.mapsdk.internal.ca.c, com.tencent.map.tools.Callback
@@ -101,12 +100,12 @@ public class Cif implements AoiLayer {
                 return;
             }
             int size = this.b.size();
-            int size2 = this.f37556c.size();
+            int size2 = this.f23865c.size();
             if (size != size2) {
                 String str = Cif.q;
-                na.g(str, "PoiLayer的子点渲染缺失！！count:" + size2 + BridgeUtil.SPLIT_MARK + size);
+                na.g(str, "PoiLayer的子点渲染缺失！！count:" + size2 + "/" + size);
             }
-            Cif.this.d(this.f37556c);
+            Cif.this.d(this.f23865c);
         }
     }
 
@@ -115,7 +114,7 @@ public class Cif implements AoiLayer {
     public class d extends ca.i<Object> {
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ List f37557c;
+        public final /* synthetic */ List f23866c;
         public final /* synthetic */ List d;
 
         /* renamed from: com.tencent.mapsdk.internal.if$d$a */
@@ -134,7 +133,7 @@ public class Cif implements AoiLayer {
         }
 
         public d(List list, List list2) {
-            this.f37557c = list;
+            this.f23866c = list;
             this.d = list2;
         }
 
@@ -143,7 +142,7 @@ public class Cif implements AoiLayer {
             if (Cif.this.l) {
                 return null;
             }
-            Cif.this.a(this.f37557c, new a());
+            Cif.this.a(this.f23866c, new a());
             return null;
         }
     }
@@ -164,7 +163,7 @@ public class Cif implements AoiLayer {
         }
         int i = 0;
         if (jfVar != null) {
-            LatLngBounds a2 = a(jfVar.f37568a);
+            LatLngBounds a2 = a(jfVar.f23877a);
             i = 0;
             if (a2 != null) {
                 i = ((int) b2.getProjection().a(a2.getSouthWest(), a2.getNorthEast(), 0, 0, 0, 0, null)) - 2;
@@ -182,9 +181,9 @@ public class Cif implements AoiLayer {
             g7.d(context);
             polygonInfo.points = (LatLng[]) list.toArray(new LatLng[0]);
             if (cVar != null) {
-                polygonInfo.borderWidth = cVar.f37573c;
+                polygonInfo.borderWidth = cVar.f23882c;
                 polygonInfo.borderColor = Color.parseColor(cVar.b);
-                polygonInfo.color = Color.parseColor(cVar.f37572a);
+                polygonInfo.color = Color.parseColor(cVar.f23881a);
                 polygonInfo.level = 1;
                 polygonInfo.minScaleLevel = this.j;
                 polygonInfo.maxScaleLevel = this.i;
@@ -215,11 +214,11 @@ public class Cif implements AoiLayer {
                     }
                 }
             }
-            BitmapDescriptor bitmapDescriptor2 = eVar.f37576a;
+            BitmapDescriptor bitmapDescriptor2 = eVar.f23885a;
             if (bitmapDescriptor2 == null) {
                 return r5Var;
             }
-            r5Var.f37734c = bitmapDescriptor2.getFormater().getBitmapId();
+            r5Var.f24043c = bitmapDescriptor2.getFormater().getBitmapId();
             Bitmap bitmap2 = bitmapDescriptor2.getBitmap(context);
             if (bitmap2 != null) {
                 r5Var.d = bitmap2.getWidth();
@@ -242,7 +241,7 @@ public class Cif implements AoiLayer {
         jf.a aVar;
         jf.b bVar;
         List<List<LatLng>> list;
-        if (dVar == null || (aVar = dVar.i) == null || (bVar = aVar.f37570c) == null || (list = bVar.b) == null) {
+        if (dVar == null || (aVar = dVar.i) == null || (bVar = aVar.f23879c) == null || (list = bVar.b) == null) {
             return null;
         }
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
@@ -293,9 +292,9 @@ public class Cif implements AoiLayer {
             na.c(str, "请求子点[" + dVar.a() + "]icon url:" + a3);
             if (!TextUtils.isEmpty(a3)) {
                 BitmapDescriptor createBitmapDescriptor = a2.createBitmapDescriptor(a3, 8);
-                c2.f37576a = createBitmapDescriptor;
+                c2.f23885a = createBitmapDescriptor;
                 createBitmapDescriptor.getFormater().setScale(2);
-                if (c2.f37576a.getBitmap(context) != null) {
+                if (c2.f23885a.getBitmap(context) != null) {
                     na.c(str, "子点[" + dVar.a() + "]icon下载成功");
                     if (c2.e == 1) {
                         n5.a aVar = new n5.a(dVar.a(), c2.g, Color.parseColor(c2.f));
@@ -380,15 +379,15 @@ public class Cif implements AoiLayer {
         jf.d dVar;
         jf.b bVar;
         List<List<LatLng>> list;
-        if (jfVar == null || (dVar = jfVar.f37568a) == null) {
+        if (jfVar == null || (dVar = jfVar.f23877a) == null) {
             return;
         }
         boolean z = false;
         jf.c b2 = b(dVar.f);
-        jf.a aVar = jfVar.f37568a.i;
+        jf.a aVar = jfVar.f23877a.i;
         String str = q;
         na.c(str, "绘制PoiLayer的面，aoiStyle:" + b2 + "|poiArea:" + aVar);
-        if (aVar == null || (bVar = aVar.f37570c) == null || !"Polygon".equalsIgnoreCase(bVar.f37571a) || (list = aVar.f37570c.b) == null) {
+        if (aVar == null || (bVar = aVar.f23879c) == null || !"Polygon".equalsIgnoreCase(bVar.f23880a) || (list = aVar.f23879c.b) == null) {
             na.g(str, "PoiLayer的面渲染失败！");
         } else {
             b(b2, list);
@@ -400,7 +399,7 @@ public class Cif implements AoiLayer {
             onAoiLayerLoadListener.onAoiLayerLoaded(z, this);
         }
         if (z) {
-            List<jf.d> list2 = jfVar.f37568a.j;
+            List<jf.d> list2 = jfVar.f23877a.j;
             ArrayList arrayList = new ArrayList();
             na.c(str, "绘制PoiLayer的子点，remotePois:" + list2);
             ca.a((ca.i) new d(list2, arrayList)).a((ca.d.b) null, (ca.c<ca.d.b>) new c(list2, arrayList));
@@ -423,7 +422,7 @@ public class Cif implements AoiLayer {
                             break;
                         }
                         eVar2 = it.next();
-                        if ((a2 && eVar2.f37577c == 1) || (!a2 && eVar2.f37577c == 0)) {
+                        if ((a2 && eVar2.f23886c == 1) || (!a2 && eVar2.f23886c == 0)) {
                             break;
                         }
                     }
@@ -447,10 +446,10 @@ public class Cif implements AoiLayer {
         int i = 0;
         for (jf.d dVar : list) {
             r5 a2 = a(c(dVar.f), dVar);
-            int i2 = dVar.f37574a;
+            int i2 = dVar.f23883a;
             if (i2 < 0) {
                 int a3 = b2.a(a2);
-                dVar.f37574a = a3;
+                dVar.f23883a = a3;
                 iArr[i] = a3;
                 na.c(q, "添加子点成功！" + dVar.a() + "|id:" + a2.i);
                 i++;
@@ -462,7 +461,7 @@ public class Cif implements AoiLayer {
         }
         int[] iArr2 = new int[size];
         this.n = iArr2;
-        System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, size);
+        System.arraycopy(iArr, 0, iArr2, 0, size);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -488,11 +487,11 @@ public class Cif implements AoiLayer {
         jf.d dVar;
         List<jf.d> list;
         jf jfVar = this.o;
-        if (jfVar == null || (dVar = jfVar.f37568a) == null || (list = dVar.j) == null) {
+        if (jfVar == null || (dVar = jfVar.f23877a) == null || (list = dVar.j) == null) {
             return null;
         }
         for (jf.d dVar2 : list) {
-            pd pdVar = (pd) this.g.b().g().a(pd.class, dVar2.f37574a);
+            pd pdVar = (pd) this.g.b().g().a(pd.class, dVar2.f23883a);
             if (pdVar != null && pdVar.d() == j) {
                 return dVar2;
             }
@@ -542,7 +541,7 @@ public class Cif implements AoiLayer {
     public LatLngBounds f() {
         jf jfVar = this.o;
         if (jfVar != null) {
-            return a(jfVar.f37568a);
+            return a(jfVar.f23877a);
         }
         return null;
     }
@@ -564,7 +563,7 @@ public class Cif implements AoiLayer {
     public LatLng location() {
         jf.d dVar;
         jf jfVar = this.o;
-        if (jfVar == null || (dVar = jfVar.f37568a) == null) {
+        if (jfVar == null || (dVar = jfVar.f23877a) == null) {
             return null;
         }
         return dVar.h;
@@ -574,10 +573,10 @@ public class Cif implements AoiLayer {
     public String name() {
         jf.d dVar;
         jf jfVar = this.o;
-        if (jfVar == null || (dVar = jfVar.f37568a) == null) {
+        if (jfVar == null || (dVar = jfVar.f23877a) == null) {
             return null;
         }
-        return dVar.f37575c;
+        return dVar.f23884c;
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.AoiLayer

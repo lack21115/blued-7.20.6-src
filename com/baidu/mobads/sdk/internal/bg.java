@@ -7,22 +7,22 @@ import com.baidu.mobads.sdk.internal.z;
 public class bg implements z.a {
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ bf f9338c;
+    final /* synthetic */ bf f6498c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public bg(bf bfVar) {
-        this.f9338c = bfVar;
+        this.f6498c = bfVar;
     }
 
     @Override // com.baidu.mobads.sdk.internal.z.a
     public void onFailure() {
-        this.f9338c.i.a(bf.b, "AbstractProdTemplate,load-dex请求，回调失败");
-        this.f9338c.j();
+        this.f6498c.i.a(bf.b, "AbstractProdTemplate,load-dex请求，回调失败");
+        this.f6498c.j();
     }
 
     @Override // com.baidu.mobads.sdk.internal.z.a
     public void onSuccess() {
-        this.f9338c.i.a(bf.b, "AbstractProdTemplate,load-dex请求，回调成功");
-        this.f9338c.i();
+        this.f6498c.i.a(bf.b, "AbstractProdTemplate,load-dex请求，回调成功");
+        this.f6498c.i();
     }
 }

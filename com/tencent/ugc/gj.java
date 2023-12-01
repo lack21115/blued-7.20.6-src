@@ -5,11 +5,11 @@ package com.tencent.ugc;
 public final /* synthetic */ class gj implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCWatermarkAlphaTextureFilter f40419a;
+    private final UGCWatermarkAlphaTextureFilter f26728a;
     private final boolean b;
 
     private gj(UGCWatermarkAlphaTextureFilter uGCWatermarkAlphaTextureFilter, boolean z) {
-        this.f40419a = uGCWatermarkAlphaTextureFilter;
+        this.f26728a = uGCWatermarkAlphaTextureFilter;
         this.b = z;
     }
 
@@ -19,6 +19,6 @@ public final /* synthetic */ class gj implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40419a.mIsShowBackImageMoment = this.b;
+        this.f26728a.mIsShowBackImageMoment = this.b;
     }
 }

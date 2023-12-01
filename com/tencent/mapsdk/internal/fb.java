@@ -40,19 +40,19 @@ public class fb extends eb {
     public static class b {
 
         /* renamed from: c  reason: collision with root package name */
-        private static final int f37445c = 3;
+        private static final int f23754c = 3;
 
         /* renamed from: a  reason: collision with root package name */
-        private int f37446a;
+        private int f23755a;
         private boolean b = true;
 
         public b(int i) {
-            this.f37446a = i;
+            this.f23755a = i;
             if (i > 3) {
-                this.f37446a = 3;
+                this.f23755a = 3;
             }
-            if (this.f37446a <= 0) {
-                this.f37446a = 1;
+            if (this.f23755a <= 0) {
+                this.f23755a = 1;
             }
         }
 
@@ -61,11 +61,11 @@ public class fb extends eb {
         }
 
         public void b() {
-            this.f37446a--;
+            this.f23755a--;
         }
 
         public boolean c() {
-            return this.b && this.f37446a > 0;
+            return this.b && this.f23755a > 0;
         }
     }
 

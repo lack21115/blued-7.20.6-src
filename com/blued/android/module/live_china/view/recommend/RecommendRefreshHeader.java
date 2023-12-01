@@ -6,8 +6,10 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.TextView;
+import com.android.internal.util.cm.QSConstants;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.module.live_china.R;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
@@ -17,38 +19,32 @@ import com.scwang.smartrefresh.layout.internal.InternalAbstract;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/recommend/RecommendRefreshHeader.class */
 public class RecommendRefreshHeader extends InternalAbstract implements RefreshHeader {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f15432a;
+    public View a;
     public RefreshHeaderSlopeProgress b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public TextView f15433c;
+    public TextView c;
     private AnimatorSet d;
     private float e;
 
     /* renamed from: com.blued.android.module.live_china.view.recommend.RecommendRefreshHeader$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/recommend/RecommendRefreshHeader$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f15434a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[RefreshState.values().length];
-            f15434a = iArr;
+            a = iArr;
             try {
-                iArr[RefreshState.PullDownToRefresh.ordinal()] = 1;
+                iArr[RefreshState.b.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f15434a[RefreshState.ReleaseToRefresh.ordinal()] = 2;
+                a[RefreshState.f.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f15434a[RefreshState.Refreshing.ordinal()] = 3;
+                a[RefreshState.l.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -62,12 +58,13 @@ public class RecommendRefreshHeader extends InternalAbstract implements RefreshH
         this(context, attributeSet, 0);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public RecommendRefreshHeader(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        View inflate = LayoutInflater.from(context).inflate(R.layout.layout_refresh_header_recommend, this);
-        this.f15432a = inflate.findViewById(R.id.rl_root);
+        View inflate = LayoutInflater.from(context).inflate(R.layout.layout_refresh_header_recommend, (ViewGroup) this);
+        this.a = inflate.findViewById(R.id.rl_root);
         this.b = (RefreshHeaderSlopeProgress) inflate.findViewById(R.id.sp_view);
-        this.f15433c = (TextView) inflate.findViewById(R.id.tv_refresh);
+        this.c = (TextView) inflate.findViewById(R.id.tv_refresh);
         this.b.setRingColor(BluedSkinUtils.a(context, R.color.white));
     }
 
@@ -85,7 +82,6 @@ public class RecommendRefreshHeader extends InternalAbstract implements RefreshH
         }
     }
 
-    @Override // com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.api.RefreshInternal
     public int a(RefreshLayout refreshLayout, boolean z) {
         this.b.animate().alpha(0.0f).scaleX(0.4f).scaleY(0.4f).setDuration(300L).withEndAction(new Runnable() { // from class: com.blued.android.module.live_china.view.recommend.-$$Lambda$RecommendRefreshHeader$SGTl_y9Zem8oQrMNfjaFhhTtFQk
             @Override // java.lang.Runnable
@@ -96,7 +92,6 @@ public class RecommendRefreshHeader extends InternalAbstract implements RefreshH
         return super.a(refreshLayout, z);
     }
 
-    @Override // com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.api.RefreshInternal
     public void a(RefreshLayout refreshLayout, int i, int i2) {
         if (this.d == null) {
             this.d = new AnimatorSet();
@@ -106,7 +101,7 @@ public class RecommendRefreshHeader extends InternalAbstract implements RefreshH
         }
         RefreshHeaderSlopeProgress refreshHeaderSlopeProgress = this.b;
         float f = this.e;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(refreshHeaderSlopeProgress, "rotation", f, f + 360.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(refreshHeaderSlopeProgress, QSConstants.TILE_ROTATION, f, f + 360.0f);
         ofFloat.setRepeatCount(-1);
         ofFloat.setRepeatMode(1);
         ofFloat.setDuration(780L);
@@ -119,20 +114,18 @@ public class RecommendRefreshHeader extends InternalAbstract implements RefreshH
         this.d.start();
     }
 
-    @Override // com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.listener.OnStateChangedListener
     public void a(RefreshLayout refreshLayout, RefreshState refreshState, RefreshState refreshState2) {
-        int i = AnonymousClass1.f15434a[refreshState2.ordinal()];
+        int i = AnonymousClass1.a[refreshState2.ordinal()];
         if (i == 1) {
-            this.f15433c.setText(R.string.live_recommend_pull_label);
+            this.c.setText(R.string.live_recommend_pull_label);
         } else if (i == 2) {
-            this.f15433c.setText(R.string.live_recommend_release_label);
+            this.c.setText(R.string.live_recommend_release_label);
         } else if (i != 3) {
         } else {
-            this.f15433c.setText(R.string.live_recommend_loading);
+            this.c.setText(R.string.live_recommend_loading);
         }
     }
 
-    @Override // com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.api.RefreshInternal
     public void a(boolean z, float f, int i, int i2, int i3) {
         super.a(z, f, i, i2, i3);
         AnimatorSet animatorSet = this.d;
@@ -152,7 +145,6 @@ public class RecommendRefreshHeader extends InternalAbstract implements RefreshH
         }
     }
 
-    @Override // com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.api.RefreshInternal
     public void b(RefreshLayout refreshLayout, int i, int i2) {
         super.b(refreshLayout, i, i2);
         a(refreshLayout, i, i2);

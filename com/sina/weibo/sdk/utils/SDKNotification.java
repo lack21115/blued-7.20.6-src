@@ -1,5 +1,6 @@
 package com.sina.weibo.sdk.utils;
 
+import android.R;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -29,11 +30,8 @@ public class SDKNotification {
         }
 
         private static int getNotificationIcon(Context context) {
-            int resourceId = getResourceId(context, "com_sina_weibo_sdk_weibo_logo", i.f7952c);
-            if (resourceId > 0) {
-                return resourceId;
-            }
-            return 17301659;
+            int resourceId = getResourceId(context, "com_sina_weibo_sdk_weibo_logo", i.f5112c);
+            return resourceId > 0 ? resourceId : R.drawable.ic_dialog_info;
         }
 
         private static int getResourceId(Context context, String str, String str2) {

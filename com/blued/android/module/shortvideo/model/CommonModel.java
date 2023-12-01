@@ -1,7 +1,6 @@
 package com.blued.android.module.shortvideo.model;
 
 import android.text.TextUtils;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.shortvideo.contract.IGetFrameCallback;
 import com.blued.android.module.shortvideo.utils.StvLogUtils;
@@ -22,9 +21,9 @@ public class CommonModel extends IModel implements Serializable {
     protected String originalVideoPath;
     protected String videoPath;
     private long MAX_RECORD_DURATION = 15000;
-    private long MIN_RECORD_DURATION = m.ag;
+    private long MIN_RECORD_DURATION = 3000;
     private long MAX_VIDEO_DURATION = 60000;
-    private long MIN_VIDEO_DURATION = m.ag;
+    private long MIN_VIDEO_DURATION = 3000;
     private int SHOW_V_TYPE = 0;
     protected int prePage = 0;
     protected int from = 0;
@@ -45,7 +44,7 @@ public class CommonModel extends IModel implements Serializable {
 
     public void clear() {
         this.MAX_RECORD_DURATION = 15000L;
-        this.MIN_RECORD_DURATION = m.ag;
+        this.MIN_RECORD_DURATION = 3000L;
         this.SHOW_V_TYPE = 0;
         this.prePage = 0;
         List<FilterItem> list = this.mFilters;

@@ -68,9 +68,9 @@ class BroadcastCoroutine<E> extends AbstractCoroutine<Unit> implements Broadcast
 
     @Override // kotlinx.coroutines.JobSupport
     public void b(Throwable th) {
-        CancellationException a2 = JobSupport.a(this, th, null, 1, null);
-        this.b.a(a2);
-        d((Throwable) a2);
+        CancellationException a = JobSupport.a(this, th, null, 1, null);
+        this.b.a(a);
+        d((Throwable) a);
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel

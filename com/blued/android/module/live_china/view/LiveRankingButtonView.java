@@ -25,17 +25,12 @@ import com.blued.android.module.live_china.view.MarqueeTextView;
 import com.blued.das.live.LiveProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveRankingButtonView.class */
 public class LiveRankingButtonView extends LinearLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f14894a;
+    int a;
     boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f14895c;
+    int c;
     private Context d;
     private LayoutInflater e;
     private View f;
@@ -118,15 +113,15 @@ public class LiveRankingButtonView extends LinearLayout implements View.OnClickL
         this.o = false;
         this.p = -1;
         this.u = new AnonymousClass1();
-        this.f14894a = 0;
+        this.a = 0;
         this.b = false;
-        this.f14895c = 0;
+        this.c = 0;
         this.v = new Runnable() { // from class: com.blued.android.module.live_china.view.LiveRankingButtonView.2
             @Override // java.lang.Runnable
             public void run() {
-                LiveRankingButtonView.this.i.setText(LiveTimeAndDateUtils.a(LiveRankingButtonView.this.f14895c, false));
-                LiveRankingButtonView.this.f14895c--;
-                if (LiveRankingButtonView.this.f14895c > 0) {
+                LiveRankingButtonView.this.i.setText(LiveTimeAndDateUtils.a(LiveRankingButtonView.this.c, false));
+                LiveRankingButtonView.this.c--;
+                if (LiveRankingButtonView.this.c > 0) {
                     AppInfo.n().postDelayed(LiveRankingButtonView.this.v, 1000L);
                     return;
                 }
@@ -152,15 +147,15 @@ public class LiveRankingButtonView extends LinearLayout implements View.OnClickL
         this.o = false;
         this.p = -1;
         this.u = new AnonymousClass1();
-        this.f14894a = 0;
+        this.a = 0;
         this.b = false;
-        this.f14895c = 0;
+        this.c = 0;
         this.v = new Runnable() { // from class: com.blued.android.module.live_china.view.LiveRankingButtonView.2
             @Override // java.lang.Runnable
             public void run() {
-                LiveRankingButtonView.this.i.setText(LiveTimeAndDateUtils.a(LiveRankingButtonView.this.f14895c, false));
-                LiveRankingButtonView.this.f14895c--;
-                if (LiveRankingButtonView.this.f14895c > 0) {
+                LiveRankingButtonView.this.i.setText(LiveTimeAndDateUtils.a(LiveRankingButtonView.this.c, false));
+                LiveRankingButtonView.this.c--;
+                if (LiveRankingButtonView.this.c > 0) {
                     AppInfo.n().postDelayed(LiveRankingButtonView.this.v, 1000L);
                     return;
                 }
@@ -266,7 +261,7 @@ public class LiveRankingButtonView extends LinearLayout implements View.OnClickL
         boolean z = false;
         if (view.getId() == R.id.ll_hour || view.getId() == R.id.fl_hour) {
             EventTrackLive.a(LiveProtos.Event.LIVE_HOUR_LIST_ICON_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
-            LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_RANKING_DIALOG).post(0);
+            LiveEventBus.get("live_ranking_dialog").post(0);
         } else if (view.getId() == R.id.iv_hour_down) {
             LiveHourExpanView liveHourExpanView = this.t;
             ShapeFrameLayout shapeFrameLayout = this.g;
@@ -297,7 +292,7 @@ public class LiveRankingButtonView extends LinearLayout implements View.OnClickL
         this.k.setVisibility(8);
         this.h.setVisibility(rankingHourExtra.rank_type == 1 ? 0 : 8);
         AppInfo.n().removeCallbacks(this.v);
-        this.f14895c = this.r.second;
+        this.c = this.r.second;
         AppInfo.n().post(this.v);
         if (rankingHourExtra.rank < 20) {
             this.t.a(this.g, true, false);

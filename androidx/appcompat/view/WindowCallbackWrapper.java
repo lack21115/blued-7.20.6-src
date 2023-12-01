@@ -108,6 +108,7 @@ public class WindowCallbackWrapper implements Window.Callback {
         this.b.onPanelClosed(i, menu);
     }
 
+    @Override // android.view.Window.Callback
     public void onPointerCaptureChanged(boolean z) {
         this.b.onPointerCaptureChanged(z);
     }
@@ -117,6 +118,7 @@ public class WindowCallbackWrapper implements Window.Callback {
         return this.b.onPreparePanel(i, view, menu);
     }
 
+    @Override // android.view.Window.Callback
     public void onProvideKeyboardShortcuts(List<KeyboardShortcutGroup> list, Menu menu, int i) {
         this.b.onProvideKeyboardShortcuts(list, menu, i);
     }
@@ -126,6 +128,7 @@ public class WindowCallbackWrapper implements Window.Callback {
         return this.b.onSearchRequested();
     }
 
+    @Override // android.view.Window.Callback
     public boolean onSearchRequested(SearchEvent searchEvent) {
         return this.b.onSearchRequested(searchEvent);
     }
@@ -145,6 +148,7 @@ public class WindowCallbackWrapper implements Window.Callback {
         return this.b.onWindowStartingActionMode(callback);
     }
 
+    @Override // android.view.Window.Callback
     public android.view.ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int i) {
         return this.b.onWindowStartingActionMode(callback, i);
     }

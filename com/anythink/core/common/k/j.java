@@ -138,7 +138,7 @@ public final class j {
     }
 
     private static long b() {
-        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+        if ("mounted".equals(Environment.getExternalStorageState())) {
             try {
                 StatFs statFs = new StatFs(Environment.getExternalStorageDirectory().getPath());
                 return statFs.getAvailableBlocks() * statFs.getBlockSize();
@@ -157,7 +157,7 @@ public final class j {
             return false;
         }
         try {
-            return context.getPackageManager().checkPermission("android.permission.WRITE_EXTERNAL_STORAGE", context.getPackageName()) == 0;
+            return context.getPackageManager().checkPermission(com.anythink.china.common.d.b, context.getPackageName()) == 0;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -165,6 +165,6 @@ public final class j {
     }
 
     private static boolean c() {
-        return Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState());
+        return "mounted".equals(Environment.getExternalStorageState());
     }
 }

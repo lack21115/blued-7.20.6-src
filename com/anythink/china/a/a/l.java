@@ -9,12 +9,10 @@ public interface l extends IInterface {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/a/a/l$a.class */
     public static final class a implements l {
-
-        /* renamed from: a  reason: collision with root package name */
-        private IBinder f6238a;
+        private IBinder a;
 
         public a(IBinder iBinder) {
-            this.f6238a = iBinder;
+            this.a = iBinder;
         }
 
         @Override // com.anythink.china.a.a.l
@@ -24,7 +22,7 @@ public interface l extends IInterface {
             try {
                 try {
                     obtain.writeInterfaceToken("com.zui.deviceidservice.IDeviceidInterface");
-                    this.f6238a.transact(1, obtain, obtain2, 0);
+                    this.a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readString();
                 } catch (Exception e) {
@@ -51,7 +49,7 @@ public interface l extends IInterface {
             try {
                 try {
                     obtain.writeInterfaceToken("com.zui.deviceidservice.IDeviceidInterface");
-                    this.f6238a.transact(4, obtain, obtain2, 0);
+                    this.a.transact(4, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readString();
                 } catch (Exception e) {

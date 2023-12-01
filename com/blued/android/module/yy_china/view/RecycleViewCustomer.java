@@ -27,9 +27,7 @@ public final class RecycleViewCustomer extends RecyclerView {
         Intrinsics.e(context, "context");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public float getBottomFadingEdgeStrength() {
+    protected float getBottomFadingEdgeStrength() {
         return 0.0f;
     }
 }

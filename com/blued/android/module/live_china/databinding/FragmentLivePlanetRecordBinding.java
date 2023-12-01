@@ -13,21 +13,17 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FragmentLivePlanetRecordBinding.class */
 public final class FragmentLivePlanetRecordBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f11964a;
+    public final ImageView a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final SmartRefreshLayout f11965c;
+    public final SmartRefreshLayout c;
     public final RecyclerView d;
     private final FrameLayout e;
 
     private FragmentLivePlanetRecordBinding(FrameLayout frameLayout, ImageView imageView, LinearLayout linearLayout, SmartRefreshLayout smartRefreshLayout, RecyclerView recyclerView) {
         this.e = frameLayout;
-        this.f11964a = imageView;
+        this.a = imageView;
         this.b = linearLayout;
-        this.f11965c = smartRefreshLayout;
+        this.c = smartRefreshLayout;
         this.d = recyclerView;
     }
 
@@ -49,11 +45,11 @@ public final class FragmentLivePlanetRecordBinding implements ViewBinding {
         if (imageView != null) {
             LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_empty);
             if (linearLayout != null) {
-                SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_layout);
-                if (smartRefreshLayout != null) {
-                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                    if (recyclerView != null) {
-                        return new FragmentLivePlanetRecordBinding((FrameLayout) view, imageView, linearLayout, smartRefreshLayout, recyclerView);
+                SmartRefreshLayout findViewById = view.findViewById(R.id.refresh_layout);
+                if (findViewById != null) {
+                    RecyclerView findViewById2 = view.findViewById(R.id.rv_list);
+                    if (findViewById2 != null) {
+                        return new FragmentLivePlanetRecordBinding((FrameLayout) view, imageView, linearLayout, findViewById, findViewById2);
                     }
                     str = "rvList";
                 } else {
@@ -68,7 +64,6 @@ public final class FragmentLivePlanetRecordBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

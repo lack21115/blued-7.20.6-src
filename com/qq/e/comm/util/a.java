@@ -1,6 +1,5 @@
 package com.qq.e.comm.util;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,7 +7,7 @@ import java.util.Map;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, Boolean> f27930a = new HashMap();
+    private static final Map<String, Boolean> f14242a = new HashMap();
 
     private static boolean a(Class cls, String str, Class... clsArr) {
         String sb;
@@ -27,20 +26,20 @@ public class a {
                     break;
                 }
                 Class cls2 = clsArr[i2];
-                sb2.append(BridgeUtil.UNDERLINE_STR);
+                sb2.append("_");
                 sb2.append(cls2.getName());
                 i = i2 + 1;
             }
             sb = sb2.toString();
         }
-        Boolean bool = f27930a.get(sb);
+        Boolean bool = f14242a.get(sb);
         if (bool == null) {
             try {
                 cls.getDeclaredMethod(str, clsArr);
-                f27930a.put(sb, Boolean.TRUE);
+                f14242a.put(sb, Boolean.TRUE);
                 return true;
             } catch (NoSuchMethodException e) {
-                f27930a.put(sb, Boolean.FALSE);
+                f14242a.put(sb, Boolean.FALSE);
                 return false;
             }
         }

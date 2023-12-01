@@ -22,19 +22,15 @@ import skin.support.utils.SkinCompatVersionUtils;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/widget/SkinCompatProgressBarHelper.class */
 public class SkinCompatProgressBarHelper extends SkinCompatHelper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final ProgressBar f44277a;
+    private final ProgressBar a;
     private Bitmap b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f44278c = 0;
+    private int c = 0;
     private int d = 0;
     private int e = 0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SkinCompatProgressBarHelper(ProgressBar progressBar) {
-        this.f44277a = progressBar;
+        this.a = progressBar;
     }
 
     private int a(int i) {
@@ -54,9 +50,9 @@ public class SkinCompatProgressBarHelper extends SkinCompatHelper {
                 if (i2 >= numberOfFrames) {
                     break;
                 }
-                Drawable a2 = a(animationDrawable2.getFrame(i2), true);
-                a2.setLevel(10000);
-                animationDrawable3.addFrame(a2, animationDrawable2.getDuration(i2));
+                Drawable a = a(animationDrawable2.getFrame(i2), true);
+                a.setLevel(10000);
+                animationDrawable3.addFrame(a, animationDrawable2.getDuration(i2));
                 i = i2 + 1;
             }
             animationDrawable3.setLevel(10000);
@@ -125,23 +121,23 @@ public class SkinCompatProgressBarHelper extends SkinCompatHelper {
     }
 
     public void a() {
-        int b = b(this.f44278c);
-        this.f44278c = b;
+        int b = b(this.c);
+        this.c = b;
         if (b != 0) {
-            Drawable a2 = SkinCompatVectorResources.a(this.f44277a.getContext(), this.f44278c);
-            a2.setBounds(this.f44277a.getIndeterminateDrawable().getBounds());
-            this.f44277a.setIndeterminateDrawable(a(a2));
+            Drawable a = SkinCompatVectorResources.a(this.a.getContext(), this.c);
+            a.setBounds(this.a.getIndeterminateDrawable().getBounds());
+            this.a.setIndeterminateDrawable(a(a));
         }
-        int a3 = a(this.d);
-        this.d = a3;
-        if (a3 != 0) {
-            this.f44277a.setProgressDrawable(a(SkinCompatVectorResources.a(this.f44277a.getContext(), this.d), false));
+        int a2 = a(this.d);
+        this.d = a2;
+        if (a2 != 0) {
+            this.a.setProgressDrawable(a(SkinCompatVectorResources.a(this.a.getContext(), this.d), false));
         }
         if (Build.VERSION.SDK_INT > 21) {
             int b2 = b(this.e);
             this.e = b2;
             if (b2 != 0) {
-                ProgressBar progressBar = this.f44277a;
+                ProgressBar progressBar = this.a;
                 progressBar.setIndeterminateTintList(SkinCompatResources.d(progressBar.getContext(), this.e));
             }
         }
@@ -149,12 +145,12 @@ public class SkinCompatProgressBarHelper extends SkinCompatHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(AttributeSet attributeSet, int i) {
-        TypedArray obtainStyledAttributes = this.f44277a.getContext().obtainStyledAttributes(attributeSet, R.styleable.SkinCompatProgressBar, i, 0);
-        this.f44278c = obtainStyledAttributes.getResourceId(R.styleable.SkinCompatProgressBar_android_indeterminateDrawable, 0);
+        TypedArray obtainStyledAttributes = this.a.getContext().obtainStyledAttributes(attributeSet, R.styleable.SkinCompatProgressBar, i, 0);
+        this.c = obtainStyledAttributes.getResourceId(R.styleable.SkinCompatProgressBar_android_indeterminateDrawable, 0);
         this.d = obtainStyledAttributes.getResourceId(R.styleable.SkinCompatProgressBar_android_progressDrawable, 0);
         obtainStyledAttributes.recycle();
         if (Build.VERSION.SDK_INT > 21) {
-            TypedArray obtainStyledAttributes2 = this.f44277a.getContext().obtainStyledAttributes(attributeSet, new int[]{16843881}, i, 0);
+            TypedArray obtainStyledAttributes2 = this.a.getContext().obtainStyledAttributes(attributeSet, new int[]{com.android.internal.R.attr.indeterminateTint}, i, 0);
             this.e = obtainStyledAttributes2.getResourceId(0, 0);
             obtainStyledAttributes2.recycle();
         }

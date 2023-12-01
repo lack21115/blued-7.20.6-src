@@ -1,5 +1,6 @@
 package com.squareup.wire;
 
+import android.app.Instrumentation;
 import com.squareup.wire.Message;
 import com.squareup.wire.WireField;
 import com.squareup.wire.internal.ReflectionKt;
@@ -81,22 +82,22 @@ public abstract class ProtoAdapter<E> {
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public Void decode(ProtoReader reader) {
-                Intrinsics.e(reader, "reader");
+            public Void decode(ProtoReader protoReader) {
+                Intrinsics.e(protoReader, "reader");
                 throw new IllegalStateException("Operation not supported.");
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public Void encode(ProtoWriter writer, Void value) {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
+            public Void encode(ProtoWriter protoWriter, Void r6) {
+                Intrinsics.e(protoWriter, "writer");
+                Intrinsics.e(r6, "value");
                 throw new IllegalStateException("Operation not supported.");
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public Void encode(ReverseProtoWriter writer, Void value) {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
+            public Void encode(ReverseProtoWriter reverseProtoWriter, Void r6) {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                Intrinsics.e(r6, "value");
                 throw new IllegalStateException("Operation not supported.");
             }
 
@@ -105,14 +106,14 @@ public abstract class ProtoAdapter<E> {
                 return ((Number) encodedSize((Void) obj)).intValue();
             }
 
-            public Void encodedSize(Void value) {
-                Intrinsics.e(value, "value");
+            public Void encodedSize(Void r5) {
+                Intrinsics.e(r5, "value");
                 throw new IllegalStateException("Operation not supported.");
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public Void redact(Void value) {
-                Intrinsics.e(value, "value");
+            public Void redact(Void r5) {
+                Intrinsics.e(r5, "value");
                 throw new IllegalStateException("Operation not supported.");
             }
         }
@@ -125,35 +126,35 @@ public abstract class ProtoAdapter<E> {
         }
 
         @JvmStatic
-        public final <M extends Message<?, ?>> ProtoAdapter<M> get(M message) {
-            Intrinsics.e(message, "message");
-            return get(message.getClass());
+        public final <M extends Message<?, ?>> ProtoAdapter<M> get(M m) {
+            Intrinsics.e(m, "message");
+            return get(m.getClass());
         }
 
         @JvmStatic
-        public final <M> ProtoAdapter<M> get(Class<M> type) {
-            Intrinsics.e(type, "type");
+        public final <M> ProtoAdapter<M> get(Class<M> cls) {
+            Intrinsics.e(cls, "type");
             try {
-                Object obj = type.getField("ADAPTER").get(null);
+                Object obj = cls.getField("ADAPTER").get(null);
                 if (obj != null) {
                     return (ProtoAdapter) obj;
                 }
                 throw new NullPointerException("null cannot be cast to non-null type com.squareup.wire.ProtoAdapter<M of com.squareup.wire.ProtoAdapter.Companion.get>");
             } catch (IllegalAccessException e) {
-                throw new IllegalArgumentException("failed to access " + ((Object) type.getName()) + "#ADAPTER", e);
+                throw new IllegalArgumentException("failed to access " + ((Object) cls.getName()) + "#ADAPTER", e);
             } catch (NoSuchFieldException e2) {
-                throw new IllegalArgumentException("failed to access " + ((Object) type.getName()) + "#ADAPTER", e2);
+                throw new IllegalArgumentException("failed to access " + ((Object) cls.getName()) + "#ADAPTER", e2);
             }
         }
 
         @JvmStatic
-        public final ProtoAdapter<?> get(String adapterString) {
-            Intrinsics.e(adapterString, "adapterString");
+        public final ProtoAdapter<?> get(String str) {
+            Intrinsics.e(str, "adapterString");
             try {
-                int a2 = StringsKt.a((CharSequence) adapterString, '#', 0, false, 6, (Object) null);
-                String substring = adapterString.substring(0, a2);
+                int a2 = StringsKt.a(str, '#', 0, false, 6, (Object) null);
+                String substring = str.substring(0, a2);
                 Intrinsics.c(substring, "this as java.lang.String…ing(startIndex, endIndex)");
-                String substring2 = adapterString.substring(a2 + 1);
+                String substring2 = str.substring(a2 + 1);
                 Intrinsics.c(substring2, "this as java.lang.String).substring(startIndex)");
                 Object obj = Class.forName(substring).getField(substring2).get(null);
                 if (obj != null) {
@@ -161,46 +162,46 @@ public abstract class ProtoAdapter<E> {
                 }
                 throw new NullPointerException("null cannot be cast to non-null type com.squareup.wire.ProtoAdapter<kotlin.Any>");
             } catch (ClassNotFoundException e) {
-                throw new IllegalArgumentException(Intrinsics.a("failed to access ", (Object) adapterString), e);
+                throw new IllegalArgumentException(Intrinsics.a("failed to access ", str), e);
             } catch (IllegalAccessException e2) {
-                throw new IllegalArgumentException(Intrinsics.a("failed to access ", (Object) adapterString), e2);
+                throw new IllegalArgumentException(Intrinsics.a("failed to access ", str), e2);
             } catch (NoSuchFieldException e3) {
-                throw new IllegalArgumentException(Intrinsics.a("failed to access ", (Object) adapterString), e3);
+                throw new IllegalArgumentException(Intrinsics.a("failed to access ", str), e3);
             }
         }
 
         @JvmStatic
-        public final <E extends WireEnum> EnumAdapter<E> newEnumAdapter(Class<E> type) {
-            Intrinsics.e(type, "type");
-            return new RuntimeEnumAdapter(type);
+        public final <E extends WireEnum> EnumAdapter<E> newEnumAdapter(Class<E> cls) {
+            Intrinsics.e(cls, "type");
+            return new RuntimeEnumAdapter(cls);
         }
 
         @JvmStatic
-        public final <K, V> ProtoAdapter<Map<K, V>> newMapAdapter(ProtoAdapter<K> keyAdapter, ProtoAdapter<V> valueAdapter) {
-            Intrinsics.e(keyAdapter, "keyAdapter");
-            Intrinsics.e(valueAdapter, "valueAdapter");
-            return new MapProtoAdapter(keyAdapter, valueAdapter);
+        public final <K, V> ProtoAdapter<Map<K, V>> newMapAdapter(ProtoAdapter<K> protoAdapter, ProtoAdapter<V> protoAdapter2) {
+            Intrinsics.e(protoAdapter, "keyAdapter");
+            Intrinsics.e(protoAdapter2, "valueAdapter");
+            return new MapProtoAdapter(protoAdapter, protoAdapter2);
         }
 
         @JvmStatic
-        public final <M extends Message<M, B>, B extends Message.Builder<M, B>> ProtoAdapter<M> newMessageAdapter(Class<M> type) {
-            Intrinsics.e(type, "type");
-            return ReflectionKt.createRuntimeMessageAdapter$default(type, null, Syntax.PROTO_2, false, 8, null);
+        public final <M extends Message<M, B>, B extends Message.Builder<M, B>> ProtoAdapter<M> newMessageAdapter(Class<M> cls) {
+            Intrinsics.e(cls, "type");
+            return ReflectionKt.createRuntimeMessageAdapter$default(cls, null, Syntax.PROTO_2, false, 8, null);
         }
 
         @JvmStatic
-        public final <M extends Message<M, B>, B extends Message.Builder<M, B>> ProtoAdapter<M> newMessageAdapter(Class<M> type, String typeUrl) {
-            Intrinsics.e(type, "type");
-            Intrinsics.e(typeUrl, "typeUrl");
-            return ReflectionKt.createRuntimeMessageAdapter$default(type, typeUrl, Syntax.PROTO_2, false, 8, null);
+        public final <M extends Message<M, B>, B extends Message.Builder<M, B>> ProtoAdapter<M> newMessageAdapter(Class<M> cls, String str) {
+            Intrinsics.e(cls, "type");
+            Intrinsics.e(str, "typeUrl");
+            return ReflectionKt.createRuntimeMessageAdapter$default(cls, str, Syntax.PROTO_2, false, 8, null);
         }
 
         @JvmStatic
-        public final <M extends Message<M, B>, B extends Message.Builder<M, B>> ProtoAdapter<M> newMessageAdapter(Class<M> type, String typeUrl, Syntax syntax) {
-            Intrinsics.e(type, "type");
-            Intrinsics.e(typeUrl, "typeUrl");
+        public final <M extends Message<M, B>, B extends Message.Builder<M, B>> ProtoAdapter<M> newMessageAdapter(Class<M> cls, String str, Syntax syntax) {
+            Intrinsics.e(cls, "type");
+            Intrinsics.e(str, "typeUrl");
             Intrinsics.e(syntax, "syntax");
-            return ReflectionKt.createRuntimeMessageAdapter$default(type, typeUrl, syntax, false, 8, null);
+            return ReflectionKt.createRuntimeMessageAdapter$default(cls, str, syntax, false, 8, null);
         }
     }
 
@@ -210,9 +211,9 @@ public abstract class ProtoAdapter<E> {
         public final int value;
 
         /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-        public EnumConstantNotFoundException(int i, Class<?> type) {
-            this(i, JvmClassMappingKt.a(type));
-            Intrinsics.e(type, "type");
+        public EnumConstantNotFoundException(int i, Class<?> cls) {
+            this(i, JvmClassMappingKt.a(cls));
+            Intrinsics.e(cls, "type");
         }
 
         /* JADX WARN: Illegal instructions before constructor call */
@@ -292,40 +293,40 @@ public abstract class ProtoAdapter<E> {
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public ProtoAdapter(FieldEncoding fieldEncoding, Class<?> type) {
-        this(fieldEncoding, JvmClassMappingKt.a(type));
+    public ProtoAdapter(FieldEncoding fieldEncoding, Class<?> cls) {
+        this(fieldEncoding, JvmClassMappingKt.a(cls));
         Intrinsics.e(fieldEncoding, "fieldEncoding");
-        Intrinsics.e(type, "type");
+        Intrinsics.e(cls, "type");
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public ProtoAdapter(FieldEncoding fieldEncoding, Class<?> type, String str) {
-        this(fieldEncoding, JvmClassMappingKt.a(type), str, Syntax.PROTO_2);
+    public ProtoAdapter(FieldEncoding fieldEncoding, Class<?> cls, String str) {
+        this(fieldEncoding, JvmClassMappingKt.a(cls), str, Syntax.PROTO_2);
         Intrinsics.e(fieldEncoding, "fieldEncoding");
-        Intrinsics.e(type, "type");
+        Intrinsics.e(cls, "type");
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public ProtoAdapter(FieldEncoding fieldEncoding, Class<?> type, String str, Syntax syntax) {
-        this(fieldEncoding, JvmClassMappingKt.a(type), str, syntax);
+    public ProtoAdapter(FieldEncoding fieldEncoding, Class<?> cls, String str, Syntax syntax) {
+        this(fieldEncoding, JvmClassMappingKt.a(cls), str, syntax);
         Intrinsics.e(fieldEncoding, "fieldEncoding");
-        Intrinsics.e(type, "type");
+        Intrinsics.e(cls, "type");
         Intrinsics.e(syntax, "syntax");
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public ProtoAdapter(FieldEncoding fieldEncoding, Class<?> type, String str, Syntax syntax, E e) {
-        this(fieldEncoding, JvmClassMappingKt.a(type), str, syntax, e, (String) null);
+    public ProtoAdapter(FieldEncoding fieldEncoding, Class<?> cls, String str, Syntax syntax, E e) {
+        this(fieldEncoding, JvmClassMappingKt.a(cls), str, syntax, e, (String) null);
         Intrinsics.e(fieldEncoding, "fieldEncoding");
-        Intrinsics.e(type, "type");
+        Intrinsics.e(cls, "type");
         Intrinsics.e(syntax, "syntax");
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public ProtoAdapter(FieldEncoding fieldEncoding, Class<?> type, String str, Syntax syntax, E e, String str2) {
-        this(fieldEncoding, JvmClassMappingKt.a(type), str, syntax, e, str2);
+    public ProtoAdapter(FieldEncoding fieldEncoding, Class<?> cls, String str, Syntax syntax, E e, String str2) {
+        this(fieldEncoding, JvmClassMappingKt.a(cls), str, syntax, e, str2);
         Intrinsics.e(fieldEncoding, "fieldEncoding");
-        Intrinsics.e(type, "type");
+        Intrinsics.e(cls, "type");
         Intrinsics.e(syntax, "syntax");
     }
 
@@ -443,84 +444,84 @@ public abstract class ProtoAdapter<E> {
 
     public abstract E decode(ProtoReader protoReader) throws IOException;
 
-    public final E decode(InputStream stream) throws IOException {
-        Intrinsics.e(stream, "stream");
-        return decode(Okio.buffer(Okio.source(stream)));
+    public final E decode(InputStream inputStream) throws IOException {
+        Intrinsics.e(inputStream, Instrumentation.REPORT_KEY_STREAMRESULT);
+        return decode(Okio.buffer(Okio.source(inputStream)));
     }
 
-    public final E decode(BufferedSource source) throws IOException {
-        Intrinsics.e(source, "source");
-        return decode(new ProtoReader(source));
+    public final E decode(BufferedSource bufferedSource) throws IOException {
+        Intrinsics.e(bufferedSource, "source");
+        return decode(new ProtoReader(bufferedSource));
     }
 
-    public final E decode(ByteString bytes) throws IOException {
-        Intrinsics.e(bytes, "bytes");
-        return decode(new Buffer().write(bytes));
+    public final E decode(ByteString byteString) throws IOException {
+        Intrinsics.e(byteString, "bytes");
+        return decode(new Buffer().write(byteString));
     }
 
-    public final E decode(byte[] bytes) throws IOException {
-        Intrinsics.e(bytes, "bytes");
-        return decode(new Buffer().write(bytes));
+    public final E decode(byte[] bArr) throws IOException {
+        Intrinsics.e(bArr, "bytes");
+        return decode(new Buffer().write(bArr));
     }
 
     public abstract void encode(ProtoWriter protoWriter, E e) throws IOException;
 
-    public void encode(ReverseProtoWriter writer, E e) throws IOException {
-        Intrinsics.e(writer, "writer");
-        writer.writeForward$wire_runtime(new ProtoAdapterKt$delegateEncode$1(this, e));
+    public void encode(ReverseProtoWriter reverseProtoWriter, E e) throws IOException {
+        Intrinsics.e(reverseProtoWriter, "writer");
+        reverseProtoWriter.writeForward$wire_runtime(new ProtoAdapterKt$delegateEncode$1(this, e));
     }
 
-    public final void encode(OutputStream stream, E e) throws IOException {
-        Intrinsics.e(stream, "stream");
-        BufferedSink buffer = Okio.buffer(Okio.sink(stream));
+    public final void encode(OutputStream outputStream, E e) throws IOException {
+        Intrinsics.e(outputStream, Instrumentation.REPORT_KEY_STREAMRESULT);
+        BufferedSink buffer = Okio.buffer(Okio.sink(outputStream));
         encode(buffer, (BufferedSink) e);
         buffer.emit();
     }
 
-    public final void encode(BufferedSink sink, E e) throws IOException {
-        Intrinsics.e(sink, "sink");
+    public final void encode(BufferedSink bufferedSink, E e) throws IOException {
+        Intrinsics.e(bufferedSink, "sink");
         ReverseProtoWriter reverseProtoWriter = new ReverseProtoWriter();
         encode(reverseProtoWriter, (ReverseProtoWriter) e);
-        reverseProtoWriter.writeTo(sink);
+        reverseProtoWriter.writeTo(bufferedSink);
     }
 
     public final byte[] encode(E e) {
-        Buffer buffer = new Buffer();
-        encode((BufferedSink) buffer, (Buffer) e);
+        BufferedSink buffer = new Buffer();
+        encode(buffer, (BufferedSink) e);
         return buffer.readByteArray();
     }
 
     public final ByteString encodeByteString(E e) {
-        Buffer buffer = new Buffer();
-        encode((BufferedSink) buffer, (Buffer) e);
+        BufferedSink buffer = new Buffer();
+        encode(buffer, (BufferedSink) e);
         return buffer.readByteString();
     }
 
-    public void encodeWithTag(ProtoWriter writer, int i, E e) throws IOException {
-        Intrinsics.e(writer, "writer");
+    public void encodeWithTag(ProtoWriter protoWriter, int i, E e) throws IOException {
+        Intrinsics.e(protoWriter, "writer");
         if (e == null) {
             return;
         }
-        writer.writeTag(i, getFieldEncoding$wire_runtime());
+        protoWriter.writeTag(i, getFieldEncoding$wire_runtime());
         if (getFieldEncoding$wire_runtime() == FieldEncoding.LENGTH_DELIMITED) {
-            writer.writeVarint32(encodedSize(e));
+            protoWriter.writeVarint32(encodedSize(e));
         }
-        encode(writer, (ProtoWriter) e);
+        encode(protoWriter, (ProtoWriter) e);
     }
 
-    public void encodeWithTag(ReverseProtoWriter writer, int i, E e) throws IOException {
-        Intrinsics.e(writer, "writer");
+    public void encodeWithTag(ReverseProtoWriter reverseProtoWriter, int i, E e) throws IOException {
+        Intrinsics.e(reverseProtoWriter, "writer");
         if (e == null) {
             return;
         }
         if (getFieldEncoding$wire_runtime() == FieldEncoding.LENGTH_DELIMITED) {
-            int byteCount = writer.getByteCount();
-            encode(writer, (ReverseProtoWriter) e);
-            writer.writeVarint32(writer.getByteCount() - byteCount);
+            int byteCount = reverseProtoWriter.getByteCount();
+            encode(reverseProtoWriter, (ReverseProtoWriter) e);
+            reverseProtoWriter.writeVarint32(reverseProtoWriter.getByteCount() - byteCount);
         } else {
-            encode(writer, (ReverseProtoWriter) e);
+            encode(reverseProtoWriter, (ReverseProtoWriter) e);
         }
-        writer.writeTag(i, getFieldEncoding$wire_runtime());
+        reverseProtoWriter.writeTag(i, getFieldEncoding$wire_runtime());
     }
 
     public abstract int encodedSize(E e);

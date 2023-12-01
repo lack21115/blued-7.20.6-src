@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.crypto;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cos.xml.exception.CosXmlClientException;
 import java.nio.ByteBuffer;
 import java.security.InvalidAlgorithmParameterException;
@@ -112,7 +111,7 @@ public abstract class ContentCryptoScheme {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final String getKeySpec() {
-        return getKeyGeneratorAlgorithm() + BridgeUtil.UNDERLINE_STR + getKeyLengthInBits();
+        return getKeyGeneratorAlgorithm() + "_" + getKeyLengthInBits();
     }
 
     abstract long getMaxPlaintextSize();

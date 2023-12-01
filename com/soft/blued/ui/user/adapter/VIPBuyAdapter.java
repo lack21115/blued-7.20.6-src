@@ -22,11 +22,11 @@ import java.util.List;
 public class VIPBuyAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    public onGoodClick f33784a;
+    public onGoodClick f20093a;
     private LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<VIPBuyOption> f33785c = new ArrayList();
+    private List<VIPBuyOption> f20094c = new ArrayList();
     private Context d;
     private LoadOptions e;
     private int f;
@@ -36,7 +36,7 @@ public class VIPBuyAdapter extends BaseAdapter {
         private TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private TextView f33787c;
+        private TextView f20096c;
         private TextView d;
         private ConstraintLayout e;
         private TextView f;
@@ -64,19 +64,19 @@ public class VIPBuyAdapter extends BaseAdapter {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(int i, VIPBuyOption vIPBuyOption, View view) {
         Tracker.onClick(view);
-        InstantLog.a(this.f33785c.get(i).vip_grade, this.f33785c.get(i).money);
+        InstantLog.a(this.f20094c.get(i).vip_grade, this.f20094c.get(i).money);
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f33785c.size()) {
+            if (i3 >= this.f20094c.size()) {
                 break;
             }
-            this.f33785c.get(i3).choosen = false;
+            this.f20094c.get(i3).choosen = false;
             i2 = i3 + 1;
         }
         vIPBuyOption.choosen = true;
         notifyDataSetChanged();
-        onGoodClick ongoodclick = this.f33784a;
+        onGoodClick ongoodclick = this.f20093a;
         if (ongoodclick != null) {
             ongoodclick.onclick(vIPBuyOption);
         }
@@ -87,37 +87,37 @@ public class VIPBuyAdapter extends BaseAdapter {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f33785c.size()) {
+            if (i2 >= this.f20094c.size()) {
                 return vIPBuyOption;
             }
-            if (this.f33785c.get(i2).choosen) {
-                vIPBuyOption = this.f33785c.get(i2);
+            if (this.f20094c.get(i2).choosen) {
+                vIPBuyOption = this.f20094c.get(i2);
             }
             i = i2 + 1;
         }
     }
 
     public void a(int i) {
-        if (i < this.f33785c.size()) {
+        if (i < this.f20094c.size()) {
             int i2 = 0;
             while (true) {
                 int i3 = i2;
-                if (i3 >= this.f33785c.size()) {
+                if (i3 >= this.f20094c.size()) {
                     break;
                 }
-                this.f33785c.get(i3).choosen = false;
+                this.f20094c.get(i3).choosen = false;
                 i2 = i3 + 1;
             }
-            this.f33785c.get(i).choosen = true;
-            onGoodClick ongoodclick = this.f33784a;
+            this.f20094c.get(i).choosen = true;
+            onGoodClick ongoodclick = this.f20093a;
             if (ongoodclick != null) {
-                ongoodclick.onclick(this.f33785c.get(i));
+                ongoodclick.onclick(this.f20094c.get(i));
             }
         }
     }
 
     public void a(onGoodClick ongoodclick) {
-        this.f33784a = ongoodclick;
+        this.f20093a = ongoodclick;
     }
 
     public void a(List<VIPBuyOption> list) {
@@ -128,8 +128,8 @@ public class VIPBuyAdapter extends BaseAdapter {
         while (true) {
             int i2 = i;
             if (i2 >= list.size()) {
-                this.f33785c.clear();
-                this.f33785c.addAll(list);
+                this.f20094c.clear();
+                this.f20094c.addAll(list);
                 notifyDataSetChanged();
                 return;
             }
@@ -140,12 +140,12 @@ public class VIPBuyAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f33785c.size();
+        return this.f20094c.size();
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f33785c.get(i);
+        return this.f20094c.get(i);
     }
 
     @Override // android.widget.Adapter
@@ -161,17 +161,17 @@ public class VIPBuyAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
             view2 = this.b.inflate(R.layout.item_vip_pay_option, viewGroup, false);
             viewHolder.b = (TextView) view2.findViewById(R.id.tv_month);
-            viewHolder.f33787c = (TextView) view2.findViewById(2131371262);
+            viewHolder.f20096c = (TextView) view2.findViewById(R.id.tv_desc);
             viewHolder.d = (TextView) view2.findViewById(R.id.tv_actual_amount);
             viewHolder.e = (ConstraintLayout) view2.findViewById(R.id.rl_item);
-            viewHolder.f = (TextView) view2.findViewById(2131372678);
+            viewHolder.f = (TextView) view2.findViewById(R.id.tv_tag);
             viewHolder.g = (TextView) view2.findViewById(R.id.tv_unit);
             view2.setTag(viewHolder);
         } else {
             view2 = view;
             viewHolder = (ViewHolder) view.getTag();
         }
-        final VIPBuyOption vIPBuyOption = this.f33785c.get(i);
+        final VIPBuyOption vIPBuyOption = this.f20094c.get(i);
         if (vIPBuyOption != null) {
             String str = ((int) vIPBuyOption.money) + "";
             viewHolder.g.setText(vIPBuyOption.item.price_copy);
@@ -188,7 +188,7 @@ public class VIPBuyAdapter extends BaseAdapter {
             });
             if (vIPBuyOption.item != null) {
                 viewHolder.b.setText(vIPBuyOption.item.name);
-                viewHolder.f33787c.setText(vIPBuyOption.item.description);
+                viewHolder.f20096c.setText(vIPBuyOption.item.description);
                 if (TextUtils.isEmpty(vIPBuyOption.item.tag)) {
                     viewHolder.f.setVisibility(8);
                 } else {
@@ -204,7 +204,7 @@ public class VIPBuyAdapter extends BaseAdapter {
                 viewHolder.e.setBackground(this.d.getResources().getDrawable(R.drawable.shape_buy_vip_choosed_bg));
                 return view2;
             }
-            viewHolder.e.setBackground(BluedSkinUtils.b(this.d, R.drawable.shape_buy_vip_unchoose_bg));
+            viewHolder.e.setBackground(BluedSkinUtils.b(this.d, (int) R.drawable.shape_buy_vip_unchoose_bg));
         }
         return view2;
     }

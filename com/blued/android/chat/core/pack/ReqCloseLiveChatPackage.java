@@ -20,7 +20,7 @@ public class ReqCloseLiveChatPackage extends ReqBasePackage {
     protected Map<String, Object> getReqInfo() {
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE, Short.valueOf(this.sessionType));
-        arrayMap.put("session_id", Long.valueOf(this.sessionId));
+        arrayMap.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, Long.valueOf(this.sessionId));
         int i = this.stopReason;
         if (i != 0) {
             arrayMap.put("stop_reason", Integer.valueOf(i));

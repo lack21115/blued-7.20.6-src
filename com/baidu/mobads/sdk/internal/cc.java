@@ -7,13 +7,13 @@ import com.baidu.mobads.sdk.internal.am;
 public class cc implements am.b {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ double f9372a;
+    final /* synthetic */ double f6532a;
     final /* synthetic */ bw b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cc(bw bwVar, double d) {
         this.b = bwVar;
-        this.f9372a = d;
+        this.f6532a = d;
     }
 
     @Override // com.baidu.mobads.sdk.internal.am.b

@@ -6,27 +6,27 @@ import android.opengl.GLES30;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public n f1325a;
+    public n f1277a;
     public n b;
 
     /* renamed from: c  reason: collision with root package name */
-    public n f1326c;
+    public n f1278c;
 
     public void a() {
-        this.f1325a.n();
+        this.f1277a.n();
         this.b.n();
-        this.f1326c.n();
+        this.f1278c.n();
     }
 
     public boolean a(int i, int i2) {
         int i3 = i / 2;
         int i4 = i2 / 2;
-        this.f1325a = new n();
+        this.f1277a = new n();
         this.b = new n();
-        this.f1326c = new n();
+        this.f1278c = new n();
         a.a.a.a.a.a.h.f.b();
         a.a.a.a.a.a.h.f.b();
-        return this.f1325a.a(i, i2, 1, GLES30.GL_R8, GLES30.GL_RED, "precision mediump float;\nuniform sampler2D u_tex;\nvarying vec2 v_tex;\nfloat Y(vec3 c)  {\n  float result = (0.257 * c.r) + (0.504 * c.g) + (0.098 * c.b) + 0.0625;\n  return result;\n}\nvoid main() {\n  float y = Y(texture2D(u_tex, v_tex).rgb);\n  gl_FragColor = vec4(y);\n}\n") && this.b.a(i3, i4, 1, GLES30.GL_R8, GLES30.GL_RED, "precision mediump float;\nuniform sampler2D u_tex;\nvarying vec2 v_tex;\nfloat U(vec3 c) {\n  float result = -(0.148 * c.r) - (0.291 * c.g) + (0.439 * c.b) + 0.5;\n  return result;\n}\nvoid main() {\n  float u = U(texture2D(u_tex, v_tex).rgb);\n  gl_FragColor = vec4(u);\n}\n") && this.f1326c.a(i3, i4, 1, GLES30.GL_R8, GLES30.GL_RED, "precision mediump float;\nuniform sampler2D u_tex;\nvarying vec2 v_tex;\nfloat V(vec3 c) {\n  float result = (0.439 * c.r) - (0.368 * c.g) - (0.071 * c.b) + 0.5;\n  return result;\n}\nvoid main() {\n  float v = V(texture2D(u_tex, v_tex).rgb);\n  gl_FragColor = vec4(v);\n}\n");
+        return this.f1277a.a(i, i2, 1, GLES30.GL_R8, GLES30.GL_RED, "precision mediump float;\nuniform sampler2D u_tex;\nvarying vec2 v_tex;\nfloat Y(vec3 c)  {\n  float result = (0.257 * c.r) + (0.504 * c.g) + (0.098 * c.b) + 0.0625;\n  return result;\n}\nvoid main() {\n  float y = Y(texture2D(u_tex, v_tex).rgb);\n  gl_FragColor = vec4(y);\n}\n") && this.b.a(i3, i4, 1, GLES30.GL_R8, GLES30.GL_RED, "precision mediump float;\nuniform sampler2D u_tex;\nvarying vec2 v_tex;\nfloat U(vec3 c) {\n  float result = -(0.148 * c.r) - (0.291 * c.g) + (0.439 * c.b) + 0.5;\n  return result;\n}\nvoid main() {\n  float u = U(texture2D(u_tex, v_tex).rgb);\n  gl_FragColor = vec4(u);\n}\n") && this.f1278c.a(i3, i4, 1, GLES30.GL_R8, GLES30.GL_RED, "precision mediump float;\nuniform sampler2D u_tex;\nvarying vec2 v_tex;\nfloat V(vec3 c) {\n  float result = (0.439 * c.r) - (0.368 * c.g) - (0.071 * c.b) + 0.5;\n  return result;\n}\nvoid main() {\n  float v = V(texture2D(u_tex, v_tex).rgb);\n  gl_FragColor = vec4(v);\n}\n");
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:7:0x004c, code lost:
@@ -40,7 +40,7 @@ public class i {
         /*
             r4 = this;
             r0 = r4
-            a.a.a.a.a.b.i.n r0 = r0.f1325a
+            a.a.a.a.a.b.i.n r0 = r0.f1277a
             r1 = r5
             r0.b(r1)
             r0 = r4
@@ -48,7 +48,7 @@ public class i {
             r1 = r5
             r0.b(r1)
             r0 = r4
-            a.a.a.a.a.b.i.n r0 = r0.f1326c
+            a.a.a.a.a.b.i.n r0 = r0.f1278c
             r1 = r5
             r0.b(r1)
             r0 = 3
@@ -57,7 +57,7 @@ public class i {
             r0 = r7
             r1 = 0
             r2 = r4
-            a.a.a.a.a.b.i.n r2 = r2.f1325a
+            a.a.a.a.a.b.i.n r2 = r2.f1277a
             java.nio.ByteBuffer r2 = r2.m()
             r0[r1] = r2
             r0 = r7
@@ -69,7 +69,7 @@ public class i {
             r0 = r7
             r1 = 2
             r2 = r4
-            a.a.a.a.a.b.i.n r2 = r2.f1326c
+            a.a.a.a.a.b.i.n r2 = r2.f1278c
             java.nio.ByteBuffer r2 = r2.m()
             r0[r1] = r2
             r0 = r7
@@ -97,20 +97,20 @@ public class i {
     }
 
     public void b() {
-        n nVar = this.f1325a;
+        n nVar = this.f1277a;
         if (nVar != null) {
             nVar.g();
-            this.f1325a = null;
+            this.f1277a = null;
         }
         n nVar2 = this.b;
         if (nVar2 != null) {
             nVar2.g();
             this.b = null;
         }
-        n nVar3 = this.f1326c;
+        n nVar3 = this.f1278c;
         if (nVar3 != null) {
             nVar3.g();
-            this.f1326c = null;
+            this.f1278c = null;
         }
     }
 }

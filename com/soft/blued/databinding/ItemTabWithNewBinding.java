@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemTabWithNewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29329a;
+    private final RelativeLayout f15639a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29329a;
+        return this.f15639a;
     }
 }

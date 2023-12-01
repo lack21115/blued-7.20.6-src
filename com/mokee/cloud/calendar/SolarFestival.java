@@ -4,9 +4,7 @@ import com.mokee.volley.VolleyError;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/cloud/calendar/SolarFestival.class */
 public class SolarFestival {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f24203a = null;
+    private static final String[] a = null;
     public static int b;
 
     static {
@@ -33,7 +31,7 @@ public class SolarFestival {
         Lc:
             java.lang.StringBuilder r0 = new java.lang.StringBuilder
             r1 = r0
-            java.lang.String[] r2 = com.mokee.cloud.calendar.SolarFestival.f24203a
+            java.lang.String[] r2 = com.mokee.cloud.calendar.SolarFestival.a
             r3 = 1
             r2 = r2[r3]
             r3 = 1
@@ -48,7 +46,7 @@ public class SolarFestival {
             java.lang.String r2 = java.lang.String.format(r2, r3)
             java.lang.String r2 = java.lang.String.valueOf(r2)
             r1.<init>(r2)
-            java.lang.String[] r1 = com.mokee.cloud.calendar.SolarFestival.f24203a
+            java.lang.String[] r1 = com.mokee.cloud.calendar.SolarFestival.a
             r2 = 0
             r1 = r1[r2]
             r2 = 1

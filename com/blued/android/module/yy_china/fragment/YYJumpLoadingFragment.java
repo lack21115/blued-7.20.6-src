@@ -24,10 +24,9 @@ public class YYJumpLoadingFragment extends MvpFragment<YYApplyPresenter> impleme
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        new SVGAPlayer.Builder(ImgURLMap.f10885a.a("yy_home_small_white")).a((SVGAImageView) this.i.findViewById(R.id.iv_loading));
+        new SVGAPlayer.Builder(ImgURLMap.a.a("yy_home_small_white")).a((SVGAImageView) this.i.findViewById(R.id.iv_loading));
     }
 
-    @Override // androidx.lifecycle.Observer
     /* renamed from: c */
     public void onChanged(String str) {
         t();
@@ -38,7 +37,7 @@ public class YYJumpLoadingFragment extends MvpFragment<YYApplyPresenter> impleme
         return R.layout.fragment_jump_loading;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         LiveEventBus.get("notify_close_jump_room", String.class).observe(this, this);

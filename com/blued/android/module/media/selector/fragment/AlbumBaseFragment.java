@@ -38,9 +38,7 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/fragment/AlbumBaseFragment.class */
 public abstract class AlbumBaseFragment extends MediaBaseFragment<IAlbumBaseView, AlbumBasePresenter> implements MemoryRequest.MemoryListener, IAlbumBaseView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f15536a;
+    private Context a;
     private View d;
     private View e;
     private View f;
@@ -67,9 +65,7 @@ public abstract class AlbumBaseFragment extends MediaBaseFragment<IAlbumBaseView
 
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/fragment/AlbumBaseFragment$PopAdapter$ViewHolder.class */
         class ViewHolder {
-
-            /* renamed from: a  reason: collision with root package name */
-            ImageView f15545a;
+            ImageView a;
             TextView b;
 
             private ViewHolder() {
@@ -98,25 +94,25 @@ public abstract class AlbumBaseFragment extends MediaBaseFragment<IAlbumBaseView
         public View getView(int i, View view, ViewGroup viewGroup) {
             ViewHolder viewHolder;
             if (view == null) {
-                view = LayoutInflater.from(AlbumBaseFragment.this.f15536a).inflate(R.layout.select_catalog_item, (ViewGroup) null);
+                view = LayoutInflater.from(AlbumBaseFragment.this.a).inflate(R.layout.select_catalog_item, (ViewGroup) null);
                 viewHolder = new ViewHolder();
                 view.setTag(viewHolder);
-                viewHolder.f15545a = (ImageView) view.findViewById(R.id.header_view);
+                viewHolder.a = (ImageView) view.findViewById(R.id.header_view);
                 viewHolder.b = (TextView) view.findViewById(R.id.name_view);
             } else {
                 viewHolder = (ViewHolder) view.getTag();
-                viewHolder.f15545a.setImageResource(R.drawable.defaultpicture);
+                viewHolder.a.setImageResource(R.drawable.defaultpicture);
             }
             final GroupImageInfo b = AlbumBasePresenter.b(i);
             LoadOptions loadOptions = new LoadOptions();
             loadOptions.d = R.drawable.defaultpicture;
             loadOptions.b = R.drawable.defaultpicture;
             if (b.isVideoMediaType()) {
-                ThumbLoader.a().a(b.getChildImageInfo(), viewHolder.f15545a, loadOptions);
+                ThumbLoader.a().a(b.getChildImageInfo(), viewHolder.a, loadOptions);
             } else if (TextUtils.isEmpty(b.topImageUri)) {
-                ImageLoader.d(AlbumBaseFragment.this.getFragmentActive(), b.getTopImagePath()).b(R.drawable.defaultpicture).a(viewHolder.f15545a);
+                ImageLoader.d(AlbumBaseFragment.this.getFragmentActive(), b.getTopImagePath()).b(R.drawable.defaultpicture).a(viewHolder.a);
             } else {
-                ImageLoader.b(AlbumBaseFragment.this.getFragmentActive(), b.topImageUri).b(R.drawable.defaultpicture).a(viewHolder.f15545a);
+                ImageLoader.b(AlbumBaseFragment.this.getFragmentActive(), b.topImageUri).b(R.drawable.defaultpicture).a(viewHolder.a);
             }
             if (TextUtils.isEmpty(b.getFolderName())) {
                 viewHolder.b.setText("");
@@ -138,12 +134,12 @@ public abstract class AlbumBaseFragment extends MediaBaseFragment<IAlbumBaseView
     }
 
     private void C() {
-        ListView listView = new ListView(this.f15536a);
+        ListView listView = new ListView(this.a);
         listView.setDivider(null);
         PopAdapter popAdapter = new PopAdapter();
         this.t = popAdapter;
         listView.setAdapter((ListAdapter) popAdapter);
-        PopMenu popMenu = new PopMenu(this.f15536a, listView);
+        PopMenu popMenu = new PopMenu(this.a, listView);
         this.s = popMenu;
         popMenu.a(new PopupWindow.OnDismissListener() { // from class: com.blued.android.module.media.selector.fragment.AlbumBaseFragment.5
             @Override // android.widget.PopupWindow.OnDismissListener
@@ -151,7 +147,7 @@ public abstract class AlbumBaseFragment extends MediaBaseFragment<IAlbumBaseView
                 if (AlbumBaseFragment.this.s() != null) {
                     AlbumBaseFragment.this.l.setImageDrawable(AlbumBaseFragment.this.s());
                 } else {
-                    AlbumBaseFragment.this.l.setImageDrawable(AlbumBaseFragment.this.f15536a.getResources().getDrawable(R.drawable.media_arrow_down_icon));
+                    AlbumBaseFragment.this.l.setImageDrawable(AlbumBaseFragment.this.a.getResources().getDrawable(R.drawable.media_arrow_down_icon));
                 }
             }
         });
@@ -166,12 +162,12 @@ public abstract class AlbumBaseFragment extends MediaBaseFragment<IAlbumBaseView
             return;
         }
         this.g.setVisibility(0);
-        this.g.startAnimation(AnimationUtils.loadAnimation(this.f15536a, R.anim.photo_select_tips_in));
+        this.g.startAnimation(AnimationUtils.loadAnimation(this.a, R.anim.photo_select_tips_in));
         AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.media.selector.fragment.AlbumBaseFragment.6
             @Override // java.lang.Runnable
             public void run() {
                 if (AlbumBaseFragment.this.v == 0) {
-                    AlbumBaseFragment.this.g.startAnimation(AnimationUtils.loadAnimation(AlbumBaseFragment.this.f15536a, R.anim.photo_select_tips_out));
+                    AlbumBaseFragment.this.g.startAnimation(AnimationUtils.loadAnimation(AlbumBaseFragment.this.a, R.anim.photo_select_tips_out));
                     AlbumBaseFragment.this.g.setVisibility(8);
                     return;
                 }
@@ -222,7 +218,7 @@ public abstract class AlbumBaseFragment extends MediaBaseFragment<IAlbumBaseView
                             if (AlbumBaseFragment.this.t() != null) {
                                 AlbumBaseFragment.this.l.setImageDrawable(AlbumBaseFragment.this.t());
                             } else {
-                                AlbumBaseFragment.this.l.setImageDrawable(AlbumBaseFragment.this.f15536a.getResources().getDrawable(R.drawable.media_arrow_up_icon));
+                                AlbumBaseFragment.this.l.setImageDrawable(AlbumBaseFragment.this.a.getResources().getDrawable(R.drawable.media_arrow_up_icon));
                             }
                         }
                     }
@@ -341,7 +337,7 @@ public abstract class AlbumBaseFragment extends MediaBaseFragment<IAlbumBaseView
                         if (AlbumBaseFragment.this.t() != null) {
                             AlbumBaseFragment.this.l.setImageDrawable(AlbumBaseFragment.this.t());
                         } else {
-                            AlbumBaseFragment.this.l.setImageDrawable(AlbumBaseFragment.this.f15536a.getResources().getDrawable(R.drawable.media_arrow_up_icon));
+                            AlbumBaseFragment.this.l.setImageDrawable(AlbumBaseFragment.this.a.getResources().getDrawable(R.drawable.media_arrow_up_icon));
                         }
                     }
                 }
@@ -355,7 +351,7 @@ public abstract class AlbumBaseFragment extends MediaBaseFragment<IAlbumBaseView
         this.p = albumRecyclerView;
         albumRecyclerView.setLayoutManager(l());
         this.n = (FrameLayout) this.d.findViewById(R.id.tabs);
-        this.u = Tools.a(this.f15536a);
+        this.u = Tools.a(this.a);
         this.r = (NoDataAndLoadFailView) this.d.findViewById(R.id.vr_error_v);
     }
 
@@ -431,19 +427,19 @@ public abstract class AlbumBaseFragment extends MediaBaseFragment<IAlbumBaseView
         return 6;
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.MediaBaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.media.selector.fragment.MediaBaseFragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f15536a = getActivity();
+        this.a = getActivity();
         View view = this.d;
         if (view == null) {
             this.d = layoutInflater.inflate(R.layout.album_v, viewGroup, false);
@@ -455,19 +451,19 @@ public abstract class AlbumBaseFragment extends MediaBaseFragment<IAlbumBaseView
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroyView() {
         MemoryRequest.a().b(this);
         super.onDestroyView();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onStart() {
         super.onStart();
         MemoryRequest.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onStop() {
         super.onStop();
         MemoryRequest.a().a(this);

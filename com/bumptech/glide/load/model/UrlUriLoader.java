@@ -13,7 +13,7 @@ import java.util.Set;
 public class UrlUriLoader<Data> implements ModelLoader<Uri, Data> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Set<String> f20916a = Collections.unmodifiableSet(new HashSet(Arrays.asList("http", "https")));
+    private static final Set<String> f7310a = Collections.unmodifiableSet(new HashSet(Arrays.asList("http", "https")));
     private final ModelLoader<GlideUrl, Data> b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/UrlUriLoader$StreamFactory.class */
@@ -39,6 +39,6 @@ public class UrlUriLoader<Data> implements ModelLoader<Uri, Data> {
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public boolean a(Uri uri) {
-        return f20916a.contains(uri.getScheme());
+        return f7310a.contains(uri.getScheme());
     }
 }

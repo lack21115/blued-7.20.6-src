@@ -43,9 +43,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemGoodsWallCard.class */
 public final class FitemGoodsWallCard extends FreedomItem {
     private final GoodsWallItemModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ObjectAnimator f12537c;
+    private ObjectAnimator c;
     private ObjectAnimator d;
     private boolean e;
     private boolean f;
@@ -117,7 +115,7 @@ public final class FitemGoodsWallCard extends FreedomItem {
             }).a(R.id.iv_query, new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemGoodsWallCard$QukO0l7qDdC6v8p1bJHNGUP1G68
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FitemGoodsWallCard.a(Context.this, this, view);
+                    FitemGoodsWallCard.a(context, this, view);
                 }
             }).a(R.id.iv_avatar, this.b.getAvatar(), R.drawable.icon_desire_funders_default, true).a(R.id.tv_nickname, (CharSequence) LiveCloakingUtil.a(this.b.getUsername(), this.b.is_hide()));
         } else {
@@ -134,7 +132,7 @@ public final class FitemGoodsWallCard extends FreedomItem {
     private final void b(BaseViewHolder baseViewHolder, boolean z) {
         ImageView imageView = (ImageView) baseViewHolder.a(R.id.iv_goods_img);
         if (!z) {
-            ObjectAnimator objectAnimator = this.f12537c;
+            ObjectAnimator objectAnimator = this.c;
             if (objectAnimator != null) {
                 objectAnimator.cancel();
             }
@@ -147,16 +145,16 @@ public final class FitemGoodsWallCard extends FreedomItem {
             return;
         }
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(imageView, "scaleX", 1.0f, 0.92f, 1.0f);
-        this.f12537c = ofFloat;
+        this.c = ofFloat;
         Intrinsics.a(ofFloat);
         ofFloat.setDuration(1440L);
-        ObjectAnimator objectAnimator3 = this.f12537c;
+        ObjectAnimator objectAnimator3 = this.c;
         Intrinsics.a(objectAnimator3);
         objectAnimator3.setRepeatCount(-1);
-        ObjectAnimator objectAnimator4 = this.f12537c;
+        ObjectAnimator objectAnimator4 = this.c;
         Intrinsics.a(objectAnimator4);
         objectAnimator4.setRepeatMode(-1);
-        ObjectAnimator objectAnimator5 = this.f12537c;
+        ObjectAnimator objectAnimator5 = this.c;
         Intrinsics.a(objectAnimator5);
         objectAnimator5.start();
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(imageView, "scaleY", 1.0f, 0.92f, 1.0f);
@@ -193,7 +191,7 @@ public final class FitemGoodsWallCard extends FreedomItem {
         BaseFragment baseFragment;
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(vh, "$vh");
-        if (this$0.b.is_hide() != 0 || (baseFragment = (BaseFragment) vh.f10931a.a("BaseFragment", (String) null)) == null) {
+        if (this$0.b.is_hide() != 0 || (baseFragment = (BaseFragment) vh.a.a("BaseFragment", (String) null)) == null) {
             return;
         }
         UserCardDialogFragment userCardDialogFragment = new UserCardDialogFragment(baseFragment);
@@ -279,12 +277,12 @@ public final class FitemGoodsWallCard extends FreedomItem {
         this.f = true;
         boolean z = false;
         this.g = false;
-        BaseViewHolder a2 = vh.a(R.id.iv_goods_img, this.b.getGoods_image()).a(R.id.tv_goods_name, (CharSequence) this.b.getGoods_name());
+        BaseViewHolder a = vh.a(R.id.iv_goods_img, this.b.getGoods_image()).a(R.id.tv_goods_name, (CharSequence) this.b.getGoods_name());
         int i2 = R.id.iv_tag;
         if (this.b.getLimited() == 1) {
             z = true;
         }
-        a2.b(i2, z);
+        a.b(i2, z);
         e(vh);
         b(context, vh);
         int start = this.b.getStart();

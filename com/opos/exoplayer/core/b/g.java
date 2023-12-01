@@ -9,11 +9,11 @@ import java.util.LinkedList;
 public abstract class g<I extends e, O extends f, E extends Exception> implements c<I, O, E> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Thread f25076a;
+    private final Thread f11388a;
     private final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private final LinkedList<I> f25077c = new LinkedList<>();
+    private final LinkedList<I> f11389c = new LinkedList<>();
     private final LinkedList<O> d = new LinkedList<>();
     private final I[] e;
     private final O[] f;
@@ -49,7 +49,7 @@ public abstract class g<I extends e, O extends f, E extends Exception> implement
                         g.this.k();
                     }
                 };
-                this.f25076a = thread;
+                this.f11388a = thread;
                 thread.start();
                 return;
             }
@@ -105,7 +105,7 @@ public abstract class g<I extends e, O extends f, E extends Exception> implement
             if (this.l) {
                 return false;
             }
-            I removeFirst = this.f25077c.removeFirst();
+            I removeFirst = this.f11389c.removeFirst();
             O[] oArr = this.f;
             int i = this.h - 1;
             this.h = i;
@@ -148,7 +148,7 @@ public abstract class g<I extends e, O extends f, E extends Exception> implement
     }
 
     private boolean m() {
-        return !this.f25077c.isEmpty() && this.h > 0;
+        return !this.f11389c.isEmpty() && this.h > 0;
     }
 
     protected abstract E a(I i, O o, boolean z);
@@ -167,7 +167,7 @@ public abstract class g<I extends e, O extends f, E extends Exception> implement
         synchronized (this.b) {
             i();
             com.opos.exoplayer.core.i.a.a(i == this.i);
-            this.f25077c.addLast(i);
+            this.f11389c.addLast(i);
             j();
             this.i = null;
         }
@@ -195,8 +195,8 @@ public abstract class g<I extends e, O extends f, E extends Exception> implement
                 b((g<I, O, E>) this.i);
                 this.i = null;
             }
-            while (!this.f25077c.isEmpty()) {
-                b((g<I, O, E>) this.f25077c.removeFirst());
+            while (!this.f11389c.isEmpty()) {
+                b((g<I, O, E>) this.f11389c.removeFirst());
             }
             while (!this.d.isEmpty()) {
                 b((g<I, O, E>) this.d.removeFirst());
@@ -211,7 +211,7 @@ public abstract class g<I extends e, O extends f, E extends Exception> implement
             this.b.notify();
         }
         try {
-            this.f25076a.join();
+            this.f11388a.join();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

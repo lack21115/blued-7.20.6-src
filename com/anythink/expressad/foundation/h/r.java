@@ -10,11 +10,11 @@ import java.util.UUID;
 public final class r {
 
     /* renamed from: a  reason: collision with root package name */
-    static boolean f7970a = false;
+    static boolean f5130a = false;
     static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public static char[] f7971c = {'P', 'a', 'c', 'k', 'a', 'g', 'e', 'M', 'a', 'n', 'a', 'g', 'e', 'r'};
+    public static char[] f5131c = {'P', 'a', 'c', 'k', 'a', 'g', 'e', 'M', 'a', 'n', 'a', 'g', 'e', 'r'};
     private static final String d = "common-exception";
     private static final String e = "SameSDCardTool";
     private static boolean f = false;
@@ -49,9 +49,9 @@ public final class r {
         try {
             b = context.getFilesDir().getAbsolutePath() + File.separator;
             if (context.getPackageManager().checkPermission("android.permission.WRITE_EXTERNAL_STORAGE", context.getPackageName()) == 0) {
-                f7970a = true;
+                f5130a = true;
             } else {
-                f7970a = false;
+                f5130a = false;
             }
             b(context);
         } catch (Exception e2) {
@@ -124,7 +124,7 @@ public final class r {
         L2a:
             r0 = r7
             r8 = r0
-            boolean r0 = com.anythink.expressad.foundation.h.r.f7970a
+            boolean r0 = com.anythink.expressad.foundation.h.r.f5130a
             if (r0 == 0) goto La4
             r0 = r7
             r8 = r0
@@ -206,7 +206,7 @@ public final class r {
     }
 
     private static boolean c() {
-        return f7970a;
+        return f5130a;
     }
 
     private static int d() {

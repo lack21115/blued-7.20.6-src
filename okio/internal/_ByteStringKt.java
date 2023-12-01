@@ -368,11 +368,11 @@ public final class _ByteStringKt {
             if (utf8 != null) {
                 String substring = utf8.substring(0, codePointIndexToCharIndex);
                 Intrinsics.c(substring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
-                String a2 = StringsKt.a(StringsKt.a(StringsKt.a(substring, "\\", "\\\\", false, 4, (Object) null), "\n", "\\n", false, 4, (Object) null), "\r", "\\r", false, 4, (Object) null);
+                String a = StringsKt.a(StringsKt.a(StringsKt.a(substring, "\\", "\\\\", false, 4, (Object) null), "\n", "\\n", false, 4, (Object) null), "\r", "\\r", false, 4, (Object) null);
                 if (codePointIndexToCharIndex >= utf8.length()) {
-                    return "[text=" + a2 + ']';
+                    return "[text=" + a + ']';
                 }
-                return "[size=" + byteString.getData$okio().length + " text=" + a2 + "…]";
+                return "[size=" + byteString.getData$okio().length + " text=" + a + "…]";
             }
             throw new NullPointerException("null cannot be cast to non-null type java.lang.String");
         } else if (byteString.getData$okio().length <= 64) {
@@ -415,20 +415,20 @@ public final class _ByteStringKt {
         buffer.write(byteString.getData$okio(), i, i2);
     }
 
-    public static final int decodeHexDigit(char c2) {
-        char c3;
-        if ('0' <= c2 && c2 <= '9') {
-            return c2 - '0';
+    public static final int decodeHexDigit(char c) {
+        char c2;
+        if ('0' <= c && c <= '9') {
+            return c - '0';
         }
-        if ('a' <= c2 && c2 <= 'f') {
-            c3 = 'a';
+        if ('a' <= c && c <= 'f') {
+            c2 = 'a';
         } else {
-            if (!('A' <= c2 && c2 <= 'F')) {
-                throw new IllegalArgumentException(Intrinsics.a("Unexpected hex digit: ", (Object) Character.valueOf(c2)));
+            if (!('A' <= c && c <= 'F')) {
+                throw new IllegalArgumentException(Intrinsics.a("Unexpected hex digit: ", (Object) Character.valueOf(c)));
             }
-            c3 = 'A';
+            c2 = 'A';
         }
-        return (c2 - c3) + 10;
+        return (c - c2) + 10;
     }
 
     public static final char[] getHEX_DIGIT_CHARS() {

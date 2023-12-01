@@ -9,20 +9,20 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7559a = 131072;
+    public static final int f4720a = 131072;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/j/a/f$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public volatile long f7560a;
+        public volatile long f4721a;
         public volatile long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public volatile long f7561c = -1;
+        public volatile long f4722c = -1;
 
         private long a() {
-            return this.f7560a + this.b;
+            return this.f4721a + this.b;
         }
     }
 
@@ -52,14 +52,14 @@ public final class f {
     }
 
     public static String a(com.anythink.expressad.exoplayer.j.k kVar) {
-        return kVar.h != null ? kVar.h : kVar.f7584c.toString();
+        return kVar.h != null ? kVar.h : kVar.f4745c.toString();
     }
 
     private static void a(com.anythink.expressad.exoplayer.j.a.a aVar, String str) {
         for (e eVar : aVar.a(str)) {
             try {
                 aVar.b(eVar);
-            } catch (a.C0138a e) {
+            } catch (a.C0067a e) {
             }
         }
     }
@@ -71,8 +71,8 @@ public final class f {
             String a2 = a(kVar);
             long j = kVar.e;
             long b = kVar.g != -1 ? kVar.g : aVar.b(a2);
-            aVar2.f7561c = b;
-            aVar2.f7560a = 0L;
+            aVar2.f4722c = b;
+            aVar2.f4721a = 0L;
             aVar2.b = 0L;
             while (b != 0) {
                 int i = (b > (-1L) ? 1 : (b == (-1L) ? 0 : -1));
@@ -83,7 +83,7 @@ public final class f {
                         break;
                     }
                 } else {
-                    aVar2.f7560a += b2;
+                    aVar2.f4721a += b2;
                 }
                 j += b2;
                 if (i == 0) {
@@ -121,14 +121,14 @@ public final class f {
         String a2 = a(kVar);
         long j = kVar.e;
         long b = kVar.g != -1 ? kVar.g : aVar.b(a2);
-        aVar2.f7561c = b;
-        aVar2.f7560a = 0L;
+        aVar2.f4722c = b;
+        aVar2.f4721a = 0L;
         aVar2.b = 0L;
         while (b != 0) {
             int i = (b > (-1L) ? 1 : (b == (-1L) ? 0 : -1));
             long b2 = aVar.b(a2, j, i != 0 ? b : Long.MAX_VALUE);
             if (b2 > 0) {
-                aVar2.f7560a += b2;
+                aVar2.f4721a += b2;
             } else {
                 long j2 = -b2;
                 b2 = j2;
@@ -154,8 +154,8 @@ public final class f {
             String a2 = a(kVar);
             long j = kVar.e;
             long b = kVar.g != -1 ? kVar.g : aVar.b(a2);
-            aVar2.f7561c = b;
-            aVar2.f7560a = 0L;
+            aVar2.f4722c = b;
+            aVar2.f4721a = 0L;
             aVar2.b = 0L;
             while (b != 0) {
                 int i = (b > (-1L) ? 1 : (b == (-1L) ? 0 : -1));
@@ -166,7 +166,7 @@ public final class f {
                         break;
                     }
                 } else {
-                    aVar2.f7560a += b2;
+                    aVar2.f4721a += b2;
                 }
                 j += b2;
                 if (i == 0) {

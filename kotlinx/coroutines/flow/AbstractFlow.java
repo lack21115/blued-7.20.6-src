@@ -59,7 +59,7 @@ public abstract class AbstractFlow<T> implements CancellableFlow<T>, Flow<T> {
             r1 = 1
             if (r0 != r1) goto L62
             r0 = r7
-            java.lang.Object r0 = r0.f43043a
+            java.lang.Object r0 = r0.a
             kotlinx.coroutines.flow.internal.SafeCollector r0 = (kotlinx.coroutines.flow.internal.SafeCollector) r0
             r6 = r0
             r0 = r10
@@ -89,7 +89,7 @@ public abstract class AbstractFlow<T> implements CancellableFlow<T>, Flow<T> {
             r10 = r0
             r0 = r7
             r1 = r6
-            r0.f43043a = r1     // Catch: java.lang.Throwable -> La9
+            r0.a = r1     // Catch: java.lang.Throwable -> La9
             r0 = r7
             r1 = 1
             r0.d = r1     // Catch: java.lang.Throwable -> La9
@@ -106,7 +106,7 @@ public abstract class AbstractFlow<T> implements CancellableFlow<T>, Flow<T> {
         La1:
             r0 = r6
             r0.releaseIntercepted()
-            kotlin.Unit r0 = kotlin.Unit.f42314a
+            kotlin.Unit r0 = kotlin.Unit.a
             return r0
         La9:
             r7 = move-exception

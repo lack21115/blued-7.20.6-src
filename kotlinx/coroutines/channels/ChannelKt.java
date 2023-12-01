@@ -11,7 +11,7 @@ public final class ChannelKt {
         if (i == -2) {
             int i2 = 1;
             if (bufferOverflow == BufferOverflow.SUSPEND) {
-                i2 = Channel.f42899a.a();
+                i2 = Channel.a.a();
             }
             return new ArrayChannel(i2, bufferOverflow, function1);
         } else if (i == -1) {

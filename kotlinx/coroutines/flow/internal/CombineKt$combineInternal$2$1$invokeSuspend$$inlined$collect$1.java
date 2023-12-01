@@ -11,9 +11,7 @@ import kotlinx.coroutines.flow.FlowCollector;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1.class */
 public final class CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1<T> implements FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Channel f43470a;
+    final /* synthetic */ Channel a;
     final /* synthetic */ int b;
 
     @Metadata
@@ -21,9 +19,7 @@ public final class CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$
     /* renamed from: kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43471a;
+        /* synthetic */ Object a;
         int b;
 
         public AnonymousClass1(Continuation continuation) {
@@ -32,14 +28,14 @@ public final class CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43471a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1.this.emit(null, this);
         }
     }
 
     public CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1(Channel channel, int i) {
-        this.f43470a = channel;
+        this.a = channel;
         this.b = i;
     }
 
@@ -83,7 +79,7 @@ public final class CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$
             r7 = r0
         L35:
             r0 = r7
-            java.lang.Object r0 = r0.f43471a
+            java.lang.Object r0 = r0.a
             r10 = r0
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r9 = r0
@@ -118,7 +114,7 @@ public final class CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$
             kotlin.coroutines.Continuation r0 = (kotlin.coroutines.Continuation) r0
             r10 = r0
             r0 = r5
-            kotlinx.coroutines.channels.Channel r0 = r0.f43470a
+            kotlinx.coroutines.channels.Channel r0 = r0.a
             r10 = r0
             kotlin.collections.IndexedValue r0 = new kotlin.collections.IndexedValue
             r1 = r0
@@ -149,7 +145,7 @@ public final class CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$
             r0 = r9
             return r0
         Lb2:
-            kotlin.Unit r0 = kotlin.Unit.f42314a
+            kotlin.Unit r0 = kotlin.Unit.a
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1.emit(java.lang.Object, kotlin.coroutines.Continuation):java.lang.Object");

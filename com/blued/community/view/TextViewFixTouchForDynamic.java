@@ -87,7 +87,6 @@ public class TextViewFixTouchForDynamic extends EmojiTextView {
         }
     }
 
-    @Override // skin.support.widget.SkinCompatTextView, skin.support.widget.SkinCompatSupportable
     public void applySkin() {
         super.applySkin();
     }
@@ -96,7 +95,6 @@ public class TextViewFixTouchForDynamic extends EmojiTextView {
         return this.ifShowedMore;
     }
 
-    @Override // android.view.View
     public boolean hasFocusable() {
         return false;
     }
@@ -106,7 +104,6 @@ public class TextViewFixTouchForDynamic extends EmojiTextView {
         setMoeTextColor(BluedSkinUtils.a(getContext(), R.color.syc_a));
     }
 
-    @Override // android.widget.TextView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         boolean onTouchEvent = super.onTouchEvent(motionEvent);
         try {

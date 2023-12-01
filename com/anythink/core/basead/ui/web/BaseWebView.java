@@ -1,6 +1,5 @@
 package com.anythink.core.basead.ui.web;
 
-import android.content.ClipDescription;
 import android.content.Context;
 import android.os.Build;
 import android.view.WindowManager;
@@ -10,14 +9,11 @@ import com.anythink.core.common.b.p;
 import com.anythink.core.common.k.g;
 import com.anythink.core.common.k.u;
 import com.bytedance.applog.tracker.Tracker;
-import com.google.android.material.badge.BadgeDrawable;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/basead/ui/web/BaseWebView.class */
 public class BaseWebView extends WebView {
     private static boolean b = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected boolean f6396a;
+    protected boolean a;
 
     public BaseWebView(Context context) {
         super(context.getApplicationContext());
@@ -36,15 +32,15 @@ public class BaseWebView extends WebView {
         if (Build.VERSION.SDK_INT == 19) {
             WebView webView = new WebView(context2.getApplicationContext());
             webView.setBackgroundColor(0);
-            Tracker.loadDataWithBaseURL(webView, null, "", ClipDescription.MIMETYPE_TEXT_HTML, "UTF-8", null);
+            Tracker.loadDataWithBaseURL(webView, (String) null, "", "text/html", "UTF-8", (String) null);
             WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
             layoutParams.width = 1;
             layoutParams.height = 1;
             layoutParams.type = 2005;
             layoutParams.flags = 16777240;
             layoutParams.format = -2;
-            layoutParams.gravity = BadgeDrawable.TOP_START;
-            ((WindowManager) context2.getSystemService(Context.WINDOW_SERVICE)).addView(webView, layoutParams);
+            layoutParams.gravity = 8388659;
+            ((WindowManager) context2.getSystemService("window")).addView(webView, layoutParams);
         }
         b = true;
     }
@@ -60,15 +56,15 @@ public class BaseWebView extends WebView {
         if (Build.VERSION.SDK_INT == 19) {
             WebView webView = new WebView(context.getApplicationContext());
             webView.setBackgroundColor(0);
-            Tracker.loadDataWithBaseURL(webView, null, "", ClipDescription.MIMETYPE_TEXT_HTML, "UTF-8", null);
+            Tracker.loadDataWithBaseURL(webView, (String) null, "", "text/html", "UTF-8", (String) null);
             WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
             layoutParams.width = 1;
             layoutParams.height = 1;
             layoutParams.type = 2005;
             layoutParams.flags = 16777240;
             layoutParams.format = -2;
-            layoutParams.gravity = BadgeDrawable.TOP_START;
-            ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).addView(webView, layoutParams);
+            layoutParams.gravity = 8388659;
+            ((WindowManager) context.getSystemService("window")).addView(webView, layoutParams);
         }
     }
 
@@ -83,10 +79,10 @@ public class BaseWebView extends WebView {
 
     @Override // android.webkit.WebView
     public void destroy() {
-        if (this.f6396a) {
+        if (this.a) {
             return;
         }
-        this.f6396a = true;
+        this.a = true;
         u.a(this);
         removeAllViews();
         super.destroy();

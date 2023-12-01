@@ -21,7 +21,7 @@ public class ReqStartJoinLive extends ReqBasePackage {
     protected Map<String, Object> getReqInfo() {
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE, Short.valueOf(this.sessionType));
-        arrayMap.put("session_id", Long.valueOf(this.sessionId));
+        arrayMap.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, Long.valueOf(this.sessionId));
         long j = this.invitedUid;
         if (j > 0) {
             arrayMap.put("invited_uid", Long.valueOf(j));

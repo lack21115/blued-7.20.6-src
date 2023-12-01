@@ -10,7 +10,6 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
-import com.android.internal.telephony.PhoneConstants;
 import com.bytedance.applog.tracker.Tracker;
 import com.sobot.chat.application.MyApplication;
 import com.sobot.chat.core.HttpUtils;
@@ -102,7 +101,7 @@ public class SobotPhotoActivity extends Activity implements View.OnLongClickList
                 screenWidth = formatDipToPx;
                 i2 = formatDipToPx2;
             }
-            LogUtils.i("bitmap" + screenWidth + PhoneConstants.APN_TYPE_ALL + i2);
+            LogUtils.i("bitmap" + screenWidth + "*" + i2);
             this.sobot_image_view.setLayoutParams(new RelativeLayout.LayoutParams(screenWidth, i2));
         } catch (FileNotFoundException e) {
             e.printStackTrace();

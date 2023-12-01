@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -22,7 +23,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.MathUtils;
 import android.widget.RemoteViews;
-import com.android.internal.R;
 import com.android.internal.util.NotificationColorUtil;
 import com.igexin.push.core.b;
 import java.text.NumberFormat;
@@ -274,7 +274,7 @@ public class Notification implements Parcelable {
             }
 
             /* renamed from: clone */
-            public WearableExtender m119clone() {
+            public WearableExtender m118clone() {
                 WearableExtender wearableExtender = new WearableExtender();
                 wearableExtender.mFlags = this.mFlags;
                 wearableExtender.mInProgressLabel = this.mInProgressLabel;
@@ -362,7 +362,7 @@ public class Notification implements Parcelable {
         }
 
         /* renamed from: clone */
-        public Action m118clone() {
+        public Action m117clone() {
             return new Action(this.icon, this.title, this.actionIntent, new Bundle(this.mExtras), getRemoteInputs());
         }
 
@@ -417,7 +417,7 @@ public class Notification implements Parcelable {
             if (this.mBigLargeIconSet) {
                 this.mBuilder.mLargeIcon = bitmap;
             }
-            standardView.setImageViewBitmap(R.id.big_picture, this.mPicture);
+            standardView.setImageViewBitmap(16909115, this.mPicture);
             applyTopPadding(standardView);
             this.mBuilder.addProfileBadge(standardView, this.mBuilder.mSubText != null && this.mBuilder.mContentText != null ? 16909128 : 16909131);
             return standardView;
@@ -506,13 +506,13 @@ public class Notification implements Parcelable {
             this.mBuilder.mContentText = null;
             RemoteViews standardView = getStandardView(this.mBuilder.getBigTextLayoutResource());
             this.mBuilder.mContentText = charSequence;
-            standardView.setTextViewText(R.id.big_text, this.mBuilder.processLegacyText(this.mBigText));
-            standardView.setViewVisibility(R.id.big_text, 0);
-            standardView.setInt(R.id.big_text, "setMaxLines", calculateMaxLines());
-            standardView.setViewVisibility(16908309, 8);
+            standardView.setTextViewText(16909111, this.mBuilder.processLegacyText(this.mBigText));
+            standardView.setViewVisibility(16909111, 0);
+            standardView.setInt(16909111, "setMaxLines", calculateMaxLines());
+            standardView.setViewVisibility(R.id.text2, 8);
             applyTopPadding(standardView);
             this.mBuilder.shrinkLine3Text(standardView);
-            this.mBuilder.addProfileBadge(standardView, R.id.profile_badge_large_template);
+            this.mBuilder.addProfileBadge(standardView, 16909112);
             return standardView;
         }
 
@@ -658,14 +658,14 @@ public class Notification implements Parcelable {
         public boolean addProfileBadge(RemoteViews remoteViews, int i) {
             boolean z = false;
             Bitmap profileBadge = getProfileBadge();
-            remoteViews.setViewVisibility(R.id.profile_badge_large_template, 8);
-            remoteViews.setViewVisibility(R.id.profile_badge_line2, 8);
-            remoteViews.setViewVisibility(R.id.profile_badge_line3, 8);
+            remoteViews.setViewVisibility(16909112, 8);
+            remoteViews.setViewVisibility(16909128, 8);
+            remoteViews.setViewVisibility(16909131, 8);
             if (profileBadge != null) {
                 remoteViews.setImageViewBitmap(i, profileBadge);
                 remoteViews.setViewVisibility(i, 0);
                 if (i == 16909131) {
-                    remoteViews.setViewVisibility(R.id.line3, 0);
+                    remoteViews.setViewVisibility(16909129, 0);
                 }
                 z = true;
             }
@@ -673,10 +673,10 @@ public class Notification implements Parcelable {
         }
 
         private void applyLargeIconBackground(RemoteViews remoteViews) {
-            remoteViews.setInt(16908294, "setBackgroundResource", R.drawable.notification_icon_legacy_bg);
-            remoteViews.setDrawableParameters(16908294, true, -1, resolveColor(), PorterDuff.Mode.SRC_ATOP, -1);
-            int dimensionPixelSize = this.mContext.getResources().getDimensionPixelSize(R.dimen.notification_large_icon_circle_padding);
-            remoteViews.setViewPadding(16908294, dimensionPixelSize, dimensionPixelSize, dimensionPixelSize, dimensionPixelSize);
+            remoteViews.setInt(R.id.icon, "setBackgroundResource", 17302774);
+            remoteViews.setDrawableParameters(R.id.icon, true, -1, resolveColor(), PorterDuff.Mode.SRC_ATOP, -1);
+            int dimensionPixelSize = this.mContext.getResources().getDimensionPixelSize(17104987);
+            remoteViews.setViewPadding(R.id.icon, dimensionPixelSize, dimensionPixelSize, dimensionPixelSize, dimensionPixelSize);
         }
 
         private RemoteViews applyStandardTemplate(int i) {
@@ -691,60 +691,60 @@ public class Notification implements Parcelable {
             boolean z3 = false;
             boolean z4 = false;
             if (this.mLargeIcon != null) {
-                builderRemoteViews.setImageViewBitmap(16908294, this.mLargeIcon);
+                builderRemoteViews.setImageViewBitmap(R.id.icon, this.mLargeIcon);
                 processLargeLegacyIcon(this.mLargeIcon, builderRemoteViews);
-                builderRemoteViews.setImageViewResource(R.id.right_icon, this.mSmallIcon);
-                builderRemoteViews.setViewVisibility(R.id.right_icon, 0);
+                builderRemoteViews.setImageViewResource(16908340, this.mSmallIcon);
+                builderRemoteViews.setViewVisibility(16908340, 0);
                 processSmallRightIcon(this.mSmallIcon, builderRemoteViews);
             } else {
-                builderRemoteViews.setImageViewResource(16908294, this.mSmallIcon);
-                builderRemoteViews.setViewVisibility(16908294, 0);
+                builderRemoteViews.setImageViewResource(R.id.icon, this.mSmallIcon);
+                builderRemoteViews.setViewVisibility(R.id.icon, 0);
                 processSmallIconAsLarge(this.mSmallIcon, builderRemoteViews);
             }
             if (this.mContentTitle != null) {
-                builderRemoteViews.setTextViewText(16908310, processLegacyText(this.mContentTitle));
+                builderRemoteViews.setTextViewText(R.id.title, processLegacyText(this.mContentTitle));
             }
             if (this.mContentText != null) {
-                builderRemoteViews.setTextViewText(R.id.text, processLegacyText(this.mContentText));
+                builderRemoteViews.setTextViewText(16908392, processLegacyText(this.mContentText));
                 z2 = true;
             }
             if (this.mContentInfo != null) {
-                builderRemoteViews.setTextViewText(R.id.info, processLegacyText(this.mContentInfo));
-                builderRemoteViews.setViewVisibility(R.id.info, 0);
+                builderRemoteViews.setTextViewText(16909130, processLegacyText(this.mContentInfo));
+                builderRemoteViews.setViewVisibility(16909130, 0);
                 z2 = true;
             } else if (this.mNumber > 0) {
-                if (this.mNumber > this.mContext.getResources().getInteger(17694723)) {
-                    builderRemoteViews.setTextViewText(R.id.info, processLegacyText(this.mContext.getResources().getString(17039383)));
+                if (this.mNumber > this.mContext.getResources().getInteger(R.integer.status_bar_notification_info_maxnum)) {
+                    builderRemoteViews.setTextViewText(16909130, processLegacyText(this.mContext.getResources().getString(R.string.status_bar_notification_info_overflow)));
                 } else {
-                    builderRemoteViews.setTextViewText(R.id.info, processLegacyText(NumberFormat.getIntegerInstance().format(this.mNumber)));
+                    builderRemoteViews.setTextViewText(16909130, processLegacyText(NumberFormat.getIntegerInstance().format(this.mNumber)));
                 }
-                builderRemoteViews.setViewVisibility(R.id.info, 0);
+                builderRemoteViews.setViewVisibility(16909130, 0);
                 z2 = true;
             } else {
-                builderRemoteViews.setViewVisibility(R.id.info, 8);
+                builderRemoteViews.setViewVisibility(16909130, 8);
             }
             if (this.mSubText != null) {
-                builderRemoteViews.setTextViewText(R.id.text, processLegacyText(this.mSubText));
+                builderRemoteViews.setTextViewText(16908392, processLegacyText(this.mSubText));
                 if (this.mContentText != null) {
-                    builderRemoteViews.setTextViewText(16908309, processLegacyText(this.mContentText));
-                    builderRemoteViews.setViewVisibility(16908309, 0);
+                    builderRemoteViews.setTextViewText(R.id.text2, processLegacyText(this.mContentText));
+                    builderRemoteViews.setViewVisibility(R.id.text2, 0);
                     z3 = true;
                     z4 = true;
                 } else {
-                    builderRemoteViews.setViewVisibility(16908309, 8);
+                    builderRemoteViews.setViewVisibility(R.id.text2, 8);
                 }
             } else {
-                builderRemoteViews.setViewVisibility(16908309, 8);
+                builderRemoteViews.setViewVisibility(R.id.text2, 8);
                 if (!z || (this.mProgressMax == 0 && !this.mProgressIndeterminate)) {
-                    builderRemoteViews.setViewVisibility(16908301, 8);
+                    builderRemoteViews.setViewVisibility(R.id.progress, 8);
                 } else {
-                    builderRemoteViews.setViewVisibility(16908301, 0);
-                    builderRemoteViews.setProgressBar(16908301, this.mProgressMax, this.mProgress, this.mProgressIndeterminate);
-                    builderRemoteViews.setProgressBackgroundTintList(16908301, ColorStateList.valueOf(this.mContext.getResources().getColor(R.color.notification_progress_background_color)));
+                    builderRemoteViews.setViewVisibility(R.id.progress, 0);
+                    builderRemoteViews.setProgressBar(R.id.progress, this.mProgressMax, this.mProgress, this.mProgressIndeterminate);
+                    builderRemoteViews.setProgressBackgroundTintList(R.id.progress, ColorStateList.valueOf(this.mContext.getResources().getColor(17170518)));
                     if (this.mColor != 0) {
                         ColorStateList valueOf = ColorStateList.valueOf(this.mColor);
-                        builderRemoteViews.setProgressTintList(16908301, valueOf);
-                        builderRemoteViews.setProgressIndeterminateTintList(16908301, valueOf);
+                        builderRemoteViews.setProgressTintList(R.id.progress, valueOf);
+                        builderRemoteViews.setProgressIndeterminateTintList(R.id.progress, valueOf);
                     }
                     z3 = true;
                 }
@@ -754,15 +754,15 @@ public class Notification implements Parcelable {
             }
             if (showsTimeOrChronometer()) {
                 if (this.mUseChronometer) {
-                    builderRemoteViews.setViewVisibility(R.id.chronometer, 0);
-                    builderRemoteViews.setLong(R.id.chronometer, "setBase", this.mWhen + (SystemClock.elapsedRealtime() - System.currentTimeMillis()));
-                    builderRemoteViews.setBoolean(R.id.chronometer, "setStarted", true);
+                    builderRemoteViews.setViewVisibility(16909126, 0);
+                    builderRemoteViews.setLong(16909126, "setBase", this.mWhen + (SystemClock.elapsedRealtime() - System.currentTimeMillis()));
+                    builderRemoteViews.setBoolean(16909126, "setStarted", true);
                 } else {
-                    builderRemoteViews.setViewVisibility(R.id.time, 0);
-                    builderRemoteViews.setLong(R.id.time, "setTime", this.mWhen);
+                    builderRemoteViews.setViewVisibility(16908415, 0);
+                    builderRemoteViews.setLong(16908415, "setTime", this.mWhen);
                 }
             }
-            builderRemoteViews.setViewPadding(R.id.line1, 0, calculateTopPadding(this.mContext, this.mHasThreeLines, this.mContext.getResources().getConfiguration().fontScale), 0, 0);
+            builderRemoteViews.setViewPadding(16909127, 0, calculateTopPadding(this.mContext, this.mHasThreeLines, this.mContext.getResources().getConfiguration().fontScale), 0, 0);
             boolean z5 = z2;
             if (addProfileBadge(builderRemoteViews, z4 ? 16909128 : 16909131)) {
                 z5 = z2;
@@ -770,8 +770,8 @@ public class Notification implements Parcelable {
                     z5 = true;
                 }
             }
-            builderRemoteViews.setViewVisibility(R.id.line3, z5 ? 0 : 8);
-            builderRemoteViews.setViewVisibility(R.id.overflow_divider, z5 ? 0 : 8);
+            builderRemoteViews.setViewVisibility(16909129, z5 ? 0 : 8);
+            builderRemoteViews.setViewVisibility(16909116, z5 ? 0 : 8);
             return builderRemoteViews;
         }
 
@@ -781,8 +781,8 @@ public class Notification implements Parcelable {
             resetStandardTemplateWithActions(applyStandardTemplate);
             int size = this.mActions.size();
             if (size > 0) {
-                applyStandardTemplate.setViewVisibility(R.id.actions, 0);
-                applyStandardTemplate.setViewVisibility(R.id.action_divider, 0);
+                applyStandardTemplate.setViewVisibility(16909104, 0);
+                applyStandardTemplate.setViewVisibility(16909113, 0);
                 int i2 = size;
                 if (size > 3) {
                     i2 = 3;
@@ -793,7 +793,7 @@ public class Notification implements Parcelable {
                     if (i4 >= i2) {
                         break;
                     }
-                    applyStandardTemplate.addView(R.id.actions, generateActionButton(this.mActions.get(i4)));
+                    applyStandardTemplate.addView(16909104, generateActionButton(this.mActions.get(i4)));
                     i3 = i4 + 1;
                 }
             }
@@ -810,45 +810,45 @@ public class Notification implements Parcelable {
         private RemoteViews generateActionButton(Action action) {
             boolean z = action.actionIntent == null;
             RemoteViews remoteViews = new RemoteViews(this.mContext.getPackageName(), z ? getActionTombstoneLayoutResource() : getActionLayoutResource());
-            remoteViews.setTextViewCompoundDrawablesRelative(R.id.action0, action.icon, 0, 0, 0);
-            remoteViews.setTextViewText(R.id.action0, processLegacyText(action.title));
+            remoteViews.setTextViewCompoundDrawablesRelative(16909105, action.icon, 0, 0, 0);
+            remoteViews.setTextViewText(16909105, processLegacyText(action.title));
             if (!z) {
-                remoteViews.setOnClickPendingIntent(R.id.action0, action.actionIntent);
+                remoteViews.setOnClickPendingIntent(16909105, action.actionIntent);
             }
-            remoteViews.setContentDescription(R.id.action0, action.title);
+            remoteViews.setContentDescription(16909105, action.title);
             processLegacyAction(action, remoteViews);
             return remoteViews;
         }
 
         private int getActionLayoutResource() {
-            return R.layout.notification_material_action;
+            return 17367154;
         }
 
         private int getActionTombstoneLayoutResource() {
-            return R.layout.notification_material_action_tombstone;
+            return 17367156;
         }
 
         private int getBaseLayoutResource() {
-            return R.layout.notification_template_material_base;
+            return 17367159;
         }
 
         private int getBigBaseLayoutResource() {
-            return R.layout.notification_template_material_big_base;
+            return 17367160;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public int getBigPictureLayoutResource() {
-            return R.layout.notification_template_material_big_picture;
+            return 17367163;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public int getBigTextLayoutResource() {
-            return R.layout.notification_template_material_big_text;
+            return 17367164;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public int getInboxLayoutResource() {
-            return R.layout.notification_template_material_inbox;
+            return 17367165;
         }
 
         private static Class<? extends Style> getNotificationStyleClass(String str) {
@@ -873,7 +873,7 @@ public class Notification implements Parcelable {
             if (profileBadgeDrawable == null) {
                 return null;
             }
-            int dimensionPixelSize = this.mContext.getResources().getDimensionPixelSize(R.dimen.notification_badge_size);
+            int dimensionPixelSize = this.mContext.getResources().getDimensionPixelSize(17104988);
             Bitmap createBitmap = Bitmap.createBitmap(dimensionPixelSize, dimensionPixelSize, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(createBitmap);
             profileBadgeDrawable.setBounds(0, 0, dimensionPixelSize, dimensionPixelSize);
@@ -929,7 +929,7 @@ public class Notification implements Parcelable {
 
         private void processLegacyAction(Action action, RemoteViews remoteViews) {
             if (!isLegacy() || this.mColorUtil.isGrayscaleIcon(this.mContext, action.icon)) {
-                remoteViews.setTextViewCompoundDrawablesRelativeColorFilter(R.id.action0, 0, this.mContext.getResources().getColor(R.color.notification_action_color_filter), PorterDuff.Mode.MULTIPLY);
+                remoteViews.setTextViewCompoundDrawablesRelativeColorFilter(16909105, 0, this.mContext.getResources().getColor(17170515), PorterDuff.Mode.MULTIPLY);
             }
         }
 
@@ -944,7 +944,7 @@ public class Notification implements Parcelable {
 
         private void processSmallIconAsLarge(int i, RemoteViews remoteViews) {
             if (!isLegacy()) {
-                remoteViews.setDrawableParameters(16908294, false, -1, -1, PorterDuff.Mode.SRC_ATOP, -1);
+                remoteViews.setDrawableParameters(R.id.icon, false, -1, -1, PorterDuff.Mode.SRC_ATOP, -1);
             }
             if (!isLegacy() || this.mColorUtil.isGrayscaleIcon(this.mContext, i)) {
                 applyLargeIconBackground(remoteViews);
@@ -953,11 +953,11 @@ public class Notification implements Parcelable {
 
         private void processSmallRightIcon(int i, RemoteViews remoteViews) {
             if (!isLegacy()) {
-                remoteViews.setDrawableParameters(R.id.right_icon, false, -1, -1, PorterDuff.Mode.SRC_ATOP, -1);
+                remoteViews.setDrawableParameters(16908340, false, -1, -1, PorterDuff.Mode.SRC_ATOP, -1);
             }
             if (!isLegacy() || this.mColorUtil.isGrayscaleIcon(this.mContext, i)) {
-                remoteViews.setInt(R.id.right_icon, "setBackgroundResource", R.drawable.notification_icon_legacy_bg);
-                remoteViews.setDrawableParameters(R.id.right_icon, true, -1, resolveColor(), PorterDuff.Mode.SRC_ATOP, -1);
+                remoteViews.setInt(16908340, "setBackgroundResource", 17302774);
+                remoteViews.setDrawableParameters(16908340, true, -1, resolveColor(), PorterDuff.Mode.SRC_ATOP, -1);
             }
         }
 
@@ -1012,40 +1012,40 @@ public class Notification implements Parcelable {
         }
 
         private void removeLargeIconBackground(RemoteViews remoteViews) {
-            remoteViews.setInt(16908294, "setBackgroundResource", 0);
+            remoteViews.setInt(R.id.icon, "setBackgroundResource", 0);
         }
 
         private void resetStandardTemplate(RemoteViews remoteViews) {
             removeLargeIconBackground(remoteViews);
-            remoteViews.setViewPadding(16908294, 0, 0, 0, 0);
-            remoteViews.setImageViewResource(16908294, 0);
-            remoteViews.setInt(16908294, "setBackgroundResource", 0);
-            remoteViews.setViewVisibility(R.id.right_icon, 8);
-            remoteViews.setInt(R.id.right_icon, "setBackgroundResource", 0);
-            remoteViews.setImageViewResource(R.id.right_icon, 0);
-            remoteViews.setImageViewResource(16908294, 0);
-            remoteViews.setTextViewText(16908310, null);
-            remoteViews.setTextViewText(R.id.text, null);
+            remoteViews.setViewPadding(R.id.icon, 0, 0, 0, 0);
+            remoteViews.setImageViewResource(R.id.icon, 0);
+            remoteViews.setInt(R.id.icon, "setBackgroundResource", 0);
+            remoteViews.setViewVisibility(16908340, 8);
+            remoteViews.setInt(16908340, "setBackgroundResource", 0);
+            remoteViews.setImageViewResource(16908340, 0);
+            remoteViews.setImageViewResource(R.id.icon, 0);
+            remoteViews.setTextViewText(R.id.title, null);
+            remoteViews.setTextViewText(16908392, null);
             unshrinkLine3Text(remoteViews);
-            remoteViews.setTextViewText(16908309, null);
-            remoteViews.setViewVisibility(16908309, 8);
-            remoteViews.setViewVisibility(R.id.info, 8);
-            remoteViews.setViewVisibility(R.id.time, 8);
-            remoteViews.setViewVisibility(R.id.line3, 8);
-            remoteViews.setViewVisibility(R.id.overflow_divider, 8);
-            remoteViews.setViewVisibility(16908301, 8);
-            remoteViews.setViewVisibility(R.id.chronometer, 8);
-            remoteViews.setViewVisibility(R.id.time, 8);
+            remoteViews.setTextViewText(R.id.text2, null);
+            remoteViews.setViewVisibility(R.id.text2, 8);
+            remoteViews.setViewVisibility(16909130, 8);
+            remoteViews.setViewVisibility(16908415, 8);
+            remoteViews.setViewVisibility(16909129, 8);
+            remoteViews.setViewVisibility(16909116, 8);
+            remoteViews.setViewVisibility(R.id.progress, 8);
+            remoteViews.setViewVisibility(16909126, 8);
+            remoteViews.setViewVisibility(16908415, 8);
         }
 
         private void resetStandardTemplateWithActions(RemoteViews remoteViews) {
-            remoteViews.setViewVisibility(R.id.actions, 8);
-            remoteViews.setViewVisibility(R.id.action_divider, 8);
-            remoteViews.removeAllViews(R.id.actions);
+            remoteViews.setViewVisibility(16909104, 8);
+            remoteViews.setViewVisibility(16909113, 8);
+            remoteViews.removeAllViews(16909104);
         }
 
         private int resolveColor() {
-            return this.mColor == 0 ? this.mContext.getResources().getColor(R.color.notification_icon_bg_color) : this.mColor;
+            return this.mColor == 0 ? this.mContext.getResources().getColor(17170514) : this.mColor;
         }
 
         private void restoreFromNotification(Notification notification) {
@@ -1145,7 +1145,7 @@ public class Notification implements Parcelable {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void shrinkLine3Text(RemoteViews remoteViews) {
-            remoteViews.setTextViewTextSize(R.id.text, 0, this.mContext.getResources().getDimensionPixelSize(R.dimen.notification_subtext_size));
+            remoteViews.setTextViewTextSize(16908392, 0, this.mContext.getResources().getDimensionPixelSize(17104982));
         }
 
         public static void stripForDelivery(Notification notification) {
@@ -1205,7 +1205,7 @@ public class Notification implements Parcelable {
         }
 
         private void unshrinkLine3Text(RemoteViews remoteViews) {
-            remoteViews.setTextViewTextSize(R.id.text, 0, this.mContext.getResources().getDimensionPixelSize(R.dimen.notification_text_size));
+            remoteViews.setTextViewTextSize(16908392, 0, this.mContext.getResources().getDimensionPixelSize(17104980));
         }
 
         public Builder addAction(int i, CharSequence charSequence, PendingIntent pendingIntent) {
@@ -1568,8 +1568,7 @@ public class Notification implements Parcelable {
         }
 
         @Override // android.widget.RemoteViews
-        /* renamed from: clone */
-        public BuilderRemoteViews mo120clone() {
+        public BuilderRemoteViews clone() {
             Parcel obtain = Parcel.obtain();
             writeToParcel(obtain, 0);
             obtain.setDataPosition(0);
@@ -1600,8 +1599,8 @@ public class Notification implements Parcelable {
             this.mBuilder.mContentText = null;
             RemoteViews standardView = getStandardView(this.mBuilder.getInboxLayoutResource());
             this.mBuilder.mContentText = charSequence;
-            standardView.setViewVisibility(16908309, 8);
-            int[] iArr = {R.id.inbox_text0, R.id.inbox_text1, R.id.inbox_text2, R.id.inbox_text3, R.id.inbox_text4, R.id.inbox_text5, R.id.inbox_text6};
+            standardView.setViewVisibility(R.id.text2, 8);
+            int[] iArr = {16909117, 16909118, 16909119, 16909120, 16909121, 16909122, 16909123};
             int length = iArr.length;
             int i = 0;
             while (true) {
@@ -1613,7 +1612,7 @@ public class Notification implements Parcelable {
                 i = i2 + 1;
             }
             boolean z = this.mBuilder.mContext.getResources().getConfiguration().fontScale > 1.0f;
-            float dimensionPixelSize = this.mBuilder.mContext.getResources().getDimensionPixelSize(R.dimen.notification_subtext_size);
+            float dimensionPixelSize = this.mBuilder.mContext.getResources().getDimensionPixelSize(17104982);
             int i3 = 0;
             while (true) {
                 int i4 = i3;
@@ -1630,11 +1629,11 @@ public class Notification implements Parcelable {
                 }
                 i3 = i4 + 1;
             }
-            standardView.setViewVisibility(R.id.inbox_end_pad, this.mTexts.size() > 0 ? 0 : 8);
-            standardView.setViewVisibility(R.id.inbox_more, this.mTexts.size() > iArr.length ? 0 : 8);
+            standardView.setViewVisibility(16909125, this.mTexts.size() > 0 ? 0 : 8);
+            standardView.setViewVisibility(16909124, this.mTexts.size() > iArr.length ? 0 : 8);
             applyTopPadding(standardView);
             this.mBuilder.shrinkLine3Text(standardView);
-            this.mBuilder.addProfileBadge(standardView, R.id.profile_badge_large_template);
+            this.mBuilder.addProfileBadge(standardView, 16909112);
             return standardView;
         }
 
@@ -1690,52 +1689,52 @@ public class Notification implements Parcelable {
 
         private RemoteViews generateMediaActionButton(Action action) {
             boolean z = action.actionIntent == null;
-            RemoteViews remoteViews = new RemoteViews(this.mBuilder.mContext.getPackageName(), (int) R.layout.notification_material_media_action);
-            remoteViews.setImageViewResource(R.id.action0, action.icon);
-            remoteViews.setDrawableParameters(R.id.action0, false, -1, -1, PorterDuff.Mode.SRC_ATOP, -1);
+            RemoteViews remoteViews = new RemoteViews(this.mBuilder.mContext.getPackageName(), 17367157);
+            remoteViews.setImageViewResource(16909105, action.icon);
+            remoteViews.setDrawableParameters(16909105, false, -1, -1, PorterDuff.Mode.SRC_ATOP, -1);
             if (!z) {
-                remoteViews.setOnClickPendingIntent(R.id.action0, action.actionIntent);
+                remoteViews.setOnClickPendingIntent(16909105, action.actionIntent);
             }
-            remoteViews.setContentDescription(R.id.action0, action.title);
+            remoteViews.setContentDescription(16909105, action.title);
             return remoteViews;
         }
 
         private int getBigLayoutResource(int i) {
-            return i <= 3 ? R.layout.notification_template_material_big_media_narrow : R.layout.notification_template_material_big_media;
+            return i <= 3 ? 17367162 : 17367161;
         }
 
         private void hideRightIcon(RemoteViews remoteViews) {
-            remoteViews.setViewVisibility(R.id.right_icon, 8);
+            remoteViews.setViewVisibility(16908340, 8);
         }
 
         private RemoteViews makeMediaBigContentView() {
             int min = Math.min(this.mBuilder.mActions.size(), 5);
             RemoteViews applyStandardTemplate = this.mBuilder.applyStandardTemplate(getBigLayoutResource(min), false);
             if (min > 0) {
-                applyStandardTemplate.removeAllViews(R.id.media_actions);
+                applyStandardTemplate.removeAllViews(16909114);
                 int i = 0;
                 while (true) {
                     int i2 = i;
                     if (i2 >= min) {
                         break;
                     }
-                    applyStandardTemplate.addView(R.id.media_actions, generateMediaActionButton((Action) this.mBuilder.mActions.get(i2)));
+                    applyStandardTemplate.addView(16909114, generateMediaActionButton((Action) this.mBuilder.mActions.get(i2)));
                     i = i2 + 1;
                 }
             }
             styleText(applyStandardTemplate);
             hideRightIcon(applyStandardTemplate);
             applyTopPadding(applyStandardTemplate);
-            applyStandardTemplate.setViewVisibility(16908301, 8);
+            applyStandardTemplate.setViewVisibility(R.id.progress, 8);
             return applyStandardTemplate;
         }
 
         private RemoteViews makeMediaContentView() {
-            RemoteViews applyStandardTemplate = this.mBuilder.applyStandardTemplate(R.layout.notification_template_material_media, false);
+            RemoteViews applyStandardTemplate = this.mBuilder.applyStandardTemplate(17367166, false);
             int size = this.mBuilder.mActions.size();
             int min = this.mActionsToShowInCompact == null ? 0 : Math.min(this.mActionsToShowInCompact.length, 3);
             if (min > 0) {
-                applyStandardTemplate.removeAllViews(R.id.media_actions);
+                applyStandardTemplate.removeAllViews(16909114);
                 int i = 0;
                 while (true) {
                     int i2 = i;
@@ -1744,7 +1743,7 @@ public class Notification implements Parcelable {
                     } else if (i2 >= size) {
                         throw new IllegalArgumentException(String.format("setShowActionsInCompactView: action %d out of bounds (max %d)", Integer.valueOf(i2), Integer.valueOf(size - 1)));
                     } else {
-                        applyStandardTemplate.addView(R.id.media_actions, generateMediaActionButton((Action) this.mBuilder.mActions.get(this.mActionsToShowInCompact[i2])));
+                        applyStandardTemplate.addView(16909114, generateMediaActionButton((Action) this.mBuilder.mActions.get(this.mActionsToShowInCompact[i2])));
                         i = i2 + 1;
                     }
                 }
@@ -1755,19 +1754,19 @@ public class Notification implements Parcelable {
         }
 
         private void styleText(RemoteViews remoteViews) {
-            int color = this.mBuilder.mContext.getResources().getColor(R.color.notification_media_primary_color);
-            int color2 = this.mBuilder.mContext.getResources().getColor(R.color.notification_media_secondary_color);
-            remoteViews.setTextColor(16908310, color);
+            int color = this.mBuilder.mContext.getResources().getColor(17170516);
+            int color2 = this.mBuilder.mContext.getResources().getColor(17170517);
+            remoteViews.setTextColor(R.id.title, color);
             if (this.mBuilder.showsTimeOrChronometer()) {
                 if (this.mBuilder.mUseChronometer) {
-                    remoteViews.setTextColor(R.id.chronometer, color2);
+                    remoteViews.setTextColor(16909126, color2);
                 } else {
-                    remoteViews.setTextColor(R.id.time, color2);
+                    remoteViews.setTextColor(16908415, color2);
                 }
             }
-            remoteViews.setTextColor(16908309, color2);
-            remoteViews.setTextColor(R.id.text, color2);
-            remoteViews.setTextColor(R.id.info, color2);
+            remoteViews.setTextColor(R.id.text2, color2);
+            remoteViews.setTextColor(16908392, color2);
+            remoteViews.setTextColor(16909130, color2);
         }
 
         @Override // android.app.Notification.Style
@@ -1845,7 +1844,7 @@ public class Notification implements Parcelable {
         }
 
         protected void applyTopPadding(RemoteViews remoteViews) {
-            remoteViews.setViewPadding(R.id.line1, 0, Builder.calculateTopPadding(this.mBuilder.mContext, this.mBuilder.mHasThreeLines, this.mBuilder.mContext.getResources().getConfiguration().fontScale), 0, 0);
+            remoteViews.setViewPadding(16909127, 0, Builder.calculateTopPadding(this.mBuilder.mContext, this.mBuilder.mHasThreeLines, this.mBuilder.mContext.getResources().getConfiguration().fontScale), 0, 0);
         }
 
         public Notification build() {
@@ -1876,20 +1875,20 @@ public class Notification implements Parcelable {
             RemoteViews applyStandardTemplateWithActions = this.mBuilder.applyStandardTemplateWithActions(i);
             this.mBuilder.mContentTitle = charSequence;
             if (this.mBigContentTitle == null || !this.mBigContentTitle.equals("")) {
-                applyStandardTemplateWithActions.setViewVisibility(R.id.line1, 0);
+                applyStandardTemplateWithActions.setViewVisibility(16909127, 0);
             } else {
-                applyStandardTemplateWithActions.setViewVisibility(R.id.line1, 8);
+                applyStandardTemplateWithActions.setViewVisibility(16909127, 8);
             }
             CharSequence charSequence2 = this.mSummaryTextSet ? this.mSummaryText : this.mBuilder.mSubText;
             if (charSequence2 != null) {
-                applyStandardTemplateWithActions.setTextViewText(R.id.text, this.mBuilder.processLegacyText(charSequence2));
-                applyStandardTemplateWithActions.setViewVisibility(R.id.overflow_divider, 0);
-                applyStandardTemplateWithActions.setViewVisibility(R.id.line3, 0);
+                applyStandardTemplateWithActions.setTextViewText(16908392, this.mBuilder.processLegacyText(charSequence2));
+                applyStandardTemplateWithActions.setViewVisibility(16909116, 0);
+                applyStandardTemplateWithActions.setViewVisibility(16909129, 0);
                 return applyStandardTemplateWithActions;
             }
-            applyStandardTemplateWithActions.setTextViewText(R.id.text, "");
-            applyStandardTemplateWithActions.setViewVisibility(R.id.overflow_divider, 8);
-            applyStandardTemplateWithActions.setViewVisibility(R.id.line3, 8);
+            applyStandardTemplateWithActions.setTextViewText(16908392, "");
+            applyStandardTemplateWithActions.setViewVisibility(16909116, 8);
+            applyStandardTemplateWithActions.setViewVisibility(16909129, 8);
             return applyStandardTemplateWithActions;
         }
 
@@ -2063,7 +2062,7 @@ public class Notification implements Parcelable {
         }
 
         /* renamed from: clone */
-        public WearableExtender m121clone() {
+        public WearableExtender m119clone() {
             WearableExtender wearableExtender = new WearableExtender();
             wearableExtender.mActions = new ArrayList<>(this.mActions);
             wearableExtender.mFlags = this.mFlags;
@@ -2308,10 +2307,10 @@ public class Notification implements Parcelable {
             this.tickerText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         }
         if (parcel.readInt() != 0) {
-            this.tickerView = RemoteViews.CREATOR.createFromParcel(parcel);
+            this.tickerView = (RemoteViews) RemoteViews.CREATOR.createFromParcel(parcel);
         }
         if (parcel.readInt() != 0) {
-            this.contentView = RemoteViews.CREATOR.createFromParcel(parcel);
+            this.contentView = (RemoteViews) RemoteViews.CREATOR.createFromParcel(parcel);
         }
         if (parcel.readInt() != 0) {
             this.largeIcon = Bitmap.CREATOR.createFromParcel(parcel);
@@ -2340,10 +2339,10 @@ public class Notification implements Parcelable {
         this.extras = parcel.readBundle();
         this.actions = (Action[]) parcel.createTypedArray(Action.CREATOR);
         if (parcel.readInt() != 0) {
-            this.bigContentView = RemoteViews.CREATOR.createFromParcel(parcel);
+            this.bigContentView = (RemoteViews) RemoteViews.CREATOR.createFromParcel(parcel);
         }
         if (parcel.readInt() != 0) {
-            this.headsUpContentView = RemoteViews.CREATOR.createFromParcel(parcel);
+            this.headsUpContentView = (RemoteViews) RemoteViews.CREATOR.createFromParcel(parcel);
         }
         this.visibility = parcel.readInt();
         if (parcel.readInt() != 0) {
@@ -2392,7 +2391,7 @@ public class Notification implements Parcelable {
     }
 
     /* renamed from: clone */
-    public Notification m116clone() {
+    public Notification m115clone() {
         Notification notification = new Notification();
         cloneInto(notification, true);
         return notification;
@@ -2409,10 +2408,10 @@ public class Notification implements Parcelable {
             notification.tickerText = this.tickerText.toString();
         }
         if (z && this.tickerView != null) {
-            notification.tickerView = this.tickerView.mo120clone();
+            notification.tickerView = this.tickerView.clone();
         }
         if (z && this.contentView != null) {
-            notification.contentView = this.contentView.mo120clone();
+            notification.contentView = this.contentView.clone();
         }
         if (z && this.largeIcon != null) {
             notification.largeIcon = Bitmap.createBitmap(this.largeIcon);
@@ -2456,15 +2455,15 @@ public class Notification implements Parcelable {
                 if (i2 >= this.actions.length) {
                     break;
                 }
-                notification.actions[i2] = this.actions[i2].m118clone();
+                notification.actions[i2] = this.actions[i2].m117clone();
                 i = i2 + 1;
             }
         }
         if (z && this.bigContentView != null) {
-            notification.bigContentView = this.bigContentView.mo120clone();
+            notification.bigContentView = this.bigContentView.clone();
         }
         if (z && this.headsUpContentView != null) {
-            notification.headsUpContentView = this.headsUpContentView.mo120clone();
+            notification.headsUpContentView = this.headsUpContentView.clone();
         }
         notification.visibility = this.visibility;
         if (this.publicVersion != null) {

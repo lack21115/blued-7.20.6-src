@@ -19,16 +19,16 @@ public class DiscoveryPageFragment_ViewBinding implements Unbinder {
 
     public DiscoveryPageFragment_ViewBinding(DiscoveryPageFragment discoveryPageFragment, View view) {
         this.b = discoveryPageFragment;
-        discoveryPageFragment.vpIndicator = (TabPageIndicatorWithDot) Utils.a(view, 2131373299, "field 'vpIndicator'", TabPageIndicatorWithDot.class);
+        discoveryPageFragment.vpIndicator = (TabPageIndicatorWithDot) Utils.a(view, R.id.vp_indicator, "field 'vpIndicator'", TabPageIndicatorWithDot.class);
         discoveryPageFragment.title = Utils.a(view, 2131370694, "field 'title'");
         discoveryPageFragment.cttLeft = (ImageView) Utils.a(view, 2131363120, "field 'cttLeft'", ImageView.class);
-        discoveryPageFragment.cttRightText = (TextView) Utils.a(view, 2131363135, "field 'cttRightText'", TextView.class);
+        discoveryPageFragment.cttRightText = (TextView) Utils.a(view, R.id.ctt_right_text, "field 'cttRightText'", TextView.class);
         discoveryPageFragment.imgNearbyAd = (ImageView) Utils.a(view, R.id.img_nearby_ad, "field 'imgNearbyAd'", ImageView.class);
         discoveryPageFragment.bluedAdLayout = (BluedADConstraintLayout) Utils.a(view, R.id.blued_ad_layout, "field 'bluedAdLayout'", BluedADConstraintLayout.class);
         discoveryPageFragment.cttRight = (ImageView) Utils.a(view, 2131363126, "field 'cttRight'", ImageView.class);
         discoveryPageFragment.imgRightNewDot = (ShapeTextView) Utils.a(view, R.id.img_right_new_dot, "field 'imgRightNewDot'", ShapeTextView.class);
-        discoveryPageFragment.cttRightMenu = (FrameLayout) Utils.a(view, 2131363133, "field 'cttRightMenu'", FrameLayout.class);
-        discoveryPageFragment.viewPager = (CustomViewPager) Utils.a(view, 2131373209, "field 'viewPager'", CustomViewPager.class);
+        discoveryPageFragment.cttRightMenu = (FrameLayout) Utils.a(view, R.id.ctt_right_menu, "field 'cttRightMenu'", FrameLayout.class);
+        discoveryPageFragment.viewPager = (CustomViewPager) Utils.a(view, R.id.view_pager, "field 'viewPager'", CustomViewPager.class);
         discoveryPageFragment.findBadgeContainer = (QBadgeContainer) Utils.a(view, R.id.find_badge_container, "field 'findBadgeContainer'", QBadgeContainer.class);
     }
 

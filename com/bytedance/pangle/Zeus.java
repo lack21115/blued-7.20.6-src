@@ -31,8 +31,8 @@ public class Zeus {
     public static void addPluginEventCallback(ZeusPluginEventCallback zeusPluginEventCallback) {
         h a2 = h.a();
         if (zeusPluginEventCallback != null) {
-            synchronized (a2.f21430c) {
-                a2.f21430c.add(zeusPluginEventCallback);
+            synchronized (a2.f7824c) {
+                a2.f7824c.add(zeusPluginEventCallback);
             }
         }
     }
@@ -45,7 +45,7 @@ public class Zeus {
                 return;
             }
             final com.bytedance.pangle.download.b a3 = com.bytedance.pangle.download.b.a();
-            Runnable runnable = a3.f21381c.get(str);
+            Runnable runnable = a3.f7775c.get(str);
             if (runnable != null) {
                 a3.b.removeCallbacks(runnable);
             }
@@ -57,13 +57,13 @@ public class Zeus {
                     }
                 }
             };
-            a3.f21381c.put(str, runnable2);
+            a3.f7775c.put(str, runnable2);
             a3.b.postDelayed(runnable2, 1800000L);
             com.bytedance.pangle.download.b.a();
-            if (a2.f21378a.contains(str)) {
+            if (a2.f7772a.contains(str)) {
                 return;
             }
-            a2.f21378a.add(str);
+            a2.f7772a.add(str);
         }
     }
 
@@ -122,7 +122,7 @@ public class Zeus {
     }
 
     public static boolean hasInit() {
-        return h.a().f21429a;
+        return h.a().f7823a;
     }
 
     public static void init(Application application, boolean z) {
@@ -171,8 +171,8 @@ public class Zeus {
     public static void removePluginEventCallback(ZeusPluginEventCallback zeusPluginEventCallback) {
         h a2 = h.a();
         if (zeusPluginEventCallback != null) {
-            synchronized (a2.f21430c) {
-                a2.f21430c.remove(zeusPluginEventCallback);
+            synchronized (a2.f7824c) {
+                a2.f7824c.remove(zeusPluginEventCallback);
             }
         }
     }
@@ -221,11 +221,11 @@ public class Zeus {
     }
 
     public static boolean waitInit(int i) {
-        if (h.a().f21429a) {
+        if (h.a().f7823a) {
             return true;
         }
         synchronized (wait) {
-            if (!h.a().f21429a) {
+            if (!h.a().f7823a) {
                 try {
                     if (i == -1) {
                         wait.wait();
@@ -236,6 +236,6 @@ public class Zeus {
                 }
             }
         }
-        return h.a().f21429a;
+        return h.a().f7823a;
     }
 }

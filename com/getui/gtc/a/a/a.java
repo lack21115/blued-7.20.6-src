@@ -13,13 +13,13 @@ import javax.crypto.spec.SecretKeySpec;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static byte[] f21870a;
+    public static byte[] f8263a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.getui.gtc.a.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/a/a/a$a.class */
-    public static final class C0338a extends Provider {
-        public C0338a() {
+    public static final class C0168a extends Provider {
+        public C0168a() {
             super("Crypto", 1.0d, "HARMONY (SHA1 digest; SecureRandom; SHA1withDSA signature)");
             put("SecureRandom.SHA1PRNG", "org.apache.harmony.security.provider.crypto.SHA1PRNG_SecureRandomImpl");
             put("SecureRandom.SHA1PRNG ImplementedIn", ExifInterface.TAG_SOFTWARE);
@@ -56,26 +56,26 @@ public final class a {
             KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
             if (Build.VERSION.SDK_INT < 28) {
                 if (Build.VERSION.SDK_INT >= 24) {
-                    secureRandom = SecureRandom.getInstance("SHA1PRNG", new C0338a());
+                    secureRandom = SecureRandom.getInstance("SHA1PRNG", new C0168a());
                 } else if (Build.VERSION.SDK_INT >= 17) {
                     secureRandom = SecureRandom.getInstance("SHA1PRNG", "Crypto");
                 }
                 secureRandom.setSeed(bArr);
                 keyGenerator.init(128, secureRandom);
                 encoded = keyGenerator.generateKey().getEncoded();
-                if (Build.VERSION.SDK_INT >= 28 && f21870a == null) {
-                    f21870a = encoded;
+                if (Build.VERSION.SDK_INT >= 28 && f8263a == null) {
+                    f8263a = encoded;
                 }
                 return encoded;
-            } else if (f21870a != null) {
-                return f21870a;
+            } else if (f8263a != null) {
+                return f8263a;
             }
             secureRandom = SecureRandom.getInstance("SHA1PRNG");
             secureRandom.setSeed(bArr);
             keyGenerator.init(128, secureRandom);
             encoded = keyGenerator.generateKey().getEncoded();
             if (Build.VERSION.SDK_INT >= 28) {
-                f21870a = encoded;
+                f8263a = encoded;
             }
             return encoded;
         } catch (Throwable th) {

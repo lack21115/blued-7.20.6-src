@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemInvisibleToUserBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29205a;
+    private final RelativeLayout f15515a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29205a;
+        return this.f15515a;
     }
 }

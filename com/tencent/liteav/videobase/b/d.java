@@ -7,10 +7,10 @@ import com.tencent.liteav.videobase.utils.OpenGlUtils;
 public final /* synthetic */ class d implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final c f36593a;
+    private final c f22902a;
 
     private d(c cVar) {
-        this.f36593a = cVar;
+        this.f22902a = cVar;
     }
 
     public static Runnable a(c cVar) {
@@ -19,7 +19,7 @@ public final /* synthetic */ class d implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        c cVar = this.f36593a;
+        c cVar = this.f22902a;
         if (cVar.d != null) {
             try {
                 cVar.d.a();

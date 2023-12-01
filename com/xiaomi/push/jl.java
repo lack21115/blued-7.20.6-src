@@ -4,15 +4,15 @@ package com.xiaomi.push;
 public final class jl extends jm {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f41555a;
+    private int f27864a;
 
     /* renamed from: a  reason: collision with other field name */
-    private byte[] f894a;
+    private byte[] f847a;
     private int b;
 
     @Override // com.xiaomi.push.jm
     public final int a() {
-        return this.f41555a;
+        return this.f27864a;
     }
 
     @Override // com.xiaomi.push.jm
@@ -23,7 +23,7 @@ public final class jl extends jm {
             i3 = b;
         }
         if (i3 > 0) {
-            System.arraycopy((Object) this.f894a, this.f41555a, (Object) bArr, i, i3);
+            System.arraycopy(this.f847a, this.f27864a, bArr, i, i3);
             a(i3);
         }
         return i3;
@@ -31,7 +31,7 @@ public final class jl extends jm {
 
     @Override // com.xiaomi.push.jm
     public final void a(int i) {
-        this.f41555a += i;
+        this.f27864a += i;
     }
 
     public final void a(byte[] bArr) {
@@ -40,24 +40,24 @@ public final class jl extends jm {
 
     @Override // com.xiaomi.push.jm
     /* renamed from: a */
-    public final void mo12057a(byte[] bArr, int i, int i2) {
+    public final void mo9007a(byte[] bArr, int i, int i2) {
         throw new UnsupportedOperationException("No writing allowed!");
     }
 
     @Override // com.xiaomi.push.jm
     /* renamed from: a  reason: collision with other method in class */
-    public final byte[] mo12058a() {
-        return this.f894a;
+    public final byte[] mo9008a() {
+        return this.f847a;
     }
 
     @Override // com.xiaomi.push.jm
     public final int b() {
-        return this.b - this.f41555a;
+        return this.b - this.f27864a;
     }
 
     public final void b(byte[] bArr, int i, int i2) {
-        this.f894a = bArr;
-        this.f41555a = i;
+        this.f847a = bArr;
+        this.f27864a = i;
         this.b = i + i2;
     }
 }

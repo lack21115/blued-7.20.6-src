@@ -4,7 +4,6 @@ import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
 import android.os.Build;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.thumbplayer.core.thirdparties.LocalCache;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -21,13 +20,13 @@ public final class TPMediaDecoderList {
     private static String buildCacheDecoderVersion() {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append(MEDIA_DECODER_VERSION);
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(TPSystemInfo.getDeviceName());
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(TPSystemInfo.getProductBoard());
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(TPSystemInfo.getProductDevice());
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(TPSystemInfo.getApiLevel());
         return stringBuffer.toString();
     }

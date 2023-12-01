@@ -2,8 +2,9 @@ package com.getui.gtc.dim.b;
 
 import android.os.Build;
 import android.text.TextUtils;
-import com.android.internal.telephony.PhoneConstants;
 import com.getui.gtc.dim.AppDataProvider;
+import com.huawei.hms.framework.common.ContainerUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -17,7 +18,7 @@ import org.json.JSONArray;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    static final List<String> f21939a = Arrays.asList("dim-2-1-21-5", "dim-2-1-21-3", "dim-2-1-21-1");
+    static final List<String> f8332a = Arrays.asList("dim-2-1-21-5", "dim-2-1-21-3", "dim-2-1-21-1");
     private static final List<String> f = new ArrayList();
     protected AppDataProvider d;
     protected String e;
@@ -26,7 +27,7 @@ public class d {
     private final Map<String, Boolean> h = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    final List<String> f21940c = new ArrayList();
+    final List<String> f8333c = new ArrayList();
     private final Map<String, String> i = new HashMap();
 
     static {
@@ -58,8 +59,8 @@ public class d {
             String str3 = Build.MODEL;
             int i = Build.VERSION.SDK_INT;
             com.getui.gtc.dim.e.b.a("isPhoneContainAt " + str + ", check brand = " + str2 + ", model = " + str3 + ", sdkInt = " + i);
-            String[] split = str.split("&");
-            if (!split[0].equals(PhoneConstants.APN_TYPE_ALL) && !split[0].equals(str2)) {
+            String[] split = str.split(ContainerUtils.FIELD_DELIMITER);
+            if (!split[0].equals("*") && !split[0].equals(str2)) {
                 return false;
             }
             String[] split2 = split[1].split("\\|");
@@ -72,7 +73,7 @@ public class d {
                     break;
                 }
                 String str4 = split2[i3];
-                if (!TextUtils.isEmpty(str4) && (str4.equals(str3) || str4.equals(PhoneConstants.APN_TYPE_ALL))) {
+                if (!TextUtils.isEmpty(str4) && (str4.equals(str3) || str4.equals("*"))) {
                     break;
                 }
                 i2 = i3 + 1;
@@ -91,12 +92,12 @@ public class d {
                 }
                 String str5 = split3[i5];
                 if (!TextUtils.isEmpty(str5)) {
-                    if (!str5.contains("-")) {
-                        if (!str5.equals(String.valueOf(i)) && !str5.equals(PhoneConstants.APN_TYPE_ALL)) {
+                    if (!str5.contains(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) {
+                        if (!str5.equals(String.valueOf(i)) && !str5.equals("*")) {
                         }
                         return true;
                     }
-                    String[] split4 = str5.split("-");
+                    String[] split4 = str5.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     if (split4.length == 2 && i >= Integer.parseInt(split4[0]) && i <= Integer.parseInt(split4[1])) {
                         return true;
                     }
@@ -195,7 +196,7 @@ public class d {
                     Iterator<String> it = f.iterator();
                     do {
                         if (!it.hasNext()) {
-                            this.f21940c.add(str2);
+                            this.f8333c.add(str2);
                             com.getui.gtc.dim.e.b.a("dim disallow sys call set: ".concat(String.valueOf(str2)));
                             return;
                         }
@@ -243,7 +244,7 @@ public class d {
                     }
                     String[] split2 = split[i4].trim().split(":");
                     if (split2.length >= 2) {
-                        com.getui.gtc.dim.c.a.f21943a.put(split2[0].trim(), split2[1].trim());
+                        com.getui.gtc.dim.c.a.f8336a.put(split2[0].trim(), split2[1].trim());
                         com.getui.gtc.dim.e.b.a("dim sys rom map set: " + split2[0].trim() + ":" + split2[1].trim());
                     }
                     i3 = i4 + 1;

@@ -1,6 +1,7 @@
 package com.mokee.cloud.calendar;
 
 import android.content.SharedPreferences;
+import com.android.internal.content.NativeLibraryHelper;
 import com.mokee.cloud.misc.CloudUtils;
 import java.util.Calendar;
 
@@ -36,7 +37,7 @@ public class ChineseCalendarUtils {
 
     public static boolean isChineseHolidayOrWorkday(SharedPreferences sharedPreferences, int i, int i2, int i3) {
         if (CloudUtils.hasAccessPermission()) {
-            return sharedPreferences.getBoolean(String.valueOf(i) + "-" + i2 + "-" + i3, false);
+            return sharedPreferences.getBoolean(String.valueOf(i) + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + i2 + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + i3, false);
         }
         return false;
     }

@@ -1,24 +1,22 @@
 package com.tencent.turingface.sdk.mfa;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/turingface/sdk/mfa/Bi3eT.class */
 public final class Bi3eT {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f39859a;
+    public int f26168a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f39860c;
+    public long f26169c;
     public String d;
     public int e;
     public int f;
 
     public Bi3eT(int i, int i2, long j, String str, int i3, int i4) {
-        this.f39859a = i;
+        this.f26168a = i;
         this.b = i2;
-        this.f39860c = j;
+        this.f26169c = j;
         this.d = str;
         this.e = i3;
         this.f = i4;
@@ -33,6 +31,6 @@ public final class Bi3eT {
     }
 
     public final String toString() {
-        return this.f39859a + BridgeUtil.UNDERLINE_STR + this.b + BridgeUtil.UNDERLINE_STR + this.f39860c + BridgeUtil.UNDERLINE_STR + this.e + BridgeUtil.UNDERLINE_STR + this.d + BridgeUtil.UNDERLINE_STR + this.f;
+        return this.f26168a + "_" + this.b + "_" + this.f26169c + "_" + this.e + "_" + this.d + "_" + this.f;
     }
 }

@@ -12,9 +12,7 @@ import java.util.Arrays;
 /* renamed from: com.amap.api.col.3sl.nb  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/nb.class */
 public class nb {
-
-    /* renamed from: a  reason: collision with root package name */
-    ByteBuffer f5404a;
+    ByteBuffer a;
     int b;
     int d;
     int[] e;
@@ -29,9 +27,7 @@ public class nb {
     CharsetEncoder n;
     ByteBuffer o;
     static final /* synthetic */ boolean p = !nb.class.desiredAssertionStatus();
-
-    /* renamed from: c  reason: collision with root package name */
-    static final Charset f5403c = Charset.forName("UTF-8");
+    static final Charset c = Charset.forName("UTF-8");
 
     private nb() {
         this.d = 1;
@@ -43,9 +39,9 @@ public class nb {
         this.k = 0;
         this.l = 0;
         this.m = false;
-        this.n = f5403c.newEncoder();
+        this.n = c.newEncoder();
         this.b = 1024;
-        this.f5404a = d(1024);
+        this.a = d(1024);
     }
 
     public nb(ByteBuffer byteBuffer) {
@@ -58,19 +54,19 @@ public class nb {
         this.k = 0;
         this.l = 0;
         this.m = false;
-        this.n = f5403c.newEncoder();
+        this.n = c.newEncoder();
         a(byteBuffer);
     }
 
     private void a(long j) {
-        ByteBuffer byteBuffer = this.f5404a;
+        ByteBuffer byteBuffer = this.a;
         int i = this.b - 8;
         this.b = i;
         byteBuffer.putLong(i, j);
     }
 
     private void a(short s) {
-        ByteBuffer byteBuffer = this.f5404a;
+        ByteBuffer byteBuffer = this.a;
         int i = this.b - 2;
         this.b = i;
         byteBuffer.putShort(i, s);
@@ -90,7 +86,7 @@ public class nb {
     }
 
     private void b(byte b) {
-        ByteBuffer byteBuffer = this.f5404a;
+        ByteBuffer byteBuffer = this.a;
         int i = this.b - 1;
         this.b = i;
         byteBuffer.put(i, b);
@@ -107,7 +103,7 @@ public class nb {
     }
 
     private void b(boolean z) {
-        ByteBuffer byteBuffer = this.f5404a;
+        ByteBuffer byteBuffer = this.a;
         int i = this.b - 1;
         this.b = i;
         byteBuffer.put(i, z ? (byte) 1 : (byte) 0);
@@ -117,11 +113,11 @@ public class nb {
         int remaining = byteBuffer.remaining();
         a((byte) 0);
         a(1, remaining, 1);
-        ByteBuffer byteBuffer2 = this.f5404a;
+        ByteBuffer byteBuffer2 = this.a;
         int i = this.b - remaining;
         this.b = i;
         byteBuffer2.position(i);
-        this.f5404a.put(byteBuffer);
+        this.a.put(byteBuffer);
         return a();
     }
 
@@ -129,11 +125,11 @@ public class nb {
         if (i > this.d) {
             this.d = i;
         }
-        int capacity = ((this.f5404a.capacity() - this.b) + i2 + 1) & (i - 1);
+        int capacity = ((this.a.capacity() - this.b) + i2 + 1) & (i - 1);
         while (this.b < capacity + i + i2) {
-            int capacity2 = this.f5404a.capacity();
-            ByteBuffer b = b(this.f5404a);
-            this.f5404a = b;
+            int capacity2 = this.a.capacity();
+            ByteBuffer b = b(this.a);
+            this.a = b;
             this.b += b.capacity() - capacity2;
         }
         e(capacity);
@@ -145,7 +141,7 @@ public class nb {
     }
 
     private int d() {
-        return this.f5404a.capacity() - this.b;
+        return this.a.capacity() - this.b;
     }
 
     private static ByteBuffer d(int i) {
@@ -157,8 +153,8 @@ public class nb {
     private byte[] d(int i, int i2) {
         e();
         byte[] bArr = new byte[i2];
-        this.f5404a.position(i);
-        this.f5404a.get(bArr);
+        this.a.position(i);
+        this.a.get(bArr);
         return bArr;
     }
 
@@ -175,7 +171,7 @@ public class nb {
             if (i3 >= i) {
                 return;
             }
-            ByteBuffer byteBuffer = this.f5404a;
+            ByteBuffer byteBuffer = this.a;
             int i4 = this.b - 1;
             this.b = i4;
             byteBuffer.put(i4, (byte) 0);
@@ -190,7 +186,7 @@ public class nb {
     }
 
     private void f(int i) {
-        ByteBuffer byteBuffer = this.f5404a;
+        ByteBuffer byteBuffer = this.a;
         int i2 = this.b - 4;
         this.b = i2;
         byteBuffer.putInt(i2, i);
@@ -234,11 +230,11 @@ public class nb {
     }
 
     public final nb a(ByteBuffer byteBuffer) {
-        this.f5404a = byteBuffer;
+        this.a = byteBuffer;
         byteBuffer.clear();
-        this.f5404a.order(ByteOrder.LITTLE_ENDIAN);
+        this.a.order(ByteOrder.LITTLE_ENDIAN);
         this.d = 1;
-        this.b = this.f5404a.capacity();
+        this.b = this.a.capacity();
         this.f = 0;
         this.g = false;
         this.h = false;
@@ -332,25 +328,25 @@ public class nb {
                 i = 0;
                 break;
             }
-            int capacity = this.f5404a.capacity() - this.j[i6];
+            int capacity = this.a.capacity() - this.j[i6];
             int i7 = this.b;
-            short s = this.f5404a.getShort(capacity);
-            if (s == this.f5404a.getShort(i7)) {
+            short s = this.a.getShort(capacity);
+            if (s == this.a.getShort(i7)) {
                 while (true) {
                     int i8 = i2;
                     if (i8 >= s) {
                         i = this.j[i6];
                         break loop1;
                     }
-                    i2 = this.f5404a.getShort(capacity + i8) == this.f5404a.getShort(i7 + i8) ? i8 + 2 : 2;
+                    i2 = this.a.getShort(capacity + i8) == this.a.getShort(i7 + i8) ? i8 + 2 : 2;
                 }
             }
             i5 = i6 + 1;
         }
         if (i != 0) {
-            int capacity2 = this.f5404a.capacity() - d;
+            int capacity2 = this.a.capacity() - d;
             this.b = capacity2;
-            this.f5404a.putInt(capacity2, i - d);
+            this.a.putInt(capacity2, i - d);
         } else {
             int i9 = this.k;
             int[] iArr2 = this.j;
@@ -361,7 +357,7 @@ public class nb {
             int i10 = this.k;
             this.k = i10 + 1;
             iArr3[i10] = d();
-            ByteBuffer byteBuffer = this.f5404a;
+            ByteBuffer byteBuffer = this.a;
             byteBuffer.putInt(byteBuffer.capacity() - d, d() - d);
         }
         this.g = false;
@@ -390,11 +386,11 @@ public class nb {
     public final void c(int i) {
         c(this.d, 4);
         a(i);
-        this.f5404a.position(this.b);
+        this.a.position(this.b);
         this.h = true;
     }
 
     public final byte[] c() {
-        return d(this.b, this.f5404a.capacity() - this.b);
+        return d(this.b, this.a.capacity() - this.b);
     }
 }

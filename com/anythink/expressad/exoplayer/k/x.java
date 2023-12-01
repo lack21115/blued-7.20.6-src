@@ -7,7 +7,7 @@ import java.io.OutputStream;
 public final class x extends BufferedOutputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f7682a;
+    private boolean f4843a;
 
     public x(OutputStream outputStream) {
         super(outputStream);
@@ -18,16 +18,16 @@ public final class x extends BufferedOutputStream {
     }
 
     public final void a(OutputStream outputStream) {
-        a.b(this.f7682a);
+        a.b(this.f4843a);
         this.out = outputStream;
         this.count = 0;
-        this.f7682a = false;
+        this.f4843a = false;
     }
 
-    @Override // java.io.BufferedOutputStream, java.io.FilterOutputStream, java.io.OutputStream, java.io.Closeable, java.lang.AutoCloseable
+    @Override // java.io.FilterOutputStream, java.io.OutputStream, java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
         Throwable th;
-        this.f7682a = true;
+        this.f4843a = true;
         try {
             flush();
             th = null;

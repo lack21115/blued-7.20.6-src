@@ -108,8 +108,8 @@ public class SpannableBuilder implements Appendable, CharSequence {
     }
 
     @Override // java.lang.Appendable
-    public SpannableBuilder append(char c2) {
-        this.builder.append(c2);
+    public SpannableBuilder append(char c) {
+        this.builder.append(c);
         return this;
     }
 

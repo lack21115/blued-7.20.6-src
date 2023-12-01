@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class db {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ThreadPoolExecutor f41325a = new ThreadPoolExecutor(1, 1, 15, TimeUnit.SECONDS, new LinkedBlockingQueue());
+    private static ThreadPoolExecutor f27634a = new ThreadPoolExecutor(1, 1, 15, TimeUnit.SECONDS, new LinkedBlockingQueue());
 
     public static void a(Context context) {
     }

@@ -8,10 +8,10 @@ import android.net.Uri;
 public class l0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f39649a;
+    public Context f25958a;
 
     public l0(Context context) {
-        this.f39649a = context;
+        this.f25958a = context;
     }
 
     public String a(int i, String str) {
@@ -25,7 +25,7 @@ public class l0 {
         } else {
             parse = Uri.parse("content://com.vivo.vms.IdProvider/IdentifierId/AAID_" + str);
         }
-        Cursor query = this.f39649a.getContentResolver().query(parse, null, null, null, null);
+        Cursor query = this.f25958a.getContentResolver().query(parse, null, null, null, null);
         if (query == null) {
             c.b("return cursor is null,return");
             return null;

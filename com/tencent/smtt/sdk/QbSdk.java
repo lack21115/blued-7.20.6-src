@@ -22,7 +22,8 @@ import android.os.Parcelable;
 import android.provider.SearchIndexablesContract;
 import android.text.TextUtils;
 import android.util.Log;
-import com.android.internal.telephony.SmsConstants;
+import com.baidu.mobads.sdk.internal.at;
+import com.huawei.hms.ads.fw;
 import com.ss.android.downloadad.api.constant.AdBaseConstants;
 import com.tencent.smtt.export.external.DexLoader;
 import com.tencent.smtt.sdk.TbsDownloadConfig;
@@ -45,7 +46,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-import javax.xml.XMLConstants;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -68,7 +68,7 @@ public class QbSdk {
     static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    static boolean f38715c = true;
+    static boolean f25024c = true;
     static String d;
     static boolean e = false;
     static long f = 0;
@@ -94,8 +94,8 @@ public class QbSdk {
     private static String A = null;
 
     /* renamed from: a  reason: collision with root package name */
-    static boolean f38714a = false;
-    static volatile boolean l = f38714a;
+    static boolean f25023a = false;
+    static volatile boolean l = f25023a;
     public static boolean mDisableUseHostBackupCore = false;
     private static boolean B = false;
     private static boolean C = true;
@@ -108,11 +108,11 @@ public class QbSdk {
         public void onDownloadFinish(int i2) {
             if (TbsDownloader.needDownloadDecoupleCore()) {
                 TbsLog.i("QbSdk", "onDownloadFinish needDownloadDecoupleCore is true", true);
-                TbsDownloader.f38764a = true;
+                TbsDownloader.f25073a = true;
                 return;
             }
             TbsLog.i("QbSdk", "onDownloadFinish needDownloadDecoupleCore is false", true);
-            TbsDownloader.f38764a = false;
+            TbsDownloader.f25073a = false;
             if (QbSdk.D != null) {
                 QbSdk.D.onDownloadFinish(i2);
             }
@@ -137,11 +137,11 @@ public class QbSdk {
             }
             boolean z2 = false;
             QbSdk.setTBSInstallingStatus(false);
-            TbsDownloader.f38764a = false;
+            TbsDownloader.f25073a = false;
             if (TbsDownloader.startDecoupleCoreIfNeeded()) {
                 z2 = true;
             }
-            TbsDownloader.f38764a = z2;
+            TbsDownloader.f25073a = z2;
             if (QbSdk.D != null) {
                 QbSdk.D.onInstallFinish(i2);
             }
@@ -228,7 +228,7 @@ public class QbSdk {
             }
             return null;
         }
-        return -99999;
+        return Integer.valueOf((int) EXTENSION_INIT_FAILURE);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -247,10 +247,10 @@ public class QbSdk {
     public static void a(Context context, String str) {
         synchronized (QbSdk.class) {
             try {
-                if (f38714a) {
+                if (f25023a) {
                     return;
                 }
-                f38714a = true;
+                f25023a = true;
                 v = "forceSysWebViewInner: " + str;
                 TbsLog.e("QbSdk", "QbSdk.SysWebViewForcedInner..." + v);
                 TbsCoreLoadStat.getInstance().a(context, 401, new Throwable(v));
@@ -297,7 +297,7 @@ public class QbSdk {
             TbsLog.i("QbSdk", "[QbSdk.isX5Disabled] -- SET_SENDREQUEST_AND_UPLOAD is false");
             return true;
         }
-        o.a().b(context, f.f38844a == 0);
+        o.a().b(context, f.f25153a == 0);
         if (c(context)) {
             Object a2 = com.tencent.smtt.utils.i.a(r, "isX5Disabled", new Class[]{Integer.TYPE, Integer.TYPE, Integer.TYPE}, Integer.valueOf(i2), 43967, Integer.valueOf(i3));
             if (a2 == null) {
@@ -326,7 +326,7 @@ public class QbSdk {
             TbsLog.i("QbSdk", "svn revision: jnizz; SDK_VERSION_CODE: 43967; SDK_VERSION_NAME: 4.3.0.67");
             sIsVersionPrinted = true;
         }
-        if (f38714a && !z2) {
+        if (f25023a && !z2) {
             TbsLog.e("QbSdk", "QbSdk init: " + v, false);
             TbsCoreLoadStat.getInstance().a(context, 414, new Throwable(v));
             return false;
@@ -531,7 +531,7 @@ public class QbSdk {
             java.lang.Class[] r2 = new java.lang.Class[r2]
             r3 = r2
             r4 = 0
-            java.lang.Class<java.lang.Integer> r5 = java.lang.Integer.TYPE
+            java.lang.Class r5 = java.lang.Integer.TYPE
             r3[r4] = r5
             r3 = 1
             java.lang.Object[] r3 = new java.lang.Object[r3]
@@ -622,6 +622,7 @@ public class QbSdk {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v0, types: [com.tencent.smtt.sdk.QbSdk$1] */
     public static void canOpenFile(final Context context, final String str, final ValueCallback<Boolean> valueCallback) {
         new Thread() { // from class: com.tencent.smtt.sdk.QbSdk.1
             @Override // java.lang.Thread, java.lang.Runnable
@@ -930,7 +931,7 @@ public class QbSdk {
     }
 
     public static void disAllowThirdAppDownload() {
-        f38715c = false;
+        f25024c = false;
     }
 
     public static void disableAutoCreateX5Webview() {
@@ -1202,7 +1203,7 @@ public class QbSdk {
             }
         };
         if (TbsShareManager.isThirdPartyApp(context)) {
-            o.a().b(context, f.f38844a == 0);
+            o.a().b(context, f.f25153a == 0);
         }
         TbsDownloader.needDownload(context, false, false, true, new TbsDownloader.TbsDownloaderCallback() { // from class: com.tencent.smtt.sdk.QbSdk.6
             @Override // com.tencent.smtt.sdk.TbsDownloader.TbsDownloaderCallback
@@ -1302,7 +1303,7 @@ public class QbSdk {
         } else if (i2 != 2) {
             return false;
         } else {
-            asList = Arrays.asList("rar", "zip", "tar", "bz2", "gz", "7z", "doc", "docx", "ppt", "pptx", "xls", "xlsx", "txt", "pdf", "epub", "chm", com.baidu.mobads.sdk.internal.a.f, "htm", XMLConstants.XML_NS_PREFIX, "mht", "url", "ini", "log", "bat", "php", Stone.JS_SUFFIX, "lrc", "jpg", "jpeg", "png", "gif", "bmp", "tiff", "webp", "mp3", "m4a", "aac", "amr", "wav", "ogg", "mid", "ra", "wma", "mpga", "ape", "flac", "RTSP", "RTP", "SDP", "RTMP", "mp4", "flv", "avi", "3gp", SmsConstants.FORMAT_3GPP, "webm", "ts", "ogv", "m3u8", "asf", "wmv", "rmvb", com.kuaishou.weapon.p0.t.w, "f4v", "dat", "mov", "mpg", "mkv", "mpeg", "mpeg1", "mpeg2", "xvid", "dvd", "vcd", "vob", "divx");
+            asList = Arrays.asList("rar", "zip", "tar", "bz2", "gz", "7z", "doc", "docx", "ppt", "pptx", "xls", "xlsx", "txt", "pdf", "epub", "chm", com.baidu.mobads.sdk.internal.a.f, "htm", "xml", "mht", "url", "ini", "log", "bat", "php", Stone.JS_SUFFIX, "lrc", "jpg", "jpeg", "png", "gif", "bmp", "tiff", "webp", "mp3", "m4a", "aac", "amr", "wav", "ogg", "mid", "ra", "wma", "mpga", "ape", "flac", "RTSP", "RTP", "SDP", "RTMP", "mp4", "flv", "avi", "3gp", "3gpp", "webm", "ts", "ogv", "m3u8", "asf", "wmv", "rmvb", com.kuaishou.weapon.p0.t.w, "f4v", "dat", "mov", "mpg", "mkv", "mpeg", "mpeg1", "mpeg2", "xvid", "dvd", "vcd", "vob", "divx");
         }
         return asList.contains(str.toLowerCase());
     }
@@ -1497,7 +1498,7 @@ public class QbSdk {
             if (hashMap == null) {
                 hashMap2 = new HashMap<>();
             }
-            hashMap2.put("local", "true");
+            hashMap2.put(at.f6479a, fw.Code);
             TbsLog.setWriteLogJIT(true);
             int startMiniQBToLoadUrl = startMiniQBToLoadUrl(context, str, hashMap2, valueCallback);
             if (startMiniQBToLoadUrl == 0) {
@@ -1649,7 +1650,7 @@ public class QbSdk {
                 TbsLog.initIfNeed(context);
                 TbsLog.i("QbSdk", "preInit -- processName: " + getCurrentProcessName(context));
                 TbsLog.i("QbSdk", "preInit -- stack: " + Log.getStackTraceString(new Throwable("#")));
-                l = f38714a;
+                l = f25023a;
                 if (!s) {
                     final Handler handler = new Handler(Looper.getMainLooper()) { // from class: com.tencent.smtt.sdk.QbSdk.3
                         /* JADX WARN: Code restructure failed: missing block: B:25:0x006d, code lost:
@@ -1818,7 +1819,7 @@ public class QbSdk {
             java.lang.String r1 = "delete downloaded apk success"
             r2 = 1
             com.tencent.smtt.utils.TbsLog.i(r0, r1, r2)     // Catch: java.lang.Throwable -> L99
-            java.lang.ThreadLocal<java.lang.Integer> r0 = com.tencent.smtt.sdk.o.f38864a     // Catch: java.lang.Throwable -> L99
+            java.lang.ThreadLocal<java.lang.Integer> r0 = com.tencent.smtt.sdk.o.f25173a     // Catch: java.lang.Throwable -> L99
             r1 = 0
             java.lang.Integer r1 = java.lang.Integer.valueOf(r1)     // Catch: java.lang.Throwable -> L99
             r0.set(r1)     // Catch: java.lang.Throwable -> L99
@@ -1959,14 +1960,14 @@ public class QbSdk {
         String str;
         if (i2 >= 130 && i2 <= 139) {
             tbsDownloadUpload = TbsDownloadUpload.getInstance(context);
-            map = tbsDownloadUpload.f38762a;
+            map = tbsDownloadUpload.f25071a;
             valueOf = Integer.valueOf(i2);
             str = TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_CODE;
         } else if (i2 < 150 || i2 > 159) {
             return;
         } else {
             tbsDownloadUpload = TbsDownloadUpload.getInstance(context);
-            map = tbsDownloadUpload.f38762a;
+            map = tbsDownloadUpload.f25071a;
             valueOf = Integer.valueOf(i2);
             str = TbsDownloadUpload.TbsUploadKey.KEY_STARTDOWNLOAD_CODE;
         }

@@ -15,11 +15,11 @@ public class kb {
     private ExecutorService b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ExecutorService f37587c;
+    private ExecutorService f23896c;
     private ib d;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<String, d> f37586a = new Hashtable();
+    private final Map<String, d> f23895a = new Hashtable();
     private final Set<jb> e = new CopyOnWriteArraySet();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/kb$a.class */
@@ -27,18 +27,18 @@ public class kb {
         public final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ ib f37588c;
+        public final /* synthetic */ ib f23897c;
         public final /* synthetic */ int d;
 
         public a(String str, ib ibVar, int i) {
             this.b = str;
-            this.f37588c = ibVar;
+            this.f23897c = ibVar;
             this.d = i;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            kb.this.b(this.b, this.f37588c, this.d);
+            kb.this.b(this.b, this.f23897c, this.d);
         }
     }
 
@@ -47,12 +47,12 @@ public class kb {
         public final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ lb f37589c;
+        public final /* synthetic */ lb f23898c;
         public final /* synthetic */ byte[] d;
 
         public b(String str, lb lbVar, byte[] bArr) {
             this.b = str;
-            this.f37589c = lbVar;
+            this.f23898c = lbVar;
             this.d = bArr;
         }
 
@@ -60,11 +60,11 @@ public class kb {
         public void run() {
             try {
                 for (jb jbVar : kb.this.e) {
-                    if (kb.this.f37587c.isShutdown() || kb.this.f37587c.isTerminated()) {
+                    if (kb.this.f23896c.isShutdown() || kb.this.f23896c.isTerminated()) {
                         return;
                     }
-                    jbVar.a(this.b, this.f37589c);
-                    int ordinal = this.f37589c.ordinal();
+                    jbVar.a(this.b, this.f23898c);
+                    int ordinal = this.f23898c.ordinal();
                     if (ordinal != 0) {
                         if (ordinal != 1) {
                             if (ordinal == 2) {
@@ -97,37 +97,37 @@ public class kb {
     public static /* synthetic */ class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f37590a;
+        public static final /* synthetic */ int[] f23899a;
 
         static {
             lb.values();
             int[] iArr = new int[5];
-            f37590a = iArr;
+            f23899a = iArr;
             try {
                 lb lbVar = lb.START;
                 iArr[0] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f37590a;
+                int[] iArr2 = f23899a;
                 lb lbVar2 = lb.CANCEL;
                 iArr2[2] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f37590a;
+                int[] iArr3 = f23899a;
                 lb lbVar3 = lb.ERROR;
                 iArr3[4] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                int[] iArr4 = f37590a;
+                int[] iArr4 = f23899a;
                 lb lbVar4 = lb.RUNNING;
                 iArr4[1] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                int[] iArr5 = f37590a;
+                int[] iArr5 = f23899a;
                 lb lbVar5 = lb.FINISH;
                 iArr5[3] = 5;
             } catch (NoSuchFieldError e5) {
@@ -139,11 +139,11 @@ public class kb {
     public static class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public Runnable f37591a;
+        public Runnable f23900a;
         public Future b;
 
         /* renamed from: c  reason: collision with root package name */
-        public ib f37592c;
+        public ib f23901c;
         public lb d;
 
         private d() {
@@ -164,9 +164,9 @@ public class kb {
 
         public void a(ExecutorService executorService) {
             synchronized (this) {
-                if (this.d == null && this.f37591a != null && executorService != null && !h7.a(executorService)) {
+                if (this.d == null && this.f23900a != null && executorService != null && !h7.a(executorService)) {
                     this.d = lb.START;
-                    this.b = executorService.submit(this.f37591a);
+                    this.b = executorService.submit(this.f23900a);
                 }
             }
         }
@@ -198,7 +198,7 @@ public class kb {
                 if (future != null) {
                     future.cancel(true);
                 }
-                ib ibVar = this.f37592c;
+                ib ibVar = this.f23901c;
                 if (ibVar != null) {
                     ibVar.a(true);
                 }
@@ -221,11 +221,11 @@ public class kb {
         public String toString() {
             StringBuffer stringBuffer = new StringBuffer("RequestBody{");
             stringBuffer.append("runnable=");
-            stringBuffer.append(this.f37591a);
+            stringBuffer.append(this.f23900a);
             stringBuffer.append(", requestFuture=");
             stringBuffer.append(this.b);
             stringBuffer.append(", executor=");
-            stringBuffer.append(this.f37592c);
+            stringBuffer.append(this.f23901c);
             stringBuffer.append(", status=");
             stringBuffer.append(this.d);
             stringBuffer.append('}');
@@ -237,14 +237,14 @@ public class kb {
         if (this.e.isEmpty() || lbVar == null) {
             return;
         }
-        ExecutorService executorService = this.f37587c;
+        ExecutorService executorService = this.f23896c;
         if (executorService == null || h7.a(executorService)) {
-            this.f37587c = h7.e();
+            this.f23896c = h7.e();
         }
-        if (this.f37587c.isShutdown()) {
+        if (this.f23896c.isShutdown()) {
             return;
         }
-        this.f37587c.execute(new b(str, lbVar, bArr));
+        this.f23896c.execute(new b(str, lbVar, bArr));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -257,7 +257,7 @@ public class kb {
                 if (DownloadPriority.get(i) != DownloadPriority.NONE) {
                     Thread.currentThread().setPriority(DownloadPriority.getThreadPriority(i));
                 }
-                dVar2 = this.f37586a.get(str);
+                dVar2 = this.f23895a.get(str);
                 try {
                 } catch (Exception e) {
                     dVar = dVar2;
@@ -338,10 +338,10 @@ public class kb {
                 executorService.shutdownNow();
                 this.b = null;
             }
-            ExecutorService executorService2 = this.f37587c;
+            ExecutorService executorService2 = this.f23896c;
             if (executorService2 != null) {
                 executorService2.shutdownNow();
-                this.f37587c = null;
+                this.f23896c = null;
             }
             this.e.clear();
             if (runnable != null) {
@@ -352,7 +352,7 @@ public class kb {
 
     public void a(String str) {
         synchronized (this) {
-            d remove = this.f37586a.remove(str);
+            d remove = this.f23895a.remove(str);
             if (remove != null) {
                 remove.a();
             }
@@ -377,9 +377,9 @@ public class kb {
             try {
                 if (!h7.a(this.b)) {
                     d dVar = new d(null);
-                    this.f37586a.put(str, dVar);
-                    dVar.f37591a = new a(str, ibVar, i);
-                    dVar.f37592c = ibVar;
+                    this.f23895a.put(str, dVar);
+                    dVar.f23900a = new a(str, ibVar, i);
+                    dVar.f23901c = ibVar;
                     dVar.a(this.b);
                 }
             } catch (IllegalMonitorStateException e) {
@@ -398,7 +398,7 @@ public class kb {
 
     public void b(String str) {
         synchronized (this) {
-            d remove = this.f37586a.remove(str);
+            d remove = this.f23895a.remove(str);
             if (remove != null) {
                 remove.d();
             }
@@ -406,9 +406,9 @@ public class kb {
     }
 
     public Runnable c(String str) {
-        d dVar = this.f37586a.get(str);
+        d dVar = this.f23895a.get(str);
         if (dVar != null) {
-            return dVar.f37591a;
+            return dVar.f23900a;
         }
         return null;
     }

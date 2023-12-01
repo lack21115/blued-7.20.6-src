@@ -83,7 +83,7 @@ public class FilterGraph {
                 }
             }
         }
-        Iterator<E> it2 = linkedList.iterator();
+        Iterator it2 = linkedList.iterator();
         while (it2.hasNext()) {
             addFilter((Filter) it2.next());
         }

@@ -18,17 +18,16 @@ import com.blued.das.client.feed.FeedProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/adapter/MyCircleTalkAdapter.class */
 public class MyCircleTalkAdapter extends BaseQuickAdapter<MyCircleTalkModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f19135a;
+    private Context a;
     private IRequestHost b;
 
     public MyCircleTalkAdapter(Context context, IRequestHost iRequestHost) {
-        super(R.layout.item_circle_talk, null);
-        this.f19135a = context;
+        super(R.layout.item_circle_talk, (List) null);
+        this.a = context;
         this.b = iRequestHost;
     }
 
@@ -42,11 +41,11 @@ public class MyCircleTalkAdapter extends BaseQuickAdapter<MyCircleTalkModel, Bas
             if (TextUtils.isEmpty(myCircleTalkModel.feed_content)) {
                 baseViewHolder.setText(R.id.new_base_content, R.string.circle_picture_talk);
             } else {
-                baseViewHolder.setText(R.id.new_base_content, CircleMethods.a(myCircleTalkModel, MarkDownLinkHelper.a(this.f19135a, myCircleTalkModel.feed_content.replaceAll("\r|\n", ""))));
+                baseViewHolder.setText(R.id.new_base_content, CircleMethods.a(myCircleTalkModel, MarkDownLinkHelper.a(this.a, myCircleTalkModel.feed_content.replaceAll("\r|\n", ""))));
             }
             ImageLoader.a(this.b, myCircleTalkModel.cover).b(R.drawable.circle_header_default).a((ImageView) baseViewHolder.getView(R.id.new_base_header));
             baseViewHolder.setText(R.id.new_base_name, myCircleTalkModel.title);
-            baseViewHolder.setText(R.id.new_base_time, TimeAndDateUtils.c(this.f19135a, TimeAndDateUtils.c(myCircleTalkModel.last_comment_time)));
+            baseViewHolder.setText(R.id.new_base_time, TimeAndDateUtils.c(this.a, TimeAndDateUtils.c(myCircleTalkModel.last_comment_time)));
             ImageView imageView = (ImageView) baseViewHolder.getView(R.id.new_base_image);
             if (myCircleTalkModel.is_video_posts != 1 || myCircleTalkModel.feed_videos == null || myCircleTalkModel.feed_videos.length <= 0) {
                 baseViewHolder.setGone(R.id.iv_play, false);
@@ -65,14 +64,14 @@ public class MyCircleTalkAdapter extends BaseQuickAdapter<MyCircleTalkModel, Bas
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    CircleDetailsFragment.a(MyCircleTalkAdapter.this.f19135a, myCircleTalkModel, CircleConstants.CIRCLE_FROM_PAGE.RECOMMEND_CIRCLE);
+                    CircleDetailsFragment.a(MyCircleTalkAdapter.this.a, myCircleTalkModel, CircleConstants.CIRCLE_FROM_PAGE.RECOMMEND_CIRCLE);
                 }
             });
             baseViewHolder.setOnClickListener(R.id.new_base_root_layout, new View.OnClickListener() { // from class: com.blued.community.ui.circle.adapter.MyCircleTalkAdapter.2
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    Context context = MyCircleTalkAdapter.this.f19135a;
+                    Context context = MyCircleTalkAdapter.this.a;
                     CirclePostDetailsFragment.a(context, myCircleTalkModel.feed_id + "", FeedProtos.NoteSource.NOTE_LIST);
                 }
             });
@@ -80,7 +79,6 @@ public class MyCircleTalkAdapter extends BaseQuickAdapter<MyCircleTalkModel, Bas
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, MyCircleTalkModel myCircleTalkModel) {
         if (baseViewHolder != null) {

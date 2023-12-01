@@ -7,7 +7,7 @@ import com.xiaomi.push.hn;
 /* synthetic */ class bc {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ int[] f41626a;
+    static final /* synthetic */ int[] f27935a;
     static final /* synthetic */ int[] b;
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:16:0x0055 -> B:32:0x0014). Please submit an issue!!! */
@@ -35,13 +35,13 @@ import com.xiaomi.push.hn;
         } catch (NoSuchFieldError e4) {
         }
         int[] iArr2 = new int[hm.values().length];
-        f41626a = iArr2;
+        f27935a = iArr2;
         try {
             iArr2[hm.MISC_CONFIG.ordinal()] = 1;
         } catch (NoSuchFieldError e5) {
         }
         try {
-            f41626a[hm.PLUGIN_CONFIG.ordinal()] = 2;
+            f27935a[hm.PLUGIN_CONFIG.ordinal()] = 2;
         } catch (NoSuchFieldError e6) {
         }
     }

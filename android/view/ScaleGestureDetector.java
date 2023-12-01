@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.util.FloatMath;
 import android.view.GestureDetector;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/view/ScaleGestureDetector.class */
 public class ScaleGestureDetector {
@@ -82,8 +81,8 @@ public class ScaleGestureDetector {
         this.mListener = onScaleGestureListener;
         this.mSpanSlop = ViewConfiguration.get(context).getScaledTouchSlop() * 2;
         Resources resources = context.getResources();
-        this.mTouchMinMajor = resources.getDimensionPixelSize(R.dimen.config_minScalingTouchMajor);
-        this.mMinSpan = resources.getDimensionPixelSize(R.dimen.config_minScalingSpan);
+        this.mTouchMinMajor = resources.getDimensionPixelSize(17104910);
+        this.mMinSpan = resources.getDimensionPixelSize(17104909);
         this.mHandler = handler;
         if (context.getApplicationInfo().targetSdkVersion > 18) {
             setQuickScaleEnabled(true);

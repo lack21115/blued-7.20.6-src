@@ -150,7 +150,7 @@ public class FeedDownloadActivityProxy extends com.kwad.components.core.l.d impl
     public void onClick(View view) {
         Tracker.onClick(view);
         boolean z = true;
-        a.C0519a ap = new a.C0519a(view.getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ap(view == this.mProgressBarTv ? 1 : 2);
+        a.C0349a ap = new a.C0349a(view.getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ap(view == this.mProgressBarTv ? 1 : 2);
         if (view != this.mProgressBarTv) {
             z = false;
         }

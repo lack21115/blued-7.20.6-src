@@ -11,7 +11,7 @@ import java.util.HashMap;
 public class ConstraintReference implements Reference {
 
     /* renamed from: a  reason: collision with root package name */
-    final State f2086a;
+    final State f2038a;
     private Object ac;
     private float ad;
     private float ae;
@@ -20,7 +20,7 @@ public class ConstraintReference implements Reference {
     String b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    Facade f2087c = null;
+    Facade f2039c = null;
     int d = 0;
     int e = 0;
     float f = -1.0f;
@@ -81,7 +81,7 @@ public class ConstraintReference implements Reference {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2088a;
+        static final /* synthetic */ int[] f2040a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:39:0x00dd -> B:109:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:41:0x00e1 -> B:103:0x001f). Please submit an issue!!! */
@@ -102,77 +102,77 @@ public class ConstraintReference implements Reference {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:71:0x011d -> B:105:0x00d0). Please submit an issue!!! */
         static {
             int[] iArr = new int[State.Constraint.values().length];
-            f2088a = iArr;
+            f2040a = iArr;
             try {
                 iArr[State.Constraint.LEFT_TO_LEFT.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2088a[State.Constraint.LEFT_TO_RIGHT.ordinal()] = 2;
+                f2040a[State.Constraint.LEFT_TO_RIGHT.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2088a[State.Constraint.RIGHT_TO_LEFT.ordinal()] = 3;
+                f2040a[State.Constraint.RIGHT_TO_LEFT.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2088a[State.Constraint.RIGHT_TO_RIGHT.ordinal()] = 4;
+                f2040a[State.Constraint.RIGHT_TO_RIGHT.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f2088a[State.Constraint.START_TO_START.ordinal()] = 5;
+                f2040a[State.Constraint.START_TO_START.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f2088a[State.Constraint.START_TO_END.ordinal()] = 6;
+                f2040a[State.Constraint.START_TO_END.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f2088a[State.Constraint.END_TO_START.ordinal()] = 7;
+                f2040a[State.Constraint.END_TO_START.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f2088a[State.Constraint.END_TO_END.ordinal()] = 8;
+                f2040a[State.Constraint.END_TO_END.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f2088a[State.Constraint.TOP_TO_TOP.ordinal()] = 9;
+                f2040a[State.Constraint.TOP_TO_TOP.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f2088a[State.Constraint.TOP_TO_BOTTOM.ordinal()] = 10;
+                f2040a[State.Constraint.TOP_TO_BOTTOM.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f2088a[State.Constraint.BOTTOM_TO_TOP.ordinal()] = 11;
+                f2040a[State.Constraint.BOTTOM_TO_TOP.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f2088a[State.Constraint.BOTTOM_TO_BOTTOM.ordinal()] = 12;
+                f2040a[State.Constraint.BOTTOM_TO_BOTTOM.ordinal()] = 12;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f2088a[State.Constraint.BASELINE_TO_BOTTOM.ordinal()] = 13;
+                f2040a[State.Constraint.BASELINE_TO_BOTTOM.ordinal()] = 13;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f2088a[State.Constraint.BASELINE_TO_TOP.ordinal()] = 14;
+                f2040a[State.Constraint.BASELINE_TO_TOP.ordinal()] = 14;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                f2088a[State.Constraint.BASELINE_TO_BASELINE.ordinal()] = 15;
+                f2040a[State.Constraint.BASELINE_TO_BASELINE.ordinal()] = 15;
             } catch (NoSuchFieldError e15) {
             }
             try {
-                f2088a[State.Constraint.CIRCULAR_CONSTRAINT.ordinal()] = 16;
+                f2040a[State.Constraint.CIRCULAR_CONSTRAINT.ordinal()] = 16;
             } catch (NoSuchFieldError e16) {
             }
             try {
-                f2088a[State.Constraint.CENTER_HORIZONTALLY.ordinal()] = 17;
+                f2040a[State.Constraint.CENTER_HORIZONTALLY.ordinal()] = 17;
             } catch (NoSuchFieldError e17) {
             }
             try {
-                f2088a[State.Constraint.CENTER_VERTICALLY.ordinal()] = 18;
+                f2040a[State.Constraint.CENTER_VERTICALLY.ordinal()] = 18;
             } catch (NoSuchFieldError e18) {
             }
         }
@@ -187,24 +187,24 @@ public class ConstraintReference implements Reference {
     static class IncorrectConstraintException extends Exception {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ArrayList<String> f2089a;
+        private final ArrayList<String> f2041a;
 
         public IncorrectConstraintException(ArrayList<String> arrayList) {
-            this.f2089a = arrayList;
+            this.f2041a = arrayList;
         }
 
         public ArrayList<String> getErrors() {
-            return this.f2089a;
+            return this.f2041a;
         }
 
         @Override // java.lang.Throwable
         public String toString() {
-            return "IncorrectConstraintException: " + this.f2089a.toString();
+            return "IncorrectConstraintException: " + this.f2041a.toString();
         }
     }
 
     public ConstraintReference(State state) {
-        this.f2086a = state;
+        this.f2038a = state;
     }
 
     private Object a(Object obj) {
@@ -213,7 +213,7 @@ public class ConstraintReference implements Reference {
         }
         Reference reference = obj;
         if (!(obj instanceof ConstraintReference)) {
-            reference = this.f2086a.a(obj);
+            reference = this.f2038a.a(obj);
         }
         return reference;
     }
@@ -241,8 +241,8 @@ public class ConstraintReference implements Reference {
         if (b == null) {
             return;
         }
-        int i = AnonymousClass1.f2088a[constraint.ordinal()];
-        switch (AnonymousClass1.f2088a[constraint.ordinal()]) {
+        int i = AnonymousClass1.f2040a[constraint.ordinal()];
+        switch (AnonymousClass1.f2040a[constraint.ordinal()]) {
             case 1:
                 constraintWidget.getAnchor(ConstraintAnchor.Type.LEFT).connect(b.getAnchor(ConstraintAnchor.Type.LEFT), this.j, this.p, false);
                 return;
@@ -324,12 +324,12 @@ public class ConstraintReference implements Reference {
         if (this.ag == null) {
             return;
         }
-        Facade facade = this.f2087c;
+        Facade facade = this.f2039c;
         if (facade != null) {
             facade.apply();
         }
-        this.aa.apply(this.f2086a, this.ag, 0);
-        this.ab.apply(this.f2086a, this.ag, 1);
+        this.aa.apply(this.f2038a, this.ag, 0);
+        this.ab.apply(this.f2038a, this.ag, 1);
         a();
         a(this.ag, this.J, State.Constraint.LEFT_TO_LEFT);
         a(this.ag, this.K, State.Constraint.LEFT_TO_RIGHT);
@@ -419,7 +419,7 @@ public class ConstraintReference implements Reference {
         if (this.Z == null) {
             return this;
         }
-        int i = AnonymousClass1.f2088a[this.Z.ordinal()];
+        int i = AnonymousClass1.f2040a[this.Z.ordinal()];
         if (i != 17) {
             if (i != 18) {
                 switch (i) {
@@ -527,7 +527,7 @@ public class ConstraintReference implements Reference {
             this.u = 0;
             return this;
         }
-        switch (AnonymousClass1.f2088a[this.Z.ordinal()]) {
+        switch (AnonymousClass1.f2040a[this.Z.ordinal()]) {
             case 1:
             case 2:
                 this.J = null;
@@ -639,7 +639,7 @@ public class ConstraintReference implements Reference {
 
     @Override // androidx.constraintlayout.core.state.Reference
     public Facade getFacade() {
-        return this.f2087c;
+        return this.f2039c;
     }
 
     public Dimension getHeight() {
@@ -760,7 +760,7 @@ public class ConstraintReference implements Reference {
             this.o = i;
             return this;
         }
-        switch (AnonymousClass1.f2088a[this.Z.ordinal()]) {
+        switch (AnonymousClass1.f2040a[this.Z.ordinal()]) {
             case 1:
             case 2:
                 this.j = i;
@@ -800,7 +800,7 @@ public class ConstraintReference implements Reference {
     }
 
     public ConstraintReference margin(Object obj) {
-        return margin(this.f2086a.convertDimension(obj));
+        return margin(this.f2038a.convertDimension(obj));
     }
 
     public ConstraintReference marginGone(int i) {
@@ -813,7 +813,7 @@ public class ConstraintReference implements Reference {
             this.u = i;
             return this;
         }
-        switch (AnonymousClass1.f2088a[this.Z.ordinal()]) {
+        switch (AnonymousClass1.f2040a[this.Z.ordinal()]) {
             case 1:
             case 2:
                 this.p = i;
@@ -849,7 +849,7 @@ public class ConstraintReference implements Reference {
     }
 
     public ConstraintReference marginGone(Object obj) {
-        return marginGone(this.f2086a.convertDimension(obj));
+        return marginGone(this.f2038a.convertDimension(obj));
     }
 
     public ConstraintReference pivotX(float f) {
@@ -918,7 +918,7 @@ public class ConstraintReference implements Reference {
     }
 
     public void setFacade(Facade facade) {
-        this.f2087c = facade;
+        this.f2039c = facade;
         if (facade != null) {
             setConstraintWidget(facade.getConstraintWidget());
         }

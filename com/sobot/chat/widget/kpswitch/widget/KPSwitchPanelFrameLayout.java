@@ -60,9 +60,8 @@ public class KPSwitchPanelFrameLayout extends FrameLayout implements IPanelConfl
         this.panelLayoutHandler.setIsKeyboardShowing(z);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int[] processOnMeasure = this.panelLayoutHandler.processOnMeasure(i, i2);
         super.onMeasure(processOnMeasure[0], processOnMeasure[1]);
     }
@@ -77,7 +76,7 @@ public class KPSwitchPanelFrameLayout extends FrameLayout implements IPanelConfl
         this.panelLayoutHandler.setIgnoreRecommendHeight(z);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void setVisibility(int i) {
         if (this.panelLayoutHandler.filterSetVisibility(i)) {
             return;

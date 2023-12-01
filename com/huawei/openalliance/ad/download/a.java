@@ -16,10 +16,10 @@ public class a implements AppDownloadListener {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.huawei.openalliance.ad.download.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/download/a$a.class */
-    public static class C0430a {
+    public static class C0260a {
         private static a Code = new a();
 
-        private C0430a() {
+        private C0260a() {
         }
     }
 
@@ -29,7 +29,7 @@ public class a implements AppDownloadListener {
     }
 
     public static a Code() {
-        return C0430a.Code;
+        return C0260a.Code;
     }
 
     @Override // com.huawei.openalliance.ad.inter.listeners.AppDownloadListener

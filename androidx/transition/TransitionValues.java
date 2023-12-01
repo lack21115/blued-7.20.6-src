@@ -11,7 +11,7 @@ public class TransitionValues {
     public final Map<String, Object> values = new HashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    final ArrayList<Transition> f3487a = new ArrayList<>();
+    final ArrayList<Transition> f3439a = new ArrayList<>();
 
     @Deprecated
     public TransitionValues() {

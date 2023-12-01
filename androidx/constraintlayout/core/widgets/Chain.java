@@ -49,7 +49,7 @@ public class Chain {
         for (int i4 = 0; i4 < i2; i4++) {
             ChainHead chainHead = chainHeadArr[i4];
             chainHead.define();
-            if (arrayList == null || (arrayList != null && arrayList.contains(chainHead.f2113a))) {
+            if (arrayList == null || (arrayList != null && arrayList.contains(chainHead.f2065a))) {
                 a(constraintWidgetContainer, linearSystem, i, i3, chainHead);
             }
         }

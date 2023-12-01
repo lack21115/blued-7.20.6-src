@@ -7,8 +7,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/protobuf/CodedInputStreamReader.class */
-final class CodedInputStreamReader implements Reader {
+public final class CodedInputStreamReader implements Reader {
     private static final int FIXED32_MULTIPLE_MASK = 3;
     private static final int FIXED64_MULTIPLE_MASK = 7;
     private static final int NEXT_TAG_UNSET = 0;

@@ -30,8 +30,8 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
     private boolean timeout_;
     private static final OfficialRecommend DEFAULT_INSTANCE = new OfficialRecommend();
     private static final Parser<OfficialRecommend> PARSER = new AbstractParser<OfficialRecommend>() { // from class: cn.irisgw.live.OfficialRecommend.1
-        @Override // com.google.protobuf.Parser
-        public OfficialRecommend parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public OfficialRecommend m6364parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new OfficialRecommend(codedInputStream, extensionRegistryLite);
         }
     };
@@ -62,22 +62,22 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
             boolean unused = OfficialRecommend.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m6366addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public OfficialRecommend build() {
-            OfficialRecommend buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public OfficialRecommend m6368build() {
+            OfficialRecommend m6370buildPartial = m6370buildPartial();
+            if (m6370buildPartial.isInitialized()) {
+                return m6370buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m6370buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public OfficialRecommend buildPartial() {
+        /* renamed from: buildPartial */
+        public OfficialRecommend m6370buildPartial() {
             OfficialRecommend officialRecommend = new OfficialRecommend(this);
             officialRecommend.endTime_ = this.endTime_;
             officialRecommend.icon_ = this.icon_;
@@ -87,10 +87,10 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
             return officialRecommend;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m6374clear() {
             super.clear();
-            this.endTime_ = 0L;
+            this.endTime_ = OfficialRecommend.serialVersionUID;
             this.icon_ = "";
             this.timeout_ = false;
             this.iconShow_ = false;
@@ -98,13 +98,13 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
         }
 
         public Builder clearEndTime() {
-            this.endTime_ = 0L;
+            this.endTime_ = OfficialRecommend.serialVersionUID;
             onChanged();
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m6376clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -120,8 +120,8 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m6379clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -131,18 +131,16 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m6385clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public OfficialRecommend getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public OfficialRecommend m6387getDefaultInstanceForType() {
             return OfficialRecommend.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_OfficialRecommend_descriptor;
         }
@@ -184,12 +182,10 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
             return this.timeout_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_OfficialRecommend_fieldAccessorTable.ensureFieldAccessorsInitialized(OfficialRecommend.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -198,7 +194,7 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
             if (officialRecommend == OfficialRecommend.getDefaultInstance()) {
                 return this;
             }
-            if (officialRecommend.getEndTime() != 0) {
+            if (officialRecommend.getEndTime() != OfficialRecommend.serialVersionUID) {
                 setEndTime(officialRecommend.getEndTime());
             }
             if (!officialRecommend.getIcon().isEmpty()) {
@@ -211,18 +207,18 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
             if (officialRecommend.getIconShow()) {
                 setIconShow(officialRecommend.getIconShow());
             }
-            mergeUnknownFields(officialRecommend.unknownFields);
+            m6396mergeUnknownFields(officialRecommend.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.OfficialRecommend.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.OfficialRecommend.Builder m6393mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -267,11 +263,11 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.OfficialRecommend.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.OfficialRecommend$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.OfficialRecommend.Builder.m6393mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.OfficialRecommend$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m6392mergeFrom(Message message) {
             if (message instanceof OfficialRecommend) {
                 return mergeFrom((OfficialRecommend) message);
             }
@@ -279,8 +275,8 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m6396mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -290,8 +286,8 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m6398setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -320,8 +316,8 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m6400setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -331,8 +327,8 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m6402setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -392,66 +388,65 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m6363toBuilder();
     }
 
     public static Builder newBuilder(OfficialRecommend officialRecommend) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(officialRecommend);
+        return DEFAULT_INSTANCE.m6363toBuilder().mergeFrom(officialRecommend);
     }
 
     public static OfficialRecommend parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (OfficialRecommend) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static OfficialRecommend parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (OfficialRecommend) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static OfficialRecommend parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (OfficialRecommend) PARSER.parseFrom(byteString);
     }
 
     public static OfficialRecommend parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (OfficialRecommend) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static OfficialRecommend parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (OfficialRecommend) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static OfficialRecommend parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (OfficialRecommend) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static OfficialRecommend parseFrom(InputStream inputStream) throws IOException {
-        return (OfficialRecommend) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static OfficialRecommend parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (OfficialRecommend) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static OfficialRecommend parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (OfficialRecommend) PARSER.parseFrom(byteBuffer);
     }
 
     public static OfficialRecommend parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (OfficialRecommend) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static OfficialRecommend parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (OfficialRecommend) PARSER.parseFrom(bArr);
     }
 
     public static OfficialRecommend parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (OfficialRecommend) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<OfficialRecommend> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -463,8 +458,8 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public OfficialRecommend getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public OfficialRecommend m6358getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -500,12 +495,10 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
         return this.iconShow_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<OfficialRecommend> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -513,7 +506,7 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
         }
         int i2 = 0;
         long j = this.endTime_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             i2 = 0 + CodedOutputStream.computeUInt64Size(1, j);
         }
         int i3 = i2;
@@ -540,12 +533,10 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
         return this.timeout_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -555,12 +546,10 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_OfficialRecommend_fieldAccessorTable.ensureFieldAccessorsInitialized(OfficialRecommend.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -573,31 +562,29 @@ public final class OfficialRecommend extends GeneratedMessageV3 implements Offic
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m6361newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m6360newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new OfficialRecommend();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m6363toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         long j = this.endTime_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             codedOutputStream.writeUInt64(1, j);
         }
         if (!getIconBytes().isEmpty()) {

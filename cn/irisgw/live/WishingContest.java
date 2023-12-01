@@ -46,8 +46,8 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
     private volatile Object url_;
     private static final WishingContest DEFAULT_INSTANCE = new WishingContest();
     private static final Parser<WishingContest> PARSER = new AbstractParser<WishingContest>() { // from class: cn.irisgw.live.WishingContest.1
-        @Override // com.google.protobuf.Parser
-        public WishingContest parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public WishingContest m8215parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new WishingContest(codedInputStream, extensionRegistryLite);
         }
     };
@@ -96,22 +96,22 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             boolean unused = WishingContest.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m8217addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public WishingContest build() {
-            WishingContest buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public WishingContest m8219build() {
+            WishingContest m8221buildPartial = m8221buildPartial();
+            if (m8221buildPartial.isInitialized()) {
+                return m8221buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m8221buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public WishingContest buildPartial() {
+        /* renamed from: buildPartial */
+        public WishingContest m8221buildPartial() {
             WishingContest wishingContest = new WishingContest(this);
             wishingContest.status_ = this.status_;
             wishingContest.goodsId_ = this.goodsId_;
@@ -129,8 +129,8 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             return wishingContest;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m8225clear() {
             super.clear();
             this.status_ = 0;
             this.goodsId_ = 0;
@@ -142,7 +142,7 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             this.htmlMsg_ = "";
             this.htmlHref_ = "";
             this.pushTime_ = 0;
-            this.pushMillisecond_ = 0L;
+            this.pushMillisecond_ = WishingContest.serialVersionUID;
             this.toolsTitle_ = "";
             return this;
         }
@@ -153,8 +153,8 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m8227clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -194,13 +194,13 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m8230clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
         public Builder clearPushMillisecond() {
-            this.pushMillisecond_ = 0L;
+            this.pushMillisecond_ = WishingContest.serialVersionUID;
             onChanged();
             return this;
         }
@@ -229,10 +229,9 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m8236clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.WishingContestOrBuilder
@@ -240,12 +239,11 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             return this.countdown_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public WishingContest getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public WishingContest m8238getDefaultInstanceForType() {
             return WishingContest.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_WishingContest_descriptor;
         }
@@ -407,12 +405,10 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_WishingContest_fieldAccessorTable.ensureFieldAccessorsInitialized(WishingContest.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -456,25 +452,25 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             if (wishingContest.getPushTime() != 0) {
                 setPushTime(wishingContest.getPushTime());
             }
-            if (wishingContest.getPushMillisecond() != 0) {
+            if (wishingContest.getPushMillisecond() != WishingContest.serialVersionUID) {
                 setPushMillisecond(wishingContest.getPushMillisecond());
             }
             if (!wishingContest.getToolsTitle().isEmpty()) {
                 this.toolsTitle_ = wishingContest.toolsTitle_;
                 onChanged();
             }
-            mergeUnknownFields(wishingContest.unknownFields);
+            m8247mergeUnknownFields(wishingContest.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.WishingContest.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.WishingContest.Builder m8244mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -519,11 +515,11 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.WishingContest.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.WishingContest$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.WishingContest.Builder.m8244mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.WishingContest$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m8243mergeFrom(Message message) {
             if (message instanceof WishingContest) {
                 return mergeFrom((WishingContest) message);
             }
@@ -531,8 +527,8 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m8247mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -542,8 +538,8 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m8249setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -647,8 +643,8 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m8251setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -677,8 +673,8 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m8253setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
 
@@ -796,66 +792,65 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m8214toBuilder();
     }
 
     public static Builder newBuilder(WishingContest wishingContest) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(wishingContest);
+        return DEFAULT_INSTANCE.m8214toBuilder().mergeFrom(wishingContest);
     }
 
     public static WishingContest parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (WishingContest) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static WishingContest parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (WishingContest) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static WishingContest parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (WishingContest) PARSER.parseFrom(byteString);
     }
 
     public static WishingContest parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (WishingContest) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static WishingContest parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (WishingContest) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static WishingContest parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (WishingContest) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static WishingContest parseFrom(InputStream inputStream) throws IOException {
-        return (WishingContest) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static WishingContest parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (WishingContest) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static WishingContest parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (WishingContest) PARSER.parseFrom(byteBuffer);
     }
 
     public static WishingContest parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (WishingContest) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static WishingContest parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (WishingContest) PARSER.parseFrom(bArr);
     }
 
     public static WishingContest parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (WishingContest) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<WishingContest> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -872,8 +867,8 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
         return this.countdown_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public WishingContest getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public WishingContest m8209getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -975,7 +970,6 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<WishingContest> getParserForType() {
         return PARSER;
     }
@@ -990,7 +984,6 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
         return this.pushTime_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1043,7 +1036,7 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
         }
         long j = this.pushMillisecond_;
         int i17 = i16;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             i17 = i16 + CodedOutputStream.computeUInt64Size(11, j);
         }
         int i18 = i17;
@@ -1082,7 +1075,6 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1109,7 +1101,6 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1119,12 +1110,10 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_WishingContest_fieldAccessorTable.ensureFieldAccessorsInitialized(WishingContest.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1137,28 +1126,26 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m8212newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m8211newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new WishingContest();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m8214toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.status_;
         if (i != 0) {
@@ -1196,7 +1183,7 @@ public final class WishingContest extends GeneratedMessageV3 implements WishingC
             codedOutputStream.writeUInt32(10, i5);
         }
         long j = this.pushMillisecond_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             codedOutputStream.writeUInt64(11, j);
         }
         if (!getToolsTitleBytes().isEmpty()) {

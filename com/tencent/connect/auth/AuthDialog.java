@@ -1,5 +1,6 @@
 package com.tencent.connect.auth;
 
+import android.R;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -27,7 +28,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.anythink.expressad.video.dynview.a.a;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.bytedance.applog.util.WebViewJsUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.connect.auth.AuthMap;
 import com.tencent.connect.common.Constants;
 import com.tencent.open.a.f;
@@ -53,11 +55,11 @@ import org.json.JSONObject;
 public class AuthDialog extends Dialog {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f36155a;
+    private String f22464a;
     private OnTimeListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IUiListener f36156c;
+    private IUiListener f22465c;
     private Handler d;
     private FrameLayout e;
     private LinearLayout f;
@@ -160,9 +162,9 @@ public class AuthDialog extends Dialog {
                     return true;
                 } else if (parseUrlToJson.optInt("fall_to_wv") == 1) {
                     AuthDialog authDialog2 = AuthDialog.this;
-                    AuthDialog.a(authDialog2, authDialog2.f36155a.indexOf("?") > -1 ? "&" : "?");
+                    AuthDialog.a(authDialog2, authDialog2.f22464a.indexOf("?") > -1 ? ContainerUtils.FIELD_DELIMITER : "?");
                     AuthDialog.a(AuthDialog.this, (Object) "browser_error=1");
-                    AuthDialog.this.j.loadUrl(AuthDialog.this.f36155a);
+                    AuthDialog.this.j.loadUrl(AuthDialog.this.f22464a);
                     return true;
                 } else {
                     String optString = parseUrlToJson.optString("redir", null);
@@ -239,14 +241,14 @@ public class AuthDialog extends Dialog {
     class OnTimeListener implements IUiListener {
 
         /* renamed from: a  reason: collision with root package name */
-        String f36162a;
+        String f22471a;
         String b;
         private String d;
         private IUiListener e;
 
         public OnTimeListener(String str, String str2, String str3, IUiListener iUiListener) {
             this.d = str;
-            this.f36162a = str2;
+            this.f22471a = str2;
             this.b = str3;
             this.e = iUiListener;
         }
@@ -274,7 +276,7 @@ public class AuthDialog extends Dialog {
         public void onComplete(Object obj) {
             JSONObject jSONObject = (JSONObject) obj;
             g a2 = g.a();
-            a2.a(this.d + "_H5", SystemClock.elapsedRealtime(), 0L, 0L, jSONObject.optInt("ret", -6), this.f36162a, false);
+            a2.a(this.d + "_H5", SystemClock.elapsedRealtime(), 0L, 0L, jSONObject.optInt("ret", -6), this.f22471a, false);
             IUiListener iUiListener = this.e;
             if (iUiListener != null) {
                 iUiListener.onComplete(jSONObject);
@@ -286,9 +288,9 @@ public class AuthDialog extends Dialog {
         public void onError(UiError uiError) {
             String str;
             if (uiError.errorMessage != null) {
-                str = uiError.errorMessage + this.f36162a;
+                str = uiError.errorMessage + this.f22471a;
             } else {
-                str = this.f36162a;
+                str = this.f22471a;
             }
             g.a().a(this.d + "_H5", SystemClock.elapsedRealtime(), 0L, 0L, uiError.errorCode, str, false);
             AuthDialog.this.a(str);
@@ -327,17 +329,17 @@ public class AuthDialog extends Dialog {
     class TimeOutRunable implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        String f36165a;
+        String f22474a;
 
         public TimeOutRunable(String str) {
-            this.f36165a = "";
-            this.f36165a = str;
+            this.f22474a = "";
+            this.f22474a = str;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            f.a("openSDK_LOG.AuthDialog", "-->timeoutUrl: " + this.f36165a + " | mRetryUrl: " + AuthDialog.this.o);
-            if (this.f36165a.equals(AuthDialog.this.o)) {
+            f.a("openSDK_LOG.AuthDialog", "-->timeoutUrl: " + this.f22474a + " | mRetryUrl: " + AuthDialog.this.o);
+            if (this.f22474a.equals(AuthDialog.this.o)) {
                 AuthDialog.this.b.onError(new UiError(9002, "请求页面超时，请稍后重试！", AuthDialog.this.o));
                 AuthDialog.this.dismiss();
             }
@@ -351,11 +353,11 @@ public class AuthDialog extends Dialog {
                 f.c("openSDK_LOG.AuthDialog", "-->load lib fail, because context is null:" + AuthAgent.SECURE_LIB_NAME);
                 return;
             }
-            if (!new File(context.getFilesDir().toString() + BridgeUtil.SPLIT_MARK + AuthAgent.SECURE_LIB_NAME).exists()) {
+            if (!new File(context.getFilesDir().toString() + "/" + AuthAgent.SECURE_LIB_NAME).exists()) {
                 f.c("openSDK_LOG.AuthDialog", "-->fail, because so is not exists:" + AuthAgent.SECURE_LIB_NAME);
                 return;
             }
-            System.load(context.getFilesDir().toString() + BridgeUtil.SPLIT_MARK + AuthAgent.SECURE_LIB_NAME);
+            System.load(context.getFilesDir().toString() + "/" + AuthAgent.SECURE_LIB_NAME);
             StringBuilder sb = new StringBuilder();
             sb.append("-->load lib success:");
             sb.append(AuthAgent.SECURE_LIB_NAME);
@@ -366,15 +368,15 @@ public class AuthDialog extends Dialog {
     }
 
     public AuthDialog(Context context, String str, String str2, IUiListener iUiListener, QQToken qQToken) {
-        super(context, 16973840);
+        super(context, R.style.Theme_Translucent_NoTitleBar);
         this.m = false;
         this.q = 0L;
         this.r = 30000L;
         this.k = context;
-        this.f36155a = str2;
+        this.f22464a = str2;
         this.b = new OnTimeListener(str, str2, qQToken.getAppId(), iUiListener);
         this.d = new THandler(this.b, context.getMainLooper());
-        this.f36156c = iUiListener;
+        this.f22465c = iUiListener;
         this.i = str;
         this.l = new b();
         getWindow().setSoftInputMode(32);
@@ -382,15 +384,15 @@ public class AuthDialog extends Dialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public String a() {
-        String str = this.f36155a;
+        String str = this.f22464a;
         String str2 = ServerSetting.DOWNLOAD_QQ_URL + str.substring(str.indexOf("?") + 1);
         f.c("openSDK_LOG.AuthDialog", "-->generateDownloadUrl, url: http://qzs.qq.com/open/mobile/login/qzsjump.html?");
         return str2;
     }
 
     static /* synthetic */ String a(AuthDialog authDialog, Object obj) {
-        String str = authDialog.f36155a + obj;
-        authDialog.f36155a = str;
+        String str = authDialog.f22464a + obj;
+        authDialog.f22464a = str;
         return str;
     }
 
@@ -467,7 +469,7 @@ public class AuthDialog extends Dialog {
         layoutParams3.bottomMargin = 40;
         layoutParams3.gravity = 17;
         this.g.setLayoutParams(layoutParams3);
-        this.g.setBackgroundResource(17301504);
+        this.g.setBackgroundResource(R.drawable.alert_dark_frame);
         this.g.addView(this.f);
     }
 
@@ -507,8 +509,8 @@ public class AuthDialog extends Dialog {
         settings.setDatabaseEnabled(true);
         settings.setDatabasePath(this.k.getDir("databases", 0).getPath());
         settings.setDomStorageEnabled(true);
-        f.a("openSDK_LOG.AuthDialog", "-->mUrl : " + this.f36155a);
-        String str = this.f36155a;
+        f.a("openSDK_LOG.AuthDialog", "-->mUrl : " + this.f22464a);
+        String str = this.f22464a;
         this.o = str;
         this.j.loadUrl(str);
         this.j.setVisibility(4);
@@ -531,18 +533,18 @@ public class AuthDialog extends Dialog {
         AuthMap authMap = AuthMap.getInstance();
         String makeKey = authMap.makeKey();
         AuthMap.Auth auth = new AuthMap.Auth();
-        auth.listener = this.f36156c;
+        auth.listener = this.f22465c;
         auth.dialog = this;
         auth.key = makeKey;
         String str = authMap.set(auth);
-        String str2 = this.f36155a;
+        String str2 = this.f22464a;
         String substring = str2.substring(0, str2.indexOf("?"));
-        Bundle parseUrl = Util.parseUrl(this.f36155a);
+        Bundle parseUrl = Util.parseUrl(this.f22464a);
         parseUrl.putString("token_key", makeKey);
         parseUrl.putString(Context.SERIAL_SERVICE, str);
         parseUrl.putString("browser", "1");
         String str3 = substring + "?" + Util.encodeUrl(parseUrl);
-        this.f36155a = str3;
+        this.f22464a = str3;
         return Util.openBrowser(this.k, str3);
     }
 
@@ -553,7 +555,7 @@ public class AuthDialog extends Dialog {
     }
 
     public void callJs(String str, String str2) {
-        this.j.loadUrl("javascript:" + str + "(" + str2 + ");void(" + System.currentTimeMillis() + ");");
+        this.j.loadUrl(WebViewJsUtil.JS_URL_PREFIX + str + "(" + str2 + ");void(" + System.currentTimeMillis() + ");");
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface

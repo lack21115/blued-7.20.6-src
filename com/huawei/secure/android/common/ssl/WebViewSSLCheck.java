@@ -12,21 +12,21 @@ import java.security.cert.X509Certificate;
 public class WebViewSSLCheck {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23111a = "WebViewSSLCheck";
+    private static final String f9503a = "WebViewSSLCheck";
 
     public static void checkServerCertificateNew(SslErrorHandler sslErrorHandler, SslError sslError, Context context) {
         checkServerCertificateNew(sslErrorHandler, sslError, null, context, null);
     }
 
     public static void checkServerCertificateNew(SslErrorHandler sslErrorHandler, SslError sslError, String str, Context context, WebViewSSLCheckThread.Callback callback) {
-        String str2 = f23111a;
+        String str2 = f9503a;
         g.c(str2, " error type : " + sslError.getPrimaryError() + " , cn is : " + sslError.getCertificate().getIssuedTo().getCName());
         X509Certificate a2 = com.huawei.secure.android.common.ssl.util.b.a(sslError.getCertificate());
         X509Certificate a3 = new j(context).a();
-        String str3 = f23111a;
+        String str3 = f9503a;
         g.a(str3, "checkServerCertificateNew: error certificate is : " + a2);
         if (com.huawei.secure.android.common.ssl.util.b.a(a3, a2)) {
-            g.c(f23111a, "checkServerCertificateNew: proceed");
+            g.c(f9503a, "checkServerCertificateNew: proceed");
             if (callback != null) {
                 callback.onProceed(context, str);
                 return;
@@ -35,7 +35,7 @@ public class WebViewSSLCheck {
                 return;
             }
         }
-        g.b(f23111a, "checkServerCertificateNew: cancel");
+        g.b(f9503a, "checkServerCertificateNew: cancel");
         if (callback != null) {
             callback.onCancel(context, str);
         } else {

@@ -33,10 +33,10 @@ public final class PointerIconCompat {
     public static final int TYPE_ZOOM_OUT = 1019;
 
     /* renamed from: a  reason: collision with root package name */
-    private Object f2654a;
+    private Object f2606a;
 
     private PointerIconCompat(Object obj) {
-        this.f2654a = obj;
+        this.f2606a = obj;
     }
 
     public static PointerIconCompat create(Bitmap bitmap, float f, float f2) {
@@ -52,6 +52,6 @@ public final class PointerIconCompat {
     }
 
     public Object getPointerIcon() {
-        return this.f2654a;
+        return this.f2606a;
     }
 }

@@ -9,18 +9,18 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/squareup/wire/internal/_PlatformKt.class */
 public final class _PlatformKt {
-    public static final String camelCase(String string, boolean z) {
-        Intrinsics.e(string, "string");
-        StringBuilder sb = new StringBuilder(string.length());
+    public static final String camelCase(String str, boolean z) {
+        Intrinsics.e(str, "string");
+        StringBuilder sb = new StringBuilder(str.length());
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= string.length()) {
+            if (i2 >= str.length()) {
                 String sb2 = sb.toString();
                 Intrinsics.c(sb2, "StringBuilder(capacity).…builderAction).toString()");
                 return sb2;
             }
-            int codePointAt = string.codePointAt(i2);
+            int codePointAt = str.codePointAt(i2);
             int charCount = i2 + Character.charCount(codePointAt);
             if (codePointAt == 95) {
                 z = true;

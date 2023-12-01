@@ -14,16 +14,16 @@ import java.io.InputStreamReader;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private final File f27924a;
+    private final File f14236a;
     private final File b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f27925c;
+    private String f14237c;
     private int d;
     private String e;
 
     public g(File file, File file2) {
-        this.f27924a = file;
+        this.f14236a = file;
         this.b = file2;
     }
 
@@ -83,7 +83,7 @@ public class g {
     public boolean a() {
         int i;
         try {
-            if (this.b.exists() && this.f27924a.exists()) {
+            if (this.b.exists() && this.f14236a.exists()) {
                 String a2 = a(this.b);
                 this.e = a2;
                 if (TextUtils.isEmpty(a2)) {
@@ -97,8 +97,8 @@ public class g {
                     } catch (Throwable th) {
                         i = 0;
                     }
-                    if (c.b.f27922a.a(str, this.f27924a)) {
-                        this.f27925c = str;
+                    if (c.b.f14234a.a(str, this.f14236a)) {
+                        this.f14237c = str;
                         this.d = i;
                         return true;
                     }
@@ -115,7 +115,7 @@ public class g {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a(File file, File file2) {
-        if (file.equals(this.f27924a) || h.a(this.f27924a, file)) {
+        if (file.equals(this.f14236a) || h.a(this.f14236a, file)) {
             return file2.equals(this.b) || h.a(this.b, file2);
         }
         return false;
@@ -128,7 +128,7 @@ public class g {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public String c() {
-        return this.f27925c;
+        return this.f14237c;
     }
 
     public String d() {

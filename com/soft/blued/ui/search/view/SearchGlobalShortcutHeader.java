@@ -25,11 +25,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SearchGlobalShortcutHeader extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f33176a;
+    private IRequestHost f19485a;
     private SearchShortcutAdapter b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f33177c;
+    private String f19486c;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public SearchGlobalShortcutHeader(Context context) {
@@ -51,19 +51,19 @@ public final class SearchGlobalShortcutHeader extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(SearchGlobalShortcutHeader this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(SearchGlobalShortcutHeader searchGlobalShortcutHeader, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        Intrinsics.e(searchGlobalShortcutHeader, "this$0");
         Object item = baseQuickAdapter.getItem(i);
         if (item == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.soft.blued.ui.search.model.SearchGlobalInfo.SearchShortcutModel");
         }
         SearchGlobalInfo.SearchShortcutModel searchShortcutModel = (SearchGlobalInfo.SearchShortcutModel) item;
-        String str = this$0.f33177c;
+        String str = searchGlobalShortcutHeader.f19486c;
         if (str != null) {
-            SearchGlobalUtil.f33175a.b(str);
+            SearchGlobalUtil.f19484a.b(str);
         }
-        EventTrackGuy.c(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_QUICK_CLICK, this$0.f33177c, searchShortcutModel.getName());
-        WebViewShowInfoFragment.show(this$0.getContext(), searchShortcutModel.getTarget_url());
+        EventTrackGuy.c(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_QUICK_CLICK, searchGlobalShortcutHeader.f19486c, searchShortcutModel.getName());
+        WebViewShowInfoFragment.show(searchGlobalShortcutHeader.getContext(), searchShortcutModel.getTarget_url());
     }
 
     public final void a() {
@@ -71,7 +71,7 @@ public final class SearchGlobalShortcutHeader extends LinearLayout {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
         recyclerView.setLayoutManager(linearLayoutManager);
-        SearchShortcutAdapter searchShortcutAdapter = new SearchShortcutAdapter(this.f33176a);
+        SearchShortcutAdapter searchShortcutAdapter = new SearchShortcutAdapter(this.f19485a);
         this.b = searchShortcutAdapter;
         Intrinsics.a(searchShortcutAdapter);
         searchShortcutAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.search.view.-$$Lambda$SearchGlobalShortcutHeader$b7OTeJyLdf5Y3JENWSviDEil1cw
@@ -85,7 +85,7 @@ public final class SearchGlobalShortcutHeader extends LinearLayout {
 
     public final void a(List<SearchGlobalInfo.SearchShortcutModel> list, String str) {
         Intrinsics.e(list, "list");
-        this.f33177c = str;
+        this.f19486c = str;
         for (SearchGlobalInfo.SearchShortcutModel searchShortcutModel : list) {
             EventTrackGuy.c(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_QUICK_SHOW, str, searchShortcutModel.getName());
         }
@@ -97,10 +97,10 @@ public final class SearchGlobalShortcutHeader extends LinearLayout {
     }
 
     public final IRequestHost getRequestHost() {
-        return this.f33176a;
+        return this.f19485a;
     }
 
     public final void setRequestHost(IRequestHost iRequestHost) {
-        this.f33176a = iRequestHost;
+        this.f19485a = iRequestHost;
     }
 }

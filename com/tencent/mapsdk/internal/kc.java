@@ -1,7 +1,6 @@
 package com.tencent.mapsdk.internal;
 
 import android.content.Context;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,11 +9,11 @@ import java.util.Map;
 public class kc extends ic {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f37593c = "Tencent_MapSDK_SUB_CONFIG";
+    private static final String f23902c = "Tencent_MapSDK_SUB_CONFIG";
     private static Map<String, ic> d = new HashMap();
 
     private kc(Context context, String str) {
-        this.f37553a = context.getSharedPreferences("Tencent_MapSDK_SUB_CONFIG_" + str, 0);
+        this.f23862a = context.getSharedPreferences("Tencent_MapSDK_SUB_CONFIG_" + str, 0);
     }
 
     public static ic a(Context context, String str) {
@@ -51,7 +50,7 @@ public class kc extends ic {
                     return;
                 }
                 File file = listFiles[i2];
-                if (file.getName().startsWith(f37593c)) {
+                if (file.getName().startsWith(f23902c)) {
                     file.delete();
                 }
                 i = i2 + 1;
@@ -79,8 +78,8 @@ public class kc extends ic {
             sb.append(str2);
             sb.append("shared_prefs");
             sb.append(str2);
-            sb.append(f37593c);
-            sb.append(BridgeUtil.UNDERLINE_STR);
+            sb.append(f23902c);
+            sb.append("_");
             sb.append(str);
             File file = new File(sb.toString());
             if (file.exists()) {

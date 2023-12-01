@@ -16,35 +16,35 @@ import java.util.List;
 public class d implements com.opos.mobad.ad.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<e.a> f26135a;
+    private final List<e.a> f12447a;
     private final e.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final b f26136c;
+    private final b f12448c;
     private final long d;
     private com.opos.mobad.f.a.d.a e;
 
     public d(com.opos.mobad.f.a.d.a aVar, List<e.a> list, e.a aVar2, long j, b bVar) {
         this.e = aVar;
-        this.f26135a = list;
+        this.f12447a = list;
         this.b = aVar2;
-        this.f26136c = bVar;
+        this.f12448c = bVar;
         this.d = j;
     }
 
     @Override // com.opos.mobad.ad.c
     public com.opos.mobad.ad.a.a a(Activity activity, String str, String str2, boolean z, com.opos.mobad.ad.a.b bVar) {
-        return new com.opos.mobad.f.a.a(activity, str, this.e, false, bVar, this.f26135a, this.b, this.d, this.f26136c);
+        return new com.opos.mobad.f.a.a(activity, str, this.e, false, bVar, this.f12447a, this.b, this.d, this.f12448c);
     }
 
     @Override // com.opos.mobad.ad.c
     public com.opos.mobad.ad.b.a a(Activity activity, String str, String str2, com.opos.mobad.ad.b.b bVar) {
-        return new com.opos.mobad.f.a.d(activity, str, this.e, bVar, this.f26135a, this.b, this.d, this.f26136c);
+        return new com.opos.mobad.f.a.d(activity, str, this.e, bVar, this.f12447a, this.b, this.d, this.f12448c);
     }
 
     @Override // com.opos.mobad.ad.c
     public com.opos.mobad.ad.b.c a(Activity activity, String str, String str2, boolean z, com.opos.mobad.ad.b.d dVar) {
-        return new com.opos.mobad.f.a.e(activity, str, this.e, dVar, z, this.f26135a, this.b, this.d, this.f26136c);
+        return new com.opos.mobad.f.a.e(activity, str, this.e, dVar, z, this.f12447a, this.b, this.d, this.f12448c);
     }
 
     @Override // com.opos.mobad.ad.c
@@ -59,17 +59,17 @@ public class d implements com.opos.mobad.ad.c {
 
     @Override // com.opos.mobad.ad.c
     public g a(Context context, String str, String str2, int i, int i2, j jVar, com.opos.mobad.ad.privacy.a aVar) {
-        return new com.opos.mobad.f.a.f(context, str, this.e, jVar, this.f26135a, this.b, this.d, this.f26136c, aVar);
+        return new com.opos.mobad.f.a.f(context, str, this.e, jVar, this.f12447a, this.b, this.d, this.f12448c, aVar);
     }
 
     @Override // com.opos.mobad.ad.c
     public n a(Context context, s sVar, String str, String str2, o oVar) {
-        return new com.opos.mobad.f.a.g(context, sVar, str, this.e, oVar, this.f26135a, this.b, this.d, this.f26136c);
+        return new com.opos.mobad.f.a.g(context, sVar, str, this.e, oVar, this.f12447a, this.b, this.d, this.f12448c);
     }
 
     @Override // com.opos.mobad.ad.c
     public com.opos.mobad.ad.d.a a(Context context, String str, String str2, boolean z, com.opos.mobad.ad.d.b bVar) {
-        return new h(context, str, this.e, bVar, false, this.f26135a, this.b, this.d, this.f26136c);
+        return new h(context, str, this.e, bVar, false, this.f12447a, this.b, this.d, this.f12448c);
     }
 
     @Override // com.opos.mobad.ad.c

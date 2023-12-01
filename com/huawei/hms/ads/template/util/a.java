@@ -9,7 +9,6 @@ import android.util.AttributeSet;
 import android.util.Pair;
 import android.util.TypedValue;
 import android.view.ViewGroup;
-import com.alipay.sdk.util.i;
 import com.huawei.hms.ads.ge;
 import com.huawei.hms.ads.jsb.constant.Constant;
 import com.kuaishou.weapon.p0.t;
@@ -144,7 +143,7 @@ public abstract class a {
     }
 
     public static String I(String str) {
-        if (TextUtils.isEmpty(str) || str.length() <= 3 || !str.startsWith("#{") || !str.endsWith(i.d)) {
+        if (TextUtils.isEmpty(str) || str.length() <= 3 || !str.startsWith("#{") || !str.endsWith("}")) {
             return null;
         }
         return str.substring(2, str.length() - 1);

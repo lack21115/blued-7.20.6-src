@@ -26,18 +26,18 @@ public class qf {
     public static final class b extends ca.i<Boolean> {
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ Context f37721c;
+        public final /* synthetic */ Context f24030c;
         public final /* synthetic */ String d;
 
         public b(Context context, String str) {
-            this.f37721c = context;
+            this.f24030c = context;
             this.d = str;
         }
 
         @Override // java.util.concurrent.Callable
         /* renamed from: a */
         public Boolean call() throws Exception {
-            qf.a(this.f37721c, this.d);
+            qf.a(this.f24030c, this.d);
             return Boolean.TRUE;
         }
     }
@@ -52,10 +52,10 @@ public class qf {
         int b2 = c7.b(c7.E(), a2.d("sdkVersion"));
         ic a3 = kc.a(context, str);
         jc.c(a3, c2);
-        jc.a(context, a3, c2, k4.f37583a);
+        jc.a(context, a3, c2, k4.f23892a);
         jc.a(context, a3, c2, k4.d);
         jc.a(context, a3, c2, k4.b);
-        jc.a(context, a3, c2, k4.f37584c);
+        jc.a(context, a3, c2, k4.f23893c);
         jc.a(context, a3, c2, k4.e);
         jc.a(context, a3, c2, k4.f);
         jc.a(context, a3, c2, k4.g);

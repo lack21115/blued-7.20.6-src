@@ -18,6 +18,7 @@ import com.ss.android.socialbase.downloader.segment.Segment;
 import com.ss.android.socialbase.downloader.setting.DownloadSetting;
 import com.ss.android.socialbase.downloader.setting.DownloadSettingKeys;
 import com.ss.android.socialbase.downloader.utils.DownloadUtils;
+import com.tencent.tinker.android.dex.DexFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -171,7 +172,7 @@ public class SqlDownloadCache extends ISqlDownloadCacheAidl.Stub implements ISql
                         strArr[i2] = String.valueOf(list.get(i2));
                         i = i2 + 1;
                     }
-                    String str = "CAST(_id AS TEXT) IN (" + new String(new char[list.size() - 1]).replace("��", "?,") + "?)";
+                    String str = "CAST(_id AS TEXT) IN (" + new String(new char[list.size() - 1]).replace(DexFormat.MAGIC_SUFFIX, "?,") + "?)";
                     database.delete(DBDefinition.DOWNLOAD_TABLE_NAME, str, strArr);
                     database.delete(DBDefinition.CHUNK_TABLE_NAME, str, strArr);
                 } else {

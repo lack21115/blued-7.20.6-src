@@ -19,7 +19,7 @@ public class b extends c implements d {
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f35039c;
+    private String f21348c;
 
     public b() {
         com.tencent.beacon.a.a.b.a().a(2, this);
@@ -56,10 +56,10 @@ public class b extends c implements d {
             params.put("A34", String.valueOf(com.tencent.beacon.base.util.b.c()));
             params.put("A156", c(beaconEvent) ? "Y" : "N");
             if (!params.containsKey("A88")) {
-                if (TextUtils.isEmpty(this.f35039c)) {
-                    this.f35039c = com.tencent.beacon.a.c.b.a(c2);
+                if (TextUtils.isEmpty(this.f21348c)) {
+                    this.f21348c = com.tencent.beacon.a.c.b.a(c2);
                 }
-                params.put("A88", this.f35039c);
+                params.put("A88", this.f21348c);
             }
             params.put("A100", g.a(c2, appKey).a(beaconEvent.getCode(), beaconEvent.getType()));
             Map<String, String> a2 = eventModule.a(appKey);
@@ -75,7 +75,7 @@ public class b extends c implements d {
     @Override // com.tencent.beacon.a.a.d
     public void a(com.tencent.beacon.a.a.c cVar) {
         HashMap hashMap;
-        if (cVar.f34920a == 2 && (hashMap = (HashMap) cVar.b.get("d_m")) != null) {
+        if (cVar.f21229a == 2 && (hashMap = (HashMap) cVar.b.get("d_m")) != null) {
             this.b = com.tencent.beacon.base.util.b.a((String) hashMap.get("tidyEF"), this.b);
         }
     }

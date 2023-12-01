@@ -7,24 +7,24 @@ import java.util.concurrent.ConcurrentHashMap;
 class by implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ bx f41657a;
+    final /* synthetic */ bx f27966a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public by(bx bxVar) {
-        this.f41657a = bxVar;
+        this.f27966a = bxVar;
     }
 
     @Override // java.lang.Runnable
     public void run() {
         ConcurrentHashMap concurrentHashMap;
         try {
-            concurrentHashMap = this.f41657a.f1035a;
+            concurrentHashMap = this.f27966a.f988a;
             for (bx.a aVar : concurrentHashMap.values()) {
                 aVar.run();
             }
         } catch (Exception e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("Sync job exception :" + e.getMessage());
+            com.xiaomi.channel.commonutils.logger.b.m8344a("Sync job exception :" + e.getMessage());
         }
-        this.f41657a.f1036a = false;
+        this.f27966a.f989a = false;
     }
 }

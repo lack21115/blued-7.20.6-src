@@ -14,7 +14,7 @@ import java.nio.ByteBuffer;
 public class ByteArrayLoader<Data> implements ModelLoader<byte[], Data> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Converter<Data> f20862a;
+    private final Converter<Data> f7256a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/ByteArrayLoader$ByteBufferFactory.class */
     public static class ByteBufferFactory implements ModelLoaderFactory<byte[], ByteBuffer> {
@@ -51,11 +51,11 @@ public class ByteArrayLoader<Data> implements ModelLoader<byte[], Data> {
     public static class Fetcher<Data> implements DataFetcher<Data> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final byte[] f20864a;
+        private final byte[] f7258a;
         private final Converter<Data> b;
 
         Fetcher(byte[] bArr, Converter<Data> converter) {
-            this.f20864a = bArr;
+            this.f7258a = bArr;
             this.b = converter;
         }
 
@@ -65,7 +65,7 @@ public class ByteArrayLoader<Data> implements ModelLoader<byte[], Data> {
 
         @Override // com.bumptech.glide.load.data.DataFetcher
         public void a(Priority priority, DataFetcher.DataCallback<? super Data> dataCallback) {
-            dataCallback.a((DataFetcher.DataCallback<? super Data>) ((Data) this.b.b(this.f20864a)));
+            dataCallback.a((DataFetcher.DataCallback<? super Data>) ((Data) this.b.b(this.f7258a)));
         }
 
         @Override // com.bumptech.glide.load.data.DataFetcher
@@ -107,12 +107,12 @@ public class ByteArrayLoader<Data> implements ModelLoader<byte[], Data> {
     }
 
     public ByteArrayLoader(Converter<Data> converter) {
-        this.f20862a = converter;
+        this.f7256a = converter;
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public ModelLoader.LoadData<Data> a(byte[] bArr, int i, int i2, Options options) {
-        return new ModelLoader.LoadData<>(new ObjectKey(bArr), new Fetcher(bArr, this.f20862a));
+        return new ModelLoader.LoadData<>(new ObjectKey(bArr), new Fetcher(bArr, this.f7256a));
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader

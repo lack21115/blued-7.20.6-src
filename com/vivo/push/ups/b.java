@@ -6,17 +6,17 @@ import com.vivo.push.IPushActionListener;
 final class b implements IPushActionListener {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ UPSRegisterCallback f41125a;
+    final /* synthetic */ UPSRegisterCallback f27434a;
     final /* synthetic */ VUpsManager b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public b(VUpsManager vUpsManager, UPSRegisterCallback uPSRegisterCallback) {
         this.b = vUpsManager;
-        this.f41125a = uPSRegisterCallback;
+        this.f27434a = uPSRegisterCallback;
     }
 
     @Override // com.vivo.push.IPushActionListener
     public final void onStateChanged(int i) {
-        this.f41125a.onResult(new TokenResult(i, ""));
+        this.f27434a.onResult(new TokenResult(i, ""));
     }
 }

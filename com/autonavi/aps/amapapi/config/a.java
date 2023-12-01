@@ -4,11 +4,11 @@ package com.autonavi.aps.amapapi.config;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f9232a = true;
+    public static boolean f6392a = true;
     public static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f9233c;
+    public static String f6393c;
     public static long d = 500;
     public static int e = 60000;
     public static int f = 1000;

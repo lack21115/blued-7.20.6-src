@@ -16,7 +16,7 @@ public class f extends com.opos.mobad.l.e {
     private o<com.opos.mobad.ad.c.g, com.opos.mobad.ad.c.h> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26089c;
+    private String f12401c;
     private String d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/f/a/f$a.class */
@@ -31,26 +31,26 @@ public class f extends com.opos.mobad.l.e {
     public static class b implements com.opos.mobad.ad.c.h {
 
         /* renamed from: a  reason: collision with root package name */
-        private com.opos.mobad.ad.c.h f26094a;
+        private com.opos.mobad.ad.c.h f12406a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f26095c;
+        private String f12407c;
         private boolean d = false;
         private int e;
         private int f;
 
         public b(com.opos.mobad.ad.c.h hVar, String str, String str2, int i, int i2) {
-            this.f26094a = hVar;
+            this.f12406a = hVar;
             this.b = str;
-            this.f26095c = str2;
+            this.f12407c = str2;
             this.e = i;
             this.f = i2;
         }
 
         @Override // com.opos.mobad.ad.c.h
         public String a() {
-            return this.f26094a.a();
+            return this.f12406a.a();
         }
 
         @Override // com.opos.mobad.ad.g
@@ -59,32 +59,32 @@ public class f extends com.opos.mobad.l.e {
                 return;
             }
             this.d = true;
-            com.opos.mobad.service.i.d.a().a(this.b, this.f26095c, i, str, this.e, this.f, i2);
+            com.opos.mobad.service.i.d.a().a(this.b, this.f12407c, i, str, this.e, this.f, i2);
         }
 
         @Override // com.opos.mobad.ad.c.h
         public void a(Context context, FrameLayout frameLayout, com.opos.mobad.ad.c.k kVar) {
-            this.f26094a.a(context, frameLayout, kVar);
+            this.f12406a.a(context, frameLayout, kVar);
         }
 
         @Override // com.opos.mobad.ad.c.h
         public void a(Context context, FrameLayout frameLayout, List<View> list) {
-            this.f26094a.a(context, frameLayout, list);
+            this.f12406a.a(context, frameLayout, list);
         }
 
         @Override // com.opos.mobad.ad.c.h
         public void a(Context context, List<View> list, h.a aVar, List<View> list2, h.a aVar2) {
-            this.f26094a.a(context, list, aVar, list2, aVar2);
+            this.f12406a.a(context, list, aVar, list2, aVar2);
         }
 
         @Override // com.opos.mobad.ad.c.h
         public void a(com.opos.mobad.ad.c.i iVar) {
-            this.f26094a.a(iVar);
+            this.f12406a.a(iVar);
         }
 
         @Override // com.opos.mobad.ad.c.h
         public String b() {
-            return this.f26094a.b();
+            return this.f12406a.b();
         }
 
         @Override // com.opos.mobad.ad.g
@@ -93,27 +93,27 @@ public class f extends com.opos.mobad.l.e {
                 return;
             }
             this.d = true;
-            com.opos.mobad.service.i.d.a().a(this.b, this.f26095c, this.e, this.f, i);
+            com.opos.mobad.service.i.d.a().a(this.b, this.f12407c, this.e, this.f, i);
         }
 
         @Override // com.opos.mobad.ad.c.h
         public List<com.opos.mobad.ad.c.e> c() {
-            return this.f26094a.c();
+            return this.f12406a.c();
         }
 
         @Override // com.opos.mobad.ad.g
         public void c(int i) {
-            this.f26094a.c(i);
+            this.f12406a.c(i);
         }
 
         @Override // com.opos.mobad.ad.c.h
         public List<com.opos.mobad.ad.c.e> d() {
-            return this.f26094a.d();
+            return this.f12406a.d();
         }
 
         @Override // com.opos.mobad.ad.c.h
         public int e() {
-            return this.f26094a.e();
+            return this.f12406a.e();
         }
 
         @Override // com.opos.mobad.ad.g
@@ -131,37 +131,37 @@ public class f extends com.opos.mobad.l.e {
 
         @Override // com.opos.mobad.ad.c.h
         public int h() {
-            return this.f26094a.h();
+            return this.f12406a.h();
         }
 
         @Override // com.opos.mobad.ad.c.h
         public com.opos.mobad.ad.c.e i() {
-            return this.f26094a.i();
+            return this.f12406a.i();
         }
 
         @Override // com.opos.mobad.ad.c.h
         public boolean j() {
-            return this.f26094a.j();
+            return this.f12406a.j();
         }
 
         @Override // com.opos.mobad.ad.c.h
         public String k() {
-            return this.f26094a.k();
+            return this.f12406a.k();
         }
 
         @Override // com.opos.mobad.ad.c.h
         public String l() {
-            return this.f26094a.l();
+            return this.f12406a.l();
         }
 
         @Override // com.opos.mobad.ad.c.h
         public void m() {
-            this.f26094a.m();
+            this.f12406a.m();
         }
 
         @Override // com.opos.mobad.ad.c.h
         public com.opos.mobad.ad.c.b n() {
-            return this.f26094a.n();
+            return this.f12406a.n();
         }
     }
 
@@ -172,11 +172,11 @@ public class f extends com.opos.mobad.l.e {
             @Override // com.opos.mobad.f.a.b.a
             /* renamed from: a */
             public com.opos.mobad.ad.c.g b(e.a aVar4, com.opos.mobad.f.a.a.n nVar) {
-                com.opos.mobad.ad.c b2 = bVar.b(aVar4.f27301a);
+                com.opos.mobad.ad.c b2 = bVar.b(aVar4.f13613a);
                 if (b2 == null) {
                     return null;
                 }
-                return b2.a(context, str, aVar4.b, aVar4.e, aVar4.d, new a(aVar4.f27301a, nVar), aVar3);
+                return b2.a(context, str, aVar4.b, aVar4.e, aVar4.d, new a(aVar4.f13613a, nVar), aVar3);
             }
         }, new com.opos.mobad.f.a.c.a(context));
     }
@@ -218,7 +218,7 @@ public class f extends com.opos.mobad.l.e {
                         e.a k = this.b.k();
                         i2 = (k == null || k.g <= 0) ? 0 : k.g;
                     }
-                    arrayList.add(new b(hVar, this.d, this.f26089c, i, i2));
+                    arrayList.add(new b(hVar, this.d, this.f12401c, i, i2));
                 }
             }
         }
@@ -243,7 +243,7 @@ public class f extends com.opos.mobad.l.e {
 
     @Override // com.opos.mobad.l.f
     public boolean b(String str, int i) {
-        this.f26089c = str;
+        this.f12401c = str;
         this.b.a(str, i);
         return true;
     }

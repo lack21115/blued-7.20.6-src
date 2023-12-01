@@ -10,11 +10,11 @@ import org.json.JSONObject;
 public class z4 implements Cloneable {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f4074a;
+    public int f4026a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f4075c;
+    public String f4027c;
     public int d;
     public long e;
 
@@ -73,11 +73,11 @@ public class z4 implements Cloneable {
     }
 
     public String a() {
-        return this.f4075c;
+        return this.f4027c;
     }
 
     public void a(int i) {
-        this.f4074a = i;
+        this.f4026a = i;
     }
 
     public void a(long j) {
@@ -85,11 +85,11 @@ public class z4 implements Cloneable {
     }
 
     public void a(String str) {
-        this.f4075c = str;
+        this.f4027c = str;
     }
 
     public int b() {
-        return this.f4074a;
+        return this.f4026a;
     }
 
     public void b(int i) {
@@ -124,6 +124,6 @@ public class z4 implements Cloneable {
     }
 
     public String toString() {
-        return "Beacon [major=" + this.f4074a + ", minor=" + this.b + ", bluetoothAddress=" + this.f4075c + ", rssi=" + this.d + ", time=" + this.e + "]";
+        return "Beacon [major=" + this.f4026a + ", minor=" + this.b + ", bluetoothAddress=" + this.f4027c + ", rssi=" + this.d + ", time=" + this.e + "]";
     }
 }

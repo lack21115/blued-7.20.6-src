@@ -28,16 +28,16 @@ public final class b extends h {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte[] f7345a;
+    public final byte[] f4506a;
 
     b(Parcel parcel) {
         super(parcel.readString());
-        this.f7345a = parcel.createByteArray();
+        this.f4506a = parcel.createByteArray();
     }
 
     public b(String str, byte[] bArr) {
         super(str);
-        this.f7345a = bArr;
+        this.f4506a = bArr;
     }
 
     public final boolean equals(Object obj) {
@@ -48,16 +48,16 @@ public final class b extends h {
             return false;
         }
         b bVar = (b) obj;
-        return this.g.equals(bVar.g) && Arrays.equals(this.f7345a, bVar.f7345a);
+        return this.g.equals(bVar.g) && Arrays.equals(this.f4506a, bVar.f4506a);
     }
 
     public final int hashCode() {
-        return ((this.g.hashCode() + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + Arrays.hashCode(this.f7345a);
+        return ((this.g.hashCode() + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + Arrays.hashCode(this.f4506a);
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.g);
-        parcel.writeByteArray(this.f7345a);
+        parcel.writeByteArray(this.f4506a);
     }
 }

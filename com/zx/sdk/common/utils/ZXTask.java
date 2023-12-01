@@ -29,7 +29,7 @@ public class ZXTask implements Runnable {
         } catch (Throwable th) {
             a aVar = this.errorCallback;
             if (aVar != null) {
-                ((y2) aVar).f42232a.f42101c.onMessage("MESSAGE_ON_ZXID_RECEIVED", n1.a(PushConsts.GET_SDKSERVICEPID, th.getMessage()));
+                ((y2) aVar).f28541a.f28410c.onMessage("MESSAGE_ON_ZXID_RECEIVED", n1.a(PushConsts.GET_SDKSERVICEPID, th.getMessage()));
                 StringBuilder sb = new StringBuilder();
                 sb.append("ZXCore start failed: ");
                 n2.a(th, sb);

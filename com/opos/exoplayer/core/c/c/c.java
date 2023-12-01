@@ -7,19 +7,19 @@ import com.opos.exoplayer.core.i.m;
 import com.opos.exoplayer.core.i.u;
 
 /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/c/c.class */
-final class c implements a.InterfaceC0650a {
+final class c implements a.InterfaceC0480a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final long[] f25107a;
+    private final long[] f11419a;
     private final long[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f25108c;
+    private final long f11420c;
 
     private c(long[] jArr, long[] jArr2, long j) {
-        this.f25107a = jArr;
+        this.f11419a = jArr;
         this.b = jArr2;
-        this.f25108c = j;
+        this.f11420c = j;
     }
 
     public static c a(long j, long j2, j jVar, m mVar) {
@@ -35,7 +35,7 @@ final class c implements a.InterfaceC0650a {
         int h2 = mVar.h();
         int h3 = mVar.h();
         mVar.d(2);
-        long j3 = jVar.f25248c;
+        long j3 = jVar.f11560c;
         long[] jArr = new long[h];
         long[] jArr2 = new long[h];
         long j4 = j2;
@@ -61,9 +61,9 @@ final class c implements a.InterfaceC0650a {
         return new c(jArr, jArr2, d);
     }
 
-    @Override // com.opos.exoplayer.core.c.c.a.InterfaceC0650a
+    @Override // com.opos.exoplayer.core.c.c.a.InterfaceC0480a
     public long a(long j) {
-        return this.f25107a[u.a(this.b, j, true, true)];
+        return this.f11419a[u.a(this.b, j, true, true)];
     }
 
     @Override // com.opos.exoplayer.core.c.l
@@ -73,15 +73,15 @@ final class c implements a.InterfaceC0650a {
 
     @Override // com.opos.exoplayer.core.c.l
     public long b() {
-        return this.f25108c;
+        return this.f11420c;
     }
 
     @Override // com.opos.exoplayer.core.c.l
     public l.a b(long j) {
-        int a2 = u.a(this.f25107a, j, true, true);
-        com.opos.exoplayer.core.c.m mVar = new com.opos.exoplayer.core.c.m(this.f25107a[a2], this.b[a2]);
+        int a2 = u.a(this.f11419a, j, true, true);
+        com.opos.exoplayer.core.c.m mVar = new com.opos.exoplayer.core.c.m(this.f11419a[a2], this.b[a2]);
         if (mVar.b < j) {
-            long[] jArr = this.f25107a;
+            long[] jArr = this.f11419a;
             if (a2 != jArr.length - 1) {
                 int i = a2 + 1;
                 return new l.a(mVar, new com.opos.exoplayer.core.c.m(jArr[i], this.b[i]));

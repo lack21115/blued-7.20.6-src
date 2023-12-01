@@ -24,7 +24,8 @@ public interface UserPropOrBuilder extends MessageOrBuilder {
 
     int getPropDescCount();
 
-    List<String> getPropDescList();
+    /* renamed from: getPropDescList */
+    List<String> mo8064getPropDescList();
 
     String getPropIcon();
 

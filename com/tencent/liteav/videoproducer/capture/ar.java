@@ -11,23 +11,23 @@ import com.tencent.liteav.videoproducer.capture.CaptureSourceInterface;
 public abstract class ar implements CaptureSourceInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Handler f36880a;
+    protected final Handler f23189a;
     protected final IVideoReporter b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected com.tencent.liteav.videobase.b.e f36881c;
+    protected com.tencent.liteav.videobase.b.e f23190c;
     protected CaptureSourceInterface.a d;
     protected com.tencent.liteav.videobase.frame.e e;
 
     public ar(Looper looper, IVideoReporter iVideoReporter) {
-        this.f36880a = new com.tencent.liteav.base.util.b(looper);
+        this.f23189a = new com.tencent.liteav.base.util.b(looper);
         this.b = iVideoReporter;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(ar arVar) {
         arVar.b();
-        com.tencent.liteav.videobase.b.e eVar = arVar.f36881c;
+        com.tencent.liteav.videobase.b.e eVar = arVar.f23190c;
         if (eVar != null) {
             try {
                 eVar.a();
@@ -38,31 +38,31 @@ public abstract class ar implements CaptureSourceInterface {
             } catch (com.tencent.liteav.videobase.b.g e) {
                 LiteavLog.e("GLCapturerSource", "EGLCore destroy failed.", e);
             }
-            com.tencent.liteav.videobase.b.e.a(arVar.f36881c);
-            arVar.f36881c = null;
+            com.tencent.liteav.videobase.b.e.a(arVar.f23190c);
+            arVar.f23190c = null;
         }
         arVar.d = null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(ar arVar, CaptureSourceInterface.a aVar, Object obj, CaptureSourceInterface.CaptureParams captureParams) {
-        if (arVar.f36881c != null) {
+        if (arVar.f23190c != null) {
             LiteavLog.e("GLCapturerSource", "capture source has already started!");
             return;
         }
         arVar.d = aVar;
         com.tencent.liteav.videobase.b.e eVar = new com.tencent.liteav.videobase.b.e();
-        arVar.f36881c = eVar;
+        arVar.f23190c = eVar;
         try {
             eVar.a(obj, null, 128, 128);
-            arVar.f36881c.a();
+            arVar.f23190c.a();
             arVar.e = new com.tencent.liteav.videobase.frame.e();
         } catch (com.tencent.liteav.videobase.b.g e) {
             LiteavLog.e("GLCapturerSource", "initializeEGL failed.", e);
             IVideoReporter iVideoReporter = arVar.b;
             h.a aVar2 = h.a.ERR_VIDEO_CAPTURE_EGL_CORE_CREATE_FAILED;
             iVideoReporter.notifyError(aVar2, "create EGLCore failed, errorCode:" + e.mErrorCode, new Object[0]);
-            arVar.f36881c = null;
+            arVar.f23190c = null;
         }
         arVar.a(captureParams);
     }
@@ -71,10 +71,10 @@ public abstract class ar implements CaptureSourceInterface {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(Runnable runnable) {
-        if (this.f36880a.getLooper() == Looper.myLooper()) {
+        if (this.f23189a.getLooper() == Looper.myLooper()) {
             runnable.run();
         } else {
-            this.f36880a.post(runnable);
+            this.f23189a.post(runnable);
         }
     }
 
@@ -90,7 +90,7 @@ public abstract class ar implements CaptureSourceInterface {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final boolean c() {
-        com.tencent.liteav.videobase.b.e eVar = this.f36881c;
+        com.tencent.liteav.videobase.b.e eVar = this.f23190c;
         if (eVar == null) {
             LiteavLog.e("GLCapturerSource", "makeCurrent on mEGLCore is null");
             return false;

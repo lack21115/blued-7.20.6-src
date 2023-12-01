@@ -2,7 +2,6 @@ package android.telephony;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telephony/CellIdentityCdma.class */
 public final class CellIdentityCdma implements Parcelable {
@@ -126,7 +125,7 @@ public final class CellIdentityCdma implements Parcelable {
     }
 
     public String toString() {
-        return "CellIdentityCdma:{ mNetworkId=" + this.mNetworkId + " mSystemId=" + this.mSystemId + " mBasestationId=" + this.mBasestationId + " mLongitude=" + this.mLongitude + " mLatitude=" + this.mLatitude + i.d;
+        return "CellIdentityCdma:{ mNetworkId=" + this.mNetworkId + " mSystemId=" + this.mSystemId + " mBasestationId=" + this.mBasestationId + " mLongitude=" + this.mLongitude + " mLatitude=" + this.mLatitude + "}";
     }
 
     @Override // android.os.Parcelable

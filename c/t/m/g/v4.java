@@ -9,29 +9,29 @@ import java.util.ListIterator;
 public class v4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f4024a;
+    public int f3976a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public LinkedList<a> f4025c;
+    public LinkedList<a> f3977c;
     public j4 d;
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/v4$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public double f4026a;
+        public double f3978a;
         public double b;
 
         /* renamed from: c  reason: collision with root package name */
-        public long f4027c;
+        public long f3979c;
         public int d;
 
         public static a a(TencentLocation tencentLocation) {
             a aVar = new a();
-            aVar.f4026a = tencentLocation.getLatitude();
+            aVar.f3978a = tencentLocation.getLatitude();
             aVar.b = tencentLocation.getLongitude();
-            aVar.f4027c = tencentLocation.getTime();
+            aVar.f3979c = tencentLocation.getTime();
             tencentLocation.getSpeed();
             int i = 2;
             if (TencentLocationUtils.isFromGps(tencentLocation)) {
@@ -49,11 +49,11 @@ public class v4 {
         }
 
         public boolean a(a aVar) {
-            return f6.a(this.f4026a, this.b, aVar.f4026a, aVar.b) / (((double) (Math.abs(this.f4027c - aVar.f4027c) + 1)) / 1000.0d) <= 100.0d;
+            return f6.a(this.f3978a, this.b, aVar.f3978a, aVar.b) / (((double) (Math.abs(this.f3979c - aVar.f3979c) + 1)) / 1000.0d) <= 100.0d;
         }
 
         public String toString() {
-            return "[" + this.f4026a + "," + this.b + "]";
+            return "[" + this.f3978a + "," + this.b + "]";
         }
     }
 
@@ -64,8 +64,8 @@ public class v4 {
         if (i2 < 3) {
             throw new IllegalArgumentException("coreSize should >= 3");
         }
-        this.f4025c = new LinkedList<>();
-        this.f4024a = i;
+        this.f3977c = new LinkedList<>();
+        this.f3976a = i;
         this.b = i2;
         this.d = new j4();
     }
@@ -73,7 +73,7 @@ public class v4 {
     public void a(q5 q5Var) {
         synchronized (this) {
             if (!q5Var.getProvider().equalsIgnoreCase("gps") || n0.b().b("gps_kalman")) {
-                if (this.f4025c.size() == 0) {
+                if (this.f3977c.size() == 0) {
                     return;
                 }
                 this.d.a(q5Var.getLatitude(), q5Var.getLongitude(), q5Var.getAccuracy(), q5Var.getTime());
@@ -84,15 +84,15 @@ public class v4 {
 
     public void a(TencentLocation tencentLocation) {
         synchronized (this) {
-            this.f4025c.add(a.a(tencentLocation));
-            if (this.f4025c.size() > this.f4024a) {
-                this.f4025c.removeFirst();
+            this.f3977c.add(a.a(tencentLocation));
+            if (this.f3977c.size() > this.f3976a) {
+                this.f3977c.removeFirst();
             }
         }
     }
 
     public final boolean a() {
-        return this.f4025c.size() >= this.b;
+        return this.f3977c.size() >= this.b;
     }
 
     public final boolean a(a aVar, t3 t3Var, boolean z) {
@@ -100,19 +100,19 @@ public class v4 {
         int i2;
         synchronized (this) {
             if (t3Var != null) {
-                LinkedList<a> linkedList = this.f4025c;
+                LinkedList<a> linkedList = this.f3977c;
                 if (linkedList != null && linkedList.size() != 0) {
                     int i3 = aVar.d;
                     if (i3 == 3) {
                         return true;
                     }
                     if (i3 != 1 || h6.b(t3Var) || h6.c(t3Var) || z) {
-                        if (aVar.f4027c - this.f4025c.getLast().f4027c > com.igexin.push.config.c.l) {
-                            this.f4025c.clear();
+                        if (aVar.f3979c - this.f3977c.getLast().f3979c > com.igexin.push.config.c.l) {
+                            this.f3977c.clear();
                             return true;
                         }
                         if (a()) {
-                            LinkedList<a> linkedList2 = this.f4025c;
+                            LinkedList<a> linkedList2 = this.f3977c;
                             ListIterator<a> listIterator = linkedList2.listIterator(linkedList2.size());
                             int i4 = 0;
                             int i5 = 0;
@@ -148,7 +148,7 @@ public class v4 {
 
     public void b() {
         synchronized (this) {
-            this.f4025c.clear();
+            this.f3977c.clear();
             this.d.c();
         }
     }

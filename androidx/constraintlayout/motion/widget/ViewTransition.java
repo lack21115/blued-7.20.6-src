@@ -22,7 +22,6 @@ import androidx.constraintlayout.widget.ConstraintAttribute;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.constraintlayout.widget.R;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -44,11 +43,11 @@ public class ViewTransition {
     private static String e = "ViewTransition";
 
     /* renamed from: a  reason: collision with root package name */
-    int f2217a;
+    int f2169a;
     KeyFrames b;
 
     /* renamed from: c  reason: collision with root package name */
-    ConstraintSet.Constraint f2218c;
+    ConstraintSet.Constraint f2170c;
     Context d;
     private int f;
     private int l;
@@ -74,11 +73,11 @@ public class ViewTransition {
     public static class Animate {
 
         /* renamed from: a  reason: collision with root package name */
-        long f2220a;
+        long f2172a;
         MotionController b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f2221c;
+        int f2173c;
         int d;
         ViewTransitionController f;
         Interpolator g;
@@ -96,10 +95,10 @@ public class ViewTransition {
             this.m = false;
             this.f = viewTransitionController;
             this.b = motionController;
-            this.f2221c = i;
+            this.f2173c = i;
             this.d = i2;
             long nanoTime = System.nanoTime();
-            this.f2220a = nanoTime;
+            this.f2172a = nanoTime;
             this.k = nanoTime;
             this.f.a(this);
             this.g = interpolator;
@@ -259,9 +258,9 @@ public class ViewTransition {
                     } else if (z) {
                         this.b = new KeyFrames(context, xmlPullParser);
                     } else if (z) {
-                        this.f2218c = ConstraintSet.buildDelta(context, xmlPullParser);
+                        this.f2170c = ConstraintSet.buildDelta(context, xmlPullParser);
                     } else if (z || z) {
-                        ConstraintAttribute.parse(context, xmlPullParser, this.f2218c.mCustomConstraints);
+                        ConstraintAttribute.parse(context, xmlPullParser, this.f2170c.mCustomConstraints);
                     } else {
                         Log.e(e, Debug.getLoc() + " unknown tag " + name);
                         Log.e(e, ".xml:" + xmlPullParser.getLineNumber());
@@ -316,7 +315,7 @@ public class ViewTransition {
             } else if (index == R.styleable.ViewTransition_upDuration) {
                 this.k = obtainStyledAttributes.getInt(index, this.k);
             } else if (index == R.styleable.ViewTransition_viewTransitionMode) {
-                this.f2217a = obtainStyledAttributes.getInt(index, this.f2217a);
+                this.f2169a = obtainStyledAttributes.getInt(index, this.f2169a);
             } else if (index == R.styleable.ViewTransition_motionInterpolator) {
                 TypedValue peekValue = obtainStyledAttributes.peekValue(index);
                 if (peekValue.type == 1) {
@@ -328,7 +327,7 @@ public class ViewTransition {
                 } else if (peekValue.type == 3) {
                     String string = obtainStyledAttributes.getString(index);
                     this.o = string;
-                    if (string == null || string.indexOf(BridgeUtil.SPLIT_MARK) <= 0) {
+                    if (string == null || string.indexOf("/") <= 0) {
                         this.n = -1;
                     } else {
                         this.p = obtainStyledAttributes.getResourceId(index, -1);
@@ -368,7 +367,7 @@ public class ViewTransition {
             KeyFrames keyFrames2 = new KeyFrames();
             Iterator<Key> it = keyFramesForView.iterator();
             while (it.hasNext()) {
-                keyFrames2.addKey(it.next().mo1365clone().setViewId(id));
+                keyFrames2.addKey(it.next().mo1228clone().setViewId(id));
             }
             transition.addKeyFrame(keyFrames2);
         }
@@ -448,7 +447,7 @@ public class ViewTransition {
         if (this.h) {
             return;
         }
-        int i2 = this.f2217a;
+        int i2 = this.f2169a;
         if (i2 == 2) {
             a(viewTransitionController, motionLayout, viewArr[0]);
             return;
@@ -470,10 +469,10 @@ public class ViewTransition {
                         int i7 = i6;
                         if (i7 < length) {
                             ConstraintSet.Constraint constraint = constraintSet2.getConstraint(viewArr[i7].getId());
-                            ConstraintSet.Constraint constraint2 = this.f2218c;
+                            ConstraintSet.Constraint constraint2 = this.f2170c;
                             if (constraint2 != null) {
                                 constraint2.applyDelta(constraint);
-                                constraint.mCustomConstraints.putAll(this.f2218c.mCustomConstraints);
+                                constraint.mCustomConstraints.putAll(this.f2170c.mCustomConstraints);
                             }
                             i6 = i7 + 1;
                         }
@@ -492,17 +491,17 @@ public class ViewTransition {
                 break;
             }
             ConstraintSet.Constraint constraint3 = constraintSet3.getConstraint(viewArr[i9].getId());
-            ConstraintSet.Constraint constraint4 = this.f2218c;
+            ConstraintSet.Constraint constraint4 = this.f2170c;
             if (constraint4 != null) {
                 constraint4.applyDelta(constraint3);
-                constraint3.mCustomConstraints.putAll(this.f2218c.mCustomConstraints);
+                constraint3.mCustomConstraints.putAll(this.f2170c.mCustomConstraints);
             }
             i8 = i9 + 1;
         }
         motionLayout.updateState(i, constraintSet3);
         motionLayout.updateState(R.id.view_transition, constraintSet);
         motionLayout.setState(R.id.view_transition, -1, -1);
-        MotionScene.Transition transition = new MotionScene.Transition(-1, motionLayout.f2184a, R.id.view_transition, i);
+        MotionScene.Transition transition = new MotionScene.Transition(-1, motionLayout.f2136a, R.id.view_transition, i);
         int length3 = viewArr.length;
         int i10 = 0;
         while (true) {

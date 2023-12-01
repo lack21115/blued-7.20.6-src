@@ -11,18 +11,18 @@ import org.json.JSONObject;
 public final class SettingsEventUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SettingsEventUtils f29691a = new SettingsEventUtils();
+    public static final SettingsEventUtils f16001a = new SettingsEventUtils();
 
     private SettingsEventUtils() {
     }
 
     @JvmStatic
-    public static final void a(String eventName, String str) {
-        Intrinsics.e(eventName, "eventName");
+    public static final void a(String str, String str2) {
+        Intrinsics.e(str, "eventName");
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("link_url", str);
-            ByteDanceLogUtils.a(eventName, jSONObject);
+            jSONObject.put("link_url", str2);
+            ByteDanceLogUtils.a(str, jSONObject);
         } catch (Exception e) {
             e.printStackTrace();
         }

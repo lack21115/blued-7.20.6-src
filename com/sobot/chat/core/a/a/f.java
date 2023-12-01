@@ -6,11 +6,11 @@ import java.util.Arrays;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    final f f28207a = this;
+    final f f14518a = this;
     private f b;
 
     /* renamed from: c  reason: collision with root package name */
-    private byte[] f28208c;
+    private byte[] f14519c;
     private b d;
     private byte[] e;
     private a f;
@@ -66,10 +66,10 @@ public class f {
 
     public f a(byte[] bArr) {
         if (bArr != null) {
-            this.f28208c = Arrays.copyOf(bArr, bArr.length);
+            this.f14519c = Arrays.copyOf(bArr, bArr.length);
             return this;
         }
-        this.f28208c = null;
+        this.f14519c = null;
         return this;
     }
 
@@ -102,7 +102,7 @@ public class f {
     }
 
     public byte[] d() {
-        return this.f28208c;
+        return this.f14519c;
     }
 
     public b e() {

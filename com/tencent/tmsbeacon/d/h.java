@@ -24,10 +24,10 @@ public class h implements Callback<byte[]>, Runnable {
     private boolean d;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f39550c = false;
+    private volatile boolean f25859c = false;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f39549a = com.tencent.tmsbeacon.a.c.c.d().c();
+    private final Context f25858a = com.tencent.tmsbeacon.a.c.c.d().c();
 
     public h(StrategyModule strategyModule) {
         this.b = strategyModule;
@@ -86,7 +86,7 @@ public class h implements Callback<byte[]>, Runnable {
 
     private void c() {
         f();
-        this.f39550c = false;
+        this.f25859c = false;
     }
 
     private void c(d dVar, b bVar, ModuleStrategy moduleStrategy) {
@@ -125,7 +125,7 @@ public class h implements Callback<byte[]>, Runnable {
         }
         e l = e.l();
         f e = f.e();
-        com.tencent.tmsbeacon.base.net.c.c().b(JceRequestEntity.builder().a(RequestType.STRATEGY).a(100).b(101).a(com.tencent.tmsbeacon.a.c.c.d().f()).b(com.tencent.tmsbeacon.base.net.b.b.b(false)).a(com.tencent.tmsbeacon.base.net.b.b.b(true), 8081).b("A1", com.tencent.tmsbeacon.a.c.c.d().k()).b("A2", e.b()).b("A4", e.d()).b("A6", e.f()).b("A7", e.a()).b("A23", com.tencent.tmsbeacon.a.c.c.d().a()).b("A31", l.p()).b("A19", l.q()).b("A66", com.tencent.tmsbeacon.a.c.b.e(this.f39549a) ? "F" : "B").b("A67", com.tencent.tmsbeacon.a.c.b.c(this.f39549a)).b("A68", String.valueOf(com.tencent.tmsbeacon.a.c.b.b(this.f39549a))).b("A85", com.tencent.tmsbeacon.a.c.b.d ? "Y" : "N").a(com.tencent.tmsbeacon.qimei.a.a().b().getQimeiMap()).a()).b(this);
+        com.tencent.tmsbeacon.base.net.c.c().b(JceRequestEntity.builder().a(RequestType.STRATEGY).a(100).b(101).a(com.tencent.tmsbeacon.a.c.c.d().f()).b(com.tencent.tmsbeacon.base.net.b.b.b(false)).a(com.tencent.tmsbeacon.base.net.b.b.b(true), 8081).b("A1", com.tencent.tmsbeacon.a.c.c.d().k()).b("A2", e.b()).b("A4", e.d()).b("A6", e.f()).b("A7", e.a()).b("A23", com.tencent.tmsbeacon.a.c.c.d().a()).b("A31", l.p()).b("A19", l.q()).b("A66", com.tencent.tmsbeacon.a.c.b.e(this.f25858a) ? "F" : "B").b("A67", com.tencent.tmsbeacon.a.c.b.c(this.f25858a)).b("A68", String.valueOf(com.tencent.tmsbeacon.a.c.b.b(this.f25858a))).b("A85", com.tencent.tmsbeacon.a.c.b.d ? "Y" : "N").a(com.tencent.tmsbeacon.qimei.a.a().b().getQimeiMap()).a()).b(this);
     }
 
     @Override // com.tencent.tmsbeacon.base.net.call.Callback
@@ -142,7 +142,7 @@ public class h implements Callback<byte[]>, Runnable {
             commonStrategy.readFrom(new com.tencent.tmsbeacon.pack.a(bArr));
             com.tencent.tmsbeacon.base.util.c.a("[strategy] -> common strategy: %s", commonStrategy);
             if (a(commonStrategy, a.a()) && z) {
-                a.SharedPreferences$EditorC1031a edit = com.tencent.tmsbeacon.a.d.a.a().edit();
+                a.SharedPreferences$EditorC0861a edit = com.tencent.tmsbeacon.a.d.a.a().edit();
                 if (com.tencent.tmsbeacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                     edit.putString("strategy_data", Base64.encodeToString(bArr, 0));
                 }
@@ -157,7 +157,7 @@ public class h implements Callback<byte[]>, Runnable {
     }
 
     public boolean a() {
-        return this.f39550c;
+        return this.f25859c;
     }
 
     public boolean a(CommonStrategy commonStrategy, a aVar) {
@@ -212,8 +212,8 @@ public class h implements Callback<byte[]>, Runnable {
             try {
                 String string = com.tencent.tmsbeacon.a.d.a.a().getString("strategy_data", "");
                 if (TextUtils.isEmpty(string)) {
-                    i a2 = j.a(this.f39549a, 101);
-                    bArr = a2 != null ? a2.f39552c : null;
+                    i a2 = j.a(this.f25858a, 101);
+                    bArr = a2 != null ? a2.f25861c : null;
                 } else {
                     bArr = Base64.decode(string, 0);
                 }
@@ -237,7 +237,7 @@ public class h implements Callback<byte[]>, Runnable {
 
     @Override // java.lang.Runnable
     public void run() {
-        this.f39550c = true;
+        this.f25859c = true;
         if (this.b.a().e()) {
             return;
         }

@@ -13,15 +13,15 @@ import java.util.Set;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f41772a;
+    private Context f28081a;
     private com.youzan.spiderman.c.b.f b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<c> f41773c = Collections.synchronizedList(new ArrayList());
+    private List<c> f28082c = Collections.synchronizedList(new ArrayList());
     private Set<String> d = new HashSet();
 
     static /* synthetic */ void a(f fVar, c cVar, Set set) {
-        fVar.f41773c.remove(cVar);
+        fVar.f28082c.remove(cVar);
         int size = set.size();
         synchronized (fVar.d) {
             int size2 = fVar.d.size();
@@ -42,7 +42,7 @@ public final class f {
             }
             fVar.d.addAll(set);
             Logger.i("SyncResourceManager", "下载队列剩余: " + size2, new Object[0]);
-            if (fVar.f41773c.isEmpty()) {
+            if (fVar.f28082c.isEmpty()) {
                 b bVar = new b();
                 bVar.a(fVar.d);
                 com.youzan.spiderman.cache.b.a(bVar, "resource_list_pref");
@@ -51,7 +51,7 @@ public final class f {
     }
 
     public final void a(Context context, com.youzan.spiderman.c.b.f fVar) {
-        this.f41772a = context.getApplicationContext();
+        this.f28081a = context.getApplicationContext();
         this.b = fVar;
     }
 
@@ -66,13 +66,13 @@ public final class f {
         if (set == null || set.isEmpty()) {
             return;
         }
-        c cVar = new c(set, this.f41772a, this.b, new a() { // from class: com.youzan.spiderman.c.e.f.1
+        c cVar = new c(set, this.f28081a, this.b, new a() { // from class: com.youzan.spiderman.c.e.f.1
             @Override // com.youzan.spiderman.c.e.a
             public final void a(c cVar2, Set<String> set2) {
                 f.a(f.this, cVar2, set2);
             }
         });
-        this.f41773c.add(cVar);
+        this.f28082c.add(cVar);
         com.youzan.spiderman.a.c.a().a(cVar);
     }
 }

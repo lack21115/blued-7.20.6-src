@@ -66,8 +66,9 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
         return lineEnd(textView, spannable);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.text.method.BaseMovementMethod
-    protected boolean handleMovementKey(TextView textView, Spannable spannable, int i, int i2, KeyEvent keyEvent) {
+    public boolean handleMovementKey(TextView textView, Spannable spannable, int i, int i2, KeyEvent keyEvent) {
         switch (i) {
             case 23:
                 if (KeyEvent.metaStateHasNoModifiers(i2) && keyEvent.getAction() == 0 && keyEvent.getRepeatCount() == 0 && MetaKeyKeyListener.getMetaState(spannable, 2048, keyEvent) != 0) {

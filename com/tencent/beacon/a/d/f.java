@@ -5,13 +5,13 @@ package com.tencent.beacon.a.d;
 public class f implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Runnable f34956a;
+    final /* synthetic */ Runnable f21265a;
     final /* synthetic */ g b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public f(g gVar, Runnable runnable) {
         this.b = gVar;
-        this.f34956a = runnable;
+        this.f21265a = runnable;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:26:0x007e, code lost:
@@ -44,7 +44,7 @@ public class f implements Runnable {
             r0 = r9
             r8 = r0
             r0 = r6
-            java.lang.Runnable r0 = r0.f34956a     // Catch: java.lang.Exception -> L2e java.lang.Throwable -> L32
+            java.lang.Runnable r0 = r0.f21265a     // Catch: java.lang.Exception -> L2e java.lang.Throwable -> L32
             r0.run()     // Catch: java.lang.Exception -> L2e java.lang.Throwable -> L32
             r0 = r9
             if (r0 == 0) goto L85

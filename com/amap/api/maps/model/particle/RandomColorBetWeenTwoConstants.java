@@ -4,9 +4,7 @@ import java.util.Random;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/particle/RandomColorBetWeenTwoConstants.class */
 public class RandomColorBetWeenTwoConstants extends ColorGenerate {
-
-    /* renamed from: a  reason: collision with root package name */
-    private float f5548a;
+    private float a;
     private float a1;
     private float b;
     private float b1;
@@ -21,7 +19,7 @@ public class RandomColorBetWeenTwoConstants extends ColorGenerate {
         this.r = f / 255.0f;
         this.g = f2 / 255.0f;
         this.b = f3 / 255.0f;
-        this.f5548a = f4 / 255.0f;
+        this.a = f4 / 255.0f;
         this.r1 = f5 / 255.0f;
         this.g1 = f6 / 255.0f;
         this.b1 = f7 / 255.0f;
@@ -49,7 +47,7 @@ public class RandomColorBetWeenTwoConstants extends ColorGenerate {
         float[] fArr4 = this.color;
         float nextFloat4 = this.random.nextFloat();
         float f7 = this.a1;
-        float f8 = this.f5548a;
+        float f8 = this.a;
         fArr4[3] = (nextFloat4 * (f7 - f8)) + f8;
         return this.color;
     }

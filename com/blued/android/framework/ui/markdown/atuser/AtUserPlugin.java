@@ -12,16 +12,12 @@ import org.commonmark.parser.Parser;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/markdown/atuser/AtUserPlugin.class */
 public class AtUserPlugin extends AbstractMarkwonPlugin {
-
-    /* renamed from: a  reason: collision with root package name */
-    private StyleSpan f9902a = new StyleSpan(1);
+    private StyleSpan a = new StyleSpan(1);
     private OnClickAtUserListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f9903c;
+    private int c;
 
     public void a(int i) {
-        this.f9903c = i;
+        this.c = i;
     }
 
     public void a(OnClickAtUserListener onClickAtUserListener) {
@@ -39,9 +35,9 @@ public class AtUserPlugin extends AbstractMarkwonPlugin {
             @Override // io.noties.markwon.MarkwonVisitor.NodeVisitor
             /* renamed from: a */
             public void visit(MarkwonVisitor markwonVisitor, AtUserNode atUserNode) {
-                final String a2 = atUserNode.a();
+                final String a = atUserNode.a();
                 final String p_ = atUserNode.p_();
-                if (TextUtils.isEmpty(a2) || TextUtils.isEmpty(p_)) {
+                if (TextUtils.isEmpty(a) || TextUtils.isEmpty(p_)) {
                     return;
                 }
                 String str = "@" + atUserNode.a();
@@ -52,13 +48,13 @@ public class AtUserPlugin extends AbstractMarkwonPlugin {
                     @Override // android.text.style.ClickableSpan
                     public void onClick(View view) {
                         if (AtUserPlugin.this.b != null) {
-                            AtUserPlugin.this.b.a(a2, p_);
+                            AtUserPlugin.this.b.a(a, p_);
                         }
                     }
 
                     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
                     public void updateDrawState(TextPaint textPaint) {
-                        textPaint.setColor(AtUserPlugin.this.f9903c);
+                        textPaint.setColor(AtUserPlugin.this.c);
                         textPaint.setAlpha(255);
                         textPaint.setUnderlineText(false);
                         textPaint.clearShadowLayer();

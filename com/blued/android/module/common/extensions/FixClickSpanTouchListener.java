@@ -13,9 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/extensions/FixClickSpanTouchListener.class */
 public final class FixClickSpanTouchListener implements View.OnTouchListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private long f10792a = -1;
+    private long a = -1;
 
     @Override // android.view.View.OnTouchListener
     public boolean onTouch(View v, MotionEvent event) {
@@ -26,13 +24,13 @@ public final class FixClickSpanTouchListener implements View.OnTouchListener {
             TextView textView = (TextView) v;
             CharSequence text = textView.getText();
             if (action == 0) {
-                this.f10792a = System.currentTimeMillis();
+                this.a = System.currentTimeMillis();
                 return true;
             }
             long currentTimeMillis = System.currentTimeMillis();
-            long j = this.f10792a;
+            long j = this.a;
             if (j != -1 && currentTimeMillis - j >= ViewConfiguration.getLongPressTimeout()) {
-                this.f10792a = -1L;
+                this.a = -1L;
                 return v.performLongClick();
             } else if (action == 1) {
                 if (!(text instanceof Spanned)) {

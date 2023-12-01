@@ -2,28 +2,25 @@ package com.blued.android.core.utils.toast;
 
 import android.view.View;
 import android.widget.TextView;
+import com.android.internal.R;
 import com.blued.android.core.utils.toast.config.IToast;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/toast/CustomToast.class */
 public abstract class CustomToast implements IToast {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f9750a;
+    private View a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f9751c;
+    private int c;
     private int d;
     private int e;
     private int f;
     private float g;
     private float h;
-    private int i = 16973828;
+    private int i = R.style.Animation_Toast;
     private int j = 2000;
     private int k = 3500;
 
     public View a() {
-        return this.f9750a;
+        return this.a;
     }
 
     @Override // com.blued.android.core.utils.toast.config.IToast
@@ -36,7 +33,7 @@ public abstract class CustomToast implements IToast {
     }
 
     public int c() {
-        return this.f9751c;
+        return this.c;
     }
 
     public int d() {
@@ -74,7 +71,7 @@ public abstract class CustomToast implements IToast {
 
     @Override // com.blued.android.core.utils.toast.config.IToast
     public void setGravity(int i, int i2, int i3) {
-        this.f9751c = i;
+        this.c = i;
         this.e = i2;
         this.f = i3;
     }
@@ -96,7 +93,7 @@ public abstract class CustomToast implements IToast {
 
     @Override // com.blued.android.core.utils.toast.config.IToast
     public void setView(View view) {
-        this.f9750a = view;
+        this.a = view;
         if (view == null) {
             this.b = null;
         } else {

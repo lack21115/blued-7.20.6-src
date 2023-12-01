@@ -32,7 +32,6 @@ public class PlayingOnliveActivity extends TerminalActivity {
         this.d.remove(iDispatchTouchEvent);
     }
 
-    @Override // androidx.core.app.ComponentActivity, android.app.Activity, android.view.Window.Callback
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         List<IDispatchTouchEvent> list = this.d;
         if (list != null) {
@@ -43,7 +42,7 @@ public class PlayingOnliveActivity extends TerminalActivity {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // com.blued.android.core.ui.TerminalActivity, com.blued.android.core.ui.BaseFragmentActivity, androidx.activity.ComponentActivity, android.app.Activity
+    @Override // com.blued.android.core.ui.TerminalActivity, com.blued.android.core.ui.BaseFragmentActivity
     public void onBackPressed() {
         boolean z;
         int size = getSupportFragmentManager().getFragments().size() - 1;
@@ -53,12 +52,12 @@ public class PlayingOnliveActivity extends TerminalActivity {
             if (size < 0) {
                 break;
             }
-            Fragment fragment = getSupportFragmentManager().getFragments().get(size);
-            LogUtils.c(fragment.getClass().getSimpleName());
-            if (fragment instanceof BaseFragment) {
-                z2 = ((BaseFragment) fragment).onBackPressed();
-            } else if (fragment instanceof BaseDialogFragment) {
-                z2 = ((BaseDialogFragment) fragment).onBackPressed();
+            BaseDialogFragment baseDialogFragment = (Fragment) getSupportFragmentManager().getFragments().get(size);
+            LogUtils.c(baseDialogFragment.getClass().getSimpleName());
+            if (baseDialogFragment instanceof BaseFragment) {
+                z2 = ((BaseFragment) baseDialogFragment).onBackPressed();
+            } else if (baseDialogFragment instanceof BaseDialogFragment) {
+                z2 = baseDialogFragment.onBackPressed();
             }
             if (z2) {
                 z = z2;

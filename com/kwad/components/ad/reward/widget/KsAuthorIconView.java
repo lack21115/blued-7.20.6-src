@@ -137,14 +137,14 @@ public class KsAuthorIconView extends FrameLayout implements bm.a {
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ViewGroup.LayoutParams layoutParams = View.this.getLayoutParams();
+                ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
                 if (layoutParams != null) {
                     int i = (int) floatValue;
                     layoutParams.width = i;
                     if (!z) {
                         layoutParams.height = i;
                     }
-                    View.this.setLayoutParams(layoutParams);
+                    view.setLayoutParams(layoutParams);
                 }
             }
         };

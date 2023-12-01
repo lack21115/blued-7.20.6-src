@@ -9,11 +9,11 @@ import com.zui.deviceidservice.IDeviceidInterface;
 public class OpenDeviceId {
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f42094c = "OpenDeviceId library";
+    private static String f28403c = "OpenDeviceId library";
     private static boolean d;
 
     /* renamed from: a  reason: collision with root package name */
-    private IDeviceidInterface f42095a;
+    private IDeviceidInterface f28404a;
     private CallBack b;
 
     /* renamed from: com.zui.opendeviceidlibrary.OpenDeviceId$1  reason: invalid class name */
@@ -21,7 +21,7 @@ public class OpenDeviceId {
     class AnonymousClass1 implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ OpenDeviceId f42096a;
+        final /* synthetic */ OpenDeviceId f28405a;
 
         @Override // android.content.ServiceConnection
         public native synchronized void onServiceConnected(ComponentName componentName, IBinder iBinder);

@@ -29,13 +29,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/view/DiscoveryEntryView.class */
 public class DiscoveryEntryView extends LinearLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ImageView f20210a;
+    private ImageView a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f20211c;
+    private TextView c;
     private DiscoverSquareExtra.Explore d;
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/view/DiscoveryEntryView$Entry.class */
@@ -45,8 +41,8 @@ public class DiscoveryEntryView extends LinearLayout implements View.OnClickList
     public DiscoveryEntryView(Context context, AttributeSet attributeSet, int i, IRequestHost iRequestHost) {
         super(context, attributeSet, i);
         LayoutInflater.from(getContext()).inflate(R.layout.view_discovery_entry, (ViewGroup) this, true);
-        this.f20210a = (ImageView) findViewById(R.id.discovery_entry_iv);
-        this.f20211c = (TextView) findViewById(R.id.discovery_entry_name);
+        this.a = (ImageView) findViewById(R.id.discovery_entry_iv);
+        this.c = (TextView) findViewById(R.id.discovery_entry_name);
         this.b = (ImageView) findViewById(R.id.discovery_entry_corner_iv);
         setOnClickListener(new SingleClickProxy(this));
     }
@@ -70,7 +66,7 @@ public class DiscoveryEntryView extends LinearLayout implements View.OnClickList
 
     private void setIcon(IRequestHost iRequestHost) {
         int i = this.d.index;
-        ImageLoader.a(iRequestHost, this.d.png).d(i != 1 ? i != 2 ? i != 4 ? i != 5 ? i != 6 ? i != 7 ? R.drawable.discovery_entry_default : R.drawable.discovery_entry_hot : R.drawable.discovery_entry_chat_room : R.drawable.discovery_entry_image : R.drawable.discovery_entry_scan : CommunityServiceManager.a().D() == 1 ? R.drawable.discovery_entry_subject : R.drawable.discovery_entry_topic : R.drawable.discovery_entry_circle).a(this.f20210a);
+        ImageLoader.a(iRequestHost, this.d.png).d(i != 1 ? i != 2 ? i != 4 ? i != 5 ? i != 6 ? i != 7 ? R.drawable.discovery_entry_default : R.drawable.discovery_entry_hot : R.drawable.discovery_entry_chat_room : R.drawable.discovery_entry_image : R.drawable.discovery_entry_scan : CommunityServiceManager.a().D() == 1 ? R.drawable.discovery_entry_subject : R.drawable.discovery_entry_topic : R.drawable.discovery_entry_circle).a(this.a);
     }
 
     public void a(final IRequestHost iRequestHost) {
@@ -92,20 +88,20 @@ public class DiscoveryEntryView extends LinearLayout implements View.OnClickList
         setId(explore.index);
         setVisibility(0);
         if ("en".equals(BlueAppLocal.a())) {
-            this.f20211c.setTextSize(11.0f);
+            this.c.setTextSize(11.0f);
         } else {
-            this.f20211c.setTextSize(13.0f);
+            this.c.setTextSize(13.0f);
         }
         String name = explore.getName();
         if (TextUtils.isEmpty(name)) {
-            this.f20211c.setVisibility(8);
+            this.c.setVisibility(8);
         } else {
-            this.f20211c.setText(name);
-            this.f20211c.setVisibility(0);
+            this.c.setText(name);
+            this.c.setVisibility(0);
         }
         setIcon(iRequestHost);
         setCornerImg(iRequestHost);
-        EventTrackFeed.a(FeedProtos.Event.FIND_RECOMMEND_GUIDE_BTN_SHOW, explore.index, explore.url, "png", this.f20211c.getText().toString());
+        EventTrackFeed.a(FeedProtos.Event.FIND_RECOMMEND_GUIDE_BTN_SHOW, explore.index, explore.url, "png", this.c.getText().toString());
     }
 
     @Override // android.view.View.OnClickListener
@@ -124,14 +120,14 @@ public class DiscoveryEntryView extends LinearLayout implements View.OnClickList
             } else if (i != 7) {
                 CommunityServiceManager.b().a(getContext(), this.d.url);
             } else {
-                HotFeedFragment.f20141a.a(getContext());
+                HotFeedFragment.a.a(getContext());
             }
         } else if (CommunityServiceManager.a().D() == 1) {
             CommRouteUtil.b(getContext());
         } else {
             SuperTopicFragment.a(getContext());
         }
-        EventTrackFeed.a(FeedProtos.Event.FIND_RECOMMEND_GUIDE_BTN_CLICK, this.d.index, this.d.url, "png", this.f20211c.getText().toString());
+        EventTrackFeed.a(FeedProtos.Event.FIND_RECOMMEND_GUIDE_BTN_CLICK, this.d.index, this.d.url, "png", this.c.getText().toString());
         if (!"apng".equalsIgnoreCase(this.d.getCornerType()) || CommunityPreferences.w(this.d.getApngSpCountStr()) < 2) {
             return;
         }

@@ -12,7 +12,7 @@ import java.util.List;
 public final class m8 extends k8 {
 
     /* renamed from: c  reason: collision with root package name */
-    private ArrayList<k8> f37631c = new ArrayList<>();
+    private ArrayList<k8> f23940c = new ArrayList<>();
     private HashMap<k8, f> d = new HashMap<>();
     private ArrayList<f> e = new ArrayList<>();
     private ArrayList<f> f = new ArrayList<>();
@@ -28,7 +28,7 @@ public final class m8 extends k8 {
     public class a extends l8 {
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f37632a = false;
+        public boolean f23941a = false;
         public final /* synthetic */ ArrayList b;
 
         public a(ArrayList arrayList) {
@@ -37,12 +37,12 @@ public final class m8 extends k8 {
 
         @Override // com.tencent.mapsdk.internal.l8, com.tencent.mapsdk.internal.k8.a
         public void b(k8 k8Var) {
-            this.f37632a = true;
+            this.f23941a = true;
         }
 
         @Override // com.tencent.mapsdk.internal.l8, com.tencent.mapsdk.internal.k8.a
         public void c(k8 k8Var) {
-            if (this.f37632a) {
+            if (this.f23941a) {
                 return;
             }
             int size = this.b.size();
@@ -54,7 +54,7 @@ public final class m8 extends k8 {
                 }
                 f fVar = (f) this.b.get(i2);
                 fVar.b.j();
-                m8.this.f37631c.add(fVar.b);
+                m8.this.f23940c.add(fVar.b);
                 i = i2 + 1;
             }
         }
@@ -64,10 +64,10 @@ public final class m8 extends k8 {
     public class b implements k8.a {
 
         /* renamed from: a  reason: collision with root package name */
-        private m8 f37634a;
+        private m8 f23943a;
 
         public b(m8 m8Var) {
-            this.f37634a = m8Var;
+            this.f23943a = m8Var;
         }
 
         @Override // com.tencent.mapsdk.internal.k8.a
@@ -78,7 +78,7 @@ public final class m8 extends k8 {
         public void b(k8 k8Var) {
             ArrayList<k8.a> arrayList;
             m8 m8Var = m8.this;
-            if (m8Var.i || m8Var.f37631c.size() != 0 || (arrayList = m8.this.b) == null) {
+            if (m8Var.i || m8Var.f23940c.size() != 0 || (arrayList = m8.this.b) == null) {
                 return;
             }
             int size = arrayList.size();
@@ -88,7 +88,7 @@ public final class m8 extends k8 {
                 if (i2 >= size) {
                     return;
                 }
-                m8.this.b.get(i2).b(this.f37634a);
+                m8.this.b.get(i2).b(this.f23943a);
                 i = i2 + 1;
             }
         }
@@ -97,12 +97,12 @@ public final class m8 extends k8 {
         public void c(k8 k8Var) {
             boolean z;
             k8Var.b(this);
-            m8.this.f37631c.remove(k8Var);
-            ((f) this.f37634a.d.get(k8Var)).g = true;
+            m8.this.f23940c.remove(k8Var);
+            ((f) this.f23943a.d.get(k8Var)).g = true;
             if (m8.this.i) {
                 return;
             }
-            ArrayList arrayList = this.f37634a.f;
+            ArrayList arrayList = this.f23943a.f;
             int size = arrayList.size();
             int i = 0;
             while (true) {
@@ -128,11 +128,11 @@ public final class m8 extends k8 {
                         if (i4 >= size2) {
                             break;
                         }
-                        ((k8.a) arrayList3.get(i4)).c(this.f37634a);
+                        ((k8.a) arrayList3.get(i4)).c(this.f23943a);
                         i3 = i4 + 1;
                     }
                 }
-                this.f37634a.j = false;
+                this.f23943a.j = false;
             }
         }
 
@@ -145,15 +145,15 @@ public final class m8 extends k8 {
     public class c {
 
         /* renamed from: a  reason: collision with root package name */
-        private f f37635a;
+        private f f23944a;
 
         public c(k8 k8Var) {
             f fVar = (f) m8.this.d.get(k8Var);
-            this.f37635a = fVar;
+            this.f23944a = fVar;
             if (fVar == null) {
-                this.f37635a = new f(k8Var);
-                m8.this.d.put(k8Var, this.f37635a);
-                m8.this.e.add(this.f37635a);
+                this.f23944a = new f(k8Var);
+                m8.this.d.put(k8Var, this.f23944a);
+                m8.this.e.add(this.f23944a);
             }
         }
 
@@ -172,7 +172,7 @@ public final class m8 extends k8 {
                 m8.this.d.put(k8Var, fVar2);
                 m8.this.e.add(fVar2);
             }
-            this.f37635a.a(new d(fVar2, 1));
+            this.f23944a.a(new d(fVar2, 1));
             return this;
         }
 
@@ -184,7 +184,7 @@ public final class m8 extends k8 {
                 m8.this.d.put(k8Var, fVar2);
                 m8.this.e.add(fVar2);
             }
-            fVar2.a(new d(this.f37635a, 1));
+            fVar2.a(new d(this.f23944a, 1));
             return this;
         }
 
@@ -196,7 +196,7 @@ public final class m8 extends k8 {
                 m8.this.d.put(k8Var, fVar2);
                 m8.this.e.add(fVar2);
             }
-            fVar2.a(new d(this.f37635a, 0));
+            fVar2.a(new d(this.f23944a, 0));
             return this;
         }
     }
@@ -205,15 +205,15 @@ public final class m8 extends k8 {
     public static class d {
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f37636c = 0;
+        public static final int f23945c = 0;
         public static final int d = 1;
 
         /* renamed from: a  reason: collision with root package name */
-        public f f37637a;
+        public f f23946a;
         public int b;
 
         public d(f fVar, int i) {
-            this.f37637a = fVar;
+            this.f23946a = fVar;
             this.b = i;
         }
     }
@@ -222,21 +222,21 @@ public final class m8 extends k8 {
     public static class e implements k8.a {
 
         /* renamed from: a  reason: collision with root package name */
-        private m8 f37638a;
+        private m8 f23947a;
         private f b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f37639c;
+        private int f23948c;
 
         public e(m8 m8Var, f fVar, int i) {
-            this.f37638a = m8Var;
+            this.f23947a = m8Var;
             this.b = fVar;
-            this.f37639c = i;
+            this.f23948c = i;
         }
 
         private void e(k8 k8Var) {
             d dVar;
-            if (this.f37638a.i) {
+            if (this.f23947a.i) {
                 return;
             }
             int size = this.b.d.size();
@@ -248,7 +248,7 @@ public final class m8 extends k8 {
                     break;
                 }
                 dVar = this.b.d.get(i2);
-                if (dVar.b == this.f37639c && dVar.f37637a.b == k8Var) {
+                if (dVar.b == this.f23948c && dVar.f23946a.b == k8Var) {
                     k8Var.b(this);
                     break;
                 }
@@ -257,7 +257,7 @@ public final class m8 extends k8 {
             this.b.d.remove(dVar);
             if (this.b.d.size() == 0) {
                 this.b.b.j();
-                this.f37638a.f37631c.add(this.b.b);
+                this.f23947a.f23940c.add(this.b.b);
             }
         }
 
@@ -271,14 +271,14 @@ public final class m8 extends k8 {
 
         @Override // com.tencent.mapsdk.internal.k8.a
         public void c(k8 k8Var) {
-            if (this.f37639c == 1) {
+            if (this.f23948c == 1) {
                 e(k8Var);
             }
         }
 
         @Override // com.tencent.mapsdk.internal.k8.a
         public void d(k8 k8Var) {
-            if (this.f37639c == 0) {
+            if (this.f23948c == 0) {
                 e(k8Var);
             }
         }
@@ -289,7 +289,7 @@ public final class m8 extends k8 {
         public k8 b;
 
         /* renamed from: c  reason: collision with root package name */
-        public ArrayList<d> f37640c = null;
+        public ArrayList<d> f23949c = null;
         public ArrayList<d> d = null;
         public ArrayList<f> e = null;
         public ArrayList<f> f = null;
@@ -311,15 +311,15 @@ public final class m8 extends k8 {
         }
 
         public void a(d dVar) {
-            if (this.f37640c == null) {
-                this.f37640c = new ArrayList<>();
+            if (this.f23949c == null) {
+                this.f23949c = new ArrayList<>();
                 this.e = new ArrayList<>();
             }
-            this.f37640c.add(dVar);
-            if (!this.e.contains(dVar.f37637a)) {
-                this.e.add(dVar.f37637a);
+            this.f23949c.add(dVar);
+            if (!this.e.contains(dVar.f23946a)) {
+                this.e.add(dVar.f23946a);
             }
-            f fVar = dVar.f37637a;
+            f fVar = dVar.f23946a;
             if (fVar.f == null) {
                 fVar.f = new ArrayList<>();
             }
@@ -339,7 +339,7 @@ public final class m8 extends k8 {
                     break;
                 }
                 f fVar = this.e.get(i2);
-                ArrayList<d> arrayList2 = fVar.f37640c;
+                ArrayList<d> arrayList2 = fVar.f23949c;
                 if (arrayList2 == null || arrayList2.size() == 0) {
                     arrayList.add(fVar);
                 }
@@ -391,19 +391,19 @@ public final class m8 extends k8 {
                 return;
             }
             f fVar4 = this.e.get(i8);
-            ArrayList<d> arrayList5 = fVar4.f37640c;
+            ArrayList<d> arrayList5 = fVar4.f23949c;
             if (arrayList5 != null && arrayList5.size() > 0) {
-                int size5 = fVar4.f37640c.size();
+                int size5 = fVar4.f23949c.size();
                 int i9 = 0;
                 while (true) {
                     int i10 = i9;
                     if (i10 < size5) {
-                        d dVar = fVar4.f37640c.get(i10);
+                        d dVar = fVar4.f23949c.get(i10);
                         if (fVar4.e == null) {
                             fVar4.e = new ArrayList<>();
                         }
-                        if (!fVar4.e.contains(dVar.f37637a)) {
-                            fVar4.e.add(dVar.f37637a);
+                        if (!fVar4.e.contains(dVar.f23946a)) {
+                            fVar4.e.add(dVar.f23946a);
                         }
                         i9 = i10 + 1;
                     }
@@ -639,22 +639,22 @@ public final class m8 extends k8 {
             if (this.h == null) {
                 this.h = new b(this);
             }
-            ArrayList<d> arrayList2 = fVar2.f37640c;
+            ArrayList<d> arrayList2 = fVar2.f23949c;
             if (arrayList2 == null || arrayList2.size() == 0) {
                 arrayList.add(fVar2);
             } else {
-                int size2 = fVar2.f37640c.size();
+                int size2 = fVar2.f23949c.size();
                 int i5 = 0;
                 while (true) {
                     int i6 = i5;
                     if (i6 >= size2) {
                         break;
                     }
-                    d dVar = fVar2.f37640c.get(i6);
-                    dVar.f37637a.b.a(new e(this, fVar2, dVar.b));
+                    d dVar = fVar2.f23949c.get(i6);
+                    dVar.f23946a.b.a(new e(this, fVar2, dVar.b));
                     i5 = i6 + 1;
                 }
-                fVar2.d = (ArrayList) fVar2.f37640c.clone();
+                fVar2.d = (ArrayList) fVar2.f23949c.clone();
             }
             fVar2.b.a(this.h);
             i3 = i4 + 1;
@@ -664,7 +664,7 @@ public final class m8 extends k8 {
             while (it2.hasNext()) {
                 f fVar3 = (f) it2.next();
                 fVar3.b.j();
-                this.f37631c.add(fVar3.b);
+                this.f23940c.add(fVar3.b);
             }
         } else {
             z8 a2 = z8.a((h8) null, 0.0d, 1.0d);
@@ -715,7 +715,7 @@ public final class m8 extends k8 {
         m8Var.g = true;
         m8Var.i = false;
         m8Var.j = false;
-        m8Var.f37631c = new ArrayList<>();
+        m8Var.f23940c = new ArrayList<>();
         m8Var.d = new HashMap<>();
         m8Var.e = new ArrayList<>();
         m8Var.f = new ArrayList<>();
@@ -728,7 +728,7 @@ public final class m8 extends k8 {
             m8Var.e.add(clone);
             m8Var.d.put(clone.b, clone);
             ArrayList arrayList = null;
-            clone.f37640c = null;
+            clone.f23949c = null;
             clone.d = null;
             clone.f = null;
             clone.e = null;
@@ -758,12 +758,12 @@ public final class m8 extends k8 {
         while (it4.hasNext()) {
             f next3 = it4.next();
             f fVar = (f) hashMap.get(next3);
-            ArrayList<d> arrayList3 = next3.f37640c;
+            ArrayList<d> arrayList3 = next3.f23949c;
             if (arrayList3 != null) {
                 Iterator<d> it5 = arrayList3.iterator();
                 while (it5.hasNext()) {
                     d next4 = it5.next();
-                    fVar.a(new d((f) hashMap.get(next4.f37637a), next4.b));
+                    fVar.a(new d((f) hashMap.get(next4.f23946a), next4.b));
                 }
             }
         }

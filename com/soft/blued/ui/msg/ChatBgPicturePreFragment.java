@@ -25,7 +25,6 @@ public class ChatBgPicturePreFragment extends BizPhotoDetailFragment implements 
         TerminalActivity.a(baseFragment, ChatBgPicturePreFragment.class, a2, i2);
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.PhotoDetailFragment.GetConfigCallback
     public View a() {
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.chat_bg_pircture_pre_top_title, (ViewGroup) null);
         ((ImageView) inflate.findViewById(2131363120)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.ChatBgPicturePreFragment.1
@@ -38,7 +37,6 @@ public class ChatBgPicturePreFragment extends BizPhotoDetailFragment implements 
         return inflate;
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.PhotoDetailFragment.GetConfigCallback
     public View b() {
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.tab_chat_bg_picture_pre_view, (ViewGroup) null);
         ((TextView) inflate.findViewById(R.id.chat_bg_pre_done_tv)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.ChatBgPicturePreFragment.2
@@ -54,12 +52,11 @@ public class ChatBgPicturePreFragment extends BizPhotoDetailFragment implements 
         return inflate;
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.PhotoDetailFragment.GetConfigCallback
     public ImageView.ScaleType c() {
         return ImageView.ScaleType.CENTER_CROP;
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BizPhotoDetailFragment, com.blued.android.module.media.selector.fragment.PhotoDetailFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.photo.fragment.BizPhotoDetailFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         a((PhotoDetailFragment.GetConfigCallback) this);
         return super.onCreateView(layoutInflater, viewGroup, bundle);

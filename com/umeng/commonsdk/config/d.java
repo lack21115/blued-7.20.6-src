@@ -7,11 +7,11 @@ import java.util.Map;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f40844a = 1000;
+    public static final long f27153a = 1000;
     public static final String b = "_LAST_FIELD";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f40845c = "3749699455";
+    public static final String f27154c = "3749699455";
     public static final String d = "2130669566";
     public static final String e = "262139";
     public static final String f = "1983";
@@ -20,7 +20,7 @@ public class d {
     public static String[] h = new String[a.values().length];
     public static String[] i = new String[b.values().length];
     public static String[] j = new String[c.values().length];
-    public static String[] k = new String[EnumC1080d.values().length];
+    public static String[] k = new String[EnumC0910d.values().length];
 
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/config/d$a.class */
     public enum a {
@@ -129,7 +129,7 @@ public class d {
 
     /* renamed from: com.umeng.commonsdk.config.d$d  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/config/d$d.class */
-    public enum EnumC1080d {
+    public enum EnumC0910d {
         share_device_id,
         share_imsi,
         share_iccid,
@@ -200,15 +200,15 @@ public class d {
         int i8 = 0;
         while (true) {
             int i9 = i8;
-            if (i9 >= EnumC1080d.values().length) {
+            if (i9 >= EnumC0910d.values().length) {
                 break;
             }
-            k[i9] = EnumC1080d.values()[i9].toString();
+            k[i9] = EnumC0910d.values()[i9].toString();
             i8 = i9 + 1;
         }
         Map<String, String[]> map4 = l;
         if (map4 != null) {
-            map4.put(EnumC1080d.class.getName(), k);
+            map4.put(EnumC0910d.class.getName(), k);
         }
     }
 

@@ -16,11 +16,11 @@ import com.anythink.expressad.foundation.h.i;
 public class AnyThinkLevelLayoutView extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private double f8416a;
+    private double f5576a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f8417c;
+    private boolean f5577c;
 
     public AnyThinkLevelLayoutView(Context context) {
         super(context);
@@ -37,7 +37,7 @@ public class AnyThinkLevelLayoutView extends LinearLayout {
     private void a() {
         LinearLayout linearLayout;
         LinearLayout linearLayout2;
-        if (this.f8417c) {
+        if (this.f5577c) {
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, dip2px(getContext(), 15.0f));
             layoutParams.setMargins(0, dip2px(getContext(), 2.0f), 0, 0);
             linearLayout = new LinearLayout(getContext());
@@ -61,7 +61,7 @@ public class AnyThinkLevelLayoutView extends LinearLayout {
             textView2.setTypeface(Typeface.defaultFromStyle(1));
             textView2.setGravity(17);
             textView2.setTextColor(Color.parseColor("#5f5f5f"));
-            Drawable drawable = getResources().getDrawable(i.a(getContext(), "anythink_reward_user", i.f7952c));
+            Drawable drawable = getResources().getDrawable(i.a(getContext(), "anythink_reward_user", i.f5112c));
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             textView2.setCompoundDrawables(drawable, null, null, null);
             textView2.setText(this.b + " )");
@@ -70,7 +70,7 @@ public class AnyThinkLevelLayoutView extends LinearLayout {
             linearLayout2.addView(textView, layoutParams2);
             linearLayout2.addView(textView2, layoutParams2);
         }
-        double d = this.f8416a;
+        double d = this.f5576a;
         double d2 = d;
         if (d == 0.0d) {
             d2 = 5.0d;
@@ -84,9 +84,9 @@ public class AnyThinkLevelLayoutView extends LinearLayout {
             ImageView imageView = new ImageView(getContext());
             LinearLayout.LayoutParams layoutParams3 = new LinearLayout.LayoutParams(dip2px(getContext(), 15.0f), dip2px(getContext(), 15.0f));
             if (i2 < d2) {
-                imageView.setImageResource(i.a(getContext(), "anythink_download_message_dialog_star_sel", i.f7952c));
+                imageView.setImageResource(i.a(getContext(), "anythink_download_message_dialog_star_sel", i.f5112c));
             } else {
-                imageView.setImageResource(i.a(getContext(), "anythink_download_message_dilaog_star_nor", i.f7952c));
+                imageView.setImageResource(i.a(getContext(), "anythink_download_message_dilaog_star_nor", i.f5112c));
             }
             layoutParams3.weight = 1.0f;
             layoutParams3.setMargins(dip2px(getContext(), 2.0f), 0, 0, 0);
@@ -113,18 +113,18 @@ public class AnyThinkLevelLayoutView extends LinearLayout {
     }
 
     public void setRating(int i) {
-        this.f8416a = i;
+        this.f5576a = i;
         a();
     }
 
     public void setRatingAndUser(double d, int i) {
-        this.f8416a = d;
+        this.f5576a = d;
         int i2 = i;
         if (i == 0) {
             i2 = (int) (((Math.random() * 9.0d) + 1.0d) * 10000.0d);
         }
         this.b = i2;
-        this.f8417c = true;
+        this.f5577c = true;
         a();
     }
 }

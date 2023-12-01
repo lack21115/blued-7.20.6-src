@@ -11,20 +11,16 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveRandomGiftInfoBinding.class */
 public final class DialogLiveRandomGiftInfoBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f11811a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ScrollView f11812c;
+    public final ScrollView c;
     private final FrameLayout d;
 
     private DialogLiveRandomGiftInfoBinding(FrameLayout frameLayout, ImageView imageView, ImageView imageView2, ScrollView scrollView) {
         this.d = frameLayout;
-        this.f11811a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f11812c = scrollView;
+        this.c = scrollView;
     }
 
     public static DialogLiveRandomGiftInfoBinding a(LayoutInflater layoutInflater) {
@@ -59,7 +55,6 @@ public final class DialogLiveRandomGiftInfoBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.d;

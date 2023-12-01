@@ -23,11 +23,11 @@ import com.soft.blued.manager.SendNotificationManager;
 public class SendFeedGuideDlg extends Dialog {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f29855a;
+    private View f16165a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f29856c;
+    private View f16166c;
     private View d;
     private BluedIngSelfFeed e;
     private Runnable f;
@@ -45,9 +45,9 @@ public class SendFeedGuideDlg extends Dialog {
 
     private void a() {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dlg_send_feed_guide_layout, (ViewGroup) null);
-        this.f29855a = inflate;
-        this.f29856c = inflate.findViewById(R.id.dlg_send_feed_guide_content_layout);
-        View findViewById = this.f29855a.findViewById(R.id.dlg_send_feed_guide_close);
+        this.f16165a = inflate;
+        this.f16166c = inflate.findViewById(R.id.dlg_send_feed_guide_content_layout);
+        View findViewById = this.f16165a.findViewById(R.id.dlg_send_feed_guide_close);
         this.d = findViewById;
         findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.discover.view.-$$Lambda$SendFeedGuideDlg$CuG1EpzweHep_jfW7y8R4HFP-5s
             @Override // android.view.View.OnClickListener
@@ -55,8 +55,8 @@ public class SendFeedGuideDlg extends Dialog {
                 SendFeedGuideDlg.this.a(view);
             }
         });
-        this.b = this.f29855a.findViewById(R.id.dlg_send_feed_guide_mask_view);
-        setContentView(this.f29855a);
+        this.b = this.f16165a.findViewById(R.id.dlg_send_feed_guide_mask_view);
+        setContentView(this.f16165a);
         StatusBarHelper.a(getWindow());
         setCancelable(false);
         setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.discover.view.SendFeedGuideDlg.1
@@ -93,8 +93,8 @@ public class SendFeedGuideDlg extends Dialog {
             public void onAnimationStart(Animation animation) {
             }
         });
-        this.f29856c.startAnimation(alphaAnimation);
-        this.f29856c.postDelayed(new Runnable() { // from class: com.soft.blued.ui.discover.view.SendFeedGuideDlg.3
+        this.f16166c.startAnimation(alphaAnimation);
+        this.f16166c.postDelayed(new Runnable() { // from class: com.soft.blued.ui.discover.view.SendFeedGuideDlg.3
             @Override // java.lang.Runnable
             public void run() {
                 AlphaAnimation alphaAnimation2 = new AlphaAnimation(0.5f, 0.0f);
@@ -131,7 +131,7 @@ public class SendFeedGuideDlg extends Dialog {
         AlphaAnimation alphaAnimation2 = new AlphaAnimation(0.0f, 1.0f);
         alphaAnimation2.setDuration(410L);
         alphaAnimation2.setInterpolator(new CubicInterpolator(0.66f, 0.01f, 0.34f, 1.0f));
-        this.f29856c.startAnimation(alphaAnimation2);
+        this.f16166c.startAnimation(alphaAnimation2);
         AppInfo.n().postDelayed(this.f, 2000L);
     }
 }

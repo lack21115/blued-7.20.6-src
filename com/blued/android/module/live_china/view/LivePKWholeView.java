@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.android.internal.widget.LockPatternUtils;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
@@ -29,13 +30,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKWholeView.class */
 public class LivePKWholeView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f14839a;
+    public int a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f14840c;
+    private LayoutInflater c;
     private View d;
     private LiveConnectionView e;
     private ILiveConnectionStateListener f;
@@ -97,16 +94,14 @@ public class LivePKWholeView extends FrameLayout implements View.OnClickListener
                 LivePKWholeView.this.x = bluedEntity.extra;
             }
             LivePKWholeView.this.i();
-            AppInfo.n().postDelayed(LivePKWholeView.this.u, 30000L);
+            AppInfo.n().postDelayed(LivePKWholeView.this.u, LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS);
         }
     }
 
     /* renamed from: com.blued.android.module.live_china.view.LivePKWholeView$3  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKWholeView$3.class */
     class AnonymousClass3 extends CountDownTimer {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveFriendModel f14845a;
+        final /* synthetic */ LiveFriendModel a;
         final /* synthetic */ LivePKWholeView b;
 
         @Override // android.os.CountDownTimer
@@ -114,7 +109,7 @@ public class LivePKWholeView extends FrameLayout implements View.OnClickListener
             this.b.a(new ILiveConnectionAnimListener() { // from class: com.blued.android.module.live_china.view.LivePKWholeView.3.1
                 @Override // com.blued.android.module.live_china.view.ILiveConnectionAnimListener
                 public void onAnimationEnd() {
-                    AnonymousClass3.this.b.e.f14428a.a(AnonymousClass3.this.f14845a, "friend");
+                    AnonymousClass3.this.b.e.a.a(AnonymousClass3.this.a, "friend");
                 }
             });
         }
@@ -166,7 +161,7 @@ public class LivePKWholeView extends FrameLayout implements View.OnClickListener
 
     private void k() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f14840c = from;
+        this.c = from;
         this.d = from.inflate(R.layout.live_pk_whole_loading, this).findViewById(R.id.content_layout);
         this.g = findViewById(R.id.live_pk_whole_layer);
         this.h = (TextView) findViewById(R.id.live_pk_whole_title);
@@ -192,7 +187,7 @@ public class LivePKWholeView extends FrameLayout implements View.OnClickListener
     }
 
     private void l() {
-        LiveRoomHttpUtils.m(new AnonymousClass1(this.e.f14428a.getFragmentActive()));
+        LiveRoomHttpUtils.m(new AnonymousClass1(this.e.a.getFragmentActive()));
     }
 
     private void m() {
@@ -304,7 +299,7 @@ public class LivePKWholeView extends FrameLayout implements View.OnClickListener
 
     public void d() {
         h();
-        int i = this.f14839a;
+        int i = this.a;
         if (i == 4 || i == 1) {
             g();
         }
@@ -359,6 +354,6 @@ public class LivePKWholeView extends FrameLayout implements View.OnClickListener
 
     public void setCurrentModel(int i) {
         Log.v("pk", "setCurrentModel:" + i);
-        this.f14839a = i;
+        this.a = i;
     }
 }

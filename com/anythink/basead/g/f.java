@@ -8,25 +8,22 @@ import com.anythink.core.common.e.k;
 import com.anythink.core.common.e.o;
 import com.anythink.core.common.i;
 import com.anythink.core.common.u;
+import com.efs.sdk.base.Constants;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/g/f.class */
 public final class f extends com.anythink.core.common.g.a {
-
-    /* renamed from: a  reason: collision with root package name */
-    String f6012a;
+    String a;
     JSONObject b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f6013c;
+    int c;
     String d;
     aa e;
     Map<String, Object> f;
 
     public f(int i, aa aaVar, String str, Map<String, Object> map) {
-        this.f6013c = i;
+        this.c = i;
         this.e = aaVar;
         this.f = map;
         this.d = str;
@@ -45,11 +42,11 @@ public final class f extends com.anythink.core.common.g.a {
     @Override // com.anythink.core.common.g.a
     public final void a(AdError adError) {
         JSONObject jSONObject = new JSONObject();
-        Map<String, String> c2 = c();
-        if (c2 != null) {
+        Map<String, String> c = c();
+        if (c != null) {
             try {
-                for (String str : c2.keySet()) {
-                    jSONObject.put(str, c2.get(str));
+                for (String str : c.keySet()) {
+                    jSONObject.put(str, c.get(str));
                 }
             } catch (Exception e) {
             }
@@ -57,7 +54,7 @@ public final class f extends com.anythink.core.common.g.a {
         String jSONObject2 = jSONObject.toString();
         JSONObject jSONObject3 = this.b;
         u.a().a(1, b(), jSONObject2, jSONObject3 != null ? jSONObject3.toString() : "", o.a(1000));
-        com.anythink.core.common.j.c.a("tk", adError.getPlatformCode(), adError.getPlatformMSG(), this.f6012a, "", "1", "");
+        com.anythink.core.common.j.c.a("tk", adError.getPlatformCode(), adError.getPlatformMSG(), this.a, "", "1", "");
     }
 
     @Override // com.anythink.core.common.g.a
@@ -79,7 +76,7 @@ public final class f extends com.anythink.core.common.g.a {
         }
         i.a();
         String g = i.g();
-        this.f6012a = g;
+        this.a = g;
         return g;
     }
 
@@ -102,10 +99,10 @@ public final class f extends com.anythink.core.common.g.a {
     public final Map<String, String> c() {
         k k;
         HashMap hashMap = new HashMap();
-        hashMap.put("Content-Encoding", "gzip");
+        hashMap.put("Content-Encoding", Constants.CP_GZIP);
         hashMap.put("Content-Type", "application/json;charset=utf-8");
         aa aaVar = this.e;
-        if (aaVar != null && (k = aaVar.k()) != null && com.anythink.basead.a.b.a(this.f6013c, k)) {
+        if (aaVar != null && (k = aaVar.k()) != null && com.anythink.basead.a.b.a(this.c, k)) {
             String i = com.anythink.core.common.k.d.i();
             if (!TextUtils.isEmpty(i)) {
                 hashMap.put("User-Agent", i);

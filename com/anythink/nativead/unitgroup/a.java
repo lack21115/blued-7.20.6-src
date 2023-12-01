@@ -26,18 +26,14 @@ public abstract class a extends BaseAd {
 
     public abstract void clear(View view);
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public abstract View getAdIconView();
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public abstract View getAdMediaView(Object... objArr);
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public final String getAdType() {
         return this.mAdSourceType;
     }
 
-    @Override // com.anythink.core.api.BaseAd
     public final e getDetail() {
         return this.mAdTrackingInfo;
     }
@@ -46,7 +42,6 @@ public abstract class a extends BaseAd {
         return this.nativePrepareInfo;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public View getShakeView(int i, int i2, ATShakeViewListener aTShakeViewListener) {
         return null;
     }
@@ -56,7 +51,7 @@ public abstract class a extends BaseAd {
     public final void notifyAdClicked() {
         l lVar = this.mNativeEventListener;
         if (lVar != null) {
-            lVar.onAdClicked(null);
+            lVar.onAdClicked((View) null);
         }
     }
 
@@ -100,11 +95,11 @@ public abstract class a extends BaseAd {
         sb.append(str);
         sb.append(",");
         sb.append(str2);
-        l lVar = this.mNativeEventListener;
-        if (lVar == null || !(lVar instanceof m)) {
+        m mVar = this.mNativeEventListener;
+        if (mVar == null || !(mVar instanceof m)) {
             return;
         }
-        ((m) lVar).a(str, str2);
+        mVar.a(str, str2);
     }
 
     public final void notifyDeeplinkCallback(boolean z) {
@@ -135,7 +130,6 @@ public abstract class a extends BaseAd {
         this.mDownloadListener = aTEventInterface;
     }
 
-    @Override // com.anythink.core.api.BaseAd
     public void setNativeEventListener(l lVar) {
         this.mNativeEventListener = lVar;
     }
@@ -144,7 +138,6 @@ public abstract class a extends BaseAd {
         this.nativePrepareInfo = aTNativePrepareInfo;
     }
 
-    @Override // com.anythink.core.api.BaseAd
     public final void setTrackingInfo(e eVar) {
         this.mAdTrackingInfo = eVar;
     }

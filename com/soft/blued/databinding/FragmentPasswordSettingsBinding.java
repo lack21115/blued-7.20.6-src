@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentPasswordSettingsBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28923a;
+    private final LinearLayout f15233a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28923a;
+        return this.f15233a;
     }
 }

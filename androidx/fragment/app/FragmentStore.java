@@ -16,22 +16,22 @@ import java.util.List;
 public class FragmentStore {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ArrayList<Fragment> f3003a = new ArrayList<>();
+    private final ArrayList<Fragment> f2955a = new ArrayList<>();
     private final HashMap<String, FragmentStateManager> b = new HashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private FragmentManagerViewModel f3004c;
+    private FragmentManagerViewModel f2956c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Fragment a(String str) {
         if (str != null) {
-            int size = this.f3003a.size();
+            int size = this.f2955a.size();
             while (true) {
                 int i = size - 1;
                 if (i < 0) {
                     break;
                 }
-                Fragment fragment = this.f3003a.get(i);
+                Fragment fragment = this.f2955a.get(i);
                 if (fragment != null && str.equals(fragment.mTag)) {
                     return fragment;
                 }
@@ -54,7 +54,7 @@ public class FragmentStore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FragmentManagerViewModel a() {
-        return this.f3004c;
+        return this.f2956c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -68,18 +68,18 @@ public class FragmentStore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Fragment fragment) {
-        if (this.f3003a.contains(fragment)) {
+        if (this.f2955a.contains(fragment)) {
             throw new IllegalStateException("Fragment already added: " + fragment);
         }
-        synchronized (this.f3003a) {
-            this.f3003a.add(fragment);
+        synchronized (this.f2955a) {
+            this.f2955a.add(fragment);
         }
         fragment.mAdded = true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(FragmentManagerViewModel fragmentManagerViewModel) {
-        this.f3004c = fragmentManagerViewModel;
+        this.f2956c = fragmentManagerViewModel;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -91,9 +91,9 @@ public class FragmentStore {
         this.b.put(a2.mWho, fragmentStateManager);
         if (a2.mRetainInstanceChangedWhileDetached) {
             if (a2.mRetainInstance) {
-                this.f3004c.a(a2);
+                this.f2956c.a(a2);
             } else {
-                this.f3004c.c(a2);
+                this.f2956c.c(a2);
             }
             a2.mRetainInstanceChangedWhileDetached = false;
         }
@@ -119,7 +119,7 @@ public class FragmentStore {
                 }
             }
         }
-        int size = this.f3003a.size();
+        int size = this.f2955a.size();
         if (size <= 0) {
             return;
         }
@@ -135,14 +135,14 @@ public class FragmentStore {
             printWriter.print("  #");
             printWriter.print(i2);
             printWriter.print(": ");
-            printWriter.println(this.f3003a.get(i2).toString());
+            printWriter.println(this.f2955a.get(i2).toString());
             i = i2 + 1;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(List<String> list) {
-        this.f3003a.clear();
+        this.f2955a.clear();
         if (list != null) {
             for (String str : list) {
                 Fragment e = e(str);
@@ -159,7 +159,7 @@ public class FragmentStore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Fragment b(int i) {
-        int size = this.f3003a.size();
+        int size = this.f2955a.size();
         while (true) {
             int i2 = size - 1;
             if (i2 < 0) {
@@ -173,7 +173,7 @@ public class FragmentStore {
                 }
                 return null;
             }
-            Fragment fragment = this.f3003a.get(i2);
+            Fragment fragment = this.f2955a.get(i2);
             if (fragment != null && fragment.mFragmentId == i) {
                 return fragment;
             }
@@ -188,8 +188,8 @@ public class FragmentStore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b(Fragment fragment) {
-        synchronized (this.f3003a) {
-            this.f3003a.remove(fragment);
+        synchronized (this.f2955a) {
+            this.f2955a.remove(fragment);
         }
         fragment.mAdded = false;
     }
@@ -198,7 +198,7 @@ public class FragmentStore {
     public void b(FragmentStateManager fragmentStateManager) {
         Fragment a2 = fragmentStateManager.a();
         if (a2.mRetainInstance) {
-            this.f3004c.c(a2);
+            this.f2956c.c(a2);
         }
         if (this.b.put(a2.mWho, null) != null && FragmentManager.a(2)) {
             Log.v("FragmentManager", "Removed fragment from active set " + a2);
@@ -216,13 +216,13 @@ public class FragmentStore {
         if (viewGroup == null) {
             return -1;
         }
-        int indexOf = this.f3003a.indexOf(fragment);
+        int indexOf = this.f2955a.indexOf(fragment);
         int i = indexOf;
         while (true) {
             int i2 = i - 1;
             int i3 = indexOf;
             if (i2 >= 0) {
-                Fragment fragment2 = this.f3003a.get(i2);
+                Fragment fragment2 = this.f2955a.get(i2);
                 if (fragment2.mContainer == viewGroup && fragment2.mView != null) {
                     return viewGroup.indexOfChild(fragment2.mView) + 1;
                 }
@@ -230,10 +230,10 @@ public class FragmentStore {
             } else {
                 while (true) {
                     i3++;
-                    if (i3 >= this.f3003a.size()) {
+                    if (i3 >= this.f2955a.size()) {
                         return -1;
                     }
-                    Fragment fragment3 = this.f3003a.get(i3);
+                    Fragment fragment3 = this.f2955a.get(i3);
                     if (fragment3.mContainer == viewGroup && fragment3.mView != null) {
                         return viewGroup.indexOfChild(fragment3.mView);
                     }
@@ -249,7 +249,7 @@ public class FragmentStore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void c() {
-        Iterator<Fragment> it = this.f3003a.iterator();
+        Iterator<Fragment> it = this.f2955a.iterator();
         while (it.hasNext()) {
             FragmentStateManager fragmentStateManager = this.b.get(it.next().mWho);
             if (fragmentStateManager != null) {
@@ -310,12 +310,12 @@ public class FragmentStore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ArrayList<String> f() {
-        synchronized (this.f3003a) {
-            if (this.f3003a.isEmpty()) {
+        synchronized (this.f2955a) {
+            if (this.f2955a.isEmpty()) {
                 return null;
             }
-            ArrayList<String> arrayList = new ArrayList<>(this.f3003a.size());
-            Iterator<Fragment> it = this.f3003a.iterator();
+            ArrayList<String> arrayList = new ArrayList<>(this.f2955a.size());
+            Iterator<Fragment> it = this.f2955a.iterator();
             while (it.hasNext()) {
                 Fragment next = it.next();
                 arrayList.add(next.mWho);
@@ -341,11 +341,11 @@ public class FragmentStore {
     /* JADX INFO: Access modifiers changed from: package-private */
     public List<Fragment> h() {
         ArrayList arrayList;
-        if (this.f3003a.isEmpty()) {
+        if (this.f2955a.isEmpty()) {
             return Collections.emptyList();
         }
-        synchronized (this.f3003a) {
-            arrayList = new ArrayList(this.f3003a);
+        synchronized (this.f2955a) {
+            arrayList = new ArrayList(this.f2955a);
         }
         return arrayList;
     }

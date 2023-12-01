@@ -11,11 +11,11 @@ import java.util.List;
 public final class j implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile j f39099a;
+    private static volatile j f25408a;
     private final List<a> b = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    private WeakReference<Activity> f39100c;
+    private WeakReference<Activity> f25409c;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tendinsv/utils/j$a.class */
     public interface a {
@@ -26,18 +26,18 @@ public final class j implements Application.ActivityLifecycleCallbacks {
     }
 
     public static j a() {
-        if (f39099a == null) {
+        if (f25408a == null) {
             synchronized (j.class) {
                 try {
-                    if (f39099a == null) {
-                        f39099a = new j();
+                    if (f25408a == null) {
+                        f25408a = new j();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39099a;
+        return f25408a;
     }
 
     public void a(Application application, a aVar) {
@@ -67,7 +67,7 @@ public final class j implements Application.ActivityLifecycleCallbacks {
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityResumed(Activity activity) {
-        this.f39100c = new WeakReference<>(activity);
+        this.f25409c = new WeakReference<>(activity);
         l.a(com.tencent.tendinsv.b.G, "onActivityResumed name", ((Activity) new WeakReference(activity).get()).getComponentName().getClassName());
     }
 
@@ -85,7 +85,7 @@ public final class j implements Application.ActivityLifecycleCallbacks {
     public void onActivityStopped(Activity activity) {
         try {
             l.a(com.tencent.tendinsv.b.G, "onActivityStopped name", activity.getComponentName().getClassName());
-            if (this.f39100c == null || this.f39100c.equals(new WeakReference(activity))) {
+            if (this.f25409c == null || this.f25409c.equals(new WeakReference(activity))) {
                 for (a aVar : this.b) {
                     if (aVar != null) {
                         aVar.a(activity);

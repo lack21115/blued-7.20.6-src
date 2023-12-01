@@ -35,8 +35,8 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
     private volatile Object redPointWord_;
     private static final LiveRedPoint DEFAULT_INSTANCE = new LiveRedPoint();
     private static final Parser<LiveRedPoint> PARSER = new AbstractParser<LiveRedPoint>() { // from class: cn.irisgw.live.LiveRedPoint.1
-        @Override // com.google.protobuf.Parser
-        public LiveRedPoint parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public LiveRedPoint m5043parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new LiveRedPoint(codedInputStream, extensionRegistryLite);
         }
     };
@@ -77,22 +77,22 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             boolean unused = LiveRedPoint.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m5045addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LiveRedPoint build() {
-            LiveRedPoint buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public LiveRedPoint m5047build() {
+            LiveRedPoint m5049buildPartial = m5049buildPartial();
+            if (m5049buildPartial.isInitialized()) {
+                return m5049buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m5049buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LiveRedPoint buildPartial() {
+        /* renamed from: buildPartial */
+        public LiveRedPoint m5049buildPartial() {
             LiveRedPoint liveRedPoint = new LiveRedPoint(this);
             liveRedPoint.pointInfo_ = this.pointInfo_;
             liveRedPoint.goodsPackPointInfo_ = this.goodsPackPointInfo_;
@@ -104,8 +104,8 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             return liveRedPoint;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m5053clear() {
             super.clear();
             this.pointInfo_ = "";
             this.goodsPackPointInfo_ = "";
@@ -116,8 +116,8 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m5055clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -127,8 +127,8 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m5058clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -162,18 +162,16 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m5064clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public LiveRedPoint getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public LiveRedPoint m5066getDefaultInstanceForType() {
             return LiveRedPoint.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_LiveRedPoint_descriptor;
         }
@@ -279,12 +277,10 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_LiveRedPoint_fieldAccessorTable.ensureFieldAccessorsInitialized(LiveRedPoint.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -314,18 +310,18 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             if (liveRedPoint.redPointAction_ != 0) {
                 setRedPointActionValue(liveRedPoint.getRedPointActionValue());
             }
-            mergeUnknownFields(liveRedPoint.unknownFields);
+            m5075mergeUnknownFields(liveRedPoint.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.LiveRedPoint.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.LiveRedPoint.Builder m5072mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -370,11 +366,11 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LiveRedPoint.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LiveRedPoint$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LiveRedPoint.Builder.m5072mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LiveRedPoint$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m5071mergeFrom(Message message) {
             if (message instanceof LiveRedPoint) {
                 return mergeFrom((LiveRedPoint) message);
             }
@@ -382,13 +378,13 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m5075mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m5077setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -485,13 +481,13 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m5079setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m5081setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -508,9 +504,8 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
         public static final int SHOW_VALUE = 1;
         private final int value;
         private static final Internal.EnumLiteMap<PointAction> internalValueMap = new Internal.EnumLiteMap<PointAction>() { // from class: cn.irisgw.live.LiveRedPoint.PointAction.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.google.protobuf.Internal.EnumLiteMap
-            public PointAction findValueByNumber(int i) {
+            /* renamed from: findValueByNumber */
+            public PointAction m5083findValueByNumber(int i) {
                 return PointAction.forNumber(i);
             }
         };
@@ -534,7 +529,7 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
         }
 
         public static final Descriptors.EnumDescriptor getDescriptor() {
-            return LiveRedPoint.getDescriptor().getEnumTypes().get(1);
+            return (Descriptors.EnumDescriptor) LiveRedPoint.getDescriptor().getEnumTypes().get(1);
         }
 
         public static Internal.EnumLiteMap<PointAction> internalGetValueMap() {
@@ -553,12 +548,10 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumDescriptor getDescriptorForType() {
             return getDescriptor();
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
         public final int getNumber() {
             if (this != UNRECOGNIZED) {
                 return this.value;
@@ -566,10 +559,9 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumValueDescriptor getValueDescriptor() {
             if (this != UNRECOGNIZED) {
-                return getDescriptor().getValues().get(ordinal());
+                return (Descriptors.EnumValueDescriptor) getDescriptor().getValues().get(ordinal());
             }
             throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
         }
@@ -589,9 +581,8 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
         public static final int RECHARGE_VALUE = 2;
         private final int value;
         private static final Internal.EnumLiteMap<PointType> internalValueMap = new Internal.EnumLiteMap<PointType>() { // from class: cn.irisgw.live.LiveRedPoint.PointType.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.google.protobuf.Internal.EnumLiteMap
-            public PointType findValueByNumber(int i) {
+            /* renamed from: findValueByNumber */
+            public PointType m5085findValueByNumber(int i) {
                 return PointType.forNumber(i);
             }
         };
@@ -618,7 +609,7 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
         }
 
         public static final Descriptors.EnumDescriptor getDescriptor() {
-            return LiveRedPoint.getDescriptor().getEnumTypes().get(0);
+            return (Descriptors.EnumDescriptor) LiveRedPoint.getDescriptor().getEnumTypes().get(0);
         }
 
         public static Internal.EnumLiteMap<PointType> internalGetValueMap() {
@@ -637,12 +628,10 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumDescriptor getDescriptorForType() {
             return getDescriptor();
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
         public final int getNumber() {
             if (this != UNRECOGNIZED) {
                 return this.value;
@@ -650,10 +639,9 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
             throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumValueDescriptor getValueDescriptor() {
             if (this != UNRECOGNIZED) {
-                return getDescriptor().getValues().get(ordinal());
+                return (Descriptors.EnumValueDescriptor) getDescriptor().getValues().get(ordinal());
             }
             throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
         }
@@ -722,66 +710,65 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m5042toBuilder();
     }
 
     public static Builder newBuilder(LiveRedPoint liveRedPoint) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(liveRedPoint);
+        return DEFAULT_INSTANCE.m5042toBuilder().mergeFrom(liveRedPoint);
     }
 
     public static LiveRedPoint parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (LiveRedPoint) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static LiveRedPoint parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LiveRedPoint) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LiveRedPoint parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (LiveRedPoint) PARSER.parseFrom(byteString);
     }
 
     public static LiveRedPoint parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (LiveRedPoint) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static LiveRedPoint parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (LiveRedPoint) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static LiveRedPoint parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LiveRedPoint) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static LiveRedPoint parseFrom(InputStream inputStream) throws IOException {
-        return (LiveRedPoint) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static LiveRedPoint parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LiveRedPoint) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LiveRedPoint parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (LiveRedPoint) PARSER.parseFrom(byteBuffer);
     }
 
     public static LiveRedPoint parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (LiveRedPoint) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static LiveRedPoint parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (LiveRedPoint) PARSER.parseFrom(bArr);
     }
 
     public static LiveRedPoint parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (LiveRedPoint) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<LiveRedPoint> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -793,8 +780,8 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public LiveRedPoint getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public LiveRedPoint m5037getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -820,7 +807,6 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<LiveRedPoint> getParserForType() {
         return PARSER;
     }
@@ -904,7 +890,6 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -940,12 +925,10 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -955,12 +938,10 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_LiveRedPoint_fieldAccessorTable.ensureFieldAccessorsInitialized(LiveRedPoint.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -973,28 +954,26 @@ public final class LiveRedPoint extends GeneratedMessageV3 implements LiveRedPoi
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m5040newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m5039newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new LiveRedPoint();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m5042toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (!getPointInfoBytes().isEmpty()) {
             GeneratedMessageV3.writeString(codedOutputStream, 1, this.pointInfo_);

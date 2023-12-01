@@ -15,13 +15,13 @@ public class Oscillator {
     public static final int TRIANGLE_WAVE = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    double[] f2055c;
+    double[] f2007c;
     String d;
     MonotonicCurveFit e;
     int f;
 
     /* renamed from: a  reason: collision with root package name */
-    float[] f2054a = new float[0];
+    float[] f2006a = new float[0];
     double[] b = new double[0];
     double g = 6.283185307179586d;
     private boolean h = false;
@@ -42,31 +42,31 @@ public class Oscillator {
         }
         if (binarySearch != 0) {
             int i = (-binarySearch) - 1;
-            float[] fArr = this.f2054a;
+            float[] fArr = this.f2006a;
             float f = fArr[i];
             int i2 = i - 1;
             double d3 = f - fArr[i2];
             double[] dArr = this.b;
             double d4 = d3 / (dArr[i] - dArr[i2]);
-            return this.f2055c[i2] + ((fArr[i2] - (dArr[i2] * d4)) * (d2 - dArr[i2])) + ((d4 * ((d2 * d2) - (dArr[i2] * dArr[i2]))) / 2.0d);
+            return this.f2007c[i2] + ((fArr[i2] - (dArr[i2] * d4)) * (d2 - dArr[i2])) + ((d4 * ((d2 * d2) - (dArr[i2] * dArr[i2]))) / 2.0d);
         }
         return 0.0d;
     }
 
     public void addPoint(double d, float f) {
-        int length = this.f2054a.length + 1;
+        int length = this.f2006a.length + 1;
         int binarySearch = Arrays.binarySearch(this.b, d);
         int i = binarySearch;
         if (binarySearch < 0) {
             i = (-binarySearch) - 1;
         }
         this.b = Arrays.copyOf(this.b, length);
-        this.f2054a = Arrays.copyOf(this.f2054a, length);
-        this.f2055c = new double[length];
+        this.f2006a = Arrays.copyOf(this.f2006a, length);
+        this.f2007c = new double[length];
         double[] dArr = this.b;
-        System.arraycopy((Object) dArr, i, (Object) dArr, i + 1, (length - i) - 1);
+        System.arraycopy(dArr, i, dArr, i + 1, (length - i) - 1);
         this.b[i] = d;
-        this.f2054a[i] = f;
+        this.f2006a[i] = f;
         this.h = false;
     }
 
@@ -87,7 +87,7 @@ public class Oscillator {
         double d3 = 0.0d;
         if (binarySearch != 0) {
             int i = (-binarySearch) - 1;
-            float[] fArr = this.f2054a;
+            float[] fArr = this.f2006a;
             float f = fArr[i];
             int i2 = i - 1;
             double d4 = f - fArr[i2];
@@ -157,7 +157,7 @@ public class Oscillator {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f2054a.length) {
+            if (i2 >= this.f2006a.length) {
                 break;
             }
             d += fArr[i2];
@@ -167,7 +167,7 @@ public class Oscillator {
         int i3 = 1;
         while (true) {
             int i4 = i3;
-            float[] fArr2 = this.f2054a;
+            float[] fArr2 = this.f2006a;
             if (i4 >= fArr2.length) {
                 break;
             }
@@ -180,18 +180,18 @@ public class Oscillator {
         int i6 = 0;
         while (true) {
             int i7 = i6;
-            float[] fArr3 = this.f2054a;
+            float[] fArr3 = this.f2006a;
             if (i7 >= fArr3.length) {
                 break;
             }
             fArr3[i7] = (float) (fArr3[i7] * (d / d2));
             i6 = i7 + 1;
         }
-        this.f2055c[0] = 0.0d;
+        this.f2007c[0] = 0.0d;
         int i8 = 1;
         while (true) {
             int i9 = i8;
-            float[] fArr4 = this.f2054a;
+            float[] fArr4 = this.f2006a;
             if (i9 >= fArr4.length) {
                 this.h = true;
                 return;
@@ -201,7 +201,7 @@ public class Oscillator {
             double[] dArr2 = this.b;
             double d3 = dArr2[i9];
             double d4 = dArr2[i10];
-            double[] dArr3 = this.f2055c;
+            double[] dArr3 = this.f2007c;
             dArr3[i9] = dArr3[i10] + ((d3 - d4) * f2);
             i8 = i9 + 1;
         }
@@ -216,6 +216,6 @@ public class Oscillator {
     }
 
     public String toString() {
-        return "pos =" + Arrays.toString(this.b) + " period=" + Arrays.toString(this.f2054a);
+        return "pos =" + Arrays.toString(this.b) + " period=" + Arrays.toString(this.f2006a);
     }
 }

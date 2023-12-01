@@ -8,11 +8,11 @@ import java.io.RandomAccessFile;
 public class b implements com.opos.videocache.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public File f27429a;
+    public File f13741a;
     private final a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RandomAccessFile f27430c;
+    private RandomAccessFile f13742c;
 
     public b(File file, a aVar) {
         File file2;
@@ -29,8 +29,8 @@ public class b implements com.opos.videocache.a {
                 File parentFile = file.getParentFile();
                 file2 = new File(parentFile, file.getName() + ".download");
             }
-            this.f27429a = file2;
-            this.f27430c = new RandomAccessFile(this.f27429a, exists ? "r" : "rw");
+            this.f13741a = file2;
+            this.f13742c = new RandomAccessFile(this.f13741a, exists ? "r" : "rw");
         } catch (IOException e) {
             throw new com.opos.videocache.g("Error using file " + file + " as disc cache", e);
         }
@@ -45,8 +45,8 @@ public class b implements com.opos.videocache.a {
         int read;
         synchronized (this) {
             try {
-                this.f27430c.seek(j);
-                read = this.f27430c.read(bArr, 0, i);
+                this.f13742c.seek(j);
+                read = this.f13742c.read(bArr, 0, i);
             } catch (IOException e) {
                 throw new com.opos.videocache.g(String.format("Error reading %d bytes with offset %d from file[%d bytes] to buffer[%d bytes]", Integer.valueOf(i), Long.valueOf(j), Long.valueOf(a()), Integer.valueOf(bArr.length)), e);
             }
@@ -59,9 +59,9 @@ public class b implements com.opos.videocache.a {
         long length;
         synchronized (this) {
             try {
-                length = (int) this.f27430c.length();
+                length = (int) this.f13742c.length();
             } catch (IOException e) {
-                throw new com.opos.videocache.g("Error reading length of file " + this.f27429a, e);
+                throw new com.opos.videocache.g("Error reading length of file " + this.f13741a, e);
             }
         }
         return length;
@@ -72,12 +72,12 @@ public class b implements com.opos.videocache.a {
         synchronized (this) {
             try {
                 if (d()) {
-                    throw new com.opos.videocache.g("Error append cache: cache file " + this.f27429a + " is completed!");
+                    throw new com.opos.videocache.g("Error append cache: cache file " + this.f13741a + " is completed!");
                 }
-                this.f27430c.seek(a());
-                this.f27430c.write(bArr, 0, i);
+                this.f13742c.seek(a());
+                this.f13742c.write(bArr, 0, i);
             } catch (IOException e) {
-                throw new com.opos.videocache.g(String.format("Error writing %d bytes to %s from buffer with size %d", Integer.valueOf(i), this.f27430c, Integer.valueOf(bArr.length)), e);
+                throw new com.opos.videocache.g(String.format("Error writing %d bytes to %s from buffer with size %d", Integer.valueOf(i), this.f13742c, Integer.valueOf(bArr.length)), e);
             }
         }
     }
@@ -86,10 +86,10 @@ public class b implements com.opos.videocache.a {
     public void b() {
         synchronized (this) {
             try {
-                this.f27430c.close();
-                this.b.a(this.f27429a);
+                this.f13742c.close();
+                this.b.a(this.f13741a);
             } catch (IOException e) {
-                throw new com.opos.videocache.g("Error closing file " + this.f27429a, e);
+                throw new com.opos.videocache.g("Error closing file " + this.f13741a, e);
             }
         }
     }
@@ -99,21 +99,21 @@ public class b implements com.opos.videocache.a {
         synchronized (this) {
             if (!d()) {
                 b();
-                File file = new File(this.f27429a.getParentFile(), this.f27429a.getName().substring(0, this.f27429a.getName().length() - 9));
-                if (!this.f27429a.renameTo(file)) {
-                    com.opos.cmn.an.f.a.a("FileCache", "Error renaming file " + this.f27429a + " to " + file + " for completion!");
-                    throw new com.opos.videocache.g("Error renaming file " + this.f27429a + " to " + file + " for completion!");
+                File file = new File(this.f13741a.getParentFile(), this.f13741a.getName().substring(0, this.f13741a.getName().length() - 9));
+                if (!this.f13741a.renameTo(file)) {
+                    com.opos.cmn.an.f.a.a("FileCache", "Error renaming file " + this.f13741a + " to " + file + " for completion!");
+                    throw new com.opos.videocache.g("Error renaming file " + this.f13741a + " to " + file + " for completion!");
                 }
-                if (!this.f27429a.delete()) {
+                if (!this.f13741a.delete()) {
                     com.opos.cmn.an.f.a.a("FileCache", "delete .download cache file fail!");
                 }
-                this.f27429a = file;
+                this.f13741a = file;
                 try {
-                    this.f27430c = new RandomAccessFile(this.f27429a, "r");
-                    this.b.a(this.f27429a);
+                    this.f13742c = new RandomAccessFile(this.f13741a, "r");
+                    this.b.a(this.f13741a);
                 } catch (IOException e) {
-                    com.opos.cmn.an.f.a.a("FileCache", "Error opening " + this.f27429a + " as disc cache", (Throwable) e);
-                    throw new com.opos.videocache.g("Error opening " + this.f27429a + " as disc cache", e);
+                    com.opos.cmn.an.f.a.a("FileCache", "Error opening " + this.f13741a + " as disc cache", (Throwable) e);
+                    throw new com.opos.videocache.g("Error opening " + this.f13741a + " as disc cache", e);
                 }
             }
         }
@@ -123,7 +123,7 @@ public class b implements com.opos.videocache.a {
     public boolean d() {
         boolean a2;
         synchronized (this) {
-            a2 = a(this.f27429a);
+            a2 = a(this.f13741a);
         }
         return !a2;
     }

@@ -2,9 +2,7 @@ package com.mokee.security;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/security/Encryption.class */
 public class Encryption {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f24224a = null;
+    private static final String[] a = null;
     public static int b;
 
     static {
@@ -13,7 +11,7 @@ public class Encryption {
     }
 
     public static void appendHex(StringBuffer stringBuffer, byte b2) {
-        stringBuffer.append(f24224a[0].charAt((b2 >> 4) & 15)).append(f24224a[1].charAt(b2 & 15));
+        stringBuffer.append(a[0].charAt((b2 >> 4) & 15)).append(a[1].charAt(b2 & 15));
     }
 
     /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
@@ -61,7 +59,7 @@ public class Encryption {
             byte[] r2 = android.util.Base64.decode(r2, r3)
             r1.<init>(r2)
             r12 = r0
-            java.lang.String[] r0 = com.mokee.security.Encryption.f24224a
+            java.lang.String[] r0 = com.mokee.security.Encryption.a
             r1 = 5
             r0 = r0[r1]
             java.security.KeyFactory r0 = java.security.KeyFactory.getInstance(r0)
@@ -198,7 +196,7 @@ public class Encryption {
             byte[] r2 = android.util.Base64.decode(r2, r3)
             r1.<init>(r2)
             r12 = r0
-            java.lang.String[] r0 = com.mokee.security.Encryption.f24224a
+            java.lang.String[] r0 = com.mokee.security.Encryption.a
             r1 = 4
             r0 = r0[r1]
             java.security.KeyFactory r0 = java.security.KeyFactory.getInstance(r0)

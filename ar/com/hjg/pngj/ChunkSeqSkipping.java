@@ -9,10 +9,10 @@ import java.util.List;
 public class ChunkSeqSkipping extends ChunkSeqReader {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<ChunkRaw> f3624a;
+    private List<ChunkRaw> f3576a;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f3625c;
+    private boolean f3577c;
 
     public ChunkSeqSkipping() {
         this(true);
@@ -20,9 +20,9 @@ public class ChunkSeqSkipping extends ChunkSeqReader {
 
     public ChunkSeqSkipping(boolean z) {
         super(true);
-        this.f3624a = new ArrayList();
-        this.f3625c = true;
-        this.f3625c = z;
+        this.f3576a = new ArrayList();
+        this.f3577c = true;
+        this.f3577c = z;
     }
 
     @Override // ar.com.hjg.pngj.ChunkSeqReader
@@ -44,7 +44,7 @@ public class ChunkSeqSkipping extends ChunkSeqReader {
     @Override // ar.com.hjg.pngj.ChunkSeqReader
     public void a(ChunkReader chunkReader) {
         super.a(chunkReader);
-        this.f3624a.add(chunkReader.a());
+        this.f3576a.add(chunkReader.a());
     }
 
     protected void a(ChunkRaw chunkRaw, int i, byte[] bArr, int i2, int i3) {
@@ -58,6 +58,6 @@ public class ChunkSeqSkipping extends ChunkSeqReader {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // ar.com.hjg.pngj.ChunkSeqReader
     public boolean b(int i, String str) {
-        return this.f3625c;
+        return this.f3577c;
     }
 }

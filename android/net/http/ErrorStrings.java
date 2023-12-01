@@ -1,8 +1,8 @@
 package android.net.http;
 
+import android.R;
 import android.content.Context;
 import android.util.Log;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/net/http/ErrorStrings.class */
 public class ErrorStrings {
@@ -14,40 +14,40 @@ public class ErrorStrings {
     public static int getResource(int i) {
         switch (i) {
             case -15:
-                return R.string.httpErrorTooManyRequests;
+                return 17039797;
             case -14:
-                return R.string.httpErrorFileNotFound;
+                return 17039796;
             case -13:
-                return R.string.httpErrorFile;
+                return 17039795;
             case -12:
-                return 17039367;
+                return R.string.httpErrorBadUrl;
             case -11:
-                return R.string.httpErrorFailedSslHandshake;
+                return 17039794;
             case -10:
-                return 17039368;
+                return R.string.httpErrorUnsupportedScheme;
             case -9:
-                return R.string.httpErrorRedirectLoop;
+                return 17039793;
             case -8:
-                return R.string.httpErrorTimeout;
+                return 17039792;
             case -7:
-                return R.string.httpErrorIO;
+                return 17039791;
             case -6:
-                return R.string.httpErrorConnect;
+                return 17039790;
             case -5:
-                return R.string.httpErrorProxyAuth;
+                return 17039789;
             case -4:
-                return R.string.httpErrorAuth;
+                return 17039788;
             case -3:
-                return R.string.httpErrorUnsupportedAuthScheme;
+                return 17039787;
             case -2:
-                return R.string.httpErrorLookup;
+                return 17039786;
             case -1:
-                return R.string.httpError;
+                return 17039785;
             case 0:
-                return R.string.httpErrorOk;
+                return 17039784;
             default:
                 Log.w(LOGTAG, "Using generic message for unknown error code: " + i);
-                return R.string.httpError;
+                return 17039785;
         }
     }
 

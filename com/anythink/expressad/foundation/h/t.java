@@ -28,11 +28,11 @@ import org.json.JSONArray;
 public final class t extends g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7976a = "SameTools";
+    public static final String f5136a = "SameTools";
     static List<String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static char[] f7977c = {'A', 'p', 'p', 'l', 'i', 'c', 'a', 't', 'i', 'o', 'n', 'I', 'n', 'f', 'o'};
+    private static char[] f5137c = {'A', 'p', 'p', 'l', 'i', 'c', 'a', 't', 'i', 'o', 'n', 'I', 'n', 'f', 'o'};
     private static char[] d = {'.', 'X'};
     private static int e = 0;
     private static int f = 1;
@@ -99,7 +99,7 @@ public final class t extends g {
                 }
                 return 0;
             } catch (Throwable th) {
-                o.b(f7976a, th.getMessage(), th);
+                o.b(f5136a, th.getMessage(), th);
                 return 0;
             }
         }
@@ -173,7 +173,7 @@ public final class t extends g {
                 i2 = i3 + 1;
             }
         } catch (Throwable th) {
-            o.b(f7976a, th.getMessage(), th);
+            o.b(f5136a, th.getMessage(), th);
             return null;
         }
     }
@@ -311,7 +311,7 @@ public final class t extends g {
             sb.append(d[i]);
             sb.append(String.valueOf(Arrays.copyOfRange(s.b, k, m)));
             sb.append(d[i]);
-            sb.append(String.valueOf(r.f7971c));
+            sb.append(String.valueOf(r.f5131c));
         } else if (i2 == 1) {
             sb = new StringBuilder();
             sb.append(String.valueOf(Arrays.copyOf(s.b, j)));
@@ -322,13 +322,13 @@ public final class t extends g {
         } else if (i2 == 2) {
             sb = new StringBuilder();
             sb.append(String.valueOf(Arrays.copyOfRange(s.b, m, l)));
-            sb.append(String.valueOf(f7977c));
+            sb.append(String.valueOf(f5137c));
         } else if (i2 != 3) {
             sb = null;
         } else {
             sb = new StringBuilder();
             sb.append(String.valueOf(Arrays.copyOfRange(s.b, m, l)));
-            sb.append(String.valueOf(r.f7971c));
+            sb.append(String.valueOf(r.f5131c));
         }
         return sb.toString().toCharArray();
     }
@@ -353,7 +353,7 @@ public final class t extends g {
         try {
             return w.b(str) ? URLEncoder.encode(str, "utf-8") : "";
         } catch (Throwable th) {
-            o.b(f7976a, th.getMessage(), th);
+            o.b(f5136a, th.getMessage(), th);
             return "";
         }
     }
@@ -383,7 +383,7 @@ public final class t extends g {
             }
             return false;
         } catch (Exception e2) {
-            o.d(f7976a, e2.getMessage());
+            o.d(f5136a, e2.getMessage());
             return false;
         }
     }
@@ -534,7 +534,7 @@ public final class t extends g {
             }
             return false;
         } catch (Exception e2) {
-            o.d(f7976a, e2.getMessage());
+            o.d(f5136a, e2.getMessage());
             return false;
         }
     }
@@ -575,7 +575,7 @@ public final class t extends g {
             }
             return i2;
         } catch (Exception e3) {
-            o.d(f7976a, e3.getMessage());
+            o.d(f5136a, e3.getMessage());
             return -1;
         }
     }
@@ -627,7 +627,7 @@ public final class t extends g {
                 }
                 return z;
             } catch (Exception e2) {
-                o.d(f7976a, e2.getMessage());
+                o.d(f5136a, e2.getMessage());
                 return false;
             }
         } catch (Throwable th) {

@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentManager;
 import com.blued.android.core.image.ImageLoader;
@@ -20,9 +21,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYConfessedRoomView.class */
 public final class YYConfessedRoomView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewConfessedRoomBinding f18104a;
+    private ViewConfessedRoomBinding a;
     private long b;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
@@ -41,9 +40,9 @@ public final class YYConfessedRoomView extends FrameLayout {
     public YYConfessedRoomView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        ViewConfessedRoomBinding a2 = ViewConfessedRoomBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18104a = a2;
+        ViewConfessedRoomBinding a = ViewConfessedRoomBinding.a(LayoutInflater.from(getContext()), this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -59,14 +58,14 @@ public final class YYConfessedRoomView extends FrameLayout {
     public final void a(final BaseYYStudioFragment re, ConfessedIMMode da) {
         Intrinsics.e(re, "re");
         Intrinsics.e(da, "da");
-        ImageLoader.a(re.getFragmentActive(), ImgURLMap.f10885a.a("yy_confessed_room_view_url_title")).a(this.f18104a.f16846a);
+        ImageLoader.a(re.getFragmentActive(), ImgURLMap.a.a("yy_confessed_room_view_url_title")).a(this.a.a);
         ConfessedUserMode confession_user = da.getConfession_info().getConfession_user();
         if (confession_user != null) {
-            ImageLoader.a(re.getFragmentActive(), confession_user.getAvatar()).b(R.drawable.user_bg_round).c().a(getBinding().b);
+            ImageLoader.a(re.getFragmentActive(), confession_user.getAvatar()).b(R.drawable.user_bg_round).c().a((ImageView) getBinding().b);
         }
         ConfessedUserMode being_confession_user_to = da.getConfession_info().getBeing_confession_user_to();
         if (being_confession_user_to != null) {
-            ImageLoader.a(re.getFragmentActive(), being_confession_user_to.getAvatar()).b(R.drawable.user_bg_round).c().a(getBinding().d);
+            ImageLoader.a(re.getFragmentActive(), being_confession_user_to.getAvatar()).b(R.drawable.user_bg_round).c().a((ImageView) getBinding().d);
         }
         this.b = da.getConfession_info().getPosition_end_time();
         setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYConfessedRoomView$R6rhADfWLbaGtHRQQPjrBo97Pgs
@@ -83,7 +82,7 @@ public final class YYConfessedRoomView extends FrameLayout {
             setVisibility(8);
             return false;
         }
-        TextView textView = this.f18104a.f;
+        TextView textView = this.a.f;
         StringBuilder sb = new StringBuilder();
         sb.append(currentTimeMillis);
         sb.append('s');
@@ -92,15 +91,15 @@ public final class YYConfessedRoomView extends FrameLayout {
             setVisibility(0);
         }
         if (currentTimeMillis > 9999) {
-            this.f18104a.f.setTextSize(9.0f);
+            this.a.f.setTextSize(9.0f);
             return true;
         }
-        this.f18104a.f.setTextSize(11.0f);
+        this.a.f.setTextSize(11.0f);
         return true;
     }
 
     public final ViewConfessedRoomBinding getBinding() {
-        return this.f18104a;
+        return this.a;
     }
 
     public final long getEnd_time() {
@@ -109,7 +108,7 @@ public final class YYConfessedRoomView extends FrameLayout {
 
     public final void setBinding(ViewConfessedRoomBinding viewConfessedRoomBinding) {
         Intrinsics.e(viewConfessedRoomBinding, "<set-?>");
-        this.f18104a = viewConfessedRoomBinding;
+        this.a = viewConfessedRoomBinding;
     }
 
     public final void setEnd_time(long j) {

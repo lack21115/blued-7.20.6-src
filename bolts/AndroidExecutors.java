@@ -13,11 +13,11 @@ import java.util.concurrent.TimeUnit;
 final class AndroidExecutors {
 
     /* renamed from: a  reason: collision with root package name */
-    static final int f3681a;
+    static final int f3633a;
     static final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final AndroidExecutors f3682c = new AndroidExecutors();
+    private static final AndroidExecutors f3634c = new AndroidExecutors();
     private static final int e;
     private final Executor d = new UIThreadExecutor();
 
@@ -35,7 +35,7 @@ final class AndroidExecutors {
     static {
         int availableProcessors = Runtime.getRuntime().availableProcessors();
         e = availableProcessors;
-        f3681a = availableProcessors + 1;
+        f3633a = availableProcessors + 1;
         b = (availableProcessors * 2) + 1;
     }
 
@@ -43,7 +43,7 @@ final class AndroidExecutors {
     }
 
     public static ExecutorService a() {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(f3681a, b, 1L, TimeUnit.SECONDS, new LinkedBlockingQueue());
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(f3633a, b, 1L, TimeUnit.SECONDS, new LinkedBlockingQueue());
         a(threadPoolExecutor, true);
         return threadPoolExecutor;
     }
@@ -55,6 +55,6 @@ final class AndroidExecutors {
     }
 
     public static Executor b() {
-        return f3682c.d;
+        return f3634c.d;
     }
 }

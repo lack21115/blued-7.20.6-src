@@ -135,7 +135,7 @@ public class PixelFrame extends k {
             this.mMatrix = new float[16];
             float[] matrix = pixelFrame.getMatrix();
             float[] fArr = this.mMatrix;
-            System.arraycopy((Object) matrix, 0, (Object) fArr, 0, fArr.length);
+            System.arraycopy(matrix, 0, fArr, 0, fArr.length);
         }
         this.mMatrix = pixelFrame.mMatrix;
         this.mData = pixelFrame.mData;

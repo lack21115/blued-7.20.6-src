@@ -39,11 +39,11 @@ import java.util.Map;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23638a = "CheckUtils";
+    private static final String f10030a = "CheckUtils";
     private static Integer b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23639c = "checkOpNoThrow";
+    private static final String f10031c = "checkOpNoThrow";
     private static final String d = "OP_POST_NOTIFICATION";
     private static final ServiceConnection e = new ServiceConnection() { // from class: com.igexin.push.f.c.1
         @Override // android.content.ServiceConnection
@@ -78,8 +78,8 @@ public final class c {
         for (String str2 : map.get(str).b) {
             com.igexin.push.core.b.f fVar = map.get(str2);
             if (fVar != null) {
-                fVar.f23440c--;
-                if (fVar.f23440c == 0) {
+                fVar.f9832c--;
+                if (fVar.f9832c == 0) {
                     a(map, str2);
                 }
             }
@@ -91,14 +91,14 @@ public final class c {
     }
 
     public static boolean a(long j) {
-        if (com.igexin.push.config.d.f23376c == 0) {
+        if (com.igexin.push.config.d.f9768c == 0) {
             return false;
         }
         Date date = new Date(j);
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         int i = calendar.get(11);
-        int i2 = com.igexin.push.config.d.b + com.igexin.push.config.d.f23376c;
+        int i2 = com.igexin.push.config.d.b + com.igexin.push.config.d.f9768c;
         int i3 = i2;
         if (i2 >= 24) {
             i3 = i2 - 24;
@@ -185,7 +185,7 @@ public final class c {
         if (r0 == null) goto L66;
      */
     /* JADX WARN: Code restructure failed: missing block: B:52:0x0191, code lost:
-        r0.f23440c++;
+        r0.f9832c++;
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x01a5, code lost:
         if (r0.contains(r0) == false) goto L65;
@@ -200,7 +200,7 @@ public final class c {
         if (r0.hasNext() == false) goto L76;
      */
     /* JADX WARN: Code restructure failed: missing block: B:59:0x01c4, code lost:
-        a(r0, ((com.igexin.push.core.b.f) r0.next()).f23439a);
+        a(r0, ((com.igexin.push.core.b.f) r0.next()).f9831a);
      */
     /* JADX WARN: Code restructure failed: missing block: B:61:0x01dd, code lost:
         if (r0.size() <= 0) goto L82;
@@ -242,7 +242,7 @@ public final class c {
                 String packageName = context.getApplicationContext().getPackageName();
                 int i = applicationInfo.uid;
                 Class<?> cls = Class.forName(AppOpsManager.class.getName());
-                return ((Integer) cls.getMethod(f23639c, Integer.TYPE, Integer.TYPE, String.class).invoke(appOpsManager, Integer.valueOf(((Integer) cls.getDeclaredField(d).get(Integer.class)).intValue()), Integer.valueOf(i), packageName)).intValue() == 0;
+                return ((Integer) cls.getMethod(f10031c, Integer.TYPE, Integer.TYPE, String.class).invoke(appOpsManager, Integer.valueOf(((Integer) cls.getDeclaredField(d).get(Integer.class)).intValue()), Integer.valueOf(i), packageName)).intValue() == 0;
             }
             return true;
         } catch (Throwable th) {
@@ -478,7 +478,7 @@ public final class c {
             if (arrayList.isEmpty()) {
                 return false;
             }
-            Iterator<E> it = arrayList.iterator();
+            Iterator it = arrayList.iterator();
             do {
                 if (!it.hasNext()) {
                     return false;
@@ -492,7 +492,7 @@ public final class c {
     }
 
     public static void d() {
-        com.igexin.push.core.e.y = ((PowerManager) com.igexin.push.core.e.l.getSystemService("power")).isScreenOn() ? 1 : 0;
+        com.igexin.push.core.e.y = ((PowerManager) com.igexin.push.core.e.l.getSystemService(Context.POWER_SERVICE)).isScreenOn() ? 1 : 0;
     }
 
     private static boolean d(Context context) {
@@ -512,13 +512,13 @@ public final class c {
         try {
             if (Build.VERSION.SDK_INT < 28 || !a(com.igexin.push.core.e.l)) {
                 k.a(str);
-                com.igexin.c.a.c.a.b(f23638a, "checkApp by GtPm");
+                com.igexin.c.a.c.a.b(f10030a, "checkApp by GtPm");
                 return true;
             }
             return false;
         } catch (Exception e2) {
-            com.igexin.c.a.c.a.a(f23638a, e2.toString());
-            com.igexin.c.a.c.a.b(f23638a, "checkApp by GtPm");
+            com.igexin.c.a.c.a.a(f10030a, e2.toString());
+            com.igexin.c.a.c.a.b(f10030a, "checkApp by GtPm");
             return false;
         }
     }
@@ -537,10 +537,10 @@ public final class c {
                 return false;
             }
             String str = activeNetworkInfo.getType() == 0 ? "mobile" : activeNetworkInfo.getType() == 1 ? "wifi" : "none";
-            com.igexin.c.a.c.a.a(f23638a + str + "|connected", new Object[0]);
+            com.igexin.c.a.c.a.a(f10030a + str + "|connected", new Object[0]);
             return true;
         } catch (Throwable th) {
-            com.igexin.c.a.c.a.b(f23638a, "network available ex =" + th.toString());
+            com.igexin.c.a.c.a.b(f10030a, "network available ex =" + th.toString());
             com.igexin.c.a.c.a.a(th);
             return false;
         }

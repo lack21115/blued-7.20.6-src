@@ -6,14 +6,14 @@ import android.util.Log;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f24297a;
+    private static boolean f10610a;
 
     public static void a() {
-        f24297a = true;
+        f10610a = true;
     }
 
     public static void a(String str, String str2) {
-        if (f24297a) {
+        if (f10610a) {
             Log.d(str, str2);
         }
     }
@@ -23,7 +23,7 @@ public class d {
         String message;
         StringBuilder sb;
         if (th != null) {
-            if (f24297a) {
+            if (f10610a) {
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(str2);
                 sb2.append("##Throwable##");
@@ -50,7 +50,7 @@ public class d {
     }
 
     public static void b(String str, String str2) {
-        if (f24297a) {
+        if (f10610a) {
             Log.i(str, str2);
         }
     }

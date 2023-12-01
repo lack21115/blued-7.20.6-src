@@ -10,7 +10,6 @@ import android.os.Process;
 import android.os.StatFs;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.openalliance.ad.constant.bc;
 import com.igexin.assist.control.xiaomi.XmSystemUtils;
 import com.kuaishou.weapon.p0.an;
@@ -34,11 +33,11 @@ import java.util.Iterator;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f35131a = {"/su", "/su/bin/su", "/sbin/su", "/data/local/xbin/su", "/data/local/bin/su", "/data/local/su", "/system/xbin/su", "/system/bin/su", "/system/sd/xbin/su", "/system/bin/failsafe/su", "/system/bin/cufsdosck", "/system/xbin/cufsdosck", "/system/bin/cufsmgr", "/system/xbin/cufsmgr", "/system/bin/cufaevdd", "/system/xbin/cufaevdd", "/system/bin/conbb", "/system/xbin/conbb"};
+    private static final String[] f21440a = {"/su", "/su/bin/su", "/sbin/su", "/data/local/xbin/su", "/data/local/bin/su", "/data/local/su", "/system/xbin/su", "/system/bin/su", "/system/sd/xbin/su", "/system/bin/failsafe/su", "/system/bin/cufsdosck", "/system/xbin/cufsdosck", "/system/bin/cufsmgr", "/system/xbin/cufsmgr", "/system/bin/cufaevdd", "/system/xbin/cufaevdd", "/system/bin/conbb", "/system/xbin/conbb"};
     private static final String[] b = {"com.ami.duosupdater.ui", "com.ami.launchmetro", "com.ami.syncduosservices", "com.bluestacks.home", "com.bluestacks.windowsfilemanager", "com.bluestacks.settings", "com.bluestacks.bluestackslocationprovider", "com.bluestacks.appsettings", "com.bluestacks.bstfolder", "com.bluestacks.BstCommandProcessor", "com.bluestacks.s2p", "com.bluestacks.setup", "com.kaopu001.tiantianserver", "com.kpzs.helpercenter", "com.kaopu001.tiantianime", "com.android.development_settings", "com.android.development", "com.android.customlocale2", "com.genymotion.superuser", "com.genymotion.clipboardproxy", "com.uc.xxzs.keyboard", "com.uc.xxzs", "com.blue.huang17.agent", "com.blue.huang17.launcher", "com.blue.huang17.ime", "com.microvirt.guide", "com.microvirt.market", "com.microvirt.memuime", "cn.itools.vm.launcher", "cn.itools.vm.proxy", "cn.itools.vm.softkeyboard", "cn.itools.avdmarket", "com.syd.IME", "com.bignox.app.store.hd", "com.bignox.launcher", "com.bignox.app.phone", "com.bignox.app.noxservice", "com.android.noxpush", "com.haimawan.push", "me.haima.helpcenter", "com.windroy.launcher", "com.windroy.superuser", "com.windroy.launcher", "com.windroy.ime", "com.android.flysilkworm", "com.android.emu.inputservice", "com.tiantian.ime", "com.microvirt.launcher", "me.le8.androidassist", "com.vphone.helper", "com.vphone.launcher", "com.duoyi.giftcenter.giftcenter"};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String[] f35132c = {"/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq", "/system/lib/libc_malloc_debug_qemu.so", "/sys/qemu_trace", "/system/bin/qemu-props", "/dev/socket/qemud", "/dev/qemu_pipe", "/dev/socket/baseband_genyd", "/dev/socket/genyd"};
+    private static final String[] f21441c = {"/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq", "/system/lib/libc_malloc_debug_qemu.so", "/sys/qemu_trace", "/system/bin/qemu-props", "/dev/socket/qemud", "/dev/qemu_pipe", "/dev/socket/baseband_genyd", "/dev/socket/genyd"};
 
     public static String a() {
         try {
@@ -274,7 +273,7 @@ public class b {
         }
         String a6 = z.a(context, "ro.build.nubia.rom.name");
         if (!z.a(a6) && !a6.equals(bc.b.S)) {
-            return "Zte/NUBIA/" + a6 + BridgeUtil.UNDERLINE_STR + z.a(context, "ro.build.nubia.rom.code");
+            return "Zte/NUBIA/" + a6 + "_" + z.a(context, "ro.build.nubia.rom.code");
         }
         String a7 = z.a(context, "ro.meizu.product.model");
         if (!z.a(a7) && !a7.equals(bc.b.S)) {
@@ -290,21 +289,21 @@ public class b {
         }
         String a10 = z.a(context, "ro.aa.romver");
         if (!z.a(a10) && !a10.equals(bc.b.S)) {
-            return "htc/" + a10 + BridgeUtil.SPLIT_MARK + z.a(context, "ro.build.description");
+            return "htc/" + a10 + "/" + z.a(context, "ro.build.description");
         }
         String a11 = z.a(context, "ro.lewa.version");
         if (!z.a(a11) && !a11.equals(bc.b.S)) {
-            return "tcl/" + a11 + BridgeUtil.SPLIT_MARK + z.a(context, "ro.build.display.id");
+            return "tcl/" + a11 + "/" + z.a(context, "ro.build.display.id");
         }
         String a12 = z.a(context, "ro.gn.gnromvernumber");
         if (!z.a(a12) && !a12.equals(bc.b.S)) {
-            return "amigo/" + a12 + BridgeUtil.SPLIT_MARK + z.a(context, "ro.build.display.id");
+            return "amigo/" + a12 + "/" + z.a(context, "ro.build.display.id");
         }
         String a13 = z.a(context, "ro.build.tyd.kbstyle_version");
         if (!z.a(a13) && !a13.equals(bc.b.S)) {
             return "dido/" + a13;
         }
-        return z.a(context, "ro.build.fingerprint") + BridgeUtil.SPLIT_MARK + z.a(context, "ro.build.rom.id");
+        return z.a(context, "ro.build.fingerprint") + "/" + z.a(context, "ro.build.rom.id");
     }
 
     public static long d() {
@@ -343,10 +342,10 @@ public class b {
             ArrayList arrayList = new ArrayList();
             while (true) {
                 int i2 = i;
-                if (i2 >= f35132c.length) {
+                if (i2 >= f21441c.length) {
                     break;
                 }
-                String[] strArr = f35132c;
+                String[] strArr = f21441c;
                 if (i2 == 0) {
                     i = new File(strArr[i2]).exists() ? i2 + 1 : 0;
                     arrayList.add(Integer.valueOf(i2));
@@ -709,7 +708,7 @@ public class b {
 
     public static boolean l() {
         boolean z;
-        String[] strArr = f35131a;
+        String[] strArr = f21440a;
         int length = strArr.length;
         int i = 0;
         while (true) {

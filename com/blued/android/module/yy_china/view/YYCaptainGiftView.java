@@ -23,13 +23,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYCaptainGiftView.class */
 public class YYCaptainGiftView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ShapeTextView f18079a;
+    private ShapeTextView a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f18080c;
+    private TextView c;
     private TextView d;
     private BaseYYStudioFragment e;
     private String f;
@@ -59,10 +55,10 @@ public class YYCaptainGiftView extends LinearLayout {
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_captain_gift_layout, (ViewGroup) this, true);
         this.b = (ImageView) findViewById(R.id.iv_captain_gift);
-        this.f18080c = (TextView) findViewById(R.id.tv_captain_gift_name);
+        this.c = (TextView) findViewById(R.id.tv_captain_gift_name);
         this.d = (TextView) findViewById(R.id.tv_captain_gift_price);
         ShapeTextView shapeTextView = (ShapeTextView) findViewById(R.id.tv_join_game);
-        this.f18079a = shapeTextView;
+        this.a = shapeTextView;
         shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYCaptainGiftView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {

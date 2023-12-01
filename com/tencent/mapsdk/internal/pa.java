@@ -4,11 +4,11 @@ import android.content.Context;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.android.material.timepicker.TimeModel;
 import com.tencent.mapsdk.internal.ca;
 import com.tencent.mapsdk.internal.da;
 import com.tencent.tencentmap.mapsdk.maps.TencentMapOptions;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.FileFilter;
 import java.lang.Thread;
@@ -28,11 +28,11 @@ public class pa implements oa {
     private static final int[] i;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f37687a;
+    private boolean f23996a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f37688c;
+    private int f23997c;
     private final Map<String, int[]> d = new HashMap();
     private final File e;
     private final Context f;
@@ -57,7 +57,7 @@ public class pa implements oa {
         @Override // java.lang.Thread.UncaughtExceptionHandler
         public void uncaughtException(Thread thread, Throwable th) {
             pa paVar = pa.this;
-            paVar.a(6, ma.f37643c, "UncaughtException: t[" + thread + "]", th);
+            paVar.a(6, ma.f23952c, "UncaughtException: t[" + thread + "]", th);
             throw new RuntimeException(th);
         }
     }
@@ -90,7 +90,7 @@ public class pa implements oa {
                 sb.append("|");
                 sb2.append(format);
                 sb2.append("|");
-                String str2 = str + BridgeUtil.UNDERLINE_STR + format;
+                String str2 = str + "_" + format;
                 File[] c2 = ga.c(pa.this.e, ".*" + str2 + ".*.log.*");
                 if (c2 != null && c2.length > 0) {
                     if (ja.a(c2, pa.this.e, "archive-" + str2)) {
@@ -104,7 +104,7 @@ public class pa implements oa {
             calendar.setTime(date);
             sb.deleteCharAt(sb.lastIndexOf("|")).append(")");
             sb2.deleteCharAt(sb2.lastIndexOf("|")).append(")");
-            String str3 = "archive-" + sb.toString() + BridgeUtil.UNDERLINE_STR + sb2.toString() + ".zip";
+            String str3 = "archive-" + sb.toString() + "_" + sb2.toString() + ".zip";
             File[] c3 = ga.c(pa.this.e, "archive-.*.zip");
             if (c3 == null) {
                 return null;
@@ -130,12 +130,12 @@ public class pa implements oa {
         public final /* synthetic */ File b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f37692c;
+        public final /* synthetic */ String f24001c;
         public final /* synthetic */ String d;
 
         public d(File file, String str, String str2) {
             this.b = file;
-            this.f37692c = str;
+            this.f24001c = str;
             this.d = str2;
         }
 
@@ -143,7 +143,7 @@ public class pa implements oa {
         public void run() {
             String str;
             boolean z;
-            File file = new File(this.b, this.f37692c + "-" + pa.d() + com.anythink.china.common.a.a.f);
+            File file = new File(this.b, this.f24001c + Constants.ACCEPT_TIME_SEPARATOR_SERVER + pa.d() + ".log");
             if (file.exists()) {
                 str = this.d + "\n";
             } else {
@@ -208,9 +208,9 @@ public class pa implements oa {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(int i2, String str, String str2, Throwable th) {
         String str3 = str;
-        if (!ma.f37643c.equals(str)) {
+        if (!ma.f23952c.equals(str)) {
             if (TextUtils.isEmpty(str)) {
-                str3 = ma.f37643c;
+                str3 = ma.f23952c;
             } else {
                 str3 = "TMS-" + str;
             }
@@ -279,31 +279,31 @@ public class pa implements oa {
             long uptimeMillis = SystemClock.uptimeMillis();
             long j = this.b;
             if (j != 0 && uptimeMillis - j >= 400) {
-                this.f37688c = 0;
+                this.f23997c = 0;
                 this.b = 0L;
-                this.f37687a = false;
+                this.f23996a = false;
                 return;
             }
             this.b = uptimeMillis;
-            this.f37688c++;
-            String str = "触发调试模式" + this.f37688c + "次";
-            int i2 = this.f37688c;
+            this.f23997c++;
+            String str = "触发调试模式" + this.f23997c + "次";
+            int i2 = this.f23997c;
             if (i2 >= 5 && i2 < 10) {
-                String str2 = "开发者调试在" + (10 - this.f37688c) + "次后开启";
+                String str2 = "开发者调试在" + (10 - this.f23997c) + "次后开启";
                 str = str2;
                 if (aVar != null) {
                     aVar.a(str2, 1).b();
                     str = str2;
                 }
             } else if (i2 == 10) {
-                this.f37687a = true;
+                this.f23996a = true;
                 str = "开发者调试已开启";
                 if (aVar != null) {
                     aVar.a("开发者调试已开启", 1).b();
                     str = "开发者调试已开启";
                 }
             }
-            a(5, ma.f37643c, str);
+            a(5, ma.f23952c, str);
         }
     }
 
@@ -318,7 +318,7 @@ public class pa implements oa {
     @Override // com.tencent.mapsdk.internal.oa
     public void a(String str) {
         if (b()) {
-            a(4, ma.f37643c, str);
+            a(4, ma.f23952c, str);
         }
     }
 
@@ -337,7 +337,7 @@ public class pa implements oa {
     @Override // com.tencent.mapsdk.internal.oa
     public void a(String str, Throwable th) {
         if (b()) {
-            a(4, ma.f37643c, str, th);
+            a(4, ma.f23952c, str, th);
         }
     }
 
@@ -392,7 +392,7 @@ public class pa implements oa {
     public boolean a(int i2, String str) {
         boolean z = true;
         if (!this.d.containsKey(str)) {
-            if (!this.f37687a) {
+            if (!this.f23996a) {
                 if (mi.d && !h.contains(str)) {
                     return true;
                 }
@@ -421,7 +421,7 @@ public class pa implements oa {
     @Override // com.tencent.mapsdk.internal.oa
     public void b(String str) {
         if (b()) {
-            a(6, ma.f37643c, str);
+            a(6, ma.f23952c, str);
         }
     }
 
@@ -435,13 +435,13 @@ public class pa implements oa {
     @Override // com.tencent.mapsdk.internal.oa
     public void b(String str, Throwable th) {
         if (b()) {
-            a(3, ma.f37643c, str, th);
+            a(3, ma.f23952c, str, th);
         }
     }
 
     @Override // com.tencent.mapsdk.internal.oa
     public boolean b() {
-        return d(ma.f37643c);
+        return d(ma.f23952c);
     }
 
     @Override // com.tencent.mapsdk.internal.oa
@@ -452,7 +452,7 @@ public class pa implements oa {
     @Override // com.tencent.mapsdk.internal.oa
     public void c(String str) {
         if (b()) {
-            a(2, ma.f37643c, str);
+            a(2, ma.f23952c, str);
         }
     }
 
@@ -466,7 +466,7 @@ public class pa implements oa {
     @Override // com.tencent.mapsdk.internal.oa
     public void c(String str, Throwable th) {
         if (b()) {
-            a(5, ma.f37643c, str, th);
+            a(5, ma.f23952c, str, th);
         }
     }
 
@@ -487,7 +487,7 @@ public class pa implements oa {
     @Override // com.tencent.mapsdk.internal.oa
     public void d(String str, Throwable th) {
         if (b()) {
-            a(2, ma.f37643c, str, th);
+            a(2, ma.f23952c, str, th);
         }
     }
 
@@ -497,7 +497,7 @@ public class pa implements oa {
         if (this.d.containsKey(str)) {
             return true;
         }
-        if (!this.f37687a) {
+        if (!this.f23996a) {
             if (mi.d && !h.contains(str)) {
                 return true;
             }
@@ -528,21 +528,21 @@ public class pa implements oa {
     @Override // com.tencent.mapsdk.internal.oa
     public void e(String str, Throwable th) {
         if (b()) {
-            a(6, ma.f37643c, str, th);
+            a(6, ma.f23952c, str, th);
         }
     }
 
     @Override // com.tencent.mapsdk.internal.oa
     public void f(String str) {
         if (b()) {
-            a(3, ma.f37643c, str);
+            a(3, ma.f23952c, str);
         }
     }
 
     @Override // com.tencent.mapsdk.internal.oa
     public void g(String str) {
         if (b()) {
-            a(5, ma.f37643c, str);
+            a(5, ma.f23952c, str);
         }
     }
 

@@ -6,7 +6,7 @@ import java.util.UUID;
 public class v2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static j2<String> f21327a = new a();
+    public static j2<String> f7721a = new a();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/v2$a.class */
     public static final class a extends j2<String> {

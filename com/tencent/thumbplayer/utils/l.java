@@ -10,43 +10,43 @@ import org.json.JSONObject;
 public class l implements com.tencent.thumbplayer.common.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Properties f39441a;
+    protected final Properties f25750a;
 
     public l() {
         this(null);
     }
 
     public l(Properties properties) {
-        this.f39441a = new Properties();
+        this.f25750a = new Properties();
         if (properties != null) {
-            for (Map.Entry<Object, Object> entry : properties.entrySet()) {
+            for (Map.Entry entry : properties.entrySet()) {
                 a((String) entry.getKey(), (String) entry.getValue());
             }
         }
     }
 
     public Properties a() {
-        return this.f39441a;
+        return this.f25750a;
     }
 
     @Override // com.tencent.thumbplayer.common.a.a
     public void a(String str, float f) {
         if (str != null) {
-            this.f39441a.put(str, String.valueOf(f));
+            this.f25750a.put(str, String.valueOf(f));
         }
     }
 
     @Override // com.tencent.thumbplayer.common.a.a
     public void a(String str, int i) {
         if (str != null) {
-            this.f39441a.put(str, String.valueOf(i));
+            this.f25750a.put(str, String.valueOf(i));
         }
     }
 
     @Override // com.tencent.thumbplayer.common.a.a
     public void a(String str, long j) {
         if (str != null) {
-            this.f39441a.put(str, String.valueOf(j));
+            this.f25750a.put(str, String.valueOf(j));
         }
     }
 
@@ -54,9 +54,9 @@ public class l implements com.tencent.thumbplayer.common.a.a {
     public void a(String str, String str2) {
         if (str != null) {
             if (TextUtils.isEmpty(str2)) {
-                this.f39441a.put(str, "");
+                this.f25750a.put(str, "");
             } else {
-                this.f39441a.put(str, str2);
+                this.f25750a.put(str, str2);
             }
         }
     }
@@ -66,7 +66,7 @@ public class l implements com.tencent.thumbplayer.common.a.a {
         if (map == null) {
             throw new IllegalArgumentException("map must not be null!");
         }
-        for (Map.Entry<Object, Object> entry : this.f39441a.entrySet()) {
+        for (Map.Entry entry : this.f25750a.entrySet()) {
             Object key = entry.getKey();
             Object value = entry.getValue();
             if (value == null) {
@@ -78,7 +78,7 @@ public class l implements com.tencent.thumbplayer.common.a.a {
     }
 
     public String toString() {
-        JSONObject jSONObject = new JSONObject(this.f39441a);
+        JSONObject jSONObject = new JSONObject(this.f25750a);
         if (jSONObject.has("data")) {
             try {
                 String string = jSONObject.getString("data");

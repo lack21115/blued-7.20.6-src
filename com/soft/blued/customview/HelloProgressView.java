@@ -20,11 +20,11 @@ import java.text.DecimalFormat;
 public class HelloProgressView extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    DecimalFormat f28431a;
+    DecimalFormat f14741a;
     private ValueAnimator b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f28432c;
+    private float f14742c;
     private int d;
     private float e;
     private float f;
@@ -39,7 +39,7 @@ public class HelloProgressView extends View {
     public HelloProgressView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         float a2 = a(15.0f);
-        this.f28432c = a2;
+        this.f14742c = a2;
         this.d = (int) Math.max(5.0f, a2);
         this.e = 0.0f;
         this.f = 0.0f;
@@ -47,7 +47,7 @@ public class HelloProgressView extends View {
         this.h = 10.0f;
         this.i = 10.0f;
         this.j = 3000;
-        this.f28431a = new DecimalFormat(ci.d);
+        this.f14741a = new DecimalFormat(ci.d);
         int[] iArr = {Color.parseColor("#ffffff"), Color.parseColor("#016dff"), Color.parseColor("#62d4d4"), Color.parseColor("#62d4d4")};
         this.k = iArr;
         this.l = new float[iArr.length];
@@ -91,9 +91,8 @@ public class HelloProgressView extends View {
         this.b.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         float a2 = a(5.0f);
         float height = (getHeight() - (this.d * 2)) / 2;
@@ -108,10 +107,10 @@ public class HelloProgressView extends View {
         paint.setStrokeWidth(a2);
         paint.setStrokeCap(Paint.Cap.ROUND);
         new LinearGradient(0.0f, 0.0f, getWidth(), getHeight(), this.k, this.l, Shader.TileMode.MIRROR);
-        this.l[0] = Float.parseFloat(this.f28431a.format(this.m[0] / this.g));
-        this.l[1] = Float.parseFloat(this.f28431a.format(this.m[1] / this.g));
-        this.l[2] = Float.parseFloat(this.f28431a.format(this.m[2] / this.g));
-        this.l[3] = Float.parseFloat(this.f28431a.format(this.m[3] / this.g));
+        this.l[0] = Float.parseFloat(this.f14741a.format(this.m[0] / this.g));
+        this.l[1] = Float.parseFloat(this.f14741a.format(this.m[1] / this.g));
+        this.l[2] = Float.parseFloat(this.f14741a.format(this.m[2] / this.g));
+        this.l[3] = Float.parseFloat(this.f14741a.format(this.m[3] / this.g));
         SweepGradient sweepGradient = new SweepGradient(height, height, this.k, this.l);
         Matrix matrix = new Matrix();
         matrix.setRotate(0.0f, height, height);
@@ -122,9 +121,8 @@ public class HelloProgressView extends View {
         canvas.drawArc(rectF, this.h, this.e, false, paint);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         setMeasuredDimension(a(i, true), a(i2, false));
     }
 

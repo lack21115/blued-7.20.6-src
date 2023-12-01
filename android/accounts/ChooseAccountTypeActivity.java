@@ -1,5 +1,6 @@
 package android.accounts;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +18,6 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.android.internal.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -44,10 +44,10 @@ public class ChooseAccountTypeActivity extends Activity {
         public View getView(int i, View view, ViewGroup viewGroup) {
             ViewHolder viewHolder;
             if (view == null) {
-                view = this.mLayoutInflater.inflate(R.layout.choose_account_row, (ViewGroup) null);
+                view = this.mLayoutInflater.inflate(17367101, (ViewGroup) null);
                 viewHolder = new ViewHolder();
-                viewHolder.text = (TextView) view.findViewById(R.id.account_row_text);
-                viewHolder.icon = (ImageView) view.findViewById(R.id.account_row_icon);
+                viewHolder.text = (TextView) view.findViewById(16909029);
+                viewHolder.icon = (ImageView) view.findViewById(16909028);
                 view.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder) view.getTag();
@@ -174,9 +174,9 @@ public class ChooseAccountTypeActivity extends Activity {
         } else if (this.mAuthenticatorInfosToDisplay.size() == 1) {
             setResultAndFinish(this.mAuthenticatorInfosToDisplay.get(0).desc.type);
         } else {
-            setContentView(R.layout.choose_account_type);
-            ListView listView = (ListView) findViewById(16908298);
-            listView.setAdapter((ListAdapter) new AccountArrayAdapter(this, 17367043, this.mAuthenticatorInfosToDisplay));
+            setContentView(17367102);
+            ListView listView = (ListView) findViewById(R.id.list);
+            listView.setAdapter((ListAdapter) new AccountArrayAdapter(this, R.layout.simple_list_item_1, this.mAuthenticatorInfosToDisplay));
             listView.setChoiceMode(0);
             listView.setTextFilterEnabled(false);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() { // from class: android.accounts.ChooseAccountTypeActivity.1

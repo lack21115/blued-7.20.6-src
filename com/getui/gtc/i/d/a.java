@@ -11,11 +11,11 @@ import java.lang.reflect.Method;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f22035a = Integer.MIN_VALUE;
+    private static int f8428a = Integer.MIN_VALUE;
     private static Object b;
 
     private static int a() {
-        int i = f22035a;
+        int i = f8428a;
         if (i != Integer.MIN_VALUE) {
             return i;
         }
@@ -25,7 +25,7 @@ public final class a {
                 Method declaredMethod = cls.getDeclaredMethod(new String(Base64.decode("Z2V0VXNlcklk", 0)), Integer.TYPE);
                 declaredMethod.setAccessible(true);
                 int intValue = ((Integer) declaredMethod.invoke(cls, Integer.valueOf(Process.myUid()))).intValue();
-                f22035a = intValue;
+                f8428a = intValue;
                 return intValue;
             } catch (Throwable th) {
                 com.getui.gtc.i.c.a.a(th);

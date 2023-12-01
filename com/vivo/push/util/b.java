@@ -14,11 +14,11 @@ import java.util.Map;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f41131a;
+    protected Context f27440a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile SharedPreferences f41132c;
+    private volatile SharedPreferences f27441c;
     private HashMap<String, String> d = new HashMap<>();
     private HashMap<String, Long> e = new HashMap<>();
     private HashMap<String, Integer> f = new HashMap<>();
@@ -38,8 +38,8 @@ public class b {
     private void a(Map<String, String> map) {
         if (map.size() > 0) {
             b();
-            if (this.f41132c != null) {
-                SharedPreferences.Editor edit = this.f41132c.edit();
+            if (this.f27441c != null) {
+                SharedPreferences.Editor edit = this.f27441c.edit();
                 for (String str : map.keySet()) {
                     String str2 = map.get(str);
                     this.d.put(str, str2);
@@ -51,25 +51,25 @@ public class b {
     }
 
     private void b() {
-        if (this.f41132c == null) {
-            Context context = this.f41131a;
+        if (this.f27441c == null) {
+            Context context = this.f27440a;
             if (context == null) {
                 throw new RuntimeException("SharedPreferences is not init", new Throwable());
             }
-            this.f41132c = context.getSharedPreferences(this.b, 0);
+            this.f27441c = context.getSharedPreferences(this.b, 0);
         }
     }
 
     private List<String> c(String str) {
         Object a2;
         String[] split;
-        if (this.f41131a == null) {
+        if (this.f27440a == null) {
             p.c("BaseSharePreference", " parsLocalIv error mContext is null ");
             return null;
         }
         ArrayList arrayList = new ArrayList();
         try {
-            a2 = z.a(this.f41131a, this.f41131a.getPackageName(), str);
+            a2 = z.a(this.f27440a, this.f27440a.getPackageName(), str);
         } catch (Exception e) {
             p.c("BaseSharePreference", " parsLocalIv error e =" + e.getMessage());
             e.printStackTrace();
@@ -103,8 +103,8 @@ public class b {
             return num.intValue();
         }
         b();
-        if (this.f41132c != null) {
-            Integer valueOf = Integer.valueOf(this.f41132c.getInt(str, 0));
+        if (this.f27441c != null) {
+            Integer valueOf = Integer.valueOf(this.f27441c.getInt(str, 0));
             num = valueOf;
             if (!valueOf.equals(0)) {
                 this.f.put(str, valueOf);
@@ -120,8 +120,8 @@ public class b {
         this.g.clear();
         this.d.clear();
         b();
-        if (this.f41132c != null) {
-            SharedPreferences.Editor edit = this.f41132c.edit();
+        if (this.f27441c != null) {
+            SharedPreferences.Editor edit = this.f27441c.edit();
             edit.clear();
             a(edit);
         }
@@ -132,8 +132,8 @@ public class b {
             throw new RuntimeException("sharedFileName can't be null");
         }
         this.b = str;
-        this.f41132c = context.getSharedPreferences(str, 0);
-        this.f41131a = context;
+        this.f27441c = context.getSharedPreferences(str, 0);
+        this.f27440a = context;
         List<String> c2 = c("local_iv");
         if (c2 == null || c2.size() < 4) {
             p.a("BaseSharePreference", " initSecureCode error list is null ");
@@ -150,8 +150,8 @@ public class b {
     public final void a(String str, int i) {
         this.f.put(str, Integer.valueOf(i));
         b();
-        if (this.f41132c != null) {
-            SharedPreferences.Editor edit = this.f41132c.edit();
+        if (this.f27441c != null) {
+            SharedPreferences.Editor edit = this.f27441c.edit();
             edit.putInt(str, i);
             a(edit);
         }
@@ -160,8 +160,8 @@ public class b {
     public final void a(String str, long j) {
         this.e.put(str, Long.valueOf(j));
         b();
-        if (this.f41132c != null) {
-            SharedPreferences.Editor edit = this.f41132c.edit();
+        if (this.f27441c != null) {
+            SharedPreferences.Editor edit = this.f27441c.edit();
             edit.putLong(str, j);
             a(edit);
         }
@@ -170,8 +170,8 @@ public class b {
     public final void a(String str, String str2) {
         this.d.put(str, str2);
         b();
-        if (this.f41132c != null) {
-            SharedPreferences.Editor edit = this.f41132c.edit();
+        if (this.f27441c != null) {
+            SharedPreferences.Editor edit = this.f27441c.edit();
             edit.putString(str, str2);
             a(edit);
         }
@@ -183,8 +183,8 @@ public class b {
             return l.longValue();
         }
         b();
-        if (this.f41132c != null) {
-            Long valueOf = Long.valueOf(this.f41132c.getLong(str, j));
+        if (this.f27441c != null) {
+            Long valueOf = Long.valueOf(this.f27441c.getLong(str, j));
             l = valueOf;
             if (!valueOf.equals(Long.valueOf(j))) {
                 this.e.put(str, valueOf);
@@ -200,8 +200,8 @@ public class b {
             return str3;
         }
         b();
-        if (this.f41132c != null) {
-            String string = this.f41132c.getString(str, str2);
+        if (this.f27441c != null) {
+            String string = this.f27441c.getString(str, str2);
             str3 = string;
             if (!TextUtils.isEmpty(string)) {
                 str3 = string;
@@ -220,9 +220,9 @@ public class b {
         this.g.remove(str);
         this.d.remove(str);
         b();
-        if (this.f41132c != null) {
-            SharedPreferences.Editor edit = this.f41132c.edit();
-            if (this.f41132c.contains(str)) {
+        if (this.f27441c != null) {
+            SharedPreferences.Editor edit = this.f27441c.edit();
+            if (this.f27441c.contains(str)) {
                 edit.remove(str);
                 a(edit);
             }

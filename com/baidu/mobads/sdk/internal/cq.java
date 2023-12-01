@@ -16,7 +16,7 @@ import org.json.JSONObject;
 public class cq extends bf {
 
     /* renamed from: a  reason: collision with root package name */
-    private HashMap<String, Object> f9398a;
+    private HashMap<String, Object> f6558a;
     private int q;
     private RelativeLayout r;
     private CpuAdView.CpuAdViewInternalStatusListener s;
@@ -29,7 +29,7 @@ public class cq extends bf {
         if (cPUWebAdRequestParam == null) {
             av.c().e("内容联盟模板需要传入 CPUWebAdRequestParam配置信息");
         } else {
-            this.f9398a = (HashMap) cPUWebAdRequestParam.getParameters();
+            this.f6558a = (HashMap) cPUWebAdRequestParam.getParameters();
         }
     }
 
@@ -97,7 +97,7 @@ public class cq extends bf {
                     this.k.addEventListener("Update_fbReader_Setting", new cr(this));
                     this.k.addEventListener("closeInterstitialAd", new cs(this));
                     this.k.addEventListener("feOpenFbReader", new ct(this));
-                    JSONObject a2 = j.a(this.f9398a);
+                    JSONObject a2 = j.a(this.f6558a);
                     a2.put("isInitNovelSDK", an.f());
                     this.k.loadAd(jSONObject, a2);
                 }

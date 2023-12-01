@@ -21,7 +21,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.Map;
 import java.util.zip.ZipFile;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/tinker/loader/SystemClassLoaderAdder.class */
@@ -223,8 +222,8 @@ public class SystemClassLoaderAdder {
                 if (name3.startsWith(ShareConstants.TEST_DEX_NAME)) {
                     return -1;
                 }
-                boolean booleanValue = ((Boolean) Map.this.get(name2)).booleanValue();
-                boolean booleanValue2 = ((Boolean) Map.this.get(name3)).booleanValue();
+                boolean booleanValue = ((Boolean) hashMap.get(name2)).booleanValue();
+                boolean booleanValue2 = ((Boolean) hashMap.get(name3)).booleanValue();
                 if (!booleanValue || !booleanValue2) {
                     if (booleanValue) {
                         return -1;

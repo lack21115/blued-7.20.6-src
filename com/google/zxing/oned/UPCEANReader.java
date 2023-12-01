@@ -34,7 +34,7 @@ public abstract class UPCEANReader extends OneDReader {
         L_PATTERNS = r0;
         ?? r02 = new int[20];
         L_AND_G_PATTERNS = r02;
-        System.arraycopy((Object) r0, 0, (Object) r02, 0, 10);
+        System.arraycopy(r0, 0, r02, 0, 10);
         for (int i = 10; i < 20; i++) {
             int[] iArr = L_PATTERNS[i - 10];
             int[] iArr2 = new int[iArr.length];
@@ -105,7 +105,7 @@ public abstract class UPCEANReader extends OneDReader {
                 } else {
                     i2 += iArr2[0] + iArr2[1];
                     int i5 = i3 - 1;
-                    System.arraycopy((Object) iArr2, 2, (Object) iArr2, 0, i5);
+                    System.arraycopy(iArr2, 2, iArr2, 0, i5);
                     iArr2[i5] = 0;
                     iArr2[i3] = 0;
                     i3--;

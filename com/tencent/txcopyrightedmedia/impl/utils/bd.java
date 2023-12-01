@@ -12,11 +12,11 @@ import org.json.JSONObject;
 public final class bd implements aw {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40090a;
+    public String f26399a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f40091c;
+    public String f26400c;
     public String d;
     public String e;
     public String f;
@@ -44,7 +44,7 @@ public final class bd implements aw {
     public bd(String str, String str2) {
         Context applicationContext = TXCopyrightedMedia.instance().getApplicationContext();
         this.b = TXCopyrightedMedia.instance().getAppID();
-        this.f40091c = str;
+        this.f26400c = str;
         this.d = "";
         this.e = str2;
         this.f = aj.b(applicationContext);
@@ -63,7 +63,7 @@ public final class bd implements aw {
         this.s = 0L;
         this.t = applicationContext.getPackageName();
         this.u = "";
-        this.f40090a = this.j + System.currentTimeMillis() + ((int) (Math.random() * 10000.0d));
+        this.f26399a = this.j + System.currentTimeMillis() + ((int) (Math.random() * 10000.0d));
         this.v = aj.d(TXCopyrightedMedia.instance().getApplicationContext());
     }
 
@@ -83,9 +83,9 @@ public final class bd implements aw {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("Action", "ReportKTVPlay");
-            jSONObject.put("ReqId", this.f40090a);
-            jSONObject.put(com.alipay.sdk.packet.e.f, this.b);
-            jSONObject.put("MusicId", this.f40091c);
+            jSONObject.put("ReqId", this.f26399a);
+            jSONObject.put("AppId", this.b);
+            jSONObject.put("MusicId", this.f26400c);
             jSONObject.put("MusicType", this.d);
             jSONObject.put("BitrateType", this.e);
             jSONObject.put("AppName", this.f);
@@ -122,9 +122,9 @@ public final class bd implements aw {
     }
 
     public final void a(i.a aVar) {
-        this.p = aVar.f40102a;
+        this.p = aVar.f26411a;
         this.q = aVar.b;
-        this.r = aVar.f40103c;
+        this.r = aVar.f26412c;
     }
 
     @Override // com.tencent.txcopyrightedmedia.impl.utils.aw
@@ -143,7 +143,7 @@ public final class bd implements aw {
         this.r = "";
         this.s = 0L;
         this.u = "";
-        this.f40090a = this.j + System.currentTimeMillis() + ((int) (Math.random() * 10000.0d));
+        this.f26399a = this.j + System.currentTimeMillis() + ((int) (Math.random() * 10000.0d));
     }
 
     @Override // com.tencent.txcopyrightedmedia.impl.utils.aw
@@ -167,6 +167,6 @@ public final class bd implements aw {
     }
 
     public final String toString() {
-        return "ErrorTraceInfo{mReqId='" + this.f40090a + "', mAppId='" + this.b + "', mMusicId='" + this.f40091c + "', mMusicType='" + this.d + "', mBitrateType='" + this.e + "', mAppName='" + this.f + "', mReqTime='" + this.g + "', mSdkVersion='" + this.h + "', mDeviceType='" + this.i + "', mDeviceId='" + this.j + "', mDeviceSystem='" + this.k + "', mOSType='" + this.l + "', mNetType='" + this.m + "', mEventType='" + this.n + "', mMusicUrl='" + this.o + "', mClientErrCode='" + this.p + "', mSvrErrCode='" + this.q + "', mErrMsg='" + this.r + "', mCostTime='" + this.s + "', mPackageName='" + this.t + "', mBundleID='" + this.u + "'}";
+        return "ErrorTraceInfo{mReqId='" + this.f26399a + "', mAppId='" + this.b + "', mMusicId='" + this.f26400c + "', mMusicType='" + this.d + "', mBitrateType='" + this.e + "', mAppName='" + this.f + "', mReqTime='" + this.g + "', mSdkVersion='" + this.h + "', mDeviceType='" + this.i + "', mDeviceId='" + this.j + "', mDeviceSystem='" + this.k + "', mOSType='" + this.l + "', mNetType='" + this.m + "', mEventType='" + this.n + "', mMusicUrl='" + this.o + "', mClientErrCode='" + this.p + "', mSvrErrCode='" + this.q + "', mErrMsg='" + this.r + "', mCostTime='" + this.s + "', mPackageName='" + this.t + "', mBundleID='" + this.u + "'}";
     }
 }

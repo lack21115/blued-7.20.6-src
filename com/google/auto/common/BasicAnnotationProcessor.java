@@ -244,7 +244,7 @@ public abstract class BasicAnnotationProcessor extends AbstractProcessor {
     }
 
     /* renamed from: getSupportedAnnotationTypes */
-    public final ImmutableSet<String> m6263getSupportedAnnotationTypes() {
+    public final ImmutableSet<String> m3256getSupportedAnnotationTypes() {
         ImmutableSet.Builder builder = ImmutableSet.builder();
         UnmodifiableIterator<? extends Class<? extends Annotation>> it = getSupportedAnnotationClasses().iterator();
         while (it.hasNext()) {

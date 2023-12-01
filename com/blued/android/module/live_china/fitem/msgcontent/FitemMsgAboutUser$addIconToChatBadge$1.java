@@ -21,13 +21,9 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/msgcontent/FitemMsgAboutUser$addIconToChatBadge$1.class */
 public final class FitemMsgAboutUser$addIconToChatBadge$1 extends Lambda implements Function1<DslSpannableStringBuilder, Unit> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ FitemMsgAboutUser f12546a;
+    final /* synthetic */ FitemMsgAboutUser a;
     final /* synthetic */ int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ int f12547c;
+    final /* synthetic */ int c;
     final /* synthetic */ Context d;
     final /* synthetic */ TextView e;
     final /* synthetic */ LiveChatBadgeModel f;
@@ -36,9 +32,9 @@ public final class FitemMsgAboutUser$addIconToChatBadge$1 extends Lambda impleme
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FitemMsgAboutUser$addIconToChatBadge$1(FitemMsgAboutUser fitemMsgAboutUser, int i, int i2, Context context, TextView textView, LiveChatBadgeModel liveChatBadgeModel) {
         super(1);
-        this.f12546a = fitemMsgAboutUser;
+        this.a = fitemMsgAboutUser;
         this.b = i;
-        this.f12547c = i2;
+        this.c = i2;
         this.d = context;
         this.e = textView;
         this.f = liveChatBadgeModel;
@@ -50,7 +46,7 @@ public final class FitemMsgAboutUser$addIconToChatBadge$1 extends Lambda impleme
         Intrinsics.e(context, "$context");
         Intrinsics.e(tv, "$tv");
         Intrinsics.e(badgeModel, "$badgeModel");
-        FrameLayout frameLayout = (FrameLayout) this$0.f10935a.a(R.id.fl_icon_root);
+        FrameLayout frameLayout = (FrameLayout) this$0.a.a(R.id.fl_icon_root);
         if (frameLayout == null) {
             return;
         }
@@ -64,7 +60,7 @@ public final class FitemMsgAboutUser$addIconToChatBadge$1 extends Lambda impleme
         if (chat_badge_url == null || chat_badge_url.length() == 0) {
             return;
         }
-        IRequestHost iRequestHost = this$0.f10935a.b;
+        IRequestHost iRequestHost = this$0.a.b;
         String chat_badge_url2 = badgeModel.getChat_badge_url();
         Intrinsics.a((Object) chat_badge_url2);
         ImageLoader.a(iRequestHost, chat_badge_url2).g().g(-1).a(imageView);
@@ -74,10 +70,10 @@ public final class FitemMsgAboutUser$addIconToChatBadge$1 extends Lambda impleme
         int i;
         Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
         ColorDrawable colorDrawable = new ColorDrawable();
-        i = this.f12546a.g;
+        i = this.a.g;
         final int i2 = this.b;
-        final int i3 = this.f12547c;
-        final FitemMsgAboutUser fitemMsgAboutUser = this.f12546a;
+        final int i3 = this.c;
+        final FitemMsgAboutUser fitemMsgAboutUser = this.a;
         final Context context = this.d;
         final TextView textView = this.e;
         final LiveChatBadgeModel liveChatBadgeModel = this.f;
@@ -92,6 +88,6 @@ public final class FitemMsgAboutUser$addIconToChatBadge$1 extends Lambda impleme
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
         a(dslSpannableStringBuilder);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

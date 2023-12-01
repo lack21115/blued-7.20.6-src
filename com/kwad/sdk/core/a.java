@@ -17,7 +17,7 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.sdk.core.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/a$a.class */
-    public static final class C0553a {
+    public static final class C0383a {
         private static final a aby = new a((byte) 0);
     }
 
@@ -31,7 +31,7 @@ public final class a {
     }
 
     public static a tS() {
-        return C0553a.aby;
+        return C0383a.aby;
     }
 
     public final void a(String str, DownloadParams downloadParams) {

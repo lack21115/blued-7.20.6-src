@@ -29,11 +29,11 @@ public class h {
     private static volatile h d;
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f21429a;
+    boolean f7823a;
     final List<ZeusPluginStateListener> b = new CopyOnWriteArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    final List<ZeusPluginEventCallback> f21430c = new ArrayList();
+    final List<ZeusPluginEventCallback> f7824c = new ArrayList();
     private final Handler e = new Handler(Looper.getMainLooper());
 
     public static h a() {
@@ -91,8 +91,8 @@ public class h {
 
     private Object[] c() {
         Object[] array;
-        synchronized (this.f21430c) {
-            array = !this.f21430c.isEmpty() ? this.f21430c.toArray() : null;
+        synchronized (this.f7824c) {
+            array = !this.f7824c.isEmpty() ? this.f7824c.toArray() : null;
         }
         return array == null ? new Object[0] : array;
     }
@@ -123,7 +123,7 @@ public class h {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a(Application application, boolean z) {
         synchronized (this) {
-            if (this.f21429a) {
+            if (this.f7823a) {
                 ZeusLogger.w(ZeusLogger.TAG_INIT, "ZeusManager zeus has been inited!");
                 return;
             }
@@ -211,8 +211,8 @@ public class h {
                     }
                 }
             };
-            synchronized (a2.f21363a) {
-                a2.f21363a.add(aVar);
+            synchronized (a2.f7757a) {
+                a2.f7757a.add(aVar);
             }
             if (!globalParam.isCloseFlipped()) {
                 b.a();
@@ -239,7 +239,7 @@ public class h {
             b();
             ContentProviderManager.getInstance().initSystemContentProviderInfo();
             com.bytedance.pangle.receiver.b.a(application);
-            this.f21429a = true;
+            this.f7823a = true;
             a(ZeusPluginEventCallback.EVENT_FINISH_INITIALIZATION, 0, null, -1, null);
         }
     }

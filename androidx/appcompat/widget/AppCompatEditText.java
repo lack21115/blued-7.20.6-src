@@ -39,26 +39,26 @@ public class AppCompatEditText extends EditText implements EmojiCompatConfigurat
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<AppCompatEditText> {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1757a = false;
+        private boolean f1709a = false;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1758c;
+        private int f1710c;
 
         @Override // android.view.inspector.InspectionCompanion
         public void mapProperties(PropertyMapper propertyMapper) {
             this.b = propertyMapper.mapObject("backgroundTint", R.attr.backgroundTint);
-            this.f1758c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
-            this.f1757a = true;
+            this.f1710c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
+            this.f1709a = true;
         }
 
         @Override // android.view.inspector.InspectionCompanion
         public void readProperties(AppCompatEditText appCompatEditText, PropertyReader propertyReader) {
-            if (!this.f1757a) {
+            if (!this.f1709a) {
                 throw new InspectionCompanion.UninitializedPropertyMapException();
             }
             propertyReader.readObject(this.b, appCompatEditText.getBackgroundTintList());
-            propertyReader.readObject(this.f1758c, appCompatEditText.getBackgroundTintMode());
+            propertyReader.readObject(this.f1710c, appCompatEditText.getBackgroundTintMode());
         }
     }
 
@@ -88,9 +88,8 @@ public class AppCompatEditText extends EditText implements EmojiCompatConfigurat
         initEmojiKeyListener(this.mAppCompatEmojiEditTextHelper);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
         if (appCompatBackgroundHelper != null) {
@@ -130,6 +129,7 @@ public class AppCompatEditText extends EditText implements EmojiCompatConfigurat
         return Build.VERSION.SDK_INT >= 28 ? super.getText() : super.getEditableText();
     }
 
+    @Override // android.widget.TextView
     public TextClassifier getTextClassifier() {
         AppCompatTextClassifierHelper appCompatTextClassifierHelper;
         return (Build.VERSION.SDK_INT >= 28 || (appCompatTextClassifierHelper = this.mTextClassifierHelper) == null) ? super.getTextClassifier() : appCompatTextClassifierHelper.getTextClassifier();
@@ -254,6 +254,7 @@ public class AppCompatEditText extends EditText implements EmojiCompatConfigurat
         }
     }
 
+    @Override // android.widget.TextView
     public void setTextClassifier(TextClassifier textClassifier) {
         AppCompatTextClassifierHelper appCompatTextClassifierHelper;
         if (Build.VERSION.SDK_INT >= 28 || (appCompatTextClassifierHelper = this.mTextClassifierHelper) == null) {

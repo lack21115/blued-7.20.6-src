@@ -20,11 +20,11 @@ public class mg extends v9 {
     public boolean h() {
         Bitmap bitmap = this.b;
         boolean z = false;
-        if (bitmap != null && !bitmap.isRecycled() && this.f38065a.get() <= 0) {
+        if (bitmap != null && !bitmap.isRecycled() && this.f24374a.get() <= 0) {
             this.b.recycle();
             ra.g("BD").a("tileBitmap recycle out");
         }
-        this.f38066c = null;
+        this.f24375c = null;
         Bitmap bitmap2 = this.b;
         if (bitmap2 == null || bitmap2.isRecycled()) {
             z = true;

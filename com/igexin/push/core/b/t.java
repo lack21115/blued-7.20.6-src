@@ -4,11 +4,11 @@ package com.igexin.push.core.b;
 public final class t {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f23461a;
+    public String f9853a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f23462c;
+    public String f9854c;
     public String d;
 
     private String a() {
@@ -20,11 +20,11 @@ public final class t {
     }
 
     private String b() {
-        return this.f23461a;
+        return this.f9853a;
     }
 
     private void b(String str) {
-        this.f23461a = str;
+        this.f9853a = str;
     }
 
     private String c() {
@@ -36,10 +36,10 @@ public final class t {
     }
 
     private String d() {
-        return this.f23462c;
+        return this.f9854c;
     }
 
     private void d(String str) {
-        this.f23462c = str;
+        this.f9854c = str;
     }
 }

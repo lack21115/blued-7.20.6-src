@@ -30,17 +30,13 @@ import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
+import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopTaskView.class */
 public class PopTaskView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f15224a;
+    private LayoutInflater a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15225c;
+    private View c;
     private View d;
     private MyPopupWindow e;
     private View f;
@@ -53,11 +49,10 @@ public class PopTaskView {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopTaskView$MyAdapter.class */
     public class MyAdapter extends BaseQuickAdapter<TaskModel, BaseViewHolder> {
         public MyAdapter() {
-            super(R.layout.item_live_task, null);
+            super(R.layout.item_live_task, (List) null);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final TaskModel taskModel) {
             ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_icon);
@@ -142,7 +137,7 @@ public class PopTaskView {
                 if (taskModel.task_id == 2) {
                     LiveEventBus.get("live_msg_daily_task_complete").post(Integer.valueOf((int) g.j));
                 }
-                LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_REFRESH_GIFT_LIST).post(true);
+                LiveEventBus.get("live_refresh_gift_list").post(true);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -159,10 +154,10 @@ public class PopTaskView {
 
     private void b() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f15224a = from;
+        this.a = from;
         View inflate = from.inflate(R.layout.pop_window_live_task, (ViewGroup) null);
         View findViewById = inflate.findViewById(R.id.tv_bg);
-        this.f15225c = findViewById;
+        this.c = findViewById;
         findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopTaskView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -187,15 +182,15 @@ public class PopTaskView {
             }
         });
         this.f = this.d.findViewById(R.id.loading);
-        RecyclerView recyclerView = (RecyclerView) this.d.findViewById(R.id.recycler_view);
-        this.g = recyclerView;
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.b));
+        RecyclerView findViewById3 = this.d.findViewById(R.id.recycler_view);
+        this.g = findViewById3;
+        findViewById3.setLayoutManager(new LinearLayoutManager(this.b));
         MyAdapter myAdapter = new MyAdapter();
         this.h = myAdapter;
         this.g.setAdapter(myAdapter);
         MyPopupWindow myPopupWindow = new MyPopupWindow(inflate, -1, -1, true);
         this.e = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.e.setTouchable(true);
         this.e.setOutsideTouchable(true);
         this.e.setFocusable(true);
@@ -233,7 +228,7 @@ public class PopTaskView {
     }
 
     public void a() {
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_SHOW_DIALOG).post(false);
+        LiveEventBus.get("live_show_dialog").post(false);
         this.d.setVisibility(8);
         this.d.startAnimation(AnimationUtils.loadAnimation(this.b, R.anim.push_bottom_out));
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.PopTaskView.6
@@ -251,8 +246,8 @@ public class PopTaskView {
         this.i = String.valueOf(j);
         this.j = str;
         EventTrackLive.a(LiveProtos.Event.LIVE_TASK_BTN_CLICK, this.i, this.j);
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_SHOW_DIALOG).post(true);
-        this.f15225c.clearAnimation();
+        LiveEventBus.get("live_show_dialog").post(true);
+        this.c.clearAnimation();
         this.d.clearAnimation();
         if (this.e.isShowing()) {
             this.e.a();

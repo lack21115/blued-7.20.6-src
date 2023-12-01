@@ -250,7 +250,7 @@ public final class Util {
         return new ThreadFactory() { // from class: com.squareup.okhttp.internal.Util.1
             @Override // java.util.concurrent.ThreadFactory
             public Thread newThread(Runnable runnable) {
-                Thread thread = new Thread(runnable, String.this);
+                Thread thread = new Thread(runnable, str);
                 thread.setDaemon(z);
                 return thread;
             }

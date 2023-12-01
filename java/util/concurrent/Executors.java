@@ -113,8 +113,9 @@ public class Executors {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-2895416-dex2jar.jar:java/util/concurrent/Executors$DelegatedScheduledExecutorService.class */
-    static class DelegatedScheduledExecutorService extends DelegatedExecutorService implements ScheduledExecutorService {
+    public static class DelegatedScheduledExecutorService extends DelegatedExecutorService implements ScheduledExecutorService {
         private final ScheduledExecutorService e;
 
         DelegatedScheduledExecutorService(ScheduledExecutorService scheduledExecutorService) {
@@ -241,9 +242,8 @@ public class Executors {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-2895416-dex2jar.jar:java/util/concurrent/Executors$RunnableAdapter.class */
-    public static final class RunnableAdapter<T> implements Callable<T> {
+    static final class RunnableAdapter<T> implements Callable<T> {
         final T result;
         final Runnable task;
 

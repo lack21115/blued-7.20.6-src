@@ -12,10 +12,10 @@ public final class l {
     private static Map<String, Boolean> b = new HashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, Boolean> f8749a;
+    private Map<String, Boolean> f5909a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, Boolean> f8750c;
+    private Map<String, Boolean> f5910c;
     private Map<String, Boolean> d;
     private Map<String, Boolean> e;
 
@@ -24,15 +24,15 @@ public final class l {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static l f8751a = new l((byte) 0);
+        public static l f5911a = new l((byte) 0);
 
         private a() {
         }
     }
 
     private l() {
-        this.f8749a = new HashMap();
-        this.f8750c = new HashMap();
+        this.f5909a = new HashMap();
+        this.f5910c = new HashMap();
         this.d = new HashMap();
         this.e = new HashMap();
     }
@@ -42,7 +42,7 @@ public final class l {
     }
 
     public static l a() {
-        return a.f8751a;
+        return a.f5911a;
     }
 
     private void a(com.anythink.expressad.foundation.d.c cVar) {
@@ -52,12 +52,12 @@ public final class l {
         }
     }
 
-    private static boolean a(c.C0143c c0143c) {
-        List<c.C0143c.a> f;
-        if (c0143c == null || (f = c0143c.f()) == null) {
+    private static boolean a(c.C0072c c0072c) {
+        List<c.C0072c.a> f;
+        if (c0072c == null || (f = c0072c.f()) == null) {
             return true;
         }
-        for (c.C0143c.a aVar : f) {
+        for (c.C0072c.a aVar : f) {
             if (aVar != null && aVar.b != null) {
                 for (String str : aVar.b) {
                     boolean a2 = a(b, str);
@@ -90,35 +90,35 @@ public final class l {
     }
 
     private boolean a(boolean z, String str) {
-        boolean a2 = a(this.f8750c, str);
+        boolean a2 = a(this.f5910c, str);
         if (a2) {
             return a2;
         }
         if (!z || TextUtils.isEmpty(i.a().c(str))) {
             return a2;
         }
-        this.f8750c.put(str, Boolean.TRUE);
+        this.f5910c.put(str, Boolean.TRUE);
         return true;
     }
 
     private void b(com.anythink.expressad.foundation.d.c cVar) {
-        List<c.C0143c.a> f;
+        List<c.C0072c.a> f;
         if (cVar != null) {
             String S = cVar.S();
-            Map<String, Boolean> map = this.f8749a;
+            Map<String, Boolean> map = this.f5909a;
             if (map != null && !map.containsKey(S)) {
-                this.f8749a.put(S, Boolean.FALSE);
+                this.f5909a.put(S, Boolean.FALSE);
             }
             String I = cVar.I();
-            Map<String, Boolean> map2 = this.f8750c;
+            Map<String, Boolean> map2 = this.f5910c;
             if (map2 != null && !map2.containsKey(I)) {
-                this.f8750c.put(I, Boolean.FALSE);
+                this.f5910c.put(I, Boolean.FALSE);
             }
-            c.C0143c M = cVar.M();
+            c.C0072c M = cVar.M();
             if (M == null || (f = M.f()) == null) {
                 return;
             }
-            for (c.C0143c.a aVar : f) {
+            for (c.C0072c.a aVar : f) {
                 if (aVar != null) {
                     b(aVar.b);
                 }
@@ -175,7 +175,7 @@ public final class l {
             }
             return false;
         } catch (Throwable th) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 th.printStackTrace();
                 return false;
             }
@@ -184,10 +184,10 @@ public final class l {
     }
 
     public final void a(String str, boolean z) {
-        if (this.f8749a == null) {
-            this.f8749a = new HashMap();
+        if (this.f5909a == null) {
+            this.f5909a = new HashMap();
         }
-        this.f8749a.put(str, Boolean.valueOf(z));
+        this.f5909a.put(str, Boolean.valueOf(z));
     }
 
     public final void a(List<com.anythink.expressad.foundation.d.c> list) {
@@ -203,24 +203,24 @@ public final class l {
     }
 
     public final boolean a(String str) {
-        if (this.f8749a == null || TextUtils.isEmpty(str) || !this.f8749a.containsKey(str)) {
+        if (this.f5909a == null || TextUtils.isEmpty(str) || !this.f5909a.containsKey(str)) {
             return false;
         }
-        return this.f8749a.get(str).booleanValue();
+        return this.f5909a.get(str).booleanValue();
     }
 
     public final void b(String str, boolean z) {
-        if (this.f8750c == null) {
-            this.f8750c = new HashMap();
+        if (this.f5910c == null) {
+            this.f5910c = new HashMap();
         }
-        this.f8750c.put(str, Boolean.valueOf(z));
+        this.f5910c.put(str, Boolean.valueOf(z));
     }
 
     public final boolean b(String str) {
-        if (this.f8750c == null || TextUtils.isEmpty(str) || !this.f8750c.containsKey(str)) {
+        if (this.f5910c == null || TextUtils.isEmpty(str) || !this.f5910c.containsKey(str)) {
             return false;
         }
-        return this.f8750c.get(str).booleanValue();
+        return this.f5910c.get(str).booleanValue();
     }
 
     public final void c(String str, boolean z) {

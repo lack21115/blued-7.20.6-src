@@ -39,9 +39,7 @@ public final class System {
     private static final Object lock = new Object();
     public static final PrintStream err = new PrintStream(new FileOutputStream(FileDescriptor.err));
     public static final PrintStream out = new PrintStream(new FileOutputStream(FileDescriptor.out));
-
-    /* renamed from: in  reason: collision with root package name */
-    public static final InputStream f42260in = new BufferedInputStream(new FileInputStream(FileDescriptor.f42253in));
+    public static final InputStream in = new BufferedInputStream(new FileInputStream(FileDescriptor.in));
     private static final Properties unchangeableSystemProperties = initUnchangeableSystemProperties();
     private static Properties systemProperties = createSystemProperties();
     private static final String lineSeparator = getProperty("line.separator");
@@ -556,7 +554,7 @@ public final class System {
         Runtime.getRuntime().loadLibrary(str, VMStack.getCallingClassLoader());
     }
 
-    private static native void log(char c2, String str, Throwable th);
+    private static native void log(char c, String str, Throwable th);
 
     public static void logE(String str) {
         log('E', str, null);

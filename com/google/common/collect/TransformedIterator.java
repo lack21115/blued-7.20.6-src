@@ -3,9 +3,8 @@ package com.google.common.collect;
 import com.google.common.base.Preconditions;
 import java.util.Iterator;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/TransformedIterator.class */
-public abstract class TransformedIterator<F, T> implements Iterator<T> {
+abstract class TransformedIterator<F, T> implements Iterator<T> {
     final Iterator<? extends F> backingIterator;
 
     /* JADX INFO: Access modifiers changed from: package-private */

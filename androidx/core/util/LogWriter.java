@@ -8,16 +8,16 @@ import java.io.Writer;
 public class LogWriter extends Writer {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f2596a;
+    private final String f2548a;
     private StringBuilder b = new StringBuilder(128);
 
     public LogWriter(String str) {
-        this.f2596a = str;
+        this.f2548a = str;
     }
 
     private void a() {
         if (this.b.length() > 0) {
-            Log.d(this.f2596a, this.b.toString());
+            Log.d(this.f2548a, this.b.toString());
             StringBuilder sb = this.b;
             sb.delete(0, sb.length());
         }

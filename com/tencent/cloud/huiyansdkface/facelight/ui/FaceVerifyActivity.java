@@ -33,11 +33,11 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
     private static int k;
 
     /* renamed from: a  reason: collision with root package name */
-    private Activity f35679a;
+    private Activity f21988a;
     private com.tencent.cloud.huiyansdkface.facelight.ui.widget.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.tencent.cloud.huiyansdkface.facelight.ui.widget.a f35680c;
+    private com.tencent.cloud.huiyansdkface.facelight.ui.widget.a f21989c;
     private RelativeLayout d;
     private TextView e;
     private TextView f;
@@ -57,14 +57,14 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
         hashMap.put(a.FaceLiveFragment, com.tencent.cloud.huiyansdkface.facelight.ui.b.a.class);
     }
 
-    private void a(a.InterfaceC0916a interfaceC0916a, PermissionInfo.PermissionTip permissionTip) {
+    private void a(a.InterfaceC0746a interfaceC0746a, PermissionInfo.PermissionTip permissionTip) {
         WLogger.d("FaceVerifyActivity", "showPermissionConfirmDialog");
         if (this.b == null) {
-            com.tencent.cloud.huiyansdkface.facelight.ui.widget.a d = new com.tencent.cloud.huiyansdkface.facelight.ui.widget.a(this.f35679a).a(permissionTip.title).b(permissionTip.content).c(this.i.f().kyc_set_up).d(this.i.f().kyc_cancel);
+            com.tencent.cloud.huiyansdkface.facelight.ui.widget.a d = new com.tencent.cloud.huiyansdkface.facelight.ui.widget.a(this.f21988a).a(permissionTip.title).b(permissionTip.content).c(this.i.f().kyc_set_up).d(this.i.f().kyc_cancel);
             this.b = d;
             d.getWindow().setBackgroundDrawableResource(R.color.wbcf_translucent_background);
         }
-        this.b.a(interfaceC0916a);
+        this.b.a(interfaceC0746a);
         if (isFinishing()) {
             return;
         }
@@ -74,11 +74,11 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
 
     private void a(String[] strArr, int[] iArr) {
         final PermissionInfo.PermissionTip d = d(strArr, iArr);
-        com.tencent.cloud.huiyansdkface.facelight.ui.widget.a d2 = new com.tencent.cloud.huiyansdkface.facelight.ui.widget.a(this.f35679a).a("设置").b("是否去设置页面申请权限").c("继续").d("取消");
-        this.f35680c = d2;
+        com.tencent.cloud.huiyansdkface.facelight.ui.widget.a d2 = new com.tencent.cloud.huiyansdkface.facelight.ui.widget.a(this.f21988a).a("设置").b("是否去设置页面申请权限").c("继续").d("取消");
+        this.f21989c = d2;
         d2.getWindow().setBackgroundDrawableResource(R.color.wbcf_translucent_background);
-        this.f35680c.a(new a.InterfaceC0916a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.FaceVerifyActivity.1
-            @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0916a
+        this.f21989c.a(new a.InterfaceC0746a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.FaceVerifyActivity.1
+            @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0746a
             public void a() {
                 if (FaceVerifyActivity.this.b != null) {
                     FaceVerifyActivity.this.b.dismiss();
@@ -86,7 +86,7 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
                 FaceVerifyActivity.this.g();
             }
 
-            @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0916a
+            @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0746a
             public void b() {
                 if (FaceVerifyActivity.this.b != null) {
                     FaceVerifyActivity.this.b.dismiss();
@@ -94,7 +94,7 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
                 FaceVerifyActivity.this.c(d.noPermissionTip);
             }
         });
-        this.f35680c.show();
+        this.f21989c.show();
     }
 
     private boolean a(int[] iArr) {
@@ -149,8 +149,8 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
         }
         WLogger.d("FaceVerifyActivity", "first reject,show confirm dialog");
         this.g = true;
-        a(new a.InterfaceC0916a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.FaceVerifyActivity.3
-            @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0916a
+        a(new a.InterfaceC0746a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.FaceVerifyActivity.3
+            @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0746a
             public void a() {
                 WLogger.e("FaceVerifyActivity", "user try permission again!");
                 if (FaceVerifyActivity.this.b != null) {
@@ -159,7 +159,7 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
                 FaceVerifyActivity.this.j();
             }
 
-            @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0916a
+            @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0746a
             public void b() {
                 WLogger.e("FaceVerifyActivity", "user didnt open permissions!");
                 if (FaceVerifyActivity.this.b != null) {
@@ -204,7 +204,7 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
     /* JADX INFO: Access modifiers changed from: private */
     public void c(String str) {
         WLogger.d("FaceVerifyActivity", "askPermissionError");
-        KycWaSDK.getInstance().trackCustomKVEvent(this.f35679a, "camera_auth_reject", null, null);
+        KycWaSDK.getInstance().trackCustomKVEvent(this.f21988a, "camera_auth_reject", null, null);
         this.i.e(true);
         if (this.i.y() != null) {
             WbFaceVerifyResult wbFaceVerifyResult = new WbFaceVerifyResult();
@@ -219,7 +219,7 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
             wbFaceVerifyResult.setError(wbFaceError);
             Properties properties = new Properties();
             properties.setProperty("errorDesc", wbFaceError.toString());
-            this.i.a(this.f35679a, WbFaceError.WBFaceErrorCodeNoPermission, properties);
+            this.i.a(this.f21988a, WbFaceError.WBFaceErrorCodeNoPermission, properties);
             this.i.y().onFinish(wbFaceVerifyResult);
         }
         com.tencent.cloud.huiyansdkface.facelight.ui.widget.a aVar = this.b;
@@ -306,7 +306,7 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
             wbFaceVerifyResult.setError(wbFaceError);
             Properties properties = new Properties();
             properties.setProperty("errorDesc", wbFaceError.toString());
-            this.i.a(this.f35679a, WbFaceError.WBFaceErrorCodeUserCancle, properties);
+            this.i.a(this.f21988a, WbFaceError.WBFaceErrorCodeUserCancle, properties);
             this.i.y().onFinish(wbFaceVerifyResult);
             return true;
         }
@@ -428,8 +428,8 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
     public boolean a(final String[] strArr, final int[] iArr, final boolean z) {
         WLogger.d("FaceVerifyActivity", "onShouldTipUser");
         this.h = true;
-        a(new a.InterfaceC0916a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.FaceVerifyActivity.2
-            @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0916a
+        a(new a.InterfaceC0746a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.FaceVerifyActivity.2
+            @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0746a
             public void a() {
                 if (FaceVerifyActivity.this.b != null) {
                     FaceVerifyActivity.this.b.dismiss();
@@ -441,7 +441,7 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
                 }
             }
 
-            @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0916a
+            @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0746a
             public void b() {
                 WLogger.e("FaceVerifyActivity", "user didnt open permissions!");
                 if (FaceVerifyActivity.this.b != null) {
@@ -476,7 +476,7 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
         String J = this.i.x().J();
         if (WbCloudFaceContant.BLACK.equals(J)) {
             i = R.style.wbcfFaceThemeBlack;
-        } else if ("custom".equals(J)) {
+        } else if (WbCloudFaceContant.CUSTOM.equals(J)) {
             i = R.style.wbcfFaceThemeCustom;
         } else {
             WLogger.d("FaceVerifyActivity", "set default white");
@@ -486,7 +486,7 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
         a(J);
         setContentView(R.layout.wbcf_face_verify_layout);
         KycWaSDK.getInstance().trackCustomKVEvent(this, "faceservice_load_ui", null, null);
-        this.f35679a = this;
+        this.f21988a = this;
         this.i.e(false);
         c();
         a();
@@ -508,8 +508,8 @@ public class FaceVerifyActivity extends com.tencent.cloud.huiyansdkface.faceligh
             aVar.dismiss();
             this.b = null;
         }
-        if (this.f35679a != null) {
-            this.f35679a = null;
+        if (this.f21988a != null) {
+            this.f21988a = null;
         }
         WLogger.i("FaceVerifyActivity", "close bugly report");
         c.a().a();

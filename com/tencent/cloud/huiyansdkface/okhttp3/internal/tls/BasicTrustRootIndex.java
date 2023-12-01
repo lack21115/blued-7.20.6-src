@@ -11,7 +11,7 @@ import javax.security.auth.x500.X500Principal;
 public final class BasicTrustRootIndex implements TrustRootIndex {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<X500Principal, Set<X509Certificate>> f36031a = new LinkedHashMap();
+    private final Map<X500Principal, Set<X509Certificate>> f22340a = new LinkedHashMap();
 
     public BasicTrustRootIndex(X509Certificate... x509CertificateArr) {
         int length = x509CertificateArr.length;
@@ -23,11 +23,11 @@ public final class BasicTrustRootIndex implements TrustRootIndex {
             }
             X509Certificate x509Certificate = x509CertificateArr[i2];
             X500Principal subjectX500Principal = x509Certificate.getSubjectX500Principal();
-            Set<X509Certificate> set = this.f36031a.get(subjectX500Principal);
+            Set<X509Certificate> set = this.f22340a.get(subjectX500Principal);
             LinkedHashSet linkedHashSet = set;
             if (set == null) {
                 linkedHashSet = new LinkedHashSet(1);
-                this.f36031a.put(subjectX500Principal, linkedHashSet);
+                this.f22340a.put(subjectX500Principal, linkedHashSet);
             }
             linkedHashSet.add(x509Certificate);
             i = i2 + 1;
@@ -38,12 +38,12 @@ public final class BasicTrustRootIndex implements TrustRootIndex {
         if (obj == this) {
             return true;
         }
-        return (obj instanceof BasicTrustRootIndex) && ((BasicTrustRootIndex) obj).f36031a.equals(this.f36031a);
+        return (obj instanceof BasicTrustRootIndex) && ((BasicTrustRootIndex) obj).f22340a.equals(this.f22340a);
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.tls.TrustRootIndex
     public X509Certificate findByIssuerAndSignature(X509Certificate x509Certificate) {
-        Set<X509Certificate> set = this.f36031a.get(x509Certificate.getIssuerX500Principal());
+        Set<X509Certificate> set = this.f22340a.get(x509Certificate.getIssuerX500Principal());
         if (set == null) {
             return null;
         }
@@ -58,6 +58,6 @@ public final class BasicTrustRootIndex implements TrustRootIndex {
     }
 
     public int hashCode() {
-        return this.f36031a.hashCode();
+        return this.f22340a.hashCode();
     }
 }

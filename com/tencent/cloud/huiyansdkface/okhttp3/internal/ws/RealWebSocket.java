@@ -37,10 +37,10 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     static final /* synthetic */ boolean b = !RealWebSocket.class.desiredAssertionStatus();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final List<Protocol> f36035c = Collections.singletonList(Protocol.HTTP_1_1);
+    private static final List<Protocol> f22344c = Collections.singletonList(Protocol.HTTP_1_1);
 
     /* renamed from: a  reason: collision with root package name */
-    final WebSocketListener f36036a;
+    final WebSocketListener f22345a;
     private final Request d;
     private final Random e;
     private final long f;
@@ -81,16 +81,16 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     public static final class Close {
 
         /* renamed from: a  reason: collision with root package name */
-        final int f36040a;
+        final int f22349a;
         final ByteString b;
 
         /* renamed from: c  reason: collision with root package name */
-        final long f36041c;
+        final long f22350c;
 
         Close(int i, ByteString byteString, long j) {
-            this.f36040a = i;
+            this.f22349a = i;
             this.b = byteString;
-            this.f36041c = j;
+            this.f22350c = j;
         }
     }
 
@@ -99,11 +99,11 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     public static final class Message {
 
         /* renamed from: a  reason: collision with root package name */
-        final int f36042a;
+        final int f22351a;
         final ByteString b;
 
         Message(int i, ByteString byteString) {
-            this.f36042a = i;
+            this.f22351a = i;
             this.b = byteString;
         }
     }
@@ -124,12 +124,12 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     public static abstract class Streams implements Closeable {
 
         /* renamed from: c  reason: collision with root package name */
-        public final boolean f36044c;
+        public final boolean f22353c;
         public final BufferedSource d;
         public final BufferedSink e;
 
         public Streams(boolean z, BufferedSource bufferedSource, BufferedSink bufferedSink) {
-            this.f36044c = z;
+            this.f22353c = z;
             this.d = bufferedSource;
             this.e = bufferedSink;
         }
@@ -140,7 +140,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
             throw new IllegalArgumentException("Request must be GET: " + request.method());
         }
         this.d = request;
-        this.f36036a = webSocketListener;
+        this.f22345a = webSocketListener;
         this.e = random;
         this.f = j;
         byte[] bArr = new byte[16];
@@ -229,7 +229,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
                         message = poll2;
                         streams = streams2;
                     } else {
-                        this.r = this.l.schedule(new CancelRunnable(), ((Close) poll2).f36041c, TimeUnit.MILLISECONDS);
+                        this.r = this.l.schedule(new CancelRunnable(), ((Close) poll2).f22350c, TimeUnit.MILLISECONDS);
                     }
                 } else if (poll2 == 0) {
                     return false;
@@ -247,7 +247,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
                     webSocketWriter.b(poll);
                 } else if (message instanceof Message) {
                     ByteString byteString = message.b;
-                    BufferedSink buffer = Okio.buffer(webSocketWriter.a(message.f36042a, byteString.size()));
+                    BufferedSink buffer = Okio.buffer(webSocketWriter.a(message.f22351a, byteString.size()));
                     buffer.write(byteString);
                     buffer.close();
                     synchronized (this) {
@@ -257,9 +257,9 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
                     throw new AssertionError();
                 } else {
                     Close close = message;
-                    webSocketWriter.a(close.f36040a, close.b);
+                    webSocketWriter.a(close.f22349a, close.b);
                     if (streams != null) {
-                        this.f36036a.onClosed(this, i, str);
+                        this.f22345a.onClosed(this, i, str);
                     }
                 }
                 Util.closeQuietly(streams);
@@ -324,9 +324,9 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     }
 
     public void connect(OkHttpClient okHttpClient) {
-        OkHttpClient build = okHttpClient.newBuilder().eventListener(EventListener.f35849a).protocols(f36035c).build();
+        OkHttpClient build = okHttpClient.newBuilder().eventListener(EventListener.f22158a).protocols(f22344c).build();
         final Request build2 = this.d.newBuilder().header(HttpHeaders.UPGRADE, "websocket").header("Connection", HttpHeaders.UPGRADE).header(HttpHeaders.SEC_WEBSOCKET_KEY, this.g).header(HttpHeaders.SEC_WEBSOCKET_VERSION, "13").build();
-        Call newWebSocketCall = Internal.f35902a.newWebSocketCall(build, build2);
+        Call newWebSocketCall = Internal.f22211a.newWebSocketCall(build, build2);
         this.h = newWebSocketCall;
         newWebSocketCall.timeout().clearTimeout();
         this.h.enqueue(new Callback() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.internal.ws.RealWebSocket.2
@@ -339,11 +339,11 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
             public void onResponse(Call call, Response response) {
                 try {
                     RealWebSocket.this.a(response);
-                    StreamAllocation streamAllocation = Internal.f35902a.streamAllocation(call);
+                    StreamAllocation streamAllocation = Internal.f22211a.streamAllocation(call);
                     streamAllocation.noNewStreams();
                     Streams newWebSocketStreams = streamAllocation.connection().newWebSocketStreams(streamAllocation);
                     try {
-                        RealWebSocket.this.f36036a.onOpen(RealWebSocket.this, response);
+                        RealWebSocket.this.f22345a.onOpen(RealWebSocket.this, response);
                         RealWebSocket.this.initReaderAndWriter("OkHttp WebSocket " + build2.url().redact(), newWebSocketStreams);
                         streamAllocation.connection().socket().setSoTimeout(0);
                         RealWebSocket.this.loopReader();
@@ -373,7 +373,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
                 this.l.shutdown();
             }
             try {
-                this.f36036a.onFailure(this, exc, response);
+                this.f22345a.onFailure(this, exc, response);
             } finally {
                 Util.closeQuietly(streams);
             }
@@ -383,7 +383,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     public void initReaderAndWriter(String str, Streams streams) throws IOException {
         synchronized (this) {
             this.m = streams;
-            this.k = new WebSocketWriter(streams.f36044c, streams.e, this.e);
+            this.k = new WebSocketWriter(streams.f22353c, streams.e, this.e);
             ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, Util.threadFactory(str, false));
             this.l = scheduledThreadPoolExecutor;
             if (this.f != 0) {
@@ -393,7 +393,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
                 c();
             }
         }
-        this.j = new WebSocketReader(streams.f36044c, streams.d, this);
+        this.j = new WebSocketReader(streams.f22353c, streams.d, this);
     }
 
     public void loopReader() throws IOException {
@@ -428,9 +428,9 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
             }
         }
         try {
-            this.f36036a.onClosing(this, i, str);
+            this.f22345a.onClosing(this, i, str);
             if (streams != null) {
-                this.f36036a.onClosed(this, i, str);
+                this.f22345a.onClosed(this, i, str);
             }
             Util.closeQuietly(streams);
         } catch (Throwable th) {
@@ -441,12 +441,12 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.ws.WebSocketReader.FrameCallback
     public void onReadMessage(ByteString byteString) throws IOException {
-        this.f36036a.onMessage(this, byteString);
+        this.f22345a.onMessage(this, byteString);
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.ws.WebSocketReader.FrameCallback
     public void onReadMessage(String str) throws IOException {
-        this.f36036a.onMessage(this, str);
+        this.f22345a.onMessage(this, str);
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.ws.WebSocketReader.FrameCallback

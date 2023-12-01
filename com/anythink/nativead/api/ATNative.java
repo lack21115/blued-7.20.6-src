@@ -22,7 +22,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ATNative {
     private final String TAG = ATNative.class.getSimpleName();
     a adLoadListener = new a() { // from class: com.anythink.nativead.api.ATNative.1
-        @Override // com.anythink.core.common.b.a
         public void onAdLoadFail(final AdError adError) {
             n.a().a(new Runnable() { // from class: com.anythink.nativead.api.ATNative.1.2
                 @Override // java.lang.Runnable
@@ -34,7 +33,6 @@ public class ATNative {
             });
         }
 
-        @Override // com.anythink.core.common.b.a
         public void onAdLoaded() {
             n.a().a(new Runnable() { // from class: com.anythink.nativead.api.ATNative.1.1
                 @Override // java.lang.Runnable
@@ -66,7 +64,7 @@ public class ATNative {
     }
 
     public static void entryAdScenario(String str, String str2) {
-        n.a().a(str, str2, "0", (Map<String, Object>) null);
+        n.a().a(str, str2, "0", (Map) null);
     }
 
     public static void entryAdScenario(String str, String str2, Map<String, Object> map) {
@@ -82,7 +80,7 @@ public class ATNative {
     public ATAdStatusInfo checkAdStatus() {
         if (n.a().g() == null || TextUtils.isEmpty(n.a().p()) || TextUtils.isEmpty(n.a().q())) {
             Log.e(this.TAG, "SDK init error!");
-            return new ATAdStatusInfo(false, false, null);
+            return new ATAdStatusInfo(false, false, (ATAdInfo) null);
         }
         ATAdStatusInfo a2 = this.mAdLoadManager.a(getContext(), this.mTKExtraMap);
         com.anythink.core.common.k.n.b(this.mPlacementId, g.i.l, g.i.u, a2.toString(), "");

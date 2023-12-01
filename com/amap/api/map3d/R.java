@@ -33,8 +33,6 @@ public final class R {
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/map3d/R$styleable.class */
     public static final class styleable {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final int[] f5493a = {2130771968, 2130771969, 2130771970, 2130771971};
+        public static final int[] a = {2130771968, 2130771969, 2130771970, 2130771971};
     }
 }

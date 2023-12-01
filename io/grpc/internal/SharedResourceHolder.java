@@ -108,7 +108,7 @@ public final class SharedResourceHolder {
                             }
                         }
                     }
-                }), 1L, TimeUnit.SECONDS);
+                }), DESTROY_DELAY_SECONDS, TimeUnit.SECONDS);
             }
         }
         return null;

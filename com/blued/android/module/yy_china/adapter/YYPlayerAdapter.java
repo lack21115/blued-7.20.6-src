@@ -18,7 +18,6 @@ public class YYPlayerAdapter extends BaseQuickAdapter<YYSeatMemberModel, BaseVie
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYSeatMemberModel yYSeatMemberModel) {
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_vote_header);

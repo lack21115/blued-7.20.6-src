@@ -30,7 +30,7 @@ public class AttributionReporter {
     public static final String SYSTEM_PERMISSION = "permission";
 
     /* renamed from: a  reason: collision with root package name */
-    private HuaweiApi<Api.ApiOptions.NoOptions> f22828a;
+    private HuaweiApi<Api.ApiOptions.NoOptions> f9220a;
     private Context b;
 
     private AttributionReporter(Context context) {
@@ -38,11 +38,11 @@ public class AttributionReporter {
         this.b = context;
         Api api = new Api(HuaweiApiAvailability.HMS_API_NAME_PUSH);
         if (context instanceof Activity) {
-            this.f22828a = new HuaweiApi<>((Activity) context, (Api<Api.ApiOptions>) api, (Api.ApiOptions) null, (AbstractClientBuilder) new PushClientBuilder());
+            this.f9220a = new HuaweiApi<>((Activity) context, (Api<Api.ApiOptions>) api, (Api.ApiOptions) null, (AbstractClientBuilder) new PushClientBuilder());
         } else {
-            this.f22828a = new HuaweiApi<>(context, api, (Api.ApiOptions) null, new PushClientBuilder());
+            this.f9220a = new HuaweiApi<>(context, api, (Api.ApiOptions) null, new PushClientBuilder());
         }
-        this.f22828a.setKitSdkVersion(60700300);
+        this.f9220a.setKitSdkVersion(60700300);
     }
 
     private Task<Void> a(AttributionEvent attributionEvent, Bundle bundle) {
@@ -58,7 +58,7 @@ public class AttributionReporter {
                             if (j > 0 && System.currentTimeMillis() - j < 86400000) {
                                 throw ErrorEnum.ERROR_NOT_IN_SERVICE.toApiException();
                             }
-                            return this.f22828a.doWrite(new AttributionReportTask(PushNaming.PUSH_ANALYSIS_REPORT, JsonUtil.createJsonString(a(attributionEvent, new SafeBundle(bundle))), reportEntry));
+                            return this.f9220a.doWrite(new AttributionReportTask(PushNaming.PUSH_ANALYSIS_REPORT, JsonUtil.createJsonString(a(attributionEvent, new SafeBundle(bundle))), reportEntry));
                         }
                         throw ErrorEnum.ERROR_OPERATION_NOT_SUPPORTED.toApiException();
                     } catch (Exception e) {

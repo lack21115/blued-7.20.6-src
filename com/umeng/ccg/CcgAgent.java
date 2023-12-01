@@ -22,7 +22,7 @@ public class CcgAgent {
         hashMap.put(a.e, new ArrayList());
         forbidSdkTable.put(a.d, new ArrayList<>());
         forbidSdkTable.put(a.b, new ArrayList<>());
-        forbidSdkTable.put(a.f40813c, new ArrayList<>());
+        forbidSdkTable.put(a.f27122c, new ArrayList<>());
     }
 
     public static ActionInfo getActionInfo(String str) {
@@ -39,7 +39,7 @@ public class CcgAgent {
     }
 
     public static String[] getCollectItemList() {
-        return new String[]{a.e, a.d, a.b, a.f40813c};
+        return new String[]{a.e, a.d, a.b, a.f27122c};
     }
 
     public static ArrayList<String> getForbidSdkArray(String str) {

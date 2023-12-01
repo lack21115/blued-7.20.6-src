@@ -4,11 +4,11 @@ package com.mcxiaoke.packer.support.walle;
 final class Pair<A, B> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final A f23942a;
+    private final A f10331a;
     private final B b;
 
     private Pair(A a2, B b) {
-        this.f23942a = a2;
+        this.f10331a = a2;
         this.b = b;
     }
 
@@ -17,7 +17,7 @@ final class Pair<A, B> {
     }
 
     public A a() {
-        return this.f23942a;
+        return this.f10331a;
     }
 
     public boolean equals(Object obj) {
@@ -28,12 +28,12 @@ final class Pair<A, B> {
             return false;
         }
         Pair pair = (Pair) obj;
-        A a2 = this.f23942a;
+        A a2 = this.f10331a;
         if (a2 != null) {
-            if (!a2.equals(pair.f23942a)) {
+            if (!a2.equals(pair.f10331a)) {
                 return false;
             }
-        } else if (pair.f23942a != null) {
+        } else if (pair.f10331a != null) {
             return false;
         }
         B b = this.b;
@@ -42,7 +42,7 @@ final class Pair<A, B> {
     }
 
     public int hashCode() {
-        A a2 = this.f23942a;
+        A a2 = this.f10331a;
         int i = 0;
         int hashCode = a2 != null ? a2.hashCode() : 0;
         B b = this.b;

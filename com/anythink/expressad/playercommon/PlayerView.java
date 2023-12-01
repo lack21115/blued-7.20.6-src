@@ -39,7 +39,7 @@ public class PlayerView extends LinearLayout {
         public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i2, int i3) {
             try {
                 o.b(PlayerView.TAG, "surfaceChanged");
-                if (PlayerView.this.mIsSurfaceHolderDestoryed && !PlayerView.this.mIsCovered && !PlayerView.this.isComplete() && !b.f7818c) {
+                if (PlayerView.this.mIsSurfaceHolderDestoryed && !PlayerView.this.mIsCovered && !PlayerView.this.isComplete() && !b.f4978c) {
                     if (PlayerView.this.isBTVideo) {
                         if (PlayerView.this.isBTVideoPlaying) {
                             if (!PlayerView.this.mVideoFeedsPlayer.hasPrepare()) {

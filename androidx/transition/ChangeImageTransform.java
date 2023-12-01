@@ -19,7 +19,7 @@ import java.util.Map;
 public class ChangeImageTransform extends Transition {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f3423a = {"android:changeImageTransform:matrix", "android:changeImageTransform:bounds"};
+    private static final String[] f3375a = {"android:changeImageTransform:matrix", "android:changeImageTransform:bounds"};
     private static final TypeEvaluator<Matrix> b = new TypeEvaluator<Matrix>() { // from class: androidx.transition.ChangeImageTransform.1
         @Override // android.animation.TypeEvaluator
         public Matrix evaluate(float f, Matrix matrix, Matrix matrix2) {
@@ -28,7 +28,7 @@ public class ChangeImageTransform extends Transition {
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Property<ImageView, Matrix> f3424c = new Property<ImageView, Matrix>(Matrix.class, "animatedTransform") { // from class: androidx.transition.ChangeImageTransform.2
+    private static final Property<ImageView, Matrix> f3376c = new Property<ImageView, Matrix>(Matrix.class, "animatedTransform") { // from class: androidx.transition.ChangeImageTransform.2
         @Override // android.util.Property
         public Matrix get(ImageView imageView) {
             return null;
@@ -46,18 +46,18 @@ public class ChangeImageTransform extends Transition {
     public static /* synthetic */ class AnonymousClass3 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f3425a;
+        static final /* synthetic */ int[] f3377a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[ImageView.ScaleType.values().length];
-            f3425a = iArr;
+            f3377a = iArr;
             try {
                 iArr[ImageView.ScaleType.FIT_XY.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f3425a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
+                f3377a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -71,11 +71,11 @@ public class ChangeImageTransform extends Transition {
     }
 
     private ObjectAnimator a(ImageView imageView) {
-        return ObjectAnimator.ofObject(imageView, (Property<ImageView, V>) f3424c, (TypeEvaluator) b, (Object[]) new Matrix[]{MatrixUtils.f3456a, MatrixUtils.f3456a});
+        return ObjectAnimator.ofObject(imageView, (Property<ImageView, V>) f3376c, (TypeEvaluator) b, (Object[]) new Matrix[]{MatrixUtils.f3408a, MatrixUtils.f3408a});
     }
 
     private ObjectAnimator a(ImageView imageView, Matrix matrix, Matrix matrix2) {
-        return ObjectAnimator.ofObject(imageView, (Property<ImageView, V>) f3424c, (TypeEvaluator) new TransitionUtils.MatrixEvaluator(), (Object[]) new Matrix[]{matrix, matrix2});
+        return ObjectAnimator.ofObject(imageView, (Property<ImageView, V>) f3376c, (TypeEvaluator) new TransitionUtils.MatrixEvaluator(), (Object[]) new Matrix[]{matrix, matrix2});
     }
 
     private void a(TransitionValues transitionValues) {
@@ -94,7 +94,7 @@ public class ChangeImageTransform extends Transition {
     private static Matrix b(ImageView imageView) {
         Drawable drawable = imageView.getDrawable();
         if (drawable.getIntrinsicWidth() > 0 && drawable.getIntrinsicHeight() > 0) {
-            int i = AnonymousClass3.f3425a[imageView.getScaleType().ordinal()];
+            int i = AnonymousClass3.f3377a[imageView.getScaleType().ordinal()];
             if (i == 1) {
                 return c(imageView);
             }
@@ -167,13 +167,13 @@ public class ChangeImageTransform extends Transition {
                 if (intrinsicWidth > 0 && intrinsicHeight > 0) {
                     Matrix matrix3 = matrix;
                     if (matrix == null) {
-                        matrix3 = MatrixUtils.f3456a;
+                        matrix3 = MatrixUtils.f3408a;
                     }
                     Matrix matrix4 = matrix2;
                     if (matrix2 == null) {
-                        matrix4 = MatrixUtils.f3456a;
+                        matrix4 = MatrixUtils.f3408a;
                     }
-                    f3424c.set(imageView, matrix3);
+                    f3376c.set(imageView, matrix3);
                     return a(imageView, matrix3, matrix4);
                 }
                 objectAnimator = a(imageView);
@@ -184,6 +184,6 @@ public class ChangeImageTransform extends Transition {
 
     @Override // androidx.transition.Transition
     public String[] getTransitionProperties() {
-        return f3423a;
+        return f3375a;
     }
 }

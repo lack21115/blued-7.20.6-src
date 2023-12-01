@@ -1,11 +1,11 @@
 package com.anythink.core.b;
 
+import com.anythink.core.api.ATAdConst;
 import com.anythink.core.common.e.ai;
 import com.anythink.core.common.e.al;
 import com.anythink.core.common.e.m;
 import com.anythink.core.common.k.t;
 import com.anythink.core.common.l;
-import com.cdo.oaps.ad.OapsKey;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
@@ -13,24 +13,20 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/b/c.class */
 public final class c extends e {
-
-    /* renamed from: a  reason: collision with root package name */
-    String f6361a;
+    String a;
     List<ai> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    List<ai> f6362c;
+    List<ai> c;
 
     public c(com.anythink.core.common.e.a aVar) {
         super(aVar);
-        this.f6361a = com.anythink.core.common.k.g.a(aVar.f6611a, this.l, this.m, aVar.e, 0).toString();
+        this.a = com.anythink.core.common.k.g.a(aVar.a, this.l, this.m, aVar.e, 0).toString();
         if (aVar.j == null) {
             this.b = new ArrayList(4);
-            this.f6362c = new ArrayList(1);
+            this.c = new ArrayList(1);
             return;
         }
         this.b = new ArrayList(aVar.j);
-        this.f6362c = new ArrayList(aVar.j);
+        this.c = new ArrayList(aVar.j);
     }
 
     private void a(JSONArray jSONArray) {
@@ -66,8 +62,8 @@ public final class c extends e {
                 ai aiVar = list2.get(i2);
                 try {
                     JSONObject jSONObject = new JSONObject();
-                    jSONObject.put("ad_source_id", aiVar.t());
-                    jSONObject.put(OapsKey.KEY_PRICE, aiVar.x());
+                    jSONObject.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.AD_SOURCE_ID, aiVar.t());
+                    jSONObject.put("price", aiVar.x());
                     m N = aiVar.N();
                     if (N != null) {
                         jSONObject.put("tp_bid_id", N.g);
@@ -80,7 +76,7 @@ public final class c extends e {
                 i = i2 + 1;
             }
         }
-        if (this.d.x == null || !this.d.x.booleanValue() || (list = this.f6362c) == null) {
+        if (this.d.x == null || !this.d.x.booleanValue() || (list = this.c) == null) {
             return;
         }
         for (ai aiVar2 : list) {
@@ -96,7 +92,7 @@ public final class c extends e {
             if (this.q != null) {
                 JSONObject jSONObject = new JSONObject();
                 try {
-                    jSONObject.put("ad_source_id", this.q.k);
+                    jSONObject.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.AD_SOURCE_ID, this.q.k);
                     jSONObject.put("tp_bid_id", this.q.g);
                 } catch (Throwable th) {
                     th.printStackTrace();
@@ -125,9 +121,9 @@ public final class c extends e {
         a(jSONArray, jSONArray2);
         a(jSONArray);
         com.anythink.core.b.a.b bVar = new com.anythink.core.b.a.b();
-        bVar.f6344a = this.f6361a;
+        bVar.a = this.a;
         bVar.b = jSONArray2.toString();
-        bVar.f6345c = e();
+        bVar.c = e();
         bVar.f = this.d.n.ar();
         if (this.d.x != null && this.d.x.booleanValue()) {
             if (this.d.w != null) {

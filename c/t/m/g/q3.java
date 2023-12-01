@@ -4,7 +4,8 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -12,11 +13,11 @@ import java.util.UUID;
 public class q3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile boolean f3945a = false;
+    public static volatile boolean f3897a = false;
     public static volatile String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public static volatile String f3946c = "";
+    public static volatile String f3898c = "";
     public static volatile String d = "";
     public static volatile boolean e = true;
     public static final byte[] f = new byte[0];
@@ -31,10 +32,10 @@ public class q3 {
     public static String a(Context context) {
         try {
             CharSequence loadLabel = context.getApplicationInfo().loadLabel(context.getPackageManager());
-            String replaceAll = loadLabel == null ? "UNKNOWN" : loadLabel.toString().replaceAll(BridgeUtil.UNDERLINE_STR, "");
-            String replaceAll2 = context.getPackageName().replaceAll(BridgeUtil.UNDERLINE_STR, "");
+            String replaceAll = loadLabel == null ? GrsBaseInfo.CountryCodeSource.UNKNOWN : loadLabel.toString().replaceAll("_", "");
+            String replaceAll2 = context.getPackageName().replaceAll("_", "");
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 16384);
-            return replaceAll + BridgeUtil.UNDERLINE_STR + replaceAll2 + BridgeUtil.UNDERLINE_STR + packageInfo.versionCode + BridgeUtil.UNDERLINE_STR + packageInfo.versionName;
+            return replaceAll + "_" + replaceAll2 + "_" + packageInfo.versionCode + "_" + packageInfo.versionName;
         } catch (Throwable th) {
             return "UNKNOWN AppInfo";
         }
@@ -51,7 +52,7 @@ public class q3 {
     public static void a(boolean z) {
         synchronized (q3.class) {
             try {
-                f3945a = z;
+                f3897a = z;
             } catch (Throwable th) {
                 throw th;
             }
@@ -88,14 +89,14 @@ public class q3 {
         try {
             return context.getPackageName();
         } catch (Throwable th) {
-            return "UNKNOWN";
+            return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 
     public static String c() {
         Context a2 = q2.a();
         CharSequence loadLabel = a2.getApplicationInfo().loadLabel(a2.getPackageManager());
-        return loadLabel == null ? "UNKNOWN" : loadLabel.toString();
+        return loadLabel == null ? GrsBaseInfo.CountryCodeSource.UNKNOWN : loadLabel.toString();
     }
 
     public static String d() {
@@ -127,22 +128,22 @@ public class q3 {
         } catch (Exception e2) {
         }
         if (!e) {
-            return BridgeUtil.UNDERLINE_STR + d;
+            return "_" + d;
         }
         e = false;
-        return g2 + BridgeUtil.UNDERLINE_STR + d;
+        return g2 + "_" + d;
     }
 
     public static String g() {
         o();
-        if (TextUtils.isEmpty(f3946c)) {
-            f3946c = p3.a(p3.a(), "loc_build_model", "");
-            if (TextUtils.isEmpty(f3946c)) {
-                f3946c = Build.MODEL;
-                p3.b(p3.a(), "loc_build_model", f3946c);
+        if (TextUtils.isEmpty(f3898c)) {
+            f3898c = p3.a(p3.a(), "loc_build_model", "");
+            if (TextUtils.isEmpty(f3898c)) {
+                f3898c = Build.MODEL;
+                p3.b(p3.a(), "loc_build_model", f3898c);
             }
         }
-        return f3946c;
+        return f3898c;
     }
 
     @Deprecated
@@ -188,7 +189,7 @@ public class q3 {
     public static String n() {
         String str = "";
         try {
-            String replaceAll = UUID.randomUUID().toString().replaceAll("-", "");
+            String replaceAll = UUID.randomUUID().toString().replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
             StringBuilder sb = new StringBuilder();
             sb.append(replaceAll.substring(0, 5));
             sb.append(replaceAll.substring(8, 10));
@@ -215,7 +216,7 @@ public class q3 {
         boolean z;
         synchronized (q3.class) {
             try {
-                z = f3945a;
+                z = f3897a;
             } catch (Throwable th) {
                 throw th;
             }

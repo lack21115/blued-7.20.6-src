@@ -8,25 +8,25 @@ import java.io.OutputStream;
 public class jj extends jm {
 
     /* renamed from: a  reason: collision with root package name */
-    protected InputStream f41553a;
+    protected InputStream f27862a;
 
     /* renamed from: a  reason: collision with other field name */
-    protected OutputStream f892a;
+    protected OutputStream f845a;
 
     protected jj() {
-        this.f41553a = null;
-        this.f892a = null;
+        this.f27862a = null;
+        this.f845a = null;
     }
 
     public jj(OutputStream outputStream) {
-        this.f41553a = null;
-        this.f892a = null;
-        this.f892a = outputStream;
+        this.f27862a = null;
+        this.f845a = null;
+        this.f845a = outputStream;
     }
 
     @Override // com.xiaomi.push.jm
     public int a(byte[] bArr, int i, int i2) {
-        InputStream inputStream = this.f41553a;
+        InputStream inputStream = this.f27862a;
         if (inputStream != null) {
             try {
                 int read = inputStream.read(bArr, i, i2);
@@ -43,8 +43,8 @@ public class jj extends jm {
 
     @Override // com.xiaomi.push.jm
     /* renamed from: a  reason: collision with other method in class */
-    public void mo12057a(byte[] bArr, int i, int i2) {
-        OutputStream outputStream = this.f892a;
+    public void mo9007a(byte[] bArr, int i, int i2) {
+        OutputStream outputStream = this.f845a;
         if (outputStream == null) {
             throw new jn(1, "Cannot write to null outputStream");
         }

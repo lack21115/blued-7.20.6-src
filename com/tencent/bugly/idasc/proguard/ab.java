@@ -11,7 +11,6 @@ import android.os.Process;
 import android.os.StatFs;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bun.miitmdid.core.Utils;
 import com.huawei.openalliance.ad.constant.bc;
 import com.igexin.assist.control.xiaomi.XmSystemUtils;
@@ -28,7 +27,7 @@ import java.util.Map;
 public final class ab {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ArrayList<a> f35214a = new ArrayList<a>() { // from class: com.tencent.bugly.idasc.proguard.ab.1
+    private static final ArrayList<a> f21523a = new ArrayList<a>() { // from class: com.tencent.bugly.idasc.proguard.ab.1
         {
             add(new l((byte) 0));
             add(new f((byte) 0));
@@ -65,11 +64,10 @@ public final class ab {
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String[] f35215c = {"/su", "/su/bin/su", "/sbin/su", "/data/local/xbin/su", "/data/local/bin/su", "/data/local/su", "/system/xbin/su", "/system/bin/su", "/system/sd/xbin/su", "/system/bin/failsafe/su", "/system/bin/cufsdosck", "/system/xbin/cufsdosck", "/system/bin/cufsmgr", "/system/xbin/cufsmgr", "/system/bin/cufaevdd", "/system/xbin/cufaevdd", "/system/bin/conbb", "/system/xbin/conbb"};
+    private static final String[] f21524c = {"/su", "/su/bin/su", "/sbin/su", "/data/local/xbin/su", "/data/local/bin/su", "/data/local/su", "/system/xbin/su", "/system/bin/su", "/system/sd/xbin/su", "/system/bin/failsafe/su", "/system/bin/cufsdosck", "/system/xbin/cufsdosck", "/system/bin/cufsmgr", "/system/xbin/cufsmgr", "/system/bin/cufaevdd", "/system/xbin/cufaevdd", "/system/bin/conbb", "/system/xbin/conbb"};
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/bugly/idasc/proguard/ab$a.class */
-    public static abstract class a {
+    static abstract class a {
         private a() {
         }
 
@@ -96,7 +94,7 @@ public final class ab {
             if (ap.b(a2) || a2.equals(bc.b.S)) {
                 return null;
             }
-            return "amigo/" + a2 + BridgeUtil.SPLIT_MARK + ap.a("ro.build.display.id");
+            return "amigo/" + a2 + "/" + ap.a("ro.build.display.id");
         }
     }
 
@@ -112,7 +110,7 @@ public final class ab {
 
         @Override // com.tencent.bugly.idasc.proguard.ab.a
         public final String a() {
-            return ap.a("ro.build.fingerprint") + BridgeUtil.SPLIT_MARK + ap.a("ro.build.rom.id");
+            return ap.a("ro.build.fingerprint") + "/" + ap.a("ro.build.rom.id");
         }
     }
 
@@ -152,7 +150,7 @@ public final class ab {
             if (ap.b(a2) || a2.equals(bc.b.S)) {
                 return null;
             }
-            return "htc/" + a2 + BridgeUtil.SPLIT_MARK + ap.a("ro.build.description");
+            return "htc/" + a2 + "/" + ap.a("ro.build.description");
         }
     }
 
@@ -252,7 +250,7 @@ public final class ab {
             if (ap.b(a2) || a2.equals(bc.b.S)) {
                 return null;
             }
-            return "tcl/" + a2 + BridgeUtil.SPLIT_MARK + ap.a("ro.build.display.id");
+            return "tcl/" + a2 + "/" + ap.a("ro.build.display.id");
         }
     }
 
@@ -312,7 +310,7 @@ public final class ab {
             if (ap.b(a2) || a2.equals(bc.b.S)) {
                 return null;
             }
-            return "Zte/NUBIA/" + a2 + BridgeUtil.UNDERLINE_STR + ap.a("ro.build.nubia.rom.code");
+            return "Zte/NUBIA/" + a2 + "_" + ap.a("ro.build.nubia.rom.code");
         }
     }
 
@@ -846,7 +844,7 @@ public final class ab {
     }
 
     public static String n() {
-        Iterator<a> it = f35214a.iterator();
+        Iterator<a> it = f21523a.iterator();
         while (it.hasNext()) {
             String a2 = it.next().a();
             if (!TextUtils.isEmpty(a2)) {
@@ -866,7 +864,7 @@ public final class ab {
 
     public static boolean q() {
         boolean z;
-        String[] strArr = f35215c;
+        String[] strArr = f21524c;
         int length = strArr.length;
         int i2 = 0;
         while (true) {

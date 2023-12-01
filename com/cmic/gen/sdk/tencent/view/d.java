@@ -18,17 +18,17 @@ import com.cmic.gen.sdk.tencent.auth.GenAuthnHelper;
 public class d extends Dialog {
 
     /* renamed from: a  reason: collision with root package name */
-    private WebView f21704a;
+    private WebView f8098a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21705c;
+    private String f8099c;
     private LinearLayout d;
 
     public d(Context context, int i, String str, String str2) {
         super(context, i);
         try {
-            this.f21705c = str;
+            this.f8099c = str;
             this.b = str2;
         } catch (Exception e) {
             e.printStackTrace();
@@ -44,7 +44,7 @@ public class d extends Dialog {
             this.d.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
             GenAuthThemeConfig authThemeConfig = GenAuthnHelper.getInstance(getContext()).getAuthThemeConfig();
             int clauseLayoutResID = authThemeConfig.getClauseLayoutResID();
-            String str = TextUtils.isEmpty(this.f21705c) ? com.cmic.gen.sdk.tencent.c.d[authThemeConfig.getAppLanguageType()] : this.f21705c;
+            String str = TextUtils.isEmpty(this.f8099c) ? com.cmic.gen.sdk.tencent.c.d[authThemeConfig.getAppLanguageType()] : this.f8099c;
             if (clauseLayoutResID != -1) {
                 RelativeLayout a2 = e.a(getContext(), getLayoutInflater().inflate(clauseLayoutResID, (ViewGroup) this.d, false), 1118481, 0, str, (View.OnClickListener) null);
                 String clauseLayoutReturnID = authThemeConfig.getClauseLayoutReturnID();
@@ -53,7 +53,7 @@ public class d extends Dialog {
                         @Override // android.view.View.OnClickListener
                         public void onClick(View view) {
                             Tracker.onClick(view);
-                            d.this.f21704a.stopLoading();
+                            d.this.f8098a.stopLoading();
                             d.this.b();
                         }
                     });
@@ -64,7 +64,7 @@ public class d extends Dialog {
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view) {
                         Tracker.onClick(view);
-                        d.this.f21704a.stopLoading();
+                        d.this.f8098a.stopLoading();
                         d.this.b();
                     }
                 }));
@@ -77,26 +77,26 @@ public class d extends Dialog {
 
     private void d() {
         WebView webView = new WebView(getContext());
-        this.f21704a = webView;
+        this.f8098a = webView;
         WebSettings settings = webView.getSettings();
         settings.setAllowFileAccess(false);
         settings.setAllowContentAccess(false);
         settings.setSavePassword(false);
         settings.setJavaScriptEnabled(true);
-        this.d.addView(this.f21704a, new LinearLayout.LayoutParams(-1, -1));
+        this.d.addView(this.f8098a, new LinearLayout.LayoutParams(-1, -1));
         if (Build.VERSION.SDK_INT < 17) {
-            this.f21704a.removeJavascriptInterface("searchBoxJavaBridge_");
-            this.f21704a.removeJavascriptInterface(Context.ACCESSIBILITY_SERVICE);
-            this.f21704a.removeJavascriptInterface("accessibilityTraversal");
+            this.f8098a.removeJavascriptInterface("searchBoxJavaBridge_");
+            this.f8098a.removeJavascriptInterface(Context.ACCESSIBILITY_SERVICE);
+            this.f8098a.removeJavascriptInterface("accessibilityTraversal");
         }
-        this.f21704a.setWebViewClient(new WebViewClient() { // from class: com.cmic.gen.sdk.tencent.view.d.3
+        this.f8098a.setWebViewClient(new WebViewClient() { // from class: com.cmic.gen.sdk.tencent.view.d.3
             @Override // android.webkit.WebViewClient
             public boolean shouldOverrideUrlLoading(WebView webView2, String str) {
-                Tracker.loadUrl(d.this.f21704a, str);
+                Tracker.loadUrl(d.this.f8098a, str);
                 return true;
             }
         });
-        Tracker.loadUrl(this.f21704a, this.b);
+        Tracker.loadUrl(this.f8098a, this.b);
     }
 
     protected void a() {
@@ -124,8 +124,8 @@ public class d extends Dialog {
     }
 
     public void b() {
-        if (this.f21704a.canGoBack()) {
-            this.f21704a.goBack();
+        if (this.f8098a.canGoBack()) {
+            this.f8098a.goBack();
         } else {
             dismiss();
         }
@@ -134,7 +134,7 @@ public class d extends Dialog {
     @Override // android.app.Dialog, android.content.DialogInterface
     public void dismiss() {
         super.dismiss();
-        WebView webView = this.f21704a;
+        WebView webView = this.f8098a;
         if (webView != null) {
             webView.stopLoading();
         }
@@ -145,7 +145,7 @@ public class d extends Dialog {
         if (this.d == null) {
             a();
         }
-        if (this.f21704a == null) {
+        if (this.f8098a == null) {
             d();
         }
         super.show();

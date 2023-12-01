@@ -20,21 +20,19 @@ public final class Photo implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5661a;
+    private String a;
     private String b;
 
     public Photo() {
     }
 
     public Photo(Parcel parcel) {
-        this.f5661a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
     }
 
     public Photo(String str, String str2) {
-        this.f5661a = str;
+        this.a = str;
         this.b = str2;
     }
 
@@ -44,7 +42,7 @@ public final class Photo implements Parcelable {
     }
 
     public final String getTitle() {
-        return this.f5661a;
+        return this.a;
     }
 
     public final String getUrl() {
@@ -52,7 +50,7 @@ public final class Photo implements Parcelable {
     }
 
     public final void setTitle(String str) {
-        this.f5661a = str;
+        this.a = str;
     }
 
     public final void setUrl(String str) {
@@ -61,7 +59,7 @@ public final class Photo implements Parcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5661a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
     }
 }

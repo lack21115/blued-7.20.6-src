@@ -3,6 +3,7 @@ package com.xiaomi.push;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import com.tencent.thumbplayer.api.TPErrorCode;
 import com.xiaomi.push.ai;
 import java.io.Closeable;
 import java.io.File;
@@ -17,18 +18,18 @@ import java.util.List;
 public class dt extends ai.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f41344a;
+    private Context f27653a;
 
     /* renamed from: a  reason: collision with other field name */
-    private SharedPreferences f311a;
+    private SharedPreferences f264a;
 
     /* renamed from: a  reason: collision with other field name */
-    private com.xiaomi.push.service.ba f312a;
+    private com.xiaomi.push.service.ba f265a;
 
     public dt(Context context) {
-        this.f41344a = context;
-        this.f311a = context.getSharedPreferences("mipush_extra", 0);
-        this.f312a = com.xiaomi.push.service.ba.a(context);
+        this.f27653a = context;
+        this.f264a = context.getSharedPreferences("mipush_extra", 0);
+        this.f265a = com.xiaomi.push.service.ba.a(context);
     }
 
     private List<ho> a(File file) {
@@ -39,17 +40,17 @@ public class dt extends ai.a {
         FileInputStream fileInputStream2;
         FileLock fileLock2;
         FileInputStream fileInputStream3;
-        dk m11623a = dl.a().m11623a();
-        String a2 = m11623a == null ? "" : m11623a.a();
+        dk m8573a = dl.a().m8573a();
+        String a2 = m8573a == null ? "" : m8573a.a();
         if (TextUtils.isEmpty(a2)) {
             return null;
         }
         ArrayList arrayList = new ArrayList();
         byte[] bArr = new byte[4];
-        synchronized (Cdo.f41340a) {
+        synchronized (Cdo.f27649a) {
             try {
-                File file2 = new File(this.f41344a.getExternalFilesDir(null), "push_cdata.lock");
-                x.m12222a(file2);
+                File file2 = new File(this.f27653a.getExternalFilesDir(null), "push_cdata.lock");
+                x.m9172a(file2);
                 randomAccessFile2 = new RandomAccessFile(file2, "rw");
                 try {
                     fileLock = randomAccessFile2.getChannel().lock();
@@ -134,76 +135,76 @@ public class dt extends ai.a {
     }
 
     private void a() {
-        SharedPreferences.Editor edit = this.f311a.edit();
+        SharedPreferences.Editor edit = this.f264a.edit();
         edit.putLong("last_upload_data_timestamp", System.currentTimeMillis() / 1000);
         edit.commit();
     }
 
     private void a(ho hoVar) {
-        if (hoVar.f574a != hi.AppInstallList || hoVar.f575a.startsWith("same_")) {
+        if (hoVar.f527a != hi.AppInstallList || hoVar.f528a.startsWith("same_")) {
             return;
         }
-        SharedPreferences.Editor edit = this.f311a.edit();
-        edit.putLong("dc_job_result_time_4", hoVar.f573a);
-        edit.putString("dc_job_result_4", bn.a(hoVar.f575a));
+        SharedPreferences.Editor edit = this.f264a.edit();
+        edit.putLong("dc_job_result_time_4", hoVar.f526a);
+        edit.putString("dc_job_result_4", bn.a(hoVar.f528a));
         edit.commit();
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private boolean m11629a() {
-        if (bh.e(this.f41344a)) {
+    private boolean m8579a() {
+        if (bh.e(this.f27653a)) {
             return false;
         }
-        if ((bh.g(this.f41344a) || bh.f(this.f41344a)) && !c()) {
+        if ((bh.g(this.f27653a) || bh.f(this.f27653a)) && !c()) {
             return true;
         }
-        return (bh.h(this.f41344a) && !b()) || bh.i(this.f41344a);
+        return (bh.h(this.f27653a) && !b()) || bh.i(this.f27653a);
     }
 
     private boolean b() {
-        if (this.f312a.a(hl.Upload3GSwitch.a(), true)) {
-            return Math.abs((System.currentTimeMillis() / 1000) - this.f311a.getLong("last_upload_data_timestamp", -1L)) > ((long) Math.max(86400, this.f312a.a(hl.Upload3GFrequency.a(), 432000)));
+        if (this.f265a.a(hl.Upload3GSwitch.a(), true)) {
+            return Math.abs((System.currentTimeMillis() / 1000) - this.f264a.getLong("last_upload_data_timestamp", -1L)) > ((long) Math.max(86400, this.f265a.a(hl.Upload3GFrequency.a(), 432000)));
         }
         return false;
     }
 
     private boolean c() {
-        if (this.f312a.a(hl.Upload4GSwitch.a(), true)) {
-            return Math.abs((System.currentTimeMillis() / 1000) - this.f311a.getLong("last_upload_data_timestamp", -1L)) > ((long) Math.max(86400, this.f312a.a(hl.Upload4GFrequency.a(), com.anythink.expressad.d.a.b.bx)));
+        if (this.f265a.a(hl.Upload4GSwitch.a(), true)) {
+            return Math.abs((System.currentTimeMillis() / 1000) - this.f264a.getLong("last_upload_data_timestamp", -1L)) > ((long) Math.max(86400, this.f265a.a(hl.Upload4GFrequency.a(), com.anythink.expressad.d.a.b.bx)));
         }
         return false;
     }
 
     @Override // com.xiaomi.push.ai.a
     /* renamed from: a */
-    public String mo11550a() {
+    public String mo8500a() {
         return "1";
     }
 
     @Override // java.lang.Runnable
     public void run() {
-        File file = new File(this.f41344a.getExternalFilesDir(null), "push_cdata.data");
-        if (!bh.d(this.f41344a)) {
+        File file = new File(this.f27653a.getExternalFilesDir(null), "push_cdata.data");
+        if (!bh.d(this.f27653a)) {
             if (file.length() > 1863680) {
                 file.delete();
             }
-        } else if (!m11629a() && file.exists()) {
+        } else if (!m8579a() && file.exists()) {
             List<ho> a2 = a(file);
             if (!ac.a(a2)) {
                 int size = a2.size();
                 List<ho> list = a2;
                 if (size > 4000) {
-                    list = a2.subList(size - 4000, size);
+                    list = a2.subList(size - TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY, size);
                 }
                 hz hzVar = new hz();
                 hzVar.a(list);
                 byte[] a3 = x.a(iq.a(hzVar));
                 Cif cif = new Cif("-1", false);
-                cif.c(hq.DataCollection.f583a);
+                cif.c(hq.DataCollection.f536a);
                 cif.a(a3);
-                dk m11623a = dl.a().m11623a();
-                if (m11623a != null) {
-                    m11623a.a(cif, hg.Notification, null);
+                dk m8573a = dl.a().m8573a();
+                if (m8573a != null) {
+                    m8573a.a(cif, hg.Notification, null);
                 }
                 a();
             }

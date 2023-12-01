@@ -1,7 +1,6 @@
 package com.opos.mobad.cmn.service.b;
 
 import android.content.Context;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.opos.cmn.an.j.b;
 import com.opos.cmn.d.c;
 import com.opos.cmn.i.a;
@@ -16,13 +15,13 @@ import java.util.Map;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile a f25921a;
+    private static volatile a f12233a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.cmn.i.a f25922c = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.cmn.service.b.a.1
+    private com.opos.cmn.i.a f12234c = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.cmn.service.b.a.1
         @Override // com.opos.cmn.i.a.b
-        public void a(a.InterfaceC0645a interfaceC0645a) {
+        public void a(a.InterfaceC0475a interfaceC0475a) {
             a aVar = a.this;
             aVar.a(c.a(aVar.b));
         }
@@ -30,7 +29,7 @@ public class a {
 
     /* renamed from: com.opos.mobad.cmn.service.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/cmn/service/b/a$a.class */
-    static class C0686a implements j {
+    static class C0516a implements j {
         @Override // com.opos.mobad.e.a.j
         public void a(Context context, String str, String str2, String str3) {
         }
@@ -51,15 +50,15 @@ public class a {
 
     public static final a a() {
         a aVar;
-        if (f25921a != null) {
-            return f25921a;
+        if (f12233a != null) {
+            return f12233a;
         }
         synchronized (a.class) {
             try {
-                aVar = f25921a;
-                if (f25921a == null) {
+                aVar = f12233a;
+                if (f12233a == null) {
                     aVar = new a();
-                    f25921a = aVar;
+                    f12233a = aVar;
                 }
             } catch (Throwable th) {
                 throw th;
@@ -77,7 +76,7 @@ public class a {
     }
 
     private String b(File file) {
-        return file.getName() + BridgeUtil.UNDERLINE_STR + System.currentTimeMillis();
+        return file.getName() + "_" + System.currentTimeMillis();
     }
 
     private static void c(final File file) {
@@ -85,7 +84,7 @@ public class a {
             @Override // java.lang.Runnable
             public void run() {
                 try {
-                    a.d(File.this);
+                    a.d(file);
                     com.opos.cmn.an.f.a.b("interaction", "clear succ");
                 } catch (Exception e) {
                     com.opos.cmn.an.f.a.b("", "clear temp fail", e);
@@ -132,8 +131,8 @@ public class a {
 
     public void a(Context context, String str, String str2) {
         this.b = context;
-        this.f25922c.a();
-        n.a(context.getApplicationContext(), str, str2, new m.a().a(new C0686a()).a());
+        this.f12234c.a();
+        n.a(context.getApplicationContext(), str, str2, new m.a().a(new C0516a()).a());
     }
 
     public void a(String str) {

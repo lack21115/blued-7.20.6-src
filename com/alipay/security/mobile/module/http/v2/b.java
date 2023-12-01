@@ -6,20 +6,18 @@ import com.alipay.security.mobile.module.http.model.c;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/security/mobile/module/http/v2/b.class */
 public class b implements a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static a f4722a;
+    private static a a;
     private static com.alipay.security.mobile.module.http.a b;
 
     public static a a(Context context, String str) {
         if (context == null) {
             return null;
         }
-        if (f4722a == null) {
+        if (a == null) {
             b = d.a(context, str);
-            f4722a = new b();
+            a = new b();
         }
-        return f4722a;
+        return a;
     }
 
     @Override // com.alipay.security.mobile.module.http.v2.a

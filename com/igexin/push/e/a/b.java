@@ -10,24 +10,24 @@ import java.net.URL;
 public class b extends com.igexin.c.a.d.f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23593a = b.class.getName();
+    public static final String f9985a = b.class.getName();
     public static final int b = -2147483639;
     private static final int d = 20000;
 
     /* renamed from: c  reason: collision with root package name */
-    public d f23594c;
+    public d f9986c;
     private HttpURLConnection e;
 
     public b(d dVar) {
         super(0);
-        this.f23594c = dVar;
+        this.f9986c = dVar;
     }
 
     /* JADX WARN: Not initialized variable reg: 10, insn: 0x0128: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r10 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:61:0x0128 */
     private byte[] a(String str) {
-        AutoCloseable autoCloseable;
-        InputStream inputStream;
         ByteArrayOutputStream byteArrayOutputStream;
+        InputStream inputStream;
+        ByteArrayOutputStream byteArrayOutputStream2;
         InputStream inputStream2;
         try {
             try {
@@ -39,13 +39,13 @@ public class b extends com.igexin.c.a.d.f {
                 this.e.setDoInput(true);
                 inputStream = this.e.getInputStream();
                 try {
-                    byteArrayOutputStream = new ByteArrayOutputStream();
+                    byteArrayOutputStream2 = new ByteArrayOutputStream();
                 } catch (Exception e) {
                     e = e;
-                    byteArrayOutputStream = null;
+                    byteArrayOutputStream2 = null;
                 } catch (Throwable th) {
                     th = th;
-                    autoCloseable = null;
+                    byteArrayOutputStream = null;
                     if (inputStream != null) {
                         try {
                             inputStream.close();
@@ -53,9 +53,9 @@ public class b extends com.igexin.c.a.d.f {
                             com.igexin.c.a.c.a.a(e2);
                         }
                     }
-                    if (autoCloseable != null) {
+                    if (byteArrayOutputStream != null) {
                         try {
-                            autoCloseable.close();
+                            byteArrayOutputStream.close();
                         } catch (Exception e3) {
                             com.igexin.c.a.c.a.a(e3);
                         }
@@ -66,10 +66,10 @@ public class b extends com.igexin.c.a.d.f {
             } catch (Exception e4) {
                 e = e4;
                 inputStream = null;
-                byteArrayOutputStream = null;
+                byteArrayOutputStream2 = null;
             } catch (Throwable th2) {
                 th = th2;
-                autoCloseable = null;
+                byteArrayOutputStream = null;
                 inputStream = null;
             }
             try {
@@ -83,9 +83,9 @@ public class b extends com.igexin.c.a.d.f {
                         com.igexin.c.a.c.a.a(e6);
                     }
                 }
-                if (byteArrayOutputStream != null) {
+                if (byteArrayOutputStream2 != null) {
                     try {
-                        byteArrayOutputStream.close();
+                        byteArrayOutputStream2.close();
                     } catch (Exception e7) {
                         e = e7;
                         com.igexin.c.a.c.a.a(e);
@@ -105,7 +105,7 @@ public class b extends com.igexin.c.a.d.f {
                     }
                 }
                 try {
-                    byteArrayOutputStream.close();
+                    byteArrayOutputStream2.close();
                 } catch (Exception e9) {
                     e = e9;
                     com.igexin.c.a.c.a.a(e);
@@ -121,9 +121,9 @@ public class b extends com.igexin.c.a.d.f {
                 if (read == -1) {
                     break;
                 }
-                byteArrayOutputStream.write(bArr, 0, read);
+                byteArrayOutputStream2.write(bArr, 0, read);
             }
-            byte[] byteArray = byteArrayOutputStream.toByteArray();
+            byte[] byteArray = byteArrayOutputStream2.toByteArray();
             if (inputStream != null) {
                 try {
                     inputStream.close();
@@ -132,7 +132,7 @@ public class b extends com.igexin.c.a.d.f {
                 }
             }
             try {
-                byteArrayOutputStream.close();
+                byteArrayOutputStream2.close();
             } catch (Exception e11) {
                 com.igexin.c.a.c.a.a(e11);
             }
@@ -184,30 +184,30 @@ public class b extends com.igexin.c.a.d.f {
     public final void b_() throws Exception {
         super.b_();
         Process.setThreadPriority(10);
-        d dVar = this.f23594c;
-        if (dVar == null || dVar.f == null || (this.f23594c.g != null && this.f23594c.g.length > com.igexin.push.config.d.A * 1024)) {
+        d dVar = this.f9986c;
+        if (dVar == null || dVar.f == null || (this.f9986c.g != null && this.f9986c.g.length > com.igexin.push.config.d.A * 1024)) {
             k();
-            com.igexin.c.a.c.a.a(f23593a, "run return ###");
-            com.igexin.c.a.c.a.a(f23593a + "|run return ###", new Object[0]);
+            com.igexin.c.a.c.a.a(f9985a, "run return ###");
+            com.igexin.c.a.c.a.a(f9985a + "|run return ###", new Object[0]);
             return;
         }
         try {
-            byte[] a2 = this.f23594c.g == null ? a(this.f23594c.f) : a(this.f23594c.f, this.f23594c.g);
+            byte[] a2 = this.f9986c.g == null ? a(this.f9986c.f) : a(this.f9986c.f, this.f9986c.g);
             if (a2 == null) {
                 Exception exc = new Exception("Http response ＝＝ null");
-                this.f23594c.a(exc);
+                this.f9986c.a(exc);
                 throw exc;
             }
             try {
-                this.f23594c.a(a2);
-                com.igexin.c.a.b.e.a().a(this.f23594c);
+                this.f9986c.a(a2);
+                com.igexin.c.a.b.e.a().a(this.f9986c);
                 com.igexin.c.a.b.e.a().b();
             } catch (Exception e) {
-                this.f23594c.a(e);
+                this.f9986c.a(e);
                 throw e;
             }
         } catch (Exception e2) {
-            this.f23594c.a(e2);
+            this.f9986c.a(e2);
             throw e2;
         }
     }

@@ -18,18 +18,18 @@ import javax.crypto.Cipher;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f27920a = {82, 83, 65, 47, 69, 67, 66, 47, 80, 75, 67, 83, 49, 80, 97, 100, 100, 105, 110, 103};
+    private static final byte[] f14232a = {82, 83, 65, 47, 69, 67, 66, 47, 80, 75, 67, 83, 49, 80, 97, 100, 100, 105, 110, 103};
     private PublicKey b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f27921c;
+    private final boolean f14233c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/qq/e/comm/managers/plugin/c$b.class */
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final c f27922a = new c();
+        public static final c f14234a = new c();
     }
 
     private c() {
@@ -40,7 +40,7 @@ public class c {
         } catch (Throwable th) {
             z = false;
         }
-        this.f27921c = z;
+        this.f14233c = z;
     }
 
     private PublicKey a(String str) throws Exception {
@@ -118,11 +118,11 @@ public class c {
         if (TextUtils.isEmpty(str2)) {
             return false;
         }
-        if (this.f27921c) {
+        if (this.f14233c) {
             if (this.b != null) {
                 byte[] decode = Base64.decode(str, 0);
                 try {
-                    Cipher cipher = Cipher.getInstance(new String(f27920a, "UTF-8"));
+                    Cipher cipher = Cipher.getInstance(new String(f14232a, "UTF-8"));
                     cipher.init(2, this.b);
                     str3 = new String(cipher.doFinal(decode), "UTF-8").trim();
                 } catch (Throwable th) {

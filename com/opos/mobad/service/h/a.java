@@ -21,7 +21,7 @@ import com.opos.mobad.service.f.a;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ab f27377a;
+    private static ab f13689a;
     private static n b;
 
     public static final m a(Context context) {
@@ -62,7 +62,7 @@ public class a {
 
     public static final w b(Context context) {
         a.d n = com.opos.mobad.service.f.a.a().n();
-        return new w.a().a(n.b).a(Integer.valueOf(n.f27363a)).b();
+        return new w.a().a(n.b).a(Integer.valueOf(n.f13675a)).b();
     }
 
     private static final p.b c(Context context) {
@@ -104,10 +104,10 @@ public class a {
     }
 
     public static final ab d() {
-        if (f27377a == null) {
-            f27377a = new ab.a().a(Integer.valueOf(com.opos.mobad.service.f.a.a().o())).a(com.opos.mobad.service.f.a.a().p()).b(Integer.valueOf(com.opos.mobad.service.f.a.a().q())).c(Integer.valueOf(com.opos.cmn.f.a.a())).b();
+        if (f13689a == null) {
+            f13689a = new ab.a().a(Integer.valueOf(com.opos.mobad.service.f.a.a().o())).a(com.opos.mobad.service.f.a.a().p()).b(Integer.valueOf(com.opos.mobad.service.f.a.a().q())).c(Integer.valueOf(com.opos.cmn.f.a.a())).b();
         }
-        return f27377a;
+        return f13689a;
     }
 
     public static final g e() {

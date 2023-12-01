@@ -38,10 +38,10 @@ public final class LiveGiftBagTabView extends CommonGiftTabView<LiveGiftPackageM
             Intrinsics.e(viewHolder, "$viewHolder");
             Intrinsics.e(model, "$model");
             int[] iArr = new int[2];
-            View a2 = viewHolder.a(R.id.live_gift_tab_item_qa);
-            a2.getLocationInWindow(iArr);
-            Observable<Object> observable = LiveEventBus.get(LiveEventBusUtil.s);
-            observable.post(model.name + '_' + (iArr[0] + DisplayUtil.a(a2.getContext(), 14.0f)));
+            View a = viewHolder.a(R.id.live_gift_tab_item_qa);
+            a.getLocationInWindow(iArr);
+            Observable observable = LiveEventBus.get(LiveEventBusUtil.s);
+            observable.post(model.name + '_' + (iArr[0] + DisplayUtil.a(a.getContext(), 14.0f)));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -68,14 +68,14 @@ public final class LiveGiftBagTabView extends CommonGiftTabView<LiveGiftPackageM
                 textView.setTextColor(this.b.getResources().getColor(R.color.syc_dark_j));
                 viewHolder.b(R.id.live_gift_tab_item_indicator, 4);
             }
-            View a2 = viewHolder.b(R.id.live_gift_tab_item_qa, (liveGiftPackageModel.showQuestion && this.b.d == i) ? 0 : 8).b(R.id.live_gift_tab_item_dot, liveGiftPackageModel.hasNew ? 0 : 8).a(R.id.live_gift_tab_item_qa, new View.OnClickListener() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBagTabView$LiveGiftTabAdapter$2Q9F0vjA4CB0y2MIys1P29IgpMg
+            View a = viewHolder.b(R.id.live_gift_tab_item_qa, (liveGiftPackageModel.showQuestion && this.b.d == i) ? 0 : 8).b(R.id.live_gift_tab_item_dot, liveGiftPackageModel.hasNew ? 0 : 8).a(R.id.live_gift_tab_item_qa, new View.OnClickListener() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBagTabView$LiveGiftTabAdapter$2Q9F0vjA4CB0y2MIys1P29IgpMg
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveGiftBagTabView.LiveGiftTabAdapter.a(CommonRecycleAdapter.CommonAdapterHolder.this, model, view);
                 }
             }).a();
             final LiveGiftBagTabView liveGiftBagTabView = this.b;
-            a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBagTabView$LiveGiftTabAdapter$PJ_FXUlg7HCJ2cxJ9AEh576OuS0
+            a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBagTabView$LiveGiftTabAdapter$PJ_FXUlg7HCJ2cxJ9AEh576OuS0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveGiftBagTabView.LiveGiftTabAdapter.a(LiveGiftBagTabView.this, i, view);
@@ -98,7 +98,7 @@ public final class LiveGiftBagTabView extends CommonGiftTabView<LiveGiftPackageM
 
     @Override // com.blued.android.module.common.view.CommonGiftTabView
     public CommonGiftTabView<LiveGiftPackageModel>.GiftTabAdapter a() {
-        return new LiveGiftTabAdapter(this, this.f10971a);
+        return new LiveGiftTabAdapter(this, this.a);
     }
 
     @Override // com.blued.android.module.common.view.CommonGiftTabView

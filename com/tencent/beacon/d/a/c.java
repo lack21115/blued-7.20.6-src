@@ -15,11 +15,11 @@ import java.util.Map;
 public class c implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SparseArray<WeakReference<Activity>> f35006a = new SparseArray<>();
+    private static SparseArray<WeakReference<Activity>> f21315a = new SparseArray<>();
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f35007c = 0;
+    private long f21316c = 0;
     private long d = 0;
     private long e = 20000;
     private String f = "";
@@ -35,7 +35,7 @@ public class c implements Application.ActivityLifecycleCallbacks {
     }
 
     public static SparseArray<WeakReference<Activity>> a() {
-        return f35006a;
+        return f21315a;
     }
 
     private void a(Activity activity) {
@@ -54,7 +54,7 @@ public class c implements Application.ActivityLifecycleCallbacks {
     private void a(boolean z, Activity activity) {
         if (z) {
             long currentTimeMillis = System.currentTimeMillis();
-            if (this.f35007c > 0) {
+            if (this.f21316c > 0) {
                 long j = this.d;
                 if (j > 0 && j + b() <= currentTimeMillis) {
                     com.tencent.beacon.base.util.c.a("[lifecycle] -> return foreground more than 20s.", new Object[0]);
@@ -65,20 +65,20 @@ public class c implements Application.ActivityLifecycleCallbacks {
                     }
                 }
             }
-            this.f35007c = currentTimeMillis;
+            this.f21316c = currentTimeMillis;
             this.d = 0L;
             return;
         }
         long currentTimeMillis2 = System.currentTimeMillis();
         this.d = currentTimeMillis2;
-        long j2 = this.f35007c;
+        long j2 = this.f21316c;
         if (800 + j2 > currentTimeMillis2) {
             com.tencent.beacon.base.util.c.a("[lifecycle] -> debounce activity switch.", new Object[0]);
-            this.f35007c = 0L;
+            this.f21316c = 0L;
             return;
         }
         if (j2 == 0) {
-            this.f35007c = currentTimeMillis2;
+            this.f21316c = currentTimeMillis2;
         }
         StatModule statModule2 = this.h;
         if (statModule2 != null) {
@@ -103,12 +103,12 @@ public class c implements Application.ActivityLifecycleCallbacks {
     }
 
     private static void b(Activity activity) {
-        if (activity == null || f35006a == null) {
+        if (activity == null || f21315a == null) {
             return;
         }
         int hashCode = activity.hashCode();
-        if (f35006a.get(hashCode) == null) {
-            f35006a.put(hashCode, new WeakReference<>(activity));
+        if (f21315a.get(hashCode) == null) {
+            f21315a.put(hashCode, new WeakReference<>(activity));
         }
     }
 
@@ -119,7 +119,7 @@ public class c implements Application.ActivityLifecycleCallbacks {
         }
         boolean z = false;
         if (!d.equals(this.f)) {
-            a.SharedPreferences$EditorC0895a edit = com.tencent.beacon.a.d.a.a().edit();
+            a.SharedPreferences$EditorC0725a edit = com.tencent.beacon.a.d.a.a().edit();
             if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                 edit.putString("LAUEVE_DENGTA", d);
             }

@@ -8,7 +8,7 @@ import java.io.File;
 public class a extends i<Void> {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7877c = a.class.getSimpleName();
+    private static final String f5037c = a.class.getSimpleName();
     private File d;
     private File e;
 

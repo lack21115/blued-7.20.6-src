@@ -21,23 +21,15 @@ import java.util.concurrent.atomic.AtomicLong;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/grpc/GrpcUnaryCall.class */
 public abstract class GrpcUnaryCall {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected ChannelManager f11361a;
+    protected ChannelManager a;
     protected IMThreadManager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ApmArguments f11362c;
+    private final ApmArguments c;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/grpc/GrpcUnaryCall$ApmArguments.class */
     public static class ApmArguments {
-
-        /* renamed from: a  reason: collision with root package name */
-        public ApmProtos.GrpcRequestTypeProto.BUSINESS f11363a = ApmProtos.GrpcRequestTypeProto.BUSINESS.PRIVATE_CHAT;
+        public ApmProtos.GrpcRequestTypeProto.BUSINESS a = ApmProtos.GrpcRequestTypeProto.BUSINESS.PRIVATE_CHAT;
         public String b = "";
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f11364c = "";
+        public String c = "";
     }
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/grpc/GrpcUnaryCall$OnFinishListener.class */
@@ -49,9 +41,7 @@ public abstract class GrpcUnaryCall {
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/grpc/GrpcUnaryCall$SendMessageRunnable.class */
     public class SendMessageRunnable extends NamedRunnable {
         private final AtomicBoolean b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final AtomicLong f11366c;
+        private final AtomicLong c;
         private final OnFinishListener d;
         private final GeneratedMessageV3 e;
         private final ClientCall.Listener<GeneratedMessageV3> f;
@@ -59,9 +49,8 @@ public abstract class GrpcUnaryCall {
         public SendMessageRunnable(GeneratedMessageV3 generatedMessageV3, OnFinishListener onFinishListener) {
             super(GrpcUnaryCall.this.c());
             this.b = new AtomicBoolean(false);
-            this.f11366c = new AtomicLong();
+            this.c = new AtomicLong();
             this.f = new ClientCall.Listener<GeneratedMessageV3>() { // from class: com.blued.android.module.im.grpc.GrpcUnaryCall.SendMessageRunnable.1
-                @Override // io.grpc.ClientCall.Listener
                 /* renamed from: a */
                 public void onMessage(final GeneratedMessageV3 generatedMessageV32) {
                     if (IMConfig.b()) {
@@ -79,7 +68,6 @@ public abstract class GrpcUnaryCall {
                     });
                 }
 
-                @Override // io.grpc.ClientCall.Listener
                 public void onClose(final Status status, Metadata metadata) {
                     if (IMConfig.b()) {
                         IMConfig.a().e(" << onClose : @", Thread.currentThread().getName(), " ", status == null ? "status is null!" : status.toString(), "\n", metadata == null ? "trailers is null!" : metadata.toString());
@@ -108,19 +96,19 @@ public abstract class GrpcUnaryCall {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a(int i, Exception exc) {
-            BluedStatistics.b().a(GrpcUnaryCall.this.b().f11363a, GrpcUnaryCall.this.b().b, i, SystemClock.uptimeMillis() - this.f11366c.get(), GrpcUnaryCall.this.b().f11364c, exc, GrpcUnaryCall.this.f11361a.a(), GrpcUnaryCall.this.f11361a.b());
+            BluedStatistics.b().a(GrpcUnaryCall.this.b().a, GrpcUnaryCall.this.b().b, i, SystemClock.uptimeMillis() - this.c.get(), GrpcUnaryCall.this.b().c, exc, GrpcUnaryCall.this.a.a(), GrpcUnaryCall.this.a.b());
         }
 
         @Override // com.blued.android.statistics.util.NamedRunnable
         public void a() {
             if (IMConfig.b()) {
-                Logger a2 = IMConfig.a();
-                a2.b(">> SendMessageRunnable Request : " + this.e.toString());
+                Logger a = IMConfig.a();
+                a.b(">> SendMessageRunnable Request : " + this.e.toString());
             }
-            this.f11366c.set(SystemClock.uptimeMillis());
+            this.c.set(SystemClock.uptimeMillis());
             try {
-                ClientCall newCall = GrpcUnaryCall.this.f11361a.d().newCall(GrpcUnaryCall.this.a(), CallOptions.DEFAULT.withDeadlineAfter(30L, TimeUnit.SECONDS));
-                newCall.start(this.f, GrpcUnaryCall.this.f11361a.f());
+                ClientCall newCall = GrpcUnaryCall.this.a.d().newCall(GrpcUnaryCall.this.a(), CallOptions.DEFAULT.withDeadlineAfter(30L, TimeUnit.SECONDS));
+                newCall.start(this.f, GrpcUnaryCall.this.a.f());
                 newCall.sendMessage(this.e);
                 newCall.halfClose();
                 newCall.request(1);
@@ -134,25 +122,25 @@ public abstract class GrpcUnaryCall {
     }
 
     public GrpcUnaryCall(ChannelManager channelManager, IMThreadManager iMThreadManager) {
-        this.f11362c = new ApmArguments();
-        this.f11361a = channelManager;
+        this.c = new ApmArguments();
+        this.a = channelManager;
         this.b = iMThreadManager;
     }
 
     public GrpcUnaryCall(ChannelManager channelManager, IMThreadManager iMThreadManager, boolean z) {
         ApmArguments apmArguments = new ApmArguments();
-        this.f11362c = apmArguments;
-        this.f11361a = channelManager;
+        this.c = apmArguments;
+        this.a = channelManager;
         this.b = iMThreadManager;
-        apmArguments.f11363a = z ? ApmProtos.GrpcRequestTypeProto.BUSINESS.GROUP_CHAT : ApmProtos.GrpcRequestTypeProto.BUSINESS.PRIVATE_CHAT;
+        apmArguments.a = z ? ApmProtos.GrpcRequestTypeProto.BUSINESS.GROUP_CHAT : ApmProtos.GrpcRequestTypeProto.BUSINESS.PRIVATE_CHAT;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public String c() {
-        String str = this.f11362c.b;
+        String str = this.c.b;
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
-            str2 = this.f11362c.f11363a.name();
+            str2 = this.c.a.name();
         }
         return str2;
     }
@@ -161,7 +149,7 @@ public abstract class GrpcUnaryCall {
 
     public void a(GeneratedMessageV3 generatedMessageV3, OnFinishListener onFinishListener) {
         IMThreadManager iMThreadManager;
-        if (this.f11361a == null || (iMThreadManager = this.b) == null) {
+        if (this.a == null || (iMThreadManager = this.b) == null) {
             return;
         }
         try {
@@ -172,6 +160,6 @@ public abstract class GrpcUnaryCall {
     }
 
     public ApmArguments b() {
-        return this.f11362c;
+        return this.c;
     }
 }

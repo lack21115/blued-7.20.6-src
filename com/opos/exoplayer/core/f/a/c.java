@@ -8,7 +8,7 @@ import com.opos.exoplayer.core.i.u;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f25339a = u.f("GA94");
+    private static final int f11651a = u.f("GA94");
     private static final int b = u.f("DTG1");
 
     private static int a(m mVar) {
@@ -45,7 +45,7 @@ public final class c {
                     boolean z = g == 181 && (h == 49 || h == 47) && g2 == 3;
                     boolean z2 = z;
                     if (h == 49) {
-                        z2 = z & (o == f25339a || o == b);
+                        z2 = z & (o == f11651a || o == b);
                     }
                     if (z2) {
                         int g3 = mVar.g();

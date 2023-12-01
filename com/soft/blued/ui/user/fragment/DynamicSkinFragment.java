@@ -64,7 +64,7 @@ public class DynamicSkinFragment extends CustomSettingBaseFragment {
                 this.s.setVisibility(0);
                 String b = TimeAndDateUtils.b(vIPCustomSettingBase.stop_time + "");
                 TextView textView = this.s;
-                textView.setText(this.f33846a.getResources().getString(R.string.valid_time_period) + b);
+                textView.setText(this.f20155a.getResources().getString(R.string.valid_time_period) + b);
             } else {
                 this.r.setVisibility(8);
                 this.s.setVisibility(8);
@@ -74,7 +74,7 @@ public class DynamicSkinFragment extends CustomSettingBaseFragment {
             this.s.setVisibility(8);
             if (vIPCustomSettingBase.isDefault) {
                 if (h()) {
-                    this.k.setText(R.string.restore_default);
+                    this.k.setText((int) R.string.restore_default);
                 }
                 this.k.setVisibility(0);
                 this.l.setVisibility(8);
@@ -84,12 +84,12 @@ public class DynamicSkinFragment extends CustomSettingBaseFragment {
                     this.l.setVisibility(0);
                     String b2 = TimeAndDateUtils.b(vIPCustomSettingBase.stop_time + "");
                     TextView textView2 = this.l;
-                    textView2.setText(this.f33846a.getResources().getString(R.string.valid_time_period) + b2);
+                    textView2.setText(this.f20155a.getResources().getString(R.string.valid_time_period) + b2);
                 } else {
                     this.l.setVisibility(8);
                 }
                 if (h()) {
-                    this.k.setText(R.string.customize_now);
+                    this.k.setText((int) R.string.customize_now);
                 }
                 this.k.setVisibility(0);
             }
@@ -137,13 +137,13 @@ public class DynamicSkinFragment extends CustomSettingBaseFragment {
             this.s.setVisibility(0);
             String b = TimeAndDateUtils.b(vIPCustomSettingBase.stop_time + "");
             TextView textView = this.s;
-            textView.setText(this.f33846a.getResources().getString(R.string.valid_time_period) + b);
+            textView.setText(this.f20155a.getResources().getString(R.string.valid_time_period) + b);
         }
     }
 
     @Override // com.soft.blued.ui.user.fragment.CustomSettingBaseFragment
     public String c() {
-        return this.f33846a.getResources().getString(2131887560);
+        return this.f20155a.getResources().getString(2131887560);
     }
 
     @Override // com.soft.blued.ui.user.fragment.CustomSettingBaseFragment
@@ -166,14 +166,13 @@ public class DynamicSkinFragment extends CustomSettingBaseFragment {
         return R.layout.dynamic_skin_item;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
-        this.k = (ShapeTextView) this.b.findViewById(R.id.tv_btm_btn);
+        this.k = this.b.findViewById(R.id.tv_btm_btn);
         this.n = (TextView) this.b.findViewById(R.id.theme_name);
-        this.m = (ImageView) this.b.findViewById(2131363531);
-        this.p = (TextView) this.b.findViewById(2131368652);
-        this.q = (TextView) this.b.findViewById(2131370684);
+        this.m = (ImageView) this.b.findViewById(R.id.feed_dynamic_skin);
+        this.p = (TextView) this.b.findViewById(R.id.name_view);
+        this.q = (TextView) this.b.findViewById(R.id.time_view);
         this.o = (ImageView) this.b.findViewById(2131364232);
         this.l = (TextView) this.b.findViewById(R.id.valid_date);
         this.r = (TextView) this.b.findViewById(R.id.tv_time_limit);
@@ -186,7 +185,7 @@ public class DynamicSkinFragment extends CustomSettingBaseFragment {
             this.k.setVisibility(8);
         } else {
             this.l.setVisibility(8);
-            this.k.setText(R.string.buy_vip_for_custom_setting);
+            this.k.setText((int) R.string.buy_vip_for_custom_setting);
         }
         this.k.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.DynamicSkinFragment.1
             @Override // android.view.View.OnClickListener

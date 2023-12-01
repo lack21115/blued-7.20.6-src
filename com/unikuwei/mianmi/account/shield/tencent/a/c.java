@@ -4,7 +4,7 @@ package com.unikuwei.mianmi.account.shield.tencent.a;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f40983a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    private static final char[] f27292a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     public static byte[] a(String str) {
         if (str == null) {

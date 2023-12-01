@@ -1,5 +1,6 @@
 package com.kwad.components.core.r;
 
+import android.R;
 import android.app.Activity;
 import android.os.Build;
 import android.view.Window;
@@ -18,7 +19,7 @@ public final class d {
             if (z2) {
                 return;
             }
-            activity.findViewById(16908290).setPadding(0, com.kwad.sdk.c.kwai.a.getStatusBarHeight(activity), 0, 0);
+            activity.findViewById(R.id.content).setPadding(0, com.kwad.sdk.c.kwai.a.getStatusBarHeight(activity), 0, 0);
         }
     }
 

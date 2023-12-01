@@ -7,19 +7,19 @@ import com.tencent.beacon.base.net.NetException;
 class b implements Callback<BResponse> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Callback f34981a;
+    final /* synthetic */ Callback f21290a;
     final /* synthetic */ c b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public b(c cVar, Callback callback) {
         this.b = cVar;
-        this.f34981a = callback;
+        this.f21290a = callback;
     }
 
     @Override // com.tencent.beacon.base.net.call.Callback
     /* renamed from: a */
     public void onResponse(BResponse bResponse) throws NetException {
-        Callback callback = this.f34981a;
+        Callback callback = this.f21290a;
         if (callback != null) {
             callback.onResponse(bResponse);
         }
@@ -27,7 +27,7 @@ class b implements Callback<BResponse> {
 
     @Override // com.tencent.beacon.base.net.call.Callback
     public void onFailure(com.tencent.beacon.base.net.d dVar) {
-        Callback callback = this.f34981a;
+        Callback callback = this.f21290a;
         if (callback != null) {
             callback.onFailure(dVar);
         }

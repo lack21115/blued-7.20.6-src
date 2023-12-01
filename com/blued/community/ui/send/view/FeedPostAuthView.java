@@ -32,13 +32,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/view/FeedPostAuthView.class */
 public final class FeedPostAuthView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f20083a;
+    public boolean a;
     private CardView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f20084c;
+    private View c;
     private ImageView d;
     private TextView e;
     private ImageView f;
@@ -68,16 +64,16 @@ public final class FeedPostAuthView extends FrameLayout {
     }
 
     private final void a() {
-        CardView cardView = (CardView) LayoutInflater.from(getContext()).inflate(getLayoutId(), (ViewGroup) null);
-        this.b = cardView;
-        if (cardView == null) {
+        CardView inflate = LayoutInflater.from(getContext()).inflate(getLayoutId(), (ViewGroup) null);
+        this.b = inflate;
+        if (inflate == null) {
             return;
         }
-        this.f20084c = cardView.findViewById(R.id.layout_read_auth);
-        this.d = (ImageView) cardView.findViewById(R.id.iv_read_auth);
-        this.e = (TextView) cardView.findViewById(R.id.tv_read_auth);
-        this.f = (ImageView) cardView.findViewById(R.id.iv_read_auth_close);
-        View view = this.f20084c;
+        this.c = inflate.findViewById(R.id.layout_read_auth);
+        this.d = (ImageView) inflate.findViewById(R.id.iv_read_auth);
+        this.e = (TextView) inflate.findViewById(R.id.tv_read_auth);
+        this.f = (ImageView) inflate.findViewById(R.id.iv_read_auth_close);
+        View view = this.c;
         if (view != null) {
             view.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.ui.send.view.-$$Lambda$FeedPostAuthView$Uj6090uzNzwlLBjiGX7o9dgEdfE
                 @Override // android.view.View.OnClickListener
@@ -96,7 +92,7 @@ public final class FeedPostAuthView extends FrameLayout {
             }));
         }
         d();
-        addView(cardView);
+        addView((View) inflate);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -112,7 +108,7 @@ public final class FeedPostAuthView extends FrameLayout {
     }
 
     private final void b() {
-        if (this.f20083a) {
+        if (this.a) {
             AppMethods.d(R.string.feed_post_anonymous_auth_toast);
             return;
         }
@@ -125,7 +121,7 @@ public final class FeedPostAuthView extends FrameLayout {
         if (fragmentManager == null) {
             return;
         }
-        FeedPostReadAuthDialogFragment.f19920a.a(fragmentManager, getShowType());
+        FeedPostReadAuthDialogFragment.a.a(fragmentManager, getShowType());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -156,12 +152,12 @@ public final class FeedPostAuthView extends FrameLayout {
 
     private final void d() {
         MutableLiveData<Integer> d;
-        Integer value;
+        Integer num;
         MutableLiveData<Integer> d2;
-        Integer value2;
+        Integer num2;
         MutableLiveData<Integer> e;
-        Integer value3;
-        if (this.f20083a) {
+        Integer num3;
+        if (this.a) {
             ImageView imageView = this.d;
             if (imageView != null) {
                 imageView.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.feed_post_anonym));
@@ -201,9 +197,9 @@ public final class FeedPostAuthView extends FrameLayout {
             }
         }
         FeedPostViewModel feedPostViewModel = this.h;
-        if ((feedPostViewModel == null || (d = feedPostViewModel.d()) == null || (value = d.getValue()) == null || value.intValue() != 0) ? false : true) {
+        if ((feedPostViewModel == null || (d = feedPostViewModel.d()) == null || (num = (Integer) d.getValue()) == null || num.intValue() != 0) ? false : true) {
             FeedPostViewModel feedPostViewModel2 = this.h;
-            if ((feedPostViewModel2 == null || (e = feedPostViewModel2.e()) == null || (value3 = e.getValue()) == null || value3.intValue() != 0) ? false : true) {
+            if ((feedPostViewModel2 == null || (e = feedPostViewModel2.e()) == null || (num3 = (Integer) e.getValue()) == null || num3.intValue() != 0) ? false : true) {
                 TextView textView5 = this.e;
                 if (textView5 != null) {
                     textView5.setText(R.string.feed_post_privacy_all);
@@ -229,29 +225,29 @@ public final class FeedPostAuthView extends FrameLayout {
         }
         StringBuilder sb = new StringBuilder();
         FeedPostViewModel feedPostViewModel3 = this.h;
-        Integer value4 = (feedPostViewModel3 == null || (d2 = feedPostViewModel3.d()) == null) ? null : d2.getValue();
-        if (value4 != null && value4.intValue() == 0) {
+        Integer num4 = (feedPostViewModel3 == null || (d2 = feedPostViewModel3.d()) == null) ? null : (Integer) d2.getValue();
+        if (num4 != null && num4.intValue() == 0) {
             sb.append(getContext().getString(R.string.feed_public));
-        } else if (value4 != null && value4.intValue() == 1) {
+        } else if (num4 != null && num4.intValue() == 1) {
             sb.append(getContext().getString(R.string.feed_visible_friends));
-        } else if (value4 != null && value4.intValue() == 2) {
+        } else if (num4 != null && num4.intValue() == 2) {
             sb.append(getContext().getString(R.string.feed_visible_self));
         }
         sb.append("、");
         FeedPostViewModel feedPostViewModel4 = this.h;
         if (feedPostViewModel4 == null) {
-            value2 = null;
+            num2 = null;
         } else {
             MutableLiveData<Integer> e2 = feedPostViewModel4.e();
-            value2 = e2 == null ? null : e2.getValue();
+            num2 = e2 == null ? null : (Integer) e2.getValue();
         }
-        if (value2 != null && value2.intValue() == 0) {
+        if (num2 != null && num2.intValue() == 0) {
             sb.append(getContext().getString(R.string.feed_post_comment_all));
-        } else if (value2 != null && value2.intValue() == 1) {
+        } else if (num2 != null && num2.intValue() == 1) {
             sb.append(getContext().getString(R.string.feed_post_comment_follow_fans));
-        } else if (value2 != null && value2.intValue() == 2) {
+        } else if (num2 != null && num2.intValue() == 2) {
             sb.append(getContext().getString(R.string.feed_post_comment_follow));
-        } else if (value2 != null && value2.intValue() == 3) {
+        } else if (num2 != null && num2.intValue() == 3) {
             sb.append(getContext().getString(R.string.feed_post_comment_fans));
         }
         TextView textView6 = this.e;
@@ -279,7 +275,7 @@ public final class FeedPostAuthView extends FrameLayout {
         if (feedPostViewModel == null || (d = feedPostViewModel.d()) == null) {
             return null;
         }
-        return d.getValue();
+        return (Integer) d.getValue();
     }
 
     public final Integer getCommentValue() {
@@ -288,7 +284,7 @@ public final class FeedPostAuthView extends FrameLayout {
         if (feedPostViewModel == null || (e = feedPostViewModel.e()) == null) {
             return null;
         }
-        return e.getValue();
+        return (Integer) e.getValue();
     }
 
     public final Fragment getFragment() {
@@ -300,7 +296,7 @@ public final class FeedPostAuthView extends FrameLayout {
     }
 
     public void setAnonymousTopic(boolean z) {
-        this.f20083a = z;
+        this.a = z;
         d();
     }
 
@@ -373,7 +369,6 @@ public final class FeedPostAuthView extends FrameLayout {
         FeedPostViewModel feedPostViewModel = this.h;
         if (feedPostViewModel != null && (d = feedPostViewModel.d()) != null) {
             d.observe(fm.getViewLifecycleOwner(), new Observer() { // from class: com.blued.community.ui.send.view.-$$Lambda$FeedPostAuthView$OPq0lmvdL5EdP3oAcupiSZKI76o
-                @Override // androidx.lifecycle.Observer
                 public final void onChanged(Object obj) {
                     FeedPostAuthView.a(FeedPostAuthView.this, (Integer) obj);
                 }
@@ -384,7 +379,6 @@ public final class FeedPostAuthView extends FrameLayout {
             return;
         }
         e.observe(fm.getViewLifecycleOwner(), new Observer() { // from class: com.blued.community.ui.send.view.-$$Lambda$FeedPostAuthView$vNwSVO6gMJW5Nzk-v46OpdOMYzU
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 FeedPostAuthView.b(FeedPostAuthView.this, (Integer) obj);
             }
@@ -396,12 +390,12 @@ public final class FeedPostAuthView extends FrameLayout {
     }
 
     public void setWidthParam(int i) {
-        View view = this.f20084c;
+        View view = this.c;
         ViewGroup.LayoutParams layoutParams = view == null ? null : view.getLayoutParams();
         if (layoutParams != null) {
             layoutParams.width = i;
         }
-        View view2 = this.f20084c;
+        View view2 = this.c;
         if (view2 == null) {
             return;
         }

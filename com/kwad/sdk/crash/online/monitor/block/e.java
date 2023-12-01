@@ -3,7 +3,6 @@ package com.kwad.sdk.crash.online.monitor.block;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.kwad.sdk.core.report.KSLoggerReporter;
 import com.kwad.sdk.core.report.f;
 import com.kwad.sdk.crash.online.monitor.block.BlockEvent;
@@ -103,7 +102,7 @@ public final class e {
             String str7 = str5;
             sb.append(str5);
             String str8 = str5;
-            sb.append(BridgeUtil.UNDERLINE_STR);
+            sb.append("_");
             String str9 = str5;
             String replaceAll2 = sb.toString().replaceAll("\n\tat _", "\n");
             StringBuilder sb2 = new StringBuilder("\n\tat ");
@@ -154,7 +153,7 @@ public final class e {
             String str9 = str7;
             sb3.append(str7);
             String str10 = str7;
-            sb3.append(BridgeUtil.UNDERLINE_STR);
+            sb3.append("_");
             String str11 = str7;
             String replaceAll3 = sb3.toString().replaceAll("\n\tat _", "\n");
             StringBuilder sb4 = new StringBuilder("\n\tat ");
@@ -195,15 +194,15 @@ public final class e {
         g.execute(new aw() { // from class: com.kwad.sdk.crash.online.monitor.block.e.1
             @Override // com.kwad.sdk.utils.aw
             public final void doTask() {
-                if (TextUtils.isEmpty(String.this)) {
+                if (TextUtils.isEmpty(str)) {
                     return;
                 }
                 if (z || e.sQ() == 1) {
-                    com.kwad.sdk.core.d.b.d("perfMonitor.Reporter", "report now :" + String.this);
-                    h.R("perf-block", String.this);
+                    com.kwad.sdk.core.d.b.d("perfMonitor.Reporter", "report now :" + str);
+                    h.R("perf-block", str);
                     return;
                 }
-                BlockReportAction blockReportAction = new BlockReportAction(String.this);
+                BlockReportAction blockReportAction = new BlockReportAction(str);
                 com.kwad.sdk.core.d.b.d("perfMonitor.Reporter", "write to db :" + blockReportAction.toJson().toString());
                 final Context context = ((com.kwad.sdk.service.kwai.e) ServiceProvider.get(com.kwad.sdk.service.kwai.e.class)).getContext();
                 if (context == null) {

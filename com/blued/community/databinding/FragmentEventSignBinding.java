@@ -12,13 +12,9 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentEventSignBinding.class */
 public final class FragmentEventSignBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f18858a;
+    public final ImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f18859c;
+    public final ImageView c;
     public final FrameLayout d;
     public final View e;
     public final TextView f;
@@ -26,9 +22,9 @@ public final class FragmentEventSignBinding implements ViewBinding {
 
     private FragmentEventSignBinding(LinearLayout linearLayout, ImageView imageView, TextView textView, ImageView imageView2, FrameLayout frameLayout, View view, TextView textView2) {
         this.g = linearLayout;
-        this.f18858a = imageView;
+        this.a = imageView;
         this.b = textView;
-        this.f18859c = imageView2;
+        this.c = imageView2;
         this.d = frameLayout;
         this.e = view;
         this.f = textView2;
@@ -81,7 +77,6 @@ public final class FragmentEventSignBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.g;

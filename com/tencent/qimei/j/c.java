@@ -8,7 +8,7 @@ import java.io.IOException;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f38342a = "c";
+    public static final String f24651a = "c";
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v15, types: [java.io.FileInputStream] */

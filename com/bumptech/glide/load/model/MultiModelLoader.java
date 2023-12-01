@@ -17,18 +17,18 @@ import java.util.List;
 class MultiModelLoader<Model, Data> implements ModelLoader<Model, Data> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<ModelLoader<Model, Data>> f20895a;
+    private final List<ModelLoader<Model, Data>> f7289a;
     private final Pools.Pool<List<Throwable>> b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/MultiModelLoader$MultiFetcher.class */
     static class MultiFetcher<Data> implements DataFetcher<Data>, DataFetcher.DataCallback<Data> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<DataFetcher<Data>> f20896a;
+        private final List<DataFetcher<Data>> f7290a;
         private final Pools.Pool<List<Throwable>> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f20897c;
+        private int f7291c;
         private Priority d;
         private DataFetcher.DataCallback<? super Data> e;
         private List<Throwable> f;
@@ -37,16 +37,16 @@ class MultiModelLoader<Model, Data> implements ModelLoader<Model, Data> {
         MultiFetcher(List<DataFetcher<Data>> list, Pools.Pool<List<Throwable>> pool) {
             this.b = pool;
             Preconditions.a(list);
-            this.f20896a = list;
-            this.f20897c = 0;
+            this.f7290a = list;
+            this.f7291c = 0;
         }
 
         private void e() {
             if (this.g) {
                 return;
             }
-            if (this.f20897c < this.f20896a.size() - 1) {
-                this.f20897c++;
+            if (this.f7291c < this.f7290a.size() - 1) {
+                this.f7291c++;
                 a(this.d, this.e);
                 return;
             }
@@ -61,7 +61,7 @@ class MultiModelLoader<Model, Data> implements ModelLoader<Model, Data> {
                 this.b.release(list);
             }
             this.f = null;
-            for (DataFetcher<Data> dataFetcher : this.f20896a) {
+            for (DataFetcher<Data> dataFetcher : this.f7290a) {
                 dataFetcher.a();
             }
         }
@@ -71,7 +71,7 @@ class MultiModelLoader<Model, Data> implements ModelLoader<Model, Data> {
             this.d = priority;
             this.e = dataCallback;
             this.f = this.b.acquire();
-            this.f20896a.get(this.f20897c).a(priority, this);
+            this.f7290a.get(this.f7291c).a(priority, this);
             if (this.g) {
                 b();
             }
@@ -95,32 +95,32 @@ class MultiModelLoader<Model, Data> implements ModelLoader<Model, Data> {
         @Override // com.bumptech.glide.load.data.DataFetcher
         public void b() {
             this.g = true;
-            for (DataFetcher<Data> dataFetcher : this.f20896a) {
+            for (DataFetcher<Data> dataFetcher : this.f7290a) {
                 dataFetcher.b();
             }
         }
 
         @Override // com.bumptech.glide.load.data.DataFetcher
         public Class<Data> c() {
-            return this.f20896a.get(0).c();
+            return this.f7290a.get(0).c();
         }
 
         @Override // com.bumptech.glide.load.data.DataFetcher
         public DataSource d() {
-            return this.f20896a.get(0).d();
+            return this.f7290a.get(0).d();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public MultiModelLoader(List<ModelLoader<Model, Data>> list, Pools.Pool<List<Throwable>> pool) {
-        this.f20895a = list;
+        this.f7289a = list;
         this.b = pool;
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public ModelLoader.LoadData<Data> a(Model model, int i, int i2, Options options) {
         Key key;
-        int size = this.f20895a.size();
+        int size = this.f7289a.size();
         ArrayList arrayList = new ArrayList(size);
         int i3 = 0;
         Key key2 = null;
@@ -129,14 +129,14 @@ class MultiModelLoader<Model, Data> implements ModelLoader<Model, Data> {
             if (i3 >= size) {
                 break;
             }
-            ModelLoader<Model, Data> modelLoader = this.f20895a.get(i3);
+            ModelLoader<Model, Data> modelLoader = this.f7289a.get(i3);
             Key key3 = key;
             if (modelLoader.a(model)) {
                 ModelLoader.LoadData<Data> a2 = modelLoader.a(model, i, i2, options);
                 key3 = key;
                 if (a2 != null) {
-                    key3 = a2.f20890a;
-                    arrayList.add(a2.f20891c);
+                    key3 = a2.f7284a;
+                    arrayList.add(a2.f7285c);
                 }
             }
             i3++;
@@ -154,7 +154,7 @@ class MultiModelLoader<Model, Data> implements ModelLoader<Model, Data> {
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public boolean a(Model model) {
-        for (ModelLoader<Model, Data> modelLoader : this.f20895a) {
+        for (ModelLoader<Model, Data> modelLoader : this.f7289a) {
             if (modelLoader.a(model)) {
                 return true;
             }
@@ -163,6 +163,6 @@ class MultiModelLoader<Model, Data> implements ModelLoader<Model, Data> {
     }
 
     public String toString() {
-        return "MultiModelLoader{modelLoaders=" + Arrays.toString(this.f20895a.toArray()) + '}';
+        return "MultiModelLoader{modelLoaders=" + Arrays.toString(this.f7289a.toArray()) + '}';
     }
 }

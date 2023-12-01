@@ -3,7 +3,6 @@ package com.amap.api.maps.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.amap.api.col.p0003sl.dp;
 import com.amap.api.col.p0003sl.dw;
 import com.amap.api.col.p0003sl.iw;
@@ -114,7 +113,7 @@ public final class CameraPosition implements Parcelable {
     }
 
     public final String toString() {
-        return dw.a(dw.a(TypedValues.AttributesType.S_TARGET, this.target), dw.a("zoom", Float.valueOf(this.zoom)), dw.a("tilt", Float.valueOf(this.tilt)), dw.a("bearing", Float.valueOf(this.bearing)));
+        return dw.a(dw.a("target", this.target), dw.a("zoom", Float.valueOf(this.zoom)), dw.a("tilt", Float.valueOf(this.tilt)), dw.a("bearing", Float.valueOf(this.bearing)));
     }
 
     @Override // android.os.Parcelable

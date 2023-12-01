@@ -11,16 +11,16 @@ import java.io.IOException;
 public class AtomicFile {
 
     /* renamed from: a  reason: collision with root package name */
-    private final File f2594a;
+    private final File f2546a;
     private final File b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final File f2595c;
+    private final File f2547c;
 
     public AtomicFile(File file) {
-        this.f2594a = file;
+        this.f2546a = file;
         this.b = new File(file.getPath() + ".new");
-        this.f2595c = new File(file.getPath() + ".bak");
+        this.f2547c = new File(file.getPath() + ".bak");
     }
 
     private static void a(File file, File file2) {
@@ -43,9 +43,9 @@ public class AtomicFile {
     }
 
     public void delete() {
-        this.f2594a.delete();
+        this.f2546a.delete();
         this.b.delete();
-        this.f2595c.delete();
+        this.f2547c.delete();
     }
 
     public void failWrite(FileOutputStream fileOutputStream) {
@@ -78,21 +78,21 @@ public class AtomicFile {
         } catch (IOException e) {
             Log.e("AtomicFile", "Failed to close file output stream", e);
         }
-        a(this.b, this.f2594a);
+        a(this.b, this.f2546a);
     }
 
     public File getBaseFile() {
-        return this.f2594a;
+        return this.f2546a;
     }
 
     public FileInputStream openRead() throws FileNotFoundException {
-        if (this.f2595c.exists()) {
-            a(this.f2595c, this.f2594a);
+        if (this.f2547c.exists()) {
+            a(this.f2547c, this.f2546a);
         }
-        if (this.b.exists() && this.f2594a.exists() && !this.b.delete()) {
+        if (this.b.exists() && this.f2546a.exists() && !this.b.delete()) {
             Log.e("AtomicFile", "Failed to delete outdated new file " + this.b);
         }
-        return new FileInputStream(this.f2594a);
+        return new FileInputStream(this.f2546a);
     }
 
     public byte[] readFully() throws IOException {
@@ -111,7 +111,7 @@ public class AtomicFile {
                 i = i2;
                 if (available > bArr.length - i2) {
                     byte[] bArr2 = new byte[available + i2];
-                    System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, i2);
+                    System.arraycopy(bArr, 0, bArr2, 0, i2);
                     bArr = bArr2;
                     i = i2;
                 }
@@ -123,8 +123,8 @@ public class AtomicFile {
     }
 
     public FileOutputStream startWrite() throws IOException {
-        if (this.f2595c.exists()) {
-            a(this.f2595c, this.f2594a);
+        if (this.f2547c.exists()) {
+            a(this.f2547c, this.f2546a);
         }
         try {
             return new FileOutputStream(this.b);

@@ -28,15 +28,12 @@ public class DdmHandleNativeHeap extends ChunkHandler {
         DdmServer.registerHandler(CHUNK_NHGT, mInstance);
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public void connected() {
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public void disconnected() {
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public Chunk handleChunk(Chunk chunk) {
         Log.i("ddm-nativeheap", "Handling " + name(chunk.type) + " chunk");
         int i = chunk.type;

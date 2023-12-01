@@ -40,13 +40,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopRankingHourTopPotentialRoadView.class */
 public final class PopRankingHourTopPotentialRoadView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15138a;
+    private final Context a;
     private final BaseFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final IRequestHost f15139c;
+    private final IRequestHost c;
     private final int d;
     private final boolean e;
     private final Lazy f;
@@ -59,9 +55,9 @@ public final class PopRankingHourTopPotentialRoadView extends FrameLayout {
         Intrinsics.e(mContext, "mContext");
         Intrinsics.e(fragment, "fragment");
         Intrinsics.e(requestHost, "requestHost");
-        this.f15138a = mContext;
+        this.a = mContext;
         this.b = fragment;
-        this.f15139c = requestHost;
+        this.c = requestHost;
         this.d = i;
         this.e = z;
         this.f = LazyKt.a(new Function0<PopWindowRankingListHourBinding>() { // from class: com.blued.android.module.live_china.view.PopRankingHourTopPotentialRoadView$vb$2
@@ -73,9 +69,9 @@ public final class PopRankingHourTopPotentialRoadView extends FrameLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final PopWindowRankingListHourBinding invoke() {
-                PopWindowRankingListHourBinding a2 = PopWindowRankingListHourBinding.a(LayoutInflater.from(PopRankingHourTopPotentialRoadView.this.getContext()).inflate(R.layout.pop_window_ranking_list_hour, PopRankingHourTopPotentialRoadView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…ist_hour, this)\n        )");
-                return a2;
+                PopWindowRankingListHourBinding a = PopWindowRankingListHourBinding.a(LayoutInflater.from(PopRankingHourTopPotentialRoadView.this.getContext()).inflate(R.layout.pop_window_ranking_list_hour, PopRankingHourTopPotentialRoadView.this));
+                Intrinsics.c(a, "bind(\n            Layout…ist_hour, this)\n        )");
+                return a;
             }
         });
         this.h = new ArrayList<>();
@@ -120,7 +116,7 @@ public final class PopRankingHourTopPotentialRoadView extends FrameLayout {
         int i = this.d;
         int i2 = this.e ? 1 : 2;
         String g = LiveRoomManager.a().g();
-        final IRequestHost iRequestHost = this.f15139c;
+        final IRequestHost iRequestHost = this.c;
         LiveRoomHttpUtils.a(i, i2, g, new BluedUIHttpResponse<BluedEntity<RankHourDataModel, RankHourExtraModel>>(iRequestHost) { // from class: com.blued.android.module.live_china.view.PopRankingHourTopPotentialRoadView$loadDate$1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i3, String str) {
@@ -175,7 +171,7 @@ public final class PopRankingHourTopPotentialRoadView extends FrameLayout {
                 }
                 PopRankingHourTopPotentialRoadView.this.a(rankHourExtraModel2);
             }
-        }, this.f15139c);
+        }, this.c);
     }
 
     private final void b(RankHourExtraModel rankHourExtraModel) {
@@ -205,7 +201,7 @@ public final class PopRankingHourTopPotentialRoadView extends FrameLayout {
             getVb().m.setVisibility(0);
             getVb().e.setVisibility(8);
         }
-        ImageLoader.a(getRequestHost(), AvatarUtils.a(1, anchor_rank.getAvatar())).c().b(R.drawable.user_bg_round).a(getVb().f12499a);
+        ImageLoader.a(getRequestHost(), AvatarUtils.a(1, anchor_rank.getAvatar())).c().b(R.drawable.user_bg_round).a(getVb().a);
         if (TextUtils.isEmpty(anchor_rank.getAvatar_frame())) {
             getVb().b.setVisibility(8);
         } else if (anchor_rank.getAvatar_frame_type() == 0) {
@@ -234,7 +230,7 @@ public final class PopRankingHourTopPotentialRoadView extends FrameLayout {
             Intrinsics.c(linearLayout2, "vb.llAnchorRankLayout");
             BluedViewExKt.a(linearLayout2);
         }
-        ImageLoader.c(getRequestHost(), "live_rank_hour_bounce.png").g().g(-1).a(getVb().f12500c);
+        ImageLoader.c(getRequestHost(), "live_rank_hour_bounce.png").g().g(-1).a(getVb().c);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -256,7 +252,7 @@ public final class PopRankingHourTopPotentialRoadView extends FrameLayout {
             freedomAdapter.notifyDataSetChanged();
             return;
         }
-        FreedomAdapter freedomAdapter2 = new FreedomAdapter(getContext(), this.f15139c, this.h);
+        FreedomAdapter freedomAdapter2 = new FreedomAdapter(getContext(), this.c, this.h);
         this.g = freedomAdapter2;
         Intrinsics.a(freedomAdapter2);
         freedomAdapter2.b("BaseFragment", this.b);
@@ -306,10 +302,10 @@ public final class PopRankingHourTopPotentialRoadView extends FrameLayout {
     }
 
     public final Context getMContext() {
-        return this.f15138a;
+        return this.a;
     }
 
     public final IRequestHost getRequestHost() {
-        return this.f15139c;
+        return this.c;
     }
 }

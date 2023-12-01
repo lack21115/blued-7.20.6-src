@@ -184,10 +184,10 @@ public final class b extends a {
     }
 
     /* renamed from: do  reason: not valid java name */
-    private com.kwad.components.ad.f.kwai.kwai.a m7624do() {
+    private com.kwad.components.ad.f.kwai.kwai.a m4617do() {
         final com.kwad.components.ad.f.kwai.kwai.a aVar = new com.kwad.components.ad.f.kwai.kwai.a();
-        this.jt.jE.add(new c.InterfaceC0484c() { // from class: com.kwad.components.ad.interstitial.c.kwai.b.2
-            @Override // com.kwad.components.ad.interstitial.c.c.InterfaceC0484c
+        this.jt.jE.add(new c.InterfaceC0314c() { // from class: com.kwad.components.ad.interstitial.c.kwai.b.2
+            @Override // com.kwad.components.ad.interstitial.c.c.InterfaceC0314c
             public final void dg() {
                 aVar.fb();
             }
@@ -344,7 +344,7 @@ public final class b extends a {
         return new ag.a() { // from class: com.kwad.components.ad.interstitial.c.kwai.b.9
             @Override // com.kwad.components.core.webview.jshandler.ag.a
             public final void a(com.kwad.components.core.webview.kwai.b bVar) {
-                AdWebViewActivityProxy.launch(b.this.getContext(), new AdWebViewActivityProxy.a.C0529a().au(bVar.title).av(bVar.url).aA(true).L(b.this.jt.mAdTemplate).oc());
+                AdWebViewActivityProxy.launch(b.this.getContext(), new AdWebViewActivityProxy.a.C0359a().au(bVar.title).av(bVar.url).aA(true).L(b.this.jt.mAdTemplate).oc());
             }
         };
     }
@@ -405,8 +405,8 @@ public final class b extends a {
         com.kwad.components.ad.f.kwai.kwai.b k = com.kwad.components.ad.f.kwai.kwai.b.k(this.jt.mAdTemplate);
         this.km = k;
         if (k != null) {
-            k.a(new b.InterfaceC0472b() { // from class: com.kwad.components.ad.interstitial.c.kwai.b.12
-                @Override // com.kwad.components.ad.f.kwai.kwai.b.InterfaceC0472b
+            k.a(new b.InterfaceC0302b() { // from class: com.kwad.components.ad.interstitial.c.kwai.b.12
+                @Override // com.kwad.components.ad.f.kwai.kwai.b.InterfaceC0302b
                 public final void G(int i) {
                     if (i == com.kwad.components.ad.f.kwai.kwai.b.nP) {
                         b.this.jt.b(b.this.getContext(), b.this.jt.mAdTemplate);
@@ -434,7 +434,7 @@ public final class b extends a {
         lVar.c(dl());
         lVar.c(a(bVar));
         lVar.c(eq());
-        lVar.c(m7624do());
+        lVar.c(m4617do());
         lVar.c(new q() { // from class: com.kwad.components.ad.interstitial.c.kwai.b.14
             @Override // com.kwad.components.core.webview.a.kwai.q, com.kwad.sdk.core.webview.b.a
             public final void handleJsCall(String str, com.kwad.sdk.core.webview.b.c cVar) {

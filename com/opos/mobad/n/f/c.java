@@ -13,18 +13,18 @@ import com.opos.mobad.n.a;
 public class c extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    k f26674a;
+    k f12986a;
     ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f26675c;
-    private a.InterfaceC0708a d;
+    private int f12987c;
+    private a.InterfaceC0538a d;
 
     public c(Context context, int i) {
         super(context);
         setVisibility(4);
         setBackgroundColor(0);
-        this.f26675c = i;
+        this.f12987c = i;
         a();
         com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.f.c.1
             @Override // com.opos.mobad.n.c.g
@@ -56,8 +56,8 @@ public class c extends RelativeLayout {
     }
 
     private void b() {
-        int i = this.f26675c;
-        this.f26674a = i != 0 ? i != 1 ? i != 2 ? i != 3 ? k.f(getContext(), 64, 18, 14, -1275068416) : k.b(getContext(), 64, 18, 14, -1) : k.b(getContext(), 64, 18, 14, -1275068416) : k.d(getContext(), 67, 24, 14, -1) : k.d(getContext(), 64, 18, 14, -1275068416);
+        int i = this.f12987c;
+        this.f12986a = i != 0 ? i != 1 ? i != 2 ? i != 3 ? k.f(getContext(), 64, 18, 14, -1275068416) : k.b(getContext(), 64, 18, 14, -1) : k.b(getContext(), 64, 18, 14, -1275068416) : k.d(getContext(), 67, 24, 14, -1) : k.d(getContext(), 64, 18, 14, -1275068416);
         com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.f.c.2
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
@@ -66,8 +66,8 @@ public class c extends RelativeLayout {
                 }
             }
         };
-        this.f26674a.c().setOnClickListener(gVar);
-        this.f26674a.c().setOnTouchListener(gVar);
+        this.f12986a.c().setOnClickListener(gVar);
+        this.f12986a.c().setOnTouchListener(gVar);
     }
 
     public static c c(Context context) {
@@ -75,7 +75,7 @@ public class c extends RelativeLayout {
     }
 
     private void c() {
-        int i = this.f26675c;
+        int i = this.f12987c;
         if (i != 0) {
             if (i != 1) {
                 if (i != 2) {
@@ -91,11 +91,11 @@ public class c extends RelativeLayout {
             addView(this.b, layoutParams);
             RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-1, -1);
             layoutParams2.addRule(3, this.b.getId());
-            addView(this.f26674a, layoutParams2);
+            addView(this.f12986a, layoutParams2);
             return;
         }
         addView(this.b, new RelativeLayout.LayoutParams(-1, -1));
-        addView(this.f26674a, new RelativeLayout.LayoutParams(-1, -1));
+        addView(this.f12986a, new RelativeLayout.LayoutParams(-1, -1));
     }
 
     public static c d(Context context) {
@@ -127,20 +127,19 @@ public class c extends RelativeLayout {
         if (bitmap == null) {
             return;
         }
-        this.f26674a.a(bitmap);
+        this.f12986a.a(bitmap);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.d = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.d = interfaceC0538a;
     }
 
     public void a(String str, String str2, String str3) {
-        this.f26674a.a(str, str2, str3, 0);
+        this.f12986a.a(str, str2, str3, 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         d();
     }

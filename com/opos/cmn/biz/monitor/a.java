@@ -12,11 +12,11 @@ import com.opos.cmn.biz.monitor.b.e;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile a f24619a;
+    private static volatile a f10932a;
     private static volatile boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.cmn.biz.monitor.b.a f24620c;
+    private com.opos.cmn.biz.monitor.b.a f10933c;
     private com.opos.cmn.biz.monitor.b.a d = new com.opos.cmn.biz.monitor.b.d();
 
     private a() {
@@ -24,16 +24,16 @@ public class a {
 
     public static a a() {
         a aVar;
-        if (f24619a != null) {
-            return f24619a;
+        if (f10932a != null) {
+            return f10932a;
         }
         synchronized (a.class) {
             try {
-                if (f24619a != null) {
-                    aVar = f24619a;
+                if (f10932a != null) {
+                    aVar = f10932a;
                 } else {
-                    f24619a = new a();
-                    aVar = f24619a;
+                    f10932a = new a();
+                    aVar = f10932a;
                 }
             } catch (Throwable th) {
                 throw th;
@@ -122,7 +122,7 @@ public class a {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0046, code lost:
-        if (r11.f24642a != false) goto L29;
+        if (r11.f10955a != false) goto L29;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -169,14 +169,14 @@ public class a {
             r0 = r9
             r10 = r0
             r0 = r11
-            boolean r0 = r0.f24642a
+            boolean r0 = r0.f10955a
             if (r0 == 0) goto L54
         L49:
             r0 = r8
             r1 = r9
             r2 = r15
             com.opos.cmn.biz.monitor.e$a r0 = com.opos.cmn.biz.monitor.e.a(r0, r1, r2)
-            java.lang.String r0 = r0.f24663a
+            java.lang.String r0 = r0.f10976a
             r10 = r0
         L54:
             r0 = r11
@@ -194,7 +194,7 @@ public class a {
             r0 = r11
             if (r0 == 0) goto L79
             r0 = r11
-            long r0 = r0.f24643c
+            long r0 = r0.f10956c
             r13 = r0
             goto L7c
         L79:
@@ -213,7 +213,7 @@ public class a {
     }
 
     public com.opos.cmn.biz.monitor.b.a b() {
-        com.opos.cmn.biz.monitor.b.a aVar = this.f24620c;
+        com.opos.cmn.biz.monitor.b.a aVar = this.f10933c;
         return aVar != null ? aVar : this.d;
     }
 
@@ -228,7 +228,7 @@ public class a {
             if (monitorEvent == null) {
                 monitorEvent2 = new MonitorEvent.b().a();
             }
-            str2 = e.a(context, str, monitorEvent2).f24663a;
+            str2 = e.a(context, str, monitorEvent2).f10976a;
         }
         return str2;
     }

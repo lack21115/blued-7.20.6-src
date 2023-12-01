@@ -36,15 +36,15 @@ public class c extends b {
 
     @Override // com.opos.mobad.o.b.b
     protected void a() {
-        ImageView imageView = new ImageView(this.f27049a);
+        ImageView imageView = new ImageView(this.f13361a);
         imageView.setImageDrawable(new ColorDrawable(-16777216));
         imageView.setAlpha(1.0f);
-        this.f27050c.addView(imageView, new RelativeLayout.LayoutParams(-1, -1));
+        this.f13362c.addView(imageView, new RelativeLayout.LayoutParams(-1, -1));
     }
 
     @Override // com.opos.mobad.o.b.b
     protected void b() {
-        TextView textView = new TextView(this.f27049a);
+        TextView textView = new TextView(this.f13361a);
         this.e = textView;
         textView.setText("抱歉，视频播放失败，请点击重试");
         int a2 = com.opos.mobad.cmn.a.b.g.a();
@@ -60,12 +60,12 @@ public class c extends b {
 
     @Override // com.opos.mobad.o.b.b
     protected void c() {
-        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f27049a, 50.0f);
+        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f13361a, 50.0f);
         this.f = cVar;
         cVar.setScaleType(ImageView.ScaleType.CENTER);
-        this.f.setImageDrawable(com.opos.cmn.an.d.a.a.c(this.f27049a, "opos_module_biz_ui_native_video_replay_cover.png"));
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f27049a, 40.0f), com.opos.cmn.an.h.f.a.a(this.f27049a, 40.0f));
-        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f27049a, 14.0f);
+        this.f.setImageDrawable(com.opos.cmn.an.d.a.a.c(this.f13361a, "opos_module_biz_ui_native_video_replay_cover.png"));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f13361a, 40.0f), com.opos.cmn.an.h.f.a.a(this.f13361a, 40.0f));
+        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f13361a, 14.0f);
         layoutParams.addRule(3, h);
         layoutParams.addRule(14);
         this.d.addView(this.f, layoutParams);
@@ -73,6 +73,6 @@ public class c extends b {
     }
 
     public View d() {
-        return this.f27050c;
+        return this.f13362c;
     }
 }

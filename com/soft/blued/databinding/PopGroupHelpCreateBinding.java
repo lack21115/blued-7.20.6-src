@@ -13,20 +13,20 @@ import com.soft.blued.R;
 public final class PopGroupHelpCreateBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f29527a;
+    public final ImageView f15837a;
     public final TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f29528c;
+    public final ShapeTextView f15838c;
     public final ShapeTextView d;
     public final RecyclerView e;
     private final ShapeRelativeLayout f;
 
     private PopGroupHelpCreateBinding(ShapeRelativeLayout shapeRelativeLayout, ImageView imageView, TextView textView, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, RecyclerView recyclerView) {
         this.f = shapeRelativeLayout;
-        this.f29527a = imageView;
+        this.f15837a = imageView;
         this.b = textView;
-        this.f29528c = shapeTextView;
+        this.f15838c = shapeTextView;
         this.d = shapeTextView2;
         this.e = recyclerView;
     }
@@ -37,13 +37,13 @@ public final class PopGroupHelpCreateBinding implements ViewBinding {
         if (imageView != null) {
             TextView textView = (TextView) view.findViewById(R.id.tv_help_progress);
             if (textView != null) {
-                ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(2131371733);
-                if (shapeTextView != null) {
-                    ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.tv_vip);
-                    if (shapeTextView2 != null) {
+                ShapeTextView findViewById = view.findViewById(R.id.tv_invite);
+                if (findViewById != null) {
+                    ShapeTextView findViewById2 = view.findViewById(R.id.tv_vip);
+                    if (findViewById2 != null) {
                         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.user_list);
                         if (recyclerView != null) {
-                            return new PopGroupHelpCreateBinding((ShapeRelativeLayout) view, imageView, textView, shapeTextView, shapeTextView2, recyclerView);
+                            return new PopGroupHelpCreateBinding((ShapeRelativeLayout) view, imageView, textView, findViewById, findViewById2, recyclerView);
                         }
                         str = "userList";
                     } else {

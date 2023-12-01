@@ -8,11 +8,11 @@ import java.nio.ByteBuffer;
 public class e extends com.anythink.expressad.exoplayer.c.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7226a = 0;
+    public static final int f4387a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7227c = 2;
+    public static final int f4388c = 2;
     public final b d = new b();
     public ByteBuffer e;
     public long f;

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Environment;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.handler.a.c.g;
@@ -42,9 +41,9 @@ public class a extends com.meizu.cloud.pushsdk.handler.a.a<g> {
         String a2 = gVar.d().b().a();
         String d = gVar.d().b().d();
         if (Build.VERSION.SDK_INT >= 29) {
-            str = MzSystemUtils.getDocumentsPath(d()) + "/pushSdktmp/" + a2 + BridgeUtil.UNDERLINE_STR + d + ".zip";
+            str = MzSystemUtils.getDocumentsPath(d()) + "/pushSdktmp/" + a2 + "_" + d + ".zip";
         } else {
-            str = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/data/pushSdktmp/" + a2 + BridgeUtil.UNDERLINE_STR + d + ".zip";
+            str = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/data/pushSdktmp/" + a2 + "_" + d + ".zip";
         }
         File file = null;
         try {

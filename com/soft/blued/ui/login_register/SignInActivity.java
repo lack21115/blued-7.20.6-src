@@ -32,12 +32,11 @@ public class SignInActivity extends TerminalActivity {
         return bundle != null && bundle.containsKey("aliasUserId");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.appcompat.app.AppCompatActivity
+    /* JADX WARN: Multi-variable type inference failed */
     public AppCompatDelegate getDelegate() {
         return SkinAppCompatDelegateImpl.get(this, this);
     }
 
-    @Override // com.blued.android.core.ui.TerminalActivity, com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (!UserInfo.getInstance().isLogin() || d(bundle)) {
@@ -47,14 +46,14 @@ public class SignInActivity extends TerminalActivity {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onPause() {
         super.onPause();
         MobclickAgent.onPageEnd(getClass().getSimpleName());
         MobclickAgent.onPause(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onResume() {
         super.onResume();
         MobclickAgent.onPageStart(getClass().getSimpleName());

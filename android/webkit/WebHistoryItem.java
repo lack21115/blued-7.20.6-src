@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 public abstract class WebHistoryItem implements Cloneable {
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: clone */
-    public abstract WebHistoryItem m1132clone();
+    public abstract WebHistoryItem m66clone();
 
     public abstract Bitmap getFavicon();
 

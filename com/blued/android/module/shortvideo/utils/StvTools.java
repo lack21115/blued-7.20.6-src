@@ -2,7 +2,6 @@ package com.blued.android.module.shortvideo.utils;
 
 import android.graphics.Bitmap;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.Log;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.utils.Md5;
@@ -90,7 +89,7 @@ public class StvTools {
 
     public static void c(String str) {
         File file = new File(str);
-        File file2 = new File(str, MediaStore.MEDIA_IGNORE_FILENAME);
+        File file2 = new File(str, ".nomedia");
         FileOutputStream fileOutputStream = null;
         FileOutputStream fileOutputStream2 = null;
         try {

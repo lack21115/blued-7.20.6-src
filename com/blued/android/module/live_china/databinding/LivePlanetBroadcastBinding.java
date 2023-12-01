@@ -9,17 +9,13 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LivePlanetBroadcastBinding.class */
 public final class LivePlanetBroadcastBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final HorizontalScrollView f12360a;
+    public final HorizontalScrollView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final FrameLayout f12361c;
+    private final FrameLayout c;
 
     private LivePlanetBroadcastBinding(FrameLayout frameLayout, HorizontalScrollView horizontalScrollView, TextView textView) {
-        this.f12361c = frameLayout;
-        this.f12360a = horizontalScrollView;
+        this.c = frameLayout;
+        this.a = horizontalScrollView;
         this.b = textView;
     }
 
@@ -38,9 +34,8 @@ public final class LivePlanetBroadcastBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f12361c;
+        return this.c;
     }
 }

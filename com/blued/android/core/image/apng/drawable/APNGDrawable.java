@@ -26,12 +26,8 @@ public class APNGDrawable extends Drawable implements Animatable2Compat, FrameSe
     private volatile APNGDecoder b;
     private Bitmap f;
     private BitmapPool g;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Paint f9541a = new Paint();
-
-    /* renamed from: c  reason: collision with root package name */
-    private DrawFilter f9542c = new PaintFlagsDrawFilter(0, 3);
+    private final Paint a = new Paint();
+    private DrawFilter c = new PaintFlagsDrawFilter(0, 3);
     private Matrix d = new Matrix();
     private ConcurrentHashMap<Animatable2Compat.AnimationCallback, Animatable2Compat.AnimationCallback> e = new ConcurrentHashMap<>();
     private Object h = new Object();
@@ -44,7 +40,7 @@ public class APNGDrawable extends Drawable implements Animatable2Compat, FrameSe
     };
 
     public APNGDrawable(ByteBufferLoader byteBufferLoader) {
-        this.f9541a.setAntiAlias(true);
+        this.a.setAntiAlias(true);
         this.b = new APNGDecoder(byteBufferLoader, this);
         this.b.a(this.i);
         this.g = GlideApp.a(AppInfo.d()).a();
@@ -117,7 +113,6 @@ public class APNGDrawable extends Drawable implements Animatable2Compat, FrameSe
         this.b = null;
     }
 
-    @Override // androidx.vectordrawable.graphics.drawable.Animatable2Compat
     public void clearAnimationCallbacks() {
         this.e.clear();
     }
@@ -131,8 +126,8 @@ public class APNGDrawable extends Drawable implements Animatable2Compat, FrameSe
         if (ImageLoader.a()) {
             Log.v("IMAGE", this + ", draw ");
         }
-        canvas.setDrawFilter(this.f9542c);
-        canvas.drawBitmap(this.f, this.d, this.f9541a);
+        canvas.setDrawFilter(this.c);
+        canvas.drawBitmap(this.f, this.d, this.a);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -158,19 +153,17 @@ public class APNGDrawable extends Drawable implements Animatable2Compat, FrameSe
         return -3;
     }
 
-    @Override // android.graphics.drawable.Animatable
     public boolean isRunning() {
         return this.b.i();
     }
 
-    @Override // androidx.vectordrawable.graphics.drawable.Animatable2Compat
     public void registerAnimationCallback(Animatable2Compat.AnimationCallback animationCallback) {
         this.e.put(animationCallback, animationCallback);
     }
 
     @Override // android.graphics.drawable.Drawable
     public void setAlpha(int i) {
-        this.f9541a.setAlpha(i);
+        this.a.setAlpha(i);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -182,7 +175,7 @@ public class APNGDrawable extends Drawable implements Animatable2Compat, FrameSe
 
     @Override // android.graphics.drawable.Drawable
     public void setColorFilter(ColorFilter colorFilter) {
-        this.f9541a.setColorFilter(colorFilter);
+        this.a.setColorFilter(colorFilter);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -203,7 +196,6 @@ public class APNGDrawable extends Drawable implements Animatable2Compat, FrameSe
         return visible;
     }
 
-    @Override // android.graphics.drawable.Animatable
     public void start() {
         if (ImageLoader.a()) {
             Log.d("IMAGE", toString() + ", start, isVisible=" + isVisible());
@@ -218,7 +210,6 @@ public class APNGDrawable extends Drawable implements Animatable2Compat, FrameSe
         }
     }
 
-    @Override // android.graphics.drawable.Animatable
     public void stop() {
         if (ImageLoader.a()) {
             Log.d("IMAGE", toString() + ", @" + Thread.currentThread().getName() + ", stop");
@@ -236,7 +227,6 @@ public class APNGDrawable extends Drawable implements Animatable2Compat, FrameSe
         }
     }
 
-    @Override // androidx.vectordrawable.graphics.drawable.Animatable2Compat
     public boolean unregisterAnimationCallback(Animatable2Compat.AnimationCallback animationCallback) {
         this.e.remove(animationCallback);
         return true;

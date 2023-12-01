@@ -1,5 +1,6 @@
 package android.preference;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Parcel;
@@ -221,7 +222,7 @@ public abstract class TwoStatePreference extends Preference {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void syncSummaryView(View view) {
         boolean z;
-        TextView textView = (TextView) view.findViewById(16908304);
+        TextView textView = (TextView) view.findViewById(R.id.summary);
         if (textView != null) {
             if (!this.mChecked || TextUtils.isEmpty(this.mSummaryOn)) {
                 z = true;

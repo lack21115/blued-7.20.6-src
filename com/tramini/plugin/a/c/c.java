@@ -6,11 +6,11 @@ import org.json.JSONArray;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40502a;
+    public String f26811a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f40503c;
+    public int f26812c;
     public String d;
     public JSONArray e;
 }

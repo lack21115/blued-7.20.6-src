@@ -18,10 +18,10 @@ public class c {
     });
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile boolean f35442a;
+    private volatile boolean f21751a;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f35443c;
+    private boolean f21752c;
     private e e;
     private Context f;
     private com.tencent.cloud.huiyansdkface.a.c.a g;
@@ -42,7 +42,7 @@ public class c {
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(Context context, com.tencent.cloud.huiyansdkface.a.c.b bVar, com.tencent.cloud.huiyansdkface.a.g.b bVar2, com.tencent.cloud.huiyansdkface.a.a.a.a aVar, com.tencent.cloud.huiyansdkface.a.a.c cVar, com.tencent.cloud.huiyansdkface.a.a.a.c cVar2, b bVar3, com.tencent.cloud.huiyansdkface.a.e.d dVar, boolean z) {
         this.f = context;
-        this.f35443c = z;
+        this.f21752c = z;
         this.g = bVar.a();
         this.h = bVar2;
         this.i = aVar;
@@ -68,7 +68,7 @@ public class c {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void h() {
-        if (this.f35442a) {
+        if (this.f21751a) {
             com.tencent.cloud.huiyansdkface.a.d.a.a("WeCamera", "weCamera has started", new Object[0]);
             return;
         }
@@ -79,7 +79,7 @@ public class c {
             return;
         }
         this.r = a2;
-        this.f35442a = true;
+        this.f21751a = true;
         this.q = this.g.a(this.j);
         this.g.a(this.j.b(), com.tencent.cloud.huiyansdkface.a.f.a.a(this.f));
         com.tencent.cloud.huiyansdkface.a.e.b d2 = this.g.d();
@@ -104,7 +104,7 @@ public class c {
             this.n.b();
             this.b = true;
         }
-        if (this.f35443c) {
+        if (this.f21752c) {
             com.tencent.cloud.huiyansdkface.a.g.b bVar2 = this.h;
             if (bVar2 != null) {
                 bVar2.a(this, (com.tencent.cloud.huiyansdkface.a.c.a.a) a2, true);
@@ -149,7 +149,7 @@ public class c {
     }
 
     public boolean a() {
-        return this.f35442a;
+        return this.f21751a;
     }
 
     public c b(b bVar) {
@@ -158,7 +158,7 @@ public class c {
     }
 
     public void b() {
-        if (this.f35443c) {
+        if (this.f21752c) {
             h();
         } else {
             d.submit(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.a.c.4
@@ -178,7 +178,7 @@ public class c {
 
     public void d() {
         f();
-        if (this.f35443c) {
+        if (this.f21752c) {
             e();
         } else {
             d.submit(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.a.c.5
@@ -191,20 +191,20 @@ public class c {
     }
 
     public void e() {
-        if (!this.f35442a) {
+        if (!this.f21751a) {
             com.tencent.cloud.huiyansdkface.a.d.a.a("WeCamera", "weCamera has stopped", new Object[0]);
             return;
         }
         com.tencent.cloud.huiyansdkface.a.d.a.a("WeCamera", "execute stop camera task.", new Object[0]);
         this.e.b(this.g);
         this.g.c();
-        this.f35442a = false;
+        this.f21751a = false;
         this.g.a();
         this.e.a();
     }
 
     public void f() {
-        if (this.f35443c) {
+        if (this.f21752c) {
             i();
         } else {
             d.submit(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.a.c.2

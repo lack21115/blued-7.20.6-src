@@ -7,14 +7,14 @@ import java.util.ArrayList;
 public class PInfo {
 
     /* renamed from: c  reason: collision with root package name */
-    private String f28022c;
+    private String f14334c;
     private ArrayList<String> imei;
     private String mac;
     private String n;
     private String os;
 
     public String getC() {
-        return this.f28022c;
+        return this.f14334c;
     }
 
     public ArrayList<String> getImei() {
@@ -34,7 +34,7 @@ public class PInfo {
     }
 
     public void setC(String str) {
-        this.f28022c = str;
+        this.f14334c = str;
     }
 
     public void setImei(ArrayList<String> arrayList) {

@@ -1,6 +1,5 @@
 package androidx.emoji2.text.flatbuffer;
 
-import android.widget.ExpandableListView;
 import com.igexin.push.core.b;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
@@ -37,7 +36,7 @@ public class FlexBuffers {
     public static final int FBT_VECTOR_UINT4 = 23;
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f2855a = !FlexBuffers.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f2807a = !FlexBuffers.class.desiredAssertionStatus();
     private static final ReadBuf b = new ArrayReadWriteBuf(new byte[]{0}, 1);
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/emoji2/text/flatbuffer/FlexBuffers$Blob.class */
@@ -45,18 +44,18 @@ public class FlexBuffers {
         static final /* synthetic */ boolean b = !FlexBuffers.class.desiredAssertionStatus();
 
         /* renamed from: a  reason: collision with root package name */
-        static final Blob f2856a = new Blob(FlexBuffers.b, 1, 1);
+        static final Blob f2808a = new Blob(FlexBuffers.b, 1, 1);
 
         Blob(ReadBuf readBuf, int i, int i2) {
             super(readBuf, i, i2);
         }
 
         public static Blob empty() {
-            return f2856a;
+            return f2808a;
         }
 
         public ByteBuffer data() {
-            ByteBuffer wrap = ByteBuffer.wrap(this.f2860c.data());
+            ByteBuffer wrap = ByteBuffer.wrap(this.f2812c.data());
             wrap.position(this.d);
             wrap.limit(this.d + size());
             return wrap.asReadOnlyBuffer().slice();
@@ -64,7 +63,7 @@ public class FlexBuffers {
 
         public byte get(int i) {
             if (b || (i >= 0 && i <= size())) {
-                return this.f2860c.get(this.d + i);
+                return this.f2812c.get(this.d + i);
             }
             throw new AssertionError();
         }
@@ -78,7 +77,7 @@ public class FlexBuffers {
                 if (i2 >= size) {
                     return bArr;
                 }
-                bArr[i2] = this.f2860c.get(this.d + i2);
+                bArr[i2] = this.f2812c.get(this.d + i2);
                 i = i2 + 1;
             }
         }
@@ -90,13 +89,13 @@ public class FlexBuffers {
 
         @Override // androidx.emoji2.text.flatbuffer.FlexBuffers.Object
         public String toString() {
-            return this.f2860c.getString(this.d, size());
+            return this.f2812c.getString(this.d, size());
         }
 
         @Override // androidx.emoji2.text.flatbuffer.FlexBuffers.Object
         public StringBuilder toString(StringBuilder sb) {
             sb.append('\"');
-            sb.append(this.f2860c.getString(this.d, size()));
+            sb.append(this.f2812c.getString(this.d, size()));
             sb.append('\"');
             return sb;
         }
@@ -114,14 +113,14 @@ public class FlexBuffers {
     public static class Key extends Object {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final Key f2857a = new Key(FlexBuffers.b, 0, 0);
+        private static final Key f2809a = new Key(FlexBuffers.b, 0, 0);
 
         Key(ReadBuf readBuf, int i, int i2) {
             super(readBuf, i, i2);
         }
 
         public static Key empty() {
-            return f2857a;
+            return f2809a;
         }
 
         int a(byte[] bArr) {
@@ -130,7 +129,7 @@ public class FlexBuffers {
             int i = this.d;
             int i2 = 0;
             do {
-                b = this.f2860c.get(i);
+                b = this.f2812c.get(i);
                 b2 = bArr[i2];
                 if (b == 0) {
                     return b - b2;
@@ -168,8 +167,8 @@ public class FlexBuffers {
             int i = this.d;
             while (true) {
                 int i2 = i;
-                if (this.f2860c.get(i2) == 0) {
-                    return this.f2860c.getString(this.d, i2 - this.d);
+                if (this.f2812c.get(i2) == 0) {
+                    return this.f2812c.getString(this.d, i2 - this.d);
                 }
                 i = i2 + 1;
             }
@@ -186,21 +185,21 @@ public class FlexBuffers {
     public static class KeyVector {
 
         /* renamed from: a  reason: collision with root package name */
-        private final TypedVector f2858a;
+        private final TypedVector f2810a;
 
         KeyVector(TypedVector typedVector) {
-            this.f2858a = typedVector;
+            this.f2810a = typedVector;
         }
 
         public Key get(int i) {
             if (i >= size()) {
-                return Key.f2857a;
+                return Key.f2809a;
             }
-            return new Key(this.f2858a.f2860c, FlexBuffers.f(this.f2858a.f2860c, this.f2858a.d + (i * this.f2858a.e), this.f2858a.e), 1);
+            return new Key(this.f2810a.f2812c, FlexBuffers.f(this.f2810a.f2812c, this.f2810a.d + (i * this.f2810a.e), this.f2810a.e), 1);
         }
 
         public int size() {
-            return this.f2858a.size();
+            return this.f2810a.size();
         }
 
         public String toString() {
@@ -209,12 +208,12 @@ public class FlexBuffers {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f2858a.size()) {
+                if (i2 >= this.f2810a.size()) {
                     sb.append("]");
                     return sb.toString();
                 }
-                this.f2858a.get(i2).a(sb);
-                if (i2 != this.f2858a.size() - 1) {
+                this.f2810a.get(i2).a(sb);
+                if (i2 != this.f2810a.size() - 1) {
                     sb.append(", ");
                 }
                 i = i2 + 1;
@@ -226,7 +225,7 @@ public class FlexBuffers {
     public static class Map extends Vector {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final Map f2859a = new Map(FlexBuffers.b, 1, 1);
+        private static final Map f2811a = new Map(FlexBuffers.b, 1, 1);
 
         Map(ReadBuf readBuf, int i, int i2) {
             super(readBuf, i, i2);
@@ -250,7 +249,7 @@ public class FlexBuffers {
         }
 
         public static Map empty() {
-            return f2859a;
+            return f2811a;
         }
 
         public Reference get(String str) {
@@ -261,12 +260,12 @@ public class FlexBuffers {
             KeyVector keys = keys();
             int size = keys.size();
             int a2 = a(keys, bArr);
-            return (a2 < 0 || a2 >= size) ? Reference.f2861a : get(a2);
+            return (a2 < 0 || a2 >= size) ? Reference.f2813a : get(a2);
         }
 
         public KeyVector keys() {
             int i = this.d - (this.e * 3);
-            return new KeyVector(new TypedVector(this.f2860c, FlexBuffers.f(this.f2860c, i, this.e), FlexBuffers.h(this.f2860c, i + this.e, this.e), 4));
+            return new KeyVector(new TypedVector(this.f2812c, FlexBuffers.f(this.f2812c, i, this.e), FlexBuffers.h(this.f2812c, i + this.e, this.e), 4));
         }
 
         @Override // androidx.emoji2.text.flatbuffer.FlexBuffers.Vector, androidx.emoji2.text.flatbuffer.FlexBuffers.Object
@@ -294,7 +293,7 @@ public class FlexBuffers {
         }
 
         public Vector values() {
-            return new Vector(this.f2860c, this.d, this.e);
+            return new Vector(this.f2812c, this.d, this.e);
         }
     }
 
@@ -303,12 +302,12 @@ public class FlexBuffers {
     public static abstract class Object {
 
         /* renamed from: c  reason: collision with root package name */
-        ReadBuf f2860c;
+        ReadBuf f2812c;
         int d;
         int e;
 
         Object(ReadBuf readBuf, int i, int i2) {
-            this.f2860c = readBuf;
+            this.f2812c = readBuf;
             this.d = i;
             this.e = i2;
         }
@@ -324,11 +323,11 @@ public class FlexBuffers {
     public static class Reference {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final Reference f2861a = new Reference(FlexBuffers.b, 0, 1, 0);
+        private static final Reference f2813a = new Reference(FlexBuffers.b, 0, 1, 0);
         private ReadBuf b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f2862c;
+        private int f2814c;
         private int d;
         private int e;
         private int f;
@@ -339,7 +338,7 @@ public class FlexBuffers {
 
         Reference(ReadBuf readBuf, int i, int i2, int i3, int i4) {
             this.b = readBuf;
-            this.f2862c = i;
+            this.f2814c = i;
             this.d = i2;
             this.e = i3;
             this.f = i4;
@@ -411,19 +410,19 @@ public class FlexBuffers {
         public Blob asBlob() {
             if (isBlob() || isString()) {
                 ReadBuf readBuf = this.b;
-                return new Blob(readBuf, FlexBuffers.f(readBuf, this.f2862c, this.d), this.e);
+                return new Blob(readBuf, FlexBuffers.f(readBuf, this.f2814c, this.d), this.e);
             }
             return Blob.empty();
         }
 
         public boolean asBoolean() {
-            return isBoolean() ? this.b.get(this.f2862c) != 0 : asUInt() != 0;
+            return isBoolean() ? this.b.get(this.f2814c) != 0 : asUInt() != 0;
         }
 
         public double asFloat() {
             int i = this.f;
             if (i == 3) {
-                return FlexBuffers.j(this.b, this.f2862c, this.d);
+                return FlexBuffers.j(this.b, this.f2814c, this.d);
             }
             if (i != 1) {
                 if (i != 2) {
@@ -432,13 +431,13 @@ public class FlexBuffers {
                     }
                     if (i == 6) {
                         ReadBuf readBuf = this.b;
-                        return FlexBuffers.h(readBuf, FlexBuffers.f(readBuf, this.f2862c, this.d), this.e);
+                        return FlexBuffers.h(readBuf, FlexBuffers.f(readBuf, this.f2814c, this.d), this.e);
                     } else if (i == 7) {
                         ReadBuf readBuf2 = this.b;
-                        return FlexBuffers.g(readBuf2, FlexBuffers.f(readBuf2, this.f2862c, this.d), this.e);
+                        return FlexBuffers.g(readBuf2, FlexBuffers.f(readBuf2, this.f2814c, this.d), this.e);
                     } else if (i == 8) {
                         ReadBuf readBuf3 = this.b;
-                        return FlexBuffers.j(readBuf3, FlexBuffers.f(readBuf3, this.f2862c, this.d), this.e);
+                        return FlexBuffers.j(readBuf3, FlexBuffers.f(readBuf3, this.f2814c, this.d), this.e);
                     } else if (i == 10) {
                         return asVector().size();
                     } else {
@@ -447,43 +446,43 @@ public class FlexBuffers {
                         }
                     }
                 }
-                return FlexBuffers.g(this.b, this.f2862c, this.d);
+                return FlexBuffers.g(this.b, this.f2814c, this.d);
             }
-            return FlexBuffers.h(this.b, this.f2862c, this.d);
+            return FlexBuffers.h(this.b, this.f2814c, this.d);
         }
 
         public int asInt() {
             long g;
             int i = this.f;
             if (i == 1) {
-                return FlexBuffers.h(this.b, this.f2862c, this.d);
+                return FlexBuffers.h(this.b, this.f2814c, this.d);
             }
             if (i == 2) {
-                g = FlexBuffers.g(this.b, this.f2862c, this.d);
+                g = FlexBuffers.g(this.b, this.f2814c, this.d);
             } else if (i == 3) {
-                return (int) FlexBuffers.j(this.b, this.f2862c, this.d);
+                return (int) FlexBuffers.j(this.b, this.f2814c, this.d);
             } else {
                 if (i == 5) {
                     return Integer.parseInt(asString());
                 }
                 if (i == 6) {
                     ReadBuf readBuf = this.b;
-                    return FlexBuffers.h(readBuf, FlexBuffers.f(readBuf, this.f2862c, this.d), this.e);
+                    return FlexBuffers.h(readBuf, FlexBuffers.f(readBuf, this.f2814c, this.d), this.e);
                 } else if (i != 7) {
                     if (i == 8) {
                         ReadBuf readBuf2 = this.b;
-                        return (int) FlexBuffers.j(readBuf2, FlexBuffers.f(readBuf2, this.f2862c, this.d), this.e);
+                        return (int) FlexBuffers.j(readBuf2, FlexBuffers.f(readBuf2, this.f2814c, this.d), this.e);
                     } else if (i != 10) {
                         if (i != 26) {
                             return 0;
                         }
-                        return FlexBuffers.h(this.b, this.f2862c, this.d);
+                        return FlexBuffers.h(this.b, this.f2814c, this.d);
                     } else {
                         return asVector().size();
                     }
                 } else {
                     ReadBuf readBuf3 = this.b;
-                    g = FlexBuffers.g(readBuf3, FlexBuffers.f(readBuf3, this.f2862c, this.d), this.d);
+                    g = FlexBuffers.g(readBuf3, FlexBuffers.f(readBuf3, this.f2814c, this.d), this.d);
                 }
             }
             return (int) g;
@@ -492,7 +491,7 @@ public class FlexBuffers {
         public Key asKey() {
             if (isKey()) {
                 ReadBuf readBuf = this.b;
-                return new Key(readBuf, FlexBuffers.f(readBuf, this.f2862c, this.d), this.e);
+                return new Key(readBuf, FlexBuffers.f(readBuf, this.f2814c, this.d), this.e);
             }
             return Key.empty();
         }
@@ -500,7 +499,7 @@ public class FlexBuffers {
         public long asLong() {
             int i = this.f;
             if (i == 1) {
-                return FlexBuffers.i(this.b, this.f2862c, this.d);
+                return FlexBuffers.i(this.b, this.f2814c, this.d);
             }
             if (i != 2) {
                 if (i != 3) {
@@ -512,45 +511,45 @@ public class FlexBuffers {
                         }
                     } else if (i == 6) {
                         ReadBuf readBuf = this.b;
-                        return FlexBuffers.i(readBuf, FlexBuffers.f(readBuf, this.f2862c, this.d), this.e);
+                        return FlexBuffers.i(readBuf, FlexBuffers.f(readBuf, this.f2814c, this.d), this.e);
                     } else if (i == 7) {
                         ReadBuf readBuf2 = this.b;
-                        return FlexBuffers.g(readBuf2, FlexBuffers.f(readBuf2, this.f2862c, this.d), this.d);
+                        return FlexBuffers.g(readBuf2, FlexBuffers.f(readBuf2, this.f2814c, this.d), this.d);
                     } else if (i == 8) {
                         ReadBuf readBuf3 = this.b;
-                        return (long) FlexBuffers.j(readBuf3, FlexBuffers.f(readBuf3, this.f2862c, this.d), this.e);
+                        return (long) FlexBuffers.j(readBuf3, FlexBuffers.f(readBuf3, this.f2814c, this.d), this.e);
                     } else if (i != 10) {
                         if (i != 26) {
                             return 0L;
                         }
-                        return FlexBuffers.h(this.b, this.f2862c, this.d);
+                        return FlexBuffers.h(this.b, this.f2814c, this.d);
                     } else {
                         return asVector().size();
                     }
                 }
-                return (long) FlexBuffers.j(this.b, this.f2862c, this.d);
+                return (long) FlexBuffers.j(this.b, this.f2814c, this.d);
             }
-            return FlexBuffers.g(this.b, this.f2862c, this.d);
+            return FlexBuffers.g(this.b, this.f2814c, this.d);
         }
 
         public Map asMap() {
             if (isMap()) {
                 ReadBuf readBuf = this.b;
-                return new Map(readBuf, FlexBuffers.f(readBuf, this.f2862c, this.d), this.e);
+                return new Map(readBuf, FlexBuffers.f(readBuf, this.f2814c, this.d), this.e);
             }
             return Map.empty();
         }
 
         public String asString() {
             if (isString()) {
-                int f = FlexBuffers.f(this.b, this.f2862c, this.d);
+                int f = FlexBuffers.f(this.b, this.f2814c, this.d);
                 ReadBuf readBuf = this.b;
                 int i = this.e;
                 return this.b.getString(f, (int) FlexBuffers.g(readBuf, f - i, i));
             } else if (!isKey()) {
                 return "";
             } else {
-                int f2 = FlexBuffers.f(this.b, this.f2862c, this.e);
+                int f2 = FlexBuffers.f(this.b, this.f2814c, this.e);
                 int i2 = f2;
                 while (true) {
                     int i3 = i2;
@@ -565,7 +564,7 @@ public class FlexBuffers {
         public long asUInt() {
             int i = this.f;
             if (i == 2) {
-                return FlexBuffers.g(this.b, this.f2862c, this.d);
+                return FlexBuffers.g(this.b, this.f2814c, this.d);
             }
             if (i != 1) {
                 if (i != 3) {
@@ -574,40 +573,40 @@ public class FlexBuffers {
                             if (i != 5) {
                                 if (i == 6) {
                                     ReadBuf readBuf = this.b;
-                                    return FlexBuffers.i(readBuf, FlexBuffers.f(readBuf, this.f2862c, this.d), this.e);
+                                    return FlexBuffers.i(readBuf, FlexBuffers.f(readBuf, this.f2814c, this.d), this.e);
                                 } else if (i == 7) {
                                     ReadBuf readBuf2 = this.b;
-                                    return FlexBuffers.g(readBuf2, FlexBuffers.f(readBuf2, this.f2862c, this.d), this.e);
+                                    return FlexBuffers.g(readBuf2, FlexBuffers.f(readBuf2, this.f2814c, this.d), this.e);
                                 } else if (i != 8) {
                                     return 0L;
                                 } else {
                                     ReadBuf readBuf3 = this.b;
-                                    return (long) FlexBuffers.j(readBuf3, FlexBuffers.f(readBuf3, this.f2862c, this.d), this.d);
+                                    return (long) FlexBuffers.j(readBuf3, FlexBuffers.f(readBuf3, this.f2814c, this.d), this.d);
                                 }
                             }
                             return Long.parseLong(asString());
                         }
-                        return FlexBuffers.h(this.b, this.f2862c, this.d);
+                        return FlexBuffers.h(this.b, this.f2814c, this.d);
                     }
                     return asVector().size();
                 }
-                return (long) FlexBuffers.j(this.b, this.f2862c, this.d);
+                return (long) FlexBuffers.j(this.b, this.f2814c, this.d);
             }
-            return FlexBuffers.i(this.b, this.f2862c, this.d);
+            return FlexBuffers.i(this.b, this.f2814c, this.d);
         }
 
         public Vector asVector() {
             if (isVector()) {
                 ReadBuf readBuf = this.b;
-                return new Vector(readBuf, FlexBuffers.f(readBuf, this.f2862c, this.d), this.e);
+                return new Vector(readBuf, FlexBuffers.f(readBuf, this.f2814c, this.d), this.e);
             }
             int i = this.f;
             if (i == 15) {
                 ReadBuf readBuf2 = this.b;
-                return new TypedVector(readBuf2, FlexBuffers.f(readBuf2, this.f2862c, this.d), this.e, 4);
+                return new TypedVector(readBuf2, FlexBuffers.f(readBuf2, this.f2814c, this.d), this.e, 4);
             } else if (FlexBuffers.a(i)) {
                 ReadBuf readBuf3 = this.b;
-                return new TypedVector(readBuf3, FlexBuffers.f(readBuf3, this.f2862c, this.d), this.e, FlexBuffers.c(this.f));
+                return new TypedVector(readBuf3, FlexBuffers.f(readBuf3, this.f2814c, this.d), this.e, FlexBuffers.c(this.f));
             } else {
                 return Vector.empty();
             }
@@ -692,7 +691,7 @@ public class FlexBuffers {
 
         Sized(ReadBuf readBuf, int i, int i2) {
             super(readBuf, i, i2);
-            this.f = FlexBuffers.h(this.f2860c, i - i2, i2);
+            this.f = FlexBuffers.h(this.f2812c, i - i2, i2);
         }
 
         public int size() {
@@ -704,7 +703,7 @@ public class FlexBuffers {
     public static class TypedVector extends Vector {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final TypedVector f2863a = new TypedVector(FlexBuffers.b, 1, 1, 1);
+        private static final TypedVector f2815a = new TypedVector(FlexBuffers.b, 1, 1, 1);
         private final int b;
 
         TypedVector(ReadBuf readBuf, int i, int i2, int i3) {
@@ -713,15 +712,15 @@ public class FlexBuffers {
         }
 
         public static TypedVector empty() {
-            return f2863a;
+            return f2815a;
         }
 
         @Override // androidx.emoji2.text.flatbuffer.FlexBuffers.Vector
         public Reference get(int i) {
             if (i >= size()) {
-                return Reference.f2861a;
+                return Reference.f2813a;
             }
-            return new Reference(this.f2860c, this.d + (i * this.e), this.e, 1, this.b);
+            return new Reference(this.f2812c, this.d + (i * this.e), this.e, 1, this.b);
         }
 
         public int getElemType() {
@@ -729,7 +728,7 @@ public class FlexBuffers {
         }
 
         public boolean isEmptyVector() {
-            return this == f2863a;
+            return this == f2815a;
         }
     }
 
@@ -751,7 +750,7 @@ public class FlexBuffers {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public static long a(int i) {
-            return i & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+            return i & 4294967295L;
         }
     }
 
@@ -759,27 +758,27 @@ public class FlexBuffers {
     public static class Vector extends Sized {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final Vector f2864a = new Vector(FlexBuffers.b, 1, 1);
+        private static final Vector f2816a = new Vector(FlexBuffers.b, 1, 1);
 
         Vector(ReadBuf readBuf, int i, int i2) {
             super(readBuf, i, i2);
         }
 
         public static Vector empty() {
-            return f2864a;
+            return f2816a;
         }
 
         public Reference get(int i) {
             long size = size();
             long j = i;
             if (j >= size) {
-                return Reference.f2861a;
+                return Reference.f2813a;
             }
-            return new Reference(this.f2860c, this.d + (i * this.e), this.e, Unsigned.a(this.f2860c.get((int) (this.d + (size * this.e) + j))));
+            return new Reference(this.f2812c, this.d + (i * this.e), this.e, Unsigned.a(this.f2812c.get((int) (this.d + (size * this.e) + j))));
         }
 
         public boolean isEmpty() {
-            return this == f2864a;
+            return this == f2816a;
         }
 
         @Override // androidx.emoji2.text.flatbuffer.FlexBuffers.Sized
@@ -814,12 +813,12 @@ public class FlexBuffers {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int a(int i, int i2) {
-        if (f2855a || d(i)) {
+        if (f2807a || d(i)) {
             if (i2 != 0) {
                 if (i2 != 2) {
                     if (i2 != 3) {
                         if (i2 != 4) {
-                            if (f2855a) {
+                            if (f2807a) {
                                 return 0;
                             }
                             throw new AssertionError();

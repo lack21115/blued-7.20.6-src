@@ -4,7 +4,6 @@ import android.os.Build;
 import android.os.SystemProperties;
 import android.util.Log;
 import android.util.Printer;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 
 /* loaded from: source-9557208-dex2jar.jar:android/database/sqlite/SQLiteDebug.class */
@@ -27,7 +26,7 @@ public final class SQLiteDebug {
             this.pageSize = j2 / 1024;
             this.dbSize = (j * j2) / 1024;
             this.lookaside = i;
-            this.cache = i2 + BridgeUtil.SPLIT_MARK + i3 + BridgeUtil.SPLIT_MARK + i4;
+            this.cache = i2 + "/" + i3 + "/" + i4;
         }
     }
 

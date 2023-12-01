@@ -7,7 +7,7 @@ import java.security.MessageDigest;
 public interface Key {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Charset f20706a = Charset.forName("UTF-8");
+    public static final Charset f7100a = Charset.forName("UTF-8");
 
     void a(MessageDigest messageDigest);
 

@@ -23,7 +23,7 @@ public class z implements b1, ce {
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f38142c;
+        private boolean f24451c;
 
         public a() {
             super("tms-act");
@@ -31,13 +31,13 @@ public class z implements b1, ce {
 
         public void a() {
             synchronized (this) {
-                this.f38142c = false;
+                this.f24451c = false;
             }
         }
 
         public void b() {
             synchronized (this) {
-                this.f38142c = true;
+                this.f24451c = true;
             }
         }
 
@@ -52,7 +52,7 @@ public class z implements b1, ce {
         @Override // java.lang.Thread, java.lang.Runnable
         public void run() {
             while (this.b) {
-                if (!this.f38142c) {
+                if (!this.f24451c) {
                     if (z.this.m != null) {
                         z.this.m.a(a9.z);
                     }
@@ -97,7 +97,7 @@ public class z implements b1, ce {
         synchronized (this.h) {
             while (!this.g.isEmpty()) {
                 ArrayList<a9> arrayList = this.g;
-                if (arrayList.get(arrayList.size() - 1).f37291a != 3) {
+                if (arrayList.get(arrayList.size() - 1).f23600a != 3) {
                     break;
                 }
                 ArrayList<a9> arrayList2 = this.g;
@@ -116,7 +116,7 @@ public class z implements b1, ce {
                 int i2 = size - 1;
                 if (i2 >= 0) {
                     a9 a9Var = this.g.get(i2);
-                    if (a9Var.f37291a == i) {
+                    if (a9Var.f23600a == i) {
                         this.g.remove(i2);
                         a9Var.b();
                     }

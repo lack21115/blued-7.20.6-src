@@ -65,7 +65,7 @@ public class DownloadPreconnecter {
             public void run() {
                 FakeDownloadHeadHttpConnection fakeDownloadHeadHttpConnection;
                 FakeDownloadHeadHttpConnection fakeDownloadHeadHttpConnection2 = null;
-                if (TextUtils.isEmpty(String.this)) {
+                if (TextUtils.isEmpty(str)) {
                     IFetchHttpHeadInfoListener iFetchHttpHeadInfoListener2 = iFetchHttpHeadInfoListener;
                     if (iFetchHttpHeadInfoListener2 != null) {
                         iFetchHttpHeadInfoListener2.onFetchFinished(null);
@@ -78,16 +78,16 @@ public class DownloadPreconnecter {
                 try {
                     try {
                         List<HttpHeader> extraHeaders = DownloadPreconnecter.getExtraHeaders(0L, null, null);
-                        if (DownloadConnectionPool.getInstance().isHeadConnectionExist(String.this)) {
-                            fakeDownloadHeadHttpConnection2 = DownloadConnectionPool.getInstance().getCachedHeadConnection(String.this, extraHeaders);
+                        if (DownloadConnectionPool.getInstance().isHeadConnectionExist(str)) {
+                            fakeDownloadHeadHttpConnection2 = DownloadConnectionPool.getInstance().getCachedHeadConnection(str, extraHeaders);
                         }
                         FakeDownloadHeadHttpConnection fakeDownloadHeadHttpConnection5 = fakeDownloadHeadHttpConnection2;
                         if (fakeDownloadHeadHttpConnection2 == null) {
-                            FakeDownloadHeadHttpConnection fakeDownloadHeadHttpConnection6 = new FakeDownloadHeadHttpConnection(String.this, extraHeaders, 0L);
+                            FakeDownloadHeadHttpConnection fakeDownloadHeadHttpConnection6 = new FakeDownloadHeadHttpConnection(str, extraHeaders, 0L);
                             try {
                                 fakeDownloadHeadHttpConnection6.execute();
                                 if (fakeDownloadHeadHttpConnection6.isSuccessful()) {
-                                    DownloadConnectionPool.getInstance().putCachedHeadConnections(String.this, fakeDownloadHeadHttpConnection6);
+                                    DownloadConnectionPool.getInstance().putCachedHeadConnections(str, fakeDownloadHeadHttpConnection6);
                                 }
                                 fakeDownloadHeadHttpConnection5 = fakeDownloadHeadHttpConnection6;
                             } catch (Exception e) {

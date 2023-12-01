@@ -18,13 +18,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/gift/LiveGiftBottomFunctionView.class */
 public final class LiveGiftBottomFunctionView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Lazy f13467a;
+    private final Lazy a;
     private BaseFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f13468c;
+    private final String c;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public LiveGiftBottomFunctionView(Context context, AttributeSet attributeSet) {
@@ -36,7 +32,7 @@ public final class LiveGiftBottomFunctionView extends FrameLayout {
     public LiveGiftBottomFunctionView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f13467a = LazyKt.a(new Function0<IncludeLiveGiftBottomFuntionBinding>() { // from class: com.blued.android.module.live_china.gift.LiveGiftBottomFunctionView$binding$2
+        this.a = LazyKt.a(new Function0<IncludeLiveGiftBottomFuntionBinding>() { // from class: com.blued.android.module.live_china.gift.LiveGiftBottomFunctionView$binding$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -50,11 +46,11 @@ public final class LiveGiftBottomFunctionView extends FrameLayout {
         });
         String string = getContext().getString(R.string.Live_SendPresent_recharge);
         Intrinsics.c(string, "context.getString(R.stri…ive_SendPresent_recharge)");
-        this.f13468c = string;
+        this.c = string;
     }
 
     public final IncludeLiveGiftBottomFuntionBinding getBinding() {
-        return (IncludeLiveGiftBottomFuntionBinding) this.f13467a.getValue();
+        return (IncludeLiveGiftBottomFuntionBinding) this.a.getValue();
     }
 
     public final BaseFragment getMFragment() {
@@ -62,7 +58,7 @@ public final class LiveGiftBottomFunctionView extends FrameLayout {
     }
 
     public final String getStrFirstChargeTips() {
-        return this.f13468c;
+        return this.c;
     }
 
     public final void setGivePrice(String givePrice) {

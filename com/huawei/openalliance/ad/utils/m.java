@@ -1,5 +1,6 @@
 package com.huawei.openalliance.ad.utils;
 
+import android.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -8,7 +9,6 @@ import android.content.DialogInterface;
 import android.os.Build;
 import android.view.Window;
 import com.bytedance.applog.tracker.Tracker;
-import com.huawei.hms.ads.base.R;
 import com.huawei.hms.ads.dt;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/utils/m.class */
@@ -22,7 +22,7 @@ public abstract class m {
     }
 
     public static AlertDialog.Builder Code(Context context) {
-        return !dt.V(context) ? (Build.VERSION.SDK_INT < 22 || !v.C(context)) ? Build.VERSION.SDK_INT >= 22 ? new AlertDialog.Builder(context, 16974546) : Build.VERSION.SDK_INT >= 21 ? new AlertDialog.Builder(context, 16974394) : new AlertDialog.Builder(context, R.style.AlertDialogLight) : new AlertDialog.Builder(context, 16974545) : new AlertDialog.Builder(context);
+        return !dt.V(context) ? (Build.VERSION.SDK_INT < 22 || !v.C(context)) ? Build.VERSION.SDK_INT >= 22 ? new AlertDialog.Builder(context, R.style.Theme_DeviceDefault_Light_Dialog_Alert) : Build.VERSION.SDK_INT >= 21 ? new AlertDialog.Builder(context, R.style.Theme_Material_Light_Dialog_Alert) : new AlertDialog.Builder(context, com.huawei.hms.ads.base.R.style.AlertDialogLight) : new AlertDialog.Builder(context, R.style.Theme_DeviceDefault_Dialog_Alert) : new AlertDialog.Builder(context);
     }
 
     private static Dialog Code(Context context, AlertDialog.Builder builder, String str, String str2, String str3, final a aVar) {

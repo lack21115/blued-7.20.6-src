@@ -4,15 +4,15 @@ package com.baidu.mobads.sdk.internal;
 final class bh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Runnable f9339a;
+    final /* synthetic */ Runnable f6499a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public bh(Runnable runnable) {
-        this.f9339a = runnable;
+        this.f6499a = runnable;
     }
 
     @Override // java.lang.Runnable
     public void run() {
-        this.f9339a.run();
+        this.f6499a.run();
     }
 }

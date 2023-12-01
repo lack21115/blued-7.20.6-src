@@ -60,13 +60,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveDesireDialogFragment.class */
 public class LiveDesireDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12812a;
+    public Context a;
     public Observer<Boolean> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public Observer<Boolean> f12813c;
+    public Observer<Boolean> c;
     public Observer<Boolean> d;
     public BuyGiftUtil e;
     private FormType f;
@@ -160,7 +156,7 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
                 ToastUtils.b(R.string.live_desire_exceed_the_count_limit);
                 return;
             }
-            LiveDesireAddDialogFragment liveDesireAddDialogFragment = new LiveDesireAddDialogFragment(LiveDesireDialogFragment.this.f12812a, new LiveDesireAddDialogFragment.AddDesireCallBack() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$1$BILd4yGWYDlfByOzBAm-76au5Uk
+            LiveDesireAddDialogFragment liveDesireAddDialogFragment = new LiveDesireAddDialogFragment(LiveDesireDialogFragment.this.a, new LiveDesireAddDialogFragment.AddDesireCallBack() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$1$BILd4yGWYDlfByOzBAm-76au5Uk
                 @Override // com.blued.android.module.live_china.fragment.LiveDesireAddDialogFragment.AddDesireCallBack
                 public final void addDesireSuccess(LiveDesireLiseModel liveDesireLiseModel) {
                     LiveDesireDialogFragment.AnonymousClass1.this.a(liveDesireLiseModel);
@@ -205,7 +201,7 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
             EventTrackLive.a(LiveProtos.Event.LIVE_WISH_SOMEONE_DELETE_CLICK, LiveRoomManager.a().e(), z, z ? String.valueOf(j) : "");
             final boolean z2 = z;
             final boolean z3 = z;
-            CommonAlertDialog.a(LiveDesireDialogFragment.this.f12812a, "", "删除心愿单", "确认", new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$1$BOXdgdIwcbM84gXaQTYiQVPPLMg
+            CommonAlertDialog.a(LiveDesireDialogFragment.this.a, "", "删除心愿单", "确认", new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$1$BOXdgdIwcbM84gXaQTYiQVPPLMg
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i3) {
                     LiveDesireDialogFragment.AnonymousClass1.this.b(z2, j, dialogInterface, i3);
@@ -230,7 +226,7 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
     }
 
     public LiveDesireDialogFragment(Context context, FormType formType) {
-        this.f12812a = context;
+        this.a = context;
         this.f = formType;
     }
 
@@ -281,12 +277,12 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
             dismiss();
             return;
         }
-        CommonAlertDialog.a(this.f12812a, this.f12812a.getString(R.string.live_desire_has_not_create_title), this.f12812a.getString(R.string.live_desire_has_not_create_msg), this.f12812a.getString(R.string.live_desire_ok), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$cczXn6d2JJAk5PPkWaKIzzI_U18
+        CommonAlertDialog.a(this.a, this.a.getString(R.string.live_desire_has_not_create_title), this.a.getString(R.string.live_desire_has_not_create_msg), this.a.getString(R.string.live_desire_ok), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$cczXn6d2JJAk5PPkWaKIzzI_U18
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 LiveDesireDialogFragment.this.a(dialogInterface, i);
             }
-        }, this.f12812a.getString(R.string.live_desire_cancel), (DialogInterface.OnClickListener) null, new DialogInterface.OnDismissListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$k_xxt2cjgTWOoYN8r5vDdTndcRQ
+        }, this.a.getString(R.string.live_desire_cancel), (DialogInterface.OnClickListener) null, new DialogInterface.OnDismissListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$k_xxt2cjgTWOoYN8r5vDdTndcRQ
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 LiveDesireDialogFragment.this.a(dialogInterface);
@@ -373,7 +369,7 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view2) {
                     Tracker.onClick(view2);
-                    LiveDesireResetPop.a(LiveDesireDialogFragment.this.f12812a, LiveDesireDialogFragment.this.a());
+                    LiveDesireResetPop.a(LiveDesireDialogFragment.this.a, LiveDesireDialogFragment.this.a());
                 }
             });
         }
@@ -415,7 +411,7 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
         int i;
         List<LiveDesireLiseModel> list = this.r;
         if (list == null || list.size() == 0) {
-            ToastUtils.b(String.format(this.f12812a.getString(R.string.live_desire_create_null_error, String.valueOf(this.s)), new Object[0]));
+            ToastUtils.b(String.format(this.a.getString(R.string.live_desire_create_null_error, String.valueOf(this.s)), new Object[0]));
             return;
         }
         int i2 = 0;
@@ -433,7 +429,7 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
             i3 = i4;
         }
         if (i == 0 || i > this.s) {
-            ToastUtils.b(String.format(this.f12812a.getString(R.string.live_desire_create_null_error, String.valueOf(this.s)), new Object[0]));
+            ToastUtils.b(String.format(this.a.getString(R.string.live_desire_create_null_error, String.valueOf(this.s)), new Object[0]));
             return;
         }
         EventTrackLive.b(LiveProtos.Event.LIVE_WISH_CREATE_CLICK, LiveRoomManager.a().e());
@@ -485,7 +481,7 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public void b(final String str, final LiveDesireGiftInfo liveDesireGiftInfo, final LiveDesireListAdapter.RankSccessCallBack rankSccessCallBack) {
         EventTrackLive.b(LiveProtos.Event.LIVE_ANCHOR_WISH_HELP_BTN_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), str);
-        CommonAlertDialog.a(this.f12812a, String.format(this.f12812a.getString(R.string.live_desire_onekey_rank_title, liveDesireGiftInfo.name), new Object[0]), (String) null, "确认", new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$h3NqmXGoy4r3W9KjXAo41DJ3wYg
+        CommonAlertDialog.a(this.a, String.format(this.a.getString(R.string.live_desire_onekey_rank_title, liveDesireGiftInfo.name), new Object[0]), (String) null, "确认", new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$h3NqmXGoy4r3W9KjXAo41DJ3wYg
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 LiveDesireDialogFragment.this.a(str, liveDesireGiftInfo, rankSccessCallBack, dialogInterface, i);
@@ -564,14 +560,14 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
             });
         }
         this.p.c(false);
-        this.p.l(false);
+        this.p.b(false);
         this.p.f(true);
         this.p.e(true);
         this.p.g(true);
     }
 
     private void f() {
-        LiveDesireListAdapter liveDesireListAdapter = new LiveDesireListAdapter(this.f12812a, this.f);
+        LiveDesireListAdapter liveDesireListAdapter = new LiveDesireListAdapter(this.a, this.f);
         this.q = liveDesireListAdapter;
         liveDesireListAdapter.a(new AnonymousClass1());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -621,7 +617,7 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
                 }
                 LiveDesireLiseModel liveDesireLiseModel3 = new LiveDesireLiseModel();
                 liveDesireLiseModel3.type = 2;
-                liveDesireLiseModel3.tips = LiveDesireDialogFragment.this.f == FormType.TYPE_RECORDING_CONFIG ? LiveDesireDialogFragment.this.f12812a.getString(R.string.live_desire_describe_recording) : LiveDesireDialogFragment.this.f12812a.getString(R.string.live_desire_describe_playing);
+                liveDesireLiseModel3.tips = LiveDesireDialogFragment.this.f == FormType.TYPE_RECORDING_CONFIG ? LiveDesireDialogFragment.this.a.getString(R.string.live_desire_describe_recording) : LiveDesireDialogFragment.this.a.getString(R.string.live_desire_describe_playing);
                 LiveDesireDialogFragment.this.r.add(liveDesireLiseModel3);
                 LiveDesireDialogFragment.this.q.a(LiveDesireDialogFragment.this.r);
                 LiveDesireDialogFragment.this.q.notifyDataSetChanged();
@@ -674,7 +670,7 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
     public /* synthetic */ void k() {
         int h;
         if (this.q.a() != null && (h = LiveRoomPreferences.h()) < 3) {
-            new LiveOnekeyRankPop(this.f12812a).b(this.q.a());
+            new LiveOnekeyRankPop(this.a).b(this.q.a());
             this.x = false;
             LiveRoomPreferences.a(h + 1);
         }
@@ -697,7 +693,6 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
         });
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1) {
@@ -721,12 +716,12 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
             return true;
         }
         if (this.f == FormType.TYPE_RECORDING_CONFIG && i()) {
-            CommonAlertDialog.a(this.f12812a, this.f12812a.getString(R.string.live_desire_has_not_create_title), this.f12812a.getString(R.string.live_desire_has_not_create_msg), this.f12812a.getString(R.string.live_desire_ok), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$-MKvuogWF_Qkzq_8qrdrrH-hqH0
+            CommonAlertDialog.a(this.a, this.a.getString(R.string.live_desire_has_not_create_title), this.a.getString(R.string.live_desire_has_not_create_msg), this.a.getString(R.string.live_desire_ok), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$-MKvuogWF_Qkzq_8qrdrrH-hqH0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     LiveDesireDialogFragment.this.b(dialogInterface, i);
                 }
-            }, this.f12812a.getString(R.string.live_desire_cancel), (DialogInterface.OnClickListener) null, new DialogInterface.OnDismissListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$zq_LNF9RWtVoDUe4VV6VpfNabQ8
+            }, this.a.getString(R.string.live_desire_cancel), (DialogInterface.OnClickListener) null, new DialogInterface.OnDismissListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$zq_LNF9RWtVoDUe4VV6VpfNabQ8
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     LiveDesireDialogFragment.this.b(dialogInterface);
@@ -738,11 +733,10 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
         return super.onBackPressed();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f12812a = getActivity();
+        this.a = getActivity();
         View inflate = getActivity().getLayoutInflater().inflate(this.f == FormType.TYPE_RECORDING_CONFIG ? R.layout.dialog_live_desire_recording : R.layout.dialog_live_desire_playing, (ViewGroup) null);
-        int height = this.f == FormType.TYPE_RECORDING_CONFIG ? getActivity().getWindowManager().getDefaultDisplay().getHeight() - DensityUtils.a(getActivity()) : DensityUtils.a(this.f12812a, 364.0f);
+        int height = this.f == FormType.TYPE_RECORDING_CONFIG ? getActivity().getWindowManager().getDefaultDisplay().getHeight() - DensityUtils.a(getActivity()) : DensityUtils.a(this.a, 364.0f);
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
@@ -758,7 +752,7 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(this.f == FormType.TYPE_RECORDING_CONFIG ? R.layout.dialog_live_desire_recording : R.layout.dialog_live_desire_playing, viewGroup);
@@ -766,18 +760,18 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
         this.k = inflate.findViewById(R.id.ll_reset);
         this.l = inflate.findViewById(R.id.tv_reset_desire);
         this.n = inflate.findViewById(R.id.rl_content);
-        this.o = (RecyclerView) inflate.findViewById(R.id.recycler_view);
-        this.p = (SmartRefreshLayout) inflate.findViewById(R.id.smart_refresh);
+        this.o = inflate.findViewById(R.id.recycler_view);
+        this.p = inflate.findViewById(R.id.smart_refresh);
         this.t = (RelativeLayout) inflate.findViewById(R.id.loading);
         if (this.f == FormType.TYPE_RECORDING_CONFIG) {
             this.g = inflate.findViewById(R.id.view_bg);
             this.u = (TextView) inflate.findViewById(R.id.tv_create_desire);
-            this.o.setPadding(0, DensityUtils.a(this.f12812a, 4.0f), 0, 0);
+            this.o.setPadding(0, DensityUtils.a(this.a, 4.0f), 0, 0);
         } else {
             this.h = (ImageView) inflate.findViewById(R.id.header_view);
             this.i = (ImageView) inflate.findViewById(R.id.header_level_bg);
             this.m = (ImageView) inflate.findViewById(R.id.iv_refresh);
-            this.o.setPadding(0, DensityUtils.a(this.f12812a, 4.0f), 0, DensityUtils.a(this.f12812a, 17.0f));
+            this.o.setPadding(0, DensityUtils.a(this.a, 4.0f), 0, DensityUtils.a(this.a, 17.0f));
         }
         e();
         f();
@@ -799,36 +793,33 @@ public class LiveDesireDialogFragment extends BaseDialogFragment {
             }
         }
         this.b = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$oV-cAZnUNirS204BX7GJ9Y18Nxk
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveDesireDialogFragment.this.c((Boolean) obj);
             }
         };
-        this.f12813c = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$e6A5PC4Ak4qkV_snCnvhEDbleog
-            @Override // androidx.lifecycle.Observer
+        this.c = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$e6A5PC4Ak4qkV_snCnvhEDbleog
             public final void onChanged(Object obj) {
                 LiveDesireDialogFragment.this.b((Boolean) obj);
             }
         };
         this.d = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireDialogFragment$KCBZwAQeBh6G3EmBcKOYErxu7wY
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveDesireDialogFragment.this.a((Boolean) obj);
             }
         };
         LiveEventBus.get("desire_dialog_show", Boolean.class).observe(this, this.b);
         LiveEventBus.get("desire_refresh", Boolean.class).observe(this, this.d);
-        LiveEventBus.get("desire_reset", Boolean.class).observe(this, this.f12813c);
+        LiveEventBus.get("desire_reset", Boolean.class).observe(this, this.c);
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         LiveEventBus.get("desire_dialog_show", Boolean.class).removeObserver(this.b);
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             if (this.f == FormType.TYPE_PLAYING) {

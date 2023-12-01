@@ -6,19 +6,19 @@ import com.xiaomi.channel.commonutils.logger.LoggerInterface;
 public class dg implements LoggerInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private LoggerInterface f41334a;
+    private LoggerInterface f27643a;
     private LoggerInterface b;
 
     public dg(LoggerInterface loggerInterface, LoggerInterface loggerInterface2) {
-        this.f41334a = null;
+        this.f27643a = null;
         this.b = null;
-        this.f41334a = loggerInterface;
+        this.f27643a = loggerInterface;
         this.b = loggerInterface2;
     }
 
     @Override // com.xiaomi.channel.commonutils.logger.LoggerInterface
     public void log(String str) {
-        LoggerInterface loggerInterface = this.f41334a;
+        LoggerInterface loggerInterface = this.f27643a;
         if (loggerInterface != null) {
             loggerInterface.log(str);
         }
@@ -30,7 +30,7 @@ public class dg implements LoggerInterface {
 
     @Override // com.xiaomi.channel.commonutils.logger.LoggerInterface
     public void log(String str, Throwable th) {
-        LoggerInterface loggerInterface = this.f41334a;
+        LoggerInterface loggerInterface = this.f27643a;
         if (loggerInterface != null) {
             loggerInterface.log(str, th);
         }

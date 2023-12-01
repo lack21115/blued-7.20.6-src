@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.View;
+import com.huawei.openalliance.ad.constant.t;
 import com.sobot.chat.camera.StCameraView;
 import com.tencent.turingcam.s7Dnc;
 import com.tencent.turingcam.view.ShGzN;
@@ -25,11 +26,11 @@ import java.util.Map;
 public class z5VDt {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f39846a = WOMZP.b("3spd2H8hHma4H18EjYTzWg==");
+    private static final String f26155a = WOMZP.b("3spd2H8hHma4H18EjYTzWg==");
     private static final String b = WOMZP.b("DSv7X69YcoK1PCJvm8ce5osrHNM=");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f39847c = WOMZP.b("PRCBC9ulqKi8tK1vJSfQ3CVEfaa9uZL8xNsqSA==");
+    private static final String f26156c = WOMZP.b("PRCBC9ulqKi8tK1vJSfQ3CVEfaa9uZL8xNsqSA==");
     private static final String d = WOMZP.b("ZhC44TH2gipmEmDqkN11sw==");
     private static final String e = WOMZP.b("GPJOXui0b6GBvil8JLG3bY/zgr9DbLPt");
     private static final String f = WOMZP.b("53GWiqTfPF5HGxYjWLrd0U4Oll+oAajp");
@@ -57,11 +58,11 @@ public class z5VDt {
     public static class Bi3eT {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final z5VDt f39848a = new z5VDt(null);
+        private static final z5VDt f26157a = new z5VDt(null);
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public static /* synthetic */ z5VDt a() {
-            return f39848a;
+            return f26157a;
         }
     }
 
@@ -70,24 +71,24 @@ public class z5VDt {
     public class ShGzN implements ShGzN.spXPg {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Camera f39849a;
+        final /* synthetic */ Camera f26158a;
 
         ShGzN(Camera camera) {
-            this.f39849a = camera;
+            this.f26158a = camera;
         }
 
         @Override // com.tencent.turingcam.view.ShGzN.spXPg
         public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
-            z5VDt.a(z5VDt.this, this.f39849a, surfaceTexture, null);
+            z5VDt.a(z5VDt.this, this.f26158a, surfaceTexture, null);
             if (z5VDt.this.n != null) {
-                ((F2BEC) z5VDt.this.n).f39813a.onPreviewAvailable();
+                ((F2BEC) z5VDt.this.n).f26122a.onPreviewAvailable();
             }
         }
 
         @Override // com.tencent.turingcam.view.ShGzN.spXPg
         public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
             if (z5VDt.this.n != null) {
-                ((F2BEC) z5VDt.this.n).f39813a.onPreviewDestroyed();
+                ((F2BEC) z5VDt.this.n).f26122a.onPreviewDestroyed();
                 return false;
             }
             return false;
@@ -99,10 +100,10 @@ public class z5VDt {
     public class SkEpO implements SurfaceHolder.Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Camera f39850a;
+        final /* synthetic */ Camera f26159a;
 
         SkEpO(Camera camera) {
-            this.f39850a = camera;
+            this.f26159a = camera;
         }
 
         @Override // android.view.SurfaceHolder.Callback
@@ -111,16 +112,16 @@ public class z5VDt {
 
         @Override // android.view.SurfaceHolder.Callback
         public void surfaceCreated(SurfaceHolder surfaceHolder) {
-            z5VDt.a(z5VDt.this, this.f39850a, null, surfaceHolder);
+            z5VDt.a(z5VDt.this, this.f26159a, null, surfaceHolder);
             if (z5VDt.this.n != null) {
-                ((F2BEC) z5VDt.this.n).f39813a.onPreviewAvailable();
+                ((F2BEC) z5VDt.this.n).f26122a.onPreviewAvailable();
             }
         }
 
         @Override // android.view.SurfaceHolder.Callback
         public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
             if (z5VDt.this.n != null) {
-                ((F2BEC) z5VDt.this.n).f39813a.onPreviewDestroyed();
+                ((F2BEC) z5VDt.this.n).f26122a.onPreviewDestroyed();
             }
         }
     }
@@ -130,20 +131,20 @@ public class z5VDt {
     public static class kwCJn {
 
         /* renamed from: a  reason: collision with root package name */
-        String f39851a;
+        String f26160a;
         int b = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        com.tencent.turingcam.wmqhz f39852c;
+        com.tencent.turingcam.wmqhz f26161c;
         List<String> d;
         Map<String, String> e;
         byte[] f;
 
         kwCJn() {
             com.tencent.turingcam.wmqhz wmqhzVar = new com.tencent.turingcam.wmqhz();
-            this.f39852c = wmqhzVar;
-            wmqhzVar.f39841c = new ArrayList<>();
-            this.f39852c.d = new HashMap();
+            this.f26161c = wmqhzVar;
+            wmqhzVar.f26150c = new ArrayList<>();
+            this.f26161c.d = new HashMap();
         }
     }
 
@@ -172,7 +173,7 @@ public class z5VDt {
         @Override // com.tencent.turingcam.CvowV
         public void a(Throwable th) {
             if (z5VDt.this.n != null) {
-                ((F2BEC) z5VDt.this.n).f39813a.onException(th);
+                ((F2BEC) z5VDt.this.n).f26122a.onException(th);
             }
         }
     }
@@ -182,17 +183,17 @@ public class z5VDt {
     public class wmqhz implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ TuringPreviewDisplay f39854a;
+        final /* synthetic */ TuringPreviewDisplay f26163a;
         final /* synthetic */ View b;
 
         wmqhz(z5VDt z5vdt, TuringPreviewDisplay turingPreviewDisplay, View view) {
-            this.f39854a = turingPreviewDisplay;
+            this.f26163a = turingPreviewDisplay;
             this.b = view;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f39854a.addView(this.b, -1, -1);
+            this.f26163a.addView(this.b, -1, -1);
         }
     }
 
@@ -207,8 +208,8 @@ public class z5VDt {
 
     private SWw7W a() {
         SWw7W sWw7W = new SWw7W();
-        sWw7W.f39815a = 2;
-        sWw7W.f39816c = y8N3A.b;
+        sWw7W.f26124a = 2;
+        sWw7W.f26125c = y8N3A.b;
         sWw7W.b = Build.BRAND;
         sWw7W.d = Build.VERSION.RELEASE;
         sWw7W.e = "2.0.3";
@@ -223,7 +224,7 @@ public class z5VDt {
         z5vdt.o.b = 4;
         B9LVG b9lvg = z5vdt.n;
         if (b9lvg != null) {
-            ((F2BEC) b9lvg).f39813a.onFinish(-301005L, null);
+            ((F2BEC) b9lvg).f26122a.onFinish(-301005L, null);
         }
     }
 
@@ -240,13 +241,13 @@ public class z5VDt {
                 if (camera == null) {
                     B9LVG b9lvg = z5vdt.n;
                     if (b9lvg != null) {
-                        ((F2BEC) b9lvg).f39813a.onFinishFrameCheck(-301001L, null);
+                        ((F2BEC) b9lvg).f26122a.onFinishFrameCheck(-301001L, null);
                     }
                     hxUS9.b().a("process_code", -301001L);
                     return;
                 }
                 kwCJn kwcjn2 = z5vdt.o;
-                com.tencent.turingcam.wmqhz wmqhzVar = kwcjn2.f39852c;
+                com.tencent.turingcam.wmqhz wmqhzVar = kwcjn2.f26161c;
                 Iterator<String> it = kwcjn2.d.iterator();
                 while (it.hasNext()) {
                     s7Dnc a2 = FLlEM.a(it.next());
@@ -262,20 +263,20 @@ public class z5VDt {
                     hxUS9.b().a("process_cost", System.currentTimeMillis() - z5vdt.s);
                     long currentTimeMillis = System.currentTimeMillis();
                     com.tencent.turingcam.B9LVG b9lvg2 = new com.tencent.turingcam.B9LVG();
-                    b9lvg2.f39808c = z5vdt.o.f39851a;
+                    b9lvg2.f26117c = z5vdt.o.f26160a;
                     ArrayList<com.tencent.turingcam.Bi3eT> arrayList = new ArrayList<>();
                     b9lvg2.d = arrayList;
-                    arrayList.addAll(z5vdt.o.f39852c.f39841c);
+                    arrayList.addAll(z5vdt.o.f26161c.f26150c);
                     b9lvg2.e = z5vdt.o.f;
                     b9lvg2.f = z5vdt.a();
                     com.tencent.turingcam.ShGzN shGzN = new com.tencent.turingcam.ShGzN(128);
                     b9lvg2.a(shGzN);
                     c9YSQ c9ysq = (c9YSQ) com.tencent.turingface.sdk.mfa.EQsUZ.a(104, shGzN.a());
-                    c9ysq.f39941a.getClass();
-                    byte[] bArr = c9ysq.f39941a.f39872a;
+                    c9ysq.f26250a.getClass();
+                    byte[] bArr = c9ysq.f26250a.f26181a;
                     B9LVG b9lvg3 = z5vdt.n;
                     if (b9lvg3 != null) {
-                        ((F2BEC) b9lvg3).f39813a.onFinishFrameCheck(0L, bArr);
+                        ((F2BEC) b9lvg3).f26122a.onFinishFrameCheck(0L, bArr);
                     }
                     hxUS9.b().a("upload_code", 0L);
                     hxUS9.b().a("upload_cost", System.currentTimeMillis() - currentTimeMillis);
@@ -291,12 +292,12 @@ public class z5VDt {
         WeakReference<Camera> weakReference = z5vdt.m;
         Camera camera = weakReference != null ? weakReference.get() : null;
         y8N3A.SkEpO b2 = y8N3A.a().b();
-        int i2 = b2.f39844a;
+        int i2 = b2.f26153a;
         if (i2 != 0) {
             long j2 = i2 - StCameraView.MEDIA_QUALITY_FUNNY;
             B9LVG b9lvg = z5vdt.n;
             if (b9lvg != null) {
-                ((F2BEC) b9lvg).f39813a.onFinish(j2, null);
+                ((F2BEC) b9lvg).f26122a.onFinish(j2, null);
             }
             hxUS9.b().a("upload_code", j2);
             return;
@@ -313,7 +314,7 @@ public class z5VDt {
         HashMap hashMap2 = new HashMap();
         if (camera != null) {
             Camera.Parameters parameters = camera.getParameters();
-            hashMap2.put(f39846a, parameters.get(b) + ";" + parameters.get(f39847c) + ";" + parameters.get(d) + ";" + parameters.get(e) + ";" + parameters.get(f) + ";" + parameters.get(g) + ";" + parameters.get(h) + ";" + parameters.get(i));
+            hashMap2.put(f26155a, parameters.get(b) + t.aE + parameters.get(f26156c) + t.aE + parameters.get(d) + t.aE + parameters.get(e) + t.aE + parameters.get(f) + t.aE + parameters.get(g) + t.aE + parameters.get(h) + t.aE + parameters.get(i));
         }
         String str3 = "camera parameter:" + hashMap2;
         hashMap.putAll(hashMap2);
@@ -323,11 +324,11 @@ public class z5VDt {
         com.tencent.turingcam.ShGzN shGzN = new com.tencent.turingcam.ShGzN(128);
         kwcjn.a(shGzN);
         c9YSQ c9ysq = (c9YSQ) com.tencent.turingface.sdk.mfa.EQsUZ.a(103, shGzN.a());
-        c9ysq.f39941a.getClass();
-        byte[] bArr = c9ysq.f39941a.f39872a;
+        c9ysq.f26250a.getClass();
+        byte[] bArr = c9ysq.f26250a.f26181a;
         B9LVG b9lvg2 = z5vdt.n;
         if (b9lvg2 != null) {
-            ((F2BEC) b9lvg2).f39813a.onFinish(0L, bArr);
+            ((F2BEC) b9lvg2).f26122a.onFinish(0L, bArr);
         }
         hxUS9.b().a("upload_code", 0L);
         hxUS9.b().a("upload_cost", System.currentTimeMillis() - currentTimeMillis);
@@ -433,7 +434,7 @@ public class z5VDt {
             return;
         }
         s7Dnc.spXPg spxpg = new s7Dnc.spXPg();
-        spxpg.f39833a = System.currentTimeMillis();
+        spxpg.f26142a = System.currentTimeMillis();
         spxpg.b = bArr;
         Message obtain = Message.obtain();
         obtain.obj = spxpg;

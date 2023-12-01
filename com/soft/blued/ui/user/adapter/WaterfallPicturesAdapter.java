@@ -22,11 +22,11 @@ import java.util.Set;
 public class WaterfallPicturesAdapter extends BaseQuickAdapter<AlbumFlow, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private ImageView f33817a;
+    private ImageView f20126a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f33818c;
+    private int f20127c;
     private int d;
     private int e;
     private Set<String> f;
@@ -51,22 +51,22 @@ public class WaterfallPicturesAdapter extends BaseQuickAdapter<AlbumFlow, BaseVi
         int parseInt2 = Integer.parseInt(albumFlow.feed_pics_height[0]);
         float f = parseInt2 != 0 ? parseInt / parseInt2 : 0.0f;
         if (f != 0.0f) {
-            this.f33818c = (int) (this.b / f);
+            this.f20127c = (int) (this.b / f);
         }
-        if (this.f33818c > this.d) {
+        if (this.f20127c > this.d) {
             z = true;
         }
         if (z) {
-            this.f33818c = this.d;
+            this.f20127c = this.d;
             return z;
         }
-        int i = this.f33818c;
+        int i = this.f20127c;
         int i2 = this.e;
         int i3 = i;
         if (i < i2) {
             i3 = i2;
         }
-        this.f33818c = i3;
+        this.f20127c = i3;
         return z;
     }
 
@@ -79,15 +79,15 @@ public class WaterfallPicturesAdapter extends BaseQuickAdapter<AlbumFlow, BaseVi
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, AlbumFlow albumFlow) {
         if (baseViewHolder != null) {
-            this.f33817a = (ImageView) baseViewHolder.getView(R.id.riv_picture);
-            baseViewHolder.setText(2131371808, albumFlow.feed_dig + "");
+            this.f20126a = (ImageView) baseViewHolder.getView(R.id.riv_picture);
+            baseViewHolder.setText(R.id.tv_like_count, albumFlow.feed_dig + "");
             if (albumFlow.feed_dig == 0 || albumFlow.iliked == 0) {
                 baseViewHolder.setImageResource(R.id.iv_icon_like, R.drawable.icon_unlike);
-                baseViewHolder.setTextColor(2131371808, this.mContext.getResources().getColor(2131101191));
+                baseViewHolder.setTextColor(R.id.tv_like_count, this.mContext.getResources().getColor(2131101191));
             }
             if (albumFlow.iliked != 0) {
                 baseViewHolder.setImageResource(R.id.iv_icon_like, R.drawable.icon_liked);
-                baseViewHolder.setTextColor(2131371808, this.mContext.getResources().getColor(2131101198));
+                baseViewHolder.setTextColor(R.id.tv_like_count, this.mContext.getResources().getColor(2131101198));
             }
             if (a(albumFlow)) {
                 baseViewHolder.setVisible(R.id.tv_long_picutre, true);
@@ -95,15 +95,15 @@ public class WaterfallPicturesAdapter extends BaseQuickAdapter<AlbumFlow, BaseVi
                 baseViewHolder.setVisible(R.id.tv_long_picutre, false);
             }
             if (TextUtils.isEmpty(albumFlow.score) || "0".equals(albumFlow.score)) {
-                baseViewHolder.setVisible(2131372501, false);
+                baseViewHolder.setVisible(R.id.tv_score, false);
             } else {
-                baseViewHolder.setVisible(2131372501, true);
-                baseViewHolder.setText(2131372501, albumFlow.score);
+                baseViewHolder.setVisible(R.id.tv_score, true);
+                baseViewHolder.setText(R.id.tv_score, albumFlow.score);
             }
         }
         baseViewHolder.addOnClickListener(R.id.iv_icon_like);
-        this.f33817a.setLayoutParams(new ConstraintLayout.LayoutParams(this.b, this.f33818c));
-        ImageLoader.a(this.i, albumFlow.feed_pics[0]).b(2131101212).a(3.0f).a(this.f33817a);
+        this.f20126a.setLayoutParams(new ConstraintLayout.LayoutParams(this.b, this.f20127c));
+        ImageLoader.a(this.i, albumFlow.feed_pics[0]).b(2131101212).a(3.0f).a(this.f20126a);
     }
 
     public void a(String str, int i) {

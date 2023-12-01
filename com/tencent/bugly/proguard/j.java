@@ -10,7 +10,7 @@ import java.util.Map;
 public final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private ByteBuffer f35388a;
+    private ByteBuffer f21697a;
     private String b;
 
     public j() {
@@ -19,25 +19,25 @@ public final class j {
 
     public j(int i) {
         this.b = "GBK";
-        this.f35388a = ByteBuffer.allocate(i);
+        this.f21697a = ByteBuffer.allocate(i);
     }
 
     private void a(int i) {
-        if (this.f35388a.remaining() < i) {
-            ByteBuffer allocate = ByteBuffer.allocate((this.f35388a.capacity() + i) << 1);
-            allocate.put(this.f35388a.array(), 0, this.f35388a.position());
-            this.f35388a = allocate;
+        if (this.f21697a.remaining() < i) {
+            ByteBuffer allocate = ByteBuffer.allocate((this.f21697a.capacity() + i) << 1);
+            allocate.put(this.f21697a.array(), 0, this.f21697a.position());
+            this.f21697a = allocate;
         }
     }
 
     private void b(byte b, int i) {
         if (i < 15) {
-            this.f35388a.put((byte) (b | (i << 4)));
+            this.f21697a.put((byte) (b | (i << 4)));
         } else if (i >= 256) {
             throw new b("tag is too large: " + i);
         } else {
-            this.f35388a.put((byte) (b | 240));
-            this.f35388a.put((byte) i);
+            this.f21697a.put((byte) (b | 240));
+            this.f21697a.put((byte) i);
         }
     }
 
@@ -47,7 +47,7 @@ public final class j {
     }
 
     public final ByteBuffer a() {
-        return this.f35388a;
+        return this.f21697a;
     }
 
     public final void a(byte b, int i) {
@@ -57,7 +57,7 @@ public final class j {
             return;
         }
         b((byte) 0, i);
-        this.f35388a.put(b);
+        this.f21697a.put(b);
     }
 
     public final void a(int i, int i2) {
@@ -67,7 +67,7 @@ public final class j {
             return;
         }
         b((byte) 2, i2);
-        this.f35388a.putInt(i);
+        this.f21697a.putInt(i);
     }
 
     public final void a(long j, int i) {
@@ -77,7 +77,7 @@ public final class j {
             return;
         }
         b((byte) 3, i);
-        this.f35388a.putLong(j);
+        this.f21697a.putLong(j);
     }
 
     public final void a(k kVar, int i) {
@@ -103,12 +103,12 @@ public final class j {
             float floatValue = ((Float) obj).floatValue();
             a(6);
             b((byte) 4, i);
-            this.f35388a.putFloat(floatValue);
+            this.f21697a.putFloat(floatValue);
         } else if (obj instanceof Double) {
             double doubleValue = ((Double) obj).doubleValue();
             a(10);
             b((byte) 5, i);
-            this.f35388a.putDouble(doubleValue);
+            this.f21697a.putDouble(doubleValue);
         } else if (obj instanceof String) {
             a((String) obj, i);
         } else if (obj instanceof Map) {
@@ -198,7 +198,7 @@ public final class j {
                 float f = fArr[i11];
                 a(6);
                 b((byte) 4, 0);
-                this.f35388a.putFloat(f);
+                this.f21697a.putFloat(f);
                 i10 = i11 + 1;
             }
         } else if (obj instanceof double[]) {
@@ -216,7 +216,7 @@ public final class j {
                 double d = dArr[i13];
                 a(10);
                 b((byte) 5, 0);
-                this.f35388a.putDouble(d);
+                this.f21697a.putDouble(d);
                 i12 = i13 + 1;
             }
         } else if (!obj.getClass().isArray()) {
@@ -253,13 +253,13 @@ public final class j {
         a(bytes.length + 10);
         if (bytes.length > 255) {
             b((byte) 7, i);
-            this.f35388a.putInt(bytes.length);
-            this.f35388a.put(bytes);
+            this.f21697a.putInt(bytes.length);
+            this.f21697a.put(bytes);
             return;
         }
         b((byte) 6, i);
-        this.f35388a.put((byte) bytes.length);
-        this.f35388a.put(bytes);
+        this.f21697a.put((byte) bytes.length);
+        this.f21697a.put(bytes);
     }
 
     public final <T> void a(Collection<T> collection, int i) {
@@ -292,7 +292,7 @@ public final class j {
             return;
         }
         b((byte) 1, i);
-        this.f35388a.putShort(s);
+        this.f21697a.putShort(s);
     }
 
     public final void a(boolean z, int i) {
@@ -304,12 +304,12 @@ public final class j {
         b((byte) 13, i);
         b((byte) 0, 0);
         a(bArr.length, 0);
-        this.f35388a.put(bArr);
+        this.f21697a.put(bArr);
     }
 
     public final byte[] b() {
-        byte[] bArr = new byte[this.f35388a.position()];
-        System.arraycopy((Object) this.f35388a.array(), 0, (Object) bArr, 0, this.f35388a.position());
+        byte[] bArr = new byte[this.f21697a.position()];
+        System.arraycopy(this.f21697a.array(), 0, bArr, 0, this.f21697a.position());
         return bArr;
     }
 }

@@ -16,7 +16,7 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    static final String f23293a = com.igexin.push.b.b.f23300a + a.class.getName();
+    static final String f9685a = com.igexin.push.b.b.f9692a + a.class.getName();
     private static final int q = 10;
     int b;
     protected int g;
@@ -28,11 +28,11 @@ public class a {
     private d n;
 
     /* renamed from: c  reason: collision with root package name */
-    final List<d> f23294c = new ArrayList();
+    final List<d> f9686c = new ArrayList();
     private final List<b> o = new ArrayList();
     final Object d = new Object();
     private final Object p = new Object();
-    public volatile EnumC0448a e = EnumC0448a.NORMAL;
+    public volatile EnumC0278a e = EnumC0278a.NORMAL;
     private int r = 0;
     public AtomicBoolean f = new AtomicBoolean(false);
     final Comparator<d> k = new Comparator<d>() { // from class: com.igexin.push.b.a.1
@@ -52,23 +52,23 @@ public class a {
     public static final /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f23296a;
+        static final /* synthetic */ int[] f9688a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
-            int[] iArr = new int[EnumC0448a.values().length];
-            f23296a = iArr;
+            int[] iArr = new int[EnumC0278a.values().length];
+            f9688a = iArr;
             try {
-                iArr[EnumC0448a.NORMAL.ordinal()] = 1;
+                iArr[EnumC0278a.NORMAL.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f23296a[EnumC0448a.BACKUP.ordinal()] = 2;
+                f9688a[EnumC0278a.BACKUP.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f23296a[EnumC0448a.TRY_NORMAL.ordinal()] = 3;
+                f9688a[EnumC0278a.TRY_NORMAL.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -76,14 +76,14 @@ public class a {
 
     /* renamed from: com.igexin.push.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/igexin/push/b/a$a.class */
-    public enum EnumC0448a {
+    public enum EnumC0278a {
         NORMAL(0),
         BACKUP(1),
         TRY_NORMAL(2);
         
         int d;
 
-        EnumC0448a(int i) {
+        EnumC0278a(int i) {
             this.d = -1;
             this.d = i;
         }
@@ -92,8 +92,8 @@ public class a {
             return this.d;
         }
 
-        public static EnumC0448a a(int i) {
-            EnumC0448a[] values = values();
+        public static EnumC0278a a(int i) {
+            EnumC0278a[] values = values();
             int length = values.length;
             int i2 = 0;
             while (true) {
@@ -101,9 +101,9 @@ public class a {
                 if (i3 >= length) {
                     return null;
                 }
-                EnumC0448a enumC0448a = values[i3];
-                if (enumC0448a.d == i) {
-                    return enumC0448a;
+                EnumC0278a enumC0278a = values[i3];
+                if (enumC0278a.d == i) {
+                    return enumC0278a;
                 }
                 i2 = i3 + 1;
             }
@@ -114,7 +114,7 @@ public class a {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f23299a;
+        public String f9691a;
         public long b;
 
         public final b a(JSONObject jSONObject) {
@@ -122,7 +122,7 @@ public class a {
                 return this;
             }
             try {
-                this.f23299a = jSONObject.getString("address");
+                this.f9691a = jSONObject.getString("address");
                 this.b = jSONObject.getLong("outdateTime");
                 return this;
             } catch (Exception e) {
@@ -134,7 +134,7 @@ public class a {
         public final JSONObject a() {
             try {
                 JSONObject jSONObject = new JSONObject();
-                jSONObject.put("address", this.f23299a);
+                jSONObject.put("address", this.f9691a);
                 jSONObject.put("outdateTime", this.b);
                 return jSONObject;
             } catch (Exception e) {
@@ -144,7 +144,7 @@ public class a {
         }
 
         public final String toString() {
-            return "ServerAddress{address='" + this.f23299a + "', outdateTime=" + this.b + '}';
+            return "ServerAddress{address='" + this.f9691a + "', outdateTime=" + this.b + '}';
         }
     }
 
@@ -154,7 +154,7 @@ public class a {
             synchronized (this.p) {
                 String str = this.j ? com.igexin.push.core.e.at : com.igexin.push.core.e.au;
                 if (this.o.isEmpty() && TextUtils.isEmpty(str)) {
-                    com.igexin.c.a.c.a.a(f23293a + "cm list size = 0", new Object[0]);
+                    com.igexin.c.a.c.a.a(f9685a + "cm list size = 0", new Object[0]);
                     this.m = 0;
                     this.l = 0;
                     return null;
@@ -162,9 +162,9 @@ public class a {
                 if (this.o.isEmpty() && !TextUtils.isEmpty(str)) {
                     a(str);
                 }
-                com.igexin.c.a.c.a.a(f23293a + "cm try = " + this.m + " times", new Object[0]);
+                com.igexin.c.a.c.a.a(f9685a + "cm try = " + this.m + " times", new Object[0]);
                 if (this.m >= this.o.size() * 1) {
-                    com.igexin.c.a.c.a.a(f23293a + "cm invalid", new Object[0]);
+                    com.igexin.c.a.c.a.a(f9685a + "cm invalid", new Object[0]);
                     this.m = 0;
                     this.l = 0;
                     this.o.clear();
@@ -174,7 +174,7 @@ public class a {
                 Iterator<b> it = this.o.iterator();
                 while (it.hasNext()) {
                     if (it.next().b < currentTimeMillis) {
-                        com.igexin.c.a.c.a.a(f23293a + "|add[" + next.f23299a + "] outDate", new Object[0]);
+                        com.igexin.c.a.c.a.a(f9685a + "|add[" + next.f9691a + "] outDate", new Object[0]);
                         it.remove();
                     }
                 }
@@ -187,13 +187,13 @@ public class a {
                 }
                 int i = this.l >= this.o.size() ? 0 : this.l;
                 this.l = i;
-                String str2 = this.o.get(i).f23299a;
+                String str2 = this.o.get(i).f9691a;
                 this.l++;
                 return str2;
             }
         } catch (Exception e) {
-            com.igexin.c.a.c.a.a(f23293a, e.toString());
-            com.igexin.c.a.c.a.a(f23293a + "|" + e.toString(), new Object[0]);
+            com.igexin.c.a.c.a.a(f9685a, e.toString());
+            com.igexin.c.a.c.a.a(f9685a + "|" + e.toString(), new Object[0]);
             return null;
         }
     }
@@ -205,7 +205,7 @@ public class a {
             while (true) {
                 int i2 = i;
                 if (i2 >= jSONArray.length()) {
-                    com.igexin.c.a.c.a.a(f23293a + "|get cm from cache, isWf = " + this.j + ", lastCmList = " + str, new Object[0]);
+                    com.igexin.c.a.c.a.a(f9685a + "|get cm from cache, isWf = " + this.j + ", lastCmList = " + str, new Object[0]);
                     return;
                 }
                 this.o.add(new b().a(jSONArray.getJSONObject(i2)));
@@ -219,9 +219,9 @@ public class a {
     private String b(boolean z) {
         String a2;
         synchronized (this.d) {
-            int i = this.b >= this.f23294c.size() ? 0 : this.b;
+            int i = this.b >= this.f9686c.size() ? 0 : this.b;
             this.b = i;
-            d dVar = this.f23294c.get(i);
+            d dVar = this.f9686c.get(i);
             this.n = dVar;
             a2 = dVar.a(z);
         }
@@ -247,66 +247,66 @@ public class a {
     private void i() {
         synchronized (this.d) {
             this.b = 0;
-            Collections.sort(this.f23294c, this.k);
+            Collections.sort(this.f9686c, this.k);
         }
     }
 
     private void j() {
-        com.igexin.c.a.c.a.a(f23293a + "|detect success, current type = " + this.e, new Object[0]);
-        if (this.e == EnumC0448a.BACKUP) {
-            a(EnumC0448a.TRY_NORMAL);
-            com.igexin.push.core.d unused = d.a.f23474a;
+        com.igexin.c.a.c.a.a(f9685a + "|detect success, current type = " + this.e, new Object[0]);
+        if (this.e == EnumC0278a.BACKUP) {
+            a(EnumC0278a.TRY_NORMAL);
+            d.a.a();
             com.igexin.push.d.a.a(true);
         }
     }
 
     private void k() {
-        com.igexin.c.a.c.a.a(f23293a + "|before disconnect, type = " + this.e, new Object[0]);
-        int i = AnonymousClass2.f23296a[this.e.ordinal()];
+        com.igexin.c.a.c.a.a(f9685a + "|before disconnect, type = " + this.e, new Object[0]);
+        int i = AnonymousClass2.f9688a[this.e.ordinal()];
         if (i != 1) {
             if (i == 2 && System.currentTimeMillis() - this.h > com.igexin.push.config.d.r) {
-                a(EnumC0448a.TRY_NORMAL);
+                a(EnumC0278a.TRY_NORMAL);
             }
         } else if (System.currentTimeMillis() - this.i <= 86400000 || this.g <= com.igexin.push.config.d.t) {
         } else {
-            a(EnumC0448a.BACKUP);
+            a(EnumC0278a.BACKUP);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void a(EnumC0448a enumC0448a) {
+    public final void a(EnumC0278a enumC0278a) {
         synchronized (this) {
-            com.igexin.c.a.c.a.a(f23293a + "|set domain type = " + enumC0448a, new Object[0]);
+            com.igexin.c.a.c.a.a(f9685a + "|set domain type = " + enumC0278a, new Object[0]);
             if (com.igexin.push.config.d.g) {
-                if (this.e != enumC0448a) {
+                if (this.e != enumC0278a) {
                     a((List<b>) null);
                 }
-                int i = AnonymousClass2.f23296a[enumC0448a.ordinal()];
+                int i = AnonymousClass2.f9688a[enumC0278a.ordinal()];
                 if (i != 1) {
                     if (i == 2) {
                         this.f.set(true);
-                        if (this.e != enumC0448a) {
+                        if (this.e != enumC0278a) {
                             this.h = System.currentTimeMillis();
                         }
                         SDKUrlConfig.setConnectAddress(SDKUrlConfig.XFR_ADDRESS_BAK[0]);
                         SDKUrlConfig.getConnectAddress();
-                        com.igexin.c.a.c.a.a(f23293a + "|set domain type backup cm = " + SDKUrlConfig.getConnectAddress(), new Object[0]);
+                        com.igexin.c.a.c.a.a(f9685a + "|set domain type backup cm = " + SDKUrlConfig.getConnectAddress(), new Object[0]);
                     } else if (i == 3) {
-                        if (this.e != enumC0448a) {
+                        if (this.e != enumC0278a) {
                             this.r = 0;
                         }
                     }
-                    this.e = enumC0448a;
+                    this.e = enumC0278a;
                     c.a().f().n();
                 }
                 this.b = 0;
                 SDKUrlConfig.setConnectAddress(b(true));
-                if (enumC0448a == EnumC0448a.NORMAL) {
+                if (enumC0278a == EnumC0278a.NORMAL) {
                     this.f.set(false);
                 }
                 SDKUrlConfig.getConnectAddress();
-                com.igexin.c.a.c.a.a(f23293a + "|set domain type normal cm = " + SDKUrlConfig.getConnectAddress(), new Object[0]);
-                this.e = enumC0448a;
+                com.igexin.c.a.c.a.a(f9685a + "|set domain type normal cm = " + SDKUrlConfig.getConnectAddress(), new Object[0]);
+                this.e = enumC0278a;
                 c.a().f().n();
             }
         }
@@ -319,7 +319,7 @@ public class a {
             this.o.clear();
             if (list != null) {
                 this.o.addAll(list);
-                com.igexin.c.a.c.a.a(f23293a + "|set cm list: " + list.toString(), new Object[0]);
+                com.igexin.c.a.c.a.a(f9685a + "|set cm list: " + list.toString(), new Object[0]);
             }
             h();
         }
@@ -328,14 +328,14 @@ public class a {
     public final boolean a() {
         boolean z;
         try {
-            com.igexin.push.core.d unused = d.a.f23474a;
+            d.a.a();
             z = true;
             boolean z2 = !com.igexin.push.d.a.d();
             String a2 = a(z2);
-            com.igexin.c.a.c.a.a(f23293a + "|get from cm = " + a2, new Object[0]);
+            com.igexin.c.a.c.a.a(f9685a + "|get from cm = " + a2, new Object[0]);
             String str = a2;
             if (a2 == null) {
-                if (com.igexin.push.config.d.g && this.e == EnumC0448a.BACKUP) {
+                if (com.igexin.push.config.d.g && this.e == EnumC0278a.BACKUP) {
                     this.b = this.b >= SDKUrlConfig.XFR_ADDRESS_BAK.length ? 0 : this.b;
                     str = SDKUrlConfig.XFR_ADDRESS_BAK[this.b];
                     this.b++;
@@ -350,15 +350,15 @@ public class a {
             try {
                 if (!SDKUrlConfig.getConnectAddress().equals(str)) {
                     SDKUrlConfig.getConnectAddress();
-                    com.igexin.c.a.c.a.a(f23293a + "|address changed : form [" + SDKUrlConfig.getConnectAddress() + "] to [" + str + "]", new Object[0]);
+                    com.igexin.c.a.c.a.a(f9685a + "|address changed : form [" + SDKUrlConfig.getConnectAddress() + "] to [" + str + "]", new Object[0]);
                 }
                 SDKUrlConfig.setConnectAddress(str);
                 return z;
             } catch (Exception e) {
                 e = e;
                 com.igexin.c.a.c.a.a(e);
-                com.igexin.c.a.c.a.a(f23293a, e.toString());
-                com.igexin.c.a.c.a.a(f23293a + "|switch address|" + e.toString(), new Object[0]);
+                com.igexin.c.a.c.a.a(f9685a, e.toString());
+                com.igexin.c.a.c.a.a(f9685a + "|switch address|" + e.toString(), new Object[0]);
                 return z;
             }
         } catch (Exception e2) {
@@ -378,59 +378,59 @@ public class a {
 
     public final void b(List<d> list) {
         synchronized (this.d) {
-            this.f23294c.clear();
-            this.f23294c.addAll(list);
-            Collections.sort(this.f23294c, this.k);
+            this.f9686c.clear();
+            this.f9686c.addAll(list);
+            Collections.sort(this.f9686c, this.k);
         }
     }
 
     public final void c() {
         synchronized (this) {
             this.g++;
-            com.igexin.c.a.c.a.a(f23293a + "|loginFailedlCnt = " + this.g, new Object[0]);
+            com.igexin.c.a.c.a.a(f9685a + "|loginFailedlCnt = " + this.g, new Object[0]);
         }
     }
 
     public final void d() {
-        if (AnonymousClass2.f23296a[this.e.ordinal()] == 2 && System.currentTimeMillis() - this.h > com.igexin.push.config.d.r) {
-            a(EnumC0448a.TRY_NORMAL);
+        if (AnonymousClass2.f9688a[this.e.ordinal()] == 2 && System.currentTimeMillis() - this.h > com.igexin.push.config.d.r) {
+            a(EnumC0278a.TRY_NORMAL);
         }
     }
 
     public final void e() {
-        if (this.e != EnumC0448a.BACKUP) {
+        if (this.e != EnumC0278a.BACKUP) {
             this.g = 0;
         }
-        int i = AnonymousClass2.f23296a[this.e.ordinal()];
+        int i = AnonymousClass2.f9688a[this.e.ordinal()];
         if (i == 1) {
             this.i = System.currentTimeMillis();
             c.a().f().n();
             this.f.set(false);
         } else if (i != 3) {
         } else {
-            a(EnumC0448a.NORMAL);
+            a(EnumC0278a.NORMAL);
             this.f.set(false);
         }
     }
 
     public final void f() {
-        EnumC0448a enumC0448a;
-        com.igexin.c.a.c.a.a(f23293a + "|before disconnect, type = " + this.e, new Object[0]);
-        int i = AnonymousClass2.f23296a[this.e.ordinal()];
+        EnumC0278a enumC0278a;
+        com.igexin.c.a.c.a.a(f9685a + "|before disconnect, type = " + this.e, new Object[0]);
+        int i = AnonymousClass2.f9688a[this.e.ordinal()];
         if (i != 1) {
             if (i == 2 && System.currentTimeMillis() - this.h > com.igexin.push.config.d.r) {
-                enumC0448a = EnumC0448a.TRY_NORMAL;
-                a(enumC0448a);
+                enumC0278a = EnumC0278a.TRY_NORMAL;
+                a(enumC0278a);
             }
         } else if (System.currentTimeMillis() - this.i > 86400000 && this.g > com.igexin.push.config.d.t) {
-            enumC0448a = EnumC0448a.BACKUP;
-            a(enumC0448a);
+            enumC0278a = EnumC0278a.BACKUP;
+            a(enumC0278a);
         }
-        if (com.igexin.push.core.e.u && this.e != EnumC0448a.BACKUP) {
+        if (com.igexin.push.core.e.u && this.e != EnumC0278a.BACKUP) {
             this.i = System.currentTimeMillis();
             c.a().f().n();
         }
-        if (AnonymousClass2.f23296a[this.e.ordinal()] != 3) {
+        if (AnonymousClass2.f9688a[this.e.ordinal()] != 3) {
             return;
         }
         int i2 = this.r + 1;
@@ -438,7 +438,7 @@ public class a {
         if (i2 >= 10) {
             this.g = 0;
             this.h = System.currentTimeMillis();
-            a(EnumC0448a.BACKUP);
+            a(EnumC0278a.BACKUP);
         }
     }
 }

@@ -9,13 +9,9 @@ import java.nio.charset.Charset;
 /* renamed from: com.amap.api.col.3sl.js  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/js.class */
 public final class js implements Closeable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Charset f5226a = Charset.forName("US-ASCII");
+    public static final Charset a = Charset.forName("US-ASCII");
     private final InputStream b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Charset f5227c;
+    private final Charset c;
     private byte[] d;
     private int e;
     private int f;
@@ -28,11 +24,11 @@ public final class js implements Closeable {
         if (inputStream == null || charset == null) {
             throw null;
         }
-        if (!charset.equals(f5226a)) {
+        if (!charset.equals(a)) {
             throw new IllegalArgumentException("Unsupported encoding");
         }
         this.b = inputStream;
-        this.f5227c = charset;
+        this.c = charset;
         this.d = new byte[8192];
     }
 

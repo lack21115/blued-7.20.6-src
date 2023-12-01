@@ -7,14 +7,14 @@ import com.opos.exoplayer.core.i.m;
 import com.opos.exoplayer.core.i.u;
 
 /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/c/d.class */
-final class d implements a.InterfaceC0650a {
+final class d implements a.InterfaceC0480a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final long f25109a;
+    private final long f11421a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f25110c;
+    private final long f11422c;
     private final long d;
     private final long[] e;
 
@@ -23,15 +23,15 @@ final class d implements a.InterfaceC0650a {
     }
 
     private d(long j, int i, long j2, long j3, long[] jArr) {
-        this.f25109a = j;
+        this.f11421a = j;
         this.b = i;
-        this.f25110c = j2;
+        this.f11422c = j2;
         this.d = j3;
         this.e = jArr;
     }
 
     private long a(int i) {
-        return (this.f25110c * i) / 100;
+        return (this.f11422c * i) / 100;
     }
 
     public static d a(long j, long j2, j jVar, m mVar) {
@@ -44,7 +44,7 @@ final class d implements a.InterfaceC0650a {
         }
         long d = u.d(u, i * 1000000, i2);
         if ((o & 6) != 6) {
-            return new d(j2, jVar.f25248c, d);
+            return new d(j2, jVar.f11560c, d);
         }
         long u2 = mVar.u();
         long[] jArr = new long[100];
@@ -63,12 +63,12 @@ final class d implements a.InterfaceC0650a {
                 com.opos.cmn.an.f.a.c("XingSeeker", "XING data size mismatch: " + j + ", " + j3);
             }
         }
-        return new d(j2, jVar.f25248c, d, u2, jArr);
+        return new d(j2, jVar.f11560c, d, u2, jArr);
     }
 
-    @Override // com.opos.exoplayer.core.c.c.a.InterfaceC0650a
+    @Override // com.opos.exoplayer.core.c.c.a.InterfaceC0480a
     public long a(long j) {
-        long j2 = j - this.f25109a;
+        long j2 = j - this.f11421a;
         if (!a() || j2 <= this.b) {
             return 0L;
         }
@@ -89,15 +89,15 @@ final class d implements a.InterfaceC0650a {
 
     @Override // com.opos.exoplayer.core.c.l
     public long b() {
-        return this.f25110c;
+        return this.f11422c;
     }
 
     @Override // com.opos.exoplayer.core.c.l
     public l.a b(long j) {
         long[] jArr;
         if (a()) {
-            long a2 = u.a(j, 0L, this.f25110c);
-            double d = (a2 * 100.0d) / this.f25110c;
+            long a2 = u.a(j, 0L, this.f11422c);
+            double d = (a2 * 100.0d) / this.f11422c;
             double d2 = 0.0d;
             if (d > 0.0d) {
                 if (d >= 100.0d) {
@@ -108,8 +108,8 @@ final class d implements a.InterfaceC0650a {
                     d2 = d3 + (((i == 99 ? 256.0d : jArr[i + 1]) - d3) * (d - i));
                 }
             }
-            return new l.a(new com.opos.exoplayer.core.c.m(a2, u.a(Math.round((d2 / 256.0d) * this.d), this.b, this.d - 1) + this.f25109a));
+            return new l.a(new com.opos.exoplayer.core.c.m(a2, u.a(Math.round((d2 / 256.0d) * this.d), this.b, this.d - 1) + this.f11421a));
         }
-        return new l.a(new com.opos.exoplayer.core.c.m(0L, this.f25109a + this.b));
+        return new l.a(new com.opos.exoplayer.core.c.m(0L, this.f11421a + this.b));
     }
 }

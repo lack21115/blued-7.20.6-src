@@ -73,19 +73,19 @@ public class ef extends v0<n0> implements n0, ne, r4 {
         public final /* synthetic */ Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ e1 f37412c;
+        public final /* synthetic */ e1 f23721c;
         public final /* synthetic */ TencentMap.InfoWindowAdapter d;
 
         public b(Context context, e1 e1Var, TencentMap.InfoWindowAdapter infoWindowAdapter) {
             this.b = context;
-            this.f37412c = e1Var;
+            this.f23721c = e1Var;
             this.d = infoWindowAdapter;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             ef efVar = ef.this;
-            efVar.h = af.a(this.b, this.f37412c, efVar, this.d, efVar.r);
+            efVar.h = af.a(this.b, this.f23721c, efVar, this.d, efVar.r);
             ef.this.B();
         }
     }
@@ -95,17 +95,17 @@ public class ef extends v0<n0> implements n0, ne, r4 {
         public final /* synthetic */ ViewParent b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ View f37413c;
+        public final /* synthetic */ View f23722c;
 
         public c(ViewParent viewParent, View view) {
             this.b = viewParent;
-            this.f37413c = view;
+            this.f23722c = view;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            ((ViewGroup) this.b).removeView(this.f37413c);
-            View view = this.f37413c;
+            ((ViewGroup) this.b).removeView(this.f23722c);
+            View view = this.f23722c;
             if (view instanceof ViewGroup) {
                 ((ViewGroup) view).removeAllViews();
             }
@@ -227,7 +227,7 @@ public class ef extends v0<n0> implements n0, ne, r4 {
         int i4 = this.j;
         float f6 = (i * 1.0f) / i4;
         int i5 = (int) (a2.b - (f * (f3 - f4)));
-        int i6 = (int) (a2.f37683c - (f2 * (f5 - f6)));
+        int i6 = (int) (a2.f23992c - (f2 * (f5 - f6)));
         return new Rect(i5, i6, i3 + i5, i4 + i6);
     }
 

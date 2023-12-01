@@ -23,11 +23,11 @@ import androidx.constraintlayout.widget.R;
 public class ImageFilterButton extends AppCompatImageButton {
 
     /* renamed from: a  reason: collision with root package name */
-    ViewOutlineProvider f2226a;
+    ViewOutlineProvider f2178a;
     RectF b;
 
     /* renamed from: c  reason: collision with root package name */
-    Drawable[] f2227c;
+    Drawable[] f2179c;
     LayerDrawable d;
     private ImageFilterView.ImageMatrix e;
     private float f;
@@ -48,7 +48,7 @@ public class ImageFilterButton extends AppCompatImageButton {
         this.f = 0.0f;
         this.g = 0.0f;
         this.h = Float.NaN;
-        this.f2227c = new Drawable[2];
+        this.f2179c = new Drawable[2];
         this.j = true;
         this.k = null;
         this.l = null;
@@ -65,7 +65,7 @@ public class ImageFilterButton extends AppCompatImageButton {
         this.f = 0.0f;
         this.g = 0.0f;
         this.h = Float.NaN;
-        this.f2227c = new Drawable[2];
+        this.f2179c = new Drawable[2];
         this.j = true;
         this.k = null;
         this.l = null;
@@ -82,7 +82,7 @@ public class ImageFilterButton extends AppCompatImageButton {
         this.f = 0.0f;
         this.g = 0.0f;
         this.h = Float.NaN;
-        this.f2227c = new Drawable[2];
+        this.f2179c = new Drawable[2];
         this.j = true;
         this.k = null;
         this.l = null;
@@ -150,7 +150,7 @@ public class ImageFilterButton extends AppCompatImageButton {
                 Drawable drawable2 = getDrawable();
                 this.l = drawable2;
                 if (drawable2 != null) {
-                    Drawable[] drawableArr = this.f2227c;
+                    Drawable[] drawableArr = this.f2179c;
                     Drawable mutate = drawable2.mutate();
                     this.l = mutate;
                     drawableArr[0] = mutate;
@@ -158,12 +158,12 @@ public class ImageFilterButton extends AppCompatImageButton {
                 }
                 return;
             }
-            Drawable[] drawableArr2 = this.f2227c;
+            Drawable[] drawableArr2 = this.f2179c;
             Drawable mutate2 = getDrawable().mutate();
             this.l = mutate2;
             drawableArr2[0] = mutate2;
-            this.f2227c[1] = this.k.mutate();
-            LayerDrawable layerDrawable = new LayerDrawable(this.f2227c);
+            this.f2179c[1] = this.k.mutate();
+            LayerDrawable layerDrawable = new LayerDrawable(this.f2179c);
             this.d = layerDrawable;
             layerDrawable.getDrawable(1).setAlpha((int) (this.f * 255.0f));
             if (!this.j) {
@@ -269,10 +269,10 @@ public class ImageFilterButton extends AppCompatImageButton {
     public void setAltImageResource(int i) {
         Drawable mutate = AppCompatResources.getDrawable(getContext(), i).mutate();
         this.k = mutate;
-        Drawable[] drawableArr = this.f2227c;
+        Drawable[] drawableArr = this.f2179c;
         drawableArr[0] = this.l;
         drawableArr[1] = mutate;
-        LayerDrawable layerDrawable = new LayerDrawable(this.f2227c);
+        LayerDrawable layerDrawable = new LayerDrawable(this.f2179c);
         this.d = layerDrawable;
         super.setImageDrawable(layerDrawable);
         setCrossfade(this.f);
@@ -290,7 +290,7 @@ public class ImageFilterButton extends AppCompatImageButton {
 
     public void setCrossfade(float f) {
         this.f = f;
-        if (this.f2227c != null) {
+        if (this.f2179c != null) {
             if (!this.j) {
                 this.d.getDrawable(0).setAlpha((int) ((1.0f - this.f) * 255.0f));
             }
@@ -307,10 +307,10 @@ public class ImageFilterButton extends AppCompatImageButton {
         }
         Drawable mutate = drawable.mutate();
         this.l = mutate;
-        Drawable[] drawableArr = this.f2227c;
+        Drawable[] drawableArr = this.f2179c;
         drawableArr[0] = mutate;
         drawableArr[1] = this.k;
-        LayerDrawable layerDrawable = new LayerDrawable(this.f2227c);
+        LayerDrawable layerDrawable = new LayerDrawable(this.f2179c);
         this.d = layerDrawable;
         super.setImageDrawable(layerDrawable);
         setCrossfade(this.f);
@@ -334,10 +334,10 @@ public class ImageFilterButton extends AppCompatImageButton {
         }
         Drawable mutate = AppCompatResources.getDrawable(getContext(), i).mutate();
         this.l = mutate;
-        Drawable[] drawableArr = this.f2227c;
+        Drawable[] drawableArr = this.f2179c;
         drawableArr[0] = mutate;
         drawableArr[1] = this.k;
-        LayerDrawable layerDrawable = new LayerDrawable(this.f2227c);
+        LayerDrawable layerDrawable = new LayerDrawable(this.f2179c);
         this.d = layerDrawable;
         super.setImageDrawable(layerDrawable);
         setCrossfade(this.f);
@@ -371,14 +371,14 @@ public class ImageFilterButton extends AppCompatImageButton {
                 this.b = new RectF();
             }
             if (Build.VERSION.SDK_INT >= 21) {
-                if (this.f2226a == null) {
+                if (this.f2178a == null) {
                     ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() { // from class: androidx.constraintlayout.utils.widget.ImageFilterButton.2
                         @Override // android.view.ViewOutlineProvider
                         public void getOutline(View view, Outline outline) {
                             outline.setRoundRect(0, 0, ImageFilterButton.this.getWidth(), ImageFilterButton.this.getHeight(), ImageFilterButton.this.h);
                         }
                     };
-                    this.f2226a = viewOutlineProvider;
+                    this.f2178a = viewOutlineProvider;
                     setOutlineProvider(viewOutlineProvider);
                 }
                 setClipToOutline(true);
@@ -409,7 +409,7 @@ public class ImageFilterButton extends AppCompatImageButton {
                 this.b = new RectF();
             }
             if (Build.VERSION.SDK_INT >= 21) {
-                if (this.f2226a == null) {
+                if (this.f2178a == null) {
                     ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() { // from class: androidx.constraintlayout.utils.widget.ImageFilterButton.1
                         @Override // android.view.ViewOutlineProvider
                         public void getOutline(View view, Outline outline) {
@@ -418,7 +418,7 @@ public class ImageFilterButton extends AppCompatImageButton {
                             outline.setRoundRect(0, 0, width, height, (Math.min(width, height) * ImageFilterButton.this.g) / 2.0f);
                         }
                     };
-                    this.f2226a = viewOutlineProvider;
+                    this.f2178a = viewOutlineProvider;
                     setOutlineProvider(viewOutlineProvider);
                 }
                 setClipToOutline(true);

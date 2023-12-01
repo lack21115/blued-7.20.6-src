@@ -3,6 +3,7 @@ package com.tencent.cos.xml.model.object;
 import com.tencent.cos.xml.common.ClientErrorCode;
 import com.tencent.cos.xml.exception.CosXmlClientException;
 import com.tencent.cos.xml.model.object.CopyObjectRequest;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.Map;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/object/UploadPartCopyRequest.class */
@@ -48,6 +49,6 @@ public class UploadPartCopyRequest extends CopyObjectRequest {
         if (j < 0 || j2 < j) {
             return;
         }
-        addHeader("x-cos-copy-source-range", "bytes=" + j + "-" + j2);
+        addHeader("x-cos-copy-source-range", "bytes=" + j + Constants.ACCEPT_TIME_SEPARATOR_SERVER + j2);
     }
 }

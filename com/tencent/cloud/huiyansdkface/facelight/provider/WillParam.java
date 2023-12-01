@@ -22,11 +22,11 @@ public class WillParam implements Parcelable {
     private String B;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f35657a;
+    private int f21966a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f35658c;
+    private int f21967c;
     private int d;
     private int e;
     private float f;
@@ -55,9 +55,9 @@ public class WillParam implements Parcelable {
     }
 
     protected WillParam(Parcel parcel) {
-        this.f35657a = parcel.readInt();
+        this.f21966a = parcel.readInt();
         this.b = parcel.readInt();
-        this.f35658c = parcel.readInt();
+        this.f21967c = parcel.readInt();
         this.d = parcel.readInt();
         this.e = parcel.readInt();
         this.f = parcel.readFloat();
@@ -123,11 +123,11 @@ public class WillParam implements Parcelable {
     }
 
     public int getCamRotate() {
-        return this.f35658c;
+        return this.f21967c;
     }
 
     public int getCamWidth() {
-        return this.f35657a;
+        return this.f21966a;
     }
 
     public float getLeft() {
@@ -243,12 +243,12 @@ public class WillParam implements Parcelable {
     }
 
     public WillParam setCamRotate(int i) {
-        this.f35658c = i;
+        this.f21967c = i;
         return this;
     }
 
     public WillParam setCamWidth(int i) {
-        this.f35657a = i;
+        this.f21966a = i;
         return this;
     }
 
@@ -343,14 +343,14 @@ public class WillParam implements Parcelable {
     }
 
     public String toString() {
-        return "WillParam{camWidth=" + this.f35657a + ", camHeight=" + this.b + ", camRotate=" + this.f35658c + ", previewPicWidth=" + this.d + ", previewPicHeight=" + this.e + ", left=" + this.f + ", top=" + this.g + ", borderTop=" + this.h + ", scale=" + this.i + ", isRecordWillVideo=" + this.j + ", screenshot=" + this.k + ", isPassVolCheck=" + this.l + ", playVolThreshold=" + this.m + ", lowestPlayVolThre=" + this.n + ", screenshotTime=" + this.o + ", muteThreshold=" + this.p + ", muteTimeout=" + this.q + ", muteWaitTime=" + this.r + ", playModeWaitTime=" + this.s + ", willVideoBitrateFactor=" + this.t + ", asrRequestTimeout=" + this.u + ", asrRequestRetryCount=" + this.v + ", asrCurCount=" + this.w + ", asrRetryCount=" + this.x + ", willType='" + this.y + "', question='" + this.z + "', answer='" + this.A + "'}";
+        return "WillParam{camWidth=" + this.f21966a + ", camHeight=" + this.b + ", camRotate=" + this.f21967c + ", previewPicWidth=" + this.d + ", previewPicHeight=" + this.e + ", left=" + this.f + ", top=" + this.g + ", borderTop=" + this.h + ", scale=" + this.i + ", isRecordWillVideo=" + this.j + ", screenshot=" + this.k + ", isPassVolCheck=" + this.l + ", playVolThreshold=" + this.m + ", lowestPlayVolThre=" + this.n + ", screenshotTime=" + this.o + ", muteThreshold=" + this.p + ", muteTimeout=" + this.q + ", muteWaitTime=" + this.r + ", playModeWaitTime=" + this.s + ", willVideoBitrateFactor=" + this.t + ", asrRequestTimeout=" + this.u + ", asrRequestRetryCount=" + this.v + ", asrCurCount=" + this.w + ", asrRetryCount=" + this.x + ", willType='" + this.y + "', question='" + this.z + "', answer='" + this.A + "'}";
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f35657a);
+        parcel.writeInt(this.f21966a);
         parcel.writeInt(this.b);
-        parcel.writeInt(this.f35658c);
+        parcel.writeInt(this.f21967c);
         parcel.writeInt(this.d);
         parcel.writeInt(this.e);
         parcel.writeFloat(this.f);

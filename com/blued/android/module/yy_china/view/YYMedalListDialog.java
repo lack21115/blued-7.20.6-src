@@ -32,26 +32,20 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMedalListDialog.class */
 public final class YYMedalListDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogMedalListsBinding f18306a;
+    private DialogMedalListsBinding a;
     private YYUserInfo b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseYYStudioFragment f18307c;
+    private BaseYYStudioFragment c;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMedalListDialog$Ad.class */
     public final class Ad extends BaseQuickAdapter<BadgeMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYMedalListDialog f18308a;
+        final /* synthetic */ YYMedalListDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Ad(YYMedalListDialog this$0) {
             super(R.layout.item_medal_list);
             Intrinsics.e(this$0, "this$0");
-            this.f18308a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -66,12 +60,12 @@ public final class YYMedalListDialog extends BaseFullScreenDialog {
             String bid = badgeMode == null ? null : badgeMode.getBid();
             BaseYYStudioFragment h = this$0.h();
             Intrinsics.a(h);
-            YYMedalInfoDialog a2 = yYMedalInfoDialog.a(g, bid, h);
+            YYMedalInfoDialog a = yYMedalInfoDialog.a(g, bid, h);
             BaseYYStudioFragment h2 = this$0.h();
             FragmentManager childFragmentManager = h2 == null ? null : h2.getChildFragmentManager();
             Intrinsics.a(childFragmentManager);
             Intrinsics.c(childFragmentManager, "fra?.childFragmentManager!!");
-            a2.show(childFragmentManager, "YYMedalInfoDialog");
+            a.show(childFragmentManager, "YYMedalInfoDialog");
             YYRoomModel b = YYRoomInfoManager.e().b();
             if (b == null) {
                 return;
@@ -84,20 +78,19 @@ public final class YYMedalListDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final BadgeMode badgeMode) {
             Intrinsics.a(baseViewHolder);
-            ItemMedalListBinding a2 = ItemMedalListBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper!!.itemView)");
+            ItemMedalListBinding a = ItemMedalListBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper!!.itemView)");
             if (badgeMode == null) {
                 return;
             }
-            final YYMedalListDialog yYMedalListDialog = this.f18308a;
+            final YYMedalListDialog yYMedalListDialog = this.a;
             BaseYYStudioFragment h = yYMedalListDialog.h();
-            ImageLoader.a(h == null ? null : h.getFragmentActive(), badgeMode.getPic()).b(R.drawable.anchor_badge_default).d(R.drawable.anchor_badge_default).a(a2.f16628a);
-            a2.b.setText(badgeMode.getName());
-            a2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMedalListDialog$Ad$qT7P9dwmz46QdJgB8zAeBf_kIcI
+            ImageLoader.a(h == null ? null : h.getFragmentActive(), badgeMode.getPic()).b(R.drawable.anchor_badge_default).d(R.drawable.anchor_badge_default).a(a.a);
+            a.b.setText(badgeMode.getName());
+            a.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMedalListDialog$Ad$qT7P9dwmz46QdJgB8zAeBf_kIcI
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYMedalListDialog.Ad.a(YYMedalListDialog.this, badgeMode, view);
@@ -124,9 +117,9 @@ public final class YYMedalListDialog extends BaseFullScreenDialog {
         YYUserInfo yYUserInfo = this.b;
         if (yYUserInfo != null) {
             BaseYYStudioFragment h = h();
-            ImageWrapper c2 = ImageLoader.a(h == null ? null : h.getFragmentActive(), yYUserInfo.getAvatar()).c();
+            ImageWrapper c = ImageLoader.a(h == null ? null : h.getFragmentActive(), yYUserInfo.getAvatar()).c();
             DialogMedalListsBinding f = f();
-            c2.a(f == null ? null : f.f16367c);
+            c.a(f == null ? null : f.c);
             DialogMedalListsBinding f2 = f();
             TextView textView = f2 == null ? null : f2.g;
             if (textView != null) {
@@ -145,7 +138,7 @@ public final class YYMedalListDialog extends BaseFullScreenDialog {
             if (recyclerView != null) {
                 recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
             }
-            Ad ad = new Ad(this);
+            RecyclerView.Adapter ad = new Ad(this);
             DialogMedalListsBinding f5 = f();
             RecyclerView recyclerView2 = f5 == null ? null : f5.d;
             if (recyclerView2 != null) {
@@ -153,8 +146,8 @@ public final class YYMedalListDialog extends BaseFullScreenDialog {
             }
             ad.setNewData(yYUserInfo.badge);
         }
-        DialogMedalListsBinding dialogMedalListsBinding = this.f18306a;
-        if (dialogMedalListsBinding != null && (frameLayout = dialogMedalListsBinding.f16366a) != null) {
+        DialogMedalListsBinding dialogMedalListsBinding = this.a;
+        if (dialogMedalListsBinding != null && (frameLayout = dialogMedalListsBinding.a) != null) {
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMedalListDialog$K3Xm2q8bCVBY3snkUByMe8US1gI
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -162,7 +155,7 @@ public final class YYMedalListDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        DialogMedalListsBinding dialogMedalListsBinding2 = this.f18306a;
+        DialogMedalListsBinding dialogMedalListsBinding2 = this.a;
         if (dialogMedalListsBinding2 == null || (imageView = dialogMedalListsBinding2.b) == null) {
             return;
         }
@@ -178,12 +171,12 @@ public final class YYMedalListDialog extends BaseFullScreenDialog {
         Intrinsics.e(info, "info");
         Intrinsics.e(fra, "fra");
         this.b = info;
-        this.f18307c = fra;
+        this.c = fra;
         return this;
     }
 
     public final DialogMedalListsBinding f() {
-        return this.f18306a;
+        return this.a;
     }
 
     public final YYUserInfo g() {
@@ -191,15 +184,15 @@ public final class YYMedalListDialog extends BaseFullScreenDialog {
     }
 
     public final BaseYYStudioFragment h() {
-        return this.f18307c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18306a = DialogMedalListsBinding.a(inflater.inflate(R.layout.dialog_medal_lists, viewGroup, true));
+        this.a = DialogMedalListsBinding.a(inflater.inflate(R.layout.dialog_medal_lists, viewGroup, true));
         i();
-        DialogMedalListsBinding dialogMedalListsBinding = this.f18306a;
+        DialogMedalListsBinding dialogMedalListsBinding = this.a;
         return dialogMedalListsBinding == null ? null : dialogMedalListsBinding.getRoot();
     }
 }

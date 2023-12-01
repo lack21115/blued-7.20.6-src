@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutRefreshWaveBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29428a;
+    private final FrameLayout f15738a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29428a;
+        return this.f15738a;
     }
 }

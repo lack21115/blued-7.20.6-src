@@ -4,18 +4,18 @@ package com.tencent.turingface.sdk.mfa;
 public final class tmnyR {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f39998a = new byte[0];
+    public static final byte[] f26307a = new byte[0];
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final byte[] f39999c;
+    public final byte[] f26308c;
 
     public tmnyR(int i, byte[] bArr, int i2, int i3) {
         this.b = i;
-        this.f39999c = bArr;
+        this.f26308c = bArr;
     }
 
     public static tmnyR a(int i) {
-        return new tmnyR(i, f39998a, 0, 0);
+        return new tmnyR(i, f26307a, 0, 0);
     }
 }

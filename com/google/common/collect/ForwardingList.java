@@ -20,7 +20,7 @@ public abstract class ForwardingList<E> extends ForwardingCollection<E> implemen
     @Override // com.google.common.collect.ForwardingCollection, com.google.common.collect.ForwardingObject
     public abstract List<E> delegate();
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection, java.util.List
     public boolean equals(@NullableDecl Object obj) {
         return obj == this || delegate().equals(obj);
     }
@@ -30,7 +30,7 @@ public abstract class ForwardingList<E> extends ForwardingCollection<E> implemen
         return delegate().get(i);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection, java.util.List
     public int hashCode() {
         return delegate().hashCode();
     }

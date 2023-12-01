@@ -6,13 +6,11 @@ import java.util.Map;
 /* loaded from: source-3503164-dex2jar.jar:skin/support/collection/SimpleArrayMap.class */
 public class SimpleArrayMap<K, V> {
     static Object[] b;
-
-    /* renamed from: c  reason: collision with root package name */
-    static int f44216c;
+    static int c;
     static Object[] d;
     static int e;
-    int[] f = ContainerHelpers.f44206a;
-    Object[] g = ContainerHelpers.f44207c;
+    int[] f = ContainerHelpers.a;
+    Object[] g = ContainerHelpers.c;
     int h = 0;
 
     private static int a(int[] iArr, int i, int i2) {
@@ -48,7 +46,7 @@ public class SimpleArrayMap<K, V> {
         } else if (iArr.length == 4) {
             synchronized (ArrayMap.class) {
                 try {
-                    if (f44216c < 10) {
+                    if (c < 10) {
                         objArr[0] = b;
                         objArr[1] = iArr;
                         int i4 = i << 1;
@@ -61,7 +59,7 @@ public class SimpleArrayMap<K, V> {
                             i4 = i5;
                         }
                         b = objArr;
-                        f44216c++;
+                        c++;
                     }
                 } finally {
                 }
@@ -96,7 +94,7 @@ public class SimpleArrayMap<K, V> {
                         this.f = (int[]) objArr2[1];
                         objArr2[1] = null;
                         objArr2[0] = null;
-                        f44216c--;
+                        c--;
                         return;
                     }
                 } finally {
@@ -113,9 +111,9 @@ public class SimpleArrayMap<K, V> {
         if (i2 == 0) {
             return -1;
         }
-        int a2 = a(this.f, i2, 0);
-        if (a2 >= 0 && this.g[a2 << 1] != null) {
-            int i3 = a2;
+        int a = a(this.f, i2, 0);
+        if (a >= 0 && this.g[a << 1] != null) {
+            int i3 = a;
             while (true) {
                 i = i3 + 1;
                 if (i >= i2 || this.f[i] != 0) {
@@ -126,7 +124,7 @@ public class SimpleArrayMap<K, V> {
                     i3 = i;
                 }
             }
-            int i4 = a2;
+            int i4 = a;
             while (true) {
                 int i5 = i4 - 1;
                 if (i5 < 0 || this.f[i5] != 0) {
@@ -139,7 +137,7 @@ public class SimpleArrayMap<K, V> {
             }
             return i;
         }
-        return a2;
+        return a;
     }
 
     public int a(Object obj) {
@@ -152,9 +150,9 @@ public class SimpleArrayMap<K, V> {
         if (i3 == 0) {
             return -1;
         }
-        int a2 = a(this.f, i3, i);
-        if (a2 >= 0 && !obj.equals(this.g[a2 << 1])) {
-            int i4 = a2;
+        int a = a(this.f, i3, i);
+        if (a >= 0 && !obj.equals(this.g[a << 1])) {
+            int i4 = a;
             while (true) {
                 i2 = i4 + 1;
                 if (i2 >= i3 || this.f[i2] != i) {
@@ -165,7 +163,7 @@ public class SimpleArrayMap<K, V> {
                     i4 = i2;
                 }
             }
-            int i5 = a2;
+            int i5 = a;
             while (true) {
                 int i6 = i5 - 1;
                 if (i6 < 0 || this.f[i6] != i) {
@@ -178,7 +176,7 @@ public class SimpleArrayMap<K, V> {
             }
             return i2;
         }
-        return a2;
+        return a;
     }
 
     public V a(int i, V v) {
@@ -250,8 +248,8 @@ public class SimpleArrayMap<K, V> {
         if (i > 0) {
             int[] iArr = this.f;
             Object[] objArr = this.g;
-            this.f = ContainerHelpers.f44206a;
-            this.g = ContainerHelpers.f44207c;
+            this.f = ContainerHelpers.a;
+            this.g = ContainerHelpers.c;
             this.h = 0;
             a(iArr, objArr, i);
         }
@@ -276,8 +274,8 @@ public class SimpleArrayMap<K, V> {
         int i4 = this.h;
         if (i4 <= 1) {
             a(this.f, objArr, i4);
-            this.f = ContainerHelpers.f44206a;
-            this.g = ContainerHelpers.f44207c;
+            this.f = ContainerHelpers.a;
+            this.g = ContainerHelpers.c;
             i2 = 0;
         } else {
             int i5 = i4 - 1;
@@ -390,9 +388,9 @@ public class SimpleArrayMap<K, V> {
     }
 
     public V get(Object obj) {
-        int a2 = a(obj);
-        if (a2 >= 0) {
-            return (V) this.g[(a2 << 1) + 1];
+        int a = a(obj);
+        if (a >= 0) {
+            return (V) this.g[(a << 1) + 1];
         }
         return null;
     }
@@ -419,23 +417,23 @@ public class SimpleArrayMap<K, V> {
 
     public V put(K k, V v) {
         int hashCode;
-        int a2;
+        int a;
         int i = this.h;
         if (k == null) {
-            a2 = a();
+            a = a();
             hashCode = 0;
         } else {
             hashCode = k.hashCode();
-            a2 = a(k, hashCode);
+            a = a(k, hashCode);
         }
-        if (a2 >= 0) {
-            int i2 = (a2 << 1) + 1;
+        if (a >= 0) {
+            int i2 = (a << 1) + 1;
             Object[] objArr = this.g;
             V v2 = (V) objArr[i2];
             objArr[i2] = v;
             return v2;
         }
-        int i3 = a2;
+        int i3 = a;
         if (i >= this.f.length) {
             int i4 = 4;
             if (i >= 8) {
@@ -480,9 +478,9 @@ public class SimpleArrayMap<K, V> {
     }
 
     public V remove(Object obj) {
-        int a2 = a(obj);
-        if (a2 >= 0) {
-            return d(a2);
+        int a = a(obj);
+        if (a >= 0) {
+            return d(a);
         }
         return null;
     }

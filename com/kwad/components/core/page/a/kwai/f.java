@@ -28,13 +28,13 @@ public final class f extends com.kwad.components.core.page.a.kwai.a {
         this.mTitleBarHelper = aVar;
         aVar.a(new com.kwad.components.core.a.b(getTitle()));
         this.mTitleBarHelper.am(ou());
-        this.mTitleBarHelper.a(new a.InterfaceC0509a() { // from class: com.kwad.components.core.page.a.kwai.f.1
-            @Override // com.kwad.components.core.a.a.InterfaceC0509a
+        this.mTitleBarHelper.a(new a.InterfaceC0339a() { // from class: com.kwad.components.core.page.a.kwai.f.1
+            @Override // com.kwad.components.core.a.a.InterfaceC0339a
             public final void t(View view) {
                 f.this.w(view);
             }
 
-            @Override // com.kwad.components.core.a.a.InterfaceC0509a
+            @Override // com.kwad.components.core.a.a.InterfaceC0339a
             public final void u(View view) {
                 f.this.x(view);
             }

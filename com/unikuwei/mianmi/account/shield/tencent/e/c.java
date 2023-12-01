@@ -18,11 +18,11 @@ public class c {
     private List<a> d;
 
     /* renamed from: a  reason: collision with root package name */
-    private Network f41001a = null;
+    private Network f27310a = null;
     private ConnectivityManager.NetworkCallback b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private ConnectivityManager f41002c = null;
+    private ConnectivityManager f27311c = null;
     private Timer e = null;
 
     /* loaded from: source-8829756-dex2jar.jar:com/unikuwei/mianmi/account/shield/tencent/e/c$a.class */
@@ -52,14 +52,14 @@ public class c {
 
     private void a(Context context, a aVar) {
         synchronized (this) {
-            if (this.f41001a != null) {
-                aVar.a(true, this.f41001a);
+            if (this.f27310a != null) {
+                aVar.a(true, this.f27310a);
                 return;
             }
             a(aVar);
             if (this.b == null || this.d.size() < 2) {
                 try {
-                    this.f41002c = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                    this.f27311c = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
                     NetworkRequest.Builder builder = new NetworkRequest.Builder();
                     builder.addTransportType(0);
                     builder.addCapability(12);
@@ -69,10 +69,10 @@ public class c {
                         public void onAvailable(Network network) {
                             super.onAvailable(network);
                             g.a("Network onAvailable");
-                            c.this.f41001a = network;
+                            c.this.f27310a = network;
                             c.this.a(true, network);
                             try {
-                                NetworkInfo networkInfo = c.this.f41002c.getNetworkInfo(c.this.f41001a);
+                                NetworkInfo networkInfo = c.this.f27311c.getNetworkInfo(c.this.f27310a);
                                 String extraInfo = networkInfo.getExtraInfo();
                                 g.a("APN:" + networkInfo.toString());
                                 if (TextUtils.isEmpty(extraInfo)) {
@@ -104,7 +104,7 @@ public class c {
                         i = 2000;
                     }
                     if (Build.VERSION.SDK_INT >= 26) {
-                        this.f41002c.requestNetwork(build, this.b, i);
+                        this.f27311c.requestNetwork(build, this.b, i);
                     } else {
                         Timer timer = new Timer();
                         this.e = timer;
@@ -114,7 +114,7 @@ public class c {
                                 c.this.a(false, (Network) null);
                             }
                         }, i);
-                        this.f41002c.requestNetwork(build, this.b);
+                        this.f27311c.requestNetwork(build, this.b);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -167,12 +167,12 @@ public class c {
                     this.e.cancel();
                     this.e = null;
                 }
-                if (Build.VERSION.SDK_INT >= 21 && this.f41002c != null && this.b != null) {
-                    this.f41002c.unregisterNetworkCallback(this.b);
+                if (Build.VERSION.SDK_INT >= 21 && this.f27311c != null && this.b != null) {
+                    this.f27311c.unregisterNetworkCallback(this.b);
                 }
-                this.f41002c = null;
+                this.f27311c = null;
                 this.b = null;
-                this.f41001a = null;
+                this.f27310a = null;
                 this.d.clear();
             } catch (Exception e) {
                 e.printStackTrace();

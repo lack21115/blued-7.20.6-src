@@ -101,8 +101,8 @@ public class a {
 
     public static void a(String str, byte b) {
         c a2 = i.a().a(e.REPORT_CACHE.K, Byte.valueOf(b));
-        a2.f38356a = str;
-        a2.f38357c = "/report";
+        a2.f24665a = str;
+        a2.f24666c = "/report";
         a2.a("v6");
     }
 
@@ -161,7 +161,7 @@ public class a {
     */
     public static byte[] a(byte[] r5, byte[] r6, int r7) throws java.lang.Exception {
         /*
-            boolean r0 = com.tencent.qimei.beaconid.U.f38315a
+            boolean r0 = com.tencent.qimei.beaconid.U.f24624a
             if (r0 == 0) goto L16
             r0 = r7
             r1 = r6
@@ -337,7 +337,7 @@ public class a {
         synchronized (a.class) {
             try {
                 if (com.tencent.qimei.c.a.i()) {
-                    b.a.f38406a.a(str, "");
+                    b.a.f24715a.a(str, "");
                 }
             } finally {
             }
@@ -364,7 +364,7 @@ public class a {
         if (g(str)) {
             return null;
         }
-        return l.a(str).f38381c;
+        return l.a(str).f24690c;
     }
 
     public static String d(String str, String str2) {
@@ -393,7 +393,7 @@ public class a {
                         e.printStackTrace();
                     }
                     String jSONObject = f.toString();
-                    if (b.a.f38406a.a(str, jSONObject) == 0) {
+                    if (b.a.f24715a.a(str, jSONObject) == 0) {
                         f.a(str).a("q_s_t", System.currentTimeMillis());
                         com.tencent.qimei.k.a.b("QM", "Qm成功更新到本地: %s (appKey: %s)", jSONObject, str);
                         if (TextUtils.isEmpty(f.a(str).c("is_first"))) {

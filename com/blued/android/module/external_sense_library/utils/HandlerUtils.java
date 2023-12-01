@@ -10,9 +10,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/utils/HandlerUtils.class */
 public class HandlerUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Handler f11314a = new Handler(Looper.getMainLooper()) { // from class: com.blued.android.module.external_sense_library.utils.HandlerUtils.1
+    private Handler a = new Handler(Looper.getMainLooper()) { // from class: com.blued.android.module.external_sense_library.utils.HandlerUtils.1
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             super.handleMessage(message);
@@ -147,6 +145,6 @@ public class HandlerUtils {
     }
 
     public Handler a() {
-        return this.f11314a;
+        return this.a;
     }
 }

@@ -6,8 +6,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.module.common.base.config.ListConfig;
 import com.blued.android.module.common.base.mvi.BaseListFragment;
@@ -36,24 +39,24 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/setting/fragment/ServiceCenterFragment.class */
 public final class ServiceCenterFragment extends BaseListFragment<ServiceCenterVM, StDocModel> {
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(ServiceCenterFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FmServiceCenterBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(ServiceCenterFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FmServiceCenterBinding;", 0))};
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f33599c;
+    private final ViewBindingProperty f19908c;
 
     public ServiceCenterFragment() {
-        super(R.layout.fm_service_center);
-        this.f33599c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<ServiceCenterFragment, FmServiceCenterBinding>() { // from class: com.soft.blued.ui.setting.fragment.ServiceCenterFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fm_service_center);
+        this.f19908c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<ServiceCenterFragment, FmServiceCenterBinding>() { // from class: com.soft.blued.ui.setting.fragment.ServiceCenterFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/ServiceCenterFragment;)Lcom/soft/blued/databinding/FmServiceCenterBinding; */
             /* renamed from: a */
-            public final FmServiceCenterBinding invoke(ServiceCenterFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmServiceCenterBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<ServiceCenterFragment, FmServiceCenterBinding>() { // from class: com.soft.blued.ui.setting.fragment.ServiceCenterFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/ServiceCenterFragment;)Lcom/soft/blued/databinding/FmServiceCenterBinding; */
             /* renamed from: a */
-            public final FmServiceCenterBinding invoke(ServiceCenterFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmServiceCenterBinding.a(fragment.requireView());
             }
@@ -61,14 +64,14 @@ public final class ServiceCenterFragment extends BaseListFragment<ServiceCenterV
     }
 
     private final FmServiceCenterBinding D() {
-        return (FmServiceCenterBinding) this.f33599c.b(this, b[0]);
+        return (FmServiceCenterBinding) this.f19908c.b(this, b[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ServiceCenterFragment this$0, View view) {
+    public static final void a(ServiceCenterFragment serviceCenterFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(serviceCenterFragment, "this$0");
+        FragmentActivity activity = serviceCenterFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -76,29 +79,29 @@ public final class ServiceCenterFragment extends BaseListFragment<ServiceCenterV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ServiceCenterFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+    public static final void a(ServiceCenterFragment serviceCenterFragment, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         TextView textView;
-        Intrinsics.e(this$0, "this$0");
-        Context context = this$0.getContext();
+        Intrinsics.e(serviceCenterFragment, "this$0");
+        Context context = serviceCenterFragment.getContext();
         Bundle bundle = new Bundle();
         bundle.putSerializable("data", (Serializable) baseQuickAdapter.getData().get(i));
-        FmServiceCenterBinding D = this$0.D();
+        FmServiceCenterBinding D = serviceCenterFragment.D();
         CharSequence charSequence = null;
         if (D != null && (textView = D.e) != null) {
             charSequence = textView.getText();
         }
         bundle.putString("title", String.valueOf(charSequence));
-        Unit unit = Unit.f42314a;
+        Unit unit = Unit.a;
         TerminalActivity.d(context, QuestionDetailFragment.class, bundle);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ServiceCenterFragment this$0, StCategoryModel stCategoryModel) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(ServiceCenterFragment serviceCenterFragment, StCategoryModel stCategoryModel) {
+        Intrinsics.e(serviceCenterFragment, "this$0");
         if (stCategoryModel == null) {
             return;
         }
-        FmServiceCenterBinding D = this$0.D();
+        FmServiceCenterBinding D = serviceCenterFragment.D();
         TextView textView = D == null ? null : D.e;
         if (textView == null) {
             return;
@@ -106,34 +109,30 @@ public final class ServiceCenterFragment extends BaseListFragment<ServiceCenterV
         textView.setText(stCategoryModel.getCategoryName());
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: C */
     public ServiceCenterAdapter i() {
         return new ServiceCenterAdapter();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public ListConfig h() {
         return new ListConfig.Builder().c(false).b(false).a();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public void j() {
         super.j();
-        ((ServiceCenterVM) y()).a(getActivity());
+        y().a(getActivity());
         FmServiceCenterBinding D = D();
-        a(D == null ? null : D.f28768c);
+        a(D == null ? null : D.f15078c);
         FmServiceCenterBinding D2 = D();
         a(D2 == null ? null : D2.b);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         CommonTopTitleNoTrans commonTopTitleNoTrans;
         ImageView leftImg;
         CommonTopTitleNoTrans commonTopTitleNoTrans2;
         super.m();
-        ((ServiceCenterVM) y()).b().observe(this, new Observer() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ServiceCenterFragment$7mXJvk6ZiPXtvFe_NOriF6wWapY
+        y().b().observe((LifecycleOwner) this, new Observer() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ServiceCenterFragment$7mXJvk6ZiPXtvFe_NOriF6wWapY
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 ServiceCenterFragment.a(ServiceCenterFragment.this, (StCategoryModel) obj);
@@ -160,10 +159,9 @@ public final class ServiceCenterFragment extends BaseListFragment<ServiceCenterV
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
-        ServiceHelper serviceHelper = ServiceHelper.f33645a;
+        ServiceHelper serviceHelper = ServiceHelper.f19954a;
         View requireView = requireView();
         Intrinsics.c(requireView, "requireView()");
         serviceHelper.a(requireView);

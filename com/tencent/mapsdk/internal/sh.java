@@ -76,17 +76,17 @@ public class sh extends n4 {
         public final /* synthetic */ boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ boolean f38010c;
+        public final /* synthetic */ boolean f24319c;
 
         public d(boolean z, boolean z2) {
             this.b = z;
-            this.f38010c = z2;
+            this.f24319c = z2;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             sh.this.e.setIsZoomInEnabled(this.b);
-            sh.this.e.setIsZoomOutEnabled(this.f38010c);
+            sh.this.e.setIsZoomOutEnabled(this.f24319c);
         }
     }
 
@@ -94,43 +94,43 @@ public class sh extends n4 {
     public static /* synthetic */ class e {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f38011a;
+        public static final /* synthetic */ int[] f24320a;
 
         static {
             p4.b.values();
             int[] iArr = new int[6];
-            f38011a = iArr;
+            f24320a = iArr;
             try {
                 p4.b bVar = p4.b.LEFT_BOTTOM;
                 iArr[0] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f38011a;
+                int[] iArr2 = f24320a;
                 p4.b bVar2 = p4.b.CENTER_BOTTOM;
                 iArr2[1] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f38011a;
+                int[] iArr3 = f24320a;
                 p4.b bVar3 = p4.b.RIGHT_BOTTOM;
                 iArr3[2] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                int[] iArr4 = f38011a;
+                int[] iArr4 = f24320a;
                 p4.b bVar4 = p4.b.LEFT_TOP;
                 iArr4[3] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                int[] iArr5 = f38011a;
+                int[] iArr5 = f24320a;
                 p4.b bVar5 = p4.b.CENTER_TOP;
                 iArr5[4] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                int[] iArr6 = f38011a;
+                int[] iArr6 = f24320a;
                 p4.b bVar6 = p4.b.RIGHT_TOP;
                 iArr6[5] = 6;
             } catch (NoSuchFieldError e6) {

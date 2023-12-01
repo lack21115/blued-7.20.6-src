@@ -18,7 +18,6 @@ import android.widget.Toast;
 import com.android.internal.R;
 import com.android.internal.view.menu.MenuBuilder;
 import com.android.internal.view.menu.MenuView;
-import com.google.android.material.badge.BadgeDrawable;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/view/menu/ActionMenuItemView.class */
 public class ActionMenuItemView extends TextView implements MenuView.ItemView, View.OnClickListener, View.OnLongClickListener, ActionMenuView.ActionMenuChildView {
@@ -254,7 +253,7 @@ public class ActionMenuItemView extends TextView implements MenuView.ItemView, V
         }
         Toast makeText = Toast.makeText(context, this.mItemData.getTitle(), 0);
         if (i + i2 < rect.height()) {
-            makeText.setGravity(BadgeDrawable.TOP_END, i4, height);
+            makeText.setGravity(8388661, i4, height);
         } else {
             makeText.setGravity(81, 0, height);
         }
@@ -364,7 +363,7 @@ public class ActionMenuItemView extends TextView implements MenuView.ItemView, V
     }
 
     @Override // com.android.internal.view.menu.MenuView.ItemView
-    public void setShortcut(boolean z, char c2) {
+    public void setShortcut(boolean z, char c) {
     }
 
     @Override // com.android.internal.view.menu.MenuView.ItemView

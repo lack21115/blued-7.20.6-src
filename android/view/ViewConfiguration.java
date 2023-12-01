@@ -6,11 +6,9 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.RemoteException;
-import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.SparseArray;
 import com.android.internal.R;
-import com.anythink.expressad.video.module.a.a.m;
 
 /* loaded from: source-4181928-dex2jar.jar:android/view/ViewConfiguration.class */
 public class ViewConfiguration {
@@ -70,7 +68,7 @@ public class ViewConfiguration {
         this.mEdgeSlop = 12;
         this.mFadingEdgeLength = 12;
         this.mMinimumFlingVelocity = 50;
-        this.mMaximumFlingVelocity = 8000;
+        this.mMaximumFlingVelocity = MAXIMUM_FLING_VELOCITY;
         this.mScrollbarSize = 10;
         this.mTouchSlop = 8;
         this.mDoubleTapTouchSlop = 8;
@@ -95,7 +93,7 @@ public class ViewConfiguration {
         this.mScrollbarSize = (int) ((10.0f * f) + 0.5f);
         this.mDoubleTapSlop = (int) ((100.0f * f2) + 0.5f);
         this.mWindowTouchSlop = (int) ((16.0f * f2) + 0.5f);
-        Display defaultDisplay = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+        Display defaultDisplay = ((WindowManager) context.getSystemService("window")).getDefaultDisplay();
         Point point = new Point();
         defaultDisplay.getRealSize(point);
         this.mMaximumDrawingCacheSize = point.x * 4 * point.y;
@@ -191,7 +189,7 @@ public class ViewConfiguration {
     }
 
     public static int getLongPressTimeout() {
-        return AppGlobals.getIntCoreSetting(Settings.Secure.LONG_PRESS_TIMEOUT, 500);
+        return AppGlobals.getIntCoreSetting("long_press_timeout", 500);
     }
 
     @Deprecated
@@ -201,7 +199,7 @@ public class ViewConfiguration {
 
     @Deprecated
     public static int getMaximumFlingVelocity() {
-        return 8000;
+        return MAXIMUM_FLING_VELOCITY;
     }
 
     @Deprecated
@@ -231,7 +229,7 @@ public class ViewConfiguration {
     }
 
     public static long getSendRecurringAccessibilityEventsInterval() {
-        return 100L;
+        return SEND_RECURRING_ACCESSIBILITY_EVENTS_INTERVAL_MILLIS;
     }
 
     public static int getTapTimeout() {
@@ -249,7 +247,7 @@ public class ViewConfiguration {
     }
 
     public static long getZoomControlsTimeout() {
-        return m.ag;
+        return 3000L;
     }
 
     public long getDeviceGlobalActionKeyTimeout() {

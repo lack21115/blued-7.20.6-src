@@ -9,11 +9,11 @@ import com.anythink.expressad.exoplayer.k.af;
 public final class n implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7593a = "DefaultDataSource";
+    private static final String f4754a = "DefaultDataSource";
     private static final String b = "asset";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7594c = "content";
+    private static final String f4755c = "content";
     private static final String d = "rtmp";
     private static final String e = "rawresource";
     private final Context f;
@@ -67,7 +67,7 @@ public final class n implements h {
             try {
                 this.l = (h) Class.forName("com.anythink.expressad.exoplayer.ext.rtmp.RtmpDataSource").getConstructor(new Class[0]).newInstance(new Object[0]);
             } catch (ClassNotFoundException e2) {
-                Log.w(f7593a, "Attempting to play RTMP stream without depending on the RTMP extension");
+                Log.w(f4754a, "Attempting to play RTMP stream without depending on the RTMP extension");
             } catch (Exception e3) {
                 throw new RuntimeException("Error instantiating RTMP extension", e3);
             }
@@ -100,9 +100,9 @@ public final class n implements h {
     @Override // com.anythink.expressad.exoplayer.j.h
     public final long a(k kVar) {
         com.anythink.expressad.exoplayer.k.a.b(this.o == null);
-        String scheme = kVar.f7584c.getScheme();
-        if (af.a(kVar.f7584c)) {
-            if (kVar.f7584c.getPath().startsWith("/android_asset/")) {
+        String scheme = kVar.f4745c.getScheme();
+        if (af.a(kVar.f4745c)) {
+            if (kVar.f4745c.getPath().startsWith("/android_asset/")) {
                 this.o = d();
             } else {
                 if (this.i == null) {

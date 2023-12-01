@@ -31,10 +31,10 @@ public final class b {
                 OutputStream outputStream2 = null;
                 OutputStream outputStream3 = null;
                 try {
-                    a.C0557a bG = com.kwad.sdk.core.diskcache.kwai.a.this.bG(str2);
+                    a.C0387a bG = com.kwad.sdk.core.diskcache.kwai.a.this.bG(str2);
                     if (bG != null) {
                         outputStream = bG.aW(0);
-                        if (b.a(str, outputStream, new a.C0564a())) {
+                        if (b.a(str, outputStream, new a.C0394a())) {
                             bG.commit();
                         } else {
                             bG.abort();
@@ -55,7 +55,7 @@ public final class b {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static boolean a(com.kwad.sdk.core.diskcache.kwai.a aVar, String str, String str2, a.C0564a c0564a) {
+    public static boolean a(com.kwad.sdk.core.diskcache.kwai.a aVar, String str, String str2, a.C0394a c0394a) {
         OutputStream outputStream;
         boolean z = false;
         OutputStream outputStream2 = null;
@@ -63,11 +63,11 @@ public final class b {
         OutputStream outputStream3 = null;
         try {
             try {
-                a.C0557a bG = aVar.bG(str2);
+                a.C0387a bG = aVar.bG(str2);
                 outputStream = null;
                 if (bG != null) {
                     outputStream = bG.aW(0);
-                    if (a(str, outputStream, c0564a)) {
+                    if (a(str, outputStream, c0394a)) {
                         bG.commit();
                         z = true;
                     } else {
@@ -80,7 +80,7 @@ public final class b {
                     aVar.flush();
                 }
             } catch (IOException e) {
-                c0564a.msg = e.getMessage();
+                c0394a.msg = e.getMessage();
                 z = z2;
                 outputStream = outputStream3;
             }
@@ -92,7 +92,7 @@ public final class b {
         }
     }
 
-    public static boolean a(String str, OutputStream outputStream, a.C0564a c0564a) {
-        return com.kwad.sdk.core.network.kwai.a.a(str, outputStream, c0564a, -1);
+    public static boolean a(String str, OutputStream outputStream, a.C0394a c0394a) {
+        return com.kwad.sdk.core.network.kwai.a.a(str, outputStream, c0394a, -1);
     }
 }

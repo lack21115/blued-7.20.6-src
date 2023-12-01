@@ -6,7 +6,7 @@ import android.content.Context;
 public class af {
 
     /* renamed from: a  reason: collision with root package name */
-    static final char[] f41246a = "0123456789ABCDEF".toCharArray();
+    static final char[] f27555a = "0123456789ABCDEF".toCharArray();
 
     public static String a(byte[] bArr, int i, int i2) {
         StringBuilder sb = new StringBuilder(i2 * 2);
@@ -17,13 +17,13 @@ public class af {
                 return sb.toString();
             }
             int i5 = bArr[i + i4] & 255;
-            sb.append(f41246a[i5 >> 4]);
-            sb.append(f41246a[i5 & 15]);
+            sb.append(f27555a[i5 >> 4]);
+            sb.append(f27555a[i5 & 15]);
             i3 = i4 + 1;
         }
     }
 
     public static boolean a(Context context) {
-        return ae.f171a;
+        return ae.f124a;
     }
 }

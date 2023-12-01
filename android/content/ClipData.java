@@ -128,9 +128,9 @@ public class ClipData implements Parcelable {
                 }
             }
             if (z3 || z5) {
-                AutoCloseable autoCloseable = null;
-                AutoCloseable autoCloseable2 = null;
-                AutoCloseable autoCloseable3 = null;
+                FileInputStream fileInputStream = null;
+                FileInputStream fileInputStream2 = null;
+                FileInputStream fileInputStream3 = null;
                 try {
                     try {
                         FileInputStream createInputStream = context.getContentResolver().openTypedAssetFileDescriptor(this.mUri, z3 ? ClipDescription.MIMETYPE_TEXT_HTML : "text/plain", null).createInputStream();
@@ -207,7 +207,7 @@ public class ClipData implements Parcelable {
                     } catch (FileNotFoundException e7) {
                         if (0 != 0) {
                             try {
-                                autoCloseable3.close();
+                                fileInputStream3.close();
                             } catch (IOException e8) {
                             }
                         }
@@ -217,7 +217,7 @@ public class ClipData implements Parcelable {
                         str = escapeHtml2;
                         if (0 != 0) {
                             try {
-                                autoCloseable.close();
+                                fileInputStream.close();
                                 return escapeHtml2;
                             } catch (IOException e10) {
                                 return escapeHtml2;
@@ -228,7 +228,7 @@ public class ClipData implements Parcelable {
                 } catch (Throwable th) {
                     if (0 != 0) {
                         try {
-                            autoCloseable2.close();
+                            fileInputStream2.close();
                         } catch (IOException e11) {
                         }
                     }

@@ -15,10 +15,10 @@ import java.util.concurrent.TimeUnit;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static c f24497a;
+    private static c f10810a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f24498c;
+    private Context f10811c;
     private volatile CountDownLatch f;
     private volatile LocationManager g;
     private volatile b h;
@@ -101,13 +101,13 @@ public final class c {
     };
     private a e = new a(new a.b() { // from class: com.opos.cmn.an.e.c.3
         @Override // com.opos.cmn.an.e.a.b
-        public void a(final a.InterfaceC0618a interfaceC0618a) {
+        public void a(final a.InterfaceC0448a interfaceC0448a) {
             com.opos.cmn.an.j.b.d(new Runnable() { // from class: com.opos.cmn.an.e.c.3.1
                 @Override // java.lang.Runnable
                 public void run() {
                     com.opos.cmn.an.f.a.b("LocationManager", "init");
                     try {
-                        c.this.a(interfaceC0618a);
+                        c.this.a(interfaceC0448a);
                     } catch (Exception e) {
                         com.opos.cmn.an.f.a.b("LocationManager", "init fail", e);
                     }
@@ -117,13 +117,13 @@ public final class c {
     });
     private a d = new a(new a.b() { // from class: com.opos.cmn.an.e.c.4
         @Override // com.opos.cmn.an.e.a.b
-        public void a(final a.InterfaceC0618a interfaceC0618a) {
+        public void a(final a.InterfaceC0448a interfaceC0448a) {
             com.opos.cmn.an.j.b.d(new Runnable() { // from class: com.opos.cmn.an.e.c.4.1
                 @Override // java.lang.Runnable
                 public void run() {
                     com.opos.cmn.an.f.a.b("LocationManager", "locate");
                     try {
-                        c.this.b(interfaceC0618a);
+                        c.this.b(interfaceC0448a);
                     } catch (Exception e) {
                         com.opos.cmn.an.f.a.b("LocationManager", "locate fail", e);
                     }
@@ -136,20 +136,20 @@ public final class c {
     }
 
     public static c a() {
-        c cVar = f24497a;
+        c cVar = f10810a;
         if (cVar != null) {
             return cVar;
         }
         synchronized (c.class) {
             try {
-                if (f24497a == null) {
-                    f24497a = new c();
+                if (f10810a == null) {
+                    f10810a = new c();
                 }
             } catch (Throwable th) {
                 throw th;
             }
         }
-        return f24497a;
+        return f10810a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -171,7 +171,7 @@ public final class c {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(a.InterfaceC0618a interfaceC0618a) {
+    public void a(a.InterfaceC0448a interfaceC0448a) {
         LocationManager g;
         if (f() && (g = g()) != null) {
             Location lastKnownLocation = g.getLastKnownLocation("gps");
@@ -184,11 +184,11 @@ public final class c {
             }
             if (j()) {
                 g.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 60000L, 50.0f, this.k, Looper.getMainLooper());
-                interfaceC0618a.a();
+                interfaceC0448a.a();
                 return;
             }
         }
-        interfaceC0618a.b();
+        interfaceC0448a.b();
     }
 
     private static final boolean a(b bVar) {
@@ -211,22 +211,22 @@ public final class c {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void b(a.InterfaceC0618a interfaceC0618a) {
-        if (f() && this.f24498c != null) {
+    public void b(a.InterfaceC0448a interfaceC0448a) {
+        if (f() && this.f10811c != null) {
             b bVar = this.h;
             com.opos.cmn.an.f.a.b("LocationManager", "gps:" + this.i);
             if (a(bVar) && this.i + 180000 < SystemClock.elapsedRealtime()) {
                 d();
             }
-            if (this.f24498c != null) {
+            if (this.f10811c != null) {
                 if (a(this.j)) {
                     e();
                 }
-                interfaceC0618a.a();
+                interfaceC0448a.a();
                 return;
             }
         }
-        interfaceC0618a.b();
+        interfaceC0448a.b();
     }
 
     private void d() {
@@ -275,12 +275,12 @@ public final class c {
     }
 
     private boolean f() {
-        return this.f24498c.checkCallingOrSelfPermission("android.permission.ACCESS_FINE_LOCATION") == 0 && this.f24498c.checkCallingOrSelfPermission("android.permission.ACCESS_COARSE_LOCATION") == 0;
+        return this.f10811c.checkCallingOrSelfPermission("android.permission.ACCESS_FINE_LOCATION") == 0 && this.f10811c.checkCallingOrSelfPermission("android.permission.ACCESS_COARSE_LOCATION") == 0;
     }
 
     private LocationManager g() {
         Context context;
-        if (this.g == null && (context = this.f24498c) != null) {
+        if (this.g == null && (context = this.f10811c) != null) {
             this.g = (LocationManager) context.getSystemService("location");
         }
         return this.g;
@@ -323,10 +323,10 @@ public final class c {
     }
 
     public void a(Context context) {
-        if (context != null && this.f24498c == null) {
+        if (context != null && this.f10811c == null) {
             synchronized (this) {
-                if (this.f24498c == null) {
-                    this.f24498c = context.getApplicationContext();
+                if (this.f10811c == null) {
+                    this.f10811c = context.getApplicationContext();
                 }
             }
             this.e.a();
@@ -335,12 +335,12 @@ public final class c {
 
     public void b() {
         com.opos.cmn.an.f.a.b("LocationManager", "destroy");
-        if (this.f24498c == null) {
+        if (this.f10811c == null) {
             return;
         }
         try {
             LocationManager g = f() ? g() : null;
-            this.f24498c = null;
+            this.f10811c = null;
             CountDownLatch countDownLatch = this.f;
             if (countDownLatch != null) {
                 countDownLatch.countDown();
@@ -357,7 +357,7 @@ public final class c {
     public double[] c() {
         com.opos.cmn.an.f.a.b("LocationManager", "obtainLocation");
         double[] dArr = {0.0d, 0.0d};
-        if (this.f24498c == null) {
+        if (this.f10811c == null) {
             return dArr;
         }
         b bVar = this.h;

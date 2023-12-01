@@ -6,7 +6,7 @@ class TwilightCalculator {
     public static final int NIGHT = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    private static TwilightCalculator f1604a;
+    private static TwilightCalculator f1556a;
     public int state;
     public long sunrise;
     public long sunset;
@@ -16,10 +16,10 @@ class TwilightCalculator {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static TwilightCalculator a() {
-        if (f1604a == null) {
-            f1604a = new TwilightCalculator();
+        if (f1556a == null) {
+            f1556a = new TwilightCalculator();
         }
-        return f1604a;
+        return f1556a;
     }
 
     public void calculateTwilight(long j, double d, double d2) {

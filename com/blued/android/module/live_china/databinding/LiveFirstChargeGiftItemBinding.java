@@ -11,20 +11,16 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveFirstChargeGiftItemBinding.class */
 public final class LiveFirstChargeGiftItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12205a;
+    public final ImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f12206c;
+    public final TextView c;
     private final FrameLayout d;
 
     private LiveFirstChargeGiftItemBinding(FrameLayout frameLayout, ImageView imageView, TextView textView, TextView textView2) {
         this.d = frameLayout;
-        this.f12205a = imageView;
+        this.a = imageView;
         this.b = textView;
-        this.f12206c = textView2;
+        this.c = textView2;
     }
 
     public static LiveFirstChargeGiftItemBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -55,7 +51,6 @@ public final class LiveFirstChargeGiftItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.d;

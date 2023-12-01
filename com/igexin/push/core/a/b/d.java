@@ -11,21 +11,21 @@ public final class d extends com.igexin.push.core.a.a {
     private static final String b = "FormatMsgAction";
 
     /* renamed from: c  reason: collision with root package name */
-    private static Map<String, a> f23402c;
+    private static Map<String, a> f9794c;
 
     public d() {
         HashMap hashMap = new HashMap();
-        f23402c = hashMap;
+        f9794c = hashMap;
         hashMap.put(com.igexin.push.core.b.C, new h());
-        f23402c.put("response_deviceid", new i());
-        f23402c.put(com.igexin.push.core.b.A, new e());
-        f23402c.put(com.igexin.push.core.b.B, new g());
-        f23402c.put("sendmessage_feedback", new j());
-        f23402c.put("block_client", new c());
-        f23402c.put("settag_result", new k());
-        f23402c.put("query_tag_result", new f());
-        f23402c.put("response_bind", new b());
-        f23402c.put("response_unbind", new l());
+        f9794c.put("response_deviceid", new i());
+        f9794c.put(com.igexin.push.core.b.A, new e());
+        f9794c.put(com.igexin.push.core.b.B, new g());
+        f9794c.put("sendmessage_feedback", new j());
+        f9794c.put("block_client", new c());
+        f9794c.put("settag_result", new k());
+        f9794c.put("query_tag_result", new f());
+        f9794c.put("response_bind", new b());
+        f9794c.put("response_unbind", new l());
     }
 
     @Override // com.igexin.push.core.a.a
@@ -52,7 +52,7 @@ public final class d extends com.igexin.push.core.a.a {
                     });
                 }
                 if (jSONObject.has("action")) {
-                    a aVar = f23402c.get(jSONObject.getString("action"));
+                    a aVar = f9794c.get(jSONObject.getString("action"));
                     if (aVar != null) {
                         return aVar.a(obj, jSONObject);
                     }

@@ -776,13 +776,13 @@ public interface IInputMethodManager extends IInterface {
                     return true;
                 case 10:
                     parcel.enforceInterface(DESCRIPTOR);
-                    boolean showSoftInput = showSoftInput(IInputMethodClient.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt() != 0 ? ResultReceiver.CREATOR.createFromParcel(parcel) : null);
+                    boolean showSoftInput = showSoftInput(IInputMethodClient.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt() != 0 ? (ResultReceiver) ResultReceiver.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(showSoftInput ? 1 : 0);
                     return true;
                 case 11:
                     parcel.enforceInterface(DESCRIPTOR);
-                    boolean hideSoftInput = hideSoftInput(IInputMethodClient.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt() != 0 ? ResultReceiver.CREATOR.createFromParcel(parcel) : null);
+                    boolean hideSoftInput = hideSoftInput(IInputMethodClient.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt() != 0 ? (ResultReceiver) ResultReceiver.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(hideSoftInput ? 1 : 0);
                     return true;
@@ -844,7 +844,7 @@ public interface IInputMethodManager extends IInterface {
                     return true;
                 case 22:
                     parcel.enforceInterface(DESCRIPTOR);
-                    boolean notifySuggestionPicked = notifySuggestionPicked(parcel.readInt() != 0 ? SuggestionSpan.CREATOR.createFromParcel(parcel) : null, parcel.readString(), parcel.readInt());
+                    boolean notifySuggestionPicked = notifySuggestionPicked(parcel.readInt() != 0 ? (SuggestionSpan) SuggestionSpan.CREATOR.createFromParcel(parcel) : null, parcel.readString(), parcel.readInt());
                     parcel2.writeNoException();
                     parcel2.writeInt(notifySuggestionPicked ? 1 : 0);
                     return true;
@@ -904,7 +904,7 @@ public interface IInputMethodManager extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     notifyUserAction(parcel.readInt());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

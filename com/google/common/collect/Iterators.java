@@ -267,12 +267,12 @@ public final class Iterators {
         return new Enumeration<T>() { // from class: com.google.common.collect.Iterators.11
             @Override // java.util.Enumeration
             public boolean hasMoreElements() {
-                return Iterator.this.hasNext();
+                return it.hasNext();
             }
 
             @Override // java.util.Enumeration
             public T nextElement() {
-                return (T) Iterator.this.next();
+                return (T) it.next();
             }
         };
     }
@@ -371,13 +371,13 @@ public final class Iterators {
         return new UnmodifiableIterator<T>() { // from class: com.google.common.collect.Iterators.8
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return Iterator.this.hasNext();
+                return it.hasNext();
             }
 
             @Override // java.util.Iterator
             public T next() {
-                T t = (T) Iterator.this.next();
-                Iterator.this.remove();
+                T t = (T) it.next();
+                it.remove();
                 return t;
             }
 
@@ -411,13 +411,13 @@ public final class Iterators {
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.iterator.hasNext() || Iterable.this.iterator().hasNext();
+                return this.iterator.hasNext() || iterable.iterator().hasNext();
             }
 
             @Override // java.util.Iterator
             public T next() {
                 if (!this.iterator.hasNext()) {
-                    Iterator<T> it = Iterable.this.iterator();
+                    Iterator<T> it = iterable.iterator();
                     this.iterator = it;
                     if (!it.hasNext()) {
                         throw new NoSuchElementException();
@@ -493,8 +493,8 @@ public final class Iterators {
         return new AbstractIterator<T>() { // from class: com.google.common.collect.Iterators.5
             @Override // com.google.common.collect.AbstractIterator
             protected T computeNext() {
-                while (Iterator.this.hasNext()) {
-                    T t = (T) Iterator.this.next();
+                while (it.hasNext()) {
+                    T t = (T) it.next();
                     if (predicate.apply(t)) {
                         return t;
                     }
@@ -551,12 +551,12 @@ public final class Iterators {
         return new UnmodifiableIterator<T>() { // from class: com.google.common.collect.Iterators.10
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return Enumeration.this.hasMoreElements();
+                return enumeration.hasMoreElements();
             }
 
             @Override // java.util.Iterator
             public T next() {
-                return (T) Enumeration.this.nextElement();
+                return (T) enumeration.nextElement();
             }
         };
     }
@@ -709,7 +709,7 @@ public final class Iterators {
         return new UnmodifiableIterator<List<T>>() { // from class: com.google.common.collect.Iterators.4
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return Iterator.this.hasNext();
+                return it.hasNext();
             }
 
             @Override // java.util.Iterator
@@ -720,10 +720,10 @@ public final class Iterators {
                     int i3 = 0;
                     while (true) {
                         i2 = i3;
-                        if (i2 >= i || !Iterator.this.hasNext()) {
+                        if (i2 >= i || !it.hasNext()) {
                             break;
                         }
-                        objArr[i2] = Iterator.this.next();
+                        objArr[i2] = it.next();
                         i3 = i2 + 1;
                     }
                     int i4 = i2;
@@ -821,7 +821,7 @@ public final class Iterators {
                     throw new NoSuchElementException();
                 }
                 this.done = true;
-                return (T) Object.this;
+                return (T) t;
             }
         };
     }
@@ -860,8 +860,9 @@ public final class Iterators {
     public static <F, T> Iterator<T> transform(Iterator<F> it, final Function<? super F, ? extends T> function) {
         Preconditions.checkNotNull(function);
         return new TransformedIterator<F, T>(it) { // from class: com.google.common.collect.Iterators.6
+            /* JADX INFO: Access modifiers changed from: package-private */
             @Override // com.google.common.collect.TransformedIterator
-            T transform(F f) {
+            public T transform(F f) {
                 return (T) function.apply(f);
             }
         };
@@ -889,12 +890,12 @@ public final class Iterators {
         return it instanceof UnmodifiableIterator ? (UnmodifiableIterator) it : new UnmodifiableIterator<T>() { // from class: com.google.common.collect.Iterators.1
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return Iterator.this.hasNext();
+                return it.hasNext();
             }
 
             @Override // java.util.Iterator
             public T next() {
-                return (T) Iterator.this.next();
+                return (T) it.next();
             }
         };
     }

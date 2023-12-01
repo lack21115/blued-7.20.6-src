@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 import com.anythink.expressad.video.dynview.a.a;
 import com.blued.android.core.AppMethods;
@@ -38,18 +37,17 @@ public class GroupSearchFragment extends KeyBoardFragment implements View.OnClic
     public Dialog b;
 
     /* renamed from: c  reason: collision with root package name */
-    public List<BluedGroupTypeGridItem> f30845c;
+    public List<BluedGroupTypeGridItem> f17155c;
     public BluedUIHttpResponse j = new BluedUIHttpResponse<BluedEntityA<BluedGroupTypeTags>>() { // from class: com.soft.blued.ui.group.GroupSearchFragment.3
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedGroupTypeTags> bluedEntityA) {
             try {
                 if (!bluedEntityA.hasData()) {
-                    AppMethods.a((CharSequence) GroupSearchFragment.this.getResources().getString(2131887275));
+                    AppMethods.a(GroupSearchFragment.this.getResources().getString(2131887275));
                     return;
                 }
-                GroupSearchFragment.this.q.add(bluedEntityA.getSingleData());
+                GroupSearchFragment.this.q.add((BluedGroupTypeTags) bluedEntityA.getSingleData());
                 new BluedGroupTypeTags.GroupsRecommend();
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(((BluedGroupTypeTags) GroupSearchFragment.this.q.get(0)).getRecommend());
@@ -65,7 +63,7 @@ public class GroupSearchFragment extends KeyBoardFragment implements View.OnClic
                     while (true) {
                         int i4 = i3;
                         if (i4 < ((BluedGroupTypeTags.GroupsClassify) arrayList.get(i2)).getItem().size()) {
-                            GroupSearchFragment.this.f30845c.add(new BluedGroupTypeGridItem(((BluedGroupTypeTags.GroupsClassify) arrayList.get(i2)).getType(), ((BluedGroupTypeTags.GroupsClassify) arrayList.get(i2)).getItem().get(i4), ((BluedGroupTypeTags.GroupsClassify) arrayList.get(i2)).getName()));
+                            GroupSearchFragment.this.f17155c.add(new BluedGroupTypeGridItem(((BluedGroupTypeTags.GroupsClassify) arrayList.get(i2)).getType(), ((BluedGroupTypeTags.GroupsClassify) arrayList.get(i2)).getItem().get(i4), ((BluedGroupTypeTags.GroupsClassify) arrayList.get(i2)).getName()));
                             i3 = i4 + 1;
                         }
                     }
@@ -73,17 +71,15 @@ public class GroupSearchFragment extends KeyBoardFragment implements View.OnClic
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                AppMethods.a((CharSequence) GroupSearchFragment.this.l.getResources().getString(2131887272));
+                AppMethods.a(GroupSearchFragment.this.l.getResources().getString(2131887272));
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(GroupSearchFragment.this.b);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(GroupSearchFragment.this.b);
@@ -106,11 +102,11 @@ public class GroupSearchFragment extends KeyBoardFragment implements View.OnClic
         @Override // android.widget.AdapterView.OnItemClickListener
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long j) {
             Tracker.onItemClick(adapterView, view, i, j);
-            if (i < 0 || i > GroupSearchFragment.this.f30845c.size()) {
+            if (i < 0 || i > GroupSearchFragment.this.f17155c.size()) {
                 return;
             }
-            if (!StringUtils.d(GroupSearchFragment.this.f30845c.get(i).getTags())) {
-                GroupSearchFragment.this.p.setText(GroupSearchFragment.this.f30845c.get(i).getTags());
+            if (!StringUtils.d(GroupSearchFragment.this.f17155c.get(i).getTags())) {
+                GroupSearchFragment.this.p.setText(GroupSearchFragment.this.f17155c.get(i).getTags());
                 GroupSearchFragment.this.p.setSelection(GroupSearchFragment.this.p.length());
             }
             GroupSearchListFragment.a(GroupSearchFragment.this.l, GroupSearchFragment.this.p.getText().toString());
@@ -121,17 +117,17 @@ public class GroupSearchFragment extends KeyBoardFragment implements View.OnClic
     private void h() {
         this.b = DialogUtils.a(this.l);
         this.q = new ArrayList();
-        this.f30845c = new ArrayList();
-        this.m = (StickyGridHeadersGridView) this.k.findViewById(R.id.asset_grid);
+        this.f17155c = new ArrayList();
+        this.m = this.k.findViewById((int) R.id.asset_grid);
         if (getResources().getConfiguration().locale.getLanguage().equals(a.V)) {
             this.m.setNumColumns(4);
         } else {
             this.m.setNumColumns(3);
         }
         this.m.setHeadersIgnorePadding(true);
-        GroupStickyHeaderGVAdapter groupStickyHeaderGVAdapter = new GroupStickyHeaderGVAdapter(this.l, this.f30845c);
+        GroupStickyHeaderGVAdapter groupStickyHeaderGVAdapter = new GroupStickyHeaderGVAdapter(this.l, this.f17155c);
         this.n = groupStickyHeaderGVAdapter;
-        this.m.setAdapter((ListAdapter) groupStickyHeaderGVAdapter);
+        this.m.setAdapter(groupStickyHeaderGVAdapter);
         this.m.setAreHeadersSticky(true);
         this.m.setSelector(new ColorDrawable(0));
         this.m.setCacheColorHint(0);
@@ -139,23 +135,20 @@ public class GroupSearchFragment extends KeyBoardFragment implements View.OnClic
     }
 
     private void i() {
-        SearchView searchView = (SearchView) this.k.findViewById(2131369680);
-        this.o = searchView;
-        SearchEditText editView = searchView.getEditView();
+        SearchView findViewById = this.k.findViewById((int) R.id.search_view);
+        this.o = findViewById;
+        SearchEditText editView = findViewById.getEditView();
         this.p = editView;
         editView.setImeOptions(3);
         this.o.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.group.GroupSearchFragment.1
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a() {
                 KeyboardUtils.a(GroupSearchFragment.this.getActivity());
                 GroupSearchFragment.this.getActivity().finish();
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
             }
         });
@@ -164,7 +157,7 @@ public class GroupSearchFragment extends KeyBoardFragment implements View.OnClic
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (i == 3) {
                     if (StringUtils.d(GroupSearchFragment.this.p.getText().toString())) {
-                        AppMethods.a((CharSequence) GroupSearchFragment.this.getResources().getString(R.string.group_search));
+                        AppMethods.a(GroupSearchFragment.this.getResources().getString(R.string.group_search));
                         return false;
                     }
                     GroupSearchListFragment.a(GroupSearchFragment.this.l, GroupSearchFragment.this.p.getText().toString());
@@ -180,7 +173,6 @@ public class GroupSearchFragment extends KeyBoardFragment implements View.OnClic
         GroupHttpUtils.i(this.l, this.j, "detail", getFragmentActive());
     }
 
-    @Override // com.blued.android.framework.activity.keyboardpage.KeyBoardFragment
     public void j_(int i) {
         SearchView searchView;
         if (i != -3) {
@@ -201,19 +193,17 @@ public class GroupSearchFragment extends KeyBoardFragment implements View.OnClic
         Tracker.onClick(view);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.l = getActivity();
         KeyboardListenLinearLayout keyboardListenLinearLayout = this.k;
         if (keyboardListenLinearLayout == null) {
-            KeyboardListenLinearLayout keyboardListenLinearLayout2 = (KeyboardListenLinearLayout) layoutInflater.inflate(R.layout.fragment_group_search, viewGroup, false);
-            this.k = keyboardListenLinearLayout2;
-            super.a(keyboardListenLinearLayout2);
+            KeyboardListenLinearLayout inflate = layoutInflater.inflate(R.layout.fragment_group_search, viewGroup, false);
+            this.k = inflate;
+            super.a(inflate);
             h();
             i();
             j();
@@ -223,7 +213,6 @@ public class GroupSearchFragment extends KeyBoardFragment implements View.OnClic
         return this.k;
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

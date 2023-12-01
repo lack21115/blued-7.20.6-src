@@ -1,7 +1,6 @@
 package android.media;
 
 import android.media.SubtitleTrack;
-import com.alipay.sdk.util.i;
 import com.igexin.push.core.b;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import java.util.Arrays;
@@ -178,7 +177,7 @@ public class TextTrackCue extends SubtitleTrack.Cue {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(WebVttParser.timeToString(this.mStartTimeMs)).append(" --> ").append(WebVttParser.timeToString(this.mEndTimeMs)).append(" {id:\"").append(this.mId).append("\", pauseOnExit:").append(this.mPauseOnExit).append(", direction:").append(this.mWritingDirection == 100 ? "horizontal" : this.mWritingDirection == 102 ? "vertical_lr" : this.mWritingDirection == 101 ? "vertical_rl" : "INVALID").append(", regionId:\"").append(this.mRegionId).append("\", snapToLines:").append(this.mSnapToLines).append(", linePosition:").append(this.mAutoLinePosition ? "auto" : this.mLinePosition).append(", textPosition:").append(this.mTextPosition).append(", size:").append(this.mSize).append(", alignment:").append(this.mAlignment == 202 ? "end" : this.mAlignment == 203 ? "left" : this.mAlignment == 200 ? "middle" : this.mAlignment == 204 ? "right" : this.mAlignment == 201 ? "start" : "INVALID").append(", text:");
-        appendStringsToBuilder(sb).append(i.d);
+        appendStringsToBuilder(sb).append("}");
         return sb.toString();
     }
 }

@@ -16,20 +16,20 @@ public abstract class Boater<Bag, V> {
     public void postSticky(Bag bag, IBoatResult<V> iBoatResult) {
         b ship = ShipsManager.get().getShip();
         String tag = getTag();
-        ship.f23210a.lock();
+        ship.f9602a.lock();
         try {
             boolean containsKey = ship.b.containsKey(getTag());
             if (!containsKey) {
-                if (ship.f23211c.get(tag) == null) {
-                    ship.f23211c.put(tag, new ArrayList());
+                if (ship.f9603c.get(tag) == null) {
+                    ship.f9603c.put(tag, new ArrayList());
                 }
-                ship.f23211c.get(tag).add(new a(bag, iBoatResult));
+                ship.f9603c.get(tag).add(new a(bag, iBoatResult));
             }
             if (containsKey) {
                 ship.a(this, bag, iBoatResult);
             }
         } finally {
-            ship.f23210a.unlock();
+            ship.f9602a.unlock();
         }
     }
 

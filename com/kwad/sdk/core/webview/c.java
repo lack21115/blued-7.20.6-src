@@ -56,7 +56,7 @@ public class c extends WebView {
         }
         Context dl = k.dl(context2);
         Context context3 = dl;
-        if (!k.m7853do(dl)) {
+        if (!k.m4846do(dl)) {
             ((com.kwad.sdk.service.kwai.d) ServiceProvider.get(com.kwad.sdk.service.kwai.d.class)).gatherException(new IllegalArgumentException("KSApiWebView context not except--context:" + dl.getClass().getName() + "--classloader:" + dl.getClass().getClassLoader() + "--context2:" + k.dl(ServiceProvider.CA()).getClass().getName()));
             context3 = k.dl(ServiceProvider.CA());
         }

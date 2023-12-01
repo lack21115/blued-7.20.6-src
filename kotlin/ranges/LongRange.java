@@ -7,9 +7,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/LongRange.class */
 public final class LongRange extends LongProgression implements ClosedRange<Long> {
     public static final Companion b = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final LongRange f42585c = new LongRange(1, 0);
+    private static final LongRange c = new LongRange(1, 0);
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/LongRange$Companion.class */

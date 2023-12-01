@@ -6,11 +6,11 @@ import com.anythink.expressad.exoplayer.k.s;
 final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public c f7308a;
+    public c f4469a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f7309c;
+    public long f4470c;
     public long d;
     public int e;
     public int f;
@@ -29,7 +29,7 @@ final class l {
     public long s;
 
     private void a(com.anythink.expressad.exoplayer.e.f fVar) {
-        fVar.b(this.q.f7674a, 0, this.p);
+        fVar.b(this.q.f4835a, 0, this.p);
         this.q.c(0);
         this.r = false;
     }
@@ -72,7 +72,7 @@ final class l {
     }
 
     public final void a(s sVar) {
-        sVar.a(this.q.f7674a, 0, this.p);
+        sVar.a(this.q.f4835a, 0, this.p);
         this.q.c(0);
         this.r = false;
     }

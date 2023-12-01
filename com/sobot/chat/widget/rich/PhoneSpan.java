@@ -8,6 +8,7 @@ import com.sobot.chat.listener.HyperlinkListener;
 import com.sobot.chat.listener.NewHyperlinkListener;
 import com.sobot.chat.utils.ChatUtils;
 import com.sobot.chat.utils.SobotOption;
+import com.tencent.smtt.sdk.WebView;
 
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/rich/PhoneSpan.class */
 public class PhoneSpan extends ClickableSpan {
@@ -25,13 +26,13 @@ public class PhoneSpan extends ClickableSpan {
     public void onClick(View view) {
         if (SobotOption.hyperlinkListener != null) {
             HyperlinkListener hyperlinkListener = SobotOption.hyperlinkListener;
-            hyperlinkListener.onPhoneClick("tel:" + this.phone);
+            hyperlinkListener.onPhoneClick(WebView.SCHEME_TEL + this.phone);
             return;
         }
         if (SobotOption.newHyperlinkListener != null) {
             NewHyperlinkListener newHyperlinkListener = SobotOption.newHyperlinkListener;
             Context context = this.context;
-            if (newHyperlinkListener.onPhoneClick(context, "tel:" + this.phone)) {
+            if (newHyperlinkListener.onPhoneClick(context, WebView.SCHEME_TEL + this.phone)) {
                 return;
             }
         }

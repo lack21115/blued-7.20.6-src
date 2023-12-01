@@ -10,18 +10,18 @@ import java.util.Iterator;
 public class b implements a.w, c.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.zk_oaction.adengine.lk_sdk.c f41920a;
+    private com.zk_oaction.adengine.lk_sdk.c f28229a;
     private c.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ArrayList<String> f41921c;
+    private ArrayList<String> f28230c;
     private ArrayList<Object> d;
     private boolean e = true;
 
     public b(com.zk_oaction.adengine.lk_sdk.c cVar, String str, String str2, c.b bVar) {
-        this.f41920a = cVar;
+        this.f28229a = cVar;
         this.b = bVar;
-        this.f41921c = b(str);
+        this.f28230c = b(str);
         this.d = c(str2);
         a();
     }
@@ -31,7 +31,7 @@ public class b implements a.w, c.b {
         if (this.e) {
             StringBuffer stringBuffer = new StringBuffer();
             stringBuffer.append("");
-            Iterator<String> it = this.f41921c.iterator();
+            Iterator<String> it = this.f28230c.iterator();
             int i = 0;
             while (it.hasNext()) {
                 String next = it.next();
@@ -104,7 +104,7 @@ public class b implements a.w, c.b {
             Iterator<String> it = a.a(str).iterator();
             while (it.hasNext()) {
                 String next = it.next();
-                arrayList.add(next.contains("@") ? new c(this.f41920a, next, this) : new a(this.f41920a, null, next, 0.0f, this, false));
+                arrayList.add(next.contains("@") ? new c(this.f28229a, next, this) : new a(this.f28229a, null, next, 0.0f, this, false));
             }
         }
         return arrayList;

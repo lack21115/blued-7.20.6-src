@@ -8,7 +8,7 @@ import okio.ByteString;
 public final class o extends com.heytap.nearx.a.a.b<o, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<o> f25746c = new b();
+    public static final com.heytap.nearx.a.a.e<o> f12058c = new b();
     public static final Integer d = 0;
     public static final Integer e = 0;
     public static final Float f = Float.valueOf(0.0f);
@@ -21,7 +21,7 @@ public final class o extends com.heytap.nearx.a.a.b<o, a> {
     public static final class a extends b.a<o, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public Integer f25747c;
+        public Integer f12059c;
         public Integer d;
         public Float e;
 
@@ -31,7 +31,7 @@ public final class o extends com.heytap.nearx.a.a.b<o, a> {
         }
 
         public a a(Integer num) {
-            this.f25747c = num;
+            this.f12059c = num;
             return this;
         }
 
@@ -41,7 +41,7 @@ public final class o extends com.heytap.nearx.a.a.b<o, a> {
         }
 
         public o b() {
-            return new o(this.f25747c, this.d, this.e, super.a());
+            return new o(this.f12059c, this.d, this.e, super.a());
         }
     }
 
@@ -101,7 +101,7 @@ public final class o extends com.heytap.nearx.a.a.b<o, a> {
     }
 
     public o(Integer num, Integer num2, Float f2, ByteString byteString) {
-        super(f25746c, byteString);
+        super(f12058c, byteString);
         this.g = num;
         this.h = num2;
         this.i = f2;

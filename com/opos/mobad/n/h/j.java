@@ -14,17 +14,17 @@ import com.opos.mobad.n.a;
 public class j extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private TextView f26978a;
+    private TextView f13290a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26979c;
+    private TextView f13291c;
     private TextView d;
     private TextView e;
     private TextView f;
     private TextView g;
     private String h;
-    private a.InterfaceC0708a i;
+    private a.InterfaceC0538a i;
 
     public j(Context context) {
         super(context);
@@ -38,7 +38,7 @@ public class j extends RelativeLayout {
 
     private void a() {
         TextView textView = new TextView(getContext());
-        this.f26978a = textView;
+        this.f13290a = textView;
         textView.setId(View.generateViewId());
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setGravity(16);
@@ -48,31 +48,31 @@ public class j extends RelativeLayout {
         RelativeLayout relativeLayout = new RelativeLayout(getContext());
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
         layoutParams2.weight = 1.0f;
-        this.f26978a.setTextSize(1, 10.0f);
-        this.f26978a.setTextColor(Color.parseColor("#8CFFFFFF"));
+        this.f13290a.setTextSize(1, 10.0f);
+        this.f13290a.setTextColor(Color.parseColor("#8CFFFFFF"));
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(-2, -2);
-        this.f26978a.setSingleLine(true);
+        this.f13290a.setSingleLine(true);
         layoutParams3.addRule(15);
-        relativeLayout.addView(this.f26978a, layoutParams3);
+        relativeLayout.addView(this.f13290a, layoutParams3);
         TextView textView2 = new TextView(getContext());
         this.b = textView2;
         textView2.setId(View.generateViewId());
         RelativeLayout.LayoutParams layoutParams4 = new RelativeLayout.LayoutParams(a3, a2);
         layoutParams4.leftMargin = com.opos.cmn.an.h.f.a.a(getContext(), 3.0f);
-        layoutParams4.addRule(1, this.f26978a.getId());
+        layoutParams4.addRule(1, this.f13290a.getId());
         layoutParams4.addRule(15);
         relativeLayout.addView(this.b, layoutParams4);
         TextView textView3 = new TextView(getContext());
-        this.f26979c = textView3;
+        this.f13291c = textView3;
         textView3.setId(View.generateViewId());
-        this.f26979c.setTextSize(1, 10.0f);
-        this.f26979c.setEllipsize(TextUtils.TruncateAt.valueOf("END"));
-        this.f26979c.setSingleLine(true);
+        this.f13291c.setTextSize(1, 10.0f);
+        this.f13291c.setEllipsize(TextUtils.TruncateAt.valueOf("END"));
+        this.f13291c.setSingleLine(true);
         RelativeLayout.LayoutParams layoutParams5 = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams5.leftMargin = com.opos.cmn.an.h.f.a.a(getContext(), 3.0f);
         layoutParams5.addRule(15);
         layoutParams5.addRule(1, this.b.getId());
-        relativeLayout.addView(this.f26979c, layoutParams5);
+        relativeLayout.addView(this.f13291c, layoutParams5);
         linearLayout.addView(relativeLayout, layoutParams2);
         RelativeLayout relativeLayout2 = new RelativeLayout(getContext());
         ViewGroup.LayoutParams layoutParams6 = new LinearLayout.LayoutParams(-2, -2);
@@ -114,7 +114,7 @@ public class j extends RelativeLayout {
         layoutParams10.addRule(1, this.f.getId());
         relativeLayout2.addView(this.g, layoutParams10);
         linearLayout.addView(relativeLayout2, layoutParams6);
-        this.f26979c.setTextColor(Color.parseColor("#8CFFFFFF"));
+        this.f13291c.setTextColor(Color.parseColor("#8CFFFFFF"));
         this.b.setBackgroundColor(Color.parseColor("#4DFFFFFF"));
         this.d.setBackgroundColor(Color.parseColor("#4DFFFFFF"));
         this.f.setBackgroundColor(Color.parseColor("#4DFFFFFF"));
@@ -141,18 +141,18 @@ public class j extends RelativeLayout {
         this.e.setOnTouchListener(gVar2);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("RewardPrivacyView", "setListener " + interfaceC0708a);
-        this.i = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("RewardPrivacyView", "setListener " + interfaceC0538a);
+        this.i = interfaceC0538a;
     }
 
     public void a(String str, String str2) {
         if (!TextUtils.isEmpty(str)) {
-            this.f26978a.setText(str);
+            this.f13290a.setText(str);
         }
         if (TextUtils.isEmpty(str2)) {
             return;
         }
-        this.f26979c.setText(str2);
+        this.f13291c.setText(str2);
     }
 }

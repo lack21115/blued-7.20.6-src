@@ -1,5 +1,6 @@
 package com.tencent.mapsdk.internal;
 
+import android.opengl.EGL14;
 import android.opengl.GLUtils;
 import android.util.Log;
 import java.lang.ref.WeakReference;
@@ -27,7 +28,7 @@ public class xi extends Thread {
     private long m;
 
     /* renamed from: c  reason: collision with root package name */
-    private AtomicBoolean f38118c = new AtomicBoolean(true);
+    private AtomicBoolean f24427c = new AtomicBoolean(true);
     private AtomicBoolean d = new AtomicBoolean(false);
     private volatile boolean f = false;
     private EGLConfig g = null;
@@ -61,7 +62,7 @@ public class xi extends Thread {
                 return false;
             } else {
                 EGLConfig[] eGLConfigArr = new EGLConfig[1];
-                if (!this.h.eglChooseConfig(this.i, new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12326, 8, 12352, 4, 12344}, eGLConfigArr, 1, new int[1])) {
+                if (!this.h.eglChooseConfig(this.i, new int[]{EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_ALPHA_SIZE, 8, EGL14.EGL_DEPTH_SIZE, 16, EGL14.EGL_STENCIL_SIZE, 8, EGL14.EGL_RENDERABLE_TYPE, 4, EGL14.EGL_NONE}, eGLConfigArr, 1, new int[1])) {
                     na.g(u, "eglChooseConfig failed,errorDetail:" + GLUtils.getEGLErrorString(this.h.eglGetError()));
                     return false;
                 }
@@ -73,7 +74,7 @@ public class xi extends Thread {
                     na.g(u, "eglCreateWindowSurface failed,mEglSurface == EGL10.EGL_NO_SURFACE,errorDetail:" + GLUtils.getEGLErrorString(this.h.eglGetError()));
                     return false;
                 }
-                EGLContext eglCreateContext = this.h.eglCreateContext(this.i, eGLConfigArr[0], EGL10.EGL_NO_CONTEXT, new int[]{12440, 2, 12344});
+                EGLContext eglCreateContext = this.h.eglCreateContext(this.i, eGLConfigArr[0], EGL10.EGL_NO_CONTEXT, new int[]{12440, 2, EGL14.EGL_NONE});
                 this.j = eglCreateContext;
                 if (eglCreateContext == EGL10.EGL_NO_CONTEXT) {
                     na.g(u, "eglCreateContext failed,mEglContext == EGL10.EGL_NO_CONTEXT,errorDetail:" + GLUtils.getEGLErrorString(this.h.eglGetError()));
@@ -135,7 +136,7 @@ public class xi extends Thread {
 
     private void j() {
         WeakReference<Object> weakReference;
-        while (this.f38118c.get() && !this.d.get() && System.currentTimeMillis() - this.m <= s) {
+        while (this.f24427c.get() && !this.d.get() && System.currentTimeMillis() - this.m <= s) {
             d();
             try {
                 weakReference = this.e;
@@ -177,7 +178,7 @@ public class xi extends Thread {
     }
 
     public void e() {
-        this.f38118c.set(false);
+        this.f24427c.set(false);
         this.d.set(false);
         synchronized (this) {
             notifyAll();
@@ -213,8 +214,8 @@ public class xi extends Thread {
             this.b.get().g();
         }
         boolean z = false;
-        while (this.f38118c.get()) {
-            while (this.f38118c.get() && ((weakReference = this.e) == null || weakReference.get() == null)) {
+        while (this.f24427c.get()) {
+            while (this.f24427c.get() && ((weakReference = this.e) == null || weakReference.get() == null)) {
                 synchronized (this) {
                     try {
                         wait();
@@ -229,7 +230,7 @@ public class xi extends Thread {
             if (z2) {
                 try {
                     synchronized (this) {
-                        while (this.f38118c.get() && this.d.get()) {
+                        while (this.f24427c.get() && this.d.get()) {
                             wait();
                         }
                     }
@@ -270,7 +271,7 @@ public class xi extends Thread {
                         }
                     }
                 } catch (Throwable th) {
-                    if (!this.f38118c.get()) {
+                    if (!this.f24427c.get()) {
                         z = z2;
                         if (!(th instanceof InterruptedException)) {
                         }

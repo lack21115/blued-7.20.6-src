@@ -7,10 +7,10 @@ public class c implements Runnable {
     private static final String b = c.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f24883a;
+    public volatile boolean f11195a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f24884c;
+    private Context f11196c;
     private com.opos.cmn.func.dl.base.e.c d;
     private com.opos.cmn.func.dl.base.a.b e;
     private f f;
@@ -19,11 +19,11 @@ public class c implements Runnable {
     private long i;
 
     public c(Context context, b bVar, com.opos.cmn.func.dl.base.a.c cVar, com.opos.cmn.func.dl.base.e.c cVar2) {
-        this.f24884c = context;
+        this.f11196c = context;
         this.d = cVar2;
         this.g = bVar;
-        this.f = cVar.f24894c;
-        this.e = cVar.f24893a;
+        this.f = cVar.f11206c;
+        this.e = cVar.f11205a;
         this.i = this.d.d;
         this.h = this.d.b + this.i;
     }

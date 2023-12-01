@@ -19,13 +19,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/content/ContentGroup.class */
 public class ContentGroup implements DrawingContent, PathContent, BaseKeyframeAnimation.AnimationListener, KeyPathElement {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Matrix f4272a;
+    private final Matrix a;
     private final Path b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final RectF f4273c;
+    private final RectF c;
     private final String d;
     private final boolean e;
     private final List<Content> f;
@@ -39,9 +35,9 @@ public class ContentGroup implements DrawingContent, PathContent, BaseKeyframeAn
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ContentGroup(LottieDrawable lottieDrawable, BaseLayer baseLayer, String str, boolean z, List<Content> list, AnimatableTransform animatableTransform) {
-        this.f4272a = new Matrix();
+        this.a = new Matrix();
         this.b = new Path();
-        this.f4273c = new RectF();
+        this.c = new RectF();
         this.d = str;
         this.g = lottieDrawable;
         this.e = z;
@@ -99,9 +95,9 @@ public class ContentGroup implements DrawingContent, PathContent, BaseKeyframeAn
             if (i2 >= list.size()) {
                 return arrayList;
             }
-            Content a2 = list.get(i2).a(lottieDrawable, baseLayer);
-            if (a2 != null) {
-                arrayList.add(a2);
+            Content a = list.get(i2).a(lottieDrawable, baseLayer);
+            if (a != null) {
+                arrayList.add(a);
             }
             i = i2 + 1;
         }
@@ -117,11 +113,11 @@ public class ContentGroup implements DrawingContent, PathContent, BaseKeyframeAn
         if (this.e) {
             return;
         }
-        this.f4272a.set(matrix);
+        this.a.set(matrix);
         TransformKeyframeAnimation transformKeyframeAnimation = this.i;
         int i2 = i;
         if (transformKeyframeAnimation != null) {
-            this.f4272a.preConcat(transformKeyframeAnimation.d());
+            this.a.preConcat(transformKeyframeAnimation.d());
             i2 = (int) (((((this.i.a() == null ? 100 : this.i.a().g().intValue()) / 100.0f) * i) / 255.0f) * 255.0f);
         }
         int size = this.f.size();
@@ -132,7 +128,7 @@ public class ContentGroup implements DrawingContent, PathContent, BaseKeyframeAn
             }
             Content content = this.f.get(i3);
             if (content instanceof DrawingContent) {
-                ((DrawingContent) content).a(canvas, this.f4272a, i2);
+                ((DrawingContent) content).a(canvas, this.a, i2);
             }
             size = i3;
         }
@@ -140,12 +136,12 @@ public class ContentGroup implements DrawingContent, PathContent, BaseKeyframeAn
 
     @Override // com.airbnb.lottie.animation.content.DrawingContent
     public void a(RectF rectF, Matrix matrix, boolean z) {
-        this.f4272a.set(matrix);
+        this.a.set(matrix);
         TransformKeyframeAnimation transformKeyframeAnimation = this.i;
         if (transformKeyframeAnimation != null) {
-            this.f4272a.preConcat(transformKeyframeAnimation.d());
+            this.a.preConcat(transformKeyframeAnimation.d());
         }
-        this.f4273c.set(0.0f, 0.0f, 0.0f, 0.0f);
+        this.c.set(0.0f, 0.0f, 0.0f, 0.0f);
         int size = this.f.size();
         while (true) {
             int i = size - 1;
@@ -154,8 +150,8 @@ public class ContentGroup implements DrawingContent, PathContent, BaseKeyframeAn
             }
             Content content = this.f.get(i);
             if (content instanceof DrawingContent) {
-                ((DrawingContent) content).a(this.f4273c, this.f4272a, z);
-                rectF.union(this.f4273c);
+                ((DrawingContent) content).a(this.c, this.a, z);
+                rectF.union(this.c);
             }
             size = i;
         }
@@ -168,11 +164,11 @@ public class ContentGroup implements DrawingContent, PathContent, BaseKeyframeAn
         }
         KeyPath keyPath3 = keyPath2;
         if (!"__container".equals(b())) {
-            KeyPath a2 = keyPath2.a(b());
-            keyPath3 = a2;
+            KeyPath a = keyPath2.a(b());
+            keyPath3 = a;
             if (keyPath.c(b(), i)) {
-                list.add(a2.a(this));
-                keyPath3 = a2;
+                list.add(a.a(this));
+                keyPath3 = a;
             }
         }
         if (!keyPath.d(b(), i)) {
@@ -249,16 +245,16 @@ public class ContentGroup implements DrawingContent, PathContent, BaseKeyframeAn
         if (transformKeyframeAnimation != null) {
             return transformKeyframeAnimation.d();
         }
-        this.f4272a.reset();
-        return this.f4272a;
+        this.a.reset();
+        return this.a;
     }
 
     @Override // com.airbnb.lottie.animation.content.PathContent
     public Path e() {
-        this.f4272a.reset();
+        this.a.reset();
         TransformKeyframeAnimation transformKeyframeAnimation = this.i;
         if (transformKeyframeAnimation != null) {
-            this.f4272a.set(transformKeyframeAnimation.d());
+            this.a.set(transformKeyframeAnimation.d());
         }
         this.b.reset();
         if (this.e) {
@@ -272,7 +268,7 @@ public class ContentGroup implements DrawingContent, PathContent, BaseKeyframeAn
             }
             Content content = this.f.get(i);
             if (content instanceof PathContent) {
-                this.b.addPath(((PathContent) content).e(), this.f4272a);
+                this.b.addPath(((PathContent) content).e(), this.a);
             }
             size = i;
         }

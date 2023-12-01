@@ -8,9 +8,7 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/EmptyIterator.class */
 public final class EmptyIterator implements ListIterator, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final EmptyIterator f42378a = new EmptyIterator();
+    public static final EmptyIterator a = new EmptyIterator();
 
     private EmptyIterator() {
     }

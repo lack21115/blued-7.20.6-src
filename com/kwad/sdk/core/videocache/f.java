@@ -273,12 +273,12 @@ public final class f {
         return i;
     }
 
-    public final boolean a(String str, int i, a.C0564a c0564a) {
+    public final boolean a(String str, int i, a.C0394a c0394a) {
         com.kwad.sdk.core.d.b.d("HttpProxyCacheServer", "preloadSync preloadUrl " + str);
         if (cT(str)) {
             return true;
         }
-        return com.kwad.sdk.core.network.kwai.a.a(cW(str), null, c0564a, i);
+        return com.kwad.sdk.core.network.kwai.a.a(cW(str), null, c0394a, i);
     }
 
     public final String cS(String str) {

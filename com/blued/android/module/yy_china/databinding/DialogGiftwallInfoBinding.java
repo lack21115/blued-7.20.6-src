@@ -17,13 +17,9 @@ public final class DialogGiftwallInfoBinding implements ViewBinding {
     public final TextView A;
     public final TextView B;
     private final ConstraintLayout C;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f16348a;
+    public final ConstraintLayout a;
     public final ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeConstraintLayout f16349c;
+    public final ShapeConstraintLayout c;
     public final HollowView d;
     public final HollowView e;
     public final HollowView f;
@@ -50,9 +46,9 @@ public final class DialogGiftwallInfoBinding implements ViewBinding {
 
     private DialogGiftwallInfoBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ShapeConstraintLayout shapeConstraintLayout, HollowView hollowView, HollowView hollowView2, HollowView hollowView3, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, LinearLayout linearLayout, ProgressBar progressBar, ConstraintLayout constraintLayout4, ShapeConstraintLayout shapeConstraintLayout2, TextView textView, ShapeTextView shapeTextView, TextView textView2, TextView textView3, ShapeTextView shapeTextView2, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10) {
         this.C = constraintLayout;
-        this.f16348a = constraintLayout2;
+        this.a = constraintLayout2;
         this.b = constraintLayout3;
-        this.f16349c = shapeConstraintLayout;
+        this.c = shapeConstraintLayout;
         this.d = hollowView;
         this.e = hollowView2;
         this.f = hollowView3;
@@ -82,10 +78,10 @@ public final class DialogGiftwallInfoBinding implements ViewBinding {
 
     public static DialogGiftwallInfoBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.cons_gift_num);
-        if (constraintLayout != null) {
-            ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.cons_list);
-            if (constraintLayout2 != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.cons_gift_num);
+        if (findViewById != null) {
+            ConstraintLayout findViewById2 = view.findViewById(R.id.cons_list);
+            if (findViewById2 != null) {
                 ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.cons_user_list);
                 if (shapeConstraintLayout != null) {
                     HollowView hollowView = (HollowView) view.findViewById(R.id.holl_user_1);
@@ -110,8 +106,8 @@ public final class DialogGiftwallInfoBinding implements ViewBinding {
                                                         if (linearLayout != null) {
                                                             ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.pro);
                                                             if (progressBar != null) {
-                                                                ConstraintLayout constraintLayout3 = (ConstraintLayout) view.findViewById(R.id.sha_);
-                                                                if (constraintLayout3 != null) {
+                                                                ConstraintLayout findViewById3 = view.findViewById(R.id.sha_);
+                                                                if (findViewById3 != null) {
                                                                     ShapeConstraintLayout shapeConstraintLayout2 = (ShapeConstraintLayout) view.findViewById(R.id.shap_con);
                                                                     if (shapeConstraintLayout2 != null) {
                                                                         TextView textView = (TextView) view.findViewById(R.id.tv_botto);
@@ -138,7 +134,7 @@ public final class DialogGiftwallInfoBinding implements ViewBinding {
                                                                                                                 if (textView9 != null) {
                                                                                                                     TextView textView10 = (TextView) view.findViewById(R.id.tv_user_name_3);
                                                                                                                     if (textView10 != null) {
-                                                                                                                        return new DialogGiftwallInfoBinding((ConstraintLayout) view, constraintLayout, constraintLayout2, shapeConstraintLayout, hollowView, hollowView2, hollowView3, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, linearLayout, progressBar, constraintLayout3, shapeConstraintLayout2, textView, shapeTextView, textView2, textView3, shapeTextView2, textView4, textView5, textView6, textView7, textView8, textView9, textView10);
+                                                                                                                        return new DialogGiftwallInfoBinding((ConstraintLayout) view, findViewById, findViewById2, shapeConstraintLayout, hollowView, hollowView2, hollowView3, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, linearLayout, progressBar, findViewById3, shapeConstraintLayout2, textView, shapeTextView, textView2, textView3, shapeTextView2, textView4, textView5, textView6, textView7, textView8, textView9, textView10);
                                                                                                                     }
                                                                                                                     str = "tvUserName3";
                                                                                                                 } else {
@@ -225,7 +221,6 @@ public final class DialogGiftwallInfoBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.C;

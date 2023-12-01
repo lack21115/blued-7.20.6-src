@@ -2,7 +2,6 @@ package android.net;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.EnumMap;
 
 /* loaded from: source-9557208-dex2jar.jar:android/net/NetworkInfo.class */
@@ -297,7 +296,7 @@ public class NetworkInfo implements Parcelable {
         String sb;
         synchronized (this) {
             StringBuilder sb2 = new StringBuilder("[");
-            sb2.append("type: ").append(getTypeName()).append("[").append(getSubtypeName()).append("], state: ").append(this.mState).append(BridgeUtil.SPLIT_MARK).append(this.mDetailedState).append(", reason: ").append(this.mReason == null ? "(unspecified)" : this.mReason).append(", extra: ").append(this.mExtraInfo == null ? "(none)" : this.mExtraInfo).append(", roaming: ").append(this.mIsRoaming).append(", failover: ").append(this.mIsFailover).append(", isAvailable: ").append(this.mIsAvailable).append(", isConnectedToProvisioningNetwork: ").append(this.mIsConnectedToProvisioningNetwork).append("]");
+            sb2.append("type: ").append(getTypeName()).append("[").append(getSubtypeName()).append("], state: ").append(this.mState).append("/").append(this.mDetailedState).append(", reason: ").append(this.mReason == null ? "(unspecified)" : this.mReason).append(", extra: ").append(this.mExtraInfo == null ? "(none)" : this.mExtraInfo).append(", roaming: ").append(this.mIsRoaming).append(", failover: ").append(this.mIsFailover).append(", isAvailable: ").append(this.mIsAvailable).append(", isConnectedToProvisioningNetwork: ").append(this.mIsConnectedToProvisioningNetwork).append("]");
             sb = sb2.toString();
         }
         return sb;

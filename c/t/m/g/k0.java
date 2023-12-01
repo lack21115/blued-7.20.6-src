@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class k0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static double[][] f3858a = (double[][]) Array.newInstance(Double.TYPE, 3, 3);
+    public static double[][] f3810a = (double[][]) Array.newInstance(Double.TYPE, 3, 3);
     public static double[][] b = (double[][]) Array.newInstance(Double.TYPE, 3, 3);
 
     public static final HashMap<String, String> a() {

@@ -24,13 +24,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveGiftAndMedalCardView.class */
 public final class LiveGiftAndMedalCardView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14466a;
+    private Context a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f14467c;
+    private String c;
     private String d;
     private String e;
     private ArrayList<String> f;
@@ -76,7 +72,7 @@ public final class LiveGiftAndMedalCardView extends FrameLayout {
                 return LayoutLiveUserCardAwardWallBinding.a(LayoutInflater.from(LiveGiftAndMedalCardView.this.getMContext()), LiveGiftAndMedalCardView.this, true);
             }
         });
-        this.f14466a = context;
+        this.a = context;
         a();
     }
 
@@ -120,7 +116,7 @@ public final class LiveGiftAndMedalCardView extends FrameLayout {
         Intrinsics.e(requestHost, "requestHost");
         Intrinsics.e(onCardArrowClick, "onCardArrowClick");
         this.b = str;
-        this.f14467c = str2;
+        this.c = str2;
         this.e = str3;
         this.d = str4;
         this.h = onCardArrowClick;
@@ -167,12 +163,12 @@ public final class LiveGiftAndMedalCardView extends FrameLayout {
                 }
                 LiveUserCardGalleryItemModel next = it.next();
                 if (i2 == 0) {
-                    ImageView imageView = viewBinding.f12102a;
+                    ImageView imageView = viewBinding.a;
                     Intrinsics.c(imageView, "it.ivGift0");
                     BluedViewExKt.b(imageView);
                     String icon = next.getIcon();
                     if (icon != null) {
-                        ImageLoader.a(requestHost, icon).g().g(-1).b(R.drawable.anchor_badge_default).a(viewBinding.f12102a);
+                        ImageLoader.a(requestHost, icon).g().g(-1).b(R.drawable.anchor_badge_default).a(viewBinding.a);
                         String mask = next.getMask();
                         if (!(mask == null || mask.length() == 0)) {
                             ImageView imageView2 = viewBinding.i;
@@ -201,12 +197,12 @@ public final class LiveGiftAndMedalCardView extends FrameLayout {
                         }
                     }
                 } else if (i2 == 2) {
-                    ImageView imageView5 = viewBinding.f12103c;
+                    ImageView imageView5 = viewBinding.c;
                     Intrinsics.c(imageView5, "it.ivGift2");
                     BluedViewExKt.b(imageView5);
                     String icon3 = next.getIcon();
                     if (icon3 != null) {
-                        ImageLoader.a(requestHost, icon3).g().g(-1).b(R.drawable.anchor_badge_default).a(viewBinding.f12103c);
+                        ImageLoader.a(requestHost, icon3).g().g(-1).b(R.drawable.anchor_badge_default).a(viewBinding.c);
                         String mask5 = next.getMask();
                         if (!(mask5 == null || mask5.length() == 0)) {
                             ImageView imageView6 = viewBinding.k;
@@ -279,7 +275,7 @@ public final class LiveGiftAndMedalCardView extends FrameLayout {
     }
 
     public final Context getMContext() {
-        return this.f14466a;
+        return this.a;
     }
 
     public final String getMedalCountDesc() {
@@ -291,7 +287,7 @@ public final class LiveGiftAndMedalCardView extends FrameLayout {
     }
 
     public final String getMedalTilte() {
-        return this.f14467c;
+        return this.c;
     }
 
     public final LayoutLiveUserCardAwardWallBinding getViewBinding() {
@@ -316,7 +312,7 @@ public final class LiveGiftAndMedalCardView extends FrameLayout {
     }
 
     public final void setMContext(Context context) {
-        this.f14466a = context;
+        this.a = context;
     }
 
     public final void setMedalCountDesc(String str) {
@@ -329,6 +325,6 @@ public final class LiveGiftAndMedalCardView extends FrameLayout {
     }
 
     public final void setMedalTilte(String str) {
-        this.f14467c = str;
+        this.c = str;
     }
 }

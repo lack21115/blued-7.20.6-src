@@ -17,11 +17,11 @@ public final class e {
     public Map<String, Object> x;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f36487a = 3;
+    public int f22796a = 3;
     public int b = 3;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f36488c = 30;
+    public int f22797c = 30;
     public boolean d = true;
     public int g = 2;
     public boolean i = true;

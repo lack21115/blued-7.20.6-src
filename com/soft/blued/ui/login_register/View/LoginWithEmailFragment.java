@@ -16,6 +16,7 @@ import android.widget.TextView;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.framework.ui.xpop.util.KeyboardUtils;
 import com.blued.android.module.common.db.UserAccountsVDao;
@@ -24,7 +25,6 @@ import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.view.ClearEditText;
 import com.blued.android.module.common.view.CommonEdittextView;
 import com.blued.android.module.common.view.CommonGuidePop;
-import com.blued.android.module.common.view.CommonTopTitleNoTrans;
 import com.blued.das.login.LoginAndRegisterProtos;
 import com.blued.login.activity.PhoneOrEmailLoginActivity;
 import com.bytedance.applog.tracker.Tracker;
@@ -44,11 +44,11 @@ import com.soft.blued.utils.StringUtils;
 public class LoginWithEmailFragment extends BaseFragment implements View.OnClickListener, LoginWithTypeContract.IView {
 
     /* renamed from: a  reason: collision with root package name */
-    public View f31497a;
+    public View f17807a;
     public ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public ClearEditText f31498c;
+    public ClearEditText f17808c;
     public ClearEditText d;
     public ClearEditText e;
     private Context f;
@@ -67,28 +67,29 @@ public class LoginWithEmailFragment extends BaseFragment implements View.OnClick
         PhoneOrEmailLoginActivity.d.a(context, LoginWithEmailFragment.class, bundle);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void j() {
-        this.p = LoginTool.f31584a.a(getContext());
-        CommonEdittextView commonEdittextView = (CommonEdittextView) this.h.findViewById(2131362783);
-        this.k = commonEdittextView;
-        commonEdittextView.a();
+        this.p = LoginTool.f17894a.a(getContext());
+        CommonEdittextView findViewById = this.h.findViewById(2131362783);
+        this.k = findViewById;
+        findViewById.a();
         this.b = (ImageView) this.h.findViewById(2131361892);
-        this.f31498c = this.k.getEditText();
-        CommonEdittextView commonEdittextView2 = (CommonEdittextView) this.h.findViewById(R.id.cev_password);
-        this.j = commonEdittextView2;
-        commonEdittextView2.a();
+        this.f17808c = this.k.getEditText();
+        CommonEdittextView findViewById2 = this.h.findViewById(R.id.cev_password);
+        this.j = findViewById2;
+        findViewById2.a();
         ClearEditText editText = this.j.getEditText();
         this.e = editText;
         editText.setInputType(128);
         this.e.setTypeface(Typeface.DEFAULT);
         this.e.setTransformationMethod(new PasswordTransformationMethod());
-        CommonEdittextView commonEdittextView3 = (CommonEdittextView) this.h.findViewById(R.id.cev_email);
-        this.i = commonEdittextView3;
-        commonEdittextView3.a();
+        CommonEdittextView findViewById3 = this.h.findViewById(R.id.cev_email);
+        this.i = findViewById3;
+        findViewById3.a();
         ClearEditText editText2 = this.i.getEditText();
         this.d = editText2;
         editText2.setInputType(524320);
-        this.f31497a = this.h.findViewById(2131367685);
+        this.f17807a = this.h.findViewById(2131367685);
         this.l = DialogUtils.a(this.f);
         this.m = (TextView) this.h.findViewById(R.id.tv_login);
         this.d.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithEmailFragment.2
@@ -98,7 +99,7 @@ public class LoginWithEmailFragment extends BaseFragment implements View.OnClick
                 if (!z || LoginWithEmailFragment.this.o.isChecked()) {
                     return;
                 }
-                LoginTool.f31584a.a(LoginWithEmailFragment.this.o, LoginWithEmailFragment.this.p, LoginWithEmailFragment.this.h.findViewById(2131364005));
+                LoginTool.f17894a.a(LoginWithEmailFragment.this.o, LoginWithEmailFragment.this.p, LoginWithEmailFragment.this.h.findViewById(2131364005));
             }
         });
         this.e.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithEmailFragment.3
@@ -108,10 +109,10 @@ public class LoginWithEmailFragment extends BaseFragment implements View.OnClick
                 if (!z || LoginWithEmailFragment.this.o.isChecked()) {
                     return;
                 }
-                LoginTool.f31584a.a(LoginWithEmailFragment.this.o, LoginWithEmailFragment.this.p, LoginWithEmailFragment.this.h.findViewById(2131364005));
+                LoginTool.f17894a.a(LoginWithEmailFragment.this.o, LoginWithEmailFragment.this.p, LoginWithEmailFragment.this.h.findViewById(2131364005));
             }
         });
-        ((CommonTopTitleNoTrans) this.h.findViewById(2131370694)).getLeftImg().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithEmailFragment.4
+        this.h.findViewById(2131370694).getLeftImg().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithEmailFragment.4
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -120,7 +121,7 @@ public class LoginWithEmailFragment extends BaseFragment implements View.OnClick
         });
         i();
         this.o = (CheckBox) this.h.findViewById(2131364005).findViewById(2131362774);
-        LoginTool.f31584a.a(this.h, false);
+        LoginTool.f17894a.a(this.h, false);
         LiveEventBus.get(EventBusConstant.KEY_EVENT_LOGIN_CHECK, Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.soft.blued.ui.login_register.View.LoginWithEmailFragment.5
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
@@ -131,7 +132,7 @@ public class LoginWithEmailFragment extends BaseFragment implements View.OnClick
                     LoginWithEmailFragment.this.d.setCursorVisible(false);
                     return;
                 }
-                LoginTool.f31584a.a(LoginWithEmailFragment.this.o, LoginWithEmailFragment.this.p, LoginWithEmailFragment.this.h.findViewById(2131364005));
+                LoginTool.f17894a.a(LoginWithEmailFragment.this.o, LoginWithEmailFragment.this.p, LoginWithEmailFragment.this.h.findViewById(2131364005));
                 LoginWithEmailFragment.this.d.requestFocus();
                 LoginWithEmailFragment.this.d.setCursorVisible(true);
                 LoginWithEmailFragment.this.d.setSelection(LoginWithEmailFragment.this.d.getText().length());
@@ -172,7 +173,7 @@ public class LoginWithEmailFragment extends BaseFragment implements View.OnClick
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             }
         };
-        this.f31498c.addTextChangedListener(textWatcher);
+        this.f17808c.addTextChangedListener(textWatcher);
         this.d.addTextChangedListener(textWatcher);
         this.e.addTextChangedListener(textWatcher);
         this.m.setOnClickListener(this);
@@ -193,9 +194,9 @@ public class LoginWithEmailFragment extends BaseFragment implements View.OnClick
 
     @Override // com.soft.blued.ui.login_register.Contract.LoginWithTypeContract.IView
     public void a(String str, boolean z) {
-        LoginRegisterTools.a(getFragmentActive(), this.b, str);
-        this.f31497a.setVisibility(0);
-        this.f31498c.requestFocus();
+        LoginRegisterTools.a((IRequestHost) getFragmentActive(), this.b, str);
+        this.f17807a.setVisibility(0);
+        this.f17808c.requestFocus();
     }
 
     @Override // com.soft.blued.ui.login_register.Contract.LoginWithTypeContract.IView
@@ -254,9 +255,9 @@ public class LoginWithEmailFragment extends BaseFragment implements View.OnClick
     public void i() {
         if (StringUtils.d(this.d.getText().toString()) || StringUtils.d(this.e.getText().toString())) {
             this.m.setEnabled(false);
-        } else if (this.f31497a.getVisibility() != 0) {
+        } else if (this.f17807a.getVisibility() != 0) {
             this.m.setEnabled(true);
-        } else if (StringUtils.d(this.f31498c.getText().toString())) {
+        } else if (StringUtils.d(this.f17808c.getText().toString())) {
             this.m.setEnabled(false);
         } else {
             this.m.setEnabled(true);
@@ -276,20 +277,19 @@ public class LoginWithEmailFragment extends BaseFragment implements View.OnClick
         } else {
             com.blued.android.framework.utils.KeyboardUtils.a(getActivity());
             if (!this.o.isChecked()) {
-                LoginTool.f31584a.a(this.o, this.p, this.h.findViewById(2131364005));
+                LoginTool.f17894a.a(this.o, this.p, this.h.findViewById(2131364005));
                 return;
             }
             BluedPreferences.aE();
             EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.LOGIN_BTN_CLICK, LoginAndRegisterProtos.Source.EMAIL);
             if (StringUtils.d(this.d.getText().toString()) || StringUtils.d(this.e.getText().toString())) {
-                AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.user_login_fail));
+                AppMethods.a(AppInfo.d().getResources().getString(R.string.user_login_fail));
             } else {
-                this.g.a("email", this.d.getText().toString(), this.e.getText().toString(), this.g.d(), this.f31498c.getText().toString());
+                this.g.a("email", this.d.getText().toString(), this.e.getText().toString(), this.g.d(), this.f17808c.getText().toString());
             }
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.f = getActivity();
         View view = this.h;
@@ -304,14 +304,12 @@ public class LoginWithEmailFragment extends BaseFragment implements View.OnClick
         return this.h;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         DialogUtils.b(this.l);
         this.l = null;
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         LoginWithTypePresenter loginWithTypePresenter = new LoginWithTypePresenter(this.f, this, getFragmentActive());

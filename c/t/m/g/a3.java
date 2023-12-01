@@ -8,21 +8,21 @@ import java.util.concurrent.ConcurrentHashMap;
 public class a3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static ConcurrentHashMap<String, HandlerThread> f3740a = new ConcurrentHashMap<>();
+    public static ConcurrentHashMap<String, HandlerThread> f3692a = new ConcurrentHashMap<>();
     public static ConcurrentHashMap<String, Integer> b = new ConcurrentHashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    public static ConcurrentHashMap<String, Long> f3741c = new ConcurrentHashMap<>();
+    public static ConcurrentHashMap<String, Long> f3693c = new ConcurrentHashMap<>();
 
     public static HandlerThread a(String str, int i) {
         HandlerThread handlerThread;
         synchronized (a3.class) {
             try {
-                HandlerThread handlerThread2 = f3740a.get(str);
+                HandlerThread handlerThread2 = f3692a.get(str);
                 if (handlerThread2 == null) {
                     HandlerThread handlerThread3 = new HandlerThread(str, i);
                     handlerThread3.start();
-                    f3740a.put(str, handlerThread3);
+                    f3692a.put(str, handlerThread3);
                     b.put(str, 1);
                     handlerThread = handlerThread3;
                 } else {
@@ -47,20 +47,20 @@ public class a3 {
                     int intValue = b.get(str).intValue() - 1;
                     if (intValue == 0) {
                         b.remove(str);
-                        HandlerThread remove = f3740a.remove(str);
+                        HandlerThread remove = f3692a.remove(str);
                         long j2 = j;
-                        if (f3741c.containsKey(str)) {
-                            j2 = Math.max(j, f3741c.remove(str).longValue() - System.currentTimeMillis());
+                        if (f3693c.containsKey(str)) {
+                            j2 = Math.max(j, f3693c.remove(str).longValue() - System.currentTimeMillis());
                         }
                         b3.a(remove, null, j2, false);
                     } else {
                         b.put(str, Integer.valueOf(intValue));
                         long j3 = 0;
                         if (j != 0) {
-                            if (f3741c.containsKey(str)) {
-                                j3 = f3741c.get(str).longValue();
+                            if (f3693c.containsKey(str)) {
+                                j3 = f3693c.get(str).longValue();
                             }
-                            f3741c.put(str, Long.valueOf(Math.max(System.currentTimeMillis() + j, j3)));
+                            f3693c.put(str, Long.valueOf(Math.max(System.currentTimeMillis() + j, j3)));
                         }
                     }
                 }

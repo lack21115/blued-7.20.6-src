@@ -6,18 +6,18 @@ import java.lang.reflect.Field;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Class<?> f24599a;
+    private Class<?> f10912a;
 
     public a(Class<?> cls) {
-        this.f24599a = cls;
+        this.f10912a = cls;
     }
 
     public Field a(String str) {
         try {
-            if (this.f24599a == null || com.opos.cmn.an.c.a.a(str)) {
+            if (this.f10912a == null || com.opos.cmn.an.c.a.a(str)) {
                 return null;
             }
-            return this.f24599a.getDeclaredField(str);
+            return this.f10912a.getDeclaredField(str);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.c("ReflectEngine", "getDeclareField", e);
             return null;
@@ -26,7 +26,7 @@ public class a {
 
     public void a(Field field, Object obj, Object obj2) {
         try {
-            if (this.f24599a == null || field == null || obj == null) {
+            if (this.f10912a == null || field == null || obj == null) {
                 return;
             }
             field.setAccessible(true);

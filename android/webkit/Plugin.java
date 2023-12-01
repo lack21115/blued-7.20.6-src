@@ -3,6 +3,7 @@ package android.webkit;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import com.android.internal.R;
 
 @Deprecated
 /* loaded from: source-4181928-dex2jar.jar:android/webkit/Plugin.class */
@@ -25,7 +26,7 @@ public class Plugin {
         @Deprecated
         public void handleClickEvent(Context context) {
             if (this.mDialog == null) {
-                this.mDialog = new AlertDialog.Builder(context).setTitle(Plugin.this.mName).setMessage(Plugin.this.mDescription).setPositiveButton(17039370, this).setCancelable(false).show();
+                this.mDialog = new AlertDialog.Builder(context).setTitle(Plugin.this.mName).setMessage(Plugin.this.mDescription).setPositiveButton(R.string.ok, this).setCancelable(false).show();
             }
         }
 

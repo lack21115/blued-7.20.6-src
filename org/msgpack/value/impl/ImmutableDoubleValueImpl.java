@@ -1,6 +1,5 @@
 package org.msgpack.value.impl;
 
-import com.igexin.push.core.b;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -191,7 +190,7 @@ public class ImmutableDoubleValueImpl extends AbstractImmutableValue implements 
 
     @Override // org.msgpack.value.Value
     public String toJson() {
-        return (Double.isNaN(this.value) || Double.isInfinite(this.value)) ? b.l : Double.toString(this.value);
+        return (Double.isNaN(this.value) || Double.isInfinite(this.value)) ? "null" : Double.toString(this.value);
     }
 
     @Override // org.msgpack.value.NumberValue

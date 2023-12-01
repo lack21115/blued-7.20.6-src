@@ -7,18 +7,18 @@ import java.util.Arrays;
 public class MonotonicCurveFit extends CurveFit {
 
     /* renamed from: a  reason: collision with root package name */
-    double[] f2052a;
+    double[] f2004a;
     private double[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private double[][] f2053c;
+    private double[][] f2005c;
     private double[][] d;
     private boolean e = true;
 
     public MonotonicCurveFit(double[] dArr, double[][] dArr2) {
         int length = dArr.length;
         int length2 = dArr2[0].length;
-        this.f2052a = new double[length2];
+        this.f2004a = new double[length2];
         int i = length - 1;
         double[][] dArr3 = (double[][]) Array.newInstance(Double.TYPE, i, length2);
         double[][] dArr4 = (double[][]) Array.newInstance(Double.TYPE, length, length2);
@@ -50,7 +50,7 @@ public class MonotonicCurveFit extends CurveFit {
             int i8 = i7;
             if (i8 >= i) {
                 this.b = dArr;
-                this.f2053c = dArr2;
+                this.f2005c = dArr2;
                 this.d = dArr4;
                 return;
             }
@@ -149,30 +149,30 @@ public class MonotonicCurveFit extends CurveFit {
         int i2 = 0;
         if (this.e) {
             if (d <= dArr[0]) {
-                return this.f2053c[0][i] + ((d - dArr[0]) * getSlope(dArr[0], i));
+                return this.f2005c[0][i] + ((d - dArr[0]) * getSlope(dArr[0], i));
             }
             int i3 = length - 1;
             if (d >= dArr[i3]) {
-                return this.f2053c[i3][i] + ((d - dArr[i3]) * getSlope(dArr[i3], i));
+                return this.f2005c[i3][i] + ((d - dArr[i3]) * getSlope(dArr[i3], i));
             }
         } else if (d <= dArr[0]) {
-            return this.f2053c[0][i];
+            return this.f2005c[0][i];
         } else {
             int i4 = length - 1;
             if (d >= dArr[i4]) {
-                return this.f2053c[i4][i];
+                return this.f2005c[i4][i];
             }
         }
         while (i2 < length - 1) {
             double[] dArr2 = this.b;
             if (d == dArr2[i2]) {
-                return this.f2053c[i2][i];
+                return this.f2005c[i2][i];
             }
             int i5 = i2 + 1;
             if (d < dArr2[i5]) {
                 double d2 = dArr2[i5] - dArr2[i2];
                 double d3 = (d - dArr2[i2]) / d2;
-                double[][] dArr3 = this.f2053c;
+                double[][] dArr3 = this.f2005c;
                 double d4 = dArr3[i2][i];
                 double d5 = dArr3[i5][i];
                 double[][] dArr4 = this.d;
@@ -187,25 +187,25 @@ public class MonotonicCurveFit extends CurveFit {
     public void getPos(double d, double[] dArr) {
         double[] dArr2 = this.b;
         int length = dArr2.length;
-        int length2 = this.f2053c[0].length;
+        int length2 = this.f2005c[0].length;
         if (this.e) {
             if (d <= dArr2[0]) {
-                getSlope(dArr2[0], this.f2052a);
+                getSlope(dArr2[0], this.f2004a);
                 int i = 0;
                 while (true) {
                     int i2 = i;
                     if (i2 >= length2) {
                         return;
                     }
-                    dArr[i2] = this.f2053c[0][i2] + ((d - this.b[0]) * this.f2052a[i2]);
+                    dArr[i2] = this.f2005c[0][i2] + ((d - this.b[0]) * this.f2004a[i2]);
                     i = i2 + 1;
                 }
             } else {
                 int i3 = length - 1;
                 if (d >= dArr2[i3]) {
-                    getSlope(dArr2[i3], this.f2052a);
+                    getSlope(dArr2[i3], this.f2004a);
                     for (int i4 = 0; i4 < length2; i4++) {
-                        dArr[i4] = this.f2053c[i3][i4] + ((d - this.b[i3]) * this.f2052a[i4]);
+                        dArr[i4] = this.f2005c[i3][i4] + ((d - this.b[i3]) * this.f2004a[i4]);
                     }
                     return;
                 }
@@ -217,7 +217,7 @@ public class MonotonicCurveFit extends CurveFit {
                 if (i6 >= length2) {
                     return;
                 }
-                dArr[i6] = this.f2053c[0][i6];
+                dArr[i6] = this.f2005c[0][i6];
                 i5 = i6 + 1;
             }
         } else {
@@ -229,7 +229,7 @@ public class MonotonicCurveFit extends CurveFit {
                     if (i9 >= length2) {
                         return;
                     }
-                    dArr[i9] = this.f2053c[i7][i9];
+                    dArr[i9] = this.f2005c[i7][i9];
                     i8 = i9 + 1;
                 }
             }
@@ -247,7 +247,7 @@ public class MonotonicCurveFit extends CurveFit {
                     if (i13 >= length2) {
                         break;
                     }
-                    dArr[i13] = this.f2053c[i11][i13];
+                    dArr[i13] = this.f2005c[i11][i13];
                     i12 = i13 + 1;
                 }
             }
@@ -262,7 +262,7 @@ public class MonotonicCurveFit extends CurveFit {
                     if (i16 >= length2) {
                         return;
                     }
-                    double[][] dArr4 = this.f2053c;
+                    double[][] dArr4 = this.f2005c;
                     double d4 = dArr4[i11][i16];
                     double d5 = dArr4[i14][i16];
                     double[][] dArr5 = this.d;
@@ -279,25 +279,25 @@ public class MonotonicCurveFit extends CurveFit {
     public void getPos(double d, float[] fArr) {
         double[] dArr = this.b;
         int length = dArr.length;
-        int length2 = this.f2053c[0].length;
+        int length2 = this.f2005c[0].length;
         if (this.e) {
             if (d <= dArr[0]) {
-                getSlope(dArr[0], this.f2052a);
+                getSlope(dArr[0], this.f2004a);
                 int i = 0;
                 while (true) {
                     int i2 = i;
                     if (i2 >= length2) {
                         return;
                     }
-                    fArr[i2] = (float) (this.f2053c[0][i2] + ((d - this.b[0]) * this.f2052a[i2]));
+                    fArr[i2] = (float) (this.f2005c[0][i2] + ((d - this.b[0]) * this.f2004a[i2]));
                     i = i2 + 1;
                 }
             } else {
                 int i3 = length - 1;
                 if (d >= dArr[i3]) {
-                    getSlope(dArr[i3], this.f2052a);
+                    getSlope(dArr[i3], this.f2004a);
                     for (int i4 = 0; i4 < length2; i4++) {
-                        fArr[i4] = (float) (this.f2053c[i3][i4] + ((d - this.b[i3]) * this.f2052a[i4]));
+                        fArr[i4] = (float) (this.f2005c[i3][i4] + ((d - this.b[i3]) * this.f2004a[i4]));
                     }
                     return;
                 }
@@ -309,7 +309,7 @@ public class MonotonicCurveFit extends CurveFit {
                 if (i6 >= length2) {
                     return;
                 }
-                fArr[i6] = (float) this.f2053c[0][i6];
+                fArr[i6] = (float) this.f2005c[0][i6];
                 i5 = i6 + 1;
             }
         } else {
@@ -321,7 +321,7 @@ public class MonotonicCurveFit extends CurveFit {
                     if (i9 >= length2) {
                         return;
                     }
-                    fArr[i9] = (float) this.f2053c[i7][i9];
+                    fArr[i9] = (float) this.f2005c[i7][i9];
                     i8 = i9 + 1;
                 }
             }
@@ -339,7 +339,7 @@ public class MonotonicCurveFit extends CurveFit {
                     if (i13 >= length2) {
                         break;
                     }
-                    fArr[i13] = (float) this.f2053c[i11][i13];
+                    fArr[i13] = (float) this.f2005c[i11][i13];
                     i12 = i13 + 1;
                 }
             }
@@ -354,7 +354,7 @@ public class MonotonicCurveFit extends CurveFit {
                     if (i16 >= length2) {
                         return;
                     }
-                    double[][] dArr3 = this.f2053c;
+                    double[][] dArr3 = this.f2005c;
                     double d4 = dArr3[i11][i16];
                     double d5 = dArr3[i14][i16];
                     double[][] dArr4 = this.d;
@@ -386,7 +386,7 @@ public class MonotonicCurveFit extends CurveFit {
             if (d <= dArr2[i4]) {
                 double d2 = dArr2[i4] - dArr2[i2];
                 double d3 = (d - dArr2[i2]) / d2;
-                double[][] dArr3 = this.f2053c;
+                double[][] dArr3 = this.f2005c;
                 double d4 = dArr3[i2][i];
                 double d5 = dArr3[i4][i];
                 double[][] dArr4 = this.d;
@@ -401,7 +401,7 @@ public class MonotonicCurveFit extends CurveFit {
     public void getSlope(double d, double[] dArr) {
         double[] dArr2 = this.b;
         int length = dArr2.length;
-        int length2 = this.f2053c[0].length;
+        int length2 = this.f2005c[0].length;
         if (d <= dArr2[0]) {
             d = dArr2[0];
         } else {
@@ -422,7 +422,7 @@ public class MonotonicCurveFit extends CurveFit {
                 double d2 = dArr3[i4] - dArr3[i3];
                 double d3 = (d - dArr3[i3]) / d2;
                 for (int i5 = 0; i5 < length2; i5++) {
-                    double[][] dArr4 = this.f2053c;
+                    double[][] dArr4 = this.f2005c;
                     double d4 = dArr4[i3][i5];
                     double d5 = dArr4[i4][i5];
                     double[][] dArr5 = this.d;

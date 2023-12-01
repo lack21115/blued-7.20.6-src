@@ -22,11 +22,11 @@ import java.util.Locale;
 public final class a extends Dialog {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8785a = "ATAlertDialog";
+    private static final String f5945a = "ATAlertDialog";
     private b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f8786c;
+    private TextView f5946c;
     private TextView d;
     private Button e;
     private Button f;
@@ -40,16 +40,16 @@ public final class a extends Dialog {
         if (inflate != null) {
             setContentView(inflate);
             try {
-                this.f8786c = (TextView) inflate.findViewById(i.a(context, "anythink_video_common_alertview_titleview", "id"));
+                this.f5946c = (TextView) inflate.findViewById(i.a(context, "anythink_video_common_alertview_titleview", "id"));
             } catch (Exception e) {
-                o.a(f8785a, e.getMessage());
+                o.a(f5945a, e.getMessage());
             }
             try {
                 this.d = (TextView) inflate.findViewById(i.a(context, "anythink_video_common_alertview_contentview", "id"));
                 this.e = (Button) inflate.findViewById(i.a(context, "anythink_video_common_alertview_confirm_button", "id"));
                 this.f = (Button) inflate.findViewById(i.a(context, "anythink_video_common_alertview_cancel_button", "id"));
             } catch (Exception e2) {
-                o.a(f8785a, e2.getMessage());
+                o.a(f5945a, e2.getMessage());
             }
         }
         Button button = this.f;
@@ -122,7 +122,7 @@ public final class a extends Dialog {
     }
 
     private void a(String str) {
-        TextView textView = this.f8786c;
+        TextView textView = this.f5946c;
         if (textView != null) {
             textView.setText(str);
         }
@@ -237,7 +237,7 @@ public final class a extends Dialog {
             c(i == com.anythink.expressad.foundation.g.a.cr ? "确认关闭" : "取消");
             d("继续");
         } catch (Exception e) {
-            o.a(f8785a, e.getMessage());
+            o.a(f5945a, e.getMessage());
         }
     }
 
@@ -256,7 +256,7 @@ public final class a extends Dialog {
             c("确认关闭");
             d("继续观看");
         } catch (Exception e) {
-            o.a(f8785a, e.getMessage());
+            o.a(f5945a, e.getMessage());
         }
     }
 
@@ -286,7 +286,7 @@ public final class a extends Dialog {
             }
             getWindow().clearFlags(8);
         } catch (Exception e) {
-            o.d(f8785a, e.getMessage());
+            o.d(f5945a, e.getMessage());
             super.show();
         }
     }

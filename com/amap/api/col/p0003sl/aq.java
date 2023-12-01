@@ -7,13 +7,9 @@ import android.view.ViewConfiguration;
 /* renamed from: com.amap.api.col.3sl.aq  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/aq.class */
 public class aq {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f4746a;
+    private final Context a;
     private final a b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f4747c;
+    private boolean c;
     private MotionEvent d;
     private MotionEvent e;
     private float f;
@@ -51,7 +47,7 @@ public class aq {
 
     public aq(Context context, a aVar) {
         ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
-        this.f4746a = context;
+        this.a = context;
         this.b = aVar;
         this.r = viewConfiguration.getScaledEdgeSlop();
     }
@@ -115,7 +111,7 @@ public class aq {
         int findPointerIndex4 = motionEvent.findPointerIndex(this.x);
         if (findPointerIndex < 0 || findPointerIndex2 < 0 || findPointerIndex3 < 0 || findPointerIndex4 < 0) {
             this.v = true;
-            if (this.f4747c) {
+            if (this.c) {
                 this.b.c(this);
                 return;
             }
@@ -154,7 +150,7 @@ public class aq {
             this.e = null;
         }
         this.u = false;
-        this.f4747c = false;
+        this.c = false;
         this.w = -1;
         this.x = -1;
         this.v = false;

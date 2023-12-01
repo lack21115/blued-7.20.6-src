@@ -6,7 +6,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 public abstract class LoadMoreView {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f21574a = 1;
+    private int f7968a = 1;
     private boolean b = false;
 
     private void a(BaseViewHolder baseViewHolder, boolean z) {
@@ -27,11 +27,11 @@ public abstract class LoadMoreView {
     public abstract int a();
 
     public void a(int i) {
-        this.f21574a = i;
+        this.f7968a = i;
     }
 
     public void a(BaseViewHolder baseViewHolder) {
-        int i = this.f21574a;
+        int i = this.f7968a;
         if (i == 1) {
             a(baseViewHolder, false);
             b(baseViewHolder, false);
@@ -63,7 +63,7 @@ public abstract class LoadMoreView {
     protected abstract int d();
 
     public int e() {
-        return this.f21574a;
+        return this.f7968a;
     }
 
     public final boolean f() {

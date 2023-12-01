@@ -49,7 +49,7 @@ public class Flow extends VirtualLayout {
     public class WidgetsList {
 
         /* renamed from: c  reason: collision with root package name */
-        private int f2125c;
+        private int f2077c;
         private ConstraintAnchor e;
         private ConstraintAnchor f;
         private ConstraintAnchor g;
@@ -62,7 +62,7 @@ public class Flow extends VirtualLayout {
         private ConstraintWidget d = null;
 
         /* renamed from: a  reason: collision with root package name */
-        int f2124a = 0;
+        int f2076a = 0;
         private int m = 0;
         private int n = 0;
         private int o = 0;
@@ -70,13 +70,13 @@ public class Flow extends VirtualLayout {
         private int q = 0;
 
         public WidgetsList(int i, ConstraintAnchor constraintAnchor, ConstraintAnchor constraintAnchor2, ConstraintAnchor constraintAnchor3, ConstraintAnchor constraintAnchor4, int i2) {
-            this.f2125c = 0;
+            this.f2077c = 0;
             this.i = 0;
             this.j = 0;
             this.k = 0;
             this.l = 0;
             this.r = 0;
-            this.f2125c = i;
+            this.f2077c = i;
             this.e = constraintAnchor;
             this.f = constraintAnchor2;
             this.g = constraintAnchor3;
@@ -92,7 +92,7 @@ public class Flow extends VirtualLayout {
             this.m = 0;
             this.n = 0;
             this.d = null;
-            this.f2124a = 0;
+            this.f2076a = 0;
             int i = this.p;
             int i2 = 0;
             while (true) {
@@ -101,7 +101,7 @@ public class Flow extends VirtualLayout {
                     return;
                 }
                 ConstraintWidget constraintWidget = Flow.this.am[this.o + i3];
-                if (this.f2125c == 0) {
+                if (this.f2077c == 0) {
                     int width = constraintWidget.getWidth();
                     int i4 = Flow.this.ab;
                     if (constraintWidget.getVisibility() == 8) {
@@ -109,9 +109,9 @@ public class Flow extends VirtualLayout {
                     }
                     this.m += width + i4;
                     int b = Flow.this.b(constraintWidget, this.r);
-                    if (this.d == null || this.f2124a < b) {
+                    if (this.d == null || this.f2076a < b) {
                         this.d = constraintWidget;
-                        this.f2124a = b;
+                        this.f2076a = b;
                         this.n = b;
                     }
                 } else {
@@ -122,9 +122,9 @@ public class Flow extends VirtualLayout {
                         i5 = 0;
                     }
                     this.n += b2 + i5;
-                    if (this.d == null || this.f2124a < a2) {
+                    if (this.d == null || this.f2076a < a2) {
                         this.d = constraintWidget;
-                        this.f2124a = a2;
+                        this.f2076a = a2;
                         this.m = a2;
                     }
                 }
@@ -134,7 +134,7 @@ public class Flow extends VirtualLayout {
 
         public void add(ConstraintWidget constraintWidget) {
             int i = 0;
-            if (this.f2125c == 0) {
+            if (this.f2077c == 0) {
                 int a2 = Flow.this.a(constraintWidget, this.r);
                 if (constraintWidget.getHorizontalDimensionBehaviour() == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT) {
                     this.q++;
@@ -146,9 +146,9 @@ public class Flow extends VirtualLayout {
                 }
                 this.m += a2 + i2;
                 int b = Flow.this.b(constraintWidget, this.r);
-                if (this.d == null || this.f2124a < b) {
+                if (this.d == null || this.f2076a < b) {
                     this.d = constraintWidget;
-                    this.f2124a = b;
+                    this.f2076a = b;
                     this.n = b;
                 }
             } else {
@@ -163,9 +163,9 @@ public class Flow extends VirtualLayout {
                     i = i3;
                 }
                 this.n += b2 + i;
-                if (this.d == null || this.f2124a < a3) {
+                if (this.d == null || this.f2076a < a3) {
                     this.d = constraintWidget;
-                    this.f2124a = a3;
+                    this.f2076a = a3;
                     this.m = a3;
                 }
             }
@@ -173,7 +173,7 @@ public class Flow extends VirtualLayout {
         }
 
         public void clear() {
-            this.f2124a = 0;
+            this.f2076a = 0;
             this.d = null;
             this.m = 0;
             this.n = 0;
@@ -197,11 +197,11 @@ public class Flow extends VirtualLayout {
         }
 
         public int getHeight() {
-            return this.f2125c == 1 ? this.n - Flow.this.ac : this.n;
+            return this.f2077c == 1 ? this.n - Flow.this.ac : this.n;
         }
 
         public int getWidth() {
-            return this.f2125c == 0 ? this.m - Flow.this.ab : this.m;
+            return this.f2077c == 0 ? this.m - Flow.this.ab : this.m;
         }
 
         public void measureMatchConstraints(int i) {
@@ -218,7 +218,7 @@ public class Flow extends VirtualLayout {
                     break;
                 }
                 ConstraintWidget constraintWidget = Flow.this.am[this.o + i6];
-                if (this.f2125c == 0) {
+                if (this.f2077c == 0) {
                     if (constraintWidget != null && constraintWidget.getHorizontalDimensionBehaviour() == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT && constraintWidget.mMatchConstraintDefaultWidth == 0) {
                         Flow.this.a(constraintWidget, ConstraintWidget.DimensionBehaviour.FIXED, i4, constraintWidget.getVerticalDimensionBehaviour(), constraintWidget.getHeight());
                     }
@@ -235,7 +235,7 @@ public class Flow extends VirtualLayout {
         }
 
         public void setup(int i, ConstraintAnchor constraintAnchor, ConstraintAnchor constraintAnchor2, ConstraintAnchor constraintAnchor3, ConstraintAnchor constraintAnchor4, int i2, int i3, int i4, int i5, int i6) {
-            this.f2125c = i;
+            this.f2077c = i;
             this.e = constraintAnchor;
             this.f = constraintAnchor2;
             this.g = constraintAnchor3;

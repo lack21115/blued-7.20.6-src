@@ -8,13 +8,9 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/j.class */
 public abstract class j {
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f6762a;
+    public String a;
     public ATMediationRequestInfo b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f6763c;
+    public String c;
     public int d;
     public com.anythink.core.common.b.b e;
     public com.anythink.core.common.b.a f;

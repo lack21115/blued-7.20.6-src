@@ -12,7 +12,7 @@ import java.net.UnknownHostException;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f41862a = false;
+    private static boolean f28171a = false;
 
     public static String a(String str) {
         String str2 = str;
@@ -42,7 +42,7 @@ public class g {
     }
 
     public static void a(boolean z) {
-        f41862a = z;
+        f28171a = z;
     }
 
     public static boolean a(Context context, String[] strArr) {
@@ -67,7 +67,7 @@ public class g {
     public static String b(String str) {
         try {
             e a2 = com.yxcorp.kuaishou.addfp.c.a.a.a(str, false);
-            return !TextUtils.isEmpty(a2.b) ? a2.b : (TextUtils.isEmpty(a2.f41859c) || !a2.f41859c.contains(NetworkUtil.NETWORK_CLASS_DENIED)) ? TextUtils.isEmpty(a2.b) ? "KWE_N" : "KWE_OTHER" : "KWE_PN";
+            return !TextUtils.isEmpty(a2.b) ? a2.b : (TextUtils.isEmpty(a2.f28168c) || !a2.f28168c.contains(NetworkUtil.NETWORK_CLASS_DENIED)) ? TextUtils.isEmpty(a2.b) ? "KWE_N" : "KWE_OTHER" : "KWE_PN";
         } catch (Throwable th) {
             th.printStackTrace();
             return "KWE_PE";

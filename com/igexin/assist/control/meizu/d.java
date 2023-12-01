@@ -4,6 +4,6 @@ package com.igexin.assist.control.meizu;
 public class d<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f23187a;
+    public boolean f9579a;
     public T b;
 }

@@ -16,21 +16,20 @@ import org.json.JSONArray;
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/framework/network/grs/g/e.class */
 public class e {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/framework/network/grs/g/e$a.class */
-    public class a implements Runnable {
+    class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ long f22707a;
+        final /* synthetic */ long f9099a;
         final /* synthetic */ ArrayList b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ JSONArray f22708c;
+        final /* synthetic */ JSONArray f9100c;
 
         a(long j, ArrayList arrayList, JSONArray jSONArray) {
-            this.f22707a = j;
+            this.f9099a = j;
             this.b = arrayList;
-            this.f22708c = jSONArray;
+            this.f9100c = jSONArray;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:5:0x0024  */

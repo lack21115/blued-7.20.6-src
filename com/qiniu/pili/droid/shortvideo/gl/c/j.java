@@ -7,7 +7,7 @@ import com.qiniu.pili.droid.shortvideo.PLVideoMixSetting;
 public class j extends k {
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27720c;
+    private int f14032c;
     private int d;
     private PLVideoMixSetting e;
     private d f;
@@ -26,7 +26,7 @@ public class j extends k {
 
     @Override // com.qiniu.pili.droid.shortvideo.gl.c.k, com.qiniu.pili.droid.shortvideo.gl.c.g
     public boolean a(int i, int i2) {
-        this.f27720c = i;
+        this.f14032c = i;
         this.d = i2;
         return super.a(i, i2);
     }
@@ -35,19 +35,19 @@ public class j extends k {
     public boolean b() {
         Rect cameraVideoRect = this.e.getCameraVideoRect();
         this.f = new d(cameraVideoRect.width(), cameraVideoRect.height());
-        this.f.b(cameraVideoRect.left / this.f27720c, (this.d - cameraVideoRect.bottom) / this.d);
+        this.f.b(cameraVideoRect.left / this.f14032c, (this.d - cameraVideoRect.bottom) / this.d);
         this.f.a(true);
         this.f.a(1.0f);
         this.f.b(true);
-        this.f.a(this.f27720c, this.d);
+        this.f.a(this.f14032c, this.d);
         this.f.b();
         Rect sampleVideoRect = this.e.getSampleVideoRect();
         this.o = new d(sampleVideoRect.width(), sampleVideoRect.height());
-        this.o.b(sampleVideoRect.left / this.f27720c, (this.d - sampleVideoRect.bottom) / this.d);
+        this.o.b(sampleVideoRect.left / this.f14032c, (this.d - sampleVideoRect.bottom) / this.d);
         this.o.a(true);
         this.o.a(1.0f);
         this.o.b(true);
-        this.o.a(this.f27720c, this.d);
+        this.o.a(this.f14032c, this.d);
         this.o.b();
         return true;
     }

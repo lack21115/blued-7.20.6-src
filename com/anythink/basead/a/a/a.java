@@ -5,19 +5,15 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/a/a.class */
 public abstract class a<R, E> implements c<R, E> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final AtomicBoolean f5828a = new AtomicBoolean(false);
+    private final AtomicBoolean a = new AtomicBoolean(false);
     private final AtomicInteger b = new AtomicInteger(1);
-
-    /* renamed from: c  reason: collision with root package name */
-    private b<R, E> f5829c;
+    private b<R, E> c;
 
     @Override // com.anythink.basead.a.a.c
     public final void a() {
-        if (!this.f5828a.get() && this.b.decrementAndGet() == 0) {
-            this.f5828a.set(true);
-            b<R, E> bVar = this.f5829c;
+        if (!this.a.get() && this.b.decrementAndGet() == 0) {
+            this.a.set(true);
+            b<R, E> bVar = this.c;
             if (bVar != null) {
                 bVar.a();
             }
@@ -31,16 +27,16 @@ public abstract class a<R, E> implements c<R, E> {
 
     @Override // com.anythink.basead.a.a.c
     public final void a(b<R, E> bVar) {
-        this.f5829c = bVar;
+        this.c = bVar;
     }
 
     @Override // com.anythink.basead.a.a.c
     public final void a(E e) {
-        if (this.f5828a.get()) {
+        if (this.a.get()) {
             return;
         }
-        this.f5828a.set(true);
-        b<R, E> bVar = this.f5829c;
+        this.a.set(true);
+        b<R, E> bVar = this.c;
         if (bVar != null) {
             bVar.a(e);
         }

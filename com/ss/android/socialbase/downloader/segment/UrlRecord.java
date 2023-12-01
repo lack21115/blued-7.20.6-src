@@ -1,7 +1,6 @@
 package com.ss.android.socialbase.downloader.segment;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -58,14 +57,14 @@ public class UrlRecord {
         if (this.key == null) {
             StringBuilder sb = new StringBuilder();
             sb.append(this.url);
-            sb.append(BridgeUtil.UNDERLINE_STR);
+            sb.append("_");
             String str = this.ip;
             String str2 = str;
             if (str == null) {
                 str2 = "";
             }
             sb.append(str2);
-            sb.append(BridgeUtil.UNDERLINE_STR);
+            sb.append("_");
             sb.append(this.isMainUrl);
             this.key = sb.toString();
         }

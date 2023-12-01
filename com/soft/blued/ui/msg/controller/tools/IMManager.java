@@ -20,6 +20,7 @@ import com.blued.android.module.im.IM;
 import com.blued.android.module.yy_china.manager.YYIMManager;
 import com.blued.android.module.yy_china.manager.YYRoomInfoManager;
 import com.blued.im.audio_chatroom.AudioChatroomOuterClass;
+import com.efs.sdk.base.core.util.NetworkUtil;
 import com.google.protobuf.Any;
 import com.soft.blued.ui.login_register.LoginRegisterTools;
 import com.soft.blued.utils.Logger;
@@ -29,37 +30,38 @@ public class IMManager implements ConnectListener, ReceiveMsgListener {
     private static final String b = IMManager.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public String f32237a;
+    public String f18547a;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f32238c;
+    private boolean f18548c;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/controller/tools/IMManager$SingletonCreator.class */
-    static class SingletonCreator {
+    public static class SingletonCreator {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final IMManager f32239a = new IMManager();
+        public static final IMManager f18549a = new IMManager();
 
         private SingletonCreator() {
         }
     }
 
     private IMManager() {
-        this.f32237a = "disconnected";
+        this.f18547a = NetworkUtil.NETWORK_CLASS_DISCONNECTED;
     }
 
     public static IMManager a() {
-        return SingletonCreator.f32239a;
+        return SingletonCreator.f18549a;
     }
 
     private void h() {
-        this.f32238c = true;
+        this.f18548c = true;
         Logger.c(b, "initIM ======");
         ChatAppInfo chatAppInfo = new ChatAppInfo();
         chatAppInfo.platform = "android_china";
         chatAppInfo.appVersionName = AppInfo.g;
         chatAppInfo.appVersionCode = AppInfo.h;
-        chatAppInfo.channel = AppInfo.f9487c;
+        chatAppInfo.channel = AppInfo.c;
         chatAppInfo.clientType = ClientType.CHINA;
         chatAppInfo.language = LocaleUtils.b();
         chatAppInfo.context = AppInfo.d();
@@ -88,11 +90,11 @@ public class IMManager implements ConnectListener, ReceiveMsgListener {
     }
 
     public void c() {
-        IM.c().a(AppInfo.f9487c);
+        IM.c().a(AppInfo.c);
     }
 
     public void d() {
-        if (!this.f32238c) {
+        if (!this.f18548c) {
             h();
         }
         ChatUserInfo chatUserInfo = new ChatUserInfo();
@@ -106,7 +108,7 @@ public class IMManager implements ConnectListener, ReceiveMsgListener {
     }
 
     public void e() {
-        this.f32238c = false;
+        this.f18548c = false;
         PrivateChatManager.getInstance().stop();
         PrivateChatManager.getInstance().unregisterConnectListener(this);
         PrivateChatManager.getInstance().unregisterExternalMsgListener(this);
@@ -120,30 +122,26 @@ public class IMManager implements ConnectListener, ReceiveMsgListener {
         PrivateChatManager.getInstance().pause();
     }
 
-    @Override // com.blued.android.chat.grpc.listener.ConnectListener
     public void onConnected() {
         if (YYRoomInfoManager.e().b() != null) {
             YYIMManager.a().onConnected();
         }
         Logger.c(b, "grpc-链接成功，sync_msg");
         ChatManager.getInstance().syncMsg();
-        this.f32237a = "connected";
+        this.f18547a = "connected";
     }
 
-    @Override // com.blued.android.chat.grpc.listener.ConnectListener
     public void onConnecting() {
-        this.f32237a = "connecting";
+        this.f18547a = "connecting";
     }
 
-    @Override // com.blued.android.chat.grpc.listener.ConnectListener
     public void onDisconnected(int i, String str) {
-        this.f32237a = "Disconnected";
+        this.f18547a = "Disconnected";
         if (YYRoomInfoManager.e().b() != null) {
             YYIMManager.a().onDisconnected();
         }
     }
 
-    @Override // com.blued.android.chat.grpc.listener.ReceiveMsgListener
     public void onReceiveMsg(Any any) {
         if (any != null) {
             try {

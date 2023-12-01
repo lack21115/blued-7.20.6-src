@@ -27,7 +27,7 @@ public final class e {
             byte[] bArr = new byte[i];
             int i2 = 0;
             for (Signature signature2 : signatureArr) {
-                System.arraycopy((Object) signature2.toByteArray(), 0, (Object) bArr, i2, signature2.toByteArray().length);
+                System.arraycopy(signature2.toByteArray(), 0, bArr, i2, signature2.toByteArray().length);
                 i2 += signature2.toByteArray().length;
             }
             boolean a3 = o.a(bArr, decode);

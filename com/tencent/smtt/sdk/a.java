@@ -4,7 +4,7 @@ package com.tencent.smtt.sdk;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f38822a = 600;
+    public static int f25131a = 600;
     private static int b;
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0046, code lost:

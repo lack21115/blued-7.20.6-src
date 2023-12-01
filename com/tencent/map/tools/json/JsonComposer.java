@@ -2,7 +2,7 @@ package com.tencent.map.tools.json;
 
 import android.os.Build;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.ads.fw;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import com.tencent.map.tools.Util;
 import com.tencent.map.tools.json.JsonParser;
@@ -137,7 +137,7 @@ public abstract class JsonComposer implements JsonEncoder, JsonParser {
             Matcher matcher = Pattern.compile("[A-Z]").matcher(str3);
             StringBuffer stringBuffer = new StringBuffer();
             while (matcher.find()) {
-                matcher.appendReplacement(stringBuffer, BridgeUtil.UNDERLINE_STR + matcher.group(0).toLowerCase());
+                matcher.appendReplacement(stringBuffer, "_" + matcher.group(0).toLowerCase());
             }
             matcher.appendTail(stringBuffer);
             str4 = stringBuffer.toString();
@@ -240,7 +240,7 @@ public abstract class JsonComposer implements JsonEncoder, JsonParser {
                             } else if (opt instanceof String) {
                                 if (opt.equals("false")) {
                                     key.setBoolean(this, false);
-                                } else if (opt.equals("true")) {
+                                } else if (opt.equals(fw.Code)) {
                                     key.setBoolean(this, true);
                                 }
                             }

@@ -11,12 +11,10 @@ import javax.net.ssl.SSLPeerUnverifiedException;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/tls/BasicCertificateChainCleaner.class */
 public final class BasicCertificateChainCleaner extends CertificateChainCleaner {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final TrustRootIndex f43981a;
+    private final TrustRootIndex a;
 
     public BasicCertificateChainCleaner(TrustRootIndex trustRootIndex) {
-        this.f43981a = trustRootIndex;
+        this.a = trustRootIndex;
     }
 
     private boolean a(X509Certificate x509Certificate, X509Certificate x509Certificate2) {
@@ -39,8 +37,8 @@ public final class BasicCertificateChainCleaner extends CertificateChainCleaner 
         boolean z = false;
         for (int i = 0; i < 9; i++) {
             X509Certificate x509Certificate = (X509Certificate) arrayList.get(arrayList.size() - 1);
-            X509Certificate a2 = this.f43981a.a(x509Certificate);
-            if (a2 == null) {
+            X509Certificate a = this.a.a(x509Certificate);
+            if (a == null) {
                 Iterator<E> it = arrayDeque.iterator();
                 while (it.hasNext()) {
                     X509Certificate x509Certificate2 = (X509Certificate) it.next();
@@ -54,10 +52,10 @@ public final class BasicCertificateChainCleaner extends CertificateChainCleaner 
                 }
                 throw new SSLPeerUnverifiedException("Failed to find a trusted cert that signed " + x509Certificate);
             }
-            if (arrayList.size() > 1 || !x509Certificate.equals(a2)) {
-                arrayList.add(a2);
+            if (arrayList.size() > 1 || !x509Certificate.equals(a)) {
+                arrayList.add(a);
             }
-            if (a(a2, a2)) {
+            if (a(a, a)) {
                 return arrayList;
             }
             z = true;
@@ -69,10 +67,10 @@ public final class BasicCertificateChainCleaner extends CertificateChainCleaner 
         if (obj == this) {
             return true;
         }
-        return (obj instanceof BasicCertificateChainCleaner) && ((BasicCertificateChainCleaner) obj).f43981a.equals(this.f43981a);
+        return (obj instanceof BasicCertificateChainCleaner) && ((BasicCertificateChainCleaner) obj).a.equals(this.a);
     }
 
     public int hashCode() {
-        return this.f43981a.hashCode();
+        return this.a.hashCode();
     }
 }

@@ -1,6 +1,5 @@
 package com.tencent.tinker.android.dex.util;
 
-import android.widget.ExpandableListView;
 import java.util.Comparator;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/tinker/android/dex/util/CompareUtils.class */
@@ -255,7 +254,7 @@ public final class CompareUtils {
         if (i == i2) {
             return 0;
         }
-        return (((long) i) & ExpandableListView.PACKED_POSITION_VALUE_NULL) < (((long) i2) & ExpandableListView.PACKED_POSITION_VALUE_NULL) ? -1 : 1;
+        return (((long) i) & 4294967295L) < (((long) i2) & 4294967295L) ? -1 : 1;
     }
 
     public static int uCompare(short s, short s2) {

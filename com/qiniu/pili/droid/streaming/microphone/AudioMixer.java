@@ -13,7 +13,7 @@ public class AudioMixer {
     public static final boolean s = SharedLibraryNameHelper.getInstance().b();
 
     /* renamed from: c  reason: collision with root package name */
-    public ByteBuffer f27845c;
+    public ByteBuffer f14157c;
     public ByteBuffer d;
     public int e;
     public int f;
@@ -27,7 +27,7 @@ public class AudioMixer {
     public OnAudioMixListener p;
 
     /* renamed from: a  reason: collision with root package name */
-    public a f27844a = new a();
+    public a f14156a = new a();
     public AudioTransformer b = new AudioTransformer();
     public float n = 1.0f;
     public float o = 1.0f;
@@ -42,7 +42,7 @@ public class AudioMixer {
         synchronized (this) {
             e.h.c("PLAudioMixer", "amix destroy");
             stop();
-            this.f27844a.h();
+            this.f14156a.h();
             this.b.destroy(this.r);
             destroy(this.q);
         }
@@ -67,27 +67,27 @@ public class AudioMixer {
         int limit;
         synchronized (this) {
             while (this.d.remaining() < i) {
-                ByteBuffer f = this.f27844a.f();
+                ByteBuffer f = this.f14156a.f();
                 if (f != null) {
                     int remaining = f.remaining();
-                    ByteBuffer byteBuffer3 = this.f27845c;
+                    ByteBuffer byteBuffer3 = this.f14157c;
                     if (byteBuffer3 != null && byteBuffer3.capacity() >= remaining) {
-                        this.f27845c.clear();
-                        this.f27845c.put(f);
-                        this.f27845c.flip();
+                        this.f14157c.clear();
+                        this.f14157c.put(f);
+                        this.f14157c.flip();
                         AudioTransformer audioTransformer = this.b;
                         long j = this.r;
-                        ByteBuffer byteBuffer4 = this.f27845c;
+                        ByteBuffer byteBuffer4 = this.f14157c;
                         int position = byteBuffer4.position();
                         ByteBuffer byteBuffer5 = this.d;
                         limit = audioTransformer.resample(j, byteBuffer4, position, remaining, byteBuffer5, byteBuffer5.limit());
                     }
-                    this.f27845c = ByteBuffer.allocateDirect(remaining);
-                    this.f27845c.put(f);
-                    this.f27845c.flip();
+                    this.f14157c = ByteBuffer.allocateDirect(remaining);
+                    this.f14157c.put(f);
+                    this.f14157c.flip();
                     AudioTransformer audioTransformer2 = this.b;
                     long j2 = this.r;
-                    ByteBuffer byteBuffer42 = this.f27845c;
+                    ByteBuffer byteBuffer42 = this.f14157c;
                     int position2 = byteBuffer42.position();
                     ByteBuffer byteBuffer52 = this.d;
                     limit = audioTransformer2.resample(j2, byteBuffer42, position2, remaining, byteBuffer52, byteBuffer52.limit());
@@ -102,7 +102,7 @@ public class AudioMixer {
                 }
                 ByteBuffer byteBuffer6 = this.d;
                 byteBuffer6.limit(byteBuffer6.limit() + limit);
-                this.f27844a.g();
+                this.f14156a.g();
             }
             if (!this.m) {
                 long j3 = this.q;
@@ -136,7 +136,7 @@ public class AudioMixer {
     public final native void destroy(long j);
 
     public long getDuration() {
-        return this.f27844a.b();
+        return this.f14156a.b();
     }
 
     public final native long init(int i);
@@ -166,7 +166,7 @@ public class AudioMixer {
 
     public boolean seek(float f) {
         if (b()) {
-            this.f27844a.a(((float) getDuration()) * f);
+            this.f14156a.a(((float) getDuration()) * f);
             return true;
         }
         return false;
@@ -174,19 +174,19 @@ public class AudioMixer {
 
     public boolean setFile(String str, boolean z) throws IOException {
         synchronized (this) {
-            this.f27844a.h();
-            boolean a2 = this.f27844a.a(str, z);
+            this.f14156a.h();
+            boolean a2 = this.f14156a.a(str, z);
             boolean z2 = false;
             if (!a2) {
                 e.h.e("PLAudioMixer", "setup decoder for " + str + " failed");
                 return false;
             }
-            int d = this.f27844a.d();
-            int e = this.f27844a.e();
-            int c2 = this.f27844a.c();
+            int d = this.f14156a.d();
+            int e = this.f14156a.e();
+            int c2 = this.f14156a.c();
             this.j = d * e * (c2 / 8);
             e.h.c("PLAudioMixer", "decode data parameters will be sampleRate:" + d + " channels:" + e + " sampleSize:" + c2 + " bytesPerSecond:" + this.j);
-            int a3 = a(this.f27844a.a());
+            int a3 = a(this.f14156a.a());
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(a3 * ((int) Math.ceil((((double) this.h) * 1.0d) / ((double) a3))) * 2);
             this.d = allocateDirect;
             allocateDirect.limit(0);
@@ -208,7 +208,7 @@ public class AudioMixer {
 
     public void setOnAudioMixListener(OnAudioMixListener onAudioMixListener) {
         this.p = onAudioMixListener;
-        this.f27844a.a(onAudioMixListener);
+        this.f14156a.a(onAudioMixListener);
     }
 
     public void setVolume(float f, float f2) {
@@ -218,7 +218,7 @@ public class AudioMixer {
 
     public boolean stop() {
         if (pause()) {
-            this.f27844a.a(0L);
+            this.f14156a.a(0L);
             return true;
         }
         return false;

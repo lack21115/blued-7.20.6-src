@@ -6,7 +6,7 @@ import com.huawei.hms.ads.uiengineloader.aa;
 public final class k implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22476a = "SafeRunnable";
+    private static final String f8868a = "SafeRunnable";
     private Runnable b;
 
     public k(Runnable runnable) {
@@ -20,7 +20,7 @@ public final class k implements Runnable {
             try {
                 runnable.run();
             } catch (Throwable th) {
-                aa.d(f22476a, "exception in task run: " + th.getClass().getSimpleName());
+                aa.d(f8868a, "exception in task run: " + th.getClass().getSimpleName());
             }
         }
     }

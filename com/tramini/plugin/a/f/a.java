@@ -13,11 +13,11 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40528a = a.class.getSimpleName();
+    public static final String f26837a = a.class.getSimpleName();
     private static a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<Integer, Runnable> f40529c;
+    private Map<Integer, Runnable> f26838c;
 
     private a() {
     }
@@ -39,7 +39,7 @@ public class a {
             int i2 = 5000;
             if (cVar != null) {
                 int i3 = cVar.b;
-                int i4 = cVar.f40503c;
+                int i4 = cVar.f26812c;
                 if (i3 == 0 && i4 == 0) {
                     i2 = 0;
                 } else {
@@ -60,7 +60,7 @@ public class a {
                         @Override // com.tramini.plugin.a.d.b
                         public final void a(int i5, Object obj) {
                             Runnable runnable;
-                            if (2 == i5 && a.this.f40529c != null && (runnable = (Runnable) a.this.f40529c.remove(Integer.valueOf(i5))) != null) {
+                            if (2 == i5 && a.this.f26838c != null && (runnable = (Runnable) a.this.f26838c.remove(Integer.valueOf(i5))) != null) {
                                 runnable.run();
                             }
                             c.a().b(c.a().b());
@@ -77,10 +77,10 @@ public class a {
     }
 
     public final void a(Runnable runnable) {
-        if (this.f40529c == null) {
-            this.f40529c = new HashMap(3);
+        if (this.f26838c == null) {
+            this.f26838c = new HashMap(3);
         }
-        this.f40529c.put(2, runnable);
+        this.f26838c.put(2, runnable);
     }
 
     public final void a(String str, String str2) {

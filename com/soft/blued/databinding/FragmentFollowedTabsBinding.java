@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentFollowedTabsBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28826a;
+    private final LinearLayout f15136a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28826a;
+        return this.f15136a;
     }
 }

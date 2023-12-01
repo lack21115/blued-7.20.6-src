@@ -10,11 +10,11 @@ public class SortedList<T> {
     public static final int INVALID_POSITION = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    T[] f3341a;
+    T[] f3293a;
     private T[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f3342c;
+    private int f3294c;
     private int d;
     private int e;
     private Callback f;
@@ -26,27 +26,27 @@ public class SortedList<T> {
     public static class BatchedCallback<T2> extends Callback<T2> {
 
         /* renamed from: a  reason: collision with root package name */
-        final Callback<T2> f3343a;
+        final Callback<T2> f3295a;
         private final BatchingListUpdateCallback b;
 
         public BatchedCallback(Callback<T2> callback) {
-            this.f3343a = callback;
+            this.f3295a = callback;
             this.b = new BatchingListUpdateCallback(callback);
         }
 
         @Override // androidx.recyclerview.widget.SortedList.Callback
         public boolean areContentsTheSame(T2 t2, T2 t22) {
-            return this.f3343a.areContentsTheSame(t2, t22);
+            return this.f3295a.areContentsTheSame(t2, t22);
         }
 
         @Override // androidx.recyclerview.widget.SortedList.Callback
         public boolean areItemsTheSame(T2 t2, T2 t22) {
-            return this.f3343a.areItemsTheSame(t2, t22);
+            return this.f3295a.areItemsTheSame(t2, t22);
         }
 
         @Override // androidx.recyclerview.widget.SortedList.Callback, java.util.Comparator
         public int compare(T2 t2, T2 t22) {
-            return this.f3343a.compare(t2, t22);
+            return this.f3295a.compare(t2, t22);
         }
 
         public void dispatchLastEvent() {
@@ -55,7 +55,7 @@ public class SortedList<T> {
 
         @Override // androidx.recyclerview.widget.SortedList.Callback
         public Object getChangePayload(T2 t2, T2 t22) {
-            return this.f3343a.getChangePayload(t2, t22);
+            return this.f3295a.getChangePayload(t2, t22);
         }
 
         @Override // androidx.recyclerview.widget.SortedList.Callback
@@ -110,7 +110,7 @@ public class SortedList<T> {
 
     public SortedList(Class<T> cls, Callback<T> callback, int i) {
         this.i = cls;
-        this.f3341a = (T[]) ((Object[]) Array.newInstance((Class<?>) cls, i));
+        this.f3293a = (T[]) ((Object[]) Array.newInstance((Class<?>) cls, i));
         this.f = callback;
         this.h = 0;
     }
@@ -126,7 +126,7 @@ public class SortedList<T> {
             if (i7 < i2) {
                 break;
             }
-            T t3 = this.f3341a[i7];
+            T t3 = this.f3293a[i7];
             if (this.f.compare(t3, t) != 0) {
                 i4 = i;
                 break;
@@ -141,7 +141,7 @@ public class SortedList<T> {
             if (i5 >= i3) {
                 return -1;
             }
-            t2 = this.f3341a[i5];
+            t2 = this.f3293a[i5];
             if (this.f.compare(t2, t) != 0) {
                 return -1;
             }
@@ -152,20 +152,20 @@ public class SortedList<T> {
 
     private int a(T t, boolean z) {
         int i;
-        int a2 = a(t, this.f3341a, 0, this.h, 1);
+        int a2 = a(t, this.f3293a, 0, this.h, 1);
         if (a2 == -1) {
             i = 0;
         } else {
             i = a2;
             if (a2 < this.h) {
-                T t2 = this.f3341a[a2];
+                T t2 = this.f3293a[a2];
                 i = a2;
                 if (this.f.areItemsTheSame(t2, t)) {
                     if (this.f.areContentsTheSame(t2, t)) {
-                        this.f3341a[a2] = t;
+                        this.f3293a[a2] = t;
                         return a2;
                     }
-                    this.f3341a[a2] = t;
+                    this.f3293a[a2] = t;
                     Callback callback = this.f;
                     callback.onChanged(a2, 1, callback.getChangePayload(t2, t));
                     return a2;
@@ -217,7 +217,7 @@ public class SortedList<T> {
 
     private void a() {
         this.h--;
-        this.f3342c++;
+        this.f3294c++;
         this.f.onRemoved(this.e, 1);
     }
 
@@ -226,33 +226,33 @@ public class SortedList<T> {
         if (i > i2) {
             throw new IndexOutOfBoundsException("cannot add item to " + i + " because size is " + this.h);
         }
-        T[] tArr = this.f3341a;
+        T[] tArr = this.f3293a;
         if (i2 == tArr.length) {
             T[] tArr2 = (T[]) ((Object[]) Array.newInstance((Class<?>) this.i, tArr.length + 10));
-            System.arraycopy(this.f3341a, 0, tArr2, 0, i);
+            System.arraycopy(this.f3293a, 0, tArr2, 0, i);
             tArr2[i] = t;
-            System.arraycopy(this.f3341a, i, tArr2, i + 1, this.h - i);
-            this.f3341a = tArr2;
+            System.arraycopy(this.f3293a, i, tArr2, i + 1, this.h - i);
+            this.f3293a = tArr2;
         } else {
             System.arraycopy(tArr, i, tArr, i + 1, i2 - i);
-            this.f3341a[i] = t;
+            this.f3293a[i] = t;
         }
         this.h++;
     }
 
     private void a(int i, boolean z) {
-        T[] tArr = this.f3341a;
+        T[] tArr = this.f3293a;
         System.arraycopy(tArr, i + 1, tArr, i, (this.h - i) - 1);
         int i2 = this.h - 1;
         this.h = i2;
-        this.f3341a[i2] = null;
+        this.f3293a[i2] = null;
         if (z) {
             this.f.onRemoved(i, 1);
         }
     }
 
     private void a(T t) {
-        T[] tArr = this.f3341a;
+        T[] tArr = this.f3293a;
         int i = this.e;
         tArr[i] = t;
         int i2 = i + 1;
@@ -270,7 +270,7 @@ public class SortedList<T> {
             a(tArr, c2);
             return;
         }
-        this.f3341a = tArr;
+        this.f3293a = tArr;
         this.h = c2;
         this.f.onInserted(0, c2);
     }
@@ -280,22 +280,22 @@ public class SortedList<T> {
         if (z) {
             beginBatchedUpdates();
         }
-        this.b = this.f3341a;
+        this.b = this.f3293a;
         int i2 = 0;
-        this.f3342c = 0;
+        this.f3294c = 0;
         int i3 = this.h;
         this.d = i3;
-        this.f3341a = (T[]) ((Object[]) Array.newInstance((Class<?>) this.i, i3 + i + 10));
+        this.f3293a = (T[]) ((Object[]) Array.newInstance((Class<?>) this.i, i3 + i + 10));
         this.e = 0;
         while (true) {
-            if (this.f3342c >= this.d && i2 >= i) {
+            if (this.f3294c >= this.d && i2 >= i) {
                 break;
             }
-            int i4 = this.f3342c;
+            int i4 = this.f3294c;
             int i5 = this.d;
             if (i4 == i5) {
                 int i6 = i - i2;
-                System.arraycopy(tArr, i2, this.f3341a, this.e, i6);
+                System.arraycopy(tArr, i2, this.f3293a, this.e, i6);
                 int i7 = this.e + i6;
                 this.e = i7;
                 this.h += i6;
@@ -303,7 +303,7 @@ public class SortedList<T> {
                 break;
             } else if (i2 == i) {
                 int i8 = i5 - i4;
-                System.arraycopy(this.b, i4, this.f3341a, this.e, i8);
+                System.arraycopy(this.b, i4, this.f3293a, this.e, i8);
                 this.e += i8;
                 break;
             } else {
@@ -311,7 +311,7 @@ public class SortedList<T> {
                 T t2 = tArr[i2];
                 int compare = this.f.compare(t, t2);
                 if (compare > 0) {
-                    T[] tArr2 = this.f3341a;
+                    T[] tArr2 = this.f3293a;
                     int i9 = this.e;
                     int i10 = i9 + 1;
                     this.e = i10;
@@ -320,12 +320,12 @@ public class SortedList<T> {
                     i2++;
                     this.f.onInserted(i10 - 1, 1);
                 } else if (compare == 0 && this.f.areItemsTheSame(t, t2)) {
-                    T[] tArr3 = this.f3341a;
+                    T[] tArr3 = this.f3293a;
                     int i11 = this.e;
                     this.e = i11 + 1;
                     tArr3[i11] = t2;
                     int i12 = i2 + 1;
-                    this.f3342c++;
+                    this.f3294c++;
                     i2 = i12;
                     if (!this.f.areContentsTheSame(t, t2)) {
                         Callback callback = this.f;
@@ -333,11 +333,11 @@ public class SortedList<T> {
                         i2 = i12;
                     }
                 } else {
-                    T[] tArr4 = this.f3341a;
+                    T[] tArr4 = this.f3293a;
                     int i13 = this.e;
                     this.e = i13 + 1;
                     tArr4[i13] = t;
-                    this.f3342c++;
+                    this.f3294c++;
                 }
             }
         }
@@ -358,22 +358,22 @@ public class SortedList<T> {
         if (z) {
             beginBatchedUpdates();
         }
-        this.f3342c = 0;
+        this.f3294c = 0;
         this.d = this.h;
-        this.b = this.f3341a;
+        this.b = this.f3293a;
         this.e = 0;
         int c2 = c(tArr);
-        this.f3341a = (T[]) ((Object[]) Array.newInstance((Class<?>) this.i, c2));
+        this.f3293a = (T[]) ((Object[]) Array.newInstance((Class<?>) this.i, c2));
         while (true) {
-            if (this.e >= c2 && this.f3342c >= this.d) {
+            if (this.e >= c2 && this.f3294c >= this.d) {
                 break;
             }
-            int i = this.f3342c;
+            int i = this.f3294c;
             int i2 = this.d;
             if (i >= i2) {
                 int i3 = this.e;
                 int i4 = c2 - i3;
-                System.arraycopy(tArr, i3, this.f3341a, i3, i4);
+                System.arraycopy(tArr, i3, this.f3293a, i3, i4);
                 this.e += i4;
                 this.h += i4;
                 this.f.onInserted(i3, i4);
@@ -394,10 +394,10 @@ public class SortedList<T> {
             } else if (compare > 0) {
                 a((SortedList<T>) t2);
             } else if (this.f.areItemsTheSame(t, t2)) {
-                T[] tArr2 = this.f3341a;
+                T[] tArr2 = this.f3293a;
                 int i7 = this.e;
                 tArr2[i7] = t2;
-                this.f3342c++;
+                this.f3294c++;
                 this.e = i7 + 1;
                 if (!this.f.areContentsTheSame(t, t2)) {
                     Callback callback = this.f;
@@ -415,7 +415,7 @@ public class SortedList<T> {
     }
 
     private boolean b(T t, boolean z) {
-        int a2 = a(t, this.f3341a, 0, this.h, 2);
+        int a2 = a(t, this.f3293a, 0, this.h, 2);
         if (a2 == -1) {
             return false;
         }
@@ -503,7 +503,7 @@ public class SortedList<T> {
         if (i == 0) {
             return;
         }
-        Arrays.fill(this.f3341a, 0, i, (Object) null);
+        Arrays.fill(this.f3293a, 0, i, (Object) null);
         this.h = 0;
         this.f.onRemoved(0, i);
     }
@@ -517,7 +517,7 @@ public class SortedList<T> {
         Callback callback2 = this.f;
         BatchedCallback batchedCallback = this.g;
         if (callback2 == batchedCallback) {
-            this.f = batchedCallback.f3343a;
+            this.f = batchedCallback.f3295a;
         }
     }
 
@@ -525,24 +525,24 @@ public class SortedList<T> {
         int i2;
         if (i < this.h && i >= 0) {
             T[] tArr = this.b;
-            return (tArr == null || i < (i2 = this.e)) ? this.f3341a[i] : tArr[(i - i2) + this.f3342c];
+            return (tArr == null || i < (i2 = this.e)) ? this.f3293a[i] : tArr[(i - i2) + this.f3294c];
         }
         throw new IndexOutOfBoundsException("Asked to get item at " + i + " but size is " + this.h);
     }
 
     public int indexOf(T t) {
         if (this.b != null) {
-            int a2 = a(t, this.f3341a, 0, this.e, 4);
+            int a2 = a(t, this.f3293a, 0, this.e, 4);
             if (a2 != -1) {
                 return a2;
             }
-            int a3 = a(t, this.b, this.f3342c, this.d, 4);
+            int a3 = a(t, this.b, this.f3294c, this.d, 4);
             if (a3 != -1) {
-                return (a3 - this.f3342c) + this.e;
+                return (a3 - this.f3294c) + this.e;
             }
             return -1;
         }
-        return a(t, this.f3341a, 0, this.h, 4);
+        return a(t, this.f3293a, 0, this.h, 4);
     }
 
     public void recalculatePositionOfItemAt(int i) {
@@ -594,7 +594,7 @@ public class SortedList<T> {
         T t2 = get(i);
         boolean z = t2 == t || !this.f.areContentsTheSame(t2, t);
         if (t2 != t && this.f.compare(t2, t) == 0) {
-            this.f3341a[i] = t;
+            this.f3293a[i] = t;
             if (z) {
                 Callback callback = this.f;
                 callback.onChanged(i, 1, callback.getChangePayload(t2, t));

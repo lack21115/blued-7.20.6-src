@@ -52,9 +52,9 @@ public class LiveGiftTabView extends CommonGiftTabView<LiveGiftPackageModel> {
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     int[] iArr = new int[2];
-                    View a2 = commonAdapterHolder.a(R.id.live_gift_tab_item_qa);
-                    a2.getLocationInWindow(iArr);
-                    LiveGiftTabView.this.a(commonAdapterHolder.getLayoutPosition(), iArr[0] + DisplayUtil.a(a2.getContext(), 14.0f));
+                    View a = commonAdapterHolder.a(R.id.live_gift_tab_item_qa);
+                    a.getLocationInWindow(iArr);
+                    LiveGiftTabView.this.a(commonAdapterHolder.getLayoutPosition(), iArr[0] + DisplayUtil.a(a.getContext(), 14.0f));
                 }
             }).a().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftTabView$LiveGiftTabAdapter$jPOYZm4_f2PQX5w-t0QvdF3C3MQ
                 @Override // android.view.View.OnClickListener
@@ -82,7 +82,7 @@ public class LiveGiftTabView extends CommonGiftTabView<LiveGiftPackageModel> {
 
     @Override // com.blued.android.module.common.view.CommonGiftTabView
     public CommonGiftTabView<LiveGiftPackageModel>.GiftTabAdapter a() {
-        return new LiveGiftTabAdapter(this.f10971a);
+        return new LiveGiftTabAdapter(this.a);
     }
 
     @Override // com.blued.android.module.common.view.CommonGiftTabView

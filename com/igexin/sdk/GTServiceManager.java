@@ -12,7 +12,7 @@ public class GTServiceManager {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final GTServiceManager f23670a = new GTServiceManager();
+        private static final GTServiceManager f10062a = new GTServiceManager();
 
         private a() {
         }
@@ -22,7 +22,7 @@ public class GTServiceManager {
     }
 
     public static GTServiceManager getInstance() {
-        return a.f23670a;
+        return a.f10062a;
     }
 
     public void onActivityCreate(Activity activity) {

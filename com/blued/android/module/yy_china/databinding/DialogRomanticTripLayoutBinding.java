@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogRomanticTripLayoutBinding.class */
 public final class DialogRomanticTripLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16399a;
+    public final View a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final View f16400c;
+    public final View c;
     public final View d;
     public final ImageView e;
     public final ImageView f;
@@ -35,9 +31,9 @@ public final class DialogRomanticTripLayoutBinding implements ViewBinding {
 
     private DialogRomanticTripLayoutBinding(ConstraintLayout constraintLayout, View view, ShapeTextView shapeTextView, View view2, View view3, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ConstraintLayout constraintLayout2, ShapeConstraintLayout shapeConstraintLayout, RecyclerView recyclerView, RecyclerView recyclerView2, TextView textView, TextView textView2, TextView textView3) {
         this.p = constraintLayout;
-        this.f16399a = view;
+        this.a = view;
         this.b = shapeTextView;
-        this.f16400c = view2;
+        this.c = view2;
         this.d = view3;
         this.e = imageView;
         this.f = imageView2;
@@ -70,21 +66,21 @@ public final class DialogRomanticTripLayoutBinding implements ViewBinding {
                                 if (imageView3 != null) {
                                     ImageView imageView4 = (ImageView) view.findViewById(R.id.img_user_list_bg);
                                     if (imageView4 != null) {
-                                        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_content_view);
-                                        if (constraintLayout != null) {
+                                        ConstraintLayout findViewById4 = view.findViewById(R.id.ll_content_view);
+                                        if (findViewById4 != null) {
                                             ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.ll_user_list);
                                             if (shapeConstraintLayout != null) {
-                                                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_city_list);
-                                                if (recyclerView != null) {
-                                                    RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rv_user_list);
-                                                    if (recyclerView2 != null) {
+                                                RecyclerView findViewById5 = view.findViewById(R.id.rv_city_list);
+                                                if (findViewById5 != null) {
+                                                    RecyclerView findViewById6 = view.findViewById(R.id.rv_user_list);
+                                                    if (findViewById6 != null) {
                                                         TextView textView = (TextView) view.findViewById(R.id.tv_guidebook);
                                                         if (textView != null) {
                                                             TextView textView2 = (TextView) view.findViewById(R.id.tv_rule_info);
                                                             if (textView2 != null) {
                                                                 TextView textView3 = (TextView) view.findViewById(R.id.tv_user_title);
                                                                 if (textView3 != null) {
-                                                                    return new DialogRomanticTripLayoutBinding((ConstraintLayout) view, findViewById, shapeTextView, findViewById2, findViewById3, imageView, imageView2, imageView3, imageView4, constraintLayout, shapeConstraintLayout, recyclerView, recyclerView2, textView, textView2, textView3);
+                                                                    return new DialogRomanticTripLayoutBinding((ConstraintLayout) view, findViewById, shapeTextView, findViewById2, findViewById3, imageView, imageView2, imageView3, imageView4, findViewById4, shapeConstraintLayout, findViewById5, findViewById6, textView, textView2, textView3);
                                                                 }
                                                                 str = "tvUserTitle";
                                                             } else {
@@ -132,7 +128,6 @@ public final class DialogRomanticTripLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.p;

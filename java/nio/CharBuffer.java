@@ -1,6 +1,5 @@
 package java.nio;
 
-import com.igexin.push.core.b;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -45,20 +44,20 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
     }
 
     @Override // java.lang.Appendable
-    public CharBuffer append(char c2) {
-        return put(c2);
+    public CharBuffer append(char c) {
+        return put(c);
     }
 
     @Override // java.lang.Appendable
     public CharBuffer append(CharSequence charSequence) {
-        return charSequence != null ? put(charSequence.toString()) : put(b.l);
+        return charSequence != null ? put(charSequence.toString()) : put("null");
     }
 
     @Override // java.lang.Appendable
     public CharBuffer append(CharSequence charSequence, int i, int i2) {
         CharSequence charSequence2 = charSequence;
         if (charSequence == null) {
-            charSequence2 = b.l;
+            charSequence2 = "null";
         }
         CharSequence subSequence = charSequence2.subSequence(i, i2);
         CharBuffer charBuffer = this;
@@ -95,10 +94,10 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
         int i = this.position;
         int i2 = charBuffer.position;
         for (int remaining = remaining() < charBuffer.remaining() ? remaining() : charBuffer.remaining(); remaining > 0; remaining--) {
-            char c2 = get(i);
-            char c3 = charBuffer.get(i2);
-            if (c2 != c3) {
-                return c2 < c3 ? -1 : 1;
+            char c = get(i);
+            char c2 = charBuffer.get(i2);
+            if (c != c2) {
+                return c < c2 ? -1 : 1;
             }
             i++;
             i2++;
@@ -157,11 +156,11 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v6, types: [int] */
     public int hashCode() {
-        char c2 = 0;
+        char c = 0;
         for (int i = this.position; i < this.limit; i++) {
-            c2 += get(i);
+            c += get(i);
         }
-        return c2;
+        return c;
     }
 
     @Override // java.nio.Buffer
@@ -180,9 +179,9 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
 
     abstract boolean protectedHasArray();
 
-    public abstract CharBuffer put(char c2);
+    public abstract CharBuffer put(char c);
 
-    public abstract CharBuffer put(int i, char c2);
+    public abstract CharBuffer put(int i, char c);
 
     public final CharBuffer put(String str) {
         return put(str, 0, str.length());

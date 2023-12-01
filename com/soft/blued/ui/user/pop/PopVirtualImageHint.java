@@ -20,23 +20,22 @@ public final class PopVirtualImageHint extends CenterPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(PopVirtualImageHint this$0, View view) {
+    public static final void a(PopVirtualImageHint popVirtualImageHint, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(popVirtualImageHint, "this$0");
+        popVirtualImageHint.p();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(PopVirtualImageHint this$0, View view) {
+    public static final void b(PopVirtualImageHint popVirtualImageHint, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(popVirtualImageHint, "this$0");
+        popVirtualImageHint.p();
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
-        ((TextView) findViewById(2131372535)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.pop.-$$Lambda$PopVirtualImageHint$oRVxndhwYaPGG6kMl-UbInD37hI
+        ((TextView) findViewById(R.id.tv_select)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.pop.-$$Lambda$PopVirtualImageHint$oRVxndhwYaPGG6kMl-UbInD37hI
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PopVirtualImageHint.a(PopVirtualImageHint.this, view);
@@ -50,7 +49,6 @@ public final class PopVirtualImageHint extends CenterPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_virtual_image_hint;
     }

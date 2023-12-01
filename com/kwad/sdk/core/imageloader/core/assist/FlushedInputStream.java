@@ -18,7 +18,7 @@ public class FlushedInputStream extends FilterInputStream {
             if (j2 >= j) {
                 break;
             }
-            long skip = this.f42254in.skip(j - j2);
+            long skip = this.in.skip(j - j2);
             long j4 = skip;
             if (skip == 0) {
                 if (read() < 0) {

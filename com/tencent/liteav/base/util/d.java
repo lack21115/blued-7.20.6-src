@@ -7,11 +7,11 @@ import java.util.concurrent.CountDownLatch;
 public final /* synthetic */ class d implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Runnable f36328a;
+    private final Runnable f22637a;
     private final CountDownLatch b;
 
     private d(Runnable runnable, CountDownLatch countDownLatch) {
-        this.f36328a = runnable;
+        this.f22637a = runnable;
         this.b = countDownLatch;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class d implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        b.a(this.f36328a, this.b);
+        b.a(this.f22637a, this.b);
     }
 }

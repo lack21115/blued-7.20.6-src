@@ -50,7 +50,7 @@ public final class ChannelTracer {
         this.logId = (InternalLogId) Preconditions.checkNotNull(internalLogId, "logId");
         if (i > 0) {
             this.events = new ArrayDeque<InternalChannelz.ChannelTrace.Event>() { // from class: io.grpc.internal.ChannelTracer.1
-                @Override // java.util.ArrayDeque, java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.ArrayDeque, java.util.AbstractCollection, java.util.Collection
                 public boolean add(InternalChannelz.ChannelTrace.Event event) {
                     if (size() == i) {
                         removeFirst();

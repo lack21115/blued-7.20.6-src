@@ -11,11 +11,11 @@ import com.bumptech.glide.util.Util;
 public class BitmapResource implements Initializable, Resource<Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Bitmap f20940a;
+    private final Bitmap f7334a;
     private final BitmapPool b;
 
     public BitmapResource(Bitmap bitmap, BitmapPool bitmapPool) {
-        this.f20940a = (Bitmap) Preconditions.a(bitmap, "Bitmap must not be null");
+        this.f7334a = (Bitmap) Preconditions.a(bitmap, "Bitmap must not be null");
         this.b = (BitmapPool) Preconditions.a(bitmapPool, "BitmapPool must not be null");
     }
 
@@ -33,22 +33,22 @@ public class BitmapResource implements Initializable, Resource<Bitmap> {
 
     @Override // com.bumptech.glide.load.engine.Resource
     public int b() {
-        return Util.a(this.f20940a);
+        return Util.a(this.f7334a);
     }
 
     @Override // com.bumptech.glide.load.engine.Resource
     public void c() {
-        this.b.a(this.f20940a);
+        this.b.a(this.f7334a);
     }
 
     @Override // com.bumptech.glide.load.engine.Initializable
     public void d() {
-        this.f20940a.prepareToDraw();
+        this.f7334a.prepareToDraw();
     }
 
     @Override // com.bumptech.glide.load.engine.Resource
     /* renamed from: e */
     public Bitmap f() {
-        return this.f20940a;
+        return this.f7334a;
     }
 }

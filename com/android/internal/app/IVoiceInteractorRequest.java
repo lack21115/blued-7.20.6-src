@@ -14,9 +14,8 @@ public interface IVoiceInteractorRequest extends IInterface {
         private static final String DESCRIPTOR = "com.android.internal.app.IVoiceInteractorRequest";
         static final int TRANSACTION_cancel_0 = 1;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/app/IVoiceInteractorRequest$Stub$Proxy.class */
-        public static class Proxy implements IVoiceInteractorRequest {
+        private static class Proxy implements IVoiceInteractorRequest {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -72,7 +71,7 @@ public interface IVoiceInteractorRequest extends IInterface {
                     cancel();
                     parcel2.writeNoException();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

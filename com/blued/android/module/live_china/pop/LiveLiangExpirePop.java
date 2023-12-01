@@ -13,9 +13,7 @@ import com.blued.android.module.live_china.live_info.LiveRoomInfo;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/pop/LiveLiangExpirePop.class */
 public class LiveLiangExpirePop extends CenterPopupView {
-
-    /* renamed from: c  reason: collision with root package name */
-    public Context f13975c;
+    public Context c;
     public final String d;
     private ImageView e;
     private TextView f;
@@ -25,7 +23,7 @@ public class LiveLiangExpirePop extends CenterPopupView {
     public LiveLiangExpirePop(Context context) {
         super(context);
         this.d = "LiveLiangExpirePop";
-        this.f13975c = context;
+        this.c = context;
     }
 
     public static LiveLiangExpirePop a(Context context, String str) {
@@ -72,7 +70,7 @@ public class LiveLiangExpirePop extends CenterPopupView {
     }
 
     public void c() {
-        LiveRoomInfo.a().a(this.f13975c, LiveRoomInfo.a().E());
+        LiveRoomInfo.a().a(this.c, LiveRoomInfo.a().E());
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView

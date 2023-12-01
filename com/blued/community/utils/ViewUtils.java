@@ -23,6 +23,7 @@ import com.blued.community.R;
 import com.blued.community.auto.CommunityServiceManager;
 import com.blued.community.ui.topic.model.BluedTopic;
 import com.blued.community.utils.ViewUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,7 +38,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ViewUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final ViewUtils f20483a = new ViewUtils();
+    public static final ViewUtils f6877a = new ViewUtils();
 
     @Metadata
     /* loaded from: source-7206380-dex2jar.jar:com/blued/community/utils/ViewUtils$ITopicListener.class */
@@ -51,43 +52,43 @@ public final class ViewUtils {
     }
 
     @JvmStatic
-    public static final View a(Context context, FlowLayout flowLayoutTopics, int i, View.OnClickListener onClickListener) {
-        Intrinsics.e(flowLayoutTopics, "flowLayoutTopics");
-        View childAt = flowLayoutTopics.getChildAt(0);
-        View refactorHotView = LayoutInflater.from(context).inflate(R.layout.item_feed_from_hot, (ViewGroup) null);
+    public static final View a(Context context, FlowLayout flowLayout, int i, View.OnClickListener onClickListener) {
+        Intrinsics.e(flowLayout, "flowLayoutTopics");
+        View childAt = flowLayout.getChildAt(0);
+        View inflate = LayoutInflater.from(context).inflate(R.layout.item_feed_from_hot, (ViewGroup) null);
         if (onClickListener != null) {
-            refactorHotView.setOnClickListener(onClickListener);
+            inflate.setOnClickListener(onClickListener);
         }
         if (childAt != null) {
             if (((TextView) childAt.findViewById(R.id.tv_top_hot)) != null) {
                 if (i != 1) {
-                    flowLayoutTopics.removeView(childAt);
+                    flowLayout.removeView(childAt);
                 }
             } else if (i == 1) {
-                flowLayoutTopics.addView(refactorHotView, 0);
+                flowLayout.addView(inflate, 0);
             }
         } else if (i == 1) {
-            flowLayoutTopics.addView(refactorHotView, 0);
+            flowLayout.addView(inflate, 0);
         }
-        Intrinsics.c(refactorHotView, "refactorHotView");
-        return refactorHotView;
+        Intrinsics.c(inflate, "refactorHotView");
+        return inflate;
     }
 
     @JvmStatic
-    public static final List<View> a(View rootView) {
-        Intrinsics.e(rootView, "rootView");
+    public static final List<View> a(View view) {
+        Intrinsics.e(view, "rootView");
         ArrayList arrayList = new ArrayList();
         ArrayDeque arrayDeque = new ArrayDeque();
-        arrayDeque.addLast(rootView);
+        arrayDeque.addLast(view);
         while (!arrayDeque.isEmpty()) {
             Object last = arrayDeque.getLast();
             if (last == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.view.View");
             }
-            View view = (View) last;
+            View view2 = (View) last;
             arrayDeque.pollLast();
-            if (view instanceof ViewGroup) {
-                ViewGroup viewGroup = (ViewGroup) view;
+            if (view2 instanceof ViewGroup) {
+                ViewGroup viewGroup = (ViewGroup) view2;
                 int childCount = viewGroup.getChildCount() - 1;
                 if (childCount >= 0) {
                     while (true) {
@@ -100,8 +101,8 @@ public final class ViewUtils {
                     }
                 }
             }
-            if (view.isClickable() && view.hasOnClickListeners()) {
-                arrayList.add(view);
+            if (view2.isClickable() && view2.hasOnClickListeners()) {
+                arrayList.add(view2);
             }
         }
         Collections.reverse(arrayList);
@@ -109,24 +110,24 @@ public final class ViewUtils {
     }
 
     @JvmStatic
-    public static final void a(Context context, IRequestHost fragmentActive, LinearLayout linearContainer, List<? extends UserBasicModel> list, int i, int i2, float f, float f2) {
-        Intrinsics.e(fragmentActive, "fragmentActive");
-        Intrinsics.e(linearContainer, "linearContainer");
-        a(context, fragmentActive, linearContainer, list, i, i2, f, f2, 1.0f);
+    public static final void a(Context context, IRequestHost iRequestHost, LinearLayout linearLayout, List<? extends UserBasicModel> list, int i, int i2, float f, float f2) {
+        Intrinsics.e(iRequestHost, "fragmentActive");
+        Intrinsics.e(linearLayout, "linearContainer");
+        a(context, iRequestHost, linearLayout, list, i, i2, f, f2, 1.0f);
     }
 
     @JvmStatic
-    public static final void a(Context context, IRequestHost fragmentActive, LinearLayout linearContainer, List<? extends UserBasicModel> list, int i, int i2, float f, float f2, float f3) {
-        Intrinsics.e(fragmentActive, "fragmentActive");
-        Intrinsics.e(linearContainer, "linearContainer");
+    public static final void a(Context context, IRequestHost iRequestHost, LinearLayout linearLayout, List<? extends UserBasicModel> list, int i, int i2, float f, float f2, float f3) {
+        Intrinsics.e(iRequestHost, "fragmentActive");
+        Intrinsics.e(linearLayout, "linearContainer");
         if (context == null) {
             return;
         }
         if (list == null || list.isEmpty()) {
-            linearContainer.setVisibility(8);
+            linearLayout.setVisibility(8);
             return;
         }
-        linearContainer.setVisibility(0);
+        linearLayout.setVisibility(0);
         ArrayList arrayList = new ArrayList();
         int min = Math.min(list.size(), i);
         int i3 = 0;
@@ -142,9 +143,9 @@ public final class ViewUtils {
             i3 = i4 + 1;
         }
         if (i2 > i) {
-            arrayList.add("-");
+            arrayList.add(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         }
-        linearContainer.removeAllViews();
+        linearLayout.removeAllViews();
         Iterator it = arrayList.iterator();
         boolean z = true;
         while (true) {
@@ -160,15 +161,15 @@ public final class ViewUtils {
                 marginLayoutParams.leftMargin = -DensityUtils.a(context, f2);
             }
             imageView.setLayoutParams(marginLayoutParams);
-            if (TextUtils.equals(str, "-")) {
-                ImageLoader.a(fragmentActive, R.drawable.event_details_member_more).c().a(1.0f, BluedSkinUtils.a(context, R.color.syc_x)).a(imageView);
-                linearContainer.addView(imageView);
+            if (TextUtils.equals(str, Constants.ACCEPT_TIME_SEPARATOR_SERVER)) {
+                ImageLoader.a(iRequestHost, R.drawable.event_details_member_more).c().a(1.0f, BluedSkinUtils.a(context, R.color.syc_x)).a(imageView);
+                linearLayout.addView(imageView);
             } else {
-                linearContainer.addView(imageView);
+                linearLayout.addView(imageView);
                 if (StringUtils.d(str)) {
-                    ImageLoader.a(fragmentActive, R.drawable.user_bg_round).c().a(1.0f, BluedSkinUtils.a(context, R.color.syc_x)).a(imageView);
+                    ImageLoader.a(iRequestHost, R.drawable.user_bg_round).c().a(1.0f, BluedSkinUtils.a(context, R.color.syc_x)).a(imageView);
                 } else {
-                    ImageLoader.a(fragmentActive, str).b(R.drawable.user_bg_round).d(R.drawable.user_bg_round).c().a(1.0f, BluedSkinUtils.a(context, R.color.syc_x)).a(imageView);
+                    ImageLoader.a(iRequestHost, str).b(R.drawable.user_bg_round).d(R.drawable.user_bg_round).c().a(1.0f, BluedSkinUtils.a(context, R.color.syc_x)).a(imageView);
                 }
             }
             z = false;
@@ -275,9 +276,9 @@ public final class ViewUtils {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ITopicListener iTopicListener, BluedTopic topic, View view) {
-        Intrinsics.e(topic, "$topic");
-        iTopicListener.a(topic);
+    public static final void a(ITopicListener iTopicListener, BluedTopic bluedTopic, View view) {
+        Intrinsics.e(bluedTopic, "$topic");
+        iTopicListener.a(bluedTopic);
     }
 
     @JvmStatic
@@ -346,8 +347,8 @@ public final class ViewUtils {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(ITopicListener iTopicListener, BluedTopic topic, View view) {
-        Intrinsics.e(topic, "$topic");
-        iTopicListener.a(topic);
+    public static final void b(ITopicListener iTopicListener, BluedTopic bluedTopic, View view) {
+        Intrinsics.e(bluedTopic, "$topic");
+        iTopicListener.a(bluedTopic);
     }
 }

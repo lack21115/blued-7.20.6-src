@@ -16,16 +16,16 @@ public interface Callback extends IInterface {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.getui.gtc.dyc.Callback$a$a  reason: collision with other inner class name */
         /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/dyc/Callback$a$a.class */
-        public static class C0347a implements Callback {
+        public static class C0177a implements Callback {
 
             /* renamed from: a  reason: collision with root package name */
-            public static Callback f21964a;
+            public static Callback f8357a;
 
             /* renamed from: c  reason: collision with root package name */
-            private IBinder f21965c;
+            private IBinder f8358c;
 
-            C0347a(IBinder iBinder) {
-                this.f21965c = iBinder;
+            C0177a(IBinder iBinder) {
+                this.f8358c = iBinder;
             }
 
             @Override // com.getui.gtc.dyc.Callback
@@ -36,7 +36,7 @@ public interface Callback extends IInterface {
                     obtain.writeInterfaceToken("com.getui.gtc.dyc.Callback");
                     obtain.writeMap(map);
                     obtain.writeMap(map2);
-                    if (this.f21965c.transact(1, obtain, obtain2, 0) || a.a() == null) {
+                    if (this.f8358c.transact(1, obtain, obtain2, 0) || a.a() == null) {
                         obtain2.readException();
                     } else {
                         a.a().a(map, map2);
@@ -49,7 +49,7 @@ public interface Callback extends IInterface {
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f21965c;
+                return this.f8358c;
             }
 
             @Override // com.getui.gtc.dyc.Callback
@@ -59,7 +59,7 @@ public interface Callback extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.getui.gtc.dyc.Callback");
                     obtain.writeString(str);
-                    if (this.f21965c.transact(2, obtain, obtain2, 0) || a.a() == null) {
+                    if (this.f8358c.transact(2, obtain, obtain2, 0) || a.a() == null) {
                         obtain2.readException();
                     } else {
                         a.a().b(str);
@@ -76,7 +76,7 @@ public interface Callback extends IInterface {
         }
 
         public static Callback a() {
-            return C0347a.f21964a;
+            return C0177a.f8357a;
         }
 
         public static Callback a(IBinder iBinder) {
@@ -84,7 +84,7 @@ public interface Callback extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.getui.gtc.dyc.Callback");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof Callback)) ? new C0347a(iBinder) : (Callback) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof Callback)) ? new C0177a(iBinder) : (Callback) queryLocalInterface;
         }
 
         @Override // android.os.IInterface

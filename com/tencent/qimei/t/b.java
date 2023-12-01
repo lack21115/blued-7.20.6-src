@@ -7,27 +7,27 @@ import java.util.HashMap;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final HashMap<String, IDependency> f38416a = new HashMap<>();
+    public static final HashMap<String, IDependency> f24725a = new HashMap<>();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qimei/t/b$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final b f38417a = new b(null);
+        public static final b f24726a = new b(null);
     }
 
     public /* synthetic */ b(com.tencent.qimei.t.a aVar) {
     }
 
     public static b a() {
-        return a.f38417a;
+        return a.f24726a;
     }
 
     public IDependency a(String str) {
-        return f38416a.get(str);
+        return f24725a.get(str);
     }
 
     public void a(String str, IDependency iDependency) {
-        f38416a.put(str, iDependency);
+        f24725a.put(str, iDependency);
     }
 }

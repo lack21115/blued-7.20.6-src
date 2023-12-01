@@ -1,7 +1,6 @@
 package com.anythink.network.gdt;
 
 import android.text.TextUtils;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.ATBidRequestInfo;
 import com.qq.e.comm.managers.GDTAdSdk;
 import java.util.HashMap;
@@ -12,7 +11,7 @@ import org.json.JSONObject;
 public class GDTBidRequestInfo extends ATBidRequestInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    String f8971a;
+    String f6131a;
     JSONObject b = new JSONObject();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -23,20 +22,19 @@ public class GDTBidRequestInfo extends ATBidRequestInfo {
             HashMap hashMap = new HashMap();
             GDTATInitManager.getInstance();
             GDTATInitManager.a(hashMap, map);
-            this.f8971a = GDTAdSdk.getGDTAdManger().getBuyerId(hashMap);
+            this.f6131a = GDTAdSdk.getGDTAdManger().getBuyerId(hashMap);
             this.b.put("app_id", obj);
             this.b.put("unit_id", obj2);
-            this.b.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BUYERUID, this.f8971a);
-            this.b.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.SDK_INFO, GDTAdSdk.getGDTAdManger().getSDKInfo(obj2));
+            this.b.put("buyeruid", this.f6131a);
+            this.b.put("sdk_info", GDTAdSdk.getGDTAdManger().getSDKInfo(obj2));
         } catch (Throwable th) {
         }
     }
 
     public boolean isValid() {
-        return !TextUtils.isEmpty(this.f8971a);
+        return !TextUtils.isEmpty(this.f6131a);
     }
 
-    @Override // com.anythink.core.api.ATBidRequestInfo
     public JSONObject toRequestJSONObject() {
         return this.b;
     }

@@ -126,7 +126,7 @@ class CLoganProtocol implements g {
         if (this.mIsLoganOpen && sIsCloganOk) {
             try {
                 int clogan_write = clogan_write(i, str, j, str2, j2);
-                if (clogan_write != -4010 || b.f24329a) {
+                if (clogan_write != -4010 || b.f10642a) {
                     loganStatusCode("clogan_write", clogan_write);
                 }
             } catch (UnsatisfiedLinkError e) {

@@ -24,10 +24,10 @@ public class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.huawei.hms.ads.jsb.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/jsb/a$a.class */
-    public static class C0415a {
+    public static class C0245a {
         private static IAppDownloadManager Code = (IAppDownloadManager) an.V(t.ad);
 
-        private C0415a() {
+        private C0245a() {
         }
     }
 
@@ -97,7 +97,7 @@ public class a {
     }
 
     public IAppDownloadManager Code() {
-        return C0415a.Code;
+        return C0245a.Code;
     }
 
     public void Code(JsbConfig jsbConfig) {

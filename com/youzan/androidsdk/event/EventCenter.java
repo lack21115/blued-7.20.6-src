@@ -11,15 +11,15 @@ import java.util.Map;
 public class EventCenter {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private Map<String, Event> f1107;
+    private Map<String, Event> f1060;
 
     public EventCenter() {
-        this.f1107 = null;
-        this.f1107 = new HashMap();
+        this.f1060 = null;
+        this.f1060 = new HashMap();
     }
 
     public boolean dispatch(Context context, String str, String str2) {
-        Event event = this.f1107.get(str);
+        Event event = this.f1060.get(str);
         if (event != null) {
             event.call(context, str2);
             return true;
@@ -29,7 +29,7 @@ public class EventCenter {
 
     public List<Event> getEvents() {
         ArrayList arrayList = new ArrayList();
-        arrayList.addAll(this.f1107.values());
+        arrayList.addAll(this.f1060.values());
         return arrayList;
     }
 
@@ -37,6 +37,6 @@ public class EventCenter {
         if (TextUtils.isEmpty(event.subscribe())) {
             return;
         }
-        this.f1107.put(event.subscribe(), event);
+        this.f1060.put(event.subscribe(), event);
     }
 }

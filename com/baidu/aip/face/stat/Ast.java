@@ -1,13 +1,15 @@
 package com.baidu.aip.face.stat;
 
 import android.content.Context;
+import android.content.res.ThemeConfig;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.SparseArray;
 import com.anythink.expressad.foundation.d.l;
+import com.anythink.pd.ExHandler;
 import com.baidu.aip.face.stat.NetUtil;
 import com.baidu.idl.facesdk.FaceInfo;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.ads.fw;
 import com.umeng.analytics.pro.bh;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -52,7 +54,7 @@ public class Ast {
     }
 
     private String generateFaceHitKey(String str) {
-        return new SimpleDateFormat("yyyy_MM_dd_HH").format(new Date()) + BridgeUtil.UNDERLINE_STR + str;
+        return new SimpleDateFormat("yyyy_MM_dd_HH").format(new Date()) + "_" + str;
     }
 
     public static Ast getInstance() {
@@ -89,7 +91,7 @@ public class Ast {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("mh", "faceSdkStatistic");
                     JSONArray jSONArray = new JSONArray();
-                    for (Map.Entry<Object, Object> entry : ((Properties) Ast.this.properties.clone()).entrySet()) {
+                    for (Map.Entry entry : ((Properties) Ast.this.properties.clone()).entrySet()) {
                         String str = (String) entry.getKey();
                         String str2 = (String) entry.getValue();
                         if (!str.equalsIgnoreCase(Ast.FACE_HIT_KEY_LASSTTIME) && !str.equalsIgnoreCase(Ast.UPLOAD_LASSTTIME)) {
@@ -98,17 +100,17 @@ public class Ast {
                             jSONObject2.put("scene", Ast.this.scene);
                             jSONObject2.put("appid", Ast.this.dev.getPackagename());
                             jSONObject2.put("device", Ast.this.dev.getBrand());
-                            jSONObject2.put("imei", Ast.this.dev.getUniqueID());
+                            jSONObject2.put(ExHandler.JSON_REQUEST_IMEI, Ast.this.dev.getUniqueID());
                             jSONObject2.put(bh.x, "Android");
-                            jSONObject2.put("system", Ast.this.dev.getSysVersion());
+                            jSONObject2.put(ThemeConfig.SYSTEM_DEFAULT, Ast.this.dev.getSysVersion());
                             jSONObject2.put("version", Ast.this.dev.getSdkVersion());
                             if (str.contains("liveness")) {
-                                jSONObject2.put("isliving", "true");
+                                jSONObject2.put("isliving", fw.Code);
                             } else {
                                 jSONObject2.put("isliving", "false");
                             }
                             jSONObject2.put("finish", "1");
-                            String[] split = str.split(BridgeUtil.UNDERLINE_STR);
+                            String[] split = str.split("_");
                             if (split.length > 4) {
                                 jSONObject2.put(MediaStore.Audio.AudioColumns.YEAR, split[0]);
                                 jSONObject2.put("month", split[1]);

@@ -18,9 +18,7 @@ import com.blued.android.module.yy_china.utils.YYRoomHttpUtils;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYConsumptionView.class */
 public class YYConsumptionView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f18110a;
+    private BaseYYStudioFragment a;
     private ViewYyConsumptionBinding b;
 
     public YYConsumptionView(Context context) {
@@ -39,11 +37,11 @@ public class YYConsumptionView extends LinearLayout {
     }
 
     private void a() {
-        ViewYyConsumptionBinding a2 = ViewYyConsumptionBinding.a(LayoutInflater.from(getContext()), this, true);
-        this.b = a2;
-        a2.f16896c.setText(String.format(getResources().getString(R.string.yy_solo_min_consumption), "10000"));
+        ViewYyConsumptionBinding a = ViewYyConsumptionBinding.a(LayoutInflater.from(getContext()), this, true);
+        this.b = a;
+        a.c.setText(String.format(getResources().getString(R.string.yy_solo_min_consumption), "10000"));
         this.b.b.setText(String.format(getResources().getString(R.string.yy_consumption_total), "0"));
-        this.b.f16895a.setText(String.format(getResources().getString(R.string.yy_consumption_gap), "10000"));
+        this.b.a.setText(String.format(getResources().getString(R.string.yy_consumption_gap), "10000"));
     }
 
     private void b() {
@@ -51,7 +49,7 @@ public class YYConsumptionView extends LinearLayout {
         if (b == null) {
             return;
         }
-        YYRoomHttpUtils.R(b.room_id, new BluedUIHttpResponse<BluedEntityA<YYConsumptionModel>>(this.f18110a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYConsumptionView.1
+        YYRoomHttpUtils.R(b.room_id, new BluedUIHttpResponse<BluedEntityA<YYConsumptionModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYConsumptionView.1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -60,12 +58,12 @@ public class YYConsumptionView extends LinearLayout {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                int a2 = StringUtils.a(bluedEntityA.getSingleData().total, 0);
-                int a3 = StringUtils.a(bluedEntityA.getSingleData().beans, 0);
-                int i = a2 - a3;
-                YYConsumptionView.this.b.f16896c.setText(String.format(YYConsumptionView.this.getResources().getString(R.string.yy_solo_min_consumption), a2 + ""));
-                YYConsumptionView.this.b.b.setText(String.format(YYConsumptionView.this.getResources().getString(R.string.yy_consumption_total), a3 + ""));
-                TextView textView = YYConsumptionView.this.b.f16895a;
+                int a = StringUtils.a(bluedEntityA.getSingleData().total, 0);
+                int a2 = StringUtils.a(bluedEntityA.getSingleData().beans, 0);
+                int i = a - a2;
+                YYConsumptionView.this.b.c.setText(String.format(YYConsumptionView.this.getResources().getString(R.string.yy_solo_min_consumption), a + ""));
+                YYConsumptionView.this.b.b.setText(String.format(YYConsumptionView.this.getResources().getString(R.string.yy_consumption_total), a2 + ""));
+                TextView textView = YYConsumptionView.this.b.a;
                 String string = YYConsumptionView.this.getResources().getString(R.string.yy_consumption_gap);
                 if (i >= 0) {
                     str = i + "";
@@ -74,14 +72,14 @@ public class YYConsumptionView extends LinearLayout {
                 }
                 textView.setText(String.format(string, str));
             }
-        }, this.f18110a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     public void a(BaseYYStudioFragment baseYYStudioFragment) {
         if (baseYYStudioFragment == null) {
             return;
         }
-        this.f18110a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         b();
     }
 }

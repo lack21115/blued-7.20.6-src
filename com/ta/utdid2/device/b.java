@@ -8,13 +8,13 @@ import java.util.zip.Adler32;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f34907a;
+    private static a f21216a;
     static final Object d = new Object();
 
     static long a(a aVar) {
         if (aVar != null) {
             String format = String.format("%s%s%s%s%s", aVar.f(), aVar.getDeviceId(), Long.valueOf(aVar.a()), aVar.getImsi(), aVar.e());
-            if (g.m9885a(format)) {
+            if (g.m6840a(format)) {
                 return 0L;
             }
             Adler32 adler32 = new Adler32();
@@ -29,7 +29,7 @@ public class b {
         if (context != null) {
             synchronized (d) {
                 String value = c.a(context).getValue();
-                if (g.m9885a(value)) {
+                if (g.m6840a(value)) {
                     return null;
                 }
                 String str = value;
@@ -55,11 +55,11 @@ public class b {
     public static a b(Context context) {
         synchronized (b.class) {
             try {
-                if (f34907a != null) {
-                    return f34907a;
+                if (f21216a != null) {
+                    return f21216a;
                 } else if (context != null) {
                     a a2 = a(context);
-                    f34907a = a2;
+                    f21216a = a2;
                     return a2;
                 } else {
                     return null;

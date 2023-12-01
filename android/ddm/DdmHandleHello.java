@@ -3,6 +3,7 @@ package android.ddm;
 import android.os.Debug;
 import android.os.Process;
 import android.os.UserHandle;
+import com.huawei.hms.ads.fw;
 import dalvik.system.VMRuntime;
 import java.nio.ByteBuffer;
 import org.apache.harmony.dalvik.ddmc.Chunk;
@@ -81,7 +82,7 @@ public class DdmHandleHello extends ChunkHandler {
                 str3 = str2 + " (" + vmInstructionSet + ")";
             }
         }
-        String str4 = "CheckJNI=" + (runtime.isCheckJniEnabled() ? "true" : "false");
+        String str4 = "CheckJNI=" + (runtime.isCheckJniEnabled() ? fw.Code : "false");
         ByteBuffer allocate = ByteBuffer.allocate((str.length() * 2) + 28 + (appName.length() * 2) + (str3.length() * 2) + (str4.length() * 2));
         allocate.order(ChunkHandler.CHUNK_ORDER);
         allocate.putInt(1);
@@ -111,15 +112,12 @@ public class DdmHandleHello extends ChunkHandler {
         DdmServer.sendChunk(new Chunk(CHUNK_WAIT, new byte[]{(byte) i}, 0, 1));
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public void connected() {
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public void disconnected() {
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public Chunk handleChunk(Chunk chunk) {
         int i = chunk.type;
         if (i == CHUNK_HELO) {

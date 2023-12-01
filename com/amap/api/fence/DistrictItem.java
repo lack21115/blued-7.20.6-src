@@ -26,30 +26,26 @@ public class DistrictItem implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5464a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5465c;
+    private String c;
     private List<DPoint> d;
 
     public DistrictItem() {
-        this.f5464a = "";
+        this.a = "";
         this.b = null;
-        this.f5465c = null;
+        this.c = null;
         this.d = null;
     }
 
     protected DistrictItem(Parcel parcel) {
-        this.f5464a = "";
+        this.a = "";
         this.b = null;
-        this.f5465c = null;
+        this.c = null;
         this.d = null;
-        this.f5464a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5465c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.createTypedArrayList(DPoint.CREATOR);
     }
 
@@ -63,7 +59,7 @@ public class DistrictItem implements Parcelable {
     }
 
     public String getAdcode() {
-        return this.f5465c;
+        return this.c;
     }
 
     public String getCitycode() {
@@ -71,7 +67,7 @@ public class DistrictItem implements Parcelable {
     }
 
     public String getDistrictName() {
-        return this.f5464a;
+        return this.a;
     }
 
     public List<DPoint> getPolyline() {
@@ -79,7 +75,7 @@ public class DistrictItem implements Parcelable {
     }
 
     public void setAdcode(String str) {
-        this.f5465c = str;
+        this.c = str;
     }
 
     public void setCitycode(String str) {
@@ -87,7 +83,7 @@ public class DistrictItem implements Parcelable {
     }
 
     public void setDistrictName(String str) {
-        this.f5464a = str;
+        this.a = str;
     }
 
     public void setPolyline(List<DPoint> list) {
@@ -96,9 +92,9 @@ public class DistrictItem implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5464a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5465c);
+        parcel.writeString(this.c);
         parcel.writeTypedList(this.d);
     }
 }

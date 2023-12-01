@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.blued.android.core.image.ImageLoader;
@@ -36,6 +37,7 @@ import com.blued.android.module.yy_china.utils.YYRoomHttpUtils;
 import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -48,13 +50,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYConfessedListDialog.class */
 public final class YYConfessedListDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogConfessedTopBinding f18093a;
+    private DialogConfessedTopBinding a;
     private final ConfessedAdapter b = new ConfessedAdapter(this);
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f18094c = "";
+    private String c = "";
     private String d = "";
     private String e = "";
     private final ConfessedHandler f = new ConfessedHandler(this);
@@ -63,19 +61,15 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYConfessedListDialog$ConfessedAdapter.class */
     public final class ConfessedAdapter extends BaseMultiItemQuickAdapter<ConfessedListMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYConfessedListDialog f18095a;
+        final /* synthetic */ YYConfessedListDialog a;
         private TextView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private long f18096c;
+        private long c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ConfessedAdapter(YYConfessedListDialog this$0) {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f18095a = this$0;
+            this.a = this$0;
             addItemType(0, R.layout.item_confessed_top);
             addItemType(1, R.layout.item_confessed_item);
             addItemType(2, R.layout.item_confessed_mess);
@@ -108,9 +102,9 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
         }
 
         private final void b(BaseViewHolder baseViewHolder, ConfessedListMode confessedListMode) {
-            ItemConfessedMessBinding a2 = ItemConfessedMessBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            a2.f16575a.setText(this.f18095a.g());
+            ItemConfessedMessBinding a = ItemConfessedMessBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            a.a.setText(this.a.g());
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -158,7 +152,6 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, ConfessedListMode item) {
             Intrinsics.e(helper, "helper");
@@ -181,7 +174,7 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
                 return;
             }
             YYRoomInfoManager e = YYRoomInfoManager.e();
-            FragmentActivity activity = this.f18095a.getActivity();
+            FragmentActivity activity = this.a.getActivity();
             if (activity == null) {
                 throw new NullPointerException("null cannot be cast to non-null type com.blued.android.core.ui.BaseFragmentActivity");
             }
@@ -189,7 +182,7 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
         }
 
         public final boolean a() {
-            long currentTimeMillis = this.f18096c - (System.currentTimeMillis() / 1000);
+            long currentTimeMillis = this.c - (System.currentTimeMillis() / 1000);
             if (currentTimeMillis >= 0) {
                 TextView textView = this.b;
                 if (textView == null) {
@@ -208,15 +201,13 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYConfessedListDialog$ConfessedHandler.class */
     public static final class ConfessedHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<YYConfessedListDialog> f18097a;
+        private final WeakReference<YYConfessedListDialog> a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ConfessedHandler(YYConfessedListDialog yyPackGiftDialog) {
             super(Looper.getMainLooper());
             Intrinsics.e(yyPackGiftDialog, "yyPackGiftDialog");
-            this.f18097a = new WeakReference<>(yyPackGiftDialog);
+            this.a = new WeakReference<>(yyPackGiftDialog);
         }
 
         @Override // android.os.Handler
@@ -225,7 +216,7 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
             YYConfessedListDialog yYConfessedListDialog;
             Intrinsics.e(msg, "msg");
             super.handleMessage(msg);
-            if (msg.what != 1 || (weakReference = this.f18097a) == null || (yYConfessedListDialog = weakReference.get()) == null) {
+            if (msg.what != 1 || (weakReference = this.a) == null || (yYConfessedListDialog = weakReference.get()) == null) {
                 return;
             }
             yYConfessedListDialog.a(false);
@@ -303,16 +294,15 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogConfessedTopBinding i() {
-        DialogConfessedTopBinding dialogConfessedTopBinding = this.f18093a;
+        DialogConfessedTopBinding dialogConfessedTopBinding = this.a;
         Intrinsics.a(dialogConfessedTopBinding);
         return dialogConfessedTopBinding;
     }
 
     private final void j() {
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_list_url_bg")).a(i().h);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_list_url_btn_data_null")).a(i().i);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_list_url_btn_big_bg")).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YYConfessedListDialog$initView$1
-            @Override // com.bumptech.glide.request.target.Target
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_list_url_bg")).a(i().h);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_list_url_btn_data_null")).a(i().i);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_list_url_btn_big_bg")).a((Target) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YYConfessedListDialog$initView$1
             /* renamed from: a */
             public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
                 DialogConfessedTopBinding i;
@@ -321,8 +311,7 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
                 i.d.setBackground(resource);
             }
         });
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_list_url_btn_big_smal")).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YYConfessedListDialog$initView$2
-            @Override // com.bumptech.glide.request.target.Target
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_list_url_btn_big_smal")).a((Target) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YYConfessedListDialog$initView$2
             /* renamed from: a */
             public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
                 DialogConfessedTopBinding i;
@@ -331,8 +320,7 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
                 i.e.setBackground(resource);
             }
         });
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_list_url_btn_big_null")).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YYConfessedListDialog$initView$3
-            @Override // com.bumptech.glide.request.target.Target
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_list_url_btn_big_null")).a((Target) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YYConfessedListDialog$initView$3
             /* renamed from: a */
             public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
                 DialogConfessedTopBinding i;
@@ -347,7 +335,7 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
                 YYConfessedListDialog.a(view);
             }
         });
-        i().f16314c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYConfessedListDialog$Ag7m6hAOL6VW8Fn1eU9zyskO788
+        i().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYConfessedListDialog$Ag7m6hAOL6VW8Fn1eU9zyskO788
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYConfessedListDialog.a(YYConfessedListDialog.this, view);
@@ -371,8 +359,7 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
                 YYConfessedListDialog.d(YYConfessedListDialog.this, view);
             }
         });
-        LiveEventBus.get("notify_confessed", ConfessedIMMode.class).observe(this, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYConfessedListDialog$ZxBplXsZExaNdzcrPUW1--QgsUw
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("notify_confessed", ConfessedIMMode.class).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYConfessedListDialog$ZxBplXsZExaNdzcrPUW1--QgsUw
             public final void onChanged(Object obj) {
                 YYConfessedListDialog.a(YYConfessedListDialog.this, (ConfessedIMMode) obj);
             }
@@ -400,8 +387,8 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
     }
 
     private final void l() {
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.j(new BluedUIHttpResponse<BluedEntityA<ConfessedListDataMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YYConfessedListDialog$loadData$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.j(new BluedUIHttpResponse<BluedEntityA<ConfessedListDataMode>>(a) { // from class: com.blued.android.module.yy_china.view.YYConfessedListDialog$loadData$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -469,7 +456,7 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f18094c = str;
+        this.c = str;
     }
 
     public final void b(String roomId) {
@@ -492,7 +479,7 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
     }
 
     public final String f() {
-        return this.f18094c;
+        return this.c;
     }
 
     public final String g() {
@@ -503,16 +490,16 @@ public final class YYConfessedListDialog extends BaseFullScreenDialog {
         return this.e;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_confessed_top, (ViewGroup) null);
-        this.f18093a = DialogConfessedTopBinding.a(inflate);
+        this.a = DialogConfessedTopBinding.a(inflate);
         j();
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         this.f.removeCallbacksAndMessages(null);

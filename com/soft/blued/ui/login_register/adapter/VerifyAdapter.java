@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class VerifyAdapter extends BaseQuickAdapter<AccountNumberVerifyModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private ShapeTextView f31544a;
+    private ShapeTextView f17854a;
     private Context b;
 
     public VerifyAdapter(Context context) {
@@ -25,14 +25,14 @@ public class VerifyAdapter extends BaseQuickAdapter<AccountNumberVerifyModel, Ba
     }
 
     private void a(ShapeTextView shapeTextView) {
-        ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131102254);
+        ShapeHelper.a(shapeTextView, 2131102254);
         ShapeHelper.d(shapeTextView, 2131102254);
         ShapeHelper.b(shapeTextView, 2131102388);
         ShapeHelper.a(shapeTextView, DensityUtils.a(this.b, 1.0f), 0.0f, 0.0f);
     }
 
     private void b(ShapeTextView shapeTextView) {
-        ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131101780);
+        ShapeHelper.a(shapeTextView, 2131101780);
         ShapeHelper.b(shapeTextView, 2131101766);
         ShapeHelper.d(shapeTextView, 2131101766);
     }
@@ -42,18 +42,18 @@ public class VerifyAdapter extends BaseQuickAdapter<AccountNumberVerifyModel, Ba
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final AccountNumberVerifyModel accountNumberVerifyModel) {
         if (baseViewHolder != null) {
-            ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.verify_number);
-            this.f31544a = shapeTextView;
-            shapeTextView.setText(accountNumberVerifyModel.number);
+            ShapeTextView view = baseViewHolder.getView(R.id.verify_number);
+            this.f17854a = view;
+            view.setText(accountNumberVerifyModel.number);
             if (accountNumberVerifyModel.isSelect) {
-                b(this.f31544a);
+                b(this.f17854a);
             } else {
-                a(this.f31544a);
+                a(this.f17854a);
             }
             baseViewHolder.setOnClickListener(R.id.verify_root, new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.adapter.VerifyAdapter.1
                 @Override // android.view.View.OnClickListener
-                public void onClick(View view) {
-                    Tracker.onClick(view);
+                public void onClick(View view2) {
+                    Tracker.onClick(view2);
                     if (!accountNumberVerifyModel.isSelect) {
                         int i = 0;
                         while (true) {

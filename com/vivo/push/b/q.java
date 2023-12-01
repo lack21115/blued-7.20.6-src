@@ -7,7 +7,7 @@ import com.vivo.push.model.InsideNotificationItem;
 public final class q extends v {
 
     /* renamed from: a  reason: collision with root package name */
-    protected InsideNotificationItem f41051a;
+    protected InsideNotificationItem f27360a;
     private String b;
 
     public q() {
@@ -17,13 +17,13 @@ public final class q extends v {
     @Override // com.vivo.push.b.v, com.vivo.push.b.s, com.vivo.push.o
     public final void c(com.vivo.push.a aVar) {
         super.c(aVar);
-        String b = com.vivo.push.util.q.b(this.f41051a);
+        String b = com.vivo.push.util.q.b(this.f27360a);
         this.b = b;
         aVar.a("notification_v1", b);
     }
 
     public final InsideNotificationItem d() {
-        return this.f41051a;
+        return this.f27360a;
     }
 
     @Override // com.vivo.push.b.v, com.vivo.push.b.s, com.vivo.push.o
@@ -35,7 +35,7 @@ public final class q extends v {
             return;
         }
         InsideNotificationItem a3 = com.vivo.push.util.q.a(this.b);
-        this.f41051a = a3;
+        this.f27360a = a3;
         if (a3 != null) {
             a3.setMsgId(f());
         }
@@ -43,7 +43,7 @@ public final class q extends v {
 
     public final String e() {
         if (TextUtils.isEmpty(this.b)) {
-            InsideNotificationItem insideNotificationItem = this.f41051a;
+            InsideNotificationItem insideNotificationItem = this.f27360a;
             if (insideNotificationItem == null) {
                 return null;
             }

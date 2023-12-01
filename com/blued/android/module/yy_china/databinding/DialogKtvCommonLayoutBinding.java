@@ -4,27 +4,23 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
+import com.blued.android.module.common.web.LoaderConstants;
 import com.blued.android.module.yy_china.R;
-import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogKtvCommonLayoutBinding.class */
 public final class DialogKtvCommonLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16357a;
+    public final TextView a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16358c;
+    public final TextView c;
     public final TextView d;
     public final TextView e;
     private final FrameLayout f;
 
     private DialogKtvCommonLayoutBinding(FrameLayout frameLayout, TextView textView, View view, TextView textView2, TextView textView3, TextView textView4) {
         this.f = frameLayout;
-        this.f16357a = textView;
+        this.a = textView;
         this.b = view;
-        this.f16358c = textView2;
+        this.c = textView2;
         this.d = textView3;
         this.e = textView4;
     }
@@ -45,7 +41,7 @@ public final class DialogKtvCommonLayoutBinding implements ViewBinding {
                         }
                         str = "tvOk";
                     } else {
-                        str = WbCloudFaceContant.DIALOG_TITLE;
+                        str = "dialogTitle";
                     }
                 } else {
                     str = "dialogContent";
@@ -54,12 +50,11 @@ public final class DialogKtvCommonLayoutBinding implements ViewBinding {
                 str = "coverView";
             }
         } else {
-            str = "close";
+            str = LoaderConstants.CLOSE;
         }
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.f;

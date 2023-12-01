@@ -6,11 +6,11 @@ import java.util.Arrays;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    final j f28217a = this;
+    final j f14528a = this;
     private byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f28218c;
+    private String f14529c;
     private byte[] d;
     private byte[] e;
     private byte[] f;
@@ -44,7 +44,7 @@ public class j {
     }
 
     public j b(String str) {
-        this.f28218c = str;
+        this.f14529c = str;
         return this;
     }
 
@@ -54,7 +54,7 @@ public class j {
     }
 
     public String b() {
-        return this.f28218c;
+        return this.f14529c;
     }
 
     public void b(int i) {

@@ -9,12 +9,10 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/k.class */
 public class k {
     private static volatile k b;
-
-    /* renamed from: a  reason: collision with root package name */
-    Context f6532a;
+    Context a;
 
     private k(Context context) {
-        this.f6532a = context;
+        this.a = context;
     }
 
     public static k a(Context context) {
@@ -34,33 +32,33 @@ public class k {
 
     public final void a(BroadcastReceiver broadcastReceiver) {
         try {
-            LocalBroadcastManager.getInstance(this.f6532a).unregisterReceiver(broadcastReceiver);
+            LocalBroadcastManager.getInstance(this.a).unregisterReceiver(broadcastReceiver);
         } catch (Throwable th) {
         }
         try {
-            LocalBroadcastManager.getInstance(this.f6532a).unregisterReceiver(broadcastReceiver);
+            LocalBroadcastManager.getInstance(this.a).unregisterReceiver(broadcastReceiver);
         } catch (Throwable th2) {
         }
     }
 
     public final void a(BroadcastReceiver broadcastReceiver, IntentFilter intentFilter) {
         try {
-            LocalBroadcastManager.getInstance(this.f6532a).registerReceiver(broadcastReceiver, intentFilter);
+            LocalBroadcastManager.getInstance(this.a).registerReceiver(broadcastReceiver, intentFilter);
         } catch (Throwable th) {
         }
         try {
-            LocalBroadcastManager.getInstance(this.f6532a).registerReceiver(broadcastReceiver, intentFilter);
+            LocalBroadcastManager.getInstance(this.a).registerReceiver(broadcastReceiver, intentFilter);
         } catch (Throwable th2) {
         }
     }
 
     public final void a(Intent intent) {
         try {
-            LocalBroadcastManager.getInstance(this.f6532a).sendBroadcast(intent);
+            LocalBroadcastManager.getInstance(this.a).sendBroadcast(intent);
         } catch (Throwable th) {
         }
         try {
-            LocalBroadcastManager.getInstance(this.f6532a).sendBroadcast(intent);
+            LocalBroadcastManager.getInstance(this.a).sendBroadcast(intent);
         } catch (Throwable th2) {
         }
     }

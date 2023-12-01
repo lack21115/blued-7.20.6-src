@@ -13,17 +13,14 @@ import com.chad.library.adapter.base.BaseViewHolder;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/adapter/FeedPostTopicAdapter.class */
 public class FeedPostTopicAdapter extends BaseQuickAdapter<BluedTopic, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f19900a;
+    private int a;
 
     public FeedPostTopicAdapter(int i) {
         super(R.layout.item_feed_post_topic);
-        this.f19900a = i;
+        this.a = i;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, BluedTopic bluedTopic) {
         baseViewHolder.setText(R.id.tv_topic, bluedTopic.name);
@@ -39,7 +36,7 @@ public class FeedPostTopicAdapter extends BaseQuickAdapter<BluedTopic, BaseViewH
         }
         baseViewHolder.addOnClickListener(R.id.root_layout);
         if (!bluedTopic.isShowUrlVisited) {
-            EventTrackFeed.a(FeedProtos.Event.FEED_PUBLISH_TOPIC_SHOW, bluedTopic.super_did, this.f19900a);
+            EventTrackFeed.a(FeedProtos.Event.FEED_PUBLISH_TOPIC_SHOW, bluedTopic.super_did, this.a);
             bluedTopic.isShowUrlVisited = true;
         }
         ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) baseViewHolder.getView(R.id.layout_super_topic);

@@ -7,11 +7,11 @@ import com.tencent.liteav.videobase.utils.Rotation;
 public final /* synthetic */ class gd implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCVideoProcessor f40412a;
+    private final UGCVideoProcessor f26721a;
     private final Rotation b;
 
     private gd(UGCVideoProcessor uGCVideoProcessor, Rotation rotation) {
-        this.f40412a = uGCVideoProcessor;
+        this.f26721a = uGCVideoProcessor;
         this.b = rotation;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class gd implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCVideoProcessor.lambda$setRenderRotation$5(this.f40412a, this.b);
+        UGCVideoProcessor.lambda$setRenderRotation$5(this.f26721a, this.b);
     }
 }

@@ -13,7 +13,6 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.Settings;
 import android.text.TextUtils;
-import com.anythink.expressad.foundation.h.i;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
@@ -74,14 +73,14 @@ public class LockscreenShortcutsHelper {
         this.mContext = context;
         if (onChangeListener != null) {
             this.mListener = onChangeListener;
-            this.mContext.getContentResolver().registerContentObserver(Settings.Secure.getUriFor(Settings.Secure.LOCKSCREEN_TARGETS), false, this.mObserver);
+            this.mContext.getContentResolver().registerContentObserver(Settings.Secure.getUriFor("lockscreen_target_actions"), false, this.mObserver);
         }
         fetchTargets();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void fetchTargets() {
-        this.mTargetActivities = Settings.Secure.getDelimitedStringAsList(this.mContext.getContentResolver(), Settings.Secure.LOCKSCREEN_TARGETS, "|");
+        this.mTargetActivities = Settings.Secure.getDelimitedStringAsList(this.mContext.getContentResolver(), "lockscreen_target_actions", DELIMITER);
         int length = Shortcuts.values().length - this.mTargetActivities.size();
         if (length <= 0) {
             return;
@@ -117,7 +116,7 @@ public class LockscreenShortcutsHelper {
     private String getFriendlyShortcutName(Intent intent) {
         String str;
         String friendlyActivityName = getFriendlyActivityName(intent, true);
-        String stringExtra = intent.getStringExtra(Intent.EXTRA_SHORTCUT_NAME);
+        String stringExtra = intent.getStringExtra("android.intent.extra.shortcut.NAME");
         if (friendlyActivityName == null || stringExtra == null) {
             str = stringExtra;
             if (stringExtra == null) {
@@ -137,18 +136,18 @@ public class LockscreenShortcutsHelper {
     public Drawable getDrawableFromSystemUI(String str) {
         Resources resources;
         int identifier;
-        if (this.mContext.getPackageName().equals("com.android.systemui")) {
+        if (this.mContext.getPackageName().equals(SYSTEM_UI_PKGNAME)) {
             resources = this.mContext.getResources();
         } else {
             if (this.mSystemUiResources == null) {
                 try {
-                    this.mSystemUiResources = this.mContext.getPackageManager().getResourcesForApplication("com.android.systemui");
+                    this.mSystemUiResources = this.mContext.getPackageManager().getResourcesForApplication(SYSTEM_UI_PKGNAME);
                 } catch (PackageManager.NameNotFoundException e) {
                 }
             }
             resources = this.mSystemUiResources;
         }
-        if (resources != null && (identifier = resources.getIdentifier(str, i.f7952c, "com.android.systemui")) > 0) {
+        if (resources != null && (identifier = resources.getIdentifier(str, "drawable", SYSTEM_UI_PKGNAME)) > 0) {
             return resources.getDrawable(identifier);
         }
         return null;
@@ -202,7 +201,7 @@ public class LockscreenShortcutsHelper {
 
     public String getFriendlyNameForUri(Shortcuts shortcuts) {
         Intent intent = getIntent(shortcuts);
-        return Intent.ACTION_MAIN.equals(intent.getAction()) ? getFriendlyActivityName(intent, false) : getFriendlyShortcutName(intent);
+        return "android.intent.action.MAIN".equals(intent.getAction()) ? getFriendlyActivityName(intent, false) : getFriendlyShortcutName(intent);
     }
 
     public Intent getIntent(Shortcuts shortcuts) {
@@ -249,6 +248,6 @@ public class LockscreenShortcutsHelper {
     }
 
     public void saveTargets(List<String> list) {
-        Settings.Secure.putListAsDelimitedString(this.mContext.getContentResolver(), Settings.Secure.LOCKSCREEN_TARGETS, "|", list);
+        Settings.Secure.putListAsDelimitedString(this.mContext.getContentResolver(), "lockscreen_target_actions", DELIMITER, list);
     }
 }

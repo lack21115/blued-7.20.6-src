@@ -16,7 +16,7 @@ import java.util.Map;
 public class b implements Request {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, Object> f24430a;
+    private Map<String, Object> f10743a;
 
     private void a(Context context, String str) throws HallRouterException {
         Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str));
@@ -28,22 +28,22 @@ public class b implements Request {
     }
 
     public void a(Map<String, Object> map) {
-        this.f24430a = map;
+        this.f10743a = map;
     }
 
     @Override // com.oplus.quickgame.sdk.hall.behavior.Request
     public void request(Context context) throws HallRouterException {
-        String a2 = com.oplus.quickgame.sdk.hall.b.a.a(this.f24430a);
+        String a2 = com.oplus.quickgame.sdk.hall.b.a.a(this.f10743a);
         if (c.a(context)) {
-            if (!c.a(context, this.f24430a)) {
+            if (!c.a(context, this.f10743a)) {
                 throw new HallRouterException(HallRouterException.ErrorEnum.VERSION_ERROR);
             }
             a(context, a2);
         } else if (!c.b(context)) {
             HashMap hashMap = new HashMap();
-            this.f24430a = hashMap;
+            this.f10743a = hashMap;
             com.oplus.quickgame.sdk.hall.c.b.b((Map<String, Object>) hashMap).d("oaps").b("mk").c("/dt").a("pkg", Constant.Pkg.HALL_PKG);
-            a(context, com.oplus.quickgame.sdk.hall.b.a.a(this.f24430a));
+            a(context, com.oplus.quickgame.sdk.hall.b.a.a(this.f10743a));
         } else {
             try {
                 i.a("UriOaps2HapUtil", a2);

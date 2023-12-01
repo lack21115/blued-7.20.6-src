@@ -26,18 +26,18 @@ public class g implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private int f24153a;
+    private int f10538a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<String> f24154c;
+    private List<String> f10539c;
     private b d;
     private String e;
 
     protected g(Parcel parcel) {
-        this.f24153a = parcel.readInt();
+        this.f10538a = parcel.readInt();
         this.b = parcel.readByte() != 0;
-        this.f24154c = parcel.createStringArrayList();
+        this.f10539c = parcel.createStringArrayList();
         this.d = (b) parcel.readParcelable(b.class.getClassLoader());
         this.e = parcel.readString();
     }
@@ -47,21 +47,21 @@ public class g implements Parcelable {
         try {
             JSONObject jSONObject = new JSONObject(str);
             if (!jSONObject.isNull("max_size")) {
-                this.f24153a = jSONObject.getInt("max_size");
+                this.f10538a = jSONObject.getInt("max_size");
             }
             if (!jSONObject.isNull("wifi_upload")) {
                 this.b = jSONObject.getBoolean("wifi_upload");
             }
             if (!jSONObject.isNull("upload_files")) {
                 JSONArray jSONArray = jSONObject.getJSONArray("upload_files");
-                this.f24154c = new ArrayList();
+                this.f10539c = new ArrayList();
                 int i = 0;
                 while (true) {
                     int i2 = i;
                     if (i2 >= jSONArray.length()) {
                         break;
                     }
-                    this.f24154c.add(jSONArray.getString(i2));
+                    this.f10539c.add(jSONArray.getString(i2));
                     i = i2 + 1;
                 }
             }
@@ -72,7 +72,7 @@ public class g implements Parcelable {
     }
 
     public int a() {
-        return this.f24153a;
+        return this.f10538a;
     }
 
     public boolean b() {
@@ -80,7 +80,7 @@ public class g implements Parcelable {
     }
 
     public List<String> c() {
-        return this.f24154c;
+        return this.f10539c;
     }
 
     public b d() {
@@ -93,14 +93,14 @@ public class g implements Parcelable {
     }
 
     public String toString() {
-        return "UploadLogMessage{maxSize=" + this.f24153a + ", wifiUpload=" + this.b + ", fileList=" + this.f24154c + ", controlMessage=" + this.d + ", uploadMessage='" + this.e + "'}";
+        return "UploadLogMessage{maxSize=" + this.f10538a + ", wifiUpload=" + this.b + ", fileList=" + this.f10539c + ", controlMessage=" + this.d + ", uploadMessage='" + this.e + "'}";
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f24153a);
+        parcel.writeInt(this.f10538a);
         parcel.writeByte(this.b ? (byte) 1 : (byte) 0);
-        parcel.writeStringList(this.f24154c);
+        parcel.writeStringList(this.f10539c);
         parcel.writeParcelable(this.d, i);
         parcel.writeString(this.e);
     }

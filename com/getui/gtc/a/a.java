@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final AtomicBoolean f21869a = new AtomicBoolean(false);
+    private static final AtomicBoolean f8262a = new AtomicBoolean(false);
 
     public static String a(String str) {
         if (TextUtils.isEmpty(str)) {
@@ -22,7 +22,7 @@ public final class a {
     }
 
     public static void a() {
-        if (f21869a.getAndSet(true)) {
+        if (f8262a.getAndSet(true)) {
             return;
         }
         c cVar = new c();

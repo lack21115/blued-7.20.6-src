@@ -6,21 +6,21 @@ import com.opos.exoplayer.core.c.n;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f25126a;
+    public final boolean f11438a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final n.a f25127c;
+    public final n.a f11439c;
     public final int d;
     public final byte[] e;
 
     public f(boolean z, String str, int i, byte[] bArr, int i2, int i3, byte[] bArr2) {
         com.opos.exoplayer.core.i.a.a((bArr2 == null) ^ (i == 0));
-        this.f25126a = z;
+        this.f11438a = z;
         this.b = str;
         this.d = i;
         this.e = bArr2;
-        this.f25127c = new n.a(a(str), bArr, i2, i3);
+        this.f11439c = new n.a(a(str), bArr, i2, i3);
     }
 
     private static int a(String str) {

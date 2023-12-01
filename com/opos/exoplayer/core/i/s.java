@@ -4,11 +4,11 @@ package com.opos.exoplayer.core.i;
 public final class s {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f25508a;
+    private long f11820a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile long f25509c = com.anythink.expressad.exoplayer.b.b;
+    private volatile long f11821c = com.anythink.expressad.exoplayer.b.b;
 
     public s(long j) {
         a(j);
@@ -23,22 +23,22 @@ public final class s {
     }
 
     public long a() {
-        return this.f25508a;
+        return this.f11820a;
     }
 
     public void a(long j) {
         synchronized (this) {
-            a.b(this.f25509c == com.anythink.expressad.exoplayer.b.b);
-            this.f25508a = j;
+            a.b(this.f11821c == com.anythink.expressad.exoplayer.b.b);
+            this.f11820a = j;
         }
     }
 
     public long b() {
         long j = -9223372036854775807L;
-        if (this.f25509c != com.anythink.expressad.exoplayer.b.b) {
-            return this.f25509c;
+        if (this.f11821c != com.anythink.expressad.exoplayer.b.b) {
+            return this.f11821c;
         }
-        long j2 = this.f25508a;
+        long j2 = this.f11820a;
         if (j2 != Long.MAX_VALUE) {
             j = j2;
         }
@@ -50,8 +50,8 @@ public final class s {
             return com.anythink.expressad.exoplayer.b.b;
         }
         long j2 = j;
-        if (this.f25509c != com.anythink.expressad.exoplayer.b.b) {
-            long e = e(this.f25509c);
+        if (this.f11821c != com.anythink.expressad.exoplayer.b.b) {
+            long e = e(this.f11821c);
             long j3 = (4294967296L + e) / 8589934592L;
             long j4 = ((j3 - 1) * 8589934592L) + j;
             long j5 = j + (j3 * 8589934592L);
@@ -65,10 +65,10 @@ public final class s {
 
     public long c() {
         long j = -9223372036854775807L;
-        if (this.f25508a == Long.MAX_VALUE) {
+        if (this.f11820a == Long.MAX_VALUE) {
             return 0L;
         }
-        if (this.f25509c != com.anythink.expressad.exoplayer.b.b) {
+        if (this.f11821c != com.anythink.expressad.exoplayer.b.b) {
             j = this.b;
         }
         return j;
@@ -78,15 +78,15 @@ public final class s {
         if (j == com.anythink.expressad.exoplayer.b.b) {
             return com.anythink.expressad.exoplayer.b.b;
         }
-        if (this.f25509c != com.anythink.expressad.exoplayer.b.b) {
-            this.f25509c = j;
+        if (this.f11821c != com.anythink.expressad.exoplayer.b.b) {
+            this.f11821c = j;
         } else {
-            long j2 = this.f25508a;
+            long j2 = this.f11820a;
             if (j2 != Long.MAX_VALUE) {
                 this.b = j2 - j;
             }
             synchronized (this) {
-                this.f25509c = j;
+                this.f11821c = j;
                 notifyAll();
             }
         }
@@ -94,6 +94,6 @@ public final class s {
     }
 
     public void d() {
-        this.f25509c = com.anythink.expressad.exoplayer.b.b;
+        this.f11821c = com.anythink.expressad.exoplayer.b.b;
     }
 }

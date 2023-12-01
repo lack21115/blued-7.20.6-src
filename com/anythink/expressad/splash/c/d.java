@@ -49,7 +49,7 @@ public final class d {
     private Context u;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f8211c = "SplashShowManager";
+    private String f5371c = "SplashShowManager";
     private int m = 5;
     private boolean t = false;
     private View.OnClickListener v = new View.OnClickListener() { // from class: com.anythink.expressad.splash.c.d.1
@@ -65,7 +65,7 @@ public final class d {
     private f.b w = new f.b();
 
     /* renamed from: a  reason: collision with root package name */
-    public Handler f8210a = new Handler(Looper.getMainLooper()) { // from class: com.anythink.expressad.splash.c.d.2
+    public Handler f5370a = new Handler(Looper.getMainLooper()) { // from class: com.anythink.expressad.splash.c.d.2
         @Override // android.os.Handler
         public final void handleMessage(Message message) {
             super.handleMessage(message);
@@ -77,7 +77,7 @@ public final class d {
             } else if (d.this.t) {
             } else {
                 if (!u.a(d.this.e, d.this.w)) {
-                    d.this.f8210a.removeMessages(1);
+                    d.this.f5370a.removeMessages(1);
                     sendEmptyMessageDelayed(1, 1000L);
                 } else if (d.this.m <= 0) {
                     d.b(d.this);
@@ -85,7 +85,7 @@ public final class d {
                     d.g(d.this);
                     d dVar = d.this;
                     d.a(dVar, dVar.m);
-                    d.this.f8210a.removeMessages(1);
+                    d.this.f5370a.removeMessages(1);
                     sendEmptyMessageDelayed(1, 1000L);
                 }
             }
@@ -107,12 +107,12 @@ public final class d {
         @Override // com.anythink.expressad.splash.d.a
         public final void a(int i, int i2) {
             if (i == 1) {
-                d.this.f8210a.removeMessages(1);
+                d.this.f5370a.removeMessages(1);
             }
             if (i == 2) {
                 d.this.m = i2;
-                d.this.f8210a.removeMessages(1);
-                d.this.f8210a.sendEmptyMessageDelayed(1, 1000L);
+                d.this.f5370a.removeMessages(1);
+                d.this.f5370a.sendEmptyMessageDelayed(1, 1000L);
             }
         }
 
@@ -129,7 +129,7 @@ public final class d {
         @Override // com.anythink.expressad.splash.d.a
         public final void a(boolean z) {
             if (z) {
-                d.this.f8210a.removeMessages(1);
+                d.this.f5370a.removeMessages(1);
             }
         }
 
@@ -139,10 +139,10 @@ public final class d {
 
         @Override // com.anythink.expressad.splash.d.a
         public final void b(int i) {
-            o.d(d.this.f8211c, "resetCountdown".concat(String.valueOf(i)));
+            o.d(d.this.f5371c, "resetCountdown".concat(String.valueOf(i)));
             d.this.m = i;
-            d.this.f8210a.removeMessages(1);
-            d.this.f8210a.sendEmptyMessageDelayed(1, 1000L);
+            d.this.f5370a.removeMessages(1);
+            d.this.f5370a.sendEmptyMessageDelayed(1, 1000L);
         }
 
         @Override // com.anythink.expressad.splash.d.a
@@ -158,7 +158,7 @@ public final class d {
                     d.this.a(b);
                 }
             } catch (Exception e) {
-                o.d(d.this.f8211c, e.getMessage());
+                o.d(d.this.f5371c, e.getMessage());
             }
         }
 
@@ -234,7 +234,7 @@ public final class d {
                 this.q = string;
                 this.n = string;
                 this.p = g.getResources().getString(identifier3);
-                this.i.setBackgroundResource(g.getResources().getIdentifier("anythink_splash_close_bg", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+                this.i.setBackgroundResource(g.getResources().getIdentifier("anythink_splash_close_bg", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
                 this.i.setTextColor(g.getResources().getColor(g.getResources().getIdentifier("anythink_splash_count_time_skip_text_color", "color", a2)));
             }
         }
@@ -251,7 +251,7 @@ public final class d {
                     com.anythink.expressad.a.a.a(context, cVar, str, str2, true);
                 }
             } catch (Throwable th) {
-                o.d(this.f8211c, th.getMessage());
+                o.d(this.f5371c, th.getMessage());
             }
         }
     }
@@ -337,7 +337,7 @@ public final class d {
                 }
                 com.anythink.expressad.a.a.a(context, cVar, str, cVar.ai(), false, true, com.anythink.expressad.a.a.a.j);
             } catch (Throwable th) {
-                o.d(this.f8211c, th.getMessage());
+                o.d(this.f5371c, th.getMessage());
             }
         }
     }
@@ -353,8 +353,8 @@ public final class d {
             if (dVar.e != null) {
                 dVar.e.getSplashWebview();
             }
-            if (dVar.f8210a != null) {
-                dVar.f8210a.removeCallbacksAndMessages(null);
+            if (dVar.f5370a != null) {
+                dVar.f5370a.removeCallbacksAndMessages(null);
             }
         } catch (Throwable th) {
         }
@@ -398,7 +398,7 @@ public final class d {
             this.q = string;
             this.n = string;
             this.p = g.getResources().getString(identifier3);
-            this.i.setBackgroundResource(g.getResources().getIdentifier("anythink_splash_close_bg", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+            this.i.setBackgroundResource(g.getResources().getIdentifier("anythink_splash_close_bg", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
             this.i.setTextColor(g.getResources().getColor(g.getResources().getIdentifier("anythink_splash_count_time_skip_text_color", "color", a2)));
         }
     }
@@ -463,12 +463,12 @@ public final class d {
                         }
                         str = jSONObject.toString();
                     } catch (Throwable th) {
-                        o.b(d.this.f8211c, th.getMessage(), th);
+                        o.b(d.this.f5371c, th.getMessage(), th);
                         str = "";
                     }
                     String encodeToString = Base64.encodeToString(str.getBytes(), 2);
                     j.a();
-                    j.a((WebView) d.this.e.getSplashWebview(), AbsFeedBackForH5.f7096a, encodeToString);
+                    j.a((WebView) d.this.e.getSplashWebview(), AbsFeedBackForH5.f4258a, encodeToString);
                 }
 
                 @Override // com.anythink.expressad.foundation.f.a
@@ -482,12 +482,12 @@ public final class d {
                         }
                         str = jSONObject.toString();
                     } catch (Throwable th) {
-                        o.b(d.this.f8211c, th.getMessage(), th);
+                        o.b(d.this.f5371c, th.getMessage(), th);
                         str = "";
                     }
                     String encodeToString = Base64.encodeToString(str.getBytes(), 2);
                     j.a();
-                    j.a((WebView) d.this.e.getSplashWebview(), AbsFeedBackForH5.f7096a, encodeToString);
+                    j.a((WebView) d.this.e.getSplashWebview(), AbsFeedBackForH5.f4258a, encodeToString);
                 }
 
                 @Override // com.anythink.expressad.foundation.f.a
@@ -501,12 +501,12 @@ public final class d {
                         }
                         str = jSONObject.toString();
                     } catch (Throwable th) {
-                        o.b(d.this.f8211c, th.getMessage(), th);
+                        o.b(d.this.f5371c, th.getMessage(), th);
                         str = "";
                     }
                     String encodeToString = Base64.encodeToString(str.getBytes(), 2);
                     j.a();
-                    j.a((WebView) d.this.e.getSplashWebview(), AbsFeedBackForH5.f7096a, encodeToString);
+                    j.a((WebView) d.this.e.getSplashWebview(), AbsFeedBackForH5.f4258a, encodeToString);
                 }
             });
             FeedBackButton b = com.anythink.expressad.foundation.f.b.a().b(this.k);
@@ -519,7 +519,7 @@ public final class d {
                 }
                 RelativeLayout.LayoutParams layoutParams2 = layoutParams;
                 if (layoutParams == null) {
-                    layoutParams2 = new RelativeLayout.LayoutParams(com.anythink.expressad.foundation.f.b.f7817a, com.anythink.expressad.foundation.f.b.b);
+                    layoutParams2 = new RelativeLayout.LayoutParams(com.anythink.expressad.foundation.f.b.f4977a, com.anythink.expressad.foundation.f.b.b);
                 }
                 layoutParams2.topMargin = t.b(n.a().g(), 10.0f);
                 layoutParams2.leftMargin = t.b(n.a().g(), 10.0f);
@@ -555,8 +555,8 @@ public final class d {
             if (this.e != null) {
                 this.e.getSplashWebview();
             }
-            if (this.f8210a != null) {
-                this.f8210a.removeCallbacksAndMessages(null);
+            if (this.f5370a != null) {
+                this.f5370a.removeCallbacksAndMessages(null);
             }
         } catch (Throwable th) {
         }
@@ -566,9 +566,9 @@ public final class d {
         ATSplashWebview splashWebview;
         Handler handler;
         this.r = false;
-        if (this.m > 0 && (handler = this.f8210a) != null) {
+        if (this.m > 0 && (handler = this.f5370a) != null) {
             handler.removeMessages(1);
-            this.f8210a.sendEmptyMessageDelayed(1, 1000L);
+            this.f5370a.sendEmptyMessageDelayed(1, 1000L);
         }
         ATSplashView aTSplashView = this.e;
         if (aTSplashView == null || (splashWebview = aTSplashView.getSplashWebview()) == null || splashWebview.isDestroyed()) {
@@ -581,7 +581,7 @@ public final class d {
         ATSplashWebview splashWebview;
         Handler handler;
         this.r = true;
-        if (this.m > 0 && (handler = this.f8210a) != null) {
+        if (this.m > 0 && (handler = this.f5370a) != null) {
             handler.removeMessages(1);
         }
         ATSplashView aTSplashView = this.e;
@@ -611,7 +611,7 @@ public final class d {
             try {
                 cVar.aA();
             } catch (Throwable th) {
-                o.a(this.f8211c, th.getMessage());
+                o.a(this.f5371c, th.getMessage());
             }
         }
         com.anythink.expressad.splash.d.d dVar = this.f;
@@ -662,12 +662,12 @@ public final class d {
 
     public final void d() {
         Handler handler;
-        if (this.r || com.anythink.expressad.foundation.f.b.f7818c) {
+        if (this.r || com.anythink.expressad.foundation.f.b.f4978c) {
             return;
         }
-        if (this.m > 0 && (handler = this.f8210a) != null) {
+        if (this.m > 0 && (handler = this.f5370a) != null) {
             handler.removeMessages(1);
-            this.f8210a.sendEmptyMessageDelayed(1, 1000L);
+            this.f5370a.sendEmptyMessageDelayed(1, 1000L);
         }
         ATSplashView aTSplashView = this.e;
         if (aTSplashView != null) {
@@ -682,7 +682,7 @@ public final class d {
 
     public final void e() {
         Handler handler;
-        if (this.m > 0 && (handler = this.f8210a) != null) {
+        if (this.m > 0 && (handler = this.f5370a) != null) {
             handler.removeMessages(1);
         }
         ATSplashView aTSplashView = this.e;
@@ -692,7 +692,7 @@ public final class d {
             if (splashWebview == null || splashWebview.isDestroyed()) {
                 return;
             }
-            SplashJsUtils.sendEventToH5(splashWebview, SplashJsUtils.f8245a, "");
+            SplashJsUtils.sendEventToH5(splashWebview, SplashJsUtils.f5405a, "");
         }
     }
 }

@@ -29,12 +29,8 @@ public class LogUploadHelper {
     private String f;
     private OnUploadListener g;
     private String h;
-
-    /* renamed from: a  reason: collision with root package name */
-    private ExecutorService f10094a = Executors.newSingleThreadExecutor();
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f10095c = false;
+    private ExecutorService a = Executors.newSingleThreadExecutor();
+    private boolean c = false;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/LogUploadHelper$OnUploadListener.class */
     public interface OnUploadListener {
@@ -55,9 +51,9 @@ public class LogUploadHelper {
     /* JADX INFO: Access modifiers changed from: private */
     public void a() {
         b();
-        File c2 = c();
-        this.e = c2;
-        if (c2 == null || !c2.exists()) {
+        File c = c();
+        this.e = c;
+        if (c == null || !c.exists()) {
             e();
             return;
         }
@@ -100,16 +96,16 @@ public class LogUploadHelper {
 
             @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public boolean a() {
-                Logger.b("LogUploadHelper", "uploadQiNiu = isCanceled", Boolean.valueOf(!LogUploadHelper.this.f10095c));
-                return !LogUploadHelper.this.f10095c;
+                Logger.b("LogUploadHelper", "uploadQiNiu = isCanceled", Boolean.valueOf(!LogUploadHelper.this.c));
+                return !LogUploadHelper.this.c;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("zip", str);
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("zip", str);
         HttpManager.b(this.f + "/blued/zip", new BluedUIHttpResponse<BluedEntityA<UploadZipResult>>(null) { // from class: com.blued.android.framework.utils.LogUploadHelper.4
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -131,7 +127,7 @@ public class LogUploadHelper {
                 LogUploadHelper.this.e();
                 return super.onUIFailure(i, str2);
             }
-        }).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        }).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:51:0x01be  */
@@ -148,13 +144,13 @@ public class LogUploadHelper {
     }
 
     private File c() {
-        File a2 = AppInfo.a((Context) this.d);
+        File a = AppInfo.a((Context) this.d);
         File file = new File(this.d.getFilesDir(), "blued_log.zip");
         if (file.exists()) {
             file.delete();
         }
         try {
-            Zip.b(a2.getPath(), file.getPath());
+            Zip.b(a.getPath(), file.getPath());
             return file;
         } catch (Exception e) {
             e.printStackTrace();
@@ -163,7 +159,7 @@ public class LogUploadHelper {
     }
 
     private void d() {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map<String, String> a = BluedHttpTools.a();
         HttpManager.a(this.f + "/blued/qiniu?filter=token&action=zip", new BluedUIHttpResponse<BluedEntity<BluedQiniuToken, QiniuUploadExtra>>(null) { // from class: com.blued.android.framework.utils.LogUploadHelper.2
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
@@ -192,7 +188,7 @@ public class LogUploadHelper {
                     LogUploadHelper.this.a(configuration, bluedQiniuToken.key, bluedQiniuToken.token);
                 }
             }
-        }).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        }).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -208,10 +204,10 @@ public class LogUploadHelper {
         this.h = str2;
         this.g = onUploadListener;
         if (this.b == null) {
-            this.b = this.f10094a.submit(new Runnable() { // from class: com.blued.android.framework.utils.LogUploadHelper.1
+            this.b = this.a.submit(new Runnable() { // from class: com.blued.android.framework.utils.LogUploadHelper.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    LogUploadHelper.this.f10095c = true;
+                    LogUploadHelper.this.c = true;
                     LogUploadHelper.this.a();
                 }
             });

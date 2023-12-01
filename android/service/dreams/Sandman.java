@@ -11,7 +11,6 @@ import android.os.SystemClock;
 import android.provider.Settings;
 import android.service.dreams.IDreamManager;
 import android.util.Slog;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/service/dreams/Sandman.class */
 public final class Sandman {
@@ -22,11 +21,11 @@ public final class Sandman {
     }
 
     private static boolean isScreenSaverActivatedOnDock(Context context) {
-        return Settings.Secure.getIntForUser(context.getContentResolver(), Settings.Secure.SCREENSAVER_ACTIVATE_ON_DOCK, context.getResources().getBoolean(R.bool.config_dreamsActivatedOnDockByDefault) ? 1 : 0, -2) != 0;
+        return Settings.Secure.getIntForUser(context.getContentResolver(), Settings.Secure.SCREENSAVER_ACTIVATE_ON_DOCK, context.getResources().getBoolean(17956977) ? 1 : 0, -2) != 0;
     }
 
     private static boolean isScreenSaverEnabled(Context context) {
-        return Settings.Secure.getIntForUser(context.getContentResolver(), Settings.Secure.SCREENSAVER_ENABLED, context.getResources().getBoolean(R.bool.config_dreamsEnabledByDefault) ? 1 : 0, -2) != 0;
+        return Settings.Secure.getIntForUser(context.getContentResolver(), Settings.Secure.SCREENSAVER_ENABLED, context.getResources().getBoolean(17956976) ? 1 : 0, -2) != 0;
     }
 
     public static boolean shouldStartDockApp(Context context, Intent intent) {
@@ -42,7 +41,7 @@ public final class Sandman {
             }
             if (z) {
                 Slog.i(TAG, "Activating dream while docked.");
-                ((PowerManager) context.getSystemService("power")).wakeUp(SystemClock.uptimeMillis());
+                ((PowerManager) context.getSystemService(Context.POWER_SERVICE)).wakeUp(SystemClock.uptimeMillis());
             } else {
                 Slog.i(TAG, "Activating dream by user request.");
             }

@@ -11,9 +11,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/ExecutorCoroutineDispatcher.class */
 public abstract class ExecutorCoroutineDispatcher extends CoroutineDispatcher implements Closeable {
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final Key f42825c = new Key(null);
+    public static final Key c = new Key(null);
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/ExecutorCoroutineDispatcher$Key.class */

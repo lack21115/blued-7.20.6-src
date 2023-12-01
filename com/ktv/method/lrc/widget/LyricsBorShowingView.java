@@ -17,19 +17,19 @@ import java.util.TreeMap;
 public class LyricsBorShowingView extends AbstractLrcView {
 
     /* renamed from: a  reason: collision with root package name */
-    private int[] f23705a;
+    private int[] f10097a;
     private float b;
 
     public LyricsBorShowingView(Context context) {
         super(context);
-        this.f23705a = new int[]{Color.parseColor("#80000000"), Color.parseColor("#80000000")};
+        this.f10097a = new int[]{Color.parseColor("#80000000"), Color.parseColor("#80000000")};
         this.b = a(getContext(), 15.0f);
         a(context);
     }
 
     public LyricsBorShowingView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f23705a = new int[]{Color.parseColor("#80000000"), Color.parseColor("#80000000")};
+        this.f10097a = new int[]{Color.parseColor("#80000000"), Color.parseColor("#80000000")};
         this.b = a(getContext(), 15.0f);
         a(context);
     }
@@ -61,7 +61,7 @@ public class LyricsBorShowingView extends AbstractLrcView {
         int splitLyricsWordIndex = getSplitLyricsWordIndex();
         float lyricsWordHLTime = getLyricsWordHLTime();
         Paint paint = getPaint();
-        paint.setColor(this.f23705a[0]);
+        paint.setColor(this.f10097a[0]);
         Paint paintHL = getPaintHL();
         Paint paintOutline = getPaintOutline();
         int[] paintColors = getPaintColors();

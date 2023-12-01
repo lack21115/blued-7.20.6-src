@@ -4,11 +4,11 @@ package com.huawei.hms.ads.dynamicloader;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f22466a = "dynamic_modules";
+    public static final String f8858a = "dynamic_modules";
     public static final String b = ".apk";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f22467c = "module_name";
+    public static final String f8859c = "module_name";
     public static final String d = "module_version";
     public static final String e = "loader_version_type";
     public static final String f = "v1";

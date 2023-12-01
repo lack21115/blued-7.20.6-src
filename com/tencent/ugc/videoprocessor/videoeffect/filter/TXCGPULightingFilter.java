@@ -61,7 +61,7 @@ public class TXCGPULightingFilter extends TXCGPUEffectFilterBase {
             d dVar2 = null;
             int i2 = i;
             if (this.mLookUpInvertFilter != null) {
-                dVar2 = this.mGLTexturePool.a(this.mOutputSize.f36340a, this.mOutputSize.b);
+                dVar2 = this.mGLTexturePool.a(this.mOutputSize.f22649a, this.mOutputSize.b);
                 this.mLookUpInvertFilter.onDraw(i, dVar2, floatBuffer, floatBuffer2);
                 i2 = dVar2.a();
             }

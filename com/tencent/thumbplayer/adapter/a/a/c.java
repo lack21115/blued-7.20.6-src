@@ -19,7 +19,7 @@ public class c implements com.tencent.thumbplayer.adapter.a.a.a {
     TPNativeSubtitleRenderParams b;
 
     /* renamed from: c  reason: collision with root package name */
-    private a.InterfaceC1010a f39138c;
+    private a.InterfaceC0840a f25447c;
     private a.d d;
     private a.c e;
     private a.b f;
@@ -27,7 +27,7 @@ public class c implements com.tencent.thumbplayer.adapter.a.a.a {
     private String h;
 
     /* renamed from: a  reason: collision with root package name */
-    int f39137a = 0;
+    int f25446a = 0;
     private Future<?> i = null;
     private final Object j = new Object();
     private a k = a.IDLE;
@@ -58,7 +58,7 @@ public class c implements com.tencent.thumbplayer.adapter.a.a.a {
         } else {
             this.g.selectTrackAsync(0, j);
             this.k = a.PREPARED;
-            if (this.f39137a == 0) {
+            if (this.f25446a == 0) {
                 synchronized (this.j) {
                     if (this.i != null) {
                         this.i.cancel(true);
@@ -78,9 +78,9 @@ public class c implements com.tencent.thumbplayer.adapter.a.a.a {
     /* JADX INFO: Access modifiers changed from: private */
     public void b(int i) {
         a.d dVar = this.d;
-        a.InterfaceC1010a interfaceC1010a = this.f39138c;
-        if (dVar == null || interfaceC1010a == null) {
-            TPLogUtil.w("TPSysPlayerExternalSubtitle", "subPollFunc, posLis:" + dVar + ", subLis:" + interfaceC1010a);
+        a.InterfaceC0840a interfaceC0840a = this.f25447c;
+        if (dVar == null || interfaceC0840a == null) {
+            TPLogUtil.w("TPSysPlayerExternalSubtitle", "subPollFunc, posLis:" + dVar + ", subLis:" + interfaceC0840a);
             return;
         }
         long a2 = dVar.a();
@@ -93,7 +93,7 @@ public class c implements com.tencent.thumbplayer.adapter.a.a.a {
             return;
         }
         this.h = subtitleText;
-        interfaceC1010a.a(new a.e(subtitleText));
+        interfaceC0840a.a(new a.e(subtitleText));
     }
 
     @Override // com.tencent.thumbplayer.adapter.a.a.a
@@ -113,12 +113,12 @@ public class c implements com.tencent.thumbplayer.adapter.a.a.a {
 
     @Override // com.tencent.thumbplayer.adapter.a.a.a
     public void a(int i) {
-        this.f39137a = i;
+        this.f25446a = i;
     }
 
     @Override // com.tencent.thumbplayer.adapter.a.a.a
-    public void a(a.InterfaceC1010a interfaceC1010a) {
-        this.f39138c = interfaceC1010a;
+    public void a(a.InterfaceC0840a interfaceC0840a) {
+        this.f25447c = interfaceC0840a;
     }
 
     @Override // com.tencent.thumbplayer.adapter.a.a.a
@@ -199,19 +199,19 @@ public class c implements com.tencent.thumbplayer.adapter.a.a.a {
                 @Override // com.tencent.thumbplayer.core.subtitle.ITPSubtitleParserCallback
                 public void onSubtitleFrame(TPSubtitleFrame tPSubtitleFrame) {
                     TPLogUtil.i("TPSysPlayerExternalSubtitle", "onSubtitleFrame");
-                    if (c.this.f39138c != null) {
-                        c.this.f39138c.a(tPSubtitleFrame);
+                    if (c.this.f25447c != null) {
+                        c.this.f25447c.a(tPSubtitleFrame);
                     }
                 }
 
                 @Override // com.tencent.thumbplayer.core.subtitle.ITPSubtitleParserCallback
                 public void onSubtitleNote(String str2) {
                     TPLogUtil.i("TPSysPlayerExternalSubtitle", "onSubtitleNote");
-                    if (c.this.f39138c != null) {
-                        c.this.f39138c.a(str2);
+                    if (c.this.f25447c != null) {
+                        c.this.f25447c.a(str2);
                     }
                 }
-            }, this.f39137a);
+            }, this.f25446a);
             this.k = a.INITED;
         }
     }
@@ -251,7 +251,7 @@ public class c implements com.tencent.thumbplayer.adapter.a.a.a {
             }
             this.g = null;
         }
-        if (this.f39137a == 0) {
+        if (this.f25446a == 0) {
             synchronized (this.j) {
                 if (this.i != null) {
                     this.i.cancel(true);
@@ -290,6 +290,6 @@ public class c implements com.tencent.thumbplayer.adapter.a.a.a {
     public void f() {
         TPLogUtil.i("TPSysPlayerExternalSubtitle", "release.");
         this.d = null;
-        this.f39138c = null;
+        this.f25447c = null;
     }
 }

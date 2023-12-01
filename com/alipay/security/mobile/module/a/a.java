@@ -2,7 +2,6 @@ package com.alipay.security.mobile.module.a;
 
 import android.os.Environment;
 import android.util.Base64;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -62,7 +61,7 @@ public final class a {
 
     public static String b(String str, String str2) {
         try {
-            return (String) Class.forName("android.os.SystemProperties").getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class, String.class).invoke(null, str, str2);
+            return (String) Class.forName("android.os.SystemProperties").getMethod("get", String.class, String.class).invoke(null, str, str2);
         } catch (Exception e) {
             return str2;
         }

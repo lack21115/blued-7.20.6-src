@@ -13,13 +13,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/GradientStroke.class */
 public class GradientStroke implements ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f4340a;
+    private final String a;
     private final GradientType b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AnimatableGradientColorValue f4341c;
+    private final AnimatableGradientColorValue c;
     private final AnimatableIntegerValue d;
     private final AnimatablePointValue e;
     private final AnimatablePointValue f;
@@ -32,9 +28,9 @@ public class GradientStroke implements ContentModel {
     private final boolean m;
 
     public GradientStroke(String str, GradientType gradientType, AnimatableGradientColorValue animatableGradientColorValue, AnimatableIntegerValue animatableIntegerValue, AnimatablePointValue animatablePointValue, AnimatablePointValue animatablePointValue2, AnimatableFloatValue animatableFloatValue, ShapeStroke.LineCapType lineCapType, ShapeStroke.LineJoinType lineJoinType, float f, List<AnimatableFloatValue> list, AnimatableFloatValue animatableFloatValue2, boolean z) {
-        this.f4340a = str;
+        this.a = str;
         this.b = gradientType;
-        this.f4341c = animatableGradientColorValue;
+        this.c = animatableGradientColorValue;
         this.d = animatableIntegerValue;
         this.e = animatablePointValue;
         this.f = animatablePointValue2;
@@ -53,7 +49,7 @@ public class GradientStroke implements ContentModel {
     }
 
     public String a() {
-        return this.f4340a;
+        return this.a;
     }
 
     public GradientType b() {
@@ -61,7 +57,7 @@ public class GradientStroke implements ContentModel {
     }
 
     public AnimatableGradientColorValue c() {
-        return this.f4341c;
+        return this.c;
     }
 
     public AnimatableIntegerValue d() {

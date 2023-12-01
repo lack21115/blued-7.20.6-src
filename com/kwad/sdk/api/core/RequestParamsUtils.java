@@ -1,6 +1,7 @@
 package com.kwad.sdk.api.core;
 
 import android.text.TextUtils;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/api/core/RequestParamsUtils.class */
 public final class RequestParamsUtils {
@@ -26,7 +27,7 @@ public final class RequestParamsUtils {
             while (true) {
                 int i2 = i;
                 if (i2 >= length) {
-                    sb.append("-");
+                    sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     return sb.toString();
                 }
                 char charAt = property.charAt(i2);

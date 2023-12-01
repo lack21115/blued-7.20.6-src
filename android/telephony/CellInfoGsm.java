@@ -2,7 +2,6 @@ package android.telephony;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telephony/CellInfoGsm.class */
 public final class CellInfoGsm extends CellInfo implements Parcelable {
@@ -100,7 +99,7 @@ public final class CellInfoGsm extends CellInfo implements Parcelable {
         stringBuffer.append(super.toString());
         stringBuffer.append(" ").append(this.mCellIdentityGsm);
         stringBuffer.append(" ").append(this.mCellSignalStrengthGsm);
-        stringBuffer.append(i.d);
+        stringBuffer.append("}");
         return stringBuffer.toString();
     }
 

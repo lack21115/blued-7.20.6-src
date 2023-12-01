@@ -15,7 +15,6 @@ public final class FeedTemplateModel implements MultiItemEntity {
         return this.background_img;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return 0;
     }

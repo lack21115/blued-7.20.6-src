@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentTextSizeSettingBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28988a;
+    private final ConstraintLayout f15298a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28988a;
+        return this.f15298a;
     }
 }

@@ -2,9 +2,8 @@ package androidx.lifecycle;
 
 import androidx.lifecycle.Lifecycle;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/lifecycle/FullLifecycleObserverAdapter.class */
-public class FullLifecycleObserverAdapter implements LifecycleEventObserver {
+class FullLifecycleObserverAdapter implements LifecycleEventObserver {
     private final FullLifecycleObserver mFullLifecycleObserver;
     private final LifecycleEventObserver mLifecycleEventObserver;
 

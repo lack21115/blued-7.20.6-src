@@ -13,16 +13,13 @@ import androidx.fragment.app.FragmentManager;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.ui.BaseDialogFragment;
 import com.blued.android.framework.R;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/dialog/AuxiliaryDialogFragment.class */
 public class AuxiliaryDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LinearLayout f9886a;
+    private LinearLayout a;
     private LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f9887c;
+    private TextView c;
     private TextView d;
     private String e;
     private String f;
@@ -37,14 +34,14 @@ public class AuxiliaryDialogFragment extends BaseDialogFragment {
 
     private void a(View view) {
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_setting_alert_dialog);
-        this.f9886a = linearLayout;
+        this.a = linearLayout;
         linearLayout.setVisibility(8);
         LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.ll_auxiliary_dialog);
         this.b = linearLayout2;
         linearLayout2.setVisibility(0);
-        this.f9887c = (TextView) view.findViewById(R.id.tv_auxiliary_dialog_title);
+        this.c = (TextView) view.findViewById(R.id.tv_auxiliary_dialog_title);
         this.d = (TextView) view.findViewById(R.id.tv_auxiliary_dialog_content);
-        this.f9887c.setText(this.e);
+        this.c.setText(this.e);
         this.d.setText(this.f);
     }
 
@@ -61,21 +58,20 @@ public class AuxiliaryDialogFragment extends BaseDialogFragment {
         return AppInfo.m;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         Dialog dialog = new Dialog(getActivity());
         if (Build.VERSION.SDK_INT >= 21) {
-            dialog.getWindow().getDecorView().setSystemUiVisibility(1280);
+            dialog.getWindow().getDecorView().setSystemUiVisibility(GL10.GL_INVALID_ENUM);
             dialog.getWindow().addFlags(Integer.MIN_VALUE);
             dialog.getWindow().setStatusBarColor(0);
         }
-        dialog.getWindow().setBackgroundDrawableResource(17170445);
+        dialog.getWindow().setBackgroundDrawableResource(com.android.internal.R.color.transparent);
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        setStyle(0, 16973834);
+        setStyle(0, com.android.internal.R.style.Theme_Black_NoTitleBar_Fullscreen);
         Window window = getDialog().getWindow();
         window.setGravity(48);
         window.setAttributes(window.getAttributes());

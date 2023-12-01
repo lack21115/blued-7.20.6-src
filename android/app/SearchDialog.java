@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -26,7 +27,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/app/SearchDialog.class */
 public class SearchDialog extends Dialog {
@@ -127,26 +127,26 @@ public class SearchDialog extends Dialog {
     }
 
     private void createContentView() {
-        setContentView(R.layout.search_bar);
-        ((SearchBar) findViewById(R.id.search_bar)).setSearchDialog(this);
-        this.mSearchView = (SearchView) findViewById(R.id.search_view);
+        setContentView(17367230);
+        ((SearchBar) findViewById(16909188)).setSearchDialog(this);
+        this.mSearchView = (SearchView) findViewById(16909190);
         this.mSearchView.setIconified(false);
         this.mSearchView.setOnCloseListener(this.mOnCloseListener);
         this.mSearchView.setOnQueryTextListener(this.mOnQueryChangeListener);
         this.mSearchView.setOnSuggestionListener(this.mOnSuggestionSelectionListener);
         this.mSearchView.onActionViewExpanded();
-        this.mCloseSearch = findViewById(16908327);
+        this.mCloseSearch = findViewById(R.id.closeButton);
         this.mCloseSearch.setOnClickListener(new View.OnClickListener() { // from class: android.app.SearchDialog.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 SearchDialog.this.dismiss();
             }
         });
-        this.mBadgeLabel = (TextView) this.mSearchView.findViewById(R.id.search_badge);
-        this.mSearchAutoComplete = (AutoCompleteTextView) this.mSearchView.findViewById(R.id.search_src_text);
-        this.mAppIcon = (ImageView) findViewById(R.id.search_app_icon);
-        this.mSearchPlate = this.mSearchView.findViewById(R.id.search_plate);
-        this.mWorkingSpinner = getContext().getDrawable(R.drawable.search_spinner);
+        this.mBadgeLabel = (TextView) this.mSearchView.findViewById(16909192);
+        this.mSearchAutoComplete = (AutoCompleteTextView) this.mSearchView.findViewById(16909197);
+        this.mAppIcon = (ImageView) findViewById(16909189);
+        this.mSearchPlate = this.mSearchView.findViewById(16909196);
+        this.mWorkingSpinner = getContext().getDrawable(17303045);
         setWorking(false);
         this.mBadgeLabel.setVisibility(8);
         this.mSearchAutoCompleteImeOptions = this.mSearchAutoComplete.getImeOptions();
@@ -227,7 +227,7 @@ public class SearchDialog extends Dialog {
 
     static int resolveDialogTheme(Context context) {
         TypedValue typedValue = new TypedValue();
-        context.getTheme().resolveAttribute(R.attr.searchDialogTheme, typedValue, true);
+        context.getTheme().resolveAttribute(18219046, typedValue, true);
         return typedValue.resourceId;
     }
 

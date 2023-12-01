@@ -10,11 +10,11 @@ import java.security.NoSuchAlgorithmException;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static char[] f7959a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+    protected static char[] f5119a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
     protected static MessageDigest b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f7960c = "SameFileMD5";
+    private static String f5120c = "SameFileMD5";
 
     static {
         b = null;
@@ -42,7 +42,7 @@ public class l {
                     fileInputStream = fileInputStream3;
                     e = e;
                     fileInputStream2 = fileInputStream;
-                    o.b(f7960c, "FILE EXCEPTION", e);
+                    o.b(f5120c, "FILE EXCEPTION", e);
                     if (fileInputStream != null) {
                         fileInputStream.close();
                         return "";
@@ -87,7 +87,7 @@ public class l {
     }
 
     private static void a(byte b2, StringBuffer stringBuffer) {
-        char[] cArr = f7959a;
+        char[] cArr = f5119a;
         char c2 = cArr[(b2 & 240) >> 4];
         char c3 = cArr[b2 & 15];
         stringBuffer.append(c2);

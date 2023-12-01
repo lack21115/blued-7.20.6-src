@@ -24,31 +24,30 @@ public final class PicPinPop extends AttachPopupView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public PicPinPop(Context context, boolean z, OperateListener listener) {
+    public PicPinPop(Context context, boolean z, OperateListener operateListener) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(listener, "listener");
+        Intrinsics.e(operateListener, "listener");
         this.t = z;
-        this.u = listener;
+        this.u = operateListener;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(PicPinPop this$0, View view) {
+    public static final void a(PicPinPop picPinPop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.u.b();
-        this$0.p();
+        Intrinsics.e(picPinPop, "this$0");
+        picPinPop.u.b();
+        picPinPop.p();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(PicPinPop this$0, View view) {
+    public static final void b(PicPinPop picPinPop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.u.a();
-        this$0.p();
+        Intrinsics.e(picPinPop, "this$0");
+        picPinPop.u.a();
+        picPinPop.p();
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         TextView textView = (TextView) findViewById(R.id.tv_pin);
@@ -68,7 +67,6 @@ public final class PicPinPop extends AttachPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_msg_recent_pic_top;
     }

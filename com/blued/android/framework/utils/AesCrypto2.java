@@ -7,9 +7,7 @@ import java.util.Random;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/AesCrypto2.class */
 public class AesCrypto2 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f10065a = "df0b".toLowerCase();
+    public static final String a = "df0b".toLowerCase();
     public static final byte[] b = a();
 
     public static String a(String str) throws Exception {
@@ -19,10 +17,10 @@ public class AesCrypto2 {
         byte[] decode = Base64.decode(str, 2);
         String lowerCase = ByteTransformUtils.a(decode, 0, decode.length).toLowerCase();
         String str2 = lowerCase;
-        if (lowerCase.startsWith(f10065a)) {
-            str2 = lowerCase.substring(f10065a.length());
+        if (lowerCase.startsWith(a)) {
+            str2 = lowerCase.substring(a.length());
         }
-        int parseInt = Integer.parseInt(f10065a.substring(0, 1), 16);
+        int parseInt = Integer.parseInt(a.substring(0, 1), 16);
         int i = parseInt + 32;
         String substring = str2.substring(parseInt, i);
         return new String(AesCryptor.aesDecryptByteArry(c(str2.substring(0, parseInt) + str2.substring(i)), AesCryptor.b, ByteTransformUtils.a(substring)));
@@ -65,10 +63,10 @@ public class AesCrypto2 {
 
     public static String b(String str) throws Exception {
         byte[] a2 = a();
-        String a3 = a(AesCryptor.aesEncryptByteArry(str.getBytes("utf-8"), AesCryptor.f21715a, a2));
+        String a3 = a(AesCryptor.aesEncryptByteArry(str.getBytes("utf-8"), AesCryptor.a, a2));
         String a4 = a(a2);
-        int parseInt = Integer.parseInt(f10065a.substring(0, 1), 16);
-        return Base64.encodeToString(ByteTransformUtils.a(f10065a + a3.substring(0, parseInt) + a4 + a3.substring(parseInt)), 2);
+        int parseInt = Integer.parseInt(a.substring(0, 1), 16);
+        return Base64.encodeToString(ByteTransformUtils.a(a + a3.substring(0, parseInt) + a4 + a3.substring(parseInt)), 2);
     }
 
     public static byte[] c(String str) {

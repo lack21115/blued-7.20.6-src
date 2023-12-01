@@ -21,10 +21,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SystemPermissionVM extends BaseListViewModel<PermissionModel> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<PermissionModel> f33693a = new ArrayList();
+    private final List<PermissionModel> f20002a = new ArrayList();
 
     private final void a(String str, String str2) {
-        List<PermissionModel> list = this.f33693a;
+        List<PermissionModel> list = this.f20002a;
         PermissionModel permissionModel = new PermissionModel();
         permissionModel.setTitle(str);
         permissionModel.setDesc(str2);
@@ -64,7 +64,7 @@ public final class SystemPermissionVM extends BaseListViewModel<PermissionModel>
                     throw new NullPointerException("null cannot be cast to non-null type android.app.AppOpsManager");
                 }
                 int checkOpNoThrow = ((AppOpsManager) systemService).checkOpNoThrow("android:system_alert_window", Process.myUid(), context.getPackageName());
-                Logger.c("canDrawOverlays", Intrinsics.a("mode : ", (Object) Integer.valueOf(checkOpNoThrow)));
+                Logger.c("canDrawOverlays", Intrinsics.a("mode : ", Integer.valueOf(checkOpNoThrow)));
                 if (Settings.canDrawOverlays(context) || checkOpNoThrow == 0) {
                     return true;
                 }
@@ -80,7 +80,6 @@ public final class SystemPermissionVM extends BaseListViewModel<PermissionModel>
     /* JADX WARN: Code restructure failed: missing block: B:22:0x0135, code lost:
         if (a(r0) != false) goto L25;
      */
-    @Override // com.blued.android.module.common.base.mvi.BaseListViewModel
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

@@ -7,9 +7,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 @JvmInline
 /* loaded from: source-3503164-dex2jar.jar:kotlin/ULong.class */
 public final class ULong implements Comparable<ULong> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42307a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final long b;
 
     @Metadata

@@ -26,11 +26,11 @@ import java.lang.annotation.RetentionPolicy;
 public class ViewPager2 extends ViewGroup {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f9459a = 0;
+    public static final int f6619a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f9460c = 0;
+    public static final int f6620c = 0;
     public static final int d = 1;
     public static final int e = 2;
     public static final int f = -1;
@@ -289,7 +289,7 @@ public class ViewPager2 extends ViewGroup {
             super(context);
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView
+        @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
         public CharSequence getAccessibilityClassName() {
             return ViewPager2.this.l.handlesRvGetAccessibilityClassName() ? ViewPager2.this.l.onRvGetAccessibilityClassName() : super.getAccessibilityClassName();
         }
@@ -335,11 +335,11 @@ public class ViewPager2 extends ViewGroup {
         };
 
         /* renamed from: a  reason: collision with root package name */
-        int f9471a;
+        int f6631a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        Parcelable f9472c;
+        Parcelable f6632c;
 
         SavedState(Parcel parcel) {
             super(parcel);
@@ -356,17 +356,17 @@ public class ViewPager2 extends ViewGroup {
         }
 
         private void a(Parcel parcel, ClassLoader classLoader) {
-            this.f9471a = parcel.readInt();
+            this.f6631a = parcel.readInt();
             this.b = parcel.readInt();
-            this.f9472c = parcel.readParcelable(classLoader);
+            this.f6632c = parcel.readParcelable(classLoader);
         }
 
-        @Override // android.view.AbsSavedState, android.os.Parcelable
+        @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeInt(this.f9471a);
+            parcel.writeInt(this.f6631a);
             parcel.writeInt(this.b);
-            parcel.writeParcelable(this.f9472c, i);
+            parcel.writeParcelable(this.f6632c, i);
         }
     }
 
@@ -380,17 +380,17 @@ public class ViewPager2 extends ViewGroup {
     public static class SmoothScrollToPosition implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f9473a;
+        private final int f6633a;
         private final RecyclerView b;
 
         SmoothScrollToPosition(int i, RecyclerView recyclerView) {
-            this.f9473a = i;
+            this.f6633a = i;
             this.b = recyclerView;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            this.b.smoothScrollToPosition(this.f9473a);
+            this.b.smoothScrollToPosition(this.f6633a);
         }
     }
 
@@ -691,12 +691,11 @@ public class ViewPager2 extends ViewGroup {
         this.j.smoothScrollBy(calculateDistanceToFinalSnap[0], calculateDistanceToFinalSnap[1]);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchRestoreInstanceState(SparseArray<Parcelable> sparseArray) {
+    protected void dispatchRestoreInstanceState(SparseArray<Parcelable> sparseArray) {
         Parcelable parcelable = sparseArray.get(getId());
         if (parcelable instanceof SavedState) {
-            int i = ((SavedState) parcelable).f9471a;
+            int i = ((SavedState) parcelable).f6631a;
             sparseArray.put(this.j.getId(), sparseArray.get(i));
             sparseArray.remove(i);
         }
@@ -712,6 +711,7 @@ public class ViewPager2 extends ViewGroup {
         return this.v.a(f2);
     }
 
+    @Override // android.view.ViewGroup, android.view.View
     public CharSequence getAccessibilityClassName() {
         return this.l.a() ? this.l.b() : super.getAccessibilityClassName();
     }
@@ -762,9 +762,8 @@ public class ViewPager2 extends ViewGroup {
         this.l.a(accessibilityNodeInfo);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int measuredWidth = this.j.getMeasuredWidth();
         int measuredHeight = this.j.getMeasuredHeight();
         this.m.left = getPaddingLeft();
@@ -778,9 +777,8 @@ public class ViewPager2 extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         measureChild(this.j, i, i2);
         int measuredWidth = this.j.getMeasuredWidth();
         int measuredHeight = this.j.getMeasuredHeight();
@@ -792,9 +790,8 @@ public class ViewPager2 extends ViewGroup {
         setMeasuredDimension(resolveSizeAndState(Math.max(measuredWidth + paddingLeft + paddingRight, getSuggestedMinimumWidth()), i, measuredState), resolveSizeAndState(Math.max(measuredHeight + paddingTop + paddingBottom, getSuggestedMinimumHeight()), i2, measuredState << 16));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         if (!(parcelable instanceof SavedState)) {
             super.onRestoreInstanceState(parcelable);
             return;
@@ -802,14 +799,13 @@ public class ViewPager2 extends ViewGroup {
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
         this.r = savedState.b;
-        this.s = savedState.f9472c;
+        this.s = savedState.f6632c;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
-        savedState.f9471a = this.j.getId();
+        savedState.f6631a = this.j.getId();
         int i = this.r;
         int i2 = i;
         if (i == -1) {
@@ -818,12 +814,12 @@ public class ViewPager2 extends ViewGroup {
         savedState.b = i2;
         Parcelable parcelable = this.s;
         if (parcelable != null) {
-            savedState.f9472c = parcelable;
+            savedState.f6632c = parcelable;
             return savedState;
         }
         RecyclerView.Adapter adapter = this.j.getAdapter();
         if (adapter instanceof StatefulAdapter) {
-            savedState.f9472c = ((StatefulAdapter) adapter).saveState();
+            savedState.f6632c = ((StatefulAdapter) adapter).saveState();
         }
         return savedState;
     }
@@ -903,28 +899,28 @@ public class ViewPager2 extends ViewGroup {
         registerOnPageChangeCallback(new OnPageChangeCallback() { // from class: com.baidu.mobads.sdk.internal.widget.ViewPager2.5
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f9465a = false;
+            boolean f6625a = false;
             boolean b = false;
 
             /* renamed from: c  reason: collision with root package name */
-            boolean f9466c = false;
+            boolean f6626c = false;
 
             @Override // com.baidu.mobads.sdk.internal.widget.ViewPager2.OnPageChangeCallback
             public void onPageScrollStateChanged(int i) {
                 if (i != 0) {
                     if (i == 1) {
-                        this.f9466c = true;
+                        this.f6626c = true;
                         return;
                     } else if (i != 2) {
                         return;
                     } else {
-                        this.f9465a = false;
+                        this.f6625a = false;
                         this.b = false;
                         return;
                     }
                 }
                 RecyclerView.Adapter adapter = ViewPager2.this.getAdapter();
-                if (adapter == null || adapter.getItemCount() <= 1 || !this.f9466c) {
+                if (adapter == null || adapter.getItemCount() <= 1 || !this.f6626c) {
                     return;
                 }
                 if (1 == ViewPager2.this.getOrientation()) {
@@ -936,10 +932,10 @@ public class ViewPager2 extends ViewGroup {
                                 this.b = true;
                             }
                         }
-                    } else if (this.f9465a) {
+                    } else if (this.f6625a) {
                         onOverScrollListener.onOverScrollStart();
                     } else {
-                        this.f9465a = true;
+                        this.f6625a = true;
                     }
                 } else if (ViewPager2.this.getOrientation() == 0) {
                     if (ViewPager2.this.canScrollHorizontally(-1)) {
@@ -950,13 +946,13 @@ public class ViewPager2 extends ViewGroup {
                                 this.b = true;
                             }
                         }
-                    } else if (this.f9465a) {
+                    } else if (this.f6625a) {
                         onOverScrollListener.onOverScrollStart();
                     } else {
-                        this.f9465a = true;
+                        this.f6625a = true;
                     }
                 }
-                this.f9466c = false;
+                this.f6626c = false;
             }
         });
     }

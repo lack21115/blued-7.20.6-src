@@ -14,7 +14,7 @@ public class GlideUrl implements Key {
     private final Headers b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final URL f20876c;
+    private final URL f7270c;
     private final String d;
     private String e;
     private URL f;
@@ -26,7 +26,7 @@ public class GlideUrl implements Key {
     }
 
     public GlideUrl(String str, Headers headers) {
-        this.f20876c = null;
+        this.f7270c = null;
         this.d = Preconditions.a(str);
         this.b = (Headers) Preconditions.a(headers);
     }
@@ -36,7 +36,7 @@ public class GlideUrl implements Key {
     }
 
     public GlideUrl(URL url, Headers headers) {
-        this.f20876c = (URL) Preconditions.a(url);
+        this.f7270c = (URL) Preconditions.a(url);
         this.d = null;
         this.b = (Headers) Preconditions.a(headers);
     }
@@ -53,7 +53,7 @@ public class GlideUrl implements Key {
             String str = this.d;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = ((URL) Preconditions.a(this.f20876c)).toString();
+                str2 = ((URL) Preconditions.a(this.f7270c)).toString();
             }
             this.e = Uri.encode(str2, "@#&=*+-_.,:!?()/~'%;$");
         }
@@ -62,7 +62,7 @@ public class GlideUrl implements Key {
 
     private byte[] g() {
         if (this.g == null) {
-            this.g = d().getBytes(f20706a);
+            this.g = d().getBytes(f7100a);
         }
         return this.g;
     }
@@ -86,7 +86,7 @@ public class GlideUrl implements Key {
 
     public String d() {
         String str = this.d;
-        return str != null ? str : ((URL) Preconditions.a(this.f20876c)).toString();
+        return str != null ? str : ((URL) Preconditions.a(this.f7270c)).toString();
     }
 
     @Override // com.bumptech.glide.load.Key

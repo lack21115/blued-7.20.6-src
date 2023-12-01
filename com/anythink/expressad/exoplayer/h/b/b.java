@@ -9,15 +9,15 @@ import com.anythink.expressad.exoplayer.h.x;
 public final class b implements d.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7423a = "BaseMediaChunkOutput";
+    private static final String f4584a = "BaseMediaChunkOutput";
     private final int[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final x[] f7424c;
+    private final x[] f4585c;
 
     public b(int[] iArr, x[] xVarArr) {
         this.b = iArr;
-        this.f7424c = xVarArr;
+        this.f4585c = xVarArr;
     }
 
     @Override // com.anythink.expressad.exoplayer.h.b.d.b
@@ -27,10 +27,10 @@ public final class b implements d.b {
             int i3 = i2;
             int[] iArr = this.b;
             if (i3 >= iArr.length) {
-                Log.e(f7423a, "Unmatched track of type: ".concat(String.valueOf(i)));
+                Log.e(f4584a, "Unmatched track of type: ".concat(String.valueOf(i)));
                 return new com.anythink.expressad.exoplayer.e.d();
             } else if (i == iArr[i3]) {
-                return this.f7424c[i3];
+                return this.f4585c[i3];
             } else {
                 i2 = i3 + 1;
             }
@@ -38,7 +38,7 @@ public final class b implements d.b {
     }
 
     public final void a(long j) {
-        x[] xVarArr = this.f7424c;
+        x[] xVarArr = this.f4585c;
         int length = xVarArr.length;
         int i = 0;
         while (true) {
@@ -55,11 +55,11 @@ public final class b implements d.b {
     }
 
     public final int[] a() {
-        int[] iArr = new int[this.f7424c.length];
+        int[] iArr = new int[this.f4585c.length];
         int i = 0;
         while (true) {
             int i2 = i;
-            x[] xVarArr = this.f7424c;
+            x[] xVarArr = this.f4585c;
             if (i2 >= xVarArr.length) {
                 return iArr;
             }

@@ -33,10 +33,10 @@ class FilePathToURI {
             if (i4 >= length) {
                 return;
             }
-            char c2 = cArr[i4];
-            gNeedEscaping[c2] = true;
-            gAfterEscaping1[c2] = gHexChs[c2 >> 4];
-            gAfterEscaping2[c2] = gHexChs[c2 & 15];
+            char c = cArr[i4];
+            gNeedEscaping[c] = true;
+            gAfterEscaping1[c] = gHexChs[c >> 4];
+            gAfterEscaping2[c] = gHexChs[c & 15];
             i3 = i4 + 1;
         }
     }

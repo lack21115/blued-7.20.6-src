@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class AlbumDataObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static AlbumDataObserver f34240a = new AlbumDataObserver();
+    private static AlbumDataObserver f20549a = new AlbumDataObserver();
     private ArrayList<IAlbumObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/observer/AlbumDataObserver$IAlbumObserver.class */
@@ -19,7 +19,7 @@ public class AlbumDataObserver {
     }
 
     public static AlbumDataObserver a() {
-        return f34240a;
+        return f20549a;
     }
 
     public void a(IAlbumObserver iAlbumObserver) {

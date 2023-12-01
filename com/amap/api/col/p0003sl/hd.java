@@ -10,29 +10,24 @@ import com.amap.api.services.core.LatLonSharePoint;
 import com.amap.api.services.core.PoiItem;
 import com.amap.api.services.interfaces.IShareSearch;
 import com.amap.api.services.share.ShareSearch;
-import com.tencent.rtmp.TXLiveConstants;
 
 /* renamed from: com.amap.api.col.3sl.hd  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hd.class */
 public final class hd implements IShareSearch {
     private static String b = "http://wb.amap.com/?r=%f,%f,%s,%f,%f,%s,%d,%d,%d,%s,%s,%s&sourceapplication=openapi/0";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static String f5050c = "http://wb.amap.com/?q=%f,%f,%s&sourceapplication=openapi/0";
+    private static String c = "http://wb.amap.com/?q=%f,%f,%s&sourceapplication=openapi/0";
     private static String d = "http://wb.amap.com/?n=%f,%f,%f,%f,%d&sourceapplication=openapi/0";
     private static String e = "http://wb.amap.com/?p=%s,%f,%f,%s,%s&sourceapplication=openapi/0";
     private static final String f = "";
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f5051a;
+    private Context a;
     private ShareSearch.OnShareSearchListener g;
 
     public hd(Context context) throws AMapException {
-        hy a2 = hx.a(context, fd.a(false));
-        if (a2.f5127a != hx.c.SuccessCode) {
-            throw new AMapException(a2.b, 1, a2.b, a2.f5127a.a());
+        hy a = hx.a(context, fd.a(false));
+        if (a.a != hx.c.SuccessCode) {
+            throw new AMapException(a.b, 1, a.b, a.a.a());
         }
-        this.f5051a = context;
+        this.a = context;
     }
 
     @Override // com.amap.api.services.interfaces.IShareSearch
@@ -46,7 +41,7 @@ public final class hd implements IShareSearch {
                 }
                 LatLonPoint from = shareFromAndTo.getFrom();
                 LatLonPoint to = shareFromAndTo.getTo();
-                return new gh(this.f5051a, String.format(b, Double.valueOf(from.getLatitude()), Double.valueOf(from.getLongitude()), shareFromAndTo.getFromName(), Double.valueOf(to.getLatitude()), Double.valueOf(to.getLongitude()), shareFromAndTo.getToName(), Integer.valueOf(busMode), 1, 0, f, f, f)).d();
+                return new gh(this.a, String.format(b, Double.valueOf(from.getLatitude()), Double.valueOf(from.getLongitude()), shareFromAndTo.getFromName(), Double.valueOf(to.getLatitude()), Double.valueOf(to.getLongitude()), shareFromAndTo.getToName(), Integer.valueOf(busMode), 1, 0, f, f, f)).d();
             }
             throw new AMapException("无效的参数 - IllegalArgumentException");
         } catch (AMapException e2) {
@@ -66,7 +61,7 @@ public final class hd implements IShareSearch {
                     }
                     Message obtainMessage = fp.a().obtainMessage();
                     obtainMessage.arg1 = 11;
-                    obtainMessage.what = 1103;
+                    obtainMessage.what = AMapException.CODE_AMAP_ENGINE_RETURN_TIMEOUT;
                     obtainMessage.obj = hd.this.g;
                     try {
                         try {
@@ -102,7 +97,7 @@ public final class hd implements IShareSearch {
                 }
                 LatLonPoint from = shareFromAndTo.getFrom();
                 LatLonPoint to = shareFromAndTo.getTo();
-                return new gh(this.f5051a, String.format(b, Double.valueOf(from.getLatitude()), Double.valueOf(from.getLongitude()), shareFromAndTo.getFromName(), Double.valueOf(to.getLatitude()), Double.valueOf(to.getLongitude()), shareFromAndTo.getToName(), Integer.valueOf(drivingMode), 0, 0, f, f, f)).d();
+                return new gh(this.a, String.format(b, Double.valueOf(from.getLatitude()), Double.valueOf(from.getLongitude()), shareFromAndTo.getFromName(), Double.valueOf(to.getLatitude()), Double.valueOf(to.getLongitude()), shareFromAndTo.getToName(), Integer.valueOf(drivingMode), 0, 0, f, f, f)).d();
             }
             throw new AMapException("无效的参数 - IllegalArgumentException");
         } catch (AMapException e2) {
@@ -151,7 +146,7 @@ public final class hd implements IShareSearch {
     public final String searchLocationShareUrl(LatLonSharePoint latLonSharePoint) throws AMapException {
         try {
             if (latLonSharePoint != null) {
-                return new gh(this.f5051a, String.format(f5050c, Double.valueOf(latLonSharePoint.getLatitude()), Double.valueOf(latLonSharePoint.getLongitude()), latLonSharePoint.getSharePointName())).d();
+                return new gh(this.a, String.format(c, Double.valueOf(latLonSharePoint.getLatitude()), Double.valueOf(latLonSharePoint.getLongitude()), latLonSharePoint.getSharePointName())).d();
             }
             throw new AMapException("无效的参数 - IllegalArgumentException");
         } catch (AMapException e2) {
@@ -205,7 +200,7 @@ public final class hd implements IShareSearch {
                     LatLonPoint from = fromAndTo.getFrom();
                     LatLonPoint to = fromAndTo.getTo();
                     int naviMode = shareNaviQuery.getNaviMode();
-                    return new gh(this.f5051a, fromAndTo.getFrom() == null ? String.format(d, null, null, Double.valueOf(to.getLatitude()), Double.valueOf(to.getLongitude()), Integer.valueOf(naviMode)) : String.format(d, Double.valueOf(from.getLatitude()), Double.valueOf(from.getLongitude()), Double.valueOf(to.getLatitude()), Double.valueOf(to.getLongitude()), Integer.valueOf(naviMode))).d();
+                    return new gh(this.a, fromAndTo.getFrom() == null ? String.format(d, null, null, Double.valueOf(to.getLatitude()), Double.valueOf(to.getLongitude()), Integer.valueOf(naviMode)) : String.format(d, Double.valueOf(from.getLatitude()), Double.valueOf(from.getLongitude()), Double.valueOf(to.getLatitude()), Double.valueOf(to.getLongitude()), Integer.valueOf(naviMode))).d();
                 }
                 throw new AMapException("无效的参数 - IllegalArgumentException");
             }
@@ -258,7 +253,7 @@ public final class hd implements IShareSearch {
             try {
                 if (poiItem.getLatLonPoint() != null) {
                     LatLonPoint latLonPoint = poiItem.getLatLonPoint();
-                    return new gh(this.f5051a, String.format(e, poiItem.getPoiId(), Double.valueOf(latLonPoint.getLatitude()), Double.valueOf(latLonPoint.getLongitude()), poiItem.getTitle(), poiItem.getSnippet())).d();
+                    return new gh(this.a, String.format(e, poiItem.getPoiId(), Double.valueOf(latLonPoint.getLatitude()), Double.valueOf(latLonPoint.getLongitude()), poiItem.getTitle(), poiItem.getSnippet())).d();
                 }
             } catch (AMapException e2) {
                 fe.a(e2, "ShareSearch", "searchPoiShareUrl");
@@ -279,7 +274,7 @@ public final class hd implements IShareSearch {
                     }
                     Message obtainMessage = fp.a().obtainMessage();
                     obtainMessage.arg1 = 11;
-                    obtainMessage.what = 1100;
+                    obtainMessage.what = AMapException.CODE_AMAP_ENGINE_RESPONSE_ERROR;
                     obtainMessage.obj = hd.this.g;
                     try {
                         try {
@@ -315,7 +310,7 @@ public final class hd implements IShareSearch {
                 }
                 LatLonPoint from = shareFromAndTo.getFrom();
                 LatLonPoint to = shareFromAndTo.getTo();
-                return new gh(this.f5051a, String.format(b, Double.valueOf(from.getLatitude()), Double.valueOf(from.getLongitude()), shareFromAndTo.getFromName(), Double.valueOf(to.getLatitude()), Double.valueOf(to.getLongitude()), shareFromAndTo.getToName(), Integer.valueOf(walkMode), 2, 0, f, f, f)).d();
+                return new gh(this.a, String.format(b, Double.valueOf(from.getLatitude()), Double.valueOf(from.getLongitude()), shareFromAndTo.getFromName(), Double.valueOf(to.getLatitude()), Double.valueOf(to.getLongitude()), shareFromAndTo.getToName(), Integer.valueOf(walkMode), 2, 0, f, f, f)).d();
             }
             throw new AMapException("无效的参数 - IllegalArgumentException");
         } catch (AMapException e2) {
@@ -335,7 +330,7 @@ public final class hd implements IShareSearch {
                     }
                     Message obtainMessage = fp.a().obtainMessage();
                     obtainMessage.arg1 = 11;
-                    obtainMessage.what = TXLiveConstants.PUSH_WARNING_BEAUTYSURFACE_VIEW_INIT_FAIL;
+                    obtainMessage.what = 1105;
                     obtainMessage.obj = hd.this.g;
                     try {
                         try {

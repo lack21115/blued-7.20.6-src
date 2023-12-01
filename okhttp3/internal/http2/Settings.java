@@ -4,9 +4,7 @@ import java.util.Arrays;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Settings.class */
 public final class Settings {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f43962a;
+    private int a;
     private final int[] b = new int[10];
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -16,7 +14,7 @@ public final class Settings {
             if (i >= iArr.length) {
                 return this;
             }
-            this.f43962a = (1 << i) | this.f43962a;
+            this.a = (1 << i) | this.a;
             iArr[i] = i2;
         }
         return this;
@@ -24,7 +22,7 @@ public final class Settings {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
-        this.f43962a = 0;
+        this.a = 0;
         Arrays.fill(this.b, 0);
     }
 
@@ -45,12 +43,12 @@ public final class Settings {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a(int i) {
-        return ((1 << i) & this.f43962a) != 0;
+        return ((1 << i) & this.a) != 0;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int b() {
-        return Integer.bitCount(this.f43962a);
+        return Integer.bitCount(this.a);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -60,7 +58,7 @@ public final class Settings {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int c() {
-        if ((this.f43962a & 2) != 0) {
+        if ((this.a & 2) != 0) {
             return this.b[1];
         }
         return -1;
@@ -68,7 +66,7 @@ public final class Settings {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int c(int i) {
-        if ((this.f43962a & 16) != 0) {
+        if ((this.a & 16) != 0) {
             i = this.b[4];
         }
         return i;
@@ -76,7 +74,7 @@ public final class Settings {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int d() {
-        if ((this.f43962a & 128) != 0) {
+        if ((this.a & 128) != 0) {
             return this.b[7];
         }
         return 65535;
@@ -84,7 +82,7 @@ public final class Settings {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int d(int i) {
-        if ((this.f43962a & 32) != 0) {
+        if ((this.a & 32) != 0) {
             i = this.b[5];
         }
         return i;

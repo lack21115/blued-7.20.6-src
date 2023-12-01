@@ -5,13 +5,9 @@ import java.util.concurrent.Executors;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/b/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f6795a = 1;
+    public static final int a = 1;
     public static final int b = 2;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f6796c = 4;
+    public static final int c = 4;
     public static final int d = 5;
     public static final int e = 6;
     public static final int f = 7;

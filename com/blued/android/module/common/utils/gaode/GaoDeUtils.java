@@ -7,6 +7,7 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
+import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.core.PoiItem;
 import com.amap.api.services.core.ServiceSettings;
@@ -28,13 +29,9 @@ import kotlin.jvm.internal.Intrinsics;
 public final class GaoDeUtils {
     private static AMapLocationClient f;
     private static OnLocationListener g;
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final GaoDeUtils f10936a = new GaoDeUtils();
+    public static final GaoDeUtils a = new GaoDeUtils();
     private static int b = 20;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static int f10937c = 3000;
+    private static int c = AMapException.CODE_AMAP_ROUTE_OUT_OF_SERVICE;
     private static int d = 5000;
     private static String e = "GaoDeUtils";
     private static final AMapLocationListener h = new AMapLocationListener() { // from class: com.blued.android.module.common.utils.gaode.-$$Lambda$GaoDeUtils$TuFZE-i6xGP6HFL0qwhWGxlVRpU
@@ -67,14 +64,14 @@ public final class GaoDeUtils {
                 @Override // com.amap.api.services.poisearch.PoiSearch.OnPoiSearchListener
                 public void onPoiItemSearched(PoiItem poiItem, int i3) {
                     Intrinsics.e(poiItem, "poiItem");
-                    Log.d(GaoDeUtils.f10936a.a(), "onPoiItemSearched");
+                    Log.d(GaoDeUtils.a.a(), "onPoiItemSearched");
                 }
 
                 @Override // com.amap.api.services.poisearch.PoiSearch.OnPoiSearchListener
                 public void onPoiSearched(PoiResult poiResult, int i3) {
                     LatLonPoint latLonPoint;
                     Intrinsics.e(poiResult, "poiResult");
-                    Log.d(GaoDeUtils.f10936a.a(), Intrinsics.a("onPoiSearched:code=", (Object) Integer.valueOf(i3)));
+                    Log.d(GaoDeUtils.a.a(), Intrinsics.a("onPoiSearched:code=", (Object) Integer.valueOf(i3)));
                     if (i3 != 1000) {
                         if (lifeCycleOwner.getLifecycle().getCurrentState() != Lifecycle.State.DESTROYED) {
                             listener.onComplete(i3, null, false);
@@ -150,7 +147,7 @@ public final class GaoDeUtils {
         Intrinsics.e(lifeCycleOwner, "lifeCycleOwner");
         Intrinsics.e(lp, "lp");
         Intrinsics.e(listener, "listener");
-        a(lifeCycleOwner, i, lp, f10937c, "", false, listener);
+        a(lifeCycleOwner, i, lp, c, "", false, listener);
     }
 
     @JvmStatic
@@ -159,7 +156,7 @@ public final class GaoDeUtils {
         Intrinsics.e(listener, "listener");
         LatLonPoint w = CommonPreferences.w();
         Intrinsics.c(w, "getGPS()");
-        a(lifeCycleOwner, i, w, f10937c, "", true, listener);
+        a(lifeCycleOwner, i, w, c, "", true, listener);
     }
 
     @JvmStatic
@@ -191,7 +188,7 @@ public final class GaoDeUtils {
     @JvmStatic
     public static final void a(OnLocationListener onLocationListener) {
         Intrinsics.e(onLocationListener, "onLocationListener");
-        f10936a.b();
+        a.b();
         g = onLocationListener;
         AMapLocationClient aMapLocationClient = f;
         if (aMapLocationClient == null) {

@@ -25,9 +25,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/pop/LiveBattlePassAwardClickTipPop.class */
 public final class LiveBattlePassAwardClickTipPop extends CenterPopupView {
-
-    /* renamed from: c  reason: collision with root package name */
-    private FragmentActivity f13960c;
+    private FragmentActivity c;
     private View d;
     private FrameLayout e;
     private FrameLayout f;
@@ -40,7 +38,7 @@ public final class LiveBattlePassAwardClickTipPop extends CenterPopupView {
         super(context);
         Intrinsics.e(context, "context");
         Intrinsics.e(activity, "activity");
-        this.f13960c = activity;
+        this.c = activity;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -77,16 +75,16 @@ public final class LiveBattlePassAwardClickTipPop extends CenterPopupView {
         }
         int[] iArr = new int[2];
         view.getLocationOnScreen(iArr);
-        int a2 = DensityUtils.a(getContext(), 125.0f);
+        int a = DensityUtils.a(getContext(), 125.0f);
         FrameLayout frameLayout2 = this.f;
         if (frameLayout2 != null) {
-            frameLayout2.setX(iArr[0] - ((a2 - view.getWidth()) / 2));
+            frameLayout2.setX(iArr[0] - ((a - view.getWidth()) / 2));
         }
         FrameLayout frameLayout3 = this.f;
         if (frameLayout3 != null) {
-            frameLayout3.setY(iArr[1] - ((a2 - view.getHeight()) / 2));
+            frameLayout3.setY(iArr[1] - ((a - view.getHeight()) / 2));
         }
-        SVGAParser.a(SVGAParser.f15958a.b(), "live_battle_circular.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.pop.LiveBattlePassAwardClickTipPop$initPopupContent$1$1
+        SVGAParser.a(SVGAParser.a.b(), "live_battle_circular.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.pop.LiveBattlePassAwardClickTipPop$initPopupContent$1$1
             @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
             public void onComplete(SVGAVideoEntity videoItem) {
                 SVGAImageView sVGAImageView;
@@ -107,7 +105,7 @@ public final class LiveBattlePassAwardClickTipPop extends CenterPopupView {
             public void onError() {
             }
         }, (SVGAParser.PlayCallback) null, 4, (Object) null);
-        SVGAParser.a(SVGAParser.f15958a.b(), "live_battle_finger.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.pop.LiveBattlePassAwardClickTipPop$initPopupContent$1$2
+        SVGAParser.a(SVGAParser.a.b(), "live_battle_finger.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.pop.LiveBattlePassAwardClickTipPop$initPopupContent$1$2
             @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
             public void onComplete(SVGAVideoEntity videoItem) {
                 SVGAImageView sVGAImageView;
@@ -147,7 +145,7 @@ public final class LiveBattlePassAwardClickTipPop extends CenterPopupView {
     }
 
     public final FragmentActivity getActivity() {
-        return this.f13960c;
+        return this.c;
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
@@ -157,7 +155,7 @@ public final class LiveBattlePassAwardClickTipPop extends CenterPopupView {
 
     @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getMaxWidth() {
-        return this.f13960c.getWindowManager().getDefaultDisplay().getWidth();
+        return this.c.getWindowManager().getDefaultDisplay().getWidth();
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.BasePopupView, android.view.View
@@ -168,6 +166,6 @@ public final class LiveBattlePassAwardClickTipPop extends CenterPopupView {
 
     public final void setActivity(FragmentActivity fragmentActivity) {
         Intrinsics.e(fragmentActivity, "<set-?>");
-        this.f13960c = fragmentActivity;
+        this.c = fragmentActivity;
     }
 }

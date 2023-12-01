@@ -24,48 +24,45 @@ import com.soft.blued.wxapi.WXProvider;
 public class AccountAndSafetyPresenter implements AccountAndSafetyContract.IPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33210a;
+    private Context f19519a;
     private AccountAndSafetyContract.IView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f33211c;
+    private IRequestHost f19520c;
     private BluedUIHttpResponse d;
     private BluedUIHttpResponse e;
 
     public AccountAndSafetyPresenter(Context context, AccountAndSafetyContract.IView iView, IRequestHost iRequestHost) {
-        this.d = new BluedUIHttpResponse<BluedEntityA<WechatModel>>(this.f33211c) { // from class: com.soft.blued.ui.setting.Presenter.AccountAndSafetyPresenter.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        this.d = new BluedUIHttpResponse<BluedEntityA<WechatModel>>(this.f19520c) { // from class: com.soft.blued.ui.setting.Presenter.AccountAndSafetyPresenter.2
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<WechatModel> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                String str = bluedEntityA.data.get(0).status;
+                String str = ((WechatModel) bluedEntityA.data.get(0)).status;
                 if (TextUtils.equals(str, "0")) {
-                    CommonAlertDialog.a(AccountAndSafetyPresenter.this.f33210a, (String) null, AccountAndSafetyPresenter.this.f33210a.getString(2131892800), AccountAndSafetyPresenter.this.f33210a.getString(2131886752), (String) null, (View.OnClickListener) null, (View.OnClickListener) null);
+                    CommonAlertDialog.a(AccountAndSafetyPresenter.this.f19519a, (String) null, AccountAndSafetyPresenter.this.f19519a.getString(2131892800), AccountAndSafetyPresenter.this.f19519a.getString(2131886752), (String) null, (View.OnClickListener) null, (View.OnClickListener) null);
                 } else if (TextUtils.equals(str, "1")) {
                     UserInfo.getInstance().setBoundWechat("1");
                     AccountAndSafetyPresenter.this.e();
-                    AppMethods.a((CharSequence) AccountAndSafetyPresenter.this.f33210a.getString(2131892799));
+                    AppMethods.a(AccountAndSafetyPresenter.this.f19519a.getString(2131892799));
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 AccountAndSafetyPresenter.this.b.b();
             }
         };
-        this.e = new BluedUIHttpResponse<BluedEntityA<WechatModel>>(this.f33211c) { // from class: com.soft.blued.ui.setting.Presenter.AccountAndSafetyPresenter.3
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        this.e = new BluedUIHttpResponse<BluedEntityA<WechatModel>>(this.f19520c) { // from class: com.soft.blued.ui.setting.Presenter.AccountAndSafetyPresenter.3
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<WechatModel> bluedEntityA) {
                 BluedLoginResultVerBinding verified_bindings;
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                String str = bluedEntityA.data.get(0).status;
+                String str = ((WechatModel) bluedEntityA.data.get(0)).status;
                 if (!TextUtils.equals(str, "0") && TextUtils.equals(str, "1")) {
-                    AppMethods.a((CharSequence) AccountAndSafetyPresenter.this.f33210a.getString(2131892804));
+                    AppMethods.a(AccountAndSafetyPresenter.this.f19519a.getString(2131892804));
                 }
                 UserInfo.getInstance().setBoundWechat("");
                 if (UserInfo.getInstance().getLoginUserInfo() != null && (verified_bindings = UserInfo.getInstance().getLoginUserInfo().getVerified_bindings()) != null) {
@@ -74,22 +71,19 @@ public class AccountAndSafetyPresenter implements AccountAndSafetyContract.IPres
                 AccountAndSafetyPresenter.this.e();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 AccountAndSafetyPresenter.this.b.b();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 AccountAndSafetyPresenter.this.b.a();
             }
         };
-        this.f33210a = context;
+        this.f19519a = context;
         this.b = iView;
-        this.f33211c = iRequestHost;
+        this.f19520c = iRequestHost;
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
         d();
         e();
@@ -104,13 +98,13 @@ public class AccountAndSafetyPresenter implements AccountAndSafetyContract.IPres
             public void a() {
                 LiveFloatManager.a().k();
                 AccountAndSafetyPresenter.this.b.b();
-                ToastUtils.a(AccountAndSafetyPresenter.this.f33210a.getString(2131886653));
+                ToastUtils.a(AccountAndSafetyPresenter.this.f19519a.getString(2131886653));
             }
 
             @Override // com.soft.blued.wxapi.WXProvider.ILoginCallback
             public void a(WXLoginBean wXLoginBean) {
                 if (wXLoginBean != null) {
-                    LoginRegisterHttpUtils.a(AccountAndSafetyPresenter.this.d, 1, wXLoginBean.code, AccountAndSafetyPresenter.this.f33211c);
+                    LoginRegisterHttpUtils.a(AccountAndSafetyPresenter.this.d, 1, wXLoginBean.code, AccountAndSafetyPresenter.this.f19520c);
                 } else {
                     AccountAndSafetyPresenter.this.b.b();
                 }
@@ -121,20 +115,20 @@ public class AccountAndSafetyPresenter implements AccountAndSafetyContract.IPres
             public void b() {
                 LiveFloatManager.a().k();
                 AccountAndSafetyPresenter.this.b.b();
-                ToastUtils.a(AccountAndSafetyPresenter.this.f33210a.getString(2131886653));
+                ToastUtils.a(AccountAndSafetyPresenter.this.f19519a.getString(2131886653));
             }
         });
-        WXProvider.a().a(this.f33210a);
+        WXProvider.a().a(this.f19519a);
     }
 
     @Override // com.soft.blued.ui.setting.Contract.AccountAndSafetyContract.IPresenter
     public void c() {
         if (!StringUtils.d(LoginRegisterTools.b())) {
-            LoginRegisterHttpUtils.a(this.e, 2, "", this.f33211c);
+            LoginRegisterHttpUtils.a(this.e, 2, "", this.f19520c);
             return;
         }
-        Context context = this.f33210a;
-        CommonAlertDialog.a(context, (String) null, context.getString(2131892802), this.f33210a.getString(2131886752), (String) null, (View.OnClickListener) null, (View.OnClickListener) null);
+        Context context = this.f19519a;
+        CommonAlertDialog.a(context, (String) null, context.getString(2131892802), this.f19519a.getString(2131886752), (String) null, (View.OnClickListener) null, (View.OnClickListener) null);
     }
 
     public void d() {

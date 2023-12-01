@@ -2,7 +2,6 @@ package com.umeng.commonsdk.statistics.internal;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.umeng.analytics.pro.bh;
 import com.umeng.commonsdk.internal.crash.UMCrashManager;
 import com.umeng.commonsdk.statistics.common.HelperUtils;
@@ -12,42 +11,42 @@ import com.umeng.commonsdk.utils.UMUtils;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Context f40929a;
+    private static Context f27238a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f40930c;
+    private String f27239c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.umeng.commonsdk.statistics.internal.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/statistics/internal/a$a.class */
-    public static class C1084a {
+    public static class C0914a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final a f40931a = new a();
+        private static final a f27240a = new a();
 
-        private C1084a() {
+        private C0914a() {
         }
     }
 
     private a() {
         this.b = null;
-        this.f40930c = null;
+        this.f27239c = null;
     }
 
     public static a a(Context context) {
-        if (f40929a == null && context != null) {
-            f40929a = context.getApplicationContext();
+        if (f27238a == null && context != null) {
+            f27238a = context.getApplicationContext();
         }
-        return C1084a.f40931a;
+        return C0914a.f27240a;
     }
 
     private void f(String str) {
         try {
-            String replaceAll = str.replaceAll("&=", " ").replaceAll("&&", " ").replaceAll("==", BridgeUtil.SPLIT_MARK);
-            this.b = replaceAll + BridgeUtil.SPLIT_MARK + "Android " + HelperUtils.getUmengMD5(UMUtils.getAppkey(f40929a));
+            String replaceAll = str.replaceAll("&=", " ").replaceAll("&&", " ").replaceAll("==", "/");
+            this.b = replaceAll + "/Android " + HelperUtils.getUmengMD5(UMUtils.getAppkey(f27238a));
         } catch (Throwable th) {
-            UMCrashManager.reportCrash(f40929a, th);
+            UMCrashManager.reportCrash(f27238a, th);
         }
     }
 
@@ -64,7 +63,7 @@ public class a {
             while (true) {
                 int i2 = i;
                 if (i2 >= split.length) {
-                    this.f40930c = sb.toString();
+                    this.f27239c = sb.toString();
                     return;
                 }
                 String str3 = split[i2];
@@ -79,12 +78,12 @@ public class a {
                 i = i2 + 1;
             }
         } catch (Throwable th) {
-            UMCrashManager.reportCrash(f40929a, th);
+            UMCrashManager.reportCrash(f27238a, th);
         }
     }
 
     public String a() {
-        return this.f40930c;
+        return this.f27239c;
     }
 
     public boolean a(String str) {

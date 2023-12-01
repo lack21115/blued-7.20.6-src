@@ -6,17 +6,17 @@ import com.huawei.hms.aaid.constant.ErrorEnum;
 public class BaseException extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f22829a;
+    private final int f9221a;
     private final ErrorEnum b;
 
     public BaseException(int i) {
         ErrorEnum fromCode = ErrorEnum.fromCode(i);
         this.b = fromCode;
-        this.f22829a = fromCode.getExternalCode();
+        this.f9221a = fromCode.getExternalCode();
     }
 
     public int getErrorCode() {
-        return this.f22829a;
+        return this.f9221a;
     }
 
     @Override // java.lang.Throwable

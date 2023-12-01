@@ -4,11 +4,11 @@ package com.umeng.analytics.pro;
 public class bk {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40663a;
+    public String f26972a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f40664c;
+    public String f26973c;
     public String d;
     public String e;
     public String f;

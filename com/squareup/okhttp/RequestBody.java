@@ -1,13 +1,13 @@
 package com.squareup.okhttp;
 
 import com.squareup.okhttp.internal.Util;
+import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import okio.BufferedSink;
 import okio.ByteString;
 import okio.Okio;
-import okio.Source;
 
 /* loaded from: source-8457232-dex2jar.jar:com/squareup/okhttp/RequestBody.class */
 public abstract class RequestBody {
@@ -26,14 +26,14 @@ public abstract class RequestBody {
 
                 @Override // com.squareup.okhttp.RequestBody
                 public void writeTo(BufferedSink bufferedSink) throws IOException {
-                    Source source = null;
+                    Closeable closeable = null;
                     try {
-                        Source source2 = Okio.source(file);
-                        source = source2;
-                        bufferedSink.writeAll(source2);
-                        Util.closeQuietly(source2);
-                    } catch (Throwable th) {
+                        Closeable source = Okio.source(file);
+                        closeable = source;
+                        bufferedSink.writeAll(source);
                         Util.closeQuietly(source);
+                    } catch (Throwable th) {
+                        Util.closeQuietly(closeable);
                         throw th;
                     }
                 }

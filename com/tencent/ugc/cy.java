@@ -5,11 +5,11 @@ package com.tencent.ugc;
 public final /* synthetic */ class cy implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCMediaListSource f40310a;
+    private final UGCMediaListSource f26619a;
     private final int b;
 
     private cy(UGCMediaListSource uGCMediaListSource, int i) {
-        this.f40310a = uGCMediaListSource;
+        this.f26619a = uGCMediaListSource;
         this.b = i;
     }
 
@@ -19,6 +19,6 @@ public final /* synthetic */ class cy implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCMediaListSource.lambda$setPictureTransition$6(this.f40310a, this.b);
+        UGCMediaListSource.lambda$setPictureTransition$6(this.f26619a, this.b);
     }
 }

@@ -4,7 +4,7 @@ package androidx.constraintlayout.core.motion.utils;
 public class Schlick extends Easing {
 
     /* renamed from: c  reason: collision with root package name */
-    double f2056c;
+    double f2008c;
     double d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -12,23 +12,23 @@ public class Schlick extends Easing {
         this.b = str;
         int indexOf = str.indexOf(40);
         int indexOf2 = str.indexOf(44, indexOf);
-        this.f2056c = Double.parseDouble(str.substring(indexOf + 1, indexOf2).trim());
+        this.f2008c = Double.parseDouble(str.substring(indexOf + 1, indexOf2).trim());
         int i = indexOf2 + 1;
         this.d = Double.parseDouble(str.substring(i, str.indexOf(44, i)).trim());
     }
 
     private double a(double d) {
         double d2 = this.d;
-        return d < d2 ? (d2 * d) / (d + (this.f2056c * (d2 - d))) : ((1.0d - d2) * (d - 1.0d)) / ((1.0d - d) - (this.f2056c * (d2 - d)));
+        return d < d2 ? (d2 * d) / (d + (this.f2008c * (d2 - d))) : ((1.0d - d2) * (d - 1.0d)) / ((1.0d - d) - (this.f2008c * (d2 - d)));
     }
 
     private double b(double d) {
         double d2 = this.d;
         if (d < d2) {
-            double d3 = this.f2056c;
+            double d3 = this.f2008c;
             return ((d3 * d2) * d2) / ((((d2 - d) * d3) + d) * ((d3 * (d2 - d)) + d));
         }
-        double d4 = this.f2056c;
+        double d4 = this.f2008c;
         return (((d2 - 1.0d) * d4) * (d2 - 1.0d)) / (((((-d4) * (d2 - d)) - d) + 1.0d) * ((((-d4) * (d2 - d)) - d) + 1.0d));
     }
 

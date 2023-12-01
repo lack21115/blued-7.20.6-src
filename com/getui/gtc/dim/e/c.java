@@ -45,7 +45,7 @@ public final class c {
     public static Object a(byte[] bArr) throws Exception {
         byte b = bArr[0];
         byte[] bArr2 = new byte[bArr.length - 1];
-        System.arraycopy((Object) bArr, 1, (Object) bArr2, 0, bArr.length - 1);
+        System.arraycopy(bArr, 1, bArr2, 0, bArr.length - 1);
         if (b != 0) {
             if (b == 1) {
                 Object c2 = c(bArr2);
@@ -175,7 +175,7 @@ public final class c {
                 byte[] marshall = obtain.marshall();
                 byte[] bArr = new byte[marshall.length + 1];
                 bArr[0] = 1;
-                System.arraycopy((Object) marshall, 0, (Object) bArr, 1, marshall.length);
+                System.arraycopy(marshall, 0, bArr, 1, marshall.length);
                 if (obtain != null) {
                     obtain.recycle();
                 }
@@ -245,7 +245,7 @@ public final class c {
             byte[] byteArray = byteArrayOutputStream.toByteArray();
             byte[] bArr = new byte[byteArray.length + 1];
             bArr[0] = 0;
-            System.arraycopy((Object) byteArray, 0, (Object) bArr, 1, byteArray.length);
+            System.arraycopy(byteArray, 0, bArr, 1, byteArray.length);
             try {
                 objectOutputStream.close();
                 return bArr;

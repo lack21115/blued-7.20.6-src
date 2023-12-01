@@ -6,11 +6,11 @@ import android.os.Build;
 public class cp {
 
     /* renamed from: a  reason: collision with root package name */
-    static cp f23791a;
+    static cp f10183a;
     static cp b;
 
     /* renamed from: c  reason: collision with root package name */
-    static cp f23792c;
+    static cp f10184c;
     private long d;
     private a e;
 
@@ -22,10 +22,10 @@ public class cp {
         
 
         /* renamed from: c  reason: collision with root package name */
-        int f23794c;
+        int f10186c;
 
         a(int i) {
-            this.f23794c = i;
+            this.f10186c = i;
         }
     }
 
@@ -34,102 +34,102 @@ public class cp {
     }
 
     private static void c() {
-        f23791a = new cp();
+        f10183a = new cp();
         b = new cp();
-        f23792c = new cp();
+        f10184c = new cp();
         b.a(a.DWORD);
         int i = Build.VERSION.SDK_INT;
         if (cq.a()) {
-            f23791a.a(a.QWORD);
-            f23792c.a(a.QWORD);
+            f10183a.a(a.QWORD);
+            f10184c.a(a.QWORD);
             switch (i) {
                 case 19:
-                    f23791a.a(32L);
+                    f10183a.a(32L);
                     b.a(28L);
                     return;
                 case 20:
                 default:
                     throw new RuntimeException("API LEVEL: " + i + " is not supported now : (");
                 case 21:
-                    f23791a.a(40L);
-                    f23791a.a(a.QWORD);
-                    f23792c.a(32L);
-                    f23792c.a(a.QWORD);
+                    f10183a.a(40L);
+                    f10183a.a(a.QWORD);
+                    f10184c.a(32L);
+                    f10184c.a(a.QWORD);
                     b.a(56L);
                     return;
                 case 22:
-                    f23791a.a(52L);
-                    f23792c.a(44L);
+                    f10183a.a(52L);
+                    f10184c.a(44L);
                     b.a(20L);
                     return;
                 case 23:
-                    f23791a.a(48L);
-                    f23792c.a(40L);
+                    f10183a.a(48L);
+                    f10184c.a(40L);
                     b.a(12L);
                     return;
                 case 24:
                 case 25:
-                    f23791a.a(48L);
-                    f23792c.a(40L);
+                    f10183a.a(48L);
+                    f10184c.a(40L);
                     b.a(4L);
                     return;
                 case 26:
                 case 27:
-                    f23791a.a(40L);
-                    f23792c.a(32L);
+                    f10183a.a(40L);
+                    f10184c.a(32L);
                     b.a(4L);
                     return;
                 case 28:
                 case 29:
-                    f23791a.a(32L);
-                    f23792c.a(24L);
+                    f10183a.a(32L);
+                    f10184c.a(24L);
                     b.a(4L);
                     return;
             }
         }
-        f23791a.a(a.DWORD);
-        f23792c.a(a.DWORD);
+        f10183a.a(a.DWORD);
+        f10184c.a(a.DWORD);
         switch (i) {
             case 19:
-                f23791a.a(32L);
+                f10183a.a(32L);
                 b.a(28L);
                 return;
             case 20:
             default:
                 throw new RuntimeException("API LEVEL: " + i + " is not supported now : (");
             case 21:
-                f23791a.a(40L);
-                f23791a.a(a.QWORD);
-                f23792c.a(32L);
-                f23792c.a(a.QWORD);
+                f10183a.a(40L);
+                f10183a.a(a.QWORD);
+                f10184c.a(32L);
+                f10184c.a(a.QWORD);
                 b.a(56L);
                 return;
             case 22:
-                f23791a.a(44L);
-                f23792c.a(40L);
+                f10183a.a(44L);
+                f10184c.a(40L);
                 b.a(20L);
                 return;
             case 23:
-                f23791a.a(36L);
-                f23792c.a(32L);
+                f10183a.a(36L);
+                f10184c.a(32L);
                 b.a(12L);
                 return;
             case 24:
             case 25:
-                f23791a.a(32L);
-                f23792c.a(28L);
+                f10183a.a(32L);
+                f10184c.a(28L);
                 b.a(4L);
                 return;
             case 26:
             case 27:
-                f23791a.a(28L);
-                f23792c.a(24L);
+                f10183a.a(28L);
+                f10184c.a(24L);
                 b.a(4L);
                 return;
             case 28:
             case 29:
-                f23791a.a(24L);
-                f23792c.a(20L);
+                f10183a.a(24L);
+                f10184c.a(20L);
                 b.a(4L);
                 return;
         }

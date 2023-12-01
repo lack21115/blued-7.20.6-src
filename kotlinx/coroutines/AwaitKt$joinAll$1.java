@@ -10,13 +10,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "Await.kt", c = {54}, d = "joinAll", e = "kotlinx.coroutines.AwaitKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/AwaitKt$joinAll$1.class */
 public final class AwaitKt$joinAll$1 extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42779a;
+    Object a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f42780c;
+    int c;
     /* synthetic */ Object d;
     int e;
 

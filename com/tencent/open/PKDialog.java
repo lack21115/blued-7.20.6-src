@@ -1,5 +1,6 @@
 package com.tencent.open;
 
+import android.R;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -18,6 +19,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+import com.bytedance.applog.util.WebViewJsUtil;
 import com.tencent.connect.auth.QQToken;
 import com.tencent.connect.common.Constants;
 import com.tencent.open.a;
@@ -33,7 +35,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/open/PKDialog.class */
-public class PKDialog extends b implements a.InterfaceC0974a {
+public class PKDialog extends b implements a.InterfaceC0804a {
     private static final int MSG_CANCEL = 2;
     private static final int MSG_COMPLETE = 1;
     private static final int MSG_ON_LOAD = 4;
@@ -73,7 +75,7 @@ public class PKDialog extends b implements a.InterfaceC0974a {
         public void onReceivedError(WebView webView, int i, String str, String str2) {
             super.onReceivedError(webView, i, str, str2);
             PKDialog.this.mListener.onError(new UiError(i, str, str2));
-            if (PKDialog.this.mWeakContext != null && PKDialog.this.mWeakContext.get() != 0) {
+            if (PKDialog.this.mWeakContext != null && PKDialog.this.mWeakContext.get() != null) {
                 Toast.makeText((Context) PKDialog.this.mWeakContext.get(), "网络连接异常或系统错误", 0).show();
             }
             PKDialog.this.dismiss();
@@ -207,11 +209,11 @@ public class PKDialog extends b implements a.InterfaceC0974a {
             } else if (i == 2) {
                 this.mL.onCancel();
             } else if (i == 3) {
-                if (PKDialog.this.mWeakContext == null || PKDialog.this.mWeakContext.get() == 0) {
+                if (PKDialog.this.mWeakContext == null || PKDialog.this.mWeakContext.get() == null) {
                     return;
                 }
                 PKDialog.showTips((Context) PKDialog.this.mWeakContext.get(), (String) message.obj);
-            } else if (i != 5 || PKDialog.this.mWeakContext == null || PKDialog.this.mWeakContext.get() == 0) {
+            } else if (i != 5 || PKDialog.this.mWeakContext == null || PKDialog.this.mWeakContext.get() == null) {
             } else {
                 PKDialog.showProcessDialog((Context) PKDialog.this.mWeakContext.get(), (String) message.obj);
             }
@@ -219,7 +221,7 @@ public class PKDialog extends b implements a.InterfaceC0974a {
     }
 
     public PKDialog(Context context, String str, String str2, IUiListener iUiListener, QQToken qQToken) {
-        super(context, 16973840);
+        super(context, R.style.Theme_Translucent_NoTitleBar);
         this.mWeakContext = new WeakReference<>(context);
         this.mUrl = str2;
         this.mListener = new OnTimeListener(context, str, str2, qQToken.getAppId(), iUiListener);
@@ -342,7 +344,7 @@ public class PKDialog extends b implements a.InterfaceC0974a {
     }
 
     public void callJs(String str, String str2) {
-        this.mWebView.loadUrl("javascript:" + str + "(" + str2 + ")");
+        this.mWebView.loadUrl(WebViewJsUtil.JS_URL_PREFIX + str + "(" + str2 + ")");
     }
 
     @Override // android.app.Dialog
@@ -359,8 +361,9 @@ public class PKDialog extends b implements a.InterfaceC0974a {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.tencent.open.b, android.app.Dialog
-    protected void onCreate(Bundle bundle) {
+    public void onCreate(Bundle bundle) {
         requestWindowFeature(1);
         super.onCreate(bundle);
         getWindow().setSoftInputMode(16);
@@ -369,13 +372,13 @@ public class PKDialog extends b implements a.InterfaceC0974a {
         initViews();
     }
 
-    @Override // com.tencent.open.c.a.InterfaceC0974a
+    @Override // com.tencent.open.c.a.InterfaceC0804a
     public void onKeyboardHidden() {
         this.mWebView.getLayoutParams().height = this.mWebviewHeight;
         f.e(TAG, "onKeyboardHidden keyboard hide");
     }
 
-    @Override // com.tencent.open.c.a.InterfaceC0974a
+    @Override // com.tencent.open.c.a.InterfaceC0804a
     public void onKeyboardShown(int i) {
         WeakReference<Context> weakReference = this.mWeakContext;
         if (weakReference != null && weakReference.get() != null) {

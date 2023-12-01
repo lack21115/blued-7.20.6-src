@@ -29,9 +29,9 @@ public abstract class AndroidMessage<M extends Message<M, B>, B extends Message.
         }
 
         @JvmStatic
-        public final <E> Parcelable.Creator<E> newCreator(ProtoAdapter<E> adapter) {
-            Intrinsics.e(adapter, "adapter");
-            return new ProtoAdapterCreator(adapter);
+        public final <E> Parcelable.Creator<E> newCreator(ProtoAdapter<E> protoAdapter) {
+            Intrinsics.e(protoAdapter, "adapter");
+            return new ProtoAdapterCreator(protoAdapter);
         }
     }
 
@@ -41,16 +41,16 @@ public abstract class AndroidMessage<M extends Message<M, B>, B extends Message.
     public static final class ProtoAdapterCreator<M> implements Parcelable.Creator<M> {
         private final ProtoAdapter<M> adapter;
 
-        public ProtoAdapterCreator(ProtoAdapter<M> adapter) {
-            Intrinsics.e(adapter, "adapter");
-            this.adapter = adapter;
+        public ProtoAdapterCreator(ProtoAdapter<M> protoAdapter) {
+            Intrinsics.e(protoAdapter, "adapter");
+            this.adapter = protoAdapter;
         }
 
         @Override // android.os.Parcelable.Creator
-        public M createFromParcel(Parcel input) {
-            Intrinsics.e(input, "input");
+        public M createFromParcel(Parcel parcel) {
+            Intrinsics.e(parcel, "input");
             ProtoAdapter<M> protoAdapter = this.adapter;
-            byte[] createByteArray = input.createByteArray();
+            byte[] createByteArray = parcel.createByteArray();
             Intrinsics.c(createByteArray, "input.createByteArray()");
             return protoAdapter.decode(createByteArray);
         }
@@ -67,10 +67,10 @@ public abstract class AndroidMessage<M extends Message<M, B>, B extends Message.
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    protected AndroidMessage(ProtoAdapter<M> adapter, ByteString unknownFields) {
-        super(adapter, unknownFields);
-        Intrinsics.e(adapter, "adapter");
-        Intrinsics.e(unknownFields, "unknownFields");
+    protected AndroidMessage(ProtoAdapter<M> protoAdapter, ByteString byteString) {
+        super(protoAdapter, byteString);
+        Intrinsics.e(protoAdapter, "adapter");
+        Intrinsics.e(byteString, "unknownFields");
     }
 
     @JvmStatic
@@ -84,8 +84,8 @@ public abstract class AndroidMessage<M extends Message<M, B>, B extends Message.
     }
 
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel dest, int i) {
-        Intrinsics.e(dest, "dest");
-        dest.writeByteArray(encode());
+    public void writeToParcel(Parcel parcel, int i) {
+        Intrinsics.e(parcel, "dest");
+        parcel.writeByteArray(encode());
     }
 }

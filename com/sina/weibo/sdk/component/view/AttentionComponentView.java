@@ -1,5 +1,6 @@
 package com.sina.weibo.sdk.component.view;
 
+import android.R;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -148,7 +149,7 @@ public class AttentionComponentView extends FrameLayout {
         layoutParams.gravity = 17;
         this.mButton.setLayoutParams(layoutParams);
         this.flButton.addView(this.mButton);
-        ProgressBar progressBar = new ProgressBar(getContext(), null, 16842873);
+        ProgressBar progressBar = new ProgressBar(getContext(), null, R.attr.progressBarStyleSmall);
         this.pbLoading = progressBar;
         progressBar.setVisibility(8);
         FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(-2, -2);

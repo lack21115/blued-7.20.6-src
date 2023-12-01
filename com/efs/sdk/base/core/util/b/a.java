@@ -17,7 +17,7 @@ import javax.crypto.spec.SecretKeySpec;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final IvParameterSpec f21793a = new IvParameterSpec(new byte[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
+    private static final IvParameterSpec f8187a = new IvParameterSpec(new byte[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
 
     private static SecretKeySpec a(String str) {
         return new SecretKeySpec(str.getBytes(), "AES");
@@ -36,7 +36,7 @@ public final class a {
         try {
             SecretKeySpec a2 = a(str);
             Cipher cipher = Cipher.getInstance(JceEncryptionConstants.SYMMETRIC_CIPHER_METHOD);
-            cipher.init(2, a2, f21793a);
+            cipher.init(2, a2, f8187a);
             return cipher.doFinal(bArr);
         } catch (InvalidAlgorithmParameterException | InvalidKeyException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException e) {
             Log.e("efs.base", "aes decrypt error", e);
@@ -48,7 +48,7 @@ public final class a {
         try {
             SecretKeySpec a2 = a(str);
             Cipher cipher = Cipher.getInstance(JceEncryptionConstants.SYMMETRIC_CIPHER_METHOD);
-            cipher.init(1, a2, f21793a);
+            cipher.init(1, a2, f8187a);
             return cipher.doFinal(bArr);
         } catch (InvalidAlgorithmParameterException | InvalidKeyException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException e) {
             Log.e("efs.base", "aes encrypt error", e);

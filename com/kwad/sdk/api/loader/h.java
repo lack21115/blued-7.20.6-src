@@ -3,11 +3,11 @@ package com.kwad.sdk.api.loader;
 import android.content.Context;
 import android.text.TextUtils;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/api/loader/h.class */
-public final class h {
+final class h {
     private static File ZB;
 
     private static File ar(Context context) {
@@ -69,7 +69,7 @@ public final class h {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static File k(Context context, String str) {
         File ar2 = ar(context);
-        return new File(ar2, "dynamic-" + System.currentTimeMillis() + "-" + str + ".apk");
+        return new File(ar2, "dynamic-" + System.currentTimeMillis() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str + ".apk");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -120,7 +120,7 @@ public final class h {
                             return;
                         }
                         File file = listFiles[i2];
-                        if (g.q(str, file.getName().substring(file.getName().indexOf("-") + 1))) {
+                        if (g.q(str, file.getName().substring(file.getName().indexOf(Constants.ACCEPT_TIME_SEPARATOR_SERVER) + 1))) {
                             h.c(file);
                         }
                         i = i2 + 1;

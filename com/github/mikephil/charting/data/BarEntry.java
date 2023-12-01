@@ -6,15 +6,15 @@ import com.github.mikephil.charting.highlight.Range;
 public class BarEntry extends Entry {
 
     /* renamed from: a  reason: collision with root package name */
-    private float[] f22118a;
+    private float[] f8511a;
     private Range[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f22119c;
+    private float f8512c;
     private float d;
 
     public float[] a() {
-        return this.f22118a;
+        return this.f8511a;
     }
 
     @Override // com.github.mikephil.charting.data.BaseEntry
@@ -27,7 +27,7 @@ public class BarEntry extends Entry {
     }
 
     public boolean d() {
-        return this.f22118a != null;
+        return this.f8511a != null;
     }
 
     public float e() {
@@ -35,6 +35,6 @@ public class BarEntry extends Entry {
     }
 
     public float f() {
-        return this.f22119c;
+        return this.f8512c;
     }
 }

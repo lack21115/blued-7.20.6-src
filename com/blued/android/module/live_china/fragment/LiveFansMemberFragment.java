@@ -22,19 +22,14 @@ import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFansMemberFragment.class */
 public class LiveFansMemberFragment extends MvpFragment<LiveFansRecordMemberPresent> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    View f12855a;
+    View a;
     TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    TextView f12856c;
+    TextView c;
     View d;
     View e;
     View f;
@@ -63,19 +58,19 @@ public class LiveFansMemberFragment extends MvpFragment<LiveFansRecordMemberPres
     }
 
     private void d() {
-        this.f12855a = this.i.findViewById(R.id.ll_fans_title);
+        this.a = this.i.findViewById(R.id.ll_fans_title);
         this.b = (TextView) this.i.findViewById(R.id.tv_fans_title);
-        this.f12856c = (TextView) this.i.findViewById(R.id.tv_fans_num);
+        this.c = (TextView) this.i.findViewById(R.id.tv_fans_num);
         if (this.u == 0) {
-            this.f12855a.setVisibility(0);
+            this.a.setVisibility(0);
         } else {
-            this.f12855a.setVisibility(8);
+            this.a.setVisibility(8);
         }
         this.d = this.i.findViewById(R.id.iv_fans_member);
         this.e = this.i.findViewById(R.id.iv_fans_member_back);
         this.f = this.i.findViewById(R.id.iv_fans_qa);
-        this.g = (SmartRefreshLayout) this.i.findViewById(R.id.smart_members);
-        this.k = (RecyclerView) this.i.findViewById(R.id.rv_members);
+        this.g = this.i.findViewById(R.id.smart_members);
+        this.k = this.i.findViewById(R.id.rv_members);
         this.l = this.i.findViewById(R.id.ll_nodata_blacklist);
         this.m = this.i.findViewById(R.id.tv_live_reload);
         this.n = this.i.findViewById(R.id.ll_nodata);
@@ -85,13 +80,11 @@ public class LiveFansMemberFragment extends MvpFragment<LiveFansRecordMemberPres
         this.e.setVisibility(0);
         j().a(2);
         this.g.c(false);
-        this.g.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.fragment.LiveFansMemberFragment.1
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
+        this.g.a(new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.fragment.LiveFansMemberFragment.1
             public void onLoadMore(RefreshLayout refreshLayout) {
                 LiveFansMemberFragment.this.j().f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
             }
         });
@@ -105,16 +98,15 @@ public class LiveFansMemberFragment extends MvpFragment<LiveFansRecordMemberPres
         LiveFansMemberAdapter liveFansMemberAdapter = new LiveFansMemberAdapter(getContext());
         this.r = liveFansMemberAdapter;
         liveFansMemberAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveFansMemberFragment.3
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 if (LiveFansMemberFragment.this.getParentFragment() instanceof LiveFansGuestDialogFragment) {
-                    ((LiveFansGuestDialogFragment) LiveFansMemberFragment.this.getParentFragment()).dismiss();
+                    LiveFansMemberFragment.this.getParentFragment().dismiss();
                 }
-                LiveFansMemberModel a2 = LiveFansMemberFragment.this.r.a(i);
-                if (a2 != null) {
+                LiveFansMemberModel a = LiveFansMemberFragment.this.r.a(i);
+                if (a != null) {
                     LiveRoomUserModel liveRoomUserModel = new LiveRoomUserModel();
-                    liveRoomUserModel.uid = a2.uid;
-                    liveRoomUserModel.avatar = a2.avatar;
+                    liveRoomUserModel.uid = a.uid;
+                    liveRoomUserModel.avatar = a.avatar;
                     LiveSetDataObserver.a().a(liveRoomUserModel);
                 }
             }
@@ -140,7 +132,7 @@ public class LiveFansMemberFragment extends MvpFragment<LiveFansRecordMemberPres
         if (textView != null) {
             textView.setText(liveFansInfoModel.anchor_name);
         }
-        TextView textView2 = this.f12856c;
+        TextView textView2 = this.c;
         if (textView2 != null) {
             textView2.setText(String.format(getString(R.string.live_fans_not_add_tip_1), Integer.valueOf(liveFansInfoModel.member_total)));
         }
@@ -187,7 +179,7 @@ public class LiveFansMemberFragment extends MvpFragment<LiveFansRecordMemberPres
 
     public LiveFansGuestDialogFragment b() {
         if (getParentFragment() instanceof LiveFansGuestDialogFragment) {
-            return (LiveFansGuestDialogFragment) getParentFragment();
+            return getParentFragment();
         }
         return null;
     }
@@ -206,26 +198,26 @@ public class LiveFansMemberFragment extends MvpFragment<LiveFansRecordMemberPres
     public void o() {
         super.o();
         Log.i("xmm", "setData 5");
-        this.g.l(true);
+        this.g.b(true);
     }
 
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
-        LiveFansGuestDialogFragment liveFansGuestDialogFragment;
+        LiveFansGuestDialogFragment parentFragment;
         Tracker.onClick(view);
         int id = view.getId();
         if (id == R.id.iv_fans_member_back) {
-            if (!(getParentFragment() instanceof LiveFansGuestDialogFragment) || (liveFansGuestDialogFragment = (LiveFansGuestDialogFragment) getParentFragment()) == null) {
+            if (!(getParentFragment() instanceof LiveFansGuestDialogFragment) || (parentFragment = getParentFragment()) == null) {
                 return;
             }
-            liveFansGuestDialogFragment.a(0);
+            parentFragment.a(0);
         } else if (id != R.id.iv_fans_qa || b() == null) {
         } else {
             b().d();
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         c();
@@ -235,10 +227,10 @@ public class LiveFansMemberFragment extends MvpFragment<LiveFansRecordMemberPres
     public void p() {
         super.p();
         Log.i("xmm", "setData 6");
-        this.g.l(false);
+        this.g.b(false);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         if (this.t && z) {

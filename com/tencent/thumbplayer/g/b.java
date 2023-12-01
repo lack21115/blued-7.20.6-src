@@ -18,15 +18,15 @@ import java.nio.ByteBuffer;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f39316a;
+    public boolean f25625a;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private c f39317c;
+    private c f25626c;
     private com.tencent.thumbplayer.g.a.a d;
     private boolean g;
     private final String h;
-    private EnumC1023b i;
+    private EnumC0853b i;
     private boolean f = true;
     private final com.tencent.thumbplayer.g.g.a e = new com.tencent.thumbplayer.g.g.a(b());
 
@@ -43,7 +43,7 @@ public final class b {
 
     /* renamed from: com.tencent.thumbplayer.g.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/g/b$b.class */
-    public enum EnumC1023b {
+    public enum EnumC0853b {
         CreateByName,
         CreateByType
     }
@@ -52,11 +52,11 @@ public final class b {
     public static final class c extends MediaCodec.Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        private final b f39324a;
+        private final b f25633a;
         private final a b;
 
         public c(b bVar, a aVar) {
-            this.f39324a = bVar;
+            this.f25633a = bVar;
             this.b = aVar;
         }
 
@@ -64,7 +64,7 @@ public final class b {
         public final void onError(MediaCodec mediaCodec, MediaCodec.CodecException codecException) {
             a aVar = this.b;
             if (aVar != null) {
-                aVar.onError(this.f39324a, codecException);
+                aVar.onError(this.f25633a, codecException);
             }
         }
 
@@ -72,7 +72,7 @@ public final class b {
         public final void onInputBufferAvailable(MediaCodec mediaCodec, int i) {
             a aVar = this.b;
             if (aVar != null) {
-                aVar.onInputBufferAvailable(this.f39324a, i);
+                aVar.onInputBufferAvailable(this.f25633a, i);
             }
         }
 
@@ -80,7 +80,7 @@ public final class b {
         public final void onOutputBufferAvailable(MediaCodec mediaCodec, int i, MediaCodec.BufferInfo bufferInfo) {
             a aVar = this.b;
             if (aVar != null) {
-                aVar.onOutputBufferAvailable(this.f39324a, i, bufferInfo);
+                aVar.onOutputBufferAvailable(this.f25633a, i, bufferInfo);
             }
         }
 
@@ -88,25 +88,25 @@ public final class b {
         public final void onOutputFormatChanged(MediaCodec mediaCodec, MediaFormat mediaFormat) {
             a aVar = this.b;
             if (aVar != null) {
-                aVar.onOutputFormatChanged(this.f39324a, mediaFormat);
+                aVar.onOutputFormatChanged(this.f25633a, mediaFormat);
             }
         }
     }
 
-    private b(String str, EnumC1023b enumC1023b) {
+    private b(String str, EnumC0853b enumC0853b) {
         this.h = str;
-        this.i = enumC1023b;
+        this.i = enumC0853b;
     }
 
     public static b a(String str) {
-        return new b(str, EnumC1023b.CreateByName);
+        return new b(str, EnumC0853b.CreateByName);
     }
 
     private void b(Surface surface) {
-        this.f39316a = com.tencent.thumbplayer.g.a.a().a(this, surface);
+        this.f25625a = com.tencent.thumbplayer.g.a.a().a(this, surface);
         this.e.a();
         this.e.b();
-        this.e.a(this.f39316a);
+        this.e.a(this.f25625a);
     }
 
     private void m() {
@@ -114,8 +114,8 @@ public final class b {
         d.b(new Runnable() { // from class: com.tencent.thumbplayer.g.b.1
             @Override // java.lang.Runnable
             public void run() {
-                if (b.this.f39317c != null) {
-                    b.this.f39317c.a(b.this.d);
+                if (b.this.f25626c != null) {
+                    b.this.f25626c.a(b.this.d);
                 }
                 if (b.this.d != null) {
                     b.this.d.onCreate(Boolean.valueOf(b.this.b));
@@ -141,7 +141,7 @@ public final class b {
     }
 
     public final int a(long j) {
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar != null) {
             return cVar.a(j);
         }
@@ -149,20 +149,20 @@ public final class b {
     }
 
     public final int a(MediaCodec.BufferInfo bufferInfo, long j) {
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar != null) {
             return cVar.a(bufferInfo, j);
         }
         return -1000;
     }
 
-    public final EnumC1023b a() {
+    public final EnumC0853b a() {
         return this.i;
     }
 
     public final ByteBuffer a(int i) {
         MediaCodec a2;
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar == null || (a2 = cVar.a()) == null) {
             return null;
         }
@@ -170,7 +170,7 @@ public final class b {
     }
 
     public final void a(int i, int i2, int i3, long j, int i4) {
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar != null) {
             cVar.a(i, i2, i3, j, i4);
         }
@@ -178,7 +178,7 @@ public final class b {
 
     public final void a(int i, int i2, MediaCodec.CryptoInfo cryptoInfo, long j, int i3) {
         MediaCodec a2;
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar == null || (a2 = cVar.a()) == null) {
             return;
         }
@@ -186,7 +186,7 @@ public final class b {
     }
 
     public final void a(int i, boolean z) {
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar != null) {
             cVar.a(i, z);
         }
@@ -197,7 +197,7 @@ public final class b {
             this.g = true;
             b(surface);
             try {
-                this.f39317c = com.tencent.thumbplayer.g.a.a().a(mediaFormat, surface, mediaCrypto, i, this);
+                this.f25626c = com.tencent.thumbplayer.g.a.a().a(mediaFormat, surface, mediaCrypto, i, this);
             } catch (IOException e) {
                 com.tencent.thumbplayer.g.h.b.b("TMediaCodec", "createCodec mediaFormat:".concat(String.valueOf(mediaFormat)), e);
             }
@@ -209,7 +209,7 @@ public final class b {
 
     public final void a(Bundle bundle) {
         MediaCodec a2;
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar == null || (a2 = cVar.a()) == null) {
             return;
         }
@@ -217,7 +217,7 @@ public final class b {
     }
 
     public final void a(Surface surface) {
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar != null) {
             cVar.a(surface);
         }
@@ -233,7 +233,7 @@ public final class b {
             com.tencent.thumbplayer.g.h.b.d("TMediaCodec", "ignore method setCallback for API lower than 23");
             return;
         }
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar == null || (a2 = cVar.a()) == null) {
             return;
         }
@@ -245,7 +245,7 @@ public final class b {
     }
 
     public final Image b(int i) {
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar != null) {
             return cVar.a().getOutputImage(i);
         }
@@ -261,7 +261,7 @@ public final class b {
     }
 
     public final ByteBuffer c(int i) {
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar != null) {
             return cVar.a().getInputBuffer(i);
         }
@@ -270,7 +270,7 @@ public final class b {
 
     public final void d(int i) {
         MediaCodec a2;
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar == null || (a2 = cVar.a()) == null) {
             return;
         }
@@ -283,10 +283,10 @@ public final class b {
 
     public final void e() {
         if (com.tencent.thumbplayer.g.h.b.a()) {
-            com.tencent.thumbplayer.g.h.b.b("TMediaCodec", "start codecWrapper:" + this.f39317c);
+            com.tencent.thumbplayer.g.h.b.b("TMediaCodec", "start codecWrapper:" + this.f25626c);
         }
         n();
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar != null) {
             cVar.d();
         }
@@ -294,21 +294,21 @@ public final class b {
     }
 
     public final void f() {
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar != null) {
             cVar.f();
         }
     }
 
     public final void g() {
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar != null) {
             cVar.g();
         }
     }
 
     public final void h() {
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar != null) {
             cVar.e();
         }
@@ -316,7 +316,7 @@ public final class b {
 
     public final MediaFormat i() {
         MediaCodec a2;
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar == null || (a2 = cVar.a()) == null) {
             return null;
         }
@@ -325,7 +325,7 @@ public final class b {
 
     public final ByteBuffer[] j() {
         MediaCodec a2;
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar == null || (a2 = cVar.a()) == null) {
             return null;
         }
@@ -334,7 +334,7 @@ public final class b {
 
     public final ByteBuffer[] k() {
         MediaCodec a2;
-        c cVar = this.f39317c;
+        c cVar = this.f25626c;
         if (cVar == null || (a2 = cVar.a()) == null) {
             return null;
         }

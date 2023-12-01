@@ -2,7 +2,6 @@ package com.opos.cmn.func.dl.base.e;
 
 import com.opos.cmn.func.dl.base.exception.DlException;
 import java.io.DataInputStream;
-import java.io.DataOutput;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,15 +13,15 @@ import java.util.List;
 public class d implements a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24919a = d.class.getSimpleName();
+    private static final String f11231a = d.class.getSimpleName();
     private File b;
 
     /* renamed from: c  reason: collision with root package name */
-    private File f24920c;
+    private File f11232c;
 
     public d(File file, File file2) {
         this.b = file;
-        this.f24920c = file2;
+        this.f11232c = file2;
     }
 
     @Override // com.opos.cmn.func.dl.base.e.a
@@ -34,8 +33,8 @@ public class d implements a {
             arrayList = null;
             if (com.opos.cmn.an.d.b.a.a(this.b)) {
                 arrayList = null;
-                if (com.opos.cmn.an.d.b.a.a(this.f24920c)) {
-                    com.opos.cmn.an.f.a.b(f24919a, "tmpFile and posFile all exists.");
+                if (com.opos.cmn.an.d.b.a.a(this.f11232c)) {
+                    com.opos.cmn.an.f.a.b(f11231a, "tmpFile and posFile all exists.");
                     try {
                         fileInputStream = new FileInputStream(this.b);
                         try {
@@ -59,7 +58,7 @@ public class d implements a {
                     try {
                         try {
                             int readInt = dataInputStream.readInt();
-                            com.opos.cmn.an.f.a.b(f24919a, "blockNum=".concat(String.valueOf(readInt)));
+                            com.opos.cmn.an.f.a.b(f11231a, "blockNum=".concat(String.valueOf(readInt)));
                             arrayList = new ArrayList(readInt);
                             int i = 0;
                             while (true) {
@@ -72,10 +71,10 @@ public class d implements a {
                                     i = i2 + 1;
                                 } catch (Exception e3) {
                                     try {
-                                        com.opos.cmn.an.f.a.c(f24919a, "read pos file error,delete pos file!");
-                                        com.opos.cmn.an.d.b.a.e(this.f24920c);
+                                        com.opos.cmn.an.f.a.c(f11231a, "read pos file error,delete pos file!");
+                                        com.opos.cmn.an.d.b.a.e(this.f11232c);
                                         com.opos.cmn.func.dl.base.h.a.a(dataInputStream, fileInputStream);
-                                        com.opos.cmn.an.f.a.b(f24919a, "getFileSavedInfos, path:" + this.b.getName());
+                                        com.opos.cmn.an.f.a.b(f11231a, "getFileSavedInfos, path:" + this.b.getName());
                                         return arrayList;
                                     } catch (Throwable th3) {
                                         th = th3;
@@ -95,7 +94,7 @@ public class d implements a {
                     }
                 }
             }
-            com.opos.cmn.an.f.a.b(f24919a, "getFileSavedInfos, path:" + this.b.getName());
+            com.opos.cmn.an.f.a.b(f11231a, "getFileSavedInfos, path:" + this.b.getName());
         }
         return arrayList;
     }
@@ -104,7 +103,7 @@ public class d implements a {
     public final void a(List<c> list) {
         FileOutputStream fileOutputStream;
         DataOutputStream dataOutputStream;
-        DataOutput dataOutput;
+        DataOutputStream dataOutputStream2;
         synchronized (this) {
             if (list != null) {
                 if (list.size() > 0) {
@@ -125,18 +124,18 @@ public class d implements a {
                                     c cVar = list.get(i2);
                                     dataOutputStream.writeLong(cVar.b);
                                     dataOutputStream.writeLong(cVar.d);
-                                    dataOutputStream.writeLong(cVar.f24918c);
+                                    dataOutputStream.writeLong(cVar.f11230c);
                                     i = i2 + 1;
                                 }
                                 com.opos.cmn.func.dl.base.h.a.a(dataOutputStream, fileOutputStream);
                             } catch (Exception e) {
-                                dataOutput = dataOutputStream;
+                                dataOutputStream2 = dataOutputStream;
                                 e = e;
                                 try {
-                                    com.opos.cmn.an.f.a.c(f24919a, "saveThreadInfos ", e);
+                                    com.opos.cmn.an.f.a.c(f11231a, "saveThreadInfos ", e);
                                     throw new DlException(1004, e);
                                 } catch (Throwable th) {
-                                    dataOutputStream = dataOutput;
+                                    dataOutputStream = dataOutputStream2;
                                     th = th;
                                     com.opos.cmn.func.dl.base.h.a.a(dataOutputStream, fileOutputStream);
                                     throw th;
@@ -148,7 +147,7 @@ public class d implements a {
                             }
                         } catch (Exception e2) {
                             e = e2;
-                            dataOutput = null;
+                            dataOutputStream2 = null;
                         } catch (Throwable th3) {
                             th = th3;
                             dataOutputStream = null;
@@ -156,7 +155,7 @@ public class d implements a {
                     } catch (Exception e3) {
                         e = e3;
                         fileOutputStream = null;
-                        dataOutput = null;
+                        dataOutputStream2 = null;
                     } catch (Throwable th4) {
                         th = th4;
                         fileOutputStream = null;

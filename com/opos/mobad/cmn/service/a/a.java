@@ -10,21 +10,21 @@ import java.util.concurrent.ConcurrentHashMap;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile a f25917a;
+    private static volatile a f12229a;
     private static final byte[] b = new byte[0];
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f25918c;
+    private Context f12230c;
     private final int d = 100;
-    private Map<Integer, C0685a> e = new ConcurrentHashMap();
+    private Map<Integer, C0515a> e = new ConcurrentHashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.mobad.cmn.service.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/cmn/service/a/a$a.class */
-    public class C0685a implements e {
+    public class C0515a implements e {
         private c b;
 
-        public C0685a(c cVar) {
+        public C0515a(c cVar) {
             this.b = cVar;
         }
 
@@ -87,19 +87,19 @@ public class a {
     }
 
     private a(Context context) {
-        this.f25918c = context.getApplicationContext();
+        this.f12230c = context.getApplicationContext();
     }
 
     public static a a(Context context) {
         a aVar;
-        a aVar2 = f25917a;
+        a aVar2 = f12229a;
         if (aVar2 == null) {
             synchronized (b) {
-                a aVar3 = f25917a;
+                a aVar3 = f12229a;
                 aVar = aVar3;
                 if (aVar3 == null) {
                     aVar = new a(context);
-                    f25917a = aVar;
+                    f12229a = aVar;
                 }
             }
             return aVar;
@@ -111,49 +111,49 @@ public class a {
         if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
             return null;
         }
-        if (com.opos.cmn.an.d.b.a.a(com.opos.cmn.d.a.a(this.f25918c, str))) {
+        if (com.opos.cmn.an.d.b.a.a(com.opos.cmn.d.a.a(this.f12230c, str))) {
             return new b(105, 100);
         }
-        int[] a2 = com.opos.mobad.d.b.a(this.f25918c).a(str, str2);
+        int[] a2 = com.opos.mobad.d.b.a(this.f12230c).a(str, str2);
         return new b(a2[0], a2[1]);
     }
 
     public void a() {
-        com.opos.mobad.d.b.a(this.f25918c).a();
+        com.opos.mobad.d.b.a(this.f12230c).a();
     }
 
     public void a(int i, boolean z) {
-        com.opos.mobad.d.b.a(this.f25918c).a(i, z);
+        com.opos.mobad.d.b.a(this.f12230c).a(i, z);
     }
 
     public void a(c cVar) {
         if (cVar == null) {
             return;
         }
-        com.opos.mobad.d.b.a(this.f25918c).a(this.e.remove(Integer.valueOf(cVar.hashCode())));
+        com.opos.mobad.d.b.a(this.f12230c).a(this.e.remove(Integer.valueOf(cVar.hashCode())));
     }
 
     public void a(String str) {
-        com.opos.mobad.d.b.a(this.f25918c).a(str);
+        com.opos.mobad.d.b.a(this.f12230c).a(str);
     }
 
     public void a(String str, String str2, String str3, String str4, c cVar) {
-        C0685a c0685a;
+        C0515a c0515a;
         if (cVar != null) {
-            C0685a c0685a2 = new C0685a(cVar);
-            this.e.put(Integer.valueOf(cVar.hashCode()), c0685a2);
-            c0685a = c0685a2;
+            C0515a c0515a2 = new C0515a(cVar);
+            this.e.put(Integer.valueOf(cVar.hashCode()), c0515a2);
+            c0515a = c0515a2;
         } else {
-            c0685a = null;
+            c0515a = null;
         }
-        com.opos.mobad.d.b.a(this.f25918c).a(str, str2, str3, str4, c0685a);
+        com.opos.mobad.d.b.a(this.f12230c).a(str, str2, str3, str4, c0515a);
     }
 
     public void b(String str) {
-        com.opos.mobad.d.b.a(this.f25918c).b(str);
+        com.opos.mobad.d.b.a(this.f12230c).b(str);
     }
 
     public void c(String str) {
-        com.opos.mobad.d.b.a(this.f25918c).c(str);
+        com.opos.mobad.d.b.a(this.f12230c).c(str);
     }
 }

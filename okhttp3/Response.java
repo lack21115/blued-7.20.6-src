@@ -1,12 +1,12 @@
 package okhttp3;
 
-import com.google.common.net.HttpHeaders;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import javax.annotation.Nullable;
 import okhttp3.Headers;
+import okhttp3.internal.http.HttpHeaders;
 import okio.Buffer;
 import okio.BufferedSource;
 
@@ -234,13 +234,13 @@ public final class Response implements Closeable {
         String str;
         int i = this.code;
         if (i == 401) {
-            str = HttpHeaders.WWW_AUTHENTICATE;
+            str = "WWW-Authenticate";
         } else if (i != 407) {
             return Collections.emptyList();
         } else {
-            str = HttpHeaders.PROXY_AUTHENTICATE;
+            str = "Proxy-Authenticate";
         }
-        return okhttp3.internal.http.HttpHeaders.a(headers(), str);
+        return HttpHeaders.a(headers(), str);
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable

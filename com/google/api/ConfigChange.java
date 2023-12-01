@@ -273,8 +273,8 @@ public final class ConfigChange extends GeneratedMessageV3 implements ConfigChan
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.api.ConfigChangeOrBuilder
@@ -670,6 +670,7 @@ public final class ConfigChange extends GeneratedMessageV3 implements ConfigChan
         this.advices_ = Collections.emptyList();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private ConfigChange(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
         this();
         if (extensionRegistryLite == null) {

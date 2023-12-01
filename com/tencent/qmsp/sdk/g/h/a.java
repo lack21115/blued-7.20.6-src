@@ -11,17 +11,17 @@ public interface a extends IInterface {
 
     /* renamed from: com.tencent.qmsp.sdk.g.h.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/g/h/a$a.class */
-    public static abstract class AbstractBinderC1000a extends Binder implements a {
+    public static abstract class AbstractBinderC0830a extends Binder implements a {
 
         /* renamed from: com.tencent.qmsp.sdk.g.h.a$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/g/h/a$a$a.class */
-        static class C1001a implements a {
+        static class C0831a implements a {
 
             /* renamed from: a  reason: collision with root package name */
-            private IBinder f38648a;
+            private IBinder f24957a;
 
-            C1001a(IBinder iBinder) {
-                this.f38648a = iBinder;
+            C0831a(IBinder iBinder) {
+                this.f24957a = iBinder;
             }
 
             @Override // com.tencent.qmsp.sdk.g.h.a
@@ -31,7 +31,7 @@ public interface a extends IInterface {
                 try {
                     try {
                         obtain.writeInterfaceToken("com.samsung.android.deviceidservice.IDeviceIdService");
-                        this.f38648a.transact(1, obtain, obtain2, 0);
+                        this.f24957a.transact(1, obtain, obtain2, 0);
                         obtain2.readException();
                         return obtain2.readString();
                     } catch (RemoteException e) {
@@ -54,7 +54,7 @@ public interface a extends IInterface {
                     try {
                         obtain.writeInterfaceToken("com.samsung.android.deviceidservice.IDeviceIdService");
                         obtain.writeString(str);
-                        this.f38648a.transact(3, obtain, obtain2, 0);
+                        this.f24957a.transact(3, obtain, obtain2, 0);
                         obtain2.readException();
                         return obtain2.readString();
                     } catch (RemoteException e) {
@@ -71,7 +71,7 @@ public interface a extends IInterface {
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f38648a;
+                return this.f24957a;
             }
         }
 
@@ -80,7 +80,7 @@ public interface a extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.samsung.android.deviceidservice.IDeviceIdService");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof a)) ? new C1001a(iBinder) : (a) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof a)) ? new C0831a(iBinder) : (a) queryLocalInterface;
         }
     }
 

@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Pair;
+import com.anythink.pd.ExHandler;
 import com.bytedance.sdk.openadsdk.AdConfig;
 import com.bytedance.sdk.openadsdk.TTAdManager;
 import com.bytedance.sdk.openadsdk.TTAdSdk;
@@ -146,7 +147,7 @@ public final class hj {
         if (customController != null) {
             try {
                 mb.put("oaid", customController.getDevOaid());
-                mb.put("imei", customController.getDevImei());
+                mb.put(ExHandler.JSON_REQUEST_IMEI, customController.getDevImei());
             } catch (Exception e) {
             }
         }
@@ -166,7 +167,7 @@ public final class hj {
         ox.execute(new Runnable() { // from class: com.bytedance.sdk.openadsdk.api.plugin.hj.2
             @Override // java.lang.Runnable
             public void run() {
-                hj.b(List.this);
+                hj.b(list);
             }
         });
     }
@@ -191,7 +192,7 @@ public final class hj {
             @Override // java.lang.Runnable
             public void run() {
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(hj.u(String.this, jSONObject));
+                arrayList.add(hj.u(str, jSONObject));
                 hj.b(arrayList);
             }
         });
@@ -216,7 +217,7 @@ public final class hj {
             JSONObject jSONObject3 = new JSONObject();
             jSONObject3.put("model", Build.MODEL);
             jSONObject3.put(MediaDrm.PROPERTY_VENDOR, Build.MANUFACTURER);
-            jSONObject3.put("imei", mb.get("imei"));
+            jSONObject3.put(ExHandler.JSON_REQUEST_IMEI, mb.get(ExHandler.JSON_REQUEST_IMEI));
             jSONObject3.put("oaid", mb.get("oaid"));
             jSONObject2.put("device_info", jSONObject3);
             return jSONObject2;

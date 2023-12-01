@@ -64,7 +64,7 @@ public class LongArray implements Cloneable {
     }
 
     /* renamed from: clone */
-    public LongArray m1020clone() {
+    public LongArray m1016clone() {
         LongArray longArray = null;
         try {
             LongArray longArray2 = (LongArray) super.clone();

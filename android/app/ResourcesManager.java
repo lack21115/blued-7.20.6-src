@@ -409,7 +409,7 @@ public class ResourcesManager {
                                 z3 = false;
                                 if (themeConfig2 != null) {
                                     z3 = false;
-                                    if (!"system".equals(themeConfig2.getFontPkgName())) {
+                                    if (!ThemeConfig.SYSTEM_DEFAULT.equals(themeConfig2.getFontPkgName())) {
                                         Typeface.recreateDefaults(true);
                                         z3 = false;
                                     }

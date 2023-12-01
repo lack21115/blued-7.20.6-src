@@ -25,7 +25,7 @@ public class j0 extends i0 {
         jSONObject.put("cpu_abi", Build.CPU_ABI);
         jSONObject.put("sdk_target_version", 29);
         jSONObject.put("git_hash", "99ba6595");
-        if (!w2.f21333c.b(new Object[0]).booleanValue() || (initConfig = this.e.b) == null || !initConfig.isHarmonyEnabled()) {
+        if (!w2.f7727c.b(new Object[0]).booleanValue() || (initConfig = this.e.b) == null || !initConfig.isHarmonyEnabled()) {
             jSONObject.put(bh.x, "Android");
             jSONObject.put("os_api", Build.VERSION.SDK_INT);
             jSONObject.put("os_version", Build.VERSION.RELEASE);

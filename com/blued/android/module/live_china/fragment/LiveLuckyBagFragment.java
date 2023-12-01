@@ -29,35 +29,31 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveLuckyBagFragment.class */
 public final class LiveLuckyBagFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final LuckyBagModel f13015a;
+    private final LuckyBagModel a;
     private FragmentLuckyBagBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<FreedomItem> f13016c;
+    private final ArrayList<FreedomItem> c;
     private FreedomAdapter d;
 
     public LiveLuckyBagFragment(LuckyBagModel model) {
         Intrinsics.e(model, "model");
-        this.f13015a = model;
-        this.f13016c = new ArrayList<>();
+        this.a = model;
+        this.c = new ArrayList<>();
     }
 
     private final void a() {
-        LuckyBagLuckyComeModel break_even = this.f13015a.getBreak_even();
+        LuckyBagLuckyComeModel break_even = this.a.getBreak_even();
         if (break_even != null && break_even.is_enable()) {
-            this.f13016c.add(new FitemLuckyBagLuckyCome(break_even));
+            this.c.add(new FitemLuckyBagLuckyCome(break_even));
         }
-        this.f13016c.add(new FitemLuckyBagSubtitle(this.f13015a.getGoods_name()));
-        this.f13016c.add(new FitemLuckyBagTableHead());
-        ArrayList<LuckyBagRewardModel> reward_settings = this.f13015a.getReward_settings();
+        this.c.add(new FitemLuckyBagSubtitle(this.a.getGoods_name()));
+        this.c.add(new FitemLuckyBagTableHead());
+        ArrayList<LuckyBagRewardModel> reward_settings = this.a.getReward_settings();
         if (reward_settings != null) {
             for (LuckyBagRewardModel luckyBagRewardModel : reward_settings) {
-                this.f13016c.add(new FitemLuckyBagTable(luckyBagRewardModel));
+                this.c.add(new FitemLuckyBagTable(luckyBagRewardModel));
             }
         }
-        ArrayList<FreedomItem> arrayList = this.f13016c;
+        ArrayList<FreedomItem> arrayList = this.c;
         FreedomItem freedomItem = (FreedomItem) CollectionsKt.c((List<? extends Object>) arrayList, arrayList.size() - 1);
         if (freedomItem != null && (freedomItem instanceof FitemLuckyBagTable)) {
             ((FitemLuckyBagTable) freedomItem).a(true);
@@ -69,8 +65,7 @@ public final class LiveLuckyBagFragment extends BaseFragment {
             Intrinsics.c("vb");
             fragmentLuckyBagBinding2 = null;
         }
-        fragmentLuckyBagBinding2.f11975a.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.fragment.LiveLuckyBagFragment$initView$4
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+        fragmentLuckyBagBinding2.a.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.fragment.LiveLuckyBagFragment$initView$4
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 Intrinsics.e(recyclerView, "recyclerView");
                 if (i == 0) {
@@ -81,7 +76,6 @@ public final class LiveLuckyBagFragment extends BaseFragment {
                 }
             }
 
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
                 Intrinsics.e(recyclerView, "recyclerView");
             }
@@ -103,14 +97,14 @@ public final class LiveLuckyBagFragment extends BaseFragment {
             freedomAdapter.notifyDataSetChanged();
             return;
         }
-        this.d = new FreedomAdapter(getContext(), getFragmentActive(), this.f13016c);
+        this.d = new FreedomAdapter(getContext(), getFragmentActive(), this.c);
         FragmentLuckyBagBinding fragmentLuckyBagBinding = this.b;
         FragmentLuckyBagBinding fragmentLuckyBagBinding2 = fragmentLuckyBagBinding;
         if (fragmentLuckyBagBinding == null) {
             Intrinsics.c("vb");
             fragmentLuckyBagBinding2 = null;
         }
-        RecyclerView recyclerView = fragmentLuckyBagBinding2.f11975a;
+        RecyclerView recyclerView = fragmentLuckyBagBinding2.a;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         }
@@ -120,7 +114,7 @@ public final class LiveLuckyBagFragment extends BaseFragment {
             Intrinsics.c("vb");
             fragmentLuckyBagBinding4 = null;
         }
-        RecyclerView recyclerView2 = fragmentLuckyBagBinding4.f11975a;
+        RecyclerView recyclerView2 = fragmentLuckyBagBinding4.a;
         if (recyclerView2 != null) {
             recyclerView2.setItemAnimator(new DefaultItemAnimator());
         }
@@ -129,21 +123,21 @@ public final class LiveLuckyBagFragment extends BaseFragment {
             Intrinsics.c("vb");
             fragmentLuckyBagBinding5 = null;
         }
-        RecyclerView recyclerView3 = fragmentLuckyBagBinding5.f11975a;
+        RecyclerView recyclerView3 = fragmentLuckyBagBinding5.a;
         if (recyclerView3 == null) {
             return;
         }
         recyclerView3.setAdapter(this.d);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        FragmentLuckyBagBinding a2 = FragmentLuckyBagBinding.a(getLayoutInflater(), viewGroup, false);
-        Intrinsics.c(a2, "inflate(layoutInflater, container, false)");
-        this.b = a2;
-        FragmentLuckyBagBinding fragmentLuckyBagBinding = a2;
-        if (a2 == null) {
+        FragmentLuckyBagBinding a = FragmentLuckyBagBinding.a(getLayoutInflater(), viewGroup, false);
+        Intrinsics.c(a, "inflate(layoutInflater, container, false)");
+        this.b = a;
+        FragmentLuckyBagBinding fragmentLuckyBagBinding = a;
+        if (a == null) {
             Intrinsics.c("vb");
             fragmentLuckyBagBinding = null;
         }
@@ -173,7 +167,7 @@ public final class LiveLuckyBagFragment extends BaseFragment {
             Intrinsics.c("vb");
             fragmentLuckyBagBinding7 = null;
         }
-        fragmentLuckyBagBinding7.f11975a.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveLuckyBagFragment$yA7z21AO_1lIzU-GT4UaJkxp8Bc
+        fragmentLuckyBagBinding7.a.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveLuckyBagFragment$yA7z21AO_1lIzU-GT4UaJkxp8Bc
             @Override // java.lang.Runnable
             public final void run() {
                 LiveLuckyBagFragment.a(LiveLuckyBagFragment.this);

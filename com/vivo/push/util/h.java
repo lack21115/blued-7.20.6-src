@@ -12,11 +12,11 @@ public final class h implements BaseNotifyDataAdapter {
     private static int f;
 
     /* renamed from: a  reason: collision with root package name */
-    private Resources f41133a;
+    private Resources f27442a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41134c;
+    private String f27443c;
     private String d;
 
     private int a(String str, String str2) {
@@ -40,7 +40,7 @@ public final class h implements BaseNotifyDataAdapter {
                 }
                 String str4 = "vivo_push_ard" + i + str2;
                 p.c("DefaultNotifyDataAdapter", "get notify icon : ".concat(String.valueOf(str4)));
-                int identifier = this.f41133a.getIdentifier(str4, com.anythink.expressad.foundation.h.i.f7952c, this.b);
+                int identifier = this.f27442a.getIdentifier(str4, com.anythink.expressad.foundation.h.i.f5112c, this.b);
                 if (identifier > 0) {
                     p.c("DefaultNotifyDataAdapter", "find notify icon : ".concat(String.valueOf(str4)));
                     return identifier;
@@ -79,14 +79,14 @@ public final class h implements BaseNotifyDataAdapter {
         if (a(a2)) {
             return e;
         }
-        String str2 = this.f41134c;
+        String str2 = this.f27443c;
         while (true) {
             String str3 = str2;
             if (TextUtils.isEmpty(str3)) {
-                return this.f41133a.getIdentifier("vivo_push_notifyicon", com.anythink.expressad.foundation.h.i.f7952c, this.b);
+                return this.f27442a.getIdentifier("vivo_push_notifyicon", com.anythink.expressad.foundation.h.i.f5112c, this.b);
             }
-            Resources resources = this.f41133a;
-            int identifier = resources.getIdentifier("vivo_push_rom" + str3 + "_notifyicon", com.anythink.expressad.foundation.h.i.f7952c, this.b);
+            Resources resources = this.f27442a;
+            int identifier = resources.getIdentifier("vivo_push_rom" + str3 + "_notifyicon", com.anythink.expressad.foundation.h.i.f5112c, this.b);
             if (identifier > 0) {
                 return identifier;
             }
@@ -105,14 +105,14 @@ public final class h implements BaseNotifyDataAdapter {
         if (a(a2)) {
             return f;
         }
-        String str2 = this.f41134c;
+        String str2 = this.f27443c;
         while (true) {
             String str3 = str2;
             if (TextUtils.isEmpty(str3)) {
-                return this.f41133a.getIdentifier("vivo_push_icon", com.anythink.expressad.foundation.h.i.f7952c, this.b);
+                return this.f27442a.getIdentifier("vivo_push_icon", com.anythink.expressad.foundation.h.i.f5112c, this.b);
             }
-            Resources resources = this.f41133a;
-            int identifier = resources.getIdentifier("vivo_push_rom" + str3 + "_icon", com.anythink.expressad.foundation.h.i.f7952c, this.b);
+            Resources resources = this.f27442a;
+            int identifier = resources.getIdentifier("vivo_push_rom" + str3 + "_icon", com.anythink.expressad.foundation.h.i.f5112c, this.b);
             if (identifier > 0) {
                 return identifier;
             }
@@ -128,8 +128,8 @@ public final class h implements BaseNotifyDataAdapter {
     @Override // com.vivo.push.util.BaseNotifyDataAdapter
     public final void init(Context context) {
         this.b = context.getPackageName();
-        this.f41133a = context.getResources();
-        this.f41134c = j.a();
+        this.f27442a = context.getResources();
+        this.f27443c = j.a();
         this.d = Build.VERSION.RELEASE;
     }
 }

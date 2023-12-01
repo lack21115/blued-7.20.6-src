@@ -34,14 +34,10 @@ public class AudioChannelManager implements IAudioContract.IAudioControl {
     private IAudioContract.IAudioControl f;
     private IAudioContract.AppHandoverListener g;
     private AudioFloatWindow h;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f17848c = false;
+    private boolean c = false;
     private float d = 0.0f;
     private int e = 0;
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f17847a = false;
+    public boolean a = false;
 
     private AudioChannelManager() {
     }
@@ -78,9 +74,9 @@ public class AudioChannelManager implements IAudioContract.IAudioControl {
 
     private void s() {
         k();
-        this.f17847a = false;
+        this.a = false;
         this.g = null;
-        this.f17848c = false;
+        this.c = false;
     }
 
     @Override // com.blued.android.module.yy_china.trtc_audio.IAudioContract.IAudioControl
@@ -167,13 +163,13 @@ public class AudioChannelManager implements IAudioContract.IAudioControl {
                 if (i2 != 1) {
                     return;
                 }
-                LiveMusicModel a2 = YYMusicManager.f11418a.c().a();
-                if (a2 != null) {
+                LiveMusicModel a = YYMusicManager.a.c().a();
+                if (a != null) {
                     YYRoomModel b2 = YYRoomInfoManager.e().b();
                     if (b2 != null) {
-                        EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_TOOLBOX_MUSIC_DONE_CLICK, b2.room_id, a2.sheet_id, a2.music_id, (int) a2.duration);
+                        EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_TOOLBOX_MUSIC_DONE_CLICK, b2.room_id, a.sheet_id, a.music_id, (int) a.duration);
                     }
-                    a2.playStatus = 3;
+                    a.playStatus = 3;
                 }
                 LiveEventBus.get("live_music_changed").post("");
             }
@@ -308,8 +304,8 @@ public class AudioChannelManager implements IAudioContract.IAudioControl {
     }
 
     public void a(Context context) {
-        LiveLogUtils.a("AudioChannelManager --> showFloatViewIfNeeded --> needShowFloatView：" + j().f17847a);
-        if (j().f17847a) {
+        LiveLogUtils.a("AudioChannelManager --> showFloatViewIfNeeded --> needShowFloatView：" + j().a);
+        if (j().a) {
             b(context);
         } else {
             s();
@@ -343,7 +339,7 @@ public class AudioChannelManager implements IAudioContract.IAudioControl {
 
     @Override // com.blued.android.module.yy_china.trtc_audio.IAudioContract.IAudioControl
     public void a(YYAudioConfig yYAudioConfig) {
-        if (this.f == null || yYAudioConfig == null || TextUtils.isEmpty(yYAudioConfig.f17862c)) {
+        if (this.f == null || yYAudioConfig == null || TextUtils.isEmpty(yYAudioConfig.c)) {
             return;
         }
         this.f.a(yYAudioConfig);
@@ -387,9 +383,9 @@ public class AudioChannelManager implements IAudioContract.IAudioControl {
             }
             b2.pk_has_connected = true;
             YYAudioConfig yYAudioConfig = new YYAudioConfig();
-            yYAudioConfig.f17862c = YYRoomInfoManager.e().k();
+            yYAudioConfig.c = YYRoomInfoManager.e().k();
             yYAudioConfig.b = str;
-            yYAudioConfig.f17861a = b2.user_sig;
+            yYAudioConfig.a = b2.user_sig;
             this.f.b(yYAudioConfig);
         }
     }
@@ -462,7 +458,7 @@ public class AudioChannelManager implements IAudioContract.IAudioControl {
     public void b(boolean z) {
         IAudioContract.IAudioControl iAudioControl = this.f;
         if (iAudioControl != null) {
-            this.f17848c = z;
+            this.c = z;
             iAudioControl.b(z);
         }
     }
@@ -599,7 +595,7 @@ public class AudioChannelManager implements IAudioContract.IAudioControl {
     }
 
     public boolean p() {
-        return this.f17848c;
+        return this.c;
     }
 
     public float q() {

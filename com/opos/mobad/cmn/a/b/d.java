@@ -3,6 +3,7 @@ package com.opos.mobad.cmn.a.b;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
+import com.baidu.mobads.sdk.api.SplashAd;
 import com.oplus.quickgame.sdk.hall.Constant;
 import com.opos.acs.st.STManager;
 import com.opos.mobad.activity.VideoActivity;
@@ -10,6 +11,7 @@ import com.opos.mobad.model.data.AdItemData;
 import com.opos.mobad.model.data.MaterialData;
 import com.opos.mobad.provider.statistic.StatisticModelIdentify;
 import com.umeng.commonsdk.framework.UMModuleRegister;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONException;
@@ -486,7 +488,7 @@ public final class d {
                         d.g(b, str2);
                         b.put("cache", z ? "1" : "0");
                         b.put("classifyByAge", str5 != null ? str5 : "");
-                        b.put("ecpm", i + "");
+                        b.put(SplashAd.KEY_BIDFAIL_ECPM, i + "");
                         com.opos.cmn.an.f.a.b("STEventUtils", "recordAdReqEvent map=", b);
                         d.b(Context.this, b);
                     }
@@ -542,7 +544,7 @@ public final class d {
                         d.g(b, str2);
                         b.put("cache", z ? "1" : "0");
                         b.put("classifyByAge", str6 != null ? str6 : "");
-                        b.put("ecpm", i + "");
+                        b.put(SplashAd.KEY_BIDFAIL_ECPM, i + "");
                         com.opos.cmn.an.f.a.b("STEventUtils", "recordAdReqEvent map=", b);
                         d.b(Context.this, b);
                     }
@@ -626,10 +628,10 @@ public final class d {
         try {
             int[] iArr = new int[2];
             view.getLocationOnScreen(iArr);
-            map.put("expCoordinate", iArr[0] + "-" + iArr[1]);
+            map.put("expCoordinate", iArr[0] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + iArr[1]);
             int height = view.getHeight();
             int width = view.getWidth();
-            map.put("expSize", width + "-" + height);
+            map.put("expSize", width + Constants.ACCEPT_TIME_SEPARATOR_SERVER + height);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("STEventUtils", "", (Throwable) e);
         }
@@ -861,7 +863,7 @@ public final class d {
         map.put(STManager.KEY_DOWN_Y, iArr[1] + "");
         map.put(STManager.KEY_UP_X, iArr[2] + "");
         map.put(STManager.KEY_UP_Y, iArr[3] + "");
-        map.put("coordinates", iArr[2] + "-" + iArr[3] + "-" + iArr[0] + "-" + iArr[1]);
+        map.put("coordinates", iArr[2] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + iArr[3] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + iArr[0] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + iArr[1]);
     }
 
     private static String c(Map<String, String> map) throws JSONException {

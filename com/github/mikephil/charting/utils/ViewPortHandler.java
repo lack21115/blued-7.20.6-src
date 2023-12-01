@@ -8,11 +8,11 @@ import android.view.View;
 public class ViewPortHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Matrix f22211a = new Matrix();
+    protected final Matrix f8604a = new Matrix();
     protected RectF b = new RectF();
 
     /* renamed from: c  reason: collision with root package name */
-    protected float f22212c = 0.0f;
+    protected float f8605c = 0.0f;
     protected float d = 0.0f;
     private float h = 1.0f;
     private float i = Float.MAX_VALUE;
@@ -33,12 +33,12 @@ public class ViewPortHandler {
     }
 
     public Matrix a(Matrix matrix, View view, boolean z) {
-        this.f22211a.set(matrix);
-        a(this.f22211a, this.b);
+        this.f8604a.set(matrix);
+        a(this.f8604a, this.b);
         if (z) {
             view.invalidate();
         }
-        matrix.set(this.f22211a);
+        matrix.set(this.f8604a);
         return matrix;
     }
 
@@ -48,7 +48,7 @@ public class ViewPortHandler {
             f2 = 1.0f;
         }
         this.j = f2;
-        a(this.f22211a, this.b);
+        a(this.f8604a, this.b);
     }
 
     public void a(float f, float f2) {
@@ -57,23 +57,23 @@ public class ViewPortHandler {
         float b = b();
         float d = d();
         this.d = f2;
-        this.f22212c = f;
+        this.f8605c = f;
         a(a2, c2, b, d);
     }
 
     public void a(float f, float f2, float f3, float f4) {
-        this.b.set(f, f2, this.f22212c - f3, this.d - f4);
+        this.b.set(f, f2, this.f8605c - f3, this.d - f4);
     }
 
     public void a(float f, float f2, float f3, float f4, Matrix matrix) {
         matrix.reset();
-        matrix.set(this.f22211a);
+        matrix.set(this.f8604a);
         matrix.postScale(f, f2, f3, f4);
     }
 
     public void a(float f, float f2, Matrix matrix) {
         matrix.reset();
-        matrix.set(this.f22211a);
+        matrix.set(this.f8604a);
         matrix.postScale(f, f2);
     }
 
@@ -107,20 +107,20 @@ public class ViewPortHandler {
 
     public void a(float[] fArr, Matrix matrix) {
         matrix.reset();
-        matrix.set(this.f22211a);
+        matrix.set(this.f8604a);
         matrix.postTranslate(-(fArr[0] - a()), -(fArr[1] - c()));
     }
 
     public void a(float[] fArr, View view) {
         Matrix matrix = this.f;
         matrix.reset();
-        matrix.set(this.f22211a);
+        matrix.set(this.f8604a);
         matrix.postTranslate(-(fArr[0] - a()), -(fArr[1] - c()));
         a(matrix, view, true);
     }
 
     public float b() {
-        return this.f22212c - this.b.right;
+        return this.f8605c - this.b.right;
     }
 
     public void b(float f) {
@@ -129,12 +129,12 @@ public class ViewPortHandler {
             f2 = Float.MAX_VALUE;
         }
         this.k = f2;
-        a(this.f22211a, this.b);
+        a(this.f8604a, this.b);
     }
 
     public void b(float f, float f2, Matrix matrix) {
         matrix.reset();
-        matrix.set(this.f22211a);
+        matrix.set(this.f8604a);
         matrix.setScale(f, f2);
     }
 
@@ -152,7 +152,7 @@ public class ViewPortHandler {
             f2 = 1.0f;
         }
         this.h = f2;
-        a(this.f22211a, this.b);
+        a(this.f8604a, this.b);
     }
 
     public float d() {
@@ -165,7 +165,7 @@ public class ViewPortHandler {
             f2 = Float.MAX_VALUE;
         }
         this.i = f2;
-        a(this.f22211a, this.b);
+        a(this.f8604a, this.b);
     }
 
     public float e() {
@@ -237,7 +237,7 @@ public class ViewPortHandler {
     }
 
     public float n() {
-        return this.f22212c;
+        return this.f8605c;
     }
 
     public float o() {
@@ -245,7 +245,7 @@ public class ViewPortHandler {
     }
 
     public Matrix p() {
-        return this.f22211a;
+        return this.f8604a;
     }
 
     public float q() {

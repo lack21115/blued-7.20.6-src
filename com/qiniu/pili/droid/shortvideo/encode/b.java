@@ -3,10 +3,10 @@ package com.qiniu.pili.droid.shortvideo.encode;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.net.UrlQuerySanitizer;
+import android.os.FileObserver;
 import android.provider.Downloads;
-import android.view.View;
 import com.blued.das.live.LiveProtos;
-import dalvik.bytecode.Opcodes;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -14,7 +14,7 @@ import java.io.OutputStream;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27651a;
+    private int f13963a;
     private int b;
     private int f;
     private OutputStream j;
@@ -25,7 +25,7 @@ public class b {
     private byte[] o;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27652c = 0;
+    private int f13964c = 0;
     private int d = 0;
     private int e = -1;
     private int g = -1;
@@ -44,10 +44,10 @@ public class b {
     public class a {
 
         /* renamed from: a  reason: collision with root package name */
-        int f27653a;
+        int f13965a;
 
         /* renamed from: c  reason: collision with root package name */
-        int f27654c;
+        int f13966c;
         int j;
         int k;
         int l;
@@ -67,7 +67,7 @@ public class b {
         boolean i = false;
         int m = 0;
         int n = 0;
-        int[] o = {0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, Opcodes.OP_SPUT_BYTE_JUMBO, View.PUBLIC_STATUS_BAR_VISIBILITY_MASK, Short.MAX_VALUE, 65535};
+        int[] o = {0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, UrlQuerySanitizer.IllegalCharacterValueSanitizer.ALL_OK, FileObserver.ALL_EVENTS, 8191, 16383, 32767, 65535};
         byte[] q = new byte[256];
 
         a(int i, int i2, byte[] bArr, int i3) {
@@ -118,8 +118,8 @@ public class b {
             this.j = i;
             int i3 = 0;
             this.i = false;
-            this.f27653a = i;
-            this.f27654c = b(i);
+            this.f13965a = i;
+            this.f13966c = b(i);
             int i4 = 1 << (i - 1);
             this.k = i4;
             this.l = i4 + 1;
@@ -214,25 +214,25 @@ public class b {
             } else {
                 this.m = i;
             }
-            this.n += this.f27653a;
+            this.n += this.f13965a;
             while (this.n >= 8) {
                 a((byte) (this.m & 255), outputStream);
                 this.m >>= 8;
                 this.n -= 8;
             }
-            if (this.h > this.f27654c || this.i) {
+            if (this.h > this.f13966c || this.i) {
                 if (this.i) {
                     int i5 = this.j;
-                    this.f27653a = i5;
-                    this.f27654c = b(i5);
+                    this.f13965a = i5;
+                    this.f13966c = b(i5);
                     this.i = false;
                 } else {
-                    int i6 = this.f27653a + 1;
-                    this.f27653a = i6;
+                    int i6 = this.f13965a + 1;
+                    this.f13965a = i6;
                     if (i6 == this.b) {
-                        this.f27654c = this.d;
+                        this.f13966c = this.d;
                     } else {
-                        this.f27654c = b(i6);
+                        this.f13966c = b(i6);
                     }
                 }
             }
@@ -267,11 +267,11 @@ public class b {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.qiniu.pili.droid.shortvideo.encode.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/encode/b$b.class */
-    public class C0746b {
+    public class C0576b {
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private byte[] f27656c;
+        private byte[] f13968c;
         private int d;
         private int e;
         private int[] g = new int[256];
@@ -281,8 +281,8 @@ public class b {
         private int[][] f = new int[256];
 
         /* JADX WARN: Type inference failed for: r1v13, types: [int[], int[][]] */
-        public C0746b(byte[] bArr, int i, int i2) {
-            this.f27656c = bArr;
+        public C0576b(byte[] bArr, int i, int i2) {
+            this.f13968c = bArr;
             this.d = i;
             this.e = i2;
             int i3 = 0;
@@ -621,7 +621,7 @@ public class b {
             }
             int i = this.e;
             this.b = ((i - 1) / 3) + 30;
-            byte[] bArr = this.f27656c;
+            byte[] bArr = this.f13968c;
             int i2 = this.d;
             int i3 = i2 / (i * 3);
             int i4 = i3 / 100;
@@ -772,8 +772,8 @@ public class b {
         int length = bArr.length;
         int i = length / 3;
         this.m = new byte[i];
-        C0746b c0746b = new C0746b(bArr, length, this.v);
-        this.o = c0746b.d();
+        C0576b c0576b = new C0576b(bArr, length, this.v);
+        this.o = c0576b.d();
         int i2 = 0;
         while (true) {
             int i3 = i2;
@@ -795,7 +795,7 @@ public class b {
             int i7 = i5 + 1;
             byte b2 = bArr3[i5];
             int i8 = i7 + 1;
-            int a2 = c0746b.a(b2 & 255, bArr3[i7] & 255, bArr3[i8] & 255);
+            int a2 = c0576b.a(b2 & 255, bArr3[i7] & 255, bArr3[i8] & 255);
             this.p[a2] = true;
             this.m[i6] = (byte) a2;
             i6++;
@@ -821,8 +821,8 @@ public class b {
     private void c() {
         int width = this.k.getWidth();
         int height = this.k.getHeight();
-        if (width != this.f27651a || height != this.b) {
-            Bitmap createBitmap = Bitmap.createBitmap(this.f27651a, this.b, Bitmap.Config.RGB_565);
+        if (width != this.f13963a || height != this.b) {
+            Bitmap createBitmap = Bitmap.createBitmap(this.f13963a, this.b, Bitmap.Config.RGB_565);
             new Canvas(createBitmap).drawBitmap(this.k, 0.0f, 0.0f, new Paint());
             this.k = createBitmap;
         }
@@ -875,9 +875,9 @@ public class b {
 
     private void e() throws IOException {
         this.j.write(44);
-        c(this.f27652c);
+        c(this.f13964c);
         c(this.d);
-        c(this.f27651a);
+        c(this.f13963a);
         c(this.b);
         if (this.t) {
             this.j.write(0);
@@ -887,7 +887,7 @@ public class b {
     }
 
     private void f() throws IOException {
-        c(this.f27651a);
+        c(this.f13963a);
         c(this.b);
         this.j.write(this.q | 240);
         this.j.write(0);
@@ -922,7 +922,7 @@ public class b {
     }
 
     private void i() throws IOException {
-        new a(this.f27651a, this.b, this.m, this.n).b(this.j);
+        new a(this.f13963a, this.b, this.m, this.n).b(this.j);
     }
 
     public void a(int i) {
@@ -930,10 +930,10 @@ public class b {
     }
 
     public void a(int i, int i2) {
-        this.f27651a = i;
+        this.f13963a = i;
         this.b = i2;
         if (i < 1) {
-            this.f27651a = 320;
+            this.f13963a = 320;
         }
         if (this.b < 1) {
             this.b = 240;

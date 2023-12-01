@@ -11,22 +11,18 @@ import com.anythink.core.common.k.u;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/BaseEndCardView.class */
 public abstract class BaseEndCardView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected String f6057a;
+    protected String a;
     protected i b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected j f6058c;
+    protected j c;
     protected k d;
     private boolean e;
 
     public BaseEndCardView(Context context, i iVar, j jVar) {
         super(context);
-        this.f6057a = getClass().getSimpleName();
+        this.a = getClass().getSimpleName();
         super.setWillNotDraw(false);
         this.b = iVar;
-        this.f6058c = jVar;
+        this.c = jVar;
         this.d = jVar.m;
     }
 

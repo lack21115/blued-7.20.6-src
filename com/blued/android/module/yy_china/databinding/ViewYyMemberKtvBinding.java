@@ -11,17 +11,13 @@ import com.blued.android.module.yy_china.view.YYBaseUserHeadView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyMemberKtvBinding.class */
 public final class ViewYyMemberKtvBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final YYBaseUserHeadView f16932a;
+    public final YYBaseUserHeadView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16933c;
+    private final ConstraintLayout c;
 
     private ViewYyMemberKtvBinding(ConstraintLayout constraintLayout, YYBaseUserHeadView yYBaseUserHeadView, TextView textView) {
-        this.f16933c = constraintLayout;
-        this.f16932a = yYBaseUserHeadView;
+        this.c = constraintLayout;
+        this.a = yYBaseUserHeadView;
         this.b = textView;
     }
 
@@ -48,9 +44,8 @@ public final class ViewYyMemberKtvBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16933c;
+        return this.c;
     }
 }

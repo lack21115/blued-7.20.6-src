@@ -10,9 +10,7 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/upload/qiniu/MediaSender.class */
 public class MediaSender {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f10132a = MediaSender.class.getSimpleName();
+    public static final String a = MediaSender.class.getSimpleName();
 
     private static String a() {
         long currentTimeMillis;
@@ -33,7 +31,7 @@ public class MediaSender {
     public static String a(String str, String str2, Pair<String, String> pair, Pair<String, String> pair2, SenderListener senderListener) {
         String a2 = a();
         ArrayList arrayList = new ArrayList();
-        if (!NetworkUtils.b() || TextUtils.isEmpty(str2) || pair2 == null || (AppInfo.p() && pair != null && !TextUtils.isEmpty(pair.first) && TextUtils.isEmpty(str))) {
+        if (!NetworkUtils.b() || TextUtils.isEmpty(str2) || pair2 == null || (AppInfo.p() && pair != null && !TextUtils.isEmpty((CharSequence) pair.first) && TextUtils.isEmpty(str))) {
             if (senderListener != null) {
                 if (pair != null) {
                     arrayList.add(pair);
@@ -44,7 +42,7 @@ public class MediaSender {
             return a2;
         }
         if (AppInfo.m()) {
-            String str3 = f10132a;
+            String str3 = a;
             Logger.c(str3, "上传视频, taskId:" + a2);
         }
         IUploadTask a3 = UploadTaskFactory.a(a2, str, str2, pair, pair2, senderListener);
@@ -67,7 +65,7 @@ public class MediaSender {
             return a2;
         } else {
             if (AppInfo.m()) {
-                String str2 = f10132a;
+                String str2 = a;
                 Logger.c(str2, "上传语音, taskId:" + a2);
             }
             IUploadTask a3 = UploadTaskFactory.a(a2, list, str, senderListener);
@@ -95,7 +93,7 @@ public class MediaSender {
             return a2;
         } else {
             if (AppInfo.m()) {
-                String str2 = f10132a;
+                String str2 = a;
                 Logger.c(str2, "上传图片, taskId:" + a2);
             }
             IUploadTask a3 = UploadTaskFactory.a(a2, list, str, z2, senderListener);

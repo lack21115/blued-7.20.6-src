@@ -1,6 +1,7 @@
 package com.blued.android.module.live_china.fragment;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -47,9 +48,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveHostFinishDialogFragment.class */
 public final class LiveHostFinishDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12971a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<DialogNewLiveHostFinishBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -62,9 +61,7 @@ public final class LiveHostFinishDialogFragment extends BaseDialogFragment {
             return DialogNewLiveHostFinishBinding.a(LayoutInflater.from(LiveHostFinishDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f12972c;
+    private boolean c;
     private LiveCloseInfoModel d;
 
     @Metadata
@@ -103,21 +100,21 @@ public final class LiveHostFinishDialogFragment extends BaseDialogFragment {
     public static final void a(LiveHostFinishDialogFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
         EventTrackLive.a(LiveProtos.Event.ANCHOR_END_PAGE_REPORT_CLICK);
-        LiveRoomInfo.a().a(this$0.getActivity(), H5Url.a(1));
+        LiveRoomInfo.a().a((Context) this$0.getActivity(), H5Url.a(1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(LiveCloseInfoModel liveCloseInfoModel) {
         this.d = liveCloseInfoModel;
         a(liveCloseInfoModel.live_time);
-        d().G.setText(LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.received_beans));
+        d().G.setText(LiveNumFormatUtil.a.a(liveCloseInfoModel.received_beans));
         d().v.setText(LiveTimeAndDateUtils.a(liveCloseInfoModel.live_time, true).toString());
-        d().n.setText(LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.new_follower_count));
-        d().K.setText(LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.total_watch_count));
-        d().z.setText(LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.giver_count));
-        d().x.setText(LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.new_fan_count));
-        d().r.setText(LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.commenter_count));
-        d().B.setText(LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.liked));
+        d().n.setText(LiveNumFormatUtil.a.a(liveCloseInfoModel.new_follower_count));
+        d().K.setText(LiveNumFormatUtil.a.a(liveCloseInfoModel.total_watch_count));
+        d().z.setText(LiveNumFormatUtil.a.a(liveCloseInfoModel.giver_count));
+        d().x.setText(LiveNumFormatUtil.a.a(liveCloseInfoModel.new_fan_count));
+        d().r.setText(LiveNumFormatUtil.a.a(liveCloseInfoModel.commenter_count));
+        d().B.setText(LiveNumFormatUtil.a.a(liveCloseInfoModel.liked));
         if (liveCloseInfoModel.received_beans > 0) {
             h();
         }
@@ -138,7 +135,7 @@ public final class LiveHostFinishDialogFragment extends BaseDialogFragment {
     public static final void b(LiveHostFinishDialogFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
         EventTrackLive.a(LiveProtos.Event.ANCHOR_END_PAGE_MORE_CLICK);
-        LiveHostFinishDetailDialogFragment.Companion companion = LiveHostFinishDetailDialogFragment.f12957a;
+        LiveHostFinishDetailDialogFragment.Companion companion = LiveHostFinishDetailDialogFragment.a;
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         companion.a(childFragmentManager, this$0.d);
@@ -148,7 +145,7 @@ public final class LiveHostFinishDialogFragment extends BaseDialogFragment {
     public static final void c(LiveHostFinishDialogFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
         EventTrackLive.a(LiveProtos.Event.ANCHOR_END_PAGE_COLLEGE_CLICK);
-        LiveRoomInfo.a().a(this$0.getActivity(), H5Url.a(84));
+        LiveRoomInfo.a().a((Context) this$0.getActivity(), H5Url.a(84));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -166,10 +163,10 @@ public final class LiveHostFinishDialogFragment extends BaseDialogFragment {
         d().Q.getLayoutParams().height = DensityUtils.a(getActivity());
         d().I.getPaint().setFakeBoldText(true);
         ImageLoader.a(a(), LiveRoomInfo.a().d()).d().a(d().f);
-        ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("live_host_finish_avatar_shade")).c(300).a(d().j);
-        ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("live_host_finish_arrows_right")).c(300).a(d().i);
-        ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("live_host_finish_arrows_right")).c(300).a(d().h);
-        ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("live_host_finish_college")).c(300).a(d().g);
+        ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("live_host_finish_avatar_shade")).c(300).a(d().j);
+        ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("live_host_finish_arrows_right")).c(300).a(d().i);
+        ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("live_host_finish_arrows_right")).c(300).a(d().h);
+        ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("live_host_finish_college")).c(300).a(d().g);
         d().e.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishDialogFragment$kz92GTEXT3k86PiHy59gjhyAaX0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -182,7 +179,7 @@ public final class LiveHostFinishDialogFragment extends BaseDialogFragment {
                 LiveHostFinishDialogFragment.b(LiveHostFinishDialogFragment.this, view);
             }
         });
-        d().f11833a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishDialogFragment$MXTEafF-KlHK96eTHDE-ABpCHU4
+        d().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishDialogFragment$MXTEafF-KlHK96eTHDE-ABpCHU4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveHostFinishDialogFragment.c(LiveHostFinishDialogFragment.this, view);
@@ -197,10 +194,10 @@ public final class LiveHostFinishDialogFragment extends BaseDialogFragment {
     }
 
     private final void f() {
-        if (this.f12972c) {
+        if (this.c) {
             return;
         }
-        this.f12972c = true;
+        this.c = true;
         EventTrackLive.b(LiveProtos.Event.ANCHOR_END_PAGE_CONFIRM_CLICK, LiveRoomManager.a().e());
         FragmentActivity activity = getActivity();
         if (activity != null) {
@@ -242,12 +239,10 @@ public final class LiveHostFinishDialogFragment extends BaseDialogFragment {
         LiveRoomHttpUtils.e(new LiveHostFinishDialogFragment$getLive$1(this, a()), LiveRoomInfo.a().f(), a());
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismiss() {
         super.dismissAllowingStateLoss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         WindowManager windowManager;
         Display defaultDisplay;
@@ -262,7 +257,7 @@ public final class LiveHostFinishDialogFragment extends BaseDialogFragment {
         }
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
-        dialog.setContentView(d().getRoot(), new ViewGroup.LayoutParams(num2.intValue(), -1));
+        dialog.setContentView((View) d().getRoot(), new ViewGroup.LayoutParams(num2.intValue(), -1));
         dialog.setOnKeyListener(new DialogInterface.OnKeyListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishDialogFragment$JAzME8yQ0zQAcRYexGc33QysWik
             @Override // android.content.DialogInterface.OnKeyListener
             public final boolean onKey(DialogInterface dialogInterface, int i, KeyEvent keyEvent) {
@@ -288,7 +283,6 @@ public final class LiveHostFinishDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

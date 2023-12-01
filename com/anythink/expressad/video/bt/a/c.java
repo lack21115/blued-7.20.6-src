@@ -32,7 +32,6 @@ import com.anythink.expressad.video.bt.module.AnythinkBTVideoView;
 import com.anythink.expressad.video.bt.module.AnythinkBTWebView;
 import com.anythink.expressad.video.bt.module.BTBaseView;
 import com.anythink.expressad.videocommon.e.d;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.cdo.oaps.ad.OapsKey;
 import com.cdo.oaps.ad.OapsWrapper;
 import com.huawei.hms.ads.jsb.constant.Constant;
@@ -50,11 +49,11 @@ import org.json.JSONObject;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f8290a = -999;
+    public static final int f5450a = -999;
     private static final String b = "OperateViews";
 
     /* renamed from: c  reason: collision with root package name */
-    private static ConcurrentHashMap<String, LinkedHashMap<String, View>> f8291c = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, LinkedHashMap<String, View>> f5451c = new ConcurrentHashMap<>();
     private static LinkedHashMap<String, String> d = new LinkedHashMap<>();
     private static LinkedHashMap<String, com.anythink.expressad.foundation.d.c> e = new LinkedHashMap<>();
     private static LinkedHashMap<String, d> f = new LinkedHashMap<>();
@@ -71,12 +70,11 @@ public final class c {
     private static int q;
     private static int r;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/video/bt/a/c$a.class */
-    public static final class a {
+    static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static c f8296a = new c((byte) 0);
+        private static c f5456a = new c((byte) 0);
 
         private a() {
         }
@@ -250,7 +248,7 @@ public final class c {
     private static ViewGroup.LayoutParams a(ViewGroup.LayoutParams layoutParams, Rect rect, int i2, int i3) {
         Rect rect2 = rect;
         if (rect == null) {
-            rect2 = new Rect(f8290a, f8290a, f8290a, f8290a);
+            rect2 = new Rect(f5450a, f5450a, f5450a, f5450a);
         }
         Context g2 = n.a().g();
         if (g2 == null) {
@@ -335,7 +333,7 @@ public final class c {
     }
 
     public static c a() {
-        return a.f8296a;
+        return a.f5456a;
     }
 
     public static void a(int i2, int i3, int i4, int i5, int i6) {
@@ -432,7 +430,7 @@ public final class c {
 
     private static void a(String str, String str2, String str3) {
         try {
-            LinkedHashMap<String, View> b2 = a.f8296a.b(str, str2);
+            LinkedHashMap<String, View> b2 = a.f5456a.b(str, str2);
             if (b2 == null || b2.size() <= 0) {
                 return;
             }
@@ -580,8 +578,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -618,8 +616,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -656,8 +654,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -694,8 +692,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -732,8 +730,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -772,8 +770,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -813,8 +811,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -857,8 +855,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -892,8 +890,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -927,9 +925,9 @@ public final class c {
                 return;
             }
             anythinkBTContainer.onAdClose();
-            f8291c.remove(b2);
+            f5451c.remove(b2);
             b2.clear();
-            f8291c.remove(optString + BridgeUtil.UNDERLINE_STR + str);
+            f5451c.remove(optString + "_" + str);
             a(obj, optString2);
         } catch (Throwable th) {
             c(obj, th.getMessage());
@@ -940,7 +938,7 @@ public final class c {
     public final void M(Object obj, JSONObject jSONObject) {
         try {
             com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
-            String rid = aVar.f7101a != null ? aVar.f7101a.getRid() : "";
+            String rid = aVar.f4263a != null ? aVar.f4263a.getRid() : "";
             String optString = jSONObject.optString("unitId");
             String optString2 = jSONObject.optString("eventName");
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -967,7 +965,7 @@ public final class c {
     public final void N(Object obj, JSONObject jSONObject) {
         try {
             com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
-            String rid = aVar.f7101a != null ? aVar.f7101a.getRid() : "";
+            String rid = aVar.f4263a != null ? aVar.f4263a.getRid() : "";
             String optString = jSONObject.optString("unitId");
             String optString2 = jSONObject.optString("id");
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -1012,7 +1010,7 @@ public final class c {
     public final void O(Object obj, JSONObject jSONObject) {
         try {
             com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
-            String rid = aVar.f7101a != null ? aVar.f7101a.getRid() : "";
+            String rid = aVar.f4263a != null ? aVar.f4263a.getRid() : "";
             String optString = jSONObject.optString("unitId");
             String optString2 = jSONObject.optString("id");
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -1084,8 +1082,8 @@ public final class c {
                 anythinkBTNativeEC.setUnitId(optString);
                 anythinkBTNativeEC.setRewardUnitSetting(a2);
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
-                if (aVar.f7101a != null) {
-                    WindVaneWebView windVaneWebView = aVar.f7101a;
+                if (aVar.f4263a != null) {
+                    WindVaneWebView windVaneWebView = aVar.f4263a;
                     str = windVaneWebView.getRid();
                     anythinkBTNativeEC.setCreateWebView(windVaneWebView);
                 }
@@ -1123,9 +1121,9 @@ public final class c {
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
             int optInt = optJSONObject.optInt("delay", 0);
             JSONObject optJSONObject2 = optJSONObject.optJSONObject("rect");
-            Rect rect = new Rect(f8290a, f8290a, f8290a, f8290a);
+            Rect rect = new Rect(f5450a, f5450a, f5450a, f5450a);
             if (optJSONObject2 != null) {
-                rect = new Rect(optJSONObject2.optInt("left", f8290a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f8290a), optJSONObject2.optInt("right", f8290a), optJSONObject2.optInt("bottom", f8290a));
+                rect = new Rect(optJSONObject2.optInt("left", f5450a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f5450a), optJSONObject2.optInt("right", f5450a), optJSONObject2.optInt("bottom", f5450a));
                 i2 = optJSONObject2.optInt("width");
                 i3 = optJSONObject2.optInt("height");
             } else {
@@ -1141,8 +1139,8 @@ public final class c {
                     String str;
                     WindVaneWebView windVaneWebView;
                     com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
-                    if (aVar.f7101a != null) {
-                        windVaneWebView = aVar.f7101a;
+                    if (aVar.f4263a != null) {
+                        windVaneWebView = aVar.f4263a;
                         str = windVaneWebView.getRid();
                     } else {
                         str = "";
@@ -1172,14 +1170,14 @@ public final class c {
 
     public final LinkedHashMap<String, View> b(String str, String str2) {
         synchronized (this) {
-            ConcurrentHashMap<String, LinkedHashMap<String, View>> concurrentHashMap = f8291c;
-            if (concurrentHashMap.containsKey(str + BridgeUtil.UNDERLINE_STR + str2)) {
-                ConcurrentHashMap<String, LinkedHashMap<String, View>> concurrentHashMap2 = f8291c;
-                return concurrentHashMap2.get(str + BridgeUtil.UNDERLINE_STR + str2);
+            ConcurrentHashMap<String, LinkedHashMap<String, View>> concurrentHashMap = f5451c;
+            if (concurrentHashMap.containsKey(str + "_" + str2)) {
+                ConcurrentHashMap<String, LinkedHashMap<String, View>> concurrentHashMap2 = f5451c;
+                return concurrentHashMap2.get(str + "_" + str2);
             }
             LinkedHashMap<String, View> linkedHashMap = new LinkedHashMap<>();
-            ConcurrentHashMap<String, LinkedHashMap<String, View>> concurrentHashMap3 = f8291c;
-            concurrentHashMap3.put(str + BridgeUtil.UNDERLINE_STR + str2, linkedHashMap);
+            ConcurrentHashMap<String, LinkedHashMap<String, View>> concurrentHashMap3 = f5451c;
+            concurrentHashMap3.put(str + "_" + str2, linkedHashMap);
             return linkedHashMap;
         }
     }
@@ -1199,9 +1197,9 @@ public final class c {
             final String optString3 = optJSONObject.optString("filePath");
             final String optString4 = optJSONObject.optString(com.baidu.mobads.sdk.internal.a.f);
             JSONObject optJSONObject2 = optJSONObject.optJSONObject("rect");
-            Rect rect = new Rect(f8290a, f8290a, f8290a, f8290a);
+            Rect rect = new Rect(f5450a, f5450a, f5450a, f5450a);
             if (optJSONObject2 != null) {
-                rect = new Rect(optJSONObject2.optInt("left", f8290a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f8290a), optJSONObject2.optInt("right", f8290a), optJSONObject2.optInt("bottom", f8290a));
+                rect = new Rect(optJSONObject2.optInt("left", f5450a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f5450a), optJSONObject2.optInt("right", f5450a), optJSONObject2.optInt("bottom", f5450a));
                 i2 = optJSONObject2.optInt("width");
                 i3 = optJSONObject2.optInt("height");
             } else {
@@ -1217,8 +1215,8 @@ public final class c {
                     String str;
                     WindVaneWebView windVaneWebView;
                     com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
-                    if (aVar.f7101a != null) {
-                        windVaneWebView = aVar.f7101a;
+                    if (aVar.f4263a != null) {
+                        windVaneWebView = aVar.f4263a;
                         str = windVaneWebView.getRid();
                     } else {
                         str = "";
@@ -1279,8 +1277,8 @@ public final class c {
                 anythinkBTVideoView.setOrientation(optInt4);
                 anythinkBTVideoView.setProgressBarState(optInt5);
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
-                if (aVar.f7101a != null) {
-                    WindVaneWebView windVaneWebView = aVar.f7101a;
+                if (aVar.f4263a != null) {
+                    WindVaneWebView windVaneWebView = aVar.f4263a;
                     str = windVaneWebView.getRid();
                     anythinkBTVideoView.setCreateWebView(windVaneWebView);
                 }
@@ -1332,8 +1330,8 @@ public final class c {
                 if (TextUtils.isEmpty(str)) {
                     com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                     str2 = str;
-                    if (aVar.f7101a != null) {
-                        str2 = aVar.f7101a.getRid();
+                    if (aVar.f4263a != null) {
+                        str2 = aVar.f4263a.getRid();
                     }
                 }
                 LinkedHashMap<String, View> b3 = b(optString, str2);
@@ -1389,8 +1387,8 @@ public final class c {
                 if (TextUtils.isEmpty(h2)) {
                     com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                     str = h2;
-                    if (aVar.f7101a != null) {
-                        str = aVar.f7101a.getRid();
+                    if (aVar.f4263a != null) {
+                        str = aVar.f4263a.getRid();
                     }
                 }
                 LinkedHashMap<String, View> b2 = b(optString, str);
@@ -1462,8 +1460,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -1477,7 +1475,7 @@ public final class c {
                 return;
             }
             LinkedHashMap<String, View> b2 = b(optString, str);
-            Rect rect = new Rect(optJSONObject2.optInt("left", f8290a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f8290a), optJSONObject2.optInt("right", f8290a), optJSONObject2.optInt("bottom", f8290a));
+            Rect rect = new Rect(optJSONObject2.optInt("left", f5450a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f5450a), optJSONObject2.optInt("right", f5450a), optJSONObject2.optInt("bottom", f5450a));
             int optInt = optJSONObject2.optInt("width");
             int optInt2 = optJSONObject2.optInt("height");
             if (!b2.containsKey(optString2)) {
@@ -1522,8 +1520,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -1568,8 +1566,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -1611,7 +1609,7 @@ public final class c {
             } else {
                 Rect rect = null;
                 if (optJSONObject2 != null) {
-                    rect = new Rect(optJSONObject2.optInt("left", f8290a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f8290a), optJSONObject2.optInt("right", f8290a), optJSONObject2.optInt("bottom", f8290a));
+                    rect = new Rect(optJSONObject2.optInt("left", f5450a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f5450a), optJSONObject2.optInt("right", f5450a), optJSONObject2.optInt("bottom", f5450a));
                     i2 = optJSONObject2.optInt("width");
                     optInt = optJSONObject2.optInt("height");
                 } else if (view instanceof BTBaseView) {
@@ -1652,8 +1650,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -1690,7 +1688,7 @@ public final class c {
                     Rect rect = null;
                     int i2 = 0;
                     if (optJSONObject2 != null) {
-                        rect = new Rect(optJSONObject2.optInt("left", f8290a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f8290a), optJSONObject2.optInt("right", f8290a), optJSONObject2.optInt("bottom", f8290a));
+                        rect = new Rect(optJSONObject2.optInt("left", f5450a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f5450a), optJSONObject2.optInt("right", f5450a), optJSONObject2.optInt("bottom", f5450a));
                         i2 = optJSONObject2.optInt("width");
                         optInt = optJSONObject2.optInt("height");
                     } else if (view instanceof BTBaseView) {
@@ -1734,8 +1732,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -1776,7 +1774,7 @@ public final class c {
             } else {
                 Rect rect = null;
                 if (optJSONObject2 != null) {
-                    rect = new Rect(optJSONObject2.optInt("left", f8290a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f8290a), optJSONObject2.optInt("right", f8290a), optJSONObject2.optInt("bottom", f8290a));
+                    rect = new Rect(optJSONObject2.optInt("left", f5450a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f5450a), optJSONObject2.optInt("right", f5450a), optJSONObject2.optInt("bottom", f5450a));
                     i2 = optJSONObject2.optInt("width");
                     optInt = optJSONObject2.optInt("height");
                 } else if (view instanceof BTBaseView) {
@@ -1815,8 +1813,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -1852,7 +1850,7 @@ public final class c {
                     Rect rect = null;
                     int i2 = 0;
                     if (optJSONObject2 != null) {
-                        rect = new Rect(optJSONObject2.optInt("left", f8290a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f8290a), optJSONObject2.optInt("right", f8290a), optJSONObject2.optInt("bottom", f8290a));
+                        rect = new Rect(optJSONObject2.optInt("left", f5450a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f5450a), optJSONObject2.optInt("right", f5450a), optJSONObject2.optInt("bottom", f5450a));
                         i2 = optJSONObject2.optInt("width");
                         optInt = optJSONObject2.optInt("height");
                     } else if (view instanceof BTBaseView) {
@@ -1893,8 +1891,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -1938,8 +1936,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -1977,8 +1975,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -2016,8 +2014,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -2061,8 +2059,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -2102,8 +2100,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -2146,8 +2144,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -2175,7 +2173,7 @@ public final class c {
             Rect rect = null;
             int i2 = 0;
             if (optJSONObject2 != null) {
-                rect = new Rect(optJSONObject2.optInt("left", f8290a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f8290a), optJSONObject2.optInt("right", f8290a), optJSONObject2.optInt("bottom", f8290a));
+                rect = new Rect(optJSONObject2.optInt("left", f5450a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f5450a), optJSONObject2.optInt("right", f5450a), optJSONObject2.optInt("bottom", f5450a));
                 i2 = optJSONObject2.optInt("width");
                 optInt = optJSONObject2.optInt("height");
             } else if (view instanceof BTBaseView) {
@@ -2216,8 +2214,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -2244,7 +2242,7 @@ public final class c {
             int indexOfChild = viewGroup.indexOfChild(view2);
             Rect rect = null;
             if (optJSONObject2 != null) {
-                rect = new Rect(optJSONObject2.optInt("left", f8290a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f8290a), optJSONObject2.optInt("right", f8290a), optJSONObject2.optInt("bottom", f8290a));
+                rect = new Rect(optJSONObject2.optInt("left", f5450a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f5450a), optJSONObject2.optInt("right", f5450a), optJSONObject2.optInt("bottom", f5450a));
                 optInt = optJSONObject2.optInt("width");
                 optInt2 = optJSONObject2.optInt("height");
             } else if (view instanceof BTBaseView) {
@@ -2290,8 +2288,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -2319,7 +2317,7 @@ public final class c {
             Rect rect = null;
             int i2 = 0;
             if (optJSONObject2 != null) {
-                rect = new Rect(optJSONObject2.optInt("left", f8290a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f8290a), optJSONObject2.optInt("right", f8290a), optJSONObject2.optInt("bottom", f8290a));
+                rect = new Rect(optJSONObject2.optInt("left", f5450a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f5450a), optJSONObject2.optInt("right", f5450a), optJSONObject2.optInt("bottom", f5450a));
                 i2 = optJSONObject2.optInt("width");
                 optInt = optJSONObject2.optInt("height");
             } else if (view instanceof BTBaseView) {
@@ -2357,8 +2355,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -2386,7 +2384,7 @@ public final class c {
             Rect rect = null;
             int i2 = 0;
             if (optJSONObject2 != null) {
-                rect = new Rect(optJSONObject2.optInt("left", f8290a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f8290a), optJSONObject2.optInt("right", f8290a), optJSONObject2.optInt("bottom", f8290a));
+                rect = new Rect(optJSONObject2.optInt("left", f5450a), optJSONObject2.optInt(Constant.MAP_KEY_TOP, f5450a), optJSONObject2.optInt("right", f5450a), optJSONObject2.optInt("bottom", f5450a));
                 i2 = optJSONObject2.optInt("width");
                 optInt = optJSONObject2.optInt("height");
             } else if (view instanceof BTBaseView) {
@@ -2426,8 +2424,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str2 = h2;
-                if (aVar.f7101a != null) {
-                    str2 = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str2 = aVar.f4263a.getRid();
                 }
             }
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
@@ -2471,10 +2469,10 @@ public final class c {
                 a2.a(optString6);
             }
             JSONObject optJSONObject3 = jSONObject.optJSONObject("rect");
-            Rect rect = new Rect(f8290a, f8290a, f8290a, f8290a);
+            Rect rect = new Rect(f5450a, f5450a, f5450a, f5450a);
             if (optJSONObject3 != null) {
                 try {
-                    rect = new Rect(optJSONObject3.optInt("left", f8290a), optJSONObject3.optInt(Constant.MAP_KEY_TOP, f8290a), optJSONObject3.optInt("right", f8290a), optJSONObject3.optInt("bottom", f8290a));
+                    rect = new Rect(optJSONObject3.optInt("left", f5450a), optJSONObject3.optInt(Constant.MAP_KEY_TOP, f5450a), optJSONObject3.optInt("right", f5450a), optJSONObject3.optInt("bottom", f5450a));
                     i3 = optJSONObject3.optInt("width");
                     i2 = optJSONObject3.optInt("height");
                 } catch (Throwable th) {
@@ -2541,8 +2539,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -2581,8 +2579,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {
@@ -2621,8 +2619,8 @@ public final class c {
             if (TextUtils.isEmpty(h2)) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 str = h2;
-                if (aVar.f7101a != null) {
-                    str = aVar.f7101a.getRid();
+                if (aVar.f4263a != null) {
+                    str = aVar.f4263a.getRid();
                 }
             }
             if (jSONObject.optJSONObject("data") == null) {

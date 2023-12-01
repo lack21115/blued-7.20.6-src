@@ -5,14 +5,10 @@ import android.graphics.Point;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/video_gift/FitViewHelper.class */
 public class FitViewHelper {
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f16082c;
+    private int c;
     private int d;
     private int e;
-
-    /* renamed from: a  reason: collision with root package name */
-    private float f16081a = 0.5625f;
+    private float a = 0.5625f;
     private ScaleType f = ScaleType.CENTER_CROP;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/video_gift/FitViewHelper$ScaleType.class */
@@ -32,7 +28,7 @@ public class FitViewHelper {
         int i4 = i;
         int i5 = i2;
         if (i3 != 0) {
-            int i6 = this.f16082c;
+            int i6 = this.c;
             i4 = i;
             i5 = i2;
             if (i6 != 0) {
@@ -40,7 +36,7 @@ public class FitViewHelper {
                 i5 = i6;
             }
         }
-        if (i4 > i5 * this.f16081a) {
+        if (i4 > i5 * this.a) {
             i4 = (int) ((f2 * f3) + 0.5d);
         } else {
             i5 = (int) ((f / f3) + 0.5d);
@@ -51,14 +47,14 @@ public class FitViewHelper {
     private Point c(int i, int i2) {
         int i3;
         int i4 = this.b;
-        if (i4 != 0 && this.f16082c != 0) {
-            i3 = (int) ((i4 / this.f16081a) + 0.5d);
+        if (i4 != 0 && this.c != 0) {
+            i3 = (int) ((i4 / this.a) + 0.5d);
             i = i4;
         } else if (i == 0 || i2 == 0) {
             i = 0;
             i3 = 0;
         } else {
-            i3 = (int) ((i / this.f16081a) + 0.5d);
+            i3 = (int) ((i / this.a) + 0.5d);
         }
         return new Point(i, i3);
     }
@@ -66,14 +62,14 @@ public class FitViewHelper {
     private Point d(int i, int i2) {
         int i3;
         int i4;
-        if (this.b != 0 && (i4 = this.f16082c) != 0) {
-            i3 = (int) ((i4 * this.f16081a) + 0.5d);
+        if (this.b != 0 && (i4 = this.c) != 0) {
+            i3 = (int) ((i4 * this.a) + 0.5d);
             i2 = i4;
         } else if (i == 0 || i2 == 0) {
             i2 = 0;
             i3 = 0;
         } else {
-            i3 = (int) ((i2 * this.f16081a) + 0.5d);
+            i3 = (int) ((i2 * this.a) + 0.5d);
         }
         return new Point(i3, i2);
     }
@@ -85,8 +81,8 @@ public class FitViewHelper {
         int i3;
         float f4;
         int i4 = this.b;
-        if (i4 != 0 && (i3 = this.f16082c) != 0) {
-            if (this.f16081a > (i4 * 1.0f) / i3) {
+        if (i4 != 0 && (i3 = this.c) != 0) {
+            if (this.a > (i4 * 1.0f) / i3) {
                 i = (int) ((i3 * f4) + 0.5d);
                 i2 = i3;
             } else {
@@ -97,7 +93,7 @@ public class FitViewHelper {
             i = 0;
             i2 = 0;
         } else {
-            if (this.f16081a > (1.0f * i) / i2) {
+            if (this.a > (1.0f * i) / i2) {
                 i = (int) ((f3 * f) + 0.5d);
             } else {
                 i2 = (int) ((f2 / f) + 0.5d);
@@ -118,12 +114,12 @@ public class FitViewHelper {
         if (f <= 0.0d || i < 0 || i2 < 0) {
             throw new IllegalArgumentException();
         }
-        if (this.f16081a == f && this.b == i && this.f16082c == i2) {
+        if (this.a == f && this.b == i && this.c == i2) {
             return false;
         }
-        this.f16081a = f;
+        this.a = f;
         this.b = i;
-        this.f16082c = i2;
+        this.c = i2;
         return a(0, 0);
     }
 

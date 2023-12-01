@@ -74,7 +74,7 @@ public final class l extends e {
             com.anythink.expressad.atsignalcommon.windvane.j.a();
             com.anythink.expressad.atsignalcommon.windvane.j.a(this.u, r, encodeToString);
         } catch (Exception e) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
             }
         }
@@ -100,8 +100,8 @@ public final class l extends e {
         super.a(aVar);
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("progress", a(aVar.f8500a, aVar.b));
-            jSONObject.put("time", String.valueOf(aVar.f8500a));
+            jSONObject.put("progress", a(aVar.f5660a, aVar.b));
+            jSONObject.put("time", String.valueOf(aVar.f5660a));
             jSONObject.put("duration", String.valueOf(aVar.b));
             String encodeToString = Base64.encodeToString(jSONObject.toString().getBytes(), 2);
             com.anythink.expressad.atsignalcommon.windvane.j.a();

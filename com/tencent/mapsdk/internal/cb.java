@@ -8,10 +8,10 @@ import java.security.NoSuchAlgorithmException;
 public class cb {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final char[] f37363c = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    private static final char[] f23672c = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     /* renamed from: a  reason: collision with root package name */
-    private final va<String, String> f37364a = new va<>(1000);
+    private final va<String, String> f23673a = new va<>(1000);
     private final za.k<za.m<MessageDigest>> b = za.b(10, new a());
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/cb$a.class */
@@ -43,7 +43,7 @@ public class cb {
             }
             byte b = bArr[i2];
             int i3 = i2 * 2;
-            char[] cArr2 = f37363c;
+            char[] cArr2 = f23672c;
             cArr[i3 + 1] = cArr2[b & 15];
             cArr[i3 + 0] = cArr2[((byte) (b >>> 4)) & 15];
             i = i2 + 1;
@@ -52,8 +52,8 @@ public class cb {
 
     public String a(String str) {
         String b;
-        synchronized (this.f37364a) {
-            b = this.f37364a.b((va<String, String>) str);
+        synchronized (this.f23673a) {
+            b = this.f23673a.b((va<String, String>) str);
         }
         String str2 = b;
         if (b == null) {
@@ -65,8 +65,8 @@ public class cb {
                 this.b.a(a2);
             }
         }
-        synchronized (this.f37364a) {
-            this.f37364a.a(str, str2);
+        synchronized (this.f23673a) {
+            this.f23673a.a(str, str2);
         }
         return str2;
     }

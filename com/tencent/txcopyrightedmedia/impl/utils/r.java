@@ -6,22 +6,22 @@ import com.tencent.txcopyrightedmedia.ITXCMMusicTrack;
 public final class r implements ITXCMMusicTrack.OnPreparedListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ITXCMMusicTrack.OnPreparedListener f40142a;
+    private final ITXCMMusicTrack.OnPreparedListener f26451a;
 
     public r(ITXCMMusicTrack.OnPreparedListener onPreparedListener) {
-        this.f40142a = onPreparedListener;
+        this.f26451a = onPreparedListener;
     }
 
     @Override // com.tencent.txcopyrightedmedia.ITXCMMusicTrack.OnPreparedListener
     public final void onPrepared() {
         ai aiVar;
-        if (this.f40142a == null || (aiVar = (ai) m.a().b(m.d)) == null) {
+        if (this.f26451a == null || (aiVar = (ai) m.a().b(m.d)) == null) {
             return;
         }
         aiVar.a(new Runnable() { // from class: com.tencent.txcopyrightedmedia.impl.utils.r.1
             @Override // java.lang.Runnable
             public final void run() {
-                r.this.f40142a.onPrepared();
+                r.this.f26451a.onPrepared();
             }
         });
     }

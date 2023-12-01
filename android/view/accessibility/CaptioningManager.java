@@ -3,12 +3,12 @@ package android.view.accessibility;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.ContentObserver;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Handler;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.view.View;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,11 +27,11 @@ public class CaptioningManager {
         public void onChange(boolean z, Uri uri) {
             String path = uri.getPath();
             String substring = path.substring(path.lastIndexOf(47) + 1);
-            if (Settings.Secure.ACCESSIBILITY_CAPTIONING_ENABLED.equals(substring)) {
+            if ("accessibility_captioning_enabled".equals(substring)) {
                 CaptioningManager.this.notifyEnabledChanged();
-            } else if (Settings.Secure.ACCESSIBILITY_CAPTIONING_LOCALE.equals(substring)) {
+            } else if ("accessibility_captioning_locale".equals(substring)) {
                 CaptioningManager.this.notifyLocaleChanged();
-            } else if (Settings.Secure.ACCESSIBILITY_CAPTIONING_FONT_SCALE.equals(substring)) {
+            } else if ("accessibility_captioning_font_scale".equals(substring)) {
                 CaptioningManager.this.notifyFontScaleChanged();
             } else {
                 CaptioningManager.this.mHandler.removeCallbacks(CaptioningManager.this.mStyleChangedRunnable);
@@ -69,10 +69,10 @@ public class CaptioningManager {
         private Typeface mParsedTypeface;
         public final String mRawTypeface;
         public final int windowColor;
-        private static final CaptionStyle WHITE_ON_BLACK = new CaptionStyle(-1, -16777216, 0, -16777216, 255, null);
-        private static final CaptionStyle BLACK_ON_WHITE = new CaptionStyle(-16777216, -1, 0, -16777216, 255, null);
-        private static final CaptionStyle YELLOW_ON_BLACK = new CaptionStyle(-256, -16777216, 0, -16777216, 255, null);
-        private static final CaptionStyle YELLOW_ON_BLUE = new CaptionStyle(-256, Color.BLUE, 0, -16777216, 255, null);
+        private static final CaptionStyle WHITE_ON_BLACK = new CaptionStyle(-1, View.MEASURED_STATE_MASK, 0, View.MEASURED_STATE_MASK, 255, null);
+        private static final CaptionStyle BLACK_ON_WHITE = new CaptionStyle(View.MEASURED_STATE_MASK, -1, 0, View.MEASURED_STATE_MASK, 255, null);
+        private static final CaptionStyle YELLOW_ON_BLACK = new CaptionStyle(-256, View.MEASURED_STATE_MASK, 0, View.MEASURED_STATE_MASK, 255, null);
+        private static final CaptionStyle YELLOW_ON_BLUE = new CaptionStyle(-256, -16776961, 0, View.MEASURED_STATE_MASK, 255, null);
         private static final CaptionStyle UNSPECIFIED = new CaptionStyle(511, 511, -1, 511, 511, null);
         public static final CaptionStyle[] PRESETS = {WHITE_ON_BLACK, BLACK_ON_WHITE, YELLOW_ON_BLACK, YELLOW_ON_BLUE, UNSPECIFIED};
         private static final CaptionStyle DEFAULT_CUSTOM = WHITE_ON_BLACK;
@@ -94,12 +94,12 @@ public class CaptioningManager {
 
         public static CaptionStyle getCustomStyle(ContentResolver contentResolver) {
             CaptionStyle captionStyle = DEFAULT_CUSTOM;
-            int i = Settings.Secure.getInt(contentResolver, Settings.Secure.ACCESSIBILITY_CAPTIONING_FOREGROUND_COLOR, captionStyle.foregroundColor);
-            int i2 = Settings.Secure.getInt(contentResolver, Settings.Secure.ACCESSIBILITY_CAPTIONING_BACKGROUND_COLOR, captionStyle.backgroundColor);
-            int i3 = Settings.Secure.getInt(contentResolver, Settings.Secure.ACCESSIBILITY_CAPTIONING_EDGE_TYPE, captionStyle.edgeType);
-            int i4 = Settings.Secure.getInt(contentResolver, Settings.Secure.ACCESSIBILITY_CAPTIONING_EDGE_COLOR, captionStyle.edgeColor);
-            int i5 = Settings.Secure.getInt(contentResolver, Settings.Secure.ACCESSIBILITY_CAPTIONING_WINDOW_COLOR, captionStyle.windowColor);
-            String string = Settings.Secure.getString(contentResolver, Settings.Secure.ACCESSIBILITY_CAPTIONING_TYPEFACE);
+            int i = Settings.Secure.getInt(contentResolver, "accessibility_captioning_foreground_color", captionStyle.foregroundColor);
+            int i2 = Settings.Secure.getInt(contentResolver, "accessibility_captioning_background_color", captionStyle.backgroundColor);
+            int i3 = Settings.Secure.getInt(contentResolver, "accessibility_captioning_edge_type", captionStyle.edgeType);
+            int i4 = Settings.Secure.getInt(contentResolver, "accessibility_captioning_edge_color", captionStyle.edgeColor);
+            int i5 = Settings.Secure.getInt(contentResolver, "accessibility_captioning_window_color", captionStyle.windowColor);
+            String string = Settings.Secure.getString(contentResolver, "accessibility_captioning_typeface");
             String str = string;
             if (string == null) {
                 str = captionStyle.mRawTypeface;
@@ -209,23 +209,23 @@ public class CaptioningManager {
     public void addCaptioningChangeListener(CaptioningChangeListener captioningChangeListener) {
         synchronized (this.mListeners) {
             if (this.mListeners.isEmpty()) {
-                registerObserver(Settings.Secure.ACCESSIBILITY_CAPTIONING_ENABLED);
-                registerObserver(Settings.Secure.ACCESSIBILITY_CAPTIONING_FOREGROUND_COLOR);
-                registerObserver(Settings.Secure.ACCESSIBILITY_CAPTIONING_BACKGROUND_COLOR);
-                registerObserver(Settings.Secure.ACCESSIBILITY_CAPTIONING_WINDOW_COLOR);
-                registerObserver(Settings.Secure.ACCESSIBILITY_CAPTIONING_EDGE_TYPE);
-                registerObserver(Settings.Secure.ACCESSIBILITY_CAPTIONING_EDGE_COLOR);
-                registerObserver(Settings.Secure.ACCESSIBILITY_CAPTIONING_TYPEFACE);
-                registerObserver(Settings.Secure.ACCESSIBILITY_CAPTIONING_FONT_SCALE);
-                registerObserver(Settings.Secure.ACCESSIBILITY_CAPTIONING_LOCALE);
-                registerObserver(Settings.Secure.ACCESSIBILITY_CAPTIONING_PRESET);
+                registerObserver("accessibility_captioning_enabled");
+                registerObserver("accessibility_captioning_foreground_color");
+                registerObserver("accessibility_captioning_background_color");
+                registerObserver("accessibility_captioning_window_color");
+                registerObserver("accessibility_captioning_edge_type");
+                registerObserver("accessibility_captioning_edge_color");
+                registerObserver("accessibility_captioning_typeface");
+                registerObserver("accessibility_captioning_font_scale");
+                registerObserver("accessibility_captioning_locale");
+                registerObserver("accessibility_captioning_preset");
             }
             this.mListeners.add(captioningChangeListener);
         }
     }
 
     public final float getFontScale() {
-        return Settings.Secure.getFloat(this.mContentResolver, Settings.Secure.ACCESSIBILITY_CAPTIONING_FONT_SCALE, 1.0f);
+        return Settings.Secure.getFloat(this.mContentResolver, "accessibility_captioning_font_scale", 1.0f);
     }
 
     public final Locale getLocale() {
@@ -247,11 +247,11 @@ public class CaptioningManager {
     }
 
     public final String getRawLocale() {
-        return Settings.Secure.getString(this.mContentResolver, Settings.Secure.ACCESSIBILITY_CAPTIONING_LOCALE);
+        return Settings.Secure.getString(this.mContentResolver, "accessibility_captioning_locale");
     }
 
     public int getRawUserStyle() {
-        return Settings.Secure.getInt(this.mContentResolver, Settings.Secure.ACCESSIBILITY_CAPTIONING_PRESET, 0);
+        return Settings.Secure.getInt(this.mContentResolver, "accessibility_captioning_preset", 0);
     }
 
     public CaptionStyle getUserStyle() {
@@ -260,7 +260,7 @@ public class CaptioningManager {
     }
 
     public final boolean isEnabled() {
-        return Settings.Secure.getInt(this.mContentResolver, Settings.Secure.ACCESSIBILITY_CAPTIONING_ENABLED, 0) == 1;
+        return Settings.Secure.getInt(this.mContentResolver, "accessibility_captioning_enabled", 0) == 1;
     }
 
     public void removeCaptioningChangeListener(CaptioningChangeListener captioningChangeListener) {

@@ -12,6 +12,7 @@ import com.squareup.okhttp.internal.http.HttpMethod;
 import com.squareup.okhttp.internal.http.OkHeaders;
 import com.squareup.okhttp.internal.http.StatusLine;
 import com.squareup.okhttp.internal.io.FileSystem;
+import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.security.cert.Certificate;
@@ -60,7 +61,6 @@ public final class Cache {
             Sink newSink = editor.newSink(1);
             this.cacheOut = newSink;
             this.body = new ForwardingSink(newSink) { // from class: com.squareup.okhttp.Cache.CacheRequestImpl.1
-                @Override // okio.ForwardingSink, okio.Sink, java.io.Closeable, java.lang.AutoCloseable
                 public void close() throws IOException {
                     synchronized (Cache.this) {
                         if (CacheRequestImpl.this.done) {
@@ -83,7 +83,7 @@ public final class Cache {
                 }
                 this.done = true;
                 Cache.access$908(Cache.this);
-                Util.closeQuietly(this.cacheOut);
+                Util.closeQuietly((Closeable) this.cacheOut);
                 try {
                     this.editor.abort();
                 } catch (IOException e) {
@@ -110,7 +110,6 @@ public final class Cache {
             this.contentType = str;
             this.contentLength = str2;
             this.bodySource = Okio.buffer(new ForwardingSource(snapshot.getSource(1)) { // from class: com.squareup.okhttp.Cache.CacheResponseBody.1
-                @Override // okio.ForwardingSource, okio.Source, java.io.Closeable, java.lang.AutoCloseable
                 public void close() throws IOException {
                     snapshot.close();
                     super.close();

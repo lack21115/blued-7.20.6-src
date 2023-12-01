@@ -6,9 +6,7 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/time/DurationJvmKt.class */
 public final class DurationJvmKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final boolean f42764a = Duration.class.desiredAssertionStatus();
+    private static final boolean a = Duration.class.desiredAssertionStatus();
     private static final ThreadLocal<DecimalFormat>[] b;
 
     static {
@@ -27,6 +25,6 @@ public final class DurationJvmKt {
     }
 
     public static final boolean a() {
-        return f42764a;
+        return a;
     }
 }

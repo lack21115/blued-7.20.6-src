@@ -27,7 +27,7 @@ public abstract class TreeTraverser<T> {
             return !this.queue.isEmpty();
         }
 
-        @Override // java.util.Iterator
+        @Override // java.util.Iterator, com.google.common.collect.PeekingIterator
         public T next() {
             T remove = this.queue.remove();
             Iterables.addAll(this.queue, TreeTraverser.this.children(remove));

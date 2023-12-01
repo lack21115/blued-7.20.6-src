@@ -13,13 +13,9 @@ import com.autonavi.base.amap.api.mapcore.IAMapDelegate;
 /* renamed from: com.amap.api.col.3sl.ef  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ef.class */
 public final class ef extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    Bitmap f4895a;
+    Bitmap a;
     Bitmap b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Bitmap f4896c;
+    Bitmap c;
     Bitmap d;
     Bitmap e;
     Bitmap f;
@@ -32,18 +28,18 @@ public final class ef extends LinearLayout {
         this.i = false;
         this.h = iAMapDelegate;
         try {
-            Bitmap a2 = dw.a(context, "location_selected.png");
-            this.d = a2;
-            this.f4895a = dw.a(a2, w.f5439a);
-            Bitmap a3 = dw.a(context, "location_pressed.png");
-            this.e = a3;
-            this.b = dw.a(a3, w.f5439a);
-            Bitmap a4 = dw.a(context, "location_unselected.png");
-            this.f = a4;
-            this.f4896c = dw.a(a4, w.f5439a);
+            Bitmap a = dw.a(context, "location_selected.png");
+            this.d = a;
+            this.a = dw.a(a, w.a);
+            Bitmap a2 = dw.a(context, "location_pressed.png");
+            this.e = a2;
+            this.b = dw.a(a2, w.a);
+            Bitmap a3 = dw.a(context, "location_unselected.png");
+            this.f = a3;
+            this.c = dw.a(a3, w.a);
             ImageView imageView = new ImageView(context);
             this.g = imageView;
-            imageView.setImageBitmap(this.f4895a);
+            imageView.setImageBitmap(this.a);
             this.g.setClickable(true);
             this.g.setPadding(0, 20, 20, 0);
             this.g.setOnTouchListener(new View.OnTouchListener() { // from class: com.amap.api.col.3sl.ef.1
@@ -55,7 +51,7 @@ public final class ef extends LinearLayout {
                             return false;
                         } else if (motionEvent.getAction() == 1) {
                             try {
-                                ef.this.g.setImageBitmap(ef.this.f4895a);
+                                ef.this.g.setImageBitmap(ef.this.a);
                                 ef.this.h.setMyLocationEnabled(true);
                                 Location myLocation = ef.this.h.getMyLocation();
                                 if (myLocation == null) {
@@ -87,18 +83,18 @@ public final class ef extends LinearLayout {
     public final void a() {
         try {
             removeAllViews();
-            if (this.f4895a != null) {
-                dw.a(this.f4895a);
+            if (this.a != null) {
+                dw.a(this.a);
             }
             if (this.b != null) {
                 dw.a(this.b);
             }
             if (this.b != null) {
-                dw.a(this.f4896c);
+                dw.a(this.c);
             }
-            this.f4895a = null;
+            this.a = null;
             this.b = null;
-            this.f4896c = null;
+            this.c = null;
             if (this.d != null) {
                 dw.a(this.d);
                 this.d = null;
@@ -121,9 +117,9 @@ public final class ef extends LinearLayout {
         this.i = z;
         try {
             if (z) {
-                this.g.setImageBitmap(this.f4895a);
+                this.g.setImageBitmap(this.a);
             } else {
-                this.g.setImageBitmap(this.f4896c);
+                this.g.setImageBitmap(this.c);
             }
             this.g.invalidate();
         } catch (Throwable th) {

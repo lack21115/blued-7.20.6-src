@@ -18,13 +18,9 @@ import java.lang.annotation.RetentionPolicy;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/view/CircleJoinView.class */
 public class CircleJoinView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f19375a;
+    public Context a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f19376c;
+    private TextView c;
     private ShapeLinearLayout d;
     private int e;
 
@@ -36,28 +32,28 @@ public class CircleJoinView extends LinearLayout {
     public CircleJoinView(Context context) {
         super(context);
         this.e = 0;
-        this.f19375a = context;
+        this.a = context;
         e();
     }
 
     public CircleJoinView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.e = 0;
-        this.f19375a = context;
+        this.a = context;
         e();
     }
 
     public CircleJoinView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.e = 0;
-        this.f19375a = context;
+        this.a = context;
         e();
     }
 
     private void e() {
-        View inflate = LayoutInflater.from(this.f19375a).inflate(R.layout.view_circle_join, this);
+        View inflate = LayoutInflater.from(this.a).inflate(R.layout.view_circle_join, this);
         this.b = inflate;
-        this.f19376c = (TextView) inflate.findViewById(R.id.tv_text);
+        this.c = (TextView) inflate.findViewById(R.id.tv_text);
         this.d = (ShapeLinearLayout) this.b.findViewById(R.id.ll_main);
     }
 
@@ -65,108 +61,108 @@ public class CircleJoinView extends LinearLayout {
         if (this.e == 0) {
             ShapeHelper.b(this.d, R.color.transparent);
             ShapeHelper.d(this.d, R.color.syc_a_50);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_a));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_a));
         } else {
             ShapeHelper.b(this.d, R.color.syc_dark_b);
             ShapeHelper.d(this.d, R.color.transparent);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_dark_h));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_dark_h));
         }
-        this.f19376c.setText(R.string.circle_join);
+        this.c.setText(R.string.circle_join);
     }
 
     private void g() {
         if (this.e == 0) {
             ShapeHelper.b(this.d, R.color.transparent);
             ShapeHelper.d(this.d, R.color.syc_k_50);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_k));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_k));
         } else {
             ShapeHelper.b(this.d, R.color.syc_dark_c);
             ShapeHelper.d(this.d, R.color.transparent);
             this.d.getBackground().setAlpha(100);
-            this.f19376c.setTextColor(this.f19375a.getResources().getColor(R.color.syc_dark_b));
+            this.c.setTextColor(this.a.getResources().getColor(R.color.syc_dark_b));
         }
-        this.f19376c.setText(R.string.circle_joined);
+        this.c.setText(R.string.circle_joined);
     }
 
     private void h() {
         if (this.e == 0) {
             ShapeHelper.b(this.d, R.color.transparent);
             ShapeHelper.d(this.d, R.color.syc_a_50);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_a));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_a));
         } else {
             ShapeHelper.b(this.d, R.color.syc_dark_b);
             ShapeHelper.d(this.d, R.color.transparent);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_dark_h));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_dark_h));
         }
-        this.f19376c.setText(R.string.circle_apply_join);
+        this.c.setText(R.string.circle_apply_join);
     }
 
     private void i() {
         if (this.e == 0) {
             ShapeHelper.b(this.d, R.color.transparent);
             ShapeHelper.d(this.d, R.color.syc_k_50);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_k));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_k));
         } else {
             ShapeHelper.b(this.d, R.color.syc_dark_c);
             ShapeHelper.d(this.d, R.color.transparent);
-            this.f19376c.setTextColor(this.f19375a.getResources().getColor(R.color.syc_dark_h));
+            this.c.setTextColor(this.a.getResources().getColor(R.color.syc_dark_h));
         }
-        this.f19376c.setText(R.string.circle_applied_join);
+        this.c.setText(R.string.circle_applied_join);
     }
 
     private void j() {
         if (this.e == 0) {
             ShapeHelper.b(this.d, R.color.transparent);
             ShapeHelper.d(this.d, R.color.syc_k_50);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_k));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_k));
         } else {
             ShapeHelper.b(this.d, R.color.syc_dark_c);
             ShapeHelper.d(this.d, R.color.transparent);
-            this.f19376c.setTextColor(this.f19375a.getResources().getColor(R.color.syc_dark_h));
+            this.c.setTextColor(this.a.getResources().getColor(R.color.syc_dark_h));
         }
-        this.f19376c.setText(R.string.circle_denied);
+        this.c.setText(R.string.circle_denied);
     }
 
     public void a() {
         if (this.e == 0) {
             ShapeHelper.b(this.d, R.color.syc_dark_x);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_dark_h));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_dark_h));
         } else {
             ShapeHelper.b(this.d, R.color.syc_dark_x);
             ShapeHelper.d(this.d, R.color.transparent);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_dark_h));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_dark_h));
         }
-        this.f19376c.setText(R.string.circle_manager_btn);
+        this.c.setText(R.string.circle_manager_btn);
     }
 
     public void b() {
         if (this.e == 0) {
             ShapeHelper.b(this.d, R.color.transparent);
             ShapeHelper.d(this.d, R.color.syc_a_50);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_a));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_a));
         } else {
             ShapeHelper.b(this.d, R.color.syc_dark_b);
             ShapeHelper.d(this.d, R.color.transparent);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_dark_h));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_dark_h));
         }
-        this.f19376c.setText(R.string.circle_join_circle);
+        this.c.setText(R.string.circle_join_circle);
     }
 
     public void c() {
         if (this.e == 0) {
             ShapeHelper.b(this.d, R.color.transparent);
             ShapeHelper.d(this.d, R.color.syc_a_50);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_a));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_a));
         } else {
             ShapeHelper.b(this.d, R.color.syc_dark_b);
             ShapeHelper.d(this.d, R.color.transparent);
-            this.f19376c.setTextColor(BluedSkinUtils.a(this.f19375a, R.color.syc_dark_h));
+            this.c.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_dark_h));
         }
-        this.f19376c.setText(R.string.circle_view_circle);
+        this.c.setText(R.string.circle_view_circle);
     }
 
     public boolean d() {
-        return TextUtils.equals(this.f19376c.getText().toString(), getContext().getString(R.string.circle_view_circle));
+        return TextUtils.equals(this.c.getText().toString(), getContext().getString(R.string.circle_view_circle));
     }
 
     public void setJoinStatus(CircleJoinState circleJoinState) {

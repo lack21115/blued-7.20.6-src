@@ -16,12 +16,8 @@ import java.util.TimerTask;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/LiveUploadTimerManager.class */
 public class LiveUploadTimerManager {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static LiveUploadTimerManager f13673c;
-
-    /* renamed from: a  reason: collision with root package name */
-    private Timer f13674a;
+    private static LiveUploadTimerManager c;
+    private Timer a;
     private String b;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/LiveUploadTimerManager$UPLOAD_TYPE.class */
@@ -34,10 +30,10 @@ public class LiveUploadTimerManager {
     }
 
     public static LiveUploadTimerManager a() {
-        if (f13673c == null) {
-            f13673c = new LiveUploadTimerManager();
+        if (c == null) {
+            c = new LiveUploadTimerManager();
         }
-        return f13673c;
+        return c;
     }
 
     private static void a(StringHttpResponseHandler stringHttpResponseHandler, String str, String str2) {
@@ -48,22 +44,22 @@ public class LiveUploadTimerManager {
     }
 
     public static void a(String str) {
-        if (f13673c != null) {
+        if (c != null) {
             return;
         }
         a();
-        f13673c.b = str;
+        c.b = str;
         c("2");
         f();
     }
 
     public static void b() {
-        if (f13673c == null) {
+        if (c == null) {
             return;
         }
         c("3");
         g();
-        f13673c = null;
+        c = null;
     }
 
     public static void c() {
@@ -75,7 +71,7 @@ public class LiveUploadTimerManager {
     public static void c(String str) {
         synchronized (LiveUploadTimerManager.class) {
             try {
-                if (f13673c != null && !TextUtils.isEmpty(f13673c.b)) {
+                if (c != null && !TextUtils.isEmpty(c.b)) {
                     if (System.currentTimeMillis() - LivePreferencesUtils.b() < 86400000) {
                         return;
                     }
@@ -85,7 +81,7 @@ public class LiveUploadTimerManager {
                             @Override // com.blued.android.framework.http.BluedUIHttpResponse
                             /* renamed from: a */
                             public void onUIUpdate(BluedEntityA<LiveUploadTimerModel> bluedEntityA) {
-                                if (bluedEntityA.getSingleData() == null || LiveUploadTimerManager.f13673c == null || bluedEntityA.getSingleData().is_done != 1) {
+                                if (bluedEntityA.getSingleData() == null || LiveUploadTimerManager.c == null || bluedEntityA.getSingleData().is_done != 1) {
                                     return;
                                 }
                                 LivePreferencesUtils.a(((System.currentTimeMillis() / 86400000) * 86400000) - TimeZone.getDefault().getRawOffset());
@@ -95,7 +91,7 @@ public class LiveUploadTimerManager {
                             public boolean onUIFailure(int i, String str2) {
                                 return true;
                             }
-                        }, f13673c.b, str);
+                        }, c.b, str);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -112,12 +108,12 @@ public class LiveUploadTimerManager {
     }
 
     private static void f() {
-        if (f13673c == null) {
+        if (c == null) {
             return;
         }
         g();
-        f13673c.f13674a = new Timer();
-        f13673c.f13674a.schedule(new TimerTask() { // from class: com.blued.android.module.live_china.manager.LiveUploadTimerManager.1
+        c.a = new Timer();
+        c.a.schedule(new TimerTask() { // from class: com.blued.android.module.live_china.manager.LiveUploadTimerManager.1
             @Override // java.util.TimerTask, java.lang.Runnable
             public void run() {
                 LiveUploadTimerManager.c("1");
@@ -127,11 +123,11 @@ public class LiveUploadTimerManager {
 
     private static void g() {
         Timer timer;
-        LiveUploadTimerManager liveUploadTimerManager = f13673c;
-        if (liveUploadTimerManager == null || (timer = liveUploadTimerManager.f13674a) == null) {
+        LiveUploadTimerManager liveUploadTimerManager = c;
+        if (liveUploadTimerManager == null || (timer = liveUploadTimerManager.a) == null) {
             return;
         }
         timer.cancel();
-        f13673c.f13674a = null;
+        c.a = null;
     }
 }

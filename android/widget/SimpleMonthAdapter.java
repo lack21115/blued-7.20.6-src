@@ -18,7 +18,7 @@ class SimpleMonthAdapter extends BaseAdapter {
     private final Calendar mMinDate = Calendar.getInstance();
     private final Calendar mMaxDate = Calendar.getInstance();
     private Calendar mSelectedDay = Calendar.getInstance();
-    private ColorStateList mCalendarTextColors = ColorStateList.valueOf(-16777216);
+    private ColorStateList mCalendarTextColors = ColorStateList.valueOf(View.MEASURED_STATE_MASK);
     private final SimpleMonthView.OnDayClickListener mOnDayClickListener = new SimpleMonthView.OnDayClickListener() { // from class: android.widget.SimpleMonthAdapter.1
         @Override // android.widget.SimpleMonthView.OnDayClickListener
         public void onDayClick(SimpleMonthView simpleMonthView, Calendar calendar) {

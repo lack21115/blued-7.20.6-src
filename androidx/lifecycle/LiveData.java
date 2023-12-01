@@ -33,9 +33,8 @@ public abstract class LiveData<T> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/lifecycle/LiveData$LifecycleBoundObserver.class */
-    public class LifecycleBoundObserver extends LiveData<T>.ObserverWrapper implements LifecycleEventObserver {
+    class LifecycleBoundObserver extends LiveData<T>.ObserverWrapper implements LifecycleEventObserver {
         final LifecycleOwner mOwner;
 
         /* JADX INFO: Access modifiers changed from: package-private */

@@ -14,27 +14,22 @@ abstract class ForwardingNameResolver extends NameResolver {
         this.delegate = nameResolver;
     }
 
-    @Override // io.grpc.NameResolver
     public String getServiceAuthority() {
         return this.delegate.getServiceAuthority();
     }
 
-    @Override // io.grpc.NameResolver
     public void refresh() {
         this.delegate.refresh();
     }
 
-    @Override // io.grpc.NameResolver
     public void shutdown() {
         this.delegate.shutdown();
     }
 
-    @Override // io.grpc.NameResolver
     public void start(NameResolver.Listener2 listener2) {
         this.delegate.start(listener2);
     }
 
-    @Override // io.grpc.NameResolver
     @Deprecated
     public void start(NameResolver.Listener listener) {
         this.delegate.start(listener);

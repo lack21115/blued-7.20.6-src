@@ -27,26 +27,22 @@ public class DriveRoutePlanResult extends RoutePlanResult implements Parcelable 
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<DrivePlanPath> f5702a;
+    private List<DrivePlanPath> a;
     private List<TimeInfo> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RouteSearch.DrivePlanQuery f5703c;
+    private RouteSearch.DrivePlanQuery c;
 
     public DriveRoutePlanResult() {
-        this.f5702a = new ArrayList();
+        this.a = new ArrayList();
         this.b = new ArrayList();
     }
 
     public DriveRoutePlanResult(Parcel parcel) {
         super(parcel);
-        this.f5702a = new ArrayList();
+        this.a = new ArrayList();
         this.b = new ArrayList();
-        this.f5702a = parcel.createTypedArrayList(DrivePlanPath.CREATOR);
+        this.a = parcel.createTypedArrayList(DrivePlanPath.CREATOR);
         this.b = parcel.createTypedArrayList(TimeInfo.CREATOR);
-        this.f5703c = (RouteSearch.DrivePlanQuery) parcel.readParcelable(RouteSearch.DrivePlanQuery.class.getClassLoader());
+        this.c = (RouteSearch.DrivePlanQuery) parcel.readParcelable(RouteSearch.DrivePlanQuery.class.getClassLoader());
     }
 
     @Override // com.amap.api.services.route.RoutePlanResult, android.os.Parcelable
@@ -55,7 +51,7 @@ public class DriveRoutePlanResult extends RoutePlanResult implements Parcelable 
     }
 
     public List<DrivePlanPath> getPaths() {
-        return this.f5702a;
+        return this.a;
     }
 
     public List<TimeInfo> getTimeInfos() {
@@ -63,7 +59,7 @@ public class DriveRoutePlanResult extends RoutePlanResult implements Parcelable 
     }
 
     public void setDrivePlanQuery(RouteSearch.DrivePlanQuery drivePlanQuery) {
-        this.f5703c = drivePlanQuery;
+        this.c = drivePlanQuery;
         RouteSearch.FromAndTo fromAndTo = drivePlanQuery.getFromAndTo();
         if (fromAndTo != null) {
             setStartPos(fromAndTo.getFrom());
@@ -72,7 +68,7 @@ public class DriveRoutePlanResult extends RoutePlanResult implements Parcelable 
     }
 
     public void setPaths(List<DrivePlanPath> list) {
-        this.f5702a = list;
+        this.a = list;
     }
 
     public void setTimeInfos(List<TimeInfo> list) {
@@ -82,8 +78,8 @@ public class DriveRoutePlanResult extends RoutePlanResult implements Parcelable 
     @Override // com.amap.api.services.route.RoutePlanResult, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeTypedList(this.f5702a);
+        parcel.writeTypedList(this.a);
         parcel.writeTypedList(this.b);
-        parcel.writeParcelable(this.f5703c, i);
+        parcel.writeParcelable(this.c, i);
     }
 }

@@ -6,10 +6,9 @@ import java.util.Map;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/squareup/wire/internal/Internal__InternalJvmKt.class */
-public final /* synthetic */ class Internal__InternalJvmKt {
+final /* synthetic */ class Internal__InternalJvmKt {
     /* JADX WARN: Code restructure failed: missing block: B:18:0x005a, code lost:
         return r4;
      */
@@ -80,9 +79,9 @@ public final /* synthetic */ class Internal__InternalJvmKt {
         throw new UnsupportedOperationException("Method not decompiled: com.squareup.wire.internal.Internal__InternalJvmKt.getIdentityOrNull(java.lang.Class):com.squareup.wire.WireEnum");
     }
 
-    public static final <T> void redactElements(List<T> list, ProtoAdapter<T> adapter) {
+    public static final <T> void redactElements(List<T> list, ProtoAdapter<T> protoAdapter) {
         Intrinsics.e(list, "list");
-        Intrinsics.e(adapter, "adapter");
+        Intrinsics.e(protoAdapter, "adapter");
         int size = list.size();
         int i = 0;
         while (true) {
@@ -90,16 +89,16 @@ public final /* synthetic */ class Internal__InternalJvmKt {
             if (i2 >= size) {
                 return;
             }
-            list.set(i2, adapter.redact(list.get(i2)));
+            list.set(i2, protoAdapter.redact(list.get(i2)));
             i = i2 + 1;
         }
     }
 
-    public static final <T> void redactElements(Map<?, T> map, ProtoAdapter<T> adapter) {
+    public static final <T> void redactElements(Map<?, T> map, ProtoAdapter<T> protoAdapter) {
         Intrinsics.e(map, "map");
-        Intrinsics.e(adapter, "adapter");
+        Intrinsics.e(protoAdapter, "adapter");
         for (Map.Entry<?, T> entry : map.entrySet()) {
-            entry.setValue(adapter.redact(entry.getValue()));
+            entry.setValue(protoAdapter.redact(entry.getValue()));
         }
     }
 }

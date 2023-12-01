@@ -6,10 +6,10 @@ import android.content.Context;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f21152a;
+    private Context f7546a;
 
     public a(Context context) {
-        this.f21152a = context;
+        this.f7546a = context;
     }
 
     public native String a(int i, String str);

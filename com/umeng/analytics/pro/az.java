@@ -7,11 +7,11 @@ import org.repackage.com.zui.opendeviceidlibrary.OpenDeviceId;
 public class az implements au {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f40645a = 1;
+    private static final int f26954a = 1;
     private OpenDeviceId b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f40646c = false;
+    private boolean f26955c = false;
     private boolean d = false;
 
     @Override // com.umeng.analytics.pro.au
@@ -19,11 +19,11 @@ public class az implements au {
         if (context == null) {
             return null;
         }
-        if (!this.f40646c) {
+        if (!this.f26955c) {
             OpenDeviceId openDeviceId = new OpenDeviceId();
             this.b = openDeviceId;
-            this.d = openDeviceId.a(context, (OpenDeviceId.CallBack<String>) null) == 1;
-            this.f40646c = true;
+            this.d = openDeviceId.a(context, (OpenDeviceId.CallBack) null) == 1;
+            this.f26955c = true;
         }
         bg.a("getOAID", "isSupported", Boolean.valueOf(this.d));
         if (this.d && this.b.b()) {

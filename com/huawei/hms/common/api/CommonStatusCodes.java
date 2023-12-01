@@ -1,6 +1,5 @@
 package com.huawei.hms.common.api;
 
-import com.alipay.security.mobile.module.http.model.c;
 import com.baidu.mobads.sdk.internal.bw;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/common/api/CommonStatusCodes.class */
@@ -67,7 +66,7 @@ public class CommonStatusCodes {
                 }
                 return "DEVELOPER_ERROR";
             }
-            return c.g;
+            return "SUCCESS";
         }
         return "SUCCESS_CACHE";
     }

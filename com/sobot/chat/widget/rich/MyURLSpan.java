@@ -11,6 +11,7 @@ import com.sobot.chat.api.apiUtils.ZhiChiConstants;
 import com.sobot.chat.utils.CommonUtils;
 import com.sobot.chat.utils.LogUtils;
 import com.sobot.chat.utils.SobotOption;
+import com.tencent.smtt.sdk.WebView;
 
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/rich/MyURLSpan.class */
 public class MyURLSpan extends URLSpan {
@@ -70,7 +71,7 @@ public class MyURLSpan extends URLSpan {
                 intent4.setData(Uri.parse(fixUrl));
                 this.context.startActivity(intent4);
             }
-        } else if (url.startsWith("tel:")) {
+        } else if (url.startsWith(WebView.SCHEME_TEL)) {
             if (SobotOption.hyperlinkListener != null) {
                 SobotOption.hyperlinkListener.onPhoneClick(url);
             } else if (SobotOption.newHyperlinkListener == null || !SobotOption.newHyperlinkListener.onPhoneClick(this.context, url)) {

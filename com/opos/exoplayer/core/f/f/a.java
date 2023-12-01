@@ -21,31 +21,31 @@ import org.xmlpull.v1.XmlPullParserFactory;
 public final class a extends com.opos.exoplayer.core.f.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f25375a = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
+    private static final Pattern f11687a = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
     private static final Pattern b = Pattern.compile("^([0-9]+(?:\\.[0-9]+)?)(h|m|s|ms|f|t)$");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f25376c = Pattern.compile("^(([0-9]*.)?[0-9]+)(px|em|%)$");
+    private static final Pattern f11688c = Pattern.compile("^(([0-9]*.)?[0-9]+)(px|em|%)$");
     private static final Pattern d = Pattern.compile("^(\\d+\\.?\\d*?)% (\\d+\\.?\\d*?)%$");
-    private static final C0664a e = new C0664a(30.0f, 1, 1);
+    private static final C0494a e = new C0494a(30.0f, 1, 1);
     private final XmlPullParserFactory f;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.exoplayer.core.f.f.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/f/f/a$a.class */
-    public static final class C0664a {
+    public static final class C0494a {
 
         /* renamed from: a  reason: collision with root package name */
-        final float f25377a;
+        final float f11689a;
         final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final int f25378c;
+        final int f11690c;
 
-        C0664a(float f, int i, int i2) {
-            this.f25377a = f;
+        C0494a(float f, int i, int i2) {
+            this.f11689a = f;
             this.b = i;
-            this.f25378c = i2;
+            this.f11690c = i2;
         }
     }
 
@@ -67,7 +67,7 @@ public final class a extends com.opos.exoplayer.core.f.c {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    private static long a(java.lang.String r9, com.opos.exoplayer.core.f.f.a.C0664a r10) {
+    private static long a(java.lang.String r9, com.opos.exoplayer.core.f.f.a.C0494a r10) {
         /*
             Method dump skipped, instructions count: 473
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -75,7 +75,7 @@ public final class a extends com.opos.exoplayer.core.f.c {
         throw new UnsupportedOperationException("Method not decompiled: com.opos.exoplayer.core.f.f.a.a(java.lang.String, com.opos.exoplayer.core.f.f.a$a):long");
     }
 
-    private C0664a a(XmlPullParser xmlPullParser) {
+    private C0494a a(XmlPullParser xmlPullParser) {
         String[] split;
         String attributeValue = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "frameRate");
         int parseInt = attributeValue != null ? Integer.parseInt(attributeValue) : 30;
@@ -92,12 +92,12 @@ public final class a extends com.opos.exoplayer.core.f.c {
         if (attributeValue3 != null) {
             i = Integer.parseInt(attributeValue3);
         }
-        int i2 = e.f25378c;
+        int i2 = e.f11690c;
         String attributeValue4 = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "tickRate");
         if (attributeValue4 != null) {
             i2 = Integer.parseInt(attributeValue4);
         }
-        return new C0664a(parseInt * f, i, i2);
+        return new C0494a(parseInt * f, i, i2);
     }
 
     private b a(b bVar) {
@@ -370,7 +370,7 @@ public final class a extends com.opos.exoplayer.core.f.c {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    private c a(XmlPullParser xmlPullParser, c cVar, Map<String, d> map, C0664a c0664a) {
+    private c a(XmlPullParser xmlPullParser, c cVar, Map<String, d> map, C0494a c0494a) {
         long j;
         long j2;
         long j3;
@@ -464,19 +464,19 @@ public final class a extends com.opos.exoplayer.core.f.c {
                     break;
             }
             if (!z) {
-                a2 = a(attributeValue, c0664a);
+                a2 = a(attributeValue, c0494a);
                 j4 = j9;
                 j5 = j7;
                 str = str2;
                 strArr = strArr2;
             } else if (z) {
-                j5 = a(attributeValue, c0664a);
+                j5 = a(attributeValue, c0494a);
                 a2 = j6;
                 strArr = strArr2;
                 str = str2;
                 j4 = j9;
             } else if (z) {
-                j4 = a(attributeValue, c0664a);
+                j4 = a(attributeValue, c0494a);
                 a2 = j6;
                 strArr = strArr2;
                 str = str2;
@@ -548,7 +548,7 @@ public final class a extends com.opos.exoplayer.core.f.c {
                     map.put(a2.i(), a2);
                 }
             } else if (v.b(xmlPullParser, TtmlUtils.TAG_REGION) && (b2 = b(xmlPullParser)) != null) {
-                map2.put(b2.f25383a, b2);
+                map2.put(b2.f11695a, b2);
             }
         } while (!v.a(xmlPullParser, "head"));
         return map;
@@ -558,11 +558,11 @@ public final class a extends com.opos.exoplayer.core.f.c {
         Matcher matcher;
         String[] split = str.split("\\s+");
         if (split.length == 1) {
-            matcher = f25376c.matcher(str);
+            matcher = f11688c.matcher(str);
         } else if (split.length != 2) {
             throw new com.opos.exoplayer.core.f.f("Invalid number of entries for fontSize: " + split.length + ".");
         } else {
-            matcher = f25376c.matcher(split[1]);
+            matcher = f11688c.matcher(split[1]);
             com.opos.cmn.an.f.a.c("TtmlDecoder", "Multiple values in fontSize attribute. Picking the second value for vertical font size and ignoring the first.");
         }
         if (!matcher.matches()) {
@@ -681,7 +681,7 @@ public final class a extends com.opos.exoplayer.core.f.c {
     @Override // com.opos.exoplayer.core.f.c
     /* renamed from: b */
     public f a(byte[] bArr, int i, boolean z) {
-        C0664a c0664a;
+        C0494a c0494a;
         f fVar;
         int i2;
         try {
@@ -694,32 +694,32 @@ public final class a extends com.opos.exoplayer.core.f.c {
             newPullParser.setInput(new ByteArrayInputStream(bArr, 0, i), null);
             LinkedList linkedList = new LinkedList();
             int eventType = newPullParser.getEventType();
-            C0664a c0664a2 = e;
+            C0494a c0494a2 = e;
             while (eventType != 1) {
                 c cVar = (c) linkedList.peekLast();
                 if (i3 == 0) {
                     String name = newPullParser.getName();
                     if (eventType == 2) {
                         if ("tt".equals(name)) {
-                            c0664a2 = a(newPullParser);
+                            c0494a2 = a(newPullParser);
                         }
                         if (!b(name)) {
                             com.opos.cmn.an.f.a.a("TtmlDecoder", "Ignoring unsupported tag: " + newPullParser.getName());
                         } else if ("head".equals(name)) {
                             a(newPullParser, hashMap, hashMap2);
-                            c0664a = c0664a2;
+                            c0494a = c0494a2;
                             fVar = fVar2;
                             i2 = i3;
                         } else {
                             try {
-                                c a2 = a(newPullParser, cVar, hashMap2, c0664a2);
+                                c a2 = a(newPullParser, cVar, hashMap2, c0494a2);
                                 linkedList.addLast(a2);
-                                c0664a = c0664a2;
+                                c0494a = c0494a2;
                                 fVar = fVar2;
                                 i2 = i3;
                                 if (cVar != null) {
                                     cVar.a(a2);
-                                    c0664a = c0664a2;
+                                    c0494a = c0494a2;
                                     fVar = fVar2;
                                     i2 = i3;
                                 }
@@ -728,15 +728,15 @@ public final class a extends com.opos.exoplayer.core.f.c {
                             }
                         }
                         i2 = i3 + 1;
-                        c0664a = c0664a2;
+                        c0494a = c0494a2;
                         fVar = fVar2;
                     } else if (eventType == 4) {
                         cVar.a(c.a(newPullParser.getText()));
-                        c0664a = c0664a2;
+                        c0494a = c0494a2;
                         fVar = fVar2;
                         i2 = i3;
                     } else {
-                        c0664a = c0664a2;
+                        c0494a = c0494a2;
                         fVar = fVar2;
                         i2 = i3;
                         if (eventType == 3) {
@@ -744,29 +744,29 @@ public final class a extends com.opos.exoplayer.core.f.c {
                                 fVar2 = new f((c) linkedList.getLast(), hashMap, hashMap2);
                             }
                             linkedList.removeLast();
-                            c0664a = c0664a2;
+                            c0494a = c0494a2;
                             fVar = fVar2;
                             i2 = i3;
                         }
                     }
                 } else {
                     if (eventType != 2) {
-                        c0664a = c0664a2;
+                        c0494a = c0494a2;
                         fVar = fVar2;
                         i2 = i3;
                         if (eventType == 3) {
                             i2 = i3 - 1;
-                            c0664a = c0664a2;
+                            c0494a = c0494a2;
                             fVar = fVar2;
                         }
                     }
                     i2 = i3 + 1;
-                    c0664a = c0664a2;
+                    c0494a = c0494a2;
                     fVar = fVar2;
                 }
                 newPullParser.next();
                 eventType = newPullParser.getEventType();
-                c0664a2 = c0664a;
+                c0494a2 = c0494a;
                 fVar2 = fVar;
                 i3 = i2;
             }

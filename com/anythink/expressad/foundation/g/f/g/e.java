@@ -2,13 +2,14 @@ package com.anythink.expressad.foundation.g.f.g;
 
 import android.text.TextUtils;
 import com.anythink.expressad.foundation.h.w;
+import com.huawei.openalliance.ad.constant.t;
 import java.util.List;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/foundation/g/f/g/e.class */
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7909a = e.class.getSimpleName();
+    private static final String f5069a = e.class.getSimpleName();
 
     public static String a(List<com.anythink.expressad.foundation.g.f.c.c> list) {
         com.anythink.expressad.foundation.g.f.c.c b = b(list, "Content-Type");
@@ -19,7 +20,7 @@ public class e {
         if (TextUtils.isEmpty(b2)) {
             return "UTF-8";
         }
-        String[] split = b2.split(";");
+        String[] split = b2.split(t.aE);
         int i = 1;
         while (true) {
             int i2 = i;

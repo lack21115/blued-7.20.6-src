@@ -11,11 +11,11 @@ import com.umeng.commonsdk.utils.UMUtils;
 public class x implements w {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f40786a = AnalyticsConfig.kContinueSessionMillis;
+    private long f27095a = AnalyticsConfig.kContinueSessionMillis;
 
     @Override // com.umeng.analytics.pro.w
     public long a() {
-        return this.f40786a;
+        return this.f27095a;
     }
 
     @Override // com.umeng.analytics.pro.w
@@ -30,7 +30,7 @@ public class x implements w {
 
     @Override // com.umeng.analytics.pro.w
     public void a(long j) {
-        this.f40786a = j;
+        this.f27095a = j;
     }
 
     @Override // com.umeng.analytics.pro.w
@@ -50,6 +50,6 @@ public class x implements w {
     @Override // com.umeng.analytics.pro.w
     public boolean a(long j, long j2) {
         long currentTimeMillis = System.currentTimeMillis();
-        return (j == 0 || currentTimeMillis - j >= this.f40786a) && j2 > 0 && currentTimeMillis - j2 > this.f40786a;
+        return (j == 0 || currentTimeMillis - j >= this.f27095a) && j2 > 0 && currentTimeMillis - j2 > this.f27095a;
     }
 }

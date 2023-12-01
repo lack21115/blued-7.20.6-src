@@ -1,6 +1,5 @@
 package com.soft.blued.ui.welcome;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +15,7 @@ import com.blued.android.framework.utils.LogUtils;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.ToastUtils;
 import com.blued.das.authority.SystemAuthorityProtos;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.soft.blued.R;
 import com.soft.blued.app.BluedApplicationLike;
 import com.soft.blued.constant.CommonConstants;
@@ -35,7 +35,7 @@ import skin.support.content.res.SkinCompatResources;
 public class FirstActivity extends BaseFragmentActivity {
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f34532c = true;
+    private boolean f20841c = true;
     private boolean d = true;
     private boolean e = false;
 
@@ -44,7 +44,7 @@ public class FirstActivity extends BaseFragmentActivity {
     }
 
     public static void a(Context context, boolean z) {
-        BaseActivity.f9718a = null;
+        BaseActivity.a = null;
         Intent intent = new Intent(context, FirstActivity.class);
         if (z) {
             intent.setFlags(268468224);
@@ -73,12 +73,13 @@ public class FirstActivity extends BaseFragmentActivity {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(Bundle bundle) {
         if (f()) {
             Log.i("FirstActivity", "OPEN_APP_FINISH mayGoToShowPush");
             Log.v("FirstActivity", "FirstActivity doOnCreate finish");
             finish();
-        } else if (CommonConstants.f28316c) {
+        } else if (CommonConstants.f14626c) {
             Log.i("FirstActivity", "OPEN_APP_FINISH CommonConstants.exitApp");
             finish();
             MobclickAgent.onKillProcess(this);
@@ -121,7 +122,7 @@ public class FirstActivity extends BaseFragmentActivity {
                     }
                     String next = it.next();
                     if (extras.get(next) != null) {
-                        str = str + "&" + next + "=" + obj.toString();
+                        str = str + ContainerUtils.FIELD_DELIMITER + next + "=" + obj.toString();
                     }
                 }
             }
@@ -130,9 +131,10 @@ public class FirstActivity extends BaseFragmentActivity {
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void b(Bundle bundle) {
         super.onCreate(bundle);
-        StatusBarHelper.a((Activity) this, true);
+        StatusBarHelper.a(this, true);
     }
 
     private void c(Context context) {
@@ -145,6 +147,7 @@ public class FirstActivity extends BaseFragmentActivity {
         b(context);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private boolean f() {
         Serializable serializableExtra;
         Intent intent = getIntent();
@@ -161,8 +164,8 @@ public class FirstActivity extends BaseFragmentActivity {
         if (UserInfo.getInstance().isLogin() && UserInfo.getInstance().getLoginUserInfo().getNeedAdultVerify() == 1) {
             UserInfo.getInstance().logout(false);
         }
-        Log.v("drb", "FirstActivity showWelcomePage:" + this.f34532c + "  isLogin:" + UserInfo.getInstance().isLogin());
-        if (this.f34532c) {
+        Log.v("drb", "FirstActivity showWelcomePage:" + this.f20841c + "  isLogin:" + UserInfo.getInstance().isLogin());
+        if (this.f20841c) {
             WelcomeFragment.a(context, UserInfo.getInstance().isLogin());
         } else {
             WelcomeFragment.b(context, true);
@@ -175,7 +178,7 @@ public class FirstActivity extends BaseFragmentActivity {
         finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onCreate(final Bundle bundle) {
         BluedApplicationLike.initAppGlobal(getApplication());
         if (InitTaskManager.b()) {
@@ -202,9 +205,8 @@ public class FirstActivity extends BaseFragmentActivity {
             this.e = true;
             b(bundle);
             InitTaskManager.a().a(getApplication(), new InitTaskManager.OnResultListener() { // from class: com.soft.blued.ui.welcome.FirstActivity.1
-                @Override // com.blued.android.framework.init.InitTaskManager.OnResultListener
                 public void a() {
-                    com.blued.android.framework.utils.Logger.c("InitTaskManager", "FirstActivity.onFinished = ", Long.valueOf(System.currentTimeMillis()));
+                    com.blued.android.framework.utils.Logger.c("InitTaskManager", new Object[]{"FirstActivity.onFinished = ", Long.valueOf(System.currentTimeMillis())});
                     FirstActivity.this.a(bundle);
                 }
             });

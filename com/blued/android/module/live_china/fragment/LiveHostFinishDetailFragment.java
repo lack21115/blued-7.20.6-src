@@ -39,15 +39,11 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveHostFinishDetailFragment.class */
 public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHostFinishDetailViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f12965c;
+    private final ViewBindingProperty c;
     private LiveHostFinishDetailViewModel.ApiState d;
     private List<LiveFinishTabData> e;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(LiveHostFinishDetailFragment.class, "vb", "getVb()Lcom/blued/android/module/live_china/databinding/LiveHostFinishDetailLayoutBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12964a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveHostFinishDetailFragment$Companion.class */
@@ -71,9 +67,7 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveHostFinishDetailFragment$MyAdapter.class */
     public static final class MyAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private FragmentManager f12966a;
+        private FragmentManager a;
         private List<LiveFinishTabData> b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -81,28 +75,24 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
             super(fm, 1);
             Intrinsics.e(fm, "fm");
             Intrinsics.e(tabs, "tabs");
-            this.f12966a = fm;
+            this.a = fm;
             this.b = tabs;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
             super.destroyItem(container, i, object);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return this.b.size();
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
-            return LiveHostFinishDetailItemFragment.f12967a.a(this.b.get(i).getState());
+            return LiveHostFinishDetailItemFragment.a.a(this.b.get(i).getState());
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             Log.i("==xpmm:", Intrinsics.a("getPageTitle:", (Object) this.b.get(i).getName()));
             return this.b.get(i).getName();
@@ -111,7 +101,7 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
 
     public LiveHostFinishDetailFragment() {
         super(R.layout.live_host_finish_detail_layout);
-        this.f12965c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LiveHostFinishDetailFragment, LiveHostFinishDetailLayoutBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LiveHostFinishDetailFragment, LiveHostFinishDetailLayoutBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final LiveHostFinishDetailLayoutBinding invoke(LiveHostFinishDetailFragment fragment) {
@@ -189,14 +179,14 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
             return;
         }
         LiveHostFinishDetailViewModel.ApiState q = q();
-        if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiContributors.f15466a)) {
+        if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiContributors.a)) {
             List<LiveFinishTabData> r = r();
             String string = getString(R.string.live_host_finish_look_rank);
             Intrinsics.c(string, "getString(R.string.live_host_finish_look_rank)");
-            r.add(new LiveFinishTabData(string, "", LiveHostFinishDetailViewModel.ApiState.ApiContributors.f15466a));
+            r.add(new LiveFinishTabData(string, "", LiveHostFinishDetailViewModel.ApiState.ApiContributors.a));
             LiveHostFinishDetailLayoutBinding p2 = p();
-            if (p2 != null && (shapeTextView9 = p2.f12248c) != null) {
-                BluedViewExKt.a(shapeTextView9);
+            if (p2 != null && (shapeTextView9 = p2.c) != null) {
+                BluedViewExKt.a((View) shapeTextView9);
             }
             LiveHostFinishDetailLayoutBinding p3 = p();
             if (p3 != null && (textView12 = p3.e) != null) {
@@ -206,14 +196,14 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
             if (p4 != null && (textView11 = p4.e) != null) {
                 textView11.setText(getString(R.string.live_host_finish_look_rank_tip));
             }
-        } else if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiAudiences.f15464a)) {
+        } else if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiAudiences.a)) {
             List<LiveFinishTabData> r2 = r();
             String string2 = getString(R.string.live_host_finish_look);
             Intrinsics.c(string2, "getString(R.string.live_host_finish_look)");
-            r2.add(new LiveFinishTabData(string2, "", LiveHostFinishDetailViewModel.ApiState.ApiAudiences.f15464a));
+            r2.add(new LiveFinishTabData(string2, "", LiveHostFinishDetailViewModel.ApiState.ApiAudiences.a));
             LiveHostFinishDetailLayoutBinding p5 = p();
-            if (p5 != null && (shapeTextView8 = p5.f12248c) != null) {
-                BluedViewExKt.a(shapeTextView8);
+            if (p5 != null && (shapeTextView8 = p5.c) != null) {
+                BluedViewExKt.a((View) shapeTextView8);
             }
             LiveHostFinishDetailLayoutBinding p6 = p();
             if (p6 != null && (textView7 = p6.e) != null) {
@@ -223,14 +213,14 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
             if (p7 != null && (textView6 = p7.e) != null) {
                 textView6.setText(getString(R.string.live_host_finish_look_tip));
             }
-        } else if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiGiverFrom.f15467a)) {
+        } else if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiGiverFrom.a)) {
             List<LiveFinishTabData> r3 = r();
             String string3 = getString(R.string.live_host_finish_au_from);
             Intrinsics.c(string3, "getString(R.string.live_host_finish_au_from)");
-            r3.add(new LiveFinishTabData(string3, "", LiveHostFinishDetailViewModel.ApiState.ApiGiverFrom.f15467a));
+            r3.add(new LiveFinishTabData(string3, "", LiveHostFinishDetailViewModel.ApiState.ApiGiverFrom.a));
             LiveHostFinishDetailLayoutBinding p8 = p();
-            if (p8 != null && (shapeTextView7 = p8.f12248c) != null) {
-                BluedViewExKt.a(shapeTextView7);
+            if (p8 != null && (shapeTextView7 = p8.c) != null) {
+                BluedViewExKt.a((View) shapeTextView7);
             }
             LiveHostFinishDetailLayoutBinding p9 = p();
             if (p9 != null && (textView5 = p9.f) != null) {
@@ -240,14 +230,14 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
             if (p10 != null && (shapeLinearLayout = p10.b) != null) {
                 BluedViewExKt.c(shapeLinearLayout);
             }
-        } else if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiLikes.f15468a)) {
+        } else if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiLikes.a)) {
             List<LiveFinishTabData> r4 = r();
             String string4 = getString(R.string.live_host_finish_comment);
             Intrinsics.c(string4, "getString(R.string.live_host_finish_comment)");
-            r4.add(new LiveFinishTabData(string4, "", LiveHostFinishDetailViewModel.ApiState.ApiLikes.f15468a));
+            r4.add(new LiveFinishTabData(string4, "", LiveHostFinishDetailViewModel.ApiState.ApiLikes.a));
             LiveHostFinishDetailLayoutBinding p11 = p();
-            if (p11 != null && (shapeTextView6 = p11.f12248c) != null) {
-                BluedViewExKt.a(shapeTextView6);
+            if (p11 != null && (shapeTextView6 = p11.c) != null) {
+                BluedViewExKt.a((View) shapeTextView6);
             }
             LiveHostFinishDetailLayoutBinding p12 = p();
             if (p12 != null && (textView4 = p12.e) != null) {
@@ -257,17 +247,17 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
             if (p13 != null && (textView3 = p13.e) != null) {
                 textView3.setText(getString(R.string.live_host_finish_like_tip));
             }
-        } else if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiNewFans.f15469a)) {
+        } else if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiNewFans.a)) {
             List<LiveFinishTabData> r5 = r();
             String string5 = getString(R.string.live_host_finish_fans_add_number_people);
             Intrinsics.c(string5, "getString(R.string.live_…h_fans_add_number_people)");
-            r5.add(new LiveFinishTabData(string5, "", LiveHostFinishDetailViewModel.ApiState.ApiNewFans.f15469a));
+            r5.add(new LiveFinishTabData(string5, "", LiveHostFinishDetailViewModel.ApiState.ApiNewFans.a));
             LiveHostFinishDetailLayoutBinding p14 = p();
-            if (p14 != null && (shapeTextView5 = p14.f12248c) != null) {
-                BluedViewExKt.b(shapeTextView5);
+            if (p14 != null && (shapeTextView5 = p14.c) != null) {
+                BluedViewExKt.b((View) shapeTextView5);
             }
             LiveHostFinishDetailLayoutBinding p15 = p();
-            if (p15 != null && (shapeTextView4 = p15.f12248c) != null) {
+            if (p15 != null && (shapeTextView4 = p15.c) != null) {
                 shapeTextView4.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishDetailFragment$dXUEbLN6HdQ25sTjVRA7MKAOibk
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -275,17 +265,17 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
                     }
                 });
             }
-        } else if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiNewFollowers.f15470a)) {
+        } else if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiNewFollowers.a)) {
             List<LiveFinishTabData> r6 = r();
             String string6 = getString(R.string.live_host_finish_att_add);
             Intrinsics.c(string6, "getString(R.string.live_host_finish_att_add)");
-            r6.add(new LiveFinishTabData(string6, "", LiveHostFinishDetailViewModel.ApiState.ApiNewFollowers.f15470a));
+            r6.add(new LiveFinishTabData(string6, "", LiveHostFinishDetailViewModel.ApiState.ApiNewFollowers.a));
             LiveHostFinishDetailLayoutBinding p16 = p();
-            if (p16 != null && (shapeTextView3 = p16.f12248c) != null) {
-                BluedViewExKt.b(shapeTextView3);
+            if (p16 != null && (shapeTextView3 = p16.c) != null) {
+                BluedViewExKt.b((View) shapeTextView3);
             }
             LiveHostFinishDetailLayoutBinding p17 = p();
-            if (p17 != null && (shapeTextView2 = p17.f12248c) != null) {
+            if (p17 != null && (shapeTextView2 = p17.c) != null) {
                 shapeTextView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishDetailFragment$RK-BPlZb6Wmtp-Ex-lhjaknaug0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -293,14 +283,14 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
                     }
                 });
             }
-        } else if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiComments.f15465a)) {
+        } else if (Intrinsics.a(q, LiveHostFinishDetailViewModel.ApiState.ApiComments.a)) {
             List<LiveFinishTabData> r7 = r();
             String string7 = getString(R.string.live_host_finish_comment);
             Intrinsics.c(string7, "getString(R.string.live_host_finish_comment)");
-            r7.add(new LiveFinishTabData(string7, "", LiveHostFinishDetailViewModel.ApiState.ApiComments.f15465a));
+            r7.add(new LiveFinishTabData(string7, "", LiveHostFinishDetailViewModel.ApiState.ApiComments.a));
             LiveHostFinishDetailLayoutBinding p18 = p();
-            if (p18 != null && (shapeTextView = p18.f12248c) != null) {
-                BluedViewExKt.a(shapeTextView);
+            if (p18 != null && (shapeTextView = p18.c) != null) {
+                BluedViewExKt.a((View) shapeTextView);
             }
             LiveHostFinishDetailLayoutBinding p19 = p();
             if (p19 != null && (textView2 = p19.e) != null) {
@@ -333,7 +323,7 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
                     textView8.setText(r().get(0).getName());
                 }
                 LiveHostFinishDetailLayoutBinding p25 = p();
-                if (p25 == null || (tabPageIndicatorWithDot = p25.f12247a) == null) {
+                if (p25 == null || (tabPageIndicatorWithDot = p25.a) == null) {
                     return;
                 }
                 BluedViewExKt.a(tabPageIndicatorWithDot);
@@ -346,42 +336,42 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
             BluedViewExKt.a(textView10);
         }
         LiveHostFinishDetailLayoutBinding p27 = p();
-        if (p27 != null && (tabPageIndicatorWithDot8 = p27.f12247a) != null) {
+        if (p27 != null && (tabPageIndicatorWithDot8 = p27.a) != null) {
             BluedViewExKt.b(tabPageIndicatorWithDot8);
         }
         LiveHostFinishDetailLayoutBinding p28 = p();
-        if (p28 != null && (tabPageIndicatorWithDot7 = p28.f12247a) != null) {
+        if (p28 != null && (tabPageIndicatorWithDot7 = p28.a) != null) {
             LiveHostFinishDetailLayoutBinding p29 = p();
             tabPageIndicatorWithDot7.setViewPager(p29 == null ? null : p29.g);
         }
         LiveHostFinishDetailLayoutBinding p30 = p();
-        if (p30 != null && (tabPageIndicatorWithDot6 = p30.f12247a) != null) {
+        if (p30 != null && (tabPageIndicatorWithDot6 = p30.a) != null) {
             tabPageIndicatorWithDot6.setIndicatorHeight(DensityUtils.a(getContext(), 2.0f));
         }
         LiveHostFinishDetailLayoutBinding p31 = p();
-        TabPageIndicatorWithDot tabPageIndicatorWithDot9 = p31 == null ? null : p31.f12247a;
+        TabPageIndicatorWithDot tabPageIndicatorWithDot9 = p31 == null ? null : p31.a;
         if (tabPageIndicatorWithDot9 != null) {
             tabPageIndicatorWithDot9.w = DensityUtils.d(getContext(), 16.0f);
         }
         LiveHostFinishDetailLayoutBinding p32 = p();
-        TabPageIndicatorWithDot tabPageIndicatorWithDot10 = p32 == null ? null : p32.f12247a;
+        TabPageIndicatorWithDot tabPageIndicatorWithDot10 = p32 == null ? null : p32.a;
         if (tabPageIndicatorWithDot10 != null) {
             tabPageIndicatorWithDot10.x = DensityUtils.d(getContext(), 14.0f);
         }
         LiveHostFinishDetailLayoutBinding p33 = p();
-        if (p33 != null && (tabPageIndicatorWithDot5 = p33.f12247a) != null) {
+        if (p33 != null && (tabPageIndicatorWithDot5 = p33.a) != null) {
             tabPageIndicatorWithDot5.setTextColor(R.color.syc_dark_EAEAEA);
         }
         LiveHostFinishDetailLayoutBinding p34 = p();
-        if (p34 != null && (tabPageIndicatorWithDot4 = p34.f12247a) != null) {
+        if (p34 != null && (tabPageIndicatorWithDot4 = p34.a) != null) {
             tabPageIndicatorWithDot4.setTabTextColorUnfocused(R.color.syc_dark_777777);
         }
         LiveHostFinishDetailLayoutBinding p35 = p();
-        if (p35 != null && (tabPageIndicatorWithDot3 = p35.f12247a) != null) {
+        if (p35 != null && (tabPageIndicatorWithDot3 = p35.a) != null) {
             tabPageIndicatorWithDot3.setHorizontalShade(true);
         }
         Context context = getContext();
-        if (context == null || (p = p()) == null || (tabPageIndicatorWithDot2 = p.f12247a) == null) {
+        if (context == null || (p = p()) == null || (tabPageIndicatorWithDot2 = p.a) == null) {
             return;
         }
         tabPageIndicatorWithDot2.a(ContextCompat.getColor(context, R.color.syc_dark_2B72FF), ContextCompat.getColor(context, R.color.syc_dark_2B72FF));
@@ -392,7 +382,7 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
     }
 
     public final LiveHostFinishDetailLayoutBinding p() {
-        return (LiveHostFinishDetailLayoutBinding) this.f12965c.b(this, b[0]);
+        return (LiveHostFinishDetailLayoutBinding) this.c.b(this, b[0]);
     }
 
     public final LiveHostFinishDetailViewModel.ApiState q() {
@@ -404,10 +394,10 @@ public final class LiveHostFinishDetailFragment extends MVVMBaseFragment<LiveHos
     }
 
     public final void s() {
-        List<Fragment> fragments = getChildFragmentManager().getFragments();
+        List fragments = getChildFragmentManager().getFragments();
         Intrinsics.c(fragments, "childFragmentManager.fragments");
         if (fragments.size() == 1) {
-            Fragment fragment = fragments.get(0);
+            Fragment fragment = (Fragment) fragments.get(0);
             if (fragment instanceof LiveHostFinishDetailItemFragment) {
                 ((LiveHostFinishDetailItemFragment) fragment).r();
             }

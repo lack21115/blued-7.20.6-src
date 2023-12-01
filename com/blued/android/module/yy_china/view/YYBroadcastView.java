@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.view;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
@@ -41,13 +42,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYBroadcastView.class */
 public final class YYBroadcastView extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f18073a;
+    private BaseYYStudioFragment a;
     private YYRoomModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ViewYyBroadcastLayoutBinding f18074c;
+    private ViewYyBroadcastLayoutBinding c;
     private boolean d;
     private boolean e;
 
@@ -57,32 +54,32 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
         Integer valueOf;
         EditText editText2;
         Intrinsics.e(this$0, "this$0");
-        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding = this$0.f18074c;
+        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding = this$0.c;
         EditText editText3 = viewYyBroadcastLayoutBinding == null ? null : viewYyBroadcastLayoutBinding.b;
         if (editText3 != null) {
             editText3.setFocusableInTouchMode(true);
         }
-        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding2 = this$0.f18074c;
+        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding2 = this$0.c;
         EditText editText4 = viewYyBroadcastLayoutBinding2 == null ? null : viewYyBroadcastLayoutBinding2.b;
         if (editText4 != null) {
             editText4.setFocusable(true);
         }
-        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding3 = this$0.f18074c;
+        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding3 = this$0.c;
         if (viewYyBroadcastLayoutBinding3 != null && (editText2 = viewYyBroadcastLayoutBinding3.b) != null) {
             editText2.requestFocus();
         }
         Context context = this$0.getContext();
-        Object systemService = context == null ? null : context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        Object systemService = context == null ? null : context.getSystemService("input_method");
         if (systemService instanceof InputMethodManager) {
             InputMethodManager inputMethodManager = (InputMethodManager) systemService;
-            ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding4 = this$0.f18074c;
+            ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding4 = this$0.c;
             inputMethodManager.showSoftInput(viewYyBroadcastLayoutBinding4 == null ? null : viewYyBroadcastLayoutBinding4.b, 0);
         }
-        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding5 = this$0.f18074c;
+        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding5 = this$0.c;
         if (viewYyBroadcastLayoutBinding5 == null || (editText = viewYyBroadcastLayoutBinding5.b) == null) {
             return;
         }
-        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding6 = this$0.f18074c;
+        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding6 = this$0.c;
         if (viewYyBroadcastLayoutBinding6 == null) {
             valueOf = null;
         } else {
@@ -102,7 +99,7 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
     public static final void a(YYBroadcastView this$0, View view) {
         EditText editText;
         Intrinsics.e(this$0, "this$0");
-        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding = this$0.f18074c;
+        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding = this$0.c;
         Editable editable = null;
         if (viewYyBroadcastLayoutBinding != null && (editText = viewYyBroadcastLayoutBinding.b) != null) {
             editable = editText.getText();
@@ -146,14 +143,14 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
         String str3 = yYRoomModel3 == null ? null : yYRoomModel3.room_id;
         YYRoomModel yYRoomModel4 = this.b;
         String str4 = yYRoomModel4 == null ? null : yYRoomModel4.type_id;
-        BaseYYStudioFragment baseYYStudioFragment = this.f18073a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         final ActivityFragmentActive fragmentActive = baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive();
         BluedUIHttpResponse<BluedEntity<?, ?>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntity<?, ?>>(fragmentActive) { // from class: com.blued.android.module.yy_china.view.YYBroadcastView$sendBroadcast$1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 ViewYyBroadcastLayoutBinding h = YYBroadcastView.this.h();
-                FrameLayout frameLayout = h == null ? null : h.f16892c;
+                FrameLayout frameLayout = h == null ? null : h.c;
                 if (frameLayout == null) {
                     return;
                 }
@@ -164,7 +161,7 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
             public void onUIStart() {
                 super.onUIStart();
                 ViewYyBroadcastLayoutBinding h = YYBroadcastView.this.h();
-                FrameLayout frameLayout = h == null ? null : h.f16892c;
+                FrameLayout frameLayout = h == null ? null : h.c;
                 if (frameLayout == null) {
                     return;
                 }
@@ -186,12 +183,12 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
                         editText.setText("");
                     }
                     BaseYYStudioFragment f = YYBroadcastView.this.f();
-                    KeyboardUtils.a(f == null ? null : f.getActivity());
+                    KeyboardUtils.a((Activity) (f == null ? null : f.getActivity()));
                 }
                 YYBroadcastView.this.dismissAllowingStateLoss();
             }
         };
-        BaseYYStudioFragment baseYYStudioFragment2 = this.f18073a;
+        BaseYYStudioFragment baseYYStudioFragment2 = this.a;
         YYRoomHttpUtils.a(str3, "", str, str4, (BluedUIHttpResponse) bluedUIHttpResponse, (IRequestHost) (baseYYStudioFragment2 == null ? null : baseYYStudioFragment2.getFragmentActive()));
     }
 
@@ -224,14 +221,14 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
                 YYBroadcastView.k();
             }
         });
-        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding = this.f18074c;
+        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding = this.c;
         EditText editText3 = viewYyBroadcastLayoutBinding == null ? null : viewYyBroadcastLayoutBinding.b;
         boolean z = true;
         if (editText3 != null) {
             editText3.setFilters(new InputFilter[]{englishCharFilter});
         }
-        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding2 = this.f18074c;
-        if (viewYyBroadcastLayoutBinding2 != null && (shapeTextView = viewYyBroadcastLayoutBinding2.f16891a) != null) {
+        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding2 = this.c;
+        if (viewYyBroadcastLayoutBinding2 != null && (shapeTextView = viewYyBroadcastLayoutBinding2.a) != null) {
             shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYBroadcastView$Hnwi7ir1j8H4pCbQ_JdL0H3CaTo
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -239,7 +236,7 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
                 }
             });
         }
-        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding3 = this.f18074c;
+        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding3 = this.c;
         if (viewYyBroadcastLayoutBinding3 != null && (imageView3 = viewYyBroadcastLayoutBinding3.e) != null) {
             imageView3.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYBroadcastView$HTZ8ztK-qhFNRqfNggeM_SPKLXE
                 @Override // android.view.View.OnClickListener
@@ -248,7 +245,7 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
                 }
             });
         }
-        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding4 = this.f18074c;
+        ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding4 = this.c;
         if (viewYyBroadcastLayoutBinding4 != null && (imageView2 = viewYyBroadcastLayoutBinding4.d) != null) {
             imageView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYBroadcastView$vcfECB4hN3pDbXBLNL0_vntT8F0
                 @Override // android.view.View.OnClickListener
@@ -262,26 +259,26 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
             return;
         }
         if (TextUtils.isEmpty(yYRoomModel == null ? null : yYRoomModel.room_desc)) {
-            ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding5 = this.f18074c;
+            ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding5 = this.c;
             EditText editText4 = viewYyBroadcastLayoutBinding5 == null ? null : viewYyBroadcastLayoutBinding5.b;
             if (editText4 != null) {
                 editText4.setHint(getResources().getString(R.string.yy_live_notice));
             }
         } else {
-            ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding6 = this.f18074c;
+            ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding6 = this.c;
             if (viewYyBroadcastLayoutBinding6 != null && (editText = viewYyBroadcastLayoutBinding6.b) != null) {
                 YYRoomModel yYRoomModel2 = this.b;
                 editText.setText(yYRoomModel2 == null ? null : yYRoomModel2.room_desc);
             }
         }
         j();
-        if (this.f18073a != null) {
-            ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding7 = this.f18074c;
+        if (this.a != null) {
+            ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding7 = this.c;
             if (viewYyBroadcastLayoutBinding7 == null || (editText2 = viewYyBroadcastLayoutBinding7.b) == null || !editText2.isEnabled()) {
                 z = false;
             }
             if (z) {
-                BaseYYStudioFragment baseYYStudioFragment = this.f18073a;
+                BaseYYStudioFragment baseYYStudioFragment = this.a;
                 if (baseYYStudioFragment != null) {
                     baseYYStudioFragment.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYBroadcastView$LC-sQVZNMmDHjx9WPqzP1EXF1_I
                         @Override // java.lang.Runnable
@@ -290,41 +287,41 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
                         }
                     }, 200L);
                 }
-                ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding8 = this.f18074c;
+                ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding8 = this.c;
                 EditText editText5 = viewYyBroadcastLayoutBinding8 == null ? null : viewYyBroadcastLayoutBinding8.b;
                 if (editText5 != null) {
                     editText5.setEnabled(this.d);
                 }
-                ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding9 = this.f18074c;
-                ShapeTextView shapeTextView2 = viewYyBroadcastLayoutBinding9 == null ? null : viewYyBroadcastLayoutBinding9.f16891a;
+                ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding9 = this.c;
+                ShapeTextView shapeTextView2 = viewYyBroadcastLayoutBinding9 == null ? null : viewYyBroadcastLayoutBinding9.a;
                 if (shapeTextView2 != null) {
                     shapeTextView2.setVisibility(this.e ? 0 : 8);
                 }
                 if (this.e) {
-                    ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding10 = this.f18074c;
+                    ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding10 = this.c;
                     if (viewYyBroadcastLayoutBinding10 != null && (imageView = viewYyBroadcastLayoutBinding10.e) != null) {
                         imageView.setImageResource(R.drawable.icon_back_yy_broadcast);
                     }
-                    ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding11 = this.f18074c;
+                    ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding11 = this.c;
                     if (viewYyBroadcastLayoutBinding11 != null && (textView = viewYyBroadcastLayoutBinding11.h) != null) {
                         textView.setText(R.string.yy_edit_room_notic);
                     }
-                    ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding12 = this.f18074c;
+                    ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding12 = this.c;
                     ViewGroup.LayoutParams layoutParams = (viewYyBroadcastLayoutBinding12 == null || (linearLayout = viewYyBroadcastLayoutBinding12.f) == null) ? null : linearLayout.getLayoutParams();
                     if (layoutParams != null) {
                         layoutParams.height = -1;
                     }
-                    ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding13 = this.f18074c;
+                    ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding13 = this.c;
                     LinearLayout linearLayout2 = viewYyBroadcastLayoutBinding13 == null ? null : viewYyBroadcastLayoutBinding13.f;
                     if (linearLayout2 != null) {
                         linearLayout2.setLayoutParams(layoutParams);
                     }
-                    ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding14 = this.f18074c;
+                    ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding14 = this.c;
                     ViewGroup.LayoutParams layoutParams2 = (viewYyBroadcastLayoutBinding14 == null || (scrollView = viewYyBroadcastLayoutBinding14.g) == null) ? null : scrollView.getLayoutParams();
                     if (layoutParams2 != null) {
                         layoutParams2.height = -1;
                     }
-                    ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding15 = this.f18074c;
+                    ViewYyBroadcastLayoutBinding viewYyBroadcastLayoutBinding15 = this.c;
                     ScrollView scrollView2 = viewYyBroadcastLayoutBinding15 == null ? null : viewYyBroadcastLayoutBinding15.g;
                     if (scrollView2 == null) {
                         return;
@@ -342,7 +339,7 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
         }
         Intrinsics.a(yYRoomModel);
         String str = yYRoomModel.room_id;
-        BaseYYStudioFragment baseYYStudioFragment = this.f18073a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         Intrinsics.a(baseYYStudioFragment);
         final ActivityFragmentActive fragmentActive = baseYYStudioFragment.getFragmentActive();
         BluedUIHttpResponse<BluedEntityA<YYRoomDescModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<YYRoomDescModel>>(fragmentActive) { // from class: com.blued.android.module.yy_china.view.YYBroadcastView$getBroadcastContent$1
@@ -362,7 +359,7 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 ViewYyBroadcastLayoutBinding h = YYBroadcastView.this.h();
-                FrameLayout frameLayout = h == null ? null : h.f16892c;
+                FrameLayout frameLayout = h == null ? null : h.c;
                 if (frameLayout == null) {
                     return;
                 }
@@ -373,14 +370,14 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
             public void onUIStart() {
                 super.onUIStart();
                 ViewYyBroadcastLayoutBinding h = YYBroadcastView.this.h();
-                FrameLayout frameLayout = h == null ? null : h.f16892c;
+                FrameLayout frameLayout = h == null ? null : h.c;
                 if (frameLayout == null) {
                     return;
                 }
                 frameLayout.setVisibility(0);
             }
         };
-        BaseYYStudioFragment baseYYStudioFragment2 = this.f18073a;
+        BaseYYStudioFragment baseYYStudioFragment2 = this.a;
         Intrinsics.a(baseYYStudioFragment2);
         YYRoomHttpUtils.q(str, (BluedUIHttpResponse) bluedUIHttpResponse, (IRequestHost) baseYYStudioFragment2.getFragmentActive());
     }
@@ -392,7 +389,7 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
 
     public final void a(BaseYYStudioFragment fragment, boolean z, boolean z2) {
         Intrinsics.e(fragment, "fragment");
-        this.f18073a = fragment;
+        this.a = fragment;
         this.b = YYRoomInfoManager.e().b();
         this.d = z;
         this.e = z2;
@@ -404,7 +401,7 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
     }
 
     public final BaseYYStudioFragment f() {
-        return this.f18073a;
+        return this.a;
     }
 
     public final YYRoomModel g() {
@@ -412,15 +409,15 @@ public final class YYBroadcastView extends BaseFullScreenDialog {
     }
 
     public final ViewYyBroadcastLayoutBinding h() {
-        return this.f18074c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.view_yy_broadcast_layout, viewGroup, true);
         Intrinsics.c(inflate, "inflater.inflate(R.layou…_layout, container, true)");
-        this.f18074c = ViewYyBroadcastLayoutBinding.a(inflate);
+        this.c = ViewYyBroadcastLayoutBinding.a(inflate);
         i();
         return inflate;
     }

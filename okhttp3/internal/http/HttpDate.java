@@ -9,9 +9,7 @@ import okhttp3.internal.Util;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http/HttpDate.class */
 public final class HttpDate {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final ThreadLocal<DateFormat> f43885a = new ThreadLocal<DateFormat>() { // from class: okhttp3.internal.http.HttpDate.1
+    private static final ThreadLocal<DateFormat> a = new ThreadLocal<DateFormat>() { // from class: okhttp3.internal.http.HttpDate.1
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.lang.ThreadLocal
         /* renamed from: a */
@@ -23,21 +21,19 @@ public final class HttpDate {
         }
     };
     private static final String[] b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final DateFormat[] f43886c;
+    private static final DateFormat[] c;
 
     static {
         String[] strArr = {"EEE, dd MMM yyyy HH:mm:ss zzz", "EEEE, dd-MMM-yy HH:mm:ss zzz", "EEE MMM d HH:mm:ss yyyy", "EEE, dd-MMM-yyyy HH:mm:ss z", "EEE, dd-MMM-yyyy HH-mm-ss z", "EEE, dd MMM yy HH:mm:ss z", "EEE dd-MMM-yyyy HH:mm:ss z", "EEE dd MMM yyyy HH:mm:ss z", "EEE dd-MMM-yyyy HH-mm-ss z", "EEE dd-MMM-yy HH:mm:ss z", "EEE dd MMM yy HH:mm:ss z", "EEE,dd-MMM-yy HH:mm:ss z", "EEE,dd-MMM-yyyy HH:mm:ss z", "EEE, dd-MM-yyyy HH:mm:ss z", "EEE MMM d yyyy HH:mm:ss z"};
         b = strArr;
-        f43886c = new DateFormat[strArr.length];
+        c = new DateFormat[strArr.length];
     }
 
     private HttpDate() {
     }
 
     public static String a(Date date) {
-        return f43885a.get().format(date);
+        return a.get().format(date);
     }
 
     public static Date a(String str) {
@@ -45,7 +41,7 @@ public final class HttpDate {
             return null;
         }
         ParsePosition parsePosition = new ParsePosition(0);
-        Date parse = f43885a.get().parse(str, parsePosition);
+        Date parse = a.get().parse(str, parsePosition);
         if (parsePosition.getIndex() == str.length()) {
             return parse;
         }
@@ -57,12 +53,12 @@ public final class HttpDate {
                 if (i2 >= length) {
                     return null;
                 }
-                DateFormat dateFormat = f43886c[i2];
+                DateFormat dateFormat = c[i2];
                 SimpleDateFormat simpleDateFormat = dateFormat;
                 if (dateFormat == null) {
                     simpleDateFormat = new SimpleDateFormat(b[i2], Locale.US);
                     simpleDateFormat.setTimeZone(Util.g);
-                    f43886c[i2] = simpleDateFormat;
+                    c[i2] = simpleDateFormat;
                 }
                 parsePosition.setIndex(0);
                 Date parse2 = simpleDateFormat.parse(str, parsePosition);

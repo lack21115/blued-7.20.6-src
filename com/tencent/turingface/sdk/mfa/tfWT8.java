@@ -1,7 +1,6 @@
 package com.tencent.turingface.sdk.mfa;
 
 import android.util.Base64;
-import com.alipay.sdk.util.i;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.StringWriter;
@@ -14,11 +13,11 @@ public final class tfWT8 {
     public static final /* synthetic */ boolean e = !tfWT8.class.desiredAssertionStatus();
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f39996a = kC0XR.a(kC0XR.T0);
+    public static final String f26305a = kC0XR.a(kC0XR.T0);
     public static final String b = kC0XR.a(kC0XR.P0);
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f39997c = kC0XR.a(kC0XR.Q0);
+    public static final String f26306c = kC0XR.a(kC0XR.Q0);
     public static final String d = kC0XR.a(kC0XR.R0);
 
     public static String a(Certificate certificate) throws Exception {
@@ -55,13 +54,13 @@ public final class tfWT8 {
 
     public static void a(X509Certificate x509Certificate, F2BEC f2bec) throws Exception, IOException {
         int i;
-        byte[] extensionValue = x509Certificate.getExtensionValue(f39996a);
+        byte[] extensionValue = x509Certificate.getExtensionValue(f26305a);
         if (extensionValue == null || extensionValue.length == 0) {
             throw new Exception("Couldn't find the keystore attestation extension data.");
         }
         try {
             byte b2 = "{".getBytes()[0];
-            byte b3 = i.d.getBytes()[0];
+            byte b3 = "}".getBytes()[0];
             int i2 = 0;
             int i3 = 0;
             int i4 = 0;
@@ -87,9 +86,9 @@ public final class tfWT8 {
             }
             int i5 = (i4 - i3) + 1;
             byte[] bArr = new byte[i5];
-            System.arraycopy((Object) extensionValue, i3, (Object) bArr, 0, i5);
+            System.arraycopy(extensionValue, i3, bArr, 0, i5);
             JSONObject jSONObject = new JSONObject(new String(bArr));
-            f2bec.h = jSONObject.getString(f39997c);
+            f2bec.h = jSONObject.getString(f26306c);
             f2bec.g = jSONObject.getInt(d);
             f2bec.f = jSONObject.getLong(b);
         } catch (Exception e2) {

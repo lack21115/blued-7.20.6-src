@@ -4,6 +4,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import com.blued.android.core.AppInfo;
+import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.module.live_china.fragment.LiveBaseDialogFragment;
 import com.blued.android.module.live_china.model.LiveMakeLoverFansModel;
 import com.soft.blued.utils.Logger;
@@ -14,18 +15,16 @@ public class LiveClipPhotoFragment extends LiveBaseDialogFragment<LiveMakeLoverF
     private String e;
     private int f;
 
-    @Override // com.blued.android.module.live_china.fragment.LiveBaseDialogFragment
     public void a(LiveMakeLoverFansModel liveMakeLoverFansModel) {
-        super.a((LiveClipPhotoFragment) liveMakeLoverFansModel);
+        super.a(liveMakeLoverFansModel);
         Logger.e("LiveClipPhotoFragment", "onDismiss result = ");
         if (getParentFragment() != null && (getParentFragment() instanceof LiveBaseDialogFragment)) {
             Logger.e("LiveClipPhotoFragment", "onDismiss parentFragment = " + getParentFragment().getClass().getSimpleName());
-            ((LiveBaseDialogFragment) getParentFragment()).a((LiveBaseDialogFragment) liveMakeLoverFansModel);
+            getParentFragment().a(liveMakeLoverFansModel);
         }
         dismiss();
     }
 
-    @Override // com.blued.android.module.live_china.fragment.LiveBaseDialogFragment
     public void d() {
         if (getArguments() != null) {
             this.e = getArguments().getString("select_http_url");
@@ -34,22 +33,18 @@ public class LiveClipPhotoFragment extends LiveBaseDialogFragment<LiveMakeLoverF
         }
     }
 
-    @Override // com.blued.android.module.live_china.fragment.LiveBaseDialogFragment
     public int e() {
         return AppInfo.l;
     }
 
-    @Override // com.blued.android.module.live_china.fragment.LiveBaseDialogFragment
     public int f() {
         return AppInfo.m;
     }
 
-    @Override // com.blued.android.module.live_china.fragment.LiveBaseDialogFragment
     public int g() {
         return 0;
     }
 
-    @Override // com.blued.android.module.live_china.fragment.LiveBaseDialogFragment
     public FragmentPagerAdapter h() {
         return new FragmentPagerAdapter(getChildFragmentManager()) { // from class: com.soft.blued.ui.feed.fragment.LiveClipPhotoFragment.1
             @Override // androidx.viewpager.widget.PagerAdapter
@@ -59,7 +54,7 @@ public class LiveClipPhotoFragment extends LiveBaseDialogFragment<LiveMakeLoverF
 
             @Override // androidx.fragment.app.FragmentPagerAdapter
             public Fragment getItem(int i) {
-                ClipPhotoFragment clipPhotoFragment = new ClipPhotoFragment();
+                BaseFragment clipPhotoFragment = new ClipPhotoFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("select_http_url", LiveClipPhotoFragment.this.e);
                 bundle.putString("photo_path", LiveClipPhotoFragment.this.d);

@@ -1,7 +1,6 @@
 package com.blued.android.chat.model;
 
 import com.blued.android.chat.utils.MsgPackHelper;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/chat/model/FlashVideoGiftModel.class */
@@ -17,7 +16,7 @@ public class FlashVideoGiftModel {
     public static FlashVideoGiftModel parseData(Map<String, Object> map) {
         if (map != null) {
             FlashVideoGiftModel flashVideoGiftModel = new FlashVideoGiftModel();
-            flashVideoGiftModel.roomId = MsgPackHelper.getStringValue(map, TTLiveConstants.ROOMID_KEY);
+            flashVideoGiftModel.roomId = MsgPackHelper.getStringValue(map, "room_id");
             flashVideoGiftModel.addTime = MsgPackHelper.getIntValue(map, "overtime");
             flashVideoGiftModel.addLike = MsgPackHelper.getIntValue(map, "like");
             flashVideoGiftModel.totalTime = MsgPackHelper.getIntValue(map, "total_time");

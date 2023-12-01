@@ -16,14 +16,16 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
+import androidx.viewbinding.ViewBinding;
 import androidx.viewpager.widget.PagerAdapter;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.StatusBarHelper;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.interfaces.SimpleCallback;
 import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.common.base.mvvm.MVVMBaseFragment;
@@ -73,11 +75,11 @@ import kotlin.reflect.KProperty;
 public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f20553a = {Reflection.a(new PropertyReference1Impl(LoginMainFragment.class, "vb", "getVb()Lcom/blued/login/databinding/FmLoginMainBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f6947a = {(KProperty) Reflection.a(new PropertyReference1Impl(LoginMainFragment.class, "vb", "getVb()Lcom/blued/login/databinding/FmLoginMainBinding;", 0))};
     private final ViewBindingProperty b;
 
     /* renamed from: c  reason: collision with root package name */
-    private CheckBox f20554c;
+    private CheckBox f6948c;
     private CommonGuidePop d;
     private String e;
     private String f;
@@ -87,17 +89,17 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
 
     public LoginMainFragment() {
         super(R.layout.fm_login_main);
-        this.b = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LoginMainFragment, FmLoginMainBinding>() { // from class: com.blued.login.fragment.LoginMainFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        this.b = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<LoginMainFragment, FmLoginMainBinding>() { // from class: com.blued.login.fragment.LoginMainFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/blued/login/fragment/LoginMainFragment;)Lcom/blued/login/databinding/FmLoginMainBinding; */
             /* renamed from: a */
-            public final FmLoginMainBinding invoke(LoginMainFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmLoginMainBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<LoginMainFragment, FmLoginMainBinding>() { // from class: com.blued.login.fragment.LoginMainFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/blued/login/fragment/LoginMainFragment;)Lcom/blued/login/databinding/FmLoginMainBinding; */
             /* renamed from: a */
-            public final FmLoginMainBinding invoke(LoginMainFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmLoginMainBinding.a(fragment.requireView());
             }
@@ -113,29 +115,29 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(LoginMainFragment this$0) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.i.set(false);
+    public static final void a(LoginMainFragment loginMainFragment) {
+        Intrinsics.e(loginMainFragment, "this$0");
+        loginMainFragment.i.set(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(LoginMainFragment this$0, DialogInterface dialogInterface, int i) {
-        Intrinsics.e(this$0, "this$0");
-        LoginServiceManager.a().b(this$0.getContext(), this$0.g);
+    public static final void a(LoginMainFragment loginMainFragment, DialogInterface dialogInterface, int i) {
+        Intrinsics.e(loginMainFragment, "this$0");
+        LoginServiceManager.a().b(loginMainFragment.getContext(), loginMainFragment.g);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(LoginMainFragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
-        LoginServiceManager.a().a(this$0.getContext());
+    public static final void a(LoginMainFragment loginMainFragment, View view) {
+        Intrinsics.e(loginMainFragment, "this$0");
+        LoginServiceManager.a().a(loginMainFragment.getContext());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(LoginMainFragment this$0, CompoundButton compoundButton, boolean z) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(LoginMainFragment loginMainFragment, CompoundButton compoundButton, boolean z) {
+        Intrinsics.e(loginMainFragment, "this$0");
         if (z) {
-            LoginServiceManager.a().a("check_term", this$0.getContext(), this$0.f20554c);
-            this$0.s();
+            LoginServiceManager.a().a("check_term", loginMainFragment.getContext(), loginMainFragment.f6948c);
+            loginMainFragment.s();
         }
     }
 
@@ -219,13 +221,13 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(LoginMainFragment this$0, Boolean bool) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(LoginMainFragment loginMainFragment, Boolean bool) {
+        Intrinsics.e(loginMainFragment, "this$0");
         if (bool == null) {
             return;
         }
         boolean booleanValue = bool.booleanValue();
-        CheckBox checkBox = this$0.f20554c;
+        CheckBox checkBox = loginMainFragment.f6948c;
         if (checkBox == null) {
             return;
         }
@@ -233,10 +235,10 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(LoginMainFragment this$0, Void r5) {
+    public static final void a(LoginMainFragment loginMainFragment, Void r5) {
         TagViewPager tagViewPager;
-        Intrinsics.e(this$0, "this$0");
-        FmLoginMainBinding p = this$0.p();
+        Intrinsics.e(loginMainFragment, "this$0");
+        FmLoginMainBinding p = loginMainFragment.p();
         if (p == null || (tagViewPager = p.m) == null) {
             return;
         }
@@ -281,7 +283,7 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
             if (context != null && (externalCacheDir = context.getExternalCacheDir()) != null) {
                 str2 = externalCacheDir.toString();
             }
-            tXVodPlayConfig.setCacheFolderPath(Intrinsics.a(str2, (Object) "/TX/PLDroidPlayer"));
+            tXVodPlayConfig.setCacheFolderPath(Intrinsics.a(str2, "/TX/PLDroidPlayer"));
             tXVodPlayConfig.setMaxCacheItems(30);
             tXVodPlayer5.setConfig(tXVodPlayConfig);
         }
@@ -321,18 +323,18 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
             }
             loginIndicator.a(size, tagViewPager3);
         }
-        j().g();
+        ((LoginMainVM) j()).g();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(LoginMainFragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
-        Bundle bundle = this$0.g;
+    public static final void b(LoginMainFragment loginMainFragment, View view) {
+        Intrinsics.e(loginMainFragment, "this$0");
+        Bundle bundle = loginMainFragment.g;
         String string = bundle == null ? null : bundle.getString("aliasUserId");
         if ((string == null || string.length() == 0) && !UserInfo.getInstance().isLogin()) {
-            LoginServiceManager.a().d(this$0.getContext());
+            LoginServiceManager.a().d(loginMainFragment.getContext());
         }
-        FragmentActivity activity = this$0.getActivity();
+        FragmentActivity activity = loginMainFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -340,44 +342,44 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(LoginMainFragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void c(LoginMainFragment loginMainFragment, View view) {
+        Intrinsics.e(loginMainFragment, "this$0");
         EventTrackLogin.a(LoginAndRegisterProtos.Event.LOGIN_BTN_CLICK, LoginAndRegisterProtos.Source.PHONE);
-        CheckBox checkBox = this$0.f20554c;
+        CheckBox checkBox = loginMainFragment.f6948c;
         if (checkBox != null && checkBox.isChecked()) {
-            String str = this$0.f;
+            String str = loginMainFragment.f;
             if (str == null || str.length() == 0) {
-                LoginServiceManager.a().a(this$0.getContext(), this$0.g);
+                LoginServiceManager.a().a(loginMainFragment.getContext(), loginMainFragment.g);
             } else {
-                if (this$0.g == null) {
-                    this$0.g = new Bundle();
+                if (loginMainFragment.g == null) {
+                    loginMainFragment.g = new Bundle();
                 }
-                Bundle bundle = this$0.g;
+                Bundle bundle = loginMainFragment.g;
                 if (bundle != null) {
-                    bundle.putString("login_one_num", this$0.f);
+                    bundle.putString("login_one_num", loginMainFragment.f);
                 }
-                LoginServiceManager.a().c(this$0.getContext(), this$0.g);
+                LoginServiceManager.a().c(loginMainFragment.getContext(), loginMainFragment.g);
             }
         }
-        this$0.s();
+        loginMainFragment.s();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(final LoginMainFragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
-        if (this$0.i.get()) {
+    public static final void d(final LoginMainFragment loginMainFragment, View view) {
+        Intrinsics.e(loginMainFragment, "this$0");
+        if (loginMainFragment.i.get()) {
             return;
         }
-        this$0.i.compareAndSet(false, true);
+        loginMainFragment.i.compareAndSet(false, true);
         EventTrackLogin.a(LoginAndRegisterProtos.Event.LOGIN_BTN_CLICK, LoginAndRegisterProtos.Source.WECHAT);
-        CheckBox checkBox = this$0.f20554c;
+        CheckBox checkBox = loginMainFragment.f6948c;
         if (checkBox != null) {
             if (checkBox.isChecked()) {
-                this$0.q();
+                loginMainFragment.q();
             }
-            this$0.s();
+            loginMainFragment.s();
         }
-        this$0.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.login.fragment.-$$Lambda$LoginMainFragment$iWlbCG5wsz0zPh6DsGBMpGegkTk
+        loginMainFragment.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.login.fragment.-$$Lambda$LoginMainFragment$iWlbCG5wsz0zPh6DsGBMpGegkTk
             @Override // java.lang.Runnable
             public final void run() {
                 LoginMainFragment.a(LoginMainFragment.this);
@@ -386,21 +388,21 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void e(LoginMainFragment this$0, View view) {
+    public static final void e(LoginMainFragment loginMainFragment, View view) {
         Context context;
-        Intrinsics.e(this$0, "this$0");
-        CheckBox checkBox = this$0.f20554c;
+        Intrinsics.e(loginMainFragment, "this$0");
+        CheckBox checkBox = loginMainFragment.f6948c;
         if (checkBox == null) {
             return;
         }
-        if (checkBox.isChecked() && (context = this$0.getContext()) != null) {
-            new XPopup.Builder(context).a((BasePopupView) new OtherLoginPop(context, this$0.g)).h();
+        if (checkBox.isChecked() && (context = loginMainFragment.getContext()) != null) {
+            new XPopup.Builder(context).a(new OtherLoginPop(context, loginMainFragment.g)).h();
         }
-        this$0.s();
+        loginMainFragment.s();
     }
 
     private final FmLoginMainBinding p() {
-        return (FmLoginMainBinding) this.b.b(this, f20553a[0]);
+        return (FmLoginMainBinding) this.b.b(this, f6947a[0]);
     }
 
     private final void q() {
@@ -432,7 +434,7 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
         if (StatusBarHelper.a()) {
             int a3 = StatusBarHelper.a(getContext());
             FmLoginMainBinding p = p();
-            if (p == null || (constraintLayout = p.f20519a) == null || (b = new ConstraintUtil(constraintLayout).b()) == null || (a2 = b.a(R.id.fm_top, a3)) == null) {
+            if (p == null || (constraintLayout = p.f6913a) == null || (b = new ConstraintUtil(constraintLayout).b()) == null || (a2 = b.a(R.id.fm_top, a3)) == null) {
                 return;
             }
             a2.a();
@@ -441,7 +443,7 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
 
     private final void s() {
         FrameLayout frameLayout;
-        CheckBox checkBox = this.f20554c;
+        CheckBox checkBox = this.f6948c;
         if (checkBox == null) {
             return;
         }
@@ -466,26 +468,25 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
         companion.a(commonGuidePop4, new SimpleCallback() { // from class: com.blued.login.fragment.LoginMainFragment$checkGuidePopBubble$1$1
         }, checkBox, 0L);
         FmLoginMainBinding p = p();
-        if (p == null || (frameLayout = p.f20520c) == null) {
+        if (p == null || (frameLayout = p.f6914c) == null) {
             return;
         }
-        frameLayout.startAnimation(LoginHelper.f20590a.a(3));
+        frameLayout.startAnimation(LoginHelper.f6984a.a(3));
     }
 
     private final void t() {
         OneKeyLoginManager.getInstance().getPhoneInfo(new GetPhoneInfoListener() { // from class: com.blued.login.fragment.LoginMainFragment$getPhoneNumber$1
             @Override // com.tencent.tendinsv.listener.GetPhoneInfoListener
-            public void getPhoneInfoStatus(int i, String result) {
-                Intrinsics.e(result, "result");
-                Log.v("drb", "预取号结果 code：" + i + "  result:" + result);
+            public void getPhoneInfoStatus(int i, String str) {
+                Intrinsics.e(str, "result");
+                Log.v("drb", "预取号结果 code：" + i + "  result:" + str);
                 if (i == 1022) {
-                    LoginMainFragment.this.f = result;
+                    LoginMainFragment.this.f = str;
                 }
             }
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
         FrameLayout frameLayout;
         FrameLayout frameLayout2;
@@ -532,9 +533,9 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
             }, (DialogInterface.OnDismissListener) null, 0).a(false);
         }
         FmLoginMainBinding p5 = p();
-        TextView textView5 = (p5 == null || (frameLayout = p5.f20520c) == null) ? null : (TextView) frameLayout.findViewById(R.id.tv_terms);
+        TextView textView5 = (p5 == null || (frameLayout = p5.f6914c) == null) ? null : (TextView) frameLayout.findViewById(R.id.tv_terms);
         FmLoginMainBinding p6 = p();
-        TextView textView6 = (p6 == null || (frameLayout2 = p6.f20520c) == null) ? null : (TextView) frameLayout2.findViewById(R.id.tv_terms_en);
+        TextView textView6 = (p6 == null || (frameLayout2 = p6.f6914c) == null) ? null : (TextView) frameLayout2.findViewById(R.id.tv_terms_en);
         if (textView5 != null && textView6 != null) {
             Context context = getContext();
             if (context != null) {
@@ -544,12 +545,12 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
             LoginServiceManager.a().a(textView5, textView6, true);
         }
         FmLoginMainBinding p7 = p();
-        this.f20554c = (p7 == null || (frameLayout3 = p7.f20520c) == null) ? null : (CheckBox) frameLayout3.findViewById(R.id.cb_terms);
+        this.f6948c = (p7 == null || (frameLayout3 = p7.f6914c) == null) ? null : (CheckBox) frameLayout3.findViewById(R.id.cb_terms);
         Context context2 = getContext();
-        if (context2 != null && (checkBox = this.f20554c) != null) {
+        if (context2 != null && (checkBox = this.f6948c) != null) {
             checkBox.setButtonDrawable(ContextCompat.getDrawable(context2, R.drawable.login_selector_checkbox));
         }
-        CheckBox checkBox2 = this.f20554c;
+        CheckBox checkBox2 = this.f6948c;
         if (checkBox2 != null) {
             checkBox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.blued.login.fragment.-$$Lambda$LoginMainFragment$afBi0AbZgezaoyc19OhAS_PVciY
                 @Override // android.widget.CompoundButton.OnCheckedChangeListener
@@ -612,7 +613,7 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
         if (context3 != null) {
             String string = getString(R.string.login_check_argument);
             Intrinsics.c(string, "getString(R.string.login_check_argument)");
-            CommonGuidePop commonGuidePop = new CommonGuidePop(context3, string, NinePatchUtils.GuideArrowPosition.LEFT, R.drawable.guide_black_bubble_down);
+            CommonGuidePop commonGuidePop = new CommonGuidePop(context3, string, NinePatchUtils.GuideArrowPosition.a, R.drawable.guide_black_bubble_down);
             this.d = commonGuidePop;
             CommonGuidePop commonGuidePop2 = commonGuidePop;
             if (commonGuidePop == null) {
@@ -639,26 +640,25 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
             window.setBackgroundDrawable(ContextCompat.getDrawable(context4, R.drawable.transparent));
         }
         if (LoginPreferences.f()) {
-            j().f();
+            ((LoginMainVM) j()).f();
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        LoginMainFragment loginMainFragment = this;
-        j().d().observe(loginMainFragment, new Observer() { // from class: com.blued.login.fragment.-$$Lambda$LoginMainFragment$UcUTCGezWrNEAEnKCOwfZ5akhlc
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        ((LoginMainVM) j()).d().observe(lifecycleOwner, new Observer() { // from class: com.blued.login.fragment.-$$Lambda$LoginMainFragment$UcUTCGezWrNEAEnKCOwfZ5akhlc
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LoginMainFragment.a(LoginMainFragment.this, (LoginSplashModel) obj);
             }
         });
-        j().e().observe(loginMainFragment, new Observer() { // from class: com.blued.login.fragment.-$$Lambda$LoginMainFragment$5AZcinQHu8BEjLSxguNVqRTGVzY
+        ((LoginMainVM) j()).e().observe(lifecycleOwner, new Observer() { // from class: com.blued.login.fragment.-$$Lambda$LoginMainFragment$5AZcinQHu8BEjLSxguNVqRTGVzY
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LoginMainFragment.a(LoginMainFragment.this, (Void) obj);
             }
         });
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LOGIN_CHECK, Boolean.TYPE).observe(loginMainFragment, new Observer() { // from class: com.blued.login.fragment.-$$Lambda$LoginMainFragment$amUKql3gxSb_DyTjQeEZsijY-zg
+        LiveEventBus.get(EventBusConstant.KEY_EVENT_LOGIN_CHECK, Boolean.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.login.fragment.-$$Lambda$LoginMainFragment$amUKql3gxSb_DyTjQeEZsijY-zg
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LoginMainFragment.a(LoginMainFragment.this, (Boolean) obj);
@@ -666,7 +666,6 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         TXCloudVideoView tXCloudVideoView;
         super.onDestroy();
@@ -681,7 +680,6 @@ public final class LoginMainFragment extends MVVMBaseFragment<LoginMainVM> {
         tXCloudVideoView.onDestroy();
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (LoginPreferences.f()) {

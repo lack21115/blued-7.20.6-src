@@ -42,11 +42,11 @@ import org.json.JSONObject;
 public final class c {
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f8028c = "BannerShowManager";
+    private static String f5188c = "BannerShowManager";
     private float A;
 
     /* renamed from: a  reason: collision with root package name */
-    com.anythink.expressad.a.a f8029a;
+    com.anythink.expressad.a.a f5189a;
     i b;
     private com.anythink.expressad.mbbanner.a.c.c d;
     private boolean e;
@@ -145,7 +145,7 @@ public final class c {
                     c.this.a(b, z, str);
                 }
             } catch (Exception e) {
-                o.d(c.f8028c, e.getMessage());
+                o.d(c.f5188c, e.getMessage());
             }
         }
 
@@ -252,7 +252,7 @@ public final class c {
                     com.anythink.expressad.a.a.a(context, cVar, str, str2, true);
                 }
             } catch (Throwable th) {
-                o.d(f8028c, th.getMessage());
+                o.d(f5188c, th.getMessage());
             }
         }
     }
@@ -300,7 +300,7 @@ public final class c {
                 }
                 com.anythink.expressad.a.a.a(context, cVar, str, cVar.ai(), false, true, com.anythink.expressad.a.a.a.j);
             } catch (Throwable th) {
-                o.d(f8028c, th.getMessage());
+                o.d(f5188c, th.getMessage());
             }
         }
     }
@@ -346,7 +346,7 @@ public final class c {
                 RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) b.getLayoutParams();
                 RelativeLayout.LayoutParams layoutParams2 = layoutParams;
                 if (layoutParams == null) {
-                    layoutParams2 = new RelativeLayout.LayoutParams(com.anythink.expressad.foundation.f.b.f7817a, com.anythink.expressad.foundation.f.b.b);
+                    layoutParams2 = new RelativeLayout.LayoutParams(com.anythink.expressad.foundation.f.b.f4977a, com.anythink.expressad.foundation.f.b.b);
                 }
                 layoutParams2.addRule(12);
                 b.setLayoutParams(layoutParams2);
@@ -364,12 +364,12 @@ public final class c {
                         }
                         str = jSONObject.toString();
                     } catch (Throwable th) {
-                        o.b(c.f8028c, th.getMessage(), th);
+                        o.b(c.f5188c, th.getMessage(), th);
                         str = "";
                     }
                     String encodeToString = Base64.encodeToString(str.getBytes(), 2);
                     com.anythink.expressad.atsignalcommon.windvane.j.a();
-                    com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) c.this.i, AbsFeedBackForH5.f7096a, encodeToString);
+                    com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) c.this.i, AbsFeedBackForH5.f4258a, encodeToString);
                 }
 
                 @Override // com.anythink.expressad.foundation.f.a
@@ -383,12 +383,12 @@ public final class c {
                         }
                         str = jSONObject.toString();
                     } catch (Throwable th) {
-                        o.b(c.f8028c, th.getMessage(), th);
+                        o.b(c.f5188c, th.getMessage(), th);
                         str = "";
                     }
                     String encodeToString = Base64.encodeToString(str.getBytes(), 2);
                     com.anythink.expressad.atsignalcommon.windvane.j.a();
-                    com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) c.this.i, AbsFeedBackForH5.f7096a, encodeToString);
+                    com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) c.this.i, AbsFeedBackForH5.f4258a, encodeToString);
                 }
 
                 @Override // com.anythink.expressad.foundation.f.a
@@ -402,12 +402,12 @@ public final class c {
                         }
                         str = jSONObject.toString();
                     } catch (Throwable th) {
-                        o.b(c.f8028c, th.getMessage(), th);
+                        o.b(c.f5188c, th.getMessage(), th);
                         str = "";
                     }
                     String encodeToString = Base64.encodeToString(str.getBytes(), 2);
                     com.anythink.expressad.atsignalcommon.windvane.j.a();
-                    com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) c.this.i, AbsFeedBackForH5.f7096a, encodeToString);
+                    com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) c.this.i, AbsFeedBackForH5.f4258a, encodeToString);
                 }
             });
             this.f.l(this.r);
@@ -475,7 +475,7 @@ public final class c {
                 public final boolean onTouch(View view, MotionEvent motionEvent) {
                     c.this.z = motionEvent.getRawX();
                     c.this.A = motionEvent.getRawY();
-                    String str = c.f8028c;
+                    String str = c.f5188c;
                     o.d(str, c.this.z + "  " + c.this.A);
                     return false;
                 }
@@ -516,7 +516,7 @@ public final class c {
         if (this.e && this.j == null) {
             ImageView imageView = new ImageView(n.a().g());
             this.j = imageView;
-            imageView.setBackgroundResource(com.anythink.expressad.foundation.h.i.a(n.a().g(), "anythink_banner_close", com.anythink.expressad.foundation.h.i.f7952c));
+            imageView.setBackgroundResource(com.anythink.expressad.foundation.h.i.a(n.a().g(), "anythink_banner_close", com.anythink.expressad.foundation.h.i.f5112c));
             this.j.setVisibility(8);
             this.j.setContentDescription("closeButton");
         }
@@ -552,7 +552,7 @@ public final class c {
                 }, 1000L);
             }
             if (this.o && z) {
-                o.d(f8028c, "onBannerWebViewShow && transInfoToMraid");
+                o.d(f5188c, "onBannerWebViewShow && transInfoToMraid");
                 int[] iArr = new int[2];
                 this.g.getLocationInWindow(iArr);
                 com.anythink.expressad.mbbanner.a.a.a.a(this.i, iArr[0], iArr[1]);
@@ -562,7 +562,7 @@ public final class c {
                     com.anythink.expressad.foundation.g.d.b.a(n.a().g()).c(this.f.be());
                 }
             }
-            o.d(f8028c, "showSuccessed:" + this.f.aZ());
+            o.d(f5188c, "showSuccessed:" + this.f.aZ());
             if (!z) {
                 this.f.c(false);
                 return;
@@ -780,10 +780,10 @@ public final class c {
 
     public final void a(com.anythink.expressad.foundation.d.c cVar, boolean z, String str) {
         if (this.q) {
-            if (this.f8029a == null) {
-                this.f8029a = new com.anythink.expressad.a.a(n.a().g(), this.r);
+            if (this.f5189a == null) {
+                this.f5189a = new com.anythink.expressad.a.a(n.a().g(), this.r);
             }
-            this.f8029a.a(new p.e() { // from class: com.anythink.expressad.mbbanner.a.d.c.11
+            this.f5189a.a(new p.e() { // from class: com.anythink.expressad.mbbanner.a.d.c.11
                 @Override // com.anythink.expressad.out.p.c
                 public final void a(int i) {
                 }

@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class ao extends RouteInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    private v f9312a;
+    private v f6472a;
 
     public ao(String str) {
         setPath(str);
@@ -26,13 +26,13 @@ public class ao extends RouteInfo {
                 if (hashMap == null || hashMap.size() <= 0 || (routeInfo = (RouteInfo) hashMap.get(getPath())) == null) {
                     return;
                 }
-                this.f9312a = (v) routeInfo.getDestination().getConstructor(new Class[0]).newInstance(new Object[0]);
+                this.f6472a = (v) routeInfo.getDestination().getConstructor(new Class[0]).newInstance(new Object[0]);
             }
         } catch (Throwable th) {
         }
     }
 
     public Object a() {
-        return this.f9312a;
+        return this.f6472a;
     }
 }

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class UserLabelAdapterNew extends BaseMultiItemQuickAdapter<UserTag, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33312a;
+    private Context f19621a;
     private OnItemClickListener b;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/setting/adapter/UserLabelAdapterNew$OnItemClickListener.class */
@@ -27,7 +27,7 @@ public class UserLabelAdapterNew extends BaseMultiItemQuickAdapter<UserTag, Base
 
     public UserLabelAdapterNew(Context context) {
         super(new ArrayList());
-        this.f33312a = context;
+        this.f19621a = context;
         a();
     }
 
@@ -41,18 +41,17 @@ public class UserLabelAdapterNew extends BaseMultiItemQuickAdapter<UserTag, Base
     }
 
     private void c(BaseViewHolder baseViewHolder, final UserTag userTag) {
-        FlowLayout flowLayout = (FlowLayout) baseViewHolder.getView(R.id.user_label_flow_layout);
+        FlowLayout view = baseViewHolder.getView(R.id.user_label_flow_layout);
         if (userTag.tagList == null || userTag.tagList.size() <= 0) {
             return;
         }
-        flowLayout.removeAllViews();
+        view.removeAllViews();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= userTag.tagList.size()) {
-                flowLayout.setOnItemClickListener(new FlowLayout.OnItemClickListener() { // from class: com.soft.blued.ui.setting.adapter.UserLabelAdapterNew.1
-                    @Override // com.blued.android.module.common.view.FlowLayout.OnItemClickListener
-                    public void onItemClick(View view, int i3) {
+                view.setOnItemClickListener(new FlowLayout.OnItemClickListener() { // from class: com.soft.blued.ui.setting.adapter.UserLabelAdapterNew.1
+                    public void onItemClick(View view2, int i3) {
                         if (UserLabelAdapterNew.this.b != null) {
                             UserLabelAdapterNew.this.b.a(userTag, i3);
                         }
@@ -60,24 +59,24 @@ public class UserLabelAdapterNew extends BaseMultiItemQuickAdapter<UserTag, Base
                 });
                 return;
             }
-            View inflate = LayoutInflater.from(this.f33312a).inflate(R.layout.user_label_text_view, (ViewGroup) null);
+            View inflate = LayoutInflater.from(this.f19621a).inflate(R.layout.user_label_text_view, (ViewGroup) null);
             TextView textView = (TextView) inflate.findViewById(2131372684);
-            textView.setText(userTag.tagList.get(i2).name);
-            if (userTag.tagList.get(i2).checked == 0) {
+            textView.setText(((UserTag) userTag.tagList.get(i2)).name);
+            if (((UserTag) userTag.tagList.get(i2)).checked == 0) {
                 textView.setBackgroundResource(R.drawable.user_job_text_bg);
-                textView.setTextColor(BluedSkinUtils.a(this.f33312a, 2131102254));
+                textView.setTextColor(BluedSkinUtils.a(this.f19621a, 2131102254));
             } else {
                 textView.setBackgroundResource(R.drawable.user_job_text_select_bg);
-                textView.setTextColor(BluedSkinUtils.a(this.f33312a, 2131101780));
+                textView.setTextColor(BluedSkinUtils.a(this.f19621a, 2131101780));
             }
-            if (userTag.tagList.get(i2).chooseable) {
+            if (((UserTag) userTag.tagList.get(i2)).chooseable) {
                 textView.setBackground(textView.getBackground());
                 textView.setTextColor(textView.getTextColors());
             } else {
                 textView.setBackgroundResource(R.drawable.user_job_text_bg);
-                textView.setTextColor(BluedSkinUtils.a(this.f33312a, 2131102260));
+                textView.setTextColor(BluedSkinUtils.a(this.f19621a, 2131102260));
             }
-            flowLayout.addView(inflate);
+            view.addView(inflate);
             i = i2 + 1;
         }
     }

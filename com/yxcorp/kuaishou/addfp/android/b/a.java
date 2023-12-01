@@ -10,7 +10,7 @@ public class a {
     public static String a(Context context, String str, String str2) {
         try {
             Class<?> cls = Class.forName("android.os.UserHandle");
-            Class<Integer> cls2 = Integer.TYPE;
+            Class<?> cls2 = Integer.TYPE;
             Method declaredMethod = cls.getDeclaredMethod("getUserId", cls2);
             declaredMethod.setAccessible(true);
             int intValue = ((Integer) declaredMethod.invoke(null, Integer.valueOf(Process.myUid()))).intValue();

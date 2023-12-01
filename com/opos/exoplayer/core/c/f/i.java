@@ -7,10 +7,10 @@ import java.util.Arrays;
 public final class i implements h {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final double[] f25196c = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
+    private static final double[] f11508c = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
 
     /* renamed from: a  reason: collision with root package name */
-    private String f25197a;
+    private String f11509a;
     private com.opos.exoplayer.core.c.n b;
     private boolean d;
     private long e;
@@ -29,41 +29,41 @@ public final class i implements h {
         private static final byte[] d = {0, 0, 1};
 
         /* renamed from: a  reason: collision with root package name */
-        public int f25198a;
+        public int f11510a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public byte[] f25199c;
+        public byte[] f11511c;
         private boolean e;
 
         public a(int i) {
-            this.f25199c = new byte[i];
+            this.f11511c = new byte[i];
         }
 
         public void a() {
             this.e = false;
-            this.f25198a = 0;
+            this.f11510a = 0;
             this.b = 0;
         }
 
         public void a(byte[] bArr, int i, int i2) {
             if (this.e) {
                 int i3 = i2 - i;
-                byte[] bArr2 = this.f25199c;
+                byte[] bArr2 = this.f11511c;
                 int length = bArr2.length;
-                int i4 = this.f25198a;
+                int i4 = this.f11510a;
                 if (length < i4 + i3) {
-                    this.f25199c = Arrays.copyOf(bArr2, (i4 + i3) * 2);
+                    this.f11511c = Arrays.copyOf(bArr2, (i4 + i3) * 2);
                 }
-                System.arraycopy((Object) bArr, i, (Object) this.f25199c, this.f25198a, i3);
-                this.f25198a = i3 + this.f25198a;
+                System.arraycopy(bArr, i, this.f11511c, this.f11510a, i3);
+                this.f11510a = i3 + this.f11510a;
             }
         }
 
         public boolean a(int i, int i2) {
             if (this.e) {
-                int i3 = this.f25198a - i2;
-                this.f25198a = i3;
+                int i3 = this.f11510a - i2;
+                this.f11510a = i3;
                 if (this.b != 0 || i != 181) {
                     this.e = false;
                     return true;
@@ -107,7 +107,7 @@ public final class i implements h {
     @Override // com.opos.exoplayer.core.c.f.h
     public void a(com.opos.exoplayer.core.c.g gVar, u.d dVar) {
         dVar.a();
-        this.f25197a = dVar.c();
+        this.f11509a = dVar.c();
         this.b = gVar.a(dVar.b(), 2);
     }
 

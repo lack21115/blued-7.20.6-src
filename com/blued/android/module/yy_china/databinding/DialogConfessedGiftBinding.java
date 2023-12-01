@@ -13,13 +13,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogConfessedGiftBinding.class */
 public final class DialogConfessedGiftBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16309a;
+    public final TextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16310c;
+    public final TextView c;
     public final TextView d;
     public final EditText e;
     public final ImageView f;
@@ -36,9 +32,9 @@ public final class DialogConfessedGiftBinding implements ViewBinding {
 
     private DialogConfessedGiftBinding(ConstraintLayout constraintLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4, EditText editText, ImageView imageView, ImageView imageView2, ImageView imageView3, RecyclerView recyclerView, RecyclerView recyclerView2, ObservableScrollView observableScrollView, ShapeTextView shapeTextView, TextView textView5, TextView textView6, TextView textView7) {
         this.p = constraintLayout;
-        this.f16309a = textView;
+        this.a = textView;
         this.b = textView2;
-        this.f16310c = textView3;
+        this.c = textView3;
         this.d = textView4;
         this.e = editText;
         this.f = imageView;
@@ -71,10 +67,10 @@ public final class DialogConfessedGiftBinding implements ViewBinding {
                                 if (imageView2 != null) {
                                     ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_star);
                                     if (imageView3 != null) {
-                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rec_gift);
-                                        if (recyclerView != null) {
-                                            RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rec_user);
-                                            if (recyclerView2 != null) {
+                                        RecyclerView findViewById = view.findViewById(R.id.rec_gift);
+                                        if (findViewById != null) {
+                                            RecyclerView findViewById2 = view.findViewById(R.id.rec_user);
+                                            if (findViewById2 != null) {
                                                 ObservableScrollView observableScrollView = (ObservableScrollView) view.findViewById(R.id.scroll);
                                                 if (observableScrollView != null) {
                                                     ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.sh_bg);
@@ -85,7 +81,7 @@ public final class DialogConfessedGiftBinding implements ViewBinding {
                                                             if (textView6 != null) {
                                                                 TextView textView7 = (TextView) view.findViewById(R.id.tv_title_3);
                                                                 if (textView7 != null) {
-                                                                    return new DialogConfessedGiftBinding((ConstraintLayout) view, textView, textView2, textView3, textView4, editText, imageView, imageView2, imageView3, recyclerView, recyclerView2, observableScrollView, shapeTextView, textView5, textView6, textView7);
+                                                                    return new DialogConfessedGiftBinding((ConstraintLayout) view, textView, textView2, textView3, textView4, editText, imageView, imageView2, imageView3, findViewById, findViewById2, observableScrollView, shapeTextView, textView5, textView6, textView7);
                                                                 }
                                                                 str = "tvTitle3";
                                                             } else {
@@ -133,7 +129,6 @@ public final class DialogConfessedGiftBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.p;

@@ -11,7 +11,7 @@ import android.provider.Contacts;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.Slog;
-import com.android.internal.R;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import com.tencent.ugc.UGCTransitionRules;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -287,7 +287,7 @@ public class ZenModeConfig implements Parcelable {
             case 2:
                 return "stars";
             default:
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 
@@ -319,7 +319,7 @@ public class ZenModeConfig implements Parcelable {
         }
         CharSequence format = DateFormat.format(DateFormat.getBestDateTimePattern(Locale.getDefault(), DateFormat.is24HourFormat(context, i2) ? "Hm" : "hma"), j);
         Resources resources = context.getResources();
-        return new Condition(toCountdownConditionId(j), resources.getQuantityString(i3, round, Integer.valueOf(round), format), resources.getQuantityString(i4, round, Integer.valueOf(round), format), resources.getString(R.string.zen_mode_until, format), 0, 1, 1);
+        return new Condition(toCountdownConditionId(j), resources.getQuantityString(i3, round, Integer.valueOf(round), format), resources.getQuantityString(i4, round, Integer.valueOf(round), format), resources.getString(17041256, format), 0, 1, 1);
     }
 
     public static long tryParseCountdownConditionId(Uri uri) {

@@ -6,13 +6,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/busline/BusLineResult.class */
 public final class BusLineResult {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f5585a;
+    private int a;
     private ArrayList<BusLineItem> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BusLineQuery f5586c;
+    private BusLineQuery c;
     private List<String> d;
     private List<SuggestionCity> e;
 
@@ -20,15 +16,15 @@ public final class BusLineResult {
         this.b = new ArrayList<>();
         this.d = new ArrayList();
         this.e = new ArrayList();
-        this.f5586c = busLineQuery;
-        this.f5585a = a(i);
+        this.c = busLineQuery;
+        this.a = a(i);
         this.e = list;
         this.d = list2;
         this.b = arrayList;
     }
 
     private int a(int i) {
-        int pageSize = this.f5586c.getPageSize();
+        int pageSize = this.c.getPageSize();
         int i2 = ((i + pageSize) - 1) / pageSize;
         if (i2 > 30) {
             return 30;
@@ -45,11 +41,11 @@ public final class BusLineResult {
     }
 
     public final int getPageCount() {
-        return this.f5585a;
+        return this.a;
     }
 
     public final BusLineQuery getQuery() {
-        return this.f5586c;
+        return this.c;
     }
 
     public final List<SuggestionCity> getSearchSuggestionCities() {

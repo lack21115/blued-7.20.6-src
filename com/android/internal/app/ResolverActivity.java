@@ -8,7 +8,6 @@ import android.app.AppGlobals;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.ComponentName;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -26,7 +25,6 @@ import android.os.PatternMatcher;
 import android.os.RemoteException;
 import android.os.UserHandle;
 import android.os.UserManager;
-import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Slog;
@@ -41,9 +39,12 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.alipay.sdk.cons.b;
+import com.android.ims.ImsConferenceState;
 import com.android.internal.R;
 import com.android.internal.content.PackageMonitor;
 import com.android.internal.widget.ResolverDrawerLayout;
+import com.anythink.core.common.l;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -94,12 +95,12 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
     /* loaded from: source-4181928-dex2jar.jar:com/android/internal/app/ResolverActivity$ActionTitle.class */
     public enum ActionTitle {
         VIEW("android.intent.action.VIEW", R.string.whichViewApplication, R.string.whichViewApplicationNamed),
-        EDIT(Intent.ACTION_EDIT, R.string.whichEditApplication, R.string.whichEditApplicationNamed),
-        SEND(Intent.ACTION_SEND, R.string.whichSendApplication, R.string.whichSendApplicationNamed),
-        SENDTO(Intent.ACTION_SENDTO, R.string.whichSendApplication, R.string.whichSendApplicationNamed),
-        SEND_MULTIPLE(Intent.ACTION_SEND_MULTIPLE, R.string.whichSendApplication, R.string.whichSendApplicationNamed),
+        EDIT("android.intent.action.EDIT", R.string.whichEditApplication, R.string.whichEditApplicationNamed),
+        SEND("android.intent.action.SEND", R.string.whichSendApplication, R.string.whichSendApplicationNamed),
+        SENDTO("android.intent.action.SENDTO", R.string.whichSendApplication, R.string.whichSendApplicationNamed),
+        SEND_MULTIPLE("android.intent.action.SEND_MULTIPLE", R.string.whichSendApplication, R.string.whichSendApplicationNamed),
         DEFAULT(null, R.string.whichApplication, R.string.whichApplicationNamed),
-        HOME(Intent.ACTION_MAIN, R.string.whichHomeApplication, R.string.whichHomeApplicationNamed);
+        HOME("android.intent.action.MAIN", R.string.whichHomeApplication, R.string.whichHomeApplicationNamed);
         
         public final String action;
         public final int namedTitleRes;
@@ -389,7 +390,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
                                 } else {
                                     ResolveInfo resolveInfo3 = new ResolveInfo();
                                     resolveInfo3.activityInfo = resolveActivityInfo;
-                                    if (((UserManager) ResolverActivity.this.getSystemService("user")).isManagedProfile()) {
+                                    if (((UserManager) ResolverActivity.this.getSystemService(ImsConferenceState.USER)).isManagedProfile()) {
                                         resolveInfo3.noResourceId = true;
                                     }
                                     if (intent instanceof LabeledIntent) {
@@ -538,7 +539,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
         public ResolverComparator(Context context, Intent intent) {
             this.mCollator = Collator.getInstance(context.getResources().getConfiguration().locale);
             String scheme = intent.getScheme();
-            this.mHttp = "http".equals(scheme) || "https".equals(scheme);
+            this.mHttp = "http".equals(scheme) || b.a.equals(scheme);
         }
 
         private long getPackageTimeSpent(String str) {
@@ -586,14 +587,14 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
         public TextView text2;
 
         public ViewHolder(View view) {
-            this.text = (TextView) view.findViewById(16908308);
-            this.text2 = (TextView) view.findViewById(16908309);
-            this.icon = (ImageView) view.findViewById(16908294);
+            this.text = (TextView) view.findViewById(R.id.text1);
+            this.text2 = (TextView) view.findViewById(R.id.text2);
+            this.icon = (ImageView) view.findViewById(R.id.icon);
         }
     }
 
     private boolean hasManagedProfile() {
-        UserManager userManager = (UserManager) getSystemService("user");
+        UserManager userManager = (UserManager) getSystemService(ImsConferenceState.USER);
         if (userManager == null) {
             return false;
         }
@@ -610,7 +611,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
     }
 
     static final boolean isSpecificUriMatch(int i) {
-        int i2 = i & IntentFilter.MATCH_CATEGORY_MASK;
+        int i2 = i & 268369920;
         return i2 >= 3145728 && i2 <= 5242880;
     }
 
@@ -636,7 +637,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
         if (i == -2 || i == UserHandle.myUserId()) {
             return;
         }
-        UserManager userManager = (UserManager) getSystemService("user");
+        UserManager userManager = (UserManager) getSystemService(ImsConferenceState.USER);
         UserInfo userInfo = userManager.getUserInfo(i);
         boolean isManagedProfile = userInfo != null ? userInfo.isManagedProfile() : false;
         boolean isManagedProfile2 = userManager.isManagedProfile();
@@ -667,8 +668,8 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
             return;
         }
         this.mProfileView.setVisibility(0);
-        ImageView imageView = (ImageView) this.mProfileView.findViewById(16908294);
-        TextView textView = (TextView) this.mProfileView.findViewById(16908308);
+        ImageView imageView = (ImageView) this.mProfileView.findViewById(R.id.icon);
+        TextView textView = (TextView) this.mProfileView.findViewById(R.id.text1);
         if (otherProfile.displayIcon == null) {
             new LoadIconTask().execute(otherProfile);
         }
@@ -697,7 +698,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
 
     protected CharSequence getTitleForAction(String str, int i) {
         ActionTitle forAction = this.mResolvingHome ? ActionTitle.HOME : ActionTitle.forAction(str);
-        return (forAction != ActionTitle.DEFAULT || i == 0) ? this.mAdapter.hasFilteredItem() ? getString(forAction.namedTitleRes, this.mAdapter.getFilteredItem().displayLabel) : getString(forAction.titleRes) : getString(i);
+        return (forAction != ActionTitle.DEFAULT || i == 0) ? this.mAdapter.hasFilteredItem() ? getString(forAction.namedTitleRes, new Object[]{this.mAdapter.getFilteredItem().displayLabel}) : getString(forAction.titleRes) : getString(i);
     }
 
     Intent intentForDisplayResolveInfo(DisplayResolveInfo displayResolveInfo) {
@@ -740,7 +741,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
     public void onCreate(Bundle bundle) {
         Intent makeMyIntent = makeMyIntent();
         Set<String> categories = makeMyIntent.getCategories();
-        if (Intent.ACTION_MAIN.equals(makeMyIntent.getAction()) && categories != null && categories.size() == 1 && categories.contains(Intent.CATEGORY_HOME)) {
+        if ("android.intent.action.MAIN".equals(makeMyIntent.getAction()) && categories != null && categories.size() == 1 && categories.contains("android.intent.category.HOME")) {
             this.mResolvingHome = true;
         }
         setSafeForwardingMode(true);
@@ -760,7 +761,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
             this.mLaunchedFromUid = -1;
         }
         this.mPm = getPackageManager();
-        this.mUsm = (UsageStatsManager) getSystemService(Context.USAGE_STATS_SERVICE);
+        this.mUsm = (UsageStatsManager) getSystemService("usagestats");
         this.mStats = this.mUsm.queryAndAggregateUsageStats(System.currentTimeMillis() - USAGE_STATS_PERIOD, System.currentTimeMillis());
         this.mMaxColumns = getResources().getInteger(R.integer.config_maxResolverActivityColumns);
         this.mPackageMonitor.register(this, getMainLooper(), false);
@@ -804,7 +805,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
             return;
         } else {
             setContentView(R.layout.resolver_list);
-            ((TextView) findViewById(16908292)).setVisibility(0);
+            ((TextView) findViewById(R.id.empty)).setVisibility(0);
             this.mListView = (ListView) findViewById(R.id.resolver_list);
             this.mListView.setVisibility(8);
         }
@@ -823,13 +824,13 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
             charSequence2 = getTitleForAction(intent.getAction(), i);
         }
         if (!TextUtils.isEmpty(charSequence2)) {
-            TextView textView = (TextView) findViewById(16908310);
+            TextView textView = (TextView) findViewById(R.id.title);
             if (textView != null) {
                 textView.setText(charSequence2);
             }
             setTitle(charSequence2);
         }
-        ImageView imageView = (ImageView) findViewById(16908294);
+        ImageView imageView = (ImageView) findViewById(R.id.icon);
         DisplayResolveInfo filteredItem = this.mAdapter.getFilteredItem();
         if (imageView != null && filteredItem != null) {
             new LoadIconIntoViewTask(imageView).execute(filteredItem);
@@ -893,8 +894,8 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
                     intentFilter.addCategory(str);
                 }
             }
-            intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
-            int i = resolveInfo.match & IntentFilter.MATCH_CATEGORY_MASK;
+            intentFilter.addCategory("android.intent.category.DEFAULT");
+            int i = resolveInfo.match & 268369920;
             Uri data = intent.getData();
             IntentFilter intentFilter2 = intentFilter;
             if (i == 6291456) {
@@ -910,7 +911,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
                     }
                 }
             }
-            if (data != null && data.getScheme() != null && (i != 6291456 || (!ContentResolver.SCHEME_FILE.equals(data.getScheme()) && !"content".equals(data.getScheme())))) {
+            if (data != null && data.getScheme() != null && (i != 6291456 || (!"file".equals(data.getScheme()) && !l.y.equals(data.getScheme())))) {
                 intentFilter2.addDataScheme(data.getScheme());
                 Iterator<PatternMatcher> schemeSpecificPartsIterator = resolveInfo.filter.schemeSpecificPartsIterator();
                 if (schemeSpecificPartsIterator != null) {
@@ -1010,9 +1011,8 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
         this.mLastSelected = checkedItemPosition;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onRestart() {
+    protected void onRestart() {
         super.onRestart();
         if (!this.mRegistered) {
             this.mPackageMonitor.register(this, getMainLooper(), false);
@@ -1024,9 +1024,8 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onRestoreInstanceState(Bundle bundle) {
+    protected void onRestoreInstanceState(Bundle bundle) {
         super.onRestoreInstanceState(bundle);
         if (this.mAlwaysUseOption) {
             int checkedItemPosition = this.mListView.getCheckedItemPosition();
@@ -1040,9 +1039,8 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onStop() {
+    protected void onStop() {
         super.onStop();
         if (this.mRegistered) {
             this.mPackageMonitor.unregister();
@@ -1082,7 +1080,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
     }
 
     void showAppDetails(ResolveInfo resolveInfo) {
-        startActivity(new Intent().setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).setData(Uri.fromParts("package", resolveInfo.activityInfo.packageName, null)).addFlags(524288));
+        startActivity(new Intent().setAction("android.settings.APPLICATION_DETAILS_SETTINGS").setData(Uri.fromParts("package", resolveInfo.activityInfo.packageName, null)).addFlags(524288));
     }
 
     void startSelected(int i, boolean z, boolean z2) {

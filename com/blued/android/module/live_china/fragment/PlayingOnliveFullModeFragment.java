@@ -34,7 +34,6 @@ import com.blued.android.module.live_china.same.Logger;
 import com.blued.android.module.live_china.utils.LiveRoomHttpUtils;
 import com.blued.android.module.live_china.view.LiveAnnouceView;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/PlayingOnliveFullModeFragment.class */
 public class PlayingOnliveFullModeFragment extends PlayingOnliveBaseModeFragment {
@@ -61,8 +60,7 @@ public class PlayingOnliveFullModeFragment extends PlayingOnliveBaseModeFragment
     }
 
     private void ae() {
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_RANKING_MSG, RankingExtra.class).observe(this, new Observer<RankingExtra>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveFullModeFragment.2
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("live_ranking_msg", RankingExtra.class).observe(this, new Observer<RankingExtra>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveFullModeFragment.2
             /* renamed from: a */
             public void onChanged(RankingExtra rankingExtra) {
                 if (LiveRoomManager.a().p() == null) {
@@ -76,49 +74,41 @@ public class PlayingOnliveFullModeFragment extends PlayingOnliveBaseModeFragment
             }
         });
         LiveEventBus.get("live_ranking_hour_msg", RankingHourExtra.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFullModeFragment$swTZInwOb7hKSXnUBvj3yu_DHE0
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFullModeFragment.this.b((RankingHourExtra) obj);
             }
         });
         LiveEventBus.get("live_ranking_hour_count_msg", RankingHourExtra.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFullModeFragment$nDaMWvZQPnbfObtDscma1QlixDU
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFullModeFragment.this.a((RankingHourExtra) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.b, LiveChattingModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFullModeFragment$XG3L1_o4YxpqKFcdNLXgSDjQ1WE
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFullModeFragment.this.e((LiveChattingModel) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.e, Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFullModeFragment$mXbo7rQLp1Imd4ani94X9WiBY4g
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFullModeFragment.this.e(((Boolean) obj).booleanValue());
             }
         });
         LiveEventBus.get(LiveEventBusUtil.f, LiveZanExtraModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFullModeFragment$iYuWc0VVIpBapqQ7yLkWJW1nE5M
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFullModeFragment.this.a((LiveZanExtraModel) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.g, Integer.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFullModeFragment$ldpsEHkGYd0whIZF9xVb61OqTgU
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFullModeFragment.this.a((Integer) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.q, LiveAnnounceModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFullModeFragment$DSgP5plCLIdIg2Vg2iUyuVJAJeQ
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFullModeFragment.this.b((LiveAnnounceModel) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.z, String.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveFullModeFragment$Kyy4d5AK4hSaXKInTLuoK_o79yY
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveFullModeFragment.this.i((String) obj);
             }
@@ -213,10 +203,10 @@ public class PlayingOnliveFullModeFragment extends PlayingOnliveBaseModeFragment
         if (PlayingOnliveFragment.cB != 1 || LiveRoomManager.a().t()) {
             return;
         }
-        LiveRoomInfo a2 = LiveRoomInfo.a();
-        Context context = this.f13292a;
+        LiveRoomInfo a = LiveRoomInfo.a();
+        Context context = this.a;
         String g = LiveRoomManager.a().g();
-        a2.a(context, this, g, "liveanchor_" + this.s, getFragmentActive());
+        a.a(context, this, g, "liveanchor_" + this.s, getFragmentActive());
     }
 
     @Override // com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment, com.blued.android.module.live_china.observer.LiveSetDataObserver.ILiveSetDataObserver
@@ -410,7 +400,7 @@ public class PlayingOnliveFullModeFragment extends PlayingOnliveBaseModeFragment
         }
     }
 
-    @Override // com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment, com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.aj = false;
         ae();
@@ -418,7 +408,6 @@ public class PlayingOnliveFullModeFragment extends PlayingOnliveBaseModeFragment
         X();
         Y();
         LiveEventBus.get("live_msg_daily_task_complete", Integer.class).observe(this, new Observer<Integer>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveFullModeFragment.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Integer num) {
                 if (PlayingOnliveFullModeFragment.this.q != null) {
@@ -429,13 +418,13 @@ public class PlayingOnliveFullModeFragment extends PlayingOnliveBaseModeFragment
         return onCreateView;
     }
 
-    @Override // com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         Z();
     }
 
-    @Override // com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment, com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

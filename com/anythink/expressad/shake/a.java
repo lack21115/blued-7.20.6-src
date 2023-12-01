@@ -10,10 +10,10 @@ import com.anythink.core.common.b.n;
 public class a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile a f8178c;
+    private static volatile a f5338c;
 
     /* renamed from: a  reason: collision with root package name */
-    Sensor f8179a;
+    Sensor f5339a;
     private SensorManager b;
 
     private a() {
@@ -23,8 +23,8 @@ public class a {
                 if (this.b == null) {
                     this.b = (SensorManager) g.getSystemService("sensor");
                 }
-                if (this.f8179a == null) {
-                    this.f8179a = this.b.getDefaultSensor(1);
+                if (this.f5339a == null) {
+                    this.f5339a = this.b.getDefaultSensor(1);
                 }
             } catch (Throwable th) {
             }
@@ -32,23 +32,23 @@ public class a {
     }
 
     public static a a() {
-        if (f8178c == null) {
+        if (f5338c == null) {
             synchronized (a.class) {
                 try {
-                    if (f8178c == null) {
-                        f8178c = new a();
+                    if (f5338c == null) {
+                        f5338c = new a();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f8178c;
+        return f5338c;
     }
 
     public final void a(SensorEventListener sensorEventListener) {
         try {
-            this.b.registerListener(sensorEventListener, this.f8179a, 2);
+            this.b.registerListener(sensorEventListener, this.f5339a, 2);
         } catch (Throwable th) {
         }
     }
@@ -64,6 +64,6 @@ public class a {
     }
 
     public final boolean b() {
-        return this.f8179a != null;
+        return this.f5339a != null;
     }
 }

@@ -6,16 +6,16 @@ import java.lang.reflect.Method;
 public class z6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Class<?> f4077a;
+    public final Class<?> f4029a;
     public final Method b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final Object f4078c;
+    public final Object f4030c;
 
     public z6(Class<?> cls, Method method, Object obj, boolean z) {
-        this.f4077a = cls;
+        this.f4029a = cls;
         this.b = method;
-        this.f4078c = obj;
+        this.f4030c = obj;
     }
 
     public Method a() {
@@ -23,10 +23,10 @@ public class z6 {
     }
 
     public boolean a(Object obj) {
-        return obj.getClass().equals(this.f4077a);
+        return obj.getClass().equals(this.f4029a);
     }
 
     public Object b() {
-        return this.f4078c;
+        return this.f4030c;
     }
 }

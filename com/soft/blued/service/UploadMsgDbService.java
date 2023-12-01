@@ -4,7 +4,6 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.text.TextUtils;
-import com.blued.android.chat.grpc.backup.MsgBackupService;
 import com.blued.android.module.common.utils.ToastUtils;
 import com.soft.blued.utils.Logger;
 
@@ -17,7 +16,7 @@ public class UploadMsgDbService extends Service {
 
     @Override // android.app.Service
     public int onStartCommand(Intent intent, int i, int i2) {
-        String stringExtra = intent.getStringExtra(MsgBackupService.INTENT_KEY_FILE_PATH);
+        String stringExtra = intent.getStringExtra("FILE_PATH");
         String simpleName = UploadMsgDbService.class.getSimpleName();
         Logger.c(simpleName, "备份消息成功====" + stringExtra);
         if (!TextUtils.isEmpty(stringExtra)) {

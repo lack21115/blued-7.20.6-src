@@ -17,9 +17,8 @@ final /* synthetic */ class LoginFragment$liveDataObserver$1 extends FunctionRef
         ((LoginFragment) this.receiver).b(z);
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public /* synthetic */ Unit invoke(Boolean bool) {
-        a(bool.booleanValue());
-        return Unit.f42314a;
+    public /* synthetic */ Object invoke(Object obj) {
+        a(((Boolean) obj).booleanValue());
+        return Unit.a;
     }
 }

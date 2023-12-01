@@ -11,7 +11,7 @@ import java.util.Properties;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    static int f38844a = 0;
+    static int f25153a = 0;
     static boolean b = false;
     private static f e;
     private static int h = 0;
@@ -19,7 +19,7 @@ public class f {
     private static String k;
 
     /* renamed from: c  reason: collision with root package name */
-    private u f38845c = null;
+    private u f25154c = null;
     private u d = null;
     private boolean f = false;
     private boolean g = false;
@@ -180,7 +180,7 @@ public class f {
 
     public u a() {
         if (this.f) {
-            return this.f38845c;
+            return this.f25154c;
         }
         return null;
     }
@@ -218,11 +218,11 @@ public class f {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public u c() {
-        return this.f38845c;
+        return this.f25154c;
     }
 
     public String e() {
-        return (this.f38845c == null || QbSdk.f38714a) ? "system webview get nothing..." : this.f38845c.a();
+        return (this.f25154c == null || QbSdk.f25023a) ? "system webview get nothing..." : this.f25154c.a();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

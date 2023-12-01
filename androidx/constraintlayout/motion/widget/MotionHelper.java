@@ -15,29 +15,29 @@ import java.util.HashMap;
 public class MotionHelper extends ConstraintHelper implements MotionHelperInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f2182a;
+    private boolean f2134a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected View[] f2183c;
+    protected View[] f2135c;
     private float d;
 
     public MotionHelper(Context context) {
         super(context);
-        this.f2182a = false;
+        this.f2134a = false;
         this.b = false;
     }
 
     public MotionHelper(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f2182a = false;
+        this.f2134a = false;
         this.b = false;
         a(attributeSet);
     }
 
     public MotionHelper(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f2182a = false;
+        this.f2134a = false;
         this.b = false;
         a(attributeSet);
     }
@@ -59,7 +59,7 @@ public class MotionHelper extends ConstraintHelper implements MotionHelperInterf
             }
             int index = obtainStyledAttributes.getIndex(i2);
             if (index == R.styleable.MotionHelper_onShow) {
-                this.f2182a = obtainStyledAttributes.getBoolean(index, this.f2182a);
+                this.f2134a = obtainStyledAttributes.getBoolean(index, this.f2134a);
             } else if (index == R.styleable.MotionHelper_onHide) {
                 this.b = obtainStyledAttributes.getBoolean(index, this.b);
             }
@@ -83,7 +83,7 @@ public class MotionHelper extends ConstraintHelper implements MotionHelperInterf
 
     @Override // androidx.constraintlayout.motion.widget.MotionHelperInterface
     public boolean isUsedOnShow() {
-        return this.f2182a;
+        return this.f2134a;
     }
 
     @Override // androidx.constraintlayout.motion.widget.MotionHelperInterface
@@ -129,14 +129,14 @@ public class MotionHelper extends ConstraintHelper implements MotionHelperInterf
             }
             return;
         }
-        this.f2183c = c((ConstraintLayout) getParent());
+        this.f2135c = c((ConstraintLayout) getParent());
         int i2 = 0;
         while (true) {
             int i3 = i2;
             if (i3 >= this.k) {
                 return;
             }
-            setProgress(this.f2183c[i3], f);
+            setProgress(this.f2135c[i3], f);
             i2 = i3 + 1;
         }
     }

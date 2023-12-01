@@ -18,7 +18,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/ipc/c.class */
-public abstract class c<SERVICE extends IInterface> implements a.InterfaceC0436a {
+public abstract class c<SERVICE extends IInterface> implements a.InterfaceC0266a {
     protected static final long Code = 3000;
     private static final String Z = "install_service_timeout_task";
     private SERVICE C;
@@ -203,7 +203,7 @@ public abstract class c<SERVICE extends IInterface> implements a.InterfaceC0436a
 
     protected abstract SERVICE Code(IBinder iBinder);
 
-    @Override // com.huawei.openalliance.ad.ipc.a.InterfaceC0436a
+    @Override // com.huawei.openalliance.ad.ipc.a.InterfaceC0266a
     public void Code() {
         synchronized (this) {
             this.V.unbindService(this.L);

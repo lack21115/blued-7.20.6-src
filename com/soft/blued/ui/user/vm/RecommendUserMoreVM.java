@@ -16,14 +16,13 @@ import kotlin.jvm.internal.Intrinsics;
 public final class RecommendUserMoreVM extends BaseListViewModel<UserFindResult> {
 
     /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f34408a;
+    private IRequestHost f20717a;
     private String b;
 
     public final void a(IRequestHost iRequestHost) {
-        this.f34408a = iRequestHost;
+        this.f20717a = iRequestHost;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseViewModel
     public void init(Bundle bundle) {
         String string;
         super.init(bundle);
@@ -38,19 +37,16 @@ public final class RecommendUserMoreVM extends BaseListViewModel<UserFindResult>
         this.b = string;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListViewModel
     public void requestData() {
-        final IRequestHost iRequestHost = this.f34408a;
+        final IRequestHost iRequestHost = this.f20717a;
         BluedUIHttpResponse<BluedEntityA<UserFindResult>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<UserFindResult>>(iRequestHost) { // from class: com.soft.blued.ui.user.vm.RecommendUserMoreVM$requestData$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
-            public void onUIUpdate(BluedEntityA<UserFindResult> result) {
-                Intrinsics.e(result, "result");
-                RecommendUserMoreVM.this.loadListSucceed(result.data, result.hasMore());
+            public void onUIUpdate(BluedEntityA<UserFindResult> bluedEntityA) {
+                Intrinsics.e(bluedEntityA, "result");
+                RecommendUserMoreVM.this.loadListSucceed(bluedEntityA.data, bluedEntityA.hasMore());
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (z) {
@@ -59,7 +55,7 @@ public final class RecommendUserMoreVM extends BaseListViewModel<UserFindResult>
                 RecommendUserMoreVM.this.loadListFailed();
             }
         };
-        IRequestHost iRequestHost2 = this.f34408a;
+        IRequestHost iRequestHost2 = this.f20717a;
         String str = this.b;
         String str2 = str;
         if (str == null) {

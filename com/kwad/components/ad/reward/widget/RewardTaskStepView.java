@@ -101,9 +101,8 @@ public class RewardTaskStepView extends LinearLayout {
         kc();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
     }
 }

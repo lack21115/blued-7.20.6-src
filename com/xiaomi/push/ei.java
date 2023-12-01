@@ -71,7 +71,7 @@ public class ei implements ee {
     @Override // com.xiaomi.push.ee
     public void a(Context context, ea eaVar) {
         if (eaVar != null) {
-            a(context, eaVar.m11708a(), eaVar.c(), eaVar.d());
+            a(context, eaVar.m8658a(), eaVar.c(), eaVar.d());
         }
     }
 }

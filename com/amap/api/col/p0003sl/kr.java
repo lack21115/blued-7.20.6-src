@@ -24,10 +24,10 @@ public final class kr extends ks {
         if (stringBuffer.length() != 53) {
             return new byte[0];
         }
-        byte[] a2 = ib.a(stringBuffer.toString());
-        byte[] bArr2 = new byte[a2.length + bArr.length];
-        System.arraycopy((Object) a2, 0, (Object) bArr2, 0, a2.length);
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, a2.length, bArr.length);
+        byte[] a = ib.a(stringBuffer.toString());
+        byte[] bArr2 = new byte[a.length + bArr.length];
+        System.arraycopy((Object) a, 0, (Object) bArr2, 0, a.length);
+        System.arraycopy((Object) bArr, 0, (Object) bArr2, a.length, bArr.length);
         return bArr2;
     }
 }

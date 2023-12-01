@@ -14,11 +14,11 @@ import androidx.fragment.R;
 public class FragmentLayoutInflaterFactory implements LayoutInflater.Factory2 {
 
     /* renamed from: a  reason: collision with root package name */
-    final FragmentManager f2963a;
+    final FragmentManager f2915a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FragmentLayoutInflaterFactory(FragmentManager fragmentManager) {
-        this.f2963a = fragmentManager;
+        this.f2915a = fragmentManager;
     }
 
     @Override // android.view.LayoutInflater.Factory2
@@ -26,7 +26,7 @@ public class FragmentLayoutInflaterFactory implements LayoutInflater.Factory2 {
         Fragment fragment;
         FragmentStateManager fragmentStateManager;
         if (FragmentContainerView.class.getName().equals(str)) {
-            return new FragmentContainerView(context, attributeSet, this.f2963a);
+            return new FragmentContainerView(context, attributeSet, this.f2915a);
         }
         boolean equals = "fragment".equals(str);
         Fragment fragment2 = null;
@@ -48,33 +48,33 @@ public class FragmentLayoutInflaterFactory implements LayoutInflater.Factory2 {
                 throw new IllegalArgumentException(attributeSet.getPositionDescription() + ": Must specify unique android:id, android:tag, or have a parent with an id for " + str2);
             }
             if (resourceId != -1) {
-                fragment2 = this.f2963a.findFragmentById(resourceId);
+                fragment2 = this.f2915a.findFragmentById(resourceId);
             }
             Fragment fragment3 = fragment2;
             if (fragment2 == null) {
                 fragment3 = fragment2;
                 if (string != null) {
-                    fragment3 = this.f2963a.findFragmentByTag(string);
+                    fragment3 = this.f2915a.findFragmentByTag(string);
                 }
             }
             Fragment fragment4 = fragment3;
             if (fragment3 == null) {
                 fragment4 = fragment3;
                 if (id != -1) {
-                    fragment4 = this.f2963a.findFragmentById(id);
+                    fragment4 = this.f2915a.findFragmentById(id);
                 }
             }
             if (fragment4 == null) {
-                Fragment instantiate = this.f2963a.getFragmentFactory().instantiate(context.getClassLoader(), str2);
+                Fragment instantiate = this.f2915a.getFragmentFactory().instantiate(context.getClassLoader(), str2);
                 instantiate.mFromLayout = true;
                 instantiate.mFragmentId = resourceId != 0 ? resourceId : id;
                 instantiate.mContainerId = id;
                 instantiate.mTag = string;
                 instantiate.mInLayout = true;
-                instantiate.mFragmentManager = this.f2963a;
-                instantiate.mHost = this.f2963a.h();
-                instantiate.onInflate(this.f2963a.h().getContext(), attributeSet, instantiate.mSavedFragmentState);
-                FragmentStateManager i = this.f2963a.i(instantiate);
+                instantiate.mFragmentManager = this.f2915a;
+                instantiate.mHost = this.f2915a.h();
+                instantiate.onInflate(this.f2915a.h().getContext(), attributeSet, instantiate.mSavedFragmentState);
+                FragmentStateManager i = this.f2915a.i(instantiate);
                 fragment = instantiate;
                 fragmentStateManager = i;
                 if (FragmentManager.a(2)) {
@@ -86,10 +86,10 @@ public class FragmentLayoutInflaterFactory implements LayoutInflater.Factory2 {
                 throw new IllegalArgumentException(attributeSet.getPositionDescription() + ": Duplicate id 0x" + Integer.toHexString(resourceId) + ", tag " + string + ", or parent id 0x" + Integer.toHexString(id) + " with another fragment for " + str2);
             } else {
                 fragment4.mInLayout = true;
-                fragment4.mFragmentManager = this.f2963a;
-                fragment4.mHost = this.f2963a.h();
-                fragment4.onInflate(this.f2963a.h().getContext(), attributeSet, fragment4.mSavedFragmentState);
-                FragmentStateManager h = this.f2963a.h(fragment4);
+                fragment4.mFragmentManager = this.f2915a;
+                fragment4.mHost = this.f2915a.h();
+                fragment4.onInflate(this.f2915a.h().getContext(), attributeSet, fragment4.mSavedFragmentState);
+                FragmentStateManager h = this.f2915a.h(fragment4);
                 fragment = fragment4;
                 fragmentStateManager = h;
                 if (FragmentManager.a(2)) {
@@ -116,7 +116,7 @@ public class FragmentLayoutInflaterFactory implements LayoutInflater.Factory2 {
                 public void onViewAttachedToWindow(View view2) {
                     Fragment a2 = fragmentStateManager2.a();
                     fragmentStateManager2.c();
-                    SpecialEffectsController.a((ViewGroup) a2.mView.getParent(), FragmentLayoutInflaterFactory.this.f2963a).d();
+                    SpecialEffectsController.a((ViewGroup) a2.mView.getParent(), FragmentLayoutInflaterFactory.this.f2915a).d();
                 }
 
                 @Override // android.view.View.OnAttachStateChangeListener

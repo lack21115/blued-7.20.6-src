@@ -26,11 +26,11 @@ import mtopsdk.mtop.global.SDKConfig;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private SecurityGuardManager f34915a = null;
+    private SecurityGuardManager f21224a = null;
     private SDKConfig b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private SecurityVerification f34916c;
+    private SecurityVerification f21225c;
 
     public static String a(String str, MtopBusiness mtopBusiness, boolean z, String str2) {
         StringBuilder sb = new StringBuilder();
@@ -141,8 +141,8 @@ public class c {
 
     public String a() {
         try {
-            if (this.f34916c != null) {
-                return this.f34916c.doJAQVerfificationSync((HashMap) null, 20);
+            if (this.f21225c != null) {
+                return this.f21225c.doJAQVerfificationSync((HashMap) null, 20);
             }
             return null;
         } catch (Throwable th) {
@@ -171,10 +171,10 @@ public class c {
         if (aVar.b != null) {
             return aVar.b;
         }
-        IStaticDataStoreComponent staticDataStoreComp = this.f34915a.getStaticDataStoreComp();
+        IStaticDataStoreComponent staticDataStoreComp = this.f21224a.getStaticDataStoreComp();
         try {
             String i = this.b.i();
-            return staticDataStoreComp.getAppKeyByIndex(aVar.f43675a, i != null ? i : "");
+            return staticDataStoreComp.getAppKeyByIndex(aVar.a, i != null ? i : "");
         } catch (Exception e) {
             TBSdkLog.b("mtopsdk.SecuritySignImpl", "[getAppkey]getAppKeyByIndex error.", e);
             return null;
@@ -190,18 +190,18 @@ public class c {
                 long currentTimeMillis = System.currentTimeMillis();
                 this.b = SDKConfig.a();
                 SecurityGuardManager securityGuardManager = SecurityGuardManager.getInstance(context);
-                this.f34915a = securityGuardManager;
+                this.f21224a = securityGuardManager;
                 IStaticDataStoreComponent staticDataStoreComp = securityGuardManager.getStaticDataStoreComp();
                 String i2 = this.b.i();
                 if (i2 == null) {
                     i2 = "";
                 }
                 String appKeyByIndex = staticDataStoreComp.getAppKeyByIndex(i, i2);
-                if (TBSdkLog.a(TBSdkLog.LogEnable.DebugEnable)) {
+                if (TBSdkLog.a(TBSdkLog.LogEnable.b)) {
                     TBSdkLog.a("mtopsdk.SecuritySignImpl", "[init]SecuritySignImpl ISign init.set GlobalAppKey=" + appKeyByIndex);
                 }
-                this.f34916c = new SecurityVerification(context);
-                if (TBSdkLog.a(TBSdkLog.LogEnable.DebugEnable)) {
+                this.f21225c = new SecurityVerification(context);
+                if (TBSdkLog.a(TBSdkLog.LogEnable.b)) {
                     TBSdkLog.a("mtopsdk.SecuritySignImpl", "[init]SecuritySignImpl ISign init succeed.init time=" + (System.currentTimeMillis() - currentTimeMillis));
                     return;
                 }

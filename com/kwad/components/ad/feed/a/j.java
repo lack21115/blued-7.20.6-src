@@ -29,7 +29,7 @@ public final class j extends a implements View.OnClickListener, com.kwad.sdk.wid
     private void c(View view, int i) {
         if (view == this.eC) {
             ru();
-        } else if (com.kwad.components.core.d.b.d.b(new a.C0519a(getContext()).I(this.mAdTemplate), 1) == 1) {
+        } else if (com.kwad.components.core.d.b.d.b(new a.C0349a(getContext()).I(this.mAdTemplate), 1) == 1) {
             aL(i);
         } else {
             boolean ax = com.kwad.sdk.core.response.a.a.ax(this.mAdInfo);

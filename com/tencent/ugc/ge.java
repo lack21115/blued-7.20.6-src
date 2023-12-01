@@ -7,11 +7,11 @@ import com.tencent.liteav.videoproducer.encoder.VideoEncodeParams;
 public final /* synthetic */ class ge implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCVideoProcessor f40413a;
+    private final UGCVideoProcessor f26722a;
     private final VideoEncodeParams b;
 
     private ge(UGCVideoProcessor uGCVideoProcessor, VideoEncodeParams videoEncodeParams) {
-        this.f40413a = uGCVideoProcessor;
+        this.f26722a = uGCVideoProcessor;
         this.b = videoEncodeParams;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class ge implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40413a.mVideoEncodeParams = this.b;
+        this.f26722a.mVideoEncodeParams = this.b;
     }
 }

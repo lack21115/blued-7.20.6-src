@@ -252,6 +252,7 @@ public final class SQLiteConnectionPool implements Closeable {
         Log.w(TAG, sb.toString());
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void markAcquiredConnectionsLocked(AcquiredConnectionStatus acquiredConnectionStatus) {
         if (this.mAcquiredConnections.isEmpty()) {
             return;

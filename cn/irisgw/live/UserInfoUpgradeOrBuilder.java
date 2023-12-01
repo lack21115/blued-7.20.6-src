@@ -24,7 +24,8 @@ public interface UserInfoUpgradeOrBuilder extends MessageOrBuilder {
 
     int getChatFrameBorderColorCount();
 
-    List<String> getChatFrameBorderColorList();
+    /* renamed from: getChatFrameBorderColorList */
+    List<String> mo7872getChatFrameBorderColorList();
 
     ByteString getChatFrameBytes();
 
@@ -36,7 +37,8 @@ public interface UserInfoUpgradeOrBuilder extends MessageOrBuilder {
 
     int getChatFrameFrameColorCount();
 
-    List<String> getChatFrameFrameColorList();
+    /* renamed from: getChatFrameFrameColorList */
+    List<String> mo7873getChatFrameFrameColorList();
 
     int getChatFrameGradientType();
 

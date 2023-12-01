@@ -6,7 +6,7 @@ import com.sdk.tencent.k.a;
 public class KInfo {
 
     /* renamed from: cn  reason: collision with root package name */
-    private String f28020cn;
+    private String f14332cn;
     private String ic;
     private boolean idfd;
     private boolean idfs;
@@ -16,7 +16,7 @@ public class KInfo {
     private int sid;
 
     public String getCn() {
-        return this.f28020cn;
+        return this.f14332cn;
     }
 
     public String getIc() {
@@ -48,7 +48,7 @@ public class KInfo {
     }
 
     public void setCn(String str) {
-        this.f28020cn = str;
+        this.f14332cn = str;
     }
 
     public void setIc(String str) {

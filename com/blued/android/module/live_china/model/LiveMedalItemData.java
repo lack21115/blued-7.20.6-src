@@ -1,5 +1,7 @@
 package com.blued.android.module.live_china.model;
 
+import $r8;
+import dalvik.bytecode.Opcodes;
 import java.io.Serializable;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -19,7 +21,7 @@ public final class LiveMedalItemData implements Serializable {
     private int type;
 
     public LiveMedalItemData() {
-        this(0L, 0L, 0, 0, null, null, null, null, null, 511, null);
+        this(0L, 0L, 0, 0, null, null, null, null, null, Opcodes.OP_CHECK_CAST_JUMBO, null);
     }
 
     public LiveMedalItemData(long j, long j2, int i, int i2, String str, String str2, String str3, String str4, String str5) {
@@ -153,8 +155,8 @@ public final class LiveMedalItemData implements Serializable {
     }
 
     public int hashCode() {
-        int hashCode = C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.created_time);
-        int hashCode2 = C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.expire_time);
+        int hashCode = $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.created_time);
+        int hashCode2 = $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.expire_time);
         int i = this.is_hide_expire_time;
         int i2 = this.type;
         String str = this.badge_id;

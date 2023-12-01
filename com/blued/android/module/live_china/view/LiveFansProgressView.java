@@ -17,13 +17,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveFansProgressView.class */
 public final class LiveFansProgressView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f14462a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14463c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -49,14 +45,14 @@ public final class LiveFansProgressView extends FrameLayout {
         this.d = DensityUtil.a(10.0f);
         this.e = DensityUtil.a(2.5f);
         this.f = DensityUtil.a(8.0f);
-        LiveFansProgressViewBinding a2 = LiveFansProgressViewBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(\n            Lay…ontext), this, true\n    )");
-        this.h = a2;
+        LiveFansProgressViewBinding a = LiveFansProgressViewBinding.a(LayoutInflater.from(getContext()), this, true);
+        Intrinsics.c(a, "inflate(\n            Lay…ontext), this, true\n    )");
+        this.h = a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a() {
-        if (this.b == 0 || this.f14462a == 0) {
+        if (this.b == 0 || this.a == 0) {
             return;
         }
         Log.i("==xpp", "setLayout");
@@ -70,59 +66,59 @@ public final class LiveFansProgressView extends FrameLayout {
         marginLayoutParams.rightMargin = this.d;
         LiveFansProgressViewBinding liveFansProgressViewBinding2 = this.h;
         (liveFansProgressViewBinding2 == null ? null : liveFansProgressViewBinding2.e).setLayoutParams(marginLayoutParams);
-        this.f14463c = (this.f14462a - marginLayoutParams.leftMargin) - marginLayoutParams.rightMargin;
+        this.c = (this.a - marginLayoutParams.leftMargin) - marginLayoutParams.rightMargin;
         LiveFansProgressViewBinding liveFansProgressViewBinding3 = this.h;
         ViewGroup.LayoutParams layoutParams2 = (liveFansProgressViewBinding3 == null ? null : liveFansProgressViewBinding3.b).getLayoutParams();
         if (layoutParams2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
         }
         ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) layoutParams2;
-        marginLayoutParams2.leftMargin = (this.f14462a - this.d) - this.e;
+        marginLayoutParams2.leftMargin = (this.a - this.d) - this.e;
         LiveFansProgressViewBinding liveFansProgressViewBinding4 = this.h;
         (liveFansProgressViewBinding4 == null ? null : liveFansProgressViewBinding4.b).setLayoutParams(marginLayoutParams2);
         LiveFansProgressViewBinding liveFansProgressViewBinding5 = this.h;
         (liveFansProgressViewBinding5 == null ? null : liveFansProgressViewBinding5.d).post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveFansProgressView$moVAoN9uz3pfI5doB4JGYyYwldI
             @Override // java.lang.Runnable
             public final void run() {
-                LiveFansProgressView.m4215setLayout$lambda0(LiveFansProgressView.this);
+                LiveFansProgressView.m10293setLayout$lambda0(LiveFansProgressView.this);
             }
         });
         LiveFansProgressViewBinding liveFansProgressViewBinding6 = this.h;
         (liveFansProgressViewBinding6 == null ? null : liveFansProgressViewBinding6.f).post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveFansProgressView$bDPbwfZKuUeUGH77K0Kp1FEaj3s
             @Override // java.lang.Runnable
             public final void run() {
-                LiveFansProgressView.m4216setLayout$lambda1(LiveFansProgressView.this);
+                LiveFansProgressView.m10294setLayout$lambda1(LiveFansProgressView.this);
             }
         });
     }
 
     private final void getWH() {
         LiveFansProgressViewBinding liveFansProgressViewBinding = this.h;
-        (liveFansProgressViewBinding == null ? null : liveFansProgressViewBinding.f12196a).getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.blued.android.module.live_china.view.LiveFansProgressView$getWH$1
+        (liveFansProgressViewBinding == null ? null : liveFansProgressViewBinding.a).getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.blued.android.module.live_china.view.LiveFansProgressView$getWH$1
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public void onGlobalLayout() {
                 LiveFansProgressView liveFansProgressView = LiveFansProgressView.this;
                 LiveFansProgressViewBinding binding = liveFansProgressView.getBinding();
-                liveFansProgressView.setTotalWidth((binding == null ? null : binding.f12196a).getWidth());
+                liveFansProgressView.setTotalWidth((binding == null ? null : binding.a).getWidth());
                 Log.i("==xpp", Intrinsics.a("totalWidth:", (Object) Integer.valueOf(LiveFansProgressView.this.getTotalWidth())));
                 if (LiveFansProgressView.this.getTotalWidth() != 0) {
                     LiveFansProgressViewBinding binding2 = LiveFansProgressView.this.getBinding();
-                    (binding2 == null ? null : binding2.f12196a).getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    (binding2 == null ? null : binding2.a).getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     LiveFansProgressView.this.a();
                 }
             }
         });
         LiveFansProgressViewBinding liveFansProgressViewBinding2 = this.h;
-        (liveFansProgressViewBinding2 == null ? null : liveFansProgressViewBinding2.f12197c).getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.blued.android.module.live_china.view.LiveFansProgressView$getWH$2
+        (liveFansProgressViewBinding2 == null ? null : liveFansProgressViewBinding2.c).getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.blued.android.module.live_china.view.LiveFansProgressView$getWH$2
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public void onGlobalLayout() {
                 LiveFansProgressView liveFansProgressView = LiveFansProgressView.this;
                 LiveFansProgressViewBinding binding = liveFansProgressView.getBinding();
-                liveFansProgressView.setLeftWidth((binding == null ? null : binding.f12197c).getWidth());
+                liveFansProgressView.setLeftWidth((binding == null ? null : binding.c).getWidth());
                 Log.i("==xpp", Intrinsics.a("leftWidth:", (Object) Integer.valueOf(LiveFansProgressView.this.getLeftWidth())));
                 if (LiveFansProgressView.this.getLeftWidth() != 0) {
                     LiveFansProgressViewBinding binding2 = LiveFansProgressView.this.getBinding();
-                    (binding2 == null ? null : binding2.f12197c).getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    (binding2 == null ? null : binding2.c).getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     LiveFansProgressView.this.a();
                 }
             }
@@ -131,7 +127,7 @@ public final class LiveFansProgressView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setLayout$lambda-0  reason: not valid java name */
-    public static final void m4215setLayout$lambda0(LiveFansProgressView this$0) {
+    public static final void m10293setLayout$lambda0(LiveFansProgressView this$0) {
         Intrinsics.e(this$0, "this$0");
         LiveFansProgressViewBinding liveFansProgressViewBinding = this$0.h;
         ViewGroup.LayoutParams layoutParams = (liveFansProgressViewBinding == null ? null : liveFansProgressViewBinding.d).getLayoutParams();
@@ -144,7 +140,7 @@ public final class LiveFansProgressView extends FrameLayout {
             Intrinsics.a(liveFansInfoModel);
             if (liveFansInfoModel.next_level_relation > 0) {
                 int i = this$0.b;
-                int i2 = this$0.f14463c;
+                int i2 = this$0.c;
                 LiveFansInfoModel liveFansInfoModel2 = this$0.g;
                 Intrinsics.a(liveFansInfoModel2);
                 int i3 = liveFansInfoModel2.relation;
@@ -159,7 +155,7 @@ public final class LiveFansProgressView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setLayout$lambda-1  reason: not valid java name */
-    public static final void m4216setLayout$lambda1(LiveFansProgressView this$0) {
+    public static final void m10294setLayout$lambda1(LiveFansProgressView this$0) {
         Intrinsics.e(this$0, "this$0");
         LiveFansProgressViewBinding liveFansProgressViewBinding = this$0.h;
         ViewGroup.LayoutParams layoutParams = (liveFansProgressViewBinding == null ? null : liveFansProgressViewBinding.f).getLayoutParams();
@@ -172,7 +168,7 @@ public final class LiveFansProgressView extends FrameLayout {
             Intrinsics.a(liveFansInfoModel);
             if (liveFansInfoModel.next_level_relation > 0) {
                 int i = this$0.b;
-                int i2 = this$0.f14463c;
+                int i2 = this$0.c;
                 LiveFansInfoModel liveFansInfoModel2 = this$0.g;
                 Intrinsics.a(liveFansInfoModel2);
                 int i3 = liveFansInfoModel2.relation;
@@ -182,12 +178,12 @@ public final class LiveFansProgressView extends FrameLayout {
                 LiveFansProgressViewBinding liveFansProgressViewBinding2 = this$0.h;
                 int width = ((i + i4) - ((liveFansProgressViewBinding2 == null ? null : liveFansProgressViewBinding2.f).getWidth() / 2)) - this$0.e;
                 int i5 = this$0.b;
-                int i6 = this$0.f14463c;
+                int i6 = this$0.c;
                 LiveFansProgressViewBinding liveFansProgressViewBinding3 = this$0.h;
                 int i7 = width;
                 if (width > ((i5 + i6) - (liveFansProgressViewBinding3 == null ? null : liveFansProgressViewBinding3.f).getWidth()) - this$0.e) {
                     int i8 = this$0.b;
-                    int i9 = this$0.f14463c;
+                    int i9 = this$0.c;
                     LiveFansProgressViewBinding liveFansProgressViewBinding4 = this$0.h;
                     i7 = ((i8 + i9) - (liveFansProgressViewBinding4 == null ? null : liveFansProgressViewBinding4.f).getWidth()) - this$0.e;
                 }
@@ -215,7 +211,7 @@ public final class LiveFansProgressView extends FrameLayout {
     }
 
     public final int getMiddleWidth() {
-        return this.f14463c;
+        return this.c;
     }
 
     public final int getPointWidth() {
@@ -227,7 +223,7 @@ public final class LiveFansProgressView extends FrameLayout {
     }
 
     public final int getTotalWidth() {
-        return this.f14462a;
+        return this.a;
     }
 
     public final void setBinding(LiveFansProgressViewBinding liveFansProgressViewBinding) {
@@ -263,7 +259,7 @@ public final class LiveFansProgressView extends FrameLayout {
             j = 0;
         }
         LiveFansProgressViewBinding liveFansProgressViewBinding = this.h;
-        ShapeTextView shapeTextView = liveFansProgressViewBinding == null ? null : liveFansProgressViewBinding.f12197c;
+        ShapeTextView shapeTextView = liveFansProgressViewBinding == null ? null : liveFansProgressViewBinding.c;
         LiveFansInfoModel liveFansInfoModel3 = this.g;
         Intrinsics.a(liveFansInfoModel3);
         shapeTextView.setText(Intrinsics.a("Lv", (Object) Integer.valueOf(liveFansInfoModel3.level)));
@@ -296,7 +292,7 @@ public final class LiveFansProgressView extends FrameLayout {
     }
 
     public final void setMiddleWidth(int i) {
-        this.f14463c = i;
+        this.c = i;
     }
 
     public final void setPointWidth(int i) {
@@ -308,6 +304,6 @@ public final class LiveFansProgressView extends FrameLayout {
     }
 
     public final void setTotalWidth(int i) {
-        this.f14462a = i;
+        this.a = i;
     }
 }

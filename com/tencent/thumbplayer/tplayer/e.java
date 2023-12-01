@@ -7,10 +7,10 @@ class e {
     static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        long f39408a;
+        long f25717a;
         long b;
 
         /* renamed from: c  reason: collision with root package name */
-        Object f39409c;
+        Object f25718c;
     }
 }

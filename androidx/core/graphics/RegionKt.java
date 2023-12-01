@@ -13,38 +13,38 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/graphics/RegionKt.class */
 public final class RegionKt {
-    public static final Region and(Region region, Rect r) {
+    public static final Region and(Region region, Rect rect) {
         Intrinsics.e(region, "<this>");
-        Intrinsics.e(r, "r");
+        Intrinsics.e(rect, "r");
         Region region2 = new Region(region);
-        region2.op(r, Region.Op.INTERSECT);
+        region2.op(rect, Region.Op.INTERSECT);
         return region2;
     }
 
-    public static final Region and(Region region, Region r) {
+    public static final Region and(Region region, Region region2) {
         Intrinsics.e(region, "<this>");
-        Intrinsics.e(r, "r");
-        Region region2 = new Region(region);
-        region2.op(r, Region.Op.INTERSECT);
-        return region2;
+        Intrinsics.e(region2, "r");
+        Region region3 = new Region(region);
+        region3.op(region2, Region.Op.INTERSECT);
+        return region3;
     }
 
-    public static final boolean contains(Region region, Point p) {
+    public static final boolean contains(Region region, Point point) {
         Intrinsics.e(region, "<this>");
-        Intrinsics.e(p, "p");
-        return region.contains(p.x, p.y);
+        Intrinsics.e(point, "p");
+        return region.contains(point.x, point.y);
     }
 
-    public static final void forEach(Region region, Function1<? super Rect, Unit> action) {
+    public static final void forEach(Region region, Function1<? super Rect, Unit> function1) {
         Intrinsics.e(region, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function1, "action");
         RegionIterator regionIterator = new RegionIterator(region);
         while (true) {
             Rect rect = new Rect();
             if (!regionIterator.next(rect)) {
                 return;
             }
-            action.invoke(rect);
+            function1.invoke(rect);
         }
     }
 
@@ -53,20 +53,20 @@ public final class RegionKt {
         return new RegionKt$iterator$1(region);
     }
 
-    public static final Region minus(Region region, Rect r) {
+    public static final Region minus(Region region, Rect rect) {
         Intrinsics.e(region, "<this>");
-        Intrinsics.e(r, "r");
+        Intrinsics.e(rect, "r");
         Region region2 = new Region(region);
-        region2.op(r, Region.Op.DIFFERENCE);
+        region2.op(rect, Region.Op.DIFFERENCE);
         return region2;
     }
 
-    public static final Region minus(Region region, Region r) {
+    public static final Region minus(Region region, Region region2) {
         Intrinsics.e(region, "<this>");
-        Intrinsics.e(r, "r");
-        Region region2 = new Region(region);
-        region2.op(r, Region.Op.DIFFERENCE);
-        return region2;
+        Intrinsics.e(region2, "r");
+        Region region3 = new Region(region);
+        region3.op(region2, Region.Op.DIFFERENCE);
+        return region3;
     }
 
     public static final Region not(Region region) {
@@ -76,36 +76,36 @@ public final class RegionKt {
         return region2;
     }
 
-    public static final Region or(Region region, Rect r) {
+    public static final Region or(Region region, Rect rect) {
         Intrinsics.e(region, "<this>");
-        Intrinsics.e(r, "r");
+        Intrinsics.e(rect, "r");
         Region region2 = new Region(region);
-        region2.union(r);
+        region2.union(rect);
         return region2;
     }
 
-    public static final Region or(Region region, Region r) {
+    public static final Region or(Region region, Region region2) {
         Intrinsics.e(region, "<this>");
-        Intrinsics.e(r, "r");
+        Intrinsics.e(region2, "r");
+        Region region3 = new Region(region);
+        region3.op(region2, Region.Op.UNION);
+        return region3;
+    }
+
+    public static final Region plus(Region region, Rect rect) {
+        Intrinsics.e(region, "<this>");
+        Intrinsics.e(rect, "r");
         Region region2 = new Region(region);
-        region2.op(r, Region.Op.UNION);
+        region2.union(rect);
         return region2;
     }
 
-    public static final Region plus(Region region, Rect r) {
+    public static final Region plus(Region region, Region region2) {
         Intrinsics.e(region, "<this>");
-        Intrinsics.e(r, "r");
-        Region region2 = new Region(region);
-        region2.union(r);
-        return region2;
-    }
-
-    public static final Region plus(Region region, Region r) {
-        Intrinsics.e(region, "<this>");
-        Intrinsics.e(r, "r");
-        Region region2 = new Region(region);
-        region2.op(r, Region.Op.UNION);
-        return region2;
+        Intrinsics.e(region2, "r");
+        Region region3 = new Region(region);
+        region3.op(region2, Region.Op.UNION);
+        return region3;
     }
 
     public static final Region unaryMinus(Region region) {
@@ -115,19 +115,19 @@ public final class RegionKt {
         return region2;
     }
 
-    public static final Region xor(Region region, Rect r) {
+    public static final Region xor(Region region, Rect rect) {
         Intrinsics.e(region, "<this>");
-        Intrinsics.e(r, "r");
+        Intrinsics.e(rect, "r");
         Region region2 = new Region(region);
-        region2.op(r, Region.Op.XOR);
+        region2.op(rect, Region.Op.XOR);
         return region2;
     }
 
-    public static final Region xor(Region region, Region r) {
+    public static final Region xor(Region region, Region region2) {
         Intrinsics.e(region, "<this>");
-        Intrinsics.e(r, "r");
-        Region region2 = new Region(region);
-        region2.op(r, Region.Op.XOR);
-        return region2;
+        Intrinsics.e(region2, "r");
+        Region region3 = new Region(region);
+        region3.op(region2, Region.Op.XOR);
+        return region3;
     }
 }

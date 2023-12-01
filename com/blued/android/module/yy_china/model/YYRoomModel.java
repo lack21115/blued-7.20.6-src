@@ -1,6 +1,7 @@
 package com.blued.android.module.yy_china.model;
 
 import android.text.TextUtils;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.framework.utils.StringUtils;
 import com.blued.android.module.yy_china.manager.YYObserverManager;
 import com.blued.android.module.yy_china.manager.YYRoomInfoManager;
@@ -315,7 +316,7 @@ public class YYRoomModel {
     }
 
     public boolean isKTVChannel() {
-        return TextUtils.equals("6", this.chat_type);
+        return TextUtils.equals(ATAdConst.ATDevFrameworkType.FLUTTER, this.chat_type);
     }
 
     public boolean isPking() {

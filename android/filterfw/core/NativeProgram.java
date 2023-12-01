@@ -1,5 +1,7 @@
 package android.filterfw.core;
 
+import com.tencent.tinker.loader.shareutil.ShareConstants;
+
 /* loaded from: source-9557208-dex2jar.jar:android/filterfw/core/NativeProgram.class */
 public class NativeProgram extends Program {
     private boolean mHasGetValueFunction;
@@ -21,7 +23,7 @@ public class NativeProgram extends Program {
         this.mHasGetValueFunction = false;
         this.mHasResetFunction = false;
         allocate();
-        String str3 = "lib" + str + ".so";
+        String str3 = ShareConstants.SO_PATH + str + ".so";
         if (!openNativeLibrary(str3)) {
             throw new RuntimeException("Could not find native library named '" + str3 + "' required for native program!");
         }

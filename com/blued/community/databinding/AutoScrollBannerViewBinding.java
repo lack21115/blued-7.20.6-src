@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/AutoScrollBannerViewBinding.class */
 public final class AutoScrollBannerViewBinding implements ViewBinding {
+    private final CardView a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final CardView f18784a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f18784a;
+        return this.a;
     }
 }

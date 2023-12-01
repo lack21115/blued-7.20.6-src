@@ -17,18 +17,18 @@ public class ih implements lh {
         g4.c.d dVar;
         if ((g4Var instanceof b4) && g4Var.a()) {
             b4 b4Var = (b4) g4Var;
-            AggregationOverlayProvider honeyCombVectorOverlayProvider = b4Var.b.f37308c.f37309c.f37310a.f37313a.f37312c.equals("hexagon") ? new HoneyCombVectorOverlayProvider() : b4Var.b.f37308c.f37309c.f37310a.f37313a.f37312c.equals("grid") ? new SquareVectorOverlayProvider() : null;
+            AggregationOverlayProvider honeyCombVectorOverlayProvider = b4Var.b.f23617c.f23618c.f23619a.f23622a.f23621c.equals("hexagon") ? new HoneyCombVectorOverlayProvider() : b4Var.b.f23617c.f23618c.f23619a.f23622a.f23621c.equals("grid") ? new SquareVectorOverlayProvider() : null;
             if (honeyCombVectorOverlayProvider == null) {
                 return null;
             }
             ArrayList arrayList = new ArrayList();
-            for (g4.a.C0957a.AbstractC0958a abstractC0958a : b4Var.b.b.b) {
-                if (abstractC0958a instanceof g4.a.C0957a.e) {
-                    arrayList.addAll(((g4.a.C0957a.e) abstractC0958a).f37463c);
+            for (g4.a.C0787a.AbstractC0788a abstractC0788a : b4Var.b.b.b) {
+                if (abstractC0788a instanceof g4.a.C0787a.e) {
+                    arrayList.addAll(((g4.a.C0787a.e) abstractC0788a).f23772c);
                 }
             }
             AggregationOverlayProvider nodes = honeyCombVectorOverlayProvider.nodes((WeightedLatLng[]) arrayList.toArray(new WeightedLatLng[0]));
-            int size = b4Var.b.f37308c.f37309c.f37310a.f37313a.d.b.size();
+            int size = b4Var.b.f23617c.f23618c.f23619a.f23622a.d.b.size();
             int[] iArr = new int[size];
             int i = 0;
             while (true) {
@@ -36,38 +36,38 @@ public class ih implements lh {
                 if (i2 >= size) {
                     break;
                 }
-                iArr[i2] = b4Var.b.f37308c.f37309c.f37310a.f37313a.d.b.get(i2).intValue();
+                iArr[i2] = b4Var.b.f23617c.f23618c.f23619a.f23622a.d.b.get(i2).intValue();
                 i = i2 + 1;
             }
-            double[] dArr = new double[b4Var.b.f37308c.f37309c.f37310a.f37313a.d.f37471a.size()];
+            double[] dArr = new double[b4Var.b.f23617c.f23618c.f23619a.f23622a.d.f23780a.size()];
             int i3 = 0;
             while (true) {
                 int i4 = i3;
                 if (i4 >= size) {
                     break;
                 }
-                dArr[i4] = b4Var.b.f37308c.f37309c.f37310a.f37313a.d.f37471a.get(i4).doubleValue();
+                dArr[i4] = b4Var.b.f23617c.f23618c.f23619a.f23622a.d.f23780a.get(i4).doubleValue();
                 i3 = i4 + 1;
             }
             nodes.colors(iArr, dArr);
-            nodes.size(b4Var.b.f37308c.f37309c.f37310a.f37313a.b);
-            nodes.gap(b4Var.b.f37308c.f37309c.f37310a.f37313a.f37311a);
-            nodes.setHeightRange(b4Var.b.f37308c.d.k.get(0).doubleValue(), b4Var.b.f37308c.d.k.get(1).doubleValue());
-            b4.a.C0946a.C0947a c0947a = b4Var.b.f37308c.d;
-            nodes.setIntensityRange(c0947a.i, c0947a.h);
-            b4.a.C0946a.C0947a c0947a2 = b4Var.b.f37308c.d;
-            nodes.zoomRange(c0947a2.f, c0947a2.e);
-            nodes.zIndex(b4Var.b.f37308c.d.b);
-            nodes.displayLevel(b4Var.b.f37308c.d.f37466a);
-            nodes.enable3D(b4Var.b.f37308c.d.j);
-            nodes.opacity((float) b4Var.b.f37308c.d.d);
-            nodes.visibility(!b4Var.b.f37308c.d.f37467c);
-            b4.a.C0946a c0946a = b4Var.b.f37308c;
-            if (!c0946a.d.l || (dVar = c0946a.f37309c.f37310a.f37313a.e) == null) {
+            nodes.size(b4Var.b.f23617c.f23618c.f23619a.f23622a.b);
+            nodes.gap(b4Var.b.f23617c.f23618c.f23619a.f23622a.f23620a);
+            nodes.setHeightRange(b4Var.b.f23617c.d.k.get(0).doubleValue(), b4Var.b.f23617c.d.k.get(1).doubleValue());
+            b4.a.C0776a.C0777a c0777a = b4Var.b.f23617c.d;
+            nodes.setIntensityRange(c0777a.i, c0777a.h);
+            b4.a.C0776a.C0777a c0777a2 = b4Var.b.f23617c.d;
+            nodes.zoomRange(c0777a2.f, c0777a2.e);
+            nodes.zIndex(b4Var.b.f23617c.d.b);
+            nodes.displayLevel(b4Var.b.f23617c.d.f23775a);
+            nodes.enable3D(b4Var.b.f23617c.d.j);
+            nodes.opacity((float) b4Var.b.f23617c.d.d);
+            nodes.visibility(!b4Var.b.f23617c.d.f23776c);
+            b4.a.C0776a c0776a = b4Var.b.f23617c;
+            if (!c0776a.d.l || (dVar = c0776a.f23618c.f23619a.f23622a.e) == null) {
                 nodes.setAnimateDuration(0);
                 return nodes;
             }
-            nodes.setAnimateDuration((int) (dVar.f37470a * 1000.0d));
+            nodes.setAnimateDuration((int) (dVar.f23779a * 1000.0d));
             return nodes;
         }
         return null;

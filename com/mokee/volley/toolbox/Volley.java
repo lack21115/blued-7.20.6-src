@@ -5,9 +5,7 @@ import com.mokee.volley.RequestQueue;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/Volley.class */
 public class Volley {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f24272a = null;
+    private static final String[] a = null;
 
     static {
         String[] strArr = new String[2];
@@ -31,12 +29,12 @@ public class Volley {
             r1 = r0
             r2 = r6
             java.io.File r2 = r2.getCacheDir()
-            java.lang.String[] r3 = com.mokee.volley.toolbox.Volley.f24272a
+            java.lang.String[] r3 = com.mokee.volley.toolbox.Volley.a
             r4 = 0
             r3 = r3[r4]
             r1.<init>(r2, r3)
             r10 = r0
-            java.lang.String[] r0 = com.mokee.volley.toolbox.Volley.f24272a
+            java.lang.String[] r0 = com.mokee.volley.toolbox.Volley.a
             r1 = 1
             r0 = r0[r1]
             r9 = r0

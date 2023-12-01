@@ -23,11 +23,11 @@ import java.text.DecimalFormat;
 public class GiftGivingOptionViewNew extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f32274a;
+    public int f18584a;
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public View f32275c;
+    public View f18585c;
     private ShapeLinearLayout d;
     private TextView e;
     private TextView f;
@@ -39,21 +39,21 @@ public class GiftGivingOptionViewNew extends LinearLayout {
 
     public GiftGivingOptionViewNew(Context context) {
         super(context);
-        this.f32274a = 2;
+        this.f18584a = 2;
         this.b = context;
         a();
     }
 
     public GiftGivingOptionViewNew(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f32274a = 2;
+        this.f18584a = 2;
         this.b = context;
         a();
     }
 
     public GiftGivingOptionViewNew(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f32274a = 2;
+        this.f18584a = 2;
         this.b = context;
         a();
     }
@@ -77,15 +77,15 @@ public class GiftGivingOptionViewNew extends LinearLayout {
 
     public void a() {
         View inflate = LayoutInflater.from(this.b).inflate(R.layout.item_gift_giving_option_dialog_new, this);
-        this.f32275c = inflate;
-        this.d = (ShapeLinearLayout) inflate.findViewById(R.id.ll_item);
-        this.g = (ImageView) this.f32275c.findViewById(2131364552);
-        this.h = (TextView) this.f32275c.findViewById(2131372046);
-        this.e = (TextView) this.f32275c.findViewById(R.id.tv_per_amount);
-        this.f = (TextView) this.f32275c.findViewById(R.id.tv_favourate);
-        this.i = (TextView) this.f32275c.findViewById(R.id.tv_stock);
-        this.j = (TextView) this.f32275c.findViewById(2131372795);
-        this.k = (TextView) this.f32275c.findViewById(R.id.tv_package_cnt);
+        this.f18585c = inflate;
+        this.d = inflate.findViewById(R.id.ll_item);
+        this.g = (ImageView) this.f18585c.findViewById(2131364552);
+        this.h = (TextView) this.f18585c.findViewById(2131372046);
+        this.e = (TextView) this.f18585c.findViewById(R.id.tv_per_amount);
+        this.f = (TextView) this.f18585c.findViewById(R.id.tv_favourate);
+        this.i = (TextView) this.f18585c.findViewById(R.id.tv_stock);
+        this.j = (TextView) this.f18585c.findViewById(R.id.tv_top);
+        this.k = (TextView) this.f18585c.findViewById(R.id.tv_package_cnt);
     }
 
     public void a(IRequestHost iRequestHost, UserGiftPackageModel userGiftPackageModel) {
@@ -163,13 +163,13 @@ public class GiftGivingOptionViewNew extends LinearLayout {
         } else {
             this.h.setText(giftGivingOptionForJsonParse.gift_name_tw);
         }
-        if (this.f32274a != 3) {
+        if (this.f18584a != 3) {
             DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
             TextView textView = this.e;
             textView.setText("¥" + decimalFormat.format(giftGivingOptionForJsonParse.money));
         } else {
             TextView textView2 = this.e;
-            textView2.setText(giftGivingOptionForJsonParse.beans + getContext().getString(2131889580));
+            textView2.setText(giftGivingOptionForJsonParse.beans + getContext().getString(R.string.live_gift_bean));
         }
         if (giftGivingOptionForJsonParse.type == 2) {
             this.j.setVisibility(0);

@@ -1,5 +1,6 @@
 package com.igexin.push.core.a.c;
 
+import android.R;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -13,6 +14,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Parcelable;
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.igexin.push.extension.mod.BaseActionBean;
 import com.igexin.push.extension.mod.PushMessageInterface;
 import com.igexin.push.extension.mod.PushTaskBean;
@@ -29,11 +31,11 @@ import java.util.Random;
 public class g implements PushMessageInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23414a = com.igexin.push.core.b.e + g.class.getName();
+    private static final String f9806a = com.igexin.push.core.b.e + g.class.getName();
     private static final int b = 131;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23415c = "push_small";
+    private static final String f9807c = "push_small";
 
     /* loaded from: source-7994992-dex2jar.jar:com/igexin/push/core/a/c/g$a.class */
     enum a {
@@ -57,13 +59,13 @@ public class g implements PushMessageInterface {
         int i = 0;
         if (!z) {
             if (!TextUtils.isEmpty(com.igexin.push.core.e.aL)) {
-                int identifier = com.igexin.push.core.e.l.getResources().getIdentifier(com.igexin.push.core.e.aL, com.anythink.expressad.foundation.h.i.f7952c, com.igexin.push.core.e.g);
+                int identifier = com.igexin.push.core.e.l.getResources().getIdentifier(com.igexin.push.core.e.aL, com.anythink.expressad.foundation.h.i.f5112c, com.igexin.push.core.e.g);
                 i = identifier;
                 if (identifier == 0) {
                     i = com.igexin.push.core.e.l.getResources().getIdentifier(com.igexin.push.core.e.aL, "mipmap", com.igexin.push.core.e.g);
                 }
             }
-            int identifier2 = com.igexin.push.core.e.l.getResources().getIdentifier("push", com.anythink.expressad.foundation.h.i.f7952c, com.igexin.push.core.e.g);
+            int identifier2 = com.igexin.push.core.e.l.getResources().getIdentifier("push", com.anythink.expressad.foundation.h.i.f5112c, com.igexin.push.core.e.g);
             int i2 = identifier2;
             if (identifier2 == 0) {
                 i2 = com.igexin.push.core.e.l.getResources().getIdentifier("push", "mipmap", com.igexin.push.core.e.g);
@@ -72,9 +74,9 @@ public class g implements PushMessageInterface {
                 return i > 0 ? i : i2;
             } else if (kVar.f.startsWith("@")) {
                 String str = kVar.f;
-                return str.substring(1, str.length()).endsWith("email") ? 17301647 : 17301651;
+                return str.substring(1, str.length()).endsWith("email") ? R.drawable.sym_action_email : R.drawable.sym_def_app_icon;
             } else {
-                int identifier3 = com.igexin.push.core.e.l.getResources().getIdentifier(kVar.f, com.anythink.expressad.foundation.h.i.f7952c, com.igexin.push.core.e.g);
+                int identifier3 = com.igexin.push.core.e.l.getResources().getIdentifier(kVar.f, com.anythink.expressad.foundation.h.i.f5112c, com.igexin.push.core.e.g);
                 int i3 = identifier3;
                 if (identifier3 == 0) {
                     i3 = com.igexin.push.core.e.l.getResources().getIdentifier(kVar.f, "mipmap", com.igexin.push.core.e.g);
@@ -83,7 +85,7 @@ public class g implements PushMessageInterface {
             }
         }
         if (!TextUtils.isEmpty(com.igexin.push.core.e.aK)) {
-            int identifier4 = com.igexin.push.core.e.l.getResources().getIdentifier(com.igexin.push.core.e.aK, com.anythink.expressad.foundation.h.i.f7952c, com.igexin.push.core.e.g);
+            int identifier4 = com.igexin.push.core.e.l.getResources().getIdentifier(com.igexin.push.core.e.aK, com.anythink.expressad.foundation.h.i.f5112c, com.igexin.push.core.e.g);
             int i4 = identifier4;
             if (identifier4 == 0) {
                 i4 = com.igexin.push.core.e.l.getResources().getIdentifier(com.igexin.push.core.e.aK, "mipmap", com.igexin.push.core.e.g);
@@ -92,17 +94,17 @@ public class g implements PushMessageInterface {
                 return i4;
             }
         }
-        int identifier5 = com.igexin.push.core.e.l.getResources().getIdentifier(f23415c, com.anythink.expressad.foundation.h.i.f7952c, com.igexin.push.core.e.g);
+        int identifier5 = com.igexin.push.core.e.l.getResources().getIdentifier(f9807c, com.anythink.expressad.foundation.h.i.f5112c, com.igexin.push.core.e.g);
         int i5 = identifier5;
         if (identifier5 == 0) {
-            i5 = com.igexin.push.core.e.l.getResources().getIdentifier(f23415c, "mipmap", com.igexin.push.core.e.g);
+            i5 = com.igexin.push.core.e.l.getResources().getIdentifier(f9807c, "mipmap", com.igexin.push.core.e.g);
         }
         if (i5 != 0) {
-            com.igexin.c.a.c.a.a(f23414a + "|push_small.png is set, use default push_small", new Object[0]);
+            com.igexin.c.a.c.a.a(f9806a + "|push_small.png is set, use default push_small", new Object[0]);
             return i5;
         }
-        com.igexin.c.a.c.a.a(f23414a, "|push_small.png is missing");
-        com.igexin.c.a.c.a.a(f23414a + "|push_small.png is missing", new Object[0]);
+        com.igexin.c.a.c.a.a(f9806a, "|push_small.png is missing");
+        com.igexin.c.a.c.a.a(f9806a + "|push_small.png is missing", new Object[0]);
         return com.igexin.push.core.e.l.getApplicationInfo().icon;
     }
 
@@ -150,7 +152,7 @@ public class g implements PushMessageInterface {
         Intent intent = new Intent();
         intent.putExtra("taskid", str2);
         intent.putExtra("messageid", str3);
-        intent.putExtra("appid", com.igexin.push.core.e.f23495a);
+        intent.putExtra("appid", com.igexin.push.core.e.f9887a);
         intent.putExtra("actionid", kVar.getDoActionId());
         intent.putExtra("accesstoken", com.igexin.push.core.e.aC);
         intent.putExtra("notifID", i2);
@@ -164,7 +166,7 @@ public class g implements PushMessageInterface {
         intent.putExtra("isFloat", false);
         intent.putExtra("checkpackage", com.igexin.push.core.e.l.getPackageName());
         intent.putExtra("feedbackid", kVar.getActionId().substring(kVar.getActionId().length() - 1));
-        String str4 = kVar.f23446a;
+        String str4 = kVar.f9838a;
         String str5 = str4;
         if (str4 == null) {
             str5 = "";
@@ -204,7 +206,7 @@ public class g implements PushMessageInterface {
             Intent intent = new Intent(context, com.igexin.push.core.a.b.a(com.igexin.push.core.e.l));
             intent.putExtra("taskid", str3);
             intent.putExtra("messageid", str4);
-            intent.putExtra("appid", com.igexin.push.core.e.f23495a);
+            intent.putExtra("appid", com.igexin.push.core.e.f9887a);
             intent.putExtra("appkey", str2);
             intent.putExtra("actionid", kVar.getDoActionId());
             StringBuilder sb = new StringBuilder();
@@ -225,7 +227,7 @@ public class g implements PushMessageInterface {
             return PendingIntent.getService(com.igexin.push.core.e.l, new Random().nextInt(1000), intent, i2);
         } catch (Exception e) {
             com.igexin.c.a.c.a.a(e);
-            com.igexin.c.a.c.a.a(f23414a + "|getDelPendingIntent err：" + e.toString(), new Object[0]);
+            com.igexin.c.a.c.a.a(f9806a + "|getDelPendingIntent err：" + e.toString(), new Object[0]);
             return null;
         }
     }
@@ -237,12 +239,12 @@ public class g implements PushMessageInterface {
             bitmap = null;
         } else {
             bitmap = com.igexin.push.f.l.a(str);
-            String str2 = f23414a;
+            String str2 = f9806a;
             StringBuilder sb = new StringBuilder("|use net logo bitmap is null = ");
             sb.append(bitmap == null);
             com.igexin.c.a.c.a.a(str2, sb.toString());
             StringBuilder sb2 = new StringBuilder();
-            sb2.append(f23414a);
+            sb2.append(f9806a);
             sb2.append("|use net logo bitmap is null = ");
             sb2.append(bitmap == null);
             com.igexin.c.a.c.a.a(sb2.toString(), new Object[0]);
@@ -278,7 +280,7 @@ public class g implements PushMessageInterface {
         notification.ledOffMS = 3000;
         notification.flags = 1;
         notification.flags = kVar.e ? notification.flags | 16 : notification.flags | 32;
-        if (kVar.f23447c) {
+        if (kVar.f9839c) {
             notification.defaults |= 2;
         }
         if (kVar.d) {
@@ -308,7 +310,7 @@ public class g implements PushMessageInterface {
         com.igexin.push.core.e.ai.put(taskId, Integer.valueOf(i));
         int a3 = a(kVar, true);
         if (a3 != 0 && com.igexin.push.core.e.l.getResources().getDrawable(a3) == null) {
-            com.igexin.c.a.c.a.a(f23414a + "|showNotification smallIconId: " + a3 + " couldn't find resource", new Object[0]);
+            com.igexin.c.a.c.a.a(f9806a + "|showNotification smallIconId: " + a3 + " couldn't find resource", new Object[0]);
             return;
         }
         Notification a4 = a(str, a3, kVar);
@@ -316,19 +318,19 @@ public class g implements PushMessageInterface {
         PendingIntent a6 = a(str, i2, appKey, taskId, messageId, kVar);
         NotificationManager notificationManager = (NotificationManager) com.igexin.push.core.e.l.getSystemService("notification");
         Notification.Builder b2 = Build.VERSION.SDK_INT >= 26 ? b(kVar) : new Notification.Builder(com.igexin.push.core.e.l);
-        String str2 = kVar.f23446a;
+        String str2 = kVar.f9838a;
         String str3 = kVar.b;
         String str4 = kVar.z;
         if (TextUtils.isEmpty(str4)) {
             bitmap = null;
         } else {
             bitmap = com.igexin.push.f.l.a(str4);
-            String str5 = f23414a;
+            String str5 = f9806a;
             StringBuilder sb = new StringBuilder("|use net logo bitmap is null = ");
             sb.append(bitmap == null);
             com.igexin.c.a.c.a.a(str5, sb.toString());
             StringBuilder sb2 = new StringBuilder();
-            sb2.append(f23414a);
+            sb2.append(f9806a);
             sb2.append("|use net logo bitmap is null = ");
             sb2.append(bitmap == null);
             com.igexin.c.a.c.a.a(sb2.toString(), new Object[0]);
@@ -368,7 +370,7 @@ public class g implements PushMessageInterface {
                 }
             }
         }
-        if (kVar.v && Build.VERSION.SDK_INT >= 21 && (kVar.f23447c || kVar.d)) {
+        if (kVar.v && Build.VERSION.SDK_INT >= 21 && (kVar.f9839c || kVar.d)) {
             b2.setPriority(2);
         }
         if (!TextUtils.isEmpty(str) && Build.VERSION.SDK_INT >= 24 && com.igexin.push.core.e.aj.containsKey(str)) {
@@ -386,7 +388,7 @@ public class g implements PushMessageInterface {
         notification.ledOffMS = 3000;
         notification.flags = 1;
         notification.flags = kVar.e ? notification.flags | 16 : notification.flags | 32;
-        if (kVar.f23447c) {
+        if (kVar.f9839c) {
             notification.defaults |= 2;
         }
         if (kVar.d) {
@@ -408,7 +410,7 @@ public class g implements PushMessageInterface {
             com.igexin.push.core.e.ak.put(str, Integer.valueOf(a7));
             notificationManager.notify(a7, a4);
         }
-        com.igexin.c.a.c.a.a(f23414a + "|showNotification notification:" + i, new Object[0]);
+        com.igexin.c.a.c.a.a(f9806a + "|showNotification notification:" + i, new Object[0]);
         if (i2 > 0) {
             notificationManager.cancel(i);
         }
@@ -423,7 +425,7 @@ public class g implements PushMessageInterface {
         if (str.contains(str5)) {
             str4 = str;
         } else if (str.indexOf("?") > 0) {
-            str4 = str + "&" + str5;
+            str4 = str + ContainerUtils.FIELD_DELIMITER + str5;
         } else {
             str4 = str + "?" + str5;
         }
@@ -483,7 +485,7 @@ public class g implements PushMessageInterface {
                 Method method = cls2.getMethod("createNotificationChannel", Class.forName("android.app.NotificationChannel"));
                 Method method2 = cls.getMethod("enableVibration", Boolean.TYPE);
                 Method method3 = cls.getMethod("setSound", Uri.class, AudioAttributes.class);
-                method2.invoke(parcelable, Boolean.valueOf(kVar.f23447c));
+                method2.invoke(parcelable, Boolean.valueOf(kVar.f9839c));
                 if (!kVar.d) {
                     method3.invoke(parcelable, null, null);
                 } else if (!TextUtils.isEmpty(kVar.p)) {
@@ -563,19 +565,19 @@ public class g implements PushMessageInterface {
             PendingIntent a7 = a(str, i2, appKey, taskId, messageId, kVar);
             NotificationManager notificationManager = (NotificationManager) com.igexin.push.core.e.l.getSystemService("notification");
             Notification.Builder b2 = Build.VERSION.SDK_INT >= 26 ? b(kVar) : new Notification.Builder(com.igexin.push.core.e.l);
-            String str2 = kVar.f23446a;
+            String str2 = kVar.f9838a;
             String str3 = kVar.b;
             String str4 = kVar.z;
             if (TextUtils.isEmpty(str4)) {
                 bitmap = null;
             } else {
                 bitmap = com.igexin.push.f.l.a(str4);
-                String str5 = f23414a;
+                String str5 = f9806a;
                 StringBuilder sb = new StringBuilder("|use net logo bitmap is null = ");
                 sb.append(bitmap == null);
                 com.igexin.c.a.c.a.a(str5, sb.toString());
                 StringBuilder sb2 = new StringBuilder();
-                sb2.append(f23414a);
+                sb2.append(f9806a);
                 sb2.append("|use net logo bitmap is null = ");
                 sb2.append(bitmap == null);
                 com.igexin.c.a.c.a.a(sb2.toString(), new Object[0]);
@@ -615,7 +617,7 @@ public class g implements PushMessageInterface {
                     }
                 }
             }
-            if (kVar.v && Build.VERSION.SDK_INT >= 21 && (kVar.f23447c || kVar.d)) {
+            if (kVar.v && Build.VERSION.SDK_INT >= 21 && (kVar.f9839c || kVar.d)) {
                 b2.setPriority(2);
             }
             if (!TextUtils.isEmpty(str) && Build.VERSION.SDK_INT >= 24 && com.igexin.push.core.e.aj.containsKey(str)) {
@@ -633,7 +635,7 @@ public class g implements PushMessageInterface {
             notification.ledOffMS = 3000;
             notification.flags = 1;
             notification.flags = kVar.e ? 16 | notification.flags : notification.flags | 32;
-            if (kVar.f23447c) {
+            if (kVar.f9839c) {
                 notification.defaults |= 2;
             }
             if (kVar.d) {
@@ -655,14 +657,14 @@ public class g implements PushMessageInterface {
                 com.igexin.push.core.e.ak.put(str, Integer.valueOf(a8));
                 notificationManager.notify(a8, a5);
             }
-            com.igexin.c.a.c.a.a(f23414a + "|showNotification notification:" + a3, new Object[0]);
+            com.igexin.c.a.c.a.a(f9806a + "|showNotification notification:" + a3, new Object[0]);
             if (i2 > 0) {
                 notificationManager.cancel(a3);
             }
             notificationManager.notify(a3, notification);
             com.igexin.push.core.l.a().b(taskId, messageId, str2, str3);
         } else {
-            com.igexin.c.a.c.a.a(f23414a + "|showNotification smallIconId: " + a4 + " couldn't find resource", new Object[0]);
+            com.igexin.c.a.c.a.a(f9806a + "|showNotification smallIconId: " + a4 + " couldn't find resource", new Object[0]);
         }
         if (i != 0) {
             FeedbackImpl.getInstance().feedbackMessageAction(pushTaskBean, String.valueOf(i), "notifyStyle:" + kVar.h);

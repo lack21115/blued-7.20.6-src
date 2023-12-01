@@ -2,6 +2,7 @@ package com.blued.android.core.net.http.ssl;
 
 import android.os.Build;
 import android.text.TextUtils;
+import com.alipay.sdk.cons.c;
 import com.blued.android.core.net.http.HttpDnsUtils;
 import com.blued.android.core.utils.Log;
 import java.io.IOException;
@@ -27,16 +28,14 @@ import org.conscrypt.Conscrypt;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/http/ssl/HttpsIPAccessUtils.class */
 public class HttpsIPAccessUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static ConcurrentHashMap<String, String> f9698a = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, String> a = new ConcurrentHashMap<>();
 
     public static String a(String str) {
-        ConcurrentHashMap<String, String> concurrentHashMap = f9698a;
+        ConcurrentHashMap<String, String> concurrentHashMap = a;
         if (concurrentHashMap == null || !concurrentHashMap.containsValue(str)) {
             return null;
         }
-        for (Map.Entry<String, String> entry : f9698a.entrySet()) {
+        for (Map.Entry<String, String> entry : a.entrySet()) {
             if (entry.getValue().equals(str)) {
                 return entry.getKey();
             }
@@ -47,14 +46,14 @@ public class HttpsIPAccessUtils {
     public static void a(List<String> list) {
         if (list != null) {
             for (String str : list) {
-                f9698a.put(str, "");
+                a.put(str, "");
             }
         }
     }
 
     public static void a(OkHttpClient.Builder builder) {
         boolean z;
-        ConcurrentHashMap<String, String> concurrentHashMap = f9698a;
+        ConcurrentHashMap<String, String> concurrentHashMap = a;
         if (concurrentHashMap == null || concurrentHashMap.size() <= 0 || Build.VERSION.SDK_INT < 22) {
             z = false;
         } else {
@@ -107,11 +106,11 @@ public class HttpsIPAccessUtils {
                 Request request = chain.request();
                 HttpUrl url = request.url();
                 String host = url.host();
-                if (HttpsIPAccessUtils.f9698a.containsKey(host)) {
+                if (HttpsIPAccessUtils.a.containsKey(host)) {
                     String a2 = HttpDnsUtils.a(host);
                     str = a2;
                     if (!TextUtils.isEmpty(a2)) {
-                        HttpsIPAccessUtils.f9698a.put(host, a2);
+                        HttpsIPAccessUtils.a.put(host, a2);
                         str = a2;
                     }
                 } else {
@@ -122,7 +121,7 @@ public class HttpsIPAccessUtils {
                 }
                 String httpUrl = url.toString();
                 String replaceFirst = httpUrl.replaceFirst(host, str);
-                Headers.Builder add = request.headers().newBuilder().add("host", host);
+                Headers.Builder add = request.headers().newBuilder().add(c.f, host);
                 Log.c("HttpsIPAccessUtils", "intercept host: " + httpUrl + " >> " + replaceFirst);
                 return chain.proceed(request.newBuilder().url(replaceFirst).headers(add.build()).build());
             }

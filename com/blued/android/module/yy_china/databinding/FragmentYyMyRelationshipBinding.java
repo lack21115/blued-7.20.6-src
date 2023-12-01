@@ -12,13 +12,9 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyMyRelationshipBinding.class */
 public final class FragmentYyMyRelationshipBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16529a;
+    public final SquareImageView a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f16530c;
+    public final RecyclerView c;
     public final SmartRefreshLayout d;
     public final TextView e;
     public final TextView f;
@@ -26,9 +22,9 @@ public final class FragmentYyMyRelationshipBinding implements ViewBinding {
 
     private FragmentYyMyRelationshipBinding(ConstraintLayout constraintLayout, SquareImageView squareImageView, LinearLayout linearLayout, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout, TextView textView, TextView textView2) {
         this.g = constraintLayout;
-        this.f16529a = squareImageView;
+        this.a = squareImageView;
         this.b = linearLayout;
-        this.f16530c = recyclerView;
+        this.c = recyclerView;
         this.d = smartRefreshLayout;
         this.e = textView;
         this.f = textView2;
@@ -40,15 +36,15 @@ public final class FragmentYyMyRelationshipBinding implements ViewBinding {
         if (squareImageView != null) {
             LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.noDataView);
             if (linearLayout != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-                if (recyclerView != null) {
-                    SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_layout);
-                    if (smartRefreshLayout != null) {
+                RecyclerView findViewById = view.findViewById(R.id.recycler_view);
+                if (findViewById != null) {
+                    SmartRefreshLayout findViewById2 = view.findViewById(R.id.refresh_layout);
+                    if (findViewById2 != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_null_1);
                         if (textView != null) {
                             TextView textView2 = (TextView) view.findViewById(R.id.tv_null_2);
                             if (textView2 != null) {
-                                return new FragmentYyMyRelationshipBinding((ConstraintLayout) view, squareImageView, linearLayout, recyclerView, smartRefreshLayout, textView, textView2);
+                                return new FragmentYyMyRelationshipBinding((ConstraintLayout) view, squareImageView, linearLayout, findViewById, findViewById2, textView, textView2);
                             }
                             str = "tvNull2";
                         } else {
@@ -69,7 +65,6 @@ public final class FragmentYyMyRelationshipBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

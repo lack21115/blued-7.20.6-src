@@ -33,6 +33,7 @@ public class RefererConfiguration$$XmlAdapter implements IXmlAdapter<RefererConf
             }
         });
         this.childElementBinders.put("DomainList", new ChildElementBinder<RefererConfiguration>() { // from class: com.tencent.cos.xml.model.tag.RefererConfiguration$$XmlAdapter.3
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, RefererConfiguration refererConfiguration, String str) throws IOException, XmlPullParserException {
                 if (refererConfiguration.domainList == null) {

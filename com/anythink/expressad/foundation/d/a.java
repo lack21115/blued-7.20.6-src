@@ -11,11 +11,11 @@ import org.json.JSONObject;
 public final class a implements com.anythink.expressad.e.b, Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7762a = "https://img.toponad.com/sdk/app-permissions.html?key=";
+    private static final String f4923a = "https://img.toponad.com/sdk/app-permissions.html?key=";
     private static String b = "app_name";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f7763c = "perm_desc";
+    private static String f4924c = "perm_desc";
     private static String d = "ori_perm_desc";
     private static String e = "ori_perm_all";
     private static String f = "pri_url";
@@ -60,14 +60,14 @@ public final class a implements com.anythink.expressad.e.b, Serializable {
             aVar.k = jSONObject.optString(b);
         }
         a aVar2 = aVar;
-        if (jSONObject.has(f7763c)) {
+        if (jSONObject.has(f4924c)) {
             a a2 = a(aVar);
-            JSONArray optJSONArray = jSONObject.optJSONArray(f7763c);
+            JSONArray optJSONArray = jSONObject.optJSONArray(f4924c);
             aVar2 = a2;
             if (optJSONArray != null) {
                 a2.l = a(optJSONArray);
                 ArrayList<String> arrayList = a2.n;
-                String str = f7762a;
+                String str = f4923a;
                 int i2 = 0;
                 while (i2 < optJSONArray.length()) {
                     try {

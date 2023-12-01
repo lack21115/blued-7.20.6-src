@@ -32,13 +32,9 @@ public class PoiItem implements Parcelable {
     };
     private String A;
     private String B;
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5612a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5613c;
+    private String c;
     private String d;
     private String e;
     private int f;
@@ -68,8 +64,8 @@ public class PoiItem implements Parcelable {
         this.f = -1;
         this.x = new ArrayList();
         this.y = new ArrayList();
-        this.f5612a = parcel.readString();
-        this.f5613c = parcel.readString();
+        this.a = parcel.readString();
+        this.c = parcel.readString();
         this.b = parcel.readString();
         this.e = parcel.readString();
         this.f = parcel.readInt();
@@ -105,7 +101,7 @@ public class PoiItem implements Parcelable {
         this.f = -1;
         this.x = new ArrayList();
         this.y = new ArrayList();
-        this.f5612a = str;
+        this.a = str;
         this.g = latLonPoint;
         this.h = str2;
         this.i = str3;
@@ -122,14 +118,14 @@ public class PoiItem implements Parcelable {
         }
         if (obj != null && getClass() == obj.getClass()) {
             PoiItem poiItem = (PoiItem) obj;
-            String str = this.f5612a;
-            return str == null ? poiItem.f5612a == null : str.equals(poiItem.f5612a);
+            String str = this.a;
+            return str == null ? poiItem.a == null : str.equals(poiItem.a);
         }
         return false;
     }
 
     public String getAdCode() {
-        return this.f5613c;
+        return this.c;
     }
 
     public String getAdName() {
@@ -189,7 +185,7 @@ public class PoiItem implements Parcelable {
     }
 
     public String getPoiId() {
-        return this.f5612a;
+        return this.a;
     }
 
     public String getPostcode() {
@@ -237,7 +233,7 @@ public class PoiItem implements Parcelable {
     }
 
     public int hashCode() {
-        String str = this.f5612a;
+        String str = this.a;
         return (str == null ? 0 : str.hashCode()) + 31;
     }
 
@@ -246,7 +242,7 @@ public class PoiItem implements Parcelable {
     }
 
     public void setAdCode(String str) {
-        this.f5613c = str;
+        this.c = str;
     }
 
     public void setAdName(String str) {
@@ -347,8 +343,8 @@ public class PoiItem implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5612a);
-        parcel.writeString(this.f5613c);
+        parcel.writeString(this.a);
+        parcel.writeString(this.c);
         parcel.writeString(this.b);
         parcel.writeString(this.e);
         parcel.writeInt(this.f);

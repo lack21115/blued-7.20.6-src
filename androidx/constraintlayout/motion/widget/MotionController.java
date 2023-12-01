@@ -58,7 +58,7 @@ public class MotionController {
     View b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2180c;
+    int f2132c;
     String e;
     float i;
     float j;
@@ -71,7 +71,7 @@ public class MotionController {
     private int[] v;
 
     /* renamed from: a  reason: collision with root package name */
-    Rect f2179a = new Rect();
+    Rect f2131a = new Rect();
     boolean d = false;
     private int k = -1;
     private MotionPaths l = new MotionPaths();
@@ -428,7 +428,7 @@ public class MotionController {
         HashMap<String, ViewSpline> hashMap2 = this.C;
         ViewSpline viewSpline2 = hashMap2 == null ? null : hashMap2.get("translationY");
         HashMap<String, ViewSpline> hashMap3 = this.C;
-        ViewSpline viewSpline3 = hashMap3 == null ? null : hashMap3.get("rotation");
+        ViewSpline viewSpline3 = hashMap3 == null ? null : hashMap3.get(Key.ROTATION);
         HashMap<String, ViewSpline> hashMap4 = this.C;
         ViewSpline viewSpline4 = hashMap4 == null ? null : hashMap4.get("scaleX");
         HashMap<String, ViewSpline> hashMap5 = this.C;
@@ -438,7 +438,7 @@ public class MotionController {
         HashMap<String, ViewOscillator> hashMap7 = this.D;
         ViewOscillator viewOscillator3 = hashMap7 == null ? null : hashMap7.get("translationY");
         HashMap<String, ViewOscillator> hashMap8 = this.D;
-        ViewOscillator viewOscillator4 = hashMap8 == null ? null : hashMap8.get("rotation");
+        ViewOscillator viewOscillator4 = hashMap8 == null ? null : hashMap8.get(Key.ROTATION);
         HashMap<String, ViewOscillator> hashMap9 = this.D;
         ViewOscillator viewOscillator5 = hashMap9 == null ? null : hashMap9.get("scaleX");
         HashMap<String, ViewOscillator> hashMap10 = this.D;
@@ -545,16 +545,16 @@ public class MotionController {
     public void a(Rect rect, ConstraintSet constraintSet, int i, int i2) {
         int i3 = constraintSet.mRotate;
         if (i3 != 0) {
-            a(rect, this.f2179a, i3, i, i2);
+            a(rect, this.f2131a, i3, i, i2);
         }
         this.l.d = 0.0f;
         this.l.e = 0.0f;
         b(this.l);
         this.l.a(rect.left, rect.top, rect.width(), rect.height());
-        ConstraintSet.Constraint parameters = constraintSet.getParameters(this.f2180c);
+        ConstraintSet.Constraint parameters = constraintSet.getParameters(this.f2132c);
         this.l.applyParameters(parameters);
         this.f = parameters.motion.mMotionStagger;
-        this.n.setState(rect, constraintSet, i3, this.f2180c);
+        this.n.setState(rect, constraintSet, i3, this.f2132c);
         this.G = parameters.transform.transformPivotTarget;
         this.I = parameters.motion.mQuantizeMotionSteps;
         this.J = parameters.motion.mQuantizeMotionPhase;
@@ -808,7 +808,7 @@ public class MotionController {
                 CustomSupport.setInterpolatedValue(this.l.p.get(this.u[i2 - 1]), view, this.x);
                 i = i2 + 1;
             }
-            if (this.n.f2178a == 0) {
+            if (this.n.f2130a == 0) {
                 if (f2 <= 0.0f) {
                     view.setVisibility(this.n.b);
                 } else if (f2 >= 1.0f) {
@@ -882,15 +882,15 @@ public class MotionController {
         int i3 = constraintSet.mRotate;
         Rect rect2 = rect;
         if (i3 != 0) {
-            a(rect, this.f2179a, i3, i, i2);
-            rect2 = this.f2179a;
+            a(rect, this.f2131a, i3, i, i2);
+            rect2 = this.f2131a;
         }
         this.m.d = 1.0f;
         this.m.e = 1.0f;
         b(this.m);
         this.m.a(rect2.left, rect2.top, rect2.width(), rect2.height());
-        this.m.applyParameters(constraintSet.getParameters(this.f2180c));
-        this.o.setState(rect2, constraintSet, i3, this.f2180c);
+        this.m.applyParameters(constraintSet.getParameters(this.f2132c));
+        this.o.setState(rect2, constraintSet, i3, this.f2132c);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -941,12 +941,12 @@ public class MotionController {
     }
 
     public int getDrawPath() {
-        int i = this.l.f2203c;
+        int i = this.l.f2155c;
         Iterator<MotionPaths> it = this.y.iterator();
         while (it.hasNext()) {
-            i = Math.max(i, it.next().f2203c);
+            i = Math.max(i, it.next().f2155c);
         }
-        return Math.max(i, this.m.f2203c);
+        return Math.max(i, this.m.f2155c);
     }
 
     public float getFinalHeight() {
@@ -977,8 +977,8 @@ public class MotionController {
                 int i4 = i3 + 1;
                 iArr[i4] = next.d;
                 int i5 = i4 + 1;
-                iArr[i5] = next.f2169a;
-                double d = next.f2169a / 100.0f;
+                iArr[i5] = next.f2121a;
+                double d = next.f2121a / 100.0f;
                 this.p[0].getPos(d, this.s);
                 this.l.a(d, this.r, this.s, fArr, 0);
                 int i6 = i5 + 1;
@@ -1010,8 +1010,8 @@ public class MotionController {
         int i2 = 0;
         while (it.hasNext()) {
             Key next = it.next();
-            iArr[i] = next.f2169a + (next.d * 1000);
-            double d = next.f2169a / 100.0f;
+            iArr[i] = next.f2121a + (next.d * 1000);
+            double d = next.f2121a / 100.0f;
             this.p[0].getPos(d, this.s);
             this.l.a(d, this.r, this.s, fArr, i2);
             i2 += 2;
@@ -1049,7 +1049,7 @@ public class MotionController {
     }
 
     public void setDrawPath(int i) {
-        this.l.f2203c = i;
+        this.l.f2155c = i;
     }
 
     public void setPathMotionArc(int i) {
@@ -1086,7 +1086,7 @@ public class MotionController {
 
     public void setView(View view) {
         this.b = view;
-        this.f2180c = view.getId();
+        this.f2132c = view.getId();
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (layoutParams instanceof ConstraintLayout.LayoutParams) {
             this.e = ((ConstraintLayout.LayoutParams) layoutParams).getConstraintTag();
@@ -1162,7 +1162,7 @@ public class MotionController {
                     while (it3.hasNext()) {
                         Key next3 = it3.next();
                         if (next3.e != null && (constraintAttribute3 = next3.e.get(str)) != null) {
-                            sparseArray.append(next3.f2169a, constraintAttribute3);
+                            sparseArray.append(next3.f2121a, constraintAttribute3);
                         }
                     }
                     makeSpline2 = ViewSpline.makeCustomSpline(next2, sparseArray);
@@ -1209,7 +1209,7 @@ public class MotionController {
                         while (it6.hasNext()) {
                             Key next6 = it6.next();
                             if (next6.e != null && (constraintAttribute2 = next6.e.get(str3)) != null) {
-                                sparseArray2.append(next6.f2169a, constraintAttribute2);
+                                sparseArray2.append(next6.f2121a, constraintAttribute2);
                             }
                         }
                         makeSpline = ViewTimeCycle.makeCustomSpline(next5, sparseArray2);
@@ -1352,8 +1352,8 @@ public class MotionController {
             if (i22 >= iArr2.length) {
                 break;
             }
-            if (iArr2[i22] < MotionPaths.f2202a.length) {
-                String str7 = MotionPaths.f2202a[this.r[i22]] + " [";
+            if (iArr2[i22] < MotionPaths.f2154a.length) {
+                String str7 = MotionPaths.f2154a[this.r[i22]] + " [";
                 int i23 = 0;
                 while (true) {
                     int i24 = i23;

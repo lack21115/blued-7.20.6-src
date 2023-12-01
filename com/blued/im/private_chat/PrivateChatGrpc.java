@@ -38,12 +38,10 @@ public final class PrivateChatGrpc {
             this.methodId = i;
         }
 
-        @Override // io.grpc.stub.ServerCalls.BidiStreamingMethod, io.grpc.stub.ServerCalls.StreamingRequestMethod, io.grpc.stub.ServerCalls.ClientStreamingMethod
         public StreamObserver<Req> invoke(StreamObserver<Resp> streamObserver) {
             throw new AssertionError();
         }
 
-        @Override // io.grpc.stub.ServerCalls.ServerStreamingMethod, io.grpc.stub.ServerCalls.UnaryRequestMethod, io.grpc.stub.ServerCalls.UnaryMethod
         public void invoke(Req req, StreamObserver<Resp> streamObserver) {
             if (this.methodId != 0) {
                 throw new AssertionError();
@@ -57,12 +55,10 @@ public final class PrivateChatGrpc {
         PrivateChatBaseDescriptorSupplier() {
         }
 
-        @Override // io.grpc.protobuf.ProtoFileDescriptorSupplier
         public Descriptors.FileDescriptor getFileDescriptor() {
             return PrivateChatOuterClass.getDescriptor();
         }
 
-        @Override // io.grpc.protobuf.ProtoServiceDescriptorSupplier
         public Descriptors.ServiceDescriptor getServiceDescriptor() {
             return getFileDescriptor().findServiceByName("PrivateChat");
         }
@@ -75,8 +71,8 @@ public final class PrivateChatGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public PrivateChatBlockingStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public PrivateChatBlockingStub m2485build(Channel channel, CallOptions callOptions) {
             return new PrivateChatBlockingStub(channel, callOptions);
         }
 
@@ -99,8 +95,8 @@ public final class PrivateChatGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public PrivateChatFutureStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public PrivateChatFutureStub m2486build(Channel channel, CallOptions callOptions) {
             return new PrivateChatFutureStub(channel, callOptions);
         }
 
@@ -130,7 +126,6 @@ public final class PrivateChatGrpc {
             this.methodName = str;
         }
 
-        @Override // io.grpc.protobuf.ProtoMethodDescriptorSupplier
         public Descriptors.MethodDescriptor getMethodDescriptor() {
             return getServiceDescriptor().findMethodByName(this.methodName);
         }
@@ -143,8 +138,8 @@ public final class PrivateChatGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public PrivateChatStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public PrivateChatStub m2487build(Channel channel, CallOptions callOptions) {
             return new PrivateChatStub(channel, callOptions);
         }
 
@@ -199,30 +194,27 @@ public final class PrivateChatGrpc {
     }
 
     public static PrivateChatBlockingStub newBlockingStub(Channel channel) {
-        return (PrivateChatBlockingStub) PrivateChatBlockingStub.newStub(new AbstractStub.StubFactory<PrivateChatBlockingStub>() { // from class: com.blued.im.private_chat.PrivateChatGrpc.2
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public PrivateChatBlockingStub newStub(Channel channel2, CallOptions callOptions) {
+        return PrivateChatBlockingStub.newStub(new AbstractStub.StubFactory<PrivateChatBlockingStub>() { // from class: com.blued.im.private_chat.PrivateChatGrpc.2
+            /* renamed from: newStub */
+            public PrivateChatBlockingStub m2483newStub(Channel channel2, CallOptions callOptions) {
                 return new PrivateChatBlockingStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static PrivateChatFutureStub newFutureStub(Channel channel) {
-        return (PrivateChatFutureStub) PrivateChatFutureStub.newStub(new AbstractStub.StubFactory<PrivateChatFutureStub>() { // from class: com.blued.im.private_chat.PrivateChatGrpc.3
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public PrivateChatFutureStub newStub(Channel channel2, CallOptions callOptions) {
+        return PrivateChatFutureStub.newStub(new AbstractStub.StubFactory<PrivateChatFutureStub>() { // from class: com.blued.im.private_chat.PrivateChatGrpc.3
+            /* renamed from: newStub */
+            public PrivateChatFutureStub m2484newStub(Channel channel2, CallOptions callOptions) {
                 return new PrivateChatFutureStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static PrivateChatStub newStub(Channel channel) {
-        return (PrivateChatStub) PrivateChatStub.newStub(new AbstractStub.StubFactory<PrivateChatStub>() { // from class: com.blued.im.private_chat.PrivateChatGrpc.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public PrivateChatStub newStub(Channel channel2, CallOptions callOptions) {
+        return PrivateChatStub.newStub(new AbstractStub.StubFactory<PrivateChatStub>() { // from class: com.blued.im.private_chat.PrivateChatGrpc.1
+            /* renamed from: newStub */
+            public PrivateChatStub m2482newStub(Channel channel2, CallOptions callOptions) {
                 return new PrivateChatStub(channel2, callOptions);
             }
         }, channel);

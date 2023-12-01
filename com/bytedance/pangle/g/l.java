@@ -8,17 +8,17 @@ import java.io.FileDescriptor;
 final class l implements k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f21420a = Os.sysconf(OsConstants._SC_PAGESIZE);
+    private static final long f7814a = Os.sysconf(OsConstants._SC_PAGESIZE);
     private final FileDescriptor b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f21421c;
+    private final long f7815c;
     private final long d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public l(FileDescriptor fileDescriptor, long j, long j2) {
         this.b = fileDescriptor;
-        this.f21421c = j;
+        this.f7815c = j;
         this.d = j2;
     }
 

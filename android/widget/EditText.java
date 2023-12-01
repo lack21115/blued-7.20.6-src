@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.TextView;
+import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/EditText.class */
 public class EditText extends TextView {
@@ -19,7 +20,7 @@ public class EditText extends TextView {
     }
 
     public EditText(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842862);
+        this(context, attributeSet, R.attr.editTextStyle);
     }
 
     public EditText(Context context, AttributeSet attributeSet, int i) {
@@ -65,7 +66,7 @@ public class EditText extends TextView {
     public boolean performAccessibilityAction(int i, Bundle bundle) {
         switch (i) {
             case 2097152:
-                CharSequence charSequence = bundle != null ? bundle.getCharSequence("ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE") : null;
+                CharSequence charSequence = bundle != null ? bundle.getCharSequence(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE) : null;
                 setText(charSequence);
                 if (charSequence == null || charSequence.length() <= 0) {
                     return true;

@@ -17,24 +17,24 @@ import kotlinx.coroutines.intrinsics.UndispatchedKt;
 public final class CoroutineScopeKt {
     public static final <R> Object a(Function2<? super CoroutineScope, ? super Continuation<? super R>, ? extends Object> function2, Continuation<? super R> continuation) {
         ScopeCoroutine scopeCoroutine = new ScopeCoroutine(continuation.getContext(), continuation);
-        Object a2 = UndispatchedKt.a(scopeCoroutine, scopeCoroutine, (Function2<? super ScopeCoroutine, ? super Continuation<? super T>, ? extends Object>) function2);
-        if (a2 == IntrinsicsKt.a()) {
+        Object a = UndispatchedKt.a(scopeCoroutine, scopeCoroutine, (Function2<? super ScopeCoroutine, ? super Continuation<? super T>, ? extends Object>) function2);
+        if (a == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
         }
-        return a2;
+        return a;
     }
 
     public static final CoroutineScope a() {
-        CompletableJob a2 = SupervisorKt.a(null, 1, null);
-        Dispatchers dispatchers = Dispatchers.f42810a;
-        return new ContextScope(a2.plus(Dispatchers.b()));
+        CompletableJob a = SupervisorKt.a(null, 1, null);
+        Dispatchers dispatchers = Dispatchers.a;
+        return new ContextScope(a.plus(Dispatchers.b()));
     }
 
     public static final CoroutineScope a(CoroutineContext coroutineContext) {
-        CompletableJob a2;
+        CompletableJob a;
         if (coroutineContext.get(Job.C_) == null) {
-            a2 = JobKt__JobKt.a(null, 1, null);
-            coroutineContext = coroutineContext.plus(a2);
+            a = JobKt__JobKt.a(null, 1, null);
+            coroutineContext = coroutineContext.plus(a);
         }
         return new ContextScope(coroutineContext);
     }

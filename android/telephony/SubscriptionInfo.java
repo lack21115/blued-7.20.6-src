@@ -11,7 +11,6 @@ import android.graphics.Typeface;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.DisplayMetrics;
-import com.alipay.sdk.util.i;
 import com.anythink.expressad.exoplayer.b;
 import com.google.android.material.timepicker.TimeModel;
 
@@ -180,7 +179,7 @@ public class SubscriptionInfo implements Parcelable {
     }
 
     public String toString() {
-        return "{id=" + this.mId + ", iccId=" + this.mIccId + " simSlotIndex=" + this.mSimSlotIndex + " displayName=" + ((Object) this.mDisplayName) + " carrierName=" + ((Object) this.mCarrierName) + " nameSource=" + this.mNameSource + " iconTint=" + this.mIconTint + " dataRoaming=" + this.mDataRoaming + " iconBitmap=" + this.mIconBitmap + " mcc " + this.mMcc + " mnc " + this.mMnc + " mSubStatus=" + this.mStatus + " mNwMode=" + this.mNwMode + " mUserNwMode=" + this.mUserNwMode + i.d;
+        return "{id=" + this.mId + ", iccId=" + this.mIccId + " simSlotIndex=" + this.mSimSlotIndex + " displayName=" + ((Object) this.mDisplayName) + " carrierName=" + ((Object) this.mCarrierName) + " nameSource=" + this.mNameSource + " iconTint=" + this.mIconTint + " dataRoaming=" + this.mDataRoaming + " iconBitmap=" + this.mIconBitmap + " mcc " + this.mMcc + " mnc " + this.mMnc + " mSubStatus=" + this.mStatus + " mNwMode=" + this.mNwMode + " mUserNwMode=" + this.mUserNwMode + "}";
     }
 
     @Override // android.os.Parcelable

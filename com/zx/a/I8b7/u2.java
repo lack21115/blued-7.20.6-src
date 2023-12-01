@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import com.baidu.mobads.sdk.internal.bw;
 import com.opos.process.bridge.provider.ProcessBridgeProvider;
+import com.xiaomi.mipush.sdk.Constants;
 import com.zx.module.annotation.Java2C;
 import com.zx.module.base.Callback;
 import java.io.BufferedWriter;
@@ -34,17 +35,17 @@ import org.json.JSONObject;
 public class u2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String[] f42209a = h();
+    public final String[] f28518a = h();
     public final String[] b = f();
 
     /* renamed from: c  reason: collision with root package name */
-    public final String[] f42210c = d();
+    public final String[] f28519c = d();
 
     /* loaded from: source-8829756-dex2jar.jar:com/zx/a/I8b7/u2$a.class */
     public class a extends ConnectivityManager.NetworkCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        public ConnectivityManager f42211a;
+        public ConnectivityManager f28520a;
         public Callback b;
         public TimerTask d;
         public JSONObject e;
@@ -52,12 +53,12 @@ public class u2 {
         public final AtomicBoolean g = new AtomicBoolean(false);
 
         /* renamed from: c  reason: collision with root package name */
-        public Timer f42212c = new Timer();
+        public Timer f28521c = new Timer();
 
         /* renamed from: com.zx.a.I8b7.u2$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/zx/a/I8b7/u2$a$a.class */
-        public class C1120a extends TimerTask {
-            public C1120a(u2 u2Var) {
+        public class C0950a extends TimerTask {
+            public C0950a(u2 u2Var) {
             }
 
             @Override // java.util.TimerTask, java.lang.Runnable
@@ -77,11 +78,11 @@ public class u2 {
         public a(JSONObject jSONObject, ConnectivityManager connectivityManager, Callback callback, int i) {
             this.e = jSONObject;
             this.f = i;
-            this.f42211a = connectivityManager;
+            this.f28520a = connectivityManager;
             this.b = callback;
-            C1120a c1120a = new C1120a(u2.this);
-            this.d = c1120a;
-            this.f42212c.schedule(c1120a, 7000L);
+            C0950a c0950a = new C0950a(u2.this);
+            this.d = c0950a;
+            this.f28521c.schedule(c0950a, 7000L);
         }
 
         @Java2C.Method2C
@@ -109,14 +110,14 @@ public class u2 {
         }
 
         public final void b(Network network) throws Exception {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) network.openConnection(new URL(u2.this.f42210c[0]));
+            HttpURLConnection httpURLConnection = (HttpURLConnection) network.openConnection(new URL(u2.this.f28519c[0]));
             httpURLConnection.setConnectTimeout(7000);
             httpURLConnection.setReadTimeout(7000);
             httpURLConnection.setRequestProperty("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
             httpURLConnection.setRequestProperty("Charset", "UTF-8");
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.connect();
-            String substring = UUID.randomUUID().toString().replaceAll("-", "").substring(0, 16);
+            String substring = UUID.randomUUID().toString().replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "").substring(0, 16);
             String a2 = u2.this.a(substring);
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(httpURLConnection.getOutputStream(), "UTF-8"));
             bufferedWriter.write(a2);
@@ -135,7 +136,7 @@ public class u2 {
 
         public final void c(Network network) throws Exception {
             u2 u2Var = u2.this;
-            String b = u2Var.b(u2Var.f42209a[0]);
+            String b = u2Var.b(u2Var.f28518a[0]);
             z1.a("unicomUAIDNisportalUrl: " + b);
             HttpURLConnection httpURLConnection = (HttpURLConnection) network.openConnection(new URL(b));
             httpURLConnection.setConnectTimeout(7000);
@@ -169,8 +170,8 @@ public class u2 {
                 }
                 z1.a("zx 网络切换: 使用移动网络访问");
                 this.d.cancel();
-                this.f42212c.cancel();
-                String b = d3.b(t2.f42201a);
+                this.f28521c.cancel();
+                String b = d3.b(t2.f28510a);
                 if ("中国联通".equals(b)) {
                     c(network);
                 } else if ("中国移动".equals(b)) {
@@ -180,14 +181,14 @@ public class u2 {
                 } else {
                     this.b.callback(u2.this.a("暂不支持该运营商", 1));
                 }
-                this.f42211a.unregisterNetworkCallback(this);
+                this.f28520a.unregisterNetworkCallback(this);
             } catch (Throwable th) {
                 z1.a(th);
                 Callback callback = this.b;
                 if (callback != null) {
                     try {
                         callback.callback(u2.this.a(th.getMessage(), 1));
-                        this.f42211a.unregisterNetworkCallback(this);
+                        this.f28520a.unregisterNetworkCallback(this);
                     } catch (JSONException e) {
                         z1.a(e);
                     }
@@ -200,7 +201,7 @@ public class u2 {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final u2 f42214a = new u2();
+        public static final u2 f28523a = new u2();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -273,7 +274,7 @@ public class u2 {
             JSONObject jSONObject4 = new JSONObject();
             String str4 = string + "|" + t2.g + "|" + t2.a(t2.h) + "|" + str + "|" + str2;
             String str5 = b()[0];
-            SecureRandom secureRandom = k.f42141a;
+            SecureRandom secureRandom = k.f28450a;
             try {
                 Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
                 cipher.init(1, k.b("RSA", str5));

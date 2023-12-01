@@ -9,7 +9,7 @@ import java.nio.ByteOrder;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f21499a = "";
+    private static String f7893a = "";
 
     private static ByteBuffer a(ByteBuffer byteBuffer, int i) {
         if (i < 8) {
@@ -62,9 +62,9 @@ public final class b {
                     }
                     int i3 = a2.getInt();
                     if (i3 == -262969152) {
-                        f21499a = "V3";
+                        f7893a = "V3";
                     } else if (i3 == 1896449818) {
-                        f21499a = "V2";
+                        f7893a = "V2";
                     } else {
                         a2.position(position + i2);
                     }
@@ -80,7 +80,7 @@ public final class b {
             } else {
                 str = "without v2 & v3 signature.";
             }
-            return new String[]{str2, f21499a, str};
+            return new String[]{str2, f7893a, str};
         }
         throw new IllegalArgumentException("ByteBuffer byte order must be little endian");
     }

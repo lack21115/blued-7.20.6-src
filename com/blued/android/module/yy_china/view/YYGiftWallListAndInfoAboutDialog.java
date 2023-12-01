@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.module.yy_china.R;
 import com.blued.android.module.yy_china.databinding.DialogGiftWallAboutBinding;
@@ -33,28 +34,22 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYGiftWallListAndInfoAboutDialog.class */
 public final class YYGiftWallListAndInfoAboutDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogGiftWallAboutBinding f18204a;
+    private DialogGiftWallAboutBinding a;
     private final Ada b = new Ada(this);
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYUserInfo f18205c;
+    private YYUserInfo c;
     private YYGoodsWallListMode d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYGiftWallListAndInfoAboutDialog$Ada.class */
     public final class Ada extends BaseMultiItemQuickAdapter<GiftWallInfoAboutModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYGiftWallListAndInfoAboutDialog f18206a;
+        final /* synthetic */ YYGiftWallListAndInfoAboutDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Ada(YYGiftWallListAndInfoAboutDialog this$0) {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f18206a = this$0;
+            this.a = this$0;
             addItemType(0, R.layout.item_giftwall_info_about_title);
             addItemType(1, R.layout.item_giftwall_info_about);
             addItemType(2, R.layout.item_giftwall_info_about_no);
@@ -63,7 +58,7 @@ public final class YYGiftWallListAndInfoAboutDialog extends BaseFullScreenDialog
         private final void a(GiftWallInfoAboutModel giftWallInfoAboutModel) {
             YYGiftWallAboutInfoDialog yYGiftWallAboutInfoDialog = new YYGiftWallAboutInfoDialog();
             yYGiftWallAboutInfoDialog.a(giftWallInfoAboutModel);
-            FragmentManager childFragmentManager = this.f18206a.getChildFragmentManager();
+            FragmentManager childFragmentManager = this.a.getChildFragmentManager();
             Intrinsics.c(childFragmentManager, "childFragmentManager");
             yYGiftWallAboutInfoDialog.show(childFragmentManager, "YYGiftWallAboutInfoDialog");
         }
@@ -87,29 +82,29 @@ public final class YYGiftWallListAndInfoAboutDialog extends BaseFullScreenDialog
             YYCollectorConfigMode.SkinDTO skin2;
             YYCollectorConfigMode allDa;
             YYCollectorConfigMode.GoodsDTO goods;
-            ItemGiftwallInfoAboutNoBinding a2 = ItemGiftwallInfoAboutNoBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
+            ItemGiftwallInfoAboutNoBinding a = ItemGiftwallInfoAboutNoBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
             int item = giftWallInfoAboutModel.getItem();
             if (item == 0) {
                 YYCollectorConfigMode allDa2 = giftWallInfoAboutModel.getAllDa();
                 if (allDa2 != null && (badge = allDa2.getBadge()) != null) {
-                    ImageLoader.a(this.f18206a.a(), badge.getImage()).a(a2.f16607a);
-                    a2.f16608c.setText(badge.getName());
-                    a2.d.setText("专属勋章");
+                    ImageLoader.a(this.a.a(), badge.getImage()).a(a.a);
+                    a.c.setText(badge.getName());
+                    a.d.setText("专属勋章");
                 }
             } else if (item == 1) {
                 YYCollectorConfigMode allDa3 = giftWallInfoAboutModel.getAllDa();
                 if (allDa3 != null && (skin2 = allDa3.getSkin()) != null) {
-                    ImageLoader.a(this.f18206a.a(), skin2.getIntroduce()).a(a2.f16607a);
-                    a2.f16608c.setText(skin2.getName());
-                    a2.d.setText("专属皮肤");
+                    ImageLoader.a(this.a.a(), skin2.getIntroduce()).a(a.a);
+                    a.c.setText(skin2.getName());
+                    a.d.setText("专属皮肤");
                 }
             } else if (item == 2 && (allDa = giftWallInfoAboutModel.getAllDa()) != null && (goods = allDa.getGoods()) != null) {
-                ImageLoader.a(this.f18206a.a(), goods.getImage_static()).a(a2.f16607a);
-                a2.f16608c.setText(goods.getName());
-                a2.d.setText("专属礼物");
+                ImageLoader.a(this.a.a(), goods.getImage_static()).a(a.a);
+                a.c.setText(goods.getName());
+                a.d.setText("专属礼物");
             }
-            a2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYGiftWallListAndInfoAboutDialog$Ada$IQUQ75GbabYMyK5zOqlTGEQc_bY
+            a.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYGiftWallListAndInfoAboutDialog$Ada$IQUQ75GbabYMyK5zOqlTGEQc_bY
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYGiftWallListAndInfoAboutDialog.Ada.a(YYGiftWallListAndInfoAboutDialog.Ada.this, giftWallInfoAboutModel, view);
@@ -122,29 +117,29 @@ public final class YYGiftWallListAndInfoAboutDialog extends BaseFullScreenDialog
             YYCollectorConfigMode.SkinDTO skin2;
             YYCollectorConfigMode allDa;
             YYCollectorConfigMode.GoodsDTO goods;
-            ItemGiftwallInfoAboutBinding a2 = ItemGiftwallInfoAboutBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
+            ItemGiftwallInfoAboutBinding a = ItemGiftwallInfoAboutBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
             int item = giftWallInfoAboutModel.getItem();
             if (item == 0) {
                 YYCollectorConfigMode allDa2 = giftWallInfoAboutModel.getAllDa();
                 if (allDa2 != null && (badge = allDa2.getBadge()) != null) {
-                    ImageLoader.a(this.f18206a.a(), badge.getImage()).a(a2.f16605a);
-                    a2.f16606c.setText(badge.getName());
-                    a2.d.setText("专属勋章");
+                    ImageLoader.a(this.a.a(), badge.getImage()).a(a.a);
+                    a.c.setText(badge.getName());
+                    a.d.setText("专属勋章");
                 }
             } else if (item == 1) {
                 YYCollectorConfigMode allDa3 = giftWallInfoAboutModel.getAllDa();
                 if (allDa3 != null && (skin2 = allDa3.getSkin()) != null) {
-                    ImageLoader.a(this.f18206a.a(), skin2.getIntroduce()).a(a2.f16605a);
-                    a2.f16606c.setText(skin2.getName());
-                    a2.d.setText("专属皮肤");
+                    ImageLoader.a(this.a.a(), skin2.getIntroduce()).a(a.a);
+                    a.c.setText(skin2.getName());
+                    a.d.setText("专属皮肤");
                 }
             } else if (item == 2 && (allDa = giftWallInfoAboutModel.getAllDa()) != null && (goods = allDa.getGoods()) != null) {
-                ImageLoader.a(this.f18206a.a(), goods.getImage_static()).a(a2.f16605a);
-                a2.f16606c.setText(goods.getName());
-                a2.d.setText("专属礼物");
+                ImageLoader.a(this.a.a(), goods.getImage_static()).a(a.a);
+                a.c.setText(goods.getName());
+                a.d.setText("专属礼物");
             }
-            a2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYGiftWallListAndInfoAboutDialog$Ada$RUvWZVsDgv-gd_2eauN5W72wV1s
+            a.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYGiftWallListAndInfoAboutDialog$Ada$RUvWZVsDgv-gd_2eauN5W72wV1s
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYGiftWallListAndInfoAboutDialog.Ada.b(YYGiftWallListAndInfoAboutDialog.Ada.this, giftWallInfoAboutModel, view);
@@ -153,38 +148,38 @@ public final class YYGiftWallListAndInfoAboutDialog extends BaseFullScreenDialog
         }
 
         private final void d(BaseViewHolder baseViewHolder, GiftWallInfoAboutModel giftWallInfoAboutModel) {
-            ItemGiftwallInfoAboutTitleBinding a2 = ItemGiftwallInfoAboutTitleBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
+            ItemGiftwallInfoAboutTitleBinding a = ItemGiftwallInfoAboutTitleBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
             if (giftWallInfoAboutModel.isTop()) {
-                a2.f16609a.setVisibility(0);
+                a.a.setVisibility(0);
             } else {
-                a2.f16609a.setVisibility(8);
+                a.a.setVisibility(8);
             }
             YYCollectorConfigMode allDa = giftWallInfoAboutModel.getAllDa();
             if (allDa == null) {
                 return;
             }
-            YYGiftWallListAndInfoAboutDialog yYGiftWallListAndInfoAboutDialog = this.f18206a;
+            YYGiftWallListAndInfoAboutDialog yYGiftWallListAndInfoAboutDialog = this.a;
             if (allDa.getIs_achieve() == 1) {
-                a2.b.setText("已解锁");
-                TextView textView = a2.b;
+                a.b.setText("已解锁");
+                TextView textView = a.b;
                 Context context = yYGiftWallListAndInfoAboutDialog.getContext();
                 Intrinsics.a(context);
                 textView.setTextColor(context.getResources().getColor(R.color.white));
-                a2.b.setAlpha(1.0f);
-                a2.f16610c.setText(allDa.getName());
-                TextView textView2 = a2.d;
+                a.b.setAlpha(1.0f);
+                a.c.setText(allDa.getName());
+                TextView textView2 = a.d;
                 textView2.setText("需要收集" + allDa.getJewel() + "钻石");
                 return;
             }
-            a2.b.setText("待解锁");
-            TextView textView3 = a2.b;
+            a.b.setText("待解锁");
+            TextView textView3 = a.b;
             Context context2 = yYGiftWallListAndInfoAboutDialog.getContext();
             Intrinsics.a(context2);
             textView3.setTextColor(context2.getResources().getColor(R.color.syc_D0D0D0));
-            a2.b.setAlpha(0.3f);
-            a2.f16610c.setText(allDa.getName());
-            TextView textView4 = a2.d;
+            a.b.setAlpha(0.3f);
+            a.c.setText(allDa.getName());
+            TextView textView4 = a.d;
             textView4.setText("需要收集" + allDa.getJewel() + "钻石");
         }
 
@@ -194,7 +189,6 @@ public final class YYGiftWallListAndInfoAboutDialog extends BaseFullScreenDialog
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, GiftWallInfoAboutModel item) {
             Intrinsics.e(helper, "helper");
@@ -223,14 +217,14 @@ public final class YYGiftWallListAndInfoAboutDialog extends BaseFullScreenDialog
     }
 
     private final DialogGiftWallAboutBinding f() {
-        DialogGiftWallAboutBinding dialogGiftWallAboutBinding = this.f18204a;
+        DialogGiftWallAboutBinding dialogGiftWallAboutBinding = this.a;
         Intrinsics.a(dialogGiftWallAboutBinding);
         return dialogGiftWallAboutBinding;
     }
 
     private final void g() {
         ArrayList<YYCollectorConfigMode> collector_config;
-        f().f16342a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYGiftWallListAndInfoAboutDialog$XSXEH27ZO5_b92SX_NBK7vMxQwk
+        f().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYGiftWallListAndInfoAboutDialog$XSXEH27ZO5_b92SX_NBK7vMxQwk
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYGiftWallListAndInfoAboutDialog.a(YYGiftWallListAndInfoAboutDialog.this, view);
@@ -242,17 +236,16 @@ public final class YYGiftWallListAndInfoAboutDialog extends BaseFullScreenDialog
                 YYGiftWallListAndInfoAboutDialog.b(YYGiftWallListAndInfoAboutDialog.this, view);
             }
         });
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3, 1, false);
+        RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3, 1, false);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.yy_china.view.YYGiftWallListAndInfoAboutDialog$initView$3
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 YYGiftWallListAndInfoAboutDialog.Ada ada;
                 ada = YYGiftWallListAndInfoAboutDialog.this.b;
                 return ada.a(i);
             }
         });
-        f().f16343c.setAdapter(this.b);
-        f().f16343c.setLayoutManager(gridLayoutManager);
+        f().c.setAdapter(this.b);
+        f().c.setLayoutManager(gridLayoutManager);
         ArrayList arrayList = new ArrayList();
         YYGoodsWallListMode yYGoodsWallListMode = this.d;
         if (yYGoodsWallListMode != null && (collector_config = yYGoodsWallListMode.getCollector_config()) != null) {
@@ -305,13 +298,13 @@ public final class YYGiftWallListAndInfoAboutDialog extends BaseFullScreenDialog
     }
 
     public final void a(YYUserInfo yYUserInfo) {
-        this.f18205c = yYUserInfo;
+        this.c = yYUserInfo;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18204a = DialogGiftWallAboutBinding.a(inflater.inflate(R.layout.dialog_gift_wall_about, viewGroup, true));
+        this.a = DialogGiftWallAboutBinding.a(inflater.inflate(R.layout.dialog_gift_wall_about, viewGroup, true));
         g();
         return f().getRoot();
     }

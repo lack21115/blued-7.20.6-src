@@ -1,6 +1,7 @@
 package com.blued.android.chat.core.pack;
 
 import androidx.collection.ArrayMap;
+import com.alipay.sdk.util.l;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import java.util.Map;
 
@@ -23,10 +24,10 @@ public class ReqWawajiControllerUploadResultPackage extends ReqBasePackage {
     protected Map<String, Object> getReqInfo() {
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE, (short) 6);
-        arrayMap.put("session_id", Long.valueOf(this.sessionId));
+        arrayMap.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, Long.valueOf(this.sessionId));
         arrayMap.put("uid", Long.valueOf(this.userId));
         arrayMap.put("order_id", this.orderId);
-        arrayMap.put("result", Integer.valueOf(this.result));
+        arrayMap.put(l.c, Integer.valueOf(this.result));
         return arrayMap;
     }
 

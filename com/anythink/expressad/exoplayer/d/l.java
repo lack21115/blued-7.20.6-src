@@ -19,7 +19,7 @@ public final class l implements j<k> {
         com.anythink.expressad.exoplayer.k.a.a(uuid);
         com.anythink.expressad.exoplayer.k.a.a(!com.anythink.expressad.exoplayer.b.bi.equals(uuid), "Use C.CLEARKEY_UUID instead");
         UUID uuid2 = uuid;
-        if (af.f7632a < 27) {
+        if (af.f4793a < 27) {
             uuid2 = uuid;
             if (com.anythink.expressad.exoplayer.b.bj.equals(uuid)) {
                 uuid2 = com.anythink.expressad.exoplayer.b.bi;
@@ -45,7 +45,7 @@ public final class l implements j<k> {
     }
 
     private k e(byte[] bArr) {
-        return new k(new MediaCrypto(this.h, bArr), af.f7632a < 21 && com.anythink.expressad.exoplayer.b.bk.equals(this.h) && "L3".equals(a("securityLevel")));
+        return new k(new MediaCrypto(this.h, bArr), af.f4793a < 21 && com.anythink.expressad.exoplayer.b.bk.equals(this.h) && "L3".equals(a("securityLevel")));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:26:0x0090, code lost:
@@ -81,7 +81,7 @@ public final class l implements j<k> {
 
     @Override // com.anythink.expressad.exoplayer.d.j
     public final void a(final j.g<? super k> gVar) {
-        if (af.f7632a < 23) {
+        if (af.f4793a < 23) {
             throw new UnsupportedOperationException();
         }
         this.i.setOnKeyStatusChangeListener(gVar == null ? null : new MediaDrm.OnKeyStatusChangeListener() { // from class: com.anythink.expressad.exoplayer.d.l.2
@@ -157,6 +157,6 @@ public final class l implements j<k> {
 
     @Override // com.anythink.expressad.exoplayer.d.j
     public final /* synthetic */ k d(byte[] bArr) {
-        return new k(new MediaCrypto(this.h, bArr), af.f7632a < 21 && com.anythink.expressad.exoplayer.b.bk.equals(this.h) && "L3".equals(a("securityLevel")));
+        return new k(new MediaCrypto(this.h, bArr), af.f4793a < 21 && com.anythink.expressad.exoplayer.b.bk.equals(this.h) && "L3".equals(a("securityLevel")));
     }
 }

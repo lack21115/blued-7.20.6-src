@@ -33,7 +33,7 @@ public class BridgeInterceptor implements Interceptor {
             builder.addHeader("Host", request.url().getHost());
         }
         if (request.header("Connection") == null) {
-            builder.addHeader("Connection", c.f7906c);
+            builder.addHeader("Connection", c.f5066c);
         }
         boolean z = false;
         if (request.header("Accept-Encoding") == null) {

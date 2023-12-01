@@ -12,14 +12,14 @@ import kotlin.jvm.internal.Intrinsics;
 public final class MsgBackupState implements UiState {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f33640a;
+    private final String f19949a;
 
     public MsgBackupState() {
         this(null, 1, null);
     }
 
     public MsgBackupState(String str) {
-        this.f33640a = str;
+        this.f19949a = str;
     }
 
     public /* synthetic */ MsgBackupState(String str, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -31,18 +31,18 @@ public final class MsgBackupState implements UiState {
     }
 
     public final String a() {
-        return this.f33640a;
+        return this.f19949a;
     }
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof MsgBackupState) && Intrinsics.a((Object) this.f33640a, (Object) ((MsgBackupState) obj).f33640a);
+        return (obj instanceof MsgBackupState) && Intrinsics.a(this.f19949a, ((MsgBackupState) obj).f19949a);
     }
 
     public int hashCode() {
-        String str = this.f33640a;
+        String str = this.f19949a;
         if (str == null) {
             return 0;
         }
@@ -50,6 +50,6 @@ public final class MsgBackupState implements UiState {
     }
 
     public String toString() {
-        return "MsgBackupState(date=" + ((Object) this.f33640a) + ')';
+        return "MsgBackupState(date=" + ((Object) this.f19949a) + ')';
     }
 }

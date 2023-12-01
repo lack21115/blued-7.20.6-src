@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
+import androidx.fragment.app.Fragment;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.listener.FetchDataListener;
 import com.blued.android.chat.listener.LoadListener;
@@ -22,7 +23,6 @@ import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageFileLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
-import com.blued.android.core.ui.BaseFragmentActivity;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
@@ -132,7 +132,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     private MsgSourceEntity Z;
 
     /* renamed from: a  reason: collision with root package name */
-    public LogData f32533a;
+    public LogData f18842a;
     private RecentPhotoManager aa;
     private EditDataModel.SerializableData ab;
     private ChatBundleExtra ac;
@@ -159,7 +159,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f32534c = "";
+    public String f18843c = "";
     private String q = "";
     private String r = "";
     private String y = "";
@@ -191,16 +191,16 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     class AnonymousClass18 implements CheckYellowListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f32545a;
+        final /* synthetic */ int f18854a;
         final /* synthetic */ List b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ ArrayList f32546c;
+        final /* synthetic */ ArrayList f18855c;
 
         AnonymousClass18(int i, List list, ArrayList arrayList) {
-            this.f32545a = i;
+            this.f18854a = i;
             this.b = list;
-            this.f32546c = arrayList;
+            this.f18855c = arrayList;
         }
 
         @Override // com.soft.blued.ui.msg.controller.tools.CheckYellowListener
@@ -216,7 +216,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
             while (true) {
                 int i2 = i;
                 if (i2 >= length) {
-                    MsgChattingPresent.this.a(z, strArr, this.f32545a, this.b, this.f32546c.size());
+                    MsgChattingPresent.this.a(z, strArr, this.f18854a, this.b, this.f18855c.size());
                     return;
                 }
                 String str = strArr[i2];
@@ -231,16 +231,16 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     class AnonymousClass19 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f32547a;
+        final /* synthetic */ int f18856a;
 
         AnonymousClass19(int i) {
-            this.f32547a = i;
+            this.f18856a = i;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             ChattingModel chattingModel;
-            if (MsgChattingPresent.this.l == null || MsgChattingPresent.this.l.z().f31961a == null || MsgChattingPresent.this.l.z().f31961a.size() <= 0 || MsgChattingPresent.this.l.z().f31961a.size() <= this.f32547a || (chattingModel = (ChattingModel) MsgChattingPresent.this.l.z().f31961a.get(this.f32547a)) == null) {
+            if (MsgChattingPresent.this.l == null || MsgChattingPresent.this.l.z().f18271a == null || MsgChattingPresent.this.l.z().f18271a.size() <= 0 || MsgChattingPresent.this.l.z().f18271a.size() <= this.f18856a || (chattingModel = (ChattingModel) MsgChattingPresent.this.l.z().f18271a.get(this.f18856a)) == null) {
                 return;
             }
             ChatHelperV4.a().a(MsgChattingPresent.this.p, MsgChattingPresent.this.o, chattingModel);
@@ -401,7 +401,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     /* JADX INFO: Access modifiers changed from: private */
     public void a(int i2, List<ChattingModel> list, MessageProtos.SourceType sourceType, int i3) {
         a(list);
-        ChatHelperV4.a().a(list, this.b, this.f32534c, this.s, this.t, this.u, this.v, this.w);
+        ChatHelperV4.a().a(list, this.b, this.f18843c, this.s, this.t, this.u, this.v, this.w);
         EventTrackMessage.a(MessageProtos.Event.MSG_SEND_PHOTO, sourceType, i3, i2 == 1 ? MessageProtos.PhotoType.BURN_AFTER_READ : MessageProtos.PhotoType.NORMAL_PHOTO);
         this.R = true;
     }
@@ -420,18 +420,17 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         try {
             BitmapFactory.decodeFile(file.getAbsolutePath(), options);
             int c2 = FeedMethods.c(18);
-            a(1, this.f32533a.bubble_exhibition_img, (int) ((options.outWidth * options.outHeight) / c2), c2, 0);
+            a(1, this.f18842a.bubble_exhibition_img, (int) ((options.outWidth * options.outHeight) / c2), c2, 0);
         } catch (Exception e) {
             e.printStackTrace();
         }
         FeedHttpUtils.j(new BluedUIHttpResponse<BluedEntityA<String>>(null) { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.27
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<String> bluedEntityA) {
                 LiveEventBus.get("FEED_BUBBLE_SAY_HELLO").post(str);
             }
-        }, str, null);
+        }, str, (IRequestHost) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -495,11 +494,10 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     public void aA() {
         PayHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<PayExperimentConfigModel>>(this.l.M()) { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.15
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<PayExperimentConfigModel> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
-                    MsgChattingPresent.this.am = bluedEntityA.data.get(0);
+                    MsgChattingPresent.this.am = (PayExperimentConfigModel) bluedEntityA.data.get(0);
                     if (MsgChattingPresent.this.am.is_gift_free == 1) {
                         MsgChattingPresent.this.l.a(1, MsgChattingPresent.this.am.is_gift_free_content);
                     } else if (MsgChattingPresent.this.am.is_gift_new == 0 || BluedPreferences.u(MsgChattingPresent.this.am.is_gift_new)) {
@@ -547,7 +545,6 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
             /* JADX WARN: Code restructure failed: missing block: B:17:0x0066, code lost:
                 if (r0 != false) goto L21;
              */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -561,7 +558,6 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                 throw new UnsupportedOperationException("Method not decompiled: com.soft.blued.ui.msg.presenter.MsgChattingPresent.AnonymousClass31.onUIUpdate(com.blued.android.framework.http.parser.BluedEntityA):void");
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str) {
                 return true;
             }
@@ -589,7 +585,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     private UserBasicModel aw() {
         UserBasicModel userBasicModel = new UserBasicModel();
         userBasicModel.uid = String.valueOf(this.ah ? -this.o : this.o);
-        userBasicModel.avatar = this.f32534c;
+        userBasicModel.avatar = this.f18843c;
         userBasicModel.name = F();
         if (this.W != null) {
             userBasicModel.age = this.W.age + "";
@@ -617,7 +613,6 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     public void ay() {
         BluedUIHttpResponse<BluedEntityA<ServiceMenuModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<ServiceMenuModel>>(this.l.M()) { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.13
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<ServiceMenuModel> bluedEntityA) {
                 if (bluedEntityA != null) {
@@ -663,7 +658,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                         i2 = i3 + 1;
                     }
                     if (strArr == null || strArr.length <= 0) {
-                        ChatHelperV4.a().a(chattingModel, MsgChattingPresent.this.b, MsgChattingPresent.this.f32534c, MsgChattingPresent.this.s, MsgChattingPresent.this.t, MsgChattingPresent.this.u, MsgChattingPresent.this.v, MsgChattingPresent.this.w, z);
+                        ChatHelperV4.a().a(chattingModel, MsgChattingPresent.this.b, MsgChattingPresent.this.f18843c, MsgChattingPresent.this.s, MsgChattingPresent.this.t, MsgChattingPresent.this.u, MsgChattingPresent.this.v, MsgChattingPresent.this.w, z);
                         MsgChattingPresent.this.R = true;
                     } else if (MsgChattingPresent.this.l.getContext() != null) {
                         if (MsgChattingPresent.this.ap()) {
@@ -673,7 +668,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                                 @Override // android.content.DialogInterface.OnClickListener
                                 public void onClick(DialogInterface dialogInterface, int i4) {
                                     Tracker.onClick(dialogInterface, i4);
-                                    ChatHelperV4.a().a(MsgChattingPresent.this.e(chattingModel), MsgChattingPresent.this.b, MsgChattingPresent.this.f32534c, MsgChattingPresent.this.s, MsgChattingPresent.this.t, MsgChattingPresent.this.u, MsgChattingPresent.this.v, MsgChattingPresent.this.w, z);
+                                    ChatHelperV4.a().a(MsgChattingPresent.this.e(chattingModel), MsgChattingPresent.this.b, MsgChattingPresent.this.f18843c, MsgChattingPresent.this.s, MsgChattingPresent.this.t, MsgChattingPresent.this.u, MsgChattingPresent.this.v, MsgChattingPresent.this.w, z);
                                     MsgChattingPresent.this.R = true;
                                 }
                             }, AppInfo.d().getResources().getString(R.string.msg_yellow_tip_cancel), AppInfo.d().getResources().getColor(2131101632), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
@@ -684,7 +679,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
             return;
         }
         this.R = true;
-        ChatHelperV4.a().a(chattingModel, this.b, this.f32534c, this.s, this.t, this.u, this.v, this.w, z);
+        ChatHelperV4.a().a(chattingModel, this.b, this.f18843c, this.s, this.t, this.u, this.v, this.w, z);
     }
 
     private void b(List<ChattingModel> list) {
@@ -703,7 +698,6 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
 
     private LoadListener c(final Handler handler) {
         return new LoadListener() { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.12
-            @Override // com.blued.android.chat.listener.LoadListener
             public void onLoadFailed(String str) {
                 Handler handler2 = handler;
                 if (handler2 != null) {
@@ -711,7 +705,6 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                 }
             }
 
-            @Override // com.blued.android.chat.listener.LoadListener
             public void onLoadSuccess() {
                 Handler handler2 = handler;
                 if (handler2 != null) {
@@ -726,7 +719,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
             ChattingModel chattingModel = new ChattingModel();
             chattingModel.msgType = (short) 0;
             chattingModel.msgContent = this.l.getContext().getResources().getString(R.string.following_for_new_message);
-            this.l.z().f31961a.add(i2, chattingModel);
+            this.l.z().f18271a.add(i2, chattingModel);
             this.l.l();
         }
     }
@@ -754,7 +747,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                     i2 = i3 + 1;
                 }
                 if (strArr == null || strArr.length <= 0) {
-                    ChatHelperV4.a().b(chattingModel, MsgChattingPresent.this.b, MsgChattingPresent.this.f32534c, MsgChattingPresent.this.s, MsgChattingPresent.this.t, MsgChattingPresent.this.u, MsgChattingPresent.this.v, MsgChattingPresent.this.w, z);
+                    ChatHelperV4.a().b(chattingModel, MsgChattingPresent.this.b, MsgChattingPresent.this.f18843c, MsgChattingPresent.this.s, MsgChattingPresent.this.t, MsgChattingPresent.this.u, MsgChattingPresent.this.v, MsgChattingPresent.this.w, z);
                     MsgChattingPresent.this.R = true;
                 } else if (MsgChattingPresent.this.l.getContext() != null) {
                     if (MsgChattingPresent.this.ap()) {
@@ -764,7 +757,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i4) {
                                 Tracker.onClick(dialogInterface, i4);
-                                ChatHelperV4.a().b(MsgChattingPresent.this.e(chattingModel), MsgChattingPresent.this.b, MsgChattingPresent.this.f32534c, MsgChattingPresent.this.s, MsgChattingPresent.this.t, MsgChattingPresent.this.u, MsgChattingPresent.this.v, MsgChattingPresent.this.w, z);
+                                ChatHelperV4.a().b(MsgChattingPresent.this.e(chattingModel), MsgChattingPresent.this.b, MsgChattingPresent.this.f18843c, MsgChattingPresent.this.s, MsgChattingPresent.this.t, MsgChattingPresent.this.u, MsgChattingPresent.this.v, MsgChattingPresent.this.w, z);
                                 MsgChattingPresent.this.R = true;
                             }
                         }, AppInfo.d().getResources().getString(R.string.msg_yellow_tip_cancel), AppInfo.d().getResources().getColor(2131101632), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
@@ -795,7 +788,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         if (chattingModel != null) {
             f(chattingModel);
         }
-        SessionModel c2 = DateTodayManager.f32404a.c();
+        SessionModel c2 = DateTodayManager.f18714a.c();
         if (c2 == null || c2.lastMsgFromId != f() || (a2 = this.l.z().a()) == null || a2.size() <= 1) {
             return;
         }
@@ -803,13 +796,13 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         if (chattingModel2.msgType <= 0 || chattingModel2.msgType == 281) {
             return;
         }
-        DateTodayManager.f32404a.a(DateTodayManager.Status.COME_BACK_TOMORROW, null, null);
+        DateTodayManager.f18714a.a(DateTodayManager.Status.COME_BACK_TOMORROW, null, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d(ChattingModel chattingModel) {
         this.R = true;
-        ChatHelperV4.a().a(chattingModel, this.b, this.f32534c, this.s, this.t, this.u, this.v, this.w);
+        ChatHelperV4.a().a(chattingModel, this.b, this.f18843c, this.s, this.t, this.u, this.v, this.w);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -898,7 +891,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                 if (g(chattingModel)) {
                     return;
                 }
-                DateTodayManager.f32404a.b(false, f());
+                DateTodayManager.f18714a.b(false, f());
                 this.l.e(3);
             } else if (chattingModel.msgType == 288) {
                 DateTodayInterestPlayedModel dateTodayInterestPlayedModel = (DateTodayInterestPlayedModel) AppInfo.f().fromJson(chattingModel.getMsgExtra(), (Class<Object>) DateTodayInterestPlayedModel.class);
@@ -907,7 +900,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                     dateTodayInterestPlayedModel2 = new DateTodayInterestPlayedModel();
                 }
                 if (dateTodayInterestPlayedModel2.getPlayed() == 0) {
-                    DateTodayManager.f32404a.b(false, f());
+                    DateTodayManager.f18714a.b(false, f());
                     this.al = true;
                     Log.w("xxx", "dateTodayProcessLastMessage dateTodayViewCreated=" + this.ak);
                     if (this.ak) {
@@ -942,13 +935,13 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
 
     public void A() {
         LogData logData;
-        if (this.m || (logData = this.f32533a) == null || this.n) {
+        if (this.m || (logData = this.f18842a) == null || this.n) {
             return;
         }
         logData.logService = "chat_send_msg";
-        InstantLog.a(this.f32533a);
+        InstantLog.a(this.f18842a);
         this.n = true;
-        EventTrackMessage.a(MessageProtos.Event.CHAT_SEND_MSG, this.f32533a, this.Z);
+        EventTrackMessage.a(MessageProtos.Event.CHAT_SEND_MSG, this.f18842a, this.Z);
     }
 
     public void B() {
@@ -963,15 +956,15 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         if (c()) {
             return true;
         }
-        SubscribeNumberManager subscribeNumberManager = SubscribeNumberManager.f32449a;
+        SubscribeNumberManager subscribeNumberManager = SubscribeNumberManager.f18759a;
         StringBuilder sb = new StringBuilder();
         sb.append(f());
         sb.append("");
-        return subscribeNumberManager.a(sb.toString(), (Short) 2) || SubscribeNumberManager.f32449a.a(UserInfo.getInstance().getLoginUserInfo().uid, (Short) 2);
+        return subscribeNumberManager.a(sb.toString(), (Short) 2) || SubscribeNumberManager.f18759a.a(UserInfo.getInstance().getLoginUserInfo().uid, (Short) 2);
     }
 
     public boolean D() {
-        SubscribeNumberManager subscribeNumberManager = SubscribeNumberManager.f32449a;
+        SubscribeNumberManager subscribeNumberManager = SubscribeNumberManager.f18759a;
         return subscribeNumberManager.a(f() + "", Short.valueOf(E()));
     }
 
@@ -1000,7 +993,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     }
 
     public LogData K() {
-        return this.f32533a;
+        return this.f18842a;
     }
 
     public SessionSettingModel L() {
@@ -1068,7 +1061,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         this.o = arguments.getLong("passby_session_id");
         this.p = arguments.getShort("passby_session_type");
         this.b = arguments.getString("passby_nick_name");
-        this.f32534c = arguments.getString("passby_avatar");
+        this.f18843c = arguments.getString("passby_avatar");
         this.s = arguments.getInt("passby_vbadge");
         this.t = arguments.getInt("passby_vip_grade", 0);
         this.u = arguments.getInt("passby_is_vip_annual", 0);
@@ -1081,18 +1074,18 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         this.D = arguments.getLong("PASSBY_MSG_LOCAL_ID", -1L);
         this.f = arguments.getBoolean("show_guide", false);
         this.ah = arguments.getBoolean("PASSBY_DATE_TODAY", false);
-        DateTodayManager.f32404a.a(this.ah);
+        DateTodayManager.f18714a.a(this.ah);
         Log.e("xxx", "MsgChattingPresent dateTodayTemp=" + this.ah + ", sessionId=" + this.o);
         try {
-            LogData logData = (LogData) arguments.getSerializable("PASSBY_LOG_DATA");
-            this.f32533a = logData;
-            this.g = logData.details;
+            LogData serializable = arguments.getSerializable("PASSBY_LOG_DATA");
+            this.f18842a = serializable;
+            this.g = serializable.details;
         } catch (Exception e) {
             String str = i;
             Logger.c(str, "logData===error: " + e.getMessage());
-            this.f32533a = new LogData();
+            this.f18842a = new LogData();
         }
-        this.f32533a.target_uid = String.valueOf(this.o);
+        this.f18842a.target_uid = String.valueOf(this.o);
         try {
             this.Z = (MsgSourceEntity) arguments.getSerializable("msg_source_model");
             Logger.c("msgSource", "msgSource===" + this.Z.getType());
@@ -1112,7 +1105,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                         }
                     }
                 });
-                if (this.ac.fuGiftListEvent != null && this.ac.fuGiftListEvent.f32324a != null) {
+                if (this.ac.fuGiftListEvent != null && this.ac.fuGiftListEvent.f18634a != null) {
                     AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.10
                         @Override // java.lang.Runnable
                         public void run() {
@@ -1132,14 +1125,14 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         if (s == 2) {
             InstantLog.a("chat_page_show", (Object) 0);
             this.m = false;
-            SubscribeNumberManager.f32449a.d();
+            SubscribeNumberManager.f18759a.d();
         } else if (s != 3) {
             return false;
         } else {
             InstantLog.a("chat_page_show", (Object) 1);
             this.m = true;
             SocialNetWorkProtos.Event event = SocialNetWorkProtos.Event.GROUP_CHAT_SHOW;
-            EventTrackGroup.a(event, this.o + "", this.f32533a.from == d.K ? SocialNetWorkProtos.SourceType.GROUPINFO : SocialNetWorkProtos.SourceType.MESSAGE);
+            EventTrackGroup.a(event, this.o + "", this.f18842a.from == d.K ? SocialNetWorkProtos.SourceType.GROUPINFO : SocialNetWorkProtos.SourceType.MESSAGE);
         }
         ad();
         return true;
@@ -1166,7 +1159,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         String name = this.m ? IMV4Method.a(chattingModel.fromId) == 1 ? chattingModel.fromNickName : UserInfo.getInstance().getLoginUserInfo().getName() : IMV4Method.a(chattingModel.fromId) == 1 ? this.b : UserInfo.getInstance().getLoginUserInfo().getName();
         UserBasicModel userBasicModel = new UserBasicModel();
         userBasicModel.uid = String.valueOf(chattingModel.fromId);
-        userBasicModel.avatar = GroupUtil.a(chattingModel, this.m, this.f32534c);
+        userBasicModel.avatar = GroupUtil.a(chattingModel, this.m, this.f18843c);
         userBasicModel.name = name;
         if (!this.m && this.W != null) {
             userBasicModel.age = this.W.age + "";
@@ -1191,12 +1184,12 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         ChattingModel chattingModel;
         IMsgChattingView iMsgChattingView = this.l;
         if (iMsgChattingView != null) {
-            if (iMsgChattingView.z() != null && this.l.z().f31961a != null && i2 >= 0 && (chattingModel = (ChattingModel) this.l.z().f31961a.get(i2)) != null && chattingModel.msgType != 0) {
+            if (iMsgChattingView.z() != null && this.l.z().f18271a != null && i2 >= 0 && (chattingModel = (ChattingModel) this.l.z().f18271a.get(i2)) != null && chattingModel.msgType != 0) {
                 int i3 = i2 - 1;
                 if (i3 < 0) {
                     c(i2);
                 } else {
-                    ChattingModel chattingModel2 = (ChattingModel) this.l.z().f31961a.get(i3);
+                    ChattingModel chattingModel2 = (ChattingModel) this.l.z().f18271a.get(i3);
                     if (chattingModel2 != null && chattingModel2.msgType != 0) {
                         c(i2);
                     }
@@ -1213,23 +1206,21 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
 
     public void a(long j) {
         if (this.j == null) {
-            this.j = new XPopup.Builder(this.l.getContext()).d((Boolean) false).a((BasePopupView) new LoadingPop(this.l.getContext()));
+            this.j = new XPopup.Builder(this.l.getContext()).d(false).a(new LoadingPop(this.l.getContext()));
         }
         this.j.h();
         BluedUIHttpResponse<BluedEntityA<UserInfoEntity>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<UserInfoEntity>>(this.l.M()) { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.23
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserInfoEntity> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
-                    int i2 = bluedEntityA.data.get(0).uid.equals(MsgChattingPresent.this.d) ? 1 : (MsgChattingPresent.this.e == null || !MsgChattingPresent.this.e.contains(bluedEntityA.data.get(0).uid)) ? 3 : 2;
+                    int i2 = ((UserInfoEntity) bluedEntityA.data.get(0)).uid.equals(MsgChattingPresent.this.d) ? 1 : (MsgChattingPresent.this.e == null || !MsgChattingPresent.this.e.contains(((UserInfoEntity) bluedEntityA.data.get(0)).uid)) ? 3 : 2;
                     if (MsgChattingPresent.this.m() != null) {
-                        new XPopup.Builder(MsgChattingPresent.this.l.getContext()).a((BasePopupView) new UserCardPop(MsgChattingPresent.this.l.getContext(), bluedEntityA.data.get(0), MsgChattingPresent.this.l.M(), i2, MsgChattingPresent.this.m())).h();
+                        new XPopup.Builder(MsgChattingPresent.this.l.getContext()).a(new UserCardPop(MsgChattingPresent.this.l.getContext(), (UserInfoEntity) bluedEntityA.data.get(0), MsgChattingPresent.this.l.M(), i2, MsgChattingPresent.this.m())).h();
                     }
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (MsgChattingPresent.this.j != null) {
@@ -1273,7 +1264,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         if (i3 >= 0) {
             iMsgChattingView.b(i3);
         }
-        this.U = this.l.z().f31961a.size();
+        this.U = this.l.z().f18271a.size();
         if (this.O) {
             return;
         }
@@ -1283,7 +1274,6 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     @Override // com.soft.blued.ui.msg.contract.IMsgChatAdapterCallback
     public void a(final ChattingModel chattingModel) {
         ChatHttpUtils.a(f() + "", "chat", new BluedUIHttpResponse() { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.26
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 MsgChattingPresent.this.Y.lastMsgLocalId = chattingModel.msgLocalId;
                 chattingModel.msgType = (short) 243;
@@ -1304,10 +1294,9 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         if (ap() && !this.al) {
             DateTodayManager.a(chattingModel);
         }
-        ChatHelperV4.a().c(chattingModel, this.b, this.f32534c, this.s, this.t, this.u, this.v, this.w, z);
+        ChatHelperV4.a().c(chattingModel, this.b, this.f18843c, this.s, this.t, this.u, this.v, this.w, z);
     }
 
-    @Override // com.blued.android.chat.listener.FetchDataListener
     /* renamed from: a */
     public void onFetchData(SessionModel sessionModel) {
         boolean z = true;
@@ -1319,7 +1308,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                 iMsgChattingView.a(sessionModel);
             }
             if (this.Y != null) {
-                this.X = (SessionSettingModel) sessionModel.sessionSettingModel;
+                this.X = sessionModel.sessionSettingModel;
             }
             SessionSettingModel sessionSettingModel = this.X;
             z = true;
@@ -1333,7 +1322,6 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         }
         if (z) {
             ChatManager.getInstance().getSessionSettingModel(this.p, this.o, new FetchDataListener<SessionSettingBaseModel>() { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.17
-                @Override // com.blued.android.chat.listener.FetchDataListener
                 /* renamed from: a */
                 public void onFetchData(SessionSettingBaseModel sessionSettingBaseModel) {
                     MsgChattingPresent.this.X = (SessionSettingModel) sessionSettingBaseModel;
@@ -1365,7 +1353,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         if (sessionModel == null || sessionModel.sessionSettingModel == null) {
             return;
         }
-        SessionSettingModel sessionSettingModel = (SessionSettingModel) this.Y.sessionSettingModel;
+        SessionSettingModel sessionSettingModel = this.Y.sessionSettingModel;
         if (sessionSettingModel.is_super != groupInfoModel.is_super) {
             sessionSettingModel.is_super = groupInfoModel.is_super;
             HashMap hashMap = new HashMap();
@@ -1379,7 +1367,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
             return;
         }
         this.b = userInfoBasicModel.name;
-        this.f32534c = userInfoBasicModel.avatar;
+        this.f18843c = userInfoBasicModel.avatar;
         this.s = userInfoBasicModel.vbadge;
         this.t = userInfoBasicModel.vip_grade;
         this.u = userInfoBasicModel.is_vip_annual;
@@ -1446,7 +1434,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
 
     @Override // com.soft.blued.ui.msg.contract.IMsgChatAdapterCallback
     public void a(String str) {
-        GroupAnnouncementFragment.f32668a.a(this.l.getContext(), this.an);
+        GroupAnnouncementFragment.f18977a.a(this.l.getContext(), this.an);
     }
 
     public void a(String str, int i2, int i3) {
@@ -1493,7 +1481,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     public void a(String str, boolean z) {
         IMsgChattingView iMsgChattingView = this.l;
         if (iMsgChattingView != null) {
-            UserInfoFragmentNew.a(iMsgChattingView.v(), z ? ax() : aw(), str, 608);
+            UserInfoFragmentNew.a((Fragment) iMsgChattingView.v(), z ? ax() : aw(), str, 608);
         }
     }
 
@@ -1558,7 +1546,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         this.H = this.Y.noReadMsgCount;
         this.I = (this.Y.lastMsgId - this.H) + 1;
         this.r = this.Y.lastDraft;
-        SessionSettingModel sessionSettingModel = (SessionSettingModel) this.Y.sessionSettingModel;
+        SessionSettingModel sessionSettingModel = this.Y.sessionSettingModel;
         this.X = sessionSettingModel;
         if (sessionSettingModel != null) {
             this.A = sessionSettingModel.getChatBgUri();
@@ -1567,7 +1555,6 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         } else {
             this.P = true;
             ChatManager.getInstance().getSessionSettingModel(this.p, this.o, new FetchDataListener<SessionSettingBaseModel>() { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.16
-                @Override // com.blued.android.chat.listener.FetchDataListener
                 /* renamed from: a */
                 public void onFetchData(SessionSettingBaseModel sessionSettingBaseModel) {
                     if (sessionSettingBaseModel != null) {
@@ -1588,7 +1575,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     }
 
     public void ae() {
-        ChatConstants.f28313a = this.o;
+        ChatConstants.f14623a = this.o;
         if (this.P) {
             return;
         }
@@ -1609,7 +1596,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
             this.Q = true;
             ChatManager.getInstance().unregisterMsgContentListener(this.p, this.o, this);
         }
-        ChatConstants.f28313a = 0L;
+        ChatConstants.f14623a = 0L;
         IMV4Constant.b = false;
         String G = this.l.G();
         if (TextUtils.isEmpty(G.trim()) && !TextUtils.isEmpty(this.r)) {
@@ -1641,14 +1628,13 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
 
     public void ai() {
         a(new FetchDataListener<SessionModel>() { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.21
-            @Override // com.blued.android.chat.listener.FetchDataListener
             /* renamed from: a */
             public void onFetchData(SessionModel sessionModel) {
                 if (MsgChattingPresent.this.h.get() || sessionModel == null || sessionModel._msgList == null || sessionModel._msgList.size() > 2) {
                     return;
                 }
-                if (sessionModel._msgList.size() != 2 || sessionModel._msgList.get(0).msgType == -2) {
-                    ChattingModel chattingModel = sessionModel._msgList.size() == 2 ? sessionModel._msgList.get(1) : sessionModel._msgList.get(0);
+                if (sessionModel._msgList.size() != 2 || ((ChattingModel) sessionModel._msgList.get(0)).msgType == -2) {
+                    ChattingModel chattingModel = (ChattingModel) (sessionModel._msgList.size() == 2 ? sessionModel._msgList.get(1) : sessionModel._msgList.get(0));
                     String str = MsgChattingPresent.i;
                     Logger.c(str, "fromId==" + chattingModel.fromId);
                     String str2 = MsgChattingPresent.i;
@@ -1682,7 +1668,6 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         }
         ChatHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<HelloExpressionData>>(this.l.M()) { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.22
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<HelloExpressionData> bluedEntityA) {
                 if (!bluedEntityA.hasData() || MsgChattingPresent.this.l == null) {
@@ -1713,13 +1698,12 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     }
 
     public void ao() {
-        LogData logData = this.f32533a;
+        LogData logData = this.f18842a;
         if (logData == null || TextUtils.isEmpty(logData.bubble_exhibition_img)) {
             return;
         }
-        final String str = this.f32533a.feed_id;
-        ImageFileLoader.a((IRequestHost) null).a(this.f32533a.bubble_exhibition_img).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.msg.presenter.-$$Lambda$MsgChattingPresent$ukKbIhCd7XOfvtqbC5KrOl8NPNg
-            @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
+        final String str = this.f18842a.feed_id;
+        ImageFileLoader.a((IRequestHost) null).a(this.f18842a.bubble_exhibition_img).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.msg.presenter.-$$Lambda$MsgChattingPresent$ukKbIhCd7XOfvtqbC5KrOl8NPNg
             public final void onUIFinish(File file, Exception exc) {
                 MsgChattingPresent.this.a(str, file, exc);
             }
@@ -1783,8 +1767,8 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
 
     public void as() {
         ChatManager.getInstance().mergeAllTempChatting(this.p, this.o, this);
-        DateTodayManager.f32404a.b(f());
-        DateTodayManager.f32404a.a(false);
+        DateTodayManager.f18714a.b(f());
+        DateTodayManager.f18714a.a(false);
         long j = this.o;
         if (j < 0) {
             this.o = -j;
@@ -1795,7 +1779,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
 
     public void at() {
         List<ChattingModel> a2;
-        if (DateTodayManager.f32404a.d(f()) || (a2 = this.l.z().a()) == null || a2.size() < 10) {
+        if (DateTodayManager.f18714a.d(f()) || (a2 = this.l.z().a()) == null || a2.size() < 10) {
             return;
         }
         ChattingModel chattingModel = a2.get(a2.size() - 1);
@@ -1816,7 +1800,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
             chattingModelForSendmsg.msgId = chattingModel.msgId;
             DateTodayManager.a(chattingModelForSendmsg);
             ChatHelperV4.a().h(chattingModelForSendmsg);
-            DateTodayManager.f32404a.e(f());
+            DateTodayManager.f18714a.e(f());
         }
     }
 
@@ -1896,7 +1880,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
 
     public void b(ChattingModel chattingModel, int i2) {
         if (!this.m || chattingModel.isFromSelf()) {
-            UserInfoFragmentNew.a(this.l.v(), a(chattingModel, i2), "private_chatting_photo", 608);
+            UserInfoFragmentNew.a((Fragment) this.l.v(), a(chattingModel, i2), "private_chatting_photo", 608);
         } else {
             a(chattingModel.fromId);
         }
@@ -1904,7 +1888,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
 
     public void b(GroupInfoModel groupInfoModel) {
         this.b = groupInfoModel.group_title;
-        this.f32534c = groupInfoModel.group_cover;
+        this.f18843c = groupInfoModel.group_cover;
     }
 
     public void b(IRecentPhotoAdapterCallback.IGetPhotoListCallback iGetPhotoListCallback) {
@@ -1957,7 +1941,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
 
     @Override // com.soft.blued.ui.msg.contract.IMsgChatAdapterCallback
     public String d() {
-        return this.f32534c;
+        return this.f18843c;
     }
 
     public void d(String str) {
@@ -1974,7 +1958,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     }
 
     public void e(String str) {
-        LogData logData = this.f32533a;
+        LogData logData = this.f18842a;
         if (logData != null) {
             logData.userFrom = str;
         }
@@ -1992,7 +1976,6 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     public void f(String str) {
         ChatHttpUtils.b(new BluedUIHttpResponse<BluedEntityA>(this.l.M()) { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.24
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
             }
@@ -2015,12 +1998,10 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         IRequestHost M = this.l.M();
         MsgGroupHttpUtils.a(M, this.an.group_id + "", str, 4, new BluedUIHttpResponse<BluedEntityA>(this.l.M()) { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.25
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (z) {
@@ -2028,7 +2009,6 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
             }
@@ -2063,7 +2043,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     }
 
     public void i(boolean z) {
-        DateTodayManager.f32404a.a(this.o);
+        DateTodayManager.f18714a.a(this.o);
         this.ai = true;
         if (z) {
             this.l.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.28
@@ -2083,12 +2063,12 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
     }
 
     public boolean j(boolean z) {
-        return DateTodayManager.f32404a.a(z, f());
+        return DateTodayManager.f18714a.a(z, f());
     }
 
     @Override // com.soft.blued.ui.msg.contract.IMsgChatAdapterCallback
     public void k() {
-        FindSearchMapFragment.a((BaseFragmentActivity) this.l.getActivity(), 2, true);
+        FindSearchMapFragment.a(this.l.getActivity(), 2, true);
     }
 
     public void k(boolean z) {
@@ -2108,7 +2088,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
             }, 500L);
             return;
         }
-        DateTodayManager.f32404a.b(true, f());
+        DateTodayManager.f18714a.b(true, f());
         this.l.e(2);
         l(true);
         if (z2) {
@@ -2140,7 +2120,6 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         return this.aa.a();
     }
 
-    @Override // com.blued.android.chat.listener.MsgContentListener
     public void onMsgDataChanged(final List<ChattingModel> list) {
         AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.msg.presenter.-$$Lambda$MsgChattingPresent$tMMChpzZeY1Xq-svZq7uRxDRSxo
             @Override // java.lang.Runnable
@@ -2159,10 +2138,9 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         if (iMsgChattingView != null) {
             Context context = iMsgChattingView.getContext();
             BluedUIHttpResponse<BluedEntityA<UserInfoBasicModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<UserInfoBasicModel>>(this.l.M()) { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.3
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<UserInfoBasicModel> bluedEntityA) {
-                    MsgChattingPresent.this.W = bluedEntityA.data.get(0);
+                    MsgChattingPresent.this.W = (UserInfoBasicModel) bluedEntityA.data.get(0);
                     MsgChattingPresent.this.l.a(MsgChattingPresent.this.W);
                     if (MsgChattingPresent.this.W != null) {
                         SessionProfileModel sessionProfileModel = new SessionProfileModel();
@@ -2179,7 +2157,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                         ChatManager.getInstance().updateSessionInfoData(MsgChattingPresent.this.p, MsgChattingPresent.this.o, sessionProfileModel);
                         int i2 = MsgChattingPresent.this.W.no_disturb;
                         if (MsgChattingPresent.this.ah) {
-                            DateTodayManager.f32404a.b(MsgChattingPresent.this.W.distance);
+                            DateTodayManager.f18714a.b(MsgChattingPresent.this.W.distance);
                             i2 = 0;
                         }
                         if (MsgChattingPresent.this.X != null) {
@@ -2263,7 +2241,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         Bundle bundle = new Bundle();
         bundle.putString("passby_nick_name", this.b);
         bundle.putString("passby_nick_note", this.q);
-        bundle.putString("passby_avatar", this.f32534c);
+        bundle.putString("passby_avatar", this.f18843c);
         bundle.putInt("passby_vbadge", this.s);
         bundle.putString("passby_session_id", String.valueOf(this.o));
         bundle.putShort("passby_session_type", this.p);
@@ -2283,7 +2261,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
         if (this.ah && this.ai) {
             this.ai = false;
             ChatManager.getInstance().deleteAllTempChatting(this.p, this.o);
-            DateTodayManager.f32404a.b(f());
+            DateTodayManager.f18714a.b(f());
         }
         IMsgChattingView iMsgChattingView = this.l;
         if (iMsgChattingView == null) {
@@ -2317,9 +2295,9 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
             if (this.l == null || this.l.z() == null) {
                 this.J = -1;
             }
-            if (this.l.z().f31961a.size() >= this.H) {
-                int size = this.l.z().f31961a.size() - this.H;
-                ChattingModel chattingModel = (ChattingModel) this.l.z().f31961a.get(size);
+            if (this.l.z().f18271a.size() >= this.H) {
+                int size = this.l.z().f18271a.size() - this.H;
+                ChattingModel chattingModel = (ChattingModel) this.l.z().f18271a.get(size);
                 if (chattingModel == null) {
                     this.J = -1;
                 } else if (this.I != chattingModel.msgId) {
@@ -2327,8 +2305,8 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                         int i2 = size;
                         while (true) {
                             int i3 = i2 + 1;
-                            if (i3 < this.l.z().f31961a.size()) {
-                                if (((ChattingModel) this.l.z().f31961a.get(i3)).msgId == this.I) {
+                            if (i3 < this.l.z().f18271a.size()) {
+                                if (((ChattingModel) this.l.z().f18271a.get(i3)).msgId == this.I) {
                                     this.O = true;
                                     this.J = i3;
                                     break;
@@ -2344,7 +2322,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                         while (true) {
                             int i5 = i4 - 1;
                             if (i5 >= 0) {
-                                if (((ChattingModel) this.l.z().f31961a.get(i5)).msgId == this.I) {
+                                if (((ChattingModel) this.l.z().f18271a.get(i5)).msgId == this.I) {
                                     this.O = true;
                                     this.J = i5;
                                     break;
@@ -2375,19 +2353,18 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
             this.ae = false;
             BluedUIHttpResponse<BluedEntityA<ChatUserPrivilegeStatusModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<ChatUserPrivilegeStatusModel>>(this.l.M()) { // from class: com.soft.blued.ui.msg.presenter.MsgChattingPresent.5
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<ChatUserPrivilegeStatusModel> bluedEntityA) {
                     if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                         return;
                     }
-                    ChatUserPrivilegeStatusModel singleData = bluedEntityA.getSingleData();
-                    MsgChattingPresent.this.f32533a.is_super_call = singleData.call_type == 2;
+                    ChatUserPrivilegeStatusModel chatUserPrivilegeStatusModel = (ChatUserPrivilegeStatusModel) bluedEntityA.getSingleData();
+                    MsgChattingPresent.this.f18842a.is_super_call = chatUserPrivilegeStatusModel.call_type == 2;
                     MsgChattingPresent.this.A();
-                    if (TextUtils.isEmpty(singleData.super_call_id)) {
+                    if (TextUtils.isEmpty(chatUserPrivilegeStatusModel.super_call_id)) {
                         return;
                     }
-                    String str = singleData.super_call_id;
+                    String str = chatUserPrivilegeStatusModel.super_call_id;
                     if (str.equals(BluedPreferences.ax(MsgChattingPresent.this.e() + ""))) {
                         return;
                     }
@@ -2396,7 +2373,7 @@ public class MsgChattingPresent implements FetchDataListener<SessionModel>, MsgC
                         DateTodayManager.a(chattingModelForSendmsg);
                     }
                     ChatHelperV4.a().c(chattingModelForSendmsg, "", "", 0, 0, 0, 0, 0, false);
-                    BluedPreferences.c(MsgChattingPresent.this.e() + "", singleData.super_call_id);
+                    BluedPreferences.c(MsgChattingPresent.this.e() + "", chatUserPrivilegeStatusModel.super_call_id);
                 }
             };
             ChatHttpUtils.a(bluedUIHttpResponse, f() + "", this.ag);

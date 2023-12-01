@@ -11,12 +11,12 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         return arrayList;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean add(E e) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         boolean z = false;
         for (E e : collection) {
@@ -27,7 +27,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         return z;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public void clear() {
         Iterator<E> it = iterator();
         while (it.hasNext()) {
@@ -36,7 +36,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         }
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean contains(Object obj) {
         Iterator<E> it = iterator();
         if (obj != null) {
@@ -55,7 +55,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         return false;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean containsAll(Collection<?> collection) {
         Iterator<?> it = collection.iterator();
         while (it.hasNext()) {
@@ -66,7 +66,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         return true;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean isEmpty() {
         return size() == 0;
     }
@@ -74,7 +74,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     @Override // java.util.Collection, java.lang.Iterable
     public abstract Iterator<E> iterator();
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean remove(Object obj) {
         Iterator<E> it = iterator();
         if (obj != null) {
@@ -95,7 +95,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         return false;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         boolean z = false;
         Iterator<E> it = iterator();
@@ -108,7 +108,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         return z;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean retainAll(Collection<?> collection) {
         boolean z = false;
         Iterator<E> it = iterator();
@@ -121,15 +121,15 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         return z;
     }
 
-    @Override // java.util.Collection, java.util.List
+    @Override // java.util.Collection
     public abstract int size();
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public Object[] toArray() {
         return toArrayList().toArray();
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         return (T[]) toArrayList().toArray(tArr);
     }

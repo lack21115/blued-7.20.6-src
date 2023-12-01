@@ -20,7 +20,7 @@ public class Optimizer {
     public static final int OPTIMIZATION_STANDARD = 257;
 
     /* renamed from: a  reason: collision with root package name */
-    static boolean[] f2128a = new boolean[3];
+    static boolean[] f2080a = new boolean[3];
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(ConstraintWidgetContainer constraintWidgetContainer, LinearSystem linearSystem, ConstraintWidget constraintWidget) {

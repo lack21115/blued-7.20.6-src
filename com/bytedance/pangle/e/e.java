@@ -23,7 +23,7 @@ import java.util.Map;
 public final class e implements f.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile IBinder f21385a;
+    private static volatile IBinder f7779a;
     private static volatile Object b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/e/e$a.class */
@@ -35,11 +35,11 @@ public final class e implements f.a {
     public static final class b extends ResultReceiver {
 
         /* renamed from: a  reason: collision with root package name */
-        private a f21386a;
+        private a f7780a;
 
         public b() {
             super((Handler) null);
-            this.f21386a = null;
+            this.f7780a = null;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -73,14 +73,14 @@ public final class e implements f.a {
     private static void a(String[] strArr) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
-        obtain.writeFileDescriptor(FileDescriptor.f42253in);
+        obtain.writeFileDescriptor(FileDescriptor.in);
         obtain.writeFileDescriptor(FileDescriptor.out);
         obtain.writeFileDescriptor(FileDescriptor.err);
         obtain.writeStringArray(strArr);
         obtain.writeStrongBinder(null);
         new b().writeToParcel(obtain, 0);
         try {
-            f21385a.transact(1598246212, obtain, obtain2, 0);
+            f7779a.transact(1598246212, obtain, obtain2, 0);
             obtain2.readException();
         } catch (Exception e) {
         } catch (Throwable th) {
@@ -184,14 +184,14 @@ public final class e implements f.a {
     public final boolean a(String str, int i) {
         boolean z;
         IBinder asBinder;
-        if (f21385a == null) {
+        if (f7779a == null) {
             PackageManager packageManager = Zeus.getAppApplication().getPackageManager();
             Field field = packageManager == null ? null : FieldUtils.getField(packageManager.getClass(), "mPM");
             if (field != null) {
                 Object a2 = a(field, packageManager);
                 b = a2;
                 if ((a2 instanceof IInterface) && (asBinder = ((IInterface) b).asBinder()) != null) {
-                    f21385a = asBinder;
+                    f7779a = asBinder;
                 }
             }
         }

@@ -14,11 +14,11 @@ import java.util.Map;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static d f35167a;
+    private static d f21476a;
     private com.tencent.bugly.crashreport.common.strategy.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.tencent.bugly.crashreport.common.info.a f35168c;
+    private com.tencent.bugly.crashreport.common.info.a f21477c;
     private b d;
     private Context e;
 
@@ -28,7 +28,7 @@ public final class d {
             return;
         }
         this.b = com.tencent.bugly.crashreport.common.strategy.a.a();
-        this.f35168c = com.tencent.bugly.crashreport.common.info.a.a(context);
+        this.f21477c = com.tencent.bugly.crashreport.common.info.a.a(context);
         this.d = a2.p;
         this.e = context;
         w.a().a(new Runnable() { // from class: com.tencent.bugly.crashreport.crash.d.1
@@ -40,17 +40,17 @@ public final class d {
     }
 
     public static d a(Context context) {
-        if (f35167a == null) {
-            f35167a = new d(context);
+        if (f21476a == null) {
+            f21476a = new d(context);
         }
-        return f35167a;
+        return f21476a;
     }
 
     static /* synthetic */ void a(d dVar) {
         x.c("[ExtraCrashManager] Trying to notify Bugly agents.", new Object[0]);
         try {
             Class<?> cls = Class.forName("com.tencent.bugly.agent.GameAgent");
-            dVar.f35168c.getClass();
+            dVar.f21477c.getClass();
             z.a(cls, "sdkPackageName", "com.tencent.bugly", null);
             x.c("[ExtraCrashManager] Bugly game agent has been notified.", new Object[0]);
         } catch (Throwable th) {
@@ -81,7 +81,7 @@ public final class d {
             StrategyBean c2 = dVar.b.c();
             if (!c2.e && dVar.b.b()) {
                 x.e("[ExtraCrashManager] Crash report was closed by remote , will not upload to Bugly , print local for helpful!", new Object[0]);
-                b.a(str4, z.a(), dVar.f35168c.d, currentThread.getName(), str + "\n" + str2 + "\n" + str3, null);
+                b.a(str4, z.a(), dVar.f21477c.d, currentThread.getName(), str + "\n" + str2 + "\n" + str3, null);
                 x.e("[ExtraCrashManager] Successfully handled.", new Object[0]);
                 return;
             }
@@ -103,15 +103,15 @@ public final class d {
             crashDetailBean.C = com.tencent.bugly.crashreport.common.info.b.g();
             crashDetailBean.D = com.tencent.bugly.crashreport.common.info.b.e();
             crashDetailBean.E = com.tencent.bugly.crashreport.common.info.b.i();
-            crashDetailBean.F = dVar.f35168c.k();
-            crashDetailBean.G = dVar.f35168c.j();
-            crashDetailBean.H = dVar.f35168c.l();
+            crashDetailBean.F = dVar.f21477c.k();
+            crashDetailBean.G = dVar.f21477c.j();
+            crashDetailBean.H = dVar.f21477c.l();
             crashDetailBean.w = z.a(dVar.e, c.e, (String) null);
             crashDetailBean.b = i;
-            crashDetailBean.e = dVar.f35168c.h();
-            crashDetailBean.f = dVar.f35168c.k;
-            crashDetailBean.g = dVar.f35168c.q();
-            crashDetailBean.m = dVar.f35168c.g();
+            crashDetailBean.e = dVar.f21477c.h();
+            crashDetailBean.f = dVar.f21477c.k;
+            crashDetailBean.g = dVar.f21477c.q();
+            crashDetailBean.m = dVar.f21477c.g();
             crashDetailBean.n = str;
             crashDetailBean.o = str2;
             str5 = "";
@@ -127,19 +127,19 @@ public final class d {
             crashDetailBean.r = System.currentTimeMillis();
             crashDetailBean.u = z.a(crashDetailBean.q.getBytes());
             crashDetailBean.z = z.a(c.f, false);
-            crashDetailBean.A = dVar.f35168c.d;
+            crashDetailBean.A = dVar.f21477c.d;
             crashDetailBean.B = currentThread.getName() + "(" + currentThread.getId() + ")";
-            crashDetailBean.I = dVar.f35168c.s();
-            crashDetailBean.h = dVar.f35168c.p();
-            crashDetailBean.M = dVar.f35168c.f35129a;
-            crashDetailBean.N = dVar.f35168c.a();
+            crashDetailBean.I = dVar.f21477c.s();
+            crashDetailBean.h = dVar.f21477c.p();
+            crashDetailBean.M = dVar.f21477c.f21438a;
+            crashDetailBean.N = dVar.f21477c.a();
             if (!c.a().o()) {
                 dVar.d.d(crashDetailBean);
             }
-            crashDetailBean.Q = dVar.f35168c.z();
-            crashDetailBean.R = dVar.f35168c.A();
-            crashDetailBean.S = dVar.f35168c.t();
-            crashDetailBean.T = dVar.f35168c.y();
+            crashDetailBean.Q = dVar.f21477c.z();
+            crashDetailBean.R = dVar.f21477c.A();
+            crashDetailBean.S = dVar.f21477c.t();
+            crashDetailBean.T = dVar.f21477c.y();
             crashDetailBean.y = y.a();
             if (crashDetailBean.O == null) {
                 crashDetailBean.O = new LinkedHashMap();
@@ -148,7 +148,7 @@ public final class d {
                 crashDetailBean.O.putAll(map);
             }
             String a2 = z.a();
-            b.a(str4, a2, dVar.f35168c.d, currentThread.getName(), str + "\n" + str2 + "\n" + str3, crashDetailBean);
+            b.a(str4, a2, dVar.f21477c.d, currentThread.getName(), str + "\n" + str2 + "\n" + str3, crashDetailBean);
             if (!dVar.d.a(crashDetailBean)) {
                 dVar.d.a(crashDetailBean, m.ag, false);
             }
@@ -171,10 +171,10 @@ public final class d {
             @Override // java.lang.Runnable
             public final void run() {
                 try {
-                    if (d.f35167a == null) {
+                    if (d.f21476a == null) {
                         x.e("[ExtraCrashManager] Extra crash manager has not been initialized.", new Object[0]);
                     } else {
-                        d.a(d.f35167a, Thread.this, i, str, str2, str3, map);
+                        d.a(d.f21476a, thread, i, str, str2, str3, map);
                     }
                 } catch (Throwable th) {
                     if (!x.b(th)) {

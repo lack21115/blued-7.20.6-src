@@ -18,13 +18,9 @@ import java.util.Iterator;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/offlinemap/OfflineMapManager.class */
 public final class OfflineMapManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    bb f5557a;
+    bb a;
     ax b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f5558c;
+    private Context c;
     private OfflineMapDownloadListener d;
     private OfflineLoadedListener e;
     private Handler f;
@@ -45,23 +41,23 @@ public final class OfflineMapManager {
     }
 
     public OfflineMapManager(Context context, OfflineMapDownloadListener offlineMapDownloadListener) throws Exception {
-        hy a2 = hx.a(context, dw.a());
-        if (a2.f5127a != hx.c.SuccessCode) {
-            throw new Exception(a2.b);
+        hy a = hx.a(context, dw.a());
+        if (a.a != hx.c.SuccessCode) {
+            throw new Exception(a.b);
         }
         this.d = offlineMapDownloadListener;
-        this.f5558c = context.getApplicationContext();
-        this.f = new Handler(this.f5558c.getMainLooper());
-        this.g = new Handler(this.f5558c.getMainLooper());
+        this.c = context.getApplicationContext();
+        this.f = new Handler(this.c.getMainLooper());
+        this.g = new Handler(this.c.getMainLooper());
         a(context);
-        hu.a().a(this.f5558c);
+        hu.a().a(this.c);
     }
 
     public OfflineMapManager(Context context, OfflineMapDownloadListener offlineMapDownloadListener, AMap aMap) {
         this.d = offlineMapDownloadListener;
-        this.f5558c = context.getApplicationContext();
-        this.f = new Handler(this.f5558c.getMainLooper());
-        this.g = new Handler(this.f5558c.getMainLooper());
+        this.c = context.getApplicationContext();
+        this.f = new Handler(this.c.getMainLooper());
+        this.g = new Handler(this.c.getMainLooper());
         try {
             a(context);
         } catch (Throwable th) {
@@ -70,17 +66,17 @@ public final class OfflineMapManager {
     }
 
     private void a() throws AMapException {
-        if (!dw.d(this.f5558c)) {
+        if (!dw.d(this.c)) {
             throw new AMapException(AMapException.ERROR_CONNECTION);
         }
     }
 
     private void a(Context context) {
-        this.f5558c = context.getApplicationContext();
+        this.c = context.getApplicationContext();
         ax.b = false;
-        ax a2 = ax.a(this.f5558c);
-        this.b = a2;
-        a2.a(new ax.a() { // from class: com.amap.api.maps.offlinemap.OfflineMapManager.1
+        ax a = ax.a(this.c);
+        this.b = a;
+        a.a(new ax.a() { // from class: com.amap.api.maps.offlinemap.OfflineMapManager.1
             @Override // com.amap.api.col.p0003sl.ax.a
             public final void a() {
                 if (OfflineMapManager.this.e != null) {
@@ -123,7 +119,7 @@ public final class OfflineMapManager {
                     @Override // java.lang.Runnable
                     public final void run() {
                         try {
-                            if (!awVar.c().equals(awVar.g) && !awVar.c().equals(awVar.f4756a)) {
+                            if (!awVar.c().equals(awVar.g) && !awVar.c().equals(awVar.a)) {
                                 OfflineMapManager.this.d.onCheckUpdate(false, awVar.getCity());
                                 return;
                             }
@@ -144,7 +140,7 @@ public final class OfflineMapManager {
                     @Override // java.lang.Runnable
                     public final void run() {
                         try {
-                            if (awVar.c().equals(awVar.f4756a)) {
+                            if (awVar.c().equals(awVar.a)) {
                                 OfflineMapManager.this.d.onRemove(true, awVar.getCity(), "");
                             } else {
                                 OfflineMapManager.this.d.onRemove(false, awVar.getCity(), "");
@@ -158,7 +154,7 @@ public final class OfflineMapManager {
         });
         try {
             this.b.a();
-            this.f5557a = this.b.f;
+            this.a = this.b.f;
             dt.b(context);
         } catch (Throwable th) {
             th.printStackTrace();
@@ -238,39 +234,39 @@ public final class OfflineMapManager {
     }
 
     public final ArrayList<OfflineMapCity> getDownloadOfflineMapCityList() {
-        return this.f5557a.c();
+        return this.a.c();
     }
 
     public final ArrayList<OfflineMapProvince> getDownloadOfflineMapProvinceList() {
-        return this.f5557a.d();
+        return this.a.d();
     }
 
     public final ArrayList<OfflineMapCity> getDownloadingCityList() {
-        return this.f5557a.e();
+        return this.a.e();
     }
 
     public final ArrayList<OfflineMapProvince> getDownloadingProvinceList() {
-        return this.f5557a.f();
+        return this.a.f();
     }
 
     public final OfflineMapCity getItemByCityCode(String str) {
-        return this.f5557a.a(str);
+        return this.a.a(str);
     }
 
     public final OfflineMapCity getItemByCityName(String str) {
-        return this.f5557a.b(str);
+        return this.a.b(str);
     }
 
     public final OfflineMapProvince getItemByProvinceName(String str) {
-        return this.f5557a.c(str);
+        return this.a.c(str);
     }
 
     public final ArrayList<OfflineMapCity> getOfflineMapCityList() {
-        return this.f5557a.b();
+        return this.a.b();
     }
 
     public final ArrayList<OfflineMapProvince> getOfflineMapProvinceList() {
-        return this.f5557a.a();
+        return this.a.a();
     }
 
     public final void pause() {
@@ -287,9 +283,9 @@ public final class OfflineMapManager {
                 this.b.c(str);
                 return;
             }
-            OfflineMapProvince c2 = this.f5557a.c(str);
-            if (c2 != null && c2.getCityList() != null) {
-                Iterator<OfflineMapCity> it = c2.getCityList().iterator();
+            OfflineMapProvince c = this.a.c(str);
+            if (c != null && c.getCityList() != null) {
+                Iterator<OfflineMapCity> it = c.getCityList().iterator();
                 while (it.hasNext()) {
                     final String city = it.next().getCity();
                     this.g.post(new Runnable() { // from class: com.amap.api.maps.offlinemap.OfflineMapManager.3

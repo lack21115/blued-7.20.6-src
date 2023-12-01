@@ -1,5 +1,6 @@
 package java.util.concurrent.atomic;
 
+import com.anythink.core.common.c.d;
 import java.io.Serializable;
 import sun.misc.Unsafe;
 
@@ -13,7 +14,7 @@ public class AtomicLong extends Number implements Serializable {
 
     static {
         try {
-            valueOffset = unsafe.objectFieldOffset(AtomicLong.class.getDeclaredField("value"));
+            valueOffset = unsafe.objectFieldOffset(AtomicLong.class.getDeclaredField(d.a.d));
         } catch (Exception e) {
             throw new Error(e);
         }

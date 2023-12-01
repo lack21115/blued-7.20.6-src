@@ -34,7 +34,7 @@ public class Engine {
                     if (!bo.a(context, bp.d + soVersion.replace(".", "") + ".so")) {
                         HashMap hashMap = new HashMap();
                         hashMap.put("l", cj.l);
-                        bg.a(context, cj.f23782a, hashMap);
+                        bg.a(context, cj.f10174a, hashMap);
                         loadSuccess = false;
                         return instance;
                     }

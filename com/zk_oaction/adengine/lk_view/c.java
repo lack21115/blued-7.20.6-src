@@ -14,11 +14,11 @@ import org.xmlpull.v1.XmlPullParser;
 public class c extends ViewGroup implements com.zk_oaction.adengine.lk_sdk.interfaces.f {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.zk_oaction.adengine.lk_sdk.c f42040a;
+    private com.zk_oaction.adengine.lk_sdk.c f28349a;
     private n b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Bitmap f42041c;
+    private Bitmap f28350c;
     private String d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_view/c$a.class */
@@ -26,8 +26,8 @@ public class c extends ViewGroup implements com.zk_oaction.adengine.lk_sdk.inter
 
         /* renamed from: com.zk_oaction.adengine.lk_view.c$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_view/c$a$a.class */
-        class RunnableC1115a implements Runnable {
-            RunnableC1115a() {
+        class RunnableC0945a implements Runnable {
+            RunnableC0945a() {
             }
 
             @Override // java.lang.Runnable
@@ -41,20 +41,20 @@ public class c extends ViewGroup implements com.zk_oaction.adengine.lk_sdk.inter
 
         @Override // com.zk_oaction.adengine.lk_view.n.i
         public void a() {
-            if (c.this.f42041c != null && !c.this.f42041c.isRecycled()) {
-                c.this.f42041c.recycle();
-                c.this.f42041c = null;
+            if (c.this.f28350c != null && !c.this.f28350c.isRecycled()) {
+                c.this.f28350c.recycle();
+                c.this.f28350c = null;
             }
             Handler handler = c.this.getHandler();
             if (handler != null) {
-                handler.postDelayed(new RunnableC1115a(), 0L);
+                handler.postDelayed(new RunnableC0945a(), 0L);
             }
         }
     }
 
     public c(com.zk_oaction.adengine.lk_sdk.c cVar) {
         super(cVar.j);
-        this.f42040a = cVar;
+        this.f28349a = cVar;
         n nVar = new n(cVar, new a());
         this.b = nVar;
         addView(nVar);
@@ -114,21 +114,20 @@ public class c extends ViewGroup implements com.zk_oaction.adengine.lk_sdk.inter
     }
 
     public void d(String str) {
-        this.d = this.f42040a.l + str;
+        this.d = this.f28349a.l + str;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         String str;
         super.dispatchDraw(canvas);
         if (this.b.l || (str = this.d) == null) {
             return;
         }
-        if (this.f42041c == null) {
-            this.f42041c = BitmapFactory.decodeFile(str);
+        if (this.f28350c == null) {
+            this.f28350c = BitmapFactory.decodeFile(str);
         }
-        Bitmap bitmap = this.f42041c;
+        Bitmap bitmap = this.f28350c;
         if (bitmap != null) {
             canvas.drawBitmap(bitmap, (Rect) null, new Rect(0, 0, getMeasuredWidth(), getMeasuredHeight()), (Paint) null);
         }
@@ -155,15 +154,13 @@ public class c extends ViewGroup implements com.zk_oaction.adengine.lk_sdk.inter
         return this.b.h();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         this.b.layout(0, 0, getMeasuredWidth(), getMeasuredHeight());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         this.b.measure(i, i2);
         setMeasuredDimension(this.b.getMeasuredWidth(), this.b.getMeasuredHeight());
     }

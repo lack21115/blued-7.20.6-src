@@ -12,29 +12,29 @@ import com.xiaomi.push.service.bd;
 public final class p extends ai.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Context f41232a;
+    final /* synthetic */ Context f27541a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ Cif f161a;
+    final /* synthetic */ Cif f114a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public p(Cif cif, Context context) {
-        this.f161a = cif;
-        this.f41232a = context;
+        this.f114a = cif;
+        this.f27541a = context;
     }
 
     @Override // com.xiaomi.push.ai.a
     /* renamed from: a */
-    public final String mo11550a() {
+    public final String mo8500a() {
         return "22";
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        Cif cif = this.f161a;
+        Cif cif = this.f114a;
         if (cif != null) {
             cif.a(bd.a());
-            ao.a(this.f41232a.getApplicationContext()).a((ao) this.f161a, hg.Notification, true, (ht) null, true);
+            ao.a(this.f27541a.getApplicationContext()).a((ao) this.f114a, hg.Notification, true, (ht) null, true);
         }
     }
 }

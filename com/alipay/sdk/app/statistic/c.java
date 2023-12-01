@@ -7,7 +7,8 @@ import android.os.Build;
 import android.text.TextUtils;
 import com.alipay.sdk.app.statistic.a;
 import com.alipay.sdk.util.n;
-import com.xiaomi.mipush.sdk.Constants;
+import com.android.internal.content.NativeLibraryHelper;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -41,9 +42,7 @@ public class c {
     public static final String X = "LogCurrentAppLaunchSwitch";
     public static final String Y = "LogCurrentQueryTime";
     public static final String Z = "LogCalledPackage";
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f4608a = "net";
+    public static final String a = "net";
     public static final String aa = "LogBindCalledH5";
     public static final String ab = "LogCalledH5";
     public static final String ac = "LogHkLoginByIntent";
@@ -61,13 +60,9 @@ public class c {
     public static final String ao = "out_trade_no";
     public static final String ap = "trade_no";
     public static final String aq = "biz_content";
-
-    /* renamed from: ar  reason: collision with root package name */
-    public static final String f4609ar = "app_id";
+    public static final String ar = "app_id";
     public static final String b = "biz";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f4610c = "cp";
+    public static final String c = "cp";
     public static final String d = "auth";
     public static final String e = "third";
     public static final String f = "tid";
@@ -109,20 +104,20 @@ public class c {
         this.av = a(z2 ? 0L : a.c.a(applicationContext));
         this.aw = d();
         this.ax = b(applicationContext);
-        this.ay = "-";
-        this.aB = "-";
+        this.ay = NativeLibraryHelper.CLEAR_ABI_OVERRIDE;
+        this.aB = NativeLibraryHelper.CLEAR_ABI_OVERRIDE;
     }
 
     private static String a(long j2) {
         String b2 = b("15.7.4");
         String b3 = b("h.a.3.7.4");
-        return String.format("android,3,%s,%s,com.alipay.mcpay,5.0,-,%s,-", b2, b3, Constants.WAVE_SEPARATOR + j2);
+        return String.format("android,3,%s,%s,com.alipay.mcpay,5.0,-,%s,-", b2, b3, "~" + j2);
     }
 
     private static String a(Context context) {
         String str;
         String str2;
-        String str3 = "-";
+        String str3 = NativeLibraryHelper.CLEAR_ABI_OVERRIDE;
         if (context != null) {
             try {
                 Context applicationContext = context.getApplicationContext();
@@ -133,11 +128,11 @@ public class c {
                 } catch (Throwable th) {
                 }
             } catch (Throwable th2) {
-                str = "-";
+                str = NativeLibraryHelper.CLEAR_ABI_OVERRIDE;
             }
             str2 = str3;
         } else {
-            str2 = "-";
+            str2 = NativeLibraryHelper.CLEAR_ABI_OVERRIDE;
             str = str3;
         }
         return String.format("%s,%s,-,-,-", b(str), b(str2));
@@ -166,12 +161,12 @@ public class c {
                 }
                 if (TextUtils.isEmpty(a2)) {
                     str = "?";
-                    sb.append("-");
+                    sb.append(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                     sb.append(str);
                     i2 = i3 + 1;
                 } else {
                     str = n.f(a2).substring(0, 8);
-                    sb.append("-");
+                    sb.append(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                     sb.append(str);
                     i2 = i3 + 1;
                 }
@@ -217,11 +212,11 @@ public class c {
     }
 
     private static String b(Context context) {
-        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,-", b(com.alipay.sdk.util.a.d(context)), "android", b(Build.VERSION.RELEASE), b(Build.MODEL), "-", b(com.alipay.sdk.util.a.a(context).a()), b(com.alipay.sdk.util.a.b(context).b()), "gw", b(com.alipay.sdk.util.a.a(context).b()));
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,-", b(com.alipay.sdk.util.a.d(context)), MsgBackupManager.PLATFORM_ANDROID, b(Build.VERSION.RELEASE), b(Build.MODEL), NativeLibraryHelper.CLEAR_ABI_OVERRIDE, b(com.alipay.sdk.util.a.a(context).a()), b(com.alipay.sdk.util.a.b(context).b()), "gw", b(com.alipay.sdk.util.a.a(context).b()));
     }
 
     private static String b(String str) {
-        return TextUtils.isEmpty(str) ? "" : str.replace("[", "【").replace("]", "】").replace("(", "（").replace(")", "）").replace(",", "，").replace("^", Constants.WAVE_SEPARATOR).replace("#", "＃");
+        return TextUtils.isEmpty(str) ? "" : str.replace("[", "【").replace("]", "】").replace("(", "（").replace(")", "）").replace(",", "，").replace("^", "~").replace("#", "＃");
     }
 
     private static String c() {
@@ -231,7 +226,7 @@ public class c {
     private static String c(String str) {
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
-            str2 = "-";
+            str2 = NativeLibraryHelper.CLEAR_ABI_OVERRIDE;
         }
         return str2;
     }
@@ -242,7 +237,7 @@ public class c {
             String str4 = TextUtils.isEmpty(this.aA) ? "" : "^";
             StringBuilder sb = new StringBuilder();
             sb.append(str4);
-            sb.append(String.format("%s,%s,%s,%s", str, str2, TextUtils.isEmpty(str3) ? "-" : b(str3), b(b())));
+            sb.append(String.format("%s,%s,%s,%s", str, str2, TextUtils.isEmpty(str3) ? NativeLibraryHelper.CLEAR_ABI_OVERRIDE : b(str3), b(b())));
             this.aA += sb.toString();
         }
     }
@@ -257,7 +252,7 @@ public class c {
         if (str == null) {
             str3 = "";
         }
-        String[] split = str3.split("&");
+        String[] split = str3.split(com.alipay.sdk.sys.a.b);
         String str4 = null;
         String str5 = null;
         if (split != null) {
@@ -338,7 +333,7 @@ public class c {
             String str4 = TextUtils.isEmpty(this.az) ? "" : "^";
             StringBuilder sb = new StringBuilder();
             sb.append(str4);
-            sb.append(String.format("%s,%s,%s,-,-,-,-,-,-,-,-,-,-,%s", TextUtils.isEmpty(str) ? "-" : b(str), b(str2), b(str3), b(b())));
+            sb.append(String.format("%s,%s,%s,-,-,-,-,-,-,-,-,-,-,%s", TextUtils.isEmpty(str) ? NativeLibraryHelper.CLEAR_ABI_OVERRIDE : b(str), b(str2), b(str3), b(b())));
             this.az += sb.toString();
         }
     }

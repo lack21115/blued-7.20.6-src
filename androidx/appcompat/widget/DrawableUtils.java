@@ -1,5 +1,6 @@
 package androidx.appcompat.widget;
 
+import android.R;
 import android.graphics.Insets;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
@@ -21,7 +22,7 @@ import java.lang.reflect.Method;
 public class DrawableUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f1814a = {16842912};
+    private static final int[] f1766a = {R.attr.state_checked};
     private static final int[] b = new int[0];
     public static final Rect INSETS_NONE = new Rect();
 
@@ -29,11 +30,11 @@ public class DrawableUtils {
     static class Api18Impl {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final boolean f1815a;
+        private static final boolean f1767a;
         private static final Method b;
 
         /* renamed from: c  reason: collision with root package name */
-        private static final Field f1816c;
+        private static final Field f1768c;
         private static final Field d;
         private static final Field e;
         private static final Field f;
@@ -45,18 +46,18 @@ public class DrawableUtils {
                 Method dump skipped, instructions count: 251
                 To view this dump change 'Code comments level' option to 'DEBUG'
             */
-            throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.widget.DrawableUtils.Api18Impl.m1247clinit():void");
+            throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.widget.DrawableUtils.Api18Impl.m1109clinit():void");
         }
 
         private Api18Impl() {
         }
 
         static Rect a(Drawable drawable) {
-            if (Build.VERSION.SDK_INT < 29 && f1815a) {
+            if (Build.VERSION.SDK_INT < 29 && f1767a) {
                 try {
                     Object invoke = b.invoke(drawable, new Object[0]);
                     if (invoke != null) {
-                        return new Rect(f1816c.getInt(invoke), d.getInt(invoke), e.getInt(invoke), f.getInt(invoke));
+                        return new Rect(f1768c.getInt(invoke), d.getInt(invoke), e.getInt(invoke), f.getInt(invoke));
                     }
                 } catch (IllegalAccessException | InvocationTargetException e2) {
                 }
@@ -92,7 +93,7 @@ public class DrawableUtils {
     private static void b(Drawable drawable) {
         int[] state = drawable.getState();
         if (state == null || state.length == 0) {
-            drawable.setState(f1814a);
+            drawable.setState(f1766a);
         } else {
             drawable.setState(b);
         }

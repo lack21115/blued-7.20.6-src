@@ -1,5 +1,6 @@
 package com.soft.blued.ui.home.help;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -12,18 +13,17 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import com.blued.android.framework.utils.DensityUtils;
 import com.bytedance.applog.tracker.Tracker;
-import com.soft.blued.R;
 import java.util.List;
 
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/home/help/FragmentViewContainer.class */
 public class FragmentViewContainer extends ScrollView {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f31035a;
+    private Context f17345a;
     private LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f31036c;
+    private int f17346c;
     private int d;
 
     public FragmentViewContainer(Context context) {
@@ -42,8 +42,8 @@ public class FragmentViewContainer extends ScrollView {
     }
 
     private TextView a(FragmentRecord fragmentRecord, int i) {
-        TextView textView = new TextView(this.f31035a);
-        textView.setLayoutParams(new ViewGroup.LayoutParams(-1, this.f31036c));
+        TextView textView = new TextView(this.f17345a);
+        textView.setLayoutParams(new ViewGroup.LayoutParams(-1, this.f17346c));
         if (i == 0) {
             textView.setTextColor(Color.parseColor("#333333"));
             textView.setTextSize(16.0f);
@@ -52,10 +52,10 @@ public class FragmentViewContainer extends ScrollView {
         int i2 = this.d;
         textView.setPadding((int) (i2 + (i * i2 * 1.5d)), 0, i2, 0);
         textView.setCompoundDrawablePadding(this.d / 2);
-        TypedArray obtainStyledAttributes = this.f31035a.obtainStyledAttributes(new int[]{16843534});
+        TypedArray obtainStyledAttributes = this.f17345a.obtainStyledAttributes(new int[]{R.attr.selectableItemBackground});
         textView.setBackgroundDrawable(obtainStyledAttributes.getDrawable(0));
         obtainStyledAttributes.recycle();
-        textView.setText(fragmentRecord.f31034a);
+        textView.setText(fragmentRecord.f17344a);
         return textView;
     }
 
@@ -68,7 +68,7 @@ public class FragmentViewContainer extends ScrollView {
                 return;
             }
             View childAt = this.b.getChildAt(i2);
-            if (childAt.getTag(R.id.hierarchy) != null && ((Integer) childAt.getTag(R.id.hierarchy)).intValue() >= i) {
+            if (childAt.getTag(com.soft.blued.R.id.hierarchy) != null && ((Integer) childAt.getTag(com.soft.blued.R.id.hierarchy)).intValue() >= i) {
                 this.b.removeView(childAt);
             }
             childCount = i2;
@@ -76,14 +76,14 @@ public class FragmentViewContainer extends ScrollView {
     }
 
     private void a(Context context) {
-        this.f31035a = context;
+        this.f17345a = context;
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
         LinearLayout linearLayout = new LinearLayout(context);
         this.b = linearLayout;
         linearLayout.setOrientation(1);
         horizontalScrollView.addView(this.b);
         addView(horizontalScrollView);
-        this.f31036c = DensityUtils.a(context, 50.0f);
+        this.f17346c = DensityUtils.a(context, 50.0f);
         this.d = DensityUtils.a(context, 16.0f);
     }
 
@@ -96,7 +96,7 @@ public class FragmentViewContainer extends ScrollView {
             }
             FragmentRecord fragmentRecord = list.get(i2);
             final TextView a2 = a(fragmentRecord, i);
-            a2.setTag(R.id.hierarchy, Integer.valueOf(i));
+            a2.setTag(com.soft.blued.R.id.hierarchy, Integer.valueOf(i));
             final List<FragmentRecord> list2 = fragmentRecord.b;
             if (list2 == null || list2.size() <= 0) {
                 int paddingLeft = a2.getPaddingLeft();
@@ -109,19 +109,19 @@ public class FragmentViewContainer extends ScrollView {
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view) {
                         Tracker.onClick(view);
-                        if (view.getTag(R.id.isexpand) == null) {
-                            a2.setTag(R.id.isexpand, true);
+                        if (view.getTag(com.soft.blued.R.id.isexpand) == null) {
+                            a2.setTag(com.soft.blued.R.id.isexpand, true);
                             FragmentViewContainer.this.b(list2, i4, a2);
                             return;
                         }
-                        boolean booleanValue = ((Boolean) view.getTag(R.id.isexpand)).booleanValue();
+                        boolean booleanValue = ((Boolean) view.getTag(com.soft.blued.R.id.isexpand)).booleanValue();
                         if (booleanValue) {
                             a2.setCompoundDrawablesWithIntrinsicBounds(2131233203, 0, 0, 0);
                             FragmentViewContainer.this.a(i4);
                         } else {
                             FragmentViewContainer.this.b(list2, i4, a2);
                         }
-                        view.setTag(R.id.isexpand, Boolean.valueOf(!booleanValue));
+                        view.setTag(com.soft.blued.R.id.isexpand, Boolean.valueOf(!booleanValue));
                     }
                 });
             }

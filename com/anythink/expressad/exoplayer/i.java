@@ -48,11 +48,11 @@ public final class i {
     }
 
     private static h a(y[] yVarArr, com.anythink.expressad.exoplayer.i.h hVar) {
-        return new j(yVarArr, hVar, new d(), com.anythink.expressad.exoplayer.k.c.f7640a);
+        return new j(yVarArr, hVar, new d(), com.anythink.expressad.exoplayer.k.c.f4801a);
     }
 
     private static h a(y[] yVarArr, com.anythink.expressad.exoplayer.i.h hVar, p pVar) {
-        return new j(yVarArr, hVar, pVar, com.anythink.expressad.exoplayer.k.c.f7640a);
+        return new j(yVarArr, hVar, pVar, com.anythink.expressad.exoplayer.k.c.f4801a);
     }
 
     private static ad b(ab abVar, com.anythink.expressad.exoplayer.i.h hVar, p pVar, com.anythink.expressad.exoplayer.d.g<com.anythink.expressad.exoplayer.d.k> gVar) {

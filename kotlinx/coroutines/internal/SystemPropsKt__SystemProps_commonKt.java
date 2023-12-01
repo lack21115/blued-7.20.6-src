@@ -22,15 +22,15 @@ public final /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
     }
 
     public static final long a(String str, long j, long j2, long j3) {
-        String a2 = SystemPropsKt.a(str);
-        if (a2 == null) {
+        String a = SystemPropsKt.a(str);
+        if (a == null) {
             return j;
         }
-        Long c2 = StringsKt.c(a2);
-        if (c2 == null) {
-            throw new IllegalStateException(("System property '" + str + "' has unrecognized value '" + a2 + '\'').toString());
+        Long c = StringsKt.c(a);
+        if (c == null) {
+            throw new IllegalStateException(("System property '" + str + "' has unrecognized value '" + a + '\'').toString());
         }
-        long longValue = c2.longValue();
+        long longValue = c.longValue();
         boolean z = false;
         if (j2 <= longValue) {
             z = false;
@@ -55,7 +55,7 @@ public final /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
     }
 
     public static final boolean a(String str, boolean z) {
-        String a2 = SystemPropsKt.a(str);
-        return a2 == null ? z : Boolean.parseBoolean(a2);
+        String a = SystemPropsKt.a(str);
+        return a == null ? z : Boolean.parseBoolean(a);
     }
 }

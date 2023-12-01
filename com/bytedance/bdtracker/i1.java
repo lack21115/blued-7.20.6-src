@@ -16,12 +16,12 @@ import java.util.Map;
 public class i1 implements Handler.Callback {
 
     /* renamed from: c  reason: collision with root package name */
-    public Handler f21232c;
+    public Handler f7626c;
     public b f;
     public final IAppLogInstance h;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Rect f21231a = new Rect();
+    public final Rect f7625a = new Rect();
     public final Map<Integer, a> b = new HashMap();
     public boolean d = false;
     public int e = 0;
@@ -31,7 +31,7 @@ public class i1 implements Handler.Callback {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public h1 f21233a;
+        public h1 f7627a;
         public List<l1> b = new ArrayList(2);
     }
 
@@ -41,15 +41,15 @@ public class i1 implements Handler.Callback {
     }
 
     public i1(IAppLogInstance iAppLogInstance, b bVar, Looper looper) {
-        this.f21232c = new Handler(Looper.getMainLooper(), this);
+        this.f7626c = new Handler(Looper.getMainLooper(), this);
         this.h = iAppLogInstance;
         this.f = bVar;
-        this.f21232c = new Handler(looper, this);
+        this.f7626c = new Handler(looper, this);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(WebView webView) {
-        WebViewJsUtil.getWebInfo(webView, this.f21232c);
+        WebViewJsUtil.getWebInfo(webView, this.f7626c);
     }
 
     public void a() {

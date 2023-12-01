@@ -17,11 +17,11 @@ import java.util.List;
 public final class n extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    final Context f36272a;
+    final Context f22581a;
     b b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private final a f36273c;
+    private final a f22582c;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/audio/route/n$a.class */
     public static class a {
@@ -35,22 +35,21 @@ public final class n extends BroadcastReceiver {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/audio/route/n$b.class */
-    public static final class b implements BluetoothProfile.ServiceListener {
+    static final class b implements BluetoothProfile.ServiceListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final BluetoothAdapter f36274a;
+        final BluetoothAdapter f22583a;
         BluetoothProfile b = null;
 
         /* renamed from: c  reason: collision with root package name */
-        final Object f36275c = new Object();
+        final Object f22584c = new Object();
         private final Context d;
 
         public b(Context context) {
             this.d = context;
             BluetoothAdapter c2 = c();
-            this.f36274a = c2;
+            this.f22583a = c2;
             if (c2 == null) {
                 Log.i("AudioSystemBroadcastReceiver", "bluetooth adapter is null", new Object[0]);
                 return;
@@ -82,7 +81,7 @@ public final class n extends BroadcastReceiver {
 
         private boolean e() {
             try {
-                return this.f36274a.isEnabled();
+                return this.f22583a.isEnabled();
             } catch (Throwable th) {
                 Log.w("AudioSystemBroadcastReceiver", "isEnabled exception " + th.getMessage(), new Object[0]);
                 return false;
@@ -91,15 +90,15 @@ public final class n extends BroadcastReceiver {
 
         public final boolean a() {
             boolean z;
-            if (this.f36274a == null || !e()) {
+            if (this.f22583a == null || !e()) {
                 return false;
             }
             List<BluetoothDevice> list = null;
-            synchronized (this.f36275c) {
+            synchronized (this.f22584c) {
                 if (this.b == null) {
                     try {
                         Log.i("AudioSystemBroadcastReceiver", "mBluetoothHeadsetProfile is null ,wait for 1000ms", new Object[0]);
-                        this.f36275c.wait(1000L);
+                        this.f22584c.wait(1000L);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -130,7 +129,7 @@ public final class n extends BroadcastReceiver {
         /* JADX INFO: Access modifiers changed from: package-private */
         public final void b() {
             try {
-                this.f36274a.closeProfileProxy(1, this.b);
+                this.f22583a.closeProfileProxy(1, this.b);
             } catch (Throwable th) {
                 Log.w("AudioSystemBroadcastReceiver", "closeProfileProxy exception " + th.getMessage(), new Object[0]);
             }
@@ -141,14 +140,14 @@ public final class n extends BroadcastReceiver {
             if (i != 1) {
                 return;
             }
-            synchronized (this.f36275c) {
-                if (this.f36274a != null && this.b != null) {
+            synchronized (this.f22584c) {
+                if (this.f22583a != null && this.b != null) {
                     Log.i("AudioSystemBroadcastReceiver", "BluetoohHeadset proxy changed from %s to %s", this.b, bluetoothProfile);
                     b();
                     this.b = null;
                 }
                 this.b = bluetoothProfile;
-                this.f36275c.notifyAll();
+                this.f22584c.notifyAll();
             }
         }
 
@@ -157,8 +156,8 @@ public final class n extends BroadcastReceiver {
             if (i != 1) {
                 return;
             }
-            synchronized (this.f36275c) {
-                if (this.f36274a != null && this.b != null) {
+            synchronized (this.f22584c) {
+                if (this.f22583a != null && this.b != null) {
                     b();
                     this.b = null;
                 }
@@ -167,8 +166,8 @@ public final class n extends BroadcastReceiver {
     }
 
     public n(Context context, a aVar) {
-        this.f36272a = context;
-        this.f36273c = aVar;
+        this.f22581a = context;
+        this.f22582c = aVar;
     }
 
     private static int a(Intent intent, String str, int i) {
@@ -262,7 +261,7 @@ public final class n extends BroadcastReceiver {
                 Log.e("AudioSystemBroadcastReceiver", "unknown headset state, ignore...", new Object[0]);
                 return;
             }
-            a aVar = this.f36273c;
+            a aVar = this.f22582c;
             if (a2 != 0) {
                 z2 = true;
             }
@@ -271,16 +270,16 @@ public final class n extends BroadcastReceiver {
             int a3 = a(intent, BluetoothAdapter.EXTRA_STATE, 0);
             Log.i("AudioSystemBroadcastReceiver", "receive ACTION_STATE_CHANGED, EXTRA_STATE: %s, EXTRA_PREVIOUS_STATE: %s", a(a3), a(a(intent, BluetoothAdapter.EXTRA_PREVIOUS_STATE, 0)));
             if (a3 == 10) {
-                this.f36273c.onBluetoothConnectionChanged(false);
+                this.f22582c.onBluetoothConnectionChanged(false);
             }
         } else if (z) {
             int a4 = a(intent, BluetoothProfile.EXTRA_STATE, -1);
             Log.i("AudioSystemBroadcastReceiver", "receive bluetooth headset connection state changed: %s", a4 != 0 ? a4 != 1 ? a4 != 2 ? a4 != 3 ? "unknown" : "STATE_DISCONNECTING" : "STATE_CONNECTED" : "STATE_CONNECTING" : "STATE_DISCONNECTED");
             if (a4 == 0) {
-                this.f36273c.onBluetoothConnectionChanged(false);
+                this.f22582c.onBluetoothConnectionChanged(false);
             } else if (a4 != 2) {
             } else {
-                this.f36273c.onBluetoothConnectionChanged(true);
+                this.f22582c.onBluetoothConnectionChanged(true);
             }
         } else if (!z) {
             Log.w("AudioSystemBroadcastReceiver", "ignore unknow Action: %s", action);
@@ -288,10 +287,10 @@ public final class n extends BroadcastReceiver {
             int a5 = a(intent, BluetoothProfile.EXTRA_STATE, 10);
             if (a5 == 12) {
                 Log.i("AudioSystemBroadcastReceiver", "receive bluetooth audio state changed to STATE_AUDIO_CONNECTED", new Object[0]);
-                this.f36273c.onBluetoothSCOConnected(true);
+                this.f22582c.onBluetoothSCOConnected(true);
             } else if (a5 == 10) {
                 Log.i("AudioSystemBroadcastReceiver", "receive bluetooth audio state changed to STATE_AUDIO_DISCONNECTED", new Object[0]);
-                this.f36273c.onBluetoothSCOConnected(false);
+                this.f22582c.onBluetoothSCOConnected(false);
             }
         }
     }

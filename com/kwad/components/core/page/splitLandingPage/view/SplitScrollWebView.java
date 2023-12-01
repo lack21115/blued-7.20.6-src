@@ -44,9 +44,8 @@ public class SplitScrollWebView extends KsAdWebView {
         this.MQ = 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.webkit.WebView, android.widget.AbsoluteLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         if (this.MQ != 0) {
             i2 = View.MeasureSpec.makeMeasureSpec(((getContext() instanceof Activity ? com.kwad.sdk.c.kwai.a.d((Activity) getContext()) : com.kwad.sdk.c.kwai.a.getScreenHeight(getContext())) - (d.pO() ? com.kwad.sdk.c.kwai.a.getStatusBarHeight(getContext()) : 0)) - this.MQ, 1073741824);
         }

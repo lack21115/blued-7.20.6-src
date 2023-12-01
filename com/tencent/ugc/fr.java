@@ -7,11 +7,11 @@ import java.util.List;
 public final /* synthetic */ class fr implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCVideoProcessor f40393a;
+    private final UGCVideoProcessor f26702a;
     private final List b;
 
     private fr(UGCVideoProcessor uGCVideoProcessor, List list) {
-        this.f40393a = uGCVideoProcessor;
+        this.f26702a = uGCVideoProcessor;
         this.b = list;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class fr implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCVideoProcessor.lambda$setSpeedList$9(this.f40393a, this.b);
+        UGCVideoProcessor.lambda$setSpeedList$9(this.f26702a, this.b);
     }
 }

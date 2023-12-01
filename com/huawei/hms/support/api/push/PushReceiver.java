@@ -25,11 +25,11 @@ public final class PushReceiver extends BroadcastReceiver {
     public static class b implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private Context f22886a;
+        private Context f9278a;
         private Intent b;
 
         private b(Context context, Intent intent) {
-            this.f22886a = context;
+            this.f9278a = context;
             this.b = intent;
         }
 
@@ -63,7 +63,7 @@ public final class PushReceiver extends BroadcastReceiver {
                     bundle.putInt(RemoteMessageConst.INPUT_TYPE, 1);
                     bundle.putString("message_proxy_type", this.b.getStringExtra("message_proxy_type"));
                 }
-                if (new p().a(this.f22886a, bundle, intent)) {
+                if (new p().a(this.f9278a, bundle, intent)) {
                     HMSLog.i("PushReceiver", "receive " + this.b.getAction() + " and start service success");
                     return;
                 }
@@ -79,11 +79,11 @@ public final class PushReceiver extends BroadcastReceiver {
     public static class c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private Context f22887a;
+        private Context f9279a;
         private Intent b;
 
         private c(Context context, Intent intent) {
-            this.f22887a = context;
+            this.f9279a = context;
             this.b = intent;
         }
 
@@ -92,7 +92,7 @@ public final class PushReceiver extends BroadcastReceiver {
             try {
                 byte[] byteArrayExtra = this.b.getByteArrayExtra(RemoteMessageConst.DEVICE_TOKEN);
                 if (byteArrayExtra != null && byteArrayExtra.length != 0) {
-                    HMSLog.i("PushReceiver", "receive a push token: " + this.f22887a.getPackageName());
+                    HMSLog.i("PushReceiver", "receive a push token: " + this.f9279a.getPackageName());
                     Intent intent = new Intent("com.huawei.push.action.MESSAGING_EVENT");
                     intent.setPackage(this.b.getPackage());
                     Bundle bundle = new Bundle();
@@ -102,7 +102,7 @@ public final class PushReceiver extends BroadcastReceiver {
                     bundle.putString("subjectId", this.b.getStringExtra("subjectId"));
                     bundle.putInt("error", this.b.getIntExtra("error", ErrorEnum.SUCCESS.getInternalCode()));
                     bundle.putString("belongId", this.b.getStringExtra("belongId"));
-                    if (new p().a(this.f22887a, bundle, intent)) {
+                    if (new p().a(this.f9279a, bundle, intent)) {
                         return;
                     }
                     HMSLog.e("PushReceiver", "receive " + this.b.getAction() + " and start service failed");

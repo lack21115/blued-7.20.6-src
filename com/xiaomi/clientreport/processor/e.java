@@ -16,12 +16,12 @@ import java.util.HashMap;
 /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/clientreport/processor/e.class */
 public class e {
     private static PerfClientReport a(PerfClientReport perfClientReport, String str) {
-        long[] m11406a;
-        if (perfClientReport == null || (m11406a = m11406a(str)) == null) {
+        long[] m8356a;
+        if (perfClientReport == null || (m8356a = m8356a(str)) == null) {
             return null;
         }
-        perfClientReport.perfCounts = m11406a[0];
-        perfClientReport.perfLatencies = m11406a[1];
+        perfClientReport.perfCounts = m8356a[0];
+        perfClientReport.perfLatencies = m8356a[1];
         return perfClientReport;
     }
 
@@ -29,25 +29,25 @@ public class e {
         PerfClientReport perfClientReport;
         PerfClientReport perfClientReport2 = null;
         try {
-            String[] m11407a = m11407a(str);
+            String[] m8357a = m8357a(str);
             perfClientReport = null;
-            if (m11407a != null) {
+            if (m8357a != null) {
                 perfClientReport = null;
-                if (m11407a.length >= 4) {
+                if (m8357a.length >= 4) {
                     perfClientReport = null;
-                    if (!TextUtils.isEmpty(m11407a[0])) {
+                    if (!TextUtils.isEmpty(m8357a[0])) {
                         perfClientReport = null;
-                        if (!TextUtils.isEmpty(m11407a[1])) {
+                        if (!TextUtils.isEmpty(m8357a[1])) {
                             perfClientReport = null;
-                            if (!TextUtils.isEmpty(m11407a[2])) {
+                            if (!TextUtils.isEmpty(m8357a[2])) {
                                 perfClientReport = null;
-                                if (!TextUtils.isEmpty(m11407a[3])) {
+                                if (!TextUtils.isEmpty(m8357a[3])) {
                                     PerfClientReport blankInstance = PerfClientReport.getBlankInstance();
-                                    blankInstance.production = Integer.parseInt(m11407a[0]);
-                                    blankInstance.clientInterfaceId = m11407a[1];
-                                    blankInstance.reportType = Integer.parseInt(m11407a[2]);
+                                    blankInstance.production = Integer.parseInt(m8357a[0]);
+                                    blankInstance.clientInterfaceId = m8357a[1];
+                                    blankInstance.reportType = Integer.parseInt(m8357a[2]);
                                     perfClientReport2 = blankInstance;
-                                    blankInstance.code = Integer.parseInt(m11407a[3]);
+                                    blankInstance.code = Integer.parseInt(m8357a[3]);
                                     return blankInstance;
                                 }
                             }
@@ -67,7 +67,7 @@ public class e {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static HashMap<String, String> m11405a(String str) {
+    private static HashMap<String, String> m8355a(String str) {
         BufferedReader bufferedReader;
         HashMap<String, String> hashMap = new HashMap<>();
         if (!TextUtils.isEmpty(str) && new File(str).exists()) {
@@ -187,12 +187,12 @@ public class e {
         FileLock fileLock = null;
         try {
             File file = new File(str + ".lock");
-            x.m12222a(file);
+            x.m9172a(file);
             RandomAccessFile randomAccessFile2 = new RandomAccessFile(file, "rw");
             fileLock = null;
             try {
                 FileLock lock = randomAccessFile2.getChannel().lock();
-                HashMap<String, String> m11405a = m11405a(str);
+                HashMap<String, String> m8355a = m8355a(str);
                 int length = aVarArr.length;
                 int i = 0;
                 while (true) {
@@ -206,13 +206,13 @@ public class e {
                         long j = ((PerfClientReport) aVar).perfCounts;
                         long j2 = ((PerfClientReport) aVar).perfLatencies;
                         if (!TextUtils.isEmpty(a2) && j > 0 && j2 >= 0) {
-                            a(m11405a, a2, j, j2);
+                            a(m8355a, a2, j, j2);
                         }
                     }
                     i = i2 + 1;
                 }
                 fileLock = lock;
-                a(str, m11405a);
+                a(str, m8355a);
                 if (lock != null && lock.isValid()) {
                     try {
                         lock.release();
@@ -257,12 +257,12 @@ public class e {
             hashMap.put(str, j + "#" + j2);
             return;
         }
-        long[] m11406a = m11406a(str2);
-        if (m11406a == null || m11406a[0] <= 0 || m11406a[1] < 0) {
+        long[] m8356a = m8356a(str2);
+        if (m8356a == null || m8356a[0] <= 0 || m8356a[1] < 0) {
             sb = new StringBuilder();
         } else {
-            j += m11406a[0];
-            j2 += m11406a[1];
+            j += m8356a[0];
+            j2 += m8356a[1];
             sb = new StringBuilder();
         }
         sb.append(j);
@@ -272,7 +272,7 @@ public class e {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    protected static long[] m11406a(String str) {
+    protected static long[] m8356a(String str) {
         long[] jArr = new long[2];
         try {
             String[] split = str.split("#");
@@ -288,7 +288,7 @@ public class e {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static String[] m11407a(String str) {
+    private static String[] m8357a(String str) {
         if (TextUtils.isEmpty(str)) {
             return null;
         }

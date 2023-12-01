@@ -11,26 +11,18 @@ public final class me {
     private static Object h = new Object();
     private Object e = new Object();
     private Object f = new Object();
-
-    /* renamed from: a  reason: collision with root package name */
-    private LongSparseArray<a> f5375a = new LongSparseArray<>();
+    private LongSparseArray<a> a = new LongSparseArray<>();
     private LongSparseArray<a> b = new LongSparseArray<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private LongSparseArray<a> f5376c = new LongSparseArray<>();
+    private LongSparseArray<a> c = new LongSparseArray<>();
     private LongSparseArray<a> d = new LongSparseArray<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.amap.api.col.3sl.me$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/me$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f5377a;
+        int a;
         long b;
-
-        /* renamed from: c  reason: collision with root package name */
-        boolean f5378c;
+        boolean c;
 
         private a() {
         }
@@ -61,7 +53,7 @@ public final class me {
                 return (short) 0;
             }
             short max = (short) Math.max(1L, Math.min(32767L, (b() - aVar.b) / 1000));
-            if (!aVar.f5378c) {
+            if (!aVar.c) {
                 max = (short) (-max);
             }
             return max;
@@ -74,9 +66,9 @@ public final class me {
         if (longSparseArray.size() == 0) {
             for (md mdVar : list) {
                 a aVar2 = new a((byte) 0);
-                aVar2.f5377a = mdVar.b();
+                aVar2.a = mdVar.b();
                 aVar2.b = b;
-                aVar2.f5378c = false;
+                aVar2.c = false;
                 longSparseArray2.put(mdVar.a(), aVar2);
             }
             return;
@@ -86,15 +78,15 @@ public final class me {
             a aVar3 = longSparseArray.get(a2);
             if (aVar3 == null) {
                 aVar = new a((byte) 0);
-                aVar.f5377a = mdVar2.b();
+                aVar.a = mdVar2.b();
                 aVar.b = b;
-                aVar.f5378c = true;
+                aVar.c = true;
             } else {
                 aVar = aVar3;
-                if (aVar3.f5377a != mdVar2.b()) {
-                    aVar3.f5377a = mdVar2.b();
+                if (aVar3.a != mdVar2.b()) {
+                    aVar3.a = mdVar2.b();
                     aVar3.b = b;
-                    aVar3.f5378c = true;
+                    aVar3.c = true;
                     aVar = aVar3;
                 }
             }
@@ -108,7 +100,7 @@ public final class me {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final short a(long j) {
-        return a(this.f5375a, j);
+        return a(this.a, j);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -117,9 +109,9 @@ public final class me {
             return;
         }
         synchronized (this.e) {
-            a(list, this.f5375a, this.b);
-            LongSparseArray<a> longSparseArray = this.f5375a;
-            this.f5375a = this.b;
+            a(list, this.a, this.b);
+            LongSparseArray<a> longSparseArray = this.a;
+            this.a = this.b;
             this.b = longSparseArray;
             longSparseArray.clear();
         }
@@ -127,7 +119,7 @@ public final class me {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final short b(long j) {
-        return a(this.f5376c, j);
+        return a(this.c, j);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -136,9 +128,9 @@ public final class me {
             return;
         }
         synchronized (this.f) {
-            a(list, this.f5376c, this.d);
-            LongSparseArray<a> longSparseArray = this.f5376c;
-            this.f5376c = this.d;
+            a(list, this.c, this.d);
+            LongSparseArray<a> longSparseArray = this.c;
+            this.c = this.d;
             this.d = longSparseArray;
             longSparseArray.clear();
         }

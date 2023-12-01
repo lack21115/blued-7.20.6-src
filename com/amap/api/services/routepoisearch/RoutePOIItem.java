@@ -25,13 +25,9 @@ public class RoutePOIItem implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5783a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LatLonPoint f5784c;
+    private LatLonPoint c;
     private float d;
     private float e;
 
@@ -39,9 +35,9 @@ public class RoutePOIItem implements Parcelable {
     }
 
     protected RoutePOIItem(Parcel parcel) {
-        this.f5783a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5784c = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
+        this.c = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
         this.d = parcel.readFloat();
         this.e = parcel.readFloat();
     }
@@ -60,11 +56,11 @@ public class RoutePOIItem implements Parcelable {
     }
 
     public String getID() {
-        return this.f5783a;
+        return this.a;
     }
 
     public LatLonPoint getPoint() {
-        return this.f5784c;
+        return this.c;
     }
 
     public String getTitle() {
@@ -80,11 +76,11 @@ public class RoutePOIItem implements Parcelable {
     }
 
     public void setID(String str) {
-        this.f5783a = str;
+        this.a = str;
     }
 
     public void setPoint(LatLonPoint latLonPoint) {
-        this.f5784c = latLonPoint;
+        this.c = latLonPoint;
     }
 
     public void setTitle(String str) {
@@ -93,9 +89,9 @@ public class RoutePOIItem implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5783a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeParcelable(this.f5784c, i);
+        parcel.writeParcelable(this.c, i);
         parcel.writeFloat(this.d);
         parcel.writeFloat(this.e);
     }

@@ -10,13 +10,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "Deprecated.kt", c = {89, 92}, d = "last", e = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$last$1.class */
 public final class ChannelsKt__DeprecatedKt$last$1<E> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42952a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f42953c;
+    Object c;
     /* synthetic */ Object d;
     int e;
 
@@ -27,10 +23,10 @@ public final class ChannelsKt__DeprecatedKt$last$1<E> extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object c2;
+        Object c;
         this.d = obj;
         this.e |= Integer.MIN_VALUE;
-        c2 = ChannelsKt__DeprecatedKt.c(null, this);
-        return c2;
+        c = ChannelsKt__DeprecatedKt.c(null, this);
+        return c;
     }
 }

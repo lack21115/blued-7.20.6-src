@@ -14,11 +14,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ExpandLinearLayout extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f30677a;
+    private boolean f16987a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f30678c;
+    private int f16988c;
     private float d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -61,26 +61,25 @@ public final class ExpandLinearLayout extends LinearLayout {
     }
 
     public final boolean a() {
-        return this.f30677a;
+        return this.f16987a;
     }
 
     public final boolean b() {
-        this.f30677a = !this.f30677a;
+        this.f16987a = !this.f16987a;
         d();
-        return this.f30677a;
+        return this.f16987a;
     }
 
     public final int getShowItemHeight() {
         return this.b;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3;
         int i4;
         super.onMeasure(i, i2);
-        this.f30678c = 0;
+        this.f16988c = 0;
         if (getChildCount() > 0) {
             int childCount = getChildCount();
             int i5 = 0;
@@ -92,7 +91,7 @@ public final class ExpandLinearLayout extends LinearLayout {
                 View childAt = getChildAt(i6);
                 Intrinsics.c(childAt, "getChildAt(index)");
                 if (!(childAt.getVisibility() == 8)) {
-                    int i7 = this.f30678c;
+                    int i7 = this.f16988c;
                     int measuredHeight = getChildAt(i6).getMeasuredHeight();
                     View childAt2 = getChildAt(i6);
                     Intrinsics.c(childAt2, "getChildAt(index)");
@@ -106,23 +105,23 @@ public final class ExpandLinearLayout extends LinearLayout {
                     if (layoutParams2 instanceof ViewGroup.MarginLayoutParams) {
                         marginLayoutParams2 = (ViewGroup.MarginLayoutParams) layoutParams2;
                     }
-                    this.f30678c = i7 + measuredHeight + i8 + (marginLayoutParams2 == null ? 0 : marginLayoutParams2.bottomMargin);
+                    this.f16988c = i7 + measuredHeight + i8 + (marginLayoutParams2 == null ? 0 : marginLayoutParams2.bottomMargin);
                     if (i6 == getChildCount() - 1) {
-                        this.f30678c += getPaddingTop() + getPaddingBottom();
+                        this.f16988c += getPaddingTop() + getPaddingBottom();
                     }
                 }
                 i5 = i6 + 1;
             }
-            if (this.f30677a) {
-                setMeasuredDimension(i, this.b + ((int) ((this.f30678c - i4) * this.d)));
+            if (this.f16987a) {
+                setMeasuredDimension(i, this.b + ((int) ((this.f16988c - i4) * this.d)));
                 return;
             }
-            setMeasuredDimension(i, this.f30678c - ((int) ((i3 - this.b) * this.d)));
+            setMeasuredDimension(i, this.f16988c - ((int) ((i3 - this.b) * this.d)));
         }
     }
 
     public final void setOpen(boolean z) {
-        this.f30677a = z;
+        this.f16987a = z;
     }
 
     public final void setShowItemHeight(int i) {

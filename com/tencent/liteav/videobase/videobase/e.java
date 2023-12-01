@@ -12,7 +12,7 @@ import java.util.Map;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<com.tencent.liteav.videobase.videobase.a, g> f36673a = new HashMap();
+    private final Map<com.tencent.liteav.videobase.videobase.a, g> f22982a = new HashMap();
     private com.tencent.liteav.videobase.frame.e b;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videobase/videobase/e$a.class */
@@ -21,25 +21,25 @@ public final class e {
     }
 
     public final void a() {
-        for (g gVar : this.f36673a.values()) {
+        for (g gVar : this.f22982a.values()) {
             gVar.a();
         }
     }
 
     public final void a(int i, a aVar) {
         ArrayList<com.tencent.liteav.videobase.videobase.a> arrayList = new ArrayList();
-        for (Map.Entry<com.tencent.liteav.videobase.videobase.a, g> entry : this.f36673a.entrySet()) {
+        for (Map.Entry<com.tencent.liteav.videobase.videobase.a, g> entry : this.f22982a.entrySet()) {
             entry.getValue().a(i, aVar);
             if (!(!entry.getValue().e.isEmpty())) {
                 arrayList.add(entry.getKey());
             }
         }
         for (com.tencent.liteav.videobase.videobase.a aVar2 : arrayList) {
-            g gVar = this.f36673a.get(aVar2);
+            g gVar = this.f22982a.get(aVar2);
             if (gVar != null) {
                 gVar.a();
             }
-            this.f36673a.remove(aVar2);
+            this.f22982a.remove(aVar2);
         }
     }
 
@@ -58,13 +58,13 @@ public final class e {
 
     public final void a(com.tencent.liteav.videobase.frame.e eVar) {
         this.b = eVar;
-        for (g gVar : this.f36673a.values()) {
+        for (g gVar : this.f22982a.values()) {
             gVar.a(eVar);
         }
     }
 
     public final void a(com.tencent.liteav.videobase.videobase.a aVar, GLConstants.PixelBufferType pixelBufferType, GLConstants.PixelFormatType pixelFormatType, int i, a aVar2) {
-        g gVar = this.f36673a.get(aVar);
+        g gVar = this.f22982a.get(aVar);
         g gVar2 = gVar;
         if (gVar == null) {
             gVar2 = new g(aVar);
@@ -72,7 +72,7 @@ public final class e {
             if (eVar != null) {
                 gVar2.a(eVar);
             }
-            this.f36673a.put(aVar, gVar2);
+            this.f22982a.put(aVar, gVar2);
         }
         List<g.a> list = gVar2.e.get(pixelFormatType);
         ArrayList arrayList = list;
@@ -81,7 +81,7 @@ public final class e {
             gVar2.e.put(pixelFormatType, arrayList);
         }
         for (g.a aVar3 : arrayList) {
-            if (aVar3.b == i && aVar3.f36678c == aVar2) {
+            if (aVar3.b == i && aVar3.f22987c == aVar2) {
                 return;
             }
         }

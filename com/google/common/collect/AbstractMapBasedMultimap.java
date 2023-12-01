@@ -44,7 +44,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
                 return Collections2.safeContains(AsMap.this.submap.entrySet(), obj);
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public Iterator<Map.Entry<K, Collection<V>>> iterator() {
                 return new AsMapIterator();
             }
@@ -240,7 +240,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             return map().keySet().hashCode();
         }
 
-        @Override // com.google.common.collect.Maps.KeySet, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.Maps.KeySet, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<K> iterator() {
             final Iterator<Map.Entry<K, Collection<V>>> it = map().entrySet().iterator();
             return new Iterator<K>() { // from class: com.google.common.collect.AbstractMapBasedMultimap.KeySet.1
@@ -731,7 +731,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             this.ancestorDelegate = wrappedCollection == null ? null : wrappedCollection.getDelegate();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean add(V v) {
             refreshIfEmpty();
             boolean isEmpty = this.delegate.isEmpty();
@@ -745,7 +745,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             return add;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean addAll(Collection<? extends V> collection) {
             if (collection.isEmpty()) {
                 return false;
@@ -771,7 +771,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             int size = size();
             if (size == 0) {
@@ -782,19 +782,19 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             removeIfEmpty();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             refreshIfEmpty();
             return this.delegate.contains(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             refreshIfEmpty();
             return this.delegate.containsAll(collection);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean equals(@NullableDecl Object obj) {
             if (obj == this) {
                 return true;
@@ -815,7 +815,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             return this.key;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public int hashCode() {
             refreshIfEmpty();
             return this.delegate.hashCode();
@@ -841,7 +841,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             refreshIfEmpty();
             boolean remove = this.delegate.remove(obj);
@@ -852,7 +852,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             return remove;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             if (collection.isEmpty()) {
                 return false;
@@ -876,7 +876,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             Preconditions.checkNotNull(collection);
             int size = size();
@@ -889,7 +889,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             return retainAll;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             refreshIfEmpty();
             return this.delegate.size();
@@ -1125,7 +1125,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             super(k, set, null);
         }
 
-        @Override // com.google.common.collect.AbstractMapBasedMultimap.WrappedCollection, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // com.google.common.collect.AbstractMapBasedMultimap.WrappedCollection, java.util.AbstractCollection, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             if (collection.isEmpty()) {
                 return false;
@@ -1164,7 +1164,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             return (SortedSet) getDelegate();
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<V> headSet(V v) {
             refreshIfEmpty();
             return new WrappedSortedSet(getKey(), getSortedSetDelegate().headSet(v), getAncestor() == null ? this : getAncestor());
@@ -1176,13 +1176,13 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             return getSortedSetDelegate().last();
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<V> subSet(V v, V v2) {
             refreshIfEmpty();
             return new WrappedSortedSet(getKey(), getSortedSetDelegate().subSet(v, v2), getAncestor() == null ? this : getAncestor());
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<V> tailSet(V v) {
             refreshIfEmpty();
             return new WrappedSortedSet(getKey(), getSortedSetDelegate().tailSet(v), getAncestor() == null ? this : getAncestor());

@@ -2,13 +2,9 @@ package com.alipay.sdk.encrypt;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/encrypt/a.class */
 public final class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final int f4627a = 128;
+    private static final int a = 128;
     private static final int b = 64;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final int f4628c = 24;
+    private static final int c = 24;
     private static final int d = 8;
     private static final int e = 16;
     private static final int f = 4;

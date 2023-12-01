@@ -102,7 +102,7 @@ public class ATSDK {
                 if (aTSDKInitListener != null) {
                     aTSDKInitListener.onFail("init: Context is null!");
                 }
-                Log.e("anythink", "init: Context is null!");
+                Log.e(com.anythink.core.common.b.g.n, "init: Context is null!");
                 return;
             }
             n.a().a(context, str, str2, aTNetworkConfig);
@@ -179,11 +179,11 @@ public class ATSDK {
 
     public static void setGDPRUploadDataLevel(Context context, int i) {
         if (context == null) {
-            Log.e("anythink", "setGDPRUploadDataLevel: context should not be null");
+            Log.e(com.anythink.core.common.b.g.n, "setGDPRUploadDataLevel: context should not be null");
         } else if (i == 0 || i == 1) {
             p.a(context).a(i);
         } else {
-            Log.e("anythink", "GDPR level setting error!!! Level must be PERSONALIZED or NONPERSONALIZED.");
+            Log.e(com.anythink.core.common.b.g.n, "GDPR level setting error!!! Level must be PERSONALIZED or NONPERSONALIZED.");
         }
     }
 

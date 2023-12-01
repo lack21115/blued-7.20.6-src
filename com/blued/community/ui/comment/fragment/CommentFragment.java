@@ -1,5 +1,6 @@
 package com.blued.community.ui.comment.fragment;
 
+import android.app.Activity;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
@@ -25,7 +26,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Space;
 import android.widget.TextView;
-import androidx.fragment.app.FragmentActivity;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
@@ -96,18 +96,16 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
     private Emotion J;
     private TextWatcher K = new TextWatcher() { // from class: com.blued.community.ui.comment.fragment.CommentFragment.10
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19455c;
+        private int c;
         private String d;
         private String e;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             this.b = CommentFragment.this.q.getSelectionStart();
-            this.f19455c = CommentFragment.this.q.getSelectionEnd();
+            this.c = CommentFragment.this.q.getSelectionEnd();
             CommentFragment.this.q.removeTextChangedListener(this);
-            if (((CommentPresenter) CommentFragment.this.j()).C() && !CommentFragment.this.I.a(CommentFragment.this, this.d, this.e, editable, this.f19455c)) {
+            if (((CommentPresenter) CommentFragment.this.j()).C() && !CommentFragment.this.I.a(CommentFragment.this, this.d, this.e, editable, this.c)) {
                 CommentFragment.this.q.setSelection(this.b);
             }
             CommentFragment.this.q.addTextChangedListener(this);
@@ -144,13 +142,9 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/comment/fragment/CommentFragment$HeaderViewHolder.class */
     public class HeaderViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        View f19469a;
+        View a;
         ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        TextView f19470c;
+        TextView c;
         TextView d;
         TextView e;
         ImageView f;
@@ -164,9 +158,9 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
         TextView n;
 
         public HeaderViewHolder(View view) {
-            this.f19469a = view.findViewById(R.id.rl_comment);
+            this.a = view.findViewById(R.id.rl_comment);
             this.b = (ImageView) view.findViewById(R.id.header_view);
-            this.f19470c = (TextView) view.findViewById(R.id.time_view);
+            this.c = (TextView) view.findViewById(R.id.time_view);
             this.d = (TextView) view.findViewById(R.id.name_view);
             this.e = (TextView) view.findViewById(R.id.content_view);
             this.f = (ImageView) view.findViewById(R.id.img_verify);
@@ -209,7 +203,7 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
         this.E.k.setNoDataImg(R.drawable.icon_no_data_comment);
         this.E.k.d();
         inflate.setBackgroundColor(BluedSkinUtils.a(this.H, R.color.syc_b));
-        this.E.f19469a.setVisibility(8);
+        this.E.a.setVisibility(8);
         this.n.addHeaderView(inflate);
         this.n.setHeaderDividersEnabled(false);
     }
@@ -298,8 +292,8 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
         });
         D();
         if (((CommentPresenter) j()).B()) {
-            final String a2 = AvatarUtils.a(1, UserInfoUtils.e());
-            ImageLoader.a(getFragmentActive(), a2).b(R.drawable.user_bg_round).d(R.drawable.user_bg_round).c().a(this.u);
+            final String a = AvatarUtils.a(1, UserInfoUtils.e());
+            ImageLoader.a(getFragmentActive(), a).b(R.drawable.user_bg_round).d(R.drawable.user_bg_round).c().a(this.u);
             this.D.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.blued.community.ui.comment.fragment.CommentFragment.8
                 @Override // android.widget.CompoundButton.OnCheckedChangeListener
                 public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
@@ -307,7 +301,7 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
                     if (z) {
                         ImageLoader.a(CommentFragment.this.getFragmentActive(), ((CommentPresenter) CommentFragment.this.j()).m().anonym_avatar).b(CircleMethods.a(CommentFragment.this.getContext(), ((CommentPresenter) CommentFragment.this.j()).y())).d(CircleMethods.a(CommentFragment.this.getContext(), ((CommentPresenter) CommentFragment.this.j()).y())).a(CommentFragment.this.u);
                     } else {
-                        ImageLoader.a(CommentFragment.this.getFragmentActive(), a2).b(R.drawable.user_bg_round).d(R.drawable.user_bg_round).c().a(CommentFragment.this.u);
+                        ImageLoader.a(CommentFragment.this.getFragmentActive(), a).b(R.drawable.user_bg_round).d(R.drawable.user_bg_round).c().a(CommentFragment.this.u);
                     }
                 }
             });
@@ -354,13 +348,13 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
         if (!((CommentPresenter) j()).s()) {
             arrayList.add(this.H.getResources().getString(R.string.report));
         }
-        CommonShowBottomWindow.a((FragmentActivity) this.H, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.comment.fragment.CommentFragment.11
+        CommonShowBottomWindow.a(this.H, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.comment.fragment.CommentFragment.11
             @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
             public void a(ActionSheet actionSheet, int i) {
-                String a2 = actionSheet.a(i);
-                if (a2.equals(CommentFragment.this.H.getResources().getString(R.string.community_copy))) {
+                String a = actionSheet.a(i);
+                if (a.equals(CommentFragment.this.H.getResources().getString(R.string.community_copy))) {
                     CommentFragment.this.c(q.comment_content);
-                } else if (a2.equals(CommentFragment.this.H.getResources().getString(R.string.report))) {
+                } else if (a.equals(CommentFragment.this.H.getResources().getString(R.string.report))) {
                     if (((CommentPresenter) CommentFragment.this.j()).B()) {
                         CommunityServiceManager.b().a(CommentFragment.this.H, CommunityConstants.ReportType.CIRCLE_COMMENT, q.user_name, q.feed_id, ((CommentPresenter) CommentFragment.this.j()).q().comment_id);
                     } else {
@@ -422,7 +416,7 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
     }
 
     private void b(boolean z) {
-        this.p.j();
+        this.p.g();
         this.p.h();
         c(z);
     }
@@ -433,17 +427,17 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
     }
 
     private void c(final FeedComment feedComment) {
-        this.E.f19469a.setVisibility(0);
+        this.E.a.setVisibility(0);
         UserInfoHelper.a(this.E.f, feedComment.vbadge, 3);
-        ImageWrapper c2 = ImageLoader.a(getFragmentActive(), feedComment.user_avatar).b(R.drawable.user_bg_round).c();
+        ImageWrapper c = ImageLoader.a(getFragmentActive(), feedComment.user_avatar).b(R.drawable.user_bg_round).c();
         if (feedComment.is_comment_anonym == 1) {
-            c2.d();
+            c.d();
         }
-        c2.a(this.E.b);
+        c.a(this.E.b);
         if (TextUtils.isEmpty(feedComment.comment_timestamp)) {
-            this.E.f19470c.setText("");
+            this.E.c.setText("");
         } else {
-            this.E.f19470c.setText(TimeAndDateUtils.h(this.H, TimeAndDateUtils.c(feedComment.comment_timestamp)));
+            this.E.c.setText(TimeAndDateUtils.h(this.H, TimeAndDateUtils.c(feedComment.comment_timestamp)));
         }
         if (TextUtils.isEmpty(feedComment.user_name)) {
             this.E.d.setText("");
@@ -491,8 +485,8 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
         loadOptions.b = R.drawable.defaultpicture;
         int i2 = i >> 1;
         loadOptions.a(i2, i2);
-        int a2 = AppInfo.l - DensityUtils.a(AppInfo.d(), 74.0f);
-        double d = a2;
+        int a = AppInfo.l - DensityUtils.a(AppInfo.d(), 74.0f);
+        double d = a;
         int i3 = (int) (d * 1.5d);
         int i4 = (int) (d * 0.73d);
         try {
@@ -503,7 +497,7 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
                 if (i6 >= feedComment.comment_pics.length) {
                     return;
                 }
-                int[] a3 = ImageUtils.a(Integer.valueOf(feedComment.comment_pics_width[i6]).intValue(), Integer.valueOf(feedComment.comment_pics_height[i6]).intValue(), a2, i3, a2, i4);
+                int[] a2 = ImageUtils.a(Integer.valueOf(feedComment.comment_pics_width[i6]).intValue(), Integer.valueOf(feedComment.comment_pics_height[i6]).intValue(), a, i3, a, i4);
                 View inflate = LayoutInflater.from(this.H).inflate(R.layout.item_comment_pics, (ViewGroup) null);
                 ImageView imageView = (ImageView) inflate.findViewById(R.id.circle_image);
                 ShapeTextView shapeTextView = (ShapeTextView) inflate.findViewById(R.id.circle_big_icon);
@@ -514,12 +508,12 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
                 } else {
                     shapeTextView.setVisibility(8);
                 }
-                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(a3[0], a3[1]);
+                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(a2[0], a2[1]);
                 if (i6 != feedComment.comment_pics.length - 1) {
                     layoutParams.bottomMargin = DensityUtils.a(this.H, 10.0f);
                 }
                 imageView.setLayoutParams(layoutParams);
-                ImageLoader.a(getFragmentActive(), AvatarUtils.a(feedComment.comment_pics[i6], a3[i6])).a(6.0f).a(imageView);
+                ImageLoader.a(getFragmentActive(), AvatarUtils.a(feedComment.comment_pics[i6], a2[i6])).a(6.0f).a(imageView);
                 this.E.l.addView(inflate);
                 imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.comment.fragment.CommentFragment.12
                     @Override // android.view.View.OnClickListener
@@ -530,15 +524,15 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
                         FeedProtos.NoteSource noteSource = FeedProtos.NoteSource.NOTE_DETAIL;
                         String str2 = feedComment.feed_id;
                         String n = ((CommentPresenter) CommentFragment.this.j()).n();
-                        boolean a4 = AtUserHelper.a(feedComment.comment_content);
-                        FeedProtos.NoteType c3 = EventTrackFeed.c(((CommentPresenter) CommentFragment.this.j()).m());
+                        boolean a3 = AtUserHelper.a(feedComment.comment_content);
+                        FeedProtos.NoteType c2 = EventTrackFeed.c(((CommentPresenter) CommentFragment.this.j()).m());
                         boolean z = false;
                         boolean z2 = ((CommentPresenter) CommentFragment.this.j()).m().is_anonym == 1;
                         if (feedComment.is_anonym == 1) {
                             z = true;
                         }
-                        EventTrackFeed.a(event, str, noteSource, str2, n, a4, c3, z2, z);
-                        CommunityServiceManager.b().a(CommentFragment.this.H, feedComment.comment_pics, i6, 0, loadOptions, feedComment.user_name, CommentFragment.this.E.f19469a, feedComment.comment_pics[i6]);
+                        EventTrackFeed.a(event, str, noteSource, str2, n, a3, c2, z2, z);
+                        CommunityServiceManager.b().a(CommentFragment.this.H, feedComment.comment_pics, i6, 0, loadOptions, feedComment.user_name, CommentFragment.this.E.a, feedComment.comment_pics[i6]);
                     }
                 });
                 i5 = i6 + 1;
@@ -576,7 +570,7 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
         this.m = (CommonTopTitleNoTrans) this.i.findViewById(R.id.top_title);
         this.n = (ListView) this.i.findViewById(R.id.list_view);
         this.o = this.i.findViewById(R.id.keyboard_view);
-        this.p = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
+        this.p = this.i.findViewById(R.id.refresh_layout);
         this.q = (EditText) this.i.findViewById(R.id.edit_view);
         ShapeTextView shapeTextView = (ShapeTextView) this.i.findViewById(R.id.send_btn);
         this.r = shapeTextView;
@@ -631,12 +625,10 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
         commentListAdapter.a(((CommentPresenter) j()).z());
         this.n.setAdapter((ListAdapter) this.G);
         this.p.a(new OnRefreshLoadMoreListener() { // from class: com.blued.community.ui.comment.fragment.CommentFragment.1
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 ((CommentPresenter) CommentFragment.this.j()).f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 ((CommentPresenter) CommentFragment.this.j()).e();
             }
@@ -755,10 +747,10 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
 
     public void c(String str) {
         if (Build.VERSION.SDK_INT < 11 || Build.VERSION.SDK_INT == 18) {
-            ((ClipboardManager) this.H.getSystemService(Context.CLIPBOARD_SERVICE)).setText(RegExpUtils.a(str));
+            ((ClipboardManager) this.H.getSystemService("clipboard")).setText(RegExpUtils.a(str));
         } else {
             try {
-                ((android.content.ClipboardManager) this.H.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(str)));
+                ((android.content.ClipboardManager) this.H.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(str)));
             } catch (Exception e) {
             }
         }
@@ -784,10 +776,9 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
-        this.p.l(true);
+        this.p.b(true);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1) {
             if (i == 9090) {
@@ -844,7 +835,7 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
-        this.p.l(false);
+        this.p.b(false);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -879,7 +870,7 @@ public class CommentFragment extends MvpKeyBoardFragment<CommentPresenter> imple
         this.r.setClickable(true);
         this.B.setVisibility(8);
         this.o.setVisibility(8);
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         this.q.setText((CharSequence) null);
         this.q.setHint(FeedMethods.a(this.H));
         this.q.clearFocus();

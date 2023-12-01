@@ -8,15 +8,15 @@ import java.text.SimpleDateFormat;
 public class cm {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f41311a;
+    private static String f27620a;
 
     /* renamed from: a  reason: collision with other field name */
-    private static SimpleDateFormat f255a;
+    private static SimpleDateFormat f208a;
 
     static {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        f255a = simpleDateFormat;
-        f41311a = simpleDateFormat.format(Long.valueOf(System.currentTimeMillis()));
+        f208a = simpleDateFormat;
+        f27620a = simpleDateFormat.format(Long.valueOf(System.currentTimeMillis()));
     }
 
     public static hk a(Context context, String str) {
@@ -30,7 +30,7 @@ public class cm {
         hkVar.b(str);
         hkVar.a(true);
         hkVar.b(System.currentTimeMillis());
-        hkVar.g(bv.a(context).m11558a());
+        hkVar.g(bv.a(context).m8508a());
         hkVar.e("com.xiaomi.xmsf");
         hkVar.f("");
         hkVar.c("push_stat");

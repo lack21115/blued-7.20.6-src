@@ -11,22 +11,18 @@ import com.blued.android.module.yy_china.view.YYRelationShipThemeTabView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialofYyRelationshipRoomBinding.class */
 public final class DialofYyRelationshipRoomBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16292a;
+    public final SquareImageView a;
     public final SquareImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16293c;
+    public final ImageView c;
     public final YYRelationShipThemeTabView d;
     public final ViewPager e;
     private final ConstraintLayout f;
 
     private DialofYyRelationshipRoomBinding(ConstraintLayout constraintLayout, SquareImageView squareImageView, SquareImageView squareImageView2, ImageView imageView, YYRelationShipThemeTabView yYRelationShipThemeTabView, ViewPager viewPager) {
         this.f = constraintLayout;
-        this.f16292a = squareImageView;
+        this.a = squareImageView;
         this.b = squareImageView2;
-        this.f16293c = imageView;
+        this.c = imageView;
         this.d = yYRelationShipThemeTabView;
         this.e = viewPager;
     }
@@ -41,9 +37,9 @@ public final class DialofYyRelationshipRoomBinding implements ViewBinding {
                 if (imageView != null) {
                     YYRelationShipThemeTabView yYRelationShipThemeTabView = (YYRelationShipThemeTabView) view.findViewById(R.id.tablayout);
                     if (yYRelationShipThemeTabView != null) {
-                        ViewPager viewPager = (ViewPager) view.findViewById(R.id.type_view_pager);
-                        if (viewPager != null) {
-                            return new DialofYyRelationshipRoomBinding((ConstraintLayout) view, squareImageView, squareImageView2, imageView, yYRelationShipThemeTabView, viewPager);
+                        ViewPager findViewById = view.findViewById(R.id.type_view_pager);
+                        if (findViewById != null) {
+                            return new DialofYyRelationshipRoomBinding((ConstraintLayout) view, squareImageView, squareImageView2, imageView, yYRelationShipThemeTabView, findViewById);
                         }
                         str = "typeViewPager";
                     } else {
@@ -61,7 +57,6 @@ public final class DialofYyRelationshipRoomBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

@@ -19,12 +19,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/ui/mvp/manager/MvpPresenterManager.class */
 public final class MvpPresenterManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f16049a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Lazy<MvpPresenterManager> f16050c = LazyKt.a(LazyThreadSafetyMode.SYNCHRONIZED, new Function0<MvpPresenterManager>() { // from class: com.blued.android.module.ui.mvp.manager.MvpPresenterManager$Companion$manager$2
+    public static final Companion a = new Companion(null);
+    private static final Lazy<MvpPresenterManager> c = LazyKt.a(LazyThreadSafetyMode.SYNCHRONIZED, new Function0<MvpPresenterManager>() { // from class: com.blued.android.module.ui.mvp.manager.MvpPresenterManager$Companion$manager$2
         @Override // kotlin.jvm.functions.Function0
         /* renamed from: a */
         public final MvpPresenterManager invoke() {
@@ -44,7 +40,7 @@ public final class MvpPresenterManager {
         }
 
         private final MvpPresenterManager b() {
-            return (MvpPresenterManager) MvpPresenterManager.f16050c.getValue();
+            return (MvpPresenterManager) MvpPresenterManager.c.getValue();
         }
 
         @JvmStatic

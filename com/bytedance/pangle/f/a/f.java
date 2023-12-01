@@ -4,7 +4,7 @@ package com.bytedance.pangle.f.a;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    int[] f21403a;
+    int[] f7797a;
     int[] b;
 
     private static final int a(int[] iArr, int i) {
@@ -14,7 +14,7 @@ public final class f {
 
     public final String a(int i) {
         int[] iArr;
-        if (i < 0 || (iArr = this.f21403a) == null || i >= iArr.length) {
+        if (i < 0 || (iArr = this.f7797a) == null || i >= iArr.length) {
             return null;
         }
         int i2 = iArr[i];

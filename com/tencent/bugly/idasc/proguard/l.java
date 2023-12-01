@@ -10,7 +10,7 @@ import java.util.Map;
 public final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public ByteBuffer f35325a;
+    public ByteBuffer f21634a;
     protected String b;
 
     public l() {
@@ -19,26 +19,26 @@ public final class l {
 
     public l(int i) {
         this.b = "GBK";
-        this.f35325a = ByteBuffer.allocate(i);
+        this.f21634a = ByteBuffer.allocate(i);
     }
 
     private void a(double d, int i) {
         a(10);
         b((byte) 5, i);
-        this.f35325a.putDouble(d);
+        this.f21634a.putDouble(d);
     }
 
     private void a(float f, int i) {
         a(6);
         b((byte) 4, i);
-        this.f35325a.putFloat(f);
+        this.f21634a.putFloat(f);
     }
 
     private void a(int i) {
-        if (this.f35325a.remaining() < i) {
-            ByteBuffer allocate = ByteBuffer.allocate((this.f35325a.capacity() + i) * 2);
-            allocate.put(this.f35325a.array(), 0, this.f35325a.position());
-            this.f35325a = allocate;
+        if (this.f21634a.remaining() < i) {
+            ByteBuffer allocate = ByteBuffer.allocate((this.f21634a.capacity() + i) * 2);
+            allocate.put(this.f21634a.array(), 0, this.f21634a.position());
+            this.f21634a = allocate;
         }
     }
 
@@ -156,12 +156,12 @@ public final class l {
 
     private void b(byte b, int i) {
         if (i < 15) {
-            this.f35325a.put((byte) (b | (i << 4)));
+            this.f21634a.put((byte) (b | (i << 4)));
         } else if (i >= 256) {
             throw new j("tag is too large: ".concat(String.valueOf(i)));
         } else {
-            this.f35325a.put((byte) (b | 240));
-            this.f35325a.put((byte) i);
+            this.f21634a.put((byte) (b | 240));
+            this.f21634a.put((byte) i);
         }
     }
 
@@ -177,7 +177,7 @@ public final class l {
             return;
         }
         b((byte) 0, i);
-        this.f35325a.put(b);
+        this.f21634a.put(b);
     }
 
     public final void a(int i, int i2) {
@@ -187,7 +187,7 @@ public final class l {
             return;
         }
         b((byte) 2, i2);
-        this.f35325a.putInt(i);
+        this.f21634a.putInt(i);
     }
 
     public final void a(long j, int i) {
@@ -197,7 +197,7 @@ public final class l {
             return;
         }
         b((byte) 3, i);
-        this.f35325a.putLong(j);
+        this.f21634a.putLong(j);
     }
 
     public final void a(m mVar, int i) {
@@ -264,12 +264,12 @@ public final class l {
         a(bytes.length + 10);
         if (bytes.length > 255) {
             b((byte) 7, i);
-            this.f35325a.putInt(bytes.length);
+            this.f21634a.putInt(bytes.length);
         } else {
             b((byte) 6, i);
-            this.f35325a.put((byte) bytes.length);
+            this.f21634a.put((byte) bytes.length);
         }
-        this.f35325a.put(bytes);
+        this.f21634a.put(bytes);
     }
 
     public final <T> void a(Collection<T> collection, int i) {
@@ -302,7 +302,7 @@ public final class l {
             return;
         }
         b((byte) 1, i);
-        this.f35325a.putShort(s);
+        this.f21634a.putShort(s);
     }
 
     public final void a(boolean z, int i) {
@@ -314,6 +314,6 @@ public final class l {
         b((byte) 13, i);
         b((byte) 0, 0);
         a(bArr.length, 0);
-        this.f35325a.put(bArr);
+        this.f21634a.put(bArr);
     }
 }

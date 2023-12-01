@@ -6,11 +6,11 @@ import java.util.HashMap;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    final a f36251a;
+    final a f22560a;
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f36252c;
+    int f22561c;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/audio/route/b$a.class */
     public enum a {
@@ -42,8 +42,8 @@ public final class b {
 
     public b(a aVar, int i, boolean z) {
         this.b = false;
-        this.f36251a = aVar;
-        this.f36252c = i;
+        this.f22560a = aVar;
+        this.f22561c = i;
         this.b = z;
     }
 }

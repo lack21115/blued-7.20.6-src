@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.turingface.sdk.mfa.A48DB;
 import com.tencent.turingface.sdk.mfa.CFgXs;
 import com.tencent.turingface.sdk.mfa.HDnuc;
@@ -24,11 +25,11 @@ import java.util.concurrent.atomic.AtomicReference;
 public class y8N3A {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final y8N3A f39842a = new y8N3A();
+    private static final y8N3A f26151a = new y8N3A();
     public static final String b = Build.MODEL;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f39843c;
+    private Context f26152c;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/turingcam/y8N3A$ShGzN.class */
     class ShGzN implements n6fHX {
@@ -45,7 +46,7 @@ public class y8N3A {
     public static class SkEpO {
 
         /* renamed from: a  reason: collision with root package name */
-        int f39844a = 0;
+        int f26153a = 0;
         String b = "";
     }
 
@@ -75,12 +76,12 @@ public class y8N3A {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static y8N3A a() {
-        return f39842a;
+        return f26151a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(TuringFaceBuilder turingFaceBuilder) {
-        this.f39843c = turingFaceBuilder.getContext().getApplicationContext();
+        this.f26152c = turingFaceBuilder.getContext().getApplicationContext();
         HashSet hashSet = new HashSet();
         hashSet.add(17);
         hashSet.add(43);
@@ -89,7 +90,7 @@ public class y8N3A {
         hashSet.add(114);
         hashSet.add(5);
         hashSet.add(4);
-        jb1kT.spXPg spxpg = new jb1kT.spXPg(this.f39843c, new ShGzN(this));
+        jb1kT.spXPg spxpg = new jb1kT.spXPg(this.f26152c, new ShGzN(this));
         spxpg.m = !TextUtils.isEmpty(turingFaceBuilder.getHostUrl()) ? turingFaceBuilder.getHostUrl() : "";
         spxpg.b = 108098;
         spxpg.i = true;
@@ -113,19 +114,19 @@ public class y8N3A {
         sb.append(", 150176e");
         StringBuilder sb2 = new StringBuilder();
         if (sb2.toString().length() > 0) {
-            sb2.append(";");
+            sb2.append(t.aE);
         }
         sb2.append("tss");
         if (sb2.toString().length() > 0) {
-            sb2.append(";");
+            sb2.append(t.aE);
         }
         sb2.append("rfr");
         if (sb2.toString().length() > 0) {
-            sb2.append(";");
+            sb2.append(t.aE);
         }
         sb2.append("ite");
         if (sb2.toString().length() > 0) {
-            sb2.append(";");
+            sb2.append(t.aE);
         }
         sb2.append("rs");
         String sb3 = sb2.toString();
@@ -136,7 +137,7 @@ public class y8N3A {
         sb.append(", ");
         StringBuilder sb4 = new StringBuilder();
         if (sb4.toString().length() > 0) {
-            sb4.append(";");
+            sb4.append(t.aE);
         }
         sb4.append("wup");
         sb.append(sb4.toString());
@@ -150,17 +151,17 @@ public class y8N3A {
             b2.append(")");
             String sb6 = b2.toString();
             if (sb5.toString().length() > 0) {
-                sb5.append(";");
+                sb5.append(t.aE);
             }
             sb5.append(sb6);
             String str = "c(" + cvowV.f + ")";
             if (sb5.toString().length() > 0) {
-                sb5.append(";");
+                sb5.append(t.aE);
             }
             sb5.append(str);
             if (cvowV.x) {
                 if (sb5.toString().length() > 0) {
-                    sb5.append(";");
+                    sb5.append(t.aE);
                 }
                 sb5.append("ext");
             }
@@ -168,13 +169,13 @@ public class y8N3A {
             sb.append("]");
         }
         Log.i("TuringFdJava", sb.toString());
-        synchronized (HDnuc.f39880c) {
+        synchronized (HDnuc.f26189c) {
             int i = jb1kt.f;
             if (i > 0) {
-                oqKCa.f39831a = i;
+                oqKCa.f26140a = i;
             }
             String str2 = jb1kt.z;
-            AtomicReference<String> atomicReference = CFgXs.f39863a;
+            AtomicReference<String> atomicReference = CFgXs.f26172a;
             if (!TextUtils.isEmpty(str2)) {
                 synchronized (atomicReference) {
                     atomicReference.set(str2);
@@ -191,11 +192,11 @@ public class y8N3A {
                     atomicBoolean2.set(false);
                 } else if (HDnuc.c(jb1kt) != 0) {
                     atomicBoolean2.set(false);
-                } else if (oqKCa.f39831a == 0) {
+                } else if (oqKCa.f26140a == 0) {
                     Log.e("TuringFdJava", "pleace input valid channel !");
                     atomicBoolean2.set(false);
                 } else {
-                    A48DB.f39857a.b = jb1kt;
+                    A48DB.f26166a.b = jb1kt;
                     HDnuc.a(jb1kt);
                     atomicBoolean2.set(true);
                     atomicBoolean.set(false);
@@ -206,20 +207,20 @@ public class y8N3A {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SkEpO b() {
-        Context context = this.f39843c;
+        Context context = this.f26152c;
         int a2 = HDnuc.a();
-        vneRm a3 = a2 != 0 ? vneRm.a(a2) : rBDKv.f39985a.a(context, true, 1);
+        vneRm a3 = a2 != 0 ? vneRm.a(a2) : rBDKv.f26294a.a(context, true, 1);
         SkEpO skEpO = new SkEpO();
         vneRm vnerm = a3;
-        skEpO.b = vnerm.f40002a;
-        skEpO.f39844a = vnerm.f40003c;
+        skEpO.b = vnerm.f26311a;
+        skEpO.f26153a = vnerm.f26312c;
         return skEpO;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public byte[] c() {
-        Context context = this.f39843c;
-        com.tencent.turingface.sdk.mfa.CvowV cvowV = LJPko.f39893a;
+        Context context = this.f26152c;
+        com.tencent.turingface.sdk.mfa.CvowV cvowV = LJPko.f26202a;
         ZIDl7 zIDl7 = new ZIDl7();
         zIDl7.b = 0;
         return LJPko.a(context, zIDl7, false);

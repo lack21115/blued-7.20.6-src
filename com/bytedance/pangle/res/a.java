@@ -22,7 +22,7 @@ import java.util.Map;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, Integer> f21468a = new HashMap();
+    private static Map<String, Integer> f7862a = new HashMap();
     private LinkedHashMap<String, Integer> b;
 
     static {
@@ -31,7 +31,7 @@ public final class a {
             return;
         }
         for (String str : a2) {
-            f21468a.put(str, 0);
+            f7862a.put(str, 0);
         }
     }
 
@@ -46,7 +46,7 @@ public final class a {
         ArrayList<String> arrayList = new ArrayList();
         StringBuilder sb = new StringBuilder();
         for (String str2 : a2) {
-            if (!f21468a.containsKey(str2) && !this.b.containsKey(str2) && !str2.equals(str)) {
+            if (!f7862a.containsKey(str2) && !this.b.containsKey(str2) && !str2.equals(str)) {
                 arrayList.add(str2);
             }
         }
@@ -56,7 +56,7 @@ public final class a {
             ZeusLogger.i(ZeusLogger.TAG_LOAD, "AssetManagerProcessor newAssetManager = ".concat(String.valueOf(assetManager2)));
             synchronized (this.b) {
                 for (Map.Entry<String, Integer> entry : this.b.entrySet()) {
-                    if (!f21468a.containsKey(entry.getKey())) {
+                    if (!f7862a.containsKey(entry.getKey())) {
                         sb.append(entry.getKey());
                         b(assetManager2, entry.getKey(), false);
                     }
@@ -64,7 +64,7 @@ public final class a {
             }
             if (!sb.toString().contains(Zeus.getAppApplication().getApplicationInfo().sourceDir)) {
                 b(assetManager2, Zeus.getAppApplication().getApplicationInfo().sourceDir, false);
-                ZeusLogger.w(ZeusLogger.TAG_LOAD, "AssetManagerProcessor newAssetManager lost host path : " + f21468a.containsKey(Zeus.getAppApplication().getApplicationInfo().sourceDir));
+                ZeusLogger.w(ZeusLogger.TAG_LOAD, "AssetManagerProcessor newAssetManager lost host path : " + f7862a.containsKey(Zeus.getAppApplication().getApplicationInfo().sourceDir));
             }
             sb.append(str);
             b(assetManager2, str, false);

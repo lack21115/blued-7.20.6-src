@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.constraintlayout.core.motion.utils.CurveFit;
 import androidx.constraintlayout.core.motion.utils.KeyCache;
 import androidx.constraintlayout.core.motion.utils.TimeCycleSplineSet;
+import androidx.constraintlayout.motion.widget.Key;
 import androidx.constraintlayout.motion.widget.MotionLayout;
 import androidx.constraintlayout.widget.ConstraintAttribute;
 import java.lang.reflect.Array;
@@ -55,7 +56,7 @@ public abstract class ViewTimeCycle extends TimeCycleSplineSet {
 
         @Override // androidx.constraintlayout.motion.utils.ViewTimeCycle
         public boolean setProperty(View view, float f, long j, KeyCache keyCache) {
-            this.f2064a.getPos(f, this.o);
+            this.f2016a.getPos(f, this.o);
             float[] fArr = this.o;
             float f2 = fArr[fArr.length - 2];
             float f3 = fArr[fArr.length - 1];
@@ -100,7 +101,7 @@ public abstract class ViewTimeCycle extends TimeCycleSplineSet {
             while (true) {
                 int i4 = i3;
                 if (i4 >= size) {
-                    this.f2064a = CurveFit.get(i, dArr, dArr2);
+                    this.f2016a = CurveFit.get(i, dArr, dArr2);
                     return;
                 }
                 int keyAt = this.m.keyAt(i4);
@@ -359,7 +360,7 @@ public abstract class ViewTimeCycle extends TimeCycleSplineSet {
                 z = true;
                 break;
             case -40300674:
-                if (str.equals("rotation")) {
+                if (str.equals(Key.ROTATION)) {
                     z = true;
                     break;
                 }
@@ -435,7 +436,7 @@ public abstract class ViewTimeCycle extends TimeCycleSplineSet {
     }
 
     public float get(float f, long j, View view, KeyCache keyCache) {
-        this.f2064a.getPos(f, this.g);
+        this.f2016a.getPos(f, this.g);
         float f2 = this.g[1];
         int i = (f2 > 0.0f ? 1 : (f2 == 0.0f ? 0 : -1));
         if (i == 0) {

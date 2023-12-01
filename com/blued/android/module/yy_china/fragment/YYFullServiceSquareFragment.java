@@ -47,27 +47,21 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYFullServiceSquareFragment.class */
 public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSquarePresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17240a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private FragmentYyFullServiceSquareBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Ad f17241c = new Ad(this);
+    private final Ad c = new Ad(this);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYFullServiceSquareFragment$Ad.class */
     public static final class Ad extends BaseMultiItemQuickAdapter<FullServiceSquareMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final BaseFragment f17242a;
+        private final BaseFragment a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Ad(BaseFragment fra) {
             super(new ArrayList());
             Intrinsics.e(fra, "fra");
-            this.f17242a = fra;
+            this.a = fra;
             addItemType(1, R.layout.item_full_service_square_achie);
             addItemType(2, R.layout.item_full_service_square_gift);
             addItemType(3, R.layout.item_full_service_square_allgift);
@@ -120,7 +114,7 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
             if (item.is_voice_online() != 1 || StringUtils.a(item.getRoom_id(), 0) <= 0) {
                 return;
             }
-            YYRoomInfoManager.e().a((BaseFragmentActivity) this$0.f17242a.getActivity(), item.getRoom_id(), "all_square", false, "", YYJoinRoomJumpInfoMode.Companion.a(YYJoinRoomJumpInfoMode.Companion.b(), item.getUid()));
+            YYRoomInfoManager.e().a((BaseFragmentActivity) this$0.a.getActivity(), item.getRoom_id(), "all_square", false, "", YYJoinRoomJumpInfoMode.Companion.a(YYJoinRoomJumpInfoMode.Companion.b(), item.getUid()));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -130,7 +124,7 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
             if (e.is_voice_online() != 1 || StringUtils.a(e.getRoom_id(), 0) <= 0) {
                 return;
             }
-            YYRoomInfoManager.e().a((BaseFragmentActivity) this$0.f17242a.getActivity(), e.getRoom_id(), "all_square");
+            YYRoomInfoManager.e().a((BaseFragmentActivity) this$0.a.getActivity(), e.getRoom_id(), "all_square");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -140,7 +134,7 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
             if (item.is_voice_online() != 1 || StringUtils.a(item.getRoom_id(), 0) <= 0) {
                 return;
             }
-            YYRoomInfoManager.e().a((BaseFragmentActivity) this$0.f17242a.getActivity(), item.getRoom_id(), "all_square");
+            YYRoomInfoManager.e().a((BaseFragmentActivity) this$0.a.getActivity(), item.getRoom_id(), "all_square");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -150,29 +144,29 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
             if (e.is_voice_online() != 1 || StringUtils.a(e.getRoom_id(), 0) <= 0) {
                 return;
             }
-            YYRoomInfoManager.e().a((BaseFragmentActivity) this$0.f17242a.getActivity(), e.getRoom_id(), "all_square");
+            YYRoomInfoManager.e().a((BaseFragmentActivity) this$0.a.getActivity(), e.getRoom_id(), "all_square");
         }
 
         private final void b(BaseViewHolder baseViewHolder, final FullServiceSquareMode fullServiceSquareMode) {
-            ItemFullServiceSquareGiftBinding a2 = ItemFullServiceSquareGiftBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            ImageLoader.a(this.f17242a.getFragmentActive(), fullServiceSquareMode.getAvatar()).b(R.drawable.user_bg_round).c().a(a2.f16598c);
-            a2.g.setText(fullServiceSquareMode.getName());
-            YYLivingStreamView yYLivingStreamView = a2.d;
+            ItemFullServiceSquareGiftBinding a = ItemFullServiceSquareGiftBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            ImageLoader.a(this.a.getFragmentActive(), fullServiceSquareMode.getAvatar()).b(R.drawable.user_bg_round).c().a(a.c);
+            a.g.setText(fullServiceSquareMode.getName());
+            YYLivingStreamView yYLivingStreamView = a.d;
             ActivityFragmentActive fragmentActive = a().getFragmentActive();
             Intrinsics.c(fragmentActive, "fra.fragmentActive");
             yYLivingStreamView.a(fragmentActive);
-            a2.d.setVisibility(fullServiceSquareMode.is_voice_online() == 1 ? 0 : 8);
+            a.d.setVisibility(fullServiceSquareMode.is_voice_online() == 1 ? 0 : 8);
             FullServiceSquareResourcesMode extra_resources = fullServiceSquareMode.getExtra_resources();
             if (extra_resources != null) {
-                ImageLoader.a(a().getFragmentActive(), extra_resources.getBadge()).a(a2.b);
+                ImageLoader.a(a().getFragmentActive(), extra_resources.getBadge()).a(a.b);
                 if (extra_resources.getType() == 1) {
-                    a2.f.setText(Html.fromHtml("在聊天室已解锁<font color=#222222>新锐收藏家</font>"));
+                    a.f.setText(Html.fromHtml("在聊天室已解锁<font color=#222222>新锐收藏家</font>"));
                 } else {
-                    a2.f.setText(Html.fromHtml("在聊天室已解锁<font color=#222222>精英收藏家</font>"));
+                    a.f.setText(Html.fromHtml("在聊天室已解锁<font color=#222222>精英收藏家</font>"));
                 }
             }
-            a2.f16598c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFullServiceSquareFragment$Ad$ghe1jogTbsDSV2GXWppFRteoUec
+            a.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFullServiceSquareFragment$Ad$ghe1jogTbsDSV2GXWppFRteoUec
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYFullServiceSquareFragment.Ad.a(FullServiceSquareMode.this, this, view);
@@ -187,43 +181,43 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
             if (item.is_voice_online() != 1 || StringUtils.a(item.getRoom_id(), 0) <= 0) {
                 return;
             }
-            YYRoomInfoManager.e().a((BaseFragmentActivity) this$0.f17242a.getActivity(), item.getRoom_id(), "all_square");
+            YYRoomInfoManager.e().a((BaseFragmentActivity) this$0.a.getActivity(), item.getRoom_id(), "all_square");
         }
 
         private final void c(BaseViewHolder baseViewHolder, final FullServiceSquareMode fullServiceSquareMode) {
-            ItemFullServiceSquareBinding a2 = ItemFullServiceSquareBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            ImageLoader.a(this.f17242a.getFragmentActive(), fullServiceSquareMode.getAvatar()).b(R.drawable.user_bg_round).c().a(a2.d);
-            YYLivingStreamView yYLivingStreamView = a2.f;
-            ActivityFragmentActive fragmentActive = this.f17242a.getFragmentActive();
+            ItemFullServiceSquareBinding a = ItemFullServiceSquareBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            ImageLoader.a(this.a.getFragmentActive(), fullServiceSquareMode.getAvatar()).b(R.drawable.user_bg_round).c().a(a.d);
+            YYLivingStreamView yYLivingStreamView = a.f;
+            ActivityFragmentActive fragmentActive = this.a.getFragmentActive();
             Intrinsics.c(fragmentActive, "fra.fragmentActive");
             yYLivingStreamView.a(fragmentActive);
-            a2.f.setVisibility(fullServiceSquareMode.is_voice_online() == 1 ? 0 : 8);
+            a.f.setVisibility(fullServiceSquareMode.is_voice_online() == 1 ? 0 : 8);
             final FullServiceSquareResourcesMode extra_resources = fullServiceSquareMode.getExtra_resources();
-            ImageLoader.a(a().getFragmentActive(), extra_resources.getTarget_avatar()).b(R.drawable.user_bg_round).c().a(a2.e);
-            ImageLoader.a(a().getFragmentActive(), extra_resources.getGift_pic()).a(a2.f16596c);
-            YYLivingStreamView yYLivingStreamView2 = a2.g;
+            ImageLoader.a(a().getFragmentActive(), extra_resources.getTarget_avatar()).b(R.drawable.user_bg_round).c().a(a.e);
+            ImageLoader.a(a().getFragmentActive(), extra_resources.getGift_pic()).a(a.c);
+            YYLivingStreamView yYLivingStreamView2 = a.g;
             ActivityFragmentActive fragmentActive2 = a().getFragmentActive();
             Intrinsics.c(fragmentActive2, "fra.fragmentActive");
             yYLivingStreamView2.a(fragmentActive2);
-            a2.g.setVisibility(extra_resources.is_voice_online() == 1 ? 0 : 8);
-            TextView textView = a2.h;
+            a.g.setVisibility(extra_resources.is_voice_online() == 1 ? 0 : 8);
+            TextView textView = a.h;
             StringBuilder sb = new StringBuilder();
-            Context context = a2.f16596c.getContext();
+            Context context = a.c.getContext();
             Intrinsics.c(context, "bind.ivAllgiftGift.context");
-            sb.append((Object) a(context, fullServiceSquareMode.getName(), a2.h.getPaint()));
+            sb.append((Object) a(context, fullServiceSquareMode.getName(), a.h.getPaint()));
             sb.append("<font color=#222222> 浪漫告白了 </font>");
-            Context context2 = a2.f16596c.getContext();
+            Context context2 = a.c.getContext();
             Intrinsics.c(context2, "bind.ivAllgiftGift.context");
-            sb.append((Object) a(context2, extra_resources.getTarget_name(), a2.h.getPaint()));
+            sb.append((Object) a(context2, extra_resources.getTarget_name(), a.h.getPaint()));
             textView.setText(Html.fromHtml(sb.toString()));
-            a2.e.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFullServiceSquareFragment$Ad$wn04LG8hSi3_MxW5Ctex3Nto7rg
+            a.e.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFullServiceSquareFragment$Ad$wn04LG8hSi3_MxW5Ctex3Nto7rg
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYFullServiceSquareFragment.Ad.a(FullServiceSquareResourcesMode.this, this, view);
                 }
             });
-            a2.d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFullServiceSquareFragment$Ad$BhFQp4MsTeiAc9rUoZMzZMloN3M
+            a.d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFullServiceSquareFragment$Ad$BhFQp4MsTeiAc9rUoZMzZMloN3M
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYFullServiceSquareFragment.Ad.b(FullServiceSquareMode.this, this, view);
@@ -232,42 +226,42 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
         }
 
         private final void d(BaseViewHolder baseViewHolder, final FullServiceSquareMode fullServiceSquareMode) {
-            ItemFullServiceSquareAllgiftBinding a2 = ItemFullServiceSquareAllgiftBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            ImageLoader.a(this.f17242a.getFragmentActive(), fullServiceSquareMode.getAvatar()).b(R.drawable.user_bg_round).c().a(a2.d);
-            YYLivingStreamView yYLivingStreamView = a2.f;
-            ActivityFragmentActive fragmentActive = this.f17242a.getFragmentActive();
+            ItemFullServiceSquareAllgiftBinding a = ItemFullServiceSquareAllgiftBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            ImageLoader.a(this.a.getFragmentActive(), fullServiceSquareMode.getAvatar()).b(R.drawable.user_bg_round).c().a(a.d);
+            YYLivingStreamView yYLivingStreamView = a.f;
+            ActivityFragmentActive fragmentActive = this.a.getFragmentActive();
             Intrinsics.c(fragmentActive, "fra.fragmentActive");
             yYLivingStreamView.a(fragmentActive);
-            a2.f.setVisibility(fullServiceSquareMode.is_voice_online() == 1 ? 0 : 8);
+            a.f.setVisibility(fullServiceSquareMode.is_voice_online() == 1 ? 0 : 8);
             final FullServiceSquareResourcesMode extra_resources = fullServiceSquareMode.getExtra_resources();
-            ImageLoader.a(a().getFragmentActive(), extra_resources.getTarget_avatar()).b(R.drawable.user_bg_round).c().a(a2.e);
-            ImageLoader.a(a().getFragmentActive(), extra_resources.getGift_pic()).a(a2.f16594c);
-            YYLivingStreamView yYLivingStreamView2 = a2.g;
+            ImageLoader.a(a().getFragmentActive(), extra_resources.getTarget_avatar()).b(R.drawable.user_bg_round).c().a(a.e);
+            ImageLoader.a(a().getFragmentActive(), extra_resources.getGift_pic()).a(a.c);
+            YYLivingStreamView yYLivingStreamView2 = a.g;
             ActivityFragmentActive fragmentActive2 = a().getFragmentActive();
             Intrinsics.c(fragmentActive2, "fra.fragmentActive");
             yYLivingStreamView2.a(fragmentActive2);
-            a2.g.setVisibility(extra_resources.is_voice_online() == 1 ? 0 : 8);
-            TextView textView = a2.h;
+            a.g.setVisibility(extra_resources.is_voice_online() == 1 ? 0 : 8);
+            TextView textView = a.h;
             StringBuilder sb = new StringBuilder();
-            Context context = a2.f16594c.getContext();
+            Context context = a.c.getContext();
             Intrinsics.c(context, "bind.ivAllgiftGift.context");
-            sb.append((Object) a(context, fullServiceSquareMode.getName(), a2.h.getPaint()));
+            sb.append((Object) a(context, fullServiceSquareMode.getName(), a.h.getPaint()));
             sb.append("<font color=#222222> 送给 </font>");
-            Context context2 = a2.f16594c.getContext();
+            Context context2 = a.c.getContext();
             Intrinsics.c(context2, "bind.ivAllgiftGift.context");
-            sb.append((Object) a(context2, extra_resources.getTarget_name(), a2.h.getPaint()));
+            sb.append((Object) a(context2, extra_resources.getTarget_name(), a.h.getPaint()));
             sb.append("<font color=#222222> ");
             sb.append(extra_resources.getGift_name());
             sb.append("</font>");
             textView.setText(Html.fromHtml(sb.toString()));
-            a2.e.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFullServiceSquareFragment$Ad$pYKqnaWMa1puZZhMbMCVCMls76I
+            a.e.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFullServiceSquareFragment$Ad$pYKqnaWMa1puZZhMbMCVCMls76I
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYFullServiceSquareFragment.Ad.b(FullServiceSquareResourcesMode.this, this, view);
                 }
             });
-            a2.d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFullServiceSquareFragment$Ad$8Wxc0FtfKhHCMOeyAXHzIlIyUtU
+            a.d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFullServiceSquareFragment$Ad$8Wxc0FtfKhHCMOeyAXHzIlIyUtU
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYFullServiceSquareFragment.Ad.c(FullServiceSquareMode.this, this, view);
@@ -276,27 +270,27 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
         }
 
         private final void e(BaseViewHolder baseViewHolder, final FullServiceSquareMode fullServiceSquareMode) {
-            ItemFullServiceSquareAchieBinding a2 = ItemFullServiceSquareAchieBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            ImageLoader.a(this.f17242a.getFragmentActive(), fullServiceSquareMode.getAvatar()).b(R.drawable.user_bg_round).c().a(a2.f16592c);
-            a2.f.setText(fullServiceSquareMode.getName());
-            YYLivingStreamView yYLivingStreamView = a2.d;
+            ItemFullServiceSquareAchieBinding a = ItemFullServiceSquareAchieBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            ImageLoader.a(this.a.getFragmentActive(), fullServiceSquareMode.getAvatar()).b(R.drawable.user_bg_round).c().a(a.c);
+            a.f.setText(fullServiceSquareMode.getName());
+            YYLivingStreamView yYLivingStreamView = a.d;
             ActivityFragmentActive fragmentActive = a().getFragmentActive();
             Intrinsics.c(fragmentActive, "fra.fragmentActive");
             yYLivingStreamView.a(fragmentActive);
-            a2.d.setVisibility(fullServiceSquareMode.is_voice_online() == 1 ? 0 : 8);
+            a.d.setVisibility(fullServiceSquareMode.is_voice_online() == 1 ? 0 : 8);
             FullServiceSquareResourcesMode extra_resources = fullServiceSquareMode.getExtra_resources();
             if (extra_resources != null) {
-                ImageLoader.a(a().getFragmentActive(), extra_resources.getBadge()).a(a2.b);
+                ImageLoader.a(a().getFragmentActive(), extra_resources.getBadge()).a(a.b);
                 if (extra_resources.getType() == 1) {
-                    TextView textView = a2.e;
+                    TextView textView = a.e;
                     textView.setText(Html.fromHtml("在聊天室荣誉等级升级至<font color=#222222>Lv." + extra_resources.getLevel() + "</font>"));
                 } else {
-                    TextView textView2 = a2.e;
+                    TextView textView2 = a.e;
                     textView2.setText(Html.fromHtml("在聊天室主播等级升级至<font color=#222222>Lv." + extra_resources.getLevel() + "</font>"));
                 }
             }
-            a2.h.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFullServiceSquareFragment$Ad$N3IDQEkSn-WXZ9HWq-cx-15Af7Q
+            a.h.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFullServiceSquareFragment$Ad$N3IDQEkSn-WXZ9HWq-cx-15Af7Q
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYFullServiceSquareFragment.Ad.a(FullServiceSquareMode.this, view);
@@ -305,11 +299,10 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
         }
 
         public final BaseFragment a() {
-            return this.f17242a;
+            return this.a;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, FullServiceSquareMode item) {
             Intrinsics.e(helper, "helper");
@@ -367,13 +360,13 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
         SmartRefreshLayout smartRefreshLayout2;
         FragmentYyFullServiceSquareBinding fragmentYyFullServiceSquareBinding = this.b;
         if (fragmentYyFullServiceSquareBinding != null && (smartRefreshLayout2 = fragmentYyFullServiceSquareBinding.d) != null) {
-            smartRefreshLayout2.j();
+            smartRefreshLayout2.g();
         }
         FragmentYyFullServiceSquareBinding fragmentYyFullServiceSquareBinding2 = this.b;
         if (fragmentYyFullServiceSquareBinding2 != null && (smartRefreshLayout = fragmentYyFullServiceSquareBinding2.d) != null) {
             smartRefreshLayout.h();
         }
-        if (this.f17241c.getData().size() > 0) {
+        if (this.c.getData().size() > 0) {
             FragmentYyFullServiceSquareBinding fragmentYyFullServiceSquareBinding3 = this.b;
             if (fragmentYyFullServiceSquareBinding3 == null || (noDataAndLoadFailView = fragmentYyFullServiceSquareBinding3.b) == null) {
                 return;
@@ -416,7 +409,7 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
                 public void a(List<FullServiceSquareMode> list2) {
                     YYFullServiceSquareFragment.Ad ad;
                     Intrinsics.e(list2, "list");
-                    ad = YYFullServiceSquareFragment.this.f17241c;
+                    ad = YYFullServiceSquareFragment.this.c;
                     ad.setNewData(list2);
                 }
             });
@@ -457,14 +450,14 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
             noDataAndLoadFailView.setFailImg(R.drawable.icon_no_data_common);
         }
         FragmentYyFullServiceSquareBinding fragmentYyFullServiceSquareBinding3 = this.b;
-        RecyclerView recyclerView = fragmentYyFullServiceSquareBinding3 == null ? null : fragmentYyFullServiceSquareBinding3.f16500c;
+        RecyclerView recyclerView = fragmentYyFullServiceSquareBinding3 == null ? null : fragmentYyFullServiceSquareBinding3.c;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         }
         FragmentYyFullServiceSquareBinding fragmentYyFullServiceSquareBinding4 = this.b;
-        RecyclerView recyclerView2 = fragmentYyFullServiceSquareBinding4 == null ? null : fragmentYyFullServiceSquareBinding4.f16500c;
+        RecyclerView recyclerView2 = fragmentYyFullServiceSquareBinding4 == null ? null : fragmentYyFullServiceSquareBinding4.c;
         if (recyclerView2 != null) {
-            recyclerView2.setAdapter(this.f17241c);
+            recyclerView2.setAdapter(this.c);
         }
         FragmentYyFullServiceSquareBinding fragmentYyFullServiceSquareBinding5 = this.b;
         if (fragmentYyFullServiceSquareBinding5 != null && (commonTopTitleNoTrans3 = fragmentYyFullServiceSquareBinding5.e) != null) {
@@ -493,13 +486,11 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
             return;
         }
         smartRefreshLayout.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYFullServiceSquareFragment$initView$3
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYFullServiceSquareFragment.this.j().f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYFullServiceSquareFragment.this.j().e();
@@ -535,7 +526,7 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
         if (fragmentYyFullServiceSquareBinding == null || (smartRefreshLayout = fragmentYyFullServiceSquareBinding.d) == null) {
             return;
         }
-        smartRefreshLayout.l(true);
+        smartRefreshLayout.b(true);
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
@@ -546,6 +537,6 @@ public final class YYFullServiceSquareFragment extends MvpFragment<FullServiceSq
         if (fragmentYyFullServiceSquareBinding == null || (smartRefreshLayout = fragmentYyFullServiceSquareBinding.d) == null) {
             return;
         }
-        smartRefreshLayout.l(false);
+        smartRefreshLayout.b(false);
     }
 }

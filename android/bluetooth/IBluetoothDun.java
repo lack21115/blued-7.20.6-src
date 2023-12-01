@@ -18,9 +18,8 @@ public interface IBluetoothDun extends IInterface {
         static final int TRANSACTION_getConnectionState_1 = 2;
         static final int TRANSACTION_getDevicesMatchingConnectionStates_3 = 4;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/bluetooth/IBluetoothDun$Stub$Proxy.class */
-        public static class Proxy implements IBluetoothDun {
+        private static class Proxy implements IBluetoothDun {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

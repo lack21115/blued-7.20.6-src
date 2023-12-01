@@ -291,9 +291,8 @@ public class ActivityView extends ViewGroup {
         return super.onGenericMotionEvent(motionEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         this.mTextureView.layout(0, 0, i3 - i, i4 - i2);
     }
 
@@ -302,9 +301,8 @@ public class ActivityView extends ViewGroup {
         return injectInputEvent(motionEvent) || super.onTouchEvent(motionEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         if (this.mSurface != null) {
             try {

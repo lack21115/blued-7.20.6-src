@@ -21,11 +21,11 @@ public class h0 {
     public static final h0 f = new h0();
 
     /* renamed from: a  reason: collision with root package name */
-    public g0 f39631a;
+    public g0 f25940a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f39632c;
+    public String f25941c;
     public final Object d = new Object();
     public ServiceConnection e = new a();
 
@@ -36,7 +36,7 @@ public class h0 {
 
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            h0.this.f39631a = g0.a.a(iBinder);
+            h0.this.f25940a = g0.a.a(iBinder);
             synchronized (h0.this.d) {
                 h0.this.d.notify();
             }
@@ -44,7 +44,7 @@ public class h0 {
 
         @Override // android.content.ServiceConnection
         public void onServiceDisconnected(ComponentName componentName) {
-            h0.this.f39631a = null;
+            h0.this.f25940a = null;
         }
     }
 
@@ -54,7 +54,7 @@ public class h0 {
             if (Looper.myLooper() == Looper.getMainLooper()) {
                 throw new IllegalStateException("Cannot run on MainThread");
             }
-            if (this.f39631a == null) {
+            if (this.f25940a == null) {
                 Intent intent = new Intent();
                 intent.setComponent(new ComponentName("com.heytap.openid", "com.heytap.openid.IdentifyService"));
                 intent.setAction("action.com.heytap.openid.OPEN_ID_SERVICE");
@@ -67,7 +67,7 @@ public class h0 {
                         }
                     }
                 }
-                if (this.f39631a != null) {
+                if (this.f25940a != null) {
                     try {
                         b = b(context, str);
                     } catch (Exception e2) {
@@ -103,7 +103,7 @@ public class h0 {
         if (TextUtils.isEmpty(this.b)) {
             this.b = context.getPackageName();
         }
-        if (TextUtils.isEmpty(this.f39632c)) {
+        if (TextUtils.isEmpty(this.f25941c)) {
             try {
                 signatureArr = context.getPackageManager().getPackageInfo(this.b, 64).signatures;
             } catch (PackageManager.NameNotFoundException e) {
@@ -132,9 +132,9 @@ public class h0 {
                     }
                 }
             }
-            this.f39632c = str2;
+            this.f25941c = str2;
         }
-        String a2 = ((g0.a.C1037a) this.f39631a).a(this.b, this.f39632c, str);
+        String a2 = ((g0.a.C0867a) this.f25940a).a(this.b, this.f25941c, str);
         String str3 = a2;
         if (TextUtils.isEmpty(a2)) {
             str3 = "";

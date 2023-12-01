@@ -1,5 +1,8 @@
 package java.util;
 
+import com.android.ims.ImsReasonInfo;
+import java.net.HttpURLConnection;
+
 /* loaded from: source-2895416-dex2jar.jar:java/util/Grego.class */
 class Grego {
     private static final int JULIAN_1970_CE = 2440588;
@@ -11,7 +14,7 @@ class Grego {
     public static final int MILLIS_PER_SECOND = 1000;
     public static final long MIN_MILLIS = -184303902528000000L;
     private static final int[] MONTH_LENGTH = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    private static final int[] DAYS_BEFORE = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335};
+    private static final int[] DAYS_BEFORE = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, ImsReasonInfo.CODE_SIP_NOT_SUPPORTED, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, ImsReasonInfo.CODE_SIP_REQUEST_TIMEOUT};
 
     Grego() {
     }
@@ -80,7 +83,7 @@ class Grego {
 
     public static final boolean isLeapYear(int i) {
         if ((i & 3) == 0) {
-            return i % 100 != 0 || i % 400 == 0;
+            return i % 100 != 0 || i % HttpURLConnection.HTTP_BAD_REQUEST == 0;
         }
         return false;
     }

@@ -7,11 +7,11 @@ import android.opengl.GLES20;
 public final /* synthetic */ class c implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f36577a;
+    private final int f22886a;
     private final float b;
 
     private c(int i, float f) {
-        this.f36577a = i;
+        this.f22886a = i;
         this.b = f;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class c implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        GLES20.glUniform1f(this.f36577a, this.b);
+        GLES20.glUniform1f(this.f22886a, this.b);
     }
 }

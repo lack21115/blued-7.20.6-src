@@ -18,11 +18,11 @@ import com.opos.cmn.j.b;
 public class c implements com.opos.mobad.activity.webview.b.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.mobad.activity.webview.c.a f25645a;
+    private com.opos.mobad.activity.webview.c.a f11957a;
     private a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f25646c;
+    private LinearLayout f11958c;
     private View d;
     private View e;
     private View f;
@@ -77,7 +77,7 @@ public class c implements com.opos.mobad.activity.webview.b.a {
                     c.this.b.a();
                 }
             }
-        }).a(dVar.f25658a).a(false).a(new com.opos.cmn.biz.web.b.a.a.a() { // from class: com.opos.mobad.activity.webview.c.1
+        }).a(dVar.f11970a).a(false).a(new com.opos.cmn.biz.web.b.a.a.a() { // from class: com.opos.mobad.activity.webview.c.1
             @Override // com.opos.cmn.biz.web.b.a.a.a
             public void a(final SslErrorHandler sslErrorHandler, SslError sslError) {
                 try {
@@ -107,8 +107,8 @@ public class c implements com.opos.mobad.activity.webview.b.a {
                 }
             }
         }).a());
-        if (dVar.f25659c) {
-            this.f25645a = new com.opos.mobad.activity.webview.c.a(activity.getApplicationContext(), this);
+        if (dVar.f11971c) {
+            this.f11957a = new com.opos.mobad.activity.webview.c.a(activity.getApplicationContext(), this);
         }
         this.h = dVar.b;
         this.i = dVar.d;
@@ -118,10 +118,10 @@ public class c implements com.opos.mobad.activity.webview.b.a {
     private void f() {
         if (this.g != null) {
             LinearLayout linearLayout = new LinearLayout(this.g);
-            this.f25646c = linearLayout;
+            this.f11958c = linearLayout;
             linearLayout.setOrientation(1);
-            this.f25646c.setFitsSystemWindows(this.i);
-            this.f25646c.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: com.opos.mobad.activity.webview.c.3
+            this.f11958c.setFitsSystemWindows(this.i);
+            this.f11958c.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: com.opos.mobad.activity.webview.c.3
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewAttachedToWindow(View view) {
                 }
@@ -142,13 +142,13 @@ public class c implements com.opos.mobad.activity.webview.b.a {
             h();
             i();
             final com.opos.cmn.j.a aVar = new com.opos.cmn.j.a(this.g);
-            aVar.a(new a.InterfaceC0646a() { // from class: com.opos.mobad.activity.webview.c.4
-                @Override // com.opos.cmn.j.a.InterfaceC0646a
+            aVar.a(new a.InterfaceC0476a() { // from class: com.opos.mobad.activity.webview.c.4
+                @Override // com.opos.cmn.j.a.InterfaceC0476a
                 public void a() {
                     com.opos.cmn.an.f.a.b("WebViewEngine", "view detach ");
                 }
 
-                @Override // com.opos.cmn.j.a.InterfaceC0646a
+                @Override // com.opos.cmn.j.a.InterfaceC0476a
                 public void b() {
                     if (c.this.l || c.this.b == null) {
                         return;
@@ -161,19 +161,19 @@ public class c implements com.opos.mobad.activity.webview.b.a {
                     c.this.l = true;
                 }
             });
-            this.f25646c.addView(aVar, 0, 0);
+            this.f11958c.addView(aVar, 0, 0);
         }
     }
 
     private void g() {
-        com.opos.mobad.activity.webview.c.a aVar = this.f25645a;
+        com.opos.mobad.activity.webview.c.a aVar = this.f11957a;
         if (aVar != null) {
             View a2 = aVar.a();
             this.e = a2;
-            if (a2 == null || this.f25646c == null) {
+            if (a2 == null || this.f11958c == null) {
                 return;
             }
-            this.f25646c.addView(this.e, new LinearLayout.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(this.g, 43.33f)));
+            this.f11958c.addView(this.e, new LinearLayout.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(this.g, 43.33f)));
         }
     }
 
@@ -184,7 +184,7 @@ public class c implements com.opos.mobad.activity.webview.b.a {
             bVar.setVisibility(8);
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, (com.opos.cmn.an.h.f.a.b(this.g) * 9) / 16);
             this.j.a(this.m);
-            this.f25646c.addView(this.j, layoutParams);
+            this.f11958c.addView(this.j, layoutParams);
         }
     }
 
@@ -193,18 +193,18 @@ public class c implements com.opos.mobad.activity.webview.b.a {
         if (aVar != null) {
             View b = aVar.b();
             this.d = b;
-            if (b == null || this.f25646c == null) {
+            if (b == null || this.f11958c == null) {
                 return;
             }
             b.setFitsSystemWindows(this.i);
-            this.f25646c.addView(this.d, new LinearLayout.LayoutParams(-1, -1));
+            this.f11958c.addView(this.d, new LinearLayout.LayoutParams(-1, -1));
         }
     }
 
     private void j() {
         LinearLayout linearLayout;
         View view = this.d;
-        if (view == null || (linearLayout = this.f25646c) == null) {
+        if (view == null || (linearLayout = this.f11958c) == null) {
             return;
         }
         linearLayout.removeView(view);
@@ -231,7 +231,7 @@ public class c implements com.opos.mobad.activity.webview.b.a {
     }
 
     public void a() {
-        LinearLayout linearLayout = this.f25646c;
+        LinearLayout linearLayout = this.f11958c;
         if (linearLayout != null) {
             linearLayout.removeAllViews();
             com.opos.cmn.j.b bVar = this.j;
@@ -297,7 +297,7 @@ public class c implements com.opos.mobad.activity.webview.b.a {
     }
 
     public View d() {
-        return this.f25646c;
+        return this.f11958c;
     }
 
     public void e() {

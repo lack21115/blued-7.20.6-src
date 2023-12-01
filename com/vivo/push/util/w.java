@@ -52,8 +52,8 @@ public final class w extends b {
 
     public final void a(Context context) {
         synchronized (this) {
-            if (this.f41131a == null) {
-                this.f41131a = context;
+            if (this.f27440a == null) {
+                this.f27440a = context;
                 a(context, "com.vivo.push_preferences");
             }
         }

@@ -6,6 +6,7 @@ import com.sobot.chat.utils.ResourceUtils;
 import com.sobot.chat.widget.timePicker.adapter.SobotNumericWheelAdapter;
 import com.sobot.chat.widget.timePicker.lib.SobotWheelView;
 import com.sobot.chat.widget.timePicker.listener.SobotOnItemSelectedListener;
+import com.xiaomi.mipush.sdk.Constants;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -176,9 +177,9 @@ public class SobotWheelTime {
             int i = this.startMonth;
             if (currentItem + i == i) {
                 stringBuffer.append(this.wv_year.getCurrentItem() + this.startYear);
-                stringBuffer.append("-");
+                stringBuffer.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 stringBuffer.append(this.wv_month.getCurrentItem() + this.startMonth);
-                stringBuffer.append("-");
+                stringBuffer.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 stringBuffer.append(this.wv_day.getCurrentItem() + this.startDay);
                 stringBuffer.append(" ");
                 stringBuffer.append(this.wv_hours.getCurrentItem());
@@ -188,9 +189,9 @@ public class SobotWheelTime {
                 stringBuffer.append(this.wv_seconds.getCurrentItem());
             } else {
                 stringBuffer.append(this.wv_year.getCurrentItem() + this.startYear);
-                stringBuffer.append("-");
+                stringBuffer.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 stringBuffer.append(this.wv_month.getCurrentItem() + this.startMonth);
-                stringBuffer.append("-");
+                stringBuffer.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 stringBuffer.append(this.wv_day.getCurrentItem() + 1);
                 stringBuffer.append(" ");
                 stringBuffer.append(this.wv_hours.getCurrentItem());
@@ -201,9 +202,9 @@ public class SobotWheelTime {
             }
         } else {
             stringBuffer.append(this.wv_year.getCurrentItem() + this.startYear);
-            stringBuffer.append("-");
+            stringBuffer.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             stringBuffer.append(this.wv_month.getCurrentItem() + 1);
-            stringBuffer.append("-");
+            stringBuffer.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             stringBuffer.append(this.wv_day.getCurrentItem() + 1);
             stringBuffer.append(" ");
             stringBuffer.append(this.wv_hours.getCurrentItem());

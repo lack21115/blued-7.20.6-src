@@ -8,11 +8,11 @@ import com.anythink.expressad.exoplayer.j.d;
 public final class m implements aa<Object>, d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f7587a = 1000000;
+    public static final long f4748a = 1000000;
     public static final int b = 2000;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7588c = 2000;
+    private static final int f4749c = 2000;
     private static final int d = 524288;
     private final Handler e;
     private final d.a f;
@@ -30,16 +30,16 @@ public final class m implements aa<Object>, d {
     final class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f7589a;
+        final /* synthetic */ int f4750a;
         final /* synthetic */ long b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ long f7590c;
+        final /* synthetic */ long f4751c;
 
         AnonymousClass1(int i, long j, long j2) {
-            this.f7589a = i;
+            this.f4750a = i;
             this.b = j;
-            this.f7590c = j2;
+            this.f4751c = j2;
         }
 
         @Override // java.lang.Runnable
@@ -52,13 +52,13 @@ public final class m implements aa<Object>, d {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private Handler f7591a;
+        private Handler f4752a;
         private d.a b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f7592c = 1000000;
+        private long f4753c = 1000000;
         private int d = 2000;
-        private com.anythink.expressad.exoplayer.k.c e = com.anythink.expressad.exoplayer.k.c.f7640a;
+        private com.anythink.expressad.exoplayer.k.c e = com.anythink.expressad.exoplayer.k.c.f4801a;
 
         private a a(int i) {
             this.d = i;
@@ -66,13 +66,13 @@ public final class m implements aa<Object>, d {
         }
 
         private a a(long j) {
-            this.f7592c = j;
+            this.f4753c = j;
             return this;
         }
 
         private a a(Handler handler, d.a aVar) {
             com.anythink.expressad.exoplayer.k.a.a((handler == null || aVar == null) ? false : true);
-            this.f7591a = handler;
+            this.f4752a = handler;
             this.b = aVar;
             return this;
         }
@@ -83,22 +83,22 @@ public final class m implements aa<Object>, d {
         }
 
         private m a() {
-            return new m(this.f7591a, this.b, this.f7592c, this.d, this.e, (byte) 0);
+            return new m(this.f4752a, this.b, this.f4753c, this.d, this.e, (byte) 0);
         }
     }
 
     public m() {
-        this(null, null, 1000000L, 2000, com.anythink.expressad.exoplayer.k.c.f7640a);
+        this(null, null, 1000000L, 2000, com.anythink.expressad.exoplayer.k.c.f4801a);
     }
 
     @Deprecated
     private m(Handler handler, d.a aVar) {
-        this(handler, aVar, 1000000L, 2000, com.anythink.expressad.exoplayer.k.c.f7640a);
+        this(handler, aVar, 1000000L, 2000, com.anythink.expressad.exoplayer.k.c.f4801a);
     }
 
     @Deprecated
     private m(Handler handler, d.a aVar, int i) {
-        this(handler, aVar, 1000000L, i, com.anythink.expressad.exoplayer.k.c.f7640a);
+        this(handler, aVar, 1000000L, i, com.anythink.expressad.exoplayer.k.c.f4801a);
     }
 
     private m(Handler handler, d.a aVar, long j, int i, com.anythink.expressad.exoplayer.k.c cVar) {

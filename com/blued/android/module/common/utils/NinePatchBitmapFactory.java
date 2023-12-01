@@ -13,9 +13,7 @@ public class NinePatchBitmapFactory {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/NinePatchBitmapFactory$Range.class */
     public static class Range {
-
-        /* renamed from: a  reason: collision with root package name */
-        public int f10890a;
+        public int a;
         public int b;
     }
 
@@ -41,11 +39,11 @@ public class NinePatchBitmapFactory {
         order.putInt(0);
         order.putInt(0);
         for (Range range : list) {
-            order.putInt(range.f10890a);
+            order.putInt(range.a);
             order.putInt(range.b);
         }
         for (Range range2 : list2) {
-            order.putInt(range2.f10890a);
+            order.putInt(range2.a);
             order.putInt(range2.b);
         }
         order.putInt(1);

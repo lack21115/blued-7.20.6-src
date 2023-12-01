@@ -1,19 +1,19 @@
 package mtopsdk.mtop.domain;
 
+import io.grpc.internal.GrpcUtil;
+
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/domain/MethodEnum.class */
 public enum MethodEnum {
     GET("GET"),
-    POST("POST");
+    POST(GrpcUtil.HTTP_METHOD);
     
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f43742c;
+    private String c;
 
     MethodEnum(String str) {
-        this.f43742c = str;
+        this.c = str;
     }
 
     public final String a() {
-        return this.f43742c;
+        return this.c;
     }
 }

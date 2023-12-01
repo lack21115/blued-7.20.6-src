@@ -8,7 +8,7 @@ import com.bumptech.glide.load.engine.cache.MemoryCache;
 public class MemoryCacheAdapter implements MemoryCache {
 
     /* renamed from: a  reason: collision with root package name */
-    private MemoryCache.ResourceRemovedListener f20833a;
+    private MemoryCache.ResourceRemovedListener f7227a;
 
     @Override // com.bumptech.glide.load.engine.cache.MemoryCache
     public long a() {
@@ -26,7 +26,7 @@ public class MemoryCacheAdapter implements MemoryCache {
 
     @Override // com.bumptech.glide.load.engine.cache.MemoryCache
     public void a(MemoryCache.ResourceRemovedListener resourceRemovedListener) {
-        this.f20833a = resourceRemovedListener;
+        this.f7227a = resourceRemovedListener;
     }
 
     @Override // com.bumptech.glide.load.engine.cache.MemoryCache
@@ -37,7 +37,7 @@ public class MemoryCacheAdapter implements MemoryCache {
     @Override // com.bumptech.glide.load.engine.cache.MemoryCache
     public Resource<?> b(Key key, Resource<?> resource) {
         if (resource != null) {
-            this.f20833a.b(resource);
+            this.f7227a.b(resource);
             return null;
         }
         return null;

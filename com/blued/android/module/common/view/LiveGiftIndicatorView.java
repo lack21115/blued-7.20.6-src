@@ -14,13 +14,9 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/LiveGiftIndicatorView.class */
 public class LiveGiftIndicatorView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f11001a;
+    private Context a;
     private final List<ImageView> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f11002c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -28,12 +24,12 @@ public class LiveGiftIndicatorView extends LinearLayout {
     public LiveGiftIndicatorView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = new ArrayList();
-        this.f11002c = 8;
+        this.c = 8;
         this.e = R.drawable.live_gift_indicator_point_nomal;
         this.f = R.drawable.live_gift_indicator_point_select;
-        this.f11001a = context;
+        this.a = context;
         setOrientation(0);
-        this.d = DisplayUtil.a(context, this.f11002c);
+        this.d = DisplayUtil.a(context, this.c);
     }
 
     public void a(int i) {
@@ -43,11 +39,11 @@ public class LiveGiftIndicatorView extends LinearLayout {
             if (i2 >= i) {
                 return;
             }
-            RelativeLayout relativeLayout = new RelativeLayout(this.f11001a);
+            RelativeLayout relativeLayout = new RelativeLayout(this.a);
             ViewGroup.LayoutParams layoutParams = new LinearLayout.LayoutParams(this.d + DisplayUtil.a(getContext(), 4.0f), this.d);
             RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
             layoutParams2.addRule(13);
-            ImageView imageView = new ImageView(this.f11001a);
+            ImageView imageView = new ImageView(this.a);
             if (i2 == 0) {
                 imageView.setImageResource(this.f);
             } else {

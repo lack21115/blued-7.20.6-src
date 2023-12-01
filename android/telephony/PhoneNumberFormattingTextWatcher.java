@@ -6,6 +6,7 @@ import android.text.Selection;
 import android.text.TextWatcher;
 import com.android.i18n.phonenumbers.AsYouTypeFormatter;
 import com.android.i18n.phonenumbers.PhoneNumberUtil;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.Locale;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telephony/PhoneNumberFormattingTextWatcher.class */
@@ -30,7 +31,7 @@ public class PhoneNumberFormattingTextWatcher implements TextWatcher {
         String inputDigitAndRememberPosition = z ? this.mFormatter.inputDigitAndRememberPosition(c2) : this.mFormatter.inputDigit(c2);
         String str = inputDigitAndRememberPosition;
         if (!SystemProperties.getBoolean("persist.env.sys.hypenenable", true)) {
-            str = inputDigitAndRememberPosition.replace("-", "");
+            str = inputDigitAndRememberPosition.replace(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
         }
         return str;
     }

@@ -10,13 +10,9 @@ import java.net.URLDecoder;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/subscaleview/ImageSource.class */
 public final class ImageSource {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Uri f11550a;
+    private final Uri a;
     private final Bitmap b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Integer f11551c;
+    private final Integer c;
     private boolean d;
     private int e;
     private int f;
@@ -25,8 +21,8 @@ public final class ImageSource {
 
     private ImageSource(int i) {
         this.b = null;
-        this.f11550a = null;
-        this.f11551c = Integer.valueOf(i);
+        this.a = null;
+        this.c = Integer.valueOf(i);
         this.d = true;
     }
 
@@ -44,8 +40,8 @@ public final class ImageSource {
             }
         }
         this.b = null;
-        this.f11550a = uri3;
-        this.f11551c = null;
+        this.a = uri3;
+        this.c = null;
         this.d = true;
     }
 
@@ -86,7 +82,7 @@ public final class ImageSource {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final Uri b() {
-        return this.f11550a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -96,7 +92,7 @@ public final class ImageSource {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final Integer d() {
-        return this.f11551c;
+        return this.c;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

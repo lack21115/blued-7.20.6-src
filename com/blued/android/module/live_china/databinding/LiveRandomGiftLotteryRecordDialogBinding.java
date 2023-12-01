@@ -15,13 +15,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveRandomGiftLotteryRecordDialogBinding.class */
 public final class LiveRandomGiftLotteryRecordDialogBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeFrameLayout f12399a;
+    public final ShapeFrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final SlopeLoadingView f12400c;
+    public final SlopeLoadingView c;
     public final RelativeLayout d;
     public final RecyclerView e;
     public final TextView f;
@@ -29,9 +25,9 @@ public final class LiveRandomGiftLotteryRecordDialogBinding implements ViewBindi
 
     private LiveRandomGiftLotteryRecordDialogBinding(FrameLayout frameLayout, ShapeFrameLayout shapeFrameLayout, ImageView imageView, SlopeLoadingView slopeLoadingView, RelativeLayout relativeLayout, RecyclerView recyclerView, TextView textView) {
         this.g = frameLayout;
-        this.f12399a = shapeFrameLayout;
+        this.a = shapeFrameLayout;
         this.b = imageView;
-        this.f12400c = slopeLoadingView;
+        this.c = slopeLoadingView;
         this.d = relativeLayout;
         this.e = recyclerView;
         this.f = textView;
@@ -59,11 +55,11 @@ public final class LiveRandomGiftLotteryRecordDialogBinding implements ViewBindi
                 if (slopeLoadingView != null) {
                     RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_empty);
                     if (relativeLayout != null) {
-                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                        if (recyclerView != null) {
+                        RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                        if (findViewById != null) {
                             TextView textView = (TextView) view.findViewById(R.id.tv_desc);
                             if (textView != null) {
-                                return new LiveRandomGiftLotteryRecordDialogBinding((FrameLayout) view, shapeFrameLayout, imageView, slopeLoadingView, relativeLayout, recyclerView, textView);
+                                return new LiveRandomGiftLotteryRecordDialogBinding((FrameLayout) view, shapeFrameLayout, imageView, slopeLoadingView, relativeLayout, findViewById, textView);
                             }
                             str = "tvDesc";
                         } else {
@@ -84,7 +80,6 @@ public final class LiveRandomGiftLotteryRecordDialogBinding implements ViewBindi
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.g;

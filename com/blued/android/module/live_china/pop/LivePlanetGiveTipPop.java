@@ -38,10 +38,11 @@ public final class LivePlanetGiveTipPop extends AttachPopupView {
     }
 
     public final void a(View view, XPopupCallback xPopupCallback) {
-        int a2 = DensityUtils.a(getContext(), 50.0f);
-        new XPopup.Builder(getContext()).a(xPopupCallback).a(PopupAnimation.ScrollAlphaFromBottom).d((Boolean) false).a(PopupPosition.Top).b(true).a(view).b(a2).c(DensityUtils.a(getContext(), 10.0f)).a((BasePopupView) this).h();
+        int a = DensityUtils.a(getContext(), 50.0f);
+        new XPopup.Builder(getContext()).a(xPopupCallback).a(PopupAnimation.ScrollAlphaFromBottom).d((Boolean) false).a(PopupPosition.Top).b(true).a(view).b(a).c(DensityUtils.a(getContext(), 10.0f)).a((BasePopupView) this).h();
     }
 
+    /* JADX WARN: Type inference failed for: r1v2, types: [com.blued.android.module.live_china.pop.LivePlanetGiveTipPop$initPopupContent$2] */
     @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();

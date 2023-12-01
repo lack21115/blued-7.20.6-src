@@ -12,11 +12,11 @@ import org.json.JSONObject;
 public class r {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, Integer> f26444a;
+    private Map<String, Integer> f12756a;
     private Integer[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26445c;
+    private String f12757c;
     private Map<String, Integer> d;
     private Integer[] e;
     private String f;
@@ -71,7 +71,7 @@ public class r {
         if (xVar == null || TextUtils.isEmpty(xVar.d)) {
             return;
         }
-        this.f26445c = xVar.d;
+        this.f12757c = xVar.d;
     }
 
     private void a(String str, String str2) {
@@ -141,7 +141,7 @@ public class r {
         if (list == null || list.size() <= 0) {
             return;
         }
-        this.f26444a = new HashMap();
+        this.f12756a = new HashMap();
         this.b = new Integer[list.size()];
         int i = 0;
         while (true) {
@@ -151,7 +151,7 @@ public class r {
             }
             x xVar = list.get(i2);
             if (xVar != null && !TextUtils.isEmpty(xVar.d)) {
-                this.f26444a.put(xVar.d, Integer.valueOf(i2));
+                this.f12756a.put(xVar.d, Integer.valueOf(i2));
             }
             i = i2 + 1;
         }
@@ -228,13 +228,13 @@ public class r {
         Integer num4;
         String str2;
         try {
-            if (str.equals(this.f26445c)) {
+            if (str.equals(this.f12757c)) {
                 str2 = "l";
             } else if (!str.equals(this.f)) {
                 if (this.d != null && (num4 = this.d.get(str)) != null && num4.intValue() < this.e.length) {
                     this.e[num4.intValue()] = Integer.valueOf(i);
                     return;
-                } else if (this.f26444a != null && (num3 = this.f26444a.get(str)) != null && num3.intValue() < this.b.length) {
+                } else if (this.f12756a != null && (num3 = this.f12756a.get(str)) != null && num3.intValue() < this.b.length) {
                     this.b[num3.intValue()] = Integer.valueOf(i);
                     return;
                 } else if (this.i != null && (num2 = this.i.get(str)) != null && num2.intValue() < this.j.length) {

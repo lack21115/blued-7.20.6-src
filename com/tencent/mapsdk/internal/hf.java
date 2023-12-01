@@ -12,17 +12,17 @@ public class hf extends AccessibleTouchItem {
     private MapPoi b;
 
     /* renamed from: c  reason: collision with root package name */
-    private yi f37526c;
+    private yi f23835c;
 
     public hf(yi yiVar, MapPoi mapPoi) {
         this.b = mapPoi;
-        this.f37526c = yiVar;
+        this.f23835c = yiVar;
     }
 
     @Override // com.tencent.map.lib.models.AccessibleTouchItem
     public Rect getBounds() {
-        p5 a2 = this.f37526c.getMap().getProjection().a(GeoPoint.from(new LatLng(this.b.getLatitude(), this.b.getLongitude())));
-        return new Rect((int) (a2.b - (c7.w() * 20.0f)), (int) (a2.f37683c - (c7.w() * 20.0f)), (int) (a2.b + (c7.w() * 20.0f)), (int) (a2.f37683c + (c7.w() * 20.0f)));
+        p5 a2 = this.f23835c.getMap().getProjection().a(GeoPoint.from(new LatLng(this.b.getLatitude(), this.b.getLongitude())));
+        return new Rect((int) (a2.b - (c7.w() * 20.0f)), (int) (a2.f23992c - (c7.w() * 20.0f)), (int) (a2.b + (c7.w() * 20.0f)), (int) (a2.f23992c + (c7.w() * 20.0f)));
     }
 
     @Override // com.tencent.map.lib.models.AccessibleTouchItem
@@ -33,7 +33,7 @@ public class hf extends AccessibleTouchItem {
     @Override // com.tencent.map.lib.models.AccessibleTouchItem
     public void onClick() {
         TencentMap.OnMapPoiClickListener onMapPoiClickListener;
-        yi yiVar = this.f37526c;
+        yi yiVar = this.f23835c;
         if (yiVar == null || (onMapPoiClickListener = yiVar.c0) == null) {
             return;
         }

@@ -10,11 +10,11 @@ import java.io.File;
 public abstract class DocumentFile {
 
     /* renamed from: a  reason: collision with root package name */
-    private final DocumentFile f2777a;
+    private final DocumentFile f2729a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public DocumentFile(DocumentFile documentFile) {
-        this.f2777a = documentFile;
+        this.f2729a = documentFile;
     }
 
     public static DocumentFile fromFile(File file) {
@@ -74,7 +74,7 @@ public abstract class DocumentFile {
     public abstract String getName();
 
     public DocumentFile getParentFile() {
-        return this.f2777a;
+        return this.f2729a;
     }
 
     public abstract String getType();

@@ -42,12 +42,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGoodsWallTaskDialogFragment.class */
 public final class LiveGoodsWallTaskDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12945a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f12946c;
+    public static final Companion a = new Companion(null);
+    private boolean c;
     private BaseFragment d;
     private FreedomAdapter f;
     private final Lazy b = LazyKt.a(new Function0<DialogLiveGoodsWallTaskBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveGoodsWallTaskDialogFragment$vb$2
@@ -150,12 +146,12 @@ public final class LiveGoodsWallTaskDialogFragment extends BaseDialogFragment {
         }
         this.f = new FreedomAdapter(getContext(), a(), this.e);
         DialogLiveGoodsWallTaskBinding d = d();
-        RecyclerView recyclerView = d == null ? null : d.f11776c;
+        RecyclerView recyclerView = d == null ? null : d.c;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         }
         DialogLiveGoodsWallTaskBinding d2 = d();
-        RecyclerView recyclerView2 = d2 == null ? null : d2.f11776c;
+        RecyclerView recyclerView2 = d2 == null ? null : d2.c;
         if (recyclerView2 != null) {
             recyclerView2.setItemAnimator(new DefaultItemAnimator());
         }
@@ -164,7 +160,7 @@ public final class LiveGoodsWallTaskDialogFragment extends BaseDialogFragment {
             freedomAdapter2.b("BaseFragment", this);
         }
         DialogLiveGoodsWallTaskBinding d3 = d();
-        RecyclerView recyclerView3 = d3 == null ? null : d3.f11776c;
+        RecyclerView recyclerView3 = d3 == null ? null : d3.c;
         if (recyclerView3 != null) {
             recyclerView3.setAdapter(this.f);
         }
@@ -172,18 +168,17 @@ public final class LiveGoodsWallTaskDialogFragment extends BaseDialogFragment {
         if (d4 == null) {
             animate = null;
         } else {
-            RecyclerView recyclerView4 = d4.f11776c;
+            RecyclerView recyclerView4 = d4.c;
             animate = recyclerView4 == null ? null : recyclerView4.animate();
         }
         animate.alpha(1.0f).setDuration(200L).start();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 511.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
-        dialog.setContentView(d().getRoot(), new ViewGroup.LayoutParams(-1, a2));
+        dialog.setContentView((View) d().getRoot(), new ViewGroup.LayoutParams(-1, a2));
         Window window = dialog.getWindow();
         Intrinsics.a(window);
         window.setBackgroundDrawable(new ColorDrawable(0));
@@ -196,13 +191,12 @@ public final class LiveGoodsWallTaskDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
-        this.f12946c = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
+        this.c = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
         d().d.getPaint().setFakeBoldText(true);
-        d().f11775a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveGoodsWallTaskDialogFragment$Kx8SYxjP83snveW2PuZF18QbUp4
+        d().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveGoodsWallTaskDialogFragment$Kx8SYxjP83snveW2PuZF18QbUp4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveGoodsWallTaskDialogFragment.a(LiveGoodsWallTaskDialogFragment.this, view);

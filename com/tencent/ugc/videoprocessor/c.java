@@ -8,16 +8,16 @@ import java.util.List;
 public final /* synthetic */ class c implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final WatermarkProcessor f40453a;
+    private final WatermarkProcessor f26762a;
     private final List b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final n f40454c;
+    private final n f26763c;
 
     private c(WatermarkProcessor watermarkProcessor, List list, n nVar) {
-        this.f40453a = watermarkProcessor;
+        this.f26762a = watermarkProcessor;
         this.b = list;
-        this.f40454c = nVar;
+        this.f26763c = nVar;
     }
 
     public static Runnable a(WatermarkProcessor watermarkProcessor, List list, n nVar) {
@@ -26,6 +26,6 @@ public final /* synthetic */ class c implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40453a.setSubtitleListInternal(this.b, this.f40454c);
+        this.f26762a.setSubtitleListInternal(this.b, this.f26763c);
     }
 }

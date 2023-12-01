@@ -39,13 +39,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveShoutCardViewDialog.class */
 public final class LiveShoutCardViewDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13263a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f13264c;
+    private final String c;
     private final Lazy d;
 
     @Metadata
@@ -72,7 +68,7 @@ public final class LiveShoutCardViewDialog extends BaseDialogFragment {
         Intrinsics.e(popUpTitle, "popUpTitle");
         Intrinsics.e(popUpDescription, "popUpDescription");
         this.b = popUpTitle;
-        this.f13264c = popUpDescription;
+        this.c = popUpDescription;
         this.d = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<LayoutSuperCallingCardBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveShoutCardViewDialog$binding$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -93,13 +89,13 @@ public final class LiveShoutCardViewDialog extends BaseDialogFragment {
     public static final void a(final LayoutSuperCallingCardBinding this_run, final LiveShoutCardViewDialog this$0, View view) {
         Intrinsics.e(this_run, "$this_run");
         Intrinsics.e(this$0, "this$0");
-        Editable text = this_run.f12113a.getText();
+        Editable text = this_run.a.getText();
         Intrinsics.c(text, "edtInputCallingMsg.text");
         if (text.length() == 0) {
             ToastUtils.a("请输入喊话内容");
             return;
         }
-        EventTrackLive.j(LiveProtos.Event.LIVE_SUPER_SPEAK_PAGE_GO_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this_run.f12113a.getText().toString());
+        EventTrackLive.j(LiveProtos.Event.LIVE_SUPER_SPEAK_PAGE_GO_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this_run.a.getText().toString());
         CommonAlertDialog.a(this$0.getActivity(), "", this$0.getResources().getString(R.string.live_confirm_to_calling), this$0.getResources().getString(R.string.biao_v4_ok), this$0.getResources().getColor(R.color.syc_2B72FF), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveShoutCardViewDialog$srfU8Ge2tfd-kStikcBf9YBxEys
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
@@ -111,21 +107,21 @@ public final class LiveShoutCardViewDialog extends BaseDialogFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveShoutCardViewDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        new LiveShapeBtnDialogFragment(this$0.requireContext(), this$0.b, this$0.f13264c, "确定").show();
+        new LiveShapeBtnDialogFragment(this$0.requireContext(), this$0.b, this$0.c, "确定").show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveShoutCardViewDialog this$0, LayoutSuperCallingCardBinding this_run) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(this_run, "$this_run");
-        KeyboardUtils.a(this$0.getActivity(), this_run.f12113a);
+        KeyboardUtils.a(this$0.getActivity(), this_run.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveShoutCardViewDialog this$0, LayoutSuperCallingCardBinding this_run, DialogInterface dialogInterface, int i) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(this_run, "$this_run");
-        this$0.a(this_run.f12113a.getText().toString());
+        this$0.a(this_run.a.getText().toString());
     }
 
     private final LayoutSuperCallingCardBinding d() {
@@ -135,15 +131,15 @@ public final class LiveShoutCardViewDialog extends BaseDialogFragment {
     private final void e() {
         EventTrackLive.i(LiveProtos.Event.LIVE_SUPER_SPEAK_PAGE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), "");
         final LayoutSuperCallingCardBinding d = d();
-        d.f12113a.requestFocus();
-        d.f12113a.setFocusableInTouchMode(true);
+        d.a.requestFocus();
+        d.a.setFocusableInTouchMode(true);
         a(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveShoutCardViewDialog$eqwbarU6-17xIZf9GNONLQHizH0
             @Override // java.lang.Runnable
             public final void run() {
                 LiveShoutCardViewDialog.a(LiveShoutCardViewDialog.this, d);
             }
         }, 200L);
-        d.f12114c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveShoutCardViewDialog$TEBRE41am4kOhe7J-mlfioB2zL4
+        d.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveShoutCardViewDialog$TEBRE41am4kOhe7J-mlfioB2zL4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveShoutCardViewDialog.a(LiveShoutCardViewDialog.this, view);
@@ -151,7 +147,7 @@ public final class LiveShoutCardViewDialog extends BaseDialogFragment {
         });
         final ShapeModel shapeModel = d.g.getShapeModel();
         Intrinsics.c(shapeModel, "stvToCalling.shapeModel");
-        d.f12113a.addTextChangedListener(new TextWatcher() { // from class: com.blued.android.module.live_china.fragment.LiveShoutCardViewDialog$initSuperCallingCard$1$3
+        d.a.addTextChangedListener(new TextWatcher() { // from class: com.blued.android.module.live_china.fragment.LiveShoutCardViewDialog$initSuperCallingCard$1$3
             /* JADX WARN: Removed duplicated region for block: B:14:0x0029  */
             /* JADX WARN: Removed duplicated region for block: B:16:0x008c  */
             @Override // android.text.TextWatcher
@@ -204,7 +200,6 @@ public final class LiveShoutCardViewDialog extends BaseDialogFragment {
         }, a());
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         DensityUtils.a(getContext(), 165.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -228,7 +223,6 @@ public final class LiveShoutCardViewDialog extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

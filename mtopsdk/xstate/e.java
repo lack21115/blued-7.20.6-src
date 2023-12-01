@@ -2,12 +2,10 @@ package mtopsdk.xstate;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/xstate/e.class */
 final class e extends mtopsdk.xstate.a.b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private /* synthetic */ d f43800a;
+    private /* synthetic */ d a;
 
     public e(d dVar) {
-        this.f43800a = dVar;
+        this.a = dVar;
     }
 
     @Override // mtopsdk.xstate.a.a
@@ -17,7 +15,7 @@ final class e extends mtopsdk.xstate.a.b {
 
     @Override // mtopsdk.xstate.a.a
     public final void a() {
-        c.a(this.f43800a.getBaseContext());
+        c.a(this.a.getBaseContext());
     }
 
     @Override // mtopsdk.xstate.a.a

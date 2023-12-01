@@ -27,8 +27,8 @@ public class PopMenuFromCenterProxy extends BaseProxy<IPopMenuFromCenter> implem
 
     @Override // com.blued.android.module.base.ui.IPopMenuFromCenter
     public boolean a(Context context) {
-        if (this.f10426a != 0) {
-            return ((IPopMenuFromCenter) this.f10426a).a(context);
+        if (this.a != 0) {
+            return ((IPopMenuFromCenter) this.a).a(context);
         }
         return false;
     }

@@ -106,7 +106,7 @@ public class PhotoView extends AppCompatImageView implements IPhotoView {
         return this.mAttacher.getScale();
     }
 
-    @Override // android.widget.ImageView
+    @Override // android.widget.ImageView, com.web.library.groups.webviewsdk.photoview.IPhotoView
     public ImageView.ScaleType getScaleType() {
         return this.mAttacher.getScaleType();
     }
@@ -116,16 +116,14 @@ public class PhotoView extends AppCompatImageView implements IPhotoView {
         return this.mAttacher.getVisibleRectangleBitmap();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         this.mAttacher.cleanup();
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         try {
             super.onDraw(canvas);
         } catch (Exception e) {
@@ -211,7 +209,7 @@ public class PhotoView extends AppCompatImageView implements IPhotoView {
         this.mAttacher.setOnDoubleTapListener(onDoubleTapListener);
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, com.web.library.groups.webviewsdk.photoview.IPhotoView
     public void setOnLongClickListener(View.OnLongClickListener onLongClickListener) {
         this.mAttacher.setOnLongClickListener(onLongClickListener);
     }
@@ -261,7 +259,7 @@ public class PhotoView extends AppCompatImageView implements IPhotoView {
         this.mAttacher.setScale(f, z);
     }
 
-    @Override // android.widget.ImageView
+    @Override // android.widget.ImageView, com.web.library.groups.webviewsdk.photoview.IPhotoView
     public void setScaleType(ImageView.ScaleType scaleType) {
         PhotoViewAttacher photoViewAttacher = this.mAttacher;
         if (photoViewAttacher != null) {

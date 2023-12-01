@@ -10,13 +10,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "Channels.common.kt", c = {148}, d = "toList", e = "kotlinx.coroutines.channels.ChannelsKt__Channels_commonKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelsKt__Channels_commonKt$toList$1.class */
 public final class ChannelsKt__Channels_commonKt$toList$1<E> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42914a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f42915c;
+    Object c;
     Object d;
     /* synthetic */ Object e;
     int f;

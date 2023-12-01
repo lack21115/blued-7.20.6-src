@@ -46,9 +46,9 @@ public final class Console implements Flushable {
     }
 
     private static Console makeConsole() {
-        if (Libcore.os.isatty(FileDescriptor.f42253in) && Libcore.os.isatty(FileDescriptor.out)) {
+        if (Libcore.os.isatty(FileDescriptor.in) && Libcore.os.isatty(FileDescriptor.out)) {
             try {
-                return new Console(System.f42260in, System.out);
+                return new Console(System.in, System.out);
             } catch (UnsupportedEncodingException e) {
                 throw new AssertionError(e);
             }

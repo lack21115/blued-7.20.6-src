@@ -27,7 +27,6 @@ public abstract class VoiceInteractionSessionService extends Service {
         }
     };
     final HandlerCaller.Callback mHandlerCallerCallback = new HandlerCaller.Callback() { // from class: android.service.voice.VoiceInteractionSessionService.2
-        @Override // com.android.internal.os.HandlerCaller.Callback
         public void executeMessage(Message message) {
             SomeArgs someArgs = (SomeArgs) message.obj;
             switch (message.what) {

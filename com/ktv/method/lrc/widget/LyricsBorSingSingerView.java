@@ -18,25 +18,25 @@ import java.util.TreeMap;
 public class LyricsBorSingSingerView extends AbstractLrcView {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f23706a;
+    private boolean f10098a;
     private int[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f23707c;
+    private float f10099c;
 
     public LyricsBorSingSingerView(Context context) {
         super(context);
-        this.f23706a = true;
+        this.f10098a = true;
         this.b = new int[]{Color.parseColor("#80000000"), Color.parseColor("#80000000")};
-        this.f23707c = a(getContext(), 10.0f);
+        this.f10099c = a(getContext(), 10.0f);
         a(context);
     }
 
     public LyricsBorSingSingerView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f23706a = true;
+        this.f10098a = true;
         this.b = new int[]{Color.parseColor("#80000000"), Color.parseColor("#80000000")};
-        this.f23707c = a(getContext(), 10.0f);
+        this.f10099c = a(getContext(), 10.0f);
         a(context);
     }
 
@@ -81,7 +81,7 @@ public class LyricsBorSingSingerView extends AbstractLrcView {
         float a3 = LyricsUtils.a(paint, f);
         int i = lyricsLineNum + 1;
         if (i <= lrcLineInfos.size()) {
-            float f2 = this.f23707c;
+            float f2 = this.f10099c;
             float f3 = 40.0f + f2;
             float b = LyricsUtils.b(paint) + f2 + f3;
             float width = (getWidth() - a3) / 2.0f;
@@ -106,7 +106,7 @@ public class LyricsBorSingSingerView extends AbstractLrcView {
                 LyricsUtils.a(canvas, paintOutline, f7, width2, b);
                 LyricsUtils.b(canvas, paint, f7, width2, b);
             }
-            float b2 = b + this.f23707c + LyricsUtils.b(paint);
+            float b2 = b + this.f10099c + LyricsUtils.b(paint);
             int i2 = lyricsLineNum + 2;
             if (i2 < lrcLineInfos.size()) {
                 paintOutline.setTextSize(b(getContext(), 12.0f));

@@ -19,11 +19,11 @@ public class TraceFileHelper {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public long f35148a;
+        public long f21457a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public long f35149c;
+        public long f21458c;
         public Map<String, String[]> d;
     }
 
@@ -105,9 +105,9 @@ public class TraceFileHelper {
             @Override // com.tencent.bugly.crashreport.crash.anr.TraceFileHelper.b
             public final boolean a(long j, long j2, String str2) {
                 x.c("new process %s", str2);
-                a.this.f35148a = j;
+                a.this.f21457a = j;
                 a.this.b = str2;
-                a.this.f35149c = j2;
+                a.this.f21458c = j2;
                 return z;
             }
 
@@ -124,8 +124,8 @@ public class TraceFileHelper {
                 return true;
             }
         });
-        if (aVar.f35148a <= 0 || aVar.f35149c <= 0 || aVar.b == null) {
-            x.e("first dump error %s", aVar.f35148a + " " + aVar.f35149c + " " + aVar.b);
+        if (aVar.f21457a <= 0 || aVar.f21458c <= 0 || aVar.b == null) {
+            x.e("first dump error %s", aVar.f21457a + " " + aVar.f21458c + " " + aVar.b);
             return null;
         }
         return aVar;
@@ -140,16 +140,16 @@ public class TraceFileHelper {
             @Override // com.tencent.bugly.crashreport.crash.anr.TraceFileHelper.b
             public final boolean a(long j) {
                 x.c("process end %d", Long.valueOf(j));
-                return a.this.f35148a <= 0 || a.this.f35149c <= 0 || a.this.b == null;
+                return a.this.f21457a <= 0 || a.this.f21458c <= 0 || a.this.b == null;
             }
 
             @Override // com.tencent.bugly.crashreport.crash.anr.TraceFileHelper.b
             public final boolean a(long j, long j2, String str3) {
                 x.c("new process %s", str3);
                 if (str3.equals(str)) {
-                    a.this.f35148a = j;
+                    a.this.f21457a = j;
                     a.this.b = str3;
-                    a.this.f35149c = j2;
+                    a.this.f21458c = j2;
                     return z;
                 }
                 return true;
@@ -158,7 +158,7 @@ public class TraceFileHelper {
             @Override // com.tencent.bugly.crashreport.crash.anr.TraceFileHelper.b
             public final boolean a(String str3, int i, String str4, String str5) {
                 x.c("new thread %s", str3);
-                if (a.this.f35148a <= 0 || a.this.f35149c <= 0 || a.this.b == null) {
+                if (a.this.f21457a <= 0 || a.this.f21458c <= 0 || a.this.b == null) {
                     return true;
                 }
                 if (a.this.d == null) {
@@ -171,7 +171,7 @@ public class TraceFileHelper {
                 return true;
             }
         });
-        if (aVar.f35148a <= 0 || aVar.f35149c <= 0 || aVar.b == null) {
+        if (aVar.f21457a <= 0 || aVar.f21458c <= 0 || aVar.b == null) {
             return null;
         }
         return aVar;

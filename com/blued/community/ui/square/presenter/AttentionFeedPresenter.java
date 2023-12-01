@@ -7,7 +7,6 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.OnLifecycleEvent;
-import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.framework.http.parser.BluedEntityA;
@@ -98,7 +97,7 @@ public class AttentionFeedPresenter extends MvpPresenter implements FeedRefreshO
     private void c(IFetchDataListener iFetchDataListener) {
         if (this.i == 1) {
             CommunityServiceManager.e().e(13);
-            LiveEventBus.get("EVENT_HIDE_HOME_TAB_DOT").post(IAdInterListener.AdProdType.PRODUCT_FEEDS);
+            LiveEventBus.get("EVENT_HIDE_HOME_TAB_DOT").post("feed");
             FeedHttpUtils.a(d(iFetchDataListener), UserInfo.getInstance().getLoginUserInfo().getUid(), this.p, this.i + "", this.j + "", CommunityServiceManager.c().e(), CommunityServiceManager.c().f(), this.q, "", g());
             e(iFetchDataListener);
         } else if (this.l != null) {
@@ -119,9 +118,7 @@ public class AttentionFeedPresenter extends MvpPresenter implements FeedRefreshO
 
     private BluedUIHttpResponse d(final IFetchDataListener iFetchDataListener) {
         return new BluedUIHttpResponse<BluedEntityA<BluedIngSelfFeed>>("attentionfeedlist", g()) { // from class: com.blued.community.ui.square.presenter.AttentionFeedPresenter.2
-
-            /* renamed from: a  reason: collision with root package name */
-            boolean f20183a = false;
+            boolean a = false;
 
             private void a(BluedEntityA<BluedIngSelfFeed> bluedEntityA, boolean z) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
@@ -298,7 +295,7 @@ public class AttentionFeedPresenter extends MvpPresenter implements FeedRefreshO
             if (this.l == null || CircleMethods.a(bluedIngSelfFeed)) {
                 return;
             }
-            this.l.addData(0, (int) bluedIngSelfFeed);
+            this.l.addData(0, bluedIngSelfFeed);
             this.l.notifyDataSetChanged();
         }
     }

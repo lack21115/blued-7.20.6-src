@@ -31,11 +31,11 @@ public final class d extends b {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f7368a;
+    public final long f4529a;
     public final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final boolean f7369c;
+    public final boolean f4530c;
     public final boolean d;
     public final boolean e;
     public final long f;
@@ -51,16 +51,16 @@ public final class d extends b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7370a;
+        public final int f4531a;
         public final long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final long f7371c;
+        public final long f4532c;
 
         private a(int i, long j, long j2) {
-            this.f7370a = i;
+            this.f4531a = i;
             this.b = j;
-            this.f7371c = j2;
+            this.f4532c = j2;
         }
 
         /* synthetic */ a(int i, long j, long j2, byte b) {
@@ -72,16 +72,16 @@ public final class d extends b {
         }
 
         private void b(Parcel parcel) {
-            parcel.writeInt(this.f7370a);
+            parcel.writeInt(this.f4531a);
             parcel.writeLong(this.b);
-            parcel.writeLong(this.f7371c);
+            parcel.writeLong(this.f4532c);
         }
     }
 
     private d(long j, boolean z, boolean z2, boolean z3, boolean z4, long j2, long j3, List<a> list, boolean z5, long j4, int i, int i2, int i3) {
-        this.f7368a = j;
+        this.f4529a = j;
         this.b = z;
-        this.f7369c = z2;
+        this.f4530c = z2;
         this.d = z3;
         this.e = z4;
         this.f = j2;
@@ -95,9 +95,9 @@ public final class d extends b {
     }
 
     private d(Parcel parcel) {
-        this.f7368a = parcel.readLong();
+        this.f4529a = parcel.readLong();
         this.b = parcel.readByte() == 1;
-        this.f7369c = parcel.readByte() == 1;
+        this.f4530c = parcel.readByte() == 1;
         this.d = parcel.readByte() == 1;
         this.e = parcel.readByte() == 1;
         this.f = parcel.readLong();
@@ -188,9 +188,9 @@ public final class d extends b {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(this.f7368a);
+        parcel.writeLong(this.f4529a);
         parcel.writeByte(this.b ? (byte) 1 : (byte) 0);
-        parcel.writeByte(this.f7369c ? (byte) 1 : (byte) 0);
+        parcel.writeByte(this.f4530c ? (byte) 1 : (byte) 0);
         parcel.writeByte(this.d ? (byte) 1 : (byte) 0);
         parcel.writeByte(this.e ? (byte) 1 : (byte) 0);
         parcel.writeLong(this.f);
@@ -209,9 +209,9 @@ public final class d extends b {
                 return;
             }
             a aVar = this.h.get(i3);
-            parcel.writeInt(aVar.f7370a);
+            parcel.writeInt(aVar.f4531a);
             parcel.writeLong(aVar.b);
-            parcel.writeLong(aVar.f7371c);
+            parcel.writeLong(aVar.f4532c);
             i2 = i3 + 1;
         }
     }

@@ -9,7 +9,7 @@ import kotlin.jvm.JvmStatic;
 public final class EventTrackGuy {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final EventTrackGuy f20626a = new EventTrackGuy();
+    public static final EventTrackGuy f7020a = new EventTrackGuy();
 
     private EventTrackGuy() {
     }

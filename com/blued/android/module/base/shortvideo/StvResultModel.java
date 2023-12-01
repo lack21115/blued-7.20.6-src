@@ -5,9 +5,7 @@ import java.io.Serializable;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/base/shortvideo/StvResultModel.class */
 public class StvResultModel implements Serializable {
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f10432c;
+    private String c;
     private String d;
     private int e;
     private int f;
@@ -15,9 +13,7 @@ public class StvResultModel implements Serializable {
     private long h;
     private String j;
     private int k;
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f10431a = true;
+    private boolean a = true;
     private boolean i = false;
 
     public void a(int i) {
@@ -33,11 +29,11 @@ public class StvResultModel implements Serializable {
     }
 
     public void a(boolean z) {
-        this.f10431a = z;
+        this.a = z;
     }
 
     public boolean a() {
-        return this.f10431a;
+        return this.a;
     }
 
     public String b() {
@@ -53,7 +49,7 @@ public class StvResultModel implements Serializable {
     }
 
     public void b(String str) {
-        this.f10432c = str;
+        this.c = str;
     }
 
     public void b(boolean z) {
@@ -61,7 +57,7 @@ public class StvResultModel implements Serializable {
     }
 
     public String c() {
-        return this.f10432c;
+        return this.c;
     }
 
     public void c(int i) {
@@ -109,6 +105,6 @@ public class StvResultModel implements Serializable {
     }
 
     public String toString() {
-        return "StvResultModel{isVideo=" + this.f10431a + ", captureFramePath='" + this.b + "', firstFrameImgPath='" + this.f10432c + "', videoPath='" + this.d + "', videoWidth=" + this.e + ", videoHeight=" + this.f + ", videoDuration=" + this.g + ", videoSize=" + this.h + ", isAutoDelete=" + this.i + '}';
+        return "StvResultModel{isVideo=" + this.a + ", captureFramePath='" + this.b + "', firstFrameImgPath='" + this.c + "', videoPath='" + this.d + "', videoWidth=" + this.e + ", videoHeight=" + this.f + ", videoDuration=" + this.g + ", videoSize=" + this.h + ", isAutoDelete=" + this.i + '}';
     }
 }

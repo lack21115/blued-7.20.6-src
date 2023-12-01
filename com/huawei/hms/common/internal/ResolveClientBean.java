@@ -4,20 +4,20 @@ package com.huawei.hms.common.internal;
 public class ResolveClientBean {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f22661a;
+    private final int f9053a;
     private final AnyClient b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f22662c;
+    private int f9054c;
 
     public ResolveClientBean(AnyClient anyClient, int i) {
         this.b = anyClient;
-        this.f22661a = Objects.hashCode(anyClient);
-        this.f22662c = i;
+        this.f9053a = Objects.hashCode(anyClient);
+        this.f9054c = i;
     }
 
     public void clientReconnect() {
-        this.b.connect(this.f22662c, true);
+        this.b.connect(this.f9054c, true);
     }
 
     public boolean equals(Object obj) {
@@ -35,6 +35,6 @@ public class ResolveClientBean {
     }
 
     public int hashCode() {
-        return this.f22661a;
+        return this.f9053a;
     }
 }

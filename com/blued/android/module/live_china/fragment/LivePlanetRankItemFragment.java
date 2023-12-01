@@ -2,7 +2,6 @@ package com.blued.android.module.live_china.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.provider.BrowserContract;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,9 +48,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlanetRankItemFragment.class */
 public final class LivePlanetRankItemFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Lazy f13128a = LazyKt.a(new Function0<FragmentLivePlanetRankItemBinding>() { // from class: com.blued.android.module.live_china.fragment.LivePlanetRankItemFragment$vb$2
+    private final Lazy a = LazyKt.a(new Function0<FragmentLivePlanetRankItemBinding>() { // from class: com.blued.android.module.live_china.fragment.LivePlanetRankItemFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -64,9 +61,7 @@ public final class LivePlanetRankItemFragment extends BaseFragment {
         }
     });
     private List<LivePlanetRankModel> b = new ArrayList();
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f13129c = "";
+    private String c = "";
     private String d = "";
     private int e;
 
@@ -109,13 +104,9 @@ public final class LivePlanetRankItemFragment extends BaseFragment {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlanetRankItemFragment$MyAdapter.class */
     public static final class MyAdapter extends BaseMultiItemQuickAdapter<LivePlanetRankModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Context f13130a;
+        private Context a;
         private List<LivePlanetRankModel> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f13131c;
+        private int c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public MyAdapter(Context context, int i, List<LivePlanetRankModel> models) {
@@ -123,8 +114,8 @@ public final class LivePlanetRankItemFragment extends BaseFragment {
             Intrinsics.e(models, "models");
             ArrayList arrayList = new ArrayList();
             this.b = arrayList;
-            this.f13130a = context;
-            this.f13131c = i;
+            this.a = context;
+            this.c = i;
             arrayList.clear();
             this.b.addAll(models);
             addItemType(0, R.layout.live_planet_rank_item);
@@ -137,7 +128,7 @@ public final class LivePlanetRankItemFragment extends BaseFragment {
             if (StringUtils.a(livePlanetRankModel.getLid(), 0L) <= 0) {
                 if (TextUtils.equals(LiveRoomManager.a().g(), LiveRoomInfo.a().f())) {
                     LiveSetDataObserver.a().e(livePlanetRankModel.getUid());
-                } else if (this$0.f13131c == 0) {
+                } else if (this$0.c == 0) {
                     LiveSetDataObserver.a().e(livePlanetRankModel.getUid());
                 } else {
                     this$0.a(livePlanetRankModel);
@@ -152,12 +143,11 @@ public final class LivePlanetRankItemFragment extends BaseFragment {
         }
 
         public final void a(LivePlanetRankModel livePlanetRankModel) {
-            LiveRoomInfo.a().a(this.f13130a, livePlanetRankModel == null ? null : livePlanetRankModel.getUid(), livePlanetRankModel == null ? null : livePlanetRankModel.getName(), livePlanetRankModel == null ? null : livePlanetRankModel.getAvatar(), 0, 1);
+            LiveRoomInfo.a().a(this.a, livePlanetRankModel == null ? null : livePlanetRankModel.getUid(), livePlanetRankModel == null ? null : livePlanetRankModel.getName(), livePlanetRankModel == null ? null : livePlanetRankModel.getAvatar(), 0, 1);
             LiveRefreshUIObserver.a().b(true);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, LivePlanetRankModel livePlanetRankModel) {
             if (baseViewHolder != null) {
@@ -192,31 +182,31 @@ public final class LivePlanetRankItemFragment extends BaseFragment {
             if (baseViewHolder != null && (textView = (TextView) baseViewHolder.getView(R.id.tv_name)) != null) {
                 textView.setText(livePlanetRankModel.getName());
             }
-            RecyclerView recyclerView = baseViewHolder == null ? null : (RecyclerView) baseViewHolder.getView(R.id.rv_goods);
+            RecyclerView view = baseViewHolder == null ? null : baseViewHolder.getView(R.id.rv_goods);
             TextView textView3 = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_value);
-            if (this.f13131c == 0) {
+            if (this.c == 0) {
                 if (textView3 != null) {
                     textView3.setVisibility(8);
                 }
-                if (recyclerView != null) {
-                    recyclerView.setVisibility(0);
+                if (view != null) {
+                    view.setVisibility(0);
                 }
-                if (recyclerView != null) {
-                    recyclerView.setLayoutManager(new LinearLayoutManager(this.f13130a, 0, false));
+                if (view != null) {
+                    view.setLayoutManager(new LinearLayoutManager(this.a, 0, false));
                 }
-                Context context = this.f13130a;
+                Context context = this.a;
                 Intrinsics.a(context);
                 GiftAdapter giftAdapter = new GiftAdapter(context);
-                if (recyclerView != null) {
-                    recyclerView.setAdapter(giftAdapter);
+                if (view != null) {
+                    view.setAdapter(giftAdapter);
                 }
                 giftAdapter.setDataAndNotify(livePlanetRankModel.getGoods());
             } else {
                 if (textView3 != null) {
                     textView3.setVisibility(0);
                 }
-                if (recyclerView != null) {
-                    recyclerView.setVisibility(8);
+                if (view != null) {
+                    view.setVisibility(8);
                 }
                 if (textView3 != null) {
                     textView3.setText(AppInfo.d().getString(R.string.live_planet_rank_value) + ' ' + livePlanetRankModel.getEnergy());
@@ -236,27 +226,27 @@ public final class LivePlanetRankItemFragment extends BaseFragment {
             }
             imageView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetRankItemFragment$MyAdapter$Qh3b0dh3Emm5Sf9ogxS1RpLF-e0
                 @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    LivePlanetRankItemFragment.MyAdapter.a(LivePlanetRankModel.this, this, view);
+                public final void onClick(View view2) {
+                    LivePlanetRankItemFragment.MyAdapter.a(LivePlanetRankModel.this, this, view2);
                 }
             });
         }
 
         public final Context getContext() {
-            return this.f13130a;
+            return this.a;
         }
     }
 
     private final FragmentLivePlanetRankItemBinding d() {
-        return (FragmentLivePlanetRankItemBinding) this.f13128a.getValue();
+        return (FragmentLivePlanetRankItemBinding) this.a.getValue();
     }
 
     public final void a() {
         List<LivePlanetRankModel> list = this.b;
         if (list == null || list.size() <= 0) {
             d().b.setVisibility(8);
-            d().f11962a.setVisibility(0);
-            d().f11963c.setText(this.f13129c);
+            d().a.setVisibility(0);
+            d().c.setText(this.c);
             return;
         }
         LivePlanetRankModel livePlanetRankModel = new LivePlanetRankModel();
@@ -266,7 +256,7 @@ public final class LivePlanetRankItemFragment extends BaseFragment {
         d().b.setLayoutManager(new LinearLayoutManager(getContext(), 1, false));
         d().b.setAdapter(new MyAdapter(getContext(), this.e, this.b));
         d().b.setVisibility(0);
-        d().f11962a.setVisibility(8);
+        d().a.setVisibility(8);
     }
 
     public final void a(int i) {
@@ -275,7 +265,7 @@ public final class LivePlanetRankItemFragment extends BaseFragment {
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f13129c = str;
+        this.c = str;
     }
 
     public final void a(List<LivePlanetRankModel> list) {
@@ -326,7 +316,7 @@ public final class LivePlanetRankItemFragment extends BaseFragment {
         }, getFragmentActive());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         FrameLayout root;
         FrameLayout root2;
@@ -344,7 +334,7 @@ public final class LivePlanetRankItemFragment extends BaseFragment {
         }
         Bundle arguments = getArguments();
         if (arguments != null) {
-            a(arguments.getInt(BrowserContract.Bookmarks.POSITION));
+            a(arguments.getInt("position"));
         }
         if (this.e == 0) {
             b();

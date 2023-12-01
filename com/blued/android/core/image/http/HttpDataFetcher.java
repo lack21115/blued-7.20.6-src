@@ -9,7 +9,6 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.data.DataFetcher;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.util.ContentLengthInputStream;
-import com.google.common.net.HttpHeaders;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -17,13 +16,9 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/http/HttpDataFetcher.class */
 public class HttpDataFetcher implements DataFetcher<InputStream> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private GlideUrl f9554a;
+    private GlideUrl a;
     private DataFetcher.DataCallback<? super InputStream> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private InputStream f9555c;
+    private InputStream c;
     private HttpRequestWrapper d;
     private InputStreamHttpResponseHandler e;
 
@@ -31,18 +26,17 @@ public class HttpDataFetcher implements DataFetcher<InputStream> {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "-- HttpDataFetcher :" + glideUrl);
         }
-        this.f9554a = glideUrl;
+        this.a = glideUrl;
     }
 
-    @Override // com.bumptech.glide.load.data.DataFetcher
     public void a() {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "-- HttpDataFetcher cleanup");
         }
         try {
-            if (this.f9555c != null) {
-                this.f9555c.close();
-                this.f9555c = null;
+            if (this.c != null) {
+                this.c.close();
+                this.c = null;
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -55,7 +49,6 @@ public class HttpDataFetcher implements DataFetcher<InputStream> {
         this.b = null;
     }
 
-    @Override // com.bumptech.glide.load.data.DataFetcher
     public void a(Priority priority, DataFetcher.DataCallback<? super InputStream> dataCallback) {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "-- HttpDataFetcher loadData " + Thread.currentThread().getName());
@@ -69,9 +62,9 @@ public class HttpDataFetcher implements DataFetcher<InputStream> {
                     Log.e("IMAGE", "-- HttpDataFetcher loadData ++ onSuccess " + Thread.currentThread().getName());
                 }
                 long b = getResponseLength(inputStream);
-                HttpDataFetcher.this.f9555c = ContentLengthInputStream.a(inputStream, b);
+                HttpDataFetcher.this.c = ContentLengthInputStream.a(inputStream, b);
                 if (HttpDataFetcher.this.b != null) {
-                    HttpDataFetcher.this.b.a((DataFetcher.DataCallback) HttpDataFetcher.this.f9555c);
+                    HttpDataFetcher.this.b.a(HttpDataFetcher.this.c);
                 }
             }
 
@@ -88,14 +81,13 @@ public class HttpDataFetcher implements DataFetcher<InputStream> {
             }
         };
         HashMap hashMap = new HashMap();
-        for (Map.Entry<String, String> entry : this.f9554a.c().entrySet()) {
-            hashMap.put(entry.getKey(), entry.getValue());
+        for (Map.Entry entry : this.a.c().entrySet()) {
+            hashMap.put((String) entry.getKey(), (String) entry.getValue());
         }
-        hashMap.put(HttpHeaders.ACCEPT, "image/webp, */*");
-        this.d = HttpManager.a(this.f9554a.b(), this.e).b(hashMap).f().h();
+        hashMap.put("Accept", "image/webp, */*");
+        this.d = HttpManager.a(this.a.b(), this.e).b(hashMap).f().h();
     }
 
-    @Override // com.bumptech.glide.load.data.DataFetcher
     public void b() {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "-- HttpDataFetcher cancel");
@@ -107,13 +99,11 @@ public class HttpDataFetcher implements DataFetcher<InputStream> {
         }
     }
 
-    @Override // com.bumptech.glide.load.data.DataFetcher
     public Class<InputStream> c() {
         return InputStream.class;
     }
 
-    @Override // com.bumptech.glide.load.data.DataFetcher
     public DataSource d() {
-        return DataSource.REMOTE;
+        return DataSource.b;
     }
 }

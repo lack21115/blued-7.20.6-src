@@ -25,10 +25,10 @@ public class InitConfig {
     public boolean X;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f21170a;
+    public String f7564a;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f21171c;
+    public String f7565c;
     public String d;
     public IEncryptor e;
     public String f;
@@ -81,8 +81,8 @@ public class InitConfig {
     public InitConfig(String str, String str2) {
         j1.a(TextUtils.isEmpty(str), "App id must not be empty!");
         j1.a(TextUtils.isEmpty(str2), "Channel must not be empty!");
-        this.f21170a = str;
-        this.f21171c = str2;
+        this.f7564a = str;
+        this.f7565c = str2;
     }
 
     public boolean autoStart() {
@@ -114,7 +114,7 @@ public class InitConfig {
     }
 
     public String getAid() {
-        return this.f21170a;
+        return this.f7564a;
     }
 
     public String getAliyunUdid() {
@@ -134,7 +134,7 @@ public class InitConfig {
     }
 
     public String getChannel() {
-        return this.f21171c;
+        return this.f7565c;
     }
 
     public String getClearKey() {
@@ -147,7 +147,7 @@ public class InitConfig {
 
     public String getDbName() {
         if (TextUtils.isEmpty(this.L)) {
-            return j1.a((Object) this.f21170a) + "@bd_tea_agent.db";
+            return j1.a((Object) this.f7564a) + "@bd_tea_agent.db";
         }
         return this.L;
     }
@@ -391,7 +391,7 @@ public class InitConfig {
     }
 
     public void setChannel(String str) {
-        this.f21171c = str;
+        this.f7565c = str;
     }
 
     public void setCongestionControlEnable(boolean z) {

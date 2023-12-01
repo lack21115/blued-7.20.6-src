@@ -10,10 +10,10 @@ import java.util.concurrent.CountDownLatch;
 final class DecodeThread extends Thread {
 
     /* renamed from: a  reason: collision with root package name */
-    private final OnCaptureHandlerListener f9872a;
+    private final OnCaptureHandlerListener f6670a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Handler f9873c;
+    private Handler f6671c;
     private final CountDownLatch d = new CountDownLatch(1);
     private final Hashtable<DecodeHintType, Object> b = new Hashtable<>(3);
 
@@ -32,7 +32,7 @@ final class DecodeThread extends Thread {
             r0.<init>()
             r0 = r5
             r1 = r6
-            r0.f9872a = r1
+            r0.f6670a = r1
             r0 = r5
             java.util.concurrent.CountDownLatch r1 = new java.util.concurrent.CountDownLatch
             r2 = r1
@@ -61,7 +61,7 @@ final class DecodeThread extends Thread {
             java.util.Vector<com.google.zxing.BarcodeFormat> r1 = com.blued.android.framework.qrcode.decoding.DecodeFormatManager.b
             boolean r0 = r0.addAll(r1)
             r0 = r6
-            java.util.Vector<com.google.zxing.BarcodeFormat> r1 = com.blued.android.framework.qrcode.decoding.DecodeFormatManager.f9869c
+            java.util.Vector<com.google.zxing.BarcodeFormat> r1 = com.blued.android.framework.qrcode.decoding.DecodeFormatManager.f6667c
             boolean r0 = r0.addAll(r1)
             r0 = r6
             java.util.Vector<com.google.zxing.BarcodeFormat> r1 = com.blued.android.framework.qrcode.decoding.DecodeFormatManager.d
@@ -91,13 +91,13 @@ final class DecodeThread extends Thread {
             this.d.await();
         } catch (InterruptedException e) {
         }
-        return this.f9873c;
+        return this.f6671c;
     }
 
     @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
         Looper.prepare();
-        this.f9873c = new DecodeHandler(this.f9872a, this.b);
+        this.f6671c = new DecodeHandler(this.f6670a, this.b);
         this.d.countDown();
         Looper.loop();
     }

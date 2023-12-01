@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Pattern f22617a = Pattern.compile("[0-9]*[a-z|A-Z]*[一-龥]*");
+    public static final Pattern f9009a = Pattern.compile("[0-9]*[a-z|A-Z]*[一-龥]*");
 
     public static String a(String str) {
         if (TextUtils.isEmpty(str)) {
@@ -25,7 +25,7 @@ public class a {
             char charAt = str.charAt(i2);
             int i3 = i;
             char c2 = charAt;
-            if (f22617a.matcher(String.valueOf(charAt)).matches()) {
+            if (f9009a.matcher(String.valueOf(charAt)).matches()) {
                 if (i % 2 == 0) {
                     charAt = '*';
                 }

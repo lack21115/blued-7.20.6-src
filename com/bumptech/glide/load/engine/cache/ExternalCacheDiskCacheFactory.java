@@ -13,12 +13,12 @@ public final class ExternalCacheDiskCacheFactory extends DiskLruCacheFactory {
     class AnonymousClass1 implements DiskLruCacheFactory.CacheDirectoryGetter {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f20829a;
+        final /* synthetic */ Context f7223a;
         final /* synthetic */ String b;
 
         @Override // com.bumptech.glide.load.engine.cache.DiskLruCacheFactory.CacheDirectoryGetter
         public File a() {
-            File externalCacheDir = this.f20829a.getExternalCacheDir();
+            File externalCacheDir = this.f7223a.getExternalCacheDir();
             if (externalCacheDir == null) {
                 return null;
             }

@@ -4,30 +4,30 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
+import com.anythink.china.api.ChinaDeviceDataInfo;
+import com.anythink.core.common.c.d;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/a/a/e.class */
 public final class e {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f6226a;
+    private Context a;
 
     public e(Context context) {
-        this.f6226a = context;
+        this.a = context;
     }
 
     public final void a(com.anythink.china.a.a aVar) {
         try {
-            this.f6226a.getPackageManager().getPackageInfo("com.meizu.flyme.openidsdk", 0);
+            this.a.getPackageManager().getPackageInfo("com.meizu.flyme.openidsdk", 0);
         } catch (Throwable th) {
             th.printStackTrace();
         }
         String str = null;
         String str2 = null;
         try {
-            Cursor query = this.f6226a.getContentResolver().query(Uri.parse("content://com.meizu.flyme.openidsdk/"), null, null, new String[]{"oaid"}, null);
+            Cursor query = this.a.getContentResolver().query(Uri.parse("content://com.meizu.flyme.openidsdk/"), null, null, new String[]{ChinaDeviceDataInfo.OAID}, null);
             if (query != null && !query.isClosed()) {
                 query.moveToFirst();
-                int columnIndex = query.getColumnIndex("value");
+                int columnIndex = query.getColumnIndex(d.a.d);
                 if (columnIndex > 0) {
                     str = query.getString(columnIndex);
                 }

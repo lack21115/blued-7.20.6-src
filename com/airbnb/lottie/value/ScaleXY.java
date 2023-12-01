@@ -2,9 +2,7 @@ package com.airbnb.lottie.value;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/value/ScaleXY.class */
 public class ScaleXY {
-
-    /* renamed from: a  reason: collision with root package name */
-    private float f4428a;
+    private float a;
     private float b;
 
     public ScaleXY() {
@@ -12,16 +10,16 @@ public class ScaleXY {
     }
 
     public ScaleXY(float f, float f2) {
-        this.f4428a = f;
+        this.a = f;
         this.b = f2;
     }
 
     public float a() {
-        return this.f4428a;
+        return this.a;
     }
 
     public void a(float f, float f2) {
-        this.f4428a = f;
+        this.a = f;
         this.b = f2;
     }
 
@@ -30,7 +28,7 @@ public class ScaleXY {
     }
 
     public boolean b(float f, float f2) {
-        return this.f4428a == f && this.b == f2;
+        return this.a == f && this.b == f2;
     }
 
     public String toString() {

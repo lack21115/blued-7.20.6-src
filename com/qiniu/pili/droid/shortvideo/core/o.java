@@ -14,16 +14,16 @@ import org.json.JSONObject;
 public class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.qiniu.pili.droid.shortvideo.process.a.c f27588a;
+    private com.qiniu.pili.droid.shortvideo.process.a.c f13900a;
     private PLVideoEncodeSetting b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f27589c;
+    private String f13901c;
     private long d;
 
     public o(Context context, String str, long j) {
         l.a(context.getApplicationContext());
-        this.f27589c = str;
+        this.f13901c = str;
         this.d = j;
     }
 
@@ -39,7 +39,7 @@ public class o {
     }
 
     public void a() {
-        this.f27588a.a();
+        this.f13900a.a();
     }
 
     public void a(PLVideoEncodeSetting pLVideoEncodeSetting) {
@@ -48,10 +48,10 @@ public class o {
 
     public void a(List<PLVideoMixItem> list, PLVideoSaveListener pLVideoSaveListener) {
         if (u.a().a(b.a.mix_video)) {
-            if (this.f27588a == null) {
-                this.f27588a = new com.qiniu.pili.droid.shortvideo.process.a.c();
+            if (this.f13900a == null) {
+                this.f13900a = new com.qiniu.pili.droid.shortvideo.process.a.c();
             }
-            this.f27588a.a(list, this.f27589c, this.d, this.b, pLVideoSaveListener);
+            this.f13900a.a(list, this.f13901c, this.d, this.b, pLVideoSaveListener);
         } else if (pLVideoSaveListener != null) {
             pLVideoSaveListener.onSaveVideoFailed(8);
         }

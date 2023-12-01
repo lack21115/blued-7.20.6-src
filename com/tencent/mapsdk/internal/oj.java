@@ -15,9 +15,9 @@ public abstract class oj {
     private static String mOAID;
     private static String mQImeiVer;
     private static String mUid;
-    private static volatile AtomicInteger atomCbTimeout = new AtomicInteger(com.tencent.tmsqmsp.sdk.c.i.f39716a);
+    private static volatile AtomicInteger atomCbTimeout = new AtomicInteger(com.tencent.tmsqmsp.sdk.c.i.f26025a);
     private static volatile AtomicInteger atomConnTimeOut = new AtomicInteger(com.tencent.tmsqmsp.sdk.c.i.b);
-    private static volatile AtomicInteger atomReadTimeOut = new AtomicInteger(com.tencent.tmsqmsp.sdk.c.i.f39717c);
+    private static volatile AtomicInteger atomReadTimeOut = new AtomicInteger(com.tencent.tmsqmsp.sdk.c.i.f26026c);
     private static volatile AtomicInteger atomUpdateInterval = new AtomicInteger(com.tencent.tmsqmsp.sdk.c.i.d);
     private static byte[] LOGTag = {20, 96, -3, 98, 31, 8};
     private static byte[] Txt1 = {23, 117, -93, 69, 47, 47, 114, -7, 101, 121, -67, 73, 58, 122};
@@ -33,7 +33,7 @@ public abstract class oj {
 
     private static int checkParam(Context context, String str, String str2, String str3, String str4) {
         if (context == null || str == null || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4)) {
-            com.tencent.tmsqmsp.sdk.f.g.a(com.tencent.tmsqmsp.sdk.f.h.a(LOGTag), 0, com.tencent.tmsqmsp.sdk.f.h.a(com.tencent.tmsqmsp.sdk.f.h.f39758a));
+            com.tencent.tmsqmsp.sdk.f.g.a(com.tencent.tmsqmsp.sdk.f.h.a(LOGTag), 0, com.tencent.tmsqmsp.sdk.f.h.a(com.tencent.tmsqmsp.sdk.f.h.f26067a));
             return -1;
         }
         return 0;

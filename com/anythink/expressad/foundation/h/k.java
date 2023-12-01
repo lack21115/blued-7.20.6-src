@@ -13,7 +13,6 @@ import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -24,11 +23,11 @@ import org.json.JSONObject;
 public final class k extends d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7955a = "SameDiTool";
+    private static final String f5115a = "SameDiTool";
     private static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f7956c;
+    private static String f5116c;
     private static int d = -1;
     private static int e = -1;
     private static int f = -1;
@@ -44,16 +43,15 @@ public final class k extends d {
     private static int p = 0;
     private static String q = "";
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.foundation.h.k$2  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/foundation/h/k$2.class */
-    public final class AnonymousClass2 implements Runnable {
+    final class AnonymousClass2 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f7958a;
+        final /* synthetic */ Context f5118a;
 
         AnonymousClass2(Context context) {
-            this.f7958a = context;
+            this.f5118a = context;
         }
 
         @Override // java.lang.Runnable
@@ -64,7 +62,7 @@ public final class k extends d {
                     return;
                 }
                 try {
-                    if (!com.anythink.core.common.b.p.a(com.anythink.core.common.b.n.a().g()).b() || this.f7958a == null || (connectivityManager = (ConnectivityManager) this.f7958a.getSystemService(Context.CONNECTIVITY_SERVICE)) == null) {
+                    if (!com.anythink.core.common.b.p.a(com.anythink.core.common.b.n.a().g()).b() || this.f5118a == null || (connectivityManager = (ConnectivityManager) this.f5118a.getSystemService(Context.CONNECTIVITY_SERVICE)) == null) {
                         return;
                     }
                     NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
@@ -73,7 +71,7 @@ public final class k extends d {
                     } else if (activeNetworkInfo.getType() == 1) {
                         int unused2 = k.f = 9;
                     } else {
-                        TelephonyManager telephonyManager = (TelephonyManager) this.f7958a.getSystemService("phone");
+                        TelephonyManager telephonyManager = (TelephonyManager) this.f5118a.getSystemService("phone");
                         if (telephonyManager == null) {
                             int unused3 = k.f = 0;
                         } else {
@@ -83,7 +81,7 @@ public final class k extends d {
                 } catch (Exception e) {
                 }
             } catch (Throwable th) {
-                o.b(k.f7955a, th.getMessage(), th);
+                o.b(k.f5115a, th.getMessage(), th);
                 int unused5 = k.f = 0;
             }
         }
@@ -115,7 +113,7 @@ public final class k extends d {
                 return f;
             }
         } catch (Throwable th) {
-            o.b(f7955a, th.getMessage(), th);
+            o.b(f5115a, th.getMessage(), th);
             f = 0;
             return 0;
         }
@@ -157,7 +155,7 @@ public final class k extends d {
         try {
             return (!com.anythink.expressad.foundation.g.a.bW || (telephonyManager = (TelephonyManager) context.getSystemService("phone")) == null) ? "" : String.valueOf(telephonyManager.getNetworkType());
         } catch (Throwable th) {
-            o.b(f7955a, th.getMessage(), th);
+            o.b(f5115a, th.getMessage(), th);
             return "";
         }
     }
@@ -165,12 +163,12 @@ public final class k extends d {
     private static String a(String str, Context context) {
         try {
         } catch (Exception e2) {
-            o.b(f7955a, e2.getMessage(), e2);
+            o.b(f5115a, e2.getMessage(), e2);
         }
         if (TextUtils.isEmpty(o)) {
             if (!TextUtils.isEmpty(str) && context != null) {
                 o = context.getPackageManager().getInstallerPackageName(str);
-                o.a(f7955a, "PKGSource:" + o);
+                o.a(f5115a, "PKGSource:" + o);
             }
             return o;
         }
@@ -178,7 +176,7 @@ public final class k extends d {
     }
 
     private static void a(String str) {
-        f7956c = j.a(str);
+        f5116c = j.a(str);
         b = str;
     }
 
@@ -305,7 +303,7 @@ public final class k extends d {
             l2 = l();
             StringBuilder sb2 = new StringBuilder("app_tki_");
             sb2.append(currentTimeMillis);
-            sb2.append(BridgeUtil.UNDERLINE_STR);
+            sb2.append("_");
             sb2.append(l2);
             sb = sb2.toString();
             str = (String) v.b(g2, sb, "");
@@ -351,7 +349,7 @@ public final class k extends d {
                         v.a(g2, "TotalRamSize", Long.valueOf(currentTimeMillis));
                     }
                 } catch (Throwable th) {
-                    o.b(f7955a, th.getMessage(), th);
+                    o.b(f5115a, th.getMessage(), th);
                 }
             }
             return d;
@@ -383,7 +381,7 @@ public final class k extends d {
     public static int g() {
         try {
         } catch (Throwable th) {
-            o.b(f7955a, th.getMessage(), th);
+            o.b(f5115a, th.getMessage(), th);
         }
         if (com.anythink.core.common.b.p.a(com.anythink.core.common.b.n.a().g()).b()) {
             Context g2 = com.anythink.core.common.b.n.a().g();
@@ -423,7 +421,7 @@ public final class k extends d {
             hashMap.put("width", Integer.valueOf(displayMetrics.widthPixels));
             return hashMap;
         } catch (Exception e2) {
-            o.b(f7955a, e2.getMessage(), e2);
+            o.b(f5115a, e2.getMessage(), e2);
             return hashMap;
         }
     }
@@ -479,7 +477,7 @@ public final class k extends d {
                 });
             }
         } catch (Throwable th) {
-            o.b(f7955a, "", th);
+            o.b(f5115a, "", th);
         }
     }
 
@@ -487,7 +485,7 @@ public final class k extends d {
         try {
             return UUID.randomUUID();
         } catch (Throwable th) {
-            o.b(f7955a, th.getMessage(), th);
+            o.b(f5115a, th.getMessage(), th);
             return null;
         }
     }
@@ -517,7 +515,7 @@ public final class k extends d {
             try {
                 p = context.getApplicationInfo().targetSdkVersion;
             } catch (Exception e2) {
-                o.d(f7955a, e2.getMessage());
+                o.d(f5115a, e2.getMessage());
             }
         }
         return p;
@@ -544,7 +542,7 @@ public final class k extends d {
                 com.anythink.expressad.foundation.g.h.a.b().execute(anonymousClass2);
             }
         } catch (Throwable th) {
-            o.d(f7955a, th.getMessage());
+            o.d(f5115a, th.getMessage());
         }
     }
 
@@ -569,7 +567,7 @@ public final class k extends d {
             defaultDisplay.getMetrics(displayMetrics);
             return Math.sqrt(Math.pow((double) (((float) displayMetrics.widthPixels) / displayMetrics.xdpi), 2.0d) + Math.pow((double) (((float) displayMetrics.heightPixels) / displayMetrics.ydpi), 2.0d)) >= 6.0d;
         } catch (Exception e2) {
-            o.b(f7955a, e2.getMessage(), e2);
+            o.b(f5115a, e2.getMessage(), e2);
             return false;
         }
     }

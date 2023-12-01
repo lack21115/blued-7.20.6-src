@@ -7,14 +7,12 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGADynamicEntity$setClickArea$1.class */
 public final class SVGADynamicEntity$setClickArea$1 implements IClickAreaListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ SVGADynamicEntity f15948a;
+    final /* synthetic */ SVGADynamicEntity a;
 
     @Override // com.blued.android.module.svgaplayer.IClickAreaListener
     public void a(String key, int i, int i2, int i3, int i4) {
         Intrinsics.e(key, "key");
-        HashMap<String, int[]> h = this.f15948a.h();
+        HashMap<String, int[]> h = this.a.h();
         if (h.get(key) == null) {
             h.put(key, new int[]{i, i2, i3, i4});
             return;

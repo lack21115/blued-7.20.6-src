@@ -148,8 +148,9 @@ public final class CombinedFuture<V> extends AggregateFuture<Object, V> {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.common.util.concurrent.AggregateFuture
-    void releaseResources(AggregateFuture.ReleaseResourcesReason releaseResourcesReason) {
+    public void releaseResources(AggregateFuture.ReleaseResourcesReason releaseResourcesReason) {
         super.releaseResources(releaseResourcesReason);
         if (releaseResourcesReason == AggregateFuture.ReleaseResourcesReason.OUTPUT_FUTURE_DONE) {
             this.task = null;

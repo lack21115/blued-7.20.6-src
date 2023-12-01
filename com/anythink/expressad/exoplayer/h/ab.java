@@ -7,7 +7,7 @@ public final class ab extends com.anythink.expressad.exoplayer.ae {
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f7405c;
+    private final long f4566c;
     private final long d;
     private final long e;
     private final long f;
@@ -18,7 +18,7 @@ public final class ab extends com.anythink.expressad.exoplayer.ae {
     private final Object k;
 
     private ab(long j, long j2, boolean z, boolean z2, Object obj) {
-        this.f7405c = com.anythink.expressad.exoplayer.b.b;
+        this.f4566c = com.anythink.expressad.exoplayer.b.b;
         this.d = com.anythink.expressad.exoplayer.b.b;
         this.e = j;
         this.f = j2;
@@ -117,7 +117,7 @@ public final class ab extends com.anythink.expressad.exoplayer.ae {
             r0 = r17
             r1 = r27
             r2 = r15
-            long r2 = r2.f7405c
+            long r2 = r2.f4566c
             r3 = r15
             long r3 = r3.d
             r4 = r15

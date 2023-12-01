@@ -11,16 +11,16 @@ import com.tencent.tendinsv.utils.l;
 public class c implements InitCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f39015a;
+    private Context f25324a;
 
     public c(Context context) {
-        this.f39015a = context;
+        this.f25324a = context;
     }
 
     @Override // com.tencent.tendinsv.listener.InitCallbacks
     public void initFailed(int i, int i2, String str, String str2, int i3, long j, long j2, long j3) {
         try {
-            String a2 = com.tencent.tendinsv.tool.d.a().a(this.f39015a);
+            String a2 = com.tencent.tendinsv.tool.d.a().a(this.f25324a);
             l.a(com.tencent.tendinsv.b.H, "InitFailed--code==", Integer.valueOf(i), "__operator==", a2, "__processName== ", Integer.valueOf(i3), "__isGetToken==", Boolean.valueOf(com.tencent.tendinsv.b.Q.get()), "__isPreInitia==", "__isAuthentication==", Boolean.valueOf(com.tencent.tendinsv.b.R.get()));
             com.tencent.tendinsv.b.V.set(com.tencent.tendinsv.b.S);
             String a3 = com.tencent.tendinsv.utils.d.a(i2, str2, str);
@@ -63,7 +63,7 @@ public class c implements InitCallbacks {
     public void initSuccessed(int i, int i2, String str, String str2, int i3, long j, long j2, long j3) {
         try {
             g.a().b();
-            String a2 = com.tencent.tendinsv.tool.d.a().a(this.f39015a);
+            String a2 = com.tencent.tendinsv.tool.d.a().a(this.f25324a);
             l.a(com.tencent.tendinsv.b.H, "initSuccessed--code==", Integer.valueOf(i), "__operator==", a2, "__processName== ", Integer.valueOf(i3), "__isGetToken==", Boolean.valueOf(com.tencent.tendinsv.b.Q.get()), "__isPreInitia==", "__isAuthentication==", Boolean.valueOf(com.tencent.tendinsv.b.R.get()));
             com.tencent.tendinsv.b.V.set(com.tencent.tendinsv.b.T);
             j.a().c();

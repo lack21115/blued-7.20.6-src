@@ -4,9 +4,8 @@ import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.View;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/cameraview/PreviewImpl.class */
-public abstract class PreviewImpl {
+abstract class PreviewImpl {
     private Callback mCallback;
     private int mHeight;
     private int mWidth;

@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class MraidUriUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile ConcurrentHashMap<String, String> f7089a = new ConcurrentHashMap<>();
+    private static volatile ConcurrentHashMap<String, String> f4251a = new ConcurrentHashMap<>();
     private static ArrayList<String> b = new ArrayList<>();
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0041, code lost:
@@ -109,11 +109,11 @@ public class MraidUriUtil {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        if (!f7089a.containsKey(str)) {
-            f7089a.put(str, str2);
+        if (!f4251a.containsKey(str)) {
+            f4251a.put(str, str2);
             return;
         }
-        String str3 = f7089a.get(str);
+        String str3 = f4251a.get(str);
         if (TextUtils.isEmpty(str2) || str3.contains(str2)) {
             return;
         }
@@ -121,12 +121,12 @@ public class MraidUriUtil {
         if (str3.length() > 0) {
             str4 = str3.concat(",");
         }
-        f7089a.put(str, str4.concat(str2));
+        f4251a.put(str, str4.concat(str2));
     }
 
     public static void clearUnSupportMraidMethodMap() {
-        if (f7089a.size() > 0) {
-            f7089a.clear();
+        if (f4251a.size() > 0) {
+            f4251a.clear();
         }
     }
 
@@ -134,7 +134,7 @@ public class MraidUriUtil {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        f7089a.remove(str);
+        f4251a.remove(str);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:41:0x0158, code lost:
@@ -153,8 +153,8 @@ public class MraidUriUtil {
     }
 
     public static String getUnSupportMraidMethodString(String str) {
-        if (f7089a.containsKey(str)) {
-            return f7089a.get(str);
+        if (f4251a.containsKey(str)) {
+            return f4251a.get(str);
         }
         return null;
     }

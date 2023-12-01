@@ -14,16 +14,14 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/EmptyList.class */
 public final class EmptyList implements Serializable, List, RandomAccess, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final EmptyList f42379a = new EmptyList();
+    public static final EmptyList a = new EmptyList();
     private static final long serialVersionUID = -7390468764508069838L;
 
     private EmptyList() {
     }
 
     private final Object readResolve() {
-        return f42379a;
+        return a;
     }
 
     public int a() {
@@ -46,7 +44,7 @@ public final class EmptyList implements Serializable, List, RandomAccess, KMappe
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public /* synthetic */ boolean add(Object obj) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
@@ -56,7 +54,7 @@ public final class EmptyList implements Serializable, List, RandomAccess, KMappe
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean addAll(Collection collection) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
@@ -71,12 +69,12 @@ public final class EmptyList implements Serializable, List, RandomAccess, KMappe
         return -1;
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public void clear() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public final boolean contains(Object obj) {
         if (obj instanceof Void) {
             return a((Void) obj);
@@ -84,18 +82,18 @@ public final class EmptyList implements Serializable, List, RandomAccess, KMappe
         return false;
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean containsAll(Collection elements) {
         Intrinsics.e(elements, "elements");
         return elements.isEmpty();
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean equals(Object obj) {
         return (obj instanceof List) && ((List) obj).isEmpty();
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public int hashCode() {
         return 1;
     }
@@ -108,14 +106,14 @@ public final class EmptyList implements Serializable, List, RandomAccess, KMappe
         return -1;
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean isEmpty() {
         return true;
     }
 
     @Override // java.util.List, java.util.Collection, java.lang.Iterable
     public Iterator iterator() {
-        return EmptyIterator.f42378a;
+        return EmptyIterator.a;
     }
 
     @Override // java.util.List
@@ -128,13 +126,13 @@ public final class EmptyList implements Serializable, List, RandomAccess, KMappe
 
     @Override // java.util.List
     public ListIterator listIterator() {
-        return EmptyIterator.f42378a;
+        return EmptyIterator.a;
     }
 
     @Override // java.util.List
     public ListIterator listIterator(int i) {
         if (i == 0) {
-            return EmptyIterator.f42378a;
+            return EmptyIterator.a;
         }
         throw new IndexOutOfBoundsException("Index: " + i);
     }
@@ -144,17 +142,17 @@ public final class EmptyList implements Serializable, List, RandomAccess, KMappe
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean remove(Object obj) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean removeAll(Collection collection) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean retainAll(Collection collection) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
@@ -164,7 +162,7 @@ public final class EmptyList implements Serializable, List, RandomAccess, KMappe
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.List
+    @Override // java.util.List, java.util.Collection
     public final int size() {
         return a();
     }
@@ -177,12 +175,12 @@ public final class EmptyList implements Serializable, List, RandomAccess, KMappe
         throw new IndexOutOfBoundsException("fromIndex: " + i + ", toIndex: " + i2);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public Object[] toArray() {
         return CollectionToArray.a(this);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public <T> T[] toArray(T[] array) {
         Intrinsics.e(array, "array");
         return (T[]) CollectionToArray.a(this, array);

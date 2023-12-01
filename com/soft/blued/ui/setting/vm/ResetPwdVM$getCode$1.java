@@ -1,11 +1,11 @@
 package com.soft.blued.ui.setting.vm;
 
 import com.blued.android.framework.http.parser.BluedEntityA;
+import com.blued.android.module.common.api.ApiState;
 import com.blued.android.module.common.api.BluedApiProxy;
 import com.blued.android.module.common.api.Error;
 import com.blued.android.module.common.api.Succeed;
 import com.soft.blued.ui.setting.api.SettingApiService;
-import java.util.Collection;
 import java.util.Map;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -26,42 +26,39 @@ import kotlinx.coroutines.CoroutineScope;
 public final class ResetPwdVM$getCode$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f33679a;
+    int f19988a;
     final /* synthetic */ ResetPwdVM b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Map<String, String> f33680c;
+    final /* synthetic */ Map<String, String> f19989c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ResetPwdVM$getCode$1(ResetPwdVM resetPwdVM, Map<String, String> map, Continuation<? super ResetPwdVM$getCode$1> continuation) {
         super(2, continuation);
         this.b = resetPwdVM;
-        this.f33680c = map;
+        this.f19989c = map;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((ResetPwdVM$getCode$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new ResetPwdVM$getCode$1(this.b, this.f33680c, continuation);
+        return new ResetPwdVM$getCode$1(this.b, this.f19989c, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Map<String, String> a2;
         Object a3 = IntrinsicsKt.a();
-        int i = this.f33679a;
+        int i = this.f19988a;
         if (i == 0) {
             ResultKt.a(obj);
             SettingApiService settingApiService = (SettingApiService) BluedApiProxy.b().a(SettingApiService.class);
-            a2 = this.b.a(this.f33680c);
-            this.f33679a = 1;
-            Object a4 = settingApiService.a(a2, this);
+            a2 = this.b.a(this.f19989c);
+            this.f19988a = 1;
+            Object a4 = settingApiService.a(a2, (Continuation) this);
             obj = a4;
             if (a4 == a3) {
                 return a3;
@@ -75,20 +72,19 @@ public final class ResetPwdVM$getCode$1 extends SuspendLambda implements Functio
         ResetPwdVM resetPwdVM = this.b;
         if (bluedEntityA.code == 200) {
             if (bluedEntityA.hasData()) {
-                Collection data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
+                Intrinsics.c(bluedEntityA.data, "data");
                 bluedEntityA.hasMore();
             } else {
                 CollectionsKt.b();
             }
             resetPwdVM.d();
-            Succeed succeed = Succeed.f10631a;
+            ApiState apiState = Succeed.a;
         } else {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            new Error(i2, str);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

@@ -11,7 +11,7 @@ public class a {
     private static volatile a b;
 
     /* renamed from: a  reason: collision with root package name */
-    public com.anythink.expressad.video.dynview.e.a f8352a;
+    public com.anythink.expressad.video.dynview.e.a f5512a;
 
     private a() {
     }
@@ -41,7 +41,7 @@ public class a {
     private void a(c cVar, View view, Map map, e eVar) {
         com.anythink.expressad.video.dynview.j.a aVar = new com.anythink.expressad.video.dynview.j.a();
         aVar.a(cVar, view, map, eVar);
-        this.f8352a = aVar.b;
+        this.f5512a = aVar.b;
     }
 
     public static void b() {
@@ -55,7 +55,7 @@ public class a {
     }
 
     private void c() {
-        com.anythink.expressad.video.dynview.e.a aVar = this.f8352a;
+        com.anythink.expressad.video.dynview.e.a aVar = this.f5512a;
         if (aVar != null) {
             aVar.a();
         }
@@ -69,7 +69,7 @@ public class a {
     }
 
     private void e() {
-        com.anythink.expressad.video.dynview.e.a aVar = this.f8352a;
+        com.anythink.expressad.video.dynview.e.a aVar = this.f5512a;
         if (aVar != null) {
             aVar.c();
         }
@@ -80,7 +80,7 @@ public class a {
         if (h == 1) {
             com.anythink.expressad.video.dynview.j.a aVar = new com.anythink.expressad.video.dynview.j.a();
             aVar.a(cVar, view, map, eVar);
-            this.f8352a = aVar.b;
+            this.f5512a = aVar.b;
         } else if (h == 102 || h == 202 || h == 302 || h == 802 || h == 904) {
             new com.anythink.expressad.video.dynview.j.a().b(cVar, view, map, eVar);
         } else if (h == 4) {

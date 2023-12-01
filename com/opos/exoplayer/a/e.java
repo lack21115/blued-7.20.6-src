@@ -1,5 +1,6 @@
 package com.opos.exoplayer.a;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -14,9 +15,8 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import com.opos.exoplayer.core.i.u;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/a/e.class */
-public final class e {
+final class e {
     private float A;
     private float B;
     private int C;
@@ -30,11 +30,11 @@ public final class e {
     private Rect K;
 
     /* renamed from: a  reason: collision with root package name */
-    private final RectF f24998a = new RectF();
+    private final RectF f11310a = new RectF();
     private final float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final float f24999c;
+    private final float f11311c;
     private final float d;
     private final float e;
     private final float f;
@@ -60,13 +60,13 @@ public final class e {
     private int z;
 
     public e(Context context) {
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, new int[]{16843287, 16843288}, 0, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, new int[]{R.attr.lineSpacingExtra, R.attr.lineSpacingMultiplier}, 0, 0);
         this.g = obtainStyledAttributes.getDimensionPixelSize(0, 0);
         this.f = obtainStyledAttributes.getFloat(1, 1.0f);
         obtainStyledAttributes.recycle();
         float round = Math.round((context.getResources().getDisplayMetrics().densityDpi * 2.0f) / 160.0f);
         this.b = round;
-        this.f24999c = round;
+        this.f11311c = round;
         this.d = round;
         this.e = round;
         TextPaint textPaint = new TextPaint();
@@ -118,12 +118,12 @@ public final class e {
                 if (i2 >= lineCount) {
                     break;
                 }
-                this.f24998a.left = staticLayout.getLineLeft(i2) - this.J;
-                this.f24998a.right = staticLayout.getLineRight(i2) + this.J;
-                this.f24998a.top = lineTop;
-                this.f24998a.bottom = staticLayout.getLineBottom(i2);
-                lineTop = this.f24998a.bottom;
-                RectF rectF = this.f24998a;
+                this.f11310a.left = staticLayout.getLineLeft(i2) - this.J;
+                this.f11310a.right = staticLayout.getLineRight(i2) + this.J;
+                this.f11310a.top = lineTop;
+                this.f11310a.bottom = staticLayout.getLineBottom(i2);
+                lineTop = this.f11310a.bottom;
+                RectF rectF = this.f11310a;
                 float f = this.b;
                 canvas.drawRoundRect(rectF, f, f, this.i);
                 i = i2 + 1;
@@ -133,7 +133,7 @@ public final class e {
         boolean z = true;
         if (i3 == 1) {
             this.h.setStrokeJoin(Paint.Join.ROUND);
-            this.h.setStrokeWidth(this.f24999c);
+            this.h.setStrokeWidth(this.f11311c);
             this.h.setColor(this.y);
             this.h.setStyle(Paint.Style.FILL_AND_STROKE);
             staticLayout.draw(canvas);
@@ -200,18 +200,18 @@ public final class e {
     }
 
     public void a(com.opos.exoplayer.core.f.b bVar, boolean z, boolean z2, com.opos.exoplayer.core.f.a aVar, float f, float f2, Canvas canvas, int i, int i2, int i3, int i4) {
-        boolean z3 = bVar.f25345c == null;
+        boolean z3 = bVar.f11657c == null;
         int i5 = -16777216;
         if (z3) {
-            if (TextUtils.isEmpty(bVar.f25344a)) {
+            if (TextUtils.isEmpty(bVar.f11656a)) {
                 return;
             }
             i5 = (bVar.k && z) ? bVar.l : aVar.d;
         }
-        if (!a(this.j, bVar.f25344a) || !u.a(this.k, bVar.b) || this.l != bVar.f25345c || this.m != bVar.d || this.n != bVar.e || !u.a(Integer.valueOf(this.o), Integer.valueOf(bVar.f)) || this.p != bVar.g || !u.a(Integer.valueOf(this.q), Integer.valueOf(bVar.h)) || this.r != bVar.i || this.s != bVar.j || this.t != z || this.u != z2 || this.v != aVar.b || this.w != aVar.f25326c || this.x != i5 || this.z != aVar.e || this.y != aVar.f || !u.a(this.h.getTypeface(), aVar.g) || this.A != f || this.B != f2 || this.C != i || this.D != i2 || this.E != i3 || this.F != i4) {
-            this.j = bVar.f25344a;
+        if (!a(this.j, bVar.f11656a) || !u.a(this.k, bVar.b) || this.l != bVar.f11657c || this.m != bVar.d || this.n != bVar.e || !u.a(Integer.valueOf(this.o), Integer.valueOf(bVar.f)) || this.p != bVar.g || !u.a(Integer.valueOf(this.q), Integer.valueOf(bVar.h)) || this.r != bVar.i || this.s != bVar.j || this.t != z || this.u != z2 || this.v != aVar.b || this.w != aVar.f11638c || this.x != i5 || this.z != aVar.e || this.y != aVar.f || !u.a(this.h.getTypeface(), aVar.g) || this.A != f || this.B != f2 || this.C != i || this.D != i2 || this.E != i3 || this.F != i4) {
+            this.j = bVar.f11656a;
             this.k = bVar.b;
-            this.l = bVar.f25345c;
+            this.l = bVar.f11657c;
             this.m = bVar.d;
             this.n = bVar.e;
             this.o = bVar.f;
@@ -222,7 +222,7 @@ public final class e {
             this.t = z;
             this.u = z2;
             this.v = aVar.b;
-            this.w = aVar.f25326c;
+            this.w = aVar.f11638c;
             this.x = i5;
             this.z = aVar.e;
             this.y = aVar.f;

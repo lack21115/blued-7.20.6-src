@@ -29,11 +29,11 @@ import com.soft.blued.R;
 public class SelectFrameLayout extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f28628a;
+    private Context f14938a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28629c;
+    private int f14939c;
     private View d;
     private TextView e;
     private Spannable f;
@@ -56,7 +56,7 @@ public class SelectFrameLayout extends FrameLayout {
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private PopupWindow f28636c;
+        private PopupWindow f14946c;
         private Paint d;
         private int e;
         private int f;
@@ -70,7 +70,7 @@ public class SelectFrameLayout extends FrameLayout {
         private int[] n;
 
         public CursorHandle(boolean z) {
-            super(SelectFrameLayout.this.f28628a);
+            super(SelectFrameLayout.this.f14938a);
             this.b = 48;
             this.e = 24;
             this.f = 24 * 2;
@@ -80,12 +80,12 @@ public class SelectFrameLayout extends FrameLayout {
             this.i = z;
             Paint paint = new Paint(1);
             this.d = paint;
-            paint.setColor(SelectFrameLayout.this.f28628a.getResources().getColor(SelectFrameLayout.this.j));
+            paint.setColor(SelectFrameLayout.this.f14938a.getResources().getColor(SelectFrameLayout.this.j));
             PopupWindow popupWindow = new PopupWindow(this);
-            this.f28636c = popupWindow;
+            this.f14946c = popupWindow;
             popupWindow.setClippingEnabled(false);
-            this.f28636c.setWidth(this.f + (this.h * 2));
-            this.f28636c.setHeight(this.g + (this.h / 2));
+            this.f14946c.setWidth(this.f + (this.h * 2));
+            this.f14946c.setHeight(this.g + (this.h / 2));
             invalidate();
         }
 
@@ -98,19 +98,19 @@ public class SelectFrameLayout extends FrameLayout {
             SelectFrameLayout.this.getLocationInWindow(this.n);
             Layout layout = SelectFrameLayout.this.e.getLayout();
             if (this.i) {
-                this.f28636c.update((((int) layout.getPrimaryHorizontal(SelectFrameLayout.this.g.a(SelectFrameLayout.this.e))) - this.f) + b(), layout.getLineBottom(layout.getLineForOffset(SelectFrameLayout.this.g.a(SelectFrameLayout.this.e))) + c(), -1, -1);
+                this.f14946c.update((((int) layout.getPrimaryHorizontal(SelectFrameLayout.this.g.a(SelectFrameLayout.this.e))) - this.f) + b(), layout.getLineBottom(layout.getLineForOffset(SelectFrameLayout.this.g.a(SelectFrameLayout.this.e))) + c(), -1, -1);
             } else {
-                this.f28636c.update(((int) layout.getPrimaryHorizontal(SelectFrameLayout.this.g.b(SelectFrameLayout.this.e))) + b(), layout.getLineBottom(layout.getLineForOffset(SelectFrameLayout.this.g.b(SelectFrameLayout.this.e))) + c(), -1, -1);
+                this.f14946c.update(((int) layout.getPrimaryHorizontal(SelectFrameLayout.this.g.b(SelectFrameLayout.this.e))) + b(), layout.getLineBottom(layout.getLineForOffset(SelectFrameLayout.this.g.b(SelectFrameLayout.this.e))) + c(), -1, -1);
             }
         }
 
         public void a() {
-            this.f28636c.dismiss();
+            this.f14946c.dismiss();
         }
 
         public void a(int i, int i2) {
             SelectFrameLayout.this.getLocationInWindow(this.n);
-            this.f28636c.showAtLocation(SelectFrameLayout.this, 0, (i - (this.i ? this.f : 0)) + b(), i2 + c());
+            this.f14946c.showAtLocation(SelectFrameLayout.this, 0, (i - (this.i ? this.f : 0)) + b(), i2 + c());
         }
 
         public int b() {
@@ -121,9 +121,8 @@ public class SelectFrameLayout extends FrameLayout {
             return this.n[1] + SelectFrameLayout.this.getPaddingTop();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.View
-        public void onDraw(Canvas canvas) {
+        protected void onDraw(Canvas canvas) {
             int i;
             int i2;
             int i3 = this.e;
@@ -245,7 +244,7 @@ public class SelectFrameLayout extends FrameLayout {
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f28640c;
+        private int f14950c;
         private PopupWindow d;
         private View e;
         private LinearLayout f;
@@ -261,8 +260,8 @@ public class SelectFrameLayout extends FrameLayout {
         private View p;
 
         public OperateWindow(Context context) {
-            this.b = TextLayoutUtil.a(SelectFrameLayout.this.f28628a);
-            this.f28640c = DensityUtils.a(SelectFrameLayout.this.f28628a, 13.0f);
+            this.b = TextLayoutUtil.a(SelectFrameLayout.this.f14938a);
+            this.f14950c = DensityUtils.a(SelectFrameLayout.this.f14938a, 13.0f);
             View inflate = LayoutInflater.from(context).inflate(R.layout.select_text_operate_windows, (ViewGroup) null);
             this.e = inflate;
             inflate.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
@@ -278,7 +277,7 @@ public class SelectFrameLayout extends FrameLayout {
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     try {
-                        ((ClipboardManager) SelectFrameLayout.this.f28628a.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText(SelectFrameLayout.this.g.f28650a, SelectFrameLayout.this.g.f28650a));
+                        ((ClipboardManager) SelectFrameLayout.this.f14938a.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText(SelectFrameLayout.this.g.f14960a, SelectFrameLayout.this.g.f14960a));
                     } catch (Exception e) {
                     }
                     SelectFrameLayout.this.d();
@@ -403,7 +402,7 @@ public class SelectFrameLayout extends FrameLayout {
                 this.g.setVisibility(8);
                 this.h.setVisibility(8);
             }
-            this.p = this.e.findViewById(2131365072);
+            this.p = this.e.findViewById(R.id.iv_arrow);
         }
 
         private int d() {
@@ -432,7 +431,7 @@ public class SelectFrameLayout extends FrameLayout {
             int lineTop = layout.getLineTop(layout.getLineForOffset(SelectFrameLayout.this.g.a(SelectFrameLayout.this.e)));
             int subViewY = SelectFrameLayout.this.getSubViewY();
             int e = e();
-            int i2 = this.f28640c;
+            int i2 = this.f14950c;
             int i3 = ((lineTop + subViewY) - e) - i2;
             if (primaryHorizontal < i2) {
                 int i4 = primaryHorizontal - i2;
@@ -443,14 +442,14 @@ public class SelectFrameLayout extends FrameLayout {
             }
             int i5 = i3;
             if (i3 < 0) {
-                i5 = this.f28640c;
+                i5 = this.f14950c;
             }
             int d = d();
             int i6 = this.b;
             int i7 = primaryHorizontal;
-            if (d + primaryHorizontal > i6 - this.f28640c) {
-                i = primaryHorizontal - ((i6 - d()) - this.f28640c);
-                i7 = (this.b - d()) - this.f28640c;
+            if (d + primaryHorizontal > i6 - this.f14950c) {
+                i = primaryHorizontal - ((i6 - d()) - this.f14950c);
+                i7 = (this.b - d()) - this.f14950c;
             }
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.p.getLayoutParams();
             marginLayoutParams.leftMargin = i;
@@ -464,7 +463,7 @@ public class SelectFrameLayout extends FrameLayout {
             int subViewY = SelectFrameLayout.this.getSubViewY();
             int e = e();
             int paddingTop = SelectFrameLayout.this.d.getPaddingTop();
-            int i2 = this.f28640c;
+            int i2 = this.f14950c;
             int i3 = ((subViewY - e) + paddingTop) - i2;
             if (subViewX < i2) {
                 int i4 = subViewX - i2;
@@ -473,7 +472,7 @@ public class SelectFrameLayout extends FrameLayout {
             } else {
                 i = 0;
             }
-            int i5 = this.f28640c;
+            int i5 = this.f14950c;
             int i6 = i3;
             if (i3 < i5) {
                 i6 = i5;
@@ -481,9 +480,9 @@ public class SelectFrameLayout extends FrameLayout {
             int d = d();
             int i7 = this.b;
             int i8 = subViewX;
-            if (d + subViewX > i7 - this.f28640c) {
-                i = subViewX - ((i7 - d()) - this.f28640c);
-                i8 = (this.b - d()) - this.f28640c;
+            if (d + subViewX > i7 - this.f14950c) {
+                i = subViewX - ((i7 - d()) - this.f14950c);
+                i8 = (this.b - d()) - this.f14950c;
             }
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.p.getLayoutParams();
             marginLayoutParams.leftMargin = i;
@@ -510,7 +509,7 @@ public class SelectFrameLayout extends FrameLayout {
         this.i = 2131101932;
         this.j = 2131101810;
         this.m = true;
-        this.f28628a = context;
+        this.f14938a = context;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -537,8 +536,8 @@ public class SelectFrameLayout extends FrameLayout {
                 SelectFrameLayout.this.c();
             }
         });
-        this.n = new OperateWindow(this.f28628a);
-        this.o = new FullScreenWindow(this.f28628a);
+        this.n = new OperateWindow(this.f14938a);
+        this.o = new FullScreenWindow(this.f14938a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -592,7 +591,7 @@ public class SelectFrameLayout extends FrameLayout {
                     SelectFrameLayout.this.p.a();
                 }
                 SelectFrameLayout selectFrameLayout = SelectFrameLayout.this;
-                selectFrameLayout.a(selectFrameLayout.b, SelectFrameLayout.this.f28629c);
+                selectFrameLayout.a(selectFrameLayout.b, SelectFrameLayout.this.f14939c);
                 return true;
             }
         });
@@ -600,7 +599,7 @@ public class SelectFrameLayout extends FrameLayout {
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 SelectFrameLayout.this.b = (int) motionEvent.getX();
-                SelectFrameLayout.this.f28629c = (int) motionEvent.getY();
+                SelectFrameLayout.this.f14939c = (int) motionEvent.getY();
                 return false;
             }
         });
@@ -612,8 +611,8 @@ public class SelectFrameLayout extends FrameLayout {
                 SelectFrameLayout.this.c();
             }
         });
-        this.n = new OperateWindow(this.f28628a);
-        this.o = new FullScreenWindow(this.f28628a);
+        this.n = new OperateWindow(this.f14938a);
+        this.o = new FullScreenWindow(this.f14938a);
         setCopyVisibility(true);
         setSelectAllVisibility(true);
     }
@@ -634,7 +633,7 @@ public class SelectFrameLayout extends FrameLayout {
         }
         if (this.f != null) {
             if (this.h == null) {
-                this.h = new BackgroundColorSpan(this.f28628a.getResources().getColor(this.i));
+                this.h = new BackgroundColorSpan(this.f14938a.getResources().getColor(this.i));
             }
             Spannable spannable = this.f;
             SelectedImageSpan[] selectedImageSpanArr = (SelectedImageSpan[]) spannable.getSpans(0, spannable.length(), SelectedImageSpan.class);
@@ -647,20 +646,20 @@ public class SelectFrameLayout extends FrameLayout {
                 int spanStart = this.f.getSpanStart(selectedImageSpanArr[i4]);
                 int spanEnd = this.f.getSpanEnd(selectedImageSpanArr[i4]);
                 if (spanStart < this.g.a(this.e) || spanEnd > this.g.b(this.e)) {
-                    selectedImageSpanArr[i4].f11196a = 0;
+                    selectedImageSpanArr[i4].a = 0;
                 } else {
-                    selectedImageSpanArr[i4].f11196a = ContextCompat.getColor(AppInfo.d(), 2131101932);
+                    selectedImageSpanArr[i4].a = ContextCompat.getColor(AppInfo.d(), 2131101932);
                 }
                 i3 = i4 + 1;
             }
             SelectionInfo selectionInfo2 = this.g;
             Spannable spannable2 = this.f;
-            selectionInfo2.f28650a = spannable2.subSequence(selectionInfo2.a(spannable2), this.g.b(this.f)).toString();
+            selectionInfo2.f14960a = spannable2.subSequence(selectionInfo2.a(spannable2), this.g.b(this.f)).toString();
             Spannable spannable3 = this.f;
             spannable3.setSpan(this.h, this.g.a(spannable3), this.g.b(this.f), 17);
             SelectableOnChangeListener selectableOnChangeListener = this.q;
             if (selectableOnChangeListener != null) {
-                String str = this.g.f28650a;
+                String str = this.g.f14960a;
                 boolean z = false;
                 if (i == 0) {
                     z = false;
@@ -685,7 +684,7 @@ public class SelectFrameLayout extends FrameLayout {
                 if (i2 >= selectedImageSpanArr.length) {
                     break;
                 }
-                selectedImageSpanArr[i2].f11196a = 0;
+                selectedImageSpanArr[i2].a = 0;
                 i = i2 + 1;
             }
             this.e.invalidate();
@@ -711,7 +710,7 @@ public class SelectFrameLayout extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
         BackgroundColorSpan backgroundColorSpan;
-        this.g.f28650a = null;
+        this.g.f14960a = null;
         Spannable spannable = this.f;
         if (spannable == null || (backgroundColorSpan = this.h) == null) {
             return;
@@ -747,9 +746,8 @@ public class SelectFrameLayout extends FrameLayout {
         return iArr[1];
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
     }
 

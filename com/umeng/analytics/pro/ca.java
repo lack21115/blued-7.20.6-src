@@ -15,10 +15,10 @@ import java.util.Set;
 public abstract class ca<T extends ca<?, ?>, F extends bx> implements bq<T, F> {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Map<Class<? extends cx>, cy> f40678c;
+    private static final Map<Class<? extends cx>, cy> f26987c;
 
     /* renamed from: a  reason: collision with root package name */
-    protected Object f40679a;
+    protected Object f26988a;
     protected F b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -31,12 +31,12 @@ public abstract class ca<T extends ca<?, ?>, F extends bx> implements bq<T, F> {
         /* renamed from: a */
         public void b(cp cpVar, ca caVar) throws bw {
             caVar.b = null;
-            caVar.f40679a = null;
+            caVar.f26988a = null;
             cpVar.j();
             ck l = cpVar.l();
-            caVar.f40679a = caVar.a(cpVar, l);
-            if (caVar.f40679a != null) {
-                caVar.b = (F) caVar.a(l.f40700c);
+            caVar.f26988a = caVar.a(cpVar, l);
+            if (caVar.f26988a != null) {
+                caVar.b = (F) caVar.a(l.f27009c);
             }
             cpVar.m();
             cpVar.l();
@@ -80,10 +80,10 @@ public abstract class ca<T extends ca<?, ?>, F extends bx> implements bq<T, F> {
         /* renamed from: a */
         public void b(cp cpVar, ca caVar) throws bw {
             caVar.b = null;
-            caVar.f40679a = null;
+            caVar.f26988a = null;
             short v = cpVar.v();
-            caVar.f40679a = caVar.a(cpVar, v);
-            if (caVar.f40679a != null) {
+            caVar.f26988a = caVar.a(cpVar, v);
+            if (caVar.f26988a != null) {
                 caVar.b = (F) caVar.a(v);
             }
         }
@@ -113,14 +113,14 @@ public abstract class ca<T extends ca<?, ?>, F extends bx> implements bq<T, F> {
 
     static {
         HashMap hashMap = new HashMap();
-        f40678c = hashMap;
+        f26987c = hashMap;
         hashMap.put(cz.class, new b());
-        f40678c.put(da.class, new d());
+        f26987c.put(da.class, new d());
     }
 
     protected ca() {
         this.b = null;
-        this.f40679a = null;
+        this.f26988a = null;
     }
 
     protected ca(F f, Object obj) {
@@ -132,7 +132,7 @@ public abstract class ca<T extends ca<?, ?>, F extends bx> implements bq<T, F> {
             throw new ClassCastException();
         }
         this.b = caVar.b;
-        this.f40679a = a(caVar.f40679a);
+        this.f26988a = a(caVar.f26988a);
     }
 
     private static Object a(Object obj) {
@@ -207,13 +207,13 @@ public abstract class ca<T extends ca<?, ?>, F extends bx> implements bq<T, F> {
     public void a(F f, Object obj) {
         b(f, obj);
         this.b = f;
-        this.f40679a = obj;
+        this.f26988a = obj;
     }
 
     protected abstract void a(cp cpVar) throws bw;
 
     public Object b() {
-        return this.f40679a;
+        return this.f26988a;
     }
 
     protected abstract void b(F f, Object obj) throws ClassCastException;
@@ -237,14 +237,14 @@ public abstract class ca<T extends ca<?, ?>, F extends bx> implements bq<T, F> {
     @Override // com.umeng.analytics.pro.bq
     public final void clear() {
         this.b = null;
-        this.f40679a = null;
+        this.f26988a = null;
     }
 
     protected abstract cu d();
 
     @Override // com.umeng.analytics.pro.bq
     public void read(cp cpVar) throws bw {
-        f40678c.get(cpVar.D()).b().b(cpVar, this);
+        f26987c.get(cpVar.D()).b().b(cpVar, this);
     }
 
     public String toString() {
@@ -254,7 +254,7 @@ public abstract class ca<T extends ca<?, ?>, F extends bx> implements bq<T, F> {
         sb.append(" ");
         if (a() != null) {
             Object b2 = b();
-            sb.append(c(a()).f40699a);
+            sb.append(c(a()).f27008a);
             sb.append(":");
             if (b2 instanceof ByteBuffer) {
                 br.a((ByteBuffer) b2, sb);
@@ -268,6 +268,6 @@ public abstract class ca<T extends ca<?, ?>, F extends bx> implements bq<T, F> {
 
     @Override // com.umeng.analytics.pro.bq
     public void write(cp cpVar) throws bw {
-        f40678c.get(cpVar.D()).b().a(cpVar, this);
+        f26987c.get(cpVar.D()).b().a(cpVar, this);
     }
 }

@@ -15,10 +15,10 @@ public final class e {
     private static float d;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f37217a = null;
+    private Context f23526a = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private a f37218c = null;
+    private a f23527c = null;
     private c e = null;
     private b f = null;
     private boolean g = false;
@@ -170,33 +170,33 @@ public final class e {
     public final class b implements Cloneable {
 
         /* renamed from: a  reason: collision with root package name */
-        private Location f37220a;
+        private Location f23529a;
         private long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f37221c;
+        private int f23530c;
 
         public b(e eVar, Location location, int i, int i2, int i3, long j) {
-            this.f37220a = null;
+            this.f23529a = null;
             this.b = 0L;
-            this.f37221c = 0;
+            this.f23530c = 0;
             if (location != null) {
-                this.f37220a = new Location(location);
-                this.f37221c = i2;
+                this.f23529a = new Location(location);
+                this.f23530c = i2;
                 this.b = j;
             }
         }
 
         public final boolean a() {
-            if (this.f37220a == null) {
+            if (this.f23529a == null) {
                 return false;
             }
-            int i = this.f37221c;
+            int i = this.f23530c;
             return (i <= 0 || i >= 3) && System.currentTimeMillis() - this.b <= 30000;
         }
 
         public final Location b() {
-            return this.f37220a;
+            return this.f23529a;
         }
 
         public final Object clone() {
@@ -206,8 +206,8 @@ public final class e {
             } catch (Exception e) {
                 bVar = null;
             }
-            if (this.f37220a != null) {
-                bVar.f37220a = new Location(this.f37220a);
+            if (this.f23529a != null) {
+                bVar.f23529a = new Location(this.f23529a);
             }
             return bVar;
         }
@@ -256,9 +256,9 @@ public final class e {
     public final void a() {
         synchronized (this.h) {
             if (this.g) {
-                if (b != null && this.f37218c != null) {
-                    b.removeGpsStatusListener(this.f37218c);
-                    b.removeUpdates(this.f37218c);
+                if (b != null && this.f23527c != null) {
+                    b.removeGpsStatusListener(this.f23527c);
+                    b.removeUpdates(this.f23527c);
                 }
                 this.g = false;
             }
@@ -273,18 +273,18 @@ public final class e {
             if (context == null || cVar == null) {
                 return false;
             }
-            this.f37217a = context;
+            this.f23526a = context;
             this.e = cVar;
             try {
                 b = (LocationManager) context.getSystemService("location");
                 a aVar = new a(this, (byte) 0);
-                this.f37218c = aVar;
+                this.f23527c = aVar;
                 if (b == null || aVar == null) {
                     return false;
                 }
                 try {
                     b.requestLocationUpdates("gps", 1000L, 0.0f, aVar);
-                    b.addGpsStatusListener(this.f37218c);
+                    b.addGpsStatusListener(this.f23527c);
                     if (b.isProviderEnabled("gps")) {
                         this.i = 4;
                     } else {

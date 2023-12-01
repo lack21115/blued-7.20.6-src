@@ -9,23 +9,23 @@ import java.util.List;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Camera f27508a;
+    private Camera f13820a;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27509c = 0;
+    private int f13821c = 0;
     private boolean d = false;
     private Camera.CameraInfo b = new Camera.CameraInfo();
 
     /* renamed from: com.qiniu.pili.droid.shortvideo.a.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/a/a/a$a.class */
-    static class C0741a {
+    static class C0571a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final a f27510a = new a();
+        public static final a f13822a = new a();
     }
 
     public static a a() {
-        return C0741a.f27510a;
+        return C0571a.f13822a;
     }
 
     private static boolean a(int i, Camera.CameraInfo cameraInfo) {
@@ -90,13 +90,13 @@ public final class a {
 
     public void a(SurfaceTexture surfaceTexture) {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "setPreviewTexture failed, camera == null");
                 return;
             }
             if (Build.VERSION.SDK_INT >= 11) {
                 try {
-                    this.f27508a.setPreviewTexture(surfaceTexture);
+                    this.f13820a.setPreviewTexture(surfaceTexture);
                 } catch (Exception e) {
                     e.printStackTrace();
                     com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
@@ -108,12 +108,12 @@ public final class a {
 
     public void a(Camera.AutoFocusCallback autoFocusCallback) {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "autoFocus failed, camera == null");
                 return;
             }
             try {
-                this.f27508a.autoFocus(autoFocusCallback);
+                this.f13820a.autoFocus(autoFocusCallback);
             } catch (RuntimeException e) {
                 e.printStackTrace();
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
@@ -124,12 +124,12 @@ public final class a {
 
     public void a(Camera.AutoFocusMoveCallback autoFocusMoveCallback) {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "setAutoFocusMoveCallback failed, camera == null");
                 return;
             }
             try {
-                this.f27508a.setAutoFocusMoveCallback(autoFocusMoveCallback);
+                this.f13820a.setAutoFocusMoveCallback(autoFocusMoveCallback);
             } catch (RuntimeException e) {
                 e.printStackTrace();
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
@@ -140,12 +140,12 @@ public final class a {
 
     public void a(Camera.Parameters parameters) {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "setParameters failed, camera == null");
                 return;
             }
             try {
-                this.f27508a.setParameters(parameters);
+                this.f13820a.setParameters(parameters);
             } catch (RuntimeException e) {
                 e.printStackTrace();
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
@@ -156,12 +156,12 @@ public final class a {
 
     public void a(Camera.PreviewCallback previewCallback) {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "setPreviewCallbackWithBuffer failed, camera == null");
                 return;
             }
             try {
-                this.f27508a.setPreviewCallbackWithBuffer(previewCallback);
+                this.f13820a.setPreviewCallbackWithBuffer(previewCallback);
             } catch (RuntimeException e) {
                 e.printStackTrace();
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
@@ -172,10 +172,10 @@ public final class a {
 
     public void a(byte[] bArr) {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "addCallbackBuffer failed, camera == null");
             } else {
-                this.f27508a.addCallbackBuffer(bArr);
+                this.f13820a.addCallbackBuffer(bArr);
             }
         }
     }
@@ -191,7 +191,7 @@ public final class a {
             try {
                 f();
                 Camera open = Camera.open(f);
-                this.f27508a = open;
+                this.f13820a = open;
                 z = false;
                 if (open != null) {
                     z = false;
@@ -200,7 +200,7 @@ public final class a {
                     }
                 }
             } catch (Exception e) {
-                this.f27508a = null;
+                this.f13820a = null;
                 com.qiniu.pili.droid.shortvideo.f.e.f.e("CameraDevice", "failed to open camera " + f + " faceID is " + i + " : " + e.getMessage());
                 z = false;
             }
@@ -215,13 +215,13 @@ public final class a {
 
     public void b(int i) {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "setDisplayOrientation failed, camera == null");
                 return;
             }
             try {
-                this.f27508a.setDisplayOrientation(i);
-                this.f27509c = i;
+                this.f13820a.setDisplayOrientation(i);
+                this.f13821c = i;
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
                 eVar.c("CameraDevice", "setDisplayOrientation: " + i);
             } catch (RuntimeException e) {
@@ -238,7 +238,7 @@ public final class a {
 
     public void c(int i) {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "setExposureCompensation failed, camera == null");
                 return;
             }
@@ -248,34 +248,34 @@ public final class a {
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
                 eVar.e("CameraDevice", "setExposureCompensation failed: " + e.getMessage());
             }
-            if (!this.f27508a.getParameters().isAutoExposureLockSupported()) {
+            if (!this.f13820a.getParameters().isAutoExposureLockSupported()) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "setExposureCompensation failed, AutoExposureLock is unsupported");
                 return;
             }
-            this.f27508a.getParameters().setAutoExposureLock(false);
-            Camera.Parameters parameters = this.f27508a.getParameters();
+            this.f13820a.getParameters().setAutoExposureLock(false);
+            Camera.Parameters parameters = this.f13820a.getParameters();
             parameters.setExposureCompensation(i);
-            this.f27508a.setParameters(parameters);
+            this.f13820a.setParameters(parameters);
             com.qiniu.pili.droid.shortvideo.f.e eVar2 = com.qiniu.pili.droid.shortvideo.f.e.f;
-            eVar2.c("CameraDevice", "setExposure:" + i + " Current exposure: " + this.f27508a.getParameters().getExposureCompensation());
+            eVar2.c("CameraDevice", "setExposure:" + i + " Current exposure: " + this.f13820a.getParameters().getExposureCompensation());
         }
     }
 
     public void d(int i) {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "setZoom failed, camera == null");
                 return;
             }
             try {
-                Camera.Parameters parameters = this.f27508a.getParameters();
+                Camera.Parameters parameters = this.f13820a.getParameters();
                 if (i < 0 || i > parameters.getMaxZoom()) {
                     com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "zoom index out of valid range.");
                 } else {
                     com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
                     eVar.c("CameraDevice", "set zoom:" + i + ", current zoom: " + parameters.getZoom());
                     parameters.setZoom(i);
-                    this.f27508a.setParameters(parameters);
+                    this.f13820a.setParameters(parameters);
                 }
             } catch (RuntimeException e) {
                 e.printStackTrace();
@@ -288,19 +288,19 @@ public final class a {
     public boolean d() {
         boolean z;
         synchronized (this) {
-            z = this.f27508a != null;
+            z = this.f13820a != null;
         }
         return z;
     }
 
     public void e() {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "cancelAutoFocus failed, camera == null");
                 return;
             }
             try {
-                this.f27508a.cancelAutoFocus();
+                this.f13820a.cancelAutoFocus();
             } catch (RuntimeException e) {
                 e.printStackTrace();
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
@@ -311,9 +311,9 @@ public final class a {
 
     public void f() {
         synchronized (this) {
-            if (this.f27508a != null) {
-                this.f27508a.release();
-                this.f27508a = null;
+            if (this.f13820a != null) {
+                this.f13820a.release();
+                this.f13820a = null;
                 com.qiniu.pili.droid.shortvideo.f.e.f.c("CameraDevice", "release camera success");
             }
         }
@@ -336,7 +336,7 @@ public final class a {
     }
 
     public int i() {
-        return this.f27509c;
+        return this.f13821c;
     }
 
     public boolean j() {
@@ -346,12 +346,12 @@ public final class a {
     public Camera.Parameters k() {
         synchronized (this) {
             Camera.Parameters parameters = null;
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "getParameters failed, camera == null");
                 return null;
             }
             try {
-                parameters = this.f27508a.getParameters();
+                parameters = this.f13820a.getParameters();
             } catch (RuntimeException e) {
                 e.printStackTrace();
                 com.qiniu.pili.droid.shortvideo.f.e.f.e("CameraDevice", "getParameters failed: " + e.getMessage());
@@ -376,12 +376,12 @@ public final class a {
 
     public int m() {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "getMaxExposureCompensation failed, camera == null");
                 return 0;
             }
             try {
-                return this.f27508a.getParameters().getMaxExposureCompensation();
+                return this.f13820a.getParameters().getMaxExposureCompensation();
             } catch (RuntimeException e) {
                 e.printStackTrace();
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
@@ -393,12 +393,12 @@ public final class a {
 
     public int n() {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "getMinExposureCompensation failed, camera == null");
                 return 0;
             }
             try {
-                return this.f27508a.getParameters().getMinExposureCompensation();
+                return this.f13820a.getParameters().getMinExposureCompensation();
             } catch (RuntimeException e) {
                 e.printStackTrace();
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
@@ -410,12 +410,12 @@ public final class a {
 
     public List<Integer> o() {
         synchronized (this) {
-            if (this.f27508a == null || !this.f27508a.getParameters().isZoomSupported()) {
+            if (this.f13820a == null || !this.f13820a.getParameters().isZoomSupported()) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "getZoomRatios failed, camera == null or zoom not supported");
                 return null;
             }
             try {
-                return this.f27508a.getParameters().getZoomRatios();
+                return this.f13820a.getParameters().getZoomRatios();
             } catch (RuntimeException e) {
                 e.printStackTrace();
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
@@ -427,12 +427,12 @@ public final class a {
 
     public void p() {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "startPreview failed, camera == null");
                 return;
             }
             try {
-                this.f27508a.startPreview();
+                this.f13820a.startPreview();
                 com.qiniu.pili.droid.shortvideo.f.e.f.c("CameraDevice", "startPreview");
             } catch (RuntimeException e) {
                 e.printStackTrace();
@@ -444,12 +444,12 @@ public final class a {
 
     public void q() {
         synchronized (this) {
-            if (this.f27508a == null) {
+            if (this.f13820a == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.d("CameraDevice", "stopPreview failed, camera == null");
                 return;
             }
             try {
-                this.f27508a.stopPreview();
+                this.f13820a.stopPreview();
                 com.qiniu.pili.droid.shortvideo.f.e.f.c("CameraDevice", "stopPreview");
             } catch (RuntimeException e) {
                 e.printStackTrace();

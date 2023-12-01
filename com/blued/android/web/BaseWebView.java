@@ -24,6 +24,8 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import com.anythink.core.common.b.g;
+import com.anythink.core.common.l;
 import com.anythink.core.common.res.d;
 import com.app.share.ShareUtils;
 import com.app.share.model.ShareEntity;
@@ -53,15 +55,16 @@ import com.blued.android.framework.web.WebUploadFile;
 import com.blued.android.framework.web.cache.BluedWebViewCacheClient;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.PermissionUtils;
+import com.blued.android.module.common.web.LoaderConstants;
+import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.emoticon.manager.EmotionManager;
 import com.blued.android.module.common.widget.emoticon.manager.EmotionPackWebDownload;
 import com.blued.android.module.live_china.model.LiveRoomData;
 import com.blued.android.statistics.BluedStatistics;
 import com.blued.android.views.WebBtmOptions;
 import com.blued.android.web.BaseWebView;
+import com.blued.community.R;
 import com.bytedance.applog.tracker.Tracker;
-import com.huawei.openalliance.ad.constant.s;
-import com.soft.blued.R;
 import com.soft.blued.http.AppHttpUtils;
 import com.soft.blued.log.InstantLog;
 import com.soft.blued.ui.live.LiveRoomInfoChannel;
@@ -78,13 +81,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/web/BaseWebView.class */
 public class BaseWebView implements View.OnCreateContextMenuListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public ShareOptionRecyclerAdapter.ShareOptionsItemClickListener f18755a;
+    public ShareOptionRecyclerAdapter.ShareOptionsItemClickListener a;
     public WebBtmOptions b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f18756c;
+    public String c;
     public String d;
     public String e;
     private RectPosition f;
@@ -122,9 +121,7 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
     /* renamed from: com.blued.android.web.BaseWebView$2  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/web/BaseWebView$2.class */
     class AnonymousClass2 extends BluedWebChromeClient {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BaseWebView f18757a;
+        final /* synthetic */ BaseWebView a;
 
         @Override // com.blued.android.web.BluedWebChromeClient, android.webkit.WebChromeClient
         public void onGeolocationPermissionsShowPrompt(String str, GeolocationPermissions.Callback callback) {
@@ -133,82 +130,80 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
 
         @Override // android.webkit.WebChromeClient
         public void onHideCustomView() {
-            Logger.a("webTest", "onHideCustomView()");
-            if (this.f18757a.r == null) {
+            Logger.a("webTest", new Object[]{"onHideCustomView()"});
+            if (this.a.r == null) {
                 return;
             }
-            if (this.f18757a.j != null && this.f18757a.j.getActivity() != null) {
-                this.f18757a.j.getActivity().setRequestedOrientation(1);
+            if (this.a.j != null && this.a.j.getActivity() != null) {
+                this.a.j.getActivity().setRequestedOrientation(1);
             }
-            if (this.f18757a.l != null) {
-                this.f18757a.l.removeView(this.f18757a.r);
-                if (this.f18757a.s != null) {
-                    this.f18757a.s.onCustomViewHidden();
+            if (this.a.l != null) {
+                this.a.l.removeView(this.a.r);
+                if (this.a.s != null) {
+                    this.a.s.onCustomViewHidden();
                 }
-                this.f18757a.r = null;
-                this.f18757a.s = null;
+                this.a.r = null;
+                this.a.s = null;
             }
         }
 
         @Override // com.blued.android.web.BluedWebChromeClient, android.webkit.WebChromeClient
         public void onProgressChanged(WebView webView, int i) {
             super.onProgressChanged(webView, i);
-            if (this.f18757a.m != null) {
-                this.f18757a.m.a(this.f18757a, i);
+            if (this.a.m != null) {
+                this.a.m.a(this.a, i);
             }
         }
 
         @Override // android.webkit.WebChromeClient
         public void onReceivedTitle(WebView webView, String str) {
             super.onReceivedTitle(webView, str);
-            this.f18757a.v = str;
-            if (this.f18757a.m != null) {
-                this.f18757a.m.a(this.f18757a, str);
+            this.a.v = str;
+            if (this.a.m != null) {
+                this.a.m.a(this.a, str);
             }
         }
 
         @Override // android.webkit.WebChromeClient
         public void onShowCustomView(View view, WebChromeClient.CustomViewCallback customViewCallback) {
-            Logger.a("webTest", "onShowCustomView()");
-            if (this.f18757a.r != null) {
+            Logger.a("webTest", new Object[]{"onShowCustomView()"});
+            if (this.a.r != null) {
                 customViewCallback.onCustomViewHidden();
-            } else if (this.f18757a.j == null || this.f18757a.j.getActivity() == null) {
+            } else if (this.a.j == null || this.a.j.getActivity() == null) {
             } else {
-                this.f18757a.j.getActivity().setRequestedOrientation(0);
-                if (this.f18757a.l != null) {
-                    this.f18757a.l.addView(view);
-                    this.f18757a.r = view;
-                    this.f18757a.s = customViewCallback;
+                this.a.j.getActivity().setRequestedOrientation(0);
+                if (this.a.l != null) {
+                    this.a.l.addView(view);
+                    this.a.r = view;
+                    this.a.s = customViewCallback;
                 }
             }
         }
 
         @Override // com.blued.android.web.BluedWebChromeClient, android.webkit.WebChromeClient
         public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> valueCallback, WebChromeClient.FileChooserParams fileChooserParams) {
-            if (this.f18757a.n == null) {
-                BaseWebView baseWebView = this.f18757a;
+            if (this.a.n == null) {
+                BaseWebView baseWebView = this.a;
                 baseWebView.n = new WebUploadFile(baseWebView.j);
             }
-            this.f18757a.n.a(webView, valueCallback, fileChooserParams);
+            this.a.n.a(webView, valueCallback, fileChooserParams);
             return true;
         }
 
         @Override // com.blued.android.web.BluedWebChromeClient, android.webkit.WebChromeClient
         public void openFileChooser(ValueCallback<Uri> valueCallback, String str, String str2) {
-            if (this.f18757a.n == null) {
-                BaseWebView baseWebView = this.f18757a;
+            if (this.a.n == null) {
+                BaseWebView baseWebView = this.a;
                 baseWebView.n = new WebUploadFile(baseWebView.j);
             }
-            this.f18757a.n.a(valueCallback, str, str2);
+            this.a.n.a(valueCallback, str, str2);
         }
     }
 
     /* renamed from: com.blued.android.web.BaseWebView$3  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/web/BaseWebView$3.class */
     class AnonymousClass3 implements View.OnTouchListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BaseWebView f18758a;
+        final /* synthetic */ BaseWebView a;
 
         @Override // android.view.View.OnTouchListener
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -216,21 +211,21 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
             if (motionEvent.getAction() != 0) {
                 return false;
             }
-            this.f18758a.c();
-            if (this.f18758a.f != null) {
-                int i = this.f18758a.f.b;
-                int i2 = this.f18758a.f.e;
-                int i3 = (int) (i * this.f18758a.g.density);
-                int i4 = this.f18758a.i;
-                int i5 = this.f18758a.h;
-                int i6 = (int) (i2 * this.f18758a.g.density);
-                int i7 = this.f18758a.i;
-                int i8 = this.f18758a.h;
+            this.a.c();
+            if (this.a.f != null) {
+                int i = this.a.f.b;
+                int i2 = this.a.f.e;
+                int i3 = (int) (i * this.a.g.density);
+                int i4 = this.a.i;
+                int i5 = this.a.h;
+                int i6 = (int) (i2 * this.a.g.density);
+                int i7 = this.a.i;
+                int i8 = this.a.h;
                 if (rawY <= i3 + i4 + i5 || rawY >= i6 + i7 + i8) {
-                    this.f18758a.k.requestDisallowInterceptTouchEvent(false);
+                    this.a.k.requestDisallowInterceptTouchEvent(false);
                     return false;
                 }
-                this.f18758a.k.requestDisallowInterceptTouchEvent(true);
+                this.a.k.requestDisallowInterceptTouchEvent(true);
                 return false;
             }
             return false;
@@ -240,57 +235,55 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
     /* renamed from: com.blued.android.web.BaseWebView$4  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/web/BaseWebView$4.class */
     class AnonymousClass4 extends BluedWebViewCacheClient {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BaseWebView f18759a;
+        final /* synthetic */ BaseWebView a;
         private boolean b;
 
         @Override // android.webkit.WebViewClient
         public void onPageFinished(WebView webView, String str) {
-            if (CommonTools.a(this.f18759a.j)) {
-                Logger.a("webTest", "onPageFinished(), url:" + str);
+            if (CommonTools.a(this.a.j)) {
+                Logger.a("webTest", new Object[]{"onPageFinished(), url:" + str});
                 super.onPageFinished(webView, str);
-                Long l = (Long) this.f18759a.z.remove(str);
+                Long l = (Long) this.a.z.remove(str);
                 if (l != null) {
                     BluedStatistics.b().a(str, SystemClock.uptimeMillis() - l.longValue());
                 }
-                if (this.f18759a.o != null) {
-                    this.f18759a.o.a(str);
+                if (this.a.o != null) {
+                    this.a.o.a(str);
                 }
-                if (this.f18759a.m != null) {
-                    this.f18759a.m.b(this.f18759a, str, !this.b);
+                if (this.a.m != null) {
+                    this.a.m.b(this.a, str, !this.b);
                 }
-                if (!this.f18759a.w) {
-                    this.f18759a.w = true;
-                    BaseWebView baseWebView = this.f18759a;
-                    baseWebView.a(baseWebView.t, this.f18759a.u);
+                if (!this.a.w) {
+                    this.a.w = true;
+                    BaseWebView baseWebView = this.a;
+                    baseWebView.a(baseWebView.t, this.a.u);
                 }
-                this.f18759a.b();
+                this.a.b();
             }
         }
 
         @Override // android.webkit.WebViewClient
         public void onPageStarted(WebView webView, String str, Bitmap bitmap) {
-            Logger.a("webTest", "onPageStarted(), url:" + str);
-            this.f18759a.t = str;
+            Logger.a("webTest", new Object[]{"onPageStarted(), url:" + str});
+            this.a.t = str;
             super.onPageStarted(webView, str, bitmap);
-            this.f18759a.z.put(str, Long.valueOf(SystemClock.uptimeMillis()));
+            this.a.z.put(str, Long.valueOf(SystemClock.uptimeMillis()));
         }
 
         @Override // android.webkit.WebViewClient
         public void onReceivedError(WebView webView, int i, String str, String str2) {
-            Logger.a("webTest", "onReceivedError(), failingUrl:" + str2 + ", errorCode:" + i + ", description:" + str);
-            Long l = (Long) this.f18759a.z.remove(str2);
+            Logger.a("webTest", new Object[]{"onReceivedError(), failingUrl:" + str2 + ", errorCode:" + i + ", description:" + str});
+            Long l = (Long) this.a.z.remove(str2);
             BluedStatistics.b().a(str2, l != null ? SystemClock.uptimeMillis() - l.longValue() : -1L, i, str);
-            if (this.f18759a.m != null) {
-                this.f18759a.m.a(this.f18759a, i, str, str2);
+            if (this.a.m != null) {
+                this.a.m.a(this.a, i, str, str2);
             }
         }
 
         public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
             Uri url;
             int i = 0;
-            Logger.a("webTest", "onReceivedError(), request:" + webResourceRequest + ", error:" + webResourceError);
+            Logger.a("webTest", new Object[]{"onReceivedError(), request:" + webResourceRequest + ", error:" + webResourceError});
             String uri = (webResourceRequest == null || (url = webResourceRequest.getUrl()) == null) ? "" : url.toString();
             String str = "";
             if (webResourceError != null) {
@@ -304,41 +297,39 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
                 }
             }
             long j = -1;
-            Long l = (Long) this.f18759a.z.remove(uri);
+            Long l = (Long) this.a.z.remove(uri);
             if (l != null) {
                 j = SystemClock.uptimeMillis() - l.longValue();
             }
             BluedStatistics.b().a(uri, j, i, str);
-            if (this.f18759a.m == null || !this.f18759a.t.equals(uri)) {
+            if (this.a.m == null || !this.a.t.equals(uri)) {
                 return;
             }
-            this.f18759a.m.a(this.f18759a, i, str, uri);
+            this.a.m.a(this.a, i, str, uri);
         }
 
         @Override // android.webkit.WebViewClient
         public boolean shouldOverrideUrlLoading(WebView webView, String str) {
-            Logger.a("webTest", "shouldOverrideUrlLoading(), url:" + str);
-            boolean a2 = this.f18759a.a(str);
-            this.b = a2;
-            if (this.f18759a.m != null) {
-                this.f18759a.m.a(this.f18759a, str, !a2);
+            Logger.a("webTest", new Object[]{"shouldOverrideUrlLoading(), url:" + str});
+            boolean a = this.a.a(str);
+            this.b = a;
+            if (this.a.m != null) {
+                this.a.m.a(this.a, str, !a);
             }
-            return a2;
+            return a;
         }
     }
 
     /* renamed from: com.blued.android.web.BaseWebView$5  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/web/BaseWebView$5.class */
     class AnonymousClass5 implements DownloadListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BaseWebView f18760a;
+        final /* synthetic */ BaseWebView a;
 
         @Override // android.webkit.DownloadListener
         public void onDownloadStart(String str, String str2, String str3, String str4, long j) {
-            if (CommonTools.a(this.f18760a.j)) {
-                Logger.a("webTest", "onDownloadStart(), url:" + str);
-                this.f18760a.j.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(str)));
+            if (CommonTools.a(this.a.j)) {
+                Logger.a("webTest", new Object[]{"onDownloadStart(), url:" + str});
+                this.a.j.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(str)));
             }
         }
     }
@@ -362,30 +353,28 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/web/BaseWebView$InJavaScriptLocalObj.class */
     final class InJavaScriptLocalObj {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BaseWebView f18768a;
+        final /* synthetic */ BaseWebView a;
 
         @JavascriptInterface
         public void setOptionMenu(final String str) {
-            this.f18768a.k.post(new Runnable() { // from class: com.blued.android.web.BaseWebView.InJavaScriptLocalObj.2
+            this.a.k.post(new Runnable() { // from class: com.blued.android.web.BaseWebView.InJavaScriptLocalObj.2
                 @Override // java.lang.Runnable
                 public void run() {
-                    InJavaScriptLocalObj.this.f18768a.m.a(str);
+                    InJavaScriptLocalObj.this.a.m.a(str);
                 }
             });
         }
 
         @JavascriptInterface
         public void shareTo(final String str, String str2, final String str3, final String str4, final String str5) {
-            if (this.f18768a.j == null) {
+            if (this.a.j == null) {
                 return;
             }
             Runnable runnable = new Runnable() { // from class: com.blued.android.web.BaseWebView.InJavaScriptLocalObj.1
                 @Override // java.lang.Runnable
                 public void run() {
                     try {
-                        FragmentActivity activity = InJavaScriptLocalObj.this.f18768a.j.getActivity();
+                        FragmentActivity activity = InJavaScriptLocalObj.this.a.j.getActivity();
                         JSONObject jSONObject = new JSONObject(str);
                         if (StringUtils.d(jSONObject.getString("title"))) {
                             jSONObject.put("title", "No Title");
@@ -399,37 +388,37 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
                         if (!StringUtils.d(str4)) {
                             string3 = str4;
                         } else if (StringUtils.d(string3)) {
-                            string3 = !StringUtils.d(InJavaScriptLocalObj.this.f18768a.v) ? InJavaScriptLocalObj.this.f18768a.v : activity.getResources().getString(R.string.biao_common_share);
+                            string3 = !StringUtils.d(InJavaScriptLocalObj.this.a.v) ? InJavaScriptLocalObj.this.a.v : activity.getResources().getString(2131886585);
                         }
                         if (!StringUtils.d(str5)) {
                             string2 = str5;
                         } else if (StringUtils.d(string2) || string2.equalsIgnoreCase(string3)) {
-                            string2 = InJavaScriptLocalObj.this.f18768a.t;
+                            string2 = InJavaScriptLocalObj.this.a.t;
                         }
-                        if (InJavaScriptLocalObj.this.f18768a.y == 11) {
-                            string3 = activity.getResources().getString(2131892585);
+                        if (InJavaScriptLocalObj.this.a.y == 11) {
+                            string3 = activity.getResources().getString(R.string.view_point);
                         }
-                        ShareEntity a2 = ShareUtils.a().a(string, InJavaScriptLocalObj.this.f18768a.a(), string4, string3, string2, string2, intValue);
-                        a2.o = jSONObject.getString("activity_secret_code");
-                        a2.p = jSONObject.getString("activity_secret_text");
-                        a2.q = jSONObject.getString("activity_secret_copy");
-                        InJavaScriptLocalObj.this.f18768a.f18756c = jSONObject.getString("activity_secret_code");
-                        InJavaScriptLocalObj.this.f18768a.d = jSONObject.getString("activity_secret_text");
-                        InJavaScriptLocalObj.this.f18768a.e = jSONObject.getString("activity_secret_copy");
-                        Log.v("drb", "secretCode:" + InJavaScriptLocalObj.this.f18768a.f18756c);
-                        Log.v("drb", "secretText:" + InJavaScriptLocalObj.this.f18768a.d);
-                        Log.v("drb", "secretCopy:" + InJavaScriptLocalObj.this.f18768a.e);
-                        InJavaScriptLocalObj.this.f18768a.b.a(a2, InJavaScriptLocalObj.this.f18768a.f18755a);
+                        ShareEntity a = ShareUtils.a().a(string, InJavaScriptLocalObj.this.a.a(), string4, string3, string2, string2, intValue);
+                        a.o = jSONObject.getString("activity_secret_code");
+                        a.p = jSONObject.getString("activity_secret_text");
+                        a.q = jSONObject.getString("activity_secret_copy");
+                        InJavaScriptLocalObj.this.a.c = jSONObject.getString("activity_secret_code");
+                        InJavaScriptLocalObj.this.a.d = jSONObject.getString("activity_secret_text");
+                        InJavaScriptLocalObj.this.a.e = jSONObject.getString("activity_secret_copy");
+                        Log.v("drb", "secretCode:" + InJavaScriptLocalObj.this.a.c);
+                        Log.v("drb", "secretText:" + InJavaScriptLocalObj.this.a.d);
+                        Log.v("drb", "secretCopy:" + InJavaScriptLocalObj.this.a.e);
+                        InJavaScriptLocalObj.this.a.b.a(a, InJavaScriptLocalObj.this.a.a);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
             };
-            if (this.f18768a.j instanceof BaseFragment) {
-                ((BaseFragment) this.f18768a.j).postDelaySafeRunOnUiThread(runnable, 500L);
+            if (this.a.j instanceof BaseFragment) {
+                ((BaseFragment) this.a.j).postDelaySafeRunOnUiThread(runnable, 500L);
             }
-            if (this.f18768a.j instanceof BaseDialogFragment) {
-                ((BaseDialogFragment) this.f18768a.j).a(runnable, 500L);
+            if (this.a.j instanceof BaseDialogFragment) {
+                this.a.j.a(runnable, 500L);
             }
         }
     }
@@ -437,15 +426,13 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/web/BaseWebView$RectPosition.class */
     class RectPosition {
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f18773c;
+        private int c;
         private int d;
         private int e;
 
         public RectPosition(int i, int i2, int i3, int i4) {
             this.b = i2;
-            this.f18773c = i;
+            this.c = i;
             this.d = i3;
             this.e = i4;
         }
@@ -489,7 +476,7 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
                 String queryParameter4 = uri.getQueryParameter("from");
                 String str2 = queryParameter4;
                 if (TextUtils.isEmpty(queryParameter4)) {
-                    str2 = s.B;
+                    str2 = "web";
                 }
                 LiveRoomInfoChannel.a(context, new LiveRoomData(CommonTools.a(queryParameter2), 0, str2, str, "", "", 0));
                 return true;
@@ -500,13 +487,13 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
         if (TextUtils.isEmpty(queryParameter5)) {
             return false;
         }
-        String queryParameter6 = uri.getQueryParameter("code");
-        jSExecutor.a(jSExecutor.b(), "javascript:" + queryParameter5 + "('1', '" + queryParameter6 + "')");
+        String queryParameter6 = uri.getQueryParameter(g.c.b);
+        jSExecutor.a(jSExecutor.b(), BridgeUtil.JAVASCRIPT_STR + queryParameter5 + "('1', '" + queryParameter6 + "')");
         return false;
     }
 
     public static boolean a(Context context, String str, JSExecutor jSExecutor) {
-        Logger.a("webTest", "preOverrideUrlLoad(), url:" + str);
+        Logger.a("webTest", new Object[]{"preOverrideUrlLoad(), url:" + str});
         if (TextUtils.isEmpty(str) || CommonUrlHandler.a(context, str)) {
             return true;
         }
@@ -520,7 +507,7 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
             Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str));
             try {
                 if (AppMethods.a(intent)) {
-                    Logger.a("webTest", "system handle it: " + str);
+                    Logger.a("webTest", new Object[]{"system handle it: " + str});
                     context.startActivity(intent);
                     return true;
                 }
@@ -534,9 +521,9 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean a(String str) {
-        boolean a2 = a(this.j.getActivity(), str, this.o);
-        boolean z = a2;
-        if (!a2) {
+        boolean a = a((Context) this.j.getActivity(), str, this.o);
+        boolean z = a;
+        if (!a) {
             z = b(str);
         }
         return z;
@@ -550,14 +537,14 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
         String str6;
         String str7;
         String str8;
-        BluedUrlParser a2 = BluedUrlParser.a(str);
+        BluedUrlParser a = BluedUrlParser.a(str);
         int i = 0;
-        if (a2 != null && CommonTools.a(this.j)) {
+        if (a != null && CommonTools.a(this.j)) {
             String str9 = null;
-            if ("changetitle".equals(a2.a())) {
+            if ("changetitle".equals(a.a())) {
                 String str10 = null;
-                if (a2.b() != null) {
-                    str10 = a2.b().get("title");
+                if (a.b() != null) {
+                    str10 = a.b().get("title");
                 }
                 if (TextUtils.isEmpty(str10)) {
                     return true;
@@ -569,11 +556,11 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
                     return true;
                 }
                 return true;
-            } else if ("download".equals(a2.a())) {
-                if (a2.b() != null) {
-                    str9 = a2.b().get("opt");
-                    str7 = a2.b().get("code");
-                    str8 = a2.b().get("url");
+            } else if ("download".equals(a.a())) {
+                if (a.b() != null) {
+                    str9 = a.b().get("opt");
+                    str7 = a.b().get(g.c.b);
+                    str8 = a.b().get("url");
                 } else {
                     str7 = null;
                     str8 = null;
@@ -587,16 +574,16 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
                     WebDownloaderManager.a().a(this.o.b(), str8, str9, str7);
                     return true;
                 }
-            } else if (!"jscb".equals(a2.a())) {
-                if ("close".equals(a2.a())) {
+            } else if (!"jscb".equals(a.a())) {
+                if (LoaderConstants.CLOSE.equals(a.a())) {
                     this.j.getActivity().finish();
                     return false;
-                } else if (!"webshare".equals(a2.a())) {
+                } else if (!"webshare".equals(a.a())) {
                     WebCallback webCallback2 = this.m;
                     boolean z = false;
                     if (webCallback2 != null) {
                         z = false;
-                        if (webCallback2.a(this, a2)) {
+                        if (webCallback2.a(this, a)) {
                             z = true;
                         }
                     }
@@ -604,15 +591,15 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
                 } else {
                     InstantLog.a("url_to_native", str);
                     String str11 = this.t;
-                    Map<String, String> b = a2.b();
+                    Map<String, String> b = a.b();
                     String str12 = "";
                     if (b != null) {
-                        String str13 = a2.b().get("type");
+                        String str13 = a.b().get("type");
                         if (!StringUtils.d(str13)) {
                             i = Integer.valueOf(str13).intValue();
                         }
                         str3 = b.containsKey("title") ? b.get("title") : "";
-                        str4 = b.containsKey("content") ? b.get("content") : "";
+                        str4 = b.containsKey(l.y) ? b.get(l.y) : "";
                         str2 = b.containsKey("to") ? b.get("to") : "";
                         if (b.containsKey("url")) {
                             str11 = b.get("url");
@@ -631,9 +618,9 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
                     return true;
                 }
             } else {
-                if (a2.b() != null) {
-                    str6 = a2.b().get("opt");
-                    str5 = a2.b().get("fun");
+                if (a.b() != null) {
+                    str6 = a.b().get("opt");
+                    str5 = a.b().get("fun");
                 } else {
                     str5 = null;
                     str6 = null;
@@ -651,12 +638,12 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
                 } else if ("emotion_list".equals(str6)) {
                     String f = EmotionManager.f();
                     JSExecutor jSExecutor = this.o;
-                    jSExecutor.a(jSExecutor.b(), "javascript:" + str5 + "('" + f + "')");
+                    jSExecutor.a(jSExecutor.b(), BridgeUtil.JAVASCRIPT_STR + str5 + "('" + f + "')");
                     return true;
                 } else if ("get_uid".equals(str6)) {
                     String uid = UserInfo.getInstance().getLoginUserInfo().getUid();
                     JSExecutor jSExecutor2 = this.o;
-                    jSExecutor2.a(jSExecutor2.b(), "javascript:" + str5 + "('" + uid + "')");
+                    jSExecutor2.a(jSExecutor2.b(), BridgeUtil.JAVASCRIPT_STR + str5 + "('" + uid + "')");
                     return true;
                 } else {
                     return true;
@@ -715,11 +702,11 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
         try {
             str6 = new URL(str2).getHost();
         } catch (Exception e) {
-            str6 = d.f6907a;
+            str6 = d.a;
         }
-        String string = this.j.getActivity().getString(R.string.web_js_get_share_info);
+        String string = this.j.getActivity().getString(2131892784);
         WebView webView = this.k;
-        Tracker.loadUrl(webView, "javascript:" + string);
+        Tracker.loadUrl(webView, BridgeUtil.JAVASCRIPT_STR + string);
         WebView webView2 = this.k;
         Tracker.loadUrl(webView2, "javascript:getShareInfoFunction('" + str2 + "','" + str6 + "','" + str3 + "','" + str4 + "','" + str + "','" + i + "','" + str5 + "')");
     }
@@ -727,7 +714,7 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
     public void b() {
         String string = this.j.getActivity().getString(2131892783);
         WebView webView = this.k;
-        Tracker.loadUrl(webView, "javascript:" + string);
+        Tracker.loadUrl(webView, BridgeUtil.JAVASCRIPT_STR + string);
         Tracker.loadUrl(this.k, "javascript:getOptionMenuFunction()");
     }
 
@@ -743,13 +730,11 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
             /* renamed from: com.blued.android.web.BaseWebView$6$1  reason: invalid class name */
             /* loaded from: source-5382004-dex2jar.jar:com/blued/android/web/BaseWebView$6$1.class */
             class AnonymousClass1 extends FileHttpResponseHandler {
-
-                /* renamed from: a  reason: collision with root package name */
-                final /* synthetic */ String f18762a;
+                final /* synthetic */ String a;
                 final /* synthetic */ String b;
 
                 AnonymousClass1(String str, String str2) {
-                    this.f18762a = str;
+                    this.a = str;
                     this.b = str2;
                 }
 
@@ -760,27 +745,27 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
 
                         /* renamed from: com.blued.android.web.BaseWebView$6$1$1$1  reason: invalid class name and collision with other inner class name */
                         /* loaded from: source-5382004-dex2jar.jar:com/blued/android/web/BaseWebView$6$1$1$1.class */
-                        class C02881 extends ThreadExecutor {
-                            C02881(String str) {
+                        class C01641 extends ThreadExecutor {
+                            C01641(String str) {
                                 super(str);
                             }
 
                             /* JADX INFO: Access modifiers changed from: private */
                             public static /* synthetic */ void a(String str) {
                                 Context d = AppInfo.d();
-                                d.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://" + str)));
+                                d.sendBroadcast(new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE", Uri.parse("file://" + str)));
                                 AppMethods.a((CharSequence) (AppInfo.d().getString(2131891268) + str));
                             }
 
                             @Override // com.blued.android.framework.pool.ThreadExecutor
                             public void execute() {
                                 File externalStoragePublicDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-                                final String str = externalStoragePublicDirectory.getAbsolutePath() + File.separator + "blued" + File.separator + AnonymousClass1.this.f18762a;
-                                FileUtils.a(AnonymousClass1.this.b, str, AnonymousClass1.this.f18762a);
+                                final String str = externalStoragePublicDirectory.getAbsolutePath() + File.separator + "blued" + File.separator + AnonymousClass1.this.a;
+                                FileUtils.a(AnonymousClass1.this.b, str, AnonymousClass1.this.a);
                                 AppInfo.n().post(new Runnable() { // from class: com.blued.android.web.-$$Lambda$BaseWebView$6$1$1$1$x722J3Sq6N_eRbwTFzOj0rWbdDo
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        BaseWebView.AnonymousClass6.AnonymousClass1.C02871.C02881.a(String.this);
+                                        BaseWebView.AnonymousClass6.AnonymousClass1.C01631.C01641.a(String.this);
                                     }
                                 });
                             }
@@ -788,7 +773,7 @@ public class BaseWebView implements View.OnCreateContextMenuListener {
 
                         @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void U_() {
-                            ThreadManager.a().a((ThreadExecutor) new C02881("CopyImageToPicDir"));
+                            ThreadManager.a().a((ThreadExecutor) new C01641("CopyImageToPicDir"));
                         }
 
                         @Override // com.blued.android.framework.permission.PermissionCallbacks

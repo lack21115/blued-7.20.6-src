@@ -15,10 +15,10 @@ public class DownloadReqWrapper extends ResourceWrapper {
     public static final int TYPE_UNREGISTER_OBSERVER = 6;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f21547a = "dtp";
+    private static final String f7941a = "dtp";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f21548c = "dsp";
+    private static final String f7942c = "dsp";
     private static final String d = "dada";
     private static final String e = "dmc";
 
@@ -48,7 +48,7 @@ public class DownloadReqWrapper extends ResourceWrapper {
 
     public int getDownloadType() {
         try {
-            return getInt(f21547a);
+            return getInt(f7941a);
         } catch (ag e2) {
             return -1;
         }
@@ -56,7 +56,7 @@ public class DownloadReqWrapper extends ResourceWrapper {
 
     public String getSaveDir() {
         try {
-            return (String) get(f21548c);
+            return (String) get(f7942c);
         } catch (ag e2) {
             return "";
         }
@@ -72,10 +72,10 @@ public class DownloadReqWrapper extends ResourceWrapper {
     }
 
     public DownloadReqWrapper setDownloadType(int i) {
-        return (DownloadReqWrapper) set(f21547a, Integer.valueOf(i));
+        return (DownloadReqWrapper) set(f7941a, Integer.valueOf(i));
     }
 
     public DownloadReqWrapper setSaveDir(String str) {
-        return (DownloadReqWrapper) set(f21548c, str);
+        return (DownloadReqWrapper) set(f7942c, str);
     }
 }

@@ -101,13 +101,12 @@ public class FeedParse implements Serializable {
 
     public static CharSequence parseContent(final Context context, String str, final int i) {
         return StringUtils.a(AtUserHelper.a(MarkDownLinkHelper.a(context, StringUtils.a(str, CONTENT_TEXT_SIZE, 0), true, R.color.syc_m, true, (MarkDownLinkHelper.MDLinkOnClickListener) null), BluedSkinUtils.a(context, R.color.syc_m), new AtUserHelper.AtUserLinkOnClickListener() { // from class: com.blued.community.model.FeedParse.1
-            @Override // com.blued.community.utils.AtUserHelper.AtUserLinkOnClickListener
             public void onClick(String str2, String str3) {
                 if (!TextUtils.isEmpty(str2)) {
-                    CommunityServiceManager.b().a(Context.this, str2, FeedMethods.a(i, 0));
+                    CommunityServiceManager.b().a(context, str2, FeedMethods.a(i, 0));
                 } else if (TextUtils.isEmpty(str3)) {
                 } else {
-                    CommunityServiceManager.b().b(Context.this, str3, FeedMethods.a(i, 0));
+                    CommunityServiceManager.b().b(context, str3, FeedMethods.a(i, 0));
                 }
             }
         }), true, new boolean[0]);

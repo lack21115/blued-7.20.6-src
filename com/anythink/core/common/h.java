@@ -35,9 +35,7 @@ public abstract class h {
     ai Q;
     List<ai> R;
     protected WeakReference<Context> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected int f6736c;
+    protected int c;
     protected com.anythink.core.c.d e;
     protected String f;
     protected String g;
@@ -76,18 +74,17 @@ public abstract class h {
     };
     boolean P = false;
     boolean S = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected Context f6735a = com.anythink.core.common.b.n.a().g();
+    protected Context a = com.anythink.core.common.b.n.a().g();
     List<com.anythink.core.common.l.e> w = Collections.synchronizedList(new ArrayList(2));
     AdError y = ErrorCode.getErrorCode(ErrorCode.noADError, "", "");
     protected Map<String, com.anythink.core.common.l.d> G = new ConcurrentHashMap();
     List<ai> H = Collections.synchronizedList(new ArrayList(3));
     com.anythink.core.common.l.h K = new com.anythink.core.common.l.h();
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.core.common.h$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/h$2.class */
-    final class AnonymousClass2 implements Runnable {
+    public final class AnonymousClass2 implements Runnable {
         AnonymousClass2() {
         }
 
@@ -103,9 +100,10 @@ public abstract class h {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.core.common.h$3  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/h$3.class */
-    final class AnonymousClass3 implements Runnable {
+    public final class AnonymousClass3 implements Runnable {
         AnonymousClass3() {
         }
 
@@ -129,8 +127,8 @@ public abstract class h {
 
         @Override // com.anythink.core.common.l.b
         public final void a(com.anythink.core.common.e.e eVar) {
-            com.anythink.core.common.j.a.a(h.this.f6735a).a(1, eVar);
-            com.anythink.core.common.k.g.a(eVar, g.i.f6511a, g.i.h, "");
+            com.anythink.core.common.j.a.a(h.this.a).a(1, eVar);
+            com.anythink.core.common.k.g.a(eVar, g.i.a, g.i.h, "");
         }
 
         @Override // com.anythink.core.common.l.b
@@ -152,8 +150,8 @@ public abstract class h {
                 return;
             }
             com.anythink.core.common.l.a aVar = new com.anythink.core.common.l.a();
-            aVar.f6831a = 8;
-            aVar.f6832c = aTBaseAdAdapter.getTrackingInfo().K();
+            aVar.a = 8;
+            aVar.c = aTBaseAdAdapter.getTrackingInfo().K();
             aVar.b = ErrorCode.getErrorCode(ErrorCode.adSourceNotFilledError, "", "");
             aVar.d = aTBaseAdAdapter.getTrackingInfo();
             aVar.e = aTBaseAdAdapter.getUnitGroupInfo();
@@ -178,13 +176,9 @@ public abstract class h {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/h$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final int f6748a = 1;
+        public static final int a = 1;
         public static final int b = 2;
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final int f6749c = 3;
+        public static final int c = 3;
         public static final int d = 4;
         public static final int e = 5;
     }
@@ -229,9 +223,9 @@ public abstract class h {
     private void a(int i, List<ai> list, final k.a aVar) {
         boolean z = this.N != null || com.anythink.core.common.k.t.a(this.H);
         com.anythink.core.common.e.a aVar2 = new com.anythink.core.common.e.a();
-        aVar2.f6611a = this.f6735a;
+        aVar2.a = this.a;
         aVar2.b = this.j;
-        aVar2.f6612c = this.f;
+        aVar2.c = this.f;
         aVar2.d = this.g;
         aVar2.e = this.e.X();
         aVar2.f = this.e.H();
@@ -300,7 +294,7 @@ public abstract class h {
             String str3 = this.d;
             com.anythink.core.c.d dVar = this.e;
             int i = this.k;
-            int i2 = this.f6736c;
+            int i2 = this.c;
             j jVar = this.j;
             com.anythink.core.common.l.f.a(aiVar, com.anythink.core.common.k.s.a(str, str2, str3, dVar, "", 1, i, i2, jVar != null ? jVar.g : null), this.F, true);
         }
@@ -335,9 +329,9 @@ public abstract class h {
 
     static /* synthetic */ void a(h hVar, com.anythink.core.common.l.d dVar, com.anythink.core.common.e.e eVar) {
         com.anythink.core.common.l.c cVar = new com.anythink.core.common.l.c();
-        cVar.f6833a = hVar.f6735a;
+        cVar.a = hVar.a;
         cVar.b = hVar.b;
-        cVar.f6834c = hVar.f;
+        cVar.c = hVar.f;
         cVar.d = hVar.g;
         cVar.e = hVar.e;
         cVar.f = hVar.h;
@@ -389,14 +383,14 @@ public abstract class h {
         } else {
             eVar.s = 1;
         }
-        com.anythink.core.common.l.f.a(this.f6735a, this.g, this.f, aiVar, null);
+        com.anythink.core.common.l.f.a(this.a, this.g, this.f, aiVar, null);
     }
 
     private void a(com.anythink.core.common.l.d dVar, com.anythink.core.common.e.e eVar) {
         com.anythink.core.common.l.c cVar = new com.anythink.core.common.l.c();
-        cVar.f6833a = this.f6735a;
+        cVar.a = this.a;
         cVar.b = this.b;
-        cVar.f6834c = this.f;
+        cVar.c = this.f;
         cVar.d = this.g;
         cVar.e = this.e;
         cVar.f = this.h;
@@ -488,19 +482,19 @@ public abstract class h {
                     if (com.anythink.core.common.k.t.a(aiVar) && TextUtils.isEmpty(v.a().a(h.this.g, aiVar.c()))) {
                         v.a().a(h.this.g, aiVar.c(), aiVar.g());
                     }
-                    boolean c2 = h.c(i);
+                    boolean c = h.c(i);
                     String str2 = h.this.f;
                     String str3 = h.this.g;
                     String str4 = h.this.d;
                     com.anythink.core.c.d dVar = h.this.e;
-                    if (c2) {
+                    if (c) {
                         StringBuilder sb = new StringBuilder();
                         sb.append(aiVar.c());
                         str = sb.toString();
                     } else {
                         str = h.this.x;
                     }
-                    com.anythink.core.common.e.e a2 = com.anythink.core.common.k.s.a(str2, str3, str4, dVar, str, h.this.e.l(), h.this.k, h.this.f6736c, h.this.j != null ? h.this.j.g : null);
+                    com.anythink.core.common.e.e a2 = com.anythink.core.common.k.s.a(str2, str3, str4, dVar, str, h.this.e.l(), h.this.k, h.this.c, h.this.j != null ? h.this.j.g : null);
                     if (h.this.i != null) {
                         a2.a(h.this.i.a());
                     }
@@ -550,13 +544,13 @@ public abstract class h {
                                 if (N != null) {
                                     com.anythink.core.common.e.r rVar = new com.anythink.core.common.e.r();
                                     boolean z4 = z3;
-                                    rVar.f6674a = 1;
+                                    rVar.a = 1;
                                     boolean z5 = z3;
                                     rVar.b = N.getSortPrice();
                                     boolean z6 = z3;
                                     rVar.e = a2;
                                     boolean z7 = z3;
-                                    rVar.f6675c = aiVar;
+                                    rVar.c = aiVar;
                                     boolean z8 = z3;
                                     rVar.d = aiVar;
                                     z2 = z3;
@@ -574,9 +568,9 @@ public abstract class h {
                     h.this.A++;
                     if (z) {
                         com.anythink.core.common.l.a aVar = new com.anythink.core.common.l.a();
-                        aVar.f6831a = 6;
+                        aVar.a = 6;
                         aVar.b = ErrorCode.getErrorCode(ErrorCode.noADError, "", "Bid result has expired.");
-                        aVar.f6832c = 0L;
+                        aVar.c = 0L;
                         aVar.d = a2;
                         aVar.e = aiVar;
                         h.this.a(a3, aVar);
@@ -681,7 +675,7 @@ public abstract class h {
             StringBuilder sb = new StringBuilder();
             sb.append(this.g);
             sb.append(":filled timeup to check cache.");
-            com.anythink.core.common.e.b a2 = com.anythink.core.common.a.a().a(this.f6735a, this.g);
+            com.anythink.core.common.e.b a2 = com.anythink.core.common.a.a().a(this.a, this.g);
             this.s = true;
             if (this.o || a2 == null) {
                 StringBuilder sb2 = new StringBuilder();
@@ -744,7 +738,7 @@ public abstract class h {
                 this.p = true;
                 k();
                 if (this.L.d() == 0) {
-                    com.anythink.core.common.l.f.a(this.f6735a, this.g);
+                    com.anythink.core.common.l.f.a(this.a, this.g);
                     q();
                 }
             }
@@ -851,7 +845,7 @@ public abstract class h {
                 new StringBuilder("tryToSendLossNotice(), mHasHBAdSource: ").append(this.K.e());
             } else if (this.K.b()) {
             } else {
-                this.L.a(com.anythink.core.common.k.s.a(this.f, this.g, this.d, this.e, "", 1, this.k, this.f6736c, this.j != null ? this.j.g : null), this.F);
+                this.L.a(com.anythink.core.common.k.s.a(this.f, this.g, this.d, this.e, "", 1, this.k, this.c, this.j != null ? this.j.g : null), this.F);
             }
         }
     }
@@ -1079,7 +1073,7 @@ public abstract class h {
         String str4 = this.x;
         int l = dVar.l();
         int i = this.k;
-        int i2 = this.f6736c;
+        int i2 = this.c;
         j jVar2 = this.j;
         com.anythink.core.common.j.c.a(com.anythink.core.common.k.s.a(str, str2, str3, dVar, str4, l, i, i2, jVar2 != null ? jVar2.g : null), this.y);
         if (!this.P) {
@@ -1090,7 +1084,7 @@ public abstract class h {
                 f b = v.a().b(this.g);
                 if (b != null && (jVar = this.j) != null) {
                     jVar.d = 8;
-                    Context context = this.f6735a;
+                    Context context = this.a;
                     StringBuilder sb = new StringBuilder();
                     sb.append(this.e.X());
                     b.a(context, sb.toString(), this.g, (String) this.j, (com.anythink.core.common.b.a) null);
@@ -1103,7 +1097,7 @@ public abstract class h {
     }
 
     private void z() {
-        if (com.anythink.core.common.a.a().a(this.f6735a, this.g) != null) {
+        if (com.anythink.core.common.a.a().a(this.a, this.g) != null) {
             b(9);
         } else if (v()) {
         } else {
@@ -1111,8 +1105,7 @@ public abstract class h {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void a() {
+    protected final void a() {
         ConcurrentHashMap concurrentHashMap;
         synchronized (this) {
             this.K.a();
@@ -1161,7 +1154,7 @@ public abstract class h {
     public abstract void a(ATBaseAdAdapter aTBaseAdAdapter);
 
     public void a(AdError adError) {
-        com.anythink.core.common.k.n.a("Mediation", "placementId:" + this.g + ";result_callback:fail;loadType:" + this.k + ";");
+        com.anythink.core.common.k.n.a("Mediation", "placementId:" + this.g + ";result_callback:fail;loadType:" + this.k + com.alipay.sdk.util.i.b);
         j jVar = this.j;
         if (jVar == null || jVar.f == null) {
             return;
@@ -1186,9 +1179,9 @@ public abstract class h {
         this.u = this.L.b();
         this.m = gVar.e;
         this.f = gVar.b;
-        this.g = gVar.f6851a;
-        this.e = gVar.f6852c;
-        this.f6736c = gVar.f;
+        this.g = gVar.a;
+        this.e = gVar.c;
+        this.c = gVar.f;
         this.x = com.anythink.core.common.l.f.a(gVar.d);
     }
 
@@ -1212,7 +1205,7 @@ public abstract class h {
                 com.anythink.core.common.j.c.a(trackingInfo);
             }
             c(aTBaseAdAdapter.getTrackingInfo());
-            com.anythink.core.common.j.a.a(this.f6735a).a(2, trackingInfo);
+            com.anythink.core.common.j.a.a(this.a).a(2, trackingInfo);
             com.anythink.core.common.a.a().a(this.g, trackingInfo.z(), aTBaseAdAdapter, list, unitGroupInfo.p());
             com.anythink.core.common.k.g.a(trackingInfo, g.i.b, g.i.f, "");
             if (!this.P && !this.K.c() && (b = v.a().b(this.g)) != null && this.e.T() > 0) {
@@ -1227,7 +1220,7 @@ public abstract class h {
             com.anythink.core.common.e.e eVar = aVar.d;
             ai aiVar = aVar.e;
             AdError adError = aVar.b;
-            long j = aVar.f6832c;
+            long j = aVar.c;
             String x = eVar.x();
             com.anythink.core.common.l.d remove = this.G.remove(str);
             if (remove == null) {
@@ -1236,7 +1229,7 @@ public abstract class h {
             new StringBuilder("[Enter] onAdError(): ").append(aiVar.ab());
             b(aiVar);
             this.y.putNetworkErrorMsg(x, eVar.H(), eVar.T(), adError);
-            com.anythink.core.common.j.c.a(eVar, aVar.f6831a, adError, j);
+            com.anythink.core.common.j.c.a(eVar, aVar.a, adError, j);
             if (j > 0) {
                 if (this.l != null) {
                     this.l.b(eVar, adError);
@@ -1261,25 +1254,25 @@ public abstract class h {
                 this.K.f();
                 ai aiVar2 = list.get(0);
                 boolean a2 = com.anythink.core.common.l.f.a(aiVar2, this.K);
-                boolean c2 = this.L.c(aiVar2);
-                if (a2 || c2) {
+                boolean c = this.L.c(aiVar2);
+                if (a2 || c) {
                     StringBuilder sb = new StringBuilder("isAdvanceRequest: ");
                     sb.append(a2);
                     sb.append(", cutInLine: ");
-                    sb.append(c2);
-                    com.anythink.core.common.j.c.a(this.i, aiVar2.c(), aiVar2.t(), com.anythink.core.common.k.g.a(aiVar2), !this.o ? "1" : this.n ? "2" : "3", a2 ? "1" : c2 ? "2" : "1");
+                    sb.append(c);
+                    com.anythink.core.common.j.c.a(this.i, aiVar2.c(), aiVar2.t(), com.anythink.core.common.k.g.a(aiVar2), !this.o ? "1" : this.n ? "2" : "3", a2 ? "1" : c ? "2" : "1");
                     if (aiVar2.aa()) {
                         this.N = aiVar2;
                     }
                     this.L.a(aiVar2);
                     list.remove(0);
                     this.u.add(aiVar2);
-                    com.anythink.core.common.l.f.a(this.f6735a, this.g, this.f, null, aiVar2);
+                    com.anythink.core.common.l.f.a(this.a, this.g, this.f, null, aiVar2);
                     b(aiVar2, 3);
                 }
                 for (ai aiVar3 : list) {
                     this.L.a(aiVar3);
-                    com.anythink.core.common.l.f.a(this.f6735a, this.g, this.f, null, aiVar3);
+                    com.anythink.core.common.l.f.a(this.a, this.g, this.f, null, aiVar3);
                     if (this.D == null) {
                         this.D = new ConcurrentHashMap<>();
                     }
@@ -1293,9 +1286,9 @@ public abstract class h {
     /* JADX INFO: Access modifiers changed from: protected */
     public final void b() {
         long j;
-        List<ai> c2 = this.L.c();
-        this.v = c2;
-        if (c2 == null || c2.size() <= 0) {
+        List<ai> c = this.L.c();
+        this.v = c;
+        if (c == null || c.size() <= 0) {
             j = 1000;
         } else {
             long o = this.e.o();
@@ -1356,7 +1349,7 @@ public abstract class h {
         String str4 = this.x;
         int l = dVar.l();
         int i2 = this.k;
-        int i3 = this.f6736c;
+        int i3 = this.c;
         j jVar = this.j;
         com.anythink.core.common.e.e a2 = com.anythink.core.common.k.s.a(str, str2, str3, dVar, str4, l, i2, i3, jVar != null ? jVar.g : null);
         a2.a(true);
@@ -1364,12 +1357,12 @@ public abstract class h {
         if (z) {
             a2.z(i);
         }
-        com.anythink.core.common.j.a.a(this.f6735a).a(12, a2);
+        com.anythink.core.common.j.a.a(this.a).a(12, a2);
         f b = v.a().b(this.g);
         if (b != null && i != 10) {
             b.a(this.e.U());
         }
-        com.anythink.core.common.l.f.a(this.f6735a, this.g);
+        com.anythink.core.common.l.f.a(this.a, this.g);
         u();
     }
 
@@ -1406,7 +1399,7 @@ public abstract class h {
     }
 
     public void h() {
-        com.anythink.core.common.k.n.a("Mediation", "placementId:" + this.g + ";result_callback:success;loadType:" + this.k + ";");
+        com.anythink.core.common.k.n.a("Mediation", "placementId:" + this.g + ";result_callback:success;loadType:" + this.k + com.alipay.sdk.util.i.b);
         j jVar = this.j;
         if (jVar == null || jVar.f == null) {
             return;

@@ -1,6 +1,5 @@
 package com.blued.android.chat.core.worker.link;
 
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.IMDebuger;
 import com.blued.android.chat.core.pack.BasePackage;
@@ -474,7 +473,7 @@ public class SocketThread extends Thread {
         if (sendThread != null && sendThread.isAlive()) {
             this.sendThread.notifyStop();
             try {
-                this.sendThread.join(m.ag);
+                this.sendThread.join(3000L);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -486,7 +485,7 @@ public class SocketThread extends Thread {
         }
         this.recvThread.notifyStop();
         try {
-            this.recvThread.join(m.ag);
+            this.recvThread.join(3000L);
         } catch (InterruptedException e2) {
             e2.printStackTrace();
         }

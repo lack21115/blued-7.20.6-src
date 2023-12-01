@@ -29,7 +29,7 @@ public final class HashingInputStream extends FilterInputStream {
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int read() throws IOException {
-        int read = this.f42254in.read();
+        int read = this.in.read();
         if (read != -1) {
             this.hasher.putByte((byte) read);
         }
@@ -38,7 +38,7 @@ public final class HashingInputStream extends FilterInputStream {
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int read(byte[] bArr, int i, int i2) throws IOException {
-        int read = this.f42254in.read(bArr, i, i2);
+        int read = this.in.read(bArr, i, i2);
         if (read != -1) {
             this.hasher.putBytes(bArr, i, read);
         }

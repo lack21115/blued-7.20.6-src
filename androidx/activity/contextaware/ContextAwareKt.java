@@ -22,41 +22,39 @@ public final class ContextAwareKt {
         if (peekAvailableContext != null) {
             return function1.invoke(peekAvailableContext);
         }
-        CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.a(continuation), 1);
+        CancellableContinuation cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.a(continuation), 1);
         cancellableContinuationImpl.e();
-        final CancellableContinuationImpl cancellableContinuationImpl2 = cancellableContinuationImpl;
+        final CancellableContinuation cancellableContinuation = cancellableContinuationImpl;
         final ?? r0 = new OnContextAvailableListener() { // from class: androidx.activity.contextaware.ContextAwareKt$withContextAvailable$$inlined$suspendCancellableCoroutine$lambda$1
             @Override // androidx.activity.contextaware.OnContextAvailableListener
             public void onContextAvailable(Context context) {
                 Object f;
                 Intrinsics.e(context, "context");
-                CancellableContinuation cancellableContinuation = CancellableContinuation.this;
+                CancellableContinuation cancellableContinuation2 = cancellableContinuation;
                 try {
-                    Result.Companion companion = Result.f42293a;
+                    Result.Companion companion = Result.a;
                     ContextAwareKt$withContextAvailable$$inlined$suspendCancellableCoroutine$lambda$1 contextAwareKt$withContextAvailable$$inlined$suspendCancellableCoroutine$lambda$1 = this;
                     f = Result.f(function1.invoke(context));
                 } catch (Throwable th) {
-                    Result.Companion companion2 = Result.f42293a;
+                    Result.Companion companion2 = Result.a;
                     f = Result.f(ResultKt.a(th));
                 }
-                cancellableContinuation.resumeWith(f);
+                cancellableContinuation2.resumeWith(f);
             }
         };
         contextAware.addOnContextAvailableListener((OnContextAvailableListener) r0);
-        cancellableContinuationImpl2.a((Function1<? super Throwable, Unit>) new Function1<Throwable, Unit>() { // from class: androidx.activity.contextaware.ContextAwareKt$withContextAvailable$$inlined$suspendCancellableCoroutine$lambda$2
+        cancellableContinuation.a(new Function1<Throwable, Unit>() { // from class: androidx.activity.contextaware.ContextAwareKt$withContextAvailable$$inlined$suspendCancellableCoroutine$lambda$2
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(1);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
-                invoke2(th);
-                return Unit.f42314a;
+            public /* bridge */ /* synthetic */ Object invoke(Object obj) {
+                invoke((Throwable) obj);
+                return Unit.a;
             }
 
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Throwable th) {
+            public final void invoke(Throwable th) {
                 contextAware.removeOnContextAvailableListener(ContextAwareKt$withContextAvailable$$inlined$suspendCancellableCoroutine$lambda$1.this);
             }
         });

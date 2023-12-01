@@ -1,6 +1,5 @@
 package java.lang;
 
-import com.kuaishou.weapon.p0.t;
 import java.util.Locale;
 import libcore.icu.ICU;
 import libcore.icu.Transliterator;
@@ -28,13 +27,13 @@ public class CaseMapper {
         if (i3 <= i) {
             return false;
         }
-        char c2 = cArr[i3 - 1];
-        if (Character.isLowerCase(c2) || Character.isUpperCase(c2) || Character.isTitleCase(c2)) {
+        char c = cArr[i3 - 1];
+        if (Character.isLowerCase(c) || Character.isUpperCase(c) || Character.isTitleCase(c)) {
             if (i3 + 1 >= i + i2) {
                 return true;
             }
-            char c3 = cArr[i3 + 1];
-            return (Character.isLowerCase(c3) || Character.isUpperCase(c3) || Character.isTitleCase(c3)) ? false : true;
+            char c2 = cArr[i3 + 1];
+            return (Character.isLowerCase(c2) || Character.isUpperCase(c2) || Character.isTitleCase(c2)) ? false : true;
         }
         return false;
     }
@@ -48,17 +47,17 @@ public class CaseMapper {
             int i3 = 0;
             int i4 = i;
             while (i4 < i + i2) {
-                char c2 = cArr[i4];
-                if (c2 == 304 || Character.isHighSurrogate(c2)) {
+                char c = cArr[i4];
+                if (c == 304 || Character.isHighSurrogate(c)) {
                     return ICU.toLowerCase(str, locale);
                 }
-                char lowerCase = (c2 == GREEK_CAPITAL_SIGMA && isFinalSigma(cArr, i, i2, i4)) ? GREEK_SMALL_FINAL_SIGMA : Character.toLowerCase(c2);
+                char lowerCase = (c == GREEK_CAPITAL_SIGMA && isFinalSigma(cArr, i, i2, i4)) ? GREEK_SMALL_FINAL_SIGMA : Character.toLowerCase(c);
                 int i5 = i3;
                 char[] cArr3 = cArr2;
                 if (cArr2 == null) {
                     i5 = i3;
                     cArr3 = cArr2;
-                    if (c2 != lowerCase) {
+                    if (c != lowerCase) {
                         cArr3 = new char[i2];
                         i5 = i4 - i;
                         System.arraycopy(cArr, i, cArr3, 0, i5);
@@ -86,18 +85,18 @@ public class CaseMapper {
         String language = locale.getLanguage();
         if (language.equals("tr") || language.equals("az") || language.equals("lt")) {
             str = ICU.toUpperCase(str, locale);
-        } else if (language.equals(t.n)) {
+        } else if (language.equals("el")) {
             return EL_UPPER.get().transliterate(str);
         } else {
             char[] cArr3 = null;
             int i4 = i;
             int i5 = 0;
             while (i4 < i + i2) {
-                char c2 = cArr[i4];
-                if (Character.isHighSurrogate(c2)) {
+                char c = cArr[i4];
+                if (Character.isHighSurrogate(c)) {
                     return ICU.toUpperCase(str, locale);
                 }
-                int upperIndex = upperIndex(c2);
+                int upperIndex = upperIndex(c);
                 if (upperIndex == -1) {
                     cArr2 = cArr3;
                     if (cArr3 != null) {
@@ -107,8 +106,8 @@ public class CaseMapper {
                             System.arraycopy(cArr3, 0, cArr2, 0, cArr3.length);
                         }
                     }
-                    char upperCase = Character.toUpperCase(c2);
-                    if (c2 != upperCase) {
+                    char upperCase = Character.toUpperCase(c);
+                    if (c != upperCase) {
                         if (cArr2 == null) {
                             cArr2 = new char[i2];
                             i5 = i4 - i;
@@ -120,7 +119,7 @@ public class CaseMapper {
                         i3 = i5;
                         cArr3 = cArr2;
                         if (cArr2 != null) {
-                            cArr2[i5] = c2;
+                            cArr2[i5] = c;
                             i5++;
                         }
                         i5 = i3;
@@ -128,28 +127,28 @@ public class CaseMapper {
                     }
                 } else {
                     int i6 = upperIndex * 3;
-                    char c3 = upperValues[i6 + 2];
+                    char c2 = upperValues[i6 + 2];
                     if (cArr3 == null) {
                         cArr3 = new char[(i2 / 6) + i2 + 2];
                         i5 = i4 - i;
                         System.arraycopy(cArr, i, cArr3, 0, i5);
                     } else {
-                        if ((c3 == 0 ? 1 : 2) + i5 >= cArr3.length) {
+                        if ((c2 == 0 ? 1 : 2) + i5 >= cArr3.length) {
                             char[] cArr4 = new char[cArr3.length + (i2 / 6) + 3];
                             System.arraycopy(cArr3, 0, cArr4, 0, cArr3.length);
                             cArr3 = cArr4;
                         }
                     }
-                    char c4 = upperValues[i6];
+                    char c3 = upperValues[i6];
                     int i7 = i5 + 1;
-                    cArr3[i5] = c4;
-                    char c5 = upperValues[i6 + 1];
+                    cArr3[i5] = c3;
+                    char c4 = upperValues[i6 + 1];
                     int i8 = i7 + 1;
-                    cArr3[i7] = c5;
+                    cArr3[i7] = c4;
                     i5 = i8;
                     cArr2 = cArr3;
-                    if (c3 != 0) {
-                        cArr3[i8] = c3;
+                    if (c2 != 0) {
+                        cArr3[i8] = c2;
                         i3 = i8 + 1;
                         i5 = i3;
                         cArr2 = cArr3;
@@ -166,7 +165,7 @@ public class CaseMapper {
     }
 
     private static int upperIndex(int i) {
-        char c2 = 65535;
+        char c = 65535;
         if (i >= 223) {
             if (i <= 1415) {
                 switch (i) {
@@ -183,39 +182,39 @@ public class CaseMapper {
                     case 1415:
                         return 5;
                     default:
-                        c2 = -1;
+                        c = -1;
                         break;
                 }
             } else {
-                c2 = 65535;
+                c = 65535;
                 if (i >= 7830) {
                     if (i <= 7834) {
-                        c2 = (i + 6) - 7830;
+                        c = (i + 6) - 7830;
                     } else if (i < 8016 || i > 8188) {
-                        c2 = 65535;
+                        c = 65535;
                         if (i >= 64256) {
                             if (i <= 64262) {
-                                c2 = (i + 90) - 64256;
+                                c = (i + 90) - 64256;
                             } else {
-                                c2 = 65535;
+                                c = 65535;
                                 if (i >= 64275) {
-                                    c2 = 65535;
+                                    c = 65535;
                                     if (i <= 64279) {
-                                        c2 = (i + 97) - 64275;
+                                        c = (i + 97) - 64275;
                                     }
                                 }
                             }
                         }
                     } else {
-                        char c3 = upperValues2[i - 8016];
-                        c2 = c3;
-                        if (c3 == 0) {
-                            c2 = -1;
+                        char c2 = upperValues2[i - 8016];
+                        c = c2;
+                        if (c2 == 0) {
+                            c = -1;
                         }
                     }
                 }
             }
         }
-        return c2;
+        return c;
     }
 }

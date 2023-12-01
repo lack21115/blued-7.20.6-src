@@ -9,7 +9,7 @@ import okio.ByteString;
 public final class o extends com.heytap.nearx.a.a.b<o, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<o> f26355c = new b();
+    public static final com.heytap.nearx.a.a.e<o> f12667c = new b();
     public static final Integer d = 0;
     private static final long serialVersionUID = 0;
     public final Integer e;
@@ -19,11 +19,11 @@ public final class o extends com.heytap.nearx.a.a.b<o, a> {
     public static final class a extends b.a<o, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public Integer f26356c;
+        public Integer f12668c;
         public String d;
 
         public a a(Integer num) {
-            this.f26356c = num;
+            this.f12668c = num;
             return this;
         }
 
@@ -34,9 +34,9 @@ public final class o extends com.heytap.nearx.a.a.b<o, a> {
 
         public o b() {
             String str;
-            Integer num = this.f26356c;
+            Integer num = this.f12668c;
             if (num == null || (str = this.d) == null) {
-                throw com.heytap.nearx.a.a.a.b.a(this.f26356c, at.C, this.d, "dyMaterialUrl");
+                throw com.heytap.nearx.a.a.a.b.a(this.f12668c, at.C, this.d, "dyMaterialUrl");
             }
             return new o(num, str, super.a());
         }
@@ -83,7 +83,7 @@ public final class o extends com.heytap.nearx.a.a.b<o, a> {
     }
 
     public o(Integer num, String str, ByteString byteString) {
-        super(f26355c, byteString);
+        super(f12667c, byteString);
         this.e = num;
         this.f = str;
     }

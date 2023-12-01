@@ -5,7 +5,6 @@ import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.DisplayMetrics;
-import com.alipay.sdk.util.i;
 import java.util.Arrays;
 import libcore.util.EmptyArray;
 import libcore.util.Objects;
@@ -287,7 +286,7 @@ public final class DisplayInfo implements Parcelable {
             sb.append(" (uid ").append(this.ownerUid).append(")");
         }
         sb.append(flagsToString(this.flags));
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

@@ -31,16 +31,16 @@ import javax.net.ssl.SSLSocketFactory;
 public final class RetryAndFollowUpInterceptor implements Interceptor {
 
     /* renamed from: a  reason: collision with root package name */
-    private final OkHttpClient f35956a;
+    private final OkHttpClient f22265a;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile StreamAllocation f35957c;
+    private volatile StreamAllocation f22266c;
     private Object d;
     private volatile boolean e;
 
     public RetryAndFollowUpInterceptor(OkHttpClient okHttpClient, boolean z) {
-        this.f35956a = okHttpClient;
+        this.f22265a = okHttpClient;
         this.b = z;
     }
 
@@ -60,15 +60,15 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
         CertificatePinner certificatePinner;
         SSLSocketFactory sSLSocketFactory;
         if (httpUrl.isHttps()) {
-            sSLSocketFactory = this.f35956a.sslSocketFactory();
-            hostnameVerifier = this.f35956a.hostnameVerifier();
-            certificatePinner = this.f35956a.certificatePinner();
+            sSLSocketFactory = this.f22265a.sslSocketFactory();
+            hostnameVerifier = this.f22265a.hostnameVerifier();
+            certificatePinner = this.f22265a.certificatePinner();
         } else {
             hostnameVerifier = null;
             certificatePinner = null;
             sSLSocketFactory = null;
         }
-        return new Address(httpUrl.host(), httpUrl.port(), this.f35956a.dns(), this.f35956a.socketFactory(), sSLSocketFactory, hostnameVerifier, certificatePinner, this.f35956a.proxyAuthenticator(), this.f35956a.proxy(), this.f35956a.protocols(), this.f35956a.connectionSpecs(), this.f35956a.proxySelector());
+        return new Address(httpUrl.host(), httpUrl.port(), this.f22265a.dns(), this.f22265a.socketFactory(), sSLSocketFactory, hostnameVerifier, certificatePinner, this.f22265a.proxyAuthenticator(), this.f22265a.proxy(), this.f22265a.protocols(), this.f22265a.connectionSpecs(), this.f22265a.proxySelector());
     }
 
     private Request a(Response response, Route route) throws IOException {
@@ -88,12 +88,12 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
                     }
                     return null;
                 } else if (code == 407) {
-                    if ((route != null ? route.proxy() : this.f35956a.proxy()).type() == Proxy.Type.HTTP) {
-                        return this.f35956a.proxyAuthenticator().authenticate(route, response);
+                    if ((route != null ? route.proxy() : this.f22265a.proxy()).type() == Proxy.Type.HTTP) {
+                        return this.f22265a.proxyAuthenticator().authenticate(route, response);
                     }
                     throw new ProtocolException("Received HTTP_PROXY_AUTH (407) code while not using proxy");
                 } else if (code == 408) {
-                    if (this.f35956a.retryOnConnectionFailure() && !(response.request().body() instanceof UnrepeatableRequestBody)) {
+                    if (this.f22265a.retryOnConnectionFailure() && !(response.request().body() instanceof UnrepeatableRequestBody)) {
                         if ((response.priorResponse() == null || response.priorResponse().code() != 408) && a(response, 0) <= 0) {
                             return response.request();
                         }
@@ -112,12 +112,12 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
                     }
                 }
             } else {
-                return this.f35956a.authenticator().authenticate(route, response);
+                return this.f22265a.authenticator().authenticate(route, response);
             }
-            if (!this.f35956a.followRedirects() || (header = response.header(com.google.common.net.HttpHeaders.LOCATION)) == null || (resolve = response.request().url().resolve(header)) == null) {
+            if (!this.f22265a.followRedirects() || (header = response.header(com.google.common.net.HttpHeaders.LOCATION)) == null || (resolve = response.request().url().resolve(header)) == null) {
                 return null;
             }
-            if (resolve.scheme().equals(response.request().url().scheme()) || this.f35956a.followSslRedirects()) {
+            if (resolve.scheme().equals(response.request().url().scheme()) || this.f22265a.followSslRedirects()) {
                 Request.Builder newBuilder = response.request().newBuilder();
                 if (HttpMethod.permitsRequestBody(method)) {
                     boolean redirectsWithBody = HttpMethod.redirectsWithBody(method);
@@ -153,7 +153,7 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
 
     private boolean a(IOException iOException, StreamAllocation streamAllocation, boolean z, Request request) {
         streamAllocation.streamFailed(iOException);
-        if (this.f35956a.retryOnConnectionFailure()) {
+        if (this.f22265a.retryOnConnectionFailure()) {
             return !(z && (request.body() instanceof UnrepeatableRequestBody)) && a(iOException, z) && streamAllocation.hasMoreRoutes();
         }
         return false;
@@ -178,7 +178,7 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
 
     public void cancel() {
         this.e = true;
-        StreamAllocation streamAllocation = this.f35957c;
+        StreamAllocation streamAllocation = this.f22266c;
         if (streamAllocation != null) {
             streamAllocation.cancel();
         }
@@ -191,8 +191,8 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
         RealInterceptorChain realInterceptorChain = (RealInterceptorChain) chain;
         Call call = realInterceptorChain.call();
         EventListener eventListener = realInterceptorChain.eventListener();
-        StreamAllocation streamAllocation = new StreamAllocation(this.f35956a.connectionPool(), a(request.url()), call, eventListener, this.d);
-        this.f35957c = streamAllocation;
+        StreamAllocation streamAllocation = new StreamAllocation(this.f22265a.connectionPool(), a(request.url()), call, eventListener, this.d);
+        this.f22266c = streamAllocation;
         Response response2 = null;
         int i = 0;
         Request request2 = request;
@@ -232,8 +232,8 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
                     } else {
                         if (!a(response, a2.url())) {
                             streamAllocation.release();
-                            streamAllocation = new StreamAllocation(this.f35956a.connectionPool(), a(a2.url()), call, eventListener, this.d);
-                            this.f35957c = streamAllocation;
+                            streamAllocation = new StreamAllocation(this.f22265a.connectionPool(), a(a2.url()), call, eventListener, this.d);
+                            this.f22266c = streamAllocation;
                         } else if (streamAllocation.codec() != null) {
                             throw new IllegalStateException("Closing the body of " + response + " didn't close its backing stream. Bad interceptor?");
                         }
@@ -263,6 +263,6 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
     }
 
     public StreamAllocation streamAllocation() {
-        return this.f35957c;
+        return this.f22266c;
     }
 }

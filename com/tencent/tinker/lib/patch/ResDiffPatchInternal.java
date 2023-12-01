@@ -2,7 +2,6 @@ package com.tencent.tinker.lib.patch;
 
 import android.content.Context;
 import android.os.SystemClock;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.bsdiff.BSPatch;
 import com.tencent.tinker.commons.util.IOHelper;
 import com.tencent.tinker.lib.tinker.Tinker;
@@ -372,7 +371,7 @@ public class ResDiffPatchInternal extends BasePatchInternal {
     }
 
     private static boolean patchResourceExtractViaResourceDiff(Context context, String str, String str2, File file) {
-        if (extractResourceDiffInternals(context, str + BridgeUtil.SPLIT_MARK + ShareConstants.RES_PATH + BridgeUtil.SPLIT_MARK, str2, file, 6)) {
+        if (extractResourceDiffInternals(context, str + "/" + ShareConstants.RES_PATH + "/", str2, file, 6)) {
             return true;
         }
         ShareTinkerLog.w(TAG, "patch recover, extractDiffInternals fail", new Object[0]);

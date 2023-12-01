@@ -5,13 +5,9 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/util/l.class */
 public class l {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f4671a = "resultStatus";
+    public static final String a = "resultStatus";
     public static final String b = "memo";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f4672c = "result";
+    public static final String c = "result";
 
     private static String a(String str, String str2) {
         String str3 = str2 + "={";
@@ -21,9 +17,9 @@ public class l {
     private static Map<String, String> a() {
         com.alipay.sdk.app.k b2 = com.alipay.sdk.app.k.b(com.alipay.sdk.app.k.CANCELED.a());
         HashMap hashMap = new HashMap();
-        hashMap.put(f4671a, Integer.toString(b2.a()));
+        hashMap.put(a, Integer.toString(b2.a()));
         hashMap.put(b, b2.b());
-        hashMap.put("result", "");
+        hashMap.put(c, "");
         return hashMap;
     }
 
@@ -38,7 +34,7 @@ public class l {
     }
 
     public static Map<String, String> a(String str) {
-        String[] split = str.split(";");
+        String[] split = str.split(i.b);
         HashMap hashMap = new HashMap();
         int length = split.length;
         int i = 0;

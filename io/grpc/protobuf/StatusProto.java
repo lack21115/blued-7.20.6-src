@@ -33,18 +33,18 @@ public final class StatusProto {
     public static Status fromThrowable(Throwable th) {
         Throwable th2 = (Throwable) Preconditions.checkNotNull(th, "t");
         while (true) {
-            Throwable th3 = th2;
-            if (th3 == null) {
+            StatusRuntimeException statusRuntimeException = th2;
+            if (statusRuntimeException == null) {
                 return null;
             }
-            if (th3 instanceof StatusException) {
-                StatusException statusException = (StatusException) th3;
+            if (statusRuntimeException instanceof StatusException) {
+                StatusException statusException = (StatusException) statusRuntimeException;
                 return fromStatusAndTrailers(statusException.getStatus(), statusException.getTrailers());
-            } else if (th3 instanceof StatusRuntimeException) {
-                StatusRuntimeException statusRuntimeException = (StatusRuntimeException) th3;
-                return fromStatusAndTrailers(statusRuntimeException.getStatus(), statusRuntimeException.getTrailers());
+            } else if (statusRuntimeException instanceof StatusRuntimeException) {
+                StatusRuntimeException statusRuntimeException2 = statusRuntimeException;
+                return fromStatusAndTrailers(statusRuntimeException2.getStatus(), statusRuntimeException2.getTrailers());
             } else {
-                th2 = th3.getCause();
+                th2 = statusRuntimeException.getCause();
             }
         }
     }

@@ -10,9 +10,7 @@ import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/apng/decode/StillFrame.class */
 public class StillFrame extends Frame<APNGReader, APNGWriter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f9540a = !StillFrame.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean a = !StillFrame.class.desiredAssertionStatus();
 
     public StillFrame(APNGReader aPNGReader) {
         super(aPNGReader);
@@ -35,7 +33,7 @@ public class StillFrame extends Frame<APNGReader, APNGWriter> {
             bitmap2 = null;
         }
         try {
-            if (f9540a || decodeStream != null) {
+            if (a || decodeStream != null) {
                 paint.setXfermode(null);
                 canvas.drawBitmap(decodeStream, 0.0f, 0.0f, paint);
                 return decodeStream;

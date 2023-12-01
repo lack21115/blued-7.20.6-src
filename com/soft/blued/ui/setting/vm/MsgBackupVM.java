@@ -1,6 +1,7 @@
 package com.soft.blued.ui.setting.vm;
 
 import android.util.Log;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelKt;
 import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.core.AppInfo;
@@ -13,6 +14,7 @@ import com.blued.android.module.common.extensions.BluedStructureExtKt;
 import com.blued.android.module.common.trace.EventTrackSettings;
 import com.blued.android.module.common.txcloud.TxCloud;
 import com.blued.das.settings.SettingsProtos;
+import com.cdo.oaps.ad.OapsWrapper;
 import com.soft.blued.R;
 import com.soft.blued.ui.setting.model.MsgBackInfo;
 import com.soft.blued.ui.setting.state.MsgBackupAction;
@@ -24,9 +26,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import kotlin.Metadata;
+import kotlin.coroutines.CoroutineContext;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
+import kotlinx.coroutines.CoroutineStart;
 
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/setting/vm/MsgBackupVM.class */
@@ -34,11 +40,11 @@ public final class MsgBackupVM extends MVIBaseViewModel<MsgBackupState, MsgBacku
     private MsgBackInfo d;
 
     /* renamed from: a  reason: collision with root package name */
-    private final SimpleDateFormat f33654a = new SimpleDateFormat("yyyy-MM-dd", BlueAppLocal.c());
+    private final SimpleDateFormat f19963a = new SimpleDateFormat("yyyy-MM-dd", BlueAppLocal.c());
     private final String b = "msg_backup_info";
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f33655c = AppInfo.d().getCacheDir().getAbsolutePath();
+    private final String f19964c = AppInfo.d().getCacheDir().getAbsolutePath();
     private String e = "";
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -59,50 +65,46 @@ public final class MsgBackupVM extends MVIBaseViewModel<MsgBackupState, MsgBacku
     }
 
     private final void a() {
-        MsgBackupManager.getInstance().reserveMsgDb(BluedBaseDataHelper.a().b(), null, new MsgBackupManager.ReserveListener() { // from class: com.soft.blued.ui.setting.vm.MsgBackupVM$backup$1
-            @Override // com.blued.android.chat.grpc.backup.MsgBackupManager.ReserveListener
-            public void onError(String message) {
-                Intrinsics.e(message, "message");
-                MsgBackupVM.this.showToast(message);
-                BluedStructureExtKt.a(MsgBackupVM.this, new MviEvent.LoadFinished(false, false, 3, null));
+        MsgBackupManager.getInstance().reserveMsgDb(BluedBaseDataHelper.a().b(), (List) null, new MsgBackupManager.ReserveListener() { // from class: com.soft.blued.ui.setting.vm.MsgBackupVM$backup$1
+            public void onError(String str) {
+                Intrinsics.e(str, "message");
+                MsgBackupVM.this.showToast(str);
+                BluedStructureExtKt.a(MsgBackupVM.this, new MviEvent.LoadFinished(false, false, 3, (DefaultConstructorMarker) null));
             }
 
-            @Override // com.blued.android.chat.grpc.backup.MsgBackupManager.ReserveListener
-            public void onReserveSucceed(String path) {
-                Intrinsics.e(path, "path");
-                File file = new File(path);
-                MsgBackupVM.this.e = path;
+            public void onReserveSucceed(String str) {
+                Intrinsics.e(str, OapsWrapper.KEY_PATH);
+                File file = new File(str);
+                MsgBackupVM.this.e = str;
                 String absolutePath = new File(AppInfo.d().getExternalFilesDir("blued"), file.getName()).getAbsolutePath();
                 Log.d("getExternalFilesDir:", absolutePath);
                 MsgBackupVM.this.a(file, absolutePath);
-                if (!BluedApiProxy.f10622a) {
+                if (!BluedApiProxy.a) {
                     if (file.length() / 1048576 >= 150) {
-                        BluedStructureExtKt.a(MsgBackupVM.this, MsgBackupAction.MsgBackupEvent.FileLimitDialog.f33638a);
+                        BluedStructureExtKt.a(MsgBackupVM.this, MsgBackupAction.MsgBackupEvent.FileLimitDialog.f19947a);
                         return;
                     } else {
-                        MsgBackupVM.this.a(path);
+                        MsgBackupVM.this.a(str);
                         return;
                     }
                 }
                 MsgBackupVM msgBackupVM = MsgBackupVM.this;
                 msgBackupVM.showToast(AppInfo.d().getString(R.string.msg_backup_complete) + ':' + ((Object) absolutePath));
-                BluedStructureExtKt.a(MsgBackupVM.this, new MviEvent.LoadFinished(false, false, 3, null));
+                BluedStructureExtKt.a(MsgBackupVM.this, new MviEvent.LoadFinished(false, false, 3, (DefaultConstructorMarker) null));
             }
 
-            @Override // com.blued.android.chat.grpc.backup.MsgBackupManager.ReserveListener
             public void onRestoreSucceed() {
             }
 
-            @Override // com.blued.android.chat.grpc.backup.MsgBackupManager.ReserveListener
             public void onStart() {
-                BluedStructureExtKt.a(MsgBackupVM.this, MviEvent.LoadStarted.f10685a);
+                BluedStructureExtKt.a(MsgBackupVM.this, MviEvent.LoadStarted.a);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(String str) {
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new MsgBackupVM$uploadDB$1(this, str, null), 3, null);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new MsgBackupVM$uploadDB$1(this, str, null), 3, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -141,11 +143,11 @@ public final class MsgBackupVM extends MVIBaseViewModel<MsgBackupState, MsgBacku
     }
 
     private final void b() {
-        if (BluedApiProxy.f10622a) {
+        if (BluedApiProxy.a) {
             c();
         } else if (this.d != null) {
-            BluedStructureExtKt.a(this, MviEvent.LoadStarted.f10685a);
-            BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new MsgBackupVM$downAndRestore$1(this, null), 3, null);
+            BluedStructureExtKt.a(this, MviEvent.LoadStarted.a);
+            BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new MsgBackupVM$downAndRestore$1(this, null), 3, (Object) null);
         } else {
             String string = AppInfo.d().getString(R.string.msg_restore_no_file);
             Intrinsics.c(string, "getAppContext().getStrin…ring.msg_restore_no_file)");
@@ -156,69 +158,63 @@ public final class MsgBackupVM extends MVIBaseViewModel<MsgBackupState, MsgBacku
     /* JADX INFO: Access modifiers changed from: private */
     public final void b(String str) {
         MsgBackupManager.getInstance().restoreMsgDb(str, new MsgBackupManager.ReserveListener() { // from class: com.soft.blued.ui.setting.vm.MsgBackupVM$restoreDB$1
-            @Override // com.blued.android.chat.grpc.backup.MsgBackupManager.ReserveListener
-            public void onError(String message) {
-                Intrinsics.e(message, "message");
-                MsgBackupVM.this.showToast(message);
+            public void onError(String str2) {
+                Intrinsics.e(str2, "message");
+                MsgBackupVM.this.showToast(str2);
                 EventTrackSettings.a(SettingsProtos.Event.MINE_RECOVERY_RECORD_FAIL);
-                BluedStructureExtKt.a(MsgBackupVM.this, new MviEvent.LoadFinished(false, false, 3, null));
+                BluedStructureExtKt.a(MsgBackupVM.this, new MviEvent.LoadFinished(false, false, 3, (DefaultConstructorMarker) null));
             }
 
-            @Override // com.blued.android.chat.grpc.backup.MsgBackupManager.ReserveListener
-            public void onReserveSucceed(String path) {
-                Intrinsics.e(path, "path");
+            public void onReserveSucceed(String str2) {
+                Intrinsics.e(str2, OapsWrapper.KEY_PATH);
             }
 
-            @Override // com.blued.android.chat.grpc.backup.MsgBackupManager.ReserveListener
             public void onRestoreSucceed() {
                 EventTrackSettings.a(SettingsProtos.Event.MINE_RECOVERY_RECORD_SUCCESS);
                 MsgBackupVM msgBackupVM = MsgBackupVM.this;
                 String string = AppInfo.d().getString(R.string.msg_backup_complete);
                 Intrinsics.c(string, "getAppContext().getStrin…ring.msg_backup_complete)");
                 msgBackupVM.showToast(string);
-                BluedStructureExtKt.a(MsgBackupVM.this, new MviEvent.LoadFinished(false, false, 3, null));
+                BluedStructureExtKt.a(MsgBackupVM.this, new MviEvent.LoadFinished(false, false, 3, (DefaultConstructorMarker) null));
             }
 
-            @Override // com.blued.android.chat.grpc.backup.MsgBackupManager.ReserveListener
             public void onStart() {
             }
         });
     }
 
     private final void c() {
-        BluedStructureExtKt.a(this, MviEvent.LoadStarted.f10685a);
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new MsgBackupVM$RestoreFromLocal$1(this, null), 3, null);
+        BluedStructureExtKt.a(this, MviEvent.LoadStarted.a);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new MsgBackupVM$RestoreFromLocal$1(this, null), 3, (Object) null);
     }
 
     private final void d() {
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new MsgBackupVM$getBackupInfo$1(this, null), 3, null);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new MsgBackupVM$getBackupInfo$1(this, null), 3, (Object) null);
     }
 
     private final void delete() {
-        BluedStructureExtKt.a(this, MviEvent.LoadStarted.f10685a);
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new MsgBackupVM$delete$1(this, null), 3, null);
+        BluedStructureExtKt.a(this, MviEvent.LoadStarted.a);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new MsgBackupVM$delete$1(this, null), 3, (Object) null);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseViewModel
     /* renamed from: a */
-    public void dispatchAction(MsgBackupAction action) {
-        Intrinsics.e(action, "action");
-        if (Intrinsics.a(action, MsgBackupAction.GetBackupInfo.f33637a)) {
+    public void dispatchAction(MsgBackupAction msgBackupAction) {
+        Intrinsics.e(msgBackupAction, "action");
+        if (Intrinsics.a(msgBackupAction, MsgBackupAction.GetBackupInfo.f19946a)) {
             d();
-        } else if (Intrinsics.a(action, MsgBackupAction.Backup.f33634a)) {
+        } else if (Intrinsics.a(msgBackupAction, MsgBackupAction.Backup.f19943a)) {
             a();
-        } else if (Intrinsics.a(action, MsgBackupAction.Delete.f33635a)) {
+        } else if (Intrinsics.a(msgBackupAction, MsgBackupAction.Delete.f19944a)) {
             delete();
-        } else if (Intrinsics.a(action, MsgBackupAction.DownloadAndRestore.f33636a)) {
+        } else if (Intrinsics.a(msgBackupAction, MsgBackupAction.DownloadAndRestore.f19945a)) {
             b();
-        } else if (Intrinsics.a(action, MsgBackupAction.UploadFile.f33639a)) {
+        } else if (Intrinsics.a(msgBackupAction, MsgBackupAction.UploadFile.f19948a)) {
             a(this.e);
         }
     }
 
-    @Override // androidx.lifecycle.ViewModel
     public void onCleared() {
         super.onCleared();
-        TxCloud.f10836a.c();
+        TxCloud.a.c();
     }
 }

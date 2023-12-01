@@ -1,6 +1,5 @@
 package io.grpc.inprocess;
 
-import android.net.ProxyInfo;
 import com.google.common.base.Preconditions;
 import io.grpc.ChannelLogger;
 import io.grpc.internal.AbstractManagedChannelImplBuilder;
@@ -64,7 +63,7 @@ public final class InProcessChannelBuilder extends AbstractManagedChannelImplBui
     }
 
     private InProcessChannelBuilder(String str) {
-        super(new InProcessSocketAddress(str), ProxyInfo.LOCAL_HOST);
+        super(new InProcessSocketAddress(str), "localhost");
         this.maxInboundMetadataSize = Integer.MAX_VALUE;
         this.transportIncludeStatusCause = false;
         this.name = (String) Preconditions.checkNotNull(str, "name");
@@ -89,27 +88,24 @@ public final class InProcessChannelBuilder extends AbstractManagedChannelImplBui
         return new InProcessClientTransportFactory(this.name, this.scheduledExecutorService, this.maxInboundMetadataSize, this.transportIncludeStatusCause);
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public InProcessChannelBuilder keepAliveTime(long j, TimeUnit timeUnit) {
         return this;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public InProcessChannelBuilder keepAliveTimeout(long j, TimeUnit timeUnit) {
         return this;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public InProcessChannelBuilder keepAliveWithoutCalls(boolean z) {
         return this;
     }
 
-    @Override // io.grpc.internal.AbstractManagedChannelImplBuilder, io.grpc.ManagedChannelBuilder
-    public final InProcessChannelBuilder maxInboundMessageSize(int i) {
+    @Override // io.grpc.internal.AbstractManagedChannelImplBuilder
+    /* renamed from: maxInboundMessageSize */
+    public final InProcessChannelBuilder mo11343maxInboundMessageSize(int i) {
         return (InProcessChannelBuilder) super.maxInboundMessageSize(i);
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public InProcessChannelBuilder maxInboundMetadataSize(int i) {
         Preconditions.checkArgument(i > 0, "maxInboundMetadataSize must be > 0");
         this.maxInboundMetadataSize = i;
@@ -126,12 +122,10 @@ public final class InProcessChannelBuilder extends AbstractManagedChannelImplBui
         return this;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public InProcessChannelBuilder usePlaintext() {
         return this;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public InProcessChannelBuilder useTransportSecurity() {
         return this;
     }

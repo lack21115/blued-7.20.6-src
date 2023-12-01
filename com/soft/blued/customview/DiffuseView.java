@@ -19,11 +19,11 @@ public class DiffuseView extends View {
     private static SparseArray<Bitmap> q = new SparseArray<>();
 
     /* renamed from: a  reason: collision with root package name */
-    private int f28405a;
+    private int f14715a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Bitmap f28406c;
+    private Bitmap f14716c;
     private float d;
     private int e;
     private float f;
@@ -44,7 +44,7 @@ public class DiffuseView extends View {
 
     public DiffuseView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f28405a = getResources().getColor(2131101190);
+        this.f14715a = getResources().getColor(2131101190);
         this.b = getResources().getColor(2131099875);
         this.e = 3;
         this.f = 50.0f;
@@ -53,7 +53,7 @@ public class DiffuseView extends View {
         this.k = new ArrayList();
         this.l = new ArrayList();
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.DiffuseView, i, 0);
-        this.f28405a = obtainStyledAttributes.getColor(0, this.f28405a);
+        this.f14715a = obtainStyledAttributes.getColor(0, this.f14715a);
         this.b = obtainStyledAttributes.getColor(1, this.b);
         this.d = obtainStyledAttributes.getFloat(3, this.d);
         this.e = obtainStyledAttributes.getInt(8, this.e);
@@ -62,12 +62,12 @@ public class DiffuseView extends View {
         this.i = obtainStyledAttributes.getDimensionPixelSize(5, 50);
         this.j = obtainStyledAttributes.getDimensionPixelOffset(4, 50);
         int resourceId = obtainStyledAttributes.getResourceId(2, -1);
-        int i2 = this.i + this.f28405a;
+        int i2 = this.i + this.f14715a;
         Bitmap bitmap = q.get(i2);
-        this.f28406c = bitmap;
+        this.f14716c = bitmap;
         if (bitmap == null && resourceId != -1) {
             Bitmap createScaledBitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), resourceId), this.i, this.j, true);
-            this.f28406c = createScaledBitmap;
+            this.f14716c = createScaledBitmap;
             q.put(i2, createScaledBitmap);
         }
         obtainStyledAttributes.recycle();
@@ -78,9 +78,9 @@ public class DiffuseView extends View {
         this.m = new Paint();
         this.n = new Paint();
         this.p = true;
-        Bitmap bitmap = this.f28406c;
+        Bitmap bitmap = this.f14716c;
         this.d = bitmap == null ? 0 : bitmap.getHeight() / 2;
-        this.m.setColor(this.f28405a);
+        this.m.setColor(this.f14715a);
         this.m.setAntiAlias(true);
         this.n.setAntiAlias(true);
         this.k.add(Float.valueOf(204.0f));
@@ -120,7 +120,7 @@ public class DiffuseView extends View {
                 float floatValue2 = this.l.get(i2).floatValue();
                 float f = this.f;
                 if (floatValue2 < f) {
-                    float height = 204.0f / (f - (this.f28406c.getHeight() / 2));
+                    float height = 204.0f / (f - (this.f14716c.getHeight() / 2));
                     float f2 = this.g;
                     this.l.set(i2, Float.valueOf(f2 + floatValue2));
                     List<Float> list = this.k;
@@ -141,14 +141,14 @@ public class DiffuseView extends View {
                 this.k.add(Float.valueOf(204.0f));
                 this.l.add(Float.valueOf(0.0f));
             }
-            Bitmap bitmap = this.f28406c;
+            Bitmap bitmap = this.f14716c;
             if (bitmap != null) {
-                canvas.drawBitmap(bitmap, (getWidth() / 2) - (this.f28406c.getWidth() / 2), (getHeight() / 2) - (this.f28406c.getHeight() / 2), this.n);
+                canvas.drawBitmap(bitmap, (getWidth() / 2) - (this.f14716c.getWidth() / 2), (getHeight() / 2) - (this.f14716c.getHeight() / 2), this.n);
             }
         } else {
-            Bitmap bitmap2 = this.f28406c;
+            Bitmap bitmap2 = this.f14716c;
             if (bitmap2 != null) {
-                canvas.drawBitmap(bitmap2, (getWidth() / 2) - (this.f28406c.getWidth() / 2), (getHeight() / 2) - (this.f28406c.getHeight() / 2), this.n);
+                canvas.drawBitmap(bitmap2, (getWidth() / 2) - (this.f14716c.getWidth() / 2), (getHeight() / 2) - (this.f14716c.getHeight() / 2), this.n);
             }
         }
         if (this.l.size() == 2 && this.l.get(1).floatValue() >= this.f) {
@@ -169,7 +169,7 @@ public class DiffuseView extends View {
     }
 
     public void setColor(int i) {
-        this.f28405a = i;
+        this.f14715a = i;
     }
 
     public void setCoreColor(int i) {
@@ -177,7 +177,7 @@ public class DiffuseView extends View {
     }
 
     public void setCoreImage(int i) {
-        this.f28406c = BitmapFactory.decodeResource(getResources(), i);
+        this.f14716c = BitmapFactory.decodeResource(getResources(), i);
     }
 
     public void setCoreRadius(int i) {

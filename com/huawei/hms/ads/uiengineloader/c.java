@@ -6,20 +6,19 @@ import dalvik.system.PathClassLoader;
 public final class c extends PathClassLoader {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22548a = c.class.getSimpleName();
+    private static final String f8940a = c.class.getSimpleName();
 
     public c(String str, ClassLoader classLoader) {
         super(str, classLoader);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.lang.ClassLoader
-    public final Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
+    protected final Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
         if (!str.startsWith("java.") && !str.startsWith("android.")) {
             try {
                 return findClass(str);
             } catch (ClassNotFoundException e) {
-                aa.c(f22548a, "Cannot find The class:".concat(String.valueOf(str)));
+                aa.c(f8940a, "Cannot find The class:".concat(String.valueOf(str)));
             }
         }
         return super.loadClass(str, z);

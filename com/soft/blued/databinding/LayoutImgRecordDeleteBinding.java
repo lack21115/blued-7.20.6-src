@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutImgRecordDeleteBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29394a;
+    private final RelativeLayout f15704a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29394a;
+        return this.f15704a;
     }
 }

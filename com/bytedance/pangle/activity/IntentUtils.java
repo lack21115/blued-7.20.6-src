@@ -10,12 +10,12 @@ import java.util.HashMap;
 public class IntentUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    static HashMap<Long, WeakReference<Bundle>> f21354a = new HashMap<>();
+    static HashMap<Long, WeakReference<Bundle>> f7748a = new HashMap<>();
 
     public static void a(Intent intent) {
         long longExtra = intent.getLongExtra("pangle_use_memory", 0L);
         if (longExtra != 0) {
-            WeakReference<Bundle> remove = f21354a.remove(Long.valueOf(longExtra));
+            WeakReference<Bundle> remove = f7748a.remove(Long.valueOf(longExtra));
             Bundle bundle = remove != null ? remove.get() : null;
             if (bundle != null) {
                 intent.putExtras(bundle);
@@ -35,7 +35,7 @@ public class IntentUtils {
         if (j != 0) {
             Bundle extras = intent.getExtras();
             intent.replaceExtras((Bundle) null);
-            f21354a.put(Long.valueOf(j), new WeakReference<>(extras));
+            f7748a.put(Long.valueOf(j), new WeakReference<>(extras));
             intent.putExtra("pangle_use_memory", j);
         }
     }

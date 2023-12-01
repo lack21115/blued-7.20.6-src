@@ -4,24 +4,24 @@ package com.qiniu.pili.droid.shortvideo.f;
 public abstract class k implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile boolean f27684a = false;
+    private volatile boolean f13996a = false;
     private volatile boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private Thread f27685c;
+    private Thread f13997c;
 
     public boolean a() {
-        e.f27672a.c(j(), "start +");
-        if (this.f27684a) {
-            e.f27672a.d(j(), "already started !");
+        e.f13984a.c(j(), "start +");
+        if (this.f13996a) {
+            e.f13984a.d(j(), "already started !");
             return false;
         }
-        this.f27684a = true;
+        this.f13996a = true;
         c(false);
         Thread thread = new Thread(this, j());
-        this.f27685c = thread;
+        this.f13997c = thread;
         thread.start();
-        e.f27672a.c(j(), "start -");
+        e.f13984a.c(j(), "start -");
         return true;
     }
 
@@ -30,14 +30,14 @@ public abstract class k implements Runnable {
     }
 
     public boolean c() {
-        e.f27672a.c(j(), "stop +");
-        if (!this.f27684a) {
-            e.f27672a.d(j(), "already stopped !");
+        e.f13984a.c(j(), "stop +");
+        if (!this.f13996a) {
+            e.f13984a.d(j(), "already stopped !");
             return false;
         }
         c(true);
-        this.f27684a = false;
-        e.f27672a.c(j(), "stop -");
+        this.f13996a = false;
+        e.f13984a.c(j(), "stop -");
         return true;
     }
 
@@ -45,7 +45,7 @@ public abstract class k implements Runnable {
     public abstract String j();
 
     public boolean l() {
-        return this.f27684a;
+        return this.f13996a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

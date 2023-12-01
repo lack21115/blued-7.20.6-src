@@ -19,6 +19,7 @@ import android.system.ErrnoException;
 import android.system.Os;
 import android.system.OsConstants;
 import android.util.Log;
+import com.huawei.hms.ads.fw;
 import java.io.BufferedInputStream;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -385,6 +386,6 @@ public final class DocumentsContract {
     }
 
     public static Uri setManageMode(Uri uri) {
-        return uri.buildUpon().appendQueryParameter(PARAM_MANAGE, "true").build();
+        return uri.buildUpon().appendQueryParameter(PARAM_MANAGE, fw.Code).build();
     }
 }

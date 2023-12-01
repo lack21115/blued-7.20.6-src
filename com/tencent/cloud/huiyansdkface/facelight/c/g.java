@@ -7,12 +7,12 @@ import android.content.SharedPreferences;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SharedPreferences f35582a;
+    private static SharedPreferences f21891a;
     private static SharedPreferences.Editor b;
 
     public g(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("wb_face_config", 0);
-        f35582a = sharedPreferences;
+        f21891a = sharedPreferences;
         b = sharedPreferences.edit();
     }
 
@@ -39,6 +39,6 @@ public class g {
     }
 
     public Object b(String str, Object obj) {
-        return obj instanceof String ? f35582a.getString(str, (String) obj) : obj instanceof Integer ? Integer.valueOf(f35582a.getInt(str, ((Integer) obj).intValue())) : obj instanceof Boolean ? Boolean.valueOf(f35582a.getBoolean(str, ((Boolean) obj).booleanValue())) : f35582a.getString(str, null);
+        return obj instanceof String ? f21891a.getString(str, (String) obj) : obj instanceof Integer ? Integer.valueOf(f21891a.getInt(str, ((Integer) obj).intValue())) : obj instanceof Boolean ? Boolean.valueOf(f21891a.getBoolean(str, ((Boolean) obj).booleanValue())) : f21891a.getString(str, null);
     }
 }

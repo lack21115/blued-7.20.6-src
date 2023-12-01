@@ -17,10 +17,10 @@ public class l1111l111111Il {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.ishumei.l111l1111l1Il.l1111l111111Il$l1111l111111Il  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/ishumei/l111l1111l1Il/l1111l111111Il$l1111l111111Il.class */
-    public static final class C0460l1111l111111Il {
+    public static final class C0290l1111l111111Il {
         private static final l1111l111111Il l1111l111111Il = new l1111l111111Il((byte) 0);
 
-        private C0460l1111l111111Il() {
+        private C0290l1111l111111Il() {
         }
     }
 
@@ -41,8 +41,8 @@ public class l1111l111111Il {
     }
 
     public static l1111l111111Il l1111l111111Il(String str) {
-        l1111l111111Il unused = C0460l1111l111111Il.l1111l111111Il;
-        l1111l111111Il l1111l111111il = C0460l1111l111111Il.l1111l111111Il;
+        l1111l111111Il unused = C0290l1111l111111Il.l1111l111111Il;
+        l1111l111111Il l1111l111111il = C0290l1111l111111Il.l1111l111111Il;
         l1111l111111Il l1111l111111il2 = new l1111l111111Il();
         l1111l111111il2.l111l1111lIl = l1111l111111il.l111l1111lIl;
         l1111l111111il2.l111l11111lIl = l1111l111111il.l111l11111lIl;
@@ -76,7 +76,7 @@ public class l1111l111111Il {
     }
 
     public static void l1111l111111Il(SmAntiFraud.SmOption smOption) {
-        l1111l111111Il l1111l111111il = C0460l1111l111111Il.l1111l111111Il;
+        l1111l111111Il l1111l111111il = C0290l1111l111111Il.l1111l111111Il;
         if (smOption.l111l1111l1Il() != null) {
             l1111l111111il.l111l1111lI1l = smOption.l111l1111l1Il();
         }
@@ -120,7 +120,7 @@ public class l1111l111111Il {
     }
 
     private static l1111l111111Il l11l1111I1l() {
-        l1111l111111Il l1111l111111il = C0460l1111l111111Il.l1111l111111Il;
+        l1111l111111Il l1111l111111il = C0290l1111l111111Il.l1111l111111Il;
         l1111l111111Il l1111l111111il2 = new l1111l111111Il();
         l1111l111111il2.l111l1111lIl = l1111l111111il.l111l1111lIl;
         l1111l111111il2.l111l11111lIl = l1111l111111il.l111l11111lIl;
@@ -132,7 +132,7 @@ public class l1111l111111Il {
     }
 
     private static l1111l111111Il l11l1111lIIl() {
-        return C0460l1111l111111Il.l1111l111111Il;
+        return C0290l1111l111111Il.l1111l111111Il;
     }
 
     public final boolean l1111l111111Il() {

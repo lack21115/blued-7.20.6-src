@@ -3,7 +3,6 @@ package com.xiaomi.push.service;
 import android.content.Context;
 import android.os.Messenger;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.xiaomi.mipush.sdk.ErrorCode;
 import com.xiaomi.push.Cif;
 import com.xiaomi.push.cz;
@@ -28,7 +27,7 @@ public final class ah {
         ic icVar = new ic();
         try {
             iq.a(icVar, bArr);
-            return a(u.m12210a((Context) xMPushService), xMPushService, icVar);
+            return a(u.m9160a((Context) xMPushService), xMPushService, icVar);
         } catch (iw e) {
             com.xiaomi.channel.commonutils.logger.b.a(e);
             return null;
@@ -39,15 +38,15 @@ public final class ah {
         try {
             fj fjVar = new fj();
             fjVar.a(5);
-            fjVar.c(tVar.f1080a);
+            fjVar.c(tVar.f1033a);
             fjVar.b(a(icVar));
             fjVar.a("SECMSG", "message");
-            String str = tVar.f1080a;
-            icVar.f708a.f632a = str.substring(0, str.indexOf("@"));
-            icVar.f708a.f636c = str.substring(str.indexOf(BridgeUtil.SPLIT_MARK) + 1);
-            fjVar.a(iq.a(icVar), tVar.f41702c);
+            String str = tVar.f1033a;
+            icVar.f661a.f585a = str.substring(0, str.indexOf("@"));
+            icVar.f661a.f589c = str.substring(str.indexOf("/") + 1);
+            fjVar.a(iq.a(icVar), tVar.f28011c);
             fjVar.a((short) 1);
-            com.xiaomi.channel.commonutils.logger.b.m11394a("try send mi push message. packagename:" + icVar.f713b + " action:" + icVar.f706a);
+            com.xiaomi.channel.commonutils.logger.b.m8344a("try send mi push message. packagename:" + icVar.f666b + " action:" + icVar.f659a);
             return fjVar;
         } catch (NullPointerException e) {
             com.xiaomi.channel.commonutils.logger.b.a(e);
@@ -74,8 +73,8 @@ public final class ah {
         byte[] a2 = iq.a(t);
         ic icVar = new ic();
         hv hvVar = new hv();
-        hvVar.f631a = 5L;
-        hvVar.f632a = "fakeid";
+        hvVar.f584a = 5L;
+        hvVar.f585a = "fakeid";
         icVar.a(hvVar);
         icVar.a(ByteBuffer.wrap(a2));
         icVar.a(hgVar);
@@ -87,13 +86,13 @@ public final class ah {
     }
 
     private static String a(ic icVar) {
-        if (icVar.f707a != null && icVar.f707a.f622b != null) {
-            String str = icVar.f707a.f622b.get("ext_traffic_source_pkg");
+        if (icVar.f660a != null && icVar.f660a.f575b != null) {
+            String str = icVar.f660a.f575b.get("ext_traffic_source_pkg");
             if (!TextUtils.isEmpty(str)) {
                 return str;
             }
         }
-        return icVar.f713b;
+        return icVar.f666b;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -103,29 +102,29 @@ public final class ah {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(XMPushService xMPushService) {
-        t m12210a = u.m12210a(xMPushService.getApplicationContext());
-        if (m12210a != null) {
-            bg.b a2 = u.m12210a(xMPushService.getApplicationContext()).a(xMPushService);
-            com.xiaomi.channel.commonutils.logger.b.m11394a("prepare account. " + a2.f1010a);
+        t m9160a = u.m9160a(xMPushService.getApplicationContext());
+        if (m9160a != null) {
+            bg.b a2 = u.m9160a(xMPushService.getApplicationContext()).a(xMPushService);
+            com.xiaomi.channel.commonutils.logger.b.m8344a("prepare account. " + a2.f963a);
             a(xMPushService, a2);
             bg.a().a(a2);
-            a(xMPushService, m12210a, 172800);
+            a(xMPushService, m9160a, 172800);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(XMPushService xMPushService, ic icVar) {
         cz.a(icVar.b(), xMPushService.getApplicationContext(), icVar, -1);
-        fu m12092a = xMPushService.m12092a();
-        if (m12092a == null) {
+        fu m9042a = xMPushService.m9042a();
+        if (m9042a == null) {
             throw new gf("try send msg while connection is null.");
         }
-        if (!m12092a.mo11775a()) {
+        if (!m9042a.mo8725a()) {
             throw new gf("Don't support XMPP connection.");
         }
-        fj a2 = a(u.m12210a((Context) xMPushService), xMPushService, icVar);
+        fj a2 = a(u.m9160a((Context) xMPushService), xMPushService, icVar);
         if (a2 != null) {
-            m12092a.b(a2);
+            m9042a.b(a2);
         }
     }
 
@@ -142,16 +141,16 @@ public final class ah {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(XMPushService xMPushService, String str, byte[] bArr) {
         cz.a(str, xMPushService.getApplicationContext(), bArr);
-        fu m12092a = xMPushService.m12092a();
-        if (m12092a == null) {
+        fu m9042a = xMPushService.m9042a();
+        if (m9042a == null) {
             throw new gf("try send msg while connection is null.");
         }
-        if (!m12092a.mo11775a()) {
+        if (!m9042a.mo8725a()) {
             throw new gf("Don't support XMPP connection.");
         }
         fj a2 = a(xMPushService, bArr);
         if (a2 != null) {
-            m12092a.b(a2);
+            m9042a.b(a2);
         } else {
             x.a(xMPushService, str, bArr, ErrorCode.ERROR_INVALID_PAYLOAD, "not a valid message");
         }
@@ -161,7 +160,7 @@ public final class ah {
     public static ic b(String str, String str2) {
         Cif cif = new Cif();
         cif.b(str2);
-        cif.c(hq.AppDataCleared.f583a);
+        cif.c(hq.AppDataCleared.f536a);
         cif.a(bd.a());
         cif.a(false);
         return a(str, str2, cif, hg.Notification);

@@ -6,10 +6,10 @@ import java.io.File;
 public class v implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ File f42215a;
+    public final /* synthetic */ File f28524a;
 
     public v(x xVar, File file) {
-        this.f42215a = file;
+        this.f28524a = file;
     }
 
     /* JADX WARN: Finally extract failed */

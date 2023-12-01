@@ -7,14 +7,12 @@ import java.util.concurrent.TimeUnit;
 /* renamed from: com.amap.api.col.3sl.lb  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/lb.class */
 public final class lb extends ld {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static lb f5356c = new lb(new la.a().a("amap-global-threadPool").b());
+    private static lb c = new lb(new la.a().a("amap-global-threadPool").b());
 
     private lb(la laVar) {
         try {
-            this.f5357a = new ThreadPoolExecutor(laVar.a(), laVar.b(), laVar.d(), TimeUnit.SECONDS, laVar.c(), laVar);
-            this.f5357a.allowCoreThreadTimeOut(true);
+            this.a = new ThreadPoolExecutor(laVar.a(), laVar.b(), laVar.d(), TimeUnit.SECONDS, laVar.c(), laVar);
+            this.a.allowCoreThreadTimeOut(true);
         } catch (Throwable th) {
             iw.c(th, "TPool", "ThreadPool");
             th.printStackTrace();
@@ -22,7 +20,7 @@ public final class lb extends ld {
     }
 
     public static lb a() {
-        return f5356c;
+        return c;
     }
 
     public static lb a(la laVar) {
@@ -34,10 +32,10 @@ public final class lb extends ld {
         lb lbVar;
         synchronized (lb.class) {
             try {
-                if (f5356c == null) {
-                    f5356c = new lb(new la.a().b());
+                if (c == null) {
+                    c = new lb(new la.a().b());
                 }
-                lbVar = f5356c;
+                lbVar = c;
             } catch (Throwable th) {
                 throw th;
             }

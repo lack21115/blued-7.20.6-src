@@ -19,18 +19,18 @@ import javax.net.ssl.SSLPeerUnverifiedException;
 public final class CertificatePinner {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final CertificatePinner f35825a = new Builder().build();
+    public static final CertificatePinner f22134a = new Builder().build();
     private final CertificatePinProvider b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Set<Pin> f35826c;
+    private final Set<Pin> f22135c;
     private final CertificateChainCleaner d;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okhttp3/CertificatePinner$Builder.class */
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<Pin> f35827a = new ArrayList();
+        private final List<Pin> f22136a = new ArrayList();
         private CertificatePinProvider b;
 
         public Builder add(String str, String... strArr) {
@@ -44,14 +44,14 @@ public final class CertificatePinner {
                 if (i2 >= length) {
                     return this;
                 }
-                this.f35827a.add(new Pin(str, strArr[i2]));
+                this.f22136a.add(new Pin(str, strArr[i2]));
                 i = i2 + 1;
             }
         }
 
         public CertificatePinner build() {
             CertificatePinProvider certificatePinProvider = this.b;
-            return certificatePinProvider != null ? new CertificatePinner(certificatePinProvider, (CertificateChainCleaner) null) : new CertificatePinner(new LinkedHashSet(this.f35827a), (CertificateChainCleaner) null);
+            return certificatePinProvider != null ? new CertificatePinner(certificatePinProvider, (CertificateChainCleaner) null) : new CertificatePinner(new LinkedHashSet(this.f22136a), (CertificateChainCleaner) null);
         }
 
         public Builder pinProvider(CertificatePinProvider certificatePinProvider) {
@@ -75,11 +75,11 @@ public final class CertificatePinner {
     public static final class Pin {
 
         /* renamed from: a  reason: collision with root package name */
-        final String f35828a;
+        final String f22137a;
         final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final String f35829c;
+        final String f22138c;
         final ByteString d;
 
         /* JADX WARN: Removed duplicated region for block: B:13:0x0082  */
@@ -99,9 +99,9 @@ public final class CertificatePinner {
         }
 
         boolean a(String str) {
-            if (this.f35828a.startsWith("**.")) {
+            if (this.f22137a.startsWith("**.")) {
                 return str.endsWith("." + this.b);
-            } else if (this.f35828a.startsWith("*.")) {
+            } else if (this.f22137a.startsWith("*.")) {
                 int indexOf = str.indexOf(46);
                 if ((str.length() - indexOf) - 1 == this.b.length()) {
                     String str2 = this.b;
@@ -116,28 +116,28 @@ public final class CertificatePinner {
         public boolean equals(Object obj) {
             if (obj instanceof Pin) {
                 Pin pin = (Pin) obj;
-                return this.f35828a.equals(pin.f35828a) && this.f35829c.equals(pin.f35829c) && this.d.equals(pin.d);
+                return this.f22137a.equals(pin.f22137a) && this.f22138c.equals(pin.f22138c) && this.d.equals(pin.d);
             }
             return false;
         }
 
         public int hashCode() {
-            return ((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + this.f35828a.hashCode()) * 31) + this.f35829c.hashCode()) * 31) + this.d.hashCode();
+            return ((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + this.f22137a.hashCode()) * 31) + this.f22138c.hashCode()) * 31) + this.d.hashCode();
         }
 
         public String toString() {
-            return this.f35829c + this.d.base64();
+            return this.f22138c + this.d.base64();
         }
     }
 
     CertificatePinner(CertificatePinProvider certificatePinProvider, CertificateChainCleaner certificateChainCleaner) {
         this.b = certificatePinProvider;
-        this.f35826c = new LinkedHashSet();
+        this.f22135c = new LinkedHashSet();
         this.d = certificateChainCleaner;
     }
 
     CertificatePinner(Set<Pin> set, CertificateChainCleaner certificateChainCleaner) {
-        this.f35826c = set;
+        this.f22135c = set;
         this.b = null;
         this.d = certificateChainCleaner;
     }
@@ -159,7 +159,7 @@ public final class CertificatePinner {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public CertificatePinner a(CertificateChainCleaner certificateChainCleaner) {
-        return Util.equal(this.d, certificateChainCleaner) ? this : this.b != null ? new CertificatePinner(this.b, certificateChainCleaner) : new CertificatePinner(this.f35826c, certificateChainCleaner);
+        return Util.equal(this.d, certificateChainCleaner) ? this : this.b != null ? new CertificatePinner(this.b, certificateChainCleaner) : new CertificatePinner(this.f22135c, certificateChainCleaner);
     }
 
     List<Pin> a(String str) {
@@ -173,7 +173,7 @@ public final class CertificatePinner {
             }
             hashSet.addAll(linkedHashSet);
         }
-        hashSet.addAll(this.f35826c);
+        hashSet.addAll(this.f22135c);
         List<Pin> emptyList = Collections.emptyList();
         for (Pin pin : hashSet) {
             if (pin.a(str)) {
@@ -259,7 +259,7 @@ public final class CertificatePinner {
                 int i8 = i7;
                 if (i8 < size4) {
                     Pin pin2 = a2.get(i8);
-                    if (pin2.f35829c.equals("sha256/")) {
+                    if (pin2.f22138c.equals("sha256/")) {
                         ByteString byteString3 = byteString;
                         if (byteString == null) {
                             byteString3 = b(x509Certificate2);
@@ -268,8 +268,8 @@ public final class CertificatePinner {
                         if (pin2.d.equals(byteString3)) {
                             return;
                         }
-                    } else if (!pin2.f35829c.equals("sha1/")) {
-                        throw new AssertionError("unsupported hashAlgorithm: " + pin2.f35829c);
+                    } else if (!pin2.f22138c.equals("sha1/")) {
+                        throw new AssertionError("unsupported hashAlgorithm: " + pin2.f22138c);
                     } else {
                         ByteString byteString4 = byteString2;
                         if (byteString2 == null) {
@@ -301,13 +301,13 @@ public final class CertificatePinner {
         }
         if (obj instanceof CertificatePinner) {
             CertificatePinner certificatePinner = (CertificatePinner) obj;
-            return Util.equal(this.d, certificatePinner.d) && this.f35826c.equals(certificatePinner.f35826c);
+            return Util.equal(this.d, certificatePinner.d) && this.f22135c.equals(certificatePinner.f22135c);
         }
         return false;
     }
 
     public int hashCode() {
         CertificateChainCleaner certificateChainCleaner = this.d;
-        return ((certificateChainCleaner != null ? certificateChainCleaner.hashCode() : 0) * 31) + this.f35826c.hashCode();
+        return ((certificateChainCleaner != null ? certificateChainCleaner.hashCode() : 0) * 31) + this.f22135c.hashCode();
     }
 }

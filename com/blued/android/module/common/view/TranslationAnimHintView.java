@@ -17,20 +17,14 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/TranslationAnimHintView.class */
 public class TranslationAnimHintView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<HintInfo> f11066a;
+    private List<HintInfo> a;
     private int b;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/TranslationAnimHintView$HintInfo.class */
     public static class HintInfo {
-
-        /* renamed from: a  reason: collision with root package name */
-        public int f11074a = 11;
+        public int a = 11;
         public String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public View.OnClickListener f11075c;
+        public View.OnClickListener c;
         public View.OnClickListener d;
         public View e;
         public boolean f;
@@ -41,20 +35,20 @@ public class TranslationAnimHintView extends FrameLayout {
             if (this == obj) {
                 return true;
             }
-            return obj != null && getClass() == obj.getClass() && this.f11074a == ((HintInfo) obj).f11074a;
+            return obj != null && getClass() == obj.getClass() && this.a == ((HintInfo) obj).a;
         }
 
         public int hashCode() {
-            return this.f11074a;
+            return this.a;
         }
 
         public void update(HintInfo hintInfo) {
             int i;
             this.f = hintInfo.f;
             this.b = hintInfo.b;
-            View.OnClickListener onClickListener = hintInfo.f11075c;
+            View.OnClickListener onClickListener = hintInfo.c;
             if (onClickListener != null) {
-                this.f11075c = onClickListener;
+                this.c = onClickListener;
             }
             View.OnClickListener onClickListener2 = hintInfo.d;
             if (onClickListener2 != null) {
@@ -85,7 +79,7 @@ public class TranslationAnimHintView extends FrameLayout {
 
     public TranslationAnimHintView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f11066a = new ArrayList();
+        this.a = new ArrayList();
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.TranslationAnimHintView);
         if (obtainStyledAttributes != null) {
             this.b = obtainStyledAttributes.getColor(R.styleable.TranslationAnimHintView_direct, 0);
@@ -155,7 +149,7 @@ public class TranslationAnimHintView extends FrameLayout {
         /*
             r3 = this;
             r0 = r5
-            int r0 = r0.f11074a
+            int r0 = r0.a
             r6 = r0
             r0 = r6
             r1 = 11
@@ -199,13 +193,13 @@ public class TranslationAnimHintView extends FrameLayout {
             r0.setText(r1)
         L67:
             r0 = r5
-            android.view.View$OnClickListener r0 = r0.f11075c
+            android.view.View$OnClickListener r0 = r0.c
             if (r0 == 0) goto L7c
             r0 = r4
             int r1 = com.blued.android.module.common.R.id.iv_close
             android.view.View r0 = r0.findViewById(r1)
             r1 = r5
-            android.view.View$OnClickListener r1 = r1.f11075c
+            android.view.View$OnClickListener r1 = r1.c
             r0.setOnClickListener(r1)
         L7c:
             r0 = r5
@@ -306,7 +300,7 @@ public class TranslationAnimHintView extends FrameLayout {
         /*
             r5 = this;
             r0 = r5
-            java.util.List<com.blued.android.module.common.view.TranslationAnimHintView$HintInfo> r0 = r0.f11066a
+            java.util.List<com.blued.android.module.common.view.TranslationAnimHintView$HintInfo> r0 = r0.a
             int r0 = r0.size()
             if (r0 <= 0) goto L3c
             r0 = 0
@@ -314,17 +308,17 @@ public class TranslationAnimHintView extends FrameLayout {
         Le:
             r0 = r7
             r1 = r5
-            java.util.List<com.blued.android.module.common.view.TranslationAnimHintView$HintInfo> r1 = r1.f11066a
+            java.util.List<com.blued.android.module.common.view.TranslationAnimHintView$HintInfo> r1 = r1.a
             int r1 = r1.size()
             if (r0 >= r1) goto L3c
             r0 = r5
-            java.util.List<com.blued.android.module.common.view.TranslationAnimHintView$HintInfo> r0 = r0.f11066a
+            java.util.List<com.blued.android.module.common.view.TranslationAnimHintView$HintInfo> r0 = r0.a
             r1 = r7
             java.lang.Object r0 = r0.get(r1)
             com.blued.android.module.common.view.TranslationAnimHintView$HintInfo r0 = (com.blued.android.module.common.view.TranslationAnimHintView.HintInfo) r0
-            int r0 = r0.f11074a
+            int r0 = r0.a
             r1 = r6
-            int r1 = r1.f11074a
+            int r1 = r1.a
             if (r0 <= r1) goto L35
             goto L3e
         L35:
@@ -365,7 +359,7 @@ public class TranslationAnimHintView extends FrameLayout {
             r1 = -1
             if (r0 != r1) goto L86
             r0 = r5
-            java.util.List<com.blued.android.module.common.view.TranslationAnimHintView$HintInfo> r0 = r0.f11066a
+            java.util.List<com.blued.android.module.common.view.TranslationAnimHintView$HintInfo> r0 = r0.a
             r1 = r6
             boolean r0 = r0.add(r1)
             r0 = r5
@@ -377,7 +371,7 @@ public class TranslationAnimHintView extends FrameLayout {
             return r0
         L86:
             r0 = r5
-            java.util.List<com.blued.android.module.common.view.TranslationAnimHintView$HintInfo> r0 = r0.f11066a
+            java.util.List<com.blued.android.module.common.view.TranslationAnimHintView$HintInfo> r0 = r0.a
             r1 = r7
             r2 = r6
             r0.add(r1, r2)
@@ -395,14 +389,14 @@ public class TranslationAnimHintView extends FrameLayout {
 
     public void a(int i) {
         int i2 = -1;
-        for (int i3 = 0; i3 < this.f11066a.size(); i3++) {
-            if (this.f11066a.get(i3).f11074a == i) {
+        for (int i3 = 0; i3 < this.a.size(); i3++) {
+            if (this.a.get(i3).a == i) {
                 i2 = i3;
             }
         }
         if (i2 != -1) {
-            boolean z = i2 == this.f11066a.size() - 1;
-            HintInfo remove = this.f11066a.remove(i2);
+            boolean z = i2 == this.a.size() - 1;
+            HintInfo remove = this.a.remove(i2);
             if (z) {
                 b(remove.e);
             } else {
@@ -413,7 +407,7 @@ public class TranslationAnimHintView extends FrameLayout {
 
     public void a(int i, String str) {
         HintInfo hintInfo = new HintInfo();
-        hintInfo.f11074a = i;
+        hintInfo.a = i;
         hintInfo.b = str;
         try {
             a(hintInfo);
@@ -425,8 +419,8 @@ public class TranslationAnimHintView extends FrameLayout {
         if (hintInfo == null) {
             return;
         }
-        if (this.f11066a.contains(hintInfo)) {
-            HintInfo hintInfo2 = this.f11066a.get(this.f11066a.indexOf(hintInfo));
+        if (this.a.contains(hintInfo)) {
+            HintInfo hintInfo2 = this.a.get(this.a.indexOf(hintInfo));
             hintInfo2.update(hintInfo);
             a(hintInfo2.e, hintInfo2);
             if (!hintInfo.f || hintInfo.h == null) {
@@ -436,7 +430,7 @@ public class TranslationAnimHintView extends FrameLayout {
             AppInfo.n().postDelayed(hintInfo.h, hintInfo.g);
             return;
         }
-        hintInfo.e = b(hintInfo.f11074a);
+        hintInfo.e = b(hintInfo.a);
         a(hintInfo.e, hintInfo);
         if (b(hintInfo)) {
             a(hintInfo.e);
@@ -448,7 +442,7 @@ public class TranslationAnimHintView extends FrameLayout {
             hintInfo.h = new Runnable() { // from class: com.blued.android.module.common.view.TranslationAnimHintView.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    TranslationAnimHintView.this.a(hintInfo.f11074a);
+                    TranslationAnimHintView.this.a(hintInfo.a);
                 }
             };
             AppInfo.n().postDelayed(hintInfo.h, hintInfo.g);
@@ -459,7 +453,7 @@ public class TranslationAnimHintView extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.f11066a.clear();
+        this.a.clear();
         removeAllViews();
     }
 }

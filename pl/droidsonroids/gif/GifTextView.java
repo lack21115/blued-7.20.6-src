@@ -7,14 +7,11 @@ import android.os.Build;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import com.anythink.expressad.foundation.h.i;
 import java.io.IOException;
 
 /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/GifTextView.class */
 public class GifTextView extends TextView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f44144a;
+    private boolean a;
 
     public GifTextView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -31,7 +28,7 @@ public class GifTextView extends TextView {
             return null;
         }
         Resources resources = getResources();
-        if (!isInEditMode() && i.f7952c.equals(resources.getResourceTypeName(i))) {
+        if (!isInEditMode() && "drawable".equals(resources.getResourceTypeName(i))) {
             try {
                 return new GifDrawable(resources, i);
             } catch (Resources.NotFoundException | IOException e) {
@@ -44,44 +41,44 @@ public class GifTextView extends TextView {
         Drawable drawable;
         Drawable drawable2;
         if (attributeSet != null) {
-            Drawable a2 = a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "drawableLeft", 0));
-            Drawable a3 = a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "drawableTop", 0));
-            Drawable a4 = a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "drawableRight", 0));
-            Drawable a5 = a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "drawableBottom", 0));
-            Drawable a6 = a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "drawableStart", 0));
-            Drawable a7 = a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "drawableEnd", 0));
+            Drawable a = a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "drawableLeft", 0));
+            Drawable a2 = a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "drawableTop", 0));
+            Drawable a3 = a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "drawableRight", 0));
+            Drawable a4 = a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "drawableBottom", 0));
+            Drawable a5 = a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "drawableStart", 0));
+            Drawable a6 = a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "drawableEnd", 0));
             if (Build.VERSION.SDK_INT >= 17) {
                 if (getLayoutDirection() == 0) {
-                    Drawable drawable3 = a6;
-                    if (a6 == null) {
-                        drawable3 = a2;
+                    Drawable drawable3 = a5;
+                    if (a5 == null) {
+                        drawable3 = a;
                     }
                     drawable = drawable3;
-                    drawable2 = a7;
-                    if (a7 == null) {
-                        drawable2 = a4;
+                    drawable2 = a6;
+                    if (a6 == null) {
+                        drawable2 = a3;
                         drawable = drawable3;
                     }
                 } else {
-                    Drawable drawable4 = a6;
-                    if (a6 == null) {
-                        drawable4 = a4;
+                    Drawable drawable4 = a5;
+                    if (a5 == null) {
+                        drawable4 = a3;
                     }
                     drawable = drawable4;
-                    drawable2 = a7;
-                    if (a7 == null) {
-                        drawable2 = a2;
+                    drawable2 = a6;
+                    if (a6 == null) {
+                        drawable2 = a;
                         drawable = drawable4;
                     }
                 }
-                setCompoundDrawablesRelativeWithIntrinsicBounds(drawable, a3, drawable2, a5);
-                setCompoundDrawablesWithIntrinsicBounds(a2, a3, a4, a5);
+                setCompoundDrawablesRelativeWithIntrinsicBounds(drawable, a2, drawable2, a4);
+                setCompoundDrawablesWithIntrinsicBounds(a, a2, a3, a4);
             } else {
-                setCompoundDrawablesWithIntrinsicBounds(a2, a3, a4, a5);
+                setCompoundDrawablesWithIntrinsicBounds(a, a2, a3, a4);
             }
             setBackgroundInternal(a(attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "background", 0)));
         }
-        this.f44144a = GifViewUtils.a(this, attributeSet, i, i2);
+        this.a = GifViewUtils.a(this, attributeSet, i, i2);
     }
 
     private void a(Drawable[] drawableArr) {
@@ -142,7 +139,7 @@ public class GifTextView extends TextView {
     @Override // android.widget.TextView, android.view.View
     public Parcelable onSaveInstanceState() {
         Drawable[] drawableArr = new Drawable[7];
-        if (this.f44144a) {
+        if (this.a) {
             Drawable[] compoundDrawables = getCompoundDrawables();
             System.arraycopy(compoundDrawables, 0, drawableArr, 0, compoundDrawables.length);
             if (Build.VERSION.SDK_INT >= 17) {
@@ -171,6 +168,6 @@ public class GifTextView extends TextView {
     }
 
     public void setFreezesAnimation(boolean z) {
-        this.f44144a = z;
+        this.a = z;
     }
 }

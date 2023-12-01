@@ -3,6 +3,7 @@ package com.tencent.qcloud.core.auth;
 import android.net.http.Headers;
 import android.text.TextUtils;
 import com.google.common.net.HttpHeaders;
+import com.huawei.openalliance.ad.constant.t;
 import com.ss.android.socialbase.downloader.utils.DownloadUtils;
 import com.tencent.qcloud.core.common.QCloudClientException;
 import com.tencent.qcloud.core.http.HttpConfiguration;
@@ -29,7 +30,7 @@ import java.util.TreeSet;
 public class COSXmlSignSourceProvider implements QCloudSignSourceProvider {
     private Map<String, List<String>> headerPairs;
     private String signTime;
-    private final List<String> needToSignHeaders = Arrays.asList("cache-control", Headers.CONTENT_DISPOSITION, "content-encoding", Headers.CONTENT_LEN, "content-md5", "content-type", "expect", "expires", "host", "if-match", DownloadUtils.IF_MODIFIED_SINCE, "if-none-match", "if-unmodified-since", HttpHeaders.ReferrerPolicyValues.ORIGIN, "range", "response-cache-control", "response-content-disposition", "response-content-encoding", "response-content-language", "response-content-type", "response-expires", Headers.TRANSFER_ENCODING, "versionid");
+    private final List<String> needToSignHeaders = Arrays.asList("cache-control", Headers.CONTENT_DISPOSITION, Headers.CONTENT_ENCODING, Headers.CONTENT_LEN, "content-md5", Headers.CONTENT_TYPE, "expect", "expires", "host", "if-match", DownloadUtils.IF_MODIFIED_SINCE, "if-none-match", "if-unmodified-since", HttpHeaders.ReferrerPolicyValues.ORIGIN, "range", "response-cache-control", "response-content-disposition", "response-content-encoding", "response-content-language", "response-content-type", "response-expires", Headers.TRANSFER_ENCODING, "versionid");
     private Set<String> headerKeysRequiredToSign = new HashSet();
     private Set<String> parametersRequiredToSign = new HashSet();
     private Set<String> headerKeysSigned = new HashSet();
@@ -134,7 +135,7 @@ public class COSXmlSignSourceProvider implements QCloudSignSourceProvider {
         StringBuilder sb = new StringBuilder();
         for (String str : treeSet) {
             if (!QCloudStringUtils.isEmpty(sb.toString())) {
-                sb.append(";");
+                sb.append(t.aE);
             }
             sb.append(str);
         }

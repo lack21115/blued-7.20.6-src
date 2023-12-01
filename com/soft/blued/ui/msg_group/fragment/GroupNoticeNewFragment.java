@@ -12,13 +12,11 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/fragment/GroupNoticeNewFragment.class */
 public final class GroupNoticeNewFragment extends BaseListFragment<GroupNoticeViewModel, GroupNoticeModel> {
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: C */
     public GroupNoticeAdapter i() {
         return new GroupNoticeAdapter(getFragmentActive());
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         super.m();
         CommonTopTitleNoTrans b = b();
@@ -33,6 +31,6 @@ public final class GroupNoticeNewFragment extends BaseListFragment<GroupNoticeVi
         if (c3 == null) {
             return;
         }
-        c3.setNoDataStr(R.string.no_chats);
+        c3.setNoDataStr((int) R.string.no_chats);
     }
 }

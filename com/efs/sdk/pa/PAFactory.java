@@ -29,11 +29,11 @@ public class PAFactory {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private PackageLevel f21846a;
+        private PackageLevel f8239a;
         private IEfsReporter b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f21847c;
+        private boolean f8240c;
         private Context d;
         private String e;
         private HashMap<String, String> f;
@@ -53,9 +53,9 @@ public class PAFactory {
         }
 
         public PAFactory build() {
-            PackageLevel packageLevel = this.f21846a;
+            PackageLevel packageLevel = this.f8239a;
             if (packageLevel != null) {
-                return new PAFactory(this.d, packageLevel, this.b, this.f21847c, this.e, this.f, this.g, this.h, this.i);
+                return new PAFactory(this.d, packageLevel, this.b, this.f8240c, this.e, this.f, this.g, this.h, this.i);
             }
             throw new RuntimeException(String.format("%s Should Not Null", ""));
         }
@@ -66,12 +66,12 @@ public class PAFactory {
         }
 
         public Builder isNewInstall(boolean z) {
-            this.f21847c = z;
+            this.f8240c = z;
             return this;
         }
 
         public Builder packageLevel(PackageLevel packageLevel) {
-            this.f21846a = packageLevel;
+            this.f8239a = packageLevel;
             return this;
         }
 

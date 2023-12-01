@@ -42,16 +42,12 @@ import java.util.regex.Pattern;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoticon/manager/EmotionManager.class */
 public class EmotionManager {
     private static Set<EmotionPackListener> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static EmoticonPackageModel f11166c;
+    private static EmoticonPackageModel c;
     private static String e;
     private static List<EmoticonPackageModel> d = new ArrayList();
     private static boolean f = false;
     private static boolean g = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    static final Pattern f11165a = Pattern.compile("\\S*[?]\\S*");
+    static final Pattern a = Pattern.compile("\\S*[?]\\S*");
     private static BluedUIHttpResponse h = new BluedUIHttpResponse<BluedEntityA<EmoticonPackageModel>>() { // from class: com.blued.android.module.common.widget.emoticon.manager.EmotionManager.4
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -113,6 +109,7 @@ public class EmotionManager {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r2v0, types: [com.blued.android.module.common.widget.emoticon.manager.EmotionManager$1] */
     private static EmoticonPackageModel a(String str, boolean z) {
         boolean z2;
         try {
@@ -340,7 +337,7 @@ public class EmotionManager {
         }
         f = true;
         e = str;
-        f11166c = g();
+        c = g();
         j();
     }
 
@@ -396,7 +393,7 @@ public class EmotionManager {
         e = str;
         b(str);
         k();
-        EmoticonPackageModel emoticonPackageModel = f11166c;
+        EmoticonPackageModel emoticonPackageModel = c;
         if (emoticonPackageModel != null) {
             d.add(0, emoticonPackageModel);
         }
@@ -504,7 +501,7 @@ public class EmotionManager {
     }
 
     public static String f(String str) {
-        Matcher matcher = f11165a.matcher(str);
+        Matcher matcher = a.matcher(str);
         String[] split = str.split(BridgeUtil.SPLIT_MARK);
         String str2 = split[split.length - 1];
         try {
@@ -526,7 +523,7 @@ public class EmotionManager {
         emoticonPackageModel.row = 7;
         emoticonPackageModel.line = 3;
         new Emotion(AppInfo.d());
-        if (Emotion.b.length != Emotion.f11194a.length) {
+        if (Emotion.b.length != Emotion.a.length) {
             throw new RuntimeException("default small emotion data invalid");
         }
         int i = 0;
@@ -536,7 +533,7 @@ public class EmotionManager {
                 return emoticonPackageModel;
             }
             EmoticonModel emoticonModel = new EmoticonModel();
-            emoticonModel.code = Emotion.f11194a[i2];
+            emoticonModel.code = Emotion.a[i2];
             emoticonModel.original = Emotion.b[i2];
             emoticonModel.emoticonType = 0;
             emoticonPackageModel.emotions.add(emoticonModel);

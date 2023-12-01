@@ -13,7 +13,7 @@ import android.os.Message;
 /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/q0.class */
 public class q0 extends c2 {
     public int e = 0;
-    public volatile g f = g.f3942a;
+    public volatile g f = g.f3894a;
     public LocationManager g = null;
     public Object h;
     public Object i;
@@ -121,7 +121,7 @@ public class q0 extends c2 {
     public static abstract class g {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final g f3942a = new a();
+        public static final g f3894a = new a();
 
         /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/q0$g$a.class */
         public static final class a extends g {
@@ -160,7 +160,7 @@ public class q0 extends c2 {
 
     @Override // c.t.m.g.f2
     public int a(Looper looper) {
-        if (this.f != g.f3942a) {
+        if (this.f != g.f3894a) {
             LocationManager locationManager = (LocationManager) q2.a().getSystemService("location");
             this.g = locationManager;
             if (locationManager == null) {
@@ -221,7 +221,7 @@ public class q0 extends c2 {
             }
         }
         this.e = 0;
-        this.f = g.f3942a;
+        this.f = g.f3894a;
         this.g = null;
     }
 

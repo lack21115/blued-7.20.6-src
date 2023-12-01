@@ -2,22 +2,17 @@ package com.blued.android.framework.utils;
 
 import android.content.Intent;
 import android.util.Log;
-import com.igexin.push.core.b;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/Logger.class */
 public class Logger {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f10104a = true;
+    private static boolean a = true;
     private static boolean b = true;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.blued.android.framework.utils.Logger$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/Logger$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f10105a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -25,25 +20,25 @@ public class Logger {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[TYPE.values().length];
-            f10105a = iArr;
+            a = iArr;
             try {
                 iArr[TYPE.Verbose.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f10105a[TYPE.Info.ordinal()] = 2;
+                a[TYPE.Info.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f10105a[TYPE.Debug.ordinal()] = 3;
+                a[TYPE.Debug.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f10105a[TYPE.Warn.ordinal()] = 4;
+                a[TYPE.Warn.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f10105a[TYPE.Error.ordinal()] = 5;
+                a[TYPE.Error.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -80,7 +75,7 @@ public class Logger {
             }
             Object obj = objArr[i2];
             if (obj == null) {
-                sb.append(b.l);
+                sb.append("null");
             } else if (obj instanceof Intent) {
                 sb.append(((Intent) obj).getExtras());
                 sb.append("\n");
@@ -95,7 +90,7 @@ public class Logger {
     }
 
     private static void a(TYPE type, String str, String str2) {
-        int i = AnonymousClass1.f10105a[type.ordinal()];
+        int i = AnonymousClass1.a[type.ordinal()];
         if (i == 1) {
             Log.v(str, str2);
         } else if (i == 2) {
@@ -133,31 +128,31 @@ public class Logger {
     }
 
     public static void a(String str, Object... objArr) {
-        if (f10104a) {
+        if (a) {
             a(TYPE.Verbose, str, objArr);
         }
     }
 
     public static void b(String str, Object... objArr) {
-        if (f10104a) {
+        if (a) {
             a(TYPE.Info, str, objArr);
         }
     }
 
     public static void c(String str, Object... objArr) {
-        if (f10104a) {
+        if (a) {
             a(TYPE.Debug, str, objArr);
         }
     }
 
     public static void d(String str, Object... objArr) {
-        if (f10104a) {
+        if (a) {
             a(TYPE.Warn, str, objArr);
         }
     }
 
     public static void e(String str, Object... objArr) {
-        if (f10104a) {
+        if (a) {
             a(TYPE.Error, str, objArr);
         }
     }

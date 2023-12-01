@@ -18,25 +18,21 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.viewpager.widget.ViewPager;
+import com.android.internal.R;
 import com.blued.android.framework.utils.DensityUtils;
-import com.blued.android.module.common.R;
 import com.bytedance.applog.tracker.Tracker;
 import java.util.ArrayList;
 import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/TabTitleTrackIndicatorWithDot.class */
 public class TabTitleTrackIndicatorWithDot extends HorizontalScrollView {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int[] f11060a = {16842901, 16842904};
+    public static final int[] a = {R.attr.textSize, R.attr.textColor};
     public boolean A;
     public boolean B;
     public int C;
     private final PageListener D;
     public LinearLayout.LayoutParams b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public LinearLayout.LayoutParams f11061c;
+    public LinearLayout.LayoutParams c;
     public ViewPager.OnPageChangeListener d;
     public LinearLayout e;
     public ViewPager f;
@@ -66,7 +62,6 @@ public class TabTitleTrackIndicatorWithDot extends HorizontalScrollView {
         public PageListener() {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
             if (i == 0) {
                 TabTitleTrackIndicatorWithDot.this.b();
@@ -77,7 +72,6 @@ public class TabTitleTrackIndicatorWithDot extends HorizontalScrollView {
             }
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrolled(int i, float f, int i2) {
             TabTitleTrackIndicatorWithDot.this.h = i;
             TabTitleTrackIndicatorWithDot.this.i = f;
@@ -105,7 +99,6 @@ public class TabTitleTrackIndicatorWithDot extends HorizontalScrollView {
             }
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
             if (TabTitleTrackIndicatorWithDot.this.A) {
                 TabTitleTrackIndicatorWithDot.this.b();
@@ -132,13 +125,11 @@ public class TabTitleTrackIndicatorWithDot extends HorizontalScrollView {
                 return new SavedState[i];
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        int f11065a;
+        int a;
 
         private SavedState(Parcel parcel) {
             super(parcel);
-            this.f11065a = parcel.readInt();
+            this.a = parcel.readInt();
         }
 
         public SavedState(Parcelable parcelable) {
@@ -148,7 +139,7 @@ public class TabTitleTrackIndicatorWithDot extends HorizontalScrollView {
         @Override // android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeInt(this.f11065a);
+            parcel.writeInt(this.a);
         }
     }
 
@@ -192,8 +183,8 @@ public class TabTitleTrackIndicatorWithDot extends HorizontalScrollView {
         addView(this.e);
         setTextSize(15);
         setSelectedTextSize(15);
-        setTextOriginColor(getResources().getColor(R.color.nafio_k));
-        setTextChangeColor(getResources().getColor(R.color.nafio_a));
+        setTextOriginColor(getResources().getColor(com.blued.android.module.common.R.color.nafio_k));
+        setTextChangeColor(getResources().getColor(com.blued.android.module.common.R.color.nafio_a));
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         this.j = (int) TypedValue.applyDimension(1, this.j, displayMetrics);
         this.k = (int) TypedValue.applyDimension(1, this.k, displayMetrics);
@@ -203,23 +194,23 @@ public class TabTitleTrackIndicatorWithDot extends HorizontalScrollView {
         this.o = (int) TypedValue.applyDimension(2, this.o, displayMetrics);
         this.p = (int) TypedValue.applyDimension(2, this.p, displayMetrics);
         this.w = DensityUtils.a(getContext(), 7.0f);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.PagerSlidingTabStrip);
-        this.o = obtainStyledAttributes.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_tabTextSize, this.o);
-        this.p = obtainStyledAttributes.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_tabTextSelectdSize, this.p);
-        this.q = obtainStyledAttributes.getColor(R.styleable.PagerSlidingTabStrip_tabTextColor, this.q);
-        this.r = obtainStyledAttributes.getColor(R.styleable.PagerSlidingTabStrip_textChangeColor, this.r);
-        this.k = obtainStyledAttributes.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_tabPaddingLeft, this.k);
-        this.l = obtainStyledAttributes.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_tabPaddingRight, this.l);
-        this.m = obtainStyledAttributes.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_tabPaddingTop, this.m);
-        this.n = obtainStyledAttributes.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_tabPaddingBottom, this.n);
-        this.j = obtainStyledAttributes.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_scrollOffset, this.j);
-        this.u = obtainStyledAttributes.getBoolean(R.styleable.PagerSlidingTabStrip_shouldExpand, this.u);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, com.blued.android.module.common.R.styleable.PagerSlidingTabStrip);
+        this.o = obtainStyledAttributes.getDimensionPixelSize(com.blued.android.module.common.R.styleable.PagerSlidingTabStrip_tabTextSize, this.o);
+        this.p = obtainStyledAttributes.getDimensionPixelSize(com.blued.android.module.common.R.styleable.PagerSlidingTabStrip_tabTextSelectdSize, this.p);
+        this.q = obtainStyledAttributes.getColor(com.blued.android.module.common.R.styleable.PagerSlidingTabStrip_tabTextColor, this.q);
+        this.r = obtainStyledAttributes.getColor(com.blued.android.module.common.R.styleable.PagerSlidingTabStrip_textChangeColor, this.r);
+        this.k = obtainStyledAttributes.getDimensionPixelSize(com.blued.android.module.common.R.styleable.PagerSlidingTabStrip_tabPaddingLeft, this.k);
+        this.l = obtainStyledAttributes.getDimensionPixelSize(com.blued.android.module.common.R.styleable.PagerSlidingTabStrip_tabPaddingRight, this.l);
+        this.m = obtainStyledAttributes.getDimensionPixelSize(com.blued.android.module.common.R.styleable.PagerSlidingTabStrip_tabPaddingTop, this.m);
+        this.n = obtainStyledAttributes.getDimensionPixelSize(com.blued.android.module.common.R.styleable.PagerSlidingTabStrip_tabPaddingBottom, this.n);
+        this.j = obtainStyledAttributes.getDimensionPixelSize(com.blued.android.module.common.R.styleable.PagerSlidingTabStrip_scrollOffset, this.j);
+        this.u = obtainStyledAttributes.getBoolean(com.blued.android.module.common.R.styleable.PagerSlidingTabStrip_shouldExpand, this.u);
         obtainStyledAttributes.recycle();
         if (this.p == 0) {
             this.p = this.o;
         }
         this.b = new LinearLayout.LayoutParams(-2, -2);
-        this.f11061c = new LinearLayout.LayoutParams(0, -2, 1.0f);
+        this.c = new LinearLayout.LayoutParams(0, -2, 1.0f);
     }
 
     private int a(float f) {
@@ -348,8 +339,8 @@ public class TabTitleTrackIndicatorWithDot extends HorizontalScrollView {
     }
 
     public void a(final int i, String str) {
-        View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_tabtitle, (ViewGroup) null);
-        ColorTrackView colorTrackView = (ColorTrackView) inflate.findViewById(R.id.colorTrackView);
+        View inflate = LayoutInflater.from(getContext()).inflate(com.blued.android.module.common.R.layout.item_tabtitle, (ViewGroup) null);
+        ColorTrackView colorTrackView = (ColorTrackView) inflate.findViewById(com.blued.android.module.common.R.id.colorTrackView);
         colorTrackView.setText(str);
         colorTrackView.setTextSize(this.o);
         colorTrackView.setTextOriginColor(this.q);
@@ -360,18 +351,18 @@ public class TabTitleTrackIndicatorWithDot extends HorizontalScrollView {
             colorTrackView.setTextSize(this.p);
         }
         this.x.add(colorTrackView);
-        LinearLayout linearLayout = (LinearLayout) inflate.findViewById(R.id.ll_main);
-        linearLayout.setLayoutParams(this.u ? this.f11061c : this.b);
+        LinearLayout linearLayout = (LinearLayout) inflate.findViewById(com.blued.android.module.common.R.id.ll_main);
+        linearLayout.setLayoutParams(this.u ? this.c : this.b);
         linearLayout.setPadding(this.k, this.m, this.l, this.n);
         linearLayout.setGravity(this.C);
-        ImageView imageView = (ImageView) inflate.findViewById(R.id.img_dot);
-        imageView.setImageResource(R.drawable.new_remind);
+        ImageView imageView = (ImageView) inflate.findViewById(com.blued.android.module.common.R.id.img_dot);
+        imageView.setImageResource(com.blued.android.module.common.R.drawable.new_remind);
         imageView.setVisibility(4);
         List<ImageView> list = this.y;
         if (list != null) {
             list.add(imageView);
         }
-        ImageView imageView2 = (ImageView) inflate.findViewById(R.id.img_underline);
+        ImageView imageView2 = (ImageView) inflate.findViewById(com.blued.android.module.common.R.id.img_underline);
         if (this.B) {
             imageView2.setVisibility(4);
         } else {
@@ -396,14 +387,14 @@ public class TabTitleTrackIndicatorWithDot extends HorizontalScrollView {
     public void onRestoreInstanceState(Parcelable parcelable) {
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
-        this.h = savedState.f11065a;
+        this.h = savedState.a;
         requestLayout();
     }
 
     @Override // android.widget.HorizontalScrollView, android.view.View
     public Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
-        savedState.f11065a = this.h;
+        savedState.a = this.h;
         return savedState;
     }
 

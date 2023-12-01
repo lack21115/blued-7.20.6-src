@@ -14,7 +14,6 @@ public final class LoadingPop extends CenterPopupView {
         Intrinsics.e(context, "context");
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return 2131558566;
     }

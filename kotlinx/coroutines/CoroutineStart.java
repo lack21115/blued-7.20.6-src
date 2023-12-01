@@ -20,9 +20,7 @@ public enum CoroutineStart {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/CoroutineStart$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f42802a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[CoroutineStart.valuesCustom().length];
@@ -30,7 +28,7 @@ public enum CoroutineStart {
             iArr[CoroutineStart.ATOMIC.ordinal()] = 2;
             iArr[CoroutineStart.UNDISPATCHED.ordinal()] = 3;
             iArr[CoroutineStart.LAZY.ordinal()] = 4;
-            f42802a = iArr;
+            a = iArr;
         }
     }
 
@@ -41,7 +39,7 @@ public enum CoroutineStart {
     }
 
     public final <R, T> void a(Function2<? super R, ? super Continuation<? super T>, ? extends Object> function2, R r, Continuation<? super T> continuation) {
-        int i = WhenMappings.f42802a[ordinal()];
+        int i = WhenMappings.a[ordinal()];
         if (i == 1) {
             CancellableKt.a(function2, r, continuation, null, 4, null);
         } else if (i == 2) {

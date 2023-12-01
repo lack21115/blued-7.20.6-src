@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cos.xml.CosXmlServiceConfig;
 import com.tencent.cos.xml.common.ClientErrorCode;
 import com.tencent.cos.xml.exception.CosXmlClientException;
@@ -12,7 +11,7 @@ public class PresignedUrlRequest extends CosXmlRequest {
     private String requestMethod = "GET";
 
     public PresignedUrlRequest(String str, String str2) {
-        this.cosPath = BridgeUtil.SPLIT_MARK;
+        this.cosPath = "/";
         this.bucket = str;
         this.cosPath = str2;
     }
@@ -45,11 +44,11 @@ public class PresignedUrlRequest extends CosXmlRequest {
 
     public void setCosPath(String str) {
         if (str != null) {
-            if (str.startsWith(BridgeUtil.SPLIT_MARK)) {
+            if (str.startsWith("/")) {
                 this.cosPath = str;
                 return;
             }
-            this.cosPath = BridgeUtil.SPLIT_MARK + str;
+            this.cosPath = "/" + str;
         }
     }
 

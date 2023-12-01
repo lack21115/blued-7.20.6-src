@@ -12,7 +12,7 @@ import com.tencent.map.geolocation.util.SoUtils;
 public class s5 implements TencentLocationBridge {
 
     /* renamed from: a  reason: collision with root package name */
-    public t3 f3984a;
+    public t3 f3936a;
     public p4 b;
 
     public s5(Context context) {
@@ -36,7 +36,7 @@ public class s5 implements TencentLocationBridge {
 
     @Override // com.tencent.map.geolocation.TencentLocationBridge
     public TencentLocation getPosition() {
-        return k6.a(this.f3984a).a();
+        return k6.a(this.f3936a).a();
     }
 
     @Override // com.tencent.map.geolocation.TencentLocationBridge
@@ -48,13 +48,13 @@ public class s5 implements TencentLocationBridge {
     public void init(Context context) {
         q2.a(context);
         q2.a(true);
-        this.f3984a = t3.a(context);
-        this.b = new p4(this.f3984a);
+        this.f3936a = t3.a(context);
+        this.b = new p4(this.f3936a);
     }
 
     @Override // com.tencent.map.geolocation.TencentLocationBridge
     public boolean isSupport() {
-        return k6.a(this.f3984a).b();
+        return k6.a(this.f3936a).b();
     }
 
     @Override // com.tencent.map.geolocation.TencentLocationBridge
@@ -95,9 +95,9 @@ public class s5 implements TencentLocationBridge {
     @Override // com.tencent.map.geolocation.TencentLocationBridge
     public int startDrEngine(int i) {
         try {
-            return k6.a(this.f3984a).a(i);
+            return k6.a(this.f3936a).a(i);
         } catch (Exception e) {
-            return com.anythink.expressad.video.bt.a.c.f8290a;
+            return com.anythink.expressad.video.bt.a.c.f5450a;
         }
     }
 
@@ -118,7 +118,7 @@ public class s5 implements TencentLocationBridge {
 
     @Override // com.tencent.map.geolocation.TencentLocationBridge
     public void terminateDrEngine() {
-        k6.a(this.f3984a).d();
+        k6.a(this.f3936a).d();
     }
 
     @Override // com.tencent.map.geolocation.TencentLocationBridge

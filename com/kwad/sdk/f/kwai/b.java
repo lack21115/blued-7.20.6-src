@@ -1,7 +1,6 @@
 package com.kwad.sdk.f.kwai;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.kwad.sdk.utils.bb;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/f/kwai/b.class */
@@ -39,9 +38,9 @@ public class b extends com.kwad.sdk.core.response.kwai.a {
     public int hashCode() {
         StringBuilder sb = new StringBuilder();
         sb.append(this.atm);
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
         sb.append(this.atq);
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
         sb.append(this.version);
         return TextUtils.isEmpty(sb.toString()) ? super.hashCode() : sb.toString().hashCode();
     }

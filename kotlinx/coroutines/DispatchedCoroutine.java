@@ -50,7 +50,7 @@ public final class DispatchedCoroutine<T> extends ScopeCoroutine<T> {
         if (s()) {
             return;
         }
-        DispatchedContinuationKt.a(IntrinsicsKt.a(this.f43559c), CompletionStateKt.a(obj, this.f43559c), null, 2, null);
+        DispatchedContinuationKt.a(IntrinsicsKt.a(this.c), CompletionStateKt.a(obj, this.c), null, 2, null);
     }
 
     @Override // kotlinx.coroutines.internal.ScopeCoroutine, kotlinx.coroutines.JobSupport
@@ -64,7 +64,7 @@ public final class DispatchedCoroutine<T> extends ScopeCoroutine<T> {
         }
         Object b2 = JobSupportKt.b(l());
         if (b2 instanceof CompletedExceptionally) {
-            throw ((CompletedExceptionally) b2).f42791a;
+            throw ((CompletedExceptionally) b2).a;
         }
         return b2;
     }

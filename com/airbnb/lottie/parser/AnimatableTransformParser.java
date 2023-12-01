@@ -11,6 +11,9 @@ import com.airbnb.lottie.model.animatable.AnimatableScaleValue;
 import com.airbnb.lottie.model.animatable.AnimatableTransform;
 import com.airbnb.lottie.model.animatable.AnimatableValue;
 import com.airbnb.lottie.value.Keyframe;
+import com.amap.api.col.p0003sl.iu;
+import com.anythink.core.common.b.g;
+import com.anythink.core.common.g.c;
 import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/AnimatableTransformParser.class */
@@ -48,10 +51,10 @@ public class AnimatableTransformParser {
                                                 if (hashCode == 115 && nextName.equals("s")) {
                                                     z2 = true;
                                                 }
-                                            } else if (nextName.equals("r")) {
+                                            } else if (nextName.equals(g.o.o)) {
                                                 z2 = true;
                                             }
-                                        } else if (nextName.equals("p")) {
+                                        } else if (nextName.equals(c.W)) {
                                             z2 = true;
                                         }
                                     } else if (nextName.equals("o")) {
@@ -79,7 +82,7 @@ public class AnimatableTransformParser {
                 case false:
                     jsonReader.beginObject();
                     while (jsonReader.hasNext()) {
-                        if (jsonReader.nextName().equals("k")) {
+                        if (jsonReader.nextName().equals(iu.k)) {
                             animatablePathValue = AnimatablePathValueParser.a(jsonReader, lottieComposition);
                         } else {
                             jsonReader.skipValue();
@@ -120,7 +123,7 @@ public class AnimatableTransformParser {
             animatableFloatValue = AnimatableValueParser.a(jsonReader, lottieComposition, false);
             if (animatableFloatValue.c().isEmpty()) {
                 animatableFloatValue.c().add(new Keyframe(lottieComposition, Float.valueOf(0.0f), Float.valueOf(0.0f), null, 0.0f, Float.valueOf(lottieComposition.g())));
-            } else if (((Keyframe) animatableFloatValue.c().get(0)).f4418a == 0) {
+            } else if (((Keyframe) animatableFloatValue.c().get(0)).a == 0) {
                 animatableFloatValue.c().set(0, new Keyframe(lottieComposition, Float.valueOf(0.0f), Float.valueOf(0.0f), null, 0.0f, Float.valueOf(lottieComposition.g())));
             }
         }
@@ -148,7 +151,7 @@ public class AnimatableTransformParser {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0029, code lost:
-        if (((java.lang.Float) ((com.airbnb.lottie.value.Keyframe) r3.c().get(0)).f4418a).floatValue() == 0.0f) goto L10;
+        if (((java.lang.Float) ((com.airbnb.lottie.value.Keyframe) r3.c().get(0)).a).floatValue() == 0.0f) goto L10;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -172,7 +175,7 @@ public class AnimatableTransformParser {
             r1 = 0
             java.lang.Object r0 = r0.get(r1)
             com.airbnb.lottie.value.Keyframe r0 = (com.airbnb.lottie.value.Keyframe) r0
-            T r0 = r0.f4418a
+            T r0 = r0.a
             java.lang.Float r0 = (java.lang.Float) r0
             float r0 = r0.floatValue()
             r1 = 0
@@ -189,7 +192,7 @@ public class AnimatableTransformParser {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0029, code lost:
-        if (r4.c().get(0).f4418a.equals(0.0f, 0.0f) != false) goto L10;
+        if (r4.c().get(0).a.equals(0.0f, 0.0f) != false) goto L10;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -213,7 +216,7 @@ public class AnimatableTransformParser {
             r1 = 0
             java.lang.Object r0 = r0.get(r1)
             com.airbnb.lottie.value.Keyframe r0 = (com.airbnb.lottie.value.Keyframe) r0
-            T r0 = r0.f4418a
+            T r0 = r0.a
             android.graphics.PointF r0 = (android.graphics.PointF) r0
             r1 = 0
             r2 = 0
@@ -230,7 +233,7 @@ public class AnimatableTransformParser {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0029, code lost:
-        if (((com.airbnb.lottie.value.ScaleXY) ((com.airbnb.lottie.value.Keyframe) r4.c().get(0)).f4418a).b(1.0f, 1.0f) != false) goto L10;
+        if (((com.airbnb.lottie.value.ScaleXY) ((com.airbnb.lottie.value.Keyframe) r4.c().get(0)).a).b(1.0f, 1.0f) != false) goto L10;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -254,7 +257,7 @@ public class AnimatableTransformParser {
             r1 = 0
             java.lang.Object r0 = r0.get(r1)
             com.airbnb.lottie.value.Keyframe r0 = (com.airbnb.lottie.value.Keyframe) r0
-            T r0 = r0.f4418a
+            T r0 = r0.a
             com.airbnb.lottie.value.ScaleXY r0 = (com.airbnb.lottie.value.ScaleXY) r0
             r1 = 1065353216(0x3f800000, float:1.0)
             r2 = 1065353216(0x3f800000, float:1.0)
@@ -271,7 +274,7 @@ public class AnimatableTransformParser {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0036, code lost:
-        if (r4.c().get(0).f4418a.equals(0.0f, 0.0f) != false) goto L12;
+        if (r4.c().get(0).a.equals(0.0f, 0.0f) != false) goto L12;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -300,7 +303,7 @@ public class AnimatableTransformParser {
             r1 = 0
             java.lang.Object r0 = r0.get(r1)
             com.airbnb.lottie.value.Keyframe r0 = (com.airbnb.lottie.value.Keyframe) r0
-            T r0 = r0.f4418a
+            T r0 = r0.a
             android.graphics.PointF r0 = (android.graphics.PointF) r0
             r1 = 0
             r2 = 0
@@ -317,7 +320,7 @@ public class AnimatableTransformParser {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0029, code lost:
-        if (((java.lang.Float) ((com.airbnb.lottie.value.Keyframe) r3.c().get(0)).f4418a).floatValue() == 0.0f) goto L10;
+        if (((java.lang.Float) ((com.airbnb.lottie.value.Keyframe) r3.c().get(0)).a).floatValue() == 0.0f) goto L10;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -341,7 +344,7 @@ public class AnimatableTransformParser {
             r1 = 0
             java.lang.Object r0 = r0.get(r1)
             com.airbnb.lottie.value.Keyframe r0 = (com.airbnb.lottie.value.Keyframe) r0
-            T r0 = r0.f4418a
+            T r0 = r0.a
             java.lang.Float r0 = (java.lang.Float) r0
             float r0 = r0.floatValue()
             r1 = 0
@@ -358,7 +361,7 @@ public class AnimatableTransformParser {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0029, code lost:
-        if (((java.lang.Float) ((com.airbnb.lottie.value.Keyframe) r3.c().get(0)).f4418a).floatValue() == 0.0f) goto L10;
+        if (((java.lang.Float) ((com.airbnb.lottie.value.Keyframe) r3.c().get(0)).a).floatValue() == 0.0f) goto L10;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -382,7 +385,7 @@ public class AnimatableTransformParser {
             r1 = 0
             java.lang.Object r0 = r0.get(r1)
             com.airbnb.lottie.value.Keyframe r0 = (com.airbnb.lottie.value.Keyframe) r0
-            T r0 = r0.f4418a
+            T r0 = r0.a
             java.lang.Float r0 = (java.lang.Float) r0
             float r0 = r0.floatValue()
             r1 = 0

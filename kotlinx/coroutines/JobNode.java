@@ -6,12 +6,10 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/JobNode.class */
 public abstract class JobNode extends CompletionHandlerBase implements DisposableHandle, Incomplete {
-
-    /* renamed from: c  reason: collision with root package name */
-    public JobSupport f42838c;
+    public JobSupport c;
 
     public final void a(JobSupport jobSupport) {
-        this.f42838c = jobSupport;
+        this.c = jobSupport;
     }
 
     @Override // kotlinx.coroutines.Incomplete
@@ -25,7 +23,7 @@ public abstract class JobNode extends CompletionHandlerBase implements Disposabl
     }
 
     public final JobSupport c() {
-        JobSupport jobSupport = this.f42838c;
+        JobSupport jobSupport = this.c;
         if (jobSupport != null) {
             return jobSupport;
         }

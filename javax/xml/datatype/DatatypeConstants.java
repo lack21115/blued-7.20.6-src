@@ -1,5 +1,6 @@
 package javax.xml.datatype;
 
+import com.anythink.core.common.c.g;
 import javax.xml.XMLConstants;
 import javax.xml.namespace.QName;
 
@@ -31,7 +32,7 @@ public final class DatatypeConstants {
     public static final Field MINUTES = new Field("MINUTES", 4);
     public static final Field SECONDS = new Field("SECONDS", 5);
     public static final QName DATETIME = new QName(XMLConstants.W3C_XML_SCHEMA_NS_URI, "dateTime");
-    public static final QName TIME = new QName(XMLConstants.W3C_XML_SCHEMA_NS_URI, "time");
+    public static final QName TIME = new QName(XMLConstants.W3C_XML_SCHEMA_NS_URI, g.a.g);
     public static final QName DATE = new QName(XMLConstants.W3C_XML_SCHEMA_NS_URI, "date");
     public static final QName GYEARMONTH = new QName(XMLConstants.W3C_XML_SCHEMA_NS_URI, "gYearMonth");
     public static final QName GMONTHDAY = new QName(XMLConstants.W3C_XML_SCHEMA_NS_URI, "gMonthDay");

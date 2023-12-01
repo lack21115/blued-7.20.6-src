@@ -1,6 +1,7 @@
 package com.tencent.thumbplayer.c;
 
 import android.text.TextUtils;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.thumbplayer.api.proxy.TPDownloadParamData;
 import com.tencent.thumbplayer.core.downloadproxy.api.TPDownloadParam;
 import com.tencent.thumbplayer.core.downloadproxy.api.TPDownloadProxyEnum;
@@ -162,7 +163,7 @@ public class k {
             Iterator<String> it = tPDownloadParamData.getPcdnUrlList().iterator();
             while (it.hasNext()) {
                 sb.append(it.next());
-                sb.append(";");
+                sb.append(t.aE);
             }
             if (sb.length() > 0) {
                 sb.deleteCharAt(sb.length() - 1);
@@ -175,7 +176,7 @@ public class k {
             Iterator<Integer> it2 = tPDownloadParamData.getPcdnVtList().iterator();
             while (it2.hasNext()) {
                 sb2.append(it2.next().intValue());
-                sb2.append(";");
+                sb2.append(t.aE);
             }
             if (sb2.length() > 0) {
                 sb2.deleteCharAt(sb2.length() - 1);

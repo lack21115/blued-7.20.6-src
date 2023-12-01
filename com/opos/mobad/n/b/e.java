@@ -19,13 +19,13 @@ import com.opos.mobad.n.c.l;
 public class e extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    g f26586a;
+    g f12898a;
     private l b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26587c;
+    private TextView f12899c;
     private FrameLayout d;
-    private a.InterfaceC0708a e;
+    private a.InterfaceC0538a e;
     private a f;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -33,11 +33,11 @@ public class e extends LinearLayout {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f26589a;
+        public final int f12901a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f26590c;
+        public final int f12902c;
         public final int d;
         public final float e;
         public final int f;
@@ -45,8 +45,8 @@ public class e extends LinearLayout {
         public final int h;
 
         public a(int i, int i2, int i3, int i4, float f, int i5, boolean z, int i6) {
-            this.f26589a = i;
-            this.f26590c = i3;
+            this.f12901a = i;
+            this.f12902c = i3;
             this.b = i2;
             this.d = i4;
             this.e = f;
@@ -58,7 +58,7 @@ public class e extends LinearLayout {
 
     public e(Context context, a aVar) {
         super(context);
-        this.f26586a = new g() { // from class: com.opos.mobad.n.b.e.1
+        this.f12898a = new g() { // from class: com.opos.mobad.n.b.e.1
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
                 com.opos.cmn.an.f.a.b("BannerTipBar", "onFeedBackClick");
@@ -85,7 +85,7 @@ public class e extends LinearLayout {
         l lVar = new l(getContext());
         this.b = lVar;
         lVar.setTextColor(Color.parseColor("#FFFFFF"));
-        this.b.setTextSize(1, this.f.f26589a);
+        this.b.setTextSize(1, this.f.f12901a);
         this.b.setGravity(17);
         this.b.setMaxEms(6);
         this.b.setEllipsize(TextUtils.TruncateAt.END);
@@ -97,19 +97,19 @@ public class e extends LinearLayout {
         addView(this.b, layoutParams);
         this.d = new FrameLayout(getContext());
         TextView textView = new TextView(getContext());
-        this.f26587c = textView;
+        this.f12899c = textView;
         textView.setBackgroundResource(R.drawable.opos_mobad_feedback_down_arrow);
         FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(getContext(), this.f.h), com.opos.cmn.an.h.f.a.a(getContext(), this.f.h));
         layoutParams2.gravity = 17;
-        this.d.addView(this.f26587c, layoutParams2);
+        this.d.addView(this.f12899c, layoutParams2);
         LinearLayout.LayoutParams layoutParams3 = new LinearLayout.LayoutParams(-2, -1);
         layoutParams3.setMargins(com.opos.cmn.an.h.f.a.a(getContext(), 1.0f), 0, 0, 0);
         addView(this.d, layoutParams3);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("BannerTipBar", "setListener " + interfaceC0708a);
-        this.e = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("BannerTipBar", "setListener " + interfaceC0538a);
+        this.e = interfaceC0538a;
     }
 
     public void a(boolean z, String str, boolean z2, com.opos.mobad.n.d.g gVar, String str2) {
@@ -121,10 +121,10 @@ public class e extends LinearLayout {
         FrameLayout frameLayout = this.d;
         if (z) {
             frameLayout.setVisibility(0);
-            this.d.setOnClickListener(this.f26586a);
-            this.d.setOnTouchListener(this.f26586a);
-            this.b.setOnClickListener(this.f26586a);
-            this.b.setOnTouchListener(this.f26586a);
+            this.d.setOnClickListener(this.f12898a);
+            this.d.setOnTouchListener(this.f12898a);
+            this.b.setOnClickListener(this.f12898a);
+            this.b.setOnTouchListener(this.f12898a);
         } else {
             frameLayout.setVisibility(8);
             this.b.setOnClickListener(null);
@@ -136,8 +136,8 @@ public class e extends LinearLayout {
         Drawable drawable = null;
         if (gVar != null) {
             drawable = null;
-            if (!TextUtils.isEmpty(gVar.f26633a)) {
-                drawable = com.opos.mobad.n.e.a(getContext(), gVar.f26633a);
+            if (!TextUtils.isEmpty(gVar.f12945a)) {
+                drawable = com.opos.mobad.n.e.a(getContext(), gVar.f12945a);
             }
         }
         StringBuilder sb = new StringBuilder();
@@ -149,7 +149,7 @@ public class e extends LinearLayout {
         if (drawable != null) {
             com.opos.mobad.n.e.a(lVar, drawable);
             layoutParams.width = com.opos.cmn.an.h.f.a.a(getContext(), this.f.b);
-            i = com.opos.cmn.an.h.f.a.a(getContext(), this.f.f26590c);
+            i = com.opos.cmn.an.h.f.a.a(getContext(), this.f.f12902c);
         } else {
             String str2 = str;
             if (TextUtils.isEmpty(str)) {

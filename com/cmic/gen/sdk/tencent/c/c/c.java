@@ -10,11 +10,11 @@ import java.util.Map;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    String f21646a;
+    String f8040a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Map<String, String> f21647c;
+    private final Map<String, String> f8041c;
     private final String d;
     private boolean e;
     private final String f;
@@ -32,8 +32,8 @@ public class c {
         this.e = false;
         this.b = str;
         this.k = gVar;
-        this.f21647c = map == null ? new HashMap() : map;
-        this.f21646a = gVar == null ? "" : gVar.b().toString();
+        this.f8041c = map == null ? new HashMap() : map;
+        this.f8040a = gVar == null ? "" : gVar.b().toString();
         this.d = str2;
         this.f = str3;
         this.i = gVar == null ? "" : gVar.a();
@@ -41,12 +41,12 @@ public class c {
     }
 
     private void l() {
-        this.f21647c.put("sdkVersion", com.cmic.gen.sdk.tencent.auth.c.SDK_VERSION);
-        this.f21647c.put("Content-Type", "application/json");
-        this.f21647c.put("CMCC-EncryptType", "STD");
-        this.f21647c.put("traceId", this.f);
-        this.f21647c.put("appid", this.i);
-        this.f21647c.put("Connection", "close");
+        this.f8041c.put("sdkVersion", com.cmic.gen.sdk.tencent.auth.c.SDK_VERSION);
+        this.f8041c.put("Content-Type", "application/json");
+        this.f8041c.put("CMCC-EncryptType", "STD");
+        this.f8041c.put("traceId", this.f);
+        this.f8041c.put("appid", this.i);
+        this.f8041c.put("Connection", "close");
     }
 
     public String a() {
@@ -63,7 +63,7 @@ public class c {
     }
 
     public void a(String str, String str2) {
-        this.f21647c.put(str, str2);
+        this.f8041c.put(str, str2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -76,11 +76,11 @@ public class c {
     }
 
     public Map<String, String> c() {
-        return this.f21647c;
+        return this.f8041c;
     }
 
     public String d() {
-        return this.f21646a;
+        return this.f8040a;
     }
 
     public String e() {

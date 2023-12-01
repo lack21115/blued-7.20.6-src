@@ -11,7 +11,6 @@ import java.util.Map;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/setting/Presenter/MessageNotifyPresenter.class */
 public class MessageNotifyPresenter extends MvpPresenter {
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
     }
 
@@ -20,14 +19,12 @@ public class MessageNotifyPresenter extends MvpPresenter {
             return;
         }
         MineHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.setting.Presenter.MessageNotifyPresenter.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
             }
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), map, (IRequestHost) null);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 }

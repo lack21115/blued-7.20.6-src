@@ -11,17 +11,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewRobMusicRoomBgBinding.class */
 public final class ViewRobMusicRoomBgBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SVGAImageView f16875a;
+    public final SVGAImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final FrameLayout f16876c;
+    private final FrameLayout c;
 
     private ViewRobMusicRoomBgBinding(FrameLayout frameLayout, SVGAImageView sVGAImageView, ImageView imageView) {
-        this.f16876c = frameLayout;
-        this.f16875a = sVGAImageView;
+        this.c = frameLayout;
+        this.a = sVGAImageView;
         this.b = imageView;
     }
 
@@ -48,9 +44,8 @@ public final class ViewRobMusicRoomBgBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f16876c;
+        return this.c;
     }
 }

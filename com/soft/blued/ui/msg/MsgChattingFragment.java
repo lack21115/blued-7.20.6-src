@@ -50,8 +50,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.android.internal.inputmethod.InputMethodUtils;
-import com.android.internal.telephony.PhoneConstants;
 import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.listener.FetchDataListener;
@@ -107,7 +105,6 @@ import com.blued.android.module.common.utils.ScreenUtils;
 import com.blued.android.module.common.utils.ToastUtils;
 import com.blued.android.module.common.utils.click.SingleClickProxy;
 import com.blued.android.module.common.utils.click.SingleTouchProxy;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.BluedAlertDialog;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.android.module.common.widget.emoji.view.EmoticonsIndicatorView;
@@ -119,7 +116,6 @@ import com.blued.android.module.common.widget.emoticon.ui.EmoticonsToolBarView;
 import com.blued.android.module.common.widget.emoticon.ui.Emotion;
 import com.blued.android.module.common.widget.emoticon.ui.IViewStateListener;
 import com.blued.android.module.common.widget.pop.BluedPopupWindow;
-import com.blued.android.module.common.widget.refresh.BluedRefreshView;
 import com.blued.android.module.live_china.manager.LiveFloatManager;
 import com.blued.android.module.live_china.model.LiveRoomData;
 import com.blued.android.module.media.audio.audio_manager.BLAudioManager;
@@ -290,7 +286,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     private EmoticonsIndicatorView aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private EmoticonsToolBarView f31742ar;
+    private EmoticonsToolBarView f18052ar;
     private Emotion as;
     private View at;
     private boolean au;
@@ -324,7 +320,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     private boolean bw;
 
     /* renamed from: c  reason: collision with root package name */
-    public EditText f31743c;
+    public EditText f18053c;
     public TextView d;
     public TextView e;
     public View g;
@@ -347,7 +343,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     private TextView z;
 
     /* renamed from: a  reason: collision with root package name */
-    public List<ChattingModel> f31741a = new ArrayList();
+    public List<ChattingModel> f18051a = new ArrayList();
     private int an = 256;
     public boolean f = false;
     private boolean ao = false;
@@ -357,7 +353,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         private CharSequence b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f31773c;
+        private int f18083c;
         private int d;
         private String e;
         private String f;
@@ -368,23 +364,23 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                 if (!MsgChattingFragment.this.ax && editable != null && editable.toString().length() >= MsgChattingFragment.this.an) {
                     ToastUtils.a(MsgChattingFragment.this.getResources().getString(R.string.msg_char_limit));
                 }
-                MsgChattingFragment.this.f31743c.removeTextChangedListener(MsgChattingFragment.this.bx);
-                this.f31773c = MsgChattingFragment.this.f31743c.getSelectionStart();
-                this.d = MsgChattingFragment.this.f31743c.getSelectionEnd();
+                MsgChattingFragment.this.f18053c.removeTextChangedListener(MsgChattingFragment.this.bx);
+                this.f18083c = MsgChattingFragment.this.f18053c.getSelectionStart();
+                this.d = MsgChattingFragment.this.f18053c.getSelectionEnd();
                 while (editable.length() > MsgChattingFragment.this.an) {
-                    editable.delete(this.f31773c - 1, this.d);
-                    this.f31773c--;
+                    editable.delete(this.f18083c - 1, this.d);
+                    this.f18083c--;
                     this.d--;
                 }
                 if (!MsgChattingFragment.this.al.a(MsgChattingFragment.this.h.c() ? MsgChattingFragment.this : null, this.e, this.f, editable, this.d)) {
-                    MsgChattingFragment.this.f31743c.setSelection(this.f31773c);
+                    MsgChattingFragment.this.f18053c.setSelection(this.f18083c);
                 }
-                if (TextUtils.isEmpty(MsgChattingFragment.this.f31743c.getText().toString())) {
+                if (TextUtils.isEmpty(MsgChattingFragment.this.f18053c.getText().toString())) {
                     MsgChattingFragment.this.N.setVisibility(8);
                 } else {
                     MsgChattingFragment.this.N.setVisibility(0);
                 }
-                MsgChattingFragment.this.f31743c.addTextChangedListener(MsgChattingFragment.this.bx);
+                MsgChattingFragment.this.f18053c.addTextChangedListener(MsgChattingFragment.this.bx);
             } catch (Exception e) {
                 e.printStackTrace();
             } catch (StackOverflowError e2) {
@@ -412,16 +408,16 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     public class AnonymousClass27 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ boolean f31765a;
+        final /* synthetic */ boolean f18075a;
 
         AnonymousClass27(boolean z) {
-            this.f31765a = z;
+            this.f18075a = z;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             if (MsgChattingFragment.this.h != null) {
-                if (MsgChattingFragment.this.D.getCount() - MsgChattingFragment.this.C.getFirstVisiblePosition() >= MsgChattingFragment.this.h.N() || this.f31765a) {
+                if (MsgChattingFragment.this.D.getCount() - MsgChattingFragment.this.C.getFirstVisiblePosition() >= MsgChattingFragment.this.h.N() || this.f18075a) {
                     Logger.c(MsgChattingFragment.k, "checkShowPopNoRead====updateInfo");
                     return;
                 }
@@ -439,7 +435,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                             @Override // android.widget.AbsListView.OnScrollListener
                             public void onScroll(AbsListView absListView, int i, int i2, int i3) {
                                 try {
-                                    if (MsgChattingFragment.this.h == null || MsgChattingFragment.this.h.Q() || !MsgChattingFragment.this.h.R() || ((ChattingModel) MsgChattingFragment.this.D.f31961a.get(i)).msgId > MsgChattingFragment.this.h.O()) {
+                                    if (MsgChattingFragment.this.h == null || MsgChattingFragment.this.h.Q() || !MsgChattingFragment.this.h.R() || ((ChattingModel) MsgChattingFragment.this.D.f18271a.get(i)).msgId > MsgChattingFragment.this.h.O()) {
                                         return;
                                     }
                                     MsgChattingFragment.this.h.b(true);
@@ -492,23 +488,21 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     class AnonymousClass35 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ MsgChattingFragment f31779a;
+        final /* synthetic */ MsgChattingFragment f18089a;
 
         @Override // java.lang.Runnable
         public void run() {
-            if (this.f31779a.M == null || this.f31779a.aB != null) {
+            if (this.f18089a.M == null || this.f18089a.aB != null) {
                 return;
             }
-            this.f31779a.aB = new CenterGuidePop(this.f31779a.getContext(), this.f31779a.getString(R.string.msg_img_guide_hint));
-            this.f31779a.aB.a(this.f31779a.M, new SimpleCallback() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.35.1
-                @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
+            this.f18089a.aB = new CenterGuidePop(this.f18089a.getContext(), this.f18089a.getString(R.string.msg_img_guide_hint));
+            this.f18089a.aB.a(this.f18089a.M, new SimpleCallback() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.35.1
                 public void c(BasePopupView basePopupView) {
                     BluedPreferences.dw();
                 }
 
-                @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
                 public void d(BasePopupView basePopupView) {
-                    AnonymousClass35.this.f31779a.aB = null;
+                    AnonymousClass35.this.f18089a.aB = null;
                 }
             });
         }
@@ -521,20 +515,18 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         AnonymousClass67() {
         }
 
-        @Override // com.blued.android.module.base.shortvideo.DeleteAutoCheckedListener
         public void a(final CheckBox checkBox) {
             checkBox.setOnTouchListener(new SingleTouchProxy(new SingleTouchProxy.TouchListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.67.1
-                @Override // com.blued.android.module.common.utils.click.SingleTouchProxy.TouchListener
                 public boolean a() {
-                    if (ComplianceUtils.f10878a.a(checkBox.getContext())) {
+                    if (ComplianceUtils.a.a(checkBox.getContext())) {
                         return true;
                     }
                     if (FlashPhotoManager.a().b().flash_left_times < 1) {
-                        PayVIPPopupWindow.f19924c.a(checkBox.getContext(), 1, new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.67.1.1
+                        PayVIPPopupWindow.c.a(checkBox.getContext(), 1, new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.67.1.1
                             @Override // android.content.DialogInterface.OnDismissListener
                             public void onDismiss(DialogInterface dialogInterface) {
                                 CheckBox checkBox2 = checkBox;
-                                checkBox2.setText(MsgChattingFragment.this.m.getString(2131890784) + FlashPhotoManager.a().b().flash_prompt);
+                                checkBox2.setText(MsgChattingFragment.this.m.getString(R.string.msg_look_burn) + FlashPhotoManager.a().b().flash_prompt);
                             }
                         });
                         return true;
@@ -555,7 +547,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         @Override // java.lang.Runnable
         public void run() {
             ChatManager.getInstance().getSessionModel(MsgChattingFragment.this.h.E(), MsgChattingFragment.this.h.e(), new FetchDataListener<SessionModel>() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.8.1
-                @Override // com.blued.android.chat.listener.FetchDataListener
                 /* renamed from: a */
                 public void onFetchData(final SessionModel sessionModel) {
                     MsgChattingFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.8.1.1
@@ -585,10 +576,10 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     public class AnonymousClass80 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BluedIngSelfFeed f31839a;
+        final /* synthetic */ BluedIngSelfFeed f18149a;
 
         AnonymousClass80(BluedIngSelfFeed bluedIngSelfFeed) {
-            this.f31839a = bluedIngSelfFeed;
+            this.f18149a = bluedIngSelfFeed;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -616,13 +607,13 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             ImageView imageView = (ImageView) MsgChattingFragment.this.aI.findViewById(2131365719);
             TextView textView2 = (TextView) MsgChattingFragment.this.aI.findViewById(2131371186);
             ImageView imageView2 = (ImageView) MsgChattingFragment.this.aI.findViewById(2131365207);
-            textView2.setText(this.f31839a.feed_content);
-            if (this.f31839a.is_bubble_ticktock == 1) {
-                textView.setText(2131892202);
+            textView2.setText(this.f18149a.feed_content);
+            if (this.f18149a.is_bubble_ticktock == 1) {
+                textView.setText(R.string.super_topic_from_sign);
             } else {
-                textView.setText(2131892201);
-                if (this.f31839a.feed_pics != null && this.f31839a.feed_pics.length > 0) {
-                    ImageLoader.a(MsgChattingFragment.this.getFragmentActive(), this.f31839a.feed_pics[0]).a(imageView);
+                textView.setText(R.string.super_topic_from_anonymous);
+                if (this.f18149a.feed_pics != null && this.f18149a.feed_pics.length > 0) {
+                    ImageLoader.a(MsgChattingFragment.this.getFragmentActive(), this.f18149a.feed_pics[0]).a(imageView);
                 }
             }
             imageView2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$MsgChattingFragment$80$Eimr4zLWizzK0wI1P4BYynGMFAk
@@ -639,7 +630,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     public class LocalMsg {
 
         /* renamed from: a  reason: collision with root package name */
-        public List<ChattingModel> f31846a;
+        public List<ChattingModel> f18156a;
 
         LocalMsg() {
         }
@@ -649,14 +640,14 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     static class MsgHandler extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        private WeakReference<Fragment> f31847a;
+        private WeakReference<Fragment> f18157a;
 
         MsgHandler(Fragment fragment) {
-            this.f31847a = new WeakReference<>(fragment);
+            this.f18157a = new WeakReference<>(fragment);
         }
 
         public void a() {
-            WeakReference<Fragment> weakReference = this.f31847a;
+            WeakReference<Fragment> weakReference = this.f18157a;
             if (weakReference != null) {
                 weakReference.clear();
             }
@@ -664,7 +655,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
-            MsgChattingFragment msgChattingFragment = (MsgChattingFragment) this.f31847a.get();
+            MsgChattingFragment msgChattingFragment = (MsgChattingFragment) this.f18157a.get();
             if (msgChattingFragment == null || msgChattingFragment.getActivity() == null || msgChattingFragment.getActivity().isFinishing()) {
                 Logger.b(MsgChattingFragment.k, "fragment == null || getActivity() == null || getActivity().isFinishing()");
             } else {
@@ -716,7 +707,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     }
 
     private void P() {
-        MessageChatAdapter messageChatAdapter = new MessageChatAdapter(this.h, this, this.f31741a, this.al, this.bx, this);
+        MessageChatAdapter messageChatAdapter = new MessageChatAdapter(this.h, this, this.f18051a, this.al, this.bx, this);
         this.D = messageChatAdapter;
         this.C.setAdapter((ListAdapter) messageChatAdapter);
         SessionSettingModel aj = this.h.aj();
@@ -755,7 +746,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         }
         AnimationUtils.a(this.at, 400L);
         if (this.h.m() != null) {
-            BluedPreferences.a(this.h.m().group_id, System.currentTimeMillis() + (GroupUtil.f32828a * 60 * 1000));
+            BluedPreferences.a(this.h.m().group_id, System.currentTimeMillis() + (GroupUtil.f19137a * 60 * 1000));
         }
     }
 
@@ -770,7 +761,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) this.l.findViewById(R.id.msg_chatting_pullrefresh);
         this.B = smartRefreshLayout;
         smartRefreshLayout.findViewById(2131363911).setBackgroundColor(0);
-        ((BluedRefreshView) this.l.findViewById(R.id.refresh_header_view)).setShowText(false);
+        this.l.findViewById(R.id.refresh_header_view).setShowText(false);
         ListView listView = (ListView) this.l.findViewById(R.id.lv_chat_msg);
         this.C = listView;
         listView.setTranscriptMode(1);
@@ -796,7 +787,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 ChattingModel chattingModel;
-                if (MsgChattingFragment.this.h == null || MsgChattingFragment.this.D.f31961a.size() <= 0 || (chattingModel = (ChattingModel) MsgChattingFragment.this.D.f31961a.get(MsgChattingFragment.this.D.f31961a.size() - 1)) == null) {
+                if (MsgChattingFragment.this.h == null || MsgChattingFragment.this.D.f18271a.size() <= 0 || (chattingModel = (ChattingModel) MsgChattingFragment.this.D.f18271a.get(MsgChattingFragment.this.D.f18271a.size() - 1)) == null) {
                     return;
                 }
                 MsgChattingFragment.this.h.g(false);
@@ -816,12 +807,12 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         });
         this.I = (ImageView) this.l.findViewById(R.id.bt_audio_or_keyboard);
         this.F = (RecordButton) this.l.findViewById(R.id.bt_audio);
-        this.f31743c = (EditText) this.l.findViewById(R.id.et_sendMsg);
+        this.f18053c = (EditText) this.l.findViewById(R.id.et_sendMsg);
         if (this.h.an()) {
-            this.f31743c.setHint(R.string.msg_merchant_input_hint);
+            this.f18053c.setHint(R.string.msg_merchant_input_hint);
         }
-        this.f31743c.requestFocus();
-        this.f31743c.addTextChangedListener(this.bx);
+        this.f18053c.requestFocus();
+        this.f18053c.addTextChangedListener(this.bx);
         this.J = (ImageView) this.l.findViewById(R.id.bt_emotion);
         this.H = (ImageView) this.l.findViewById(R.id.bt_type_select);
         this.K = (ImageView) this.l.findViewById(R.id.bt_gift);
@@ -829,8 +820,8 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         this.M = (ImageView) this.l.findViewById(R.id.bt_img);
         this.N = (TextView) this.l.findViewById(R.id.msg_send);
         this.G = (LinearLayout) this.l.findViewById(R.id.ll_op);
-        this.g = this.l.findViewById(2131363329);
-        this.Y = (RelativeLayout) this.l.findViewById(2131362487);
+        this.g = this.l.findViewById(R.id.emoticon_layout);
+        this.Y = (RelativeLayout) this.l.findViewById(R.id.bottom_layout);
         if (BluedPreferences.cK()) {
             this.Y.setBackgroundResource(2131101833);
         } else {
@@ -844,7 +835,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         this.T = this.l.findViewById(R.id.ll_function_group_video_root);
         this.bj = (LinearLayout) this.l.findViewById(R.id.ll_function_image);
         this.bk = (LinearLayout) this.l.findViewById(R.id.ll_function_gift);
-        this.bl = (ShapeTextView) this.l.findViewById(R.id.iv_service_gift_dot);
+        this.bl = this.l.findViewById(R.id.iv_service_gift_dot);
         this.U = (TextView) this.l.findViewById(R.id.tv_floating_group_msg);
         this.X = (LinearLayout) this.l.findViewById(R.id.ll_group_floating_msg);
         this.V = (ImageView) this.l.findViewById(R.id.iv_new_group_msg_head);
@@ -856,7 +847,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         this.ah = (LinearLayout) this.l.findViewById(R.id.ll_pop_no_read_msg);
         TextView textView2 = (TextView) this.l.findViewById(R.id.tv_no_read_msg_count);
         this.ag = textView2;
-        textView2.setText(String.format(getResources().getString(2131890821), String.valueOf(this.h.N())));
+        textView2.setText(String.format(getResources().getString(R.string.msg_num), String.valueOf(this.h.N())));
         this.aZ = (LinearLayout) this.l.findViewById(R.id.ll_service_menu);
         this.ba = (ImageView) this.l.findViewById(R.id.bt_service_menu);
         this.bb = (LinearLayout) this.l.findViewById(R.id.ll_service_btn);
@@ -868,13 +859,13 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         this.bi = (LinearLayout) this.l.findViewById(R.id.ll_chat_bottom);
         this.bf = (FrameLayout) this.l.findViewById(R.id.fm_gift);
         final boolean z = !TextUtils.isEmpty(BluedConfig.a().f().link);
-        this.y = (TextView) this.l.findViewById(2131372745);
+        this.y = (TextView) this.l.findViewById(R.id.tv_tips);
         this.z = (TextView) this.l.findViewById(R.id.tv_tip_button);
         this.y.setText(BluedConfig.a().f().text);
         this.z.setVisibility((!z || this.h.c()) ? 8 : 0);
         RecentPhotoView recentPhotoView = (RecentPhotoView) this.l.findViewById(R.id.recent_photo_view);
         this.av = recentPhotoView;
-        recentPhotoView.a(getFragmentActive(), this);
+        recentPhotoView.a((IRequestHost) getFragmentActive(), (RecentPhotoView.IRecentPhotoOperationCallback) this);
         if (this.h.C()) {
             this.av.a();
         }
@@ -894,7 +885,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             this.T.setVisibility(8);
             this.d.setVisibility(8);
         }
-        this.am = (KeyboardListenLinearLayout) this.l.findViewById(2131366091);
+        this.am = this.l.findViewById(R.id.keyboardRelativeLayout);
         ViewStub viewStub = (ViewStub) this.l.findViewById(R.id.stub_gift_anim);
         this.az = viewStub;
         this.i = new GiftPlayer(viewStub, this.h.e());
@@ -964,17 +955,16 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         }
         this.as = new Emotion(this.m);
         EmotionManager.a(this);
-        this.ap = (EmoticonsPageView) this.g.findViewById(2131373162);
-        this.aq = (EmoticonsIndicatorView) this.g.findViewById(2131373161);
-        EmoticonsToolBarView emoticonsToolBarView = (EmoticonsToolBarView) this.g.findViewById(2131373163);
-        this.f31742ar = emoticonsToolBarView;
-        emoticonsToolBarView.setModel(false);
-        this.f31742ar.setTargetUid(this.h.e() + "");
+        this.ap = this.g.findViewById(2131373162);
+        this.aq = this.g.findViewById(2131373161);
+        EmoticonsToolBarView findViewById2 = this.g.findViewById(R.id.view_etv);
+        this.f18052ar = findViewById2;
+        findViewById2.setModel(false);
+        this.f18052ar.setTargetUid(this.h.e() + "");
         CommonPreferences.a(System.currentTimeMillis());
-        this.f31742ar.a(getFragmentActive(), EmotionManager.c());
+        this.f18052ar.a(getFragmentActive(), EmotionManager.c());
         this.ap.a(getFragmentActive(), EmotionManager.c());
-        this.f31742ar.setOnEmotionToolBarClickListener(new EmoticonsToolBarView.OnEmotionToolBarClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.13
-            @Override // com.blued.android.module.common.widget.emoticon.ui.EmoticonsToolBarView.OnEmotionToolBarClickListener
+        this.f18052ar.setOnEmotionToolBarClickListener(new EmoticonsToolBarView.OnEmotionToolBarClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.13
             public void a(View view) {
                 MessageProtos.Event event = MessageProtos.Event.MSG_EMOJI_CLICK;
                 MessageProtos.StrangerSource strangerSource = MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE;
@@ -982,72 +972,64 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                 BluedURIRouterAdapter.openEmotionShop(MsgChattingFragment.this.m, 0);
             }
 
-            @Override // com.blued.android.module.common.widget.emoticon.ui.EmoticonsToolBarView.OnEmotionToolBarClickListener
             public void b(View view) {
                 BluedURIRouterAdapter.openEmotionShop(MsgChattingFragment.this.m, 1);
             }
         });
         this.ap.setOnIndicatorListener(new EmoticonsPageView.OnEmoticonsPageViewListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.14
-            @Override // com.blued.android.module.common.widget.emoticon.ui.EmoticonsPageView.OnEmoticonsPageViewListener
             public void a(int i) {
                 MsgChattingFragment.this.aq.a(i);
             }
 
-            @Override // com.blued.android.module.common.widget.emoticon.ui.EmoticonsPageView.OnEmoticonsPageViewListener
             public void a(int i, int i2) {
                 MsgChattingFragment.this.aq.a(i, i2);
             }
 
-            @Override // com.blued.android.module.common.widget.emoticon.ui.EmoticonsPageView.OnEmoticonsPageViewListener
             public void b(int i) {
                 MsgChattingFragment.this.aq.setIndicatorCount(i);
             }
 
-            @Override // com.blued.android.module.common.widget.emoticon.ui.EmoticonsPageView.OnEmoticonsPageViewListener
             public void c(int i) {
                 MsgChattingFragment.this.aq.b(i);
             }
         });
         this.ap.setIViewListener(new IViewStateListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.15
-            @Override // com.blued.android.module.common.widget.emoticon.ui.IViewStateListener
             public void a(int i) {
-                MsgChattingFragment.this.f31742ar.setToolBtnSelect(i);
+                MsgChattingFragment.this.f18052ar.setToolBtnSelect(i);
             }
 
-            @Override // com.blued.android.module.common.widget.emoticon.ui.IViewStateListener
             public void a(EmoticonModel emoticonModel) {
-                if (MsgChattingFragment.this.f31743c != null) {
-                    MsgChattingFragment.this.f31743c.setFocusable(true);
-                    MsgChattingFragment.this.f31743c.setFocusableInTouchMode(true);
-                    MsgChattingFragment.this.f31743c.requestFocus();
+                if (MsgChattingFragment.this.f18053c != null) {
+                    MsgChattingFragment.this.f18053c.setFocusable(true);
+                    MsgChattingFragment.this.f18053c.setFocusableInTouchMode(true);
+                    MsgChattingFragment.this.f18053c.requestFocus();
                     if (emoticonModel.eventType == 1) {
-                        MsgChattingFragment.this.f31743c.onKeyDown(67, new KeyEvent(0, 67));
+                        MsgChattingFragment.this.f18053c.onKeyDown(67, new KeyEvent(0, 67));
                     } else if (emoticonModel.eventType == 2) {
                     } else {
                         if (emoticonModel.emoticonType != 0) {
                             MsgChattingFragment msgChattingFragment = MsgChattingFragment.this;
-                            msgChattingFragment.b(emoticonModel.packageCode + BridgeUtil.UNDERLINE_STR + emoticonModel.code);
+                            msgChattingFragment.b(emoticonModel.packageCode + "_" + emoticonModel.code);
                         } else if (emoticonModel.emoji != null) {
-                            MsgChattingFragment.this.f31743c.append(emoticonModel.emoji.a());
+                            MsgChattingFragment.this.f18053c.append(emoticonModel.emoji.a());
                         } else {
                             SpannableString a2 = MsgChattingFragment.this.as.a(emoticonModel.code);
-                            if (MsgChattingFragment.this.f31743c.getText().length() + a2.length() <= MsgChattingFragment.this.an) {
-                                MsgChattingFragment.this.f31743c.getText().insert(MsgChattingFragment.this.f31743c.getSelectionStart(), a2);
+                            if (MsgChattingFragment.this.f18053c.getText().length() + a2.length() <= MsgChattingFragment.this.an) {
+                                MsgChattingFragment.this.f18053c.getText().insert(MsgChattingFragment.this.f18053c.getSelectionStart(), a2);
                             }
                         }
                     }
                 }
             }
         });
-        this.f31742ar.setOnToolBarItemClickListener(new EmoticonsToolBarView.OnToolBarItemClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.16
-            @Override // com.blued.android.module.common.widget.emoticon.ui.EmoticonsToolBarView.OnToolBarItemClickListener
+        this.f18052ar.setOnToolBarItemClickListener(new EmoticonsToolBarView.OnToolBarItemClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.16
             public void a(int i) {
                 MsgChattingFragment.this.ap.setPageSelect(i);
             }
         });
-        View findViewById2 = this.l.findViewById(R.id.msg_ll_top_tip);
-        this.Z = findViewById2;
-        findViewById2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.17
+        View findViewById3 = this.l.findViewById(R.id.msg_ll_top_tip);
+        this.Z = findViewById3;
+        findViewById3.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.17
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -1060,13 +1042,13 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         TextView textView3 = (TextView) this.Z.findViewById(R.id.include_top_tip_text);
         this.aa = textView3;
         textView3.setText(this.m.getResources().getText(R.string.biao_to_listen_current));
-        this.af = (ShapeTextView) this.l.findViewById(R.id.stv_top_title_online_status);
-        this.ac = (ShapeRelativeLayout) this.l.findViewById(R.id.srl_online_status);
+        this.af = this.l.findViewById(R.id.stv_top_title_online_status);
+        this.ac = this.l.findViewById(R.id.srl_online_status);
         this.ad = (TextView) this.l.findViewById(R.id.tv_online_status_text);
         this.ae = (ImageView) this.l.findViewById(R.id.iv_online_status_anim);
-        View findViewById3 = this.l.findViewById(R.id.msg_safe_notify_show);
-        this.at = findViewById3;
-        findViewById3.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.18
+        View findViewById4 = this.l.findViewById(R.id.msg_safe_notify_show);
+        this.at = findViewById4;
+        findViewById4.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.18
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -1100,7 +1082,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         ImageView imageView2 = (ImageView) this.l.findViewById(R.id.iv_quote_close);
         this.aN = imageView2;
         imageView2.setOnClickListener(this);
-        this.aQ = (ShapeTextView) this.l.findViewById(R.id.img_new_remind_circle);
+        this.aQ = this.l.findViewById(R.id.img_new_remind_circle);
         this.aR = (ViewStub) this.l.findViewById(R.id.vs_announcement);
         RiskyMsgDeletedHint riskyMsgDeletedHint3 = (RiskyMsgDeletedHint) this.l.findViewById(R.id.cheat_hint);
         this.aU = riskyMsgDeletedHint3;
@@ -1108,19 +1090,19 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         this.aU.setTheme(RiskyMsgDeletedHint.Theme.RED);
         this.aV = (RiskyMsgDeletedHint) this.l.findViewById(R.id.group_freeze_hint);
         this.aX = this.l.findViewById(2131370259);
-        this.aW = (KeyboardConstraintLayout) this.l.findViewById(2131369461);
+        this.aW = this.l.findViewById(2131369461);
         RiskyMsgDeletedHint riskyMsgDeletedHint4 = (RiskyMsgDeletedHint) this.l.findViewById(R.id.abuse_hint);
         this.aY = riskyMsgDeletedHint4;
         riskyMsgDeletedHint4.setHint(getString(R.string.msg_abuse_hint));
         this.aY.setAutoDismiss(false);
         this.aY.setTheme(RiskyMsgDeletedHint.Theme.RED);
         if (this.h.D()) {
-            this.ba.setImageDrawable(BluedSkinUtils.b(this.m, R.drawable.btn_keyboard));
+            this.ba.setImageDrawable(BluedSkinUtils.b(this.m, (int) R.drawable.btn_keyboard));
             this.aZ.setVisibility(0);
             this.bg.setVisibility(0);
             this.be.setVisibility(8);
             this.bb.setVisibility(8);
-            this.f31743c.setVisibility(8);
+            this.f18053c.setVisibility(8);
             this.N.setVisibility(8);
             this.ba.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.19
                 @Override // android.view.View.OnClickListener
@@ -1165,20 +1147,20 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationRepeat(Animation animation) {
                 if (MsgChattingFragment.this.bg.getVisibility() == 0) {
-                    MsgChattingFragment.this.ba.setImageDrawable(BluedSkinUtils.b(MsgChattingFragment.this.m, R.drawable.icon_chat_service_menu));
+                    MsgChattingFragment.this.ba.setImageDrawable(BluedSkinUtils.b(MsgChattingFragment.this.m, (int) R.drawable.icon_chat_service_menu));
                     MsgChattingFragment.this.bg.setVisibility(8);
                     MsgChattingFragment.this.bb.setVisibility(0);
-                    MsgChattingFragment.this.f31743c.setVisibility(0);
-                    if (MsgChattingFragment.this.f31743c.getText().toString().isEmpty()) {
+                    MsgChattingFragment.this.f18053c.setVisibility(0);
+                    if (MsgChattingFragment.this.f18053c.getText().toString().isEmpty()) {
                         return;
                     }
                     MsgChattingFragment.this.N.setVisibility(0);
                     return;
                 }
-                MsgChattingFragment.this.ba.setImageDrawable(BluedSkinUtils.b(MsgChattingFragment.this.m, R.drawable.btn_keyboard));
+                MsgChattingFragment.this.ba.setImageDrawable(BluedSkinUtils.b(MsgChattingFragment.this.m, (int) R.drawable.btn_keyboard));
                 MsgChattingFragment.this.bg.setVisibility(0);
                 MsgChattingFragment.this.bb.setVisibility(8);
-                MsgChattingFragment.this.f31743c.setVisibility(8);
+                MsgChattingFragment.this.f18053c.setVisibility(8);
                 if (MsgChattingFragment.this.N.getVisibility() == 0) {
                     MsgChattingFragment.this.N.setVisibility(8);
                 }
@@ -1206,19 +1188,19 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
 
     private void W() {
         this.aw = BluedPreferences.bZ();
-        this.f31743c.setHorizontallyScrolling(false);
+        this.f18053c.setHorizontallyScrolling(false);
         if (!this.aw) {
-            this.f31743c.setImeOptions(0);
-            this.f31743c.setInputType(131072);
-            this.f31743c.setSingleLine(false);
-            this.f31743c.setMaxLines(4);
+            this.f18053c.setImeOptions(0);
+            this.f18053c.setInputType(131072);
+            this.f18053c.setSingleLine(false);
+            this.f18053c.setMaxLines(4);
             return;
         }
-        this.f31743c.setImeOptions(4);
-        this.f31743c.setInputType(262144);
-        this.f31743c.setSingleLine(false);
-        this.f31743c.setMaxLines(4);
-        this.f31743c.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$MsgChattingFragment$CK4sbGcm0D4Z0gz9ndxsdMWrfpw
+        this.f18053c.setImeOptions(4);
+        this.f18053c.setInputType(262144);
+        this.f18053c.setSingleLine(false);
+        this.f18053c.setMaxLines(4);
+        this.f18053c.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$MsgChattingFragment$CK4sbGcm0D4Z0gz9ndxsdMWrfpw
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 boolean a2;
@@ -1236,24 +1218,25 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void Y() {
-        this.F.f32319a = 60;
+        this.F.f18629a = 60;
         AudioChannelManager.j().n();
         this.F.setOnRecordListener(new RecordButton.OnRecordListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.39
 
             /* renamed from: a  reason: collision with root package name */
-            String f31786a = "";
+            String f18096a = "";
 
             private void b() {
-                MsgChattingFragment.this.F.setBackground(BluedSkinUtils.b(MsgChattingFragment.this.m, R.drawable.shape_msg_chatting_voice_blue_solid_ed));
-                IMV4Constant.f32240a = true;
+                MsgChattingFragment.this.F.setBackground(BluedSkinUtils.b(MsgChattingFragment.this.m, (int) R.drawable.shape_msg_chatting_voice_blue_solid_ed));
+                IMV4Constant.f18550a = true;
                 BLAudioManager.a(MsgChattingFragment.this.m).c();
                 MsgChattingFragment.this.F.setText(R.string.release_notalk);
             }
 
             private void c() {
-                MsgChattingFragment.this.F.setBackground(BluedSkinUtils.b(MsgChattingFragment.this.m, R.drawable.shape_msg_chatting_voice_blue_solid));
-                IMV4Constant.f32240a = false;
+                MsgChattingFragment.this.F.setBackground(BluedSkinUtils.b(MsgChattingFragment.this.m, (int) R.drawable.shape_msg_chatting_voice_blue_solid));
+                IMV4Constant.f18550a = false;
                 BLAudioManager.a(MsgChattingFragment.this.m).d();
                 MsgChattingFragment.this.F.setText(R.string.press_talk);
             }
@@ -1266,11 +1249,11 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             @Override // com.soft.blued.ui.msg.customview.RecordButton.OnRecordListener
             public void a(int i) {
                 if (MsgChattingFragment.this.h != null) {
-                    File file = new File(this.f31786a);
+                    File file = new File(this.f18096a);
                     if (!file.exists() || file.length() == 0) {
-                        ToastUtils.a(MsgChattingFragment.this.m.getString(2131891448));
+                        ToastUtils.a(MsgChattingFragment.this.m.getString(R.string.record_again));
                     } else {
-                        MsgChattingFragment.this.h.b(this.f31786a, i, 0);
+                        MsgChattingFragment.this.h.b(this.f18096a, i, 0);
                     }
                 }
             }
@@ -1282,9 +1265,9 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                 b();
                 short E = MsgChattingFragment.this.h.E();
                 long e = MsgChattingFragment.this.h.e();
-                this.f31786a = IMV4Method.a(E, e, System.currentTimeMillis() + "");
-                Logger.b(MsgChattingFragment.k, "==recordPath===", this.f31786a);
-                MsgChattingFragment.this.F.setRecordPath(this.f31786a);
+                this.f18096a = IMV4Method.a(E, e, System.currentTimeMillis() + "");
+                Logger.b(MsgChattingFragment.k, "==recordPath===", this.f18096a);
+                MsgChattingFragment.this.F.setRecordPath(this.f18096a);
             }
 
             @Override // com.soft.blued.ui.msg.customview.RecordButton.OnRecordListener
@@ -1314,7 +1297,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(OpenGiftPackageEvent openGiftPackageEvent) {
-                if (openGiftPackageEvent.f32328a == null || !openGiftPackageEvent.f32328a.equals(MsgChattingFragment.this.getFragmentActive())) {
+                if (openGiftPackageEvent.f18638a == null || !openGiftPackageEvent.f18638a.equals(MsgChattingFragment.this.getFragmentActive())) {
                     return;
                 }
                 Context context = MsgChattingFragment.this.getContext();
@@ -1334,7 +1317,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(KeepScreenEvent keepScreenEvent) {
-                if (keepScreenEvent.f32327a) {
+                if (keepScreenEvent.f18637a) {
                     MsgChattingFragment.this.getActivity().getWindow().addFlags(128);
                 } else {
                     MsgChattingFragment.this.getActivity().getWindow().clearFlags(128);
@@ -1369,7 +1352,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(AtUserEvent atUserEvent) {
-                MsgChattingFragment.this.al.a(MsgChattingFragment.this.f31743c, atUserEvent.a(), MsgChattingFragment.this.bx, false);
+                MsgChattingFragment.this.al.a(MsgChattingFragment.this.f18053c, atUserEvent.a(), MsgChattingFragment.this.bx, false);
                 KeyboardUtils.c(MsgChattingFragment.this.getActivity());
             }
         });
@@ -1491,7 +1474,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         }
         this.aW.getKeyboardHelper().a(hashMap);
         this.aW.getKeyboardHelper().a(new SwitchPreHandleListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.4
-            @Override // com.blued.android.kbswitch.listener.SwitchPreHandleListener
             public boolean a(KeyboardHelper keyboardHelper, View view4, boolean z, boolean z2) {
                 if (view4.getId() == 2131362521) {
                     EventTrackMessage.a(MessageProtos.Event.MSG_ADD_BTN_CLICK);
@@ -1525,9 +1507,9 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                 if (z2 || z) {
                     MsgChattingFragment.this.Q();
                     MsgChattingFragment.this.I.setTag("audio");
-                    MsgChattingFragment.this.I.setImageDrawable(BluedSkinUtils.b(MsgChattingFragment.this.m, R.drawable.btn_voice));
-                    MsgChattingFragment.this.f31743c.setVisibility(0);
-                    if (TextUtils.isEmpty(MsgChattingFragment.this.f31743c.getText().toString())) {
+                    MsgChattingFragment.this.I.setImageDrawable(BluedSkinUtils.b(MsgChattingFragment.this.m, (int) R.drawable.btn_voice));
+                    MsgChattingFragment.this.f18053c.setVisibility(0);
+                    if (TextUtils.isEmpty(MsgChattingFragment.this.f18053c.getText().toString())) {
                         MsgChattingFragment.this.N.setVisibility(8);
                     } else {
                         MsgChattingFragment.this.N.setVisibility(0);
@@ -1539,7 +1521,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             }
         });
         this.aW.getKeyboardHelper().a(new KeyboardStatusListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.5
-            @Override // com.blued.android.kbswitch.listener.KeyboardStatusListener
             public void a(KeyboardHelper keyboardHelper, boolean z, boolean z2, int i) {
                 MsgChattingFragment.this.f = z;
                 MsgChattingFragment.this.ao = z2;
@@ -1559,7 +1540,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                     MsgChattingFragment.this.C.setSelection(MsgChattingFragment.this.D.getCount() - 1);
                     MsgChattingFragment.this.C.clearFocus();
                     if (z) {
-                        MsgChattingFragment.this.f31743c.requestFocus();
+                        MsgChattingFragment.this.f18053c.requestFocus();
                     } else {
                         MsgChattingFragment.this.aX.requestFocus();
                     }
@@ -1583,7 +1564,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                     public void onClick(View view) {
                         Tracker.onClick(view);
                         Context context = MsgChattingFragment.this.getContext();
-                        WebViewShowInfoFragment.show(context, GroupConstant.f32663a + "frozen");
+                        WebViewShowInfoFragment.show(context, GroupConstant.f18972a + "frozen");
                     }
                 });
             }
@@ -1603,7 +1584,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     Context context = MsgChattingFragment.this.getContext();
-                    WebViewShowInfoFragment.show(context, GroupConstant.f32663a + "relieve");
+                    WebViewShowInfoFragment.show(context, GroupConstant.f18972a + "relieve");
                 }
             });
         }
@@ -1636,11 +1617,11 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     private void a(String str, short s) {
         boolean z;
         if (UserInfoHelper.b(UserInfo.getInstance().getLoginUserInfo().vbadge)) {
-            this.f31743c.setHint("");
+            this.f18053c.setHint("");
         }
         if (this.h != null) {
             if (TextUtils.isEmpty(str)) {
-                str = this.al.b(this.f31743c.getText().toString());
+                str = this.al.b(this.f18053c.getText().toString());
                 z = true;
             } else {
                 z = false;
@@ -1662,7 +1643,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             }
             this.h.b(a2);
             if (s == 1) {
-                this.f31743c.setText("");
+                this.f18053c.setText("");
                 this.H.setVisibility(0);
                 this.N.setVisibility(8);
                 this.aM.setVisibility(8);
@@ -1676,7 +1657,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             list.get(list.size() - 1).show_divider = 1;
             ServiceMenuPopWindow serviceMenuPopWindow = new ServiceMenuPopWindow(getContext());
             serviceMenuPopWindow.a(list, this.h.f(), i);
-            new XPopup.Builder(getContext()).a(PopupAnimation.NoAnimation).a(PopupPosition.Top).d((Boolean) false).b((Boolean) true).b(true).a(view).a((BasePopupView) serviceMenuPopWindow).h();
+            new XPopup.Builder(getContext()).a(PopupAnimation.v).a(PopupPosition.c).d(false).b(true).b(true).a(view).a(serviceMenuPopWindow).h();
         }
     }
 
@@ -1700,13 +1681,12 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     private void aa() {
         MsgGroupHttpUtils.a(getFragmentActive(), String.valueOf(this.h.f()), new BluedUIHttpResponse<BluedEntityA<GroupInfoModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.msg.MsgChattingFragment.60
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<GroupInfoModel> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                GroupInfoModel groupInfoModel = bluedEntityA.data.get(0);
+                GroupInfoModel groupInfoModel = (GroupInfoModel) bluedEntityA.data.get(0);
                 if (groupInfoModel != null) {
                     if (groupInfoModel.group_role == 0) {
                         MsgChattingFragment msgChattingFragment = MsgChattingFragment.this;
@@ -1758,7 +1738,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 if (i == 40319010 || i == 40319059) {
                     MsgChattingFragment.this.a(str);
@@ -1779,7 +1758,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             return;
         }
         final UserInfoBasicModel S = this.h.S();
-        if (!OnlineStatusManager.f32435a.a() || (S.live == 0 && S.room_id == 0 && S.online_state != 1)) {
+        if (!OnlineStatusManager.f18745a.a() || (S.live == 0 && S.room_id == 0 && S.online_state != 1)) {
             this.af.setVisibility(8);
         } else {
             this.af.setVisibility(0);
@@ -1800,25 +1779,25 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                     if (S.live == 0 || MsgChattingFragment.this.h.f() == 0) {
                         return;
                     }
-                    EventTrackMessage.d(MessageProtos.Event.CHAT_USER_LIVE_YY_CLICK, OnlineStatusManager.f32435a.a((Integer) 2), MsgChattingFragment.this.h.f() + "", S.live + "");
+                    EventTrackMessage.d(MessageProtos.Event.CHAT_USER_LIVE_YY_CLICK, OnlineStatusManager.f18745a.a((Integer) 2), MsgChattingFragment.this.h.f() + "", S.live + "");
                     LiveRoomInfoChannel.a(MsgChattingFragment.this.m, new LiveRoomData(S.live, 0, MediaFormat.KEY_PROFILE, MsgChattingFragment.this.h.f() + "", S.name, S.avatar, S.vbadge));
                 }
             });
-            EventTrackMessage.d(MessageProtos.Event.CHAT_USER_SHOW, OnlineStatusManager.f32435a.a((Integer) 2), this.h.f() + "", S.live + "");
+            EventTrackMessage.d(MessageProtos.Event.CHAT_USER_SHOW, OnlineStatusManager.f18745a.a((Integer) 2), this.h.f() + "", S.live + "");
         } else if (S.room_id == 0) {
-            EventTrackMessage.d(MessageProtos.Event.CHAT_USER_SHOW, OnlineStatusManager.f32435a.a((Integer) 0), this.h.f() + "", "");
+            EventTrackMessage.d(MessageProtos.Event.CHAT_USER_SHOW, OnlineStatusManager.f18745a.a((Integer) 0), this.h.f() + "", "");
         } else {
-            ShapeHelper.a(this.ac, R.color.syc_online_chat_start, R.color.syc_online_chat_end);
+            ShapeHelper.a(this.ac, (int) R.color.syc_online_chat_start, (int) R.color.syc_online_chat_end);
             this.ad.setText(this.m.getString(R.string.online_status_chatting));
             this.ac.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.62
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    EventTrackMessage.d(MessageProtos.Event.CHAT_USER_LIVE_YY_CLICK, OnlineStatusManager.f32435a.a((Integer) 3), MsgChattingFragment.this.h.f() + "", S.room_id + "");
+                    EventTrackMessage.d(MessageProtos.Event.CHAT_USER_LIVE_YY_CLICK, OnlineStatusManager.f18745a.a((Integer) 3), MsgChattingFragment.this.h.f() + "", S.room_id + "");
                     BluedURIRouterAdapter.openYYChatRoom(MsgChattingFragment.this.m, "" + S.room_id, "", "", "");
                 }
             });
-            EventTrackMessage.d(MessageProtos.Event.CHAT_USER_SHOW, OnlineStatusManager.f32435a.a((Integer) 3), this.h.f() + "", S.room_id + "");
+            EventTrackMessage.d(MessageProtos.Event.CHAT_USER_SHOW, OnlineStatusManager.f18745a.a((Integer) 3), this.h.f() + "", S.room_id + "");
         }
     }
 
@@ -1893,9 +1872,9 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             this.aW.setBackgroundColor(0);
             imageView.setVisibility(0);
             if (BluedPreferences.cK()) {
-                ImageLoader.a(getFragmentActive(), ImgURLMap.f10885a.a("bg_date_today_chat_dark")).a(imageView);
+                ImageLoader.a(getFragmentActive(), ImgURLMap.a.a("bg_date_today_chat_dark")).a(imageView);
             } else {
-                ImageLoader.a(getFragmentActive(), ImgURLMap.f10885a.a("bg_date_today_chat")).a(imageView);
+                ImageLoader.a(getFragmentActive(), ImgURLMap.a.a("bg_date_today_chat")).a(imageView);
             }
         } else {
             this.aW.setBackgroundColor(BluedSkinUtils.a(this.m, 2131101796));
@@ -1919,7 +1898,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         this.bp = (CardView) this.l.findViewById(R.id.cv_pop_date_today_match);
         this.bq = (ImageView) this.l.findViewById(R.id.iv_date_today_like_left);
         this.br = (ImageView) this.l.findViewById(R.id.iv_date_today_like_right);
-        this.bs = (SVGAImageView) this.l.findViewById(R.id.svga_date_today_like_left);
+        this.bs = this.l.findViewById(R.id.svga_date_today_like_left);
         if (this.h.ap()) {
             this.bp.setVisibility(0);
             this.bp.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$MsgChattingFragment$jn-G18mIui9eRLOvwdb7rbZKVqM
@@ -1938,7 +1917,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             this.br.setImageResource(R.drawable.icon_date_today_heart_right_like_small);
         }
         if (this.bu == null) {
-            this.bu = (SVGAImageView) this.l.findViewById(R.id.svga_date_today_say_hello_anim);
+            this.bu = this.l.findViewById(R.id.svga_date_today_say_hello_anim);
         }
         this.bt = (LinearLayout) this.l.findViewById(R.id.ll_date_today_say_hi);
         if (this.h.ap()) {
@@ -2014,12 +1993,12 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     private void al() {
         BluedAlertDialog bluedAlertDialog = this.bn;
         if (bluedAlertDialog == null || !bluedAlertDialog.isShowing()) {
-            BluedAlertDialog a2 = new BluedAlertDialog.Builder(this.m).d(R.string.date_today_do_not_like_confirm_title).e(R.string.date_today_do_not_like_confirm_desc).b(R.string.date_today_do_not_like_confirm_no, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$MsgChattingFragment$AfqFoPYX0qWap8s782ZUgfVEdSU
+            BluedAlertDialog a2 = new BluedAlertDialog.Builder(this.m).d((int) R.string.date_today_do_not_like_confirm_title).e((int) R.string.date_today_do_not_like_confirm_desc).b((int) R.string.date_today_do_not_like_confirm_no, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$MsgChattingFragment$AfqFoPYX0qWap8s782ZUgfVEdSU
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     MsgChattingFragment.d(dialogInterface, i);
                 }
-            }).g(2131102254).a(R.string.date_today_do_not_like_confirm_yes, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$MsgChattingFragment$eOVCboMc0c4xLpVI-QWXcXwBeIc
+            }).g(2131102254).a((int) R.string.date_today_do_not_like_confirm_yes, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$MsgChattingFragment$eOVCboMc0c4xLpVI-QWXcXwBeIc
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     MsgChattingFragment.this.c(dialogInterface, i);
@@ -2033,12 +2012,12 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     private void am() {
         BluedAlertDialog bluedAlertDialog = this.bo;
         if (bluedAlertDialog == null || !bluedAlertDialog.isShowing()) {
-            BluedAlertDialog a2 = new BluedAlertDialog.Builder(this.m).d(R.string.date_today_close_chat_title).e(R.string.date_today_close_chat_desc).b(R.string.date_today_close_chat_no, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$MsgChattingFragment$Vnp4n530p20hdVIh5IpeWJYvorM
+            BluedAlertDialog a2 = new BluedAlertDialog.Builder(this.m).d((int) R.string.date_today_close_chat_title).e((int) R.string.date_today_close_chat_desc).b((int) R.string.date_today_close_chat_no, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$MsgChattingFragment$Vnp4n530p20hdVIh5IpeWJYvorM
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     MsgChattingFragment.this.b(dialogInterface, i);
                 }
-            }).g(2131102254).a(R.string.date_today_close_chat_yes, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$MsgChattingFragment$BZT_T6wX3bVSi0528HGOhBGeTr0
+            }).g(2131102254).a((int) R.string.date_today_close_chat_yes, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$MsgChattingFragment$BZT_T6wX3bVSi0528HGOhBGeTr0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     MsgChattingFragment.this.a(dialogInterface, i);
@@ -2053,7 +2032,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     public /* synthetic */ void an() {
         int i;
         View a2;
-        List<E> list = this.D.f31961a;
+        List<E> list = this.D.f18271a;
         if (list != 0) {
             int size = list.size();
             while (true) {
@@ -2093,7 +2072,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             final BluedPopupWindow a2 = BluedPopupWindow.Builder.a(getActivity(), inflate).a(true).a();
             TextView textView = (TextView) inflate.findViewById(R.id.tv_cnt);
             textView.setText(this.m.getString(R.string.service_msg_private_guide_content));
-            textView.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.RIGHT, 2131232898));
+            textView.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.c, new int[]{2131232898}));
             inflate.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.21
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view2) {
@@ -2139,7 +2118,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void c(DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        DateTodayManager.f32404a.a(MessageProtos.Event.MSG_MATCH_CHAT_PAGE_UNLIKE_CLICK);
+        DateTodayManager.f18714a.a(MessageProtos.Event.MSG_MATCH_CHAT_PAGE_UNLIKE_CLICK);
         dialogInterface.dismiss();
         this.h.k(false);
     }
@@ -2217,7 +2196,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         MsgExtraForTextTypeEntity.SecureNotify a3 = LocalSecureNotifyContent.a(this.m.getResources());
         MessageChatAdapter messageChatAdapter = this.D;
         Context context = this.m;
-        messageChatAdapter.a(context, this.h.e() + "", getFragmentActive(), this.f31741a, (ChattingModel) null, a3, a2);
+        messageChatAdapter.a(context, this.h.e() + "", getFragmentActive(), this.f18051a, (ChattingModel) null, a3, a2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2272,22 +2251,22 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         EventLogData eventLogData = new EventLogData();
         eventLogData.setEventId(str);
         eventLogData.setSourcePage(FeedProtos.SourcePage.GROUP_ACTIVITY);
-        EventDetailsFragment.f19534a.a(getContext(), str, eventLogData);
+        EventDetailsFragment.a.a(getContext(), str, eventLogData);
     }
 
     private void d(List<FuGiftModel> list) {
         BluedPreferences.aa(true);
         if (list != null && getFragmentActive().isActive()) {
-            new XPopup.Builder(getContext()).a((Boolean) false).b((Boolean) false).a((BasePopupView) new FuGiftPop(getContext(), list, UserGiftFragment.k, getFragmentActive())).h();
+            new XPopup.Builder(getContext()).a(false).b(false).a(new FuGiftPop(getContext(), list, UserGiftFragment.k, getFragmentActive())).h();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d(boolean z) {
         if (z) {
-            this.H.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.btn_plus_open));
+            this.H.setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.btn_plus_open));
         } else {
-            this.H.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.btn_plus));
+            this.H.setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.btn_plus));
         }
     }
 
@@ -2334,9 +2313,9 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     /* JADX INFO: Access modifiers changed from: private */
     public void e(boolean z) {
         if (z) {
-            this.bd.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_chat_service_plus_close));
+            this.bd.setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.icon_chat_service_plus_close));
         } else {
-            this.bd.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_chat_service_plus));
+            this.bd.setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.icon_chat_service_plus));
         }
     }
 
@@ -2381,7 +2360,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             ToastUtils.b((int) R.string.date_today_text_wait_like);
             return;
         }
-        DateTodayManager.f32404a.a(MessageProtos.Event.MSG_MATCH_CHAT_PAGE_LIKE_CLICK);
+        DateTodayManager.f18714a.a(MessageProtos.Event.MSG_MATCH_CHAT_PAGE_LIKE_CLICK);
         this.h.k(true);
     }
 
@@ -2433,7 +2412,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
 
     @Override // com.soft.blued.ui.msg.contract.IMsgChattingView
     public String G() {
-        EditText editText = this.f31743c;
+        EditText editText = this.f18053c;
         return editText != null ? editText.getText().toString() : "";
     }
 
@@ -2461,22 +2440,18 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         }
         String str = BluedSkinUtils.c() ? "date_today_interest.svga" : "date_today_interest_dark.svga";
         this.bs.setVisibility(0);
-        new SVGAPlayer.Builder().a(str).a((Integer) 1).a(this.bs);
+        new SVGAPlayer.Builder().a(str).a(1).a(this.bs);
         this.bs.setCallback(new SVGACallback() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.81
-            @Override // com.blued.android.module.svgaplayer.SVGACallback
             public void onFinished() {
                 MsgChattingFragment.this.bs.setVisibility(8);
             }
 
-            @Override // com.blued.android.module.svgaplayer.SVGACallback
             public void onPause() {
             }
 
-            @Override // com.blued.android.module.svgaplayer.SVGACallback
             public void onRepeat() {
             }
 
-            @Override // com.blued.android.module.svgaplayer.SVGACallback
             public void onStep(int i, double d) {
             }
         });
@@ -2520,7 +2495,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         return listView.getChildAt(headerViewsCount - firstVisiblePosition);
     }
 
-    @Override // com.blued.android.module.common.widget.emoticon.manager.EmotionPackListener
     public void a() {
         Logger.a("ddrb", "EmotionManager.getEmotionPacks() = ", Integer.valueOf(EmotionManager.c().size()));
         postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.6
@@ -2529,8 +2503,8 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                 if (MsgChattingFragment.this.getActivity() == null || MsgChattingFragment.this.getActivity().isFinishing()) {
                     return;
                 }
-                MsgChattingFragment.this.f31742ar.setModel(false);
-                MsgChattingFragment.this.f31742ar.a(MsgChattingFragment.this.getFragmentActive(), EmotionManager.c());
+                MsgChattingFragment.this.f18052ar.setModel(false);
+                MsgChattingFragment.this.f18052ar.a(MsgChattingFragment.this.getFragmentActive(), EmotionManager.c());
                 MsgChattingFragment.this.ap.a(MsgChattingFragment.this.getFragmentActive(), EmotionManager.c());
                 MsgChattingFragment.this.ap.a();
             }
@@ -2554,7 +2528,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                 j2 = ((Long) this.aM.getTag()).longValue();
             }
             Logger.c(k, "save quote msgId: " + j2);
-            BluedPreferences.a(i, j, charSequence + PhoneConstants.APN_TYPE_ALL + j2);
+            BluedPreferences.a(i, j, charSequence + "*" + j2);
         }
     }
 
@@ -2584,7 +2558,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                 }
                 MsgChattingFragment.this.aB = new CenterGuidePop(MsgChattingFragment.this.getContext(), str3);
                 MsgChattingFragment.this.aB.a(MsgChattingFragment.this.K, new SimpleCallback() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.36.1
-                    @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
                     public void c(BasePopupView basePopupView) {
                         EventTrackPersonalProfile.a(i == 1 ? PersonalProfileProtos.Event.GIFT_BUY_FREE_BUBBLE_SHOW : PersonalProfileProtos.Event.GIFT_BUY_NEW_BUBBLE_SHOW);
                         if (i == 1) {
@@ -2595,7 +2568,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                         }
                     }
 
-                    @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
                     public void d(BasePopupView basePopupView) {
                         MsgChattingFragment.this.aB = null;
                     }
@@ -2612,7 +2584,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         } else {
             String str3 = str;
             if (this.h.ap()) {
-                str3 = DateTodayManager.f32404a.c(str);
+                str3 = DateTodayManager.f18714a.c(str);
             }
             this.r.setText(str3);
         }
@@ -2652,36 +2624,34 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     public void a(final View view) {
         if ("audio".equals((String) view.getTag())) {
             PermissionUtils.d(new PermissionCallbacks() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.64
-                @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void U_() {
-                    view.setTag(InputMethodUtils.SUBTYPE_MODE_KEYBOARD);
-                    ((ImageView) view).setImageDrawable(BluedSkinUtils.b(MsgChattingFragment.this.m, R.drawable.btn_keyboard));
+                    view.setTag("keyboard");
+                    ((ImageView) view).setImageDrawable(BluedSkinUtils.b(MsgChattingFragment.this.m, (int) R.drawable.btn_keyboard));
                     MsgChattingFragment.this.F.setVisibility(0);
                     if (MsgChattingFragment.this.aM.getVisibility() == 0) {
                         MsgChattingFragment.this.aM.setVisibility(8);
                         MsgChattingFragment.this.aP = true;
                     }
-                    MsgChattingFragment.this.f31743c.setVisibility(8);
+                    MsgChattingFragment.this.f18053c.setVisibility(8);
                     MsgChattingFragment.this.N.setVisibility(8);
                     MsgChattingFragment.this.aW.getKeyboardHelper().c();
                 }
 
-                @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void a(String[] strArr) {
                 }
             });
             return;
         }
         view.setTag("audio");
-        ((ImageView) view).setImageDrawable(BluedSkinUtils.b(this.m, R.drawable.btn_voice));
-        this.f31743c.setVisibility(0);
-        if (TextUtils.isEmpty(this.f31743c.getText().toString())) {
+        ((ImageView) view).setImageDrawable(BluedSkinUtils.b(this.m, (int) R.drawable.btn_voice));
+        this.f18053c.setVisibility(0);
+        if (TextUtils.isEmpty(this.f18053c.getText().toString())) {
             this.N.setVisibility(8);
         } else {
             this.N.setVisibility(0);
         }
         this.F.setVisibility(8);
-        this.f31743c.requestFocus();
+        this.f18053c.requestFocus();
         KeyboardUtils.c(getActivity());
     }
 
@@ -2695,7 +2665,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                     MsgChattingFragment.this.h.a(obj);
                 }
             }
-        }, this.m.getResources().getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+        }, this.m.getResources().getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x00b9  */
@@ -2786,9 +2756,8 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         SVGAImageView sVGAImageView = this.bu;
         if (sVGAImageView != null) {
             sVGAImageView.setVisibility(0);
-            new SVGAPlayer.Builder().a(str).a((Integer) 1).a(this.bu);
+            new SVGAPlayer.Builder().a(str).a(1).a(this.bu);
             this.bu.setCallback(new SVGACallback() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.84
-                @Override // com.blued.android.module.svgaplayer.SVGACallback
                 public void onFinished() {
                     Runnable runnable2 = runnable;
                     if (runnable2 != null) {
@@ -2798,15 +2767,12 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                     }
                 }
 
-                @Override // com.blued.android.module.svgaplayer.SVGACallback
                 public void onPause() {
                 }
 
-                @Override // com.blued.android.module.svgaplayer.SVGACallback
                 public void onRepeat() {
                 }
 
-                @Override // com.blued.android.module.svgaplayer.SVGACallback
                 public void onStep(int i, double d) {
                 }
             });
@@ -2817,7 +2783,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         UserBasicModel userBasicModel = new UserBasicModel();
         userBasicModel.uid = str;
         userBasicModel.name = str2;
-        this.al.a(this.f31743c, userBasicModel, this.bx, true);
+        this.al.a(this.f18053c, userBasicModel, this.bx, true);
         postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.38
             @Override // java.lang.Runnable
             public void run() {
@@ -2839,7 +2805,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             this.aZ.setVisibility(8);
             this.bg.setVisibility(8);
             this.bb.setVisibility(0);
-            this.f31743c.setVisibility(0);
+            this.f18053c.setVisibility(0);
             return;
         }
         this.N.setVisibility(8);
@@ -2927,10 +2893,10 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     @Override // androidx.lifecycle.Observer
     /* renamed from: b */
     public void onChanged(FuGiftListEvent fuGiftListEvent) {
-        if (fuGiftListEvent.f32324a == null) {
+        if (fuGiftListEvent.f18634a == null) {
             return;
         }
-        d(fuGiftListEvent.f32324a);
+        d(fuGiftListEvent.f18634a);
     }
 
     @Override // com.soft.blued.ui.msg.contract.IRecentPhotoAdapterCallback
@@ -2951,7 +2917,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             Message obtain = Message.obtain();
             obtain.what = 305;
             LocalMsg localMsg = new LocalMsg();
-            localMsg.f31846a = list;
+            localMsg.f18156a = list;
             obtain.obj = localMsg;
             this.j.sendMessage(obtain);
             postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.31
@@ -3003,7 +2969,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
 
     @Override // com.soft.blued.ui.msg.contract.IMsgChattingView
     public void c(int i) {
-        PayVIPPopupWindow.f19924c.a(this.m, i, null);
+        PayVIPPopupWindow.c.a(this.m, i, (DialogInterface.OnDismissListener) null);
     }
 
     public void c(String str) {
@@ -3017,7 +2983,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             inflate.findViewById(2131371289).setVisibility(8);
             ((TextView) inflate.findViewById(2131371259)).setText(str);
             TextView textView2 = (TextView) inflate.findViewById(2131372161);
-            textView2.setText(getString(2131890371));
+            textView2.setText(getString(R.string.live_window_indicate_know));
             textView2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.68
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -3029,7 +2995,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             });
             CustomDialog customDialog2 = new CustomDialog(this.m, 2131952378);
             this.E = customDialog2;
-            customDialog2.a(inflate, null);
+            customDialog2.a(inflate, (CustomDialog.OnBackCallBack) null);
         }
     }
 
@@ -3053,7 +3019,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                     EventTrackMessage.b(event, str, MsgChattingFragment.this.h.f() + "");
                 }
             });
-            ((ImageView) this.aG.findViewById(2131365072)).setVisibility(4);
+            ((ImageView) this.aG.findViewById(R.id.iv_arrow)).setVisibility(4);
             ConstraintSet constraintSet = new ConstraintSet();
             constraintSet.load(getContext(), R.xml.chat_hello_expression_show);
             if (this.h.S() == null || this.h.S().fold_say_hi != 1) {
@@ -3131,7 +3097,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     public void f() {
         postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.29
             /* JADX WARN: Code restructure failed: missing block: B:13:0x0067, code lost:
-                if (com.soft.blued.ui.msg.manager.ChatBgManager.b(r6.f31769a.h.J()) != false) goto L5;
+                if (com.soft.blued.ui.msg.manager.ChatBgManager.b(r6.f18079a.h.J()) != false) goto L5;
              */
             /* JADX WARN: Removed duplicated region for block: B:18:0x0073  */
             /* JADX WARN: Removed duplicated region for block: B:29:0x00dd  */
@@ -3272,7 +3238,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         return super.getActivity();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.utils.PageTimeUtils.APMInterface
     public String getPageBizName() {
         MsgChattingPresent msgChattingPresent = this.h;
         return msgChattingPresent != null ? msgChattingPresent.ab() : "私聊页";
@@ -3282,7 +3247,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
     public void h() {
         BluedAlertDialog bluedAlertDialog = this.ay;
         if (bluedAlertDialog == null || !bluedAlertDialog.isShowing()) {
-            this.ay = CommonAlertDialog.a(getContext(), 0, "", getResources().getString(R.string.msg_user_locked_hint), null, getContext().getString(2131886752), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.33
+            this.ay = CommonAlertDialog.a(getContext(), 0, "", getResources().getString(R.string.msg_user_locked_hint), (View) null, getContext().getString(2131886752), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.33
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
@@ -3290,7 +3255,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                         MsgChattingFragment.this.h.ah();
                     }
                 }
-            }, null, null, null, false, 1, 0, false, false);
+            }, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null, false, 1, 0, false, false);
         }
     }
 
@@ -3325,7 +3290,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                     return;
                 }
                 MsgChattingFragment.this.au = true;
-                if (MsgChattingFragment.this.D.f31961a == null || MsgChattingFragment.this.D.f31961a.size() == 0) {
+                if (MsgChattingFragment.this.D.f18271a == null || MsgChattingFragment.this.D.f18271a.size() == 0) {
                     if (!MsgChattingFragment.this.h.c()) {
                         MsgChattingFragment.this.c((ChattingModel) null);
                         return;
@@ -3362,11 +3327,11 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
 
     public void m() {
         this.I.setTag("audio");
-        this.I.setImageDrawable(BluedSkinUtils.b(this.m, R.drawable.btn_voice));
-        this.f31743c.setVisibility(0);
-        this.f31743c.requestFocus();
+        this.I.setImageDrawable(BluedSkinUtils.b(this.m, (int) R.drawable.btn_voice));
+        this.f18053c.setVisibility(0);
+        this.f18053c.requestFocus();
         this.J.setVisibility(0);
-        if (TextUtils.isEmpty(this.f31743c.getText().toString())) {
+        if (TextUtils.isEmpty(this.f18053c.getText().toString())) {
             this.N.setVisibility(8);
         } else {
             this.N.setVisibility(0);
@@ -3391,7 +3356,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         a("", (short) 1);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         MsgChattingPresent msgChattingPresent = this.h;
@@ -3400,7 +3364,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         if (GiftVoucherHelpPop.b != null) {
             GiftVoucherHelpPop.b.p();
@@ -3412,7 +3375,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
             BluedPreferences.az();
             this.h.v();
             if (this.h.ap()) {
-                LiveEventBus.get(DateTodayManager.f32404a.t()).post(null);
+                LiveEventBus.get(DateTodayManager.f18714a.t()).post(null);
             }
             return super.onBackPressed();
         }
@@ -3474,7 +3437,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                 this.aM.setVisibility(8);
                 return;
             case R.id.ll_group_floating_msg /* 2131367846 */:
-                this.C.setSelection(this.D.f31961a.size() - 1);
+                this.C.setSelection(this.D.f18271a.size() - 1);
                 this.X.setVisibility(8);
                 MsgChattingPresent msgChattingPresent4 = this.h;
                 if (msgChattingPresent4 != null) {
@@ -3577,7 +3540,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    /* JADX WARN: Multi-variable type inference failed */
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.m = getActivity();
         getActivity().getWindow().setSoftInputMode(51);
@@ -3608,7 +3571,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         return this.l;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         EmotionManager.b(this);
         MsgChattingPresent msgChattingPresent = this.h;
@@ -3622,7 +3584,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         super.onDestroy();
     }
 
-    @Override // com.blued.android.chat.listener.RetractionListener
     public void onMsgRetractedTimeout() {
         Context context = this.m;
         CommonAlertDialog.a(context, (View) null, (String) null, context.getResources().getString(R.string.send_out_time), this.m.getResources().getString(2131892209), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.77
@@ -3633,11 +3594,10 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         }, (DialogInterface.OnCancelListener) null, true);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         O();
-        ChatConstants.f28313a = 0L;
+        ChatConstants.f14623a = 0L;
         MsgChattingPresent msgChattingPresent = this.h;
         if (msgChattingPresent != null) {
             msgChattingPresent.af();
@@ -3645,7 +3605,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         LiveEventBus.get(EventBusConstant.KEY_EVENT_BUY_FU, FuGiftListEvent.class).removeObserver(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (this.i != null && this.h.M() != null) {
@@ -3666,7 +3625,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         LiveEventBus.get(EventBusConstant.KEY_EVENT_BUY_FU, FuGiftListEvent.class).observeForever(this);
     }
 
-    @Override // com.blued.android.chat.listener.RetractionListener
     public void onRetractFailed() {
         Context context = this.m;
         CommonAlertDialog.a(context, (View) null, (String) null, context.getResources().getString(R.string.retraction_failed), this.m.getResources().getString(2131892209), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.76
@@ -3677,11 +3635,9 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         }, (DialogInterface.OnCancelListener) null, true);
     }
 
-    @Override // com.blued.android.chat.listener.RetractionListener
     public void onRetractSuccess() {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         MsgChattingPresent msgChattingPresent = this.h;
@@ -3690,33 +3646,31 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
         UserPagerGiftManager.a().b(this.i);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         try {
-            if (StatusBarHelper.a((Activity) getActivity())) {
-                getActivity().findViewById(16908290).setFitsSystemWindows(true);
+            if (StatusBarHelper.a(getActivity())) {
+                getActivity().findViewById(android.R.id.content).setFitsSystemWindows(true);
                 getActivity().getWindow().setBackgroundDrawable(StatusBarHelper.a(getActivity(), AppInfo.k(), AppInfo.l(), AppInfo.j(), true));
                 if (SkinCompatManager.a() != null) {
-                    getActivity().findViewById(16908290).setBackgroundColor(BluedSkinUtils.a(getActivity(), 2131101796));
+                    getActivity().findViewById(android.R.id.content).setBackgroundColor(BluedSkinUtils.a(getActivity(), 2131101796));
                 }
             }
             if (this.h != null && !TextUtils.isEmpty(this.h.H())) {
                 this.ax = true;
-                CharSequence a2 = StringUtils.a(this.h.H(), (int) this.f31743c.getTextSize(), 1);
-                this.f31743c.setText(a2);
-                this.f31743c.setSelection(a2.toString().length());
+                CharSequence a2 = StringUtils.a(this.h.H(), (int) this.f18053c.getTextSize(), 1);
+                this.f18053c.setText(a2);
+                this.f18053c.setSelection(a2.toString().length());
                 String a3 = BluedPreferences.a((int) this.h.E(), this.h.e());
                 if (!TextUtils.isEmpty(a3)) {
                     this.aM.setVisibility(0);
-                    this.aO.setText(a3.substring(0, a3.lastIndexOf(PhoneConstants.APN_TYPE_ALL)));
-                    long parseLong = Long.parseLong(a3.substring(a3.lastIndexOf(PhoneConstants.APN_TYPE_ALL) + 1));
+                    this.aO.setText(a3.substring(0, a3.lastIndexOf("*")));
+                    long parseLong = Long.parseLong(a3.substring(a3.lastIndexOf("*") + 1));
                     String str = k;
                     Logger.c(str, "init quote msgId: " + parseLong);
                     if (parseLong != 0) {
@@ -3765,7 +3719,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
 
     public void p() {
         PermissionUtils.c(new PermissionCallbacks() { // from class: com.soft.blued.ui.msg.MsgChattingFragment.66
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
                 try {
                     MsgChattingFragment.this.startActivityForResult(new Intent(MsgChattingFragment.this.m, SendPositionActivity.class), 604);
@@ -3773,7 +3726,6 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
                 }
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
             }
         });
@@ -3789,12 +3741,12 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
 
     public void r() {
         if (AudioChannelManager.j().n()) {
-            AppMethods.a(getActivity().getResources().getText(2131893031));
+            AppMethods.a(getActivity().getResources().getText(R.string.yy_in_use));
             return;
         }
         ShortVideoProxy e = ShortVideoProxy.e();
         int i = this.h.C() ? 7 : 1;
-        e.a(this, i, 23, this.m.getString(2131890784) + FlashPhotoManager.a().b().flash_prompt, FlashPhotoManager.a().b().flash_left_times, new AnonymousClass67());
+        e.a(this, i, 23, this.m.getString(R.string.msg_look_burn) + FlashPhotoManager.a().b().flash_prompt, FlashPhotoManager.a().b().flash_left_times, new AnonymousClass67());
     }
 
     public void s() {
@@ -3858,7 +3810,7 @@ public class MsgChattingFragment extends BaseFragment implements View.OnClickLis
 
     @Override // com.soft.blued.ui.msg.contract.IMsgChatAdapterOperationCallback
     public EditText w() {
-        return this.f31743c;
+        return this.f18053c;
     }
 
     @Override // com.soft.blued.ui.msg.contract.IMsgChatAdapterOperationCallback

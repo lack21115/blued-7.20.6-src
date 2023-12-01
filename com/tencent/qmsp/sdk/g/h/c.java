@@ -5,10 +5,10 @@ import com.tencent.qmsp.sdk.base.IVendorCallback;
 import com.tencent.qmsp.sdk.g.h.b;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/g/h/c.class */
-public class c implements com.tencent.qmsp.sdk.base.b, b.InterfaceC1002b {
+public class c implements com.tencent.qmsp.sdk.base.b, b.InterfaceC0832b {
 
     /* renamed from: a  reason: collision with root package name */
-    public IVendorCallback f38652a;
+    public IVendorCallback f24961a;
     private b b;
 
     @Override // com.tencent.qmsp.sdk.base.b
@@ -19,15 +19,15 @@ public class c implements com.tencent.qmsp.sdk.base.b, b.InterfaceC1002b {
 
     @Override // com.tencent.qmsp.sdk.base.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f38652a = iVendorCallback;
+        this.f24961a = iVendorCallback;
         b bVar = new b(context, this);
         this.b = bVar;
         bVar.c();
     }
 
-    @Override // com.tencent.qmsp.sdk.g.h.b.InterfaceC1002b
+    @Override // com.tencent.qmsp.sdk.g.h.b.InterfaceC0832b
     public void a(b bVar) {
-        IVendorCallback iVendorCallback = this.f38652a;
+        IVendorCallback iVendorCallback = this.f24961a;
         if (iVendorCallback != null) {
             iVendorCallback.onResult(e(), b(), a());
         }

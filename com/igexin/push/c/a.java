@@ -8,14 +8,14 @@ public final class a implements com.igexin.c.a.d.a.b<String, Integer, com.igexin
     private static final byte b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte f23319c = 2;
+    private static final byte f9711c = 2;
     private static final byte d = 3;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f23320a;
+    public Context f9712a;
 
     public a(Context context) {
-        this.f23320a = context;
+        this.f9712a = context;
     }
 
     /* renamed from: a  reason: avoid collision after fix types in other method */

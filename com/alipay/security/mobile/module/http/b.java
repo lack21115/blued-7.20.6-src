@@ -8,31 +8,26 @@ import com.alipay.tscenter.biz.rpc.deviceFp.BugTrackMessageService;
 import com.alipay.tscenter.biz.rpc.report.general.DataReportService;
 import com.alipay.tscenter.biz.rpc.report.general.model.DataReportRequest;
 import com.alipay.tscenter.biz.rpc.report.general.model.DataReportResult;
-import com.baidu.mobads.sdk.internal.bw;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/security/mobile/module/http/b.class */
 public class b implements a {
     private static b d;
     private static DataReportResult e;
-
-    /* renamed from: a  reason: collision with root package name */
-    private w f4714a;
+    private w a;
     private BugTrackMessageService b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DataReportService f4715c;
+    private DataReportService c;
 
     private b(Context context, String str) {
-        this.f4714a = null;
+        this.a = null;
         this.b = null;
-        this.f4715c = null;
+        this.c = null;
         aa aaVar = new aa();
         aaVar.a(str);
         h hVar = new h(context);
-        this.f4714a = hVar;
+        this.a = hVar;
         this.b = (BugTrackMessageService) hVar.a(BugTrackMessageService.class, aaVar);
-        this.f4715c = (DataReportService) this.f4714a.a(DataReportService.class, aaVar);
+        this.c = (DataReportService) this.a.a(DataReportService.class, aaVar);
     }
 
     public static b a(Context context, String str) {
@@ -55,7 +50,7 @@ public class b implements a {
         if (dataReportRequest == null) {
             return null;
         }
-        if (this.f4715c != null) {
+        if (this.c != null) {
             e = null;
             new Thread(new c(this, dataReportRequest)).start();
             int i = 300000;
@@ -87,7 +82,7 @@ public class b implements a {
             }
             z = false;
             if (!com.alipay.security.mobile.module.a.a.a(str2)) {
-                z = ((Boolean) new JSONObject(str2).get(bw.o)).booleanValue();
+                z = ((Boolean) new JSONObject(str2).get("success")).booleanValue();
             }
         }
         return z;

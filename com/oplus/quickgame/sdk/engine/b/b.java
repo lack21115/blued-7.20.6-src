@@ -8,65 +8,65 @@ import java.util.Map;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f24387a;
+    private String f10700a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, String> f24388c;
+    private Map<String, String> f10701c;
 
     /* renamed from: com.oplus.quickgame.sdk.engine.b.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/oplus/quickgame/sdk/engine/b/b$b.class */
-    public static class C0615b {
+    public static class C0445b {
         static final /* synthetic */ boolean d = !b.class.desiredAssertionStatus();
 
         /* renamed from: a  reason: collision with root package name */
-        private String f24389a;
+        private String f10702a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Map<String, String> f24390c;
+        private Map<String, String> f10703c;
 
-        private C0615b() {
+        private C0445b() {
         }
 
-        public C0615b a(String str) {
+        public C0445b a(String str) {
             this.b = str.toLowerCase();
             return this;
         }
 
-        public C0615b a(String str, String str2) {
-            if (this.f24390c == null) {
-                this.f24390c = new HashMap();
+        public C0445b a(String str, String str2) {
+            if (this.f10703c == null) {
+                this.f10703c = new HashMap();
             }
-            this.f24390c.put(str, str2);
+            this.f10703c.put(str, str2);
             return this;
         }
 
         public b a() {
-            if (d || TextUtils.isEmpty(this.f24389a) || TextUtils.isEmpty(this.b)) {
+            if (d || TextUtils.isEmpty(this.f10702a) || TextUtils.isEmpty(this.b)) {
                 return new b(this);
             }
             throw new AssertionError();
         }
 
-        public C0615b b(String str) {
-            this.f24389a = str;
+        public C0445b b(String str) {
+            this.f10702a = str;
             return this;
         }
     }
 
-    private b(C0615b c0615b) {
-        this.f24388c = c0615b.f24390c;
-        this.f24387a = c0615b.f24389a;
-        this.b = c0615b.b;
+    private b(C0445b c0445b) {
+        this.f10701c = c0445b.f10703c;
+        this.f10700a = c0445b.f10702a;
+        this.b = c0445b.b;
     }
 
-    public static C0615b d() {
-        return new C0615b();
+    public static C0445b d() {
+        return new C0445b();
     }
 
     public Map<String, String> a() {
-        return this.f24388c;
+        return this.f10701c;
     }
 
     public String b() {
@@ -74,6 +74,6 @@ public class b {
     }
 
     public String c() {
-        return this.f24387a;
+        return this.f10700a;
     }
 }

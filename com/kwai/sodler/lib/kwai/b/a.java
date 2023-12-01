@@ -19,34 +19,34 @@ import java.util.Map;
 /* loaded from: source-7994992-dex2jar.jar:com/kwai/sodler/lib/kwai/b/a.class */
 public class a {
     private static final String CLAZZ_NAME = a.class.getName();
-    private static final ThreadLocal<C0599a> sAutoUnWrapModelTL = new ThreadLocal<>();
+    private static final ThreadLocal<C0429a> sAutoUnWrapModelTL = new ThreadLocal<>();
     private static final List<String> sAutoUnWrapStackList = new ArrayList();
     private static final Map<String, WeakReference<Context>> sResContextCache = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwai.sodler.lib.kwai.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/sodler/lib/kwai/b/a$a.class */
-    public static final class C0599a {
+    public static final class C0429a {
         private WeakReference<Context> aaH;
         private int aaI;
         private StackTraceElement[] aaJ;
         private int aaK;
         private long aaL;
 
-        private C0599a() {
+        private C0429a() {
             this.aaH = new WeakReference<>(null);
             this.aaI = 0;
             this.aaJ = null;
             this.aaK = 0;
         }
 
-        /* synthetic */ C0599a(byte b) {
+        /* synthetic */ C0429a(byte b) {
             this();
         }
 
-        static /* synthetic */ int c(C0599a c0599a) {
-            int i = c0599a.aaI;
-            c0599a.aaI = i + 1;
+        static /* synthetic */ int c(C0429a c0429a) {
+            int i = c0429a.aaI;
+            c0429a.aaI = i + 1;
             return i;
         }
 
@@ -59,9 +59,9 @@ public class a {
             this.aaL = 0L;
         }
 
-        static /* synthetic */ int g(C0599a c0599a) {
-            int i = c0599a.aaK;
-            c0599a.aaK = i + 1;
+        static /* synthetic */ int g(C0429a c0429a) {
+            int i = c0429a.aaK;
+            c0429a.aaK = i + 1;
             return i;
         }
     }
@@ -139,17 +139,17 @@ public class a {
         map.put(str + System.identityHashCode(context), new WeakReference<>(context2));
     }
 
-    private static boolean a(String str, Context context, C0599a c0599a) {
+    private static boolean a(String str, Context context, C0429a c0429a) {
         String str2;
         Context a2 = a(str, context);
         String name = a2 != null ? a2.getClass().getName() : "";
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
-        if (!Arrays.equals(stackTrace, c0599a.aaJ)) {
-            if (c0599a.aaJ != null) {
-                c0599a.clear();
+        if (!Arrays.equals(stackTrace, c0429a.aaJ)) {
+            if (c0429a.aaJ != null) {
+                c0429a.clear();
                 return false;
             }
-            c0599a.aaJ = stackTrace;
+            c0429a.aaJ = stackTrace;
             int i = 0;
             int i2 = 0;
             while (i < stackTrace.length) {
@@ -193,9 +193,9 @@ public class a {
             }
             return false;
         }
-        C0599a.g(c0599a);
-        c0599a.aaJ = stackTrace;
-        if (c0599a.aaK < 5) {
+        C0429a.g(c0429a);
+        c0429a.aaJ = stackTrace;
+        if (c0429a.aaK < 5) {
             return false;
         }
         str2 = "needAutoUnWrap true 连续相同堆栈";
@@ -244,21 +244,21 @@ public class a {
     }
 
     private static boolean b(String str, Context context) {
-        C0599a c0599a = sAutoUnWrapModelTL.get();
-        if (c0599a == null) {
-            sAutoUnWrapModelTL.set(new C0599a((byte) 0));
+        C0429a c0429a = sAutoUnWrapModelTL.get();
+        if (c0429a == null) {
+            sAutoUnWrapModelTL.set(new C0429a((byte) 0));
             return false;
-        } else if (c0599a.aaH.get() != context || Math.abs(System.currentTimeMillis() - c0599a.aaL) >= 150) {
-            c0599a.clear();
-            c0599a.aaH = new WeakReference(context);
-            c0599a.aaL = System.currentTimeMillis();
+        } else if (c0429a.aaH.get() != context || Math.abs(System.currentTimeMillis() - c0429a.aaL) >= 150) {
+            c0429a.clear();
+            c0429a.aaH = new WeakReference(context);
+            c0429a.aaL = System.currentTimeMillis();
             return false;
         } else {
-            C0599a.c(c0599a);
-            if (c0599a.aaI < (context instanceof Application ? 15 : 5) || !a(str, context, c0599a)) {
+            C0429a.c(c0429a);
+            if (c0429a.aaI < (context instanceof Application ? 15 : 5) || !a(str, context, c0429a)) {
                 return false;
             }
-            c0599a.clear();
+            c0429a.clear();
             return true;
         }
     }

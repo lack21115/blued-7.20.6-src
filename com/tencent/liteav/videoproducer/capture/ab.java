@@ -7,11 +7,11 @@ import com.tencent.liteav.videoproducer.capture.s;
 final /* synthetic */ class ab implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final s.AnonymousClass1 f36857a;
+    private final s.AnonymousClass1 f23166a;
     private final PixelFrame b;
 
     private ab(s.AnonymousClass1 anonymousClass1, PixelFrame pixelFrame) {
-        this.f36857a = anonymousClass1;
+        this.f23166a = anonymousClass1;
         this.b = pixelFrame;
     }
 
@@ -21,14 +21,14 @@ final /* synthetic */ class ab implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        s.AnonymousClass1 anonymousClass1 = this.f36857a;
+        s.AnonymousClass1 anonymousClass1 = this.f23166a;
         PixelFrame pixelFrame = this.b;
         if (s.this.d) {
             pixelFrame.release();
-        } else if (s.this.f36943c == null) {
+        } else if (s.this.f23252c == null) {
             pixelFrame.release();
         } else {
-            s.this.f36943c.a(s.this, pixelFrame);
+            s.this.f23252c.a(s.this, pixelFrame);
             pixelFrame.release();
         }
     }

@@ -17,11 +17,15 @@ import android.telephony.PhoneNumberUtils;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import com.amap.api.services.geocoder.GeocodeSearch;
 import com.android.internal.R;
 import com.android.internal.app.NetInitiatedActivity;
 import com.android.internal.telephony.GsmAlphabet;
+import com.android.internal.telephony.PhoneConstants;
 import com.android.internal.telephony.TelephonyProperties;
+import com.android.internal.util.cm.QSConstants;
 import java.io.UnsupportedEncodingException;
+import org.apache.commons.codec.CharEncoding;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/location/GpsNetInitiatedHandler.class */
 public class GpsNetInitiatedHandler {
@@ -69,10 +73,10 @@ public class GpsNetInitiatedHandler {
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            if (action.equals(Intent.ACTION_NEW_OUTGOING_CALL)) {
-                GpsNetInitiatedHandler.this.setInEmergency(PhoneNumberUtils.isEmergencyNumber(intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER)));
+            if (action.equals("android.intent.action.NEW_OUTGOING_CALL")) {
+                GpsNetInitiatedHandler.this.setInEmergency(PhoneNumberUtils.isEmergencyNumber(intent.getStringExtra("android.intent.extra.PHONE_NUMBER")));
                 Log.v(GpsNetInitiatedHandler.TAG, "ACTION_NEW_OUTGOING_CALL - " + GpsNetInitiatedHandler.this.getInEmergency());
-            } else if (action.equals(LocationManager.MODE_CHANGED_ACTION)) {
+            } else if (action.equals("android.location.MODE_CHANGED")) {
                 GpsNetInitiatedHandler.this.updateLocationMode();
                 Log.d(GpsNetInitiatedHandler.TAG, "location enabled :" + GpsNetInitiatedHandler.this.getLocationEnabled());
             }
@@ -108,9 +112,9 @@ public class GpsNetInitiatedHandler {
         }
         this.mNetInitiatedListener = iNetInitiatedListener;
         setSuplEsEnabled(z);
-        this.mLocationManager = (LocationManager) context.getSystemService("location");
+        this.mLocationManager = (LocationManager) context.getSystemService(QSConstants.TILE_LOCATION);
         updateLocationMode();
-        this.mTelephonyManager = (TelephonyManager) context.getSystemService("phone");
+        this.mTelephonyManager = (TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY);
         this.mPhoneStateListener = new PhoneStateListener() { // from class: com.android.internal.location.GpsNetInitiatedHandler.2
             @Override // android.telephony.PhoneStateListener
             public void onCallStateChanged(int i, String str) {
@@ -122,8 +126,8 @@ public class GpsNetInitiatedHandler {
         };
         this.mTelephonyManager.listen(this.mPhoneStateListener, 32);
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(Intent.ACTION_NEW_OUTGOING_CALL);
-        intentFilter.addAction(LocationManager.MODE_CHANGED_ACTION);
+        intentFilter.addAction("android.intent.action.NEW_OUTGOING_CALL");
+        intentFilter.addAction("android.location.MODE_CHANGED");
         this.mContext.registerReceiver(this.mBroadcastReciever, intentFilter);
     }
 
@@ -170,7 +174,7 @@ public class GpsNetInitiatedHandler {
 
     static String decodeUCS2String(byte[] bArr) {
         try {
-            return new String(bArr, "UTF-16");
+            return new String(bArr, CharEncoding.UTF_16);
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError();
         }
@@ -201,7 +205,7 @@ public class GpsNetInitiatedHandler {
         intent.putExtra("notif_id", gpsNiNotification.notificationId);
         intent.putExtra("title", dialogTitle);
         intent.putExtra("message", dialogMessage);
-        intent.putExtra("timeout", gpsNiNotification.timeout);
+        intent.putExtra(NI_INTENT_KEY_TIMEOUT, gpsNiNotification.timeout);
         intent.putExtra(NI_INTENT_KEY_DEFAULT_RESPONSE, gpsNiNotification.defaultResponse);
         Log.d(TAG, "generateIntent, title: " + dialogTitle + ", message: " + dialogMessage + ", timeout: " + gpsNiNotification.timeout);
         return intent;
@@ -347,6 +351,6 @@ public class GpsNetInitiatedHandler {
     }
 
     public void updateLocationMode() {
-        this.mIsLocationEnabled = this.mLocationManager.isProviderEnabled("gps");
+        this.mIsLocationEnabled = this.mLocationManager.isProviderEnabled(GeocodeSearch.GPS);
     }
 }

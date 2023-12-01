@@ -21,7 +21,7 @@ public class db extends bf {
     private boolean C;
 
     /* renamed from: a  reason: collision with root package name */
-    RelativeLayout f9412a;
+    RelativeLayout f6572a;
     public boolean q;
     public boolean r;
     private int s;
@@ -40,7 +40,7 @@ public class db extends bf {
         this.v = 600;
         this.w = 500;
         this.B = false;
-        this.f9412a = relativeLayout;
+        this.f6572a = relativeLayout;
         this.u = str;
     }
 
@@ -281,7 +281,7 @@ public class db extends bf {
             jSONObject3.put(IAdInterListener.AdReqParam.PROD, this.t);
             jSONObject3.put("isNewInterstitial", true);
             this.k.createProdHandler(jSONObject3);
-            this.k.setAdContainer(this.f9412a);
+            this.k.setAdContainer(this.f6572a);
             n();
             jSONObject.put(IAdInterListener.AdReqParam.PROD, this.t);
             jSONObject.put(IAdInterListener.AdReqParam.APID, this.u);

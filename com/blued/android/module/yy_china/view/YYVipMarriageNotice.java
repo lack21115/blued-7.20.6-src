@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
@@ -24,7 +25,6 @@ import com.blued.android.module.yy_china.model.YYRoomModel;
 import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.android.module.yy_china.view.YYVipMarriageNotice;
 import com.blued.das.client.chatroom.ChatRoomProtos;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -32,13 +32,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYVipMarriageNotice.class */
 public final class YYVipMarriageNotice extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewVipMarriageNoticeBinding f18550a;
+    private ViewVipMarriageNoticeBinding a;
     private AnimatorEndListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYGlobalMsgMarqueeModel f18551c;
+    private YYGlobalMsgMarqueeModel c;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYVipMarriageNotice$AnimatorEndListener.class */
@@ -62,11 +58,11 @@ public final class YYVipMarriageNotice extends ConstraintLayout {
     public YYVipMarriageNotice(final Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        ViewVipMarriageNoticeBinding a2 = ViewVipMarriageNoticeBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18550a = a2;
+        ViewVipMarriageNoticeBinding a = ViewVipMarriageNoticeBinding.a(LayoutInflater.from(getContext()), (ViewGroup) this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
         setVisibility(8);
-        this.f18550a.f.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYVipMarriageNotice$DVahot-CXDVG5XzHaanxj01ZkFw
+        this.a.f.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYVipMarriageNotice$DVahot-CXDVG5XzHaanxj01ZkFw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYVipMarriageNotice.a(YYVipMarriageNotice.this, context, view);
@@ -80,7 +76,7 @@ public final class YYVipMarriageNotice extends ConstraintLayout {
             return;
         }
         LogUtils.d("notice", "hideNotify ... ");
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f18550a.e, "translationX", 0.0f, -getWidth());
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.a.e, "translationX", 0.0f, -getWidth());
         ofFloat.setDuration(500L);
         ofFloat.setInterpolator(new LinearInterpolator());
         ofFloat.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.yy_china.view.YYVipMarriageNotice$hideNotify$1
@@ -92,7 +88,7 @@ public final class YYVipMarriageNotice extends ConstraintLayout {
             public void onAnimationEnd(Animator animator) {
                 YYVipMarriageNotice.AnimatorEndListener animatorEndListener;
                 LogUtils.d("notice", "hide animation ending ... ");
-                ViewGroup.this.removeView(this.getBinding().e);
+                ViewGroup.this.removeView((View) this.getBinding().e);
                 animatorEndListener = this.b;
                 if (animatorEndListener == null) {
                     return;
@@ -115,14 +111,14 @@ public final class YYVipMarriageNotice extends ConstraintLayout {
     public static final void a(YYVipMarriageNotice this$0, Context context, View view) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(context, "$context");
-        YYGlobalMsgMarqueeModel yYGlobalMsgMarqueeModel = this$0.f18551c;
+        YYGlobalMsgMarqueeModel yYGlobalMsgMarqueeModel = this$0.c;
         if (yYGlobalMsgMarqueeModel == null || TextUtils.isEmpty(yYGlobalMsgMarqueeModel.link)) {
             return;
         }
         int i = yYGlobalMsgMarqueeModel.action_type;
         if (i == 0) {
             Uri parse = Uri.parse(yYGlobalMsgMarqueeModel.link);
-            String queryParameter = parse.getQueryParameter(TTLiveConstants.ROOMID_KEY);
+            String queryParameter = parse.getQueryParameter("room_id");
             LogUtils.d(Intrinsics.a("加成时刻：roomId:", (Object) queryParameter));
             String queryParameter2 = parse.getQueryParameter("redirect_url");
             LogUtils.d(Intrinsics.a("加成时刻：redirect_url：", (Object) queryParameter2));
@@ -149,7 +145,7 @@ public final class YYVipMarriageNotice extends ConstraintLayout {
         Intrinsics.e(attachView, "attachView");
         Intrinsics.e(active, "active");
         setVisibility(0);
-        YYGlobalMsgMarqueeModel yYGlobalMsgMarqueeModel = this.f18551c;
+        YYGlobalMsgMarqueeModel yYGlobalMsgMarqueeModel = this.c;
         if (yYGlobalMsgMarqueeModel != null) {
             getBinding().f.setText(yYGlobalMsgMarqueeModel.content);
             ActivityFragmentActive activityFragmentActive = active;
@@ -159,11 +155,11 @@ public final class YYVipMarriageNotice extends ConstraintLayout {
                 EventTrackYY.h(ChatRoomProtos.Event.YY_BROADCAST_SHOW, b.room_id, b.uid, yYGlobalMsgMarqueeModel.source_type, yYGlobalMsgMarqueeModel.content);
             }
             if (!StringUtils.b(yYGlobalMsgMarqueeModel.user_avatar)) {
-                ImageLoader.a(activityFragmentActive, yYGlobalMsgMarqueeModel.user_avatar).c().a(getBinding().d);
+                ImageLoader.a(activityFragmentActive, yYGlobalMsgMarqueeModel.user_avatar).c().a((ImageView) getBinding().d);
                 getBinding().d.setVisibility(0);
             }
         }
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f18550a.e, "translationX", getWidth() + AppInfo.l, 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.a.e, "translationX", getWidth() + AppInfo.l, 0.0f);
         ofFloat.setDuration(500L);
         ofFloat.setInterpolator(new LinearInterpolator());
         ofFloat.addListener(new YYVipMarriageNotice$showNotify$2(this, active, attachView));
@@ -172,11 +168,11 @@ public final class YYVipMarriageNotice extends ConstraintLayout {
 
     public final void a(YYGlobalMsgMarqueeModel notify) {
         Intrinsics.e(notify, "notify");
-        this.f18551c = notify;
+        this.c = notify;
     }
 
     public final ViewVipMarriageNoticeBinding getBinding() {
-        return this.f18550a;
+        return this.a;
     }
 
     public final void setAnimatorEndListener(AnimatorEndListener callback) {
@@ -186,6 +182,6 @@ public final class YYVipMarriageNotice extends ConstraintLayout {
 
     public final void setBinding(ViewVipMarriageNoticeBinding viewVipMarriageNoticeBinding) {
         Intrinsics.e(viewVipMarriageNoticeBinding, "<set-?>");
-        this.f18550a = viewVipMarriageNoticeBinding;
+        this.a = viewVipMarriageNoticeBinding;
     }
 }

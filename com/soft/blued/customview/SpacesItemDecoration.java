@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f28518a;
+    private int f14828a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28519c;
+    private int f14829c;
     private int d;
     private int i;
     private int j;
@@ -32,15 +32,15 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
 
     public SpacesItemDecoration(int i) {
         this.d = i;
-        this.f28519c = i;
+        this.f14829c = i;
         this.b = i;
-        this.f28518a = i;
+        this.f14828a = i;
     }
 
     public SpacesItemDecoration(int i, int i2, int i3, int i4) {
-        this.f28518a = i;
+        this.f14828a = i;
         this.b = i2;
-        this.f28519c = i3;
+        this.f14829c = i3;
         this.d = i4;
     }
 
@@ -78,14 +78,14 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
 
     private void a(Rect rect, boolean z, boolean z2, boolean z3, boolean z4) {
         if (!z) {
-            rect.left = this.f28518a;
+            rect.left = this.f14828a;
         } else if (this.e) {
-            rect.left = this.f28518a + this.i;
+            rect.left = this.f14828a + this.i;
         }
         if (!z2) {
-            rect.right = this.f28519c;
+            rect.right = this.f14829c;
         } else if (this.g) {
-            rect.right = this.f28519c + this.j;
+            rect.right = this.f14829c + this.j;
         }
         if (!z3) {
             rect.top = this.b;

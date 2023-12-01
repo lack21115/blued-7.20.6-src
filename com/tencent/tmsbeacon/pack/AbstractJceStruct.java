@@ -34,7 +34,7 @@ public abstract class AbstractJceStruct implements Serializable {
 
     public byte[] toByteArray(String str) {
         b bVar = new b();
-        bVar.f39604c = str;
+        bVar.f25913c = str;
         writeTo(bVar);
         return bVar.b();
     }

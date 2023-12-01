@@ -10,10 +10,10 @@ import java.util.List;
 public class NamedCookie {
 
     /* renamed from: a  reason: collision with root package name */
-    private Cookie f36095a;
+    private Cookie f22404a;
 
     NamedCookie(Cookie cookie) {
-        this.f36095a = cookie;
+        this.f22404a = cookie;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -27,22 +27,22 @@ public class NamedCookie {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Cookie a() {
-        return this.f36095a;
+        return this.f22404a;
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof NamedCookie) {
             NamedCookie namedCookie = (NamedCookie) obj;
             boolean z = false;
-            if (namedCookie.f36095a.name().equals(this.f36095a.name())) {
+            if (namedCookie.f22404a.name().equals(this.f22404a.name())) {
                 z = false;
-                if (namedCookie.f36095a.domain().equals(this.f36095a.domain())) {
+                if (namedCookie.f22404a.domain().equals(this.f22404a.domain())) {
                     z = false;
-                    if (namedCookie.f36095a.path().equals(this.f36095a.path())) {
+                    if (namedCookie.f22404a.path().equals(this.f22404a.path())) {
                         z = false;
-                        if (namedCookie.f36095a.secure() == this.f36095a.secure()) {
+                        if (namedCookie.f22404a.secure() == this.f22404a.secure()) {
                             z = false;
-                            if (namedCookie.f36095a.hostOnly() == this.f36095a.hostOnly()) {
+                            if (namedCookie.f22404a.hostOnly() == this.f22404a.hostOnly()) {
                                 z = true;
                             }
                         }
@@ -55,6 +55,6 @@ public class NamedCookie {
     }
 
     public int hashCode() {
-        return ((((((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + this.f36095a.name().hashCode()) * 31) + this.f36095a.domain().hashCode()) * 31) + this.f36095a.path().hashCode()) * 31) + (!this.f36095a.secure())) * 31) + (!this.f36095a.hostOnly());
+        return ((((((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + this.f22404a.name().hashCode()) * 31) + this.f22404a.domain().hashCode()) * 31) + this.f22404a.path().hashCode()) * 31) + (!this.f22404a.secure())) * 31) + (!this.f22404a.hostOnly());
     }
 }

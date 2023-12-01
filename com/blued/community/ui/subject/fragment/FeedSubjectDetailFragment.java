@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+import com.anythink.core.common.c.g;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
@@ -46,7 +47,6 @@ import com.blued.community.utils.MarkDownLinkHelper;
 import com.blued.community.utils.ViewUtils;
 import com.blued.community.view.CommonFloatBottomView;
 import com.blued.das.client.feed.FeedProtos;
-import com.igexin.push.config.c;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -138,7 +138,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
     public static final void a(FeedSubjectDetailFragment this$0, Ref.BooleanRef followFlag, DialogInterface dialogInterface, int i) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(followFlag, "$followFlag");
-        this$0.c(followFlag.f42538a);
+        this$0.c(followFlag.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -152,10 +152,10 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Int");
         }
         int intValue = ((Integer) animatedValue).intValue();
-        if (intValue <= 1 && (view2 = (View) skeletonTopBg.f42545a) != null) {
+        if (intValue <= 1 && (view2 = (View) skeletonTopBg.a) != null) {
             view2.setBackgroundColor(i);
         }
-        if (intValue < 9 || (view = (View) skeletonTopBg.f42545a) == null) {
+        if (intValue < 9 || (view = (View) skeletonTopBg.a) == null) {
             return;
         }
         view.setBackgroundColor(i2);
@@ -275,7 +275,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
             imageView4.setImageResource(R.drawable.icon_title_share);
         }
         if (i <= this.M) {
-            if (CommunityManager.f19086a.a().s()) {
+            if (CommunityManager.a.a().s()) {
                 View view4 = this.q;
                 if (view4 != null) {
                     view4.setBackgroundColor(Color.parseColor("#80151515"));
@@ -297,7 +297,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
             view7.setVisibility(8);
             return;
         }
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             View view8 = this.q;
             if (view8 != null) {
                 view8.setBackgroundResource(R.color.syc_151515);
@@ -365,12 +365,12 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
             return;
         }
         view.setVisibility(0);
-        final int a2 = DisplayUtil.a(AppInfo.d(), 128.0f);
-        final int a3 = DisplayUtil.a(AppInfo.d(), 42.0f);
+        final int a = DisplayUtil.a(AppInfo.d(), 128.0f);
+        final int a2 = DisplayUtil.a(AppInfo.d(), 42.0f);
         this.aa.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.community.ui.subject.fragment.-$$Lambda$FeedSubjectDetailFragment$d-0Qc_BgL_apddzPB7mnvsevbVI
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FeedSubjectDetailFragment.a(View.this, a2, a3, valueAnimator);
+                FeedSubjectDetailFragment.a(View.this, a, a2, valueAnimator);
             }
         });
         this.aa.addListener(new Animator.AnimatorListener() { // from class: com.blued.community.ui.subject.fragment.FeedSubjectDetailFragment$showGuidePostAnim$1$2
@@ -392,7 +392,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
             }
         });
         this.aa.setRepeatCount(1);
-        this.aa.setDuration(c.j);
+        this.aa.setDuration(1500L);
         this.aa.setStartDelay(300L);
         this.aa.start();
     }
@@ -402,7 +402,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
             return;
         }
         this.R.clear();
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.f20230a;
+        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.a;
         if (feedListAdapterForRecyclerView != null) {
             this.R.addAll(feedListAdapterForRecyclerView.getData());
         }
@@ -413,7 +413,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
             this.Y = childAt.getTop();
         }
         LogUtils.c("latestTypePosition: " + this.X + ", latestTypeScrollY: " + this.Y);
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView2 = this.f20230a;
+        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView2 = this.a;
         if (feedListAdapterForRecyclerView2 != null) {
             feedListAdapterForRecyclerView2.b(29);
         }
@@ -456,7 +456,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
         if (e != null) {
             e.stopScroll();
         }
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView3 = this.f20230a;
+        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView3 = this.a;
         if (feedListAdapterForRecyclerView3 != null) {
             feedListAdapterForRecyclerView3.setNewData(this.Q);
         }
@@ -486,7 +486,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
     private final void r() {
         if (this.L && this.S == 0) {
             this.Q.clear();
-            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.f20230a;
+            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.a;
             if (feedListAdapterForRecyclerView != null) {
                 this.Q.addAll(feedListAdapterForRecyclerView.getData());
             }
@@ -497,13 +497,13 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
                 this.W = childAt.getTop();
             }
             LogUtils.c("recommendTypePosition: " + this.V + ", recommendTypeScrollY: " + this.W);
-            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView2 = this.f20230a;
+            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView2 = this.a;
             if (feedListAdapterForRecyclerView2 != null) {
                 feedListAdapterForRecyclerView2.b(30);
             }
             this.L = false;
             a(this.P);
-            a("time");
+            a(g.a.g);
             TextView textView = this.z;
             if (textView != null) {
                 textView.setTextSize(15.0f);
@@ -540,7 +540,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
             if (e != null) {
                 e.stopScroll();
             }
-            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView3 = this.f20230a;
+            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView3 = this.a;
             if (feedListAdapterForRecyclerView3 != null) {
                 feedListAdapterForRecyclerView3.setNewData(this.R);
             }
@@ -577,24 +577,24 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
     private final void s() {
         String str;
         String str2;
-        CardView cardView;
-        CardView cardView2;
-        CardView cardView3;
-        CardView cardView4;
-        CardView cardView5;
-        CardView cardView6;
-        CardView cardView7;
-        CardView cardView8;
-        CardView cardView9;
-        CardView cardView10;
-        CardView cardView11;
-        CardView cardView12;
-        CardView cardView13;
-        CardView cardView14;
-        CardView cardView15;
-        CardView cardView16;
-        CardView cardView17;
-        if (CommunityManager.f19086a.a().s()) {
+        CardView findViewById;
+        CardView findViewById2;
+        CardView findViewById3;
+        CardView findViewById4;
+        CardView findViewById5;
+        CardView findViewById6;
+        CardView findViewById7;
+        CardView findViewById8;
+        CardView findViewById9;
+        CardView findViewById10;
+        CardView findViewById11;
+        CardView findViewById12;
+        CardView findViewById13;
+        CardView findViewById14;
+        CardView findViewById15;
+        CardView findViewById16;
+        CardView findViewById17;
+        if (CommunityManager.a.a().s()) {
             str = "#414141";
             str2 = "#3C3C3C";
         } else {
@@ -605,8 +605,8 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
         final int parseColor2 = Color.parseColor(str2);
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
         View view = this.J;
-        objectRef.f42545a = view == null ? null : view.findViewById(R.id.feed_subject_detail_skeleton_top_bg);
-        View view2 = (View) objectRef.f42545a;
+        objectRef.a = view == null ? null : view.findViewById(R.id.feed_subject_detail_skeleton_top_bg);
+        View view2 = (View) objectRef.a;
         if (view2 != null) {
             view2.setBackgroundColor(parseColor);
         }
@@ -621,110 +621,110 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
         ofInt.setDuration(1250L);
         ofInt.setInterpolator(new LinearInterpolator());
         ofInt.start();
-        int parseColor3 = Color.parseColor(CommunityManager.f19086a.a().s() ? "#505050" : "#E7E7E7");
+        int parseColor3 = Color.parseColor(CommunityManager.a.a().s() ? "#505050" : "#E7E7E7");
         ShapeLinearLayout shapeLinearLayout = this.K;
         ShapeModel shapeModel = shapeLinearLayout == null ? null : shapeLinearLayout.getShapeModel();
         ShapeModel shapeModel2 = shapeModel;
         if (shapeModel == null) {
             shapeModel2 = new ShapeModel();
         }
-        shapeModel2.k = Color.parseColor(CommunityManager.f19086a.a().s() ? "#373737" : "#FFFFFF");
+        shapeModel2.k = Color.parseColor(CommunityManager.a.a().s() ? "#373737" : "#FFFFFF");
         ShapeLinearLayout shapeLinearLayout2 = this.K;
         if (shapeLinearLayout2 != null) {
             shapeLinearLayout2.setShapeModel(shapeModel2);
         }
         View view3 = this.J;
-        if (view3 != null && (cardView17 = (CardView) view3.findViewById(R.id.feed_subject_detail_skeleton_name_icon)) != null) {
-            cardView17.setCardBackgroundColor(parseColor3);
+        if (view3 != null && (findViewById17 = view3.findViewById(R.id.feed_subject_detail_skeleton_name_icon)) != null) {
+            findViewById17.setCardBackgroundColor(parseColor3);
         }
         View view4 = this.J;
-        if (view4 != null && (cardView16 = (CardView) view4.findViewById(R.id.feed_subject_detail_skeleton_name)) != null) {
-            cardView16.setCardBackgroundColor(parseColor3);
+        if (view4 != null && (findViewById16 = view4.findViewById(R.id.feed_subject_detail_skeleton_name)) != null) {
+            findViewById16.setCardBackgroundColor(parseColor3);
         }
         View view5 = this.J;
-        if (view5 != null && (cardView15 = (CardView) view5.findViewById(R.id.feed_subject_detail_skeleton_feed)) != null) {
-            cardView15.setCardBackgroundColor(parseColor3);
+        if (view5 != null && (findViewById15 = view5.findViewById(R.id.feed_subject_detail_skeleton_feed)) != null) {
+            findViewById15.setCardBackgroundColor(parseColor3);
         }
         View view6 = this.J;
-        if (view6 != null && (cardView14 = (CardView) view6.findViewById(R.id.feed_subject_detail_skeleton_viewer)) != null) {
-            cardView14.setCardBackgroundColor(parseColor3);
+        if (view6 != null && (findViewById14 = view6.findViewById(R.id.feed_subject_detail_skeleton_viewer)) != null) {
+            findViewById14.setCardBackgroundColor(parseColor3);
         }
         View view7 = this.J;
-        if (view7 != null && (cardView13 = (CardView) view7.findViewById(R.id.feed_subject_detail_skeleton_feed_header)) != null) {
-            cardView13.setCardBackgroundColor(parseColor3);
+        if (view7 != null && (findViewById13 = view7.findViewById(R.id.feed_subject_detail_skeleton_feed_header)) != null) {
+            findViewById13.setCardBackgroundColor(parseColor3);
         }
         View view8 = this.J;
-        if (view8 != null && (cardView12 = (CardView) view8.findViewById(R.id.feed_subject_detail_skeleton_feed_name)) != null) {
-            cardView12.setCardBackgroundColor(parseColor3);
+        if (view8 != null && (findViewById12 = view8.findViewById(R.id.feed_subject_detail_skeleton_feed_name)) != null) {
+            findViewById12.setCardBackgroundColor(parseColor3);
         }
         View view9 = this.J;
-        if (view9 != null && (cardView11 = (CardView) view9.findViewById(R.id.feed_subject_detail_skeleton_feed_content_line_1)) != null) {
-            cardView11.setCardBackgroundColor(parseColor3);
+        if (view9 != null && (findViewById11 = view9.findViewById(R.id.feed_subject_detail_skeleton_feed_content_line_1)) != null) {
+            findViewById11.setCardBackgroundColor(parseColor3);
         }
         View view10 = this.J;
-        if (view10 != null && (cardView10 = (CardView) view10.findViewById(R.id.feed_subject_detail_skeleton_feed_content_line_2)) != null) {
-            cardView10.setCardBackgroundColor(parseColor3);
+        if (view10 != null && (findViewById10 = view10.findViewById(R.id.feed_subject_detail_skeleton_feed_content_line_2)) != null) {
+            findViewById10.setCardBackgroundColor(parseColor3);
         }
         View view11 = this.J;
-        if (view11 != null && (cardView9 = (CardView) view11.findViewById(R.id.feed_subject_detail_skeleton_feed_content_iv)) != null) {
-            cardView9.setCardBackgroundColor(parseColor3);
+        if (view11 != null && (findViewById9 = view11.findViewById(R.id.feed_subject_detail_skeleton_feed_content_iv)) != null) {
+            findViewById9.setCardBackgroundColor(parseColor3);
         }
         View view12 = this.J;
-        if (view12 != null && (cardView8 = (CardView) view12.findViewById(R.id.feed_subject_detail_skeleton_feed_tag_1)) != null) {
-            cardView8.setCardBackgroundColor(parseColor3);
+        if (view12 != null && (findViewById8 = view12.findViewById(R.id.feed_subject_detail_skeleton_feed_tag_1)) != null) {
+            findViewById8.setCardBackgroundColor(parseColor3);
         }
         View view13 = this.J;
-        if (view13 != null && (cardView7 = (CardView) view13.findViewById(R.id.feed_subject_detail_skeleton_feed_tag_2)) != null) {
-            cardView7.setCardBackgroundColor(parseColor3);
+        if (view13 != null && (findViewById7 = view13.findViewById(R.id.feed_subject_detail_skeleton_feed_tag_2)) != null) {
+            findViewById7.setCardBackgroundColor(parseColor3);
         }
         View view14 = this.J;
-        if (view14 != null && (cardView6 = (CardView) view14.findViewById(R.id.feed_subject_detail_skeleton_feed_tag_3)) != null) {
-            cardView6.setCardBackgroundColor(parseColor3);
+        if (view14 != null && (findViewById6 = view14.findViewById(R.id.feed_subject_detail_skeleton_feed_tag_3)) != null) {
+            findViewById6.setCardBackgroundColor(parseColor3);
         }
         View view15 = this.J;
-        if (view15 != null && (cardView5 = (CardView) view15.findViewById(R.id.feed_subject_detail_skeleton_feed_two_header)) != null) {
-            cardView5.setCardBackgroundColor(parseColor3);
+        if (view15 != null && (findViewById5 = view15.findViewById(R.id.feed_subject_detail_skeleton_feed_two_header)) != null) {
+            findViewById5.setCardBackgroundColor(parseColor3);
         }
         View view16 = this.J;
-        if (view16 != null && (cardView4 = (CardView) view16.findViewById(R.id.feed_subject_detail_skeleton_feed_two_name)) != null) {
-            cardView4.setCardBackgroundColor(parseColor3);
+        if (view16 != null && (findViewById4 = view16.findViewById(R.id.feed_subject_detail_skeleton_feed_two_name)) != null) {
+            findViewById4.setCardBackgroundColor(parseColor3);
         }
         View view17 = this.J;
-        if (view17 != null && (cardView3 = (CardView) view17.findViewById(R.id.feed_subject_detail_skeleton_feed_two_content_line_1)) != null) {
-            cardView3.setCardBackgroundColor(parseColor3);
+        if (view17 != null && (findViewById3 = view17.findViewById(R.id.feed_subject_detail_skeleton_feed_two_content_line_1)) != null) {
+            findViewById3.setCardBackgroundColor(parseColor3);
         }
         View view18 = this.J;
-        if (view18 != null && (cardView2 = (CardView) view18.findViewById(R.id.feed_subject_detail_skeleton_feed_two_content_line_2)) != null) {
-            cardView2.setCardBackgroundColor(parseColor3);
+        if (view18 != null && (findViewById2 = view18.findViewById(R.id.feed_subject_detail_skeleton_feed_two_content_line_2)) != null) {
+            findViewById2.setCardBackgroundColor(parseColor3);
         }
         View view19 = this.J;
-        if (view19 != null && (cardView = (CardView) view19.findViewById(R.id.feed_subject_detail_skeleton_feed_two_content_iv)) != null) {
-            cardView.setCardBackgroundColor(parseColor3);
+        if (view19 != null && (findViewById = view19.findViewById(R.id.feed_subject_detail_skeleton_feed_two_content_iv)) != null) {
+            findViewById.setCardBackgroundColor(parseColor3);
         }
         View view20 = this.J;
-        View findViewById = view20 == null ? null : view20.findViewById(R.id.feed_subject_detail_skeleton_info_margin_view);
-        if (findViewById != null) {
-            findViewById.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.community.ui.subject.fragment.-$$Lambda$FeedSubjectDetailFragment$tPkKmJD_hja17pDFZPDnJQ-FOoY
+        View findViewById18 = view20 == null ? null : view20.findViewById(R.id.feed_subject_detail_skeleton_info_margin_view);
+        if (findViewById18 != null) {
+            findViewById18.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.community.ui.subject.fragment.-$$Lambda$FeedSubjectDetailFragment$tPkKmJD_hja17pDFZPDnJQ-FOoY
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view21, MotionEvent motionEvent) {
-                    boolean a2;
-                    a2 = FeedSubjectDetailFragment.a(FeedSubjectDetailFragment.this, view21, motionEvent);
-                    return a2;
+                    boolean a;
+                    a = FeedSubjectDetailFragment.a(FeedSubjectDetailFragment.this, view21, motionEvent);
+                    return a;
                 }
             });
         }
         View view21 = this.J;
-        View findViewById2 = view21 == null ? null : view21.findViewById(R.id.feed_subject_detail_skeleton_feed_content_root);
-        if (findViewById2 != null) {
-            findViewById2.setBackgroundColor(Color.parseColor(CommunityManager.f19086a.a().s() ? "#373737" : "#FFFFFF"));
+        View findViewById19 = view21 == null ? null : view21.findViewById(R.id.feed_subject_detail_skeleton_feed_content_root);
+        if (findViewById19 != null) {
+            findViewById19.setBackgroundColor(Color.parseColor(CommunityManager.a.a().s() ? "#373737" : "#FFFFFF"));
         }
-        if (findViewById2 != null) {
-            findViewById2.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.community.ui.subject.fragment.-$$Lambda$FeedSubjectDetailFragment$qFlr1Gz8dxY8VCQIJV6tOEBO8pg
+        if (findViewById19 != null) {
+            findViewById19.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.community.ui.subject.fragment.-$$Lambda$FeedSubjectDetailFragment$qFlr1Gz8dxY8VCQIJV6tOEBO8pg
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view22, MotionEvent motionEvent) {
-                    boolean a2;
-                    a2 = FeedSubjectDetailFragment.a(view22, motionEvent);
-                    return a2;
+                    boolean a;
+                    a = FeedSubjectDetailFragment.a(view22, motionEvent);
+                    return a;
                 }
             });
         }
@@ -806,7 +806,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
         if (bluedTopic == null) {
             return;
         }
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             CardView cardView = this.w;
             if (cardView != null) {
                 cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
@@ -886,7 +886,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
             return;
         }
         final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
-        booleanRef.f42538a = bluedTopic.is_follow != 1;
+        booleanRef.a = bluedTopic.is_follow != 1;
         if (bluedTopic.is_follow == 1) {
             CommonAlertDialog.a(getContext(), (String) null, getString(R.string.feed_subject_cancel_followed_tips), getString(R.string.common_ok), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.subject.fragment.-$$Lambda$FeedSubjectDetailFragment$89vdJvQh2Se-BmDt12t-VZ7NqOE
                 @Override // android.content.DialogInterface.OnClickListener
@@ -895,7 +895,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
                 }
             }, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
         } else {
-            c(booleanRef.f42538a);
+            c(booleanRef.a);
         }
     }
 
@@ -903,7 +903,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
     @Override // com.blued.community.ui.subject.fragment.FeedTopicDetailBaseFragment
     public void a() {
         super.a();
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.f20230a;
+        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.a;
         if (feedListAdapterForRecyclerView == null) {
             return;
         }
@@ -1033,7 +1033,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
         super.b();
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.feed_subject_detail_header_view, (ViewGroup) null);
         this.i = inflate;
-        this.f20231c = inflate == null ? null : (ImageView) inflate.findViewById(R.id.feed_subject_detail_img);
+        this.c = inflate == null ? null : (ImageView) inflate.findViewById(R.id.feed_subject_detail_img);
         View view = this.i;
         this.j = view == null ? null : (ShapeLinearLayout) view.findViewById(R.id.feed_subject_detail_info_ll);
         ShapeModel shapeModel = new ShapeModel();
@@ -1046,7 +1046,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
         View view2 = this.i;
         this.k = view2 == null ? null : (TextView) view2.findViewById(R.id.feed_subject_detail_name_tv);
         View view3 = this.i;
-        this.l = view3 == null ? null : (CardView) view3.findViewById(R.id.feed_subject_detail_follow_btn);
+        this.l = view3 == null ? null : view3.findViewById(R.id.feed_subject_detail_follow_btn);
         View view4 = this.i;
         this.m = view4 == null ? null : (TextView) view4.findViewById(R.id.feed_subject_detail_follow_tv);
         CardView cardView = this.l;
@@ -1096,7 +1096,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
                 }
             });
         }
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.f20230a;
+        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.a;
         if (feedListAdapterForRecyclerView != null) {
             feedListAdapterForRecyclerView.addHeaderView(this.i);
         }
@@ -1123,7 +1123,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
         int i;
         String str;
         super.c();
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             View view = this.rootView;
             if (view != null) {
                 view.setBackgroundResource(R.color.syc_151515);
@@ -1145,7 +1145,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
                 if (textView2 != null) {
                     textView2.setText(R.string.super_topic_post);
                 }
-                if (CommunityManager.f19086a.a().s()) {
+                if (CommunityManager.a.a().s()) {
                     ImageView imageView = this.v;
                     if (imageView != null) {
                         imageView.setImageResource(R.drawable.feed_post_subject_annony);
@@ -1166,7 +1166,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
                 if (textView3 != null) {
                     textView3.setText(R.string.post);
                 }
-                if (CommunityManager.f19086a.a().s()) {
+                if (CommunityManager.a.a().s()) {
                     ImageView imageView4 = this.v;
                     if (imageView4 != null) {
                         imageView4.setImageResource(R.drawable.feed_post_subject_icon);
@@ -1210,15 +1210,15 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
                 if (textView8 != null) {
                     textView8.setMovementMethod(LinkMovementMethod.getInstance());
                     int i2 = AppInfo.l;
-                    int c2 = FeedMethods.c(24);
+                    int c = FeedMethods.c(24);
                     TextPaint paint = textView8.getPaint();
                     String str2 = bluedTopic.description;
                     Intrinsics.c(str2, "it.description");
-                    int a2 = StringsKt.a((CharSequence) str2, "[Lottery1](", 0, false, 6, (Object) null);
-                    if (a2 >= 0) {
-                        String str3 = (String) bluedTopic.description.subSequence(0, a2);
+                    int a = StringsKt.a((CharSequence) str2, "[Lottery1](", 0, false, 6, (Object) null);
+                    if (a >= 0) {
+                        String str3 = (String) bluedTopic.description.subSequence(0, a);
                         float measureText = paint.measureText(Intrinsics.a(str3, (Object) "..."));
-                        int i3 = (i2 - c2) * 2;
+                        int i3 = (i2 - c) * 2;
                         if (measureText > i3 - FeedMethods.c(78)) {
                             while (measureText > i3 - FeedMethods.c(78)) {
                                 str3 = str3.substring(0, str3.length() - 1);
@@ -1230,7 +1230,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
                             sb.append("...");
                             String str4 = bluedTopic.description;
                             Intrinsics.c(str4, "it.description");
-                            String substring = str4.substring(a2);
+                            String substring = str4.substring(a);
                             Intrinsics.c(substring, "this as java.lang.String).substring(startIndex)");
                             sb.append(substring);
                             str = sb.toString();
@@ -1238,9 +1238,9 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
                             str = bluedTopic.description;
                             Intrinsics.c(str, "it.description");
                         }
-                        textView8.setText(MarkDownLinkHelper.a(getContext(), (CharSequence) str, true, R.color.syc_m, true, (MarkDownLinkHelper.MDLinkOnClickListener) null));
+                        textView8.setText(MarkDownLinkHelper.a(getContext(), str, true, R.color.syc_m, true, (MarkDownLinkHelper.MDLinkOnClickListener) null));
                     } else {
-                        textView8.setText(MarkDownLinkHelper.a(getContext(), (CharSequence) bluedTopic.description, true, R.color.syc_m, true, (MarkDownLinkHelper.MDLinkOnClickListener) null));
+                        textView8.setText(MarkDownLinkHelper.a(getContext(), bluedTopic.description, true, R.color.syc_m, true, (MarkDownLinkHelper.MDLinkOnClickListener) null));
                     }
                     textView8.setVisibility(0);
                 }
@@ -1297,13 +1297,12 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
         t();
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         FeedConstants.b = FeedProtos.DetailFrom.UNKNOWN_DETAIL_FROM;
     }
 
-    @Override // com.blued.community.ui.subject.fragment.FeedTopicDetailBaseFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.community.ui.subject.fragment.FeedTopicDetailBaseFragment
     public void onInitView() {
         b(29);
         super.onInitView();
@@ -1322,7 +1321,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
         View view6 = this.rootView;
         this.v = view6 == null ? null : (ImageView) view6.findViewById(R.id.feed_subject_detail_title_iv);
         View view7 = this.rootView;
-        this.w = view7 == null ? null : (CardView) view7.findViewById(R.id.feed_subject_detail_title_follow_btn);
+        this.w = view7 == null ? null : view7.findViewById(R.id.feed_subject_detail_title_follow_btn);
         View view8 = this.rootView;
         this.x = view8 == null ? null : (TextView) view8.findViewById(R.id.feed_subject_detail_title_follow_tv);
         CardView cardView = this.w;
@@ -1376,7 +1375,7 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
                 }
             });
         }
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             View view12 = this.rootView;
             if (view12 != null) {
                 view12.setBackgroundResource(R.color.syc_151515);
@@ -1388,19 +1387,18 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
             }
         }
         View view14 = this.rootView;
-        CommonFloatBottomView commonFloatBottomView = view14 == null ? null : (CommonFloatBottomView) view14.findViewById(R.id.feed_subject_send_float_view);
-        this.E = commonFloatBottomView;
-        if (commonFloatBottomView != null) {
-            commonFloatBottomView.setOnBtnClickListener(new CommonFloatBottomView.OnBtnClickListener() { // from class: com.blued.community.ui.subject.fragment.FeedSubjectDetailFragment$onInitView$6
-                @Override // com.blued.community.view.CommonFloatBottomView.OnBtnClickListener
+        CommonFloatBottomView findViewById = view14 == null ? null : view14.findViewById(R.id.feed_subject_send_float_view);
+        this.E = findViewById;
+        if (findViewById != null) {
+            findViewById.setOnBtnClickListener(new CommonFloatBottomView.OnBtnClickListener() { // from class: com.blued.community.ui.subject.fragment.FeedSubjectDetailFragment$onInitView$6
                 public void onClick() {
                     FeedSubjectDetailFragment.this.o();
                 }
             });
         }
-        CommonFloatBottomView commonFloatBottomView2 = this.E;
-        if (commonFloatBottomView2 != null) {
-            commonFloatBottomView2.setVisibility(0);
+        CommonFloatBottomView commonFloatBottomView = this.E;
+        if (commonFloatBottomView != null) {
+            commonFloatBottomView.setVisibility(0);
         }
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.feed_subject_send_btn_layout, (ViewGroup) null);
         this.F = inflate;
@@ -1411,9 +1409,9 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
         if (view16 != null) {
             view16.setVisibility(8);
         }
-        CommonFloatBottomView commonFloatBottomView3 = this.E;
-        if (commonFloatBottomView3 != null) {
-            commonFloatBottomView3.addChildView(this.F);
+        CommonFloatBottomView commonFloatBottomView2 = this.E;
+        if (commonFloatBottomView2 != null) {
+            commonFloatBottomView2.addChildView(this.F);
         }
         View view17 = this.rootView;
         this.J = view17 == null ? null : view17.findViewById(R.id.feed_subject_detail_skeleton_id);
@@ -1422,7 +1420,6 @@ public final class FeedSubjectDetailFragment extends FeedTopicDetailBaseFragment
         s();
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
         return R.layout.fragment_feed_subject_detail;
     }

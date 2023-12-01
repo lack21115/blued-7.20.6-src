@@ -26,11 +26,11 @@ public class BaseShareEntity implements Serializable {
     public static class ShareLiveData {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f33710a;
+        public String f20019a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f33711c;
+        public String f20020c;
         public String d;
         public Bitmap e;
         public String f;

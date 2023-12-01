@@ -35,9 +35,7 @@ public final class ac implements Serializable {
     String X;
     String Y;
     String Z;
-
-    /* renamed from: a  reason: collision with root package name */
-    String f6618a;
+    String a;
     String aa;
     String ab;
     String ac;
@@ -55,9 +53,7 @@ public final class ac implements Serializable {
     String[] ao;
     String ap;
     String[] b;
-
-    /* renamed from: c  reason: collision with root package name */
-    String[] f6619c;
+    String[] c;
     String[] d;
     String[] e;
     String[] f;
@@ -89,9 +85,9 @@ public final class ac implements Serializable {
             }
             JSONObject jSONObject = new JSONObject(str);
             ac acVar = new ac();
-            acVar.f6618a = jSONObject.optString("ks");
+            acVar.a = jSONObject.optString("ks");
             acVar.b = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("nurl"));
-            acVar.f6619c = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("imp"));
+            acVar.c = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("imp"));
             acVar.d = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("click"));
             acVar.e = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("vstart"));
             acVar.f = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("v25"));
@@ -106,7 +102,7 @@ public final class ac implements Serializable {
             acVar.o = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("ec_close"));
             acVar.p = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("apk_dl_star"));
             acVar.q = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("apk_dl_end"));
-            acVar.r = com.anythink.core.common.k.h.a(jSONObject.optJSONArray(com.anythink.expressad.foundation.d.h.cM));
+            acVar.r = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("apk_install"));
             acVar.s = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("vresumed"));
             acVar.t = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("vskip"));
             acVar.u = com.anythink.core.common.k.h.a(jSONObject.optJSONArray("vfail"));
@@ -363,7 +359,7 @@ public final class ac implements Serializable {
     }
 
     public final String c() {
-        return this.f6618a;
+        return this.a;
     }
 
     public final void c(String[] strArr) {
@@ -379,7 +375,7 @@ public final class ac implements Serializable {
     }
 
     public final String[] e() {
-        return this.f6619c;
+        return this.c;
     }
 
     public final String[] f() {

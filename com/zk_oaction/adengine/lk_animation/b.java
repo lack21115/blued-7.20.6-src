@@ -7,11 +7,11 @@ import org.xmlpull.v1.XmlPullParser;
 public abstract class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f41884a;
+    private long f28193a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f41885c;
+    private boolean f28194c;
     private boolean d;
     private long e;
 
@@ -26,17 +26,17 @@ public abstract class b {
             return;
         }
         this.b = true;
-        if (this.f41885c) {
-            this.f41885c = false;
+        if (this.f28194c) {
+            this.f28194c = false;
             return;
         }
-        this.f41884a = SystemClock.uptimeMillis();
+        this.f28193a = SystemClock.uptimeMillis();
         a(0L);
     }
 
     public void c() {
         this.b = false;
-        this.f41885c = true;
+        this.f28194c = true;
     }
 
     public void d() {
@@ -54,7 +54,7 @@ public abstract class b {
     public void f() {
         if (this.d) {
             this.d = false;
-            this.f41884a += SystemClock.uptimeMillis() - this.e;
+            this.f28193a += SystemClock.uptimeMillis() - this.e;
         }
     }
 
@@ -75,7 +75,7 @@ public abstract class b {
         L8:
             long r0 = android.os.SystemClock.uptimeMillis()
             r1 = r5
-            long r1 = r1.f41884a
+            long r1 = r1.f28193a
             long r0 = r0 - r1
             r8 = r0
             r0 = r8
@@ -92,7 +92,7 @@ public abstract class b {
         L22:
             r0 = r5
             long r1 = android.os.SystemClock.uptimeMillis()
-            r0.f41884a = r1
+            r0.f28193a = r1
             r0 = 0
             r6 = r0
         L2b:

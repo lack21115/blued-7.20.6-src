@@ -10,11 +10,11 @@ import javax.crypto.spec.SecretKeySpec;
 public final class ac {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f40041a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+    private static final char[] f26350a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
     private static final char[] b = "0123456789ABCDEF".toCharArray();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final char[] f40042c = "0123456789ABCDEF".toCharArray();
+    private static final char[] f26351c = "0123456789ABCDEF".toCharArray();
 
     private static int a(char c2, int i) {
         int digit = Character.digit(c2, 16);
@@ -112,8 +112,8 @@ public final class ac {
                 return sb.toString();
             }
             byte b2 = digest[i2];
-            sb.append(f40042c[(b2 >> 4) & 15]);
-            sb.append(f40042c[b2 & 15]);
+            sb.append(f26351c[(b2 >> 4) & 15]);
+            sb.append(f26351c[b2 & 15]);
             i = i2 + 1;
         }
     }

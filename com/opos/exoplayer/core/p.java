@@ -6,18 +6,18 @@ import com.blued.das.live.LiveProtos;
 public final class p {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final p f25554a = new p(1.0f, 1.0f);
+    public static final p f11866a = new p(1.0f, 1.0f);
     public final float b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final float f25555c;
+    public final float f11867c;
     private final int d;
 
     public p(float f, float f2) {
         com.opos.exoplayer.core.i.a.a(f > 0.0f);
         com.opos.exoplayer.core.i.a.a(f2 > 0.0f);
         this.b = f;
-        this.f25555c = f2;
+        this.f11867c = f2;
         this.d = Math.round(f * 1000.0f);
     }
 
@@ -36,7 +36,7 @@ public final class p {
                 p pVar = (p) obj;
                 z = false;
                 if (this.b == pVar.b) {
-                    if (this.f25555c != pVar.f25555c) {
+                    if (this.f11867c != pVar.f11867c) {
                         return false;
                     }
                 }
@@ -48,6 +48,6 @@ public final class p {
     }
 
     public int hashCode() {
-        return ((Float.floatToRawIntBits(this.b) + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + Float.floatToRawIntBits(this.f25555c);
+        return ((Float.floatToRawIntBits(this.b) + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + Float.floatToRawIntBits(this.f11867c);
     }
 }

@@ -1,9 +1,7 @@
 package java.net;
 
-import android.content.ContentResolver;
-import android.net.ProxyInfo;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.tencent.tinker.loader.shareutil.ShareConstants;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -378,7 +376,7 @@ public class URLClassLoader extends SecureClassLoader {
             }
             try {
                 URL jarFileURL = ((JarURLConnection) url.openConnection()).getJarFileURL();
-                return new URLJarHandler(url, jarFileURL, ((JarURLConnection) new URL(ShareConstants.DEXMODE_JAR, "", jarFileURL.toExternalForm() + "!/").openConnection()).getJarFile(), substring, null);
+                return new URLJarHandler(url, jarFileURL, ((JarURLConnection) new URL("jar", "", jarFileURL.toExternalForm() + "!/").openConnection()).getJarFile(), substring, null);
             } catch (IOException e) {
                 return null;
             }
@@ -392,7 +390,7 @@ public class URLClassLoader extends SecureClassLoader {
                     uRLHandler = uRLHandler2;
                 } else {
                     String protocol = url.getProtocol();
-                    URLHandler createURLJarHandler = protocol.equals(ShareConstants.DEXMODE_JAR) ? URLClassLoader.this.createURLJarHandler(url) : protocol.equals(ContentResolver.SCHEME_FILE) ? createURLSubJarHandler(url) : URLClassLoader.this.createURLHandler(url);
+                    URLHandler createURLJarHandler = protocol.equals("jar") ? URLClassLoader.this.createURLJarHandler(url) : protocol.equals("file") ? createURLSubJarHandler(url) : URLClassLoader.this.createURLHandler(url);
                     if (createURLJarHandler != null) {
                         this.subHandlers.put(url, createURLJarHandler);
                     }
@@ -524,8 +522,8 @@ public class URLClassLoader extends SecureClassLoader {
     private URL createSearchURL(URL url) throws MalformedURLException {
         if (url != null) {
             String protocol = url.getProtocol();
-            if (!isDirectory(url) && !protocol.equals(ShareConstants.DEXMODE_JAR)) {
-                return this.factory == null ? new URL(ShareConstants.DEXMODE_JAR, "", -1, url.toString() + "!/") : new URL(ShareConstants.DEXMODE_JAR, "", -1, url.toString() + "!/", this.factory.createURLStreamHandler(ShareConstants.DEXMODE_JAR));
+            if (!isDirectory(url) && !protocol.equals("jar")) {
+                return this.factory == null ? new URL("jar", "", -1, url.toString() + "!/") : new URL("jar", "", -1, url.toString() + "!/", this.factory.createURLStreamHandler("jar"));
             }
         }
         return url;
@@ -556,7 +554,7 @@ public class URLClassLoader extends SecureClassLoader {
         }
         try {
             URL jarFileURL = ((JarURLConnection) url.openConnection()).getJarFileURL();
-            JarFile jarFile = ((JarURLConnection) new URL(ShareConstants.DEXMODE_JAR, "", jarFileURL.toExternalForm() + "!/").openConnection()).getJarFile();
+            JarFile jarFile = ((JarURLConnection) new URL("jar", "", jarFileURL.toExternalForm() + "!/").openConnection()).getJarFile();
             URLJarHandler uRLJarHandler = new URLJarHandler(url, jarFileURL, jarFile, substring);
             if (uRLJarHandler.getIndex() == null) {
                 try {
@@ -636,7 +634,7 @@ public class URLClassLoader extends SecureClassLoader {
                 }
                 if (!this.handlerMap.containsKey(remove)) {
                     String protocol = remove.getProtocol();
-                    URLHandler createURLJarHandler = protocol.equals(ShareConstants.DEXMODE_JAR) ? createURLJarHandler(remove) : protocol.equals(ContentResolver.SCHEME_FILE) ? createURLFileHandler(remove) : createURLHandler(remove);
+                    URLHandler createURLJarHandler = protocol.equals("jar") ? createURLJarHandler(remove) : protocol.equals("file") ? createURLFileHandler(remove) : createURLHandler(remove);
                     if (createURLJarHandler != null) {
                         this.handlerMap.put(remove, createURLJarHandler);
                         this.handlerList.add(createURLJarHandler);
@@ -795,23 +793,24 @@ public class URLClassLoader extends SecureClassLoader {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.security.SecureClassLoader
-    protected PermissionCollection getPermissions(CodeSource codeSource) {
+    public PermissionCollection getPermissions(CodeSource codeSource) {
         PermissionCollection permissions = super.getPermissions(codeSource);
         URL location = codeSource.getLocation();
         URL url = location;
-        if (location.getProtocol().equals(ShareConstants.DEXMODE_JAR)) {
+        if (location.getProtocol().equals("jar")) {
             try {
                 url = ((JarURLConnection) location.openConnection()).getJarFileURL();
             } catch (IOException e) {
                 url = location;
             }
         }
-        if (!url.getProtocol().equals(ContentResolver.SCHEME_FILE)) {
+        if (!url.getProtocol().equals("file")) {
             String host = url.getHost();
             String str = host;
             if (host.length() == 0) {
-                str = ProxyInfo.LOCAL_HOST;
+                str = "localhost";
             }
             permissions.add(new SocketPermission(str, "connect, accept"));
             return permissions;
@@ -830,7 +829,7 @@ public class URLClassLoader extends SecureClassLoader {
             str3 = str2.replace('/', File.separatorChar);
         }
         if (isDirectory(url)) {
-            permissions.add(new FilePermission(str3 + "-", "read"));
+            permissions.add(new FilePermission(str3 + NativeLibraryHelper.CLEAR_ABI_OVERRIDE, "read"));
             return permissions;
         }
         permissions.add(new FilePermission(str3, "read"));

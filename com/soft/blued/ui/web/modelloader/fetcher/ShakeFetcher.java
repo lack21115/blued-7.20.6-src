@@ -11,7 +11,6 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.utils.Logger;
-import com.blued.android.module.common.web.LoaderConstants;
 import com.blued.android.module.common.web.jsbridge.BridgeManager;
 import com.blued.android.module.common.web.jsbridge.CallBackFunction;
 import com.blued.android.module.common.web.jsbridge.CallJsModel;
@@ -51,11 +50,9 @@ public class ShakeFetcher implements SensorEventListener, DataFetcher {
         return ((int) d) + "," + ((int) d2) + "," + ((int) d3);
     }
 
-    @Override // com.blued.android.module.common.web.modelloader.fetcher.DataFetcher
     public void cancel() {
     }
 
-    @Override // com.blued.android.module.common.web.modelloader.fetcher.DataFetcher
     public void loadData(String str, CallBackFunction callBackFunction, DataFetcher.DataFetcherCallback dataFetcherCallback) {
         SensorManager sensorManager = (SensorManager) this.activity.getSystemService("sensor");
         this.sensorManager = sensorManager;
@@ -136,7 +133,7 @@ public class ShakeFetcher implements SensorEventListener, DataFetcher {
                     double abs = Math.abs(Math.abs(degrees2) - Math.abs(degrees5));
                     double abs2 = Math.abs(Math.abs(degrees3) - Math.abs(degrees6));
                     double abs3 = Math.abs(Math.abs(degrees) - Math.abs(degrees4));
-                    Logger.c("ljx_shake", "角度详细数据：" + degrees5 + "->" + abs + "," + degrees6 + "->" + abs2 + "," + degrees4 + "->" + abs3);
+                    Logger.c("ljx_shake", new Object[]{"角度详细数据：" + degrees5 + "->" + abs + "," + degrees6 + "->" + abs2 + "," + degrees4 + "->" + abs3});
                 }
             }
         }
@@ -144,8 +141,7 @@ public class ShakeFetcher implements SensorEventListener, DataFetcher {
 
     public void sendToJs() {
         Log.v("drb", "NATIVE_TO_JS sendJs");
-        this.bridgeManager.callHandler(LoaderConstants.NATIVE_TO_JS, AppInfo.f().toJson(new CallJsModel(LoaderConstants.SHAKE)), new CallBackFunction() { // from class: com.soft.blued.ui.web.modelloader.fetcher.ShakeFetcher.2
-            @Override // com.blued.android.module.common.web.jsbridge.CallBackFunction
+        this.bridgeManager.callHandler("nativeToJs", AppInfo.f().toJson(new CallJsModel("shake")), new CallBackFunction() { // from class: com.soft.blued.ui.web.modelloader.fetcher.ShakeFetcher.2
             public void onCallBack(String str) {
                 Log.v("drb", "NATIVE_TO_JS SHAKE onCallBack：" + str);
             }

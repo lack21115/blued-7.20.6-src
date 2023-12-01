@@ -5,6 +5,7 @@ import com.kwad.sdk.core.b;
 import com.kwad.sdk.crash.utils.i;
 import com.kwad.sdk.crash.utils.j;
 import com.kwad.sdk.utils.t;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.Serializable;
 import org.json.JSONObject;
 
@@ -45,7 +46,7 @@ public abstract class ExceptionMessage implements b, Serializable {
     public int mCrashSource = 0;
 
     public static final String getSdkCrashVersionName(String str, int i) {
-        return str + "-" + i;
+        return str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i;
     }
 
     public static final String getSdkVersionNameSuffix(int i) {

@@ -10,14 +10,12 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/ItemFeedPostLocationLargerAreaBinding.class */
 public final class ItemFeedPostLocationLargerAreaBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f18969a;
+    public final TextView a;
     private final LinearLayout b;
 
     private ItemFeedPostLocationLargerAreaBinding(LinearLayout linearLayout, TextView textView) {
         this.b = linearLayout;
-        this.f18969a = textView;
+        this.a = textView;
     }
 
     public static ItemFeedPostLocationLargerAreaBinding a(LayoutInflater layoutInflater) {
@@ -40,7 +38,6 @@ public final class ItemFeedPostLocationLargerAreaBinding implements ViewBinding 
         throw new NullPointerException("Missing required view with ID: ".concat("tvFooterName"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.b;

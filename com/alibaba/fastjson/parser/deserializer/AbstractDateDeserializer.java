@@ -7,7 +7,6 @@ import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.parser.JSONLexer;
 import com.alibaba.fastjson.parser.JSONScanner;
 import com.alibaba.fastjson.util.TypeUtils;
-import com.tencent.thumbplayer.tplayer.plugins.report.TPReportParams;
 import java.lang.reflect.Type;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/fastjson/parser/deserializer/AbstractDateDeserializer.class */
@@ -73,7 +72,7 @@ public abstract class AbstractDateDeserializer implements ObjectDeserializer {
             if (jSONLexer.token() != 4) {
                 throw new JSONException("syntax error");
             }
-            if (!TPReportParams.JSON_KEY_VAL.equals(jSONLexer.stringVal())) {
+            if (!"val".equals(jSONLexer.stringVal())) {
                 throw new JSONException("syntax error");
             }
             jSONLexer.nextToken();

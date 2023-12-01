@@ -12,13 +12,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/ShapeStroke.class */
 public class ShapeStroke implements ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f4368a;
+    private final String a;
     private final AnimatableFloatValue b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final List<AnimatableFloatValue> f4369c;
+    private final List<AnimatableFloatValue> c;
     private final AnimatableColorValue d;
     private final AnimatableIntegerValue e;
     private final AnimatableFloatValue f;
@@ -30,9 +26,7 @@ public class ShapeStroke implements ContentModel {
     /* renamed from: com.airbnb.lottie.model.content.ShapeStroke$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/ShapeStroke$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f4370a;
+        static final /* synthetic */ int[] a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:16:0x0055 -> B:32:0x0014). Please submit an issue!!! */
@@ -56,17 +50,17 @@ public class ShapeStroke implements ContentModel {
             } catch (NoSuchFieldError e3) {
             }
             int[] iArr2 = new int[LineCapType.values().length];
-            f4370a = iArr2;
+            a = iArr2;
             try {
                 iArr2[LineCapType.BUTT.ordinal()] = 1;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f4370a[LineCapType.ROUND.ordinal()] = 2;
+                a[LineCapType.ROUND.ordinal()] = 2;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f4370a[LineCapType.UNKNOWN.ordinal()] = 3;
+                a[LineCapType.UNKNOWN.ordinal()] = 3;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -79,7 +73,7 @@ public class ShapeStroke implements ContentModel {
         UNKNOWN;
 
         public Paint.Cap a() {
-            int i = AnonymousClass1.f4370a[ordinal()];
+            int i = AnonymousClass1.a[ordinal()];
             return i != 1 ? i != 2 ? Paint.Cap.SQUARE : Paint.Cap.ROUND : Paint.Cap.BUTT;
         }
     }
@@ -106,9 +100,9 @@ public class ShapeStroke implements ContentModel {
     }
 
     public ShapeStroke(String str, AnimatableFloatValue animatableFloatValue, List<AnimatableFloatValue> list, AnimatableColorValue animatableColorValue, AnimatableIntegerValue animatableIntegerValue, AnimatableFloatValue animatableFloatValue2, LineCapType lineCapType, LineJoinType lineJoinType, float f, boolean z) {
-        this.f4368a = str;
+        this.a = str;
         this.b = animatableFloatValue;
-        this.f4369c = list;
+        this.c = list;
         this.d = animatableColorValue;
         this.e = animatableIntegerValue;
         this.f = animatableFloatValue2;
@@ -124,7 +118,7 @@ public class ShapeStroke implements ContentModel {
     }
 
     public String a() {
-        return this.f4368a;
+        return this.a;
     }
 
     public AnimatableColorValue b() {
@@ -140,7 +134,7 @@ public class ShapeStroke implements ContentModel {
     }
 
     public List<AnimatableFloatValue> e() {
-        return this.f4369c;
+        return this.c;
     }
 
     public AnimatableFloatValue f() {

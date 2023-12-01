@@ -16,7 +16,7 @@ public final class a implements IDiffDevOAuth {
     private Handler handler = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<OAuthListener> f38173c = new ArrayList();
+    private List<OAuthListener> f24482c = new ArrayList();
     private OAuthListener e = new b(this);
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -27,10 +27,10 @@ public final class a implements IDiffDevOAuth {
 
     @Override // com.tencent.mm.opensdk.diffdev.IDiffDevOAuth
     public final void addListener(OAuthListener oAuthListener) {
-        if (this.f38173c.contains(oAuthListener)) {
+        if (this.f24482c.contains(oAuthListener)) {
             return;
         }
-        this.f38173c.add(oAuthListener);
+        this.f24482c.add(oAuthListener);
     }
 
     @Override // com.tencent.mm.opensdk.diffdev.IDiffDevOAuth
@@ -61,18 +61,18 @@ public final class a implements IDiffDevOAuth {
     @Override // com.tencent.mm.opensdk.diffdev.IDiffDevOAuth
     public final void detach() {
         Log.i("MicroMsg.SDK.DiffDevOAuth", "detach");
-        this.f38173c.clear();
+        this.f24482c.clear();
         stopAuth();
     }
 
     @Override // com.tencent.mm.opensdk.diffdev.IDiffDevOAuth
     public final void removeAllListeners() {
-        this.f38173c.clear();
+        this.f24482c.clear();
     }
 
     @Override // com.tencent.mm.opensdk.diffdev.IDiffDevOAuth
     public final void removeListener(OAuthListener oAuthListener) {
-        this.f38173c.remove(oAuthListener);
+        this.f24482c.remove(oAuthListener);
     }
 
     @Override // com.tencent.mm.opensdk.diffdev.IDiffDevOAuth

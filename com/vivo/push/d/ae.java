@@ -7,20 +7,20 @@ import com.vivo.push.sdk.PushMessageCallback;
 final class ae implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ com.vivo.push.b.i f41074a;
+    final /* synthetic */ com.vivo.push.b.i f27383a;
     final /* synthetic */ ad b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ae(ad adVar, com.vivo.push.b.i iVar) {
         this.b = adVar;
-        this.f41074a = iVar;
+        this.f27383a = iVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         Context context;
         PushMessageCallback pushMessageCallback = this.b.b;
-        context = this.b.f41105a;
-        pushMessageCallback.onUnBind(context, this.f41074a.h(), this.f41074a.d());
+        context = this.b.f27414a;
+        pushMessageCallback.onUnBind(context, this.f27383a.h(), this.f27383a.d());
     }
 }

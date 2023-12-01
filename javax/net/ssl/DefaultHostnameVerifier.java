@@ -1,6 +1,5 @@
 package javax.net.ssl;
 
-import com.meizu.cloud.pushsdk.notification.model.AdvanceSetting;
 import java.net.InetAddress;
 import java.security.cert.CertificateParsingException;
 import java.security.cert.X509Certificate;
@@ -56,7 +55,7 @@ public final class DefaultHostnameVerifier implements HostnameVerifier {
                 return true;
             }
         }
-        if (z || (findMostSpecific = new DistinguishedNameParser(x509Certificate.getSubjectX500Principal()).findMostSpecific(AdvanceSetting.CLEAR_NOTIFICATION)) == null) {
+        if (z || (findMostSpecific = new DistinguishedNameParser(x509Certificate.getSubjectX500Principal()).findMostSpecific("cn")) == null) {
             return false;
         }
         return verifyHostName(lowerCase, findMostSpecific);

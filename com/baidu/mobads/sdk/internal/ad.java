@@ -20,7 +20,7 @@ import org.json.JSONObject;
 public class ad extends bf {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f9299a = 17;
+    public static final int f6459a = 17;
     private static final String q = "javascript:";
     private int A;
     private boolean B;

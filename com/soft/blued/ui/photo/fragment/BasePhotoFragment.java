@@ -42,7 +42,7 @@ import java.util.ArrayList;
 public class BasePhotoFragment extends BaseFragment implements EventCallBackListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f33053a = true;
+    public boolean f19362a = true;
     public boolean b;
 
     /* renamed from: com.soft.blued.ui.photo.fragment.BasePhotoFragment$4  reason: invalid class name */
@@ -50,26 +50,21 @@ public class BasePhotoFragment extends BaseFragment implements EventCallBackList
     class AnonymousClass4 implements ViewDragHelperLayout.OnLayoutStateListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ViewDragHelperLayout f33058a;
+        final /* synthetic */ ViewDragHelperLayout f19367a;
 
-        @Override // com.blued.android.module.live_china.view.ViewDragHelperLayout.OnLayoutStateListener
         public void a() {
-            this.f33058a.setVisibility(8);
+            this.f19367a.setVisibility(8);
         }
 
-        @Override // com.blued.android.module.live_china.view.ViewDragHelperLayout.OnLayoutStateListener
         public void a(int i) {
         }
 
-        @Override // com.blued.android.module.live_china.view.ViewDragHelperLayout.OnLayoutStateListener
         public void b() {
         }
 
-        @Override // com.blued.android.module.live_china.view.ViewDragHelperLayout.OnLayoutStateListener
         public void c() {
         }
 
-        @Override // com.blued.android.module.live_china.view.ViewDragHelperLayout.OnLayoutStateListener
         public void d() {
         }
     }
@@ -131,7 +126,7 @@ public class BasePhotoFragment extends BaseFragment implements EventCallBackList
     public static void a(Context context, AlbumForDataTrans albumForDataTrans, int i, int i2, String str, String str2, int i3) {
         Bundle bundle = new Bundle();
         bundle.putInt("photo_index", i);
-        ShowAlbumFragment.f33066c = albumForDataTrans;
+        ShowAlbumFragment.f19375c = albumForDataTrans;
         bundle.putInt("show_photo", i2);
         bundle.putString("WATER_MASK_NAME", str);
         bundle.putString("TARGET_UID", str2);
@@ -280,15 +275,12 @@ public class BasePhotoFragment extends BaseFragment implements EventCallBackList
         ActivityChangeAnimationUtils.i(baseFragment.getActivity());
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void a(float f, float f2, float f3) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void a(int i) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void a(View view) {
     }
 
@@ -310,7 +302,7 @@ public class BasePhotoFragment extends BaseFragment implements EventCallBackList
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
                 BasePhotoFragment.this.b = false;
-                BasePhotoFragment.this.f33053a = false;
+                BasePhotoFragment.this.f19362a = false;
             }
 
             @Override // android.view.animation.Animation.AnimationListener
@@ -331,7 +323,6 @@ public class BasePhotoFragment extends BaseFragment implements EventCallBackList
         if (ChatHelperV4.a(file)) {
             if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
                 ThreadManager.a().a(new ThreadExecutor("saveGif") { // from class: com.soft.blued.ui.photo.fragment.BasePhotoFragment.1
-                    @Override // com.blued.android.framework.pool.ThreadExecutor
                     public void execute() {
                         final String str2 = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + File.separator + "blued/" + System.currentTimeMillis() + ".gif";
                         FileUtils.a(file.getAbsolutePath(), str2);
@@ -370,24 +361,19 @@ public class BasePhotoFragment extends BaseFragment implements EventCallBackList
         ImageUtils.a(bitmap);
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void a(Object... objArr) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void ak_() {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void al_() {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void am_() {
         f();
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void b(View view) {
     }
 
@@ -407,7 +393,7 @@ public class BasePhotoFragment extends BaseFragment implements EventCallBackList
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
                 BasePhotoFragment.this.b = false;
-                BasePhotoFragment.this.f33053a = true;
+                BasePhotoFragment.this.f19362a = true;
             }
 
             @Override // android.view.animation.Animation.AnimationListener
@@ -421,11 +407,9 @@ public class BasePhotoFragment extends BaseFragment implements EventCallBackList
         });
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void b(Object... objArr) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void d() {
     }
 
@@ -443,23 +427,20 @@ public class BasePhotoFragment extends BaseFragment implements EventCallBackList
         ActivityChangeAnimationUtils.f(getActivity());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         EventCallbackObserver.a().a(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         EventCallbackObserver.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
-        BaseFragmentActivity baseFragmentActivity = (BaseFragmentActivity) getActivity();
-        baseFragmentActivity.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-        baseFragmentActivity.getWindow().getDecorView().setBackgroundColor(0);
+        BaseFragmentActivity activity = getActivity();
+        activity.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        activity.getWindow().getDecorView().setBackgroundColor(0);
     }
 }

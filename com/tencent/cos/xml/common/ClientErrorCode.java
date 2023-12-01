@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.common;
 
-import com.android.ims.ImsReasonInfo;
 import com.autonavi.base.amap.mapcore.tools.GLMapStaticValue;
 import com.igexin.sdk.PushConsts;
 
@@ -11,7 +10,7 @@ public enum ClientErrorCode {
     INVALID_CREDENTIALS(10001, "InvalidCredentials"),
     BAD_REQUEST(10002, "BadRequest"),
     SINK_SOURCE_NOT_FOUND(GLMapStaticValue.AM_CALLBACK_INDOOR_NETWORK_ERR, "SinkSourceNotFound"),
-    ETAG_NOT_FOUND(ImsReasonInfo.CODE_CALL_DROP_IWLAN_TO_LTE_UNAVAILABLE, "ETagNotFound"),
+    ETAG_NOT_FOUND(10004, "ETagNotFound"),
     INTERNAL_ERROR(20000, "InternalError"),
     SERVERERROR(PushConsts.SETTAG_ERROR_COUNT, "ServerError"),
     IO_ERROR(20002, "IOError"),

@@ -64,7 +64,7 @@ public abstract class c extends a implements View.OnClickListener, com.kwad.sdk.
     private d eP;
     private boolean eQ;
     private TextView eR;
-    private final a.InterfaceC0534a eS;
+    private final a.InterfaceC0364a eS;
     private IAdLiveOfflineView eT;
     private com.kwad.components.core.offline.api.kwai.a eU;
     private IAdLivePlayModule eV;
@@ -88,8 +88,8 @@ public abstract class c extends a implements View.OnClickListener, com.kwad.sdk.
                 com.kwad.sdk.utils.l.cw(c.this.mAdTemplate);
             }
         };
-        this.eS = new a.InterfaceC0534a() { // from class: com.kwad.components.ad.feed.a.c.3
-            @Override // com.kwad.components.core.video.a.InterfaceC0534a
+        this.eS = new a.InterfaceC0364a() { // from class: com.kwad.components.ad.feed.a.c.3
+            @Override // com.kwad.components.core.video.a.InterfaceC0364a
             public final void a(int i, ac.a aVar) {
                 int i2;
                 int i3 = 2;
@@ -109,7 +109,7 @@ public abstract class c extends a implements View.OnClickListener, com.kwad.sdk.
                 bVar.jW = aVar;
                 bVar.jU = i2;
                 c.this.bi();
-                com.kwad.components.core.d.b.a.a(new a.C0519a(c.this.getContext()).I(c.this.mAdTemplate).b(c.this.mApkDownloadHelper).ap(i3).ao(z).aq(true).an(5).ao(i2).as(true).a(bVar).a(new a.b() { // from class: com.kwad.components.ad.feed.a.c.3.1
+                com.kwad.components.core.d.b.a.a(new a.C0349a(c.this.getContext()).I(c.this.mAdTemplate).b(c.this.mApkDownloadHelper).ap(i3).ao(z).aq(true).an(5).ao(i2).as(true).a(bVar).a(new a.b() { // from class: com.kwad.components.ad.feed.a.c.3.1
                     @Override // com.kwad.components.core.d.b.a.b
                     public final void onAdClicked() {
                         c.this.eh();
@@ -221,7 +221,7 @@ public abstract class c extends a implements View.OnClickListener, com.kwad.sdk.
                 AdVideoPlayerViewCache.getInstance().a(E, this.eN);
             }
             bi();
-            a.C0519a ao = new a.C0519a(getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ao(z);
+            a.C0349a ao = new a.C0349a(getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ao(z);
             IAdLivePlayModule iAdLivePlayModule = this.eV;
             com.kwad.components.core.d.b.a.a(ao.q(iAdLivePlayModule == null ? 0L : iAdLivePlayModule.getPlayDuration()).ap(i2).as(true).a(new a.b() { // from class: com.kwad.components.ad.feed.a.c.9
                 @Override // com.kwad.components.core.d.b.a.b

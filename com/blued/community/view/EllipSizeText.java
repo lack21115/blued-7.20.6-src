@@ -24,9 +24,8 @@ public class EllipSizeText extends AppCompatTextView {
         return this.isEllipSized;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         try {
             CharSequence text = getText();
             int lineCount = getLayout().getLineCount();

@@ -8,7 +8,7 @@ public abstract class a implements c {
     private c.e QP;
     private c.h QQ;
     private c.b QR;
-    private c.InterfaceC0567c QS;
+    private c.InterfaceC0397c QS;
     private c.d QT;
     private c.a QU;
     private c.f amO;
@@ -30,8 +30,8 @@ public abstract class a implements c {
     }
 
     @Override // com.kwad.sdk.core.video.kwai.c
-    public final void a(c.InterfaceC0567c interfaceC0567c) {
-        this.QS = interfaceC0567c;
+    public final void a(c.InterfaceC0397c interfaceC0397c) {
+        this.QS = interfaceC0397c;
     }
 
     @Override // com.kwad.sdk.core.video.kwai.c
@@ -85,8 +85,8 @@ public abstract class a implements c {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final boolean notifyOnError(int i, int i2) {
-        c.InterfaceC0567c interfaceC0567c = this.QS;
-        return interfaceC0567c != null && interfaceC0567c.j(i, i2);
+        c.InterfaceC0397c interfaceC0397c = this.QS;
+        return interfaceC0397c != null && interfaceC0397c.j(i, i2);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

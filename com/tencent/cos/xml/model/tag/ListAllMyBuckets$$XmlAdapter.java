@@ -25,6 +25,7 @@ public class ListAllMyBuckets$$XmlAdapter implements IXmlAdapter<ListAllMyBucket
             }
         });
         this.childElementBinders.put("Buckets", new ChildElementBinder<ListAllMyBuckets>() { // from class: com.tencent.cos.xml.model.tag.ListAllMyBuckets$$XmlAdapter.2
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, ListAllMyBuckets listAllMyBuckets, String str) throws IOException, XmlPullParserException {
                 if (listAllMyBuckets.buckets == null) {

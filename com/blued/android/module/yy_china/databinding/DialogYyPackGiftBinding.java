@@ -13,13 +13,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogYyPackGiftBinding.class */
 public final class DialogYyPackGiftBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16446a;
+    public final ShapeTextView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16447c;
+    public final TextView c;
     public final CardView d;
     public final ImageView e;
     public final ImageView f;
@@ -39,9 +35,9 @@ public final class DialogYyPackGiftBinding implements ViewBinding {
 
     private DialogYyPackGiftBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, ImageView imageView, TextView textView, CardView cardView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, RecyclerView recyclerView, RecyclerView recyclerView2, RecyclerView recyclerView3, ObservableScrollView observableScrollView, TextView textView2, TextView textView3, TextView textView4, TextView textView5) {
         this.s = constraintLayout;
-        this.f16446a = shapeTextView;
+        this.a = shapeTextView;
         this.b = imageView;
-        this.f16447c = textView;
+        this.c = textView;
         this.d = cardView;
         this.e = imageView2;
         this.f = imageView3;
@@ -67,8 +63,8 @@ public final class DialogYyPackGiftBinding implements ViewBinding {
             if (imageView != null) {
                 TextView textView = (TextView) view.findViewById(R.id.btn_send_gift);
                 if (textView != null) {
-                    CardView cardView = (CardView) view.findViewById(R.id.crad);
-                    if (cardView != null) {
+                    CardView findViewById = view.findViewById(R.id.crad);
+                    if (findViewById != null) {
                         ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_about);
                         if (imageView2 != null) {
                             ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_back);
@@ -81,12 +77,12 @@ public final class DialogYyPackGiftBinding implements ViewBinding {
                                         if (imageView6 != null) {
                                             ImageView imageView7 = (ImageView) view.findViewById(R.id.iv_start);
                                             if (imageView7 != null) {
-                                                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rec_card);
-                                                if (recyclerView != null) {
-                                                    RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rec_gift);
-                                                    if (recyclerView2 != null) {
-                                                        RecyclerView recyclerView3 = (RecyclerView) view.findViewById(R.id.rec_user);
-                                                        if (recyclerView3 != null) {
+                                                RecyclerView findViewById2 = view.findViewById(R.id.rec_card);
+                                                if (findViewById2 != null) {
+                                                    RecyclerView findViewById3 = view.findViewById(R.id.rec_gift);
+                                                    if (findViewById3 != null) {
+                                                        RecyclerView findViewById4 = view.findViewById(R.id.rec_user);
+                                                        if (findViewById4 != null) {
                                                             ObservableScrollView observableScrollView = (ObservableScrollView) view.findViewById(R.id.scr);
                                                             if (observableScrollView != null) {
                                                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_bo_title);
@@ -97,7 +93,7 @@ public final class DialogYyPackGiftBinding implements ViewBinding {
                                                                         if (textView4 != null) {
                                                                             TextView textView5 = (TextView) view.findViewById(R.id.tv_card_title);
                                                                             if (textView5 != null) {
-                                                                                return new DialogYyPackGiftBinding((ConstraintLayout) view, shapeTextView, imageView, textView, cardView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, recyclerView, recyclerView2, recyclerView3, observableScrollView, textView2, textView3, textView4, textView5);
+                                                                                return new DialogYyPackGiftBinding((ConstraintLayout) view, shapeTextView, imageView, textView, findViewById, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, findViewById2, findViewById3, findViewById4, observableScrollView, textView2, textView3, textView4, textView5);
                                                                             }
                                                                             str = "tvCardTitle";
                                                                         } else {
@@ -154,7 +150,6 @@ public final class DialogYyPackGiftBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.s;

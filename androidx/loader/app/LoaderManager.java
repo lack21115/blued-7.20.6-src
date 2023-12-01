@@ -20,7 +20,7 @@ public abstract class LoaderManager {
     }
 
     public static void enableDebugLogging(boolean z) {
-        LoaderManagerImpl.f3074a = z;
+        LoaderManagerImpl.f3026a = z;
     }
 
     public static <T extends LifecycleOwner & ViewModelStoreOwner> LoaderManager getInstance(T t) {

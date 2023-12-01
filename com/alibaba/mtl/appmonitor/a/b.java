@@ -1,5 +1,7 @@
 package com.alibaba.mtl.appmonitor.a;
 
+import com.android.internal.util.cm.SpamFilter;
+import com.anythink.core.common.c.d;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/a/b.class */
@@ -9,16 +11,16 @@ public class b extends d {
 
     @Override // com.alibaba.mtl.appmonitor.a.d
     public JSONObject a() {
-        JSONObject a2;
+        JSONObject a;
         synchronized (this) {
-            a2 = super.a();
+            a = super.a();
             try {
-                a2.put("count", this.count);
-                a2.put("value", this.e);
+                a.put(SpamFilter.SpamContract.NotificationTable.COUNT, this.count);
+                a.put(d.a.d, this.e);
             } catch (Exception e) {
             }
         }
-        return a2;
+        return a;
     }
 
     public void a(double d) {

@@ -35,10 +35,10 @@ public final class l1111l111111Il {
 
     /* renamed from: com.ishumei.l111l11111lIl.l111l11111I1l.l1111l111111Il$l1111l111111Il  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/ishumei/l111l11111lIl/l111l11111I1l/l1111l111111Il$l1111l111111Il.class */
-    static final class C0457l1111l111111Il {
+    static final class C0287l1111l111111Il {
         private static final l1111l111111Il l1111l111111Il = new l1111l111111Il((byte) 0);
 
-        private C0457l1111l111111Il() {
+        private C0287l1111l111111Il() {
         }
     }
 
@@ -84,7 +84,7 @@ public final class l1111l111111Il {
     }
 
     public static l1111l111111Il l1111l111111Il() {
-        return C0457l1111l111111Il.l1111l111111Il;
+        return C0287l1111l111111Il.l1111l111111Il;
     }
 
     private void l1111l111111Il(int i) {

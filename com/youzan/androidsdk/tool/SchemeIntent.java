@@ -1,5 +1,6 @@
 package com.youzan.androidsdk.tool;
 
+import android.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
@@ -10,7 +11,6 @@ import android.net.Uri;
 import android.telecom.PhoneAccount;
 import android.text.TextUtils;
 import android.widget.Toast;
-import com.blued.android.module.common.db.model.UserAccountsModel;
 import com.youzan.androidsdk.YouzanException;
 
 /* loaded from: source-8829756-dex2jar.jar:com/youzan/androidsdk/tool/SchemeIntent.class */
@@ -32,7 +32,7 @@ public final class SchemeIntent {
                     context.startActivity(intent);
                 }
             }
-        }).setNegativeButton(17039360, (DialogInterface.OnClickListener) null).setIcon(17301543).show();
+        }).setNegativeButton(R.string.cancel, (DialogInterface.OnClickListener) null).setIcon(R.drawable.ic_dialog_alert).show();
         return true;
     }
 
@@ -48,7 +48,7 @@ public final class SchemeIntent {
             parseUri.setComponent(null);
             parseUri.setSelector(null);
             if (context instanceof Activity) {
-                return m12248(parseUri, (Activity) context);
+                return m9198(parseUri, (Activity) context);
             }
             try {
                 parseUri.setFlags(276824064);
@@ -70,11 +70,11 @@ public final class SchemeIntent {
     }
 
     public static boolean isSilentType(String str) {
-        return UserAccountsModel.ACCOUNT_THREE_WEIXIN.equalsIgnoreCase(str) || "alipays".equalsIgnoreCase(str) || "mqqwpa".equalsIgnoreCase(str);
+        return "weixin".equalsIgnoreCase(str) || "alipays".equalsIgnoreCase(str) || "mqqwpa".equalsIgnoreCase(str);
     }
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private static boolean m12248(Intent intent, Activity activity) throws YouzanException {
+    private static boolean m9198(Intent intent, Activity activity) throws YouzanException {
         Activity parent = activity.getParent();
         if (parent != null) {
             activity = parent;

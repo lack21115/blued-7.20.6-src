@@ -15,11 +15,11 @@ import com.soft.blued.utils.Logger;
 public class BirthCardRelativeLayout extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private Rect f32270a;
+    private Rect f18580a;
     private Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f32271c;
+    private int f18581c;
 
     public BirthCardRelativeLayout(Context context) {
         this(context, null);
@@ -31,15 +31,15 @@ public class BirthCardRelativeLayout extends RelativeLayout {
 
     public BirthCardRelativeLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f32270a = new Rect();
-        this.f32271c = 0;
+        this.f18580a = new Rect();
+        this.f18581c = 0;
         b();
     }
 
     private void b() {
         Paint paint = new Paint();
         this.b = paint;
-        paint.setColor(this.f32271c);
+        paint.setColor(this.f18581c);
         this.b.setStyle(Paint.Style.FILL);
     }
 
@@ -49,7 +49,7 @@ public class BirthCardRelativeLayout extends RelativeLayout {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.msg.customview.BirthCardRelativeLayout.1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                BirthCardRelativeLayout.this.f32270a.top = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                BirthCardRelativeLayout.this.f18580a.top = ((Integer) valueAnimator.getAnimatedValue()).intValue();
                 BirthCardRelativeLayout.this.invalidate();
             }
         });
@@ -64,27 +64,25 @@ public class BirthCardRelativeLayout extends RelativeLayout {
         ofInt.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         String simpleName = getClass().getSimpleName();
         Logger.c(simpleName, "dispatchDraw====" + this.b.getColor());
-        canvas.drawRect(this.f32270a, this.b);
+        canvas.drawRect(this.f18580a, this.b);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RelativeLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.f32270a.left = 0;
-        this.f32270a.right = getMeasuredWidth();
-        this.f32270a.top = 0;
-        this.f32270a.bottom = getMeasuredHeight();
+        this.f18580a.left = 0;
+        this.f18580a.right = getMeasuredWidth();
+        this.f18580a.top = 0;
+        this.f18580a.bottom = getMeasuredHeight();
     }
 
     public void setShadeColor(int i) {
-        this.f32271c = i;
+        this.f18581c = i;
         this.b.setColor(i);
     }
 }

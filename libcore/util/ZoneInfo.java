@@ -1,6 +1,7 @@
 package libcore.util;
 
-import android.text.format.Time;
+import com.android.ims.ImsReasonInfo;
+import java.net.HttpURLConnection;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -20,8 +21,8 @@ public final class ZoneInfo extends TimeZone {
     private final int[] mTransitions;
     private final byte[] mTypes;
     private final boolean mUseDst;
-    private static final int[] NORMAL = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
-    private static final int[] LEAP = {0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335};
+    private static final int[] NORMAL = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, ImsReasonInfo.CODE_SIP_NOT_SUPPORTED};
+    private static final int[] LEAP = {0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, ImsReasonInfo.CODE_SIP_REQUEST_TIMEOUT};
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-2895416-dex2jar.jar:libcore/util/ZoneInfo$CheckedArithmeticException.class */
@@ -94,7 +95,7 @@ public final class ZoneInfo extends TimeZone {
         private int yearDay;
 
         public WallTime() {
-            this.calendar.setTimeZone(TimeZone.getTimeZone(Time.TIMEZONE_UTC));
+            this.calendar.setTimeZone(TimeZone.getTimeZone("UTC"));
         }
 
         private void copyFieldsFromCalendar() {
@@ -543,13 +544,14 @@ public final class ZoneInfo extends TimeZone {
 
     @Override // java.util.TimeZone
     public int getOffset(int i, int i2, int i3, int i4, int i5, int i6) {
-        int i7 = i2 % 400;
-        long j = ((i2 / 400) * MILLISECONDS_PER_400_YEARS) + (i7 * 31536000000L) + (((i7 + 3) / 4) * 86400000);
-        long j2 = j;
+        long j = i2 / HttpURLConnection.HTTP_BAD_REQUEST;
+        int i7 = i2 % HttpURLConnection.HTTP_BAD_REQUEST;
+        long j2 = (j * MILLISECONDS_PER_400_YEARS) + (i7 * 31536000000L) + (((i7 + 3) / 4) * MILLISECONDS_PER_DAY);
+        long j3 = j2;
         if (i7 > 0) {
-            j2 = j - (((i7 - 1) / 100) * 86400000);
+            j3 = j2 - (((i7 - 1) / 100) * MILLISECONDS_PER_DAY);
         }
-        return getOffset(((((j2 + ((i7 == 0 || (i7 % 4 == 0 && i7 % 100 != 0) ? LEAP : NORMAL)[i3] * 86400000)) + ((i4 - 1) * 86400000)) + i6) - this.mRawOffset) - UNIX_OFFSET);
+        return getOffset(((((j3 + ((i7 == 0 || (i7 % 4 == 0 && i7 % 100 != 0) ? LEAP : NORMAL)[i3] * MILLISECONDS_PER_DAY)) + ((i4 - 1) * MILLISECONDS_PER_DAY)) + i6) - this.mRawOffset) - UNIX_OFFSET);
     }
 
     @Override // java.util.TimeZone

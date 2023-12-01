@@ -13,18 +13,18 @@ import org.json.JSONObject;
 public class z implements Callable<List<HonorPushDataMsg>> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f22327a;
+    public final Context f8719a;
 
     public z(Context context) {
-        this.f22327a = context;
+        this.f8719a = context;
     }
 
     @Override // java.util.concurrent.Callable
     public List<HonorPushDataMsg> call() throws Exception {
         ArrayList<ContentValues> parcelableArrayList;
         Bundle bundle = new Bundle();
-        bundle.putString("pkg_name", this.f22327a.getPackageName());
-        Bundle call = this.f22327a.getContentResolver().call(Uri.parse("content://com.hihonor.android.pushagent.provider.MessageBoxProvider/"), "query_unread_msg", "", bundle);
+        bundle.putString("pkg_name", this.f8719a.getPackageName());
+        Bundle call = this.f8719a.getContentResolver().call(Uri.parse("content://com.hihonor.android.pushagent.provider.MessageBoxProvider/"), "query_unread_msg", "", bundle);
         ArrayList arrayList = new ArrayList();
         if (call != null && (parcelableArrayList = call.getParcelableArrayList("messages")) != null) {
             for (ContentValues contentValues : parcelableArrayList) {

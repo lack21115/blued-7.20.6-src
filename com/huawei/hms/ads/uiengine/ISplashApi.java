@@ -115,11 +115,11 @@ public interface ISplashApi extends IInterface {
         static final int Z = 4;
 
         /* renamed from: a  reason: collision with root package name */
-        static final int f22529a = 11;
+        static final int f8921a = 11;
         static final int b = 12;
 
         /* renamed from: c  reason: collision with root package name */
-        static final int f22530c = 13;
+        static final int f8922c = 13;
         static final int d = 14;
         static final int e = 15;
         static final int f = 16;

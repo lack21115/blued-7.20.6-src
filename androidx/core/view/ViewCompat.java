@@ -130,7 +130,7 @@ public class ViewCompat {
     static class AccessibilityPaneVisibilityManager implements View.OnAttachStateChangeListener, ViewTreeObserver.OnGlobalLayoutListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private final WeakHashMap<View, Boolean> f2655a = new WeakHashMap<>();
+        private final WeakHashMap<View, Boolean> f2607a = new WeakHashMap<>();
 
         AccessibilityPaneVisibilityManager() {
         }
@@ -139,7 +139,7 @@ public class ViewCompat {
             boolean z2 = view.getVisibility() == 0;
             if (z != z2) {
                 ViewCompat.notifyViewAccessibilityStateChangedIfNeeded(view, z2 ? 16 : 32);
-                this.f2655a.put(view, Boolean.valueOf(z2));
+                this.f2607a.put(view, Boolean.valueOf(z2));
             }
         }
 
@@ -152,7 +152,7 @@ public class ViewCompat {
         }
 
         void a(View view) {
-            this.f2655a.put(view, Boolean.valueOf(view.getVisibility() == 0));
+            this.f2607a.put(view, Boolean.valueOf(view.getVisibility() == 0));
             view.addOnAttachStateChangeListener(this);
             if (Api19Impl.b(view)) {
                 c(view);
@@ -160,7 +160,7 @@ public class ViewCompat {
         }
 
         void b(View view) {
-            this.f2655a.remove(view);
+            this.f2607a.remove(view);
             view.removeOnAttachStateChangeListener(this);
             d(view);
         }
@@ -168,7 +168,7 @@ public class ViewCompat {
         @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
         public void onGlobalLayout() {
             if (Build.VERSION.SDK_INT < 28) {
-                for (Map.Entry<View, Boolean> entry : this.f2655a.entrySet()) {
+                for (Map.Entry<View, Boolean> entry : this.f2607a.entrySet()) {
                     a(entry.getKey(), entry.getValue().booleanValue());
                 }
             }
@@ -189,11 +189,11 @@ public class ViewCompat {
     public static abstract class AccessibilityViewProperty<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f2656a;
+        private final int f2608a;
         private final Class<T> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f2657c;
+        private final int f2609c;
         private final int d;
 
         AccessibilityViewProperty(int i, Class<T> cls, int i2) {
@@ -201,14 +201,14 @@ public class ViewCompat {
         }
 
         AccessibilityViewProperty(int i, Class<T> cls, int i2, int i3) {
-            this.f2656a = i;
+            this.f2608a = i;
             this.b = cls;
             this.d = i2;
-            this.f2657c = i3;
+            this.f2609c = i3;
         }
 
         private boolean a() {
-            return Build.VERSION.SDK_INT >= this.f2657c;
+            return Build.VERSION.SDK_INT >= this.f2609c;
         }
 
         private boolean b() {
@@ -228,7 +228,7 @@ public class ViewCompat {
                 a(view, (View) t);
             } else if (b() && a(c(view), t)) {
                 ViewCompat.ensureAccessibilityDelegateCompat(view);
-                view.setTag(this.f2656a, t);
+                view.setTag(this.f2608a, t);
                 ViewCompat.notifyViewAccessibilityStateChangedIfNeeded(view, this.d);
             }
         }
@@ -242,7 +242,7 @@ public class ViewCompat {
                 return b(view);
             }
             if (b()) {
-                T t = (T) view.getTag(this.f2656a);
+                T t = (T) view.getTag(this.f2608a);
                 if (this.b.isInstance(t)) {
                     return t;
                 }
@@ -509,18 +509,18 @@ public class ViewCompat {
                 view.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: androidx.core.view.ViewCompat.Api21Impl.1
 
                     /* renamed from: a  reason: collision with root package name */
-                    WindowInsetsCompat f2658a = null;
+                    WindowInsetsCompat f2610a = null;
 
                     @Override // android.view.View.OnApplyWindowInsetsListener
                     public WindowInsets onApplyWindowInsets(View view2, WindowInsets windowInsets) {
                         WindowInsetsCompat windowInsetsCompat = WindowInsetsCompat.toWindowInsetsCompat(windowInsets, view2);
                         if (Build.VERSION.SDK_INT < 30) {
-                            Api21Impl.a(windowInsets, View.this);
-                            if (windowInsetsCompat.equals(this.f2658a)) {
+                            Api21Impl.a(windowInsets, view);
+                            if (windowInsetsCompat.equals(this.f2610a)) {
                                 return onApplyWindowInsetsListener.onApplyWindowInsets(view2, windowInsetsCompat).toWindowInsets();
                             }
                         }
-                        this.f2658a = windowInsetsCompat;
+                        this.f2610a = windowInsetsCompat;
                         WindowInsetsCompat onApplyWindowInsets = onApplyWindowInsetsListener.onApplyWindowInsets(view2, windowInsetsCompat);
                         if (Build.VERSION.SDK_INT >= 30) {
                             return onApplyWindowInsets.toWindowInsets();
@@ -902,16 +902,16 @@ public class ViewCompat {
     public static final class OnReceiveContentListenerAdapter implements android.view.OnReceiveContentListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private final OnReceiveContentListener f2660a;
+        private final OnReceiveContentListener f2612a;
 
         OnReceiveContentListenerAdapter(OnReceiveContentListener onReceiveContentListener) {
-            this.f2660a = onReceiveContentListener;
+            this.f2612a = onReceiveContentListener;
         }
 
         @Override // android.view.OnReceiveContentListener
         public ContentInfo onReceiveContent(View view, ContentInfo contentInfo) {
             ContentInfoCompat contentInfoCompat = ContentInfoCompat.toContentInfoCompat(contentInfo);
-            ContentInfoCompat onReceiveContent = this.f2660a.onReceiveContent(view, contentInfoCompat);
+            ContentInfoCompat onReceiveContent = this.f2612a.onReceiveContent(view, contentInfoCompat);
             if (onReceiveContent == null) {
                 return null;
             }
@@ -938,21 +938,21 @@ public class ViewCompat {
     static class UnhandledKeyEventManager {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final ArrayList<WeakReference<View>> f2661a = new ArrayList<>();
+        private static final ArrayList<WeakReference<View>> f2613a = new ArrayList<>();
         private WeakHashMap<View, Boolean> b = null;
 
         /* renamed from: c  reason: collision with root package name */
-        private SparseArray<WeakReference<View>> f2662c = null;
+        private SparseArray<WeakReference<View>> f2614c = null;
         private WeakReference<KeyEvent> d = null;
 
         UnhandledKeyEventManager() {
         }
 
         private SparseArray<WeakReference<View>> a() {
-            if (this.f2662c == null) {
-                this.f2662c = new SparseArray<>();
+            if (this.f2614c == null) {
+                this.f2614c = new SparseArray<>();
             }
-            return this.f2662c;
+            return this.f2614c;
         }
 
         static UnhandledKeyEventManager a(View view) {
@@ -996,20 +996,20 @@ public class ViewCompat {
             if (weakHashMap != null) {
                 weakHashMap.clear();
             }
-            if (f2661a.isEmpty()) {
+            if (f2613a.isEmpty()) {
                 return;
             }
-            synchronized (f2661a) {
+            synchronized (f2613a) {
                 if (this.b == null) {
                     this.b = new WeakHashMap<>();
                 }
-                int size = f2661a.size();
+                int size = f2613a.size();
                 while (true) {
                     int i = size - 1;
                     if (i >= 0) {
-                        View view = f2661a.get(i).get();
+                        View view = f2613a.get(i).get();
                         if (view == null) {
-                            f2661a.remove(i);
+                            f2613a.remove(i);
                         } else {
                             this.b.put(view, Boolean.TRUE);
                             for (ViewParent parent = view.getParent(); parent instanceof View; parent = parent.getParent()) {
@@ -1023,11 +1023,11 @@ public class ViewCompat {
         }
 
         static void b(View view) {
-            synchronized (f2661a) {
-                Iterator<WeakReference<View>> it = f2661a.iterator();
+            synchronized (f2613a) {
+                Iterator<WeakReference<View>> it = f2613a.iterator();
                 do {
                     if (!it.hasNext()) {
-                        f2661a.add(new WeakReference<>(view));
+                        f2613a.add(new WeakReference<>(view));
                         return;
                     }
                 } while (it.next().get() != view);
@@ -1035,15 +1035,15 @@ public class ViewCompat {
         }
 
         static void c(View view) {
-            synchronized (f2661a) {
+            synchronized (f2613a) {
                 int i = 0;
                 while (true) {
                     int i2 = i;
-                    if (i2 >= f2661a.size()) {
+                    if (i2 >= f2613a.size()) {
                         return;
                     }
-                    if (f2661a.get(i2).get() == view) {
-                        f2661a.remove(i2);
+                    if (f2613a.get(i2).get() == view) {
+                        f2613a.remove(i2);
                         return;
                     }
                     i = i2 + 1;
@@ -1424,7 +1424,7 @@ public class ViewCompat {
         if (accessibilityDelegateInternal == null) {
             return null;
         }
-        return accessibilityDelegateInternal instanceof AccessibilityDelegateCompat.AccessibilityDelegateAdapter ? ((AccessibilityDelegateCompat.AccessibilityDelegateAdapter) accessibilityDelegateInternal).f2615a : new AccessibilityDelegateCompat(accessibilityDelegateInternal);
+        return accessibilityDelegateInternal instanceof AccessibilityDelegateCompat.AccessibilityDelegateAdapter ? ((AccessibilityDelegateCompat.AccessibilityDelegateAdapter) accessibilityDelegateInternal).f2567a : new AccessibilityDelegateCompat(accessibilityDelegateInternal);
     }
 
     private static View.AccessibilityDelegate getAccessibilityDelegateInternal(View view) {

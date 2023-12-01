@@ -7,10 +7,10 @@ import com.tencent.liteav.videoproducer.capture.ah;
 final /* synthetic */ class an implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ah f36876a;
+    private final ah f23185a;
 
     private an(ah ahVar) {
-        this.f36876a = ahVar;
+        this.f23185a = ahVar;
     }
 
     public static Runnable a(ah ahVar) {
@@ -19,19 +19,19 @@ final /* synthetic */ class an implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ah ahVar = this.f36876a;
+        ah ahVar = this.f23185a;
         if (ahVar.k == ah.a.STOPED) {
             LiteavLog.w("CaptureController", "Stop capture but mStatus is stoped");
             return;
         }
         ahVar.k = ah.a.STOPED;
-        if (ahVar.f36865c != null) {
-            ahVar.f36865c.stop();
-            ahVar.f36865c = null;
+        if (ahVar.f23174c != null) {
+            ahVar.f23174c.stop();
+            ahVar.f23174c = null;
         }
-        if (ahVar.f36864a != null) {
-            ahVar.f36864a.stop();
-            ahVar.f36864a = null;
+        if (ahVar.f23173a != null) {
+            ahVar.f23173a.stop();
+            ahVar.f23173a = null;
         }
         ahVar.l = false;
         ahVar.m.b();

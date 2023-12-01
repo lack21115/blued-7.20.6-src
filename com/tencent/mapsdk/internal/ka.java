@@ -7,8 +7,8 @@ import android.util.Log;
 public class ka {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f37585a = "LibraryLoader";
-    public static final String[] b = {mi.f37649a, "txnavengine"};
+    private static final String f23894a = "LibraryLoader";
+    public static final String[] b = {mi.f23958a, "txnavengine"};
 
     public static void a(Context context) {
         String[] strArr = b;
@@ -27,13 +27,13 @@ public class ka {
     public static void a(Context context, String str) {
         try {
             System.loadLibrary(str);
-            if (Log.isLoggable(f37585a, 4)) {
-                Log.i(f37585a, "loadLibary:" + str + "  successful");
+            if (Log.isLoggable(f23894a, 4)) {
+                Log.i(f23894a, "loadLibary:" + str + "  successful");
             }
         } catch (UnsatisfiedLinkError e) {
             boolean b2 = la.b(context, str);
-            if (Log.isLoggable(f37585a, 4)) {
-                Log.i(f37585a, "loadLibary:" + str + " result:" + b2);
+            if (Log.isLoggable(f23894a, 4)) {
+                Log.i(f23894a, "loadLibary:" + str + " result:" + b2);
             }
         }
     }

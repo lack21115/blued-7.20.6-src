@@ -4,10 +4,11 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/ScrollBarDrawable.class */
 public class ScrollBarDrawable extends Drawable {
-    private static final int[] STATE_ENABLED = {16842910};
+    private static final int[] STATE_ENABLED = {R.attr.state_enabled};
     private boolean mAlwaysDrawHorizontalTrack;
     private boolean mAlwaysDrawVerticalTrack;
     private boolean mChanged;
@@ -152,9 +153,8 @@ public class ScrollBarDrawable extends Drawable {
         return this;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
+    protected void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
         this.mChanged = true;
     }

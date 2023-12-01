@@ -17,7 +17,7 @@ import com.huawei.hms.utils.ResourceLoaderUtil;
 public class AppSpoofResolution implements IBridgeActivityDelegate {
 
     /* renamed from: a  reason: collision with root package name */
-    public Activity f22903a;
+    public Activity f9295a;
     public b b;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/update/note/AppSpoofResolution$a.class */
@@ -27,14 +27,14 @@ public class AppSpoofResolution implements IBridgeActivityDelegate {
 
         @Override // com.huawei.hms.ui.AbstractDialog.Callback
         public void onCancel(AbstractDialog abstractDialog) {
-            com.huawei.hms.availableupdate.b.f22607c.a(true);
+            com.huawei.hms.availableupdate.b.f8999c.a(true);
             AppSpoofResolution.this.b = null;
             AppSpoofResolution.this.a();
         }
 
         @Override // com.huawei.hms.ui.AbstractDialog.Callback
         public void onDoWork(AbstractDialog abstractDialog) {
-            com.huawei.hms.availableupdate.b.f22607c.a(true);
+            com.huawei.hms.availableupdate.b.f8999c.a(true);
             AppSpoofResolution.this.b = null;
             AppSpoofResolution.this.a();
         }
@@ -82,7 +82,7 @@ public class AppSpoofResolution implements IBridgeActivityDelegate {
             return;
         }
         HMSLog.i("AppSpoofResolution", "enter AppSpoofResolution finishBridgeActivity：");
-        if (com.huawei.hms.availableupdate.b.f22607c.a().compareAndSet(true, false)) {
+        if (com.huawei.hms.availableupdate.b.f8999c.a().compareAndSet(true, false)) {
             SystemManager.getInstance().notifyNoticeResult(29);
         }
         activity.finish();
@@ -104,7 +104,7 @@ public class AppSpoofResolution implements IBridgeActivityDelegate {
     }
 
     public Activity getActivity() {
-        return this.f22903a;
+        return this.f9295a;
     }
 
     @Override // com.huawei.hms.activity.IBridgeActivityDelegate
@@ -115,20 +115,20 @@ public class AppSpoofResolution implements IBridgeActivityDelegate {
     @Override // com.huawei.hms.activity.IBridgeActivityDelegate
     public void onBridgeActivityCreate(Activity activity) {
         HMSLog.i("AppSpoofResolution", "enter AppSpoofResolution onBridgeActivityCreate");
-        this.f22903a = activity;
-        com.huawei.hms.availableupdate.b.f22607c.a(this.f22903a);
-        com.huawei.hms.availableupdate.b.f22607c.a(false);
+        this.f9295a = activity;
+        com.huawei.hms.availableupdate.b.f8999c.a(this.f9295a);
+        com.huawei.hms.availableupdate.b.f8999c.a(false);
         b();
     }
 
     @Override // com.huawei.hms.activity.IBridgeActivityDelegate
     public void onBridgeActivityDestroy() {
         HMSLog.i("AppSpoofResolution", "enter AppSpoofResolution onBridgeActivityDestroy");
-        if (com.huawei.hms.availableupdate.b.f22607c.a().compareAndSet(true, false)) {
+        if (com.huawei.hms.availableupdate.b.f8999c.a().compareAndSet(true, false)) {
             SystemManager.getInstance().notifyNoticeResult(29);
         }
-        com.huawei.hms.availableupdate.b.f22607c.b(this.f22903a);
-        this.f22903a = null;
+        com.huawei.hms.availableupdate.b.f8999c.b(this.f9295a);
+        this.f9295a = null;
     }
 
     @Override // com.huawei.hms.activity.IBridgeActivityDelegate

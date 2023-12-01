@@ -330,12 +330,12 @@ public final class Path implements Comparable<Path> {
 
     public final Character volumeLetter() {
         if (ByteString.indexOf$default(getBytes$okio(), _PathKt.access$getSLASH$p(), 0, 2, (Object) null) == -1 && getBytes$okio().size() >= 2 && getBytes$okio().getByte(1) == ((byte) 58)) {
-            char c2 = (char) getBytes$okio().getByte(0);
-            if (!('a' <= c2 && c2 <= 'z')) {
+            char c = (char) getBytes$okio().getByte(0);
+            if (!('a' <= c && c <= 'z')) {
                 boolean z = false;
-                if ('A' <= c2) {
+                if ('A' <= c) {
                     z = false;
-                    if (c2 <= 'Z') {
+                    if (c <= 'Z') {
                         z = true;
                     }
                 }
@@ -343,7 +343,7 @@ public final class Path implements Comparable<Path> {
                     return null;
                 }
             }
-            return Character.valueOf(c2);
+            return Character.valueOf(c);
         }
         return null;
     }

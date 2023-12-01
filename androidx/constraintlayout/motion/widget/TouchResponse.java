@@ -31,11 +31,11 @@ public class TouchResponse {
     private int H;
 
     /* renamed from: a  reason: collision with root package name */
-    float f2213a;
+    float f2165a;
     float b;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f2214c;
+    boolean f2166c;
     private int d;
     private int e;
     private int f;
@@ -68,10 +68,10 @@ public class TouchResponse {
         this.i = -1;
         this.j = 0.5f;
         this.k = 0.5f;
-        this.f2213a = 0.5f;
+        this.f2165a = 0.5f;
         this.b = 0.5f;
         this.l = -1;
-        this.f2214c = false;
+        this.f2166c = false;
         this.m = 0.0f;
         this.n = 1.0f;
         this.o = false;
@@ -102,10 +102,10 @@ public class TouchResponse {
         this.i = -1;
         this.j = 0.5f;
         this.k = 0.5f;
-        this.f2213a = 0.5f;
+        this.f2165a = 0.5f;
         this.b = 0.5f;
         this.l = -1;
-        this.f2214c = false;
+        this.f2166c = false;
         this.m = 0.0f;
         this.n = 1.0f;
         this.o = false;
@@ -141,7 +141,7 @@ public class TouchResponse {
         } else {
             this.n = Float.NaN;
             this.m = Float.NaN;
-            this.f2214c = true;
+            this.f2166c = true;
         }
         this.w = onSwipe.getMaxVelocity();
         this.x = onSwipe.getMaxAcceleration();
@@ -194,7 +194,7 @@ public class TouchResponse {
                 } else {
                     this.n = Float.NaN;
                     this.m = Float.NaN;
-                    this.f2214c = true;
+                    this.f2166c = true;
                 }
             } else if (index == R.styleable.OnSwipe_maxVelocity) {
                 this.w = typedArray.getFloat(index, this.w);
@@ -321,7 +321,7 @@ public class TouchResponse {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b(MotionEvent motionEvent, MotionLayout.MotionTracker motionTracker, int i, MotionScene motionScene) {
-        if (this.f2214c) {
+        if (this.f2166c) {
             a(motionEvent, motionTracker, i, motionScene);
             return;
         }
@@ -609,7 +609,7 @@ public class TouchResponse {
 
     public String toString() {
         if (Float.isNaN(this.m)) {
-            return "rotation";
+            return Key.ROTATION;
         }
         return this.m + " , " + this.n;
     }

@@ -6,7 +6,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.service.notification.StatusBarNotification;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.xiaomi.push.ai;
 import com.xiaomi.push.eo;
 import java.util.Iterator;
@@ -26,10 +25,10 @@ public class cc {
             }
             return notification;
         }
-        List<StatusBarNotification> m12141b = axVar.m12141b();
+        List<StatusBarNotification> m9091b = axVar.m9091b();
         Notification notification2 = null;
-        if (m12141b != null) {
-            Iterator<StatusBarNotification> it = m12141b.iterator();
+        if (m9091b != null) {
+            Iterator<StatusBarNotification> it = m9091b.iterator();
             while (true) {
                 notification2 = null;
                 if (!it.hasNext()) {
@@ -52,15 +51,15 @@ public class cc {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: a  reason: collision with other method in class */
-    public static void m12178a(Context context, String str, int i, String str2, Notification notification) {
-        if (com.xiaomi.push.j.m12048a(context) && notification != null && notification.extras.getBoolean("mipush_n_top_flag", false)) {
+    public static void m9128a(Context context, String str, int i, String str2, Notification notification) {
+        if (com.xiaomi.push.j.m8998a(context) && notification != null && notification.extras.getBoolean("mipush_n_top_flag", false)) {
             c(context, str, i, str2, notification);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(Context context, Map<String, String> map, eo eoVar, long j) {
-        if (map == null || eoVar == null || !com.xiaomi.push.j.m12048a(context) || !m12179a(map)) {
+        if (map == null || eoVar == null || !com.xiaomi.push.j.m8998a(context) || !m9129a(map)) {
             return;
         }
         int a2 = a(map);
@@ -81,7 +80,7 @@ public class cc {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static boolean m12179a(Map<String, String> map) {
+    private static boolean m9129a(Map<String, String> map) {
         String str = map.get("notification_top_repeat");
         if (TextUtils.isEmpty(str)) {
             return false;
@@ -97,7 +96,7 @@ public class cc {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static String b(int i, String str) {
-        return "n_top_update_" + i + BridgeUtil.UNDERLINE_STR + str;
+        return "n_top_update_" + i + "_" + str;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -127,7 +126,7 @@ public class cc {
         if (!z) {
             if (i3 > 0) {
                 a3.when = currentTimeMillis;
-                com.xiaomi.channel.commonutils.logger.b.m11394a("update top notification: ".concat(String.valueOf(str2)));
+                com.xiaomi.channel.commonutils.logger.b.m8344a("update top notification: ".concat(String.valueOf(str2)));
                 a2.a(i, a3);
             } else {
                 Notification.Builder recoverBuilder = Notification.Builder.recoverBuilder(context, a3);
@@ -141,13 +140,13 @@ public class cc {
                     extras.remove("mipush_n_top_prd");
                     recoverBuilder.setExtras(extras);
                 }
-                com.xiaomi.channel.commonutils.logger.b.m11394a("update top notification to common: ".concat(String.valueOf(str2)));
+                com.xiaomi.channel.commonutils.logger.b.m8344a("update top notification to common: ".concat(String.valueOf(str2)));
                 a2.a(i, recoverBuilder.build());
             }
         }
         if (i3 > 0) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("schedule top notification next update delay: ".concat(String.valueOf(i3)));
-            com.xiaomi.push.ai.a(context).m11503a(b(i, str2));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("schedule top notification next update delay: ".concat(String.valueOf(i3)));
+            com.xiaomi.push.ai.a(context).m8453a(b(i, str2));
             com.xiaomi.push.ai.a(context).b(a(context, str, i, str2, (Notification) null), i3);
         }
     }

@@ -18,13 +18,9 @@ import java.util.Iterator;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/animation/FlakeView.class */
 public class FlakeView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f11496a;
+    private Context a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f11497c;
+    private float c;
     private float d;
     private float e;
     private float f;
@@ -50,11 +46,11 @@ public class FlakeView extends View {
     public FlakeView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.n = new ArrayList<>();
-        this.f11496a = context;
+        this.a = context;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.FlakeView, i, 0);
         int resourceId = obtainStyledAttributes.getResourceId(R.styleable.FlakeView_flake_pic, R.drawable.icon_money_gift);
         this.b = obtainStyledAttributes.getInt(R.styleable.FlakeView_flake_count, 0);
-        this.f11497c = obtainStyledAttributes.getDimension(R.styleable.FlakeView_drop_speed_low_limit, 1300.0f);
+        this.c = obtainStyledAttributes.getDimension(R.styleable.FlakeView_drop_speed_low_limit, 1300.0f);
         this.d = obtainStyledAttributes.getDimension(R.styleable.FlakeView_drop_speed_high_limit, 1800.0f);
         this.e = obtainStyledAttributes.getDimension(R.styleable.FlakeView_rotation_speed_low_limit, -45.0f);
         this.f = obtainStyledAttributes.getDimension(R.styleable.FlakeView_rotation_speed_high_limit, 45.0f);
@@ -66,7 +62,7 @@ public class FlakeView extends View {
     }
 
     private void a(FlakeConfig flakeConfig) {
-        flakeConfig.a(this.f11497c, this.d);
+        flakeConfig.a(this.c, this.d);
         flakeConfig.b(this.g, this.h);
         flakeConfig.c(this.e, this.f);
         flakeConfig.a();
@@ -124,7 +120,7 @@ public class FlakeView extends View {
     public void a(int i) {
         int i2;
         int i3;
-        if (((Activity) this.f11496a).getRequestedOrientation() == 1) {
+        if (((Activity) this.a).getRequestedOrientation() == 1) {
             i2 = AppInfo.l;
             i3 = AppInfo.m;
         } else {
@@ -137,7 +133,7 @@ public class FlakeView extends View {
             if (i5 >= i) {
                 return;
             }
-            FlakeConfig flakeConfig = new FlakeConfig(this.f11496a, i2, i3, this.m);
+            FlakeConfig flakeConfig = new FlakeConfig(this.a, i2, i3, this.m);
             a(flakeConfig);
             this.n.add(flakeConfig);
             i4 = i5 + 1;
@@ -170,9 +166,9 @@ public class FlakeView extends View {
                 return;
             }
             FlakeConfig flakeConfig = this.n.get(i2);
-            this.p.setTranslate((-flakeConfig.f11494a) / 2, (-flakeConfig.b) / 2);
+            this.p.setTranslate((-flakeConfig.a) / 2, (-flakeConfig.b) / 2);
             this.p.postRotate(flakeConfig.e);
-            this.p.postTranslate((flakeConfig.f11494a / 2) + flakeConfig.f11495c, (flakeConfig.b / 2) + flakeConfig.d);
+            this.p.postTranslate((flakeConfig.a / 2) + flakeConfig.c, (flakeConfig.b / 2) + flakeConfig.d);
             canvas.drawBitmap(flakeConfig.h, this.p, null);
             i = i2 + 1;
         }

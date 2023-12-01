@@ -12,16 +12,16 @@ import java.nio.channels.OverlappingFileLockException;
 public class c implements com.opos.mobad.c.a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private RandomAccessFile f25804a;
+    private RandomAccessFile f12116a;
     private FileChannel b;
 
     /* renamed from: c  reason: collision with root package name */
-    private FileLock f25805c;
+    private FileLock f12117c;
 
     public c(String str) {
         try {
             RandomAccessFile randomAccessFile = new RandomAccessFile(str, "rw");
-            this.f25804a = randomAccessFile;
+            this.f12116a = randomAccessFile;
             this.b = randomAccessFile.getChannel();
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("FileLockedEngine", "FileLockEngine", (Throwable) e);
@@ -57,7 +57,7 @@ public class c implements com.opos.mobad.c.a.b {
         FileChannel fileChannel = this.b;
         if (fileChannel != null) {
             try {
-                this.f25805c = fileChannel.lock();
+                this.f12117c = fileChannel.lock();
                 z = true;
             } catch (OverlappingFileLockException e) {
                 com.opos.cmn.an.f.a.a("FileLockedEngine", "acquireFileLock but has acquire by other thread");
@@ -76,8 +76,8 @@ public class c implements com.opos.mobad.c.a.b {
     public void b() {
         try {
             com.opos.cmn.an.f.a.a("FileLockedEngine", "releaseFileLock");
-            if (this.f25805c != null) {
-                this.f25805c.release();
+            if (this.f12117c != null) {
+                this.f12117c.release();
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("FileLockedEngine", "releaseFileLock", (Throwable) e);
@@ -90,8 +90,8 @@ public class c implements com.opos.mobad.c.a.b {
             com.opos.cmn.an.f.a.a("FileLockedEngine", "releasemFileChannel", (Throwable) e2);
         }
         try {
-            if (this.f25804a != null) {
-                this.f25804a.close();
+            if (this.f12116a != null) {
+                this.f12116a.close();
             }
         } catch (Exception e3) {
             com.opos.cmn.an.f.a.a("FileLockedEngine", "releaseRandomAccessFile", (Throwable) e3);

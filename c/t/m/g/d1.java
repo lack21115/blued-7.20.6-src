@@ -7,19 +7,19 @@ import java.lang.reflect.Method;
 public class d1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f3785a;
+    public Context f3737a;
     public Class b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Object f3786c;
+    public Object f3738c;
     public Method d;
 
     public d1(Context context) {
-        this.f3785a = context;
+        this.f3737a = context;
         try {
             Class<?> cls = Class.forName("com.android.id.impl.IdProviderImpl");
             this.b = cls;
-            this.f3786c = cls.newInstance();
+            this.f3738c = cls.newInstance();
         } catch (Exception e) {
         }
         try {
@@ -29,11 +29,11 @@ public class d1 {
     }
 
     public String a() {
-        return a(this.f3785a, this.d);
+        return a(this.f3737a, this.d);
     }
 
     public final String a(Context context, Method method) {
-        Object obj = this.f3786c;
+        Object obj = this.f3738c;
         if (obj == null || method == null) {
             return null;
         }

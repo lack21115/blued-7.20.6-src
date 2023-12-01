@@ -3,6 +3,7 @@ package android.net;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 
 /* loaded from: source-9557208-dex2jar.jar:android/net/NetworkCapabilities.class */
@@ -370,7 +371,7 @@ public final class NetworkCapabilities implements Parcelable {
             str4 = str;
             i3 = i4;
             if (i4 < capabilities.length) {
-                str4 = str + "&";
+                str4 = str + ContainerUtils.FIELD_DELIMITER;
                 i3 = i4;
             }
         }

@@ -46,11 +46,11 @@ public interface bc {
         public static final String Z = "endMode";
 
         /* renamed from: a  reason: collision with root package name */
-        public static final String f22946a = "showRatio";
+        public static final String f9338a = "showRatio";
         public static final String b = "impSource";
 
         /* renamed from: c  reason: collision with root package name */
-        public static final String f22947c = "activityName";
+        public static final String f9339c = "activityName";
         public static final String d = "xAxis";
         public static final String e = "yAxis";
         public static final String f = "startTime";

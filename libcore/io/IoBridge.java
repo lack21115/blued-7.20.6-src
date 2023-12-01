@@ -21,6 +21,7 @@ import java.net.InetSocketAddress;
 import java.net.NetworkInterface;
 import java.net.PortUnreachableException;
 import java.net.SocketException;
+import java.net.SocketOptions;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
@@ -236,9 +237,9 @@ public final class IoBridge {
                 return Integer.valueOf(Libcore.os.getsockoptInt(fileDescriptor, OsConstants.SOL_SOCKET, OsConstants.SO_SNDBUF));
             case 4098:
                 return Integer.valueOf(Libcore.os.getsockoptInt(fileDescriptor, OsConstants.SOL_SOCKET, OsConstants.SO_RCVBUF));
-            case 4099:
+            case SocketOptions.SO_OOBINLINE /* 4099 */:
                 return Boolean.valueOf(booleanFromInt(Libcore.os.getsockoptInt(fileDescriptor, OsConstants.SOL_SOCKET, OsConstants.SO_OOBINLINE)));
-            case 4102:
+            case SocketOptions.SO_TIMEOUT /* 4102 */:
                 return Integer.valueOf((int) Libcore.os.getsockoptTimeval(fileDescriptor, OsConstants.SOL_SOCKET, OsConstants.SO_RCVTIMEO).toMillis());
             default:
                 throw new SocketException("Unknown socket option: " + i);
@@ -483,10 +484,10 @@ public final class IoBridge {
             case 4098:
                 Libcore.os.setsockoptInt(fileDescriptor, OsConstants.SOL_SOCKET, OsConstants.SO_RCVBUF, ((Integer) obj).intValue());
                 return;
-            case 4099:
+            case SocketOptions.SO_OOBINLINE /* 4099 */:
                 Libcore.os.setsockoptInt(fileDescriptor, OsConstants.SOL_SOCKET, OsConstants.SO_OOBINLINE, booleanToInt(((Boolean) obj).booleanValue()));
                 return;
-            case 4102:
+            case SocketOptions.SO_TIMEOUT /* 4102 */:
                 Libcore.os.setsockoptTimeval(fileDescriptor, OsConstants.SOL_SOCKET, OsConstants.SO_RCVTIMEO, StructTimeval.fromMillis(((Integer) obj).intValue()));
                 return;
             default:

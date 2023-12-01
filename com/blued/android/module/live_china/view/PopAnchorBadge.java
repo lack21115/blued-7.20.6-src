@@ -33,13 +33,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopAnchorBadge.class */
 public class PopAnchorBadge {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f14995a;
+    public View a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f14996c;
+    public View c;
     public Context d;
     public LayoutInflater e;
     public ViewPager f;
@@ -71,12 +67,10 @@ public class PopAnchorBadge {
         public MyPagerAdapter() {
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             viewGroup.removeView((View) obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             if (PopAnchorBadge.this.k == null) {
                 return 0;
@@ -84,7 +78,6 @@ public class PopAnchorBadge {
             return PopAnchorBadge.this.k.size();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             AnchorMedal anchorMedal = (AnchorMedal) PopAnchorBadge.this.k.get(i);
             View b = PopAnchorBadge.this.b();
@@ -125,18 +118,17 @@ public class PopAnchorBadge {
                 textView4.setVisibility(0);
                 textView4.setText(anchorMedal.upgrade_description);
             }
-            String a2 = LiveTimeAndDateUtils.a(LiveTimeAndDateUtils.a(anchorMedal.end_time + ""));
-            if (TextUtils.isEmpty(a2) || anchorMedal.end_time == 0) {
+            String a = LiveTimeAndDateUtils.a(LiveTimeAndDateUtils.a(anchorMedal.end_time + ""));
+            if (TextUtils.isEmpty(a) || anchorMedal.end_time == 0) {
                 textView3.setVisibility(4);
             } else {
                 textView3.setVisibility(0);
-                textView3.setText(PopAnchorBadge.this.d.getResources().getString(R.string.valid_to) + a2);
+                textView3.setText(PopAnchorBadge.this.d.getResources().getString(R.string.valid_to) + a);
             }
             viewGroup.addView(b);
             return b;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object obj) {
             return view == obj;
         }
@@ -180,11 +172,11 @@ public class PopAnchorBadge {
         this.e = LayoutInflater.from(this.d);
         a();
         this.l = new MyPagerAdapter();
-        this.b = this.f14995a.findViewById(R.id.tv_bg);
-        this.f = (ViewPager) this.f14995a.findViewById(R.id.vp_badge);
-        this.g = (CirclePageIndicator) this.f14995a.findViewById(R.id.indicator);
-        this.i = (LinearLayout) this.f14995a.findViewById(R.id.ll_loading);
-        View findViewById = this.f14995a.findViewById(R.id.tv_close);
+        this.b = this.a.findViewById(R.id.tv_bg);
+        this.f = this.a.findViewById(R.id.vp_badge);
+        this.g = (CirclePageIndicator) this.a.findViewById(R.id.indicator);
+        this.i = (LinearLayout) this.a.findViewById(R.id.ll_loading);
+        View findViewById = this.a.findViewById(R.id.tv_close);
         this.h = findViewById;
         findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopAnchorBadge.1
             @Override // android.view.View.OnClickListener
@@ -205,19 +197,19 @@ public class PopAnchorBadge {
                 PopAnchorBadge.this.e();
             }
         });
-        View findViewById2 = this.f14995a.findViewById(R.id.ll_content);
-        this.f14996c = findViewById2;
+        View findViewById2 = this.a.findViewById(R.id.ll_content);
+        this.c = findViewById2;
         findViewById2.setBackgroundColor(this.d.getResources().getColor(R.color.transparent));
-        this.f14996c.setVisibility(8);
-        this.f14996c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopAnchorBadge.3
+        this.c.setVisibility(8);
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopAnchorBadge.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
             }
         });
-        MyPopupWindow myPopupWindow = new MyPopupWindow(this.f14995a, -1, -1, true);
+        MyPopupWindow myPopupWindow = new MyPopupWindow(this.a, -1, -1, true);
         this.j = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.j.setTouchable(true);
         this.j.setOutsideTouchable(true);
         this.j.setFocusable(true);
@@ -225,7 +217,7 @@ public class PopAnchorBadge {
     }
 
     public void a() {
-        this.f14995a = this.e.inflate(R.layout.anchor_badge_bottom, (ViewGroup) null);
+        this.a = this.e.inflate(R.layout.anchor_badge_bottom, (ViewGroup) null);
     }
 
     public void a(String str, String str2) {
@@ -234,12 +226,12 @@ public class PopAnchorBadge {
         this.i.setVisibility(0);
         this.f.setVisibility(4);
         this.b.clearAnimation();
-        this.f14996c.clearAnimation();
+        this.c.clearAnimation();
         if (this.j.isShowing()) {
             this.j.a();
         }
-        this.j.showAtLocation(this.f14996c, 81, 0, 0);
-        this.f14996c.setVisibility(0);
+        this.j.showAtLocation(this.c, 81, 0, 0);
+        this.c.setVisibility(0);
         c();
     }
 
@@ -248,7 +240,7 @@ public class PopAnchorBadge {
     }
 
     public void c() {
-        this.f14996c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_in));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_in));
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.5f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
@@ -271,9 +263,7 @@ public class PopAnchorBadge {
 
     public void d() {
         LiveRoomHttpUtils.d(this.m, true, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<AnchorMedal>>() { // from class: com.blued.android.module.live_china.view.PopAnchorBadge.5
-
-            /* renamed from: a  reason: collision with root package name */
-            boolean f15001a = false;
+            boolean a = false;
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -319,7 +309,7 @@ public class PopAnchorBadge {
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                this.f15001a = true;
+                this.a = true;
                 return super.onUIFailure(i, str);
             }
 
@@ -327,8 +317,8 @@ public class PopAnchorBadge {
             public void onUIFinish() {
                 PopAnchorBadge.this.i.setVisibility(8);
                 PopAnchorBadge.this.f.setVisibility(0);
-                if (this.f15001a) {
-                    this.f15001a = false;
+                if (this.a) {
+                    this.a = false;
                     PopAnchorBadge.this.e();
                 }
             }
@@ -350,7 +340,7 @@ public class PopAnchorBadge {
             }
         }, 320L);
         f();
-        this.f14996c.setVisibility(8);
+        this.c.setVisibility(8);
     }
 
     public void f() {
@@ -358,6 +348,6 @@ public class PopAnchorBadge {
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f14996c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_out));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_out));
     }
 }

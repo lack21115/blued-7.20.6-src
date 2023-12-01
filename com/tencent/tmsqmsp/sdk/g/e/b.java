@@ -4,19 +4,19 @@ package com.tencent.tmsqmsp.sdk.g.e;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f39782a;
+    public int f26091a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f39783c;
+    public String f26092c;
     public String d;
 
     public b(String str) {
-        this.f39783c = str;
+        this.f26092c = str;
     }
 
     public void a(int i) {
-        this.f39782a = i;
+        this.f26091a = i;
     }
 
     public void a(long j) {

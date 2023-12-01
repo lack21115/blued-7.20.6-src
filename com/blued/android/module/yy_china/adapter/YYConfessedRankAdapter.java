@@ -37,7 +37,6 @@ public final class YYConfessedRankAdapter extends BaseFragmentPagerAdapter {
         }
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     /* renamed from: b */
     public String getPageTitle(int i) {
         return "";

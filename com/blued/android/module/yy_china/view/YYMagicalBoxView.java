@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
@@ -30,13 +31,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMagicalBoxView.class */
 public final class YYMagicalBoxView extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewMagicalBoxBinding f18294a;
+    private ViewMagicalBoxBinding a;
     private BaseYYStudioFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f18295c;
+    private boolean c;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public YYMagicalBoxView(Context context) {
@@ -54,9 +51,9 @@ public final class YYMagicalBoxView extends ConstraintLayout {
     public YYMagicalBoxView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        ViewMagicalBoxBinding a2 = ViewMagicalBoxBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18294a = a2;
+        ViewMagicalBoxBinding a = ViewMagicalBoxBinding.a(LayoutInflater.from(getContext()), (ViewGroup) this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
         setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMagicalBoxView$3keB49TUWdc_EVrdrx6G4DVFPFw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -89,9 +86,9 @@ public final class YYMagicalBoxView extends ConstraintLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YYMagicalBoxView this$0, Long l) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f18295c = true;
+        this$0.c = true;
         this$0.a(true);
-        TextView textView = this$0.f18294a.e;
+        TextView textView = this$0.a.e;
         SimpleDateFormat simpleDateFormat = TimeAndDateUtils.k.get();
         Intrinsics.a(simpleDateFormat);
         textView.setText(simpleDateFormat.format(l));
@@ -100,14 +97,14 @@ public final class YYMagicalBoxView extends ConstraintLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YYMagicalBoxView this$0, String str) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f18295c = false;
+        this$0.c = false;
         this$0.a(false);
         this$0.b();
     }
 
     private final void a(boolean z) {
-        this.f18294a.b.setVisibility(z ? 8 : 0);
-        TextView textView = this.f18294a.e;
+        this.a.b.setVisibility(z ? 8 : 0);
+        TextView textView = this.a.e;
         int i = 8;
         if (z) {
             i = 0;
@@ -124,22 +121,22 @@ public final class YYMagicalBoxView extends ConstraintLayout {
         }
         getBinding().f.setText(yYPreciousPackageModel.current_beans);
         getBinding().g.setText(Intrinsics.a(BridgeUtil.SPLIT_MARK, (Object) yYPreciousPackageModel.need_total_beans));
-        getBinding().f16870c.setMax(StringUtils.a(yYPreciousPackageModel.need_total_beans, 0));
-        getBinding().f16870c.setProgress(StringUtils.a(yYPreciousPackageModel.current_beans, 0));
+        getBinding().c.setMax(StringUtils.a(yYPreciousPackageModel.need_total_beans, 0));
+        getBinding().c.setProgress(StringUtils.a(yYPreciousPackageModel.current_beans, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(YYMagicalBoxView this$0, Long l) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f18295c = true;
-        TextView textView = this$0.f18294a.e;
+        this$0.c = true;
+        TextView textView = this$0.a.e;
         SimpleDateFormat simpleDateFormat = TimeAndDateUtils.k.get();
         Intrinsics.a(simpleDateFormat);
         textView.setText(simpleDateFormat.format(l));
     }
 
     public final void a() {
-        if (!this.f18295c) {
+        if (!this.c) {
             a(false);
         }
         b();
@@ -153,19 +150,16 @@ public final class YYMagicalBoxView extends ConstraintLayout {
             return;
         }
         LiveEventBus.get("grab_prize_prepare", Long.TYPE).observe(viewLifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMagicalBoxView$Phws6AKeW8UwLZP-WcK72A8DP8I
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYMagicalBoxView.a(YYMagicalBoxView.this, (Long) obj);
             }
         });
         LiveEventBus.get("grab_prize_start", Long.TYPE).observe(viewLifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMagicalBoxView$ctBDhbQCjKDYmcTCD8RGp2xkJAo
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYMagicalBoxView.b(YYMagicalBoxView.this, (Long) obj);
             }
         });
         LiveEventBus.get("grab_prize_end", String.class).observe(viewLifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMagicalBoxView$3wyFNkLknU4NU6d_foJQk-tRauM
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYMagicalBoxView.a(YYMagicalBoxView.this, (String) obj);
             }
@@ -175,16 +169,16 @@ public final class YYMagicalBoxView extends ConstraintLayout {
     public final void a(String str) {
         if (str != null) {
             BaseYYStudioFragment baseYYStudioFragment = this.b;
-            ImageLoader.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), str).a(this.f18294a.f16869a);
+            ImageLoader.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), str).a(this.a.a);
         }
     }
 
     public final ViewMagicalBoxBinding getBinding() {
-        return this.f18294a;
+        return this.a;
     }
 
     public final void setBinding(ViewMagicalBoxBinding viewMagicalBoxBinding) {
         Intrinsics.e(viewMagicalBoxBinding, "<set-?>");
-        this.f18294a = viewMagicalBoxBinding;
+        this.a = viewMagicalBoxBinding;
     }
 }

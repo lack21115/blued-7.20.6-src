@@ -1,6 +1,5 @@
 package com.blued.android.module.svgaplayer.proto;
 
-import com.anythink.expressad.foundation.d.d;
 import com.squareup.wire.FieldEncoding;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoAdapter;
@@ -31,9 +30,8 @@ public final class SpriteEntity extends Message<SpriteEntity, Builder> {
         public String imageKey;
         public String matteKey;
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.Message.Builder
-        public SpriteEntity build() {
+        /* renamed from: build */
+        public SpriteEntity m10592build() {
             return new SpriteEntity(this.imageKey, this.frames, this.matteKey, super.buildUnknownFields());
         }
 
@@ -60,42 +58,39 @@ public final class SpriteEntity extends Message<SpriteEntity, Builder> {
             super(FieldEncoding.LENGTH_DELIMITED, SpriteEntity.class);
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.ProtoAdapter
-        public SpriteEntity decode(ProtoReader protoReader) throws IOException {
+        /* renamed from: decode */
+        public SpriteEntity m10593decode(ProtoReader protoReader) throws IOException {
             Builder builder = new Builder();
             long beginMessage = protoReader.beginMessage();
             while (true) {
                 int nextTag = protoReader.nextTag();
                 if (nextTag == -1) {
                     protoReader.endMessage(beginMessage);
-                    return builder.build();
+                    return builder.m10592build();
                 } else if (nextTag == 1) {
-                    builder.imageKey(ProtoAdapter.STRING.decode(protoReader));
+                    builder.imageKey((String) ProtoAdapter.STRING.decode(protoReader));
                 } else if (nextTag == 2) {
-                    builder.frames.add(FrameEntity.ADAPTER.decode(protoReader));
+                    builder.frames.add((FrameEntity) FrameEntity.ADAPTER.decode(protoReader));
                 } else if (nextTag != 3) {
                     FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
                     builder.addUnknownField(nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(protoReader));
                 } else {
-                    builder.matteKey(ProtoAdapter.STRING.decode(protoReader));
+                    builder.matteKey((String) ProtoAdapter.STRING.decode(protoReader));
                 }
             }
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public void encode(ProtoWriter protoWriter, SpriteEntity spriteEntity) throws IOException {
             if (spriteEntity.imageKey != null) {
-                ProtoAdapter.STRING.encodeWithTag(protoWriter, 1, (int) spriteEntity.imageKey);
+                ProtoAdapter.STRING.encodeWithTag(protoWriter, 1, spriteEntity.imageKey);
             }
-            FrameEntity.ADAPTER.asRepeated().encodeWithTag(protoWriter, 2, (int) spriteEntity.frames);
+            FrameEntity.ADAPTER.asRepeated().encodeWithTag(protoWriter, 2, spriteEntity.frames);
             if (spriteEntity.matteKey != null) {
-                ProtoAdapter.STRING.encodeWithTag(protoWriter, 3, (int) spriteEntity.matteKey);
+                ProtoAdapter.STRING.encodeWithTag(protoWriter, 3, spriteEntity.matteKey);
             }
             protoWriter.writeBytes(spriteEntity.unknownFields());
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public int encodedSize(SpriteEntity spriteEntity) {
             int i = 0;
             int encodedSizeWithTag = spriteEntity.imageKey != null ? ProtoAdapter.STRING.encodedSizeWithTag(1, spriteEntity.imageKey) : 0;
@@ -106,12 +101,11 @@ public final class SpriteEntity extends Message<SpriteEntity, Builder> {
             return encodedSizeWithTag + encodedSizeWithTag2 + i + spriteEntity.unknownFields().size();
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public SpriteEntity redact(SpriteEntity spriteEntity) {
-            Builder newBuilder = spriteEntity.newBuilder();
-            Internal.redactElements(newBuilder.frames, FrameEntity.ADAPTER);
-            newBuilder.clearUnknownFields();
-            return newBuilder.build();
+            Builder m10591newBuilder = spriteEntity.m10591newBuilder();
+            Internal.redactElements(m10591newBuilder.frames, FrameEntity.ADAPTER);
+            m10591newBuilder.clearUnknownFields();
+            return m10591newBuilder.m10592build();
         }
     }
 
@@ -122,7 +116,7 @@ public final class SpriteEntity extends Message<SpriteEntity, Builder> {
     public SpriteEntity(String str, List<FrameEntity> list, String str2, ByteString byteString) {
         super(ADAPTER, byteString);
         this.imageKey = str;
-        this.frames = Internal.immutableCopyOf(d.j, list);
+        this.frames = Internal.immutableCopyOf("frames", list);
         this.matteKey = str2;
     }
 
@@ -138,7 +132,7 @@ public final class SpriteEntity extends Message<SpriteEntity, Builder> {
     }
 
     public int hashCode() {
-        int i = this.hashCode;
+        int i = ((Message) this).hashCode;
         int i2 = i;
         if (i == 0) {
             int hashCode = unknownFields().hashCode();
@@ -151,23 +145,21 @@ public final class SpriteEntity extends Message<SpriteEntity, Builder> {
                 i3 = str2.hashCode();
             }
             i2 = (((((hashCode * 37) + hashCode2) * 37) + hashCode3) * 37) + i3;
-            this.hashCode = i2;
+            ((Message) this).hashCode = i2;
         }
         return i2;
     }
 
-    /* JADX WARN: Can't rename method to resolve collision */
-    @Override // com.squareup.wire.Message
-    public Builder newBuilder() {
+    /* renamed from: newBuilder */
+    public Builder m10591newBuilder() {
         Builder builder = new Builder();
         builder.imageKey = this.imageKey;
-        builder.frames = Internal.copyOf(d.j, this.frames);
+        builder.frames = Internal.copyOf("frames", this.frames);
         builder.matteKey = this.matteKey;
         builder.addUnknownFields(unknownFields());
         return builder;
     }
 
-    @Override // com.squareup.wire.Message
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (this.imageKey != null) {

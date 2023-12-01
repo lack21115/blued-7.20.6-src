@@ -14,11 +14,11 @@ public interface bn {
     public static final int Z = 1003;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f22440a = 1010;
+    public static final int f8832a = 1010;
     public static final int b = 1011;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f22441c = 3001;
+    public static final int f8833c = 3001;
     public static final int d = 3002;
     public static final int e = 3003;
     public static final int f = 3004;

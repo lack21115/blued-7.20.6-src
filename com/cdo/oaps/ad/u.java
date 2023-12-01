@@ -9,11 +9,11 @@ import com.cdo.oaps.ad.Launcher;
 public class u {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f21534a = 2000000;
+    public static final int f7928a = 2000000;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String[] f21535c = {"/dt", Launcher.Path.DETAIL_DOWN, "/search", Launcher.Path.SEARCH_DOWN, "/home"};
+    public static final String[] f7929c = {"/dt", Launcher.Path.DETAIL_DOWN, "/search", Launcher.Path.SEARCH_DOWN, "/home"};
 
     public static int a(Context context, String str) {
         int i = 0;

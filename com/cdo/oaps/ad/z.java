@@ -2,6 +2,7 @@ package com.cdo.oaps.ad;
 
 import android.content.Context;
 import android.net.Uri;
+import com.huawei.hms.framework.common.ContainerUtils;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7206380-dex2jar.jar:com/cdo/oaps/ad/z.class */
@@ -17,7 +18,7 @@ public class z {
             str5 = "^out_match_type#" + str4;
         }
         sb.append(str5);
-        return Uri.encode("out_package_name=" + str + "&out_pid=" + j + "&out_operator_type=" + i + "&out_intent_from=" + i2 + "&enter_id=" + str2 + "&enter_params=" + sb.toString());
+        return Uri.encode("out_package_name=" + str + ContainerUtils.FIELD_DELIMITER + "out_pid=" + j + ContainerUtils.FIELD_DELIMITER + "out_operator_type=" + i + ContainerUtils.FIELD_DELIMITER + "out_intent_from=" + i2 + ContainerUtils.FIELD_DELIMITER + "enter_id=" + str2 + ContainerUtils.FIELD_DELIMITER + "enter_params=" + sb.toString());
     }
 
     private static String a(long j, String str, boolean z, String str2, String str3, String str4, int i, String str5) {
@@ -32,7 +33,7 @@ public class z {
             str6 = "^out_match_type#" + str4;
         }
         sb.append(str6);
-        return Uri.encode("out_pid=" + j + "&out_package_name=" + str + "&out_start_download=" + z + "&out_intent_from=" + i + "&enter_id=" + str2 + "&enter_params=" + sb.toString() + "&cpd_params=" + str7);
+        return Uri.encode("out_pid=" + j + ContainerUtils.FIELD_DELIMITER + "out_package_name=" + str + ContainerUtils.FIELD_DELIMITER + "out_start_download=" + z + ContainerUtils.FIELD_DELIMITER + "out_intent_from=" + i + ContainerUtils.FIELD_DELIMITER + "enter_id=" + str2 + ContainerUtils.FIELD_DELIMITER + "enter_params=" + sb.toString() + ContainerUtils.FIELD_DELIMITER + "cpd_params=" + str7);
     }
 
     public static String a(Context context, long j, String str, int i, String str2, String str3, String str4, int i2) {
@@ -61,7 +62,7 @@ public class z {
     }
 
     private static String a(String str, String str2) {
-        return Uri.encode("enter_id=" + str + "&enter_params=" + ("out_operator#" + str2));
+        return Uri.encode("enter_id=" + str + ContainerUtils.FIELD_DELIMITER + "enter_params=" + ("out_operator#" + str2));
     }
 
     public static String a(String str, String str2, String str3, String str4, int i, String str5) {
@@ -76,7 +77,7 @@ public class z {
             str6 = "^out_match_type#" + str4;
         }
         sb.append(str6);
-        return Uri.encode("url=" + str + "&out_intent_from=" + i + "&enter_id=" + str2 + "&enter_params=" + sb.toString() + "&cpd_params=" + str7);
+        return Uri.encode("url=" + str + ContainerUtils.FIELD_DELIMITER + "out_intent_from=" + i + ContainerUtils.FIELD_DELIMITER + "enter_id=" + str2 + ContainerUtils.FIELD_DELIMITER + "enter_params=" + sb.toString() + ContainerUtils.FIELD_DELIMITER + "cpd_params=" + str7);
     }
 
     private static String a(String str, String str2, boolean z, String str3, String str4, String str5, int i) {
@@ -90,6 +91,6 @@ public class z {
             str6 = "^out_match_type#" + str5;
         }
         sb.append(str6);
-        return Uri.encode("out_package_name=" + str2 + "&out_app_name=" + str + "&out_operator=" + str4 + "&out_start_download=" + z + "&out_intent_from=" + i + "&enter_id=" + str3 + "&enter_params=" + sb.toString());
+        return Uri.encode("out_package_name=" + str2 + ContainerUtils.FIELD_DELIMITER + "out_app_name=" + str + ContainerUtils.FIELD_DELIMITER + "out_operator=" + str4 + ContainerUtils.FIELD_DELIMITER + "out_start_download=" + z + ContainerUtils.FIELD_DELIMITER + "out_intent_from=" + i + ContainerUtils.FIELD_DELIMITER + "enter_id=" + str3 + ContainerUtils.FIELD_DELIMITER + "enter_params=" + sb.toString());
     }
 }

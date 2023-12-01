@@ -13,26 +13,26 @@ public class AudioCustomTrackJni {
     static class AudioFrame {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCAudioFrame f36440a;
+        private TRTCCloudDef.TRTCAudioFrame f22749a;
 
         public AudioFrame(TRTCCloudDef.TRTCAudioFrame tRTCAudioFrame) {
-            this.f36440a = tRTCAudioFrame;
+            this.f22749a = tRTCAudioFrame;
         }
 
         public int getChannel() {
-            return this.f36440a.channel;
+            return this.f22749a.channel;
         }
 
         public byte[] getData() {
-            return this.f36440a.data;
+            return this.f22749a.data;
         }
 
         public int getSampleRate() {
-            return this.f36440a.sampleRate;
+            return this.f22749a.sampleRate;
         }
 
         public long getTimestamp() {
-            return this.f36440a.timestamp;
+            return this.f22749a.timestamp;
         }
     }
 

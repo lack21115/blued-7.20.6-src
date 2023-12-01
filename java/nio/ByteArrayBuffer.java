@@ -351,7 +351,7 @@ public final class ByteArrayBuffer extends ByteBuffer {
     }
 
     @Override // java.nio.ByteBuffer
-    public ByteBuffer putChar(char c2) {
+    public ByteBuffer putChar(char c) {
         if (this.isReadOnly) {
             throw new ReadOnlyBufferException();
         }
@@ -359,18 +359,18 @@ public final class ByteArrayBuffer extends ByteBuffer {
         if (i > this.limit) {
             throw new BufferOverflowException();
         }
-        Memory.pokeShort(this.backingArray, this.arrayOffset + this.position, (short) c2, this.order);
+        Memory.pokeShort(this.backingArray, this.arrayOffset + this.position, (short) c, this.order);
         this.position = i;
         return this;
     }
 
     @Override // java.nio.ByteBuffer
-    public ByteBuffer putChar(int i, char c2) {
+    public ByteBuffer putChar(int i, char c) {
         if (this.isReadOnly) {
             throw new ReadOnlyBufferException();
         }
         checkIndex(i, 2);
-        Memory.pokeShort(this.backingArray, this.arrayOffset + i, (short) c2, this.order);
+        Memory.pokeShort(this.backingArray, this.arrayOffset + i, (short) c, this.order);
         return this;
     }
 

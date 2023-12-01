@@ -8,7 +8,7 @@ public abstract class WidgetRun implements Dependency {
     ConstraintWidget b;
 
     /* renamed from: c  reason: collision with root package name */
-    RunGroup f2150c;
+    RunGroup f2102c;
     protected ConstraintWidget.DimensionBehaviour d;
     public int matchConstraintsType;
     DimensionDependency e = new DimensionDependency(this);
@@ -24,7 +24,7 @@ public abstract class WidgetRun implements Dependency {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2151a;
+        static final /* synthetic */ int[] f2103a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -32,25 +32,25 @@ public abstract class WidgetRun implements Dependency {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[ConstraintAnchor.Type.values().length];
-            f2151a = iArr;
+            f2103a = iArr;
             try {
                 iArr[ConstraintAnchor.Type.LEFT.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2151a[ConstraintAnchor.Type.RIGHT.ordinal()] = 2;
+                f2103a[ConstraintAnchor.Type.RIGHT.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2151a[ConstraintAnchor.Type.TOP.ordinal()] = 3;
+                f2103a[ConstraintAnchor.Type.TOP.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2151a[ConstraintAnchor.Type.BASELINE.ordinal()] = 4;
+                f2103a[ConstraintAnchor.Type.BASELINE.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f2151a[ConstraintAnchor.Type.BOTTOM.ordinal()] = 5;
+                f2103a[ConstraintAnchor.Type.BOTTOM.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -178,7 +178,7 @@ public abstract class WidgetRun implements Dependency {
             return null;
         }
         ConstraintWidget constraintWidget = constraintAnchor.mTarget.mOwner;
-        int i = AnonymousClass1.f2151a[constraintAnchor.mTarget.mType.ordinal()];
+        int i = AnonymousClass1.f2103a[constraintAnchor.mTarget.mType.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
@@ -204,7 +204,7 @@ public abstract class WidgetRun implements Dependency {
         }
         ConstraintWidget constraintWidget = constraintAnchor.mTarget.mOwner;
         WidgetRun widgetRun = i == 0 ? constraintWidget.horizontalRun : constraintWidget.verticalRun;
-        int i2 = AnonymousClass1.f2151a[constraintAnchor.mTarget.mType.ordinal()];
+        int i2 = AnonymousClass1.f2103a[constraintAnchor.mTarget.mType.ordinal()];
         if (i2 != 1) {
             if (i2 != 2) {
                 if (i2 != 3) {
@@ -256,7 +256,7 @@ public abstract class WidgetRun implements Dependency {
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(DependencyNode dependencyNode, DependencyNode dependencyNode2, int i) {
         dependencyNode.g.add(dependencyNode2);
-        dependencyNode.f2136c = i;
+        dependencyNode.f2088c = i;
         dependencyNode2.f.add(dependencyNode);
     }
 
@@ -307,7 +307,7 @@ public abstract class WidgetRun implements Dependency {
                 break;
             }
             int i4 = i;
-            if (this.start.g.get(i2).f2135a != this) {
+            if (this.start.g.get(i2).f2087a != this) {
                 i4 = i + 1;
             }
             i2++;
@@ -318,7 +318,7 @@ public abstract class WidgetRun implements Dependency {
         int i6 = 0;
         while (i6 < size2) {
             int i7 = i5;
-            if (this.end.g.get(i6).f2135a != this) {
+            if (this.end.g.get(i6).f2087a != this) {
                 i7 = i5 + 1;
             }
             i6++;
@@ -347,11 +347,11 @@ public abstract class WidgetRun implements Dependency {
         if (this.e.resolved) {
             long j = this.e.value;
             if (isCenterConnection()) {
-                i2 = this.start.f2136c - this.end.f2136c;
+                i2 = this.start.f2088c - this.end.f2088c;
             } else if (i != 0) {
-                return j - this.end.f2136c;
+                return j - this.end.f2088c;
             } else {
-                i2 = this.start.f2136c;
+                i2 = this.start.f2088c;
             }
             return j + i2;
         }

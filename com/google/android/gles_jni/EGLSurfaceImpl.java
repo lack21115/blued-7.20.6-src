@@ -1,6 +1,5 @@
 package com.google.android.gles_jni;
 
-import com.blued.das.live.LiveProtos;
 import javax.microedition.khronos.egl.EGLSurface;
 
 /* loaded from: source-4181928-dex2jar.jar:com/google/android/gles_jni/EGLSurfaceImpl.class */
@@ -26,6 +25,6 @@ public class EGLSurfaceImpl extends EGLSurface {
     }
 
     public int hashCode() {
-        return ((int) (this.mEGLSurface ^ (this.mEGLSurface >>> 32))) + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE;
+        return ((int) (this.mEGLSurface ^ (this.mEGLSurface >>> 32))) + 527;
     }
 }

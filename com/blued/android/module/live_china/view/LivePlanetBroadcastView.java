@@ -21,13 +21,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePlanetBroadcastView.class */
 public final class LivePlanetBroadcastView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14863a;
+    private final Context a;
     private final LivePlanetBroadcastBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ArrayList<PlanetBroadcastModel> f14864c;
+    private ArrayList<PlanetBroadcastModel> c;
     private int d;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
@@ -46,10 +42,10 @@ public final class LivePlanetBroadcastView extends FrameLayout {
     public LivePlanetBroadcastView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f14863a = mContext;
-        LivePlanetBroadcastBinding a2 = LivePlanetBroadcastBinding.a(LayoutInflater.from(mContext).inflate(R.layout.live_planet_broadcast, this));
-        Intrinsics.c(a2, "bind(\n        LayoutInfl…et_broadcast, this)\n    )");
-        this.b = a2;
+        this.a = mContext;
+        LivePlanetBroadcastBinding a = LivePlanetBroadcastBinding.a(LayoutInflater.from(mContext).inflate(R.layout.live_planet_broadcast, this));
+        Intrinsics.c(a, "bind(\n        LayoutInfl…et_broadcast, this)\n    )");
+        this.b = a;
         this.d = -1;
     }
 
@@ -154,13 +150,13 @@ public final class LivePlanetBroadcastView extends FrameLayout {
     }
 
     private final boolean b() {
-        ArrayList<PlanetBroadcastModel> arrayList = this.f14864c;
+        ArrayList<PlanetBroadcastModel> arrayList = this.c;
         boolean z = false;
         if (arrayList == null || arrayList.isEmpty()) {
             return false;
         }
         int i = this.d;
-        ArrayList<PlanetBroadcastModel> arrayList2 = this.f14864c;
+        ArrayList<PlanetBroadcastModel> arrayList2 = this.c;
         Intrinsics.a(arrayList2);
         if (i < arrayList2.size() - 1) {
             z = true;
@@ -173,7 +169,7 @@ public final class LivePlanetBroadcastView extends FrameLayout {
         Intrinsics.e(this$0, "this$0");
         final float width = this$0.b.b.getWidth();
         final float height = this$0.b.b.getHeight();
-        final float width2 = this$0.b.f12360a.getWidth();
+        final float width2 = this$0.b.a.getWidth();
         this$0.b.b.setAlpha(0.0f);
         this$0.b.b.setTranslationX(0.0f);
         this$0.b.b.setTranslationY(0.3f * height);
@@ -186,11 +182,11 @@ public final class LivePlanetBroadcastView extends FrameLayout {
     }
 
     private final String getNextText() {
-        ArrayList<PlanetBroadcastModel> arrayList = this.f14864c;
+        ArrayList<PlanetBroadcastModel> arrayList = this.c;
         if (arrayList == null || arrayList.isEmpty()) {
             return null;
         }
-        ArrayList<PlanetBroadcastModel> arrayList2 = this.f14864c;
+        ArrayList<PlanetBroadcastModel> arrayList2 = this.c;
         if (arrayList2 == null) {
             return "";
         }
@@ -211,7 +207,7 @@ public final class LivePlanetBroadcastView extends FrameLayout {
     }
 
     public final Context getMContext() {
-        return this.f14863a;
+        return this.a;
     }
 
     public final int getMCurrentIndex() {
@@ -219,7 +215,7 @@ public final class LivePlanetBroadcastView extends FrameLayout {
     }
 
     public final ArrayList<PlanetBroadcastModel> getMData() {
-        return this.f14864c;
+        return this.c;
     }
 
     public final void setData(ArrayList<PlanetBroadcastModel> arrayList) {
@@ -231,7 +227,7 @@ public final class LivePlanetBroadcastView extends FrameLayout {
         this.b.b.setAlpha(0.0f);
         this.b.b.animate().cancel();
         this.d = -1;
-        this.f14864c = arrayList;
+        this.c = arrayList;
         a();
     }
 
@@ -240,6 +236,6 @@ public final class LivePlanetBroadcastView extends FrameLayout {
     }
 
     public final void setMData(ArrayList<PlanetBroadcastModel> arrayList) {
-        this.f14864c = arrayList;
+        this.c = arrayList;
     }
 }

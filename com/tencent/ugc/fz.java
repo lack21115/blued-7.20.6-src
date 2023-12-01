@@ -5,10 +5,10 @@ package com.tencent.ugc;
 public final /* synthetic */ class fz implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCVideoProcessor f40403a;
+    private final UGCVideoProcessor f26712a;
 
     private fz(UGCVideoProcessor uGCVideoProcessor) {
-        this.f40403a = uGCVideoProcessor;
+        this.f26712a = uGCVideoProcessor;
     }
 
     public static Runnable a(UGCVideoProcessor uGCVideoProcessor) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class fz implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40403a.stopEncoder();
+        this.f26712a.stopEncoder();
     }
 }

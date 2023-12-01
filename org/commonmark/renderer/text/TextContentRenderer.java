@@ -9,9 +9,7 @@ import org.commonmark.renderer.Renderer;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/renderer/text/TextContentRenderer.class */
 public class TextContentRenderer implements Renderer {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final boolean f44086a;
+    private final boolean a;
 
     /* renamed from: org.commonmark.renderer.text.TextContentRenderer$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/renderer/text/TextContentRenderer$1.class */
@@ -20,17 +18,13 @@ public class TextContentRenderer implements Renderer {
 
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/renderer/text/TextContentRenderer$Builder.class */
     public static class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private boolean f44087a = false;
+        private boolean a = false;
         private List<TextContentNodeRendererFactory> b = new ArrayList();
     }
 
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/renderer/text/TextContentRenderer$RendererContext.class */
     class RendererContext implements TextContentNodeRendererContext {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ TextContentRenderer f44088a;
+        final /* synthetic */ TextContentRenderer a;
         private final NodeRendererMap b;
 
         @Override // org.commonmark.renderer.text.TextContentNodeRendererContext
@@ -40,7 +34,7 @@ public class TextContentRenderer implements Renderer {
 
         @Override // org.commonmark.renderer.text.TextContentNodeRendererContext
         public boolean a() {
-            return this.f44088a.f44086a;
+            return this.a.a;
         }
     }
 

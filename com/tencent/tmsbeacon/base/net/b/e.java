@@ -11,11 +11,11 @@ import java.util.List;
 public final class e extends BroadcastReceiver implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final List<a> f39504a = new ArrayList();
+    private static final List<a> f25813a = new ArrayList();
     private static volatile boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f39505c = true;
+    private boolean f25814c = true;
     private volatile boolean d = false;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/base/net/b/e$a.class */
@@ -26,7 +26,7 @@ public final class e extends BroadcastReceiver implements Runnable {
     }
 
     private void a() {
-        List<a> list = f39504a;
+        List<a> list = f25813a;
         synchronized (list) {
             for (a aVar : list) {
                 aVar.a();
@@ -39,7 +39,7 @@ public final class e extends BroadcastReceiver implements Runnable {
             com.tencent.tmsbeacon.base.util.c.b("[net] context == null!", new Object[0]);
             return;
         }
-        List<a> list = f39504a;
+        List<a> list = f25813a;
         synchronized (list) {
             if (!list.contains(aVar)) {
                 list.add(aVar);
@@ -53,14 +53,14 @@ public final class e extends BroadcastReceiver implements Runnable {
     }
 
     public static void a(a aVar) {
-        List<a> list = f39504a;
+        List<a> list = f25813a;
         synchronized (list) {
             list.remove(aVar);
         }
     }
 
     private void b() {
-        List<a> list = f39504a;
+        List<a> list = f25813a;
         synchronized (list) {
             for (a aVar : list) {
                 aVar.b();
@@ -70,8 +70,8 @@ public final class e extends BroadcastReceiver implements Runnable {
 
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
-        if (this.f39505c) {
-            this.f39505c = false;
+        if (this.f25814c) {
+            this.f25814c = false;
         } else if (this.d) {
         } else {
             com.tencent.tmsbeacon.a.b.a.a().a(this);

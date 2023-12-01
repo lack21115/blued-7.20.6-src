@@ -10,7 +10,7 @@ public class vf implements w4 {
     private static final float n = 10.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f38071c;
+    private float f24380c;
     private float d;
     private e1 e;
     private boolean f;
@@ -21,7 +21,7 @@ public class vf implements w4 {
     private a1 l;
 
     /* renamed from: a  reason: collision with root package name */
-    private final long f38070a = 250;
+    private final long f24379a = 250;
     private final long b = 1200;
     private boolean j = false;
 
@@ -108,7 +108,7 @@ public class vf implements w4 {
     }
 
     public vf(e1 e1Var) {
-        this.f38071c = ViewConfiguration.getMinimumFlingVelocity();
+        this.f24380c = ViewConfiguration.getMinimumFlingVelocity();
         this.d = ViewConfiguration.getMaximumFlingVelocity();
         this.e = e1Var;
         a1 a1Var = (a1) e1Var.j();
@@ -118,7 +118,7 @@ public class vf implements w4 {
             Context context = this.l.getContext();
             if (context != null) {
                 ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
-                this.f38071c = viewConfiguration.getScaledMinimumFlingVelocity();
+                this.f24380c = viewConfiguration.getScaledMinimumFlingVelocity();
                 this.d = viewConfiguration.getScaledMaximumFlingVelocity();
             }
         }
@@ -135,7 +135,7 @@ public class vf implements w4 {
         float f4 = f2 / 64.0f;
         if (Math.abs(f3) >= this.k || Math.abs(f4) >= this.k) {
             float max = Math.max(Math.abs(f), Math.abs(f2));
-            float f5 = this.f38071c;
+            float f5 = this.f24380c;
             long j = ((max - f5) / (this.d - f5)) * 950.0f;
             PointF pointF = new PointF(f3, f4);
             long currentTimeMillis = System.currentTimeMillis();

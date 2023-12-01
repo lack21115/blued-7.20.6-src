@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.imagecache.LoadOptions;
@@ -29,13 +30,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveManagerAdapter.class */
 public class LiveManagerAdapter extends BaseAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f11651a;
+    public Context a;
     public List<LiveUserinfoModel> b = new ArrayList();
-
-    /* renamed from: c  reason: collision with root package name */
-    public LoadOptions f11652c;
+    public LoadOptions c;
     public LayoutInflater d;
     public IRequestHost e;
     private String f;
@@ -43,9 +40,7 @@ public class LiveManagerAdapter extends BaseAdapter {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveManagerAdapter$ViewHolder.class */
     class ViewHolder {
         private ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private ImageView f11663c;
+        private ImageView c;
         private TextView d;
         private TextView e;
         private TextView f;
@@ -58,15 +53,15 @@ public class LiveManagerAdapter extends BaseAdapter {
     }
 
     public LiveManagerAdapter(Context context, String str, IRequestHost iRequestHost) {
-        this.f11651a = context;
+        this.a = context;
         this.d = LayoutInflater.from(context);
-        int i = this.f11651a.getResources().getDisplayMetrics().widthPixels;
+        int i = this.a.getResources().getDisplayMetrics().widthPixels;
         LoadOptions loadOptions = new LoadOptions();
-        this.f11652c = loadOptions;
+        this.c = loadOptions;
         loadOptions.d = R.drawable.user_bg_round;
-        this.f11652c.b = R.drawable.user_bg_round;
+        this.c.b = R.drawable.user_bg_round;
         int i2 = i >> 1;
-        this.f11652c.a(i2, i2);
+        this.c.a(i2, i2);
         this.f = str;
         this.e = iRequestHost;
     }
@@ -80,9 +75,7 @@ public class LiveManagerAdapter extends BaseAdapter {
     public void a(final String str) {
         if (!TextUtils.isEmpty(str)) {
             LiveRoomHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<LiveUserinfoModel>>() { // from class: com.blued.android.module.live_china.adapter.LiveManagerAdapter.3
-
-                /* renamed from: a  reason: collision with root package name */
-                boolean f11658a = false;
+                boolean a = false;
 
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -109,14 +102,14 @@ public class LiveManagerAdapter extends BaseAdapter {
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i, String str2) {
-                    this.f11658a = true;
+                    this.a = true;
                     return super.onUIFailure(i, str2);
                 }
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                     super.onUIFinish();
-                    if (this.f11658a) {
+                    if (this.a) {
                         int i = 0;
                         while (true) {
                             int i2 = i;
@@ -130,7 +123,7 @@ public class LiveManagerAdapter extends BaseAdapter {
                                 i = i2 + 1;
                             }
                         }
-                        this.f11658a = false;
+                        this.a = false;
                     }
                 }
             }, this.e, this.f, str);
@@ -145,7 +138,7 @@ public class LiveManagerAdapter extends BaseAdapter {
             if (str.equalsIgnoreCase(this.b.get(i2).uid)) {
                 this.b.get(i2).is_manager = this.b.get(i2).last_is_manager;
                 notifyDataSetChanged();
-                AppMethods.a((CharSequence) this.f11651a.getResources().getString(R.string.common_net_error));
+                AppMethods.a((CharSequence) this.a.getResources().getString(R.string.common_net_error));
                 return;
             }
             i = i2 + 1;
@@ -174,9 +167,7 @@ public class LiveManagerAdapter extends BaseAdapter {
             return;
         }
         LiveRoomHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<LiveUserinfoModel>>() { // from class: com.blued.android.module.live_china.adapter.LiveManagerAdapter.4
-
-            /* renamed from: a  reason: collision with root package name */
-            boolean f11660a = false;
+            boolean a = false;
 
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -203,14 +194,14 @@ public class LiveManagerAdapter extends BaseAdapter {
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
-                this.f11660a = true;
+                this.a = true;
                 return super.onUIFailure(i, str2);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                if (this.f11660a) {
+                if (this.a) {
                     int i = 0;
                     while (true) {
                         int i2 = i;
@@ -224,7 +215,7 @@ public class LiveManagerAdapter extends BaseAdapter {
                             i = i2 + 1;
                         }
                     }
-                    this.f11660a = false;
+                    this.a = false;
                 }
             }
         }, this.e, this.f, str);
@@ -248,7 +239,7 @@ public class LiveManagerAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
             view2 = this.d.inflate(R.layout.item_live_manage_list, viewGroup, false);
             viewHolder.b = (ImageView) view2.findViewById(R.id.img_header);
-            viewHolder.f11663c = (ImageView) view2.findViewById(R.id.img_verify);
+            viewHolder.c = (ImageView) view2.findViewById(R.id.img_verify);
             viewHolder.d = (TextView) view2.findViewById(R.id.tv_name);
             viewHolder.e = (TextView) view2.findViewById(R.id.tv_info);
             viewHolder.f = (TextView) view2.findViewById(R.id.tv_city);
@@ -261,7 +252,7 @@ public class LiveManagerAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         final LiveUserinfoModel liveUserinfoModel = this.b.get(i);
-        LiveRoomInfo.a().a(viewHolder.f11663c, liveUserinfoModel.vbadge);
+        LiveRoomInfo.a().a(viewHolder.c, liveUserinfoModel.vbadge);
         ImageLoader.a((IRequestHost) null, AvatarUtils.a(0, liveUserinfoModel.avatar)).b(R.drawable.user_bg_round).c().a(viewHolder.b);
         LiveRoomInfo.a().a(viewHolder.h, liveUserinfoModel);
         if (!TextUtils.isEmpty(liveUserinfoModel.note)) {
@@ -271,17 +262,17 @@ public class LiveManagerAdapter extends BaseAdapter {
         } else {
             viewHolder.d.setText(liveUserinfoModel.name);
         }
-        LiveRoomInfo.a().a(this.f11651a, viewHolder.d, liveUserinfoModel, R.color.white);
+        LiveRoomInfo.a().a(this.a, viewHolder.d, liveUserinfoModel, R.color.white);
         String str = liveUserinfoModel.age + "";
-        String a2 = LiveRoomInfo.a().a(liveUserinfoModel.height, false);
+        String a = LiveRoomInfo.a().a(liveUserinfoModel.height, false);
         String b = LiveRoomInfo.a().b(liveUserinfoModel.weight, false);
-        viewHolder.e.setText(str + BridgeUtil.SPLIT_MARK + a2 + BridgeUtil.SPLIT_MARK + b + "-" + LiveRoomInfo.a().d(this.f11651a, liveUserinfoModel.role));
+        viewHolder.e.setText(str + BridgeUtil.SPLIT_MARK + a + BridgeUtil.SPLIT_MARK + b + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + LiveRoomInfo.a().d(this.a, liveUserinfoModel.role));
         if (TextUtils.isEmpty(liveUserinfoModel.city_settled)) {
             viewHolder.f.setText("");
         } else {
             viewHolder.f.setText(LiveRoomInfo.a().a(liveUserinfoModel.city_settled));
         }
-        LiveRoomInfo.a().a(this.f11651a, viewHolder.f, liveUserinfoModel.is_hide_city_settled, 1);
+        LiveRoomInfo.a().a(this.a, viewHolder.f, liveUserinfoModel.is_hide_city_settled, 1);
         int i2 = liveUserinfoModel.is_manager;
         if (i2 == -1) {
             viewHolder.i.setVisibility(0);
@@ -290,13 +281,13 @@ public class LiveManagerAdapter extends BaseAdapter {
         } else if (i2 != 0) {
             viewHolder.i.setVisibility(8);
             viewHolder.g.setVisibility(0);
-            viewHolder.g.setText(this.f11651a.getString(R.string.live_cancel_manage));
-            viewHolder.g.setBackground(this.f11651a.getResources().getDrawable(R.drawable.shape_user_card_cancel_manager));
+            viewHolder.g.setText(this.a.getString(R.string.live_cancel_manage));
+            viewHolder.g.setBackground(this.a.getResources().getDrawable(R.drawable.shape_user_card_cancel_manager));
             viewHolder.g.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.LiveManagerAdapter.2
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
-                    CommonAlertDialog.a(LiveManagerAdapter.this.f11651a, (View) null, "", LiveManagerAdapter.this.f11651a.getString(R.string.sure_to_remove_manager), "", "", new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.LiveManagerAdapter.2.1
+                    CommonAlertDialog.a(LiveManagerAdapter.this.a, (View) null, "", LiveManagerAdapter.this.a.getString(R.string.sure_to_remove_manager), "", "", new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.LiveManagerAdapter.2.1
                         @Override // android.content.DialogInterface.OnClickListener
                         public void onClick(DialogInterface dialogInterface, int i3) {
                             Tracker.onClick(dialogInterface, i3);
@@ -311,8 +302,8 @@ public class LiveManagerAdapter extends BaseAdapter {
         } else {
             viewHolder.i.setVisibility(8);
             viewHolder.g.setVisibility(0);
-            viewHolder.g.setText(this.f11651a.getString(R.string.live_set_manager));
-            viewHolder.g.setBackground(this.f11651a.getResources().getDrawable(R.drawable.shape_user_card_set_manager));
+            viewHolder.g.setText(this.a.getString(R.string.live_set_manager));
+            viewHolder.g.setBackground(this.a.getResources().getDrawable(R.drawable.shape_user_card_set_manager));
             viewHolder.g.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.LiveManagerAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view3) {

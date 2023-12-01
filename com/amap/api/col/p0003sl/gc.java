@@ -8,22 +8,18 @@ import java.util.LinkedHashMap;
 /* renamed from: com.amap.api.col.3sl.gc  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gc.class */
 final class gc extends gb {
-
-    /* renamed from: a  reason: collision with root package name */
-    private double f4988a;
+    private double a;
 
     /* renamed from: com.amap.api.col.3sl.gc$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gc$a.class */
     static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        LatLonPoint f4989a;
+        LatLonPoint a;
         double b;
 
         public a(double d, double d2, double d3) {
-            this.f4989a = null;
+            this.a = null;
             this.b = 0.0d;
-            this.f4989a = new LatLonPoint(d, d2);
+            this.a = new LatLonPoint(d, d2);
             this.b = d3;
         }
 
@@ -34,9 +30,9 @@ final class gc extends gb {
             if (obj == null || getClass() != obj.getClass()) {
                 return false;
             }
-            LatLonPoint latLonPoint = this.f4989a;
+            LatLonPoint latLonPoint = this.a;
             a aVar = (a) obj;
-            LatLonPoint latLonPoint2 = aVar.f4989a;
+            LatLonPoint latLonPoint2 = aVar.a;
             if (latLonPoint == latLonPoint2) {
                 return true;
             }
@@ -46,19 +42,19 @@ final class gc extends gb {
 
     public gc(String... strArr) {
         super(strArr);
-        this.f4988a = 0.0d;
-        this.f4988a = 0.0d;
+        this.a = 0.0d;
+        this.a = 0.0d;
     }
 
     public final double a() {
-        return this.f4988a;
+        return this.a;
     }
 
     @Override // com.amap.api.col.p0003sl.gb
     public final void a(ga.a aVar) {
         super.a(aVar);
         if (aVar != null) {
-            this.f4988a = aVar.d();
+            this.a = aVar.d();
         }
     }
 
@@ -72,7 +68,7 @@ final class gc extends gb {
             return super.a(linkedHashMap, bVar);
         }
         for (ga.b bVar2 : linkedHashMap.keySet()) {
-            if (bVar2 != null && bVar2.f4984a != null && bVar2.f4984a.equals(bVar.f4984a) && (bVar2.b instanceof a) && ((a) bVar2.b).a(bVar.b)) {
+            if (bVar2 != null && bVar2.a != null && bVar2.a.equals(bVar.a) && (bVar2.b instanceof a) && ((a) bVar2.b).a(bVar.b)) {
                 return true;
             }
         }
@@ -89,7 +85,7 @@ final class gc extends gb {
             return super.b(linkedHashMap, bVar);
         }
         for (ga.b bVar2 : linkedHashMap.keySet()) {
-            if (bVar2 != null && bVar2.f4984a != null && bVar2.f4984a.equals(bVar.f4984a) && (bVar2.b instanceof a) && ((a) bVar2.b).a(bVar.b)) {
+            if (bVar2 != null && bVar2.a != null && bVar2.a.equals(bVar.a) && (bVar2.b instanceof a) && ((a) bVar2.b).a(bVar.b)) {
                 return linkedHashMap.get(bVar2);
             }
         }
@@ -113,7 +109,7 @@ final class gc extends gb {
                 break;
             }
             ga.b next = it.next();
-            if (next != null && next.f4984a != null && next.f4984a.equals(bVar.f4984a) && (next.b instanceof a) && ((a) next.b).a(bVar.b)) {
+            if (next != null && next.a != null && next.a.equals(bVar.a) && (next.b instanceof a) && ((a) next.b).a(bVar.b)) {
                 bVar2 = next;
                 break;
             }

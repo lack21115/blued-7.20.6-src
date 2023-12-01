@@ -15,8 +15,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.FragmentActivity;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
@@ -67,13 +65,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/comment/adapter/FeedDetailsCommentListAdapter.class */
 public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<FeedComment, BaseViewHolder> implements CommentListDataObserver.ICommentDataObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f19427a;
+    public String a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f19428c;
+    private IRequestHost c;
     private BluedIngSelfFeed d;
     private boolean e;
     private String f;
@@ -86,9 +80,7 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
     public class CommentViewHolder {
         private BaseViewHolder A;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private View f19434c;
+        private View c;
         private ImageView d;
         private TextView e;
         private TextView f;
@@ -115,7 +107,7 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
 
         public CommentViewHolder(BaseViewHolder baseViewHolder, View view) {
             this.A = baseViewHolder;
-            this.f19434c = view.findViewById(R.id.rl_comment);
+            this.c = view.findViewById(R.id.rl_comment);
             this.d = (ImageView) view.findViewById(R.id.header_view);
             this.g = (TextView) view.findViewById(R.id.content_view);
             this.f = (TextView) view.findViewById(R.id.name_view);
@@ -130,7 +122,7 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
             this.o = (ImageView) view.findViewById(R.id.img_vip_icon);
             this.p = (ImageView) view.findViewById(R.id.iv_level);
             this.q = (ShapeTextView) view.findViewById(R.id.item_comment_anchor_liked);
-            this.r = (ConstraintLayout) view.findViewById(R.id.cl_reply);
+            this.r = view.findViewById(R.id.cl_reply);
             ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.ll_reply);
             this.s = shapeLinearLayout;
             ShapeHelper.b(shapeLinearLayout, R.color.syc_x);
@@ -218,11 +210,11 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
                 this.l.setVisibility(8);
             }
             UserInfoHelper.a(this.h, feedComment.vbadge, 3);
-            ImageWrapper c2 = ImageLoader.a(FeedDetailsCommentListAdapter.this.f19428c, AvatarUtils.a(1, feedComment.user_avatar)).b(R.drawable.user_bg_round).c();
+            ImageWrapper c = ImageLoader.a(FeedDetailsCommentListAdapter.this.c, AvatarUtils.a(1, feedComment.user_avatar)).b(R.drawable.user_bg_round).c();
             if (feedComment.is_comment_anonym == 1) {
-                c2.d();
+                c.d();
             }
-            c2.a(this.d);
+            c.a(this.d);
             if (TextUtils.isEmpty(feedComment.comment_timestamp)) {
                 this.e.setText("");
             } else {
@@ -285,7 +277,7 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
                         Tracker.onClick(view);
                         EventTrackFeed.e(FeedProtos.Event.FEED_DETAIL_PAGE_SHOW, feedComment.feed_id);
                         String string = FeedDetailsCommentListAdapter.this.b.getResources().getString(R.string.reply_title);
-                        CommentFragment.a(FeedDetailsCommentListAdapter.this.b, String.format(string, feedComment.comments_count + ""), feedComment, FeedDetailsCommentListAdapter.this.d, FeedDetailsCommentListAdapter.this.f19427a, FeedDetailsCommentListAdapter.this.g);
+                        CommentFragment.a(FeedDetailsCommentListAdapter.this.b, String.format(string, feedComment.comments_count + ""), feedComment, FeedDetailsCommentListAdapter.this.d, FeedDetailsCommentListAdapter.this.a, FeedDetailsCommentListAdapter.this.g);
                     }
                 });
                 this.s.setOnClickListener(singleClickProxy);
@@ -311,8 +303,8 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
             };
             this.f.setOnClickListener(onClickListener);
             this.d.setOnClickListener(onClickListener);
-            FeedDetailsCommentListAdapter.this.a(this.f19434c, feedComment);
-            this.f19434c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.comment.adapter.-$$Lambda$FeedDetailsCommentListAdapter$CommentViewHolder$cnw-uxciv0PIbBFtNt9Q9n3uXkw
+            FeedDetailsCommentListAdapter.this.a(this.c, feedComment);
+            this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.comment.adapter.-$$Lambda$FeedDetailsCommentListAdapter$CommentViewHolder$cnw-uxciv0PIbBFtNt9Q9n3uXkw
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     FeedDetailsCommentListAdapter.CommentViewHolder.this.a(feedComment, view);
@@ -333,7 +325,7 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
                     }
                     FeedComment next = it.next();
                     if (next.anchor_point == 1) {
-                        FeedDetailsCommentListAdapter.this.f19427a = next.comment_id;
+                        FeedDetailsCommentListAdapter.this.a = next.comment_id;
                         z = true;
                         break;
                     }
@@ -359,13 +351,13 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
     }
 
     public FeedDetailsCommentListAdapter(Context context, IRequestHost iRequestHost, String str) {
-        super(null);
+        super((List) null);
         this.e = true;
-        this.f19427a = "";
+        this.a = "";
         this.g = -1;
         this.h = new HashSet<>();
         this.b = context;
-        this.f19428c = iRequestHost;
+        this.c = iRequestHost;
         this.f = str;
         addItemType(0, R.layout.item_feed_details_comment);
         addItemType(1, R.layout.item_feed_details_comment_header);
@@ -396,15 +388,15 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
                     if ("1".equals(feedComment.comment_allow_delete)) {
                         arrayList.add(FeedDetailsCommentListAdapter.this.b.getResources().getString(R.string.delete));
                     }
-                    CommonShowBottomWindow.a((FragmentActivity) FeedDetailsCommentListAdapter.this.b, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.comment.adapter.FeedDetailsCommentListAdapter.1.1
+                    CommonShowBottomWindow.a(FeedDetailsCommentListAdapter.this.b, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.comment.adapter.FeedDetailsCommentListAdapter.1.1
                         @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, int i) {
-                            String a2 = actionSheet.a(i);
-                            if (a2.equals(FeedDetailsCommentListAdapter.this.b.getResources().getString(R.string.community_copy))) {
+                            String a = actionSheet.a(i);
+                            if (a.equals(FeedDetailsCommentListAdapter.this.b.getResources().getString(R.string.community_copy))) {
                                 FeedDetailsCommentListAdapter.this.a(feedComment);
-                            } else if (a2.equals(FeedDetailsCommentListAdapter.this.b.getResources().getString(R.string.delete))) {
+                            } else if (a.equals(FeedDetailsCommentListAdapter.this.b.getResources().getString(R.string.delete))) {
                                 FeedDetailsCommentListAdapter.this.b(feedComment);
-                            } else if (a2.equals(FeedDetailsCommentListAdapter.this.b.getResources().getString(R.string.report))) {
+                            } else if (a.equals(FeedDetailsCommentListAdapter.this.b.getResources().getString(R.string.report))) {
                                 CommunityServiceManager.b().a(FeedDetailsCommentListAdapter.this.b, CommunityConstants.ReportType.FEED_COMMENT, feedComment.user_name, feedComment.feed_id, feedComment.comment_id);
                             }
                         }
@@ -429,7 +421,7 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
         }
         textView.setVisibility(0);
         int textSize = (int) textView.getTextSize();
-        String a2 = FeedMethods.a(2, 0);
+        String a = FeedMethods.a(2, 0);
         String str3 = !TextUtils.isEmpty(feedComment.note) ? feedComment.note : feedComment.user_name;
         String str4 = str3 == null ? "" : str3;
         String str5 = feedComment.is_author == 1 ? " is_author_flag" : "";
@@ -454,7 +446,7 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
         String str11 = str10 + str + str2 + "：" + str6;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str11);
         if (!TextUtils.isEmpty(str4)) {
-            spannableStringBuilder.setSpan(new FeedMethods.UserNameClickSpan(this.b, str4, feedComment.comment_uid, str4, feedComment.avatar, a2, R.color.syc_a), str11.indexOf(str4), str11.indexOf(str4) + str4.length(), 17);
+            spannableStringBuilder.setSpan(new FeedMethods.UserNameClickSpan(this.b, str4, feedComment.comment_uid, str4, feedComment.avatar, a, R.color.syc_a), str11.indexOf(str4), str11.indexOf(str4) + str4.length(), 17);
         }
         if (!TextUtils.isEmpty(str5)) {
             Drawable drawable = this.b.getResources().getDrawable(R.drawable.feed_author_icon);
@@ -462,11 +454,11 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
             spannableStringBuilder.setSpan(new ImageSpan(drawable, 2), str11.indexOf(str5), str11.indexOf(str5) + str5.length(), 33);
         }
         if (!TextUtils.isEmpty(str2)) {
-            spannableStringBuilder.setSpan(new FeedMethods.UserNameClickSpan(this.b, str2, feedComment.reply_uid, str2, feedComment.reply_avatar, a2, R.color.syc_a), str11.indexOf(str2), str11.indexOf(str2) + str2.length(), 17);
+            spannableStringBuilder.setSpan(new FeedMethods.UserNameClickSpan(this.b, str2, feedComment.reply_uid, str2, feedComment.reply_avatar, a, R.color.syc_a), str11.indexOf(str2), str11.indexOf(str2) + str2.length(), 17);
         }
         StringUtils.a(spannableStringBuilder, textSize, 1);
-        StringUtils.a(spannableStringBuilder, true, true, false, null, true, "", a2);
-        StringUtils.a(textView, StringUtils.a((CharSequence) spannableStringBuilder, true, new boolean[0]), 0, this.f);
+        StringUtils.a(spannableStringBuilder, true, true, false, (StringUtils.ClickAtLinkListener) null, true, "", a);
+        StringUtils.a(textView, StringUtils.a(spannableStringBuilder, true, new boolean[0]), 0, this.f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -484,7 +476,7 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
         } else {
             CommentListDataObserver.a().a(str, i);
         }
-        FeedHttpUtils.a(str2, str, i, (BluedUIHttpResponse) null, this.f19428c, true);
+        FeedHttpUtils.a(str2, str, i, (BluedUIHttpResponse) null, this.c, true);
     }
 
     private void b(BaseViewHolder baseViewHolder, FeedComment feedComment) {
@@ -505,8 +497,8 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
             view.setVisibility(0);
             this.i.setAlpha(0.1f);
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.i, "alpha", 0.1f, 0.0f);
-            ofFloat.setDuration(m.ag);
-            ofFloat.setStartDelay(m.ag);
+            ofFloat.setDuration(3000L);
+            ofFloat.setStartDelay(3000L);
             ofFloat.start();
         }
     }
@@ -527,11 +519,11 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
         String str = feedComment.comment_content;
         if (Build.VERSION.SDK_INT != 18) {
             try {
-                ((ClipboardManager) this.b.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(str)));
+                ((ClipboardManager) this.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(str)));
             } catch (Exception e) {
             }
         } else {
-            ((android.text.ClipboardManager) this.b.getSystemService(Context.CLIPBOARD_SERVICE)).setText(RegExpUtils.a(str));
+            ((android.text.ClipboardManager) this.b.getSystemService("clipboard")).setText(RegExpUtils.a(str));
         }
         AppMethods.a((CharSequence) this.b.getResources().getString(R.string.copy));
     }
@@ -606,7 +598,6 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, FeedComment feedComment) {
         if (baseViewHolder != null) {
@@ -690,14 +681,14 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
         StringBuilder sb;
         String str;
         String string = this.b.getString(R.string.hint);
-        CharSequence a2 = StringUtils.a(feedComment.comment_content, false, true, false, "feed_detail");
-        if (a2.length() > 14) {
+        CharSequence a = StringUtils.a(feedComment.comment_content, false, true, false, "feed_detail");
+        if (a.length() > 14) {
             sb = new StringBuilder();
-            sb.append((Object) a2.subSequence(0, 14));
+            sb.append((Object) a.subSequence(0, 14));
             str = "...";
         } else {
             sb = new StringBuilder();
-            sb.append((Object) a2);
+            sb.append((Object) a);
             str = "";
         }
         sb.append(str);
@@ -732,7 +723,7 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
                         AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.common_net_error));
                         super.onFailure(th, i2, str2);
                     }
-                }, true, feedComment.feed_id, feedComment.comment_id, FeedDetailsCommentListAdapter.this.d.is_ads, FeedDetailsCommentListAdapter.this.f19428c);
+                }, true, feedComment.feed_id, feedComment.comment_id, FeedDetailsCommentListAdapter.this.d.is_ads, FeedDetailsCommentListAdapter.this.c);
             }
         }, this.b.getResources().getString(R.string.cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
@@ -767,7 +758,6 @@ public class FeedDetailsCommentListAdapter extends BaseMultiItemQuickAdapter<Fee
         CommentListDataObserver.a().b(this);
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void setNewData(List<FeedComment> list) {
         this.h.clear();
         if (this.mData == null || this.mData.size() <= 0) {

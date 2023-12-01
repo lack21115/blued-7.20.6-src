@@ -12,16 +12,14 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/EmptyMap.class */
 public final class EmptyMap implements Serializable, Map, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final EmptyMap f42380a = new EmptyMap();
+    public static final EmptyMap a = new EmptyMap();
     private static final long serialVersionUID = 8246714829545688274L;
 
     private EmptyMap() {
     }
 
     private final Object readResolve() {
-        return f42380a;
+        return a;
     }
 
     public int a() {
@@ -46,11 +44,11 @@ public final class EmptyMap implements Serializable, Map, KMappedMarker {
     }
 
     public Set<Map.Entry> b() {
-        return EmptySet.f42381a;
+        return EmptySet.a;
     }
 
     public Set<Object> c() {
-        return EmptySet.f42381a;
+        return EmptySet.a;
     }
 
     @Override // java.util.Map
@@ -72,7 +70,7 @@ public final class EmptyMap implements Serializable, Map, KMappedMarker {
     }
 
     public Collection d() {
-        return EmptyList.f42379a;
+        return EmptyList.a;
     }
 
     @Override // java.util.Map

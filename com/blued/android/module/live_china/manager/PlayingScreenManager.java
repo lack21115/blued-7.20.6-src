@@ -14,17 +14,13 @@ import com.blued.android.module.live_china.utils.LiveRoomUtils;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/PlayingScreenManager.class */
 public class PlayingScreenManager implements IScreenManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private PlayingOnliveFragment f13746a;
+    private PlayingOnliveFragment a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f13747c;
+    private View c;
 
     public PlayingScreenManager(PlayingOnliveFragment playingOnliveFragment) {
-        this.f13746a = playingOnliveFragment;
-        this.f13747c = playingOnliveFragment.b;
+        this.a = playingOnliveFragment;
+        this.c = playingOnliveFragment.b;
         this.b = playingOnliveFragment.getContext();
         h();
     }
@@ -34,10 +30,10 @@ public class PlayingScreenManager implements IScreenManager {
             @Override // java.lang.Runnable
             public void run() {
                 int[] iArr = new int[2];
-                PlayingScreenManager.this.f13746a.N.getLocationOnScreen(iArr);
+                PlayingScreenManager.this.a.N.getLocationOnScreen(iArr);
                 int i = iArr[0];
                 int i2 = iArr[1];
-                LiveSetDataObserver.a().a(i, i2, PlayingScreenManager.this.f13746a.N.getMeasuredWidth() + i, PlayingScreenManager.this.f13746a.N.getMeasuredHeight() + i2);
+                LiveSetDataObserver.a().a(i, i2, PlayingScreenManager.this.a.N.getMeasuredWidth() + i, PlayingScreenManager.this.a.N.getMeasuredHeight() + i2);
             }
         });
     }
@@ -50,7 +46,7 @@ public class PlayingScreenManager implements IScreenManager {
         layoutParams.topMargin = PlayingMakeFriendManager.b;
         Log.v("pk", "layoutParams.topMargin:" + layoutParams.topMargin);
         Log.v("pk", "layoutParams.topMargin:" + PlayingMakeFriendManager.b);
-        this.f13746a.N.setLayoutParams(layoutParams);
+        this.a.N.setLayoutParams(layoutParams);
     }
 
     private void o() {
@@ -61,7 +57,7 @@ public class PlayingScreenManager implements IScreenManager {
         layoutParams.topMargin = PlayingMakeLoverManager.d;
         Log.v("lover", "layoutParams.topMargin:" + layoutParams.topMargin);
         Log.v("lover", "layoutParams.topMargin:" + PlayingMakeLoverManager.d);
-        this.f13746a.N.setLayoutParams(layoutParams);
+        this.a.N.setLayoutParams(layoutParams);
     }
 
     @Override // com.blued.android.module.live_china.live_interface.IScreenManager
@@ -69,19 +65,19 @@ public class PlayingScreenManager implements IScreenManager {
         Logger.a("rrb", "PlayingScreenManager 切换横屏模式");
         LiveFloatManager.a().d(true);
         i();
-        this.f13746a.f12722c.setShakeWidth(DensityUtils.a(this.b, 50.0f));
-        this.f13746a.cA = 1;
-        this.f13746a.aP.notifyDataSetChanged();
-        this.f13746a.A();
-        this.f13746a.g_(8);
-        LiveRoomUtils.a(this.f13746a.getFragmentActive(), "1");
+        this.a.c.setShakeWidth(DensityUtils.a(this.b, 50.0f));
+        this.a.cA = 1;
+        this.a.aP.notifyDataSetChanged();
+        this.a.A();
+        this.a.g_(8);
+        LiveRoomUtils.a(this.a.getFragmentActive(), "1");
         m();
-        LiveSetDataObserver.a().a(this.f13746a.J);
+        LiveSetDataObserver.a().a(this.a.J);
         LiveSetDataObserver.a().u();
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.manager.PlayingScreenManager.2
             @Override // java.lang.Runnable
             public void run() {
-                PlayingScreenManager.this.f13746a.aU.a(false);
+                PlayingScreenManager.this.a.aU.a(false);
             }
         }, 100L);
     }
@@ -90,20 +86,20 @@ public class PlayingScreenManager implements IScreenManager {
     public void b() {
         LiveFloatManager.a().d(false);
         j();
-        this.f13746a.f12722c.setShakeWidth(DensityUtils.a(this.b, 65.0f));
-        this.f13746a.cA = 2;
-        this.f13746a.aP.notifyDataSetChanged();
-        this.f13746a.A();
-        this.f13746a.g_(0);
-        LiveRoomUtils.a(this.f13746a.getFragmentActive(), "1");
+        this.a.c.setShakeWidth(DensityUtils.a(this.b, 65.0f));
+        this.a.cA = 2;
+        this.a.aP.notifyDataSetChanged();
+        this.a.A();
+        this.a.g_(0);
+        LiveRoomUtils.a(this.a.getFragmentActive(), "1");
         LiveSetDataObserver.a().m();
         m();
-        LiveSetDataObserver.a().a(this.f13746a.J);
+        LiveSetDataObserver.a().a(this.a.J);
         LiveSetDataObserver.a().u();
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.manager.PlayingScreenManager.3
             @Override // java.lang.Runnable
             public void run() {
-                PlayingScreenManager.this.f13746a.aU.a(true);
+                PlayingScreenManager.this.a.aU.a(true);
             }
         }, 500L);
     }
@@ -134,12 +130,12 @@ public class PlayingScreenManager implements IScreenManager {
     public void h() {
         LiveFloatManager.a().d(false);
         k();
-        this.f13746a.f12722c.setShakeWidth(DensityUtils.a(this.b, 65.0f));
-        this.f13746a.g_(0);
+        this.a.c.setShakeWidth(DensityUtils.a(this.b, 65.0f));
+        this.a.g_(0);
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.manager.PlayingScreenManager.1
             @Override // java.lang.Runnable
             public void run() {
-                PlayingScreenManager.this.f13746a.aU.a(true);
+                PlayingScreenManager.this.a.aU.a(true);
             }
         }, 500L);
     }
@@ -148,7 +144,7 @@ public class PlayingScreenManager implements IScreenManager {
         LiveFloatManager.a().a(AppInfo.m, AppInfo.l);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(AppInfo.m, AppInfo.l);
         layoutParams.gravity = 17;
-        this.f13746a.N.setLayoutParams(layoutParams);
+        this.a.N.setLayoutParams(layoutParams);
     }
 
     public void j() {
@@ -156,7 +152,7 @@ public class PlayingScreenManager implements IScreenManager {
         LiveFloatManager.a().a(AppInfo.l, (AppInfo.l / 16) * 9);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, -2);
         layoutParams.topMargin = DensityUtils.a(this.b, 120.0f);
-        this.f13746a.N.setLayoutParams(layoutParams);
+        this.a.N.setLayoutParams(layoutParams);
     }
 
     public void k() {
@@ -165,8 +161,8 @@ public class PlayingScreenManager implements IScreenManager {
         if (LiveFloatManager.a().P() == null) {
             LiveFloatManager.a().J();
         }
-        this.f13746a.N.addView(LiveFloatManager.a().P(), layoutParams);
-        LiveFloatManager.a().a(AppInfo.l, this.f13746a.bc());
+        this.a.N.addView(LiveFloatManager.a().P(), layoutParams);
+        LiveFloatManager.a().a(AppInfo.l, this.a.bc());
     }
 
     public void l() {
@@ -174,6 +170,6 @@ public class PlayingScreenManager implements IScreenManager {
         LiveFloatManager.a().a(AppInfo.l, i);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(AppInfo.l, i);
         layoutParams.topMargin = PlayingMakeFriendManager.b;
-        this.f13746a.N.setLayoutParams(layoutParams);
+        this.a.N.setLayoutParams(layoutParams);
     }
 }

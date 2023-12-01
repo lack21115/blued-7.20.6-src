@@ -22,9 +22,8 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/transfer/ParallelUploadPartsTask.class */
-public class ParallelUploadPartsTask extends BaseUploadPartsTask {
+class ParallelUploadPartsTask extends BaseUploadPartsTask {
     private AtomicLong mTotalProgress;
     private final Set<UploadPartRequest> runningRequestSet;
     private TaskCompletionSource<Set<COSUploadTask.UploadPart>> tcs;

@@ -13,11 +13,11 @@ import java.net.URL;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f6965a = f.class.getSimpleName();
+    private static final String f4127a = f.class.getSimpleName();
     private static final int b = 60000;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.anythink.expressad.d.a f6966c;
+    private com.anythink.expressad.d.a f4128c;
     private String d;
     private boolean e = true;
     private final int f = IntentFilter.MATCH_CATEGORY_HOST;
@@ -27,11 +27,11 @@ public class f {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f6967a;
+        public String f4129a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f6968c;
+        public String f4130c;
         public String d;
         public int e;
         public int f;
@@ -39,11 +39,11 @@ public class f {
         public String h;
 
         public final String a() {
-            return "statusCode=" + this.f + ", location=" + this.f6967a + ", contentType=" + this.b + ", contentLength=" + this.e + ", contentEncoding=" + this.f6968c + ", referer=" + this.d;
+            return "statusCode=" + this.f + ", location=" + this.f4129a + ", contentType=" + this.b + ", contentLength=" + this.e + ", contentEncoding=" + this.f4130c + ", referer=" + this.d;
         }
 
         public final String toString() {
-            return "http响应头：...\nstatusCode=" + this.f + ", location=" + this.f6967a + ", contentType=" + this.b + ", contentLength=" + this.e + ", contentEncoding=" + this.f6968c + ", referer=" + this.d;
+            return "http响应头：...\nstatusCode=" + this.f + ", location=" + this.f4129a + ", contentType=" + this.b + ", contentLength=" + this.e + ", contentEncoding=" + this.f4130c + ", referer=" + this.d;
         }
     }
 
@@ -51,10 +51,10 @@ public class f {
         com.anythink.expressad.d.b.a();
         com.anythink.expressad.foundation.b.a.b().e();
         com.anythink.expressad.d.a b2 = com.anythink.expressad.d.b.b();
-        this.f6966c = b2;
+        this.f4128c = b2;
         if (b2 == null) {
             com.anythink.expressad.d.b.a();
-            this.f6966c = com.anythink.expressad.d.b.c();
+            this.f4128c = com.anythink.expressad.d.b.c();
         }
     }
 
@@ -82,7 +82,7 @@ public class f {
         if (URLUtil.isNetworkUrl(str)) {
             String replace = str.replace(" ", "%20");
             URLUtil.isHttpsUrl(replace);
-            o.b(f6965a, replace);
+            o.b(f4127a, replace);
             this.g = new a();
             try {
                 httpURLConnection = (HttpURLConnection) new URL(replace).openConnection();
@@ -102,21 +102,21 @@ public class f {
                     httpURLConnection.setRequestProperty("User-Agent", com.anythink.core.common.k.d.i());
                 }
                 httpURLConnection.setRequestProperty("Accept-Encoding", "gzip");
-                if (this.f6966c.v() && !TextUtils.isEmpty(this.d)) {
+                if (this.f4128c.v() && !TextUtils.isEmpty(this.d)) {
                     httpURLConnection.setRequestProperty(Downloads.Impl.COLUMN_REFERER, this.d);
                 }
                 httpURLConnection.setConnectTimeout(60000);
                 httpURLConnection.setReadTimeout(60000);
                 httpURLConnection.setInstanceFollowRedirects(false);
                 httpURLConnection.connect();
-                this.g.f6967a = httpURLConnection.getHeaderField(HttpHeaders.LOCATION);
+                this.g.f4129a = httpURLConnection.getHeaderField(HttpHeaders.LOCATION);
                 this.g.d = httpURLConnection.getHeaderField(HttpHeaders.REFERER);
                 this.g.f = httpURLConnection.getResponseCode();
                 this.g.b = httpURLConnection.getContentType();
                 this.g.e = httpURLConnection.getContentLength();
-                this.g.f6968c = httpURLConnection.getContentEncoding();
-                o.b(f6965a, this.g.toString());
-                boolean equalsIgnoreCase = "gzip".equalsIgnoreCase(this.g.f6968c);
+                this.g.f4130c = httpURLConnection.getContentEncoding();
+                o.b(f4127a, this.g.toString());
+                boolean equalsIgnoreCase = "gzip".equalsIgnoreCase(this.g.f4130c);
                 if (this.g.f == 200 && this.e && this.g.e > 0 && this.g.e < 3145728 && !TextUtils.isEmpty(replace) && !replace.endsWith(".apk")) {
                     try {
                         String a2 = a(httpURLConnection.getInputStream(), equalsIgnoreCase);

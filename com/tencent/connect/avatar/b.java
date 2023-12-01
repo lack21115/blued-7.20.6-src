@@ -11,7 +11,7 @@ import android.view.View;
 public class b extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private Rect f36184a;
+    private Rect f22493a;
     private Paint b;
 
     public b(Context context) {
@@ -24,21 +24,20 @@ public class b extends View {
     }
 
     public Rect a() {
-        if (this.f36184a == null) {
-            this.f36184a = new Rect();
+        if (this.f22493a == null) {
+            this.f22493a = new Rect();
             int measuredWidth = getMeasuredWidth();
             int measuredHeight = getMeasuredHeight();
             int min = Math.min(Math.min((measuredHeight - 60) - 80, measuredWidth), 640);
             int i = (measuredWidth - min) / 2;
             int i2 = (measuredHeight - min) / 2;
-            this.f36184a.set(i, i2, i + min, min + i2);
+            this.f22493a.set(i, i2, i + min, min + i2);
         }
-        return this.f36184a;
+        return this.f22493a;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Rect a2 = a();
         int measuredWidth = getMeasuredWidth();

@@ -1,6 +1,5 @@
 package com.google.gson.internal.bind;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -923,7 +922,7 @@ public final class TypeAdapters {
                     jsonReader.nextNull();
                     return null;
                 }
-                StringTokenizer stringTokenizer = new StringTokenizer(jsonReader.nextString(), BridgeUtil.UNDERLINE_STR);
+                StringTokenizer stringTokenizer = new StringTokenizer(jsonReader.nextString(), "_");
                 String nextToken = stringTokenizer.hasMoreElements() ? stringTokenizer.nextToken() : null;
                 String nextToken2 = stringTokenizer.hasMoreElements() ? stringTokenizer.nextToken() : null;
                 if (stringTokenizer.hasMoreElements()) {
@@ -1044,14 +1043,14 @@ public final class TypeAdapters {
         return new TypeAdapterFactory() { // from class: com.google.gson.internal.bind.TypeAdapters.32
             @Override // com.google.gson.TypeAdapterFactory
             public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
-                if (typeToken.getRawType() == Class.this) {
+                if (typeToken.getRawType() == cls) {
                     return typeAdapter;
                 }
                 return null;
             }
 
             public String toString() {
-                return "Factory[type=" + Class.this.getName() + ",adapter=" + typeAdapter + "]";
+                return "Factory[type=" + cls.getName() + ",adapter=" + typeAdapter + "]";
             }
         };
     }
@@ -1061,14 +1060,14 @@ public final class TypeAdapters {
             @Override // com.google.gson.TypeAdapterFactory
             public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
                 Class<? super T> rawType = typeToken.getRawType();
-                if (rawType == Class.this || rawType == cls2) {
+                if (rawType == cls || rawType == cls2) {
                     return typeAdapter;
                 }
                 return null;
             }
 
             public String toString() {
-                return "Factory[type=" + cls2.getName() + "+" + Class.this.getName() + ",adapter=" + typeAdapter + "]";
+                return "Factory[type=" + cls2.getName() + "+" + cls.getName() + ",adapter=" + typeAdapter + "]";
             }
         };
     }
@@ -1078,14 +1077,14 @@ public final class TypeAdapters {
             @Override // com.google.gson.TypeAdapterFactory
             public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
                 Class<? super T> rawType = typeToken.getRawType();
-                if (rawType == Class.this || rawType == cls2) {
+                if (rawType == cls || rawType == cls2) {
                     return typeAdapter;
                 }
                 return null;
             }
 
             public String toString() {
-                return "Factory[type=" + Class.this.getName() + "+" + cls2.getName() + ",adapter=" + typeAdapter + "]";
+                return "Factory[type=" + cls.getName() + "+" + cls2.getName() + ",adapter=" + typeAdapter + "]";
             }
         };
     }
@@ -1095,7 +1094,7 @@ public final class TypeAdapters {
             @Override // com.google.gson.TypeAdapterFactory
             public <T2> TypeAdapter<T2> create(Gson gson, TypeToken<T2> typeToken) {
                 final Class<? super T2> rawType = typeToken.getRawType();
-                if (Class.this.isAssignableFrom(rawType)) {
+                if (cls.isAssignableFrom(rawType)) {
                     return (TypeAdapter<T2>) new TypeAdapter<T1>() { // from class: com.google.gson.internal.bind.TypeAdapters.35.1
                         @Override // com.google.gson.TypeAdapter
                         public T1 read(JsonReader jsonReader) throws IOException {
@@ -1116,7 +1115,7 @@ public final class TypeAdapters {
             }
 
             public String toString() {
-                return "Factory[typeHierarchy=" + Class.this.getName() + ",adapter=" + typeAdapter + "]";
+                return "Factory[typeHierarchy=" + cls.getName() + ",adapter=" + typeAdapter + "]";
             }
         };
     }

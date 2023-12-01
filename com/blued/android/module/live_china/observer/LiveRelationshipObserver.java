@@ -5,9 +5,7 @@ import java.util.Iterator;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveRelationshipObserver.class */
 public class LiveRelationshipObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static LiveRelationshipObserver f13949a = new LiveRelationshipObserver();
+    private static LiveRelationshipObserver a = new LiveRelationshipObserver();
     private ArrayList<ILiveRelationshipObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveRelationshipObserver$ILiveRelationshipObserver.class */
@@ -19,7 +17,7 @@ public class LiveRelationshipObserver {
     }
 
     public static LiveRelationshipObserver a() {
-        return f13949a;
+        return a;
     }
 
     public void a(ILiveRelationshipObserver iLiveRelationshipObserver) {

@@ -76,7 +76,7 @@ public class VideoView extends BaseVideoView {
             this.l = new BaseVideoView.h(this.o);
             this.e.Code(this.l);
         }
-        if (this.f23004c) {
+        if (this.f9396c) {
             Code(this.i);
         }
     }

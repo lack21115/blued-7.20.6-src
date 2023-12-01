@@ -4,12 +4,8 @@ import java.nio.FloatBuffer;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/test/gles/Drawable2d.class */
 public class Drawable2d {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final float[] f11281a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final FloatBuffer f11282c;
+    private static final float[] a;
+    private static final FloatBuffer c;
     private static final float[] e;
     private static final FloatBuffer g;
     private static final float[] i;
@@ -25,25 +21,23 @@ public class Drawable2d {
     /* renamed from: com.blued.android.module.external_sense_library.test.gles.Drawable2d$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/test/gles/Drawable2d$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f11283a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[Prefab.values().length];
-            f11283a = iArr;
+            a = iArr;
             try {
                 iArr[Prefab.TRIANGLE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f11283a[Prefab.RECTANGLE.ordinal()] = 2;
+                a[Prefab.RECTANGLE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f11283a[Prefab.FULL_RECTANGLE.ordinal()] = 3;
+                a[Prefab.FULL_RECTANGLE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -58,8 +52,8 @@ public class Drawable2d {
 
     static {
         float[] fArr = {0.0f, 0.57735026f, -0.5f, -0.28867513f, 0.5f, -0.28867513f};
-        f11281a = fArr;
-        f11282c = GlUtil.a(fArr);
+        a = fArr;
+        c = GlUtil.a(fArr);
         float[] fArr2 = {-0.5f, -0.5f, 0.5f, -0.5f, -0.5f, 0.5f, 0.5f, 0.5f};
         e = fArr2;
         g = GlUtil.a(fArr2);

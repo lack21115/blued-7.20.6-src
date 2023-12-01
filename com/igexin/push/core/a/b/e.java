@@ -9,7 +9,7 @@ import org.json.JSONObject;
 public final class e extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23404a = "PushMessageAction";
+    private static final String f9796a = "PushMessageAction";
 
     @Override // com.igexin.push.core.a.b.a
     public final boolean a(Object obj, JSONObject jSONObject) {
@@ -23,7 +23,7 @@ public final class e extends a {
                     try {
                         new String((byte[]) nVar.g, "UTF-8");
                     } catch (Exception e) {
-                        com.igexin.c.a.c.a.a(f23404a + e.toString(), new Object[0]);
+                        com.igexin.c.a.c.a.a(f9796a + e.toString(), new Object[0]);
                     }
                     bArr = (byte[]) nVar.g;
                 }

@@ -16,15 +16,15 @@ import java.util.WeakHashMap;
 public class BDImpressionTracker {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f8904a = 100;
+    private static final int f6064a = 100;
     private final b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Map<View, BDImpressionInterface> f8905c;
+    private final Map<View, BDImpressionInterface> f6065c;
     private final Map<View, com.anythink.network.baidu.impression.a<BDImpressionInterface>> d;
     private final Handler e;
     private final a f;
-    private final b.C0173b g;
+    private final b.C0102b g;
     private b.d h;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -40,10 +40,10 @@ public class BDImpressionTracker {
             for (Map.Entry entry : BDImpressionTracker.this.d.entrySet()) {
                 View view = (View) entry.getKey();
                 com.anythink.network.baidu.impression.a aVar = (com.anythink.network.baidu.impression.a) entry.getValue();
-                b.C0173b unused = BDImpressionTracker.this.g;
-                if (SystemClock.uptimeMillis() - aVar.b >= ((long) ((BDImpressionInterface) aVar.f8908a).getImpressionMinTimeViewed())) {
-                    ((BDImpressionInterface) aVar.f8908a).recordImpression(view);
-                    ((BDImpressionInterface) aVar.f8908a).setImpressionRecorded();
+                b.C0102b unused = BDImpressionTracker.this.g;
+                if (SystemClock.uptimeMillis() - aVar.b >= ((long) ((BDImpressionInterface) aVar.f6068a).getImpressionMinTimeViewed())) {
+                    ((BDImpressionInterface) aVar.f6068a).recordImpression(view);
+                    ((BDImpressionInterface) aVar.f6068a).setImpressionRecorded();
                     this.b.add(view);
                 }
             }
@@ -60,28 +60,28 @@ public class BDImpressionTracker {
     }
 
     public BDImpressionTracker(Context context) {
-        this(new WeakHashMap(), new WeakHashMap(), new b.C0173b(), new b(context), new Handler(Looper.getMainLooper()));
+        this(new WeakHashMap(), new WeakHashMap(), new b.C0102b(), new b(context), new Handler(Looper.getMainLooper()));
     }
 
     public BDImpressionTracker(Context context, int i) {
-        this(new WeakHashMap(), new WeakHashMap(), new b.C0173b(), new b(context, i), new Handler(Looper.getMainLooper()));
+        this(new WeakHashMap(), new WeakHashMap(), new b.C0102b(), new b(context, i), new Handler(Looper.getMainLooper()));
     }
 
-    private BDImpressionTracker(Map<View, BDImpressionInterface> map, Map<View, com.anythink.network.baidu.impression.a<BDImpressionInterface>> map2, b.C0173b c0173b, b bVar, Handler handler) {
-        this.f8905c = map;
+    private BDImpressionTracker(Map<View, BDImpressionInterface> map, Map<View, com.anythink.network.baidu.impression.a<BDImpressionInterface>> map2, b.C0102b c0102b, b bVar, Handler handler) {
+        this.f6065c = map;
         this.d = map2;
-        this.g = c0173b;
+        this.g = c0102b;
         this.b = bVar;
         b.d dVar = new b.d() { // from class: com.anythink.network.baidu.impression.BDImpressionTracker.1
             @Override // com.anythink.network.baidu.impression.b.d
             public final void onVisibilityChanged(List<View> list, List<View> list2) {
                 for (View view : list) {
-                    BDImpressionInterface bDImpressionInterface = (BDImpressionInterface) BDImpressionTracker.this.f8905c.get(view);
+                    BDImpressionInterface bDImpressionInterface = (BDImpressionInterface) BDImpressionTracker.this.f6065c.get(view);
                     if (bDImpressionInterface == null) {
                         BDImpressionTracker.this.removeView(view);
                     } else {
                         com.anythink.network.baidu.impression.a aVar = (com.anythink.network.baidu.impression.a) BDImpressionTracker.this.d.get(view);
-                        if (aVar == null || !bDImpressionInterface.equals(aVar.f8908a)) {
+                        if (aVar == null || !bDImpressionInterface.equals(aVar.f6068a)) {
                             BDImpressionTracker.this.d.put(view, new com.anythink.network.baidu.impression.a(bDImpressionInterface));
                         }
                     }
@@ -115,21 +115,21 @@ public class BDImpressionTracker {
     }
 
     public void addView(View view, BDImpressionInterface bDImpressionInterface) {
-        if (this.f8905c.get(view) == bDImpressionInterface) {
+        if (this.f6065c.get(view) == bDImpressionInterface) {
             return;
         }
         removeView(view);
         if (bDImpressionInterface.isImpressionRecorded()) {
             return;
         }
-        this.f8905c.put(view, bDImpressionInterface);
+        this.f6065c.put(view, bDImpressionInterface);
         b bVar = this.b;
         int impressionMinPercentageViewed = bDImpressionInterface.getImpressionMinPercentageViewed();
         bVar.a(view, view, impressionMinPercentageViewed, impressionMinPercentageViewed, bDImpressionInterface.getImpressionMinVisiblePx());
     }
 
     public void clear() {
-        this.f8905c.clear();
+        this.f6065c.clear();
         this.d.clear();
         this.b.a();
         this.e.removeMessages(0);
@@ -142,7 +142,7 @@ public class BDImpressionTracker {
     }
 
     public void removeView(View view) {
-        this.f8905c.remove(view);
+        this.f6065c.remove(view);
         this.d.remove(view);
         this.b.a(view);
     }

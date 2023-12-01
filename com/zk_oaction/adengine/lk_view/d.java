@@ -23,11 +23,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class d extends ViewGroup {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.zk_oaction.adengine.lk_sdk.c f42044a;
+    private com.zk_oaction.adengine.lk_sdk.c f28353a;
     private List<com.zk_oaction.adengine.lk_sdk.interfaces.a> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private HashMap<com.zk_oaction.adengine.lk_sdk.interfaces.a, Long> f42045c;
+    private HashMap<com.zk_oaction.adengine.lk_sdk.interfaces.a, Long> f28354c;
     private List<com.zk_oaction.adengine.lk_sdk.interfaces.a> d;
     private List<com.zk_oaction.adengine.lk_sdk.interfaces.a> e;
     private ArrayList<View.OnTouchListener> f;
@@ -70,16 +70,16 @@ public class d extends ViewGroup {
                     if (d.this.e != null) {
                         d.this.e.clear();
                     }
-                    if (d.this.f42044a == null || d.this.f42044a.k == null) {
+                    if (d.this.f28353a == null || d.this.f28353a.k == null) {
                         return;
                     }
-                    d.this.f42044a.k.d();
+                    d.this.f28353a.k.d();
                 } else if (i == 2) {
                     if (d.this.d.isEmpty() || d.this.e.isEmpty()) {
                         for (com.zk_oaction.adengine.lk_sdk.interfaces.a aVar2 : d.this.b) {
                             g gVar = (g) message.obj;
-                            aVar2.c(gVar.f42052a, gVar.b);
-                            aVar2.d(gVar.f42052a, gVar.b);
+                            aVar2.c(gVar.f28361a, gVar.b);
+                            aVar2.d(gVar.f28361a, gVar.b);
                         }
                     }
                 }
@@ -104,32 +104,32 @@ public class d extends ViewGroup {
     public class c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f42048a;
+        final /* synthetic */ View f28357a;
 
         c(View view) {
-            this.f42048a = view;
+            this.f28357a = view;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            d.this.addView(this.f42048a);
+            d.this.addView(this.f28357a);
         }
     }
 
     /* renamed from: com.zk_oaction.adengine.lk_view.d$d  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_view/d$d.class */
-    class RunnableC1116d implements Runnable {
+    class RunnableC0946d implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f42049a;
+        final /* synthetic */ View f28358a;
 
-        RunnableC1116d(View view) {
-            this.f42049a = view;
+        RunnableC0946d(View view) {
+            this.f28358a = view;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            d.this.removeView(this.f42049a);
+            d.this.removeView(this.f28358a);
         }
     }
 
@@ -147,8 +147,8 @@ public class d extends ViewGroup {
         @Override // android.view.GestureDetector.OnGestureListener
         public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
             try {
-                if (d.this.f42044a != null && d.this.f42044a.k != null) {
-                    d.this.f42044a.k.a(motionEvent, motionEvent2, f, f2);
+                if (d.this.f28353a != null && d.this.f28353a.k != null) {
+                    d.this.f28353a.k.a(motionEvent, motionEvent2, f, f2);
                     d.this.o = true;
                 }
                 for (com.zk_oaction.adengine.lk_sdk.interfaces.a aVar : d.this.b) {
@@ -165,10 +165,10 @@ public class d extends ViewGroup {
 
         @Override // android.view.GestureDetector.OnGestureListener
         public void onLongPress(MotionEvent motionEvent) {
-            if (d.this.f42044a == null || d.this.f42044a.k == null) {
+            if (d.this.f28353a == null || d.this.f28353a.k == null) {
                 return;
             }
-            d.this.f42044a.k.d();
+            d.this.f28353a.k.d();
             d.this.p = true;
         }
 
@@ -208,11 +208,11 @@ public class d extends ViewGroup {
     public class g {
 
         /* renamed from: a  reason: collision with root package name */
-        private float f42052a;
+        private float f28361a;
         private float b;
 
         public g(d dVar, float f, float f2) {
-            this.f42052a = f;
+            this.f28361a = f;
             this.b = f2;
         }
     }
@@ -222,18 +222,18 @@ public class d extends ViewGroup {
         this.k = 0L;
         this.q = 0.0f;
         this.r = 0.0f;
-        this.f42044a = cVar;
+        this.f28353a = cVar;
         this.s = new ArrayList<>();
         this.b = new CopyOnWriteArrayList();
-        this.f42045c = new HashMap<>();
+        this.f28354c = new HashMap<>();
         this.d = new CopyOnWriteArrayList();
         this.e = new CopyOnWriteArrayList();
         this.f = new ArrayList<>();
         this.j = new a(Looper.getMainLooper());
-        this.g = new Scroller(this.f42044a.j, new BounceInterpolator());
-        if (this.f42044a != null) {
+        this.g = new Scroller(this.f28353a.j, new BounceInterpolator());
+        if (this.f28353a != null) {
             Thread currentThread = Thread.currentThread();
-            com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f42044a;
+            com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f28353a;
             if (currentThread == cVar2.w) {
                 b();
                 return;
@@ -248,10 +248,10 @@ public class d extends ViewGroup {
             float x = motionEvent.getX();
             float y = motionEvent.getY();
             long uptimeMillis = SystemClock.uptimeMillis();
-            Iterator<com.zk_oaction.adengine.lk_sdk.interfaces.a> it = this.f42044a.q.iterator();
+            Iterator<com.zk_oaction.adengine.lk_sdk.interfaces.a> it = this.f28353a.q.iterator();
             while (it.hasNext()) {
                 com.zk_oaction.adengine.lk_sdk.interfaces.a next = it.next();
-                if (!next.c() && next.a(x, y) && !this.d.contains(next) && this.b.contains(next) && uptimeMillis - this.f42045c.get(next).longValue() <= 100) {
+                if (!next.c() && next.a(x, y) && !this.d.contains(next) && this.b.contains(next) && uptimeMillis - this.f28354c.get(next).longValue() <= 100) {
                     this.e.add(next);
                 }
             }
@@ -262,18 +262,18 @@ public class d extends ViewGroup {
     private void a(MotionEvent motionEvent, float f2, float f3) {
         this.l = f2;
         this.m = f3;
-        com.zk_oaction.adengine.lk_sdk.c cVar = this.f42044a;
+        com.zk_oaction.adengine.lk_sdk.c cVar = this.f28353a;
         float f4 = cVar.t;
         float f5 = f2 / f4;
         float f6 = f3 / f4;
         cVar.a("touch_x", "" + f5);
-        com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f42044a;
+        com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f28353a;
         cVar2.a("touch_y", "" + f6);
-        com.zk_oaction.adengine.lk_interfaces.a aVar = this.f42044a.k;
+        com.zk_oaction.adengine.lk_interfaces.a aVar = this.f28353a.k;
         if (aVar != null) {
             aVar.a(motionEvent, (int) f2, (int) f3);
         }
-        com.zk_oaction.adengine.lk_sdk.c cVar3 = this.f42044a;
+        com.zk_oaction.adengine.lk_sdk.c cVar3 = this.f28353a;
         if (cVar3.A) {
             cVar3.a("touch_pressure", "" + motionEvent.getPressure());
         }
@@ -286,15 +286,15 @@ public class d extends ViewGroup {
     }
 
     private void b(MotionEvent motionEvent, float f2, float f3) {
-        com.zk_oaction.adengine.lk_sdk.c cVar = this.f42044a;
-        cVar.a("touch_x", "" + (f2 / this.f42044a.t));
-        com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f42044a;
-        cVar2.a("touch_y", "" + (f3 / this.f42044a.t));
-        com.zk_oaction.adengine.lk_interfaces.a aVar = this.f42044a.k;
+        com.zk_oaction.adengine.lk_sdk.c cVar = this.f28353a;
+        cVar.a("touch_x", "" + (f2 / this.f28353a.t));
+        com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f28353a;
+        cVar2.a("touch_y", "" + (f3 / this.f28353a.t));
+        com.zk_oaction.adengine.lk_interfaces.a aVar = this.f28353a.k;
         if (aVar != null) {
             aVar.b(motionEvent, (int) f2, (int) f3);
         }
-        com.zk_oaction.adengine.lk_sdk.c cVar3 = this.f42044a;
+        com.zk_oaction.adengine.lk_sdk.c cVar3 = this.f28353a;
         if (cVar3.A) {
             cVar3.a("touch_pressure", "" + motionEvent.getPressure());
         }
@@ -306,7 +306,7 @@ public class d extends ViewGroup {
         try {
             float f4 = f2 - this.l;
             float f5 = f3 - this.m;
-            if (Math.sqrt((f4 * f4) + (f5 * f5)) > this.f42044a.j.getResources().getDisplayMetrics().density * 10.0f) {
+            if (Math.sqrt((f4 * f4) + (f5 * f5)) > this.f28353a.j.getResources().getDisplayMetrics().density * 10.0f) {
                 this.j.removeMessages(1);
             }
         } catch (Throwable th) {
@@ -315,18 +315,18 @@ public class d extends ViewGroup {
 
     private void c(MotionEvent motionEvent, float f2, float f3) {
         Handler handler;
-        com.zk_oaction.adengine.lk_sdk.c cVar = this.f42044a;
+        com.zk_oaction.adengine.lk_sdk.c cVar = this.f28353a;
         float f4 = cVar.t;
         float f5 = f2 / f4;
         float f6 = f3 / f4;
         cVar.a("touch_x", "" + f5);
-        com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f42044a;
+        com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f28353a;
         cVar2.a("touch_y", "" + f6);
-        com.zk_oaction.adengine.lk_interfaces.a aVar = this.f42044a.k;
+        com.zk_oaction.adengine.lk_interfaces.a aVar = this.f28353a.k;
         if (aVar != null) {
             aVar.c(motionEvent, (int) f2, (int) f3);
         }
-        com.zk_oaction.adengine.lk_sdk.c cVar3 = this.f42044a;
+        com.zk_oaction.adengine.lk_sdk.c cVar3 = this.f28353a;
         if (cVar3.A) {
             cVar3.a("touch_pressure", "" + motionEvent.getPressure());
         }
@@ -348,11 +348,11 @@ public class d extends ViewGroup {
     }
 
     private void d(MotionEvent motionEvent, float f2, float f3) {
-        com.zk_oaction.adengine.lk_sdk.c cVar = this.f42044a;
-        cVar.a("touch_x", "" + (f2 / this.f42044a.t));
-        com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f42044a;
-        cVar2.a("touch_y", "" + (f3 / this.f42044a.t));
-        com.zk_oaction.adengine.lk_sdk.c cVar3 = this.f42044a;
+        com.zk_oaction.adengine.lk_sdk.c cVar = this.f28353a;
+        cVar.a("touch_x", "" + (f2 / this.f28353a.t));
+        com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f28353a;
+        cVar2.a("touch_y", "" + (f3 / this.f28353a.t));
+        com.zk_oaction.adengine.lk_sdk.c cVar3 = this.f28353a;
         if (cVar3.A) {
             cVar3.a("touch_pressure", "" + motionEvent.getPressure());
         }
@@ -381,7 +381,7 @@ public class d extends ViewGroup {
     public void a(View view) {
         this.s.add(view);
         Thread currentThread = Thread.currentThread();
-        com.zk_oaction.adengine.lk_sdk.c cVar = this.f42044a;
+        com.zk_oaction.adengine.lk_sdk.c cVar = this.f28353a;
         if (currentThread == cVar.w) {
             addView(view);
             return;
@@ -404,12 +404,12 @@ public class d extends ViewGroup {
         try {
             this.s.remove(view);
             Thread currentThread = Thread.currentThread();
-            com.zk_oaction.adengine.lk_sdk.c cVar = this.f42044a;
+            com.zk_oaction.adengine.lk_sdk.c cVar = this.f28353a;
             if (currentThread == cVar.w) {
                 removeView(view);
                 return;
             }
-            cVar.y.post(new RunnableC1116d(view));
+            cVar.y.post(new RunnableC0946d(view));
         } catch (Exception e2) {
             e2.printStackTrace();
         }
@@ -426,7 +426,7 @@ public class d extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.f42044a.B) {
+        if (this.f28353a.B) {
             return false;
         }
         if (motionEvent.getAction() == 0) {
@@ -458,34 +458,34 @@ public class d extends ViewGroup {
             if (motionEvent.getAction() == 0) {
                 float x = motionEvent.getX();
                 float y = motionEvent.getY();
-                com.zk_oaction.adengine.lk_sdk.c cVar = this.f42044a;
+                com.zk_oaction.adengine.lk_sdk.c cVar = this.f28353a;
                 float f2 = cVar.t;
                 float f3 = x / f2;
                 float f4 = y / f2;
                 cVar.a("touch_x", "" + f3);
-                com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f42044a;
+                com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f28353a;
                 cVar2.a("touch_y", "" + f4);
-                com.zk_oaction.adengine.lk_sdk.c cVar3 = this.f42044a;
+                com.zk_oaction.adengine.lk_sdk.c cVar3 = this.f28353a;
                 cVar3.a("touch_begin_x", "" + f3);
-                com.zk_oaction.adengine.lk_sdk.c cVar4 = this.f42044a;
+                com.zk_oaction.adengine.lk_sdk.c cVar4 = this.f28353a;
                 cVar4.a("touch_begin_y", "" + f4);
                 this.d.clear();
                 long uptimeMillis = SystemClock.uptimeMillis();
                 if (this.k == 0) {
                     this.k = uptimeMillis;
                 }
-                Iterator<com.zk_oaction.adengine.lk_sdk.interfaces.a> it = this.f42044a.q.iterator();
+                Iterator<com.zk_oaction.adengine.lk_sdk.interfaces.a> it = this.f28353a.q.iterator();
                 while (it.hasNext()) {
                     com.zk_oaction.adengine.lk_sdk.interfaces.a next = it.next();
                     if (next.c() || !next.a(x, y)) {
                         this.b.remove(next);
-                        this.f42045c.remove(next);
+                        this.f28354c.remove(next);
                     } else {
-                        if (this.b.contains(next) && uptimeMillis - this.f42045c.get(next).longValue() <= 300) {
+                        if (this.b.contains(next) && uptimeMillis - this.f28354c.get(next).longValue() <= 300) {
                             this.d.add(next);
                             this.e.remove(next);
                         }
-                        this.f42045c.put(next, Long.valueOf(uptimeMillis));
+                        this.f28354c.put(next, Long.valueOf(uptimeMillis));
                         if (!this.b.contains(next)) {
                             this.b.add(next);
                         }
@@ -509,9 +509,8 @@ public class d extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int i5 = 0;
         while (true) {
             int i6 = i5;
@@ -524,9 +523,8 @@ public class d extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
     }
 

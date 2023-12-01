@@ -9,6 +9,7 @@ import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.common.SystemPropUtils;
 import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.Locale;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/framework/network/grs/local/model/CountryCodeBean.class */
@@ -27,10 +28,10 @@ public class CountryCodeBean {
     private static final String TAG = "CountryCodeBean";
     private static final String VENDORCOUNTRY_SYSTEMPROP = "ro.hw.country";
     private String countryCode;
-    private String countrySource = "UNKNOWN";
+    private String countrySource = GrsBaseInfo.CountryCodeSource.UNKNOWN;
 
     public CountryCodeBean(Context context, boolean z) {
-        this.countryCode = "UNKNOWN";
+        this.countryCode = GrsBaseInfo.CountryCodeSource.UNKNOWN;
         init(context, z);
         this.countryCode = this.countryCode.toUpperCase(Locale.ENGLISH);
     }
@@ -38,8 +39,8 @@ public class CountryCodeBean {
     private void checkCodeLenth() {
         String str = this.countryCode;
         if (str == null || str.length() != 2) {
-            this.countryCode = "UNKNOWN";
-            this.countrySource = "UNKNOWN";
+            this.countryCode = GrsBaseInfo.CountryCodeSource.UNKNOWN;
+            this.countrySource = GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 
@@ -71,12 +72,12 @@ public class CountryCodeBean {
 
     private void getProductCountryCode() {
         int lastIndexOf;
-        this.countryCode = SystemPropUtils.getProperty(MonitorConstants.CONNECT_TYPE_GET, LOCALE_REGION_COUNTRYSYSTEMPROP, ANDRIOD_SYSTEMPROP, "UNKNOWN");
+        this.countryCode = SystemPropUtils.getProperty(MonitorConstants.CONNECT_TYPE_GET, LOCALE_REGION_COUNTRYSYSTEMPROP, ANDRIOD_SYSTEMPROP, GrsBaseInfo.CountryCodeSource.UNKNOWN);
         String str = TAG;
         Logger.i(str, "countryCode by ro.product.locale.region is: " + this.countryCode);
-        if (TextUtils.isEmpty(this.countryCode) || "UNKNOWN".equals(this.countryCode)) {
-            String property = SystemPropUtils.getProperty(MonitorConstants.CONNECT_TYPE_GET, LOCALE_COUNTRYSYSTEMPROP, ANDRIOD_SYSTEMPROP, "UNKNOWN");
-            if (!TextUtils.isEmpty(property) && (lastIndexOf = property.lastIndexOf("-")) != -1) {
+        if (TextUtils.isEmpty(this.countryCode) || GrsBaseInfo.CountryCodeSource.UNKNOWN.equals(this.countryCode)) {
+            String property = SystemPropUtils.getProperty(MonitorConstants.CONNECT_TYPE_GET, LOCALE_COUNTRYSYSTEMPROP, ANDRIOD_SYSTEMPROP, GrsBaseInfo.CountryCodeSource.UNKNOWN);
+            if (!TextUtils.isEmpty(property) && (lastIndexOf = property.lastIndexOf(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) != -1) {
                 this.countryCode = property.substring(lastIndexOf + 1);
                 String str2 = TAG;
                 Logger.i(str2, "countryCode by ro.product.locale is: " + this.countryCode);
@@ -85,7 +86,7 @@ public class CountryCodeBean {
         if ("cn".equalsIgnoreCase(this.countryCode)) {
             return;
         }
-        this.countryCode = "UNKNOWN";
+        this.countryCode = GrsBaseInfo.CountryCodeSource.UNKNOWN;
     }
 
     private void getRegionSettingCountryCode() {
@@ -93,7 +94,7 @@ public class CountryCodeBean {
         String str = TAG;
         Logger.i(str, "countryCode by system's region setting is: " + this.countryCode);
         if (TextUtils.isEmpty(this.countryCode)) {
-            this.countryCode = "UNKNOWN";
+            this.countryCode = GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 
@@ -129,12 +130,12 @@ public class CountryCodeBean {
 
     private void getVendorCountryCode() {
         this.countrySource = GrsBaseInfo.CountryCodeSource.VENDOR_COUNTRY;
-        this.countryCode = SystemPropUtils.getProperty(MonitorConstants.CONNECT_TYPE_GET, "ro.hw.country", ANDRIOD_SYSTEMPROP, "UNKNOWN");
+        this.countryCode = SystemPropUtils.getProperty(MonitorConstants.CONNECT_TYPE_GET, "ro.hw.country", ANDRIOD_SYSTEMPROP, GrsBaseInfo.CountryCodeSource.UNKNOWN);
         String str = TAG;
         Logger.i(str, "countryCode by ro.hw.country is: " + this.countryCode);
         if (SPECIAL_COUNTRYCODE_EU.equalsIgnoreCase(this.countryCode) || SPECIAL_COUNTRYCODE_LA.equalsIgnoreCase(this.countryCode)) {
-            this.countryCode = "UNKNOWN";
-            this.countrySource = "UNKNOWN";
+            this.countryCode = GrsBaseInfo.CountryCodeSource.UNKNOWN;
+            this.countrySource = GrsBaseInfo.CountryCodeSource.UNKNOWN;
         } else if (!SPECIAL_COUNTRYCODE_UK.equalsIgnoreCase(this.countryCode)) {
             checkCodeLenth();
         } else {
@@ -169,7 +170,7 @@ public class CountryCodeBean {
     }
 
     private boolean isCodeValidate() {
-        return !"UNKNOWN".equals(this.countryCode);
+        return !GrsBaseInfo.CountryCodeSource.UNKNOWN.equals(this.countryCode);
     }
 
     public String getCountryCode() {

@@ -4,11 +4,11 @@ package com.youzan.spiderman.c.e;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f41770a = 0;
+    private long f28079a = 0;
     private long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f41771c = 0;
+    private long f28080c = 0;
 
     public final long a() {
         return this.b;
@@ -19,18 +19,18 @@ public class e {
     }
 
     public final long b() {
-        return this.f41770a;
+        return this.f28079a;
     }
 
     public final void b(long j) {
-        this.f41770a = j;
+        this.f28079a = j;
     }
 
     public final long c() {
-        return this.f41771c;
+        return this.f28080c;
     }
 
     public final void c(long j) {
-        this.f41771c = j;
+        this.f28080c = j;
     }
 }

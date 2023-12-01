@@ -12,9 +12,8 @@ import com.tencent.cos.xml.transfer.COSUploadTask;
 import com.tencent.qcloud.core.http.HttpTaskMetrics;
 import java.util.Set;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/transfer/SerialUploadPartsTask.class */
-public class SerialUploadPartsTask extends BaseUploadPartsTask {
+class SerialUploadPartsTask extends BaseUploadPartsTask {
     private UploadPartRequest currentUploadPartRequest;
     private volatile HttpTaskMetrics httpTaskMetrics;
     private int mPartNumber;

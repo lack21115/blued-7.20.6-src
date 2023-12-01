@@ -22,11 +22,11 @@ import java.io.File;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private d f35621a;
+    private d f21930a;
     private FaceVerifyStatus b;
 
     public a(d dVar, FaceVerifyStatus faceVerifyStatus) {
-        this.f35621a = dVar;
+        this.f21930a = dVar;
         this.b = faceVerifyStatus;
     }
 
@@ -46,9 +46,9 @@ public class a {
             str7 = "" + str6.length();
         }
         WLogger.d("CompareService", "prepareAndStartNetworkUpload:" + str7);
-        com.tencent.cloud.huiyansdkface.facelight.a.b.a x = this.f35621a.x();
+        com.tencent.cloud.huiyansdkface.facelight.a.b.a x = this.f21930a.x();
         String R = x.R();
-        String t = this.f35621a.e().t();
+        String t = this.f21930a.e().t();
         SelectData selectData = new SelectData(Float.valueOf(str).floatValue());
         WLogger.d("CompareService", "selectData=" + selectData.toString());
         byte[] videoByte = WeMediaManager.getInstance().getVideoByte();
@@ -91,7 +91,7 @@ public class a {
         flashReq.liveImage = yTImageInfo;
         flashReq.eyeImage = yTImageInfo2;
         flashReq.mouthImage = yTImageInfo3;
-        WbFaceModeProviders.faceMode().getFaceResult(this.f35621a.e().ak(), bArr3, bArr5, str8, R, t, flashReq, str2, str3, str4, str5, str6, processCallback);
+        WbFaceModeProviders.faceMode().getFaceResult(this.f21930a.e().ak(), bArr3, bArr5, str8, R, t, flashReq, str2, str3, str4, str5, str6, processCallback);
     }
 
     public void a(Context context, final boolean z, final File file, final ProcessCallback processCallback) {
@@ -110,7 +110,7 @@ public class a {
         }
         final String a2 = b.a(context, b);
         WLogger.d("CompareService", "videoProguardPath =" + a2);
-        WbFaceModeProviders.faceMode().uploadFaceWillVideo(this.f35621a.e().aj(), str, a2, new ProcessCallback() { // from class: com.tencent.cloud.huiyansdkface.facelight.process.a.a.1
+        WbFaceModeProviders.faceMode().uploadFaceWillVideo(this.f21930a.e().aj(), str, a2, new ProcessCallback() { // from class: com.tencent.cloud.huiyansdkface.facelight.process.a.a.1
             @Override // com.tencent.cloud.huiyansdkface.facelight.provider.ProcessCallback
             public void onFailed(WbFaceInnerError wbFaceInnerError) {
                 if (!z) {

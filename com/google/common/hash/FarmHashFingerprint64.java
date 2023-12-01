@@ -1,6 +1,5 @@
 package com.google.common.hash;
 
-import android.widget.ExpandableListView;
 import com.google.common.base.Preconditions;
 
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/hash/FarmHashFingerprint64.class */
@@ -24,7 +23,7 @@ final class FarmHashFingerprint64 extends AbstractNonStreamingHashFunction {
             long load642 = LittleEndianByteArray.load64(bArr, (i + i2) - 8);
             return hashLength16((Long.rotateRight(load642, 37) * j) + load64, (Long.rotateRight(load64, 25) + load642) * j, j);
         } else if (i2 >= 4) {
-            return hashLength16(i2 + ((LittleEndianByteArray.load32(bArr, i) & ExpandableListView.PACKED_POSITION_VALUE_NULL) << 3), LittleEndianByteArray.load32(bArr, (i + i2) - 4) & ExpandableListView.PACKED_POSITION_VALUE_NULL, (i2 * 2) - 7286425919675154353L);
+            return hashLength16(i2 + ((LittleEndianByteArray.load32(bArr, i) & 4294967295L) << 3), LittleEndianByteArray.load32(bArr, (i + i2) - 4) & 4294967295L, (i2 * 2) - 7286425919675154353L);
         } else if (i2 > 0) {
             return shiftMix((((bArr[i] & 255) + ((bArr[(i2 >> 1) + i] & 255) << 8)) * K2) ^ ((i2 + ((bArr[i + (i2 - 1)] & 255) << 2)) * K0)) * K2;
         } else {

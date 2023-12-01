@@ -14,33 +14,27 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/CertificateLevelView.class */
 public final class CertificateLevelView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewCertificateLevelBinding f17902a;
+    private ViewCertificateLevelBinding a;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/CertificateLevelView$Builder.class */
     public static final class Builder {
         private boolean g;
         private IRequestHost h;
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f17903a = R.color.syc_dark_b;
+        private int a = R.color.syc_dark_b;
         private int b = R.color.syc_dark_b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f17904c = "";
+        private String c = "";
         private String d = "";
         private int e = R.drawable.yy_bg_user_card_fans;
         private int f = R.drawable.yy_icon_user_card_fans;
         private String i = "";
 
         public final int a() {
-            return this.f17903a;
+            return this.a;
         }
 
         public final void a(int i) {
-            this.f17903a = i;
+            this.a = i;
         }
 
         public final void a(IRequestHost iRequestHost) {
@@ -48,7 +42,7 @@ public final class CertificateLevelView extends RelativeLayout {
         }
 
         public final void a(String str) {
-            this.f17904c = str;
+            this.c = str;
         }
 
         public final void a(boolean z) {
@@ -68,7 +62,7 @@ public final class CertificateLevelView extends RelativeLayout {
         }
 
         public final String c() {
-            return this.f17904c;
+            return this.c;
         }
 
         public final void c(int i) {
@@ -125,24 +119,24 @@ public final class CertificateLevelView extends RelativeLayout {
     public CertificateLevelView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        ViewCertificateLevelBinding a2 = ViewCertificateLevelBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f17902a = a2;
+        ViewCertificateLevelBinding a = ViewCertificateLevelBinding.a(LayoutInflater.from(getContext()), this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
     }
 
     public final void a(Builder builder) {
         if (builder == null) {
             return;
         }
-        this.f17902a.b.setBackgroundResource(builder.e());
-        this.f17902a.f16842c.setText(builder.d());
-        this.f17902a.f16842c.setTextColor(getResources().getColor(builder.a()));
-        this.f17902a.d.setText(builder.c());
-        this.f17902a.d.setTextColor(getResources().getColor(builder.b()));
+        this.a.b.setBackgroundResource(builder.e());
+        this.a.c.setText(builder.d());
+        this.a.c.setTextColor(getResources().getColor(builder.a()));
+        this.a.d.setText(builder.c());
+        this.a.d.setTextColor(getResources().getColor(builder.b()));
         if (builder.g()) {
-            ImageLoader.a(builder.h(), builder.i()).a(this.f17902a.f16841a);
+            ImageLoader.a(builder.h(), builder.i()).a(this.a.a);
         } else {
-            this.f17902a.f16841a.setImageResource(builder.f());
+            this.a.a.setImageResource(builder.f());
         }
     }
 }

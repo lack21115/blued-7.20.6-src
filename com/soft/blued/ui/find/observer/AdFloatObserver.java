@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class AdFloatObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static AdFloatObserver f30614a = new AdFloatObserver();
+    private static AdFloatObserver f16924a = new AdFloatObserver();
     private ArrayList<IAdFloatObserver> b = new ArrayList<>();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/observer/AdFloatObserver$IAdFloatObserver.class */
@@ -19,7 +19,7 @@ public class AdFloatObserver {
     }
 
     public static AdFloatObserver a() {
-        return f30614a;
+        return f16924a;
     }
 
     public void a(IAdFloatObserver iAdFloatObserver) {

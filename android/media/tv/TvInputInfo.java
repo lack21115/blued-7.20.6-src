@@ -12,6 +12,7 @@ import android.content.res.XmlResourceParser;
 import android.graphics.drawable.Drawable;
 import android.hardware.hdmi.HdmiDeviceInfo;
 import android.net.Uri;
+import android.os.FileObserver;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.UserHandle;
@@ -21,7 +22,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseIntArray;
 import android.util.Xml;
-import com.alipay.sdk.util.i;
 import com.android.internal.R;
 import java.io.IOException;
 import java.io.InputStream;
@@ -215,7 +215,7 @@ public final class TvInputInfo implements Parcelable {
     }
 
     public static TvInputInfo createTvInputInfo(Context context, ResolveInfo resolveInfo, HdmiDeviceInfo hdmiDeviceInfo, String str, String str2, Uri uri) throws XmlPullParserException, IOException {
-        TvInputInfo createTvInputInfo = createTvInputInfo(context, resolveInfo, generateInputIdForHdmiDevice(new ComponentName(resolveInfo.serviceInfo.packageName, resolveInfo.serviceInfo.name), hdmiDeviceInfo), str, 1007, str2, uri, (hdmiDeviceInfo.getPhysicalAddress() & 4095) != 0);
+        TvInputInfo createTvInputInfo = createTvInputInfo(context, resolveInfo, generateInputIdForHdmiDevice(new ComponentName(resolveInfo.serviceInfo.packageName, resolveInfo.serviceInfo.name), hdmiDeviceInfo), str, 1007, str2, uri, (hdmiDeviceInfo.getPhysicalAddress() & FileObserver.ALL_EVENTS) != 0);
         createTvInputInfo.mHdmiDeviceInfo = hdmiDeviceInfo;
         return createTvInputInfo;
     }
@@ -277,11 +277,11 @@ public final class TvInputInfo implements Parcelable {
     }
 
     private static final String generateInputIdForHardware(ComponentName componentName, TvInputHardwareInfo tvInputHardwareInfo) {
-        return componentName.flattenToShortString() + String.format("%s%s%d", "/", PREFIX_HARDWARE_DEVICE, Integer.valueOf(tvInputHardwareInfo.getDeviceId()));
+        return componentName.flattenToShortString() + String.format("%s%s%d", DELIMITER_INFO_IN_ID, PREFIX_HARDWARE_DEVICE, Integer.valueOf(tvInputHardwareInfo.getDeviceId()));
     }
 
     private static final String generateInputIdForHdmiDevice(ComponentName componentName, HdmiDeviceInfo hdmiDeviceInfo) {
-        return componentName.flattenToShortString() + String.format(String.format("%s%s%%0%sX%%0%sX", "/", PREFIX_HDMI_DEVICE, 4, 2), Integer.valueOf(hdmiDeviceInfo.getPhysicalAddress()), Integer.valueOf(hdmiDeviceInfo.getId()));
+        return componentName.flattenToShortString() + String.format(String.format("%s%s%%0%sX%%0%sX", DELIMITER_INFO_IN_ID, PREFIX_HDMI_DEVICE, 4, 2), Integer.valueOf(hdmiDeviceInfo.getPhysicalAddress()), Integer.valueOf(hdmiDeviceInfo.getId()));
     }
 
     private Drawable loadServiceIcon(Context context) {
@@ -416,7 +416,7 @@ public final class TvInputInfo implements Parcelable {
     }
 
     public String toString() {
-        return "TvInputInfo{id=" + this.mId + ", pkg=" + this.mService.serviceInfo.packageName + ", service=" + this.mService.serviceInfo.name + i.d;
+        return "TvInputInfo{id=" + this.mId + ", pkg=" + this.mService.serviceInfo.packageName + ", service=" + this.mService.serviceInfo.name + "}";
     }
 
     @Override // android.os.Parcelable

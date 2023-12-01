@@ -38,7 +38,7 @@ public class UMEnvelopeBuild {
         contentValues.put(bl.i, randomUUID.toString());
         contentValues.put(bl.j, str);
         contentValues.put(bl.k, str3);
-        bj.a(context).a(bl.f40666c, contentValues);
+        bj.a(context).a(bl.f26975c, contentValues);
         if ("i".equalsIgnoreCase(str2)) {
             UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> [有状态]inner业务，返回空 JSONObject。");
         } else if ("s".equalsIgnoreCase(str2)) {

@@ -31,18 +31,14 @@ import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 import java.text.DecimalFormat;
+import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopMultiPKRankView.class */
 public class PopMultiPKRankView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f15093a;
+    private View a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15094c;
+    private View c;
     private MyPopupWindow d;
     private View e;
     private View f;
@@ -77,11 +73,10 @@ public class PopMultiPKRankView {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopMultiPKRankView$RankingAdapter.class */
     public class RankingAdapter extends BaseQuickAdapter<LiveRankingListExtra, BaseViewHolder> {
         public RankingAdapter() {
-            super(R.layout.pop_window_ranking_list_item, null);
+            super(R.layout.pop_window_ranking_list_item, (List) null);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final LiveRankingListExtra liveRankingListExtra) {
             TextView textView = (TextView) baseViewHolder.getView(R.id.tv_rank_index);
@@ -143,7 +138,7 @@ public class PopMultiPKRankView {
 
     private void a(Context context) {
         View inflate = LayoutInflater.from(context).inflate(R.layout.pop_window_multi_pk, (ViewGroup) null);
-        this.f15093a = inflate;
+        this.a = inflate;
         View findViewById = inflate.findViewById(R.id.bg_view);
         this.b = findViewById;
         findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopMultiPKRankView.1
@@ -153,17 +148,17 @@ public class PopMultiPKRankView {
                 PopMultiPKRankView.this.a();
             }
         });
-        View findViewById2 = this.f15093a.findViewById(R.id.ll_content);
-        this.f15094c = findViewById2;
+        View findViewById2 = this.a.findViewById(R.id.ll_content);
+        this.c = findViewById2;
         findViewById2.setVisibility(8);
-        this.f15094c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopMultiPKRankView.2
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopMultiPKRankView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
             }
         });
-        ((TextView) this.f15093a.findViewById(R.id.tv_title)).setText(this.k);
-        View findViewById3 = this.f15093a.findViewById(R.id.iv_help);
+        ((TextView) this.a.findViewById(R.id.tv_title)).setText(this.k);
+        View findViewById3 = this.a.findViewById(R.id.iv_help);
         this.e = findViewById3;
         findViewById3.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopMultiPKRankView.3
             @Override // android.view.View.OnClickListener
@@ -177,15 +172,15 @@ public class PopMultiPKRankView {
                 LiveSetDataObserver.a().b(LiveRoomInfo.a().A(), 25);
             }
         });
-        RecyclerView recyclerView = (RecyclerView) this.f15093a.findViewById(R.id.recycler_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(AppInfo.d(), 1, false));
+        RecyclerView findViewById4 = this.a.findViewById(R.id.recycler_list);
+        findViewById4.setLayoutManager(new LinearLayoutManager(AppInfo.d(), 1, false));
         RankingAdapter rankingAdapter = new RankingAdapter();
         this.g = rankingAdapter;
-        recyclerView.setAdapter(rankingAdapter);
-        this.f = this.f15093a.findViewById(R.id.ll_loading);
-        MyPopupWindow myPopupWindow = new MyPopupWindow(this.f15093a, -1, -1, true);
+        findViewById4.setAdapter(rankingAdapter);
+        this.f = this.a.findViewById(R.id.ll_loading);
+        MyPopupWindow myPopupWindow = new MyPopupWindow(this.a, -1, -1, true);
         this.d = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(AppInfo.d().getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(AppInfo.d().getResources().getDrawable(com.android.internal.R.color.transparent));
         this.d.setTouchable(true);
         this.d.setOutsideTouchable(true);
         this.d.setFocusable(true);
@@ -214,15 +209,15 @@ public class PopMultiPKRankView {
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<LiveRankingListExtra, LiveRankingListExtra> bluedEntity) {
-                ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) PopMultiPKRankView.this.f15093a.findViewById(R.id.ll_anchor_rank_layout);
-                TextView textView = (TextView) PopMultiPKRankView.this.f15093a.findViewById(R.id.tv_rank_index);
-                ImageView imageView = (ImageView) PopMultiPKRankView.this.f15093a.findViewById(R.id.iv_rank_index);
-                ImageView imageView2 = (ImageView) PopMultiPKRankView.this.f15093a.findViewById(R.id.avatar);
-                TextView textView2 = (TextView) PopMultiPKRankView.this.f15093a.findViewById(R.id.tv_name);
-                TextView textView3 = (TextView) PopMultiPKRankView.this.f15093a.findViewById(R.id.tv_rank);
-                RecyclerView recyclerView = (RecyclerView) PopMultiPKRankView.this.f15093a.findViewById(R.id.recycler_list);
-                View findViewById = PopMultiPKRankView.this.f15093a.findViewById(R.id.fl_pk_list_empty);
-                PopMultiPKRankView.this.f15093a.findViewById(R.id.live_pay).setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopMultiPKRankView.4.1
+                ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) PopMultiPKRankView.this.a.findViewById(R.id.ll_anchor_rank_layout);
+                TextView textView = (TextView) PopMultiPKRankView.this.a.findViewById(R.id.tv_rank_index);
+                ImageView imageView = (ImageView) PopMultiPKRankView.this.a.findViewById(R.id.iv_rank_index);
+                ImageView imageView2 = (ImageView) PopMultiPKRankView.this.a.findViewById(R.id.avatar);
+                TextView textView2 = (TextView) PopMultiPKRankView.this.a.findViewById(R.id.tv_name);
+                TextView textView3 = (TextView) PopMultiPKRankView.this.a.findViewById(R.id.tv_rank);
+                RecyclerView findViewById = PopMultiPKRankView.this.a.findViewById(R.id.recycler_list);
+                View findViewById2 = PopMultiPKRankView.this.a.findViewById(R.id.fl_pk_list_empty);
+                PopMultiPKRankView.this.a.findViewById(R.id.live_pay).setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopMultiPKRankView.4.1
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view) {
                         Tracker.onClick(view);
@@ -232,14 +227,14 @@ public class PopMultiPKRankView {
                 });
                 if (!bluedEntity.hasData()) {
                     shapeLinearLayout.setVisibility(8);
-                    findViewById.setVisibility(0);
-                    recyclerView.setVisibility(8);
+                    findViewById2.setVisibility(0);
+                    findViewById.setVisibility(8);
                     PopMultiPKRankView.this.b();
                     return;
                 }
                 shapeLinearLayout.setVisibility(0);
-                findViewById.setVisibility(8);
-                recyclerView.setVisibility(0);
+                findViewById2.setVisibility(8);
+                findViewById.setVisibility(0);
                 textView.setText(bluedEntity.extra.index > 10 ? "10+" : String.valueOf(bluedEntity.extra.index));
                 if (bluedEntity.extra.index == 1) {
                     if (PopMultiPKRankView.this.i == 1) {
@@ -276,36 +271,36 @@ public class PopMultiPKRankView {
                     shapeLinearLayout.setVisibility(8);
                 }
                 PopMultiPKRankView.this.g.setNewData(bluedEntity.data);
-                recyclerView.setAdapter(PopMultiPKRankView.this.g);
+                findViewById.setAdapter(PopMultiPKRankView.this.g);
             }
         }, this.j);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
-        View view = this.f15093a;
+        View view = this.a;
         if (view != null) {
             ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.ll_anchor_rank_layout);
-            RecyclerView recyclerView = (RecyclerView) this.f15093a.findViewById(R.id.recycler_list);
-            View findViewById = this.f15093a.findViewById(R.id.fl_pk_list_empty);
-            View findViewById2 = this.f15093a.findViewById(R.id.live_pay);
+            RecyclerView findViewById = this.a.findViewById(R.id.recycler_list);
+            View findViewById2 = this.a.findViewById(R.id.fl_pk_list_empty);
+            View findViewById3 = this.a.findViewById(R.id.live_pay);
             if (this.h == 0) {
-                findViewById2.setVisibility(0);
+                findViewById3.setVisibility(0);
             } else {
-                findViewById2.setVisibility(8);
+                findViewById3.setVisibility(8);
             }
             if (this.g.getData() == null || this.g.getData().size() <= 0) {
                 shapeLinearLayout.setVisibility(8);
-                findViewById.setVisibility(0);
-                recyclerView.setVisibility(8);
+                findViewById2.setVisibility(0);
+                findViewById.setVisibility(8);
             }
         }
     }
 
     public void a() {
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_SHOW_DIALOG).post(false);
-        this.f15094c.setVisibility(8);
-        this.f15094c.startAnimation(AnimationUtils.loadAnimation(AppInfo.d(), R.anim.push_bottom_out));
+        LiveEventBus.get("live_show_dialog").post(false);
+        this.c.setVisibility(8);
+        this.c.startAnimation(AnimationUtils.loadAnimation(AppInfo.d(), R.anim.push_bottom_out));
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.PopMultiPKRankView.5
             @Override // java.lang.Runnable
             public void run() {

@@ -23,7 +23,6 @@ public final class LiveVp2Adapter extends FragmentStateAdapter {
         this.e = pagerFragment;
     }
 
-    @Override // androidx.viewpager2.adapter.FragmentStateAdapter
     public boolean containsItem(long j) {
         Fragment fragment;
         Iterator<Fragment> it = this.e.iterator();
@@ -40,19 +39,16 @@ public final class LiveVp2Adapter extends FragmentStateAdapter {
         return fragment != null;
     }
 
-    @Override // androidx.viewpager2.adapter.FragmentStateAdapter
     public Fragment createFragment(int i) {
         Fragment fragment = this.e.get(i);
         Intrinsics.c(fragment, "pagerFragment[position]");
         return fragment;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemCount() {
         return this.e.size();
     }
 
-    @Override // androidx.viewpager2.adapter.FragmentStateAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
     public long getItemId(int i) {
         return this.e.get(i).hashCode();
     }

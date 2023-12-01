@@ -20,17 +20,17 @@ import androidx.savedstate.SavedStateRegistryOwner;
 public class FragmentViewLifecycleOwner implements HasDefaultViewModelProviderFactory, ViewModelStoreOwner, SavedStateRegistryOwner {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Fragment f3040a;
+    private final Fragment f2992a;
     private final ViewModelStore b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ViewModelProvider.Factory f3041c;
+    private ViewModelProvider.Factory f2993c;
     private LifecycleRegistry d = null;
     private SavedStateRegistryController e = null;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FragmentViewLifecycleOwner(Fragment fragment, ViewModelStore viewModelStore) {
-        this.f3040a = fragment;
+        this.f2992a = fragment;
         this.b = viewModelStore;
     }
 
@@ -70,13 +70,13 @@ public class FragmentViewLifecycleOwner implements HasDefaultViewModelProviderFa
     @Override // androidx.lifecycle.HasDefaultViewModelProviderFactory
     public ViewModelProvider.Factory getDefaultViewModelProviderFactory() {
         Application application;
-        ViewModelProvider.Factory defaultViewModelProviderFactory = this.f3040a.getDefaultViewModelProviderFactory();
-        if (!defaultViewModelProviderFactory.equals(this.f3040a.mDefaultFactory)) {
-            this.f3041c = defaultViewModelProviderFactory;
+        ViewModelProvider.Factory defaultViewModelProviderFactory = this.f2992a.getDefaultViewModelProviderFactory();
+        if (!defaultViewModelProviderFactory.equals(this.f2992a.mDefaultFactory)) {
+            this.f2993c = defaultViewModelProviderFactory;
             return defaultViewModelProviderFactory;
         }
-        if (this.f3041c == null) {
-            Context applicationContext = this.f3040a.requireContext().getApplicationContext();
+        if (this.f2993c == null) {
+            Context applicationContext = this.f2992a.requireContext().getApplicationContext();
             while (true) {
                 Context context = applicationContext;
                 application = null;
@@ -89,9 +89,9 @@ public class FragmentViewLifecycleOwner implements HasDefaultViewModelProviderFa
                     applicationContext = ((ContextWrapper) context).getBaseContext();
                 }
             }
-            this.f3041c = new SavedStateViewModelFactory(application, this, this.f3040a.getArguments());
+            this.f2993c = new SavedStateViewModelFactory(application, this, this.f2992a.getArguments());
         }
-        return this.f3041c;
+        return this.f2993c;
     }
 
     @Override // androidx.lifecycle.LifecycleOwner

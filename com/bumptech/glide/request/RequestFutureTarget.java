@@ -16,11 +16,11 @@ import java.util.concurrent.TimeoutException;
 public class RequestFutureTarget<R> implements FutureTarget<R>, RequestListener<R> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Waiter f21045a = new Waiter();
+    private static final Waiter f7439a = new Waiter();
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f21046c;
+    private final int f7440c;
     private final boolean d;
     private final Waiter e;
     private R f;
@@ -46,12 +46,12 @@ public class RequestFutureTarget<R> implements FutureTarget<R>, RequestListener<
     }
 
     public RequestFutureTarget(int i, int i2) {
-        this(i, i2, true, f21045a);
+        this(i, i2, true, f7439a);
     }
 
     RequestFutureTarget(int i, int i2, boolean z, Waiter waiter) {
         this.b = i;
-        this.f21046c = i2;
+        this.f7440c = i2;
         this.d = z;
         this.e = waiter;
     }
@@ -142,7 +142,7 @@ public class RequestFutureTarget<R> implements FutureTarget<R>, RequestListener<
 
     @Override // com.bumptech.glide.request.target.Target
     public void getSize(SizeReadyCallback sizeReadyCallback) {
-        sizeReadyCallback.a(this.b, this.f21046c);
+        sizeReadyCallback.a(this.b, this.f7440c);
     }
 
     @Override // java.util.concurrent.Future

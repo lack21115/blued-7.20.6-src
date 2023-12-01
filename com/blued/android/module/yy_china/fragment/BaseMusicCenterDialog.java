@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.lifecycle.LifecycleOwner;
 import com.blued.android.module.yy_china.R;
 import com.blued.android.module.yy_china.adapter.BaseMusicPagerAdapter;
 import com.blued.android.module.yy_china.databinding.FragmentYyKtvMusicCenterBinding;
@@ -16,13 +17,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/BaseMusicCenterDialog.class */
 public abstract class BaseMusicCenterDialog<T> extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17004a = new Companion(null);
+    public static final Companion a = new Companion(null);
     protected FragmentYyKtvMusicCenterBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected BaseMusicPagerAdapter<T> f17005c;
+    protected BaseMusicPagerAdapter<T> c;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/BaseMusicCenterDialog$Companion.class */
@@ -51,7 +48,7 @@ public abstract class BaseMusicCenterDialog<T> extends BaseFullScreenDialog {
 
     protected final void a(BaseMusicPagerAdapter<T> baseMusicPagerAdapter) {
         Intrinsics.e(baseMusicPagerAdapter, "<set-?>");
-        this.f17005c = baseMusicPagerAdapter;
+        this.c = baseMusicPagerAdapter;
     }
 
     protected final void a(FragmentYyKtvMusicCenterBinding fragmentYyKtvMusicCenterBinding) {
@@ -71,7 +68,7 @@ public abstract class BaseMusicCenterDialog<T> extends BaseFullScreenDialog {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final BaseMusicPagerAdapter<T> g() {
-        BaseMusicPagerAdapter<T> baseMusicPagerAdapter = this.f17005c;
+        BaseMusicPagerAdapter<T> baseMusicPagerAdapter = this.c;
         if (baseMusicPagerAdapter != null) {
             return baseMusicPagerAdapter;
         }
@@ -85,25 +82,24 @@ public abstract class BaseMusicCenterDialog<T> extends BaseFullScreenDialog {
         f().d.setTabTextColorUnfocused(R.color.syc_989898);
         f().d.setTextColor(R.color.syc_EAEAEA);
         f().d.setIndicatorColor(R.color.syc_a);
-        f().d.setViewPager(f().f16518c);
+        f().d.setViewPager(f().c);
     }
 
     public abstract void i();
 
     public abstract BaseMusicPagerAdapter<T> j();
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        getChildFragmentManager().setFragmentResultListener("key_cancel", this, new FragmentResultListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$BaseMusicCenterDialog$2NCOWWdK7wTuyuaS4gE-U6E-pVQ
-            @Override // androidx.fragment.app.FragmentResultListener
+        getChildFragmentManager().setFragmentResultListener("key_cancel", (LifecycleOwner) this, new FragmentResultListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$BaseMusicCenterDialog$2NCOWWdK7wTuyuaS4gE-U6E-pVQ
             public final void onFragmentResult(String str, Bundle bundle2) {
                 BaseMusicCenterDialog.a(BaseMusicCenterDialog.this, str, bundle2);
             }
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.fragment_yy_ktv_music_center, viewGroup, true);
@@ -111,26 +107,26 @@ public abstract class BaseMusicCenterDialog<T> extends BaseFullScreenDialog {
         FragmentYyKtvMusicCenterBinding a2 = FragmentYyKtvMusicCenterBinding.a(inflate);
         Intrinsics.c(a2, "bind(view)");
         a(a2);
-        f().f16517a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$BaseMusicCenterDialog$NVBed9EblKF54e25oocSiwoOUFg
+        f().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$BaseMusicCenterDialog$NVBed9EblKF54e25oocSiwoOUFg
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 BaseMusicCenterDialog.a(BaseMusicCenterDialog.this, view);
             }
         });
         a(j());
-        f().f16518c.setAdapter(g());
-        f().f16518c.setCurrentItem(0);
-        f().f16518c.setOffscreenPageLimit(1);
+        f().c.setAdapter(g());
+        f().c.setCurrentItem(0);
+        f().c.setOffscreenPageLimit(1);
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         LiveEventBus.get("inner_fragment_close").post("");
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

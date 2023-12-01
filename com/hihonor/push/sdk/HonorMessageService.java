@@ -17,10 +17,10 @@ import com.hihonor.push.sdk.common.data.DownMsgType;
 public abstract class HonorMessageService extends Service {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final /* synthetic */ int f22273c = 0;
+    public static final /* synthetic */ int f8665c = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    public final a f22274a;
+    public final a f8666a;
     public final Messenger b;
 
     /* loaded from: source-7994992-dex2jar.jar:com/hihonor/push/sdk/HonorMessageService$a.class */
@@ -37,7 +37,7 @@ public abstract class HonorMessageService extends Service {
                 Intent intent = new Intent();
                 intent.putExtras(data);
                 HonorMessageService honorMessageService = HonorMessageService.this;
-                int i = HonorMessageService.f22273c;
+                int i = HonorMessageService.f8665c;
                 honorMessageService.a(intent);
             }
         }
@@ -45,7 +45,7 @@ public abstract class HonorMessageService extends Service {
 
     public HonorMessageService() {
         a aVar = new a(Looper.getMainLooper());
-        this.f22274a = aVar;
+        this.f8666a = aVar;
         this.b = new Messenger(aVar);
     }
 
@@ -94,7 +94,7 @@ public abstract class HonorMessageService extends Service {
             }
         };
         a2.getClass();
-        a2.a(new d0(y.f22325c.f22326a, uVar));
+        a2.a(new d0(y.f8717c.f8718a, uVar));
     }
 
     @Override // android.app.Service

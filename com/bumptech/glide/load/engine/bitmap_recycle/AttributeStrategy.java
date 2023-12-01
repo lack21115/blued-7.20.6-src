@@ -3,12 +3,11 @@ package com.bumptech.glide.load.engine.bitmap_recycle;
 import android.graphics.Bitmap;
 import com.bumptech.glide.util.Util;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy.class */
-public class AttributeStrategy implements LruPoolStrategy {
+class AttributeStrategy implements LruPoolStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    private final KeyPool f20799a = new KeyPool();
+    private final KeyPool f7193a = new KeyPool();
     private final GroupedLinkedMap<Key, Bitmap> b = new GroupedLinkedMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -16,25 +15,25 @@ public class AttributeStrategy implements LruPoolStrategy {
     public static class Key implements Poolable {
 
         /* renamed from: a  reason: collision with root package name */
-        private final KeyPool f20800a;
+        private final KeyPool f7194a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f20801c;
+        private int f7195c;
         private Bitmap.Config d;
 
         public Key(KeyPool keyPool) {
-            this.f20800a = keyPool;
+            this.f7194a = keyPool;
         }
 
         @Override // com.bumptech.glide.load.engine.bitmap_recycle.Poolable
         public void a() {
-            this.f20800a.a(this);
+            this.f7194a.a(this);
         }
 
         public void a(int i, int i2, Bitmap.Config config) {
             this.b = i;
-            this.f20801c = i2;
+            this.f7195c = i2;
             this.d = config;
         }
 
@@ -45,7 +44,7 @@ public class AttributeStrategy implements LruPoolStrategy {
                 z = false;
                 if (this.b == key.b) {
                     z = false;
-                    if (this.f20801c == key.f20801c) {
+                    if (this.f7195c == key.f7195c) {
                         z = false;
                         if (this.d == key.d) {
                             z = true;
@@ -58,13 +57,13 @@ public class AttributeStrategy implements LruPoolStrategy {
 
         public int hashCode() {
             int i = this.b;
-            int i2 = this.f20801c;
+            int i2 = this.f7195c;
             Bitmap.Config config = this.d;
             return (((i * 31) + i2) * 31) + (config != null ? config.hashCode() : 0);
         }
 
         public String toString() {
-            return AttributeStrategy.c(this.b, this.f20801c, this.d);
+            return AttributeStrategy.c(this.b, this.f7195c, this.d);
         }
     }
 
@@ -102,12 +101,12 @@ public class AttributeStrategy implements LruPoolStrategy {
 
     @Override // com.bumptech.glide.load.engine.bitmap_recycle.LruPoolStrategy
     public Bitmap a(int i, int i2, Bitmap.Config config) {
-        return this.b.a((GroupedLinkedMap<Key, Bitmap>) this.f20799a.a(i, i2, config));
+        return this.b.a((GroupedLinkedMap<Key, Bitmap>) this.f7193a.a(i, i2, config));
     }
 
     @Override // com.bumptech.glide.load.engine.bitmap_recycle.LruPoolStrategy
     public void a(Bitmap bitmap) {
-        this.b.a(this.f20799a.a(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig()), bitmap);
+        this.b.a(this.f7193a.a(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig()), bitmap);
     }
 
     @Override // com.bumptech.glide.load.engine.bitmap_recycle.LruPoolStrategy

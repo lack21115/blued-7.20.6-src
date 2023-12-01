@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Base64;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.connect.auth.QQToken;
 import com.tencent.connect.common.BaseApi;
 import com.tencent.connect.common.Constants;
@@ -60,7 +61,7 @@ public class QzonePublish extends BaseApi {
             for (int i3 = 0; i3 < size; i3++) {
                 stringBuffer2.append(URLEncoder.encode(stringArrayList.get(i3)));
                 if (i3 != size - 1) {
-                    stringBuffer2.append(";");
+                    stringBuffer2.append(t.aE);
                 }
             }
             stringBuffer.append("&image_url=" + Base64.encodeToString(Util.getBytesUTF8(stringBuffer2.toString()), 2));

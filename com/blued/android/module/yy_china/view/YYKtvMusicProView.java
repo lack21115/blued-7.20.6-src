@@ -18,13 +18,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYKtvMusicProView.class */
 public final class YYKtvMusicProView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f18273a;
+    private String a;
     private ViewKtvMusicProBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f18274c;
+    private int c;
     private final int[] d;
     private final int[] e;
 
@@ -44,24 +40,24 @@ public final class YYKtvMusicProView extends FrameLayout {
     public YYKtvMusicProView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f18273a = "YYKtvMusicProView";
-        ViewKtvMusicProBinding a2 = ViewKtvMusicProBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.b = a2;
-        this.f18274c = -1;
+        this.a = "YYKtvMusicProView";
+        ViewKtvMusicProBinding a = ViewKtvMusicProBinding.a(LayoutInflater.from(getContext()), this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.b = a;
+        this.c = -1;
         this.d = new int[]{R.drawable.yy_ktv_style_1, R.drawable.yy_ktv_style_2, R.drawable.yy_ktv_style_3, R.drawable.yy_ktv_style_4};
         this.e = new int[]{R.color.white, R.color.white, R.color.white, R.color.white};
     }
 
     private final void b(int i) {
-        LogUtils.d(this.f18273a, Intrinsics.a("level: ", (Object) Integer.valueOf(i)));
-        this.b.f16863c.setImageResource(YYResourcesUtils.f17883a.a(i));
+        LogUtils.d(this.a, Intrinsics.a("level: ", (Object) Integer.valueOf(i)));
+        this.b.c.setImageResource(YYResourcesUtils.a.a(i));
     }
 
     private final void b(int i, int i2) {
         int i3 = (i >= this.d.length || i < 0) ? 0 : i;
-        this.f18274c = i3;
-        this.b.f16862a.setImageResource(this.d[i3]);
+        this.c = i3;
+        this.b.a.setImageResource(this.d[i3]);
         this.b.g.setText(Intrinsics.a("x ", (Object) Integer.valueOf(i2)));
         this.b.h.setText(Intrinsics.a("x ", (Object) Integer.valueOf(i2)));
         if (i == this.d.length - 1) {
@@ -110,8 +106,8 @@ public final class YYKtvMusicProView extends FrameLayout {
     public final void a() {
         this.b.i.setMaxPro(100);
         this.b.i.setPro(0);
-        this.b.f16863c.setImageResource(R.color.transparent);
-        this.f18274c = -1;
+        this.b.c.setImageResource(R.color.transparent);
+        this.c = -1;
     }
 
     public final void a(int i) {
@@ -152,7 +148,7 @@ public final class YYKtvMusicProView extends FrameLayout {
         });
         animatorSet.start();
         int pro = this.b.i.getPro();
-        LogUtils.d(this.f18273a, Intrinsics.a("progress bar current length: ", (Object) Integer.valueOf(pro)));
+        LogUtils.d(this.a, Intrinsics.a("progress bar current length: ", (Object) Integer.valueOf(pro)));
         if (pro < getMaxProgressBar()) {
             this.b.i.setPro(pro + i);
         }
@@ -172,12 +168,12 @@ public final class YYKtvMusicProView extends FrameLayout {
     }
 
     public final void setKtvLeve(int i) {
-        LogUtils.d(this.f18273a, Intrinsics.a("averageScore: ", (Object) Integer.valueOf(i)));
+        LogUtils.d(this.a, Intrinsics.a("averageScore: ", (Object) Integer.valueOf(i)));
         b(i);
     }
 
     public final void setMaxProgress(int i) {
-        LogUtils.d(this.f18273a, Intrinsics.a("progress bar max length: ", (Object) Integer.valueOf(i)));
+        LogUtils.d(this.a, Intrinsics.a("progress bar max length: ", (Object) Integer.valueOf(i)));
         this.b.i.setMaxPro(i);
     }
 }

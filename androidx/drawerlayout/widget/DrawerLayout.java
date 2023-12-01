@@ -1,5 +1,6 @@
 package androidx.drawerlayout.widget;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -32,7 +33,6 @@ import androidx.core.view.accessibility.AccessibilityViewCommand;
 import androidx.customview.view.AbsSavedState;
 import androidx.customview.widget.Openable;
 import androidx.customview.widget.ViewDragHelper;
-import androidx.drawerlayout.R;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,10 +87,10 @@ public class DrawerLayout extends ViewGroup implements Openable {
     private float z;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int[] f2782c = {16843828};
+    private static final int[] f2734c = {R.attr.colorPrimaryDark};
 
     /* renamed from: a  reason: collision with root package name */
-    static final int[] f2781a = {16842931};
+    static final int[] f2733a = {R.attr.layout_gravity};
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/drawerlayout/widget/DrawerLayout$AccessibilityDelegate.class */
     class AccessibilityDelegate extends AccessibilityDelegateCompat {
@@ -216,11 +216,11 @@ public class DrawerLayout extends ViewGroup implements Openable {
     public static class LayoutParams extends ViewGroup.MarginLayoutParams {
 
         /* renamed from: a  reason: collision with root package name */
-        float f2786a;
+        float f2738a;
         boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f2787c;
+        int f2739c;
         public int gravity;
 
         public LayoutParams(int i, int i2) {
@@ -236,7 +236,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
         public LayoutParams(Context context, AttributeSet attributeSet) {
             super(context, attributeSet);
             this.gravity = 0;
-            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, DrawerLayout.f2781a);
+            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, DrawerLayout.f2733a);
             this.gravity = obtainStyledAttributes.getInt(0, 0);
             obtainStyledAttributes.recycle();
         }
@@ -279,35 +279,35 @@ public class DrawerLayout extends ViewGroup implements Openable {
         };
 
         /* renamed from: a  reason: collision with root package name */
-        int f2788a;
+        int f2740a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f2789c;
+        int f2741c;
         int d;
         int e;
 
         public SavedState(Parcel parcel, ClassLoader classLoader) {
             super(parcel, classLoader);
-            this.f2788a = 0;
-            this.f2788a = parcel.readInt();
+            this.f2740a = 0;
+            this.f2740a = parcel.readInt();
             this.b = parcel.readInt();
-            this.f2789c = parcel.readInt();
+            this.f2741c = parcel.readInt();
             this.d = parcel.readInt();
             this.e = parcel.readInt();
         }
 
         public SavedState(Parcelable parcelable) {
             super(parcelable);
-            this.f2788a = 0;
+            this.f2740a = 0;
         }
 
         @Override // androidx.customview.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeInt(this.f2788a);
+            parcel.writeInt(this.f2740a);
             parcel.writeInt(this.b);
-            parcel.writeInt(this.f2789c);
+            parcel.writeInt(this.f2741c);
             parcel.writeInt(this.d);
             parcel.writeInt(this.e);
         }
@@ -338,7 +338,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ViewDragHelper f2791c;
+        private ViewDragHelper f2743c;
         private final Runnable d = new Runnable() { // from class: androidx.drawerlayout.widget.DrawerLayout.ViewDragCallback.1
             @Override // java.lang.Runnable
             public void run() {
@@ -364,7 +364,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
         void a() {
             View a2;
             int width;
-            int edgeSize = this.f2791c.getEdgeSize();
+            int edgeSize = this.f2743c.getEdgeSize();
             int i = 0;
             boolean z = this.b == 3;
             if (z) {
@@ -382,7 +382,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
                     return;
                 }
                 LayoutParams layoutParams = (LayoutParams) a2.getLayoutParams();
-                this.f2791c.smoothSlideViewTo(a2, width, a2.getTop());
+                this.f2743c.smoothSlideViewTo(a2, width, a2.getTop());
                 layoutParams.b = true;
                 DrawerLayout.this.invalidate();
                 b();
@@ -418,7 +418,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
             if (a2 == null || DrawerLayout.this.getDrawerLockMode(a2) != 0) {
                 return;
             }
-            this.f2791c.captureChildView(a2, i2);
+            this.f2743c.captureChildView(a2, i2);
         }
 
         @Override // androidx.customview.widget.ViewDragHelper.Callback
@@ -439,7 +439,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
 
         @Override // androidx.customview.widget.ViewDragHelper.Callback
         public void onViewDragStateChanged(int i) {
-            DrawerLayout.this.a(i, this.f2791c.getCapturedView());
+            DrawerLayout.this.a(i, this.f2743c.getCapturedView());
         }
 
         @Override // androidx.customview.widget.ViewDragHelper.Callback
@@ -526,7 +526,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
                 r8 = r0
             L6d:
                 r0 = r4
-                androidx.customview.widget.ViewDragHelper r0 = r0.f2791c
+                androidx.customview.widget.ViewDragHelper r0 = r0.f2743c
                 r1 = r8
                 r2 = r5
                 int r2 = r2.getTop()
@@ -544,7 +544,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
         }
 
         public void setDragger(ViewDragHelper viewDragHelper) {
-            this.f2791c = viewDragHelper;
+            this.f2743c = viewDragHelper;
         }
 
         @Override // androidx.customview.widget.ViewDragHelper.Callback
@@ -564,7 +564,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
     }
 
     public DrawerLayout(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.drawerLayoutStyle);
+        this(context, attributeSet, androidx.drawerlayout.R.attr.drawerLayoutStyle);
     }
 
     public DrawerLayout(Context context, AttributeSet attributeSet, int i) {
@@ -621,7 +621,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
                     }
                 });
                 setSystemUiVisibility(1280);
-                TypedArray obtainStyledAttributes = context.obtainStyledAttributes(f2782c);
+                TypedArray obtainStyledAttributes = context.obtainStyledAttributes(f2734c);
                 try {
                     this.A = obtainStyledAttributes.getDrawable(0);
                 } finally {
@@ -631,12 +631,12 @@ public class DrawerLayout extends ViewGroup implements Openable {
                 this.A = null;
             }
         }
-        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, R.styleable.DrawerLayout, i, 0);
+        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, androidx.drawerlayout.R.styleable.DrawerLayout, i, 0);
         try {
-            if (obtainStyledAttributes2.hasValue(R.styleable.DrawerLayout_elevation)) {
-                this.f = obtainStyledAttributes2.getDimension(R.styleable.DrawerLayout_elevation, 0.0f);
+            if (obtainStyledAttributes2.hasValue(androidx.drawerlayout.R.styleable.DrawerLayout_elevation)) {
+                this.f = obtainStyledAttributes2.getDimension(androidx.drawerlayout.R.styleable.DrawerLayout_elevation, 0.0f);
             } else {
-                this.f = getResources().getDimension(R.dimen.def_drawer_elevation);
+                this.f = getResources().getDimension(androidx.drawerlayout.R.dimen.def_drawer_elevation);
             }
             obtainStyledAttributes2.recycle();
             this.L = new ArrayList<>();
@@ -810,7 +810,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
                 return null;
             }
             View childAt = getChildAt(i2);
-            if ((((LayoutParams) childAt.getLayoutParams()).f2787c & 1) == 1) {
+            if ((((LayoutParams) childAt.getLayoutParams()).f2739c & 1) == 1) {
                 return childAt;
             }
             i = i2 + 1;
@@ -848,9 +848,9 @@ public class DrawerLayout extends ViewGroup implements Openable {
         }
         if (view != null && i == 0) {
             LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
-            if (layoutParams.f2786a == 0.0f) {
+            if (layoutParams.f2738a == 0.0f) {
                 a(view);
-            } else if (layoutParams.f2786a == 1.0f) {
+            } else if (layoutParams.f2738a == 1.0f) {
                 b(view);
             }
         }
@@ -876,8 +876,8 @@ public class DrawerLayout extends ViewGroup implements Openable {
     void a(View view) {
         View rootView;
         LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
-        if ((layoutParams.f2787c & 1) == 1) {
-            layoutParams.f2787c = 0;
+        if ((layoutParams.f2739c & 1) == 1) {
+            layoutParams.f2739c = 0;
             List<DrawerListener> list = this.x;
             if (list != null) {
                 int size = list.size();
@@ -1026,8 +1026,8 @@ public class DrawerLayout extends ViewGroup implements Openable {
 
     void b(View view) {
         LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
-        if ((layoutParams.f2787c & 1) == 0) {
-            layoutParams.f2787c = 1;
+        if ((layoutParams.f2739c & 1) == 0) {
+            layoutParams.f2739c = 1;
             List<DrawerListener> list = this.x;
             if (list != null) {
                 int size = list.size();
@@ -1050,15 +1050,15 @@ public class DrawerLayout extends ViewGroup implements Openable {
 
     void b(View view, float f) {
         LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
-        if (f == layoutParams.f2786a) {
+        if (f == layoutParams.f2738a) {
             return;
         }
-        layoutParams.f2786a = f;
+        layoutParams.f2738a = f;
         a(view, f);
     }
 
     float c(View view) {
-        return ((LayoutParams) view.getLayoutParams()).f2786a;
+        return ((LayoutParams) view.getLayoutParams()).f2738a;
     }
 
     void c() {
@@ -1092,9 +1092,8 @@ public class DrawerLayout extends ViewGroup implements Openable {
         b(view, f);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return (layoutParams instanceof LayoutParams) && super.checkLayoutParams(layoutParams);
     }
 
@@ -1126,10 +1125,10 @@ public class DrawerLayout extends ViewGroup implements Openable {
         }
         LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
         if (this.q) {
-            layoutParams.f2786a = 0.0f;
-            layoutParams.f2787c = 0;
+            layoutParams.f2738a = 0.0f;
+            layoutParams.f2739c = 0;
         } else if (z) {
-            layoutParams.f2787c |= 4;
+            layoutParams.f2739c |= 4;
             if (a(view, 3)) {
                 this.k.smoothSlideViewTo(view, -view.getWidth(), view.getTop());
             } else {
@@ -1157,7 +1156,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
             if (i2 >= childCount) {
                 break;
             }
-            f = Math.max(f, ((LayoutParams) getChildAt(i2).getLayoutParams()).f2786a);
+            f = Math.max(f, ((LayoutParams) getChildAt(i2).getLayoutParams()).f2738a);
             i = i2 + 1;
         }
         this.i = f;
@@ -1195,9 +1194,8 @@ public class DrawerLayout extends ViewGroup implements Openable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j) {
+    protected boolean drawChild(Canvas canvas, View view, long j) {
         int i;
         int i2;
         int height = getHeight();
@@ -1297,9 +1295,8 @@ public class DrawerLayout extends ViewGroup implements Openable {
         return ((absoluteGravity & 3) == 0 && (absoluteGravity & 5) == 0) ? false : true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateDefaultLayoutParams() {
+    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return new LayoutParams(-1, -1);
     }
 
@@ -1308,9 +1305,8 @@ public class DrawerLayout extends ViewGroup implements Openable {
         return new LayoutParams(getContext(), attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return layoutParams instanceof LayoutParams ? new LayoutParams((LayoutParams) layoutParams) : layoutParams instanceof ViewGroup.MarginLayoutParams ? new LayoutParams((ViewGroup.MarginLayoutParams) layoutParams) : new LayoutParams(layoutParams);
     }
 
@@ -1400,7 +1396,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
 
     public boolean isDrawerOpen(View view) {
         if (f(view)) {
-            return (((LayoutParams) view.getLayoutParams()).f2787c & 1) == 1;
+            return (((LayoutParams) view.getLayoutParams()).f2739c & 1) == 1;
         }
         throw new IllegalArgumentException("View " + view + " is not a drawer");
     }
@@ -1415,7 +1411,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
 
     public boolean isDrawerVisible(View view) {
         if (f(view)) {
-            return ((LayoutParams) view.getLayoutParams()).f2786a > 0.0f;
+            return ((LayoutParams) view.getLayoutParams()).f2738a > 0.0f;
         }
         throw new IllegalArgumentException("View " + view + " is not a drawer");
     }
@@ -1425,16 +1421,14 @@ public class DrawerLayout extends ViewGroup implements Openable {
         return isDrawerOpen(8388611);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.q = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.q = true;
     }
@@ -1490,9 +1484,8 @@ public class DrawerLayout extends ViewGroup implements Openable {
         return super.onKeyUp(i, keyEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         WindowInsets rootWindowInsets;
         int i5;
         float f;
@@ -1517,14 +1510,14 @@ public class DrawerLayout extends ViewGroup implements Openable {
                     if (a(childAt, 3)) {
                         int i10 = -measuredWidth;
                         float f2 = measuredWidth;
-                        i5 = i10 + ((int) (layoutParams.f2786a * f2));
+                        i5 = i10 + ((int) (layoutParams.f2738a * f2));
                         f = (measuredWidth + i5) / f2;
                     } else {
                         float f3 = measuredWidth;
-                        i5 = i7 - ((int) (layoutParams.f2786a * f3));
+                        i5 = i7 - ((int) (layoutParams.f2738a * f3));
                         f = (i7 - i5) / f3;
                     }
-                    boolean z2 = f != layoutParams.f2786a;
+                    boolean z2 = f != layoutParams.f2738a;
                     int i11 = layoutParams.gravity & 112;
                     if (i11 == 16) {
                         int i12 = i4 - i2;
@@ -1547,7 +1540,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
                     if (z2) {
                         b(childAt, f);
                     }
-                    int i15 = layoutParams.f2786a > 0.0f ? 0 : 4;
+                    int i15 = layoutParams.f2738a > 0.0f ? 0 : 4;
                     if (childAt.getVisibility() != i15) {
                         childAt.setVisibility(i15);
                     }
@@ -1566,7 +1559,6 @@ public class DrawerLayout extends ViewGroup implements Openable {
         this.q = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Code restructure failed: missing block: B:5:0x002d, code lost:
         if (r0 != 1073741824) goto L79;
      */
@@ -1575,7 +1567,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void onMeasure(int r7, int r8) {
+    protected void onMeasure(int r7, int r8) {
         /*
             Method dump skipped, instructions count: 783
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -1583,9 +1575,8 @@ public class DrawerLayout extends ViewGroup implements Openable {
         throw new UnsupportedOperationException("Method not decompiled: androidx.drawerlayout.widget.DrawerLayout.onMeasure(int, int):void");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         View a2;
         if (!(parcelable instanceof SavedState)) {
             super.onRestoreInstanceState(parcelable);
@@ -1593,14 +1584,14 @@ public class DrawerLayout extends ViewGroup implements Openable {
         }
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
-        if (savedState.f2788a != 0 && (a2 = a(savedState.f2788a)) != null) {
+        if (savedState.f2740a != 0 && (a2 = a(savedState.f2740a)) != null) {
             openDrawer(a2);
         }
         if (savedState.b != 3) {
             setDrawerLockMode(savedState.b, 3);
         }
-        if (savedState.f2789c != 3) {
-            setDrawerLockMode(savedState.f2789c, 5);
+        if (savedState.f2741c != 3) {
+            setDrawerLockMode(savedState.f2741c, 5);
         }
         if (savedState.d != 3) {
             setDrawerLockMode(savedState.d, 8388611);
@@ -1615,16 +1606,15 @@ public class DrawerLayout extends ViewGroup implements Openable {
         d();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x005c, code lost:
-        r0.f2788a = r0.gravity;
+        r0.f2740a = r0.gravity;
      */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public android.os.Parcelable onSaveInstanceState() {
+    protected android.os.Parcelable onSaveInstanceState() {
         /*
             r4 = this;
             androidx.drawerlayout.widget.DrawerLayout$SavedState r0 = new androidx.drawerlayout.widget.DrawerLayout$SavedState
@@ -1649,7 +1639,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
             androidx.drawerlayout.widget.DrawerLayout$LayoutParams r0 = (androidx.drawerlayout.widget.DrawerLayout.LayoutParams) r0
             r10 = r0
             r0 = r10
-            int r0 = r0.f2787c
+            int r0 = r0.f2739c
             r6 = r0
             r0 = 1
             r7 = r0
@@ -1664,7 +1654,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
             r6 = r0
         L3c:
             r0 = r10
-            int r0 = r0.f2787c
+            int r0 = r0.f2739c
             r1 = 2
             if (r0 != r1) goto L48
             goto L4a
@@ -1687,7 +1677,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
             r0 = r9
             r1 = r10
             int r1 = r1.gravity
-            r0.f2788a = r1
+            r0.f2740a = r1
         L66:
             r0 = r9
             r1 = r4
@@ -1696,7 +1686,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
             r0 = r9
             r1 = r4
             int r1 = r1.s
-            r0.f2789c = r1
+            r0.f2741c = r1
             r0 = r9
             r1 = r4
             int r1 = r1.t
@@ -1755,12 +1745,12 @@ public class DrawerLayout extends ViewGroup implements Openable {
         }
         LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
         if (this.q) {
-            layoutParams.f2786a = 1.0f;
-            layoutParams.f2787c = 1;
+            layoutParams.f2738a = 1.0f;
+            layoutParams.f2739c = 1;
             a(view, true);
             h(view);
         } else if (z) {
-            layoutParams.f2787c |= 2;
+            layoutParams.f2739c |= 2;
             if (a(view, 3)) {
                 this.k.smoothSlideViewTo(view, 0, view.getTop());
             } else {

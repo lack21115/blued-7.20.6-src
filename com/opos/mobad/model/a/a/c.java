@@ -12,10 +12,10 @@ import java.util.concurrent.TimeUnit;
 public class c implements com.opos.mobad.model.a.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f26378a;
+    private Context f12690a;
 
     public c(Context context) {
-        this.f26378a = context.getApplicationContext();
+        this.f12690a = context.getApplicationContext();
     }
 
     private void a(final g gVar, final CountDownLatch countDownLatch, final String str, final com.opos.mobad.i.a aVar) {
@@ -24,7 +24,7 @@ public class c implements com.opos.mobad.model.a.c {
             public void run() {
                 try {
                     try {
-                        gVar.a(str, com.opos.mobad.i.c.a(c.this.f26378a, aVar));
+                        gVar.a(str, com.opos.mobad.i.c.a(c.this.f12690a, aVar));
                     } catch (Exception e) {
                         com.opos.cmn.an.f.a.a("FetchMaterialEngine", "", (Throwable) e);
                     }

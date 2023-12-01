@@ -28,9 +28,9 @@ public final class in implements com.kwad.sdk.core.d<a.b> {
             if (i2 >= optJSONArray.length()) {
                 return;
             }
-            a.C0577a c0577a = new a.C0577a();
-            c0577a.parseJson(optJSONArray.optJSONObject(i2));
-            bVar.ayC.add(c0577a);
+            a.C0407a c0407a = new a.C0407a();
+            c0407a.parseJson(optJSONArray.optJSONObject(i2));
+            bVar.ayC.add(c0407a);
             i = i2 + 1;
         }
     }

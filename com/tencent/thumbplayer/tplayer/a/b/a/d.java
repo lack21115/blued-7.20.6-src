@@ -4,49 +4,49 @@ import com.tencent.thumbplayer.tplayer.a.b.a;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/tplayer/a/b/a/d.class */
 public class d extends com.tencent.thumbplayer.tplayer.a.b.a {
-    @a.InterfaceC1025a(a = "tpsetdatasourcetimems")
+    @a.InterfaceC0855a(a = "tpsetdatasourcetimems")
 
     /* renamed from: a  reason: collision with root package name */
-    private long f39374a;
-    @a.InterfaceC1025a(a = "convertdatasourceetimems")
+    private long f25683a;
+    @a.InterfaceC0855a(a = "convertdatasourceetimems")
     private long b;
-    @a.InterfaceC1025a(a = "tppreparetimems")
+    @a.InterfaceC0855a(a = "tppreparetimems")
 
     /* renamed from: c  reason: collision with root package name */
-    private long f39375c;
-    @a.InterfaceC1025a(a = "coreapipreparetimems")
+    private long f25684c;
+    @a.InterfaceC0855a(a = "coreapipreparetimems")
     private long d;
-    @a.InterfaceC1025a(a = "coreschedulingthreadpreparetimems")
+    @a.InterfaceC0855a(a = "coreschedulingthreadpreparetimems")
     private long e;
-    @a.InterfaceC1025a(a = "demuxerthreadpreparetimems")
+    @a.InterfaceC0855a(a = "demuxerthreadpreparetimems")
     private long f;
-    @a.InterfaceC1025a(a = "demuxeropenfilestimems")
+    @a.InterfaceC0855a(a = "demuxeropenfilestimems")
     private long g;
-    @a.InterfaceC1025a(a = "demuxeropenfileetimems")
+    @a.InterfaceC0855a(a = "demuxeropenfileetimems")
     private long h;
-    @a.InterfaceC1025a(a = "initfirstclippositionetimems")
+    @a.InterfaceC0855a(a = "initfirstclippositionetimems")
     private long i;
-    @a.InterfaceC1025a(a = "firstvideopacketreadetimems")
+    @a.InterfaceC0855a(a = "firstvideopacketreadetimems")
     private long j;
-    @a.InterfaceC1025a(a = "firstaudiopacketreadetimems")
+    @a.InterfaceC0855a(a = "firstaudiopacketreadetimems")
     private long k;
-    @a.InterfaceC1025a(a = "demuxerthreadonpreparedtimems")
+    @a.InterfaceC0855a(a = "demuxerthreadonpreparedtimems")
     private long l;
-    @a.InterfaceC1025a(a = "coreschedulingthreadonpreparedtimems")
+    @a.InterfaceC0855a(a = "coreschedulingthreadonpreparedtimems")
     private long m;
-    @a.InterfaceC1025a(a = "tponpreparedtimems")
+    @a.InterfaceC0855a(a = "tponpreparedtimems")
     private long n;
-    @a.InterfaceC1025a(a = "videodecoderopenedtimems")
+    @a.InterfaceC0855a(a = "videodecoderopenedtimems")
     private long o;
-    @a.InterfaceC1025a(a = "firstvideoframerenderetimems")
+    @a.InterfaceC0855a(a = "firstvideoframerenderetimems")
     private long p;
-    @a.InterfaceC1025a(a = "audiodecoderopenedtimems")
+    @a.InterfaceC0855a(a = "audiodecoderopenedtimems")
     private long q;
-    @a.InterfaceC1025a(a = "firstaudioframerenderetimems")
+    @a.InterfaceC0855a(a = "firstaudioframerenderetimems")
     private long r;
 
     public void c(long j) {
-        this.f39374a = j;
+        this.f25683a = j;
     }
 
     public void d(long j) {
@@ -54,7 +54,7 @@ public class d extends com.tencent.thumbplayer.tplayer.a.b.a {
     }
 
     public void e(long j) {
-        this.f39375c = j;
+        this.f25684c = j;
     }
 
     public void f(long j) {

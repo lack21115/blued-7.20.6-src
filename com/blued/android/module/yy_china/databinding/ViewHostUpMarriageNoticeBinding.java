@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewHostUpMarriageNoticeBinding.class */
 public final class ViewHostUpMarriageNoticeBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16858a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final HollowView f16859c;
+    public final HollowView c;
     public final ImageView d;
     public final ConstraintLayout e;
     public final BluedMarqueeTextView f;
@@ -26,9 +22,9 @@ public final class ViewHostUpMarriageNoticeBinding implements ViewBinding {
 
     private ViewHostUpMarriageNoticeBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, HollowView hollowView, ImageView imageView3, ConstraintLayout constraintLayout2, BluedMarqueeTextView bluedMarqueeTextView) {
         this.g = constraintLayout;
-        this.f16858a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16859c = hollowView;
+        this.c = hollowView;
         this.d = imageView3;
         this.e = constraintLayout2;
         this.f = bluedMarqueeTextView;
@@ -52,11 +48,11 @@ public final class ViewHostUpMarriageNoticeBinding implements ViewBinding {
                 if (hollowView != null) {
                     ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_us);
                     if (imageView3 != null) {
-                        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.notify_view);
-                        if (constraintLayout != null) {
+                        ConstraintLayout findViewById = view.findViewById(R.id.notify_view);
+                        if (findViewById != null) {
                             BluedMarqueeTextView bluedMarqueeTextView = (BluedMarqueeTextView) view.findViewById(R.id.tv_notice_text);
                             if (bluedMarqueeTextView != null) {
-                                return new ViewHostUpMarriageNoticeBinding((ConstraintLayout) view, imageView, imageView2, hollowView, imageView3, constraintLayout, bluedMarqueeTextView);
+                                return new ViewHostUpMarriageNoticeBinding((ConstraintLayout) view, imageView, imageView2, hollowView, imageView3, findViewById, bluedMarqueeTextView);
                             }
                             str = "tvNoticeText";
                         } else {
@@ -77,7 +73,6 @@ public final class ViewHostUpMarriageNoticeBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

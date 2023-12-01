@@ -16,7 +16,7 @@ public final class b implements com.kwad.sdk.core.webview.b.a {
 
     private void R(AdTemplate adTemplate) {
         adTemplate.mIsForceJumpLandingPage = true;
-        com.kwad.components.core.d.b.a.a(new a.C0519a(this.mBridgeContext.LD.getContext()).I(adTemplate).ap(1).aq(false));
+        com.kwad.components.core.d.b.a.a(new a.C0349a(this.mBridgeContext.LD.getContext()).I(adTemplate).ap(1).aq(false));
     }
 
     @Override // com.kwad.sdk.core.webview.b.a

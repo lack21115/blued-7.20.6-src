@@ -11,11 +11,11 @@ import java.util.concurrent.Callable;
 public abstract class j extends g.a implements com.opos.mobad.ad.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private b.a f26307a;
+    private b.a f12619a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f26308c;
+    private long f12620c;
     private p d;
     public Handler e;
     o f;
@@ -30,7 +30,7 @@ public abstract class j extends g.a implements com.opos.mobad.ad.b {
                 j.this.l();
             }
         });
-        this.f26307a = aVar;
+        this.f12619a = aVar;
         this.b = i;
     }
 
@@ -77,7 +77,7 @@ public abstract class j extends g.a implements com.opos.mobad.ad.b {
         this.d.a();
         int a2 = this.f.a(6, callable);
         com.opos.cmn.an.f.a.b("SyncStateController", "onTimeout state=" + a2 + ",Ad = " + this);
-        if (6 != a2 || (aVar = this.f26307a) == null) {
+        if (6 != a2 || (aVar = this.f12619a) == null) {
             return;
         }
         aVar.a(-1, "load ad timeout");
@@ -99,10 +99,10 @@ public abstract class j extends g.a implements com.opos.mobad.ad.b {
                 }
                 int a2 = j.this.f.a(1, 0);
                 com.opos.cmn.an.f.a.b("SyncStateController", "onLoadFailed state=" + a2 + ",Ad = " + this);
-                if (5 == a2 || j.this.f26307a == null) {
+                if (5 == a2 || j.this.f12619a == null) {
                     return;
                 }
-                j.this.f26307a.a(i, str);
+                j.this.f12619a.a(i, str);
             }
         });
     }
@@ -114,14 +114,14 @@ public abstract class j extends g.a implements com.opos.mobad.ad.b {
             return;
         }
         if (5 == a2) {
-            b.a aVar = this.f26307a;
+            b.a aVar = this.f12619a;
             if (aVar != null) {
                 aVar.a(11001, "ad has destroyed.");
                 return;
             }
             return;
         }
-        b.a aVar2 = this.f26307a;
+        b.a aVar2 = this.f12619a;
         if (aVar2 != null) {
             aVar2.a(-1, "load with illegal state:" + a2);
         }
@@ -145,10 +145,10 @@ public abstract class j extends g.a implements com.opos.mobad.ad.b {
             public void run() {
                 int a2 = j.this.f.a(0);
                 com.opos.cmn.an.f.a.b("SyncStateController", "onAdFailed state=" + a2 + ",Ad = " + this);
-                if (5 == a2 || j.this.f26307a == null) {
+                if (5 == a2 || j.this.f12619a == null) {
                     return;
                 }
-                j.this.f26307a.a(i, str);
+                j.this.f12619a.a(i, str);
             }
         });
     }
@@ -156,12 +156,12 @@ public abstract class j extends g.a implements com.opos.mobad.ad.b {
     public final void c(Callable<Boolean> callable) {
         this.d.a();
         if (2 == this.f.a(2, callable)) {
-            this.f26308c = SystemClock.elapsedRealtime();
+            this.f12620c = SystemClock.elapsedRealtime();
             a(new Runnable() { // from class: com.opos.mobad.l.j.6
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (j.this.f26307a != null) {
-                        j.this.f26307a.a();
+                    if (j.this.f12619a != null) {
+                        j.this.f12619a.a();
                     }
                 }
             });
@@ -176,13 +176,13 @@ public abstract class j extends g.a implements com.opos.mobad.ad.b {
     public boolean e() {
         if (2 == d()) {
             int i = this.b;
-            return i <= 0 || this.f26308c + ((long) i) >= SystemClock.elapsedRealtime();
+            return i <= 0 || this.f12620c + ((long) i) >= SystemClock.elapsedRealtime();
         }
         return false;
     }
 
     public void i_() {
-        b.a aVar = this.f26307a;
+        b.a aVar = this.f12619a;
         if (aVar != null) {
             aVar.b();
         }
@@ -194,7 +194,7 @@ public abstract class j extends g.a implements com.opos.mobad.ad.b {
         this.d.a();
         int a2 = this.f.a(6);
         com.opos.cmn.an.f.a.b("SyncStateController", "onTimeout state=" + a2 + ",Ad = " + this);
-        if (6 != a2 || (aVar = this.f26307a) == null) {
+        if (6 != a2 || (aVar = this.f12619a) == null) {
             return;
         }
         aVar.a(-1, "load ad timeout");
@@ -207,12 +207,12 @@ public abstract class j extends g.a implements com.opos.mobad.ad.b {
     public final void o() {
         this.d.a();
         if (2 == this.f.a(2)) {
-            this.f26308c = SystemClock.elapsedRealtime();
+            this.f12620c = SystemClock.elapsedRealtime();
             a(new Runnable() { // from class: com.opos.mobad.l.j.5
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (j.this.f26307a != null) {
-                        j.this.f26307a.a();
+                    if (j.this.f12619a != null) {
+                        j.this.f12619a.a();
                     }
                 }
             });

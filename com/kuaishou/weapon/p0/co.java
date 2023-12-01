@@ -2,6 +2,7 @@ package com.kuaishou.weapon.p0;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import org.json.JSONObject;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kuaishou/weapon/p0/co.class */
@@ -17,7 +18,7 @@ public class co {
         JSONObject jSONObject;
         StringBuilder sb;
         try {
-            String str3 = ct.f23798a + ct.e;
+            String str3 = ct.f10190a + ct.e;
             String a2 = cu.a(context);
             String str4 = str3;
             if (!TextUtils.isEmpty(a2)) {
@@ -30,7 +31,7 @@ public class co {
                     sb.append(str3);
                     sb.append("?logId=");
                     sb.append(str2);
-                    sb.append("&");
+                    sb.append(ContainerUtils.FIELD_DELIMITER);
                 }
                 sb.append(a2);
                 str4 = sb.toString();

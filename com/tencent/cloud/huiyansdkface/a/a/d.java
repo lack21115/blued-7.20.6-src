@@ -6,11 +6,11 @@ import java.util.List;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f35437a = false;
+    private boolean f21746a = false;
     private List<com.tencent.cloud.huiyansdkface.a.a.a.d> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<com.tencent.cloud.huiyansdkface.a.a.a.d> f35438c;
+    private List<com.tencent.cloud.huiyansdkface.a.a.a.d> f21747c;
     private List<com.tencent.cloud.huiyansdkface.a.a.a.d> d;
     private List<String> e;
     private List<String> f;
@@ -28,7 +28,7 @@ public class d {
     }
 
     public d a(boolean z) {
-        this.f35437a = z;
+        this.f21746a = z;
         return this;
     }
 
@@ -42,11 +42,11 @@ public class d {
     }
 
     public boolean b() {
-        return this.f35437a;
+        return this.f21746a;
     }
 
     public d c(List<com.tencent.cloud.huiyansdkface.a.a.a.d> list) {
-        this.f35438c = list;
+        this.f21747c = list;
         return this;
     }
 
@@ -60,7 +60,7 @@ public class d {
     }
 
     public List<com.tencent.cloud.huiyansdkface.a.a.a.d> d() {
-        return this.f35438c;
+        return this.f21747c;
     }
 
     public d e(List<String> list) {

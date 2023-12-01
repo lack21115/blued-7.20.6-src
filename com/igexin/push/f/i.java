@@ -10,15 +10,15 @@ import java.io.IOException;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    String f23652a;
+    String f10044a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    File f23653c;
+    File f10045c;
     private byte[] d;
 
     private i(File file) {
-        this.f23653c = file;
+        this.f10045c = file;
     }
 
     private i(String str) {
@@ -26,7 +26,7 @@ public final class i {
     }
 
     private i(String str, byte[] bArr) {
-        this.f23652a = str;
+        this.f10044a = str;
         this.d = bArr;
     }
 
@@ -65,10 +65,10 @@ public final class i {
 
     private String b() {
         File file;
-        if (this.f23652a == null && (file = this.f23653c) != null && file.exists()) {
-            this.f23652a = this.f23653c.getName();
+        if (this.f10044a == null && (file = this.f10045c) != null && file.exists()) {
+            this.f10044a = this.f10045c.getName();
         }
-        return this.f23652a;
+        return this.f10044a;
     }
 
     private static String b(byte[] bArr) {
@@ -122,9 +122,9 @@ public final class i {
         File file;
         ByteArrayOutputStream byteArrayOutputStream;
         FileInputStream fileInputStream;
-        if (this.d == null && (file = this.f23653c) != null && file.exists()) {
+        if (this.d == null && (file = this.f10045c) != null && file.exists()) {
             try {
-                fileInputStream = new FileInputStream(this.f23653c);
+                fileInputStream = new FileInputStream(this.f10045c);
                 try {
                     byteArrayOutputStream = new ByteArrayOutputStream();
                     while (true) {

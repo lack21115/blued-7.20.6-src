@@ -2,7 +2,6 @@ package com.blued.android.module.live.base.utils;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.anythink.expressad.d.a.b;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.module.live.base.R;
 import java.text.SimpleDateFormat;
@@ -41,7 +40,7 @@ public class LiveTimeAndDateUtils {
         StringBuilder sb2;
         StringBuilder sb3;
         StringBuilder sb4;
-        long j2 = j / b.P;
+        long j2 = j / 3600;
         if (j2 > 9) {
             sb = new StringBuilder();
             sb.append(j2);
@@ -52,7 +51,7 @@ public class LiveTimeAndDateUtils {
             sb.append(j2);
         }
         String sb5 = sb.toString();
-        long j3 = j % b.P;
+        long j3 = j % 3600;
         long j4 = j3 / 60;
         if (j4 > 9) {
             sb2 = new StringBuilder();

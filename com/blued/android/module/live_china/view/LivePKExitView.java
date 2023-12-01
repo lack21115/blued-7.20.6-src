@@ -24,13 +24,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKExitView.class */
 public class LivePKExitView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14719a;
+    private Context a;
     private LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f14720c;
+    private View c;
     private View d;
     private View e;
     private View f;
@@ -51,7 +47,7 @@ public class LivePKExitView extends FrameLayout implements View.OnClickListener 
 
     public LivePKExitView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14719a = context;
+        this.a = context;
         d();
     }
 
@@ -60,7 +56,7 @@ public class LivePKExitView extends FrameLayout implements View.OnClickListener 
             return;
         }
         this.d.setVisibility(8);
-        Animation loadAnimation = AnimationUtils.loadAnimation(this.f14719a, R.anim.push_bottom_out);
+        Animation loadAnimation = AnimationUtils.loadAnimation(this.a, R.anim.push_bottom_out);
         this.d.startAnimation(loadAnimation);
         loadAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.module.live_china.view.LivePKExitView.3
             @Override // android.view.animation.Animation.AnimationListener
@@ -82,18 +78,18 @@ public class LivePKExitView extends FrameLayout implements View.OnClickListener 
     }
 
     private void d() {
-        LayoutInflater from = LayoutInflater.from(this.f14719a);
+        LayoutInflater from = LayoutInflater.from(this.a);
         this.b = from;
         View inflate = from.inflate(R.layout.live_pking_exit, this);
-        this.f14720c = inflate;
+        this.c = inflate;
         this.d = inflate.findViewById(R.id.content_layout);
-        this.e = this.f14720c.findViewById(R.id.live_pk_invite_layer);
-        this.g = (TextView) this.f14720c.findViewById(R.id.tv_tip);
-        this.h = (TextView) this.f14720c.findViewById(R.id.tv_left);
-        this.i = (TextView) this.f14720c.findViewById(R.id.tv_right);
-        this.j = (ImageView) this.f14720c.findViewById(R.id.iv_left);
-        this.k = (ImageView) this.f14720c.findViewById(R.id.iv_right);
-        this.f = this.f14720c.findViewById(R.id.live_invite_cancel);
+        this.e = this.c.findViewById(R.id.live_pk_invite_layer);
+        this.g = (TextView) this.c.findViewById(R.id.tv_tip);
+        this.h = (TextView) this.c.findViewById(R.id.tv_left);
+        this.i = (TextView) this.c.findViewById(R.id.tv_right);
+        this.j = (ImageView) this.c.findViewById(R.id.iv_left);
+        this.k = (ImageView) this.c.findViewById(R.id.iv_right);
+        this.f = this.c.findViewById(R.id.live_invite_cancel);
         this.e.setOnClickListener(this);
         this.f.setOnClickListener(this);
     }
@@ -156,7 +152,7 @@ public class LivePKExitView extends FrameLayout implements View.OnClickListener 
         setVisibility(0);
         this.d.setVisibility(0);
         this.d.clearAnimation();
-        Animation loadAnimation = AnimationUtils.loadAnimation(this.f14719a, R.anim.push_bottom_in);
+        Animation loadAnimation = AnimationUtils.loadAnimation(this.a, R.anim.push_bottom_in);
         this.d.startAnimation(loadAnimation);
         loadAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.module.live_china.view.LivePKExitView.1
             @Override // android.view.animation.Animation.AnimationListener
@@ -179,8 +175,8 @@ public class LivePKExitView extends FrameLayout implements View.OnClickListener 
     }
 
     public void c() {
-        View inflate = LayoutInflater.from(this.f14719a).inflate(R.layout.live_exit_pk_tips, (ViewGroup) null);
-        final CustomDialog customDialog = new CustomDialog(this.f14719a);
+        View inflate = LayoutInflater.from(this.a).inflate(R.layout.live_exit_pk_tips, (ViewGroup) null);
+        final CustomDialog customDialog = new CustomDialog(this.a);
         customDialog.getWindow().setBackgroundDrawableResource(R.color.transparent);
         customDialog.a(inflate, null);
         TextView textView = (TextView) inflate.findViewById(R.id.tips_message);

@@ -14,22 +14,21 @@ import com.soft.blued.utils.UserRelationshipUtils;
 public class SettingPresenter implements SettingContract.IPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    private ActivityFragmentActive f33248a;
+    private ActivityFragmentActive f19557a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private SettingContract.IView f33249c;
+    private SettingContract.IView f19558c;
 
     public SettingPresenter(SettingContract.IView iView, Context context, ActivityFragmentActive activityFragmentActive) {
         if (iView == null || context == null || activityFragmentActive == null) {
             return;
         }
-        this.f33249c = iView;
+        this.f19558c = iView;
         this.b = context;
-        this.f33248a = activityFragmentActive;
+        this.f19557a = activityFragmentActive;
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
         d();
     }
@@ -39,7 +38,7 @@ public class SettingPresenter implements SettingContract.IPresenter {
         if (UserInfo.getInstance().getLoginUserInfo() != null) {
             String avatar = UserInfo.getInstance().getLoginUserInfo().getAvatar();
             String str = UserInfo.getInstance().getLoginUserInfo().getVBadge() + "";
-            this.f33249c.a(UserInfo.getInstance().getLoginUserInfo().getVerify(), str, UserInfo.getInstance().getLoginUserInfo().getName(), avatar, UserInfo.getInstance().getLoginUserInfo().getUid());
+            this.f19558c.a(UserInfo.getInstance().getLoginUserInfo().getVerify(), str, UserInfo.getInstance().getLoginUserInfo().getName(), avatar, UserInfo.getInstance().getLoginUserInfo().getUid());
         }
     }
 
@@ -49,27 +48,25 @@ public class SettingPresenter implements SettingContract.IPresenter {
     }
 
     public void d() {
-        GroupHttpUtils.k(null, new BluedUIHttpResponse<BluedEntityA<VerifyStatus>>(this.f33248a) { // from class: com.soft.blued.ui.setting.Presenter.SettingPresenter.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        GroupHttpUtils.k(null, new BluedUIHttpResponse<BluedEntityA<VerifyStatus>>(this.f19557a) { // from class: com.soft.blued.ui.setting.Presenter.SettingPresenter.1
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VerifyStatus> bluedEntityA) {
                 if (bluedEntityA != null) {
                     try {
                         if (bluedEntityA.hasData()) {
-                            UserInfo.getInstance().getLoginUserInfo().setVerify(new VerifyStatus[]{bluedEntityA.data.get(0)});
-                            SettingPresenter.this.f33249c.a(UserInfo.getInstance().getLoginUserInfo().getVerify());
+                            UserInfo.getInstance().getLoginUserInfo().setVerify(new VerifyStatus[]{(VerifyStatus) bluedEntityA.data.get(0)});
+                            SettingPresenter.this.f19558c.a(UserInfo.getInstance().getLoginUserInfo().getVerify());
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
-                        SettingPresenter.this.f33249c.a();
+                        SettingPresenter.this.f19558c.a();
                     }
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str) {
                 super.onFailure(th, i, str);
-                SettingPresenter.this.f33249c.a();
+                SettingPresenter.this.f19558c.a();
             }
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), null);
     }

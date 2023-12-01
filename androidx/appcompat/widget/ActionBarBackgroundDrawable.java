@@ -9,28 +9,28 @@ import android.graphics.drawable.Drawable;
 class ActionBarBackgroundDrawable extends Drawable {
 
     /* renamed from: a  reason: collision with root package name */
-    final ActionBarContainer f1701a;
+    final ActionBarContainer f1653a;
 
     public ActionBarBackgroundDrawable(ActionBarContainer actionBarContainer) {
-        this.f1701a = actionBarContainer;
+        this.f1653a = actionBarContainer;
     }
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        if (this.f1701a.d) {
-            if (this.f1701a.f1703c != null) {
-                this.f1701a.f1703c.draw(canvas);
+        if (this.f1653a.d) {
+            if (this.f1653a.f1655c != null) {
+                this.f1653a.f1655c.draw(canvas);
                 return;
             }
             return;
         }
-        if (this.f1701a.f1702a != null) {
-            this.f1701a.f1702a.draw(canvas);
+        if (this.f1653a.f1654a != null) {
+            this.f1653a.f1654a.draw(canvas);
         }
-        if (this.f1701a.b == null || !this.f1701a.e) {
+        if (this.f1653a.b == null || !this.f1653a.e) {
             return;
         }
-        this.f1701a.b.draw(canvas);
+        this.f1653a.b.draw(canvas);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -40,12 +40,12 @@ class ActionBarBackgroundDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void getOutline(Outline outline) {
-        if (this.f1701a.d) {
-            if (this.f1701a.f1703c != null) {
-                this.f1701a.f1703c.getOutline(outline);
+        if (this.f1653a.d) {
+            if (this.f1653a.f1655c != null) {
+                this.f1653a.f1655c.getOutline(outline);
             }
-        } else if (this.f1701a.f1702a != null) {
-            this.f1701a.f1702a.getOutline(outline);
+        } else if (this.f1653a.f1654a != null) {
+            this.f1653a.f1654a.getOutline(outline);
         }
     }
 

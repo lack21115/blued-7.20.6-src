@@ -6,11 +6,11 @@ import com.tencent.ugc.TXVideoJoiner;
 final /* synthetic */ class ce implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoJoiner f40287a;
+    private final TXVideoJoiner f26596a;
     private final TXVideoJoiner.TXVideoJoinerListener b;
 
     private ce(TXVideoJoiner tXVideoJoiner, TXVideoJoiner.TXVideoJoinerListener tXVideoJoinerListener) {
-        this.f40287a = tXVideoJoiner;
+        this.f26596a = tXVideoJoiner;
         this.b = tXVideoJoinerListener;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class ce implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoJoiner.lambda$setVideoJoinerListener$4(this.f40287a, this.b);
+        TXVideoJoiner.lambda$setVideoJoinerListener$4(this.f26596a, this.b);
     }
 }

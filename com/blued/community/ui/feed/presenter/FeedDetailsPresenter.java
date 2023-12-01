@@ -36,7 +36,6 @@ import com.blued.community.ui.feed.model.FeedRepost;
 import com.blued.community.ui.feed.observer.CommentListDataObserver;
 import com.blued.community.ui.feed.observer.IFeedDataObserver;
 import com.blued.das.client.feed.FeedProtos;
-import com.cdo.oaps.ad.wrapper.BaseWrapper;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -77,13 +76,9 @@ public class FeedDetailsPresenter extends MvpPresenter implements IFeedDataObser
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/feed/presenter/FeedDetailsPresenter$DataStatus.class */
     public class DataStatus {
-
-        /* renamed from: a  reason: collision with root package name */
-        public boolean f19879a = true;
+        public boolean a = true;
         public boolean b = true;
-
-        /* renamed from: c  reason: collision with root package name */
-        public boolean f19880c = true;
+        public boolean c = true;
         public boolean d = true;
         public boolean e = false;
         public boolean f = false;
@@ -173,7 +168,7 @@ public class FeedDetailsPresenter extends MvpPresenter implements IFeedDataObser
             }
         };
         String o = o();
-        FeedHttpUtils.a(h, bluedUIHttpResponse, o, this.E + "", BaseWrapper.ENTER_ID_SYSTEM_HELPER, g());
+        FeedHttpUtils.a(h, bluedUIHttpResponse, o, this.E + "", "20", g());
     }
 
     private void n(final IFetchDataListener iFetchDataListener) {
@@ -290,7 +285,7 @@ public class FeedDetailsPresenter extends MvpPresenter implements IFeedDataObser
             }
         };
         String o = o();
-        FeedHttpUtils.a(bluedUIHttpResponse, o, this.C + "", BaseWrapper.ENTER_ID_OAPS_PHONEMANAGER, this.o, this.n.is_ads, g());
+        FeedHttpUtils.a(bluedUIHttpResponse, o, this.C + "", "40", this.o, this.n.is_ads, g());
     }
 
     private void o(final IFetchDataListener iFetchDataListener) {
@@ -302,22 +297,22 @@ public class FeedDetailsPresenter extends MvpPresenter implements IFeedDataObser
                 if (bluedEntityA != null) {
                     iFetchDataListener.a("like_list", bluedEntityA.data);
                     if (bluedEntityA.extra == 0 || bluedEntityA.extra.hasmore != 1) {
-                        FeedDetailsPresenter.this.H.f19879a = false;
+                        FeedDetailsPresenter.this.H.a = false;
                     } else {
-                        FeedDetailsPresenter.this.H.f19879a = true;
+                        FeedDetailsPresenter.this.H.a = true;
                     }
                 } else {
-                    FeedDetailsPresenter.this.H.f19879a = false;
+                    FeedDetailsPresenter.this.H.a = false;
                 }
                 if (FeedDetailsPresenter.this.G == 0) {
-                    iFetchDataListener.b(FeedDetailsPresenter.this.H.f19879a);
+                    iFetchDataListener.b(FeedDetailsPresenter.this.H.a);
                 }
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 if (!z) {
-                    FeedDetailsPresenter.this.H.f19879a = false;
+                    FeedDetailsPresenter.this.H.a = false;
                 }
                 FeedDetailsPresenter.this.H.e = !z;
                 iFetchDataListener.a(z);
@@ -325,7 +320,7 @@ public class FeedDetailsPresenter extends MvpPresenter implements IFeedDataObser
             }
         };
         String o = o();
-        FeedHttpUtils.b(h, bluedUIHttpResponse, o, this.B + "", BaseWrapper.ENTER_ID_SYSTEM_HELPER, this.n.is_ads, g());
+        FeedHttpUtils.b(h, bluedUIHttpResponse, o, this.B + "", "20", this.n.is_ads, g());
     }
 
     private void p(final IFetchDataListener iFetchDataListener) {
@@ -334,7 +329,7 @@ public class FeedDetailsPresenter extends MvpPresenter implements IFeedDataObser
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 if (!z) {
-                    FeedDetailsPresenter.this.H.f19880c = false;
+                    FeedDetailsPresenter.this.H.c = false;
                 }
                 FeedDetailsPresenter.this.H.g = !z;
                 IFetchDataListener iFetchDataListener2 = iFetchDataListener;
@@ -355,21 +350,21 @@ public class FeedDetailsPresenter extends MvpPresenter implements IFeedDataObser
                         FeedDetailsPresenter.this.a("repost_list", (String) bluedEntity.data);
                     }
                     if (bluedEntity.extra == null || bluedEntity.extra.hasmore != 1) {
-                        FeedDetailsPresenter.this.H.f19880c = false;
+                        FeedDetailsPresenter.this.H.c = false;
                     } else {
-                        FeedDetailsPresenter.this.H.f19880c = true;
+                        FeedDetailsPresenter.this.H.c = true;
                     }
                 } else {
-                    FeedDetailsPresenter.this.H.f19880c = false;
+                    FeedDetailsPresenter.this.H.c = false;
                 }
                 if (FeedDetailsPresenter.this.G != 0 || (iFetchDataListener2 = iFetchDataListener) == null) {
                     return;
                 }
-                iFetchDataListener2.b(FeedDetailsPresenter.this.H.f19880c);
+                iFetchDataListener2.b(FeedDetailsPresenter.this.H.c);
             }
         };
         String o = o();
-        FeedHttpUtils.a(h, bluedUIHttpResponse, o, this.D + "", BaseWrapper.ENTER_ID_SYSTEM_HELPER, this.n.is_ads, g());
+        FeedHttpUtils.a(h, bluedUIHttpResponse, o, this.D + "", "20", this.n.is_ads, g());
     }
 
     public DataStatus A() {
@@ -444,7 +439,6 @@ public class FeedDetailsPresenter extends MvpPresenter implements IFeedDataObser
         super.a(lifecycleOwner);
         FeedMethods.a(lifecycleOwner, this);
         LiveEventBus.get("comment_meanwhile", FeedComment.class).observe(lifecycleOwner, new Observer<FeedComment>() { // from class: com.blued.community.ui.feed.presenter.FeedDetailsPresenter.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(FeedComment feedComment) {
                 CommentListDataObserver.a().a(feedComment, FeedDetailsPresenter.this.y);
@@ -459,9 +453,9 @@ public class FeedDetailsPresenter extends MvpPresenter implements IFeedDataObser
         A().b = true;
         e(iFetchDataListener);
         c(iFetchDataListener);
-        A().f19879a = true;
+        A().a = true;
         g(iFetchDataListener);
-        A().f19880c = true;
+        A().c = true;
         i(iFetchDataListener);
     }
 
@@ -765,7 +759,7 @@ public class FeedDetailsPresenter extends MvpPresenter implements IFeedDataObser
     }
 
     public void h(IFetchDataListener iFetchDataListener) {
-        if (this.H.f19879a) {
+        if (this.H.a) {
             this.B++;
             o(iFetchDataListener);
         }
@@ -777,7 +771,7 @@ public class FeedDetailsPresenter extends MvpPresenter implements IFeedDataObser
     }
 
     public void j(IFetchDataListener iFetchDataListener) {
-        if (this.H.f19880c) {
+        if (this.H.c) {
             this.D++;
             p(iFetchDataListener);
         }

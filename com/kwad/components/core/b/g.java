@@ -3,6 +3,7 @@ package com.kwad.components.core.b;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.text.TextUtils;
+import com.baidu.mobads.sdk.api.SplashAd;
 import com.kwad.components.core.response.model.AdResultData;
 import com.kwad.sdk.core.response.model.AdTemplate;
 import com.kwad.sdk.internal.api.SceneImpl;
@@ -82,7 +83,7 @@ public final class g implements h, Comparable<g> {
                 String string = cursor.getString(cursor.getColumnIndex("creativeId"));
                 String string2 = cursor.getString(cursor.getColumnIndex("posId"));
                 String string3 = cursor.getString(cursor.getColumnIndex("adJson"));
-                int i = cursor.getInt(cursor.getColumnIndex("ecpm"));
+                int i = cursor.getInt(cursor.getColumnIndex(SplashAd.KEY_BIDFAIL_ECPM));
                 String string4 = cursor.getString(cursor.getColumnIndex("adSenseJson"));
                 long j = cursor.getLong(cursor.getColumnIndex("createTime"));
                 long j2 = cursor.getLong(cursor.getColumnIndex("expireTime"));
@@ -184,7 +185,7 @@ public final class g implements h, Comparable<g> {
         contentValues.put("creativeId", this.Ij);
         contentValues.put("posId", this.Ic);
         contentValues.put("adJson", this.Ik);
-        contentValues.put("ecpm", Integer.valueOf(this.ecpm));
+        contentValues.put(SplashAd.KEY_BIDFAIL_ECPM, Integer.valueOf(this.ecpm));
         contentValues.put("adSenseJson", this.Il);
         contentValues.put("createTime", Long.valueOf(this.createTime));
         contentValues.put("expireTime", Long.valueOf(this.Im));

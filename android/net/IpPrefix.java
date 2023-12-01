@@ -3,7 +3,6 @@ package android.net;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Pair;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;
@@ -87,7 +86,7 @@ public final class IpPrefix implements Parcelable {
 
     public String toString() {
         try {
-            return InetAddress.getByAddress(this.address).getHostAddress() + BridgeUtil.SPLIT_MARK + this.prefixLength;
+            return InetAddress.getByAddress(this.address).getHostAddress() + "/" + this.prefixLength;
         } catch (UnknownHostException e) {
             throw new IllegalStateException("IpPrefix with invalid address! Shouldn't happen.", e);
         }

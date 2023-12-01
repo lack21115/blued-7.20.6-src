@@ -1,5 +1,6 @@
 package com.tencent.qcloud.core.auth;
 
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.qcloud.core.http.HttpConfiguration;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qcloud/core/auth/BasicQCloudCredentials.class */
@@ -25,7 +26,7 @@ public class BasicQCloudCredentials implements QCloudLifecycleCredentials, QClou
         this.secretId = str;
         this.secretKey = str2;
         this.signKey = str3;
-        this.keyTime = Utils.handleTimeAccuracy(j) + ";" + Utils.handleTimeAccuracy(j2);
+        this.keyTime = Utils.handleTimeAccuracy(j) + t.aE + Utils.handleTimeAccuracy(j2);
     }
 
     public BasicQCloudCredentials(String str, String str2, String str3, String str4) {

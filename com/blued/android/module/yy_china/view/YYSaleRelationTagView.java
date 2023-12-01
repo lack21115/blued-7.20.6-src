@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYSaleRelationTagView.class */
 public class YYSaleRelationTagView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TextView f18467a;
+    private TextView a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f18468c;
+    private TextView c;
     private int d;
 
     public YYSaleRelationTagView(Context context) {
@@ -41,8 +37,8 @@ public class YYSaleRelationTagView extends LinearLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_sale_relation_tag, (ViewGroup) this, true);
-        this.f18467a = (TextView) findViewById(R.id.tv_tag_value);
-        this.f18468c = (TextView) findViewById(R.id.tv_tag_name);
+        this.a = (TextView) findViewById(R.id.tv_tag_value);
+        this.c = (TextView) findViewById(R.id.tv_tag_name);
         this.b = (ImageView) findViewById(R.id.iv_tag_img);
     }
 
@@ -55,11 +51,11 @@ public class YYSaleRelationTagView extends LinearLayout {
     }
 
     public void setTagName(String str) {
-        this.f18468c.setText(str);
+        this.c.setText(str);
     }
 
     public void setTagValue(String str) {
         this.d = StringUtils.a(str, 0);
-        this.f18467a.setText(str);
+        this.a.setText(str);
     }
 }

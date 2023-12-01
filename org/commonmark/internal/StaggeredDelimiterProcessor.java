@@ -10,28 +10,24 @@ import org.commonmark.parser.delimiter.DelimiterRun;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/StaggeredDelimiterProcessor.class */
 public class StaggeredDelimiterProcessor implements DelimiterProcessor {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final char f44038a;
+    private final char a;
     private int b = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LinkedList<DelimiterProcessor> f44039c = new LinkedList<>();
+    private LinkedList<DelimiterProcessor> c = new LinkedList<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public StaggeredDelimiterProcessor(char c2) {
-        this.f44038a = c2;
+    public StaggeredDelimiterProcessor(char c) {
+        this.a = c;
     }
 
     private DelimiterProcessor a(int i) {
-        Iterator<DelimiterProcessor> it = this.f44039c.iterator();
+        Iterator<DelimiterProcessor> it = this.c.iterator();
         while (it.hasNext()) {
             DelimiterProcessor next = it.next();
             if (next.getMinLength() <= i) {
                 return next;
             }
         }
-        return this.f44039c.getFirst();
+        return this.c.getFirst();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -39,7 +35,7 @@ public class StaggeredDelimiterProcessor implements DelimiterProcessor {
         boolean z;
         int minLength;
         int minLength2 = delimiterProcessor.getMinLength();
-        ListIterator<DelimiterProcessor> listIterator = this.f44039c.listIterator();
+        ListIterator<DelimiterProcessor> listIterator = this.c.listIterator();
         do {
             if (listIterator.hasNext()) {
                 minLength = listIterator.next().getMinLength();
@@ -54,16 +50,16 @@ public class StaggeredDelimiterProcessor implements DelimiterProcessor {
             if (z) {
                 return;
             }
-            this.f44039c.add(delimiterProcessor);
+            this.c.add(delimiterProcessor);
             this.b = minLength2;
             return;
         } while (minLength2 != minLength);
-        throw new IllegalArgumentException("Cannot add two delimiter processors for char '" + this.f44038a + "' and minimum length " + minLength2);
+        throw new IllegalArgumentException("Cannot add two delimiter processors for char '" + this.a + "' and minimum length " + minLength2);
     }
 
     @Override // org.commonmark.parser.delimiter.DelimiterProcessor
     public char getClosingCharacter() {
-        return this.f44038a;
+        return this.a;
     }
 
     @Override // org.commonmark.parser.delimiter.DelimiterProcessor
@@ -78,7 +74,7 @@ public class StaggeredDelimiterProcessor implements DelimiterProcessor {
 
     @Override // org.commonmark.parser.delimiter.DelimiterProcessor
     public char getOpeningCharacter() {
-        return this.f44038a;
+        return this.a;
     }
 
     @Override // org.commonmark.parser.delimiter.DelimiterProcessor

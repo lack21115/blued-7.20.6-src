@@ -12,19 +12,19 @@ import com.meizu.cloud.pushsdk.handler.MzPushMessage;
 public class c extends com.meizu.cloud.pushsdk.handler.a.a<MessageV3> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f24158a;
+    private Context f10543a;
 
     public c(Context context, com.meizu.cloud.pushsdk.handler.a aVar) {
         super(context, aVar);
-        this.f24158a = context;
+        this.f10543a = context;
     }
 
     private void e(MessageV3 messageV3) {
         if (messageV3.getAdvertisementOption() == null || TextUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
             return;
         }
-        com.meizu.cloud.pushsdk.util.b.a(this.f24158a, messageV3.getAdvertisementOption().getAdPackage(), System.currentTimeMillis());
-        com.meizu.cloud.pushsdk.util.d.e(this.f24158a, messageV3.getAdvertisementOption().getAdInstallPackage(), messageV3.getDeviceId(), messageV3.getTaskId(), messageV3.getSeqId(), messageV3.getPushTimestamp());
+        com.meizu.cloud.pushsdk.util.b.a(this.f10543a, messageV3.getAdvertisementOption().getAdPackage(), System.currentTimeMillis());
+        com.meizu.cloud.pushsdk.util.d.e(this.f10543a, messageV3.getAdvertisementOption().getAdInstallPackage(), messageV3.getDeviceId(), messageV3.getTaskId(), messageV3.getSeqId(), messageV3.getPushTimestamp());
     }
 
     @Override // com.meizu.cloud.pushsdk.handler.c
@@ -43,7 +43,7 @@ public class c extends com.meizu.cloud.pushsdk.handler.a.a<MessageV3> {
             c().c(d(), MzPushMessage.fromMessageV3(messageV3));
         }
         b(messageV3);
-        a(this.f24158a, messageV3);
+        a(this.f10543a, messageV3);
     }
 
     @Override // com.meizu.cloud.pushsdk.handler.c

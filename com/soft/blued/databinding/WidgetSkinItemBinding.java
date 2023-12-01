@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class WidgetSkinItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29640a;
+    private final ConstraintLayout f15950a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29640a;
+        return this.f15950a;
     }
 }

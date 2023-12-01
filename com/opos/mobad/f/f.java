@@ -4,9 +4,9 @@ package com.opos.mobad.f;
 public class f<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private T f26145a;
+    private T f12457a;
 
     public void a(T t) {
-        this.f26145a = t;
+        this.f12457a = t;
     }
 }

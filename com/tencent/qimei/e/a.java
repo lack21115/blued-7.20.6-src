@@ -7,27 +7,27 @@ import com.tencent.qimei.j.b;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f38324a;
+    public static final String f24633a;
 
     static {
         String p;
-        if (U.f38315a) {
+        if (U.f24624a) {
             try {
                 p = U.p();
             } catch (UnsatisfiedLinkError e) {
                 e.printStackTrace();
             }
-            f38324a = p;
+            f24633a = p;
         }
         p = "";
-        f38324a = p;
+        f24633a = p;
     }
 
     public static String a() {
-        return b.f38341a ? "https://test.snowflake.qq.com/ola" : "https://snowflake.qq.com/ola";
+        return b.f24650a ? "https://test.snowflake.qq.com/ola" : "https://snowflake.qq.com/ola";
     }
 
     public static String b() {
-        return f38324a;
+        return f24633a;
     }
 }

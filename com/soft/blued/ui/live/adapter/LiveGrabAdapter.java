@@ -23,14 +23,14 @@ import kotlin.Metadata;
 public final class LiveGrabAdapter extends BaseMultiItemQuickAdapter<LiveGrabModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private ArrayList<String> f31074a;
+    private ArrayList<String> f17384a;
 
     public LiveGrabAdapter() {
         super(null);
         addItemType(0, R.layout.item_live_grab);
         addItemType(1, R.layout.item_live_grab_title);
         addItemType(2, R.layout.item_live_grab_empty);
-        this.f31074a = new ArrayList<>();
+        this.f17384a = new ArrayList<>();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -40,7 +40,7 @@ public final class LiveGrabAdapter extends BaseMultiItemQuickAdapter<LiveGrabMod
     }
 
     public final ArrayList<String> a() {
-        return this.f31074a;
+        return this.f17384a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

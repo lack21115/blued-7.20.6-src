@@ -10,9 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/util/concurrent/AggregateFuture.class */
-public abstract class AggregateFuture<InputT, OutputT> extends AggregateFutureState<OutputT> {
+abstract class AggregateFuture<InputT, OutputT> extends AggregateFutureState<OutputT> {
     private static final Logger logger = Logger.getLogger(AggregateFuture.class.getName());
     private final boolean allMustSucceed;
     private final boolean collectsValues;

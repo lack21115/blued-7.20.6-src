@@ -328,7 +328,7 @@ public final class Encoder {
         Version recommendVersion;
         CharacterSetECI characterSetECIByName;
         boolean z = map != null && map.containsKey(EncodeHintType.CHARACTER_SET);
-        String obj = z ? map.get(EncodeHintType.CHARACTER_SET).toString() : "ISO-8859-1";
+        String obj = z ? map.get(EncodeHintType.CHARACTER_SET).toString() : DEFAULT_BYTE_MODE_ENCODING;
         Mode chooseMode = chooseMode(str, obj);
         BitArray bitArray = new BitArray();
         if (chooseMode == Mode.BYTE && z && (characterSetECIByName = CharacterSetECI.getCharacterSetECIByName(obj)) != null) {

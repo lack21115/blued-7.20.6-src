@@ -7,13 +7,13 @@ import com.opos.mobad.service.event.EventDescription;
 public class a implements b, com.opos.mobad.service.event.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private EventDescription f25904a;
+    private EventDescription f12216a;
     private b b;
 
     /* renamed from: com.opos.mobad.cmn.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/cmn/b/a$a.class */
-    public static class C0684a extends com.opos.mobad.service.event.a implements b {
-        public C0684a(EventDescription eventDescription) {
+    public static class C0514a extends com.opos.mobad.service.event.a implements b {
+        public C0514a(EventDescription eventDescription) {
             super(eventDescription);
         }
 
@@ -43,7 +43,7 @@ public class a implements b, com.opos.mobad.service.event.c {
     }
 
     public a(EventDescription eventDescription, b bVar) {
-        this.f25904a = eventDescription;
+        this.f12216a = eventDescription;
         this.b = bVar;
     }
 
@@ -58,7 +58,7 @@ public class a implements b, com.opos.mobad.service.event.c {
 
     @Override // com.opos.mobad.service.event.c
     public EventDescription a() {
-        return this.f25904a;
+        return this.f12216a;
     }
 
     @Override // com.opos.mobad.service.event.c

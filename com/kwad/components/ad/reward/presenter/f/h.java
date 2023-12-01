@@ -18,8 +18,8 @@ public final class h extends c implements com.kwad.components.ad.reward.d.h {
     private AdTemplate mAdTemplate;
     private long wr;
     private com.kwad.components.core.webview.a.e ws;
-    private a.InterfaceC0494a wt = new a.InterfaceC0494a() { // from class: com.kwad.components.ad.reward.presenter.f.h.1
-        @Override // com.kwad.components.ad.reward.j.a.InterfaceC0494a
+    private a.InterfaceC0324a wt = new a.InterfaceC0324a() { // from class: com.kwad.components.ad.reward.presenter.f.h.1
+        @Override // com.kwad.components.ad.reward.j.a.InterfaceC0324a
         public final void iX() {
             if (h.this.ws != null) {
                 com.kwad.components.core.webview.a.a.i iVar = new com.kwad.components.core.webview.a.a.i();

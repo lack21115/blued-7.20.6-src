@@ -19,11 +19,11 @@ public class b extends LruCache<Long, com.ss.android.downloadlib.addownload.mode
     }
 
     public com.ss.android.downloadlib.addownload.model.ox mb(long j) {
-        return get(Long.valueOf(j));
+        return (com.ss.android.downloadlib.addownload.model.ox) get(Long.valueOf(j));
     }
 
     public com.ss.android.downloadlib.addownload.model.ox mb(long j, long j2) {
-        return get(get(Long.valueOf(j)) != null ? Long.valueOf(j) : Long.valueOf(j2));
+        return (com.ss.android.downloadlib.addownload.model.ox) get(get(Long.valueOf(j)) != null ? Long.valueOf(j) : Long.valueOf(j2));
     }
 
     public void mb(com.ss.android.downloadlib.addownload.model.ox oxVar) {

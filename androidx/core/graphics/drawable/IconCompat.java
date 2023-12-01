@@ -30,7 +30,8 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.util.Preconditions;
 import androidx.versionedparcelable.CustomVersionedParcelable;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.anythink.expressad.exoplayer.b;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -53,10 +54,10 @@ public class IconCompat extends CustomVersionedParcelable {
     static final PorterDuff.Mode b = PorterDuff.Mode.SRC_IN;
 
     /* renamed from: a  reason: collision with root package name */
-    Object f2469a;
+    Object f2421a;
 
     /* renamed from: c  reason: collision with root package name */
-    PorterDuff.Mode f2470c;
+    PorterDuff.Mode f2422c;
     public byte[] mData;
     public int mInt1;
     public int mInt2;
@@ -78,7 +79,7 @@ public class IconCompat extends CustomVersionedParcelable {
         this.mInt1 = 0;
         this.mInt2 = 0;
         this.mTintList = null;
-        this.f2470c = b;
+        this.f2422c = b;
         this.mTintModeStr = null;
     }
 
@@ -89,7 +90,7 @@ public class IconCompat extends CustomVersionedParcelable {
         this.mInt1 = 0;
         this.mInt2 = 0;
         this.mTintList = null;
-        this.f2470c = b;
+        this.f2422c = b;
         this.mTintModeStr = null;
         this.mType = i;
     }
@@ -125,7 +126,7 @@ public class IconCompat extends CustomVersionedParcelable {
     private Drawable a(Context context) {
         switch (this.mType) {
             case 1:
-                return new BitmapDrawable(context.getResources(), (Bitmap) this.f2469a);
+                return new BitmapDrawable(context.getResources(), (Bitmap) this.f2421a);
             case 2:
                 String resPackage = getResPackage();
                 String str = resPackage;
@@ -135,11 +136,11 @@ public class IconCompat extends CustomVersionedParcelable {
                 try {
                     return ResourcesCompat.getDrawable(getResources(context, str), this.mInt1, context.getTheme());
                 } catch (RuntimeException e) {
-                    Log.e("IconCompat", String.format("Unable to load resource 0x%08x from pkg=%s", Integer.valueOf(this.mInt1), this.f2469a), e);
+                    Log.e("IconCompat", String.format("Unable to load resource 0x%08x from pkg=%s", Integer.valueOf(this.mInt1), this.f2421a), e);
                     return null;
                 }
             case 3:
-                return new BitmapDrawable(context.getResources(), BitmapFactory.decodeByteArray((byte[]) this.f2469a, this.mInt1, this.mInt2));
+                return new BitmapDrawable(context.getResources(), BitmapFactory.decodeByteArray((byte[]) this.f2421a, this.mInt1, this.mInt2));
             case 4:
                 InputStream uriInputStream = getUriInputStream(context);
                 if (uriInputStream != null) {
@@ -147,7 +148,7 @@ public class IconCompat extends CustomVersionedParcelable {
                 }
                 return null;
             case 5:
-                return new BitmapDrawable(context.getResources(), a((Bitmap) this.f2469a, false));
+                return new BitmapDrawable(context.getResources(), a((Bitmap) this.f2421a, false));
             case 6:
                 InputStream uriInputStream2 = getUriInputStream(context);
                 if (uriInputStream2 != null) {
@@ -174,7 +175,7 @@ public class IconCompat extends CustomVersionedParcelable {
             case 6:
                 return "URI_MASKABLE";
             default:
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 
@@ -242,13 +243,13 @@ public class IconCompat extends CustomVersionedParcelable {
             iconCompat.mTintList = (ColorStateList) bundle.getParcelable("tint_list");
         }
         if (bundle.containsKey("tint_mode")) {
-            iconCompat.f2470c = PorterDuff.Mode.valueOf(bundle.getString("tint_mode"));
+            iconCompat.f2422c = PorterDuff.Mode.valueOf(bundle.getString("tint_mode"));
         }
         switch (i) {
             case -1:
             case 1:
             case 5:
-                iconCompat.f2469a = bundle.getParcelable("obj");
+                iconCompat.f2421a = bundle.getParcelable("obj");
                 return iconCompat;
             case 0:
             default:
@@ -257,10 +258,10 @@ public class IconCompat extends CustomVersionedParcelable {
             case 2:
             case 4:
             case 6:
-                iconCompat.f2469a = bundle.getString("obj");
+                iconCompat.f2421a = bundle.getString("obj");
                 return iconCompat;
             case 3:
-                iconCompat.f2469a = bundle.getByteArray("obj");
+                iconCompat.f2421a = bundle.getByteArray("obj");
                 return iconCompat;
         }
     }
@@ -278,7 +279,7 @@ public class IconCompat extends CustomVersionedParcelable {
         } else if (type != 4) {
             if (type != 6) {
                 IconCompat iconCompat = new IconCompat(-1);
-                iconCompat.f2469a = icon;
+                iconCompat.f2421a = icon;
                 return iconCompat;
             }
             return createWithAdaptiveBitmapContentUri(c(icon));
@@ -294,7 +295,7 @@ public class IconCompat extends CustomVersionedParcelable {
             if (type != 4) {
                 if (type != 6) {
                     IconCompat iconCompat = new IconCompat(-1);
-                    iconCompat.f2469a = icon;
+                    iconCompat.f2421a = icon;
                     return iconCompat;
                 }
                 return createWithAdaptiveBitmapContentUri(c(icon));
@@ -314,7 +315,7 @@ public class IconCompat extends CustomVersionedParcelable {
     public static IconCompat createWithAdaptiveBitmap(Bitmap bitmap) {
         if (bitmap != null) {
             IconCompat iconCompat = new IconCompat(5);
-            iconCompat.f2469a = bitmap;
+            iconCompat.f2421a = bitmap;
             return iconCompat;
         }
         throw new IllegalArgumentException("Bitmap must not be null.");
@@ -330,7 +331,7 @@ public class IconCompat extends CustomVersionedParcelable {
     public static IconCompat createWithAdaptiveBitmapContentUri(String str) {
         if (str != null) {
             IconCompat iconCompat = new IconCompat(6);
-            iconCompat.f2469a = str;
+            iconCompat.f2421a = str;
             return iconCompat;
         }
         throw new IllegalArgumentException("Uri must not be null.");
@@ -339,7 +340,7 @@ public class IconCompat extends CustomVersionedParcelable {
     public static IconCompat createWithBitmap(Bitmap bitmap) {
         if (bitmap != null) {
             IconCompat iconCompat = new IconCompat(1);
-            iconCompat.f2469a = bitmap;
+            iconCompat.f2421a = bitmap;
             return iconCompat;
         }
         throw new IllegalArgumentException("Bitmap must not be null.");
@@ -355,7 +356,7 @@ public class IconCompat extends CustomVersionedParcelable {
     public static IconCompat createWithContentUri(String str) {
         if (str != null) {
             IconCompat iconCompat = new IconCompat(4);
-            iconCompat.f2469a = str;
+            iconCompat.f2421a = str;
             return iconCompat;
         }
         throw new IllegalArgumentException("Uri must not be null.");
@@ -364,7 +365,7 @@ public class IconCompat extends CustomVersionedParcelable {
     public static IconCompat createWithData(byte[] bArr, int i, int i2) {
         if (bArr != null) {
             IconCompat iconCompat = new IconCompat(3);
-            iconCompat.f2469a = bArr;
+            iconCompat.f2421a = bArr;
             iconCompat.mInt1 = i;
             iconCompat.mInt2 = i2;
             return iconCompat;
@@ -386,12 +387,12 @@ public class IconCompat extends CustomVersionedParcelable {
                 iconCompat.mInt1 = i;
                 if (resources != null) {
                     try {
-                        iconCompat.f2469a = resources.getResourceName(i);
+                        iconCompat.f2421a = resources.getResourceName(i);
                     } catch (Resources.NotFoundException e) {
                         throw new IllegalArgumentException("Icon resource cannot be found");
                     }
                 } else {
-                    iconCompat.f2469a = str;
+                    iconCompat.f2421a = str;
                 }
                 iconCompat.mString1 = str;
                 return iconCompat;
@@ -441,7 +442,7 @@ public class IconCompat extends CustomVersionedParcelable {
         checkResource(context);
         int i = this.mType;
         if (i == 1) {
-            Bitmap bitmap2 = (Bitmap) this.f2469a;
+            Bitmap bitmap2 = (Bitmap) this.f2421a;
             bitmap = bitmap2;
             if (drawable != null) {
                 bitmap = bitmap2.copy(bitmap2.getConfig(), true);
@@ -464,12 +465,12 @@ public class IconCompat extends CustomVersionedParcelable {
                 drawable2.setBounds(0, 0, bitmap.getWidth(), bitmap.getHeight());
                 drawable2.draw(new Canvas(bitmap));
             } catch (PackageManager.NameNotFoundException e) {
-                throw new IllegalArgumentException("Can't find package " + this.f2469a, e);
+                throw new IllegalArgumentException("Can't find package " + this.f2421a, e);
             }
         } else if (i != 5) {
             throw new IllegalArgumentException("Icon type not supported for intent shortcuts");
         } else {
-            bitmap = a((Bitmap) this.f2469a, true);
+            bitmap = a((Bitmap) this.f2421a, true);
         }
         if (drawable != null) {
             int width = bitmap.getWidth();
@@ -482,14 +483,14 @@ public class IconCompat extends CustomVersionedParcelable {
 
     public void checkResource(Context context) {
         Object obj;
-        if (this.mType != 2 || (obj = this.f2469a) == null) {
+        if (this.mType != 2 || (obj = this.f2421a) == null) {
             return;
         }
         String str = (String) obj;
         if (str.contains(":")) {
             String str2 = str.split(":", -1)[1];
-            String str3 = str2.split(BridgeUtil.SPLIT_MARK, -1)[0];
-            String str4 = str2.split(BridgeUtil.SPLIT_MARK, -1)[1];
+            String str3 = str2.split("/", -1)[0];
+            String str4 = str2.split("/", -1)[1];
             String str5 = str.split(":", -1)[0];
             if ("0_resource_name_obfuscated".equals(str4)) {
                 Log.i("IconCompat", "Found obfuscated resource, not trying to update resource id for it");
@@ -506,7 +507,7 @@ public class IconCompat extends CustomVersionedParcelable {
 
     public Bitmap getBitmap() {
         if (this.mType == -1 && Build.VERSION.SDK_INT >= 23) {
-            Object obj = this.f2469a;
+            Object obj = this.f2421a;
             if (obj instanceof Bitmap) {
                 return (Bitmap) obj;
             }
@@ -514,10 +515,10 @@ public class IconCompat extends CustomVersionedParcelable {
         }
         int i = this.mType;
         if (i == 1) {
-            return (Bitmap) this.f2469a;
+            return (Bitmap) this.f2421a;
         }
         if (i == 5) {
-            return a((Bitmap) this.f2469a, true);
+            return a((Bitmap) this.f2421a, true);
         }
         throw new IllegalStateException("called getBitmap() on " + this);
     }
@@ -529,32 +530,32 @@ public class IconCompat extends CustomVersionedParcelable {
             }
             throw new IllegalStateException("called getResId() on " + this);
         }
-        return b((Icon) this.f2469a);
+        return b((Icon) this.f2421a);
     }
 
     public String getResPackage() {
         if (this.mType != -1 || Build.VERSION.SDK_INT < 23) {
             if (this.mType == 2) {
-                return TextUtils.isEmpty(this.mString1) ? ((String) this.f2469a).split(":", -1)[0] : this.mString1;
+                return TextUtils.isEmpty(this.mString1) ? ((String) this.f2421a).split(":", -1)[0] : this.mString1;
             }
             throw new IllegalStateException("called getResPackage() on " + this);
         }
-        return a((Icon) this.f2469a);
+        return a((Icon) this.f2421a);
     }
 
     public int getType() {
-        return (this.mType != -1 || Build.VERSION.SDK_INT < 23) ? this.mType : getType((Icon) this.f2469a);
+        return (this.mType != -1 || Build.VERSION.SDK_INT < 23) ? this.mType : getType((Icon) this.f2421a);
     }
 
     public Uri getUri() {
         if (this.mType != -1 || Build.VERSION.SDK_INT < 23) {
             int i = this.mType;
             if (i == 4 || i == 6) {
-                return Uri.parse((String) this.f2469a);
+                return Uri.parse((String) this.f2421a);
             }
             throw new IllegalStateException("called getUri() on " + this);
         }
-        return c((Icon) this.f2469a);
+        return c((Icon) this.f2421a);
     }
 
     public InputStream getUriInputStream(Context context) {
@@ -569,7 +570,7 @@ public class IconCompat extends CustomVersionedParcelable {
             }
         }
         try {
-            return new FileInputStream(new File((String) this.f2469a));
+            return new FileInputStream(new File((String) this.f2421a));
         } catch (FileNotFoundException e2) {
             Log.w("IconCompat", "Unable to load image from path: " + uri, e2);
             return null;
@@ -582,24 +583,24 @@ public class IconCompat extends CustomVersionedParcelable {
             return toIcon(context).loadDrawable(context);
         }
         Drawable a2 = a(context);
-        if (a2 != null && (this.mTintList != null || this.f2470c != b)) {
+        if (a2 != null && (this.mTintList != null || this.f2422c != b)) {
             a2.mutate();
             DrawableCompat.setTintList(a2, this.mTintList);
-            DrawableCompat.setTintMode(a2, this.f2470c);
+            DrawableCompat.setTintMode(a2, this.f2422c);
         }
         return a2;
     }
 
     @Override // androidx.versionedparcelable.CustomVersionedParcelable
     public void onPostParceling() {
-        this.f2470c = PorterDuff.Mode.valueOf(this.mTintModeStr);
+        this.f2422c = PorterDuff.Mode.valueOf(this.mTintModeStr);
         switch (this.mType) {
             case -1:
                 Parcelable parcelable = this.mParcelable;
                 if (parcelable == null) {
                     throw new IllegalArgumentException("Invalid icon");
                 }
-                this.f2469a = parcelable;
+                this.f2421a = parcelable;
                 return;
             case 0:
             default:
@@ -608,11 +609,11 @@ public class IconCompat extends CustomVersionedParcelable {
             case 5:
                 Parcelable parcelable2 = this.mParcelable;
                 if (parcelable2 != null) {
-                    this.f2469a = parcelable2;
+                    this.f2421a = parcelable2;
                     return;
                 }
                 byte[] bArr = this.mData;
-                this.f2469a = bArr;
+                this.f2421a = bArr;
                 this.mType = 3;
                 this.mInt1 = 0;
                 this.mInt2 = bArr.length;
@@ -620,28 +621,28 @@ public class IconCompat extends CustomVersionedParcelable {
             case 2:
             case 4:
             case 6:
-                String str = new String(this.mData, Charset.forName("UTF-16"));
-                this.f2469a = str;
+                String str = new String(this.mData, Charset.forName(b.k));
+                this.f2421a = str;
                 if (this.mType == 2 && this.mString1 == null) {
                     this.mString1 = str.split(":", -1)[0];
                     return;
                 }
                 return;
             case 3:
-                this.f2469a = this.mData;
+                this.f2421a = this.mData;
                 return;
         }
     }
 
     @Override // androidx.versionedparcelable.CustomVersionedParcelable
     public void onPreParceling(boolean z) {
-        this.mTintModeStr = this.f2470c.name();
+        this.mTintModeStr = this.f2422c.name();
         switch (this.mType) {
             case -1:
                 if (z) {
                     throw new IllegalArgumentException("Can't serialize Icon created with IconCompat#createFromIcon");
                 }
-                this.mParcelable = (Parcelable) this.f2469a;
+                this.mParcelable = (Parcelable) this.f2421a;
                 return;
             case 0:
             default:
@@ -649,23 +650,23 @@ public class IconCompat extends CustomVersionedParcelable {
             case 1:
             case 5:
                 if (!z) {
-                    this.mParcelable = (Parcelable) this.f2469a;
+                    this.mParcelable = (Parcelable) this.f2421a;
                     return;
                 }
-                Bitmap bitmap = (Bitmap) this.f2469a;
+                Bitmap bitmap = (Bitmap) this.f2421a;
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.PNG, 90, byteArrayOutputStream);
                 this.mData = byteArrayOutputStream.toByteArray();
                 return;
             case 2:
-                this.mData = ((String) this.f2469a).getBytes(Charset.forName("UTF-16"));
+                this.mData = ((String) this.f2421a).getBytes(Charset.forName(b.k));
                 return;
             case 3:
-                this.mData = (byte[]) this.f2469a;
+                this.mData = (byte[]) this.f2421a;
                 return;
             case 4:
             case 6:
-                this.mData = this.f2469a.toString().getBytes(Charset.forName("UTF-16"));
+                this.mData = this.f2421a.toString().getBytes(Charset.forName(b.k));
                 return;
         }
     }
@@ -680,7 +681,7 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public IconCompat setTintMode(PorterDuff.Mode mode) {
-        this.f2470c = mode;
+        this.f2422c = mode;
         return this;
     }
 
@@ -688,22 +689,22 @@ public class IconCompat extends CustomVersionedParcelable {
         Bundle bundle = new Bundle();
         switch (this.mType) {
             case -1:
-                bundle.putParcelable("obj", (Parcelable) this.f2469a);
+                bundle.putParcelable("obj", (Parcelable) this.f2421a);
                 break;
             case 0:
             default:
                 throw new IllegalArgumentException("Invalid icon");
             case 1:
             case 5:
-                bundle.putParcelable("obj", (Bitmap) this.f2469a);
+                bundle.putParcelable("obj", (Bitmap) this.f2421a);
                 break;
             case 2:
             case 4:
             case 6:
-                bundle.putString("obj", (String) this.f2469a);
+                bundle.putString("obj", (String) this.f2421a);
                 break;
             case 3:
-                bundle.putByteArray("obj", (byte[]) this.f2469a);
+                bundle.putByteArray("obj", (byte[]) this.f2421a);
                 break;
         }
         bundle.putInt("type", this.mType);
@@ -714,7 +715,7 @@ public class IconCompat extends CustomVersionedParcelable {
         if (colorStateList != null) {
             bundle.putParcelable("tint_list", colorStateList);
         }
-        PorterDuff.Mode mode = this.f2470c;
+        PorterDuff.Mode mode = this.f2422c;
         if (mode != b) {
             bundle.putString("tint_mode", mode.name());
         }
@@ -730,28 +731,28 @@ public class IconCompat extends CustomVersionedParcelable {
         Icon createWithBitmap;
         switch (this.mType) {
             case -1:
-                return (Icon) this.f2469a;
+                return (Icon) this.f2421a;
             case 0:
             default:
                 throw new IllegalArgumentException("Unknown type");
             case 1:
-                createWithBitmap = Icon.createWithBitmap((Bitmap) this.f2469a);
+                createWithBitmap = Icon.createWithBitmap((Bitmap) this.f2421a);
                 break;
             case 2:
                 createWithBitmap = Icon.createWithResource(getResPackage(), this.mInt1);
                 break;
             case 3:
-                createWithBitmap = Icon.createWithData((byte[]) this.f2469a, this.mInt1, this.mInt2);
+                createWithBitmap = Icon.createWithData((byte[]) this.f2421a, this.mInt1, this.mInt2);
                 break;
             case 4:
-                createWithBitmap = Icon.createWithContentUri((String) this.f2469a);
+                createWithBitmap = Icon.createWithContentUri((String) this.f2421a);
                 break;
             case 5:
                 if (Build.VERSION.SDK_INT < 26) {
-                    createWithBitmap = Icon.createWithBitmap(a((Bitmap) this.f2469a, false));
+                    createWithBitmap = Icon.createWithBitmap(a((Bitmap) this.f2421a, false));
                     break;
                 } else {
-                    createWithBitmap = Icon.createWithAdaptiveBitmap((Bitmap) this.f2469a);
+                    createWithBitmap = Icon.createWithAdaptiveBitmap((Bitmap) this.f2421a);
                     break;
                 }
             case 6:
@@ -777,7 +778,7 @@ public class IconCompat extends CustomVersionedParcelable {
         if (colorStateList != null) {
             createWithBitmap.setTintList(colorStateList);
         }
-        PorterDuff.Mode mode = this.f2470c;
+        PorterDuff.Mode mode = this.f2422c;
         if (mode != b) {
             createWithBitmap.setTintMode(mode);
         }
@@ -786,7 +787,7 @@ public class IconCompat extends CustomVersionedParcelable {
 
     public String toString() {
         if (this.mType == -1) {
-            return String.valueOf(this.f2469a);
+            return String.valueOf(this.f2421a);
         }
         StringBuilder sb = new StringBuilder("Icon(typ=");
         sb.append(a(this.mType));
@@ -794,9 +795,9 @@ public class IconCompat extends CustomVersionedParcelable {
             case 1:
             case 5:
                 sb.append(" size=");
-                sb.append(((Bitmap) this.f2469a).getWidth());
+                sb.append(((Bitmap) this.f2421a).getWidth());
                 sb.append("x");
-                sb.append(((Bitmap) this.f2469a).getHeight());
+                sb.append(((Bitmap) this.f2421a).getHeight());
                 break;
             case 2:
                 sb.append(" pkg=");
@@ -816,16 +817,16 @@ public class IconCompat extends CustomVersionedParcelable {
             case 4:
             case 6:
                 sb.append(" uri=");
-                sb.append(this.f2469a);
+                sb.append(this.f2421a);
                 break;
         }
         if (this.mTintList != null) {
             sb.append(" tint=");
             sb.append(this.mTintList);
         }
-        if (this.f2470c != b) {
+        if (this.f2422c != b) {
             sb.append(" mode=");
-            sb.append(this.f2470c);
+            sb.append(this.f2422c);
         }
         sb.append(")");
         return sb.toString();

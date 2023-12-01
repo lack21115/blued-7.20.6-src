@@ -7,16 +7,16 @@ import com.tencent.liteav.base.http.HttpClientAndroid;
 public final /* synthetic */ class d implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final HttpClientAndroid f36299a;
+    private final HttpClientAndroid f22608a;
     private final HttpClientAndroid.e b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f36300c;
+    private final long f22609c;
 
     private d(HttpClientAndroid httpClientAndroid, HttpClientAndroid.e eVar, long j) {
-        this.f36299a = httpClientAndroid;
+        this.f22608a = httpClientAndroid;
         this.b = eVar;
-        this.f36300c = j;
+        this.f22609c = j;
     }
 
     public static Runnable a(HttpClientAndroid httpClientAndroid, HttpClientAndroid.e eVar, long j) {
@@ -25,6 +25,6 @@ public final /* synthetic */ class d implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        HttpClientAndroid.lambda$doReadData$3(this.f36299a, this.b, this.f36300c);
+        HttpClientAndroid.lambda$doReadData$3(this.f22608a, this.b, this.f22609c);
     }
 }

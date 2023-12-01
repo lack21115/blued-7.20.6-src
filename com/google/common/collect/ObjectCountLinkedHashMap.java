@@ -1,6 +1,5 @@
 package com.google.common.collect;
 
-import android.widget.ExpandableListView;
 import java.util.Arrays;
 
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/ObjectCountLinkedHashMap.class */
@@ -55,7 +54,7 @@ class ObjectCountLinkedHashMap<K> extends ObjectCountHashMap<K> {
 
     private void setPredecessor(int i, int i2) {
         long[] jArr = this.links;
-        jArr[i] = (jArr[i] & ExpandableListView.PACKED_POSITION_VALUE_NULL) | (i2 << 32);
+        jArr[i] = (jArr[i] & 4294967295L) | (i2 << 32);
     }
 
     private void setSucceeds(int i, int i2) {
@@ -73,7 +72,7 @@ class ObjectCountLinkedHashMap<K> extends ObjectCountHashMap<K> {
 
     private void setSuccessor(int i, int i2) {
         long[] jArr = this.links;
-        jArr[i] = (jArr[i] & (-4294967296L)) | (i2 & ExpandableListView.PACKED_POSITION_VALUE_NULL);
+        jArr[i] = (jArr[i] & (-4294967296L)) | (i2 & 4294967295L);
     }
 
     @Override // com.google.common.collect.ObjectCountHashMap

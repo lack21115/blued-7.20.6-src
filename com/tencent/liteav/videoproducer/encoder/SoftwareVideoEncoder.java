@@ -1,6 +1,5 @@
 package com.tencent.liteav.videoproducer.encoder;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.annotations.JNINamespace;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.videobase.base.GLConstants;
@@ -32,7 +31,7 @@ public class SoftwareVideoEncoder implements e.a, bf {
 
     public SoftwareVideoEncoder(IVideoReporter iVideoReporter, VideoProducerDef.StreamType streamType) {
         this.mReporter = iVideoReporter;
-        this.mTAG = "SoftwareVideoEncoder_" + streamType + BridgeUtil.UNDERLINE_STR + hashCode();
+        this.mTAG = "SoftwareVideoEncoder_" + streamType + "_" + hashCode();
     }
 
     private static EncodedVideoFrame createEncodedVideoFrameCallFromNative(ByteBuffer byteBuffer, int i, int i2, int i3, long j, long j2, long j3, int i4, int i5, long j4, long j5, long j6, boolean z, int i6) {
@@ -270,7 +269,7 @@ public class SoftwareVideoEncoder implements e.a, bf {
 
     @Override // com.tencent.liteav.videoproducer.encoder.bf
     public void takeSnapshot(TakeSnapshotListener takeSnapshotListener) {
-        this.mSnapshotTaker.f36662a = takeSnapshotListener;
+        this.mSnapshotTaker.f22971a = takeSnapshotListener;
     }
 
     @Override // com.tencent.liteav.videoproducer.encoder.bf

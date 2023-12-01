@@ -19,7 +19,8 @@ public interface DrawGoodsOrBuilder extends MessageOrBuilder {
 
     int getBgColorCount();
 
-    List<String> getBgColorList();
+    /* renamed from: getBgColorList */
+    List<String> mo1997getBgColorList();
 
     String getBgImg();
 
@@ -41,7 +42,8 @@ public interface DrawGoodsOrBuilder extends MessageOrBuilder {
 
     int getChatFrameBorderColorCount();
 
-    List<String> getChatFrameBorderColorList();
+    /* renamed from: getChatFrameBorderColorList */
+    List<String> mo1998getChatFrameBorderColorList();
 
     ByteString getChatFrameBytes();
 
@@ -53,7 +55,8 @@ public interface DrawGoodsOrBuilder extends MessageOrBuilder {
 
     int getChatFrameFrameColorCount();
 
-    List<String> getChatFrameFrameColorList();
+    /* renamed from: getChatFrameFrameColorList */
+    List<String> mo1999getChatFrameFrameColorList();
 
     int getChatFrameGradientType();
 

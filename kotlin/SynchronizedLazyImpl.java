@@ -9,19 +9,15 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/SynchronizedLazyImpl.class */
 public final class SynchronizedLazyImpl<T> implements Serializable, Lazy<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Function0<? extends T> f42297a;
+    private Function0<? extends T> a;
     private volatile Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Object f42298c;
+    private final Object c;
 
     public SynchronizedLazyImpl(Function0<? extends T> initializer, Object obj) {
         Intrinsics.e(initializer, "initializer");
-        this.f42297a = initializer;
-        this.b = UNINITIALIZED_VALUE.f42310a;
-        this.f42298c = obj == null ? this : obj;
+        this.a = initializer;
+        this.b = UNINITIALIZED_VALUE.a;
+        this.c = obj == null ? this : obj;
     }
 
     public /* synthetic */ SynchronizedLazyImpl(Function0 function0, Object obj, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -33,24 +29,24 @@ public final class SynchronizedLazyImpl<T> implements Serializable, Lazy<T> {
     }
 
     public boolean a() {
-        return this.b != UNINITIALIZED_VALUE.f42310a;
+        return this.b != UNINITIALIZED_VALUE.a;
     }
 
     @Override // kotlin.Lazy
     public T getValue() {
         T t;
         T t2 = (T) this.b;
-        if (t2 != UNINITIALIZED_VALUE.f42310a) {
+        if (t2 != UNINITIALIZED_VALUE.a) {
             return t2;
         }
-        synchronized (this.f42298c) {
+        synchronized (this.c) {
             t = this.b;
-            if (t == UNINITIALIZED_VALUE.f42310a) {
-                Function0<? extends T> function0 = this.f42297a;
+            if (t == UNINITIALIZED_VALUE.a) {
+                Function0<? extends T> function0 = this.a;
                 Intrinsics.a(function0);
                 t = function0.invoke();
                 this.b = t;
-                this.f42297a = null;
+                this.a = null;
             }
         }
         return (T) t;

@@ -33,17 +33,17 @@ import java.util.Random;
 public class ShareUtils extends ShareCoreUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ShareUtils f9211a;
+    private static ShareUtils f6371a;
 
     /* loaded from: source-8756600-dex2jar.jar:com/app/share/ShareUtils$SHARE_FLAG.class */
     public interface SHARE_FLAG {
     }
 
     public static ShareUtils a() {
-        if (f9211a == null) {
-            f9211a = new ShareUtils();
+        if (f6371a == null) {
+            f6371a = new ShareUtils();
         }
-        return f9211a;
+        return f6371a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -66,7 +66,7 @@ public class ShareUtils extends ShareCoreUtils {
         shareEntity.shareBackLister = null;
         shareEntity.b = -1;
         shareEntity.shareFrom = 1;
-        shareEntity.f9215a = userBasicModel;
+        shareEntity.f6375a = userBasicModel;
         shareEntity.j = true;
         return shareEntity;
     }
@@ -152,7 +152,7 @@ public class ShareUtils extends ShareCoreUtils {
                     ShareServiceManager.a().a(shareToMsgEntity, j, s, str, str2, i, i2, i3, i4, i5, str4);
                 } else {
                     ShareServiceManager.a().a(shareToMsgEntity.sessionId, (String[]) arrayList.toArray(new String[arrayList.size()]), (String[]) arrayList2.toArray(new String[arrayList2.size()]), shareToMsgEntity.name);
-                    AppMethods.a((CharSequence) context.getString(R.string.liveVideo_message_label_hadShare));
+                    AppMethods.a(context.getString(R.string.liveVideo_message_label_hadShare));
                 }
                 ((Activity) context).finish();
             }
@@ -178,11 +178,11 @@ public class ShareUtils extends ShareCoreUtils {
         }
         String a2 = shareLiveData.e != null ? BitmapUtils.a(shareLiveData.e, false) : "";
         String str2 = H5Url.a(74) + "?id=" + EncryptTool.b(shareLiveData.f);
-        String str3 = shareLiveData.f33710a + " " + AppInfo.d().getResources().getString(R.string.live_share_livingOnBlued) + shareLiveData.f33711c;
-        Logger.a("drb", "shareLiveData.description = ", shareLiveData.j);
+        String str3 = shareLiveData.f20019a + " " + AppInfo.d().getResources().getString(R.string.live_share_livingOnBlued) + shareLiveData.f20020c;
+        Logger.a("drb", new Object[]{"shareLiveData.description = ", shareLiveData.j});
         if (TextUtils.isEmpty(shareLiveData.b)) {
             int nextInt = new Random().nextInt(3);
-            str = nextInt == 0 ? String.format(context.getString(R.string.live_share_blued_one), shareLiveData.f33710a) : nextInt == 1 ? String.format(context.getString(R.string.live_share_blued_two), shareLiveData.f33710a) : String.format(context.getString(R.string.live_share_blued_three), shareLiveData.f33710a);
+            str = nextInt == 0 ? String.format(context.getString(R.string.live_share_blued_one), shareLiveData.f20019a) : nextInt == 1 ? String.format(context.getString(R.string.live_share_blued_two), shareLiveData.f20019a) : String.format(context.getString(R.string.live_share_blued_three), shareLiveData.f20019a);
         } else {
             str = shareLiveData.b;
         }
@@ -200,7 +200,7 @@ public class ShareUtils extends ShareCoreUtils {
         shareEntity.shareFrom = 3;
         shareEntity.k = true;
         BaseShareToPlatform.PopWindowSetting popWindowSetting = new BaseShareToPlatform.PopWindowSetting();
-        popWindowSetting.f33708a = true;
+        popWindowSetting.f20017a = true;
         popWindowSetting.b = shareLiveData.i;
         if (TextUtils.isEmpty(shareLiveData.g)) {
             ShareServiceManager.a().b(context, shareLiveData.k, popWindowSetting, shareLiveData.l, shareEntity);
@@ -221,7 +221,7 @@ public class ShareUtils extends ShareCoreUtils {
         String a2 = bitmap != null ? BitmapUtils.a(bitmap, true) : "";
         String format = String.format(context.getString(R.string.live_share_performance_title), UserInfo.getInstance().getLoginUserInfo().getName());
         String format2 = String.format(context.getResources().getString(R.string.live_share_performance_des), UserInfo.getInstance().getLoginUserInfo().getName());
-        String a3 = H5Url.a(42, EncryptTool.b(String.valueOf(j)));
+        String a3 = H5Url.a(42, new Object[]{EncryptTool.b(String.valueOf(j))});
         ShareEntity shareEntity = new ShareEntity();
         BaseShareEntity.ShareLiveData shareLiveData = new BaseShareEntity.ShareLiveData();
         shareLiveData.h = String.valueOf(j);
@@ -252,8 +252,8 @@ public class ShareUtils extends ShareCoreUtils {
         }
         String a2 = shareLiveData.e != null ? BitmapUtils.a(shareLiveData.e, false) : "";
         String str = H5Url.a(65) + "?room_id=" + EncryptTool.b(shareLiveData.h) + "&source_uid=" + EncryptTool.b(shareLiveData.f);
-        String str2 = shareLiveData.f33711c;
-        Logger.a("drb", "shareLiveData.description = ", shareLiveData.j);
+        String str2 = shareLiveData.f20020c;
+        Logger.a("drb", new Object[]{"shareLiveData.description = ", shareLiveData.j});
         String str3 = TextUtils.isEmpty(shareLiveData.b) ? new Random().nextInt(2) == 0 ? "对你的喜欢都藏在我的声音里，快点进来听一听" : "治愈男友音，肯定让你心动，我在房间等你" : shareLiveData.b;
         ShareEntity shareEntity = new ShareEntity();
         shareEntity.flag = 1;
@@ -269,7 +269,7 @@ public class ShareUtils extends ShareCoreUtils {
         shareEntity.shareFrom = 12;
         shareEntity.k = true;
         BaseShareToPlatform.PopWindowSetting popWindowSetting = new BaseShareToPlatform.PopWindowSetting();
-        popWindowSetting.f33708a = true;
+        popWindowSetting.f20017a = true;
         popWindowSetting.b = shareLiveData.i;
         ShareServiceManager.a().b(context, shareLiveData.k, popWindowSetting, shareLiveData.l, shareEntity);
     }

@@ -8,6 +8,7 @@ import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import com.android.internal.R;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/SwipeDismissTouchListener.class */
 public class SwipeDismissTouchListener implements View.OnTouchListener {
@@ -45,7 +46,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
         this.mSlop = viewConfiguration.getScaledTouchSlop();
         this.mMinFlingVelocity = viewConfiguration.getScaledMinimumFlingVelocity() * 16;
         this.mMaxFlingVelocity = viewConfiguration.getScaledMaximumFlingVelocity();
-        this.mAnimationTime = view.getContext().getResources().getInteger(17694720);
+        this.mAnimationTime = view.getContext().getResources().getInteger(R.integer.config_shortAnimTime);
         this.mView = view;
         this.mToken = obj;
         this.mCallbacks = dismissCallbacks;

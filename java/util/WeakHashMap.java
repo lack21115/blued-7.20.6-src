@@ -294,12 +294,12 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     public Set<Map.Entry<K, V>> entrySet() {
         poll();
         return new AbstractSet<Map.Entry<K, V>>() { // from class: java.util.WeakHashMap.1
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // java.util.AbstractCollection, java.util.Collection
             public void clear() {
                 WeakHashMap.this.clear();
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // java.util.AbstractCollection, java.util.Collection
             public boolean contains(Object obj) {
                 Entry<K, V> entry;
                 if (!(obj instanceof Map.Entry) || (entry = WeakHashMap.this.getEntry(((Map.Entry) obj).getKey())) == null) {
@@ -321,7 +321,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                 });
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // java.util.AbstractCollection, java.util.Collection
             public boolean remove(Object obj) {
                 if (contains(obj)) {
                     WeakHashMap.this.remove(((Map.Entry) obj).getKey());
@@ -330,7 +330,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                 return false;
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection
             public int size() {
                 return WeakHashMap.this.size();
             }
@@ -415,12 +415,12 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
         poll();
         if (this.keySet == null) {
             this.keySet = new AbstractSet<K>() { // from class: java.util.WeakHashMap.2
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public void clear() {
                     WeakHashMap.this.clear();
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public boolean contains(Object obj) {
                     return WeakHashMap.this.containsKey(obj);
                 }
@@ -435,7 +435,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     });
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public boolean remove(Object obj) {
                     if (WeakHashMap.this.containsKey(obj)) {
                         WeakHashMap.this.remove(obj);
@@ -444,7 +444,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     return false;
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public int size() {
                     return WeakHashMap.this.size();
                 }
@@ -621,12 +621,12 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
         poll();
         if (this.valuesCollection == null) {
             this.valuesCollection = new AbstractCollection<V>() { // from class: java.util.WeakHashMap.3
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public void clear() {
                     WeakHashMap.this.clear();
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public boolean contains(Object obj) {
                     return WeakHashMap.this.containsValue(obj);
                 }
@@ -641,7 +641,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     });
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public int size() {
                     return WeakHashMap.this.size();
                 }

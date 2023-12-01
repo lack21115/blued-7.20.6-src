@@ -68,7 +68,7 @@ public class c {
     }
 
     public static int l(Context context) {
-        return d.a(context).a(context, "stat_sys_third_app_notify", i.f7952c);
+        return d.a(context).a(context, "stat_sys_third_app_notify", i.f5112c);
     }
 
     public static int m(Context context) {

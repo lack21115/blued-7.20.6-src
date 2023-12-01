@@ -216,7 +216,7 @@ public class ListMenuPresenter implements MenuPresenter, AdapterView.OnItemClick
     }
 
     public void restoreHierarchyState(Bundle bundle) {
-        SparseArray<Parcelable> sparseParcelableArray = bundle.getSparseParcelableArray("android:menu:list");
+        SparseArray<Parcelable> sparseParcelableArray = bundle.getSparseParcelableArray(VIEWS_TAG);
         if (sparseParcelableArray != null) {
             this.mMenuView.restoreHierarchyState(sparseParcelableArray);
         }
@@ -227,7 +227,7 @@ public class ListMenuPresenter implements MenuPresenter, AdapterView.OnItemClick
         if (this.mMenuView != null) {
             this.mMenuView.saveHierarchyState(sparseArray);
         }
-        bundle.putSparseParcelableArray("android:menu:list", sparseArray);
+        bundle.putSparseParcelableArray(VIEWS_TAG, sparseArray);
     }
 
     @Override // com.android.internal.view.menu.MenuPresenter

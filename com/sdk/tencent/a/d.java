@@ -12,13 +12,13 @@ import javax.net.ssl.SSLSession;
 public class d<T> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f28008c = "d";
+    public static final String f14320c = "d";
     public static boolean d = com.sdk.tencent.f.c.b;
     public static final String e = UUID.randomUUID().toString();
     public static final HostnameVerifier f = new a();
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f28009a;
+    public Context f14321a;
     public e<T> b;
 
     /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/a/d$a.class */
@@ -44,20 +44,20 @@ public class d<T> {
         
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f28011a;
+        public final String f14323a;
 
         b(String str) {
-            this.f28011a = str;
+            this.f14323a = str;
         }
 
         @Override // java.lang.Enum
         public String toString() {
-            return this.f28011a;
+            return this.f14323a;
         }
     }
 
     public d(Context context, e<T> eVar) {
-        this.f28009a = context;
+        this.f14321a = context;
         this.b = eVar;
     }
 
@@ -106,11 +106,11 @@ public class d<T> {
         try {
             eVar = this.b;
         } catch (Exception e2) {
-            com.sdk.tencent.n.b.a(f28008c, e2.getMessage(), Boolean.valueOf(d));
+            com.sdk.tencent.n.b.a(f14320c, e2.getMessage(), Boolean.valueOf(d));
             return null;
         }
         if (eVar != null) {
-            String str3 = eVar.f28012a;
+            String str3 = eVar.f14324a;
             String str4 = eVar.b;
             if (!str3.equals("GET")) {
                 this.b.getClass();
@@ -127,7 +127,7 @@ public class d<T> {
                 return str;
             }
             e<T> eVar2 = this.b;
-            String a2 = eVar2.a(eVar2.f28013c);
+            String a2 = eVar2.a(eVar2.f14325c);
             str = str4;
             if (com.sdk.tencent.n.b.b(a2).booleanValue()) {
                 StringBuilder sb3 = new StringBuilder();
@@ -139,7 +139,7 @@ public class d<T> {
                 str = sb.toString();
             }
             return str;
-            com.sdk.tencent.n.b.a(f28008c, e2.getMessage(), Boolean.valueOf(d));
+            com.sdk.tencent.n.b.a(f14320c, e2.getMessage(), Boolean.valueOf(d));
             return null;
         }
         return null;
@@ -153,8 +153,8 @@ public class d<T> {
                 arrayList.add(str);
             }
         }
-        Context context = this.f28009a;
-        int i = com.sdk.tencent.o.b.f28066a;
+        Context context = this.f14321a;
+        int i = com.sdk.tencent.o.b.f14378a;
         return com.sdk.tencent.o.a.a(context).a();
     }
 }

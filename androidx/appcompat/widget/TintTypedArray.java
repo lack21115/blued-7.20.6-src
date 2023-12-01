@@ -16,14 +16,14 @@ import androidx.core.content.res.ResourcesCompat;
 public class TintTypedArray {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f1898a;
+    private final Context f1850a;
     private final TypedArray b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TypedValue f1899c;
+    private TypedValue f1851c;
 
     private TintTypedArray(Context context, TypedArray typedArray) {
-        this.f1898a = context;
+        this.f1850a = context;
         this.b = typedArray;
     }
 
@@ -54,7 +54,7 @@ public class TintTypedArray {
     public ColorStateList getColorStateList(int i) {
         int resourceId;
         ColorStateList colorStateList;
-        return (!this.b.hasValue(i) || (resourceId = this.b.getResourceId(i, 0)) == 0 || (colorStateList = AppCompatResources.getColorStateList(this.f1898a, resourceId)) == null) ? this.b.getColorStateList(i) : colorStateList;
+        return (!this.b.hasValue(i) || (resourceId = this.b.getResourceId(i, 0)) == 0 || (colorStateList = AppCompatResources.getColorStateList(this.f1850a, resourceId)) == null) ? this.b.getColorStateList(i) : colorStateList;
     }
 
     public float getDimension(int i, float f) {
@@ -71,7 +71,7 @@ public class TintTypedArray {
 
     public Drawable getDrawable(int i) {
         int resourceId;
-        return (!this.b.hasValue(i) || (resourceId = this.b.getResourceId(i, 0)) == 0) ? this.b.getDrawable(i) : AppCompatResources.getDrawable(this.f1898a, resourceId);
+        return (!this.b.hasValue(i) || (resourceId = this.b.getResourceId(i, 0)) == 0) ? this.b.getDrawable(i) : AppCompatResources.getDrawable(this.f1850a, resourceId);
     }
 
     public Drawable getDrawableIfKnown(int i) {
@@ -79,7 +79,7 @@ public class TintTypedArray {
         if (!this.b.hasValue(i) || (resourceId = this.b.getResourceId(i, 0)) == 0) {
             return null;
         }
-        return AppCompatDrawableManager.get().a(this.f1898a, resourceId, true);
+        return AppCompatDrawableManager.get().a(this.f1850a, resourceId, true);
     }
 
     public float getFloat(int i, float f) {
@@ -91,10 +91,10 @@ public class TintTypedArray {
         if (resourceId == 0) {
             return null;
         }
-        if (this.f1899c == null) {
-            this.f1899c = new TypedValue();
+        if (this.f1851c == null) {
+            this.f1851c = new TypedValue();
         }
-        return ResourcesCompat.getFont(this.f1898a, resourceId, this.f1899c, i2, fontCallback);
+        return ResourcesCompat.getFont(this.f1850a, resourceId, this.f1851c, i2, fontCallback);
     }
 
     public float getFraction(int i, int i2, int i3, float f) {
@@ -157,11 +157,11 @@ public class TintTypedArray {
         if (Build.VERSION.SDK_INT >= 21) {
             return this.b.getType(i);
         }
-        if (this.f1899c == null) {
-            this.f1899c = new TypedValue();
+        if (this.f1851c == null) {
+            this.f1851c = new TypedValue();
         }
-        this.b.getValue(i, this.f1899c);
-        return this.f1899c.type;
+        this.b.getValue(i, this.f1851c);
+        return this.f1851c.type;
     }
 
     public boolean getValue(int i, TypedValue typedValue) {

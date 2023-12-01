@@ -38,7 +38,7 @@ public class PostFormRequest extends OkHttpRequest {
             return;
         }
         for (String str : this.params.keySet()) {
-            builder.addPart(Headers.of("Content-Disposition", "form-data; name=\"" + str + "\""), RequestBody.create((MediaType) null, this.params.get(str)));
+            builder.addPart(Headers.of(new String[]{"Content-Disposition", "form-data; name=\"" + str + "\""}), RequestBody.create((MediaType) null, this.params.get(str)));
         }
     }
 

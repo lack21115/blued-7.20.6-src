@@ -1,5 +1,6 @@
 package com.bytedance.bdtracker;
 
+import com.anythink.pd.ExHandler;
 import com.umeng.analytics.pro.bh;
 import org.json.JSONObject;
 
@@ -8,7 +9,7 @@ public final class h extends l {
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f21224c;
+    public String f7618c;
     public String d;
     public String e;
     public String f;
@@ -35,11 +36,11 @@ public final class h extends l {
         jSONObject.put("token", this.o);
         jSONObject.put("aid", this.b);
         jSONObject.put(bh.x, this.l);
-        jSONObject.put("bd_did", this.f21224c);
+        jSONObject.put("bd_did", this.f7618c);
         jSONObject.put("ssid", this.d);
         jSONObject.put("user_unique_id", this.e);
         jSONObject.put("androidid", this.h);
-        jSONObject.put("imei", this.i);
+        jSONObject.put(ExHandler.JSON_REQUEST_IMEI, this.i);
         jSONObject.put("oaid", this.j);
         jSONObject.put("os_version", this.m);
         jSONObject.put("device_model", this.n);
@@ -66,11 +67,11 @@ public final class h extends l {
             this.o = jSONObject.optString("tr_token", null);
             this.b = jSONObject.optString("aid", null);
             this.l = jSONObject.optString(bh.x, null);
-            this.f21224c = jSONObject.optString("bd_did", null);
+            this.f7618c = jSONObject.optString("bd_did", null);
             this.d = jSONObject.optString("ssid", null);
             this.e = jSONObject.optString("user_unique_id", null);
             this.h = jSONObject.optString("androidid", null);
-            this.i = jSONObject.optString("imei", null);
+            this.i = jSONObject.optString(ExHandler.JSON_REQUEST_IMEI, null);
             this.j = jSONObject.optString("oaid", null);
             this.m = jSONObject.optString("os_version", null);
             this.n = jSONObject.optString("device_model", null);
@@ -88,7 +89,7 @@ public final class h extends l {
     }
 
     public final void b(String str) {
-        this.f21224c = str;
+        this.f7618c = str;
     }
 
     public final String c() {

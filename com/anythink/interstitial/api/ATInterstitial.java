@@ -146,7 +146,6 @@ public class ATInterstitial {
         }
     };
     com.anythink.core.common.b.a adLoadListener = new com.anythink.core.common.b.a() { // from class: com.anythink.interstitial.api.ATInterstitial.2
-        @Override // com.anythink.core.common.b.a
         public void onAdLoadFail(final AdError adError) {
             n.a().a(new Runnable() { // from class: com.anythink.interstitial.api.ATInterstitial.2.2
                 @Override // java.lang.Runnable
@@ -158,7 +157,6 @@ public class ATInterstitial {
             });
         }
 
-        @Override // com.anythink.core.common.b.a
         public void onAdLoaded() {
             n.a().a(new Runnable() { // from class: com.anythink.interstitial.api.ATInterstitial.2.1
                 @Override // java.lang.Runnable
@@ -201,7 +199,7 @@ public class ATInterstitial {
     }
 
     public static void entryAdScenario(String str, String str2) {
-        n.a().a(str, str2, "3", (Map<String, Object>) null);
+        n.a().a(str, str2, "3", (Map) null);
     }
 
     public static void entryAdScenario(String str, String str2, Map<String, Object> map) {
@@ -230,7 +228,7 @@ public class ATInterstitial {
     public ATAdStatusInfo checkAdStatus() {
         ATAdStatusInfo adStatus = getAdStatus();
         if (adStatus == null) {
-            return new ATAdStatusInfo(false, false, null);
+            return new ATAdStatusInfo(false, false, (ATAdInfo) null);
         }
         com.anythink.core.common.k.n.b(this.mPlacementId, g.i.j, g.i.u, adStatus.toString(), "");
         return adStatus;

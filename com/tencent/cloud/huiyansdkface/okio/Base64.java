@@ -1,10 +1,10 @@
 package com.tencent.cloud.huiyansdkface.okio;
 
+import com.anythink.expressad.exoplayer.b;
 import java.io.UnsupportedEncodingException;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okio/Base64.class */
-public final class Base64 {
+final class Base64 {
     private static final byte[] MAP = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47};
     private static final byte[] URL_MAP = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 45, 95};
 
@@ -57,7 +57,7 @@ public final class Base64 {
                     return bArr;
                 }
                 byte[] bArr2 = new byte[i2];
-                System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, i2);
+                System.arraycopy(bArr, 0, bArr2, 0, i2);
                 return bArr2;
             }
             char charAt2 = str.charAt(i8);
@@ -165,7 +165,7 @@ public final class Base64 {
             bArr3[i11 + 1] = 61;
         }
         try {
-            return new String(bArr3, "US-ASCII");
+            return new String(bArr3, b.i);
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }

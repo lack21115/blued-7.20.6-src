@@ -27,13 +27,9 @@ public class RideStep implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5723a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5724c;
+    private String c;
     private float d;
     private float e;
     private List<LatLonPoint> f;
@@ -46,9 +42,9 @@ public class RideStep implements Parcelable {
 
     protected RideStep(Parcel parcel) {
         this.f = new ArrayList();
-        this.f5723a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5724c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readFloat();
         this.e = parcel.readFloat();
         this.f = parcel.createTypedArrayList(LatLonPoint.CREATOR);
@@ -78,7 +74,7 @@ public class RideStep implements Parcelable {
     }
 
     public String getInstruction() {
-        return this.f5723a;
+        return this.a;
     }
 
     public String getOrientation() {
@@ -90,7 +86,7 @@ public class RideStep implements Parcelable {
     }
 
     public String getRoad() {
-        return this.f5724c;
+        return this.c;
     }
 
     public void setAction(String str) {
@@ -110,7 +106,7 @@ public class RideStep implements Parcelable {
     }
 
     public void setInstruction(String str) {
-        this.f5723a = str;
+        this.a = str;
     }
 
     public void setOrientation(String str) {
@@ -122,14 +118,14 @@ public class RideStep implements Parcelable {
     }
 
     public void setRoad(String str) {
-        this.f5724c = str;
+        this.c = str;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5723a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5724c);
+        parcel.writeString(this.c);
         parcel.writeFloat(this.d);
         parcel.writeFloat(this.e);
         parcel.writeTypedList(this.f);

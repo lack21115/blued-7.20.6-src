@@ -14,11 +14,11 @@ final class g {
     private int r;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f25300a = 1000;
+    private int f11612a = 1000;
     private int[] b = new int[1000];
 
     /* renamed from: c  reason: collision with root package name */
-    private long[] f25301c = new long[1000];
+    private long[] f11613c = new long[1000];
     private long[] f = new long[1000];
     private int[] e = new int[1000];
     private int[] d = new int[1000];
@@ -33,11 +33,11 @@ final class g {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f25302a;
+        public int f11614a;
         public long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public n.a f25303c;
+        public n.a f11615c;
     }
 
     private int a(int i, int i2, long j, boolean z) {
@@ -54,7 +54,7 @@ final class g {
             }
             int i7 = i4 + 1;
             i4 = i7;
-            if (i7 == this.f25300a) {
+            if (i7 == this.f11612a) {
                 i4 = 0;
             }
             i5 = i6 + 1;
@@ -69,7 +69,7 @@ final class g {
         this.j += i;
         int i3 = this.k + i;
         this.k = i3;
-        int i4 = this.f25300a;
+        int i4 = this.f11612a;
         if (i3 >= i4) {
             this.k = i3 - i4;
         }
@@ -82,11 +82,11 @@ final class g {
             int i6 = this.k;
             int i7 = i6;
             if (i6 == 0) {
-                i7 = this.f25300a;
+                i7 = this.f11612a;
             }
-            return this.d[i2] + this.f25301c[i7 - 1];
+            return this.d[i2] + this.f11613c[i7 - 1];
         }
-        return this.f25301c[this.k];
+        return this.f11613c[this.k];
     }
 
     private long c(int i) {
@@ -108,7 +108,7 @@ final class g {
             int i4 = d - 1;
             d = i4;
             if (i4 == -1) {
-                d = this.f25300a - 1;
+                d = this.f11612a - 1;
             }
             i2 = i3 + 1;
         }
@@ -116,7 +116,7 @@ final class g {
 
     private int d(int i) {
         int i2 = this.k + i;
-        int i3 = this.f25300a;
+        int i3 = this.f11612a;
         return i2 < i3 ? i2 : i2 - i3;
     }
 
@@ -159,24 +159,24 @@ final class g {
                     if (eVar.f()) {
                         i = -3;
                     } else {
-                        eVar.f25074c = this.f[d];
+                        eVar.f11386c = this.f[d];
                         eVar.a_(this.e[d]);
-                        aVar.f25302a = this.d[d];
-                        aVar.b = this.f25301c[d];
-                        aVar.f25303c = this.g[d];
+                        aVar.f11614a = this.d[d];
+                        aVar.b = this.f11613c[d];
+                        aVar.f11615c = this.g[d];
                         this.l++;
                         i = -4;
                     }
                 }
                 format2 = this.h[d];
-                lVar.f25515a = format2;
+                lVar.f11827a = format2;
             } else if (z2) {
                 eVar.a_(4);
                 i = -4;
             } else {
                 if (this.q != null && (z || this.q != format)) {
                     format2 = this.q;
-                    lVar.f25515a = format2;
+                    lVar.f11827a = format2;
                 }
                 i = -3;
             }
@@ -195,7 +195,7 @@ final class g {
             return 0L;
         }
         int d = d(i3 - 1);
-        return this.d[d] + this.f25301c[d];
+        return this.d[d] + this.f11613c[d];
     }
 
     public void a(long j) {
@@ -215,7 +215,7 @@ final class g {
             a(j);
             int d = d(this.i);
             this.f[d] = j;
-            this.f25301c[d] = j2;
+            this.f11613c[d] = j2;
             this.d[d] = i2;
             this.e[d] = i;
             this.g[d] = aVar;
@@ -223,8 +223,8 @@ final class g {
             this.b[d] = this.r;
             int i3 = this.i + 1;
             this.i = i3;
-            if (i3 == this.f25300a) {
-                int i4 = this.f25300a + 1000;
+            if (i3 == this.f11612a) {
+                int i4 = this.f11612a + 1000;
                 int[] iArr = new int[i4];
                 long[] jArr = new long[i4];
                 long[] jArr2 = new long[i4];
@@ -232,23 +232,23 @@ final class g {
                 int[] iArr3 = new int[i4];
                 n.a[] aVarArr = new n.a[i4];
                 Format[] formatArr = new Format[i4];
-                int i5 = this.f25300a - this.k;
-                System.arraycopy((Object) this.f25301c, this.k, (Object) jArr, 0, i5);
-                System.arraycopy((Object) this.f, this.k, (Object) jArr2, 0, i5);
-                System.arraycopy((Object) this.e, this.k, (Object) iArr2, 0, i5);
-                System.arraycopy((Object) this.d, this.k, (Object) iArr3, 0, i5);
+                int i5 = this.f11612a - this.k;
+                System.arraycopy(this.f11613c, this.k, jArr, 0, i5);
+                System.arraycopy(this.f, this.k, jArr2, 0, i5);
+                System.arraycopy(this.e, this.k, iArr2, 0, i5);
+                System.arraycopy(this.d, this.k, iArr3, 0, i5);
                 System.arraycopy(this.g, this.k, aVarArr, 0, i5);
                 System.arraycopy(this.h, this.k, formatArr, 0, i5);
-                System.arraycopy((Object) this.b, this.k, (Object) iArr, 0, i5);
+                System.arraycopy(this.b, this.k, iArr, 0, i5);
                 int i6 = this.k;
-                System.arraycopy((Object) this.f25301c, 0, (Object) jArr, i5, i6);
-                System.arraycopy((Object) this.f, 0, (Object) jArr2, i5, i6);
-                System.arraycopy((Object) this.e, 0, (Object) iArr2, i5, i6);
-                System.arraycopy((Object) this.d, 0, (Object) iArr3, i5, i6);
+                System.arraycopy(this.f11613c, 0, jArr, i5, i6);
+                System.arraycopy(this.f, 0, jArr2, i5, i6);
+                System.arraycopy(this.e, 0, iArr2, i5, i6);
+                System.arraycopy(this.d, 0, iArr3, i5, i6);
                 System.arraycopy(this.g, 0, aVarArr, i5, i6);
                 System.arraycopy(this.h, 0, formatArr, i5, i6);
-                System.arraycopy((Object) this.b, 0, (Object) iArr, i5, i6);
-                this.f25301c = jArr;
+                System.arraycopy(this.b, 0, iArr, i5, i6);
+                this.f11613c = jArr;
                 this.f = jArr2;
                 this.e = iArr2;
                 this.d = iArr3;
@@ -256,8 +256,8 @@ final class g {
                 this.h = formatArr;
                 this.b = iArr;
                 this.k = 0;
-                this.i = this.f25300a;
-                this.f25300a = i4;
+                this.i = this.f11612a;
+                this.f11612a = i4;
             }
         }
     }
@@ -330,7 +330,7 @@ final class g {
                     i = i2;
                     d = i3;
                     if (i3 == -1) {
-                        d = this.f25300a - 1;
+                        d = this.f11612a - 1;
                         i = i2;
                     }
                 }

@@ -23,6 +23,7 @@ import android.widget.TextView;
 import androidx.core.widget.NestedScrollView;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.BlueAppLocal;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -55,6 +56,7 @@ import com.soft.blued.utils.BluedPreferences;
 import com.soft.blued.utils.Logger;
 import com.soft.blued.utils.StringUtils;
 import com.soft.blued.utils.UserRelationshipUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -87,7 +89,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
     private ImageView Z;
 
     /* renamed from: a  reason: collision with root package name */
-    public FilterDialogFragment f30193a;
+    public FilterDialogFragment f16503a;
     private String[] aA;
     private String[] aB;
     private boolean aC;
@@ -105,7 +107,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
     private UserTagAdapter aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private UserTagAdapter f30194ar;
+    private UserTagAdapter f16504ar;
     private UserTagAdapter as;
     private UserTagAdapter at;
     private UserTagAdapter au;
@@ -117,7 +119,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public CommonTopTitleNoTrans f30195c;
+    public CommonTopTitleNoTrans f16505c;
     public NestedScrollView d;
     public TextView e;
     public TextView f;
@@ -298,7 +300,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
                 FilterFragment.this.aC = true;
                 StringBuilder sb = new StringBuilder();
                 sb.append(i);
-                sb.append("-");
+                sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 sb.append(i2 >= 100 ? "max" : Integer.valueOf(i2));
                 BluedPreferences.v(sb.toString());
                 FilterFragment.this.e.setText(TwoWaysBar.a(FilterFragment.this.n, i, i2, 1));
@@ -328,7 +330,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
                 FilterFragment.this.aC = true;
                 StringBuilder sb = new StringBuilder();
                 sb.append(i);
-                sb.append("-");
+                sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 sb.append(i2 >= 30 ? "max" : Integer.valueOf(i2));
                 BluedPreferences.w(sb.toString());
                 FilterFragment.this.f.setText(TwoWaysBar.a(FilterFragment.this.n, i, i2, 2));
@@ -430,7 +432,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long j) {
                 Tracker.onItemClick(adapterView, view, i, j);
                 FilterFragment filterFragment = FilterFragment.this;
-                filterFragment.a(filterFragment.ak, FilterFragment.this.ad, FilterFragment.this.f30194ar, i);
+                filterFragment.a(filterFragment.ak, FilterFragment.this.ad, FilterFragment.this.f16504ar, i);
             }
         });
         PhotoGridView photoGridView3 = (PhotoGridView) this.b.findViewById(R.id.gv_lookfor_bodytype);
@@ -517,7 +519,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
         this.i.setTwoWaysBarListner(new TwoWaysBar.TowWaysBarListenerAdapter() { // from class: com.soft.blued.ui.find.fragment.FilterFragment.15
             @Override // com.soft.blued.ui.find.view.TwoWaysBar.TowWaysBarListenerAdapter, com.soft.blued.ui.find.view.TwoWaysBar.TwoWaysBarListner
             public void a(int i, int i2) {
-                String str2 = i + "-" + i2;
+                String str2 = i + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i2;
                 BluedPreferences.l(str2);
                 FilterFragment.this.aC = true;
                 FilterFragment.this.T.setText(FilterHelper.d().a(str2));
@@ -541,7 +543,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
         this.j.setTwoWaysBarListner(new TwoWaysBar.TowWaysBarListenerAdapter() { // from class: com.soft.blued.ui.find.fragment.FilterFragment.16
             @Override // com.soft.blued.ui.find.view.TwoWaysBar.TowWaysBarListenerAdapter, com.soft.blued.ui.find.view.TwoWaysBar.TwoWaysBarListner
             public void a(int i, int i2) {
-                String str3 = i + "-" + i2;
+                String str3 = i + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i2;
                 if (FilterFragment.this.aD) {
                     BluedPreferences.n(str3);
                 } else {
@@ -569,7 +571,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
         this.k.setTwoWaysBarListner(new TwoWaysBar.TowWaysBarListenerAdapter() { // from class: com.soft.blued.ui.find.fragment.FilterFragment.17
             @Override // com.soft.blued.ui.find.view.TwoWaysBar.TowWaysBarListenerAdapter, com.soft.blued.ui.find.view.TwoWaysBar.TwoWaysBarListner
             public void a(int i, int i2) {
-                String str4 = i + "-" + i2;
+                String str4 = i + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i2;
                 if (FilterFragment.this.aD) {
                     BluedPreferences.p(str4);
                 } else {
@@ -912,27 +914,27 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
     }
 
     private void z() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        this.f30195c = commonTopTitleNoTrans;
-        RelativeLayout relativeLayout = (RelativeLayout) commonTopTitleNoTrans.findViewById(2131369264);
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        this.f16505c = findViewById;
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById.findViewById(2131369264);
         if (relativeLayout != null) {
-            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.f30195c.findViewById(2131369264).getLayoutParams();
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.f16505c.findViewById(2131369264).getLayoutParams();
             layoutParams.height = DensityUtils.a(getContext(), 54.0f);
             relativeLayout.setLayoutParams(layoutParams);
         }
-        this.f30195c.setCenterText(getString(R.string.filter));
-        this.f30195c.setRightText(2131887320);
-        this.f30195c.setLeftClickListener(this);
-        this.f30195c.setRightClickListener(this);
-        this.f30195c.setCenterTextColor(2131102254);
-        this.f30195c.getTitleBackground().setBackground(new ColorDrawable(0));
-        this.f30195c.getRightTextView().setVisibility(8);
-        ShapeTextView rightTextView = this.f30195c.getRightTextView();
+        this.f16505c.setCenterText(getString(R.string.filter));
+        this.f16505c.setRightText(2131887320);
+        this.f16505c.setLeftClickListener(this);
+        this.f16505c.setRightClickListener(this);
+        this.f16505c.setCenterTextColor(2131102254);
+        this.f16505c.getTitleBackground().setBackground(new ColorDrawable(0));
+        this.f16505c.getRightTextView().setVisibility(8);
+        ShapeTextView rightTextView = this.f16505c.getRightTextView();
         RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) rightTextView.getLayoutParams();
         layoutParams2.rightMargin = DensityUtils.a(getContext(), 10.0f);
         rightTextView.setLayoutParams(layoutParams2);
         rightTextView.setTextColor(BluedSkinUtils.a(this.n, 2131101766));
-        ImageView leftImg = this.f30195c.getLeftImg();
+        ImageView leftImg = this.f16505c.getLeftImg();
         RelativeLayout.LayoutParams layoutParams3 = (RelativeLayout.LayoutParams) leftImg.getLayoutParams();
         layoutParams3.leftMargin = DensityUtils.a(getContext(), 10.0f);
         leftImg.setLayoutParams(layoutParams3);
@@ -1216,8 +1218,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
     }
 
     public void b() {
-        FindHttpUtils.a(this.n, new BluedUIHttpResponse<BluedEntityA<UserTagAll>>() { // from class: com.soft.blued.ui.find.fragment.FilterFragment.33
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        FindHttpUtils.a(this.n, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<UserTagAll>>() { // from class: com.soft.blued.ui.find.fragment.FilterFragment.33
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserTagAll> bluedEntityA) {
                 if (bluedEntityA != null) {
@@ -1225,7 +1226,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
                         if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                             return;
                         }
-                        FilterFragment.this.ac = bluedEntityA.data.get(0).type;
+                        FilterFragment.this.ac = ((UserTagAll) bluedEntityA.data.get(0)).type;
                         if (FilterFragment.this.ac != null) {
                             int i = 0;
                             while (true) {
@@ -1237,7 +1238,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
                                 i = i2 + 1;
                             }
                         }
-                        FilterFragment.this.ad = bluedEntityA.data.get(0).character;
+                        FilterFragment.this.ad = ((UserTagAll) bluedEntityA.data.get(0)).character;
                         if (FilterFragment.this.ad != null) {
                             int i3 = 0;
                             while (true) {
@@ -1249,7 +1250,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
                                 i3 = i4 + 1;
                             }
                         }
-                        FilterFragment.this.af = bluedEntityA.data.get(0).love_type;
+                        FilterFragment.this.af = ((UserTagAll) bluedEntityA.data.get(0)).love_type;
                         if (FilterFragment.this.af != null) {
                             int i5 = 0;
                             while (true) {
@@ -1261,7 +1262,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
                                 i5 = i6 + 1;
                             }
                         }
-                        FilterFragment.this.ag = bluedEntityA.data.get(0).love_character;
+                        FilterFragment.this.ag = ((UserTagAll) bluedEntityA.data.get(0)).love_character;
                         if (FilterFragment.this.ag != null) {
                             int i7 = 0;
                             while (true) {
@@ -1273,7 +1274,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
                                 i7 = i8 + 1;
                             }
                         }
-                        FilterFragment.this.ae = bluedEntityA.data.get(0).i_want;
+                        FilterFragment.this.ae = ((UserTagAll) bluedEntityA.data.get(0)).i_want;
                         if (FilterFragment.this.ae != null) {
                             int i9 = 0;
                             while (true) {
@@ -1293,32 +1294,30 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
                         FilterFragment.this.A = BluedPreferences.X();
                         FilterFragment.this.X.setText(FilterFragment.this.A);
                         FilterFragment.this.aq = new UserTagAdapter(FilterFragment.this.n, FilterFragment.this.ac);
-                        FilterFragment.this.f30194ar = new UserTagAdapter(FilterFragment.this.n, FilterFragment.this.ad);
+                        FilterFragment.this.f16504ar = new UserTagAdapter(FilterFragment.this.n, FilterFragment.this.ad);
                         FilterFragment.this.as = new UserTagAdapter(FilterFragment.this.n, FilterFragment.this.af);
                         FilterFragment.this.at = new UserTagAdapter(FilterFragment.this.n, FilterFragment.this.ag);
                         FilterFragment.this.au = new UserTagAdapter(FilterFragment.this.n, FilterFragment.this.ae);
                         FilterFragment.this.aj.setAdapter((ListAdapter) FilterFragment.this.aq);
-                        FilterFragment.this.ak.setAdapter((ListAdapter) FilterFragment.this.f30194ar);
+                        FilterFragment.this.ak.setAdapter((ListAdapter) FilterFragment.this.f16504ar);
                         FilterFragment.this.al.setAdapter((ListAdapter) FilterFragment.this.as);
                         FilterFragment.this.an.setAdapter((ListAdapter) FilterFragment.this.at);
                         FilterFragment.this.am.setAdapter((ListAdapter) FilterFragment.this.au);
                     } catch (Exception e) {
                         e.printStackTrace();
-                        AppMethods.a((CharSequence) FilterFragment.this.n.getResources().getString(2131887272));
+                        AppMethods.a(FilterFragment.this.n.getResources().getString(2131887272));
                     }
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(FilterFragment.this.m);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 DialogUtils.a(FilterFragment.this.m);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     public void b(final View view) {
@@ -1452,14 +1451,13 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
     }
 
     public void e() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = this.f30195c;
+        CommonTopTitleNoTrans commonTopTitleNoTrans = this.f16505c;
         if (commonTopTitleNoTrans == null || commonTopTitleNoTrans.getLeftImg() == null) {
             return;
         }
-        this.f30195c.getLeftImg().performClick();
+        this.f16505c.getLeftImg().performClick();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         this.J.setFocusable(true);
@@ -1467,7 +1465,6 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
         this.J.requestFocus();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == 0) {
             return;
@@ -1504,7 +1501,6 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         y();
         return super.onBackPressed();
@@ -1521,14 +1517,14 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Tracker.onClick(dialogInterface, i);
                             FilterFragment.this.y();
-                            if (FilterFragment.this.f30193a != null) {
-                                FilterFragment.this.f30193a.dismiss();
+                            if (FilterFragment.this.f16503a != null) {
+                                FilterFragment.this.f16503a.dismiss();
                             }
                         }
-                    }, getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                    }, getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                     return;
                 }
-                FilterDialogFragment filterDialogFragment = this.f30193a;
+                FilterDialogFragment filterDialogFragment = this.f16503a;
                 if (filterDialogFragment != null) {
                     filterDialogFragment.dismiss();
                     return;
@@ -1541,7 +1537,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
                 BluedPreferences.s(c2[0]);
                 BluedPreferences.t(c2[1]);
                 BluedPreferences.u(a(true)[2]);
-                FilterDialogFragment filterDialogFragment2 = this.f30193a;
+                FilterDialogFragment filterDialogFragment2 = this.f16503a;
                 if (filterDialogFragment2 != null) {
                     filterDialogFragment2.dismiss();
                 }
@@ -1577,7 +1573,6 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.n = getActivity();
         View view = this.b;
@@ -1593,13 +1588,11 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         FilterHelper.d().f();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (this.H == null || this.G == null) {

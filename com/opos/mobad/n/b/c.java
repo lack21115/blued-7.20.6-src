@@ -16,17 +16,17 @@ import com.opos.mobad.n.c.g;
 public class c extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private TextView f26580a;
+    private TextView f12892a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26581c;
+    private TextView f12893c;
     private TextView d;
     private TextView e;
     private TextView f;
     private TextView g;
     private String h;
-    private a.InterfaceC0708a i;
+    private a.InterfaceC0538a i;
 
     public c(Context context) {
         super(context);
@@ -40,7 +40,7 @@ public class c extends RelativeLayout {
 
     private void a() {
         TextView textView = new TextView(getContext());
-        this.f26580a = textView;
+        this.f12892a = textView;
         textView.setId(View.generateViewId());
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setGravity(16);
@@ -50,31 +50,31 @@ public class c extends RelativeLayout {
         RelativeLayout relativeLayout = new RelativeLayout(getContext());
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
         layoutParams2.weight = 1.0f;
-        this.f26580a.setTextSize(1, 10.0f);
-        this.f26580a.setTextColor(getResources().getColor(R.color.opos_mobad_banner_version_color));
+        this.f12892a.setTextSize(1, 10.0f);
+        this.f12892a.setTextColor(getResources().getColor(R.color.opos_mobad_banner_version_color));
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(-2, -2);
-        this.f26580a.setSingleLine(true);
+        this.f12892a.setSingleLine(true);
         layoutParams3.addRule(15);
-        relativeLayout.addView(this.f26580a, layoutParams3);
+        relativeLayout.addView(this.f12892a, layoutParams3);
         TextView textView2 = new TextView(getContext());
         this.b = textView2;
         textView2.setId(View.generateViewId());
         RelativeLayout.LayoutParams layoutParams4 = new RelativeLayout.LayoutParams(a3, a2);
         layoutParams4.leftMargin = com.opos.cmn.an.h.f.a.a(getContext(), 3.0f);
-        layoutParams4.addRule(1, this.f26580a.getId());
+        layoutParams4.addRule(1, this.f12892a.getId());
         layoutParams4.addRule(15);
         relativeLayout.addView(this.b, layoutParams4);
         TextView textView3 = new TextView(getContext());
-        this.f26581c = textView3;
+        this.f12893c = textView3;
         textView3.setId(View.generateViewId());
-        this.f26581c.setTextSize(1, 10.0f);
-        this.f26581c.setEllipsize(TextUtils.TruncateAt.valueOf("END"));
-        this.f26581c.setSingleLine(true);
+        this.f12893c.setTextSize(1, 10.0f);
+        this.f12893c.setEllipsize(TextUtils.TruncateAt.valueOf("END"));
+        this.f12893c.setSingleLine(true);
         RelativeLayout.LayoutParams layoutParams5 = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams5.leftMargin = com.opos.cmn.an.h.f.a.a(getContext(), 3.0f);
         layoutParams5.addRule(15);
         layoutParams5.addRule(1, this.b.getId());
-        relativeLayout.addView(this.f26581c, layoutParams5);
+        relativeLayout.addView(this.f12893c, layoutParams5);
         linearLayout.addView(relativeLayout, layoutParams2);
         RelativeLayout relativeLayout2 = new RelativeLayout(getContext());
         ViewGroup.LayoutParams layoutParams6 = new LinearLayout.LayoutParams(-2, -2);
@@ -116,7 +116,7 @@ public class c extends RelativeLayout {
         layoutParams10.addRule(1, this.f.getId());
         relativeLayout2.addView(this.g, layoutParams10);
         linearLayout.addView(relativeLayout2, layoutParams6);
-        this.f26581c.setTextColor(getResources().getColor(R.color.opos_mobad_banner_version_color));
+        this.f12893c.setTextColor(getResources().getColor(R.color.opos_mobad_banner_version_color));
         this.b.setBackgroundColor(getResources().getColor(R.color.opos_mobad_banner_split_color));
         this.d.setBackgroundColor(getResources().getColor(R.color.opos_mobad_banner_split_color));
         this.f.setBackgroundColor(getResources().getColor(R.color.opos_mobad_banner_split_color));
@@ -143,18 +143,18 @@ public class c extends RelativeLayout {
         this.e.setOnTouchListener(gVar2);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("BannerPrivacyView", "setListener " + interfaceC0708a);
-        this.i = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("BannerPrivacyView", "setListener " + interfaceC0538a);
+        this.i = interfaceC0538a;
     }
 
     public void a(String str, String str2) {
         if (!TextUtils.isEmpty(str)) {
-            this.f26580a.setText(str);
+            this.f12892a.setText(str);
         }
         if (TextUtils.isEmpty(str2)) {
             return;
         }
-        this.f26581c.setText(str2);
+        this.f12893c.setText(str2);
     }
 }

@@ -24,7 +24,7 @@ public final class CallbackFlowBuilder<T> extends ChannelFlowBuilder<T> {
     }
 
     public /* synthetic */ CallbackFlowBuilder(Function2 function2, CoroutineContext coroutineContext, int i, BufferOverflow bufferOverflow, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(function2, (i2 & 2) != 0 ? EmptyCoroutineContext.f42457a : coroutineContext, (i2 & 4) != 0 ? -2 : i, (i2 & 8) != 0 ? BufferOverflow.SUSPEND : bufferOverflow);
+        this(function2, (i2 & 2) != 0 ? EmptyCoroutineContext.a : coroutineContext, (i2 & 4) != 0 ? -2 : i, (i2 & 8) != 0 ? BufferOverflow.SUSPEND : bufferOverflow);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
@@ -81,7 +81,7 @@ public final class CallbackFlowBuilder<T> extends ChannelFlowBuilder<T> {
             r1 = 1
             if (r0 != r1) goto L5f
             r0 = r7
-            java.lang.Object r0 = r0.f43045a
+            java.lang.Object r0 = r0.a
             kotlinx.coroutines.channels.ProducerScope r0 = (kotlinx.coroutines.channels.ProducerScope) r0
             r9 = r0
             r0 = r10
@@ -98,7 +98,7 @@ public final class CallbackFlowBuilder<T> extends ChannelFlowBuilder<T> {
             kotlin.ResultKt.a(r0)
             r0 = r7
             r1 = r6
-            r0.f43045a = r1
+            r0.a = r1
             r0 = r7
             r1 = 1
             r0.d = r1
@@ -116,7 +116,7 @@ public final class CallbackFlowBuilder<T> extends ChannelFlowBuilder<T> {
             r0 = r9
             boolean r0 = r0.u()
             if (r0 == 0) goto L97
-            kotlin.Unit r0 = kotlin.Unit.f42314a
+            kotlin.Unit r0 = kotlin.Unit.a
             return r0
         L97:
             java.lang.IllegalStateException r0 = new java.lang.IllegalStateException

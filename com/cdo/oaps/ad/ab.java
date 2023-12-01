@@ -13,7 +13,7 @@ import java.util.List;
 public class ab {
     public static boolean a(Context context, String str) {
         Intent intent = new Intent();
-        intent.setAction(a.b(y.f21551a));
+        intent.setAction(a.b(y.f7945a));
         intent.setFlags(268435456);
         intent.setPackage(af.b(context));
         intent.setDataAndType(Uri.parse(str), a.b(y.b));
@@ -43,7 +43,7 @@ public class ab {
 
     public static boolean b(Context context, String str) {
         Intent intent = new Intent();
-        intent.setAction(a.b(y.f21551a));
+        intent.setAction(a.b(y.f7945a));
         intent.setPackage(af.b(context));
         intent.setDataAndType(Uri.parse(str), a.b(y.b));
         List<ResolveInfo> queryIntentServices = context.getPackageManager().queryIntentServices(intent, 32);

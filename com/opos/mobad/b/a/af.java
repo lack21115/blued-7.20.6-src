@@ -8,7 +8,7 @@ import okio.ByteString;
 public final class af extends com.heytap.nearx.a.a.b<af, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<af> f25700c = new b();
+    public static final com.heytap.nearx.a.a.e<af> f12012c = new b();
     public static final Integer d = 0;
     public static final Integer e = 0;
     private static final long serialVersionUID = 0;
@@ -19,11 +19,11 @@ public final class af extends com.heytap.nearx.a.a.b<af, a> {
     public static final class a extends b.a<af, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public Integer f25701c;
+        public Integer f12013c;
         public Integer d;
 
         public a a(Integer num) {
-            this.f25701c = num;
+            this.f12013c = num;
             return this;
         }
 
@@ -34,9 +34,9 @@ public final class af extends com.heytap.nearx.a.a.b<af, a> {
 
         public af b() {
             Integer num;
-            Integer num2 = this.f25701c;
+            Integer num2 = this.f12013c;
             if (num2 == null || (num = this.d) == null) {
-                throw com.heytap.nearx.a.a.a.b.a(this.f25701c, "code", this.d, "validTime");
+                throw com.heytap.nearx.a.a.a.b.a(this.f12013c, "code", this.d, "validTime");
             }
             return new af(num2, num, super.a());
         }
@@ -83,7 +83,7 @@ public final class af extends com.heytap.nearx.a.a.b<af, a> {
     }
 
     public af(Integer num, Integer num2, ByteString byteString) {
-        super(f25700c, byteString);
+        super(f12012c, byteString);
         this.f = num;
         this.g = num2;
     }

@@ -14,9 +14,8 @@ public interface IConditionListener extends IInterface {
         private static final String DESCRIPTOR = "android.service.notification.IConditionListener";
         static final int TRANSACTION_onConditionsReceived = 1;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/service/notification/IConditionListener$Stub$Proxy.class */
-        public static class Proxy implements IConditionListener {
+        private static class Proxy implements IConditionListener {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

@@ -31,6 +31,12 @@ import android.webkit.WebViewClient;
 import androidx.collection.ArrayMap;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import com.alipay.sdk.cons.b;
+import com.alipay.sdk.util.i;
+import com.anythink.china.common.d;
+import com.anythink.core.common.b.g;
+import com.anythink.core.common.l;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.net.FileHttpResponseHandler;
@@ -51,11 +57,11 @@ import com.blued.android.framework.utils.StringUtils;
 import com.blued.android.framework.utils.Tools;
 import com.blued.android.framework.web.BluedWebView;
 import com.blued.android.framework.web.BluedWebView.WebCallback;
+import com.blued.android.module.common.web.LoaderConstants;
+import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.statistics.BluedStatistics;
 import com.blued.das.CommonProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.google.common.net.HttpHeaders;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -68,9 +74,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/web/BluedWebView.class */
 public class BluedWebView<T extends WebCallback> implements View.OnCreateContextMenuListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final boolean f10364a = HappyDnsUtils.b();
+    private static final boolean a = HappyDnsUtils.b();
     private static String[] y = BluedURIRouter.a().e();
     private static Map<String, String> z = new ConcurrentHashMap();
     private BluedWebView<T>.RectPosition d;
@@ -86,9 +90,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
     private WebChromeClient.CustomViewCallback q;
     private String v;
     private boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f10365c = "blued_httpdns=1";
+    private final String c = "blued_httpdns=1";
     private int f = 0;
     private JSExecutor m = null;
     private DownloaderJSCallback n = null;
@@ -109,7 +111,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void b(File file) {
             Context d = AppInfo.d();
-            d.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://" + file.getAbsolutePath())));
+            d.sendBroadcast(new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE", Uri.parse("file://" + file.getAbsolutePath())));
             if (Tools.a(BluedWebView.this.h)) {
                 AppMethods.a((CharSequence) (AppInfo.d().getString(R.string.pic_save) + file.getAbsolutePath()));
             }
@@ -208,7 +210,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
                 ((BaseFragment) BluedWebView.this.h).postDelaySafeRunOnUiThread(runnable, 500L);
             }
             if (BluedWebView.this.h instanceof BaseDialogFragment) {
-                ((BaseDialogFragment) BluedWebView.this.h).a(runnable, 500L);
+                BluedWebView.this.h.a(runnable, 500L);
             }
         }
     }
@@ -216,15 +218,13 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/web/BluedWebView$RectPosition.class */
     class RectPosition {
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f10381c;
+        private int c;
         private int d;
         private int e;
 
         public RectPosition(int i, int i2, int i3, int i4) {
             this.b = i2;
-            this.f10381c = i;
+            this.c = i;
             this.d = i3;
             this.e = i4;
         }
@@ -354,7 +354,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean e(String str) {
-        boolean a2 = a(this.h.getActivity(), str, this.k);
+        boolean a2 = a((Context) this.h.getActivity(), str, (WebCallback) this.k);
         boolean z2 = a2;
         if (!a2) {
             z2 = f(str);
@@ -393,7 +393,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
             } else if ("download".equals(a2.a())) {
                 if (a2.b() != null) {
                     str7 = a2.b().get("opt");
-                    str8 = a2.b().get("code");
+                    str8 = a2.b().get(g.c.b);
                     str9 = a2.b().get("url");
                 } else {
                     str7 = null;
@@ -424,22 +424,22 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
                 } else if ("get_uid".equals(str10)) {
                     String a3 = ProviderHolder.a().b().a();
                     JSExecutor jSExecutor = this.m;
-                    jSExecutor.a(jSExecutor.b(), "javascript:" + str6 + "('" + a3 + "')");
+                    jSExecutor.a(jSExecutor.b(), BridgeUtil.JAVASCRIPT_STR + str6 + "('" + a3 + "')");
                     return true;
                 } else {
                     return true;
                 }
-            } else if ("close".equals(a2.a())) {
+            } else if (LoaderConstants.CLOSE.equals(a2.a())) {
                 T t2 = this.k;
                 if (t2 != null) {
                     t2.a(a2.b(), this);
                 }
-                Fragment fragment = this.h;
-                if (fragment instanceof DialogFragment) {
-                    ((DialogFragment) fragment).dismiss();
+                DialogFragment dialogFragment = this.h;
+                if (dialogFragment instanceof DialogFragment) {
+                    dialogFragment.dismiss();
                     return true;
                 }
-                fragment.getActivity().finish();
+                dialogFragment.getActivity().finish();
                 return true;
             } else if (!"webshare".equals(a2.a())) {
                 T t3 = this.k;
@@ -454,7 +454,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
                         i = Integer.valueOf(str13).intValue();
                     }
                     String str14 = b.containsKey("title") ? b.get("title") : "";
-                    str4 = b.containsKey("content") ? b.get("content") : "";
+                    str4 = b.containsKey(l.y) ? b.get(l.y) : "";
                     str2 = b.containsKey("to") ? b.get("to") : "";
                     if (b.containsKey("url")) {
                         str12 = b.get("url");
@@ -484,7 +484,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
         if (str == null) {
             return null;
         }
-        return str.split(";")[0];
+        return str.split(i.b)[0];
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -492,7 +492,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
         if (str == null) {
             return null;
         }
-        String[] split = str.split(";");
+        String[] split = str.split(i.b);
         if (split.length <= 1) {
             return null;
         }
@@ -522,9 +522,9 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
         this.i.setScrollBarStyle(33554432);
         this.i.getSettings().setSavePassword(false);
         this.i.addJavascriptInterface(new InJavaScriptBluedNativeObject(), "bluedNative");
-        this.i.addJavascriptInterface(new InJavaScriptLocalObj(), "android");
+        this.i.addJavascriptInterface(new InJavaScriptLocalObj(), MsgBackupManager.PLATFORM_ANDROID);
         this.i.addJavascriptInterface(new InJavaScriptBluedNativeObject(), "bluedNative");
-        this.i.addJavascriptInterface(new InJavaScriptLocalObj(), "android");
+        this.i.addJavascriptInterface(new InJavaScriptLocalObj(), MsgBackupManager.PLATFORM_ANDROID);
     }
 
     private void n() {
@@ -546,7 +546,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
         this.m = jSExecutor;
         jSExecutor.a(this.i);
         m();
-        a(this.h.getActivity());
+        a((Context) this.h.getActivity());
         try {
             this.i.getSettings().setUserAgentString(AppMethods.b(this.i.getSettings().getUserAgentString(), "ibb/1.0.0"));
         } catch (Exception e) {
@@ -756,8 +756,8 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
 
             @Override // android.webkit.WebViewClient
             public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
-                if (BluedWebView.this.b || BluedWebView.f10364a) {
-                    if (webResourceRequest != null && webResourceRequest.getUrl() != null && webResourceRequest.getMethod().equalsIgnoreCase(MonitorConstants.CONNECT_TYPE_GET)) {
+                if (BluedWebView.this.b || BluedWebView.a) {
+                    if (webResourceRequest != null && webResourceRequest.getUrl() != null && webResourceRequest.getMethod().equalsIgnoreCase("get")) {
                         String host = webResourceRequest.getUrl().getHost();
                         if (TextUtils.isEmpty(host)) {
                             return super.shouldInterceptRequest(webView, webResourceRequest);
@@ -768,7 +768,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
                         String trim = webResourceRequest.getUrl().getScheme().trim();
                         String uri = webResourceRequest.getUrl().toString();
                         com.blued.android.core.utils.Log.b("webTest", "shouldInterceptRequest url: " + uri);
-                        if (trim.equalsIgnoreCase("http") || trim.equalsIgnoreCase("https")) {
+                        if (trim.equalsIgnoreCase("http") || trim.equalsIgnoreCase(b.a)) {
                             try {
                                 URLConnection a2 = a(uri, host, webResourceRequest, false);
                                 if (a2 == null) {
@@ -959,23 +959,23 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
     public void q() {
         String string = this.h.getActivity().getString(R.string.web_js_call_popularize);
         WebView webView = this.i;
-        Tracker.loadUrl(webView, "javascript:" + string);
+        Tracker.loadUrl(webView, BridgeUtil.JAVASCRIPT_STR + string);
         Tracker.loadUrl(this.i, "javascript:checkCallPopularizeFunction()");
     }
 
     private void r() {
-        Locale c2 = LocaleUtils.c();
-        if (c2 == null || Build.VERSION.SDK_INT < 17) {
+        Locale c = LocaleUtils.c();
+        if (c == null || Build.VERSION.SDK_INT < 17) {
             return;
         }
         Resources resources = AppInfo.d().getResources();
         Configuration configuration = resources.getConfiguration();
-        if (a(configuration).equals(c2)) {
+        if (a(configuration).equals(c)) {
             return;
         }
-        Locale.setDefault(c2);
+        Locale.setDefault(c);
         Configuration configuration2 = new Configuration(configuration);
-        configuration2.setLocale(c2);
+        configuration2.setLocale(c);
         resources.updateConfiguration(configuration2, resources.getDisplayMetrics());
     }
 
@@ -998,7 +998,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
     }
 
     public boolean a(int i, int i2, Intent intent) {
-        if (this.l == null || i != WebUploadFile.f10389a) {
+        if (this.l == null || i != WebUploadFile.a) {
             return false;
         }
         this.l.a(i, i2, intent);
@@ -1021,7 +1021,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
             this.s = str;
             this.t = str2;
             ArrayMap arrayMap = new ArrayMap();
-            arrayMap.put(HttpHeaders.ACCEPT_LANGUAGE, LocaleUtils.b());
+            arrayMap.put("Accept-Language", LocaleUtils.b());
             String b = ProviderHolder.a().e().b();
             if (!TextUtils.isEmpty(b)) {
                 arrayMap.put("X-CLIENT-COLOR", b);
@@ -1039,7 +1039,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
                     String cookie = CookieManager.getInstance().getCookie(str3);
                     Log.i("webTest", "== " + str3 + " ==↓↓↓↓↓↓");
                     if (cookie != null) {
-                        String[] split = cookie.split(";");
+                        String[] split = cookie.split(i.b);
                         int length2 = split.length;
                         int i3 = 0;
                         while (true) {
@@ -1128,7 +1128,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
     public void i() {
         String string = this.h.getActivity().getString(R.string.web_js_get_option_menu);
         WebView webView = this.i;
-        Tracker.loadUrl(webView, "javascript:" + string);
+        Tracker.loadUrl(webView, BridgeUtil.JAVASCRIPT_STR + string);
         Tracker.loadUrl(this.i, "javascript:getOptionMenuFunction()");
     }
 
@@ -1155,7 +1155,7 @@ public class BluedWebView<T extends WebCallback> implements View.OnCreateContext
                     @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void a(String[] strArr) {
                     }
-                }, "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE");
+                }, d.b, "android.permission.READ_EXTERNAL_STORAGE");
                 return true;
             }
         };

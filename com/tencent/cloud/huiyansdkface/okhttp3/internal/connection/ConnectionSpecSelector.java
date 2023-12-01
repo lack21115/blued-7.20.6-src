@@ -19,25 +19,25 @@ import javax.net.ssl.SSLSocket;
 public final class ConnectionSpecSelector {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<ConnectionSpec> f35933a;
+    private final List<ConnectionSpec> f22242a;
     private int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f35934c;
+    private boolean f22243c;
     private boolean d;
 
     public ConnectionSpecSelector(List<ConnectionSpec> list) {
-        this.f35933a = list;
+        this.f22242a = list;
     }
 
     private boolean a(SSLSocket sSLSocket) {
         int i = this.b;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f35933a.size()) {
+            if (i2 >= this.f22242a.size()) {
                 return false;
             }
-            if (this.f35933a.get(i2).isCompatible(sSLSocket)) {
+            if (this.f22242a.get(i2).isCompatible(sSLSocket)) {
                 return true;
             }
             i = i2 + 1;
@@ -47,13 +47,13 @@ public final class ConnectionSpecSelector {
     public ConnectionSpec configureSecureSocket(SSLSocket sSLSocket) throws IOException {
         ConnectionSpec connectionSpec;
         int i = this.b;
-        int size = this.f35933a.size();
+        int size = this.f22242a.size();
         while (true) {
             if (i >= size) {
                 connectionSpec = null;
                 break;
             }
-            connectionSpec = this.f35933a.get(i);
+            connectionSpec = this.f22242a.get(i);
             int i2 = i + 1;
             i = i2;
             if (connectionSpec.isCompatible(sSLSocket)) {
@@ -62,16 +62,16 @@ public final class ConnectionSpecSelector {
             }
         }
         if (connectionSpec != null) {
-            this.f35934c = a(sSLSocket);
-            Internal.f35902a.apply(connectionSpec, sSLSocket, this.d);
+            this.f22243c = a(sSLSocket);
+            Internal.f22211a.apply(connectionSpec, sSLSocket, this.d);
             return connectionSpec;
         }
-        throw new UnknownServiceException("Unable to find acceptable protocols. isFallback=" + this.d + ", modes=" + this.f35933a + ", supported protocols=" + Arrays.toString(sSLSocket.getEnabledProtocols()));
+        throw new UnknownServiceException("Unable to find acceptable protocols. isFallback=" + this.d + ", modes=" + this.f22242a + ", supported protocols=" + Arrays.toString(sSLSocket.getEnabledProtocols()));
     }
 
     public boolean connectionFailed(IOException iOException) {
         this.d = true;
-        if (!this.f35934c || (iOException instanceof ProtocolException) || (iOException instanceof InterruptedIOException)) {
+        if (!this.f22243c || (iOException instanceof ProtocolException) || (iOException instanceof InterruptedIOException)) {
             return false;
         }
         boolean z = iOException instanceof SSLHandshakeException;

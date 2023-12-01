@@ -9,17 +9,13 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveOperationBottomChildH5ViewBinding.class */
 public final class LiveOperationBottomChildH5ViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeRelativeLayout f12304a;
+    public final ShapeRelativeLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final RelativeLayout f12305c;
+    private final RelativeLayout c;
 
     private LiveOperationBottomChildH5ViewBinding(RelativeLayout relativeLayout, ShapeRelativeLayout shapeRelativeLayout, ImageView imageView) {
-        this.f12305c = relativeLayout;
-        this.f12304a = shapeRelativeLayout;
+        this.c = relativeLayout;
+        this.a = shapeRelativeLayout;
         this.b = imageView;
     }
 
@@ -38,9 +34,8 @@ public final class LiveOperationBottomChildH5ViewBinding implements ViewBinding 
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f12305c;
+        return this.c;
     }
 }

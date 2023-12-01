@@ -1,5 +1,6 @@
 package kotlinx.coroutines.debug.internal;
 
+import com.anythink.core.common.c.d;
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.util.Iterator;
@@ -24,9 +25,7 @@ import kotlinx.coroutines.debug.internal.ConcurrentWeakMap;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/debug/internal/ConcurrentWeakMap.class */
 public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final /* synthetic */ AtomicIntegerFieldUpdater f43016a = AtomicIntegerFieldUpdater.newUpdater(ConcurrentWeakMap.class, "_size");
+    private static final /* synthetic */ AtomicIntegerFieldUpdater a = AtomicIntegerFieldUpdater.newUpdater(ConcurrentWeakMap.class, "_size");
     private volatile /* synthetic */ int _size;
     private final ReferenceQueue<K> b;
     volatile /* synthetic */ Object core;
@@ -36,9 +35,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/debug/internal/ConcurrentWeakMap$Core.class */
     public final class Core {
         private static final /* synthetic */ AtomicIntegerFieldUpdater g = AtomicIntegerFieldUpdater.newUpdater(Core.class, "load");
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ AtomicReferenceArray f43017a;
+        /* synthetic */ AtomicReferenceArray a;
         /* synthetic */ AtomicReferenceArray b;
         private final int d;
         private final int e;
@@ -50,9 +47,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
         /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/debug/internal/ConcurrentWeakMap$Core$KeyValueIterator.class */
         public final class KeyValueIterator<E> implements Iterator<E>, KMutableIterator {
             private final Function2<K, V, E> b;
-
-            /* renamed from: c  reason: collision with root package name */
-            private int f43020c = -1;
+            private int c = -1;
             private K d;
             private V e;
 
@@ -66,19 +61,19 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
             /* JADX WARN: Type inference failed for: r0v12, types: [java.lang.Object] */
             private final void b() {
                 while (true) {
-                    int i = this.f43020c + 1;
-                    this.f43020c = i;
+                    int i = this.c + 1;
+                    this.c = i;
                     if (i >= ((Core) Core.this).d) {
                         return;
                     }
-                    HashedWeakRef hashedWeakRef = (HashedWeakRef) Core.this.f43017a.get(this.f43020c);
+                    HashedWeakRef hashedWeakRef = (HashedWeakRef) Core.this.a.get(this.c);
                     K k = hashedWeakRef == null ? null : hashedWeakRef.get();
                     if (k != null) {
                         this.d = k;
-                        Object obj = Core.this.b.get(this.f43020c);
+                        Object obj = Core.this.b.get(this.c);
                         Object obj2 = obj;
                         if (obj instanceof Marked) {
-                            obj2 = ((Marked) obj).f43041a;
+                            obj2 = ((Marked) obj).a;
                         }
                         if (obj2 != null) {
                             this.e = (V) obj2;
@@ -97,21 +92,21 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.f43020c < ((Core) Core.this).d;
+                return this.c < ((Core) Core.this).d;
             }
 
             @Override // java.util.Iterator
             public E next() {
-                if (this.f43020c < ((Core) Core.this).d) {
+                if (this.c < ((Core) Core.this).d) {
                     Function2<K, V, E> function2 = this.b;
                     K k = this.d;
                     if (k == null) {
-                        Intrinsics.c("key");
+                        Intrinsics.c(d.a.b);
                         throw null;
                     }
                     V v = this.e;
                     if (v == null) {
-                        Intrinsics.c("value");
+                        Intrinsics.c(d.a.d);
                         throw null;
                     }
                     E invoke = function2.invoke(k, v);
@@ -126,7 +121,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
             this.d = i;
             this.e = Integer.numberOfLeadingZeros(i) + 1;
             this.f = (this.d * 2) / 3;
-            this.f43017a = new AtomicReferenceArray(this.d);
+            this.a = new AtomicReferenceArray(this.d);
             this.b = new AtomicReferenceArray(this.d);
         }
 
@@ -153,10 +148,10 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
         }
 
         public final V a(K k) {
-            int a2 = a(k.hashCode());
+            int a = a(k.hashCode());
             while (true) {
-                int i = a2;
-                HashedWeakRef hashedWeakRef = (HashedWeakRef) this.f43017a.get(i);
+                int i = a;
+                HashedWeakRef hashedWeakRef = (HashedWeakRef) this.a.get(i);
                 if (hashedWeakRef == null) {
                     return null;
                 }
@@ -165,7 +160,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
                     Object obj = this.b.get(i);
                     Object obj2 = obj;
                     if (obj instanceof Marked) {
-                        obj2 = ((Marked) obj).f43041a;
+                        obj2 = ((Marked) obj).a;
                     }
                     return (V) obj2;
                 }
@@ -176,7 +171,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
                 if (i == 0) {
                     i2 = this.d;
                 }
-                a2 = i2 - 1;
+                a = i2 - 1;
             }
         }
 
@@ -224,7 +219,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
                 while (true) {
                     int i3 = i2;
                     int i4 = i3 + 1;
-                    HashedWeakRef<K> hashedWeakRef = (HashedWeakRef) this.f43017a.get(i3);
+                    HashedWeakRef<K> hashedWeakRef = (HashedWeakRef) this.a.get(i3);
                     K k = hashedWeakRef == null ? null : hashedWeakRef.get();
                     if (hashedWeakRef != null && k == null) {
                         b(i3);
@@ -236,16 +231,16 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
                                 break;
                             }
                         } else {
-                            v = ((Marked) v).f43041a;
+                            v = ((Marked) v).a;
                             break;
                         }
                     }
                     if (k != null && v != null) {
-                        Object a2 = core.a(k, v, hashedWeakRef);
-                        if (a2 == ConcurrentWeakMapKt.a()) {
+                        Object a = core.a(k, v, hashedWeakRef);
+                        if (a == ConcurrentWeakMapKt.a()) {
                             break;
                         }
-                        boolean z = a2 == null;
+                        boolean z = a == null;
                         if (_Assertions.b && !z) {
                             throw new AssertionError("Assertion failed");
                         }
@@ -259,10 +254,10 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
         }
 
         public final void a(HashedWeakRef<?> hashedWeakRef) {
-            int a2 = a(hashedWeakRef.f43040a);
+            int a = a(hashedWeakRef.a);
             while (true) {
-                int i = a2;
-                HashedWeakRef<?> hashedWeakRef2 = (HashedWeakRef) this.f43017a.get(i);
+                int i = a;
+                HashedWeakRef<?> hashedWeakRef2 = (HashedWeakRef) this.a.get(i);
                 if (hashedWeakRef2 == null) {
                     return;
                 }
@@ -274,7 +269,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
                 if (i == 0) {
                     i2 = this.d;
                 }
-                a2 = i2 - 1;
+                a = i2 - 1;
             }
         }
     }
@@ -282,19 +277,17 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/debug/internal/ConcurrentWeakMap$Entry.class */
     static final class Entry<K, V> implements Map.Entry<K, V>, KMutableMap.Entry {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final K f43021a;
+        private final K a;
         private final V b;
 
         public Entry(K k, V v) {
-            this.f43021a = k;
+            this.a = k;
             this.b = v;
         }
 
         @Override // java.util.Map.Entry
         public K getKey() {
-            return this.f43021a;
+            return this.a;
         }
 
         @Override // java.util.Map.Entry
@@ -324,7 +317,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
             return ConcurrentWeakMap.this.size();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean add(E e) {
             ConcurrentWeakMapKt.b();
             throw new KotlinNothingValueException();
@@ -371,7 +364,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void f() {
-        f43016a.decrementAndGet(this);
+        a.decrementAndGet(this);
     }
 
     @Override // kotlin.collections.AbstractMutableMap
@@ -443,7 +436,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
             v2 = a(k, v);
         }
         if (v2 == null) {
-            f43016a.incrementAndGet(this);
+            a.incrementAndGet(this);
         }
         return v2;
     }
@@ -460,7 +453,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
             v = a(obj, null);
         }
         if (v != null) {
-            f43016a.decrementAndGet(this);
+            a.decrementAndGet(this);
         }
         return v;
     }

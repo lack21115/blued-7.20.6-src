@@ -15,13 +15,13 @@ import com.anythink.expressad.exoplayer.k.af;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7733a = "RequirementsWatcher";
+    private static final String f4894a = "RequirementsWatcher";
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final c f7734c;
+    private final c f4895c;
     private final com.anythink.expressad.exoplayer.scheduler.a d;
-    private C0141b e;
+    private C0070b e;
     private boolean f;
     private a g;
 
@@ -55,11 +55,11 @@ public final class b {
 
     /* renamed from: com.anythink.expressad.exoplayer.scheduler.b$b  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/scheduler/b$b.class */
-    final class C0141b extends BroadcastReceiver {
-        private C0141b() {
+    final class C0070b extends BroadcastReceiver {
+        private C0070b() {
         }
 
-        /* synthetic */ C0141b(b bVar, byte b) {
+        /* synthetic */ C0070b(b bVar, byte b) {
             this();
         }
 
@@ -85,7 +85,7 @@ public final class b {
 
     private b(Context context, c cVar, com.anythink.expressad.exoplayer.scheduler.a aVar) {
         this.d = aVar;
-        this.f7734c = cVar;
+        this.f4895c = cVar;
         this.b = context.getApplicationContext();
         StringBuilder sb = new StringBuilder();
         sb.append(this);
@@ -97,7 +97,7 @@ public final class b {
         a(true);
         IntentFilter intentFilter = new IntentFilter();
         if (this.d.a() != 0) {
-            if (af.f7632a >= 23) {
+            if (af.f4793a >= 23) {
                 ConnectivityManager connectivityManager = (ConnectivityManager) this.b.getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkRequest build = new NetworkRequest.Builder().addCapability(16).build();
                 a aVar = new a(this, (byte) 0);
@@ -112,16 +112,16 @@ public final class b {
             intentFilter.addAction(Intent.ACTION_POWER_DISCONNECTED);
         }
         if (this.d.c()) {
-            if (af.f7632a >= 23) {
+            if (af.f4793a >= 23) {
                 intentFilter.addAction("android.os.action.DEVICE_IDLE_MODE_CHANGED");
             } else {
                 intentFilter.addAction(Intent.ACTION_SCREEN_ON);
                 intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
             }
         }
-        C0141b c0141b = new C0141b(this, (byte) 0);
-        this.e = c0141b;
-        this.b.registerReceiver(c0141b, intentFilter, null, new Handler());
+        C0070b c0070b = new C0070b(this, (byte) 0);
+        this.e = c0070b;
+        this.b.registerReceiver(c0070b, intentFilter, null, new Handler());
         StringBuilder sb = new StringBuilder();
         sb.append(this);
         sb.append(" started");
@@ -138,7 +138,7 @@ public final class b {
     private void b() {
         this.b.unregisterReceiver(this.e);
         this.e = null;
-        if (this.g != null && af.f7632a >= 21) {
+        if (this.g != null && af.f4793a >= 21) {
             ((ConnectivityManager) this.b.getSystemService(Context.CONNECTIVITY_SERVICE)).unregisterNetworkCallback(this.g);
             this.g = null;
         }
@@ -160,7 +160,7 @@ public final class b {
     }
 
     private void e() {
-        if (af.f7632a >= 21) {
+        if (af.f4793a >= 21) {
             ((ConnectivityManager) this.b.getSystemService(Context.CONNECTIVITY_SERVICE)).unregisterNetworkCallback(this.g);
             this.g = null;
         }

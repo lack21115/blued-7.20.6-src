@@ -12,11 +12,11 @@ import com.soft.blued.R;
 public final class SpecialCareNotificationLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f29590a;
+    public final FrameLayout f15900a;
     public final FrameLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f29591c;
+    public final ImageView f15901c;
     public final ImageView d;
     public final ImageView e;
     public final TextView f;
@@ -25,9 +25,9 @@ public final class SpecialCareNotificationLayoutBinding implements ViewBinding {
 
     private SpecialCareNotificationLayoutBinding(ShapeConstraintLayout shapeConstraintLayout, FrameLayout frameLayout, FrameLayout frameLayout2, ImageView imageView, ImageView imageView2, ImageView imageView3, TextView textView, TextView textView2) {
         this.h = shapeConstraintLayout;
-        this.f29590a = frameLayout;
+        this.f15900a = frameLayout;
         this.b = frameLayout2;
-        this.f29591c = imageView;
+        this.f15901c = imageView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = textView;
@@ -44,7 +44,7 @@ public final class SpecialCareNotificationLayoutBinding implements ViewBinding {
                 if (imageView != null) {
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.img_notification_bg);
                     if (imageView2 != null) {
-                        ImageView imageView3 = (ImageView) view.findViewById(2131364720);
+                        ImageView imageView3 = (ImageView) view.findViewById(R.id.img_verify);
                         if (imageView3 != null) {
                             TextView textView = (TextView) view.findViewById(R.id.tv_notification_content);
                             if (textView != null) {

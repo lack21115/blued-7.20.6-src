@@ -5,7 +5,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AndroidRuntimeException;
 import android.util.SparseIntArray;
-import com.android.ims.ImsReasonInfo;
 import com.blued.das.live.LiveProtos;
 import java.text.Normalizer;
 
@@ -141,7 +140,7 @@ public class KeyCharacterMap implements Parcelable {
         addCombining(808, ACCENT_OGONEK);
         addCombining(809, ACCENT_VERTICAL_LINE_BELOW);
         addCombining(817, ACCENT_MACRON_BELOW);
-        addCombining(ImsReasonInfo.CODE_UT_CB_PASSWORD_MISMATCH, 45);
+        addCombining(821, 45);
         sCombiningToAccent.append(832, 715);
         sCombiningToAccent.append(833, 180);
         sCombiningToAccent.append(835, ACCENT_COMMA_ABOVE);

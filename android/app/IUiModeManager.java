@@ -18,9 +18,8 @@ public interface IUiModeManager extends IInterface {
         static final int TRANSACTION_getNightMode = 5;
         static final int TRANSACTION_setNightMode = 4;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/app/IUiModeManager$Stub$Proxy.class */
-        public static class Proxy implements IUiModeManager {
+        private static class Proxy implements IUiModeManager {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

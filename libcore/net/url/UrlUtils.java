@@ -90,11 +90,11 @@ public final class UrlUtils {
         }
     }
 
-    public static boolean isValidSchemeChar(int i, char c2) {
-        if (c2 < 'a' || c2 > 'z') {
-            if (c2 < 'A' || c2 > 'Z') {
+    public static boolean isValidSchemeChar(int i, char c) {
+        if (c < 'a' || c > 'z') {
+            if (c < 'A' || c > 'Z') {
                 if (i > 0) {
-                    return (c2 >= '0' && c2 <= '9') || c2 == '+' || c2 == '-' || c2 == '.';
+                    return (c >= '0' && c <= '9') || c == '+' || c == '-' || c == '.';
                 }
                 return false;
             }

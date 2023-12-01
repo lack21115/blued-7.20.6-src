@@ -6,29 +6,26 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
+import com.alipay.sdk.util.i;
 import com.amap.api.col.p0003sl.ga;
 import com.amap.api.col.p0003sl.hp;
-import com.anythink.expressad.foundation.d.l;
+import com.amap.api.services.core.AMapException;
 import org.json.JSONObject;
 
 /* renamed from: com.amap.api.col.3sl.fn  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fn.class */
 public final class fn {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static ia f4954a;
+    public static ia a;
     private static fn b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static Context f4955c;
+    private static Context c;
     private a d;
     private HandlerThread e = new HandlerThread("manifestThread") { // from class: com.amap.api.col.3sl.fn.1
         @Override // android.os.HandlerThread, java.lang.Thread, java.lang.Runnable
         public final void run() {
             Thread.currentThread().setName("ManifestConfigThread");
             ia a2 = fd.a(false);
-            fn.c(fn.f4955c);
-            hp.a(fn.f4955c, a2, "11K;001;184;185", new hp.a() { // from class: com.amap.api.col.3sl.fn.1.1
+            fn.c(fn.c);
+            hp.a(fn.c, a2, "11K" + i.b + "001" + i.b + "184" + i.b + "185", new hp.a() { // from class: com.amap.api.col.3sl.fn.1.1
                 @Override // com.amap.api.col.p0003sl.hp.a
                 public final void a(hp.b bVar) {
                     a aVar;
@@ -38,7 +35,7 @@ public final class fn {
                     if (bVar != null) {
                         try {
                             if (bVar.g != null) {
-                                message.obj = new fo(bVar.g.b, bVar.g.f5086a);
+                                message.obj = new fo(bVar.g.b, bVar.g.a);
                             }
                         } catch (Throwable th) {
                             try {
@@ -57,11 +54,11 @@ public final class fn {
                     }
                     if (bVar != null && bVar.f != null && (optJSONObject2 = bVar.f.optJSONObject("184")) != null) {
                         fn.d(optJSONObject2);
-                        gi.a(fn.f4955c, "amap_search", "cache_control", optJSONObject2.toString());
+                        gi.a(fn.c, "amap_search", "cache_control", optJSONObject2.toString());
                     }
                     if (bVar != null && bVar.f != null && (optJSONObject = bVar.f.optJSONObject("185")) != null) {
                         fn.c(optJSONObject);
-                        gi.a(fn.f4955c, "amap_search", "parm_control", optJSONObject.toString());
+                        gi.a(fn.c, "amap_search", "parm_control", optJSONObject.toString());
                     }
                     message.what = 3;
                     if (fn.this.d != null) {
@@ -80,13 +77,11 @@ public final class fn {
     /* renamed from: com.amap.api.col.3sl.fn$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fn$a.class */
     final class a extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        String f4958a;
+        String a;
 
         public a(Looper looper) {
             super(looper);
-            this.f4958a = "handleMessage";
+            this.a = "handleMessage";
         }
 
         @Override // android.os.Handler
@@ -98,18 +93,18 @@ public final class fn {
                     if (foVar == null) {
                         foVar2 = new fo(false, false);
                     }
-                    iw.a(fn.f4955c, fd.a(foVar2.a()));
-                    fn.f4954a = fd.a(foVar2.a());
+                    iw.a(fn.c, fd.a(foVar2.a()));
+                    fn.a = fd.a(foVar2.a());
                 } catch (Throwable th) {
-                    fe.a(th, "ManifestConfig", this.f4958a);
+                    fe.a(th, "ManifestConfig", this.a);
                 }
             }
         }
     }
 
     private fn(Context context) {
-        f4955c = context;
-        f4954a = fd.a(false);
+        c = context;
+        a = fd.a(false);
         try {
             b();
             this.d = new a(Looper.getMainLooper());
@@ -157,7 +152,7 @@ public final class fn {
                         optBoolean = jSONObject.optBoolean("able", z2);
                     }
                     int optInt = jSONObject.optInt("timeoffset", aVar != null ? (int) aVar.b() : 86400);
-                    int optInt2 = jSONObject.optInt(l.d, aVar != null ? aVar.c() : 10);
+                    int optInt2 = jSONObject.optInt("num", aVar != null ? aVar.c() : 10);
                     double optDouble = jSONObject.optDouble("limitDistance", aVar != null ? aVar.d() : 0.0d);
                     aVar4.a(optBoolean);
                     aVar4.a(optInt);
@@ -223,7 +218,7 @@ public final class fn {
                 int optInt4 = jSONObject.optInt("passPointMaxCount", 6);
                 int optInt5 = jSONObject.optInt("poiPageMaxNum", 100);
                 int optInt6 = jSONObject.optInt("truckMaxLength", 5000);
-                int optInt7 = jSONObject.optInt("rideMaxLength", 1200);
+                int optInt7 = jSONObject.optInt("rideMaxLength", AMapException.CODE_AMAP_SERVICE_INVALID_PARAMS);
                 int optInt8 = jSONObject.optInt("passAreaMaxArea", 100000000);
                 int optInt9 = jSONObject.optInt("passAreaPointCount", 16);
                 int optInt10 = jSONObject.optInt("keyWordLenMaxNum", 100);

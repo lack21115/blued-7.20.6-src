@@ -13,11 +13,11 @@ import java.util.ArrayList;
 public class m implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    private static m f40762a = new m();
+    private static m f27071a = new m();
     private final int b = 3000;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f40763c = false;
+    private boolean f27072c = false;
     private boolean d = true;
     private Handler e = new Handler(Looper.getMainLooper());
     private ArrayList<n> f = new ArrayList<>();
@@ -30,11 +30,11 @@ public class m implements Application.ActivityLifecycleCallbacks {
 
         @Override // java.lang.Runnable
         public void run() {
-            if (!m.this.f40763c || !m.this.d) {
+            if (!m.this.f27072c || !m.this.d) {
                 UMRTLog.i(UMRTLog.RTLOG_TAG, "--->>> still foreground.");
                 return;
             }
-            m.this.f40763c = false;
+            m.this.f27072c = false;
             UMRTLog.i(UMRTLog.RTLOG_TAG, "--->>> went background.");
             for (int i = 0; i < m.this.f.size(); i++) {
                 ((n) m.this.f.get(i)).n();
@@ -46,12 +46,12 @@ public class m implements Application.ActivityLifecycleCallbacks {
     }
 
     public static m a() {
-        return f40762a;
+        return f27071a;
     }
 
     public static void a(Context context) {
         if (context instanceof Application) {
-            ((Application) context).registerActivityLifecycleCallbacks(f40762a);
+            ((Application) context).registerActivityLifecycleCallbacks(f27071a);
         }
     }
 
@@ -102,7 +102,7 @@ public class m implements Application.ActivityLifecycleCallbacks {
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityResumed(Activity activity) {
         this.d = false;
-        this.f40763c = true;
+        this.f27072c = true;
         a aVar = this.g;
         if (aVar != null) {
             this.e.removeCallbacks(aVar);

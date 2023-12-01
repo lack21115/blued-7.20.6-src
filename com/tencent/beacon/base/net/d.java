@@ -4,30 +4,30 @@ package com.tencent.beacon.base.net;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f34992a;
+    public String f21301a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f34993c;
+    public int f21302c;
     public String d;
     public Throwable e;
 
     public d(String str, String str2, int i, String str3) {
-        this.f34992a = str;
+        this.f21301a = str;
         this.b = str2;
-        this.f34993c = i;
+        this.f21302c = i;
         this.d = str3;
     }
 
     public d(String str, String str2, int i, String str3, Throwable th) {
-        this.f34992a = str;
+        this.f21301a = str;
         this.b = str2;
-        this.f34993c = i;
+        this.f21302c = i;
         this.d = str3;
         this.e = th;
     }
 
     public String toString() {
-        return "NetFailure{requestType='" + this.f34992a + "', attaCode='" + this.b + "', responseCode=" + this.f34993c + ", msg='" + this.d + "', exception=" + this.e + '}';
+        return "NetFailure{requestType='" + this.f21301a + "', attaCode='" + this.b + "', responseCode=" + this.f21302c + ", msg='" + this.d + "', exception=" + this.e + '}';
     }
 }

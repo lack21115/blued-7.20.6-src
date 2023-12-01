@@ -7,31 +7,27 @@ import androidx.viewpager.widget.ViewPager;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/DisableScrollViewPager.class */
 public class DisableScrollViewPager extends ViewPager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f14253a;
+    private boolean a;
 
     public DisableScrollViewPager(Context context) {
         super(context);
-        this.f14253a = false;
+        this.a = false;
     }
 
     public DisableScrollViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14253a = false;
+        this.a = false;
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.f14253a) {
+        if (this.a) {
             return super.onInterceptTouchEvent(motionEvent);
         }
         return false;
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.f14253a) {
+        if (this.a) {
             return super.onTouchEvent(motionEvent);
         }
         return true;

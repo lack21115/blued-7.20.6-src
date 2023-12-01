@@ -1,6 +1,5 @@
 package com.tencent.turingface.sdk.mfa;
 
-import com.amap.api.col.p0003sl.iu;
 import com.anythink.expressad.foundation.d.d;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -12,11 +11,11 @@ import java.io.InputStream;
 public final class ORjG3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Object f39902a;
+    public final Object f26211a;
     public final Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Process f39903c;
+    public Process f26212c;
     public DataOutputStream d;
     public spXPg e;
     public spXPg f;
@@ -27,11 +26,11 @@ public final class ORjG3 {
     public static final class ShGzN {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f39904a;
+        public final String f26213a;
         public final String b;
 
         public ShGzN(String str, String str2, long j) {
-            this.f39904a = str;
+            this.f26213a = str;
             this.b = str2;
         }
     }
@@ -40,11 +39,11 @@ public final class ORjG3 {
     public static final class SkEpO {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f39905a;
+        public final String f26214a;
         public final String b;
 
         public SkEpO(String str, String str2) {
-            this.f39905a = str;
+            this.f26214a = str;
             this.b = str2;
         }
     }
@@ -53,12 +52,12 @@ public final class ORjG3 {
     public final class spXPg extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        public InputStream f39906a;
+        public InputStream f26215a;
         public ByteArrayOutputStream b;
 
         public spXPg(String str, InputStream inputStream, ByteArrayOutputStream byteArrayOutputStream) {
             super(str);
-            this.f39906a = inputStream;
+            this.f26215a = inputStream;
             this.b = byteArrayOutputStream;
         }
 
@@ -67,14 +66,14 @@ public final class ORjG3 {
             try {
                 byte[] bArr = new byte[1024];
                 while (true) {
-                    int read = this.f39906a.read(bArr);
+                    int read = this.f26215a.read(bArr);
                     if (read < 0) {
                         synchronized (ORjG3.this.b) {
                             this.b.write(":RET=EOF".getBytes());
                             this.b.flush();
                         }
-                        synchronized (ORjG3.this.f39902a) {
-                            ORjG3.this.f39902a.notifyAll();
+                        synchronized (ORjG3.this.f26211a) {
+                            ORjG3.this.f26211a.notifyAll();
                         }
                         return;
                     } else if (read > 0) {
@@ -82,8 +81,8 @@ public final class ORjG3 {
                             this.b.write(bArr, 0, read);
                             this.b.flush();
                         }
-                        synchronized (ORjG3.this.f39902a) {
-                            ORjG3.this.f39902a.notifyAll();
+                        synchronized (ORjG3.this.f26211a) {
+                            ORjG3.this.f26211a.notifyAll();
                         }
                     }
                 }
@@ -95,16 +94,16 @@ public final class ORjG3 {
     public ORjG3() throws IllegalArgumentException, FileNotFoundException, IOException, InterruptedException {
         boolean z;
         Object obj = new Object();
-        this.f39902a = obj;
+        this.f26211a = obj;
         this.b = new Object();
         this.g = new ByteArrayOutputStream();
         this.h = new ByteArrayOutputStream();
-        this.f39903c = Runtime.getRuntime().exec(d.t);
+        this.f26212c = Runtime.getRuntime().exec(d.t);
         synchronized (obj) {
             obj.wait(10L);
         }
         try {
-            this.f39903c.exitValue();
+            this.f26212c.exitValue();
             z = true;
         } catch (Exception e) {
             z = false;
@@ -112,11 +111,11 @@ public final class ORjG3 {
         if (z) {
             throw new IOException();
         }
-        this.d = new DataOutputStream(this.f39903c.getOutputStream());
-        this.e = new spXPg("s", this.f39903c.getInputStream(), this.g);
-        this.f = new spXPg(iu.h, this.f39903c.getErrorStream(), this.h);
-        synchronized (this.f39902a) {
-            this.f39902a.wait(10L);
+        this.d = new DataOutputStream(this.f26212c.getOutputStream());
+        this.e = new spXPg("s", this.f26212c.getInputStream(), this.g);
+        this.f = new spXPg("e", this.f26212c.getErrorStream(), this.h);
+        synchronized (this.f26211a) {
+            this.f26211a.wait(10L);
         }
         this.e.start();
         this.f.start();
@@ -138,12 +137,12 @@ public final class ORjG3 {
 
     public final SkEpO a(ShGzN shGzN, long j) throws InterruptedException {
         boolean z;
-        synchronized (this.f39902a) {
+        synchronized (this.f26211a) {
             synchronized (this.b) {
                 z = new String(this.g.toByteArray()).lastIndexOf(":RET=") == -1;
             }
             if (z) {
-                this.f39902a.wait(j);
+                this.f26211a.wait(j);
             }
         }
         synchronized (this.b) {
@@ -170,7 +169,7 @@ public final class ORjG3 {
         try {
             this.d.write("exit\n".getBytes());
             this.d.flush();
-            this.f39903c.wait(100L);
+            this.f26212c.wait(100L);
         } catch (Exception e) {
         }
         spXPg spxpg = this.e;
@@ -183,13 +182,13 @@ public final class ORjG3 {
             spxpg2.interrupt();
             this.f = null;
         }
-        Process process = this.f39903c;
+        Process process = this.f26212c;
         if (process != null) {
             try {
                 process.destroy();
             } catch (Throwable th) {
             }
-            this.f39903c = null;
+            this.f26212c = null;
         }
     }
 

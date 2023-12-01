@@ -2,7 +2,6 @@ package android.bluetooth;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/bluetooth/BluetoothHeadsetClientCall.class */
 public final class BluetoothHeadsetClientCall implements Parcelable {
@@ -125,7 +124,7 @@ public final class BluetoothHeadsetClientCall implements Parcelable {
         sb.append(this.mMultiParty);
         sb.append(", mOutgoing: ");
         sb.append(this.mOutgoing);
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

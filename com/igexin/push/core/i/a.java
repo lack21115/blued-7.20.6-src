@@ -6,18 +6,18 @@ import android.app.Activity;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Long f23560a = Long.valueOf(System.currentTimeMillis());
+    protected Long f9952a = Long.valueOf(System.currentTimeMillis());
     protected Activity b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected String f23561c;
+    protected String f9953c;
 
     private void a(Long l) {
-        this.f23560a = l;
+        this.f9952a = l;
     }
 
     private void a(String str) {
-        this.f23561c = str;
+        this.f9953c = str;
     }
 
     private Activity n() {
@@ -25,7 +25,7 @@ public abstract class a {
     }
 
     public final Long a() {
-        return this.f23560a;
+        return this.f9952a;
     }
 
     public final void a(Activity activity) {
@@ -33,7 +33,7 @@ public abstract class a {
     }
 
     public final String b() {
-        return this.f23561c;
+        return this.f9953c;
     }
 
     public abstract void c();

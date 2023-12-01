@@ -21,9 +21,10 @@ import android.speech.tts.TextToSpeech;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import com.alipay.sdk.util.i;
-import com.android.internal.telephony.PhoneConstants;
 import com.anythink.expressad.foundation.g.f.g.c;
+import com.huawei.hms.ads.fw;
+import com.huawei.hms.framework.common.ContainerUtils;
+import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
 import com.tencent.connect.common.Constants;
 import com.tencent.open.a.f;
 import com.tencent.open.b.a;
@@ -61,11 +62,11 @@ import org.json.JSONObject;
 public class Util {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f38287a = "";
+    private static String f24596a = "";
     private static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f38288c = "";
+    private static String f24597c = "";
     private static String d = "";
     private static int e = -1;
     private static String f;
@@ -90,21 +91,21 @@ public class Util {
     static class TBufferedOutputStream extends BufferedOutputStream {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f38290a;
+        private int f24599a;
 
         public TBufferedOutputStream(OutputStream outputStream) {
             super(outputStream);
-            this.f38290a = 0;
+            this.f24599a = 0;
         }
 
         public int getLength() {
-            return this.f38290a;
+            return this.f24599a;
         }
 
-        @Override // java.io.OutputStream
+        @Override // java.io.FilterOutputStream, java.io.OutputStream
         public void write(byte[] bArr) throws IOException {
             super.write(bArr);
-            this.f38290a += bArr.length;
+            this.f24599a += bArr.length;
         }
     }
 
@@ -203,9 +204,9 @@ public class Util {
         bundle.putString("detail", str9);
         bundle.putString("os_ver", Build.VERSION.RELEASE);
         bundle.putString("network", a.a(Global.getContext()));
-        bundle.putString("apn", a.b(Global.getContext()));
+        bundle.putString(TelephonyManager.EXTRA_DATA_APN, a.b(Global.getContext()));
         bundle.putString("model_name", Build.MODEL);
-        bundle.putString("sdk_ver", Constants.SDK_VERSION);
+        bundle.putString(HiAnalyticsConstant.BI_KEY_SDK_VER, Constants.SDK_VERSION);
         bundle.putString("packagename", Global.getPackageName());
         bundle.putString("app_ver", getAppVersionName(Global.getContext(), Global.getPackageName()));
         return bundle;
@@ -237,7 +238,7 @@ public class Util {
         Bundle bundle2 = bundle;
         if (str != null) {
             try {
-                String[] split = str.split("&");
+                String[] split = str.split(ContainerUtils.FIELD_DELIMITER);
                 int length = split.length;
                 int i = 0;
                 while (true) {
@@ -265,7 +266,7 @@ public class Util {
             jSONObject2 = new JSONObject();
         }
         if (str != null) {
-            String[] split = str.split("&");
+            String[] split = str.split(ContainerUtils.FIELD_DELIMITER);
             int length = split.length;
             int i = 0;
             while (true) {
@@ -326,7 +327,7 @@ public class Util {
                     if (z2) {
                         z = false;
                     } else {
-                        sb.append("&");
+                        sb.append(ContainerUtils.FIELD_DELIMITER);
                         z = z2;
                     }
                     sb.append(URLEncoder.encode(str) + "=");
@@ -349,7 +350,7 @@ public class Util {
                     if (z2) {
                         z2 = false;
                     } else {
-                        sb.append("&");
+                        sb.append(ContainerUtils.FIELD_DELIMITER);
                     }
                     sb.append(URLEncoder.encode(str) + "=" + URLEncoder.encode(bundle.getString(str)));
                 }
@@ -402,7 +403,7 @@ public class Util {
             return "";
         }
         getPackageInfo(context, str);
-        return f38287a;
+        return f24596a;
     }
 
     public static final String getApplicationLable(Context context) {
@@ -435,7 +436,7 @@ public class Util {
             if (bestProvider == null || (lastKnownLocation = locationManager.getLastKnownLocation(bestProvider)) == null) {
                 return "";
             }
-            String str = lastKnownLocation.getLatitude() + PhoneConstants.APN_TYPE_ALL + lastKnownLocation.getLongitude();
+            String str = lastKnownLocation.getLatitude() + "*" + lastKnownLocation.getLongitude();
             f = str;
             return str;
         } catch (Exception e2) {
@@ -452,7 +453,7 @@ public class Util {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(str, 0);
             String str2 = packageInfo.versionName;
             b = str2;
-            f38287a = str2.substring(0, str2.lastIndexOf(46));
+            f24596a = str2.substring(0, str2.lastIndexOf(46));
             d = b.substring(b.lastIndexOf(46) + 1, b.length());
             e = packageInfo.versionCode;
         } catch (PackageManager.NameNotFoundException e2) {
@@ -467,7 +468,7 @@ public class Util {
             return "";
         }
         String appVersionName = getAppVersionName(context, str);
-        f38288c = appVersionName;
+        f24597c = appVersionName;
         return appVersionName;
     }
 
@@ -649,7 +650,7 @@ public class Util {
             str2 = "{value : false}";
         }
         String str3 = str2;
-        if (str2.equals("true")) {
+        if (str2.equals(fw.Code)) {
             str3 = "{value : true}";
         }
         String str4 = str3;
@@ -658,7 +659,7 @@ public class Util {
         }
         String str5 = str4;
         if (str4.contains("online[0]=")) {
-            str5 = "{online:" + str4.charAt(str4.length() - 2) + i.d;
+            str5 = "{online:" + str4.charAt(str4.length() - 2) + "}";
         }
         return new JSONObject(str5);
     }
@@ -685,6 +686,7 @@ public class Util {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v7, types: [com.tencent.open.utils.Util$1] */
     public static void reportBernoulli(final Context context, String str, long j, String str2) {
         final Bundle bundle = new Bundle();
         bundle.putString("appid_for_getting_config", str2);
@@ -802,7 +804,7 @@ public class Util {
                 }
             }
             httpPost.setHeader("Content-Type", "multipart/form-data; boundary=3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f");
-            httpPost.setHeader("Connection", c.f7906c);
+            httpPost.setHeader("Connection", c.f5066c);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             byteArrayOutputStream.write(getBytesUTF8("--3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f\r\n"));
             byteArrayOutputStream.write(getBytesUTF8(encodePostBody(bundle2, "3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f")));

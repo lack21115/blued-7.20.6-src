@@ -4,7 +4,7 @@ package com.tencent.turingface.sdk.mfa;
 public final class B9LVG {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int f39858a = 0;
+    public static final /* synthetic */ int f26167a = 0;
 
     static {
         new String(com.tencent.turingcam.oqKCa.c("414553"));

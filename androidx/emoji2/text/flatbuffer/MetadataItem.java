@@ -18,7 +18,7 @@ public final class MetadataItem extends Table {
         }
 
         public MetadataItem get(MetadataItem metadataItem, int i) {
-            return metadataItem.__assign(MetadataItem.b(a(i), this.f2849a), this.f2849a);
+            return metadataItem.__assign(MetadataItem.b(a(i), this.f2801a), this.f2801a);
         }
     }
 
@@ -148,7 +148,7 @@ public final class MetadataItem extends Table {
     public short compatAdded() {
         int a2 = a(10);
         if (a2 != 0) {
-            return this.b.getShort(a2 + this.f2871a);
+            return this.b.getShort(a2 + this.f2823a);
         }
         return (short) 0;
     }
@@ -158,7 +158,7 @@ public final class MetadataItem extends Table {
         boolean z = false;
         if (a2 != 0) {
             z = false;
-            if (this.b.get(a2 + this.f2871a) != 0) {
+            if (this.b.get(a2 + this.f2823a) != 0) {
                 z = true;
             }
         }
@@ -168,7 +168,7 @@ public final class MetadataItem extends Table {
     public short height() {
         int a2 = a(14);
         if (a2 != 0) {
-            return this.b.getShort(a2 + this.f2871a);
+            return this.b.getShort(a2 + this.f2823a);
         }
         return (short) 0;
     }
@@ -176,7 +176,7 @@ public final class MetadataItem extends Table {
     public int id() {
         int a2 = a(4);
         if (a2 != 0) {
-            return this.b.getInt(a2 + this.f2871a);
+            return this.b.getInt(a2 + this.f2823a);
         }
         return 0;
     }
@@ -184,7 +184,7 @@ public final class MetadataItem extends Table {
     public short sdkAdded() {
         int a2 = a(8);
         if (a2 != 0) {
-            return this.b.getShort(a2 + this.f2871a);
+            return this.b.getShort(a2 + this.f2823a);
         }
         return (short) 0;
     }
@@ -192,7 +192,7 @@ public final class MetadataItem extends Table {
     public short width() {
         int a2 = a(12);
         if (a2 != 0) {
-            return this.b.getShort(a2 + this.f2871a);
+            return this.b.getShort(a2 + this.f2823a);
         }
         return (short) 0;
     }

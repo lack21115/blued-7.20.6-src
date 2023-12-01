@@ -39,7 +39,7 @@ public class RedirectRespWrapper extends ai {
 
     public long getAppSize() {
         try {
-            return getLong("size");
+            return getLong(OapsKey.KEY_SIZE);
         } catch (ag e) {
             return -1L;
         }
@@ -102,7 +102,7 @@ public class RedirectRespWrapper extends ai {
     }
 
     public RedirectRespWrapper setAppSize(long j) {
-        return (RedirectRespWrapper) set("size", Long.valueOf(j));
+        return (RedirectRespWrapper) set(OapsKey.KEY_SIZE, Long.valueOf(j));
     }
 
     public RedirectRespWrapper setHightLight(int i) {

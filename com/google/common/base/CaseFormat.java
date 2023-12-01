@@ -1,12 +1,12 @@
 package com.google.common.base;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.Serializable;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/base/CaseFormat.class */
 public enum CaseFormat {
-    LOWER_HYPHEN(CharMatcher.is('-'), "-") { // from class: com.google.common.base.CaseFormat.1
+    LOWER_HYPHEN(CharMatcher.is('-'), Constants.ACCEPT_TIME_SEPARATOR_SERVER) { // from class: com.google.common.base.CaseFormat.1
         @Override // com.google.common.base.CaseFormat
         String convert(CaseFormat caseFormat, String str) {
             return caseFormat == LOWER_UNDERSCORE ? str.replace('-', '_') : caseFormat == UPPER_UNDERSCORE ? Ascii.toUpperCase(str.replace('-', '_')) : super.convert(caseFormat, str);
@@ -17,7 +17,7 @@ public enum CaseFormat {
             return Ascii.toLowerCase(str);
         }
     },
-    LOWER_UNDERSCORE(CharMatcher.is('_'), BridgeUtil.UNDERLINE_STR) { // from class: com.google.common.base.CaseFormat.2
+    LOWER_UNDERSCORE(CharMatcher.is('_'), "_") { // from class: com.google.common.base.CaseFormat.2
         @Override // com.google.common.base.CaseFormat
         String convert(CaseFormat caseFormat, String str) {
             return caseFormat == LOWER_HYPHEN ? str.replace('_', '-') : caseFormat == UPPER_UNDERSCORE ? Ascii.toUpperCase(str) : super.convert(caseFormat, str);
@@ -45,7 +45,7 @@ public enum CaseFormat {
             return CaseFormat.firstCharOnlyToUpper(str);
         }
     },
-    UPPER_UNDERSCORE(CharMatcher.is('_'), BridgeUtil.UNDERLINE_STR) { // from class: com.google.common.base.CaseFormat.5
+    UPPER_UNDERSCORE(CharMatcher.is('_'), "_") { // from class: com.google.common.base.CaseFormat.5
         @Override // com.google.common.base.CaseFormat
         String convert(CaseFormat caseFormat, String str) {
             return caseFormat == LOWER_HYPHEN ? Ascii.toLowerCase(str.replace('_', '-')) : caseFormat == LOWER_UNDERSCORE ? Ascii.toLowerCase(str) : super.convert(caseFormat, str);

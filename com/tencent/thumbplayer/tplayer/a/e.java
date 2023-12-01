@@ -42,7 +42,7 @@ public class e extends c {
 
     private void a(long j, int i, TPGeneralPlayFlowParams tPGeneralPlayFlowParams, TPDynamicStatisticParams tPDynamicStatisticParams) {
         if (this.j) {
-            h(new b.C1018b());
+            h(new b.C0848b());
             this.j = false;
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
@@ -92,28 +92,28 @@ public class e extends c {
         aVar.c(this.k.i);
         aVar.o(i);
         a(aVar, tPGeneralPlayFlowParams);
-        com.tencent.thumbplayer.tplayer.a.b.a aVar2 = this.k.f39365a;
+        com.tencent.thumbplayer.tplayer.a.b.a aVar2 = this.k.f25674a;
         int i2 = this.g;
         this.g = i2 + 1;
         aVar2.a(i2);
-        this.f.b(this.k.f39365a);
-        aVar.a(this.k.f39365a);
+        this.f.b(this.k.f25674a);
+        aVar.a(this.k.f25674a);
         return aVar;
     }
 
     private com.tencent.thumbplayer.tplayer.a.b.a.d b(TPGeneralPlayFlowParams tPGeneralPlayFlowParams, TPDynamicStatisticParams tPDynamicStatisticParams) {
         com.tencent.thumbplayer.tplayer.a.b.a.d dVar = new com.tencent.thumbplayer.tplayer.a.b.a.d();
-        dVar.c(this.e.f39396a);
+        dVar.c(this.e.f25705a);
         dVar.d(this.e.b);
-        dVar.e(this.e.f39397c);
+        dVar.e(this.e.f25706c);
         dVar.p(this.k.f);
         a(dVar, tPGeneralPlayFlowParams);
-        com.tencent.thumbplayer.tplayer.a.b.a aVar = this.k.f39365a;
+        com.tencent.thumbplayer.tplayer.a.b.a aVar = this.k.f25674a;
         int i = this.g;
         this.g = i + 1;
         aVar.a(i);
-        this.f.b(this.k.f39365a);
-        dVar.a(this.k.f39365a);
+        this.f.b(this.k.f25674a);
+        dVar.a(this.k.f25674a);
         return dVar;
     }
 
@@ -132,19 +132,19 @@ public class e extends c {
             return;
         }
         b.o oVar = (b.o) aVar;
-        long b = oVar.b() - this.e.f39397c;
+        long b = oVar.b() - this.e.f25706c;
         this.k.f = oVar.b();
         TPLogUtil.i("TPLiveReporter", "Live onPrepareDone timeMs:".concat(String.valueOf(b)));
         a(this.k);
-        com.tencent.thumbplayer.tplayer.a.b.a aVar2 = this.k.f39365a;
+        com.tencent.thumbplayer.tplayer.a.b.a aVar2 = this.k.f25674a;
         int i = this.g;
         this.g = i + 1;
         aVar2.a(i);
-        this.f.b(this.k.f39365a);
+        this.f.b(this.k.f25674a);
         b(this.k);
         com.tencent.thumbplayer.tplayer.a.b.a.b bVar = new com.tencent.thumbplayer.tplayer.a.b.a.b();
         bVar.c(b);
-        bVar.a(this.k.f39365a);
+        bVar.a(this.k.f25674a);
         Map<String, String> b2 = bVar.b();
         a("onPrepareDone", b2);
         b("live_first_load", b2);
@@ -152,7 +152,7 @@ public class e extends c {
     }
 
     private void c(b bVar) {
-        ITPReportInfoGetter iTPReportInfoGetter = this.f39387a;
+        ITPReportInfoGetter iTPReportInfoGetter = this.f25696a;
         if (iTPReportInfoGetter == null) {
             return;
         }
@@ -164,8 +164,8 @@ public class e extends c {
         HashMap hashMap = new HashMap();
         HashMap hashMap2 = new HashMap();
         a(periodExtendReportInfo, hashMap, hashMap2);
-        bVar.f39365a.c(hashMap);
-        bVar.f39365a.d(hashMap2);
+        bVar.f25674a.c(hashMap);
+        bVar.f25674a.d(hashMap2);
     }
 
     private void d() {
@@ -197,7 +197,7 @@ public class e extends c {
 
     private void e() {
         TPLogUtil.i("TPLiveReporter", "onAppForeground");
-        a(this.k.f39365a.a());
+        a(this.k.f25674a.a());
     }
 
     private void e(b.a aVar) {
@@ -207,7 +207,7 @@ public class e extends c {
         }
         this.i = true;
         a(aVar.b(), 0, a(aVar), b(aVar));
-        a(this.k.f39365a.a());
+        a(this.k.f25674a.a());
     }
 
     private void f() {
@@ -231,7 +231,7 @@ public class e extends c {
         }
         b.i iVar = (b.i) aVar;
         a(iVar.b(), iVar.e(), a(iVar), b(iVar));
-        a(this.k.f39365a.a());
+        a(this.k.f25674a.a());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -260,12 +260,12 @@ public class e extends c {
         cVar.k(a2.mVideoBufferedDurationMs);
         cVar.l(a2.mAudioBufferedDurationMs);
         c(this.k);
-        com.tencent.thumbplayer.tplayer.a.b.a aVar = this.k.f39365a;
+        com.tencent.thumbplayer.tplayer.a.b.a aVar = this.k.f25674a;
         int i = this.g;
         this.g = i + 1;
         aVar.a(i);
-        this.f.b(this.k.f39365a);
-        cVar.a(this.k.f39365a);
+        this.f.b(this.k.f25674a);
+        cVar.a(this.k.f25674a);
         Map<String, String> b = cVar.b();
         a("periodReportEvent", b);
         b("live_period_report", b);
@@ -273,8 +273,8 @@ public class e extends c {
         this.k.l = 0;
         this.k.k = 0L;
         this.k.m = 0L;
-        this.k.f39365a.c((Map<String, String>) null);
-        this.k.f39365a.d((Map<String, String>) null);
+        this.k.f25674a.c((Map<String, String>) null);
+        this.k.f25674a.d((Map<String, String>) null);
     }
 
     private void g(b.a aVar) {
@@ -291,12 +291,12 @@ public class e extends c {
     }
 
     private void h(b.a aVar) {
-        if (!(aVar instanceof b.C1018b)) {
+        if (!(aVar instanceof b.C0848b)) {
             TPLogUtil.e("TPLiveReporter", "onBufferingEnd fail:params is not match");
             return;
         }
         this.j = false;
-        long b = ((b.C1018b) aVar).b() - this.k.j;
+        long b = ((b.C0848b) aVar).b() - this.k.j;
         this.k.h = SystemClock.elapsedRealtime();
         TPLogUtil.i("TPLiveReporter", "Live onBufferingEnd bufferingCostTimeMs:".concat(String.valueOf(b)));
         if (b <= 1200) {
@@ -326,7 +326,7 @@ public class e extends c {
         String d = dVar.d();
         String e = dVar.e();
         TPLogUtil.i("TPLiveReporter", "Vod onDTCdnUrlUpdate cdnIp:" + d + " uIp:" + e);
-        this.k.f39366c = d;
+        this.k.f25675c = d;
         this.k.d = e;
     }
 
@@ -384,6 +384,6 @@ public class e extends c {
     @Override // com.tencent.thumbplayer.tplayer.a.c, com.tencent.thumbplayer.tplayer.a.a
     public void a(Context context, l lVar) {
         super.a(context, lVar);
-        this.f.a(this.k.f39365a);
+        this.f.a(this.k.f25674a);
     }
 }

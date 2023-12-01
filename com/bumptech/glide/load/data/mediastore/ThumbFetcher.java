@@ -19,26 +19,26 @@ import java.io.InputStream;
 public class ThumbFetcher implements DataFetcher<InputStream> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Uri f20728a;
+    private final Uri f7122a;
     private final ThumbnailStreamOpener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private InputStream f20729c;
+    private InputStream f7123c;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/data/mediastore/ThumbFetcher$ImageThumbnailQuery.class */
     static class ImageThumbnailQuery implements ThumbnailQuery {
         private static final String[] b = {"_data"};
 
         /* renamed from: a  reason: collision with root package name */
-        private final ContentResolver f20730a;
+        private final ContentResolver f7124a;
 
         ImageThumbnailQuery(ContentResolver contentResolver) {
-            this.f20730a = contentResolver;
+            this.f7124a = contentResolver;
         }
 
         @Override // com.bumptech.glide.load.data.mediastore.ThumbnailQuery
         public Cursor query(Uri uri) {
-            return this.f20730a.query(MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI, b, "kind = 1 AND image_id = ?", new String[]{uri.getLastPathSegment()}, null);
+            return this.f7124a.query(MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI, b, "kind = 1 AND image_id = ?", new String[]{uri.getLastPathSegment()}, null);
         }
     }
 
@@ -47,20 +47,20 @@ public class ThumbFetcher implements DataFetcher<InputStream> {
         private static final String[] b = {"_data"};
 
         /* renamed from: a  reason: collision with root package name */
-        private final ContentResolver f20731a;
+        private final ContentResolver f7125a;
 
         VideoThumbnailQuery(ContentResolver contentResolver) {
-            this.f20731a = contentResolver;
+            this.f7125a = contentResolver;
         }
 
         @Override // com.bumptech.glide.load.data.mediastore.ThumbnailQuery
         public Cursor query(Uri uri) {
-            return this.f20731a.query(MediaStore.Video.Thumbnails.EXTERNAL_CONTENT_URI, b, "kind = 1 AND video_id = ?", new String[]{uri.getLastPathSegment()}, null);
+            return this.f7125a.query(MediaStore.Video.Thumbnails.EXTERNAL_CONTENT_URI, b, "kind = 1 AND video_id = ?", new String[]{uri.getLastPathSegment()}, null);
         }
     }
 
     ThumbFetcher(Uri uri, ThumbnailStreamOpener thumbnailStreamOpener) {
-        this.f20728a = uri;
+        this.f7122a = uri;
         this.b = thumbnailStreamOpener;
     }
 
@@ -77,8 +77,8 @@ public class ThumbFetcher implements DataFetcher<InputStream> {
     }
 
     private InputStream e() throws FileNotFoundException {
-        InputStream b = this.b.b(this.f20728a);
-        int a2 = b != null ? this.b.a(this.f20728a) : -1;
+        InputStream b = this.b.b(this.f7122a);
+        int a2 = b != null ? this.b.a(this.f7122a) : -1;
         ExifOrientationStream exifOrientationStream = b;
         if (a2 != -1) {
             exifOrientationStream = new ExifOrientationStream(b, a2);
@@ -88,7 +88,7 @@ public class ThumbFetcher implements DataFetcher<InputStream> {
 
     @Override // com.bumptech.glide.load.data.DataFetcher
     public void a() {
-        InputStream inputStream = this.f20729c;
+        InputStream inputStream = this.f7123c;
         if (inputStream != null) {
             try {
                 inputStream.close();
@@ -101,7 +101,7 @@ public class ThumbFetcher implements DataFetcher<InputStream> {
     public void a(Priority priority, DataFetcher.DataCallback<? super InputStream> dataCallback) {
         try {
             InputStream e = e();
-            this.f20729c = e;
+            this.f7123c = e;
             dataCallback.a((DataFetcher.DataCallback<? super InputStream>) e);
         } catch (FileNotFoundException e2) {
             if (Log.isLoggable("MediaStoreThumbFetcher", 3)) {

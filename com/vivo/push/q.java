@@ -10,11 +10,11 @@ import android.os.Message;
 public abstract class q {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f41115a;
+    protected Context f27424a;
     protected Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Object f41116c = new Object();
+    private final Object f27425c = new Object();
 
     /* loaded from: source-8829756-dex2jar.jar:com/vivo/push/q$a.class */
     final class a extends Handler {
@@ -35,11 +35,11 @@ public abstract class q {
     }
 
     public final void a(Context context) {
-        this.f41115a = context;
+        this.f27424a = context;
     }
 
     public final void a(Message message) {
-        synchronized (this.f41116c) {
+        synchronized (this.f27425c) {
             if (this.b == null) {
                 String simpleName = getClass().getSimpleName();
                 com.vivo.push.util.p.e(simpleName, ("Dead worker dropping a message: " + message.what) + " (Thread " + Thread.currentThread().getId() + ")");

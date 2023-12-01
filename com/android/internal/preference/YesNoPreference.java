@@ -7,6 +7,7 @@ import android.os.Parcelable;
 import android.preference.DialogPreference;
 import android.preference.Preference;
 import android.util.AttributeSet;
+import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/preference/YesNoPreference.class */
 public class YesNoPreference extends DialogPreference {
@@ -53,7 +54,7 @@ public class YesNoPreference extends DialogPreference {
     }
 
     public YesNoPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842896);
+        this(context, attributeSet, R.attr.yesNoPreferenceStyle);
     }
 
     public YesNoPreference(Context context, AttributeSet attributeSet, int i) {
@@ -68,9 +69,8 @@ public class YesNoPreference extends DialogPreference {
         return this.mWasPositiveResult;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.preference.DialogPreference
-    public void onDialogClosed(boolean z) {
+    protected void onDialogClosed(boolean z) {
         super.onDialogClosed(z);
         if (callChangeListener(Boolean.valueOf(z))) {
             setValue(z);
@@ -82,9 +82,8 @@ public class YesNoPreference extends DialogPreference {
         return Boolean.valueOf(typedArray.getBoolean(i, false));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.preference.DialogPreference, android.preference.Preference
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         if (!parcelable.getClass().equals(SavedState.class)) {
             super.onRestoreInstanceState(parcelable);
             return;
@@ -94,9 +93,8 @@ public class YesNoPreference extends DialogPreference {
         setValue(savedState.wasPositiveResult);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.preference.DialogPreference, android.preference.Preference
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         Parcelable onSaveInstanceState = super.onSaveInstanceState();
         if (isPersistent()) {
             return onSaveInstanceState;

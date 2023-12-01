@@ -10,7 +10,7 @@ import android.net.Uri;
 public class br {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9356a = "PackageUtils";
+    public static final String f6516a = "PackageUtils";
 
     public static boolean a(Context context, String str) {
         try {

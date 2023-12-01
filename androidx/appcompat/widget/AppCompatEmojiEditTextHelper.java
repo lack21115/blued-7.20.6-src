@@ -15,12 +15,12 @@ import androidx.emoji2.viewsintegration.EmojiEditTextHelper;
 public class AppCompatEmojiEditTextHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final EditText f1759a;
+    private final EditText f1711a;
     private final EmojiEditTextHelper b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AppCompatEmojiEditTextHelper(EditText editText) {
-        this.f1759a = editText;
+        this.f1711a = editText;
         this.b = new EmojiEditTextHelper(editText, false);
     }
 
@@ -31,7 +31,7 @@ public class AppCompatEmojiEditTextHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(AttributeSet attributeSet, int i) {
-        TypedArray obtainStyledAttributes = this.f1759a.getContext().obtainStyledAttributes(attributeSet, R.styleable.AppCompatTextView, i, 0);
+        TypedArray obtainStyledAttributes = this.f1711a.getContext().obtainStyledAttributes(attributeSet, R.styleable.AppCompatTextView, i, 0);
         try {
             boolean z = true;
             if (obtainStyledAttributes.hasValue(R.styleable.AppCompatTextView_emojiCompatEnabled)) {

@@ -286,8 +286,8 @@ public final class MonitoredResourceDescriptor extends GeneratedMessageV3 implem
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -729,6 +729,7 @@ public final class MonitoredResourceDescriptor extends GeneratedMessageV3 implem
         this.launchStage_ = 0;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private MonitoredResourceDescriptor(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
         this();
         if (extensionRegistryLite == null) {

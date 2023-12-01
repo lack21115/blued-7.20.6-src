@@ -24,26 +24,22 @@ public class Province implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5568a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5569c;
+    private String c;
     private String d;
 
     public Province() {
-        this.f5568a = "";
+        this.a = "";
         this.d = "";
     }
 
     public Province(Parcel parcel) {
-        this.f5568a = "";
+        this.a = "";
         this.d = "";
-        this.f5568a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5569c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readString();
     }
 
@@ -57,7 +53,7 @@ public class Province implements Parcelable {
     }
 
     public String getPinyin() {
-        return this.f5569c;
+        return this.c;
     }
 
     public String getProvinceCode() {
@@ -65,7 +61,7 @@ public class Province implements Parcelable {
     }
 
     public String getProvinceName() {
-        return this.f5568a;
+        return this.a;
     }
 
     public void setJianpin(String str) {
@@ -73,7 +69,7 @@ public class Province implements Parcelable {
     }
 
     public void setPinyin(String str) {
-        this.f5569c = str;
+        this.c = str;
     }
 
     public void setProvinceCode(String str) {
@@ -81,14 +77,14 @@ public class Province implements Parcelable {
     }
 
     public void setProvinceName(String str) {
-        this.f5568a = str;
+        this.a = str;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5568a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5569c);
+        parcel.writeString(this.c);
         parcel.writeString(this.d);
     }
 }

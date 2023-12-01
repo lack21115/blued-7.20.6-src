@@ -1,17 +1,12 @@
 package com.blued.android.core;
 
-import com.sensetime.stmobile.STMobileHumanActionNative;
 import java.util.ArrayList;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/Hashids.class */
 public class Hashids {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f9492a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f9493c;
+    private String c;
     private int d;
     private String e;
 
@@ -31,11 +26,11 @@ public class Hashids {
         int length;
         String b;
         int indexOf;
-        this.f9492a = "";
+        this.a = "";
         this.b = "";
-        this.f9493c = "cfhistuCFHISTU";
+        this.c = "cfhistuCFHISTU";
         this.d = 0;
-        this.f9492a = str;
+        this.a = str;
         if (i < 0) {
             this.d = 0;
         } else {
@@ -61,36 +56,36 @@ public class Hashids {
             int i3 = 0;
             while (true) {
                 int i4 = i3;
-                if (i4 >= this.f9493c.length()) {
+                if (i4 >= this.c.length()) {
                     break;
                 }
-                if (this.b.indexOf(this.f9493c.charAt(i4)) == -1) {
-                    this.f9493c = this.f9493c.substring(0, i4) + " " + this.f9493c.substring(i4 + 1);
+                if (this.b.indexOf(this.c.charAt(i4)) == -1) {
+                    this.c = this.c.substring(0, i4) + " " + this.c.substring(i4 + 1);
                 } else {
                     this.b = this.b.substring(0, indexOf) + " " + this.b.substring(indexOf + 1);
                 }
                 i3 = i4 + 1;
             }
             this.b = this.b.replaceAll("\\s+", "");
-            String replaceAll = this.f9493c.replaceAll("\\s+", "");
-            this.f9493c = replaceAll;
-            String b2 = b(replaceAll, this.f9492a);
-            this.f9493c = b2;
-            if (b2.equals("") || this.b.length() / this.f9493c.length() > 3.5d) {
+            String replaceAll = this.c.replaceAll("\\s+", "");
+            this.c = replaceAll;
+            String b2 = b(replaceAll, this.a);
+            this.c = b2;
+            if (b2.equals("") || this.b.length() / this.c.length() > 3.5d) {
                 int ceil = (int) Math.ceil(this.b.length() / 3.5d);
                 int i5 = ceil == 1 ? ceil + 1 : ceil;
-                if (i5 > this.f9493c.length()) {
-                    this.f9493c += this.b.substring(0, length);
-                    this.b = this.b.substring(i5 - this.f9493c.length());
+                if (i5 > this.c.length()) {
+                    this.c += this.b.substring(0, length);
+                    this.b = this.b.substring(i5 - this.c.length());
                 } else {
-                    this.f9493c = this.f9493c.substring(0, i5);
+                    this.c = this.c.substring(0, i5);
                 }
             }
-            this.b = b(this.b, this.f9492a);
+            this.b = b(this.b, this.a);
             int ceil2 = (int) Math.ceil(b.length() / 12);
             if (this.b.length() < 3) {
-                this.e = this.f9493c.substring(0, ceil2);
-                this.f9493c = this.f9493c.substring(ceil2);
+                this.e = this.c.substring(0, ceil2);
+                this.c = this.c.substring(ceil2);
                 return;
             }
             this.e = this.b.substring(0, ceil2);
@@ -121,9 +116,9 @@ public class Hashids {
         ArrayList arrayList = new ArrayList();
         String[] split = str.replaceAll("[" + this.e + "]", " ").split(" ");
         String str3 = split[((split.length == 3 || split.length == 2) ? (byte) 1 : (byte) 0) == 1 ? 1 : 0];
-        char c2 = str3.toCharArray()[0];
+        char c = str3.toCharArray()[0];
         String substring = str3.substring(1);
-        String[] split2 = substring.replaceAll("[" + this.f9493c + "]", " ").split(" ");
+        String[] split2 = substring.replaceAll("[" + this.c + "]", " ").split(" ");
         int length = split2.length;
         int i = 0;
         while (true) {
@@ -132,7 +127,7 @@ public class Hashids {
                 break;
             }
             String str4 = split2[i2];
-            str2 = b(str2, (c2 + this.f9492a + str2).substring(0, str2.length()));
+            str2 = b(str2, (c + this.a + str2).substring(0, str2.length()));
             arrayList.add(c(str4, str2));
             i = i2 + 1;
         }
@@ -162,12 +157,12 @@ public class Hashids {
         char[] charArray = str2.toCharArray();
         int length = str.length() - 1;
         int i2 = 0;
-        char c2 = 0;
+        char c = 0;
         while (length > 0) {
             int length2 = i2 % str2.length();
-            char c3 = charArray[length2];
-            c2 += c3;
-            char charAt = str.charAt(((c3 + length2) + c2) % length);
+            char c2 = charArray[length2];
+            c += c2;
+            char charAt = str.charAt(((c2 + length2) + c) % length);
             String str3 = str.substring(0, i) + str.charAt(length) + str.substring(i + 1);
             str = str3.substring(0, length) + charAt + str3.substring(length + 1);
             length--;
@@ -177,37 +172,37 @@ public class Hashids {
     }
 
     private String b(long... jArr) {
-        String a2;
-        char c2 = 0;
+        String a;
+        char c = 0;
         for (int i = 0; i < jArr.length; i++) {
-            c2 = (int) (c2 + (jArr[i] % (i + 100)));
+            c = (int) (c + (jArr[i] % (i + 100)));
         }
         String str = this.b;
-        char c3 = str.toCharArray()[c2 % str.length()];
-        String str2 = c3 + "";
-        char c4 = 0;
+        char c2 = str.toCharArray()[c % str.length()];
+        String str2 = c2 + "";
+        char c3 = 0;
         while (true) {
-            char c5 = c4;
-            if (c5 >= jArr.length) {
+            char c4 = c3;
+            if (c4 >= jArr.length) {
                 break;
             }
-            long j = jArr[c5];
-            str = b(str, (c3 + this.f9492a + str).substring(0, str.length()));
+            long j = jArr[c4];
+            str = b(str, (c2 + this.a + str).substring(0, str.length()));
             String str3 = str2 + a(j, str);
-            int i2 = c5 + 1;
+            int i2 = c4 + 1;
             str2 = str3;
             if (i2 < jArr.length) {
-                int length = (int) ((j % (a2.toCharArray()[0] + c5)) % this.f9493c.length());
-                str2 = str3 + this.f9493c.toCharArray()[length];
+                int length = (int) ((j % (a.toCharArray()[0] + c4)) % this.c.length());
+                str2 = str3 + this.c.toCharArray()[length];
             }
-            c4 = i2;
+            c3 = i2;
         }
         String str4 = str2;
         if (str2.length() < this.d) {
-            String str5 = this.e.toCharArray()[(str2.toCharArray()[0] + c2) % this.e.length()] + str2;
+            String str5 = this.e.toCharArray()[(str2.toCharArray()[0] + c) % this.e.length()] + str2;
             str4 = str5;
             if (str5.length() < this.d) {
-                str4 = str5 + this.e.toCharArray()[(c2 + str5.toCharArray()[2]) % this.e.length()];
+                str4 = str5 + this.e.toCharArray()[(c + str5.toCharArray()[2]) % this.e.length()];
             }
         }
         int length2 = str.length() / 2;
@@ -247,7 +242,7 @@ public class Hashids {
             int i2 = i;
             if (i2 >= length) {
                 return jArr.length == 0 ? "" : b(jArr);
-            } else if (jArr[i2] > STMobileHumanActionNative.ST_MOBILE_HAND_FOUR) {
+            } else if (jArr[i2] > 9007199254740992L) {
                 throw new IllegalArgumentException("number can not be greater than 9007199254740992L");
             } else {
                 i = i2 + 1;

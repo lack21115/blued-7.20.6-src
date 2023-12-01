@@ -70,7 +70,7 @@ public class StateListDrawable extends DrawableContainer {
         public void growArray(int i, int i2) {
             super.growArray(i, i2);
             ?? r0 = new int[i2];
-            System.arraycopy(this.mStateSets, 0, (Object) r0, 0, i);
+            System.arraycopy(this.mStateSets, 0, r0, 0, i);
             this.mStateSets = r0;
         }
 
@@ -197,8 +197,8 @@ public class StateListDrawable extends DrawableContainer {
             int attributeNameResource = attributeSet.getAttributeNameResource(i2);
             switch (attributeNameResource) {
                 case 0:
-                case 16842960:
-                case 16843161:
+                case android.R.attr.id /* 16842960 */:
+                case android.R.attr.drawable /* 16843161 */:
                     break;
                 default:
                     int i3 = i + 1;

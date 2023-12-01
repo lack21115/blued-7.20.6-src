@@ -23,6 +23,7 @@ import com.blued.android.module.live_china.model.LiveEntranceData;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import javax.microedition.khronos.opengles.GL11;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/EntranceEffectLayout.class */
 public class EntranceEffectLayout extends LinearLayout {
@@ -34,13 +35,9 @@ public class EntranceEffectLayout extends LinearLayout {
     private static int H = 400;
     private List<LiveEntranceData> A;
     private boolean B;
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f14256a;
+    private View a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f14257c;
+    private Context c;
     private ImageView d;
     private ImageView e;
     private LiveFansLevelView f;
@@ -68,12 +65,10 @@ public class EntranceEffectLayout extends LinearLayout {
     /* renamed from: com.blued.android.module.live_china.view.EntranceEffectLayout$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/EntranceEffectLayout$1.class */
     class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveEntranceData f14258a;
+        final /* synthetic */ LiveEntranceData a;
 
         AnonymousClass1(LiveEntranceData liveEntranceData) {
-            this.f14258a = liveEntranceData;
+            this.a = liveEntranceData;
         }
 
         @Override // java.lang.Runnable
@@ -81,19 +76,17 @@ public class EntranceEffectLayout extends LinearLayout {
             EntranceEffectLayout.this.b.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
             EntranceEffectLayout.this.b.layout(0, 0, EntranceEffectLayout.this.b.getMeasuredWidth(), EntranceEffectLayout.this.b.getMeasuredHeight());
             EntranceEffectLayout entranceEffectLayout = EntranceEffectLayout.this;
-            entranceEffectLayout.a(entranceEffectLayout.b.getMeasuredWidth(), this.f14258a).start();
+            entranceEffectLayout.a(entranceEffectLayout.b.getMeasuredWidth(), this.a).start();
         }
     }
 
     /* renamed from: com.blued.android.module.live_china.view.EntranceEffectLayout$2  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/EntranceEffectLayout$2.class */
     class AnonymousClass2 implements ImageFileLoader.OnLoadFileListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveEntranceData f14260a;
+        final /* synthetic */ LiveEntranceData a;
 
         AnonymousClass2(LiveEntranceData liveEntranceData) {
-            this.f14260a = liveEntranceData;
+            this.a = liveEntranceData;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:14:0x00d6  */
@@ -114,19 +107,19 @@ public class EntranceEffectLayout extends LinearLayout {
 
     public EntranceEffectLayout(Context context) {
         super(context);
-        this.f14257c = context;
+        this.c = context;
         c();
     }
 
     public EntranceEffectLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14257c = context;
+        this.c = context;
         c();
     }
 
     public EntranceEffectLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14257c = context;
+        this.c = context;
         c();
     }
 
@@ -196,8 +189,8 @@ public class EntranceEffectLayout extends LinearLayout {
     }
 
     private void c() {
-        View inflate = LayoutInflater.from(this.f14257c).inflate(R.layout.item_entrance_effect, this);
-        this.f14256a = inflate;
+        View inflate = LayoutInflater.from(this.c).inflate(R.layout.item_entrance_effect, this);
+        this.a = inflate;
         View findViewById = inflate.findViewById(R.id.fl_main);
         this.b = findViewById;
         findViewById.setVisibility(4);
@@ -229,23 +222,23 @@ public class EntranceEffectLayout extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public AnimatorSet getStarsAnims() {
-        AnimatorSet a2 = a(this.o);
-        AnimatorSet a3 = a(this.p);
-        AnimatorSet a4 = a(this.q);
+        AnimatorSet a = a(this.o);
+        AnimatorSet a2 = a(this.p);
+        AnimatorSet a3 = a(this.q);
         AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(a2, a3, a4);
+        animatorSet.playTogether(a, a2, a3);
         return animatorSet;
     }
 
     public AnimatorSet a(float f, final LiveEntranceData liveEntranceData) {
         this.b.setVisibility(0);
         if (liveEntranceData == null || !TextUtils.isEmpty(liveEntranceData.medium_image)) {
-            D = 2900;
+            D = GL11.GL_SHADE_MODEL;
         } else {
             D = 5000;
         }
         new ObjectAnimator();
-        ValueAnimator ofFloat = ObjectAnimator.ofFloat(this.f14257c.getResources().getDisplayMetrics().widthPixels, DensityUtils.a(this.f14257c, 20.0f));
+        ValueAnimator ofFloat = ObjectAnimator.ofFloat(this.c.getResources().getDisplayMetrics().widthPixels, DensityUtils.a(this.c, 20.0f));
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.view.EntranceEffectLayout.3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -257,7 +250,7 @@ public class EntranceEffectLayout extends LinearLayout {
         });
         ofFloat.setDuration(C);
         new ObjectAnimator();
-        ValueAnimator ofFloat2 = ObjectAnimator.ofFloat(DensityUtils.a(this.f14257c, 20.0f), DensityUtils.a(this.f14257c, 5.0f));
+        ValueAnimator ofFloat2 = ObjectAnimator.ofFloat(DensityUtils.a(this.c, 20.0f), DensityUtils.a(this.c, 5.0f));
         ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.view.EntranceEffectLayout.4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -287,16 +280,16 @@ public class EntranceEffectLayout extends LinearLayout {
                 animatorSet.start();
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 EntranceEffectLayout entranceEffectLayout = EntranceEffectLayout.this;
-                Animator a2 = entranceEffectLayout.a(entranceEffectLayout.m.getMeasuredWidth());
-                a2.setStartDelay(EntranceEffectLayout.H);
+                Animator a = entranceEffectLayout.a(entranceEffectLayout.m.getMeasuredWidth());
+                a.setStartDelay(EntranceEffectLayout.H);
                 EntranceEffectLayout entranceEffectLayout2 = EntranceEffectLayout.this;
-                animatorSet2.playSequentially(entranceEffectLayout2.a(entranceEffectLayout2.m.getMeasuredWidth()), a2);
+                animatorSet2.playSequentially(entranceEffectLayout2.a(entranceEffectLayout2.m.getMeasuredWidth()), a);
                 animatorSet2.start();
             }
         });
         ofFloat2.setDuration(D);
         new ObjectAnimator();
-        ValueAnimator ofFloat3 = ObjectAnimator.ofFloat(DensityUtils.a(this.f14257c, 5.0f), -f);
+        ValueAnimator ofFloat3 = ObjectAnimator.ofFloat(DensityUtils.a(this.c, 5.0f), -f);
         ofFloat3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.view.EntranceEffectLayout.6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {

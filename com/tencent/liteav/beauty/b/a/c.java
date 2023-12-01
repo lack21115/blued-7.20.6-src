@@ -7,11 +7,11 @@ import com.tencent.liteav.videobase.frame.e;
 public final class c extends com.tencent.liteav.videobase.c.c {
 
     /* renamed from: a  reason: collision with root package name */
-    int f36357a;
+    int f22666a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f36358c;
+    private int f22667c;
     private int d;
     private int e;
     private int f;
@@ -22,7 +22,7 @@ public final class c extends com.tencent.liteav.videobase.c.c {
 
     public final void a(float f) {
         setFloatOnDraw(this.d, f);
-        setFloatOnDraw(this.f36357a, 0.3f * f * f);
+        setFloatOnDraw(this.f22666a, 0.3f * f * f);
     }
 
     public final void b(float f) {
@@ -37,9 +37,9 @@ public final class c extends com.tencent.liteav.videobase.c.c {
     public final void onInit(e eVar) {
         super.onInit(eVar);
         this.b = GLES20.glGetUniformLocation(getProgramId(), "texelWidthOffset");
-        this.f36358c = GLES20.glGetUniformLocation(getProgramId(), "texelHeightOffset");
+        this.f22667c = GLES20.glGetUniformLocation(getProgramId(), "texelHeightOffset");
         this.d = GLES20.glGetUniformLocation(getProgramId(), "blurStrength");
-        this.f36357a = GLES20.glGetUniformLocation(getProgramId(), "sharpenStrength");
+        this.f22666a = GLES20.glGetUniformLocation(getProgramId(), "sharpenStrength");
         this.e = GLES20.glGetUniformLocation(getProgramId(), "ruddyStrength");
         this.f = GLES20.glGetUniformLocation(getProgramId(), "whitenStrength");
     }
@@ -48,6 +48,6 @@ public final class c extends com.tencent.liteav.videobase.c.c {
     public final void onOutputSizeChanged(int i, int i2) {
         super.onOutputSizeChanged(i, i2);
         setFloatOnDraw(this.b, 1.0f / i);
-        setFloatOnDraw(this.f36358c, 1.0f / i2);
+        setFloatOnDraw(this.f22667c, 1.0f / i2);
     }
 }

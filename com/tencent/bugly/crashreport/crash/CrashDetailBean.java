@@ -46,11 +46,11 @@ public class CrashDetailBean implements Parcelable, Comparable<CrashDetailBean> 
     private String X;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f35141a;
+    public long f21450a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35142c;
+    public String f21451c;
     public boolean d;
     public String e;
     public String f;
@@ -76,9 +76,9 @@ public class CrashDetailBean implements Parcelable, Comparable<CrashDetailBean> 
     public Map<String, String> z;
 
     public CrashDetailBean() {
-        this.f35141a = -1L;
+        this.f21450a = -1L;
         this.b = 0;
-        this.f35142c = UUID.randomUUID().toString();
+        this.f21451c = UUID.randomUUID().toString();
         this.d = false;
         this.e = "";
         this.f = "";
@@ -129,9 +129,9 @@ public class CrashDetailBean implements Parcelable, Comparable<CrashDetailBean> 
     }
 
     public CrashDetailBean(Parcel parcel) {
-        this.f35141a = -1L;
+        this.f21450a = -1L;
         this.b = 0;
-        this.f35142c = UUID.randomUUID().toString();
+        this.f21451c = UUID.randomUUID().toString();
         this.d = false;
         this.e = "";
         this.f = "";
@@ -180,7 +180,7 @@ public class CrashDetailBean implements Parcelable, Comparable<CrashDetailBean> 
         this.V = null;
         this.W = null;
         this.b = parcel.readInt();
-        this.f35142c = parcel.readString();
+        this.f21451c = parcel.readString();
         this.d = parcel.readByte() == 1;
         this.e = parcel.readString();
         this.f = parcel.readString();
@@ -247,7 +247,7 @@ public class CrashDetailBean implements Parcelable, Comparable<CrashDetailBean> 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(this.b);
-        parcel.writeString(this.f35142c);
+        parcel.writeString(this.f21451c);
         parcel.writeByte(this.d ? (byte) 1 : (byte) 0);
         parcel.writeString(this.e);
         parcel.writeString(this.f);

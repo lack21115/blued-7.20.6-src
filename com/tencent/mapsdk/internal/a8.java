@@ -9,11 +9,11 @@ import com.tencent.map.lib.models.GeoPoint;
 public abstract class a8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f37289a = com.igexin.push.config.c.j;
+    public long f23598a = com.igexin.push.config.c.j;
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f37290c = 0;
+    public long f23599c = 0;
     private boolean d = false;
     private boolean e = false;
     private Interpolator f = new LinearInterpolator();
@@ -53,7 +53,7 @@ public abstract class a8 {
             aVar.a();
             return;
         }
-        float b2 = ((float) (b() - this.f37290c)) / ((float) this.f37289a);
+        float b2 = ((float) (b() - this.f23599c)) / ((float) this.f23598a);
         if (b2 <= 1.0f) {
             a(b2, this.f);
             return;
@@ -70,7 +70,7 @@ public abstract class a8 {
     public abstract void a(float f, Interpolator interpolator);
 
     public void a(long j) {
-        this.f37289a = j;
+        this.f23598a = j;
     }
 
     public void a(Interpolator interpolator) {
@@ -86,11 +86,11 @@ public abstract class a8 {
     }
 
     public boolean a(GeoPoint geoPoint, GeoPoint geoPoint2) {
-        if (this.f37289a <= 0) {
+        if (this.f23598a <= 0) {
             return false;
         }
         this.d = true;
-        this.f37290c = b();
+        this.f23599c = b();
         this.b = true;
         a aVar = this.g;
         if (aVar != null) {
@@ -101,7 +101,7 @@ public abstract class a8 {
     }
 
     public long c() {
-        return this.f37289a;
+        return this.f23598a;
     }
 
     public Interpolator d() {

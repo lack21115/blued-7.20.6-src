@@ -6,11 +6,11 @@ import com.tencent.qimei.shellapi.IDependency;
 public class a implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f38418a;
+    public final String f24727a;
     public b b;
 
     public a(String str) {
-        this.f38418a = str;
+        this.f24727a = str;
     }
 
     @Override // com.tencent.qimei.u.b
@@ -52,7 +52,7 @@ public class a implements b {
             return bVar;
         }
         com.tencent.qimei.t.b a2 = com.tencent.qimei.t.b.a();
-        IDependency a3 = a2.a("BizInfo" + this.f38418a);
+        IDependency a3 = a2.a("BizInfo" + this.f24727a);
         if (a3 instanceof b) {
             b bVar2 = (b) a3;
             this.b = bVar2;

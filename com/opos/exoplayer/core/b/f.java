@@ -4,6 +4,6 @@ package com.opos.exoplayer.core.b;
 public abstract class f extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f25075a;
+    public long f11387a;
     public int b;
 }

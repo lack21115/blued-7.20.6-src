@@ -7,12 +7,12 @@ import com.opos.mobad.ad.c.a;
 public class f<E extends com.opos.mobad.ad.c.a> extends a {
 
     /* renamed from: c  reason: collision with root package name */
-    public final Context f26132c;
+    public final Context f12444c;
     public final E d;
 
     public f(Context context, String str, int i, E e) {
         super(str, i);
-        this.f26132c = context;
+        this.f12444c = context;
         this.d = e;
     }
 }

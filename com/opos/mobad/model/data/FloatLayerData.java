@@ -31,11 +31,11 @@ public class FloatLayerData extends a implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private MaterialFileData f26471a;
+    private MaterialFileData f12783a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26472c;
+    private String f12784c;
     private List<MaterialFileData> d;
     private List<MaterialFileData> e;
 
@@ -43,19 +43,19 @@ public class FloatLayerData extends a implements Parcelable {
     }
 
     public FloatLayerData(r rVar, MaterialFileData materialFileData, List<MaterialFileData> list, List<MaterialFileData> list2) {
-        this.f26471a = materialFileData;
+        this.f12783a = materialFileData;
         this.d = list;
         this.e = list2;
         this.b = rVar.e != null ? rVar.e : "";
-        this.f26472c = rVar.f != null ? rVar.f : "";
+        this.f12784c = rVar.f != null ? rVar.f : "";
     }
 
     public MaterialFileData a() {
-        return this.f26471a;
+        return this.f12783a;
     }
 
     public void a(MaterialFileData materialFileData) {
-        this.f26471a = materialFileData;
+        this.f12783a = materialFileData;
     }
 
     public void a(String str) {
@@ -71,11 +71,11 @@ public class FloatLayerData extends a implements Parcelable {
     }
 
     public void b(String str) {
-        this.f26472c = str;
+        this.f12784c = str;
     }
 
     public String c() {
-        return this.f26472c;
+        return this.f12784c;
     }
 
     public List<MaterialFileData> d() {
@@ -92,14 +92,14 @@ public class FloatLayerData extends a implements Parcelable {
     }
 
     public String toString() {
-        return "FloatLayerData{iconFile='" + this.f26471a + "'title='" + this.b + "'desc='" + this.f26472c + "'imgFileList='" + this.d + "'interactiveFileList='" + this.e + "'}";
+        return "FloatLayerData{iconFile='" + this.f12783a + "'title='" + this.b + "'desc='" + this.f12784c + "'imgFileList='" + this.d + "'interactiveFileList='" + this.e + "'}";
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f26471a, i);
+        parcel.writeParcelable(this.f12783a, i);
         parcel.writeString(this.b);
-        parcel.writeString(this.f26472c);
+        parcel.writeString(this.f12784c);
         parcel.writeTypedList(this.d);
         parcel.writeTypedList(this.e);
     }

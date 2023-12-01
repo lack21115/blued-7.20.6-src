@@ -21,11 +21,11 @@ public class rf {
     private static volatile Map<String, List<WeakReference<h1>>> k = new HashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f37751a = false;
+    public volatile boolean f24060a = false;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ic f37752c;
+    private ic f24061c;
     private mc d;
     private WeakReference<h1> e;
     private String f;
@@ -39,12 +39,12 @@ public class rf {
         private final WeakReference<rf> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f37753c;
+        private final String f24062c;
         private final s5 d;
 
         public a(rf rfVar, String str, s5 s5Var) {
             this.b = new WeakReference<>(rfVar);
-            this.f37753c = str;
+            this.f24062c = str;
             this.d = s5Var;
         }
 
@@ -55,15 +55,15 @@ public class rf {
                 return;
             }
             rf rfVar = this.b.get();
-            List<FileUpdateRsp> b = rfVar.b(this.f37753c, this.d);
+            List<FileUpdateRsp> b = rfVar.b(this.f24062c, this.d);
             if (b == null) {
-                rfVar.f37751a = false;
+                rfVar.f24060a = false;
                 rfVar.a(false);
                 return;
             }
-            if (rfVar.f37751a) {
+            if (rfVar.f24060a) {
                 if (!rfVar.a(rfVar.i, rfVar.g) || !rfVar.a(rfVar.j, rfVar.h)) {
-                    rfVar.f37751a = false;
+                    rfVar.f24060a = false;
                     rfVar.a(false);
                     return;
                 }
@@ -83,12 +83,12 @@ public class rf {
         }
         this.e = new WeakReference<>(h1Var);
         this.f = str;
-        this.f37752c = kc.a(context, str);
+        this.f24061c = kc.a(context, str);
         a();
     }
 
     private void a() {
-        ic icVar = this.f37752c;
+        ic icVar = this.f24061c;
         if (icVar == null) {
             return;
         }
@@ -131,7 +131,7 @@ public class rf {
     public void a(boolean z) {
         h1 h1Var;
         yi l;
-        this.f37752c.a(m4.b, System.currentTimeMillis());
+        this.f24061c.a(m4.b, System.currentTimeMillis());
         ha.a(this.i);
         ha.a(this.j);
         long currentTimeMillis = System.currentTimeMillis();
@@ -156,7 +156,7 @@ public class rf {
             if (weakReferenceArr[i2] != null && (h1Var = (h1) weakReferenceArr[i2].get()) != null && (l = h1Var.l()) != null && l.getMap() != null) {
                 VectorMap map = l.getMap();
                 w6 w = l.A().w();
-                if (this.f37751a) {
+                if (this.f24060a) {
                     map.t0();
                     if (h1Var.m() != null) {
                         h1Var.m().a(l.getMapContext());
@@ -268,15 +268,15 @@ public class rf {
 
     public List<FileUpdateRsp> b(String str, s5 s5Var) {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new FileUpdateReq(k4.i, this.f37752c.b(m4.f37627a), this.f37752c.d(m4.t)));
-        arrayList.add(new FileUpdateReq("poi_icon", this.f37752c.b(m4.f37628c), this.f37752c.d(m4.u)));
-        arrayList.add(new FileUpdateReq(k4.j, this.f37752c.b(m4.d), this.f37752c.d(m4.v)));
-        arrayList.add(new FileUpdateReq(k4.p, this.f37752c.b("escalator_night_version"), this.f37752c.d("escalator_night_md5")));
+        arrayList.add(new FileUpdateReq(k4.i, this.f24061c.b(m4.f23936a), this.f24061c.d(m4.t)));
+        arrayList.add(new FileUpdateReq("poi_icon", this.f24061c.b(m4.f23937c), this.f24061c.d(m4.u)));
+        arrayList.add(new FileUpdateReq(k4.j, this.f24061c.b(m4.d), this.f24061c.d(m4.v)));
+        arrayList.add(new FileUpdateReq(k4.p, this.f24061c.b("escalator_night_version"), this.f24061c.d("escalator_night_md5")));
         if (s5Var != null && s5Var.e()) {
-            arrayList.add(new FileUpdateReq(k4.l, this.f37752c.b("indoormap_style_version"), this.f37752c.d("indoormap_style_md5")));
-            arrayList.add(new FileUpdateReq(k4.m, this.f37752c.b("indoormap_style_night_version"), this.f37752c.d("indoormap_style_night_md5")));
-            arrayList.add(new FileUpdateReq(k4.n, this.f37752c.b(m4.s), this.f37752c.d(m4.y)));
-            arrayList.add(new FileUpdateReq(k4.o, this.f37752c.b("indoorpoi_icon_3d_night_version"), this.f37752c.d("indoorpoi_icon_3d_night_md5")));
+            arrayList.add(new FileUpdateReq(k4.l, this.f24061c.b("indoormap_style_version"), this.f24061c.d("indoormap_style_md5")));
+            arrayList.add(new FileUpdateReq(k4.m, this.f24061c.b("indoormap_style_night_version"), this.f24061c.d("indoormap_style_night_md5")));
+            arrayList.add(new FileUpdateReq(k4.n, this.f24061c.b(m4.s), this.f24061c.d(m4.y)));
+            arrayList.add(new FileUpdateReq(k4.o, this.f24061c.b("indoorpoi_icon_3d_night_version"), this.f24061c.d("indoorpoi_icon_3d_night_md5")));
         }
         String b = b();
         CSFileUpdateReq cSFileUpdateReq = new CSFileUpdateReq(arrayList, b, c7.E(), null, this.b, str);

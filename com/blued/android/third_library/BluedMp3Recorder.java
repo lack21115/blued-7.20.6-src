@@ -11,13 +11,9 @@ import java.io.IOException;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/third_library/BluedMp3Recorder.class */
 public class BluedMp3Recorder {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ErrorListener f18735a;
+    private ErrorListener a;
     private Handler b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f18736c;
+    private boolean c;
     private String d;
     private volatile int e;
 
@@ -31,9 +27,9 @@ public class BluedMp3Recorder {
     }
 
     public BluedMp3Recorder(String str, ErrorListener errorListener, Handler handler) {
-        this.f18736c = false;
+        this.c = false;
         this.d = str;
-        this.f18735a = errorListener;
+        this.a = errorListener;
         this.b = handler;
     }
 
@@ -88,27 +84,27 @@ public class BluedMp3Recorder {
         byte[] bArr = new byte[(int) ((i2 * 2 * 1.25d) + 7200.0d)];
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(new File(this.d));
-            AndroidLame a2 = new LameBuilder().a(i).d(1).c(32).b(i).a();
+            AndroidLame a = new LameBuilder().a(i).d(1).c(32).b(i).a();
             try {
                 audioRecord.startRecording();
-                while (this.f18736c) {
+                while (this.c) {
                     int read = audioRecord.read(sArr, 0, minBufferSize);
                     if (read > 0) {
                         a(read, sArr);
-                        int a3 = a2.a(sArr, sArr, read, bArr);
-                        if (a3 > 0) {
+                        int a2 = a.a(sArr, sArr, read, bArr);
+                        if (a2 > 0) {
                             try {
-                                fileOutputStream.write(bArr, 0, a3);
+                                fileOutputStream.write(bArr, 0, a2);
                             } catch (IOException e2) {
                                 e2.printStackTrace();
                             }
                         }
                     }
                 }
-                int a4 = a2.a(bArr);
-                if (a4 > 0) {
+                int a3 = a.a(bArr);
+                if (a3 > 0) {
                     try {
-                        fileOutputStream.write(bArr, 0, a4);
+                        fileOutputStream.write(bArr, 0, a3);
                         fileOutputStream.close();
                     } catch (IOException e3) {
                         e3.printStackTrace();
@@ -120,7 +116,7 @@ public class BluedMp3Recorder {
                 } catch (IllegalStateException e4) {
                     e4.printStackTrace();
                 }
-                a2.a();
+                a.a();
             } catch (IllegalStateException e5) {
                 e5.printStackTrace();
                 b();
@@ -135,22 +131,22 @@ public class BluedMp3Recorder {
 
     private void f() {
         Handler handler = this.b;
-        if (handler == null || this.f18735a == null) {
+        if (handler == null || this.a == null) {
             return;
         }
         handler.post(new Runnable() { // from class: com.blued.android.third_library.BluedMp3Recorder.2
             @Override // java.lang.Runnable
             public void run() {
-                BluedMp3Recorder.this.f18735a.a();
+                BluedMp3Recorder.this.a.a();
             }
         });
     }
 
     public void a() {
-        if (this.f18736c) {
+        if (this.c) {
             return;
         }
-        this.f18736c = true;
+        this.c = true;
         new Thread() { // from class: com.blued.android.third_library.BluedMp3Recorder.1
             @Override // java.lang.Thread, java.lang.Runnable
             public void run() {
@@ -160,15 +156,15 @@ public class BluedMp3Recorder {
     }
 
     public void b() {
-        this.f18736c = false;
+        this.c = false;
     }
 
     public boolean c() {
-        return this.f18736c;
+        return this.c;
     }
 
     public int d() {
-        if (this.f18736c) {
+        if (this.c) {
             return this.e;
         }
         return 0;

@@ -142,7 +142,6 @@ public final class NearbyPeopleFragment_MVP implements MvpDispatcher {
     /* JADX WARN: Code restructure failed: missing block: B:24:0x00f0, code lost:
         if (r6.equals("people_data") != false) goto L12;
      */
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

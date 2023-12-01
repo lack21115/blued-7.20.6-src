@@ -21,7 +21,6 @@ public class LiveDesireLiseModel implements MultiItemEntity {
     public int type = 0;
     public int uid;
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

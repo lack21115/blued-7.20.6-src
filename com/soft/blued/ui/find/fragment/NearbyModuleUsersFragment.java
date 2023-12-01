@@ -19,6 +19,7 @@ import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.framework.view.pulltorefresh.PullToRefreshBase;
 import com.blued.android.framework.view.pulltorefresh.PullToRefreshRecyclerView;
+import com.blued.android.module.common.login.model.UserBasicModel;
 import com.blued.android.module.common.utils.CommonPreferences;
 import com.blued.android.module.common.utils.DistanceUtils;
 import com.blued.android.module.common.utils.TimeAndDateUtils;
@@ -43,7 +44,7 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
     public static String b = "module_cid";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f30441c = "module_tips";
+    public static String f16751c = "module_tips";
     public int d;
     public String e;
     public NoDataAndLoadFailView f;
@@ -67,18 +68,16 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
     private boolean v = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f30442a = 0;
+    public int f16752a = 0;
     BluedUIHttpResponse i = new BluedUIHttpResponse<BluedEntity<UserFindResult, BluedMyExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.NearbyModuleUsersFragment.10
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             NearbyModuleUsersFragment.this.h = true;
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
-            NearbyModuleUsersFragment.this.s.setEmptyView(NearbyModuleUsersFragment.this.g);
-            NearbyModuleUsersFragment.this.o.setEmptyView(NearbyModuleUsersFragment.this.f);
+            NearbyModuleUsersFragment.this.s.setEmptyView((View) NearbyModuleUsersFragment.this.g);
+            NearbyModuleUsersFragment.this.o.setEmptyView((View) NearbyModuleUsersFragment.this.f);
             NearbyModuleUsersFragment.this.m.j();
             NearbyModuleUsersFragment.this.s.loadMoreComplete();
             NearbyModuleUsersFragment.this.o.loadMoreComplete();
@@ -95,7 +94,6 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
             NearbyModuleUsersFragment.this.h = false;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<UserFindResult, BluedMyExtra> bluedEntity) {
             if (bluedEntity.hasMore()) {
                 NearbyModuleUsersFragment.this.v = true;
@@ -109,7 +107,7 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
             if (bluedEntity.data == null || bluedEntity.data.size() <= 0) {
                 if (NearbyModuleUsersFragment.this.u != 1) {
                     NearbyModuleUsersFragment.h(NearbyModuleUsersFragment.this);
-                    AppMethods.a((CharSequence) NearbyModuleUsersFragment.this.j.getResources().getString(2131887275));
+                    AppMethods.a(NearbyModuleUsersFragment.this.j.getResources().getString(2131887275));
                     return;
                 }
                 return;
@@ -122,12 +120,11 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
                 NearbyModuleUsersFragment.this.s.addData((Collection<? extends UserFindResult>) bluedEntity.data);
             }
             if (bluedEntity.extra != null) {
-                NearbyModuleUsersFragment.this.w = bluedEntity.extra.getNext_min_dist();
-                NearbyModuleUsersFragment.this.x = bluedEntity.extra.getNext_skip_uid();
+                NearbyModuleUsersFragment.this.w = ((BluedMyExtra) bluedEntity.extra).getNext_min_dist();
+                NearbyModuleUsersFragment.this.x = ((BluedMyExtra) bluedEntity.extra).getNext_skip_uid();
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public BluedEntity<UserFindResult, BluedMyExtra> parseData(String str) {
             BluedEntity<UserFindResult, BluedMyExtra> parseData = super.parseData(str);
             if (parseData != null) {
@@ -137,9 +134,9 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
                     if (i2 >= parseData.data.size()) {
                         break;
                     }
-                    UserFindResult userFindResult = parseData.data.get(i2);
-                    userFindResult.last_operate = TimeAndDateUtils.a(NearbyModuleUsersFragment.this.j, TimeAndDateUtils.c(userFindResult.last_operate));
-                    userFindResult.distance = DistanceUtils.a(userFindResult.distance, BlueAppLocal.c(), false);
+                    UserBasicModel userBasicModel = (UserBasicModel) parseData.data.get(i2);
+                    userBasicModel.last_operate = TimeAndDateUtils.a(NearbyModuleUsersFragment.this.j, TimeAndDateUtils.c(userBasicModel.last_operate));
+                    userBasicModel.distance = DistanceUtils.a(userBasicModel.distance, BlueAppLocal.c(), false);
                     i = i2 + 1;
                 }
             }
@@ -157,19 +154,19 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
         this.l.setOutAnimation(AnimationUtils.loadAnimation(this.j, 2130772119));
         if (BluedPreferences.J() == 0) {
             this.l.setDisplayedChild(0);
-            this.f30442a = 0;
-            this.y.setRightImg(R.drawable.icon_module_list_mode);
+            this.f16752a = 0;
+            this.y.setRightImg((int) R.drawable.icon_module_list_mode);
             return;
         }
         this.l.setDisplayedChild(1);
-        this.f30442a = 1;
-        this.y.setRightImg(R.drawable.icon_module_grid_mode);
+        this.f16752a = 1;
+        this.y.setRightImg((int) R.drawable.icon_module_grid_mode);
     }
 
     public static void a(Context context, int i, String str) {
         Bundle bundle = new Bundle();
         bundle.putInt(b, i);
-        bundle.putString(f30441c, str);
+        bundle.putString(f16751c, str);
         TerminalActivity.d(context, NearbyModuleUsersFragment.class, bundle);
     }
 
@@ -200,13 +197,13 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
     }
 
     private void b() {
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.k.findViewById(R.id.gird_view);
-        this.m = pullToRefreshRecyclerView;
-        this.n = pullToRefreshRecyclerView.getRefreshableView();
+        PullToRefreshRecyclerView findViewById = this.k.findViewById(R.id.gird_view);
+        this.m = findViewById;
+        this.n = (RecyclerView) findViewById.getRefreshableView();
         this.m.setRefreshEnabled(true);
         this.n.setClipToPadding(false);
         this.n.setScrollBarStyle(33554432);
-        if (this.f30442a == 0) {
+        if (this.f16752a == 0) {
             this.m.postDelayed(new Runnable() { // from class: com.soft.blued.ui.find.fragment.NearbyModuleUsersFragment.1
                 @Override // java.lang.Runnable
                 public void run() {
@@ -215,7 +212,6 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
             }, 100L);
         }
         this.m.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.find.fragment.NearbyModuleUsersFragment.2
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 NearbyModuleUsersFragment.this.a(true);
             }
@@ -251,13 +247,13 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
     }
 
     private void c() {
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.k.findViewById(2131366898);
-        this.q = pullToRefreshRecyclerView;
-        this.r = pullToRefreshRecyclerView.getRefreshableView();
+        PullToRefreshRecyclerView findViewById = this.k.findViewById(R.id.list_view);
+        this.q = findViewById;
+        this.r = (RecyclerView) findViewById.getRefreshableView();
         this.q.setRefreshEnabled(true);
         this.r.setClipToPadding(false);
         this.r.setScrollBarStyle(33554432);
-        if (this.f30442a == 1) {
+        if (this.f16752a == 1) {
             this.q.postDelayed(new Runnable() { // from class: com.soft.blued.ui.find.fragment.NearbyModuleUsersFragment.5
                 @Override // java.lang.Runnable
                 public void run() {
@@ -266,7 +262,6 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
             }, 100L);
         }
         this.q.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.find.fragment.NearbyModuleUsersFragment.6
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 NearbyModuleUsersFragment.this.a(true);
             }
@@ -287,9 +282,9 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
     }
 
     private void d() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.k.findViewById(2131370694);
-        this.y = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyModuleUsersFragment.8
+        CommonTopTitleNoTrans findViewById = this.k.findViewById(2131370694);
+        this.y = findViewById;
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyModuleUsersFragment.8
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -302,12 +297,12 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
             public void onClick(View view) {
                 Tracker.onClick(view);
                 int i = 1;
-                if (NearbyModuleUsersFragment.this.f30442a == 0) {
+                if (NearbyModuleUsersFragment.this.f16752a == 0) {
                     BluedPreferences.b(1);
-                    NearbyModuleUsersFragment.this.y.setRightImg(R.drawable.icon_module_grid_mode);
+                    NearbyModuleUsersFragment.this.y.setRightImg((int) R.drawable.icon_module_grid_mode);
                 } else {
                     BluedPreferences.b(0);
-                    NearbyModuleUsersFragment.this.y.setRightImg(R.drawable.icon_module_list_mode);
+                    NearbyModuleUsersFragment.this.y.setRightImg((int) R.drawable.icon_module_list_mode);
                     i = 0;
                 }
                 SetModelObserver.a().a(i);
@@ -324,13 +319,12 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
     @Override // com.soft.blued.ui.find.observer.SetModelObserver.ISetModelObserver
     public void a(int i) {
         ViewFlipper viewFlipper;
-        if (i != this.f30442a && (viewFlipper = this.l) != null) {
+        if (i != this.f16752a && (viewFlipper = this.l) != null) {
             viewFlipper.showNext();
         }
-        this.f30442a = i;
+        this.f16752a = i;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         FragmentActivity activity = getActivity();
         this.j = activity;
@@ -342,7 +336,7 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
             Bundle arguments = getArguments();
             if (arguments != null) {
                 this.d = arguments.getInt(b);
-                this.e = arguments.getString(f30441c);
+                this.e = arguments.getString(f16751c);
             }
             d();
             a();
@@ -355,7 +349,6 @@ public class NearbyModuleUsersFragment extends BaseFragment implements SetModelO
         return this.k;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         SetModelObserver.a().b(this);

@@ -1,7 +1,7 @@
 package java.util;
 
-import com.anythink.expressad.foundation.g.a;
-import com.j256.ormlite.stmt.query.SimpleComparison;
+import com.alipay.sdk.sys.a;
+import com.anythink.core.common.c.d;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -150,7 +150,7 @@ public class Properties extends Hashtable<Object, Object> {
     }
 
     private String substitutePredefinedEntries(String str) {
-        return str.replaceAll("&", "&amp;").replaceAll(SimpleComparison.LESS_THAN_OPERATION, "&lt;").replaceAll(SimpleComparison.GREATER_THAN_OPERATION, "&gt;").replaceAll("'", "&apos;").replaceAll("\"", "&quot;");
+        return str.replaceAll(a.b, "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("'", "&apos;").replaceAll("\"", "&quot;");
     }
 
     public String getProperty(String str) {
@@ -257,7 +257,7 @@ public class Properties extends Hashtable<Object, Object> {
             }
             try {
                 try {
-                    NodeList elementsByTagName = this.builder.parse(inputStream).getElementsByTagName(a.aj);
+                    NodeList elementsByTagName = this.builder.parse(inputStream).getElementsByTagName("entry");
                     if (elementsByTagName != null) {
                         int length = elementsByTagName.getLength();
                         int i = 0;
@@ -267,7 +267,7 @@ public class Properties extends Hashtable<Object, Object> {
                                 break;
                             }
                             Element element = (Element) elementsByTagName.item(i2);
-                            put(element.getAttribute("key"), element.getTextContent());
+                            put(element.getAttribute(d.a.b), element.getTextContent());
                             i = i2 + 1;
                         }
                     }

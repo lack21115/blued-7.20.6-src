@@ -25,8 +25,8 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
     private byte memoizedIsInitialized;
     private static final KickOutExtra DEFAULT_INSTANCE = new KickOutExtra();
     private static final Parser<KickOutExtra> PARSER = new AbstractParser<KickOutExtra>() { // from class: cn.irisgw.live.KickOutExtra.1
-        @Override // com.google.protobuf.Parser
-        public KickOutExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public KickOutExtra m3709parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new KickOutExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -61,22 +61,22 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             boolean unused = KickOutExtra.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m3711addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public KickOutExtra build() {
-            KickOutExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public KickOutExtra m3713build() {
+            KickOutExtra m3715buildPartial = m3715buildPartial();
+            if (m3715buildPartial.isInitialized()) {
+                return m3715buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m3715buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public KickOutExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public KickOutExtra m3715buildPartial() {
             KickOutExtra kickOutExtra = new KickOutExtra(this);
             SingleFieldBuilderV3<KickOutProfile, KickOutProfile.Builder, KickOutProfileOrBuilder> singleFieldBuilderV3 = this.kickOutProfileBuilder_;
             if (singleFieldBuilderV3 == null) {
@@ -88,8 +88,8 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             return kickOutExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m3719clear() {
             super.clear();
             if (this.kickOutProfileBuilder_ == null) {
                 this.kickOutProfile_ = null;
@@ -100,8 +100,8 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m3721clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -116,23 +116,21 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m3724clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m3730clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public KickOutExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public KickOutExtra m3732getDefaultInstanceForType() {
             return KickOutExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_KickOutExtra_descriptor;
         }
@@ -160,7 +158,7 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
         public KickOutProfileOrBuilder getKickOutProfileOrBuilder() {
             SingleFieldBuilderV3<KickOutProfile, KickOutProfile.Builder, KickOutProfileOrBuilder> singleFieldBuilderV3 = this.kickOutProfileBuilder_;
             if (singleFieldBuilderV3 != null) {
-                return singleFieldBuilderV3.getMessageOrBuilder();
+                return (KickOutProfileOrBuilder) singleFieldBuilderV3.getMessageOrBuilder();
             }
             KickOutProfile kickOutProfile = this.kickOutProfile_;
             KickOutProfile kickOutProfile2 = kickOutProfile;
@@ -175,12 +173,10 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             return (this.kickOutProfileBuilder_ == null && this.kickOutProfile_ == null) ? false : true;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_KickOutExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(KickOutExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -192,18 +188,18 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             if (kickOutExtra.hasKickOutProfile()) {
                 mergeKickOutProfile(kickOutExtra.getKickOutProfile());
             }
-            mergeUnknownFields(kickOutExtra.unknownFields);
+            m3741mergeUnknownFields(kickOutExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.KickOutExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.KickOutExtra.Builder m3738mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -248,11 +244,11 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.KickOutExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.KickOutExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.KickOutExtra.Builder.m3738mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.KickOutExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m3737mergeFrom(Message message) {
             if (message instanceof KickOutExtra) {
                 return mergeFrom((KickOutExtra) message);
             }
@@ -268,7 +264,7 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             }
             KickOutProfile kickOutProfile2 = this.kickOutProfile_;
             if (kickOutProfile2 != null) {
-                this.kickOutProfile_ = KickOutProfile.newBuilder(kickOutProfile2).mergeFrom(kickOutProfile).buildPartial();
+                this.kickOutProfile_ = KickOutProfile.newBuilder(kickOutProfile2).mergeFrom(kickOutProfile).m3762buildPartial();
             } else {
                 this.kickOutProfile_ = kickOutProfile;
             }
@@ -276,23 +272,23 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m3741mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m3743setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
         public Builder setKickOutProfile(KickOutProfile.Builder builder) {
             SingleFieldBuilderV3<KickOutProfile, KickOutProfile.Builder, KickOutProfileOrBuilder> singleFieldBuilderV3 = this.kickOutProfileBuilder_;
             if (singleFieldBuilderV3 != null) {
-                singleFieldBuilderV3.setMessage(builder.build());
+                singleFieldBuilderV3.setMessage(builder.m3760build());
                 return this;
             }
-            this.kickOutProfile_ = builder.build();
+            this.kickOutProfile_ = builder.m3760build();
             onChanged();
             return this;
         }
@@ -311,13 +307,13 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m3745setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m3747setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -332,8 +328,8 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
         private int uid_;
         private static final KickOutProfile DEFAULT_INSTANCE = new KickOutProfile();
         private static final Parser<KickOutProfile> PARSER = new AbstractParser<KickOutProfile>() { // from class: cn.irisgw.live.KickOutExtra.KickOutProfile.1
-            @Override // com.google.protobuf.Parser
-            public KickOutProfile parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public KickOutProfile m3756parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new KickOutProfile(codedInputStream, extensionRegistryLite);
             }
         };
@@ -362,22 +358,22 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
                 boolean unused = KickOutProfile.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m3758addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public KickOutProfile build() {
-                KickOutProfile buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public KickOutProfile m3760build() {
+                KickOutProfile m3762buildPartial = m3762buildPartial();
+                if (m3762buildPartial.isInitialized()) {
+                    return m3762buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m3762buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public KickOutProfile buildPartial() {
+            /* renamed from: buildPartial */
+            public KickOutProfile m3762buildPartial() {
                 KickOutProfile kickOutProfile = new KickOutProfile(this);
                 kickOutProfile.uid_ = this.uid_;
                 kickOutProfile.name_ = this.name_;
@@ -385,16 +381,16 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
                 return kickOutProfile;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m3766clear() {
                 super.clear();
                 this.uid_ = 0;
                 this.name_ = "";
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m3768clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -404,8 +400,8 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m3771clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -415,18 +411,16 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m3777clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public KickOutProfile getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public KickOutProfile m3779getDefaultInstanceForType() {
                 return KickOutProfile.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_KickOutExtra_KickOutProfile_descriptor;
             }
@@ -458,12 +452,10 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
                 return this.uid_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_KickOutExtra_KickOutProfile_fieldAccessorTable.ensureFieldAccessorsInitialized(KickOutProfile.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -479,18 +471,18 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
                     this.name_ = kickOutProfile.name_;
                     onChanged();
                 }
-                mergeUnknownFields(kickOutProfile.unknownFields);
+                m3788mergeUnknownFields(kickOutProfile.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.KickOutExtra.KickOutProfile.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.KickOutExtra.KickOutProfile.Builder m3785mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -535,11 +527,11 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.KickOutExtra.KickOutProfile.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.KickOutExtra$KickOutProfile$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.KickOutExtra.KickOutProfile.Builder.m3785mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.KickOutExtra$KickOutProfile$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m3784mergeFrom(Message message) {
                 if (message instanceof KickOutProfile) {
                     return mergeFrom((KickOutProfile) message);
                 }
@@ -547,13 +539,13 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m3788mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m3790setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -576,8 +568,8 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m3792setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -587,8 +579,8 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m3794setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -646,66 +638,65 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m3755toBuilder();
         }
 
         public static Builder newBuilder(KickOutProfile kickOutProfile) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(kickOutProfile);
+            return DEFAULT_INSTANCE.m3755toBuilder().mergeFrom(kickOutProfile);
         }
 
         public static KickOutProfile parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (KickOutProfile) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static KickOutProfile parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (KickOutProfile) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static KickOutProfile parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (KickOutProfile) PARSER.parseFrom(byteString);
         }
 
         public static KickOutProfile parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (KickOutProfile) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static KickOutProfile parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (KickOutProfile) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static KickOutProfile parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (KickOutProfile) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static KickOutProfile parseFrom(InputStream inputStream) throws IOException {
-            return (KickOutProfile) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static KickOutProfile parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (KickOutProfile) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static KickOutProfile parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (KickOutProfile) PARSER.parseFrom(byteBuffer);
         }
 
         public static KickOutProfile parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (KickOutProfile) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static KickOutProfile parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (KickOutProfile) PARSER.parseFrom(bArr);
         }
 
         public static KickOutProfile parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (KickOutProfile) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<KickOutProfile> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -717,8 +708,8 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public KickOutProfile getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public KickOutProfile m3750getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -744,12 +735,10 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<KickOutProfile> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -774,12 +763,10 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -789,12 +776,10 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_KickOutExtra_KickOutProfile_fieldAccessorTable.ensureFieldAccessorsInitialized(KickOutProfile.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -807,28 +792,26 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m3753newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m3752newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new KickOutProfile();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m3755toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = this.uid_;
             if (i != 0) {
@@ -868,12 +851,12 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
                         int readTag = codedInputStream.readTag();
                         if (readTag != 0) {
                             if (readTag == 10) {
-                                KickOutProfile.Builder builder = this.kickOutProfile_ != null ? this.kickOutProfile_.toBuilder() : null;
-                                KickOutProfile kickOutProfile = (KickOutProfile) codedInputStream.readMessage(KickOutProfile.parser(), extensionRegistryLite);
-                                this.kickOutProfile_ = kickOutProfile;
-                                if (builder != null) {
-                                    builder.mergeFrom(kickOutProfile);
-                                    this.kickOutProfile_ = builder.buildPartial();
+                                KickOutProfile.Builder m3755toBuilder = this.kickOutProfile_ != null ? this.kickOutProfile_.m3755toBuilder() : null;
+                                KickOutProfile readMessage = codedInputStream.readMessage(KickOutProfile.parser(), extensionRegistryLite);
+                                this.kickOutProfile_ = readMessage;
+                                if (m3755toBuilder != null) {
+                                    m3755toBuilder.mergeFrom(readMessage);
+                                    this.kickOutProfile_ = m3755toBuilder.m3762buildPartial();
                                 }
                             } else if (!parseUnknownField(codedInputStream, newBuilder, extensionRegistryLite, readTag)) {
                             }
@@ -906,66 +889,65 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m3708toBuilder();
     }
 
     public static Builder newBuilder(KickOutExtra kickOutExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(kickOutExtra);
+        return DEFAULT_INSTANCE.m3708toBuilder().mergeFrom(kickOutExtra);
     }
 
     public static KickOutExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (KickOutExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static KickOutExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (KickOutExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static KickOutExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (KickOutExtra) PARSER.parseFrom(byteString);
     }
 
     public static KickOutExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (KickOutExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static KickOutExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (KickOutExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static KickOutExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (KickOutExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static KickOutExtra parseFrom(InputStream inputStream) throws IOException {
-        return (KickOutExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static KickOutExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (KickOutExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static KickOutExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (KickOutExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static KickOutExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (KickOutExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static KickOutExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (KickOutExtra) PARSER.parseFrom(bArr);
     }
 
     public static KickOutExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (KickOutExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<KickOutExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -980,8 +962,8 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public KickOutExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public KickOutExtra m3703getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1000,12 +982,10 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
         return getKickOutProfile();
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<KickOutExtra> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1020,7 +1000,6 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1030,7 +1009,6 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
         return this.kickOutProfile_ != null;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1045,12 +1023,10 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_KickOutExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(KickOutExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1063,28 +1039,26 @@ public final class KickOutExtra extends GeneratedMessageV3 implements KickOutExt
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m3706newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m3705newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new KickOutExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m3708toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (this.kickOutProfile_ != null) {
             codedOutputStream.writeMessage(1, getKickOutProfile());

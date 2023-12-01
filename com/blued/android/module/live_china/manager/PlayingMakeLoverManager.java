@@ -26,9 +26,7 @@ import java.util.List;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/PlayingMakeLoverManager.class */
 public class PlayingMakeLoverManager extends MakeLoverBaseManager {
     public static int b = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static int f13681c = 0;
+    public static int c = 0;
     public static int d = 0;
     public static int e = 0;
     public static double f = 1.0d;
@@ -50,7 +48,7 @@ public class PlayingMakeLoverManager extends MakeLoverBaseManager {
         this.o = DensityUtils.a(context, 1.0f);
         int i = AppInfo.l / 3;
         b = i;
-        f13681c = (int) (i * f);
+        c = (int) (i * f);
         d = DensityUtils.a(this.l, 148);
         e = StatusBarHelper.a() ? d - StatusBarHelper.a((Context) playingOnliveFragment.getActivity()) : d;
         this.i = AvatarUtils.a(0, LiveRoomInfo.a().e());
@@ -68,7 +66,7 @@ public class PlayingMakeLoverManager extends MakeLoverBaseManager {
         LiveFloatManager.a().h();
         this.m.aQ = true;
         this.m.aU.setRTCModel(this.m.aQ);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, f13681c * 2);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, c * 2);
         layoutParams.setMargins(0, d, 0, 0);
         this.m.aN.setLayoutParams(layoutParams);
         b(liveMakeLoverFansModel.index);
@@ -108,16 +106,16 @@ public class PlayingMakeLoverManager extends MakeLoverBaseManager {
                 return;
             }
             LiveSetDataObserver.a().e(LiveRoomManager.a().g());
-        } else if (this.f13675a.size() > i) {
-            LiveMakeLoverFansModel liveMakeLoverFansModel = this.f13675a.get(i);
+        } else if (this.a.size() > i) {
+            LiveMakeLoverFansModel liveMakeLoverFansModel = this.a.get(i);
             if (liveMakeLoverFansModel != null && !liveMakeLoverFansModel.isEmpty()) {
                 EventTrackLive.d(LiveProtos.Event.USER_MIKE_USER_PHOTO_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), liveMakeLoverFansModel.uid);
                 this.m.bW.a(i);
                 LiveSetDataObserver.a().e(liveMakeLoverFansModel.uid);
                 return;
             }
-            LiveMsgSendManager a2 = LiveMsgSendManager.a();
-            a2.d("点击空白小窗，当前状态为：" + this.m.M_());
+            LiveMsgSendManager a = LiveMsgSendManager.a();
+            a.d("点击空白小窗，当前状态为：" + this.m.M_());
             if (this.m.aD()) {
                 return;
             }
@@ -126,57 +124,57 @@ public class PlayingMakeLoverManager extends MakeLoverBaseManager {
     }
 
     public void b(int i) {
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(b, f13681c);
-        FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(b, f13681c);
-        FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(b, f13681c);
-        FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(b, f13681c);
-        FrameLayout.LayoutParams layoutParams5 = new FrameLayout.LayoutParams(b, f13681c);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(b, c);
+        FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(b, c);
+        FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(b, c);
+        FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(b, c);
+        FrameLayout.LayoutParams layoutParams5 = new FrameLayout.LayoutParams(b, c);
         if (i == 1) {
             layoutParams5.leftMargin = b;
             layoutParams5.topMargin = d;
             layoutParams.leftMargin = b * 2;
-            layoutParams2.topMargin = f13681c;
+            layoutParams2.topMargin = c;
             layoutParams3.leftMargin = b;
-            layoutParams3.topMargin = f13681c;
+            layoutParams3.topMargin = c;
             layoutParams4.leftMargin = b * 2;
-            layoutParams4.topMargin = f13681c;
+            layoutParams4.topMargin = c;
             this.m.bW.g.setVisibility(8);
         } else if (i == 2) {
             layoutParams5.topMargin = d;
             layoutParams5.leftMargin = b * 2;
             layoutParams.leftMargin = b;
-            layoutParams2.topMargin = f13681c;
+            layoutParams2.topMargin = c;
             layoutParams3.leftMargin = b;
-            layoutParams3.topMargin = f13681c;
+            layoutParams3.topMargin = c;
             layoutParams4.leftMargin = b * 2;
-            layoutParams4.topMargin = f13681c;
+            layoutParams4.topMargin = c;
             this.m.bW.h.setVisibility(8);
         } else if (i == 3) {
-            layoutParams5.topMargin = d + f13681c;
+            layoutParams5.topMargin = d + c;
             layoutParams.leftMargin = b;
             layoutParams2.leftMargin = b * 2;
             layoutParams3.leftMargin = b;
-            layoutParams3.topMargin = f13681c;
+            layoutParams3.topMargin = c;
             layoutParams4.leftMargin = b * 2;
-            layoutParams4.topMargin = f13681c;
+            layoutParams4.topMargin = c;
             this.m.bW.i.setVisibility(8);
         } else if (i == 4) {
-            layoutParams5.topMargin = d + f13681c;
+            layoutParams5.topMargin = d + c;
             layoutParams5.leftMargin = b;
             layoutParams.leftMargin = b;
             layoutParams2.leftMargin = b * 2;
-            layoutParams3.topMargin = f13681c;
+            layoutParams3.topMargin = c;
             layoutParams4.leftMargin = b * 2;
-            layoutParams4.topMargin = f13681c;
+            layoutParams4.topMargin = c;
             this.m.bW.j.setVisibility(8);
         } else if (i == 5) {
-            layoutParams5.topMargin = d + f13681c;
+            layoutParams5.topMargin = d + c;
             layoutParams5.leftMargin = b * 2;
             layoutParams.leftMargin = b;
             layoutParams2.leftMargin = b * 2;
-            layoutParams3.topMargin = f13681c;
+            layoutParams3.topMargin = c;
             layoutParams4.leftMargin = b;
-            layoutParams4.topMargin = f13681c;
+            layoutParams4.topMargin = c;
             this.m.bW.k.setVisibility(8);
         }
         this.m.ag.setLayoutParams(layoutParams5);
@@ -214,18 +212,18 @@ public class PlayingMakeLoverManager extends MakeLoverBaseManager {
         LiveMakeLoverManager.a(1);
         this.m.O.setVisibility(0);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
-        layoutParams.setMargins(0, d + (f13681c * 2), 0, 0);
+        layoutParams.setMargins(0, d + (c * 2), 0, 0);
         this.m.bX.setLayoutParams(layoutParams);
         this.m.bX.setVisibility(0);
         LiveSetDataObserver.a().f();
         this.m.bd.g();
-        FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(-1, f13681c * 2);
+        FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(-1, c * 2);
         layoutParams2.setMargins(0, d, 0, 0);
         this.m.aN.setLayoutParams(layoutParams2);
         FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(-1, -1);
         layoutParams3.setMargins(0, d, 0, 0);
-        this.m.bW.f14566a.setLayoutParams(layoutParams3);
-        FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(b, f13681c);
+        this.m.bW.a.setLayoutParams(layoutParams3);
+        FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(b, c);
         this.m.bA.setLayoutParams(layoutParams4);
         this.m.aj.setLayoutParams(layoutParams4);
         this.m.ak.setLayoutParams(layoutParams4);
@@ -233,24 +231,24 @@ public class PlayingMakeLoverManager extends MakeLoverBaseManager {
         this.m.am.setLayoutParams(layoutParams4);
         this.m.an.setLayoutParams(layoutParams4);
         this.m.ai.setLayoutParams(layoutParams4);
-        FrameLayout.LayoutParams layoutParams5 = new FrameLayout.LayoutParams(b, f13681c);
+        FrameLayout.LayoutParams layoutParams5 = new FrameLayout.LayoutParams(b, c);
         layoutParams5.leftMargin = b - this.o;
-        FrameLayout.LayoutParams layoutParams6 = new FrameLayout.LayoutParams(b, f13681c);
+        FrameLayout.LayoutParams layoutParams6 = new FrameLayout.LayoutParams(b, c);
         layoutParams6.leftMargin = (b * 2) - this.o;
-        FrameLayout.LayoutParams layoutParams7 = new FrameLayout.LayoutParams(b, f13681c);
-        layoutParams7.topMargin = f13681c;
-        FrameLayout.LayoutParams layoutParams8 = new FrameLayout.LayoutParams(b, f13681c);
-        layoutParams8.topMargin = f13681c - this.o;
+        FrameLayout.LayoutParams layoutParams7 = new FrameLayout.LayoutParams(b, c);
+        layoutParams7.topMargin = c;
+        FrameLayout.LayoutParams layoutParams8 = new FrameLayout.LayoutParams(b, c);
+        layoutParams8.topMargin = c - this.o;
         layoutParams8.leftMargin = b;
-        FrameLayout.LayoutParams layoutParams9 = new FrameLayout.LayoutParams(b, f13681c);
+        FrameLayout.LayoutParams layoutParams9 = new FrameLayout.LayoutParams(b, c);
         layoutParams9.leftMargin = (b * 2) - this.o;
-        layoutParams9.topMargin = f13681c;
+        layoutParams9.topMargin = c;
         this.m.bW.b.setLayoutParams(layoutParams5);
-        this.m.bW.f14567c.setLayoutParams(layoutParams6);
+        this.m.bW.c.setLayoutParams(layoutParams6);
         this.m.bW.d.setLayoutParams(layoutParams7);
         this.m.bW.e.setLayoutParams(layoutParams8);
         this.m.bW.f.setLayoutParams(layoutParams9);
-        this.m.bW.f14566a.setVisibility(0);
+        this.m.bW.a.setVisibility(0);
         this.m.bW.g.setVisibility(0);
         this.m.bW.h.setVisibility(0);
         this.m.bW.i.setVisibility(0);
@@ -298,14 +296,14 @@ public class PlayingMakeLoverManager extends MakeLoverBaseManager {
     }
 
     public void h() {
-        if (this.f13675a != null) {
+        if (this.a != null) {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f13675a.size()) {
+                if (i2 >= this.a.size()) {
                     break;
                 }
-                LiveMakeLoverFansModel liveMakeLoverFansModel = this.f13675a.get(i2);
+                LiveMakeLoverFansModel liveMakeLoverFansModel = this.a.get(i2);
                 if (i2 == 0) {
                     if (!liveMakeLoverFansModel.isEmpty()) {
                         this.m.bW.g.setVisibility(8);

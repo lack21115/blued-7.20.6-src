@@ -1,6 +1,8 @@
 package com.igexin.push.f;
 
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.smtt.sdk.TbsVideoCacheTask;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,11 +18,11 @@ import java.util.Map;
 public class r {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23667a = r.class.getName();
+    public static final String f10059a = r.class.getName();
     public static final String b = "utf-8";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23668c = "POST";
+    private static final String f10060c = "POST";
     private static final String d = "GET";
     private static final String e = "GETUI";
     private static final int f = 30000;
@@ -54,7 +56,7 @@ public class r {
         if (TextUtils.isEmpty(str)) {
             return "utf-8";
         }
-        String[] split = str.split(";");
+        String[] split = str.split(t.aE);
         int length = split.length;
         int i = 0;
         while (true) {
@@ -86,7 +88,7 @@ public class r {
             String value = entry.getValue();
             if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
                 if (z) {
-                    sb.append("&");
+                    sb.append(ContainerUtils.FIELD_DELIMITER);
                 } else {
                     z = true;
                 }
@@ -135,8 +137,8 @@ public class r {
                 sb3 = sb.toString();
             }
         } else {
-            str3 = "&";
-            if (str.endsWith("&")) {
+            str3 = ContainerUtils.FIELD_DELIMITER;
+            if (str.endsWith(ContainerUtils.FIELD_DELIMITER)) {
                 sb2 = new StringBuilder();
                 sb2.append(str);
                 sb2.append(str2);

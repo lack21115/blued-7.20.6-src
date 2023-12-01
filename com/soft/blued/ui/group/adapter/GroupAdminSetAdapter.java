@@ -23,7 +23,6 @@ import com.blued.android.module.common.user.UserInfoHelper;
 import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.utils.DistanceUtils;
 import com.blued.android.module.common.utils.TimeAndDateUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.bytedance.applog.tracker.Tracker;
 import com.soft.blued.R;
@@ -39,7 +38,7 @@ public class GroupAdminSetAdapter extends BaseAdapter {
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<BluedGroupAdminLists> f30895c;
+    private List<BluedGroupAdminLists> f17205c;
     private LayoutInflater d;
     private Dialog f;
     private ListView g;
@@ -51,7 +50,7 @@ public class GroupAdminSetAdapter extends BaseAdapter {
     private IRequestHost m;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f30894a = false;
+    public boolean f17204a = false;
     private LoadOptions e = new LoadOptions();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -60,11 +59,11 @@ public class GroupAdminSetAdapter extends BaseAdapter {
     public class AnonymousClass1 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f30896a;
+        final /* synthetic */ int f17206a;
         final /* synthetic */ BluedGroupAdminLists b;
 
         AnonymousClass1(int i, BluedGroupAdminLists bluedGroupAdminLists) {
-            this.f30896a = i;
+            this.f17206a = i;
             this.b = bluedGroupAdminLists;
         }
 
@@ -77,23 +76,22 @@ public class GroupAdminSetAdapter extends BaseAdapter {
                     Tracker.onClick(dialogInterface, i);
                     GroupHttpUtils.h(GroupAdminSetAdapter.this.b, new BluedUIHttpResponse<BluedEntityA<BluedGroupAdminLists>>() { // from class: com.soft.blued.ui.group.adapter.GroupAdminSetAdapter.1.1.1
                         /* JADX INFO: Access modifiers changed from: protected */
-                        @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         /* renamed from: a */
                         public void onUIUpdate(BluedEntityA<BluedGroupAdminLists> bluedEntityA) {
                             if (bluedEntityA != null) {
                                 try {
                                     AppMethods.d((int) R.string.group_admin_cancel_prompt);
-                                    GroupAdminSetAdapter.this.f30895c.remove(AnonymousClass1.this.f30896a);
+                                    GroupAdminSetAdapter.this.f17205c.remove(AnonymousClass1.this.f17206a);
                                     TextView textView = GroupAdminSetAdapter.this.k;
-                                    textView.setText("(" + GroupAdminSetAdapter.this.f30895c.size() + BridgeUtil.SPLIT_MARK + GroupAdminSetFragment.f30755c + ")");
-                                    GroupAdminSetFragment.d = StringUtils.a(GroupAdminSetAdapter.this.f30895c.size(), "0");
+                                    textView.setText("(" + GroupAdminSetAdapter.this.f17205c.size() + "/" + GroupAdminSetFragment.f17065c + ")");
+                                    GroupAdminSetFragment.d = StringUtils.a(GroupAdminSetAdapter.this.f17205c.size(), "0");
                                     if (GroupAdminSetFragment.d.equals("0")) {
-                                        GroupAdminSetAdapter.this.f30894a = false;
+                                        GroupAdminSetAdapter.this.f17204a = false;
                                         GroupAdminSetAdapter.this.l.setVisibility(4);
                                     } else {
                                         GroupAdminSetAdapter.this.l.setVisibility(0);
                                     }
-                                    if (GroupAdminSetFragment.d.equals(GroupAdminSetFragment.f30755c)) {
+                                    if (GroupAdminSetFragment.d.equals(GroupAdminSetFragment.f17065c)) {
                                         GroupAdminSetAdapter.this.h.setClickable(false);
                                         GroupAdminSetAdapter.this.i.setImageResource(R.drawable.icon_group_add_admin_gray);
                                         GroupAdminSetAdapter.this.j.setTextColor(GroupAdminSetAdapter.this.b.getResources().getColor(2131100461));
@@ -109,13 +107,11 @@ public class GroupAdminSetAdapter extends BaseAdapter {
                             }
                         }
 
-                        @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public void onUIFinish() {
                             super.onUIFinish();
                             DialogUtils.b(GroupAdminSetAdapter.this.f);
                         }
 
-                        @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public void onUIStart() {
                             super.onUIStart();
                             DialogUtils.a(GroupAdminSetAdapter.this.f);
@@ -135,11 +131,11 @@ public class GroupAdminSetAdapter extends BaseAdapter {
     public class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f30903a;
+        public ImageView f17213a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public TextView f30904c;
+        public TextView f17214c;
         public TextView d;
         public TextView e;
         public ImageView f;
@@ -151,7 +147,7 @@ public class GroupAdminSetAdapter extends BaseAdapter {
 
     public GroupAdminSetAdapter(Context context, List<BluedGroupAdminLists> list, ListView listView, TextView textView, LinearLayout linearLayout, ImageView imageView, TextView textView2, View view, IRequestHost iRequestHost) {
         this.b = context;
-        this.f30895c = list;
+        this.f17205c = list;
         this.g = listView;
         this.h = linearLayout;
         this.i = imageView;
@@ -167,12 +163,12 @@ public class GroupAdminSetAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f30895c.size();
+        return this.f17205c.size();
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f30895c.get(i);
+        return this.f17205c.get(i);
     }
 
     @Override // android.widget.Adapter
@@ -184,13 +180,13 @@ public class GroupAdminSetAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         View view2;
         ViewHolder viewHolder;
-        final BluedGroupAdminLists bluedGroupAdminLists = this.f30895c.get(i);
+        final BluedGroupAdminLists bluedGroupAdminLists = this.f17205c.get(i);
         if (view == null) {
             viewHolder = new ViewHolder();
             view2 = this.d.inflate(R.layout.item_group_admins_show, viewGroup, false);
-            viewHolder.f30903a = (ImageView) view2.findViewById(2131366011);
-            viewHolder.b = (TextView) view2.findViewById(2131372879);
-            viewHolder.f30904c = (TextView) view2.findViewById(R.id.tv_user_distance);
+            viewHolder.f17213a = (ImageView) view2.findViewById(R.id.iv_user_head);
+            viewHolder.b = (TextView) view2.findViewById(R.id.tv_user_name);
+            viewHolder.f17214c = (TextView) view2.findViewById(R.id.tv_user_distance);
             viewHolder.d = (TextView) view2.findViewById(R.id.tv_last_activate_time);
             viewHolder.e = (TextView) view2.findViewById(R.id.tv_group_user_details);
             viewHolder.f = (ImageView) view2.findViewById(R.id.iv_group_admin_set);
@@ -200,12 +196,12 @@ public class GroupAdminSetAdapter extends BaseAdapter {
             view2 = view;
             viewHolder = (ViewHolder) view.getTag();
         }
-        if (this.f30894a) {
+        if (this.f17204a) {
             viewHolder.f.setVisibility(0);
         } else {
             viewHolder.f.setVisibility(8);
         }
-        ImageLoader.a(this.m, bluedGroupAdminLists.users_avatar).b(2131237310).c().a(viewHolder.f30903a);
+        ImageLoader.a(this.m, bluedGroupAdminLists.users_avatar).b(2131237310).c().a(viewHolder.f17213a);
         UserInfoHelper.a(viewHolder.g, bluedGroupAdminLists.users_vbadge, 3);
         if (!StringUtils.d(bluedGroupAdminLists.users_note)) {
             viewHolder.b.setText(bluedGroupAdminLists.users_note);
@@ -215,9 +211,9 @@ public class GroupAdminSetAdapter extends BaseAdapter {
             viewHolder.b.setText(bluedGroupAdminLists.users_name);
         }
         if (StringUtils.d(bluedGroupAdminLists.users_distance)) {
-            viewHolder.f30904c.setVisibility(4);
+            viewHolder.f17214c.setVisibility(4);
         } else {
-            viewHolder.f30904c.setText(DistanceUtils.a(bluedGroupAdminLists.users_distance, BlueAppLocal.c(), false));
+            viewHolder.f17214c.setText(DistanceUtils.a(bluedGroupAdminLists.users_distance, BlueAppLocal.c(), false));
         }
         if (StringUtils.d(bluedGroupAdminLists.last_active_time)) {
             viewHolder.d.setText("");
@@ -236,7 +232,7 @@ public class GroupAdminSetAdapter extends BaseAdapter {
                 userBasicModel.uid = bluedGroupAdminLists.users_uid;
                 userBasicModel.name = bluedGroupAdminLists.users_name;
                 userBasicModel.avatar = bluedGroupAdminLists.users_avatar;
-                UserInfoFragmentNew.a(GroupAdminSetAdapter.this.b, userBasicModel, (String) null, viewHolder2.f30903a);
+                UserInfoFragmentNew.a(GroupAdminSetAdapter.this.b, userBasicModel, (String) null, viewHolder2.f17213a);
             }
         });
         return view2;

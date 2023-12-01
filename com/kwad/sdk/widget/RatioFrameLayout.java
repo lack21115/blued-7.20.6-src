@@ -27,9 +27,8 @@ public class RatioFrameLayout extends FrameLayout {
         return this.aii;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         if (this.aii != 0.0d) {
             int size = View.MeasureSpec.getSize(i);
             Log.d("RatioFrameLayout", "widthSize:" + size);

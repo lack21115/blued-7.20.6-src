@@ -20,11 +20,11 @@ import java.util.List;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7848a = "ImageLoader";
+    private static final String f5008a = "ImageLoader";
     private static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7849c = 2;
+    private static final int f5009c = 2;
     private static final String d = "message_key";
     private static final String e = "message_bitmap";
     private static final String f = "message_message";
@@ -41,7 +41,7 @@ public final class b {
                     b.this.a(string, a2);
                     LinkedList linkedList = (LinkedList) b.this.j.get(string);
                     if (linkedList != null) {
-                        Iterator<E> it = linkedList.iterator();
+                        Iterator it = linkedList.iterator();
                         while (it.hasNext()) {
                             c cVar = (c) it.next();
                             if (cVar != null) {
@@ -55,7 +55,7 @@ public final class b {
                     String string3 = message.getData().getString(b.f);
                     LinkedList linkedList2 = (LinkedList) b.this.j.get(string2);
                     if (linkedList2 != null) {
-                        Iterator<E> it2 = linkedList2.iterator();
+                        Iterator it2 = linkedList2.iterator();
                         while (it2.hasNext()) {
                             c cVar2 = (c) it2.next();
                             if (cVar2 != null) {
@@ -221,7 +221,7 @@ public final class b {
             }
             this.i.a(str);
         } catch (Throwable th) {
-            o.d(f7848a, th.getMessage());
+            o.d(f5008a, th.getMessage());
         }
     }
 }

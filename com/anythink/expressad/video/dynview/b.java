@@ -13,7 +13,7 @@ public class b {
     private static volatile b b;
 
     /* renamed from: a  reason: collision with root package name */
-    public Map<String, SoftReference<View>> f8351a = new HashMap();
+    public Map<String, SoftReference<View>> f5511a = new HashMap();
 
     private b() {
     }

@@ -10,11 +10,11 @@ import org.json.JSONObject;
 public class CallMraidJS {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7085a = "placementType";
+    public static final String f4247a = "placementType";
     public static final String b = "state";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7086c = "viewable";
+    public static final String f4248c = "viewable";
     public static final String d = "currentAppOrientation";
     public static final String e = "loading";
     public static final String f = "default";
@@ -24,12 +24,11 @@ public class CallMraidJS {
     public static final String j = "Interstitial";
     public static final String k = "inline";
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/atsignalcommon/mraid/CallMraidJS$SingletonHolder.class */
-    public static class SingletonHolder {
+    static class SingletonHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final CallMraidJS f7087a = new CallMraidJS();
+        private static final CallMraidJS f4249a = new CallMraidJS();
 
         private SingletonHolder() {
         }
@@ -46,7 +45,7 @@ public class CallMraidJS {
     }
 
     public static CallMraidJS getInstance() {
-        return SingletonHolder.f7087a;
+        return SingletonHolder.f4249a;
     }
 
     public void fireAudioVolumeChange(WebView webView, double d2) {

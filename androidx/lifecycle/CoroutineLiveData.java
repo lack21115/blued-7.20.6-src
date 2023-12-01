@@ -20,10 +20,10 @@ public final class CoroutineLiveData<T> extends MediatorLiveData<T> {
     private BlockRunner<T> blockRunner;
     private EmittedSource emittedSource;
 
-    public CoroutineLiveData(CoroutineContext context, long j, Function2<? super LiveDataScope<T>, ? super Continuation<? super Unit>, ? extends Object> block) {
-        Intrinsics.e(context, "context");
-        Intrinsics.e(block, "block");
-        this.blockRunner = new BlockRunner<>(this, block, j, CoroutineScopeKt.a(Dispatchers.b().a().plus(context).plus(SupervisorKt.a((Job) context.get(Job.C_)))), new Function0<Unit>(this) { // from class: androidx.lifecycle.CoroutineLiveData.1
+    public CoroutineLiveData(CoroutineContext coroutineContext, long j, Function2<? super LiveDataScope<T>, ? super Continuation<? super Unit>, ? extends Object> function2) {
+        Intrinsics.e(coroutineContext, "context");
+        Intrinsics.e(function2, "block");
+        this.blockRunner = new BlockRunner<>(this, function2, j, CoroutineScopeKt.a(Dispatchers.b().a().plus(coroutineContext).plus(SupervisorKt.a(coroutineContext.get(Job.C_)))), new Function0<Unit>(this) { // from class: androidx.lifecycle.CoroutineLiveData.1
             final /* synthetic */ CoroutineLiveData<T> this$0;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -32,21 +32,20 @@ public final class CoroutineLiveData<T> extends MediatorLiveData<T> {
                 this.this$0 = this;
             }
 
-            @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.f42314a;
+            public /* bridge */ /* synthetic */ Object invoke() {
+                m1419invoke();
+                return Unit.a;
             }
 
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1419invoke() {
                 ((CoroutineLiveData) this.this$0).blockRunner = null;
             }
         });
     }
 
     public /* synthetic */ CoroutineLiveData(CoroutineContext coroutineContext, long j, Function2 function2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? EmptyCoroutineContext.f42457a : coroutineContext, (i & 2) != 0 ? 5000L : j, function2);
+        this((i & 1) != 0 ? (CoroutineContext) EmptyCoroutineContext.a : coroutineContext, (i & 2) != 0 ? 5000L : j, function2);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0043  */
@@ -142,7 +141,7 @@ public final class CoroutineLiveData<T> extends MediatorLiveData<T> {
             r0 = r6
             r1 = 0
             r0.emittedSource = r1
-            kotlin.Unit r0 = kotlin.Unit.f42314a
+            kotlin.Unit r0 = kotlin.Unit.a
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.lifecycle.CoroutineLiveData.clearSource$lifecycle_livedata_ktx_release(kotlin.coroutines.Continuation):java.lang.Object");

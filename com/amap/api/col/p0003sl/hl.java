@@ -15,18 +15,13 @@ import java.util.Map;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hl.class */
 public class hl {
     private static volatile hl b;
+    private Map<String, a> a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private Map<String, a> f5071a;
-
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.amap.api.col.3sl.hl$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hl$a.class */
-    public final class a {
+    final class a {
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f5073c;
+        private int c;
         private int e;
         private HashMap<Integer, List<LatLng>> g;
         private int d = 0;
@@ -35,11 +30,11 @@ public class hl {
 
         public a(int i, int i2, int i3, HashMap<Integer, List<LatLng>> hashMap) {
             this.b = 0;
-            this.f5073c = 0;
+            this.c = 0;
             this.e = 0;
             this.b = i2;
             this.g = hashMap;
-            this.f5073c = i;
+            this.c = i;
             this.e = i3;
         }
 
@@ -49,7 +44,7 @@ public class hl {
             obtainMessage.what = 100;
             obtainMessage.arg1 = this.d;
             Bundle bundle = new Bundle();
-            bundle.putInt("lineID", this.f5073c);
+            bundle.putInt("lineID", this.c);
             obtainMessage.setData(bundle);
             handler.sendMessage(obtainMessage);
             this.d++;
@@ -58,17 +53,17 @@ public class hl {
 
         private void b(Handler handler) {
             if (this.f <= 0) {
-                hl.a(handler, this.f5073c, LBSTraceClient.MIN_GRASP_POINT_ERROR);
+                hl.a(handler, this.c, LBSTraceClient.MIN_GRASP_POINT_ERROR);
                 return;
             }
-            int a2 = hi.a(this.h);
+            int a = hi.a(this.h);
             Message obtainMessage = handler.obtainMessage();
             obtainMessage.obj = this.h;
             obtainMessage.what = 101;
-            obtainMessage.arg1 = a2;
+            obtainMessage.arg1 = a;
             obtainMessage.arg2 = this.e;
             Bundle bundle = new Bundle();
-            bundle.putInt("lineID", this.f5073c);
+            bundle.putInt("lineID", this.c);
             obtainMessage.setData(bundle);
             handler.sendMessage(obtainMessage);
         }
@@ -96,8 +91,8 @@ public class hl {
     }
 
     public hl() {
-        this.f5071a = null;
-        this.f5071a = Collections.synchronizedMap(new HashMap());
+        this.a = null;
+        this.a = Collections.synchronizedMap(new HashMap());
     }
 
     public static hl a() {
@@ -127,8 +122,8 @@ public class hl {
 
     public final a a(String str) {
         synchronized (this) {
-            if (this.f5071a != null) {
-                return this.f5071a.get(str);
+            if (this.a != null) {
+                return this.a.get(str);
             }
             return null;
         }
@@ -136,16 +131,16 @@ public class hl {
 
     public final void a(String str, int i, int i2, int i3) {
         synchronized (this) {
-            if (this.f5071a != null) {
-                this.f5071a.put(str, new a(i, i2, i3, new HashMap(16)));
+            if (this.a != null) {
+                this.a.put(str, new a(i, i2, i3, new HashMap(16)));
             }
         }
     }
 
     public final void a(String str, int i, List<LatLng> list) {
         synchronized (this) {
-            if (this.f5071a != null) {
-                this.f5071a.get(str).a().put(Integer.valueOf(i), list);
+            if (this.a != null) {
+                this.a.get(str).a().put(Integer.valueOf(i), list);
             }
         }
     }

@@ -10,20 +10,18 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/MakeLoverBaseManager.class */
 public class MakeLoverBaseManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public List<LiveMakeLoverFansModel> f13675a = new ArrayList();
+    public List<LiveMakeLoverFansModel> a = new ArrayList();
 
     public LiveMakeLoverFansModel a(int i) {
-        List<LiveMakeLoverFansModel> list = this.f13675a;
+        List<LiveMakeLoverFansModel> list = this.a;
         if (list != null && i >= 0 && i < list.size()) {
-            return this.f13675a.get(i);
+            return this.a.get(i);
         }
         return null;
     }
 
     public LiveMakeLoverFansModel a(String str) {
-        List<LiveMakeLoverFansModel> list = this.f13675a;
+        List<LiveMakeLoverFansModel> list = this.a;
         if (list == null) {
             return null;
         }
@@ -36,13 +34,13 @@ public class MakeLoverBaseManager {
     }
 
     public List<LiveMakeLoverFansModel> a() {
-        return this.f13675a;
+        return this.a;
     }
 
     public void a(String str, String str2) {
-        LiveMakeLoverFansModel a2 = a(str);
-        if (a2 != null) {
-            a2.pic = str2;
+        LiveMakeLoverFansModel a = a(str);
+        if (a != null) {
+            a.pic = str2;
             Log.i("==makelover===", "baozhao:" + str2);
         }
     }
@@ -55,7 +53,7 @@ public class MakeLoverBaseManager {
         for (LiveMakeLoverFansModel liveMakeLoverFansModel : list) {
             boolean z = false;
             if (!liveMakeLoverFansModel.isEmpty()) {
-                Iterator<LiveMakeLoverFansModel> it = this.f13675a.iterator();
+                Iterator<LiveMakeLoverFansModel> it = this.a.iterator();
                 while (true) {
                     z = false;
                     if (!it.hasNext()) {
@@ -76,13 +74,13 @@ public class MakeLoverBaseManager {
             }
             arrayList.add(liveMakeLoverFansModel);
         }
-        this.f13675a.clear();
-        this.f13675a.addAll(arrayList);
+        this.a.clear();
+        this.a.addAll(arrayList);
     }
 
     public int b(String str) {
         LiveMakeLoverFansModel liveMakeLoverFansModel;
-        List<LiveMakeLoverFansModel> list = this.f13675a;
+        List<LiveMakeLoverFansModel> list = this.a;
         if (list == null) {
             return -1;
         }
@@ -100,39 +98,39 @@ public class MakeLoverBaseManager {
             i++;
         }
         if (liveMakeLoverFansModel != null) {
-            this.f13675a.set(i, new LiveMakeLoverFansModel());
+            this.a.set(i, new LiveMakeLoverFansModel());
             return i;
         }
         return -1;
     }
 
     public void b() {
-        for (LiveMakeLoverFansModel liveMakeLoverFansModel : this.f13675a) {
+        for (LiveMakeLoverFansModel liveMakeLoverFansModel : this.a) {
             liveMakeLoverFansModel.lamp = 1;
         }
     }
 
     public void c(String str) {
-        LiveMakeLoverFansModel a2 = a(str);
-        if (a2 != null) {
-            a2.lamp = 0;
+        LiveMakeLoverFansModel a = a(str);
+        if (a != null) {
+            a.lamp = 0;
         }
     }
 
     public boolean c() {
         boolean z;
-        List<LiveMakeLoverFansModel> list = this.f13675a;
+        List<LiveMakeLoverFansModel> list = this.a;
         if (list == null) {
             return false;
         }
-        boolean z2 = list.size() > 0 && !this.f13675a.get(0).isEmpty();
+        boolean z2 = list.size() > 0 && !this.a.get(0).isEmpty();
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f13675a.size()) {
+            if (i2 >= this.a.size()) {
                 z = false;
                 break;
-            } else if (i2 != 0 && !this.f13675a.get(i2).isEmpty()) {
+            } else if (i2 != 0 && !this.a.get(i2).isEmpty()) {
                 z = true;
                 break;
             } else {
@@ -151,7 +149,7 @@ public class MakeLoverBaseManager {
 
     public boolean d() {
         boolean z;
-        List<LiveMakeLoverFansModel> list = this.f13675a;
+        List<LiveMakeLoverFansModel> list = this.a;
         if (list == null) {
             return false;
         }
@@ -177,10 +175,10 @@ public class MakeLoverBaseManager {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f13675a.size()) {
+            if (i2 >= this.a.size()) {
                 z = false;
                 break;
-            } else if (i2 != 0 && !this.f13675a.get(i2).isEmpty() && this.f13675a.get(i2).lamp == 1) {
+            } else if (i2 != 0 && !this.a.get(i2).isEmpty() && this.a.get(i2).lamp == 1) {
                 z = true;
                 break;
             } else {

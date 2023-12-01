@@ -9,7 +9,6 @@ import java.net.URLEncoder;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import org.apache.commons.codec.language.bm.Rule;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -30,7 +29,7 @@ public class c extends cn.com.chinatelecom.account.api.d.a {
         int hashCode = str.hashCode();
         int i = -1;
         if (hashCode == 64897) {
-            if (str.equals(Rule.ALL)) {
+            if (str.equals("ALL")) {
                 z = false;
             }
             z = true;

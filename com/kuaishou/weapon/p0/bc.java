@@ -12,23 +12,23 @@ import org.json.JSONObject;
 public class bc extends df {
 
     /* renamed from: a  reason: collision with root package name */
-    private JSONObject f23743a;
+    private JSONObject f10135a;
 
     public bc(Context context) {
         if (Engine.loadSuccess) {
             try {
-                String pqr = Engine.getInstance(context).pqr(Integer.valueOf(cj.f23783c).intValue(), 5, 5, "");
+                String pqr = Engine.getInstance(context).pqr(Integer.valueOf(cj.f10175c).intValue(), 5, 5, "");
                 if (TextUtils.isEmpty(pqr)) {
                     return;
                 }
-                this.f23743a = new JSONObject(pqr);
+                this.f10135a = new JSONObject(pqr);
             } catch (Throwable th) {
             }
         }
     }
 
     public String a(String str) {
-        JSONObject jSONObject = this.f23743a;
+        JSONObject jSONObject = this.f10135a;
         if (jSONObject != null) {
             try {
                 return jSONObject.getString(str);
@@ -62,7 +62,7 @@ public class bc extends df {
     }
 
     public JSONObject a() {
-        return this.f23743a;
+        return this.f10135a;
     }
 
     public boolean a(Set set, String str) {

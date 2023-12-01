@@ -1,5 +1,6 @@
 package androidx.lifecycle;
 
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -16,17 +17,17 @@ public final class LiveDataScopeImpl<T> implements LiveDataScope<T> {
     private final CoroutineContext coroutineContext;
     private CoroutineLiveData<T> target;
 
-    public LiveDataScopeImpl(CoroutineLiveData<T> target, CoroutineContext context) {
-        Intrinsics.e(target, "target");
-        Intrinsics.e(context, "context");
-        this.target = target;
-        this.coroutineContext = context.plus(Dispatchers.b().a());
+    public LiveDataScopeImpl(CoroutineLiveData<T> coroutineLiveData, CoroutineContext coroutineContext) {
+        Intrinsics.e(coroutineLiveData, TypedValues.AttributesType.S_TARGET);
+        Intrinsics.e(coroutineContext, "context");
+        this.target = coroutineLiveData;
+        this.coroutineContext = coroutineContext.plus(Dispatchers.b().a());
     }
 
     @Override // androidx.lifecycle.LiveDataScope
     public Object emit(T t, Continuation<? super Unit> continuation) {
         Object a2 = BuildersKt.a(this.coroutineContext, new LiveDataScopeImpl$emit$2(this, t, null), continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        return a2 == IntrinsicsKt.a() ? a2 : Unit.a;
     }
 
     @Override // androidx.lifecycle.LiveDataScope

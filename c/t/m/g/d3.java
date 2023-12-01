@@ -12,7 +12,7 @@ import java.util.Map;
 public class d3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static b2 f3787a;
+    public static b2 f3739a;
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/d3$a.class */
     public interface a {
@@ -37,7 +37,7 @@ public class d3 {
         if (str == null) {
             return "GBK";
         }
-        String[] split = str.split(";");
+        String[] split = str.split(com.huawei.openalliance.ad.constant.t.aE);
         int length = split.length;
         int i = 0;
         while (true) {
@@ -70,7 +70,7 @@ public class d3 {
 
     public static void a(String str, byte[] bArr, Object obj) {
         if (bArr == null) {
-            bArr = k2.f3860a;
+            bArr = k2.f3812a;
         }
         a(str, bArr, 0, obj);
     }
@@ -125,7 +125,7 @@ public class d3 {
             if (cVar != null) {
                 cVar.a(th.toString());
             }
-            b2 b2Var = f3787a;
+            b2 b2Var = f3739a;
             if (b2Var != null) {
                 b2Var.a(str, currentTimeMillis, length3, 0L, System.currentTimeMillis() - currentTimeMillis, false);
                 return null;

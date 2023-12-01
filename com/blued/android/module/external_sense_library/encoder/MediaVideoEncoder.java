@@ -1,12 +1,11 @@
 package com.blued.android.module.external_sense_library.encoder;
 
-import android.media.MediaCodecInfo;
 import android.view.Surface;
 import com.blued.android.module.external_sense_library.encoder.utils.RenderHandler;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/encoder/MediaVideoEncoder.class */
 public class MediaVideoEncoder extends MediaEncoder {
-    protected static int[] j = {MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface};
+    protected static int[] j = {2130708361};
     private RenderHandler k;
     private Surface l;
 
@@ -28,11 +27,11 @@ public class MediaVideoEncoder extends MediaEncoder {
 
     @Override // com.blued.android.module.external_sense_library.encoder.MediaEncoder
     public boolean c() {
-        boolean c2 = super.c();
-        if (c2) {
+        boolean c = super.c();
+        if (c) {
             this.k.a(null);
         }
-        return c2;
+        return c;
     }
 
     @Override // com.blued.android.module.external_sense_library.encoder.MediaEncoder

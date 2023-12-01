@@ -25,16 +25,14 @@ public class RouteResult implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private LatLonPoint f5731a;
+    private LatLonPoint a;
     private LatLonPoint b;
 
     public RouteResult() {
     }
 
     public RouteResult(Parcel parcel) {
-        this.f5731a = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
+        this.a = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
         this.b = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
     }
 
@@ -44,7 +42,7 @@ public class RouteResult implements Parcelable {
     }
 
     public LatLonPoint getStartPos() {
-        return this.f5731a;
+        return this.a;
     }
 
     public LatLonPoint getTargetPos() {
@@ -52,7 +50,7 @@ public class RouteResult implements Parcelable {
     }
 
     public void setStartPos(LatLonPoint latLonPoint) {
-        this.f5731a = latLonPoint;
+        this.a = latLonPoint;
     }
 
     public void setTargetPos(LatLonPoint latLonPoint) {
@@ -61,7 +59,7 @@ public class RouteResult implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f5731a, i);
+        parcel.writeParcelable(this.a, i);
         parcel.writeParcelable(this.b, i);
     }
 }

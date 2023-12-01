@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeTextView;
 public final class ItemServiceMenuLeveTwoBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeTextView f29314a;
+    private final ShapeTextView f15624a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeTextView getRoot() {
-        return this.f29314a;
+        return this.f15624a;
     }
 }

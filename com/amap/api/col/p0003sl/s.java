@@ -1,6 +1,7 @@
 package com.amap.api.col.p0003sl;
 
 import android.content.Context;
+import com.anythink.core.common.c.d;
 import java.util.Hashtable;
 import java.util.Map;
 import org.json.JSONObject;
@@ -15,12 +16,8 @@ public final class s extends hg<String, a> {
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/s$a.class */
     public static final class a {
         public String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f5421c;
-
-        /* renamed from: a  reason: collision with root package name */
-        public int f5420a = -1;
+        public String c;
+        public int a = -1;
         public boolean d = false;
     }
 
@@ -50,9 +47,9 @@ public final class s extends hg<String, a> {
                 str2 = "";
             }
             a aVar = new a();
-            aVar.f5420a = i;
+            aVar.a = i;
             aVar.b = str3;
-            aVar.f5421c = str2;
+            aVar.c = str2;
             aVar.d = false;
             for (int i2 : this.k) {
                 if (i2 == i) {
@@ -80,7 +77,7 @@ public final class s extends hg<String, a> {
     @Override // com.amap.api.col.p0003sl.da, com.amap.api.col.p0003sl.kb
     public final Map<String, String> getParams() {
         Hashtable hashtable = new Hashtable(16);
-        hashtable.put("key", ho.f(this.g));
+        hashtable.put(d.a.b, ho.f(this.g));
         if (this.j) {
             hashtable.put("pname", "3dmap");
         }

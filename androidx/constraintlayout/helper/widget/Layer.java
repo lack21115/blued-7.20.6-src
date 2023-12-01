@@ -14,11 +14,11 @@ import androidx.constraintlayout.widget.R;
 public class Layer extends ConstraintHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    ConstraintLayout f2159a;
+    ConstraintLayout f2111a;
     protected float b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected float f2160c;
+    protected float f2112c;
     protected float d;
     protected float e;
     protected float f;
@@ -43,7 +43,7 @@ public class Layer extends ConstraintHelper {
         this.u = 1.0f;
         this.v = 1.0f;
         this.b = Float.NaN;
-        this.f2160c = Float.NaN;
+        this.f2112c = Float.NaN;
         this.d = Float.NaN;
         this.e = Float.NaN;
         this.f = Float.NaN;
@@ -62,7 +62,7 @@ public class Layer extends ConstraintHelper {
         this.u = 1.0f;
         this.v = 1.0f;
         this.b = Float.NaN;
-        this.f2160c = Float.NaN;
+        this.f2112c = Float.NaN;
         this.d = Float.NaN;
         this.e = Float.NaN;
         this.f = Float.NaN;
@@ -81,7 +81,7 @@ public class Layer extends ConstraintHelper {
         this.u = 1.0f;
         this.v = 1.0f;
         this.b = Float.NaN;
-        this.f2160c = Float.NaN;
+        this.f2112c = Float.NaN;
         this.d = Float.NaN;
         this.e = Float.NaN;
         this.f = Float.NaN;
@@ -93,7 +93,7 @@ public class Layer extends ConstraintHelper {
     }
 
     private void c() {
-        if (this.f2159a == null || this.k == 0) {
+        if (this.f2111a == null || this.k == 0) {
             return;
         }
         View[] viewArr = this.i;
@@ -106,13 +106,13 @@ public class Layer extends ConstraintHelper {
             if (i2 >= this.k) {
                 return;
             }
-            this.i[i2] = this.f2159a.getViewById(this.j[i2]);
+            this.i[i2] = this.f2111a.getViewById(this.j[i2]);
             i = i2 + 1;
         }
     }
 
     private void d() {
-        if (this.f2159a == null) {
+        if (this.f2111a == null) {
             return;
         }
         if (this.i == null) {
@@ -135,7 +135,7 @@ public class Layer extends ConstraintHelper {
             int left = (view.getLeft() + view.getRight()) / 2;
             int top = (view.getTop() + view.getBottom()) / 2;
             float f4 = left - this.b;
-            float f5 = top - this.f2160c;
+            float f5 = top - this.f2112c;
             float f6 = this.w;
             float f7 = this.x;
             view.setTranslationX(((((f * cos) * f4) + ((f3 * sin) * f5)) - f4) + f6);
@@ -150,16 +150,16 @@ public class Layer extends ConstraintHelper {
     }
 
     protected void a() {
-        if (this.f2159a == null) {
+        if (this.f2111a == null) {
             return;
         }
-        if (this.h || Float.isNaN(this.b) || Float.isNaN(this.f2160c)) {
+        if (this.h || Float.isNaN(this.b) || Float.isNaN(this.f2112c)) {
             if (!Float.isNaN(this.r) && !Float.isNaN(this.s)) {
-                this.f2160c = this.s;
+                this.f2112c = this.s;
                 this.b = this.r;
                 return;
             }
-            View[] c2 = c(this.f2159a);
+            View[] c2 = c(this.f2111a);
             int left = c2[0].getLeft();
             int top = c2[0].getTop();
             int right = c2[0].getRight();
@@ -181,9 +181,9 @@ public class Layer extends ConstraintHelper {
                 this.b = this.r;
             }
             if (Float.isNaN(this.s)) {
-                this.f2160c = (top + bottom) / 2;
+                this.f2112c = (top + bottom) / 2;
             } else {
-                this.f2160c = this.s;
+                this.f2112c = this.s;
             }
         }
     }
@@ -215,7 +215,7 @@ public class Layer extends ConstraintHelper {
     @Override // androidx.constraintlayout.widget.ConstraintHelper, android.view.View
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.f2159a = (ConstraintLayout) getParent();
+        this.f2111a = (ConstraintLayout) getParent();
         if (!this.y && !this.z) {
             return;
         }
@@ -227,7 +227,7 @@ public class Layer extends ConstraintHelper {
             if (i2 >= this.k) {
                 return;
             }
-            View viewById = this.f2159a.getViewById(this.j[i2]);
+            View viewById = this.f2111a.getViewById(this.j[i2]);
             if (viewById != null) {
                 if (this.y) {
                     viewById.setVisibility(visibility);
@@ -298,7 +298,7 @@ public class Layer extends ConstraintHelper {
     public void updatePostLayout(ConstraintLayout constraintLayout) {
         c();
         this.b = Float.NaN;
-        this.f2160c = Float.NaN;
+        this.f2112c = Float.NaN;
         ConstraintWidget constraintWidget = ((ConstraintLayout.LayoutParams) getLayoutParams()).getConstraintWidget();
         constraintWidget.setWidth(0);
         constraintWidget.setHeight(0);
@@ -309,7 +309,7 @@ public class Layer extends ConstraintHelper {
 
     @Override // androidx.constraintlayout.widget.ConstraintHelper
     public void updatePreDraw(ConstraintLayout constraintLayout) {
-        this.f2159a = constraintLayout;
+        this.f2111a = constraintLayout;
         float rotation = getRotation();
         if (rotation != 0.0f) {
             this.t = rotation;

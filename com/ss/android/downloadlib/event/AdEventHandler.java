@@ -32,8 +32,9 @@ public class AdEventHandler {
         public static final int STORAGE_DENY = 1;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/event/AdEventHandler$mb.class */
-    static class mb {
+    public static class mb {
         private static AdEventHandler mb = new AdEventHandler();
     }
 

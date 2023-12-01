@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentRecommendCardViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28936a;
+    private final RelativeLayout f15246a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28936a;
+        return this.f15246a;
     }
 }

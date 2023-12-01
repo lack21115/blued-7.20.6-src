@@ -21,11 +21,11 @@ import java.util.List;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f35162a = 0;
+    public static int f21471a = 0;
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f35163c = 2;
+    public static int f21472c = 2;
     public static boolean d = true;
     public static int e = 20480;
     public static int f = 20480;
@@ -79,7 +79,7 @@ public final class c {
     }
 
     private c(int i2, Context context, w wVar, boolean z, BuglyStrategy.a aVar, o oVar, String str) {
-        f35162a = i2;
+        f21471a = i2;
         Context a2 = z.a(context);
         this.q = a2;
         this.u = com.tencent.bugly.crashreport.common.strategy.a.a();
@@ -185,7 +185,7 @@ public final class c {
             return false;
         }
         for (r rVar : a2) {
-            if (str.equals(rVar.f35403c)) {
+            if (str.equals(rVar.f21712c)) {
                 this.x = true;
                 arrayList.add(rVar);
             }

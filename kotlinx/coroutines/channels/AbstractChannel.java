@@ -45,19 +45,17 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/AbstractChannel$Itr.class */
     public static final class Itr<E> implements ChannelIterator<E> {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final AbstractChannel<E> f42870a;
+        public final AbstractChannel<E> a;
         private Object b = AbstractChannelKt.d;
 
         public Itr(AbstractChannel<E> abstractChannel) {
-            this.f42870a = abstractChannel;
+            this.a = abstractChannel;
         }
 
         private final boolean a(Object obj) {
             if (obj instanceof Closed) {
                 Closed closed = (Closed) obj;
-                if (closed.f42989a == null) {
+                if (closed.a == null) {
                     return false;
                 }
                 throw StackTraceRecoveryKt.a(closed.e());
@@ -66,37 +64,37 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
         }
 
         private final Object b(Continuation<? super Boolean> continuation) {
-            CancellableContinuationImpl a2 = CancellableContinuationKt.a(IntrinsicsKt.a(continuation));
-            CancellableContinuationImpl cancellableContinuationImpl = a2;
+            CancellableContinuationImpl a = CancellableContinuationKt.a(IntrinsicsKt.a(continuation));
+            CancellableContinuationImpl cancellableContinuationImpl = a;
             ReceiveHasNext receiveHasNext = new ReceiveHasNext(this, cancellableContinuationImpl);
             while (true) {
                 ReceiveHasNext receiveHasNext2 = receiveHasNext;
-                if (this.f42870a.b((Receive) receiveHasNext2)) {
-                    this.f42870a.a(cancellableContinuationImpl, receiveHasNext2);
+                if (this.a.b((Receive) receiveHasNext2)) {
+                    this.a.a(cancellableContinuationImpl, receiveHasNext2);
                     break;
                 }
-                Object c2 = this.f42870a.c();
-                setResult(c2);
-                if (c2 instanceof Closed) {
-                    Closed closed = (Closed) c2;
-                    if (closed.f42989a == null) {
+                Object c = this.a.c();
+                setResult(c);
+                if (c instanceof Closed) {
+                    Closed closed = (Closed) c;
+                    if (closed.a == null) {
                         CancellableContinuationImpl cancellableContinuationImpl2 = cancellableContinuationImpl;
-                        Boolean a3 = Boxing.a(false);
-                        Result.Companion companion = Result.f42293a;
-                        cancellableContinuationImpl2.resumeWith(Result.f(a3));
+                        Boolean a2 = Boxing.a(false);
+                        Result.Companion companion = Result.a;
+                        cancellableContinuationImpl2.resumeWith(Result.f(a2));
                     } else {
                         CancellableContinuationImpl cancellableContinuationImpl3 = cancellableContinuationImpl;
                         Throwable e = closed.e();
-                        Result.Companion companion2 = Result.f42293a;
+                        Result.Companion companion2 = Result.a;
                         cancellableContinuationImpl3.resumeWith(Result.f(ResultKt.a(e)));
                     }
-                } else if (c2 != AbstractChannelKt.d) {
-                    Boolean a4 = Boxing.a(true);
-                    Function1<E, Unit> function1 = this.f42870a.B_;
-                    cancellableContinuationImpl.a((CancellableContinuationImpl) a4, (Function1<? super Throwable, Unit>) (function1 == null ? null : OnUndeliveredElementKt.b(function1, c2, cancellableContinuationImpl.getContext())));
+                } else if (c != AbstractChannelKt.d) {
+                    Boolean a3 = Boxing.a(true);
+                    Function1<E, Unit> function1 = this.a.B_;
+                    cancellableContinuationImpl.a((CancellableContinuationImpl) a3, (Function1<? super Throwable, Unit>) (function1 == null ? null : OnUndeliveredElementKt.b(function1, c, cancellableContinuationImpl.getContext())));
                 }
             }
-            Object h = a2.h();
+            Object h = a.h();
             if (h == IntrinsicsKt.a()) {
                 DebugProbesKt.c(continuation);
             }
@@ -112,7 +110,7 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
             if (a() != AbstractChannelKt.d) {
                 return Boxing.a(a(a()));
             }
-            setResult(this.f42870a.c());
+            setResult(this.a.c());
             return a() != AbstractChannelKt.d ? Boxing.a(a(a())) : b(continuation);
         }
 
@@ -138,59 +136,57 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/AbstractChannel$ReceiveElement.class */
     public static class ReceiveElement<E> extends Receive<E> {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final CancellableContinuation<Object> f42871a;
+        public final CancellableContinuation<Object> a;
         public final int b;
 
         public ReceiveElement(CancellableContinuation<Object> cancellableContinuation, int i) {
-            this.f42871a = cancellableContinuation;
+            this.a = cancellableContinuation;
             this.b = i;
         }
 
         public final Object a(E e) {
             Object obj = e;
             if (this.b == 1) {
-                obj = ChannelResult.h(ChannelResult.f42903a.a((ChannelResult.Companion) e));
+                obj = ChannelResult.h(ChannelResult.a.a((ChannelResult.Companion) e));
             }
             return obj;
         }
 
         @Override // kotlinx.coroutines.channels.ReceiveOrClosed
         public Symbol a(E e, LockFreeLinkedListNode.PrepareOp prepareOp) {
-            Object a2 = this.f42871a.a(a((ReceiveElement<E>) e), prepareOp == null ? null : prepareOp.f43542c, c((ReceiveElement<E>) e));
-            if (a2 == null) {
+            Object a = this.a.a(a((ReceiveElement<E>) e), prepareOp == null ? null : prepareOp.c, c((ReceiveElement<E>) e));
+            if (a == null) {
                 return null;
             }
             if (DebugKt.a()) {
-                if (!(a2 == CancellableContinuationImplKt.f42786a)) {
+                if (!(a == CancellableContinuationImplKt.a)) {
                     throw new AssertionError();
                 }
             }
             if (prepareOp != null) {
                 prepareOp.a();
             }
-            return CancellableContinuationImplKt.f42786a;
+            return CancellableContinuationImplKt.a;
         }
 
         @Override // kotlinx.coroutines.channels.Receive
         public void a(Closed<?> closed) {
             if (this.b == 1) {
-                CancellableContinuation<Object> cancellableContinuation = this.f42871a;
-                ChannelResult h = ChannelResult.h(ChannelResult.f42903a.a(closed.f42989a));
-                Result.Companion companion = Result.f42293a;
+                CancellableContinuation<Object> cancellableContinuation = this.a;
+                ChannelResult h = ChannelResult.h(ChannelResult.a.a(closed.a));
+                Result.Companion companion = Result.a;
                 cancellableContinuation.resumeWith(Result.f(h));
                 return;
             }
-            CancellableContinuation<Object> cancellableContinuation2 = this.f42871a;
+            CancellableContinuation<Object> cancellableContinuation2 = this.a;
             Throwable e = closed.e();
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             cancellableContinuation2.resumeWith(Result.f(ResultKt.a(e)));
         }
 
         @Override // kotlinx.coroutines.channels.ReceiveOrClosed
         public void b(E e) {
-            this.f42871a.a(CancellableContinuationImplKt.f42786a);
+            this.a.a(CancellableContinuationImplKt.a);
         }
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode
@@ -203,19 +199,17 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/AbstractChannel$ReceiveElementWithUndeliveredHandler.class */
     public static final class ReceiveElementWithUndeliveredHandler<E> extends ReceiveElement<E> {
-
-        /* renamed from: c  reason: collision with root package name */
-        public final Function1<E, Unit> f42872c;
+        public final Function1<E, Unit> c;
 
         /* JADX WARN: Multi-variable type inference failed */
         public ReceiveElementWithUndeliveredHandler(CancellableContinuation<Object> cancellableContinuation, int i, Function1<? super E, Unit> function1) {
             super(cancellableContinuation, i);
-            this.f42872c = function1;
+            this.c = function1;
         }
 
         @Override // kotlinx.coroutines.channels.Receive
         public Function1<Throwable, Unit> c(E e) {
-            return OnUndeliveredElementKt.b(this.f42872c, e, this.f42871a.getContext());
+            return OnUndeliveredElementKt.b(this.c, e, this.a.getContext());
         }
     }
 
@@ -223,26 +217,24 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/AbstractChannel$ReceiveHasNext.class */
     public static class ReceiveHasNext<E> extends Receive<E> {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final Itr<E> f42873a;
+        public final Itr<E> a;
         public final CancellableContinuation<Boolean> b;
 
         /* JADX WARN: Multi-variable type inference failed */
         public ReceiveHasNext(Itr<E> itr, CancellableContinuation<? super Boolean> cancellableContinuation) {
-            this.f42873a = itr;
+            this.a = itr;
             this.b = cancellableContinuation;
         }
 
         @Override // kotlinx.coroutines.channels.ReceiveOrClosed
         public Symbol a(E e, LockFreeLinkedListNode.PrepareOp prepareOp) {
             boolean z = true;
-            Object a2 = this.b.a(true, prepareOp == null ? null : prepareOp.f43542c, c((ReceiveHasNext<E>) e));
-            if (a2 == null) {
+            Object a = this.b.a(true, prepareOp == null ? null : prepareOp.c, c((ReceiveHasNext<E>) e));
+            if (a == null) {
                 return null;
             }
             if (DebugKt.a()) {
-                if (a2 != CancellableContinuationImplKt.f42786a) {
+                if (a != CancellableContinuationImplKt.a) {
                     z = false;
                 }
                 if (!z) {
@@ -252,27 +244,27 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
             if (prepareOp != null) {
                 prepareOp.a();
             }
-            return CancellableContinuationImplKt.f42786a;
+            return CancellableContinuationImplKt.a;
         }
 
         @Override // kotlinx.coroutines.channels.Receive
         public void a(Closed<?> closed) {
-            Object a2 = closed.f42989a == null ? CancellableContinuation.DefaultImpls.a(this.b, false, null, 2, null) : this.b.a(closed.e());
-            if (a2 != null) {
-                this.f42873a.setResult(closed);
-                this.b.a(a2);
+            Object a = closed.a == null ? CancellableContinuation.DefaultImpls.a(this.b, false, null, 2, null) : this.b.a(closed.e());
+            if (a != null) {
+                this.a.setResult(closed);
+                this.b.a(a);
             }
         }
 
         @Override // kotlinx.coroutines.channels.ReceiveOrClosed
         public void b(E e) {
-            this.f42873a.setResult(e);
-            this.b.a(CancellableContinuationImplKt.f42786a);
+            this.a.setResult(e);
+            this.b.a(CancellableContinuationImplKt.a);
         }
 
         @Override // kotlinx.coroutines.channels.Receive
         public Function1<Throwable, Unit> c(E e) {
-            Function1<E, Unit> function1 = this.f42873a.f42870a.B_;
+            Function1<E, Unit> function1 = this.a.a.B_;
             if (function1 == null) {
                 return null;
             }
@@ -289,20 +281,16 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/AbstractChannel$ReceiveSelect.class */
     public static final class ReceiveSelect<R, E> extends Receive<E> implements DisposableHandle {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final AbstractChannel<E> f42874a;
+        public final AbstractChannel<E> a;
         public final SelectInstance<R> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public final Function2<Object, Continuation<? super R>, Object> f42875c;
+        public final Function2<Object, Continuation<? super R>, Object> c;
         public final int d;
 
         /* JADX WARN: Multi-variable type inference failed */
         public ReceiveSelect(AbstractChannel<E> abstractChannel, SelectInstance<? super R> selectInstance, Function2<Object, ? super Continuation<? super R>, ? extends Object> function2, int i) {
-            this.f42874a = abstractChannel;
+            this.a = abstractChannel;
             this.b = selectInstance;
-            this.f42875c = function2;
+            this.c = function2;
             this.d = i;
         }
 
@@ -319,7 +307,7 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
                     this.b.a(closed.e());
                 } else if (i != 1) {
                 } else {
-                    CancellableKt.a(this.f42875c, ChannelResult.h(ChannelResult.f42903a.a(closed.f42989a)), this.b.a(), null, 4, null);
+                    CancellableKt.a(this.c, ChannelResult.h(ChannelResult.a.a(closed.a)), this.b.a(), null, 4, null);
                 }
             }
         }
@@ -328,12 +316,12 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
         /* JADX WARN: Type inference failed for: r0v8, types: [kotlinx.coroutines.channels.ChannelResult] */
         @Override // kotlinx.coroutines.channels.ReceiveOrClosed
         public void b(E e) {
-            CancellableKt.a(this.f42875c, this.d == 1 ? ChannelResult.h(ChannelResult.f42903a.a((ChannelResult.Companion) e)) : e, this.b.a(), c((ReceiveSelect<R, E>) e));
+            CancellableKt.a(this.c, this.d == 1 ? ChannelResult.h(ChannelResult.a.a((ChannelResult.Companion) e)) : e, this.b.a(), c((ReceiveSelect<R, E>) e));
         }
 
         @Override // kotlinx.coroutines.channels.Receive
         public Function1<Throwable, Unit> c(E e) {
-            Function1<E, Unit> function1 = this.f42874a.B_;
+            Function1<E, Unit> function1 = this.a.B_;
             if (function1 == null) {
                 return null;
             }
@@ -343,7 +331,7 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
         @Override // kotlinx.coroutines.DisposableHandle
         public void dispose() {
             if (aB_()) {
-                this.f42874a.n();
+                this.a.n();
             }
         }
 
@@ -373,7 +361,7 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
         @Override // kotlin.jvm.functions.Function1
         public /* synthetic */ Unit invoke(Throwable th) {
             a(th);
-            return Unit.f42314a;
+            return Unit.a;
         }
 
         public String toString() {
@@ -390,15 +378,15 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode.AbstractAtomicDesc
         public Object a(LockFreeLinkedListNode.PrepareOp prepareOp) {
-            Symbol a2 = ((Send) prepareOp.f43541a).a(prepareOp);
-            if (a2 == null) {
-                return LockFreeLinkedList_commonKt.f43546a;
+            Symbol a = ((Send) prepareOp.a).a(prepareOp);
+            if (a == null) {
+                return LockFreeLinkedList_commonKt.a;
             }
-            if (a2 == AtomicKt.b) {
+            if (a == AtomicKt.b) {
                 return AtomicKt.b;
             }
             if (DebugKt.a()) {
-                if (a2 == CancellableContinuationImplKt.f42786a) {
+                if (a == CancellableContinuationImplKt.a) {
                     return null;
                 }
                 throw new AssertionError();
@@ -430,20 +418,20 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v26, types: [kotlinx.coroutines.channels.AbstractChannel$ReceiveElement] */
     private final <R> Object a(int i, Continuation<? super R> continuation) {
-        CancellableContinuationImpl a2 = CancellableContinuationKt.a(IntrinsicsKt.a(continuation));
-        CancellableContinuationImpl cancellableContinuationImpl = a2;
+        CancellableContinuationImpl a = CancellableContinuationKt.a(IntrinsicsKt.a(continuation));
+        CancellableContinuationImpl cancellableContinuationImpl = a;
         ReceiveElementWithUndeliveredHandler receiveElement = this.B_ == null ? new ReceiveElement(cancellableContinuationImpl, i) : new ReceiveElementWithUndeliveredHandler(cancellableContinuationImpl, i, this.B_);
         while (true) {
             ReceiveElementWithUndeliveredHandler receiveElementWithUndeliveredHandler = receiveElement;
             if (!b((Receive) receiveElementWithUndeliveredHandler)) {
-                Object c2 = c();
-                if (!(c2 instanceof Closed)) {
-                    if (c2 != AbstractChannelKt.d) {
-                        cancellableContinuationImpl.a((CancellableContinuationImpl) receiveElement.a((ReceiveElementWithUndeliveredHandler) c2), (Function1<? super Throwable, Unit>) receiveElement.c((ReceiveElementWithUndeliveredHandler) c2));
+                Object c = c();
+                if (!(c instanceof Closed)) {
+                    if (c != AbstractChannelKt.d) {
+                        cancellableContinuationImpl.a((CancellableContinuationImpl) receiveElement.a((ReceiveElementWithUndeliveredHandler) c), (Function1<? super Throwable, Unit>) receiveElement.c((ReceiveElementWithUndeliveredHandler) c));
                         break;
                     }
                 } else {
-                    receiveElement.a((Closed) c2);
+                    receiveElement.a((Closed) c);
                     break;
                 }
             } else {
@@ -451,7 +439,7 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
                 break;
             }
         }
-        Object h = a2.h();
+        Object h = a.h();
         if (h == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
         }
@@ -465,13 +453,13 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
                 UndispatchedKt.a(function2, obj, selectInstance.a());
                 return;
             }
-            ChannelResult.Companion companion = ChannelResult.f42903a;
-            UndispatchedKt.a(function2, ChannelResult.h(z ? companion.a(((Closed) obj).f42989a) : companion.a((ChannelResult.Companion) obj)), selectInstance.a());
+            ChannelResult.Companion companion = ChannelResult.a;
+            UndispatchedKt.a(function2, ChannelResult.h(z ? companion.a(((Closed) obj).a) : companion.a((ChannelResult.Companion) obj)), selectInstance.a());
         } else if (i == 0) {
             throw StackTraceRecoveryKt.a(((Closed) obj).e());
         } else {
             if (i == 1 && selectInstance.g()) {
-                UndispatchedKt.a(function2, ChannelResult.h(ChannelResult.f42903a.a(((Closed) obj).f42989a)), selectInstance.a());
+                UndispatchedKt.a(function2, ChannelResult.h(ChannelResult.a.a(((Closed) obj).a)), selectInstance.a());
             }
         }
     }
@@ -485,12 +473,12 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
     public final <R> void a(SelectInstance<? super R> selectInstance, int i, Function2<Object, ? super Continuation<? super R>, ? extends Object> function2) {
         while (!selectInstance.f()) {
             if (!f()) {
-                Object a2 = a((SelectInstance<?>) selectInstance);
-                if (a2 == SelectKt.b()) {
+                Object a = a((SelectInstance<?>) selectInstance);
+                if (a == SelectKt.b()) {
                     return;
                 }
-                if (a2 != AbstractChannelKt.d && a2 != AtomicKt.b) {
-                    a(function2, selectInstance, i, a2);
+                if (a != AbstractChannelKt.d && a != AtomicKt.b) {
+                    a(function2, selectInstance, i, a);
                 }
             } else if (a(selectInstance, function2, i)) {
                 return;
@@ -509,11 +497,11 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean b(Receive<? super E> receive) {
-        boolean a2 = a((Receive) receive);
-        if (a2) {
+        boolean a = a((Receive) receive);
+        if (a) {
             m();
         }
-        return a2;
+        return a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -534,16 +522,16 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
             kotlinx.coroutines.channels.AbstractChannel$receiveCatching$1 r0 = (kotlinx.coroutines.channels.AbstractChannel$receiveCatching$1) r0
             r8 = r0
             r0 = r8
-            int r0 = r0.f42880c
+            int r0 = r0.c
             r1 = -2147483648(0xffffffff80000000, float:-0.0)
             r0 = r0 & r1
             if (r0 == 0) goto L26
             r0 = r8
             r1 = r8
-            int r1 = r1.f42880c
+            int r1 = r1.c
             r2 = -2147483648(0xffffffff80000000, float:-0.0)
             int r1 = r1 + r2
-            r0.f42880c = r1
+            r0.c = r1
             r0 = r8
             r6 = r0
             goto L30
@@ -556,12 +544,12 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
             r6 = r0
         L30:
             r0 = r6
-            java.lang.Object r0 = r0.f42879a
+            java.lang.Object r0 = r0.a
             r8 = r0
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r9 = r0
             r0 = r6
-            int r0 = r0.f42880c
+            int r0 = r0.c
             r7 = r0
             r0 = r7
             if (r0 == 0) goto L5b
@@ -591,21 +579,21 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
             r0 = r8
             boolean r0 = r0 instanceof kotlinx.coroutines.channels.Closed
             if (r0 == 0) goto L80
-            kotlinx.coroutines.channels.ChannelResult$Companion r0 = kotlinx.coroutines.channels.ChannelResult.f42903a
+            kotlinx.coroutines.channels.ChannelResult$Companion r0 = kotlinx.coroutines.channels.ChannelResult.a
             r1 = r8
             kotlinx.coroutines.channels.Closed r1 = (kotlinx.coroutines.channels.Closed) r1
-            java.lang.Throwable r1 = r1.f42989a
+            java.lang.Throwable r1 = r1.a
             java.lang.Object r0 = r0.a(r1)
             return r0
         L80:
-            kotlinx.coroutines.channels.ChannelResult$Companion r0 = kotlinx.coroutines.channels.ChannelResult.f42903a
+            kotlinx.coroutines.channels.ChannelResult$Companion r0 = kotlinx.coroutines.channels.ChannelResult.a
             r1 = r8
             java.lang.Object r0 = r0.a(r1)
             return r0
         L88:
             r0 = r6
             r1 = 1
-            r0.f42880c = r1
+            r0.c = r1
             r0 = r5
             r1 = 1
             r2 = r6
@@ -629,9 +617,9 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
 
     protected Object a(SelectInstance<?> selectInstance) {
         TryPollDesc<E> i = i();
-        Object a2 = selectInstance.a(i);
-        if (a2 != null) {
-            return a2;
+        Object a = selectInstance.a(i);
+        if (a != null) {
+            return a;
         }
         i.d().b();
         return i.d().a();
@@ -680,17 +668,17 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
         if (r == null) {
             throw new IllegalStateException("Cannot happen".toString());
         }
-        Object a2 = InlineList.a(null, 1, null);
+        Object a = InlineList.a(null, 1, null);
         while (true) {
             LockFreeLinkedListNode k = r.k();
             if (k instanceof LockFreeLinkedListHead) {
-                a(a2, r);
+                a(a, r);
                 return;
             } else if (DebugKt.a() && !(k instanceof Send)) {
                 throw new AssertionError();
             } else {
                 if (k.aB_()) {
-                    a2 = InlineList.a(a2, (Send) k);
+                    a = InlineList.a(a, (Send) k);
                 } else {
                     k.m();
                 }
@@ -708,7 +696,7 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
 
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean a(Receive<? super E> receive) {
-        int a2;
+        int a;
         boolean z;
         LockFreeLinkedListNode k;
         if (!a()) {
@@ -736,11 +724,11 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
                 if (!(!(k2 instanceof Send))) {
                     return false;
                 }
-                a2 = k2.a(receive2, o, condAddOp);
-                if (a2 != 1) {
+                a = k2.a(receive2, o, condAddOp);
+                if (a != 1) {
                     z = false;
                 }
-            } while (a2 != 2);
+            } while (a != 2);
             return z;
         }
         LockFreeLinkedListHead o2 = o();
@@ -762,8 +750,8 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
     /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlinx.coroutines.channels.ReceiveChannel
     public final Object aw_() {
-        Object c2 = c();
-        return c2 == AbstractChannelKt.d ? ChannelResult.f42903a.a() : c2 instanceof Closed ? ChannelResult.f42903a.a(((Closed) c2).f42989a) : ChannelResult.f42903a.a((ChannelResult.Companion) c2);
+        Object c = c();
+        return c == AbstractChannelKt.d ? ChannelResult.a.a() : c instanceof Closed ? ChannelResult.a.a(((Closed) c).a) : ChannelResult.a.a((ChannelResult.Companion) c);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -775,10 +763,10 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
             if (t == null) {
                 return AbstractChannelKt.d;
             }
-            Symbol a2 = t.a((LockFreeLinkedListNode.PrepareOp) null);
-            if (a2 != null) {
+            Symbol a = t.a((LockFreeLinkedListNode.PrepareOp) null);
+            if (a != null) {
                 if (DebugKt.a()) {
-                    if (!(a2 == CancellableContinuationImplKt.f42786a)) {
+                    if (!(a == CancellableContinuationImplKt.a)) {
                         throw new AssertionError();
                     }
                 }
@@ -810,18 +798,16 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
     @Override // kotlinx.coroutines.channels.ReceiveChannel
     public final SelectClause1<E> j() {
         return new SelectClause1<E>(this) { // from class: kotlinx.coroutines.channels.AbstractChannel$onReceive$1
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ AbstractChannel<E> f42877a;
+            final /* synthetic */ AbstractChannel<E> a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f42877a = this;
+                this.a = this;
             }
 
             @Override // kotlinx.coroutines.selects.SelectClause1
             public <R> void a(SelectInstance<? super R> selectInstance, Function2<? super E, ? super Continuation<? super R>, ? extends Object> function2) {
-                this.f42877a.a(selectInstance, 0, function2);
+                this.a.a(selectInstance, 0, function2);
             }
         };
     }
@@ -829,18 +815,16 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
     @Override // kotlinx.coroutines.channels.ReceiveChannel
     public final SelectClause1<ChannelResult<E>> k() {
         return (SelectClause1) ((SelectClause1<ChannelResult<? extends E>>) new SelectClause1<ChannelResult<? extends E>>(this) { // from class: kotlinx.coroutines.channels.AbstractChannel$onReceiveCatching$1
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ AbstractChannel<E> f42878a;
+            final /* synthetic */ AbstractChannel<E> a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f42878a = this;
+                this.a = this;
             }
 
             @Override // kotlinx.coroutines.selects.SelectClause1
             public <R> void a(SelectInstance<? super R> selectInstance, Function2<? super ChannelResult<? extends E>, ? super Continuation<? super R>, ? extends Object> function2) {
-                this.f42878a.a(selectInstance, 1, function2);
+                this.a.a(selectInstance, 1, function2);
             }
         });
     }

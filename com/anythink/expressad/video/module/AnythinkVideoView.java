@@ -110,7 +110,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
     private boolean aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private boolean f8484ar;
+    private boolean f5644ar;
     private boolean as;
     private int at;
     private boolean au;
@@ -129,19 +129,19 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
     final class AnonymousClass1 implements h {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ViewGroup f8485a;
+        final /* synthetic */ ViewGroup f5645a;
         final /* synthetic */ com.anythink.expressad.video.dynview.c b;
 
         AnonymousClass1(ViewGroup viewGroup, com.anythink.expressad.video.dynview.c cVar) {
-            this.f8485a = viewGroup;
+            this.f5645a = viewGroup;
             this.b = cVar;
         }
 
         @Override // com.anythink.expressad.video.dynview.f.h
         public final void a(com.anythink.expressad.video.dynview.a aVar) {
-            if (this.f8485a != null && aVar.a() != null) {
+            if (this.f5645a != null && aVar.a() != null) {
                 aVar.a().setLayoutParams(new RelativeLayout.LayoutParams(-1, -1));
-                this.f8485a.addView(aVar.a());
+                this.f5645a.addView(aVar.a());
             }
             if (aVar.b() != null) {
                 for (View view : aVar.b()) {
@@ -200,14 +200,14 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f8500a;
+        public int f5660a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f8501c;
+        public boolean f5661c;
 
         public final String toString() {
-            return "ProgressData{curPlayPosition=" + this.f8500a + ", allDuration=" + this.b + '}';
+            return "ProgressData{curPlayPosition=" + this.f5660a + ", allDuration=" + this.b + '}';
         }
     }
 
@@ -216,11 +216,11 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
     public static final class b extends DefaultVideoPlayerStatusListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private AnythinkVideoView f8502a;
+        private AnythinkVideoView f5662a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f8503c;
+        private int f5663c;
         private boolean d;
         private boolean i;
         private String j;
@@ -234,30 +234,30 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
         private boolean n = false;
 
         public b(AnythinkVideoView anythinkVideoView) {
-            this.f8502a = anythinkVideoView;
+            this.f5662a = anythinkVideoView;
         }
 
         private void a(int i) {
             if (i <= 0) {
-                this.f8502a.F.setBackgroundResource(i.a(n.a().g(), "anythink_reward_shape_progress", i.f7952c));
+                this.f5662a.F.setBackgroundResource(i.a(n.a().g(), "anythink_reward_shape_progress", i.f5112c));
                 return;
             }
-            this.f8502a.F.setBackgroundResource(i.a(n.a().g(), "anythink_reward_video_time_count_num_bg", i.f7952c));
+            this.f5662a.F.setBackgroundResource(i.a(n.a().g(), "anythink_reward_video_time_count_num_bg", i.f5112c));
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, t.b(n.a().g(), 30.0f));
             int b = t.b(n.a().g(), 5.0f);
             layoutParams.addRule(1, i.a(n.a().g(), "anythink_native_endcard_feed_btn", "id"));
             layoutParams.setMargins(b, 0, 0, 0);
-            this.f8502a.F.setPadding(b, 0, b, 0);
-            this.f8502a.F.setLayoutParams(layoutParams);
+            this.f5662a.F.setPadding(b, 0, b, 0);
+            this.f5662a.F.setLayoutParams(layoutParams);
         }
 
         private void a(int i, int i2, int i3) {
-            AnythinkVideoView anythinkVideoView = this.f8502a;
+            AnythinkVideoView anythinkVideoView = this.f5662a;
             if (anythinkVideoView == null) {
                 return;
             }
             String str = (String) anythinkVideoView.getContext().getResources().getText(i.a(n.a().g(), "anythink_reward_video_view_reward_time_complete", "string"));
-            String str2 = (String) this.f8502a.getContext().getResources().getText(i.a(n.a().g(), "anythink_reward_video_view_reward_time_left", "string"));
+            String str2 = (String) this.f5662a.getContext().getResources().getText(i.a(n.a().g(), "anythink_reward_video_view_reward_time_left", "string"));
             if (i >= 0) {
                 int i4 = i - i3;
                 if (i4 > 0) {
@@ -275,22 +275,22 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
                     str = i5 + str2;
                 }
             }
-            this.e.f8500a = i3;
-            this.f8502a.F.setText(str);
-            if (this.f8502a.J == null || this.f8502a.J.getVisibility() != 0) {
+            this.e.f5660a = i3;
+            this.f5662a.F.setText(str);
+            if (this.f5662a.J == null || this.f5662a.J.getVisibility() != 0) {
                 return;
             }
-            this.f8502a.J.setProgress(i3);
+            this.f5662a.J.setProgress(i3);
         }
 
         private void b(int i) {
-            AnythinkVideoView anythinkVideoView = this.f8502a;
+            AnythinkVideoView anythinkVideoView = this.f5662a;
             if (anythinkVideoView == null || anythinkVideoView.F == null) {
                 return;
             }
             String str = "anythink_reward_video_time_count_num_bg";
-            if (this.k.k() == 5 && this.f8502a.mCurrPlayNum > 1 && i <= 0) {
-                this.f8502a.F.setBackgroundResource(i.a(n.a().g(), "anythink_reward_video_time_count_num_bg", i.f7952c));
+            if (this.k.k() == 5 && this.f5662a.mCurrPlayNum > 1 && i <= 0) {
+                this.f5662a.F.setBackgroundResource(i.a(n.a().g(), "anythink_reward_video_time_count_num_bg", i.f5112c));
                 d();
                 return;
             }
@@ -299,12 +299,12 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
             } else {
                 str = "anythink_reward_shape_progress";
             }
-            this.f8502a.F.setBackgroundResource(i.a(n.a().g(), str, i.f7952c));
+            this.f5662a.F.setBackgroundResource(i.a(n.a().g(), str, i.f5112c));
         }
 
         private void b(int i, int i2, int i3) {
             String str;
-            if (this.f8502a == null) {
+            if (this.f5662a == null) {
                 return;
             }
             int i4 = i;
@@ -313,17 +313,17 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
             }
             int i5 = i4 <= 0 ? i2 - i3 : i4 - i3;
             if (i5 <= 0) {
-                str = i4 <= 0 ? "0" : (String) this.f8502a.getContext().getResources().getText(i.a(n.a().g(), "anythink_reward_video_view_reward_time_complete", "string"));
+                str = i4 <= 0 ? "0" : (String) this.f5662a.getContext().getResources().getText(i.a(n.a().g(), "anythink_reward_video_view_reward_time_complete", "string"));
             } else if (i4 <= 0) {
                 str = String.valueOf(i5);
             } else {
-                str = i5 + ((String) this.f8502a.getContext().getResources().getText(i.a(n.a().g(), "anythink_reward_video_view_reward_time_left", "string")));
+                str = i5 + ((String) this.f5662a.getContext().getResources().getText(i.a(n.a().g(), "anythink_reward_video_view_reward_time_left", "string")));
             }
-            this.f8502a.F.setText(str);
-            if (this.f8502a.J == null || this.f8502a.J.getVisibility() != 0) {
+            this.f5662a.F.setText(str);
+            if (this.f5662a.J == null || this.f5662a.J.getVisibility() != 0) {
                 return;
             }
-            this.f8502a.J.setProgress(i3);
+            this.f5662a.J.setProgress(i3);
         }
 
         private c c() {
@@ -331,7 +331,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
         }
 
         private void d() {
-            AnythinkVideoView anythinkVideoView = this.f8502a;
+            AnythinkVideoView anythinkVideoView = this.f5662a;
             if (anythinkVideoView == null) {
                 return;
             }
@@ -339,10 +339,10 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
             if (layoutParams != null) {
                 layoutParams.width = -2;
                 layoutParams.height = t.b(n.a().g(), 25.0f);
-                this.f8502a.F.setLayoutParams(layoutParams);
+                this.f5662a.F.setLayoutParams(layoutParams);
             }
             int b = t.b(n.a().g(), 5.0f);
-            this.f8502a.F.setPadding(b, 0, b, 0);
+            this.f5662a.F.setPadding(b, 0, b, 0);
         }
 
         public final int a() {
@@ -367,7 +367,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
         }
 
         public final void b() {
-            this.f8502a = null;
+            this.f5662a = null;
             boolean unused = AnythinkVideoView.av = false;
         }
 
@@ -375,7 +375,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
         public final void onBufferingEnd() {
             try {
                 super.onBufferingEnd();
-                this.f8502a.e.a(14, "");
+                this.f5662a.e.a(14, "");
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -385,7 +385,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
         public final void onBufferingStart(String str) {
             try {
                 super.onBufferingStart(str);
-                this.f8502a.e.a(13, "");
+                this.f5662a.e.a(13, "");
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -395,44 +395,44 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
         public final void onPlayCompleted() {
             AnythinkVideoView anythinkVideoView;
             super.onPlayCompleted();
-            AnythinkVideoView.w(this.f8502a);
+            AnythinkVideoView.w(this.f5662a);
             c cVar = this.k;
             if (cVar != null) {
                 if (cVar.i() > 0) {
-                    this.f8502a.F.setText(i.a(n.a().g(), "anythink_reward_video_view_reward_time_complete", "string"));
+                    this.f5662a.F.setText(i.a(n.a().g(), "anythink_reward_video_view_reward_time_complete", "string"));
                 } else {
-                    this.f8502a.F.setText("0");
+                    this.f5662a.F.setText("0");
                 }
                 this.k.n(100);
                 if (this.k.f() == 2) {
-                    this.f8502a.G.setVisibility(4);
-                    if (this.f8502a.K != null) {
-                        this.f8502a.K.setClickable(false);
+                    this.f5662a.G.setVisibility(4);
+                    if (this.f5662a.K != null) {
+                        this.f5662a.K.setClickable(false);
                     }
-                    if (this.f8502a.E != null) {
-                        this.f8502a.E.setClickable(false);
+                    if (this.f5662a.E != null) {
+                        this.f5662a.E.setClickable(false);
                     }
                 }
             } else {
-                this.f8502a.F.setText("0");
+                this.f5662a.F.setText("0");
             }
-            this.f8502a.D.setClickable(false);
-            String b = this.f8502a.b(true);
+            this.f5662a.D.setClickable(false);
+            String b = this.f5662a.b(true);
             c cVar2 = this.k;
-            if (cVar2 != null && cVar2.k() == 5 && (anythinkVideoView = this.f8502a) != null && anythinkVideoView.N != null && this.f8502a.mCampaignSize > this.f8502a.mCurrPlayNum) {
+            if (cVar2 != null && cVar2.k() == 5 && (anythinkVideoView = this.f5662a) != null && anythinkVideoView.N != null && this.f5662a.mCampaignSize > this.f5662a.mCurrPlayNum) {
                 HashMap hashMap = new HashMap();
-                hashMap.put(BrowserContract.Bookmarks.POSITION, Integer.valueOf(this.f8502a.mCurrPlayNum));
-                if (this.f8502a.mMuteSwitch != 0) {
-                    hashMap.put("mute", Integer.valueOf(this.f8502a.mMuteSwitch));
+                hashMap.put(BrowserContract.Bookmarks.POSITION, Integer.valueOf(this.f5662a.mCurrPlayNum));
+                if (this.f5662a.mMuteSwitch != 0) {
+                    hashMap.put("mute", Integer.valueOf(this.f5662a.mMuteSwitch));
                 }
-                this.f8502a.N.a(hashMap);
+                this.f5662a.N.a(hashMap);
                 return;
             }
-            this.f8502a.e.a(121, "");
-            this.f8502a.e.a(11, b);
-            int i = this.f8503c;
+            this.f5662a.e.a(121, "");
+            this.f5662a.e.a(11, b);
+            int i = this.f5663c;
             this.b = i;
-            this.f8502a.mCurrentPlayProgressTime = i;
+            this.f5662a.mCurrentPlayProgressTime = i;
             boolean unused = AnythinkVideoView.av = true;
         }
 
@@ -440,7 +440,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
         public final void onPlayError(String str) {
             o.d("DefaultVideoPlayerStatusListener", "errorStr".concat(String.valueOf(str)));
             super.onPlayError(str);
-            AnythinkVideoView anythinkVideoView = this.f8502a;
+            AnythinkVideoView anythinkVideoView = this.f5662a;
             if (anythinkVideoView != null) {
                 anythinkVideoView.e.a(12, str);
             }
@@ -471,11 +471,11 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
         public final void onPlayStarted(int i) {
             super.onPlayStarted(i);
             if (!this.d) {
-                AnythinkVideoView anythinkVideoView = this.f8502a;
+                AnythinkVideoView anythinkVideoView = this.f5662a;
                 if (anythinkVideoView != null) {
                     AnythinkVideoView.q(anythinkVideoView);
                 }
-                this.f8502a.e.a(10, this.e);
+                this.f5662a.e.a(10, this.e);
                 this.d = true;
             }
             c cVar = this.k;
@@ -483,47 +483,47 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
                 int i2 = cVar.i();
                 String str = "anythink_reward_shape_progress";
                 if (this.k.j()) {
-                    AnythinkVideoView anythinkVideoView2 = this.f8502a;
+                    AnythinkVideoView anythinkVideoView2 = this.f5662a;
                     if (anythinkVideoView2 != null && anythinkVideoView2.F != null) {
-                        if (this.k.k() != 5 || this.f8502a.mCurrPlayNum <= 1 || i2 > 0) {
+                        if (this.k.k() != 5 || this.f5662a.mCurrPlayNum <= 1 || i2 > 0) {
                             if (i2 > 0) {
                                 d();
                                 str = "anythink_reward_video_time_count_num_bg";
                             }
-                            this.f8502a.F.setBackgroundResource(i.a(n.a().g(), str, i.f7952c));
+                            this.f5662a.F.setBackgroundResource(i.a(n.a().g(), str, i.f5112c));
                         } else {
-                            this.f8502a.F.setBackgroundResource(i.a(n.a().g(), "anythink_reward_video_time_count_num_bg", i.f7952c));
+                            this.f5662a.F.setBackgroundResource(i.a(n.a().g(), "anythink_reward_video_time_count_num_bg", i.f5112c));
                             d();
                         }
                     }
                 } else if (i2 > 0) {
-                    this.f8502a.F.setBackgroundResource(i.a(n.a().g(), "anythink_reward_video_time_count_num_bg", i.f7952c));
+                    this.f5662a.F.setBackgroundResource(i.a(n.a().g(), "anythink_reward_video_time_count_num_bg", i.f5112c));
                     RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, t.b(n.a().g(), 30.0f));
                     int b = t.b(n.a().g(), 5.0f);
                     layoutParams.addRule(1, i.a(n.a().g(), "anythink_native_endcard_feed_btn", "id"));
                     layoutParams.setMargins(b, 0, 0, 0);
-                    this.f8502a.F.setPadding(b, 0, b, 0);
-                    this.f8502a.F.setLayoutParams(layoutParams);
+                    this.f5662a.F.setPadding(b, 0, b, 0);
+                    this.f5662a.F.setLayoutParams(layoutParams);
                 } else {
-                    this.f8502a.F.setBackgroundResource(i.a(n.a().g(), "anythink_reward_shape_progress", i.f7952c));
+                    this.f5662a.F.setBackgroundResource(i.a(n.a().g(), "anythink_reward_shape_progress", i.f5112c));
                 }
             }
-            if (this.f8502a.J != null) {
-                this.f8502a.J.setMax(i);
+            if (this.f5662a.J != null) {
+                this.f5662a.J.setMax(i);
             }
             c cVar2 = this.k;
             if (cVar2 != null && cVar2.f() == 2) {
-                this.f8502a.H.setVisibility(0);
+                this.f5662a.H.setVisibility(0);
             }
-            if (this.f8502a.F.getVisibility() == 0) {
-                this.f8502a.n();
+            if (this.f5662a.F.getVisibility() == 0) {
+                this.f5662a.n();
             }
             boolean unused = AnythinkVideoView.av = false;
-            if (this.f8502a.S == 0) {
-                this.f8502a.setCTALayoutVisibleOrGone();
+            if (this.f5662a.S == 0) {
+                this.f5662a.setCTALayoutVisibleOrGone();
             }
-            this.f8502a.showMoreOfferInPlayTemplate();
-            this.f8502a.showBaitClickView();
+            this.f5662a.showMoreOfferInPlayTemplate();
+            this.f5662a.showBaitClickView();
         }
 
         @Override // com.anythink.expressad.playercommon.DefaultVideoPlayerStatusListener, com.anythink.expressad.playercommon.VideoPlayerStatusListener
@@ -560,7 +560,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
         this.ao = false;
         this.ap = false;
         this.aq = false;
-        this.f8484ar = false;
+        this.f5644ar = false;
         this.as = false;
         this.au = false;
         this.aw = 2;
@@ -601,7 +601,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
         this.ao = false;
         this.ap = false;
         this.aq = false;
-        this.f8484ar = false;
+        this.f5644ar = false;
         this.as = false;
         this.au = false;
         this.aw = 2;
@@ -649,7 +649,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
     private void a() {
         int findLayout = findLayout(s);
         if (findLayout > 0) {
-            this.f8441c.inflate(findLayout, this);
+            this.f5601c.inflate(findLayout, this);
             b();
         }
         av = false;
@@ -745,7 +745,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
     }
 
     private boolean b(int i, int i2) {
-        return i > 0 && i2 > 0 && t.f(this.f8440a) >= i && t.e(this.f8440a) >= i2;
+        return i > 0 && i2 > 0 && t.f(this.f5600a) >= i && t.e(this.f5600a) >= i2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -797,20 +797,20 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
                     str = com.anythink.expressad.a.ab;
                 }
                 if (!TextUtils.isEmpty(str)) {
-                    com.anythink.expressad.foundation.g.d.b.a(this.f8440a).a(str, new com.anythink.expressad.foundation.g.d.c() { // from class: com.anythink.expressad.video.module.AnythinkVideoView.10
+                    com.anythink.expressad.foundation.g.d.b.a(this.f5600a).a(str, new com.anythink.expressad.foundation.g.d.c() { // from class: com.anythink.expressad.video.module.AnythinkVideoView.10
                         @Override // com.anythink.expressad.foundation.g.d.c
                         public final void a(Bitmap bitmap, String str2) {
                             float width = (bitmap.getWidth() * 1.0f) / bitmap.getHeight();
-                            int b2 = t.b(AnythinkVideoView.this.f8440a, 12.0f);
+                            int b2 = t.b(AnythinkVideoView.this.f5600a, 12.0f);
                             int i = (int) (b2 * width);
-                            ImageView imageView = new ImageView(AnythinkVideoView.this.f8440a);
+                            ImageView imageView = new ImageView(AnythinkVideoView.this.f5600a);
                             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
                             imageView.setImageBitmap(bitmap);
                             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(i, b2);
                             layoutParams.addRule(11);
                             layoutParams.addRule(12);
-                            layoutParams.bottomMargin = t.b(AnythinkVideoView.this.f8440a, 5.0f);
-                            layoutParams.rightMargin = t.b(AnythinkVideoView.this.f8440a, 12.0f);
+                            layoutParams.bottomMargin = t.b(AnythinkVideoView.this.f5600a, 5.0f);
+                            layoutParams.rightMargin = t.b(AnythinkVideoView.this.f5600a, 12.0f);
                             AnythinkVideoView.this.addView(imageView, layoutParams);
                         }
 
@@ -820,7 +820,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
                     });
                 }
             } catch (Exception e) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     o.d(TAG, e.getLocalizedMessage());
                 }
             }
@@ -922,14 +922,14 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
     }
 
     private void k() {
-        if (this.aM || this.f8484ar || this.ap) {
+        if (this.aM || this.f5644ar || this.ap) {
             return;
         }
         this.aM = true;
         int i = this.ab;
         if (i >= 0) {
             if (i == 0) {
-                this.f8484ar = true;
+                this.f5644ar = true;
             } else {
                 new Handler().postDelayed(new AnonymousClass11(), this.ab * 1000);
             }
@@ -968,7 +968,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
                 return;
             }
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.D.getLayoutParams();
-            int f = t.f(this.f8440a);
+            int f = t.f(this.f5600a);
             layoutParams.width = -1;
             layoutParams.height = (f * 9) / 16;
             layoutParams.gravity = 17;
@@ -1022,7 +1022,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
     }
 
     static /* synthetic */ boolean p(AnythinkVideoView anythinkVideoView) {
-        anythinkVideoView.f8484ar = true;
+        anythinkVideoView.f5644ar = true;
         return true;
     }
 
@@ -1136,7 +1136,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
     public void defaultShow() {
         super.defaultShow();
         this.ak = true;
-        showVideoLocation(0, 0, t.f(this.f8440a), t.e(this.f8440a), 0, 0, 0, 0, 0);
+        showVideoLocation(0, 0, t.f(this.f5600a), t.e(this.f5600a), 0, 0, 0, 0, 0);
         videoOperate(1);
         if (this.ab == 0) {
             closeVideoOperate(-1, 2);
@@ -1219,14 +1219,14 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
             this.G.setVisibility(8);
             this.ao = false;
         }
-        if (this.aM || this.f8484ar || this.ap) {
+        if (this.aM || this.f5644ar || this.ap) {
             return;
         }
         this.aM = true;
         int i = this.ab;
         if (i >= 0) {
             if (i == 0) {
-                this.f8484ar = true;
+                this.f5644ar = true;
             } else {
                 new Handler().postDelayed(new AnonymousClass11(), this.ab * 1000);
             }
@@ -1275,7 +1275,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
 
     @Override // com.anythink.expressad.video.signal.j
     public boolean isH5Canvas() {
-        return getLayoutParams().height < t.e(this.f8440a.getApplicationContext());
+        return getLayoutParams().height < t.e(this.f5600a.getApplicationContext());
     }
 
     public boolean isInstallDialogShowing() {
@@ -1321,7 +1321,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
     public void notifyCloseBtn(int i) {
         if (i == 0) {
             this.ap = true;
-            this.f8484ar = false;
+            this.f5644ar = false;
         } else if (i == 1) {
             this.aq = true;
         }
@@ -1339,7 +1339,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
             e();
         } else if (this.ap && this.aq) {
             e();
-        } else if (this.ap || !this.f8484ar) {
+        } else if (this.ap || !this.f5644ar) {
         } else {
             e();
         }
@@ -1353,9 +1353,8 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         try {
             if (this.aN != null) {
@@ -1650,7 +1649,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
         }
         int findLayout = findLayout(s);
         if (findLayout > 0) {
-            this.f8441c.inflate(findLayout, this);
+            this.f5601c.inflate(findLayout, this);
             b();
         }
         av = false;
@@ -1786,7 +1785,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
             if (this.F.getVisibility() == 0) {
                 n();
             }
-            if (!(i3 > 0 && i4 > 0 && t.f(this.f8440a) >= i3 && t.e(this.f8440a) >= i4) || this.ak) {
+            if (!(i3 > 0 && i4 > 0 && t.f(this.f5600a) >= i3 && t.e(this.f5600a) >= i4) || this.ak) {
                 l();
                 return;
             }
@@ -1890,7 +1889,7 @@ public class AnythinkVideoView extends AnythinkBaseView implements f, j {
             if (i == 1) {
                 if (getVisibility() == 0 && isfront()) {
                     o.a(TAG, "VideoView videoOperate:play");
-                    if (this.V || this.an || this.W || com.anythink.expressad.foundation.f.b.f7818c) {
+                    if (this.V || this.an || this.W || com.anythink.expressad.foundation.f.b.f4978c) {
                         return;
                     }
                     i();

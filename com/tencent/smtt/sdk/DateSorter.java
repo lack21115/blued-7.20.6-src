@@ -8,7 +8,7 @@ public class DateSorter {
     public static int DAY_COUNT;
 
     /* renamed from: a  reason: collision with root package name */
-    private android.webkit.DateSorter f38700a;
+    private android.webkit.DateSorter f25009a;
     private IX5DateSorter b;
 
     static {
@@ -19,7 +19,7 @@ public class DateSorter {
     public DateSorter(Context context) {
         w a2 = w.a();
         if (a2 == null || !a2.b()) {
-            this.f38700a = new android.webkit.DateSorter(context);
+            this.f25009a = new android.webkit.DateSorter(context);
         } else {
             this.b = a2.c().h(context);
         }
@@ -32,16 +32,16 @@ public class DateSorter {
 
     public long getBoundary(int i) {
         w a2 = w.a();
-        return (a2 == null || !a2.b()) ? this.f38700a.getBoundary(i) : this.b.getBoundary(i);
+        return (a2 == null || !a2.b()) ? this.f25009a.getBoundary(i) : this.b.getBoundary(i);
     }
 
     public int getIndex(long j) {
         w a2 = w.a();
-        return (a2 == null || !a2.b()) ? this.f38700a.getIndex(j) : this.b.getIndex(j);
+        return (a2 == null || !a2.b()) ? this.f25009a.getIndex(j) : this.b.getIndex(j);
     }
 
     public String getLabel(int i) {
         w a2 = w.a();
-        return (a2 == null || !a2.b()) ? this.f38700a.getLabel(i) : this.b.getLabel(i);
+        return (a2 == null || !a2.b()) ? this.f25009a.getLabel(i) : this.b.getLabel(i);
     }
 }

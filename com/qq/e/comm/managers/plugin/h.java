@@ -15,7 +15,7 @@ import java.io.OutputStreamWriter;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f27926a = b.a("e_qq_com_plugin");
+    private static String f14238a = b.a("e_qq_com_plugin");
     private static String b = b.a("e_qq_com_dex");
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -123,26 +123,26 @@ public class h {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static File b(Context context) {
-        return new File(context.getDir(f27926a, 0), "gdt_plugin.jar");
+        return new File(context.getDir(f14238a, 0), "gdt_plugin.jar");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static File c(Context context) {
-        return new File(context.getDir(f27926a, 0), "gdt_plugin.next");
+        return new File(context.getDir(f14238a, 0), "gdt_plugin.next");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static File d(Context context) {
-        return new File(context.getDir(f27926a, 0), "gdt_plugin.jar.sig");
+        return new File(context.getDir(f14238a, 0), "gdt_plugin.jar.sig");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static File e(Context context) {
-        return new File(context.getDir(f27926a, 0), "gdt_plugin.next.sig");
+        return new File(context.getDir(f14238a, 0), "gdt_plugin.next.sig");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static File f(Context context) {
-        return new File(context.getDir(f27926a, 0), "update_lc");
+        return new File(context.getDir(f14238a, 0), "update_lc");
     }
 }

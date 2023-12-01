@@ -33,8 +33,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
     private int startTime_;
     private static final CustomRank DEFAULT_INSTANCE = new CustomRank();
     private static final Parser<CustomRank> PARSER = new AbstractParser<CustomRank>() { // from class: cn.irisgw.live.CustomRank.1
-        @Override // com.google.protobuf.Parser
-        public CustomRank parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public CustomRank m1910parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new CustomRank(codedInputStream, extensionRegistryLite);
         }
     };
@@ -95,7 +95,7 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                 return this;
             }
             ensureRankInfoIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.rankInfo_);
+            AbstractMessageLite.Builder.addAll(iterable, this.rankInfo_);
             onChanged();
             return this;
         }
@@ -103,11 +103,11 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
         public Builder addRankInfo(int i, RankInfo.Builder builder) {
             RepeatedFieldBuilderV3<RankInfo, RankInfo.Builder, RankInfoOrBuilder> repeatedFieldBuilderV3 = this.rankInfoBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m1961build());
                 return this;
             }
             ensureRankInfoIsMutable();
-            this.rankInfo_.add(i, builder.build());
+            this.rankInfo_.add(i, builder.m1961build());
             onChanged();
             return this;
         }
@@ -130,11 +130,11 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
         public Builder addRankInfo(RankInfo.Builder builder) {
             RepeatedFieldBuilderV3<RankInfo, RankInfo.Builder, RankInfoOrBuilder> repeatedFieldBuilderV3 = this.rankInfoBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m1961build());
                 return this;
             }
             ensureRankInfoIsMutable();
-            this.rankInfo_.add(builder.build());
+            this.rankInfo_.add(builder.m1961build());
             onChanged();
             return this;
         }
@@ -162,22 +162,22 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return getRankInfoFieldBuilder().addBuilder(i, RankInfo.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m1912addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public CustomRank build() {
-            CustomRank buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public CustomRank m1914build() {
+            CustomRank m1916buildPartial = m1916buildPartial();
+            if (m1916buildPartial.isInitialized()) {
+                return m1916buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m1916buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public CustomRank buildPartial() {
+        /* renamed from: buildPartial */
+        public CustomRank m1916buildPartial() {
             CustomRank customRank = new CustomRank(this);
             customRank.startTime_ = this.startTime_;
             customRank.endTime_ = this.endTime_;
@@ -195,8 +195,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return customRank;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m1920clear() {
             super.clear();
             this.startTime_ = 0;
             this.endTime_ = 0;
@@ -216,13 +216,13 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m1922clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m1925clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -244,18 +244,16 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m1931clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public CustomRank getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public CustomRank m1933getDefaultInstanceForType() {
             return CustomRank.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_CustomRank_descriptor;
         }
@@ -294,7 +292,7 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
         @Override // cn.irisgw.live.CustomRankOrBuilder
         public RankInfoOrBuilder getRankInfoOrBuilder(int i) {
             RepeatedFieldBuilderV3<RankInfo, RankInfo.Builder, RankInfoOrBuilder> repeatedFieldBuilderV3 = this.rankInfoBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.rankInfo_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.rankInfo_.get(i) : (RankInfoOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.CustomRankOrBuilder
@@ -308,12 +306,10 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return this.startTime_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_CustomRank_fieldAccessorTable.ensureFieldAccessorsInitialized(CustomRank.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -354,18 +350,18 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                     this.rankInfoBuilder_.addAllMessages(customRank.rankInfo_);
                 }
             }
-            mergeUnknownFields(customRank.unknownFields);
+            m1942mergeUnknownFields(customRank.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.CustomRank.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.CustomRank.Builder m1939mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -410,11 +406,11 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CustomRank.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CustomRank$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CustomRank.Builder.m1939mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CustomRank$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m1938mergeFrom(Message message) {
             if (message instanceof CustomRank) {
                 return mergeFrom((CustomRank) message);
             }
@@ -422,8 +418,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m1942mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -445,19 +441,19 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m1944setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
         public Builder setRankInfo(int i, RankInfo.Builder builder) {
             RepeatedFieldBuilderV3<RankInfo, RankInfo.Builder, RankInfoOrBuilder> repeatedFieldBuilderV3 = this.rankInfoBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m1961build());
                 return this;
             }
             ensureRankInfoIsMutable();
-            this.rankInfo_.set(i, builder.build());
+            this.rankInfo_.set(i, builder.m1961build());
             onChanged();
             return this;
         }
@@ -477,8 +473,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m1946setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -488,8 +484,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m1948setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -506,8 +502,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
         private volatile Object title_;
         private static final RankInfo DEFAULT_INSTANCE = new RankInfo();
         private static final Parser<RankInfo> PARSER = new AbstractParser<RankInfo>() { // from class: cn.irisgw.live.CustomRank.RankInfo.1
-            @Override // com.google.protobuf.Parser
-            public RankInfo parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public RankInfo m1957parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new RankInfo(codedInputStream, extensionRegistryLite);
             }
         };
@@ -539,22 +535,22 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                 boolean unused = RankInfo.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m1959addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public RankInfo build() {
-                RankInfo buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public RankInfo m1961build() {
+                RankInfo m1963buildPartial = m1963buildPartial();
+                if (m1963buildPartial.isInitialized()) {
+                    return m1963buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m1963buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public RankInfo buildPartial() {
+            /* renamed from: buildPartial */
+            public RankInfo m1963buildPartial() {
                 RankInfo rankInfo = new RankInfo(this);
                 rankInfo.title_ = this.title_;
                 rankInfo.image_ = this.image_;
@@ -563,8 +559,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                 return rankInfo;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m1967clear() {
                 super.clear();
                 this.title_ = "";
                 this.image_ = "";
@@ -572,8 +568,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m1969clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -583,8 +579,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m1972clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -600,18 +596,16 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m1978clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public RankInfo getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public RankInfo m1980getDefaultInstanceForType() {
                 return RankInfo.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_CustomRank_RankInfo_descriptor;
             }
@@ -665,12 +659,10 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_CustomRank_RankInfo_fieldAccessorTable.ensureFieldAccessorsInitialized(RankInfo.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -690,18 +682,18 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                 if (rankInfo.getScore() != 0) {
                     setScore(rankInfo.getScore());
                 }
-                mergeUnknownFields(rankInfo.unknownFields);
+                m1989mergeUnknownFields(rankInfo.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.CustomRank.RankInfo.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.CustomRank.RankInfo.Builder m1986mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -746,11 +738,11 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CustomRank.RankInfo.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CustomRank$RankInfo$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CustomRank.RankInfo.Builder.m1986mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CustomRank$RankInfo$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m1985mergeFrom(Message message) {
                 if (message instanceof RankInfo) {
                     return mergeFrom((RankInfo) message);
                 }
@@ -758,13 +750,13 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m1989mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m1991setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -787,8 +779,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m1993setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -817,8 +809,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m1995setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -879,66 +871,65 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m1956toBuilder();
         }
 
         public static Builder newBuilder(RankInfo rankInfo) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(rankInfo);
+            return DEFAULT_INSTANCE.m1956toBuilder().mergeFrom(rankInfo);
         }
 
         public static RankInfo parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (RankInfo) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static RankInfo parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (RankInfo) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static RankInfo parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (RankInfo) PARSER.parseFrom(byteString);
         }
 
         public static RankInfo parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (RankInfo) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static RankInfo parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (RankInfo) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static RankInfo parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (RankInfo) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static RankInfo parseFrom(InputStream inputStream) throws IOException {
-            return (RankInfo) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static RankInfo parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (RankInfo) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static RankInfo parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (RankInfo) PARSER.parseFrom(byteBuffer);
         }
 
         public static RankInfo parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (RankInfo) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static RankInfo parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (RankInfo) PARSER.parseFrom(bArr);
         }
 
         public static RankInfo parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (RankInfo) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<RankInfo> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -950,8 +941,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public RankInfo getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public RankInfo m1951getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -977,7 +968,6 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<RankInfo> getParserForType() {
             return PARSER;
         }
@@ -987,7 +977,6 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return this.score_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1033,12 +1022,10 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1048,12 +1035,10 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_CustomRank_RankInfo_fieldAccessorTable.ensureFieldAccessorsInitialized(RankInfo.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1066,28 +1051,26 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m1954newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m1953newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new RankInfo();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m1956toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getTitleBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.title_);
@@ -1186,66 +1169,65 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m1909toBuilder();
     }
 
     public static Builder newBuilder(CustomRank customRank) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(customRank);
+        return DEFAULT_INSTANCE.m1909toBuilder().mergeFrom(customRank);
     }
 
     public static CustomRank parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (CustomRank) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static CustomRank parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CustomRank) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static CustomRank parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (CustomRank) PARSER.parseFrom(byteString);
     }
 
     public static CustomRank parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (CustomRank) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static CustomRank parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (CustomRank) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static CustomRank parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CustomRank) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static CustomRank parseFrom(InputStream inputStream) throws IOException {
-        return (CustomRank) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static CustomRank parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CustomRank) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static CustomRank parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (CustomRank) PARSER.parseFrom(byteBuffer);
     }
 
     public static CustomRank parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (CustomRank) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static CustomRank parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (CustomRank) PARSER.parseFrom(bArr);
     }
 
     public static CustomRank parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (CustomRank) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<CustomRank> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1257,8 +1239,8 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public CustomRank getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public CustomRank m1904getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1267,7 +1249,6 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
         return this.endTime_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<CustomRank> getParserForType() {
         return PARSER;
     }
@@ -1297,7 +1278,6 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
         return this.rankInfo_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1326,12 +1306,10 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
         return this.startTime_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1346,12 +1324,10 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_CustomRank_fieldAccessorTable.ensureFieldAccessorsInitialized(CustomRank.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1364,28 +1340,26 @@ public final class CustomRank extends GeneratedMessageV3 implements CustomRankOr
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m1907newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m1906newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new CustomRank();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m1909toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.startTime_;
         if (i != 0) {

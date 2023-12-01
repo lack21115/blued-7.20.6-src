@@ -28,7 +28,7 @@ public abstract class BaseGlVideoView extends BaseVideoView implements lr {
     protected ff V;
 
     /* renamed from: a  reason: collision with root package name */
-    protected volatile boolean f23002a;
+    protected volatile boolean f9394a;
     private final fg q;
     private float[] r;
     private volatile boolean s;
@@ -38,7 +38,7 @@ public abstract class BaseGlVideoView extends BaseVideoView implements lr {
         fg fgVar = new fg();
         this.q = fgVar;
         this.Code = new fh(fgVar);
-        this.f23002a = false;
+        this.f9394a = false;
         this.r = new float[16];
         this.s = false;
     }
@@ -48,7 +48,7 @@ public abstract class BaseGlVideoView extends BaseVideoView implements lr {
         fg fgVar = new fg();
         this.q = fgVar;
         this.Code = new fh(fgVar);
-        this.f23002a = false;
+        this.f9394a = false;
         this.r = new float[16];
         this.s = false;
     }
@@ -58,7 +58,7 @@ public abstract class BaseGlVideoView extends BaseVideoView implements lr {
         fg fgVar = new fg();
         this.q = fgVar;
         this.Code = new fh(fgVar);
-        this.f23002a = false;
+        this.f9394a = false;
         this.r = new float[16];
         this.s = false;
     }
@@ -97,7 +97,7 @@ public abstract class BaseGlVideoView extends BaseVideoView implements lr {
                     this.l = new BaseVideoView.h(this.o);
                     this.e.Code(this.l);
                 }
-                if (this.f23004c) {
+                if (this.f9396c) {
                     Code(this.i);
                 }
             } catch (Throwable th) {
@@ -223,14 +223,14 @@ public abstract class BaseGlVideoView extends BaseVideoView implements lr {
     }
 
     public void I() {
-        if (this.f23002a) {
+        if (this.f9394a) {
             ge.I(getLogTag(), "renderVideo, destroyed");
         } else {
             Code(new Runnable() { // from class: com.huawei.openalliance.ad.views.BaseGlVideoView.2
                 @Override // java.lang.Runnable
                 public void run() {
                     try {
-                        if (BaseGlVideoView.this.f23002a) {
+                        if (BaseGlVideoView.this.f9394a) {
                             ge.I(BaseGlVideoView.this.getLogTag(), "renderVideo, destroyed");
                             return;
                         }
@@ -269,7 +269,7 @@ public abstract class BaseGlVideoView extends BaseVideoView implements lr {
     @Override // com.huawei.openalliance.ad.views.BaseVideoView, com.huawei.hms.ads.ls
     public void destroyView() {
         super.destroyView();
-        this.f23002a = true;
+        this.f9394a = true;
         this.s = false;
         Code();
     }

@@ -85,97 +85,80 @@ public class CustomNativeAd extends a {
     public void clear(View view) {
     }
 
-    @Override // com.anythink.core.api.BaseAd
     public void destroy() {
         this.mCloseViewListener = null;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public ATAdAppInfo getAdAppInfo() {
         return this.adAppInfo;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public final String getAdChoiceIconUrl() {
         return this.mAdChoiceIconUrl;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public String getAdFrom() {
         return this.mAdFrom;
     }
 
-    @Override // com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.a
     public View getAdIconView() {
         return null;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public Bitmap getAdLogo() {
         return null;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public final View getAdLogoView() {
         return this.adLogoView;
     }
 
-    @Override // com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
         return null;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public String getAdvertiserName() {
         return this.mAdvertiserName;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public int getAppCommentNum() {
         return this.mAppCommentNum;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public View getAppDownloadButton() {
         return this.mAppDownloadButton;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public double getAppPrice() {
         return this.mAppPrice;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public String getCallToActionText() {
         return this.mCallToAction;
     }
 
-    @Override // com.anythink.core.api.BaseAd
     public ViewGroup getCustomAdContainer() {
         return null;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public String getDescriptionText() {
         return this.mText;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public String getDomain() {
         return this.mDomain;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public String getIconImageUrl() {
         return this.mIconImageUrl;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public final List<String> getImageUrlList() {
         return this.mImageUrlList;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public int getMainImageHeight() {
         int i = this.mMainImageHeight;
         if (i > 0) {
@@ -184,12 +167,10 @@ public class CustomNativeAd extends a {
         return -1;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public String getMainImageUrl() {
         return this.mMainImageUrl;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public int getMainImageWidth() {
         int i = this.mMainImageWidth;
         if (i > 0) {
@@ -198,17 +179,14 @@ public class CustomNativeAd extends a {
         return -1;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public int getNativeAdInteractionType() {
         return this.nInteractionType;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public ATCustomVideo getNativeCustomVideo() {
         return null;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public int getNativeExpressHeight() {
         int i = this.mNativeExpressHeight;
         if (i > 0) {
@@ -217,7 +195,6 @@ public class CustomNativeAd extends a {
         return -1;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public int getNativeExpressWidth() {
         int i = this.mNativeExpressWidth;
         if (i > 0) {
@@ -226,12 +203,10 @@ public class CustomNativeAd extends a {
         return -1;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public int getNativeType() {
         return 1;
     }
 
-    @Override // com.anythink.core.api.BaseAd, com.anythink.core.api.IATThirdPartyMaterial
     public final Map<String, Object> getNetworkInfoMap() {
         return this.mNetworkInfoMap;
     }
@@ -240,22 +215,18 @@ public class CustomNativeAd extends a {
         return this.showId;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public final Double getStarRating() {
         return this.mStarRating;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public String getTitle() {
         return this.mTitle;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public double getVideoDuration() {
         return this.videoDuration;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public int getVideoHeight() {
         int i = this.mVideoHeight;
         if (i > 0) {
@@ -264,17 +235,14 @@ public class CustomNativeAd extends a {
         return -1;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public double getVideoProgress() {
         return MIN_STAR_RATING;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public final String getVideoUrl() {
         return this.mVideoUrl;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public int getVideoWidth() {
         int i = this.mVideoWidth;
         if (i > 0) {
@@ -283,7 +251,6 @@ public class CustomNativeAd extends a {
         return -1;
     }
 
-    @Override // com.anythink.core.api.IATThirdPartyMaterial
     public String getWarning() {
         return this.mWarning;
     }
@@ -315,7 +282,6 @@ public class CustomNativeAd extends a {
     public void registerDownloadConfirmListener() {
     }
 
-    @Override // com.anythink.core.api.BaseAd
     public void registerListener(View view, List<View> list, FrameLayout.LayoutParams layoutParams) {
         ATNativePrepareInfo aTNativePrepareInfo = new ATNativePrepareInfo();
         aTNativePrepareInfo.setClickViewList(list);
@@ -403,7 +369,6 @@ public class CustomNativeAd extends a {
         this.nInteractionType = i;
     }
 
-    @Override // com.anythink.core.api.BaseAd
     public final void setNetworkInfoMap(Map<String, Object> map) {
         this.mNetworkInfoMap = map;
     }
@@ -433,7 +398,6 @@ public class CustomNativeAd extends a {
         this.mVideoHeight = i;
     }
 
-    @Override // com.anythink.core.api.BaseAd
     public void setVideoMute(boolean z) {
     }
 

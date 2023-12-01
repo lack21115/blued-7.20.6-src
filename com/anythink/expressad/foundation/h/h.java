@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7950a = "JSONUtils";
+    private static final String f5110a = "JSONUtils";
 
     public static String a(int i, int i2, int i3, int i4, int i5) {
         JSONObject jSONObject = new JSONObject();
@@ -28,15 +28,15 @@ public final class h {
                 jSONObject2.put("cutoutInfo", jSONObject3);
                 jSONObject.put("data", jSONObject2);
             } catch (Exception e) {
-                o.d(f7950a, e.getMessage());
+                o.d(f5110a, e.getMessage());
             }
         } catch (Throwable th) {
-            o.d(f7950a, th.getMessage());
+            o.d(f5110a, th.getMessage());
             try {
                 jSONObject.put("code", 1);
                 jSONObject.put("message", "Fail");
             } catch (JSONException e2) {
-                o.d(f7950a, e2.getMessage());
+                o.d(f5110a, e2.getMessage());
             }
         }
         return jSONObject.toString();

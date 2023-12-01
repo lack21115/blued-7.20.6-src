@@ -65,7 +65,7 @@ public class l1111l111111Il {
             cipher.init(2, new SecretKeySpec(str.getBytes("utf-8"), "DES"));
             byte[] doFinal = cipher.doFinal(bArr);
             byte[] bArr2 = new byte[i];
-            System.arraycopy((Object) doFinal, 0, (Object) bArr2, 0, i);
+            System.arraycopy(doFinal, 0, bArr2, 0, i);
             return bArr2;
         } catch (Exception e) {
             throw new IOException(e);

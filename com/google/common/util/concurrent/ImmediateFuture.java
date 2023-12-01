@@ -9,26 +9,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/util/concurrent/ImmediateFuture.class */
-public class ImmediateFuture<V> implements ListenableFuture<V> {
+class ImmediateFuture<V> implements ListenableFuture<V> {
     static final ListenableFuture<?> NULL = new ImmediateFuture(null);
     private static final Logger log = Logger.getLogger(ImmediateFuture.class.getName());
     @NullableDecl
     private final V value;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/util/concurrent/ImmediateFuture$ImmediateCancelledFuture.class */
-    public static final class ImmediateCancelledFuture<V> extends AbstractFuture.TrustedFuture<V> {
+    static final class ImmediateCancelledFuture<V> extends AbstractFuture.TrustedFuture<V> {
         /* JADX INFO: Access modifiers changed from: package-private */
         public ImmediateCancelledFuture() {
             cancel(false);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/util/concurrent/ImmediateFuture$ImmediateFailedFuture.class */
-    public static final class ImmediateFailedFuture<V> extends AbstractFuture.TrustedFuture<V> {
+    static final class ImmediateFailedFuture<V> extends AbstractFuture.TrustedFuture<V> {
         /* JADX INFO: Access modifiers changed from: package-private */
         public ImmediateFailedFuture(Throwable th) {
             setException(th);

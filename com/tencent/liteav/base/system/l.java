@@ -7,13 +7,13 @@ import java.util.concurrent.Callable;
 final /* synthetic */ class l implements Callable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final l f36316a = new l();
+    private static final l f22625a = new l();
 
     private l() {
     }
 
     public static Callable a() {
-        return f36316a;
+        return f22625a;
     }
 
     @Override // java.util.concurrent.Callable

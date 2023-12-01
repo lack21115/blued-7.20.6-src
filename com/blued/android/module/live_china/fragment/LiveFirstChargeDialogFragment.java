@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -26,6 +27,7 @@ import androidx.core.view.ViewGroupKt;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
@@ -55,6 +57,7 @@ import com.blued.android.module.live_china.utils.LiveRoomHttpUtils;
 import com.blued.android.module.live_china.utils.log.trackUtils.EventTrackLive;
 import com.blued.das.live.LiveProtos;
 import com.jeremyliao.liveeventbus.LiveEventBus;
+import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
@@ -68,15 +71,11 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFirstChargeDialogFragment.class */
 public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12881a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private int d;
     private boolean e;
     private final String b = "liveScreen";
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f12882c = "LiveFirstCharge";
+    private final String c = "LiveFirstCharge";
     private final List<FirstChargeGift.FirstChargeGiftItem> f = new ArrayList();
     private final Lazy g = LazyKt.a(new Function0<FragmentLiveFirstChargeBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveFirstChargeDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -151,7 +150,7 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
         ObjectAnimator objectAnimator3 = ofFloat3;
         long j2 = i6 + 200;
         objectAnimator3.setDuration(j2);
-        long j3 = i6 + 400;
+        long j3 = i6 + HttpURLConnection.HTTP_BAD_REQUEST;
         objectAnimator3.setStartDelay(j3);
         ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(view, "ScaleY", 1.0f, 0.0f);
         Intrinsics.c(ofFloat4, "ofFloat(card, \"ScaleY\", 1f, 0f)");
@@ -183,7 +182,7 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
     public static final void a(LiveFirstChargeDialogFragment this$0, Ref.ObjectRef payModel, View view) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(payModel, "$payModel");
-        T payModel2 = payModel.f42545a;
+        T payModel2 = payModel.a;
         Intrinsics.c(payModel2, "payModel");
         this$0.a((PayOption._pay_list) payModel2);
     }
@@ -204,7 +203,7 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
     public static final void b(LiveFirstChargeDialogFragment this$0, Ref.ObjectRef payModel, View view) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(payModel, "$payModel");
-        T payModel2 = payModel.f42545a;
+        T payModel2 = payModel.a;
         Intrinsics.c(payModel2, "payModel");
         this$0.a((PayOption._pay_list) payModel2);
     }
@@ -302,8 +301,7 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
                 LiveFirstChargeDialogFragment.f(LiveFirstChargeDialogFragment.this, view);
             }
         });
-        LiveEventBus.get(LiveEventBusUtil.d, PayResultEvent.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFirstChargeDialogFragment$KRQTvrertHRc8jFb8qPjaO6TPqs
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusUtil.d, PayResultEvent.class).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFirstChargeDialogFragment$KRQTvrertHRc8jFb8qPjaO6TPqs
             public final void onChanged(Object obj) {
                 LiveFirstChargeDialogFragment.a(LiveFirstChargeDialogFragment.this, (PayResultEvent) obj);
             }
@@ -333,7 +331,7 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
         scaleAnimation4.setFillBefore(false);
         scaleAnimation4.setFillAfter(true);
         animationSet.addAnimation(scaleAnimation4);
-        i().f11923c.startAnimation(animationSet);
+        i().c.startAnimation(animationSet);
     }
 
     private final void m() {
@@ -401,7 +399,7 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
     }
 
     private final Animator o() {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(i().f11922a, "alpha", 1.0f, 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(i().a, "alpha", 1.0f, 0.0f);
         Intrinsics.c(ofFloat, "ofFloat(vb.flMain, \"alpha\", 1f, 0f)");
         ObjectAnimator objectAnimator = ofFloat;
         objectAnimator.setDuration(1000L);
@@ -421,7 +419,7 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
                     if (dialog.isShowing()) {
                         super.onAnimationEnd(animation);
                         i = LiveFirstChargeDialogFragment.this.i();
-                        i.f11922a.setVisibility(8);
+                        i.a.setVisibility(8);
                     }
                 }
             }
@@ -477,7 +475,7 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
 
     public final void a(PayOption._pay_list payModel) {
         Intrinsics.e(payModel, "payModel");
-        LiveRoomInfo.a().a(getActivity(), payModel, this.b);
+        LiveRoomInfo.a().a((Context) getActivity(), payModel, this.b);
         EventTrackLive.a(LiveProtos.Event.LIVE_FIRST_PAY_SKU_CLICK, this.d, (int) payModel.money);
     }
 
@@ -501,10 +499,10 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
         if (firstChargeGift.pay_list != null) {
             if (firstChargeGift.pay_list.size() >= 1) {
                 final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-                objectRef.f42545a = firstChargeGift.pay_list.get(0);
-                if (objectRef.f42545a != 0) {
-                    i().p.setText(Intrinsics.a(CommonStringUtils.a(((PayOption._pay_list) objectRef.f42545a).money * ((PayOption._pay_list) objectRef.f42545a).ratio), (Object) getString(R.string.Live_SendPresent_wandou)));
-                    i().o.setText(Intrinsics.a(CommonStringUtils.a(((PayOption._pay_list) objectRef.f42545a).money), (Object) getString(R.string.Live_SendPresent_RMB)));
+                objectRef.a = firstChargeGift.pay_list.get(0);
+                if (objectRef.a != 0) {
+                    i().p.setText(Intrinsics.a(CommonStringUtils.a(((PayOption._pay_list) objectRef.a).money * ((PayOption._pay_list) objectRef.a).ratio), (Object) getString(R.string.Live_SendPresent_wandou)));
+                    i().o.setText(Intrinsics.a(CommonStringUtils.a(((PayOption._pay_list) objectRef.a).money), (Object) getString(R.string.Live_SendPresent_RMB)));
                     i().b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFirstChargeDialogFragment$Y5DKWJdUBinabwRmrirmj7mxSqM
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -515,11 +513,11 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
             }
             if (firstChargeGift.pay_list.size() >= 2) {
                 final Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
-                objectRef2.f42545a = firstChargeGift.pay_list.get(1);
-                if (objectRef2.f42545a != 0) {
-                    i().s.setText(Intrinsics.a(CommonStringUtils.a(((PayOption._pay_list) objectRef2.f42545a).money * ((PayOption._pay_list) objectRef2.f42545a).ratio), (Object) getString(R.string.Live_SendPresent_wandou)));
-                    i().r.setText(Intrinsics.a(CommonStringUtils.a(((PayOption._pay_list) objectRef2.f42545a).money), (Object) getString(R.string.Live_SendPresent_RMB)));
-                    i().f11923c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFirstChargeDialogFragment$7iEmtd_6jbZQj1aK6mIYEi4fzJA
+                objectRef2.a = firstChargeGift.pay_list.get(1);
+                if (objectRef2.a != 0) {
+                    i().s.setText(Intrinsics.a(CommonStringUtils.a(((PayOption._pay_list) objectRef2.a).money * ((PayOption._pay_list) objectRef2.a).ratio), (Object) getString(R.string.Live_SendPresent_wandou)));
+                    i().r.setText(Intrinsics.a(CommonStringUtils.a(((PayOption._pay_list) objectRef2.a).money), (Object) getString(R.string.Live_SendPresent_RMB)));
+                    i().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFirstChargeDialogFragment$7iEmtd_6jbZQj1aK6mIYEi4fzJA
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             LiveFirstChargeDialogFragment.b(LiveFirstChargeDialogFragment.this, objectRef2, view);
@@ -620,11 +618,11 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
                 a2.b.setVisibility(8);
             }
             List<View> list = this.h;
-            ImageView imageView = a2.f12205a;
+            ImageView imageView = a2.a;
             Intrinsics.c(imageView, "giftVb.ivAvatar");
             list.add(imageView);
-            ImageLoader.a(a(), firstChargeGiftItem.image).a(a2.f12205a);
-            a2.f12206c.setText(firstChargeGiftItem.title);
+            ImageLoader.a(a(), firstChargeGiftItem.image).a(a2.a);
+            a2.c.setText(firstChargeGiftItem.title);
             ViewGroup.MarginLayoutParams marginLayoutParams = new ViewGroup.MarginLayoutParams(-2, -2);
             if (i3 == 2) {
                 marginLayoutParams.rightMargin = 0;
@@ -637,7 +635,7 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
                 marginLayoutParams.topMargin = 0;
             }
             viewGroup.addView(a2.getRoot(), marginLayoutParams);
-            a(a2.f12205a);
+            a(a2.a);
             if (i2 == min) {
                 return;
             }
@@ -714,7 +712,7 @@ public final class LiveFirstChargeDialogFragment extends BaseFullScreenDialog {
         return super.onBackPressed();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         if (i().d.getParent() != null) {

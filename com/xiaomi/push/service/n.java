@@ -12,10 +12,10 @@ import com.xiaomi.push.iw;
 /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/service/n.class */
 public class n {
     public static ih a(ic icVar) {
-        byte[] m11951a = icVar.m11951a();
+        byte[] m8901a = icVar.m8901a();
         ih ihVar = new ih();
         try {
-            iq.a(ihVar, m11951a);
+            iq.a(ihVar, m8901a);
             return ihVar;
         } catch (iw e) {
             return null;
@@ -35,9 +35,9 @@ public class n {
         try {
             byte[] b = b(Base64.decode(stringExtra, 2), context.getSharedPreferences("mipush_apps_scrt", 0).getString(stringExtra2, null));
             if (b != null) {
-                ak.m12109a(context, y.a(b), b);
+                ak.m9059a(context, y.a(b), b);
             } else {
-                com.xiaomi.channel.commonutils.logger.b.m11394a("notify fcm notification error ：dencrypt failed");
+                com.xiaomi.channel.commonutils.logger.b.m8344a("notify fcm notification error ：dencrypt failed");
             }
         } catch (Throwable th) {
             com.xiaomi.channel.commonutils.logger.b.a("notify fcm notification error ", th);
@@ -53,11 +53,11 @@ public class n {
 
     public static byte[] a(byte[] bArr, String str) {
         if (TextUtils.isEmpty(str)) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("secret is empty, return null");
+            com.xiaomi.channel.commonutils.logger.b.m8344a("secret is empty, return null");
             return null;
         }
         try {
-            return com.xiaomi.push.h.b(com.xiaomi.push.bk.m11546a(str), bArr);
+            return com.xiaomi.push.h.b(com.xiaomi.push.bk.m8496a(str), bArr);
         } catch (Exception e) {
             com.xiaomi.channel.commonutils.logger.b.a("encryption error. ", e);
             return null;
@@ -66,11 +66,11 @@ public class n {
 
     public static byte[] b(byte[] bArr, String str) {
         if (TextUtils.isEmpty(str)) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("secret is empty, return null");
+            com.xiaomi.channel.commonutils.logger.b.m8344a("secret is empty, return null");
             return null;
         }
         try {
-            return com.xiaomi.push.h.a(com.xiaomi.push.bk.m11546a(str), bArr);
+            return com.xiaomi.push.h.a(com.xiaomi.push.bk.m8496a(str), bArr);
         } catch (Exception e) {
             com.xiaomi.channel.commonutils.logger.b.a("dencryption error. ", e);
             return null;

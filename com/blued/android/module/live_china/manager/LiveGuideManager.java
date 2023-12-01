@@ -16,22 +16,18 @@ public class LiveGuideManager implements LiveRelationshipObserver.ILiveRelations
     private PlayingOnliveFragment e;
     private boolean i;
     private boolean b = true;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f13659c = true;
+    private boolean c = true;
     private Handler d = new Handler();
     private ChatCardTask f = new ChatCardTask();
     private AttentionCardTask g = new AttentionCardTask();
     private boolean h = true;
     private long j = 3600000;
-
-    /* renamed from: a  reason: collision with root package name */
-    Runnable f13658a = new Runnable() { // from class: com.blued.android.module.live_china.manager.LiveGuideManager.1
+    Runnable a = new Runnable() { // from class: com.blued.android.module.live_china.manager.LiveGuideManager.1
         @Override // java.lang.Runnable
         public void run() {
             Log.i("xpm", "startTimerForSayHello 2");
             LiveMsgSendManager.a().j();
-            LiveGuideManager.this.d.postDelayed(LiveGuideManager.this.f13658a, LiveGuideManager.this.j);
+            LiveGuideManager.this.d.postDelayed(LiveGuideManager.this.a, LiveGuideManager.this.j);
         }
     };
 
@@ -97,11 +93,11 @@ public class LiveGuideManager implements LiveRelationshipObserver.ILiveRelations
 
     public void a(long j) {
         Log.i("xpm", "startTimerForSayHello");
-        this.d.removeCallbacks(this.f13658a);
+        this.d.removeCallbacks(this.a);
         if (j * 1000 > this.j) {
             Log.i("xpm", "startTimerForSayHello 1");
             LiveMsgSendManager.a().j();
-            this.d.postDelayed(this.f13658a, this.j);
+            this.d.postDelayed(this.a, this.j);
         }
     }
 

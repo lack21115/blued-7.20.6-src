@@ -19,22 +19,19 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/EndAnchorAdapter.class */
 public class EndAnchorAdapter extends BaseQuickAdapter<YYRoomModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final MvpFragment f16120a;
+    private final MvpFragment a;
 
     public EndAnchorAdapter(MvpFragment mvpFragment) {
         super(R.layout.item_yy_end_recom_anchor, new ArrayList());
-        this.f16120a = mvpFragment;
+        this.a = mvpFragment;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final YYRoomModel yYRoomModel) {
         ImageView imageView = (ImageView) baseViewHolder.itemView.findViewById(R.id.iv_anchor);
         ((TextView) baseViewHolder.itemView.findViewById(R.id.tv_anchor_name)).setText(yYRoomModel.name);
-        ImageLoader.a(this.f16120a.getFragmentActive(), yYRoomModel.avatar).b(R.drawable.user_bg_round).a(imageView);
+        ImageLoader.a(this.a.getFragmentActive(), yYRoomModel.avatar).b(R.drawable.user_bg_round).a(imageView);
         baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.EndAnchorAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -43,8 +40,8 @@ public class EndAnchorAdapter extends BaseQuickAdapter<YYRoomModel, BaseViewHold
                     return;
                 }
                 YYRoomInfoManager.e().x();
-                YYRoomInfoManager.e().a((BaseFragmentActivity) EndAnchorAdapter.this.f16120a.getActivity(), yYRoomModel.room_id, "endPage_recommend");
-                EndAnchorAdapter.this.f16120a.getActivity().finish();
+                YYRoomInfoManager.e().a((BaseFragmentActivity) EndAnchorAdapter.this.a.getActivity(), yYRoomModel.room_id, "endPage_recommend");
+                EndAnchorAdapter.this.a.getActivity().finish();
                 EventTrackYY.d(ChatRoomProtos.Event.CHAT_END_PAGE_LIVING_USER_CLICK, yYRoomModel.room_id, yYRoomModel.uid);
             }
         });

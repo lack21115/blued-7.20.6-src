@@ -10,7 +10,7 @@ import okio.ByteString;
 public final class ag extends com.heytap.nearx.a.a.b<ag, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<ag> f25702c = new b();
+    public static final com.heytap.nearx.a.a.e<ag> f12014c = new b();
     public static final c d = c.NO_TYPE;
     private static final long serialVersionUID = 0;
     public final c e;
@@ -20,16 +20,16 @@ public final class ag extends com.heytap.nearx.a.a.b<ag, a> {
     public static final class a extends b.a<ag, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public c f25703c;
+        public c f12015c;
         public List<String> d = com.heytap.nearx.a.a.a.b.a();
 
         public a a(c cVar) {
-            this.f25703c = cVar;
+            this.f12015c = cVar;
             return this;
         }
 
         public ag b() {
-            return new ag(this.f25703c, this.d, super.a());
+            return new ag(this.f12015c, this.d, super.a());
         }
     }
 
@@ -67,7 +67,7 @@ public final class ag extends com.heytap.nearx.a.a.b<ag, a> {
                     try {
                         aVar.a(c.i.a(fVar));
                     } catch (e.a e) {
-                        aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f22263a));
+                        aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f8655a));
                     }
                 } else if (b != 2) {
                     com.heytap.nearx.a.a.a c2 = fVar.c();
@@ -127,7 +127,7 @@ public final class ag extends com.heytap.nearx.a.a.b<ag, a> {
     }
 
     public ag(c cVar, List<String> list, ByteString byteString) {
-        super(f25702c, byteString);
+        super(f12014c, byteString);
         this.e = cVar;
         this.f = com.heytap.nearx.a.a.a.b.b("trackUrls", list);
     }

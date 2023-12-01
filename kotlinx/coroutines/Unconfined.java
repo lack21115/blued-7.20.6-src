@@ -13,7 +13,7 @@ public final class Unconfined extends CoroutineDispatcher {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     public void dispatch(CoroutineContext coroutineContext, Runnable runnable) {
-        YieldContext yieldContext = (YieldContext) coroutineContext.get(YieldContext.f42862a);
+        YieldContext yieldContext = (YieldContext) coroutineContext.get(YieldContext.a);
         if (yieldContext == null) {
             throw new UnsupportedOperationException("Dispatchers.Unconfined.dispatch function can only be used by the yield function. If you wrap Unconfined dispatcher in your code, make sure you properly delegate isDispatchNeeded and dispatch calls.");
         }

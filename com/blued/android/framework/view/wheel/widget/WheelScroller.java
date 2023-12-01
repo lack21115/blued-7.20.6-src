@@ -1,7 +1,6 @@
 package com.blued.android.framework.view.wheel.widget;
 
 import android.content.Context;
-import android.media.AudioSystem;
 import android.os.Handler;
 import android.os.Message;
 import android.view.GestureDetector;
@@ -11,13 +10,9 @@ import android.widget.Scroller;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/wheel/widget/WheelScroller.class */
 public class WheelScroller {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ScrollingListener f10353a;
+    private ScrollingListener a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private GestureDetector f10354c;
+    private GestureDetector c;
     private Scroller d;
     private int e;
     private float f;
@@ -26,7 +21,7 @@ public class WheelScroller {
         @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
         public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
             WheelScroller.this.e = 0;
-            WheelScroller.this.d.fling(0, WheelScroller.this.e, 0, (int) (-f2), 0, 0, AudioSystem.DEVICE_IN_COMMUNICATION, Integer.MAX_VALUE);
+            WheelScroller.this.d.fling(0, WheelScroller.this.e, 0, (int) (-f2), 0, 0, -2147483647, Integer.MAX_VALUE);
             WheelScroller.this.a(0);
             return true;
         }
@@ -46,7 +41,7 @@ public class WheelScroller {
             int i = WheelScroller.this.e - currY;
             WheelScroller.this.e = currY;
             if (i != 0) {
-                WheelScroller.this.f10353a.a(i);
+                WheelScroller.this.a.a(i);
             }
             if (Math.abs(currY - WheelScroller.this.d.getFinalY()) < 1) {
                 WheelScroller.this.d.getFinalY();
@@ -75,10 +70,10 @@ public class WheelScroller {
 
     public WheelScroller(Context context, ScrollingListener scrollingListener) {
         GestureDetector gestureDetector = new GestureDetector(context, this.h);
-        this.f10354c = gestureDetector;
+        this.c = gestureDetector;
         gestureDetector.setIsLongpressEnabled(false);
         this.d = new Scroller(context);
-        this.f10353a = scrollingListener;
+        this.a = scrollingListener;
         this.b = context;
     }
 
@@ -95,7 +90,7 @@ public class WheelScroller {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
-        this.f10353a.c();
+        this.a.c();
         a(1);
     }
 
@@ -104,7 +99,7 @@ public class WheelScroller {
             return;
         }
         this.g = true;
-        this.f10353a.a();
+        this.a.a();
     }
 
     public void a() {
@@ -137,10 +132,10 @@ public class WheelScroller {
             c();
         } else if (action == 2 && (y = (int) (motionEvent.getY() - this.f)) != 0) {
             e();
-            this.f10353a.a(y);
+            this.a.a(y);
             this.f = motionEvent.getY();
         }
-        if (this.f10354c.onTouchEvent(motionEvent) || motionEvent.getAction() != 1) {
+        if (this.c.onTouchEvent(motionEvent) || motionEvent.getAction() != 1) {
             return true;
         }
         d();
@@ -149,7 +144,7 @@ public class WheelScroller {
 
     void b() {
         if (this.g) {
-            this.f10353a.b();
+            this.a.b();
             this.g = false;
         }
     }

@@ -24,11 +24,11 @@ import java.lang.reflect.InvocationTargetException;
 public class UpdateAdapter implements IBridgeActivityDelegate {
 
     /* renamed from: a  reason: collision with root package name */
-    public WeakReference<Activity> f22431a;
+    public WeakReference<Activity> f8823a;
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f22432c;
+    public int f8824c;
     public UpdateBean d;
     public boolean e = false;
 
@@ -125,7 +125,7 @@ public class UpdateAdapter implements IBridgeActivityDelegate {
     }
 
     public final Activity b() {
-        WeakReference<Activity> weakReference = this.f22431a;
+        WeakReference<Activity> weakReference = this.f8823a;
         if (weakReference == null) {
             return null;
         }
@@ -150,7 +150,7 @@ public class UpdateAdapter implements IBridgeActivityDelegate {
             return;
         }
         this.b = activity.getApplicationContext();
-        this.f22431a = new WeakReference<>(activity);
+        this.f8823a = new WeakReference<>(activity);
         if (a.b.a(b())) {
             Intent intent = activity.getIntent();
             if (intent == null) {
@@ -158,7 +158,7 @@ public class UpdateAdapter implements IBridgeActivityDelegate {
                 return;
             }
             int intExtra = intent.getIntExtra("update_version", 0);
-            this.f22432c = intExtra;
+            this.f8824c = intExtra;
             if (intExtra == 0) {
                 c();
                 return;
@@ -167,7 +167,7 @@ public class UpdateAdapter implements IBridgeActivityDelegate {
                 this.e = true;
             }
             if (!a(intent, activity) && AvailableUtil.isInstallerLibExist(this.b)) {
-                UpdateBean updateBean = (UpdateBean) invokeMethod("com.huawei.hms.adapter.ui.InstallerAdapter", "setUpdateBean", new Object[]{activity, Integer.valueOf(this.f22432c), Boolean.valueOf(this.e)});
+                UpdateBean updateBean = (UpdateBean) invokeMethod("com.huawei.hms.adapter.ui.InstallerAdapter", "setUpdateBean", new Object[]{activity, Integer.valueOf(this.f8824c), Boolean.valueOf(this.e)});
                 this.d = updateBean;
                 invokeMethod("com.huawei.hms.adapter.ui.InstallerAdapter", "startUpdateHms", new Object[]{activity, updateBean, 1001});
                 this.d = null;
@@ -179,7 +179,7 @@ public class UpdateAdapter implements IBridgeActivityDelegate {
     public void onBridgeActivityDestroy() {
         HMSLog.i("UpdateAdapter", "onBridgeActivityDestroy");
         a.b.b(b());
-        this.f22431a = null;
+        this.f8823a = null;
     }
 
     @Override // com.huawei.hms.activity.IBridgeActivityDelegate
@@ -219,7 +219,7 @@ public class UpdateAdapter implements IBridgeActivityDelegate {
                 return true;
             }
             String hMSPackageName = HMSPackageManager.getInstance(b2.getApplicationContext()).getHMSPackageName();
-            if (this.e || a(b2, hMSPackageName, this.f22432c)) {
+            if (this.e || a(b2, hMSPackageName, this.f8824c)) {
                 HMSLog.i("UpdateAdapter", "Resolve error, process canceled by user clicking back button!");
                 SystemManager.getInstance().notifyUpdateResult(13);
             } else {

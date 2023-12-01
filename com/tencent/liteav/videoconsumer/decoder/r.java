@@ -8,7 +8,6 @@ import android.opengl.GLES20;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.view.Surface;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.system.LiteavSystemInfo;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.videobase.base.GLConstants;
@@ -30,11 +29,11 @@ import org.json.JSONObject;
 public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f36800a;
+    private String f23109a;
     private final com.tencent.liteav.base.util.n b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final IVideoReporter f36801c;
+    private final IVideoReporter f23110c;
     private final JSONArray d;
     private final String e;
     private volatile com.tencent.liteav.base.util.b f;
@@ -62,17 +61,17 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public MediaCodec f36802a;
+        public MediaCodec f23111a;
         public h.c b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f36803c;
+        public String f23112c;
         public Exception d;
 
         private a() {
-            this.f36802a = null;
+            this.f23111a = null;
             this.b = null;
-            this.f36803c = null;
+            this.f23112c = null;
             this.d = null;
         }
 
@@ -87,7 +86,7 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
     }
 
     private r(com.tencent.liteav.base.util.n nVar, String str, boolean z, JSONArray jSONArray, IVideoReporter iVideoReporter) {
-        this.f36800a = "HardwareVideoDecoder";
+        this.f23109a = "HardwareVideoDecoder";
         this.g = null;
         this.i = new MediaCodec.BufferInfo();
         this.j = null;
@@ -99,11 +98,11 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
         this.t = false;
         this.b = new com.tencent.liteav.base.util.n(nVar);
         this.e = str;
-        this.f36801c = iVideoReporter;
+        this.f23110c = iVideoReporter;
         this.d = jSONArray;
         this.x = z;
-        String str2 = this.f36800a + BridgeUtil.UNDERLINE_STR + hashCode();
-        this.f36800a = str2;
+        String str2 = this.f23109a + "_" + hashCode();
+        this.f23109a = str2;
         LiteavLog.i(str2, "create decoder isLowLatencyEnabled:" + this.x + ", format: " + this.u + " , params: " + jSONArray);
     }
 
@@ -116,8 +115,8 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
         int height = pixelFrame.getHeight();
         com.tencent.liteav.videobase.frame.j jVar = this.v;
         if (jVar != null) {
-            com.tencent.liteav.base.util.n nVar = new com.tencent.liteav.base.util.n(jVar.f36643a, jVar.b);
-            if (nVar.f36340a != width || nVar.b != height) {
+            com.tencent.liteav.base.util.n nVar = new com.tencent.liteav.base.util.n(jVar.f22952a, jVar.b);
+            if (nVar.f22649a != width || nVar.b != height) {
                 this.v.a();
                 this.v = null;
             }
@@ -160,28 +159,28 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
             if (mediaCodec != null) {
                 try {
                     try {
-                        LiteavLog.i(this.f36800a, "mediaCodec stop");
+                        LiteavLog.i(this.f23109a, "mediaCodec stop");
                         mediaCodec.stop();
-                        LiteavLog.i(this.f36800a, "mediaCodec release");
+                        LiteavLog.i(this.f23109a, "mediaCodec release");
                         mediaCodec.release();
                     } catch (Exception e) {
-                        String str = this.f36800a;
+                        String str = this.f23109a;
                         LiteavLog.e(str, "Stop MediaCodec failed." + e.getMessage());
-                        LiteavLog.i(this.f36800a, "mediaCodec release");
+                        LiteavLog.i(this.f23109a, "mediaCodec release");
                         mediaCodec.release();
                     }
                 } catch (Throwable th) {
                     try {
-                        LiteavLog.i(this.f36800a, "mediaCodec release");
+                        LiteavLog.i(this.f23109a, "mediaCodec release");
                         mediaCodec.release();
                     } catch (Exception e2) {
-                        LiteavLog.e(this.f36800a, "release MediaCodec failed.", e2);
+                        LiteavLog.e(this.f23109a, "release MediaCodec failed.", e2);
                     }
                     throw th;
                 }
             }
         } catch (Exception e3) {
-            LiteavLog.e(this.f36800a, "release MediaCodec failed.", e3);
+            LiteavLog.e(this.f23109a, "release MediaCodec failed.", e3);
         }
     }
 
@@ -193,7 +192,7 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
     }
 
     private void a(h.c cVar, String str, Object... objArr) {
-        this.f36801c.notifyWarning(cVar, str, objArr);
+        this.f23110c.notifyWarning(cVar, str, objArr);
         az azVar = this.h;
         if (azVar != null) {
             azVar.onDecodeFailed();
@@ -204,7 +203,7 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
     public static /* synthetic */ void a(r rVar, SurfaceTexture surfaceTexture) {
         SurfaceTexture surfaceTexture2 = rVar.o;
         if (surfaceTexture2 == null || surfaceTexture != surfaceTexture2) {
-            LiteavLog.i(rVar.f36800a, "mSurfaceTexture= " + rVar.o + " ,surfaceTexture= " + surfaceTexture);
+            LiteavLog.i(rVar.f23109a, "mSurfaceTexture= " + rVar.o + " ,surfaceTexture= " + surfaceTexture);
             return;
         }
         rVar.d();
@@ -212,9 +211,9 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
         try {
             bVar = rVar.n.a();
         } catch (InterruptedException e) {
-            LiteavLog.w(rVar.f36800a, "textureholderpool obtain interrupted.");
+            LiteavLog.w(rVar.f23109a, "textureholderpool obtain interrupted.");
         }
-        bVar.a(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, rVar.m, rVar.b.f36340a, rVar.b.b);
+        bVar.a(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, rVar.m, rVar.b.f22649a, rVar.b.b);
         PixelFrame a2 = bVar.a(rVar.l.d());
         if (a2.getMatrix() == null) {
             a2.setMatrix(new float[16]);
@@ -223,7 +222,7 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
             surfaceTexture.updateTexImage();
             surfaceTexture.getTransformMatrix(a2.getMatrix());
         } catch (Exception e2) {
-            LiteavLog.w(rVar.f36800a, "updateTexImage exception: ".concat(String.valueOf(e2)));
+            LiteavLog.w(rVar.f23109a, "updateTexImage exception: ".concat(String.valueOf(e2)));
         }
         rVar.k = true;
         long millis = TimeUnit.NANOSECONDS.toMillis(surfaceTexture.getTimestamp());
@@ -255,9 +254,9 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(r rVar, Object obj, az azVar) {
-        LiteavLog.i(rVar.f36800a, "Start internal");
+        LiteavLog.i(rVar.f23109a, "Start internal");
         if (rVar.l != null) {
-            LiteavLog.w(rVar.f36800a, "Decoder already started.");
+            LiteavLog.w(rVar.f23109a, "Decoder already started.");
             return;
         }
         rVar.h = azVar;
@@ -265,16 +264,16 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
             a aVar = new a((byte) 0);
             boolean a2 = rVar.a(aVar, rVar.x);
             if (a2 || rVar.a(aVar, false)) {
-                rVar.g = aVar.f36802a;
+                rVar.g = aVar.f23111a;
                 az azVar2 = rVar.h;
                 if (azVar2 != null) {
                     azVar2.onDecodeLatencyChanged(rVar.x && a2);
                 }
-                rVar.f36801c.notifyEvent(h.b.EVT_VIDEO_DECODE_START_SUCCESS, "Start decoder success", new Object[0]);
+                rVar.f23110c.notifyEvent(h.b.EVT_VIDEO_DECODE_START_SUCCESS, "Start decoder success", new Object[0]);
                 return;
             }
             h.c cVar = aVar.b;
-            rVar.a(cVar, "decoder config fail, message:" + aVar.f36803c + " exception:" + aVar.d.getMessage(), new Object[0]);
+            rVar.a(cVar, "decoder config fail, message:" + aVar.f23112c + " exception:" + aVar.d.getMessage(), new Object[0]);
         }
     }
 
@@ -294,7 +293,7 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
         MediaFormat mediaFormat = this.u;
         MediaFormat mediaFormat2 = mediaFormat;
         if (mediaFormat == null) {
-            mediaFormat2 = MediaFormat.createVideoFormat(this.e, this.b.f36340a, this.b.b);
+            mediaFormat2 = MediaFormat.createVideoFormat(this.e, this.b.f22649a, this.b.b);
         }
         if (z) {
             if (LiteavSystemInfo.getSystemOSVersionInt() >= 30) {
@@ -327,18 +326,18 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
                 }
             }
         }
-        LiteavLog.i(this.f36800a, "mediaFormat:".concat(String.valueOf(mediaFormat2)));
+        LiteavLog.i(this.f23109a, "mediaFormat:".concat(String.valueOf(mediaFormat2)));
         try {
-            aVar.f36802a = MediaCodec.createDecoderByType(mediaFormat2.getString(MediaFormat.KEY_MIME));
-            aVar.f36802a.configure(mediaFormat2, this.p, null, 0);
-            aVar.f36802a.setVideoScalingMode(1);
-            aVar.f36802a.start();
-            LiteavLog.i(this.f36800a, "Start MediaCodec success.");
+            aVar.f23111a = MediaCodec.createDecoderByType(mediaFormat2.getString(MediaFormat.KEY_MIME));
+            aVar.f23111a.configure(mediaFormat2, this.p, null, 0);
+            aVar.f23111a.setVideoScalingMode(1);
+            aVar.f23111a.start();
+            LiteavLog.i(this.f23109a, "Start MediaCodec success.");
             return true;
         } catch (Exception e2) {
-            LiteavLog.e(this.f36800a, "Start MediaCodec failed.", e2);
-            a(aVar.f36802a);
-            aVar.f36802a = null;
+            LiteavLog.e(this.f23109a, "Start MediaCodec failed.", e2);
+            a(aVar.f23111a);
+            aVar.f23111a = null;
             h.c cVar = h.c.WARNING_VIDEO_DECODE_START_FAILED;
             if (e2 instanceof IllegalArgumentException) {
                 cVar = h.c.WARNING_VIDEO_DECODE_START_FAILED_ILLEGAL_ARGUMENT;
@@ -350,7 +349,7 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
                 str = "VideoDecode: Start decoder failed";
             }
             aVar.b = cVar;
-            aVar.f36803c = str;
+            aVar.f23112c = str;
             aVar.d = e2;
             return false;
         }
@@ -368,16 +367,16 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
                 this.o = new SurfaceTexture(this.m);
                 this.p = new Surface(this.o);
                 this.o.setOnFrameAvailableListener(this);
-                LiteavLog.i(this.f36800a, "initialize gl components");
+                LiteavLog.i(this.f23109a, "initialize gl components");
                 return true;
             } catch (Surface.OutOfResourcesException e) {
-                LiteavLog.e(this.f36800a, "create SurfaceTexture failed.", e);
+                LiteavLog.e(this.f23109a, "create SurfaceTexture failed.", e);
                 h.c cVar = h.c.WARNING_VIDEO_DECODE_START_FAILED_INSUFFICIENT_RESOURCE;
                 a(cVar, "VideoDecode: insufficient resource, Start decoder failed:" + e.getMessage(), new Object[0]);
                 return false;
             }
         } catch (com.tencent.liteav.videobase.b.g e2) {
-            LiteavLog.e(this.f36800a, "create EGLCore failed.", e2);
+            LiteavLog.e(this.f23109a, "create EGLCore failed.", e2);
             h.c cVar2 = h.c.WARNING_VIDEO_DECODE_EGL_CORE_CREATE_FAILED;
             a(cVar2, "VideoDecode: create EGLCore failed errorCode:" + e2.mErrorCode, new Object[0]);
             return false;
@@ -416,14 +415,14 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void d(r rVar) {
-        LiteavLog.i(rVar.f36800a, "Stop internal");
+        LiteavLog.i(rVar.f23109a, "Stop internal");
         MediaCodec mediaCodec = rVar.g;
         if (mediaCodec != null) {
             rVar.a(mediaCodec);
             rVar.g = null;
         }
         rVar.c();
-        LiteavLog.i(rVar.f36800a, "uninitialize gl components");
+        LiteavLog.i(rVar.f23109a, "uninitialize gl components");
         if (rVar.d()) {
             com.tencent.liteav.videobase.frame.l lVar = rVar.n;
             if (lVar != null) {
@@ -465,14 +464,14 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
             }
             return true;
         } catch (com.tencent.liteav.videobase.b.g e) {
-            LiteavLog.e(this.f36800a, "makeCurrent failed.", e);
+            LiteavLog.e(this.f23109a, "makeCurrent failed.", e);
             return false;
         }
     }
 
     @Override // com.tencent.liteav.videoconsumer.decoder.ay
     public final void abandonDecodingFrames() {
-        LiteavLog.i(this.f36800a, "flush");
+        LiteavLog.i(this.f23109a, "flush");
         a(w.a(this));
     }
 
@@ -529,7 +528,7 @@ public final class r implements SurfaceTexture.OnFrameAvailableListener, ay {
     @Override // com.tencent.liteav.videoconsumer.decoder.ay
     public final void uninitialize() {
         if (this.f != null) {
-            LiteavLog.i(this.f36800a, "uninitialize quitLooper");
+            LiteavLog.i(this.f23109a, "uninitialize quitLooper");
             this.f.a();
         }
     }

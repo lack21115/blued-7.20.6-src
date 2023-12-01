@@ -6,55 +6,55 @@ import java.nio.ByteBuffer;
 public abstract class jc {
 
     /* renamed from: a  reason: collision with root package name */
-    protected jm f41547a;
+    protected jm f27856a;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public jc(jm jmVar) {
-        this.f41547a = jmVar;
+        this.f27856a = jmVar;
     }
 
     public abstract byte a();
 
     /* renamed from: a */
-    public abstract double mo12029a();
+    public abstract double mo8979a();
 
     /* renamed from: a */
-    public abstract int mo12030a();
+    public abstract int mo8980a();
 
     /* renamed from: a */
-    public abstract long mo12031a();
+    public abstract long mo8981a();
 
     /* renamed from: a */
-    public abstract iz mo12032a();
+    public abstract iz mo8982a();
 
     /* renamed from: a */
-    public abstract ja mo12033a();
+    public abstract ja mo8983a();
 
     /* renamed from: a */
-    public abstract jb mo12034a();
+    public abstract jb mo8984a();
 
     /* renamed from: a */
-    public abstract jg mo12035a();
+    public abstract jg mo8985a();
 
     /* renamed from: a */
-    public abstract jh mo12036a();
+    public abstract jh mo8986a();
 
     /* renamed from: a */
-    public abstract String mo12037a();
+    public abstract String mo8987a();
 
     /* renamed from: a */
-    public abstract ByteBuffer mo12038a();
+    public abstract ByteBuffer mo8988a();
 
     /* renamed from: a */
-    public abstract short mo12039a();
+    public abstract short mo8989a();
 
     /* renamed from: a */
-    public abstract void mo12040a();
+    public abstract void mo8990a();
 
     public abstract void a(byte b);
 
     /* renamed from: a */
-    public abstract void mo12041a(int i);
+    public abstract void mo8991a(int i);
 
     public abstract void a(long j);
 
@@ -75,7 +75,7 @@ public abstract class jc {
     public abstract void a(boolean z);
 
     /* renamed from: a */
-    public abstract boolean mo12042a();
+    public abstract boolean mo8992a();
 
     public abstract void b();
 

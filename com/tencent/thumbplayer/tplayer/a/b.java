@@ -4,11 +4,11 @@ package com.tencent.thumbplayer.tplayer.a;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public com.tencent.thumbplayer.tplayer.a.b.a f39365a = new com.tencent.thumbplayer.tplayer.a.b.a();
+    public com.tencent.thumbplayer.tplayer.a.b.a f25674a = new com.tencent.thumbplayer.tplayer.a.b.a();
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f39366c;
+    public String f25675c;
     public String d;
     public String e;
 }

@@ -12,7 +12,7 @@ public abstract class UnusedAppRestrictionsBackportService extends Service {
     public static final String ACTION_UNUSED_APP_RESTRICTIONS_BACKPORT_CONNECTION = "android.support.unusedapprestrictions.action.CustomUnusedAppRestrictionsBackportService";
 
     /* renamed from: a  reason: collision with root package name */
-    private IUnusedAppRestrictionsBackportService.Stub f2410a = new IUnusedAppRestrictionsBackportService.Stub() { // from class: androidx.core.content.UnusedAppRestrictionsBackportService.1
+    private IUnusedAppRestrictionsBackportService.Stub f2362a = new IUnusedAppRestrictionsBackportService.Stub() { // from class: androidx.core.content.UnusedAppRestrictionsBackportService.1
         @Override // androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportService
         public void isPermissionRevocationEnabledForApp(IUnusedAppRestrictionsBackportCallback iUnusedAppRestrictionsBackportCallback) throws RemoteException {
             if (iUnusedAppRestrictionsBackportCallback == null) {
@@ -26,6 +26,6 @@ public abstract class UnusedAppRestrictionsBackportService extends Service {
 
     @Override // android.app.Service
     public IBinder onBind(Intent intent) {
-        return this.f2410a;
+        return this.f2362a;
     }
 }

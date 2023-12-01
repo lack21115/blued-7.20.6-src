@@ -39,7 +39,7 @@ public abstract class BaseSdkSplashAdView extends BaseSplashAdView {
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Tracker.onClick(view);
-                if (BaseSdkSplashAdView.this.f6049c.m == null || BaseSdkSplashAdView.this.f6049c.m.x() != 0) {
+                if (BaseSdkSplashAdView.this.c.m == null || BaseSdkSplashAdView.this.c.m.x() != 0) {
                     return;
                 }
                 BaseSdkSplashAdView.super.b(1);
@@ -53,7 +53,7 @@ public abstract class BaseSdkSplashAdView extends BaseSplashAdView {
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Tracker.onClick(view);
-                if (BaseSdkSplashAdView.this.f6049c.m == null || BaseSdkSplashAdView.this.f6049c.m.x() != 0) {
+                if (BaseSdkSplashAdView.this.c.m == null || BaseSdkSplashAdView.this.c.m.x() != 0) {
                     return;
                 }
                 BaseSdkSplashAdView.super.b(1);
@@ -61,7 +61,7 @@ public abstract class BaseSdkSplashAdView extends BaseSplashAdView {
         };
         c();
         p();
-        a(this.B, this.f6049c.m.h());
+        a(this.B, this.c.m.h());
     }
 
     public static boolean isSinglePicture(i iVar, k kVar) {
@@ -203,18 +203,21 @@ public abstract class BaseSdkSplashAdView extends BaseSplashAdView {
         r();
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.anythink.basead.ui.BaseSplashAdView, com.anythink.basead.ui.BaseAdView, android.view.ViewGroup, android.view.View
-    protected void onAttachedToWindow() {
+    public void onAttachedToWindow() {
         super.onAttachedToWindow();
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.anythink.basead.ui.BaseSplashAdView, com.anythink.basead.ui.BaseAdView, android.view.ViewGroup, android.view.View
-    protected void onDetachedFromWindow() {
+    public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.anythink.basead.ui.BaseSplashAdView
-    protected void p() {
+    public void p() {
         super.p();
         setOnClickListener(this.z);
     }

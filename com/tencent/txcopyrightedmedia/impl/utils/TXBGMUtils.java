@@ -2,8 +2,7 @@ package com.tencent.txcopyrightedmedia.impl.utils;
 
 import android.net.Uri;
 import android.text.TextUtils;
-import com.android.internal.util.cm.QSConstants;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.txcopyrightedmedia.TXCopyrightedMedia;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/impl/utils/TXBGMUtils.class */
@@ -27,7 +26,7 @@ public class TXBGMUtils {
         if (TextUtils.isEmpty(substring)) {
             return null;
         }
-        String[] split = substring.split("&");
+        String[] split = substring.split(ContainerUtils.FIELD_DELIMITER);
         int length = split.length;
         String str3 = null;
         String str4 = null;
@@ -80,7 +79,7 @@ public class TXBGMUtils {
             str2 = "_1";
         }
         Uri.Builder buildUpon = Uri.parse("http://" + v.e + ":" + v.d).buildUpon();
-        buildUpon.appendQueryParameter("mid", str3).appendQueryParameter(QSConstants.TILE_BLUETOOTH, String.valueOf(i)).appendQueryParameter("mep", str4).appendQueryParameter("aid", aj.c(TXCopyrightedMedia.instance().getApplicationContext()) + BridgeUtil.UNDERLINE_STR + System.currentTimeMillis() + str2);
+        buildUpon.appendQueryParameter("mid", str3).appendQueryParameter("bt", String.valueOf(i)).appendQueryParameter("mep", str4).appendQueryParameter("aid", aj.c(TXCopyrightedMedia.instance().getApplicationContext()) + "_" + System.currentTimeMillis() + str2);
         return buildUpon.build().toString();
     }
 

@@ -9,7 +9,7 @@ import java.io.InputStream;
 public final class q {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f36799a = false;
+    private boolean f23108a = false;
 
     private static void a(p pVar) throws IOException {
         int c2 = pVar.c();
@@ -60,7 +60,7 @@ public final class q {
         byte[] bArr3 = bArr;
         if (i2 != bArr.length) {
             bArr3 = new byte[i2];
-            System.arraycopy((Object) bArr2, 0, (Object) bArr3, 0, i2);
+            System.arraycopy(bArr2, 0, bArr3, 0, i2);
         }
         return bArr3;
     }
@@ -184,9 +184,9 @@ public final class q {
                 pVar.d();
                 pVar.d();
                 z = false;
-                if (!this.f36799a) {
+                if (!this.f23108a) {
                     LiteavLog.w("H264SPSModifier", "decode: do not add max_dec_frame_buffering when it is ".concat(String.valueOf(pVar.b())));
-                    this.f36799a = true;
+                    this.f23108a = true;
                     z = false;
                 }
             } else {
@@ -198,9 +198,9 @@ public final class q {
                 pVar.d(10);
                 pVar.d(0);
                 pVar.d(1);
-                if (!this.f36799a) {
+                if (!this.f23108a) {
                     LiteavLog.w("H264SPSModifier", "decode: add max_dec_frame_buffering 1 when it is no exist");
-                    this.f36799a = true;
+                    this.f23108a = true;
                 }
                 z = true;
             }
@@ -225,9 +225,9 @@ public final class q {
             pVar.d(10);
             pVar.d(0);
             pVar.d(1);
-            if (!this.f36799a) {
+            if (!this.f23108a) {
                 LiteavLog.w("H264SPSModifier", "decode: add max_dec_frame_buffering 1 when vui is no exist");
-                this.f36799a = true;
+                this.f23108a = true;
             }
         }
         pVar.e();

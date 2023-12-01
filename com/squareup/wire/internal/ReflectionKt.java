@@ -22,10 +22,10 @@ import kotlin.reflect.KClass;
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/squareup/wire/internal/ReflectionKt.class */
 public final class ReflectionKt {
-    public static final <M extends Message<M, B>, B extends Message.Builder<M, B>> RuntimeMessageAdapter<M, B> createRuntimeMessageAdapter(final Class<M> messageType, String str, Syntax syntax, boolean z) {
-        Intrinsics.e(messageType, "messageType");
+    public static final <M extends Message<M, B>, B extends Message.Builder<M, B>> RuntimeMessageAdapter<M, B> createRuntimeMessageAdapter(final Class<M> cls, String str, Syntax syntax, boolean z) {
+        Intrinsics.e(cls, "messageType");
         Intrinsics.e(syntax, "syntax");
-        final Class builderType = getBuilderType(messageType);
+        final Class builderType = getBuilderType(cls);
         Function0 function0 = new Function0<B>() { // from class: com.squareup.wire.internal.ReflectionKt$createRuntimeMessageAdapter$newBuilderInstance$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -34,10 +34,10 @@ public final class ReflectionKt {
             }
 
             /* JADX WARN: Incorrect return type in method signature: ()TB; */
-            @Override // kotlin.jvm.functions.Function0
-            public final Message.Builder invoke() {
+            /* renamed from: invoke */
+            public final Message.Builder m6726invoke() {
                 if (builderType.isAssignableFrom(KotlinConstructorBuilder.class)) {
-                    return new KotlinConstructorBuilder(messageType);
+                    return new KotlinConstructorBuilder(cls);
                 }
                 B newInstance = builderType.newInstance();
                 Intrinsics.c(newInstance, "{\n      builderType.newInstance()\n    }");
@@ -45,39 +45,39 @@ public final class ReflectionKt {
             }
         };
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        Field[] declaredFields = messageType.getDeclaredFields();
+        Field[] declaredFields = cls.getDeclaredFields();
         Intrinsics.c(declaredFields, "messageType.declaredFields");
         int length = declaredFields.length;
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= length) {
-                KClass a2 = JvmClassMappingKt.a(messageType);
+                KClass a2 = JvmClassMappingKt.a(cls);
                 Map unmodifiableMap = Collections.unmodifiableMap(linkedHashMap);
                 Intrinsics.c(unmodifiableMap, "unmodifiableMap(fields)");
                 return new RuntimeMessageAdapter<>(new RuntimeMessageBinding(a2, builderType, function0, unmodifiableMap, str, syntax));
             }
-            Field messageField = declaredFields[i2];
-            WireField wireField = (WireField) messageField.getAnnotation(WireField.class);
+            Field field = declaredFields[i2];
+            WireField wireField = (WireField) field.getAnnotation(WireField.class);
             if (wireField != null) {
                 LinkedHashMap linkedHashMap2 = linkedHashMap;
                 int tag = wireField.tag();
-                Intrinsics.c(messageField, "messageField");
-                linkedHashMap2.put(Integer.valueOf(tag), new FieldBinding(wireField, messageType, messageField, builderType, z));
-            } else if (Intrinsics.a(messageField.getType(), OneOf.class)) {
-                Intrinsics.c(messageField, "messageField");
-                for (OneOf.Key<?> key : getKeys(messageField)) {
-                    linkedHashMap.put(Integer.valueOf(key.getTag()), new OneOfBinding(messageField, builderType, key, z));
+                Intrinsics.c(field, "messageField");
+                linkedHashMap2.put(Integer.valueOf(tag), new FieldBinding(wireField, cls, field, builderType, z));
+            } else if (Intrinsics.a(field.getType(), OneOf.class)) {
+                Intrinsics.c(field, "messageField");
+                for (OneOf.Key<?> key : getKeys(field)) {
+                    linkedHashMap.put(Integer.valueOf(key.getTag()), new OneOfBinding(field, builderType, key, z));
                 }
             }
             i = i2 + 1;
         }
     }
 
-    public static final <M extends Message<M, B>, B extends Message.Builder<M, B>> RuntimeMessageAdapter<M, B> createRuntimeMessageAdapter(Class<M> messageType, boolean z) {
-        Intrinsics.e(messageType, "messageType");
-        ProtoAdapter protoAdapter = ProtoAdapter.Companion.get(messageType);
-        return createRuntimeMessageAdapter(messageType, protoAdapter.getTypeUrl(), protoAdapter.getSyntax(), z);
+    public static final <M extends Message<M, B>, B extends Message.Builder<M, B>> RuntimeMessageAdapter<M, B> createRuntimeMessageAdapter(Class<M> cls, boolean z) {
+        Intrinsics.e(cls, "messageType");
+        ProtoAdapter protoAdapter = ProtoAdapter.Companion.get(cls);
+        return createRuntimeMessageAdapter(cls, protoAdapter.getTypeUrl(), protoAdapter.getSyntax(), z);
     }
 
     public static /* synthetic */ RuntimeMessageAdapter createRuntimeMessageAdapter$default(Class cls, String str, Syntax syntax, boolean z, int i, Object obj) {
@@ -91,10 +91,10 @@ public final class ReflectionKt {
         Object f;
         Class<?> cls2;
         try {
-            Result.Companion companion = Result.f42293a;
-            cls2 = Class.forName(Intrinsics.a(cls.getName(), (Object) "$Builder"));
+            Result.Companion companion = Result.a;
+            cls2 = Class.forName(Intrinsics.a(cls.getName(), "$Builder"));
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             f = Result.f(ResultKt.a(th));
         }
         if (cls2 != null) {

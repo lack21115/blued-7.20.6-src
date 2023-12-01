@@ -7,11 +7,11 @@ public final class FxCVY extends tZ3Yi {
     public hxUS9 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f39875c;
+    public String f26184c;
 
     public FxCVY(Window.Callback callback, hxUS9 hxus9, String str) {
         super(callback);
         this.b = hxus9;
-        this.f39875c = str;
+        this.f26184c = str;
     }
 }

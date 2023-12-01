@@ -9,16 +9,16 @@ import java.util.HashMap;
 public class j implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f26651a;
+    private View f12963a;
     private Context b;
 
     public j(Context context, View view) {
-        this.f26651a = view;
+        this.f12963a = view;
         this.b = context;
     }
 
     private boolean e() {
-        if (this.f26651a == null) {
+        if (this.f12963a == null) {
             com.opos.cmn.an.f.a.d("MatView", "mView is null!");
             return false;
         }
@@ -27,7 +27,7 @@ public class j implements d {
 
     @Override // com.opos.mobad.n.e.d
     public View a() {
-        return this.f26651a;
+        return this.f12963a;
     }
 
     @Override // com.opos.mobad.n.e.d
@@ -37,7 +37,7 @@ public class j implements d {
             try {
                 HashMap<ZkViewSDK.KEY, Object> hashMap = new HashMap<>();
                 hashMap.put(ZkViewSDK.KEY.KEY_AD_TITLE, str);
-                ZkViewSDK.a().a(this.f26651a, hashMap);
+                ZkViewSDK.a().a(this.f12963a, hashMap);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.d("MatView", "updateMatTitle error!title=" + str);
             }
@@ -49,7 +49,7 @@ public class j implements d {
         com.opos.cmn.an.f.a.b("MatView", "setVideoMute!");
         if (e()) {
             try {
-                ZkViewSDK.a().a(this.f26651a, z);
+                ZkViewSDK.a().a(this.f12963a, z);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.d("MatView", "setVideoMute error!mute=" + z);
             }
@@ -61,9 +61,9 @@ public class j implements d {
         com.opos.cmn.an.f.a.b("MatView", "pause!");
         if (e()) {
             try {
-                ZkViewSDK.a().b(this.f26651a);
+                ZkViewSDK.a().b(this.f12963a);
             } catch (Exception e) {
-                com.opos.cmn.an.f.a.d("MatView", "pause error!" + this.f26651a);
+                com.opos.cmn.an.f.a.d("MatView", "pause error!" + this.f12963a);
             }
         }
     }
@@ -75,7 +75,7 @@ public class j implements d {
             try {
                 HashMap<ZkViewSDK.KEY, Object> hashMap = new HashMap<>();
                 hashMap.put(ZkViewSDK.KEY.KEY_AD_DESC, str);
-                ZkViewSDK.a().a(this.f26651a, hashMap);
+                ZkViewSDK.a().a(this.f12963a, hashMap);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.d("MatView", "setMatDesc error!desc=" + str);
             }
@@ -87,9 +87,9 @@ public class j implements d {
         com.opos.cmn.an.f.a.b("MatView", "resume!");
         if (e()) {
             try {
-                ZkViewSDK.a().a(this.f26651a);
+                ZkViewSDK.a().a(this.f12963a);
             } catch (Exception e) {
-                com.opos.cmn.an.f.a.d("MatView", "resume error!" + this.f26651a);
+                com.opos.cmn.an.f.a.d("MatView", "resume error!" + this.f12963a);
             }
         }
     }
@@ -101,7 +101,7 @@ public class j implements d {
             try {
                 HashMap<ZkViewSDK.KEY, Object> hashMap = new HashMap<>();
                 hashMap.put(ZkViewSDK.KEY.KEY_AD_ACTION, str);
-                ZkViewSDK.a().a(this.f26651a, hashMap);
+                ZkViewSDK.a().a(this.f12963a, hashMap);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.d("MatView", "setMatAction error!action=" + str);
             }
@@ -113,9 +113,9 @@ public class j implements d {
         com.opos.cmn.an.f.a.b("MatView", "release!");
         if (e()) {
             try {
-                ZkViewSDK.a().c(this.f26651a);
+                ZkViewSDK.a().c(this.f12963a);
             } catch (Exception e) {
-                com.opos.cmn.an.f.a.d("MatView", "release error!" + this.f26651a);
+                com.opos.cmn.an.f.a.d("MatView", "release error!" + this.f12963a);
             }
         }
     }

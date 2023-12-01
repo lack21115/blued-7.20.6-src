@@ -9,11 +9,11 @@ import java.io.RandomAccessFile;
 public final class p implements g {
 
     /* renamed from: a  reason: collision with root package name */
-    private final t<? super p> f25464a;
+    private final t<? super p> f11776a;
     private RandomAccessFile b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Uri f25465c;
+    private Uri f11777c;
     private long d;
     private boolean e;
 
@@ -29,7 +29,7 @@ public final class p implements g {
     }
 
     public p(t<? super p> tVar) {
-        this.f25464a = tVar;
+        this.f11776a = tVar;
     }
 
     @Override // com.opos.exoplayer.core.h.g
@@ -45,7 +45,7 @@ public final class p implements g {
             int read = this.b.read(bArr, i, (int) Math.min(j, i2));
             if (read > 0) {
                 this.d -= read;
-                t<? super p> tVar = this.f25464a;
+                t<? super p> tVar = this.f11776a;
                 if (tVar != null) {
                     tVar.a((t<? super p>) this, read);
                 }
@@ -59,8 +59,8 @@ public final class p implements g {
     @Override // com.opos.exoplayer.core.h.g
     public long a(i iVar) {
         try {
-            this.f25465c = iVar.f25449a;
-            RandomAccessFile randomAccessFile = new RandomAccessFile(iVar.f25449a.getPath(), "r");
+            this.f11777c = iVar.f11761a;
+            RandomAccessFile randomAccessFile = new RandomAccessFile(iVar.f11761a.getPath(), "r");
             this.b = randomAccessFile;
             randomAccessFile.seek(iVar.d);
             long length = iVar.e == -1 ? this.b.length() - iVar.d : iVar.e;
@@ -69,7 +69,7 @@ public final class p implements g {
                 throw new EOFException();
             }
             this.e = true;
-            t<? super p> tVar = this.f25464a;
+            t<? super p> tVar = this.f11776a;
             if (tVar != null) {
                 tVar.a((t<? super p>) this, iVar);
             }
@@ -81,12 +81,12 @@ public final class p implements g {
 
     @Override // com.opos.exoplayer.core.h.g
     public Uri a() {
-        return this.f25465c;
+        return this.f11777c;
     }
 
     @Override // com.opos.exoplayer.core.h.g
     public void b() {
-        this.f25465c = null;
+        this.f11777c = null;
         try {
             try {
                 if (this.b != null) {
@@ -99,7 +99,7 @@ public final class p implements g {
             this.b = null;
             if (this.e) {
                 this.e = false;
-                t<? super p> tVar = this.f25464a;
+                t<? super p> tVar = this.f11776a;
                 if (tVar != null) {
                     tVar.a(this);
                 }

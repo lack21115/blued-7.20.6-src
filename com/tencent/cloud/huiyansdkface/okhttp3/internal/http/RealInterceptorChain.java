@@ -17,11 +17,11 @@ import java.util.concurrent.TimeUnit;
 public final class RealInterceptorChain implements Interceptor.Chain {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<Interceptor> f35952a;
+    private final List<Interceptor> f22261a;
     private final StreamAllocation b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final HttpCodec f35953c;
+    private final HttpCodec f22262c;
     private final RealConnection d;
     private final int e;
     private final Request f;
@@ -33,10 +33,10 @@ public final class RealInterceptorChain implements Interceptor.Chain {
     private int l;
 
     public RealInterceptorChain(List<Interceptor> list, StreamAllocation streamAllocation, HttpCodec httpCodec, RealConnection realConnection, int i, Request request, Call call, EventListener eventListener, int i2, int i3, int i4) {
-        this.f35952a = list;
+        this.f22261a = list;
         this.d = realConnection;
         this.b = streamAllocation;
-        this.f35953c = httpCodec;
+        this.f22262c = httpCodec;
         this.e = i;
         this.f = request;
         this.g = call;
@@ -66,26 +66,26 @@ public final class RealInterceptorChain implements Interceptor.Chain {
     }
 
     public HttpCodec httpStream() {
-        return this.f35953c;
+        return this.f22262c;
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Interceptor.Chain
     public Response proceed(Request request) throws IOException {
-        return proceed(request, this.b, this.f35953c, this.d);
+        return proceed(request, this.b, this.f22262c, this.d);
     }
 
     public Response proceed(Request request, StreamAllocation streamAllocation, HttpCodec httpCodec, RealConnection realConnection) throws IOException {
-        if (this.e < this.f35952a.size()) {
+        if (this.e < this.f22261a.size()) {
             this.l++;
-            if (this.f35953c != null && !this.d.supportsUrl(request.url())) {
-                throw new IllegalStateException("network interceptor " + this.f35952a.get(this.e - 1) + " must retain the same host and port");
-            } else if (this.f35953c != null && this.l > 1) {
-                throw new IllegalStateException("network interceptor " + this.f35952a.get(this.e - 1) + " must call proceed() exactly once");
+            if (this.f22262c != null && !this.d.supportsUrl(request.url())) {
+                throw new IllegalStateException("network interceptor " + this.f22261a.get(this.e - 1) + " must retain the same host and port");
+            } else if (this.f22262c != null && this.l > 1) {
+                throw new IllegalStateException("network interceptor " + this.f22261a.get(this.e - 1) + " must call proceed() exactly once");
             } else {
-                RealInterceptorChain realInterceptorChain = new RealInterceptorChain(this.f35952a, streamAllocation, httpCodec, realConnection, this.e + 1, request, this.g, this.h, this.i, this.j, this.k);
-                Interceptor interceptor = this.f35952a.get(this.e);
+                RealInterceptorChain realInterceptorChain = new RealInterceptorChain(this.f22261a, streamAllocation, httpCodec, realConnection, this.e + 1, request, this.g, this.h, this.i, this.j, this.k);
+                Interceptor interceptor = this.f22261a.get(this.e);
                 Response intercept = interceptor.intercept(realInterceptorChain);
-                if (httpCodec != null && this.e + 1 < this.f35952a.size() && realInterceptorChain.l != 1) {
+                if (httpCodec != null && this.e + 1 < this.f22261a.size() && realInterceptorChain.l != 1) {
                     throw new IllegalStateException("network interceptor " + interceptor + " must call proceed() exactly once");
                 } else if (intercept == null) {
                     throw new NullPointerException("interceptor " + interceptor + " returned null");
@@ -115,17 +115,17 @@ public final class RealInterceptorChain implements Interceptor.Chain {
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Interceptor.Chain
     public Interceptor.Chain withConnectTimeout(int i, TimeUnit timeUnit) {
-        return new RealInterceptorChain(this.f35952a, this.b, this.f35953c, this.d, this.e, this.f, this.g, this.h, Util.checkDuration("timeout", i, timeUnit), this.j, this.k);
+        return new RealInterceptorChain(this.f22261a, this.b, this.f22262c, this.d, this.e, this.f, this.g, this.h, Util.checkDuration("timeout", i, timeUnit), this.j, this.k);
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Interceptor.Chain
     public Interceptor.Chain withReadTimeout(int i, TimeUnit timeUnit) {
-        return new RealInterceptorChain(this.f35952a, this.b, this.f35953c, this.d, this.e, this.f, this.g, this.h, this.i, Util.checkDuration("timeout", i, timeUnit), this.k);
+        return new RealInterceptorChain(this.f22261a, this.b, this.f22262c, this.d, this.e, this.f, this.g, this.h, this.i, Util.checkDuration("timeout", i, timeUnit), this.k);
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Interceptor.Chain
     public Interceptor.Chain withWriteTimeout(int i, TimeUnit timeUnit) {
-        return new RealInterceptorChain(this.f35952a, this.b, this.f35953c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, Util.checkDuration("timeout", i, timeUnit));
+        return new RealInterceptorChain(this.f22261a, this.b, this.f22262c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, Util.checkDuration("timeout", i, timeUnit));
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Interceptor.Chain

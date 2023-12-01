@@ -10,7 +10,7 @@ import com.kwai.filedownloader.message.MessageSnapshot;
 final class p extends com.kwai.filedownloader.services.a<a, com.kwai.filedownloader.b.b> {
 
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/p$a.class */
-    public static final class a extends a.AbstractBinderC0586a {
+    public static final class a extends a.AbstractBinderC0416a {
         protected a() {
         }
 

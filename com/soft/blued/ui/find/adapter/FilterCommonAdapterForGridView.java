@@ -20,13 +20,13 @@ import kotlin.jvm.internal.Intrinsics;
 public final class FilterCommonAdapterForGridView extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30038a;
+    private Context f16348a;
     private List<? extends UserTag> b;
 
     public FilterCommonAdapterForGridView(Context context, List<? extends UserTag> list) {
         Intrinsics.e(context, "context");
         Intrinsics.e(list, "list");
-        this.f30038a = context;
+        this.f16348a = context;
         this.b = list;
     }
 
@@ -50,12 +50,12 @@ public final class FilterCommonAdapterForGridView extends BaseAdapter {
     }
 
     @Override // android.widget.Adapter
-    public View getView(int i, View view, ViewGroup parent) {
+    public View getView(int i, View view, ViewGroup viewGroup) {
         List<? extends UserTag> list;
-        Intrinsics.e(parent, "parent");
-        View inflate = LayoutInflater.from(this.f30038a).inflate(R.layout.item_filter_common_item_for_grid_view, parent, false);
+        Intrinsics.e(viewGroup, "parent");
+        View inflate = LayoutInflater.from(this.f16348a).inflate(R.layout.item_filter_common_item_for_grid_view, viewGroup, false);
         Intrinsics.c(inflate, "from(mContext).inflate(R…grid_view, parent, false)");
-        Context context = this.f30038a;
+        Context context = this.f16348a;
         if (context != null && (list = this.b) != null) {
             ItemFilterCommonItemForGridViewBinding a2 = ItemFilterCommonItemForGridViewBinding.a(inflate);
             Intrinsics.c(a2, "bind(it)");
@@ -70,8 +70,8 @@ public final class FilterCommonAdapterForGridView extends BaseAdapter {
                 shapeModel.k = BluedSkinUtils.a(context, 2131102360);
                 shapeModel.n = BluedSkinUtils.a(context, 2131102360);
             }
-            a2.f29174a.setShapeModel(shapeModel);
-            a2.f29175c.setText(userTag.name);
+            a2.f15484a.setShapeModel(shapeModel);
+            a2.f15485c.setText(userTag.name);
             a2.b.setText(userTag.desc);
             return inflate;
         }

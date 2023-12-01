@@ -71,14 +71,14 @@ public abstract class NetworkAgent extends Handler {
     @Override // android.os.Handler
     public void handleMessage(Message message) {
         switch (message.what) {
-            case AsyncChannel.CMD_CHANNEL_FULL_CONNECTION /* 69633 */:
+            case 69633:
                 if (this.mAsyncChannel != null) {
                     log("Received new connection while already connected!");
                     return;
                 }
                 AsyncChannel asyncChannel = new AsyncChannel();
-                asyncChannel.connected(null, this, message.replyTo);
-                asyncChannel.replyToMessage(message, AsyncChannel.CMD_CHANNEL_FULLY_CONNECTED, 0);
+                asyncChannel.connected((Context) null, this, message.replyTo);
+                asyncChannel.replyToMessage(message, 69634, 0);
                 synchronized (this.mPreConnectedQueue) {
                     this.mAsyncChannel = asyncChannel;
                     Iterator<Message> it = this.mPreConnectedQueue.iterator();
@@ -88,13 +88,13 @@ public abstract class NetworkAgent extends Handler {
                     this.mPreConnectedQueue.clear();
                 }
                 return;
-            case AsyncChannel.CMD_CHANNEL_DISCONNECT /* 69635 */:
+            case 69635:
                 if (this.mAsyncChannel != null) {
                     this.mAsyncChannel.disconnect();
                     return;
                 }
                 return;
-            case AsyncChannel.CMD_CHANNEL_DISCONNECTED /* 69636 */:
+            case 69636:
                 log("NetworkAgent channel lost");
                 unwanted();
                 synchronized (this.mPreConnectedQueue) {

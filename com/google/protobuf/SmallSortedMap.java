@@ -64,14 +64,13 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/protobuf/SmallSortedMap$DescendingEntrySet.class */
-    public class DescendingEntrySet extends SmallSortedMap<K, V>.EntrySet {
+    class DescendingEntrySet extends SmallSortedMap<K, V>.EntrySet {
         private DescendingEntrySet() {
             super();
         }
 
-        @Override // com.google.protobuf.SmallSortedMap.EntrySet, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.protobuf.SmallSortedMap.EntrySet, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Map.Entry<K, V>> iterator() {
             return new DescendingEntryIterator();
         }
@@ -276,7 +275,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
             return true;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Map.Entry<K, V>> iterator() {
             return new EntryIterator();
         }
@@ -291,7 +290,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return SmallSortedMap.this.size();
         }

@@ -22,11 +22,11 @@ public class AnalyticsConfig {
     public static final String RTD_START_TIME = "startTime";
 
     /* renamed from: a  reason: collision with root package name */
-    static double[] f40591a;
+    static double[] f26900a;
     private static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f40592c;
+    private static String f26901c;
     private static String d;
     private static int e = 0;
     public static boolean enable = true;
@@ -55,7 +55,7 @@ public class AnalyticsConfig {
     }
 
     static void a(String str) {
-        f40592c = str;
+        f26901c = str;
     }
 
     public static String getAppkey(Context context) {
@@ -80,7 +80,7 @@ public class AnalyticsConfig {
     }
 
     public static double[] getLocation() {
-        return f40591a;
+        return f26900a;
     }
 
     public static String getRealTimeDebugKey() {

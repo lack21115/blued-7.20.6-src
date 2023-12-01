@@ -510,13 +510,13 @@ public final class MinMaxPriorityQueue<E> extends AbstractQueue<E> {
         return elementData;
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Queue
     public boolean add(E e) {
         offer(e);
         return true;
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         Iterator<? extends E> it = collection.iterator();
         boolean z = false;
@@ -534,7 +534,7 @@ public final class MinMaxPriorityQueue<E> extends AbstractQueue<E> {
         return this.queue.length;
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         int i = 0;
         while (true) {
@@ -576,7 +576,7 @@ public final class MinMaxPriorityQueue<E> extends AbstractQueue<E> {
         return new QueueIterator();
     }
 
-    @Override // java.util.Queue, java.util.concurrent.BlockingQueue
+    @Override // java.util.Queue
     public boolean offer(E e) {
         Preconditions.checkNotNull(e);
         boolean z = true;
@@ -664,12 +664,12 @@ public final class MinMaxPriorityQueue<E> extends AbstractQueue<E> {
         return removeAndGet(getMaxElementIndex());
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.size;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         int i = this.size;
         Object[] objArr = new Object[i];

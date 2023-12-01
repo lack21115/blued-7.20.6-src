@@ -20,11 +20,11 @@ public class r implements com.opos.mobad.n.a {
     private m B;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f26545a;
-    private a.InterfaceC0708a b;
+    private Context f12857a;
+    private a.InterfaceC0538a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.n.d.e f26546c;
+    private com.opos.mobad.n.d.e f12858c;
     private com.opos.mobad.c.c.a d;
     private int e;
     private int f;
@@ -159,7 +159,7 @@ public class r implements com.opos.mobad.n.a {
 
     public r(Context context, int i, com.opos.mobad.c.c.a aVar, int i2, m mVar) {
         this.B = m.NONE;
-        this.f26545a = context;
+        this.f12857a = context;
         this.B = a(mVar);
         this.f = i2;
         this.e = i;
@@ -199,7 +199,7 @@ public class r implements com.opos.mobad.n.a {
             com.opos.mobad.n.a.m r1 = com.opos.mobad.n.a.m.SHAKE
             if (r0 != r1) goto L42
             r0 = r4
-            android.content.Context r0 = r0.f26545a     // Catch: java.lang.Exception -> L30
+            android.content.Context r0 = r0.f12857a     // Catch: java.lang.Exception -> L30
             java.lang.String r1 = "sensor"
             java.lang.Object r0 = r0.getSystemService(r1)     // Catch: java.lang.Exception -> L30
             android.hardware.SensorManager r0 = (android.hardware.SensorManager) r0     // Catch: java.lang.Exception -> L30
@@ -235,7 +235,7 @@ public class r implements com.opos.mobad.n.a {
         this.i.addView(this.j, layoutParams);
         this.i.addView(this.p, layoutParams);
         if (eVar.v != null) {
-            a(eVar.v.f26626a, eVar.v.b);
+            a(eVar.v.f12938a, eVar.v.b);
         }
         k();
         this.A.a(eVar.l, eVar.E, eVar.F);
@@ -250,7 +250,7 @@ public class r implements com.opos.mobad.n.a {
         View view = this.l;
         if (view != null) {
             view.setId(View.generateViewId());
-            this.h.addView(this.l, q.b(this.f26545a));
+            this.h.addView(this.l, q.b(this.f12857a));
             this.l.setVisibility(0);
             layoutParams2.addRule(2, this.l.getId());
         }
@@ -269,9 +269,9 @@ public class r implements com.opos.mobad.n.a {
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams3.addRule(12);
         layoutParams3.addRule(11);
-        layoutParams3.rightMargin = com.opos.cmn.an.h.f.a.a(this.f26545a, 22.0f);
+        layoutParams3.rightMargin = com.opos.cmn.an.h.f.a.a(this.f12857a, 22.0f);
         layoutParams3.bottomMargin = m();
-        View a3 = com.opos.mobad.n.e.a(this.f26546c, this.i, layoutParams3);
+        View a3 = com.opos.mobad.n.e.a(this.f12858c, this.i, layoutParams3);
         this.n = a3;
         a3.setVisibility(4);
         this.i.addView(this.k, l());
@@ -342,12 +342,12 @@ public class r implements com.opos.mobad.n.a {
     }
 
     private void g() {
-        final a aVar = new a(this.f26545a);
-        aVar.a(new a.InterfaceC0678a() { // from class: com.opos.mobad.n.a.r.2
+        final a aVar = new a(this.f12857a);
+        aVar.a(new a.InterfaceC0508a() { // from class: com.opos.mobad.n.a.r.2
             /* JADX WARN: Code restructure failed: missing block: B:15:0x0089, code lost:
-                if (com.opos.mobad.n.a.q.e(r5.b.f26545a) != false) goto L30;
+                if (com.opos.mobad.n.a.q.e(r5.b.f12857a) != false) goto L30;
              */
-            @Override // com.opos.mobad.c.d.a.InterfaceC0678a
+            @Override // com.opos.mobad.c.d.a.InterfaceC0508a
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -364,10 +364,10 @@ public class r implements com.opos.mobad.n.a {
     }
 
     private void h() {
-        RelativeLayout relativeLayout = new RelativeLayout(this.f26545a);
+        RelativeLayout relativeLayout = new RelativeLayout(this.f12857a);
         this.h = relativeLayout;
         relativeLayout.setBackgroundColor(-1);
-        RelativeLayout relativeLayout2 = new RelativeLayout(this.f26545a);
+        RelativeLayout relativeLayout2 = new RelativeLayout(this.f12857a);
         this.i = relativeLayout2;
         relativeLayout2.setBackgroundColor(-1);
         com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.a.r.3
@@ -381,7 +381,7 @@ public class r implements com.opos.mobad.n.a {
         };
         this.i.setOnTouchListener(gVar);
         this.i.setOnClickListener(gVar);
-        this.p = new FrameLayout(this.f26545a);
+        this.p = new FrameLayout(this.f12857a);
         GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{1711276032, 16777215, 16777215, 1711276032});
         gradientDrawable.setGradientType(0);
         this.p.setBackground(gradientDrawable);
@@ -389,7 +389,7 @@ public class r implements com.opos.mobad.n.a {
         View b = this.d.b();
         this.j = b;
         b.setVisibility(0);
-        b bVar = new b(this.f26545a);
+        b bVar = new b(this.f12857a);
         this.o = bVar;
         bVar.setVisibility(4);
         i();
@@ -397,7 +397,7 @@ public class r implements com.opos.mobad.n.a {
     }
 
     private void i() {
-        f a2 = l.a(this.f26545a, this.B);
+        f a2 = l.a(this.f12857a, this.B);
         this.A = a2;
         a2.a(new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.a.r.4
             @Override // com.opos.mobad.n.c.g
@@ -410,13 +410,13 @@ public class r implements com.opos.mobad.n.a {
     }
 
     private void j() {
-        ImageView imageView = new ImageView(this.f26545a);
+        ImageView imageView = new ImageView(this.f12857a);
         this.k = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        this.s = this.f26545a.getResources().getDrawable(R.drawable.opos_mobad_drawable_sound_off);
-        this.t = this.f26545a.getResources().getDrawable(R.drawable.opos_mobad_drawable_sound_on);
-        int a2 = com.opos.cmn.an.h.f.a.a(this.f26545a, 6.0f);
-        int a3 = com.opos.cmn.an.h.f.a.a(this.f26545a, 7.0f);
+        this.s = this.f12857a.getResources().getDrawable(R.drawable.opos_mobad_drawable_sound_off);
+        this.t = this.f12857a.getResources().getDrawable(R.drawable.opos_mobad_drawable_sound_on);
+        int a2 = com.opos.cmn.an.h.f.a.a(this.f12857a, 6.0f);
+        int a3 = com.opos.cmn.an.h.f.a.a(this.f12857a, 7.0f);
         this.k.setPadding(a2, a3, a2, a3);
         this.k.setImageDrawable(this.s);
         this.k.setOnClickListener(new View.OnClickListener() { // from class: com.opos.mobad.n.a.r.5
@@ -434,23 +434,23 @@ public class r implements com.opos.mobad.n.a {
         layoutParams.addRule(12);
         layoutParams.addRule(14);
         int i = this.f;
-        layoutParams.bottomMargin = com.opos.cmn.an.h.f.a.a(this.f26545a, i != 1 ? i != 2 ? 72 : 37 : 79);
+        layoutParams.bottomMargin = com.opos.cmn.an.h.f.a.a(this.f12857a, i != 1 ? i != 2 ? 72 : 37 : 79);
         this.i.addView(this.A.a(), layoutParams);
     }
 
     private RelativeLayout.LayoutParams l() {
-        int a2 = com.opos.cmn.an.h.f.a.a(this.f26545a, 26.0f);
+        int a2 = com.opos.cmn.an.h.f.a.a(this.f12857a, 26.0f);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(a2, a2);
         layoutParams.addRule(11);
         layoutParams.addRule(10);
-        int i = this.f26546c.o == 0 ? 96 : 22;
-        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f26545a, 33.0f);
-        layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.f26545a, i);
+        int i = this.f12858c.o == 0 ? 96 : 22;
+        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f12857a, 33.0f);
+        layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.f12857a, i);
         return layoutParams;
     }
 
     private int m() {
-        return com.opos.cmn.an.h.f.a.a(this.f26545a, this.f != 1 ? 15 : 30);
+        return com.opos.cmn.an.h.f.a.a(this.f12857a, this.f != 1 ? 15 : 30);
     }
 
     private int n() {
@@ -502,10 +502,10 @@ public class r implements com.opos.mobad.n.a {
     public void r() {
         if (s()) {
             com.opos.cmn.an.f.a.b("SplashVideo", "handleAdClosed");
-            a.InterfaceC0708a interfaceC0708a = this.b;
-            if (interfaceC0708a != null) {
+            a.InterfaceC0538a interfaceC0538a = this.b;
+            if (interfaceC0538a != null) {
                 long j = this.x;
-                interfaceC0708a.a(j, j);
+                interfaceC0538a.a(j, j);
             }
         }
     }
@@ -518,11 +518,11 @@ public class r implements com.opos.mobad.n.a {
     /* JADX INFO: Access modifiers changed from: private */
     public void t() {
         com.opos.cmn.an.f.a.b("SplashVideo", "start to play video");
-        com.opos.mobad.n.d.e eVar = this.f26546c;
-        if (eVar == null || eVar.f26630a == null) {
+        com.opos.mobad.n.d.e eVar = this.f12858c;
+        if (eVar == null || eVar.f12942a == null) {
             return;
         }
-        this.d.a(this.f26546c.f26630a.f26633a);
+        this.d.a(this.f12858c.f12942a.f12945a);
         this.d.e();
     }
 
@@ -540,9 +540,9 @@ public class r implements com.opos.mobad.n.a {
     }
 
     @Override // com.opos.mobad.n.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.o.a(interfaceC0708a);
-        this.b = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.o.a(interfaceC0538a);
+        this.b = interfaceC0538a;
     }
 
     @Override // com.opos.mobad.n.a
@@ -554,7 +554,7 @@ public class r implements com.opos.mobad.n.a {
             return;
         }
         com.opos.cmn.an.f.a.b("SplashVideo", "render");
-        this.f26546c = b;
+        this.f12858c = b;
         this.q = b.u;
         long j = b.w;
         this.r = j;
@@ -593,7 +593,7 @@ public class r implements com.opos.mobad.n.a {
         this.A.f();
         a();
         p();
-        this.f26546c = null;
+        this.f12858c = null;
         this.u = 6;
         this.w.a();
         this.w.b();

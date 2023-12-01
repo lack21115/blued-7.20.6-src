@@ -28,20 +28,20 @@ public class AccessibilityDelegateCompat {
     public static final class AccessibilityDelegateAdapter extends View.AccessibilityDelegate {
 
         /* renamed from: a  reason: collision with root package name */
-        final AccessibilityDelegateCompat f2615a;
+        final AccessibilityDelegateCompat f2567a;
 
         AccessibilityDelegateAdapter(AccessibilityDelegateCompat accessibilityDelegateCompat) {
-            this.f2615a = accessibilityDelegateCompat;
+            this.f2567a = accessibilityDelegateCompat;
         }
 
         @Override // android.view.View.AccessibilityDelegate
         public boolean dispatchPopulateAccessibilityEvent(View view, AccessibilityEvent accessibilityEvent) {
-            return this.f2615a.dispatchPopulateAccessibilityEvent(view, accessibilityEvent);
+            return this.f2567a.dispatchPopulateAccessibilityEvent(view, accessibilityEvent);
         }
 
         @Override // android.view.View.AccessibilityDelegate
         public AccessibilityNodeProvider getAccessibilityNodeProvider(View view) {
-            AccessibilityNodeProviderCompat accessibilityNodeProvider = this.f2615a.getAccessibilityNodeProvider(view);
+            AccessibilityNodeProviderCompat accessibilityNodeProvider = this.f2567a.getAccessibilityNodeProvider(view);
             if (accessibilityNodeProvider != null) {
                 return (AccessibilityNodeProvider) accessibilityNodeProvider.getProvider();
             }
@@ -50,7 +50,7 @@ public class AccessibilityDelegateCompat {
 
         @Override // android.view.View.AccessibilityDelegate
         public void onInitializeAccessibilityEvent(View view, AccessibilityEvent accessibilityEvent) {
-            this.f2615a.onInitializeAccessibilityEvent(view, accessibilityEvent);
+            this.f2567a.onInitializeAccessibilityEvent(view, accessibilityEvent);
         }
 
         @Override // android.view.View.AccessibilityDelegate
@@ -60,7 +60,7 @@ public class AccessibilityDelegateCompat {
             wrap.setHeading(ViewCompat.isAccessibilityHeading(view));
             wrap.setPaneTitle(ViewCompat.getAccessibilityPaneTitle(view));
             wrap.setStateDescription(ViewCompat.getStateDescription(view));
-            this.f2615a.onInitializeAccessibilityNodeInfo(view, wrap);
+            this.f2567a.onInitializeAccessibilityNodeInfo(view, wrap);
             wrap.addSpansToExtras(accessibilityNodeInfo.getText(), view);
             List<AccessibilityNodeInfoCompat.AccessibilityActionCompat> actionList = AccessibilityDelegateCompat.getActionList(view);
             int i = 0;
@@ -76,27 +76,27 @@ public class AccessibilityDelegateCompat {
 
         @Override // android.view.View.AccessibilityDelegate
         public void onPopulateAccessibilityEvent(View view, AccessibilityEvent accessibilityEvent) {
-            this.f2615a.onPopulateAccessibilityEvent(view, accessibilityEvent);
+            this.f2567a.onPopulateAccessibilityEvent(view, accessibilityEvent);
         }
 
         @Override // android.view.View.AccessibilityDelegate
         public boolean onRequestSendAccessibilityEvent(ViewGroup viewGroup, View view, AccessibilityEvent accessibilityEvent) {
-            return this.f2615a.onRequestSendAccessibilityEvent(viewGroup, view, accessibilityEvent);
+            return this.f2567a.onRequestSendAccessibilityEvent(viewGroup, view, accessibilityEvent);
         }
 
         @Override // android.view.View.AccessibilityDelegate
         public boolean performAccessibilityAction(View view, int i, Bundle bundle) {
-            return this.f2615a.performAccessibilityAction(view, i, bundle);
+            return this.f2567a.performAccessibilityAction(view, i, bundle);
         }
 
         @Override // android.view.View.AccessibilityDelegate
         public void sendAccessibilityEvent(View view, int i) {
-            this.f2615a.sendAccessibilityEvent(view, i);
+            this.f2567a.sendAccessibilityEvent(view, i);
         }
 
         @Override // android.view.View.AccessibilityDelegate
         public void sendAccessibilityEventUnchecked(View view, AccessibilityEvent accessibilityEvent) {
-            this.f2615a.sendAccessibilityEventUnchecked(view, accessibilityEvent);
+            this.f2567a.sendAccessibilityEventUnchecked(view, accessibilityEvent);
         }
     }
 

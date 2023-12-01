@@ -7,15 +7,15 @@ import android.view.View;
 public class a extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private InterfaceC0726a f27176a;
+    private InterfaceC0556a f13488a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f27177c;
+    private volatile boolean f13489c;
 
     /* renamed from: com.opos.mobad.q.a.f.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/q/a/f/a$a.class */
-    public interface InterfaceC0726a {
+    public interface InterfaceC0556a {
         void a();
 
         void a(boolean z);
@@ -26,58 +26,55 @@ public class a extends View {
     public a(Context context) {
         super(context);
         this.b = false;
-        this.f27177c = false;
+        this.f13489c = false;
     }
 
     public void a() {
-        if (this.f27176a != null) {
-            this.f27176a = null;
+        if (this.f13488a != null) {
+            this.f13488a = null;
         }
     }
 
-    public void a(InterfaceC0726a interfaceC0726a) {
-        this.f27176a = interfaceC0726a;
-        if (!this.b || interfaceC0726a == null) {
+    public void a(InterfaceC0556a interfaceC0556a) {
+        this.f13488a = interfaceC0556a;
+        if (!this.b || interfaceC0556a == null) {
             return;
         }
-        interfaceC0726a.b();
+        interfaceC0556a.b();
     }
 
     protected void a(boolean z) {
-        if (this.f27177c == (!z)) {
-            this.f27177c = z;
-            InterfaceC0726a interfaceC0726a = this.f27176a;
-            if (interfaceC0726a != null) {
-                interfaceC0726a.a(z);
+        if (this.f13489c == (!z)) {
+            this.f13489c = z;
+            InterfaceC0556a interfaceC0556a = this.f13488a;
+            if (interfaceC0556a != null) {
+                interfaceC0556a.a(z);
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.b = true;
-        InterfaceC0726a interfaceC0726a = this.f27176a;
-        if (interfaceC0726a != null) {
-            interfaceC0726a.b();
+        InterfaceC0556a interfaceC0556a = this.f13488a;
+        if (interfaceC0556a != null) {
+            interfaceC0556a.b();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.b = false;
-        InterfaceC0726a interfaceC0726a = this.f27176a;
-        if (interfaceC0726a != null) {
-            interfaceC0726a.a();
+        InterfaceC0556a interfaceC0556a = this.f13488a;
+        if (interfaceC0556a != null) {
+            interfaceC0556a.a();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onWindowVisibilityChanged(int i) {
+    protected void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
         a(i == 0);
     }

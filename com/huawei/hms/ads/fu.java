@@ -31,7 +31,7 @@ public class fu extends af {
 
         @Override // com.huawei.hms.ads.inter.listeners.IInterstitialAdStatusListener
         public void onAdCompleted() {
-            af.Code(this.V, this.Code, 1000, new JsbCallBackData(null, false, ag.f22435a));
+            af.Code(this.V, this.Code, 1000, new JsbCallBackData(null, false, ag.f8827a));
         }
 
         @Override // com.huawei.hms.ads.inter.listeners.IInterstitialAdStatusListener

@@ -1,6 +1,5 @@
 package com.blued.android.module.live_china.mine;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -33,11 +32,11 @@ public class LiveGiftCountInputDlg extends LiveBaseDialogFragment {
     }
 
     private void k() {
-        int a2 = CommonStringUtils.a(this.k.getText().toString());
-        if (a2 <= 0) {
+        int a = CommonStringUtils.a(this.k.getText().toString());
+        if (a <= 0) {
             return;
         }
-        LiveEventBusUtil.c(a2);
+        LiveEventBusUtil.c(a);
         a(new Runnable() { // from class: com.blued.android.module.live_china.mine.LiveGiftCountInputDlg.2
             @Override // java.lang.Runnable
             public void run() {
@@ -52,7 +51,7 @@ public class LiveGiftCountInputDlg extends LiveBaseDialogFragment {
         this.j.setFocusableInTouchMode(true);
         this.j.setFocusable(true);
         this.j.requestFocus();
-        ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(this.j, 0);
+        ((InputMethodManager) getActivity().getSystemService("input_method")).showSoftInput(this.j, 0);
     }
 
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
@@ -109,12 +108,12 @@ public class LiveGiftCountInputDlg extends LiveBaseDialogFragment {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         PlayingOnliveFragment.cv = true;

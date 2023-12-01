@@ -10,7 +10,7 @@ public class zh extends JsonComposer {
     @Json(name = BatteryManager.EXTRA_LEVEL)
 
     /* renamed from: a  reason: collision with root package name */
-    private int[] f38165a;
+    private int[] f24474a;
     @Json(name = "districts")
     private List<ai> b;
 
@@ -19,11 +19,11 @@ public class zh extends JsonComposer {
     }
 
     public void a(int[] iArr) {
-        this.f38165a = iArr;
+        this.f24474a = iArr;
     }
 
     public int[] a() {
-        return this.f38165a;
+        return this.f24474a;
     }
 
     public List<ai> b() {

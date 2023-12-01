@@ -13,9 +13,7 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/a/c.class */
 public class c extends d {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Long f4453a = 300000L;
+    private static final Long a = 300000L;
 
     /* renamed from: a  reason: collision with other field name */
     private Metric f16a;
@@ -33,7 +31,7 @@ public class c extends d {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public MeasureValueSet m2134a() {
+    public MeasureValueSet m8577a() {
         return this.f17b;
     }
 
@@ -55,7 +53,7 @@ public class c extends d {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public boolean m2135a(String str) {
+    public boolean m8578a(String str) {
         MeasureValue measureValue = this.f.get(str);
         if (measureValue != null) {
             double currentTimeMillis = System.currentTimeMillis();
@@ -102,7 +100,7 @@ public class c extends d {
             }
             Measure measure = measures.get(i2);
             if (measure != null) {
-                double doubleValue = measure.getMax() != null ? measure.getMax().doubleValue() : f4453a.longValue();
+                double doubleValue = measure.getMax() != null ? measure.getMax().doubleValue() : a.longValue();
                 MeasureValue measureValue = this.f.get(measure.getName());
                 if (measureValue != null && !measureValue.isFinish() && currentTimeMillis - measureValue.getValue() > doubleValue) {
                     return true;

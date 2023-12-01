@@ -9,7 +9,7 @@ public class d extends f {
 
     public d() {
         h hVar = this.i;
-        hVar.f37496c = (short) 2;
+        hVar.f23805c = (short) 2;
         hVar.d = (byte) 0;
         hVar.e = 0;
         hVar.j = 0;
@@ -27,7 +27,7 @@ public class d extends f {
     }
 
     public void a(short s) {
-        this.i.f37496c = s;
+        this.i.f23805c = s;
         if (s == 3) {
             g();
         }
@@ -87,6 +87,6 @@ public class d extends f {
     }
 
     public short z() {
-        return this.i.f37496c;
+        return this.i.f23805c;
     }
 }

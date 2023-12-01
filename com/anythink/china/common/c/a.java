@@ -48,10 +48,10 @@ public final class a {
         if (context == null || file == null) {
             return false;
         }
-        String a2 = a(context, file);
-        if (TextUtils.isEmpty(a2)) {
+        String a = a(context, file);
+        if (TextUtils.isEmpty(a)) {
             return false;
         }
-        return a(context, a2);
+        return a(context, a);
     }
 }

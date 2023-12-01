@@ -36,14 +36,10 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/test/LiveFragmentTest.class */
 public final class LiveFragmentTest extends MVVMBaseFragment<EmptyViewModel> implements View.OnClickListener {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f14137c;
+    private final ViewBindingProperty c;
     private MyAdapter d;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(LiveFragmentTest.class, "viewBinding", "getViewBinding()Lcom/blued/android/module/live_china/databinding/LiveFragmentLayoutTestBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14136a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/test/LiveFragmentTest$Companion.class */
@@ -64,23 +60,19 @@ public final class LiveFragmentTest extends MVVMBaseFragment<EmptyViewModel> imp
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/test/LiveFragmentTest$MyAdapter.class */
     public static final class MyAdapter extends FragmentStatePagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final List<String> f14138a;
+        private final List<String> a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public MyAdapter(FragmentManager fm) {
             super(fm);
             Intrinsics.e(fm, "fm");
-            this.f14138a = CollectionsKt.b("热门", "关注");
+            this.a = CollectionsKt.b("热门", "关注");
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return 2;
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter
         public Fragment getItem(int i) {
             return i == 0 ? new LiveMainFragment() : new LiveHomeFramentTest(1);
         }
@@ -88,7 +80,7 @@ public final class LiveFragmentTest extends MVVMBaseFragment<EmptyViewModel> imp
 
     public LiveFragmentTest() {
         super(R.layout.live_fragment_layout_test);
-        this.f14137c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LiveFragmentTest, LiveFragmentLayoutTestBinding>() { // from class: com.blued.android.module.live_china.test.LiveFragmentTest$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LiveFragmentTest, LiveFragmentLayoutTestBinding>() { // from class: com.blued.android.module.live_china.test.LiveFragmentTest$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final LiveFragmentLayoutTestBinding invoke(LiveFragmentTest fragment) {
@@ -117,15 +109,12 @@ public final class LiveFragmentTest extends MVVMBaseFragment<EmptyViewModel> imp
         p.h.setAdapter(q());
         p.b.setText(LiveRoomInfo.a().c());
         p.h.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.test.LiveFragmentTest$initView$1$1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 if (i == 0) {
                     TextView textView = LiveFragmentLayoutTestBinding.this.g;
@@ -161,7 +150,7 @@ public final class LiveFragmentTest extends MVVMBaseFragment<EmptyViewModel> imp
         textView.setOnClickListener(liveFragmentTest);
         p.g.setOnClickListener(liveFragmentTest);
         p.f.setOnClickListener(liveFragmentTest);
-        p.f12215c.setOnClickListener(liveFragmentTest);
+        p.c.setOnClickListener(liveFragmentTest);
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -176,7 +165,7 @@ public final class LiveFragmentTest extends MVVMBaseFragment<EmptyViewModel> imp
         Intrinsics.e(v, "v");
         int id = v.getId();
         if (id == R.id.tv_exit) {
-            LoginFragment.f20569a.a(getContext());
+            LoginFragment.a.a(getContext());
             FragmentActivity activity = getActivity();
             if (activity == null) {
                 return;
@@ -202,7 +191,7 @@ public final class LiveFragmentTest extends MVVMBaseFragment<EmptyViewModel> imp
     }
 
     public final LiveFragmentLayoutTestBinding p() {
-        return (LiveFragmentLayoutTestBinding) this.f14137c.b(this, b[0]);
+        return (LiveFragmentLayoutTestBinding) this.c.b(this, b[0]);
     }
 
     public final MyAdapter q() {

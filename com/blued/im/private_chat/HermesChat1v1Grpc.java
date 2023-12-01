@@ -33,12 +33,10 @@ public final class HermesChat1v1Grpc {
         HermesChat1v1BaseDescriptorSupplier() {
         }
 
-        @Override // io.grpc.protobuf.ProtoFileDescriptorSupplier
         public Descriptors.FileDescriptor getFileDescriptor() {
             return Chat1V1.getDescriptor();
         }
 
-        @Override // io.grpc.protobuf.ProtoServiceDescriptorSupplier
         public Descriptors.ServiceDescriptor getServiceDescriptor() {
             return getFileDescriptor().findServiceByName("HermesChat1v1");
         }
@@ -51,8 +49,8 @@ public final class HermesChat1v1Grpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public HermesChat1v1BlockingStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public HermesChat1v1BlockingStub m2438build(Channel channel, CallOptions callOptions) {
             return new HermesChat1v1BlockingStub(channel, callOptions);
         }
 
@@ -75,8 +73,8 @@ public final class HermesChat1v1Grpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public HermesChat1v1FutureStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public HermesChat1v1FutureStub m2439build(Channel channel, CallOptions callOptions) {
             return new HermesChat1v1FutureStub(channel, callOptions);
         }
 
@@ -106,7 +104,6 @@ public final class HermesChat1v1Grpc {
             this.methodName = str;
         }
 
-        @Override // io.grpc.protobuf.ProtoMethodDescriptorSupplier
         public Descriptors.MethodDescriptor getMethodDescriptor() {
             return getServiceDescriptor().findMethodByName(this.methodName);
         }
@@ -119,8 +116,8 @@ public final class HermesChat1v1Grpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public HermesChat1v1Stub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public HermesChat1v1Stub m2440build(Channel channel, CallOptions callOptions) {
             return new HermesChat1v1Stub(channel, callOptions);
         }
 
@@ -139,12 +136,10 @@ public final class HermesChat1v1Grpc {
             this.methodId = i;
         }
 
-        @Override // io.grpc.stub.ServerCalls.BidiStreamingMethod, io.grpc.stub.ServerCalls.StreamingRequestMethod, io.grpc.stub.ServerCalls.ClientStreamingMethod
         public StreamObserver<Req> invoke(StreamObserver<Resp> streamObserver) {
             throw new AssertionError();
         }
 
-        @Override // io.grpc.stub.ServerCalls.ServerStreamingMethod, io.grpc.stub.ServerCalls.UnaryRequestMethod, io.grpc.stub.ServerCalls.UnaryMethod
         public void invoke(Req req, StreamObserver<Resp> streamObserver) {
             if (this.methodId != 0) {
                 throw new AssertionError();
@@ -199,30 +194,27 @@ public final class HermesChat1v1Grpc {
     }
 
     public static HermesChat1v1BlockingStub newBlockingStub(Channel channel) {
-        return (HermesChat1v1BlockingStub) HermesChat1v1BlockingStub.newStub(new AbstractStub.StubFactory<HermesChat1v1BlockingStub>() { // from class: com.blued.im.private_chat.HermesChat1v1Grpc.2
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public HermesChat1v1BlockingStub newStub(Channel channel2, CallOptions callOptions) {
+        return HermesChat1v1BlockingStub.newStub(new AbstractStub.StubFactory<HermesChat1v1BlockingStub>() { // from class: com.blued.im.private_chat.HermesChat1v1Grpc.2
+            /* renamed from: newStub */
+            public HermesChat1v1BlockingStub m2436newStub(Channel channel2, CallOptions callOptions) {
                 return new HermesChat1v1BlockingStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static HermesChat1v1FutureStub newFutureStub(Channel channel) {
-        return (HermesChat1v1FutureStub) HermesChat1v1FutureStub.newStub(new AbstractStub.StubFactory<HermesChat1v1FutureStub>() { // from class: com.blued.im.private_chat.HermesChat1v1Grpc.3
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public HermesChat1v1FutureStub newStub(Channel channel2, CallOptions callOptions) {
+        return HermesChat1v1FutureStub.newStub(new AbstractStub.StubFactory<HermesChat1v1FutureStub>() { // from class: com.blued.im.private_chat.HermesChat1v1Grpc.3
+            /* renamed from: newStub */
+            public HermesChat1v1FutureStub m2437newStub(Channel channel2, CallOptions callOptions) {
                 return new HermesChat1v1FutureStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static HermesChat1v1Stub newStub(Channel channel) {
-        return (HermesChat1v1Stub) HermesChat1v1Stub.newStub(new AbstractStub.StubFactory<HermesChat1v1Stub>() { // from class: com.blued.im.private_chat.HermesChat1v1Grpc.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public HermesChat1v1Stub newStub(Channel channel2, CallOptions callOptions) {
+        return HermesChat1v1Stub.newStub(new AbstractStub.StubFactory<HermesChat1v1Stub>() { // from class: com.blued.im.private_chat.HermesChat1v1Grpc.1
+            /* renamed from: newStub */
+            public HermesChat1v1Stub m2435newStub(Channel channel2, CallOptions callOptions) {
                 return new HermesChat1v1Stub(channel2, callOptions);
             }
         }, channel);

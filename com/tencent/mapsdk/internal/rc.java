@@ -155,14 +155,14 @@ public class rc extends u1 implements e1, j5 {
     public class d {
 
         /* renamed from: a  reason: collision with root package name */
-        private List<d5> f37744a = new CopyOnWriteArrayList();
+        private List<d5> f24053a = new CopyOnWriteArrayList();
 
         public d() {
         }
 
         private void a(Language language) {
             synchronized (this) {
-                for (d5 d5Var : this.f37744a) {
+                for (d5 d5Var : this.f24053a) {
                     if (d5Var != null) {
                         d5Var.a(language);
                     }
@@ -181,9 +181,9 @@ public class rc extends u1 implements e1, j5 {
             if (d5Var == null) {
                 return;
             }
-            synchronized (this.f37744a) {
-                if (!this.f37744a.contains(d5Var)) {
-                    this.f37744a.add(d5Var);
+            synchronized (this.f24053a) {
+                if (!this.f24053a.contains(d5Var)) {
+                    this.f24053a.add(d5Var);
                 }
             }
         }
@@ -192,7 +192,7 @@ public class rc extends u1 implements e1, j5 {
             if (d5Var == null) {
                 return;
             }
-            this.f37744a.remove(d5Var);
+            this.f24053a.remove(d5Var);
         }
 
         public void b(Language language) {
@@ -209,7 +209,7 @@ public class rc extends u1 implements e1, j5 {
     public class e implements d5 {
 
         /* renamed from: a  reason: collision with root package name */
-        private List<MapRouteSection> f37745a;
+        private List<MapRouteSection> f24054a;
         private List<GeoPoint> b;
 
         public e() {
@@ -218,7 +218,7 @@ public class rc extends u1 implements e1, j5 {
 
         public void a() {
             rc.this.o.g();
-            this.f37745a = null;
+            this.f24054a = null;
             this.b = null;
         }
 
@@ -226,14 +226,14 @@ public class rc extends u1 implements e1, j5 {
         public void a(Language language) {
             if (language != Language.zh) {
                 rc.this.o.g();
-            } else if (this.f37745a == null || this.b == null) {
+            } else if (this.f24054a == null || this.b == null) {
             } else {
-                rc.this.o.a(this.f37745a, this.b);
+                rc.this.o.a(this.f24054a, this.b);
             }
         }
 
         public void a(List<MapRouteSection> list, List<GeoPoint> list2) {
-            this.f37745a = list;
+            this.f24054a = list;
             this.b = list2;
             rc.this.o.a(list, list2);
         }
@@ -247,11 +247,11 @@ public class rc extends u1 implements e1, j5 {
     public class f {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ArrayList<g> f37747a;
+        private final ArrayList<g> f24056a;
         private g b;
 
         private f() {
-            this.f37747a = new ArrayList<>();
+            this.f24056a = new ArrayList<>();
         }
 
         public /* synthetic */ f(rc rcVar, a aVar) {
@@ -293,8 +293,8 @@ public class rc extends u1 implements e1, j5 {
                 return;
             }
             gVar.e();
-            synchronized (this.f37747a) {
-                this.f37747a.remove(gVar);
+            synchronized (this.f24056a) {
+                this.f24056a.remove(gVar);
             }
             rc.this.q.N();
         }
@@ -302,8 +302,8 @@ public class rc extends u1 implements e1, j5 {
         /* JADX INFO: Access modifiers changed from: private */
         public void a(u4 u4Var, Rect rect, k5 k5Var, int i, int i2) {
             g gVar = new g(rc.this, u4Var, rect, k5Var, i, i2, null);
-            synchronized (this.f37747a) {
-                this.f37747a.add(gVar);
+            synchronized (this.f24056a) {
+                this.f24056a.add(gVar);
             }
             na.c("snapshot addSnapshotRequest");
             rc.this.w0();
@@ -311,8 +311,8 @@ public class rc extends u1 implements e1, j5 {
 
         private g b() {
             g gVar;
-            synchronized (this.f37747a) {
-                gVar = this.f37747a.size() > 0 ? this.f37747a.get(0) : null;
+            synchronized (this.f24056a) {
+                gVar = this.f24056a.size() > 0 ? this.f24056a.get(0) : null;
             }
             return gVar;
         }
@@ -348,8 +348,8 @@ public class rc extends u1 implements e1, j5 {
         public void a() {
             synchronized (this) {
                 na.c("snapshot cancel");
-                synchronized (this.f37747a) {
-                    this.f37747a.clear();
+                synchronized (this.f24056a) {
+                    this.f24056a.clear();
                 }
                 g gVar = this.b;
                 if (gVar != null) {
@@ -365,7 +365,7 @@ public class rc extends u1 implements e1, j5 {
                     int i = this.b.d;
                     int i2 = this.b.e;
                     k5 k5Var = this.b.b;
-                    u4 u4Var = this.b.f37750c;
+                    u4 u4Var = this.b.f24059c;
                     Bitmap a2 = a(gl10, i, i2);
                     if (k5Var != null && !this.b.d()) {
                         k5Var.a(a2, u4Var);
@@ -380,7 +380,7 @@ public class rc extends u1 implements e1, j5 {
                 if (rc.this.o == null) {
                     return;
                 }
-                u4 u4Var = this.b.f37750c;
+                u4 u4Var = this.b.f24059c;
                 if (u4Var != null) {
                     u4Var.a(gl10);
                 }
@@ -390,8 +390,8 @@ public class rc extends u1 implements e1, j5 {
 
         public boolean c() {
             boolean z;
-            synchronized (this.f37747a) {
-                ArrayList<g> arrayList = this.f37747a;
+            synchronized (this.f24056a) {
+                ArrayList<g> arrayList = this.f24056a;
                 if (arrayList != null && !arrayList.isEmpty()) {
                     z = false;
                 }
@@ -409,19 +409,19 @@ public class rc extends u1 implements e1, j5 {
         public static final int l = 3;
 
         /* renamed from: a  reason: collision with root package name */
-        private int f37749a;
+        private int f24058a;
         private k5 b;
 
         /* renamed from: c  reason: collision with root package name */
-        private u4 f37750c;
+        private u4 f24059c;
         private int d;
         private int e;
         private Rect f;
         private int g;
 
         private g(u4 u4Var, Rect rect, k5 k5Var, int i2, int i3) {
-            this.f37749a = 0;
-            this.f37750c = u4Var;
+            this.f24058a = 0;
+            this.f24059c = u4Var;
             this.f = rect;
             this.b = k5Var;
             this.d = i2;
@@ -434,14 +434,14 @@ public class rc extends u1 implements e1, j5 {
         }
 
         public static /* synthetic */ int d(g gVar) {
-            int i2 = gVar.f37749a;
-            gVar.f37749a = i2 + 1;
+            int i2 = gVar.f24058a;
+            gVar.f24058a = i2 + 1;
             return i2;
         }
 
         public void a() {
             this.g = 1;
-            this.f37749a = 0;
+            this.f24058a = 0;
         }
 
         public void a(int i2) {
@@ -471,7 +471,7 @@ public class rc extends u1 implements e1, j5 {
         public void e() {
             synchronized (this) {
                 this.g = 2;
-                this.f37749a = 0;
+                this.f24058a = 0;
             }
         }
     }
@@ -557,7 +557,7 @@ public class rc extends u1 implements e1, j5 {
     }
 
     private rd b(r5 r5Var) {
-        rd rdVar = new rd(r5Var.v, r5Var.f37734c);
+        rd rdVar = new rd(r5Var.v, r5Var.f24043c);
         if (!TextUtils.isEmpty(r5Var.i)) {
             SubMarkerInfo subMarkerInfo = new SubMarkerInfo();
             subMarkerInfo.iconName(r5Var.i);
@@ -1679,9 +1679,9 @@ public class rc extends u1 implements e1, j5 {
             }
             if (!this.A.c() && a2 != null) {
                 if (a2.b()) {
-                    a2.f37749a = 0;
-                } else if (this.o.N() || a2.f37749a >= 100) {
-                    a2.f37749a = 0;
+                    a2.f24058a = 0;
+                } else if (this.o.N() || a2.f24058a >= 100) {
+                    a2.f24058a = 0;
                     this.A.a(gl10, this.t, this.v);
                 } else {
                     g.d(a2);

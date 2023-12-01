@@ -53,13 +53,13 @@ public class SobotProvinAdapter extends SobotBaseAdapter<SobotProvinInfo.SobotPr
             }
             if (sobotProvinceModel.nodeFlag) {
                 this.categoryIshave.setVisibility(0);
-                this.categoryIshave.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_right_arrow_icon"));
+                this.categoryIshave.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_right_arrow_icon"));
             } else {
                 this.categoryIshave.setVisibility(8);
             }
             if (sobotProvinceModel.isChecked) {
                 this.categoryIshave.setVisibility(0);
-                this.categoryIshave.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_work_order_selected_mark"));
+                this.categoryIshave.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_work_order_selected_mark"));
             }
         }
 

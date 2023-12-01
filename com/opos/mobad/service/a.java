@@ -17,18 +17,18 @@ public class a {
     private static volatile a f;
 
     /* renamed from: a  reason: collision with root package name */
-    private InterfaceC0728a f27276a;
+    private InterfaceC0558a f13588a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27277c = 0;
+    private int f13589c = 0;
     private AtomicInteger d = new AtomicInteger(0);
     private AtomicInteger e = new AtomicInteger(0);
     private AtomicInteger g = new AtomicInteger(0);
 
     /* renamed from: com.opos.mobad.service.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/service/a$a.class */
-    public interface InterfaceC0728a {
+    public interface InterfaceC0558a {
         void a(int i);
 
         void a(String str);
@@ -64,15 +64,15 @@ public class a {
     }
 
     private FutureTask<Integer> a(final Context context, final String str, final boolean z) {
-        if (TextUtils.isEmpty(this.b) || this.f27277c == 0) {
+        if (TextUtils.isEmpty(this.b) || this.f13589c == 0) {
             return null;
         }
         FutureTask<Integer> futureTask = new FutureTask<>(new Callable<Integer>() { // from class: com.opos.mobad.service.a.1
             @Override // java.util.concurrent.Callable
             /* renamed from: a */
             public Integer call() throws Exception {
-                b.C0737b c2 = a.this.c(context, str);
-                return Integer.valueOf((c2 == null || c2.f27378a != 200 || c2.f27379c == 0) ? z ? a.this.g() : a.this.f() : ((v) c2.f27379c).i.booleanValue() ? 1 : ((v) c2.f27379c).h == w.VIP ? 2 : 0);
+                b.C0567b c2 = a.this.c(context, str);
+                return Integer.valueOf((c2 == null || c2.f13690a != 200 || c2.f13691c == 0) ? z ? a.this.g() : a.this.f() : ((v) c2.f13691c).i.booleanValue() ? 1 : ((v) c2.f13691c).h == w.VIP ? 2 : 0);
             }
         });
         com.opos.cmn.an.j.b.c(futureTask);
@@ -86,7 +86,7 @@ public class a {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public com.opos.mobad.service.h.b.C0737b<com.opos.mobad.m.a.v> c(android.content.Context r8, java.lang.String r9) {
+    public com.opos.mobad.service.h.b.C0567b<com.opos.mobad.m.a.v> c(android.content.Context r8, java.lang.String r9) {
         /*
             r7 = this;
             com.opos.mobad.m.a.t$a r0 = new com.opos.mobad.m.a.t$a
@@ -97,7 +97,7 @@ public class a {
             com.opos.mobad.m.a.t$a r0 = r0.a(r1)
             r12 = r0
             r0 = r7
-            int r0 = r0.f27277c
+            int r0 = r0.f13589c
             r10 = r0
             r0 = r10
             r1 = -1
@@ -157,7 +157,7 @@ public class a {
             r0 = r9
             if (r0 == 0) goto L99
             r0 = r9
-            T r0 = r0.f27379c
+            T r0 = r0.f13691c
             com.opos.mobad.m.a.v r0 = (com.opos.mobad.m.a.v) r0
             r8 = r0
             goto L9b
@@ -183,14 +183,14 @@ public class a {
     }
 
     public void a(String str, int i, String str2, String str3, String str4, String str5, String str6) {
-        InterfaceC0728a interfaceC0728a;
+        InterfaceC0558a interfaceC0558a;
         com.opos.cmn.an.f.a.b("am", "do exercise");
         com.opos.mobad.service.i.d.a().a(str, str2, str3, str4, str5, str6, this.b);
-        if (TextUtils.isEmpty(this.b) || (interfaceC0728a = this.f27276a) == null) {
+        if (TextUtils.isEmpty(this.b) || (interfaceC0558a = this.f13588a) == null) {
             return;
         }
         try {
-            interfaceC0728a.a(i);
+            interfaceC0558a.a(i);
         } catch (Throwable th) {
             com.opos.cmn.an.f.a.b("am", "on exercise fail", th);
         }
@@ -202,8 +202,8 @@ public class a {
 
     public void b() {
         this.b = null;
-        this.f27277c = 0;
-        this.f27276a = null;
+        this.f13589c = 0;
+        this.f13588a = null;
         this.d = new AtomicInteger(0);
         this.e = new AtomicInteger(0);
     }
@@ -213,14 +213,14 @@ public class a {
     }
 
     public int d() {
-        return this.f27277c;
+        return this.f13589c;
     }
 
     public void e() {
-        InterfaceC0728a interfaceC0728a = this.f27276a;
-        if (interfaceC0728a != null) {
+        InterfaceC0558a interfaceC0558a = this.f13588a;
+        if (interfaceC0558a != null) {
             try {
-                interfaceC0728a.a(this.b);
+                interfaceC0558a.a(this.b);
             } catch (Throwable th) {
                 com.opos.cmn.an.f.a.b("am", "promote fail", th);
             }

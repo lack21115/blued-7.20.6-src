@@ -10,7 +10,7 @@ import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 public class ax {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40640a = "ro.build.version.emui";
+    private static final String f26949a = "ro.build.version.emui";
     private static final String b = "hw_sc.build.platform.version";
 
     public static au a(Context context) {
@@ -61,7 +61,7 @@ public class ax {
     }
 
     private static boolean a() {
-        return (TextUtils.isEmpty(a(f40640a)) && TextUtils.isEmpty(a(b))) ? false : true;
+        return (TextUtils.isEmpty(a(f26949a)) && TextUtils.isEmpty(a(b))) ? false : true;
     }
 
     private static boolean b() {

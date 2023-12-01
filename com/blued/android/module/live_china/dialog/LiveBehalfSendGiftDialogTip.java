@@ -14,13 +14,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/dialog/LiveBehalfSendGiftDialogTip.class */
 public class LiveBehalfSendGiftDialogTip extends Dialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    public IEventCallback f12516a;
+    public IEventCallback a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f12517c;
+    private String c;
     private String d;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/dialog/LiveBehalfSendGiftDialogTip$IEventCallback.class */
@@ -31,9 +27,9 @@ public class LiveBehalfSendGiftDialogTip extends Dialog {
     public LiveBehalfSendGiftDialogTip(Context context, String str, String str2, IEventCallback iEventCallback) {
         super(context, R.style.transparentFrameWindowStyleLive);
         this.b = context;
-        this.f12517c = str;
+        this.c = str;
         this.d = str2;
-        this.f12516a = iEventCallback;
+        this.a = iEventCallback;
         a();
         c();
     }
@@ -79,14 +75,14 @@ public class LiveBehalfSendGiftDialogTip extends Dialog {
         window.getDecorView().setBackgroundColor(0);
         window.setDimAmount(0.0f);
         window.setWindowAnimations(R.style.alpha_menu_animstyle);
-        View inflate = ((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_live_behalf_gift_tip, (ViewGroup) null);
+        View inflate = ((LayoutInflater) getContext().getSystemService("layout_inflater")).inflate(R.layout.dialog_live_behalf_gift_tip, (ViewGroup) null);
         addContentView(inflate, new ViewGroup.LayoutParams(-1, -1));
         setContentView(inflate);
         getWindow().setLayout(-1, -1);
     }
 
     public void b() {
-        IEventCallback iEventCallback = this.f12516a;
+        IEventCallback iEventCallback = this.a;
         if (iEventCallback != null) {
             iEventCallback.a();
         }

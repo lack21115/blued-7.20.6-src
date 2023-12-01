@@ -4,7 +4,7 @@ package com.anythink.expressad.exoplayer.c;
 public abstract class f extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f7228a;
+    public long f4389a;
     public int b;
 
     public abstract void e();

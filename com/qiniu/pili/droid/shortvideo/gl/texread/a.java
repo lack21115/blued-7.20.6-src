@@ -8,27 +8,27 @@ import java.nio.FloatBuffer;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27723a;
+    private int f14035a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27724c;
+    private int f14036c;
 
     public a(String str, String str2) {
-        this.f27723a = a(GLES20.GL_VERTEX_SHADER, str);
+        this.f14035a = a(GLES20.GL_VERTEX_SHADER, str);
         this.b = a(GLES20.GL_FRAGMENT_SHADER, str2);
         int glCreateProgram = GLES20.glCreateProgram();
-        this.f27724c = glCreateProgram;
+        this.f14036c = glCreateProgram;
         if (glCreateProgram == 0) {
             throw new RuntimeException("Could not create program");
         }
-        GLES20.glAttachShader(glCreateProgram, this.f27723a);
-        GLES20.glAttachShader(this.f27724c, this.b);
-        GLES20.glLinkProgram(this.f27724c);
+        GLES20.glAttachShader(glCreateProgram, this.f14035a);
+        GLES20.glAttachShader(this.f14036c, this.b);
+        GLES20.glLinkProgram(this.f14036c);
         int[] iArr = {0};
-        GLES20.glGetProgramiv(this.f27724c, GLES20.GL_LINK_STATUS, iArr, 0);
+        GLES20.glGetProgramiv(this.f14036c, GLES20.GL_LINK_STATUS, iArr, 0);
         if (iArr[0] != 1) {
-            throw new RuntimeException(GLES20.glGetProgramInfoLog(this.f27724c));
+            throw new RuntimeException(GLES20.glGetProgramInfoLog(this.f14036c));
         }
         GlUtil.a("Creating GlShader");
     }
@@ -47,7 +47,7 @@ public class a {
     }
 
     public int a(String str) {
-        int i = this.f27724c;
+        int i = this.f14036c;
         if (i != -1) {
             int glGetAttribLocation = GLES20.glGetAttribLocation(i, str);
             if (glGetAttribLocation >= 0) {
@@ -59,7 +59,7 @@ public class a {
     }
 
     public void a() {
-        int i = this.f27724c;
+        int i = this.f14036c;
         if (i == -1) {
             throw new RuntimeException("The program has been released");
         }
@@ -68,7 +68,7 @@ public class a {
     }
 
     public void a(String str, int i, FloatBuffer floatBuffer) {
-        if (this.f27724c == -1) {
+        if (this.f14036c == -1) {
             throw new RuntimeException("The program has been released");
         }
         int a2 = a(str);
@@ -78,7 +78,7 @@ public class a {
     }
 
     public int b(String str) {
-        int i = this.f27724c;
+        int i = this.f14036c;
         if (i != -1) {
             int glGetUniformLocation = GLES20.glGetUniformLocation(i, str);
             if (glGetUniformLocation >= 0) {
@@ -90,20 +90,20 @@ public class a {
     }
 
     public void b() {
-        int i = this.f27723a;
+        int i = this.f14035a;
         if (i != -1) {
             GLES20.glDeleteShader(i);
-            this.f27723a = -1;
+            this.f14035a = -1;
         }
         int i2 = this.b;
         if (i2 != -1) {
             GLES20.glDeleteShader(i2);
             this.b = -1;
         }
-        int i3 = this.f27724c;
+        int i3 = this.f14036c;
         if (i3 != -1) {
             GLES20.glDeleteProgram(i3);
-            this.f27724c = -1;
+            this.f14036c = -1;
         }
     }
 }

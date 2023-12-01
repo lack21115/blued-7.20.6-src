@@ -10,11 +10,11 @@ public class b {
     private static String t = "TPPlaybackInfo";
 
     /* renamed from: a  reason: collision with root package name */
-    private String f39186a;
+    private String f25495a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f39187c;
+    private int f25496c;
     private int d;
     private long e;
     private long f;
@@ -98,7 +98,7 @@ public class b {
     }
 
     public void a(int i) {
-        this.f39187c = i;
+        this.f25496c = i;
     }
 
     public void a(long j) {
@@ -118,11 +118,11 @@ public class b {
     }
 
     public void b(String str) {
-        this.f39186a = str;
+        this.f25495a = str;
     }
 
     public String c() {
-        return this.f39186a;
+        return this.f25495a;
     }
 
     public void c(int i) {
@@ -154,7 +154,7 @@ public class b {
     }
 
     public int e() {
-        return this.f39187c;
+        return this.f25496c;
     }
 
     public void e(int i) {
@@ -226,9 +226,9 @@ public class b {
     }
 
     public void n() {
-        this.f39186a = null;
+        this.f25495a = null;
         this.b = null;
-        this.f39187c = 0;
+        this.f25496c = 0;
         this.d = 0;
         this.e = 0L;
         this.f = 0L;

@@ -40,7 +40,7 @@ public class ImmutableArrayValueImpl extends AbstractImmutableValue implements I
             return this.array[i];
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.array.length;
         }

@@ -6,24 +6,20 @@ import android.os.Looper;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/i/c.class */
 public class c implements a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f6760a = "TimeOutHandlerImpl";
+    private static final String a = "TimeOutHandlerImpl";
     private static volatile c b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Handler f6761c;
+    private final Handler c;
     private final Handler d;
 
     private c() {
         HandlerThread handlerThread = new HandlerThread("timeout_handler_thread");
         handlerThread.start();
         this.d = new Handler(handlerThread.getLooper());
-        this.f6761c = new Handler(Looper.getMainLooper());
+        this.c = new Handler(Looper.getMainLooper());
     }
 
     private Handler a(boolean z) {
-        return z ? this.f6761c : this.d;
+        return z ? this.c : this.d;
     }
 
     public static a a() {
@@ -43,7 +39,7 @@ public class c implements a {
 
     @Override // com.anythink.core.common.i.a
     public final void a(b bVar) {
-        Handler handler = this.f6761c;
+        Handler handler = this.c;
         if (handler != null) {
             handler.removeCallbacks(bVar);
         }

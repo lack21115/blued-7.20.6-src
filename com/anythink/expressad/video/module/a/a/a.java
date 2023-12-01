@@ -7,10 +7,10 @@ public final class a extends f {
     private com.anythink.expressad.foundation.d.c V;
 
     /* renamed from: a  reason: collision with root package name */
-    private Activity f8505a;
+    private Activity f5665a;
 
     private a(Activity activity, com.anythink.expressad.foundation.d.c cVar) {
-        this.f8505a = activity;
+        this.f5665a = activity;
         this.V = cVar;
     }
 
@@ -18,7 +18,7 @@ public final class a extends f {
     public final void a(int i, Object obj) {
         Activity activity;
         super.a(i, obj);
-        if (i != 106 || (activity = this.f8505a) == null || this.V == null) {
+        if (i != 106 || (activity = this.f5665a) == null || this.V == null) {
             return;
         }
         activity.finish();

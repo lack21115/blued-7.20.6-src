@@ -21,11 +21,11 @@ import java.util.Map;
 public class HttpUrlFetcher implements DataFetcher<InputStream> {
 
     /* renamed from: a  reason: collision with root package name */
-    static final HttpUrlConnectionFactory f20719a = new DefaultHttpUrlConnectionFactory();
+    static final HttpUrlConnectionFactory f7113a = new DefaultHttpUrlConnectionFactory();
     private final GlideUrl b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f20720c;
+    private final int f7114c;
     private final HttpUrlConnectionFactory d;
     private HttpURLConnection e;
     private InputStream f;
@@ -49,12 +49,12 @@ public class HttpUrlFetcher implements DataFetcher<InputStream> {
     }
 
     public HttpUrlFetcher(GlideUrl glideUrl, int i) {
-        this(glideUrl, i, f20719a);
+        this(glideUrl, i, f7113a);
     }
 
     HttpUrlFetcher(GlideUrl glideUrl, int i, HttpUrlConnectionFactory httpUrlConnectionFactory) {
         this.b = glideUrl;
-        this.f20720c = i;
+        this.f7114c = i;
         this.d = httpUrlConnectionFactory;
     }
 
@@ -84,8 +84,8 @@ public class HttpUrlFetcher implements DataFetcher<InputStream> {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 this.e.addRequestProperty(entry.getKey(), entry.getValue());
             }
-            this.e.setConnectTimeout(this.f20720c);
-            this.e.setReadTimeout(this.f20720c);
+            this.e.setConnectTimeout(this.f7114c);
+            this.e.setReadTimeout(this.f7114c);
             this.e.setUseCaches(false);
             this.e.setDoInput(true);
             this.e.setInstanceFollowRedirects(false);

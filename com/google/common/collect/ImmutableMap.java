@@ -140,7 +140,7 @@ public abstract class ImmutableMap<K, V> implements Serializable, Map<K, V> {
         @Override // com.google.common.collect.ImmutableMap
         ImmutableSet<Map.Entry<K, V>> createEntrySet() {
             return new ImmutableMapEntrySet<K, V>() { // from class: com.google.common.collect.ImmutableMap.IteratorBasedImmutableMap.1EntrySetImpl
-                @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+                @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
                 public UnmodifiableIterator<Map.Entry<K, V>> iterator() {
                     return IteratorBasedImmutableMap.this.entryIterator();
                 }
@@ -429,6 +429,7 @@ public abstract class ImmutableMap<K, V> implements Serializable, Map<K, V> {
 
     public abstract V get(@NullableDecl Object obj);
 
+    @Override // java.util.Map
     public final V getOrDefault(@NullableDecl Object obj, @NullableDecl V v) {
         V v2 = get(obj);
         if (v2 != null) {

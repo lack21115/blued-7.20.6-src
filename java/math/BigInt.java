@@ -137,14 +137,14 @@ public final class BigInt {
             }
             char charAt = str.charAt(i3);
             int digit = Character.digit(charAt, i);
-            char c2 = charAt;
+            char c = charAt;
             if (digit >= 0) {
-                c2 = charAt;
+                c = charAt;
                 if (digit <= 9) {
-                    c2 = (char) (digit + 48);
+                    c = (char) (digit + 48);
                 }
             }
-            sb.append(c2);
+            sb.append(c);
             i2 = i3 + 1;
         }
     }

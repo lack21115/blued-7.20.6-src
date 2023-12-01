@@ -10,21 +10,21 @@ import java.util.Map;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24123a = c.class.getSimpleName();
+    private static final String f10508a = c.class.getSimpleName();
     private final HashMap<String, String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final HashMap<String, Object> f24124c;
+    private final HashMap<String, Object> f10509c;
     private final HashMap<String, String> d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/meizu/cloud/pushsdk/d/e/c$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private Context f24125a = null;
+        private Context f10510a = null;
 
         public a a(Context context) {
-            this.f24125a = context;
+            this.f10510a = context;
             return this;
         }
 
@@ -35,16 +35,16 @@ public class c {
 
     private c(a aVar) {
         this.b = new HashMap<>();
-        this.f24124c = new HashMap<>();
+        this.f10509c = new HashMap<>();
         this.d = new HashMap<>();
         d();
         e();
         f();
         g();
-        if (aVar.f24125a != null) {
-            a(aVar.f24125a);
+        if (aVar.f10510a != null) {
+            a(aVar.f10510a);
         }
-        com.meizu.cloud.pushsdk.d.f.c.c(f24123a, "Subject created successfully.", new Object[0]);
+        com.meizu.cloud.pushsdk.d.f.c.c(f10508a, "Subject created successfully.", new Object[0]);
     }
 
     private void a(String str, String str2) {
@@ -71,7 +71,7 @@ public class c {
     }
 
     public Map<String, Object> a() {
-        return this.f24124c;
+        return this.f10509c;
     }
 
     public void a(Context context) {

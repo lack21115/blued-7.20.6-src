@@ -4,7 +4,7 @@ package com.igexin.push.c.c;
 public final class l extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23350a = 36;
+    public static final int f9742a = 36;
     public long b;
 
     public l() {

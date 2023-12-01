@@ -10,11 +10,12 @@ import android.filterfw.core.ShaderProgram;
 import android.filterfw.format.ImageFormat;
 import android.filterfw.geometry.Point;
 import android.filterfw.geometry.Quad;
+import androidx.constraintlayout.motion.widget.Key;
 
 /* loaded from: source-9557208-dex2jar.jar:android/filterpacks/imageproc/FixedRotationFilter.class */
 public class FixedRotationFilter extends Filter {
     private ShaderProgram mProgram;
-    @GenerateFieldPort(hasDefault = true, name = "rotation")
+    @GenerateFieldPort(hasDefault = true, name = Key.ROTATION)
     private int mRotation;
 
     public FixedRotationFilter(String str) {

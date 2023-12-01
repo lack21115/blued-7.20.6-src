@@ -16,11 +16,11 @@ import com.soft.blued.customview.swipecard.FlingCardListener;
 public class SwipeFlingAdapterView extends BaseFlingAdapterView {
 
     /* renamed from: a  reason: collision with root package name */
-    public View f28663a;
+    public View f14973a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f28664c;
+    public int f14974c;
     public int d;
     public int e;
     private int f;
@@ -92,7 +92,7 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
         this.j = 2.0f;
         this.k = 0;
         this.o = false;
-        this.f28663a = null;
+        this.f14973a = null;
         this.r = 0.0f;
         this.s = 0.0f;
         this.t = 0.0f;
@@ -142,13 +142,13 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
                 float f2 = (1.0f - (f * 0.3f)) - 0.3f;
                 view2.setScaleX(f2);
                 view2.setScaleY(f2);
-                int i6 = this.f28664c;
+                int i6 = this.f14974c;
                 int i7 = this.f;
                 view2.setX((int) (i6 + i7 + (i7 * f)));
                 if (view != null) {
                     view.setScaleX(0.7f);
                     view.setScaleY(0.7f);
-                    int i8 = this.f28664c;
+                    int i8 = this.f14974c;
                     int i9 = this.f;
                     view.setX((i8 - i9) + (i9 * 0));
                 }
@@ -159,13 +159,13 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
             float f3 = ((f * 0.3f) + 1.0f) - 0.3f;
             view.setScaleX(f3);
             view.setScaleY(f3);
-            int i10 = this.f28664c;
+            int i10 = this.f14974c;
             int i11 = this.f;
             view.setX((int) ((i10 - i11) + (i11 * f)));
             if (view2 != null) {
                 view2.setScaleX(0.7f);
                 view2.setScaleY(0.7f);
-                int i12 = this.f28664c;
+                int i12 = this.f14974c;
                 int i13 = this.f;
                 view2.setX(i12 + i13 + (i13 * 0));
             }
@@ -229,22 +229,22 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
     private void setTopView(int i) {
         if (getChildCount() > 0) {
             View childAt = getChildAt(this.k);
-            this.f28663a = childAt;
+            this.f14973a = childAt;
             if (childAt == null || this.m == null) {
                 return;
             }
             childAt.setTag(R.id.current_index, getTag(R.id.current_index));
-            this.f28663a.setTag(R.id.total_szie, getTag(R.id.total_szie));
-            this.f28663a.setTag(R.id.left_x, Float.valueOf(this.r));
-            this.f28663a.setTag(R.id.left_y, Float.valueOf(this.s));
-            this.f28663a.setTag(R.id.right_x, Float.valueOf(this.t));
-            this.f28663a.setTag(R.id.right_y, Float.valueOf(this.u));
-            this.f28663a.setTag(R.id.scale_x, Float.valueOf(0.7f));
-            this.f28663a.setTag(R.id.scale_Y, Float.valueOf(0.7f));
-            FlingCardListener flingCardListener = new FlingCardListener(this.f28663a, this.l.getItem(0), this.j, new FlingCardListener.FlingListener() { // from class: com.soft.blued.customview.swipecard.SwipeFlingAdapterView.1
+            this.f14973a.setTag(R.id.total_szie, getTag(R.id.total_szie));
+            this.f14973a.setTag(R.id.left_x, Float.valueOf(this.r));
+            this.f14973a.setTag(R.id.left_y, Float.valueOf(this.s));
+            this.f14973a.setTag(R.id.right_x, Float.valueOf(this.t));
+            this.f14973a.setTag(R.id.right_y, Float.valueOf(this.u));
+            this.f14973a.setTag(R.id.scale_x, Float.valueOf(0.7f));
+            this.f14973a.setTag(R.id.scale_Y, Float.valueOf(0.7f));
+            FlingCardListener flingCardListener = new FlingCardListener(this.f14973a, this.l.getItem(0), this.j, new FlingCardListener.FlingListener() { // from class: com.soft.blued.customview.swipecard.SwipeFlingAdapterView.1
                 @Override // com.soft.blued.customview.swipecard.FlingCardListener.FlingListener
                 public void a() {
-                    SwipeFlingAdapterView.this.f28663a = null;
+                    SwipeFlingAdapterView.this.f14973a = null;
                     SwipeFlingAdapterView.this.m.a();
                 }
 
@@ -274,7 +274,7 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
                 }
             });
             this.q = flingCardListener;
-            this.f28663a.setOnTouchListener(flingCardListener);
+            this.f14973a.setOnTouchListener(flingCardListener);
         }
     }
 
@@ -295,7 +295,7 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
 
     @Override // android.widget.AdapterView
     public View getSelectedView() {
-        return this.f28663a;
+        return this.f14973a;
     }
 
     public FlingCardListener getTopCardListener() throws NullPointerException {
@@ -315,9 +315,8 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
         return super.getWidthMeasureSpec();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.AdapterView, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         onFlingListener onflinglistener;
         View view;
         super.onLayout(z, i, i2, i3, i4);
@@ -334,26 +333,26 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
             setTopView(count);
         }
         this.o = true;
-        if (this.b == 0 && this.f28664c == 0 && (view = this.f28663a) != null) {
+        if (this.b == 0 && this.f14974c == 0 && (view = this.f14973a) != null) {
             this.b = view.getTop();
-            this.f28664c = this.f28663a.getLeft();
-            this.d = this.f28663a.getRight();
-            this.e = this.f28663a.getBottom();
+            this.f14974c = this.f14973a.getLeft();
+            this.d = this.f14973a.getRight();
+            this.e = this.f14973a.getBottom();
             if (this.r == 0.0f) {
-                int i5 = this.f28664c;
+                int i5 = this.f14974c;
                 float f = (int) (i5 - (this.t - i5));
                 this.r = f;
                 this.s = this.u;
-                this.f28663a.setTag(R.id.left_x, Float.valueOf(f));
-                this.f28663a.setTag(R.id.left_y, Float.valueOf(this.s));
+                this.f14973a.setTag(R.id.left_x, Float.valueOf(f));
+                this.f14973a.setTag(R.id.left_y, Float.valueOf(this.s));
             }
             if (this.t == 0.0f) {
-                int i6 = this.f28664c;
+                int i6 = this.f14974c;
                 float f2 = (int) (i6 + (i6 - this.r));
                 this.t = f2;
                 this.u = this.s;
-                this.f28663a.setTag(R.id.right_x, Float.valueOf(f2));
-                this.f28663a.setTag(R.id.right_y, Float.valueOf(this.u));
+                this.f14973a.setTag(R.id.right_x, Float.valueOf(f2));
+                this.f14973a.setTag(R.id.right_y, Float.valueOf(this.u));
             }
         }
         if (count >= this.i || (onflinglistener = this.m) == null) {

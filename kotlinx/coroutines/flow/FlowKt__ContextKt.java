@@ -48,7 +48,7 @@ public final /* synthetic */ class FlowKt__ContextKt {
     /* JADX WARN: Multi-variable type inference failed */
     public static final <T> Flow<T> a(Flow<? extends T> flow, CoroutineContext coroutineContext) {
         a(coroutineContext);
-        return Intrinsics.a(coroutineContext, EmptyCoroutineContext.f42457a) ? flow : flow instanceof FusibleFlow ? FusibleFlow.DefaultImpls.a((FusibleFlow) flow, coroutineContext, 0, null, 6, null) : new ChannelFlowOperatorImpl(flow, coroutineContext, 0, null, 12, null);
+        return Intrinsics.a(coroutineContext, EmptyCoroutineContext.a) ? flow : flow instanceof FusibleFlow ? FusibleFlow.DefaultImpls.a((FusibleFlow) flow, coroutineContext, 0, null, 6, null) : new ChannelFlowOperatorImpl(flow, coroutineContext, 0, null, 12, null);
     }
 
     private static final void a(CoroutineContext coroutineContext) {

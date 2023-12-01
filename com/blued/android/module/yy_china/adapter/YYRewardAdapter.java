@@ -16,7 +16,6 @@ public class YYRewardAdapter extends BaseQuickAdapter<YYRewardModel, BaseViewHol
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYRewardModel yYRewardModel) {
         ShapeFrameLayout shapeFrameLayout = (ShapeFrameLayout) baseViewHolder.getView(R.id.fl_reward_background);

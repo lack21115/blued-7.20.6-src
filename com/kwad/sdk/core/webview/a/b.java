@@ -2,13 +2,14 @@ package com.kwad.sdk.core.webview.a;
 
 import android.content.Context;
 import android.net.Uri;
+import android.net.http.Headers;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.WebResourceResponse;
 import com.baidu.mobads.sdk.internal.bw;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.net.HttpHeaders;
+import com.huawei.hms.ads.fw;
 import com.kwad.sdk.core.webview.a.b.b;
 import com.kwad.sdk.core.webview.a.b.c;
 import com.kwad.sdk.crash.utils.h;
@@ -65,7 +66,7 @@ public final class b {
             b(z, "getResource [" + str + "] getFilePath from url fail");
             sb2 = "getFilePath from url fail";
         } else {
-            if (c.m7820do(bVar2.apU)) {
+            if (c.m4813do(bVar2.apU)) {
                 BufferedInputStream eu = q.eu(bVar2.apY);
                 if (eu != null) {
                     return a(eu, bVar2);
@@ -92,9 +93,9 @@ public final class b {
         if (Build.VERSION.SDK_INT >= 21) {
             HashMap hashMap = new HashMap();
             hashMap.put(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, bVar.apX.apS);
-            hashMap.put(HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS, "true");
+            hashMap.put(HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS, fw.Code);
             hashMap.put(HttpHeaders.TIMING_ALLOW_ORIGIN, bVar.apX.apT);
-            hashMap.put("content-type", str);
+            hashMap.put(Headers.CONTENT_TYPE, str);
             hashMap.put("Date", bVar.apX.apV);
             hashMap.put("union-cache ", "1");
             return new WebResourceResponse(bVar.apU, "", bVar.status, bw.k, hashMap, inputStream);
@@ -148,7 +149,7 @@ public final class b {
                         bVar2.parseJson(jSONObject2);
                         str2 = Uri.parse("https://" + next).getHost();
                         bVar2.apZ = str2;
-                        bVar2.apY = com.kwad.sdk.core.webview.a.b.a.z(context, bVar.atn) + BridgeUtil.SPLIT_MARK + next;
+                        bVar2.apY = com.kwad.sdk.core.webview.a.b.a.z(context, bVar.atn) + "/" + next;
                         if (TextUtils.isEmpty(bVar2.apU)) {
                             bVar2.apU = URLConnection.getFileNameMap().getContentTypeFor(bVar2.apY);
                         }

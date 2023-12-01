@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentChangeBluedIconBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28790a;
+    private final ConstraintLayout f15100a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28790a;
+        return this.f15100a;
     }
 }

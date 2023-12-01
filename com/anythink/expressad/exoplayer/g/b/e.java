@@ -28,24 +28,24 @@ public final class e extends h {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7350a = "COMM";
+    public static final String f4511a = "COMM";
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f7351c;
+    public final String f4512c;
     public final String d;
 
     e(Parcel parcel) {
-        super(f7350a);
+        super(f4511a);
         this.b = parcel.readString();
-        this.f7351c = parcel.readString();
+        this.f4512c = parcel.readString();
         this.d = parcel.readString();
     }
 
     public e(String str, String str2, String str3) {
-        super(f7350a);
+        super(f4511a);
         this.b = str;
-        this.f7351c = str2;
+        this.f4512c = str2;
         this.d = str3;
     }
 
@@ -57,14 +57,14 @@ public final class e extends h {
             return false;
         }
         e eVar = (e) obj;
-        return af.a((Object) this.f7351c, (Object) eVar.f7351c) && af.a((Object) this.b, (Object) eVar.b) && af.a((Object) this.d, (Object) eVar.d);
+        return af.a((Object) this.f4512c, (Object) eVar.f4512c) && af.a((Object) this.b, (Object) eVar.b) && af.a((Object) this.d, (Object) eVar.d);
     }
 
     public final int hashCode() {
         String str = this.b;
         int i = 0;
         int hashCode = str != null ? str.hashCode() : 0;
-        String str2 = this.f7351c;
+        String str2 = this.f4512c;
         int hashCode2 = str2 != null ? str2.hashCode() : 0;
         String str3 = this.d;
         if (str3 != null) {
@@ -75,7 +75,7 @@ public final class e extends h {
 
     @Override // com.anythink.expressad.exoplayer.g.b.h
     public final String toString() {
-        return this.g + ": language=" + this.b + ", description=" + this.f7351c;
+        return this.g + ": language=" + this.b + ", description=" + this.f4512c;
     }
 
     @Override // android.os.Parcelable

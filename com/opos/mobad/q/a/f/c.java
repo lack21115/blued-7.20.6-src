@@ -34,7 +34,7 @@ public class c extends com.opos.mobad.n.i.a {
     private com.opos.mobad.c.d.a C;
 
     /* renamed from: a  reason: collision with root package name */
-    com.opos.mobad.c.c.b f27200a;
+    com.opos.mobad.c.c.b f13512a;
     private RelativeLayout d;
     private b e;
     private d f;
@@ -64,83 +64,83 @@ public class c extends com.opos.mobad.n.i.a {
     static /* synthetic */ class AnonymousClass7 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f27208a;
+        static final /* synthetic */ int[] f13520a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[com.opos.mobad.cmn.a.b.a.values().length];
-            f27208a = iArr;
+            f13520a = iArr;
             try {
                 iArr[com.opos.mobad.cmn.a.b.a.NonClickBt.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f27208a[com.opos.mobad.cmn.a.b.a.ClickBt.ordinal()] = 2;
+                f13520a[com.opos.mobad.cmn.a.b.a.ClickBt.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f27208a[com.opos.mobad.cmn.a.b.a.Video.ordinal()] = 3;
+                f13520a[com.opos.mobad.cmn.a.b.a.Video.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
     }
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/q/a/f/c$a.class */
-    public class a implements a.InterfaceC0721a, com.opos.mobad.q.a.c.a, b.a {
+    public class a implements a.InterfaceC0551a, com.opos.mobad.q.a.c.a, b.a {
         public a() {
         }
 
         @Override // com.opos.mobad.q.a.c.a
         public void a(View view, int[] iArr, com.opos.mobad.cmn.a.b.a aVar) {
-            a.InterfaceC0708a interfaceC0708a = c.this.f27000c;
-            if (interfaceC0708a == null) {
+            a.InterfaceC0538a interfaceC0538a = c.this.f13312c;
+            if (interfaceC0538a == null) {
                 return;
             }
-            int i = AnonymousClass7.f27208a[aVar.ordinal()];
+            int i = AnonymousClass7.f13520a[aVar.ordinal()];
             if (i == 1) {
-                interfaceC0708a.g(view, iArr);
+                interfaceC0538a.g(view, iArr);
             } else if (i == 2) {
-                interfaceC0708a.f(view, iArr);
+                interfaceC0538a.f(view, iArr);
             } else if (i != 3) {
             } else {
-                interfaceC0708a.e(view, iArr);
+                interfaceC0538a.e(view, iArr);
             }
         }
 
-        @Override // com.opos.mobad.o.c.a.InterfaceC0721a
+        @Override // com.opos.mobad.o.c.a.InterfaceC0551a
         public void a_(View view, int[] iArr) {
-            a.InterfaceC0708a interfaceC0708a = c.this.f27000c;
-            if (interfaceC0708a instanceof com.opos.mobad.q.a.e) {
-                ((com.opos.mobad.q.a.e) interfaceC0708a).a_(view, iArr);
+            a.InterfaceC0538a interfaceC0538a = c.this.f13312c;
+            if (interfaceC0538a instanceof com.opos.mobad.q.a.e) {
+                ((com.opos.mobad.q.a.e) interfaceC0538a).a_(view, iArr);
             }
         }
 
         @Override // com.opos.mobad.q.a.f.b.a
         public void b(View view, int[] iArr) {
-            a.InterfaceC0708a interfaceC0708a = c.this.f27000c;
-            if (interfaceC0708a == null) {
+            a.InterfaceC0538a interfaceC0538a = c.this.f13312c;
+            if (interfaceC0538a == null) {
                 return;
             }
-            interfaceC0708a.i(view, iArr);
+            interfaceC0538a.i(view, iArr);
         }
 
         @Override // com.opos.mobad.q.a.f.b.a
         public void c(View view, int[] iArr) {
-            a.InterfaceC0708a interfaceC0708a = c.this.f27000c;
-            if (interfaceC0708a == null) {
+            a.InterfaceC0538a interfaceC0538a = c.this.f13312c;
+            if (interfaceC0538a == null) {
                 return;
             }
-            interfaceC0708a.d(view, iArr);
+            interfaceC0538a.d(view, iArr);
         }
 
         @Override // com.opos.mobad.q.a.f.b.a
         public void d(View view, int[] iArr) {
-            a.InterfaceC0708a interfaceC0708a = c.this.f27000c;
-            if (interfaceC0708a == null) {
+            a.InterfaceC0538a interfaceC0538a = c.this.f13312c;
+            if (interfaceC0538a == null) {
                 return;
             }
-            interfaceC0708a.a(view, iArr, c.this.z);
+            interfaceC0538a.a(view, iArr, c.this.z);
         }
     }
 
@@ -167,7 +167,7 @@ public class c extends com.opos.mobad.n.i.a {
                 c.this.w.a(1000L);
             }
         };
-        this.f27200a = new com.opos.mobad.c.c.b() { // from class: com.opos.mobad.q.a.f.c.2
+        this.f13512a = new com.opos.mobad.c.c.b() { // from class: com.opos.mobad.q.a.f.c.2
             @Override // com.opos.mobad.c.c.b
             public void a(int i2, String str) {
                 if (c.this.o() == 8) {
@@ -254,7 +254,7 @@ public class c extends com.opos.mobad.n.i.a {
         this.t = adItemData;
         this.u = adItemData.i().get(0);
         this.v = aVar;
-        aVar.a(this.f27200a);
+        aVar.a(this.f13512a);
         this.w = new com.opos.mobad.c.b.c(com.opos.mobad.service.c.a(), this.B);
         this.A = new a();
         a(this.v.b(), this.t);
@@ -264,7 +264,7 @@ public class c extends com.opos.mobad.n.i.a {
     public void A() {
         com.opos.mobad.c.d.a aVar = this.C;
         if (aVar != null) {
-            aVar.a((a.InterfaceC0678a) null);
+            aVar.a((a.InterfaceC0508a) null);
         }
     }
 
@@ -302,10 +302,10 @@ public class c extends com.opos.mobad.n.i.a {
                 if (c.this.i.getVisibility() == 0) {
                     z = true;
                 }
-                if ((!z2 || !z) || c.this.f27000c == null) {
+                if ((!z2 || !z) || c.this.f13312c == null) {
                     return;
                 }
-                c.this.f27000c.e(view2, iArr);
+                c.this.f13312c.e(view2, iArr);
             }
         };
         this.d.setOnClickListener(iVar);
@@ -360,10 +360,10 @@ public class c extends com.opos.mobad.n.i.a {
         i iVar = new i() { // from class: com.opos.mobad.q.a.f.c.4
             @Override // com.opos.mobad.q.a.i
             public void a(View view, int[] iArr) {
-                if (!c.this.n || c.this.f27000c == null) {
+                if (!c.this.n || c.this.f13312c == null) {
                     return;
                 }
-                c.this.f27000c.a(view, iArr);
+                c.this.f13312c.a(view, iArr);
             }
 
             @Override // com.opos.mobad.q.a.i, android.view.View.OnTouchListener
@@ -537,7 +537,7 @@ public class c extends com.opos.mobad.n.i.a {
         ProgressBar progressBar;
         this.h = new RelativeLayout(this.g);
         if (Build.VERSION.SDK_INT >= 21) {
-            progressBar = new ProgressBar(this.g, null, 16842871, 16974020);
+            progressBar = new ProgressBar(this.g, null, android.R.attr.progressBarStyle, android.R.style.Widget_Holo_Light_ProgressBar);
             progressBar.setIndeterminateTintList(ColorStateList.valueOf(this.g.getResources().getColor(R.color.opos_mob_primary)));
         } else {
             progressBar = new ProgressBar(this.g);
@@ -625,8 +625,8 @@ public class c extends com.opos.mobad.n.i.a {
         if (this.C == null) {
             com.opos.mobad.c.d.a aVar = new com.opos.mobad.c.d.a(this.g);
             this.C = aVar;
-            aVar.a(new a.InterfaceC0678a() { // from class: com.opos.mobad.q.a.f.c.6
-                @Override // com.opos.mobad.c.d.a.InterfaceC0678a
+            aVar.a(new a.InterfaceC0508a() { // from class: com.opos.mobad.q.a.f.c.6
+                @Override // com.opos.mobad.c.d.a.InterfaceC0508a
                 public void a(boolean z) {
                     if (c.this.x == null) {
                         return;
@@ -703,8 +703,8 @@ public class c extends com.opos.mobad.n.i.a {
             return;
         }
         boolean z = false;
-        if (!TextUtils.isEmpty(b.f26630a.f26633a) && this.x == null) {
-            this.v.a(b.f26630a.f26633a, false);
+        if (!TextUtils.isEmpty(b.f12942a.f12945a) && this.x == null) {
+            this.v.a(b.f12942a.f12945a, false);
         }
         this.x = b;
         if (b.B == 1) {

@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveShapeBtnDialogFragment.class */
 public class LiveShapeBtnDialogFragment extends Dialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    public TextView f13261a;
+    public TextView a;
     public TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public TextView f13262c;
+    public TextView c;
     private Context d;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveShapeBtnDialogFragment$ConfirmClickCallback.class */
@@ -41,10 +37,10 @@ public class LiveShapeBtnDialogFragment extends Dialog {
 
     private void a(String str, String str2, String str3) {
         if (TextUtils.isEmpty(str)) {
-            this.f13261a.setVisibility(8);
+            this.a.setVisibility(8);
         } else {
-            this.f13261a.setText(str);
-            this.f13261a.setVisibility(0);
+            this.a.setText(str);
+            this.a.setVisibility(0);
         }
         if (TextUtils.isEmpty(str2)) {
             this.b.setVisibility(8);
@@ -53,26 +49,26 @@ public class LiveShapeBtnDialogFragment extends Dialog {
             this.b.setVisibility(0);
         }
         if (TextUtils.isEmpty(str3)) {
-            this.f13262c.setVisibility(8);
+            this.c.setVisibility(8);
             return;
         }
-        this.f13262c.setText(str3);
-        this.f13262c.setVisibility(0);
+        this.c.setText(str3);
+        this.c.setVisibility(0);
     }
 
     private void b() {
-        this.f13261a = (TextView) findViewById(R.id.tv_title);
+        this.a = (TextView) findViewById(R.id.tv_title);
         this.b = (TextView) findViewById(R.id.tv_content);
-        this.f13262c = (TextView) findViewById(R.id.tv_confirm);
-        this.f13261a.getPaint().setFakeBoldText(true);
-        this.f13262c.getPaint().setFakeBoldText(true);
+        this.c = (TextView) findViewById(R.id.tv_confirm);
+        this.a.getPaint().setFakeBoldText(true);
+        this.c.getPaint().setFakeBoldText(true);
         findViewById(R.id.iv_close).setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveShapeBtnDialogFragment$lfgnUCoEJ_WJIBRVDXG2ZiXSYUk
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveShapeBtnDialogFragment.this.b(view);
             }
         });
-        this.f13262c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveShapeBtnDialogFragment$tUFWjIX_AXXAxo28y_tBZatY-Zc
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveShapeBtnDialogFragment$tUFWjIX_AXXAxo28y_tBZatY-Zc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveShapeBtnDialogFragment.this.a(view);
@@ -100,7 +96,7 @@ public class LiveShapeBtnDialogFragment extends Dialog {
         window.getDecorView().setBackgroundColor(0);
         window.setDimAmount(0.0f);
         window.setWindowAnimations(R.style.alpha_menu_animstyle);
-        View inflate = ((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_live_shape_btn, (ViewGroup) null);
+        View inflate = ((LayoutInflater) getContext().getSystemService("layout_inflater")).inflate(R.layout.dialog_live_shape_btn, (ViewGroup) null);
         addContentView(inflate, new ViewGroup.LayoutParams(-1, -1));
         setContentView(inflate);
         getWindow().setLayout(-1, -1);

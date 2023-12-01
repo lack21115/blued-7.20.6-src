@@ -14,7 +14,7 @@ public final class ObjectKey implements Key {
 
     @Override // com.bumptech.glide.load.Key
     public void a(MessageDigest messageDigest) {
-        messageDigest.update(this.b.toString().getBytes(f20706a));
+        messageDigest.update(this.b.toString().getBytes(f7100a));
     }
 
     @Override // com.bumptech.glide.load.Key

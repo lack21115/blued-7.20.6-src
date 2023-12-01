@@ -14,10 +14,10 @@ import java.util.Map;
 public class el {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f41374a;
+    private static a f27683a;
 
     /* renamed from: a  reason: collision with other field name */
-    private static Map<String, hq> f389a;
+    private static Map<String, hq> f342a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/el$a.class */
     public interface a {
@@ -106,12 +106,12 @@ public class el {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static hq m11714a(String str) {
-        if (f389a == null) {
+    public static hq m8664a(String str) {
+        if (f342a == null) {
             synchronized (hq.class) {
                 try {
-                    if (f389a == null) {
-                        f389a = new HashMap();
+                    if (f342a == null) {
+                        f342a = new HashMap();
                         hq[] values = hq.values();
                         int length = values.length;
                         int i = 0;
@@ -121,7 +121,7 @@ public class el {
                                 break;
                             }
                             hq hqVar = values[i2];
-                            f389a.put(hqVar.f583a.toLowerCase(), hqVar);
+                            f342a.put(hqVar.f536a.toLowerCase(), hqVar);
                             i = i2 + 1;
                         }
                     }
@@ -130,17 +130,17 @@ public class el {
                 }
             }
         }
-        hq hqVar2 = f389a.get(str.toLowerCase());
+        hq hqVar2 = f342a.get(str.toLowerCase());
         return hqVar2 != null ? hqVar2 : hq.Invalid;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static String m11715a(int i) {
+    public static String m8665a(int i) {
         return i == 1000 ? "E100000" : i == 3000 ? "E100002" : i == 2000 ? "E100001" : i == 6000 ? "E100003" : "";
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static void m11716a(Context context) {
+    public static void m8666a(Context context) {
         ClientReportClient.updateConfig(context, a(context));
     }
 
@@ -149,11 +149,11 @@ public class el {
     }
 
     private static void a(Context context, hk hkVar) {
-        if (m11717a(context.getApplicationContext())) {
+        if (m8667a(context.getApplicationContext())) {
             com.xiaomi.push.service.ca.a(context.getApplicationContext(), hkVar);
             return;
         }
-        a aVar = f41374a;
+        a aVar = f27683a;
         if (aVar != null) {
             aVar.uploader(context, hkVar);
         }
@@ -176,11 +176,11 @@ public class el {
     }
 
     public static void a(a aVar) {
-        f41374a = aVar;
+        f27683a = aVar;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m11717a(Context context) {
+    public static boolean m8667a(Context context) {
         return (context == null || TextUtils.isEmpty(context.getPackageName()) || !"com.xiaomi.xmsf".equals(context.getPackageName())) ? false : true;
     }
 }

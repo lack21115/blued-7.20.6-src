@@ -2,6 +2,7 @@ package pl.droidsonroids.gif;
 
 import android.content.Context;
 import android.os.Build;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.Closeable;
 import java.io.File;
@@ -16,9 +17,7 @@ import java.util.zip.ZipFile;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/ReLinker.class */
 public class ReLinker {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f44168a = System.mapLibraryName("pl_droidsonroids_gif");
+    private static final String a = System.mapLibraryName("pl_droidsonroids_gif");
 
     private ReLinker() {
     }
@@ -41,7 +40,7 @@ public class ReLinker {
     }
 
     private static ZipEntry a(ZipFile zipFile, String str) {
-        return zipFile.getEntry("lib/" + str + BridgeUtil.SPLIT_MARK + f44168a);
+        return zipFile.getEntry("lib/" + str + BridgeUtil.SPLIT_MARK + a);
     }
 
     private static ZipFile a(File file) {
@@ -120,9 +119,9 @@ public class ReLinker {
         InputStream inputStream2;
         OutputStream outputStream;
         FileOutputStream fileOutputStream;
-        String str = f44168a + "1.2.7";
+        String str = a + "1.2.7";
         int i = 0;
-        File file = new File(context.getDir("lib", 0), str);
+        File file = new File(context.getDir(NativeLibraryHelper.LIB_DIR_NAME, 0), str);
         if (file.isFile()) {
             return file;
         }
@@ -134,7 +133,7 @@ public class ReLinker {
         FilenameFilter filenameFilter = new FilenameFilter() { // from class: pl.droidsonroids.gif.ReLinker.1
             @Override // java.io.FilenameFilter
             public boolean accept(File file3, String str2) {
-                return str2.startsWith(ReLinker.f44168a) || str2.startsWith(String.this);
+                return str2.startsWith(ReLinker.a) || str2.startsWith(String.this);
             }
         };
         a(file, filenameFilter);
@@ -149,7 +148,7 @@ public class ReLinker {
                 try {
                     ZipEntry a3 = a(a2);
                     if (a3 == null) {
-                        throw new IllegalStateException("Library " + f44168a + " for supported ABIs not found in APK file");
+                        throw new IllegalStateException("Library " + a + " for supported ABIs not found in APK file");
                     }
                     try {
                         inputStream = a2.getInputStream(a3);

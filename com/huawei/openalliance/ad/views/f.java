@@ -16,11 +16,11 @@ import com.huawei.openalliance.ad.utils.ay;
 public class f extends Drawable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Paint f23044a;
+    private Paint f9436a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f23045c;
+    private float f9437c;
     private float d;
     private float e;
     private int i;
@@ -44,9 +44,9 @@ public class f extends Drawable {
 
     private void B() {
         Paint paint = new Paint();
-        this.f23044a = paint;
+        this.f9436a = paint;
         paint.setAntiAlias(true);
-        this.f23044a.setStyle(Paint.Style.FILL);
+        this.f9436a.setStyle(Paint.Style.FILL);
         this.b = 0.0f;
         this.d = 0.0f;
         V(2);
@@ -61,7 +61,7 @@ public class f extends Drawable {
         float f3 = f2 - f;
         this.b = f3;
         float level = (f3 * getLevel()) / 10000.0f;
-        this.f23045c = level;
+        this.f9437c = level;
         float f4 = this.b * 0.3f;
         this.d = f4;
         this.h = (f4 + level) / 2000.0f;
@@ -85,7 +85,7 @@ public class f extends Drawable {
     }
 
     private void F() {
-        this.h = (this.d + this.f23045c) / 2000.0f;
+        this.h = (this.d + this.f9437c) / 2000.0f;
         if (this.g) {
             this.g = false;
         }
@@ -96,7 +96,7 @@ public class f extends Drawable {
         int i2 = 16777215 & i;
         LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, this.d, 0.0f, new int[]{i2, i, i2}, new float[]{0.0f, 0.93f, 1.0f}, Shader.TileMode.CLAMP);
         this.l = linearGradient;
-        this.f23044a.setShader(linearGradient);
+        this.f9436a.setShader(linearGradient);
     }
 
     private boolean S() {
@@ -141,8 +141,8 @@ public class f extends Drawable {
         F();
         float D = this.e + (this.h * ((float) D()));
         float f = D;
-        if (Float.compare(D, this.f23045c) > 0) {
-            float f2 = this.f23045c;
+        if (Float.compare(D, this.f9437c) > 0) {
+            float f2 = this.f9437c;
             f = D;
             if (((int) f2) != 0) {
                 f = (D % ((int) f2)) - this.d;
@@ -164,11 +164,11 @@ public class f extends Drawable {
         }
         canvas.save();
         canvas.translate(f, 0.0f);
-        float f4 = Float.compare(this.d + f, this.f23045c) > 0 ? this.f23045c - f : this.d;
+        float f4 = Float.compare(this.d + f, this.f9437c) > 0 ? this.f9437c - f : this.d;
         if (Float.compare(f, 0.0f) < 0) {
             canvas.clipRect(bounds.left - f, bounds.top, (bounds.left - f) + f4, bounds.bottom);
         }
-        canvas.drawRect(bounds.left, bounds.top, bounds.left + f4, bounds.bottom, this.f23044a);
+        canvas.drawRect(bounds.left, bounds.top, bounds.left + f4, bounds.bottom, this.f9436a);
         canvas.restore();
         invalidateSelf();
         if (S()) {
@@ -185,7 +185,7 @@ public class f extends Drawable {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.drawable.Drawable
     public boolean onLevelChange(int i) {
-        this.f23045c = (this.b * i) / 10000.0f;
+        this.f9437c = (this.b * i) / 10000.0f;
         return false;
     }
 

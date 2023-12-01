@@ -11,17 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.yy_china.R;
-import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyKtvVoiceBinding.class */
 public final class FragmentYyKtvVoiceBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SeekBar f16527a;
+    public final SeekBar a;
     public final SeekBar b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16528c;
+    public final ImageView c;
     public final ToggleButton d;
     public final ShapeTextView e;
     public final ImageView f;
@@ -41,9 +36,9 @@ public final class FragmentYyKtvVoiceBinding implements ViewBinding {
 
     private FragmentYyKtvVoiceBinding(ConstraintLayout constraintLayout, SeekBar seekBar, SeekBar seekBar2, ImageView imageView, ToggleButton toggleButton, ShapeTextView shapeTextView, ImageView imageView2, View view, TextView textView, FrameLayout frameLayout, FrameLayout frameLayout2, RecyclerView recyclerView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8) {
         this.s = constraintLayout;
-        this.f16527a = seekBar;
+        this.a = seekBar;
         this.b = seekBar2;
-        this.f16528c = imageView;
+        this.c = imageView;
         this.d = toggleButton;
         this.e = shapeTextView;
         this.f = imageView2;
@@ -83,8 +78,8 @@ public final class FragmentYyKtvVoiceBinding implements ViewBinding {
                                         if (frameLayout != null) {
                                             FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.fl_companion);
                                             if (frameLayout2 != null) {
-                                                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_effect_list);
-                                                if (recyclerView != null) {
+                                                RecyclerView findViewById2 = view.findViewById(R.id.rv_effect_list);
+                                                if (findViewById2 != null) {
                                                     TextView textView2 = (TextView) view.findViewById(R.id.tv_audio_effect);
                                                     if (textView2 != null) {
                                                         TextView textView3 = (TextView) view.findViewById(R.id.tv_dialog_accompany);
@@ -99,7 +94,7 @@ public final class FragmentYyKtvVoiceBinding implements ViewBinding {
                                                                         if (textView7 != null) {
                                                                             TextView textView8 = (TextView) view.findViewById(R.id.tv_up_down_tone);
                                                                             if (textView8 != null) {
-                                                                                return new FragmentYyKtvVoiceBinding((ConstraintLayout) view, seekBar, seekBar2, imageView, toggleButton, shapeTextView, imageView2, findViewById, textView, frameLayout, frameLayout2, recyclerView, textView2, textView3, textView4, textView5, textView6, textView7, textView8);
+                                                                                return new FragmentYyKtvVoiceBinding((ConstraintLayout) view, seekBar, seekBar2, imageView, toggleButton, shapeTextView, imageView2, findViewById, textView, frameLayout, frameLayout2, findViewById2, textView2, textView3, textView4, textView5, textView6, textView7, textView8);
                                                                             }
                                                                             str = "tvUpDownTone";
                                                                         } else {
@@ -130,7 +125,7 @@ public final class FragmentYyKtvVoiceBinding implements ViewBinding {
                                             str = "flBarVoice";
                                         }
                                     } else {
-                                        str = WbCloudFaceContant.DIALOG_TITLE;
+                                        str = "dialogTitle";
                                     }
                                 } else {
                                     str = "coverView";
@@ -156,7 +151,6 @@ public final class FragmentYyKtvVoiceBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.s;

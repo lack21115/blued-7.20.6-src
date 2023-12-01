@@ -1,9 +1,5 @@
 package com.android.internal.util;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.igexin.push.core.b;
-import com.tencent.lbssearch.object.param.Geo2AddressParam;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StreamTokenizer;
@@ -69,22 +65,22 @@ public class TypedProperties extends HashMap<String, Object> {
         if ("unset".equals(str)) {
             return 120;
         }
-        if (TypedValues.Custom.S_BOOLEAN.equals(str)) {
+        if ("boolean".equals(str)) {
             return 90;
         }
         if ("byte".equals(str)) {
-            return 329;
+            return TYPE_BYTE;
         }
-        if (Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT.equals(str)) {
-            return 585;
+        if ("short".equals(str)) {
+            return TYPE_SHORT;
         }
-        if (IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL.equals(str)) {
+        if ("int".equals(str)) {
             return TYPE_INT;
         }
         if ("long".equals(str)) {
             return TYPE_LONG;
         }
-        if (TypedValues.Custom.S_FLOAT.equals(str)) {
+        if ("float".equals(str)) {
             return TYPE_FLOAT;
         }
         if ("double".equals(str)) {
@@ -198,7 +194,7 @@ public class TypedProperties extends HashMap<String, Object> {
                 if (nextToken == 34) {
                     return streamTokenizer.sval;
                 }
-                if (nextToken == -3 && b.l.equals(streamTokenizer.sval)) {
+                if (nextToken == -3 && "null".equals(streamTokenizer.sval)) {
                     return NULL_STRING;
                 }
                 throw new ParseException(streamTokenizer, "double-quoted string or 'null'");
@@ -245,7 +241,7 @@ public class TypedProperties extends HashMap<String, Object> {
         if (obj instanceof Boolean) {
             return ((Boolean) obj).booleanValue();
         }
-        throw new TypeException(str, obj, TypedValues.Custom.S_BOOLEAN);
+        throw new TypeException(str, obj, "boolean");
     }
 
     public byte getByte(String str) {
@@ -290,7 +286,7 @@ public class TypedProperties extends HashMap<String, Object> {
         if (obj instanceof Float) {
             return ((Float) obj).floatValue();
         }
-        throw new TypeException(str, obj, TypedValues.Custom.S_FLOAT);
+        throw new TypeException(str, obj, "float");
     }
 
     public int getInt(String str) {
@@ -305,7 +301,7 @@ public class TypedProperties extends HashMap<String, Object> {
         if (obj instanceof Integer) {
             return ((Integer) obj).intValue();
         }
-        throw new TypeException(str, obj, IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL);
+        throw new TypeException(str, obj, "int");
     }
 
     public long getLong(String str) {
@@ -335,7 +331,7 @@ public class TypedProperties extends HashMap<String, Object> {
         if (obj instanceof Short) {
             return ((Short) obj).shortValue();
         }
-        throw new TypeException(str, obj, Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT);
+        throw new TypeException(str, obj, "short");
     }
 
     public String getString(String str) {

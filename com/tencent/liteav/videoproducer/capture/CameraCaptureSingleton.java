@@ -146,23 +146,23 @@ public class CameraCaptureSingleton implements SurfaceTexture.OnFrameAvailableLi
     public static final /* synthetic */ class AnonymousClass3 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f36845a;
+        static final /* synthetic */ int[] f23154a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[af.a.values().length];
-            f36845a = iArr;
+            f23154a = iArr;
             try {
                 iArr[af.a.MOCK.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f36845a[af.a.CAMERA_2.ordinal()] = 2;
+                f23154a[af.a.CAMERA_2.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f36845a[af.a.CAMERA_1.ordinal()] = 3;
+                f23154a[af.a.CAMERA_1.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -208,7 +208,7 @@ public class CameraCaptureSingleton implements SurfaceTexture.OnFrameAvailableLi
 
     private ad createCameraController(af.a aVar) {
         com.tencent.liteav.videoproducer.capture.a.a aVar2;
-        int i = AnonymousClass3.f36845a[aVar.ordinal()];
+        int i = AnonymousClass3.f23154a[aVar.ordinal()];
         if (i != 1) {
             aVar2 = i != 2 ? new com.tencent.liteav.videoproducer.capture.a.a() : new com.tencent.liteav.videoproducer.capture.b.a(this.mSequenceTaskRunner);
         } else {
@@ -256,8 +256,8 @@ public class CameraCaptureSingleton implements SurfaceTexture.OnFrameAvailableLi
         } else {
             af.a a2 = this.mCameraSupervisor.a();
             af afVar = this.mCameraSupervisor;
-            if (afVar.f36859a == af.a.CAMERA_2) {
-                afVar.f36860c = true;
+            if (afVar.f23168a == af.a.CAMERA_2) {
+                afVar.f23169c = true;
             }
             if (a2 == this.mCameraSupervisor.a()) {
                 if (this.mNeedNotifyStartFinish) {
@@ -327,9 +327,9 @@ public class CameraCaptureSingleton implements SurfaceTexture.OnFrameAvailableLi
         PixelFrame pixelFrame = new PixelFrame();
         if (rotation == Rotation.ROTATION_90 || rotation == Rotation.ROTATION_270) {
             pixelFrame.setWidth(nVar.b);
-            pixelFrame.setHeight(nVar.f36340a);
+            pixelFrame.setHeight(nVar.f22649a);
         } else {
-            pixelFrame.setWidth(nVar.f36340a);
+            pixelFrame.setWidth(nVar.f22649a);
             pixelFrame.setHeight(nVar.b);
         }
         pixelFrame.setPixelBufferType(GLConstants.PixelBufferType.TEXTURE_OES);
@@ -461,13 +461,13 @@ public class CameraCaptureSingleton implements SurfaceTexture.OnFrameAvailableLi
     public static /* synthetic */ void lambda$switchCamera$2(CameraCaptureSingleton cameraCaptureSingleton) {
         boolean z = cameraCaptureSingleton.mExpectFrontCamera.get();
         CameraCaptureParams cameraCaptureParams = cameraCaptureSingleton.mCurrentCaptureParams;
-        if (cameraCaptureParams == null || cameraCaptureParams.f36842a.booleanValue() == z) {
+        if (cameraCaptureParams == null || cameraCaptureParams.f23151a.booleanValue() == z) {
             return;
         }
         cameraCaptureSingleton.closeCamera();
         cameraCaptureSingleton.mZoomPercent = 0.0f;
         cameraCaptureSingleton.mNeedNotifyStartFinish = true;
-        cameraCaptureSingleton.mCurrentCaptureParams.f36842a = Boolean.valueOf(z);
+        cameraCaptureSingleton.mCurrentCaptureParams.f23151a = Boolean.valueOf(z);
         cameraCaptureSingleton.openCamera(cameraCaptureSingleton.mCurrentCaptureParams);
     }
 
@@ -544,9 +544,9 @@ public class CameraCaptureSingleton implements SurfaceTexture.OnFrameAvailableLi
         this.mOESTextureId = OpenGlUtils.generateTextureOES();
         this.mSurfaceTexture = new SurfaceTexture(this.mOESTextureId);
         this.mCameraController = createCameraController(this.mCameraSupervisor.a());
-        if (cameraCaptureParams.f36842a == null) {
-            cameraCaptureParams.f36842a = Boolean.valueOf(this.mExpectFrontCamera.get());
-            LiteavLog.w(TAG, "openCameraInternal frontCamera not set, use expect front camera:" + cameraCaptureParams.f36842a);
+        if (cameraCaptureParams.f23151a == null) {
+            cameraCaptureParams.f23151a = Boolean.valueOf(this.mExpectFrontCamera.get());
+            LiteavLog.w(TAG, "openCameraInternal frontCamera not set, use expect front camera:" + cameraCaptureParams.f23151a);
         }
         this.mCurrentCaptureParams = cameraCaptureParams;
         this.mCameraController.b(this.mEnableTapToFocus);
@@ -568,9 +568,9 @@ public class CameraCaptureSingleton implements SurfaceTexture.OnFrameAvailableLi
     }
 
     private void updateParamsInternal(CameraCaptureParams cameraCaptureParams) {
-        if (cameraCaptureParams.f36842a == null) {
-            cameraCaptureParams.f36842a = this.mCurrentCaptureParams.f36842a;
-            LiteavLog.i(TAG, "params not set frontCamera, use mCurrentCaptureParams frontCamera:" + this.mCurrentCaptureParams.f36842a);
+        if (cameraCaptureParams.f23151a == null) {
+            cameraCaptureParams.f23151a = this.mCurrentCaptureParams.f23151a;
+            LiteavLog.i(TAG, "params not set frontCamera, use mCurrentCaptureParams frontCamera:" + this.mCurrentCaptureParams.f23151a);
         }
         if (isNeedRestartCamera(cameraCaptureParams)) {
             LiteavLog.i(TAG, "reopen camera params: ".concat(String.valueOf(cameraCaptureParams)));
@@ -618,10 +618,10 @@ public class CameraCaptureSingleton implements SurfaceTexture.OnFrameAvailableLi
 
     public boolean isFrontCamera() {
         CameraCaptureParams cameraCaptureParams = this.mCurrentCaptureParams;
-        if (cameraCaptureParams == null || cameraCaptureParams.f36842a == null) {
+        if (cameraCaptureParams == null || cameraCaptureParams.f23151a == null) {
             return false;
         }
-        return cameraCaptureParams.f36842a.booleanValue();
+        return cameraCaptureParams.f23151a.booleanValue();
     }
 
     public boolean isTorchSupported() {

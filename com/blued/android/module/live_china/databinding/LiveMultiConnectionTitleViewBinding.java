@@ -13,22 +13,18 @@ import com.blued.android.module.live_china.view.LiveMultiPkCountDownView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveMultiConnectionTitleViewBinding.class */
 public final class LiveMultiConnectionTitleViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LiveMultiPkCountDownView f12289a;
+    public final LiveMultiPkCountDownView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12290c;
+    public final ImageView c;
     public final TextView d;
     public final Space e;
     private final FrameLayout f;
 
     private LiveMultiConnectionTitleViewBinding(FrameLayout frameLayout, LiveMultiPkCountDownView liveMultiPkCountDownView, ImageView imageView, ImageView imageView2, TextView textView, Space space) {
         this.f = frameLayout;
-        this.f12289a = liveMultiPkCountDownView;
+        this.a = liveMultiPkCountDownView;
         this.b = imageView;
-        this.f12290c = imageView2;
+        this.c = imageView2;
         this.d = textView;
         this.e = space;
     }
@@ -71,7 +67,6 @@ public final class LiveMultiConnectionTitleViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.f;

@@ -45,15 +45,15 @@ public class PublishProxy extends BaseProxy<IPublish> implements IPublish {
 
     @Override // com.blued.android.module.base.http.IPublish
     public void a(Context context, int i, ILiveApplyListener iLiveApplyListener) {
-        if (this.f10426a != 0) {
-            ((IPublish) this.f10426a).a(context, i, iLiveApplyListener);
+        if (this.a != 0) {
+            ((IPublish) this.a).a(context, i, iLiveApplyListener);
         }
     }
 
     @Override // com.blued.android.module.base.http.IPublish
     public void a(Context context, String str, int i, IUploadAuthVideoListener iUploadAuthVideoListener) {
-        if (this.f10426a != 0) {
-            ((IPublish) this.f10426a).a(context, str, i, iUploadAuthVideoListener);
+        if (this.a != 0) {
+            ((IPublish) this.a).a(context, str, i, iUploadAuthVideoListener);
         }
     }
 }

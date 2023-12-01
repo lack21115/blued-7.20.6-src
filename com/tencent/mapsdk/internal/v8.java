@@ -7,7 +7,7 @@ public class v8 implements Cloneable {
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Class<?> f38064c;
+    public Class<?> f24373c;
     public t8 d;
     private y8 e;
     private Object f;
@@ -19,7 +19,7 @@ public class v8 implements Cloneable {
 
         public b(int i, p8 p8Var) {
             super(i);
-            this.f38064c = Float.TYPE;
+            this.f24373c = Float.TYPE;
             this.d = p8Var;
             this.i = p8Var;
         }
@@ -68,7 +68,7 @@ public class v8 implements Cloneable {
 
         public c(int i, r8 r8Var) {
             super(i);
-            this.f38064c = Integer.TYPE;
+            this.f24373c = Integer.TYPE;
             this.d = r8Var;
             this.i = r8Var;
         }
@@ -171,12 +171,12 @@ public class v8 implements Cloneable {
     }
 
     public void a(double... dArr) {
-        this.f38064c = Double.TYPE;
+        this.f24373c = Double.TYPE;
         this.d = t8.a(dArr);
     }
 
     public void a(int... iArr) {
-        this.f38064c = Integer.TYPE;
+        this.f24373c = Integer.TYPE;
         this.d = t8.a(iArr);
     }
 
@@ -197,7 +197,7 @@ public class v8 implements Cloneable {
     }
 
     public void a(Object... objArr) {
-        this.f38064c = objArr[0].getClass();
+        this.f24373c = objArr[0].getClass();
         this.d = t8.a(objArr);
     }
 
@@ -211,7 +211,7 @@ public class v8 implements Cloneable {
 
     public void d() {
         if (this.e == null) {
-            Class<?> cls = this.f38064c;
+            Class<?> cls = this.f24373c;
             this.e = cls == Integer.class ? g : cls == Double.class ? h : null;
         }
         y8 y8Var = this.e;

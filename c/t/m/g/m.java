@@ -6,10 +6,10 @@ import android.os.Build;
 public class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile String f3878a = "";
+    public static volatile String f3830a = "";
 
     public static String a() {
-        return e() ? f3878a : q3.h();
+        return e() ? f3830a : q3.h();
     }
 
     public static String b() {
@@ -21,7 +21,7 @@ public class m {
     }
 
     public static String d() {
-        return e() ? f3878a : q3.m();
+        return e() ? f3830a : q3.m();
     }
 
     public static boolean e() {

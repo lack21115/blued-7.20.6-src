@@ -14,7 +14,7 @@ public class s6 extends x6 {
     @Json(name = "loadSuccessTime")
 
     /* renamed from: c  reason: collision with root package name */
-    private long f37993c;
+    private long f24302c;
     @Json(name = "firstLoadTime")
     private long d;
     @Json(name = "configUpdate")
@@ -31,7 +31,7 @@ public class s6 extends x6 {
         @Json(name = "missFiles")
 
         /* renamed from: c  reason: collision with root package name */
-        private Set<d> f37994c;
+        private Set<d> f24303c;
 
         public a(long j) {
             super(j);
@@ -45,12 +45,12 @@ public class s6 extends x6 {
         @Json(name = "loadBeginTime")
 
         /* renamed from: c  reason: collision with root package name */
-        private long f37995c;
+        private long f24304c;
 
         public b(long j) {
             super(j);
             this.b = false;
-            this.f37995c = 0L;
+            this.f24304c = 0L;
         }
     }
 
@@ -61,7 +61,7 @@ public class s6 extends x6 {
         @Json(name = "time")
 
         /* renamed from: c  reason: collision with root package name */
-        public long f37996c;
+        public long f24305c;
         @Json(name = "expectMd5")
         public String d;
         @Json(name = "actualMd5")
@@ -102,7 +102,7 @@ public class s6 extends x6 {
         @Json(name = "time")
 
         /* renamed from: c  reason: collision with root package name */
-        private long f37997c;
+        private long f24306c;
 
         public d(long j) {
             super(j);
@@ -131,7 +131,7 @@ public class s6 extends x6 {
         @Json(name = "tid")
 
         /* renamed from: c  reason: collision with root package name */
-        private String f37998c;
+        private String f24307c;
         @Json(name = "netError")
         private int d;
 
@@ -144,13 +144,13 @@ public class s6 extends x6 {
                 return true;
             }
             if (obj instanceof e) {
-                return f7.c(this.f37998c, ((e) obj).f37998c);
+                return f7.c(this.f24307c, ((e) obj).f24307c);
             }
             return false;
         }
 
         public int hashCode() {
-            String str = this.f37998c;
+            String str = this.f24307c;
             return str == null ? super.hashCode() : str.hashCode();
         }
     }
@@ -158,7 +158,7 @@ public class s6 extends x6 {
     public s6(long j) {
         super(j);
         this.b = false;
-        this.f37993c = 0L;
+        this.f24302c = 0L;
         this.d = 0L;
     }
 
@@ -166,18 +166,18 @@ public class s6 extends x6 {
         if (this.g == null) {
             this.g = new a(a());
         }
-        if (this.g.f37994c == null) {
-            this.g.f37994c = new CopyOnWriteArraySet();
+        if (this.g.f24303c == null) {
+            this.g.f24303c = new CopyOnWriteArraySet();
         }
-        if (this.g.f37994c.size() > 9) {
+        if (this.g.f24303c.size() > 9) {
             return;
         }
-        d dVar = new d(this.f38104a);
-        dVar.f37997c = j - this.f38104a;
+        d dVar = new d(this.f24413a);
+        dVar.f24306c = j - this.f24413a;
         dVar.b = str;
-        this.g.f37994c.add(dVar);
+        this.g.f24303c.add(dVar);
         HashMap hashMap = new HashMap();
-        hashMap.put("startTime", "" + this.f38104a);
+        hashMap.put("startTime", "" + this.f24413a);
         hashMap.put("endTime", "" + j);
         u.d().onReport(new ReportEvent("mapload-missfile", hashMap));
     }
@@ -190,14 +190,14 @@ public class s6 extends x6 {
             return;
         }
         e eVar = new e(j);
-        eVar.b = j - this.f38104a;
-        eVar.f37998c = str;
+        eVar.b = j - this.f24413a;
+        eVar.f24307c = str;
         eVar.d = i;
         this.f.add(eVar);
         HashMap hashMap = new HashMap();
         hashMap.put("tid", str);
         hashMap.put("netError", "" + i);
-        hashMap.put("startTime", "" + this.f38104a);
+        hashMap.put("startTime", "" + this.f24413a);
         hashMap.put("endTime", "" + j);
         u.d().onReport(new ReportEvent("mapload-tile", hashMap));
     }
@@ -219,8 +219,8 @@ public class s6 extends x6 {
         hashMap.put("netError", "" + cVar.g);
         hashMap.put("expectMd5", cVar.d);
         hashMap.put("actualMd5", cVar.e);
-        hashMap.put("startTime", "" + this.f38104a);
-        hashMap.put("endTime", "" + this.f38104a + cVar.f37996c);
+        hashMap.put("startTime", "" + this.f24413a);
+        hashMap.put("endTime", "" + this.f24413a + cVar.f24305c);
         u.d().onReport(new ReportEvent("mapload-configfile", hashMap));
     }
 
@@ -228,25 +228,25 @@ public class s6 extends x6 {
         b bVar = new b(a());
         this.e = bVar;
         bVar.b = z;
-        long j2 = j - this.f38104a;
+        long j2 = j - this.f24413a;
         if (j2 > 0) {
-            this.e.f37995c = j2;
+            this.e.f24304c = j2;
         }
     }
 
     public void b(boolean z, long j) {
         this.b = z;
         if (this.d > 0) {
-            this.f37993c = j - this.f38104a;
+            this.f24302c = j - this.f24413a;
         } else {
-            this.d = j - this.f38104a;
+            this.d = j - this.f24413a;
         }
-        this.f37993c = j;
+        this.f24302c = j;
         HashMap hashMap = new HashMap();
         hashMap.put(bw.o, z + "");
-        hashMap.put("startTime", this.f38104a + "");
+        hashMap.put("startTime", this.f24413a + "");
         hashMap.put("endTime", j + "");
-        hashMap.put("duration", this.f37993c + "");
+        hashMap.put("duration", this.f24302c + "");
         hashMap.put("firstDuration", this.d + "");
         u.d().onReport(new ReportEvent("mapload", hashMap));
     }

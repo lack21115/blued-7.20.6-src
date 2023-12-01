@@ -14,6 +14,8 @@ import android.os.UserManager;
 import android.util.Slog;
 import android.view.View;
 import android.widget.Toast;
+import com.android.ims.ImsConferenceState;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/app/IntentForwarderActivity.class */
 public class IntentForwarderActivity extends Activity {
@@ -22,7 +24,7 @@ public class IntentForwarderActivity extends Activity {
     public static String FORWARD_INTENT_TO_MANAGED_PROFILE = "com.android.internal.app.ForwardIntentToManagedProfile";
 
     private int getManagedProfile() {
-        for (UserInfo userInfo : ((UserManager) getSystemService("user")).getProfiles(0)) {
+        for (UserInfo userInfo : ((UserManager) getSystemService(ImsConferenceState.USER)).getProfiles(0)) {
             if (userInfo.isManagedProfile()) {
                 return userInfo.id;
             }
@@ -34,15 +36,15 @@ public class IntentForwarderActivity extends Activity {
     boolean canForward(Intent intent, int i) {
         IPackageManager packageManager = AppGlobals.getPackageManager();
         Intent intent2 = intent;
-        if (intent.getAction().equals(Intent.ACTION_CHOOSER)) {
-            if (intent.hasExtra(Intent.EXTRA_INITIAL_INTENTS)) {
+        if (intent.getAction().equals("android.intent.action.CHOOSER")) {
+            if (intent.hasExtra("android.intent.extra.INITIAL_INTENTS")) {
                 Slog.wtf(TAG, "An chooser intent with extra initial intents cannot be forwarded to a different user");
                 return false;
-            } else if (intent.hasExtra(Intent.EXTRA_REPLACEMENT_EXTRAS)) {
+            } else if (intent.hasExtra("android.intent.extra.REPLACEMENT_EXTRAS")) {
                 Slog.wtf(TAG, "A chooser intent with replacement extras cannot be forwarded to a different user");
                 return false;
             } else {
-                intent2 = (Intent) intent.getParcelableExtra(Intent.EXTRA_INTENT);
+                intent2 = (Intent) intent.getParcelableExtra("android.intent.extra.INTENT");
             }
         }
         String resolveTypeIfNeeded = intent2.resolveTypeIfNeeded(getContentResolver());
@@ -58,9 +60,8 @@ public class IntentForwarderActivity extends Activity {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle) {
         int i;
         int i2;
         super.onCreate(bundle);
@@ -87,13 +88,13 @@ public class IntentForwarderActivity extends Activity {
         intent2.addFlags(View.SCROLLBARS_OUTSIDE_INSET);
         int userId = getUserId();
         if (canForward(intent2, i2)) {
-            if (intent2.getAction().equals(Intent.ACTION_CHOOSER)) {
-                ((Intent) intent2.getParcelableExtra(Intent.EXTRA_INTENT)).setContentUserHint(userId);
+            if (intent2.getAction().equals("android.intent.action.CHOOSER")) {
+                ((Intent) intent2.getParcelableExtra("android.intent.extra.INTENT")).setContentUserHint(userId);
             } else {
                 intent2.setContentUserHint(userId);
             }
             ResolveInfo resolveActivityAsUser = getPackageManager().resolveActivityAsUser(intent2, 65536, i2);
-            boolean z = resolveActivityAsUser == null || resolveActivityAsUser.activityInfo == null || !"android".equals(resolveActivityAsUser.activityInfo.packageName) || !(ResolverActivity.class.getName().equals(resolveActivityAsUser.activityInfo.name) || ChooserActivity.class.getName().equals(resolveActivityAsUser.activityInfo.name));
+            boolean z = resolveActivityAsUser == null || resolveActivityAsUser.activityInfo == null || !MsgBackupManager.PLATFORM_ANDROID.equals(resolveActivityAsUser.activityInfo.packageName) || !(ResolverActivity.class.getName().equals(resolveActivityAsUser.activityInfo.name) || ChooserActivity.class.getName().equals(resolveActivityAsUser.activityInfo.name));
             try {
                 startActivityAsCaller(intent2, null, i2);
             } catch (RuntimeException e) {

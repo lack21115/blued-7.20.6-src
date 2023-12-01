@@ -25,7 +25,7 @@ import kotlinx.coroutines.CoroutineScope;
 final class SearchGroupVM$requestData$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f32869a;
+    int f19178a;
     final /* synthetic */ SearchGroupVM b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -35,29 +35,26 @@ final class SearchGroupVM$requestData$1 extends SuspendLambda implements Functio
         this.b = searchGroupVM;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((SearchGroupVM$requestData$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new SearchGroupVM$requestData$1(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         String str;
-        ApiState error;
+        ApiState apiState;
         Object a2 = IntrinsicsKt.a();
-        int i = this.f32869a;
+        int i = this.f19178a;
         if (i == 0) {
             ResultKt.a(obj);
             GroupApiService groupApiService = (GroupApiService) BluedApiProxy.b().a(GroupApiService.class);
-            str = this.b.f32868a;
-            this.f32869a = 1;
-            Object a3 = groupApiService.a(str, this.b.getMPage(), this.b.getMPageSize(), this);
+            str = this.b.f19177a;
+            this.f19178a = 1;
+            Object a3 = groupApiService.a(str, this.b.getMPage(), this.b.getMPageSize(), (Continuation) this);
             obj = a3;
             if (a3 == a2) {
                 return a2;
@@ -71,26 +68,26 @@ final class SearchGroupVM$requestData$1 extends SuspendLambda implements Functio
         SearchGroupVM searchGroupVM = this.b;
         if (bluedEntityA.code == 200) {
             if (bluedEntityA.hasData()) {
-                List<T> data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
-                searchGroupVM.loadListSucceed(data, bluedEntityA.hasMore());
+                List list = bluedEntityA.data;
+                Intrinsics.c(list, "data");
+                searchGroupVM.loadListSucceed(list, bluedEntityA.hasMore());
             } else {
                 searchGroupVM.loadListSucceed(CollectionsKt.b(), false);
             }
-            error = Succeed.f10631a;
+            apiState = (ApiState) Succeed.a;
         } else {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            error = new Error(i2, message);
+            String str2 = bluedEntityA.message;
+            Intrinsics.c(str2, "message");
+            apiState = (ApiState) new Error(i2, str2);
         }
         SearchGroupVM searchGroupVM2 = this.b;
-        if (error instanceof Error) {
-            Error error2 = (Error) error;
-            error2.a();
-            error2.b();
+        if (apiState instanceof Error) {
+            Error error = apiState;
+            error.a();
+            error.b();
             searchGroupVM2.loadListFailed();
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

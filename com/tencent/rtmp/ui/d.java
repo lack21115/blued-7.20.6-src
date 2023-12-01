@@ -4,18 +4,18 @@ package com.tencent.rtmp.ui;
 final /* synthetic */ class d implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXCloudVideoView f38690a;
+    private final TXCloudVideoView f24999a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f38691c;
+    private final int f25000c;
     private final int d;
     private final int e;
 
     private d(TXCloudVideoView tXCloudVideoView, int i, int i2, int i3, int i4) {
-        this.f38690a = tXCloudVideoView;
+        this.f24999a = tXCloudVideoView;
         this.b = i;
-        this.f38691c = i2;
+        this.f25000c = i2;
         this.d = i3;
         this.e = i4;
     }
@@ -26,6 +26,6 @@ final /* synthetic */ class d implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f38690a.showFocusViewInternal(this.b, this.f38691c, this.d, this.e);
+        this.f24999a.showFocusViewInternal(this.b, this.f25000c, this.d, this.e);
     }
 }

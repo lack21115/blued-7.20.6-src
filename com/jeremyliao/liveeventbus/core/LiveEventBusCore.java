@@ -11,6 +11,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
+import com.cdo.oaps.ad.OapsKey;
 import com.jeremyliao.liveeventbus.ipc.consts.IpcConst;
 import com.jeremyliao.liveeventbus.ipc.core.ProcessorManager;
 import com.jeremyliao.liveeventbus.ipc.receiver.LebIpcReceiver;
@@ -56,7 +57,7 @@ public final class LiveEventBusCore {
                 Field declaredField = LiveData.class.getDeclaredField("mObservers");
                 declaredField.setAccessible(true);
                 Object obj = declaredField.get(liveData);
-                Method declaredMethod = obj.getClass().getDeclaredMethod("size", new Class[0]);
+                Method declaredMethod = obj.getClass().getDeclaredMethod(OapsKey.KEY_SIZE, new Class[0]);
                 declaredMethod.setAccessible(true);
                 return ((Integer) declaredMethod.invoke(obj, new Object[0])).intValue();
             } catch (Exception e) {

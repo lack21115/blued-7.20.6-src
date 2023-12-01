@@ -6,20 +6,14 @@ import com.anythink.core.common.e.x;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/j.class */
 public class j extends com.anythink.core.common.c.a<x> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static j f6591c;
+    private static j c;
     private final String b;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/j$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6592a = "offer_action_record";
+        public static final String a = "offer_action_record";
         public static final String b = "adsource_id";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6593c = "type";
+        public static final String c = "type";
         public static final String d = "unit_id";
         public static final String e = "click_count";
         public static final String f = "show_count";
@@ -43,8 +37,8 @@ public class j extends com.anythink.core.common.c.a<x> {
                 contentValues.put("unit_id", xVar.a());
                 contentValues.put(a.e, Integer.valueOf(xVar.d()));
                 contentValues.put("show_count", Integer.valueOf(xVar.c()));
-                contentValues.put("expire_time", Long.valueOf(xVar.b()));
-                return b().update(a.f6592a, contentValues, "type = ? and unit_id = ?", new String[]{String.valueOf(xVar.e()), xVar.a()});
+                contentValues.put(a.g, Long.valueOf(xVar.b()));
+                return b().update(a.a, contentValues, "type = ? and unit_id = ?", new String[]{String.valueOf(xVar.e()), xVar.a()});
             } catch (Exception e) {
                 return -1L;
             }
@@ -52,18 +46,18 @@ public class j extends com.anythink.core.common.c.a<x> {
     }
 
     public static j a(b bVar) {
-        if (f6591c == null) {
+        if (c == null) {
             synchronized (j.class) {
                 try {
-                    if (f6591c == null) {
-                        f6591c = new j(bVar);
+                    if (c == null) {
+                        c = new j(bVar);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6591c;
+        return c;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:26:0x00a0, code lost:
@@ -107,13 +101,13 @@ public class j extends com.anythink.core.common.c.a<x> {
                 if (a2 != null) {
                     contentValues.put(a.e, Integer.valueOf(a2.d()));
                     contentValues.put("show_count", Integer.valueOf(a2.c()));
-                    contentValues.put("expire_time", Long.valueOf(a2.b()));
+                    contentValues.put(a.g, Long.valueOf(a2.b()));
                 } else {
                     contentValues.put(a.e, (Integer) 0);
                     contentValues.put("show_count", (Integer) 0);
-                    contentValues.put("expire_time", (Integer) (-1));
+                    contentValues.put(a.g, (Integer) (-1));
                 }
-                return b().insert(a.f6592a, null, contentValues);
+                return b().insert(a.a, null, contentValues);
             } catch (Exception e) {
                 return -1L;
             }
@@ -133,7 +127,7 @@ public class j extends com.anythink.core.common.c.a<x> {
     }
 
     private boolean b(int i, String str) {
-        Cursor query = a().query(a.f6592a, null, "type = ? and unit_id = ?", new String[]{String.valueOf(i), str}, null, null, null);
+        Cursor query = a().query(a.a, null, "type = ? and unit_id = ?", new String[]{String.valueOf(i), str}, null, null, null);
         if (query != null && query.getCount() > 0) {
             query.close();
             return true;
@@ -146,7 +140,7 @@ public class j extends com.anythink.core.common.c.a<x> {
     }
 
     private boolean c(String str, int i, String str2) {
-        Cursor query = a().query(a.f6592a, null, "adsource_id = ? and type = ? and unit_id = ?", new String[]{str, String.valueOf(i), str2}, null, null, null);
+        Cursor query = a().query(a.a, null, "adsource_id = ? and type = ? and unit_id = ?", new String[]{str, String.valueOf(i), str2}, null, null, null);
         if (query != null && query.getCount() > 0) {
             query.close();
             return true;
@@ -212,7 +206,7 @@ public class j extends com.anythink.core.common.c.a<x> {
     public final void a(String str, int i, String str2) {
         boolean z;
         synchronized (this) {
-            Cursor query = a().query(a.f6592a, null, "adsource_id = ? and type = ? and unit_id = ?", new String[]{str, String.valueOf(i), str2}, null, null, null);
+            Cursor query = a().query(a.a, null, "adsource_id = ? and type = ? and unit_id = ?", new String[]{str, String.valueOf(i), str2}, null, null, null);
             if (query == null || query.getCount() <= 0) {
                 z = false;
                 if (query != null) {

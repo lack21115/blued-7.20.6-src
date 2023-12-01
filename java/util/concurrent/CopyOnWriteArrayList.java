@@ -112,7 +112,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
             }
         }
 
-        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection
         public boolean add(E e) {
             synchronized (CopyOnWriteArrayList.this) {
                 add(this.slice.to - this.slice.from, e);
@@ -133,7 +133,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
             return addAll;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean addAll(Collection<? extends E> collection) {
             boolean addAll;
             synchronized (CopyOnWriteArrayList.this) {
@@ -142,7 +142,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
             return addAll;
         }
 
-        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection
         public void clear() {
             synchronized (CopyOnWriteArrayList.this) {
                 this.slice.checkConcurrentModification(CopyOnWriteArrayList.this.elements);
@@ -151,12 +151,12 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return indexOf(obj) != -1;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             Slice slice = this.slice;
             Object[] objArr = CopyOnWriteArrayList.this.elements;
@@ -186,7 +186,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
             return i;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             Slice slice = this.slice;
             return slice.from == slice.to;
@@ -238,7 +238,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
             return e;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             synchronized (CopyOnWriteArrayList.this) {
                 int indexOf = indexOf(obj);
@@ -250,7 +250,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             boolean z = false;
             synchronized (CopyOnWriteArrayList.this) {
@@ -264,7 +264,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
             return z;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             boolean z = true;
             synchronized (CopyOnWriteArrayList.this) {
@@ -290,7 +290,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
             return e2;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             Slice slice = this.slice;
             return slice.to - slice.from;
@@ -492,7 +492,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean add(E e) {
         synchronized (this) {
             Object[] objArr = new Object[this.elements.length + 1];
@@ -520,7 +520,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         return z;
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         boolean addAll;
         synchronized (this) {
@@ -564,7 +564,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         return z;
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public void clear() {
         synchronized (this) {
             this.elements = EmptyArray.OBJECT;
@@ -581,12 +581,12 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean contains(Object obj) {
         return indexOf(obj) != -1;
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean containsAll(Collection<?> collection) {
         Object[] objArr = this.elements;
         return containsAll(collection, objArr, 0, objArr.length);
@@ -595,7 +595,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0024, code lost:
         if (java.util.Arrays.equals(r3.elements, ((java.util.concurrent.CopyOnWriteArrayList) r4).elements) != false) goto L10;
      */
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -698,7 +698,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         return this.elements;
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public int hashCode() {
         return Arrays.hashCode(this.elements);
     }
@@ -714,7 +714,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         return indexOf(e, objArr, i, objArr.length);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean isEmpty() {
         return this.elements.length == 0;
     }
@@ -762,7 +762,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         return e;
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean remove(Object obj) {
         boolean z;
         synchronized (this) {
@@ -777,7 +777,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         return z;
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         boolean z = false;
         synchronized (this) {
@@ -788,7 +788,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         return z;
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public boolean retainAll(Collection<?> collection) {
         boolean z = true;
         synchronized (this) {
@@ -811,7 +811,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         return e2;
     }
 
-    @Override // java.util.List
+    @Override // java.util.List, java.util.Collection
     public int size() {
         return this.elements.length;
     }
@@ -825,12 +825,12 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         return new CowSubList(objArr, i, i2);
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public Object[] toArray() {
         return (Object[]) this.elements.clone();
     }
 
-    @Override // java.util.List, java.util.Collection, java.util.Set
+    @Override // java.util.List, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         Object[] objArr = this.elements;
         if (objArr.length > tArr.length) {

@@ -4,9 +4,7 @@ import android.content.Context;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/d/c.class */
 public class c extends a {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile c f6609c;
+    private static volatile c c;
 
     private c(Context context) {
         super(context);
@@ -14,17 +12,17 @@ public class c extends a {
     }
 
     public static c a(Context context) {
-        if (f6609c == null) {
+        if (c == null) {
             synchronized (c.class) {
                 try {
-                    if (f6609c == null) {
-                        f6609c = new c(context);
+                    if (c == null) {
+                        c = new c(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6609c;
+        return c;
     }
 }

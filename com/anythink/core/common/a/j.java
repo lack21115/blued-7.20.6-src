@@ -13,37 +13,31 @@ import java.util.Map;
 public class j {
     private static volatile j b;
     private long e;
-
-    /* renamed from: a  reason: collision with root package name */
-    final String f6459a = j.class.getSimpleName();
+    final String a = j.class.getSimpleName();
     private long f = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    private m f6460c = m.a(com.anythink.core.common.c.c.a(n.a().g()));
+    private m c = m.a(com.anythink.core.common.c.c.a(n.a().g()));
     private Map<String, Integer> d = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.core.common.a.j$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/a/j$2.class */
     public final class AnonymousClass2 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ i f6462a;
+        final /* synthetic */ i a;
 
         AnonymousClass2(i iVar) {
-            this.f6462a = iVar;
+            this.a = iVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                File file = new File(this.f6462a.b());
+                File file = new File(this.a.b());
                 if (file.exists()) {
                     file.delete();
                 }
             } catch (Throwable th) {
             }
-            j.this.f6460c.c(this.f6462a.a());
+            j.this.c.c(this.a.a());
         }
     }
 
@@ -78,7 +72,7 @@ public class j {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        return this.f6460c.a(str);
+        return this.c.a(str);
     }
 
     public final void a(final String str, final String str2, final long j, final long j2, final int i, boolean z) {
@@ -87,7 +81,7 @@ public class j {
             com.anythink.core.common.k.b.a.a().a(new Runnable() { // from class: com.anythink.core.common.a.j.3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    j.this.f6460c.a(str, str2, j, j2, i);
+                    j.this.c.a(str, str2, j, j2, i);
                 }
             });
         }
@@ -106,20 +100,20 @@ public class j {
             if (this.d.containsKey(str) && this.d.get(str) != null) {
                 return this.d.get(str).intValue();
             }
-            i a2 = this.f6460c.a(str);
-            if (a2 == null || a2.c() <= 0) {
+            i a = this.c.a(str);
+            if (a == null || a.c() <= 0) {
                 return 0;
             }
-            File file = new File(a2.b());
-            if (!file.exists() || file.length() < a2.e()) {
-                if (a2 != null) {
-                    com.anythink.core.common.k.b.a.a().a(new AnonymousClass2(a2));
+            File file = new File(a.b());
+            if (!file.exists() || file.length() < a.e()) {
+                if (a != null) {
+                    com.anythink.core.common.k.b.a.a().a(new AnonymousClass2(a));
                 }
                 return 0;
             }
-            this.d.put(str, Integer.valueOf(a2.c()));
-            this.f6460c.b(str);
-            return a2.c();
+            this.d.put(str, Integer.valueOf(a.c()));
+            this.c.b(str);
+            return a.c();
         }
     }
 
@@ -129,13 +123,13 @@ public class j {
             public final void run() {
                 new ArrayList();
                 j jVar = j.this;
-                jVar.f = jVar.f6460c.c();
+                jVar.f = jVar.c.c();
                 StringBuilder sb = new StringBuilder("recycleSpace check curDownloadedVideoFileSize:");
                 sb.append(j.this.f);
                 sb.append(",MAX_VIDEO_CACHE_SIZE:");
                 sb.append(j.this.e);
                 if (j.this.f > j.this.e) {
-                    List<i> d = j.this.f6460c.d();
+                    List<i> d = j.this.c.d();
                     new StringBuilder("recycleSpace start to delete video file,file list size:").append(d.size());
                     for (i iVar : d) {
                         try {
@@ -147,9 +141,9 @@ public class j {
                         }
                         try {
                             if (!TextUtils.isEmpty(iVar.a())) {
-                                String a2 = iVar.a();
-                                j.this.d.remove(a2);
-                                com.anythink.core.common.res.a.c.a().b(a2);
+                                String a = iVar.a();
+                                j.this.d.remove(a);
+                                com.anythink.core.common.res.a.c.a().b(a);
                             }
                         } catch (Throwable th2) {
                         }

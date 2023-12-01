@@ -426,7 +426,7 @@ public class Context {
         return new Executor() { // from class: io.grpc.Context.1CurrentContextExecutor
             @Override // java.util.concurrent.Executor
             public void execute(Runnable runnable) {
-                Executor.this.execute(Context.current().wrap(runnable));
+                executor.execute(Context.current().wrap(runnable));
             }
         };
     }

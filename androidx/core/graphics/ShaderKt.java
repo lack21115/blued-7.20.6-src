@@ -10,12 +10,12 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/graphics/ShaderKt.class */
 public final class ShaderKt {
-    public static final void transform(Shader shader, Function1<? super Matrix, Unit> block) {
+    public static final void transform(Shader shader, Function1<? super Matrix, Unit> function1) {
         Intrinsics.e(shader, "<this>");
-        Intrinsics.e(block, "block");
+        Intrinsics.e(function1, "block");
         Matrix matrix = new Matrix();
         shader.getLocalMatrix(matrix);
-        block.invoke(matrix);
+        function1.invoke(matrix);
         shader.setLocalMatrix(matrix);
     }
 }

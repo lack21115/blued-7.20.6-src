@@ -21,9 +21,7 @@ public class Transaction implements Parcelable {
             return Transaction.a(parcel);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    protected Integer f4451a;
+    protected Integer a;
     protected DimensionValueSet b;
     private Object lock;
     protected String o;
@@ -35,7 +33,7 @@ public class Transaction implements Parcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Transaction(Integer num, String str, String str2, DimensionValueSet dimensionValueSet) {
-        this.f4451a = num;
+        this.a = num;
         this.o = str;
         this.p = str2;
         this.r = UUID.randomUUID().toString();
@@ -47,7 +45,7 @@ public class Transaction implements Parcelable {
         Transaction transaction = new Transaction();
         try {
             transaction.b = (DimensionValueSet) parcel.readParcelable(Transaction.class.getClassLoader());
-            transaction.f4451a = Integer.valueOf(parcel.readInt());
+            transaction.a = Integer.valueOf(parcel.readInt());
             transaction.o = parcel.readString();
             transaction.p = parcel.readString();
             transaction.r = parcel.readString();
@@ -107,7 +105,7 @@ public class Transaction implements Parcelable {
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeParcelable(this.b, i);
-        parcel.writeInt(this.f4451a.intValue());
+        parcel.writeInt(this.a.intValue());
         parcel.writeString(this.o);
         parcel.writeString(this.p);
         parcel.writeString(this.r);

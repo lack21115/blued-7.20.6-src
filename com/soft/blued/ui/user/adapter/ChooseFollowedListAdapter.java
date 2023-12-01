@@ -25,11 +25,11 @@ import java.util.List;
 public class ChooseFollowedListAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33733a;
+    private Context f20042a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f33734c;
+    private LayoutInflater f20043c;
     private List<BluedRecommendUsers> d;
     private LoadOptions e;
     private String f = "";
@@ -38,11 +38,11 @@ public class ChooseFollowedListAdapter extends BaseAdapter {
     class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f33735a;
+        public ImageView f20044a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public TextView f33736c;
+        public TextView f20045c;
         public ImageView d;
         public ImageView e;
         public ImageView f;
@@ -54,9 +54,9 @@ public class ChooseFollowedListAdapter extends BaseAdapter {
 
     public ChooseFollowedListAdapter(IRequestHost iRequestHost, Context context) {
         this.d = new ArrayList();
-        this.f33733a = context;
+        this.f20042a = context;
         this.b = iRequestHost;
-        this.f33734c = LayoutInflater.from(context);
+        this.f20043c = LayoutInflater.from(context);
         this.d = new ArrayList();
         LoadOptions loadOptions = new LoadOptions();
         this.e = loadOptions;
@@ -108,13 +108,13 @@ public class ChooseFollowedListAdapter extends BaseAdapter {
         int indexOf;
         if (view == null) {
             viewHolder = new ViewHolder();
-            view2 = this.f33734c.inflate(R.layout.item_choose_followed_list, viewGroup, false);
-            viewHolder.f33735a = (ImageView) view2.findViewById(2131364544);
+            view2 = this.f20043c.inflate(R.layout.item_choose_followed_list, viewGroup, false);
+            viewHolder.f20044a = (ImageView) view2.findViewById(R.id.img_header);
             viewHolder.b = (TextView) view2.findViewById(2131372046);
-            viewHolder.d = (ImageView) view2.findViewById(2131364720);
-            viewHolder.e = (ImageView) view2.findViewById(2131364625);
-            viewHolder.f = (ImageView) view2.findViewById(2131364459);
-            viewHolder.f33736c = (TextView) view2.findViewById(2131372122);
+            viewHolder.d = (ImageView) view2.findViewById(R.id.img_verify);
+            viewHolder.e = (ImageView) view2.findViewById(R.id.img_online);
+            viewHolder.f = (ImageView) view2.findViewById(R.id.img_blued_medal);
+            viewHolder.f20045c = (TextView) view2.findViewById(R.id.tv_note);
             viewHolder.g = (ImageView) view2.findViewById(2131364726);
             view2.setTag(viewHolder);
         } else {
@@ -122,20 +122,20 @@ public class ChooseFollowedListAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         BluedRecommendUsers bluedRecommendUsers = this.d.get(i);
-        ImageLoader.a(this.b, AvatarUtils.a(0, bluedRecommendUsers.avatar)).c().b(2131237310).a(viewHolder.f33735a);
+        ImageLoader.a(this.b, AvatarUtils.a(0, bluedRecommendUsers.avatar)).c().b(2131237310).a(viewHolder.f20044a);
         String str = bluedRecommendUsers.name;
         if (StringUtils.d(bluedRecommendUsers.note)) {
-            viewHolder.f33736c.setVisibility(8);
+            viewHolder.f20045c.setVisibility(8);
         } else {
-            viewHolder.f33736c.setVisibility(0);
-            viewHolder.f33736c.setText(this.f33733a.getResources().getString(R.string.name_note) + bluedRecommendUsers.note);
+            viewHolder.f20045c.setVisibility(0);
+            viewHolder.f20045c.setText(this.f20042a.getResources().getString(R.string.name_note) + bluedRecommendUsers.note);
         }
         UserRelationshipUtils.a(viewHolder.g, bluedRecommendUsers);
         if (StringUtils.d(bluedRecommendUsers.blued_pic)) {
             viewHolder.f.setVisibility(8);
         } else {
             viewHolder.f.setVisibility(0);
-            ImageLoader.a(this.b, bluedRecommendUsers.blued_pic).b(R.drawable.blued_medal_default).a(viewHolder.f);
+            ImageLoader.a(this.b, bluedRecommendUsers.blued_pic).b((int) R.drawable.blued_medal_default).a(viewHolder.f);
         }
         if (1 == bluedRecommendUsers.online_state) {
             viewHolder.e.setVisibility(0);
@@ -161,7 +161,7 @@ public class ChooseFollowedListAdapter extends BaseAdapter {
             }
             viewHolder.b.setText(spannableStringBuilder);
         }
-        UserRelationshipUtils.a(this.f33733a, viewHolder.b, bluedRecommendUsers);
+        UserRelationshipUtils.a(this.f20042a, viewHolder.b, bluedRecommendUsers);
         UserInfoHelper.a(viewHolder.d, bluedRecommendUsers.vbadge, 3);
         return view2;
     }

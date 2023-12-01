@@ -20,13 +20,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/c.class */
 public final class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    public i f5882a;
+    public i a;
     public j b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f5883c;
+    private Context c;
     private Dialog d;
     private View e;
     private EditText f;
@@ -48,7 +44,7 @@ public final class c {
         public final void onClick(View view) {
             Tracker.onClick(view);
             if (view instanceof TextView) {
-                com.anythink.core.common.j.c.a(c.this.f5882a, c.this.b, ((TextView) view).getTag().toString(), "");
+                com.anythink.core.common.j.c.a(c.this.a, c.this.b, ((TextView) view).getTag().toString(), "");
                 c.b(c.this);
                 if (c.this.s != null) {
                     c.this.s.a();
@@ -99,7 +95,7 @@ public final class c {
             if (c.this.f != null) {
                 String obj = c.this.f.getText().toString();
                 if (!TextUtils.isEmpty(obj)) {
-                    com.anythink.core.common.j.c.a(c.this.f5882a, c.this.b, "0", obj);
+                    com.anythink.core.common.j.c.a(c.this.a, c.this.b, "0", obj);
                     c.b(c.this);
                     if (c.this.s != null) {
                         c.this.s.a();
@@ -108,7 +104,7 @@ public final class c {
                 } else {
                     c.this.r = true;
                     c.this.f.setCursorVisible(false);
-                    c.this.f.setHint(h.a(c.this.f5883c, "myoffer_feedback_hint", "string"));
+                    c.this.f.setHint(h.a(c.this.c, "myoffer_feedback_hint", "string"));
                     c.this.f.setHintTextColor(Color.parseColor("#999999"));
                     c.this.f.postDelayed(new Runnable() { // from class: com.anythink.basead.c.3.1
                         @Override // java.lang.Runnable
@@ -117,7 +113,7 @@ public final class c {
                             c.this.f.setCursorVisible(true);
                             c.this.f.setHint("");
                         }
-                    }, com.igexin.push.config.c.j);
+                    }, 1500L);
                 }
             }
         }
@@ -149,7 +145,7 @@ public final class c {
     }
 
     private void a(int i, int i2) {
-        Context context = this.f5883c;
+        Context context = this.c;
         Dialog dialog = new Dialog(context, h.a(context, "myoffer_feedback_dialog", "style"));
         this.d = dialog;
         dialog.setContentView(this.e);
@@ -158,9 +154,9 @@ public final class c {
         Window window = this.d.getWindow();
         if (window != null) {
             if (i > i2) {
-                window.setLayout(h.a(this.f5883c, 280.0f), h.a(this.f5883c, 320.0f));
+                window.setLayout(h.a(this.c, 280.0f), h.a(this.c, 320.0f));
             } else {
-                window.setLayout(h.a(this.f5883c, 300.0f), h.a(this.f5883c, 426.0f));
+                window.setLayout(h.a(this.c, 300.0f), h.a(this.c, 426.0f));
             }
         }
         this.d.show();
@@ -171,18 +167,18 @@ public final class c {
     }
 
     private void c() {
-        this.g = (ImageView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_iv_close", "id"));
-        this.f = (EditText) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_et", "id"));
-        this.h = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_commit", "id"));
-        this.i = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_1", "id"));
-        this.j = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_2", "id"));
-        this.k = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_3", "id"));
-        this.l = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_4", "id"));
-        this.m = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_5", "id"));
-        this.n = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_6", "id"));
-        this.o = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_7", "id"));
-        this.p = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_8", "id"));
-        this.q = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_9", "id"));
+        this.g = (ImageView) this.e.findViewById(h.a(this.c, "myoffer_feedback_iv_close", "id"));
+        this.f = (EditText) this.e.findViewById(h.a(this.c, "myoffer_feedback_et", "id"));
+        this.h = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_commit", "id"));
+        this.i = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_1", "id"));
+        this.j = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_2", "id"));
+        this.k = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_3", "id"));
+        this.l = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_4", "id"));
+        this.m = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_5", "id"));
+        this.n = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_6", "id"));
+        this.o = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_7", "id"));
+        this.p = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_8", "id"));
+        this.q = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_9", "id"));
         this.g.setOnClickListener(new AnonymousClass2());
         this.i.setOnClickListener(this.t);
         this.j.setOnClickListener(this.t);
@@ -216,8 +212,8 @@ public final class c {
 
     public final void a(Context context, i iVar, j jVar, a aVar) {
         try {
-            this.f5883c = context;
-            this.f5882a = iVar;
+            this.c = context;
+            this.a = iVar;
             this.b = jVar;
             this.s = aVar;
             int i = context.getResources().getDisplayMetrics().widthPixels;
@@ -227,18 +223,18 @@ public final class c {
             } else {
                 this.e = LayoutInflater.from(context).inflate(h.a(context, "myoffer_feedback", "layout"), (ViewGroup) null, false);
             }
-            this.g = (ImageView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_iv_close", "id"));
-            this.f = (EditText) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_et", "id"));
-            this.h = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_commit", "id"));
-            this.i = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_1", "id"));
-            this.j = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_2", "id"));
-            this.k = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_3", "id"));
-            this.l = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_4", "id"));
-            this.m = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_5", "id"));
-            this.n = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_6", "id"));
-            this.o = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_7", "id"));
-            this.p = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_8", "id"));
-            this.q = (TextView) this.e.findViewById(h.a(this.f5883c, "myoffer_feedback_tv_9", "id"));
+            this.g = (ImageView) this.e.findViewById(h.a(this.c, "myoffer_feedback_iv_close", "id"));
+            this.f = (EditText) this.e.findViewById(h.a(this.c, "myoffer_feedback_et", "id"));
+            this.h = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_commit", "id"));
+            this.i = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_1", "id"));
+            this.j = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_2", "id"));
+            this.k = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_3", "id"));
+            this.l = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_4", "id"));
+            this.m = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_5", "id"));
+            this.n = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_6", "id"));
+            this.o = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_7", "id"));
+            this.p = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_8", "id"));
+            this.q = (TextView) this.e.findViewById(h.a(this.c, "myoffer_feedback_tv_9", "id"));
             this.g.setOnClickListener(new AnonymousClass2());
             this.i.setOnClickListener(this.t);
             this.j.setOnClickListener(this.t);
@@ -250,7 +246,7 @@ public final class c {
             this.p.setOnClickListener(this.t);
             this.q.setOnClickListener(this.t);
             this.h.setOnClickListener(new AnonymousClass3());
-            Dialog dialog = new Dialog(this.f5883c, h.a(this.f5883c, "myoffer_feedback_dialog", "style"));
+            Dialog dialog = new Dialog(this.c, h.a(this.c, "myoffer_feedback_dialog", "style"));
             this.d = dialog;
             dialog.setContentView(this.e);
             this.d.setCancelable(true);
@@ -258,9 +254,9 @@ public final class c {
             Window window = this.d.getWindow();
             if (window != null) {
                 if (i > i2) {
-                    window.setLayout(h.a(this.f5883c, 280.0f), h.a(this.f5883c, 320.0f));
+                    window.setLayout(h.a(this.c, 280.0f), h.a(this.c, 320.0f));
                 } else {
-                    window.setLayout(h.a(this.f5883c, 300.0f), h.a(this.f5883c, 426.0f));
+                    window.setLayout(h.a(this.c, 300.0f), h.a(this.c, 426.0f));
                 }
             }
             this.d.show();
@@ -275,8 +271,8 @@ public final class c {
     }
 
     public final void b() {
-        this.f5883c = null;
-        this.f5882a = null;
+        this.c = null;
+        this.a = null;
         this.b = null;
         this.s = null;
     }

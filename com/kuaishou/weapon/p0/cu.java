@@ -2,6 +2,7 @@ package com.kuaishou.weapon.p0;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -11,11 +12,11 @@ import org.json.JSONObject;
 public class cu {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f23800a = "appkey";
+    public static String f10192a = "appkey";
     public static String b = "secretkey";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f23801c = "pver";
+    public static String f10193c = "pver";
     public static String d = "sdkver";
     public static String e = "ksid";
     public static String f = "timestamp";
@@ -34,7 +35,7 @@ public class cu {
                 return str2.substring(1);
             }
             Map.Entry entry = (Map.Entry) it.next();
-            str = str2 + "&" + ((String) entry.getKey()) + "=" + ((String) entry.getValue());
+            str = str2 + ContainerUtils.FIELD_DELIMITER + ((String) entry.getKey()) + "=" + ((String) entry.getValue());
         }
     }
 
@@ -47,7 +48,7 @@ public class cu {
                 return str2.substring(1);
             }
             Map.Entry<String, String> next = it.next();
-            str = str2 + "&" + next.getKey() + "=" + next.getValue();
+            str = str2 + ContainerUtils.FIELD_DELIMITER + next.getKey() + "=" + next.getValue();
         }
     }
 
@@ -66,7 +67,7 @@ public class cu {
     private static String b(Map map) {
         StringBuilder sb = new StringBuilder();
         try {
-            sb.append(map.get(f23800a));
+            sb.append(map.get(f10192a));
             sb.append(map.get(b));
             sb.append(map.get(f));
             return f.a(sb.toString());
@@ -122,7 +123,7 @@ public class cu {
             String str = WeaponHI.sKSAppkey;
             String str2 = WeaponHI.sKSSecKey;
             HashMap hashMap = new HashMap();
-            hashMap.put(f23800a, str);
+            hashMap.put(f10192a, str);
             hashMap.put(b, str2);
             hashMap.put(f, String.valueOf(System.currentTimeMillis() / 1000));
             hashMap.put(g, b(hashMap));

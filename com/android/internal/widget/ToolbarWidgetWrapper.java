@@ -23,7 +23,6 @@ import com.android.internal.R;
 import com.android.internal.view.menu.ActionMenuItem;
 import com.android.internal.view.menu.MenuBuilder;
 import com.android.internal.view.menu.MenuPresenter;
-import com.google.android.material.badge.BadgeDrawable;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/widget/ToolbarWidgetWrapper.class */
 public class ToolbarWidgetWrapper implements DecorToolbar {
@@ -60,7 +59,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
         this.mSubtitle = toolbar.getSubtitle();
         this.mTitleSet = this.mTitle != null;
         this.mNavIcon = this.mToolbar.getNavigationIcon();
-        TypedArray obtainStyledAttributes = toolbar.getContext().obtainStyledAttributes(null, R.styleable.ActionBar, 16843470, 0);
+        TypedArray obtainStyledAttributes = toolbar.getContext().obtainStyledAttributes(null, R.styleable.ActionBar, R.attr.actionBarStyle, 0);
         this.mDefaultNavigationIcon = obtainStyledAttributes.getDrawable(13);
         if (z) {
             CharSequence text = obtainStyledAttributes.getText(5);
@@ -121,7 +120,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
             final ActionMenuItem mNavItem;
 
             {
-                this.mNavItem = new ActionMenuItem(ToolbarWidgetWrapper.this.mToolbar.getContext(), 0, 16908332, 0, 0, ToolbarWidgetWrapper.this.mTitle);
+                this.mNavItem = new ActionMenuItem(ToolbarWidgetWrapper.this.mToolbar.getContext(), 0, R.id.home, 0, 0, ToolbarWidgetWrapper.this.mTitle);
             }
 
             @Override // android.view.View.OnClickListener
@@ -145,7 +144,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
 
     private void ensureSpinner() {
         if (this.mSpinner == null) {
-            this.mSpinner = new Spinner(getContext(), null, 16843479);
+            this.mSpinner = new Spinner(getContext(), null, R.attr.actionDropDownStyle);
             this.mSpinner.setLayoutParams(new Toolbar.LayoutParams(-2, -2, 8388627));
         }
     }
@@ -466,7 +465,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
         Toolbar.LayoutParams layoutParams = (Toolbar.LayoutParams) this.mTabView.getLayoutParams();
         layoutParams.width = -2;
         layoutParams.height = -2;
-        layoutParams.gravity = BadgeDrawable.BOTTOM_START;
+        layoutParams.gravity = 8388691;
         scrollingTabContainerView.setAllowCollapse(true);
     }
 
@@ -570,7 +569,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
                         Toolbar.LayoutParams layoutParams = (Toolbar.LayoutParams) this.mTabView.getLayoutParams();
                         layoutParams.width = -2;
                         layoutParams.height = -2;
-                        layoutParams.gravity = BadgeDrawable.BOTTOM_START;
+                        layoutParams.gravity = 8388691;
                         return;
                     }
                     return;

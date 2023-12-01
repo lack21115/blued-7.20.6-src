@@ -14,7 +14,6 @@ public final class LiveListHotFragment_MVP implements MvpDispatcher {
         liveListHotFragment.b();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     public void a(MvpFragment mvpFragment, String str, List list) {
         LiveListHotFragment liveListHotFragment = (LiveListHotFragment) mvpFragment;
         if (list != null && list.size() > 0) {

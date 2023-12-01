@@ -11,15 +11,15 @@ import com.soft.blued.R;
 public final class PopAlinkBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f29504a;
+    public final ImageView f15814a;
     public final ImageButton b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final RelativeLayout f29505c;
+    private final RelativeLayout f15815c;
 
     private PopAlinkBinding(RelativeLayout relativeLayout, ImageView imageView, ImageButton imageButton) {
-        this.f29505c = relativeLayout;
-        this.f29504a = imageView;
+        this.f15815c = relativeLayout;
+        this.f15814a = imageView;
         this.b = imageButton;
     }
 
@@ -27,7 +27,7 @@ public final class PopAlinkBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.img_advert);
         if (imageView != null) {
-            ImageButton imageButton = (ImageButton) view.findViewById(2131364488);
+            ImageButton imageButton = (ImageButton) view.findViewById(R.id.img_close);
             if (imageButton != null) {
                 return new PopAlinkBinding((RelativeLayout) view, imageView, imageButton);
             }
@@ -41,6 +41,6 @@ public final class PopAlinkBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29505c;
+        return this.f15815c;
     }
 }

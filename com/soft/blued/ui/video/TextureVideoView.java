@@ -15,11 +15,11 @@ import com.soft.blued.utils.Logger;
 public class TextureVideoView extends TextureView implements TextureView.SurfaceTextureListener {
 
     /* renamed from: a  reason: collision with root package name */
-    MediaState f34455a;
+    MediaState f20764a;
     OnStateChangeListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private MediaPlayer f34456c;
+    private MediaPlayer f20765c;
     private Context d;
     private MediaPlayer.OnInfoListener e;
     private MediaPlayer.OnBufferingUpdateListener f;
@@ -73,10 +73,10 @@ public class TextureVideoView extends TextureView implements TextureView.Surface
             @Override // android.media.MediaPlayer.OnBufferingUpdateListener
             public void onBufferingUpdate(MediaPlayer mediaPlayer, int i) {
                 Logger.a("ddrb", "onBufferingUpdate");
-                if (TextureVideoView.this.b == null || TextureVideoView.this.f34455a != MediaState.PLAYING || TextureVideoView.this.f34456c == null) {
+                if (TextureVideoView.this.b == null || TextureVideoView.this.f20764a != MediaState.PLAYING || TextureVideoView.this.f20765c == null) {
                     return;
                 }
-                TextureVideoView.this.b.a(TextureVideoView.this.f34456c.getDuration(), TextureVideoView.this.f34456c.getCurrentPosition());
+                TextureVideoView.this.b.a(TextureVideoView.this.f20765c.getDuration(), TextureVideoView.this.f20765c.getCurrentPosition());
             }
         };
         this.d = context;
@@ -88,20 +88,20 @@ public class TextureVideoView extends TextureView implements TextureView.Surface
     }
 
     public void a(String str) {
-        if (this.f34455a == MediaState.PREPARING) {
+        if (this.f20764a == MediaState.PREPARING) {
             b();
             return;
         }
-        MediaPlayer mediaPlayer = this.f34456c;
+        MediaPlayer mediaPlayer = this.f20765c;
         if (mediaPlayer == null) {
             return;
         }
         mediaPlayer.reset();
-        this.f34456c.setLooping(true);
+        this.f20765c.setLooping(true);
         try {
-            this.f34456c.setDataSource(str);
-            this.f34456c.prepareAsync();
-            this.f34455a = MediaState.PREPARING;
+            this.f20765c.setDataSource(str);
+            this.f20765c.prepareAsync();
+            this.f20764a = MediaState.PREPARING;
         } catch (Exception e) {
             e.printStackTrace();
             if (this.b != null) {
@@ -113,50 +113,49 @@ public class TextureVideoView extends TextureView implements TextureView.Surface
     }
 
     public void b() {
-        if (this.f34456c == null) {
+        if (this.f20765c == null) {
             return;
         }
         ThreadManager.a().a(new ThreadExecutor("TextureVideoStop") { // from class: com.soft.blued.ui.video.TextureVideoView.5
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
                 try {
                     try {
                     } catch (Exception e) {
-                        TextureVideoView.this.f34456c.reset();
-                        TextureVideoView.this.f34455a = MediaState.INIT;
+                        TextureVideoView.this.f20765c.reset();
+                        TextureVideoView.this.f20764a = MediaState.INIT;
                         if (TextureVideoView.this.b == null) {
                             return;
                         }
                     }
-                    if (TextureVideoView.this.f34455a == MediaState.INIT) {
+                    if (TextureVideoView.this.f20764a == MediaState.INIT) {
                         if (TextureVideoView.this.b != null) {
                             TextureVideoView.this.b.d();
                         }
-                    } else if (TextureVideoView.this.f34455a == MediaState.PREPARING) {
-                        TextureVideoView.this.f34456c.reset();
-                        TextureVideoView.this.f34455a = MediaState.INIT;
+                    } else if (TextureVideoView.this.f20764a == MediaState.PREPARING) {
+                        TextureVideoView.this.f20765c.reset();
+                        TextureVideoView.this.f20764a = MediaState.INIT;
                         System.out.println("prepare->reset");
                         if (TextureVideoView.this.b != null) {
                             TextureVideoView.this.b.d();
                         }
-                    } else if (TextureVideoView.this.f34455a == MediaState.PAUSE) {
-                        TextureVideoView.this.f34456c.stop();
-                        TextureVideoView.this.f34456c.reset();
-                        TextureVideoView.this.f34455a = MediaState.INIT;
+                    } else if (TextureVideoView.this.f20764a == MediaState.PAUSE) {
+                        TextureVideoView.this.f20765c.stop();
+                        TextureVideoView.this.f20765c.reset();
+                        TextureVideoView.this.f20764a = MediaState.INIT;
                         System.out.println("pause->init");
                         if (TextureVideoView.this.b != null) {
                             TextureVideoView.this.b.d();
                         }
-                    } else if (TextureVideoView.this.f34455a != MediaState.PLAYING) {
+                    } else if (TextureVideoView.this.f20764a != MediaState.PLAYING) {
                         if (TextureVideoView.this.b == null) {
                             return;
                         }
                         TextureVideoView.this.b.d();
                     } else {
-                        TextureVideoView.this.f34456c.pause();
-                        TextureVideoView.this.f34456c.stop();
-                        TextureVideoView.this.f34456c.reset();
-                        TextureVideoView.this.f34455a = MediaState.INIT;
+                        TextureVideoView.this.f20765c.pause();
+                        TextureVideoView.this.f20765c.stop();
+                        TextureVideoView.this.f20765c.reset();
+                        TextureVideoView.this.f20764a = MediaState.INIT;
                         System.out.println("playing->init");
                         if (TextureVideoView.this.b != null) {
                             TextureVideoView.this.b.d();
@@ -173,26 +172,26 @@ public class TextureVideoView extends TextureView implements TextureView.Surface
     }
 
     public MediaPlayer getMediaPlayer() {
-        return this.f34456c;
+        return this.f20765c;
     }
 
     public MediaState getState() {
-        return this.f34455a;
+        return this.f20764a;
     }
 
     @Override // android.view.TextureView.SurfaceTextureListener
     public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
         Surface surface = new Surface(surfaceTexture);
-        if (this.f34456c == null) {
+        if (this.f20765c == null) {
             MediaPlayer mediaPlayer = new MediaPlayer();
-            this.f34456c = mediaPlayer;
+            this.f20765c = mediaPlayer;
             mediaPlayer.setVolume(0.0f, 0.0f);
         }
-        this.f34456c.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: com.soft.blued.ui.video.TextureVideoView.3
+        this.f20765c.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: com.soft.blued.ui.video.TextureVideoView.3
             @Override // android.media.MediaPlayer.OnPreparedListener
             public void onPrepared(MediaPlayer mediaPlayer2) {
                 mediaPlayer2.start();
-                TextureVideoView.this.f34455a = MediaState.PLAYING;
+                TextureVideoView.this.f20764a = MediaState.PLAYING;
                 AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.ui.video.TextureVideoView.3.1
                     @Override // java.lang.Runnable
                     public void run() {
@@ -203,10 +202,10 @@ public class TextureVideoView extends TextureView implements TextureView.Surface
                 }, 300L);
             }
         });
-        this.f34456c.setOnErrorListener(new MediaPlayer.OnErrorListener() { // from class: com.soft.blued.ui.video.TextureVideoView.4
+        this.f20765c.setOnErrorListener(new MediaPlayer.OnErrorListener() { // from class: com.soft.blued.ui.video.TextureVideoView.4
             @Override // android.media.MediaPlayer.OnErrorListener
             public boolean onError(MediaPlayer mediaPlayer2, int i3, int i4) {
-                TextureVideoView.this.f34455a = MediaState.INIT;
+                TextureVideoView.this.f20764a = MediaState.INIT;
                 if (TextureVideoView.this.b != null) {
                     TextureVideoView.this.b.e();
                     return false;
@@ -214,10 +213,10 @@ public class TextureVideoView extends TextureView implements TextureView.Surface
                 return false;
             }
         });
-        this.f34456c.setOnInfoListener(this.e);
-        this.f34456c.setOnBufferingUpdateListener(this.f);
-        this.f34456c.setSurface(surface);
-        this.f34455a = MediaState.INIT;
+        this.f20765c.setOnInfoListener(this.e);
+        this.f20765c.setOnBufferingUpdateListener(this.f);
+        this.f20765c.setSurface(surface);
+        this.f20764a = MediaState.INIT;
     }
 
     @Override // android.view.TextureView.SurfaceTextureListener

@@ -19,7 +19,7 @@ public class PngChunkTIME extends PngChunkSingle {
 
     @Override // ar.com.hjg.pngj.chunks.PngChunk
     public void a(ChunkRaw chunkRaw) {
-        if (chunkRaw.f3659a != 7) {
+        if (chunkRaw.f3611a != 7) {
             throw new PngjException("bad chunk " + chunkRaw);
         }
         this.h = PngHelperInternal.b(chunkRaw.d, 0);

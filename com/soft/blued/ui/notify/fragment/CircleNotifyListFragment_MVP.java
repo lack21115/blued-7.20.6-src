@@ -7,7 +7,6 @@ import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/notify/fragment/CircleNotifyListFragment_MVP.class */
 public final class CircleNotifyListFragment_MVP implements MvpDispatcher {
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     public void a(MvpFragment mvpFragment, String str, List list) {
         CircleNotifyListFragment circleNotifyListFragment = (CircleNotifyListFragment) mvpFragment;
         if (list == null || list.size() <= 0) {

@@ -26,6 +26,7 @@ import com.qiniu.pili.droid.shortvideo.PLVideoSaveListener;
 import com.qiniu.pili.droid.shortvideo.PLWatermarkSetting;
 import com.qiniu.pili.droid.shortvideo.core.QosManager;
 import com.qiniu.pili.droid.shortvideo.core.b;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -56,11 +57,11 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
     private com.qiniu.pili.droid.shortvideo.e.c Q;
 
     /* renamed from: a  reason: collision with root package name */
-    protected double f27575a;
+    protected double f13887a;
     List<PLSpeedTimeRange> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f27576c;
+    private Context f13888c;
     private int d;
     private int e;
     private com.qiniu.pili.droid.shortvideo.e.b f;
@@ -91,12 +92,12 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
         private long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f27583c;
+        private long f13895c;
         private View d;
 
         public a(View view, long j, long j2) {
             this.b = j;
-            this.f27583c = j2;
+            this.f13895c = j2;
             this.d = view;
         }
 
@@ -105,11 +106,11 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
         }
 
         public boolean a(long j) {
-            if (this.f27583c >= m.this.M) {
+            if (this.f13895c >= m.this.M) {
                 return j >= this.b;
             }
             long j2 = this.b;
-            return j >= j2 && j <= j2 + this.f27583c;
+            return j >= j2 && j <= j2 + this.f13895c;
         }
 
         public void b(long j) {
@@ -117,7 +118,7 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
         }
 
         public void c(long j) {
-            this.f27583c = j;
+            this.f13895c = j;
         }
     }
 
@@ -131,14 +132,14 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
         this.u = 1.0f;
         this.v = 1.0f;
         this.A = new LinkedList();
-        this.f27575a = 1.0d;
+        this.f13887a = 1.0d;
         com.qiniu.pili.droid.shortvideo.f.e.e.c("ShortVideoEditorCore", "init without PLVideoEditSetting +");
         Context applicationContext = gLSurfaceView.getContext().getApplicationContext();
-        this.f27576c = applicationContext;
+        this.f13888c = applicationContext;
         l.a(applicationContext);
         this.D = gLSurfaceView;
         this.f = new com.qiniu.pili.droid.shortvideo.e.b(gLSurfaceView);
-        this.h = new com.qiniu.pili.droid.shortvideo.process.a.d(this.f27576c);
+        this.h = new com.qiniu.pili.droid.shortvideo.process.a.d(this.f13888c);
         this.f.a((PLVideoFilterListener) this);
         this.f.a((MediaPlayer.OnCompletionListener) this);
         com.qiniu.pili.droid.shortvideo.f.e.e.c("ShortVideoEditorCore", "init without PLVideoEditSetting -");
@@ -154,10 +155,10 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
         this.u = 1.0f;
         this.v = 1.0f;
         this.A = new LinkedList();
-        this.f27575a = 1.0d;
+        this.f13887a = 1.0d;
         com.qiniu.pili.droid.shortvideo.f.e.e.c("ShortVideoEditorCore", "init +");
         Context applicationContext = gLSurfaceView.getContext().getApplicationContext();
-        this.f27576c = applicationContext;
+        this.f13888c = applicationContext;
         l.a(applicationContext);
         this.D = gLSurfaceView;
         this.n = pLVideoEditSetting;
@@ -166,15 +167,15 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
         bVar.a(this.n.getSourceFilepath());
         this.f.a((PLVideoFilterListener) this);
         this.f.a((MediaPlayer.OnCompletionListener) this);
-        com.qiniu.pili.droid.shortvideo.process.a.d dVar = new com.qiniu.pili.droid.shortvideo.process.a.d(this.f27576c);
+        com.qiniu.pili.droid.shortvideo.process.a.d dVar = new com.qiniu.pili.droid.shortvideo.process.a.d(this.f13888c);
         this.h = dVar;
         dVar.a(this.n.isGifPreviewEnabled());
         String destFilepath = this.n.getDestFilepath();
         if (destFilepath == null) {
-            File filesDir = this.f27576c.getFilesDir();
+            File filesDir = this.f13888c.getFilesDir();
             this.n.setDestFilepath(new File(filesDir, "pl-edited-" + System.currentTimeMillis() + ".mp4").getAbsolutePath());
         } else {
-            this.n.setDestFilepath(l.a(this.f27576c, destFilepath));
+            this.n.setDestFilepath(l.a(this.f13888c, destFilepath));
         }
         this.M = com.qiniu.pili.droid.shortvideo.f.g.a((Object) this.n.getSourceFilepath());
         com.qiniu.pili.droid.shortvideo.f.e.e.c("ShortVideoEditorCore", "init -");
@@ -239,7 +240,7 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
         if (this.E) {
             this.f.e();
         }
-        this.w.a(this.f27575a);
+        this.w.a(this.f13887a);
         List<PLSpeedTimeRange> list = this.b;
         if (list != null) {
             this.w.a(list);
@@ -384,7 +385,7 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
                 com.qiniu.pili.droid.shortvideo.f.e.e.d("ShortVideoEditorCore", "only support multiple of 2 !!!");
                 return;
             }
-            this.f27575a = d;
+            this.f13887a = d;
             if (this.b != null) {
                 this.b = null;
                 com.qiniu.pili.droid.shortvideo.f.e.e.c("ShortVideoEditorCore", "reset speedTimeRanges to null! ");
@@ -442,7 +443,7 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
         this.x = j;
         this.y = j2;
         com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.e;
-        eVar.c("ShortVideoEditorCore", "set range to: " + j + "-" + j2 + " duration: " + (j2 - j));
+        eVar.c("ShortVideoEditorCore", "set range to: " + j + Constants.ACCEPT_TIME_SEPARATOR_SERVER + j2 + " duration: " + (j2 - j));
     }
 
     public void a(AssetFileDescriptor assetFileDescriptor) {
@@ -537,10 +538,10 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
         this.f.a(this.n.getSourceFilepath());
         String destFilepath = this.n.getDestFilepath();
         if (destFilepath == null) {
-            File filesDir = this.f27576c.getFilesDir();
+            File filesDir = this.f13888c.getFilesDir();
             this.n.setDestFilepath(new File(filesDir, "pl-edited-" + System.currentTimeMillis() + ".mp4").getAbsolutePath());
         } else {
-            this.n.setDestFilepath(l.a(this.f27576c, destFilepath));
+            this.n.setDestFilepath(l.a(this.f13888c, destFilepath));
         }
         this.M = com.qiniu.pili.droid.shortvideo.f.g.a((Object) this.n.getSourceFilepath());
         com.qiniu.pili.droid.shortvideo.f.e.e.c("ShortVideoEditorCore", "set PLVideoEditSetting success");
@@ -633,7 +634,7 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
     public void a(List<PLSpeedTimeRange> list) {
         if (u.a().a(b.a.edit_speed)) {
             this.b = list;
-            this.f27575a = 1.0d;
+            this.f13887a = 1.0d;
             com.qiniu.pili.droid.shortvideo.f.e.e.c("ShortVideoEditorCore", "setSpeedTimeRanges : reset mSpeed to 1.0 ");
         }
     }
@@ -756,7 +757,7 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
                 return;
             }
             this.p = true;
-            if (!this.h.b() && this.o == null && pLVideoFilterListener == null && this.A.isEmpty() && !this.r && this.f27575a == 1.0d && !o() && this.b == null && this.e == 0) {
+            if (!this.h.b() && this.o == null && pLVideoFilterListener == null && this.A.isEmpty() && !this.r && this.f13887a == 1.0d && !o() && this.b == null && this.e == 0) {
                 com.qiniu.pili.droid.shortvideo.f.e.e.c("ShortVideoEditorCore", "no filter, mv, watermark, speed, mixed audio selected, text effect, rotation, and no external listener, return the original file.");
                 if (this.k != null) {
                     this.k.onSaveVideoSuccess(this.n.getSourceFilepath());
@@ -764,7 +765,7 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
                 this.p = false;
                 return;
             }
-            q qVar = new q(this.f27576c, this.n.getSourceFilepath(), this.n.getDestFilepath());
+            q qVar = new q(this.f13888c, this.n.getSourceFilepath(), this.n.getDestFilepath());
             this.w = qVar;
             qVar.a(this.N);
             this.w.a(this.o);
@@ -779,7 +780,7 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
             }
             n();
             if (this.h.b() || pLVideoFilterListener != null || !this.A.isEmpty()) {
-                final com.qiniu.pili.droid.shortvideo.process.a.d dVar = new com.qiniu.pili.droid.shortvideo.process.a.d(this.f27576c);
+                final com.qiniu.pili.droid.shortvideo.process.a.d dVar = new com.qiniu.pili.droid.shortvideo.process.a.d(this.f13888c);
                 dVar.a(this.h.d(), this.h.c());
                 dVar.a(this.h.e(), this.h.f(), this.F, this.G);
                 dVar.a(this.h.g());
@@ -791,7 +792,7 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
                     public int onDrawFrame(int i, int i2, int i3, long j, float[] fArr) {
                         int i4;
                         int onSaveFrame;
-                        synchronized (com.qiniu.pili.droid.shortvideo.f.d.f27670a) {
+                        synchronized (com.qiniu.pili.droid.shortvideo.f.d.f13982a) {
                             if (m.this.m != null && (onSaveFrame = m.this.m.onSaveFrame(i, i2, i3, j, fArr)) > 0) {
                                 i = onSaveFrame;
                             }
@@ -1083,7 +1084,7 @@ public class m implements MediaPlayer.OnCompletionListener, PLVideoFilterListene
                 i5++;
             }
         }
-        int i7 = this.f27575a == 1.0d ? 0 : 1;
+        int i7 = this.f13887a == 1.0d ? 0 : 1;
         List<PLSpeedTimeRange> list = this.b;
         int i8 = i7;
         if (list != null) {

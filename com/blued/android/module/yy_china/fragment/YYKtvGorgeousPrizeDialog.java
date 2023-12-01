@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
 import com.blued.android.framework.utils.StringUtils;
@@ -24,14 +23,12 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYKtvGorgeousPrizeDialog.class */
 public final class YYKtvGorgeousPrizeDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private YYMsgKtvPrize f17300a;
+    private YYMsgKtvPrize a;
     private FragmentYyKtvGorgeousPrizeDialogBinding b;
 
     public YYKtvGorgeousPrizeDialog(YYMsgKtvPrize prize) {
         Intrinsics.e(prize, "prize");
-        this.f17300a = prize;
+        this.a = prize;
     }
 
     private final int a(String str) {
@@ -87,7 +84,7 @@ public final class YYKtvGorgeousPrizeDialog extends BaseFullScreenDialog {
             itemKtvPrizeView4.setGiftIcon(R.drawable.icon_yy_ktv_applaud);
         }
         FragmentYyKtvGorgeousPrizeDialogBinding fragmentYyKtvGorgeousPrizeDialogBinding7 = this.b;
-        if (fragmentYyKtvGorgeousPrizeDialogBinding7 != null && (view = fragmentYyKtvGorgeousPrizeDialogBinding7.f16515a) != null) {
+        if (fragmentYyKtvGorgeousPrizeDialogBinding7 != null && (view = fragmentYyKtvGorgeousPrizeDialogBinding7.a) != null) {
             view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYKtvGorgeousPrizeDialog$cA-WxcVf6vrN3HFvYZDW1QbBHJ4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -100,8 +97,8 @@ public final class YYKtvGorgeousPrizeDialog extends BaseFullScreenDialog {
             public final void run() {
                 YYKtvGorgeousPrizeDialog.a(YYKtvGorgeousPrizeDialog.this);
             }
-        }, m.ag);
-        YYMsgKtvPrize yYMsgKtvPrize = this.f17300a;
+        }, 3000L);
+        YYMsgKtvPrize yYMsgKtvPrize = this.a;
         ImageWrapper b = ImageLoader.a(a(), yYMsgKtvPrize.avatar).b(R.drawable.user_bg_round);
         FragmentYyKtvGorgeousPrizeDialogBinding fragmentYyKtvGorgeousPrizeDialogBinding8 = this.b;
         b.a(fragmentYyKtvGorgeousPrizeDialogBinding8 == null ? null : fragmentYyKtvGorgeousPrizeDialogBinding8.e);
@@ -132,28 +129,28 @@ public final class YYKtvGorgeousPrizeDialog extends BaseFullScreenDialog {
         if (fragmentYyKtvGorgeousPrizeDialogBinding13 == null || (imageView = fragmentYyKtvGorgeousPrizeDialogBinding13.d) == null) {
             return;
         }
-        imageView.setImageResource(YYResourcesUtils.f17883a.b(StringUtils.a(yYMsgKtvPrize.score, 0)));
+        imageView.setImageResource(YYResourcesUtils.a.b(StringUtils.a(yYMsgKtvPrize.score, 0)));
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         ChatRoomProtos.Event event = ChatRoomProtos.Event.CHAT_ROOM_COOL_STAGE_SING_END_POP_SHOW;
         String str = YYRoomInfoManager.e().b().room_id;
         String str2 = YYRoomInfoManager.e().b().uid;
-        String str3 = this.f17300a.score;
-        String str4 = this.f17300a.beans;
+        String str3 = this.a.score;
+        String str4 = this.a.beans;
         Intrinsics.c(str4, "prize.beans");
-        int a2 = a(str4);
-        String str5 = this.f17300a.gift;
+        int a = a(str4);
+        String str5 = this.a.gift;
         Intrinsics.c(str5, "prize.gift");
-        int a3 = a(str5);
-        String str6 = this.f17300a.applause;
+        int a2 = a(str5);
+        String str6 = this.a.applause;
         Intrinsics.c(str6, "prize.applause");
-        EventTrackYY.a(event, str, str2, str3, a2, a3, a(str6));
+        EventTrackYY.a(event, str, str2, str3, a, a2, a(str6));
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.fragment_yy_ktv_gorgeous_prize_dialog, viewGroup, true);

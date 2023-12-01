@@ -14,26 +14,26 @@ import android.os.Parcel;
 public class ap implements as {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f41255a;
+    private static boolean f27564a;
 
     /* renamed from: a  reason: collision with other field name */
-    private Context f185a;
+    private Context f138a;
 
     /* renamed from: a  reason: collision with other field name */
-    private ServiceConnection f186a;
+    private ServiceConnection f139a;
 
     /* renamed from: a  reason: collision with other field name */
-    private volatile int f184a = 0;
+    private volatile int f137a = 0;
 
     /* renamed from: a  reason: collision with other field name */
-    private volatile String f188a = null;
+    private volatile String f141a = null;
 
     /* renamed from: b  reason: collision with other field name */
-    private volatile boolean f189b = false;
+    private volatile boolean f142b = false;
     private volatile String b = null;
 
     /* renamed from: a  reason: collision with other field name */
-    private final Object f187a = new Object();
+    private final Object f140a = new Object();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/ap$a.class */
@@ -70,7 +70,7 @@ public class ap implements as {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: a  reason: collision with other method in class */
-        public static boolean m11510a(IBinder iBinder) {
+        public static boolean m8460a(IBinder iBinder) {
             Parcel obtain = Parcel.obtain();
             Parcel obtain2 = Parcel.obtain();
             try {
@@ -93,35 +93,35 @@ public class ap implements as {
     }
 
     public ap(Context context) {
-        this.f185a = context;
+        this.f138a = context;
         a();
     }
 
     private void a() {
         boolean z;
-        this.f186a = new a();
+        this.f139a = new a();
         Intent intent = new Intent("com.uodis.opendevice.OPENIDS_SERVICE");
         intent.setPackage("com.huawei.hwid");
         int i = 1;
         try {
-            z = this.f185a.bindService(intent, this.f186a, 1);
+            z = this.f138a.bindService(intent, this.f139a, 1);
         } catch (Exception e) {
             z = false;
         }
         if (!z) {
             i = 2;
         }
-        this.f184a = i;
+        this.f137a = i;
     }
 
     private void a(String str) {
-        if (this.f184a != 1 || Looper.myLooper() == Looper.getMainLooper()) {
+        if (this.f137a != 1 || Looper.myLooper() == Looper.getMainLooper()) {
             return;
         }
-        synchronized (this.f187a) {
+        synchronized (this.f140a) {
             try {
-                com.xiaomi.channel.commonutils.logger.b.m11394a("huawei's " + str + " wait...");
-                this.f187a.wait(com.anythink.expressad.video.module.a.a.m.ag);
+                com.xiaomi.channel.commonutils.logger.b.m8344a("huawei's " + str + " wait...");
+                this.f140a.wait(com.anythink.expressad.video.module.a.a.m.ag);
             } catch (Exception e) {
             }
         }
@@ -131,7 +131,7 @@ public class ap implements as {
         try {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.huawei.hwid", 128);
             boolean z = (packageInfo.applicationInfo.flags & 1) != 0;
-            f41255a = packageInfo.versionCode >= 20602000;
+            f27564a = packageInfo.versionCode >= 20602000;
             return z;
         } catch (Exception e) {
             return false;
@@ -140,10 +140,10 @@ public class ap implements as {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
-        ServiceConnection serviceConnection = this.f186a;
+        ServiceConnection serviceConnection = this.f139a;
         if (serviceConnection != null) {
             try {
-                this.f185a.unbindService(serviceConnection);
+                this.f138a.unbindService(serviceConnection);
             } catch (Exception e) {
             }
         }
@@ -151,14 +151,14 @@ public class ap implements as {
 
     @Override // com.xiaomi.push.as
     /* renamed from: a  reason: collision with other method in class */
-    public String mo11508a() {
+    public String mo8458a() {
         a("getOAID");
-        return this.f188a;
+        return this.f141a;
     }
 
     @Override // com.xiaomi.push.as
     /* renamed from: a  reason: collision with other method in class */
-    public boolean mo11509a() {
-        return f41255a;
+    public boolean mo8459a() {
+        return f27564a;
     }
 }

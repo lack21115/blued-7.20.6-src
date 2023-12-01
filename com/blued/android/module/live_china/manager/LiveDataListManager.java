@@ -13,9 +13,7 @@ import java.util.List;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/LiveDataListManager.class */
 public class LiveDataListManager {
     private static LiveDataListManager b;
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<LiveRoomData> f13616a = new ArrayList();
+    private List<LiveRoomData> a = new ArrayList();
 
     private LiveDataListManager() {
     }
@@ -36,12 +34,12 @@ public class LiveDataListManager {
         if (liveRoomData == null) {
             return;
         }
-        if (this.f13616a.size() == 0) {
-            this.f13616a.add(liveRoomData);
+        if (this.a.size() == 0) {
+            this.a.add(liveRoomData);
             return;
         }
         ArrayList arrayList = new ArrayList();
-        arrayList.addAll(this.f13616a);
+        arrayList.addAll(this.a);
         Iterator<E> it = arrayList.iterator();
         while (it.hasNext()) {
             LiveRoomData liveRoomData2 = (LiveRoomData) it.next();
@@ -51,16 +49,16 @@ public class LiveDataListManager {
                 it.remove();
             }
         }
-        this.f13616a.clear();
-        this.f13616a.addAll(arrayList);
+        this.a.clear();
+        this.a.addAll(arrayList);
         long d = LiveRoomManager.a().d();
         int i2 = 0;
         while (true) {
             int i3 = i2;
             i = -1;
-            if (i3 >= this.f13616a.size()) {
+            if (i3 >= this.a.size()) {
                 break;
-            } else if (this.f13616a.get(i3).lid == d) {
+            } else if (this.a.get(i3).lid == d) {
                 i = i3;
                 break;
             } else {
@@ -68,9 +66,9 @@ public class LiveDataListManager {
             }
         }
         if (i >= 0) {
-            this.f13616a.add(i + 1, liveRoomData);
+            this.a.add(i + 1, liveRoomData);
         } else {
-            this.f13616a.add(liveRoomData);
+            this.a.add(liveRoomData);
         }
     }
 
@@ -81,15 +79,15 @@ public class LiveDataListManager {
         }
         LiveRoomData liveRoomData2 = new LiveRoomData();
         ReflectionUtils.a(LiveRoomManager.a().p(), liveRoomData2);
-        if (this.f13616a.size() == 0 && liveRoomData2.lid > 0) {
-            this.f13616a.add(liveRoomData2);
+        if (this.a.size() == 0 && liveRoomData2.lid > 0) {
+            this.a.add(liveRoomData2);
         }
-        long c2 = c();
+        long c = c();
         long d = d();
         if (z) {
             LiveRoomManager.a().b(liveRoomData2);
         }
-        if (c2 == liveRoomData.lid) {
+        if (c == liveRoomData.lid) {
             LiveEventBus.get("live_auto_scroll_next").post(false);
         } else if (d == liveRoomData.lid) {
             LiveEventBus.get("live_auto_scroll_next").post(true);
@@ -120,7 +118,7 @@ public class LiveDataListManager {
 
     public void a(List<LiveRoomData> list) {
         synchronized (this) {
-            this.f13616a.clear();
+            this.a.clear();
             if (list != null && list.size() > 0) {
                 b(list);
             }
@@ -177,7 +175,7 @@ public class LiveDataListManager {
     }
 
     public List<LiveRoomData> b() {
-        return this.f13616a;
+        return this.a;
     }
 
     public void b(LiveRoomData liveRoomData) {
@@ -188,7 +186,7 @@ public class LiveDataListManager {
         synchronized (this) {
             if (list != null) {
                 ArrayList arrayList = new ArrayList();
-                for (LiveRoomData liveRoomData : this.f13616a) {
+                for (LiveRoomData liveRoomData : this.a) {
                     if (liveRoomData != null) {
                         arrayList.add(Long.valueOf(liveRoomData.lid));
                     }
@@ -201,7 +199,7 @@ public class LiveDataListManager {
                     }
                     if (!arrayList.contains(Long.valueOf(list.get(i2).lid)) && list.get(i2).lid > 0 && list.get(i2).profile != null && !TextUtils.isEmpty(list.get(i2).profile.uid)) {
                         arrayList.add(Long.valueOf(list.get(i2).lid));
-                        this.f13616a.add(list.get(i2));
+                        this.a.add(list.get(i2));
                     }
                     i = i2 + 1;
                 }
@@ -233,7 +231,7 @@ public class LiveDataListManager {
 
     public void c(List<LiveRoomData> list) {
         synchronized (this) {
-            this.f13616a.clear();
+            this.a.clear();
             if (list != null) {
                 int i = 0;
                 while (true) {
@@ -243,7 +241,7 @@ public class LiveDataListManager {
                     }
                     LiveRoomData liveRoomData = list.get(i2);
                     if (liveRoomData == null || liveRoomData.live_type != 0) {
-                        this.f13616a.add(liveRoomData);
+                        this.a.add(liveRoomData);
                     }
                     i = i2 + 1;
                 }

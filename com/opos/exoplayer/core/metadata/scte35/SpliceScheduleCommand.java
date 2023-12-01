@@ -24,17 +24,17 @@ public final class SpliceScheduleCommand extends SpliceCommand {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final List<b> f25547a;
+    public final List<b> f11859a;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/metadata/scte35/SpliceScheduleCommand$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25548a;
+        public final int f11860a;
         public final long b;
 
         private a(int i, long j) {
-            this.f25548a = i;
+            this.f11860a = i;
             this.b = j;
         }
 
@@ -45,7 +45,7 @@ public final class SpliceScheduleCommand extends SpliceCommand {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void c(Parcel parcel) {
-            parcel.writeInt(this.f25548a);
+            parcel.writeInt(this.f11860a);
             parcel.writeLong(this.b);
         }
     }
@@ -54,11 +54,11 @@ public final class SpliceScheduleCommand extends SpliceCommand {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final long f25549a;
+        public final long f11861a;
         public final boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final boolean f25550c;
+        public final boolean f11862c;
         public final boolean d;
         public final long e;
         public final List<a> f;
@@ -69,9 +69,9 @@ public final class SpliceScheduleCommand extends SpliceCommand {
         public final int k;
 
         private b(long j, boolean z, boolean z2, boolean z3, List<a> list, long j2, boolean z4, long j3, int i, int i2, int i3) {
-            this.f25549a = j;
+            this.f11861a = j;
             this.b = z;
-            this.f25550c = z2;
+            this.f11862c = z2;
             this.d = z3;
             this.f = Collections.unmodifiableList(list);
             this.e = j2;
@@ -83,9 +83,9 @@ public final class SpliceScheduleCommand extends SpliceCommand {
         }
 
         private b(Parcel parcel) {
-            this.f25549a = parcel.readLong();
+            this.f11861a = parcel.readLong();
             this.b = parcel.readByte() == 1;
-            this.f25550c = parcel.readByte() == 1;
+            this.f11862c = parcel.readByte() == 1;
             this.d = parcel.readByte() == 1;
             int readInt = parcel.readInt();
             ArrayList arrayList = new ArrayList(readInt);
@@ -165,9 +165,9 @@ public final class SpliceScheduleCommand extends SpliceCommand {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void b(Parcel parcel) {
-            parcel.writeLong(this.f25549a);
+            parcel.writeLong(this.f11861a);
             parcel.writeByte(this.b ? (byte) 1 : (byte) 0);
-            parcel.writeByte(this.f25550c ? (byte) 1 : (byte) 0);
+            parcel.writeByte(this.f11862c ? (byte) 1 : (byte) 0);
             parcel.writeByte(this.d ? (byte) 1 : (byte) 0);
             int size = this.f.size();
             parcel.writeInt(size);
@@ -201,7 +201,7 @@ public final class SpliceScheduleCommand extends SpliceCommand {
         while (true) {
             int i2 = i;
             if (i2 >= readInt) {
-                this.f25547a = Collections.unmodifiableList(arrayList);
+                this.f11859a = Collections.unmodifiableList(arrayList);
                 return;
             } else {
                 arrayList.add(b.c(parcel));
@@ -211,7 +211,7 @@ public final class SpliceScheduleCommand extends SpliceCommand {
     }
 
     private SpliceScheduleCommand(List<b> list) {
-        this.f25547a = Collections.unmodifiableList(list);
+        this.f11859a = Collections.unmodifiableList(list);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -231,7 +231,7 @@ public final class SpliceScheduleCommand extends SpliceCommand {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        int size = this.f25547a.size();
+        int size = this.f11859a.size();
         parcel.writeInt(size);
         int i2 = 0;
         while (true) {
@@ -239,7 +239,7 @@ public final class SpliceScheduleCommand extends SpliceCommand {
             if (i3 >= size) {
                 return;
             }
-            this.f25547a.get(i3).b(parcel);
+            this.f11859a.get(i3).b(parcel);
             i2 = i3 + 1;
         }
     }

@@ -6,11 +6,11 @@ import org.xmlpull.v1.XmlPullParser;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.zk_oaction.adengine.lk_sdk.c f42005a;
+    private com.zk_oaction.adengine.lk_sdk.c f28314a;
     private String[] b = new String[4];
 
     public b(com.zk_oaction.adengine.lk_sdk.c cVar) {
-        this.f42005a = cVar;
+        this.f28314a = cVar;
     }
 
     public boolean a(XmlPullParser xmlPullParser, String str) {
@@ -20,7 +20,7 @@ public class b {
             while (next != 1) {
                 if (next != 2) {
                     if (next == 3 && xmlPullParser.getName().equals(str)) {
-                        this.f42005a.k.a(attributeValue, this.b);
+                        this.f28314a.k.a(attributeValue, this.b);
                         return true;
                     }
                 } else if (xmlPullParser.getName().equals("Variable")) {

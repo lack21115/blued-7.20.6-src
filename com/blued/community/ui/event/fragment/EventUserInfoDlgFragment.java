@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
@@ -39,7 +40,6 @@ import com.blued.community.ui.event.model.EventUserModel;
 import com.blued.community.ui.feed.manager.FeedMethods;
 import com.blued.community.utils.CommEventBusUtil;
 import com.blued.das.client.feed.FeedProtos;
-import com.igexin.c.a.c.a.d;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import java.io.Serializable;
 import kotlin.Lazy;
@@ -52,12 +52,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/fragment/EventUserInfoDlgFragment.class */
 public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19559a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private EventUserModel f19560c;
+    public static final Companion a = new Companion(null);
+    private EventUserModel c;
     private boolean f;
     private boolean g;
     private CommunityHttpUtils.IAddOrRemoveAttentionDone h;
@@ -97,7 +93,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
             Bundle bundle = new Bundle();
             bundle.putString("uid", str);
             bundle.putString("aid", str2);
-            bundle.putSerializable(d.d, eventLogData);
+            bundle.putSerializable("log_data", eventLogData);
             eventUserInfoDlgFragment.setArguments(bundle);
             eventUserInfoDlgFragment.show(fragmentManager, EventUserInfoDlgFragment.class.getSimpleName());
             EventTrackFeed.a(FeedProtos.Event.ACTIVITY_PROFILE_LAYER_SHOW, eventLogData);
@@ -114,7 +110,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
     }
 
     private final void B() {
-        EventUserModel eventUserModel = this.f19560c;
+        EventUserModel eventUserModel = this.c;
         if (eventUserModel == null) {
             return;
         }
@@ -130,7 +126,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void C() {
-        EventUserModel eventUserModel = this.f19560c;
+        EventUserModel eventUserModel = this.c;
         if (eventUserModel == null) {
             return;
         }
@@ -144,7 +140,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
     }
 
     private final void D() {
-        EventUserModel eventUserModel = this.f19560c;
+        EventUserModel eventUserModel = this.c;
         if (eventUserModel == null) {
             return;
         }
@@ -162,7 +158,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
     }
 
     private final void E() {
-        EventHttpUtils eventHttpUtils = EventHttpUtils.f19079a;
+        EventHttpUtils eventHttpUtils = EventHttpUtils.a;
         final ActivityFragmentActive a2 = a();
         eventHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<EventUserModel>>(a2) { // from class: com.blued.community.ui.event.fragment.EventUserInfoDlgFragment$onLoadData$1
             /* JADX INFO: Access modifiers changed from: protected */
@@ -191,7 +187,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
                     i2.set_subscribe(0);
                 }
                 EventUserInfoDlgFragment.this.y();
-                CommEventBusUtil commEventBusUtil = CommEventBusUtil.f20461a;
+                CommEventBusUtil commEventBusUtil = CommEventBusUtil.a;
                 EventUserModel i3 = EventUserInfoDlgFragment.this.i();
                 commEventBusUtil.e(i3 == null ? null : i3.uid);
             }
@@ -207,12 +203,12 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(EventUserInfoDlgFragment this$0, String it) {
         Intrinsics.e(this$0, "this$0");
-        EventUserModel eventUserModel = this$0.f19560c;
+        EventUserModel eventUserModel = this$0.c;
         if (eventUserModel != null) {
             Intrinsics.c(it, "it");
             eventUserModel.setActivity_sign_content(it);
         }
-        EventUserModel eventUserModel2 = this$0.f19560c;
+        EventUserModel eventUserModel2 = this$0.c;
         if (eventUserModel2 != null) {
             eventUserModel2.setActivity_sign_status(1);
         }
@@ -297,7 +293,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
                     i.set_followed(1);
                 }
                 EventUserInfoDlgFragment.this.C();
-                CommEventBusUtil commEventBusUtil = CommEventBusUtil.f20461a;
+                CommEventBusUtil commEventBusUtil = CommEventBusUtil.a;
                 EventUserModel i2 = EventUserInfoDlgFragment.this.i();
                 commEventBusUtil.a(i2 == null ? null : i2.uid);
             }
@@ -313,7 +309,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
                     i.set_followed(0);
                 }
                 EventUserInfoDlgFragment.this.C();
-                CommEventBusUtil commEventBusUtil = CommEventBusUtil.f20461a;
+                CommEventBusUtil commEventBusUtil = CommEventBusUtil.a;
                 EventUserModel i2 = EventUserInfoDlgFragment.this.i();
                 commEventBusUtil.b(i2 == null ? null : i2.uid);
             }
@@ -322,7 +318,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
             public void c() {
             }
         };
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             h().i.setBackgroundResource(R.drawable.community_dlg_fragment_bg_dark);
         } else {
             h().i.setBackgroundResource(R.drawable.community_dlg_fragment_bg);
@@ -339,7 +335,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
                 EventUserInfoDlgFragment.b(EventUserInfoDlgFragment.this, view);
             }
         });
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             h().k.setCardBackgroundColor(Color.parseColor("#19D0D0D0"));
             h().l.setImageResource(R.drawable.event_signature_edit_icon_dark);
             this.k = getResources().getColor(R.color.syc_dark_d0d0d0);
@@ -348,8 +344,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
             h().l.setImageResource(R.drawable.event_signature_edit_icon);
             this.k = getResources().getColor(R.color.syc_dark_777777);
         }
-        LiveEventBus.get("event_signature_post_success", String.class).observe(this, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventUserInfoDlgFragment$6DwJ_MKV8mEum6Zbwcd6yN3Bsto
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("event_signature_post_success", String.class).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventUserInfoDlgFragment$6DwJ_MKV8mEum6Zbwcd6yN3Bsto
             public final void onChanged(Object obj) {
                 EventUserInfoDlgFragment.a(EventUserInfoDlgFragment.this, (String) obj);
             }
@@ -358,7 +353,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void s() {
-        EventUserModel eventUserModel = this.f19560c;
+        EventUserModel eventUserModel = this.c;
         if (eventUserModel == null) {
             return;
         }
@@ -410,12 +405,12 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
         t();
         h().t.setVisibility(0);
         h().s.setVisibility(0);
-        h().s.setText(FeedMethods.i().get(String.valueOf(eventUserModel.getRegistration_time())));
-        h().f18861c.setText(String.valueOf(eventUserModel.getRelease_activity_num()));
-        h().f18861c.setVisibility(0);
+        h().s.setText((CharSequence) FeedMethods.i().get(String.valueOf(eventUserModel.getRegistration_time())));
+        h().c.setText(String.valueOf(eventUserModel.getRelease_activity_num()));
+        h().c.setVisibility(0);
         h().d.setVisibility(0);
-        h().f18860a.setText(String.valueOf(eventUserModel.getJoin_activity_num()));
-        h().f18860a.setVisibility(0);
+        h().a.setText(String.valueOf(eventUserModel.getJoin_activity_num()));
+        h().a.setVisibility(0);
         h().b.setVisibility(0);
         if (m()) {
             h().u.setVisibility(8);
@@ -476,7 +471,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
 
     private final void t() {
         String activity_sign_content;
-        EventUserModel eventUserModel = this.f19560c;
+        EventUserModel eventUserModel = this.c;
         if (eventUserModel == null) {
             return;
         }
@@ -517,8 +512,8 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
             str2 = getString(m() ? R.string.event_introduce_yourselef : R.string.event_no_signature);
             Intrinsics.c(str2, "getString(\n             …      }\n                )");
         }
-        StaticLayout c2 = c(str2);
-        if (c2.getLineCount() <= 2) {
+        StaticLayout c = c(str2);
+        if (c.getLineCount() <= 2) {
             h().j.setText(str2);
             return;
         }
@@ -534,7 +529,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
             h().j.setText(spannableStringBuilder, TextView.BufferType.SPANNABLE);
             return;
         }
-        String substring = str2.substring(0, c2.getLineEnd(1));
+        String substring = str2.substring(0, c.getLineEnd(1));
         Intrinsics.c(substring, "this as java.lang.String…ing(startIndex, endIndex)");
         while (true) {
             if (c(substring + "..." + getString(R.string.event_signature_expand)).getLineCount() <= 2) {
@@ -553,7 +548,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
     }
 
     private final void u() {
-        if (this.f19560c != null) {
+        if (this.c != null) {
             this.i = !this.i;
             t();
         }
@@ -561,7 +556,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
 
     private final void v() {
         dismissAllowingStateLoss();
-        EventUserModel eventUserModel = this.f19560c;
+        EventUserModel eventUserModel = this.c;
         if (eventUserModel == null) {
             return;
         }
@@ -575,7 +570,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
     }
 
     private final void x() {
-        EventUserModel eventUserModel = this.f19560c;
+        EventUserModel eventUserModel = this.c;
         if (eventUserModel == null || UserInfoHelper.a(eventUserModel.relationship)) {
             return;
         }
@@ -590,7 +585,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void y() {
-        EventUserModel eventUserModel = this.f19560c;
+        EventUserModel eventUserModel = this.c;
         if (eventUserModel == null) {
             return;
         }
@@ -606,7 +601,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
     }
 
     private final void z() {
-        EventUserModel eventUserModel = this.f19560c;
+        EventUserModel eventUserModel = this.c;
         if (eventUserModel == null) {
             return;
         }
@@ -626,7 +621,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
                     i.set_subscribe(1);
                 }
                 EventUserInfoDlgFragment.this.y();
-                CommEventBusUtil commEventBusUtil = CommEventBusUtil.f20461a;
+                CommEventBusUtil commEventBusUtil = CommEventBusUtil.a;
                 EventUserModel i2 = EventUserInfoDlgFragment.this.i();
                 commEventBusUtil.d(i2 == null ? null : i2.uid);
             }
@@ -639,7 +634,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
     }
 
     public final void a(EventUserModel eventUserModel) {
-        this.f19560c = eventUserModel;
+        this.c = eventUserModel;
     }
 
     public final void a(String str) {
@@ -670,7 +665,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
     }
 
     public final EventUserModel i() {
-        return this.f19560c;
+        return this.c;
     }
 
     public final String j() {
@@ -705,7 +700,7 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
         return this.k;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
@@ -718,8 +713,8 @@ public final class EventUserInfoDlgFragment extends BottomSheetDialogFragment {
             String string2 = arguments.getString("aid", "");
             Intrinsics.c(string2, "it.getString(\"aid\", \"\")");
             b(string2);
-            b(CommunityManager.f19086a.a().c(j()));
-            Serializable serializable = arguments.getSerializable(d.d);
+            b(CommunityManager.a.a().c(j()));
+            Serializable serializable = arguments.getSerializable("log_data");
             if (serializable == null) {
                 throw new NullPointerException("null cannot be cast to non-null type com.blued.community.ui.event.model.EventLogData");
             }

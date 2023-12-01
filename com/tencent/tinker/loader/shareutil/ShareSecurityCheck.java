@@ -95,22 +95,22 @@ public class ShareSecurityCheck {
 
     /* JADX WARN: Not initialized variable reg: 12, insn: 0x010c: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r12 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:55:0x010c */
     public boolean verifyPatchMetaSignature(File file) {
-        AutoCloseable autoCloseable;
-        AutoCloseable autoCloseable2;
-        Throwable th;
         JarFile jarFile;
+        JarFile jarFile2;
+        Throwable th;
+        JarFile jarFile3;
         try {
             if (SharePatchFileUtil.isLegalFile(file)) {
                 try {
-                    jarFile = new JarFile(file);
+                    jarFile3 = new JarFile(file);
                 } catch (Exception e) {
                     e = e;
                 } catch (Throwable th2) {
                     th = th2;
-                    autoCloseable2 = null;
-                    if (autoCloseable2 != null) {
+                    jarFile2 = null;
+                    if (jarFile2 != null) {
                         try {
-                            autoCloseable2.close();
+                            jarFile2.close();
                         } catch (IOException e2) {
                             ShareTinkerLog.e(TAG, file.getAbsolutePath(), e2);
                         }
@@ -118,17 +118,17 @@ public class ShareSecurityCheck {
                     throw th;
                 }
                 try {
-                    Enumeration<JarEntry> entries = jarFile.entries();
+                    Enumeration<JarEntry> entries = jarFile3.entries();
                     while (entries.hasMoreElements()) {
                         JarEntry nextElement = entries.nextElement();
                         if (nextElement != null) {
                             String name = nextElement.getName();
                             if (!name.startsWith("META-INF/") && name.endsWith(ShareConstants.META_SUFFIX)) {
-                                this.metaContentMap.put(name, SharePatchFileUtil.loadDigestes(jarFile, nextElement));
+                                this.metaContentMap.put(name, SharePatchFileUtil.loadDigestes(jarFile3, nextElement));
                                 Certificate[] certificates = nextElement.getCertificates();
                                 if (certificates == null || !check(file, certificates)) {
                                     try {
-                                        jarFile.close();
+                                        jarFile3.close();
                                         return false;
                                     } catch (IOException e3) {
                                         ShareTinkerLog.e(TAG, file.getAbsolutePath(), e3);
@@ -139,7 +139,7 @@ public class ShareSecurityCheck {
                         }
                     }
                     try {
-                        jarFile.close();
+                        jarFile3.close();
                         return true;
                     } catch (IOException e4) {
                         ShareTinkerLog.e(TAG, file.getAbsolutePath(), e4);
@@ -152,7 +152,7 @@ public class ShareSecurityCheck {
             }
             return false;
         } catch (Throwable th3) {
-            autoCloseable2 = autoCloseable;
+            jarFile2 = jarFile;
             th = th3;
         }
     }

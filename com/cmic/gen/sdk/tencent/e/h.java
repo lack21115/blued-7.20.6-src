@@ -9,11 +9,11 @@ import com.cmic.gen.sdk.tencent.e.n;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f21661a;
+    private static String f8055a;
     private static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static long f21662c;
+    private static long f8056c;
 
     private static int a(String str) {
         String b2;
@@ -33,7 +33,7 @@ public class h {
         long a2;
         long j;
         long currentTimeMillis = System.currentTimeMillis();
-        if (TextUtils.isEmpty(f21661a)) {
+        if (TextUtils.isEmpty(f8055a)) {
             String b2 = k.b("phonescripcache", "");
             a2 = k.a("phonescripstarttime", 0L);
             if (TextUtils.isEmpty(b2)) {
@@ -41,27 +41,27 @@ public class h {
                 return Math.max(j / 1000, 0L);
             }
         } else {
-            c.b("PhoneScripUtils", b + " " + f21662c);
-            a2 = f21662c;
+            c.b("PhoneScripUtils", b + " " + f8056c);
+            a2 = f8056c;
         }
         j = (a2 - currentTimeMillis) - 10000;
         return Math.max(j / 1000, 0L);
     }
 
     public static String a(Context context) {
-        if (TextUtils.isEmpty(f21661a)) {
+        if (TextUtils.isEmpty(f8055a)) {
             String b2 = k.b("phonescripcache", "");
             if (TextUtils.isEmpty(b2)) {
                 c.a("PhoneScripUtils", com.igexin.push.core.b.l);
                 return null;
             }
-            f21662c = k.a("phonescripstarttime", 0L);
+            f8056c = k.a("phonescripstarttime", 0L);
             b = k.b("pre_sim_key", "");
             String b3 = b.b(context, b2);
-            f21661a = b3;
+            f8055a = b3;
             return b3;
         }
-        return f21661a;
+        return f8055a;
     }
 
     public static void a(final Context context, final String str, long j, final String str2, String str3) {
@@ -69,23 +69,23 @@ public class h {
             return;
         }
         c.b("PhoneScripUtils", "save phone scrip simKey = " + str2);
-        f21661a = str;
+        f8055a = str;
         long j2 = j * 1000;
-        f21662c = System.currentTimeMillis() + j2;
-        c.b("sLifeTime", f21662c + "");
+        f8056c = System.currentTimeMillis() + j2;
+        c.b("sLifeTime", f8056c + "");
         b = str2;
         if (!"operator".equals(str3)) {
             n.a(new n.a() { // from class: com.cmic.gen.sdk.tencent.e.h.1
                 @Override // com.cmic.gen.sdk.tencent.e.n.a
                 protected void a() {
                     c.b("PhoneScripUtils", "start save scrip to sp in sub thread");
-                    h.b(Context.this, str, h.f21662c, str2);
+                    h.b(Context.this, str, h.f8056c, str2);
                 }
             });
         } else if (j2 > 3600000) {
-            f21662c = System.currentTimeMillis() + 3600000;
+            f8056c = System.currentTimeMillis() + 3600000;
         } else {
-            f21662c = System.currentTimeMillis() + j2;
+            f8056c = System.currentTimeMillis() + j2;
         }
     }
 
@@ -100,9 +100,9 @@ public class h {
             a2.b();
         }
         if (z) {
-            f21661a = null;
+            f8055a = null;
             b = null;
-            f21662c = 0L;
+            f8056c = 0L;
         }
     }
 
@@ -148,10 +148,10 @@ public class h {
     }
 
     private static boolean c() {
-        if (TextUtils.isEmpty(f21661a)) {
+        if (TextUtils.isEmpty(f8055a)) {
             return !TextUtils.isEmpty(k.b("phonescripcache", "")) && a(k.a("phonescripstarttime", 0L));
         }
-        c.b("PhoneScripUtils", b + " " + f21662c);
-        return a(f21662c);
+        c.b("PhoneScripUtils", b + " " + f8056c);
+        return a(f8056c);
     }
 }

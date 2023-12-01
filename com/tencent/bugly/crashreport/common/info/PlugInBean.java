@@ -18,22 +18,22 @@ public class PlugInBean implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f35127a;
+    public final String f21436a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f35128c;
+    public final String f21437c;
 
     public PlugInBean(Parcel parcel) {
-        this.f35127a = parcel.readString();
+        this.f21436a = parcel.readString();
         this.b = parcel.readString();
-        this.f35128c = parcel.readString();
+        this.f21437c = parcel.readString();
     }
 
     public PlugInBean(String str, String str2, String str3) {
-        this.f35127a = str;
+        this.f21436a = str;
         this.b = str2;
-        this.f35128c = str3;
+        this.f21437c = str3;
     }
 
     @Override // android.os.Parcelable
@@ -42,13 +42,13 @@ public class PlugInBean implements Parcelable {
     }
 
     public String toString() {
-        return "plid:" + this.f35127a + " plV:" + this.b + " plUUID:" + this.f35128c;
+        return "plid:" + this.f21436a + " plV:" + this.b + " plUUID:" + this.f21437c;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f35127a);
+        parcel.writeString(this.f21436a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f35128c);
+        parcel.writeString(this.f21437c);
     }
 }

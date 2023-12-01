@@ -21,7 +21,7 @@ public abstract class ATBidRequestInfo {
         if (jSONObject != null) {
             try {
                 jSONObject.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.FORMAT, str);
-                jSONObject.put("ad_source_id", aiVar.t());
+                jSONObject.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.AD_SOURCE_ID, aiVar.t());
                 jSONObject.put("nw_firm_id", aiVar.c());
                 jSONObject.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BIDDING_FLOOR, aiVar.a(dVar));
                 if (n.a().u()) {

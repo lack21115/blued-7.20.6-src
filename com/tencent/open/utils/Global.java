@@ -10,10 +10,10 @@ import java.io.File;
 public final class Global {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Context f38274a;
+    private static Context f24583a;
 
     public static final Context getContext() {
-        Context context = f38274a;
+        Context context = f24583a;
         Context context2 = context;
         if (context == null) {
             context2 = null;
@@ -40,7 +40,7 @@ public final class Global {
     }
 
     public static int getVersionCode() {
-        return f38274a.getSharedPreferences("openSdk.pref", 0).getInt("app.vercode", 0);
+        return f24583a.getSharedPreferences("openSdk.pref", 0).getInt("app.vercode", 0);
     }
 
     public static void saveVersionCode() {
@@ -61,6 +61,6 @@ public final class Global {
     }
 
     public static final void setContext(Context context) {
-        f38274a = context;
+        f24583a = context;
     }
 }

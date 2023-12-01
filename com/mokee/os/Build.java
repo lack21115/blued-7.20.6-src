@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.SystemProperties;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import com.android.internal.content.NativeLibraryHelper;
 import java.math.BigInteger;
 import java.net.NetworkInterface;
 import java.security.MessageDigest;
@@ -16,18 +17,14 @@ public class Build {
     public static final String PRODUCT = null;
     public static final String RELEASE_TYPE = null;
     public static final String VERSION = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f24222a = null;
+    private static final String[] a = null;
     public static int b;
 
     /* loaded from: source-4181928-dex2jar.jar:com/mokee/os/Build$VERSION.class */
     public static class VERSION {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final String[] f24223a = Build.VERSION.split("-");
-        public static final String CODENAME = f24223a[0];
-        public static final String DATETIME = f24223a[2];
+        private static final String[] a = Build.VERSION.split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
+        public static final String CODENAME = a[0];
+        public static final String DATETIME = a[2];
     }
 
     static {
@@ -37,7 +34,7 @@ public class Build {
 
     private static String a(String str) {
         try {
-            return new BigInteger(1, MessageDigest.getInstance(f24222a[3]).digest(str.getBytes())).toString(16).toUpperCase(Locale.ENGLISH);
+            return new BigInteger(1, MessageDigest.getInstance(a[3]).digest(str.getBytes())).toString(16).toUpperCase(Locale.ENGLISH);
         } catch (Exception e) {
             return null;
         }
@@ -48,13 +45,13 @@ public class Build {
     }
 
     public static String getUniqueID(Context context) {
-        String a2 = a(String.valueOf(((TelephonyManager) context.getSystemService(f24222a[0])).getDeviceId()) + android.os.Build.SERIAL);
+        String a2 = a(String.valueOf(((TelephonyManager) context.getSystemService(a[0])).getDeviceId()) + android.os.Build.SERIAL);
         String str = a2;
         if (TextUtils.isEmpty(a2)) {
             try {
-                str = a(new String(NetworkInterface.getByName(SystemProperties.get(f24222a[2])).getHardwareAddress()));
+                str = a(new String(NetworkInterface.getByName(SystemProperties.get(a[2])).getHardwareAddress()));
             } catch (Exception e) {
-                return f24222a[1];
+                return a[1];
             }
         }
         return str;

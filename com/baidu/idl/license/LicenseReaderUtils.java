@@ -13,9 +13,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:com/baidu/idl/license/LicenseReaderUtils.class */
-public class LicenseReaderUtils {
+class LicenseReaderUtils {
     public static final String TAG = "License-SDK";
 
     LicenseReaderUtils() {

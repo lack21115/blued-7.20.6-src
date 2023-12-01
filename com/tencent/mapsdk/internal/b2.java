@@ -14,11 +14,11 @@ import java.io.IOException;
 public class b2 implements OfflineItemController {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ic f37304a;
+    private final ic f23613a;
     private final c2 b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final OfflineItem f37305c;
+    private final OfflineItem f23614c;
     private final String d;
     private final File e;
     private final File f;
@@ -42,7 +42,7 @@ public class b2 implements OfflineItemController {
             if (!bool.booleanValue()) {
                 b2.this.startDownload();
             } else if (b2.this.k != null) {
-                b2.this.k.onStatusChanged(b2.this.f37305c, OfflineStatus.COMPLETED);
+                b2.this.k.onStatusChanged(b2.this.f23614c, OfflineStatus.COMPLETED);
             }
         }
     }
@@ -109,15 +109,15 @@ public class b2 implements OfflineItemController {
             }
             na.c(ma.u, "解压成功:[" + b2.this.f + "]");
             c2 c2Var = b2.this.b;
-            c2Var.b(b2.this.f37304a);
+            c2Var.b(b2.this.f23613a);
             na.c(ma.u, "保持城市缓存信息:[" + c2Var + "]");
             b2.this.i.b(b2.this.j);
             if (b2.this.l != null) {
-                b2.this.l.a(b2.this.f37305c, 100);
-                b2.this.l.b(b2.this.f37305c, false);
+                b2.this.l.a(b2.this.f23614c, 100);
+                b2.this.l.b(b2.this.f23614c, false);
             }
             if (b2.this.k != null) {
-                b2.this.k.onStatusChanged(b2.this.f37305c, OfflineStatus.COMPLETED);
+                b2.this.k.onStatusChanged(b2.this.f23614c, OfflineStatus.COMPLETED);
             }
         }
 
@@ -136,13 +136,13 @@ public class b2 implements OfflineItemController {
             if (this.d == lb.RUNNING && (file = this.e) != null) {
                 int length = (int) ((file.length() * 100) / b2.this.b.d);
                 if (b2.this.l != null) {
-                    b2.this.l.a(b2.this.f37305c, length);
+                    b2.this.l.a(b2.this.f23614c, length);
                 }
                 na.c(ma.u, "缓存文件下载中:：length: " + this.e.length() + "：" + length + "%");
                 ga.a(this.e, bArr);
             }
             if (b2.this.k != null) {
-                b2.this.k.onStatusChanged(b2.this.f37305c, OfflineStatus.DOWNLOADING);
+                b2.this.k.onStatusChanged(b2.this.f23614c, OfflineStatus.DOWNLOADING);
             }
         }
 
@@ -153,7 +153,7 @@ public class b2 implements OfflineItemController {
                 ga.d(this.e);
             }
             if (b2.this.k != null) {
-                b2.this.k.onStatusChanged(b2.this.f37305c, OfflineStatus.ERROR);
+                b2.this.k.onStatusChanged(b2.this.f23614c, OfflineStatus.ERROR);
             }
         }
 
@@ -164,7 +164,7 @@ public class b2 implements OfflineItemController {
                 ga.d(this.e);
             }
             if (b2.this.k != null) {
-                b2.this.k.onStatusChanged(b2.this.f37305c, OfflineStatus.CANCEL);
+                b2.this.k.onStatusChanged(b2.this.f23614c, OfflineStatus.CANCEL);
             }
         }
 
@@ -174,15 +174,15 @@ public class b2 implements OfflineItemController {
             this.e = new File(str2, c() + ".tmp");
             na.c(ma.u, "开始下载:[" + this.e + "]");
             if (b2.this.k != null) {
-                b2.this.k.onStatusChanged(b2.this.f37305c, OfflineStatus.START);
+                b2.this.k.onStatusChanged(b2.this.f23614c, OfflineStatus.START);
             }
         }
     }
 
     public b2(q1 q1Var, String str, OfflineItem offlineItem, c2 c2Var, ic icVar, OfflineStatusChangedListener offlineStatusChangedListener) {
         this.n = q1Var;
-        this.f37304a = icVar;
-        this.f37305c = offlineItem;
+        this.f23613a = icVar;
+        this.f23614c = offlineItem;
         this.b = c2Var;
         this.k = offlineStatusChangedListener;
         kb kbVar = new kb();
@@ -240,14 +240,14 @@ public class b2 implements OfflineItemController {
             o.c();
             d dVar = this.l;
             if (dVar != null) {
-                dVar.a(this.f37305c, false);
+                dVar.a(this.f23614c, false);
             }
             OfflineStatusChangedListener offlineStatusChangedListener = this.k;
             if (offlineStatusChangedListener != null) {
-                offlineStatusChangedListener.onStatusChanged(this.f37305c, OfflineStatus.CLOSE);
+                offlineStatusChangedListener.onStatusChanged(this.f23614c, OfflineStatus.CLOSE);
             }
             this.m = false;
-            na.c(ma.u, "关闭[" + this.b.f37338c + "]离线");
+            na.c(ma.u, "关闭[" + this.b.f23647c + "]离线");
             return true;
         }
     }
@@ -267,13 +267,13 @@ public class b2 implements OfflineItemController {
                 this.m = true;
                 d dVar = this.l;
                 if (dVar != null) {
-                    dVar.a(this.f37305c, true);
+                    dVar.a(this.f23614c, true);
                 }
                 OfflineStatusChangedListener offlineStatusChangedListener = this.k;
                 if (offlineStatusChangedListener != null) {
-                    offlineStatusChangedListener.onStatusChanged(this.f37305c, OfflineStatus.OPEN);
+                    offlineStatusChangedListener.onStatusChanged(this.f23614c, OfflineStatus.OPEN);
                 }
-                na.c(ma.u, "开启[" + this.b.f37338c + "]离线");
+                na.c(ma.u, "开启[" + this.b.f23647c + "]离线");
                 return true;
             }
             return false;
@@ -288,7 +288,7 @@ public class b2 implements OfflineItemController {
             z = false;
             if (c2Var != null) {
                 this.h = c2Var.b();
-                z = c2Var.a(this.f37304a);
+                z = c2Var.a(this.f23613a);
                 na.c(ma.u, "检查是否需要更新:[" + z + "]");
                 if (!z && !this.m && !this.f.exists()) {
                     if (this.e.exists()) {
@@ -302,7 +302,7 @@ public class b2 implements OfflineItemController {
             }
             d dVar = this.l;
             if (dVar != null) {
-                dVar.b(this.f37305c, z);
+                dVar.b(this.f23614c, z);
             }
         }
         return z;
@@ -321,7 +321,7 @@ public class b2 implements OfflineItemController {
     @Override // com.tencent.map.sdk.comps.offlinemap.OfflineItemController
     public boolean removeCache() {
         boolean d2 = ga.d(this.e);
-        na.c(ma.u, "删除[" + this.b.f37338c + "]离线缓存");
+        na.c(ma.u, "删除[" + this.b.f23647c + "]离线缓存");
         return d2;
     }
 
@@ -330,14 +330,14 @@ public class b2 implements OfflineItemController {
         if (this.n == null) {
             OfflineStatusChangedListener offlineStatusChangedListener = this.k;
             if (offlineStatusChangedListener != null) {
-                offlineStatusChangedListener.onStatusChanged(this.f37305c, OfflineStatus.ERROR);
+                offlineStatusChangedListener.onStatusChanged(this.f23614c, OfflineStatus.ERROR);
             }
         } else if (this.e.exists()) {
             ca.a((ca.i) new b()).b(null, new a());
         } else if (!checkInvalidate() || TextUtils.isEmpty(this.h)) {
             OfflineStatusChangedListener offlineStatusChangedListener2 = this.k;
             if (offlineStatusChangedListener2 != null) {
-                offlineStatusChangedListener2.onStatusChanged(this.f37305c, OfflineStatus.ERROR);
+                offlineStatusChangedListener2.onStatusChanged(this.f23614c, OfflineStatus.ERROR);
             }
         } else {
             if (this.k != null) {
@@ -347,7 +347,7 @@ public class b2 implements OfflineItemController {
             this.i.a(this.h, this.j);
             OfflineStatusChangedListener offlineStatusChangedListener3 = this.k;
             if (offlineStatusChangedListener3 != null) {
-                offlineStatusChangedListener3.onStatusChanged(this.f37305c, OfflineStatus.READY);
+                offlineStatusChangedListener3.onStatusChanged(this.f23614c, OfflineStatus.READY);
             }
         }
     }

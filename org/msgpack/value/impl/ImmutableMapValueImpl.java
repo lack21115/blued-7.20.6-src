@@ -76,7 +76,7 @@ public class ImmutableMapValueImpl extends AbstractImmutableValue implements Imm
             return new EntrySetIterator(this.kvs);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.kvs.length / 2;
         }
@@ -142,7 +142,7 @@ public class ImmutableMapValueImpl extends AbstractImmutableValue implements Imm
             return new EntryIterator(this.kvs, 0);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.kvs.length / 2;
         }
@@ -161,7 +161,7 @@ public class ImmutableMapValueImpl extends AbstractImmutableValue implements Imm
             return new EntryIterator(this.kvs, 1);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.kvs.length / 2;
         }

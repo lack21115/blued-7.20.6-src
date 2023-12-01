@@ -4,7 +4,6 @@ import android.graphics.Matrix;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import com.android.internal.telephony.PhoneConstants;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/ky.class */
 public class ky {
@@ -36,7 +35,7 @@ public class ky {
             f2 = y - ((height - i2) / 2);
         }
         sb.append(i);
-        sb.append(PhoneConstants.APN_TYPE_ALL);
+        sb.append("*");
         sb.append(i2);
         return new com.huawei.openalliance.ad.inter.data.m(Integer.valueOf((int) f), Integer.valueOf((int) f2), sb.toString());
     }

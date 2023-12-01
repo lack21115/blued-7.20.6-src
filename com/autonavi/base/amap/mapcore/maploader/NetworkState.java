@@ -14,9 +14,8 @@ public class NetworkState {
     private boolean isNetReceiverRegistered = false;
     private MyBroadcastReceiver netChangeReceiver = null;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:com/autonavi/base/amap/mapcore/maploader/NetworkState$MyBroadcastReceiver.class */
-    public static class MyBroadcastReceiver extends BroadcastReceiver {
+    static class MyBroadcastReceiver extends BroadcastReceiver {
         WeakReference<NetworkChangeListener> reference;
 
         public MyBroadcastReceiver(NetworkChangeListener networkChangeListener) {

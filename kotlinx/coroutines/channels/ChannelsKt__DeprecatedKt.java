@@ -369,16 +369,16 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
             kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$any$1 r0 = (kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$any$1) r0
             r7 = r0
             r0 = r7
-            int r0 = r0.f42917c
+            int r0 = r0.c
             r1 = -2147483648(0xffffffff80000000, float:-0.0)
             r0 = r0 & r1
             if (r0 == 0) goto L24
             r0 = r7
             r1 = r7
-            int r1 = r1.f42917c
+            int r1 = r1.c
             r2 = -2147483648(0xffffffff80000000, float:-0.0)
             int r1 = r1 + r2
-            r0.f42917c = r1
+            r0.c = r1
             goto L2d
         L24:
             kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$any$1 r0 = new kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$any$1
@@ -393,7 +393,7 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r9 = r0
             r0 = r7
-            int r0 = r0.f42917c
+            int r0 = r0.c
             r6 = r0
             r0 = r6
             if (r0 == 0) goto L65
@@ -401,7 +401,7 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
             r1 = 1
             if (r0 != r1) goto L5b
             r0 = r7
-            java.lang.Object r0 = r0.f42916a
+            java.lang.Object r0 = r0.a
             kotlinx.coroutines.channels.ReceiveChannel r0 = (kotlinx.coroutines.channels.ReceiveChannel) r0
             r4 = r0
             r0 = r4
@@ -429,12 +429,12 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
             r5 = r0
             r0 = r7
             r1 = r4
-            r0.f42916a = r1     // Catch: java.lang.Throwable -> L9f
+            r0.a = r1     // Catch: java.lang.Throwable -> L9f
             r0 = r4
             r5 = r0
             r0 = r7
             r1 = 1
-            r0.f42917c = r1     // Catch: java.lang.Throwable -> L9f
+            r0.c = r1     // Catch: java.lang.Throwable -> L9f
             r0 = r4
             r5 = r0
             r0 = r8

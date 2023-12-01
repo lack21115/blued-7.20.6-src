@@ -2,16 +2,14 @@ package com.blued.android.framework.init;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/init/InitTask.class */
 public abstract class InitTask {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f9807a;
+    private String a;
 
     public InitTask(String str) {
-        this.f9807a = str;
+        this.a = str;
     }
 
     public String a() {
-        return this.f9807a;
+        return this.a;
     }
 
     public abstract void b();

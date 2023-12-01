@@ -10,11 +10,11 @@ import org.json.JSONObject;
 public class bl {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9344a = "ContainerFactoryBuilder";
+    public static final String f6504a = "ContainerFactoryBuilder";
     private static IXAdContainerFactory e;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f9345c;
+    private Context f6505c;
     private Class<?> d;
     public double b = 0.1d;
     private bq f = bq.a();
@@ -22,21 +22,21 @@ public class bl {
     public bl(Class<?> cls, Context context) {
         this.d = null;
         this.d = cls;
-        this.f9345c = context;
+        this.f6505c = context;
     }
 
     public IXAdContainerFactory a() {
         if (e == null) {
             try {
-                e = (IXAdContainerFactory) this.d.getDeclaredConstructor(Context.class).newInstance(this.f9345c);
+                e = (IXAdContainerFactory) this.d.getDeclaredConstructor(Context.class).newInstance(this.f6505c);
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put(com.umeng.analytics.pro.bh.bg, "9.26");
                 e.initConfig(jSONObject);
                 this.b = e.getRemoteVersion();
-                e.onTaskDistribute(az.f9326a, MobadsPermissionSettings.getPermissionInfo());
+                e.onTaskDistribute(az.f6486a, MobadsPermissionSettings.getPermissionInfo());
                 e.initCommonModuleObj(q.a());
             } catch (Throwable th) {
-                this.f.b(f9344a, th.getMessage());
+                this.f.b(f6504a, th.getMessage());
                 throw new bw.a("ContainerFactory() failed, possibly API incompatible: " + th.getMessage());
             }
         }

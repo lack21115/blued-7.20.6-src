@@ -134,15 +134,15 @@ public class ImLatent implements d {
         L4b:
             r0 = r8
             if (r0 != 0) goto L6f
-            int r0 = com.umeng.commonsdk.statistics.a.f40899c
+            int r0 = com.umeng.commonsdk.statistics.a.f27208c
             if (r0 <= 0) goto L68
-            int r0 = com.umeng.commonsdk.statistics.a.f40899c
+            int r0 = com.umeng.commonsdk.statistics.a.f27208c
             r1 = 1800000(0x1b7740, float:2.522337E-39)
             if (r0 <= r1) goto L60
             goto L68
         L60:
             r0 = r6
-            int r1 = com.umeng.commonsdk.statistics.a.f40899c
+            int r1 = com.umeng.commonsdk.statistics.a.f27208c
             r0.latentWindow = r1
             return
         L68:

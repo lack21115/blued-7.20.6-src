@@ -15,13 +15,9 @@ import java.util.LinkedList;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/SectionProgressBar.class */
 public class SectionProgressBar extends View implements EventObserver, ReturnObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final LinkedList<Long> f15907a;
+    private final LinkedList<Long> a;
     private Paint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Paint f15908c;
+    private Paint c;
     private Paint d;
     private Paint e;
     private Paint f;
@@ -40,9 +36,7 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
     /* renamed from: com.blued.android.module.shortvideo.view.SectionProgressBar$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/SectionProgressBar$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f15909a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x004d -> B:37:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0051 -> B:33:0x001f). Please submit an issue!!! */
@@ -51,29 +45,29 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x005d -> B:35:0x0040). Please submit an issue!!! */
         static {
             int[] iArr = new int[EventType.VALUE.values().length];
-            f15909a = iArr;
+            a = iArr;
             try {
                 iArr[EventType.VALUE.SHINE_ENDRECORD.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f15909a[EventType.VALUE.CONFIG_FILTER.ordinal()] = 2;
+                a[EventType.VALUE.CONFIG_FILTER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f15909a[EventType.VALUE.SAVE_FILTER.ordinal()] = 3;
+                a[EventType.VALUE.SAVE_FILTER.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f15909a[EventType.VALUE.SELECT_LAST_SECOTION.ordinal()] = 4;
+                a[EventType.VALUE.SELECT_LAST_SECOTION.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f15909a[EventType.VALUE.CONCAT_SECOTION.ordinal()] = 5;
+                a[EventType.VALUE.CONCAT_SECOTION.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f15909a[EventType.VALUE.DELECT_LAST_SECOTION.ordinal()] = 6;
+                a[EventType.VALUE.DELECT_LAST_SECOTION.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -87,7 +81,7 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
 
     public SectionProgressBar(Context context) {
         super(context);
-        this.f15907a = new LinkedList<>();
+        this.a = new LinkedList<>();
         this.g = true;
         this.h = false;
         this.l = State.PAUSE;
@@ -96,7 +90,7 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
 
     public SectionProgressBar(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f15907a = new LinkedList<>();
+        this.a = new LinkedList<>();
         this.g = true;
         this.h = false;
         this.l = State.PAUSE;
@@ -105,7 +99,7 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
 
     public SectionProgressBar(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f15907a = new LinkedList<>();
+        this.a = new LinkedList<>();
         this.g = true;
         this.h = false;
         this.l = State.PAUSE;
@@ -115,13 +109,13 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
     private void a(Context context) {
         this.q = getResources().getDisplayMetrics().widthPixels;
         this.b = new Paint();
-        this.f15908c = new Paint();
+        this.c = new Paint();
         this.d = new Paint();
         this.e = new Paint();
         this.f = new Paint();
         setBackgroundColor(Color.parseColor("#4C000000"));
-        this.f15908c.setStyle(Paint.Style.FILL);
-        this.f15908c.setColor(getResources().getColor(R.color.stv_yellow_color));
+        this.c.setStyle(Paint.Style.FILL);
+        this.c.setColor(getResources().getColor(R.color.stv_yellow_color));
         this.b.setStyle(Paint.Style.FILL);
         this.b.setColor(getResources().getColor(R.color.nafio_b));
         this.d.setStyle(Paint.Style.FILL);
@@ -141,7 +135,7 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
     public void a(long j) {
         synchronized (this) {
             this.n = 0.0f;
-            this.f15907a.add(Long.valueOf(j));
+            this.a.add(Long.valueOf(j));
         }
     }
 
@@ -155,7 +149,7 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
 
     @Override // com.blued.android.module.shortvideo.observer.EventObserver
     public void a(EventType.VALUE value) {
-        switch (AnonymousClass1.f15909a[value.ordinal()]) {
+        switch (AnonymousClass1.a[value.ordinal()]) {
             case 1:
                 setCurrentState(State.PAUSE);
                 return;
@@ -214,7 +208,7 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
     public void g() {
         synchronized (this) {
             if (i()) {
-                this.f15907a.removeLast();
+                this.a.removeLast();
             }
         }
     }
@@ -222,7 +216,7 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
     public void h() {
         synchronized (this) {
             if (i()) {
-                this.f15907a.clear();
+                this.a.clear();
             }
         }
     }
@@ -230,7 +224,7 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
     public boolean i() {
         boolean isEmpty;
         synchronized (this) {
-            isEmpty = this.f15907a.isEmpty();
+            isEmpty = this.a.isEmpty();
         }
         return !isEmpty;
     }
@@ -248,21 +242,21 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
         }
         synchronized (this) {
             i = 0;
-            if (!this.f15907a.isEmpty()) {
+            if (!this.a.isEmpty()) {
                 float f = 0.0f;
-                int size = this.f15907a.size();
+                int size = this.a.size();
                 int i2 = 0;
                 i = 0;
                 while (i2 < size) {
-                    Long l = this.f15907a.get(i2);
+                    Long l = this.a.get(i2);
                     float f2 = i;
                     int longValue = (int) (((((float) l.longValue()) - f) * this.i) + f2);
                     if (i2 == size - 1 && this.g && this.h) {
-                        this.f15908c.setAlpha(100);
-                        canvas.drawRect(f2, 0.0f, longValue, getMeasuredHeight(), this.f15908c);
+                        this.c.setAlpha(100);
+                        canvas.drawRect(f2, 0.0f, longValue, getMeasuredHeight(), this.c);
                     } else {
-                        this.f15908c.setAlpha(255);
-                        canvas.drawRect(f2, 0.0f, longValue, getMeasuredHeight(), this.f15908c);
+                        this.c.setAlpha(255);
+                        canvas.drawRect(f2, 0.0f, longValue, getMeasuredHeight(), this.c);
                     }
                     float f3 = longValue;
                     float f4 = f3 + 2.0f;
@@ -272,7 +266,7 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
                     i2++;
                 }
             }
-            if (this.f15907a.isEmpty()) {
+            if (this.a.isEmpty()) {
                 canvas.drawRect(this.j, 0.0f, this.j + 2.0f, getMeasuredHeight(), this.d);
             } else if (i <= this.j) {
                 canvas.drawRect(this.j, 0.0f, this.j + 2.0f, getMeasuredHeight(), this.d);
@@ -281,12 +275,12 @@ public class SectionProgressBar extends View implements EventObserver, ReturnObs
         if (this.l == State.START) {
             this.n += this.m * ((float) (currentTimeMillis - this.o));
         }
-        this.f15908c.setAlpha(255);
+        this.c.setAlpha(255);
         float f5 = i;
         if (this.n + f5 <= getMeasuredWidth()) {
-            canvas.drawRect(f5, 0.0f, f5 + this.n, getMeasuredHeight(), this.f15908c);
+            canvas.drawRect(f5, 0.0f, f5 + this.n, getMeasuredHeight(), this.c);
         } else {
-            canvas.drawRect(f5, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.f15908c);
+            canvas.drawRect(f5, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.c);
         }
         if (this.g) {
             float f6 = this.n;

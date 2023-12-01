@@ -30,13 +30,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveRankGuestListItemAdapter.class */
 public class LiveRankGuestListItemAdapter extends BaseAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f11680a;
+    private LayoutInflater a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Fragment f11681c;
+    private Fragment c;
     private List<BluedLiveRankListData> d;
     private LoadOptions e;
     private LoadOptions f;
@@ -50,13 +46,9 @@ public class LiveRankGuestListItemAdapter extends BaseAdapter {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveRankGuestListItemAdapter$ViewHolder.class */
     class ViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        ImageView f11688a;
+        ImageView a;
         ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        TextView f11689c;
+        TextView c;
         TextView d;
         TextView e;
         TextView f;
@@ -71,11 +63,11 @@ public class LiveRankGuestListItemAdapter extends BaseAdapter {
     }
 
     public LiveRankGuestListItemAdapter(Fragment fragment, List<BluedLiveRankListData> list, boolean z, boolean z2, IRequestHost iRequestHost) {
-        this.f11681c = fragment;
+        this.c = fragment;
         Context context = fragment.getContext();
         this.b = context;
         this.d = list;
-        this.f11680a = LayoutInflater.from(context);
+        this.a = LayoutInflater.from(context);
         LoadOptions loadOptions = new LoadOptions();
         this.e = loadOptions;
         loadOptions.d = R.drawable.live_bg;
@@ -142,10 +134,10 @@ public class LiveRankGuestListItemAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         if (view == null) {
             viewHolder = new ViewHolder();
-            view2 = this.f11680a.inflate(R.layout.item_live_rank_guest, viewGroup, false);
-            viewHolder.f11688a = (ImageView) view2.findViewById(R.id.live_end_user_pic);
+            view2 = this.a.inflate(R.layout.item_live_rank_guest, viewGroup, false);
+            viewHolder.a = (ImageView) view2.findViewById(R.id.live_end_user_pic);
             viewHolder.b = (ImageView) view2.findViewById(R.id.img_verify);
-            viewHolder.f11689c = (TextView) view2.findViewById(R.id.tv_live_rank);
+            viewHolder.c = (TextView) view2.findViewById(R.id.tv_live_rank);
             viewHolder.d = (TextView) view2.findViewById(R.id.live_user_name);
             viewHolder.e = (TextView) view2.findViewById(R.id.live_user_score);
             viewHolder.f = (TextView) view2.findViewById(R.id.live_user_score_des);
@@ -167,24 +159,24 @@ public class LiveRankGuestListItemAdapter extends BaseAdapter {
                 viewHolder.g.setVisibility(8);
             }
             if (i == 0) {
-                viewHolder.f11689c.setText("");
-                viewHolder.f11689c.setBackground(this.b.getResources().getDrawable(R.drawable.live_rank_one));
+                viewHolder.c.setText("");
+                viewHolder.c.setBackground(this.b.getResources().getDrawable(R.drawable.live_rank_one));
             } else if (i == 1) {
-                viewHolder.f11689c.setText("");
-                viewHolder.f11689c.setBackground(this.b.getResources().getDrawable(R.drawable.live_rank_two));
+                viewHolder.c.setText("");
+                viewHolder.c.setBackground(this.b.getResources().getDrawable(R.drawable.live_rank_two));
             } else if (i == 2) {
-                viewHolder.f11689c.setText("");
-                viewHolder.f11689c.setBackground(this.b.getResources().getDrawable(R.drawable.live_rank_three));
+                viewHolder.c.setText("");
+                viewHolder.c.setBackground(this.b.getResources().getDrawable(R.drawable.live_rank_three));
             } else {
                 if (i < 9) {
-                    TextView textView = viewHolder.f11689c;
+                    TextView textView = viewHolder.c;
                     textView.setText("0" + String.valueOf(i + 1));
                 } else {
-                    viewHolder.f11689c.setText(String.valueOf(i + 1));
+                    viewHolder.c.setText(String.valueOf(i + 1));
                 }
-                viewHolder.f11689c.setBackground(null);
+                viewHolder.c.setBackground(null);
             }
-            ImageLoader.a(this.j, bluedLiveRankListData.avatar).b(R.drawable.user_bg_round).c().a(viewHolder.f11688a);
+            ImageLoader.a(this.j, bluedLiveRankListData.avatar).b(R.drawable.user_bg_round).c().a(viewHolder.a);
             if ("0".equals(Integer.valueOf(bluedLiveRankListData.vbadge))) {
                 viewHolder.b.setVisibility(8);
                 viewHolder.b.setImageDrawable(this.b.getResources().getDrawable(R.drawable.v_gray));
@@ -193,17 +185,17 @@ public class LiveRankGuestListItemAdapter extends BaseAdapter {
                 LiveRoomInfo.a().a(viewHolder.b, bluedLiveRankListData.vbadge);
                 LiveRoomInfo.a().a(viewHolder.b, bluedLiveRankListData.vbadge);
             }
-            viewHolder.f11688a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.LiveRankGuestListItemAdapter.1
+            viewHolder.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.LiveRankGuestListItemAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
-                    if (LiveRankGuestListItemAdapter.this.f11681c == null || LiveCloakingUtil.b(bluedLiveRankListData.privilege)) {
+                    if (LiveRankGuestListItemAdapter.this.c == null || LiveCloakingUtil.b(bluedLiveRankListData.privilege)) {
                         return;
                     }
-                    if (LiveRankGuestListItemAdapter.this.f11681c instanceof DialogFragment) {
-                        ((DialogFragment) LiveRankGuestListItemAdapter.this.f11681c).dismiss();
-                    } else if (LiveRankGuestListItemAdapter.this.f11681c.getParentFragment() != null && (LiveRankGuestListItemAdapter.this.f11681c.getParentFragment() instanceof DialogFragment)) {
-                        ((DialogFragment) LiveRankGuestListItemAdapter.this.f11681c.getParentFragment()).dismiss();
+                    if (LiveRankGuestListItemAdapter.this.c instanceof DialogFragment) {
+                        LiveRankGuestListItemAdapter.this.c.dismiss();
+                    } else if (LiveRankGuestListItemAdapter.this.c.getParentFragment() != null && (LiveRankGuestListItemAdapter.this.c.getParentFragment() instanceof DialogFragment)) {
+                        LiveRankGuestListItemAdapter.this.c.getParentFragment().dismiss();
                     }
                     LiveSetDataObserver.a().e(bluedLiveRankListData.uid);
                 }
@@ -212,13 +204,13 @@ public class LiveRankGuestListItemAdapter extends BaseAdapter {
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
-                    if (LiveRankGuestListItemAdapter.this.f11681c == null || LiveCloakingUtil.b(bluedLiveRankListData.privilege)) {
+                    if (LiveRankGuestListItemAdapter.this.c == null || LiveCloakingUtil.b(bluedLiveRankListData.privilege)) {
                         return;
                     }
-                    if (LiveRankGuestListItemAdapter.this.f11681c instanceof DialogFragment) {
-                        ((DialogFragment) LiveRankGuestListItemAdapter.this.f11681c).dismiss();
-                    } else if (LiveRankGuestListItemAdapter.this.f11681c.getParentFragment() != null && (LiveRankGuestListItemAdapter.this.f11681c.getParentFragment() instanceof DialogFragment)) {
-                        ((DialogFragment) LiveRankGuestListItemAdapter.this.f11681c.getParentFragment()).dismiss();
+                    if (LiveRankGuestListItemAdapter.this.c instanceof DialogFragment) {
+                        LiveRankGuestListItemAdapter.this.c.dismiss();
+                    } else if (LiveRankGuestListItemAdapter.this.c.getParentFragment() != null && (LiveRankGuestListItemAdapter.this.c.getParentFragment() instanceof DialogFragment)) {
+                        LiveRankGuestListItemAdapter.this.c.getParentFragment().dismiss();
                     }
                     LiveSetDataObserver.a().e(bluedLiveRankListData.uid);
                 }
@@ -294,7 +286,7 @@ public class LiveRankGuestListItemAdapter extends BaseAdapter {
                         Tracker.onClick(view3);
                         LiveRankBehalfRecordListDialogFragment liveRankBehalfRecordListDialogFragment = new LiveRankBehalfRecordListDialogFragment();
                         liveRankBehalfRecordListDialogFragment.a(bluedLiveRankListData.behalf_order_record);
-                        liveRankBehalfRecordListDialogFragment.show(LiveRankGuestListItemAdapter.this.f11681c.getChildFragmentManager(), "LiveRankBehalfRecordListDialogFragment");
+                        liveRankBehalfRecordListDialogFragment.show(LiveRankGuestListItemAdapter.this.c.getChildFragmentManager(), "LiveRankBehalfRecordListDialogFragment");
                     }
                 });
                 return view2;

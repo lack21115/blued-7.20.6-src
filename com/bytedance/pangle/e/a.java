@@ -12,7 +12,7 @@ public final class a {
         com.bytedance.pangle.d.e.a(new Runnable() { // from class: com.bytedance.pangle.e.a.1
             @Override // java.lang.Runnable
             public final void run() {
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(InputStream.this));
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 while (true) {
                     try {
                         String readLine = bufferedReader.readLine();

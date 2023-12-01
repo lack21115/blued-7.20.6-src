@@ -5,22 +5,18 @@ import java.util.Calendar;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/security/mobile/module/d/a.class */
 public final class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f4708a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f4709c;
+    private String c;
     private String d;
     private String e;
     private String f;
     private String g;
 
     public a(String str, String str2, String str3, String str4, String str5, String str6, String str7) {
-        this.f4708a = str;
+        this.a = str;
         this.b = str2;
-        this.f4709c = str3;
+        this.c = str3;
         this.d = str4;
         this.e = str5;
         this.f = str6;
@@ -35,9 +31,9 @@ public final class a {
         StringBuilder sb3;
         String str3;
         StringBuffer stringBuffer = new StringBuffer(new SimpleDateFormat("yyyyMMddHHmmssSSS").format(Calendar.getInstance().getTime()));
-        stringBuffer.append("," + this.f4708a);
+        stringBuffer.append("," + this.a);
         stringBuffer.append("," + this.b);
-        stringBuffer.append("," + this.f4709c);
+        stringBuffer.append("," + this.c);
         stringBuffer.append("," + this.d);
         if (com.alipay.security.mobile.module.a.a.a(this.e) || this.e.length() < 20) {
             sb = new StringBuilder(",");

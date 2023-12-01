@@ -2,9 +2,9 @@ package com.android.internal.os;
 
 import android.content.pm.PackageInfo;
 import android.os.Build;
-import android.os.Process;
 import android.os.SystemProperties;
 import android.util.Log;
+import com.android.internal.content.NativeLibraryHelper;
 import dalvik.system.profiler.BinaryHprofWriter;
 import dalvik.system.profiler.SamplingProfiler;
 import java.io.BufferedOutputStream;
@@ -114,7 +114,7 @@ public class SamplingProfilerIntegration {
         }
         samplingProfiler.stop();
         String replaceAll = str.replaceAll(":", ".");
-        String str2 = "/data/snapshots/" + replaceAll + "-" + startMillis + ".snapshot";
+        String str2 = "/data/snapshots/" + replaceAll + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + startMillis + ".snapshot";
         long currentTimeMillis = System.currentTimeMillis();
         BufferedOutputStream bufferedOutputStream2 = null;
         try {
@@ -153,7 +153,7 @@ public class SamplingProfilerIntegration {
 
     public static void writeZygoteSnapshot() {
         if (enabled) {
-            writeSnapshotFile(Process.ZYGOTE_SOCKET, null);
+            writeSnapshotFile("zygote", null);
             samplingProfiler.shutdown();
             samplingProfiler = null;
             startMillis = 0L;

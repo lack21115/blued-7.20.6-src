@@ -11,11 +11,11 @@ import org.json.JSONObject;
 public class r {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f40775a = 0;
+    private static final int f27084a = 0;
     private static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f40776c = 2;
+    private static final int f27085c = 2;
     private static final int d = 3;
     private final long e;
 
@@ -23,7 +23,7 @@ public class r {
     static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final r f40777a = new r();
+        public static final r f27086a = new r();
 
         private a() {
         }
@@ -34,7 +34,7 @@ public class r {
     }
 
     public static r a() {
-        return a.f40777a;
+        return a.f27086a;
     }
 
     private void a(JSONObject jSONObject, boolean z) {

@@ -29,7 +29,7 @@ import org.json.JSONObject;
 public final class a implements com.igexin.push.core.e.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23467a = "BIDataManager";
+    private static final String f9859a = "BIDataManager";
     private static a b;
 
     public static a a() {
@@ -53,7 +53,7 @@ public final class a implements com.igexin.push.core.e.a {
     }
 
     private static void a(ArrayList<String> arrayList) {
-        d.a.f23474a.i.a(b.ab, new String[]{"id"}, (String[]) arrayList.toArray(new String[arrayList.size()]));
+        d.a.f9866a.i.a(b.ab, new String[]{"id"}, (String[]) arrayList.toArray(new String[arrayList.size()]));
     }
 
     private static long b(String str) {
@@ -61,7 +61,7 @@ public final class a implements com.igexin.push.core.e.a {
         contentValues.put("type", (Integer) 10);
         contentValues.put("data", str);
         contentValues.put("time", Long.valueOf(System.currentTimeMillis()));
-        return d.a.f23474a.i.a(b.ab, contentValues);
+        return d.a.f9866a.i.a(b.ab, contentValues);
     }
 
     public static void b() {
@@ -78,7 +78,7 @@ public final class a implements com.igexin.push.core.e.a {
                         sb3.append("|");
                         sb3.append(e.A);
                         sb3.append("|");
-                        sb3.append(e.f23495a);
+                        sb3.append(e.f9887a);
                         sb3.append("|");
                         sb3.append(e.C);
                         sb3.append("|");
@@ -114,11 +114,11 @@ public final class a implements com.igexin.push.core.e.a {
         } else {
             sb2 = " upload type144 network false";
         }
-        com.igexin.c.a.c.a.b(f23467a, sb2);
+        com.igexin.c.a.c.a.b(f9859a, sb2);
     }
 
     private static void b(ArrayList<String> arrayList) {
-        d.a.f23474a.i.a(b.ab, new String[]{"rowid"}, (String[]) arrayList.toArray(new String[arrayList.size()]));
+        d.a.f9866a.i.a(b.ab, new String[]{"rowid"}, (String[]) arrayList.toArray(new String[arrayList.size()]));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0077, code lost:
@@ -233,8 +233,8 @@ public final class a implements com.igexin.push.core.e.a {
                     break;
                 }
                 JSONObject jSONObject2 = new JSONObject();
-                jSONObject2.put("appid", arrayList.get(i2).f23462c);
-                jSONObject2.put("name", arrayList.get(i2).f23461a);
+                jSONObject2.put("appid", arrayList.get(i2).f9854c);
+                jSONObject2.put("name", arrayList.get(i2).f9853a);
                 jSONObject2.put("version", arrayList.get(i2).b);
                 jSONObject2.put("versionName", arrayList.get(i2).d);
                 jSONArray.put(jSONObject2);
@@ -251,7 +251,7 @@ public final class a implements com.igexin.push.core.e.a {
     private static void e() {
         Cursor cursor = null;
         try {
-            Cursor a2 = d.a.f23474a.i.a(b.ab, null, null, new String[]{"COUNT(*)"}, null);
+            Cursor a2 = d.a.f9866a.i.a(b.ab, null, null, new String[]{"COUNT(*)"}, null);
             if (a2 == null) {
                 if (a2 != null) {
                     a2.close();
@@ -264,7 +264,7 @@ public final class a implements com.igexin.push.core.e.a {
             a2.close();
             long j2 = j - 200;
             if (j2 > 0) {
-                com.igexin.push.a.b bVar = d.a.f23474a.i;
+                com.igexin.push.a.b bVar = d.a.f9866a.i;
                 StringBuilder sb = new StringBuilder("id IN(SELECT id FROM bidata ORDER BY time ASC LIMIT ");
                 sb.append(j2);
                 sb.append(")");
@@ -273,7 +273,7 @@ public final class a implements com.igexin.push.core.e.a {
                 sb2.append(j2);
                 sb2.append(" old expired data");
                 cursor = a2;
-                com.igexin.c.a.c.a.b(f23467a, sb2.toString());
+                com.igexin.c.a.c.a.b(f9859a, sb2.toString());
             }
             if (a2 != null) {
                 a2.close();
@@ -300,20 +300,20 @@ public final class a implements com.igexin.push.core.e.a {
     public final void a(List<t> list) {
         Comparator<t> comparator = new Comparator<t>() { // from class: com.igexin.push.core.c.a.1
             private static int a(t tVar, t tVar2) {
-                if (tVar.f23462c.equals(tVar2.f23462c)) {
+                if (tVar.f9854c.equals(tVar2.f9854c)) {
                     return 0;
                 }
-                return tVar.f23462c.compareTo(tVar2.f23462c);
+                return tVar.f9854c.compareTo(tVar2.f9854c);
             }
 
             @Override // java.util.Comparator
             public final /* synthetic */ int compare(t tVar, t tVar2) {
                 t tVar3 = tVar;
                 t tVar4 = tVar2;
-                if (tVar3.f23462c.equals(tVar4.f23462c)) {
+                if (tVar3.f9854c.equals(tVar4.f9854c)) {
                     return 0;
                 }
-                return tVar3.f23462c.compareTo(tVar4.f23462c);
+                return tVar3.f9854c.compareTo(tVar4.f9854c);
             }
         };
         PackageManager packageManager = e.l.getPackageManager();
@@ -330,8 +330,8 @@ public final class a implements com.igexin.push.core.e.a {
                 ApplicationInfo applicationInfo = packageInfo.applicationInfo;
                 if ((applicationInfo.flags & 1) <= 0) {
                     t tVar = new t();
-                    tVar.f23461a = applicationInfo.loadLabel(packageManager).toString();
-                    tVar.f23462c = applicationInfo.packageName;
+                    tVar.f9853a = applicationInfo.loadLabel(packageManager).toString();
+                    tVar.f9854c = applicationInfo.packageName;
                     tVar.b = String.valueOf(packageInfo.versionCode);
                     tVar.d = packageInfo.versionName;
                     list.add(tVar);
@@ -351,7 +351,7 @@ public final class a implements com.igexin.push.core.e.a {
     public final void c(SQLiteDatabase sQLiteDatabase) {
         Cursor cursor = null;
         try {
-            Cursor a2 = d.a.f23474a.i.a(b.ab, null, null, new String[]{"COUNT(*)"}, null);
+            Cursor a2 = d.a.f9866a.i.a(b.ab, null, null, new String[]{"COUNT(*)"}, null);
             if (a2 == null) {
                 if (a2 != null) {
                     a2.close();
@@ -364,7 +364,7 @@ public final class a implements com.igexin.push.core.e.a {
             a2.close();
             long j2 = j - 200;
             if (j2 > 0) {
-                com.igexin.push.a.b bVar = d.a.f23474a.i;
+                com.igexin.push.a.b bVar = d.a.f9866a.i;
                 StringBuilder sb = new StringBuilder("id IN(SELECT id FROM bidata ORDER BY time ASC LIMIT ");
                 sb.append(j2);
                 sb.append(")");
@@ -373,7 +373,7 @@ public final class a implements com.igexin.push.core.e.a {
                 sb2.append(j2);
                 sb2.append(" old expired data");
                 cursor = a2;
-                com.igexin.c.a.c.a.b(f23467a, sb2.toString());
+                com.igexin.c.a.c.a.b(f9859a, sb2.toString());
             }
             if (a2 != null) {
                 a2.close();

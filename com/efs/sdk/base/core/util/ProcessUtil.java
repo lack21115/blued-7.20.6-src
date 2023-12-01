@@ -13,18 +13,18 @@ import java.util.List;
 public class ProcessUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f21784a;
+    private static String f8178a;
     private static List<Integer> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static long f21785c = -1;
+    private static long f8179c = -1;
 
     public static String getCurrentProcessName() {
-        String str = f21784a;
+        String str = f8178a;
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
             str2 = getProcessName(Process.myPid());
-            f21784a = str2;
+            f8178a = str2;
         }
         return str2;
     }
@@ -91,8 +91,8 @@ public class ProcessUtil {
                     z = false;
                 } else {
                     z = false;
-                    if (f21785c > 0) {
-                        z = System.currentTimeMillis() - f21785c <= 600000;
+                    if (f8179c > 0) {
+                        z = System.currentTimeMillis() - f8179c <= 600000;
                     }
                 }
             }
@@ -108,7 +108,7 @@ public class ProcessUtil {
                 if (!TextUtils.isEmpty(getProcessName(parseInt))) {
                     b.add(Integer.valueOf(parseInt));
                 }
-                f21785c = System.currentTimeMillis();
+                f8179c = System.currentTimeMillis();
             }
             return b.contains(Integer.valueOf(parseInt));
         } catch (Throwable th) {

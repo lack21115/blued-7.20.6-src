@@ -105,7 +105,7 @@ public class TimePicker extends FrameLayout {
     }
 
     public TimePicker(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843933);
+        this(context, attributeSet, R.attr.timePickerStyle);
     }
 
     public TimePicker(Context context, AttributeSet attributeSet, int i) {

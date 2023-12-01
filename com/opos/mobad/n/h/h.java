@@ -15,7 +15,7 @@ import com.opos.mobad.n.a;
 public class h extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private a.InterfaceC0708a f26973a;
+    private a.InterfaceC0538a f13285a;
 
     public h(Context context, boolean z) {
         super(context);
@@ -34,8 +34,8 @@ public class h extends RelativeLayout {
         com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.h.h.1
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
-                if (h.this.f26973a != null) {
-                    h.this.f26973a.g(view, iArr);
+                if (h.this.f13285a != null) {
+                    h.this.f13285a.g(view, iArr);
                 }
             }
         };
@@ -60,8 +60,8 @@ public class h extends RelativeLayout {
         com.opos.mobad.n.c.g gVar2 = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.h.h.2
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
-                if (h.this.f26973a != null) {
-                    h.this.f26973a.d(view, iArr);
+                if (h.this.f13285a != null) {
+                    h.this.f13285a.d(view, iArr);
                 }
             }
         };
@@ -93,7 +93,7 @@ public class h extends RelativeLayout {
         return new h(context, false);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.f26973a = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.f13285a = interfaceC0538a;
     }
 }

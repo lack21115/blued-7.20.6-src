@@ -194,11 +194,11 @@ public interface IInCallService extends IInterface {
                     return true;
                 case 2:
                     parcel.enforceInterface(DESCRIPTOR);
-                    addCall(parcel.readInt() != 0 ? ParcelableCall.CREATOR.createFromParcel(parcel) : null);
+                    addCall(parcel.readInt() != 0 ? (ParcelableCall) ParcelableCall.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
-                    updateCall(parcel.readInt() != 0 ? ParcelableCall.CREATOR.createFromParcel(parcel) : null);
+                    updateCall(parcel.readInt() != 0 ? (ParcelableCall) ParcelableCall.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 4:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -210,7 +210,7 @@ public interface IInCallService extends IInterface {
                     return true;
                 case 6:
                     parcel.enforceInterface(DESCRIPTOR);
-                    onAudioStateChanged(parcel.readInt() != 0 ? AudioState.CREATOR.createFromParcel(parcel) : null);
+                    onAudioStateChanged(parcel.readInt() != 0 ? (AudioState) AudioState.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 7:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -227,7 +227,7 @@ public interface IInCallService extends IInterface {
                     }
                     onCanAddCallChanged(z2);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

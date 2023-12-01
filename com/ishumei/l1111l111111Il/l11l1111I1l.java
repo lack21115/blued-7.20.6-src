@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Environment;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.ishumei.dfp.SMSDK;
 import com.ishumei.l1111l111111Il.l111l1111llIl;
 import java.io.File;
@@ -192,7 +191,7 @@ public class l11l1111I1l {
         @Override // com.ishumei.l1111l111111Il.l11l1111I1l.l111l11111lIl, com.ishumei.l1111l111111Il.l11l1111I1l.l111l1111lI1l
         public final void l111l11111lIl(String str) {
             try {
-                super.l111l11111lIl(com.ishumei.l111l1111llIl.l111l1111lIl.l111l11111lIl((this.l111l11111Il + BridgeUtil.UNDERLINE_STR + str).getBytes()));
+                super.l111l11111lIl(com.ishumei.l111l1111llIl.l111l1111lIl.l111l11111lIl((this.l111l11111Il + "_" + str).getBytes()));
             } catch (IOException e) {
             }
         }
@@ -282,7 +281,7 @@ public class l11l1111I1l {
                 return;
             }
             try {
-                this.l1111l111111Il = com.ishumei.l111l1111llIl.l111l1111lIl.l111l1111l1Il(str + BridgeUtil.UNDERLINE_STR + context.getPackageName());
+                this.l1111l111111Il = com.ishumei.l111l1111llIl.l111l1111lIl.l111l1111l1Il(str + "_" + context.getPackageName());
             } catch (Exception e) {
             }
         }
@@ -352,14 +351,14 @@ public class l11l1111I1l {
 
     /* renamed from: com.ishumei.l1111l111111Il.l11l1111I1l$l11l1111I1l  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/ishumei/l1111l111111Il/l11l1111I1l$l11l1111I1l.class */
-    static final class C0453l11l1111I1l extends l111l11111I1l {
+    static final class C0283l11l1111I1l extends l111l11111I1l {
         private static final String l1111l111111Il = com.ishumei.l111l1111llIl.l111l1111lI1l.l111l11111Il("a08c978a929a96");
 
-        private C0453l11l1111I1l() {
+        private C0283l11l1111I1l() {
             super((byte) 0);
         }
 
-        /* synthetic */ C0453l11l1111I1l(byte b) {
+        /* synthetic */ C0283l11l1111I1l(byte b) {
             this();
         }
 
@@ -466,7 +465,7 @@ public class l11l1111I1l {
                 this.l111l11111I1l = new l111l11111Il(str2, str);
                 this.l111l11111Il = new l11l1111I11l((byte) 0);
                 this.l111l1111l1Il = new l111l1111l1Il();
-                this.l111l1111llIl = new C0453l11l1111I1l((byte) 0);
+                this.l111l1111llIl = new C0283l11l1111I1l((byte) 0);
                 this.l111l1111lI1l = new l111l1111llIl(str);
             } catch (Exception e) {
             }

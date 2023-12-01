@@ -30,7 +30,6 @@ public final class LivePlanetRankModel implements MultiItemEntity, Serializable 
         return this.goods;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

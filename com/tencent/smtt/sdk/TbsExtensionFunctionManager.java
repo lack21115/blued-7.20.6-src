@@ -26,7 +26,7 @@ public class TbsExtensionFunctionManager {
     private static TbsExtensionFunctionManager b;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f38768a;
+    private boolean f25077a;
 
     private TbsExtensionFunctionManager() {
     }
@@ -73,7 +73,7 @@ public class TbsExtensionFunctionManager {
     public void initTbsBuglyIfNeed(Context context) {
         String absolutePath;
         synchronized (this) {
-            if (this.f38768a) {
+            if (this.f25077a) {
                 return;
             }
             if (!canUseFunction(context, BUGLY_SWITCH_FILE_NAME)) {
@@ -103,7 +103,7 @@ public class TbsExtensionFunctionManager {
             }
             File file = new File(absolutePath, "tbs_bugly_dex.jar");
             com.tencent.smtt.utils.i.a(new DexLoader(file.getParent(), context, new String[]{file.getAbsolutePath()}, q2.getAbsolutePath(), QbSdk.getSettings()).loadClass("com.tencent.smtt.tbs.bugly.TBSBuglyManager"), "initBugly", (Class<?>[]) new Class[]{Context.class, String.class, String.class, String.class}, context, absolutePath, String.valueOf(WebView.getTbsSDKVersion(context)), String.valueOf(WebView.getTbsCoreVersion(context)));
-            this.f38768a = true;
+            this.f25077a = true;
             TbsLog.i("TbsExtensionFunMana", "initTbsBuglyIfNeed success!");
         }
     }

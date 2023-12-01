@@ -1,6 +1,6 @@
 package org.conscrypt;
 
-import com.youzan.androidsdk.tool.AppSigning;
+import com.anythink.core.common.k.f;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -25,6 +25,7 @@ import java.util.Set;
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.ShortBufferException;
+import javax.microedition.khronos.opengles.GL10;
 import javax.net.ssl.SSLException;
 import javax.security.auth.x500.X500Principal;
 import org.conscrypt.NativeRef;
@@ -728,7 +729,7 @@ public final class NativeCrypto {
     public static native void X509_CRL_verify(long j, OpenSSLX509CRL openSSLX509CRL, NativeRef.EVP_PKEY evp_pkey) throws BadPaddingException, SignatureException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException;
 
     static int X509_NAME_hash(X500Principal x500Principal) {
-        return X509_NAME_hash(x500Principal, AppSigning.SHA1);
+        return X509_NAME_hash(x500Principal, "SHA1");
     }
 
     private static int X509_NAME_hash(X500Principal x500Principal, String str) {
@@ -742,7 +743,7 @@ public final class NativeCrypto {
     }
 
     public static int X509_NAME_hash_old(X500Principal x500Principal) {
-        return X509_NAME_hash(x500Principal, "MD5");
+        return X509_NAME_hash(x500Principal, f.a);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -976,16 +977,16 @@ public final class NativeCrypto {
 
     private static int getProtocolConstant(String str) {
         if (str.equals(SUPPORTED_PROTOCOL_TLSV1)) {
-            return 769;
+            return GL10.GL_ONE_MINUS_SRC_COLOR;
         }
         if (str.equals(SUPPORTED_PROTOCOL_TLSV1_1)) {
-            return 770;
+            return GL10.GL_SRC_ALPHA;
         }
         if (str.equals(SUPPORTED_PROTOCOL_TLSV1_2)) {
-            return 771;
+            return GL10.GL_ONE_MINUS_SRC_ALPHA;
         }
         if (str.equals(SUPPORTED_PROTOCOL_TLSV1_3)) {
-            return 772;
+            return GL10.GL_DST_ALPHA;
         }
         throw new AssertionError("Unknown protocol encountered: " + str);
     }

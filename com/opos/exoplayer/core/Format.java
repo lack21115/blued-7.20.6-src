@@ -31,11 +31,11 @@ public final class Format implements Parcelable {
     private int A;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25000a;
+    public final String f11312a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f25001c;
+    public final String f11313c;
     public final Metadata d;
     public final String e;
     public final String f;
@@ -61,10 +61,10 @@ public final class Format implements Parcelable {
     public final int z;
 
     Format(Parcel parcel) {
-        this.f25000a = parcel.readString();
+        this.f11312a = parcel.readString();
         this.e = parcel.readString();
         this.f = parcel.readString();
-        this.f25001c = parcel.readString();
+        this.f11313c = parcel.readString();
         this.b = parcel.readInt();
         this.g = parcel.readInt();
         this.j = parcel.readInt();
@@ -100,10 +100,10 @@ public final class Format implements Parcelable {
     }
 
     Format(String str, String str2, String str3, String str4, int i, int i2, int i3, int i4, float f, int i5, float f2, byte[] bArr, int i6, ColorInfo colorInfo, int i7, int i8, int i9, int i10, int i11, int i12, String str5, int i13, long j, List<byte[]> list, DrmInitData drmInitData, Metadata metadata) {
-        this.f25000a = str;
+        this.f11312a = str;
         this.e = str2;
         this.f = str3;
-        this.f25001c = str4;
+        this.f11313c = str4;
         this.b = i;
         this.g = i2;
         this.j = i3;
@@ -180,8 +180,8 @@ public final class Format implements Parcelable {
         if (colorInfo == null) {
             return;
         }
-        a(mediaFormat, "color-transfer", colorInfo.f25560c);
-        a(mediaFormat, "color-standard", colorInfo.f25559a);
+        a(mediaFormat, "color-transfer", colorInfo.f11872c);
+        a(mediaFormat, "color-standard", colorInfo.f11871a);
         a(mediaFormat, "color-range", colorInfo.b);
         a(mediaFormat, "hdr-static-info", colorInfo.d);
     }
@@ -224,23 +224,23 @@ public final class Format implements Parcelable {
     }
 
     public Format a(int i) {
-        return new Format(this.f25000a, this.e, this.f, this.f25001c, this.b, i, this.j, this.k, this.l, this.m, this.n, this.p, this.o, this.q, this.r, this.s, this.t, this.u, this.v, this.x, this.y, this.z, this.w, this.h, this.i, this.d);
+        return new Format(this.f11312a, this.e, this.f, this.f11313c, this.b, i, this.j, this.k, this.l, this.m, this.n, this.p, this.o, this.q, this.r, this.s, this.t, this.u, this.v, this.x, this.y, this.z, this.w, this.h, this.i, this.d);
     }
 
     public Format a(int i, int i2) {
-        return new Format(this.f25000a, this.e, this.f, this.f25001c, this.b, this.g, this.j, this.k, this.l, this.m, this.n, this.p, this.o, this.q, this.r, this.s, this.t, i, i2, this.x, this.y, this.z, this.w, this.h, this.i, this.d);
+        return new Format(this.f11312a, this.e, this.f, this.f11313c, this.b, this.g, this.j, this.k, this.l, this.m, this.n, this.p, this.o, this.q, this.r, this.s, this.t, i, i2, this.x, this.y, this.z, this.w, this.h, this.i, this.d);
     }
 
     public Format a(long j) {
-        return new Format(this.f25000a, this.e, this.f, this.f25001c, this.b, this.g, this.j, this.k, this.l, this.m, this.n, this.p, this.o, this.q, this.r, this.s, this.t, this.u, this.v, this.x, this.y, this.z, j, this.h, this.i, this.d);
+        return new Format(this.f11312a, this.e, this.f, this.f11313c, this.b, this.g, this.j, this.k, this.l, this.m, this.n, this.p, this.o, this.q, this.r, this.s, this.t, this.u, this.v, this.x, this.y, this.z, j, this.h, this.i, this.d);
     }
 
     public Format a(DrmInitData drmInitData) {
-        return new Format(this.f25000a, this.e, this.f, this.f25001c, this.b, this.g, this.j, this.k, this.l, this.m, this.n, this.p, this.o, this.q, this.r, this.s, this.t, this.u, this.v, this.x, this.y, this.z, this.w, this.h, drmInitData, this.d);
+        return new Format(this.f11312a, this.e, this.f, this.f11313c, this.b, this.g, this.j, this.k, this.l, this.m, this.n, this.p, this.o, this.q, this.r, this.s, this.t, this.u, this.v, this.x, this.y, this.z, this.w, this.h, drmInitData, this.d);
     }
 
     public Format a(Metadata metadata) {
-        return new Format(this.f25000a, this.e, this.f, this.f25001c, this.b, this.g, this.j, this.k, this.l, this.m, this.n, this.p, this.o, this.q, this.r, this.s, this.t, this.u, this.v, this.x, this.y, this.z, this.w, this.h, this.i, metadata);
+        return new Format(this.f11312a, this.e, this.f, this.f11313c, this.b, this.g, this.j, this.k, this.l, this.m, this.n, this.p, this.o, this.q, this.r, this.s, this.t, this.u, this.v, this.x, this.y, this.z, this.w, this.h, this.i, metadata);
     }
 
     public final MediaFormat b() {
@@ -279,7 +279,7 @@ public final class Format implements Parcelable {
             return false;
         }
         Format format = (Format) obj;
-        if (this.b != format.b || this.g != format.g || this.j != format.j || this.k != format.k || this.l != format.l || this.m != format.m || this.n != format.n || this.o != format.o || this.r != format.r || this.s != format.s || this.t != format.t || this.u != format.u || this.v != format.v || this.w != format.w || this.x != format.x || !com.opos.exoplayer.core.i.u.a(this.f25000a, format.f25000a) || !com.opos.exoplayer.core.i.u.a(this.y, format.y) || this.z != format.z || !com.opos.exoplayer.core.i.u.a(this.e, format.e) || !com.opos.exoplayer.core.i.u.a(this.f, format.f) || !com.opos.exoplayer.core.i.u.a(this.f25001c, format.f25001c) || !com.opos.exoplayer.core.i.u.a(this.i, format.i) || !com.opos.exoplayer.core.i.u.a(this.d, format.d) || !com.opos.exoplayer.core.i.u.a(this.q, format.q) || !Arrays.equals(this.p, format.p) || this.h.size() != format.h.size()) {
+        if (this.b != format.b || this.g != format.g || this.j != format.j || this.k != format.k || this.l != format.l || this.m != format.m || this.n != format.n || this.o != format.o || this.r != format.r || this.s != format.s || this.t != format.t || this.u != format.u || this.v != format.v || this.w != format.w || this.x != format.x || !com.opos.exoplayer.core.i.u.a(this.f11312a, format.f11312a) || !com.opos.exoplayer.core.i.u.a(this.y, format.y) || this.z != format.z || !com.opos.exoplayer.core.i.u.a(this.e, format.e) || !com.opos.exoplayer.core.i.u.a(this.f, format.f) || !com.opos.exoplayer.core.i.u.a(this.f11313c, format.f11313c) || !com.opos.exoplayer.core.i.u.a(this.i, format.i) || !com.opos.exoplayer.core.i.u.a(this.d, format.d) || !com.opos.exoplayer.core.i.u.a(this.q, format.q) || !Arrays.equals(this.p, format.p) || this.h.size() != format.h.size()) {
             return false;
         }
         int i = 0;
@@ -297,14 +297,14 @@ public final class Format implements Parcelable {
 
     public int hashCode() {
         if (this.A == 0) {
-            String str = this.f25000a;
+            String str = this.f11312a;
             int i = 0;
             int hashCode = str == null ? 0 : str.hashCode();
             String str2 = this.e;
             int hashCode2 = str2 == null ? 0 : str2.hashCode();
             String str3 = this.f;
             int hashCode3 = str3 == null ? 0 : str3.hashCode();
-            String str4 = this.f25001c;
+            String str4 = this.f11313c;
             int hashCode4 = str4 == null ? 0 : str4.hashCode();
             int i2 = this.b;
             int i3 = this.j;
@@ -326,15 +326,15 @@ public final class Format implements Parcelable {
     }
 
     public String toString() {
-        return "Format(" + this.f25000a + ", " + this.e + ", " + this.f + ", " + this.b + ", " + this.y + ", [" + this.j + ", " + this.k + ", " + this.l + "], [" + this.r + ", " + this.s + "])";
+        return "Format(" + this.f11312a + ", " + this.e + ", " + this.f + ", " + this.b + ", " + this.y + ", [" + this.j + ", " + this.k + ", " + this.l + "], [" + this.r + ", " + this.s + "])";
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f25000a);
+        parcel.writeString(this.f11312a);
         parcel.writeString(this.e);
         parcel.writeString(this.f);
-        parcel.writeString(this.f25001c);
+        parcel.writeString(this.f11313c);
         parcel.writeInt(this.b);
         parcel.writeInt(this.g);
         parcel.writeInt(this.j);

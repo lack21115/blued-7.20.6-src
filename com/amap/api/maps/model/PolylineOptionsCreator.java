@@ -18,7 +18,7 @@ public class PolylineOptionsCreator implements Parcelable.Creator<PolylineOption
         int readInt2 = parcel.readInt();
         float readFloat2 = parcel.readFloat();
         float readFloat3 = parcel.readFloat();
-        polylineOptions.f5537a = parcel.readString();
+        polylineOptions.a = parcel.readString();
         polylineOptions.lineCapType(PolylineOptions.LineCapType.valueOf(parcel.readInt()));
         polylineOptions.lineJoinType(PolylineOptions.LineJoinType.valueOf(parcel.readInt()));
         boolean[] zArr = new boolean[5];

@@ -4,13 +4,13 @@ package com.tramini.plugin.a.g.b;
 public abstract class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f40542a = 0;
+    private int f26851a = 0;
 
     public abstract void a();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a(int i) {
-        this.f40542a = i;
+        this.f26851a = i;
     }
 
     @Override // java.lang.Runnable

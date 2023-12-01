@@ -6,6 +6,6 @@ import com.soft.blued.ui.msg.model.GiftVoucherModel;
 public class UpdateVoucherEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public GiftVoucherModel f32330a;
+    public GiftVoucherModel f18640a;
     public boolean b;
 }

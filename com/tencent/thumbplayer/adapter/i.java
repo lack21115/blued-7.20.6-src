@@ -6,10 +6,10 @@ import com.tencent.thumbplayer.api.TPPlayerState;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private TPPlayerState f39210a;
+    private TPPlayerState f25519a;
 
     public i(TPPlayerState tPPlayerState) {
-        this.f39210a = tPPlayerState;
+        this.f25519a = tPPlayerState;
     }
 
     private static boolean a(TPPlayerState tPPlayerState) {
@@ -114,83 +114,83 @@ public class i {
 
     public final boolean a(int i) {
         if (i == 1) {
-            return a(this.f39210a);
+            return a(this.f25519a);
         }
         if (i == 2) {
-            return b(this.f39210a);
+            return b(this.f25519a);
         }
         if (i == 3) {
-            return c(this.f39210a);
+            return c(this.f25519a);
         }
         if (i == 4) {
-            return d(this.f39210a);
+            return d(this.f25519a);
         }
         if (i == 5) {
-            return e(this.f39210a);
+            return e(this.f25519a);
         }
         if (i == 6) {
-            return f(this.f39210a);
+            return f(this.f25519a);
         }
         if (i == 7) {
-            return g(this.f39210a);
+            return g(this.f25519a);
         }
         if (i == 8) {
-            return h(this.f39210a);
+            return h(this.f25519a);
         }
         if (i == 9) {
-            return i(this.f39210a);
+            return i(this.f25519a);
         }
         if (i == 11) {
-            return j(this.f39210a);
+            return j(this.f25519a);
         }
         if (i == 12) {
-            return k(this.f39210a);
+            return k(this.f25519a);
         }
         if (i == 13) {
-            return m(this.f39210a);
+            return m(this.f25519a);
         }
         if (i == 14) {
-            return n(this.f39210a);
+            return n(this.f25519a);
         }
         if (i == 15) {
-            return o(this.f39210a);
+            return o(this.f25519a);
         }
         if (i == 16) {
-            return p(this.f39210a);
+            return p(this.f25519a);
         }
         if (i == 17) {
-            return x(this.f39210a);
+            return x(this.f25519a);
         }
         if (i == 18) {
-            return y(this.f39210a);
+            return y(this.f25519a);
         }
         if (i == 19) {
-            return l(this.f39210a);
+            return l(this.f25519a);
         }
         return false;
     }
 
     public final boolean b(int i) {
         if (i == 1) {
-            return q(this.f39210a);
+            return q(this.f25519a);
         }
         if (i == 2) {
-            return r(this.f39210a);
+            return r(this.f25519a);
         }
         if (i == 3) {
-            return s(this.f39210a);
+            return s(this.f25519a);
         }
         if (i == 4) {
-            return t(this.f39210a);
+            return t(this.f25519a);
         }
         if (i == 5) {
-            return u(this.f39210a);
+            return u(this.f25519a);
         }
         if (i == 6) {
-            return v(this.f39210a);
+            return v(this.f25519a);
         }
         if (i == 7) {
-            return w(this.f39210a);
+            return w(this.f25519a);
         }
         return false;
     }

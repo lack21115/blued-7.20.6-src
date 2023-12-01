@@ -428,7 +428,7 @@ public class DirectByteBuffer extends MappedByteBuffer {
     }
 
     @Override // java.nio.ByteBuffer
-    public ByteBuffer putChar(char c2) {
+    public ByteBuffer putChar(char c) {
         checkIsAccessible();
         if (this.isReadOnly) {
             throw new ReadOnlyBufferException();
@@ -437,19 +437,19 @@ public class DirectByteBuffer extends MappedByteBuffer {
         if (i > this.limit) {
             throw new BufferOverflowException();
         }
-        this.block.pokeShort(this.offset + this.position, (short) c2, this.order);
+        this.block.pokeShort(this.offset + this.position, (short) c, this.order);
         this.position = i;
         return this;
     }
 
     @Override // java.nio.ByteBuffer
-    public ByteBuffer putChar(int i, char c2) {
+    public ByteBuffer putChar(int i, char c) {
         checkIsAccessible();
         if (this.isReadOnly) {
             throw new ReadOnlyBufferException();
         }
         checkIndex(i, 2);
-        this.block.pokeShort(this.offset + i, (short) c2, this.order);
+        this.block.pokeShort(this.offset + i, (short) c, this.order);
         return this;
     }
 

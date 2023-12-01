@@ -11,7 +11,7 @@ import com.huawei.secure.android.common.exception.NoPermissionCheckerException;
 public class PermissionUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23146a = "PermissionUtil";
+    private static final String f9538a = "PermissionUtil";
 
     public static boolean checkCallingPermission(Context context, String str, String str2) throws NoPermissionCheckerException {
         if (Binder.getCallingPid() == Process.myPid()) {
@@ -24,7 +24,7 @@ public class PermissionUtil {
         try {
             return PermissionChecker.checkPermission(context, str, i, i2, str2) == 0;
         } catch (Throwable th) {
-            String str3 = f23146a;
+            String str3 = f9538a;
             Log.e(str3, "checkPermission: " + th.getMessage() + " , you should implementation support library or androidx library");
             throw new NoPermissionCheckerException("you should implementation support library or androidx library");
         }

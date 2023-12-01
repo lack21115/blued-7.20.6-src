@@ -12,6 +12,7 @@ import android.widget.GridView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedHttpTools;
@@ -45,11 +46,11 @@ import java.util.Map;
 public class TagLookForFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33997a;
+    private Context f20306a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Dialog f33998c;
+    private Dialog f20307c;
     private boolean g;
     private boolean h;
     private boolean i;
@@ -87,20 +88,19 @@ public class TagLookForFragment extends BaseFragment implements View.OnClickList
     }
 
     private void a(Map<String, String> map) {
-        UserHttpUtils.a(getActivity(), new BluedUIHttpResponse<BluedEntityA<BluedLoginResult>>() { // from class: com.soft.blued.ui.user.fragment.TagLookForFragment.2
+        UserHttpUtils.a((Context) getActivity(), (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<BluedLoginResult>>() { // from class: com.soft.blued.ui.user.fragment.TagLookForFragment.2
 
             /* renamed from: a  reason: collision with root package name */
-            String f34000a;
+            String f20309a;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedLoginResult> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                UserInfo.getInstance().setLoginUserInfo(bluedEntityA.data.get(0));
-                UserAccountsVDao.a().b(this.f34000a);
+                UserInfo.getInstance().setLoginUserInfo((BluedLoginResult) bluedEntityA.data.get(0));
+                UserAccountsVDao.a().b(this.f20309a);
                 Bundle bundle = new Bundle();
                 bundle.putString("from_tag_page", "from_tag_register");
                 HomeArgumentHelper.a(TagLookForFragment.this.getActivity(), (Bundle) null, bundle);
@@ -109,30 +109,26 @@ public class TagLookForFragment extends BaseFragment implements View.OnClickList
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onSuccess(String str) {
                 super.onSuccess(str);
-                this.f34000a = str;
+                this.f20309a = str;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 TagLookForFragment.this.g();
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                DialogUtils.b(TagLookForFragment.this.f33998c);
+                DialogUtils.b(TagLookForFragment.this.f20307c);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                DialogUtils.a(TagLookForFragment.this.f33998c);
+                DialogUtils.a(TagLookForFragment.this.f20307c);
             }
-        }, UserInfo.getInstance().getLoginUserInfo().getUid(), map, getFragmentActive());
+        }, UserInfo.getInstance().getLoginUserInfo().getUid(), map, (IRequestHost) getFragmentActive());
     }
 
     private boolean a(List<UserTag> list) {
@@ -193,7 +189,7 @@ public class TagLookForFragment extends BaseFragment implements View.OnClickList
         a();
         this.q = (TextView) this.b.findViewById(2131372754);
         this.p = (TextView) this.b.findViewById(R.id.tv_chara);
-        this.f33998c = DialogUtils.a(getActivity());
+        this.f20307c = DialogUtils.a(getActivity());
         GridView gridView = (GridView) this.b.findViewById(R.id.gv_bodytype);
         this.j = gridView;
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$TagLookForFragment$sPzKJNyCRgmgf6x1rk0UK0n4AOA
@@ -257,48 +253,45 @@ public class TagLookForFragment extends BaseFragment implements View.OnClickList
     }
 
     public void d() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.setRightClickListener(this);
-        commonTopTitleNoTrans.setRightText(R.string.done);
-        commonTopTitleNoTrans.setCenterText("");
-        commonTopTitleNoTrans.f();
-        commonTopTitleNoTrans.setRightTextColor(2131102254);
-        commonTopTitleNoTrans.setTitleBackgroundDrawable(2131101780);
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.setLeftClickListener(this);
+        findViewById.setRightClickListener(this);
+        findViewById.setRightText((int) R.string.done);
+        findViewById.setCenterText("");
+        findViewById.f();
+        findViewById.setRightTextColor(2131102254);
+        findViewById.setTitleBackgroundDrawable(2131101780);
         this.q.setText(AVConfig.a().b().tags_favorite_tips);
     }
 
     public void e() {
-        FindHttpUtils.a(this.f33997a, new BluedUIHttpResponse<BluedEntityA<UserTagAll>>() { // from class: com.soft.blued.ui.user.fragment.TagLookForFragment.1
+        FindHttpUtils.a(this.f20306a, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<UserTagAll>>() { // from class: com.soft.blued.ui.user.fragment.TagLookForFragment.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserTagAll> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                TagLookForFragment.this.d = bluedEntityA.data.get(0).love_type;
-                TagLookForFragment.this.e = bluedEntityA.data.get(0).love_character;
-                TagLookForFragment.this.f = bluedEntityA.data.get(0).i_want;
-                TagLookForFragment.this.m = new UserTagAdapter(TagLookForFragment.this.f33997a, TagLookForFragment.this.d);
-                TagLookForFragment.this.n = new UserTagAdapter(TagLookForFragment.this.f33997a, TagLookForFragment.this.e);
-                TagLookForFragment.this.o = new UserTagAdapter(TagLookForFragment.this.f33997a, TagLookForFragment.this.f);
+                TagLookForFragment.this.d = ((UserTagAll) bluedEntityA.data.get(0)).love_type;
+                TagLookForFragment.this.e = ((UserTagAll) bluedEntityA.data.get(0)).love_character;
+                TagLookForFragment.this.f = ((UserTagAll) bluedEntityA.data.get(0)).i_want;
+                TagLookForFragment.this.m = new UserTagAdapter(TagLookForFragment.this.f20306a, TagLookForFragment.this.d);
+                TagLookForFragment.this.n = new UserTagAdapter(TagLookForFragment.this.f20306a, TagLookForFragment.this.e);
+                TagLookForFragment.this.o = new UserTagAdapter(TagLookForFragment.this.f20306a, TagLookForFragment.this.f);
                 TagLookForFragment.this.j.setAdapter((ListAdapter) TagLookForFragment.this.m);
                 TagLookForFragment.this.k.setAdapter((ListAdapter) TagLookForFragment.this.n);
                 TagLookForFragment.this.l.setAdapter((ListAdapter) TagLookForFragment.this.o);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
-                DialogUtils.b(TagLookForFragment.this.f33998c);
+                DialogUtils.b(TagLookForFragment.this.f20307c);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                DialogUtils.a(TagLookForFragment.this.f33998c);
+                DialogUtils.a(TagLookForFragment.this.f20307c);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     public void f() {
@@ -383,14 +376,14 @@ public class TagLookForFragment extends BaseFragment implements View.OnClickList
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                ModifyUserInfoFragment.a(TagLookForFragment.this.f33997a, 601, false);
+                ModifyUserInfoFragment.a(TagLookForFragment.this.f20306a, 601, false);
             }
         }, getResources().getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.TagLookForFragment.4
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
                 TagLookForFragment.this.getActivity().finish();
-                RecommendUsersOnRegisterFragment.a(TagLookForFragment.this.f33997a);
+                RecommendUsersOnRegisterFragment.a(TagLookForFragment.this.f20306a);
             }
         }, (DialogInterface.OnDismissListener) null);
     }
@@ -452,9 +445,8 @@ public class TagLookForFragment extends BaseFragment implements View.OnClickList
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33997a = getActivity();
+        this.f20306a = getActivity();
         if (this.b == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_user_tag_iwant, viewGroup, false);
             if (getArguments() != null) {

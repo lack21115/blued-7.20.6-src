@@ -13,9 +13,7 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/f/g.class */
 public final class g extends c {
-
-    /* renamed from: a  reason: collision with root package name */
-    com.anythink.basead.e.a f6002a;
+    com.anythink.basead.e.a a;
     BaseSplashAdView k;
     boolean l;
 
@@ -32,9 +30,9 @@ public final class g extends c {
             @Override // java.lang.Runnable
             public final void run() {
                 if (BaseSdkSplashAdView.isSinglePicture(g.this.g, g.this.d.m)) {
-                    g.this.k = new SinglePictureSplashAdView(viewGroup.getContext(), g.this.d, g.this.g, g.this.f6002a);
+                    g.this.k = new SinglePictureSplashAdView(viewGroup.getContext(), g.this.d, g.this.g, g.this.a);
                 } else {
-                    g.this.k = new AsseblemSplashAdView(viewGroup.getContext(), g.this.d, g.this.g, g.this.f6002a);
+                    g.this.k = new AsseblemSplashAdView(viewGroup.getContext(), g.this.d, g.this.g, g.this.a);
                 }
                 g.this.k.setDontCountDown(g.this.l);
                 viewGroup.addView(g.this.k);
@@ -43,14 +41,14 @@ public final class g extends c {
     }
 
     public final void a(com.anythink.basead.e.a aVar) {
-        this.f6002a = aVar;
+        this.a = aVar;
     }
 
     @Override // com.anythink.basead.f.c, com.anythink.basead.f.a
     public final boolean a() {
         try {
             if (d()) {
-                return com.anythink.basead.f.a.a.a(this.f5991c).a(this.g, this.d, this.f);
+                return com.anythink.basead.f.a.a.a(this.c).a(this.g, this.d, this.f);
             }
             return false;
         } catch (Exception e) {
@@ -64,7 +62,7 @@ public final class g extends c {
     }
 
     public final void f() {
-        this.f6002a = null;
+        this.a = null;
         BaseSplashAdView baseSplashAdView = this.k;
         if (baseSplashAdView != null) {
             baseSplashAdView.destroy();

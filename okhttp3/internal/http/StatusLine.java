@@ -6,18 +6,14 @@ import okhttp3.Protocol;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http/StatusLine.class */
 public final class StatusLine {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Protocol f43894a;
+    public final Protocol a;
     public final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final String f43895c;
+    public final String c;
 
     public StatusLine(Protocol protocol, int i, String str) {
-        this.f43894a = protocol;
+        this.a = protocol;
         this.b = i;
-        this.f43895c = str;
+        this.c = str;
     }
 
     public static StatusLine a(String str) throws IOException {
@@ -63,12 +59,12 @@ public final class StatusLine {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f43894a == Protocol.HTTP_1_0 ? "HTTP/1.0" : "HTTP/1.1");
+        sb.append(this.a == Protocol.HTTP_1_0 ? "HTTP/1.0" : "HTTP/1.1");
         sb.append(' ');
         sb.append(this.b);
-        if (this.f43895c != null) {
+        if (this.c != null) {
             sb.append(' ');
-            sb.append(this.f43895c);
+            sb.append(this.c);
         }
         return sb.toString();
     }

@@ -11,6 +11,7 @@ import android.util.Log;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.igexin.assist.util.AssistUtils;
 import com.soft.blued.http.ChatHttpUtils;
 import com.soft.blued.push.getui.GetuiKeepAliveActivity;
@@ -18,6 +19,7 @@ import com.soft.blued.push.getui.GetuiKeepAliveService;
 import com.soft.blued.ui.msg.model.MobPushModel;
 import com.soft.blued.utils.BluedPreferences;
 import com.soft.blued.utils.Logger;
+import com.xiaomi.mipush.sdk.Constants;
 import java.lang.reflect.Method;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
@@ -29,11 +31,11 @@ import java.util.UUID;
 public class PushManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f29738a = PushManager.class.getSimpleName();
+    private static final String f16048a = PushManager.class.getSimpleName();
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f29739c;
+    private String f16049c;
     private int d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -41,14 +43,14 @@ public class PushManager {
     public static final class InstanceHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        static final PushManager f29742a = new PushManager();
+        static final PushManager f16052a = new PushManager();
 
         private InstanceHolder() {
         }
     }
 
     private PushManager() {
-        this.f29739c = "";
+        this.f16049c = "";
         this.d = 0;
         if (this.b == null) {
             this.b = AppInfo.d();
@@ -56,18 +58,16 @@ public class PushManager {
     }
 
     public static PushManager a() {
-        return InstanceHolder.f29742a;
+        return InstanceHolder.f16052a;
     }
 
     private void a(String str, int i) {
         ChatHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA>(null) { // from class: com.soft.blued.push.PushManager.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str2) {
                 return true;
             }
@@ -75,20 +75,20 @@ public class PushManager {
     }
 
     private Uri b(Intent intent) {
-        String stringExtra = intent.getStringExtra("payload");
-        String str = f29738a;
+        String stringExtra = intent.getStringExtra(AssistPushConsts.MSG_TYPE_PAYLOAD);
+        String str = f16048a;
         Logger.c(str, "getui payload: " + stringExtra);
         if (TextUtils.isEmpty(stringExtra)) {
             return null;
         }
         try {
             MobPushModel mobPushModel = (MobPushModel) AppInfo.f().fromJson(stringExtra, (Class<Object>) MobPushModel.class);
-            String str2 = f29738a;
+            String str2 = f16048a;
             Logger.c(str2, "跳转链接：" + mobPushModel.getExtra().getLink());
             return Uri.parse(mobPushModel.getExtra().getLink());
         } catch (Exception e) {
             e.printStackTrace();
-            String str3 = f29738a;
+            String str3 = f16048a;
             Logger.c(str3, "pushData error: " + e.getMessage());
             return null;
         }
@@ -96,7 +96,7 @@ public class PushManager {
 
     private void b(String str) {
         if (AppInfo.m()) {
-            Logger.b(f29738a, "PUSH", str);
+            Logger.b(f16048a, "PUSH", str);
         }
     }
 
@@ -110,7 +110,7 @@ public class PushManager {
             String stringExtra = intent.getStringExtra("gttask");
             String stringExtra2 = intent.getStringExtra("gtaction");
             String clientid = com.igexin.sdk.PushManager.getInstance().getClientid(AppInfo.d());
-            String replaceAll = UUID.randomUUID().toString().replaceAll("-", "");
+            String replaceAll = UUID.randomUUID().toString().replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
             String bigInteger = new BigInteger(1, MessageDigest.getInstance("MD5").digest((stringExtra + clientid + replaceAll).getBytes(StandardCharsets.UTF_8))).toString(16);
             if (stringExtra2 != null) {
                 com.igexin.sdk.PushManager.getInstance().sendFeedbackMessage(AppInfo.d(), stringExtra, bigInteger, Integer.parseInt(stringExtra2));
@@ -170,12 +170,10 @@ public class PushManager {
     private void h() {
         ChatHttpUtils.a(new BluedUIHttpResponse<BluedEntityA>(null) { // from class: com.soft.blued.push.PushManager.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return true;
             }
@@ -194,17 +192,17 @@ public class PushManager {
     public void a(Context context) {
         this.b = context;
         if (d(context)) {
-            String str = f29738a;
+            String str = f16048a;
             Log.e(str, " 推送初始化：" + Build.MANUFACTURER.toLowerCase());
             b(context);
         }
     }
 
     public void a(String str) {
-        this.f29739c = str;
+        this.f16049c = str;
         int g = g();
         this.d = g;
-        a(this.f29739c, g);
+        a(this.f16049c, g);
     }
 
     public void b(Context context) {
@@ -245,11 +243,11 @@ public class PushManager {
 
     public void e() {
         int g;
-        if (!Build.MANUFACTURER.equalsIgnoreCase(AssistUtils.BRAND_HW) || TextUtils.isEmpty(this.f29739c) || (g = g()) == this.d) {
+        if (!Build.MANUFACTURER.equalsIgnoreCase(AssistUtils.BRAND_HW) || TextUtils.isEmpty(this.f16049c) || (g = g()) == this.d) {
             return;
         }
         this.d = g;
-        a(this.f29739c, g);
+        a(this.f16049c, g);
     }
 
     public void f() {

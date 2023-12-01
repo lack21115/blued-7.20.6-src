@@ -1,6 +1,5 @@
 package com.kwad.sdk.core.a.kwai;
 
-import com.anythink.core.common.c.m;
 import com.kwad.components.ad.interstitial.monitor.InterstitialMonitorInfo;
 import org.json.JSONObject;
 
@@ -20,13 +19,13 @@ public final class ep implements com.kwad.sdk.core.d<InterstitialMonitorInfo> {
         interstitialMonitorInfo.materialType = jSONObject.optInt("material_type");
         interstitialMonitorInfo.downloadDuration = jSONObject.optLong("download_duration_ms");
         interstitialMonitorInfo.downloadType = jSONObject.optInt("download_type");
-        interstitialMonitorInfo.downloadSize = jSONObject.optLong(m.a.e);
+        interstitialMonitorInfo.downloadSize = jSONObject.optLong("download_size");
         interstitialMonitorInfo.errorCode = jSONObject.optInt("error_code");
         interstitialMonitorInfo.errorMsg = jSONObject.optString("error_msg");
         if (interstitialMonitorInfo.errorMsg == JSONObject.NULL) {
             interstitialMonitorInfo.errorMsg = "";
         }
-        interstitialMonitorInfo.creativeId = jSONObject.optLong("creative_id");
+        interstitialMonitorInfo.creativeId = jSONObject.optLong(com.anythink.expressad.foundation.d.c.l);
         interstitialMonitorInfo.videoUrl = jSONObject.optString("video_url");
         if (interstitialMonitorInfo.videoUrl == JSONObject.NULL) {
             interstitialMonitorInfo.videoUrl = "";
@@ -69,7 +68,7 @@ public final class ep implements com.kwad.sdk.core.d<InterstitialMonitorInfo> {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "download_type", interstitialMonitorInfo.downloadType);
         }
         if (interstitialMonitorInfo.downloadSize != 0) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, m.a.e, interstitialMonitorInfo.downloadSize);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, "download_size", interstitialMonitorInfo.downloadSize);
         }
         if (interstitialMonitorInfo.errorCode != 0) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "error_code", interstitialMonitorInfo.errorCode);
@@ -78,7 +77,7 @@ public final class ep implements com.kwad.sdk.core.d<InterstitialMonitorInfo> {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "error_msg", interstitialMonitorInfo.errorMsg);
         }
         if (interstitialMonitorInfo.creativeId != 0) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "creative_id", interstitialMonitorInfo.creativeId);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, com.anythink.expressad.foundation.d.c.l, interstitialMonitorInfo.creativeId);
         }
         if (interstitialMonitorInfo.videoUrl != null && !interstitialMonitorInfo.videoUrl.equals("")) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "video_url", interstitialMonitorInfo.videoUrl);

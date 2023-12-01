@@ -1,12 +1,14 @@
 package com.anythink.expressad.video.module.b;
 
 import android.content.Context;
+import android.provider.SearchIndexablesContract;
 import android.text.TextUtils;
 import com.anythink.core.common.b.n;
 import com.anythink.expressad.foundation.d.c;
 import com.anythink.expressad.foundation.g.f.h.b;
 import com.anythink.expressad.foundation.h.j;
 import com.anythink.expressad.foundation.h.o;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,7 +21,7 @@ import org.json.JSONObject;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static HashMap<String, ArrayList<String>> f8512a = new HashMap<>();
+    public static HashMap<String, ArrayList<String>> f5672a = new HashMap<>();
     private static final String b = "VideoViewReport";
 
     private static String a(String str, b bVar) {
@@ -30,10 +32,10 @@ public final class a {
         String str2 = str;
         if (!str.endsWith("?")) {
             str2 = str;
-            if (!str.endsWith("&")) {
+            if (!str.endsWith(ContainerUtils.FIELD_DELIMITER)) {
                 StringBuilder sb = new StringBuilder();
                 sb.append(str);
-                sb.append(str.contains("?") ? "&" : "?");
+                sb.append(str.contains("?") ? ContainerUtils.FIELD_DELIMITER : "?");
                 str2 = sb.toString();
             }
         }
@@ -148,12 +150,12 @@ public final class a {
         try {
             com.anythink.expressad.video.module.c.a aVar = new com.anythink.expressad.video.module.c.a(n.a().g());
             b bVar = new b();
-            bVar.a("user_id", j.a(str2));
+            bVar.a(SearchIndexablesContract.RawData.COLUMN_USER_ID, j.a(str2));
             bVar.a(com.anythink.expressad.d.a.b.aM, "1");
-            bVar.a("reward_name", cVar2.a());
+            bVar.a(c.aq, cVar2.a());
             StringBuilder sb = new StringBuilder();
             sb.append(cVar2.b());
-            bVar.a("reward_amount", sb.toString());
+            bVar.a(c.ap, sb.toString());
             bVar.a("unit_id", str);
             bVar.a("click_id", cVar.aa());
             if (!TextUtils.isEmpty(str3)) {
@@ -167,10 +169,10 @@ public final class a {
                 String str6 = str4;
                 if (!str4.endsWith("?")) {
                     str6 = str4;
-                    if (!str4.endsWith("&")) {
+                    if (!str4.endsWith(ContainerUtils.FIELD_DELIMITER)) {
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(str4);
-                        sb2.append(str4.contains("?") ? "&" : "?");
+                        sb2.append(str4.contains("?") ? ContainerUtils.FIELD_DELIMITER : "?");
                         str6 = sb2.toString();
                     }
                 }
@@ -223,7 +225,7 @@ public final class a {
     }
 
     public static void a(String str) {
-        f8512a.remove(str);
+        f5672a.remove(str);
     }
 
     public static void b(Context context, c cVar) {
@@ -294,11 +296,11 @@ public final class a {
             return;
         }
         String K = cVar.K();
-        ArrayList<String> arrayList = f8512a.get(K);
+        ArrayList<String> arrayList = f5672a.get(K);
         ArrayList<String> arrayList2 = arrayList;
         if (arrayList == null) {
             arrayList2 = new ArrayList<>();
-            f8512a.put(K, arrayList2);
+            f5672a.put(K, arrayList2);
         }
         if (arrayList2.contains(cVar.aZ())) {
             return;

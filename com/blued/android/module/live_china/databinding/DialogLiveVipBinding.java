@@ -31,13 +31,9 @@ public final class DialogLiveVipBinding implements ViewBinding {
     public final View K;
     public final ViewPager L;
     private final ConstraintLayout M;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f11828a;
+    public final ConstraintLayout a;
     public final ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeConstraintLayout f11829c;
+    public final ShapeConstraintLayout c;
     public final LinearLayout d;
     public final ImageView e;
     public final ImageView f;
@@ -64,9 +60,9 @@ public final class DialogLiveVipBinding implements ViewBinding {
 
     private DialogLiveVipBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ShapeConstraintLayout shapeConstraintLayout, LinearLayout linearLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, ImageView imageView10, ImageView imageView11, ImageView imageView12, SlopeLoadingView slopeLoadingView, NestedScrollView nestedScrollView, RecyclerView recyclerView, ShapeTextView shapeTextView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, ShapeTextView shapeTextView2, TextView textView7, TextView textView8, TextView textView9, TextView textView10, View view, View view2, View view3, View view4, View view5, View view6, ViewPager viewPager) {
         this.M = constraintLayout;
-        this.f11828a = constraintLayout2;
+        this.a = constraintLayout2;
         this.b = constraintLayout3;
-        this.f11829c = shapeConstraintLayout;
+        this.c = shapeConstraintLayout;
         this.d = linearLayout;
         this.e = imageView;
         this.f = imageView2;
@@ -118,10 +114,10 @@ public final class DialogLiveVipBinding implements ViewBinding {
 
     public static DialogLiveVipBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.cl_content);
-        if (constraintLayout != null) {
-            ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.cl_info_title_root);
-            if (constraintLayout2 != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.cl_content);
+        if (findViewById != null) {
+            ConstraintLayout findViewById2 = view.findViewById(R.id.cl_info_title_root);
+            if (findViewById2 != null) {
                 ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.cl_privilege_info);
                 if (shapeConstraintLayout != null) {
                     LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.cl_shell);
@@ -152,10 +148,10 @@ public final class DialogLiveVipBinding implements ViewBinding {
                                                                     if (imageView12 != null) {
                                                                         SlopeLoadingView slopeLoadingView = (SlopeLoadingView) view.findViewById(R.id.loading);
                                                                         if (slopeLoadingView != null) {
-                                                                            NestedScrollView nestedScrollView = (NestedScrollView) view.findViewById(R.id.nsv_content);
-                                                                            if (nestedScrollView != null) {
-                                                                                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                                                                                if (recyclerView != null) {
+                                                                            NestedScrollView findViewById3 = view.findViewById(R.id.nsv_content);
+                                                                            if (findViewById3 != null) {
+                                                                                RecyclerView findViewById4 = view.findViewById(R.id.rv_list);
+                                                                                if (findViewById4 != null) {
                                                                                     ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_current_level);
                                                                                     if (shapeTextView != null) {
                                                                                         TextView textView = (TextView) view.findViewById(R.id.tv_level_1);
@@ -180,21 +176,21 @@ public final class DialogLiveVipBinding implements ViewBinding {
                                                                                                                             if (textView9 != null) {
                                                                                                                                 TextView textView10 = (TextView) view.findViewById(R.id.tv_title);
                                                                                                                                 if (textView10 != null) {
-                                                                                                                                    View findViewById = view.findViewById(R.id.view_dot_1);
-                                                                                                                                    if (findViewById != null) {
-                                                                                                                                        View findViewById2 = view.findViewById(R.id.view_dot_2);
-                                                                                                                                        if (findViewById2 != null) {
-                                                                                                                                            View findViewById3 = view.findViewById(R.id.view_dot_3);
-                                                                                                                                            if (findViewById3 != null) {
-                                                                                                                                                View findViewById4 = view.findViewById(R.id.view_dot_4);
-                                                                                                                                                if (findViewById4 != null) {
-                                                                                                                                                    View findViewById5 = view.findViewById(R.id.view_dot_5);
-                                                                                                                                                    if (findViewById5 != null) {
-                                                                                                                                                        View findViewById6 = view.findViewById(R.id.view_status_bar);
-                                                                                                                                                        if (findViewById6 != null) {
-                                                                                                                                                            ViewPager viewPager = (ViewPager) view.findViewById(R.id.vp_level_card);
-                                                                                                                                                            if (viewPager != null) {
-                                                                                                                                                                return new DialogLiveVipBinding((ConstraintLayout) view, constraintLayout, constraintLayout2, shapeConstraintLayout, linearLayout, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, slopeLoadingView, nestedScrollView, recyclerView, shapeTextView, textView, textView2, textView3, textView4, textView5, textView6, shapeTextView2, textView7, textView8, textView9, textView10, findViewById, findViewById2, findViewById3, findViewById4, findViewById5, findViewById6, viewPager);
+                                                                                                                                    View findViewById5 = view.findViewById(R.id.view_dot_1);
+                                                                                                                                    if (findViewById5 != null) {
+                                                                                                                                        View findViewById6 = view.findViewById(R.id.view_dot_2);
+                                                                                                                                        if (findViewById6 != null) {
+                                                                                                                                            View findViewById7 = view.findViewById(R.id.view_dot_3);
+                                                                                                                                            if (findViewById7 != null) {
+                                                                                                                                                View findViewById8 = view.findViewById(R.id.view_dot_4);
+                                                                                                                                                if (findViewById8 != null) {
+                                                                                                                                                    View findViewById9 = view.findViewById(R.id.view_dot_5);
+                                                                                                                                                    if (findViewById9 != null) {
+                                                                                                                                                        View findViewById10 = view.findViewById(R.id.view_status_bar);
+                                                                                                                                                        if (findViewById10 != null) {
+                                                                                                                                                            ViewPager findViewById11 = view.findViewById(R.id.vp_level_card);
+                                                                                                                                                            if (findViewById11 != null) {
+                                                                                                                                                                return new DialogLiveVipBinding((ConstraintLayout) view, findViewById, findViewById2, shapeConstraintLayout, linearLayout, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, slopeLoadingView, findViewById3, findViewById4, shapeTextView, textView, textView2, textView3, textView4, textView5, textView6, shapeTextView2, textView7, textView8, textView9, textView10, findViewById5, findViewById6, findViewById7, findViewById8, findViewById9, findViewById10, findViewById11);
                                                                                                                                                             }
                                                                                                                                                             str = "vpLevelCard";
                                                                                                                                                         } else {
@@ -311,7 +307,6 @@ public final class DialogLiveVipBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.M;

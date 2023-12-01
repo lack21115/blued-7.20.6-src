@@ -13,7 +13,7 @@ public class PopMenuFromBottom extends PopMenu {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b() {
-        if ((this.f15087c instanceof ComponentActivity) && ((ComponentActivity) this.f15087c).getLifecycle().getCurrentState() == Lifecycle.State.DESTROYED) {
+        if ((this.c instanceof ComponentActivity) && this.c.getLifecycle().getCurrentState() == Lifecycle.State.DESTROYED) {
             return;
         }
         this.d.a();
@@ -24,9 +24,9 @@ public class PopMenuFromBottom extends PopMenu {
         AlphaAnimation alphaAnimation = new AlphaAnimation(this.g.floatValue(), 0.0f);
         alphaAnimation.setDuration(200L);
         alphaAnimation.setFillAfter(true);
-        this.f15086a.startAnimation(alphaAnimation);
+        this.a.startAnimation(alphaAnimation);
         this.b.setVisibility(8);
-        this.b.startAnimation(AnimationUtils.loadAnimation(this.f15087c, R.anim.pop_down_out));
+        this.b.startAnimation(AnimationUtils.loadAnimation(this.c, R.anim.pop_down_out));
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$PopMenuFromBottom$QIJjk8h1NtYn0LUoc_Aozst8PAI
             @Override // java.lang.Runnable
             public final void run() {

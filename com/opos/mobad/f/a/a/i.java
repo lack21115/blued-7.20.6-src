@@ -18,11 +18,11 @@ import java.util.concurrent.TimeUnit;
 public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j implements n<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f26039a;
+    private String f12351a;
     protected Map<Integer, T> b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected HashMap<Integer, e.a> f26040c;
+    protected HashMap<Integer, e.a> f12352c;
     private int d;
     private int g;
     private t<e.a> h;
@@ -34,7 +34,7 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
     private com.opos.mobad.f.a.c.a n;
     private v o;
     private Map<Integer, Integer> p;
-    private com.opos.mobad.f.a.m<a.C0695a> q;
+    private com.opos.mobad.f.a.m<a.C0525a> q;
     private int r;
     private String s;
     private int t;
@@ -48,31 +48,31 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
         this.n = aVar;
         this.o = new v(str, i2, j);
         this.p = new HashMap();
-        this.f26039a = str;
+        this.f12351a = str;
         this.t = i2;
         this.d = i;
         this.b = new ConcurrentHashMap(list.size());
-        this.f26040c = new HashMap<>(list.size());
+        this.f12352c = new HashMap<>(list.size());
         this.k = new HashMap(list.size());
         a(list, aVar3);
         if (aVar2 != null) {
             a(aVar2, aVar3);
         }
-        this.q = new com.opos.mobad.f.a.m<>(new m.a<a.C0695a>() { // from class: com.opos.mobad.f.a.a.i.1
+        this.q = new com.opos.mobad.f.a.m<>(new m.a<a.C0525a>() { // from class: com.opos.mobad.f.a.a.i.1
             @Override // com.opos.mobad.f.a.m.a
-            public void a(a.C0695a c0695a) {
-                if (c0695a == null) {
+            public void a(a.C0525a c0525a) {
+                if (c0525a == null) {
                     return;
                 }
                 i iVar = i.this;
-                int i3 = c0695a.b;
-                iVar.b(i3, "" + c0695a.f26075c);
+                int i3 = c0525a.b;
+                iVar.b(i3, "" + c0525a.f12387c);
             }
         });
     }
 
     private void a(e.a aVar, com.opos.mobad.f.a.b.a<T> aVar2) {
-        if (!this.b.containsKey(Integer.valueOf(aVar.f27301a))) {
+        if (!this.b.containsKey(Integer.valueOf(aVar.f13613a))) {
             T b = aVar2.b(aVar, this);
             if (b == null) {
                 com.opos.cmn.an.f.a.d("delegator", "disable main");
@@ -95,10 +95,10 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
                 com.opos.cmn.an.f.a.a("delegator", "deal rank but fail,deal percent");
                 e.a r = r();
                 if (r != null) {
-                    i = r.f27301a;
+                    i = r.f13613a;
                     e(str, i);
                 }
-                com.opos.cmn.an.f.a.a("delegator", "deal fail ,posid=" + this.f26039a);
+                com.opos.cmn.an.f.a.a("delegator", "deal fail ,posid=" + this.f12351a);
                 if (!z) {
                     l();
                     this.o.b(-2);
@@ -114,7 +114,7 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
                 return;
             }
         }
-        i = p.f27301a;
+        i = p.f13613a;
         e(str, i);
     }
 
@@ -133,7 +133,7 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
                 return;
             }
             e.a aVar3 = list.get(i2);
-            this.k.put(Integer.valueOf(aVar3.f27301a), aVar3);
+            this.k.put(Integer.valueOf(aVar3.f13613a), aVar3);
             T b = aVar.b(aVar3, this);
             if (b == null) {
                 sb = new StringBuilder();
@@ -145,7 +145,7 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
                 if (aVar3.f <= 0) {
                     sb = new StringBuilder();
                     sb.append("percent fail with channel:");
-                    sb.append(aVar3.f27301a);
+                    sb.append(aVar3.f13613a);
                 } else {
                     aVar2.a(aVar3, aVar3.f);
                     i = i2 + 1;
@@ -161,23 +161,23 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
         if (aVar == null) {
             com.opos.cmn.an.f.a.b("delegator", "check to select but entity is null");
             return false;
-        } else if (f(aVar.f27301a)) {
+        } else if (f(aVar.f13613a)) {
             return true;
         } else {
-            Integer num = this.p.get(Integer.valueOf(aVar.f27301a));
+            Integer num = this.p.get(Integer.valueOf(aVar.f13613a));
             Integer num2 = num;
             if (num == null) {
                 num2 = -2;
             }
-            this.o.a(aVar.f27301a, num2.intValue());
+            this.o.a(aVar.f13613a, num2.intValue());
             return false;
         }
     }
 
     private void e(final String str, final int i) {
         this.q.a();
-        a.C0695a a2 = this.n.a(this.f26039a, i);
-        if (a2.f26074a) {
+        a.C0525a a2 = this.n.a(this.f12351a, i);
+        if (a2.f12386a) {
             c(new Callable<Boolean>() { // from class: com.opos.mobad.f.a.a.i.4
                 @Override // java.util.concurrent.Callable
                 /* renamed from: a */
@@ -188,7 +188,7 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
             });
             return;
         }
-        b(a2.b, a2.f26075c);
+        b(a2.b, a2.f12387c);
         this.o.b(a2.b);
     }
 
@@ -218,7 +218,7 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
     private e.a q() {
         T t;
         e.a aVar = this.l;
-        if (aVar == null || (t = this.b.get(Integer.valueOf(aVar.f27301a))) == null) {
+        if (aVar == null || (t = this.b.get(Integer.valueOf(aVar.f13613a))) == null) {
             return null;
         }
         int c2 = t.c();
@@ -274,7 +274,7 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
     }
 
     protected void a(e.a aVar, T t) {
-        this.b.put(Integer.valueOf(aVar.f27301a), t);
+        this.b.put(Integer.valueOf(aVar.f13613a), t);
     }
 
     protected void a(String str, List<Integer> list, int i) {
@@ -305,8 +305,8 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
 
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean a(Map.Entry<Integer, T> entry, T t) {
-        a.C0695a a2;
-        return (entry.getKey().intValue() == 1 || this.g == entry.getKey().intValue() || t.d() != 2 || !t.e()) && (a2 = this.n.a(entry.getKey().intValue())) != null && a2.f26074a;
+        a.C0525a a2;
+        return (entry.getKey().intValue() == 1 || this.g == entry.getKey().intValue() || t.d() != 2 || !t.e()) && (a2 = this.n.a(entry.getKey().intValue())) != null && a2.f12386a;
     }
 
     @Override // com.opos.mobad.l.j, com.opos.mobad.ad.b
@@ -331,8 +331,8 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
     public boolean b(String str, int i) {
         com.opos.cmn.an.f.a.b("delegator", "doload:" + str);
         this.o.a(str);
-        a.C0695a a2 = this.n.a(this.f26039a);
-        if (a2.f26074a) {
+        a.C0525a a2 = this.n.a(this.f12351a);
+        if (a2.f12386a) {
             this.q.a();
             this.h.b();
             this.i.a();
@@ -340,7 +340,7 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
             d(str, Math.min(i, this.d));
             return true;
         }
-        com.opos.cmn.an.f.a.b("delegator", "intercept " + a2.f26075c);
+        com.opos.cmn.an.f.a.b("delegator", "intercept " + a2.f12387c);
         this.q.a(500L, a2);
         this.o.c(a2.b);
         return true;
@@ -394,7 +394,7 @@ public class i<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j impleme
         com.opos.cmn.an.j.b.c(new Runnable() { // from class: com.opos.mobad.f.a.a.i.2
             @Override // java.lang.Runnable
             public void run() {
-                com.opos.cmn.an.f.a.a("SyncStateController", "countdown:" + size + "," + i + ",posid=" + i.this.f26039a);
+                com.opos.cmn.an.f.a.a("SyncStateController", "countdown:" + size + "," + i + ",posid=" + i.this.f12351a);
                 try {
                     i.this.a(str, i.this.m.await(i, TimeUnit.MILLISECONDS));
                 } catch (InterruptedException e) {

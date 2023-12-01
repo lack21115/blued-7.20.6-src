@@ -1,8 +1,6 @@
 package io.grpc.internal;
 
-import android.net.wifi.WifiManager;
 import com.google.common.base.Preconditions;
-import com.huawei.openalliance.ad.constant.bc;
 import io.grpc.ConnectivityState;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -41,7 +39,7 @@ public final class ConnectivityStateManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void gotoState(@Nonnull ConnectivityState connectivityState) {
-        Preconditions.checkNotNull(connectivityState, WifiManager.EXTRA_NEW_STATE);
+        Preconditions.checkNotNull(connectivityState, "newState");
         if (this.state == connectivityState || this.state == ConnectivityState.SHUTDOWN) {
             return;
         }
@@ -59,7 +57,7 @@ public final class ConnectivityStateManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void notifyWhenStateChanged(Runnable runnable, Executor executor, ConnectivityState connectivityState) {
-        Preconditions.checkNotNull(runnable, bc.e.D);
+        Preconditions.checkNotNull(runnable, "callback");
         Preconditions.checkNotNull(executor, "executor");
         Preconditions.checkNotNull(connectivityState, "source");
         Listener listener = new Listener(runnable, executor);

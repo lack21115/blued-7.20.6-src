@@ -7,11 +7,11 @@ import com.blued.android.framework.view.badgeview.QBadgeContainer;
 public final class ItemNearbyTabIndicatorBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final QBadgeContainer f29268a;
+    private final QBadgeContainer f15578a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public QBadgeContainer getRoot() {
-        return this.f29268a;
+        return this.f15578a;
     }
 }

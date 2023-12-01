@@ -32,8 +32,8 @@ public class RoundRectShape extends RectShape {
 
     @Override // android.graphics.drawable.shapes.RectShape, android.graphics.drawable.shapes.Shape
     /* renamed from: clone */
-    public RoundRectShape mo346clone() throws CloneNotSupportedException {
-        RoundRectShape roundRectShape = (RoundRectShape) super.mo346clone();
+    public RoundRectShape mo343clone() throws CloneNotSupportedException {
+        RoundRectShape roundRectShape = (RoundRectShape) super.mo343clone();
         roundRectShape.mOuterRadii = this.mOuterRadii != null ? (float[]) this.mOuterRadii.clone() : null;
         roundRectShape.mInnerRadii = this.mInnerRadii != null ? (float[]) this.mInnerRadii.clone() : null;
         roundRectShape.mInset = new RectF(this.mInset);

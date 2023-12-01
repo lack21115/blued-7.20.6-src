@@ -6,9 +6,7 @@ import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/PathParser.class */
 public class PathParser implements ValueParser<PointF> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final PathParser f4405a = new PathParser();
+    public static final PathParser a = new PathParser();
 
     private PathParser() {
     }

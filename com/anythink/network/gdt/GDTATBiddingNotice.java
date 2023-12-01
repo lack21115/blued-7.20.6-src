@@ -15,19 +15,17 @@ import java.util.HashMap;
 public class GDTATBiddingNotice implements ATBiddingNotice {
 
     /* renamed from: a  reason: collision with root package name */
-    Object f8931a;
+    Object f6091a;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public GDTATBiddingNotice(Object obj) {
-        this.f8931a = obj;
+        this.f6091a = obj;
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public ATAdConst.CURRENCY getNoticePriceCurrency() {
         return ATAdConst.CURRENCY.RMB_CENT;
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public void notifyBidDisplay(boolean z, double d) {
     }
 
@@ -42,7 +40,6 @@ public class GDTATBiddingNotice implements ATBiddingNotice {
     /* JADX WARN: Removed duplicated region for block: B:55:0x01a1 A[Catch: all -> 0x0217, TryCatch #2 {all -> 0x0217, blocks: (B:53:0x0197, B:55:0x01a1), top: B:88:0x0197 }] */
     /* JADX WARN: Removed duplicated region for block: B:59:0x01b8 A[Catch: all -> 0x021b, TryCatch #3 {all -> 0x021b, blocks: (B:57:0x01ae, B:59:0x01b8, B:61:0x01c8, B:63:0x01d2, B:65:0x01e4, B:67:0x01ee), top: B:90:0x01ae }] */
     /* JADX WARN: Removed duplicated region for block: B:61:0x01c8 A[Catch: all -> 0x021b, TRY_ENTER, TryCatch #3 {all -> 0x021b, blocks: (B:57:0x01ae, B:59:0x01b8, B:61:0x01c8, B:63:0x01d2, B:65:0x01e4, B:67:0x01ee), top: B:90:0x01ae }] */
-    @Override // com.anythink.core.api.ATBiddingNotice
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -55,17 +52,16 @@ public class GDTATBiddingNotice implements ATBiddingNotice {
         throw new UnsupportedOperationException("Method not decompiled: com.anythink.network.gdt.GDTATBiddingNotice.notifyBidLoss(java.lang.String, double, java.util.Map):void");
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public void notifyBidWin(double d) {
         HashMap hashMap = new HashMap(4);
         hashMap.put(IBidding.HIGHEST_LOSS_PRICE, Integer.valueOf((int) d));
         try {
-            if (this.f8931a instanceof RewardVideoAD) {
-                RewardVideoAD rewardVideoAD = (RewardVideoAD) this.f8931a;
+            if (this.f6091a instanceof RewardVideoAD) {
+                RewardVideoAD rewardVideoAD = (RewardVideoAD) this.f6091a;
                 hashMap.put(IBidding.EXPECT_COST_PRICE, Integer.valueOf(rewardVideoAD.getECPM()));
                 if (ATSDK.isNetworkLogDebug()) {
                     StringBuilder sb = new StringBuilder();
-                    sb.append(this.f8931a != null ? this.f8931a.toString() : "");
+                    sb.append(this.f6091a != null ? this.f6091a.toString() : "");
                     sb.append(": notifyBidWin: ");
                     sb.append(hashMap.toString());
                     Log.i("GDTATBiddingNotice", sb.toString());
@@ -76,12 +72,12 @@ public class GDTATBiddingNotice implements ATBiddingNotice {
         } catch (Throwable th) {
         }
         try {
-            if (this.f8931a instanceof UnifiedInterstitialAD) {
-                UnifiedInterstitialAD unifiedInterstitialAD = (UnifiedInterstitialAD) this.f8931a;
+            if (this.f6091a instanceof UnifiedInterstitialAD) {
+                UnifiedInterstitialAD unifiedInterstitialAD = (UnifiedInterstitialAD) this.f6091a;
                 hashMap.put(IBidding.EXPECT_COST_PRICE, Integer.valueOf(unifiedInterstitialAD.getECPM()));
                 if (ATSDK.isNetworkLogDebug()) {
                     StringBuilder sb2 = new StringBuilder();
-                    sb2.append(this.f8931a != null ? this.f8931a.toString() : "");
+                    sb2.append(this.f6091a != null ? this.f6091a.toString() : "");
                     sb2.append(": notifyBidWin: ");
                     sb2.append(hashMap.toString());
                     Log.i("GDTATBiddingNotice", sb2.toString());
@@ -92,12 +88,12 @@ public class GDTATBiddingNotice implements ATBiddingNotice {
         } catch (Throwable th2) {
         }
         try {
-            if (this.f8931a instanceof SplashAD) {
-                SplashAD splashAD = (SplashAD) this.f8931a;
+            if (this.f6091a instanceof SplashAD) {
+                SplashAD splashAD = (SplashAD) this.f6091a;
                 hashMap.put(IBidding.EXPECT_COST_PRICE, Integer.valueOf(splashAD.getECPM()));
                 if (ATSDK.isNetworkLogDebug()) {
                     StringBuilder sb3 = new StringBuilder();
-                    sb3.append(this.f8931a != null ? this.f8931a.toString() : "");
+                    sb3.append(this.f6091a != null ? this.f6091a.toString() : "");
                     sb3.append(": notifyBidWin: ");
                     sb3.append(hashMap.toString());
                     Log.i("GDTATBiddingNotice", sb3.toString());
@@ -108,12 +104,12 @@ public class GDTATBiddingNotice implements ATBiddingNotice {
         } catch (Throwable th3) {
         }
         try {
-            if (this.f8931a instanceof UnifiedBannerView) {
-                UnifiedBannerView unifiedBannerView = (UnifiedBannerView) this.f8931a;
+            if (this.f6091a instanceof UnifiedBannerView) {
+                UnifiedBannerView unifiedBannerView = (UnifiedBannerView) this.f6091a;
                 hashMap.put(IBidding.EXPECT_COST_PRICE, Integer.valueOf(unifiedBannerView.getECPM()));
                 if (ATSDK.isNetworkLogDebug()) {
                     StringBuilder sb4 = new StringBuilder();
-                    sb4.append(this.f8931a != null ? this.f8931a.toString() : "");
+                    sb4.append(this.f6091a != null ? this.f6091a.toString() : "");
                     sb4.append(": notifyBidWin: ");
                     sb4.append(hashMap.toString());
                     Log.i("GDTATBiddingNotice", sb4.toString());
@@ -123,43 +119,43 @@ public class GDTATBiddingNotice implements ATBiddingNotice {
             }
         } catch (Throwable th4) {
         }
-        if (this.f8931a instanceof GDTATNativeExpressAd) {
-            GDTATNativeExpressAd gDTATNativeExpressAd = (GDTATNativeExpressAd) this.f8931a;
+        if (this.f6091a instanceof GDTATNativeExpressAd) {
+            GDTATNativeExpressAd gDTATNativeExpressAd = (GDTATNativeExpressAd) this.f6091a;
             hashMap.put(IBidding.EXPECT_COST_PRICE, Integer.valueOf(gDTATNativeExpressAd.b.getECPM()));
             if (ATSDK.isNetworkLogDebug()) {
                 StringBuilder sb5 = new StringBuilder();
-                sb5.append(this.f8931a != null ? this.f8931a.toString() : "");
+                sb5.append(this.f6091a != null ? this.f6091a.toString() : "");
                 sb5.append(": notifyBidWin: ");
                 sb5.append(hashMap.toString());
                 Log.i("GDTATBiddingNotice", sb5.toString());
             }
             gDTATNativeExpressAd.b.sendWinNotification(hashMap);
-        } else if (this.f8931a instanceof GDTATNativePatchAd) {
-            GDTATNativePatchAd gDTATNativePatchAd = (GDTATNativePatchAd) this.f8931a;
-            hashMap.put(IBidding.EXPECT_COST_PRICE, Integer.valueOf(gDTATNativePatchAd.f8945c.getECPM()));
+        } else if (this.f6091a instanceof GDTATNativePatchAd) {
+            GDTATNativePatchAd gDTATNativePatchAd = (GDTATNativePatchAd) this.f6091a;
+            hashMap.put(IBidding.EXPECT_COST_PRICE, Integer.valueOf(gDTATNativePatchAd.f6105c.getECPM()));
             if (ATSDK.isNetworkLogDebug()) {
                 StringBuilder sb6 = new StringBuilder();
-                sb6.append(this.f8931a != null ? this.f8931a.toString() : "");
+                sb6.append(this.f6091a != null ? this.f6091a.toString() : "");
                 sb6.append(": notifyBidWin: ");
                 sb6.append(hashMap.toString());
                 Log.i("GDTATBiddingNotice", sb6.toString());
             }
-            gDTATNativePatchAd.f8945c.sendWinNotification(hashMap);
+            gDTATNativePatchAd.f6105c.sendWinNotification(hashMap);
         } else {
-            if (this.f8931a instanceof GDTATNativeAd) {
-                GDTATNativeAd gDTATNativeAd = (GDTATNativeAd) this.f8931a;
-                hashMap.put(IBidding.EXPECT_COST_PRICE, Integer.valueOf(gDTATNativeAd.f8945c.getECPM()));
+            if (this.f6091a instanceof GDTATNativeAd) {
+                GDTATNativeAd gDTATNativeAd = (GDTATNativeAd) this.f6091a;
+                hashMap.put(IBidding.EXPECT_COST_PRICE, Integer.valueOf(gDTATNativeAd.f6105c.getECPM()));
                 if (ATSDK.isNetworkLogDebug()) {
                     StringBuilder sb7 = new StringBuilder();
-                    sb7.append(this.f8931a != null ? this.f8931a.toString() : "");
+                    sb7.append(this.f6091a != null ? this.f6091a.toString() : "");
                     sb7.append(": notifyBidWin: ");
                     sb7.append(hashMap.toString());
                     Log.i("GDTATBiddingNotice", sb7.toString());
                 }
-                gDTATNativeAd.f8945c.sendWinNotification(hashMap);
+                gDTATNativeAd.f6105c.sendWinNotification(hashMap);
                 return;
             }
-            this.f8931a = null;
+            this.f6091a = null;
         }
     }
 }

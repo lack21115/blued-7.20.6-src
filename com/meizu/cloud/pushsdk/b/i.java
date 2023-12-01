@@ -6,7 +6,7 @@ import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 public class i {
     public static String a(String str) {
         com.meizu.cloud.pushsdk.b.b.d a2 = com.meizu.cloud.pushsdk.b.b.a.a("android.os.SystemProperties").a(MonitorConstants.CONNECT_TYPE_GET, String.class).a(str);
-        if (a2.f23973a) {
+        if (a2.f10362a) {
             return (String) a2.b;
         }
         return null;

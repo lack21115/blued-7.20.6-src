@@ -12,13 +12,13 @@ import java.util.List;
 public class ConfirmYellowManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ConfirmYellowManager f32403a = new ConfirmYellowManager();
+    private static ConfirmYellowManager f18713a = new ConfirmYellowManager();
 
     private ConfirmYellowManager() {
     }
 
     public static ConfirmYellowManager a() {
-        return f32403a;
+        return f18713a;
     }
 
     public void a(List<String> list) {

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Process;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -12,11 +11,11 @@ import java.util.ArrayList;
 public final class L32b7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f39890a = kC0XR.a(kC0XR.b);
-    public static final String b = kC0XR.a(kC0XR.f39963c);
+    public static final String f26199a = kC0XR.a(kC0XR.b);
+    public static final String b = kC0XR.a(kC0XR.f26272c);
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f39891c = kC0XR.a(kC0XR.d);
+    public static final String f26200c = kC0XR.a(kC0XR.d);
     public static final String d = kC0XR.a(kC0XR.e);
     public static final String e = kC0XR.a(kC0XR.f);
     public static long f = 0;
@@ -26,11 +25,11 @@ public final class L32b7 {
     public static final class spXPg {
 
         /* renamed from: a  reason: collision with root package name */
-        public final boolean f39892a;
+        public final boolean f26201a;
         public final String b;
 
         public spXPg(boolean z, String str) {
-            this.f39892a = z;
+            this.f26201a = z;
             this.b = str;
         }
     }
@@ -65,7 +64,7 @@ public final class L32b7 {
         String str2;
         StringBuilder sb = new StringBuilder();
         sb.append(str);
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
         try {
             str2 = context.getPackageManager().getApplicationInfo(str, 0).sourceDir;
         } catch (PackageManager.NameNotFoundException e2) {
@@ -76,7 +75,7 @@ public final class L32b7 {
         } catch (Throwable th) {
             sb.append("");
         }
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
         long j = -1;
         if (!TextUtils.isEmpty(str2)) {
             File file = new File(str2);
@@ -86,7 +85,7 @@ public final class L32b7 {
             }
         }
         sb.append(j);
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
         sb.append(Process.myUid());
         return sb.toString();
     }

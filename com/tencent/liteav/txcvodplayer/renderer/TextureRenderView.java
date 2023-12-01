@@ -20,7 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class TextureRenderView extends TextureView implements com.tencent.liteav.txcvodplayer.renderer.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.tencent.liteav.txcvodplayer.renderer.b f36557a;
+    private com.tencent.liteav.txcvodplayer.renderer.b f22866a;
     private b b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -28,22 +28,22 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
     public static final class a implements a.b {
 
         /* renamed from: a  reason: collision with root package name */
-        private TextureRenderView f36558a;
+        private TextureRenderView f22867a;
         private SurfaceTexture b;
 
         /* renamed from: c  reason: collision with root package name */
-        private com.tencent.liteav.txcplayer.c f36559c;
+        private com.tencent.liteav.txcplayer.c f22868c;
         private Surface d;
 
         public a(TextureRenderView textureRenderView, SurfaceTexture surfaceTexture, com.tencent.liteav.txcplayer.c cVar) {
-            this.f36558a = textureRenderView;
+            this.f22867a = textureRenderView;
             this.b = surfaceTexture;
-            this.f36559c = cVar;
+            this.f22868c = cVar;
         }
 
         @Override // com.tencent.liteav.txcvodplayer.renderer.a.b
         public final com.tencent.liteav.txcvodplayer.renderer.a a() {
-            return this.f36558a;
+            return this.f22867a;
         }
 
         @Override // com.tencent.liteav.txcvodplayer.renderer.a.b
@@ -58,24 +58,24 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
                 return;
             }
             com.tencent.liteav.txcplayer.b bVar = (com.tencent.liteav.txcplayer.b) iTXVCubePlayer;
-            this.f36558a.b.e = false;
-            if (this.f36558a.getSurfaceTexture() != null) {
-                this.b = this.f36558a.getSurfaceTexture();
+            this.f22867a.b.e = false;
+            if (this.f22867a.getSurfaceTexture() != null) {
+                this.b = this.f22867a.getSurfaceTexture();
             }
             try {
                 SurfaceTexture surfaceTexture = bVar.getSurfaceTexture();
                 if (surfaceTexture != null) {
-                    bVar.setSurfaceTextureHost(this.f36558a.b);
-                    if (this.f36558a.getSurfaceTexture() != surfaceTexture) {
-                        this.f36558a.setSurfaceTexture(surfaceTexture);
+                    bVar.setSurfaceTextureHost(this.f22867a.b);
+                    if (this.f22867a.getSurfaceTexture() != surfaceTexture) {
+                        this.f22867a.setSurfaceTexture(surfaceTexture);
                     }
-                    this.f36558a.b.f36560a = surfaceTexture;
+                    this.f22867a.b.f22869a = surfaceTexture;
                 } else {
                     if (this.d != null) {
                         iTXVCubePlayer.setSurface(this.d);
                     }
                     bVar.setSurfaceTexture(this.b);
-                    bVar.setSurfaceTextureHost(this.f36558a.b);
+                    bVar.setSurfaceTextureHost(this.f22867a.b);
                 }
                 this.d = iTXVCubePlayer.getSurface();
             } catch (Exception e) {
@@ -105,17 +105,17 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
     public static final class b implements TextureView.SurfaceTextureListener, com.tencent.liteav.txcplayer.c {
 
         /* renamed from: a  reason: collision with root package name */
-        SurfaceTexture f36560a;
+        SurfaceTexture f22869a;
         boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f36561c;
+        int f22870c;
         int d;
         WeakReference<TextureRenderView> h;
         boolean e = true;
         boolean f = false;
         boolean g = false;
-        Map<a.InterfaceC0935a, Object> i = new ConcurrentHashMap();
+        Map<a.InterfaceC0765a, Object> i = new ConcurrentHashMap();
 
         public b(TextureRenderView textureRenderView) {
             this.h = new WeakReference<>(textureRenderView);
@@ -126,7 +126,7 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
             if (surfaceTexture == null) {
                 LiteavLog.i("TextureRenderView", "releaseSurfaceTexture: null");
             } else if (this.g) {
-                if (surfaceTexture != this.f36560a) {
+                if (surfaceTexture != this.f22869a) {
                     LiteavLog.i("TextureRenderView", "releaseSurfaceTexture: didDetachFromWindow(): release different SurfaceTexture");
                     surfaceTexture.release();
                 } else if (this.e) {
@@ -136,7 +136,7 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
                     surfaceTexture.release();
                 }
             } else if (this.f) {
-                if (surfaceTexture != this.f36560a) {
+                if (surfaceTexture != this.f22869a) {
                     LiteavLog.i("TextureRenderView", "releaseSurfaceTexture: willDetachFromWindow(): release different SurfaceTexture");
                     surfaceTexture.release();
                 } else if (this.e) {
@@ -145,7 +145,7 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
                     LiteavLog.i("TextureRenderView", "releaseSurfaceTexture: willDetachFromWindow(): re-attach SurfaceTexture to TextureView");
                     this.e = true;
                 }
-            } else if (surfaceTexture != this.f36560a) {
+            } else if (surfaceTexture != this.f22869a) {
                 LiteavLog.i("TextureRenderView", "releaseSurfaceTexture: alive: release different SurfaceTexture");
                 surfaceTexture.release();
             } else if (this.e) {
@@ -158,25 +158,25 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
 
         @Override // android.view.TextureView.SurfaceTextureListener
         public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
-            this.f36560a = surfaceTexture;
+            this.f22869a = surfaceTexture;
             this.b = false;
-            this.f36561c = 0;
+            this.f22870c = 0;
             this.d = 0;
             a aVar = new a(this.h.get(), surfaceTexture, this);
-            for (a.InterfaceC0935a interfaceC0935a : this.i.keySet()) {
-                interfaceC0935a.a(aVar);
+            for (a.InterfaceC0765a interfaceC0765a : this.i.keySet()) {
+                interfaceC0765a.a(aVar);
             }
         }
 
         @Override // android.view.TextureView.SurfaceTextureListener
         public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-            this.f36560a = surfaceTexture;
+            this.f22869a = surfaceTexture;
             this.b = false;
-            this.f36561c = 0;
+            this.f22870c = 0;
             this.d = 0;
             a aVar = new a(this.h.get(), surfaceTexture, this);
-            for (a.InterfaceC0935a interfaceC0935a : this.i.keySet()) {
-                interfaceC0935a.b(aVar);
+            for (a.InterfaceC0765a interfaceC0765a : this.i.keySet()) {
+                interfaceC0765a.b(aVar);
             }
             LiteavLog.i("TextureRenderView", "onSurfaceTextureDestroyed: destroy: " + this.e);
             return this.e;
@@ -184,13 +184,13 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
 
         @Override // android.view.TextureView.SurfaceTextureListener
         public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i, int i2) {
-            this.f36560a = surfaceTexture;
+            this.f22869a = surfaceTexture;
             this.b = true;
-            this.f36561c = i;
+            this.f22870c = i;
             this.d = i2;
             a aVar = new a(this.h.get(), surfaceTexture, this);
-            for (a.InterfaceC0935a interfaceC0935a : this.i.keySet()) {
-                interfaceC0935a.a(aVar, i, i2);
+            for (a.InterfaceC0765a interfaceC0765a : this.i.keySet()) {
+                interfaceC0765a.a(aVar, i, i2);
             }
         }
 
@@ -215,7 +215,7 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
     }
 
     private void b() {
-        this.f36557a = new com.tencent.liteav.txcvodplayer.renderer.b(this);
+        this.f22866a = new com.tencent.liteav.txcvodplayer.renderer.b(this);
         b bVar = new b(this);
         this.b = bVar;
         setSurfaceTextureListener(bVar);
@@ -226,27 +226,27 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
         if (i <= 0 || i2 <= 0) {
             return;
         }
-        this.f36557a.a(i, i2);
+        this.f22866a.a(i, i2);
         requestLayout();
     }
 
     @Override // com.tencent.liteav.txcvodplayer.renderer.a
-    public final void a(a.InterfaceC0935a interfaceC0935a) {
+    public final void a(a.InterfaceC0765a interfaceC0765a) {
         a aVar;
         b bVar = this.b;
-        bVar.i.put(interfaceC0935a, interfaceC0935a);
-        if (bVar.f36560a != null) {
-            aVar = new a(bVar.h.get(), bVar.f36560a, bVar);
-            interfaceC0935a.a(aVar);
+        bVar.i.put(interfaceC0765a, interfaceC0765a);
+        if (bVar.f22869a != null) {
+            aVar = new a(bVar.h.get(), bVar.f22869a, bVar);
+            interfaceC0765a.a(aVar);
         } else {
             aVar = null;
         }
         if (bVar.b) {
             a aVar2 = aVar;
             if (aVar == null) {
-                aVar2 = new a(bVar.h.get(), bVar.f36560a, bVar);
+                aVar2 = new a(bVar.h.get(), bVar.f22869a, bVar);
             }
-            interfaceC0935a.a(aVar2, bVar.f36561c, bVar.d);
+            interfaceC0765a.a(aVar2, bVar.f22870c, bVar.d);
         }
     }
 
@@ -260,17 +260,17 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
         if (i <= 0 || i2 <= 0) {
             return;
         }
-        this.f36557a.b(i, i2);
+        this.f22866a.b(i, i2);
         requestLayout();
     }
 
     @Override // com.tencent.liteav.txcvodplayer.renderer.a
-    public final void b(a.InterfaceC0935a interfaceC0935a) {
-        this.b.i.remove(interfaceC0935a);
+    public final void b(a.InterfaceC0765a interfaceC0765a) {
+        this.b.i.remove(interfaceC0765a);
     }
 
     public a.b getSurfaceHolder() {
-        return new a(this, this.b.f36560a, this.b);
+        return new a(this, this.b.f22869a, this.b);
     }
 
     @Override // com.tencent.liteav.txcvodplayer.renderer.a
@@ -288,9 +288,8 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
         bVar.g = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         try {
             b bVar = this.b;
             LiteavLog.i("TextureRenderView", "willDetachFromWindow()");
@@ -315,22 +314,21 @@ public class TextureRenderView extends TextureView implements com.tencent.liteav
         accessibilityNodeInfo.setClassName(TextureRenderView.class.getName());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
-        this.f36557a.c(i, i2);
-        setMeasuredDimension(this.f36557a.b, this.f36557a.f36563c);
+    protected void onMeasure(int i, int i2) {
+        this.f22866a.c(i, i2);
+        setMeasuredDimension(this.f22866a.b, this.f22866a.f22872c);
     }
 
     @Override // com.tencent.liteav.txcvodplayer.renderer.a
     public void setAspectRatio(int i) {
-        this.f36557a.d = i;
+        this.f22866a.d = i;
         requestLayout();
     }
 
     @Override // com.tencent.liteav.txcvodplayer.renderer.a
     public void setVideoRotation(int i) {
-        this.f36557a.f36562a = i;
+        this.f22866a.f22871a = i;
         setRotation(i);
     }
 }

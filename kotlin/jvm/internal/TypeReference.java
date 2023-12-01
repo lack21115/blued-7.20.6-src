@@ -1,6 +1,5 @@
 package kotlin.jvm.internal;
 
-import com.j256.ormlite.stmt.query.SimpleComparison;
 import java.lang.annotation.Annotation;
 import java.util.List;
 import kotlin.Metadata;
@@ -16,13 +15,9 @@ import kotlin.reflect.KVariance;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/TypeReference.class */
 public final class TypeReference implements KType {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42553a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final KClassifier b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final List<KTypeProjection> f42554c;
+    private final List<KTypeProjection> c;
     private final KType d;
     private final int e;
 
@@ -40,16 +35,14 @@ public final class TypeReference implements KType {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/TypeReference$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f42555a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[KVariance.values().length];
             iArr[KVariance.INVARIANT.ordinal()] = 1;
             iArr[KVariance.IN.ordinal()] = 2;
             iArr[KVariance.OUT.ordinal()] = 3;
-            f42555a = iArr;
+            a = iArr;
         }
     }
 
@@ -57,7 +50,7 @@ public final class TypeReference implements KType {
         Intrinsics.e(classifier, "classifier");
         Intrinsics.e(arguments, "arguments");
         this.b = classifier;
-        this.f42554c = arguments;
+        this.c = arguments;
         this.d = kType;
         this.e = i;
     }
@@ -121,7 +114,7 @@ public final class TypeReference implements KType {
             r0 = r4
             kotlin.reflect.KVariance r0 = r0.a()
             r4 = r0
-            int[] r0 = kotlin.jvm.internal.TypeReference.WhenMappings.f42555a
+            int[] r0 = kotlin.jvm.internal.TypeReference.WhenMappings.a
             r1 = r4
             int r1 = r1.ordinal()
             r0 = r0[r1]
@@ -183,7 +176,7 @@ public final class TypeReference implements KType {
         if (kClass != null) {
             cls = JvmClassMappingKt.a(kClass);
         }
-        String str = (cls == null ? a().toString() : (this.e & 4) != 0 ? "kotlin.Nothing" : cls.isArray() ? a(cls) : (z && cls.isPrimitive()) ? JvmClassMappingKt.b((KClass) a()).getName() : cls.getName()) + (b().isEmpty() ? "" : CollectionsKt.a(b(), ", ", SimpleComparison.LESS_THAN_OPERATION, SimpleComparison.GREATER_THAN_OPERATION, 0, null, new Function1<KTypeProjection, CharSequence>() { // from class: kotlin.jvm.internal.TypeReference$asString$args$1
+        String str = (cls == null ? a().toString() : (this.e & 4) != 0 ? "kotlin.Nothing" : cls.isArray() ? a(cls) : (z && cls.isPrimitive()) ? JvmClassMappingKt.b((KClass) a()).getName() : cls.getName()) + (b().isEmpty() ? "" : CollectionsKt.a(b(), ", ", "<", ">", 0, null, new Function1<KTypeProjection, CharSequence>() { // from class: kotlin.jvm.internal.TypeReference$asString$args$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -220,7 +213,7 @@ public final class TypeReference implements KType {
 
     @Override // kotlin.reflect.KType
     public List<KTypeProjection> b() {
-        return this.f42554c;
+        return this.c;
     }
 
     public boolean c() {

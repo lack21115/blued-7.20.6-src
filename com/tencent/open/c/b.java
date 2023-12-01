@@ -11,9 +11,8 @@ public class b extends WebView {
         super(context);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         WebSettings settings = getSettings();
         if (settings == null) {

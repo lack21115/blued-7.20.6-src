@@ -28,13 +28,9 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/backpack/LiveGiftBackpackBaseFragment.class */
 public abstract class LiveGiftBackpackBaseFragment<p extends MvpPresenter> extends MvpFragment<p> {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected ImageView f13894a;
+    protected ImageView a;
     protected View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected ListView f13895c;
+    protected ListView c;
     protected CommonAdapter d;
     protected CommonLiveGiftModel g;
     protected LiveGiftBackpackBaseFragment<p>.LiveGiftComboTimer k;
@@ -91,12 +87,10 @@ public abstract class LiveGiftBackpackBaseFragment<p extends MvpPresenter> exten
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/backpack/LiveGiftBackpackBaseFragment$LiveGiftComboTimer.class */
     public class LiveGiftComboTimer extends Timer {
-
-        /* renamed from: a  reason: collision with root package name */
-        CommonLiveGiftModel f13898a;
+        CommonLiveGiftModel a;
 
         public LiveGiftComboTimer(CommonLiveGiftModel commonLiveGiftModel) {
-            this.f13898a = commonLiveGiftModel;
+            this.a = commonLiveGiftModel;
         }
     }
 
@@ -159,7 +153,7 @@ public abstract class LiveGiftBackpackBaseFragment<p extends MvpPresenter> exten
         });
         if (this.d == null) {
             e();
-            this.f13895c.setAdapter((ListAdapter) this.d);
+            this.c.setAdapter((ListAdapter) this.d);
         }
         this.d.a(list);
     }
@@ -183,13 +177,13 @@ public abstract class LiveGiftBackpackBaseFragment<p extends MvpPresenter> exten
                 }
                 LiveGiftBackpackBaseFragment.a(LiveGiftBackpackBaseFragment.this);
                 LiveGiftModel x2 = LiveGiftBackpackBaseFragment.this.x();
-                if (LiveGiftBackpackBaseFragment.this.k == null || LiveGiftBackpackBaseFragment.this.k.f13898a == null) {
+                if (LiveGiftBackpackBaseFragment.this.k == null || LiveGiftBackpackBaseFragment.this.k.a == null) {
                     LiveGiftBackpackBaseFragment.this.n = 0;
                     return;
                 }
                 if (x2 != null) {
                     try {
-                        if (LiveGiftBackpackBaseFragment.this.k != null && LiveGiftBackpackBaseFragment.this.k.f13898a != null && StringUtils.a(x2.goods_id, LiveGiftBackpackBaseFragment.this.k.f13898a.goods_id)) {
+                        if (LiveGiftBackpackBaseFragment.this.k != null && LiveGiftBackpackBaseFragment.this.k.a != null && StringUtils.a(x2.goods_id, LiveGiftBackpackBaseFragment.this.k.a.goods_id)) {
                             LiveGiftBackpackBaseFragment.this.d(x2, LiveGiftBackpackBaseFragment.this.n);
                             return;
                         }
@@ -210,7 +204,7 @@ public abstract class LiveGiftBackpackBaseFragment<p extends MvpPresenter> exten
 
     public void b(boolean z) {
         if (c() != -1 && d() != -1) {
-            this.f13894a.setImageResource(z ? c() : d());
+            this.a.setImageResource(z ? c() : d());
         }
         this.b.setVisibility(z ? 0 : 8);
     }
@@ -291,7 +285,7 @@ public abstract class LiveGiftBackpackBaseFragment<p extends MvpPresenter> exten
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onHiddenChanged(boolean z) {
         super.onHiddenChanged(z);
         if (!z) {
@@ -320,7 +314,7 @@ public abstract class LiveGiftBackpackBaseFragment<p extends MvpPresenter> exten
     protected void v() {
         LiveGiftBackpackBaseFragment<p>.LiveGiftComboTimer liveGiftComboTimer = this.k;
         if (liveGiftComboTimer != null) {
-            liveGiftComboTimer.f13898a = null;
+            liveGiftComboTimer.a = null;
             this.k.cancel();
             this.k = null;
         }

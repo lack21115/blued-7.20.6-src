@@ -5,9 +5,7 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/feed/observer/LikeListDataObserver.class */
 public class LikeListDataObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static LikeListDataObserver f19866a = new LikeListDataObserver();
+    private static LikeListDataObserver a = new LikeListDataObserver();
     private List<ILikeListDataObserver> b = new ArrayList();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/feed/observer/LikeListDataObserver$ILikeListDataObserver.class */
@@ -19,7 +17,7 @@ public class LikeListDataObserver {
     }
 
     public static LikeListDataObserver a() {
-        return f19866a;
+        return a;
     }
 
     public void a(ILikeListDataObserver iLikeListDataObserver) {

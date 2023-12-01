@@ -24,11 +24,11 @@ import androidx.core.view.ViewCompat;
 public class ListMenuItemView extends LinearLayout implements AbsListView.SelectionBoundsAdjuster, MenuView.ItemView {
 
     /* renamed from: a  reason: collision with root package name */
-    private MenuItemImpl f1670a;
+    private MenuItemImpl f1622a;
     private ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RadioButton f1671c;
+    private RadioButton f1623c;
     private TextView d;
     private CheckBox e;
     private TextView f;
@@ -56,7 +56,7 @@ public class ListMenuItemView extends LinearLayout implements AbsListView.Select
         this.m = obtainStyledAttributes.getBoolean(R.styleable.MenuView_preserveIconSpacing, false);
         this.l = context;
         this.n = obtainStyledAttributes.getDrawable(R.styleable.MenuView_subMenuArrow);
-        TypedArray obtainStyledAttributes2 = context.getTheme().obtainStyledAttributes(null, new int[]{16843049}, R.attr.dropDownListViewStyle, 0);
+        TypedArray obtainStyledAttributes2 = context.getTheme().obtainStyledAttributes(null, new int[]{android.R.attr.divider}, R.attr.dropDownListViewStyle, 0);
         this.o = obtainStyledAttributes2.hasValue(0);
         obtainStyledAttributes.recycle();
         obtainStyledAttributes2.recycle();
@@ -83,7 +83,7 @@ public class ListMenuItemView extends LinearLayout implements AbsListView.Select
 
     private void b() {
         RadioButton radioButton = (RadioButton) getInflater().inflate(R.layout.abc_list_menu_item_radio, (ViewGroup) this, false);
-        this.f1671c = radioButton;
+        this.f1623c = radioButton;
         a(radioButton);
     }
 
@@ -119,12 +119,12 @@ public class ListMenuItemView extends LinearLayout implements AbsListView.Select
 
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
     public MenuItemImpl getItemData() {
-        return this.f1670a;
+        return this.f1622a;
     }
 
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
     public void initialize(MenuItemImpl menuItemImpl, int i) {
-        this.f1670a = menuItemImpl;
+        this.f1622a = menuItemImpl;
         setVisibility(menuItemImpl.isVisible() ? 0 : 8);
         setTitle(menuItemImpl.a(this));
         setCheckable(menuItemImpl.isCheckable());
@@ -135,9 +135,8 @@ public class ListMenuItemView extends LinearLayout implements AbsListView.Select
         setContentDescription(menuItemImpl.getContentDescription());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFinishInflate() {
+    protected void onFinishInflate() {
         super.onFinishInflate();
         ViewCompat.setBackground(this, this.j);
         TextView textView = (TextView) findViewById(R.id.title);
@@ -156,9 +155,8 @@ public class ListMenuItemView extends LinearLayout implements AbsListView.Select
         this.i = (LinearLayout) findViewById(R.id.content);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         if (this.b != null && this.m) {
             ViewGroup.LayoutParams layoutParams = getLayoutParams();
             LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) this.b.getLayoutParams();
@@ -177,39 +175,39 @@ public class ListMenuItemView extends LinearLayout implements AbsListView.Select
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
     public void setCheckable(boolean z) {
         CompoundButton compoundButton;
-        TextView textView;
-        if (!z && this.f1671c == null && this.e == null) {
+        CompoundButton compoundButton2;
+        if (!z && this.f1623c == null && this.e == null) {
             return;
         }
-        if (this.f1670a.isExclusiveCheckable()) {
-            if (this.f1671c == null) {
+        if (this.f1622a.isExclusiveCheckable()) {
+            if (this.f1623c == null) {
                 b();
             }
-            compoundButton = this.f1671c;
-            textView = this.e;
+            compoundButton = this.f1623c;
+            compoundButton2 = this.e;
         } else {
             if (this.e == null) {
                 c();
             }
             compoundButton = this.e;
-            textView = this.f1671c;
+            compoundButton2 = this.f1623c;
         }
         if (z) {
-            compoundButton.setChecked(this.f1670a.isChecked());
+            compoundButton.setChecked(this.f1622a.isChecked());
             if (compoundButton.getVisibility() != 0) {
                 compoundButton.setVisibility(0);
             }
-            if (textView == null || textView.getVisibility() == 8) {
+            if (compoundButton2 == null || compoundButton2.getVisibility() == 8) {
                 return;
             }
-            textView.setVisibility(8);
+            compoundButton2.setVisibility(8);
             return;
         }
         CheckBox checkBox = this.e;
         if (checkBox != null) {
             checkBox.setVisibility(8);
         }
-        RadioButton radioButton = this.f1671c;
+        RadioButton radioButton = this.f1623c;
         if (radioButton != null) {
             radioButton.setVisibility(8);
         }
@@ -218,11 +216,11 @@ public class ListMenuItemView extends LinearLayout implements AbsListView.Select
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
     public void setChecked(boolean z) {
         CompoundButton compoundButton;
-        if (this.f1670a.isExclusiveCheckable()) {
-            if (this.f1671c == null) {
+        if (this.f1622a.isExclusiveCheckable()) {
+            if (this.f1623c == null) {
                 b();
             }
-            compoundButton = this.f1671c;
+            compoundButton = this.f1623c;
         } else {
             if (this.e == null) {
                 c();
@@ -246,7 +244,7 @@ public class ListMenuItemView extends LinearLayout implements AbsListView.Select
 
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
     public void setIcon(Drawable drawable) {
-        boolean z = this.f1670a.shouldShowIcon() || this.q;
+        boolean z = this.f1622a.shouldShowIcon() || this.q;
         if (z || this.m) {
             if (this.b == null && drawable == null && !this.m) {
                 return;
@@ -271,9 +269,9 @@ public class ListMenuItemView extends LinearLayout implements AbsListView.Select
 
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
     public void setShortcut(boolean z, char c2) {
-        int i = (z && this.f1670a.c()) ? 0 : 8;
+        int i = (z && this.f1622a.c()) ? 0 : 8;
         if (i == 0) {
-            this.f.setText(this.f1670a.b());
+            this.f.setText(this.f1622a.b());
         }
         if (this.f.getVisibility() != i) {
             this.f.setVisibility(i);

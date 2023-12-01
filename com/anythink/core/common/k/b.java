@@ -9,8 +9,7 @@ import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
-import android.text.Spanned;
-import com.blued.das.live.LiveProtos;
+import android.view.View;
 import java.io.FileDescriptor;
 import java.lang.reflect.Array;
 
@@ -76,7 +75,7 @@ public final class b {
             if (i5 >= 173056) {
                 break;
             }
-            iArr6[i5] = i5 / LiveProtos.Event.LIVE_ANCHOR_RANDOM_GIFT_PAGE_SHOW_VALUE;
+            iArr6[i5] = i5 / 676;
             i4 = i5 + 1;
         }
         int[][] iArr7 = (int[][]) Array.newInstance(Integer.TYPE, 51, 3);
@@ -95,7 +94,7 @@ public final class b {
             for (int i18 = -25; i18 <= 25; i18++) {
                 int i19 = iArr[Math.min(i2, Math.max(i18, 0)) + i6];
                 int[] iArr8 = iArr7[i18 + 25];
-                iArr8[0] = (i19 & Spanned.SPAN_PRIORITY) >> 16;
+                iArr8[0] = (i19 & 16711680) >> 16;
                 iArr8[1] = (i19 & 65280) >> 8;
                 iArr8[2] = i19 & 255;
                 int abs = 26 - Math.abs(i18);
@@ -128,7 +127,7 @@ public final class b {
                     iArr5[i24] = Math.min(i24 + 25 + 1, i2);
                 }
                 int i28 = iArr[iArr5[i24] + i7];
-                iArr9[0] = (i28 & Spanned.SPAN_PRIORITY) >> 16;
+                iArr9[0] = (i28 & 16711680) >> 16;
                 iArr9[1] = (i28 & 65280) >> 8;
                 iArr9[2] = i28 & 255;
                 int i29 = i21 + iArr9[0];
@@ -203,7 +202,7 @@ public final class b {
             while (true) {
                 int i53 = i52;
                 if (i53 < height) {
-                    iArr[i51] = (iArr[i51] & (-16777216)) | (iArr6[i50] << 16) | (iArr6[i37] << 8) | iArr6[i38];
+                    iArr[i51] = (iArr[i51] & View.MEASURED_STATE_MASK) | (iArr6[i50] << 16) | (iArr6[i37] << 8) | iArr6[i38];
                     int[] iArr12 = iArr7[((i47 - 25) + 51) % 51];
                     int i54 = iArr12[0];
                     int i55 = iArr12[1];

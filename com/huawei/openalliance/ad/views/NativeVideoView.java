@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.hms.ads.VideoConfiguration;
 import com.huawei.hms.ads.br;
 import com.huawei.hms.ads.fw;
@@ -50,11 +49,11 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
     private boolean L;
 
     /* renamed from: a  reason: collision with root package name */
-    private j f23007a;
+    private j f9399a;
     private jz b;
 
     /* renamed from: c  reason: collision with root package name */
-    private v f23008c;
+    private v f9400c;
     private k d;
     private boolean e;
     private int f;
@@ -124,7 +123,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
                 if (NativeVideoView.this.L) {
                     NativeVideoView.this.F.Code(i);
                     if (NativeVideoView.this.b != null) {
-                        NativeVideoView.this.b.Code(NativeVideoView.this.getContext(), i2, NativeVideoView.this.f23008c == null ? 0L : NativeVideoView.this.f23008c.I());
+                        NativeVideoView.this.b.Code(NativeVideoView.this.getContext(), i2, NativeVideoView.this.f9400c == null ? 0L : NativeVideoView.this.f9400c.I());
                     }
                 }
             }
@@ -147,8 +146,8 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
                     NativeVideoView.this.b.V();
                     return;
                 }
-                if (ihVar != null && NativeVideoView.this.f23008c != null) {
-                    NativeVideoView.this.F.Code(NativeVideoView.this.f23008c.I(), !"y".equals(NativeVideoView.this.f23008c.a()));
+                if (ihVar != null && NativeVideoView.this.f9400c != null) {
+                    NativeVideoView.this.F.Code(NativeVideoView.this.f9400c.I(), !"y".equals(NativeVideoView.this.f9400c.a()));
                 }
                 NativeVideoView.this.b.Code();
                 NativeVideoView.this.b.Code(NativeVideoView.this.p.B(), NativeVideoView.this.p.Z(), NativeVideoView.this.m);
@@ -191,7 +190,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
         this.t = new gp() { // from class: com.huawei.openalliance.ad.views.NativeVideoView.4
             @Override // com.huawei.hms.ads.gp
             public void Code(int i) {
-                NativeVideoView.this.f23007a.I(i);
+                NativeVideoView.this.f9399a.I(i);
             }
 
             @Override // com.huawei.hms.ads.gp
@@ -202,8 +201,8 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
             @Override // com.huawei.hms.ads.gs
             public void Code() {
                 ge.V(NativeVideoView.S, "onMute");
-                if (NativeVideoView.this.f23008c != null) {
-                    NativeVideoView.this.f23008c.Code("n");
+                if (NativeVideoView.this.f9400c != null) {
+                    NativeVideoView.this.f9400c.Code("n");
                     if (NativeVideoView.this.o || !NativeVideoView.this.L) {
                         NativeVideoView.this.o = false;
                     } else {
@@ -211,7 +210,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
                     }
                     NativeVideoView.this.F.V(0.0f);
                 }
-                NativeVideoView.this.f23007a.B(true);
+                NativeVideoView.this.f9399a.B(true);
                 if (NativeVideoView.this.D != null) {
                     NativeVideoView.this.D.Code(true);
                 }
@@ -220,13 +219,13 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
             @Override // com.huawei.hms.ads.gs
             public void V() {
                 ge.V(NativeVideoView.S, "onUnmute");
-                if (NativeVideoView.this.f23008c != null) {
+                if (NativeVideoView.this.f9400c != null) {
                     NativeVideoView.this.o = false;
-                    NativeVideoView.this.f23008c.Code("y");
+                    NativeVideoView.this.f9400c.Code("y");
                     NativeVideoView.this.b.Code(false);
                     NativeVideoView.this.F.V(1.0f);
                 }
-                NativeVideoView.this.f23007a.B(false);
+                NativeVideoView.this.f9399a.B(false);
                 if (NativeVideoView.this.D != null) {
                     NativeVideoView.this.D.Code(false);
                 }
@@ -292,7 +291,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
                 if (NativeVideoView.this.L) {
                     NativeVideoView.this.F.Code(i);
                     if (NativeVideoView.this.b != null) {
-                        NativeVideoView.this.b.Code(NativeVideoView.this.getContext(), i2, NativeVideoView.this.f23008c == null ? 0L : NativeVideoView.this.f23008c.I());
+                        NativeVideoView.this.b.Code(NativeVideoView.this.getContext(), i2, NativeVideoView.this.f9400c == null ? 0L : NativeVideoView.this.f9400c.I());
                     }
                 }
             }
@@ -315,8 +314,8 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
                     NativeVideoView.this.b.V();
                     return;
                 }
-                if (ihVar != null && NativeVideoView.this.f23008c != null) {
-                    NativeVideoView.this.F.Code(NativeVideoView.this.f23008c.I(), !"y".equals(NativeVideoView.this.f23008c.a()));
+                if (ihVar != null && NativeVideoView.this.f9400c != null) {
+                    NativeVideoView.this.F.Code(NativeVideoView.this.f9400c.I(), !"y".equals(NativeVideoView.this.f9400c.a()));
                 }
                 NativeVideoView.this.b.Code();
                 NativeVideoView.this.b.Code(NativeVideoView.this.p.B(), NativeVideoView.this.p.Z(), NativeVideoView.this.m);
@@ -359,7 +358,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
         this.t = new gp() { // from class: com.huawei.openalliance.ad.views.NativeVideoView.4
             @Override // com.huawei.hms.ads.gp
             public void Code(int i) {
-                NativeVideoView.this.f23007a.I(i);
+                NativeVideoView.this.f9399a.I(i);
             }
 
             @Override // com.huawei.hms.ads.gp
@@ -370,8 +369,8 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
             @Override // com.huawei.hms.ads.gs
             public void Code() {
                 ge.V(NativeVideoView.S, "onMute");
-                if (NativeVideoView.this.f23008c != null) {
-                    NativeVideoView.this.f23008c.Code("n");
+                if (NativeVideoView.this.f9400c != null) {
+                    NativeVideoView.this.f9400c.Code("n");
                     if (NativeVideoView.this.o || !NativeVideoView.this.L) {
                         NativeVideoView.this.o = false;
                     } else {
@@ -379,7 +378,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
                     }
                     NativeVideoView.this.F.V(0.0f);
                 }
-                NativeVideoView.this.f23007a.B(true);
+                NativeVideoView.this.f9399a.B(true);
                 if (NativeVideoView.this.D != null) {
                     NativeVideoView.this.D.Code(true);
                 }
@@ -388,13 +387,13 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
             @Override // com.huawei.hms.ads.gs
             public void V() {
                 ge.V(NativeVideoView.S, "onUnmute");
-                if (NativeVideoView.this.f23008c != null) {
+                if (NativeVideoView.this.f9400c != null) {
                     NativeVideoView.this.o = false;
-                    NativeVideoView.this.f23008c.Code("y");
+                    NativeVideoView.this.f9400c.Code("y");
                     NativeVideoView.this.b.Code(false);
                     NativeVideoView.this.F.V(1.0f);
                 }
-                NativeVideoView.this.f23007a.B(false);
+                NativeVideoView.this.f9399a.B(false);
                 if (NativeVideoView.this.D != null) {
                     NativeVideoView.this.D.Code(false);
                 }
@@ -460,7 +459,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
                 if (NativeVideoView.this.L) {
                     NativeVideoView.this.F.Code(i2);
                     if (NativeVideoView.this.b != null) {
-                        NativeVideoView.this.b.Code(NativeVideoView.this.getContext(), i22, NativeVideoView.this.f23008c == null ? 0L : NativeVideoView.this.f23008c.I());
+                        NativeVideoView.this.b.Code(NativeVideoView.this.getContext(), i22, NativeVideoView.this.f9400c == null ? 0L : NativeVideoView.this.f9400c.I());
                     }
                 }
             }
@@ -483,8 +482,8 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
                     NativeVideoView.this.b.V();
                     return;
                 }
-                if (ihVar != null && NativeVideoView.this.f23008c != null) {
-                    NativeVideoView.this.F.Code(NativeVideoView.this.f23008c.I(), !"y".equals(NativeVideoView.this.f23008c.a()));
+                if (ihVar != null && NativeVideoView.this.f9400c != null) {
+                    NativeVideoView.this.F.Code(NativeVideoView.this.f9400c.I(), !"y".equals(NativeVideoView.this.f9400c.a()));
                 }
                 NativeVideoView.this.b.Code();
                 NativeVideoView.this.b.Code(NativeVideoView.this.p.B(), NativeVideoView.this.p.Z(), NativeVideoView.this.m);
@@ -527,7 +526,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
         this.t = new gp() { // from class: com.huawei.openalliance.ad.views.NativeVideoView.4
             @Override // com.huawei.hms.ads.gp
             public void Code(int i2) {
-                NativeVideoView.this.f23007a.I(i2);
+                NativeVideoView.this.f9399a.I(i2);
             }
 
             @Override // com.huawei.hms.ads.gp
@@ -538,8 +537,8 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
             @Override // com.huawei.hms.ads.gs
             public void Code() {
                 ge.V(NativeVideoView.S, "onMute");
-                if (NativeVideoView.this.f23008c != null) {
-                    NativeVideoView.this.f23008c.Code("n");
+                if (NativeVideoView.this.f9400c != null) {
+                    NativeVideoView.this.f9400c.Code("n");
                     if (NativeVideoView.this.o || !NativeVideoView.this.L) {
                         NativeVideoView.this.o = false;
                     } else {
@@ -547,7 +546,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
                     }
                     NativeVideoView.this.F.V(0.0f);
                 }
-                NativeVideoView.this.f23007a.B(true);
+                NativeVideoView.this.f9399a.B(true);
                 if (NativeVideoView.this.D != null) {
                     NativeVideoView.this.D.Code(true);
                 }
@@ -556,13 +555,13 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
             @Override // com.huawei.hms.ads.gs
             public void V() {
                 ge.V(NativeVideoView.S, "onUnmute");
-                if (NativeVideoView.this.f23008c != null) {
+                if (NativeVideoView.this.f9400c != null) {
                     NativeVideoView.this.o = false;
-                    NativeVideoView.this.f23008c.Code("y");
+                    NativeVideoView.this.f9400c.Code("y");
                     NativeVideoView.this.b.Code(false);
                     NativeVideoView.this.F.V(1.0f);
                 }
-                NativeVideoView.this.f23007a.B(false);
+                NativeVideoView.this.f9399a.B(false);
                 if (NativeVideoView.this.D != null) {
                     NativeVideoView.this.D.Code(false);
                 }
@@ -598,7 +597,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void Code(int i, boolean z) {
-        v vVar = this.f23008c;
+        v vVar = this.f9400c;
         if (vVar != null) {
             vVar.Code(z ? 0 : i);
         }
@@ -624,7 +623,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
         this.j.setScreenOnWhilePlaying(true);
         this.j.setAutoScaleResizeLayoutOnVideoSizeChange(false);
         j jVar = new j(this.j, this.i);
-        this.f23007a = jVar;
+        this.f9399a = jVar;
         jVar.Code(this.v);
         this.j.Code(this.r);
         this.j.Code(this.q);
@@ -635,7 +634,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
     }
 
     private void Code(MediaContent mediaContent) {
-        this.f23007a.Code(mediaContent.getImage());
+        this.f9399a.Code(mediaContent.getImage());
         if (mediaContent.getAspectRatio() > 0.0f) {
             setRatio(Float.valueOf(mediaContent.getAspectRatio()));
         }
@@ -689,7 +688,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
         ge.V(S, "setInnerListener");
         this.j.Code(this.s);
         this.j.Code(this.u);
-        this.f23007a.Z(!g());
+        this.f9399a.Z(!g());
     }
 
     private boolean c() {
@@ -704,7 +703,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
         if (this.B == null) {
             return;
         }
-        this.f23008c = this.B.B();
+        this.f9400c = this.B.B();
         if (this.B.ad() != null) {
             VideoConfiguration videoConfiguration = this.B.ad().getVideoConfiguration();
             if (videoConfiguration != null) {
@@ -714,26 +713,26 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
                 Code(true);
             }
         }
-        if (this.f23008c == null) {
-            this.f23007a.B();
+        if (this.f9400c == null) {
+            this.f9399a.B();
             return;
         }
-        this.f23007a.Code(this.j);
+        this.f9399a.Code(this.j);
         this.f = this.B.aj();
-        this.f23007a.Code(this.f23008c);
-        Float g = this.f23008c.g();
+        this.f9399a.Code(this.f9400c);
+        Float g = this.f9400c.g();
         Float f = g;
         if (g == null) {
             f = Float.valueOf(1.7777778f);
         }
         setRatio(f);
-        this.f23007a.B(this.f);
-        this.f23007a.Z(!g());
-        this.f23007a.V(getContinuePlayTime());
-        this.f23007a.I(this.f23008c.I());
-        this.f23007a.Z(this.f23008c.f());
-        this.b.Code(this.f23008c);
-        this.i.setNonWifiAlertMsg(this.f23008c.Z() > 0 ? getResources().getString(R.string.hiad_consume_data_to_play_video, au.Code(getContext(), this.f23008c.Z())) : getResources().getString(R.string.hiad_consume_data_to_play_video_no_data_size));
+        this.f9399a.B(this.f);
+        this.f9399a.Z(!g());
+        this.f9399a.V(getContinuePlayTime());
+        this.f9399a.I(this.f9400c.I());
+        this.f9399a.Z(this.f9400c.f());
+        this.b.Code(this.f9400c);
+        this.i.setNonWifiAlertMsg(this.f9400c.Z() > 0 ? getResources().getString(R.string.hiad_consume_data_to_play_video, au.Code(getContext(), this.f9400c.Z())) : getResources().getString(R.string.hiad_consume_data_to_play_video_no_data_size));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0023, code lost:
@@ -830,16 +829,16 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
 
     private void f() {
         this.e = false;
-        this.f23007a.S(true);
+        this.f9399a.S(true);
     }
 
     private boolean g() {
-        v vVar = this.f23008c;
+        v vVar = this.f9400c;
         return vVar != null && TextUtils.equals(vVar.a(), "y");
     }
 
     private int getContinuePlayTime() {
-        v vVar = this.f23008c;
+        v vVar = this.f9400c;
         int i = 0;
         if (vVar == null) {
             ge.Code(S, "getContinuePlayTime other");
@@ -853,20 +852,20 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
     }
 
     private String getTAG() {
-        return S + BridgeUtil.UNDERLINE_STR + hashCode();
+        return S + "_" + hashCode();
     }
 
     private boolean h() {
-        v vVar = this.f23008c;
+        v vVar = this.f9400c;
         if (vVar == null) {
             return false;
         }
-        if (vVar.L() >= this.f23008c.I()) {
-            this.f23008c.Code(0);
+        if (vVar.L() >= this.f9400c.I()) {
+            this.f9400c.Code(0);
             ge.V(S, "play progress bigger than video duration, skip autoPlay.");
             return false;
         }
-        v vVar2 = this.f23008c;
+        v vVar2 = this.f9400c;
         boolean z = false;
         if (vVar2 != null) {
             z = false;
@@ -910,11 +909,11 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
     }
 
     private boolean m() {
-        if (this.f23008c != null && ai.Z(getContext()) && h()) {
-            if (this.f23008c.f() == 1) {
+        if (this.f9400c != null && ai.Z(getContext()) && h()) {
+            if (this.f9400c.f() == 1) {
                 return true;
             }
-            return this.f23008c.f() == 0 && ai.I(getContext());
+            return this.f9400c.f() == 0 && ai.I(getContext());
         }
         return false;
     }
@@ -927,7 +926,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
     @Override // com.huawei.openalliance.ad.views.NativeMediaView
     protected void B() {
         ge.V(S, "onViewShownBetweenFullAndPartial");
-        this.f23007a.C(true);
+        this.f9399a.C(true);
         b();
     }
 
@@ -960,30 +959,30 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
         t tVar = new t(this.d, false);
         tVar.Code(drawable);
         this.l = new br(tVar);
-        this.f23007a.Code(drawable);
+        this.f9399a.Code(drawable);
     }
 
     @Override // com.huawei.hms.ads.la
     public void Code(v vVar, boolean z) {
         v vVar2;
         ge.V(S, "onCheckVideoResult: %s", Boolean.valueOf(z));
-        if (!z || (vVar2 = this.f23008c) == null || vVar == null || !TextUtils.equals(vVar2.V(), vVar.V())) {
+        if (!z || (vVar2 = this.f9400c) == null || vVar == null || !TextUtils.equals(vVar2.V(), vVar.V())) {
             return;
         }
         this.e = true;
-        this.f23007a.Code(vVar.V());
+        this.f9399a.Code(vVar.V());
         if (this.V) {
-            this.f23007a.V(getContinuePlayTime());
+            this.f9399a.V(getContinuePlayTime());
             boolean h = h();
             ge.V(S, "onCheckVideoResult - full shown, autoPlay: %s", Boolean.valueOf(h));
-            this.f23007a.I(h);
+            this.f9399a.I(h);
             if (m()) {
                 long S2 = vVar.S() - (System.currentTimeMillis() - this.h);
                 long j = S2;
                 if (S2 < 0) {
                     j = 0;
                 }
-                this.f23007a.Code(j);
+                this.f9399a.Code(j);
             }
         }
     }
@@ -996,14 +995,14 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
     public void Code(boolean z) {
         String str = S;
         ge.V(str, "customToggleVideoMute, customMuteState is " + z);
-        v vVar = this.f23008c;
+        v vVar = this.f9400c;
         if (vVar != null) {
             vVar.Code(z ? "n" : "y");
         }
     }
 
     public void D() {
-        this.f23007a.V(false);
+        this.f9399a.V(false);
     }
 
     public void F() {
@@ -1016,37 +1015,37 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
         this.g = false;
         this.j.V(this.s);
         this.j.V(this.u);
-        if (this.f23008c != null) {
-            this.f23007a.C(false);
-            this.f23007a.I(false);
-            this.f23007a.C();
-            this.f23007a.S();
+        if (this.f9400c != null) {
+            this.f9399a.C(false);
+            this.f9399a.I(false);
+            this.f9399a.C();
+            this.f9399a.S();
         }
     }
 
     public void L() {
-        this.f23007a.D();
+        this.f9399a.D();
     }
 
     @Override // com.huawei.hms.ads.la
     public void S() {
-        this.f23007a.S();
+        this.f9399a.S();
     }
 
     @Override // com.huawei.openalliance.ad.views.NativeMediaView
     protected void V() {
         this.h = System.currentTimeMillis();
-        this.f23007a.C(true);
-        Code(this.f23008c);
+        this.f9399a.C(true);
+        Code(this.f9400c);
         b();
         ge.V(S, "onViewFullShown hashCheckSuccess: %s", Boolean.valueOf(this.e));
         if (this.e) {
             boolean h = h();
             ge.V(S, "onViewFullShown autoplay: %s", Boolean.valueOf(h));
-            this.f23007a.I(h);
-            this.f23007a.V(getContinuePlayTime());
+            this.f9399a.I(h);
+            this.f9399a.V(getContinuePlayTime());
             if (m()) {
-                this.f23007a.Code(this.f23008c.S());
+                this.f9399a.Code(this.f9400c.S());
             }
         }
     }
@@ -1060,7 +1059,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
 
     public float getAspectRatio() {
         Float g;
-        v vVar = this.f23008c;
+        v vVar = this.f9400c;
         if (vVar == null || (g = vVar.g()) == null) {
             return 0.0f;
         }
@@ -1069,13 +1068,13 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
 
     @Override // com.huawei.openalliance.ad.views.NativeMediaView
     protected int getAutoPlayAreaPercentageThresshold() {
-        v vVar = this.f23008c;
+        v vVar = this.f9400c;
         return vVar != null ? vVar.c() : super.getAutoPlayAreaPercentageThresshold();
     }
 
     @Override // com.huawei.openalliance.ad.views.NativeMediaView
     protected int getHiddenAreaPercentageThreshhold() {
-        v vVar = this.f23008c;
+        v vVar = this.f9400c;
         return vVar != null ? Math.max(100 - vVar.d(), 0) : super.getHiddenAreaPercentageThreshhold();
     }
 
@@ -1109,12 +1108,12 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
 
     @Override // com.huawei.hms.ads.ls
     public void pauseView() {
-        this.f23007a.L();
+        this.f9399a.L();
     }
 
     @Override // com.huawei.hms.ads.ls
     public void resumeView() {
-        this.f23007a.a();
+        this.f9399a.a();
         ge.V(S, "resumeView");
         b();
         this.V = false;
@@ -1127,7 +1126,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
     }
 
     public void setCoverClickListener(View.OnClickListener onClickListener) {
-        this.f23007a.Code(onClickListener);
+        this.f9399a.Code(onClickListener);
     }
 
     public void setMediaContent(MediaContent mediaContent) {
@@ -1155,10 +1154,10 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
         if (this.B != null) {
             e();
             d();
-            this.f23007a.C(false);
+            this.f9399a.C(false);
         } else {
-            this.f23007a.Z(true);
-            this.f23008c = null;
+            this.f9399a.Z(true);
+            this.f9400c = null;
             this.l = null;
         }
         if (!h() || g()) {
@@ -1168,7 +1167,7 @@ public class NativeVideoView extends NativeMediaView implements hr, la, ls {
     }
 
     public void setNotShowDataUsageAlert(boolean z) {
-        this.f23007a.F(z);
+        this.f9399a.F(z);
     }
 
     @Override // com.huawei.hms.ads.la

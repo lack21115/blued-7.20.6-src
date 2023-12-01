@@ -6,7 +6,7 @@ import android.content.Context;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.tencent.thumbplayer.d.c f39364a = new com.tencent.thumbplayer.d.c();
+    private com.tencent.thumbplayer.d.c f25673a = new com.tencent.thumbplayer.d.c();
     private Context b;
 
     public a(Context context) {
@@ -18,6 +18,6 @@ public class a {
     }
 
     public com.tencent.thumbplayer.d.c b() {
-        return this.f39364a;
+        return this.f25673a;
     }
 }

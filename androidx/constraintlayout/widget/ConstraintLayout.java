@@ -18,7 +18,6 @@ import androidx.constraintlayout.core.widgets.ConstraintAnchor;
 import androidx.constraintlayout.core.widgets.ConstraintWidget;
 import androidx.constraintlayout.core.widgets.ConstraintWidgetContainer;
 import androidx.constraintlayout.core.widgets.analyzer.BasicMeasure;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -65,28 +64,28 @@ public class ConstraintLayout extends ViewGroup {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2254a;
+        static final /* synthetic */ int[] f2206a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[ConstraintWidget.DimensionBehaviour.values().length];
-            f2254a = iArr;
+            f2206a = iArr;
             try {
                 iArr[ConstraintWidget.DimensionBehaviour.FIXED.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2254a[ConstraintWidget.DimensionBehaviour.WRAP_CONTENT.ordinal()] = 2;
+                f2206a[ConstraintWidget.DimensionBehaviour.WRAP_CONTENT.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2254a[ConstraintWidget.DimensionBehaviour.MATCH_PARENT.ordinal()] = 3;
+                f2206a[ConstraintWidget.DimensionBehaviour.MATCH_PARENT.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2254a[ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT.ordinal()] = 4;
+                f2206a[ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -120,7 +119,7 @@ public class ConstraintLayout extends ViewGroup {
         public static final int WRAP_BEHAVIOR_VERTICAL_ONLY = 2;
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f2255a;
+        boolean f2207a;
         boolean b;
         public int baselineMargin;
         public int baselineToBaseline;
@@ -130,7 +129,7 @@ public class ConstraintLayout extends ViewGroup {
         public int bottomToTop;
 
         /* renamed from: c  reason: collision with root package name */
-        float f2256c;
+        float f2208c;
         public float circleAngle;
         public int circleConstraint;
         public int circleRadius;
@@ -362,12 +361,12 @@ public class ConstraintLayout extends ViewGroup {
             this.goneEndMargin = Integer.MIN_VALUE;
             this.goneBaselineMargin = Integer.MIN_VALUE;
             this.baselineMargin = 0;
-            this.f2255a = true;
+            this.f2207a = true;
             this.b = true;
             this.horizontalBias = 0.5f;
             this.verticalBias = 0.5f;
             this.dimensionRatio = null;
-            this.f2256c = 0.0f;
+            this.f2208c = 0.0f;
             this.d = 1;
             this.horizontalWeight = -1.0f;
             this.verticalWeight = -1.0f;
@@ -438,12 +437,12 @@ public class ConstraintLayout extends ViewGroup {
             this.goneEndMargin = Integer.MIN_VALUE;
             this.goneBaselineMargin = Integer.MIN_VALUE;
             this.baselineMargin = 0;
-            this.f2255a = true;
+            this.f2207a = true;
             this.b = true;
             this.horizontalBias = 0.5f;
             this.verticalBias = 0.5f;
             this.dimensionRatio = null;
-            this.f2256c = 0.0f;
+            this.f2208c = 0.0f;
             this.d = 1;
             this.horizontalWeight = -1.0f;
             this.verticalWeight = -1.0f;
@@ -801,7 +800,7 @@ public class ConstraintLayout extends ViewGroup {
                                 switch (i3) {
                                     case 64:
                                         ConstraintSet.a(this, obtainStyledAttributes, index, 0);
-                                        this.f2255a = true;
+                                        this.f2207a = true;
                                         continue;
                                     case 65:
                                         ConstraintSet.a(this, obtainStyledAttributes, index, 1);
@@ -853,12 +852,12 @@ public class ConstraintLayout extends ViewGroup {
             this.goneEndMargin = Integer.MIN_VALUE;
             this.goneBaselineMargin = Integer.MIN_VALUE;
             this.baselineMargin = 0;
-            this.f2255a = true;
+            this.f2207a = true;
             this.b = true;
             this.horizontalBias = 0.5f;
             this.verticalBias = 0.5f;
             this.dimensionRatio = null;
-            this.f2256c = 0.0f;
+            this.f2208c = 0.0f;
             this.d = 1;
             this.horizontalWeight = -1.0f;
             this.verticalWeight = -1.0f;
@@ -929,12 +928,12 @@ public class ConstraintLayout extends ViewGroup {
             this.goneEndMargin = Integer.MIN_VALUE;
             this.goneBaselineMargin = Integer.MIN_VALUE;
             this.baselineMargin = 0;
-            this.f2255a = true;
+            this.f2207a = true;
             this.b = true;
             this.horizontalBias = 0.5f;
             this.verticalBias = 0.5f;
             this.dimensionRatio = null;
-            this.f2256c = 0.0f;
+            this.f2208c = 0.0f;
             this.d = 1;
             this.horizontalWeight = -1.0f;
             this.verticalWeight = -1.0f;
@@ -1004,7 +1003,7 @@ public class ConstraintLayout extends ViewGroup {
             this.horizontalBias = layoutParams.horizontalBias;
             this.verticalBias = layoutParams.verticalBias;
             this.dimensionRatio = layoutParams.dimensionRatio;
-            this.f2256c = layoutParams.f2256c;
+            this.f2208c = layoutParams.f2208c;
             this.d = layoutParams.d;
             this.horizontalWeight = layoutParams.horizontalWeight;
             this.verticalWeight = layoutParams.verticalWeight;
@@ -1037,7 +1036,7 @@ public class ConstraintLayout extends ViewGroup {
             this.constraintTag = layoutParams.constraintTag;
             this.wrapBehaviorInParent = layoutParams.wrapBehaviorInParent;
             this.v = layoutParams.v;
-            this.f2255a = layoutParams.f2255a;
+            this.f2207a = layoutParams.f2207a;
             this.b = layoutParams.b;
         }
 
@@ -1130,18 +1129,18 @@ public class ConstraintLayout extends ViewGroup {
     public class Measurer implements BasicMeasure.Measurer {
 
         /* renamed from: a  reason: collision with root package name */
-        ConstraintLayout f2257a;
+        ConstraintLayout f2209a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f2258c;
+        int f2210c;
         int d;
         int e;
         int f;
         int g;
 
         public Measurer(ConstraintLayout constraintLayout) {
-            this.f2257a = constraintLayout;
+            this.f2209a = constraintLayout;
         }
 
         private boolean a(int i, int i2, int i3) {
@@ -1160,7 +1159,7 @@ public class ConstraintLayout extends ViewGroup {
 
         public void captureLayoutInfo(int i, int i2, int i3, int i4, int i5, int i6) {
             this.b = i3;
-            this.f2258c = i4;
+            this.f2210c = i4;
             this.d = i5;
             this.e = i6;
             this.f = i;
@@ -1169,20 +1168,20 @@ public class ConstraintLayout extends ViewGroup {
 
         @Override // androidx.constraintlayout.core.widgets.analyzer.BasicMeasure.Measurer
         public final void didMeasures() {
-            int childCount = this.f2257a.getChildCount();
+            int childCount = this.f2209a.getChildCount();
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= childCount) {
                     break;
                 }
-                View childAt = this.f2257a.getChildAt(i2);
+                View childAt = this.f2209a.getChildAt(i2);
                 if (childAt instanceof Placeholder) {
-                    ((Placeholder) childAt).updatePostMeasure(this.f2257a);
+                    ((Placeholder) childAt).updatePostMeasure(this.f2209a);
                 }
                 i = i2 + 1;
             }
-            int size = this.f2257a.mConstraintHelpers.size();
+            int size = this.f2209a.mConstraintHelpers.size();
             if (size <= 0) {
                 return;
             }
@@ -1192,7 +1191,7 @@ public class ConstraintLayout extends ViewGroup {
                 if (i4 >= size) {
                     return;
                 }
-                ((ConstraintHelper) this.f2257a.mConstraintHelpers.get(i4)).updatePostMeasure(this.f2257a);
+                ((ConstraintHelper) this.f2209a.mConstraintHelpers.get(i4)).updatePostMeasure(this.f2209a);
                 i3 = i4 + 1;
             }
         }
@@ -1788,9 +1787,8 @@ public class ConstraintLayout extends ViewGroup {
         constraintWidget.setVerticalMatchStyle(layoutParams.matchConstraintDefaultHeight, layoutParams.matchConstraintMinHeight, layoutParams.matchConstraintMaxHeight, layoutParams.matchConstraintPercentHeight);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return layoutParams instanceof LayoutParams;
     }
 
@@ -1871,9 +1869,8 @@ public class ConstraintLayout extends ViewGroup {
         return new LayoutParams(-2, -2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return new LayoutParams(layoutParams);
     }
 
@@ -2169,7 +2166,7 @@ public class ConstraintLayout extends ViewGroup {
                 this.mDesignIds = new HashMap<>();
             }
             String str = (String) obj;
-            int indexOf = str.indexOf(BridgeUtil.SPLIT_MARK);
+            int indexOf = str.indexOf("/");
             String str2 = str;
             if (indexOf != -1) {
                 str2 = str.substring(indexOf + 1);

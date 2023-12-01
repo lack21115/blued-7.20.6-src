@@ -7,20 +7,20 @@ import java.util.List;
 public class f<T extends c> implements d<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<d<T>> f27392a;
+    private List<d<T>> f13704a;
 
     public f(List<d<T>> list) {
-        this.f27392a = list;
+        this.f13704a = list;
     }
 
     public boolean a(T t) {
-        List<d<T>> list = this.f27392a;
+        List<d<T>> list = this.f13704a;
         boolean z = true;
         if (list != null) {
             if (list.size() <= 0) {
                 return true;
             }
-            for (d<T> dVar : this.f27392a) {
+            for (d<T> dVar : this.f13704a) {
                 if (dVar.a(t)) {
                     return true;
                 }

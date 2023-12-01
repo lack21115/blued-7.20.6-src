@@ -9,7 +9,6 @@ import android.net.SntpClient;
 import android.os.SystemClock;
 import android.provider.Settings;
 import android.text.TextUtils;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/util/NtpTrustedTime.class */
 public class NtpTrustedTime implements TrustedTime {
@@ -37,8 +36,8 @@ public class NtpTrustedTime implements TrustedTime {
                 if (sSingleton == null) {
                     Resources resources = context.getResources();
                     ContentResolver contentResolver = context.getContentResolver();
-                    String string = resources.getString(R.string.config_ntpServer);
-                    long integer = resources.getInteger(R.integer.config_ntpTimeout);
+                    String string = resources.getString(17039611);
+                    long integer = resources.getInteger(17694839);
                     String string2 = Settings.Global.getString(contentResolver, Settings.Global.NTP_SERVER);
                     long j = Settings.Global.getLong(contentResolver, Settings.Global.NTP_TIMEOUT, integer);
                     if (string2 != null) {

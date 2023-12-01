@@ -14,11 +14,11 @@ import java.util.regex.Pattern;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f25482a = Pattern.compile("^rgb\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3})\\)$");
+    private static final Pattern f11794a = Pattern.compile("^rgb\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3})\\)$");
     private static final Pattern b = Pattern.compile("^rgba\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3}),(\\d{1,3})\\)$");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f25483c = Pattern.compile("^rgba\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3}),(\\d*\\.?\\d*?)\\)$");
+    private static final Pattern f11795c = Pattern.compile("^rgba\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3}),(\\d*\\.?\\d*?)\\)$");
     private static final Map<String, Integer> d;
 
     static {
@@ -205,12 +205,12 @@ public final class d {
             throw new IllegalArgumentException();
         }
         if (replace.startsWith("rgba")) {
-            Matcher matcher = (z ? f25483c : b).matcher(replace);
+            Matcher matcher = (z ? f11795c : b).matcher(replace);
             if (matcher.matches()) {
                 return a(z ? (int) (Float.parseFloat(matcher.group(4)) * 255.0f) : Integer.parseInt(matcher.group(4), 10), Integer.parseInt(matcher.group(1), 10), Integer.parseInt(matcher.group(2), 10), Integer.parseInt(matcher.group(3), 10));
             }
         } else if (replace.startsWith("rgb")) {
-            Matcher matcher2 = f25482a.matcher(replace);
+            Matcher matcher2 = f11794a.matcher(replace);
             if (matcher2.matches()) {
                 return a(Integer.parseInt(matcher2.group(1), 10), Integer.parseInt(matcher2.group(2), 10), Integer.parseInt(matcher2.group(3), 10));
             }

@@ -37,13 +37,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopRankingHourPreviousView.class */
 public final class PopRankingHourPreviousView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15134a;
+    private final Context a;
     private final BaseFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final IRequestHost f15135c;
+    private final IRequestHost c;
     private final Lazy d;
     private FreedomAdapter e;
     private ArrayList<FreedomItem> f;
@@ -54,9 +50,9 @@ public final class PopRankingHourPreviousView extends FrameLayout {
         Intrinsics.e(mContext, "mContext");
         Intrinsics.e(fragment, "fragment");
         Intrinsics.e(requestHost, "requestHost");
-        this.f15134a = mContext;
+        this.a = mContext;
         this.b = fragment;
-        this.f15135c = requestHost;
+        this.c = requestHost;
         this.d = LazyKt.a(new Function0<PopWindowRankingListHourBinding>() { // from class: com.blued.android.module.live_china.view.PopRankingHourPreviousView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -66,13 +62,13 @@ public final class PopRankingHourPreviousView extends FrameLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final PopWindowRankingListHourBinding invoke() {
-                PopWindowRankingListHourBinding a2 = PopWindowRankingListHourBinding.a(LayoutInflater.from(PopRankingHourPreviousView.this.getContext()).inflate(R.layout.pop_window_ranking_list_hour, PopRankingHourPreviousView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…ist_hour, this)\n        )");
-                return a2;
+                PopWindowRankingListHourBinding a = PopWindowRankingListHourBinding.a(LayoutInflater.from(PopRankingHourPreviousView.this.getContext()).inflate(R.layout.pop_window_ranking_list_hour, PopRankingHourPreviousView.this));
+                Intrinsics.c(a, "bind(\n            Layout…ist_hour, this)\n        )");
+                return a;
             }
         });
         this.f = new ArrayList<>();
-        LiveRoomHttpUtils.m(LiveRoomManager.a().g(), new BluedUIHttpResponse<BluedEntity<RankHourHistoryDataModel, RankHourExtraModel>>(this.f15135c) { // from class: com.blued.android.module.live_china.view.PopRankingHourPreviousView.1
+        LiveRoomHttpUtils.m(LiveRoomManager.a().g(), new BluedUIHttpResponse<BluedEntity<RankHourHistoryDataModel, RankHourExtraModel>>(this.c) { // from class: com.blued.android.module.live_china.view.PopRankingHourPreviousView.1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 PopWindowRankingListHourBinding vb = PopRankingHourPreviousView.this.getVb();
@@ -117,7 +113,7 @@ public final class PopRankingHourPreviousView extends FrameLayout {
                 }
                 PopRankingHourPreviousView.this.a(rankHourExtraModel);
             }
-        }, this.f15135c);
+        }, this.c);
         EventTrackLive.a(LiveProtos.Event.LIVE_HOUR_LIST_TIME_TAB_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g());
     }
 
@@ -148,7 +144,7 @@ public final class PopRankingHourPreviousView extends FrameLayout {
             freedomAdapter.notifyDataSetChanged();
             return;
         }
-        FreedomAdapter freedomAdapter2 = new FreedomAdapter(getContext(), this.f15135c, this.f);
+        FreedomAdapter freedomAdapter2 = new FreedomAdapter(getContext(), this.c, this.f);
         this.e = freedomAdapter2;
         Intrinsics.a(freedomAdapter2);
         freedomAdapter2.b("BaseFragment", this.b);
@@ -190,14 +186,14 @@ public final class PopRankingHourPreviousView extends FrameLayout {
                 return;
             }
             RankHourHistoryDataModel next = it.next();
-            String a2 = a(next);
-            if (a2 == null) {
+            String a = a(next);
+            if (a == null) {
                 str = str3;
             } else {
                 str = str3;
-                if (!Intrinsics.a((Object) str3, (Object) a2)) {
-                    this.f.add(new FitemRankHourHistoryTitle(a2, str3.length() == 0));
-                    str = a2;
+                if (!Intrinsics.a((Object) str3, (Object) a)) {
+                    this.f.add(new FitemRankHourHistoryTitle(a, str3.length() == 0));
+                    str = a;
                 }
             }
             this.f.add(new FitemRankHourHistory(next));
@@ -215,10 +211,10 @@ public final class PopRankingHourPreviousView extends FrameLayout {
     }
 
     public final Context getMContext() {
-        return this.f15134a;
+        return this.a;
     }
 
     public final IRequestHost getRequestHost() {
-        return this.f15135c;
+        return this.c;
     }
 }

@@ -11,24 +11,24 @@ import java.util.List;
 public class In extends BaseComparison {
 
     /* renamed from: in  reason: collision with root package name */
-    private final boolean f23675in;
+    private final boolean f10067in;
     private Iterable<?> objects;
 
     public In(String str, FieldType fieldType, Iterable<?> iterable, boolean z) throws SQLException {
         super(str, fieldType, null, true);
         this.objects = iterable;
-        this.f23675in = z;
+        this.f10067in = z;
     }
 
     public In(String str, FieldType fieldType, Object[] objArr, boolean z) throws SQLException {
         super(str, fieldType, null, true);
         this.objects = Arrays.asList(objArr);
-        this.f23675in = z;
+        this.f10067in = z;
     }
 
     @Override // com.j256.ormlite.stmt.query.BaseComparison, com.j256.ormlite.stmt.query.Comparison
     public void appendOperation(StringBuilder sb) {
-        if (this.f23675in) {
+        if (this.f10067in) {
             sb.append("IN ");
         } else {
             sb.append("NOT IN ");

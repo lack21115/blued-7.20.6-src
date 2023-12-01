@@ -1,7 +1,6 @@
 package com.tencent.cos.xml.transfer;
 
 import android.util.Xml;
-import com.alipay.sdk.packet.e;
 import com.opos.acs.st.STManager;
 import com.tencent.cos.xml.model.tag.AccelerateConfiguration;
 import com.tencent.cos.xml.model.tag.AccessControlPolicy;
@@ -679,7 +678,7 @@ public class XmlParser extends XmlSlimParser {
                     owner = owner2;
                     version = version2;
                     commonPrefixes = commonPrefixes2;
-                } else if (name.equalsIgnoreCase(e.e)) {
+                } else if (name.equalsIgnoreCase("Version")) {
                     version = new ListVersionResult.Version();
                     owner = owner2;
                     deleteMarker = deleteMarker2;
@@ -731,7 +730,7 @@ public class XmlParser extends XmlSlimParser {
                         version = version2;
                         commonPrefixes = commonPrefixes2;
                     }
-                } else if (name2.equalsIgnoreCase(e.e)) {
+                } else if (name2.equalsIgnoreCase("Version")) {
                     owner = owner2;
                     deleteMarker = deleteMarker2;
                     version = version2;
@@ -1444,7 +1443,7 @@ public class XmlParser extends XmlSlimParser {
                 } else if (name.equalsIgnoreCase("DeleteMarker")) {
                     objectVersion = new ListBucketVersions.DeleteMarker();
                     owner = owner3;
-                } else if (name.equalsIgnoreCase(e.e)) {
+                } else if (name.equalsIgnoreCase("Version")) {
                     objectVersion = new ListBucketVersions.Version();
                     owner = owner3;
                 } else if (name.equalsIgnoreCase("Key")) {
@@ -1510,7 +1509,7 @@ public class XmlParser extends XmlSlimParser {
                     } else {
                         objectVersion = objectVersion2;
                         owner = owner3;
-                        if (name2.equalsIgnoreCase(e.e)) {
+                        if (name2.equalsIgnoreCase("Version")) {
                             listBucketVersions.objectVersionList.add(objectVersion2);
                         }
                     }

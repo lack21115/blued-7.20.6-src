@@ -15,6 +15,7 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -80,6 +81,7 @@ import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.android.module.yy_china.view.YYConfessedListDialog;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
@@ -89,16 +91,13 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYImMsgAdapter.class */
 public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f16183a;
+    private final int a;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f16184c;
+    private final int c;
     private final int d;
     private final int e;
     private final int f;
@@ -118,10 +117,10 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
     private YYGiftModel t;
 
     public YYImMsgAdapter(BaseYYStudioFragment baseYYStudioFragment) {
-        super(null);
-        this.f16183a = 6;
+        super((List) null);
+        this.a = 6;
         this.b = 7;
-        this.f16184c = 8;
+        this.c = 8;
         this.d = 9;
         this.e = 14;
         this.f = 15;
@@ -237,7 +236,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
             sb.append(" ");
             YYRoomInfoManager.e().a(this.m.getFragmentActive(), imageView, yYAudienceModel.getUid(), yYAudienceModel.getAvatar());
         }
-        YYMsgUpSeatExtra yYMsgUpSeatExtra = (YYMsgUpSeatExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgUpSeatExtra.class);
+        YYMsgUpSeatExtra yYMsgUpSeatExtra = (YYMsgUpSeatExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgUpSeatExtra.class);
         if (yYMsgUpSeatExtra != null) {
             if (yYMsgUpSeatExtra.seat_num == 0 && TextUtils.equals(b.chat_type, "9")) {
                 sb.append("已上到主持位");
@@ -261,7 +260,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
     private void F(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_msg_title);
         TextView textView2 = (TextView) baseViewHolder.getView(R.id.tv_msg_content);
-        YYMsgOfficeExtra yYMsgOfficeExtra = (YYMsgOfficeExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgOfficeExtra.class);
+        YYMsgOfficeExtra yYMsgOfficeExtra = (YYMsgOfficeExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgOfficeExtra.class);
         if (yYMsgOfficeExtra != null) {
             if (TextUtils.isEmpty(yYMsgOfficeExtra.text_color)) {
                 textView.setTextColor(textView2.getResources().getColor(R.color.syc_00E0AB));
@@ -288,7 +287,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
     private void G(final BaseViewHolder baseViewHolder, final YYImModel yYImModel) {
         String str;
         int i;
-        final ConstraintLayout constraintLayout;
+        final View view;
         SquareImageView squareImageView;
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_header);
         final TextView textView = (TextView) baseViewHolder.getView(R.id.txt_view);
@@ -302,12 +301,12 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
                 str = this.mContext.getResources().getString(R.string.yy_role_host);
                 i = R.color.syc_3883FD;
             }
-            constraintLayout = (ConstraintLayout) baseViewHolder.itemView.findViewById(R.id.ll_item_root);
+            view = (ConstraintLayout) baseViewHolder.itemView.findViewById(R.id.ll_item_root);
             squareImageView = (SquareImageView) baseViewHolder.itemView.findViewById(R.id.iv_decorate);
-            constraintLayout.setBackgroundResource(R.drawable.shape_raduis_16_tran_30_000000);
+            view.setBackgroundResource(R.drawable.shape_raduis_16_tran_30_000000);
             squareImageView.setImageResource(R.color.transparent);
             if (yYImModel.source_profile != null && !StringUtils.b(yYImModel.source_profile.message_bubble_img)) {
-                a(constraintLayout, yYImModel.source_profile.message_bubble_img);
+                a(view, yYImModel.source_profile.message_bubble_img);
                 ImageLoader.a(this.m.getFragmentActive(), yYImModel.source_profile.message_bubble_icon).g().g(-1).a(squareImageView);
             }
             textView.setText(a(YYCommonStringUtils.a(this.mContext, textView, yYImModel, str, i, YYRoomInfoManager.e().a(yYAudienceModel.getUid(), yYAudienceModel.getName()), yYImModel.contents)));
@@ -315,32 +314,32 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
                 @Override // java.lang.Runnable
                 public void run() {
                     ConstraintSet constraintSet = new ConstraintSet();
-                    constraintSet.clone(constraintLayout);
+                    constraintSet.clone(view);
                     if (textView.getLineCount() <= 1) {
                         constraintSet.connect(R.id.txt_view, 3, R.id.iv_header, 3);
                         constraintSet.connect(R.id.txt_view, 4, R.id.iv_header, 4);
                     } else {
                         constraintSet.connect(R.id.txt_view, 3, R.id.iv_header, 3);
                     }
-                    constraintSet.applyTo(constraintLayout);
-                    ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) textView.getLayoutParams();
+                    constraintSet.applyTo(view);
+                    ViewGroup.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) textView.getLayoutParams();
                     if (yYImModel.source_profile != null) {
                         if (yYImModel.source_profile.wealth_level >= 20) {
-                            layoutParams.rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_20);
+                            ((ConstraintLayout.LayoutParams) layoutParams).rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_20);
                         } else {
-                            layoutParams.rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_4);
+                            ((ConstraintLayout.LayoutParams) layoutParams).rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_4);
                         }
                     } else if (StringUtils.b(yYImModel.source_profile.message_bubble_icon)) {
-                        layoutParams.rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_4);
+                        ((ConstraintLayout.LayoutParams) layoutParams).rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_4);
                     } else {
-                        layoutParams.rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_20);
+                        ((ConstraintLayout.LayoutParams) layoutParams).rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_20);
                     }
                     textView.setLayoutParams(layoutParams);
                 }
             });
             textView.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYImMsgAdapter.9
                 @Override // android.view.View.OnLongClickListener
-                public boolean onLongClick(View view) {
+                public boolean onLongClick(View view2) {
                     YYImMsgAdapter.this.a(baseViewHolder.getAdapterPosition());
                     return true;
                 }
@@ -350,12 +349,12 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
         }
         str = "";
         i = 0;
-        constraintLayout = (ConstraintLayout) baseViewHolder.itemView.findViewById(R.id.ll_item_root);
+        view = (ConstraintLayout) baseViewHolder.itemView.findViewById(R.id.ll_item_root);
         squareImageView = (SquareImageView) baseViewHolder.itemView.findViewById(R.id.iv_decorate);
-        constraintLayout.setBackgroundResource(R.drawable.shape_raduis_16_tran_30_000000);
+        view.setBackgroundResource(R.drawable.shape_raduis_16_tran_30_000000);
         squareImageView.setImageResource(R.color.transparent);
         if (yYImModel.source_profile != null) {
-            a(constraintLayout, yYImModel.source_profile.message_bubble_img);
+            a(view, yYImModel.source_profile.message_bubble_img);
             ImageLoader.a(this.m.getFragmentActive(), yYImModel.source_profile.message_bubble_icon).g().g(-1).a(squareImageView);
         }
         textView.setText(a(YYCommonStringUtils.a(this.mContext, textView, yYImModel, str, i, YYRoomInfoManager.e().a(yYAudienceModel.getUid(), yYAudienceModel.getName()), yYImModel.contents)));
@@ -363,32 +362,32 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
             @Override // java.lang.Runnable
             public void run() {
                 ConstraintSet constraintSet = new ConstraintSet();
-                constraintSet.clone(constraintLayout);
+                constraintSet.clone(view);
                 if (textView.getLineCount() <= 1) {
                     constraintSet.connect(R.id.txt_view, 3, R.id.iv_header, 3);
                     constraintSet.connect(R.id.txt_view, 4, R.id.iv_header, 4);
                 } else {
                     constraintSet.connect(R.id.txt_view, 3, R.id.iv_header, 3);
                 }
-                constraintSet.applyTo(constraintLayout);
-                ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) textView.getLayoutParams();
+                constraintSet.applyTo(view);
+                ViewGroup.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) textView.getLayoutParams();
                 if (yYImModel.source_profile != null) {
                     if (yYImModel.source_profile.wealth_level >= 20) {
-                        layoutParams.rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_20);
+                        ((ConstraintLayout.LayoutParams) layoutParams).rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_20);
                     } else {
-                        layoutParams.rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_4);
+                        ((ConstraintLayout.LayoutParams) layoutParams).rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_4);
                     }
                 } else if (StringUtils.b(yYImModel.source_profile.message_bubble_icon)) {
-                    layoutParams.rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_4);
+                    ((ConstraintLayout.LayoutParams) layoutParams).rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_4);
                 } else {
-                    layoutParams.rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_20);
+                    ((ConstraintLayout.LayoutParams) layoutParams).rightMargin = textView.getResources().getDimensionPixelOffset(R.dimen.dp_20);
                 }
                 textView.setLayoutParams(layoutParams);
             }
         });
         textView.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYImMsgAdapter.9
             @Override // android.view.View.OnLongClickListener
-            public boolean onLongClick(View view) {
+            public boolean onLongClick(View view2) {
                 YYImMsgAdapter.this.a(baseViewHolder.getAdapterPosition());
                 return true;
             }
@@ -402,7 +401,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
         TextView textView = (TextView) baseViewHolder.getView(R.id.txt_view);
         YYAudienceModel yYAudienceModel = yYImModel.source_profile;
         YYRoomModel b = YYRoomInfoManager.e().b();
-        if (YYRoomInfoManager.e().f17578a == null || yYAudienceModel == null || b == null) {
+        if (YYRoomInfoManager.e().a == null || yYAudienceModel == null || b == null) {
             return;
         }
         StringBuilder sb = new StringBuilder();
@@ -416,9 +415,9 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
             sb.append(str);
             sb.append(b.welcome_info.getContent());
         }
-        SpannableStringBuilder a2 = YYCommonStringUtils.a(this.mContext, textView, null, "", R.color.syc_8F38FD, "", sb.toString());
+        SpannableStringBuilder a = YYCommonStringUtils.a(this.mContext, textView, null, "", R.color.syc_8F38FD, "", sb.toString());
         a(imageView, yYAudienceModel);
-        textView.setText(a(a2));
+        textView.setText(a(a));
         textView.setMovementMethod(LinkMovementMethod.getInstance());
         View view = (ConstraintLayout) baseViewHolder.itemView.findViewById(R.id.ll_item_root);
         SquareImageView squareImageView = (SquareImageView) baseViewHolder.itemView.findViewById(R.id.iv_decorate);
@@ -437,7 +436,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
         final ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.tv_action);
         final YYAudienceModel yYAudienceModel = yYImModel.source_profile;
         final YYRoomModel b = YYRoomInfoManager.e().b();
-        final YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        final YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo == null || yYAudienceModel == null || b == null) {
             return;
         }
@@ -464,9 +463,9 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
             sb.append(str);
             sb.append("进来陪你聊天");
         }
-        SpannableStringBuilder a2 = YYCommonStringUtils.a(this.mContext, textView, null, TextUtils.equals("2", yYAudienceModel.chat_anchor) ? this.mContext.getResources().getString(R.string.yy_role_manager) : "", R.color.syc_8F38FD, "", sb.toString());
+        SpannableStringBuilder a = YYCommonStringUtils.a(this.mContext, textView, null, TextUtils.equals("2", yYAudienceModel.chat_anchor) ? this.mContext.getResources().getString(R.string.yy_role_manager) : "", R.color.syc_8F38FD, "", sb.toString());
         a(imageView, yYAudienceModel);
-        textView.setText(a(a2));
+        textView.setText(a(a));
         textView.setMovementMethod(LinkMovementMethod.getInstance());
         shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYImMsgAdapter.10
             @Override // android.view.View.OnClickListener
@@ -577,9 +576,9 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
         sb.append(" 已将 ");
         sb.append(YYRoomInfoManager.e().a(yYAudienceModel2.getUid(), yYAudienceModel2.getName()));
         sb.append(" 禁言");
-        SpannableStringBuilder a2 = YYCommonStringUtils.a(this.mContext, textView, (YYImModel) null, str, i, YYRoomInfoManager.e().a(yYAudienceModel.getUid(), yYAudienceModel.getName()), sb.toString(), false);
-        a2.setSpan(new ForegroundColorSpan(Color.parseColor("#00E0AB")), a2.length() - 2, a2.length(), 33);
-        textView.setText(a2);
+        SpannableStringBuilder a = YYCommonStringUtils.a(this.mContext, textView, (YYImModel) null, str, i, YYRoomInfoManager.e().a(yYAudienceModel.getUid(), yYAudienceModel.getName()), sb.toString(), false);
+        a.setSpan(new ForegroundColorSpan(Color.parseColor("#00E0AB")), a.length() - 2, a.length(), 33);
+        textView.setText(a);
     }
 
     private void N(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
@@ -614,9 +613,9 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
         sb.append(" 已将 ");
         sb.append(YYRoomInfoManager.e().a(yYAudienceModel2.getUid(), yYAudienceModel2.getName()));
         sb.append(" 解除禁言");
-        SpannableStringBuilder a2 = YYCommonStringUtils.a(this.mContext, textView, (YYImModel) null, str, i, YYRoomInfoManager.e().a(yYAudienceModel.getUid(), yYAudienceModel.getName()), sb.toString(), false);
-        a2.setSpan(new ForegroundColorSpan(Color.parseColor("#00E0AB")), a2.length() - 4, a2.length(), 33);
-        textView.setText(a2);
+        SpannableStringBuilder a = YYCommonStringUtils.a(this.mContext, textView, (YYImModel) null, str, i, YYRoomInfoManager.e().a(yYAudienceModel.getUid(), yYAudienceModel.getName()), sb.toString(), false);
+        a.setSpan(new ForegroundColorSpan(Color.parseColor("#00E0AB")), a.length() - 4, a.length(), 33);
+        textView.setText(a);
     }
 
     private int a(String str) {
@@ -808,7 +807,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
 
     private void b(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_msg_content);
-        IMJsonContents112Model iMJsonContents112Model = (IMJsonContents112Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) IMJsonContents112Model.class);
+        IMJsonContents112Model iMJsonContents112Model = (IMJsonContents112Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), IMJsonContents112Model.class);
         if (iMJsonContents112Model == null) {
             return;
         }
@@ -819,14 +818,14 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
     public void b(String str, String str2, String str3) {
         YYRoomModel b;
         YYUserInfo yYUserInfo;
-        if (TextUtils.isEmpty(str) || (b = YYRoomInfoManager.e().b()) == null || (yYUserInfo = YYRoomInfoManager.e().f17578a) == null) {
+        if (TextUtils.isEmpty(str) || (b = YYRoomInfoManager.e().b()) == null || (yYUserInfo = YYRoomInfoManager.e().a) == null) {
             return;
         }
         this.m.a(str, str2, str3, yYUserInfo.chat_anchor, b.isExistById(str));
     }
 
     private void c(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
-        IMJsonContents108Model iMJsonContents108Model = (IMJsonContents108Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) IMJsonContents108Model.class);
+        IMJsonContents108Model iMJsonContents108Model = (IMJsonContents108Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), IMJsonContents108Model.class);
         if (iMJsonContents108Model == null) {
             return;
         }
@@ -854,7 +853,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
     }
 
     private void d(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
-        ItemYyRelationSuccessBinding a2 = ItemYyRelationSuccessBinding.a(baseViewHolder.itemView);
+        ItemYyRelationSuccessBinding a = ItemYyRelationSuccessBinding.a(baseViewHolder.itemView);
         if (yYImModel.extra instanceof YYRelationShipSuccessImMode) {
             final YYRelationShipSuccessImMode yYRelationShipSuccessImMode = (YYRelationShipSuccessImMode) yYImModel.extra;
             if (!yYRelationShipSuccessImMode.isUp() && yYRelationShipSuccessImMode.getStatus() == 3) {
@@ -864,9 +863,9 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
                     EventTrackYY.a(ChatRoomProtos.Event.YY_RELATION_GUIDE_MSG_SHOW, YYRoomInfoManager.e().b().room_id, YYRoomInfoManager.e().b().uid, buried_point_data.getRelation_id(), StringUtils.a(YYRoomInfoManager.e().k(), buried_point_data.getUid()) ? buried_point_data.getTarget_uid() : buried_point_data.getUid(), buried_point_data.getDay(), buried_point_data.getConfirm_beans());
                 }
             }
-            a2.b.setText(yYRelationShipSuccessImMode.getMessage());
-            a2.f16793a.setVisibility(0);
-            a2.f16793a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYImMsgAdapter.1
+            a.b.setText(yYRelationShipSuccessImMode.getMessage());
+            a.a.setVisibility(0);
+            a.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYImMsgAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
@@ -882,12 +881,12 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
     }
 
     private void e(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
-        ItemYySystemToGoBinding a2 = ItemYySystemToGoBinding.a(baseViewHolder.itemView);
+        ItemYySystemToGoBinding a = ItemYySystemToGoBinding.a(baseViewHolder.itemView);
         if (yYImModel.extra instanceof YYMsgOfficeExtra) {
             final YYMsgOfficeExtra yYMsgOfficeExtra = (YYMsgOfficeExtra) yYImModel.extra;
-            a2.b.setText(yYMsgOfficeExtra.content);
-            a2.f16823a.setVisibility(0);
-            a2.f16823a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYImMsgAdapter.2
+            a.b.setText(yYMsgOfficeExtra.content);
+            a.a.setVisibility(0);
+            a.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYImMsgAdapter.2
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
@@ -903,7 +902,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
 
     private void f(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
         String str;
-        ItemYyCpLikeToGiftBinding a2 = ItemYyCpLikeToGiftBinding.a(baseViewHolder.itemView);
+        ItemYyCpLikeToGiftBinding a = ItemYyCpLikeToGiftBinding.a(baseViewHolder.itemView);
         if (yYImModel.extra instanceof CpRoomChooseMode) {
             final CpRoomChooseMode cpRoomChooseMode = (CpRoomChooseMode) yYImModel.extra;
             if (!YYRoomInfoManager.e().J() || YYRoomInfoManager.e().g(cpRoomChooseMode.getUid())) {
@@ -911,8 +910,8 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
             } else {
                 str = "你\"心动了\"" + cpRoomChooseMode.getContName() + "，快去送花吸引对方的注意吧";
             }
-            a2.b.setText(str);
-            a2.f16697a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYImMsgAdapter$mZupOguGCy68rf_yqzs9t8Hzd1s
+            a.b.setText(str);
+            a.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYImMsgAdapter$mZupOguGCy68rf_yqzs9t8Hzd1s
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYImMsgAdapter.this.a(cpRoomChooseMode, view);
@@ -922,25 +921,25 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
     }
 
     private void g(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
-        TextView textView = ItemYyMsgSystemUpBinding.a(baseViewHolder.itemView).f16764a;
+        TextView textView = ItemYyMsgSystemUpBinding.a(baseViewHolder.itemView).a;
         textView.setText("收到type =  " + yYImModel.contents);
     }
 
     private void h(BaseViewHolder baseViewHolder, final YYImModel yYImModel) {
-        final ItemYyKtvNoticeSendGiftBinding a2 = ItemYyKtvNoticeSendGiftBinding.a(baseViewHolder.itemView);
+        final ItemYyKtvNoticeSendGiftBinding a = ItemYyKtvNoticeSendGiftBinding.a(baseViewHolder.itemView);
         final YYRoomModel b = YYRoomInfoManager.e().b();
-        a2.f16746a.setText(yYImModel.contents);
+        a.a.setText(yYImModel.contents);
         if (yYImModel.isKtvSendGift) {
-            a2.b.setVisibility(8);
+            a.b.setVisibility(8);
         } else {
-            a2.b.setVisibility(0);
+            a.b.setVisibility(0);
         }
-        a2.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYImMsgAdapter.3
+        a.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYImMsgAdapter.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 yYImModel.isKtvSendGift = true;
-                a2.b.setVisibility(8);
+                a.b.setVisibility(8);
                 LiveEventBus.get("event_ktv_pick_music").post("");
                 if (b != null) {
                     EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_KTV_GUIDE_MSG_GO_CLICK, b.room_id, b.uid);
@@ -957,34 +956,34 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
     }
 
     private void i(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
-        ItemYyMsgKtvSingSendGiftBinding a2 = ItemYyMsgKtvSingSendGiftBinding.a(baseViewHolder.itemView);
+        ItemYyMsgKtvSingSendGiftBinding a = ItemYyMsgKtvSingSendGiftBinding.a(baseViewHolder.itemView);
         final YyImSong1MlateTogiftModel yyImSong1MlateTogiftModel = (YyImSong1MlateTogiftModel) yYImModel.extra;
-        a2.b.setText(String.format(a2.b.getResources().getString(R.string.yy_im_ktv_guide_appl_cont), yyImSong1MlateTogiftModel.host_name, yyImSong1MlateTogiftModel.music_name));
-        a2.f16757a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYImMsgAdapter$FW9pKLyqbjNxB-Z0aS65eRZKq5U
+        a.b.setText(String.format(a.b.getResources().getString(R.string.yy_im_ktv_guide_appl_cont), yyImSong1MlateTogiftModel.host_name, yyImSong1MlateTogiftModel.music_name));
+        a.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYImMsgAdapter$FW9pKLyqbjNxB-Z0aS65eRZKq5U
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYImMsgAdapter.this.b(yyImSong1MlateTogiftModel, view);
             }
         });
-        a2.f16758c.setText(a2.f16758c.getResources().getString(R.string.yy_mess_ktv_guide_send, yyImSong1MlateTogiftModel.android_goods_info.name));
-        a2.f16758c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYImMsgAdapter$Wew5Z7eq6MvsijcD6k3LJMw34VM
+        a.c.setText(a.c.getResources().getString(R.string.yy_mess_ktv_guide_send, yyImSong1MlateTogiftModel.android_goods_info.name));
+        a.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYImMsgAdapter$Wew5Z7eq6MvsijcD6k3LJMw34VM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYImMsgAdapter.this.a(yyImSong1MlateTogiftModel, view);
             }
         });
         if (yyImSong1MlateTogiftModel.isClick) {
-            ShapeHelper.a(a2.f16757a, R.color.syc_7C7C7C, R.color.syc_ADADAD);
-            a2.f16757a.setClickable(false);
+            ShapeHelper.a(a.a, R.color.syc_7C7C7C, R.color.syc_ADADAD);
+            a.a.setClickable(false);
             return;
         }
-        a2.f16757a.setClickable(true);
-        ShapeHelper.a(a2.f16757a, R.color.syc_3883FD, R.color.syc_00E0AB);
+        a.a.setClickable(true);
+        ShapeHelper.a(a.a, R.color.syc_3883FD, R.color.syc_00E0AB);
     }
 
     private void j(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_vote_result);
-        YYMsgKtvPrize yYMsgKtvPrize = (YYMsgKtvPrize) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgKtvPrize.class);
+        YYMsgKtvPrize yYMsgKtvPrize = (YYMsgKtvPrize) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgKtvPrize.class);
         if (yYMsgKtvPrize == null) {
             return;
         }
@@ -1004,15 +1003,15 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
         YYRoomInfoManager.e().a(this.m.getFragmentActive(), imageView, yYAudienceModel.getUid(), yYAudienceModel.getAvatar());
         sb.append("@(name:" + YYRoomInfoManager.e().a(yYAudienceModel.getUid(), yYAudienceModel.getName()) + ",id:" + EncryptTool.b(yYAudienceModel.getUid()) + ") ");
         sb.append("回撩了房主");
-        SpannableStringBuilder a2 = YYCommonStringUtils.a(this.mContext, textView, null, TextUtils.equals("2", yYAudienceModel.chat_anchor) ? this.mContext.getResources().getString(R.string.yy_role_manager) : "", R.color.syc_8F38FD, "", sb.toString());
+        SpannableStringBuilder a = YYCommonStringUtils.a(this.mContext, textView, null, TextUtils.equals("2", yYAudienceModel.chat_anchor) ? this.mContext.getResources().getString(R.string.yy_role_manager) : "", R.color.syc_8F38FD, "", sb.toString());
         a(imageView, yYAudienceModel);
-        textView.setText(a(a2));
+        textView.setText(a(a));
         textView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     private void l(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_msg_content);
-        YYMsgMuteStatusExtra yYMsgMuteStatusExtra = (YYMsgMuteStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgMuteStatusExtra.class);
+        YYMsgMuteStatusExtra yYMsgMuteStatusExtra = (YYMsgMuteStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgMuteStatusExtra.class);
         if (yYMsgMuteStatusExtra == null) {
             return;
         }
@@ -1041,7 +1040,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
 
     private void m(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_vote_result);
-        if (((YYMsgBlindResultExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgBlindResultExtra.class)) == null) {
+        if (((YYMsgBlindResultExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgBlindResultExtra.class)) == null) {
             return;
         }
         textView.setText(yYImModel.contents);
@@ -1081,7 +1080,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_msg_content);
         textView.setTextColor(this.mContext.getResources().getColor(R.color.syc_dark_b));
         YYAudienceModel yYAudienceModel = yYImModel.source_profile;
-        YYMsgEmojiExtra yYMsgEmojiExtra = (YYMsgEmojiExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgEmojiExtra.class);
+        YYMsgEmojiExtra yYMsgEmojiExtra = (YYMsgEmojiExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgEmojiExtra.class);
         if (yYMsgEmojiExtra != null) {
             textView.setText(String.format(this.mContext.getResources().getString(R.string.yy_emoji_result), YYRoomInfoManager.e().a(yYAudienceModel.getUid(), yYAudienceModel.getName()), yYMsgEmojiExtra.name, yYMsgEmojiExtra.result));
         } else {
@@ -1123,7 +1122,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
             YYRoomInfoManager.e().a(this.m.getFragmentActive(), imageView, yYAudienceModel.getUid(), yYAudienceModel.getAvatar());
             sb2.append(UserRelationshipUtils.b(this.mContext, yYAudienceModel.chat_anchor));
         }
-        YYMsgGiftExtra yYMsgGiftExtra = (YYMsgGiftExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgGiftExtra.class);
+        YYMsgGiftExtra yYMsgGiftExtra = (YYMsgGiftExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgGiftExtra.class);
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (!YYRoomInfoManager.e().J() || b == null || b.mMaskedVeiledRoominfo == null || b.mMaskedVeiledRoominfo.getVeiled_card_goods_id() == null || yYMsgGiftExtra == null || !b.mMaskedVeiledRoominfo.getVeiled_card_goods_id().contains(yYMsgGiftExtra.gift_id)) {
             sb.append(this.mContext.getResources().getString(R.string.yy_give_to));
@@ -1185,7 +1184,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_msg_content);
         YYAudienceModel yYAudienceModel = yYImModel.target_profile;
         YYAudienceModel yYAudienceModel2 = yYImModel.source_profile;
-        if (yYAudienceModel == null || yYAudienceModel2 == null || (yYMsgUpSeatExtra = (YYMsgUpSeatExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgUpSeatExtra.class)) == null) {
+        if (yYAudienceModel == null || yYAudienceModel2 == null || (yYMsgUpSeatExtra = (YYMsgUpSeatExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgUpSeatExtra.class)) == null) {
             return;
         }
         if (yYMsgUpSeatExtra.leave_type == 1 || yYMsgUpSeatExtra.leave_type == 3) {
@@ -1210,17 +1209,17 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
         if (yYAudienceModel == null) {
             return;
         }
-        String a2 = TextUtils.equals(yYAudienceModel.getUid(), YYRoomInfoManager.e().k()) ? "你" : YYRoomInfoManager.e().a(yYAudienceModel.getUid(), yYAudienceModel.getName());
+        String a = TextUtils.equals(yYAudienceModel.getUid(), YYRoomInfoManager.e().k()) ? "你" : YYRoomInfoManager.e().a(yYAudienceModel.getUid(), yYAudienceModel.getName());
         if (TextUtils.equals(yYAudienceModel.chat_anchor, "2")) {
-            textView.setText(a2 + "被房主设为场控");
+            textView.setText(a + "被房主设为场控");
             return;
         }
-        textView.setText(a2 + "被房主取消场控");
+        textView.setText(a + "被房主取消场控");
     }
 
     private void y(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_msg_content);
-        YYMsgMuteStatusExtra yYMsgMuteStatusExtra = (YYMsgMuteStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgMuteStatusExtra.class);
+        YYMsgMuteStatusExtra yYMsgMuteStatusExtra = (YYMsgMuteStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgMuteStatusExtra.class);
         if (yYMsgMuteStatusExtra == null) {
             return;
         }
@@ -1249,7 +1248,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
 
     private void z(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_msg_content);
-        YYMsgMicStatusExtra yYMsgMicStatusExtra = (YYMsgMicStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgMicStatusExtra.class);
+        YYMsgMicStatusExtra yYMsgMicStatusExtra = (YYMsgMicStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgMicStatusExtra.class);
         StringBuilder sb = new StringBuilder();
         if (yYMsgMicStatusExtra != null) {
             YYRoomModel b = YYRoomInfoManager.e().b();
@@ -1288,8 +1287,7 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
     }
 
     public void a(final View view, String str) {
-        ImageLoader.a(this.m.getFragmentActive(), str).a(new CustomTarget<Drawable>() { // from class: com.blued.android.module.yy_china.adapter.YYImMsgAdapter.17
-            @Override // com.bumptech.glide.request.target.Target
+        ImageLoader.a(this.m.getFragmentActive(), str).a((Target<Drawable>) new CustomTarget<Drawable>() { // from class: com.blued.android.module.yy_china.adapter.YYImMsgAdapter.17
             /* renamed from: a */
             public void onResourceReady(Drawable drawable, Transition<? super Drawable> transition) {
                 if (drawable == null || !(drawable instanceof BitmapDrawable)) {
@@ -1299,7 +1297,6 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
                 view.setBackground(new NinePatchDrawable(YYImMsgAdapter.this.m.getResources(), bitmap, YYImMsgAdapter.this.a(bitmap), null, null));
             }
 
-            @Override // com.bumptech.glide.request.target.Target
             public void onLoadCleared(Drawable drawable) {
             }
         });
@@ -1374,7 +1371,6 @@ public class YYImMsgAdapter extends BaseMultiItemQuickAdapter<YYImModel, BaseVie
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYImModel yYImModel) {
         if (baseViewHolder == null) {

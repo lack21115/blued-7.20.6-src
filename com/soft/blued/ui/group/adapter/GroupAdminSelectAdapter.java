@@ -23,11 +23,11 @@ import java.util.List;
 public class GroupAdminSelectAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f30890a;
+    private LayoutInflater f17200a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<BluedGroupAllMembers> f30891c;
+    private List<BluedGroupAllMembers> f17201c;
     private LoadOptions d;
     private IRequestHost e;
 
@@ -35,11 +35,11 @@ public class GroupAdminSelectAdapter extends BaseAdapter {
     class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        ImageView f30892a;
+        ImageView f17202a;
         TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        TextView f30893c;
+        TextView f17203c;
         TextView d;
         TextView e;
         ImageView f;
@@ -51,8 +51,8 @@ public class GroupAdminSelectAdapter extends BaseAdapter {
     public GroupAdminSelectAdapter(Context context, IRequestHost iRequestHost, List<BluedGroupAllMembers> list) {
         this.b = context;
         this.e = iRequestHost;
-        this.f30891c = list;
-        this.f30890a = LayoutInflater.from(context);
+        this.f17201c = list;
+        this.f17200a = LayoutInflater.from(context);
         LoadOptions loadOptions = new LoadOptions();
         this.d = loadOptions;
         loadOptions.d = 2131237310;
@@ -60,7 +60,7 @@ public class GroupAdminSelectAdapter extends BaseAdapter {
     }
 
     public void a() {
-        this.f30891c.clear();
+        this.f17201c.clear();
         notifyDataSetChanged();
     }
 
@@ -68,18 +68,18 @@ public class GroupAdminSelectAdapter extends BaseAdapter {
         if (list == null || list.size() <= 0) {
             return;
         }
-        this.f30891c.addAll(list);
+        this.f17201c.addAll(list);
         notifyDataSetChanged();
     }
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f30891c.size();
+        return this.f17201c.size();
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f30891c.get(i);
+        return this.f17201c.get(i);
     }
 
     @Override // android.widget.Adapter
@@ -90,13 +90,13 @@ public class GroupAdminSelectAdapter extends BaseAdapter {
     @Override // android.widget.Adapter
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
-        BluedGroupAllMembers bluedGroupAllMembers = this.f30891c.get(i);
+        BluedGroupAllMembers bluedGroupAllMembers = this.f17201c.get(i);
         if (view == null) {
             ViewHolder viewHolder2 = new ViewHolder();
-            View inflate = this.f30890a.inflate(R.layout.item_group_member_select, viewGroup, false);
-            viewHolder2.f30892a = (ImageView) inflate.findViewById(2131366011);
-            viewHolder2.b = (TextView) inflate.findViewById(2131372879);
-            viewHolder2.f30893c = (TextView) inflate.findViewById(R.id.tv_group_user_details);
+            View inflate = this.f17200a.inflate(R.layout.item_group_member_select, viewGroup, false);
+            viewHolder2.f17202a = (ImageView) inflate.findViewById(R.id.iv_user_head);
+            viewHolder2.b = (TextView) inflate.findViewById(R.id.tv_user_name);
+            viewHolder2.f17203c = (TextView) inflate.findViewById(R.id.tv_group_user_details);
             viewHolder2.d = (TextView) inflate.findViewById(R.id.tv_user_distance);
             viewHolder2.e = (TextView) inflate.findViewById(R.id.tv_last_activate_time);
             viewHolder2.f = (ImageView) inflate.findViewById(R.id.member_img_verify);
@@ -106,7 +106,7 @@ public class GroupAdminSelectAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) view.getTag();
         }
-        ImageLoader.a(this.e, bluedGroupAllMembers.avatar).b(2131237310).c().a(viewHolder.f30892a);
+        ImageLoader.a(this.e, bluedGroupAllMembers.avatar).b(2131237310).c().a(viewHolder.f17202a);
         UserInfoHelper.a(viewHolder.f, bluedGroupAllMembers.vbadge, 3);
         if (StringUtils.d(bluedGroupAllMembers.name)) {
             viewHolder.b.setVisibility(4);
@@ -123,8 +123,8 @@ public class GroupAdminSelectAdapter extends BaseAdapter {
         } else {
             viewHolder.e.setText(TimeAndDateUtils.f(this.b, TimeAndDateUtils.c(bluedGroupAllMembers.last_active_time)));
         }
-        TextView textView = viewHolder.f30893c;
-        textView.setText(bluedGroupAllMembers.age + " / " + bluedGroupAllMembers.height + " / " + bluedGroupAllMembers.weight + " " + this.b.getResources().getString(2131891624) + " " + UserInfoHelper.a(this.b, bluedGroupAllMembers.role));
+        TextView textView = viewHolder.f17203c;
+        textView.setText(bluedGroupAllMembers.age + " / " + bluedGroupAllMembers.height + " / " + bluedGroupAllMembers.weight + " " + this.b.getResources().getString(R.string.separator) + " " + UserInfoHelper.a(this.b, bluedGroupAllMembers.role));
         return view;
     }
 }

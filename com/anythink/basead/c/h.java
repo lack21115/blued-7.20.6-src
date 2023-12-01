@@ -5,13 +5,9 @@ import android.hardware.SensorEventListener;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/c/h.class */
 public abstract class h implements SensorEventListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f5904a = 0;
+    public static final int a = 0;
     public static final int b = 1;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f5905c = 2;
+    public static final int c = 2;
     public float d = 0.0f;
     public float e = 0.0f;
     public float f = 0.0f;

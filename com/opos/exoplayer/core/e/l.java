@@ -8,16 +8,16 @@ import java.util.Arrays;
 public final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f25309a;
+    public final int f11621a;
     private final Format[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25310c;
+    private int f11622c;
 
     public l(Format... formatArr) {
         com.opos.exoplayer.core.i.a.b(formatArr.length > 0);
         this.b = formatArr;
-        this.f25309a = formatArr.length;
+        this.f11621a = formatArr.length;
     }
 
     public int a(Format format) {
@@ -49,7 +49,7 @@ public final class l {
                 }
                 l lVar = (l) obj;
                 z = false;
-                if (this.f25309a == lVar.f25309a) {
+                if (this.f11621a == lVar.f11621a) {
                     if (!Arrays.equals(this.b, lVar.b)) {
                         return false;
                     }
@@ -62,9 +62,9 @@ public final class l {
     }
 
     public int hashCode() {
-        if (this.f25310c == 0) {
-            this.f25310c = Arrays.hashCode(this.b) + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE;
+        if (this.f11622c == 0) {
+            this.f11622c = Arrays.hashCode(this.b) + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE;
         }
-        return this.f25310c;
+        return this.f11622c;
     }
 }

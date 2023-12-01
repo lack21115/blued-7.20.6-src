@@ -16,13 +16,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYSetTimeView.class */
 public class YYSetTimeView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TextView f18494a;
+    private TextView a;
     private RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYTimeRangeAdapter f18495c;
+    private YYTimeRangeAdapter c;
 
     public YYSetTimeView(Context context) {
         super(context);
@@ -41,13 +37,13 @@ public class YYSetTimeView extends LinearLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.yy_set_time_view, (ViewGroup) this, true);
-        this.f18494a = (TextView) findViewById(R.id.tv_time_title);
-        this.b = (RecyclerView) findViewById(R.id.rv_times_lsit);
+        this.a = (TextView) findViewById(R.id.tv_time_title);
+        this.b = findViewById(R.id.rv_times_lsit);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
         this.b.setLayoutManager(linearLayoutManager);
         YYTimeRangeAdapter yYTimeRangeAdapter = new YYTimeRangeAdapter();
-        this.f18495c = yYTimeRangeAdapter;
+        this.c = yYTimeRangeAdapter;
         this.b.setAdapter(yYTimeRangeAdapter);
     }
 
@@ -59,14 +55,14 @@ public class YYSetTimeView extends LinearLayout {
     }
 
     public void setOnClickTimeItemListener(BaseQuickAdapter.OnItemClickListener onItemClickListener) {
-        this.f18495c.setOnItemClickListener(onItemClickListener);
+        this.c.setOnItemClickListener(onItemClickListener);
     }
 
     public void setTimeRangeList(List<YYVoteTimeModel> list) {
-        this.f18495c.setNewData(list);
+        this.c.setNewData(list);
     }
 
     public void setTimeTitle(String str) {
-        this.f18494a.setText(str);
+        this.a.setText(str);
     }
 }

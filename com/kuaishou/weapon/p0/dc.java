@@ -8,10 +8,10 @@ public class dc {
     private static volatile dc b;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23819a;
+    private Context f10211a;
 
     private dc(Context context) {
-        this.f23819a = context;
+        this.f10211a = context;
     }
 
     public static dc a(Context context) {
@@ -34,20 +34,20 @@ public class dc {
             @Override // java.lang.Runnable
             public void run() {
                 try {
-                    h a2 = h.a(dc.this.f23819a, "re_po_rt");
+                    h a2 = h.a(dc.this.f10211a, "re_po_rt");
                     if (a2.b(de.z, 0) == 1) {
-                        long a3 = de.a(dc.this.f23819a).a(de.bf);
+                        long a3 = de.a(dc.this.f10211a).a(de.bf);
                         long currentTimeMillis = System.currentTimeMillis();
                         if (currentTimeMillis - a3 >= a2.b(de.C, 2) * 3600000) {
                             try {
-                                String a4 = new cn(dc.this.f23819a).a(cj.h);
+                                String a4 = new cn(dc.this.f10211a).a(cj.h);
                                 int intValue = Integer.valueOf(cj.h).intValue();
                                 if (a4 != null && a4.length() > 10) {
-                                    new bb(dc.this.f23819a, a4, intValue).a(Constants.DEFAULT_UIN);
+                                    new bb(dc.this.f10211a, a4, intValue).a(Constants.DEFAULT_UIN);
                                 }
                             } catch (Throwable th) {
                             }
-                            de.a(dc.this.f23819a).a(de.bf, currentTimeMillis);
+                            de.a(dc.this.f10211a).a(de.bf, currentTimeMillis);
                         }
                     }
                 } catch (Throwable th2) {

@@ -26,10 +26,10 @@ class c {
 
     /* renamed from: com.getui.gtc.dyc.c$c  reason: collision with other inner class name */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/dyc/c$c.class */
-    static class C0350c {
+    static class C0180c {
 
         /* renamed from: a  reason: collision with root package name */
-        private static c f21978a = new c();
+        private static c f8371a = new c();
     }
 
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/dyc/c$d.class */
@@ -55,7 +55,7 @@ class c {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static c a() {
-        return C0350c.f21978a;
+        return C0180c.f8371a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

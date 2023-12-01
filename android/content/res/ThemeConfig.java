@@ -435,7 +435,7 @@ public class ThemeConfig implements Cloneable, Parcelable, Comparable<ThemeConfi
     /* loaded from: source-9557208-dex2jar.jar:android/content/res/ThemeConfig$SystemAppTheme.class */
     public static class SystemAppTheme extends AppTheme {
         public SystemAppTheme() {
-            super("system", "system", "system");
+            super(ThemeConfig.SYSTEM_DEFAULT, ThemeConfig.SYSTEM_DEFAULT, ThemeConfig.SYSTEM_DEFAULT);
         }
 
         @Override // android.content.res.ThemeConfig.AppTheme

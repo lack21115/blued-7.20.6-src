@@ -20,7 +20,7 @@ public final class d {
         boolean a2 = k.pP().a(covert, "loadDrawAd");
         covert.setAdStyle(6);
         KsAdLoadManager.ac();
-        KsAdLoadManager.a(new a.C0527a().e(new com.kwad.components.core.n.kwai.b(covert)).aH(a2).a(new com.kwad.components.core.n.c() { // from class: com.kwad.components.ad.draw.d.1
+        KsAdLoadManager.a(new a.C0357a().e(new com.kwad.components.core.n.kwai.b(covert)).aH(a2).a(new com.kwad.components.core.n.c() { // from class: com.kwad.components.ad.draw.d.1
             @Override // com.kwad.components.core.n.c, com.kwad.components.core.n.i
             public final void a(AdResultData adResultData) {
                 final ArrayList arrayList = new ArrayList();

@@ -11,19 +11,19 @@ import java.util.List;
 public final class k extends AsyncTask<String, Void, List<Bitmap>> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f41138a;
+    private Context f27447a;
     private InsideNotificationItem b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f41139c;
+    private long f27448c;
     private boolean d;
     private int e = 0;
     private r.a f;
 
     public k(Context context, InsideNotificationItem insideNotificationItem, long j, boolean z, r.a aVar) {
-        this.f41138a = context;
+        this.f27447a = context;
         this.b = insideNotificationItem;
-        this.f41139c = j;
+        this.f27448c = j;
         this.d = z;
         this.f = aVar;
     }

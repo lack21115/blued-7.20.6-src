@@ -24,13 +24,9 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/AudienceUserCardView.class */
 public class AudienceUserCardView extends YYUserCardView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ShapeTextView f17895a;
+    private ShapeTextView a;
     private ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ShapeTextView f17896c;
+    private ShapeTextView c;
     private ShapeTextView d;
     private ShapeTextView e;
     private LinearLayout f;
@@ -94,18 +90,18 @@ public class AudienceUserCardView extends YYUserCardView {
     public void a() {
         if (TextUtils.equals(getUserModel().getUid(), YYRoomInfoManager.e().k())) {
             this.b.setVisibility(0);
-            this.f17895a.setVisibility(8);
+            this.a.setVisibility(8);
             this.f.setVisibility(8);
             getBinding().P.setVisibility(8);
         } else if (TextUtils.equals(getURole(), "1")) {
             this.b.setVisibility(8);
-            this.f17895a.setVisibility(0);
+            this.a.setVisibility(0);
             this.f.setVisibility(0);
             this.e.setVisibility(0);
             getBinding().P.setVisibility(0);
         } else if (TextUtils.equals(getURole(), "2")) {
             this.b.setVisibility(8);
-            this.f17895a.setVisibility(0);
+            this.a.setVisibility(0);
             this.f.setVisibility(0);
             if (TextUtils.equals(getUserModel().chat_anchor, "2")) {
                 this.e.setVisibility(8);
@@ -116,7 +112,7 @@ public class AudienceUserCardView extends YYUserCardView {
         } else {
             this.b.setVisibility(8);
             this.e.setVisibility(8);
-            this.f17895a.setVisibility(8);
+            this.a.setVisibility(8);
             this.f.setVisibility(0);
             getBinding().P.setVisibility(0);
         }
@@ -124,7 +120,7 @@ public class AudienceUserCardView extends YYUserCardView {
         if (b != null && !TextUtils.equals(b.room_id, getUserModel().room_id)) {
             this.f.setVisibility(8);
             this.b.setVisibility(8);
-            this.f17895a.setVisibility(8);
+            this.a.setVisibility(8);
         }
         if (!YYRoomInfoManager.e().J() || YYRoomInfoManager.e().g(getUserModel().getUid())) {
             return;
@@ -135,16 +131,16 @@ public class AudienceUserCardView extends YYUserCardView {
     @Override // com.blued.android.module.yy_china.view.YYUserCardView
     public void a(LinearLayout linearLayout) {
         linearLayout.addView((LinearLayout) LayoutInflater.from(getContext()).inflate(R.layout.view_audience_user_menu_layout, (ViewGroup) null));
-        this.f17895a = (ShapeTextView) findViewById(R.id.tv_invite_seat);
+        this.a = (ShapeTextView) findViewById(R.id.tv_invite_seat);
         this.b = (ShapeTextView) findViewById(R.id.tv_up_seat);
-        this.f17896c = (ShapeTextView) findViewById(R.id.tv_at_him);
+        this.c = (ShapeTextView) findViewById(R.id.tv_at_him);
         this.d = (ShapeTextView) findViewById(R.id.tv_private_chat);
         this.e = (ShapeTextView) findViewById(R.id.tv_out);
         this.f = (LinearLayout) findViewById(R.id.ll_menu);
         this.b.setOnClickListener(this);
-        this.f17895a.setOnClickListener(this);
+        this.a.setOnClickListener(this);
         this.e.setOnClickListener(this);
-        this.f17896c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
         this.d.setOnClickListener(this);
     }
 

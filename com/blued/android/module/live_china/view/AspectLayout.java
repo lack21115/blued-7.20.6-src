@@ -7,9 +7,7 @@ import android.widget.RelativeLayout;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/AspectLayout.class */
 public class AspectLayout extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f14211a;
+    private int a;
     private int b;
 
     public AspectLayout(Context context) {
@@ -35,10 +33,10 @@ public class AspectLayout extends RelativeLayout {
         getWindowVisibleDisplayFrame(rect);
         int height = getRootView().getHeight();
         if (height - (rect.bottom - rect.top) > height / 4) {
-            super.onMeasure(this.f14211a, this.b);
+            super.onMeasure(this.a, this.b);
             return;
         }
-        this.f14211a = i;
+        this.a = i;
         this.b = i2;
         super.onMeasure(i, i2);
     }

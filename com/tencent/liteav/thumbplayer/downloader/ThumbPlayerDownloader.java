@@ -3,7 +3,6 @@ package com.tencent.liteav.thumbplayer.downloader;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.txcplayer.a.b;
 import com.tencent.liteav.txcplayer.b.a;
@@ -66,7 +65,7 @@ public class ThumbPlayerDownloader extends a {
             return false;
         }
         String substring = str.substring(0, str.indexOf(".hls") + 4);
-        String substring2 = substring.substring(substring.lastIndexOf(BridgeUtil.SPLIT_MARK) + 1);
+        String substring2 = substring.substring(substring.lastIndexOf("/") + 1);
         return !TextUtils.isEmpty(substring2) && this.mTpDownloadProxy.removeStorageCache(substring2) == 0;
     }
 
@@ -74,7 +73,7 @@ public class ThumbPlayerDownloader extends a {
     public int downloadHls(String str, String str2) {
         if (!TextUtils.isEmpty(str2) && str2.contains(".hls")) {
             String substring = str2.substring(0, str2.indexOf(".hls") + 4);
-            String substring2 = substring.substring(substring.lastIndexOf(BridgeUtil.SPLIT_MARK) + 1);
+            String substring2 = substring.substring(substring.lastIndexOf("/") + 1);
             ArrayList arrayList = new ArrayList();
             arrayList.add(str);
             TPDownloadParam tPDownloadParam = new TPDownloadParam(arrayList, 3, null);
@@ -121,8 +120,8 @@ public class ThumbPlayerDownloader extends a {
                 @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPOfflineDownloadListener
                 public void onDownloadProgressUpdate(int i, int i2, long j, long j2, String str3) {
                     int i3;
-                    if (j > 1024 && (i3 = (int) j) != bVar.f36476c) {
-                        bVar.f36476c = i3;
+                    if (j > 1024 && (i3 = (int) j) != bVar.f22785c) {
+                        bVar.f22785c = i3;
                     }
                     bVar.d = (int) j2;
                     bVar.e = i2;
@@ -161,7 +160,7 @@ public class ThumbPlayerDownloader extends a {
                 }
             });
             this.mTpDownloadProxy.startTask(startOfflineDownload);
-            bVar.f36475a = startOfflineDownload;
+            bVar.f22784a = startOfflineDownload;
             if (this.mDownloadListener != null) {
                 this.mDownloadListener.a(bVar);
             }
@@ -185,7 +184,7 @@ public class ThumbPlayerDownloader extends a {
             LiteavLog.e(TAG, "Unsupported format");
             return null;
         }
-        return this.mDownloadPath + BridgeUtil.SPLIT_MARK + com.tencent.liteav.txcplayer.e.a.b(str) + ".hls?" + str;
+        return this.mDownloadPath + "/" + com.tencent.liteav.txcplayer.e.a.b(str) + ".hls?" + str;
     }
 
     @Override // com.tencent.liteav.txcplayer.b.a
@@ -200,7 +199,7 @@ public class ThumbPlayerDownloader extends a {
             return;
         }
         com.tencent.liteav.txcplayer.b.b bVar = new com.tencent.liteav.txcplayer.b.b();
-        bVar.f36475a = i;
+        bVar.f22784a = i;
         this.mDownloadListener.b(bVar);
     }
 }

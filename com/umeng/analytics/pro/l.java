@@ -23,11 +23,11 @@ import org.json.JSONObject;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f40758a;
+    public static String f27067a;
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f40759c;
+    boolean f27068c;
     com.umeng.analytics.vshelper.a f;
     Application.ActivityLifecycleCallbacks g;
     private final Map<String, Long> h;
@@ -48,7 +48,7 @@ public class l {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final l f40761a = new l();
+        private static final l f27070a = new l();
 
         private a() {
         }
@@ -58,7 +58,7 @@ public class l {
         this.h = new HashMap();
         this.l = false;
         this.b = false;
-        this.f40759c = false;
+        this.f27068c = false;
         this.m = 0;
         this.n = 0;
         this.f = PageNameMonitor.getInstance();
@@ -154,7 +154,7 @@ public class l {
                         k = (Application) context;
                     }
                 }
-                lVar = a.f40761a;
+                lVar = a.f27070a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -181,9 +181,9 @@ public class l {
                 return;
             }
             this.b = false;
-            if (TextUtils.isEmpty(f40758a)) {
-                f40758a = str;
-            } else if (f40758a.equals(str)) {
+            if (TextUtils.isEmpty(f27067a)) {
+                f27067a = str;
+            } else if (f27067a.equals(str)) {
             } else {
                 b(activity);
                 synchronized (p) {
@@ -205,9 +205,9 @@ public class l {
     }
 
     private void b(Activity activity) {
-        f40758a = activity.getPackageName() + "." + activity.getLocalClassName();
+        f27067a = activity.getPackageName() + "." + activity.getLocalClassName();
         synchronized (this.h) {
-            this.h.put(f40758a, Long.valueOf(System.currentTimeMillis()));
+            this.h.put(f27067a, Long.valueOf(System.currentTimeMillis()));
         }
     }
 
@@ -217,23 +217,23 @@ public class l {
         long j3;
         try {
             synchronized (this.h) {
-                if (f40758a == null && activity != null) {
-                    f40758a = activity.getPackageName() + "." + activity.getLocalClassName();
+                if (f27067a == null && activity != null) {
+                    f27067a = activity.getPackageName() + "." + activity.getLocalClassName();
                 }
                 j2 = 0;
-                if (TextUtils.isEmpty(f40758a) || !this.h.containsKey(f40758a)) {
+                if (TextUtils.isEmpty(f27067a) || !this.h.containsKey(f27067a)) {
                     j3 = 0;
                 } else {
-                    j3 = this.h.get(f40758a).longValue();
+                    j3 = this.h.get(f27067a).longValue();
                     long currentTimeMillis = System.currentTimeMillis();
-                    this.h.remove(f40758a);
+                    this.h.remove(f27067a);
                     j2 = currentTimeMillis - j3;
                 }
             }
             synchronized (j) {
                 try {
                     JSONObject jSONObject = new JSONObject();
-                    jSONObject.put(d.v, f40758a);
+                    jSONObject.put(d.v, f27067a);
                     jSONObject.put("duration", j2);
                     jSONObject.put(d.x, j3);
                     jSONObject.put("type", 0);
@@ -255,7 +255,7 @@ public class l {
                     i = new JSONArray();
                 }
                 if (jSONArray.length() > 0) {
-                    jSONObject.put(e.d.a.f40742c, new JSONArray(jSONArray));
+                    jSONObject.put(e.d.a.f27051c, new JSONArray(jSONArray));
                     i.a(context).a(u.a().c(), jSONObject, i.a.AUTOPAGE);
                 }
             } catch (Throwable th) {

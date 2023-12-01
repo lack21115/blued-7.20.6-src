@@ -13,9 +13,7 @@ import org.json.JSONObject;
 public final class a {
     private static a F;
     private static final String b = "DynCon";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final int f4617c = 10000;
+    private static final int c = 10000;
     private static final String d = "https://h5.m.taobao.com/mlapp/olist.html";
     private static final int e = 10;
     private static final boolean f = true;
@@ -41,38 +39,32 @@ public final class a {
     private int z = 10;
     private boolean A = true;
     private boolean B = true;
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f4618a = false;
+    public boolean a = false;
     private boolean C = false;
     private boolean D = false;
-    private List<C0048a> E = null;
+    private List<C0008a> E = null;
 
     /* renamed from: com.alipay.sdk.data.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/data/a$a.class */
-    public static final class C0048a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final String f4619a;
+    public static final class C0008a {
+        public final String a;
         public final int b;
+        public final String c;
 
-        /* renamed from: c  reason: collision with root package name */
-        public final String f4620c;
-
-        public C0048a(String str, int i, String str2) {
-            this.f4619a = str;
+        public C0008a(String str, int i, String str2) {
+            this.a = str;
             this.b = i;
-            this.f4620c = str2;
+            this.c = str2;
         }
 
-        public static C0048a a(JSONObject jSONObject) {
+        public static C0008a a(JSONObject jSONObject) {
             if (jSONObject == null) {
                 return null;
             }
-            return new C0048a(jSONObject.optString("pn"), jSONObject.optInt("v", 0), jSONObject.optString("pk"));
+            return new C0008a(jSONObject.optString("pn"), jSONObject.optInt("v", 0), jSONObject.optString("pk"));
         }
 
-        public static List<C0048a> a(JSONArray jSONArray) {
+        public static List<C0008a> a(JSONArray jSONArray) {
             if (jSONArray == null) {
                 return null;
             }
@@ -84,31 +76,31 @@ public final class a {
                 if (i2 >= length) {
                     return arrayList;
                 }
-                C0048a a2 = a(jSONArray.optJSONObject(i2));
-                if (a2 != null) {
-                    arrayList.add(a2);
+                C0008a a = a(jSONArray.optJSONObject(i2));
+                if (a != null) {
+                    arrayList.add(a);
                 }
                 i = i2 + 1;
             }
         }
 
-        public static JSONArray a(List<C0048a> list) {
+        public static JSONArray a(List<C0008a> list) {
             if (list == null) {
                 return null;
             }
             JSONArray jSONArray = new JSONArray();
-            for (C0048a c0048a : list) {
-                jSONArray.put(a(c0048a));
+            for (C0008a c0008a : list) {
+                jSONArray.put(a(c0008a));
             }
             return jSONArray;
         }
 
-        public static JSONObject a(C0048a c0048a) {
-            if (c0048a == null) {
+        public static JSONObject a(C0008a c0008a) {
+            if (c0008a == null) {
                 return null;
             }
             try {
-                return new JSONObject().put("pn", c0048a.f4619a).put("v", c0048a.b).put("pk", c0048a.f4620c);
+                return new JSONObject().put("pn", c0008a.a).put("v", c0008a.b).put("pk", c0008a.c);
             } catch (JSONException e) {
                 com.alipay.sdk.util.c.a(e);
                 return null;
@@ -145,7 +137,7 @@ public final class a {
         this.x = jSONObject.optBoolean(n, false);
         this.y = jSONObject.optString(p, d).trim();
         this.z = jSONObject.optInt(r, 10);
-        this.E = C0048a.a(jSONObject.optJSONArray(q));
+        this.E = C0008a.a(jSONObject.optJSONArray(q));
         this.A = jSONObject.optBoolean(u, true);
         this.B = jSONObject.optBoolean(v, true);
         this.C = jSONObject.optBoolean(s, false);
@@ -188,7 +180,7 @@ public final class a {
         jSONObject.put(n, b());
         jSONObject.put(p, e());
         jSONObject.put(r, f());
-        jSONObject.put(q, C0048a.a(i()));
+        jSONObject.put(q, C0008a.a(i()));
         jSONObject.put(u, c());
         jSONObject.put(v, d());
         jSONObject.put(s, g());
@@ -211,7 +203,7 @@ public final class a {
     }
 
     public void a(boolean z) {
-        this.f4618a = z;
+        this.a = z;
     }
 
     public boolean b() {
@@ -242,7 +234,7 @@ public final class a {
         return this.D;
     }
 
-    public List<C0048a> i() {
+    public List<C0008a> i() {
         return this.E;
     }
 }

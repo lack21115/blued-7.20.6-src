@@ -15,21 +15,21 @@ import com.opos.mobad.n.a;
 public class v extends TextView {
 
     /* renamed from: a  reason: collision with root package name */
-    com.opos.mobad.n.c.g f26929a;
+    com.opos.mobad.n.c.g f13241a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private a.InterfaceC0708a f26930c;
+    private a.InterfaceC0538a f13242c;
 
     public v(Context context, String str, int i, int i2, int i3, int i4) {
         super(context);
         this.b = "下载";
-        this.f26929a = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.g.v.1
+        this.f13241a = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.g.v.1
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
                 com.opos.cmn.an.f.a.b("BlockClickButton", "onBtnClick");
-                if (v.this.f26930c != null) {
-                    v.this.f26930c.f(view, iArr);
+                if (v.this.f13242c != null) {
+                    v.this.f13242c.f(view, iArr);
                 }
             }
         };
@@ -56,17 +56,17 @@ public class v extends TextView {
         TextPaint paint = getPaint();
         paint.setStrokeWidth(1.0f);
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        setOnClickListener(this.f26929a);
-        setOnTouchListener(this.f26929a);
+        setOnClickListener(this.f13241a);
+        setOnTouchListener(this.f13241a);
     }
 
     public static v b(Context context, String str) {
         return new v(context, str, R.drawable.opos_mobad_drawable_circlr_block_click_white_btn, context.getResources().getColor(R.color.opos_mobad_button_bg_white_color), 10, 26);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("BlockClickButton", "setListener " + interfaceC0708a);
-        this.f26930c = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("BlockClickButton", "setListener " + interfaceC0538a);
+        this.f13242c = interfaceC0538a;
     }
 
     public void a(String str) {

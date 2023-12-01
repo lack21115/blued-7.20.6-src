@@ -8,11 +8,11 @@ import android.os.SystemClock;
 public final class bg extends Thread {
 
     /* renamed from: a  reason: collision with root package name */
-    public bf f35294a;
+    public bf f21603a;
     private a g;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f35295c = false;
+    private boolean f21604c = false;
     private boolean d = true;
     private boolean e = false;
     private int f = 1;
@@ -36,7 +36,7 @@ public final class bg extends Thread {
     }
 
     public final boolean a() {
-        this.f35295c = true;
+        this.f21604c = true;
         if (isAlive()) {
             try {
                 interrupt();
@@ -44,7 +44,7 @@ public final class bg extends Thread {
                 al.b(e);
             }
             al.d("MainHandlerChecker is reset to null.", new Object[0]);
-            this.f35294a = null;
+            this.f21603a = null;
             return true;
         }
         return false;
@@ -52,11 +52,11 @@ public final class bg extends Thread {
 
     public final boolean b() {
         Handler handler = new Handler(Looper.getMainLooper());
-        bf bfVar = this.f35294a;
+        bf bfVar = this.f21603a;
         if (bfVar != null) {
             bfVar.b = 5000L;
         } else {
-            this.f35294a = new bf(handler, handler.getLooper().getThread().getName());
+            this.f21603a = new bf(handler, handler.getLooper().getThread().getName());
         }
         if (isAlive()) {
             return false;
@@ -86,20 +86,20 @@ public final class bg extends Thread {
     @Override // java.lang.Thread, java.lang.Runnable
     public final void run() {
         long currentTimeMillis = System.currentTimeMillis();
-        while (!this.f35295c) {
+        while (!this.f21604c) {
             try {
             } catch (Exception | OutOfMemoryError e) {
                 al.b(e);
             }
-            if (this.f35294a == null) {
+            if (this.f21603a == null) {
                 al.c("Main handler checker is null. Stop thread monitor.", new Object[0]);
                 return;
             }
-            bf bfVar = this.f35294a;
-            if (bfVar.f35293c) {
-                bfVar.f35293c = false;
+            bf bfVar = this.f21603a;
+            if (bfVar.f21602c) {
+                bfVar.f21602c = false;
                 bfVar.d = SystemClock.uptimeMillis();
-                bfVar.f35292a.post(bfVar);
+                bfVar.f21601a.post(bfVar);
             }
             a(bfVar);
             boolean z = false;

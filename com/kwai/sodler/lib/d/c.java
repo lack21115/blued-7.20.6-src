@@ -2,6 +2,7 @@ package com.kwai.sodler.lib.d;
 
 import android.text.TextUtils;
 import com.kwad.sdk.utils.q;
+import com.tencent.tinker.loader.shareutil.ShareConstants;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -24,7 +25,7 @@ public final class c {
             file3 = null;
         } else {
             new StringBuilder("Try install soLib, supported abi = ").append(tz);
-            File file4 = new File(file, "lib" + File.separator + tz + File.separator + str);
+            File file4 = new File(file, ShareConstants.SO_PATH + File.separator + tz + File.separator + str);
             file3 = null;
             if (file4.exists()) {
                 file3 = new File(file2, str);
@@ -72,7 +73,7 @@ public final class c {
                         ZipEntry nextElement = entries.nextElement();
                         String name = nextElement.getName();
                         if (name != null && !name.contains("../")) {
-                            if (!name.startsWith("lib" + File.separator)) {
+                            if (!name.startsWith(ShareConstants.SO_PATH + File.separator)) {
                                 new StringBuilder("not lib dir entry, skip ").append(name);
                             } else if (nextElement.isDirectory()) {
                                 File file3 = new File(file2, name);

@@ -9,7 +9,7 @@ import java.io.File;
 public class TbsLinuxToolsJni {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f38769a = false;
+    private static boolean f25078a = false;
     private static boolean b = false;
 
     public TbsLinuxToolsJni(Context context) {
@@ -48,7 +48,7 @@ public class TbsLinuxToolsJni {
                     if (file != null) {
                         TbsLog.i("TbsLinuxToolsJni", "TbsLinuxToolsJni init tbsSharePath is " + file.getAbsolutePath());
                         System.load(file.getAbsolutePath() + File.separator + "liblinuxtoolsfortbssdk_jni.so");
-                        f38769a = true;
+                        f25078a = true;
                     }
                 }
                 ChmodInner("/checkChmodeExists", "700");
@@ -58,7 +58,7 @@ public class TbsLinuxToolsJni {
     }
 
     public int a(String str, String str2) {
-        if (f38769a) {
+        if (f25078a) {
             return ChmodInner(str, str2);
         }
         TbsLog.e("TbsLinuxToolsJni", "jni not loaded!", true);

@@ -26,6 +26,7 @@ public class QRCodeInfo$$XmlAdapter implements IXmlAdapter<QRCodeInfo> {
             }
         });
         this.childElementBinders.put("CodeLocation", new ChildElementBinder<QRCodeInfo>() { // from class: com.tencent.cos.xml.model.tag.pic.QRCodeInfo$$XmlAdapter.2
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, QRCodeInfo qRCodeInfo, String str) throws IOException, XmlPullParserException {
                 if (qRCodeInfo.codeLocation == null) {

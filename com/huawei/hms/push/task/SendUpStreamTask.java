@@ -17,19 +17,19 @@ import com.huawei.hms.support.log.HMSLog;
 public class SendUpStreamTask extends TaskApiCall<PushClient, BaseVoidTask> {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22861a;
+    private String f9253a;
     private String b;
 
     public SendUpStreamTask(String str, String str2, String str3, String str4, String str5) {
         super(str, str2, str3);
-        this.f22861a = str4;
+        this.f9253a = str4;
         this.b = str5;
     }
 
     private void a(PushClient pushClient, ResponseErrorCode responseErrorCode) {
-        HMSLog.i("SendUpStreamTask", "receive upstream, msgId :" + this.b + " , packageName = " + this.f22861a + " , errorCode = " + responseErrorCode.getErrorCode());
+        HMSLog.i("SendUpStreamTask", "receive upstream, msgId :" + this.b + " , packageName = " + this.f9253a + " , errorCode = " + responseErrorCode.getErrorCode());
         Intent intent = new Intent("com.huawei.push.action.MESSAGING_EVENT");
-        intent.setPackage(this.f22861a);
+        intent.setPackage(this.f9253a);
         Bundle bundle = new Bundle();
         bundle.putString("message_id", this.b);
         bundle.putInt("error", responseErrorCode.getErrorCode());

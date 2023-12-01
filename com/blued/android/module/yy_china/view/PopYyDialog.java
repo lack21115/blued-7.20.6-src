@@ -15,9 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/PopYyDialog.class */
 public final class PopYyDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogYyPopBinding f17969a;
+    private DialogYyPopBinding a;
     private PopYyDialogGetView b;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -35,19 +33,19 @@ public final class PopYyDialog extends BaseFullScreenDialog {
         FrameLayout frameLayout;
         PopYyDialogGetView popYyDialogGetView = this.b;
         if (popYyDialogGetView != null) {
-            View a2 = popYyDialogGetView.a();
+            View a = popYyDialogGetView.a();
             DialogYyPopBinding f = f();
-            if (f != null && (frameLayout = f.f16448a) != null) {
-                frameLayout.addView(a2, popYyDialogGetView.b());
+            if (f != null && (frameLayout = f.a) != null) {
+                frameLayout.addView(a, popYyDialogGetView.b());
             }
-            a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$PopYyDialog$mONO5Xz5H_5dbWAmkkPttpnhTEw
+            a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$PopYyDialog$mONO5Xz5H_5dbWAmkkPttpnhTEw
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     PopYyDialog.a(view);
                 }
             });
         }
-        DialogYyPopBinding dialogYyPopBinding = this.f17969a;
+        DialogYyPopBinding dialogYyPopBinding = this.a;
         if (dialogYyPopBinding == null || (imageView = dialogYyPopBinding.b) == null) {
             return;
         }
@@ -73,15 +71,15 @@ public final class PopYyDialog extends BaseFullScreenDialog {
     }
 
     public final DialogYyPopBinding f() {
-        return this.f17969a;
+        return this.a;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f17969a = DialogYyPopBinding.a(inflater.inflate(R.layout.dialog_yy_pop, viewGroup, true));
+        this.a = DialogYyPopBinding.a(inflater.inflate(R.layout.dialog_yy_pop, viewGroup, true));
         g();
-        DialogYyPopBinding dialogYyPopBinding = this.f17969a;
+        DialogYyPopBinding dialogYyPopBinding = this.a;
         return dialogYyPopBinding == null ? null : dialogYyPopBinding.getRoot();
     }
 }

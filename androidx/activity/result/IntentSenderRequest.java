@@ -23,22 +23,22 @@ public final class IntentSenderRequest implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private final IntentSender f1522a;
+    private final IntentSender f1474a;
     private final Intent b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f1523c;
+    private final int f1475c;
     private final int d;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/activity/result/IntentSenderRequest$Builder.class */
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private IntentSender f1524a;
+        private IntentSender f1476a;
         private Intent b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1525c;
+        private int f1477c;
         private int d;
 
         public Builder(PendingIntent pendingIntent) {
@@ -46,11 +46,11 @@ public final class IntentSenderRequest implements Parcelable {
         }
 
         public Builder(IntentSender intentSender) {
-            this.f1524a = intentSender;
+            this.f1476a = intentSender;
         }
 
         public IntentSenderRequest build() {
-            return new IntentSenderRequest(this.f1524a, this.b, this.f1525c, this.d);
+            return new IntentSenderRequest(this.f1476a, this.b, this.f1477c, this.d);
         }
 
         public Builder setFillInIntent(Intent intent) {
@@ -60,22 +60,22 @@ public final class IntentSenderRequest implements Parcelable {
 
         public Builder setFlags(int i, int i2) {
             this.d = i;
-            this.f1525c = i2;
+            this.f1477c = i2;
             return this;
         }
     }
 
     IntentSenderRequest(IntentSender intentSender, Intent intent, int i, int i2) {
-        this.f1522a = intentSender;
+        this.f1474a = intentSender;
         this.b = intent;
-        this.f1523c = i;
+        this.f1475c = i;
         this.d = i2;
     }
 
     IntentSenderRequest(Parcel parcel) {
-        this.f1522a = (IntentSender) parcel.readParcelable(IntentSender.class.getClassLoader());
+        this.f1474a = (IntentSender) parcel.readParcelable(IntentSender.class.getClassLoader());
         this.b = (Intent) parcel.readParcelable(Intent.class.getClassLoader());
-        this.f1523c = parcel.readInt();
+        this.f1475c = parcel.readInt();
         this.d = parcel.readInt();
     }
 
@@ -89,7 +89,7 @@ public final class IntentSenderRequest implements Parcelable {
     }
 
     public int getFlagsMask() {
-        return this.f1523c;
+        return this.f1475c;
     }
 
     public int getFlagsValues() {
@@ -97,14 +97,14 @@ public final class IntentSenderRequest implements Parcelable {
     }
 
     public IntentSender getIntentSender() {
-        return this.f1522a;
+        return this.f1474a;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f1522a, i);
+        parcel.writeParcelable(this.f1474a, i);
         parcel.writeParcelable(this.b, i);
-        parcel.writeInt(this.f1523c);
+        parcel.writeInt(this.f1475c);
         parcel.writeInt(this.d);
     }
 }

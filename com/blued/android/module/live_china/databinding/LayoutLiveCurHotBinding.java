@@ -9,17 +9,13 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LayoutLiveCurHotBinding.class */
 public final class LayoutLiveCurHotBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12092a;
+    public final FrameLayout a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final FrameLayout f12093c;
+    private final FrameLayout c;
 
     private LayoutLiveCurHotBinding(FrameLayout frameLayout, FrameLayout frameLayout2, FrameLayout frameLayout3) {
-        this.f12093c = frameLayout;
-        this.f12092a = frameLayout2;
+        this.c = frameLayout;
+        this.a = frameLayout2;
         this.b = frameLayout3;
     }
 
@@ -46,9 +42,8 @@ public final class LayoutLiveCurHotBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f12093c;
+        return this.c;
     }
 }

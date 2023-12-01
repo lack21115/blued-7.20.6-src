@@ -1,8 +1,8 @@
 package com.soft.blued.utils;
 
 import android.text.TextUtils;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProviders;
-import com.android.internal.telephony.PhoneConstants;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.utils.skin.BluedSkinPreferences;
 import com.blued.android.framework.utils.LogUtils;
@@ -46,7 +46,7 @@ public class BluedPreferences {
     public static String Z = "chatshake";
 
     /* renamed from: a  reason: collision with root package name */
-    public static BluedSharedPreferences f34719a;
+    public static BluedSharedPreferences f21028a;
     public static String aA = "VERSION_FROM_UPDATE";
     public static String aB = "USER_CONSENT_CLAUSE";
     public static String aC = "SHOWED_DIALOG_DOWNLOAD_INTERNATIONAL";
@@ -92,7 +92,7 @@ public class BluedPreferences {
     public static String aq = "secrets_look";
 
     /* renamed from: ar  reason: collision with root package name */
-    public static String f34720ar = "TIPS_VIDEO_CHAT";
+    public static String f21029ar = "TIPS_VIDEO_CHAT";
     public static String as = "LAST_APPLIST_POSTED_TIME";
     public static String at = "OPEN_CUSTOM_RECOMMEND";
     public static String au = "OPEN_FEED_CUSTOM_RECOMMEND";
@@ -156,7 +156,7 @@ public class BluedPreferences {
     public static String bz = "IS_FIRST_VOICE_TURN_TEXT";
 
     /* renamed from: c  reason: collision with root package name */
-    public static BluedSharedPreferences f34721c;
+    public static BluedSharedPreferences f21030c;
     private static String ca = "MAP_SEARCH_HISTORY";
     private static String cb = "MAP_SHADOW_SEARCH_HISTORY";
     private static String cc = "MAP_SHADOW_SET_HISTORY";
@@ -580,15 +580,15 @@ public class BluedPreferences {
     }
 
     public static BluedSharedPreferences a() {
-        if (f34719a == null) {
-            f34719a = BluedSharedPreferences.a();
+        if (f21028a == null) {
+            f21028a = BluedSharedPreferences.a();
         }
-        return f34719a;
+        return f21028a;
     }
 
     public static String a(int i2, long j2) {
         BluedSharedPreferences a2 = a();
-        return a2.a(UserInfo.getInstance().getLoginUserInfo().uid + PhoneConstants.APN_TYPE_ALL + i2 + PhoneConstants.APN_TYPE_ALL + j2, "");
+        return a2.a(UserInfo.getInstance().getLoginUserInfo().uid + "*" + i2 + "*" + j2, "");
     }
 
     public static String a(String str) {
@@ -605,7 +605,7 @@ public class BluedPreferences {
 
     public static void a(int i2, long j2, String str) {
         BluedSharedPreferences.Editor c2 = a().c();
-        c2.a(UserInfo.getInstance().getLoginUserInfo().uid + PhoneConstants.APN_TYPE_ALL + i2 + PhoneConstants.APN_TYPE_ALL + j2, str).b();
+        c2.a(UserInfo.getInstance().getLoginUserInfo().uid + "*" + i2 + "*" + j2, str).b();
     }
 
     public static void a(int i2, String str) {
@@ -1015,7 +1015,7 @@ public class BluedPreferences {
     }
 
     public static boolean ay() {
-        return a().a(f34720ar, true);
+        return a().a(f21029ar, true);
     }
 
     public static long az(String str) {
@@ -1024,7 +1024,7 @@ public class BluedPreferences {
     }
 
     public static void az() {
-        a().c().a(f34720ar, false).a();
+        a().c().a(f21029ar, false).a();
     }
 
     public static BluedSharedPreferences b() {
@@ -1253,11 +1253,11 @@ public class BluedPreferences {
     }
 
     public static boolean bs() {
-        return f34719a.a(bg, false);
+        return f21028a.a(bg, false);
     }
 
     public static boolean bt() {
-        return f34719a.a(bh, true);
+        return f21028a.a(bh, true);
     }
 
     public static int bu() {
@@ -1527,10 +1527,10 @@ public class BluedPreferences {
     }
 
     public static BluedSharedPreferences d() {
-        if (f34721c == null) {
-            f34721c = BluedSharedPreferences.a("blued_sf_find_sift", 0);
+        if (f21030c == null) {
+            f21030c = BluedSharedPreferences.a("blued_sf_find_sift", 0);
         }
-        return f34721c;
+        return f21030c;
     }
 
     public static void d(int i2) {
@@ -1549,8 +1549,8 @@ public class BluedPreferences {
     public static void d(boolean z2) {
         BluedSharedPreferences.Editor c2 = d().c();
         c2.a(UserInfo.getInstance().getLoginUserInfo().getUid() + A, z2).a();
-        if (HomeActivity.f30985c != null) {
-            ((NearbyViewModel) ViewModelProviders.of(HomeActivity.f30985c).get(NearbyViewModel.class)).f30626c.postValue(null);
+        if (HomeActivity.f17295c != null) {
+            ((NearbyViewModel) ViewModelProviders.of((FragmentActivity) HomeActivity.f17295c).get(NearbyViewModel.class)).f16936c.postValue(null);
         }
     }
 
@@ -1722,7 +1722,7 @@ public class BluedPreferences {
     }
 
     /* renamed from: do  reason: not valid java name */
-    public static boolean m9667do() {
+    public static boolean m6618do() {
         return a().a("MSG_BOX_TG", false);
     }
 
@@ -1731,7 +1731,7 @@ public class BluedPreferences {
     }
 
     public static int dq() {
-        return a().b("blued_skin_name", R.string.blued_light_mode);
+        return a().b("blued_skin_name", (int) R.string.blued_light_mode);
     }
 
     public static boolean dr() {

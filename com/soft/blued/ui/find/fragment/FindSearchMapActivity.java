@@ -81,6 +81,8 @@ import com.blued.das.guy.GuyProtos;
 import com.blued.das.vip.VipProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.huawei.openalliance.ad.constant.t;
+import com.huawei.openalliance.ad.utils.ay;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.soft.blued.R;
 import com.soft.blued.constant.EventBusConstant;
@@ -142,7 +144,7 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
     private CardView ad;
 
     /* renamed from: c  reason: collision with root package name */
-    private CommonTopTitleNoTrans f30245c;
+    private CommonTopTitleNoTrans f16555c;
     private SearchView d;
     private SearchEditText e;
     private ImageView f;
@@ -172,15 +174,14 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
     private String G = "";
 
     /* renamed from: a  reason: collision with root package name */
-    BluedUIHttpResponse f30244a = new BluedUIHttpResponse<BluedEntity<UserFindResult, BluedMyExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.FindSearchMapActivity.19
+    BluedUIHttpResponse f16554a = new BluedUIHttpResponse<BluedEntity<UserFindResult, BluedMyExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.FindSearchMapActivity.19
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f30258a = false;
+        boolean f16568a = false;
         boolean b = false;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f30258a = true;
+            this.f16568a = true;
             if (i == 4031213) {
                 InstantLog.a("map_vip_dialog_show");
                 this.b = true;
@@ -189,13 +190,12 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             DialogUtils.b(FindSearchMapActivity.this.u);
             FindSearchMapActivity.this.h.j();
             if (FindSearchMapActivity.this.j) {
                 FindSearchMapActivity.this.P.loadMoreComplete();
-                if (this.f30258a) {
+                if (this.f16568a) {
                     if (FindSearchMapActivity.this.P.getItemCount() == 0) {
                         FindSearchMapActivity.this.v.b();
                     }
@@ -204,7 +204,7 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
                 }
             } else {
                 FindSearchMapActivity.this.O.loadMoreComplete();
-                if (this.f30258a) {
+                if (this.f16568a) {
                     if (FindSearchMapActivity.this.O.getItemCount() == 0) {
                         FindSearchMapActivity.this.v.b();
                     }
@@ -212,7 +212,7 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
                     FindSearchMapActivity.this.v.a();
                 }
             }
-            this.f30258a = false;
+            this.f16568a = false;
             if (this.b) {
                 CommonAlertDialog.a(FindSearchMapActivity.this.getActivity(), (int) R.drawable.map_buy_vip_tip, AppUtils.a((int) R.string.map_free_over), (String) null, AppUtils.a((int) R.string.map_buy_now), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.FindSearchMapActivity.19.1
                     @Override // android.content.DialogInterface.OnClickListener
@@ -225,13 +225,11 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(FindSearchMapActivity.this.u);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<UserFindResult, BluedMyExtra> bluedEntity) {
             try {
                 if (bluedEntity.data == null || bluedEntity.data.size() <= 0) {
@@ -282,8 +280,8 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
                     FindSearchMapActivity.this.O.addData((Collection<? extends UserFindResult>) bluedEntity.data);
                 }
                 if (bluedEntity.extra != null) {
-                    FindSearchMapActivity.this.o = bluedEntity.extra.getNext_min_dist();
-                    FindSearchMapActivity.this.p = bluedEntity.extra.getNext_skip_uid();
+                    FindSearchMapActivity.this.o = ((BluedMyExtra) bluedEntity.extra).getNext_min_dist();
+                    FindSearchMapActivity.this.p = ((BluedMyExtra) bluedEntity.extra).getNext_skip_uid();
                 }
             } catch (Exception e) {
                 if (FindSearchMapActivity.this.l != 1) {
@@ -292,7 +290,6 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public BluedEntity<UserFindResult, BluedMyExtra> parseData(String str) {
             BluedEntity<UserFindResult, BluedMyExtra> parseData = super.parseData(str);
             if (parseData != null) {
@@ -302,8 +299,8 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
                     if (i2 >= parseData.data.size()) {
                         break;
                     }
-                    parseData.data.get(i2).distance = DistanceUtils.a(parseData.data.get(i2).distance, BlueAppLocal.c(), false);
-                    parseData.data.get(i2).last_operate = TimeAndDateUtils.a(FindSearchMapActivity.this.getActivity(), TimeAndDateUtils.c(parseData.data.get(i2).last_operate));
+                    ((UserFindResult) parseData.data.get(i2)).distance = DistanceUtils.a(((UserFindResult) parseData.data.get(i2)).distance, BlueAppLocal.c(), false);
+                    ((UserFindResult) parseData.data.get(i2)).last_operate = TimeAndDateUtils.a(FindSearchMapActivity.this.getActivity(), TimeAndDateUtils.c(((UserFindResult) parseData.data.get(i2)).last_operate));
                     i = i2 + 1;
                 }
             }
@@ -318,18 +315,18 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
     }
 
     private void a(Bundle bundle) {
-        this.q = (MapView) this.R.findViewById(R.id.smapsView);
+        this.q = this.R.findViewById(R.id.smapsView);
         this.s = this.R.findViewById(R.id.map_click_view);
-        MapView mapView = (MapView) this.R.findViewById(R.id.smapsView);
-        this.q = mapView;
-        mapView.onCreate(bundle);
+        MapView findViewById = this.R.findViewById(R.id.smapsView);
+        this.q = findViewById;
+        findViewById.onCreate(bundle);
         LinearLayout linearLayout = (LinearLayout) this.R.findViewById(R.id.ll_map_animator);
         this.r = linearLayout;
         linearLayout.post(new Runnable() { // from class: com.soft.blued.ui.find.fragment.FindSearchMapActivity.8
             @Override // java.lang.Runnable
             public void run() {
                 ConstraintLayout constraintLayout = (ConstraintLayout) FindSearchMapActivity.this.R.findViewById(R.id.constraintLayout);
-                FindSearchMapActivity.this.t = (constraintLayout.getHeight() - FindSearchMapActivity.this.f30245c.getHeight()) - StatusBarHelper.a(FindSearchMapActivity.this.ac);
+                FindSearchMapActivity.this.t = (constraintLayout.getHeight() - FindSearchMapActivity.this.f16555c.getHeight()) - StatusBarHelper.a(FindSearchMapActivity.this.ac);
                 FindSearchMapActivity.this.r.getLayoutParams().height = FindSearchMapActivity.this.t;
                 FindSearchMapActivity.this.r.requestLayout();
             }
@@ -340,7 +337,7 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         if (this.z == null) {
             LatLng latLng = null;
             if (MapFindManager.a().b()) {
-                latLng = new LatLng(Double.parseDouble(MapFindManager.a().c().b), Double.parseDouble(MapFindManager.a().c().f30599a));
+                latLng = new LatLng(Double.parseDouble(MapFindManager.a().c().b), Double.parseDouble(MapFindManager.a().c().f16909a));
             }
             try {
                 this.A = new GeocodeSearch(getActivity());
@@ -402,14 +399,13 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
     public void b(final boolean z, final boolean z2) {
         MineHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<ShadowModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.FindSearchMapActivity.16
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<ShadowModel> bluedEntityA) {
-                ShadowModel shadowModel = bluedEntityA.data.get(0);
+                ShadowModel shadowModel = (ShadowModel) bluedEntityA.data.get(0);
                 if (shadowModel != null) {
                     if (shadowModel.has_right == 0) {
                         if (z) {
-                            WebViewShowInfoFragment.show(FindSearchMapActivity.this.getActivity(), H5Url.a(46, UserInfo.getInstance().getLoginUserInfo().uid, "map_shadow"), 0);
+                            WebViewShowInfoFragment.show(FindSearchMapActivity.this.getActivity(), H5Url.a(46, new Object[]{UserInfo.getInstance().getLoginUserInfo().uid, "map_shadow"}), 0);
                             return;
                         }
                         return;
@@ -473,20 +469,19 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
 
     private void g() {
         this.Q = PeopleGridQuickAdapter.a(getActivity());
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.R.findViewById(2131366898);
-        this.h = pullToRefreshRecyclerView;
+        PullToRefreshRecyclerView findViewById = this.R.findViewById(R.id.list_view);
+        this.h = findViewById;
         boolean z = true;
-        pullToRefreshRecyclerView.setRefreshEnabled(true);
-        RecyclerView refreshableView = this.h.getRefreshableView();
-        this.i = refreshableView;
-        refreshableView.setClipToPadding(false);
+        findViewById.setRefreshEnabled(true);
+        RecyclerView recyclerView = (RecyclerView) this.h.getRefreshableView();
+        this.i = recyclerView;
+        recyclerView.setClipToPadding(false);
         this.i.setScrollBarStyle(33554432);
         if (BluedPreferences.J() != 1) {
             z = false;
         }
         this.j = z;
         this.h.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.find.fragment.FindSearchMapActivity.4
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 FindSearchMapActivity.this.a(true, false);
             }
@@ -499,29 +494,29 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
     }
 
     private void h() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.R.findViewById(2131370749);
-        this.f30245c = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setOnClickListener(this);
-        this.f30245c.setRightClickListener(this);
-        this.f30245c.setCenterText(AppUtils.a((int) R.string.map_finder));
-        this.f30245c.setRightImg(2131233922);
-        this.f30245c.f();
-        this.f30245c.setRightClickListener(this);
-        this.f30245c.setLeftClickListener(this);
-        this.f30245c.setCenterTextColor(2131101780);
+        CommonTopTitleNoTrans findViewById = this.R.findViewById(R.id.top_title);
+        this.f16555c = findViewById;
+        findViewById.setOnClickListener(this);
+        this.f16555c.setRightClickListener(this);
+        this.f16555c.setCenterText(AppUtils.a((int) R.string.map_finder));
+        this.f16555c.setRightImg(2131233922);
+        this.f16555c.f();
+        this.f16555c.setRightClickListener(this);
+        this.f16555c.setLeftClickListener(this);
+        this.f16555c.setCenterTextColor(2131101780);
     }
 
     private void i() {
-        if (HomeActivity.f30985c != null) {
-            HomeActivity.f30985c.getWindow().setSoftInputMode(51);
+        if (HomeActivity.f17295c != null) {
+            HomeActivity.f17295c.getWindow().setSoftInputMode(51);
         }
         this.u = DialogUtils.a(getActivity());
         this.T = (FrameLayout) this.R.findViewById(R.id.search_content);
-        this.v = (NoDataAndLoadFailView) this.R.findViewById(2131368727);
-        SearchView searchView = (SearchView) this.R.findViewById(2131369680);
-        this.d = searchView;
-        this.e = searchView.getEditView();
-        this.d.setRootBgColor(17170445);
+        this.v = this.R.findViewById(R.id.no_data_view);
+        SearchView findViewById = this.R.findViewById(R.id.search_view);
+        this.d = findViewById;
+        this.e = findViewById.getEditView();
+        this.d.setRootBgColor((int) android.R.color.transparent);
         ShapeModel shapeModel = new ShapeModel();
         shapeModel.H = DensityUtils.a(getContext(), 14.0f);
         shapeModel.k = ContextCompat.getColor(getContext(), 2131101780);
@@ -567,7 +562,7 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         Locale c2 = LocaleUtils.c();
         if (TextUtils.equals(c2 != null ? c2.getLanguage() : "", a.V)) {
             this.z.setMapLanguage(a.V);
-            ServiceSettings.getInstance().setLanguage("zh-CN");
+            ServiceSettings.getInstance().setLanguage(ay.Code);
             return;
         }
         this.z.setMapLanguage("en");
@@ -692,7 +687,6 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
 
     private void s() {
         NearbyHttpUtils.b(new BluedUIHttpResponse(getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.FindSearchMapActivity.18
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 if (i == 4031219) {
                     EventTrackGuy.b(GuyProtos.Event.NEARBY_FRIEND_MAP_FIND_OPEN_POP_SHOW);
@@ -711,7 +705,6 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 MapFindManager.MapFindBean mapFindBean = new MapFindManager.MapFindBean();
                 if (FindSearchMapActivity.this.M != null) {
@@ -720,17 +713,17 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
                     sb.append(FindSearchMapActivity.this.M.getLatLonPoint().getLatitude());
                     sb.append("");
                     mapFindBean.b = sb.toString();
-                    mapFindBean.f30599a = FindSearchMapActivity.this.M.getLatLonPoint().getLongitude() + "";
-                    mapFindBean.f30600c = FindSearchMapActivity.this.H;
+                    mapFindBean.f16909a = FindSearchMapActivity.this.M.getLatLonPoint().getLongitude() + "";
+                    mapFindBean.f16910c = FindSearchMapActivity.this.H;
                 } else if (FindSearchMapActivity.this.E == null) {
                     return;
                 } else {
                     mapFindBean.d = FindSearchMapActivity.this.F;
                     mapFindBean.b = FindSearchMapActivity.this.E.latitude + "";
-                    mapFindBean.f30599a = FindSearchMapActivity.this.E.longitude + "";
-                    mapFindBean.f30600c = FindSearchMapActivity.this.H;
+                    mapFindBean.f16909a = FindSearchMapActivity.this.E.longitude + "";
+                    mapFindBean.f16910c = FindSearchMapActivity.this.H;
                 }
-                mapFindBean.f30600c = FindSearchMapActivity.this.H;
+                mapFindBean.f16910c = FindSearchMapActivity.this.H;
                 mapFindBean.e = FindSearchMapActivity.this.e.getText().toString();
                 MapFindManager.a().a(mapFindBean);
                 FindSearchMapActivity.this.u();
@@ -743,7 +736,7 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         this.z.setLocationSource(this);
         this.z.setMyLocationEnabled(false);
         MyLocationStyle myLocationStyle = new MyLocationStyle();
-        myLocationStyle.myLocationIcon(BitmapDescriptorFactory.fromResource(R.drawable.my_position));
+        myLocationStyle.myLocationIcon(BitmapDescriptorFactory.fromResource((int) R.drawable.my_position));
         myLocationStyle.strokeColor(Color.argb(0, 0, 0, 0));
         myLocationStyle.radiusFillColor(Color.argb(0, 0, 0, 0));
         myLocationStyle.strokeWidth(0.0f);
@@ -777,7 +770,7 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
     }
 
     public void a(LatLonPoint latLonPoint) {
-        this.A.getFromLocationAsyn(new RegeocodeQuery(latLonPoint, 200.0f, GeocodeSearch.AMAP));
+        this.A.getFromLocationAsyn(new RegeocodeQuery(latLonPoint, 200.0f, "autonavi"));
     }
 
     public void a(PoiItem poiItem, String str) {
@@ -825,15 +818,14 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
             filterEntity.is_map_ok_click = "click";
         }
         if (this.l == 1) {
-            NearbyHttpUtils.a(getActivity(), this.f30244a, filterEntity, "", null);
+            NearbyHttpUtils.a(getActivity(), this.f16554a, filterEntity, "", null);
             return;
         }
         filterEntity.next_min_dist = this.o;
         filterEntity.next_skip_uid = this.p;
-        NearbyHttpUtils.a(getActivity(), this.f30244a, filterEntity, "", null);
+        NearbyHttpUtils.a(getActivity(), this.f16554a, filterEntity, "", null);
     }
 
-    @Override // com.amap.api.maps.LocationSource
     public void activate(LocationSource.OnLocationChangedListener onLocationChangedListener) {
         this.I = onLocationChangedListener;
         try {
@@ -884,7 +876,6 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         this.T.setVisibility(8);
     }
 
-    @Override // com.amap.api.maps.LocationSource
     public void deactivate() {
         this.I = null;
         AMapLocationClient aMapLocationClient = this.J;
@@ -895,14 +886,13 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         this.J = null;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1 && i == 1 && intent != null) {
             this.L = intent.getStringExtra("search_position");
-            PoiItem poiItem = (PoiItem) intent.getParcelableExtra("lat_lon_point");
-            this.M = poiItem;
-            LatLng latLng = new LatLng(poiItem.getLatLonPoint().getLatitude(), this.M.getLatLonPoint().getLongitude());
+            PoiItem parcelableExtra = intent.getParcelableExtra("lat_lon_point");
+            this.M = parcelableExtra;
+            LatLng latLng = new LatLng(parcelableExtra.getLatLonPoint().getLatitude(), this.M.getLatLonPoint().getLongitude());
             this.N = latLng;
             this.z.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16.0f));
             if (StringUtils.d(this.L)) {
@@ -912,7 +902,6 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         if (this.k) {
             l();
@@ -923,14 +912,12 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         return false;
     }
 
-    @Override // com.amap.api.maps.AMap.OnCameraChangeListener
     public void onCameraChange(CameraPosition cameraPosition) {
         if (cameraPosition != null) {
             LatLng latLng = cameraPosition.target;
         }
     }
 
-    @Override // com.amap.api.maps.AMap.OnCameraChangeListener
     public void onCameraChangeFinish(CameraPosition cameraPosition) {
         if (cameraPosition != null) {
             this.M = null;
@@ -997,7 +984,6 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.R = layoutInflater.inflate(R.layout.activity_find_search_map, (ViewGroup) null);
         this.ac = getActivity();
@@ -1026,7 +1012,6 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         return this.R;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         this.q.onDestroy();
@@ -1034,26 +1019,24 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         if (aMapLocationClient != null) {
             aMapLocationClient.onDestroy();
         }
-        if (HomeActivity.f30985c != null) {
-            HomeActivity.f30985c.getWindow().setSoftInputMode(35);
+        if (HomeActivity.f17295c != null) {
+            HomeActivity.f17295c.getWindow().setSoftInputMode(35);
         }
     }
 
-    @Override // com.amap.api.services.geocoder.GeocodeSearch.OnGeocodeSearchListener
     public void onGeocodeSearched(GeocodeResult geocodeResult, int i) {
         if (i != 1000 || geocodeResult == null || geocodeResult.getGeocodeAddressList() == null || geocodeResult.getGeocodeAddressList().size() <= 0) {
             return;
         }
-        GeocodeAddress geocodeAddress = geocodeResult.getGeocodeAddressList().get(0);
+        GeocodeAddress geocodeAddress = (GeocodeAddress) geocodeResult.getGeocodeAddressList().get(0);
         this.z.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(geocodeAddress.getLatLonPoint().getLatitude(), geocodeAddress.getLatLonPoint().getLongitude()), 16.0f));
     }
 
-    @Override // com.amap.api.location.AMapLocationListener
     public void onLocationChanged(AMapLocation aMapLocation) {
         if (this.I == null || aMapLocation == null) {
             Logger.a(BrowserContract.Bookmarks.POSITION, "定位完成：mListener为空或者amapLocation为空");
         } else {
-            Logger.a(BrowserContract.Bookmarks.POSITION, "定位完成：" + aMapLocation.getErrorCode() + "," + aMapLocation.getLatitude() + ";" + aMapLocation.getLongitude());
+            Logger.a(BrowserContract.Bookmarks.POSITION, "定位完成：" + aMapLocation.getErrorCode() + "," + aMapLocation.getLatitude() + t.aE + aMapLocation.getLongitude());
             if (aMapLocation.getErrorCode() == 0) {
                 LatLng latLng = new LatLng(aMapLocation.getLatitude(), aMapLocation.getLongitude());
                 this.D = latLng;
@@ -1067,7 +1050,7 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
             } else {
                 this.F = "";
                 this.G = "";
-                AppMethods.a((CharSequence) ("2131891191(" + aMapLocation.getErrorCode() + ")"));
+                AppMethods.a("2131891191(" + aMapLocation.getErrorCode() + ")");
                 BluedStatistics.c().a("MAP_LOCATION", 0L, aMapLocation.getErrorCode(), aMapLocation.getLocationDetail());
             }
             this.F = "";
@@ -1080,7 +1063,6 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         MobclickAgent.onPageEnd(FindSearchMapActivity.class.getSimpleName());
@@ -1089,7 +1071,6 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         deactivate();
     }
 
-    @Override // com.amap.api.services.geocoder.GeocodeSearch.OnGeocodeSearchListener
     public void onRegeocodeSearched(RegeocodeResult regeocodeResult, int i) {
         if (i != 1000) {
             this.F = "";
@@ -1108,7 +1089,6 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         this.q.onResume();
         super.onResume();
@@ -1119,7 +1099,6 @@ public class FindSearchMapActivity extends BaseFragment implements View.OnClickL
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         this.q.onSaveInstanceState(bundle);

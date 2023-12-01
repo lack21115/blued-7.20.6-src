@@ -13,40 +13,40 @@ import java.util.concurrent.TimeUnit;
 public class a extends ThreadPoolExecutor {
 
     /* renamed from: a  reason: collision with root package name */
-    private c f24573a;
+    private c f10886a;
     private com.opos.cmn.an.j.a.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ThreadLocal<f> f24574c;
+    private ThreadLocal<f> f10887c;
 
     /* renamed from: com.opos.cmn.an.j.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/an/j/a$a.class */
-    public static class C0622a {
+    public static class C0452a {
         private com.opos.cmn.an.j.a.b g;
         private c h;
         private BlockingQueue<Runnable> i;
 
         /* renamed from: a  reason: collision with root package name */
-        private int f24575a = 3;
+        private int f10888a = 3;
         private int b = 5;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f24576c = 128;
+        private int f10889c = 128;
         private int d = 60000;
         private String f = "cmn_thread";
         private int e = 5;
 
-        public C0622a a(int i) {
-            this.f24575a = i;
+        public C0452a a(int i) {
+            this.f10888a = i;
             return this;
         }
 
-        public C0622a a(String str) {
+        public C0452a a(String str) {
             this.f = str;
             return this;
         }
 
-        public C0622a a(BlockingQueue<Runnable> blockingQueue) {
+        public C0452a a(BlockingQueue<Runnable> blockingQueue) {
             this.i = blockingQueue;
             return this;
         }
@@ -55,17 +55,17 @@ public class a extends ThreadPoolExecutor {
             this.e = Math.max(1, Math.min(10, this.e));
             this.f = TextUtils.isEmpty(this.f) ? "cmn_thread" : this.f;
             if (this.i == null) {
-                this.i = new LinkedBlockingQueue(this.f24576c);
+                this.i = new LinkedBlockingQueue(this.f10889c);
             }
-            return new a(this.f24575a, this.b, this.d, TimeUnit.MILLISECONDS, this.i, this.e, this.f, this.g, this.h);
+            return new a(this.f10888a, this.b, this.d, TimeUnit.MILLISECONDS, this.i, this.e, this.f, this.g, this.h);
         }
 
-        public C0622a b(int i) {
+        public C0452a b(int i) {
             this.b = i;
             return this;
         }
 
-        public C0622a c(int i) {
+        public C0452a c(int i) {
             this.d = i;
             return this;
         }
@@ -73,28 +73,28 @@ public class a extends ThreadPoolExecutor {
 
     private a(int i, int i2, long j, TimeUnit timeUnit, BlockingQueue<Runnable> blockingQueue, int i3, String str, com.opos.cmn.an.j.a.b bVar, c cVar) {
         super(i, i2, j, timeUnit, blockingQueue, new com.opos.cmn.an.j.b.a(str, i3), new ThreadPoolExecutor.DiscardPolicy());
-        this.f24574c = new ThreadLocal<>();
+        this.f10887c = new ThreadLocal<>();
         this.b = bVar;
-        this.f24573a = cVar;
+        this.f10886a = cVar;
     }
 
     private void a() {
         synchronized (this) {
-            this.f24574c.set(null);
+            this.f10887c.set(null);
         }
     }
 
     private f b() {
         f fVar;
         synchronized (this) {
-            f fVar2 = this.f24574c.get();
+            f fVar2 = this.f10887c.get();
             fVar = fVar2;
             if (fVar2 == null) {
                 fVar = new f();
-                fVar.b = this.f24573a;
-                fVar.f24597c = this.b;
+                fVar.b = this.f10886a;
+                fVar.f10910c = this.b;
                 fVar.d = com.opos.cmn.an.j.a.a.THREAD;
-                this.f24574c.set(fVar);
+                this.f10887c.set(fVar);
             }
         }
         return fVar;

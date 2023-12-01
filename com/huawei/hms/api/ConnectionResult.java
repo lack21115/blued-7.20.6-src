@@ -5,8 +5,8 @@ import android.app.PendingIntent;
 import android.content.IntentSender;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.security.mobile.module.http.model.c;
 import com.huawei.hms.common.internal.Objects;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/api/ConnectionResult.class */
 public final class ConnectionResult implements Parcelable {
@@ -139,9 +139,9 @@ public final class ConnectionResult implements Parcelable {
                 }
                 return "SERVICE_MISSING";
             }
-            return c.g;
+            return "SUCCESS";
         }
-        return "UNKNOWN";
+        return GrsBaseInfo.CountryCodeSource.UNKNOWN;
     }
 
     @Override // android.os.Parcelable

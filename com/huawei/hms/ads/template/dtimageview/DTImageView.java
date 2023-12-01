@@ -24,11 +24,11 @@ public class DTImageView extends ImageView implements com.huawei.hms.ads.templat
     private boolean S;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22524a;
+    private int f8916a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private a f22525c;
+    private a f8917c;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/template/dtimageview/DTImageView$a.class */
     public enum a {
@@ -61,7 +61,7 @@ public class DTImageView extends ImageView implements com.huawei.hms.ads.templat
         ccVar.Code((ci) new ck(this));
         this.B.Code(attributeSet);
         Pair<Integer, Integer> Code = com.huawei.hms.ads.template.util.a.Code(attributeSet, this.C);
-        this.f22524a = Code.first.intValue();
+        this.f8916a = Code.first.intValue();
         this.b = Code.second.intValue();
         int attributeCount = attributeSet.getAttributeCount();
         int i = 0;
@@ -101,7 +101,7 @@ public class DTImageView extends ImageView implements com.huawei.hms.ads.templat
             z = false;
         }
         if (!z) {
-            int i = this.f22524a;
+            int i = this.f8916a;
             int i2 = this.b;
             f = (i > i2 ? i2 : i) / 2.0f;
         } else if (!z) {
@@ -307,7 +307,7 @@ public class DTImageView extends ImageView implements com.huawei.hms.ads.templat
     }
 
     public a getDtShape() {
-        return this.f22525c;
+        return this.f8917c;
     }
 
     public boolean getPreventCornerOverlap() {
@@ -318,14 +318,13 @@ public class DTImageView extends ImageView implements com.huawei.hms.ads.templat
         return this.S;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
     }
 
     public void setDtShape(a aVar) {
-        this.f22525c = aVar;
+        this.f8917c = aVar;
     }
 
     @Override // android.view.View

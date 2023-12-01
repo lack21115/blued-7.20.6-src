@@ -14,12 +14,8 @@ import org.apache.http.entity.BasicHttpEntity;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/HurlStack.class */
 public class HurlStack implements HttpStack {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String[] f24259c = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final SSLSocketFactory f24260a;
+    private static final String[] c = null;
+    private final SSLSocketFactory a;
     private final UrlRewriter b;
 
     /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/HurlStack$UrlRewriter.class */
@@ -42,7 +38,7 @@ public class HurlStack implements HttpStack {
 
     public HurlStack(UrlRewriter urlRewriter, SSLSocketFactory sSLSocketFactory) {
         this.b = urlRewriter;
-        this.f24260a = sSLSocketFactory;
+        this.a = sSLSocketFactory;
     }
 
     private HttpURLConnection a(URL url, Request<?> request) throws IOException {
@@ -54,9 +50,9 @@ public class HurlStack implements HttpStack {
                 createConnection.setReadTimeout(timeoutMs);
                 createConnection.setUseCaches(false);
                 createConnection.setDoInput(true);
-                if (f24259c[15].equals(url.getProtocol())) {
-                    if (this.f24260a != null) {
-                        ((HttpsURLConnection) createConnection).setSSLSocketFactory(this.f24260a);
+                if (c[15].equals(url.getProtocol())) {
+                    if (this.a != null) {
+                        ((HttpsURLConnection) createConnection).setSSLSocketFactory(this.a);
                         return createConnection;
                     }
                 }
@@ -108,7 +104,7 @@ public class HurlStack implements HttpStack {
         byte[] body = request.getBody();
         if (body != null) {
             httpURLConnection.setDoOutput(true);
-            httpURLConnection.addRequestProperty(f24259c[14], request.getBodyContentType());
+            httpURLConnection.addRequestProperty(c[14], request.getBodyContentType());
             DataOutputStream dataOutputStream = new DataOutputStream(httpURLConnection.getOutputStream());
             dataOutputStream.write(body);
             dataOutputStream.close();

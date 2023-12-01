@@ -4,5 +4,5 @@ package com.opos.cmn.an.f.a.b;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f24515a;
+    public final boolean f10828a;
 }

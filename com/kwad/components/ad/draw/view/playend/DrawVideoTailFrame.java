@@ -177,7 +177,7 @@ public class DrawVideoTailFrame extends FrameLayout implements View.OnClickListe
     public void onClick(View view) {
         Tracker.onClick(view);
         boolean z = true;
-        a.C0519a ap = new a.C0519a(getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ap(view == this.dO ? 1 : 2);
+        a.C0349a ap = new a.C0349a(getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ap(view == this.dO ? 1 : 2);
         if (view != this.dO) {
             z = false;
         }

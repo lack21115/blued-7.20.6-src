@@ -13,14 +13,14 @@ import java.util.Map;
 public class d implements a {
     /* JADX INFO: Access modifiers changed from: private */
     public static byte[] b(com.opos.cmn.func.b.b.e eVar, String str) {
-        if (!com.opos.cmn.biz.monitor.e.a(str) || eVar == null || 200 != eVar.f24862a || eVar.d <= 0 || eVar.f24863c == null) {
+        if (!com.opos.cmn.biz.monitor.e.a(str) || eVar == null || 200 != eVar.f11174a || eVar.d <= 0 || eVar.f11175c == null) {
             return null;
         }
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             byte[] bArr = new byte[1024];
             do {
-                int read = eVar.f24863c.read(bArr);
+                int read = eVar.f11175c.read(bArr);
                 if (-1 == read) {
                     return byteArrayOutputStream.toByteArray();
                 }
@@ -34,7 +34,7 @@ public class d implements a {
     }
 
     @Override // com.opos.cmn.biz.monitor.b.a
-    public void a(final Context context, final b bVar, final a.InterfaceC0627a interfaceC0627a) {
+    public void a(final Context context, final b bVar, final a.InterfaceC0457a interfaceC0457a) {
         final Handler handler = new Handler(context.getMainLooper());
         com.opos.cmn.an.j.b.a().execute(new Runnable() { // from class: com.opos.cmn.biz.monitor.b.d.1
             @Override // java.lang.Runnable
@@ -61,7 +61,7 @@ public class d implements a {
                         c cVar = null;
                         if (eVar != null) {
                             try {
-                                cVar = new c.a(eVar.f24862a).a(eVar.e).a(d.b(eVar, bVar.a())).a();
+                                cVar = new c.a(eVar.f11174a).a(eVar.e).a(d.b(eVar, bVar.a())).a();
                             } catch (Exception e) {
                                 e = e;
                                 StringBuilder sb2 = new StringBuilder();
@@ -75,7 +75,7 @@ public class d implements a {
                                 handler.post(new Runnable() { // from class: com.opos.cmn.biz.monitor.b.d.1.2
                                     @Override // java.lang.Runnable
                                     public void run() {
-                                        interfaceC0627a.a();
+                                        interfaceC0457a.a();
                                     }
                                 });
                                 if (eVar != null) {
@@ -97,9 +97,9 @@ public class d implements a {
                             @Override // java.lang.Runnable
                             public void run() {
                                 if (cVar2 != null) {
-                                    interfaceC0627a.a(cVar2);
+                                    interfaceC0457a.a(cVar2);
                                 } else {
-                                    interfaceC0627a.a();
+                                    interfaceC0457a.a();
                                 }
                             }
                         });

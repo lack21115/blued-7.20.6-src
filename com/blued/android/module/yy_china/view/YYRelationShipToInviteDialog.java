@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -34,10 +36,8 @@ import com.blued.android.module.yy_china.utils.YYRoomHttpUtils;
 import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.android.module.yy_china.view.YYRelationShipToInviteDialog;
 import com.blued.das.client.chatroom.ChatRoomProtos;
-import com.cdo.oaps.ad.wrapper.BaseWrapper;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.google.android.material.imageview.ShapeableImageView;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -46,13 +46,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRelationShipToInviteDialog.class */
 public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogRelationshipToInviteBinding f18412a;
+    private DialogRelationshipToInviteBinding a;
     private final RelationInvitedDayAdapter b = new RelationInvitedDayAdapter(this);
-
-    /* renamed from: c  reason: collision with root package name */
-    private final RelationInvitedGiftAdapter f18413c = new RelationInvitedGiftAdapter(this);
+    private final RelationInvitedGiftAdapter c = new RelationInvitedGiftAdapter(this);
     private String d;
     private Long e;
     private String f;
@@ -63,15 +59,13 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRelationShipToInviteDialog$RelationInvitedDayAdapter.class */
     public final class RelationInvitedDayAdapter extends BaseMultiItemQuickAdapter<YYRelationShipRoomToInvitedDayMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYRelationShipToInviteDialog f18414a;
+        final /* synthetic */ YYRelationShipToInviteDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public RelationInvitedDayAdapter(YYRelationShipToInviteDialog this$0) {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f18414a = this$0;
+            this.a = this$0;
             addItemType(0, R.layout.item_relationship_to_invite_day);
         }
 
@@ -85,20 +79,20 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
         }
 
         private final void b(BaseViewHolder baseViewHolder, final YYRelationShipRoomToInvitedDayMode yYRelationShipRoomToInvitedDayMode) {
-            ItemRelationshipToInviteDayBinding a2 = ItemRelationshipToInviteDayBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            a2.f16649a.setText(yYRelationShipRoomToInvitedDayMode.getDay());
-            ShapeModel shapeModel = a2.f16649a.getShapeModel();
-            if (StringUtils.a(this.f18414a.f, yYRelationShipRoomToInvitedDayMode.getDay())) {
-                shapeModel.b = this.f18414a.getResources().getColor(R.color.syc_1AB6D0);
-                shapeModel.k = this.f18414a.getResources().getColor(R.color.syc_210BCEBB);
+            ItemRelationshipToInviteDayBinding a = ItemRelationshipToInviteDayBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            a.a.setText(yYRelationShipRoomToInvitedDayMode.getDay());
+            ShapeModel shapeModel = a.a.getShapeModel();
+            if (StringUtils.a(this.a.f, yYRelationShipRoomToInvitedDayMode.getDay())) {
+                shapeModel.b = this.a.getResources().getColor(R.color.syc_1AB6D0);
+                shapeModel.k = this.a.getResources().getColor(R.color.syc_210BCEBB);
             } else {
-                shapeModel.b = this.f18414a.getResources().getColor(R.color.syc_dark_777777);
-                shapeModel.k = this.f18414a.getResources().getColor(R.color.syc_F8F8F8);
+                shapeModel.b = this.a.getResources().getColor(R.color.syc_dark_777777);
+                shapeModel.k = this.a.getResources().getColor(R.color.syc_F8F8F8);
             }
-            a2.f16649a.setShapeModel(shapeModel);
-            ShapeTextView shapeTextView = a2.f16649a;
-            final YYRelationShipToInviteDialog yYRelationShipToInviteDialog = this.f18414a;
+            a.a.setShapeModel(shapeModel);
+            ShapeTextView shapeTextView = a.a;
+            final YYRelationShipToInviteDialog yYRelationShipToInviteDialog = this.a;
             shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipToInviteDialog$RelationInvitedDayAdapter$l5Ovidf5j8YFvT3Hb9CEbdJnGVU
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -108,7 +102,6 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, YYRelationShipRoomToInvitedDayMode item) {
             Intrinsics.e(helper, "helper");
@@ -123,15 +116,13 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRelationShipToInviteDialog$RelationInvitedGiftAdapter.class */
     public final class RelationInvitedGiftAdapter extends BaseMultiItemQuickAdapter<YYRelationShipRoomToInvitedGiftMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYRelationShipToInviteDialog f18415a;
+        final /* synthetic */ YYRelationShipToInviteDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public RelationInvitedGiftAdapter(YYRelationShipToInviteDialog this$0) {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f18415a = this$0;
+            this.a = this$0;
             addItemType(0, R.layout.item_relationship_to_invite_gift);
         }
 
@@ -150,25 +141,25 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
         private final void b(BaseViewHolder baseViewHolder, final YYRelationShipRoomToInvitedGiftMode yYRelationShipRoomToInvitedGiftMode) {
             YYGiftModel mode;
             String str;
-            ItemRelationshipToInviteGiftBinding a2 = ItemRelationshipToInviteGiftBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            String str2 = this.f18415a.d;
+            ItemRelationshipToInviteGiftBinding a = ItemRelationshipToInviteGiftBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            String str2 = this.a.d;
             String str3 = "";
             if (yYRelationShipRoomToInvitedGiftMode != null && (mode = yYRelationShipRoomToInvitedGiftMode.getMode()) != null && (str = mode.goods_id) != null) {
                 str3 = str;
             }
             if (StringUtils.a(str2, str3)) {
-                a2.b.setBackgroundResource(R.drawable.shape_relation_gift_select);
+                a.b.setBackgroundResource(R.drawable.shape_relation_gift_select);
             } else {
-                a2.b.setBackgroundResource(R.drawable.shape_relation_gift_un_select);
+                a.b.setBackgroundResource(R.drawable.shape_relation_gift_un_select);
             }
-            ActivityFragmentActive a3 = this.f18415a.a();
+            ActivityFragmentActive a2 = this.a.a();
             YYGiftModel mode2 = yYRelationShipRoomToInvitedGiftMode.getMode();
-            ImageLoader.a(a3, mode2 == null ? null : mode2.images_static).a(a2.f16650a);
-            a2.f16651c.setText(String.valueOf(yYRelationShipRoomToInvitedGiftMode.getMode().beans));
-            a2.d.setText(yYRelationShipRoomToInvitedGiftMode.getMode().name);
-            LinearLayout linearLayout = a2.b;
-            final YYRelationShipToInviteDialog yYRelationShipToInviteDialog = this.f18415a;
+            ImageLoader.a(a2, mode2 == null ? null : mode2.images_static).a(a.a);
+            a.c.setText(String.valueOf(yYRelationShipRoomToInvitedGiftMode.getMode().beans));
+            a.d.setText(yYRelationShipRoomToInvitedGiftMode.getMode().name);
+            LinearLayout linearLayout = a.b;
+            final YYRelationShipToInviteDialog yYRelationShipToInviteDialog = this.a;
             linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipToInviteDialog$RelationInvitedGiftAdapter$Xk-bRz44C9QlsX7nIlEIGEA11xQ
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -178,7 +169,6 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, YYRelationShipRoomToInvitedGiftMode item) {
             Intrinsics.e(helper, "helper");
@@ -223,8 +213,8 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
         if (b != null && (str = b.room_id) != null) {
             str4 = str;
         }
-        final ActivityFragmentActive a2 = this$0.a();
-        YYRoomHttpUtils.b(uid, id, str2, str3, str4, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRelationShipToInviteDialog$initView$5$1
+        final ActivityFragmentActive a = this$0.a();
+        YYRoomHttpUtils.b(uid, id, str2, str3, str4, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(a) { // from class: com.blued.android.module.yy_china.view.YYRelationShipToInviteDialog$initView$5$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -252,7 +242,7 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
     }
 
     private final DialogRelationshipToInviteBinding h() {
-        DialogRelationshipToInviteBinding dialogRelationshipToInviteBinding = this.f18412a;
+        DialogRelationshipToInviteBinding dialogRelationshipToInviteBinding = this.a;
         Intrinsics.a(dialogRelationshipToInviteBinding);
         return dialogRelationshipToInviteBinding;
     }
@@ -261,16 +251,16 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
         h().h.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
         h().h.setAdapter(this.b);
         h().i.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
-        h().i.setAdapter(this.f18413c);
+        h().i.setAdapter(this.c);
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new YYRelationShipRoomToInvitedDayMode("7"));
-        arrayList.add(new YYRelationShipRoomToInvitedDayMode(BaseWrapper.ENTER_ID_TOOLKIT));
+        arrayList.add(new YYRelationShipRoomToInvitedDayMode(ATAdConst.ATDevFrameworkType.ADOBIE_AIR));
+        arrayList.add(new YYRelationShipRoomToInvitedDayMode("30"));
         arrayList.add(new YYRelationShipRoomToInvitedDayMode("99"));
-        this.f = "7";
+        this.f = ATAdConst.ATDevFrameworkType.ADOBIE_AIR;
         this.b.setNewData(arrayList);
         String str = YYRoomInfoManager.e().b().room_id;
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.B(str, new BluedUIHttpResponse<BluedEntity<YYGiftModel, BluedEntityBaseExtra>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRelationShipToInviteDialog$initView$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.B(str, new BluedUIHttpResponse<BluedEntity<YYGiftModel, BluedEntityBaseExtra>>(a) { // from class: com.blued.android.module.yy_china.view.YYRelationShipToInviteDialog$initView$1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<YYGiftModel, BluedEntityBaseExtra> bluedEntity) {
                 YYRelationShipToInviteDialog.RelationInvitedGiftAdapter relationInvitedGiftAdapter;
@@ -288,7 +278,7 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
                         arrayList2.add(new YYRelationShipRoomToInvitedGiftMode(it));
                     }
                 }
-                relationInvitedGiftAdapter = YYRelationShipToInviteDialog.this.f18413c;
+                relationInvitedGiftAdapter = YYRelationShipToInviteDialog.this.c;
                 relationInvitedGiftAdapter.setNewData(arrayList2);
             }
         }, a());
@@ -310,7 +300,7 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
                 YYRelationShipToInviteDialog.a(view);
             }
         });
-        h().f16392a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipToInviteDialog$eo4WyIeXW-v06cHHUg1upyoR6E0
+        h().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipToInviteDialog$eo4WyIeXW-v06cHHUg1upyoR6E0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYRelationShipToInviteDialog.c(YYRelationShipToInviteDialog.this, view);
@@ -325,17 +315,17 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
         sb.append((char) 12301);
         textView.setText(sb.toString());
         h().k.setText("对方同意邀请后，即可获得该礼物");
-        YYRoomInfoManager.e().a(a(), h().f, YYRoomInfoManager.e().k(), YYRoomInfoManager.e().m());
+        YYRoomInfoManager.e().a(a(), (ImageView) h().f, YYRoomInfoManager.e().k(), YYRoomInfoManager.e().m());
         YYRoomInfoManager e = YYRoomInfoManager.e();
-        ActivityFragmentActive a3 = a();
-        ShapeableImageView shapeableImageView = h().g;
+        ActivityFragmentActive a2 = a();
+        ImageView imageView = (ImageView) h().g;
         YYRelationShipRoomUser yYRelationShipRoomUser = this.h;
         String uid = yYRelationShipRoomUser == null ? null : yYRelationShipRoomUser.getUid();
         YYRelationShipRoomUser yYRelationShipRoomUser2 = this.h;
         if (yYRelationShipRoomUser2 != null) {
             str2 = yYRelationShipRoomUser2.getAvatar();
         }
-        e.a(a3, shapeableImageView, uid, str2);
+        e.a(a2, imageView, uid, str2);
     }
 
     public final void a(YYRelationShipRoomMode yYRelationShipRoomMode) {
@@ -354,10 +344,10 @@ public final class YYRelationShipToInviteDialog extends BaseFullScreenDialog {
         return this.h;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18412a = DialogRelationshipToInviteBinding.a(inflater.inflate(R.layout.dialog_relationship_to_invite, viewGroup, true));
+        this.a = DialogRelationshipToInviteBinding.a(inflater.inflate(R.layout.dialog_relationship_to_invite, viewGroup, true));
         i();
         return h().getRoot();
     }

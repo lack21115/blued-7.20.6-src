@@ -4,24 +4,24 @@ package com.opos.cmn.biz.monitor;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f24642a;
+    public final boolean f10955a;
     public final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final long f24643c;
+    public final long f10956c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/biz/monitor/b$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f24644a = true;
+        private boolean f10957a = true;
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f24645c;
+        private long f10958c;
 
         public a a(boolean z) {
-            this.f24644a = z;
+            this.f10957a = z;
             return this;
         }
 
@@ -31,8 +31,8 @@ public class b {
     }
 
     private b(a aVar) {
-        this.f24642a = aVar.f24644a;
+        this.f10955a = aVar.f10957a;
         this.b = aVar.b;
-        this.f24643c = aVar.f24645c;
+        this.f10956c = aVar.f10958c;
     }
 }

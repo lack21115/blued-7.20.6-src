@@ -36,13 +36,9 @@ public final class DialogLivePlanetBinding implements ViewBinding {
     public final TextView Q;
     public final TextView R;
     private final FrameLayout S;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LivePlanetBroadcastView f11796a;
+    public final LivePlanetBroadcastView a;
     public final BamFrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final BamFrameLayout f11797c;
+    public final BamFrameLayout c;
     public final BamFrameLayout d;
     public final FrameLayout e;
     public final FrameLayout f;
@@ -69,9 +65,9 @@ public final class DialogLivePlanetBinding implements ViewBinding {
 
     private DialogLivePlanetBinding(FrameLayout frameLayout, LivePlanetBroadcastView livePlanetBroadcastView, BamFrameLayout bamFrameLayout, BamFrameLayout bamFrameLayout2, BamFrameLayout bamFrameLayout3, FrameLayout frameLayout2, FrameLayout frameLayout3, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, ImageView imageView10, LinearLayout linearLayout, LinearLayout linearLayout2, FrameLayout frameLayout4, LivePlanetTimeView livePlanetTimeView, LivePlanetAreaView livePlanetAreaView, LivePlanetAreaView livePlanetAreaView2, LivePlanetAreaView livePlanetAreaView3, LivePlanetAreaView livePlanetAreaView4, LivePlanetAreaView livePlanetAreaView5, LivePlanetAreaView livePlanetAreaView6, LivePlanetAreaView livePlanetAreaView7, LivePlanetAreaView livePlanetAreaView8, SVGAImageView sVGAImageView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, TextView textView15) {
         this.S = frameLayout;
-        this.f11796a = livePlanetBroadcastView;
+        this.a = livePlanetBroadcastView;
         this.b = bamFrameLayout;
-        this.f11797c = bamFrameLayout2;
+        this.c = bamFrameLayout2;
         this.d = bamFrameLayout3;
         this.e = frameLayout2;
         this.f = frameLayout3;
@@ -352,7 +348,6 @@ public final class DialogLivePlanetBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.S;

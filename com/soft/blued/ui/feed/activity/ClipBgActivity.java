@@ -29,7 +29,6 @@ public class ClipBgActivity extends TerminalActivity {
         this.d.remove(iDispatchTouchEvent);
     }
 
-    @Override // androidx.core.app.ComponentActivity, android.app.Activity, android.view.Window.Callback
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         List<IDispatchTouchEvent> list = this.d;
         if (list != null) {

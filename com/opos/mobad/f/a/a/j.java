@@ -10,14 +10,14 @@ import java.util.Map;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private HashMap<Integer, e.a> f26047a = new HashMap<>();
+    private HashMap<Integer, e.a> f12359a = new HashMap<>();
 
     public j(List<e.a> list) {
         if (list == null || list.size() <= 0) {
             return;
         }
         for (e.a aVar : list) {
-            this.f26047a.put(Integer.valueOf(aVar.f27301a), aVar);
+            this.f12359a.put(Integer.valueOf(aVar.f13613a), aVar);
         }
     }
 
@@ -150,7 +150,7 @@ public class j {
                 com.opos.cmn.an.f.a.b("delegator", "biding result:" + i2);
                 if (i2 != -1) {
                     a(i2, map);
-                    aVar = this.f26047a.get(Integer.valueOf(i2));
+                    aVar = this.f12359a.get(Integer.valueOf(i2));
                 }
                 return aVar;
             }
@@ -160,7 +160,7 @@ public class j {
                 int i3 = f;
                 if (f <= 0) {
                     com.opos.cmn.an.f.a.b("delegator", "bidding channel:" + next.getKey() + "real fail, use default");
-                    e.a aVar2 = this.f26047a.get(next.getKey());
+                    e.a aVar2 = this.f12359a.get(next.getKey());
                     i3 = f;
                     if (aVar2 != null) {
                         i3 = aVar2.g;

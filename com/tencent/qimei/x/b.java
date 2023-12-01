@@ -4,11 +4,11 @@ package com.tencent.qimei.x;
 public class b implements com.tencent.qimei.v.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final a f38441a = new a();
+    public final a f24750a = new a();
 
     @Override // com.tencent.qimei.v.b
     public String A() {
-        return this.f38441a.k;
+        return this.f24750a.k;
     }
 
     @Override // com.tencent.qimei.v.b
@@ -23,17 +23,17 @@ public class b implements com.tencent.qimei.v.b {
 
     @Override // com.tencent.qimei.v.b
     public String D() {
-        return this.f38441a.j;
+        return this.f24750a.j;
     }
 
     @Override // com.tencent.qimei.v.b
     public boolean E() {
-        return this.f38441a.b;
+        return this.f24750a.b;
     }
 
     @Override // com.tencent.qimei.v.b
     public boolean F() {
-        return this.f38441a.f38440c;
+        return this.f24750a.f24749c;
     }
 
     @Override // com.tencent.qimei.v.b
@@ -43,7 +43,7 @@ public class b implements com.tencent.qimei.v.b {
 
     @Override // com.tencent.qimei.v.b
     public String a() {
-        return this.f38441a.m;
+        return this.f24750a.m;
     }
 
     @Override // com.tencent.qimei.v.b
@@ -58,12 +58,12 @@ public class b implements com.tencent.qimei.v.b {
 
     @Override // com.tencent.qimei.v.b
     public String d() {
-        return this.f38441a.n;
+        return this.f24750a.n;
     }
 
     @Override // com.tencent.qimei.v.b
     public String e() {
-        return this.f38441a.l;
+        return this.f24750a.l;
     }
 
     @Override // com.tencent.qimei.v.b
@@ -78,7 +78,7 @@ public class b implements com.tencent.qimei.v.b {
 
     @Override // com.tencent.qimei.v.b
     public boolean h() {
-        return this.f38441a.f38439a;
+        return this.f24750a.f24748a;
     }
 
     @Override // com.tencent.qimei.v.b
@@ -88,7 +88,7 @@ public class b implements com.tencent.qimei.v.b {
 
     @Override // com.tencent.qimei.v.b
     public boolean j() {
-        return this.f38441a.i;
+        return this.f24750a.i;
     }
 
     @Override // com.tencent.qimei.v.b
@@ -103,27 +103,27 @@ public class b implements com.tencent.qimei.v.b {
 
     @Override // com.tencent.qimei.v.b
     public String m() {
-        return this.f38441a.q;
+        return this.f24750a.q;
     }
 
     @Override // com.tencent.qimei.v.b
     public boolean n() {
-        return this.f38441a.f;
+        return this.f24750a.f;
     }
 
     @Override // com.tencent.qimei.v.b
     public String o() {
-        return this.f38441a.o;
+        return this.f24750a.o;
     }
 
     @Override // com.tencent.qimei.v.b
     public String p() {
-        return this.f38441a.p;
+        return this.f24750a.p;
     }
 
     @Override // com.tencent.qimei.v.b
     public boolean q() {
-        return this.f38441a.e;
+        return this.f24750a.e;
     }
 
     @Override // com.tencent.qimei.v.b
@@ -148,7 +148,7 @@ public class b implements com.tencent.qimei.v.b {
 
     @Override // com.tencent.qimei.v.b
     public boolean v() {
-        return this.f38441a.h;
+        return this.f24750a.h;
     }
 
     @Override // com.tencent.qimei.v.b
@@ -163,11 +163,11 @@ public class b implements com.tencent.qimei.v.b {
 
     @Override // com.tencent.qimei.v.b
     public boolean y() {
-        return this.f38441a.d;
+        return this.f24750a.d;
     }
 
     @Override // com.tencent.qimei.v.b
     public boolean z() {
-        return this.f38441a.g;
+        return this.f24750a.g;
     }
 }

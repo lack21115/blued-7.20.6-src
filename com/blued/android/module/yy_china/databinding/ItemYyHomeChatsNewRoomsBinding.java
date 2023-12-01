@@ -9,27 +9,23 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyHomeChatsNewRoomsBinding.class */
 public final class ItemYyHomeChatsNewRoomsBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final RecyclerView f16729a;
+    public final RecyclerView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16730c;
+    private final ConstraintLayout c;
 
     private ItemYyHomeChatsNewRoomsBinding(ConstraintLayout constraintLayout, RecyclerView recyclerView, TextView textView) {
-        this.f16730c = constraintLayout;
-        this.f16729a = recyclerView;
+        this.c = constraintLayout;
+        this.a = recyclerView;
         this.b = textView;
     }
 
     public static ItemYyHomeChatsNewRoomsBinding a(View view) {
         String str;
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rec);
-        if (recyclerView != null) {
+        RecyclerView findViewById = view.findViewById(R.id.rec);
+        if (findViewById != null) {
             TextView textView = (TextView) view.findViewById(R.id.tv_title);
             if (textView != null) {
-                return new ItemYyHomeChatsNewRoomsBinding((ConstraintLayout) view, recyclerView, textView);
+                return new ItemYyHomeChatsNewRoomsBinding((ConstraintLayout) view, findViewById, textView);
             }
             str = "tvTitle";
         } else {
@@ -38,9 +34,8 @@ public final class ItemYyHomeChatsNewRoomsBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16730c;
+        return this.c;
     }
 }

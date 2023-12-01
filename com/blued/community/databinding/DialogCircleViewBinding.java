@@ -10,21 +10,17 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/DialogCircleViewBinding.class */
 public final class DialogCircleViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f18792a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f18793c;
+    public final ShapeTextView c;
     public final TextView d;
     private final ShapeConstraintLayout e;
 
     private DialogCircleViewBinding(ShapeConstraintLayout shapeConstraintLayout, ImageView imageView, ImageView imageView2, ShapeTextView shapeTextView, TextView textView) {
         this.e = shapeConstraintLayout;
-        this.f18792a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f18793c = shapeTextView;
+        this.c = shapeTextView;
         this.d = textView;
     }
 
@@ -53,7 +49,6 @@ public final class DialogCircleViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeConstraintLayout getRoot() {
         return this.e;

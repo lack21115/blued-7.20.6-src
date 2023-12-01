@@ -6,21 +6,18 @@ import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
 import android.widget.Toast;
+import com.android.internal.app.HeavyWeightSwitcherActivity;
 import com.anythink.core.c.b;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.e.am;
+import com.anythink.core.common.k.g;
 import com.anythink.core.common.k.l;
-import com.ss.android.download.api.constant.BaseConstants;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/basead/a/a.class */
 public final class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6388a = "play.google.com";
+    public static final String a = "play.google.com";
     public static final String b = "market.android.com";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f6389c = "details?";
+    public static final String c = "details?";
     public static final String d = "market";
     public static final String e = "market://";
 
@@ -77,9 +74,9 @@ public final class a {
         amVar.m = true;
         amVar.o = str;
         try {
-            if (Uri.parse(str).getScheme().equals("intent")) {
+            if (Uri.parse(str).getScheme().equals(HeavyWeightSwitcherActivity.KEY_INTENT)) {
                 Intent parseUri = Intent.parseUri(str, 1);
-                parseUri.addCategory(Intent.CATEGORY_BROWSABLE);
+                parseUri.addCategory("android.intent.category.BROWSABLE");
                 parseUri.setComponent(null);
                 if (Build.VERSION.SDK_INT >= 15) {
                     parseUri.setSelector(null);
@@ -111,7 +108,7 @@ public final class a {
             return false;
         }
         com.anythink.core.c.a b2 = b.a(context).b(n.a().p());
-        if (!scheme.startsWith("market") || !TextUtils.equals(b2.l(), "1")) {
+        if (!scheme.startsWith(d) || !TextUtils.equals(b2.l(), "1")) {
             z2 = false;
         }
         return a(context, str, z, z2);
@@ -121,9 +118,9 @@ public final class a {
         Intent intent;
         try {
             Uri parse = Uri.parse(str);
-            if (parse.getScheme().equals("intent")) {
+            if (parse.getScheme().equals(HeavyWeightSwitcherActivity.KEY_INTENT)) {
                 Intent parseUri = Intent.parseUri(str, 1);
-                parseUri.addCategory(Intent.CATEGORY_BROWSABLE);
+                parseUri.addCategory("android.intent.category.BROWSABLE");
                 parseUri.setComponent(null);
                 intent = parseUri;
                 if (Build.VERSION.SDK_INT >= 15) {
@@ -135,7 +132,7 @@ public final class a {
                 intent.setData(parse);
             }
             if (z2 && TextUtils.isEmpty(intent.getPackage())) {
-                intent.setPackage("com.android.vending");
+                intent.setPackage(g.a.a);
             }
             intent.addFlags(268435456);
             context.startActivity(intent);
@@ -145,7 +142,7 @@ public final class a {
                 n.a().a(new Runnable() { // from class: com.anythink.core.basead.a.a.1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        Toast.makeText(Context.this, "Detect that the App Market is not installed and cannot be opened through the App Market.", 1).show();
+                        Toast.makeText(context, "Detect that the App Market is not installed and cannot be opened through the App Market.", 1).show();
                     }
                 });
                 return false;
@@ -164,10 +161,10 @@ public final class a {
             if (TextUtils.isEmpty(str) || (parse = Uri.parse(str)) == null || parse.getHost() == null) {
                 return false;
             }
-            if (parse.getHost().equals("play.google.com")) {
+            if (parse.getHost().equals(a)) {
                 return true;
             }
-            return parse.getHost().equals("market.android.com");
+            return parse.getHost().equals(b);
         } catch (Throwable th) {
             return false;
         }
@@ -178,7 +175,7 @@ public final class a {
             if (TextUtils.isEmpty(str)) {
                 return false;
             }
-            return Uri.parse(str).getScheme().equals("market");
+            return Uri.parse(str).getScheme().equals(d);
         } catch (Throwable th) {
             return false;
         }
@@ -186,7 +183,7 @@ public final class a {
 
     private static String d(String str) {
         try {
-            return "https://play.google.com/store/apps/details?id=".concat(String.valueOf(str.replace(BaseConstants.MARKET_PREFIX, "")));
+            return "https://play.google.com/store/apps/details?id=".concat(String.valueOf(str.replace("market://details?id=", "")));
         } catch (Throwable th) {
             return str;
         }
@@ -194,7 +191,7 @@ public final class a {
 
     private static String e(String str) {
         try {
-            return "market://".concat(String.valueOf(str.substring(str.indexOf(f6389c))));
+            return e.concat(String.valueOf(str.substring(str.indexOf(c))));
         } catch (Throwable th) {
             return null;
         }

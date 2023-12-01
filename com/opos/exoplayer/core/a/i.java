@@ -17,7 +17,7 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
     private final e.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final f f25037c;
+    private final f f11349c;
     private boolean d;
     private boolean e;
     private MediaFormat f;
@@ -60,12 +60,12 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
     public i(com.opos.exoplayer.core.d.c cVar, com.opos.exoplayer.core.drm.b<com.opos.exoplayer.core.drm.d> bVar, boolean z, Handler handler, e eVar, f fVar) {
         super(1, cVar, bVar, z);
         this.b = new e.a(handler, eVar);
-        this.f25037c = fVar;
+        this.f11349c = fVar;
         fVar.a(new a());
     }
 
     private void D() {
-        long a2 = this.f25037c.a(u());
+        long a2 = this.f11349c.a(u());
         if (a2 != Long.MIN_VALUE) {
             if (!this.m) {
                 a2 = Math.max(this.k, a2);
@@ -76,7 +76,7 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
     }
 
     private static boolean b(String str) {
-        if (u.f25510a < 24 && "OMX.SEC.aac.dec".equals(str) && "samsung".equals(u.f25511c)) {
+        if (u.f11822a < 24 && "OMX.SEC.aac.dec".equals(str) && "samsung".equals(u.f11823c)) {
             return u.b.startsWith("zeroflte") || u.b.startsWith("herolte") || u.b.startsWith("heroqlte");
         }
         return false;
@@ -86,12 +86,12 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
     public int a(com.opos.exoplayer.core.d.c cVar, com.opos.exoplayer.core.drm.b<com.opos.exoplayer.core.drm.d> bVar, Format format) {
         String str = format.f;
         if (com.opos.exoplayer.core.i.j.a(str)) {
-            int i = u.f25510a >= 21 ? 32 : 0;
+            int i = u.f11822a >= 21 ? 32 : 0;
             boolean a2 = a(bVar, format.i);
             if (a2 && a(str) && cVar.a() != null) {
                 return i | 8 | 4;
             }
-            if ((!"audio/raw".equals(str) || this.f25037c.a(format.t)) && this.f25037c.a(2)) {
+            if ((!"audio/raw".equals(str) || this.f11349c.a(format.t)) && this.f11349c.a(2)) {
                 DrmInitData drmInitData = format.i;
                 boolean z = false;
                 boolean z2 = false;
@@ -103,7 +103,7 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
                         if (i3 >= drmInitData.b) {
                             break;
                         }
-                        z2 |= drmInitData.a(i3).f25270c;
+                        z2 |= drmInitData.a(i3).f11582c;
                         i2 = i3 + 1;
                     }
                 }
@@ -112,7 +112,7 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
                     return (!z || cVar.a(str, false) == null) ? 1 : 2;
                 } else if (a2) {
                     boolean z3 = true;
-                    if (u.f25510a >= 21) {
+                    if (u.f11822a >= 21) {
                         if (format.s == -1 || a3.a(format.s)) {
                             z3 = true;
                             if (format.r != -1) {
@@ -146,7 +146,7 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
 
     @Override // com.opos.exoplayer.core.i.i
     public p a(p pVar) {
-        return this.f25037c.a(pVar);
+        return this.f11349c.a(pVar);
     }
 
     protected void a(int i, long j, long j2) {
@@ -155,18 +155,18 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
     @Override // com.opos.exoplayer.core.a, com.opos.exoplayer.core.r.b
     public void a(int i, Object obj) {
         if (i == 2) {
-            this.f25037c.a(((Float) obj).floatValue());
+            this.f11349c.a(((Float) obj).floatValue());
         } else if (i != 3) {
             super.a(i, obj);
         } else {
-            this.f25037c.a((b) obj);
+            this.f11349c.a((b) obj);
         }
     }
 
     @Override // com.opos.exoplayer.core.d.b, com.opos.exoplayer.core.a
     public void a(long j, boolean z) {
         super.a(j, z);
-        this.f25037c.i();
+        this.f11349c.i();
         this.k = j;
         this.l = true;
         this.m = true;
@@ -201,7 +201,7 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
             iArr = null;
         }
         try {
-            this.f25037c.a(i, integer, integer2, 0, iArr, this.i, this.j);
+            this.f11349c.a(i, integer, integer2, 0, iArr, this.i, this.j);
         } catch (f.a e) {
             throw com.opos.exoplayer.core.h.a(e, r());
         }
@@ -212,15 +212,15 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
         if (!this.l || eVar.d_()) {
             return;
         }
-        if (Math.abs(eVar.f25074c - this.k) > 500000) {
-            this.k = eVar.f25074c;
+        if (Math.abs(eVar.f11386c - this.k) > 500000) {
+            this.k = eVar.f11386c;
         }
         this.l = false;
     }
 
     @Override // com.opos.exoplayer.core.d.b
     public void a(com.opos.exoplayer.core.d.a aVar, MediaCodec mediaCodec, Format format, MediaCrypto mediaCrypto) {
-        this.e = b(aVar.f25256a);
+        this.e = b(aVar.f11568a);
         MediaFormat c2 = c(format);
         if (!this.d) {
             mediaCodec.configure(c2, null, mediaCrypto, 0);
@@ -241,12 +241,12 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
     @Override // com.opos.exoplayer.core.d.b, com.opos.exoplayer.core.a
     public void a(boolean z) {
         super.a(z);
-        this.b.a(this.f25258a);
+        this.b.a(this.f11570a);
         int i = q().b;
         if (i != 0) {
-            this.f25037c.b(i);
+            this.f11349c.b(i);
         } else {
-            this.f25037c.g();
+            this.f11349c.g();
         }
     }
 
@@ -257,14 +257,14 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
             return true;
         } else if (z) {
             mediaCodec.releaseOutputBuffer(i, false);
-            this.f25258a.f++;
-            this.f25037c.b();
+            this.f11570a.f++;
+            this.f11349c.b();
             return true;
         } else {
             try {
-                if (this.f25037c.a(byteBuffer, j3)) {
+                if (this.f11349c.a(byteBuffer, j3)) {
                     mediaCodec.releaseOutputBuffer(i, false);
-                    this.f25258a.e++;
+                    this.f11570a.e++;
                     return true;
                 }
                 return false;
@@ -276,7 +276,7 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
 
     protected boolean a(String str) {
         int f = com.opos.exoplayer.core.i.j.f(str);
-        return f != 0 && this.f25037c.a(f);
+        return f != 0 && this.f11349c.a(f);
     }
 
     protected void b(int i) {
@@ -311,18 +311,18 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
 
     @Override // com.opos.exoplayer.core.i.i
     public p e() {
-        return this.f25037c.f();
+        return this.f11349c.f();
     }
 
     @Override // com.opos.exoplayer.core.d.b, com.opos.exoplayer.core.a
     public void n() {
         super.n();
-        this.f25037c.a();
+        this.f11349c.a();
     }
 
     @Override // com.opos.exoplayer.core.d.b, com.opos.exoplayer.core.a
     public void o() {
-        this.f25037c.h();
+        this.f11349c.h();
         D();
         super.o();
     }
@@ -330,7 +330,7 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
     @Override // com.opos.exoplayer.core.d.b, com.opos.exoplayer.core.a
     public void p() {
         try {
-            this.f25037c.j();
+            this.f11349c.j();
             try {
                 super.p();
             } finally {
@@ -346,12 +346,12 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
 
     @Override // com.opos.exoplayer.core.d.b, com.opos.exoplayer.core.s
     public boolean t() {
-        return this.f25037c.e() || super.t();
+        return this.f11349c.e() || super.t();
     }
 
     @Override // com.opos.exoplayer.core.d.b, com.opos.exoplayer.core.s
     public boolean u() {
-        return super.u() && this.f25037c.d();
+        return super.u() && this.f11349c.d();
     }
 
     protected void v() {
@@ -360,7 +360,7 @@ public class i extends com.opos.exoplayer.core.d.b implements com.opos.exoplayer
     @Override // com.opos.exoplayer.core.d.b
     public void w() {
         try {
-            this.f25037c.c();
+            this.f11349c.c();
         } catch (f.d e) {
             throw com.opos.exoplayer.core.h.a(e, r());
         }

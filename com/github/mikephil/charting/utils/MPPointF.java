@@ -8,18 +8,18 @@ import com.github.mikephil.charting.utils.ObjectPool;
 public class MPPointF extends ObjectPool.Poolable {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Parcelable.Creator<MPPointF> f22203c;
+    public static final Parcelable.Creator<MPPointF> f8596c;
     private static ObjectPool<MPPointF> d;
 
     /* renamed from: a  reason: collision with root package name */
-    public float f22204a;
+    public float f8597a;
     public float b;
 
     static {
         ObjectPool<MPPointF> a2 = ObjectPool.a(32, new MPPointF(0.0f, 0.0f));
         d = a2;
         a2.a(0.5f);
-        f22203c = new Parcelable.Creator<MPPointF>() { // from class: com.github.mikephil.charting.utils.MPPointF.1
+        f8596c = new Parcelable.Creator<MPPointF>() { // from class: com.github.mikephil.charting.utils.MPPointF.1
             @Override // android.os.Parcelable.Creator
             /* renamed from: a */
             public MPPointF createFromParcel(Parcel parcel) {
@@ -40,7 +40,7 @@ public class MPPointF extends ObjectPool.Poolable {
     }
 
     public MPPointF(float f, float f2) {
-        this.f22204a = f;
+        this.f8597a = f;
         this.b = f2;
     }
 
@@ -50,14 +50,14 @@ public class MPPointF extends ObjectPool.Poolable {
 
     public static MPPointF a(float f, float f2) {
         MPPointF a2 = d.a();
-        a2.f22204a = f;
+        a2.f8597a = f;
         a2.b = f2;
         return a2;
     }
 
     public static MPPointF a(MPPointF mPPointF) {
         MPPointF a2 = d.a();
-        a2.f22204a = mPPointF.f22204a;
+        a2.f8597a = mPPointF.f8597a;
         a2.b = mPPointF.b;
         return a2;
     }
@@ -67,7 +67,7 @@ public class MPPointF extends ObjectPool.Poolable {
     }
 
     public void a(Parcel parcel) {
-        this.f22204a = parcel.readFloat();
+        this.f8597a = parcel.readFloat();
         this.b = parcel.readFloat();
     }
 

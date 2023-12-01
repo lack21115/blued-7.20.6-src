@@ -2,7 +2,6 @@ package com.huawei.hms.framework.network.grs;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.hms.framework.common.ExecutorsUtils;
 import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.common.StringUtils;
@@ -27,11 +26,11 @@ public class c {
     private static AtomicInteger k = new AtomicInteger(0);
 
     /* renamed from: a  reason: collision with root package name */
-    private GrsBaseInfo f22680a;
+    private GrsBaseInfo f9072a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private h f22681c;
+    private h f9073c;
     private com.huawei.hms.framework.network.grs.e.a d;
     private com.huawei.hms.framework.network.grs.e.c e;
     private com.huawei.hms.framework.network.grs.e.c f;
@@ -42,32 +41,32 @@ public class c {
     class a implements Callable<Boolean> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f22682a;
+        final /* synthetic */ Context f9074a;
         final /* synthetic */ GrsBaseInfo b;
 
         a(Context context, GrsBaseInfo grsBaseInfo) {
-            this.f22682a = context;
+            this.f9074a = context;
             this.b = grsBaseInfo;
         }
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // java.util.concurrent.Callable
         public Boolean call() {
-            c.this.f22681c = new h();
+            c.this.f9073c = new h();
             c cVar = c.this;
-            Context context = this.f22682a;
-            cVar.e = new com.huawei.hms.framework.network.grs.e.c(context, GrsApp.getInstance().getBrand(BridgeUtil.UNDERLINE_STR) + "share_pre_grs_conf_");
+            Context context = this.f9074a;
+            cVar.e = new com.huawei.hms.framework.network.grs.e.c(context, GrsApp.getInstance().getBrand("_") + "share_pre_grs_conf_");
             c cVar2 = c.this;
-            Context context2 = this.f22682a;
-            cVar2.f = new com.huawei.hms.framework.network.grs.e.c(context2, GrsApp.getInstance().getBrand(BridgeUtil.UNDERLINE_STR) + "share_pre_grs_services_");
+            Context context2 = this.f9074a;
+            cVar2.f = new com.huawei.hms.framework.network.grs.e.c(context2, GrsApp.getInstance().getBrand("_") + "share_pre_grs_services_");
             c cVar3 = c.this;
-            cVar3.d = new com.huawei.hms.framework.network.grs.e.a(cVar3.e, c.this.f, c.this.f22681c);
+            cVar3.d = new com.huawei.hms.framework.network.grs.e.a(cVar3.e, c.this.f, c.this.f9073c);
             c cVar4 = c.this;
-            cVar4.g = new com.huawei.hms.framework.network.grs.a(cVar4.f22680a, c.this.d, c.this.f22681c, c.this.f);
-            if (c.k.incrementAndGet() <= 2 || com.huawei.hms.framework.network.grs.f.b.a(this.f22682a.getPackageName(), c.this.f22680a) == null) {
-                new com.huawei.hms.framework.network.grs.f.b(this.f22682a, this.b, true).a(this.b);
+            cVar4.g = new com.huawei.hms.framework.network.grs.a(cVar4.f9072a, c.this.d, c.this.f9073c, c.this.f);
+            if (c.k.incrementAndGet() <= 2 || com.huawei.hms.framework.network.grs.f.b.a(this.f9074a.getPackageName(), c.this.f9072a) == null) {
+                new com.huawei.hms.framework.network.grs.f.b(this.f9074a, this.b, true).a(this.b);
             }
-            String c2 = new com.huawei.hms.framework.network.grs.g.k.c(this.b, this.f22682a).c();
+            String c2 = new com.huawei.hms.framework.network.grs.g.k.c(this.b, this.f9074a).c();
             String str = c.i;
             Logger.v(str, "scan serviceSet is: " + c2);
             String a2 = c.this.f.a(k2.d, "");
@@ -79,13 +78,13 @@ public class c {
                 String str3 = c.i;
                 Logger.i(str3, "currentServices:" + StringUtils.anonymizeMessage(a2));
                 if (!a3.equals(a2)) {
-                    c.this.f22681c.a(c.this.f22680a.getGrsParasKey(true, true, this.f22682a));
-                    c.this.f22681c.a(new com.huawei.hms.framework.network.grs.g.k.c(this.b, this.f22682a), (String) null, c.this.f);
+                    c.this.f9073c.a(c.this.f9072a.getGrsParasKey(true, true, this.f9074a));
+                    c.this.f9073c.a(new com.huawei.hms.framework.network.grs.g.k.c(this.b, this.f9074a), (String) null, c.this.f);
                 }
             }
             c cVar5 = c.this;
             cVar5.a(cVar5.e.a());
-            c.this.d.b(this.b, this.f22682a);
+            c.this.d.b(this.b, this.f9074a);
             return true;
         }
     }
@@ -95,7 +94,7 @@ public class c {
         this.h = null;
         this.b = context.getApplicationContext() != null ? context.getApplicationContext() : context;
         a(grsBaseInfo);
-        GrsBaseInfo grsBaseInfo2 = this.f22680a;
+        GrsBaseInfo grsBaseInfo2 = this.f9072a;
         FutureTask<Boolean> futureTask = new FutureTask<>(new a(this.b, grsBaseInfo2));
         this.h = futureTask;
         j.execute(futureTask);
@@ -110,10 +109,10 @@ public class c {
 
     private void a(GrsBaseInfo grsBaseInfo) {
         try {
-            this.f22680a = grsBaseInfo.m7178clone();
+            this.f9072a = grsBaseInfo.m4171clone();
         } catch (CloneNotSupportedException e) {
             Logger.w(i, "GrsClient catch CloneNotSupportedException", e);
-            this.f22680a = grsBaseInfo.copy();
+            this.f9072a = grsBaseInfo.copy();
         }
     }
 
@@ -191,7 +190,7 @@ public class c {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public String a(String str, String str2) {
-        if (this.f22680a == null || str == null || str2 == null) {
+        if (this.f9072a == null || str == null || str2 == null) {
             Logger.w(i, "invalid para!");
             return null;
         } else if (e()) {
@@ -203,7 +202,7 @@ public class c {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Map<String, String> a(String str) {
-        if (this.f22680a != null && str != null) {
+        if (this.f9072a != null && str != null) {
             return e() ? this.g.a(str, this.b) : new HashMap();
         }
         Logger.w(i, "invalid para!");
@@ -213,13 +212,13 @@ public class c {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
         if (e()) {
-            String grsParasKey = this.f22680a.getGrsParasKey(true, true, this.b);
+            String grsParasKey = this.f9072a.getGrsParasKey(true, true, this.b);
             this.e.a(grsParasKey);
             com.huawei.hms.framework.network.grs.e.c cVar = this.e;
             cVar.a(grsParasKey + "time");
             com.huawei.hms.framework.network.grs.e.c cVar2 = this.e;
             cVar2.a(grsParasKey + "ETag");
-            this.f22681c.a(grsParasKey);
+            this.f9073c.a(grsParasKey);
         }
     }
 
@@ -227,7 +226,7 @@ public class c {
     public void a(String str, IQueryUrlsCallBack iQueryUrlsCallBack) {
         if (iQueryUrlsCallBack == null) {
             Logger.w(i, "IQueryUrlsCallBack is must not null for process continue.");
-        } else if (this.f22680a == null || str == null) {
+        } else if (this.f9072a == null || str == null) {
             iQueryUrlsCallBack.onCallBackFail(-6);
         } else if (e()) {
             this.g.a(str, iQueryUrlsCallBack, this.b);
@@ -241,7 +240,7 @@ public class c {
     public void a(String str, String str2, IQueryUrlCallBack iQueryUrlCallBack) {
         if (iQueryUrlCallBack == null) {
             Logger.w(i, "IQueryUrlCallBack is must not null for process continue.");
-        } else if (this.f22680a == null || str == null || str2 == null) {
+        } else if (this.f9072a == null || str == null || str2 == null) {
             iQueryUrlCallBack.onCallBackFail(-6);
         } else if (e()) {
             this.g.a(str, str2, iQueryUrlCallBack, this.b);
@@ -257,7 +256,7 @@ public class c {
             return true;
         }
         if (obj != null && c.class == obj.getClass() && (obj instanceof c)) {
-            return this.f22680a.compare(((c) obj).f22680a);
+            return this.f9072a.compare(((c) obj).f9072a);
         }
         return false;
     }
@@ -266,7 +265,7 @@ public class c {
     public boolean b() {
         GrsBaseInfo grsBaseInfo;
         Context context;
-        if (!e() || (grsBaseInfo = this.f22680a) == null || (context = this.b) == null) {
+        if (!e() || (grsBaseInfo = this.f9072a) == null || (context = this.b) == null) {
             return false;
         }
         this.d.a(grsBaseInfo, context);

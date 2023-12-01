@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.model;
 
+import $r8;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -102,7 +103,7 @@ public final class YYPayMode {
     }
 
     public int hashCode() {
-        return (((((((this.next_wealth.hashCode() * 31) + this.current_wealth.hashCode()) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.beans_current)) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.users_sums_left)) * 31) + this.goods_rain_list.hashCode();
+        return (((((((this.next_wealth.hashCode() * 31) + this.current_wealth.hashCode()) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.beans_current)) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.users_sums_left)) * 31) + this.goods_rain_list.hashCode();
     }
 
     public String toString() {

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemRequestAnchorRewardGiftBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29302a;
+    private final LinearLayout f15612a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29302a;
+        return this.f15612a;
     }
 }

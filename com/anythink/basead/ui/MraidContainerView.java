@@ -2,6 +2,7 @@ package com.anythink.basead.ui;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.FrameLayout;
 import com.anythink.basead.a.b.c;
 import com.anythink.basead.c.e;
@@ -19,13 +20,9 @@ import com.anythink.expressad.atsignalcommon.mraid.CallMraidJS;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/MraidContainerView.class */
 public class MraidContainerView extends FrameLayout {
     private static final String h = MraidContainerView.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    protected i f6128a;
+    protected i a;
     protected k b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected j f6129c;
+    protected j c;
     protected b d;
     protected ClickToReLoadView e;
     protected MraidWebView f;
@@ -50,9 +47,9 @@ public class MraidContainerView extends FrameLayout {
 
     public MraidContainerView(Context context, i iVar, j jVar, a aVar) {
         super(context);
-        this.f6128a = iVar;
+        this.a = iVar;
         this.b = jVar.m;
-        this.f6129c = jVar;
+        this.c = jVar;
         this.g = aVar;
         setBackgroundColor(getResources().getColor(h.a(context, "color_99000000", "color")));
     }
@@ -64,7 +61,7 @@ public class MraidContainerView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
-        MraidWebView b = c.b(c.a(this.f6129c, this.f6128a));
+        MraidWebView b = c.b(c.a(this.c, this.a));
         this.f = b;
         if (b != null) {
             this.l = true;
@@ -79,18 +76,16 @@ public class MraidContainerView extends FrameLayout {
                     }
                 }
 
-                @Override // com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge
                 public final void close() {
                 }
 
-                @Override // com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge
                 public final void open(String str) {
                     if (MraidContainerView.this.g != null) {
                         MraidContainerView.this.g.a(str);
                     }
                 }
             });
-            addView(this.f, new FrameLayout.LayoutParams(-1, -1));
+            addView((View) this.f, new FrameLayout.LayoutParams(-1, -1));
             a aVar = this.g;
             if (aVar != null) {
                 aVar.a();
@@ -193,9 +188,9 @@ public class MraidContainerView extends FrameLayout {
         if (bVar != null) {
             bVar.b();
         }
-        final String a2 = d.a(this.f6129c, this.f6128a);
+        final String a2 = d.a(this.c, this.a);
         if (!TextUtils.isEmpty(a2)) {
-            final String a3 = c.a(this.f6129c, this.f6128a);
+            final String a3 = c.a(this.c, this.a);
             n.a().a(new Runnable() { // from class: com.anythink.basead.ui.MraidContainerView.2
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -245,9 +240,9 @@ public class MraidContainerView extends FrameLayout {
     public void release() {
         try {
             if (this.l && this.f != null) {
-                u.a(this.f);
+                u.a((View) this.f);
                 this.f.release();
-                com.anythink.core.common.res.d.a(n.a().g()).a(this.f6129c, this.f6128a);
+                com.anythink.core.common.res.d.a(n.a().g()).a(this.c, this.a);
             }
             u.a(this);
         } catch (Throwable th) {

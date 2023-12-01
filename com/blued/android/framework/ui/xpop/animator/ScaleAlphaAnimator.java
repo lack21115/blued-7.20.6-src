@@ -13,9 +13,7 @@ public class ScaleAlphaAnimator extends PopupAnimator {
     /* renamed from: com.blued.android.framework.ui.xpop.animator.ScaleAlphaAnimator$3  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/animator/ScaleAlphaAnimator$3.class */
     public static /* synthetic */ class AnonymousClass3 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f9944a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -23,25 +21,25 @@ public class ScaleAlphaAnimator extends PopupAnimator {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[PopupAnimation.values().length];
-            f9944a = iArr;
+            a = iArr;
             try {
                 iArr[PopupAnimation.ScaleAlphaFromCenter.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f9944a[PopupAnimation.ScaleAlphaFromLeftTop.ordinal()] = 2;
+                a[PopupAnimation.ScaleAlphaFromLeftTop.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f9944a[PopupAnimation.ScaleAlphaFromRightTop.ordinal()] = 3;
+                a[PopupAnimation.ScaleAlphaFromRightTop.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f9944a[PopupAnimation.ScaleAlphaFromLeftBottom.ordinal()] = 4;
+                a[PopupAnimation.ScaleAlphaFromLeftBottom.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f9944a[PopupAnimation.ScaleAlphaFromRightBottom.ordinal()] = 5;
+                a[PopupAnimation.ScaleAlphaFromRightBottom.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -53,32 +51,32 @@ public class ScaleAlphaAnimator extends PopupAnimator {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
-        int i = AnonymousClass3.f9944a[this.d.ordinal()];
+        int i = AnonymousClass3.a[this.d.ordinal()];
         if (i == 1) {
-            this.f9941c.setPivotX(this.f9941c.getMeasuredWidth() / 2);
-            this.f9941c.setPivotY(this.f9941c.getMeasuredHeight() / 2);
+            this.c.setPivotX(this.c.getMeasuredWidth() / 2);
+            this.c.setPivotY(this.c.getMeasuredHeight() / 2);
         } else if (i == 2) {
-            this.f9941c.setPivotX(0.0f);
-            this.f9941c.setPivotY(0.0f);
+            this.c.setPivotX(0.0f);
+            this.c.setPivotY(0.0f);
         } else if (i == 3) {
-            this.f9941c.setPivotX(this.f9941c.getMeasuredWidth());
-            this.f9941c.setPivotY(0.0f);
+            this.c.setPivotX(this.c.getMeasuredWidth());
+            this.c.setPivotY(0.0f);
         } else if (i == 4) {
-            this.f9941c.setPivotX(0.0f);
-            this.f9941c.setPivotY(this.f9941c.getMeasuredHeight());
+            this.c.setPivotX(0.0f);
+            this.c.setPivotY(this.c.getMeasuredHeight());
         } else if (i != 5) {
         } else {
-            this.f9941c.setPivotX(this.f9941c.getMeasuredWidth());
-            this.f9941c.setPivotY(this.f9941c.getMeasuredHeight());
+            this.c.setPivotX(this.c.getMeasuredWidth());
+            this.c.setPivotY(this.c.getMeasuredHeight());
         }
     }
 
     @Override // com.blued.android.framework.ui.xpop.animator.PopupAnimator
     public void a() {
-        this.f9941c.setScaleX(0.0f);
-        this.f9941c.setScaleY(0.0f);
-        this.f9941c.setAlpha(0.0f);
-        this.f9941c.post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.animator.ScaleAlphaAnimator.1
+        this.c.setScaleX(0.0f);
+        this.c.setScaleY(0.0f);
+        this.c.setAlpha(0.0f);
+        this.c.post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.animator.ScaleAlphaAnimator.1
             @Override // java.lang.Runnable
             public void run() {
                 ScaleAlphaAnimator.this.d();
@@ -88,16 +86,16 @@ public class ScaleAlphaAnimator extends PopupAnimator {
 
     @Override // com.blued.android.framework.ui.xpop.animator.PopupAnimator
     public void b() {
-        this.f9941c.post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.animator.ScaleAlphaAnimator.2
+        this.c.post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.animator.ScaleAlphaAnimator.2
             @Override // java.lang.Runnable
             public void run() {
-                ScaleAlphaAnimator.this.f9941c.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(XPopup.b()).setInterpolator(new OvershootInterpolator(1.0f)).start();
+                ScaleAlphaAnimator.this.c.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(XPopup.b()).setInterpolator(new OvershootInterpolator(1.0f)).start();
             }
         });
     }
 
     @Override // com.blued.android.framework.ui.xpop.animator.PopupAnimator
     public void c() {
-        this.f9941c.animate().scaleX(0.0f).scaleY(0.0f).alpha(0.0f).setDuration(XPopup.b()).setInterpolator(new FastOutSlowInInterpolator()).start();
+        this.c.animate().scaleX(0.0f).scaleY(0.0f).alpha(0.0f).setDuration(XPopup.b()).setInterpolator(new FastOutSlowInInterpolator()).start();
     }
 }

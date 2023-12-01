@@ -12,13 +12,13 @@ public enum AttributionEvent {
     
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f22827a;
+    private final int f9219a;
 
     AttributionEvent(int i) {
-        this.f22827a = i;
+        this.f9219a = i;
     }
 
     public int getEventId() {
-        return this.f22827a;
+        return this.f9219a;
     }
 }

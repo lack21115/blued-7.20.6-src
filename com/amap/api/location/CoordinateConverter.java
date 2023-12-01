@@ -2,19 +2,17 @@ package com.amap.api.location;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.amap.api.services.geocoder.GeocodeSearch;
 import com.autonavi.aps.amapapi.utils.b;
 import com.autonavi.aps.amapapi.utils.d;
 import com.autonavi.aps.amapapi.utils.g;
 import com.autonavi.aps.amapapi.utils.i;
-import com.kwad.sdk.api.model.AdnName;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/location/CoordinateConverter.class */
 public class CoordinateConverter {
     private static int b = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static int f5486c = 1;
+    private static int c = 1;
     private static int d = 2;
     private static int e = 4;
     private static int f = 8;
@@ -24,16 +22,12 @@ public class CoordinateConverter {
     private Context j;
     private CoordType k = null;
     private DPoint l = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    DPoint f5487a = null;
+    DPoint a = null;
 
     /* renamed from: com.amap.api.location.CoordinateConverter$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/location/CoordinateConverter$1.class */
     static final /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f5488a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -43,33 +37,33 @@ public class CoordinateConverter {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[CoordType.values().length];
-            f5488a = iArr;
+            a = iArr;
             try {
                 iArr[CoordType.BAIDU.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f5488a[CoordType.MAPBAR.ordinal()] = 2;
+                a[CoordType.MAPBAR.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f5488a[CoordType.MAPABC.ordinal()] = 3;
+                a[CoordType.MAPABC.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f5488a[CoordType.SOSOMAP.ordinal()] = 4;
+                a[CoordType.SOSOMAP.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f5488a[CoordType.ALIYUN.ordinal()] = 5;
+                a[CoordType.ALIYUN.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f5488a[CoordType.GOOGLE.ordinal()] = 6;
+                a[CoordType.GOOGLE.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f5488a[CoordType.GPS.ordinal()] = 7;
+                a[CoordType.GPS.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -121,20 +115,20 @@ public class CoordinateConverter {
             }
             boolean z = false;
             Object obj = null;
-            switch (AnonymousClass1.f5488a[this.k.ordinal()]) {
+            switch (AnonymousClass1.a[this.k.ordinal()]) {
                 case 1:
-                    this.f5487a = d.a(this.l);
+                    this.a = d.a(this.l);
                     z = false;
                     obj = null;
-                    if ((b & f5486c) == 0) {
-                        obj = AdnName.BAIDU;
-                        b |= f5486c;
+                    if ((b & c) == 0) {
+                        obj = "baidu";
+                        b |= c;
                         z = true;
                         break;
                     }
                     break;
                 case 2:
-                    this.f5487a = d.b(this.j, this.l);
+                    this.a = d.b(this.j, this.l);
                     z = false;
                     obj = null;
                     if ((b & d) == 0) {
@@ -152,7 +146,7 @@ public class CoordinateConverter {
                         b |= e;
                         z = true;
                     }
-                    this.f5487a = this.l;
+                    this.a = this.l;
                     break;
                 case 4:
                     z = false;
@@ -162,7 +156,7 @@ public class CoordinateConverter {
                         b |= f;
                         z = true;
                     }
-                    this.f5487a = this.l;
+                    this.a = this.l;
                     break;
                 case 5:
                     z = false;
@@ -172,7 +166,7 @@ public class CoordinateConverter {
                         b |= g;
                         z = true;
                     }
-                    this.f5487a = this.l;
+                    this.a = this.l;
                     break;
                 case 6:
                     z = false;
@@ -182,15 +176,15 @@ public class CoordinateConverter {
                         b |= h;
                         z = true;
                     }
-                    this.f5487a = this.l;
+                    this.a = this.l;
                     break;
                 case 7:
                     if ((b & i) == 0) {
-                        obj = "gps";
+                        obj = GeocodeSearch.GPS;
                         b |= i;
                         z = true;
                     }
-                    this.f5487a = d.a(this.j, this.l);
+                    this.a = d.a(this.j, this.l);
                     break;
                 default:
                     z = false;
@@ -204,7 +198,7 @@ public class CoordinateConverter {
                 }
                 g.a(this.j, "O021", jSONObject);
             }
-            dPoint = this.f5487a;
+            dPoint = this.a;
         }
         return dPoint;
     }

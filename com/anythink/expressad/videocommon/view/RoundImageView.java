@@ -22,10 +22,10 @@ import com.anythink.expressad.widget.ATImageView;
 public class RoundImageView extends ATImageView {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8775a = "RoundImageView";
+    private static final String f5935a = "RoundImageView";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f8776c = 0;
+    private static final int f5936c = 0;
     private static final int d = 1;
     private static final int e = 5;
     private static final String m = "state_instance";
@@ -107,7 +107,7 @@ public class RoundImageView extends ATImageView {
             this.j.setLocalMatrix(this.i);
             this.g.setShader(this.j);
         } catch (Throwable th) {
-            o.d(f8775a, th.getMessage());
+            o.d(f5935a, th.getMessage());
         }
     }
 
@@ -138,13 +138,12 @@ public class RoundImageView extends ATImageView {
                 canvas.drawCircle(this.h, this.h, this.h, this.g);
             }
         } catch (Throwable th) {
-            o.d(f8775a, th.getMessage());
+            o.d(f5935a, th.getMessage());
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         if (this.b == 0) {
             int min = Math.min(getMeasuredWidth(), getMeasuredHeight());
@@ -154,9 +153,8 @@ public class RoundImageView extends ATImageView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         if (!(parcelable instanceof Bundle)) {
             super.onRestoreInstanceState(parcelable);
             return;
@@ -167,9 +165,8 @@ public class RoundImageView extends ATImageView {
         this.f = bundle.getInt(o);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         Bundle bundle = new Bundle();
         bundle.putParcelable(m, super.onSaveInstanceState());
         bundle.putInt(n, this.b);
@@ -177,9 +174,8 @@ public class RoundImageView extends ATImageView {
         return bundle;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         if (this.b == 1) {
             this.l = new RectF(0.0f, 0.0f, getWidth(), getHeight());

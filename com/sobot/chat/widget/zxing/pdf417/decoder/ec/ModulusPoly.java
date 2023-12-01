@@ -32,7 +32,7 @@ public final class ModulusPoly {
         }
         int[] iArr2 = new int[length - i];
         this.coefficients = iArr2;
-        System.arraycopy((Object) iArr, i, (Object) iArr2, 0, iArr2.length);
+        System.arraycopy(iArr, i, iArr2, 0, iArr2.length);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -57,7 +57,7 @@ public final class ModulusPoly {
         }
         int[] iArr4 = new int[iArr.length];
         int length = iArr.length - iArr2.length;
-        System.arraycopy((Object) iArr, 0, (Object) iArr4, 0, length);
+        System.arraycopy(iArr, 0, iArr4, 0, length);
         int i = length;
         while (true) {
             int i2 = i;

@@ -4,8 +4,9 @@ import io.grpc.Context;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8829756-dex2jar.jar:io/grpc/ThreadLocalContextStorage.class */
-final class ThreadLocalContextStorage extends Context.Storage {
+public final class ThreadLocalContextStorage extends Context.Storage {
     private static final Logger log = Logger.getLogger(ThreadLocalContextStorage.class.getName());
     static final ThreadLocal<Context> localContext = new ThreadLocal<>();
 

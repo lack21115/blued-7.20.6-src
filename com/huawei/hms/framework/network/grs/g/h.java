@@ -16,11 +16,11 @@ import java.util.concurrent.Future;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ExecutorService f22709a = ExecutorsUtils.newCachedThreadPool("GRS_RequestController-Task");
+    private final ExecutorService f9101a = ExecutorsUtils.newCachedThreadPool("GRS_RequestController-Task");
     private final Map<String, com.huawei.hms.framework.network.grs.g.k.b> b = new ConcurrentHashMap(16);
 
     /* renamed from: c  reason: collision with root package name */
-    private final Object f22710c = new Object();
+    private final Object f9102c = new Object();
     private com.huawei.hms.framework.network.grs.e.a d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -28,22 +28,22 @@ public class h {
     public class a implements Callable<d> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.huawei.hms.framework.network.grs.g.k.c f22711a;
+        final /* synthetic */ com.huawei.hms.framework.network.grs.g.k.c f9103a;
         final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ com.huawei.hms.framework.network.grs.e.c f22712c;
+        final /* synthetic */ com.huawei.hms.framework.network.grs.e.c f9104c;
 
         a(com.huawei.hms.framework.network.grs.g.k.c cVar, String str, com.huawei.hms.framework.network.grs.e.c cVar2) {
-            this.f22711a = cVar;
+            this.f9103a = cVar;
             this.b = str;
-            this.f22712c = cVar2;
+            this.f9104c = cVar2;
         }
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // java.util.concurrent.Callable
         public d call() {
-            return new c(this.f22711a, h.this.d).a(h.this.f22709a, this.b, this.f22712c);
+            return new c(this.f9103a, h.this.d).a(h.this.f9101a, this.b, this.f9104c);
         }
     }
 
@@ -52,24 +52,24 @@ public class h {
     public class b implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.huawei.hms.framework.network.grs.g.k.c f22713a;
+        final /* synthetic */ com.huawei.hms.framework.network.grs.g.k.c f9105a;
         final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ com.huawei.hms.framework.network.grs.e.c f22714c;
+        final /* synthetic */ com.huawei.hms.framework.network.grs.e.c f9106c;
         final /* synthetic */ com.huawei.hms.framework.network.grs.b d;
 
         b(com.huawei.hms.framework.network.grs.g.k.c cVar, String str, com.huawei.hms.framework.network.grs.e.c cVar2, com.huawei.hms.framework.network.grs.b bVar) {
-            this.f22713a = cVar;
+            this.f9105a = cVar;
             this.b = str;
-            this.f22714c = cVar2;
+            this.f9106c = cVar2;
             this.d = bVar;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             h hVar = h.this;
-            hVar.a(hVar.a(this.f22713a, this.b, this.f22714c), this.d);
+            hVar.a(hVar.a(this.f9105a, this.b, this.f9106c), this.d);
         }
     }
 
@@ -92,7 +92,7 @@ public class h {
         Logger.d("RequestController", "request to server with service name is: " + str);
         String grsParasKey = cVar.b().getGrsParasKey(true, true, cVar.a());
         Logger.v("RequestController", "request spUrlKey: " + grsParasKey);
-        synchronized (this.f22710c) {
+        synchronized (this.f9102c) {
             if (!NetworkUtil.isNetworkAvailable(cVar.a())) {
                 return null;
             }
@@ -124,7 +124,7 @@ public class h {
                 return null;
             }
             Logger.d("RequestController", "hitGrsRequestBean == null or request block is released.");
-            submit = this.f22709a.submit(new a(cVar, str, cVar2));
+            submit = this.f9101a.submit(new a(cVar, str, cVar2));
             this.b.put(grsParasKey, new com.huawei.hms.framework.network.grs.g.k.b(submit));
         }
     }
@@ -134,11 +134,11 @@ public class h {
     }
 
     public void a(com.huawei.hms.framework.network.grs.g.k.c cVar, com.huawei.hms.framework.network.grs.b bVar, String str, com.huawei.hms.framework.network.grs.e.c cVar2) {
-        this.f22709a.execute(new b(cVar, str, cVar2, bVar));
+        this.f9101a.execute(new b(cVar, str, cVar2, bVar));
     }
 
     public void a(String str) {
-        synchronized (this.f22710c) {
+        synchronized (this.f9102c) {
             this.b.remove(str);
         }
     }

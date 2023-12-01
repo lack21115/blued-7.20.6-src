@@ -19,11 +19,11 @@ import com.scwang.smartrefresh.layout.util.DensityUtil;
 public class ClassicsFooter extends InternalClassics<ClassicsFooter> implements RefreshFooter {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f27976a;
+    public static String f14288a;
     public static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f27977c;
+    public static String f14289c;
     public static String d;
     public static String e;
     public static String f;
@@ -42,7 +42,7 @@ public class ClassicsFooter extends InternalClassics<ClassicsFooter> implements 
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f27978a;
+        static final /* synthetic */ int[] f14290a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x004d -> B:37:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0051 -> B:33:0x001f). Please submit an issue!!! */
@@ -51,29 +51,29 @@ public class ClassicsFooter extends InternalClassics<ClassicsFooter> implements 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x005d -> B:35:0x0040). Please submit an issue!!! */
         static {
             int[] iArr = new int[RefreshState.values().length];
-            f27978a = iArr;
+            f14290a = iArr;
             try {
                 iArr[RefreshState.None.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f27978a[RefreshState.PullUpToLoad.ordinal()] = 2;
+                f14290a[RefreshState.PullUpToLoad.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f27978a[RefreshState.Loading.ordinal()] = 3;
+                f14290a[RefreshState.Loading.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f27978a[RefreshState.LoadReleased.ordinal()] = 4;
+                f14290a[RefreshState.LoadReleased.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f27978a[RefreshState.ReleaseToLoad.ordinal()] = 5;
+                f14290a[RefreshState.ReleaseToLoad.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f27978a[RefreshState.Refreshing.ordinal()] = 6;
+                f14290a[RefreshState.Refreshing.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -139,7 +139,7 @@ public class ClassicsFooter extends InternalClassics<ClassicsFooter> implements 
         if (obtainStyledAttributes.hasValue(R.styleable.ClassicsFooter_srlTextPulling)) {
             this.h = obtainStyledAttributes.getString(R.styleable.ClassicsFooter_srlTextPulling);
         } else {
-            String str = f27976a;
+            String str = f14288a;
             if (str != null) {
                 this.h = str;
             } else {
@@ -159,7 +159,7 @@ public class ClassicsFooter extends InternalClassics<ClassicsFooter> implements 
         if (obtainStyledAttributes.hasValue(R.styleable.ClassicsFooter_srlTextLoading)) {
             this.j = obtainStyledAttributes.getString(R.styleable.ClassicsFooter_srlTextLoading);
         } else {
-            String str3 = f27977c;
+            String str3 = f14289c;
             if (str3 != null) {
                 this.j = str3;
             } else {
@@ -235,7 +235,7 @@ public class ClassicsFooter extends InternalClassics<ClassicsFooter> implements 
         if (this.o) {
             return;
         }
-        switch (AnonymousClass1.f27978a[refreshState2.ordinal()]) {
+        switch (AnonymousClass1.f14290a[refreshState2.ordinal()]) {
             case 1:
                 imageView.setVisibility(0);
                 break;

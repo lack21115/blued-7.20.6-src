@@ -2,7 +2,6 @@ package com.amap.api.col.p0003sl;
 
 import android.content.Context;
 import android.os.Looper;
-import com.kwad.components.splash.monitor.SplashMonitorInfo;
 import java.lang.Thread;
 import java.lang.ref.WeakReference;
 import java.util.Collections;
@@ -24,13 +23,11 @@ public final class iw extends it implements Thread.UncaughtExceptionHandler {
     private Context d;
     private static Set<Integer> f = Collections.synchronizedSet(new HashSet());
     private static final ThreadFactory h = new ThreadFactory() { // from class: com.amap.api.col.3sl.iw.2
-
-        /* renamed from: a  reason: collision with root package name */
-        private final AtomicInteger f5187a = new AtomicInteger(1);
+        private final AtomicInteger a = new AtomicInteger(1);
 
         @Override // java.util.concurrent.ThreadFactory
         public final Thread newThread(Runnable runnable) {
-            return new Thread(runnable, "pama#" + this.f5187a.getAndIncrement()) { // from class: com.amap.api.col.3sl.iw.2.1
+            return new Thread(runnable, "pama#" + this.a.getAndIncrement()) { // from class: com.amap.api.col.3sl.iw.2.1
                 @Override // java.lang.Thread, java.lang.Runnable
                 public final void run() {
                     try {
@@ -48,16 +45,16 @@ public final class iw extends it implements Thread.UncaughtExceptionHandler {
             this.b = Thread.getDefaultUncaughtExceptionHandler();
             if (this.b == null) {
                 Thread.setDefaultUncaughtExceptionHandler(this);
-                this.f5180c = true;
+                this.c = true;
                 return;
             }
             String obj = this.b.toString();
             if (!obj.startsWith("com.amap.apis.utils.core.dynamiccore") && (obj.indexOf("com.amap.api") != -1 || obj.indexOf("com.loc") != -1)) {
-                this.f5180c = false;
+                this.c = false;
                 return;
             }
             Thread.setDefaultUncaughtExceptionHandler(this);
-            this.f5180c = true;
+            this.c = true;
         } catch (Throwable th) {
             th.printStackTrace();
         }
@@ -71,15 +68,15 @@ public final class iw extends it implements Thread.UncaughtExceptionHandler {
                         throw new hn("sdk name is invalid");
                     }
                     if (!f.add(Integer.valueOf(iaVar.hashCode()))) {
-                        return (iw) it.f5179a;
+                        return (iw) it.a;
                     }
-                    if (it.f5179a == null) {
-                        it.f5179a = new iw(context);
+                    if (it.a == null) {
+                        it.a = new iw(context);
                     } else {
-                        it.f5179a.f5180c = false;
+                        it.a.c = false;
                     }
-                    it.f5179a.a(iaVar, it.f5179a.f5180c);
-                    return (iw) it.f5179a;
+                    it.a.a(iaVar, it.a.c);
+                    return (iw) it.a;
                 }
                 throw new hn("sdk info is null");
             } catch (Throwable th) {
@@ -114,8 +111,8 @@ public final class iw extends it implements Thread.UncaughtExceptionHandler {
 
     public static void a(ia iaVar, String str, String str2, String str3, String str4, String str5) {
         try {
-            if (it.f5179a != null) {
-                it.f5179a.a(iaVar, "path:" + str + ",type:" + str2 + ",gsid:" + str3 + ",csid:" + str4 + ",code:" + str5, SplashMonitorInfo.ERROR_NET_MSG);
+            if (it.a != null) {
+                it.a.a(iaVar, "path:" + str + ",type:" + str2 + ",gsid:" + str3 + ",csid:" + str4 + ",code:" + str5, "networkError");
             }
         } catch (Throwable th) {
         }
@@ -128,10 +125,10 @@ public final class iw extends it implements Thread.UncaughtExceptionHandler {
                     e.shutdown();
                 }
                 jr.a();
-                if (it.f5179a != null && Thread.getDefaultUncaughtExceptionHandler() == it.f5179a && it.f5179a.b != null) {
-                    Thread.setDefaultUncaughtExceptionHandler(it.f5179a.b);
+                if (it.a != null && Thread.getDefaultUncaughtExceptionHandler() == it.a && it.a.b != null) {
+                    Thread.setDefaultUncaughtExceptionHandler(it.a.b);
                 }
-                it.f5179a = null;
+                it.a = null;
             }
         }
     }
@@ -142,8 +139,8 @@ public final class iw extends it implements Thread.UncaughtExceptionHandler {
 
     public static void b(ia iaVar, String str, String str2) {
         try {
-            if (it.f5179a != null) {
-                it.f5179a.a(iaVar, str, str2);
+            if (it.a != null) {
+                it.a.a(iaVar, str, str2);
             }
         } catch (Throwable th) {
         }
@@ -153,15 +150,15 @@ public final class iw extends it implements Thread.UncaughtExceptionHandler {
         WeakReference<Context> weakReference = g;
         if (weakReference != null && weakReference.get() != null) {
             iu.a(g.get());
-        } else if (it.f5179a != null) {
-            it.f5179a.a();
+        } else if (it.a != null) {
+            it.a.a();
         }
     }
 
     public static void c(Throwable th, String str, String str2) {
         try {
-            if (it.f5179a != null) {
-                it.f5179a.a(th, 1, str, str2);
+            if (it.a != null) {
+                it.a.a(th, 1, str, str2);
             }
         } catch (Throwable th2) {
         }
@@ -191,7 +188,7 @@ public final class iw extends it implements Thread.UncaughtExceptionHandler {
         iw iwVar;
         synchronized (iw.class) {
             try {
-                iwVar = (iw) it.f5179a;
+                iwVar = (iw) it.a;
             } catch (Throwable th) {
                 throw th;
             }

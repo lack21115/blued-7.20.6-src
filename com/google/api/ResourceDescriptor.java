@@ -103,7 +103,7 @@ public final class ResourceDescriptor extends GeneratedMessageV3 implements Reso
         public Builder addPattern(String str) {
             if (str != null) {
                 ensurePatternIsMutable();
-                this.pattern_.add((LazyStringList) str);
+                this.pattern_.add(str);
                 onChanged();
                 return this;
             }
@@ -215,8 +215,8 @@ public final class ResourceDescriptor extends GeneratedMessageV3 implements Reso
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -268,7 +268,7 @@ public final class ResourceDescriptor extends GeneratedMessageV3 implements Reso
 
         @Override // com.google.api.ResourceDescriptorOrBuilder
         public String getPattern(int i) {
-            return this.pattern_.get(i);
+            return (String) this.pattern_.get(i);
         }
 
         @Override // com.google.api.ResourceDescriptorOrBuilder
@@ -510,7 +510,7 @@ public final class ResourceDescriptor extends GeneratedMessageV3 implements Reso
         public Builder setPattern(int i, String str) {
             if (str != null) {
                 ensurePatternIsMutable();
-                this.pattern_.set(i, (int) str);
+                this.pattern_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -695,7 +695,7 @@ public final class ResourceDescriptor extends GeneratedMessageV3 implements Reso
                                     this.pattern_ = new LazyStringArrayList();
                                     z4 = z2 | true;
                                 }
-                                this.pattern_.add((LazyStringList) readStringRequireUtf8);
+                                this.pattern_.add(readStringRequireUtf8);
                                 z2 = z4;
                             } else if (readTag == 26) {
                                 this.nameField_ = codedInputStream.readStringRequireUtf8();
@@ -865,7 +865,7 @@ public final class ResourceDescriptor extends GeneratedMessageV3 implements Reso
 
     @Override // com.google.api.ResourceDescriptorOrBuilder
     public String getPattern(int i) {
-        return this.pattern_.get(i);
+        return (String) this.pattern_.get(i);
     }
 
     @Override // com.google.api.ResourceDescriptorOrBuilder

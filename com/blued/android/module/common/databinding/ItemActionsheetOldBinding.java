@@ -13,13 +13,9 @@ import com.blued.android.module.common.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/databinding/ItemActionsheetOldBinding.class */
 public final class ItemActionsheetOldBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeLinearLayout f10731a;
+    public final ShapeLinearLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f10732c;
+    public final ImageView c;
     public final ImageView d;
     public final ShapeTextView e;
     public final ImageView f;
@@ -28,9 +24,9 @@ public final class ItemActionsheetOldBinding implements ViewBinding {
 
     private ItemActionsheetOldBinding(LinearLayout linearLayout, ShapeLinearLayout shapeLinearLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ShapeTextView shapeTextView, ImageView imageView4, TextView textView) {
         this.h = linearLayout;
-        this.f10731a = shapeLinearLayout;
+        this.a = shapeLinearLayout;
         this.b = imageView;
-        this.f10732c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = shapeTextView;
         this.f = imageView4;
@@ -85,7 +81,6 @@ public final class ItemActionsheetOldBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.h;

@@ -13,7 +13,7 @@ public final class YYThemeEventEndInfo {
     private final String send_users_count;
 
     /* renamed from: skin  reason: collision with root package name */
-    private final YYEventsThemeModel f17632skin;
+    private final YYEventsThemeModel f57skin;
     private final String users_count;
     private final String value;
     private final String value_desc;
@@ -34,7 +34,7 @@ public final class YYThemeEventEndInfo {
         this.value = value;
         this.value_desc = value_desc;
         this.activity_info = activity_info;
-        this.f17632skin = skin2;
+        this.f57skin = skin2;
     }
 
     public static /* synthetic */ YYThemeEventEndInfo copy$default(YYThemeEventEndInfo yYThemeEventEndInfo, List list, String str, String str2, String str3, String str4, String str5, YYThemeActivityInfo yYThemeActivityInfo, YYEventsThemeModel yYEventsThemeModel, int i, Object obj) {
@@ -60,7 +60,7 @@ public final class YYThemeEventEndInfo {
             yYThemeActivityInfo = yYThemeEventEndInfo.activity_info;
         }
         if ((i & 128) != 0) {
-            yYEventsThemeModel = yYThemeEventEndInfo.f17632skin;
+            yYEventsThemeModel = yYThemeEventEndInfo.f57skin;
         }
         return yYThemeEventEndInfo.copy(list, str, str2, str3, str4, str5, yYThemeActivityInfo, yYEventsThemeModel);
     }
@@ -94,7 +94,7 @@ public final class YYThemeEventEndInfo {
     }
 
     public final YYEventsThemeModel component8() {
-        return this.f17632skin;
+        return this.f57skin;
     }
 
     public final YYThemeEventEndInfo copy(List<YYThemeRankList> rank_list, String duration_time, String send_users_count, String users_count, String value, String value_desc, YYThemeActivityInfo activity_info, YYEventsThemeModel skin2) {
@@ -115,7 +115,7 @@ public final class YYThemeEventEndInfo {
         }
         if (obj instanceof YYThemeEventEndInfo) {
             YYThemeEventEndInfo yYThemeEventEndInfo = (YYThemeEventEndInfo) obj;
-            return Intrinsics.a(this.rank_list, yYThemeEventEndInfo.rank_list) && Intrinsics.a((Object) this.duration_time, (Object) yYThemeEventEndInfo.duration_time) && Intrinsics.a((Object) this.send_users_count, (Object) yYThemeEventEndInfo.send_users_count) && Intrinsics.a((Object) this.users_count, (Object) yYThemeEventEndInfo.users_count) && Intrinsics.a((Object) this.value, (Object) yYThemeEventEndInfo.value) && Intrinsics.a((Object) this.value_desc, (Object) yYThemeEventEndInfo.value_desc) && Intrinsics.a(this.activity_info, yYThemeEventEndInfo.activity_info) && Intrinsics.a(this.f17632skin, yYThemeEventEndInfo.f17632skin);
+            return Intrinsics.a(this.rank_list, yYThemeEventEndInfo.rank_list) && Intrinsics.a((Object) this.duration_time, (Object) yYThemeEventEndInfo.duration_time) && Intrinsics.a((Object) this.send_users_count, (Object) yYThemeEventEndInfo.send_users_count) && Intrinsics.a((Object) this.users_count, (Object) yYThemeEventEndInfo.users_count) && Intrinsics.a((Object) this.value, (Object) yYThemeEventEndInfo.value) && Intrinsics.a((Object) this.value_desc, (Object) yYThemeEventEndInfo.value_desc) && Intrinsics.a(this.activity_info, yYThemeEventEndInfo.activity_info) && Intrinsics.a(this.f57skin, yYThemeEventEndInfo.f57skin);
         }
         return false;
     }
@@ -137,7 +137,7 @@ public final class YYThemeEventEndInfo {
     }
 
     public final YYEventsThemeModel getSkin() {
-        return this.f17632skin;
+        return this.f57skin;
     }
 
     public final String getUsers_count() {
@@ -153,7 +153,7 @@ public final class YYThemeEventEndInfo {
     }
 
     public int hashCode() {
-        return (((((((((((((this.rank_list.hashCode() * 31) + this.duration_time.hashCode()) * 31) + this.send_users_count.hashCode()) * 31) + this.users_count.hashCode()) * 31) + this.value.hashCode()) * 31) + this.value_desc.hashCode()) * 31) + this.activity_info.hashCode()) * 31) + this.f17632skin.hashCode();
+        return (((((((((((((this.rank_list.hashCode() * 31) + this.duration_time.hashCode()) * 31) + this.send_users_count.hashCode()) * 31) + this.users_count.hashCode()) * 31) + this.value.hashCode()) * 31) + this.value_desc.hashCode()) * 31) + this.activity_info.hashCode()) * 31) + this.f57skin.hashCode();
     }
 
     public final void setRank_list(List<YYThemeRankList> list) {
@@ -162,6 +162,6 @@ public final class YYThemeEventEndInfo {
     }
 
     public String toString() {
-        return "YYThemeEventEndInfo(rank_list=" + this.rank_list + ", duration_time=" + this.duration_time + ", send_users_count=" + this.send_users_count + ", users_count=" + this.users_count + ", value=" + this.value + ", value_desc=" + this.value_desc + ", activity_info=" + this.activity_info + ", skin=" + this.f17632skin + ')';
+        return "YYThemeEventEndInfo(rank_list=" + this.rank_list + ", duration_time=" + this.duration_time + ", send_users_count=" + this.send_users_count + ", users_count=" + this.users_count + ", value=" + this.value + ", value_desc=" + this.value_desc + ", activity_info=" + this.activity_info + ", skin=" + this.f57skin + ')';
     }
 }

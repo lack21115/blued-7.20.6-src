@@ -6,16 +6,16 @@ import android.animation.TypeEvaluator;
 class FloatArrayEvaluator implements TypeEvaluator<float[]> {
 
     /* renamed from: a  reason: collision with root package name */
-    private float[] f3441a;
+    private float[] f3393a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FloatArrayEvaluator(float[] fArr) {
-        this.f3441a = fArr;
+        this.f3393a = fArr;
     }
 
     @Override // android.animation.TypeEvaluator
     public float[] evaluate(float f, float[] fArr, float[] fArr2) {
-        float[] fArr3 = this.f3441a;
+        float[] fArr3 = this.f3393a;
         float[] fArr4 = fArr3;
         if (fArr3 == null) {
             fArr4 = new float[fArr.length];

@@ -7,9 +7,7 @@ import java.security.spec.X509EncodedKeySpec;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/encrypt/e.class */
 public class e {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f4629a = "RSA";
+    private static final String a = "RSA";
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00b3 A[EXC_TOP_SPLITTER, SYNTHETIC] */

@@ -5,8 +5,9 @@ import android.util.SparseIntArray;
 import android.view.Display;
 import android.view.OrientationEventListener;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/cameraview/DisplayOrientationDetector.class */
-abstract class DisplayOrientationDetector {
+public abstract class DisplayOrientationDetector {
     static final SparseIntArray DISPLAY_ORIENTATIONS;
     Display mDisplay;
     private int mLastKnownDisplayOrientation = 0;

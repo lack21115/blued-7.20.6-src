@@ -6,11 +6,11 @@ import com.opos.exoplayer.core.c.f.u;
 public final class o implements u {
 
     /* renamed from: a  reason: collision with root package name */
-    private final h f25216a;
+    private final h f11528a;
     private final com.opos.exoplayer.core.i.l b = new com.opos.exoplayer.core.i.l(new byte[10]);
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25217c = 0;
+    private int f11529c = 0;
     private int d;
     private com.opos.exoplayer.core.i.s e;
     private boolean f;
@@ -22,11 +22,11 @@ public final class o implements u {
     private long l;
 
     public o(h hVar) {
-        this.f25216a = hVar;
+        this.f11528a = hVar;
     }
 
     private void a(int i) {
-        this.f25217c = i;
+        this.f11529c = i;
         this.d = 0;
     }
 
@@ -99,10 +99,10 @@ public final class o implements u {
 
     @Override // com.opos.exoplayer.core.c.f.u
     public final void a() {
-        this.f25217c = 0;
+        this.f11529c = 0;
         this.d = 0;
         this.h = false;
-        this.f25216a.a();
+        this.f11528a.a();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x0061  */
@@ -123,6 +123,6 @@ public final class o implements u {
     @Override // com.opos.exoplayer.core.c.f.u
     public void a(com.opos.exoplayer.core.i.s sVar, com.opos.exoplayer.core.c.g gVar, u.d dVar) {
         this.e = sVar;
-        this.f25216a.a(gVar, dVar);
+        this.f11528a.a(gVar, dVar);
     }
 }

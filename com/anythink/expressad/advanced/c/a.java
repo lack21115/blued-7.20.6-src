@@ -28,7 +28,7 @@ import java.util.ArrayList;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f6994a = "NativeAdvancedLoadManager";
+    private static String f4156a = "NativeAdvancedLoadManager";
     private static final int j = 1;
     private static final int k = 2;
     private static final int l = 3;
@@ -38,7 +38,7 @@ public final class a {
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f6995c;
+    private String f4157c;
     private long d;
     private com.anythink.expressad.advanced.b.a e;
     private ATNativeAdvancedView g;
@@ -127,44 +127,43 @@ public final class a {
     public final class AnonymousClass10 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ATNativeAdvancedWebview f6997a;
+        final /* synthetic */ ATNativeAdvancedWebview f4159a;
         final /* synthetic */ String b;
 
         AnonymousClass10(ATNativeAdvancedWebview aTNativeAdvancedWebview, String str) {
-            this.f6997a = aTNativeAdvancedWebview;
+            this.f4159a = aTNativeAdvancedWebview;
             this.b = str;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            this.f6997a.loadUrl(x.c(this.b));
+            this.f4159a.loadUrl(x.c(this.b));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.advanced.c.a$2  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/advanced/c/a$2.class */
-    public final class AnonymousClass2 implements com.anythink.expressad.videocommon.d.b {
+    final class AnonymousClass2 implements com.anythink.expressad.videocommon.d.b {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f6999a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f4161a;
 
         AnonymousClass2(com.anythink.expressad.foundation.d.c cVar) {
-            this.f6999a = cVar;
+            this.f4161a = cVar;
         }
 
         @Override // com.anythink.expressad.videocommon.d.b
         public final void a(String str) {
-            o.a(a.f6994a, "Video 下载成功： ".concat(String.valueOf(str)));
+            o.a(a.f4156a, "Video 下载成功： ".concat(String.valueOf(str)));
             Message obtain = Message.obtain();
-            obtain.obj = this.f6999a;
+            obtain.obj = this.f4161a;
             obtain.what = 5;
             a.this.C.sendMessage(obtain);
         }
 
         @Override // com.anythink.expressad.videocommon.d.b
         public final void a(String str, String str2) {
-            o.a(a.f6994a, "Video 下载失败： ".concat(String.valueOf(str)));
+            o.a(a.f4156a, "Video 下载失败： ".concat(String.valueOf(str)));
             Message obtain = Message.obtain();
             obtain.obj = str;
             obtain.what = 2;
@@ -172,27 +171,26 @@ public final class a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.advanced.c.a$4  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/advanced/c/a$4.class */
-    public final class AnonymousClass4 implements com.anythink.expressad.foundation.g.d.c {
+    final class AnonymousClass4 implements com.anythink.expressad.foundation.g.d.c {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f7001a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f4163a;
         final /* synthetic */ int b = 2;
 
         AnonymousClass4(com.anythink.expressad.foundation.d.c cVar) {
-            this.f7001a = cVar;
+            this.f4163a = cVar;
         }
 
         @Override // com.anythink.expressad.foundation.g.d.c
         public final void a(Bitmap bitmap, String str) {
-            o.a(a.f6994a, "giturl 下载成功： ".concat(String.valueOf(str)));
+            o.a(a.f4156a, "giturl 下载成功： ".concat(String.valueOf(str)));
             if (a.this.C != null) {
                 a.this.C.post(new Runnable() { // from class: com.anythink.expressad.advanced.c.a.4.1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        a.this.a(AnonymousClass4.this.f7001a, AnonymousClass4.this.b);
+                        a.this.a(AnonymousClass4.this.f4163a, AnonymousClass4.this.b);
                     }
                 });
             }
@@ -200,38 +198,37 @@ public final class a {
 
         @Override // com.anythink.expressad.foundation.g.d.c
         public final void a(String str, String str2) {
-            o.a(a.f6994a, "gifurl 下载失败： ".concat(String.valueOf(str2)));
+            o.a(a.f4156a, "gifurl 下载失败： ".concat(String.valueOf(str2)));
             if (a.this.C != null) {
                 a.this.C.post(new Runnable() { // from class: com.anythink.expressad.advanced.c.a.4.2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        a.this.a(AnonymousClass4.this.f7001a, AnonymousClass4.this.b);
+                        a.this.a(AnonymousClass4.this.f4163a, AnonymousClass4.this.b);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.advanced.c.a$5  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/advanced/c/a$5.class */
-    public final class AnonymousClass5 implements i.d {
+    final class AnonymousClass5 implements i.d {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f7005a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f4167a;
         final /* synthetic */ int b = 2;
 
         AnonymousClass5(com.anythink.expressad.foundation.d.c cVar) {
-            this.f7005a = cVar;
+            this.f4167a = cVar;
         }
 
         @Override // com.anythink.expressad.videocommon.b.i.a
         public final void a(String str) {
-            o.a(a.f6994a, "endcard 下载成功： ".concat(String.valueOf(str)));
+            o.a(a.f4156a, "endcard 下载成功： ".concat(String.valueOf(str)));
             if (a.this.C != null) {
                 Message obtain = Message.obtain();
                 obtain.what = 4;
-                obtain.obj = this.f7005a;
+                obtain.obj = this.f4167a;
                 obtain.arg1 = this.b;
                 a.this.C.sendMessage(obtain);
             }
@@ -239,7 +236,7 @@ public final class a {
 
         @Override // com.anythink.expressad.videocommon.b.i.a
         public final void a(String str, String str2) {
-            o.a(a.f6994a, "endcard 下载失败： ".concat(String.valueOf(str2)));
+            o.a(a.f4156a, "endcard 下载失败： ".concat(String.valueOf(str2)));
             if (a.this.g != null) {
                 a.this.g.setEndCardReady(false);
             }
@@ -250,27 +247,26 @@ public final class a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.advanced.c.a$6  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/advanced/c/a$6.class */
-    public final class AnonymousClass6 implements com.anythink.expressad.foundation.g.d.c {
+    final class AnonymousClass6 implements com.anythink.expressad.foundation.g.d.c {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f7007a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f4169a;
         final /* synthetic */ int b = 2;
 
         AnonymousClass6(com.anythink.expressad.foundation.d.c cVar) {
-            this.f7007a = cVar;
+            this.f4169a = cVar;
         }
 
         @Override // com.anythink.expressad.foundation.g.d.c
         public final void a(Bitmap bitmap, String str) {
-            o.a(a.f6994a, "image 下载成功： ".concat(String.valueOf(str)));
+            o.a(a.f4156a, "image 下载成功： ".concat(String.valueOf(str)));
             if (a.this.C != null) {
                 a.this.C.post(new Runnable() { // from class: com.anythink.expressad.advanced.c.a.6.1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        a.this.a(AnonymousClass6.this.f7007a, AnonymousClass6.this.b);
+                        a.this.a(AnonymousClass6.this.f4169a, AnonymousClass6.this.b);
                     }
                 });
             }
@@ -278,29 +274,28 @@ public final class a {
 
         @Override // com.anythink.expressad.foundation.g.d.c
         public final void a(String str, String str2) {
-            o.a(a.f6994a, "image 下载失败： ".concat(String.valueOf(str2)));
+            o.a(a.f4156a, "image 下载失败： ".concat(String.valueOf(str2)));
             if (a.this.C != null) {
                 a.this.C.post(new Runnable() { // from class: com.anythink.expressad.advanced.c.a.6.2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        a.this.a(AnonymousClass6.this.f7007a, AnonymousClass6.this.b);
+                        a.this.a(AnonymousClass6.this.f4169a, AnonymousClass6.this.b);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.advanced.c.a$7  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/advanced/c/a$7.class */
-    public final class AnonymousClass7 implements Runnable {
+    final class AnonymousClass7 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f7011a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f4173a;
         final /* synthetic */ int b = 2;
 
         AnonymousClass7(com.anythink.expressad.foundation.d.c cVar) {
-            this.f7011a = cVar;
+            this.f4173a = cVar;
         }
 
         @Override // java.lang.Runnable
@@ -313,12 +308,12 @@ public final class a {
             try {
                 try {
                     try {
-                        File file3 = new File(this.f7011a.d());
+                        File file3 = new File(this.f4173a.d());
                         File file4 = file3;
                         try {
                             if (!file3.exists()) {
                                 String b = d.b(com.anythink.expressad.foundation.g.c.a.ANYTHINK_700_HTML);
-                                String a2 = p.a(x.a(this.f7011a.d()));
+                                String a2 = p.a(x.a(this.f4173a.d()));
                                 String str = a2;
                                 if (TextUtils.isEmpty(a2)) {
                                     str = String.valueOf(System.currentTimeMillis());
@@ -334,7 +329,7 @@ public final class a {
                                             com.anythink.expressad.d.b.a.a();
                                             sb.append(com.anythink.expressad.d.b.a.b());
                                             sb.append("</script>");
-                                            sb.append(this.f7011a.d());
+                                            sb.append(this.f4173a.d());
                                             fileOutputStream4.write(sb.toString().getBytes());
                                             fileOutputStream4.flush();
                                         } catch (Exception e) {
@@ -342,14 +337,14 @@ public final class a {
                                             e = e;
                                             e.printStackTrace();
                                             FileOutputStream fileOutputStream5 = fileOutputStream;
-                                            this.f7011a.j("");
+                                            this.f4173a.j("");
                                             if (fileOutputStream != null) {
                                                 fileOutputStream.close();
                                             }
                                             file2 = file;
                                             if (!file2.exists()) {
                                             }
-                                            o.a(a.f6994a, "渲染 HTML 失败： html file write failed");
+                                            o.a(a.f4156a, "渲染 HTML 失败： html file write failed");
                                             a aVar = a.this;
                                             String unused = a.this.s;
                                             aVar.b("html file write failed", this.b);
@@ -385,19 +380,19 @@ public final class a {
                         fileOutputStream = null;
                     }
                     if (!file2.exists() && file2.isFile() && file2.canRead()) {
-                        this.f7011a.b(file2.getAbsolutePath());
-                        o.a(a.f6994a, "开始渲染 HTML： ");
+                        this.f4173a.b(file2.getAbsolutePath());
+                        o.a(a.f4156a, "开始渲染 HTML： ");
                         final File file5 = file2;
                         n.a().a(new Runnable() { // from class: com.anythink.expressad.advanced.c.a.7.1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar2 = a.this;
-                                a.a(aVar2, "file:////" + file5.getAbsolutePath(), AnonymousClass7.this.f7011a, AnonymousClass7.this.b);
+                                a.a(aVar2, "file:////" + file5.getAbsolutePath(), AnonymousClass7.this.f4173a, AnonymousClass7.this.b);
                             }
                         });
                         return;
                     }
-                    o.a(a.f6994a, "渲染 HTML 失败： html file write failed");
+                    o.a(a.f4156a, "渲染 HTML 失败： html file write failed");
                     a aVar2 = a.this;
                     String unused2 = a.this.s;
                     aVar2.b("html file write failed", this.b);
@@ -413,32 +408,31 @@ public final class a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.advanced.c.a$8  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/advanced/c/a$8.class */
-    public final class AnonymousClass8 implements i.d {
+    final class AnonymousClass8 implements i.d {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f7014a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f4176a;
         final /* synthetic */ int b = 2;
 
         AnonymousClass8(com.anythink.expressad.foundation.d.c cVar) {
-            this.f7014a = cVar;
+            this.f4176a = cVar;
         }
 
         @Override // com.anythink.expressad.videocommon.b.i.a
         public final void a(String str) {
-            o.a(a.f6994a, "zip 下载成功： ".concat(String.valueOf(str)));
+            o.a(a.f4156a, "zip 下载成功： ".concat(String.valueOf(str)));
             Message obtain = Message.obtain();
             obtain.what = 1;
-            obtain.obj = this.f7014a;
+            obtain.obj = this.f4176a;
             obtain.arg1 = this.b;
             a.this.C.sendMessage(obtain);
         }
 
         @Override // com.anythink.expressad.videocommon.b.i.a
         public final void a(String str, String str2) {
-            String str3 = a.f6994a;
+            String str3 = a.f4156a;
             o.a(str3, "zip 下载失败： " + str2 + " " + str);
             Message obtain = Message.obtain();
             obtain.what = 2;
@@ -453,11 +447,11 @@ public final class a {
     public final class AnonymousClass9 extends com.anythink.expressad.atsignalcommon.a.b {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f7016a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f4178a;
         final /* synthetic */ int b;
 
         AnonymousClass9(com.anythink.expressad.foundation.d.c cVar, int i) {
-            this.f7016a = cVar;
+            this.f4178a = cVar;
             this.b = i;
         }
 
@@ -465,11 +459,11 @@ public final class a {
         public final void onPageFinished(WebView webView, String str) {
             super.onPageFinished(webView, str);
             o.d("NativeAdvancedLoadManager", "onPageFinished");
-            if (!this.f7016a.s()) {
+            if (!this.f4178a.s()) {
                 a.this.g.setH5Ready(true);
                 o.d("NativeAdvancedLoadManager", "=======onPageFinished OK");
-                com.anythink.expressad.advanced.a.a.a(this.f7016a.Z());
-                a.b(a.this, this.f7016a, this.b);
+                com.anythink.expressad.advanced.a.a.a(this.f4178a.Z());
+                a.b(a.this, this.f4178a, this.b);
             }
             NativeAdvancedJsUtils.fireOnJSBridgeConnected(webView);
         }
@@ -498,13 +492,13 @@ public final class a {
                 return;
             }
             a.this.g.setH5Ready(true);
-            com.anythink.expressad.advanced.a.a.a(this.f7016a.Z());
-            a.b(a.this, this.f7016a, this.b);
+            com.anythink.expressad.advanced.a.a.a(this.f4178a.Z());
+            a.b(a.this, this.f4178a, this.b);
         }
     }
 
     public a(String str, String str2) {
-        this.f6995c = str;
+        this.f4157c = str;
         this.b = str2;
     }
 
@@ -517,7 +511,7 @@ public final class a {
         if (aTNativeAdvancedView == null || aTNativeAdvancedView.getAdvancedNativeWebview() == null) {
             return;
         }
-        NativeAdvancedJSBridgeImpl nativeAdvancedJSBridgeImpl = new NativeAdvancedJSBridgeImpl(aVar.g.getContext(), aVar.f6995c, aVar.b);
+        NativeAdvancedJSBridgeImpl nativeAdvancedJSBridgeImpl = new NativeAdvancedJSBridgeImpl(aVar.g.getContext(), aVar.f4157c, aVar.b);
         ArrayList arrayList = new ArrayList();
         arrayList.add(cVar);
         nativeAdvancedJSBridgeImpl.setCampaignList(arrayList);
@@ -536,7 +530,7 @@ public final class a {
                 aVar.b("webview has destory", i);
                 return;
             }
-            o.d(f6994a, "=======开始渲染: ".concat(String.valueOf(str)));
+            o.d(f4156a, "=======开始渲染: ".concat(String.valueOf(str)));
             Handler handler = aVar.C;
             if (handler != null) {
                 handler.post(new AnonymousClass10(advancedNativeWebview, str));
@@ -555,39 +549,39 @@ public final class a {
             aTNativeAdvancedView.clearResState();
         }
         if (!TextUtils.isEmpty(cVar.c())) {
-            String str = f6994a;
+            String str = f4156a;
             o.a(str, "开始下载zip： " + cVar.c());
             this.x = new AnonymousClass8(cVar);
             i.a().b(cVar.c(), (i.a) this.x);
         }
         if (!TextUtils.isEmpty(cVar.d())) {
-            String str2 = f6994a;
+            String str2 = f4156a;
             o.a(str2, "开始下载HTML： " + cVar.d());
             com.anythink.core.common.k.b.a.a().a(new AnonymousClass7(cVar));
         }
         if (!TextUtils.isEmpty(cVar.S())) {
-            String str3 = f6994a;
+            String str3 = f4156a;
             o.a(str3, "开始下载Video： " + cVar.S());
             this.w = new AnonymousClass2(cVar);
             ArrayList arrayList = new ArrayList();
             arrayList.add(cVar);
             e.a().a(this.b, arrayList, 298, this.w);
             if (e.a().a(298, this.b, cVar.A())) {
-                o.a(f6994a, " load Video isReady true");
+                o.a(f4156a, " load Video isReady true");
                 this.g.setVideoReady(true);
                 a(cVar, 2);
             } else {
-                o.a(f6994a, " load Video");
+                o.a(f4156a, " load Video");
                 e.a().d(this.b);
             }
         }
         if (!TextUtils.isEmpty(cVar.be())) {
-            String str4 = f6994a;
+            String str4 = f4156a;
             o.a(str4, "开始下载image： " + cVar.be());
             com.anythink.expressad.foundation.g.d.b.a(n.a().g()).a(cVar.be(), new AnonymousClass6(cVar));
         }
         if (!TextUtils.isEmpty(cVar.I())) {
-            String str5 = f6994a;
+            String str5 = f4156a;
             o.a(str5, "开始下载EndCard： " + cVar.I());
             this.y = new AnonymousClass5(cVar);
             i.a().b(cVar.I(), (i.a) this.y);
@@ -595,7 +589,7 @@ public final class a {
         if (TextUtils.isEmpty(cVar.y())) {
             return;
         }
-        String str6 = f6994a;
+        String str6 = f4156a;
         o.a(str6, "开始下载gitUrl： " + cVar.y());
         com.anythink.expressad.foundation.g.d.b.a(n.a().g()).a(cVar.y(), new AnonymousClass4(cVar));
     }
@@ -622,7 +616,7 @@ public final class a {
         if (aTNativeAdvancedView == null || aTNativeAdvancedView.getAdvancedNativeWebview() == null) {
             return;
         }
-        NativeAdvancedJSBridgeImpl nativeAdvancedJSBridgeImpl = new NativeAdvancedJSBridgeImpl(this.g.getContext(), this.f6995c, this.b);
+        NativeAdvancedJSBridgeImpl nativeAdvancedJSBridgeImpl = new NativeAdvancedJSBridgeImpl(this.g.getContext(), this.f4157c, this.b);
         ArrayList arrayList = new ArrayList();
         arrayList.add(cVar);
         nativeAdvancedJSBridgeImpl.setCampaignList(arrayList);
@@ -641,7 +635,7 @@ public final class a {
                 b("webview has destory", i);
                 return;
             }
-            o.d(f6994a, "=======开始渲染: ".concat(String.valueOf(str)));
+            o.d(f4156a, "=======开始渲染: ".concat(String.valueOf(str)));
             Handler handler = this.C;
             if (handler != null) {
                 handler.post(new AnonymousClass10(advancedNativeWebview, str));
@@ -680,39 +674,39 @@ public final class a {
             aTNativeAdvancedView.clearResState();
         }
         if (!TextUtils.isEmpty(cVar.c())) {
-            String str = f6994a;
+            String str = f4156a;
             o.a(str, "开始下载zip： " + cVar.c());
             this.x = new AnonymousClass8(cVar);
             i.a().b(cVar.c(), (i.a) this.x);
         }
         if (!TextUtils.isEmpty(cVar.d())) {
-            String str2 = f6994a;
+            String str2 = f4156a;
             o.a(str2, "开始下载HTML： " + cVar.d());
             com.anythink.core.common.k.b.a.a().a(new AnonymousClass7(cVar));
         }
         if (!TextUtils.isEmpty(cVar.S())) {
-            String str3 = f6994a;
+            String str3 = f4156a;
             o.a(str3, "开始下载Video： " + cVar.S());
             this.w = new AnonymousClass2(cVar);
             ArrayList arrayList = new ArrayList();
             arrayList.add(cVar);
             e.a().a(this.b, arrayList, 298, this.w);
             if (e.a().a(298, this.b, cVar.A())) {
-                o.a(f6994a, " load Video isReady true");
+                o.a(f4156a, " load Video isReady true");
                 this.g.setVideoReady(true);
                 a(cVar, 2);
             } else {
-                o.a(f6994a, " load Video");
+                o.a(f4156a, " load Video");
                 e.a().d(this.b);
             }
         }
         if (!TextUtils.isEmpty(cVar.be())) {
-            String str4 = f6994a;
+            String str4 = f4156a;
             o.a(str4, "开始下载image： " + cVar.be());
             com.anythink.expressad.foundation.g.d.b.a(n.a().g()).a(cVar.be(), new AnonymousClass6(cVar));
         }
         if (!TextUtils.isEmpty(cVar.I())) {
-            String str5 = f6994a;
+            String str5 = f4156a;
             o.a(str5, "开始下载EndCard： " + cVar.I());
             this.y = new AnonymousClass5(cVar);
             i.a().b(cVar.I(), (i.a) this.y);
@@ -720,7 +714,7 @@ public final class a {
         if (TextUtils.isEmpty(cVar.y())) {
             return;
         }
-        String str6 = f6994a;
+        String str6 = f4156a;
         o.a(str6, "开始下载gitUrl： " + cVar.y());
         com.anythink.expressad.foundation.g.d.b.a(n.a().g()).a(cVar.y(), new AnonymousClass4(cVar));
     }
@@ -737,7 +731,7 @@ public final class a {
             return;
         }
         i();
-        o.d(f6994a, "real failed: ".concat(String.valueOf(str)));
+        o.d(f4156a, "real failed: ".concat(String.valueOf(str)));
         this.v = true;
         com.anythink.expressad.advanced.b.a aVar = this.e;
         if (aVar != null) {
@@ -771,10 +765,10 @@ public final class a {
             int i = this.A + 1;
             this.A = i;
             if (this.h == null || i > this.h.t()) {
-                o.b(f6994a, "onload 重置offset为0");
+                o.b(f4156a, "onload 重置offset为0");
                 this.A = 0;
             }
-            String str = f6994a;
+            String str = f4156a;
             o.b(str, "onload 算出 下次的offset是:" + this.A);
         } catch (Exception e) {
             e.printStackTrace();
@@ -803,11 +797,11 @@ public final class a {
         arrayList.add(cVar);
         e.a().a(this.b, arrayList, 298, this.w);
         if (!e.a().a(298, this.b, cVar.A())) {
-            o.a(f6994a, " load Video");
+            o.a(f4156a, " load Video");
             e.a().d(this.b);
             return;
         }
-        o.a(f6994a, " load Video isReady true");
+        o.a(f4156a, " load Video isReady true");
         this.g.setVideoReady(true);
         a(cVar, 2);
     }
@@ -836,7 +830,7 @@ public final class a {
                         String e = a2.e();
                         str2 = str;
                         if (new File(e).exists()) {
-                            String str3 = f6994a;
+                            String str3 = f4156a;
                             o.d(str3, "本地已下载完 拿本地播放地址：" + e + " state：" + k2);
                             return e;
                         }

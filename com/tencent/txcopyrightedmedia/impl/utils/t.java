@@ -14,11 +14,11 @@ import java.util.Map;
 public class t {
 
     /* renamed from: a  reason: collision with root package name */
-    public MediaExtractor f40154a;
+    public MediaExtractor f26463a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f40155c;
+    public int f26464c;
     public long d;
     public boolean e;
     public long f;
@@ -38,15 +38,15 @@ public class t {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        long f40156a;
+        long f26465a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f40157c;
+        private String f26466c;
 
         public a(long j, String str, int i) {
-            this.f40156a = j;
-            this.f40157c = str;
+            this.f26465a = j;
+            this.f26466c = str;
             this.b = i;
         }
     }
@@ -88,7 +88,7 @@ public class t {
         while (true) {
             int i2 = i;
             long j = i2;
-            if (j >= aVar.b + aVar.f40156a || i2 + 8 >= bArr.length) {
+            if (j >= aVar.b + aVar.f26465a || i2 + 8 >= bArr.length) {
                 return null;
             }
             long a2 = a(bArr, i2);
@@ -103,32 +103,32 @@ public class t {
     public final int a(ByteBuffer byteBuffer) {
         int readSampleData;
         long currentTimeMillis = System.currentTimeMillis();
-        this.f40154a.seekTo(this.f, 0);
+        this.f26463a.seekTo(this.f, 0);
         int i = 0;
         while (true) {
-            readSampleData = this.f40154a.readSampleData(byteBuffer, 0);
+            readSampleData = this.f26463a.readSampleData(byteBuffer, 0);
             StringBuilder sb = new StringBuilder("do seek: seek time: ");
             sb.append(this.f);
             sb.append(", sampleSize: ");
             sb.append(readSampleData);
             sb.append(", sampleTime: ");
-            sb.append(this.f40154a.getSampleTime());
+            sb.append(this.f26463a.getSampleTime());
             if (readSampleData >= 0) {
-                if (this.f40154a.getSampleTime() >= this.f) {
+                if (this.f26463a.getSampleTime() >= this.f) {
                     break;
                 }
-                this.f40154a.advance();
+                this.f26463a.advance();
             } else if (i > 0 || this.f >= this.d * 1000) {
                 break;
             } else {
                 try {
-                    this.f40154a.release();
+                    this.f26463a.release();
                     MediaExtractor mediaExtractor = new MediaExtractor();
-                    this.f40154a = mediaExtractor;
+                    this.f26463a = mediaExtractor;
                     mediaExtractor.setDataSource(TXCopyrightedMedia.instance().getApplicationContext(), this.p, (Map<String, String>) null);
-                    this.f40154a.selectTrack(this.o);
-                    this.f40154a.seekTo(0L, 0);
-                    this.f40154a.seekTo(this.f, 0);
+                    this.f26463a.selectTrack(this.o);
+                    this.f26463a.seekTo(0L, 0);
+                    this.f26463a.seekTo(this.f, 0);
                     i++;
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -176,7 +176,7 @@ public class t {
     public final void b() {
         MediaExtractor mediaExtractor;
         this.h = true;
-        if (this.m == 2 && (mediaExtractor = this.f40154a) != null) {
+        if (this.m == 2 && (mediaExtractor = this.f26463a) != null) {
             try {
                 mediaExtractor.release();
             } catch (Throwable th) {

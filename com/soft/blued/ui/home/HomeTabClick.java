@@ -12,11 +12,11 @@ import java.util.Map;
 public class HomeTabClick {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f31032a = ViewConfiguration.getDoubleTapTimeout();
+    private static int f17342a = ViewConfiguration.getDoubleTapTimeout();
     private static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Class f31033c;
+    private static Class f17343c;
     private static Map<String, TabClickListener> d;
     private static Handler e;
     private static String f;
@@ -28,9 +28,8 @@ public class HomeTabClick {
         void d(String str);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/home/HomeTabClick$UIHandler.class */
-    public static class UIHandler extends Handler {
+    static class UIHandler extends Handler {
         public UIHandler() {
             super(Looper.getMainLooper());
         }
@@ -67,12 +66,12 @@ public class HomeTabClick {
             map.clear();
             d = null;
         }
-        f31033c = null;
+        f17343c = null;
         b = false;
     }
 
     public static void a(Class cls) {
-        f31033c = cls;
+        f17343c = cls;
         d = new ArrayMap();
         b = true;
         e = new UIHandler();
@@ -88,7 +87,7 @@ public class HomeTabClick {
             }
             f = str;
             Handler handler2 = e;
-            handler2.sendMessageDelayed(handler2.obtainMessage(1, str), f31032a);
+            handler2.sendMessageDelayed(handler2.obtainMessage(1, str), f17342a);
         }
     }
 

@@ -140,7 +140,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     public AutoCompleteTextView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842859);
+        this(context, attributeSet, R.attr.autoCompleteTextViewStyle);
     }
 
     public AutoCompleteTextView(Context context, AttributeSet attributeSet, int i) {
@@ -325,8 +325,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
         this.mPopup.clearListSelection();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public CharSequence convertSelectionToString(Object obj) {
+    protected CharSequence convertSelectionToString(Object obj) {
         return this.mFilter.convertResultToString(obj);
     }
 
@@ -665,7 +664,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
         } else if (this.mHintView != null) {
             this.mHintView.setText(charSequence);
         } else {
-            TextView textView = (TextView) LayoutInflater.from(getContext()).inflate(this.mHintResource, (ViewGroup) null).findViewById(16908308);
+            TextView textView = (TextView) LayoutInflater.from(getContext()).inflate(this.mHintResource, (ViewGroup) null).findViewById(R.id.text1);
             textView.setText(this.mHintText);
             this.mHintView = textView;
             this.mPopup.setPromptView(textView);

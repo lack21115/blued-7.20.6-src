@@ -20,7 +20,7 @@ public class AssetsUtil {
 
     public static String[] list(final Context context, final String str) {
         if (context == null) {
-            Logger.w(TAG, b.f7836a);
+            Logger.w(TAG, b.f4996a);
             return new String[0];
         }
         FutureTask futureTask = new FutureTask(new Callable<String[]>() { // from class: com.huawei.hms.framework.common.AssetsUtil.1
@@ -63,7 +63,7 @@ public class AssetsUtil {
 
     public static InputStream open(Context context, String str) throws IOException {
         if (context == null) {
-            Logger.w(TAG, b.f7836a);
+            Logger.w(TAG, b.f4996a);
             return null;
         }
         try {

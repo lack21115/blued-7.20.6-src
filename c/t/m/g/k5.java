@@ -9,11 +9,11 @@ public class k5 implements Parcelable {
     public static final Parcelable.Creator<k5> CREATOR = new a();
 
     /* renamed from: a  reason: collision with root package name */
-    public String f3865a;
+    public String f3817a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f3866c;
+    public String f3818c;
     public double d;
     public double e;
     public double f;
@@ -26,9 +26,9 @@ public class k5 implements Parcelable {
         /* renamed from: a */
         public k5 createFromParcel(Parcel parcel) {
             k5 k5Var = new k5();
-            k5Var.f3865a = parcel.readString();
+            k5Var.f3817a = parcel.readString();
             k5Var.b = parcel.readString();
-            k5Var.f3866c = parcel.readString();
+            k5Var.f3818c = parcel.readString();
             k5Var.d = parcel.readDouble();
             k5Var.e = parcel.readDouble();
             k5Var.f = parcel.readDouble();
@@ -48,9 +48,9 @@ public class k5 implements Parcelable {
     }
 
     public k5(JSONObject jSONObject) {
-        this.f3865a = jSONObject.optString("name");
+        this.f3817a = jSONObject.optString("name");
         this.b = jSONObject.optString("dtype");
-        this.f3866c = jSONObject.optString("addr");
+        this.f3818c = jSONObject.optString("addr");
         this.d = jSONObject.optDouble("pointx");
         this.e = jSONObject.optDouble("pointy");
         this.f = jSONObject.optDouble("dist");
@@ -64,14 +64,14 @@ public class k5 implements Parcelable {
     }
 
     public String toString() {
-        return "AddressData{name=" + this.f3865a + ",dtype=" + this.b + ",pointx=" + this.d + ",pointy=" + this.e + ",dist=" + this.f + ",direction=" + this.g + ",tag=" + this.h + "," + com.alipay.sdk.util.i.d;
+        return "AddressData{name=" + this.f3817a + ",dtype=" + this.b + ",pointx=" + this.d + ",pointy=" + this.e + ",dist=" + this.f + ",direction=" + this.g + ",tag=" + this.h + ",}";
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f3865a);
+        parcel.writeString(this.f3817a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f3866c);
+        parcel.writeString(this.f3818c);
         parcel.writeDouble(this.d);
         parcel.writeDouble(this.e);
         parcel.writeDouble(this.f);

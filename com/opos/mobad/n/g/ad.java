@@ -14,12 +14,12 @@ import com.opos.mobad.n.a;
 public class ad extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private ae f26769a;
+    private ae f13081a;
     private LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26770c;
-    private a.InterfaceC0708a d;
+    private TextView f13082c;
+    private a.InterfaceC0538a d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/n/g/ad$a.class */
     public interface a {
@@ -37,12 +37,12 @@ public class ad extends RelativeLayout {
 
     private void a(boolean z) {
         ae b = ae.b(getContext());
-        this.f26769a = b;
+        this.f13081a = b;
         b.setId(View.generateViewId());
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, com.opos.cmn.an.h.f.a.a(getContext(), 14.0f));
         layoutParams.addRule(9);
         layoutParams.addRule(15);
-        addView(this.f26769a, layoutParams);
+        addView(this.f13081a, layoutParams);
         this.b = new LinearLayout(getContext());
         ImageView imageView = new ImageView(getContext());
         this.b.setId(View.generateViewId());
@@ -73,32 +73,32 @@ public class ad extends RelativeLayout {
     private void b(boolean z) {
         if (z) {
             TextView textView = new TextView(getContext());
-            this.f26770c = textView;
+            this.f13082c = textView;
             textView.setTextColor(getResources().getColor(R.color.opos_mobad_small_bar_title_color));
-            this.f26770c.setTextSize(1, 12.0f);
-            this.f26770c.setEllipsize(TextUtils.TruncateAt.valueOf("END"));
-            this.f26770c.setSingleLine(true);
+            this.f13082c.setTextSize(1, 12.0f);
+            this.f13082c.setEllipsize(TextUtils.TruncateAt.valueOf("END"));
+            this.f13082c.setSingleLine(true);
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
             int a2 = com.opos.cmn.an.h.f.a.a(getContext(), 6.0f);
             int a3 = com.opos.cmn.an.h.f.a.a(getContext(), 3.0f);
             layoutParams.leftMargin = a2;
             layoutParams.rightMargin = a3;
             layoutParams.addRule(15);
-            layoutParams.addRule(1, this.f26769a.getId());
+            layoutParams.addRule(1, this.f13081a.getId());
             layoutParams.addRule(0, this.b.getId());
-            addView(this.f26770c, layoutParams);
+            addView(this.f13082c, layoutParams);
         }
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.d = interfaceC0708a;
-        this.f26769a.a(interfaceC0708a);
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.d = interfaceC0538a;
+        this.f13081a.a(interfaceC0538a);
     }
 
     public void a(boolean z, String str, boolean z2, com.opos.mobad.n.d.g gVar, String str2, int i, String str3) {
         TextView textView;
-        this.f26769a.a(z, str, z2, gVar, str2);
-        if (TextUtils.isEmpty(str3) || (textView = this.f26770c) == null) {
+        this.f13081a.a(z, str, z2, gVar, str2);
+        if (TextUtils.isEmpty(str3) || (textView = this.f13082c) == null) {
             return;
         }
         textView.setText(str3);

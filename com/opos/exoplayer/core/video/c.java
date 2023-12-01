@@ -23,7 +23,7 @@ import java.nio.ByteBuffer;
 public class c extends com.opos.exoplayer.core.d.b {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int[] f25568c = {WBConstants.SDK_NEW_PAY_VERSION, 1600, 1440, 1280, 960, 854, 640, LiveProtos.Event.LIVE_BAG_CHAT_MARK_SHOW_VALUE, 480};
+    private static final int[] f11880c = {WBConstants.SDK_NEW_PAY_VERSION, 1600, 1440, 1280, 960, 854, 640, LiveProtos.Event.LIVE_BAG_CHAT_MARK_SHOW_VALUE, 480};
     private int A;
     private int B;
     private float C;
@@ -64,16 +64,16 @@ public class c extends com.opos.exoplayer.core.d.b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25569a;
+        public final int f11881a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f25570c;
+        public final int f11882c;
 
         public a(int i, int i2, int i3) {
-            this.f25569a = i;
+            this.f11881a = i;
             this.b = i2;
-            this.f25570c = i3;
+            this.f11882c = i3;
         }
     }
 
@@ -119,7 +119,7 @@ public class c extends com.opos.exoplayer.core.d.b {
     private void E() {
         MediaCodec y;
         this.q = false;
-        if (u.f25510a < 23 || !this.H || (y = y()) == null) {
+        if (u.f11822a < 23 || !this.H || (y = y()) == null) {
             return;
         }
         this.b = new b(y);
@@ -169,7 +169,7 @@ public class c extends com.opos.exoplayer.core.d.b {
     }
 
     private static boolean K() {
-        return u.f25510a <= 22 && "foster".equals(u.b) && "NVIDIA".equals(u.f25511c);
+        return u.f11822a <= 22 && "foster".equals(u.b) && "NVIDIA".equals(u.f11823c);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -263,12 +263,12 @@ public class c extends com.opos.exoplayer.core.d.b {
         int i = z ? format.k : format.j;
         int i2 = z ? format.j : format.k;
         float f = i2 / i;
-        for (int i3 : f25568c) {
+        for (int i3 : f11880c) {
             int i4 = (int) (i3 * f);
             if (i3 <= i || i4 <= i2) {
                 return null;
             }
-            if (u.f25510a >= 21) {
+            if (u.f11822a >= 21) {
                 int i5 = z ? i4 : i3;
                 if (z) {
                     i4 = i3;
@@ -333,7 +333,7 @@ public class c extends com.opos.exoplayer.core.d.b {
         int a_ = a_();
         if (a_ == 1 || a_ == 2) {
             MediaCodec y = y();
-            if (u.f25510a < 23 || y == null || dummySurface == null || this.m) {
+            if (u.f11822a < 23 || y == null || dummySurface == null || this.m) {
                 A();
                 x();
             } else {
@@ -373,7 +373,7 @@ public class c extends com.opos.exoplayer.core.d.b {
     }
 
     private boolean b(com.opos.exoplayer.core.d.a aVar) {
-        if (u.f25510a < 23 || this.H || a(aVar.f25256a)) {
+        if (u.f11822a < 23 || this.H || a(aVar.f11568a)) {
             return false;
         }
         return !aVar.d || DummySurface.a(this.d);
@@ -452,7 +452,7 @@ public class c extends com.opos.exoplayer.core.d.b {
                     if (i3 >= drmInitData.b) {
                         break;
                     }
-                    z2 |= drmInitData.a(i3).f25270c;
+                    z2 |= drmInitData.a(i3).f11582c;
                     i2 = i3 + 1;
                 }
             }
@@ -460,14 +460,14 @@ public class c extends com.opos.exoplayer.core.d.b {
             if (a2 == null) {
                 return (!z || cVar.a(str, false) == null) ? 1 : 2;
             } else if (a(bVar, drmInitData)) {
-                boolean b2 = a2.b(format.f25001c);
+                boolean b2 = a2.b(format.f11313c);
                 boolean z3 = b2;
                 if (b2) {
                     z3 = b2;
                     if (format.j > 0) {
                         z3 = b2;
                         if (format.k > 0) {
-                            if (u.f25510a >= 21) {
+                            if (u.f11822a >= 21) {
                                 z3 = a2.a(format.j, format.k, format.l);
                             } else {
                                 z3 = format.j * format.k <= com.opos.exoplayer.core.d.d.b();
@@ -479,7 +479,7 @@ public class c extends com.opos.exoplayer.core.d.b {
                     }
                 }
                 int i4 = a2.b ? 16 : 8;
-                if (a2.f25257c) {
+                if (a2.f11569c) {
                     i = 32;
                 }
                 return i4 | i | (z3 ? 4 : 3);
@@ -492,10 +492,10 @@ public class c extends com.opos.exoplayer.core.d.b {
 
     protected MediaFormat a(Format format, a aVar, boolean z, int i) {
         MediaFormat c2 = c(format);
-        c2.setInteger(MediaFormat.KEY_MAX_WIDTH, aVar.f25569a);
+        c2.setInteger(MediaFormat.KEY_MAX_WIDTH, aVar.f11881a);
         c2.setInteger(MediaFormat.KEY_MAX_HEIGHT, aVar.b);
-        if (aVar.f25570c != -1) {
-            c2.setInteger(MediaFormat.KEY_MAX_INPUT_SIZE, aVar.f25570c);
+        if (aVar.f11882c != -1) {
+            c2.setInteger(MediaFormat.KEY_MAX_INPUT_SIZE, aVar.f11882c);
         }
         if (z) {
             c2.setInteger("auto-frc", 0);
@@ -594,7 +594,7 @@ public class c extends com.opos.exoplayer.core.d.b {
         t.a("skipVideoBuffer");
         mediaCodec.releaseOutputBuffer(i, false);
         t.a();
-        this.f25258a.f++;
+        this.f11570a.f++;
     }
 
     @Override // com.opos.exoplayer.core.d.b
@@ -603,7 +603,7 @@ public class c extends com.opos.exoplayer.core.d.b {
         this.z = z ? (mediaFormat.getInteger("crop-right") - mediaFormat.getInteger("crop-left")) + 1 : mediaFormat.getInteger("width");
         this.A = z ? (mediaFormat.getInteger("crop-bottom") - mediaFormat.getInteger("crop-top")) + 1 : mediaFormat.getInteger("height");
         this.C = this.y;
-        if (u.f25510a >= 21) {
+        if (u.f11822a >= 21) {
             int i = this.x;
             if (i == 90 || i == 270) {
                 int i2 = this.z;
@@ -620,7 +620,7 @@ public class c extends com.opos.exoplayer.core.d.b {
     @Override // com.opos.exoplayer.core.d.b
     public void a(com.opos.exoplayer.core.b.e eVar) {
         this.v++;
-        if (u.f25510a >= 23 || !this.H) {
+        if (u.f11822a >= 23 || !this.H) {
             return;
         }
         v();
@@ -639,7 +639,7 @@ public class c extends com.opos.exoplayer.core.d.b {
             this.n = this.o;
         }
         mediaCodec.configure(a3, this.n, mediaCrypto, 0);
-        if (u.f25510a < 23 || !this.H) {
+        if (u.f11822a < 23 || !this.H) {
             return;
         }
         this.b = new b(mediaCodec);
@@ -657,7 +657,7 @@ public class c extends com.opos.exoplayer.core.d.b {
         int i = q().b;
         this.I = i;
         this.H = i != 0;
-        this.f.a(this.f25258a);
+        this.f.a(this.f11570a);
         this.e.a();
     }
 
@@ -693,7 +693,7 @@ public class c extends com.opos.exoplayer.core.d.b {
             this.J = jArr[0];
             int i4 = i3 - 1;
             this.K = i4;
-            System.arraycopy((Object) jArr, 1, (Object) jArr, 0, i4);
+            System.arraycopy(jArr, 1, jArr, 0, i4);
         }
         long j4 = j3 - this.J;
         if (!z) {
@@ -702,7 +702,7 @@ public class c extends com.opos.exoplayer.core.d.b {
                 long elapsedRealtime = SystemClock.elapsedRealtime() * 1000;
                 boolean z2 = a_() == 2;
                 if (!this.q || (z2 && d(j5, elapsedRealtime - this.w))) {
-                    if (u.f25510a >= 21) {
+                    if (u.f11822a >= 21) {
                         nanoTime = System.nanoTime();
                         b(mediaCodec, i, j4, nanoTime);
                         return true;
@@ -719,7 +719,7 @@ public class c extends com.opos.exoplayer.core.d.b {
                     if (b(j6, j2)) {
                         b(mediaCodec, i, j4);
                         return true;
-                    } else if (u.f25510a >= 21) {
+                    } else if (u.f11822a >= 21) {
                         if (j6 < 50000) {
                             nanoTime = a2;
                             b(mediaCodec, i, j4, nanoTime);
@@ -756,7 +756,7 @@ public class c extends com.opos.exoplayer.core.d.b {
         if (b2 == 0) {
             return false;
         }
-        this.f25258a.i++;
+        this.f11570a.i++;
         b(b2 + this.v);
         B();
         return true;
@@ -764,7 +764,7 @@ public class c extends com.opos.exoplayer.core.d.b {
 
     @Override // com.opos.exoplayer.core.d.b
     public boolean a(MediaCodec mediaCodec, boolean z, Format format, Format format2) {
-        return a(z, format, format2) && format2.j <= this.l.f25569a && format2.k <= this.l.b && d(format2) <= this.l.f25570c;
+        return a(z, format, format2) && format2.j <= this.l.f11881a && format2.k <= this.l.b && d(format2) <= this.l.f11882c;
     }
 
     @Override // com.opos.exoplayer.core.d.b
@@ -773,10 +773,10 @@ public class c extends com.opos.exoplayer.core.d.b {
     }
 
     protected void b(int i) {
-        this.f25258a.g += i;
+        this.f11570a.g += i;
         this.t += i;
         this.u += i;
-        this.f25258a.h = Math.max(this.u, this.f25258a.h);
+        this.f11570a.h = Math.max(this.u, this.f11570a.h);
         if (this.t >= this.h) {
             J();
         }
@@ -795,7 +795,7 @@ public class c extends com.opos.exoplayer.core.d.b {
         mediaCodec.releaseOutputBuffer(i, j2);
         t.a();
         this.w = SystemClock.elapsedRealtime() * 1000;
-        this.f25258a.e++;
+        this.f11570a.e++;
         this.u = 0;
         v();
     }
@@ -823,7 +823,7 @@ public class c extends com.opos.exoplayer.core.d.b {
         mediaCodec.releaseOutputBuffer(i, true);
         t.a();
         this.w = SystemClock.elapsedRealtime() * 1000;
-        this.f25258a.e++;
+        this.f11570a.e++;
         this.u = 0;
         v();
     }
@@ -867,8 +867,8 @@ public class c extends com.opos.exoplayer.core.d.b {
         try {
             super.p();
         } finally {
-            this.f25258a.a();
-            this.f.b(this.f25258a);
+            this.f11570a.a();
+            this.f.b(this.f11570a);
         }
     }
 

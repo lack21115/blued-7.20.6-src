@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/IncludeLiveGiftBottomFuntionBinding.class */
 public final class IncludeLiveGiftBottomFuntionBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f11989a;
+    public final FrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f11990c;
+    public final TextView c;
     public final LinearLayout d;
     public final TextView e;
     public final TextView f;
@@ -33,9 +29,9 @@ public final class IncludeLiveGiftBottomFuntionBinding implements ViewBinding {
 
     private IncludeLiveGiftBottomFuntionBinding(LinearLayout linearLayout, FrameLayout frameLayout, ImageView imageView, TextView textView, LinearLayout linearLayout2, TextView textView2, TextView textView3, ImageView imageView2, LinearLayout linearLayout3, TextView textView4, ShapeTextView shapeTextView, TextView textView5, FrameLayout frameLayout2) {
         this.m = linearLayout;
-        this.f11989a = frameLayout;
+        this.a = frameLayout;
         this.b = imageView;
-        this.f11990c = textView;
+        this.c = textView;
         this.d = linearLayout2;
         this.e = textView2;
         this.f = textView3;
@@ -120,7 +116,6 @@ public final class IncludeLiveGiftBottomFuntionBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.m;

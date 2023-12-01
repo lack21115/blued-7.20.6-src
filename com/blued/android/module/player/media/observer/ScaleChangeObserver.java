@@ -4,9 +4,7 @@ import java.util.ArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/observer/ScaleChangeObserver.class */
 public class ScaleChangeObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static ScaleChangeObserver f15656a = new ScaleChangeObserver();
+    private static ScaleChangeObserver a = new ScaleChangeObserver();
     private ArrayList<IScaleChangeObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/observer/ScaleChangeObserver$IScaleChangeObserver.class */
@@ -17,7 +15,7 @@ public class ScaleChangeObserver {
     }
 
     public static ScaleChangeObserver a() {
-        return f15656a;
+        return a;
     }
 
     public void a(IScaleChangeObserver iScaleChangeObserver) {

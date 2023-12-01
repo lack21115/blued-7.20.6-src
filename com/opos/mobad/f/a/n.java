@@ -6,11 +6,11 @@ import android.os.SystemClock;
 public class n implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Runnable f26125a;
+    private Runnable f12437a;
     private volatile long b = Long.MAX_VALUE;
 
     public n(Runnable runnable) {
-        this.f26125a = runnable;
+        this.f12437a = runnable;
     }
 
     public void a() {
@@ -30,7 +30,7 @@ public class n implements Runnable {
     @Override // java.lang.Runnable
     public void run() {
         Runnable runnable;
-        if (SystemClock.uptimeMillis() >= this.b && (runnable = this.f26125a) != null) {
+        if (SystemClock.uptimeMillis() >= this.b && (runnable = this.f12437a) != null) {
             runnable.run();
         }
     }

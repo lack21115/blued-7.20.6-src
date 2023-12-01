@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.core.BottomPopupView;
 import com.blued.android.module.common.group.GroupInfoModel;
 import com.blued.das.client.socialnet.SocialNetWorkProtos;
@@ -22,14 +21,14 @@ public class CircleGroupListPop extends BottomPopupView {
     private List<GroupInfoModel> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f32794c;
+    private IRequestHost f19103c;
     private int d;
 
     public CircleGroupListPop(Context context, List<GroupInfoModel> list, int i, IRequestHost iRequestHost) {
         super(context);
         this.d = 1;
         this.b = list;
-        this.f32794c = iRequestHost;
+        this.f19103c = iRequestHost;
         this.d = i;
     }
 
@@ -44,16 +43,15 @@ public class CircleGroupListPop extends BottomPopupView {
     }
 
     public void a(Context context) {
-        new XPopup.Builder(context).a((BasePopupView) this).h();
+        new XPopup.Builder(context).a(this).h();
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
-        RecyclerView recyclerView = (RecyclerView) findViewById(2131364150);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.group_list);
         ((TextView) findViewById(2131371675)).setText(getContext().getString(this.d == 1 ? 2131888333 : 2131888388));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
-        CircleGroupAdapter circleGroupAdapter = new CircleGroupAdapter(this.b, this.f32794c);
+        CircleGroupAdapter circleGroupAdapter = new CircleGroupAdapter(this.b, this.f19103c);
         circleGroupAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$CircleGroupListPop$_udqE997JY_bOFeZuW43uBFDMXQ
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
@@ -63,7 +61,6 @@ public class CircleGroupListPop extends BottomPopupView {
         recyclerView.setAdapter(circleGroupAdapter);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_circle_group_list;
     }

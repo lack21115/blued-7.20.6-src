@@ -37,23 +37,20 @@ final class ServerCallInfoImpl<ReqT, RespT> extends ServerStreamTracer.ServerCal
         return false;
     }
 
-    @Override // io.grpc.ServerStreamTracer.ServerCallInfo
     public Attributes getAttributes() {
         return this.attributes;
     }
 
-    @Override // io.grpc.ServerStreamTracer.ServerCallInfo
     @Nullable
     public String getAuthority() {
         return this.authority;
     }
 
-    @Override // io.grpc.ServerStreamTracer.ServerCallInfo
     public MethodDescriptor<ReqT, RespT> getMethodDescriptor() {
         return this.methodDescriptor;
     }
 
     public int hashCode() {
-        return Objects.hashCode(this.methodDescriptor, this.attributes, this.authority);
+        return Objects.hashCode(new Object[]{this.methodDescriptor, this.attributes, this.authority});
     }
 }

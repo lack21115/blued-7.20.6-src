@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
@@ -25,9 +26,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRelationShipMyAllDialog.class */
 public final class YYRelationShipMyAllDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogYyMyRelationAllBinding f18402a;
+    private DialogYyMyRelationAllBinding a;
     private String b;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -41,28 +40,28 @@ public final class YYRelationShipMyAllDialog extends BaseFullScreenDialog {
         YYRelationShipRoomUiInfo resource_options;
         String background_list_image;
         YYRoomRelationShipRankTabView yYRoomRelationShipRankTabView = f().d;
-        ViewPager viewPager = f().f16443c;
+        ViewPager viewPager = f().c;
         Intrinsics.c(viewPager, "bind.roomViewPager");
         yYRoomRelationShipRankTabView.a(viewPager);
         ArrayList<YYRelationShipRoomMode> arrayList2 = arrayList;
         f().d.setData(arrayList2);
-        ActivityFragmentActive a2 = a();
+        ActivityFragmentActive a = a();
         YYRelationShipRoomMode item = f().d.getItem();
         String str = "";
         if (item != null && (resource_options = item.getResource_options()) != null && (background_list_image = resource_options.getBackground_list_image()) != null) {
             str = background_list_image;
         }
-        ImageLoader.a(a2, str).a(f().f16442a);
+        ImageLoader.a(a, str).a(f().a);
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
-        YYRelationShipMyRoomPagerAdapter yYRelationShipMyRoomPagerAdapter = new YYRelationShipMyRoomPagerAdapter(childFragmentManager);
-        f().f16443c.setAdapter(yYRelationShipMyRoomPagerAdapter);
+        PagerAdapter yYRelationShipMyRoomPagerAdapter = new YYRelationShipMyRoomPagerAdapter(childFragmentManager);
+        f().c.setAdapter(yYRelationShipMyRoomPagerAdapter);
         yYRelationShipMyRoomPagerAdapter.b(arrayList2);
         if (this.b == null) {
             int size = arrayList.size();
             for (int i = 0; i < size; i++) {
                 if (arrayList.get(i).getChecked()) {
-                    f().f16443c.setCurrentItem(i);
+                    f().c.setCurrentItem(i);
                     return;
                 }
             }
@@ -76,7 +75,7 @@ public final class YYRelationShipMyAllDialog extends BaseFullScreenDialog {
                 return;
             }
             if (Intrinsics.a((Object) arrayList.get(i3).getId(), (Object) this.b)) {
-                f().f16443c.setCurrentItem(i3);
+                f().c.setCurrentItem(i3);
                 return;
             }
             i2 = i3 + 1;
@@ -91,7 +90,7 @@ public final class YYRelationShipMyAllDialog extends BaseFullScreenDialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogYyMyRelationAllBinding f() {
-        DialogYyMyRelationAllBinding dialogYyMyRelationAllBinding = this.f18402a;
+        DialogYyMyRelationAllBinding dialogYyMyRelationAllBinding = this.a;
         Intrinsics.a(dialogYyMyRelationAllBinding);
         return dialogYyMyRelationAllBinding;
     }
@@ -112,16 +111,13 @@ public final class YYRelationShipMyAllDialog extends BaseFullScreenDialog {
                 YYRelationShipMyAllDialog.b(YYRelationShipMyAllDialog.this, view);
             }
         });
-        f().f16443c.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.view.YYRelationShipMyAllDialog$initView$3
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
+        f().c.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.view.YYRelationShipMyAllDialog$initView$3
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 DialogYyMyRelationAllBinding f;
                 DialogYyMyRelationAllBinding f2;
@@ -130,24 +126,24 @@ public final class YYRelationShipMyAllDialog extends BaseFullScreenDialog {
                 String background_list_image;
                 f = YYRelationShipMyAllDialog.this.f();
                 f.d.setToolBtnSelect(i);
-                ActivityFragmentActive a2 = YYRelationShipMyAllDialog.this.a();
+                ActivityFragmentActive a = YYRelationShipMyAllDialog.this.a();
                 f2 = YYRelationShipMyAllDialog.this.f();
                 YYRelationShipRoomMode item = f2.d.getItem();
                 String str = "";
                 if (item != null && (resource_options = item.getResource_options()) != null && (background_list_image = resource_options.getBackground_list_image()) != null) {
                     str = background_list_image;
                 }
-                ImageWrapper a3 = ImageLoader.a(a2, str);
+                ImageWrapper a2 = ImageLoader.a(a, str);
                 f3 = YYRelationShipMyAllDialog.this.f();
-                a3.a(f3.f16442a);
+                a2.a(f3.a);
             }
         });
         h();
     }
 
     private final void h() {
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.s(new BluedUIHttpResponse<BluedEntityA<YYRelationShipRoomMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRelationShipMyAllDialog$loadData$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.s(new BluedUIHttpResponse<BluedEntityA<YYRelationShipRoomMode>>(a) { // from class: com.blued.android.module.yy_china.view.YYRelationShipMyAllDialog$loadData$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -167,10 +163,10 @@ public final class YYRelationShipMyAllDialog extends BaseFullScreenDialog {
         this.b = str;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18402a = DialogYyMyRelationAllBinding.a(inflater.inflate(R.layout.dialog_yy_my_relation_all, viewGroup, true));
+        this.a = DialogYyMyRelationAllBinding.a(inflater.inflate(R.layout.dialog_yy_my_relation_all, viewGroup, true));
         g();
         return f().getRoot();
     }

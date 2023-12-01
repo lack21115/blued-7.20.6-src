@@ -30,11 +30,11 @@ public class NativeView extends PPSNativeView implements INativeView {
     private final Map<String, View> V;
 
     /* renamed from: a  reason: collision with root package name */
-    private MediaView f22520a;
+    private MediaView f8912a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f22521c;
+    private View f8913c;
     private View d;
     private bs e;
 
@@ -65,7 +65,7 @@ public class NativeView extends PPSNativeView implements INativeView {
         if (bsVar != null) {
             bsVar.destroy();
         }
-        MediaView mediaView = this.f22520a;
+        MediaView mediaView = this.f8912a;
         if (mediaView != null) {
             mediaView.Code();
         }
@@ -200,7 +200,7 @@ public class NativeView extends PPSNativeView implements INativeView {
 
     @Override // com.huawei.hms.ads.nativead.INativeView
     public void setMediaView(MediaView mediaView) {
-        this.f22520a = mediaView;
+        this.f8912a = mediaView;
         this.V.put("10", mediaView);
     }
 
@@ -213,7 +213,7 @@ public class NativeView extends PPSNativeView implements INativeView {
             bsVar.Code(this);
             setIsCustomDislikeThisAdEnabled(nativeAd.isCustomDislikeThisAdEnabled());
             NativeVideoView nativeVideoView = null;
-            MediaView mediaView = this.f22520a;
+            MediaView mediaView = this.f8912a;
             if (mediaView != null) {
                 b mediaViewAdapter = mediaView.getMediaViewAdapter();
                 mediaViewAdapter.Code(nativeAd);
@@ -221,7 +221,7 @@ public class NativeView extends PPSNativeView implements INativeView {
                 VideoOperator videoOperator = this.e.getVideoOperator();
                 nativeVideoView = B;
                 if (videoOperator instanceof c) {
-                    ((c) videoOperator).Code(this.f22520a);
+                    ((c) videoOperator).Code(this.f8912a);
                     nativeVideoView = B;
                 }
             }
@@ -255,7 +255,7 @@ public class NativeView extends PPSNativeView implements INativeView {
 
     @Override // com.huawei.hms.ads.nativead.INativeView
     public void setRatingView(View view) {
-        this.f22521c = view;
+        this.f8913c = view;
         this.V.put("9", view);
     }
 

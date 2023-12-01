@@ -16,14 +16,14 @@ import java.util.Map;
 public class n {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ArrayList<a> f39443a = new ArrayList<>();
+    private static ArrayList<a> f25752a = new ArrayList<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/utils/n$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        String f39444a;
+        String f25753a;
         Map<Integer, Method> b;
 
         private a() {
@@ -57,10 +57,10 @@ public class n {
     }
 
     private static boolean a(Class<?> cls) {
-        Iterator<a> it = f39443a.iterator();
+        Iterator<a> it = f25752a.iterator();
         while (it.hasNext()) {
             a next = it.next();
-            if (next != null && next.f39444a != null && next.f39444a.equals(cls.getName())) {
+            if (next != null && next.f25753a != null && next.f25753a.equals(cls.getName())) {
                 return true;
             }
         }
@@ -90,9 +90,9 @@ public class n {
                     i2 = i4;
                 }
                 a aVar = new a();
-                aVar.f39444a = cls.getName();
+                aVar.f25753a = cls.getName();
                 aVar.b = hashMap;
-                f39443a.add(aVar);
+                f25752a.add(aVar);
                 return true;
             } catch (Exception e) {
                 hashMap.clear();
@@ -160,10 +160,10 @@ public class n {
     }
 
     private static Map<Integer, Method> b(Class<?> cls) {
-        Iterator<a> it = f39443a.iterator();
+        Iterator<a> it = f25752a.iterator();
         while (it.hasNext()) {
             a next = it.next();
-            if (next != null && next.f39444a != null && next.f39444a.equals(cls.getName())) {
+            if (next != null && next.f25753a != null && next.f25753a.equals(cls.getName())) {
                 return next.b;
             }
         }

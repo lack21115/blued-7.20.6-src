@@ -10,13 +10,9 @@ import android.view.View;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/widget/BlankView.class */
 public class BlankView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f10031a;
+    public int a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f10032c;
+    public int c;
     private Paint d;
     private RectF e;
 
@@ -24,9 +20,9 @@ public class BlankView extends View {
         super(context, attributeSet);
         this.d = new Paint();
         this.e = null;
-        this.f10031a = 0;
+        this.a = 0;
         this.b = -1;
-        this.f10032c = Color.parseColor("#DDDDDD");
+        this.c = Color.parseColor("#DDDDDD");
         a();
     }
 
@@ -34,9 +30,9 @@ public class BlankView extends View {
         super(context, attributeSet, i);
         this.d = new Paint();
         this.e = null;
-        this.f10031a = 0;
+        this.a = 0;
         this.b = -1;
-        this.f10032c = Color.parseColor("#DDDDDD");
+        this.c = Color.parseColor("#DDDDDD");
         a();
     }
 
@@ -51,12 +47,12 @@ public class BlankView extends View {
         super.onDraw(canvas);
         this.d.setColor(this.b);
         RectF rectF = this.e;
-        int i = this.f10031a;
+        int i = this.a;
         canvas.drawRoundRect(rectF, i, i, this.d);
         this.d.setStyle(Paint.Style.STROKE);
-        this.d.setColor(this.f10032c);
+        this.d.setColor(this.c);
         RectF rectF2 = this.e;
-        int i2 = this.f10031a;
+        int i2 = this.a;
         canvas.drawRoundRect(rectF2, i2, i2, this.d);
         this.d.setStyle(Paint.Style.FILL);
     }

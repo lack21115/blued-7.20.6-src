@@ -13,7 +13,7 @@ public abstract class FilterAction implements UiAction {
     public static final class GetFilterData extends FilterAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final GetFilterData f30674a = new GetFilterData();
+        public static final GetFilterData f16984a = new GetFilterData();
 
         private GetFilterData() {
             super(null);

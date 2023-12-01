@@ -2,6 +2,7 @@ package androidx.core.view.inputmethod;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.os.FileObserver;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.inputmethod.EditorInfo;
@@ -13,7 +14,7 @@ public final class EditorInfoCompat {
     public static final int IME_FLAG_NO_PERSONALIZED_LEARNING = 16777216;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f2734a = new String[0];
+    private static final String[] f2686a = new String[0];
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/view/inputmethod/EditorInfoCompat$Api30Impl.class */
@@ -80,7 +81,7 @@ public final class EditorInfoCompat {
     }
 
     private static boolean a(int i) {
-        int i2 = i & 4095;
+        int i2 = i & FileObserver.ALL_EVENTS;
         return i2 == 129 || i2 == 225 || i2 == 18;
     }
 
@@ -106,16 +107,16 @@ public final class EditorInfoCompat {
     public static String[] getContentMimeTypes(EditorInfo editorInfo) {
         if (Build.VERSION.SDK_INT >= 25) {
             String[] strArr = editorInfo.contentMimeTypes;
-            return strArr != null ? strArr : f2734a;
+            return strArr != null ? strArr : f2686a;
         } else if (editorInfo.extras == null) {
-            return f2734a;
+            return f2686a;
         } else {
             String[] stringArray = editorInfo.extras.getStringArray("androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_MIME_TYPES");
             String[] strArr2 = stringArray;
             if (stringArray == null) {
                 strArr2 = editorInfo.extras.getStringArray("android.support.v13.view.inputmethod.EditorInfoCompat.CONTENT_MIME_TYPES");
             }
-            return strArr2 != null ? strArr2 : f2734a;
+            return strArr2 != null ? strArr2 : f2686a;
         }
     }
 

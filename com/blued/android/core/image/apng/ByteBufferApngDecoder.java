@@ -15,7 +15,6 @@ import java.nio.ByteBuffer;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/apng/ByteBufferApngDecoder.class */
 public class ByteBufferApngDecoder implements ResourceDecoder<ByteBuffer, APNGDrawable> {
-    @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<APNGDrawable> a(final ByteBuffer byteBuffer, int i, int i2, Options options) {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "ApngStreamDecoder -- decode ");
@@ -28,12 +27,10 @@ public class ByteBufferApngDecoder implements ResourceDecoder<ByteBuffer, APNGDr
             }
         });
         return new DrawableResource<APNGDrawable>(aPNGDrawable) { // from class: com.blued.android.core.image.apng.ByteBufferApngDecoder.2
-            @Override // com.bumptech.glide.load.engine.Resource
             public Class<APNGDrawable> a() {
                 return APNGDrawable.class;
             }
 
-            @Override // com.bumptech.glide.load.engine.Resource
             public int b() {
                 if (ImageLoader.a()) {
                     Log.e("IMAGE", "ApngStreamDecoder -- decode size : " + byteBuffer.limit());
@@ -41,7 +38,6 @@ public class ByteBufferApngDecoder implements ResourceDecoder<ByteBuffer, APNGDr
                 return byteBuffer.limit();
             }
 
-            @Override // com.bumptech.glide.load.engine.Resource
             public void c() {
                 if (ImageLoader.a()) {
                     Log.e("IMAGE", "ApngStreamDecoder -- apngDrawable -- recycle ");
@@ -51,7 +47,6 @@ public class ByteBufferApngDecoder implements ResourceDecoder<ByteBuffer, APNGDr
         };
     }
 
-    @Override // com.bumptech.glide.load.ResourceDecoder
     public boolean a(ByteBuffer byteBuffer, Options options) {
         if (ImageLoader.a()) {
             boolean booleanValue = ((Boolean) options.a(ImageLoaderOptions.b)).booleanValue();

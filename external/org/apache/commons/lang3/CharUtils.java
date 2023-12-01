@@ -7,56 +7,56 @@ public class CharUtils {
     public static final char LF = '\n';
 
     static {
-        char c2 = 0;
+        char c = 0;
         while (true) {
-            char c3 = c2;
-            if (c3 >= CHAR_STRING_ARRAY.length) {
+            char c2 = c;
+            if (c2 >= CHAR_STRING_ARRAY.length) {
                 return;
             }
-            CHAR_STRING_ARRAY[c3] = String.valueOf(c3);
-            c2 = (char) (c3 + 1);
+            CHAR_STRING_ARRAY[c2] = String.valueOf(c2);
+            c = (char) (c2 + 1);
         }
     }
 
-    public static boolean isAscii(char c2) {
-        return c2 < 128;
+    public static boolean isAscii(char c) {
+        return c < 128;
     }
 
-    public static boolean isAsciiAlpha(char c2) {
-        if (c2 < 'A' || c2 > 'Z') {
-            return c2 >= 'a' && c2 <= 'z';
+    public static boolean isAsciiAlpha(char c) {
+        if (c < 'A' || c > 'Z') {
+            return c >= 'a' && c <= 'z';
         }
         return true;
     }
 
-    public static boolean isAsciiAlphaLower(char c2) {
-        return c2 >= 'a' && c2 <= 'z';
+    public static boolean isAsciiAlphaLower(char c) {
+        return c >= 'a' && c <= 'z';
     }
 
-    public static boolean isAsciiAlphaUpper(char c2) {
-        return c2 >= 'A' && c2 <= 'Z';
+    public static boolean isAsciiAlphaUpper(char c) {
+        return c >= 'A' && c <= 'Z';
     }
 
-    public static boolean isAsciiAlphanumeric(char c2) {
-        if (c2 < 'A' || c2 > 'Z') {
-            if (c2 < 'a' || c2 > 'z') {
-                return c2 >= '0' && c2 <= '9';
+    public static boolean isAsciiAlphanumeric(char c) {
+        if (c < 'A' || c > 'Z') {
+            if (c < 'a' || c > 'z') {
+                return c >= '0' && c <= '9';
             }
             return true;
         }
         return true;
     }
 
-    public static boolean isAsciiControl(char c2) {
-        return c2 < ' ' || c2 == 127;
+    public static boolean isAsciiControl(char c) {
+        return c < ' ' || c == 127;
     }
 
-    public static boolean isAsciiNumeric(char c2) {
-        return c2 >= '0' && c2 <= '9';
+    public static boolean isAsciiNumeric(char c) {
+        return c >= '0' && c <= '9';
     }
 
-    public static boolean isAsciiPrintable(char c2) {
-        return c2 >= ' ' && c2 < 127;
+    public static boolean isAsciiPrintable(char c) {
+        return c >= ' ' && c < 127;
     }
 
     public static char toChar(Character ch) {
@@ -66,8 +66,8 @@ public class CharUtils {
         return ch.charValue();
     }
 
-    public static char toChar(Character ch, char c2) {
-        return ch == null ? c2 : ch.charValue();
+    public static char toChar(Character ch, char c) {
+        return ch == null ? c : ch.charValue();
     }
 
     public static char toChar(String str) {
@@ -77,13 +77,13 @@ public class CharUtils {
         return str.charAt(0);
     }
 
-    public static char toChar(String str, char c2) {
-        return StringUtils.isEmpty(str) ? c2 : str.charAt(0);
+    public static char toChar(String str, char c) {
+        return StringUtils.isEmpty(str) ? c : str.charAt(0);
     }
 
     @Deprecated
-    public static Character toCharacterObject(char c2) {
-        return Character.valueOf(c2);
+    public static Character toCharacterObject(char c) {
+        return Character.valueOf(c);
     }
 
     public static Character toCharacterObject(String str) {
@@ -93,15 +93,15 @@ public class CharUtils {
         return Character.valueOf(str.charAt(0));
     }
 
-    public static int toIntValue(char c2) {
-        if (isAsciiNumeric(c2)) {
-            return c2 - '0';
+    public static int toIntValue(char c) {
+        if (isAsciiNumeric(c)) {
+            return c - '0';
         }
-        throw new IllegalArgumentException("The character " + c2 + " is not in the range '0' - '9'");
+        throw new IllegalArgumentException("The character " + c + " is not in the range '0' - '9'");
     }
 
-    public static int toIntValue(char c2, int i) {
-        return !isAsciiNumeric(c2) ? i : c2 - '0';
+    public static int toIntValue(char c, int i) {
+        return !isAsciiNumeric(c) ? i : c - '0';
     }
 
     public static int toIntValue(Character ch) {
@@ -115,8 +115,8 @@ public class CharUtils {
         return ch == null ? i : toIntValue(ch.charValue(), i);
     }
 
-    public static String toString(char c2) {
-        return c2 < 128 ? CHAR_STRING_ARRAY[c2] : new String(new char[]{c2});
+    public static String toString(char c) {
+        return c < 128 ? CHAR_STRING_ARRAY[c] : new String(new char[]{c});
     }
 
     public static String toString(Character ch) {
@@ -126,8 +126,8 @@ public class CharUtils {
         return toString(ch.charValue());
     }
 
-    public static String unicodeEscaped(char c2) {
-        return c2 < 16 ? "\\u000" + Integer.toHexString(c2) : c2 < 256 ? "\\u00" + Integer.toHexString(c2) : c2 < 4096 ? "\\u0" + Integer.toHexString(c2) : "\\u" + Integer.toHexString(c2);
+    public static String unicodeEscaped(char c) {
+        return c < 16 ? "\\u000" + Integer.toHexString(c) : c < 256 ? "\\u00" + Integer.toHexString(c) : c < 4096 ? "\\u0" + Integer.toHexString(c) : "\\u" + Integer.toHexString(c);
     }
 
     public static String unicodeEscaped(Character ch) {

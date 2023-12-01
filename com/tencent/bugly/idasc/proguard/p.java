@@ -14,11 +14,11 @@ import java.util.Map;
 public final class p {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f35327a = true;
+    public static boolean f21636a = true;
     public static List<o> b = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f35328c;
+    public static boolean f21637c;
     private static w d;
     private static boolean e;
 
@@ -42,7 +42,7 @@ public final class p {
                 } else {
                     aa a2 = aa.a(context);
                     if (a(a2)) {
-                        f35327a = false;
+                        f21636a = false;
                         return;
                     }
                     String e2 = a2.e();
@@ -71,8 +71,8 @@ public final class p {
                 } else {
                     e = true;
                     if (z) {
-                        f35328c = true;
-                        al.f35239c = true;
+                        f21637c = true;
+                        al.f21548c = true;
                         al.d("Bugly debug模式开启，请在发布时把isDebug关闭。 -- Running in debug model for 'isDebug' is enabled. Please disable it when you release.", new Object[0]);
                         al.e("--------------------------------------------------------------------------------------------", new Object[0]);
                         al.d("Bugly debug模式将有以下行为特性 -- The following list shows the behaviour of debug model: ", new Object[0]);
@@ -94,7 +94,7 @@ public final class p {
                     ac.a(a2, b);
                     u a4 = u.a(a2);
                     if (a(a3)) {
-                        f35327a = false;
+                        f21636a = false;
                         return;
                     }
                     a3.r = str;
@@ -131,7 +131,7 @@ public final class p {
                             }
                             al.a("[param] Set App channel: %s", a3.s);
                         } catch (Exception e2) {
-                            if (f35328c) {
+                            if (f21637c) {
                                 e2.printStackTrace();
                             }
                         }
@@ -142,7 +142,7 @@ public final class p {
                                 str4 = appPackageName.substring(0, 100);
                                 al.d("appPackageName %s length is over limit %d substring to %s", appPackageName, 100, str4);
                             }
-                            a3.f35213c = str4;
+                            a3.f21522c = str4;
                             al.a("[param] Set App package: %s", buglyStrategy.getAppPackageName());
                         }
                         String deviceID = buglyStrategy.getDeviceID();
@@ -177,13 +177,13 @@ public final class p {
                     s.a(a2, buglyStrategy);
                     long appReportDelay = buglyStrategy != null ? buglyStrategy.getAppReportDelay() : 0L;
                     final ac a6 = ac.a();
-                    a6.f35217c.a(new Thread() { // from class: com.tencent.bugly.idasc.proguard.ac.1
+                    a6.f21526c.a(new Thread() { // from class: com.tencent.bugly.idasc.proguard.ac.1
                         @Override // java.lang.Thread, java.lang.Runnable
                         public final void run() {
                             StrategyBean strategyBean;
                             String str6;
                             try {
-                                Map<String, byte[]> a7 = w.a().a(ac.f35216a, (v) null);
+                                Map<String, byte[]> a7 = w.a().a(ac.f21525a, (v) null);
                                 if (a7 != null) {
                                     byte[] bArr2 = a7.get("device");
                                     byte[] bArr3 = a7.get("gateway");
@@ -197,7 +197,7 @@ public final class p {
                                 ac.this.g = ac.d();
                                 if (ac.this.g != null) {
                                     if (ap.b(ac.i) || !ap.d(ac.i)) {
-                                        ac.this.g.q = StrategyBean.f35196a;
+                                        ac.this.g.q = StrategyBean.f21505a;
                                         strategyBean = ac.this.g;
                                         str6 = StrategyBean.b;
                                     } else {

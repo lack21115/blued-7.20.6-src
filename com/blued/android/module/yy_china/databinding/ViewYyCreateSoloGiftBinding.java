@@ -14,13 +14,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyCreateSoloGiftBinding.class */
 public final class ViewYyCreateSoloGiftBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeFrameLayout f16902a;
+    public final ShapeFrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16903c;
+    public final ImageView c;
     public final ImageView d;
     public final ShapeRelativeLayout e;
     public final ShapeRelativeLayout f;
@@ -31,9 +27,9 @@ public final class ViewYyCreateSoloGiftBinding implements ViewBinding {
 
     private ViewYyCreateSoloGiftBinding(LinearLayout linearLayout, ShapeFrameLayout shapeFrameLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ShapeRelativeLayout shapeRelativeLayout, ShapeRelativeLayout shapeRelativeLayout2, ShapeTextView shapeTextView, TextView textView, TextView textView2) {
         this.j = linearLayout;
-        this.f16902a = shapeFrameLayout;
+        this.a = shapeFrameLayout;
         this.b = imageView;
-        this.f16903c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = shapeRelativeLayout;
         this.f = shapeRelativeLayout2;
@@ -100,7 +96,6 @@ public final class ViewYyCreateSoloGiftBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.j;

@@ -63,7 +63,7 @@ public class BaseNCodecInputStream extends FilterInputStream {
             }
             if (!this.baseNCodec.hasData()) {
                 byte[] bArr2 = new byte[this.doEncode ? 4096 : 8192];
-                int read = this.f42254in.read(bArr2);
+                int read = this.in.read(bArr2);
                 if (this.doEncode) {
                     this.baseNCodec.encode(bArr2, 0, read);
                 } else {

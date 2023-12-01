@@ -6,9 +6,7 @@ import android.widget.RelativeLayout;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/activity/keyboardpage/SwitchPanelRelativeLayout.class */
 public class SwitchPanelRelativeLayout extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SwitchPanelLayoutHandler f9788a;
+    private SwitchPanelLayoutHandler a;
 
     public SwitchPanelRelativeLayout(Context context) {
         super(context);
@@ -26,15 +24,15 @@ public class SwitchPanelRelativeLayout extends RelativeLayout {
     }
 
     private void a(AttributeSet attributeSet) {
-        this.f9788a = new SwitchPanelLayoutHandler(this);
+        this.a = new SwitchPanelLayoutHandler(this);
     }
 
     public void a(boolean z) {
-        this.f9788a.a(z);
+        this.a.a(z);
     }
 
     public boolean a() {
-        return this.f9788a.a();
+        return this.a.a();
     }
 
     public void b() {
@@ -42,19 +40,19 @@ public class SwitchPanelRelativeLayout extends RelativeLayout {
     }
 
     public void c() {
-        this.f9788a.b();
+        this.a.b();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RelativeLayout, android.view.View
     public void onMeasure(int i, int i2) {
-        int[] a2 = this.f9788a.a(i, i2);
-        super.onMeasure(a2[0], a2[1]);
+        int[] a = this.a.a(i, i2);
+        super.onMeasure(a[0], a[1]);
     }
 
     @Override // android.view.View
     public void setVisibility(int i) {
-        if (this.f9788a.a(i)) {
+        if (this.a.a(i)) {
             return;
         }
         super.setVisibility(i);

@@ -1,8 +1,6 @@
 package org.kxml2.io;
 
 import com.alipay.sdk.util.i;
-import com.j256.ormlite.stmt.query.SimpleComparison;
-import com.tencent.qcloud.core.util.IOUtils;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -48,7 +46,7 @@ public class KXmlSerializer implements XmlSerializer {
                     this.nspCounts = iArr;
                 }
                 this.nspCounts[this.depth + 1] = this.nspCounts[this.depth];
-                this.writer.write(z ? " />" : SimpleComparison.GREATER_THAN_OPERATION);
+                this.writer.write(z ? " />" : ">");
                 return;
             }
             this.writer.write(32);
@@ -130,8 +128,8 @@ public class KXmlSerializer implements XmlSerializer {
         }
     }
 
-    private static void reportInvalidCharacter(char c2) {
-        throw new IllegalArgumentException("Illegal character (U+" + Integer.toHexString(c2) + ")");
+    private static void reportInvalidCharacter(char c) {
+        throw new IllegalArgumentException("Illegal character (U+" + Integer.toHexString(c) + ")");
     }
 
     private final void writeEscaped(String str, int i) throws IOException {
@@ -174,7 +172,7 @@ public class KXmlSerializer implements XmlSerializer {
                                 break;
                             }
                         } else if (!this.unicode && charAt >= 127) {
-                            this.writer.write("&#" + ((int) charAt) + ";");
+                            this.writer.write("&#" + ((int) charAt) + i.b);
                             break;
                         } else {
                             this.writer.write(charAt);
@@ -190,11 +188,11 @@ public class KXmlSerializer implements XmlSerializer {
         }
     }
 
-    private void writeSurrogate(char c2, char c3) throws IOException {
-        if (!Character.isLowSurrogate(c3)) {
-            throw new IllegalArgumentException("Bad surrogate pair (U+" + Integer.toHexString(c2) + " U+" + Integer.toHexString(c3) + ")");
+    private void writeSurrogate(char c, char c2) throws IOException {
+        if (!Character.isLowSurrogate(c2)) {
+            throw new IllegalArgumentException("Bad surrogate pair (U+" + Integer.toHexString(c) + " U+" + Integer.toHexString(c2) + ")");
         }
-        this.writer.write("&#" + Character.toCodePoint(c2, c3) + ";");
+        this.writer.write("&#" + Character.toCodePoint(c, c2) + i.b);
     }
 
     @Override // org.xmlpull.v1.XmlSerializer
@@ -263,7 +261,7 @@ public class KXmlSerializer implements XmlSerializer {
     public void docdecl(String str) throws IOException {
         this.writer.write("<!DOCTYPE");
         this.writer.write(str);
-        this.writer.write(SimpleComparison.GREATER_THAN_OPERATION);
+        this.writer.write(">");
     }
 
     @Override // org.xmlpull.v1.XmlSerializer
@@ -285,7 +283,7 @@ public class KXmlSerializer implements XmlSerializer {
                 this.depth--;
             } else {
                 if (this.indent[this.depth + 1]) {
-                    this.writer.write(IOUtils.LINE_SEPARATOR_WINDOWS);
+                    this.writer.write("\r\n");
                     int i = 0;
                     while (true) {
                         int i2 = i;
@@ -480,7 +478,7 @@ public class KXmlSerializer implements XmlSerializer {
     public XmlSerializer startTag(String str, String str2) throws IOException {
         check(false);
         if (this.indent[this.depth]) {
-            this.writer.write(IOUtils.LINE_SEPARATOR_WINDOWS);
+            this.writer.write("\r\n");
             int i = 0;
             while (true) {
                 int i2 = i;

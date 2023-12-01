@@ -11,19 +11,19 @@ public class a implements b {
     private static Class b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Object f39804c;
+    private static Object f26113c;
     private static Method d;
     private static Method e;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f39805a;
+    private Context f26114a;
 
     public a() {
         try {
             c.c("xm start");
             Class<?> cls = Class.forName("com.android.id.impl.IdProviderImpl");
             b = cls;
-            f39804c = cls.newInstance();
+            f26113c = cls.newInstance();
             d = b.getMethod("getOAID", Context.class);
             e = b.getMethod("getAAID", Context.class);
         } catch (Exception e2) {
@@ -49,26 +49,26 @@ public class a implements b {
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public String a() {
         Method method;
-        Object obj = f39804c;
+        Object obj = f26113c;
         if (obj == null || (method = d) == null) {
             return null;
         }
-        return a(this.f39805a, obj, method);
+        return a(this.f26114a, obj, method);
     }
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f39805a = context;
+        this.f26114a = context;
     }
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public String b() {
         Method method;
-        Object obj = f39804c;
+        Object obj = f26113c;
         if (obj == null || (method = e) == null) {
             return null;
         }
-        return a(this.f39805a, obj, method);
+        return a(this.f26114a, obj, method);
     }
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
@@ -82,7 +82,7 @@ public class a implements b {
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public boolean e() {
-        return (b == null || f39804c == null) ? false : true;
+        return (b == null || f26113c == null) ? false : true;
     }
 
     @Override // com.tencent.tmsqmsp.sdk.base.b

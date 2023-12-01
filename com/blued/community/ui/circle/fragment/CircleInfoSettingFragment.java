@@ -1,5 +1,6 @@
 package com.blued.community.ui.circle.fragment;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -81,34 +82,34 @@ public class CircleInfoSettingFragment extends MvpKeyBoardFragment<CircleInfoSet
         this.p = (FrameLayout) this.i.findViewById(R.id.fl_header_bottom);
         this.q = (TextView) this.i.findViewById(R.id.tv_edit);
         this.r = (EditText) this.i.findViewById(R.id.edt_info);
-        this.s = (EditInputNumView) this.i.findViewById(R.id.inv_word_count);
+        this.s = this.i.findViewById(R.id.inv_word_count);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void w() {
         ArrayList arrayList = new ArrayList();
-        final BasePopupView a2 = CommonShowBottomWindow.a(getContext(), arrayList);
+        final BasePopupView a = CommonShowBottomWindow.a(getContext(), arrayList);
         BottomMenuPop.MenuItemInfo menuItemInfo = new BottomMenuPop.MenuItemInfo();
-        menuItemInfo.f11214a = getContext().getString(R.string.head_pic_update);
+        menuItemInfo.a = getContext().getString(R.string.head_pic_update);
         menuItemInfo.d = new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleInfoSettingFragment.5
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 CommunityServiceManager.b().a(CircleInfoSettingFragment.this, 15, 177);
-                BasePopupView basePopupView = a2;
+                BasePopupView basePopupView = a;
                 if (basePopupView != null) {
                     basePopupView.p();
                 }
             }
         };
         BottomMenuPop.MenuItemInfo menuItemInfo2 = new BottomMenuPop.MenuItemInfo();
-        menuItemInfo2.f11214a = getContext().getString(R.string.head_pic_view);
+        menuItemInfo2.a = getContext().getString(R.string.head_pic_view);
         menuItemInfo2.d = new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleInfoSettingFragment.6
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 CommunityServiceManager.b().a(CircleInfoSettingFragment.this.getContext(), new String[]{((CircleInfoSettingPresenter) CircleInfoSettingFragment.this.j()).o()}, 0, 3, (LoadOptions) null);
-                BasePopupView basePopupView = a2;
+                BasePopupView basePopupView = a;
                 if (basePopupView != null) {
                     basePopupView.p();
                 }
@@ -116,7 +117,7 @@ public class CircleInfoSettingFragment extends MvpKeyBoardFragment<CircleInfoSet
         };
         arrayList.add(menuItemInfo);
         arrayList.add(menuItemInfo2);
-        a2.h();
+        a.h();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -184,7 +185,7 @@ public class CircleInfoSettingFragment extends MvpKeyBoardFragment<CircleInfoSet
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                KeyboardUtils.a(CircleInfoSettingFragment.this.getActivity());
+                KeyboardUtils.a((Activity) CircleInfoSettingFragment.this.getActivity());
                 CircleInfoSettingFragment.this.w();
             }
         });
@@ -245,7 +246,6 @@ public class CircleInfoSettingFragment extends MvpKeyBoardFragment<CircleInfoSet
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1 && i == 177 && intent != null) {
             String stringExtra = intent.getStringExtra("photo_path");
@@ -261,7 +261,7 @@ public class CircleInfoSettingFragment extends MvpKeyBoardFragment<CircleInfoSet
 
     @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         return super.onBackPressed();
     }
 }

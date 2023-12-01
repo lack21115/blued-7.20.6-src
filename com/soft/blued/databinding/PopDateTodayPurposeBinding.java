@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopDateTodayPurposeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29512a;
+    private final LinearLayout f15822a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29512a;
+        return this.f15822a;
     }
 }

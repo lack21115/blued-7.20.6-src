@@ -1,6 +1,6 @@
 package java.lang;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
+import com.android.internal.content.NativeLibraryHelper;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -100,7 +100,7 @@ public final class HexStringParser {
     private long parse(String str, boolean z) {
         Matcher matcher = PATTERN.matcher(str);
         if (!matcher.matches()) {
-            throw new NumberFormatException("Invalid hex " + (z ? "double" : TypedValues.Custom.S_FLOAT) + ":" + str);
+            throw new NumberFormatException("Invalid hex " + (z ? "double" : "float") + ":" + str);
         }
         String group = matcher.group(1);
         String group2 = matcher.group(2);
@@ -137,7 +137,7 @@ public final class HexStringParser {
     }
 
     private void parseHexSign(String str) {
-        this.sign = str.equals("-") ? 1L : 0L;
+        this.sign = str.equals(NativeLibraryHelper.CLEAR_ABI_OVERRIDE) ? 1L : 0L;
     }
 
     private void parseMantissa(String str) {

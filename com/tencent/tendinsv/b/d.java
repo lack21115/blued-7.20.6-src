@@ -9,12 +9,12 @@ import android.text.TextUtils;
 public class d extends l {
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f39002c;
+    private boolean f25311c;
     private boolean d;
 
     public d() {
         super("com.meizu.flyme.openidsdk", "");
-        this.f39002c = false;
+        this.f25311c = false;
         this.d = false;
     }
 
@@ -43,7 +43,7 @@ public class d extends l {
                 return false;
             }
         }
-        this.f39002c = true;
+        this.f25311c = true;
         return this.d;
     }
 

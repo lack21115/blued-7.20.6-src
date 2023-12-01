@@ -5,8 +5,10 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.framework.utils.DensityUtils;
 import com.blued.android.module.common.base.dialog.CommonDialogFragment;
 import com.blued.android.module.common.base.mvi.MVIBaseFragment;
@@ -44,10 +46,10 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/fragment/VIPSpecialCareFragment.class */
 public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareViewModel> {
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(VIPSpecialCareFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentVipInvisibleToUserBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(VIPSpecialCareFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentVipInvisibleToUserBinding;", 0))};
 
     /* renamed from: c  reason: collision with root package name */
-    public CommonDialogFragment f34154c;
+    public CommonDialogFragment f20463c;
     public VipInvisibleListAdapter d;
     private final ViewBindingProperty e;
     private int f;
@@ -58,18 +60,18 @@ public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareVie
     private int k;
 
     public VIPSpecialCareFragment() {
-        super(R.layout.fragment_vip_invisible_to_user);
-        this.e = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<VIPSpecialCareFragment, FragmentVipInvisibleToUserBinding>() { // from class: com.soft.blued.ui.user.fragment.VIPSpecialCareFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fragment_vip_invisible_to_user);
+        this.e = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<VIPSpecialCareFragment, FragmentVipInvisibleToUserBinding>() { // from class: com.soft.blued.ui.user.fragment.VIPSpecialCareFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/VIPSpecialCareFragment;)Lcom/soft/blued/databinding/FragmentVipInvisibleToUserBinding; */
             /* renamed from: a */
-            public final FragmentVipInvisibleToUserBinding invoke(VIPSpecialCareFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentVipInvisibleToUserBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<VIPSpecialCareFragment, FragmentVipInvisibleToUserBinding>() { // from class: com.soft.blued.ui.user.fragment.VIPSpecialCareFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/VIPSpecialCareFragment;)Lcom/soft/blued/databinding/FragmentVipInvisibleToUserBinding; */
             /* renamed from: a */
-            public final FragmentVipInvisibleToUserBinding invoke(VIPSpecialCareFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentVipInvisibleToUserBinding.a(fragment.requireView());
             }
@@ -81,7 +83,6 @@ public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareVie
                 super(0);
             }
 
-            @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final NoDataAndLoadFailView invoke() {
                 return new NoDataAndLoadFailView(VIPSpecialCareFragment.this.getContext());
@@ -92,31 +93,31 @@ public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareVie
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VIPSpecialCareFragment this$0, View view) {
+    public static final void a(VIPSpecialCareFragment vIPSpecialCareFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        if (this$0.a() != null) {
-            this$0.a().dismiss();
+        Intrinsics.e(vIPSpecialCareFragment, "this$0");
+        if (vIPSpecialCareFragment.a() != null) {
+            vIPSpecialCareFragment.a().dismiss();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VIPSpecialCareFragment this$0, RefreshLayout it) {
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(it, "it");
-        this$0.k++;
-        this$0.i();
+    public static final void a(VIPSpecialCareFragment vIPSpecialCareFragment, RefreshLayout refreshLayout) {
+        Intrinsics.e(vIPSpecialCareFragment, "this$0");
+        Intrinsics.e(refreshLayout, "it");
+        vIPSpecialCareFragment.k++;
+        vIPSpecialCareFragment.i();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(VIPSpecialCareFragment this$0, View view) {
+    public static final void b(VIPSpecialCareFragment vIPSpecialCareFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        if (!this$0.h.isEmpty()) {
-            BluedStructureExtKt.a(this$0, new SpecialCareAction.cancelSpecialCareUser(this$0.h));
+        Intrinsics.e(vIPSpecialCareFragment, "this$0");
+        if (!vIPSpecialCareFragment.h.isEmpty()) {
+            BluedStructureExtKt.a(vIPSpecialCareFragment, new SpecialCareAction.cancelSpecialCareUser(vIPSpecialCareFragment.h));
         }
-        if (this$0.a() != null) {
-            this$0.a().dismiss();
+        if (vIPSpecialCareFragment.a() != null) {
+            vIPSpecialCareFragment.a().dismiss();
         }
     }
 
@@ -125,7 +126,7 @@ public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareVie
     }
 
     public final CommonDialogFragment a() {
-        CommonDialogFragment commonDialogFragment = this.f34154c;
+        CommonDialogFragment commonDialogFragment = this.f20463c;
         if (commonDialogFragment != null) {
             return commonDialogFragment;
         }
@@ -139,7 +140,7 @@ public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareVie
 
     public final void a(CommonDialogFragment commonDialogFragment) {
         Intrinsics.e(commonDialogFragment, "<set-?>");
-        this.f34154c = commonDialogFragment;
+        this.f20463c = commonDialogFragment;
     }
 
     public final void a(VipInvisibleListAdapter vipInvisibleListAdapter) {
@@ -147,44 +148,43 @@ public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareVie
         this.d = vipInvisibleListAdapter;
     }
 
-    public final void a(InvisibleToUserModel parseData) {
-        Intrinsics.e(parseData, "parseData");
+    public final void a(InvisibleToUserModel invisibleToUserModel) {
+        Intrinsics.e(invisibleToUserModel, "parseData");
         FragmentVipInvisibleToUserBinding b2 = b();
         if (b2 == null || getContext() == null) {
             return;
         }
-        a(parseData.total);
-        b(parseData.setTotal);
+        a(invisibleToUserModel.total);
+        b(invisibleToUserModel.setTotal);
         TextView textView = b2.f;
         StringBuilder sb = new StringBuilder();
         sb.append(e());
         sb.append('/');
         sb.append(d());
         textView.setText(sb.toString());
-        if (parseData.lists != null) {
+        if (invisibleToUserModel.lists != null) {
             if (h() == 1) {
-                c().setNewData(parseData.lists);
+                c().setNewData(invisibleToUserModel.lists);
             } else {
-                c().addData((Collection) parseData.lists);
+                c().addData((Collection) invisibleToUserModel.lists);
             }
-            if (parseData.lists.size() == 0) {
+            if (invisibleToUserModel.lists.size() == 0) {
                 g().a();
             }
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void a(boolean z, boolean z2) {
         SmartRefreshLayout smartRefreshLayout;
         FragmentVipInvisibleToUserBinding b2 = b();
-        if (b2 != null && (smartRefreshLayout = b2.f29024c) != null) {
+        if (b2 != null && (smartRefreshLayout = b2.f15334c) != null) {
             smartRefreshLayout.l(z2);
         }
         FragmentVipInvisibleToUserBinding b3 = b();
         if (b3 == null) {
             return;
         }
-        b3.f29024c.h();
+        b3.f15334c.h();
     }
 
     public final FragmentVipInvisibleToUserBinding b() {
@@ -224,7 +224,6 @@ public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareVie
         return this.k;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         Context context;
         final FragmentVipInvisibleToUserBinding b2 = b();
@@ -233,7 +232,7 @@ public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareVie
             b2.e.setText(context.getString(R.string.msg_special_care_list_tips));
             b2.e.setGravity(0);
             b2.d.getTitleBackground().setBackground(new ColorDrawable(0));
-            b2.d.setRightText(R.string.done);
+            b2.d.setRightText((int) R.string.done);
             b2.d.setRightTextColor(2131101766);
             b2.d.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VIPSpecialCareFragment$H1p0c1IQX4Oe07RInIfVMAAQdxM
                 @Override // android.view.View.OnClickListener
@@ -252,13 +251,13 @@ public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareVie
             b2.b.setAdapter(c());
             c().a(new InvisibleUserDeleteListener() { // from class: com.soft.blued.ui.user.fragment.VIPSpecialCareFragment$initView$1$1$3
                 @Override // com.soft.blued.ui.user.adapter.InvisibleUserDeleteListener
-                public void a(InvisibleToUserModel.InvisibleUser user) {
-                    Intrinsics.e(user, "user");
+                public void a(InvisibleToUserModel.InvisibleUser invisibleUser) {
+                    Intrinsics.e(invisibleUser, "user");
                     List<String> f = VIPSpecialCareFragment.this.f();
-                    String str = user.uid;
+                    String str = invisibleUser.uid;
                     Intrinsics.c(str, "user.uid");
                     f.add(str);
-                    VIPSpecialCareFragment.this.c().getData().remove(user);
+                    VIPSpecialCareFragment.this.c().getData().remove(invisibleUser);
                     if (VIPSpecialCareFragment.this.c().getData().size() == 0) {
                         VIPSpecialCareFragment.this.g().a();
                     }
@@ -276,13 +275,13 @@ public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareVie
             g().setNoDataImg(2131233630);
             g().setBackgroundColorRes(2131102388);
             g().setTopSpace(DensityUtils.a(getContext(), 40.0f));
-            g().setNoDataStr(R.string.msg_special_care_list_no_data);
+            g().setNoDataStr((int) R.string.msg_special_care_list_no_data);
             g().d();
-            NoDataAndLoadFailView noDataAndLoadFailView = b2.f29023a;
-            c().setEmptyView(g());
-            b2.f29024c.l(true);
-            b2.f29024c.c(false);
-            b2.f29024c.a(new OnLoadMoreListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VIPSpecialCareFragment$P6GjFlrcYEJTVoefHdMf9QzuPVs
+            NoDataAndLoadFailView noDataAndLoadFailView = b2.f15333a;
+            c().setEmptyView((View) g());
+            b2.f15334c.l(true);
+            b2.f15334c.c(false);
+            b2.f15334c.a(new OnLoadMoreListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VIPSpecialCareFragment$P6GjFlrcYEJTVoefHdMf9QzuPVs
                 @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
                 public final void onLoadMore(RefreshLayout refreshLayout) {
                     VIPSpecialCareFragment.a(VIPSpecialCareFragment.this, refreshLayout);
@@ -292,12 +291,10 @@ public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareVie
         i();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner, "viewLifecycleOwner");
         BluedStructureExtKt.a(this, viewLifecycleOwner, new PropertyReference1Impl() { // from class: com.soft.blued.ui.user.fragment.VIPSpecialCareFragment$liveDataObserver$1
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((SpecialCareState) obj).a();
             }
@@ -307,15 +304,14 @@ public final class VIPSpecialCareFragment extends MVIBaseFragment<SpecialCareVie
                 super(1);
             }
 
-            public final void a(InvisibleToUserModel it) {
-                Intrinsics.e(it, "it");
-                VIPSpecialCareFragment.this.a(it);
+            public final void a(InvisibleToUserModel invisibleToUserModel) {
+                Intrinsics.e(invisibleToUserModel, "it");
+                VIPSpecialCareFragment.this.a(invisibleToUserModel);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(InvisibleToUserModel invisibleToUserModel) {
-                a(invisibleToUserModel);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((InvisibleToUserModel) obj);
+                return Unit.a;
             }
         });
     }

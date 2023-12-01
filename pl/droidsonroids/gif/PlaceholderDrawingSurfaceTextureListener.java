@@ -8,20 +8,18 @@ import pl.droidsonroids.gif.GifTextureView;
 
 /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/PlaceholderDrawingSurfaceTextureListener.class */
 class PlaceholderDrawingSurfaceTextureListener implements TextureView.SurfaceTextureListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final GifTextureView.PlaceholderDrawListener f44167a;
+    private final GifTextureView.PlaceholderDrawListener a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public PlaceholderDrawingSurfaceTextureListener(GifTextureView.PlaceholderDrawListener placeholderDrawListener) {
-        this.f44167a = placeholderDrawListener;
+        this.a = placeholderDrawListener;
     }
 
     @Override // android.view.TextureView.SurfaceTextureListener
     public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
         Surface surface = new Surface(surfaceTexture);
         Canvas lockCanvas = surface.lockCanvas(null);
-        this.f44167a.a(lockCanvas);
+        this.a.a(lockCanvas);
         surface.unlockCanvasAndPost(lockCanvas);
         surface.release();
     }

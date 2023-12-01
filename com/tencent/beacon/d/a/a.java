@@ -10,11 +10,11 @@ import java.util.Map;
 public class a implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ c f35004a;
+    final /* synthetic */ c f21313a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public a(c cVar) {
-        this.f35004a = cVar;
+        this.f21313a = cVar;
     }
 
     @Override // java.lang.Runnable
@@ -27,16 +27,16 @@ public class a implements Runnable {
         Map<String, String> map5;
         e l = e.l();
         f e = f.e();
-        map = this.f35004a.g;
+        map = this.f21313a.g;
         map.put("A19", l.q());
-        map2 = this.f35004a.g;
+        map2 = this.f21313a.g;
         map2.put("A85", com.tencent.beacon.a.c.b.d ? "Y" : "N");
-        map3 = this.f35004a.g;
+        map3 = this.f21313a.g;
         map3.put("A20", e.j());
-        map4 = this.f35004a.g;
+        map4 = this.f21313a.g;
         map4.put("A69", e.k());
-        statModule = this.f35004a.h;
-        map5 = this.f35004a.g;
+        statModule = this.f21313a.h;
+        map5 = this.f21313a.g;
         statModule.b(map5);
     }
 }

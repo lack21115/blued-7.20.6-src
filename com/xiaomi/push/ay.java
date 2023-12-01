@@ -8,32 +8,32 @@ import java.util.Map;
 public class ay implements as {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile ay f41266a;
+    private static volatile ay f27575a;
 
     /* renamed from: a  reason: collision with other field name */
-    private int f204a = ax.f41265a;
+    private int f157a = ax.f27574a;
 
     /* renamed from: a  reason: collision with other field name */
-    private as f205a;
+    private as f158a;
 
     private ay(Context context) {
-        this.f205a = ax.a(context);
-        com.xiaomi.channel.commonutils.logger.b.m11394a("create id manager is: " + this.f204a);
+        this.f158a = ax.a(context);
+        com.xiaomi.channel.commonutils.logger.b.m8344a("create id manager is: " + this.f157a);
     }
 
     public static ay a(Context context) {
-        if (f41266a == null) {
+        if (f27575a == null) {
             synchronized (ay.class) {
                 try {
-                    if (f41266a == null) {
-                        f41266a = new ay(context.getApplicationContext());
+                    if (f27575a == null) {
+                        f27575a = new ay(context.getApplicationContext());
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f41266a;
+        return f27575a;
     }
 
     private String a(String str) {
@@ -46,8 +46,8 @@ public class ay implements as {
 
     @Override // com.xiaomi.push.as
     /* renamed from: a */
-    public String mo11508a() {
-        return a(this.f205a.mo11508a());
+    public String mo8458a() {
+        return a(this.f158a.mo8458a());
     }
 
     public void a() {
@@ -61,9 +61,9 @@ public class ay implements as {
         if (!TextUtils.isEmpty(b)) {
             map.put("udid", b);
         }
-        String mo11508a = mo11508a();
-        if (!TextUtils.isEmpty(mo11508a)) {
-            map.put("oaid", mo11508a);
+        String mo8458a = mo8458a();
+        if (!TextUtils.isEmpty(mo8458a)) {
+            map.put("oaid", mo8458a);
         }
         String c2 = c();
         if (!TextUtils.isEmpty(c2)) {
@@ -73,13 +73,13 @@ public class ay implements as {
         if (!TextUtils.isEmpty(d)) {
             map.put("aaid", d);
         }
-        map.put("oaid_type", String.valueOf(this.f204a));
+        map.put("oaid_type", String.valueOf(this.f157a));
     }
 
     @Override // com.xiaomi.push.as
     /* renamed from: a */
-    public boolean mo11509a() {
-        return this.f205a.mo11509a();
+    public boolean mo8459a() {
+        return this.f158a.mo8459a();
     }
 
     public String b() {

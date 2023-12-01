@@ -8,12 +8,12 @@ import com.tencent.qmsp.sdk.base.IVendorCallback;
 public class c implements com.tencent.qmsp.sdk.base.b, b {
 
     /* renamed from: a  reason: collision with root package name */
-    private IVendorCallback f38607a;
+    private IVendorCallback f24916a;
     private d d;
     private String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private String f38608c = "";
+    private String f24917c = "";
     private boolean e = false;
     private boolean f = false;
 
@@ -24,7 +24,7 @@ public class c implements com.tencent.qmsp.sdk.base.b, b {
 
     @Override // com.tencent.qmsp.sdk.base.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f38607a = iVendorCallback;
+        this.f24916a = iVendorCallback;
         d dVar = new d(context);
         this.d = dVar;
         dVar.a(this);
@@ -42,9 +42,9 @@ public class c implements com.tencent.qmsp.sdk.base.b, b {
         }
         try {
             String h = aVar.h();
-            this.f38608c = h;
+            this.f24917c = h;
             if (h == null) {
-                this.f38608c = "";
+                this.f24917c = "";
             }
         } catch (Exception e2) {
         }
@@ -53,9 +53,9 @@ public class c implements com.tencent.qmsp.sdk.base.b, b {
         } catch (Exception e3) {
         }
         this.e = true;
-        IVendorCallback iVendorCallback = this.f38607a;
+        IVendorCallback iVendorCallback = this.f24916a;
         if (iVendorCallback != null) {
-            iVendorCallback.onResult(this.f, this.f38608c, this.b);
+            iVendorCallback.onResult(this.f, this.f24917c, this.b);
         }
     }
 
@@ -66,7 +66,7 @@ public class c implements com.tencent.qmsp.sdk.base.b, b {
 
     @Override // com.tencent.qmsp.sdk.base.b
     public String b() {
-        return this.f38608c;
+        return this.f24917c;
     }
 
     @Override // com.tencent.qmsp.sdk.base.b
@@ -95,7 +95,7 @@ public class c implements com.tencent.qmsp.sdk.base.b, b {
 
     @Override // com.tencent.qmsp.sdk.g.a.b
     public void g() {
-        IVendorCallback iVendorCallback = this.f38607a;
+        IVendorCallback iVendorCallback = this.f24916a;
         if (iVendorCallback != null) {
             iVendorCallback.onResult(false, null, null);
         }

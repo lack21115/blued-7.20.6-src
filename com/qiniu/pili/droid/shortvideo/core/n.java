@@ -23,11 +23,11 @@ public class n extends p {
     private String E;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27584a;
+    private Context f13896a;
     private PLVideoMixSetting b;
 
     /* renamed from: c  reason: collision with root package name */
-    private PLVideoEncodeSetting f27585c;
+    private PLVideoEncodeSetting f13897c;
     private PLCameraSetting d;
     private com.qiniu.pili.droid.shortvideo.e.b e;
     private com.qiniu.pili.droid.shortvideo.process.a.f f;
@@ -87,7 +87,7 @@ public class n extends p {
     };
 
     public n(Context context) {
-        this.f27584a = context;
+        this.f13896a = context;
     }
 
     private void C() {
@@ -113,7 +113,7 @@ public class n extends p {
     public void d(String str) {
         com.qiniu.pili.droid.shortvideo.f.e.d.c("ShortVideoMixRecorderCore", "mixVideo +");
         if (this.f == null) {
-            this.f = new com.qiniu.pili.droid.shortvideo.process.a.f(this.f27584a, this.b, this.f27585c, str, this.E);
+            this.f = new com.qiniu.pili.droid.shortvideo.process.a.f(this.f13896a, this.b, this.f13897c, str, this.E);
         }
         com.qiniu.pili.droid.shortvideo.transcoder.audio.a aVar = null;
         if (D()) {
@@ -138,7 +138,7 @@ public class n extends p {
     public void a(GLSurfaceView gLSurfaceView, GLSurfaceView gLSurfaceView2, PLVideoMixSetting pLVideoMixSetting, PLCameraSetting pLCameraSetting, PLMicrophoneSetting pLMicrophoneSetting, PLVideoEncodeSetting pLVideoEncodeSetting, PLAudioEncodeSetting pLAudioEncodeSetting, PLFaceBeautySetting pLFaceBeautySetting, PLRecordSetting pLRecordSetting) {
         this.d = pLCameraSetting;
         this.b = pLVideoMixSetting;
-        this.f27585c = pLVideoEncodeSetting;
+        this.f13897c = pLVideoEncodeSetting;
         this.E = pLRecordSetting.getVideoFilepath();
         PLVideoEncodeSetting fromSetting = PLVideoEncodeSetting.fromSetting(pLVideoEncodeSetting);
         Rect cameraVideoRect = this.b.getCameraVideoRect();

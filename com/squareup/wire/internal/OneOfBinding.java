@@ -19,21 +19,21 @@ public final class OneOfBinding<M extends Message<M, B>, B extends Message.Build
     private final Field messageField;
     private final boolean writeIdentityValues;
 
-    public OneOfBinding(Field messageField, Class<B> builderType, OneOf.Key<?> key, boolean z) {
-        Intrinsics.e(messageField, "messageField");
-        Intrinsics.e(builderType, "builderType");
+    public OneOfBinding(Field field, Class<B> cls, OneOf.Key<?> key, boolean z) {
+        Intrinsics.e(field, "messageField");
+        Intrinsics.e(cls, "builderType");
         Intrinsics.e(key, "key");
-        this.messageField = messageField;
+        this.messageField = field;
         this.key = key;
         this.writeIdentityValues = z;
-        Field declaredField = builderType.getDeclaredField(messageField.getName());
+        Field declaredField = cls.getDeclaredField(field.getName());
         Intrinsics.c(declaredField, "builderType.getDeclaredField(messageField.name)");
         this.builderField = declaredField;
     }
 
-    public Object get(M message) {
-        Intrinsics.e(message, "message");
-        OneOf oneOf = (OneOf) this.messageField.get(message);
+    public Object get(M m) {
+        Intrinsics.e(m, "message");
+        OneOf oneOf = (OneOf) this.messageField.get(m);
         if (oneOf == null) {
             return null;
         }
@@ -51,9 +51,9 @@ public final class OneOfBinding<M extends Message<M, B>, B extends Message.Build
         return this.key.getDeclaredName();
     }
 
-    public Object getFromBuilder(B builder) {
-        Intrinsics.e(builder, "builder");
-        OneOf oneOf = (OneOf) this.builderField.get(builder);
+    public Object getFromBuilder(B b) {
+        Intrinsics.e(b, "builder");
+        OneOf oneOf = (OneOf) this.builderField.get(b);
         if (oneOf == null) {
             return null;
         }
@@ -68,11 +68,11 @@ public final class OneOfBinding<M extends Message<M, B>, B extends Message.Build
 
     @Override // com.squareup.wire.internal.FieldOrOneOfBinding
     public /* bridge */ /* synthetic */ ProtoAdapter getKeyAdapter() {
-        return (ProtoAdapter) m9771getKeyAdapter();
+        return (ProtoAdapter) m6725getKeyAdapter();
     }
 
     /* renamed from: getKeyAdapter  reason: collision with other method in class */
-    public Void m9771getKeyAdapter() {
+    public Void m6725getKeyAdapter() {
         throw new IllegalStateException("not a map".toString());
     }
 
@@ -122,12 +122,12 @@ public final class OneOfBinding<M extends Message<M, B>, B extends Message.Build
         return Message.class.isAssignableFrom(type == null ? null : JvmClassMappingKt.b(type));
     }
 
-    public void set(B builder, Object obj) {
-        Intrinsics.e(builder, "builder");
+    public void set(B b, Object obj) {
+        Intrinsics.e(b, "builder");
         Field field = this.builderField;
         OneOf.Key<?> key = this.key;
         Intrinsics.a(obj);
-        field.set(builder, new OneOf(key, obj));
+        field.set(b, new OneOf(key, obj));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -136,10 +136,10 @@ public final class OneOfBinding<M extends Message<M, B>, B extends Message.Build
         set((OneOfBinding<M, B>) ((Message.Builder) obj), obj2);
     }
 
-    public void value(B builder, Object value) {
-        Intrinsics.e(builder, "builder");
-        Intrinsics.e(value, "value");
-        set((OneOfBinding<M, B>) builder, value);
+    public void value(B b, Object obj) {
+        Intrinsics.e(b, "builder");
+        Intrinsics.e(obj, "value");
+        set((OneOfBinding<M, B>) b, obj);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

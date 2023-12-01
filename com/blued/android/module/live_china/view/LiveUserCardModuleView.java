@@ -18,13 +18,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveUserCardModuleView.class */
 public final class LiveUserCardModuleView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14945a;
+    private Context a;
     private RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveUserCardModuleAdapter f14946c;
+    private LiveUserCardModuleAdapter c;
     private LiveRoomUserModel d;
     private String e;
 
@@ -45,13 +41,13 @@ public final class LiveUserCardModuleView extends LinearLayout {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
         this.e = "";
-        this.f14945a = context;
+        this.a = context;
         a();
     }
 
     public final void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.live_user_card_label_view, this);
-        this.b = (RecyclerView) findViewById(R.id.rv_view);
+        this.b = findViewById(R.id.rv_view);
         ArrayList arrayList = new ArrayList();
         LiveUserCardMouleModel liveUserCardMouleModel = new LiveUserCardMouleModel();
         liveUserCardMouleModel.setColor_start("#987656");
@@ -72,7 +68,7 @@ public final class LiveUserCardModuleView extends LinearLayout {
             return;
         }
         setVisibility(0);
-        this.f14946c = new LiveUserCardModuleAdapter(this.f14945a, list, str);
+        this.c = new LiveUserCardModuleAdapter(this.a, list, str);
         RecyclerView recyclerView = this.b;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
@@ -81,15 +77,15 @@ public final class LiveUserCardModuleView extends LinearLayout {
         if (recyclerView2 == null) {
             return;
         }
-        recyclerView2.setAdapter(this.f14946c);
+        recyclerView2.setAdapter(this.c);
     }
 
     public final LiveUserCardModuleAdapter getAdapter() {
-        return this.f14946c;
+        return this.c;
     }
 
     public final Context getMContext() {
-        return this.f14945a;
+        return this.a;
     }
 
     public final LiveRoomUserModel getModel() {
@@ -105,11 +101,11 @@ public final class LiveUserCardModuleView extends LinearLayout {
     }
 
     public final void setAdapter(LiveUserCardModuleAdapter liveUserCardModuleAdapter) {
-        this.f14946c = liveUserCardModuleAdapter;
+        this.c = liveUserCardModuleAdapter;
     }
 
     public final void setMContext(Context context) {
-        this.f14945a = context;
+        this.a = context;
     }
 
     public final void setModel(LiveRoomUserModel liveRoomUserModel) {

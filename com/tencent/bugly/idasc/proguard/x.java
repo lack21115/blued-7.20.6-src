@@ -3,7 +3,6 @@ package com.tencent.bugly.idasc.proguard;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.List;
 
@@ -11,18 +10,18 @@ import java.util.List;
 public final class x extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f35351a = "bugly_db";
+    public static String f21660a = "bugly_db";
     public static int b = 16;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Context f35352c;
+    protected Context f21661c;
     private List<o> d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public x(Context context, List<o> list) {
-        super(context, f35351a + BridgeUtil.UNDERLINE_STR, null, b);
+        super(context, f21660a + "_", null, b);
         aa.a(context).getClass();
-        this.f35352c = context;
+        this.f21661c = context;
         this.d = list;
     }
 
@@ -155,7 +154,7 @@ public final class x extends SQLiteOpenHelper {
                     return;
                 }
                 al.d("[Database] Failed to drop, delete db.", new Object[0]);
-                File databasePath = this.f35352c.getDatabasePath(f35351a);
+                File databasePath = this.f21661c.getDatabasePath(f21660a);
                 if (databasePath != null && databasePath.canWrite()) {
                     databasePath.delete();
                 }
@@ -177,7 +176,7 @@ public final class x extends SQLiteOpenHelper {
                 return;
             }
             al.d("[Database] Failed to drop, delete db.", new Object[0]);
-            File databasePath = this.f35352c.getDatabasePath(f35351a);
+            File databasePath = this.f21661c.getDatabasePath(f21660a);
             if (databasePath != null && databasePath.canWrite()) {
                 databasePath.delete();
             }

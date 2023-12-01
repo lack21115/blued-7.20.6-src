@@ -2,6 +2,7 @@ package com.anythink.core.common.e;
 
 import android.text.TextUtils;
 import com.anythink.core.c.d;
+import com.anythink.core.common.c.l;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/ah.class */
@@ -28,9 +29,7 @@ public abstract class ah {
     public static final String ah = "2";
     public static final String ai = "3";
     public static final String aj = "4";
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f6631a;
+    private String a;
     protected String ak;
     protected String al;
     protected String am;
@@ -38,17 +37,13 @@ public abstract class ah {
     public String ao;
     public int ap;
     public int aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    protected String f6632ar;
+    protected String ar;
     protected int as;
     protected int at;
     protected int au;
     protected int av = -1;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f6633c;
+    private int c;
 
     private int a() {
         return this.au;
@@ -89,7 +84,7 @@ public abstract class ah {
             jSONObject.put("pl_id", this.ak);
             jSONObject.put("req_id", this.al);
             if (!TextUtils.isEmpty(this.am)) {
-                jSONObject.put("format", Integer.parseInt(this.am));
+                jSONObject.put(l.a.b, Integer.parseInt(this.am));
             }
             jSONObject.put("ps_id", com.anythink.core.common.b.n.a().r());
             String g = com.anythink.core.common.b.n.a().g(this.ak);
@@ -105,7 +100,7 @@ public abstract class ah {
                 jSONObject.put(com.anythink.core.common.g.c.M, this.au);
             }
             jSONObject.put("asid", this.an);
-            jSONObject.put(d.a.U, this.f6631a);
+            jSONObject.put(d.a.U, this.a);
             jSONObject.put(com.anythink.core.common.g.c.am, this.b);
             return jSONObject;
         } catch (Exception e) {
@@ -115,7 +110,7 @@ public abstract class ah {
     }
 
     public final void B(int i) {
-        this.f6633c = i;
+        this.c = i;
     }
 
     public final void C(int i) {
@@ -131,11 +126,11 @@ public abstract class ah {
     }
 
     public final int O() {
-        return this.f6633c;
+        return this.c;
     }
 
     public final String P() {
-        return this.f6631a;
+        return this.a;
     }
 
     public final String Q() {
@@ -151,7 +146,7 @@ public abstract class ah {
     }
 
     public final String T() {
-        return this.f6632ar;
+        return this.ar;
     }
 
     public final int U() {
@@ -218,11 +213,11 @@ public abstract class ah {
                 z = true;
                 break;
         }
-        return z ? !z ? !z ? !z ? !z ? "none" : com.anythink.expressad.foundation.g.a.f.f : "inter" : "banner" : "reward" : com.anythink.expressad.foundation.g.a.f.f7832a;
+        return z ? !z ? !z ? !z ? !z ? "none" : "splash" : "inter" : "banner" : "reward" : "native";
     }
 
     public final void t(String str) {
-        this.f6631a = str;
+        this.a = str;
     }
 
     public final void u(String str) {
@@ -230,7 +225,7 @@ public abstract class ah {
     }
 
     public final void v(String str) {
-        this.f6632ar = str;
+        this.ar = str;
     }
 
     public final void w(String str) {

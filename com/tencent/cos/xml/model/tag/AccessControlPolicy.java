@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/AccessControlPolicy.class */
@@ -23,7 +22,7 @@ public class AccessControlPolicy {
                     }
                 }
             }
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -43,7 +42,7 @@ public class AccessControlPolicy {
             sb.append("Permission:");
             sb.append(this.permission);
             sb.append("\n");
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -55,7 +54,7 @@ public class AccessControlPolicy {
         public String uri;
 
         public String toString() {
-            return "{Grantee:\nURI:" + this.uri + "\nId:" + this.id + "\nDisplayName:" + this.displayName + "\n" + i.d;
+            return "{Grantee:\nURI:" + this.uri + "\nId:" + this.id + "\nDisplayName:" + this.displayName + "\n}";
         }
     }
 
@@ -65,7 +64,7 @@ public class AccessControlPolicy {
         public String id;
 
         public String toString() {
-            return "{Owner:\nId:" + this.id + "\nDisplayName:" + this.displayName + "\n" + i.d;
+            return "{Owner:\nId:" + this.id + "\nDisplayName:" + this.displayName + "\n}";
         }
     }
 
@@ -81,7 +80,7 @@ public class AccessControlPolicy {
             sb.append(accessControlList.toString());
             sb.append("\n");
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

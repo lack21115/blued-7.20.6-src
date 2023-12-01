@@ -17,21 +17,21 @@ import java.util.concurrent.atomic.AtomicReference;
 public class c extends e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f25421a = new int[0];
+    private static final int[] f11733a = new int[0];
     private final f.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final AtomicReference<a> f25422c;
+    private final AtomicReference<a> f11734c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/g/c$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final a f25423a = new a();
+        public static final a f11735a = new a();
         public final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final String f25424c;
+        public final String f11736c;
         public final boolean d;
         public final int e;
         public final int f;
@@ -52,7 +52,7 @@ public class c extends e {
 
         private a(String str, String str2, boolean z, int i, boolean z2, boolean z3, boolean z4, int i2, int i3, int i4, boolean z5, boolean z6, int i5, int i6, boolean z7) {
             this.b = u.b(str);
-            this.f25424c = u.b(str2);
+            this.f11736c = u.b(str2);
             this.d = z;
             this.e = i;
             this.m = z2;
@@ -105,7 +105,7 @@ public class c extends e {
                                                                     if (this.h == aVar.h) {
                                                                         z = false;
                                                                         if (TextUtils.equals(this.b, aVar.b)) {
-                                                                            if (!TextUtils.equals(this.f25424c, aVar.f25424c)) {
+                                                                            if (!TextUtils.equals(this.f11736c, aVar.f11736c)) {
                                                                                 return false;
                                                                             }
                                                                         }
@@ -140,16 +140,16 @@ public class c extends e {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25425a;
+        public final int f11737a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final String f25426c;
+        public final String f11738c;
 
         public b(int i, int i2, String str) {
-            this.f25425a = i;
+            this.f11737a = i;
             this.b = i2;
-            this.f25426c = str;
+            this.f11738c = str;
         }
 
         public boolean equals(Object obj) {
@@ -162,10 +162,10 @@ public class c extends e {
                     }
                     b bVar = (b) obj;
                     z = false;
-                    if (this.f25425a == bVar.f25425a) {
+                    if (this.f11737a == bVar.f11737a) {
                         z = false;
                         if (this.b == bVar.b) {
-                            if (!TextUtils.equals(this.f25426c, bVar.f25426c)) {
+                            if (!TextUtils.equals(this.f11738c, bVar.f11738c)) {
                                 return false;
                             }
                         }
@@ -178,9 +178,9 @@ public class c extends e {
         }
 
         public int hashCode() {
-            int i = this.f25425a;
+            int i = this.f11737a;
             int i2 = this.b;
-            String str = this.f25426c;
+            String str = this.f11738c;
             return (str != null ? str.hashCode() : 0) + (((i * 31) + i2) * 31);
         }
     }
@@ -188,51 +188,51 @@ public class c extends e {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.exoplayer.core.g.c$c  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/g/c$c.class */
-    public static final class C0666c implements Comparable<C0666c> {
+    public static final class C0496c implements Comparable<C0496c> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final a f25427a;
+        private final a f11739a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f25428c;
+        private final int f11740c;
         private final int d;
         private final int e;
         private final int f;
         private final int g;
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
-        public C0666c(Format format, a aVar, int i) {
+        public C0496c(Format format, a aVar, int i) {
             throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge I and Z\r\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.copyTypes(TypeTransformer.java:311)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.fixTypes(TypeTransformer.java:226)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:207)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\r\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\r\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\r\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\r\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\r\n");
         }
 
         @Override // java.lang.Comparable
         /* renamed from: a */
-        public int compareTo(C0666c c0666c) {
+        public int compareTo(C0496c c0496c) {
             int c2;
             int i = this.b;
-            int i2 = c0666c.b;
+            int i2 = c0496c.b;
             if (i == i2) {
-                i = this.f25428c;
-                i2 = c0666c.f25428c;
+                i = this.f11740c;
+                i2 = c0496c.f11740c;
                 if (i == i2) {
                     i = this.d;
-                    i2 = c0666c.d;
+                    i2 = c0496c.d;
                     if (i == i2) {
-                        if (this.f25427a.m) {
-                            return c.c(c0666c.g, this.g);
+                        if (this.f11739a.m) {
+                            return c.c(c0496c.g, this.g);
                         }
                         int i3 = 1;
                         if (this.b != 1) {
                             i3 = -1;
                         }
                         int i4 = this.e;
-                        int i5 = c0666c.e;
+                        int i5 = c0496c.e;
                         if (i4 == i5) {
                             i4 = this.f;
-                            i5 = c0666c.f;
+                            i5 = c0496c.f;
                             if (i4 == i5) {
-                                c2 = c.c(this.g, c0666c.g);
+                                c2 = c.c(this.g, c0496c.g);
                                 return c2 * i3;
                             }
                         }
@@ -252,18 +252,18 @@ public class c extends e {
                     if (getClass() != obj.getClass()) {
                         return false;
                     }
-                    C0666c c0666c = (C0666c) obj;
+                    C0496c c0496c = (C0496c) obj;
                     z = false;
-                    if (this.b == c0666c.b) {
+                    if (this.b == c0496c.b) {
                         z = false;
-                        if (this.f25428c == c0666c.f25428c) {
+                        if (this.f11740c == c0496c.f11740c) {
                             z = false;
-                            if (this.d == c0666c.d) {
+                            if (this.d == c0496c.d) {
                                 z = false;
-                                if (this.e == c0666c.e) {
+                                if (this.e == c0496c.e) {
                                     z = false;
-                                    if (this.f == c0666c.f) {
-                                        if (this.g != c0666c.g) {
+                                    if (this.f == c0496c.f) {
+                                        if (this.g != c0496c.g) {
                                             return false;
                                         }
                                     }
@@ -279,7 +279,7 @@ public class c extends e {
         }
 
         public int hashCode() {
-            return (((((((((this.b * 31) + this.f25428c) * 31) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g;
+            return (((((((((this.b * 31) + this.f11740c) * 31) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g;
         }
     }
 
@@ -289,7 +289,7 @@ public class c extends e {
 
     public c(f.a aVar) {
         this.b = aVar;
-        this.f25422c = new AtomicReference<>(a.f25423a);
+        this.f11734c = new AtomicReference<>(a.f11735a);
     }
 
     private static int a(l lVar, int[] iArr, int i, String str, int i2, int i3, int i4, List<Integer> list) {
@@ -315,7 +315,7 @@ public class c extends e {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i >= lVar.f25309a) {
+            if (i >= lVar.f11621a) {
                 return i3;
             }
             int i4 = i3;
@@ -402,12 +402,12 @@ public class c extends e {
 
     private static List<Integer> a(l lVar, int i, int i2, boolean z) {
         int i3;
-        ArrayList arrayList = new ArrayList(lVar.f25309a);
+        ArrayList arrayList = new ArrayList(lVar.f11621a);
         int i4 = 0;
         int i5 = 0;
         while (true) {
             int i6 = i5;
-            if (i6 >= lVar.f25309a) {
+            if (i6 >= lVar.f11621a) {
                 break;
             }
             arrayList.add(Integer.valueOf(i6));
@@ -420,7 +420,7 @@ public class c extends e {
             int i7 = Integer.MAX_VALUE;
             while (true) {
                 i3 = i7;
-                if (i4 >= lVar.f25309a) {
+                if (i4 >= lVar.f11621a) {
                     break;
                 }
                 Format a2 = lVar.a(i4);
@@ -472,11 +472,11 @@ public class c extends e {
     }
 
     protected static boolean a(Format format) {
-        return TextUtils.isEmpty(format.y) || a(format, com.anythink.expressad.exoplayer.b.f7166ar);
+        return TextUtils.isEmpty(format.y) || a(format, com.anythink.expressad.exoplayer.b.f4327ar);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x003f, code lost:
-        if (android.text.TextUtils.equals(r5.f25426c, r3.f) != false) goto L11;
+        if (android.text.TextUtils.equals(r5.f11738c, r3.f) != false) goto L11;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -497,7 +497,7 @@ public class c extends e {
             r0 = r3
             int r0 = r0.r
             r1 = r5
-            int r1 = r1.f25425a
+            int r1 = r1.f11737a
             if (r0 != r1) goto L44
             r0 = r7
             r6 = r0
@@ -507,12 +507,12 @@ public class c extends e {
             int r1 = r1.b
             if (r0 != r1) goto L44
             r0 = r5
-            java.lang.String r0 = r0.f25426c
+            java.lang.String r0 = r0.f11738c
             if (r0 == 0) goto L42
             r0 = r7
             r6 = r0
             r0 = r5
-            java.lang.String r0 = r0.f25426c
+            java.lang.String r0 = r0.f11738c
             r1 = r3
             java.lang.String r1 = r1.f
             boolean r0 = android.text.TextUtils.equals(r0, r1)
@@ -621,7 +621,7 @@ public class c extends e {
         b bVar = null;
         int i = 0;
         int i2 = 0;
-        while (i < lVar.f25309a) {
+        while (i < lVar.f11621a) {
             Format a2 = lVar.a(i);
             b bVar2 = new b(a2.r, a2.s, z ? null : a2.f);
             int i3 = i2;
@@ -645,7 +645,7 @@ public class c extends e {
             int i5 = 0;
             while (true) {
                 iArr2 = iArr3;
-                if (i5 >= lVar.f25309a) {
+                if (i5 >= lVar.f11621a) {
                     break;
                 }
                 int i6 = i4;
@@ -657,14 +657,14 @@ public class c extends e {
                 i4 = i6;
             }
         } else {
-            iArr2 = f25421a;
+            iArr2 = f11733a;
         }
         return iArr2;
     }
 
     private static int[] a(l lVar, int[] iArr, boolean z, int i, int i2, int i3, int i4, int i5, int i6, boolean z2) {
         String str;
-        if (lVar.f25309a >= 2) {
+        if (lVar.f11621a >= 2) {
             List<Integer> a2 = a(lVar, i5, i6, z2);
             if (a2.size() >= 2) {
                 if (!z) {
@@ -702,7 +702,7 @@ public class c extends e {
                 }
             }
         }
-        return f25421a;
+        return f11733a;
     }
 
     private static int b(int i, int i2) {
@@ -731,7 +731,7 @@ public class c extends e {
             List<Integer> a3 = a(a2, aVar.j, aVar.k, aVar.l);
             int[] iArr2 = iArr[i5];
             int i6 = 0;
-            while (i6 < a2.f25309a) {
+            while (i6 < a2.f11621a) {
                 l lVar2 = lVar;
                 int i7 = i;
                 int i8 = i2;
@@ -853,7 +853,7 @@ public class c extends e {
             l a2 = mVar.a(i4);
             int[] iArr2 = iArr[i4];
             int i5 = 0;
-            while (i5 < a2.f25309a) {
+            while (i5 < a2.f11621a) {
                 l lVar2 = lVar;
                 int i6 = i2;
                 int i7 = i3;
@@ -890,34 +890,34 @@ public class c extends e {
     }
 
     protected f a(m mVar, int[][] iArr, a aVar, f.a aVar2) {
-        C0666c c0666c = null;
+        C0496c c0496c = null;
         int i = -1;
         int i2 = -1;
         for (int i3 = 0; i3 < mVar.b; i3++) {
             l a2 = mVar.a(i3);
             int[] iArr2 = iArr[i3];
             int i4 = 0;
-            while (i4 < a2.f25309a) {
+            while (i4 < a2.f11621a) {
                 int i5 = i;
                 int i6 = i2;
-                C0666c c0666c2 = c0666c;
+                C0496c c0496c2 = c0496c;
                 if (a(iArr2[i4], aVar.p)) {
-                    C0666c c0666c3 = new C0666c(a2.a(i4), aVar, iArr2[i4]);
-                    if (c0666c != null) {
+                    C0496c c0496c3 = new C0496c(a2.a(i4), aVar, iArr2[i4]);
+                    if (c0496c != null) {
                         i5 = i;
                         i6 = i2;
-                        c0666c2 = c0666c;
-                        if (c0666c3.compareTo(c0666c) <= 0) {
+                        c0496c2 = c0496c;
+                        if (c0496c3.compareTo(c0496c) <= 0) {
                         }
                     }
                     i5 = i3;
                     i6 = i4;
-                    c0666c2 = c0666c3;
+                    c0496c2 = c0496c3;
                 }
                 i4++;
                 i = i5;
                 i2 = i6;
-                c0666c = c0666c2;
+                c0496c = c0496c2;
             }
         }
         if (i == -1) {
@@ -949,7 +949,7 @@ public class c extends e {
         boolean z3;
         int length = tVarArr.length;
         f[] fVarArr = new f[length];
-        a aVar = this.f25422c.get();
+        a aVar = this.f11734c.get();
         boolean z4 = false;
         int i = 0;
         boolean z5 = false;

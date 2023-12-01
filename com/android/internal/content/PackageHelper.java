@@ -9,7 +9,6 @@ import android.os.ServiceManager;
 import android.os.storage.IMountService;
 import android.util.Log;
 import com.android.internal.content.NativeLibraryHelper;
-import com.tencent.tinker.loader.shareutil.ShareConstants;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -129,7 +128,7 @@ public class PackageHelper {
             while (it.hasNext()) {
                 ZipEntry zipEntry = (ZipEntry) it.next();
                 String name = zipEntry.getName();
-                if (ShareConstants.RES_MANIFEST.equals(name) || ShareConstants.RES_ARSC.equals(name) || name.startsWith("res/")) {
+                if ("AndroidManifest.xml".equals(name) || "resources.arsc".equals(name) || name.startsWith("res/")) {
                     long size = j + zipEntry.getSize();
                     j = size;
                     if (file2 != null) {
@@ -229,8 +228,8 @@ public class PackageHelper {
     }
 
     public static boolean isExternalInstallPossible() {
-        if (Environment.isExternalStorageEmulated() || !Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-            return Environment.isNoEmulatedStorageExist() && Environment.MEDIA_MOUNTED.equals(Environment.getSecondaryStorageState());
+        if (Environment.isExternalStorageEmulated() || !"mounted".equals(Environment.getExternalStorageState())) {
+            return Environment.isNoEmulatedStorageExist() && "mounted".equals(Environment.getSecondaryStorageState());
         }
         return true;
     }

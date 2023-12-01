@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class AreacodeListItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28678a;
+    private final LinearLayout f14988a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28678a;
+        return this.f14988a;
     }
 }

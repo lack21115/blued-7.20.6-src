@@ -16,11 +16,11 @@ import java.util.Stack;
 public class ha {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f37521a = 4096;
+    private static final int f23830a = 4096;
 
     public static int a(byte[] bArr, File file, boolean z) {
-        OutputStream outputStream;
         FileOutputStream fileOutputStream;
+        FileOutputStream fileOutputStream2;
         if (bArr == null || bArr.length == 0 || file == null || file.isDirectory()) {
             return 0;
         }
@@ -28,27 +28,27 @@ public class ha {
             if (!file.exists()) {
                 file.createNewFile();
             }
-            fileOutputStream = new FileOutputStream(file, z);
+            fileOutputStream2 = new FileOutputStream(file, z);
             try {
-                fileOutputStream.write(bArr);
-                fileOutputStream.flush();
+                fileOutputStream2.write(bArr);
+                fileOutputStream2.flush();
                 int length = bArr.length;
-                a(fileOutputStream);
+                a(fileOutputStream2);
                 return length;
             } catch (IOException e) {
-                a(fileOutputStream);
+                a(fileOutputStream2);
                 return 0;
             } catch (Throwable th) {
-                outputStream = fileOutputStream;
+                fileOutputStream = fileOutputStream2;
                 th = th;
-                a(outputStream);
+                a(fileOutputStream);
                 throw th;
             }
         } catch (IOException e2) {
-            fileOutputStream = null;
+            fileOutputStream2 = null;
         } catch (Throwable th2) {
             th = th2;
-            outputStream = null;
+            fileOutputStream = null;
         }
     }
 

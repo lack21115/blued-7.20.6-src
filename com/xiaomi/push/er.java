@@ -8,28 +8,28 @@ import java.util.concurrent.ConcurrentHashMap;
 public class er {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Vector<Pair<String, Long>> f41382a = new Vector<>();
+    private static Vector<Pair<String, Long>> f27691a = new Vector<>();
 
     /* renamed from: a  reason: collision with other field name */
-    private static ConcurrentHashMap<String, Long> f403a = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, Long> f356a = new ConcurrentHashMap<>();
 
     public static String a() {
         StringBuilder sb = new StringBuilder();
-        synchronized (f41382a) {
+        synchronized (f27691a) {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 < f41382a.size()) {
-                    Pair<String, Long> elementAt = f41382a.elementAt(i2);
+                if (i2 < f27691a.size()) {
+                    Pair<String, Long> elementAt = f27691a.elementAt(i2);
                     sb.append(elementAt.first);
                     sb.append(":");
                     sb.append(elementAt.second);
-                    if (i2 < f41382a.size() - 1) {
-                        sb.append(";");
+                    if (i2 < f27691a.size() - 1) {
+                        sb.append(com.huawei.openalliance.ad.constant.t.aE);
                     }
                     i = i2 + 1;
                 } else {
-                    f41382a.clear();
+                    f27691a.clear();
                 }
             }
         }

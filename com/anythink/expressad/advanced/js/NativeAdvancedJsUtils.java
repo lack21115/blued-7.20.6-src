@@ -20,11 +20,11 @@ import org.json.JSONObject;
 public class NativeAdvancedJsUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7046a = "onViewDisappeared";
+    public static final String f4208a = "onViewDisappeared";
     public static final String b = "onViewAppeared";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7047c = "onSystemDestory";
+    public static final String f4209c = "onSystemDestory";
     public static final String d = "setStyleList";
     public static final String e = "params";
     public static final String f = "showCloseButton";

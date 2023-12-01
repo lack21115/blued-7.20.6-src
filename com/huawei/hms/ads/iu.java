@@ -10,7 +10,7 @@ public enum iu implements it {
     LOADED("loaded"),
     BEGIN_TO_RENDER("beginToRender"),
     ONE_PIXEL("onePixel"),
-    VIEWABLE(CallMraidJS.f7086c),
+    VIEWABLE(CallMraidJS.f4248c),
     AUDIBLE("audible"),
     OTHER("other");
     

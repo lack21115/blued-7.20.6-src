@@ -10,16 +10,16 @@ import java.io.File;
 class c extends ContextWrapper {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f40677a;
+    private String f26986a;
 
     public c(Context context, String str) {
         super(context);
-        this.f40677a = str;
+        this.f26986a = str;
     }
 
     @Override // android.content.ContextWrapper, android.content.Context
     public File getDatabasePath(String str) {
-        File file = new File(this.f40677a + str);
+        File file = new File(this.f26986a + str);
         if (!file.getParentFile().exists() && !file.getParentFile().isDirectory()) {
             file.getParentFile().mkdirs();
         }

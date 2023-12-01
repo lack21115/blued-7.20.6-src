@@ -1,6 +1,5 @@
 package com.j256.ormlite.field;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.j256.ormlite.db.DatabaseType;
 import com.j256.ormlite.field.types.VoidType;
 import com.j256.ormlite.misc.JavaxPersistence;
@@ -130,9 +129,9 @@ public class DatabaseFieldConfig {
 
     private String findIndexName(String str) {
         if (this.columnName == null) {
-            return str + BridgeUtil.UNDERLINE_STR + this.fieldName + "_idx";
+            return str + "_" + this.fieldName + "_idx";
         }
-        return str + BridgeUtil.UNDERLINE_STR + this.columnName + "_idx";
+        return str + "_" + this.columnName + "_idx";
     }
 
     public static Enum<?> findMatchingEnumVal(Field field, String str) {

@@ -8,10 +8,10 @@ import java.util.List;
 public class c implements com.tencent.cloud.huiyansdkface.a.a.g<String> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f35539a;
+    private Context f21848a;
 
     public c(Context context) {
-        this.f35539a = context;
+        this.f21848a = context;
     }
 
     @Override // com.tencent.cloud.huiyansdkface.a.a.g
@@ -27,6 +27,6 @@ public class c implements com.tencent.cloud.huiyansdkface.a.a.g<String> {
     public boolean a() {
         Intent intent = new Intent();
         intent.setClassName("com.gionee.account", "com.gionee.account.activity.LoginActivity");
-        return this.f35539a.getPackageManager().queryIntentActivities(intent, 65536).size() > 0;
+        return this.f21848a.getPackageManager().queryIntentActivities(intent, 65536).size() > 0;
     }
 }

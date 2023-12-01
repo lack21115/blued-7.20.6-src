@@ -8,19 +8,17 @@ import java.lang.reflect.Proxy;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/toast/NotificationToast.class */
 public class NotificationToast extends SystemToast {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f9753a;
+    private static boolean a;
 
     public NotificationToast(Application application) {
         super(application);
     }
 
     private static void a() {
-        if (f9753a) {
+        if (a) {
             return;
         }
-        f9753a = true;
+        a = true;
         try {
             Method declaredMethod = Toast.class.getDeclaredMethod("getService", new Class[0]);
             declaredMethod.setAccessible(true);

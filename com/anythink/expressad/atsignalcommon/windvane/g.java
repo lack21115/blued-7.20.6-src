@@ -8,13 +8,13 @@ import com.bytedance.applog.tracker.Tracker;
 public final class g implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static g f7104a = new g();
+    private static g f4266a = new g();
 
     private g() {
     }
 
     private static g a() {
-        return f7104a;
+        return f4266a;
     }
 
     private static void a(WebView webView, String str, String str2) {
@@ -35,9 +35,9 @@ public final class g implements b {
         if (obj instanceof a) {
             a aVar = (a) obj;
             String format = TextUtils.isEmpty(str) ? String.format("javascript:window.OW.onSuccess(%s,'');", aVar.g) : String.format("javascript:window.OW.onSuccess(%s,'%s');", aVar.g, n.c(str));
-            if (aVar.f7101a != null) {
+            if (aVar.f4263a != null) {
                 try {
-                    aVar.f7101a.loadUrl(format);
+                    aVar.f4263a.loadUrl(format);
                 } catch (Exception e) {
                     e.printStackTrace();
                 } catch (Throwable th) {
@@ -52,9 +52,9 @@ public final class g implements b {
         if (obj instanceof a) {
             a aVar = (a) obj;
             String format = TextUtils.isEmpty(str2) ? String.format("javascript:window.MvBridge.fireEvent('%s', '');", str) : String.format("javascript:window.MvBridge.fireEvent('%s','%s');", str, n.c(str2));
-            if (aVar.f7101a != null) {
+            if (aVar.f4263a != null) {
                 try {
-                    aVar.f7101a.loadUrl(format);
+                    aVar.f4263a.loadUrl(format);
                 } catch (Exception e) {
                     e.printStackTrace();
                 } catch (Throwable th) {
@@ -74,9 +74,9 @@ public final class g implements b {
                 str = n.c(str);
             }
             String format = String.format("javascript:window.MvBridge.onFailure(%s,'%s');", aVar.g, str);
-            if (aVar.f7101a != null) {
+            if (aVar.f4263a != null) {
                 try {
-                    aVar.f7101a.loadUrl(format);
+                    aVar.f4263a.loadUrl(format);
                 } catch (Exception e) {
                     e.printStackTrace();
                 } catch (Throwable th) {

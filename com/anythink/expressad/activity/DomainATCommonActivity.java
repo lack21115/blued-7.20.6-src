@@ -18,11 +18,11 @@ public class DomainATCommonActivity extends Activity {
     private static final String b = "ATCommonActivity";
 
     /* renamed from: c  reason: collision with root package name */
-    private c f6987c;
+    private c f4149c;
     private BrowserView d;
 
     /* renamed from: a  reason: collision with root package name */
-    String f6986a = "";
+    String f4148a = "";
     private BrowserView.a e = new BrowserView.a() { // from class: com.anythink.expressad.activity.DomainATCommonActivity.1
         @Override // com.anythink.expressad.foundation.webview.BrowserView.a
         public final void a() {
@@ -45,16 +45,16 @@ public class DomainATCommonActivity extends Activity {
 
     private void a() {
         String stringExtra = getIntent().getStringExtra("url");
-        this.f6986a = stringExtra;
+        this.f4148a = stringExtra;
         if (TextUtils.isEmpty(stringExtra)) {
             Toast.makeText(this, "Error: no data", 0).show();
             return;
         }
-        this.f6987c = (c) getIntent().getSerializableExtra("mvcommon");
-        BrowserView browserView = new BrowserView(this, this.f6987c);
+        this.f4149c = (c) getIntent().getSerializableExtra("mvcommon");
+        BrowserView browserView = new BrowserView(this, this.f4149c);
         this.d = browserView;
         browserView.setListener(this.e);
-        this.d.loadUrl(this.f6986a);
+        this.d.loadUrl(this.f4148a);
         BrowserView browserView2 = this.d;
         if (browserView2 != null) {
             setContentView(browserView2);
@@ -94,16 +94,16 @@ public class DomainATCommonActivity extends Activity {
             a.b().a(getApplicationContext());
         }
         String stringExtra = getIntent().getStringExtra("url");
-        this.f6986a = stringExtra;
+        this.f4148a = stringExtra;
         if (TextUtils.isEmpty(stringExtra)) {
             Toast.makeText(this, "Error: no data", 0).show();
             return;
         }
-        this.f6987c = (c) getIntent().getSerializableExtra("mvcommon");
-        BrowserView browserView = new BrowserView(this, this.f6987c);
+        this.f4149c = (c) getIntent().getSerializableExtra("mvcommon");
+        BrowserView browserView = new BrowserView(this, this.f4149c);
         this.d = browserView;
         browserView.setListener(this.e);
-        this.d.loadUrl(this.f6986a);
+        this.d.loadUrl(this.f4148a);
         BrowserView browserView2 = this.d;
         if (browserView2 != null) {
             setContentView(browserView2);

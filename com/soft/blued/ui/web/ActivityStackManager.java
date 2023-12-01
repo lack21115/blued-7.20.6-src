@@ -11,7 +11,7 @@ public class ActivityStackManager {
     private static ActivityStackManager b = new ActivityStackManager();
 
     /* renamed from: a  reason: collision with root package name */
-    private Stack<WeakReference<Activity>> f34473a;
+    private Stack<WeakReference<Activity>> f20782a;
 
     private ActivityStackManager() {
     }
@@ -24,15 +24,15 @@ public class ActivityStackManager {
     }
 
     public void a(WeakReference<Activity> weakReference) {
-        if (this.f34473a == null) {
-            this.f34473a = new Stack<>();
+        if (this.f20782a == null) {
+            this.f20782a = new Stack<>();
         }
-        this.f34473a.add(weakReference);
+        this.f20782a.add(weakReference);
     }
 
     public void b() {
         try {
-            ListIterator<WeakReference<Activity>> listIterator = this.f34473a.listIterator();
+            ListIterator<WeakReference<Activity>> listIterator = this.f20782a.listIterator();
             while (listIterator.hasNext()) {
                 Activity activity = listIterator.next().get();
                 if (activity != null) {

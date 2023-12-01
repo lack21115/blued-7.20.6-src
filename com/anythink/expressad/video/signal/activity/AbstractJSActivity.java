@@ -94,7 +94,7 @@ public abstract class AbstractJSActivity extends ATBaseActivity implements IJSFa
     @Override // com.anythink.expressad.activity.ATBaseActivity, android.app.Activity
     public void onResume() {
         super.onResume();
-        if (com.anythink.expressad.foundation.f.b.f7818c) {
+        if (com.anythink.expressad.foundation.f.b.f4978c) {
             return;
         }
         if (getJSCommon().g()) {

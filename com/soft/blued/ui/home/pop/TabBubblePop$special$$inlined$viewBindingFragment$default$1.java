@@ -13,10 +13,9 @@ public final class TabBubblePop$special$$inlined$viewBindingFragment$default$1 e
         super(1);
     }
 
-    @Override // kotlin.jvm.functions.Function1
     /* renamed from: a */
-    public final PopTabBubbleBinding invoke(TabBubblePop popView) {
-        Intrinsics.e(popView, "popView");
-        return PopTabBubbleBinding.a(popView.getPopupImplView());
+    public final PopTabBubbleBinding invoke(TabBubblePop tabBubblePop) {
+        Intrinsics.e(tabBubblePop, "popView");
+        return PopTabBubbleBinding.a(tabBubblePop.getPopupImplView());
     }
 }

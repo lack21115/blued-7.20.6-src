@@ -4,9 +4,7 @@ import java.util.ArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/observer/LiveSysNetworkObserver.class */
 public class LiveSysNetworkObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static LiveSysNetworkObserver f15655a = new LiveSysNetworkObserver();
+    private static LiveSysNetworkObserver a = new LiveSysNetworkObserver();
     private ArrayList<ILiveSysNetworkObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/observer/LiveSysNetworkObserver$ILiveSysNetworkObserver.class */
@@ -17,7 +15,7 @@ public class LiveSysNetworkObserver {
     }
 
     public static LiveSysNetworkObserver a() {
-        return f15655a;
+        return a;
     }
 
     public void a(ILiveSysNetworkObserver iLiveSysNetworkObserver) {

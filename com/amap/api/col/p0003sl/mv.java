@@ -6,11 +6,7 @@ import java.util.Map;
 /* renamed from: com.amap.api.col.3sl.mv  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/mv.class */
 public final class mv {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f5393a;
+    public int a;
     public Map<String, List<String>> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public byte[] f5394c;
+    public byte[] c;
 }

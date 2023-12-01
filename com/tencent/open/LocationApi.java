@@ -35,11 +35,11 @@ import org.json.JSONObject;
 public class LocationApi extends BaseApi implements c.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private HandlerThread f38182a;
+    private HandlerThread f24491a;
     private Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Handler f38183c;
+    private Handler f24492c;
     private c d;
     private Bundle e;
     private IUiListener f;
@@ -97,16 +97,16 @@ public class LocationApi extends BaseApi implements c.a {
     public class b extends a {
 
         /* renamed from: c  reason: collision with root package name */
-        private IUiListener f38189c;
+        private IUiListener f24498c;
 
         public b(IUiListener iUiListener) {
             super();
-            this.f38189c = iUiListener;
+            this.f24498c = iUiListener;
         }
 
         @Override // com.tencent.open.LocationApi.a
         protected void a(Exception exc) {
-            IUiListener iUiListener = this.f38189c;
+            IUiListener iUiListener = this.f24498c;
             if (iUiListener != null) {
                 iUiListener.onError(new UiError(100, exc.getMessage(), null));
             }
@@ -114,7 +114,7 @@ public class LocationApi extends BaseApi implements c.a {
 
         @Override // com.tencent.tauth.IRequestListener
         public void onComplete(JSONObject jSONObject) {
-            IUiListener iUiListener = this.f38189c;
+            IUiListener iUiListener = this.f24498c;
             if (iUiListener != null) {
                 iUiListener.onComplete(jSONObject);
             }
@@ -135,10 +135,10 @@ public class LocationApi extends BaseApi implements c.a {
     private void a() {
         this.d = new c();
         HandlerThread handlerThread = new HandlerThread("get_location");
-        this.f38182a = handlerThread;
+        this.f24491a = handlerThread;
         handlerThread.start();
-        this.b = new Handler(this.f38182a.getLooper());
-        this.f38183c = new Handler(Global.getContext().getMainLooper()) { // from class: com.tencent.open.LocationApi.1
+        this.b = new Handler(this.f24491a.getLooper());
+        this.f24492c = new Handler(Global.getContext().getMainLooper()) { // from class: com.tencent.open.LocationApi.1
             @Override // android.os.Handler
             public void handleMessage(Message message) {
                 int i = message.what;
@@ -148,7 +148,7 @@ public class LocationApi extends BaseApi implements c.a {
                 } else if (i == 103) {
                     f.b("openSDK_LOG.LocationApi", "location: verify sosocode success.");
                     LocationApi.this.d.a(Global.getContext(), LocationApi.this);
-                    LocationApi.this.f38183c.sendEmptyMessageDelayed(101, 10000L);
+                    LocationApi.this.f24492c.sendEmptyMessageDelayed(101, 10000L);
                 } else if (i == 104) {
                     f.b("openSDK_LOG.LocationApi", "location: verify sosocode failed.");
                     LocationApi.this.a(-14, Constants.MSG_LOCATION_VERIFY_ERROR);
@@ -269,7 +269,7 @@ public class LocationApi extends BaseApi implements c.a {
     public void onLocationUpdate(Location location) {
         a(location);
         b();
-        this.f38183c.removeMessages(101);
+        this.f24492c.removeMessages(101);
     }
 
     public void searchNearby(Activity activity, Bundle bundle, IUiListener iUiListener) {
@@ -280,9 +280,9 @@ public class LocationApi extends BaseApi implements c.a {
                 @Override // java.lang.Runnable
                 public void run() {
                     if (LocationApi.this.d.a()) {
-                        Message.obtain(LocationApi.this.f38183c, 103).sendToTarget();
+                        Message.obtain(LocationApi.this.f24492c, 103).sendToTarget();
                     } else {
-                        Message.obtain(LocationApi.this.f38183c, 104).sendToTarget();
+                        Message.obtain(LocationApi.this.f24492c, 104).sendToTarget();
                     }
                 }
             });

@@ -30,11 +30,11 @@ public class jh extends hg<lc> implements jx<lc> {
     private Context S;
 
     /* renamed from: a  reason: collision with root package name */
-    private com.huawei.openalliance.ad.inter.data.t f22499a;
+    private com.huawei.openalliance.ad.inter.data.t f8891a;
     private Integer b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Integer f22500c;
+    private Integer f8892c;
     private Integer d;
     private boolean e = false;
     private String f;
@@ -223,7 +223,7 @@ public class jh extends hg<lc> implements jx<lc> {
 
     @Override // com.huawei.hms.ads.jx
     public void Code(com.huawei.openalliance.ad.inter.data.t tVar) {
-        this.f22499a = tVar;
+        this.f8891a = tVar;
     }
 
     @Override // com.huawei.hms.ads.jx
@@ -258,19 +258,19 @@ public class jh extends hg<lc> implements jx<lc> {
             this.C.V(Integer.valueOf(bannerSize.I()));
             this.C.I(Integer.valueOf(bannerSize.Z()));
         } else {
-            this.C.V(this.f22500c);
+            this.C.V(this.f8892c);
             this.C.I(this.d);
         }
         String str2 = this.f;
         if (str2 != null) {
             this.C.Z(str2);
         }
-        com.huawei.openalliance.ad.inter.data.t tVar = this.f22499a;
+        com.huawei.openalliance.ad.inter.data.t tVar = this.f8891a;
         if (tVar != null) {
             this.C.Code(tVar.Code());
-            this.C.Code(this.f22499a.V());
-            this.C.V(this.f22499a.I());
-            this.C.I(this.f22499a.Z());
+            this.C.Code(this.f8891a.V());
+            this.C.V(this.f8891a.I());
+            this.C.I(this.f8891a.Z());
         }
         this.C.Code(new com.huawei.openalliance.ad.inter.listeners.l() { // from class: com.huawei.hms.ads.jh.2
             @Override // com.huawei.openalliance.ad.inter.listeners.l
@@ -372,7 +372,7 @@ public class jh extends hg<lc> implements jx<lc> {
 
     @Override // com.huawei.hms.ads.jx
     public void V(Integer num) {
-        this.f22500c = num;
+        this.f8892c = num;
     }
 
     @Override // com.huawei.hms.ads.jx

@@ -39,7 +39,7 @@ public final class FitemMsgTextPlanet extends FitemMsgAboutUser {
             return;
         }
         if (e().msgMapExtra == null) {
-            View view = this.f10935a.itemView;
+            View view = this.a.itemView;
             Intrinsics.c(view, "viewHolder.itemView");
             BluedViewExKt.a(view);
             return;
@@ -89,7 +89,7 @@ public final class FitemMsgTextPlanet extends FitemMsgAboutUser {
             map.put("live_chat_frame_model", liveBubbleBgModel);
         }
         super.a(context, vh, list, i);
-        this.f10935a.d(R.id.live_msg_background_shade_root).c(R.id.live_msg_background_shade, R.drawable.live_planet_msg_background);
+        this.a.d(R.id.live_msg_background_shade_root).c(R.id.live_msg_background_shade, R.drawable.live_planet_msg_background);
         TextView textView = (TextView) vh.a(R.id.live_msg_content_text);
         if (textView == null) {
             return;

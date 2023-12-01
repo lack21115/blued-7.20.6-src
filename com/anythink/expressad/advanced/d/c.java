@@ -22,11 +22,11 @@ import org.json.JSONObject;
 public class c implements g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7031a = 1;
+    public static final int f4193a = 1;
     public static final int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7032c = 3;
+    public static final int f4194c = 3;
     private static String g = "NativeAdvancedProvider";
     private JSONObject C;
     private ATOutNativeAdvancedViewGroup E;
@@ -490,7 +490,6 @@ public class c implements g {
         }
     }
 
-    @Override // com.anythink.core.common.a.g
     public boolean isReady() {
         return false;
     }

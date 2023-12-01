@@ -7,14 +7,14 @@ import java.lang.Thread;
 public class p implements Thread.UncaughtExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private Thread.UncaughtExceptionHandler f40774a;
+    private Thread.UncaughtExceptionHandler f27083a;
     private t b;
 
     public p() {
         if (Thread.getDefaultUncaughtExceptionHandler() == this) {
             return;
         }
-        this.f40774a = Thread.getDefaultUncaughtExceptionHandler();
+        this.f27083a = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(this);
     }
 
@@ -33,10 +33,10 @@ public class p implements Thread.UncaughtExceptionHandler {
     @Override // java.lang.Thread.UncaughtExceptionHandler
     public void uncaughtException(Thread thread, Throwable th) {
         a(th);
-        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = this.f40774a;
+        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = this.f27083a;
         if (uncaughtExceptionHandler == null || uncaughtExceptionHandler == Thread.getDefaultUncaughtExceptionHandler()) {
             return;
         }
-        this.f40774a.uncaughtException(thread, th);
+        this.f27083a.uncaughtException(thread, th);
     }
 }

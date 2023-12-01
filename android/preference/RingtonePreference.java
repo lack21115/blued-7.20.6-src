@@ -1,5 +1,6 @@
 package android.preference;
 
+import android.R;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -8,7 +9,6 @@ import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/preference/RingtonePreference.class */
 public class RingtonePreference extends Preference implements PreferenceManager.OnActivityResultListener {
@@ -25,7 +25,7 @@ public class RingtonePreference extends Preference implements PreferenceManager.
     }
 
     public RingtonePreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842899);
+        this(context, attributeSet, R.attr.ringtonePreferenceStyle);
     }
 
     public RingtonePreference(Context context, AttributeSet attributeSet, int i) {
@@ -35,7 +35,7 @@ public class RingtonePreference extends Preference implements PreferenceManager.
     public RingtonePreference(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
         this.mSubscriptionID = 0;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.RingtonePreference, i, i2);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, com.android.internal.R.styleable.RingtonePreference, i, i2);
         this.mRingtoneType = obtainStyledAttributes.getInt(0, 1);
         this.mShowDefault = obtainStyledAttributes.getBoolean(1, true);
         this.mShowSilent = obtainStyledAttributes.getBoolean(2, true);

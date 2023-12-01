@@ -16,8 +16,8 @@ public final class cj extends bz {
 
     @Override // com.amap.api.col.p0003sl.ca
     public final void c() {
-        b(this.b.f4757c);
-        this.b.a(this.b.f4757c);
+        b(this.b.c);
+        this.b.a(this.b.c);
         this.b.c().h();
     }
 

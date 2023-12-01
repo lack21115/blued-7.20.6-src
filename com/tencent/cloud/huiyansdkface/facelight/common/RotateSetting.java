@@ -13,11 +13,11 @@ import java.io.ByteArrayOutputStream;
 public class RotateSetting {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35587a = RotateSetting.class.getSimpleName();
+    private static final String f21896a = RotateSetting.class.getSimpleName();
     private static int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f35588c = -1;
+    private static int f21897c = -1;
 
     public static byte[] Nv21MirrorCenter(byte[] bArr, int i, int i2) {
         int i3 = 0;
@@ -98,7 +98,7 @@ public class RotateSetting {
         if (i == 8) {
             return 5;
         }
-        String str = f35587a;
+        String str = f21896a;
         WLogger.w(str, "[YtCameraSetting.transBackFacingCameraRatateTag] unsurported rotateTag: " + i);
         return 0;
     }
@@ -112,7 +112,7 @@ public class RotateSetting {
         } else if (i == 270) {
             i3 = 5;
         } else {
-            WLogger.i(f35587a, "camera rotate not 90degree or 180degree, input: " + i);
+            WLogger.i(f21896a, "camera rotate not 90degree or 180degree, input: " + i);
             i3 = 1;
         }
         return i2 == 1 ? i3 : a(i3);
@@ -127,8 +127,8 @@ public class RotateSetting {
             i2 = rotation != 1 ? rotation != 2 ? rotation != 3 ? 0 : 270 : 180 : 90;
         }
         int i3 = (cameraInfo.facing == 1 ? 360 - ((cameraInfo.orientation + i2) % 360) : (cameraInfo.orientation - i2) + 360) % 360;
-        WLogger.i(f35587a, "debug camera orientation is " + cameraInfo.orientation + " ui degrees is " + i2);
-        f35588c = i3;
+        WLogger.i(f21896a, "debug camera orientation is " + cameraInfo.orientation + " ui degrees is " + i2);
+        f21897c = i3;
         return i3;
     }
 
@@ -141,7 +141,7 @@ public class RotateSetting {
     }
 
     public static int getVideoRotate() {
-        return f35588c;
+        return f21897c;
     }
 
     public static byte[] rawCamDataToJpg(int i, byte[] bArr, int i2, int i3, boolean z) {
@@ -306,22 +306,22 @@ public class RotateSetting {
         switch (i) {
             case 1:
             case 2:
-                WLogger.d(f35587a, "ROTATE 0");
+                WLogger.d(f21896a, "ROTATE 0");
                 i2 = 0;
                 break;
             case 3:
             case 4:
-                WLogger.d(f35587a, "ROTATE 180");
+                WLogger.d(f21896a, "ROTATE 180");
                 i2 = 180;
                 break;
             case 5:
             case 6:
-                WLogger.d(f35587a, "ROTATE 270");
+                WLogger.d(f21896a, "ROTATE 270");
                 i2 = 270;
                 break;
             case 7:
             case 8:
-                WLogger.d(f35587a, "ROTATE 90");
+                WLogger.d(f21896a, "ROTATE 90");
                 i2 = 90;
                 break;
             default:

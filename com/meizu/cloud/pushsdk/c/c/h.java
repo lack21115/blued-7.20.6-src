@@ -10,11 +10,11 @@ import java.util.UUID;
 public final class h extends j {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final g f24033a = g.a("multipart/mixed");
+    public static final g f10422a = g.a("multipart/mixed");
     public static final g b = g.a("multipart/alternative");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final g f24034c = g.a("multipart/digest");
+    public static final g f10423c = g.a("multipart/digest");
     public static final g d = g.a("multipart/parallel");
     public static final g e = g.a(HttpConstants.ContentType.MULTIPART_FORM_DATA);
     private static final byte[] f = {58, 32};
@@ -30,20 +30,20 @@ public final class h extends j {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final com.meizu.cloud.pushsdk.c.g.e f24035a;
+        private final com.meizu.cloud.pushsdk.c.g.e f10424a;
         private g b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final List<b> f24036c;
+        private final List<b> f10425c;
 
         public a() {
             this(UUID.randomUUID().toString());
         }
 
         public a(String str) {
-            this.b = h.f24033a;
-            this.f24036c = new ArrayList();
-            this.f24035a = com.meizu.cloud.pushsdk.c.g.e.a(str);
+            this.b = h.f10422a;
+            this.f10425c = new ArrayList();
+            this.f10424a = com.meizu.cloud.pushsdk.c.g.e.a(str);
         }
 
         public a a(c cVar, j jVar) {
@@ -63,17 +63,17 @@ public final class h extends j {
 
         public a a(b bVar) {
             if (bVar != null) {
-                this.f24036c.add(bVar);
+                this.f10425c.add(bVar);
                 return this;
             }
             throw new NullPointerException("part == null");
         }
 
         public h a() {
-            if (this.f24036c.isEmpty()) {
+            if (this.f10425c.isEmpty()) {
                 throw new IllegalStateException("Multipart body must have at least one part.");
             }
-            return new h(this.f24035a, this.b, this.f24036c);
+            return new h(this.f10424a, this.b, this.f10425c);
         }
     }
 
@@ -81,11 +81,11 @@ public final class h extends j {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        private final c f24037a;
+        private final c f10426a;
         private final j b;
 
         private b(c cVar, j jVar) {
-            this.f24037a = cVar;
+            this.f10426a = cVar;
             this.b = jVar;
         }
 
@@ -138,7 +138,7 @@ public final class h extends j {
                 return j2;
             }
             b bVar3 = this.l.get(i2);
-            c cVar2 = bVar3.f24037a;
+            c cVar2 = bVar3.f10426a;
             j jVar = bVar3.b;
             bVar.c(h);
             bVar.b(this.i);

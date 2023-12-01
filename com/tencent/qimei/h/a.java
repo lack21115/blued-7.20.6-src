@@ -7,10 +7,10 @@ import org.json.JSONObject;
 public abstract class a<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    public com.tencent.qimei.f.a<?>[] f38330a;
+    public com.tencent.qimei.f.a<?>[] f24639a;
 
     public a(com.tencent.qimei.f.a<?>... aVarArr) {
-        this.f38330a = aVarArr;
+        this.f24639a = aVarArr;
     }
 
     public abstract T a(com.tencent.qimei.f.a<T> aVar, String str);
@@ -41,7 +41,7 @@ public abstract class a<T> {
     }
 
     public com.tencent.qimei.f.a<?>[] a(com.tencent.qimei.f.a<?> aVar) {
-        com.tencent.qimei.f.a<?>[] aVarArr = this.f38330a;
+        com.tencent.qimei.f.a<?>[] aVarArr = this.f24639a;
         int length = aVarArr.length + 1;
         com.tencent.qimei.f.a<?>[] aVarArr2 = new com.tencent.qimei.f.a[length];
         System.arraycopy(aVarArr, 0, aVarArr2, 0, aVarArr.length);

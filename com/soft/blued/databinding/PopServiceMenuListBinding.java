@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopServiceMenuListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29553a;
+    private final RelativeLayout f15863a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29553a;
+        return this.f15863a;
     }
 }

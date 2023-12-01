@@ -13,14 +13,14 @@ import java.util.List;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static PackageManager f24562a;
-    private static final String b = "com." + com.opos.cmn.an.a.a.f24484c + ".feature.screen.heteromorphism";
+    private static PackageManager f10875a;
+    private static final String b = "com." + com.opos.cmn.an.a.a.f10797c + ".feature.screen.heteromorphism";
 
     public static PackageManager a(Context context) {
-        if (f24562a == null && context != null) {
-            f24562a = context.getApplicationContext().getPackageManager();
+        if (f10875a == null && context != null) {
+            f10875a = context.getApplicationContext().getPackageManager();
         }
-        return f24562a;
+        return f10875a;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x003a  */

@@ -12,10 +12,10 @@ import androidx.appcompat.R;
 public class ActionBarPolicy {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f1635a;
+    private Context f1587a;
 
     private ActionBarPolicy(Context context) {
-        this.f1635a = context;
+        this.f1587a = context;
     }
 
     public static ActionBarPolicy get(Context context) {
@@ -23,15 +23,15 @@ public class ActionBarPolicy {
     }
 
     public boolean enableHomeButtonByDefault() {
-        return this.f1635a.getApplicationInfo().targetSdkVersion < 14;
+        return this.f1587a.getApplicationInfo().targetSdkVersion < 14;
     }
 
     public int getEmbeddedMenuWidthLimit() {
-        return this.f1635a.getResources().getDisplayMetrics().widthPixels / 2;
+        return this.f1587a.getResources().getDisplayMetrics().widthPixels / 2;
     }
 
     public int getMaxActionButtons() {
-        Configuration configuration = this.f1635a.getResources().getConfiguration();
+        Configuration configuration = this.f1587a.getResources().getConfiguration();
         int i = configuration.screenWidthDp;
         int i2 = configuration.screenHeightDp;
         if (configuration.smallestScreenWidthDp > 600 || i > 600) {
@@ -56,13 +56,13 @@ public class ActionBarPolicy {
     }
 
     public int getStackedTabMaxWidth() {
-        return this.f1635a.getResources().getDimensionPixelSize(R.dimen.abc_action_bar_stacked_tab_max_width);
+        return this.f1587a.getResources().getDimensionPixelSize(R.dimen.abc_action_bar_stacked_tab_max_width);
     }
 
     public int getTabContainerHeight() {
-        TypedArray obtainStyledAttributes = this.f1635a.obtainStyledAttributes(null, R.styleable.ActionBar, R.attr.actionBarStyle, 0);
+        TypedArray obtainStyledAttributes = this.f1587a.obtainStyledAttributes(null, R.styleable.ActionBar, R.attr.actionBarStyle, 0);
         int layoutDimension = obtainStyledAttributes.getLayoutDimension(R.styleable.ActionBar_height, 0);
-        Resources resources = this.f1635a.getResources();
+        Resources resources = this.f1587a.getResources();
         int i = layoutDimension;
         if (!hasEmbeddedTabs()) {
             i = Math.min(layoutDimension, resources.getDimensionPixelSize(R.dimen.abc_action_bar_stacked_max_height));
@@ -72,13 +72,13 @@ public class ActionBarPolicy {
     }
 
     public boolean hasEmbeddedTabs() {
-        return this.f1635a.getResources().getBoolean(R.bool.abc_action_bar_embed_tabs);
+        return this.f1587a.getResources().getBoolean(R.bool.abc_action_bar_embed_tabs);
     }
 
     public boolean showsOverflowMenuButton() {
         if (Build.VERSION.SDK_INT >= 19) {
             return true;
         }
-        return !ViewConfiguration.get(this.f1635a).hasPermanentMenuKey();
+        return !ViewConfiguration.get(this.f1587a).hasPermanentMenuKey();
     }
 }

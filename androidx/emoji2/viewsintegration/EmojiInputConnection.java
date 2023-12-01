@@ -11,7 +11,7 @@ import androidx.emoji2.text.EmojiCompat;
 final class EmojiInputConnection extends InputConnectionWrapper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TextView f2883a;
+    private final TextView f2835a;
     private final EmojiCompatDeleteHelper b;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/emoji2/viewsintegration/EmojiInputConnection$EmojiCompatDeleteHelper.class */
@@ -34,13 +34,13 @@ final class EmojiInputConnection extends InputConnectionWrapper {
 
     EmojiInputConnection(TextView textView, InputConnection inputConnection, EditorInfo editorInfo, EmojiCompatDeleteHelper emojiCompatDeleteHelper) {
         super(inputConnection, false);
-        this.f2883a = textView;
+        this.f2835a = textView;
         this.b = emojiCompatDeleteHelper;
         emojiCompatDeleteHelper.updateEditorInfoAttrs(editorInfo);
     }
 
     private Editable a() {
-        return this.f2883a.getEditableText();
+        return this.f2835a.getEditableText();
     }
 
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
@@ -48,6 +48,7 @@ final class EmojiInputConnection extends InputConnectionWrapper {
         return this.b.handleDeleteSurroundingText(this, a(), i, i2, false) || super.deleteSurroundingText(i, i2);
     }
 
+    @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
     public boolean deleteSurroundingTextInCodePoints(int i, int i2) {
         return this.b.handleDeleteSurroundingText(this, a(), i, i2, true) || super.deleteSurroundingTextInCodePoints(i, i2);
     }

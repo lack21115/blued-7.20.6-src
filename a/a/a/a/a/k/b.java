@@ -9,19 +9,19 @@ import android.content.Context;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f1399a = false;
+    public static boolean f1351a = false;
 
     public static void a(Context context) {
-        if (f1399a || context == null) {
+        if (f1351a || context == null) {
             return;
         }
-        f1399a = true;
+        f1351a = true;
         a.a.a.a.a.j.a.a().a(context);
         a.a().a(context.getApplicationContext());
         a.a().a(true);
         c.a().a(context.getApplicationContext());
         d.a().a(context.getApplicationContext());
-        String[] strArr = a.a.a.a.a.e.d.f1358a;
+        String[] strArr = a.a.a.a.a.e.d.f1310a;
         int length = strArr.length;
         int i = 0;
         while (true) {
@@ -39,13 +39,13 @@ public final class b {
     }
 
     public static boolean a() {
-        return f1399a;
+        return f1351a;
     }
 
     public static void b() {
         d.a().b((Context) null);
         a.a().b();
         a.a.a.a.a.k.c.a.g();
-        f1399a = false;
+        f1351a = false;
     }
 }

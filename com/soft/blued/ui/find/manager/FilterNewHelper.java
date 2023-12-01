@@ -16,24 +16,26 @@ import com.soft.blued.utils.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
+import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CompletableJob;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
+import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Dispatchers;
-import kotlinx.coroutines.JobKt__JobKt;
+import kotlinx.coroutines.Job;
+import kotlinx.coroutines.JobKt;
 
 @Metadata
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/manager/FilterNewHelper.class */
 public final class FilterNewHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final FilterNewHelper f30593a = new FilterNewHelper();
+    public static final FilterNewHelper f16903a = new FilterNewHelper();
     private static final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f30594c;
+    private static final String f16904c;
     private static final String d;
     private static final String e;
     private static final String f;
@@ -45,7 +47,7 @@ public final class FilterNewHelper {
         b = BluedPreferences.aF() == 2;
         String string2 = AppInfo.d().getResources().getString(R.string.unlimited);
         Intrinsics.c(string2, "getAppContext().resource…tring(R.string.unlimited)");
-        f30594c = string2;
+        f16904c = string2;
         String string3 = AppInfo.d().getResources().getString(R.string.filter_new_unlimited);
         Intrinsics.c(string3, "getAppContext().resource…ing.filter_new_unlimited)");
         d = string3;
@@ -74,7 +76,7 @@ public final class FilterNewHelper {
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(UserTagAll userTagAll) {
         ArrayList arrayList = new ArrayList();
-        List<ConstellationModel> list = userTagAll.zodiac;
+        List list = userTagAll.zodiac;
         if (list == null || list.isEmpty()) {
             return;
         }
@@ -102,7 +104,7 @@ public final class FilterNewHelper {
         int intValue2 = num2.intValue();
         String string = context.getResources().getString(R.string.old);
         Intrinsics.c(string, "context.resources.getString(R.string.old)");
-        String[] a2 = f30593a.a(context);
+        String[] a2 = f16903a.a(context);
         String string2 = context.getString(R.string.filter_new_above);
         Intrinsics.c(string2, "context.getString(R.string.filter_new_above)");
         String str = "";
@@ -116,16 +118,16 @@ public final class FilterNewHelper {
                 sb.append('-');
                 sb.append(intValue2);
                 BluedPreferences.l(sb.toString());
-                if (f30593a.a(str3)) {
+                if (f16903a.a(str3)) {
                     BluedPreferences.l(intValue + "-300");
                     str = str2 + string + string2;
-                } else if (Intrinsics.a((Object) str2, (Object) str3)) {
+                } else if (Intrinsics.a(str2, str3)) {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(intValue);
                     sb2.append('-');
                     sb2.append(intValue2);
                     BluedPreferences.l(sb2.toString());
-                    str = Intrinsics.a(str2, (Object) string);
+                    str = Intrinsics.a(str2, string);
                 } else {
                     StringBuilder sb3 = new StringBuilder();
                     sb3.append(intValue);
@@ -143,10 +145,10 @@ public final class FilterNewHelper {
         return b;
     }
 
-    public final boolean a(String unLimit) {
-        Intrinsics.e(unLimit, "unLimit");
-        String str = unLimit;
-        return TextUtils.equals(str, "Unlimited") || TextUtils.equals(str, "不限") || TextUtils.equals(str, "No limit") || TextUtils.equals(str, "不限制");
+    public final boolean a(String str) {
+        Intrinsics.e(str, "unLimit");
+        String str2 = str;
+        return TextUtils.equals(str2, "Unlimited") || TextUtils.equals(str2, "不限") || TextUtils.equals(str2, "No limit") || TextUtils.equals(str2, "不限制");
     }
 
     public final String[] a(Context context) {
@@ -169,7 +171,7 @@ public final class FilterNewHelper {
             return "";
         }
         int intValue2 = num2.intValue();
-        String[] b2 = f30593a.b(context);
+        String[] b2 = f16903a.b(context);
         String string = context.getString(R.string.filter_new_below);
         Intrinsics.c(string, "context.getString(R.string.filter_new_below)");
         String string2 = context.getString(R.string.filter_new_above);
@@ -178,10 +180,10 @@ public final class FilterNewHelper {
         if (intValue < b2.length) {
             str = "";
             if (intValue2 < b2.length) {
-                String b3 = f30593a.a(b2[intValue]) ? f30593a.b() : b2[intValue];
-                String b4 = f30593a.a(b2[intValue2]) ? f30593a.b() : b2[intValue2];
-                if (Intrinsics.a((Object) b3, (Object) b4)) {
-                    if (f30593a.a(b3)) {
+                String b3 = f16903a.a(b2[intValue]) ? f16903a.b() : b2[intValue];
+                String b4 = f16903a.a(b2[intValue2]) ? f16903a.b() : b2[intValue2];
+                if (Intrinsics.a(b3, b4)) {
+                    if (f16903a.a(b3)) {
                         BluedPreferences.m("0-500");
                         return b3;
                     }
@@ -190,20 +192,20 @@ public final class FilterNewHelper {
                     sb.append('-');
                     sb.append(intValue2);
                     BluedPreferences.m(sb.toString());
-                    return Intrinsics.a(b3, (Object) f30593a.d());
-                } else if (f30593a.a(b3)) {
-                    BluedPreferences.m(Intrinsics.a("0-", (Object) Integer.valueOf(intValue2)));
-                    return b4 + f30593a.d() + string;
-                } else if (f30593a.a(b4)) {
+                    return Intrinsics.a(b3, f16903a.d());
+                } else if (f16903a.a(b3)) {
+                    BluedPreferences.m(Intrinsics.a("0-", Integer.valueOf(intValue2)));
+                    return b4 + f16903a.d() + string;
+                } else if (f16903a.a(b4)) {
                     BluedPreferences.m(intValue + "-500");
-                    return b3 + f30593a.d() + string2;
+                    return b3 + f16903a.d() + string2;
                 } else {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(intValue);
                     sb2.append('-');
                     sb2.append(intValue2);
                     BluedPreferences.m(sb2.toString());
-                    str = b3 + " ～ " + b4 + f30593a.d();
+                    str = b3 + " ～ " + b4 + f16903a.d();
                 }
             }
         }
@@ -261,7 +263,7 @@ public final class FilterNewHelper {
         num2.intValue();
         String string = context.getString(R.string.filter_new_mins);
         Intrinsics.c(string, "context.getString(R.string.filter_new_mins)");
-        String[] d2 = f30593a.d(context);
+        String[] d2 = f16903a.d(context);
         String string2 = context.getString(R.string.filter_new_below);
         Intrinsics.c(string2, "context.getString(R.string.filter_new_below)");
         String string3 = context.getString(R.string.filter_new_above);
@@ -272,20 +274,20 @@ public final class FilterNewHelper {
             if (num2.intValue() < d2.length) {
                 String str2 = d2[intValue];
                 String str3 = d2[num2.intValue()];
-                if (f30593a.a(str2) && !f30593a.a(str3)) {
+                if (f16903a.a(str2) && !f16903a.a(str3)) {
                     str2 = str3 + string + string2;
-                    BluedPreferences.w(Intrinsics.a("0-", (Object) str3));
-                } else if (!f30593a.a(str2) && f30593a.a(str3)) {
+                    BluedPreferences.w(Intrinsics.a("0-", str3));
+                } else if (!f16903a.a(str2) && f16903a.a(str3)) {
                     String str4 = str2 + string + string3;
-                    BluedPreferences.w(Intrinsics.a(str2, (Object) "-max"));
+                    BluedPreferences.w(Intrinsics.a(str2, "-max"));
                     return str4;
-                } else if (!Intrinsics.a((Object) str2, (Object) str3)) {
+                } else if (!Intrinsics.a(str2, str3)) {
                     BluedPreferences.w(str2 + '-' + str3);
                     str = str2 + " ～ " + str3 + string;
-                } else if (f30593a.a(str2)) {
+                } else if (f16903a.a(str2)) {
                     BluedPreferences.w("0-max");
                 } else {
-                    String a2 = Intrinsics.a(str2, (Object) string);
+                    String a2 = Intrinsics.a(str2, string);
                     BluedPreferences.w(str2 + '-' + str3);
                     str = a2;
                 }
@@ -311,7 +313,7 @@ public final class FilterNewHelper {
             return "";
         }
         num2.intValue();
-        String[] e2 = f30593a.e(context);
+        String[] e2 = f16903a.e(context);
         String string = context.getString(R.string.filter_new_below);
         Intrinsics.c(string, "context.getString(R.string.filter_new_below)");
         String string2 = context.getString(R.string.filter_new_above);
@@ -322,20 +324,20 @@ public final class FilterNewHelper {
             if (num2.intValue() < e2.length) {
                 String str2 = e2[intValue];
                 String str3 = e2[num2.intValue()];
-                if (f30593a.a(str2) && !f30593a.a(str3)) {
+                if (f16903a.a(str2) && !f16903a.a(str3)) {
                     str2 = str3 + "km" + string;
-                    BluedPreferences.v(Intrinsics.a("0-", (Object) str3));
-                } else if (!f30593a.a(str2) && f30593a.a(str3)) {
+                    BluedPreferences.v(Intrinsics.a("0-", str3));
+                } else if (!f16903a.a(str2) && f16903a.a(str3)) {
                     String str4 = str2 + "km" + string2;
-                    BluedPreferences.v(Intrinsics.a(str2, (Object) "-max"));
+                    BluedPreferences.v(Intrinsics.a(str2, "-max"));
                     return str4;
-                } else if (!Intrinsics.a((Object) str2, (Object) str3)) {
+                } else if (!Intrinsics.a(str2, str3)) {
                     BluedPreferences.v(str2 + '-' + str3);
                     str = str2 + " ～ " + str3 + "km";
-                } else if (f30593a.a(str2)) {
+                } else if (f16903a.a(str2)) {
                     BluedPreferences.v("0-max");
                 } else {
-                    String a2 = Intrinsics.a(str2, (Object) "km");
+                    String a2 = Intrinsics.a(str2, "km");
                     BluedPreferences.v(str2 + '-' + str3);
                     str = a2;
                 }
@@ -365,7 +367,7 @@ public final class FilterNewHelper {
             boolean z = false;
             if (!TextUtils.isEmpty(aa)) {
                 z = false;
-                if (!Intrinsics.a((Object) aa, (Object) "0-max")) {
+                if (!Intrinsics.a(aa, "0-max")) {
                     z = true;
                 }
             }
@@ -380,7 +382,7 @@ public final class FilterNewHelper {
             boolean z = false;
             if (!TextUtils.isEmpty(Z)) {
                 z = false;
-                if (!Intrinsics.a((Object) Z, (Object) "0-max")) {
+                if (!Intrinsics.a(Z, "0-max")) {
                     z = true;
                 }
             }
@@ -396,7 +398,7 @@ public final class FilterNewHelper {
         }
         Context d2 = AppInfo.d();
         Intrinsics.c(d2, "getAppContext()");
-        return !Intrinsics.a((Object) K, (Object) Intrinsics.a("0-", (Object) Integer.valueOf(a(d2).length - 1)));
+        return !Intrinsics.a(K, Intrinsics.a("0-", Integer.valueOf(a(d2).length - 1)));
     }
 
     public final boolean i() {
@@ -406,7 +408,7 @@ public final class FilterNewHelper {
         }
         Context d2 = AppInfo.d();
         Intrinsics.c(d2, "getAppContext()");
-        return !Intrinsics.a((Object) M, (Object) Intrinsics.a("0-", (Object) Integer.valueOf(b(d2).length - 1)));
+        return !Intrinsics.a(M, Intrinsics.a("0-", Integer.valueOf(b(d2).length - 1)));
     }
 
     public final boolean j() {
@@ -416,16 +418,14 @@ public final class FilterNewHelper {
         }
         Context d2 = AppInfo.d();
         Intrinsics.c(d2, "getAppContext()");
-        return !Intrinsics.a((Object) O, (Object) Intrinsics.a("0-", (Object) Integer.valueOf(c(d2).length - 1)));
+        return !Intrinsics.a(O, Intrinsics.a("0-", Integer.valueOf(c(d2).length - 1)));
     }
 
     public final void k() {
-        CompletableJob a2;
         if (NetworkUtils.a()) {
             return;
         }
-        a2 = JobKt__JobKt.a(null, 1, null);
-        CoroutineScope a3 = CoroutineScopeKt.a(a2.plus(Dispatchers.b()));
-        BuildersKt__Builders_commonKt.a(a3, null, null, new FilterNewHelper$preLoadImages$1(a3, null), 3, null);
+        CoroutineScope a2 = CoroutineScopeKt.a(JobKt.a((Job) null, 1, (Object) null).plus(Dispatchers.b()));
+        BuildersKt.a(a2, (CoroutineContext) null, (CoroutineStart) null, new FilterNewHelper$preLoadImages$1(a2, null), 3, (Object) null);
     }
 }

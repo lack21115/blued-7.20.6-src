@@ -10,11 +10,11 @@ import java.lang.reflect.Method;
 public final class TraceCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static long f2520a;
+    private static long f2472a;
     private static Method b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Method f2521c;
+    private static Method f2473c;
     private static Method d;
     private static Method e;
 
@@ -23,9 +23,9 @@ public final class TraceCompat {
             return;
         }
         try {
-            f2520a = Trace.class.getField("TRACE_TAG_APP").getLong(null);
+            f2472a = Trace.class.getField("TRACE_TAG_APP").getLong(null);
             b = Trace.class.getMethod("isTagEnabled", Long.TYPE);
-            f2521c = Trace.class.getMethod("asyncTraceBegin", Long.TYPE, String.class, Integer.TYPE);
+            f2473c = Trace.class.getMethod("asyncTraceBegin", Long.TYPE, String.class, Integer.TYPE);
             d = Trace.class.getMethod("asyncTraceEnd", Long.TYPE, String.class, Integer.TYPE);
             e = Trace.class.getMethod("traceCounter", Long.TYPE, String.class, Integer.TYPE);
         } catch (Exception e2) {
@@ -41,7 +41,7 @@ public final class TraceCompat {
             Trace.beginAsyncSection(str, i);
         } else if (Build.VERSION.SDK_INT >= 18) {
             try {
-                f2521c.invoke(null, Long.valueOf(f2520a), str, Integer.valueOf(i));
+                f2473c.invoke(null, Long.valueOf(f2472a), str, Integer.valueOf(i));
             } catch (Exception e2) {
                 Log.v("TraceCompat", "Unable to invoke asyncTraceBegin() via reflection.");
             }
@@ -59,7 +59,7 @@ public final class TraceCompat {
             Trace.endAsyncSection(str, i);
         } else if (Build.VERSION.SDK_INT >= 18) {
             try {
-                d.invoke(null, Long.valueOf(f2520a), str, Integer.valueOf(i));
+                d.invoke(null, Long.valueOf(f2472a), str, Integer.valueOf(i));
             } catch (Exception e2) {
                 Log.v("TraceCompat", "Unable to invoke endAsyncSection() via reflection.");
             }
@@ -78,7 +78,7 @@ public final class TraceCompat {
         }
         if (Build.VERSION.SDK_INT >= 18) {
             try {
-                return ((Boolean) b.invoke(null, Long.valueOf(f2520a))).booleanValue();
+                return ((Boolean) b.invoke(null, Long.valueOf(f2472a))).booleanValue();
             } catch (Exception e2) {
                 Log.v("TraceCompat", "Unable to invoke isTagEnabled() via reflection.");
                 return false;
@@ -92,7 +92,7 @@ public final class TraceCompat {
             Trace.setCounter(str, i);
         } else if (Build.VERSION.SDK_INT >= 18) {
             try {
-                e.invoke(null, Long.valueOf(f2520a), str, Integer.valueOf(i));
+                e.invoke(null, Long.valueOf(f2472a), str, Integer.valueOf(i));
             } catch (Exception e2) {
                 Log.v("TraceCompat", "Unable to invoke traceCounter() via reflection.");
             }

@@ -7,31 +7,31 @@ public class y {
     public static y b = new y();
 
     /* renamed from: a  reason: collision with root package name */
-    public a f22801a = new a();
+    public a f9193a = new a();
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/hatool/y$a.class */
     public class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f22802a;
+        public String f9194a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public long f22803c = 0;
+        public long f9195c = 0;
 
         public a() {
         }
 
         public void a(long j) {
-            y.this.f22801a.f22803c = j;
+            y.this.f9193a.f9195c = j;
         }
 
         public void a(String str) {
-            y.this.f22801a.b = str;
+            y.this.f9193a.b = str;
         }
 
         public void b(String str) {
-            y.this.f22801a.f22802a = str;
+            y.this.f9193a.f9194a = str;
         }
     }
 
@@ -40,7 +40,7 @@ public class y {
     }
 
     public String a() {
-        return this.f22801a.b;
+        return this.f9193a.b;
     }
 
     public void a(String str, String str2) {
@@ -57,16 +57,16 @@ public class y {
         }
         String generateSecureRandomStr = EncryptUtil.generateSecureRandomStr(16);
         String a2 = e.a(b3, generateSecureRandomStr);
-        this.f22801a.a(b2);
-        this.f22801a.b(generateSecureRandomStr);
-        this.f22801a.a(a2);
+        this.f9193a.a(b2);
+        this.f9193a.b(generateSecureRandomStr);
+        this.f9193a.a(a2);
     }
 
     public long b() {
-        return this.f22801a.f22803c;
+        return this.f9193a.f9195c;
     }
 
     public String c() {
-        return this.f22801a.f22802a;
+        return this.f9193a.f9194a;
     }
 }

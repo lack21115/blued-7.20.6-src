@@ -16,11 +16,11 @@ import com.hihonor.push.sdk.j;
 public class r extends IPushCallback.Stub {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Object f22322a;
+    public final Object f8714a;
     public final s b;
 
     public r(Object obj, s sVar) {
-        this.f22322a = obj;
+        this.f8714a = obj;
         this.b = sVar;
     }
 
@@ -31,22 +31,22 @@ public class r extends IPushCallback.Stub {
         Bundle body = dataBuffer.getBody();
         ResponseHeader responseHeader = new ResponseHeader();
         MessageCodec.parseMessageEntity(header, responseHeader);
-        Object obj = this.f22322a;
+        Object obj = this.f8714a;
         if (obj instanceof IMessageEntity) {
             MessageCodec.parseMessageEntity(body, (IMessageEntity) obj);
         }
         s sVar = this.b;
         ApiException apiException = new ApiException(responseHeader.getStatusCode(), responseHeader.getStatusMessage());
-        Object obj2 = this.f22322a;
+        Object obj2 = this.f8714a;
         j.b bVar = (j.b) sVar;
         bVar.getClass();
-        j jVar = j.f22302c;
-        p0<?> p0Var = bVar.f22306a;
+        j jVar = j.f8694c;
+        p0<?> p0Var = bVar.f8698a;
         jVar.getClass();
         Log.i("HonorApiManager", "sendResolveResult start");
-        Handler handler = jVar.f22303a;
+        Handler handler = jVar.f8695a;
         handler.sendMessage(handler.obtainMessage(2, p0Var));
-        bVar.f22306a.b(apiException, obj2);
+        bVar.f8698a.b(apiException, obj2);
         Log.i("IPCCallback", "onResult parse end.");
     }
 }

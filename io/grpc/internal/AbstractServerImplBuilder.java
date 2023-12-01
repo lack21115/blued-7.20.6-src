@@ -2,7 +2,6 @@ package io.grpc.internal;
 
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.huawei.hms.push.constant.RemoteMessageConst;
 import io.grpc.BinaryLog;
 import io.grpc.BindableService;
 import io.grpc.CompressorRegistry;
@@ -64,12 +63,10 @@ public abstract class AbstractServerImplBuilder<T extends AbstractServerImplBuil
         private DefaultFallbackRegistry() {
         }
 
-        @Override // io.grpc.HandlerRegistry
         public List<ServerServiceDefinition> getServices() {
             return Collections.emptyList();
         }
 
-        @Override // io.grpc.HandlerRegistry
         @Nullable
         public ServerMethodDefinition<?, ?> lookupMethod(String str, @Nullable String str2) {
             return null;
@@ -84,37 +81,31 @@ public abstract class AbstractServerImplBuilder<T extends AbstractServerImplBuil
         return this;
     }
 
-    @Override // io.grpc.ServerBuilder
     public final T addService(BindableService bindableService) {
         return addService(((BindableService) Preconditions.checkNotNull(bindableService, "bindableService")).bindService());
     }
 
-    @Override // io.grpc.ServerBuilder
     public final T addService(ServerServiceDefinition serverServiceDefinition) {
         this.registryBuilder.addService((ServerServiceDefinition) Preconditions.checkNotNull(serverServiceDefinition, "service"));
         return thisT();
     }
 
-    @Override // io.grpc.ServerBuilder
     public final T addStreamTracerFactory(ServerStreamTracer.Factory factory) {
         this.streamTracerFactories.add(Preconditions.checkNotNull(factory, "factory"));
         return thisT();
     }
 
-    @Override // io.grpc.ServerBuilder
     public final T addTransportFilter(ServerTransportFilter serverTransportFilter) {
         this.transportFilters.add(Preconditions.checkNotNull(serverTransportFilter, "filter"));
         return thisT();
     }
 
-    @Override // io.grpc.ServerBuilder
     public final Server build() {
         return new ServerImpl(this, buildTransportServers(getTracerFactories()), Context.ROOT);
     }
 
     protected abstract List<? extends InternalServer> buildTransportServers(List<? extends ServerStreamTracer.Factory> list);
 
-    @Override // io.grpc.ServerBuilder
     public final T compressorRegistry(@Nullable CompressorRegistry compressorRegistry) {
         if (compressorRegistry == null) {
             compressorRegistry = DEFAULT_COMPRESSOR_REGISTRY;
@@ -123,7 +114,6 @@ public abstract class AbstractServerImplBuilder<T extends AbstractServerImplBuil
         return thisT();
     }
 
-    @Override // io.grpc.ServerBuilder
     public final T decompressorRegistry(@Nullable DecompressorRegistry decompressorRegistry) {
         if (decompressorRegistry == null) {
             decompressorRegistry = DEFAULT_DECOMPRESSOR_REGISTRY;
@@ -132,18 +122,15 @@ public abstract class AbstractServerImplBuilder<T extends AbstractServerImplBuil
         return thisT();
     }
 
-    @Override // io.grpc.ServerBuilder
     public final T directExecutor() {
         return executor(MoreExecutors.directExecutor());
     }
 
-    @Override // io.grpc.ServerBuilder
     public final T executor(@Nullable Executor executor) {
         this.executorPool = executor != null ? new FixedObjectPool(executor) : DEFAULT_EXECUTOR_POOL;
         return thisT();
     }
 
-    @Override // io.grpc.ServerBuilder
     public final T fallbackHandlerRegistry(@Nullable HandlerRegistry handlerRegistry) {
         if (handlerRegistry == null) {
             handlerRegistry = DEFAULT_FALLBACK_REGISTRY;
@@ -178,20 +165,17 @@ public abstract class AbstractServerImplBuilder<T extends AbstractServerImplBuil
         return this.transportTracerFactory;
     }
 
-    @Override // io.grpc.ServerBuilder
     public final T handshakeTimeout(long j, TimeUnit timeUnit) {
         Preconditions.checkArgument(j > 0, "handshake timeout is %s, but must be positive", j);
         this.handshakeTimeoutMillis = ((TimeUnit) Preconditions.checkNotNull(timeUnit, "unit")).toMillis(j);
         return thisT();
     }
 
-    @Override // io.grpc.ServerBuilder
     public final T intercept(ServerInterceptor serverInterceptor) {
         this.interceptors.add(Preconditions.checkNotNull(serverInterceptor, "interceptor"));
         return thisT();
     }
 
-    @Override // io.grpc.ServerBuilder
     public final T setBinaryLog(@Nullable BinaryLog binaryLog) {
         this.binlog = binaryLog;
         return thisT();
@@ -199,7 +183,7 @@ public abstract class AbstractServerImplBuilder<T extends AbstractServerImplBuil
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void setDeadlineTicker(Deadline.Ticker ticker) {
-        this.ticker = (Deadline.Ticker) Preconditions.checkNotNull(ticker, RemoteMessageConst.Notification.TICKER);
+        this.ticker = (Deadline.Ticker) Preconditions.checkNotNull(ticker, "ticker");
     }
 
     protected void setStatsEnabled(boolean z) {

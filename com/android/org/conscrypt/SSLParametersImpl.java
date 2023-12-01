@@ -813,7 +813,7 @@ public class SSLParametersImpl implements Cloneable {
             }
         }
         if (this.useSessionTickets) {
-            NativeCrypto.SSL_clear_options(j2, 16384L);
+            NativeCrypto.SSL_clear_options(j2, NativeCrypto.SSL_OP_NO_TICKET);
         }
         if (getUseSni() && AddressUtils.isValidSniHostname(str)) {
             NativeCrypto.SSL_set_tlsext_host_name(j2, str);

@@ -13,16 +13,16 @@ import mtopsdk.mtop.domain.MtopResponse;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static List f34909a = new ArrayList();
+    private static List f21218a = new ArrayList();
     private static Lock b = new ReentrantLock();
 
     public static void a() {
         b.lock();
         try {
-            if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
-                TBSdkLog.b("mtop.rb-RequestPool", "retry all request, current size=" + f34909a.size());
+            if (TBSdkLog.a(TBSdkLog.LogEnable.c)) {
+                TBSdkLog.b("mtop.rb-RequestPool", "retry all request, current size=" + f21218a.size());
             }
-            Iterator it = new ArrayList(f34909a).iterator();
+            Iterator it = new ArrayList(f21218a).iterator();
             while (it.hasNext()) {
                 ((MtopBusiness) it.next()).retryRequest();
             }
@@ -34,7 +34,7 @@ public final class a {
     public static void a(MtopBusiness mtopBusiness) {
         b.lock();
         try {
-            f34909a.add(mtopBusiness);
+            f21218a.add(mtopBusiness);
             TBSdkLog.b("mtop.rb-RequestPool", mtopBusiness.getSeqNo(), "request add to request pool");
             b.unlock();
         } catch (Throwable th) {
@@ -47,13 +47,13 @@ public final class a {
         b.lock();
         try {
             TBSdkLog.b("mtop.rb-RequestPool", "session fail  all request");
-            for (MtopBusiness mtopBusiness : f34909a) {
+            for (MtopBusiness mtopBusiness : f21218a) {
                 MtopResponse mtopResponse = mtopBusiness.request != null ? new MtopResponse(mtopBusiness.request.a(), mtopBusiness.request.b(), str, str2) : new MtopResponse(str, str2);
                 b a2 = com.taobao.tao.remotebusiness.a.a.a(null, null, mtopBusiness);
                 a2.e = mtopResponse;
                 com.taobao.tao.remotebusiness.a.a.a().obtainMessage(3, a2).sendToTarget();
             }
-            f34909a.clear();
+            f21218a.clear();
             b.unlock();
         } catch (Throwable th) {
             b.unlock();
@@ -66,7 +66,7 @@ public final class a {
         b.lock();
         try {
             TBSdkLog.b("mtop.rb-RequestPool", mtopBusiness.getSeqNo(), "request remove from request pool");
-            f34909a.remove(mtopBusiness);
+            f21218a.remove(mtopBusiness);
         } catch (Exception e) {
         } catch (Throwable th) {
             b.unlock();

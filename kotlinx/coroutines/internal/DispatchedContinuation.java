@@ -24,9 +24,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
     private static final /* synthetic */ AtomicReferenceFieldUpdater h = AtomicReferenceFieldUpdater.newUpdater(DispatchedContinuation.class, Object.class, "_reusableCancellableContinuation");
     private volatile /* synthetic */ Object _reusableCancellableContinuation;
     public final CoroutineDispatcher b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final Continuation<T> f43523c;
+    public final Continuation<T> c;
     public Object d;
     public final Object e;
 
@@ -34,7 +32,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
     public DispatchedContinuation(CoroutineDispatcher coroutineDispatcher, Continuation<? super T> continuation) {
         super(-1);
         this.b = coroutineDispatcher;
-        this.f43523c = continuation;
+        this.c = continuation;
         this.d = DispatchedContinuationKt.a();
         this.e = ThreadContextKt.a(getContext());
         this._reusableCancellableContinuation = null;
@@ -43,7 +41,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
     public final Throwable a(CancellableContinuation<?> cancellableContinuation) {
         do {
             Object obj = this._reusableCancellableContinuation;
-            if (obj != DispatchedContinuationKt.f43524a) {
+            if (obj != DispatchedContinuationKt.a) {
                 if (obj instanceof Throwable) {
                     if (h.compareAndSet(this, obj, null)) {
                         return (Throwable) obj;
@@ -52,7 +50,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
                 }
                 throw new IllegalStateException(Intrinsics.a("Inconsistent state ", obj).toString());
             }
-        } while (!h.compareAndSet(this, DispatchedContinuationKt.f43524a, cancellableContinuation));
+        } while (!h.compareAndSet(this, DispatchedContinuationKt.a, cancellableContinuation));
         return null;
     }
 
@@ -73,15 +71,15 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
 
     public final void a(CoroutineContext coroutineContext, T t) {
         this.d = t;
-        this.f42808a = 1;
+        this.a = 1;
         this.b.dispatchYield(coroutineContext, this);
     }
 
     public final boolean a(Throwable th) {
         while (true) {
             Object obj = this._reusableCancellableContinuation;
-            if (Intrinsics.a(obj, DispatchedContinuationKt.f43524a)) {
-                if (h.compareAndSet(this, DispatchedContinuationKt.f43524a, th)) {
+            if (Intrinsics.a(obj, DispatchedContinuationKt.a)) {
+                if (h.compareAndSet(this, DispatchedContinuationKt.a, th)) {
                     return true;
                 }
             } else if (obj instanceof Throwable) {
@@ -116,29 +114,29 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
 
     public final void c() {
         do {
-        } while (this._reusableCancellableContinuation == DispatchedContinuationKt.f43524a);
+        } while (this._reusableCancellableContinuation == DispatchedContinuationKt.a);
     }
 
     public final void d() {
         c();
-        CancellableContinuationImpl<?> a2 = a();
-        if (a2 == null) {
+        CancellableContinuationImpl<?> a = a();
+        if (a == null) {
             return;
         }
-        a2.i();
+        a.i();
     }
 
     public final CancellableContinuationImpl<T> e() {
         while (true) {
             Object obj = this._reusableCancellableContinuation;
             if (obj == null) {
-                this._reusableCancellableContinuation = DispatchedContinuationKt.f43524a;
+                this._reusableCancellableContinuation = DispatchedContinuationKt.a;
                 return null;
             } else if (obj instanceof CancellableContinuationImpl) {
-                if (h.compareAndSet(this, obj, DispatchedContinuationKt.f43524a)) {
+                if (h.compareAndSet(this, obj, DispatchedContinuationKt.a)) {
                     return (CancellableContinuationImpl) obj;
                 }
-            } else if (obj != DispatchedContinuationKt.f43524a && !(obj instanceof Throwable)) {
+            } else if (obj != DispatchedContinuationKt.a && !(obj instanceof Throwable)) {
                 throw new IllegalStateException(Intrinsics.a("Inconsistent state ", obj).toString());
             }
         }
@@ -158,7 +156,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
 
     @Override // kotlin.coroutines.jvm.internal.CoroutineStackFrame
     public CoroutineStackFrame getCallerFrame() {
-        Continuation<T> continuation = this.f43523c;
+        Continuation<T> continuation = this.c;
         if (continuation instanceof CoroutineStackFrame) {
             return (CoroutineStackFrame) continuation;
         }
@@ -167,7 +165,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
 
     @Override // kotlin.coroutines.Continuation
     public CoroutineContext getContext() {
-        return this.f43523c.getContext();
+        return this.c.getContext();
     }
 
     @Override // kotlin.coroutines.jvm.internal.CoroutineStackFrame
@@ -177,32 +175,32 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
 
     @Override // kotlin.coroutines.Continuation
     public void resumeWith(Object obj) {
-        CoroutineContext context = this.f43523c.getContext();
-        Object a2 = CompletionStateKt.a(obj, null, 1, null);
+        CoroutineContext context = this.c.getContext();
+        Object a = CompletionStateKt.a(obj, null, 1, null);
         if (this.b.isDispatchNeeded(context)) {
-            this.d = a2;
-            this.f42808a = 0;
+            this.d = a;
+            this.a = 0;
             this.b.dispatch(context, this);
             return;
         }
         DebugKt.a();
-        EventLoop a3 = ThreadLocalEventLoop.f42855a.a();
-        if (a3.f()) {
-            this.d = a2;
-            this.f42808a = 0;
-            a3.a(this);
+        EventLoop a2 = ThreadLocalEventLoop.a.a();
+        if (a2.f()) {
+            this.d = a;
+            this.a = 0;
+            a2.a(this);
             return;
         }
         DispatchedContinuation<T> dispatchedContinuation = this;
-        a3.a(true);
+        a2.a(true);
         try {
             CoroutineContext context2 = getContext();
-            Object a4 = ThreadContextKt.a(context2, this.e);
-            this.f43523c.resumeWith(obj);
-            Unit unit = Unit.f42314a;
-            ThreadContextKt.b(context2, a4);
+            Object a3 = ThreadContextKt.a(context2, this.e);
+            this.c.resumeWith(obj);
+            Unit unit = Unit.a;
+            ThreadContextKt.b(context2, a3);
             do {
-            } while (a3.e());
+            } while (a2.e());
         } finally {
             try {
             } finally {
@@ -211,6 +209,6 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
     }
 
     public String toString() {
-        return "DispatchedContinuation[" + this.b + ", " + DebugStringsKt.a((Continuation<?>) this.f43523c) + ']';
+        return "DispatchedContinuation[" + this.b + ", " + DebugStringsKt.a((Continuation<?>) this.c) + ']';
     }
 }

@@ -21,22 +21,18 @@ public class SubPoiItem implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5670a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5671c;
+    private String c;
     private int d;
     private LatLonPoint e;
     private String f;
     private String g;
 
     public SubPoiItem(Parcel parcel) {
-        this.f5670a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5671c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readInt();
         this.e = (LatLonPoint) parcel.readValue(LatLonPoint.class.getClassLoader());
         this.f = parcel.readString();
@@ -44,7 +40,7 @@ public class SubPoiItem implements Parcelable {
     }
 
     public SubPoiItem(String str, LatLonPoint latLonPoint, String str2, String str3) {
-        this.f5670a = str;
+        this.a = str;
         this.e = latLonPoint;
         this.b = str2;
         this.f = str3;
@@ -64,7 +60,7 @@ public class SubPoiItem implements Parcelable {
     }
 
     public String getPoiId() {
-        return this.f5670a;
+        return this.a;
     }
 
     public String getSnippet() {
@@ -72,7 +68,7 @@ public class SubPoiItem implements Parcelable {
     }
 
     public String getSubName() {
-        return this.f5671c;
+        return this.c;
     }
 
     public String getSubTypeDes() {
@@ -92,7 +88,7 @@ public class SubPoiItem implements Parcelable {
     }
 
     public void setPoiId(String str) {
-        this.f5670a = str;
+        this.a = str;
     }
 
     public void setSnippet(String str) {
@@ -100,7 +96,7 @@ public class SubPoiItem implements Parcelable {
     }
 
     public void setSubName(String str) {
-        this.f5671c = str;
+        this.c = str;
     }
 
     public void setSubTypeDes(String str) {
@@ -113,9 +109,9 @@ public class SubPoiItem implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5670a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5671c);
+        parcel.writeString(this.c);
         parcel.writeInt(this.d);
         parcel.writeValue(this.e);
         parcel.writeString(this.f);

@@ -11,17 +11,17 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.splash.c.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/splash/c/a$a.class */
-    public static final class C0156a {
+    public static final class C0085a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final a f8189a = new a((byte) 0);
+        private static final a f5349a = new a((byte) 0);
 
-        C0156a() {
+        C0085a() {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public static /* synthetic */ a a() {
-            return f8189a;
+            return f5349a;
         }
     }
 
@@ -33,7 +33,7 @@ public final class a {
     }
 
     private static a a() {
-        return C0156a.f8189a;
+        return C0085a.f5349a;
     }
 
     private static void a(Context context, ATSplashView aTSplashView, com.anythink.expressad.splash.a.b bVar, com.anythink.expressad.splash.b.a aVar) {

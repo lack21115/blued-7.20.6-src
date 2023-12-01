@@ -53,13 +53,13 @@ public class LiveGiftBackpackAdapter extends LiveGiftBaseAdapter {
             if (TextUtils.isEmpty(liveGiftModel.expire_info)) {
                 return false;
             }
-            LiveRouteUtil.a(this.f13823a, liveGiftModel);
+            LiveRouteUtil.a(this.a, liveGiftModel);
             EventTrackLive.c(LiveProtos.Event.LIVE_GOODS_VALITIDY_POP_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), liveGiftModel.goods_id, 0);
             return false;
         } else if (liveGiftModel.type.equals("1") || liveGiftModel.is_use == 1) {
             return false;
         } else {
-            LiveRouteUtil.b(this.f13823a, liveGiftModel);
+            LiveRouteUtil.b(this.a, liveGiftModel);
             EventTrackLive.c(LiveProtos.Event.LIVE_GOODS_VALITIDY_POP_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), liveGiftModel.goods_id, 0);
             return false;
         }
@@ -168,19 +168,19 @@ public class LiveGiftBackpackAdapter extends LiveGiftBaseAdapter {
         ImageLoader.a(this.requestHost, liveGiftModel.type_icon).a((ImageView) commonAdapterHolder.a(R.id.iv_gift_fragment_badge));
         ImageLoader.a(this.requestHost, liveGiftModel.images_static).a((ImageView) commonAdapterHolder.a(R.id.item_live_gift_view_iv));
         commonAdapterHolder.a(R.id.tv_gift_fragment_name, liveGiftModel.name);
-        long c2 = (CommonStringUtils.c(liveGiftModel.expire_time) * 1000) - System.currentTimeMillis();
-        if (c2 <= 0) {
+        long c = (CommonStringUtils.c(liveGiftModel.expire_time) * 1000) - System.currentTimeMillis();
+        if (c <= 0) {
             commonAdapterHolder.a(R.id.tv_fragment_expire_time, "已失效");
         } else {
-            int i = (c2 > 3600000L ? 1 : (c2 == 3600000L ? 0 : -1));
+            int i = (c > 3600000L ? 1 : (c == 3600000L ? 0 : -1));
             if (i < 0) {
                 commonAdapterHolder.a(R.id.tv_fragment_expire_time, "1小时内到期");
-            } else if (c2 < 86400000 || i < 0) {
-                long j = c2 / 3600000;
+            } else if (c < 86400000 || i < 0) {
+                long j = c / 3600000;
                 int i2 = R.id.tv_fragment_expire_time;
                 commonAdapterHolder.a(i2, j + "小时后到期");
             } else {
-                long j2 = c2 / 86400000;
+                long j2 = c / 86400000;
                 int i3 = R.id.tv_fragment_expire_time;
                 commonAdapterHolder.a(i3, j2 + "天后到期");
             }
@@ -210,9 +210,9 @@ public class LiveGiftBackpackAdapter extends LiveGiftBaseAdapter {
         commonAdapterHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackAdapter$Pj3arnRFLK-JVnp2UePBdT1G5kI
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean a2;
-                a2 = LiveGiftBackpackAdapter.this.a(liveGiftModel, view);
-                return a2;
+                boolean a;
+                a = LiveGiftBackpackAdapter.this.a(liveGiftModel, view);
+                return a;
             }
         });
     }
@@ -231,7 +231,7 @@ public class LiveGiftBackpackAdapter extends LiveGiftBaseAdapter {
             LiveEventBus.get("gift_backpack_item_clicked").post(liveGiftModel);
             return false;
         }
-        LiveRouteUtil.b(this.f13823a, liveGiftModel);
+        LiveRouteUtil.b(this.a, liveGiftModel);
         EventTrackLive.c(LiveProtos.Event.LIVE_GOODS_VALITIDY_POP_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), liveGiftModel.goods_id, 0);
         return true;
     }

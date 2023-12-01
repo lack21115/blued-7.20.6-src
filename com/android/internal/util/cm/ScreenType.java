@@ -13,7 +13,7 @@ public class ScreenType {
 
     private static int getScreenType(Context context) {
         if (sDeviceType == -1) {
-            WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+            WindowManager windowManager = (WindowManager) context.getSystemService("window");
             DisplayInfo displayInfo = new DisplayInfo();
             windowManager.getDefaultDisplay().getDisplayInfo(displayInfo);
             int min = (Math.min(displayInfo.logicalHeight, displayInfo.logicalWidth) * 160) / displayInfo.logicalDensityDpi;

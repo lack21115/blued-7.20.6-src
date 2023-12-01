@@ -8,13 +8,13 @@ import java.util.Map;
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/txcplayer/b/a.class */
 public abstract class a {
     public static final String TAG = a.class.getName();
-    public InterfaceC0929a mDownloadListener;
+    public InterfaceC0759a mDownloadListener;
     protected String mDownloadPath;
     protected Map<String, String> mHeaders;
 
     /* renamed from: com.tencent.liteav.txcplayer.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/txcplayer/b/a$a.class */
-    public interface InterfaceC0929a {
+    public interface InterfaceC0759a {
         void a(b bVar);
 
         void a(b bVar, int i, String str);
@@ -67,8 +67,8 @@ public abstract class a {
         this.mHeaders = map;
     }
 
-    public void setListener(InterfaceC0929a interfaceC0929a) {
-        this.mDownloadListener = interfaceC0929a;
+    public void setListener(InterfaceC0759a interfaceC0759a) {
+        this.mDownloadListener = interfaceC0759a;
     }
 
     public abstract void stop(int i);

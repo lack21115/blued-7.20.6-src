@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveShaderProgress.class */
 public class LiveShaderProgress extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected OnProgressListener f14923a;
+    protected OnProgressListener a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14924c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -107,14 +103,14 @@ public class LiveShaderProgress extends View {
     }
 
     public int getProgressMax() {
-        return this.f14924c;
+        return this.c;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        this.f = (int) ((this.d - this.e) * (this.b / this.f14924c));
+        this.f = (int) ((this.d - this.e) * (this.b / this.c));
         a(canvas, a(this.i, Paint.Style.FILL, this.e));
         if (this.b != 0) {
             b(canvas, a(this.g, Paint.Style.FILL, this.e));
@@ -127,7 +123,7 @@ public class LiveShaderProgress extends View {
         super.onSizeChanged(i, i2, i3, i4);
         this.d = i;
         this.e = i2;
-        this.f = (int) ((i - i2) * (this.b / this.f14924c));
+        this.f = (int) ((i - i2) * (this.b / this.c));
         post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveShaderProgress$4HoZxKqaON7edUJf_YIYHcf855k
             @Override // java.lang.Runnable
             public final void run() {
@@ -141,14 +137,14 @@ public class LiveShaderProgress extends View {
         if (f < 0.0f) {
             f2 = 0.0f;
         }
-        int i = this.f14924c;
+        int i = this.c;
         float f3 = f2;
         if (f2 > i) {
             f3 = i;
         }
         int i2 = (int) f3;
         this.b = i2;
-        OnProgressListener onProgressListener = this.f14923a;
+        OnProgressListener onProgressListener = this.a;
         if (onProgressListener != null) {
             onProgressListener.a(this, i2);
         }
@@ -156,10 +152,10 @@ public class LiveShaderProgress extends View {
     }
 
     public void setProgressListener(OnProgressListener onProgressListener) {
-        this.f14923a = onProgressListener;
+        this.a = onProgressListener;
     }
 
     public void setProgressMax(int i) {
-        this.f14924c = i;
+        this.c = i;
     }
 }

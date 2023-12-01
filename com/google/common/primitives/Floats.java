@@ -34,12 +34,12 @@ public final class Floats extends FloatsMethodsForWeb {
             this.end = i2;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean contains(Object obj) {
             return (obj instanceof Float) && Floats.indexOf(this.array, ((Float) obj).floatValue(), this.start, this.end) != -1;
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public boolean equals(@NullableDecl Object obj) {
             if (obj == this) {
                 return true;
@@ -71,7 +71,7 @@ public final class Floats extends FloatsMethodsForWeb {
             return Float.valueOf(this.array[this.start + i]);
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public int hashCode() {
             int i = 1;
             for (int i2 = this.start; i2 < this.end; i2++) {
@@ -89,7 +89,7 @@ public final class Floats extends FloatsMethodsForWeb {
             return indexOf - this.start;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean isEmpty() {
             return false;
         }
@@ -226,7 +226,7 @@ public final class Floats extends FloatsMethodsForWeb {
         float[] fArr3 = new float[i];
         int i2 = 0;
         for (float[] fArr4 : fArr) {
-            System.arraycopy((Object) fArr4, 0, (Object) fArr3, i2, fArr4.length);
+            System.arraycopy(fArr4, 0, fArr3, i2, fArr4.length);
             i2 += fArr4.length;
         }
         return fArr3;

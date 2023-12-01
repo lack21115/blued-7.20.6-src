@@ -6,15 +6,15 @@ import java.util.LinkedList;
 public final class WOMZP<E> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f39926a;
+    public final int f26235a;
     public final LinkedList<E> b = new LinkedList<>();
 
     public WOMZP(int i) {
-        this.f39926a = i;
+        this.f26235a = i;
     }
 
     public final void a(E e) {
-        if (this.b.size() >= this.f39926a) {
+        if (this.b.size() >= this.f26235a) {
             this.b.poll();
         }
         this.b.offer(e);

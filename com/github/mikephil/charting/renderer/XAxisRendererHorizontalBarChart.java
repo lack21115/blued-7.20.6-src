@@ -63,26 +63,26 @@ public class XAxisRendererHorizontalBarChart extends XAxisRenderer {
             this.d.setColor(this.g.y());
             MPPointF a2 = MPPointF.a(0.0f, 0.0f);
             if (this.g.A() == XAxis.XAxisPosition.TOP) {
-                a2.f22204a = 0.0f;
+                a2.f8597a = 0.0f;
                 a2.b = 0.5f;
                 a(canvas, this.o.g() + u, a2);
             } else if (this.g.A() == XAxis.XAxisPosition.TOP_INSIDE) {
-                a2.f22204a = 1.0f;
+                a2.f8597a = 1.0f;
                 a2.b = 0.5f;
                 a(canvas, this.o.g() - u, a2);
             } else if (this.g.A() == XAxis.XAxisPosition.BOTTOM) {
-                a2.f22204a = 1.0f;
+                a2.f8597a = 1.0f;
                 a2.b = 0.5f;
                 a(canvas, this.o.f() - u, a2);
             } else if (this.g.A() == XAxis.XAxisPosition.BOTTOM_INSIDE) {
-                a2.f22204a = 1.0f;
+                a2.f8597a = 1.0f;
                 a2.b = 0.5f;
                 a(canvas, this.o.f() + u, a2);
             } else {
-                a2.f22204a = 0.0f;
+                a2.f8597a = 0.0f;
                 a2.b = 0.5f;
                 a(canvas, this.o.g() + u, a2);
-                a2.f22204a = 1.0f;
+                a2.f8597a = 1.0f;
                 a2.b = 0.5f;
                 a(canvas, this.o.f() - u, a2);
             }
@@ -94,7 +94,7 @@ public class XAxisRendererHorizontalBarChart extends XAxisRenderer {
     protected void a(Canvas canvas, float f, float f2, Path path) {
         path.moveTo(this.o.g(), f2);
         path.lineTo(this.o.f(), f2);
-        canvas.drawPath(path, this.f22169c);
+        canvas.drawPath(path, this.f8562c);
         path.reset();
     }
 
@@ -111,7 +111,7 @@ public class XAxisRendererHorizontalBarChart extends XAxisRenderer {
                 break;
             }
             if (c2) {
-                fArr[i3 + 1] = this.g.f22086c[i3 / 2];
+                fArr[i3 + 1] = this.g.f8479c[i3 / 2];
             } else {
                 fArr[i3 + 1] = this.g.b[i3 / 2];
             }
@@ -151,12 +151,12 @@ public class XAxisRendererHorizontalBarChart extends XAxisRenderer {
         this.d.setTypeface(this.g.w());
         this.d.setTextSize(this.g.x());
         FSize c2 = Utils.c(this.d, this.g.p());
-        float u = (int) (c2.f22200a + (this.g.u() * 3.5f));
+        float u = (int) (c2.f8593a + (this.g.u() * 3.5f));
         float f = c2.b;
-        FSize a2 = Utils.a(c2.f22200a, f, this.g.B());
+        FSize a2 = Utils.a(c2.f8593a, f, this.g.B());
         this.g.C = Math.round(u);
         this.g.D = Math.round(f);
-        this.g.E = (int) (a2.f22200a + (this.g.u() * 3.5f));
+        this.g.E = (int) (a2.f8593a + (this.g.u() * 3.5f));
         this.g.F = Math.round(a2.b);
         FSize.a(a2);
     }
@@ -164,7 +164,7 @@ public class XAxisRendererHorizontalBarChart extends XAxisRenderer {
     @Override // com.github.mikephil.charting.renderer.XAxisRenderer
     public RectF d() {
         this.j.set(this.o.k());
-        this.j.inset(0.0f, -this.f22168a.f());
+        this.j.inset(0.0f, -this.f8561a.f());
         return this.j;
     }
 

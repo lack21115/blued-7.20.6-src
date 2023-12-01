@@ -4,19 +4,15 @@ import android.text.TextUtils;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/cloud/location/LocationInfo.class */
 public class LocationInfo {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f24209a;
+    private int a;
     private long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f24210c;
+    private int c;
     private String d;
     private String e;
     private String f;
 
     public int getEngineType() {
-        return this.f24209a;
+        return this.a;
     }
 
     public String getLocation() {
@@ -28,7 +24,7 @@ public class LocationInfo {
     }
 
     public int getPhoneType() {
-        return this.f24210c;
+        return this.c;
     }
 
     public long getUpdateTime() {
@@ -40,7 +36,7 @@ public class LocationInfo {
     }
 
     public void setEngineType(int i) {
-        this.f24209a = i;
+        this.a = i;
     }
 
     public void setLocation(String str) {
@@ -52,7 +48,7 @@ public class LocationInfo {
     }
 
     public void setPhoneType(int i) {
-        this.f24210c = i;
+        this.c = i;
     }
 
     public void setUpdateTime(long j) {

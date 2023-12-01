@@ -31,7 +31,6 @@ import com.blued.android.module.common.user.model.BluedLoginResult;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.view.ClearEditText;
-import com.blued.android.module.common.view.CommonEdittextView;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.das.login.LoginAndRegisterProtos;
@@ -48,6 +47,7 @@ import com.soft.blued.ui.home.HomeArgumentHelper;
 import com.soft.blued.ui.setting.fragment.BindingSecureEmailFragment;
 import com.soft.blued.utils.Logger;
 import com.soft.blued.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.security.NoSuchAlgorithmException;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/login_register/RegisterV1ForPhone2Fragment.class */
@@ -78,7 +78,7 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
     private String p = "";
 
     /* renamed from: a  reason: collision with root package name */
-    Runnable f31455a = new Runnable() { // from class: com.soft.blued.ui.login_register.RegisterV1ForPhone2Fragment.3
+    Runnable f17765a = new Runnable() { // from class: com.soft.blued.ui.login_register.RegisterV1ForPhone2Fragment.3
         @Override // java.lang.Runnable
         public void run() {
             if (RegisterV1ForPhone2Fragment.this.B == 0) {
@@ -103,39 +103,37 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
     public BluedUIHttpResponse b = new BluedUIHttpResponse<BluedEntityA<BluedLoginResult>>() { // from class: com.soft.blued.ui.login_register.RegisterV1ForPhone2Fragment.6
 
         /* renamed from: a  reason: collision with root package name */
-        String f31462a = "";
+        String f17772a = "";
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<BluedLoginResult> parseData(String str) {
-            this.f31462a = str;
-            BluedEntityA<BluedLoginResult> bluedEntityA = (BluedEntityA) super.parseData(str);
-            if (bluedEntityA != null) {
+            this.f17772a = str;
+            BluedEntityA<BluedLoginResult> parseData = super.parseData(str);
+            if (parseData != null) {
                 try {
-                    if (bluedEntityA.data != null && bluedEntityA.data.size() > 0) {
-                        String a2 = AesCrypto2.a(bluedEntityA.data.get(0).getEncrypted());
+                    if (parseData.data != null && parseData.data.size() > 0) {
+                        String a2 = AesCrypto2.a(((BluedLoginResult) parseData.data.get(0)).getEncrypted());
                         Logger.b(RegisterV1ForPhone2Fragment.this.e, "解密：deData===", a2);
-                        bluedEntityA.data.set(0, (BluedLoginResult) AppInfo.f().fromJson(a2, (Class<Object>) BluedLoginResult.class));
-                        return bluedEntityA;
+                        parseData.data.set(0, (BluedLoginResult) AppInfo.f().fromJson(a2, (Class<Object>) BluedLoginResult.class));
+                        return parseData;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                     AppMethods.d(2131887272);
                 }
             }
-            return bluedEntityA;
+            return parseData;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedLoginResult> bluedEntityA) {
             try {
                 Logger.b(RegisterV1ForPhone2Fragment.this.e, "===success", "加密：responseJson:", bluedEntityA);
                 if (bluedEntityA.data.get(0) != null) {
-                    BluedLoginResult bluedLoginResult = bluedEntityA.data.get(0);
+                    BluedLoginResult bluedLoginResult = (BluedLoginResult) bluedEntityA.data.get(0);
                     UserInfo userInfo = UserInfo.getInstance();
-                    userInfo.saveUserInfo(RegisterV1ForPhone2Fragment.this.o + "-" + RegisterV1ForPhone2Fragment.this.m, 1, this.f31462a, bluedLoginResult, new String[0]);
+                    userInfo.saveUserInfo(RegisterV1ForPhone2Fragment.this.o + Constants.ACCEPT_TIME_SEPARATOR_SERVER + RegisterV1ForPhone2Fragment.this.m, 1, this.f17772a, bluedLoginResult, new String[0]);
                     Bundle bundle = new Bundle();
                     bundle.putString("from_tag_page", "from_tag_register");
                     HomeArgumentHelper.a(RegisterV1ForPhone2Fragment.this.g, (String) null, bundle);
@@ -146,51 +144,47 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             DialogUtils.b(RegisterV1ForPhone2Fragment.this.h);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             DialogUtils.a(RegisterV1ForPhone2Fragment.this.h);
         }
     };
 
     /* renamed from: c  reason: collision with root package name */
-    public BluedUIHttpResponse f31456c = new BluedUIHttpResponse() { // from class: com.soft.blued.ui.login_register.RegisterV1ForPhone2Fragment.7
+    public BluedUIHttpResponse f17766c = new BluedUIHttpResponse() { // from class: com.soft.blued.ui.login_register.RegisterV1ForPhone2Fragment.7
 
         /* renamed from: a  reason: collision with root package name */
-        int f31463a;
+        int f17773a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f31464c;
+        String f17774c;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str, String str2) {
-            this.f31463a = i;
+            this.f17773a = i;
             this.b = str;
-            this.f31464c = str2;
+            this.f17774c = str2;
             if (i == 4036202 || i == 4036712) {
                 return true;
             }
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             BluedCheckResult bluedCheckResult;
             super.onUIFinish();
             DialogUtils.b(RegisterV1ForPhone2Fragment.this.h);
-            int i = this.f31463a;
+            int i = this.f17773a;
             if (i > 0) {
                 switch (i) {
                     case 4036001:
                         RegisterV1ForPhone2Fragment.this.getActivity().finish();
                         return;
                     case 4036002:
-                        RegisterV1ForPhone2Fragment.this.z = LoginRegisterTools.a(this.f31464c);
+                        RegisterV1ForPhone2Fragment.this.z = LoginRegisterTools.a(this.f17774c);
                         return;
                     case 4036202:
                         String str = this.b;
@@ -214,14 +208,14 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
                     case 4036205:
                         try {
                             Gson f = AppInfo.f();
-                            BluedEntityA bluedEntityA = (BluedEntityA) f.fromJson(this.f31464c, new TypeToken<BluedEntityA<BluedCheckResult>>() { // from class: com.soft.blued.ui.login_register.RegisterV1ForPhone2Fragment.7.1
+                            BluedEntityA bluedEntityA = (BluedEntityA) f.fromJson(this.f17774c, new TypeToken<BluedEntityA<BluedCheckResult>>() { // from class: com.soft.blued.ui.login_register.RegisterV1ForPhone2Fragment.7.1
                             }.getType());
                             if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || (bluedCheckResult = (BluedCheckResult) f.fromJson(AesCrypto.c(((BluedCheckResult) bluedEntityA.data.get(0)).getEncrypted()), (Class<Object>) BluedCheckResult.class)) == null) {
                                 return;
                             }
                             RegisterV1ForPhone2Fragment.this.z = bluedCheckResult.getCaptcha();
                             if (!StringUtils.d(RegisterV1ForPhone2Fragment.this.z)) {
-                                LoginRegisterTools.a(RegisterV1ForPhone2Fragment.this.getFragmentActive(), RegisterV1ForPhone2Fragment.this.k, RegisterV1ForPhone2Fragment.this.z);
+                                LoginRegisterTools.a((IRequestHost) RegisterV1ForPhone2Fragment.this.getFragmentActive(), RegisterV1ForPhone2Fragment.this.k, RegisterV1ForPhone2Fragment.this.z);
                             }
                             RegisterV1ForPhone2Fragment.this.j.setVisibility(0);
                             return;
@@ -247,19 +241,17 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
                         if (StringUtils.d(RegisterV1ForPhone2Fragment.this.z)) {
                             return;
                         }
-                        LoginRegisterTools.a(RegisterV1ForPhone2Fragment.this.getFragmentActive(), RegisterV1ForPhone2Fragment.this.k, RegisterV1ForPhone2Fragment.this.z);
+                        LoginRegisterTools.a((IRequestHost) RegisterV1ForPhone2Fragment.this.getFragmentActive(), RegisterV1ForPhone2Fragment.this.k, RegisterV1ForPhone2Fragment.this.z);
                         return;
                 }
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             DialogUtils.a(RegisterV1ForPhone2Fragment.this.h);
             super.onUIStart();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
             RegisterV1ForPhone2Fragment.this.o();
         }
@@ -267,31 +259,29 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
     public BluedUIHttpResponse d = new BluedUIHttpResponse() { // from class: com.soft.blued.ui.login_register.RegisterV1ForPhone2Fragment.8
 
         /* renamed from: a  reason: collision with root package name */
-        int f31469a;
+        int f17779a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f31470c;
+        String f17780c;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str, String str2) {
-            this.f31469a = i;
+            this.f17779a = i;
             this.b = str;
-            this.f31470c = str2;
+            this.f17780c = str2;
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             DialogUtils.b(RegisterV1ForPhone2Fragment.this.h);
-            int i = this.f31469a;
+            int i = this.f17779a;
             if (i > 0) {
                 switch (i) {
                     case 4036001:
                         RegisterV1ForPhone2Fragment.this.getActivity().finish();
                         break;
                     case 4036002:
-                        RegisterV1ForPhone2Fragment.this.y = LoginRegisterTools.a(this.f31470c);
+                        RegisterV1ForPhone2Fragment.this.y = LoginRegisterTools.a(this.f17780c);
                         RegisterV1ForPhone2Fragment.this.n();
                         break;
                     case 4036204:
@@ -299,7 +289,7 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
                         break;
                     default:
                         if (!StringUtils.d(RegisterV1ForPhone2Fragment.this.z)) {
-                            LoginRegisterTools.a(RegisterV1ForPhone2Fragment.this.getFragmentActive(), RegisterV1ForPhone2Fragment.this.k, RegisterV1ForPhone2Fragment.this.z);
+                            LoginRegisterTools.a((IRequestHost) RegisterV1ForPhone2Fragment.this.getFragmentActive(), RegisterV1ForPhone2Fragment.this.k, RegisterV1ForPhone2Fragment.this.z);
                             break;
                         }
                         break;
@@ -308,29 +298,26 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
             super.onUIFinish();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             DialogUtils.a(RegisterV1ForPhone2Fragment.this.h);
             super.onUIStart();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
-            AppMethods.a((CharSequence) RegisterV1ForPhone2Fragment.this.g.getResources().getString(2131886716));
+            AppMethods.a(RegisterV1ForPhone2Fragment.this.g.getResources().getString(2131886716));
             RegisterV1ForPhone2Fragment.this.l();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public BluedEntity parseData(String str) {
-            this.f31470c = str;
+            this.f17780c = str;
             return super.parseData(str);
         }
     };
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f.findViewById(2131370749);
-        this.i = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.f.findViewById(R.id.top_title);
+        this.i = findViewById;
+        findViewById.a();
         this.i.f();
         this.i.setLeftClickListener(this);
         if (getArguments() != null) {
@@ -347,11 +334,11 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
 
     private void a(String str) {
         BluedUIHttpResponse bluedUIHttpResponse = this.d;
-        LoginRegisterHttpUtils.a(bluedUIHttpResponse, this.o + "-" + this.m, this.x, str, "mobile", "identify", "", getFragmentActive());
+        LoginRegisterHttpUtils.a(bluedUIHttpResponse, this.o + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.m, this.x, str, "mobile", "identify", "", getFragmentActive());
     }
 
     private void b() {
-        this.t = (TextView) this.f.findViewById(2131371262);
+        this.t = (TextView) this.f.findViewById(R.id.tv_desc);
         this.h = DialogUtils.a(this.g);
         LinearLayout linearLayout = (LinearLayout) this.f.findViewById(R.id.ll_root_layout);
         this.q = linearLayout;
@@ -359,9 +346,9 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
         TextView textView = (TextView) this.f.findViewById(R.id.tv_resend);
         this.w = textView;
         textView.setOnClickListener(this);
-        ShapeTextView shapeTextView = (ShapeTextView) this.f.findViewById(2131371164);
-        this.u = shapeTextView;
-        shapeTextView.setOnClickListener(this);
+        ShapeTextView findViewById = this.f.findViewById(2131371164);
+        this.u = findViewById;
+        findViewById.setOnClickListener(this);
         GridCodeEditText gridCodeEditText = (GridCodeEditText) this.f.findViewById(R.id.gcet_grid_code_view);
         this.v = gridCodeEditText;
         gridCodeEditText.setPasswordVisibility(true);
@@ -369,7 +356,7 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
         ImageView imageView = (ImageView) this.f.findViewById(2131361892);
         this.k = imageView;
         imageView.setOnClickListener(this);
-        this.l = ((CommonEdittextView) this.f.findViewById(2131362783)).getEditText();
+        this.l = this.f.findViewById(2131362783).getEditText();
         TextView textView2 = (TextView) this.f.findViewById(R.id.tv_resend);
         this.s = textView2;
         textView2.setOnClickListener(this);
@@ -434,7 +421,7 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
             textView.setText(getResources().getString(2131886705) + LoginRegisterTools.e(this.m) + "\n" + getResources().getString(2131886707));
             this.o = getArguments().getString(LoginRegisterTools.g);
             this.x = getArguments().getString(LoginRegisterTools.d);
-            this.y = getArguments().getString(LoginRegisterTools.f31400c);
+            this.y = getArguments().getString(LoginRegisterTools.f17710c);
         }
         g();
     }
@@ -449,24 +436,21 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
 
     private void g() {
         this.B = 60;
-        postSafeRunOnUiThread(this.f31455a);
+        postSafeRunOnUiThread(this.f17765a);
     }
 
     private void h() {
         LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.login_register.RegisterV1ForPhone2Fragment.4
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 RegisterV1ForPhone2Fragment.this.l();
                 AppMethods.d(2131886716);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(RegisterV1ForPhone2Fragment.this.h);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 DialogUtils.a(RegisterV1ForPhone2Fragment.this.h);
             }
@@ -475,12 +459,11 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
 
     private void i() {
         LoginRegisterHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.login_register.RegisterV1ForPhone2Fragment.5
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 try {
                     new Bundle().putString("binding_type", "add");
-                    TerminalActivity.d(RegisterV1ForPhone2Fragment.this.g, BindingSecureEmailFragment.class, null);
+                    TerminalActivity.d(RegisterV1ForPhone2Fragment.this.g, BindingSecureEmailFragment.class, (Bundle) null);
                     RegisterV1ForPhone2Fragment.this.getActivity().finish();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -488,12 +471,10 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(RegisterV1ForPhone2Fragment.this.h);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 DialogUtils.a(RegisterV1ForPhone2Fragment.this.h);
             }
@@ -501,7 +482,7 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
     }
 
     private void j() {
-        LoginRegisterHttpUtils.b(this.f31456c, this.x, this.v.getPassWord(), this.l.getText().toString(), "mobile", getFragmentActive());
+        LoginRegisterHttpUtils.b(this.f17766c, this.x, this.v.getPassWord(), this.l.getText().toString(), "mobile", getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -524,10 +505,11 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
     public void n() {
         Bundle bundle = new Bundle();
         bundle.putString(LoginRegisterTools.d, this.x);
-        bundle.putString(LoginRegisterTools.f31400c, this.y);
+        bundle.putString(LoginRegisterTools.f17710c, this.y);
         Logger.b(this.e, "tokenVer===", this.x);
         Logger.b(this.e, "captchaFromOne===", this.y);
         TerminalActivity.a(this, RegisterV1ForCaptchaCodeFragment.class, bundle, 1000);
@@ -535,18 +517,17 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
 
     /* JADX INFO: Access modifiers changed from: private */
     public void o() {
-        FinishProfile1Fragment.Companion companion = FinishProfile1Fragment.f20540a;
+        FinishProfile1Fragment.Companion companion = FinishProfile1Fragment.f6934a;
         Context context = this.g;
         String str = this.x;
         String str2 = this.n;
-        companion.a(context, str, str2, this.o + "-" + this.m, LoginAndRegisterProtos.Source.PHONE, "");
+        companion.a(context, str, str2, this.o + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.m, LoginAndRegisterProtos.Source.PHONE, "");
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i == 1000 && intent != null) {
-            String stringExtra = intent.getStringExtra(LoginRegisterTools.f31400c);
+            String stringExtra = intent.getStringExtra(LoginRegisterTools.f17710c);
             if (StringUtils.d(stringExtra)) {
                 return;
             }
@@ -562,7 +543,7 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
                 if (StringUtils.d(this.z)) {
                     return;
                 }
-                LoginRegisterTools.a(getFragmentActive(), this.k, this.z);
+                LoginRegisterTools.a((IRequestHost) getFragmentActive(), this.k, this.z);
                 return;
             case 2131363120:
                 getActivity().finish();
@@ -605,7 +586,6 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.g = getActivity();
         View view = this.f;
@@ -620,13 +600,11 @@ public class RegisterV1ForPhone2Fragment extends BaseFragment implements View.On
         return this.f;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         e();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         f();
         super.onStop();

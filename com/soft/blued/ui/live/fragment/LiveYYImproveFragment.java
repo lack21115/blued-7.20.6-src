@@ -14,7 +14,7 @@ import java.util.List;
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/live/fragment/LiveYYImproveFragment.class */
 public class LiveYYImproveFragment extends LiveBaseImproveFragment<LiveYYImprovePresenter> implements View.OnClickListener {
     public static void a(Context context) {
-        TerminalActivity.d(context, LiveYYImproveFragment.class, null);
+        TerminalActivity.d(context, LiveYYImproveFragment.class, (Bundle) null);
     }
 
     @Override // com.soft.blued.ui.live.fragment.LiveBaseImproveFragment
@@ -56,13 +56,12 @@ public class LiveYYImproveFragment extends LiveBaseImproveFragment<LiveYYImprove
         }
     }
 
-    @Override // com.soft.blued.ui.live.fragment.LiveBaseImproveFragment, com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.live.fragment.LiveBaseImproveFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f31143c = getContext();
+        this.f17453c = getContext();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (this.e) {

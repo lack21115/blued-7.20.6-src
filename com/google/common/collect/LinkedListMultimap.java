@@ -576,7 +576,7 @@ public class LinkedListMultimap<K, V> extends AbstractMultimap<K, V> implements 
                 return LinkedListMultimap.this.containsKey(obj);
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public Iterator<K> iterator() {
                 return new DistinctKeyIterator();
             }
@@ -586,7 +586,7 @@ public class LinkedListMultimap<K, V> extends AbstractMultimap<K, V> implements 
                 return !LinkedListMultimap.this.removeAll(obj).isEmpty();
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return LinkedListMultimap.this.keyToKeyList.size();
             }

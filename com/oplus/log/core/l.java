@@ -10,11 +10,11 @@ import java.util.Date;
 public final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SimpleDateFormat f24350a = new SimpleDateFormat("yyyy-MM-dd");
+    private static SimpleDateFormat f10663a = new SimpleDateFormat("yyyy-MM-dd");
 
     public static long a() {
         try {
-            return f24350a.parse(f24350a.format(new Date(System.currentTimeMillis()))).getTime();
+            return f10663a.parse(f10663a.format(new Date(System.currentTimeMillis()))).getTime();
         } catch (Exception e) {
             if (com.oplus.log.b.a()) {
                 e.printStackTrace();

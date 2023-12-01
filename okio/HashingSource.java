@@ -1,5 +1,6 @@
 package okio;
 
+import com.anythink.core.common.k.f;
 import java.io.IOException;
 import java.security.MessageDigest;
 import javax.crypto.Mac;
@@ -50,7 +51,7 @@ public final class HashingSource extends ForwardingSource implements Source {
         @JvmStatic
         public final HashingSource md5(Source source) {
             Intrinsics.e(source, "source");
-            return new HashingSource(source, "MD5");
+            return new HashingSource(source, f.a);
         }
 
         @JvmStatic
@@ -148,7 +149,7 @@ public final class HashingSource extends ForwardingSource implements Source {
             r2.<init>(r3, r4)     // Catch: java.security.InvalidKeyException -> L3f
             java.security.Key r1 = (java.security.Key) r1     // Catch: java.security.InvalidKeyException -> L3f
             r0.init(r1)     // Catch: java.security.InvalidKeyException -> L3f
-            kotlin.Unit r0 = kotlin.Unit.f42314a     // Catch: java.security.InvalidKeyException -> L3f
+            kotlin.Unit r0 = kotlin.Unit.a     // Catch: java.security.InvalidKeyException -> L3f
             r8 = r0
             r0 = r10
             java.lang.String r1 = "try {\n      Mac.getInsta…rgumentException(e)\n    }"
@@ -207,7 +208,7 @@ public final class HashingSource extends ForwardingSource implements Source {
 
     @Deprecated
     /* renamed from: -deprecated_hash  reason: not valid java name */
-    public final ByteString m13298deprecated_hash() {
+    public final ByteString m12207deprecated_hash() {
         return hash();
     }
 

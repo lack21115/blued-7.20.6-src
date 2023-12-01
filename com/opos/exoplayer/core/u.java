@@ -4,7 +4,7 @@ package com.opos.exoplayer.core;
 public final class u {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final u f25558a = new u(0);
+    public static final u f11870a = new u(0);
     public final int b;
 
     public u(int i) {

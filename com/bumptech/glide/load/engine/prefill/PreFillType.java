@@ -6,11 +6,11 @@ import android.graphics.Bitmap;
 public final class PreFillType {
 
     /* renamed from: a  reason: collision with root package name */
-    static final Bitmap.Config f20856a = Bitmap.Config.RGB_565;
+    static final Bitmap.Config f7250a = Bitmap.Config.RGB_565;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f20857c;
+    private final int f7251c;
     private final Bitmap.Config d;
     private final int e;
 
@@ -25,7 +25,7 @@ public final class PreFillType {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int b() {
-        return this.f20857c;
+        return this.f7251c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -38,7 +38,7 @@ public final class PreFillType {
         if (obj instanceof PreFillType) {
             PreFillType preFillType = (PreFillType) obj;
             z = false;
-            if (this.f20857c == preFillType.f20857c) {
+            if (this.f7251c == preFillType.f7251c) {
                 z = false;
                 if (this.b == preFillType.b) {
                     z = false;
@@ -55,10 +55,10 @@ public final class PreFillType {
     }
 
     public int hashCode() {
-        return (((((this.b * 31) + this.f20857c) * 31) + this.d.hashCode()) * 31) + this.e;
+        return (((((this.b * 31) + this.f7251c) * 31) + this.d.hashCode()) * 31) + this.e;
     }
 
     public String toString() {
-        return "PreFillSize{width=" + this.b + ", height=" + this.f20857c + ", config=" + this.d + ", weight=" + this.e + '}';
+        return "PreFillSize{width=" + this.b + ", height=" + this.f7251c + ", config=" + this.d + ", weight=" + this.e + '}';
     }
 }

@@ -5,8 +5,8 @@ import com.tencent.qimei.v.g;
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qimei/w/d.class */
 public enum d implements com.tencent.qimei.f.a<String> {
     KEY_DATA_VERSION("version", ""),
-    KEY_DATA_QM_REQUEST_URL("url", com.tencent.qimei.v.d.f38422a.u()),
-    KEY_DATA_PEAK_TIME("peakTime", com.tencent.qimei.v.d.f38422a.g());
+    KEY_DATA_QM_REQUEST_URL("url", com.tencent.qimei.v.d.f24731a.u()),
+    KEY_DATA_PEAK_TIME("peakTime", com.tencent.qimei.v.d.f24731a.g());
     
     public static final com.tencent.qimei.h.a<String> d = new com.tencent.qimei.h.d(new com.tencent.qimei.f.a[0]);
     public final String f;

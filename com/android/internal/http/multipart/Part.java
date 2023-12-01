@@ -10,14 +10,14 @@ import org.apache.http.util.EncodingUtils;
 @Deprecated
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/http/multipart/Part.class */
 public abstract class Part {
-    protected static final String CRLF = "\r\n";
     protected static final String QUOTE = "\"";
     private byte[] boundaryBytes;
     private static final Log LOG = LogFactory.getLog(Part.class);
     protected static final String BOUNDARY = "----------------314159265358979323846";
     protected static final byte[] BOUNDARY_BYTES = EncodingUtils.getAsciiBytes(BOUNDARY);
     private static final byte[] DEFAULT_BOUNDARY_BYTES = BOUNDARY_BYTES;
-    protected static final byte[] CRLF_BYTES = EncodingUtils.getAsciiBytes("\r\n");
+    protected static final String CRLF = "\r\n";
+    protected static final byte[] CRLF_BYTES = EncodingUtils.getAsciiBytes(CRLF);
     protected static final byte[] QUOTE_BYTES = EncodingUtils.getAsciiBytes("\"");
     protected static final String EXTRA = "--";
     protected static final byte[] EXTRA_BYTES = EncodingUtils.getAsciiBytes(EXTRA);

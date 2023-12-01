@@ -17,18 +17,14 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/extensions/BluedViewExtKt.class */
 public final class BluedViewExtKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f10789a;
+    private static boolean a;
     private static Runnable b = new Runnable() { // from class: com.blued.android.module.common.extensions.-$$Lambda$BluedViewExtKt$AJQeuJT8DsJbX23GHxoYQXxLUnA
         @Override // java.lang.Runnable
         public final void run() {
             BluedViewExtKt.a();
         }
     };
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final long f10790c = 500;
+    private static final long c = 500;
 
     public static final float a(float f) {
         return TypedValue.applyDimension(1, f, Resources.getSystem().getDisplayMetrics());
@@ -65,7 +61,7 @@ public final class BluedViewExtKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a() {
-        f10789a = false;
+        a = false;
     }
 
     public static final void a(View view, final Function1<? super View, Unit> action) {
@@ -89,7 +85,7 @@ public final class BluedViewExtKt {
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view2, MotionEvent motionEvent) {
                 boolean a2;
-                a2 = BluedViewExtKt.a(PointF.this, view2, motionEvent);
+                a2 = BluedViewExtKt.a(pointF, view2, motionEvent);
                 return a2;
             }
         });
@@ -105,11 +101,11 @@ public final class BluedViewExtKt {
     public static final void a(Ref.LongRef lastClickTime, Function1 action, View it) {
         Intrinsics.e(lastClickTime, "$lastClickTime");
         Intrinsics.e(action, "$action");
-        if (SystemClock.elapsedRealtime() - lastClickTime.f42544a < f10790c) {
+        if (SystemClock.elapsedRealtime() - lastClickTime.a < c) {
             Intrinsics.c(it, "it");
             action.invoke(it);
         }
-        lastClickTime.f42544a = SystemClock.elapsedRealtime();
+        lastClickTime.a = SystemClock.elapsedRealtime();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -117,11 +113,11 @@ public final class BluedViewExtKt {
         Intrinsics.e(lastClickTime, "$lastClickTime");
         Intrinsics.e(action, "$action");
         Intrinsics.e(coordinates, "$coordinates");
-        if (SystemClock.elapsedRealtime() - lastClickTime.f42544a < f10790c) {
+        if (SystemClock.elapsedRealtime() - lastClickTime.a < c) {
             Intrinsics.c(it, "it");
             action.invoke(it, coordinates);
         }
-        lastClickTime.f42544a = SystemClock.elapsedRealtime();
+        lastClickTime.a = SystemClock.elapsedRealtime();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

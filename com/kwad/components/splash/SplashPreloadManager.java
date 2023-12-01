@@ -263,16 +263,16 @@ public final class SplashPreloadManager {
                                     if (next2.adPreloadInfo.preloadType != 1 || ag.isWifiConnected(KsAdSDKImpl.get().getContext()) || z) {
                                         com.kwad.sdk.core.d.b.d("PreloadManager", "start Download preloadId " + aS + " true url " + E);
                                         rU();
-                                        a.C0564a c0564a = new a.C0564a();
-                                        if (h.a(E, aS, c0564a)) {
+                                        a.C0394a c0394a = new a.C0394a();
+                                        if (h.a(E, aS, c0394a)) {
                                             y(next2);
                                             i3++;
                                             com.kwad.components.splash.monitor.a.rY();
                                             com.kwad.components.splash.monitor.a.a(next2, SystemClock.elapsedRealtime() - elapsedRealtime, 1, next.posId);
                                         } else {
                                             com.kwad.components.splash.monitor.a.rY();
-                                            com.kwad.components.splash.monitor.a.a(next2, 4, c0564a.msg, next.posId);
-                                            com.kwad.components.core.m.a.pb().b(next, 1, c0564a.msg);
+                                            com.kwad.components.splash.monitor.a.a(next2, 4, c0394a.msg, next.posId);
+                                            com.kwad.components.core.m.a.pb().b(next, 1, c0394a.msg);
                                         }
                                     } else {
                                         com.kwad.components.splash.monitor.a.rY();

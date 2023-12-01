@@ -1,5 +1,6 @@
 package com.tencent.smtt.sdk;
 
+import android.R;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -26,31 +27,31 @@ import com.tencent.smtt.sdk.WebView;
 public class SystemWebChromeClient extends android.webkit.WebChromeClient {
 
     /* renamed from: a  reason: collision with root package name */
-    private WebView f38727a;
+    private WebView f25036a;
     private WebChromeClient b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/SystemWebChromeClient$a.class */
     static class a implements ConsoleMessage {
 
         /* renamed from: a  reason: collision with root package name */
-        private ConsoleMessage.MessageLevel f38736a;
+        private ConsoleMessage.MessageLevel f25045a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f38737c;
+        private String f25046c;
         private int d;
 
         a(android.webkit.ConsoleMessage consoleMessage) {
-            this.f38736a = ConsoleMessage.MessageLevel.valueOf(consoleMessage.messageLevel().name());
+            this.f25045a = ConsoleMessage.MessageLevel.valueOf(consoleMessage.messageLevel().name());
             this.b = consoleMessage.message();
-            this.f38737c = consoleMessage.sourceId();
+            this.f25046c = consoleMessage.sourceId();
             this.d = consoleMessage.lineNumber();
         }
 
         a(String str, String str2, int i) {
-            this.f38736a = ConsoleMessage.MessageLevel.LOG;
+            this.f25045a = ConsoleMessage.MessageLevel.LOG;
             this.b = str;
-            this.f38737c = str2;
+            this.f25046c = str2;
             this.d = i;
         }
 
@@ -66,12 +67,12 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
 
         @Override // com.tencent.smtt.export.external.interfaces.ConsoleMessage
         public ConsoleMessage.MessageLevel messageLevel() {
-            return this.f38736a;
+            return this.f25045a;
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.ConsoleMessage
         public String sourceId() {
-            return this.f38737c;
+            return this.f25046c;
         }
     }
 
@@ -79,15 +80,15 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
     class b implements IX5WebChromeClient.CustomViewCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        WebChromeClient.CustomViewCallback f38738a;
+        WebChromeClient.CustomViewCallback f25047a;
 
         b(WebChromeClient.CustomViewCallback customViewCallback) {
-            this.f38738a = customViewCallback;
+            this.f25047a = customViewCallback;
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.IX5WebChromeClient.CustomViewCallback
         public void onCustomViewHidden() {
-            this.f38738a.onCustomViewHidden();
+            this.f25047a.onCustomViewHidden();
         }
     }
 
@@ -95,15 +96,15 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
     class c implements GeolocationPermissionsCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        GeolocationPermissions.Callback f38739a;
+        GeolocationPermissions.Callback f25048a;
 
         c(GeolocationPermissions.Callback callback) {
-            this.f38739a = callback;
+            this.f25048a = callback;
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.GeolocationPermissionsCallback
         public void invoke(String str, boolean z, boolean z2) {
-            this.f38739a.invoke(str, z, z2);
+            this.f25048a.invoke(str, z, z2);
         }
     }
 
@@ -111,25 +112,25 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
     class d implements JsPromptResult {
 
         /* renamed from: a  reason: collision with root package name */
-        android.webkit.JsPromptResult f38740a;
+        android.webkit.JsPromptResult f25049a;
 
         d(android.webkit.JsPromptResult jsPromptResult) {
-            this.f38740a = jsPromptResult;
+            this.f25049a = jsPromptResult;
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.JsResult
         public void cancel() {
-            this.f38740a.cancel();
+            this.f25049a.cancel();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.JsResult
         public void confirm() {
-            this.f38740a.confirm();
+            this.f25049a.confirm();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.JsPromptResult
         public void confirm(String str) {
-            this.f38740a.confirm(str);
+            this.f25049a.confirm(str);
         }
     }
 
@@ -137,20 +138,20 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
     class e implements JsResult {
 
         /* renamed from: a  reason: collision with root package name */
-        android.webkit.JsResult f38741a;
+        android.webkit.JsResult f25050a;
 
         e(android.webkit.JsResult jsResult) {
-            this.f38741a = jsResult;
+            this.f25050a = jsResult;
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.JsResult
         public void cancel() {
-            this.f38741a.cancel();
+            this.f25050a.cancel();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.JsResult
         public void confirm() {
-            this.f38741a.confirm();
+            this.f25050a.confirm();
         }
     }
 
@@ -158,21 +159,21 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
     class f implements WebStorage.QuotaUpdater {
 
         /* renamed from: a  reason: collision with root package name */
-        WebStorage.QuotaUpdater f38742a;
+        WebStorage.QuotaUpdater f25051a;
 
         f(WebStorage.QuotaUpdater quotaUpdater) {
-            this.f38742a = quotaUpdater;
+            this.f25051a = quotaUpdater;
         }
 
         @Override // com.tencent.smtt.sdk.WebStorage.QuotaUpdater
         public void updateQuota(long j) {
-            this.f38742a.updateQuota(j);
+            this.f25051a.updateQuota(j);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SystemWebChromeClient(WebView webView, WebChromeClient webChromeClient) {
-        this.f38727a = webView;
+        this.f25036a = webView;
         this.b = webChromeClient;
     }
 
@@ -184,7 +185,7 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
             bitmap = defaultVideoPoster;
             try {
                 if (Build.VERSION.SDK_INT >= 24) {
-                    bitmap = BitmapFactory.decodeResource(this.f38727a.getResources(), 17301540);
+                    bitmap = BitmapFactory.decodeResource(this.f25036a.getResources(), R.drawable.ic_media_play);
                 }
             } catch (Exception e2) {
                 return defaultVideoPoster;
@@ -211,8 +212,8 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
 
     @Override // android.webkit.WebChromeClient
     public void onCloseWindow(android.webkit.WebView webView) {
-        this.f38727a.a(webView);
-        this.b.onCloseWindow(this.f38727a);
+        this.f25036a.a(webView);
+        this.b.onCloseWindow(this.f25036a);
     }
 
     @Override // android.webkit.WebChromeClient
@@ -227,7 +228,7 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
 
     @Override // android.webkit.WebChromeClient
     public boolean onCreateWindow(android.webkit.WebView webView, boolean z, boolean z2, final Message message) {
-        WebView webView2 = this.f38727a;
+        WebView webView2 = this.f25036a;
         webView2.getClass();
         final WebView.WebViewTransport webViewTransport = new WebView.WebViewTransport();
         Message obtain = Message.obtain(message.getTarget(), new Runnable() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.2
@@ -241,7 +242,7 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
             }
         });
         obtain.obj = webViewTransport;
-        return this.b.onCreateWindow(this.f38727a, z, z2, obtain);
+        return this.b.onCreateWindow(this.f25036a, z, z2, obtain);
     }
 
     @Override // android.webkit.WebChromeClient
@@ -267,26 +268,26 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
 
     @Override // android.webkit.WebChromeClient
     public boolean onJsAlert(android.webkit.WebView webView, String str, String str2, android.webkit.JsResult jsResult) {
-        this.f38727a.a(webView);
-        return this.b.onJsAlert(this.f38727a, str, str2, new e(jsResult));
+        this.f25036a.a(webView);
+        return this.b.onJsAlert(this.f25036a, str, str2, new e(jsResult));
     }
 
     @Override // android.webkit.WebChromeClient
     public boolean onJsBeforeUnload(android.webkit.WebView webView, String str, String str2, android.webkit.JsResult jsResult) {
-        this.f38727a.a(webView);
-        return this.b.onJsBeforeUnload(this.f38727a, str, str2, new e(jsResult));
+        this.f25036a.a(webView);
+        return this.b.onJsBeforeUnload(this.f25036a, str, str2, new e(jsResult));
     }
 
     @Override // android.webkit.WebChromeClient
     public boolean onJsConfirm(android.webkit.WebView webView, String str, String str2, android.webkit.JsResult jsResult) {
-        this.f38727a.a(webView);
-        return this.b.onJsConfirm(this.f38727a, str, str2, new e(jsResult));
+        this.f25036a.a(webView);
+        return this.b.onJsConfirm(this.f25036a, str, str2, new e(jsResult));
     }
 
     @Override // android.webkit.WebChromeClient
     public boolean onJsPrompt(android.webkit.WebView webView, String str, String str2, String str3, android.webkit.JsPromptResult jsPromptResult) {
-        this.f38727a.a(webView);
-        return this.b.onJsPrompt(this.f38727a, str, str2, str3, new d(jsPromptResult));
+        this.f25036a.a(webView);
+        return this.b.onJsPrompt(this.f25036a, str, str2, str3, new d(jsPromptResult));
     }
 
     @Override // android.webkit.WebChromeClient
@@ -360,8 +361,8 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
 
     @Override // android.webkit.WebChromeClient
     public void onProgressChanged(android.webkit.WebView webView, int i) {
-        this.f38727a.a(webView);
-        this.b.onProgressChanged(this.f38727a, i);
+        this.f25036a.a(webView);
+        this.b.onProgressChanged(this.f25036a, i);
     }
 
     @Override // android.webkit.WebChromeClient
@@ -372,26 +373,26 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
 
     @Override // android.webkit.WebChromeClient
     public void onReceivedIcon(android.webkit.WebView webView, Bitmap bitmap) {
-        this.f38727a.a(webView);
-        this.b.onReceivedIcon(this.f38727a, bitmap);
+        this.f25036a.a(webView);
+        this.b.onReceivedIcon(this.f25036a, bitmap);
     }
 
     @Override // android.webkit.WebChromeClient
     public void onReceivedTitle(android.webkit.WebView webView, String str) {
-        this.f38727a.a(webView);
-        this.b.onReceivedTitle(this.f38727a, str);
+        this.f25036a.a(webView);
+        this.b.onReceivedTitle(this.f25036a, str);
     }
 
     @Override // android.webkit.WebChromeClient
     public void onReceivedTouchIconUrl(android.webkit.WebView webView, String str, boolean z) {
-        this.f38727a.a(webView);
-        this.b.onReceivedTouchIconUrl(this.f38727a, str, z);
+        this.f25036a.a(webView);
+        this.b.onReceivedTouchIconUrl(this.f25036a, str, z);
     }
 
     @Override // android.webkit.WebChromeClient
     public void onRequestFocus(android.webkit.WebView webView) {
-        this.f38727a.a(webView);
-        this.b.onRequestFocus(this.f38727a);
+        this.f25036a.a(webView);
+        this.b.onRequestFocus(this.f25036a);
     }
 
     @Override // android.webkit.WebChromeClient
@@ -445,8 +446,8 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
                 return fileChooserParams.isCaptureEnabled();
             }
         };
-        this.f38727a.a(webView);
-        return this.b.onShowFileChooser(this.f38727a, valueCallback2, fileChooserParams2);
+        this.f25036a.a(webView);
+        return this.b.onShowFileChooser(this.f25036a, valueCallback2, fileChooserParams2);
     }
 
     public void openFileChooser(android.webkit.ValueCallback<Uri> valueCallback) {
@@ -457,7 +458,6 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
         openFileChooser(valueCallback, str, null);
     }
 
-    @Override // android.webkit.WebChromeClient
     public void openFileChooser(final android.webkit.ValueCallback<Uri> valueCallback, String str, String str2) {
         this.b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3
             @Override // com.tencent.smtt.sdk.ValueCallback, android.webkit.ValueCallback
@@ -468,7 +468,6 @@ public class SystemWebChromeClient extends android.webkit.WebChromeClient {
         }, str, str2);
     }
 
-    @Override // android.webkit.WebChromeClient
     public void setupAutoFill(Message message) {
     }
 }

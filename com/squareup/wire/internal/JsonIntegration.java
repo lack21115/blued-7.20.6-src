@@ -28,15 +28,15 @@ public abstract class JsonIntegration<F, A> {
         }
 
         @Override // com.squareup.wire.internal.JsonFormatter
-        public ByteString fromString(String value) {
-            Intrinsics.e(value, "value");
-            return ByteString.Companion.decodeBase64(value);
+        public ByteString fromString(String str) {
+            Intrinsics.e(str, "value");
+            return ByteString.Companion.decodeBase64(str);
         }
 
         @Override // com.squareup.wire.internal.JsonFormatter
-        public String toStringOrNumber(ByteString value) {
-            Intrinsics.e(value, "value");
-            return value.base64();
+        public String toStringOrNumber(ByteString byteString) {
+            Intrinsics.e(byteString, "value");
+            return byteString.base64();
         }
     }
 
@@ -51,9 +51,9 @@ public abstract class JsonIntegration<F, A> {
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // com.squareup.wire.internal.JsonFormatter
-        public Integer fromString(String value) {
-            Intrinsics.e(value, "value");
-            return Integer.valueOf(Integer.parseInt(value));
+        public Integer fromString(String str) {
+            Intrinsics.e(str, "value");
+            return Integer.valueOf(Integer.parseInt(str));
         }
 
         @Override // com.squareup.wire.internal.JsonFormatter
@@ -77,13 +77,13 @@ public abstract class JsonIntegration<F, A> {
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // com.squareup.wire.internal.JsonFormatter
-        public Long fromString(String value) {
+        public Long fromString(String str) {
             long longValueExact;
-            Intrinsics.e(value, "value");
+            Intrinsics.e(str, "value");
             try {
-                longValueExact = Long.parseLong(value);
+                longValueExact = Long.parseLong(str);
             } catch (Exception e) {
-                longValueExact = new BigDecimal(value).longValueExact();
+                longValueExact = new BigDecimal(str).longValueExact();
             }
             return Long.valueOf(longValueExact);
         }
@@ -108,15 +108,15 @@ public abstract class JsonIntegration<F, A> {
         }
 
         @Override // com.squareup.wire.internal.JsonFormatter
-        public String fromString(String value) {
-            Intrinsics.e(value, "value");
-            return value;
+        public String fromString(String str) {
+            Intrinsics.e(str, "value");
+            return str;
         }
 
         @Override // com.squareup.wire.internal.JsonFormatter
-        public String toStringOrNumber(String value) {
-            Intrinsics.e(value, "value");
-            return value;
+        public String toStringOrNumber(String str) {
+            Intrinsics.e(str, "value");
+            return str;
         }
     }
 
@@ -133,9 +133,9 @@ public abstract class JsonIntegration<F, A> {
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // com.squareup.wire.internal.JsonFormatter
-        public Integer fromString(String value) {
-            Intrinsics.e(value, "value");
-            long parseDouble = (long) Double.parseDouble(value);
+        public Integer fromString(String str) {
+            Intrinsics.e(str, "value");
+            long parseDouble = (long) Double.parseDouble(str);
             long j = parseDouble;
             if (parseDouble >= maxInt) {
                 j = parseDouble - 4294967296L;
@@ -165,9 +165,9 @@ public abstract class JsonIntegration<F, A> {
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // com.squareup.wire.internal.JsonFormatter
-        public Integer fromString(String value) {
-            Intrinsics.e(value, "value");
-            return Integer.valueOf((int) Long.parseLong(value));
+        public Integer fromString(String str) {
+            Intrinsics.e(str, "value");
+            return Integer.valueOf((int) Long.parseLong(str));
         }
 
         public Object toStringOrNumber(int i) {
@@ -193,13 +193,13 @@ public abstract class JsonIntegration<F, A> {
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // com.squareup.wire.internal.JsonFormatter
-        public Long fromString(String value) {
+        public Long fromString(String str) {
             BigInteger bigInteger;
-            Intrinsics.e(value, "value");
+            Intrinsics.e(str, "value");
             try {
-                bigInteger = new BigInteger(value);
+                bigInteger = new BigInteger(str);
             } catch (Exception e) {
-                bigInteger = new BigDecimal(value).toBigInteger();
+                bigInteger = new BigDecimal(str).toBigInteger();
             }
             return Long.valueOf(bigInteger.compareTo(maxLong) > 0 ? bigInteger.subtract(power64).longValue() : bigInteger.longValue());
         }
@@ -227,9 +227,9 @@ public abstract class JsonIntegration<F, A> {
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // com.squareup.wire.internal.JsonFormatter
-        public Long fromString(String value) {
-            Intrinsics.e(value, "value");
-            return UnsignedLongAsNumberJsonFormatter.INSTANCE.fromString(value);
+        public Long fromString(String str) {
+            Intrinsics.e(str, "value");
+            return UnsignedLongAsNumberJsonFormatter.INSTANCE.fromString(str);
         }
 
         @Override // com.squareup.wire.internal.JsonFormatter
@@ -317,17 +317,17 @@ public abstract class JsonIntegration<F, A> {
         if (Intrinsics.a(protoAdapter, ProtoAdapter.FIXED64) ? true : Intrinsics.a(protoAdapter, ProtoAdapter.UINT64)) {
             return UnsignedLongAsStringJsonFormatter.INSTANCE;
         }
-        throw new IllegalStateException(Intrinsics.a("Unexpected map key type: ", (Object) protoAdapter.getType()).toString());
+        throw new IllegalStateException(Intrinsics.a("Unexpected map key type: ", protoAdapter.getType()).toString());
     }
 
     public abstract A formatterAdapter(JsonFormatter<?> jsonFormatter);
 
     public abstract A frameworkAdapter(F f, Type type);
 
-    public final <M, B> List<A> jsonAdapters(RuntimeMessageAdapter<M, B> adapter, F f) {
-        Intrinsics.e(adapter, "adapter");
+    public final <M, B> List<A> jsonAdapters(RuntimeMessageAdapter<M, B> runtimeMessageAdapter, F f) {
+        Intrinsics.e(runtimeMessageAdapter, "adapter");
         int i = 0;
-        Object[] array = adapter.getFields().values().toArray(new FieldOrOneOfBinding[0]);
+        Object[] array = runtimeMessageAdapter.getFields().values().toArray(new FieldOrOneOfBinding[0]);
         if (array != null) {
             FieldOrOneOfBinding<M, B>[] fieldOrOneOfBindingArr = (FieldOrOneOfBinding[]) array;
             ArrayList arrayList = new ArrayList(fieldOrOneOfBindingArr.length);
@@ -335,7 +335,7 @@ public abstract class JsonIntegration<F, A> {
             while (i < length) {
                 FieldOrOneOfBinding<M, B> fieldOrOneOfBinding = fieldOrOneOfBindingArr[i];
                 i++;
-                arrayList.add(jsonAdapter(f, adapter.getSyntax(), fieldOrOneOfBinding));
+                arrayList.add(jsonAdapter(f, runtimeMessageAdapter.getSyntax(), fieldOrOneOfBinding));
             }
             return arrayList;
         }

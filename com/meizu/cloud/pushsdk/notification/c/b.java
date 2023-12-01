@@ -18,23 +18,23 @@ import java.util.concurrent.ConcurrentHashMap;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Field f24169a;
+    private static Field f10554a;
     private static Field b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Field f24170c;
+    private static Field f10555c;
     private static final Object d = new Object();
     private static final Map<String, Set<String>> e = new ConcurrentHashMap();
     private static Map<String, Uri> f;
 
     static {
         try {
-            f24169a = Notification.class.getDeclaredField("mFlymeNotification");
+            f10554a = Notification.class.getDeclaredField("mFlymeNotification");
             Field declaredField = Class.forName("android.app.NotificationExt").getDeclaredField("internalApp");
             b = declaredField;
             declaredField.setAccessible(true);
             Field declaredField2 = Notification.class.getDeclaredField("replyIntent");
-            f24170c = declaredField2;
+            f10555c = declaredField2;
             declaredField2.setAccessible(true);
         } catch (ClassNotFoundException e2) {
             e2.printStackTrace();
@@ -44,7 +44,7 @@ public class b {
     }
 
     public static void a(Notification notification, PendingIntent pendingIntent) {
-        Field field = f24170c;
+        Field field = f10555c;
         if (field != null) {
             try {
                 field.set(notification, pendingIntent);
@@ -55,7 +55,7 @@ public class b {
     }
 
     public static void a(Notification notification, boolean z) {
-        Field field = f24169a;
+        Field field = f10554a;
         if (field == null || b == null) {
             return;
         }

@@ -7,10 +7,10 @@ import java.util.List;
 final class c implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<com.opos.exoplayer.core.f.b> f25364a;
+    private final List<com.opos.exoplayer.core.f.b> f11676a;
 
     public c(List<com.opos.exoplayer.core.f.b> list) {
-        this.f25364a = list;
+        this.f11676a = list;
     }
 
     @Override // com.opos.exoplayer.core.f.d
@@ -30,6 +30,6 @@ final class c implements d {
 
     @Override // com.opos.exoplayer.core.f.d
     public List<com.opos.exoplayer.core.f.b> b(long j) {
-        return this.f25364a;
+        return this.f11676a;
     }
 }

@@ -13,11 +13,11 @@ import java.io.InputStream;
 public final class InputStreamBitmapImageDecoderResourceDecoder implements ResourceDecoder<InputStream, Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BitmapImageDecoderResourceDecoder f20962a = new BitmapImageDecoderResourceDecoder();
+    private final BitmapImageDecoderResourceDecoder f7356a = new BitmapImageDecoderResourceDecoder();
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<Bitmap> a(InputStream inputStream, int i, int i2, Options options) throws IOException {
-        return this.f20962a.a(ImageDecoder.createSource(ByteBufferUtil.a(inputStream)), i, i2, options);
+        return this.f7356a.a(ImageDecoder.createSource(ByteBufferUtil.a(inputStream)), i, i2, options);
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder

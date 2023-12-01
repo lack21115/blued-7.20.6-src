@@ -20,11 +20,11 @@ import java.nio.ByteBuffer;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f27781a = "VideoMixer";
+    private static String f14093a = "VideoMixer";
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private q f27782c;
+    private q f14094c;
     private PLVideoMixSetting d;
     private PLVideoEncodeSetting e;
     private String f;
@@ -164,7 +164,7 @@ public class f {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f() {
-        com.qiniu.pili.droid.shortvideo.f.e.g.c(f27781a, "startSampleExtractor +");
+        com.qiniu.pili.droid.shortvideo.f.e.g.c(f14093a, "startSampleExtractor +");
         this.n = com.qiniu.pili.droid.shortvideo.f.d.c();
         this.j = new SurfaceTexture(this.n);
         Surface surface = new Surface(this.j);
@@ -177,8 +177,8 @@ public class f {
             bVar.a(this.y);
             this.h.a(surface);
             this.h.a(false);
-            this.h.a(new b.InterfaceC0744b() { // from class: com.qiniu.pili.droid.shortvideo.process.a.f.3
-                @Override // com.qiniu.pili.droid.shortvideo.d.b.InterfaceC0744b
+            this.h.a(new b.InterfaceC0574b() { // from class: com.qiniu.pili.droid.shortvideo.process.a.f.3
+                @Override // com.qiniu.pili.droid.shortvideo.d.b.InterfaceC0574b
                 public void a() {
                     if (f.this.j != null) {
                         f.this.j.release();
@@ -188,12 +188,12 @@ public class f {
             });
             this.h.a();
         }
-        com.qiniu.pili.droid.shortvideo.f.e.g.c(f27781a, "startSampleExtractor -");
+        com.qiniu.pili.droid.shortvideo.f.e.g.c(f14093a, "startSampleExtractor -");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void g() {
-        com.qiniu.pili.droid.shortvideo.f.e.g.c(f27781a, "releaseSampleExtractor +");
+        com.qiniu.pili.droid.shortvideo.f.e.g.c(f14093a, "releaseSampleExtractor +");
         this.r = true;
         synchronized (this.s) {
             this.s.notify();
@@ -221,15 +221,15 @@ public class f {
         this.p = 0L;
         this.o = 0L;
         this.q = false;
-        com.qiniu.pili.droid.shortvideo.f.e.g.c(f27781a, "releaseSampleExtractor -");
+        com.qiniu.pili.droid.shortvideo.f.e.g.c(f14093a, "releaseSampleExtractor -");
     }
 
     public void a() {
-        this.f27782c.a();
+        this.f14094c.a();
     }
 
     public void a(PLVideoSaveListener pLVideoSaveListener) {
-        com.qiniu.pili.droid.shortvideo.f.e.g.c(f27781a, "save +");
+        com.qiniu.pili.droid.shortvideo.f.e.g.c(f14093a, "save +");
         this.r = false;
         this.q = false;
         this.o = 0L;
@@ -241,20 +241,20 @@ public class f {
         try {
             mediaExtractor.setDataSource(this.d.getSampleVideoPath());
             q qVar = new q(this.b, this.f, this.g);
-            this.f27782c = qVar;
+            this.f14094c = qVar;
             qVar.a(this.e);
-            this.f27782c.a(this.x, false);
+            this.f14094c.a(this.x, false);
             com.qiniu.pili.droid.shortvideo.transcoder.audio.a aVar = this.u;
             if (aVar != null) {
-                this.f27782c.a(aVar);
+                this.f14094c.a(aVar);
             }
-            this.f27782c.a(this.e.getVideoEncodingWidth(), this.e.getVideoEncodingHeight(), this.e.getEncodingBitrate(), pLVideoSaveListener);
-            com.qiniu.pili.droid.shortvideo.f.e.g.c(f27781a, "save -");
+            this.f14094c.a(this.e.getVideoEncodingWidth(), this.e.getVideoEncodingHeight(), this.e.getEncodingBitrate(), pLVideoSaveListener);
+            com.qiniu.pili.droid.shortvideo.f.e.g.c(f14093a, "save -");
         } catch (IOException e) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.g;
-            String str = f27781a;
+            String str = f14093a;
             eVar.e(str, "sample media extractor setDataSource error , path is : " + this.d.getSampleVideoPath());
-            com.qiniu.pili.droid.shortvideo.f.e.g.e(f27781a, e.getMessage());
+            com.qiniu.pili.droid.shortvideo.f.e.g.e(f14093a, e.getMessage());
         }
     }
 

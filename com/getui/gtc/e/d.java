@@ -17,11 +17,11 @@ import org.json.JSONObject;
 public class d extends AbstractTable {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f21998a;
+    public String f8391a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f21999c;
+    public String f8392c;
     public String d;
     public String e;
     public String f;
@@ -158,7 +158,7 @@ public class d extends AbstractTable {
 
     public final void d(String str) {
         if (a(7, str)) {
-            this.f21998a = str;
+            this.f8391a = str;
         }
     }
 
@@ -206,13 +206,13 @@ public class d extends AbstractTable {
                         if (query.moveToNext()) {
                             switch (query.getInt(0)) {
                                 case 4:
-                                    this.f21999c = query.getString(1);
+                                    this.f8392c = query.getString(1);
                                     continue;
                                 case 6:
                                     this.b = query.getLong(1);
                                     continue;
                                 case 7:
-                                    this.f21998a = query.getString(1);
+                                    this.f8391a = query.getString(1);
                                     continue;
                                 case 8:
                                     String string = query.getString(1);

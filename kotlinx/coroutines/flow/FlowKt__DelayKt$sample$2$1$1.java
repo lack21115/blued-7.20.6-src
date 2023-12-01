@@ -18,30 +18,26 @@ import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 @DebugMetadata(b = "Delay.kt", c = {}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__DelayKt$sample$2$1$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__DelayKt$sample$2$1$1.class */
 final class FlowKt__DelayKt$sample$2$1$1 extends SuspendLambda implements Function2<ChannelResult<? extends Object>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43134a;
+    int a;
     /* synthetic */ Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Ref.ObjectRef<Object> f43135c;
+    final /* synthetic */ Ref.ObjectRef<Object> c;
     final /* synthetic */ ReceiveChannel<Unit> d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FlowKt__DelayKt$sample$2$1$1(Ref.ObjectRef<Object> objectRef, ReceiveChannel<Unit> receiveChannel, Continuation<? super FlowKt__DelayKt$sample$2$1$1> continuation) {
         super(2, continuation);
-        this.f43135c = objectRef;
+        this.c = objectRef;
         this.d = receiveChannel;
     }
 
     public final Object a(Object obj, Continuation<? super Unit> continuation) {
-        return ((FlowKt__DelayKt$sample$2$1$1) create(ChannelResult.h(obj), continuation)).invokeSuspend(Unit.f42314a);
+        return ((FlowKt__DelayKt$sample$2$1$1) create(ChannelResult.h(obj), continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        FlowKt__DelayKt$sample$2$1$1 flowKt__DelayKt$sample$2$1$1 = new FlowKt__DelayKt$sample$2$1$1(this.f43135c, this.d, continuation);
+        FlowKt__DelayKt$sample$2$1$1 flowKt__DelayKt$sample$2$1$1 = new FlowKt__DelayKt$sample$2$1$1(this.c, this.d, continuation);
         flowKt__DelayKt$sample$2$1$1.b = obj;
         return flowKt__DelayKt$sample$2$1$1;
     }
@@ -56,25 +52,25 @@ final class FlowKt__DelayKt$sample$2$1$1 extends SuspendLambda implements Functi
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         IntrinsicsKt.a();
-        if (this.f43134a == 0) {
+        if (this.a == 0) {
             ResultKt.a(obj);
-            ?? a2 = ((ChannelResult) this.b).a();
-            Ref.ObjectRef<Object> objectRef = this.f43135c;
-            boolean z = a2 instanceof ChannelResult.Failed;
+            ?? a = ((ChannelResult) this.b).a();
+            Ref.ObjectRef<Object> objectRef = this.c;
+            boolean z = a instanceof ChannelResult.Failed;
             if (!z) {
-                objectRef.f42545a = a2;
+                objectRef.a = a;
             }
             ReceiveChannel<Unit> receiveChannel = this.d;
-            Ref.ObjectRef<Object> objectRef2 = this.f43135c;
+            Ref.ObjectRef<Object> objectRef2 = this.c;
             if (z) {
-                Throwable d = ChannelResult.d(a2);
+                Throwable d = ChannelResult.d(a);
                 if (d != null) {
                     throw d;
                 }
                 receiveChannel.a(new ChildCancelledException());
-                objectRef2.f42545a = NullSurrogateKt.f43499c;
+                objectRef2.a = NullSurrogateKt.c;
             }
-            return Unit.f42314a;
+            return Unit.a;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }

@@ -13,13 +13,9 @@ import org.json.JSONObject;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/ImgURLMap.class */
 public final class ImgURLMap {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ImgURLMap f10885a = new ImgURLMap();
+    public static final ImgURLMap a = new ImgURLMap();
     private static final ConcurrentHashMap<String, String> b = new ConcurrentHashMap<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final ConcurrentHashMap<String, String> f10886c = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<String, String> c = new ConcurrentHashMap<>();
     private static final ConcurrentHashMap<String, String> d = new ConcurrentHashMap<>();
     private static final String e = "img_url_live.json";
     private static final String f = "img_url_yy.json";
@@ -133,23 +129,23 @@ public final class ImgURLMap {
             java.util.concurrent.ConcurrentHashMap<java.lang.String, java.lang.String> r0 = com.blued.android.module.common.utils.ImgURLMap.b
             int r0 = r0.size()
             if (r0 != 0) goto L20
-            com.blued.android.module.common.utils.ImgURLMap r0 = com.blued.android.module.common.utils.ImgURLMap.f10885a
+            com.blued.android.module.common.utils.ImgURLMap r0 = com.blued.android.module.common.utils.ImgURLMap.a
             java.lang.String r1 = com.blued.android.module.common.utils.ImgURLMap.e
             java.util.concurrent.ConcurrentHashMap<java.lang.String, java.lang.String> r2 = com.blued.android.module.common.utils.ImgURLMap.b
             boolean r0 = r0.a(r1, r2)
         L20:
-            java.util.concurrent.ConcurrentHashMap<java.lang.String, java.lang.String> r0 = com.blued.android.module.common.utils.ImgURLMap.f10886c
+            java.util.concurrent.ConcurrentHashMap<java.lang.String, java.lang.String> r0 = com.blued.android.module.common.utils.ImgURLMap.c
             int r0 = r0.size()
             if (r0 != 0) goto L36
-            com.blued.android.module.common.utils.ImgURLMap r0 = com.blued.android.module.common.utils.ImgURLMap.f10885a
+            com.blued.android.module.common.utils.ImgURLMap r0 = com.blued.android.module.common.utils.ImgURLMap.a
             java.lang.String r1 = com.blued.android.module.common.utils.ImgURLMap.f
-            java.util.concurrent.ConcurrentHashMap<java.lang.String, java.lang.String> r2 = com.blued.android.module.common.utils.ImgURLMap.f10886c
+            java.util.concurrent.ConcurrentHashMap<java.lang.String, java.lang.String> r2 = com.blued.android.module.common.utils.ImgURLMap.c
             boolean r0 = r0.a(r1, r2)
         L36:
             java.util.concurrent.ConcurrentHashMap<java.lang.String, java.lang.String> r0 = com.blued.android.module.common.utils.ImgURLMap.d
             int r0 = r0.size()
             if (r0 != 0) goto L4c
-            com.blued.android.module.common.utils.ImgURLMap r0 = com.blued.android.module.common.utils.ImgURLMap.f10885a
+            com.blued.android.module.common.utils.ImgURLMap r0 = com.blued.android.module.common.utils.ImgURLMap.a
             java.lang.String r1 = com.blued.android.module.common.utils.ImgURLMap.g
             java.util.concurrent.ConcurrentHashMap<java.lang.String, java.lang.String> r2 = com.blued.android.module.common.utils.ImgURLMap.d
             boolean r0 = r0.a(r1, r2)
@@ -164,11 +160,11 @@ public final class ImgURLMap {
             r5 = r0
             goto L88
         L61:
-            java.util.concurrent.ConcurrentHashMap<java.lang.String, java.lang.String> r0 = com.blued.android.module.common.utils.ImgURLMap.f10886c
+            java.util.concurrent.ConcurrentHashMap<java.lang.String, java.lang.String> r0 = com.blued.android.module.common.utils.ImgURLMap.c
             r1 = r5
             boolean r0 = r0.containsKey(r1)
             if (r0 == 0) goto L76
-            java.util.concurrent.ConcurrentHashMap<java.lang.String, java.lang.String> r0 = com.blued.android.module.common.utils.ImgURLMap.f10886c
+            java.util.concurrent.ConcurrentHashMap<java.lang.String, java.lang.String> r0 = com.blued.android.module.common.utils.ImgURLMap.c
             r1 = r5
             java.lang.Object r0 = r0.get(r1)
             r5 = r0
@@ -209,7 +205,7 @@ public final class ImgURLMap {
 
     public final void a() {
         a(e, b);
-        a(f, f10886c);
+        a(f, c);
         a(g, d);
     }
 }

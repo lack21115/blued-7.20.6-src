@@ -60,7 +60,7 @@ import java.util.Locale;
 public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    String f31558a;
+    String f17868a;
     private Context d;
     private IRequestHost e;
     private LoginWithTypeContract.IView f;
@@ -72,7 +72,7 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
     private String l;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f31559c = LoginWithTypePresenter.class.getSimpleName();
+    private final String f17869c = LoginWithTypePresenter.class.getSimpleName();
     boolean b = false;
 
     public LoginWithTypePresenter(Context context, LoginWithTypeContract.IView iView, IRequestHost iRequestHost) {
@@ -87,7 +87,6 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
     private BluedUIHttpResponse a(final LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE phone_code_login_stage, final String str) {
         return new BluedUIHttpResponse<BluedEntityA>(this.e) { // from class: com.soft.blued.ui.login_register.presenter.LoginWithTypePresenter.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
                 if (phone_code_login_stage == LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.IDENTIFY) {
@@ -109,7 +108,6 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 if (i == 4036215) {
                     LoginWithTypePresenter loginWithTypePresenter = LoginWithTypePresenter.this;
@@ -136,7 +134,6 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
 
     public BluedUIHttpResponse a(final String str, final String str2, final boolean z, final LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE phone_code_login_stage) {
         return new BluedUIHttpResponse<BluedEntity<BluedLoginResult, AVConfigExtra>>(this.e) { // from class: com.soft.blued.ui.login_register.presenter.LoginWithTypePresenter.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str3, String str4) {
                 boolean z2;
                 BluedAlbum bluedAlbum;
@@ -181,7 +178,7 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
                         case 4036002:
                         case 4036205:
                             try {
-                                AppMethods.a((CharSequence) str3);
+                                AppMethods.a(str3);
                                 LoginWithTypePresenter.this.c(LoginRegisterTools.b(str4)[0]);
                                 if (LoginRegisterTools.c(str4)) {
                                     LoginWithTypePresenter.this.f.a(z);
@@ -207,16 +204,16 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
                                 }.getType());
                                 if (bluedEntityA != null && bluedEntityA.data != null && bluedEntityA.data.size() > 0 && (bluedAlbum = (BluedAlbum) f.fromJson(AesCrypto2.a(((BluedLoginResult) bluedEntityA.getSingleData()).getEncrypted()), (Class<Object>) BluedAlbum.class)) != null) {
                                     if (!StringUtils.d(bluedAlbum.token)) {
-                                        FinishProfile1Fragment.f20540a.a(LoginWithTypePresenter.this.d, bluedAlbum.token, "", str2, LoginAndRegisterProtos.Source.PHONE, LoginWithTypePresenter.this.k);
-                                        Iterator<Activity> it = ActivityStack.a().b().iterator();
+                                        FinishProfile1Fragment.f6934a.a(LoginWithTypePresenter.this.d, bluedAlbum.token, "", str2, LoginAndRegisterProtos.Source.PHONE, LoginWithTypePresenter.this.k);
+                                        Iterator it = ActivityStack.a().b().iterator();
                                         while (true) {
                                             z2 = false;
                                             if (!it.hasNext()) {
                                                 break;
                                             } else {
-                                                Activity next = it.next();
-                                                if (next.getClass() == HomeActivity.class) {
-                                                    next.finish();
+                                                Activity activity = (Activity) it.next();
+                                                if (activity.getClass() == HomeActivity.class) {
+                                                    activity.finish();
                                                 }
                                             }
                                         }
@@ -258,25 +255,22 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
                     z2 = false;
                 }
                 if (z2) {
-                    AppMethods.a((CharSequence) str3);
+                    AppMethods.a(str3);
                     return true;
                 }
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 LoginWithTypePresenter.this.f.a();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 if (phone_code_login_stage != LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.IDENTIFY_UP) {
                     LoginWithTypePresenter.this.f.b();
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<BluedLoginResult, AVConfigExtra> bluedEntity) {
                 int i;
                 try {
@@ -287,9 +281,9 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
                         boolean z2 = false;
                         if (bluedEntity.data.get(0) != null) {
                             if (bluedEntity.extra != null) {
-                                AVConfig.a().a(bluedEntity.extra.f20538a, false);
+                                AVConfig.a().a(((AVConfigExtra) bluedEntity.extra).f6932a, false);
                             }
-                            BluedLoginResult bluedLoginResult = bluedEntity.data.get(0);
+                            BluedLoginResult bluedLoginResult = (BluedLoginResult) bluedEntity.data.get(0);
                             if (phone_code_login_stage == LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.IDENTIFY_UP) {
                                 LoginWithTypePresenter.this.f.a(bluedLoginResult.captcha, bluedLoginResult.target);
                                 return;
@@ -309,8 +303,8 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
                                 EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.LOGIN_SUCCESS, LoginAndRegisterProtos.Source.EMAIL, bluedLoginResult.uid);
                                 i = 0;
                             }
-                            Logger.b(LoginWithTypePresenter.this.f31559c, "===success", "加密：responseJson:", bluedEntity);
-                            UserInfo.getInstance().saveUserInfo(str2, i, LoginWithTypePresenter.this.g, bluedLoginResult, LoginWithTypePresenter.this.k);
+                            Logger.b(LoginWithTypePresenter.this.f17869c, "===success", "加密：responseJson:", bluedEntity);
+                            UserInfo.getInstance().saveUserInfo(str2, i, LoginWithTypePresenter.this.g, bluedLoginResult, new String[]{LoginWithTypePresenter.this.k});
                             if (!StringUtils.d(LoginWithTypePresenter.this.k)) {
                                 UserAccountsVDao.a().c(LoginWithTypePresenter.this.k);
                             }
@@ -322,7 +316,7 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
                             Bundle bundle = new Bundle();
                             bundle.putString("from_tag_page", "from_tag_login");
                             HomeArgumentHelper.a(LoginWithTypePresenter.this.d, (String) null, bundle);
-                            LoginConstants.f20505c = "";
+                            LoginConstants.f6899c = "";
                             LoginWithTypePresenter.e();
                             ChatManager.getInstance().initLanguage();
                             if (bluedLoginResult.getDevice_safe() == 1) {
@@ -333,19 +327,18 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) LoginWithTypePresenter.this.d.getResources().getString(2131887272));
+                    AppMethods.a(LoginWithTypePresenter.this.d.getResources().getString(2131887272));
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public BluedEntity<BluedLoginResult, AVConfigExtra> parseData(String str3) {
                 LoginWithTypePresenter.this.g = str3;
                 BluedEntity<BluedLoginResult, AVConfigExtra> parseData = super.parseData(str3);
                 if (parseData != null) {
                     try {
                         if (parseData.data != null && parseData.data.size() > 0) {
-                            String a2 = AesCrypto2.a(parseData.data.get(0).getEncrypted());
-                            Logger.b(LoginWithTypePresenter.this.f31559c, "解密：deData===", a2);
+                            String a2 = AesCrypto2.a(((BluedLoginResult) parseData.data.get(0)).getEncrypted());
+                            Logger.b(LoginWithTypePresenter.this.f17869c, "解密：deData===", a2);
                             BluedLoginResult bluedLoginResult = (BluedLoginResult) AppInfo.f().fromJson(a2, (Class<Object>) BluedLoginResult.class);
                             CrashReport.setUserId(bluedLoginResult.uid);
                             parseData.data.set(0, bluedLoginResult);
@@ -353,7 +346,7 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
-                        AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                        AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                     }
                 }
                 return parseData;
@@ -386,7 +379,7 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
 
     @Override // com.soft.blued.ui.login_register.Contract.LoginWithTypeContract.IPresenter
     public void a(Context context, String str, String str2, String str3) {
-        LoginRegisterHttpUtils.a(this.e, LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.IDENTIFY_UP, str, str2, str3, this.f31558a, a("mobile", str, false, LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.IDENTIFY_UP));
+        LoginRegisterHttpUtils.a(this.e, LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.IDENTIFY_UP, str, str2, str3, this.f17868a, a("mobile", str, false, LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.IDENTIFY_UP));
     }
 
     @Override // com.soft.blued.ui.login_register.Contract.LoginWithTypeContract.IPresenter
@@ -397,14 +390,14 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
     @Override // com.soft.blued.ui.login_register.Contract.LoginWithTypeContract.IPresenter
     public void a(final LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE phone_code_login_stage, final String str, final String str2, final String str3) {
         if (TextUtils.isEmpty(this.k) || !UserInfo.getInstance().isLogin()) {
-            LoginRegisterHttpUtils.a(this.e, phone_code_login_stage, str, str2, str3, this.f31558a, a("mobile", str, false, phone_code_login_stage));
+            LoginRegisterHttpUtils.a(this.e, phone_code_login_stage, str, str2, str3, this.f17868a, a("mobile", str, false, phone_code_login_stage));
         } else {
             UserRelationshipUtils.a(new Runnable() { // from class: com.soft.blued.ui.login_register.presenter.LoginWithTypePresenter.3
                 @Override // java.lang.Runnable
                 public void run() {
                     LiveEventBus.get(EventBusConstant.KEY_EVENT_HIDE_LOGIN_BACK).post(null);
                     UserAccountsVDao.a().i();
-                    LoginRegisterHttpUtils.a(LoginWithTypePresenter.this.e, phone_code_login_stage, str, str2, str3, LoginWithTypePresenter.this.f31558a, LoginWithTypePresenter.this.a("mobile", str, false, phone_code_login_stage));
+                    LoginRegisterHttpUtils.a(LoginWithTypePresenter.this.e, phone_code_login_stage, str, str2, str3, LoginWithTypePresenter.this.f17868a, LoginWithTypePresenter.this.a("mobile", str, false, phone_code_login_stage));
                 }
             }, "bind_Acc");
         }
@@ -426,7 +419,7 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        LoginRegisterHttpUtils.a(a(str, str2, true, LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.VERIFY), str, str2, this.j, this.e, str4, str5, this.f31558a, false);
+        LoginRegisterHttpUtils.a(a(str, str2, true, LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.VERIFY), str, str2, this.j, this.e, str4, str5, this.f17868a, false);
     }
 
     @Override // com.soft.blued.ui.login_register.Contract.LoginWithTypeContract.IPresenter
@@ -434,7 +427,6 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
         this.b = z;
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
     }
 
@@ -445,7 +437,7 @@ public class LoginWithTypePresenter implements LoginWithTypeContract.IPresenter 
 
     @Override // com.soft.blued.ui.login_register.Contract.LoginWithTypeContract.IPresenter
     public void b(String str) {
-        this.f31558a = str;
+        this.f17868a = str;
     }
 
     public void b(final String str, final String str2, final String str3, final String str4, final String str5) {

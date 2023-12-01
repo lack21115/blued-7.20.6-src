@@ -28,24 +28,24 @@ public final class i extends h {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7358a = "----";
+    public static final String f4519a = "----";
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f7359c;
+    public final String f4520c;
     public final String d;
 
     i(Parcel parcel) {
-        super(f7358a);
+        super(f4519a);
         this.b = (String) com.anythink.expressad.exoplayer.k.a.a(parcel.readString());
-        this.f7359c = (String) com.anythink.expressad.exoplayer.k.a.a(parcel.readString());
+        this.f4520c = (String) com.anythink.expressad.exoplayer.k.a.a(parcel.readString());
         this.d = (String) com.anythink.expressad.exoplayer.k.a.a(parcel.readString());
     }
 
     public i(String str, String str2, String str3) {
-        super(f7358a);
+        super(f4519a);
         this.b = str;
-        this.f7359c = str2;
+        this.f4520c = str2;
         this.d = str3;
     }
 
@@ -57,14 +57,14 @@ public final class i extends h {
             return false;
         }
         i iVar = (i) obj;
-        return af.a((Object) this.f7359c, (Object) iVar.f7359c) && af.a((Object) this.b, (Object) iVar.b) && af.a((Object) this.d, (Object) iVar.d);
+        return af.a((Object) this.f4520c, (Object) iVar.f4520c) && af.a((Object) this.b, (Object) iVar.b) && af.a((Object) this.d, (Object) iVar.d);
     }
 
     public final int hashCode() {
         String str = this.b;
         int i = 0;
         int hashCode = str != null ? str.hashCode() : 0;
-        String str2 = this.f7359c;
+        String str2 = this.f4520c;
         int hashCode2 = str2 != null ? str2.hashCode() : 0;
         String str3 = this.d;
         if (str3 != null) {
@@ -75,7 +75,7 @@ public final class i extends h {
 
     @Override // com.anythink.expressad.exoplayer.g.b.h
     public final String toString() {
-        return this.g + ": domain=" + this.b + ", description=" + this.f7359c;
+        return this.g + ": domain=" + this.b + ", description=" + this.f4520c;
     }
 
     @Override // android.os.Parcelable

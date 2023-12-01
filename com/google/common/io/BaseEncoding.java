@@ -850,7 +850,7 @@ public abstract class BaseEncoding {
             return bArr;
         }
         byte[] bArr2 = new byte[i];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, i);
+        System.arraycopy(bArr, 0, bArr2, 0, i);
         return bArr2;
     }
 
@@ -860,14 +860,14 @@ public abstract class BaseEncoding {
         return new Reader() { // from class: com.google.common.io.BaseEncoding.3
             @Override // java.io.Reader, java.io.Closeable, java.lang.AutoCloseable
             public void close() throws IOException {
-                Reader.this.close();
+                reader.close();
             }
 
             @Override // java.io.Reader
             public int read() throws IOException {
                 int read;
                 do {
-                    read = Reader.this.read();
+                    read = reader.read();
                     if (read == -1) {
                         break;
                     }
@@ -931,7 +931,7 @@ public abstract class BaseEncoding {
 
             @Override // java.io.Writer
             public void write(int i2) throws IOException {
-                Appendable.this.append((char) i2);
+                separatingAppendable.append((char) i2);
             }
 
             @Override // java.io.Writer

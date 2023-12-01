@@ -11,13 +11,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/shimmer/ShimmerViewHelper.class */
 public class ShimmerViewHelper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f15459a;
+    private View a;
     private Paint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f15460c;
+    private float c;
     private LinearGradient d;
     private Matrix e;
     private int f;
@@ -32,7 +28,7 @@ public class ShimmerViewHelper {
     }
 
     public ShimmerViewHelper(View view, Paint paint, AttributeSet attributeSet) {
-        this.f15459a = view;
+        this.a = view;
         this.b = paint;
         a(attributeSet);
     }
@@ -40,7 +36,7 @@ public class ShimmerViewHelper {
     private void a(AttributeSet attributeSet) {
         this.g = -1;
         if (attributeSet != null) {
-            TypedArray obtainStyledAttributes = this.f15459a.getContext().obtainStyledAttributes(attributeSet, R.styleable.ShimmerView, 0, 0);
+            TypedArray obtainStyledAttributes = this.a.getContext().obtainStyledAttributes(attributeSet, R.styleable.ShimmerView, 0, 0);
             try {
                 if (obtainStyledAttributes != null) {
                     try {
@@ -57,7 +53,7 @@ public class ShimmerViewHelper {
     }
 
     private void g() {
-        float f = -this.f15459a.getWidth();
+        float f = -this.a.getWidth();
         int i = this.f;
         LinearGradient linearGradient = new LinearGradient(f, 0.0f, 0.0f, 0.0f, new int[]{i, this.g, i}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP);
         this.d = linearGradient;
@@ -65,12 +61,12 @@ public class ShimmerViewHelper {
     }
 
     public float a() {
-        return this.f15460c;
+        return this.c;
     }
 
     public void a(float f) {
-        this.f15460c = f;
-        this.f15459a.invalidate();
+        this.c = f;
+        this.a.invalidate();
     }
 
     public void a(int i) {
@@ -116,7 +112,7 @@ public class ShimmerViewHelper {
         this.i = true;
         AnimationSetupCallback animationSetupCallback = this.j;
         if (animationSetupCallback != null) {
-            animationSetupCallback.a(this.f15459a);
+            animationSetupCallback.a(this.a);
         }
     }
 
@@ -128,7 +124,7 @@ public class ShimmerViewHelper {
         if (this.b.getShader() == null) {
             this.b.setShader(this.d);
         }
-        this.e.setTranslate(this.f15460c * 2.0f, 0.0f);
+        this.e.setTranslate(this.c * 2.0f, 0.0f);
         this.d.setLocalMatrix(this.e);
     }
 }

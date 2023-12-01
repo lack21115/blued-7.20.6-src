@@ -9,18 +9,16 @@ import org.commonmark.parser.delimiter.DelimiterRun;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/inline/EmphasisDelimiterProcessor.class */
 public abstract class EmphasisDelimiterProcessor implements DelimiterProcessor {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final char f44041a;
+    private final char a;
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public EmphasisDelimiterProcessor(char c2) {
-        this.f44041a = c2;
+    public EmphasisDelimiterProcessor(char c) {
+        this.a = c;
     }
 
     @Override // org.commonmark.parser.delimiter.DelimiterProcessor
     public char getClosingCharacter() {
-        return this.f44041a;
+        return this.a;
     }
 
     @Override // org.commonmark.parser.delimiter.DelimiterProcessor
@@ -38,7 +36,7 @@ public abstract class EmphasisDelimiterProcessor implements DelimiterProcessor {
 
     @Override // org.commonmark.parser.delimiter.DelimiterProcessor
     public char getOpeningCharacter() {
-        return this.f44041a;
+        return this.a;
     }
 
     @Override // org.commonmark.parser.delimiter.DelimiterProcessor

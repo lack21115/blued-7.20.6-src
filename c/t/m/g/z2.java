@@ -13,19 +13,19 @@ import java.io.FileOutputStream;
 public class z2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static File f4073a;
+    public static File f4025a;
 
     public static File a(Context context, String str) {
-        if (f4073a != null) {
-            return f4073a;
+        if (f4025a != null) {
+            return f4025a;
         }
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             File externalFilesDir = context.getExternalFilesDir(str);
-            f4073a = externalFilesDir;
+            f4025a = externalFilesDir;
             return externalFilesDir;
         }
         File filesDir = context.getApplicationContext().getFilesDir();
-        f4073a = filesDir;
+        f4025a = filesDir;
         return filesDir;
     }
 
@@ -117,7 +117,7 @@ public class z2 {
     public static byte[] b(File file) {
         BufferedInputStream bufferedInputStream;
         if (!file.exists() || file.length() == 0) {
-            return k2.f3860a;
+            return k2.f3812a;
         }
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         byte[] a2 = g2.a().a(2048);
@@ -136,7 +136,7 @@ public class z2 {
                     byteArrayOutputStream.write(a2, 0, read);
                 } catch (Throwable th) {
                     try {
-                        byte[] bArr = k2.f3860a;
+                        byte[] bArr = k2.f3812a;
                         g2.a().a(a2);
                         e3.a(bufferedInputStream);
                         e3.a(byteArrayOutputStream);

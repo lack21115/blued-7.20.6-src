@@ -2,6 +2,7 @@ package com.zk_oaction.adengine.lk_expression;
 
 import android.text.TextUtils;
 import com.baidu.mobads.sdk.api.IAdInterListener;
+import com.huawei.hms.ads.fw;
 import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,11 +16,11 @@ public class a implements com.zk_oaction.adengine.lk_variable.f {
     private static HashMap<String, com.zk_oaction.adengine.lk_sdk.interfaces.c<float[], Float>> e;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f41918a;
+    public String f28227a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public HashSet<String> f41919c = new HashSet<>();
+    public HashSet<String> f28228c = new HashSet<>();
     private com.zk_oaction.adengine.lk_sdk.c f;
     private w g;
     private boolean h;
@@ -28,8 +29,8 @@ public class a implements com.zk_oaction.adengine.lk_variable.f {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.zk_oaction.adengine.lk_expression.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_expression/a$a.class */
-    public static final class C1103a implements com.zk_oaction.adengine.lk_sdk.interfaces.c<float[], Float> {
-        C1103a() {
+    public static final class C0933a implements com.zk_oaction.adengine.lk_sdk.interfaces.c<float[], Float> {
+        C0933a() {
         }
 
         @Override // com.zk_oaction.adengine.lk_sdk.interfaces.c
@@ -320,7 +321,7 @@ public class a implements com.zk_oaction.adengine.lk_variable.f {
         String str3;
         float f3;
         this.f = cVar;
-        this.f41918a = str;
+        this.f28227a = str;
         this.g = wVar;
         if (str2 == null) {
             a(f2);
@@ -328,7 +329,7 @@ public class a implements com.zk_oaction.adengine.lk_variable.f {
         }
         String replace = str2.replace(" ", "");
         this.b = replace;
-        if (replace.equals("true")) {
+        if (replace.equals(fw.Code)) {
             f3 = 1.0f;
         } else if (!this.b.equals("false")) {
             this.h = z;
@@ -347,7 +348,7 @@ public class a implements com.zk_oaction.adengine.lk_variable.f {
                         str3 = str6;
                         if (str6 != null) {
                             this.f.a(str6, this);
-                            this.f41919c.add(str6);
+                            this.f28228c.add(str6);
                             str3 = null;
                         }
                     } else if (charAt == '#') {
@@ -645,7 +646,7 @@ public class a implements com.zk_oaction.adengine.lk_variable.f {
         e.put("le", new t());
         e.put("lt", new u());
         e.put("ifelse", new v());
-        e.put("min", new C1103a());
+        e.put("min", new C0933a());
         e.put("max", new b());
         e.put("round", new c());
         e.put(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL, new d());
@@ -668,14 +669,14 @@ public class a implements com.zk_oaction.adengine.lk_variable.f {
         this.i = f2;
         w wVar = this.g;
         if (wVar != null) {
-            wVar.a(this.f41918a, f2);
+            wVar.a(this.f28227a, f2);
         }
     }
 
     public void a(w wVar) {
         this.g = wVar;
         if (wVar != null) {
-            wVar.a(this.f41918a, this.i);
+            wVar.a(this.f28227a, this.i);
         }
     }
 
@@ -686,7 +687,7 @@ public class a implements com.zk_oaction.adengine.lk_variable.f {
             this.i = this.h ? a(this.f, str3) * this.f.t : a(this.f, str3);
             w wVar = this.g;
             if (wVar != null) {
-                wVar.a(this.f41918a, this.i);
+                wVar.a(this.f28227a, this.i);
             }
         }
     }

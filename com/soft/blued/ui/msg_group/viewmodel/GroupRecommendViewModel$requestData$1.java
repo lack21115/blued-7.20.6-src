@@ -6,12 +6,14 @@ import com.blued.android.module.common.api.BluedApiProxy;
 import com.blued.android.module.common.api.Error;
 import com.blued.android.module.common.api.Succeed;
 import com.blued.android.module.common.user.model.UserInfo;
+import com.cdo.oaps.ad.OapsKey;
 import com.sina.weibo.sdk.constant.WBPageConstants;
 import com.soft.blued.ui.msg_group.api.GroupApiService;
 import com.soft.blued.ui.msg_group.fragment.RecommendGroupFragment;
 import java.util.List;
 import java.util.Map;
 import kotlin.Metadata;
+import kotlin.Pair;
 import kotlin.ResultKt;
 import kotlin.TuplesKt;
 import kotlin.Unit;
@@ -31,7 +33,7 @@ import kotlinx.coroutines.CoroutineScope;
 final class GroupRecommendViewModel$requestData$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f32857a;
+    int f19166a;
     final /* synthetic */ GroupRecommendViewModel b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -41,26 +43,23 @@ final class GroupRecommendViewModel$requestData$1 extends SuspendLambda implemen
         this.b = groupRecommendViewModel;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((GroupRecommendViewModel$requestData$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new GroupRecommendViewModel$requestData$1(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         BluedEntityA bluedEntityA;
-        ApiState error;
+        ApiState apiState;
         Object a2 = IntrinsicsKt.a();
-        int i = this.f32857a;
+        int i = this.f19166a;
         if (i == 0) {
             ResultKt.a(obj);
-            Map<String, String> b = MapsKt.b(TuplesKt.a("size", String.valueOf(this.b.getMPageSize())), TuplesKt.a(WBPageConstants.ParamKey.PAGE, String.valueOf(this.b.getMPage())));
+            Map<String, String> b = MapsKt.b(new Pair[]{TuplesKt.a(OapsKey.KEY_SIZE, String.valueOf(this.b.getMPageSize())), TuplesKt.a(WBPageConstants.ParamKey.PAGE, String.valueOf(this.b.getMPage()))});
             if (this.b.getType() == RecommendGroupFragment.RecommendType.NEARBY) {
                 try {
                     String longitude = UserInfo.getInstance().getLoginUserInfo().getLongitude();
@@ -73,16 +72,16 @@ final class GroupRecommendViewModel$requestData$1 extends SuspendLambda implemen
                 }
             }
             if (this.b.getType() == RecommendGroupFragment.RecommendType.NEARBY) {
-                this.f32857a = 1;
-                Object c2 = ((GroupApiService) BluedApiProxy.b().a(GroupApiService.class)).c(b, this);
+                this.f19166a = 1;
+                Object c2 = ((GroupApiService) BluedApiProxy.b().a(GroupApiService.class)).c(b, (Continuation) this);
                 obj = c2;
                 if (c2 == a2) {
                     return a2;
                 }
                 bluedEntityA = (BluedEntityA) obj;
             } else {
-                this.f32857a = 2;
-                Object b2 = ((GroupApiService) BluedApiProxy.b().a(GroupApiService.class)).b(b, this);
+                this.f19166a = 2;
+                Object b2 = ((GroupApiService) BluedApiProxy.b().a(GroupApiService.class)).b(b, (Continuation) this);
                 obj = b2;
                 if (b2 == a2) {
                     return a2;
@@ -101,27 +100,27 @@ final class GroupRecommendViewModel$requestData$1 extends SuspendLambda implemen
         GroupRecommendViewModel groupRecommendViewModel = this.b;
         if (bluedEntityA.code == 200) {
             if (bluedEntityA.hasData()) {
-                Iterable data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
-                groupRecommendViewModel.loadListSucceed(CollectionsKt.j(data), bluedEntityA.hasMore());
+                List list = bluedEntityA.data;
+                Intrinsics.c(list, "data");
+                groupRecommendViewModel.loadListSucceed(CollectionsKt.j(list), bluedEntityA.hasMore());
             } else {
                 List b3 = CollectionsKt.b();
-                groupRecommendViewModel.loadListSucceed(b3 == null ? null : CollectionsKt.j((Iterable) b3), false);
+                groupRecommendViewModel.loadListSucceed(b3 == null ? null : CollectionsKt.j(b3), false);
             }
-            error = Succeed.f10631a;
+            apiState = (ApiState) Succeed.a;
         } else {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            error = new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            apiState = (ApiState) new Error(i2, str);
         }
         GroupRecommendViewModel groupRecommendViewModel2 = this.b;
-        if (error instanceof Error) {
-            Error error2 = (Error) error;
-            error2.a();
-            error2.b();
+        if (apiState instanceof Error) {
+            Error error = apiState;
+            error.a();
+            error.b();
             groupRecommendViewModel2.loadListFailed();
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

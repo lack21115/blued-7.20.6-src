@@ -3,7 +3,6 @@ package android.print;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 import java.util.Arrays;
 
 /* loaded from: source-9557208-dex2jar.jar:android/print/PrintJobInfo.class */
@@ -328,7 +327,7 @@ public final class PrintJobInfo implements Parcelable {
         }
         sb.append(append.append(str).toString());
         sb.append(", hasAdvancedOptions: " + (this.mAdvancedOptions != null));
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

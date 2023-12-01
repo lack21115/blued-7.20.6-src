@@ -21,22 +21,18 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/msgcontent/FitemMsgGift$setSpanToLuckBagGift$1.class */
 final class FitemMsgGift$setSpanToLuckBagGift$1 extends Lambda implements Function1<DslSpannableStringBuilder, Unit> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ FitemMsgGift f12566a;
+    final /* synthetic */ FitemMsgGift a;
     final /* synthetic */ LiveGiftModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Context f12567c;
+    final /* synthetic */ Context c;
     final /* synthetic */ TextView d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FitemMsgGift$setSpanToLuckBagGift$1(FitemMsgGift fitemMsgGift, LiveGiftModel liveGiftModel, Context context, TextView textView) {
         super(1);
-        this.f12566a = fitemMsgGift;
+        this.a = fitemMsgGift;
         this.b = liveGiftModel;
-        this.f12567c = context;
+        this.c = context;
         this.d = textView;
     }
 
@@ -46,12 +42,12 @@ final class FitemMsgGift$setSpanToLuckBagGift$1 extends Lambda implements Functi
         Intrinsics.e(context, "$context");
         Intrinsics.e(tv, "$tv");
         Intrinsics.e(giftModel, "$giftModel");
-        FrameLayout frameLayout = (FrameLayout) this$0.f10935a.a(R.id.fl_icon_root);
+        FrameLayout frameLayout = (FrameLayout) this$0.a.a(R.id.fl_icon_root);
         if (frameLayout == null) {
             return;
         }
         FitemMsgGift.Companion companion = FitemMsgGift.b;
-        IRequestHost iRequestHost = this$0.f10935a.b;
+        IRequestHost iRequestHost = this$0.a.b;
         Intrinsics.c(iRequestHost, "viewHolder.requestHost");
         String str = giftModel.images_static;
         Intrinsics.c(str, "giftModel.images_static");
@@ -64,12 +60,12 @@ final class FitemMsgGift$setSpanToLuckBagGift$1 extends Lambda implements Functi
         Intrinsics.e(context, "$context");
         Intrinsics.e(tv, "$tv");
         Intrinsics.e(giftModel, "$giftModel");
-        FrameLayout frameLayout = (FrameLayout) this$0.f10935a.a(R.id.fl_icon_root);
+        FrameLayout frameLayout = (FrameLayout) this$0.a.a(R.id.fl_icon_root);
         if (frameLayout == null) {
             return;
         }
         FitemMsgGift.Companion companion = FitemMsgGift.b;
-        IRequestHost iRequestHost = this$0.f10935a.b;
+        IRequestHost iRequestHost = this$0.a.b;
         Intrinsics.c(iRequestHost, "viewHolder.requestHost");
         String str = giftModel.luck_bag_img;
         Intrinsics.c(str, "giftModel.luck_bag_img");
@@ -78,7 +74,7 @@ final class FitemMsgGift$setSpanToLuckBagGift$1 extends Lambda implements Functi
 
     public final void a(DslSpannableStringBuilder buildSpannableString) {
         Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
-        buildSpannableString.a(' ' + this.f12566a.k() + " 开启 ", new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgGift$setSpanToLuckBagGift$1.1
+        buildSpannableString.a(' ' + this.a.k() + " 开启 ", new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgGift$setSpanToLuckBagGift$1.1
             public final void a(DslSpanBuilder addText) {
                 Intrinsics.e(addText, "$this$addText");
                 Context d = AppInfo.d();
@@ -89,16 +85,16 @@ final class FitemMsgGift$setSpanToLuckBagGift$1 extends Lambda implements Functi
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
-        int c2 = FitemMsgGift.b.c();
+        int c = FitemMsgGift.b.c();
         int b = FitemMsgGift.b.b();
-        final FitemMsgGift fitemMsgGift = this.f12566a;
-        final Context context = this.f12567c;
+        final FitemMsgGift fitemMsgGift = this.a;
+        final Context context = this.c;
         final TextView textView = this.d;
         final LiveGiftModel liveGiftModel = this.b;
-        buildSpannableString.a(new ColorDrawable(), 0, 0, c2, b, new VerticalCenterImageSpan.SpanDrawCallback() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgGift$setSpanToLuckBagGift$1$WxZh-PvJ7hM-F-CU9HazmaMNF5E
+        buildSpannableString.a(new ColorDrawable(), 0, 0, c, b, new VerticalCenterImageSpan.SpanDrawCallback() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgGift$setSpanToLuckBagGift$1$WxZh-PvJ7hM-F-CU9HazmaMNF5E
             @Override // com.blued.android.module.live_china.liveForMsg.ui.VerticalCenterImageSpan.SpanDrawCallback
             public final void drawFinish(int i, int i2) {
                 FitemMsgGift$setSpanToLuckBagGift$1.a(FitemMsgGift.this, context, textView, liveGiftModel, i, i2);
@@ -115,16 +111,16 @@ final class FitemMsgGift$setSpanToLuckBagGift$1 extends Lambda implements Functi
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
-        int c3 = FitemMsgGift.b.c();
+        int c2 = FitemMsgGift.b.c();
         int b2 = FitemMsgGift.b.b();
-        final FitemMsgGift fitemMsgGift2 = this.f12566a;
-        final Context context2 = this.f12567c;
+        final FitemMsgGift fitemMsgGift2 = this.a;
+        final Context context2 = this.c;
         final TextView textView2 = this.d;
         final LiveGiftModel liveGiftModel2 = this.b;
-        buildSpannableString.a(new ColorDrawable(), 0, 0, c3, b2, new VerticalCenterImageSpan.SpanDrawCallback() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgGift$setSpanToLuckBagGift$1$k5Xb8u1r9NbF9ucuLfUHhay5Hyc
+        buildSpannableString.a(new ColorDrawable(), 0, 0, c2, b2, new VerticalCenterImageSpan.SpanDrawCallback() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgGift$setSpanToLuckBagGift$1$k5Xb8u1r9NbF9ucuLfUHhay5Hyc
             @Override // com.blued.android.module.live_china.liveForMsg.ui.VerticalCenterImageSpan.SpanDrawCallback
             public final void drawFinish(int i, int i2) {
                 FitemMsgGift$setSpanToLuckBagGift$1.b(FitemMsgGift.this, context2, textView2, liveGiftModel2, i, i2);
@@ -141,7 +137,7 @@ final class FitemMsgGift$setSpanToLuckBagGift$1 extends Lambda implements Functi
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -149,6 +145,6 @@ final class FitemMsgGift$setSpanToLuckBagGift$1 extends Lambda implements Functi
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
         a(dslSpannableStringBuilder);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

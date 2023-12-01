@@ -15,10 +15,10 @@ public class GrsUtils {
     public static String fixResult(String[] strArr, String str) {
         String str2 = str;
         if (strArr.length > 2) {
-            if (str.endsWith("/")) {
+            if (str.endsWith(SEPARATOR)) {
                 return str + strArr[2];
             }
-            str2 = str + "/" + strArr[2];
+            str2 = str + SEPARATOR + strArr[2];
         }
         return str2;
     }
@@ -28,13 +28,13 @@ public class GrsUtils {
     }
 
     public static String[] parseGRSSchema(String str) {
-        String[] split = StringUtils.substring(str, str.toLowerCase(Locale.ENGLISH).indexOf(GRS_SCHEMA) + 6).split("/", 3);
+        String[] split = StringUtils.substring(str, str.toLowerCase(Locale.ENGLISH).indexOf(GRS_SCHEMA) + 6).split(SEPARATOR, 3);
         return split.length == 1 ? new String[]{split[0], "ROOT"} : split;
     }
 
     public static String[] parseParams(String str) {
         String str2 = str;
-        if (str.endsWith("/")) {
+        if (str.endsWith(SEPARATOR)) {
             str2 = StringUtils.substring(str, str.indexOf(GRS_SCHEMA), str.length() - 1);
         }
         return parseGRSSchema(str2);

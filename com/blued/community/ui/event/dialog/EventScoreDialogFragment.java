@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -46,9 +47,7 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/dialog/EventScoreDialogFragment.class */
 public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19526a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private List<EventDetailsModel.QuickEvaluate> e;
     private EventScoreListener h;
     private final Lazy b = LazyKt.a(new Function0<DialogEventScoreBinding>() { // from class: com.blued.community.ui.event.dialog.EventScoreDialogFragment$viewBinding$2
@@ -63,9 +62,7 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
             return DialogEventScoreBinding.a(LayoutInflater.from(EventScoreDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Lazy f19527c = LazyKt.a(new Function0<Dialog>() { // from class: com.blued.community.ui.event.dialog.EventScoreDialogFragment$loadingDialog$2
+    private final Lazy c = LazyKt.a(new Function0<Dialog>() { // from class: com.blued.community.ui.event.dialog.EventScoreDialogFragment$loadingDialog$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -169,13 +166,13 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
             }
         });
         TextView textView = i().z;
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = requireContext().getString(R.string.event_score_score_num);
         Intrinsics.c(string, "requireContext().getStri…ng.event_score_score_num)");
         String format = String.format(string, Arrays.copyOf(new Object[]{Float.valueOf(i)}, 1));
         Intrinsics.c(format, "format(format, *args)");
         textView.setText(format);
-        i().f18794a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.dialog.-$$Lambda$EventScoreDialogFragment$Yql-Gs8BriQUg5CbHjustT2Jc4Y
+        i().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.dialog.-$$Lambda$EventScoreDialogFragment$Yql-Gs8BriQUg5CbHjustT2Jc4Y
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 EventScoreDialogFragment.a(EventScoreDialogFragment.this, i, view);
@@ -234,7 +231,7 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
     public static final void d(EventScoreDialogFragment this$0, CompoundButton compoundButton, boolean z) {
         Intrinsics.e(this$0, "this$0");
         if (z) {
-            this$0.i().f18795c.setChecked(true);
+            this$0.i().c.setChecked(true);
         }
     }
 
@@ -266,7 +263,7 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
     public static final void g(EventScoreDialogFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
         this$0.m();
-        this$0.i().f18795c.setChecked(true);
+        this$0.i().c.setChecked(true);
         this$0.i().u.setTextColor(BluedSkinUtils.a(this$0.getContext(), R.color.syc_e));
     }
 
@@ -282,7 +279,7 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Dialog j() {
-        return (Dialog) this.f19527c.getValue();
+        return (Dialog) this.c.getValue();
     }
 
     private final void k() {
@@ -364,7 +361,7 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
                 EventScoreDialogFragment.d(EventScoreDialogFragment.this, compoundButton, z);
             }
         });
-        i().f18795c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.blued.community.ui.event.dialog.-$$Lambda$EventScoreDialogFragment$P97o05B9nGvIDMJES10-tcYV1pc
+        i().c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.blued.community.ui.event.dialog.-$$Lambda$EventScoreDialogFragment$P97o05B9nGvIDMJES10-tcYV1pc
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public final void onCheckedChanged(CompoundButton compoundButton, boolean z) {
                 EventScoreDialogFragment.e(EventScoreDialogFragment.this, compoundButton, z);
@@ -387,7 +384,7 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
             final ShapeTextView shapeTextView = new ShapeTextView(getContext());
             ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(-2, -2);
             layoutParams.height = BluedViewExtKt.a(32);
-            shapeTextView.setLayoutParams(layoutParams);
+            shapeTextView.setLayoutParams((ViewGroup.LayoutParams) layoutParams);
             shapeTextView.setPadding(BluedViewExtKt.a(12), 0, BluedViewExtKt.a(12), 0);
             ShapeTextView shapeTextView2 = shapeTextView;
             ShapeHelper.b(shapeTextView2, R.color.syc_x);
@@ -406,7 +403,7 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
                     EventScoreDialogFragment.a(EventDetailsModel.QuickEvaluate.this, this, shapeTextView, view);
                 }
             });
-            i().l.addView(shapeTextView);
+            i().l.addView((View) shapeTextView);
             i = i2 + 1;
         }
     }
@@ -416,7 +413,7 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
         i().f.setChecked(false);
         i().e.setChecked(false);
         i().d.setChecked(false);
-        i().f18795c.setChecked(false);
+        i().c.setChecked(false);
         i().y.setTextColor(BluedSkinUtils.a(getContext(), R.color.syc_k));
         i().x.setTextColor(BluedSkinUtils.a(getContext(), R.color.syc_k));
         i().w.setTextColor(BluedSkinUtils.a(getContext(), R.color.syc_k));
@@ -430,7 +427,7 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
             return;
         }
         EventTrackFeed.b(FeedProtos.Event.ACTIVITY_COMMENT_PUBLISH, this.d.id, p);
-        EventHttpUtils eventHttpUtils = EventHttpUtils.f19079a;
+        EventHttpUtils eventHttpUtils = EventHttpUtils.a;
         final ActivityFragmentActive a2 = a();
         BluedUIHttpResponse<BluedEntityA<EventDetailsModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<EventDetailsModel>>(a2) { // from class: com.blued.community.ui.event.dialog.EventScoreDialogFragment$postScore$1
             /* JADX INFO: Access modifiers changed from: protected */
@@ -463,7 +460,7 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
                 eventDetailsModel2 = EventScoreDialogFragment.this.d;
                 q = EventScoreDialogFragment.this.q();
                 eventDetailsModel2.activity_evaluate = q;
-                CommEventBusUtil commEventBusUtil = CommEventBusUtil.f20461a;
+                CommEventBusUtil commEventBusUtil = CommEventBusUtil.a;
                 eventDetailsModel3 = EventScoreDialogFragment.this.d;
                 commEventBusUtil.a(eventDetailsModel3);
             }
@@ -505,7 +502,7 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
         if (i().d.isChecked()) {
             return 2;
         }
-        return i().f18795c.isChecked() ? 1 : 0;
+        return i().c.isChecked() ? 1 : 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -527,7 +524,7 @@ public final class EventScoreDialogFragment extends BottomSheetDialogFragment {
         return this.h;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

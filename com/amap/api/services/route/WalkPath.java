@@ -22,18 +22,16 @@ public class WalkPath extends Path implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<WalkStep> f5779a;
+    private List<WalkStep> a;
 
     public WalkPath() {
-        this.f5779a = new ArrayList();
+        this.a = new ArrayList();
     }
 
     public WalkPath(Parcel parcel) {
         super(parcel);
-        this.f5779a = new ArrayList();
-        this.f5779a = parcel.createTypedArrayList(WalkStep.CREATOR);
+        this.a = new ArrayList();
+        this.a = parcel.createTypedArrayList(WalkStep.CREATOR);
     }
 
     @Override // com.amap.api.services.route.Path, android.os.Parcelable
@@ -42,16 +40,16 @@ public class WalkPath extends Path implements Parcelable {
     }
 
     public List<WalkStep> getSteps() {
-        return this.f5779a;
+        return this.a;
     }
 
     public void setSteps(List<WalkStep> list) {
-        this.f5779a = list;
+        this.a = list;
     }
 
     @Override // com.amap.api.services.route.Path, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeTypedList(this.f5779a);
+        parcel.writeTypedList(this.a);
     }
 }

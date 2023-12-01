@@ -13,32 +13,32 @@ import java.util.Map;
 public final class nyvKz {
 
     /* renamed from: a  reason: collision with root package name */
-    public ByteBuffer f39970a;
+    public ByteBuffer f26279a;
     public String b = "GBK";
 
     public nyvKz() {
     }
 
     public nyvKz(byte[] bArr) {
-        this.f39970a = ByteBuffer.wrap(bArr);
+        this.f26279a = ByteBuffer.wrap(bArr);
     }
 
     public nyvKz(byte[] bArr, int i) {
         ByteBuffer wrap = ByteBuffer.wrap(bArr);
-        this.f39970a = wrap;
+        this.f26279a = wrap;
         wrap.position(4);
     }
 
     public final byte a(byte b, int i, boolean z) {
         if (b(i)) {
-            ByteBuffer byteBuffer = this.f39970a;
+            ByteBuffer byteBuffer = this.f26279a;
             byte b2 = byteBuffer.get();
             byte b3 = (byte) (b2 & 15);
             if (((b2 & 240) >> 4) == 15) {
                 byteBuffer.get();
             }
             if (b3 == 0) {
-                return this.f39970a.get();
+                return this.f26279a.get();
             }
             if (b3 != 11) {
                 if (b3 == 12) {
@@ -54,17 +54,17 @@ public final class nyvKz {
 
     public final double a(double d, int i, boolean z) {
         if (b(i)) {
-            ByteBuffer byteBuffer = this.f39970a;
+            ByteBuffer byteBuffer = this.f26279a;
             byte b = byteBuffer.get();
             byte b2 = (byte) (b & 15);
             if (((b & 240) >> 4) == 15) {
                 byteBuffer.get();
             }
             if (b2 == 4) {
-                return this.f39970a.getFloat();
+                return this.f26279a.getFloat();
             }
             if (b2 == 5) {
-                return this.f39970a.getDouble();
+                return this.f26279a.getDouble();
             }
             if (b2 != 11) {
                 if (b2 == 12) {
@@ -80,14 +80,14 @@ public final class nyvKz {
 
     public final float a(float f, int i, boolean z) {
         if (b(i)) {
-            ByteBuffer byteBuffer = this.f39970a;
+            ByteBuffer byteBuffer = this.f26279a;
             byte b = byteBuffer.get();
             byte b2 = (byte) (b & 15);
             if (((b & 240) >> 4) == 15) {
                 byteBuffer.get();
             }
             if (b2 == 4) {
-                return this.f39970a.getFloat();
+                return this.f26279a.getFloat();
             }
             if (b2 != 11) {
                 if (b2 == 12) {
@@ -103,20 +103,20 @@ public final class nyvKz {
 
     public final int a(int i, int i2, boolean z) {
         if (b(i2)) {
-            ByteBuffer byteBuffer = this.f39970a;
+            ByteBuffer byteBuffer = this.f26279a;
             byte b = byteBuffer.get();
             byte b2 = (byte) (b & 15);
             if (((b & 240) >> 4) == 15) {
                 byteBuffer.get();
             }
             if (b2 == 0) {
-                return this.f39970a.get();
+                return this.f26279a.get();
             }
             if (b2 == 1) {
-                return this.f39970a.getShort();
+                return this.f26279a.getShort();
             }
             if (b2 == 2) {
-                return this.f39970a.getInt();
+                return this.f26279a.getInt();
             }
             if (b2 != 11) {
                 if (b2 == 12) {
@@ -133,7 +133,7 @@ public final class nyvKz {
     public final long a(long j, int i, boolean z) {
         byte b;
         if (b(i)) {
-            ByteBuffer byteBuffer = this.f39970a;
+            ByteBuffer byteBuffer = this.f26279a;
             byte b2 = byteBuffer.get();
             byte b3 = (byte) (b2 & 15);
             if (((b2 & 240) >> 4) == 15) {
@@ -142,16 +142,16 @@ public final class nyvKz {
             if (b3 != 11) {
                 if (b3 != 12) {
                     if (b3 == 0) {
-                        b = this.f39970a.get();
+                        b = this.f26279a.get();
                     } else if (b3 == 1) {
-                        b = this.f39970a.getShort();
+                        b = this.f26279a.getShort();
                     } else if (b3 != 2) {
                         if (b3 == 3) {
-                            return this.f39970a.getLong();
+                            return this.f26279a.getLong();
                         }
                         throw new s7Dnc("type mismatch.");
                     } else {
-                        b = this.f39970a.getInt();
+                        b = this.f26279a.getInt();
                     }
                     return b;
                 }
@@ -172,7 +172,7 @@ public final class nyvKz {
         }
         try {
             ucT3w uct3w2 = (ucT3w) uct3w.getClass().newInstance();
-            ByteBuffer byteBuffer = this.f39970a;
+            ByteBuffer byteBuffer = this.f26279a;
             byte b = byteBuffer.get();
             byte b2 = (byte) (b & 15);
             if (((b & 240) >> 4) == 15) {
@@ -257,7 +257,7 @@ public final class nyvKz {
                 }
                 if (t instanceof boolean[]) {
                     if (b(i)) {
-                        ByteBuffer byteBuffer = this.f39970a;
+                        ByteBuffer byteBuffer = this.f26279a;
                         byte b2 = byteBuffer.get();
                         byte b3 = (byte) (b2 & 15);
                         if (((b2 & 240) >> 4) == 15) {
@@ -292,7 +292,7 @@ public final class nyvKz {
                     return zArr;
                 } else if (t instanceof short[]) {
                     if (b(i)) {
-                        ByteBuffer byteBuffer2 = this.f39970a;
+                        ByteBuffer byteBuffer2 = this.f26279a;
                         byte b4 = byteBuffer2.get();
                         byte b5 = (byte) (b4 & 15);
                         if (((b4 & 240) >> 4) == 15) {
@@ -327,7 +327,7 @@ public final class nyvKz {
                     return sArr;
                 } else if (t instanceof int[]) {
                     if (b(i)) {
-                        ByteBuffer byteBuffer3 = this.f39970a;
+                        ByteBuffer byteBuffer3 = this.f26279a;
                         byte b6 = byteBuffer3.get();
                         byte b7 = (byte) (b6 & 15);
                         if (((b6 & 240) >> 4) == 15) {
@@ -362,7 +362,7 @@ public final class nyvKz {
                     return iArr;
                 } else if (t instanceof long[]) {
                     if (b(i)) {
-                        ByteBuffer byteBuffer4 = this.f39970a;
+                        ByteBuffer byteBuffer4 = this.f26279a;
                         byte b8 = byteBuffer4.get();
                         byte b9 = (byte) (b8 & 15);
                         if (((b8 & 240) >> 4) == 15) {
@@ -397,7 +397,7 @@ public final class nyvKz {
                     return jArr;
                 } else if (t instanceof float[]) {
                     if (b(i)) {
-                        ByteBuffer byteBuffer5 = this.f39970a;
+                        ByteBuffer byteBuffer5 = this.f26279a;
                         byte b10 = byteBuffer5.get();
                         byte b11 = (byte) (b10 & 15);
                         if (((b10 & 240) >> 4) == 15) {
@@ -438,7 +438,7 @@ public final class nyvKz {
                     throw new s7Dnc("unable to get type of key and value.");
                 } else {
                     if (b(i)) {
-                        ByteBuffer byteBuffer6 = this.f39970a;
+                        ByteBuffer byteBuffer6 = this.f26279a;
                         byte b12 = byteBuffer6.get();
                         byte b13 = (byte) (b12 & 15);
                         if (((b12 & 240) >> 4) == 15) {
@@ -492,7 +492,7 @@ public final class nyvKz {
                 }
                 return hashMap2;
             }
-            ByteBuffer byteBuffer = this.f39970a;
+            ByteBuffer byteBuffer = this.f26279a;
             byte b = byteBuffer.get();
             byte b2 = (byte) (b & 15);
             if (((b & 240) >> 4) == 15) {
@@ -524,17 +524,17 @@ public final class nyvKz {
 
     public final short a(short s, int i, boolean z) {
         if (b(i)) {
-            ByteBuffer byteBuffer = this.f39970a;
+            ByteBuffer byteBuffer = this.f26279a;
             byte b = byteBuffer.get();
             byte b2 = (byte) (b & 15);
             if (((b & 240) >> 4) == 15) {
                 byteBuffer.get();
             }
             if (b2 == 0) {
-                return this.f39970a.get();
+                return this.f26279a.get();
             }
             if (b2 == 1) {
-                return this.f39970a.getShort();
+                return this.f26279a.getShort();
             }
             if (b2 != 11) {
                 if (b2 == 12) {
@@ -549,7 +549,7 @@ public final class nyvKz {
     }
 
     public final void a() {
-        ByteBuffer byteBuffer = this.f39970a;
+        ByteBuffer byteBuffer = this.f26279a;
         byte b = byteBuffer.get();
         byte b2 = (byte) (b & 15);
         if (((b & 240) >> 4) == 15) {
@@ -579,7 +579,7 @@ public final class nyvKz {
                 a(8);
                 return;
             case 6:
-                byte b2 = this.f39970a.get();
+                byte b2 = this.f26279a.get();
                 byte b3 = b2;
                 if (b2 < 0) {
                     b3 = b2 + 256;
@@ -587,7 +587,7 @@ public final class nyvKz {
                 a(b3);
                 return;
             case 7:
-                a(this.f39970a.getInt());
+                a(this.f26279a.getInt());
                 return;
             case 8:
                 int a2 = a(0, 0, true);
@@ -618,7 +618,7 @@ public final class nyvKz {
             case 12:
                 return;
             case 13:
-                ByteBuffer byteBuffer = this.f39970a;
+                ByteBuffer byteBuffer = this.f26279a;
                 byte b4 = byteBuffer.get();
                 byte b5 = (byte) (b4 & 15);
                 if (((b4 & 240) >> 4) == 15) {
@@ -635,7 +635,7 @@ public final class nyvKz {
     }
 
     public final void a(int i) {
-        ByteBuffer byteBuffer = this.f39970a;
+        ByteBuffer byteBuffer = this.f26279a;
         byteBuffer.position(byteBuffer.position() + i);
     }
 
@@ -650,7 +650,7 @@ public final class nyvKz {
             }
             return null;
         }
-        ByteBuffer byteBuffer = this.f39970a;
+        ByteBuffer byteBuffer = this.f26279a;
         byte b = byteBuffer.get();
         byte b2 = (byte) (b & 15);
         if (((b & 240) >> 4) == 15) {
@@ -659,7 +659,7 @@ public final class nyvKz {
         if (b2 != 9) {
             if (b2 != 11) {
                 if (b2 == 13) {
-                    ByteBuffer byteBuffer2 = this.f39970a;
+                    ByteBuffer byteBuffer2 = this.f26279a;
                     byte b3 = byteBuffer2.get();
                     byte b4 = (byte) (b3 & 15);
                     if (((b3 & 240) >> 4) == 15) {
@@ -671,7 +671,7 @@ public final class nyvKz {
                     int a2 = a(0, 0, true);
                     if (a2 >= 0) {
                         byte[] bArr = new byte[a2];
-                        this.f39970a.get(bArr);
+                        this.f26279a.get(bArr);
                         return bArr;
                     }
                     throw new s7Dnc("invalid size, tag: " + i + ", type: " + ((int) b2) + ", " + ((int) b4) + ", size: " + a2);
@@ -703,20 +703,20 @@ public final class nyvKz {
             }
             return null;
         }
-        ByteBuffer byteBuffer = this.f39970a;
+        ByteBuffer byteBuffer = this.f26279a;
         byte b = byteBuffer.get();
         byte b2 = (byte) (b & 15);
         if (((b & 240) >> 4) == 15) {
             byteBuffer.get();
         }
         if (b2 == 6) {
-            byte b3 = this.f39970a.get();
+            byte b3 = this.f26279a.get();
             byte b4 = b3;
             if (b3 < 0) {
                 b4 = b3 + 256;
             }
             byte[] bArr = new byte[b4];
-            this.f39970a.get(bArr);
+            this.f26279a.get(bArr);
             try {
                 return new String(bArr, this.b);
             } catch (UnsupportedEncodingException e) {
@@ -728,12 +728,12 @@ public final class nyvKz {
             }
             throw new s7Dnc("type mismatch.");
         } else {
-            int i2 = this.f39970a.getInt();
+            int i2 = this.f26279a.getInt();
             if (i2 > 104857600 || i2 < 0) {
                 throw new s7Dnc("String too long: " + i2);
             }
             byte[] bArr2 = new byte[i2];
-            this.f39970a.get(bArr2);
+            this.f26279a.get(bArr2);
             try {
                 return new String(bArr2, this.b);
             } catch (UnsupportedEncodingException e2) {
@@ -743,8 +743,8 @@ public final class nyvKz {
     }
 
     public final void b() {
-        while (this.f39970a.remaining() != 0) {
-            ByteBuffer byteBuffer = this.f39970a;
+        while (this.f26279a.remaining() != 0) {
+            ByteBuffer byteBuffer = this.f26279a;
             byte b = byteBuffer.get();
             byte b2 = (byte) (b & 15);
             if (((b & 240) >> 4) == 15) {
@@ -764,7 +764,7 @@ public final class nyvKz {
         while (true) {
             z = false;
             try {
-                ByteBuffer duplicate = this.f39970a.duplicate();
+                ByteBuffer duplicate = this.f26279a.duplicate();
                 byte b = duplicate.get();
                 byte b2 = (byte) (b & 15);
                 i2 = (b & 240) >> 4;
@@ -797,7 +797,7 @@ public final class nyvKz {
             }
             return null;
         }
-        ByteBuffer byteBuffer = this.f39970a;
+        ByteBuffer byteBuffer = this.f26279a;
         byte b = byteBuffer.get();
         byte b2 = (byte) (b & 15);
         if (((b & 240) >> 4) == 15) {

@@ -35,9 +35,8 @@ public class StFoucsView extends View {
         this.mPaint.setStyle(Paint.Style.STROKE);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int i;
         int i2;
         super.onDraw(canvas);
@@ -50,9 +49,8 @@ public class StFoucsView extends View {
         canvas.drawLine(getWidth() / 2, getHeight() - 2, getWidth() / 2, getHeight() - (this.size / 10), this.mPaint);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int i3 = this.size;
         this.center_x = (int) (i3 / 2.0d);

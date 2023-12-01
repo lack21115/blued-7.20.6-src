@@ -10,11 +10,11 @@ import java.nio.ByteBuffer;
 public class X5JsCore {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f38818a = a.UNINITIALIZED;
+    private static a f25127a = a.UNINITIALIZED;
     private static a b = a.UNINITIALIZED;
 
     /* renamed from: c  reason: collision with root package name */
-    private static a f38819c = a.UNINITIALIZED;
+    private static a f25128c = a.UNINITIALIZED;
     private final Context d;
     private Object e;
     private WebView f;
@@ -74,17 +74,17 @@ public class X5JsCore {
 
     public static boolean canUseX5JsCore(Context context) {
         boolean z = false;
-        if (f38818a != a.UNINITIALIZED) {
-            if (f38818a == a.AVAILABLE) {
+        if (f25127a != a.UNINITIALIZED) {
+            if (f25127a == a.AVAILABLE) {
                 z = true;
             }
             return z;
         }
-        f38818a = a.UNAVAILABLE;
+        f25127a = a.UNAVAILABLE;
         Object a2 = a("canUseX5JsCore", new Class[]{Context.class}, context);
         if (a2 != null && (a2 instanceof Boolean) && ((Boolean) a2).booleanValue()) {
             a("setJsValueFactory", new Class[]{Object.class}, JsValue.a());
-            f38818a = a.AVAILABLE;
+            f25127a = a.AVAILABLE;
             return true;
         }
         return false;
@@ -92,16 +92,16 @@ public class X5JsCore {
 
     public static boolean canUseX5JsCoreNewAPI(Context context) {
         boolean z = false;
-        if (f38819c != a.UNINITIALIZED) {
-            if (f38819c == a.AVAILABLE) {
+        if (f25128c != a.UNINITIALIZED) {
+            if (f25128c == a.AVAILABLE) {
                 z = true;
             }
             return z;
         }
-        f38819c = a.UNAVAILABLE;
+        f25128c = a.UNAVAILABLE;
         Object a2 = a("canUseX5JsCoreNewAPI", new Class[]{Context.class}, context);
         if (a2 != null && (a2 instanceof Boolean) && ((Boolean) a2).booleanValue()) {
-            f38819c = a.AVAILABLE;
+            f25128c = a.AVAILABLE;
             return true;
         }
         return false;
@@ -130,7 +130,7 @@ public class X5JsCore {
         WebView webView = this.f;
         if (webView != null) {
             webView.addJavascriptInterface(obj, str);
-            this.f.loadUrl(com.anythink.core.common.res.d.f6907a);
+            this.f.loadUrl("about:blank");
         }
     }
 
@@ -146,7 +146,7 @@ public class X5JsCore {
         if (webView != null) {
             webView.clearHistory();
             this.f.clearCache(true);
-            this.f.loadUrl(com.anythink.core.common.res.d.f6907a);
+            this.f.loadUrl("about:blank");
             this.f.freeMemory();
             this.f.pauseTimers();
             this.f.destroy();

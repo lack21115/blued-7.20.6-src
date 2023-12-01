@@ -56,7 +56,7 @@ public final class R {
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/cardview/R$styleable.class */
     public static final class styleable {
-        public static final int[] CardView = {16843071, 16843072, 2130968796, 2130968797, 2130968798, 2130968800, 2130968801, 2130968802, 2130968952, 2130968953, 2130968955, 2130968956, 2130968958};
+        public static final int[] CardView = {android.R.attr.minWidth, android.R.attr.minHeight, 2130968796, 2130968797, 2130968798, 2130968800, 2130968801, 2130968802, 2130968952, 2130968953, 2130968955, 2130968956, 2130968958};
         public static final int CardView_android_minHeight = 0x00000001;
         public static final int CardView_android_minWidth = 0x00000000;
         public static final int CardView_cardBackgroundColor = 0x00000002;

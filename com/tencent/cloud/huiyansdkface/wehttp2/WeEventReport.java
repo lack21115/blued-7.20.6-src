@@ -14,11 +14,11 @@ import java.util.List;
 public class WeEventReport implements EventReport {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SimpleDateFormat f36125a = new SimpleDateFormat("mm:ss.SSS");
+    private final SimpleDateFormat f22434a = new SimpleDateFormat("mm:ss.SSS");
     private final StringBuilder b = new StringBuilder();
 
     /* renamed from: c  reason: collision with root package name */
-    private final TimePointInfo f36126c = new TimePointInfo();
+    private final TimePointInfo f22435c = new TimePointInfo();
     private final ReportCallback d;
     private Request e;
 
@@ -31,11 +31,11 @@ public class WeEventReport implements EventReport {
     public static class TimePointInfo {
 
         /* renamed from: a  reason: collision with root package name */
-        private long f36127a;
+        private long f22436a;
         private long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f36128c;
+        private long f22437c;
         private long d;
         private long e;
         private long f;
@@ -65,7 +65,7 @@ public class WeEventReport implements EventReport {
         }
 
         public long getConnectStart() {
-            return this.f36128c;
+            return this.f22437c;
         }
 
         public int getConnectStartCount() {
@@ -113,7 +113,7 @@ public class WeEventReport implements EventReport {
         }
 
         public long getStartTime() {
-            return this.f36127a;
+            return this.f22436a;
         }
     }
 
@@ -123,14 +123,14 @@ public class WeEventReport implements EventReport {
     }
 
     private String a(long j) {
-        return this.f36125a.format(Long.valueOf(j));
+        return this.f22434a.format(Long.valueOf(j));
     }
 
     private void a() {
-        this.f36126c.l = System.currentTimeMillis() - this.f36126c.f36127a;
+        this.f22435c.l = System.currentTimeMillis() - this.f22435c.f22436a;
         StringBuilder sb = this.b;
         int indexOf = sb.indexOf("]]]");
-        sb.insert(indexOf, "(" + this.f36126c.l + ")");
+        sb.insert(indexOf, "(" + this.f22435c.l + ")");
     }
 
     private void a(List<InetAddress> list, StringBuilder sb) {
@@ -151,7 +151,7 @@ public class WeEventReport implements EventReport {
     }
 
     private String b(long j) {
-        return this.f36125a.format(Long.valueOf(j));
+        return this.f22434a.format(Long.valueOf(j));
     }
 
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
@@ -163,31 +163,31 @@ public class WeEventReport implements EventReport {
         this.b.append("Statistical data：\n");
         StringBuilder sb2 = this.b;
         sb2.append("\tdnsUseTime:");
-        sb2.append(this.f36126c.g);
+        sb2.append(this.f22435c.g);
         sb2.append("\n");
         StringBuilder sb3 = this.b;
         sb3.append("\tsecureConnectUseTime:");
-        sb3.append(this.f36126c.i);
+        sb3.append(this.f22435c.i);
         sb3.append("\n");
         StringBuilder sb4 = this.b;
         sb4.append("\tconnectUseTime:");
-        sb4.append(this.f36126c.h);
+        sb4.append(this.f22435c.h);
         sb4.append("\n");
         StringBuilder sb5 = this.b;
         sb5.append("\treqUseTime:");
-        sb5.append(this.f36126c.j);
+        sb5.append(this.f22435c.j);
         sb5.append("\n");
         StringBuilder sb6 = this.b;
         sb6.append("\trespUseTime:");
-        sb6.append(this.f36126c.k);
+        sb6.append(this.f22435c.k);
         sb6.append("\n");
         StringBuilder sb7 = this.b;
         sb7.append("\ttotalUseTime:");
-        sb7.append(this.f36126c.l);
+        sb7.append(this.f22435c.l);
         sb7.append("\n");
         ReportCallback reportCallback = this.d;
         if (reportCallback != null) {
-            reportCallback.reportFinish(this.f36126c, this.b);
+            reportCallback.reportFinish(this.f22435c, this.b);
         }
     }
 
@@ -201,13 +201,13 @@ public class WeEventReport implements EventReport {
         a();
         ReportCallback reportCallback = this.d;
         if (reportCallback != null) {
-            reportCallback.reportFinish(this.f36126c, this.b);
+            reportCallback.reportFinish(this.f22435c, this.b);
         }
     }
 
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
     public void callStart() {
-        this.f36126c.f36127a = System.currentTimeMillis();
+        this.f22435c.f22436a = System.currentTimeMillis();
         StringBuilder sb = this.b;
         sb.append("WeHttp Log: \n[[[");
         sb.append(b());
@@ -221,19 +221,19 @@ public class WeEventReport implements EventReport {
             sb2.append("\n");
         }
         StringBuilder sb3 = this.b;
-        sb3.append(a(this.f36126c.f36127a));
+        sb3.append(a(this.f22435c.f22436a));
         sb3.append(":callStart\n");
     }
 
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
     public void connectEnd(String str) {
         if (!this.e.isHttps()) {
-            this.f36126c.h = System.currentTimeMillis() - this.f36126c.f36128c;
+            this.f22435c.h = System.currentTimeMillis() - this.f22435c.f22437c;
         }
         StringBuilder sb = this.b;
         sb.append(a(System.currentTimeMillis()));
         sb.append(":connectEnd(");
-        sb.append(this.f36126c.h);
+        sb.append(this.f22435c.h);
         sb.append("):");
         sb.append(str);
         sb.append("\n");
@@ -242,18 +242,18 @@ public class WeEventReport implements EventReport {
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
     public void connectFailed(String str, IOException iOException) {
         long currentTimeMillis = System.currentTimeMillis();
-        if (!this.e.isHttps() || this.f36126c.h <= 0) {
-            TimePointInfo timePointInfo = this.f36126c;
-            timePointInfo.h = currentTimeMillis - timePointInfo.f36128c;
+        if (!this.e.isHttps() || this.f22435c.h <= 0) {
+            TimePointInfo timePointInfo = this.f22435c;
+            timePointInfo.h = currentTimeMillis - timePointInfo.f22437c;
         }
-        if (this.e.isHttps() && this.f36126c.d > 0 && this.f36126c.i <= 0) {
-            TimePointInfo timePointInfo2 = this.f36126c;
+        if (this.e.isHttps() && this.f22435c.d > 0 && this.f22435c.i <= 0) {
+            TimePointInfo timePointInfo2 = this.f22435c;
             timePointInfo2.i = currentTimeMillis - timePointInfo2.d;
         }
         StringBuilder sb = this.b;
         sb.append(a(currentTimeMillis));
         sb.append(":connectFailed(");
-        sb.append(this.f36126c.h);
+        sb.append(this.f22435c.h);
         sb.append("):");
         sb.append(str);
         sb.append(":");
@@ -263,10 +263,10 @@ public class WeEventReport implements EventReport {
 
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
     public void connectStart(InetSocketAddress inetSocketAddress, Proxy proxy) {
-        TimePointInfo.e(this.f36126c);
-        this.f36126c.f36128c = System.currentTimeMillis();
+        TimePointInfo.e(this.f22435c);
+        this.f22435c.f22437c = System.currentTimeMillis();
         StringBuilder sb = this.b;
-        sb.append(a(this.f36126c.f36128c));
+        sb.append(a(this.f22435c.f22437c));
         sb.append(":connectStart:");
         sb.append(inetSocketAddress.toString());
         sb.append(",");
@@ -292,12 +292,12 @@ public class WeEventReport implements EventReport {
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
     public void dnsEnd(List<InetAddress> list) {
         long currentTimeMillis = System.currentTimeMillis();
-        TimePointInfo timePointInfo = this.f36126c;
+        TimePointInfo timePointInfo = this.f22435c;
         timePointInfo.g = currentTimeMillis - timePointInfo.b;
         StringBuilder sb = this.b;
         sb.append(a(currentTimeMillis));
         sb.append(":dnsEnd(");
-        sb.append(this.f36126c.g);
+        sb.append(this.f22435c.g);
         sb.append("):");
         a(list, this.b);
         this.b.append("\n");
@@ -305,10 +305,10 @@ public class WeEventReport implements EventReport {
 
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
     public void dnsStart(String str) {
-        TimePointInfo.b(this.f36126c);
-        this.f36126c.b = System.currentTimeMillis();
+        TimePointInfo.b(this.f22435c);
+        this.f22435c.b = System.currentTimeMillis();
         StringBuilder sb = this.b;
-        sb.append(a(this.f36126c.b));
+        sb.append(a(this.f22435c.b));
         sb.append(":dnsStart:" + str);
         sb.append("\n");
     }
@@ -316,12 +316,12 @@ public class WeEventReport implements EventReport {
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
     public void requestBodyEnd(long j) {
         long currentTimeMillis = System.currentTimeMillis();
-        TimePointInfo timePointInfo = this.f36126c;
+        TimePointInfo timePointInfo = this.f22435c;
         timePointInfo.j = currentTimeMillis - timePointInfo.e;
         StringBuilder sb = this.b;
         sb.append(a(currentTimeMillis));
         sb.append(":requestBodyEnd(");
-        sb.append(this.f36126c.j);
+        sb.append(this.f22435c.j);
         sb.append("):");
         sb.append(j);
         sb.append("\n");
@@ -343,21 +343,21 @@ public class WeEventReport implements EventReport {
 
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
     public void requestHeadersStart() {
-        this.f36126c.e = System.currentTimeMillis();
+        this.f22435c.e = System.currentTimeMillis();
         StringBuilder sb = this.b;
-        sb.append(a(this.f36126c.e));
+        sb.append(a(this.f22435c.e));
         sb.append(":requestHeadersStart\n");
     }
 
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
     public void responseBodyEnd(long j) {
         long currentTimeMillis = System.currentTimeMillis();
-        TimePointInfo timePointInfo = this.f36126c;
+        TimePointInfo timePointInfo = this.f22435c;
         timePointInfo.k = currentTimeMillis - timePointInfo.f;
         StringBuilder sb = this.b;
         sb.append(a(currentTimeMillis));
         sb.append(":responseBodyEnd(");
-        sb.append(this.f36126c.k);
+        sb.append(this.f22435c.k);
         sb.append("):");
         sb.append(j);
         sb.append("\n");
@@ -387,21 +387,21 @@ public class WeEventReport implements EventReport {
 
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
     public void responseHeadersStart() {
-        this.f36126c.f = System.currentTimeMillis();
+        this.f22435c.f = System.currentTimeMillis();
         StringBuilder sb = this.b;
-        sb.append(a(this.f36126c.f));
+        sb.append(a(this.f22435c.f));
         sb.append(":responseHeadersStart\n");
     }
 
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
     public void secureConnectEnd(String str, String str2, Principal principal, Principal principal2, List<Certificate> list, List<Certificate> list2) {
         long currentTimeMillis = System.currentTimeMillis();
-        TimePointInfo timePointInfo = this.f36126c;
+        TimePointInfo timePointInfo = this.f22435c;
         timePointInfo.i = currentTimeMillis - timePointInfo.d;
         StringBuilder sb = this.b;
         sb.append(a(currentTimeMillis));
         sb.append(":secureConnectEnd(");
-        sb.append(this.f36126c.i);
+        sb.append(this.f22435c.i);
         sb.append("):");
         sb.append(str);
         sb.append(",");
@@ -423,9 +423,9 @@ public class WeEventReport implements EventReport {
 
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.EventReport
     public void secureConnectStart() {
-        this.f36126c.d = System.currentTimeMillis();
-        TimePointInfo timePointInfo = this.f36126c;
-        timePointInfo.h = timePointInfo.d - this.f36126c.f36128c;
+        this.f22435c.d = System.currentTimeMillis();
+        TimePointInfo timePointInfo = this.f22435c;
+        timePointInfo.h = timePointInfo.d - this.f22435c.f22437c;
         StringBuilder sb = this.b;
         sb.append(a(System.currentTimeMillis()));
         sb.append(":secureConnectStart\n");

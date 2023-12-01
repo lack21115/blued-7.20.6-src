@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public final class a extends d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23321a = "CommandFilter";
+    private static final String f9713a = "CommandFilter";
 
     public a(String str, d dVar) {
         super(str, (byte) 0);
@@ -61,7 +61,7 @@ public final class a extends d {
             } else if (aVar.g != 32 || a(aVar, hVar)) {
                 return hVar;
             } else {
-                com.igexin.c.a.c.a.a(f23321a, "version = 7 and enc type = 0x20, redirect = false");
+                com.igexin.c.a.c.a.a(f9713a, "version = 7 and enc type = 0x20, redirect = false");
                 return null;
             }
         }
@@ -75,7 +75,7 @@ public final class a extends d {
             com.igexin.push.c.c.a aVar = new com.igexin.push.c.c.a();
             aVar.b = (byte) cVar.m;
             aVar.a(cVar.b());
-            aVar.f23330c = cVar.n;
+            aVar.f9722c = cVar.n;
             aVar.d = cVar.o;
             return aVar;
         } else if (!(obj instanceof com.igexin.push.c.c.c[])) {

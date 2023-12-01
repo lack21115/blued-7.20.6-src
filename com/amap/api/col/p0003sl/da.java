@@ -19,14 +19,14 @@ public abstract class da extends kb {
     public byte[] makeHttpRequest() throws hn {
         kc makeHttpRequestNeedHeader = makeHttpRequestNeedHeader();
         if (makeHttpRequestNeedHeader != null) {
-            return makeHttpRequestNeedHeader.f5264a;
+            return makeHttpRequestNeedHeader.a;
         }
         return null;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public kc makeHttpRequestNeedHeader() throws hn {
-        if (aa.f4728a == null || hx.a(aa.f4728a, dw.a()).f5127a == hx.c.SuccessCode) {
+        if (aa.a == null || hx.a(aa.a, dw.a()).a == hx.c.SuccessCode) {
             setHttpProtocol(MapsInitializer.getProtocol() == 1 ? kb.c.HTTP : kb.c.HTTPS);
             ka.c();
             return this.isPostFlag ? ka.a(this) : ka.e(this);

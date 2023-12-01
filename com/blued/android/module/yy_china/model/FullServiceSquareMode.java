@@ -148,7 +148,6 @@ public final class FullServiceSquareMode implements MultiItemEntity {
         return this.id;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

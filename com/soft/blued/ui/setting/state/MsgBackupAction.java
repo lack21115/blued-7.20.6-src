@@ -14,7 +14,7 @@ public abstract class MsgBackupAction implements UiAction {
     public static final class Backup extends MsgBackupAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final Backup f33634a = new Backup();
+        public static final Backup f19943a = new Backup();
 
         private Backup() {
             super(null);
@@ -26,7 +26,7 @@ public abstract class MsgBackupAction implements UiAction {
     public static final class Delete extends MsgBackupAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final Delete f33635a = new Delete();
+        public static final Delete f19944a = new Delete();
 
         private Delete() {
             super(null);
@@ -38,7 +38,7 @@ public abstract class MsgBackupAction implements UiAction {
     public static final class DownloadAndRestore extends MsgBackupAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final DownloadAndRestore f33636a = new DownloadAndRestore();
+        public static final DownloadAndRestore f19945a = new DownloadAndRestore();
 
         private DownloadAndRestore() {
             super(null);
@@ -50,7 +50,7 @@ public abstract class MsgBackupAction implements UiAction {
     public static final class GetBackupInfo extends MsgBackupAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final GetBackupInfo f33637a = new GetBackupInfo();
+        public static final GetBackupInfo f19946a = new GetBackupInfo();
 
         private GetBackupInfo() {
             super(null);
@@ -66,7 +66,7 @@ public abstract class MsgBackupAction implements UiAction {
         public static final class FileLimitDialog extends MsgBackupEvent {
 
             /* renamed from: a  reason: collision with root package name */
-            public static final FileLimitDialog f33638a = new FileLimitDialog();
+            public static final FileLimitDialog f19947a = new FileLimitDialog();
 
             private FileLimitDialog() {
                 super(null);
@@ -86,7 +86,7 @@ public abstract class MsgBackupAction implements UiAction {
     public static final class UploadFile extends MsgBackupAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final UploadFile f33639a = new UploadFile();
+        public static final UploadFile f19948a = new UploadFile();
 
         private UploadFile() {
             super(null);

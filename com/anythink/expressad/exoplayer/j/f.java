@@ -9,11 +9,11 @@ import java.net.URLDecoder;
 public final class f implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7578a = "data";
+    public static final String f4739a = "data";
     private k b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f7579c;
+    private int f4740c;
     private byte[] d;
 
     @Override // com.anythink.expressad.exoplayer.j.h
@@ -21,20 +21,20 @@ public final class f implements h {
         if (i2 == 0) {
             return 0;
         }
-        int length = this.d.length - this.f7579c;
+        int length = this.d.length - this.f4740c;
         if (length == 0) {
             return -1;
         }
         int min = Math.min(i2, length);
-        System.arraycopy((Object) this.d, this.f7579c, (Object) bArr, i, min);
-        this.f7579c += min;
+        System.arraycopy(this.d, this.f4740c, bArr, i, min);
+        this.f4740c += min;
         return min;
     }
 
     @Override // com.anythink.expressad.exoplayer.j.h
     public final long a(k kVar) {
         this.b = kVar;
-        Uri uri = kVar.f7584c;
+        Uri uri = kVar.f4745c;
         String scheme = uri.getScheme();
         if ("data".equals(scheme)) {
             String[] a2 = af.a(uri.getSchemeSpecificPart(), ",");
@@ -47,7 +47,7 @@ public final class f implements h {
                         throw new com.anythink.expressad.exoplayer.t("Error while parsing Base64 encoded string: ".concat(String.valueOf(str)), e);
                     }
                 } else {
-                    this.d = URLDecoder.decode(str, "US-ASCII").getBytes();
+                    this.d = URLDecoder.decode(str, com.anythink.expressad.exoplayer.b.i).getBytes();
                 }
                 return this.d.length;
             }
@@ -60,7 +60,7 @@ public final class f implements h {
     public final Uri a() {
         k kVar = this.b;
         if (kVar != null) {
-            return kVar.f7584c;
+            return kVar.f4745c;
         }
         return null;
     }

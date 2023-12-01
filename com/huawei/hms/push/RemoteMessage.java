@@ -28,7 +28,7 @@ public class RemoteMessage implements Parcelable {
     public static final int PRIORITY_UNKNOWN = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String[] f22837c;
+    private static final String[] f9229c;
     private static final int[] d;
     private static final long[] e;
     private static final HashMap<String, Object> f;
@@ -38,19 +38,19 @@ public class RemoteMessage implements Parcelable {
     private static final HashMap<String, Object> j;
 
     /* renamed from: a  reason: collision with root package name */
-    private Bundle f22838a;
+    private Bundle f9230a;
     private Notification b;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/push/RemoteMessage$Builder.class */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Bundle f22839a;
+        private final Bundle f9231a;
         private final Map<String, String> b;
 
         public Builder(String str) {
             Bundle bundle = new Bundle();
-            this.f22839a = bundle;
+            this.f9231a = bundle;
             this.b = new HashMap();
             bundle.putString("to", str);
         }
@@ -73,19 +73,19 @@ public class RemoteMessage implements Parcelable {
                 try {
                     String jSONObject2 = jSONObject.toString();
                     JSONObject jSONObject3 = new JSONObject();
-                    jSONObject3.put(RemoteMessageConst.COLLAPSE_KEY, this.f22839a.getString(RemoteMessageConst.COLLAPSE_KEY));
-                    jSONObject3.put(RemoteMessageConst.TTL, this.f22839a.getInt(RemoteMessageConst.TTL));
-                    jSONObject3.put(RemoteMessageConst.SEND_MODE, this.f22839a.getInt(RemoteMessageConst.SEND_MODE));
-                    jSONObject3.put(RemoteMessageConst.RECEIPT_MODE, this.f22839a.getInt(RemoteMessageConst.RECEIPT_MODE));
+                    jSONObject3.put(RemoteMessageConst.COLLAPSE_KEY, this.f9231a.getString(RemoteMessageConst.COLLAPSE_KEY));
+                    jSONObject3.put(RemoteMessageConst.TTL, this.f9231a.getInt(RemoteMessageConst.TTL));
+                    jSONObject3.put(RemoteMessageConst.SEND_MODE, this.f9231a.getInt(RemoteMessageConst.SEND_MODE));
+                    jSONObject3.put(RemoteMessageConst.RECEIPT_MODE, this.f9231a.getInt(RemoteMessageConst.RECEIPT_MODE));
                     JSONObject jSONObject4 = new JSONObject();
                     if (jSONObject.length() != 0) {
                         jSONObject4.put("data", jSONObject2);
                     }
-                    jSONObject4.put(RemoteMessageConst.MSGID, this.f22839a.getString(RemoteMessageConst.MSGID));
+                    jSONObject4.put(RemoteMessageConst.MSGID, this.f9231a.getString(RemoteMessageConst.MSGID));
                     jSONObject3.put(RemoteMessageConst.MessageBody.MSG_CONTENT, jSONObject4);
-                    bundle.putByteArray(RemoteMessageConst.MSGBODY, jSONObject3.toString().getBytes(k.f22848a));
-                    bundle.putString("to", this.f22839a.getString("to"));
-                    bundle.putString("message_type", this.f22839a.getString("message_type"));
+                    bundle.putByteArray(RemoteMessageConst.MSGBODY, jSONObject3.toString().getBytes(k.f9240a));
+                    bundle.putString("to", this.f9231a.getString("to"));
+                    bundle.putString("message_type", this.f9231a.getString("message_type"));
                     return new RemoteMessage(bundle);
                 } catch (JSONException e) {
                     HMSLog.w("RemoteMessage", "JSONException: parse message body failed.");
@@ -103,7 +103,7 @@ public class RemoteMessage implements Parcelable {
         }
 
         public Builder setCollapseKey(String str) {
-            this.f22839a.putString(RemoteMessageConst.COLLAPSE_KEY, str);
+            this.f9231a.putString(RemoteMessageConst.COLLAPSE_KEY, str);
             return this;
         }
 
@@ -116,18 +116,18 @@ public class RemoteMessage implements Parcelable {
         }
 
         public Builder setMessageId(String str) {
-            this.f22839a.putString(RemoteMessageConst.MSGID, str);
+            this.f9231a.putString(RemoteMessageConst.MSGID, str);
             return this;
         }
 
         public Builder setMessageType(String str) {
-            this.f22839a.putString("message_type", str);
+            this.f9231a.putString("message_type", str);
             return this;
         }
 
         public Builder setReceiptMode(int i) {
             if (i == 1 || i == 0) {
-                this.f22839a.putInt(RemoteMessageConst.RECEIPT_MODE, i);
+                this.f9231a.putInt(RemoteMessageConst.RECEIPT_MODE, i);
                 return this;
             }
             throw new IllegalArgumentException("receipt mode can only be 0 or 1.");
@@ -135,7 +135,7 @@ public class RemoteMessage implements Parcelable {
 
         public Builder setSendMode(int i) {
             if (i == 0 || i == 1) {
-                this.f22839a.putInt(RemoteMessageConst.SEND_MODE, i);
+                this.f9231a.putInt(RemoteMessageConst.SEND_MODE, i);
                 return this;
             }
             throw new IllegalArgumentException("send mode can only be 0 or 1.");
@@ -145,7 +145,7 @@ public class RemoteMessage implements Parcelable {
             if (i < 1 || i > 1296000) {
                 throw new IllegalArgumentException("ttl must be greater than or equal to 1 and less than or equal to 1296000");
             }
-            this.f22839a.putInt(RemoteMessageConst.TTL, i);
+            this.f9231a.putInt(RemoteMessageConst.TTL, i);
             return this;
         }
     }
@@ -161,11 +161,11 @@ public class RemoteMessage implements Parcelable {
         private final String B;
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f22840a;
+        private final String f9232a;
         private final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final String[] f22841c;
+        private final String[] f9233c;
         private final String d;
         private final String e;
         private final String[] f;
@@ -191,11 +191,11 @@ public class RemoteMessage implements Parcelable {
         private final String z;
 
         private Notification(Bundle bundle) {
-            this.f22840a = bundle.getString(RemoteMessageConst.Notification.NOTIFY_TITLE);
+            this.f9232a = bundle.getString(RemoteMessageConst.Notification.NOTIFY_TITLE);
             this.d = bundle.getString("content");
             this.b = bundle.getString(RemoteMessageConst.Notification.TITLE_LOC_KEY);
             this.e = bundle.getString(RemoteMessageConst.Notification.BODY_LOC_KEY);
-            this.f22841c = bundle.getStringArray(RemoteMessageConst.Notification.TITLE_LOC_ARGS);
+            this.f9233c = bundle.getStringArray(RemoteMessageConst.Notification.TITLE_LOC_ARGS);
             this.f = bundle.getStringArray(RemoteMessageConst.Notification.BODY_LOC_ARGS);
             this.g = bundle.getString("icon");
             this.j = bundle.getString("color");
@@ -313,11 +313,11 @@ public class RemoteMessage implements Parcelable {
         }
 
         public String getTitle() {
-            return this.f22840a;
+            return this.f9232a;
         }
 
         public String[] getTitleLocalizationArgs() {
-            String[] strArr = this.f22841c;
+            String[] strArr = this.f9233c;
             return strArr == null ? new String[0] : (String[]) strArr.clone();
         }
 
@@ -390,7 +390,7 @@ public class RemoteMessage implements Parcelable {
 
     static {
         String[] strArr = new String[0];
-        f22837c = strArr;
+        f9229c = strArr;
         int[] iArr = new int[0];
         d = iArr;
         long[] jArr = new long[0];
@@ -444,11 +444,11 @@ public class RemoteMessage implements Parcelable {
     }
 
     public RemoteMessage(Bundle bundle) {
-        this.f22838a = a(bundle);
+        this.f9230a = a(bundle);
     }
 
     public RemoteMessage(Parcel parcel) {
-        this.f22838a = parcel.readBundle();
+        this.f9230a = parcel.readBundle();
         this.b = (Notification) parcel.readSerializable();
     }
 
@@ -531,12 +531,12 @@ public class RemoteMessage implements Parcelable {
     }
 
     public String getAnalyticInfo() {
-        return this.f22838a.getString(RemoteMessageConst.ANALYTIC_INFO);
+        return this.f9230a.getString(RemoteMessageConst.ANALYTIC_INFO);
     }
 
     public Map<String, String> getAnalyticInfoMap() {
         HashMap hashMap = new HashMap();
-        String string = this.f22838a.getString(RemoteMessageConst.ANALYTIC_INFO);
+        String string = this.f9230a.getString(RemoteMessageConst.ANALYTIC_INFO);
         if (string != null && !string.trim().isEmpty()) {
             try {
                 JSONObject jSONObject = new JSONObject(string);
@@ -553,16 +553,16 @@ public class RemoteMessage implements Parcelable {
     }
 
     public String getCollapseKey() {
-        return this.f22838a.getString(RemoteMessageConst.COLLAPSE_KEY);
+        return this.f9230a.getString(RemoteMessageConst.COLLAPSE_KEY);
     }
 
     public String getData() {
-        return this.f22838a.getString("data");
+        return this.f9230a.getString("data");
     }
 
     public Map<String, String> getDataOfMap() {
         HashMap hashMap = new HashMap();
-        String string = this.f22838a.getString("data");
+        String string = this.f9230a.getString("data");
         if (string != null && !string.trim().isEmpty()) {
             try {
                 JSONObject jSONObject = new JSONObject(string);
@@ -579,19 +579,19 @@ public class RemoteMessage implements Parcelable {
     }
 
     public String getFrom() {
-        return this.f22838a.getString("from");
+        return this.f9230a.getString("from");
     }
 
     public String getMessageId() {
-        return this.f22838a.getString(RemoteMessageConst.MSGID);
+        return this.f9230a.getString(RemoteMessageConst.MSGID);
     }
 
     public String getMessageType() {
-        return this.f22838a.getString("message_type");
+        return this.f9230a.getString("message_type");
     }
 
     public Notification getNotification() {
-        Bundle bundle = this.f22838a.getBundle("notification");
+        Bundle bundle = this.f9230a.getBundle("notification");
         if (this.b == null && bundle != null) {
             this.b = new Notification(bundle, null);
         }
@@ -602,7 +602,7 @@ public class RemoteMessage implements Parcelable {
     }
 
     public int getOriginalUrgency() {
-        int i2 = this.f22838a.getInt(RemoteMessageConst.ORI_URGENCY);
+        int i2 = this.f9230a.getInt(RemoteMessageConst.ORI_URGENCY);
         int i3 = i2;
         if (i2 != 1) {
             i3 = i2;
@@ -614,17 +614,17 @@ public class RemoteMessage implements Parcelable {
     }
 
     public int getReceiptMode() {
-        return this.f22838a.getInt(RemoteMessageConst.RECEIPT_MODE);
+        return this.f9230a.getInt(RemoteMessageConst.RECEIPT_MODE);
     }
 
     public int getSendMode() {
-        return this.f22838a.getInt(RemoteMessageConst.SEND_MODE);
+        return this.f9230a.getInt(RemoteMessageConst.SEND_MODE);
     }
 
     public long getSentTime() {
         long j2 = 0;
         try {
-            String string = this.f22838a.getString(RemoteMessageConst.SEND_TIME);
+            String string = this.f9230a.getString(RemoteMessageConst.SEND_TIME);
             if (!TextUtils.isEmpty(string)) {
                 j2 = Long.parseLong(string);
             }
@@ -636,19 +636,19 @@ public class RemoteMessage implements Parcelable {
     }
 
     public String getTo() {
-        return this.f22838a.getString("to");
+        return this.f9230a.getString("to");
     }
 
     public String getToken() {
-        return this.f22838a.getString(RemoteMessageConst.DEVICE_TOKEN);
+        return this.f9230a.getString(RemoteMessageConst.DEVICE_TOKEN);
     }
 
     public int getTtl() {
-        return this.f22838a.getInt(RemoteMessageConst.TTL);
+        return this.f9230a.getInt(RemoteMessageConst.TTL);
     }
 
     public int getUrgency() {
-        int i2 = this.f22838a.getInt(RemoteMessageConst.URGENCY);
+        int i2 = this.f9230a.getInt(RemoteMessageConst.URGENCY);
         int i3 = i2;
         if (i2 != 1) {
             i3 = i2;
@@ -661,7 +661,7 @@ public class RemoteMessage implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i2) {
-        parcel.writeBundle(this.f22838a);
+        parcel.writeBundle(this.f9230a);
         parcel.writeSerializable(this.b);
     }
 }

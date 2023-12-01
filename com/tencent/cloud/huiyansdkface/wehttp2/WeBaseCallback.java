@@ -7,11 +7,11 @@ import java.io.IOException;
 public abstract class WeBaseCallback<T> extends BaseCallback<Resp<T>> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f36110a;
-    private int b = f36110a;
+    private static int f22419a;
+    private int b = f22419a;
 
     public static void successCodeGlobal(int i) {
-        f36110a = i;
+        f22419a = i;
     }
 
     public abstract void failed(WeReq weReq, WeReq.ErrType errType, int i, String str, IOException iOException);

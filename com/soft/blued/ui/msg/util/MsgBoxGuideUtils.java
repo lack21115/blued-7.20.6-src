@@ -12,12 +12,12 @@ public class MsgBoxGuideUtils {
     class AnonymousClass1 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BluedPopupWindow f32601a;
+        final /* synthetic */ BluedPopupWindow f18910a;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            this.f32601a.dismiss();
+            this.f18910a.dismiss();
         }
     }
 }

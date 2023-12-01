@@ -8,16 +8,14 @@ public class ErrorCode {
         DATA_ERROR(-1),
         DOWNLOAD_FAIL(-2);
         
-
-        /* renamed from: c  reason: collision with root package name */
-        private final int f11261c;
+        private final int c;
 
         PlayStickerCode(int i) {
-            this.f11261c = i;
+            this.c = i;
         }
 
         public int a() {
-            return this.f11261c;
+            return this.c;
         }
     }
 }

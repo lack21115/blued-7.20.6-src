@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public class b extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40487a = b.class.getSimpleName();
+    public static final String f26796a = b.class.getSimpleName();
 
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
@@ -34,8 +34,8 @@ public class b extends BroadcastReceiver {
                 String stringExtra4 = intent.getStringExtra(b.j());
                 String stringExtra5 = intent.getStringExtra(b.l());
                 final int intExtra = intent.getIntExtra(b.m(), 0);
-                com.tramini.plugin.a.g.a.a(b, stringExtra3, stringExtra5, stringExtra4, new a.InterfaceC1072a() { // from class: com.tramini.plugin.a.b.1
-                    @Override // com.tramini.plugin.a.g.a.InterfaceC1072a
+                com.tramini.plugin.a.g.a.a(b, stringExtra3, stringExtra5, stringExtra4, new a.InterfaceC0902a() { // from class: com.tramini.plugin.a.b.1
+                    @Override // com.tramini.plugin.a.g.a.InterfaceC0902a
                     public final void a(final com.tramini.plugin.a.c.a aVar) {
                         int i;
                         if (aVar != null || (i = intExtra) == 18 || i == 19 || i == 20) {
@@ -45,8 +45,8 @@ public class b extends BroadcastReceiver {
                                 public final void run() {
                                     try {
                                         JSONObject jSONObject = new JSONObject(stringExtra2);
-                                        if (aVar != null && aVar.f40498a != null) {
-                                            JSONObject jSONObject2 = aVar.f40498a;
+                                        if (aVar != null && aVar.f26807a != null) {
+                                            JSONObject jSONObject2 = aVar.f26807a;
                                             Iterator<String> keys = jSONObject2.keys();
                                             while (keys.hasNext()) {
                                                 String next = keys.next();
@@ -55,7 +55,7 @@ public class b extends BroadcastReceiver {
                                             jSONObject.put("setting_id", b.b());
                                         } else if (aVar != null && aVar.b != null) {
                                             jSONObject.put("type", 10001);
-                                            jSONObject.put("i_t", aVar.b.f40499a);
+                                            jSONObject.put("i_t", aVar.b.f26808a);
                                             if (!TextUtils.isEmpty(aVar.b.b)) {
                                                 jSONObject.put("i_al", com.tramini.plugin.a.g.c.a(aVar.b.b.getBytes()));
                                             }

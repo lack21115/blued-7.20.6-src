@@ -14,11 +14,11 @@ import com.soft.blued.ui.msg.model.HelloExpressionData;
 public class HelloExpressionAdapter extends BaseQuickAdapter<HelloExpressionData, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f31978a;
+    private IRequestHost f18288a;
 
     public HelloExpressionAdapter(IRequestHost iRequestHost) {
         super((int) R.layout.item_hello_expression);
-        this.f31978a = iRequestHost;
+        this.f18288a = iRequestHost;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -33,6 +33,6 @@ public class HelloExpressionAdapter extends BaseQuickAdapter<HelloExpressionData
             marginLayoutParams.leftMargin = 0;
         }
         imageView.setLayoutParams(marginLayoutParams);
-        ImageLoader.a(this.f31978a, helloExpressionData.gif).a(6.0f).b(R.drawable.shape_hello_expression_error).a(imageView);
+        ImageLoader.a(this.f18288a, helloExpressionData.gif).a(6.0f).b((int) R.drawable.shape_hello_expression_error).a(imageView);
     }
 }

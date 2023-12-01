@@ -13,13 +13,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/ShapeTextFontSpan.class */
 public final class ShapeTextFontSpan extends ReplacementSpan {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f17999a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f18000c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -30,7 +26,7 @@ public final class ShapeTextFontSpan extends ReplacementSpan {
     public ShapeTextFontSpan(Context mContext, int i, int i2) {
         Intrinsics.e(mContext, "mContext");
         this.b = mContext.getResources().getColor(i);
-        this.f18000c = mContext.getResources().getColor(i2);
+        this.c = mContext.getResources().getColor(i2);
         this.d = mContext.getResources().getDimensionPixelOffset(R.dimen.dp_16);
         this.e = mContext.getResources().getDimensionPixelOffset(R.dimen.dp_4);
         this.f = mContext.getResources().getDimensionPixelOffset(R.dimen.dp_4);
@@ -49,7 +45,7 @@ public final class ShapeTextFontSpan extends ReplacementSpan {
         Intrinsics.e(canvas, "canvas");
         Intrinsics.e(text, "text");
         Intrinsics.e(paint, "paint");
-        paint.setShader(new LinearGradient(0.0f, 0.0f, this.f17999a * 1.0f, 0.0f, this.f18000c, this.b, Shader.TileMode.CLAMP));
+        paint.setShader(new LinearGradient(0.0f, 0.0f, this.a * 1.0f, 0.0f, this.c, this.b, Shader.TileMode.CLAMP));
         Paint.FontMetricsInt fontMetricsInt = paint.getFontMetricsInt();
         int i6 = fontMetricsInt.descent;
         int i7 = fontMetricsInt.ascent;
@@ -61,7 +57,7 @@ public final class ShapeTextFontSpan extends ReplacementSpan {
         float f2 = (i4 + i8) - i9;
         int i10 = this.d;
         float f3 = i10 / 2.0f;
-        float f4 = this.f17999a;
+        float f4 = this.a;
         float f5 = i10 / 2.0f;
         int i11 = this.g;
         float f6 = i11;
@@ -76,7 +72,7 @@ public final class ShapeTextFontSpan extends ReplacementSpan {
     public int getSize(Paint paint, CharSequence text, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
         Intrinsics.e(paint, "paint");
         Intrinsics.e(text, "text");
-        this.f17999a = a(text.subSequence(i, i2).toString());
+        this.a = a(text.subSequence(i, i2).toString());
         Paint.FontMetricsInt fontMetricsInt2 = paint.getFontMetricsInt();
         if (fontMetricsInt != null) {
             fontMetricsInt.top = fontMetricsInt2.top;
@@ -85,6 +81,6 @@ public final class ShapeTextFontSpan extends ReplacementSpan {
             fontMetricsInt.bottom = fontMetricsInt2.bottom;
         }
         this.g = fontMetricsInt2.bottom - fontMetricsInt2.top;
-        return this.f17999a;
+        return this.a;
     }
 }

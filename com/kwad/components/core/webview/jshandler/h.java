@@ -117,7 +117,7 @@ public final class h implements com.kwad.sdk.core.webview.b.a {
                 return;
             }
             this.IM.d(this.RT);
-            this.IM.m(new a.C0519a(this.mContext).ao(true).ap(false).I(this.mAdTemplate).ar(false));
+            this.IM.m(new a.C0349a(this.mContext).ao(true).ap(false).I(this.mAdTemplate).ar(false));
         } catch (Exception e) {
             cVar.onError(-1, "data parse error");
         }

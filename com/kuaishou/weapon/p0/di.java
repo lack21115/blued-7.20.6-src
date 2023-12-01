@@ -6,18 +6,18 @@ import org.json.JSONArray;
 public class di {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23824a = "bGlidmErKw==";
+    private static final String f10216a = "bGlidmErKw==";
     private static final String b = "WnBvc2VkQnJpZGdlLmphcg==";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23825c = "bGlienBvc2VkX2FydC5zbw==";
+    private static final String f10217c = "bGlienBvc2VkX2FydC5zbw==";
 
     public static Integer a(JSONArray jSONArray) {
         if (jSONArray != null) {
             try {
                 if (jSONArray.length() > 0) {
                     String str = new String(c.a(b.getBytes(), 2));
-                    byte[] a2 = c.a(f23825c.getBytes(), 2);
+                    byte[] a2 = c.a(f10217c.getBytes(), 2);
                     String str2 = new String(a2);
                     if (a2 != null) {
                         return a(jSONArray, str, str2) ? 1 : null;
@@ -79,7 +79,7 @@ public class di {
         if (jSONArray != null) {
             try {
                 if (jSONArray.length() > 0) {
-                    String str = new String(c.a(f23824a.getBytes(), 2));
+                    String str = new String(c.a(f10216a.getBytes(), 2));
                     if (str.length() > 1) {
                         return a(jSONArray, str) ? 1 : null;
                     }

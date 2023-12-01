@@ -66,13 +66,13 @@ public abstract class BaseVideoView extends AutoScaleSizeRelativeLayout implemen
     private e W;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Set<gp> f23003a;
+    private final Set<gp> f9395a;
     private c aa;
     private BroadcastReceiver ab;
     protected TextureView b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected boolean f23004c;
+    protected boolean f9396c;
     protected boolean d;
     protected com.huawei.openalliance.ad.media.b e;
     protected com.huawei.openalliance.ad.media.b f;
@@ -368,7 +368,7 @@ public abstract class BaseVideoView extends AutoScaleSizeRelativeLayout implemen
         this.F = new CopyOnWriteArraySet();
         this.D = new CopyOnWriteArraySet();
         this.L = new CopyOnWriteArraySet();
-        this.f23003a = new CopyOnWriteArraySet();
+        this.f9395a = new CopyOnWriteArraySet();
         this.p = new CopyOnWriteArraySet();
         this.q = new CopyOnWriteArraySet();
         this.r = new CopyOnWriteArraySet();
@@ -509,7 +509,7 @@ public abstract class BaseVideoView extends AutoScaleSizeRelativeLayout implemen
         this.F = new CopyOnWriteArraySet();
         this.D = new CopyOnWriteArraySet();
         this.L = new CopyOnWriteArraySet();
-        this.f23003a = new CopyOnWriteArraySet();
+        this.f9395a = new CopyOnWriteArraySet();
         this.p = new CopyOnWriteArraySet();
         this.q = new CopyOnWriteArraySet();
         this.r = new CopyOnWriteArraySet();
@@ -650,7 +650,7 @@ public abstract class BaseVideoView extends AutoScaleSizeRelativeLayout implemen
         this.F = new CopyOnWriteArraySet();
         this.D = new CopyOnWriteArraySet();
         this.L = new CopyOnWriteArraySet();
-        this.f23003a = new CopyOnWriteArraySet();
+        this.f9395a = new CopyOnWriteArraySet();
         this.p = new CopyOnWriteArraySet();
         this.q = new CopyOnWriteArraySet();
         this.r = new CopyOnWriteArraySet();
@@ -870,7 +870,7 @@ public abstract class BaseVideoView extends AutoScaleSizeRelativeLayout implemen
 
     /* JADX INFO: Access modifiers changed from: private */
     public void F(int i2) {
-        for (gp gpVar : this.f23003a) {
+        for (gp gpVar : this.f9395a) {
             gpVar.V(i2);
         }
     }
@@ -894,7 +894,7 @@ public abstract class BaseVideoView extends AutoScaleSizeRelativeLayout implemen
 
     /* JADX INFO: Access modifiers changed from: private */
     public void S(int i2) {
-        for (gp gpVar : this.f23003a) {
+        for (gp gpVar : this.f9395a) {
             gpVar.Code(i2);
         }
     }
@@ -1148,7 +1148,7 @@ public abstract class BaseVideoView extends AutoScaleSizeRelativeLayout implemen
         if (gpVar == null) {
             return;
         }
-        this.f23003a.add(gpVar);
+        this.f9395a.add(gpVar);
     }
 
     public void Code(gq gqVar) {
@@ -1199,7 +1199,7 @@ public abstract class BaseVideoView extends AutoScaleSizeRelativeLayout implemen
         }
         ge.V(V, "play auto: %s surfaceAvailable: %s standalone: %s url: %s", Boolean.valueOf(z), Boolean.valueOf(this.d), Boolean.valueOf(this.s), bc.Code(this.v));
         if (!this.d) {
-            this.f23004c = true;
+            this.f9396c = true;
             this.i = z;
             return;
         }
@@ -1219,7 +1219,7 @@ public abstract class BaseVideoView extends AutoScaleSizeRelativeLayout implemen
     public void D() {
         String str = V;
         ge.V(str, "stop standalone " + this.s);
-        this.f23004c = false;
+        this.f9396c = false;
         if (this.s) {
             this.e.I();
         } else {
@@ -1244,7 +1244,7 @@ public abstract class BaseVideoView extends AutoScaleSizeRelativeLayout implemen
     public void L() {
         String str = V;
         ge.V(str, "pause standalone " + this.s);
-        this.f23004c = false;
+        this.f9396c = false;
         if (this.s) {
             this.e.Z();
         } else {
@@ -1274,7 +1274,7 @@ public abstract class BaseVideoView extends AutoScaleSizeRelativeLayout implemen
             surfaceTexture.release();
         }
         this.h = null;
-        this.f23004c = false;
+        this.f9396c = false;
     }
 
     public void V(gn gnVar) {
@@ -1295,7 +1295,7 @@ public abstract class BaseVideoView extends AutoScaleSizeRelativeLayout implemen
         if (gpVar == null) {
             return;
         }
-        this.f23003a.remove(gpVar);
+        this.f9395a.remove(gpVar);
     }
 
     public void V(gr grVar) {

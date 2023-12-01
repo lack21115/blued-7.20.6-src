@@ -3,7 +3,6 @@ package android.accounts;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 import com.blued.das.live.LiveProtos;
 
 /* loaded from: source-9557208-dex2jar.jar:android/accounts/Account.class */
@@ -61,7 +60,7 @@ public class Account implements Parcelable {
     }
 
     public String toString() {
-        return "Account {name=" + this.name + ", type=" + this.type + i.d;
+        return "Account {name=" + this.name + ", type=" + this.type + "}";
     }
 
     @Override // android.os.Parcelable

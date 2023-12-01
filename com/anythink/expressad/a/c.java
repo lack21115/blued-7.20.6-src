@@ -16,7 +16,7 @@ public final class c extends d {
     private String k = null;
 
     /* renamed from: a  reason: collision with root package name */
-    b f6957a = null;
+    b f4119a = null;
     private e m = null;
     private boolean n = true;
     private Handler q = new Handler(Looper.getMainLooper());
@@ -28,18 +28,18 @@ public final class c extends d {
         }
 
         @Override // com.anythink.expressad.foundation.g.g.a.b
-        public final void a(a.EnumC0147a enumC0147a) {
-            if (enumC0147a == a.EnumC0147a.FINISH && c.this.n) {
+        public final void a(a.EnumC0076a enumC0076a) {
+            if (enumC0076a == a.EnumC0076a.FINISH && c.this.n) {
                 c.this.q.post(new Runnable() { // from class: com.anythink.expressad.a.c.1.1
                     @Override // java.lang.Runnable
                     public final void run() {
                         if (c.this.m != null) {
-                            if (c.this.f6957a.g()) {
+                            if (c.this.f4119a.g()) {
                                 e unused = c.this.m;
                                 return;
                             }
                             e unused2 = c.this.m;
-                            c.this.f6957a.h();
+                            c.this.f4119a.h();
                         }
                     }
                 });
@@ -89,11 +89,11 @@ public final class c extends d {
     public static final class b implements com.anythink.expressad.e.b, Serializable {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f6961a = 1;
+        public static final int f4123a = 1;
         public static final int b = 2;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f6962c = 3;
+        public static final int f4124c = 3;
         public static final int d = 4;
         private static final long e = 1;
         private boolean f;
@@ -214,14 +214,14 @@ public final class c extends d {
     private void a(String str, String str2, com.anythink.expressad.foundation.d.c cVar, e eVar) {
         this.k = new String(cVar.ad());
         this.m = eVar;
-        this.f6957a = null;
+        this.f4119a = null;
         this.p.a(cVar.ad(), eVar, "5".equals(cVar.ab()) || "6".equals(cVar.ab()), str, cVar.aZ(), str2, null, cVar, true, false, com.anythink.expressad.a.a.a.l);
     }
 
     private void a(String str, String str2, com.anythink.expressad.foundation.d.c cVar, e eVar, com.anythink.expressad.c.b bVar) {
         this.k = new String(cVar.ad());
         this.m = eVar;
-        this.f6957a = null;
+        this.f4119a = null;
         this.p.a(cVar.ad(), eVar, "5".equals(cVar.ab()) || "6".equals(cVar.ab()), str, cVar.aZ(), str2, bVar, cVar, true, false, com.anythink.expressad.a.a.a.l);
     }
 
@@ -235,7 +235,7 @@ public final class c extends d {
         String str4;
         this.k = str3;
         this.m = eVar;
-        this.f6957a = null;
+        this.f4119a = null;
         this.l = i2;
         boolean z3 = false;
         if (cVar != null) {

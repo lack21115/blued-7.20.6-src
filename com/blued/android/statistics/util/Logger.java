@@ -1,21 +1,16 @@
 package com.blued.android.statistics.util;
 
 import android.util.Log;
-import com.igexin.push.core.b;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/util/Logger.class */
 public class Logger {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f18727a;
+    private String a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.blued.android.statistics.util.Logger$1  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/util/Logger$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f18728a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -23,25 +18,25 @@ public class Logger {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[TYPE.values().length];
-            f18728a = iArr;
+            a = iArr;
             try {
                 iArr[TYPE.Verbose.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f18728a[TYPE.Info.ordinal()] = 2;
+                a[TYPE.Info.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f18728a[TYPE.Debug.ordinal()] = 3;
+                a[TYPE.Debug.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f18728a[TYPE.Warn.ordinal()] = 4;
+                a[TYPE.Warn.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f18728a[TYPE.Error.ordinal()] = 5;
+                a[TYPE.Error.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -58,22 +53,22 @@ public class Logger {
     }
 
     public Logger(String str) {
-        this.f18727a = str;
+        this.a = str;
     }
 
     private void a(TYPE type, String str) {
-        int i = AnonymousClass1.f18728a[type.ordinal()];
+        int i = AnonymousClass1.a[type.ordinal()];
         if (i == 1) {
-            Log.v(this.f18727a, str);
+            Log.v(this.a, str);
         } else if (i == 2) {
-            Log.i(this.f18727a, str);
+            Log.i(this.a, str);
         } else if (i == 3) {
-            Log.d(this.f18727a, str);
+            Log.d(this.a, str);
         } else if (i == 4) {
-            Log.w(this.f18727a, str);
+            Log.w(this.a, str);
         } else if (i != 5) {
         } else {
-            Log.e(this.f18727a, str);
+            Log.e(this.a, str);
         }
     }
 
@@ -110,7 +105,7 @@ public class Logger {
             }
             Object obj = objArr[i2];
             if (obj == null) {
-                sb.append(b.l);
+                sb.append("null");
             } else if (obj instanceof Throwable) {
                 sb.append(Log.getStackTraceString((Throwable) obj));
                 sb.append("\n");

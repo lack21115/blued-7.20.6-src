@@ -3,6 +3,7 @@ package com.anythink.expressad.foundation.d;
 import android.content.Context;
 import android.text.TextUtils;
 import com.anythink.expressad.foundation.h.t;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
@@ -37,7 +38,7 @@ public final class r {
     public static final String Z = "watched_millis";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7804a = "2000020";
+    public static final String f4964a = "2000020";
     public static final String aA = "ad_type";
     public static final String aB = "resource_type";
     public static final String aC = "devid";
@@ -76,7 +77,7 @@ public final class r {
     public static final String aq = "aback";
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final String f7805ar = "event";
+    public static final String f4965ar = "event";
     public static final String as = "layout";
     public static final String at = "type";
     public static final String au = "endcard_url";
@@ -88,7 +89,7 @@ public final class r {
     public static final String b = "2000021";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7806c = "2000054";
+    public static final String f4966c = "2000054";
     public static final String d = "2000022";
     public static final String e = "2000023";
     public static final String f = "2000024";
@@ -403,15 +404,15 @@ public final class r {
         String str2;
         try {
             StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append("key=" + rVar.aW + "&");
-            stringBuffer.append("error=" + t.c(rVar.br) + "&");
-            stringBuffer.append("template_url=" + t.c(rVar.bp) + "&");
-            stringBuffer.append("unit_id=" + t.c(rVar.bm) + "&");
-            stringBuffer.append("cid=" + t.c(rVar.bn) + "&");
+            stringBuffer.append("key=" + rVar.aW + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("error=" + t.c(rVar.br) + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("template_url=" + t.c(rVar.bp) + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("unit_id=" + t.c(rVar.bm) + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("cid=" + t.c(rVar.bn) + ContainerUtils.FIELD_DELIMITER);
             if (TextUtils.isEmpty(rVar.aY)) {
                 str = "";
             } else {
-                str = "network_str=" + rVar.aY + "&";
+                str = "network_str=" + rVar.aY + ContainerUtils.FIELD_DELIMITER;
             }
             stringBuffer.append(str);
             if (TextUtils.isEmpty(rVar.aY)) {
@@ -433,17 +434,17 @@ public final class r {
         }
         StringBuffer stringBuffer = new StringBuffer();
         for (r rVar : list) {
-            stringBuffer.append("key=" + rVar.aW + "&");
-            stringBuffer.append("result=" + rVar.bf + "&");
-            stringBuffer.append("duration=" + rVar.bg + "&");
-            stringBuffer.append("endcard_url=" + rVar.bx + "&");
-            stringBuffer.append("cid=" + rVar.bn + "&");
-            stringBuffer.append("unit_id=" + rVar.bm + "&");
-            stringBuffer.append("reason=" + rVar.D() + "&");
-            stringBuffer.append("ad_type=" + rVar.bA + "&");
-            stringBuffer.append("rid=" + rVar.bk + "&");
-            stringBuffer.append("rid_n=" + rVar.bl + "&");
-            stringBuffer.append("type=" + rVar.bw + "&");
+            stringBuffer.append("key=" + rVar.aW + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("result=" + rVar.bf + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("duration=" + rVar.bg + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("endcard_url=" + rVar.bx + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("cid=" + rVar.bn + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("unit_id=" + rVar.bm + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("reason=" + rVar.D() + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("ad_type=" + rVar.bA + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("rid=" + rVar.bk + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("rid_n=" + rVar.bl + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("type=" + rVar.bw + ContainerUtils.FIELD_DELIMITER);
             StringBuilder sb = new StringBuilder("adspace_t=");
             sb.append(rVar.bC);
             stringBuffer.append(sb.toString());
@@ -459,12 +460,12 @@ public final class r {
     private static String b(r rVar) {
         if (rVar != null) {
             StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append("key=" + rVar.aW + "&");
-            stringBuffer.append("cid=" + rVar.bn + "&");
-            stringBuffer.append("unit_id=" + rVar.bm + "&");
-            stringBuffer.append("network_type=" + rVar.aX + "&");
-            stringBuffer.append("rid=" + rVar.bk + "&");
-            stringBuffer.append("rid_n=" + rVar.bl + "&");
+            stringBuffer.append("key=" + rVar.aW + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("cid=" + rVar.bn + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("unit_id=" + rVar.bm + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("network_type=" + rVar.aX + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("rid=" + rVar.bk + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("rid_n=" + rVar.bl + ContainerUtils.FIELD_DELIMITER);
             StringBuilder sb = new StringBuilder("reason=");
             sb.append(rVar.D());
             stringBuffer.append(sb.toString());
@@ -501,12 +502,12 @@ public final class r {
     private static String c(r rVar) {
         if (rVar != null) {
             StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append("key=" + rVar.aW + "&");
-            stringBuffer.append("cid=" + rVar.bn + "&");
-            stringBuffer.append("unit_id=" + rVar.bm + "&");
-            stringBuffer.append("network_type=" + rVar.aX + "&");
-            stringBuffer.append("mraid_type=" + rVar.bB + "&");
-            stringBuffer.append("rid_n=" + rVar.bl + "&");
+            stringBuffer.append("key=" + rVar.aW + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("cid=" + rVar.bn + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("unit_id=" + rVar.bm + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("network_type=" + rVar.aX + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("mraid_type=" + rVar.bB + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("rid_n=" + rVar.bl + ContainerUtils.FIELD_DELIMITER);
             StringBuilder sb = new StringBuilder("rid=");
             sb.append(rVar.bk);
             stringBuffer.append(sb.toString());
@@ -523,26 +524,26 @@ public final class r {
     private static String d(r rVar) {
         if (rVar != null) {
             StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append("key=" + rVar.aW + "&");
-            stringBuffer.append("result=" + rVar.bf + "&");
-            stringBuffer.append("duration=" + rVar.bg + "&");
-            stringBuffer.append("cid=" + rVar.bn + "&");
-            stringBuffer.append("reason=" + rVar.D() + "&");
-            stringBuffer.append("ad_type=" + rVar.bA + "&");
-            stringBuffer.append("unit_id=" + rVar.bm + "&");
-            stringBuffer.append("devid=" + rVar.aU + "&");
-            stringBuffer.append("mraid_type=" + rVar.bB + "&");
-            stringBuffer.append("network_type=" + rVar.aX + "&");
+            stringBuffer.append("key=" + rVar.aW + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("result=" + rVar.bf + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("duration=" + rVar.bg + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("cid=" + rVar.bn + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("reason=" + rVar.D() + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("ad_type=" + rVar.bA + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("unit_id=" + rVar.bm + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("devid=" + rVar.aU + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("mraid_type=" + rVar.bB + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("network_type=" + rVar.aX + ContainerUtils.FIELD_DELIMITER);
             if (!TextUtils.isEmpty(rVar.bx)) {
-                stringBuffer.append("endcard_url=" + rVar.bx + "&");
+                stringBuffer.append("endcard_url=" + rVar.bx + ContainerUtils.FIELD_DELIMITER);
             }
             if (!TextUtils.isEmpty(rVar.bw)) {
-                stringBuffer.append("type=" + rVar.bw + "&");
+                stringBuffer.append("type=" + rVar.bw + ContainerUtils.FIELD_DELIMITER);
             }
             if (rVar.aT != null) {
-                stringBuffer.append("resource_type=" + rVar.aT + "&");
+                stringBuffer.append("resource_type=" + rVar.aT + ContainerUtils.FIELD_DELIMITER);
             }
-            stringBuffer.append("rid_n=" + rVar.bl + "&");
+            stringBuffer.append("rid_n=" + rVar.bl + ContainerUtils.FIELD_DELIMITER);
             StringBuilder sb = new StringBuilder("rid=");
             sb.append(rVar.bk);
             stringBuffer.append(sb.toString());
@@ -559,23 +560,23 @@ public final class r {
     private static String e(r rVar) {
         if (rVar != null) {
             StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append("key=" + rVar.aW + "&");
-            stringBuffer.append("result=" + rVar.bf + "&");
-            stringBuffer.append("duration=" + rVar.bg + "&");
-            stringBuffer.append("cid=" + rVar.bn + "&");
-            stringBuffer.append("unit_id=" + rVar.bm + "&");
-            stringBuffer.append("reason=" + rVar.D() + "&");
-            stringBuffer.append("ad_type=" + rVar.bA + "&");
-            stringBuffer.append("rid=" + rVar.bk + "&");
-            stringBuffer.append("rid_n=" + rVar.bl + "&");
-            stringBuffer.append("network_type=" + rVar.aX + "&");
-            stringBuffer.append("mraid_type=" + rVar.bB + "&");
-            stringBuffer.append("devid=" + rVar.aU + "&");
+            stringBuffer.append("key=" + rVar.aW + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("result=" + rVar.bf + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("duration=" + rVar.bg + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("cid=" + rVar.bn + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("unit_id=" + rVar.bm + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("reason=" + rVar.D() + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("ad_type=" + rVar.bA + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("rid=" + rVar.bk + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("rid_n=" + rVar.bl + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("network_type=" + rVar.aX + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("mraid_type=" + rVar.bB + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("devid=" + rVar.aU + ContainerUtils.FIELD_DELIMITER);
             if (rVar.aT != null) {
-                stringBuffer.append("resource_type=" + rVar.aT + "&");
+                stringBuffer.append("resource_type=" + rVar.aT + ContainerUtils.FIELD_DELIMITER);
             }
             if (!TextUtils.isEmpty(rVar.bx)) {
-                stringBuffer.append("endcard_url=" + rVar.bx + "&");
+                stringBuffer.append("endcard_url=" + rVar.bx + ContainerUtils.FIELD_DELIMITER);
             }
             stringBuffer.append("type=" + rVar.bw);
             return stringBuffer.toString();
@@ -594,13 +595,13 @@ public final class r {
     private static String f(r rVar) {
         if (rVar != null) {
             StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append("key=" + rVar.aW + "&");
-            stringBuffer.append("cid=" + rVar.bn + "&");
-            stringBuffer.append("rid=" + rVar.bk + "&");
-            stringBuffer.append("rid_n=" + rVar.bl + "&");
-            stringBuffer.append("unit_id=" + rVar.bm + "&");
-            stringBuffer.append("network_type=" + rVar.aX + "&");
-            stringBuffer.append("mraid_type=" + rVar.bB + "&");
+            stringBuffer.append("key=" + rVar.aW + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("cid=" + rVar.bn + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("rid=" + rVar.bk + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("rid_n=" + rVar.bl + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("unit_id=" + rVar.bm + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("network_type=" + rVar.aX + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("mraid_type=" + rVar.bB + ContainerUtils.FIELD_DELIMITER);
             stringBuffer.append("platform=1");
             return stringBuffer.toString();
         }
@@ -618,13 +619,13 @@ public final class r {
     private static String g(r rVar) {
         if (rVar != null) {
             StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append("key=" + rVar.aW + "&");
-            stringBuffer.append("cid=" + rVar.bn + "&");
-            stringBuffer.append("rid=" + rVar.bk + "&");
-            stringBuffer.append("rid_n=" + rVar.bl + "&");
-            stringBuffer.append("unit_id=" + rVar.bm + "&");
-            stringBuffer.append("reason=" + rVar.D() + "&");
-            stringBuffer.append("case=" + rVar.be + "&");
+            stringBuffer.append("key=" + rVar.aW + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("cid=" + rVar.bn + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("rid=" + rVar.bk + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("rid_n=" + rVar.bl + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("unit_id=" + rVar.bm + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("reason=" + rVar.D() + ContainerUtils.FIELD_DELIMITER);
+            stringBuffer.append("case=" + rVar.be + ContainerUtils.FIELD_DELIMITER);
             StringBuilder sb = new StringBuilder("network_type=");
             sb.append(rVar.aX);
             stringBuffer.append(sb.toString());

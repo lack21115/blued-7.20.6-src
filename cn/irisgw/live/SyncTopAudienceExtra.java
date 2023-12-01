@@ -25,8 +25,8 @@ import java.util.List;
 public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements SyncTopAudienceExtraOrBuilder {
     private static final SyncTopAudienceExtra DEFAULT_INSTANCE = new SyncTopAudienceExtra();
     private static final Parser<SyncTopAudienceExtra> PARSER = new AbstractParser<SyncTopAudienceExtra>() { // from class: cn.irisgw.live.SyncTopAudienceExtra.1
-        @Override // com.google.protobuf.Parser
-        public SyncTopAudienceExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public SyncTopAudienceExtra m7406parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new SyncTopAudienceExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -89,24 +89,24 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this;
             }
             ensureTopsIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.tops_);
+            AbstractMessageLite.Builder.addAll(iterable, this.tops_);
             onChanged();
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m7408addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
         public Builder addTops(int i, TopAudience.Builder builder) {
             RepeatedFieldBuilderV3<TopAudience, TopAudience.Builder, TopAudienceOrBuilder> repeatedFieldBuilderV3 = this.topsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m7457build());
                 return this;
             }
             ensureTopsIsMutable();
-            this.tops_.add(i, builder.build());
+            this.tops_.add(i, builder.m7457build());
             onChanged();
             return this;
         }
@@ -129,11 +129,11 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
         public Builder addTops(TopAudience.Builder builder) {
             RepeatedFieldBuilderV3<TopAudience, TopAudience.Builder, TopAudienceOrBuilder> repeatedFieldBuilderV3 = this.topsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m7457build());
                 return this;
             }
             ensureTopsIsMutable();
-            this.tops_.add(builder.build());
+            this.tops_.add(builder.m7457build());
             onChanged();
             return this;
         }
@@ -161,17 +161,17 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return getTopsFieldBuilder().addBuilder(i, TopAudience.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public SyncTopAudienceExtra build() {
-            SyncTopAudienceExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public SyncTopAudienceExtra m7410build() {
+            SyncTopAudienceExtra m7412buildPartial = m7412buildPartial();
+            if (m7412buildPartial.isInitialized()) {
+                return m7412buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m7412buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public SyncTopAudienceExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public SyncTopAudienceExtra m7412buildPartial() {
             SyncTopAudienceExtra syncTopAudienceExtra = new SyncTopAudienceExtra(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<TopAudience, TopAudience.Builder, TopAudienceOrBuilder> repeatedFieldBuilderV3 = this.topsBuilder_;
@@ -188,8 +188,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return syncTopAudienceExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m7416clear() {
             super.clear();
             RepeatedFieldBuilderV3<TopAudience, TopAudience.Builder, TopAudienceOrBuilder> repeatedFieldBuilderV3 = this.topsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
@@ -201,13 +201,13 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m7418clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m7421clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -223,18 +223,16 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m7427clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public SyncTopAudienceExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public SyncTopAudienceExtra m7429getDefaultInstanceForType() {
             return SyncTopAudienceExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_SyncTopAudienceExtra_descriptor;
         }
@@ -268,7 +266,7 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
         @Override // cn.irisgw.live.SyncTopAudienceExtraOrBuilder
         public TopAudienceOrBuilder getTopsOrBuilder(int i) {
             RepeatedFieldBuilderV3<TopAudience, TopAudience.Builder, TopAudienceOrBuilder> repeatedFieldBuilderV3 = this.topsBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.tops_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.tops_.get(i) : (TopAudienceOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.SyncTopAudienceExtraOrBuilder
@@ -277,12 +275,10 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return repeatedFieldBuilderV3 != null ? repeatedFieldBuilderV3.getMessageOrBuilderList() : Collections.unmodifiableList(this.tops_);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_SyncTopAudienceExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(SyncTopAudienceExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -317,18 +313,18 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                     this.topsBuilder_.addAllMessages(syncTopAudienceExtra.tops_);
                 }
             }
-            mergeUnknownFields(syncTopAudienceExtra.unknownFields);
+            m7438mergeUnknownFields(syncTopAudienceExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.SyncTopAudienceExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.SyncTopAudienceExtra.Builder m7435mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -373,11 +369,11 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.SyncTopAudienceExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.SyncTopAudienceExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.SyncTopAudienceExtra.Builder.m7435mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.SyncTopAudienceExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m7434mergeFrom(Message message) {
             if (message instanceof SyncTopAudienceExtra) {
                 return mergeFrom((SyncTopAudienceExtra) message);
             }
@@ -385,8 +381,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m7438mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -402,24 +398,24 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m7440setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m7442setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
         public Builder setTops(int i, TopAudience.Builder builder) {
             RepeatedFieldBuilderV3<TopAudience, TopAudience.Builder, TopAudienceOrBuilder> repeatedFieldBuilderV3 = this.topsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m7457build());
                 return this;
             }
             ensureTopsIsMutable();
-            this.tops_.set(i, builder.build());
+            this.tops_.set(i, builder.m7457build());
             onChanged();
             return this;
         }
@@ -439,8 +435,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m7444setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -467,8 +463,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
         private int vbadge_;
         private static final TopAudience DEFAULT_INSTANCE = new TopAudience();
         private static final Parser<TopAudience> PARSER = new AbstractParser<TopAudience>() { // from class: cn.irisgw.live.SyncTopAudienceExtra.TopAudience.1
-            @Override // com.google.protobuf.Parser
-            public TopAudience parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public TopAudience m7453parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new TopAudience(codedInputStream, extensionRegistryLite);
             }
         };
@@ -544,7 +540,7 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                     return this;
                 }
                 ensurePrivilegeIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.privilege_);
+                AbstractMessageLite.Builder.addAll(iterable, this.privilege_);
                 onChanged();
                 return this;
             }
@@ -552,11 +548,11 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             public Builder addPrivilege(int i, UserPrivilege.Builder builder) {
                 RepeatedFieldBuilderV3<UserPrivilege, UserPrivilege.Builder, UserPrivilegeOrBuilder> repeatedFieldBuilderV3 = this.privilegeBuilder_;
                 if (repeatedFieldBuilderV3 != null) {
-                    repeatedFieldBuilderV3.addMessage(i, builder.build());
+                    repeatedFieldBuilderV3.addMessage(i, builder.m7504build());
                     return this;
                 }
                 ensurePrivilegeIsMutable();
-                this.privilege_.add(i, builder.build());
+                this.privilege_.add(i, builder.m7504build());
                 onChanged();
                 return this;
             }
@@ -579,11 +575,11 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             public Builder addPrivilege(UserPrivilege.Builder builder) {
                 RepeatedFieldBuilderV3<UserPrivilege, UserPrivilege.Builder, UserPrivilegeOrBuilder> repeatedFieldBuilderV3 = this.privilegeBuilder_;
                 if (repeatedFieldBuilderV3 != null) {
-                    repeatedFieldBuilderV3.addMessage(builder.build());
+                    repeatedFieldBuilderV3.addMessage(builder.m7504build());
                     return this;
                 }
                 ensurePrivilegeIsMutable();
-                this.privilege_.add(builder.build());
+                this.privilege_.add(builder.m7504build());
                 onChanged();
                 return this;
             }
@@ -611,22 +607,22 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return getPrivilegeFieldBuilder().addBuilder(i, UserPrivilege.getDefaultInstance());
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m7455addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public TopAudience build() {
-                TopAudience buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public TopAudience m7457build() {
+                TopAudience m7459buildPartial = m7459buildPartial();
+                if (m7459buildPartial.isInitialized()) {
+                    return m7459buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m7459buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public TopAudience buildPartial() {
+            /* renamed from: buildPartial */
+            public TopAudience m7459buildPartial() {
                 TopAudience topAudience = new TopAudience(this);
                 topAudience.uid_ = this.uid_;
                 topAudience.avatar_ = this.avatar_;
@@ -649,8 +645,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return topAudience;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m7463clear() {
                 super.clear();
                 this.uid_ = 0;
                 this.avatar_ = "";
@@ -687,8 +683,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m7465clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -704,8 +700,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m7468clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -733,10 +729,9 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m7474clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.SyncTopAudienceExtra.TopAudienceOrBuilder
@@ -788,12 +783,11 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this.avatarFrameType_;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public TopAudience getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public TopAudience m7476getDefaultInstanceForType() {
                 return TopAudience.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_SyncTopAudienceExtra_TopAudience_descriptor;
             }
@@ -864,7 +858,7 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             @Override // cn.irisgw.live.SyncTopAudienceExtra.TopAudienceOrBuilder
             public UserPrivilegeOrBuilder getPrivilegeOrBuilder(int i) {
                 RepeatedFieldBuilderV3<UserPrivilege, UserPrivilege.Builder, UserPrivilegeOrBuilder> repeatedFieldBuilderV3 = this.privilegeBuilder_;
-                return repeatedFieldBuilderV3 == null ? this.privilege_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+                return repeatedFieldBuilderV3 == null ? this.privilege_.get(i) : (UserPrivilegeOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
             }
 
             @Override // cn.irisgw.live.SyncTopAudienceExtra.TopAudienceOrBuilder
@@ -893,12 +887,10 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this.vbadge_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_SyncTopAudienceExtra_TopAudience_fieldAccessorTable.ensureFieldAccessorsInitialized(TopAudience.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -957,18 +949,18 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 if (topAudience.getAvatarFrameType() != 0) {
                     setAvatarFrameType(topAudience.getAvatarFrameType());
                 }
-                mergeUnknownFields(topAudience.unknownFields);
+                m7485mergeUnknownFields(topAudience.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.SyncTopAudienceExtra.TopAudience.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.SyncTopAudienceExtra.TopAudience.Builder m7482mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -1013,11 +1005,11 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.SyncTopAudienceExtra.TopAudience.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.SyncTopAudienceExtra$TopAudience$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.SyncTopAudienceExtra.TopAudience.Builder.m7482mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.SyncTopAudienceExtra$TopAudience$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m7481mergeFrom(Message message) {
                 if (message instanceof TopAudience) {
                     return mergeFrom((TopAudience) message);
                 }
@@ -1025,8 +1017,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m7485mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -1086,8 +1078,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m7487setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -1128,11 +1120,11 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             public Builder setPrivilege(int i, UserPrivilege.Builder builder) {
                 RepeatedFieldBuilderV3<UserPrivilege, UserPrivilege.Builder, UserPrivilegeOrBuilder> repeatedFieldBuilderV3 = this.privilegeBuilder_;
                 if (repeatedFieldBuilderV3 != null) {
-                    repeatedFieldBuilderV3.setMessage(i, builder.build());
+                    repeatedFieldBuilderV3.setMessage(i, builder.m7504build());
                     return this;
                 }
                 ensurePrivilegeIsMutable();
-                this.privilege_.set(i, builder.build());
+                this.privilege_.set(i, builder.m7504build());
                 onChanged();
                 return this;
             }
@@ -1152,8 +1144,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 }
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m7489setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -1163,8 +1155,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m7491setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
 
@@ -1271,66 +1263,65 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m7452toBuilder();
         }
 
         public static Builder newBuilder(TopAudience topAudience) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(topAudience);
+            return DEFAULT_INSTANCE.m7452toBuilder().mergeFrom(topAudience);
         }
 
         public static TopAudience parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (TopAudience) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static TopAudience parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (TopAudience) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static TopAudience parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (TopAudience) PARSER.parseFrom(byteString);
         }
 
         public static TopAudience parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (TopAudience) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static TopAudience parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (TopAudience) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static TopAudience parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (TopAudience) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static TopAudience parseFrom(InputStream inputStream) throws IOException {
-            return (TopAudience) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static TopAudience parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (TopAudience) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static TopAudience parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (TopAudience) PARSER.parseFrom(byteBuffer);
         }
 
         public static TopAudience parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (TopAudience) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static TopAudience parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (TopAudience) PARSER.parseFrom(bArr);
         }
 
         public static TopAudience parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (TopAudience) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<TopAudience> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1391,8 +1382,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return this.avatarFrameType_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public TopAudience getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public TopAudience m7447getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -1433,7 +1424,6 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return this.liangType_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<TopAudience> getParserForType() {
             return PARSER;
         }
@@ -1463,7 +1453,6 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return this.privilege_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1512,7 +1501,6 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
@@ -1532,7 +1520,6 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return this.vbadge_;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1547,12 +1534,10 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return hashCode2;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_SyncTopAudienceExtra_TopAudience_fieldAccessorTable.ensureFieldAccessorsInitialized(TopAudience.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1565,28 +1550,26 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m7450newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m7449newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new TopAudience();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m7452toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = this.uid_;
             if (i != 0) {
@@ -1665,8 +1648,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
     public static final class UserPrivilege extends GeneratedMessageV3 implements UserPrivilegeOrBuilder {
         private static final UserPrivilege DEFAULT_INSTANCE = new UserPrivilege();
         private static final Parser<UserPrivilege> PARSER = new AbstractParser<UserPrivilege>() { // from class: cn.irisgw.live.SyncTopAudienceExtra.UserPrivilege.1
-            @Override // com.google.protobuf.Parser
-            public UserPrivilege parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public UserPrivilege m7500parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new UserPrivilege(codedInputStream, extensionRegistryLite);
             }
         };
@@ -1703,22 +1686,22 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 boolean unused = UserPrivilege.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m7502addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public UserPrivilege build() {
-                UserPrivilege buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public UserPrivilege m7504build() {
+                UserPrivilege m7506buildPartial = m7506buildPartial();
+                if (m7506buildPartial.isInitialized()) {
+                    return m7506buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m7506buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public UserPrivilege buildPartial() {
+            /* renamed from: buildPartial */
+            public UserPrivilege m7506buildPartial() {
                 UserPrivilege userPrivilege = new UserPrivilege(this);
                 userPrivilege.type_ = this.type_;
                 userPrivilege.status_ = this.status_;
@@ -1726,21 +1709,21 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return userPrivilege;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m7510clear() {
                 super.clear();
                 this.type_ = 0;
                 this.status_ = 0;
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m7512clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m7515clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -1756,18 +1739,16 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m7521clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public UserPrivilege getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public UserPrivilege m7523getDefaultInstanceForType() {
                 return UserPrivilege.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_SyncTopAudienceExtra_UserPrivilege_descriptor;
             }
@@ -1802,12 +1783,10 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this.type_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_SyncTopAudienceExtra_UserPrivilege_fieldAccessorTable.ensureFieldAccessorsInitialized(UserPrivilege.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -1822,18 +1801,18 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 if (userPrivilege.status_ != 0) {
                     setStatusValue(userPrivilege.getStatusValue());
                 }
-                mergeUnknownFields(userPrivilege.unknownFields);
+                m7532mergeUnknownFields(userPrivilege.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.SyncTopAudienceExtra.UserPrivilege.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.SyncTopAudienceExtra.UserPrivilege.Builder m7529mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -1878,11 +1857,11 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.SyncTopAudienceExtra.UserPrivilege.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.SyncTopAudienceExtra$UserPrivilege$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.SyncTopAudienceExtra.UserPrivilege.Builder.m7529mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.SyncTopAudienceExtra$UserPrivilege$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m7528mergeFrom(Message message) {
                 if (message instanceof UserPrivilege) {
                     return mergeFrom((UserPrivilege) message);
                 }
@@ -1890,18 +1869,18 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m7532mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m7534setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m7536setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -1935,8 +1914,8 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m7538setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -1995,66 +1974,65 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m7499toBuilder();
         }
 
         public static Builder newBuilder(UserPrivilege userPrivilege) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(userPrivilege);
+            return DEFAULT_INSTANCE.m7499toBuilder().mergeFrom(userPrivilege);
         }
 
         public static UserPrivilege parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (UserPrivilege) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static UserPrivilege parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (UserPrivilege) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static UserPrivilege parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (UserPrivilege) PARSER.parseFrom(byteString);
         }
 
         public static UserPrivilege parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (UserPrivilege) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static UserPrivilege parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (UserPrivilege) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static UserPrivilege parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (UserPrivilege) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static UserPrivilege parseFrom(InputStream inputStream) throws IOException {
-            return (UserPrivilege) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static UserPrivilege parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (UserPrivilege) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static UserPrivilege parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (UserPrivilege) PARSER.parseFrom(byteBuffer);
         }
 
         public static UserPrivilege parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (UserPrivilege) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static UserPrivilege parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (UserPrivilege) PARSER.parseFrom(bArr);
         }
 
         public static UserPrivilege parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (UserPrivilege) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<UserPrivilege> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -2066,17 +2044,15 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public UserPrivilege getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public UserPrivilege m7494getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<UserPrivilege> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -2125,12 +2101,10 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return this.type_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -2140,12 +2114,10 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_SyncTopAudienceExtra_UserPrivilege_fieldAccessorTable.ensureFieldAccessorsInitialized(UserPrivilege.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -2158,28 +2130,26 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m7497newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m7496newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new UserPrivilege();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m7499toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (this.type_ != PrivilegeType.EMPTY_P.getNumber()) {
                 codedOutputStream.writeEnum(1, this.type_);
@@ -2268,66 +2238,65 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m7405toBuilder();
     }
 
     public static Builder newBuilder(SyncTopAudienceExtra syncTopAudienceExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(syncTopAudienceExtra);
+        return DEFAULT_INSTANCE.m7405toBuilder().mergeFrom(syncTopAudienceExtra);
     }
 
     public static SyncTopAudienceExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (SyncTopAudienceExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static SyncTopAudienceExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (SyncTopAudienceExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static SyncTopAudienceExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (SyncTopAudienceExtra) PARSER.parseFrom(byteString);
     }
 
     public static SyncTopAudienceExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (SyncTopAudienceExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static SyncTopAudienceExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (SyncTopAudienceExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static SyncTopAudienceExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (SyncTopAudienceExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static SyncTopAudienceExtra parseFrom(InputStream inputStream) throws IOException {
-        return (SyncTopAudienceExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static SyncTopAudienceExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (SyncTopAudienceExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static SyncTopAudienceExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (SyncTopAudienceExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static SyncTopAudienceExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (SyncTopAudienceExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static SyncTopAudienceExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (SyncTopAudienceExtra) PARSER.parseFrom(bArr);
     }
 
     public static SyncTopAudienceExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (SyncTopAudienceExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<SyncTopAudienceExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -2339,17 +2308,15 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public SyncTopAudienceExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public SyncTopAudienceExtra m7400getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<SyncTopAudienceExtra> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -2389,12 +2356,10 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
         return this.tops_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -2409,12 +2374,10 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_SyncTopAudienceExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(SyncTopAudienceExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -2427,28 +2390,26 @@ public final class SyncTopAudienceExtra extends GeneratedMessageV3 implements Sy
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m7403newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m7402newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new SyncTopAudienceExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m7405toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {

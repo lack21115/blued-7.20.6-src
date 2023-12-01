@@ -6,10 +6,10 @@ import com.tencent.liteav.videoconsumer.decoder.VideoDecodeController;
 final /* synthetic */ class v implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36728a;
+    private final j f23037a;
 
     private v(j jVar) {
-        this.f36728a = jVar;
+        this.f23037a = jVar;
     }
 
     public static Runnable a(j jVar) {
@@ -18,13 +18,13 @@ final /* synthetic */ class v implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36728a;
-        jVar.f = new VideoDecodeController(jVar.f36706c, false);
+        j jVar = this.f23037a;
+        jVar.f = new VideoDecodeController(jVar.f23015c, false);
         jVar.f.a(jVar.t);
         jVar.f.a(jVar.u);
         jVar.f.a();
         if (jVar.d == null) {
-            jVar.d = new com.tencent.liteav.videoconsumer.renderer.g(jVar.b.getLooper(), jVar.f36706c);
+            jVar.d = new com.tencent.liteav.videoconsumer.renderer.g(jVar.b.getLooper(), jVar.f23015c);
         }
     }
 }

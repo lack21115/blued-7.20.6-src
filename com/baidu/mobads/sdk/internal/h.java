@@ -10,13 +10,13 @@ public abstract class h<T> implements Runnable {
     private static final String b = "BaseTask";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f9429c = 1;
+    private static final int f6589c = 1;
     private static final int d = 2;
     private static final int e = 3;
     private static b j;
 
     /* renamed from: a  reason: collision with root package name */
-    protected Future<T> f9430a;
+    protected Future<T> f6590a;
     private String f;
     private long g;
     private long h;
@@ -27,11 +27,11 @@ public abstract class h<T> implements Runnable {
     public static class a<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        final h f9431a;
+        final h f6591a;
         final T b;
 
         a(h hVar, T t) {
-            this.f9431a = hVar;
+            this.f6591a = hVar;
             this.b = t;
         }
     }
@@ -48,12 +48,12 @@ public abstract class h<T> implements Runnable {
             a aVar = (a) message.obj;
             int i = message.what;
             if (i == 1) {
-                aVar.f9431a.a((h) aVar.b);
+                aVar.f6591a.a((h) aVar.b);
             } else if (i == 2) {
-                aVar.f9431a.a((Throwable) aVar.b);
+                aVar.f6591a.a((Throwable) aVar.b);
             } else if (i != 3) {
             } else {
-                aVar.f9431a.j();
+                aVar.f6591a.j();
             }
         }
     }
@@ -96,11 +96,11 @@ public abstract class h<T> implements Runnable {
     }
 
     public void a(Future future) {
-        this.f9430a = future;
+        this.f6590a = future;
     }
 
     public void a(boolean z) {
-        Future<T> future = this.f9430a;
+        Future<T> future = this.f6590a;
         if (future != null) {
             future.cancel(z);
             k().obtainMessage(3, new a(this, null)).sendToTarget();
@@ -112,7 +112,7 @@ public abstract class h<T> implements Runnable {
     }
 
     public boolean c() {
-        Future<T> future = this.f9430a;
+        Future<T> future = this.f6590a;
         if (future != null) {
             return future.isCancelled();
         }
@@ -120,7 +120,7 @@ public abstract class h<T> implements Runnable {
     }
 
     public boolean d() {
-        Future<T> future = this.f9430a;
+        Future<T> future = this.f6590a;
         if (future != null) {
             return future.isDone();
         }

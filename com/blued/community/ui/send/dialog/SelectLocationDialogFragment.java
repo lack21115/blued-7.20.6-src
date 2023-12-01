@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
@@ -50,13 +51,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/dialog/SelectLocationDialogFragment.class */
 public final class SelectLocationDialogFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19932a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DialogSelectLocationBinding f19933c;
+    private DialogSelectLocationBinding c;
     private ItemFeedPostLocationBinding d;
     private ItemFeedPostLocationBinding e;
     private ItemFeedPostLocationLargerAreaBinding f;
@@ -142,14 +139,14 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("headerViewBinding");
             itemFeedPostLocationBinding2 = null;
         }
-        itemFeedPostLocationBinding2.f18968c.setTextColor(this$0.requireContext().getResources().getColor(R.color.nafio_h));
+        itemFeedPostLocationBinding2.c.setTextColor(this$0.requireContext().getResources().getColor(R.color.nafio_h));
         ItemFeedPostLocationBinding itemFeedPostLocationBinding3 = this$0.e;
         ItemFeedPostLocationBinding itemFeedPostLocationBinding4 = itemFeedPostLocationBinding3;
         if (itemFeedPostLocationBinding3 == null) {
             Intrinsics.c("headerViewBinding");
             itemFeedPostLocationBinding4 = null;
         }
-        itemFeedPostLocationBinding4.f18967a.setVisibility(8);
+        itemFeedPostLocationBinding4.a.setVisibility(8);
         SelectLocationAdapter selectLocationAdapter = this$0.h;
         SelectLocationAdapter selectLocationAdapter2 = selectLocationAdapter;
         if (selectLocationAdapter == null) {
@@ -165,7 +162,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("locationAdapter");
             selectLocationAdapter4 = null;
         }
-        selectLocationAdapter4.getData().get(i).mark_visible = true;
+        ((PositionPOIModel) selectLocationAdapter4.getData().get(i)).mark_visible = true;
         SelectLocationAdapter selectLocationAdapter5 = this$0.h;
         SelectLocationAdapter selectLocationAdapter6 = selectLocationAdapter5;
         if (selectLocationAdapter5 == null) {
@@ -186,7 +183,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("locationAdapter");
             selectLocationAdapter8 = null;
         }
-        e.setValue(selectLocationAdapter8.getData().get(i).city);
+        e.setValue(((PositionPOIModel) selectLocationAdapter8.getData().get(i)).city);
         SelectLocationViewModel selectLocationViewModel3 = this$0.i;
         SelectLocationViewModel selectLocationViewModel4 = selectLocationViewModel3;
         if (selectLocationViewModel3 == null) {
@@ -200,7 +197,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("locationAdapter");
             selectLocationAdapter10 = null;
         }
-        f.setValue(selectLocationAdapter10.getData().get(i).name);
+        f.setValue(((PositionPOIModel) selectLocationAdapter10.getData().get(i)).name);
         SelectLocationViewModel selectLocationViewModel5 = this$0.i;
         SelectLocationViewModel selectLocationViewModel6 = selectLocationViewModel5;
         if (selectLocationViewModel5 == null) {
@@ -213,7 +210,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("locationAdapter");
             selectLocationAdapter12 = null;
         }
-        selectLocationViewModel6.a(selectLocationAdapter12.getData().get(i).address);
+        selectLocationViewModel6.a(((PositionPOIModel) selectLocationAdapter12.getData().get(i)).address);
         SelectLocationViewModel selectLocationViewModel7 = this$0.i;
         SelectLocationViewModel selectLocationViewModel8 = selectLocationViewModel7;
         if (selectLocationViewModel7 == null) {
@@ -226,7 +223,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("locationAdapter");
             selectLocationAdapter14 = null;
         }
-        selectLocationViewModel8.c(selectLocationAdapter14.getData().get(i).latitude.toString());
+        selectLocationViewModel8.c(((PositionPOIModel) selectLocationAdapter14.getData().get(i)).latitude.toString());
         SelectLocationViewModel selectLocationViewModel9 = this$0.i;
         SelectLocationViewModel selectLocationViewModel10 = selectLocationViewModel9;
         if (selectLocationViewModel9 == null) {
@@ -238,7 +235,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("locationAdapter");
             selectLocationAdapter15 = null;
         }
-        selectLocationViewModel10.b(selectLocationAdapter15.getData().get(i).longitude.toString());
+        selectLocationViewModel10.b(((PositionPOIModel) selectLocationAdapter15.getData().get(i)).longitude.toString());
         this$0.h();
     }
 
@@ -246,13 +243,13 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
     public static final boolean a(SelectLocationDialogFragment this$0, View view, MotionEvent motionEvent) {
         Intrinsics.e(this$0, "this$0");
         Context context = this$0.getContext();
-        DialogSelectLocationBinding dialogSelectLocationBinding = this$0.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding = this$0.c;
         DialogSelectLocationBinding dialogSelectLocationBinding2 = dialogSelectLocationBinding;
         if (dialogSelectLocationBinding == null) {
             Intrinsics.c("viewBinding");
             dialogSelectLocationBinding2 = null;
         }
-        KeyboardUtils.b(context, dialogSelectLocationBinding2.e.getEditView());
+        KeyboardUtils.b(context, (View) dialogSelectLocationBinding2.e.getEditView());
         return false;
     }
 
@@ -286,7 +283,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("mViewModel");
             selectLocationViewModel3 = null;
         }
-        selectLocationViewModel3.a(this$0, true, this$0.j());
+        selectLocationViewModel3.a((LifecycleOwner) this$0, true, this$0.j());
         DialogUtils.a(this$0.g);
     }
 
@@ -299,11 +296,11 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("mViewModel");
             selectLocationViewModel2 = null;
         }
-        selectLocationViewModel2.a(this$0, false, this$0.j());
+        selectLocationViewModel2.a((LifecycleOwner) this$0, false, this$0.j());
     }
 
     private final String j() {
-        DialogSelectLocationBinding dialogSelectLocationBinding = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding2 = dialogSelectLocationBinding;
         if (dialogSelectLocationBinding == null) {
             Intrinsics.c("viewBinding");
@@ -333,15 +330,15 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("mViewModel");
             selectLocationViewModel2 = null;
         }
-        selectLocationAdapter4.setNewData(selectLocationViewModel2.o().getValue());
-        SelectLocationDialogFragment selectLocationDialogFragment = this;
+        selectLocationAdapter4.setNewData((List) selectLocationViewModel2.o().getValue());
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
         SelectLocationViewModel selectLocationViewModel3 = this.i;
         SelectLocationViewModel selectLocationViewModel4 = selectLocationViewModel3;
         if (selectLocationViewModel3 == null) {
             Intrinsics.c("mViewModel");
             selectLocationViewModel4 = null;
         }
-        LifecycleExtKt.a(selectLocationDialogFragment, selectLocationViewModel4.n(), new Function1<Boolean, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectLocationDialogFragment$initData$1
+        LifecycleExtKt.a(lifecycleOwner, selectLocationViewModel4.n(), new Function1<Boolean, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectLocationDialogFragment$initData$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -357,7 +354,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
                     Intrinsics.c("footerViewBinding");
                     itemFeedPostLocationLargerAreaBinding3 = null;
                 }
-                TextView textView = itemFeedPostLocationLargerAreaBinding3.f18969a;
+                TextView textView = itemFeedPostLocationLargerAreaBinding3.a;
                 Intrinsics.c(it, "it");
                 textView.setVisibility(it.booleanValue() ? 0 : 8);
                 itemFeedPostLocationLargerAreaBinding2 = SelectLocationDialogFragment.this.f;
@@ -366,7 +363,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
                     Intrinsics.c("footerViewBinding");
                     itemFeedPostLocationLargerAreaBinding4 = null;
                 }
-                TextView textView2 = itemFeedPostLocationLargerAreaBinding4.f18969a;
+                TextView textView2 = itemFeedPostLocationLargerAreaBinding4.a;
                 selectLocationViewModel5 = SelectLocationDialogFragment.this.i;
                 SelectLocationViewModel selectLocationViewModel6 = selectLocationViewModel5;
                 if (selectLocationViewModel6 == null) {
@@ -379,7 +376,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(Boolean bool) {
                 a(bool);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         SelectLocationViewModel selectLocationViewModel5 = this.i;
@@ -388,7 +385,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("mViewModel");
             selectLocationViewModel6 = null;
         }
-        LifecycleExtKt.a(selectLocationDialogFragment, selectLocationViewModel6.o(), new Function1<List<PositionPOIModel>, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectLocationDialogFragment$initData$2
+        LifecycleExtKt.a(lifecycleOwner, selectLocationViewModel6.o(), new Function1<List<PositionPOIModel>, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectLocationDialogFragment$initData$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -411,7 +408,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(List<PositionPOIModel> list) {
                 a(list);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         SelectLocationViewModel selectLocationViewModel7 = this.i;
@@ -419,7 +416,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("mViewModel");
             selectLocationViewModel7 = null;
         }
-        LifecycleExtKt.a(selectLocationDialogFragment, selectLocationViewModel7.p(), new Function1<Boolean, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectLocationDialogFragment$initData$3
+        LifecycleExtKt.a(lifecycleOwner, selectLocationViewModel7.p(), new Function1<Boolean, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectLocationDialogFragment$initData$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -452,13 +449,13 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(Boolean bool) {
                 a(bool);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
 
     private final void l() {
-        DialogSelectLocationBinding dialogSelectLocationBinding = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding2 = dialogSelectLocationBinding;
         if (dialogSelectLocationBinding == null) {
             Intrinsics.c("viewBinding");
@@ -473,26 +470,26 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
         }
         layoutParams.height = selectLocationViewModel2.d();
         this.g = DialogUtils.a(getContext());
-        DialogSelectLocationBinding dialogSelectLocationBinding3 = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding3 = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding4 = dialogSelectLocationBinding3;
         if (dialogSelectLocationBinding3 == null) {
             Intrinsics.c("viewBinding");
             dialogSelectLocationBinding4 = null;
         }
-        dialogSelectLocationBinding4.f18807a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectLocationDialogFragment$FT990-fjGYEdk8Bj_DknPbsT_cI
+        dialogSelectLocationBinding4.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectLocationDialogFragment$FT990-fjGYEdk8Bj_DknPbsT_cI
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 SelectLocationDialogFragment.a(SelectLocationDialogFragment.this, view);
             }
         });
-        DialogSelectLocationBinding dialogSelectLocationBinding5 = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding5 = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding6 = dialogSelectLocationBinding5;
         if (dialogSelectLocationBinding5 == null) {
             Intrinsics.c("viewBinding");
             dialogSelectLocationBinding6 = null;
         }
         dialogSelectLocationBinding6.e.getEditView().setHint(R.string.position_search);
-        DialogSelectLocationBinding dialogSelectLocationBinding7 = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding7 = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding8 = dialogSelectLocationBinding7;
         if (dialogSelectLocationBinding7 == null) {
             Intrinsics.c("viewBinding");
@@ -506,14 +503,14 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             selectLocationViewModel4 = null;
         }
         editView.setText(selectLocationViewModel4.l());
-        DialogSelectLocationBinding dialogSelectLocationBinding9 = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding9 = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding10 = dialogSelectLocationBinding9;
         if (dialogSelectLocationBinding9 == null) {
             Intrinsics.c("viewBinding");
             dialogSelectLocationBinding10 = null;
         }
         dialogSelectLocationBinding10.e.getEditView().a();
-        DialogSelectLocationBinding dialogSelectLocationBinding11 = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding11 = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding12 = dialogSelectLocationBinding11;
         if (dialogSelectLocationBinding11 == null) {
             Intrinsics.c("viewBinding");
@@ -525,7 +522,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
                 SelectLocationDialogFragment.a(SelectLocationDialogFragment.this, view, z);
             }
         });
-        DialogSelectLocationBinding dialogSelectLocationBinding13 = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding13 = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding14 = dialogSelectLocationBinding13;
         if (dialogSelectLocationBinding13 == null) {
             Intrinsics.c("viewBinding");
@@ -555,7 +552,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
                     Intrinsics.c("mViewModel");
                     selectLocationViewModel8 = null;
                 }
-                selectLocationViewModel8.a(SelectLocationDialogFragment.this, true, msg);
+                selectLocationViewModel8.a((LifecycleOwner) SelectLocationDialogFragment.this, true, msg);
             }
 
             @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
@@ -569,25 +566,24 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             selectLocationAdapter2 = null;
         }
         BaseQuickAdapter.RequestLoadMoreListener requestLoadMoreListener = new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectLocationDialogFragment$gwe2Xw4tbyBO7-kl8z2-RVfetss
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public final void onLoadMoreRequested() {
                 SelectLocationDialogFragment.e(SelectLocationDialogFragment.this);
             }
         };
-        DialogSelectLocationBinding dialogSelectLocationBinding15 = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding15 = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding16 = dialogSelectLocationBinding15;
         if (dialogSelectLocationBinding15 == null) {
             Intrinsics.c("viewBinding");
             dialogSelectLocationBinding16 = null;
         }
-        selectLocationAdapter2.setOnLoadMoreListener(requestLoadMoreListener, dialogSelectLocationBinding16.f18808c);
-        DialogSelectLocationBinding dialogSelectLocationBinding17 = this.f19933c;
+        selectLocationAdapter2.setOnLoadMoreListener(requestLoadMoreListener, dialogSelectLocationBinding16.c);
+        DialogSelectLocationBinding dialogSelectLocationBinding17 = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding18 = dialogSelectLocationBinding17;
         if (dialogSelectLocationBinding17 == null) {
             Intrinsics.c("viewBinding");
             dialogSelectLocationBinding18 = null;
         }
-        dialogSelectLocationBinding18.f18808c.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectLocationDialogFragment$dhjiThHF_k_7D-w_aSrJ07cmj14
+        dialogSelectLocationBinding18.c.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectLocationDialogFragment$dhjiThHF_k_7D-w_aSrJ07cmj14
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 boolean a2;
@@ -603,7 +599,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("headerViewBinding");
             itemFeedPostLocationBinding = null;
         }
-        itemFeedPostLocationBinding.f18968c.setText(requireContext().getString(R.string.position_not_show));
+        itemFeedPostLocationBinding.c.setText(requireContext().getString(R.string.position_not_show));
         ItemFeedPostLocationBinding itemFeedPostLocationBinding2 = this.e;
         ItemFeedPostLocationBinding itemFeedPostLocationBinding3 = itemFeedPostLocationBinding2;
         if (itemFeedPostLocationBinding2 == null) {
@@ -651,7 +647,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
                 Intrinsics.c("mViewModel");
                 selectLocationViewModel6 = null;
             }
-            if (!TextUtils.isEmpty(selectLocationViewModel6.f().getValue())) {
+            if (!TextUtils.isEmpty((CharSequence) selectLocationViewModel6.f().getValue())) {
                 SelectLocationViewModel selectLocationViewModel7 = this.i;
                 SelectLocationViewModel selectLocationViewModel8 = selectLocationViewModel7;
                 if (selectLocationViewModel7 == null) {
@@ -674,14 +670,14 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
                             Intrinsics.c("selectHeaderViewBinding");
                             itemFeedPostLocationBinding8 = null;
                         }
-                        TextView textView = itemFeedPostLocationBinding8.f18968c;
+                        TextView textView = itemFeedPostLocationBinding8.c;
                         SelectLocationViewModel selectLocationViewModel11 = this.i;
                         SelectLocationViewModel selectLocationViewModel12 = selectLocationViewModel11;
                         if (selectLocationViewModel11 == null) {
                             Intrinsics.c("mViewModel");
                             selectLocationViewModel12 = null;
                         }
-                        textView.setText(selectLocationViewModel12.f().getValue());
+                        textView.setText((CharSequence) selectLocationViewModel12.f().getValue());
                         ItemFeedPostLocationBinding itemFeedPostLocationBinding9 = this.d;
                         ItemFeedPostLocationBinding itemFeedPostLocationBinding10 = itemFeedPostLocationBinding9;
                         if (itemFeedPostLocationBinding9 == null) {
@@ -695,14 +691,14 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
                             Intrinsics.c("selectHeaderViewBinding");
                             itemFeedPostLocationBinding12 = null;
                         }
-                        itemFeedPostLocationBinding12.f18968c.setTextColor(BluedSkinUtils.a(getContext(), R.color.syc_a));
+                        itemFeedPostLocationBinding12.c.setTextColor(BluedSkinUtils.a(getContext(), R.color.syc_a));
                         ItemFeedPostLocationBinding itemFeedPostLocationBinding13 = this.d;
                         ItemFeedPostLocationBinding itemFeedPostLocationBinding14 = itemFeedPostLocationBinding13;
                         if (itemFeedPostLocationBinding13 == null) {
                             Intrinsics.c("selectHeaderViewBinding");
                             itemFeedPostLocationBinding14 = null;
                         }
-                        itemFeedPostLocationBinding14.f18967a.setVisibility(0);
+                        itemFeedPostLocationBinding14.a.setVisibility(0);
                         SelectLocationAdapter selectLocationAdapter7 = this.h;
                         SelectLocationAdapter selectLocationAdapter8 = selectLocationAdapter7;
                         if (selectLocationAdapter7 == null) {
@@ -725,14 +721,14 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
                 Intrinsics.c("headerViewBinding");
                 itemFeedPostLocationBinding18 = null;
             }
-            itemFeedPostLocationBinding18.f18968c.setTextColor(BluedSkinUtils.a(getContext(), R.color.syc_a));
+            itemFeedPostLocationBinding18.c.setTextColor(BluedSkinUtils.a(getContext(), R.color.syc_a));
             ItemFeedPostLocationBinding itemFeedPostLocationBinding19 = this.e;
             ItemFeedPostLocationBinding itemFeedPostLocationBinding20 = itemFeedPostLocationBinding19;
             if (itemFeedPostLocationBinding19 == null) {
                 Intrinsics.c("headerViewBinding");
                 itemFeedPostLocationBinding20 = null;
             }
-            itemFeedPostLocationBinding20.f18967a.setVisibility(0);
+            itemFeedPostLocationBinding20.a.setVisibility(0);
         }
         ItemFeedPostLocationLargerAreaBinding a4 = ItemFeedPostLocationLargerAreaBinding.a(LayoutInflater.from(getContext()));
         Intrinsics.c(a4, "inflate(LayoutInflater.from(context))");
@@ -761,35 +757,34 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             itemFeedPostLocationLargerAreaBinding3 = null;
         }
         selectLocationAdapter10.addFooterView(itemFeedPostLocationLargerAreaBinding3.getRoot());
-        DialogSelectLocationBinding dialogSelectLocationBinding19 = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding19 = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding20 = dialogSelectLocationBinding19;
         if (dialogSelectLocationBinding19 == null) {
             Intrinsics.c("viewBinding");
             dialogSelectLocationBinding20 = null;
         }
-        dialogSelectLocationBinding20.f18808c.setLayoutManager(new LinearLayoutManager(getContext()));
-        DialogSelectLocationBinding dialogSelectLocationBinding21 = this.f19933c;
+        dialogSelectLocationBinding20.c.setLayoutManager(new LinearLayoutManager(getContext()));
+        DialogSelectLocationBinding dialogSelectLocationBinding21 = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding22 = dialogSelectLocationBinding21;
         if (dialogSelectLocationBinding21 == null) {
             Intrinsics.c("viewBinding");
             dialogSelectLocationBinding22 = null;
         }
-        RecyclerView recyclerView = dialogSelectLocationBinding22.f18808c;
-        SelectLocationAdapter selectLocationAdapter11 = this.h;
-        SelectLocationAdapter selectLocationAdapter12 = selectLocationAdapter11;
-        if (selectLocationAdapter11 == null) {
+        RecyclerView recyclerView = dialogSelectLocationBinding22.c;
+        RecyclerView.Adapter adapter = this.h;
+        SelectLocationAdapter selectLocationAdapter11 = adapter;
+        if (adapter == null) {
+            Intrinsics.c("locationAdapter");
+            selectLocationAdapter11 = null;
+        }
+        recyclerView.setAdapter(selectLocationAdapter11);
+        n();
+        SelectLocationAdapter selectLocationAdapter12 = this.h;
+        if (selectLocationAdapter12 == null) {
             Intrinsics.c("locationAdapter");
             selectLocationAdapter12 = null;
         }
-        recyclerView.setAdapter(selectLocationAdapter12);
-        n();
-        SelectLocationAdapter selectLocationAdapter13 = this.h;
-        if (selectLocationAdapter13 == null) {
-            Intrinsics.c("locationAdapter");
-            selectLocationAdapter13 = null;
-        }
-        selectLocationAdapter13.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectLocationDialogFragment$rNEC4Ntz2bL62HqO4TKrgQmmfgQ
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
+        selectLocationAdapter12.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectLocationDialogFragment$rNEC4Ntz2bL62HqO4TKrgQmmfgQ
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 SelectLocationDialogFragment.a(SelectLocationDialogFragment.this, baseQuickAdapter, view, i);
             }
@@ -797,13 +792,13 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
     }
 
     private final void m() {
-        DialogSelectLocationBinding dialogSelectLocationBinding = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding2 = dialogSelectLocationBinding;
         if (dialogSelectLocationBinding == null) {
             Intrinsics.c("viewBinding");
             dialogSelectLocationBinding2 = null;
         }
-        int[] a2 = ViewUtils.a(dialogSelectLocationBinding2.f18808c);
+        int[] a2 = ViewUtils.a(dialogSelectLocationBinding2.c);
         SelectLocationViewModel selectLocationViewModel = this.i;
         SelectLocationViewModel selectLocationViewModel2 = selectLocationViewModel;
         if (selectLocationViewModel == null) {
@@ -820,13 +815,13 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
     }
 
     private final void n() {
-        DialogSelectLocationBinding dialogSelectLocationBinding = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding2 = dialogSelectLocationBinding;
         if (dialogSelectLocationBinding == null) {
             Intrinsics.c("viewBinding");
             dialogSelectLocationBinding2 = null;
         }
-        RecyclerView recyclerView = dialogSelectLocationBinding2.f18808c;
+        RecyclerView recyclerView = dialogSelectLocationBinding2.c;
         SelectLocationViewModel selectLocationViewModel = this.i;
         SelectLocationViewModel selectLocationViewModel2 = selectLocationViewModel;
         if (selectLocationViewModel == null) {
@@ -865,14 +860,14 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
             Intrinsics.c("headerViewBinding");
             itemFeedPostLocationBinding2 = null;
         }
-        itemFeedPostLocationBinding2.f18968c.setTextColor(requireContext().getResources().getColor(R.color.syc_a));
+        itemFeedPostLocationBinding2.c.setTextColor(requireContext().getResources().getColor(R.color.syc_a));
         ItemFeedPostLocationBinding itemFeedPostLocationBinding3 = this.e;
         ItemFeedPostLocationBinding itemFeedPostLocationBinding4 = itemFeedPostLocationBinding3;
         if (itemFeedPostLocationBinding3 == null) {
             Intrinsics.c("headerViewBinding");
             itemFeedPostLocationBinding4 = null;
         }
-        itemFeedPostLocationBinding4.f18967a.setVisibility(0);
+        itemFeedPostLocationBinding4.a.setVisibility(0);
         SelectLocationViewModel selectLocationViewModel = this.i;
         SelectLocationViewModel selectLocationViewModel2 = selectLocationViewModel;
         if (selectLocationViewModel == null) {
@@ -897,35 +892,35 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
     }
 
     public final void a(boolean z) {
-        DialogSelectLocationBinding dialogSelectLocationBinding = this.f19933c;
+        DialogSelectLocationBinding dialogSelectLocationBinding = this.c;
         DialogSelectLocationBinding dialogSelectLocationBinding2 = dialogSelectLocationBinding;
         if (dialogSelectLocationBinding == null) {
             Intrinsics.c("viewBinding");
             dialogSelectLocationBinding2 = null;
         }
         if (dialogSelectLocationBinding2.e != null) {
-            DialogSelectLocationBinding dialogSelectLocationBinding3 = this.f19933c;
+            DialogSelectLocationBinding dialogSelectLocationBinding3 = this.c;
             DialogSelectLocationBinding dialogSelectLocationBinding4 = dialogSelectLocationBinding3;
             if (dialogSelectLocationBinding3 == null) {
                 Intrinsics.c("viewBinding");
                 dialogSelectLocationBinding4 = null;
             }
             dialogSelectLocationBinding4.e.a(z);
-            DialogSelectLocationBinding dialogSelectLocationBinding5 = this.f19933c;
+            DialogSelectLocationBinding dialogSelectLocationBinding5 = this.c;
             DialogSelectLocationBinding dialogSelectLocationBinding6 = dialogSelectLocationBinding5;
             if (dialogSelectLocationBinding5 == null) {
                 Intrinsics.c("viewBinding");
                 dialogSelectLocationBinding6 = null;
             }
             dialogSelectLocationBinding6.e.getEditView().setFocusable(true);
-            DialogSelectLocationBinding dialogSelectLocationBinding7 = this.f19933c;
+            DialogSelectLocationBinding dialogSelectLocationBinding7 = this.c;
             DialogSelectLocationBinding dialogSelectLocationBinding8 = dialogSelectLocationBinding7;
             if (dialogSelectLocationBinding7 == null) {
                 Intrinsics.c("viewBinding");
                 dialogSelectLocationBinding8 = null;
             }
             dialogSelectLocationBinding8.e.getEditView().setFocusableInTouchMode(true);
-            DialogSelectLocationBinding dialogSelectLocationBinding9 = this.f19933c;
+            DialogSelectLocationBinding dialogSelectLocationBinding9 = this.c;
             if (dialogSelectLocationBinding9 == null) {
                 Intrinsics.c("viewBinding");
                 dialogSelectLocationBinding9 = null;
@@ -942,7 +937,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
         dismiss();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         ViewModelStore viewModelStore = requireActivity().getViewModelStore();
@@ -955,20 +950,20 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
         this.i = (SelectLocationViewModel) new ViewModelProvider(viewModelStore, companion.getInstance((Application) d)).get(SelectLocationViewModel.class);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDismiss(DialogInterface dialog) {
         Intrinsics.e(dialog, "dialog");
         m();
         super.onDismiss(dialog);
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
         DialogSelectLocationBinding a2 = DialogSelectLocationBinding.a(LayoutInflater.from(getContext()));
         Intrinsics.c(a2, "inflate(LayoutInflater.from(context))");
-        this.f19933c = a2;
+        this.c = a2;
         DialogSelectLocationBinding dialogSelectLocationBinding = a2;
         if (a2 == null) {
             Intrinsics.c("viewBinding");
@@ -1004,7 +999,7 @@ public final class SelectLocationDialogFragment extends BottomSheetDialogFragmen
                 Intrinsics.c("mViewModel");
                 selectLocationViewModel5 = null;
             }
-            selectLocationViewModel5.a(this, true, j());
+            selectLocationViewModel5.a((LifecycleOwner) this, true, j());
         }
     }
 }

@@ -60,7 +60,7 @@ public class PeopleHelloQuickAdapter extends PeopleGridQuickAdapter {
         logData2.online_time = StringUtils.d(userFindResult.last_operate_str) ? userFindResult.last_operate : userFindResult.last_operate_str;
         logData2.type = "0";
         userFindResult.is_call = 1;
-        UserInfoFragmentNew.a(this.f30084a, userFindResult, this.b, userFindResult.live > 0, view, logData2, new MsgSourceEntity(MessageProtos.StrangerSource.APPRECIATE_CALL_TOTAL, ""));
+        UserInfoFragmentNew.a(this.f16394a, userFindResult, this.b, userFindResult.live > 0, view, logData2, new MsgSourceEntity(MessageProtos.StrangerSource.APPRECIATE_CALL_TOTAL, ""));
     }
 
     @Override // com.soft.blued.ui.find.adapter.PeopleGridQuickAdapter

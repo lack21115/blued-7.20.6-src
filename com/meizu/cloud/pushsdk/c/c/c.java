@@ -10,13 +10,13 @@ import java.util.TreeSet;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String[] f24021a;
+    private final String[] f10410a;
 
     /* loaded from: source-7994992-dex2jar.jar:com/meizu/cloud/pushsdk/c/c/c$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<String> f24022a = new ArrayList(20);
+        private final List<String> f10411a = new ArrayList(20);
 
         private void c(String str, String str2) {
             int i;
@@ -71,18 +71,18 @@ public final class c {
         }
 
         a b(String str, String str2) {
-            this.f24022a.add(str);
-            this.f24022a.add(str2.trim());
+            this.f10411a.add(str);
+            this.f10411a.add(str2.trim());
             return this;
         }
     }
 
     private c(a aVar) {
-        this.f24021a = (String[]) aVar.f24022a.toArray(new String[aVar.f24022a.size()]);
+        this.f10410a = (String[]) aVar.f10411a.toArray(new String[aVar.f10411a.size()]);
     }
 
     private c(String[] strArr) {
-        this.f24021a = strArr;
+        this.f10410a = strArr;
     }
 
     public static c a(String... strArr) {
@@ -134,19 +134,19 @@ public final class c {
     }
 
     public int a() {
-        return this.f24021a.length / 2;
+        return this.f10410a.length / 2;
     }
 
     public String a(int i) {
-        return this.f24021a[i * 2];
+        return this.f10410a[i * 2];
     }
 
     public String a(String str) {
-        return a(this.f24021a, str);
+        return a(this.f10410a, str);
     }
 
     public String b(int i) {
-        return this.f24021a[(i * 2) + 1];
+        return this.f10410a[(i * 2) + 1];
     }
 
     public Set<String> b() {
@@ -165,7 +165,7 @@ public final class c {
 
     public a c() {
         a aVar = new a();
-        Collections.addAll(aVar.f24022a, this.f24021a);
+        Collections.addAll(aVar.f10411a, this.f10410a);
         return aVar;
     }
 

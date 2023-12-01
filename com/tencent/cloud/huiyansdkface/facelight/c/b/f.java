@@ -13,16 +13,16 @@ import java.util.Properties;
 public class f implements c.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35560a = f.class.getSimpleName();
+    private static final String f21869a = f.class.getSimpleName();
     private com.tencent.cloud.huiyansdkface.facelight.process.d b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Activity f35561c;
+    private Activity f21870c;
     private FaceVerifyStatus d;
 
     public f(com.tencent.cloud.huiyansdkface.facelight.process.d dVar, Activity activity, FaceVerifyStatus faceVerifyStatus) {
         this.b = dVar;
-        this.f35561c = activity;
+        this.f21870c = activity;
         this.d = faceVerifyStatus;
     }
 
@@ -31,26 +31,26 @@ public class f implements c.b {
         KycWaSDK kycWaSDK;
         Activity activity;
         String str;
-        WLogger.e(f35560a, "onHomePressed");
+        WLogger.e(f21869a, "onHomePressed");
         if (this.b.b()) {
-            WLogger.d(f35560a, "inUpload home presssed,dont quit.");
+            WLogger.d(f21869a, "inUpload home presssed,dont quit.");
             return;
         }
         if (this.d.b() == 6) {
             kycWaSDK = KycWaSDK.getInstance();
-            activity = this.f35561c;
+            activity = this.f21870c;
             str = "uploadpage_exit_self";
         } else if (this.d.b() != 5) {
             kycWaSDK = KycWaSDK.getInstance();
-            activity = this.f35561c;
+            activity = this.f21870c;
             str = "facepage_exit_self";
         } else if (this.b.d()) {
             kycWaSDK = KycWaSDK.getInstance();
-            activity = this.f35561c;
+            activity = this.f21870c;
             str = "willpage_answer_exit_self";
         } else {
             kycWaSDK = KycWaSDK.getInstance();
-            activity = this.f35561c;
+            activity = this.f21870c;
             str = "willpage_exit_self";
         }
         kycWaSDK.trackCustomKVEvent(activity, str, "点击home键返回", null);
@@ -69,15 +69,15 @@ public class f implements c.b {
             wbFaceVerifyResult.setError(wbFaceError);
             Properties properties = new Properties();
             properties.setProperty("errorDesc", wbFaceError.toString());
-            this.b.a(this.f35561c, WbFaceError.WBFaceErrorCodeUserCancle, properties);
+            this.b.a(this.f21870c, WbFaceError.WBFaceErrorCodeUserCancle, properties);
             this.b.y().onFinish(wbFaceVerifyResult);
         }
-        WLogger.d(f35560a, "finish activity");
-        this.f35561c.finish();
+        WLogger.d(f21869a, "finish activity");
+        this.f21870c.finish();
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.c.b
     public void b() {
-        WLogger.d(f35560a, "onHomeLongPressed");
+        WLogger.d(f21869a, "onHomeLongPressed");
     }
 }

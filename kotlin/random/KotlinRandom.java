@@ -7,15 +7,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/random/KotlinRandom.class */
 final class KotlinRandom extends java.util.Random {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Companion f42562a = new Companion(null);
+    private static final Companion a = new Companion(null);
     @Deprecated
     private static final long serialVersionUID = 0;
     private final Random b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f42563c;
+    private boolean c;
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/random/KotlinRandom$Companion.class */
@@ -71,9 +67,9 @@ final class KotlinRandom extends java.util.Random {
 
     @Override // java.util.Random
     public void setSeed(long j) {
-        if (this.f42563c) {
+        if (this.c) {
             throw new UnsupportedOperationException("Setting seed is not supported.");
         }
-        this.f42563c = true;
+        this.c = true;
     }
 }

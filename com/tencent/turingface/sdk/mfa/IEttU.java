@@ -1,7 +1,8 @@
 package com.tencent.turingface.sdk.mfa;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
+import com.huawei.openalliance.ad.constant.t;
 import java.util.Iterator;
 import java.util.Locale;
 
@@ -9,16 +10,16 @@ import java.util.Locale;
 public final class IEttU {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f39883a;
+    public String f26192a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public OCkqn f39884c;
+    public OCkqn f26193c;
 
     public IEttU(String str, int i, OCkqn oCkqn) {
-        this.f39883a = str;
+        this.f26192a = str;
         this.b = i;
-        this.f39884c = oCkqn;
+        this.f26193c = oCkqn;
     }
 
     public static String a(String str, String str2, String str3) {
@@ -31,27 +32,27 @@ public final class IEttU {
 
     public final String a() {
         StringBuilder sb = new StringBuilder();
-        String str = this.f39883a;
+        String str = this.f26192a;
         String str2 = str;
         if (str == null) {
             str2 = "";
         }
-        sb.append(a("&", "%0A", a(",", "%54", a(BridgeUtil.UNDERLINE_STR, "%5F", a(";", "%3B", a(":", "%3A", str2))))));
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append(a(ContainerUtils.FIELD_DELIMITER, "%0A", a(",", "%54", a("_", "%5F", a(t.aE, "%3B", a(":", "%3A", str2))))));
+        sb.append("_");
         sb.append(this.b);
-        sb.append(BridgeUtil.UNDERLINE_STR);
-        OCkqn oCkqn = this.f39884c;
+        sb.append("_");
+        OCkqn oCkqn = this.f26193c;
         if (oCkqn == null) {
             return sb.toString();
         }
         sb.append(oCkqn.b);
         sb.append(":");
-        sb.append(this.f39884c.f39899c);
+        sb.append(this.f26193c.f26208c);
         sb.append(":");
-        Iterator<XnM3A> it = this.f39884c.d.iterator();
+        Iterator<XnM3A> it = this.f26193c.d.iterator();
         while (it.hasNext()) {
             XnM3A next = it.next();
-            sb.append(next.f39928a);
+            sb.append(next.f26237a);
             sb.append(",");
             sb.append(",");
             sb.append(",");
@@ -69,11 +70,11 @@ public final class IEttU {
             }
             sb.append(str4);
             if (it.hasNext()) {
-                sb.append(";");
+                sb.append(t.aE);
             }
         }
         sb.append(":");
-        sb.append(this.f39884c.e);
+        sb.append(this.f26193c.e);
         return sb.toString();
     }
 }

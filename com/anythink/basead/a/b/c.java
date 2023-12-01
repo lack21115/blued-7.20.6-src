@@ -14,13 +14,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/b/c.class */
 public final class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f5842a = 0;
+    public static final int a = 0;
     public static final int b = -1;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f5843c = 100;
+    public static final int c = 100;
     private static Map<String, Integer> d = new HashMap();
     private static ConcurrentHashMap<String, MraidWebView> e = new ConcurrentHashMap<>(3);
 

@@ -13,16 +13,16 @@ public final class PackedProtoAdapter<E> extends ProtoAdapter<List<? extends E>>
     private final ProtoAdapter<E> originalAdapter;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public PackedProtoAdapter(ProtoAdapter<E> originalAdapter) {
-        super(FieldEncoding.LENGTH_DELIMITED, Reflection.b(List.class), (String) null, originalAdapter.getSyntax(), CollectionsKt.b());
-        Intrinsics.e(originalAdapter, "originalAdapter");
-        this.originalAdapter = originalAdapter;
+    public PackedProtoAdapter(ProtoAdapter<E> protoAdapter) {
+        super(FieldEncoding.LENGTH_DELIMITED, Reflection.b(List.class), (String) null, protoAdapter.getSyntax(), CollectionsKt.b());
+        Intrinsics.e(protoAdapter, "originalAdapter");
+        this.originalAdapter = protoAdapter;
     }
 
     @Override // com.squareup.wire.ProtoAdapter
-    public List<E> decode(ProtoReader reader) throws IOException {
-        Intrinsics.e(reader, "reader");
-        return CollectionsKt.a(this.originalAdapter.decode(reader));
+    public List<E> decode(ProtoReader protoReader) throws IOException {
+        Intrinsics.e(protoReader, "reader");
+        return CollectionsKt.a(this.originalAdapter.decode(protoReader));
     }
 
     @Override // com.squareup.wire.ProtoAdapter
@@ -30,17 +30,17 @@ public final class PackedProtoAdapter<E> extends ProtoAdapter<List<? extends E>>
         encode(protoWriter, (List) ((List) obj));
     }
 
-    public void encode(ProtoWriter writer, List<? extends E> value) throws IOException {
-        Intrinsics.e(writer, "writer");
-        Intrinsics.e(value, "value");
-        int size = value.size();
+    public void encode(ProtoWriter protoWriter, List<? extends E> list) throws IOException {
+        Intrinsics.e(protoWriter, "writer");
+        Intrinsics.e(list, "value");
+        int size = list.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return;
             }
-            this.originalAdapter.encode(writer, (ProtoWriter) value.get(i2));
+            this.originalAdapter.encode(protoWriter, (ProtoWriter) list.get(i2));
             i = i2 + 1;
         }
     }
@@ -50,16 +50,16 @@ public final class PackedProtoAdapter<E> extends ProtoAdapter<List<? extends E>>
         encode(reverseProtoWriter, (List) ((List) obj));
     }
 
-    public void encode(ReverseProtoWriter writer, List<? extends E> value) throws IOException {
-        Intrinsics.e(writer, "writer");
-        Intrinsics.e(value, "value");
-        int size = value.size() - 1;
+    public void encode(ReverseProtoWriter reverseProtoWriter, List<? extends E> list) throws IOException {
+        Intrinsics.e(reverseProtoWriter, "writer");
+        Intrinsics.e(list, "value");
+        int size = list.size() - 1;
         if (size < 0) {
             return;
         }
         while (true) {
             int i = size - 1;
-            this.originalAdapter.encode(writer, (ReverseProtoWriter) value.get(size));
+            this.originalAdapter.encode(reverseProtoWriter, (ReverseProtoWriter) list.get(size));
             if (i < 0) {
                 return;
             }
@@ -73,12 +73,12 @@ public final class PackedProtoAdapter<E> extends ProtoAdapter<List<? extends E>>
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public void encodeWithTag(ProtoWriter writer, int i, List<? extends E> list) throws IOException {
-        Intrinsics.e(writer, "writer");
+    public void encodeWithTag(ProtoWriter protoWriter, int i, List<? extends E> list) throws IOException {
+        Intrinsics.e(protoWriter, "writer");
         if (list == 0 || !(!list.isEmpty())) {
             return;
         }
-        super.encodeWithTag(writer, i, (int) list);
+        super.encodeWithTag(protoWriter, i, (int) list);
     }
 
     @Override // com.squareup.wire.ProtoAdapter
@@ -87,12 +87,12 @@ public final class PackedProtoAdapter<E> extends ProtoAdapter<List<? extends E>>
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public void encodeWithTag(ReverseProtoWriter writer, int i, List<? extends E> list) throws IOException {
-        Intrinsics.e(writer, "writer");
+    public void encodeWithTag(ReverseProtoWriter reverseProtoWriter, int i, List<? extends E> list) throws IOException {
+        Intrinsics.e(reverseProtoWriter, "writer");
         if (list == 0 || !(!list.isEmpty())) {
             return;
         }
-        super.encodeWithTag(writer, i, (int) list);
+        super.encodeWithTag(reverseProtoWriter, i, (int) list);
     }
 
     @Override // com.squareup.wire.ProtoAdapter
@@ -100,12 +100,12 @@ public final class PackedProtoAdapter<E> extends ProtoAdapter<List<? extends E>>
         return encodedSize((List) ((List) obj));
     }
 
-    public int encodedSize(List<? extends E> value) {
-        Intrinsics.e(value, "value");
-        int size = value.size();
+    public int encodedSize(List<? extends E> list) {
+        Intrinsics.e(list, "value");
+        int size = list.size();
         int i = 0;
         for (int i2 = 0; i2 < size; i2++) {
-            i += this.originalAdapter.encodedSize(value.get(i2));
+            i += this.originalAdapter.encodedSize(list.get(i2));
         }
         return i;
     }
@@ -128,8 +128,8 @@ public final class PackedProtoAdapter<E> extends ProtoAdapter<List<? extends E>>
         return redact((List) ((List) obj));
     }
 
-    public List<E> redact(List<? extends E> value) {
-        Intrinsics.e(value, "value");
+    public List<E> redact(List<? extends E> list) {
+        Intrinsics.e(list, "value");
         return CollectionsKt.b();
     }
 }

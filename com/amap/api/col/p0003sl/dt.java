@@ -10,13 +10,9 @@ import java.util.concurrent.ConcurrentHashMap;
 /* renamed from: com.amap.api.col.3sl.dt  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/dt.class */
 public final class dt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f4866a = false;
+    private static boolean a = false;
     private static boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static boolean f4867c = false;
+    private static boolean c = false;
     private static boolean d = false;
     private static boolean e = false;
     private static boolean f = false;
@@ -56,14 +52,14 @@ public final class dt {
     }
 
     public static void a(Context context) {
-        if (f4867c) {
+        if (c) {
             return;
         }
         try {
             HashMap hashMap = new HashMap();
             hashMap.put("amap_3dmap_heatmap", 1);
             a(context, "O009", a(hashMap));
-            f4867c = true;
+            c = true;
         } catch (Throwable th) {
         }
     }
@@ -193,14 +189,14 @@ public final class dt {
     }
 
     public static void b(Context context, boolean z) {
-        if (f4866a) {
+        if (a) {
             return;
         }
         try {
             HashMap hashMap = new HashMap();
             hashMap.put("amap_3dmap_stylemap", Integer.valueOf(z ? 1 : 0));
             a(context, "O006", a(hashMap));
-            f4866a = true;
+            a = true;
         } catch (Throwable th) {
         }
     }

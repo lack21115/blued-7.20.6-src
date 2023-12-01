@@ -15,20 +15,20 @@ import java.util.Map;
 public class d implements com.tencent.thumbplayer.adapter.a.a, ITPImageGeneratorCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f39134a;
+    private long f25443a;
     private TPImageGenerator b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<Long, TPCaptureCallBack> f39135c;
+    private Map<Long, TPCaptureCallBack> f25444c;
 
     public d(int i) {
         this(i, 0L, 0L);
     }
 
     public d(int i, long j, long j2) {
-        this.f39134a = 0L;
+        this.f25443a = 0L;
         this.b = new TPImageGenerator(i, j, j2, this);
-        this.f39135c = new HashMap();
+        this.f25444c = new HashMap();
         try {
             this.b.init();
         } catch (Exception e) {
@@ -37,9 +37,9 @@ public class d implements com.tencent.thumbplayer.adapter.a.a, ITPImageGenerator
     }
 
     public d(String str) {
-        this.f39134a = 0L;
+        this.f25443a = 0L;
         this.b = new TPImageGenerator(str, this);
-        this.f39135c = new HashMap();
+        this.f25444c = new HashMap();
         try {
             this.b.init();
         } catch (Exception e) {
@@ -55,7 +55,7 @@ public class d implements com.tencent.thumbplayer.adapter.a.a, ITPImageGenerator
         } catch (Exception e) {
             TPLogUtil.e("TPThumbPlayer[TPThumbCapture.java]", "release: " + Log.getStackTraceString(e));
         }
-        this.f39135c.clear();
+        this.f25444c.clear();
         this.b = null;
     }
 
@@ -66,11 +66,11 @@ public class d implements com.tencent.thumbplayer.adapter.a.a, ITPImageGenerator
             tPImageGeneratorParams2 = new TPImageGeneratorParams();
             tPImageGeneratorParams2.format = 37;
         }
-        long j2 = this.f39134a + 1;
-        this.f39134a = j2;
-        this.f39135c.put(Long.valueOf(j2), tPCaptureCallBack);
+        long j2 = this.f25443a + 1;
+        this.f25443a = j2;
+        this.f25444c.put(Long.valueOf(j2), tPCaptureCallBack);
         try {
-            this.b.generateImageAsyncAtTime(j, this.f39134a, tPImageGeneratorParams2);
+            this.b.generateImageAsyncAtTime(j, this.f25443a, tPImageGeneratorParams2);
         } catch (Exception e) {
             TPLogUtil.e("TPThumbPlayer[TPThumbCapture.java]", "generateImageAsyncAtTime: " + Log.getStackTraceString(e));
         }
@@ -78,7 +78,7 @@ public class d implements com.tencent.thumbplayer.adapter.a.a, ITPImageGenerator
 
     @Override // com.tencent.thumbplayer.core.imagegenerator.ITPImageGeneratorCallback
     public void onImageGenerationCompleted(int i, long j, long j2, long j3, TPVideoFrame tPVideoFrame) {
-        TPCaptureCallBack tPCaptureCallBack = this.f39135c.get(Long.valueOf(j3));
+        TPCaptureCallBack tPCaptureCallBack = this.f25444c.get(Long.valueOf(j3));
         if (tPCaptureCallBack != null) {
             int i2 = i;
             if (i == 0) {
@@ -94,6 +94,6 @@ public class d implements com.tencent.thumbplayer.adapter.a.a, ITPImageGenerator
             }
             tPCaptureCallBack.onCaptureVideoFailed(i2);
         }
-        this.f39135c.remove(Long.valueOf(j3));
+        this.f25444c.remove(Long.valueOf(j3));
     }
 }

@@ -22,12 +22,8 @@ import java.util.Set;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/mvp/MvpPresenter.class */
 public abstract class MvpPresenter {
-
-    /* renamed from: a  reason: collision with root package name */
-    String f9927a;
-
-    /* renamed from: c  reason: collision with root package name */
-    FragmentActivity f9928c;
+    String a;
+    FragmentActivity c;
     private final String h = "_MVP_" + getClass().getSimpleName();
     long b = 0;
     Set<MvpView> d = new HashSet();
@@ -56,11 +52,11 @@ public abstract class MvpPresenter {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void b(final String str, List list) {
-            final List a2 = MvpPresenter.this.a(str, list);
+            final List a = MvpPresenter.this.a(str, list);
             MvpPresenter.this.b("refresh_datafetch", new Runnable() { // from class: com.blued.android.framework.ui.mvp.-$$Lambda$MvpPresenter$1$pcqilMtwlZHwhbyqshaUxYOUPic
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MvpPresenter.AnonymousClass1.this.c(str, a2);
+                    MvpPresenter.AnonymousClass1.this.c(str, a);
                 }
             });
         }
@@ -209,23 +205,23 @@ public abstract class MvpPresenter {
     }
 
     private void a(FragmentActivity fragmentActivity) {
-        if (this.f9928c != fragmentActivity) {
+        if (this.c != fragmentActivity) {
             IRequestHost iRequestHost = this.g;
             if (iRequestHost != null) {
                 ImageLoaderHostManager.a(iRequestHost, fragmentActivity);
             }
-            this.f9928c = fragmentActivity;
+            this.c = fragmentActivity;
             fragmentActivity.getLifecycle().addObserver(new LifecycleObserver() { // from class: com.blued.android.framework.ui.mvp.MvpPresenter.3
                 @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
                 public void onDestroy() {
                     if (MvpPresenter.this.g != null) {
                         ImageLoaderHostManager.b(MvpPresenter.this.g);
                     }
-                    if (MvpPresenter.this.f9928c == null || MvpPresenter.this.f9928c.getLifecycle().getCurrentState() != Lifecycle.State.DESTROYED) {
+                    if (MvpPresenter.this.c == null || MvpPresenter.this.c.getLifecycle().getCurrentState() != Lifecycle.State.DESTROYED) {
                         return;
                     }
-                    MvpPresenter.this.f9928c.getLifecycle().removeObserver(this);
-                    MvpPresenter.this.f9928c = null;
+                    MvpPresenter.this.c.getLifecycle().removeObserver(this);
+                    MvpPresenter.this.c = null;
                     MvpPresenter.this.f("_hostActivity onDestroy, remove it.");
                 }
             });
@@ -285,8 +281,8 @@ public abstract class MvpPresenter {
     }
 
     private boolean d(String str) {
-        List<Object> a2 = this.f.a(str);
-        return a2 != null && a2.size() > 0;
+        List<Object> a = this.f.a(str);
+        return a != null && a.size() > 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -302,7 +298,7 @@ public abstract class MvpPresenter {
     /* JADX INFO: Access modifiers changed from: private */
     public void f(String str) {
         String str2 = this.h;
-        Log.v(str2, this.f9927a + "--" + str);
+        Log.v(str2, this.a + "--" + str);
     }
 
     private void m() {
@@ -523,7 +519,7 @@ public abstract class MvpPresenter {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void e_(String str) {
-        this.f9927a = str;
+        this.a = str;
     }
 
     public final void f() {
@@ -540,11 +536,11 @@ public abstract class MvpPresenter {
     }
 
     public final Activity h() {
-        return this.f9928c;
+        return this.c;
     }
 
     public final void i() {
-        FragmentActivity fragmentActivity = this.f9928c;
+        FragmentActivity fragmentActivity = this.c;
         if (fragmentActivity != null) {
             fragmentActivity.finish();
         }

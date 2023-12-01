@@ -63,11 +63,11 @@ import java.util.List;
 public class ChatFriendListAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    public MsgPresenter f31972a;
+    public MsgPresenter f18282a;
     private LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IMsgView f31973c;
+    private IMsgView f18283c;
     private Emotion d;
     private List<ViewHolder> e = new ArrayList();
     private boolean f = false;
@@ -85,11 +85,11 @@ public class ChatFriendListAdapter extends BaseAdapter {
         TextView F;
 
         /* renamed from: a  reason: collision with root package name */
-        View f31974a;
+        View f18284a;
         TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        View f31975c;
+        View f18285c;
         QBadgeContainer d;
         TextView e;
         ImageView f;
@@ -123,10 +123,10 @@ public class ChatFriendListAdapter extends BaseAdapter {
     }
 
     public ChatFriendListAdapter(IRequestHost iRequestHost, IMsgView iMsgView) {
-        this.f31973c = iMsgView;
+        this.f18283c = iMsgView;
         this.h = iRequestHost;
         this.b = LayoutInflater.from(iMsgView.getContext());
-        this.d = new Emotion(this.f31973c.getContext());
+        this.d = new Emotion(this.f18283c.getContext());
     }
 
     public static String a(View view, SessionModel sessionModel) {
@@ -493,7 +493,7 @@ public class ChatFriendListAdapter extends BaseAdapter {
         } else {
             String str2 = str;
             if (sessionModel.sessionId < 0) {
-                str2 = DateTodayManager.f32404a.c(str);
+                str2 = DateTodayManager.f18714a.c(str);
             }
             textView.setText(str2);
         }
@@ -524,8 +524,8 @@ public class ChatFriendListAdapter extends BaseAdapter {
         final long j = sessionModel.sessionId;
         viewHolder.j.setVisibility(8);
         viewHolder.i.setVisibility(8);
-        final ChatOnlineStatusModel a2 = OnlineStatusManager.f32435a.a(Long.valueOf(j));
-        OnlineStatusManager.f32435a.a(sessionModel, a2);
+        final ChatOnlineStatusModel a2 = OnlineStatusManager.f18745a.a(Long.valueOf(j));
+        OnlineStatusManager.f18745a.a(sessionModel, a2);
         if (a2 != null) {
             int social_status = a2.getSocial_status();
             boolean z = true;
@@ -557,7 +557,7 @@ public class ChatFriendListAdapter extends BaseAdapter {
         String str;
         Tracker.onClick(view);
         MessageProtos.Event event = MessageProtos.Event.MSG_USER_AVATAR_CLICK;
-        String a2 = OnlineStatusManager.f32435a.a(Integer.valueOf(chatOnlineStatusModel.getSocial_status()));
+        String a2 = OnlineStatusManager.f18745a.a(Integer.valueOf(chatOnlineStatusModel.getSocial_status()));
         String str2 = "";
         if (j == 0) {
             str = "";
@@ -568,7 +568,7 @@ public class ChatFriendListAdapter extends BaseAdapter {
             str2 = "" + chatOnlineStatusModel.getSource_id();
         }
         EventTrackMessage.d(event, a2, str, str2);
-        WebViewShowInfoFragment.show(this.f31973c.getContext(), chatOnlineStatusModel.getJump_url());
+        WebViewShowInfoFragment.show(this.f18283c.getContext(), chatOnlineStatusModel.getJump_url());
     }
 
     private static boolean a(SessionModel sessionModel) {
@@ -605,10 +605,10 @@ public class ChatFriendListAdapter extends BaseAdapter {
             viewHolder.D.setVisibility(8);
             return;
         }
-        GroupStatusInfo a2 = GroupStatusManager.f32419a.a(Long.valueOf(sessionModel.sessionId));
+        GroupStatusInfo a2 = GroupStatusManager.f18729a.a(Long.valueOf(sessionModel.sessionId));
         if (a2 == null || a2.getOnline() <= 0) {
             if (a2 == null) {
-                this.f31972a.d(true);
+                this.f18282a.d(true);
             }
             viewHolder.D.setVisibility(8);
             return;
@@ -616,7 +616,7 @@ public class ChatFriendListAdapter extends BaseAdapter {
         Log.a("lyl", "group_online_num = " + a2.getOnline());
         viewHolder.D.setVisibility(0);
         TextView textView = viewHolder.F;
-        textView.setText(a2.getOnline() + this.f31973c.getContext().getResources().getString(R.string.group_online_number) + " | ");
+        textView.setText(a2.getOnline() + this.f18283c.getContext().getResources().getString(R.string.group_online_number) + " | ");
     }
 
     private boolean b(SessionModel sessionModel) {
@@ -642,7 +642,7 @@ public class ChatFriendListAdapter extends BaseAdapter {
     public void a() {
         synchronized (this) {
             for (ViewHolder viewHolder : this.e) {
-                if (!TextUtils.isEmpty(viewHolder.d.getBadgeText()) && viewHolder.f31974a.getParent() != null) {
+                if (!TextUtils.isEmpty(viewHolder.d.getBadgeText()) && viewHolder.f18284a.getParent() != null) {
                     viewHolder.d.b(true);
                 }
             }

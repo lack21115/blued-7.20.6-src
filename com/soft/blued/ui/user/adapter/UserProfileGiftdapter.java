@@ -19,11 +19,11 @@ import java.util.List;
 public class UserProfileGiftdapter extends RecyclerView.Adapter<GiftViewHolder> implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f33765a;
+    private LayoutInflater f20074a;
     private List<UserGift.Gift> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f33766c;
+    private Context f20075c;
     private IRequestHost d;
     private RecyclerViewItemClickListener e;
 
@@ -32,12 +32,12 @@ public class UserProfileGiftdapter extends RecyclerView.Adapter<GiftViewHolder> 
     public class GiftViewHolder extends RecyclerView.ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f33767a;
+        public ImageView f20076a;
         public LinearLayout b;
 
         public GiftViewHolder(View view) {
             super(view);
-            this.f33767a = (ImageView) view.findViewById(2131364603);
+            this.f20076a = (ImageView) view.findViewById(R.id.img_medal);
             this.b = (LinearLayout) view.findViewById(2131367715);
         }
     }
@@ -48,14 +48,14 @@ public class UserProfileGiftdapter extends RecyclerView.Adapter<GiftViewHolder> 
     }
 
     public UserProfileGiftdapter(IRequestHost iRequestHost, Context context, List<UserGift.Gift> list) {
-        this.f33766c = context;
+        this.f20075c = context;
         this.d = iRequestHost;
-        this.f33765a = LayoutInflater.from(context);
+        this.f20074a = LayoutInflater.from(context);
         this.b = list;
     }
 
     public View a() {
-        return this.f33765a.inflate(R.layout.item_user_profile_gift, (ViewGroup) null);
+        return this.f20074a.inflate(R.layout.item_user_profile_gift, (ViewGroup) null);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -74,7 +74,7 @@ public class UserProfileGiftdapter extends RecyclerView.Adapter<GiftViewHolder> 
             if (StringUtils.d(gift.icon)) {
                 return;
             }
-            ImageLoader.a(this.d, gift.icon).a(giftViewHolder.f33767a);
+            ImageLoader.a(this.d, gift.icon).a(giftViewHolder.f20076a);
             giftViewHolder.b.setTag(Integer.valueOf(i));
         }
     }

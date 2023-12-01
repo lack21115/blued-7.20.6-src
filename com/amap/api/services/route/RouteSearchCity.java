@@ -22,18 +22,16 @@ public class RouteSearchCity extends SearchCity implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    List<District> f5747a;
+    List<District> a;
 
     public RouteSearchCity() {
-        this.f5747a = new ArrayList();
+        this.a = new ArrayList();
     }
 
     public RouteSearchCity(Parcel parcel) {
         super(parcel);
-        this.f5747a = new ArrayList();
-        this.f5747a = parcel.createTypedArrayList(District.CREATOR);
+        this.a = new ArrayList();
+        this.a = parcel.createTypedArrayList(District.CREATOR);
     }
 
     @Override // com.amap.api.services.route.SearchCity, android.os.Parcelable
@@ -42,16 +40,16 @@ public class RouteSearchCity extends SearchCity implements Parcelable {
     }
 
     public List<District> getDistricts() {
-        return this.f5747a;
+        return this.a;
     }
 
     public void setDistricts(List<District> list) {
-        this.f5747a = list;
+        this.a = list;
     }
 
     @Override // com.amap.api.services.route.SearchCity, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeTypedList(this.f5747a);
+        parcel.writeTypedList(this.a);
     }
 }

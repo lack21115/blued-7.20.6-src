@@ -1,5 +1,6 @@
 package com.blued.android.module.live_china.fragment;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,8 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import com.anythink.core.common.l;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
@@ -50,13 +53,9 @@ import com.google.gson.reflect.TypeToken;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveKissDialogFragment.class */
 public class LiveKissDialogFragment extends BaseDialogFragment {
     public static int l;
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12977a;
+    public Context a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f12978c;
+    public View c;
     public ImageView d;
     public ImageView e;
     public ImageView f;
@@ -79,7 +78,7 @@ public class LiveKissDialogFragment extends BaseDialogFragment {
 
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            KeyboardUtils.a(LiveKissDialogFragment.this.getActivity());
+            KeyboardUtils.a((Activity) LiveKissDialogFragment.this.getActivity());
             LiveKissDialogFragment.this.a(i, str);
             return true;
         }
@@ -98,7 +97,7 @@ public class LiveKissDialogFragment extends BaseDialogFragment {
 
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<PayRemaining, LiveZanExtraModel> bluedEntity) {
-            KeyboardUtils.a(LiveKissDialogFragment.this.getActivity());
+            KeyboardUtils.a((Activity) LiveKissDialogFragment.this.getActivity());
             if (bluedEntity == null || bluedEntity.getSingleData() == null) {
                 LiveKissDialogFragment.this.a(0, "");
                 return;
@@ -179,9 +178,9 @@ public class LiveKissDialogFragment extends BaseDialogFragment {
             case 4221002:
                 Bundle bundle = new Bundle();
                 bundle.putString("title", getString(R.string.Live_SendPresent_resetPayPassword));
-                bundle.putString("content", getString(R.string.live_set_6_num));
+                bundle.putString(l.y, getString(R.string.live_set_6_num));
                 bundle.putString("http_host", LiveRoomInfo.a().m());
-                LiveRouteUtil.a(this, bundle, i);
+                LiveRouteUtil.a((Fragment) this, bundle, i);
                 return;
             case 4221003:
             case 4221006:
@@ -200,8 +199,8 @@ public class LiveKissDialogFragment extends BaseDialogFragment {
                 } else {
                     bundle2.putString("title", str);
                 }
-                bundle2.putString("content", getString(R.string.Live_SendPresent_verifyPasswordText));
-                LiveRouteUtil.a(this, bundle2, i);
+                bundle2.putString(l.y, getString(R.string.Live_SendPresent_verifyPasswordText));
+                LiveRouteUtil.a((Fragment) this, bundle2, i);
                 return;
             case 4221008:
                 h();
@@ -209,6 +208,7 @@ public class LiveKissDialogFragment extends BaseDialogFragment {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r2v0, types: [com.blued.android.module.live_china.fragment.LiveKissDialogFragment$7] */
     public static void a(String str) {
         LogUtils.c("checkSavePayToken: " + str);
         if (TextUtils.isEmpty(str)) {
@@ -316,7 +316,6 @@ public class LiveKissDialogFragment extends BaseDialogFragment {
         dialog.dismiss();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         getDialog().getWindow().requestFeature(1);
         super.onActivityCreated(bundle);
@@ -327,7 +326,6 @@ public class LiveKissDialogFragment extends BaseDialogFragment {
         getDialog().getWindow().setLayout(-1, -1);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1) {
@@ -340,10 +338,10 @@ public class LiveKissDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f12977a = getActivity();
+        this.a = getActivity();
         if (getArguments() != null) {
             this.r = (LiveOneKissModel) getArguments().getSerializable("kissModel");
         }
@@ -359,13 +357,13 @@ public class LiveKissDialogFragment extends BaseDialogFragment {
         setStyle(0, R.style.Dialog_FullScreen);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         LiveRoomHttpUtils.a(LiveDataManager.a().c(), 1);
-        this.s = DialogUtils.a(this.f12977a);
+        this.s = DialogUtils.a(this.a);
         View inflate = layoutInflater.inflate(R.layout.dialog_live_kiss, viewGroup);
         this.b = inflate;
-        this.f12978c = inflate.findViewById(R.id.empty_view);
+        this.c = inflate.findViewById(R.id.empty_view);
         this.d = (ImageView) this.b.findViewById(R.id.iv_anim);
         this.e = (ImageView) this.b.findViewById(R.id.iv_click);
         this.f = (ImageView) this.b.findViewById(R.id.iv_close);
@@ -400,7 +398,7 @@ public class LiveKissDialogFragment extends BaseDialogFragment {
                 LiveKissDialogFragment.this.f();
             }
         });
-        this.f12978c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveKissDialogFragment.5
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveKissDialogFragment.5
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -418,7 +416,7 @@ public class LiveKissDialogFragment extends BaseDialogFragment {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         if (this.t) {
@@ -431,7 +429,7 @@ public class LiveKissDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

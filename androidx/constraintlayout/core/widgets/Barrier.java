@@ -4,7 +4,6 @@ import androidx.constraintlayout.core.LinearSystem;
 import androidx.constraintlayout.core.SolverVariable;
 import androidx.constraintlayout.core.widgets.ConstraintAnchor;
 import androidx.constraintlayout.core.widgets.ConstraintWidget;
-import com.alipay.sdk.util.i;
 import java.util.HashMap;
 
 /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/core/widgets/Barrier.class */
@@ -18,7 +17,7 @@ public class Barrier extends HelperWidget {
     private int Q = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f2112a = false;
+    boolean f2064a = false;
 
     public Barrier() {
     }
@@ -71,11 +70,11 @@ public class Barrier extends HelperWidget {
             return;
         }
         ConstraintAnchor constraintAnchor = this.mListAnchors[this.O];
-        if (!this.f2112a) {
+        if (!this.f2064a) {
             allSolved();
         }
-        if (this.f2112a) {
-            this.f2112a = false;
+        if (this.f2064a) {
+            this.f2064a = false;
             int i6 = this.O;
             if (i6 == 0 || i6 == 1) {
                 linearSystem.addEquality(this.mLeft.b, this.k);
@@ -233,7 +232,7 @@ public class Barrier extends HelperWidget {
         } else {
             setFinalVertical(i9, i9);
         }
-        this.f2112a = true;
+        this.f2064a = true;
         return true;
     }
 
@@ -278,12 +277,12 @@ public class Barrier extends HelperWidget {
 
     @Override // androidx.constraintlayout.core.widgets.ConstraintWidget
     public boolean isResolvedHorizontally() {
-        return this.f2112a;
+        return this.f2064a;
     }
 
     @Override // androidx.constraintlayout.core.widgets.ConstraintWidget
     public boolean isResolvedVertically() {
-        return this.f2112a;
+        return this.f2064a;
     }
 
     public void setAllowsGoneWidget(boolean z) {
@@ -305,7 +304,7 @@ public class Barrier extends HelperWidget {
         while (true) {
             int i2 = i;
             if (i2 >= this.mWidgetsCount) {
-                return str + i.d;
+                return str + "}";
             }
             ConstraintWidget constraintWidget = this.mWidgets[i2];
             String str2 = str;

@@ -7,13 +7,11 @@ import kotlin.jvm.functions.Function1;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/DistinctSequence.class */
 public final class DistinctSequence<T, K> implements Sequence<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Sequence<T> f42617a;
+    private final Sequence<T> a;
     private final Function1<T, K> b;
 
     @Override // kotlin.sequences.Sequence
     public Iterator<T> iterator() {
-        return new DistinctIterator(this.f42617a.iterator(), this.b);
+        return new DistinctIterator(this.a.iterator(), this.b);
     }
 }

@@ -6,14 +6,14 @@ import java.util.concurrent.Executor;
 public final class b0<TResult> implements t<TResult> {
 
     /* renamed from: a  reason: collision with root package name */
-    public l0 f22280a;
+    public l0 f8672a;
     public Executor b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final Object f22281c = new Object();
+    public final Object f8673c = new Object();
 
     public b0(Executor executor, l0 l0Var) {
-        this.f22280a = l0Var;
+        this.f8672a = l0Var;
         this.b = executor;
     }
 

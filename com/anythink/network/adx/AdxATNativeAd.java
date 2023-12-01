@@ -18,99 +18,93 @@ import java.util.List;
 public class AdxATNativeAd extends CustomNativeAd {
 
     /* renamed from: a  reason: collision with root package name */
-    h f8838a;
+    h f5998a;
     Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f8839c;
+    boolean f5999c;
     boolean d;
     View e;
 
     public AdxATNativeAd(final Context context, h hVar, boolean z, boolean z2) {
         this.b = context.getApplicationContext();
-        this.f8838a = hVar;
+        this.f5998a = hVar;
         hVar.a(new e(hVar.a()) { // from class: com.anythink.network.adx.AdxATNativeAd.1
-            @Override // com.anythink.basead.e.a
             public final void onAdClick(int i) {
                 com.anythink.core.common.e.e detail = AdxATNativeAd.this.getDetail();
                 if (detail != null) {
                     detail.x(i);
                 }
                 AdxATNativeAd.this.notifyAdClicked();
-                if (AdxATNativeAd.this.f8838a.a().n() == 67) {
-                    if (AdxATNativeAd.this.f8838a.a(true, false)) {
-                        c.a(context).a(AdxATNativeAd.this.f8838a.a().p(), 1, 0);
+                if (AdxATNativeAd.this.f5998a.a().n() == 67) {
+                    if (AdxATNativeAd.this.f5998a.a(true, false)) {
+                        c.a(context).a(AdxATNativeAd.this.f5998a.a().p(), 1, 0);
                     }
-                    if (AdxATNativeAd.this.f8838a.a(false, false)) {
-                        b.a(context).a(AdxATNativeAd.this.f8838a.a().p(), 1, 0);
+                    if (AdxATNativeAd.this.f5998a.a(false, false)) {
+                        b.a(context).a(AdxATNativeAd.this.f5998a.a().p(), 1, 0);
                     }
                 }
             }
 
-            @Override // com.anythink.basead.e.a
             public final void onAdClosed() {
                 AdxATNativeAd.this.notifyAdDislikeClick();
             }
 
-            @Override // com.anythink.basead.e.e, com.anythink.basead.e.a
             public final void onAdShow() {
                 super.onAdShow();
                 AdxATNativeAd.this.notifyAdImpression();
-                if (AdxATNativeAd.this.f8838a.a().n() == 67) {
-                    if (AdxATNativeAd.this.f8838a.a(true, true)) {
-                        c.a(context).a(AdxATNativeAd.this.f8838a.a().p(), 0, 1);
+                if (AdxATNativeAd.this.f5998a.a().n() == 67) {
+                    if (AdxATNativeAd.this.f5998a.a(true, true)) {
+                        c.a(context).a(AdxATNativeAd.this.f5998a.a().p(), 0, 1);
                     }
-                    if (AdxATNativeAd.this.f8838a.a(false, true)) {
-                        b.a(context).a(AdxATNativeAd.this.f8838a.a().p(), 0, 1);
+                    if (AdxATNativeAd.this.f5998a.a(false, true)) {
+                        b.a(context).a(AdxATNativeAd.this.f5998a.a().p(), 0, 1);
                     }
                 }
             }
 
-            @Override // com.anythink.basead.e.a
             public final void onDeeplinkCallback(boolean z3) {
                 AdxATNativeAd.this.notifyDeeplinkCallback(z3);
             }
 
-            @Override // com.anythink.basead.e.a
             public final void onShowFailed(com.anythink.basead.c.e eVar) {
             }
         });
-        this.f8839c = z;
+        this.f5999c = z;
         this.d = z2;
-        if (z || this.f8838a.h()) {
+        if (z || this.f5998a.h()) {
             return;
         }
-        setNetworkInfoMap(com.anythink.basead.b.a(this.f8838a.a()));
-        setAdChoiceIconUrl(this.f8838a.g());
-        setTitle(this.f8838a.b());
-        setDescriptionText(this.f8838a.c());
-        setIconImageUrl(this.f8838a.e());
-        setMainImageUrl(this.f8838a.f());
-        setCallToActionText(this.f8838a.d());
+        setNetworkInfoMap(com.anythink.basead.b.a(this.f5998a.a()));
+        setAdChoiceIconUrl(this.f5998a.g());
+        setTitle(this.f5998a.b());
+        setDescriptionText(this.f5998a.c());
+        setIconImageUrl(this.f5998a.e());
+        setMainImageUrl(this.f5998a.f());
+        setCallToActionText(this.f5998a.d());
     }
 
     @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public void clear(View view) {
-        h hVar = this.f8838a;
+        h hVar = this.f5998a;
         if (hVar != null) {
             hVar.i();
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void destroy() {
-        h hVar = this.f8838a;
+        h hVar = this.f5998a;
         if (hVar != null) {
             hVar.a((a) null);
-            this.f8838a.j();
+            this.f5998a.j();
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
         if (this.e == null) {
-            this.e = this.f8838a.a(this.b, this.f8839c, this.d, new BaseMediaAdView.a() { // from class: com.anythink.network.adx.AdxATNativeAd.2
-                @Override // com.anythink.basead.ui.BaseMediaAdView.a
+            this.e = this.f5998a.a(this.b, this.f5999c, this.d, new BaseMediaAdView.a() { // from class: com.anythink.network.adx.AdxATNativeAd.2
                 public final void onClickCloseView() {
                     AdxATNativeAd.this.notifyAdDislikeClick();
                 }
@@ -119,9 +113,9 @@ public class AdxATNativeAd extends CustomNativeAd {
         return this.e;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public ViewGroup getCustomAdContainer() {
-        if (this.f8838a == null || this.f8839c) {
+        if (this.f5998a == null || this.f5999c) {
             return null;
         }
         return new OwnNativeAdView(this.b);
@@ -129,12 +123,12 @@ public class AdxATNativeAd extends CustomNativeAd {
 
     @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public boolean isNativeExpress() {
-        return this.f8839c || this.f8838a.h();
+        return this.f5999c || this.f5998a.h();
     }
 
     @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public void onPause() {
-        h hVar = this.f8838a;
+        h hVar = this.f5998a;
         if (hVar != null) {
             hVar.l();
         }
@@ -142,7 +136,7 @@ public class AdxATNativeAd extends CustomNativeAd {
 
     @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public void onResume() {
-        h hVar = this.f8838a;
+        h hVar = this.f5998a;
         if (hVar != null) {
             hVar.k();
         }
@@ -150,15 +144,15 @@ public class AdxATNativeAd extends CustomNativeAd {
 
     @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public void prepare(View view, ATNativePrepareInfo aTNativePrepareInfo) {
-        this.f8838a.k();
-        if (this.f8839c || this.f8838a == null) {
+        this.f5998a.k();
+        if (this.f5999c || this.f5998a == null) {
             return;
         }
         List<View> clickViewList = aTNativePrepareInfo.getClickViewList();
         if (clickViewList == null || clickViewList.size() <= 0) {
-            this.f8838a.a(view);
+            this.f5998a.a(view);
         } else {
-            this.f8838a.a(view, clickViewList);
+            this.f5998a.a(view, clickViewList);
         }
     }
 }

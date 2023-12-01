@@ -1,13 +1,16 @@
 package de.robv.android.xposed;
 
 import android.os.Environment;
-import com.tencent.tinker.loader.shareutil.ShareConstants;
+import com.alipay.sdk.util.i;
+import com.android.dex.DexFormat;
+import com.android.org.conscrypt.NativeCrypto;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.SocketOptions;
 import java.security.DigestException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -23,8 +26,8 @@ public class DexCreator {
 
     public static byte[] create(String str, String str2) throws IOException {
         boolean z = str.compareTo(str2) < 0;
-        byte[] stringToBytes = stringToBytes("L" + str.replace('.', '/') + ";");
-        byte[] stringToBytes2 = stringToBytes("L" + str2.replace('.', '/') + ";");
+        byte[] stringToBytes = stringToBytes("L" + str.replace('.', '/') + i.b);
+        byte[] stringToBytes2 = stringToBytes("L" + str2.replace('.', '/') + i.b);
         int length = stringToBytes.length + stringToBytes2.length;
         int i = (-length) & 3;
         int i2 = length + i;
@@ -33,7 +36,7 @@ public class DexCreator {
         byteArrayOutputStream.write(new byte[24]);
         writeInt(byteArrayOutputStream, i2 + 252);
         writeInt(byteArrayOutputStream, 112);
-        writeInt(byteArrayOutputStream, 305419896);
+        writeInt(byteArrayOutputStream, DexFormat.ENDIAN_TAG);
         writeInt(byteArrayOutputStream, 0);
         writeInt(byteArrayOutputStream, 0);
         writeInt(byteArrayOutputStream, i2 + 164);
@@ -75,8 +78,8 @@ public class DexCreator {
         writeMapItem(byteArrayOutputStream, 1, 2, 112);
         writeMapItem(byteArrayOutputStream, 2, 2, 120);
         writeMapItem(byteArrayOutputStream, 6, 1, 128);
-        writeMapItem(byteArrayOutputStream, 8194, 2, 160);
-        writeMapItem(byteArrayOutputStream, 4099, 1, i2 + 160);
+        writeMapItem(byteArrayOutputStream, NativeCrypto.SSL_CB_ACCEPT_EXIT, 2, 160);
+        writeMapItem(byteArrayOutputStream, SocketOptions.SO_OOBINLINE, 1, i2 + 160);
         writeMapItem(byteArrayOutputStream, 4096, 1, i2 + 164);
         byte[] byteArray = byteArrayOutputStream.toByteArray();
         updateSignature(byteArray);
@@ -116,13 +119,13 @@ public class DexCreator {
     }
 
     public static File getDefaultFile(String str) {
-        return new File(DALVIK_CACHE, "xposed_" + str.substring(str.lastIndexOf(46) + 1) + ShareConstants.DEX_SUFFIX);
+        return new File(DALVIK_CACHE, "xposed_" + str.substring(str.lastIndexOf(46) + 1) + ".dex");
     }
 
     public static boolean matches(byte[] bArr, String str, String str2) throws IOException {
         boolean z = str.compareTo(str2) < 0;
-        byte[] stringToBytes = stringToBytes("L" + str.replace('.', '/') + ";");
-        byte[] stringToBytes2 = stringToBytes("L" + str2.replace('.', '/') + ";");
+        byte[] stringToBytes = stringToBytes("L" + str.replace('.', '/') + i.b);
+        byte[] stringToBytes2 = stringToBytes("L" + str2.replace('.', '/') + i.b);
         if (stringToBytes.length + 160 + stringToBytes2.length >= bArr.length) {
             return false;
         }

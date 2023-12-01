@@ -116,7 +116,7 @@ public class AlbumFlow extends BluedIngSelfFeed {
             if (bluedIngSelfFeed.feed_pics != null && bluedIngSelfFeed.feed_pics.length > 0) {
                 this.album_pic = bluedIngSelfFeed.feed_pics[0];
             }
-            this.isSelf = CommunityManager.f19086a.a().c(bluedIngSelfFeed.feed_uid);
+            this.isSelf = CommunityManager.a.a().c(bluedIngSelfFeed.feed_uid);
             this.isFeed = 1;
         }
     }

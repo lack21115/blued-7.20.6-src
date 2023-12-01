@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.viewpager.widget.PagerAdapter;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.core.image.ImageFileLoader;
@@ -54,13 +53,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveTabAdapter.class */
 public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData, BaseViewHolder> implements LiveListAutoPlay {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LiveTabViewModel f11697a;
+    private LiveTabViewModel a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f11698c;
+    private IRequestHost c;
     private String d;
     private final int e;
     private int f;
@@ -76,13 +71,9 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveTabAdapter$BannerPagerAdapter.class */
     public static final class BannerPagerAdapter extends PagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Context f11699a;
+        private Context a;
         private LiveTabViewModel b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private List<View> f11700c = new ArrayList();
+        private List<View> c = new ArrayList();
         private List<BannerModel> d = new ArrayList();
         private IRequestHost e;
 
@@ -93,7 +84,7 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
             EventTrackLive.a(LiveProtos.Event.LIVE_HOT_BANNER_CLICK, str, model.show_layer - 1);
             if (TextUtils.isEmpty(model.anchor_id)) {
                 LiveRoomInfo.a().a(model.click_url);
-                LiveRoomInfo.a().c(this$0.f11699a, str);
+                LiveRoomInfo.a().c(this$0.a, str);
                 return;
             }
             LiveTabViewModel liveTabViewModel = this$0.b;
@@ -104,7 +95,7 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
         }
 
         public final void a(Context context, IRequestHost iRequestHost, LiveTabViewModel liveTabViewModel, List<? extends BannerModel> list) {
-            this.f11699a = context;
+            this.a = context;
             this.e = iRequestHost;
             this.b = liveTabViewModel;
             this.d.clear();
@@ -114,7 +105,6 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
             notifyDataSetChanged();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
@@ -122,10 +112,9 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
         }
 
         public final Context getContext() {
-            return this.f11699a;
+            return this.a;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             List<BannerModel> list = this.d;
             if (list != null) {
@@ -134,23 +123,21 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
             return 0;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getItemPosition(Object object) {
             Intrinsics.e(object, "object");
             return -2;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup container, int i) {
             Intrinsics.e(container, "container");
             final BannerModel bannerModel = this.d.get(i);
             final String str = bannerModel.url;
-            while (this.f11700c.size() < this.d.size()) {
+            while (this.c.size() < this.d.size()) {
                 View inflate = LayoutInflater.from(AppInfo.d()).inflate(R.layout.item_live_banner_new, container, false);
                 Intrinsics.c(inflate, "from(AppInfo.getAppConte…er_new, container, false)");
-                this.f11700c.add(inflate);
+                this.c.add(inflate);
             }
-            View view = this.f11700c.get(i);
+            View view = this.c.get(i);
             if (view == null) {
                 return view;
             }
@@ -174,7 +161,6 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
             return view;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object object) {
             Intrinsics.e(view, "view");
             Intrinsics.e(object, "object");
@@ -191,7 +177,7 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
         this.k = new ArrayList();
         this.b = context;
         this.g = str;
-        this.f11697a = liveTabViewModel;
+        this.a = liveTabViewModel;
         this.d = Intrinsics.a("tag_", (Object) str);
         this.j.clear();
         this.j.addAll(models);
@@ -214,29 +200,29 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
         if (file == null || !file.exists()) {
             return;
         }
-        int a2 = size.a();
+        int a = size.a();
         int b = size.b();
-        int a3 = DensityUtils.a(this$0.mContext, 20.0f);
-        int i = b > 0 ? (a2 * a3) / b : 0;
-        ViewGroup.LayoutParams layoutParams = ((ImageView) iv_top_left.f42545a).getLayoutParams();
+        int a2 = DensityUtils.a(this$0.mContext, 20.0f);
+        int i = b > 0 ? (a * a2) / b : 0;
+        ViewGroup.LayoutParams layoutParams = ((ImageView) iv_top_left.a).getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
         }
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
         layoutParams2.width = i;
-        layoutParams2.height = a3;
-        ((ImageView) iv_top_left.f42545a).setLayoutParams(layoutParams2);
+        layoutParams2.height = a2;
+        ((ImageView) iv_top_left.a).setLayoutParams(layoutParams2);
         String str = bluedLiveListData.anchor_tag;
         Intrinsics.c(str, "item.anchor_tag");
         if (StringsKt.b(str, ".gif", false, 2, (Object) null)) {
-            ImageLoader.a(this$0.f11698c, bluedLiveListData.anchor_tag).h().a((ImageView) iv_top_left.f42545a);
+            ImageLoader.a(this$0.c, bluedLiveListData.anchor_tag).h().a((ImageView) iv_top_left.a);
         } else {
             String str2 = bluedLiveListData.anchor_tag;
             Intrinsics.c(str2, "item.anchor_tag");
             if (StringsKt.b(str2, ".png", false, 2, (Object) null)) {
-                ImageLoader.a(this$0.f11698c, bluedLiveListData.anchor_tag).e(baseViewHolder.hashCode()).g(-1).a((ImageView) iv_top_left.f42545a);
+                ImageLoader.a(this$0.c, bluedLiveListData.anchor_tag).e(baseViewHolder.hashCode()).g(-1).a((ImageView) iv_top_left.a);
             } else {
-                ImageLoader.a(this$0.f11698c, bluedLiveListData.anchor_tag).a((ImageView) iv_top_left.f42545a);
+                ImageLoader.a(this$0.c, bluedLiveListData.anchor_tag).a((ImageView) iv_top_left.a);
             }
         }
         baseViewHolder.setGone(R.id.iv_top_left, true);
@@ -344,7 +330,6 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, BluedLiveListData bluedLiveListData) {
         if (baseViewHolder != null) {
@@ -365,14 +350,14 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
     }
 
     public final void a(BaseViewHolder baseViewHolder, List<? extends BannerModel> list, int i) {
+        int a;
         int a2;
-        int a3;
         if (i == 0) {
-            a3 = DensityUtils.a(this.b, 3.5f);
-            a2 = 0;
-        } else {
             a2 = DensityUtils.a(this.b, 3.5f);
-            a3 = DensityUtils.a(this.b, 3.5f);
+            a = 0;
+        } else {
+            a = DensityUtils.a(this.b, 3.5f);
+            a2 = DensityUtils.a(this.b, 3.5f);
         }
         ViewGroup.LayoutParams layoutParams = null;
         View view = baseViewHolder == null ? null : baseViewHolder.getView(R.id.fl_banner);
@@ -382,9 +367,9 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
         }
         FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) layoutParams2;
         layoutParams3.leftMargin = 0;
-        layoutParams3.topMargin = a2;
+        layoutParams3.topMargin = a;
         layoutParams3.rightMargin = 0;
-        layoutParams3.bottomMargin = a3;
+        layoutParams3.bottomMargin = a2;
         view.setLayoutParams(layoutParams3);
         FrameLayout frameLayout = baseViewHolder == null ? null : (FrameLayout) baseViewHolder.getView(R.id.asvp_banner_hot_parent);
         AutoScrollViewPager autoScrollViewPager = baseViewHolder == null ? null : (AutoScrollViewPager) baseViewHolder.getView(R.id.asvp_banner_hot_new);
@@ -406,7 +391,7 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
             autoScrollViewPager.setAdapter(bannerPagerAdapter);
         }
         if (autoScrollViewPager != null) {
-            autoScrollViewPager.setInterval(m.ag);
+            autoScrollViewPager.setInterval(3000L);
         }
         if (linePageIndicator != null) {
             linePageIndicator.setViewPager(autoScrollViewPager);
@@ -427,7 +412,7 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
         if (list.size() == 1 && linePageIndicator != null) {
             linePageIndicator.setVisibility(8);
         }
-        bannerPagerAdapter.a(this.b, this.f11698c, this.f11697a, list);
+        bannerPagerAdapter.a(this.b, this.c, this.a, list);
         if (frameLayout != null) {
             frameLayout.setVisibility(0);
         }
@@ -468,8 +453,8 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
 
     /* JADX WARN: Type inference failed for: r1v80, types: [T, android.view.View] */
     public final void b(final BaseViewHolder baseViewHolder, final BluedLiveListData bluedLiveListData) {
+        int a;
         int a2;
-        int a3;
         if (bluedLiveListData == null) {
             return;
         }
@@ -486,34 +471,34 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
         if (view == null) {
             return;
         }
-        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        GridLayoutManager.LayoutParams layoutParams = view.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.GridLayoutManager.LayoutParams");
         }
-        GridLayoutManager.LayoutParams layoutParams2 = (GridLayoutManager.LayoutParams) layoutParams;
+        GridLayoutManager.LayoutParams layoutParams2 = layoutParams;
         layoutParams2.width = (AppInfo.l - DensityUtils.a(this.b, 12.0f)) / this.e;
         layoutParams2.height = layoutParams2.width;
-        view.setLayoutParams(layoutParams2);
+        view.setLayoutParams((ViewGroup.LayoutParams) layoutParams2);
         DensityUtils.a(this.b, 4.5f);
-        int a4 = DensityUtils.a(this.b, 4.5f);
+        int a3 = DensityUtils.a(this.b, 4.5f);
         if (bluedLiveListData.position == 0) {
-            a2 = DensityUtils.a(this.b, 6.0f);
-            a3 = DensityUtils.a(this.b, 3.0f);
-        } else {
+            a = DensityUtils.a(this.b, 6.0f);
             a2 = DensityUtils.a(this.b, 3.0f);
-            a3 = DensityUtils.a(this.b, 6.0f);
+        } else {
+            a = DensityUtils.a(this.b, 3.0f);
+            a2 = DensityUtils.a(this.b, 6.0f);
         }
-        int a5 = (bluedLiveListData.positionReal == 0 || bluedLiveListData.positionReal == 1) ? DensityUtils.a(this.b, 1.0f) : DensityUtils.a(this.b, 4.5f);
+        int a4 = (bluedLiveListData.positionReal == 0 || bluedLiveListData.positionReal == 1) ? DensityUtils.a(this.b, 1.0f) : DensityUtils.a(this.b, 4.5f);
         View findViewById = view.findViewById(R.id.aariv_cover_layout);
         ViewGroup.LayoutParams layoutParams3 = findViewById.getLayoutParams();
         if (layoutParams3 == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
         }
         FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) layoutParams3;
-        layoutParams4.leftMargin = a2;
-        layoutParams4.topMargin = a5;
-        layoutParams4.rightMargin = a3;
-        layoutParams4.bottomMargin = a4;
+        layoutParams4.leftMargin = a;
+        layoutParams4.topMargin = a4;
+        layoutParams4.rightMargin = a2;
+        layoutParams4.bottomMargin = a3;
         findViewById.setLayoutParams(layoutParams4);
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.aariv_cover);
         ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.iv_cover_box);
@@ -528,7 +513,7 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
         if (bluedLiveListData.recommend_type == 1) {
             if (liveHotListDiversion != null) {
                 EventTrackLive.a(LiveProtos.Event.LIVE_TASK_COLLECTION_PAGE_SHOW, liveHotListDiversion.link);
-                ImageLoader.a(this.f11698c, liveHotListDiversion.pic).b(R.drawable.live_bg).a(imageView);
+                ImageLoader.a(this.c, liveHotListDiversion.pic).b(R.drawable.live_bg).a(imageView);
                 textView2.setText(liveHotListDiversion.title);
                 imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveTabAdapter$Hzz6Hp_X6qhH6vGX4FsXO_LVuKo
                     @Override // android.view.View.OnClickListener
@@ -549,19 +534,19 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
             return;
         }
         textView.setVisibility(0);
-        ImageLoader.a(this.f11698c, bluedLiveListData.pic_url).b(R.drawable.live_bg).a(imageView);
+        ImageLoader.a(this.c, bluedLiveListData.pic_url).b(R.drawable.live_bg).a(imageView);
         if (TextUtils.isEmpty(bluedLiveListData.cover_box_url)) {
             imageView2.setVisibility(8);
         } else {
             imageView2.setVisibility(0);
-            ImageLoader.a(this.f11698c, bluedLiveListData.cover_box_url).e(imageView2.hashCode()).g(-1).a(imageView2);
+            ImageLoader.a(this.c, bluedLiveListData.cover_box_url).e(imageView2.hashCode()).g(-1).a(imageView2);
         }
         baseViewHolder.setGone(R.id.iv_top_left, false);
         if (!TextUtils.isEmpty(bluedLiveListData.anchor_tag)) {
             final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-            objectRef.f42545a = baseViewHolder.getView(R.id.iv_top_left);
+            objectRef.a = baseViewHolder.getView(R.id.iv_top_left);
             final ImageSize imageSize = new ImageSize();
-            ImageFileLoader.a(this.f11698c).a(bluedLiveListData.anchor_tag).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveTabAdapter$6WguIVojLeMpcaHTFIdTT94aNWc
+            ImageFileLoader.a(this.c).a(bluedLiveListData.anchor_tag).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveTabAdapter$6WguIVojLeMpcaHTFIdTT94aNWc
                 @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public final void onUIFinish(File file, Exception exc) {
                     LiveTabAdapter.a(ImageSize.this, this, objectRef, bluedLiveListData, baseViewHolder, file, exc);
@@ -573,9 +558,9 @@ public final class LiveTabAdapter extends BaseMultiItemQuickAdapter<BluedLiveLis
         } else {
             Long valueOf = Long.valueOf(bluedLiveListData.realtime_count);
             Intrinsics.c(valueOf, "valueOf(item.realtime_count)");
-            String a6 = LiveRoomUtils.a(valueOf.longValue());
-            Intrinsics.c(a6, "formatPriceForLiveList(j…eOf(item.realtime_count))");
-            textView.setText(a6);
+            String a5 = LiveRoomUtils.a(valueOf.longValue());
+            Intrinsics.c(a5, "formatPriceForLiveList(j…eOf(item.realtime_count))");
+            textView.setText(a5);
         }
         if (bluedLiveListData.anchor != null) {
             int i = bluedLiveListData.screen_pattern;

@@ -3,7 +3,6 @@ package com.tencent.tinker.loader.shareutil;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.igexin.assist.util.AssistUtils;
 import com.tencent.tinker.loader.TinkerRuntimeException;
 import java.io.BufferedInputStream;
@@ -344,11 +343,11 @@ public class SharePatchFileUtil {
     }
 
     public static File getPatchInfoFile(String str) {
-        return new File(str + BridgeUtil.SPLIT_MARK + ShareConstants.PATCH_INFO_NAME);
+        return new File(str + "/" + ShareConstants.PATCH_INFO_NAME);
     }
 
     public static File getPatchInfoLockFile(String str) {
-        return new File(str + BridgeUtil.SPLIT_MARK + ShareConstants.PATCH_INFO_LOCK_NAME);
+        return new File(str + "/" + ShareConstants.PATCH_INFO_LOCK_NAME);
     }
 
     public static File getPatchLastCrashFile(Context context) {
@@ -444,7 +443,7 @@ public class SharePatchFileUtil {
             if (lastIndexOf2 > 0) {
                 str2 = name2.substring(0, lastIndexOf2);
             }
-            return parentFile.getAbsolutePath() + "/oat/" + currentInstructionSet + BridgeUtil.SPLIT_MARK + str2 + ShareConstants.ODEX_SUFFIX;
+            return parentFile.getAbsolutePath() + "/oat/" + currentInstructionSet + "/" + str2 + ShareConstants.ODEX_SUFFIX;
         } catch (Exception e) {
             throw new TinkerRuntimeException("getCurrentInstructionSet fail:", e);
         }

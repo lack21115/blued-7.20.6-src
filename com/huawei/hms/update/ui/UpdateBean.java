@@ -7,11 +7,11 @@ import java.util.ArrayList;
 public class UpdateBean implements Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f22907a;
+    public boolean f9299a;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f22908c;
+    public String f9300c;
     public int d;
     public String e;
     public String f;
@@ -31,7 +31,7 @@ public class UpdateBean implements Serializable {
     }
 
     public String getClientPackageName() {
-        return (String) a(this.f22908c);
+        return (String) a(this.f9300c);
     }
 
     public int getClientVersionCode() {
@@ -47,7 +47,7 @@ public class UpdateBean implements Serializable {
     }
 
     public boolean isHmsOrApkUpgrade() {
-        return ((Boolean) a(Boolean.valueOf(this.f22907a))).booleanValue();
+        return ((Boolean) a(Boolean.valueOf(this.f9299a))).booleanValue();
     }
 
     public boolean isNeedConfirm() {
@@ -63,7 +63,7 @@ public class UpdateBean implements Serializable {
     }
 
     public void setClientPackageName(String str) {
-        this.f22908c = str;
+        this.f9300c = str;
     }
 
     public void setClientVersionCode(int i) {
@@ -71,7 +71,7 @@ public class UpdateBean implements Serializable {
     }
 
     public void setHmsOrApkUpgrade(boolean z) {
-        this.f22907a = z;
+        this.f9299a = z;
     }
 
     public void setNeedConfirm(boolean z) {

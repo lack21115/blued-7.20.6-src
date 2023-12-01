@@ -104,13 +104,13 @@ public final class ManagedChannelOrphanWrapper extends ForwardingManagedChannel 
         this.phantom = new ManagedChannelReference(this, managedChannel, referenceQueue, concurrentMap);
     }
 
-    @Override // io.grpc.internal.ForwardingManagedChannel, io.grpc.ManagedChannel
+    @Override // io.grpc.internal.ForwardingManagedChannel
     public ManagedChannel shutdown() {
         this.phantom.clearSafely();
         return super.shutdown();
     }
 
-    @Override // io.grpc.internal.ForwardingManagedChannel, io.grpc.ManagedChannel
+    @Override // io.grpc.internal.ForwardingManagedChannel
     public ManagedChannel shutdownNow() {
         this.phantom.clearSafely();
         return super.shutdownNow();

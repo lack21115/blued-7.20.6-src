@@ -221,7 +221,7 @@ public class DownloadManager {
             if (i == 1 || i == 2) {
                 if (str.equals(DownloadManager.COLUMN_LAST_MODIFIED_TIMESTAMP)) {
                     this.mOrderByColumn = Downloads.Impl.COLUMN_LAST_MODIFICATION;
-                } else if (!str.equals("total_size")) {
+                } else if (!str.equals(DownloadManager.COLUMN_TOTAL_SIZE_BYTES)) {
                     throw new IllegalArgumentException("Cannot order by " + str);
                 } else {
                     this.mOrderByColumn = "total_bytes";

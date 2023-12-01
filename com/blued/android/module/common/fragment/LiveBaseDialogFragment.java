@@ -1,6 +1,7 @@
 package com.blued.android.module.common.fragment;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,13 +16,9 @@ import com.blued.android.module.common.utils.DialogUtils;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/fragment/LiveBaseDialogFragment.class */
 public abstract class LiveBaseDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected String f10821a;
+    protected String a;
     protected View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public Bundle f10822c;
+    public Bundle c;
     protected LayoutInflater d;
     public Dialog e;
     protected int f = -1;
@@ -68,28 +65,27 @@ public abstract class LiveBaseDialogFragment extends BaseDialogFragment {
         dismissAllowingStateLoss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        Dialog a2 = a(R.style.transparentDialogNoAnimStyle);
-        a(a2);
-        return a2;
+        Dialog a = a(R.style.transparentDialogNoAnimStyle);
+        a(a);
+        return a;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f10821a = getClass().getSimpleName();
-        LogUtils.c(this.f10821a + ".onCreateView");
+        this.a = getClass().getSimpleName();
+        LogUtils.c(this.a + ".onCreateView");
         this.d = layoutInflater;
         Bundle arguments = getArguments();
-        this.f10822c = arguments;
+        this.c = arguments;
         if (arguments == null) {
-            this.f10822c = new Bundle();
+            this.c = new Bundle();
         }
         int i = -1;
-        this.f = this.f10822c.getInt("dlg_width", -1);
-        this.g = this.f10822c.getInt("dlg_height", -1);
-        this.h = this.f10822c.getInt("dlg_gravity", 0);
-        this.i = this.f10822c.getFloat("dlg_dim", 0.0f);
+        this.f = this.c.getInt("dlg_width", -1);
+        this.g = this.c.getInt("dlg_height", -1);
+        this.h = this.c.getInt("dlg_gravity", 0);
+        this.i = this.c.getFloat("dlg_dim", 0.0f);
         LogUtils.c("dlgDim: " + this.i);
         if (this.i > 0.0f && getDialog() != null && getDialog().getWindow() != null) {
             getDialog().getWindow().setDimAmount(this.i);
@@ -119,20 +115,20 @@ public abstract class LiveBaseDialogFragment extends BaseDialogFragment {
             this.j.addView(this.b, layoutParams);
             f();
             e();
-            this.e = DialogUtils.a(getActivity());
+            this.e = DialogUtils.a((Context) getActivity());
         } else if (frameLayout.getParent() != null) {
             ((ViewGroup) this.j.getParent()).removeView(this.j);
         }
         return this.j;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         DialogUtils.b(this.e);
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         g();

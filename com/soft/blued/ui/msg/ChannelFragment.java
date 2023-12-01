@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.android.internal.inputmethod.InputMethodUtils;
 import com.blued.android.chat.VideoChatHelper;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
@@ -36,7 +35,6 @@ import com.blued.android.module.common.utils.NetworkUtils;
 import com.blued.android.module.common.utils.PermissionUtils;
 import com.blued.android.module.common.utils.TimeAndDateUtils;
 import com.blued.android.module.common.utils.ToastUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.live_china.manager.LiveFloatManager;
 import com.bytedance.applog.tracker.Tracker;
 import com.cdo.oaps.ad.wrapper.BaseWrapper;
@@ -51,7 +49,7 @@ import com.soft.blued.utils.Logger;
 public class ChannelFragment extends BaseFragment implements View.OnClickListener, Chronometer.OnChronometerTickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f31661a = ChannelFragment.class.getSimpleName();
+    public static final String f17971a = ChannelFragment.class.getSimpleName();
     private LinearLayout A;
     private LinearLayout B;
     private LinearLayout C;
@@ -81,7 +79,7 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
     public FrameLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public FrameLayout f31662c;
+    public FrameLayout f17972c;
     ChannelModel d;
     private Context k;
     private RelativeLayout l;
@@ -107,12 +105,12 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
     Runnable f = new Runnable() { // from class: com.soft.blued.ui.msg.ChannelFragment.9
         @Override // java.lang.Runnable
         public void run() {
-            if (ChannelFragment.this.e <= 0 || ChannelFragment.this.U == null || ChannelFragment.this.U.f32389a == null || ChannelFragment.this.U.f32389a.isDestroyed()) {
+            if (ChannelFragment.this.e <= 0 || ChannelFragment.this.U == null || ChannelFragment.this.U.f18699a == null || ChannelFragment.this.U.f18699a.isDestroyed()) {
                 return;
             }
-            ChannelFragment.this.U.f32389a.updateCallTime((int) ChannelFragment.this.e);
+            ChannelFragment.this.U.f18699a.updateCallTime((int) ChannelFragment.this.e);
             ChannelFragment.this.q();
-            Logger.b(ChannelFragment.f31661a, "mTimer:", Long.valueOf(ChannelFragment.this.e));
+            Logger.b(ChannelFragment.f17971a, "mTimer:", Long.valueOf(ChannelFragment.this.e));
         }
     };
     Runnable g = new Runnable() { // from class: com.soft.blued.ui.msg.ChannelFragment.10
@@ -162,23 +160,23 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
     class AnonymousClass3 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ChannelFragment f31672a;
+        final /* synthetic */ ChannelFragment f17982a;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            SurfaceView surfaceView = (SurfaceView) this.f31672a.f31662c.getChildAt(0);
+            SurfaceView surfaceView = (SurfaceView) this.f17982a.f17972c.getChildAt(0);
             SurfaceView surfaceView2 = (SurfaceView) ((ViewGroup) view).getChildAt(0);
             int width = surfaceView.getWidth();
             int height = surfaceView.getHeight();
             int width2 = surfaceView2.getWidth();
             int height2 = surfaceView2.getHeight();
             if (surfaceView != null) {
-                this.f31672a.a(surfaceView2, width, height);
-                this.f31672a.a(surfaceView, width2, height2);
-                SurfaceView a2 = this.f31672a.a(surfaceView2);
-                this.f31672a.b.addView(this.f31672a.a(surfaceView));
-                this.f31672a.f31662c.addView(a2);
+                this.f17982a.a(surfaceView2, width, height);
+                this.f17982a.a(surfaceView, width2, height2);
+                SurfaceView a2 = this.f17982a.a(surfaceView2);
+                this.f17982a.b.addView(this.f17982a.a(surfaceView));
+                this.f17982a.f17972c.addView(a2);
                 surfaceView.setZOrderOnTop(true);
                 surfaceView.setZOrderMediaOverlay(true);
                 surfaceView2.setZOrderOnTop(false);
@@ -192,23 +190,19 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
             try {
                 if (channelModel.callType != 0 && 2 != channelModel.callType) {
                     PermissionUtils.d(new PermissionCallbacks() { // from class: com.soft.blued.ui.msg.ChannelFragment.2
-                        @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void U_() {
                             ChannelFragment.c(Context.this, channelModel);
                         }
 
-                        @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void a(String[] strArr) {
                         }
                     });
                 }
                 PermissionUtils.g(new PermissionCallbacks() { // from class: com.soft.blued.ui.msg.ChannelFragment.1
-                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void U_() {
                         ChannelFragment.c(Context.this, channelModel);
                     }
 
-                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void a(String[] strArr) {
                     }
                 });
@@ -220,15 +214,15 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
     /* JADX INFO: Access modifiers changed from: private */
     public static void c(Context context, ChannelModel channelModel) {
         if (!AppMethods.c(16)) {
-            AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.msg_channel_un_userable));
+            AppMethods.a(AppInfo.d().getResources().getString(R.string.msg_channel_un_userable));
         } else if (channelModel == null) {
         } else {
             LiveFloatManager.a().m();
             Bundle bundle = new Bundle();
             if (channelModel.callType == 0 || channelModel.callType == 1) {
-                channelModel.channelId = (System.currentTimeMillis() / 1000) + BridgeUtil.UNDERLINE_STR + EncryptTool.b(UserInfo.getInstance().getLoginUserInfo().getUid());
+                channelModel.channelId = (System.currentTimeMillis() / 1000) + "_" + EncryptTool.b(UserInfo.getInstance().getLoginUserInfo().getUid());
             }
-            Logger.b(f31661a, "channelId:", channelModel.channelId, "remoteUid:", Integer.valueOf(channelModel.remoteUid));
+            Logger.b(f17971a, "channelId:", channelModel.channelId, "remoteUid:", Integer.valueOf(channelModel.remoteUid));
             bundle.putSerializable("CHANNEL", channelModel);
             TerminalActivity.a(bundle);
             TerminalActivity.b(bundle);
@@ -253,12 +247,12 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
     private void h() {
         this.b = (FrameLayout) this.V.findViewById(R.id.user_local_view);
         FrameLayout frameLayout = (FrameLayout) this.V.findViewById(R.id.user_remote_views);
-        this.f31662c = frameLayout;
+        this.f17972c = frameLayout;
         frameLayout.setOnClickListener(this);
         this.l = (RelativeLayout) this.V.findViewById(R.id.remote_bg_lay);
         this.m = (RelativeLayout) this.V.findViewById(R.id.remote_header_bg_lay);
         this.n = (ImageView) this.V.findViewById(R.id.remote_header_bg);
-        this.o = (RelativeLayout) this.V.findViewById(2131364227);
+        this.o = (RelativeLayout) this.V.findViewById(R.id.header_lay);
         this.p = (ImageView) this.V.findViewById(2131364232);
         this.q = (TextView) this.V.findViewById(R.id.remote_user_name);
         this.r = (TextView) this.V.findViewById(R.id.remote_connect_state);
@@ -266,7 +260,7 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
         this.t = (TextView) this.V.findViewById(R.id.user_remote_time_left);
         this.u = (TextView) this.V.findViewById(R.id.remote_time_left);
         this.v = (RelativeLayout) this.V.findViewById(R.id.channel_lay);
-        this.w = this.V.findViewById(2131362486);
+        this.w = this.V.findViewById(R.id.bottom_lay);
         this.x = (Chronometer) this.V.findViewById(2131362855);
         this.y = (TextView) this.V.findViewById(R.id.switch_to_voice_tv);
         this.z = (LinearLayout) this.V.findViewById(R.id.channel_mute_lay);
@@ -328,7 +322,7 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
     }
 
     private void i() {
-        Logger.b(f31661a, "mChannelModel type:", Integer.valueOf(this.d.callType));
+        Logger.b(f17971a, "mChannelModel type:", Integer.valueOf(this.d.callType));
         int i = this.d.callType;
         if (i == 0) {
             j();
@@ -348,7 +342,7 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
 
     private void j() {
         this.b.setVisibility(0);
-        this.f31662c.setVisibility(0);
+        this.f17972c.setVisibility(0);
         this.l.setVisibility(8);
         this.t.setVisibility(8);
         this.u.setVisibility(8);
@@ -363,7 +357,7 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
 
     private void k() {
         this.b.setVisibility(8);
-        this.f31662c.setVisibility(8);
+        this.f17972c.setVisibility(8);
         this.l.setVisibility(0);
         this.o.setVisibility(0);
         this.t.setVisibility(8);
@@ -379,7 +373,7 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
 
     private void l() {
         this.b.setVisibility(8);
-        this.f31662c.setVisibility(8);
+        this.f17972c.setVisibility(8);
         this.l.setVisibility(0);
         this.o.setVisibility(0);
         this.r.setText(this.k.getResources().getString(R.string.channel_invite_video_tip));
@@ -395,7 +389,7 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
 
     private void m() {
         this.b.setVisibility(8);
-        this.f31662c.setVisibility(8);
+        this.f17972c.setVisibility(8);
         this.l.setVisibility(0);
         this.o.setVisibility(0);
         this.r.setText(this.k.getResources().getString(R.string.channel_invite_voice_tip));
@@ -411,7 +405,7 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
 
     private void n() {
         this.b.setVisibility(0);
-        this.f31662c.setVisibility(0);
+        this.f17972c.setVisibility(0);
         this.l.setVisibility(8);
         this.o.setVisibility(8);
         this.r.setVisibility(8);
@@ -432,7 +426,7 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
 
     private void o() {
         this.b.setVisibility(8);
-        this.f31662c.setVisibility(8);
+        this.f17972c.setVisibility(8);
         this.l.setVisibility(0);
         this.o.setVisibility(0);
         this.r.setVisibility(8);
@@ -454,18 +448,17 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
     private void p() {
         UserHttpUtils.a(this.k, new BluedUIHttpResponse<BluedEntityA<UserInfoEntity>>(getFragmentActive()) { // from class: com.soft.blued.ui.msg.ChannelFragment.6
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserInfoEntity> bluedEntityA) {
                 UserInfoEntity userInfoEntity;
-                if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || (userInfoEntity = bluedEntityA.data.get(0)) == null) {
+                if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || (userInfoEntity = (UserInfoEntity) bluedEntityA.data.get(0)) == null) {
                     return;
                 }
                 ChannelFragment.this.d.remoteUserName = userInfoEntity.name;
                 ChannelFragment.this.d.remoteUserHead = AvatarUtils.a(0, userInfoEntity.avatar);
-                ImageLoader.a(ChannelFragment.this.getFragmentActive(), ChannelFragment.this.d.remoteUserHead).b(2131231478).c().a(ChannelFragment.this.I);
+                ImageLoader.a(ChannelFragment.this.getFragmentActive(), ChannelFragment.this.d.remoteUserHead).b((int) R.drawable.channel_default_head).c().a(ChannelFragment.this.I);
                 ImageLoader.a(ChannelFragment.this.getFragmentActive(), ChannelFragment.this.d.remoteUserHead).a(ChannelFragment.this.n);
-                ImageLoader.a(ChannelFragment.this.getFragmentActive(), ChannelFragment.this.d.remoteUserHead).b(2131231478).a(2.0f).a(ChannelFragment.this.p);
+                ImageLoader.a(ChannelFragment.this.getFragmentActive(), ChannelFragment.this.d.remoteUserHead).b((int) R.drawable.channel_default_head).a(2.0f).a(ChannelFragment.this.p);
                 ChannelFragment.this.q.setText(ChannelFragment.this.d.remoteUserName);
                 ChannelFragment.this.J.setText(ChannelFragment.this.d.remoteUserName);
             }
@@ -563,7 +556,7 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
     }
 
     public void a(VideoChatHelper.CallFailed callFailed, String str) {
-        Logger.b(f31661a, "showFailView:", str);
+        Logger.b(f17971a, "showFailView:", str);
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
             if (callFailed != VideoChatHelper.CallFailed.NETWORK && callFailed != VideoChatHelper.CallFailed.SERVER_LIMIT) {
@@ -615,12 +608,11 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
                 textView.setVisibility(8);
                 textView2.setVisibility(8);
                 findViewById.setVisibility(8);
-                textView3.setText(getString(2131890371));
+                textView3.setText(getString(R.string.live_window_indicate_know));
             }
             CustomDialog customDialog2 = new CustomDialog(this.k, 2131952378);
             this.aa = customDialog2;
             customDialog2.a(inflate, new CustomDialog.OnBackCallBack() { // from class: com.soft.blued.ui.msg.ChannelFragment.16
-                @Override // com.blued.android.framework.view.CustomDialog.OnBackCallBack
                 public void a() {
                     int i2 = i;
                     if (i2 == 1) {
@@ -637,16 +629,16 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
 
     public void a(boolean z) {
         synchronized (this) {
-            Logger.b(f31661a, "removeTimer:", Boolean.valueOf(z));
+            Logger.b(f17971a, "removeTimer:", Boolean.valueOf(z));
             e();
             r();
             if (this.e > 0) {
-                if (this.U != null && this.U.f32389a != null) {
-                    this.U.f32389a.hangup((int) this.e);
+                if (this.U != null && this.U.f18699a != null) {
+                    this.U.f18699a.hangup((int) this.e);
                 }
                 this.e = 0L;
-            } else if (this.U != null && this.U.f32389a != null) {
-                this.U.f32389a.cancel(z);
+            } else if (this.U != null && this.U.f18699a != null) {
+                this.U.f18699a.cancel(z);
             }
         }
     }
@@ -664,7 +656,7 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
     }
 
     public void b(int i) {
-        Logger.b(f31661a, "leftTime:", Integer.valueOf(i));
+        Logger.b(f17971a, "leftTime:", Integer.valueOf(i));
         this.Y = i;
         s();
     }
@@ -678,8 +670,8 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
             ChannelManager channelManager = this.U;
             if (channelManager != null) {
                 channelManager.h();
-                this.U.f32390c = System.currentTimeMillis() / 1000;
-                this.U.b = InputMethodUtils.SUBTYPE_MODE_VOICE;
+                this.U.f18700c = System.currentTimeMillis() / 1000;
+                this.U.b = "voice";
             }
             this.d.callType = 5;
             if (z) {
@@ -732,7 +724,6 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
     public void f() {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         a(false);
         return super.onBackPressed();
@@ -772,8 +763,8 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
                     ChannelManager channelManager = this.U;
                     if (channelManager != null) {
                         channelManager.a();
-                        if (this.U.f32389a != null) {
-                            this.U.f32389a.answer();
+                        if (this.U.f18699a != null) {
+                            this.U.f18699a.answer();
                             return;
                         }
                         return;
@@ -785,8 +776,8 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
                     ChannelManager channelManager2 = this.U;
                     if (channelManager2 != null) {
                         channelManager2.b();
-                        if (this.U.f32389a != null) {
-                            this.U.f32389a.answer();
+                        if (this.U.f18699a != null) {
+                            this.U.f18699a.answer();
                             return;
                         }
                         return;
@@ -803,8 +794,8 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
             case R.id.channel_voice_lay /* 2131362804 */:
             case R.id.launch_switch_voice /* 2131366697 */:
                 ChannelManager channelManager3 = this.U;
-                if (channelManager3 != null && channelManager3.f32389a != null) {
-                    this.U.f32389a.switchToAudio();
+                if (channelManager3 != null && channelManager3.f18699a != null) {
+                    this.U.f18699a.switchToAudio();
                 }
                 b(false);
                 return;
@@ -874,17 +865,17 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
                 return;
             case R.id.user_remote_views /* 2131373052 */:
                 SurfaceView surfaceView = (SurfaceView) this.b.getChildAt(0);
-                SurfaceView surfaceView2 = (SurfaceView) this.f31662c.getChildAt(0);
+                SurfaceView surfaceView2 = (SurfaceView) this.f17972c.getChildAt(0);
                 int applyDimension = (int) TypedValue.applyDimension(1, 105.0f, this.k.getResources().getDisplayMetrics());
                 int applyDimension2 = (int) TypedValue.applyDimension(1, 187.0f, this.k.getResources().getDisplayMetrics());
                 int E = LiveFloatManager.a().E();
                 int F = LiveFloatManager.a().F();
-                Logger.b(f31661a, "screenViewWidth:", Integer.valueOf(E), " screenHeight:", Integer.valueOf(F), "   windowViewWidth:", Integer.valueOf(applyDimension), "  windowViewHeight:", Integer.valueOf(applyDimension2));
+                Logger.b(f17971a, "screenViewWidth:", Integer.valueOf(E), " screenHeight:", Integer.valueOf(F), "   windowViewWidth:", Integer.valueOf(applyDimension), "  windowViewHeight:", Integer.valueOf(applyDimension2));
                 if (surfaceView != null && surfaceView2 != null) {
                     a(surfaceView2, E, F);
                     a(surfaceView, applyDimension, applyDimension2);
                     this.b.addView(a(surfaceView2));
-                    this.f31662c.addView(a(surfaceView));
+                    this.f17972c.addView(a(surfaceView));
                     surfaceView.setZOrderOnTop(true);
                     surfaceView.setZOrderMediaOverlay(true);
                     surfaceView2.setZOrderOnTop(false);
@@ -901,13 +892,11 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         g();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         if (this.d.callType == 0 || this.d.callType == 2 || this.d.callType == 4) {
             getActivity().getWindow().addFlags(8192);
@@ -923,15 +912,14 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
         return this.V;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         this.e = 0L;
         r();
         ChannelManager channelManager = this.U;
         if (channelManager != null) {
             channelManager.g();
-            if (this.U.f32389a != null) {
-                this.U.f32389a.destroy();
+            if (this.U.f18699a != null) {
+                this.U.f18699a.destroy();
             }
             this.U.c(getActivity());
         }
@@ -939,7 +927,6 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         AppInfo.n().postDelayed(this.j, 30000L);
         if (this.U != null) {
@@ -951,7 +938,6 @@ public class ChannelFragment extends BaseFragment implements View.OnClickListene
         super.onPause();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         if (this.X > 0) {
             long currentTimeMillis = this.e + ((System.currentTimeMillis() - this.X) / 1000);

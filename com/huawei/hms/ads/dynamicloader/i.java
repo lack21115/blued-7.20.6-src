@@ -9,16 +9,16 @@ import java.io.File;
 public final class i extends e {
     public i(Context context, String str, int i) {
         super(context, str, i);
-        ((e) this).f22471a.applicationInfo.processName = getBaseContext().getApplicationInfo().processName;
+        ((e) this).f8863a.applicationInfo.processName = getBaseContext().getApplicationInfo().processName;
     }
 
     private void a() {
-        ((e) this).f22471a.applicationInfo.processName = getBaseContext().getApplicationInfo().processName;
+        ((e) this).f8863a.applicationInfo.processName = getBaseContext().getApplicationInfo().processName;
     }
 
     @Override // com.huawei.hms.ads.dynamicloader.e, android.content.ContextWrapper, android.content.Context
     public final ApplicationInfo getApplicationInfo() {
-        return ((e) this).f22471a.applicationInfo;
+        return ((e) this).f8863a.applicationInfo;
     }
 
     @Override // android.content.ContextWrapper, android.content.Context

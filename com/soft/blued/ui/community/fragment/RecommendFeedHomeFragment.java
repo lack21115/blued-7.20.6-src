@@ -10,7 +10,7 @@ import com.soft.blued.ui.home.HomeTabClick;
 public class RecommendFeedHomeFragment extends RecommendFeedFragment<RecommendFeedPresenter> implements HomeTabClick.TabClickListener {
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f29793c = false;
+    private boolean f16103c = false;
 
     @Override // com.soft.blued.ui.home.HomeTabClick.TabClickListener
     public void c(String str) {
@@ -24,13 +24,11 @@ public class RecommendFeedHomeFragment extends RecommendFeedFragment<RecommendFe
         c(str);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         HomeTabClick.b(IAdInterListener.AdProdType.PRODUCT_FEEDS, this);
         super.onDestroyView();
     }
 
-    @Override // com.blued.community.ui.square.fragment.RecommendFeedFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         if (getUserVisibleHint()) {
             HomeTabClick.a(IAdInterListener.AdProdType.PRODUCT_FEEDS, this);
@@ -38,13 +36,12 @@ public class RecommendFeedHomeFragment extends RecommendFeedFragment<RecommendFe
         super.onResume();
     }
 
-    @Override // com.blued.community.ui.square.fragment.RecommendFeedFragment, com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         if (z) {
             HomeTabClick.a(IAdInterListener.AdProdType.PRODUCT_FEEDS, this);
-            if (!this.f29793c) {
+            if (!this.f16103c) {
                 InstantLog.b("first_auto_load", 2);
-                this.f29793c = true;
+                this.f16103c = true;
             }
         }
         super.setUserVisibleHint(z);

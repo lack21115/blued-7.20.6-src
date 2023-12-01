@@ -14,7 +14,7 @@ class MotionConstrainedPoint implements Comparable<MotionConstrainedPoint> {
     public static final String TAG = "MotionPaths";
 
     /* renamed from: c  reason: collision with root package name */
-    static String[] f2011c = {BrowserContract.Bookmarks.POSITION, "x", "y", "width", "height", "pathRotate"};
+    static String[] f1963c = {BrowserContract.Bookmarks.POSITION, "x", "y", "width", "height", "pathRotate"};
     int b;
     private float u;
     private float v;
@@ -24,7 +24,7 @@ class MotionConstrainedPoint implements Comparable<MotionConstrainedPoint> {
     private float h = 1.0f;
 
     /* renamed from: a  reason: collision with root package name */
-    int f2012a = 0;
+    int f1964a = 0;
     private boolean i = false;
     private float j = 0.0f;
     private float k = 0.0f;
@@ -67,7 +67,7 @@ class MotionConstrainedPoint implements Comparable<MotionConstrainedPoint> {
         }
         int i = this.b;
         int i2 = motionConstrainedPoint.b;
-        if (i != i2 && this.f2012a == 0 && (i == 4 || i2 == 4)) {
+        if (i != i2 && this.f1964a == 0 && (i == 4 || i2 == 4)) {
             hashSet.add("alpha");
         }
         if (a(this.k, motionConstrainedPoint.k)) {

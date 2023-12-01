@@ -57,11 +57,11 @@ import java.util.List;
 public class VideoCommentAdapter extends BaseAdapter implements CommentListDataObserver.ICommentDataObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    LoadOptions f20307a;
+    LoadOptions f6701a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f20308c;
+    private LayoutInflater f6702c;
     private int e;
     private IRequestHost f;
     private BluedIngSelfFeed g;
@@ -84,18 +84,18 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
     public class RevoClickSpan extends ClickableSpan {
 
         /* renamed from: a  reason: collision with root package name */
-        Context f20320a;
+        Context f6714a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f20321c;
+        String f6715c;
         String d;
         String e;
 
         public RevoClickSpan(Context context, String str, String str2, String str3, String str4) {
-            this.f20320a = context;
+            this.f6714a = context;
             this.b = str;
-            this.f20321c = str2;
+            this.f6715c = str2;
             this.d = str3;
             this.e = str4;
         }
@@ -103,16 +103,16 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
         @Override // android.text.style.ClickableSpan
         public void onClick(View view) {
             Selection.removeSelection((Spannable) ((TextView) view).getText());
-            if (TextUtils.isEmpty(this.f20321c)) {
-                CommunityServiceManager.b().b(this.f20320a, this.d, "");
+            if (TextUtils.isEmpty(this.f6715c)) {
+                CommunityServiceManager.b().b(this.f6714a, this.d, "");
             } else {
-                CommunityServiceManager.b().a(this.f20320a, this.f20321c, "");
+                CommunityServiceManager.b().a(this.f6714a, this.f6715c, "");
             }
         }
 
         @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
         public void updateDrawState(TextPaint textPaint) {
-            textPaint.setColor(this.f20320a.getResources().getColor(R.color.nafio_v));
+            textPaint.setColor(this.f6714a.getResources().getColor(R.color.nafio_v));
             textPaint.setUnderlineText(false);
         }
     }
@@ -121,11 +121,11 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
     class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f20322a;
+        public ImageView f6716a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public TextView f20323c;
+        public TextView f6717c;
         public TextView d;
         public ImageView e;
         public View f;
@@ -149,13 +149,13 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
         this.f = iRequestHost;
         this.i = z;
         LoadOptions loadOptions = new LoadOptions();
-        this.f20307a = loadOptions;
+        this.f6701a = loadOptions;
         loadOptions.d = R.drawable.user_bg_round;
-        this.f20307a.b = R.drawable.user_bg_round;
-        LoadOptions loadOptions2 = this.f20307a;
+        this.f6701a.b = R.drawable.user_bg_round;
+        LoadOptions loadOptions2 = this.f6701a;
         int i = this.e;
         loadOptions2.a(i >> 1, i >> 1);
-        this.f20308c = LayoutInflater.from(context);
+        this.f6702c = LayoutInflater.from(context);
         this.e = context.getResources().getDisplayMetrics().widthPixels;
     }
 
@@ -173,7 +173,6 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
                         arrayList.add(VideoCommentAdapter.this.b.getResources().getString(R.string.delete));
                     }
                     CommonShowBottomWindow.a((FragmentActivity) VideoCommentAdapter.this.b, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.video.adapter.VideoCommentAdapter.6.1
-                        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, int i) {
                             String a2 = actionSheet.a(i);
                             if (a2.equals(VideoCommentAdapter.this.b.getResources().getString(R.string.community_copy))) {
@@ -181,11 +180,10 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
                             } else if (a2.equals(VideoCommentAdapter.this.b.getResources().getString(R.string.delete))) {
                                 VideoCommentAdapter.this.b(feedComment);
                             } else if (a2.equals(VideoCommentAdapter.this.b.getResources().getString(R.string.report))) {
-                                CommunityServiceManager.b().a(VideoCommentAdapter.this.b, CommunityConstants.ReportType.FEED_COMMENT, feedComment.user_name, feedComment.feed_id, feedComment.comment_id);
+                                CommunityServiceManager.b().a(VideoCommentAdapter.this.b, CommunityConstants.ReportType.c, feedComment.user_name, feedComment.feed_id, feedComment.comment_id);
                             }
                         }
 
-                        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, boolean z) {
                         }
                     });
@@ -227,7 +225,7 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
             } catch (Exception e) {
             }
         }
-        AppMethods.a((CharSequence) this.b.getResources().getString(R.string.copy));
+        AppMethods.a(this.b.getResources().getString(R.string.copy));
     }
 
     public void a(FeedComment feedComment, ImageView imageView, TextView textView) {
@@ -239,7 +237,6 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
         FeedHttpUtils.a(str2, str, i, (BluedUIHttpResponse) null, this.f, true);
     }
 
-    @Override // com.blued.community.ui.feed.observer.CommentListDataObserver.ICommentDataObserver
     public void a(FeedComment feedComment, String str) {
         int i;
         if (feedComment == null || !this.i) {
@@ -266,7 +263,6 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
         notifyDataSetChanged();
     }
 
-    @Override // com.blued.community.ui.feed.observer.CommentListDataObserver.ICommentDataObserver
     public void a(String str) {
         List<FeedComment> list;
         int i;
@@ -296,7 +292,6 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
         notifyDataSetChanged();
     }
 
-    @Override // com.blued.community.ui.feed.observer.CommentListDataObserver.ICommentDataObserver
     public void a(String str, int i) {
         List<FeedComment> list;
         if (TextUtils.isEmpty(str) || (list = this.d) == null || list.size() <= 0) {
@@ -352,25 +347,22 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                FeedHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.blued.community.ui.video.adapter.VideoCommentAdapter.7.1
+                FeedHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.blued.community.ui.video.adapter.VideoCommentAdapter.7.1
                     /* JADX INFO: Access modifiers changed from: protected */
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public BluedEntityA<Object> parseData(String str2) {
-                        return (BluedEntityA) super.parseData(str2);
+                        return super.parseData(str2);
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                         CommentListDataObserver.a().a(feedComment.comment_id);
                         LiveEventBus.get("feed_delete_comment").post(feedComment);
-                        AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.del_success));
+                        AppMethods.a(AppInfo.d().getResources().getString(R.string.del_success));
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
                     public void onFailure(Throwable th, int i2, String str2) {
-                        AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.common_net_error));
+                        AppMethods.a(AppInfo.d().getResources().getString(R.string.common_net_error));
                         super.onFailure(th, i2, str2);
                     }
                 }, true, feedComment.feed_id, feedComment.comment_id, VideoCommentAdapter.this.g.is_ads, VideoCommentAdapter.this.f);
@@ -382,7 +374,7 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
         if (list == null || list.size() <= 0) {
             return;
         }
-        Logger.b("VideoCommentAdapter", "addFeedItems:", Integer.valueOf(list.size()));
+        Logger.b("VideoCommentAdapter", new Object[]{"addFeedItems:", Integer.valueOf(list.size())});
         this.d.addAll(list);
         notifyDataSetChanged();
     }
@@ -408,10 +400,10 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
         ViewHolder viewHolder;
         if (view == null) {
             viewHolder = new ViewHolder();
-            view2 = this.f20308c.inflate(R.layout.show_video_comment_item, viewGroup, false);
-            viewHolder.f20322a = (ImageView) view2.findViewById(R.id.header_view);
+            view2 = this.f6702c.inflate(R.layout.show_video_comment_item, viewGroup, false);
+            viewHolder.f6716a = (ImageView) view2.findViewById(R.id.header_view);
             viewHolder.d = (TextView) view2.findViewById(R.id.content_view);
-            viewHolder.f20323c = (TextView) view2.findViewById(R.id.name_view);
+            viewHolder.f6717c = (TextView) view2.findViewById(R.id.name_view);
             viewHolder.b = (TextView) view2.findViewById(R.id.time_view);
             viewHolder.e = (ImageView) view2.findViewById(R.id.img_verify);
             viewHolder.g = (ImageView) view2.findViewById(R.id.img_comment_like);
@@ -479,20 +471,20 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
             viewHolder.i.setVisibility(0);
         }
         UserInfoHelper.a(viewHolder.e, feedComment.vbadge, 3);
-        ImageLoader.a(this.f, AvatarUtils.a(1, feedComment.user_avatar)).b(R.drawable.user_bg_round).c().a(viewHolder.f20322a);
+        ImageLoader.a(this.f, AvatarUtils.a(1, feedComment.user_avatar)).b(R.drawable.user_bg_round).c().a(viewHolder.f6716a);
         if (TextUtils.isEmpty(feedComment.comment_timestamp)) {
             viewHolder.b.setText("");
         } else {
             viewHolder.b.setText(TimeAndDateUtils.h(this.b, TimeAndDateUtils.c(feedComment.comment_timestamp)));
         }
         if (TextUtils.isEmpty(feedComment.user_name)) {
-            viewHolder.f20323c.setText("");
+            viewHolder.f6717c.setText("");
         } else if (TextUtils.isEmpty(feedComment.note)) {
-            viewHolder.f20323c.setText(feedComment.user_name.replace(":", ""));
+            viewHolder.f6717c.setText(feedComment.user_name.replace(":", ""));
         } else {
-            viewHolder.f20323c.setText(StringUtils.a(feedComment.note, feedComment.user_name.replace(":", "")));
+            viewHolder.f6717c.setText(StringUtils.a(feedComment.note, feedComment.user_name.replace(":", "")));
         }
-        UserInfoHelper.a(this.b, viewHolder.f20323c, feedComment, R.color.syc_dark_k);
+        UserInfoHelper.a(this.b, viewHolder.f6717c, feedComment, R.color.syc_dark_k);
         UserInfoHelper.a(viewHolder.m, feedComment);
         if (TextUtils.isEmpty(feedComment.is_reply)) {
             viewHolder.d.setText("");
@@ -503,7 +495,7 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
         } else {
             viewHolder.d.setText("");
         }
-        final ImageView imageView2 = viewHolder.f20322a;
+        final ImageView imageView2 = viewHolder.f6716a;
         View.OnClickListener onClickListener = new View.OnClickListener() { // from class: com.blued.community.ui.video.adapter.VideoCommentAdapter.4
             @Override // android.view.View.OnClickListener
             public void onClick(View view3) {
@@ -518,8 +510,8 @@ public class VideoCommentAdapter extends BaseAdapter implements CommentListDataO
                 CommunityServiceManager.b().a(VideoCommentAdapter.this.b, userBasicModel, VideoCommentAdapter.this.k, imageView2);
             }
         };
-        viewHolder.f20323c.setOnClickListener(onClickListener);
-        viewHolder.f20322a.setOnClickListener(onClickListener);
+        viewHolder.f6717c.setOnClickListener(onClickListener);
+        viewHolder.f6716a.setOnClickListener(onClickListener);
         a(view2, feedComment);
         view2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.video.adapter.VideoCommentAdapter.5
             @Override // android.view.View.OnClickListener

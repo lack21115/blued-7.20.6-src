@@ -9,20 +9,16 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyPrepayBackBinding.class */
 public final class ItemYyPrepayBackBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16782a;
+    public final SquareImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16783c;
+    public final TextView c;
     private final RelativeLayout d;
 
     private ItemYyPrepayBackBinding(RelativeLayout relativeLayout, SquareImageView squareImageView, TextView textView, TextView textView2) {
         this.d = relativeLayout;
-        this.f16782a = squareImageView;
+        this.a = squareImageView;
         this.b = textView;
-        this.f16783c = textView2;
+        this.c = textView2;
     }
 
     public static ItemYyPrepayBackBinding a(View view) {
@@ -45,7 +41,6 @@ public final class ItemYyPrepayBackBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.d;

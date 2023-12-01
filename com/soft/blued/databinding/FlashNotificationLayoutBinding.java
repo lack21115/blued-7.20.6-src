@@ -12,20 +12,20 @@ import com.soft.blued.R;
 public final class FlashNotificationLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f28745a;
+    public final FrameLayout f15055a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ShapeConstraintLayout f28746c;
+    public final ShapeConstraintLayout f15056c;
     public final TextView d;
     public final TextView e;
     private final ShapeConstraintLayout f;
 
     private FlashNotificationLayoutBinding(ShapeConstraintLayout shapeConstraintLayout, FrameLayout frameLayout, ImageView imageView, ShapeConstraintLayout shapeConstraintLayout2, TextView textView, TextView textView2) {
         this.f = shapeConstraintLayout;
-        this.f28745a = frameLayout;
+        this.f15055a = frameLayout;
         this.b = imageView;
-        this.f28746c = shapeConstraintLayout2;
+        this.f15056c = shapeConstraintLayout2;
         this.d = textView;
         this.e = textView2;
     }
@@ -36,13 +36,13 @@ public final class FlashNotificationLayoutBinding implements ViewBinding {
         if (frameLayout != null) {
             ImageView imageView = (ImageView) view.findViewById(2131364232);
             if (imageView != null) {
-                ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(2131369470);
-                if (shapeConstraintLayout != null) {
+                ShapeConstraintLayout findViewById = view.findViewById(2131369470);
+                if (findViewById != null) {
                     TextView textView = (TextView) view.findViewById(R.id.tv_notification_content);
                     if (textView != null) {
                         TextView textView2 = (TextView) view.findViewById(R.id.tv_notification_title);
                         if (textView2 != null) {
-                            return new FlashNotificationLayoutBinding((ShapeConstraintLayout) view, frameLayout, imageView, shapeConstraintLayout, textView, textView2);
+                            return new FlashNotificationLayoutBinding((ShapeConstraintLayout) view, frameLayout, imageView, findViewById, textView, textView2);
                         }
                         str = "tvNotificationTitle";
                     } else {

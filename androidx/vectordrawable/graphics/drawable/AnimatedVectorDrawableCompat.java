@@ -36,11 +36,11 @@ import org.xmlpull.v1.XmlPullParserException;
 public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implements Animatable2Compat {
 
     /* renamed from: a  reason: collision with root package name */
-    AnimatedVectorDrawableDelegateState f3522a;
+    AnimatedVectorDrawableDelegateState f3474a;
     ArrayList<Animatable2Compat.AnimationCallback> b;
 
     /* renamed from: c  reason: collision with root package name */
-    final Drawable.Callback f3523c;
+    final Drawable.Callback f3475c;
     private AnimatedVectorDrawableCompatState e;
     private Context f;
     private android.animation.ArgbEvaluator g;
@@ -51,17 +51,17 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
     public static class AnimatedVectorDrawableCompatState extends Drawable.ConstantState {
 
         /* renamed from: a  reason: collision with root package name */
-        int f3526a;
+        int f3478a;
         VectorDrawableCompat b;
 
         /* renamed from: c  reason: collision with root package name */
-        AnimatorSet f3527c;
+        AnimatorSet f3479c;
         ArrayList<Animator> d;
         ArrayMap<Animator, String> e;
 
         public AnimatedVectorDrawableCompatState(Context context, AnimatedVectorDrawableCompatState animatedVectorDrawableCompatState, Drawable.Callback callback, Resources resources) {
             if (animatedVectorDrawableCompatState != null) {
-                this.f3526a = animatedVectorDrawableCompatState.f3526a;
+                this.f3478a = animatedVectorDrawableCompatState.f3478a;
                 VectorDrawableCompat vectorDrawableCompat = animatedVectorDrawableCompatState.b;
                 if (vectorDrawableCompat != null) {
                     Drawable.ConstantState constantState = vectorDrawableCompat.getConstantState();
@@ -96,7 +96,7 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
 
         @Override // android.graphics.drawable.Drawable.ConstantState
         public int getChangingConfigurations() {
-            return this.f3526a;
+            return this.f3478a;
         }
 
         @Override // android.graphics.drawable.Drawable.ConstantState
@@ -110,10 +110,10 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
         }
 
         public void setupAnimatorSet() {
-            if (this.f3527c == null) {
-                this.f3527c = new AnimatorSet();
+            if (this.f3479c == null) {
+                this.f3479c = new AnimatorSet();
             }
-            this.f3527c.playTogether(this.d);
+            this.f3479c.playTogether(this.d);
         }
     }
 
@@ -121,43 +121,43 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
     static class AnimatedVectorDrawableDelegateState extends Drawable.ConstantState {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Drawable.ConstantState f3528a;
+        private final Drawable.ConstantState f3480a;
 
         public AnimatedVectorDrawableDelegateState(Drawable.ConstantState constantState) {
-            this.f3528a = constantState;
+            this.f3480a = constantState;
         }
 
         @Override // android.graphics.drawable.Drawable.ConstantState
         public boolean canApplyTheme() {
-            return this.f3528a.canApplyTheme();
+            return this.f3480a.canApplyTheme();
         }
 
         @Override // android.graphics.drawable.Drawable.ConstantState
         public int getChangingConfigurations() {
-            return this.f3528a.getChangingConfigurations();
+            return this.f3480a.getChangingConfigurations();
         }
 
         @Override // android.graphics.drawable.Drawable.ConstantState
         public Drawable newDrawable() {
             AnimatedVectorDrawableCompat animatedVectorDrawableCompat = new AnimatedVectorDrawableCompat();
-            animatedVectorDrawableCompat.d = this.f3528a.newDrawable();
-            animatedVectorDrawableCompat.d.setCallback(animatedVectorDrawableCompat.f3523c);
+            animatedVectorDrawableCompat.d = this.f3480a.newDrawable();
+            animatedVectorDrawableCompat.d.setCallback(animatedVectorDrawableCompat.f3475c);
             return animatedVectorDrawableCompat;
         }
 
         @Override // android.graphics.drawable.Drawable.ConstantState
         public Drawable newDrawable(Resources resources) {
             AnimatedVectorDrawableCompat animatedVectorDrawableCompat = new AnimatedVectorDrawableCompat();
-            animatedVectorDrawableCompat.d = this.f3528a.newDrawable(resources);
-            animatedVectorDrawableCompat.d.setCallback(animatedVectorDrawableCompat.f3523c);
+            animatedVectorDrawableCompat.d = this.f3480a.newDrawable(resources);
+            animatedVectorDrawableCompat.d.setCallback(animatedVectorDrawableCompat.f3475c);
             return animatedVectorDrawableCompat;
         }
 
         @Override // android.graphics.drawable.Drawable.ConstantState
         public Drawable newDrawable(Resources resources, Resources.Theme theme) {
             AnimatedVectorDrawableCompat animatedVectorDrawableCompat = new AnimatedVectorDrawableCompat();
-            animatedVectorDrawableCompat.d = this.f3528a.newDrawable(resources, theme);
-            animatedVectorDrawableCompat.d.setCallback(animatedVectorDrawableCompat.f3523c);
+            animatedVectorDrawableCompat.d = this.f3480a.newDrawable(resources, theme);
+            animatedVectorDrawableCompat.d.setCallback(animatedVectorDrawableCompat.f3475c);
             return animatedVectorDrawableCompat;
         }
     }
@@ -174,7 +174,7 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
         this.g = null;
         this.h = null;
         this.b = null;
-        this.f3523c = new Drawable.Callback() { // from class: androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat.1
+        this.f3475c = new Drawable.Callback() { // from class: androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat.1
             @Override // android.graphics.drawable.Drawable.Callback
             public void invalidateDrawable(Drawable drawable) {
                 AnimatedVectorDrawableCompat.this.invalidateSelf();
@@ -194,13 +194,13 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
         if (animatedVectorDrawableCompatState != null) {
             this.e = animatedVectorDrawableCompatState;
         } else {
-            this.e = new AnimatedVectorDrawableCompatState(context, animatedVectorDrawableCompatState, this.f3523c, resources);
+            this.e = new AnimatedVectorDrawableCompatState(context, animatedVectorDrawableCompatState, this.f3475c, resources);
         }
     }
 
     private void a() {
         if (this.h != null) {
-            this.e.f3527c.removeListener(this.h);
+            this.e.f3479c.removeListener(this.h);
             this.h = null;
         }
     }
@@ -266,8 +266,8 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
         if (Build.VERSION.SDK_INT >= 24) {
             AnimatedVectorDrawableCompat animatedVectorDrawableCompat = new AnimatedVectorDrawableCompat(context);
             animatedVectorDrawableCompat.d = ResourcesCompat.getDrawable(context.getResources(), i, context.getTheme());
-            animatedVectorDrawableCompat.d.setCallback(animatedVectorDrawableCompat.f3523c);
-            animatedVectorDrawableCompat.f3522a = new AnimatedVectorDrawableDelegateState(animatedVectorDrawableCompat.d.getConstantState());
+            animatedVectorDrawableCompat.d.setCallback(animatedVectorDrawableCompat.f3475c);
+            animatedVectorDrawableCompat.f3474a = new AnimatedVectorDrawableDelegateState(animatedVectorDrawableCompat.d.getConstantState());
             return animatedVectorDrawableCompat;
         }
         try {
@@ -357,7 +357,7 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
             return;
         }
         this.e.b.draw(canvas);
-        if (this.e.f3527c.isStarted()) {
+        if (this.e.f3479c.isStarted()) {
             invalidateSelf();
         }
     }
@@ -369,7 +369,7 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
 
     @Override // android.graphics.drawable.Drawable
     public int getChangingConfigurations() {
-        return this.d != null ? this.d.getChangingConfigurations() : super.getChangingConfigurations() | this.e.f3526a;
+        return this.d != null ? this.d.getChangingConfigurations() : super.getChangingConfigurations() | this.e.f3478a;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -452,7 +452,7 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
                     if (resourceId != 0) {
                         VectorDrawableCompat create = VectorDrawableCompat.create(resources, resourceId, theme);
                         create.a(false);
-                        create.setCallback(this.f3523c);
+                        create.setCallback(this.f3475c);
                         if (this.e.b != null) {
                             this.e.b.setCallback(null);
                         }
@@ -488,7 +488,7 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
 
     @Override // android.graphics.drawable.Animatable
     public boolean isRunning() {
-        return this.d != null ? ((AnimatedVectorDrawable) this.d).isRunning() : this.e.f3527c.isRunning();
+        return this.d != null ? ((AnimatedVectorDrawable) this.d).isRunning() : this.e.f3479c.isRunning();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -577,7 +577,7 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
                     }
                 };
             }
-            this.e.f3527c.addListener(this.h);
+            this.e.f3479c.addListener(this.h);
         }
     }
 
@@ -678,9 +678,9 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
     public void start() {
         if (this.d != null) {
             ((AnimatedVectorDrawable) this.d).start();
-        } else if (this.e.f3527c.isStarted()) {
+        } else if (this.e.f3479c.isStarted()) {
         } else {
-            this.e.f3527c.start();
+            this.e.f3479c.start();
             invalidateSelf();
         }
     }
@@ -690,7 +690,7 @@ public class AnimatedVectorDrawableCompat extends VectorDrawableCommon implement
         if (this.d != null) {
             ((AnimatedVectorDrawable) this.d).stop();
         } else {
-            this.e.f3527c.end();
+            this.e.f3479c.end();
         }
     }
 

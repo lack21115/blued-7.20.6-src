@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import com.cdo.oaps.ad.OapsKey;
+import com.huawei.hms.ads.fw;
 import java.util.HashMap;
 import org.xmlpull.v1.XmlPullParser;
 
@@ -115,7 +116,7 @@ public class e extends com.zk_oaction.adengine.lk_view.b {
     @Override // com.zk_oaction.adengine.lk_view.b, com.zk_oaction.adengine.lk_sdk.interfaces.f
     public void c(String str) {
         boolean z;
-        if (str.equals("true")) {
+        if (str.equals(fw.Code)) {
             this.V = true;
             return;
         }
@@ -137,7 +138,7 @@ public class e extends com.zk_oaction.adengine.lk_view.b {
         return false;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void draw(Canvas canvas) {
         com.zk_oaction.adengine.lk_interfaces.b bVar = this.U;
         if (bVar != null && bVar.b() != null) {
@@ -151,9 +152,8 @@ public class e extends com.zk_oaction.adengine.lk_view.b {
         return this.V;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.ab = null;
         try {
@@ -164,9 +164,8 @@ public class e extends com.zk_oaction.adengine.lk_view.b {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         int visibility = getVisibility();
         this.W = visibility;

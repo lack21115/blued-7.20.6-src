@@ -3,15 +3,17 @@ package com.autonavi.aps.amapapi.trans;
 import android.content.Context;
 import android.provider.MediaStore;
 import android.security.Credentials;
-import com.amap.api.col.p0003sl.ho;
-import com.amap.api.col.p0003sl.hr;
-import com.amap.api.col.p0003sl.hu;
-import com.amap.api.col.p0003sl.hz;
-import com.amap.api.col.p0003sl.ib;
-import com.amap.api.col.p0003sl.ju;
-import com.amap.api.col.p0003sl.kb;
-import com.amap.api.col.p0003sl.kc;
+import com.amap.api.col.3sl.ho;
+import com.amap.api.col.3sl.hr;
+import com.amap.api.col.3sl.hu;
+import com.amap.api.col.3sl.hz;
+import com.amap.api.col.3sl.ib;
+import com.amap.api.col.3sl.ju;
+import com.amap.api.col.3sl.kb;
+import com.amap.api.col.3sl.kc;
 import com.autonavi.aps.amapapi.utils.i;
+import com.huawei.openalliance.ad.utils.ay;
+import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 import com.umeng.analytics.pro.bh;
 import java.util.HashMap;
 import java.util.Locale;
@@ -21,23 +23,23 @@ public final class c {
     private static c b;
 
     /* renamed from: a  reason: collision with root package name */
-    ju f9270a;
+    ju f6430a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f9271c;
+    private Context f6431c;
     private int d = com.autonavi.aps.amapapi.utils.b.i;
     private boolean e = false;
     private int f = 0;
 
     private c(Context context) {
-        this.f9270a = null;
-        this.f9271c = null;
+        this.f6430a = null;
+        this.f6431c = null;
         try {
             hu.a().a(context);
         } catch (Throwable th) {
         }
-        this.f9271c = context;
-        this.f9270a = ju.a();
+        this.f6431c = context;
+        this.f6430a = ju.a();
     }
 
     public static c a(Context context) {
@@ -49,7 +51,7 @@ public final class c {
 
     public final kc a(d dVar) throws Throwable {
         if (this.e) {
-            dVar.setHttpProtocol(kb.c.HTTPS);
+            dVar.setHttpProtocol(kb.c.b);
         }
         return ju.a(dVar);
     }
@@ -63,15 +65,15 @@ public final class c {
                 hashMap.put("Content-Type", "application/octet-stream");
                 hashMap.put("Accept-Encoding", "gzip");
                 hashMap.put("gzipped", "1");
-                hashMap.put("Connection", com.anythink.expressad.foundation.g.f.g.c.f7906c);
+                hashMap.put("Connection", com.anythink.expressad.foundation.g.f.g.c.f5066c);
                 hashMap.put("User-Agent", "AMAP_Location_SDK_Android 6.1.0");
                 hashMap.put(Credentials.EXTRA_PUBLIC_KEY, ho.f(context));
-                hashMap.put("enginever", com.autonavi.aps.amapapi.utils.b.f9278a);
+                hashMap.put("enginever", com.autonavi.aps.amapapi.utils.b.f6438a);
                 String a2 = hr.a();
                 String a3 = hr.a(context, a2, "key=" + ho.f(context));
                 hashMap.put("ts", a2);
                 hashMap.put("scode", a3);
-                if (Double.valueOf(com.autonavi.aps.amapapi.utils.b.f9278a).doubleValue() >= 5.3d) {
+                if (Double.valueOf(com.autonavi.aps.amapapi.utils.b.f6438a).doubleValue() >= 5.3d) {
                     hashMap.put("aps_s_src", "openapi");
                 }
                 hashMap.put("encr", "1");
@@ -89,20 +91,20 @@ public final class c {
                 hashMap2.put(bh.bt, "3103");
                 int i = this.f;
                 if (i == 0) {
-                    hashMap2.remove("custom");
+                    hashMap2.remove(WbCloudFaceContant.CUSTOM);
                 } else if (i == 1) {
-                    hashMap2.put("custom", "language:cn");
+                    hashMap2.put(WbCloudFaceContant.CUSTOM, "language:cn");
                 } else if (i != 2) {
-                    hashMap2.remove("custom");
+                    hashMap2.remove(WbCloudFaceContant.CUSTOM);
                 } else {
-                    hashMap2.put("custom", "language:en");
+                    hashMap2.put(WbCloudFaceContant.CUSTOM, "language:en");
                 }
                 dVar2.a(hashMap2);
                 dVar2.setConnectionTimeout(this.d);
                 dVar2.setSoTimeout(this.d);
                 dVar = dVar2;
                 if (this.e) {
-                    dVar2.setHttpProtocol(kb.c.HTTPS);
+                    dVar2.setHttpProtocol(kb.c.b);
                     return dVar2;
                 }
             } catch (Throwable th) {
@@ -120,22 +122,22 @@ public final class c {
             d dVar = new d(context, com.autonavi.aps.amapapi.utils.b.c());
             hashMap.clear();
             hashMap.put("Content-Type", "application/x-www-form-urlencoded");
-            hashMap.put("Connection", com.anythink.expressad.foundation.g.f.g.c.f7906c);
+            hashMap.put("Connection", com.anythink.expressad.foundation.g.f.g.c.f5066c);
             hashMap.put("User-Agent", "AMAP_Location_SDK_Android 6.1.0");
             HashMap hashMap2 = new HashMap(16);
-            hashMap2.put("custom", "26260A1F00020002");
+            hashMap2.put(WbCloudFaceContant.CUSTOM, "26260A1F00020002");
             hashMap2.put("key", ho.f(context));
             int i = this.f;
             if (i == 0) {
                 hashMap2.remove("language");
             } else if (i == 1) {
-                hashMap2.put("language", "zh-CN");
+                hashMap2.put("language", ay.Code);
             } else if (i != 2) {
                 hashMap2.remove("language");
             } else {
                 hashMap2.put("language", "en");
             }
-            hashMap2.put("curLocationType", i.m(this.f9271c) ? "coarseLoc" : "fineLoc");
+            hashMap2.put("curLocationType", i.m(this.f6431c) ? "coarseLoc" : "fineLoc");
             String a2 = hr.a();
             String a3 = hr.a(context, a2, ib.b(hashMap2));
             hashMap2.put("ts", a2);
@@ -152,9 +154,9 @@ public final class c {
             dVar.c("http://dualstack-arestapi.amap.com/v3/geocode/regeo");
             dVar.b("http://restsdk.amap.com/v3/geocode/regeo");
             if (this.e) {
-                dVar.setHttpProtocol(kb.c.HTTPS);
+                dVar.setHttpProtocol(kb.c.b);
             }
-            return new String(ju.a(dVar).f5264a, "utf-8");
+            return new String(ju.a(dVar).a, "utf-8");
         } catch (Throwable th) {
             return null;
         }

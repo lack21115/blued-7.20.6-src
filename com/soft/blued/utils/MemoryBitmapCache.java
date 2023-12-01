@@ -7,7 +7,6 @@ import android.os.Build;
 import android.util.LruCache;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.GlideApp;
-import com.blued.android.core.image.GlideRequest;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
@@ -18,11 +17,11 @@ import java.security.NoSuchAlgorithmException;
 public class MemoryBitmapCache {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f34758a = MemoryBitmapCache.class.getSimpleName();
+    public static final String f21067a = MemoryBitmapCache.class.getSimpleName();
     private static volatile MemoryBitmapCache b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LruCache<String, BitmapWrapper> f34759c = new LruCache<String, BitmapWrapper>(((int) Runtime.getRuntime().maxMemory()) / 10) { // from class: com.soft.blued.utils.MemoryBitmapCache.1
+    private LruCache<String, BitmapWrapper> f21068c = new LruCache<String, BitmapWrapper>(((int) Runtime.getRuntime().maxMemory()) / 10) { // from class: com.soft.blued.utils.MemoryBitmapCache.1
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.util.LruCache
         /* renamed from: a */
@@ -35,7 +34,7 @@ public class MemoryBitmapCache {
     public static class BitmapWrapper {
 
         /* renamed from: a  reason: collision with root package name */
-        public Bitmap f34762a;
+        public Bitmap f21071a;
         public int b;
     }
 
@@ -109,18 +108,18 @@ public class MemoryBitmapCache {
     }
 
     public Bitmap a(String str) {
-        BitmapWrapper bitmapWrapper = this.f34759c.get(c(str));
+        BitmapWrapper bitmapWrapper = this.f21068c.get(c(str));
         if (bitmapWrapper == null) {
             return null;
         }
-        return bitmapWrapper.f34762a;
+        return bitmapWrapper.f21071a;
     }
 
     public void a(Context context, final String str) {
         if (a(str) != null) {
             return;
         }
-        GlideApp.b(context).f().b(DiskCacheStrategy.b).e(-1).b(str).a((GlideRequest<Bitmap>) new SimpleTarget<Bitmap>() { // from class: com.soft.blued.utils.MemoryBitmapCache.2
+        GlideApp.b(context).a().a(DiskCacheStrategy.b).d(-1).a(str).a(new SimpleTarget<Bitmap>() { // from class: com.soft.blued.utils.MemoryBitmapCache.2
             @Override // com.bumptech.glide.request.target.Target
             /* renamed from: a */
             public void onResourceReady(Bitmap bitmap, Transition<? super Bitmap> transition) {
@@ -133,21 +132,21 @@ public class MemoryBitmapCache {
     }
 
     public void a(String str, Bitmap bitmap) {
-        String str2 = f34758a;
-        com.blued.android.framework.utils.Logger.c(str2, "put : " + str);
+        String str2 = f21067a;
+        com.blued.android.framework.utils.Logger.c(str2, new Object[]{"put : " + str});
         if (a(str) == null) {
             BitmapWrapper bitmapWrapper = new BitmapWrapper();
             bitmapWrapper.b = a(bitmap);
-            bitmapWrapper.f34762a = bitmap;
-            this.f34759c.put(c(str), bitmapWrapper);
+            bitmapWrapper.f21071a = bitmap;
+            this.f21068c.put(c(str), bitmapWrapper);
         }
-        String str3 = f34758a;
-        com.blued.android.framework.utils.Logger.c(str3, "currentSize : " + this.f34759c.size() + "   maxSize : " + this.f34759c.maxSize());
+        String str3 = f21067a;
+        com.blued.android.framework.utils.Logger.c(str3, new Object[]{"currentSize : " + this.f21068c.size() + "   maxSize : " + this.f21068c.maxSize()});
     }
 
     public BitmapWrapper b(String str) {
-        String str2 = f34758a;
-        com.blued.android.framework.utils.Logger.c(str2, "remove : " + str);
-        return this.f34759c.remove(c(str));
+        String str2 = f21067a;
+        com.blued.android.framework.utils.Logger.c(str2, new Object[]{"remove : " + str});
+        return this.f21068c.remove(c(str));
     }
 }

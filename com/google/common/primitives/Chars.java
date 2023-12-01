@@ -33,12 +33,12 @@ public final class Chars {
             this.end = i2;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean contains(Object obj) {
             return (obj instanceof Character) && Chars.indexOf(this.array, ((Character) obj).charValue(), this.start, this.end) != -1;
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public boolean equals(@NullableDecl Object obj) {
             if (obj == this) {
                 return true;
@@ -70,7 +70,7 @@ public final class Chars {
             return Character.valueOf(this.array[this.start + i]);
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public int hashCode() {
             int i = 1;
             for (int i2 = this.start; i2 < this.end; i2++) {
@@ -88,7 +88,7 @@ public final class Chars {
             return indexOf - this.start;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean isEmpty() {
             return false;
         }
@@ -202,7 +202,7 @@ public final class Chars {
         char[] cArr3 = new char[i];
         int i2 = 0;
         for (char[] cArr4 : cArr) {
-            System.arraycopy((Object) cArr4, 0, (Object) cArr3, i2, cArr4.length);
+            System.arraycopy(cArr4, 0, cArr3, i2, cArr4.length);
             i2 += cArr4.length;
         }
         return cArr3;

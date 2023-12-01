@@ -26,11 +26,11 @@ public class t3 {
     public static volatile t3 o;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f3992a;
+    public final Context f3944a;
     public final u3 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ExecutorService f3993c;
+    public final ExecutorService f3945c;
     public final HashMap<String, v3> d;
     public final PackageManager e;
     public final TelephonyManager f;
@@ -66,7 +66,7 @@ public class t3 {
     }
 
     public t3(Context context) {
-        this.f3992a = context;
+        this.f3944a = context;
         this.e = context.getPackageManager();
         this.f = (TelephonyManager) context.getSystemService("phone");
         this.g = (WifiManager) context.getSystemService("wifi");
@@ -75,7 +75,7 @@ public class t3 {
         this.i = new s4(context, g6.a(context.getPackageName()));
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 5, 60000L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), new a(this));
         threadPoolExecutor.allowCoreThreadTimeOut(true);
-        this.f3993c = threadPoolExecutor;
+        this.f3945c = threadPoolExecutor;
         HandlerThread handlerThread = new HandlerThread("GeoLocationService");
         n = handlerThread;
         handlerThread.start();
@@ -190,7 +190,7 @@ public class t3 {
     }
 
     public ExecutorService e() {
-        return this.f3993c;
+        return this.f3945c;
     }
 
     public WifiManager f() {
@@ -231,12 +231,12 @@ public class t3 {
         PackageInfo n2 = n();
         u3Var.b(n2.versionCode);
         u3Var.j(n2.versionName);
-        CharSequence loadLabel = this.f3992a.getApplicationInfo().loadLabel(this.e);
+        CharSequence loadLabel = this.f3944a.getApplicationInfo().loadLabel(this.e);
         u3Var.a(loadLabel != null ? loadLabel.toString() : "unknown");
         try {
             TelephonyManager d = d();
             if (d != null) {
-                this.k = c6.a(q3.h(), c6.f3779a).toUpperCase(Locale.ENGLISH);
+                this.k = c6.a(q3.h(), c6.f3731a).toUpperCase(Locale.ENGLISH);
                 String a2 = c6.a(q3.j(), c6.b);
                 u3Var.a(d.getPhoneType());
                 u3Var.b(this.k);
@@ -244,7 +244,7 @@ public class t3 {
             }
         } catch (Throwable th) {
         }
-        u3Var.f(c6.a(q3.l().replaceAll(":", "").toUpperCase(Locale.ENGLISH), c6.f3780c));
+        u3Var.f(c6.a(q3.l().replaceAll(":", "").toUpperCase(Locale.ENGLISH), c6.f3732c));
         PackageManager packageManager = this.e;
         boolean hasSystemFeature = packageManager.hasSystemFeature(PackageManager.FEATURE_LOCATION_GPS);
         boolean hasSystemFeature2 = packageManager.hasSystemFeature(PackageManager.FEATURE_WIFI);
@@ -268,7 +268,7 @@ public class t3 {
 
     public final PackageInfo n() {
         try {
-            return this.e.getPackageInfo(this.f3992a.getPackageName(), 0);
+            return this.e.getPackageInfo(this.f3944a.getPackageName(), 0);
         } catch (PackageManager.NameNotFoundException e) {
             return new PackageInfo();
         }

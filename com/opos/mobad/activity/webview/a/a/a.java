@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutorService;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f25637a = new byte[0];
+    private static final byte[] f11949a = new byte[0];
     private static volatile ExecutorService b;
 
     public static int a() {

@@ -41,13 +41,13 @@ public class InternalSSLSocketFactory29 extends SSLSocketFactory {
     @Override // javax.net.ssl.SSLSocketFactory
     public Socket createSocket(Socket socket, String str, int i, boolean z) throws IOException {
         try {
-            String a2 = HttpsIPAccessUtils.a(str);
+            String a = HttpsIPAccessUtils.a(str);
             SSLCertificateSocketFactory sSLCertificateSocketFactory = (SSLCertificateSocketFactory) SSLCertificateSocketFactory.getInsecure(10000, new SSLSessionCache(AppInfo.d()));
             SSLSocket sSLSocket = (SSLSocket) sSLCertificateSocketFactory.createSocket(socket, str, i, z);
             sSLCertificateSocketFactory.setUseSessionTickets(sSLSocket, true);
             sSLSocket.setEnabledProtocols(sSLSocket.getSupportedProtocols());
-            if (!TextUtils.isEmpty(a2)) {
-                sSLCertificateSocketFactory.setHostname(sSLSocket, a2);
+            if (!TextUtils.isEmpty(a)) {
+                sSLCertificateSocketFactory.setHostname(sSLSocket, a);
             }
             sSLSocket.startHandshake();
             return sSLSocket;

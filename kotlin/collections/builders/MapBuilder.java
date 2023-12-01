@@ -20,13 +20,9 @@ import kotlin.ranges.RangesKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/builders/MapBuilder.class */
 public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutableMap {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Companion f42405a = new Companion(null);
+    private static final Companion a = new Companion(null);
     private K[] b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private V[] f42406c;
+    private V[] c;
     private int[] d;
     private int[] e;
     private int f;
@@ -98,7 +94,7 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
                 sb.append(obj);
             }
             sb.append('=');
-            Object[] objArr = ((MapBuilder) c()).f42406c;
+            Object[] objArr = ((MapBuilder) c()).c;
             Intrinsics.a(objArr);
             Object obj2 = objArr[e()];
             if (Intrinsics.a(obj2, c())) {
@@ -117,7 +113,7 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
                 Object obj = ((MapBuilder) c()).b[e()];
                 int i = 0;
                 int hashCode = obj != null ? obj.hashCode() : 0;
-                Object[] objArr = ((MapBuilder) c()).f42406c;
+                Object[] objArr = ((MapBuilder) c()).c;
                 Intrinsics.a(objArr);
                 Object obj2 = objArr[e()];
                 if (obj2 != null) {
@@ -133,14 +129,12 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/builders/MapBuilder$EntryRef.class */
     public static final class EntryRef<K, V> implements Map.Entry<K, V>, KMutableMap.Entry {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final MapBuilder<K, V> f42407a;
+        private final MapBuilder<K, V> a;
         private final int b;
 
         public EntryRef(MapBuilder<K, V> map, int i) {
             Intrinsics.e(map, "map");
-            this.f42407a = map;
+            this.a = map;
             this.b = i;
         }
 
@@ -155,12 +149,12 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
 
         @Override // java.util.Map.Entry
         public K getKey() {
-            return (K) ((MapBuilder) this.f42407a).b[this.b];
+            return (K) ((MapBuilder) this.a).b[this.b];
         }
 
         @Override // java.util.Map.Entry
         public V getValue() {
-            Object[] objArr = ((MapBuilder) this.f42407a).f42406c;
+            Object[] objArr = ((MapBuilder) this.a).c;
             Intrinsics.a(objArr);
             return (V) objArr[this.b];
         }
@@ -179,8 +173,8 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
 
         @Override // java.util.Map.Entry
         public V setValue(V v) {
-            this.f42407a.g();
-            Object[] m = this.f42407a.m();
+            this.a.g();
+            Object[] m = this.a.m();
             int i = this.b;
             V v2 = (V) m[i];
             m[i] = v;
@@ -199,18 +193,14 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/builders/MapBuilder$Itr.class */
     public static class Itr<K, V> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final MapBuilder<K, V> f42408a;
+        private final MapBuilder<K, V> a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f42409c;
+        private int c;
 
         public Itr(MapBuilder<K, V> map) {
             Intrinsics.e(map, "map");
-            this.f42408a = map;
-            this.f42409c = -1;
+            this.a = map;
+            this.c = -1;
             f();
         }
 
@@ -219,11 +209,11 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
         }
 
         public final void b(int i) {
-            this.f42409c = i;
+            this.c = i;
         }
 
         public final MapBuilder<K, V> c() {
-            return this.f42408a;
+            return this.a;
         }
 
         public final int d() {
@@ -231,12 +221,12 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
         }
 
         public final int e() {
-            return this.f42409c;
+            return this.c;
         }
 
         public final void f() {
-            while (this.b < ((MapBuilder) this.f42408a).g) {
-                int[] iArr = ((MapBuilder) this.f42408a).d;
+            while (this.b < ((MapBuilder) this.a).g) {
+                int[] iArr = ((MapBuilder) this.a).d;
                 int i = this.b;
                 if (iArr[i] >= 0) {
                     return;
@@ -246,16 +236,16 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
         }
 
         public final boolean hasNext() {
-            return this.b < ((MapBuilder) this.f42408a).g;
+            return this.b < ((MapBuilder) this.a).g;
         }
 
         public final void remove() {
-            if (!(this.f42409c != -1)) {
+            if (!(this.c != -1)) {
                 throw new IllegalStateException("Call next() before removing element from the iterator.".toString());
             }
-            this.f42408a.g();
-            this.f42408a.e(this.f42409c);
-            this.f42409c = -1;
+            this.a.g();
+            this.a.e(this.c);
+            this.c = -1;
         }
     }
 
@@ -297,7 +287,7 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
                 int d = d();
                 a(d + 1);
                 b(d);
-                Object[] objArr = ((MapBuilder) c()).f42406c;
+                Object[] objArr = ((MapBuilder) c()).c;
                 Intrinsics.a(objArr);
                 V v = (V) objArr[e()];
                 f();
@@ -312,17 +302,17 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
     }
 
     public MapBuilder(int i) {
-        this(ListBuilderKt.a(i), null, new int[i], new int[f42405a.a(i)], 2, 0);
+        this(ListBuilderKt.a(i), null, new int[i], new int[a.a(i)], 2, 0);
     }
 
     private MapBuilder(K[] kArr, V[] vArr, int[] iArr, int[] iArr2, int i, int i2) {
         this.b = kArr;
-        this.f42406c = vArr;
+        this.c = vArr;
         this.d = iArr;
         this.e = iArr2;
         this.f = i;
         this.g = i2;
-        this.h = f42405a.b(l());
+        this.h = a.b(l());
     }
 
     private final void a(int i) {
@@ -351,12 +341,12 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
             i = k;
         }
         this.b = (K[]) ListBuilderKt.a(this.b, i);
-        V[] vArr = this.f42406c;
-        this.f42406c = vArr != null ? ListBuilderKt.a(vArr, i) : null;
+        V[] vArr = this.c;
+        this.c = vArr != null ? ListBuilderKt.a(vArr, i) : null;
         int[] copyOf = Arrays.copyOf(this.d, i);
         Intrinsics.c(copyOf, "copyOf(this, newSize)");
         this.d = copyOf;
-        int a2 = f42405a.a(i);
+        int a2 = a.a(i);
         if (a2 > l()) {
             c(a2);
         }
@@ -383,7 +373,7 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
         }
         if (i != l()) {
             this.e = new int[i];
-            this.h = f42405a.b(i);
+            this.h = a.b(i);
             i2 = 0;
         } else {
             ArraysKt.a(this.e, 0, 0, l());
@@ -477,7 +467,7 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
             }
             i = i2;
             if (this.d[i2] >= 0) {
-                V[] vArr = this.f42406c;
+                V[] vArr = this.c;
                 Intrinsics.a(vArr);
                 i = i2;
                 if (Intrinsics.a(vArr[i2], v)) {
@@ -539,19 +529,19 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
 
     /* JADX INFO: Access modifiers changed from: private */
     public final V[] m() {
-        V[] vArr = this.f42406c;
+        V[] vArr = this.c;
         if (vArr != null) {
             return vArr;
         }
         V[] vArr2 = (V[]) ListBuilderKt.a(k());
-        this.f42406c = vArr2;
+        this.c = vArr2;
         return vArr2;
     }
 
     private final void n() {
         int i;
         int i2;
-        V[] vArr = this.f42406c;
+        V[] vArr = this.c;
         int i3 = 0;
         int i4 = 0;
         while (true) {
@@ -650,7 +640,7 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
         if (e < 0) {
             return false;
         }
-        V[] vArr = this.f42406c;
+        V[] vArr = this.c;
         Intrinsics.a(vArr);
         return Intrinsics.a(vArr[e], entry.getValue());
     }
@@ -676,7 +666,7 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
         if (e < 0) {
             return false;
         }
-        V[] vArr = this.f42406c;
+        V[] vArr = this.c;
         Intrinsics.a(vArr);
         if (Intrinsics.a(vArr[e], entry.getValue())) {
             e(e);
@@ -722,7 +712,7 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
             }
         }
         ListBuilderKt.a(this.b, 0, this.g);
-        V[] vArr = this.f42406c;
+        V[] vArr = this.c;
         if (vArr != null) {
             ListBuilderKt.a(vArr, 0, this.g);
         }
@@ -798,7 +788,7 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
         if (e < 0) {
             return null;
         }
-        V[] vArr = this.f42406c;
+        V[] vArr = this.c;
         Intrinsics.a(vArr);
         return vArr[e];
     }
@@ -867,7 +857,7 @@ public final class MapBuilder<K, V> implements Serializable, Map<K, V>, KMutable
         if (b < 0) {
             return null;
         }
-        V[] vArr = this.f42406c;
+        V[] vArr = this.c;
         Intrinsics.a(vArr);
         V v = vArr[b];
         ListBuilderKt.b(vArr, b);

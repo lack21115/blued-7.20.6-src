@@ -26,30 +26,30 @@ public class AppCompatRadioButton extends RadioButton implements EmojiCompatConf
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<AppCompatRadioButton> {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1774a = false;
+        private boolean f1726a = false;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1775c;
+        private int f1727c;
         private int d;
         private int e;
 
         @Override // android.view.inspector.InspectionCompanion
         public void mapProperties(PropertyMapper propertyMapper) {
             this.b = propertyMapper.mapObject("backgroundTint", R.attr.backgroundTint);
-            this.f1775c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
+            this.f1727c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
             this.d = propertyMapper.mapObject("buttonTint", R.attr.buttonTint);
             this.e = propertyMapper.mapObject("buttonTintMode", R.attr.buttonTintMode);
-            this.f1774a = true;
+            this.f1726a = true;
         }
 
         @Override // android.view.inspector.InspectionCompanion
         public void readProperties(AppCompatRadioButton appCompatRadioButton, PropertyReader propertyReader) {
-            if (!this.f1774a) {
+            if (!this.f1726a) {
                 throw new InspectionCompanion.UninitializedPropertyMapException();
             }
             propertyReader.readObject(this.b, appCompatRadioButton.getBackgroundTintList());
-            propertyReader.readObject(this.f1775c, appCompatRadioButton.getBackgroundTintMode());
+            propertyReader.readObject(this.f1727c, appCompatRadioButton.getBackgroundTintMode());
             propertyReader.readObject(this.d, appCompatRadioButton.getButtonTintList());
             propertyReader.readObject(this.e, appCompatRadioButton.getButtonTintMode());
         }
@@ -85,9 +85,8 @@ public class AppCompatRadioButton extends RadioButton implements EmojiCompatConf
         return this.mAppCompatEmojiTextHelper;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.CompoundButton, android.widget.TextView, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
         if (appCompatBackgroundHelper != null) {

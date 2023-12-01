@@ -13,11 +13,11 @@ import org.json.JSONObject;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f24658a;
+    private Context f10971a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f24659c;
+    private int f10972c;
     private int d = 0;
     private com.opos.cmn.biz.monitor.b.a e;
     private a f;
@@ -30,9 +30,9 @@ public class e {
     }
 
     public e(Context context, String str, int i, com.opos.cmn.biz.monitor.b.a aVar, a aVar2) {
-        this.f24658a = context;
+        this.f10971a = context;
         this.b = str;
-        this.f24659c = i;
+        this.f10972c = i;
         this.e = aVar;
         this.f = aVar2;
     }
@@ -78,7 +78,7 @@ public class e {
             if (TextUtils.isEmpty(str)) {
                 str2 = map.get(HttpHeaders.LOCATION);
             }
-            if (this.d < this.f24659c && !TextUtils.isEmpty(str2)) {
+            if (this.d < this.f10972c && !TextUtils.isEmpty(str2)) {
                 com.opos.cmn.an.f.a.b("NetRequestExecutor", "retry with url:" + str2);
                 this.d = this.d + 1;
                 a(str2);
@@ -100,8 +100,8 @@ public class e {
     protected void a(final String str) {
         HashMap hashMap = new HashMap();
         hashMap.put(HttpHeaders.ACCEPT, "application/json");
-        this.e.a(this.f24658a, new b.a(str).a(hashMap).a(), new a.InterfaceC0627a() { // from class: com.opos.cmn.biz.monitor.b.e.1
-            @Override // com.opos.cmn.biz.monitor.b.a.InterfaceC0627a
+        this.e.a(this.f10971a, new b.a(str).a(hashMap).a(), new a.InterfaceC0457a() { // from class: com.opos.cmn.biz.monitor.b.e.1
+            @Override // com.opos.cmn.biz.monitor.b.a.InterfaceC0457a
             public void a() {
                 com.opos.cmn.an.f.a.b("NetRequestExecutor", "request fail with url:" + str);
                 if (e.this.f != null) {
@@ -109,7 +109,7 @@ public class e {
                 }
             }
 
-            @Override // com.opos.cmn.biz.monitor.b.a.InterfaceC0627a
+            @Override // com.opos.cmn.biz.monitor.b.a.InterfaceC0457a
             public void a(c cVar) {
                 com.opos.cmn.an.f.a.b("NetRequestExecutor", "result code:" + cVar.a());
                 e.this.a(cVar.a(), cVar.c(), cVar.b());

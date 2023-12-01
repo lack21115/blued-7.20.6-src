@@ -7,7 +7,6 @@ import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.module.common.base.mvvm.BaseViewModel;
 import com.blued.android.module.live_china.live_info.LiveRoomInfo;
-import com.sina.weibo.sdk.constant.WBPageConstants;
 import java.util.List;
 import java.util.Map;
 import kotlin.Metadata;
@@ -16,12 +15,10 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/test/LiveHomeViewModelTest.class */
 public final class LiveHomeViewModelTest extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final MutableLiveData<List<BluedLiveListDataTest>> f14143a = new MutableLiveData<>();
+    private final MutableLiveData<List<BluedLiveListDataTest>> a = new MutableLiveData<>();
 
     public final MutableLiveData<List<BluedLiveListDataTest>> d() {
-        return this.f14143a;
+        return this.a;
     }
 
     public final void e() {
@@ -46,10 +43,10 @@ public final class LiveHomeViewModelTest extends BaseViewModel {
     }
 
     public final void f() {
-        String a2 = Intrinsics.a(LiveRoomInfo.a().k(), (Object) "/live/followed-list");
-        Map<String, String> a3 = BluedHttpTools.a();
-        a3.put(WBPageConstants.ParamKey.PAGE, "1");
-        HttpManager.a(a2, new BluedUIHttpResponse<BluedEntityA<BluedLiveListDataTest>>() { // from class: com.blued.android.module.live_china.test.LiveHomeViewModelTest$getLiveFollowList$1
+        String a = Intrinsics.a(LiveRoomInfo.a().k(), (Object) "/live/followed-list");
+        Map<String, String> a2 = BluedHttpTools.a();
+        a2.put("page", "1");
+        HttpManager.a(a, new BluedUIHttpResponse<BluedEntityA<BluedLiveListDataTest>>() { // from class: com.blued.android.module.live_china.test.LiveHomeViewModelTest$getLiveFollowList$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(null);
@@ -66,6 +63,6 @@ public final class LiveHomeViewModelTest extends BaseViewModel {
             public void onUIFinish() {
                 super.onUIFinish();
             }
-        }, null).b(BluedHttpTools.a(true)).a(a3).h();
+        }, null).b(BluedHttpTools.a(true)).a(a2).h();
     }
 }

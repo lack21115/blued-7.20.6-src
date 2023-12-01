@@ -12,13 +12,11 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/rank/FitemRankHostExtra.class */
 public final class FitemRankHostExtra extends FreedomItem {
     private final String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f14063c;
+    private final int c;
 
     public FitemRankHostExtra(String str, int i) {
         this.b = str;
-        this.f14063c = i;
+        this.c = i;
     }
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
@@ -35,7 +33,7 @@ public final class FitemRankHostExtra extends FreedomItem {
         } else if (Intrinsics.a((Object) this.b, (Object) "anchor")) {
             vh.a(R.id.tv_extra_rank_label, "忠实粉丝").d(R.id.rl_extra_rank_label, R.drawable.rank_extra_host_bg).a(R.id.iv_extra_rank_icon, "https://web.bldimg.com/image-manager/1689582813_63824.webp").a(R.id.iv_list_bg, "https://web.bldimg.com/image-manager/1689746509_20748.webp").a(R.id.tv_extra_rank_name, "主播");
         } else {
-            if (this.f14063c == 0) {
+            if (this.c == 0) {
                 vh.a(R.id.tv_extra_rank_label, "公会之星").d(R.id.rl_extra_rank_label, R.drawable.rank_extra_union_bg).a(R.id.iv_extra_rank_icon, "https://web.bldimg.com/image-manager/1689582813_20837.webp").a(R.id.tv_extra_rank_name, "公会");
             } else {
                 vh.a(R.id.tv_extra_rank_label, "MVP用户").d(R.id.rl_extra_rank_label, R.drawable.rank_extra_union_ladder_bg).a(R.id.iv_extra_rank_icon, "https://web.bldimg.com/image-manager/1689582813_52262.webp").a(R.id.tv_extra_rank_name, "主播");

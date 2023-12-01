@@ -280,9 +280,9 @@ public class XAdNativeResponse implements NativeResponse {
                 JSONObject S = this.mAdInstanceInfo.S();
                 S.put("msg", "dislike_mapping");
                 this.mFeedsProd.a(S, hashMap);
-                V v = hashMap.get("dislike_data");
-                if (v instanceof Map) {
-                    Map map = (Map) v;
+                Object obj = hashMap.get("dislike_data");
+                if (obj instanceof Map) {
+                    Map map = (Map) obj;
                     for (String str : map.keySet()) {
                         DislikeInfo dislikeInfo = new DislikeInfo();
                         dislikeInfo.dislikeName = str;
@@ -750,9 +750,9 @@ public class XAdNativeResponse implements NativeResponse {
                 jSONObject.put("isDownloadApp", this.isDownloadApp);
                 HashMap hashMap = new HashMap();
                 this.mFeedsProd.a(jSONObject, hashMap);
-                V v = hashMap.get("shake_view");
-                if (v instanceof View) {
-                    return (View) v;
+                Object obj = hashMap.get("shake_view");
+                if (obj instanceof View) {
+                    return (View) obj;
                 }
                 return null;
             } catch (Throwable th) {

@@ -19,14 +19,14 @@ public abstract class c<Params, Progress, Result> {
     public static final Executor h = new com.sdk.tencent.d.d(5);
 
     /* renamed from: a  reason: collision with root package name */
-    public final e<Params, Result> f28031a;
+    public final e<Params, Result> f14343a;
     public final FutureTask<Result> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final AtomicBoolean f28032c = new AtomicBoolean();
+    public final AtomicBoolean f14344c = new AtomicBoolean();
     public final AtomicBoolean d = new AtomicBoolean();
     public volatile boolean e = false;
-    public Boolean f = Boolean.valueOf(com.sdk.tencent.f.c.f28050c);
+    public Boolean f = Boolean.valueOf(com.sdk.tencent.f.c.f14362c);
 
     /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/d/c$a.class */
     public class a extends e<Params, Result> {
@@ -41,7 +41,7 @@ public abstract class c<Params, Progress, Result> {
             c.this.d.set(true);
             Process.setThreadPriority(10);
             c cVar = c.this;
-            Params[] paramsArr = this.f28035a;
+            Params[] paramsArr = this.f14347a;
             com.sdk.tencent.a.c cVar2 = (com.sdk.tencent.a.c) cVar;
             if (cVar2.m != c.a.CANCELLED && paramsArr != null && paramsArr.length != 0) {
                 if (paramsArr.length == 4) {
@@ -64,10 +64,10 @@ public abstract class c<Params, Progress, Result> {
                         cVar2.a(4, new com.sdk.tencent.a.f(0, cVar2.b(), false));
                     } else {
                         com.sdk.tencent.a.f b2 = cVar2.b(dVar, a2);
-                        if (b2.f28014a == 0) {
+                        if (b2.f14326a == 0) {
                             cVar2.a(4, b2);
                         } else {
-                            cVar2.a(3, Integer.valueOf(b2.f28014a), b2.b);
+                            cVar2.a(3, Integer.valueOf(b2.f14326a), b2.b);
                         }
                     }
                 } catch (Exception e) {
@@ -107,14 +107,14 @@ public abstract class c<Params, Progress, Result> {
 
     /* renamed from: com.sdk.tencent.d.c$c  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/d/c$c.class */
-    public static class C0757c<Data> {
+    public static class C0587c<Data> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final c f28034a;
+        public final c f14346a;
         public final Data[] b;
 
-        public C0757c(c cVar, Data... dataArr) {
-            this.f28034a = cVar;
+        public C0587c(c cVar, Data... dataArr) {
+            this.f14346a = cVar;
             this.b = dataArr;
         }
     }
@@ -129,16 +129,16 @@ public abstract class c<Params, Progress, Result> {
         public void handleMessage(Message message) {
             Object obj;
             int i;
-            C0757c c0757c = (C0757c) message.obj;
+            C0587c c0587c = (C0587c) message.obj;
             int i2 = message.what;
             if (i2 == 1) {
-                c cVar = c0757c.f28034a;
-                Object obj2 = c0757c.b[0];
-                cVar.f28032c.get();
+                c cVar = c0587c.f14346a;
+                Object obj2 = c0587c.b[0];
+                cVar.f14344c.get();
             } else if (i2 != 2) {
             } else {
-                c cVar2 = c0757c.f28034a;
-                Object[] objArr = c0757c.b;
+                c cVar2 = c0587c.f14346a;
+                Object[] objArr = c0587c.b;
                 com.sdk.tencent.a.c cVar3 = (com.sdk.tencent.a.c) cVar2;
                 if (cVar3.m == c.a.CANCELLED || objArr == null || objArr.length == 0 || cVar3.j == null) {
                     return;
@@ -156,7 +156,7 @@ public abstract class c<Params, Progress, Result> {
                         Object obj3 = cVar3.j;
                         int intValue2 = ((Integer) objArr[1]).intValue();
                         String str = (String) objArr[2];
-                        com.sdk.tencent.g.b bVar = ((com.sdk.tencent.g.a) obj3).f28053a;
+                        com.sdk.tencent.g.b bVar = ((com.sdk.tencent.g.a) obj3).f14365a;
                         String str2 = ((Object) str) + "";
                         com.sdk.tencent.e.a<T> aVar = bVar.e;
                         if (aVar != 0) {
@@ -183,19 +183,19 @@ public abstract class c<Params, Progress, Result> {
                                 String optString2 = jSONObject.optString("obj");
                                 String optString3 = jSONObject.optString("seq");
                                 if (!com.sdk.tencent.n.b.a(optString).booleanValue() || !com.sdk.tencent.n.b.a(optString3).booleanValue() || !com.sdk.tencent.n.b.a(optString2).booleanValue()) {
-                                    aVar2.f28053a.a(i, optString, optInt, optString2, optString3);
+                                    aVar2.f14365a.a(i, optString, optInt, optString2, optString3);
                                     return;
                                 }
-                                aVar2.f28053a.a(1, "服务端数据格式出错", 302003, null, com.sdk.tencent.n.c.a().f28045c);
+                                aVar2.f14365a.a(1, "服务端数据格式出错", 302003, null, com.sdk.tencent.n.c.a().f14357c);
                                 com.sdk.tencent.n.b.a(com.sdk.tencent.g.b.i, "返回数据为空", Boolean.valueOf(com.sdk.tencent.g.b.j));
                                 return;
                             } catch (Throwable th) {
                                 th = th;
                                 try {
-                                    com.sdk.tencent.n.c.f28064a.b.d = th.toString();
+                                    com.sdk.tencent.n.c.f14376a.b.d = th.toString();
                                 } catch (Throwable th2) {
                                 }
-                                aVar2.f28053a.a(i, "服务端数据格式出错", 302003, null, com.sdk.tencent.n.c.a().f28045c);
+                                aVar2.f14365a.a(i, "服务端数据格式出错", 302003, null, com.sdk.tencent.n.c.a().f14357c);
                                 com.sdk.tencent.n.b.a(com.sdk.tencent.g.b.i, "返回数据解析异常：" + th.toString(), Boolean.valueOf(com.sdk.tencent.g.b.j));
                                 return;
                             }
@@ -221,7 +221,7 @@ public abstract class c<Params, Progress, Result> {
     public static abstract class e<Params, Result> implements Callable<Result> {
 
         /* renamed from: a  reason: collision with root package name */
-        public Params[] f28035a;
+        public Params[] f14347a;
 
         public e() {
         }
@@ -233,19 +233,19 @@ public abstract class c<Params, Progress, Result> {
 
     public c() {
         a aVar = new a();
-        this.f28031a = aVar;
+        this.f14343a = aVar;
         this.b = new b(aVar);
     }
 
     public final Result a(Result result) {
-        g.obtainMessage(1, new C0757c(this, result)).sendToTarget();
+        g.obtainMessage(1, new C0587c(this, result)).sendToTarget();
         return result;
     }
 
     public final void a(Progress... progressArr) {
-        if (this.f28032c.get()) {
+        if (this.f14344c.get()) {
             return;
         }
-        g.obtainMessage(2, new C0757c(this, progressArr)).sendToTarget();
+        g.obtainMessage(2, new C0587c(this, progressArr)).sendToTarget();
     }
 }

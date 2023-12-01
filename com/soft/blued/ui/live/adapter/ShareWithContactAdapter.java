@@ -28,6 +28,7 @@ import com.bytedance.applog.tracker.Tracker;
 import com.soft.blued.R;
 import com.soft.blued.ui.group.GroupInviteFromChatListFragment;
 import com.soft.blued.ui.msg.controller.tools.IMV4Method;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -36,11 +37,11 @@ import java.util.List;
 public class ShareWithContactAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    public List<SessionModel> f31106a;
+    public List<SessionModel> f17416a;
     public List<SessionModel> b = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    public List<SessionModel> f31107c = new ArrayList();
+    public List<SessionModel> f17417c = new ArrayList();
     public List<SessionModel> d = new ArrayList();
     private LayoutInflater e;
     private Context f;
@@ -53,11 +54,11 @@ public class ShareWithContactAdapter extends BaseAdapter {
     public class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        TextView f31113a;
+        TextView f17423a;
         CheckBox b;
 
         /* renamed from: c  reason: collision with root package name */
-        ImageView f31114c;
+        ImageView f17424c;
         ImageView d;
         ImageView e;
         TextView f;
@@ -68,7 +69,7 @@ public class ShareWithContactAdapter extends BaseAdapter {
     }
 
     public ShareWithContactAdapter(IRequestHost iRequestHost, Context context, List<SessionModel> list, int i) {
-        this.f31106a = new ArrayList();
+        this.f17416a = new ArrayList();
         this.i = 1;
         this.f = context;
         this.g = iRequestHost;
@@ -76,17 +77,17 @@ public class ShareWithContactAdapter extends BaseAdapter {
         if (i > 1) {
             this.i = i;
         }
-        this.f31106a = list;
+        this.f17416a = list;
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f31106a.size()) {
+            if (i3 >= this.f17416a.size()) {
                 return;
             }
-            this.b.add(this.f31106a.get(i3));
-            this.f31107c.add(this.f31106a.get(i3));
-            if (this.f31106a.get(i3).checked) {
-                this.d.add(this.f31106a.get(i3));
+            this.b.add(this.f17416a.get(i3));
+            this.f17417c.add(this.f17416a.get(i3));
+            if (this.f17416a.get(i3).checked) {
+                this.d.add(this.f17416a.get(i3));
             }
             i2 = i3 + 1;
         }
@@ -128,9 +129,9 @@ public class ShareWithContactAdapter extends BaseAdapter {
             }
         }
         if (TimeAndDateUtils.f(sessionModel.lastMsgTime)) {
-            this.h = TimeAndDateUtils.f10914c.get().format(new Date(sessionModel.lastMsgTime));
+            this.h = ((SimpleDateFormat) TimeAndDateUtils.c.get()).format(new Date(sessionModel.lastMsgTime));
         } else {
-            this.h = TimeAndDateUtils.d.get().format(new Date(sessionModel.lastMsgTime));
+            this.h = ((SimpleDateFormat) TimeAndDateUtils.d.get()).format(new Date(sessionModel.lastMsgTime));
         }
         if (sessionSettingModel == null || sessionSettingModel.getRemindAudio() == 0) {
             viewHolder.e.setVisibility(8);
@@ -142,7 +143,7 @@ public class ShareWithContactAdapter extends BaseAdapter {
     public void a(String str) {
         List<SessionModel> list = this.b;
         if (list != null && list.size() > 0) {
-            this.f31107c.clear();
+            this.f17417c.clear();
             int i = 0;
             while (true) {
                 int i2 = i;
@@ -151,15 +152,15 @@ public class ShareWithContactAdapter extends BaseAdapter {
                 }
                 SessionModel sessionModel = this.b.get(i2);
                 if (a(sessionModel, (SessionSettingModel) sessionModel.sessionSettingModel).contains(str)) {
-                    this.f31107c.add(this.b.get(i2));
+                    this.f17417c.add(this.b.get(i2));
                 }
                 i = i2 + 1;
             }
-            this.f31106a.clear();
+            this.f17416a.clear();
             if (TextUtils.isEmpty(str)) {
-                this.f31106a.addAll(this.b);
+                this.f17416a.addAll(this.b);
             } else {
-                this.f31106a.addAll(this.f31107c);
+                this.f17416a.addAll(this.f17417c);
             }
         }
         notifyDataSetChanged();
@@ -167,12 +168,12 @@ public class ShareWithContactAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f31106a.size();
+        return this.f17416a.size();
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f31106a.get(i);
+        return this.f17416a.get(i);
     }
 
     @Override // android.widget.Adapter
@@ -187,44 +188,44 @@ public class ShareWithContactAdapter extends BaseAdapter {
             view = this.e.inflate(R.layout.item_share_with_contact, viewGroup, false);
             viewHolder = new ViewHolder();
             viewHolder.g = (LinearLayout) view.findViewById(R.id.ll_msg_f_root);
-            viewHolder.f31114c = (ImageView) view.findViewById(R.id.msg_friend_item_avatar);
+            viewHolder.f17424c = (ImageView) view.findViewById(R.id.msg_friend_item_avatar);
             viewHolder.d = (ImageView) view.findViewById(R.id.msg_friend_item_avatar_v);
             viewHolder.f = (TextView) view.findViewById(R.id.tv_group_icon);
-            viewHolder.f31113a = (TextView) view.findViewById(R.id.msg_friend_item_name);
+            viewHolder.f17423a = (TextView) view.findViewById(R.id.msg_friend_item_name);
             viewHolder.b = (CheckBox) view.findViewById(R.id.cb_member_invite);
             viewHolder.e = (ImageView) view.findViewById(R.id.msg_group_remind_soundoff);
             view.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) view.getTag();
         }
-        final SessionModel sessionModel = this.f31106a.get(i);
-        List<SessionModel> list = this.f31106a;
+        final SessionModel sessionModel = this.f17416a.get(i);
+        List<SessionModel> list = this.f17416a;
         if (list != null && list.size() != 0) {
-            if (i < this.f31106a.size() && sessionModel != null) {
+            if (i < this.f17416a.size() && sessionModel != null) {
                 SessionSettingModel sessionSettingModel = (SessionSettingModel) sessionModel.sessionSettingModel;
                 viewHolder.b.setChecked(false);
                 viewHolder.b.setEnabled(true);
                 short s = sessionModel.sessionType;
                 if (s != 1) {
                     if (s == 2) {
-                        ImageLoader.a(this.g, AvatarUtils.a(0, sessionModel.avatar)).b(2131237310).c().a(viewHolder.f31114c);
+                        ImageLoader.a(this.g, AvatarUtils.a(0, sessionModel.avatar)).b(2131237310).c().a(viewHolder.f17424c);
                         viewHolder.f.setVisibility(8);
-                        viewHolder.f31113a.setText(a(sessionModel, sessionSettingModel));
+                        viewHolder.f17423a.setText(a(sessionModel, sessionSettingModel));
                         UserInfoHelper.a(viewHolder.d, sessionModel.vBadge, 3);
                     } else if (s == 3) {
-                        ImageLoader.a(this.g, sessionModel.avatar).b(R.drawable.group_default_head).c().a(viewHolder.f31114c);
+                        ImageLoader.a(this.g, sessionModel.avatar).b((int) R.drawable.group_default_head).c().a(viewHolder.f17424c);
                         viewHolder.f.setVisibility(0);
-                        viewHolder.f31113a.setText(a(sessionModel, sessionSettingModel));
+                        viewHolder.f17423a.setText(a(sessionModel, sessionSettingModel));
                         UserInfoHelper.a(viewHolder.d, sessionModel.vBadge, 3);
-                        if (GroupInviteFromChatListFragment.f30800c != null && GroupInviteFromChatListFragment.f30800c.equals(String.valueOf(sessionModel.sessionId))) {
+                        if (GroupInviteFromChatListFragment.f17110c != null && GroupInviteFromChatListFragment.f17110c.equals(String.valueOf(sessionModel.sessionId))) {
                             viewHolder.b.setChecked(true);
                             viewHolder.b.setEnabled(false);
                         }
                     }
                 } else if (sessionModel.sessionId == 2) {
-                    viewHolder.f31114c.setImageResource(R.drawable.msg_group_notify);
+                    viewHolder.f17424c.setImageResource(R.drawable.msg_group_notify);
                     viewHolder.f.setVisibility(8);
-                    viewHolder.f31113a.setText(this.f.getResources().getString(R.string.biao_v4_msg_groupnotice));
+                    viewHolder.f17423a.setText(this.f.getResources().getString(R.string.biao_v4_msg_groupnotice));
                     viewHolder.d.setVisibility(8);
                 }
                 a(sessionModel, sessionSettingModel, viewHolder);
@@ -241,7 +242,7 @@ public class ShareWithContactAdapter extends BaseAdapter {
                         @Override // android.view.View.OnClickListener
                         public void onClick(View view2) {
                             Tracker.onClick(view2);
-                            CommonAlertDialog.a(ShareWithContactAdapter.this.f, (View) null, ShareWithContactAdapter.this.f.getResources().getString(2131888879), ShareWithContactAdapter.this.f.getResources().getString(2131889191), (String) null, (String) null, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.ShareWithContactAdapter.1.1
+                            CommonAlertDialog.a(ShareWithContactAdapter.this.f, (View) null, ShareWithContactAdapter.this.f.getResources().getString(2131888879), ShareWithContactAdapter.this.f.getResources().getString(R.string.liveVideo_selectFriends_label_shareConfirm), (String) null, (String) null, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.ShareWithContactAdapter.1.1
                                 @Override // android.content.DialogInterface.OnClickListener
                                 public void onClick(DialogInterface dialogInterface, int i3) {
                                     Tracker.onClick(dialogInterface, i3);
@@ -270,24 +271,24 @@ public class ShareWithContactAdapter extends BaseAdapter {
                     public void onClick(View view2) {
                         Tracker.onClick(view2);
                         if (!sessionModel.chooseable) {
-                            AppMethods.a((CharSequence) ShareWithContactAdapter.this.f.getResources().getString(2131889190));
+                            AppMethods.a(ShareWithContactAdapter.this.f.getResources().getString(R.string.liveVideo_selectFriends_label_maxCount));
                             return;
                         }
                         if (sessionModel.checked) {
                             ShareWithContactAdapter.this.d.remove(sessionModel);
-                            ShareWithContactAdapter.this.f31106a.get(i).checked = false;
+                            ShareWithContactAdapter.this.f17416a.get(i).checked = false;
                         } else {
                             ShareWithContactAdapter.this.d.add(sessionModel);
-                            ShareWithContactAdapter.this.f31106a.get(i).checked = true;
+                            ShareWithContactAdapter.this.f17416a.get(i).checked = true;
                         }
                         if (ShareWithContactAdapter.this.d.size() >= ShareWithContactAdapter.this.i) {
                             int i3 = 0;
                             while (true) {
                                 int i4 = i3;
-                                if (i4 >= ShareWithContactAdapter.this.f31106a.size()) {
+                                if (i4 >= ShareWithContactAdapter.this.f17416a.size()) {
                                     break;
                                 }
-                                SessionModel sessionModel2 = ShareWithContactAdapter.this.f31106a.get(i4);
+                                SessionModel sessionModel2 = ShareWithContactAdapter.this.f17416a.get(i4);
                                 if (ShareWithContactAdapter.this.d.contains(sessionModel2)) {
                                     sessionModel2.chooseable = true;
                                 } else {
@@ -296,8 +297,8 @@ public class ShareWithContactAdapter extends BaseAdapter {
                                 i3 = i4 + 1;
                             }
                         } else {
-                            for (int i5 = 0; i5 < ShareWithContactAdapter.this.f31106a.size(); i5++) {
-                                ShareWithContactAdapter.this.f31106a.get(i5).chooseable = true;
+                            for (int i5 = 0; i5 < ShareWithContactAdapter.this.f17416a.size(); i5++) {
+                                ShareWithContactAdapter.this.f17416a.get(i5).chooseable = true;
                             }
                         }
                         ShareWithContactAdapter.this.notifyDataSetChanged();

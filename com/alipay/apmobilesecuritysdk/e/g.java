@@ -8,11 +8,11 @@ public final class g {
     public static String a(Context context, String str) {
         synchronized (g.class) {
             try {
-                String a2 = com.alipay.security.mobile.module.c.e.a(context, "openapi_file_pri", "openApi" + str, "");
-                if (com.alipay.security.mobile.module.a.a.a(a2)) {
+                String a = com.alipay.security.mobile.module.c.e.a(context, "openapi_file_pri", "openApi" + str, "");
+                if (com.alipay.security.mobile.module.a.a.a(a)) {
                     return "";
                 }
-                String b = com.alipay.security.mobile.module.a.a.c.b(com.alipay.security.mobile.module.a.a.c.a(), a2);
+                String b = com.alipay.security.mobile.module.a.a.c.b(com.alipay.security.mobile.module.a.a.c.a(), a);
                 return com.alipay.security.mobile.module.a.a.a(b) ? "" : b;
             } finally {
             }

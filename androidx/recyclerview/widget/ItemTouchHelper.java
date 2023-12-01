@@ -41,7 +41,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
     private long D;
 
     /* renamed from: c  reason: collision with root package name */
-    float f3275c;
+    float f3227c;
     float d;
     float e;
     float f;
@@ -59,7 +59,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
     private List<Integer> y;
 
     /* renamed from: a  reason: collision with root package name */
-    final List<View> f3274a = new ArrayList();
+    final List<View> f3226a = new ArrayList();
     private final float[] q = new float[2];
     RecyclerView.ViewHolder b = null;
     int g = -1;
@@ -91,14 +91,14 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
             int actionMasked = motionEvent.getActionMasked();
             if (actionMasked == 0) {
                 ItemTouchHelper.this.g = motionEvent.getPointerId(0);
-                ItemTouchHelper.this.f3275c = motionEvent.getX();
+                ItemTouchHelper.this.f3227c = motionEvent.getX();
                 ItemTouchHelper.this.d = motionEvent.getY();
                 ItemTouchHelper.this.c();
                 if (ItemTouchHelper.this.b == null && (b = ItemTouchHelper.this.b(motionEvent)) != null) {
-                    ItemTouchHelper.this.f3275c -= b.l;
+                    ItemTouchHelper.this.f3227c -= b.l;
                     ItemTouchHelper.this.d -= b.m;
                     ItemTouchHelper.this.a(b.h, true);
-                    if (ItemTouchHelper.this.f3274a.remove(b.h.itemView)) {
+                    if (ItemTouchHelper.this.f3226a.remove(b.h.itemView)) {
                         ItemTouchHelper.this.h.clearView(ItemTouchHelper.this.k, b.h);
                     }
                     ItemTouchHelper.this.a(b.h, b.i);
@@ -185,7 +185,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         public static final int DEFAULT_SWIPE_ANIMATION_DURATION = 250;
 
         /* renamed from: a  reason: collision with root package name */
-        private static final Interpolator f3283a = new Interpolator() { // from class: androidx.recyclerview.widget.ItemTouchHelper.Callback.1
+        private static final Interpolator f3235a = new Interpolator() { // from class: androidx.recyclerview.widget.ItemTouchHelper.Callback.1
             @Override // android.animation.TimeInterpolator
             public float getInterpolation(float f) {
                 return f * f * f * f * f;
@@ -200,13 +200,13 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         };
 
         /* renamed from: c  reason: collision with root package name */
-        private int f3284c = -1;
+        private int f3236c = -1;
 
         private int a(RecyclerView recyclerView) {
-            if (this.f3284c == -1) {
-                this.f3284c = recyclerView.getResources().getDimensionPixelSize(R.dimen.item_touch_helper_max_drag_scroll_per_frame);
+            if (this.f3236c == -1) {
+                this.f3236c = recyclerView.getResources().getDimensionPixelSize(R.dimen.item_touch_helper_max_drag_scroll_per_frame);
             }
-            return this.f3284c;
+            return this.f3236c;
         }
 
         public static int convertToRelativeDirection(int i, int i2) {
@@ -227,7 +227,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         }
 
         public static ItemTouchUIUtil getDefaultUIUtil() {
-            return ItemTouchUIUtilImpl.f3289a;
+            return ItemTouchUIUtilImpl.f3241a;
         }
 
         public static int makeFlag(int i, int i2) {
@@ -410,7 +410,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         }
 
         public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-            ItemTouchUIUtilImpl.f3289a.clearView(viewHolder.itemView);
+            ItemTouchUIUtilImpl.f3241a.clearView(viewHolder.itemView);
         }
 
         public int convertToAbsoluteDirection(int i, int i2) {
@@ -464,7 +464,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
             if (j <= 2000) {
                 f = ((float) j) / 2000.0f;
             }
-            int interpolation = (int) (signum * f3283a.getInterpolation(f));
+            int interpolation = (int) (signum * f3235a.getInterpolation(f));
             int i4 = interpolation;
             if (interpolation == 0) {
                 if (i2 > 0) {
@@ -484,11 +484,11 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         }
 
         public void onChildDraw(Canvas canvas, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float f, float f2, int i, boolean z) {
-            ItemTouchUIUtilImpl.f3289a.onDraw(canvas, recyclerView, viewHolder.itemView, f, f2, i, z);
+            ItemTouchUIUtilImpl.f3241a.onDraw(canvas, recyclerView, viewHolder.itemView, f, f2, i, z);
         }
 
         public void onChildDrawOver(Canvas canvas, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float f, float f2, int i, boolean z) {
-            ItemTouchUIUtilImpl.f3289a.onDrawOver(canvas, recyclerView, viewHolder.itemView, f, f2, i, z);
+            ItemTouchUIUtilImpl.f3241a.onDrawOver(canvas, recyclerView, viewHolder.itemView, f, f2, i, z);
         }
 
         public abstract boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder viewHolder2);
@@ -519,7 +519,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
 
         public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int i) {
             if (viewHolder != null) {
-                ItemTouchUIUtilImpl.f3289a.onSelected(viewHolder.itemView);
+                ItemTouchUIUtilImpl.f3241a.onSelected(viewHolder.itemView);
             }
         }
 
@@ -551,7 +551,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
                 int findPointerIndex = motionEvent.findPointerIndex(ItemTouchHelper.this.g);
                 float x = motionEvent.getX(findPointerIndex);
                 float y = motionEvent.getY(findPointerIndex);
-                ItemTouchHelper.this.f3275c = x;
+                ItemTouchHelper.this.f3227c = x;
                 ItemTouchHelper.this.d = y;
                 ItemTouchHelper itemTouchHelper = ItemTouchHelper.this;
                 itemTouchHelper.f = 0.0f;
@@ -568,7 +568,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
     public static class RecoverAnimation implements Animator.AnimatorListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ValueAnimator f3286a;
+        private final ValueAnimator f3238a;
         private float b;
         final float d;
         final float e;
@@ -592,20 +592,20 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
             this.f = f3;
             this.g = f4;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.f3286a = ofFloat;
+            this.f3238a = ofFloat;
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.ItemTouchHelper.RecoverAnimation.1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public void onAnimationUpdate(ValueAnimator valueAnimator) {
                     RecoverAnimation.this.setFraction(valueAnimator.getAnimatedFraction());
                 }
             });
-            this.f3286a.setTarget(viewHolder.itemView);
-            this.f3286a.addListener(this);
+            this.f3238a.setTarget(viewHolder.itemView);
+            this.f3238a.addListener(this);
             setFraction(0.0f);
         }
 
         public void cancel() {
-            this.f3286a.cancel();
+            this.f3238a.cancel();
         }
 
         @Override // android.animation.Animator.AnimatorListener
@@ -630,7 +630,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         }
 
         public void setDuration(long j) {
-            this.f3286a.setDuration(j);
+            this.f3238a.setDuration(j);
         }
 
         public void setFraction(float f) {
@@ -639,7 +639,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
 
         public void start() {
             this.h.setIsRecyclable(false);
-            this.f3286a.start();
+            this.f3238a.start();
         }
 
         public void update() {
@@ -664,11 +664,11 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
     public static abstract class SimpleCallback extends Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f3288a;
+        private int f3240a;
         private int b;
 
         public SimpleCallback(int i, int i2) {
-            this.f3288a = i2;
+            this.f3240a = i2;
             this.b = i;
         }
 
@@ -682,7 +682,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         }
 
         public int getSwipeDirs(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-            return this.f3288a;
+            return this.f3240a;
         }
 
         public void setDefaultDragDirs(int i) {
@@ -690,7 +690,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         }
 
         public void setDefaultSwipeDirs(int i) {
-            this.f3288a = i;
+            this.f3240a = i;
         }
     }
 
@@ -864,7 +864,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         }
         int findPointerIndex = motionEvent.findPointerIndex(i);
         float x = motionEvent.getX(findPointerIndex);
-        float f = this.f3275c;
+        float f = this.f3227c;
         float y = motionEvent.getY(findPointerIndex);
         float f2 = this.d;
         float abs = Math.abs(x - f);
@@ -991,7 +991,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         }
         float x = motionEvent.getX(i2);
         float y = motionEvent.getY(i2);
-        float f = x - this.f3275c;
+        float f = x - this.f3227c;
         float f2 = y - this.d;
         float abs = Math.abs(f);
         float abs2 = Math.abs(f2);
@@ -1021,7 +1021,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
     void a(MotionEvent motionEvent, int i, int i2) {
         float x = motionEvent.getX(i2);
         float y = motionEvent.getY(i2);
-        float f = x - this.f3275c;
+        float f = x - this.f3227c;
         this.e = f;
         this.f = y - this.d;
         if ((i & 4) == 0) {
@@ -1135,7 +1135,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
                         if (i4 <= 0) {
                             ItemTouchHelper.this.h.clearView(ItemTouchHelper.this.k, viewHolder2);
                         } else {
-                            ItemTouchHelper.this.f3274a.add(viewHolder2.itemView);
+                            ItemTouchHelper.this.f3226a.add(viewHolder2.itemView);
                             this.k = true;
                             int i5 = i4;
                             if (i5 > 0) {
@@ -1304,7 +1304,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
             return;
         }
         a(childViewHolder, false);
-        if (this.f3274a.remove(childViewHolder.itemView)) {
+        if (this.f3226a.remove(childViewHolder.itemView)) {
             this.h.clearView(this.k, childViewHolder);
         }
     }

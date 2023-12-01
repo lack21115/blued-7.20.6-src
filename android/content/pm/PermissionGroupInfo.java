@@ -3,7 +3,6 @@ package android.content.pm;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/pm/PermissionGroupInfo.class */
 public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
@@ -67,7 +66,7 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     }
 
     public String toString() {
-        return "PermissionGroupInfo{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.name + " flgs=0x" + Integer.toHexString(this.flags) + i.d;
+        return "PermissionGroupInfo{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.name + " flgs=0x" + Integer.toHexString(this.flags) + "}";
     }
 
     @Override // android.content.pm.PackageItemInfo, android.os.Parcelable

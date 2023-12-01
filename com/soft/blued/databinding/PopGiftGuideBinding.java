@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopGiftGuideBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29518a;
+    private final RelativeLayout f15828a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29518a;
+        return this.f15828a;
     }
 }

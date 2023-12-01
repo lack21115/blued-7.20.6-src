@@ -8,11 +8,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class UpdateGroupGradeEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f32667a;
+    private int f18976a;
     private String b = "";
 
     public final void a(int i) {
-        this.f32667a = i;
+        this.f18976a = i;
     }
 
     public final void a(String str) {

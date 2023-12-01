@@ -22,11 +22,11 @@ public final class ChannelsKt {
         ChannelsKt__Channels_commonKt.a(receiveChannel, th);
     }
 
-    public static final <E, C extends Collection<? super E>> Object b(ReceiveChannel<? extends E> receiveChannel, C c2, Continuation<? super C> continuation) {
-        return ChannelsKt__DeprecatedKt.b((ReceiveChannel) receiveChannel, (Collection) c2, (Continuation) continuation);
+    public static final <E, C extends Collection<? super E>> Object b(ReceiveChannel<? extends E> receiveChannel, C c, Continuation<? super C> continuation) {
+        return ChannelsKt__DeprecatedKt.b((ReceiveChannel) receiveChannel, (Collection) c, (Continuation) continuation);
     }
 
-    public static final <E, C extends SendChannel<? super E>> Object b(ReceiveChannel<? extends E> receiveChannel, C c2, Continuation<? super C> continuation) {
-        return ChannelsKt__DeprecatedKt.b((ReceiveChannel) receiveChannel, (SendChannel) c2, (Continuation) continuation);
+    public static final <E, C extends SendChannel<? super E>> Object b(ReceiveChannel<? extends E> receiveChannel, C c, Continuation<? super C> continuation) {
+        return ChannelsKt__DeprecatedKt.b((ReceiveChannel) receiveChannel, (SendChannel) c, (Continuation) continuation);
     }
 }

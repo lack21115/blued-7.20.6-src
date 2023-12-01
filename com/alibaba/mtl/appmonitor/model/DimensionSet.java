@@ -22,9 +22,7 @@ public class DimensionSet implements Parcelable {
             return DimensionSet.a(parcel);
         }
     };
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<Dimension> f4471c = new ArrayList(3);
+    private List<Dimension> c = new ArrayList(3);
 
     private DimensionSet() {
     }
@@ -34,8 +32,8 @@ public class DimensionSet implements Parcelable {
         try {
             Parcelable[] readParcelableArray = parcel.readParcelableArray(DimensionSet.class.getClassLoader());
             if (readParcelableArray != null) {
-                if (create.f4471c == null) {
-                    create.f4471c = new ArrayList();
+                if (create.c == null) {
+                    create.c = new ArrayList();
                 }
                 int i = 0;
                 while (true) {
@@ -46,7 +44,7 @@ public class DimensionSet implements Parcelable {
                     if (readParcelableArray[i2] == null || !(readParcelableArray[i2] instanceof Dimension)) {
                         i.a("DimensionSet", "parcelables[i]:", readParcelableArray[i2]);
                     } else {
-                        create.f4471c.add((Dimension) readParcelableArray[i2]);
+                        create.c.add((Dimension) readParcelableArray[i2]);
                     }
                     i = i2 + 1;
                 }
@@ -89,10 +87,10 @@ public class DimensionSet implements Parcelable {
     }
 
     public DimensionSet addDimension(Dimension dimension) {
-        if (this.f4471c.contains(dimension)) {
+        if (this.c.contains(dimension)) {
             return this;
         }
-        this.f4471c.add(dimension);
+        this.c.add(dimension);
         return this;
     }
 
@@ -110,7 +108,7 @@ public class DimensionSet implements Parcelable {
     }
 
     public Dimension getDimension(String str) {
-        for (Dimension dimension : this.f4471c) {
+        for (Dimension dimension : this.c) {
             if (dimension.getName().equals(str)) {
                 return dimension;
             }
@@ -119,11 +117,11 @@ public class DimensionSet implements Parcelable {
     }
 
     public List<Dimension> getDimensions() {
-        return this.f4471c;
+        return this.c;
     }
 
     public void setConstantValue(DimensionValueSet dimensionValueSet) {
-        List<Dimension> list = this.f4471c;
+        List<Dimension> list = this.c;
         if (list == null || dimensionValueSet == null) {
             return;
         }
@@ -135,7 +133,7 @@ public class DimensionSet implements Parcelable {
     }
 
     public boolean valid(DimensionValueSet dimensionValueSet) {
-        List<Dimension> list = this.f4471c;
+        List<Dimension> list = this.c;
         if (list != null) {
             if (dimensionValueSet != null) {
                 for (Dimension dimension : list) {
@@ -152,7 +150,7 @@ public class DimensionSet implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        List<Dimension> list = this.f4471c;
+        List<Dimension> list = this.c;
         if (list != null) {
             try {
                 Object[] array = list.toArray();

@@ -12,30 +12,28 @@ import androidx.core.view.ViewCompat;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/transition/ViewOverlayApi14.class */
-public class ViewOverlayApi14 implements ViewOverlayImpl {
+class ViewOverlayApi14 implements ViewOverlayImpl {
 
     /* renamed from: a  reason: collision with root package name */
-    protected OverlayViewGroup f3497a;
+    protected OverlayViewGroup f3449a;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/transition/ViewOverlayApi14$OverlayViewGroup.class */
-    public static class OverlayViewGroup extends ViewGroup {
+    static class OverlayViewGroup extends ViewGroup {
 
         /* renamed from: a  reason: collision with root package name */
-        static Method f3498a;
+        static Method f3450a;
         ViewGroup b;
 
         /* renamed from: c  reason: collision with root package name */
-        View f3499c;
+        View f3451c;
         ArrayList<Drawable> d;
         ViewOverlayApi14 e;
         private boolean f;
 
         static {
             try {
-                f3498a = ViewGroup.class.getDeclaredMethod("invalidateChildInParentFast", Integer.TYPE, Integer.TYPE, Rect.class);
+                f3450a = ViewGroup.class.getDeclaredMethod("invalidateChildInParentFast", Integer.TYPE, Integer.TYPE, Rect.class);
             } catch (NoSuchMethodException e) {
             }
         }
@@ -44,7 +42,7 @@ public class ViewOverlayApi14 implements ViewOverlayImpl {
             super(context);
             this.d = null;
             this.b = viewGroup;
-            this.f3499c = view;
+            this.f3451c = view;
             setRight(viewGroup.getWidth());
             setBottom(viewGroup.getHeight());
             viewGroup.addView(this);
@@ -61,7 +59,7 @@ public class ViewOverlayApi14 implements ViewOverlayImpl {
             int[] iArr2 = new int[2];
             int[] iArr3 = new int[2];
             this.b.getLocationOnScreen(iArr2);
-            this.f3499c.getLocationOnScreen(iArr3);
+            this.f3451c.getLocationOnScreen(iArr3);
             iArr[0] = iArr3[0] - iArr2[0];
             iArr[1] = iArr3[1] - iArr2[1];
         }
@@ -109,15 +107,14 @@ public class ViewOverlayApi14 implements ViewOverlayImpl {
             super.addView(view);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.ViewGroup, android.view.View
-        public void dispatchDraw(Canvas canvas) {
+        protected void dispatchDraw(Canvas canvas) {
             int[] iArr;
             int[] iArr2;
             this.b.getLocationOnScreen(new int[2]);
-            this.f3499c.getLocationOnScreen(new int[2]);
+            this.f3451c.getLocationOnScreen(new int[2]);
             canvas.translate(iArr2[0] - iArr[0], iArr2[1] - iArr[1]);
-            canvas.clipRect(new Rect(0, 0, this.f3499c.getWidth(), this.f3499c.getHeight()));
+            canvas.clipRect(new Rect(0, 0, this.f3451c.getWidth(), this.f3451c.getHeight()));
             super.dispatchDraw(canvas);
             ArrayList<Drawable> arrayList = this.d;
             int size = arrayList == null ? 0 : arrayList.size();
@@ -154,9 +151,8 @@ public class ViewOverlayApi14 implements ViewOverlayImpl {
             invalidate(drawable.getBounds());
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.ViewGroup, android.view.View
-        public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         }
 
         public void remove(Drawable drawable) {
@@ -174,9 +170,8 @@ public class ViewOverlayApi14 implements ViewOverlayImpl {
             b();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.View
-        public boolean verifyDrawable(Drawable drawable) {
+        protected boolean verifyDrawable(Drawable drawable) {
             if (super.verifyDrawable(drawable)) {
                 return true;
             }
@@ -187,7 +182,7 @@ public class ViewOverlayApi14 implements ViewOverlayImpl {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ViewOverlayApi14(Context context, ViewGroup viewGroup, View view) {
-        this.f3497a = new OverlayViewGroup(context, viewGroup, view, this);
+        this.f3449a = new OverlayViewGroup(context, viewGroup, view, this);
     }
 
     static ViewGroup a(View view) {
@@ -225,11 +220,11 @@ public class ViewOverlayApi14 implements ViewOverlayImpl {
 
     @Override // androidx.transition.ViewOverlayImpl
     public void add(Drawable drawable) {
-        this.f3497a.add(drawable);
+        this.f3449a.add(drawable);
     }
 
     @Override // androidx.transition.ViewOverlayImpl
     public void remove(Drawable drawable) {
-        this.f3497a.remove(drawable);
+        this.f3449a.remove(drawable);
     }
 }

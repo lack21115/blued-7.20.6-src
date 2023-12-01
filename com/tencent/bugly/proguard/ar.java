@@ -11,19 +11,19 @@ public final class ar extends k implements Cloneable {
     private static Map<String, String> g;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte f35380a = 0;
+    public byte f21689a = 0;
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35381c = "";
+    public String f21690c = "";
     public ArrayList<aq> d = null;
     public Map<String, String> e = null;
 
     @Override // com.tencent.bugly.proguard.k
     public final void a(i iVar) {
-        this.f35380a = iVar.a(this.f35380a, 0, true);
+        this.f21689a = iVar.a(this.f21689a, 0, true);
         this.b = iVar.b(1, false);
-        this.f35381c = iVar.b(2, false);
+        this.f21690c = iVar.b(2, false);
         if (f == null) {
             f = new ArrayList<>();
             f.add(new aq());
@@ -39,12 +39,12 @@ public final class ar extends k implements Cloneable {
 
     @Override // com.tencent.bugly.proguard.k
     public final void a(j jVar) {
-        jVar.a(this.f35380a, 0);
+        jVar.a(this.f21689a, 0);
         String str = this.b;
         if (str != null) {
             jVar.a(str, 1);
         }
-        String str2 = this.f35381c;
+        String str2 = this.f21690c;
         if (str2 != null) {
             jVar.a(str2, 2);
         }

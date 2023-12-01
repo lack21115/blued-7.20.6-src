@@ -13,20 +13,22 @@ import androidx.emoji2.text.EmojiCompat;
 import androidx.emoji2.text.MetadataRepo;
 import java.util.Arrays;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/emoji2/text/EmojiProcessor.class */
-final class EmojiProcessor {
+public final class EmojiProcessor {
 
     /* renamed from: a  reason: collision with root package name */
-    private final EmojiCompat.SpanFactory f2827a;
+    private final EmojiCompat.SpanFactory f2779a;
     private final MetadataRepo b;
 
     /* renamed from: c  reason: collision with root package name */
-    private EmojiCompat.GlyphChecker f2828c;
+    private EmojiCompat.GlyphChecker f2780c;
     private final boolean d;
     private final int[] e;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/emoji2/text/EmojiProcessor$CodepointIndexFinder.class */
-    static final class CodepointIndexFinder {
+    public static final class CodepointIndexFinder {
         private CodepointIndexFinder() {
         }
 
@@ -100,7 +102,7 @@ final class EmojiProcessor {
     public static class DefaultGlyphChecker implements EmojiCompat.GlyphChecker {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final ThreadLocal<StringBuilder> f2829a = new ThreadLocal<>();
+        private static final ThreadLocal<StringBuilder> f2781a = new ThreadLocal<>();
         private final TextPaint b;
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -111,10 +113,10 @@ final class EmojiProcessor {
         }
 
         private static StringBuilder a() {
-            if (f2829a.get() == null) {
-                f2829a.set(new StringBuilder());
+            if (f2781a.get() == null) {
+                f2781a.set(new StringBuilder());
             }
-            return f2829a.get();
+            return f2781a.get();
         }
 
         @Override // androidx.emoji2.text.EmojiCompat.GlyphChecker
@@ -132,15 +134,16 @@ final class EmojiProcessor {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/emoji2/text/EmojiProcessor$ProcessorSm.class */
-    static final class ProcessorSm {
+    public static final class ProcessorSm {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f2830a = 1;
+        private int f2782a = 1;
         private final MetadataRepo.Node b;
 
         /* renamed from: c  reason: collision with root package name */
-        private MetadataRepo.Node f2831c;
+        private MetadataRepo.Node f2783c;
         private MetadataRepo.Node d;
         private int e;
         private int f;
@@ -149,7 +152,7 @@ final class EmojiProcessor {
 
         ProcessorSm(MetadataRepo.Node node, boolean z, int[] iArr) {
             this.b = node;
-            this.f2831c = node;
+            this.f2783c = node;
             this.g = z;
             this.h = iArr;
         }
@@ -163,42 +166,42 @@ final class EmojiProcessor {
         }
 
         private int d() {
-            this.f2830a = 1;
-            this.f2831c = this.b;
+            this.f2782a = 1;
+            this.f2783c = this.b;
             this.f = 0;
             return 1;
         }
 
         private boolean e() {
-            if (this.f2831c.a().isDefaultEmoji() || b(this.e)) {
+            if (this.f2783c.a().isDefaultEmoji() || b(this.e)) {
                 return true;
             }
             if (this.g) {
                 if (this.h == null) {
                     return true;
                 }
-                return Arrays.binarySearch(this.h, this.f2831c.a().getCodepointAt(0)) < 0;
+                return Arrays.binarySearch(this.h, this.f2783c.a().getCodepointAt(0)) < 0;
             }
             return false;
         }
 
         int a(int i) {
-            MetadataRepo.Node a2 = this.f2831c.a(i);
+            MetadataRepo.Node a2 = this.f2783c.a(i);
             int i2 = 3;
-            if (this.f2830a == 2) {
+            if (this.f2782a == 2) {
                 if (a2 != null) {
-                    this.f2831c = a2;
+                    this.f2783c = a2;
                     this.f++;
                 } else if (c(i)) {
                     i2 = d();
                 } else if (!b(i)) {
-                    if (this.f2831c.a() == null) {
+                    if (this.f2783c.a() == null) {
                         i2 = d();
                     } else if (this.f != 1) {
-                        this.d = this.f2831c;
+                        this.d = this.f2783c;
                         d();
                     } else if (e()) {
-                        this.d = this.f2831c;
+                        this.d = this.f2783c;
                         d();
                     } else {
                         i2 = d();
@@ -208,8 +211,8 @@ final class EmojiProcessor {
             } else if (a2 == null) {
                 i2 = d();
             } else {
-                this.f2830a = 2;
-                this.f2831c = a2;
+                this.f2782a = 2;
+                this.f2783c = a2;
                 this.f = 1;
                 i2 = 2;
             }
@@ -222,12 +225,12 @@ final class EmojiProcessor {
         }
 
         EmojiMetadata b() {
-            return this.f2831c.a();
+            return this.f2783c.a();
         }
 
         boolean c() {
             boolean z = true;
-            if (this.f2830a == 2 && this.f2831c.a() != null) {
+            if (this.f2782a == 2 && this.f2783c.a() != null) {
                 if (this.f <= 1) {
                     if (e()) {
                         return true;
@@ -242,15 +245,15 @@ final class EmojiProcessor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public EmojiProcessor(MetadataRepo metadataRepo, EmojiCompat.SpanFactory spanFactory, EmojiCompat.GlyphChecker glyphChecker, boolean z, int[] iArr) {
-        this.f2827a = spanFactory;
+        this.f2779a = spanFactory;
         this.b = metadataRepo;
-        this.f2828c = glyphChecker;
+        this.f2780c = glyphChecker;
         this.d = z;
         this.e = iArr;
     }
 
     private void a(Spannable spannable, EmojiMetadata emojiMetadata, int i, int i2) {
-        spannable.setSpan(this.f2827a.a(emojiMetadata), i, i2, 33);
+        spannable.setSpan(this.f2779a.a(emojiMetadata), i, i2, 33);
     }
 
     private static boolean a(int i, int i2) {
@@ -324,7 +327,7 @@ final class EmojiProcessor {
 
     private boolean a(CharSequence charSequence, int i, int i2, EmojiMetadata emojiMetadata) {
         if (emojiMetadata.getHasGlyph() == 0) {
-            emojiMetadata.setHasGlyph(this.f2828c.hasGlyph(charSequence, i, i2, emojiMetadata.getSdkAdded()));
+            emojiMetadata.setHasGlyph(this.f2780c.hasGlyph(charSequence, i, i2, emojiMetadata.getSdkAdded()));
         }
         return emojiMetadata.getHasGlyph() == 2;
     }

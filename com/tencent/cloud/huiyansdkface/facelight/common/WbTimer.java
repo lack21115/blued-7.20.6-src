@@ -9,16 +9,16 @@ import java.util.TimerTask;
 public class WbTimer {
 
     /* renamed from: a  reason: collision with root package name */
-    private Timer f35597a = new Timer();
+    private Timer f21906a = new Timer();
     private boolean b;
 
     public void cancel() {
         WLogger.d("WbTimer", b.dO);
         this.b = true;
-        Timer timer = this.f35597a;
+        Timer timer = this.f21906a;
         if (timer != null) {
             timer.cancel();
-            this.f35597a = null;
+            this.f21906a = null;
         }
     }
 
@@ -29,8 +29,8 @@ public class WbTimer {
     public void reset() {
         WLogger.d("WbTimer", "reset");
         this.b = false;
-        if (this.f35597a == null) {
-            this.f35597a = new Timer();
+        if (this.f21906a == null) {
+            this.f21906a = new Timer();
         }
     }
 
@@ -38,7 +38,7 @@ public class WbTimer {
         if (this.b) {
             WLogger.d("WbTimer", "timer cancelled,no need go on.");
         } else {
-            this.f35597a.scheduleAtFixedRate(timerTask, j, j2);
+            this.f21906a.scheduleAtFixedRate(timerTask, j, j2);
         }
     }
 }

@@ -22,13 +22,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYGiftPkCountView.class */
 public class YYGiftPkCountView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ShapeFrameLayout f18188a;
+    private ShapeFrameLayout a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f18189c;
+    private ImageView c;
     private TextView d;
     private TextView e;
     private ValueAnimator f;
@@ -59,9 +55,9 @@ public class YYGiftPkCountView extends LinearLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_gift_pk_count, (ViewGroup) this, true);
-        this.f18188a = (ShapeFrameLayout) findViewById(R.id.fl_reward_chart);
+        this.a = (ShapeFrameLayout) findViewById(R.id.fl_reward_chart);
         this.b = (TextView) findViewById(R.id.tv_reward_name);
-        this.f18189c = (ImageView) findViewById(R.id.iv_reward_gift);
+        this.c = (ImageView) findViewById(R.id.iv_reward_gift);
         this.d = (TextView) findViewById(R.id.tv_pk_gift_count);
         this.e = (TextView) findViewById(R.id.tv_give);
         this.g = DensityUtils.a(getContext(), 24.0f);
@@ -90,23 +86,23 @@ public class YYGiftPkCountView extends LinearLayout {
     }
 
     public void setChartColor(int i) {
-        ShapeHelper.b(this.f18188a, i);
+        ShapeHelper.b(this.a, i);
     }
 
     public void setChartRange(float f) {
         ValueAnimator ofInt = ObjectAnimator.ofInt(0, (int) (f * this.h));
         this.f = ofInt;
         ofInt.setDuration(500L);
-        final RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) this.f18189c.getLayoutParams();
-        final RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) this.f18188a.getLayoutParams();
+        final RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) this.c.getLayoutParams();
+        final RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) this.a.getLayoutParams();
         this.f.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.yy_china.view.YYGiftPkCountView.2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
                 layoutParams2.height = intValue;
                 layoutParams.bottomMargin = Math.max(0, intValue - YYGiftPkCountView.this.g);
-                YYGiftPkCountView.this.f18188a.requestLayout();
-                YYGiftPkCountView.this.f18189c.requestLayout();
+                YYGiftPkCountView.this.a.requestLayout();
+                YYGiftPkCountView.this.c.requestLayout();
             }
         });
         this.f.start();
@@ -117,7 +113,7 @@ public class YYGiftPkCountView extends LinearLayout {
     }
 
     public void setPkGiftImage(String str) {
-        ImageLoader.a((IRequestHost) null, str).b(R.drawable.gift_default_icon).a(this.f18189c);
+        ImageLoader.a((IRequestHost) null, str).b(R.drawable.gift_default_icon).a(this.c);
     }
 
     public void setReceivedGiftCount(String str) {

@@ -41,18 +41,13 @@ import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopRecordLevelView.class */
 public class PopRecordLevelView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f15164a;
+    private LayoutInflater a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15165c;
+    private View c;
     private View d;
     private MyPopupWindow e;
     private CustomViewPager f;
@@ -63,15 +58,12 @@ public class PopRecordLevelView {
     private TaskAdapter m;
     private PrivilegeAdapter n;
     private ViewPager.OnPageChangeListener k = new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.view.PopRecordLevelView.4
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrolled(int i, float f, int i2) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
             PopRecordLevelView.this.g.setToolBtnSelect(i);
         }
@@ -103,21 +95,18 @@ public class PopRecordLevelView {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopRecordLevelView$PrivilegeAdapter.class */
     class PrivilegeAdapter extends BaseQuickAdapter<LiveRecordLevelPrivilegeModel, BaseViewHolder> {
         private ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private TextView f15175c;
+        private TextView c;
 
         public PrivilegeAdapter() {
-            super(R.layout.item_live_record_level_privilege, null);
+            super(R.layout.item_live_record_level_privilege, (List) null);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, LiveRecordLevelPrivilegeModel liveRecordLevelPrivilegeModel) {
             if (baseViewHolder != null) {
                 this.b = (ImageView) baseViewHolder.getView(R.id.live_privilege_icon);
-                this.f15175c = (TextView) baseViewHolder.getView(R.id.live_privilege_name);
+                this.c = (TextView) baseViewHolder.getView(R.id.live_privilege_name);
                 baseViewHolder.setText(R.id.live_privilege_name, liveRecordLevelPrivilegeModel.title);
                 baseViewHolder.setText(R.id.live_privilege_level, liveRecordLevelPrivilegeModel.message);
                 ImageLoader.a((IRequestHost) null, liveRecordLevelPrivilegeModel.status == 1 ? liveRecordLevelPrivilegeModel.icon : liveRecordLevelPrivilegeModel.icon_disable).a(this.b);
@@ -129,34 +118,28 @@ public class PopRecordLevelView {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopRecordLevelView$RecordLevelPagerAdapter.class */
     public class RecordLevelPagerAdapter extends PagerAdapter {
         private String b = "";
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f15177c = "";
+        private String c = "";
 
         RecordLevelPagerAdapter() {
         }
 
         public void a(String str, String str2) {
             this.b = str;
-            this.f15177c = str2;
+            this.c = str2;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             viewGroup.removeView((View) obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return PopRecordLevelView.this.l.size();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getItemPosition(Object obj) {
             return -2;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             while (PopRecordLevelView.this.o.size() < PopRecordLevelView.this.l.size()) {
                 PopRecordLevelView.this.o.add(LayoutInflater.from(PopRecordLevelView.this.b).inflate(R.layout.live_beauty_pager, viewGroup, false));
@@ -202,7 +185,7 @@ public class PopRecordLevelView {
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view2) {
                         Tracker.onClick(view2);
-                        if (TextUtils.isEmpty(RecordLevelPagerAdapter.this.f15177c)) {
+                        if (TextUtils.isEmpty(RecordLevelPagerAdapter.this.c)) {
                             return;
                         }
                         PopRecordLevelView.this.c();
@@ -210,7 +193,7 @@ public class PopRecordLevelView {
                             @Override // java.lang.Runnable
                             public void run() {
                                 PopRecordLevelView.this.e.a();
-                                PopRecordLevelView.this.i.p(RecordLevelPagerAdapter.this.f15177c);
+                                PopRecordLevelView.this.i.p(RecordLevelPagerAdapter.this.c);
                             }
                         }, 300L);
                     }
@@ -223,7 +206,6 @@ public class PopRecordLevelView {
             return view;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object obj) {
             return view == obj;
         }
@@ -232,23 +214,20 @@ public class PopRecordLevelView {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopRecordLevelView$TaskAdapter.class */
     class TaskAdapter extends BaseQuickAdapter<LiveRecordLevelTaskModel, BaseViewHolder> {
         private ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private TextView f15183c;
+        private TextView c;
         private TextView d;
         private ImageView e;
 
         public TaskAdapter() {
-            super(R.layout.item_live_record_level_task, null);
+            super(R.layout.item_live_record_level_task, (List) null);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, LiveRecordLevelTaskModel liveRecordLevelTaskModel) {
             if (baseViewHolder != null) {
                 this.b = (ImageView) baseViewHolder.getView(R.id.live_task_icon);
-                this.f15183c = (TextView) baseViewHolder.getView(R.id.live_task_name);
+                this.c = (TextView) baseViewHolder.getView(R.id.live_task_name);
                 this.d = (TextView) baseViewHolder.getView(R.id.live_task_details);
                 this.e = (ImageView) baseViewHolder.getView(R.id.live_task_status_icon);
                 baseViewHolder.setText(R.id.live_task_name, liveRecordLevelTaskModel.title);
@@ -289,10 +268,10 @@ public class PopRecordLevelView {
 
     private void d() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f15164a = from;
+        this.a = from;
         View inflate = from.inflate(R.layout.pop_window_record_level_task, (ViewGroup) null);
         View findViewById = inflate.findViewById(R.id.tv_bg);
-        this.f15165c = findViewById;
+        this.c = findViewById;
         findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopRecordLevelView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -326,7 +305,7 @@ public class PopRecordLevelView {
         this.f.addOnPageChangeListener(this.k);
         MyPopupWindow myPopupWindow = new MyPopupWindow(inflate, -1, -1, true);
         this.e = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.e.setTouchable(true);
         this.e.setOutsideTouchable(true);
         this.e.setFocusable(true);
@@ -352,7 +331,7 @@ public class PopRecordLevelView {
         if (recordingOnliveFragment != null) {
             recordingOnliveFragment.O();
         }
-        this.f15165c.clearAnimation();
+        this.c.clearAnimation();
         this.d.clearAnimation();
         if (this.e.isShowing()) {
             this.e.a();
@@ -396,10 +375,10 @@ public class PopRecordLevelView {
                 LiveRecordLevelModel liveRecordLevelModel;
                 if (bluedEntity != null && bluedEntity.data != null && bluedEntity.data.size() > 0 && (liveRecordLevelModel = bluedEntity.data.get(0)) != null) {
                     if (liveRecordLevelModel.missions != null && PopRecordLevelView.this.m != null) {
-                        PopRecordLevelView.this.m.addData((Collection) liveRecordLevelModel.missions);
+                        PopRecordLevelView.this.m.addData(liveRecordLevelModel.missions);
                     }
                     if (liveRecordLevelModel.features != null && PopRecordLevelView.this.n != null) {
-                        PopRecordLevelView.this.n.addData((Collection) liveRecordLevelModel.features);
+                        PopRecordLevelView.this.n.addData(liveRecordLevelModel.features);
                     }
                 }
                 if (bluedEntity == null || bluedEntity.extra == null || PopRecordLevelView.this.h == null) {

@@ -49,34 +49,35 @@ public class FilterDataManager {
         return instance;
     }
 
+    /* JADX WARN: Type inference failed for: r2v0, types: [com.blued.android.module.external_sense_library.manager.FilterDataManager$1] */
     public List<BluedFilterType.FILER> getFilters() {
         if (this.modelItemMap.size() > 0) {
             ArrayList arrayList = new ArrayList();
             arrayList.addAll(this.modelItemMap.keySet());
             return arrayList;
         }
-        String c2 = SenseLibSPMgr.a().c();
+        String c = SenseLibSPMgr.a().c();
         boolean z = true;
-        if (!TextUtils.isEmpty(c2)) {
-            FilterDataModel filterDataModel = (FilterDataModel) AppInfo.f().fromJson(c2, new TypeToken<FilterDataModel>() { // from class: com.blued.android.module.external_sense_library.manager.FilterDataManager.1
+        if (!TextUtils.isEmpty(c)) {
+            FilterDataModel filterDataModel = (FilterDataModel) AppInfo.f().fromJson(c, new TypeToken<FilterDataModel>() { // from class: com.blued.android.module.external_sense_library.manager.FilterDataManager.1
             }.getType());
             z = true;
             if (filterDataModel != null) {
                 z = true;
-                if (filterDataModel.f11262a != null) {
+                if (filterDataModel.a != null) {
                     z = true;
-                    if (filterDataModel.f11262a.size() > 0) {
-                        List<String> c3 = FileUtils.c(AppInfo.d(), "filters");
+                    if (filterDataModel.a.size() > 0) {
+                        List<String> c2 = FileUtils.c(AppInfo.d(), "filters");
                         z = true;
-                        if (c3.size() == filterDataModel.f11262a.size()) {
-                            for (FilterDataModel.FilterItemData filterItemData : filterDataModel.f11262a) {
+                        if (c2.size() == filterDataModel.a.size()) {
+                            for (FilterDataModel.FilterItemData filterItemData : filterDataModel.a) {
                                 if (filterItemData != null) {
-                                    this.modelItemMap.put(filterItemData.f11263a, filterItemData.b);
-                                    c3.remove(filterItemData.f11263a.getValue());
+                                    this.modelItemMap.put(filterItemData.a, filterItemData.b);
+                                    c2.remove(filterItemData.a.getValue());
                                 }
                             }
                             z = true;
-                            if (c3.size() <= 0) {
+                            if (c2.size() <= 0) {
                                 z = false;
                             }
                         }

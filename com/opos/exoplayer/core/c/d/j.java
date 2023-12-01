@@ -1,6 +1,5 @@
 package com.opos.exoplayer.core.c.d;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.net.HttpHeaders;
 import com.huawei.openalliance.ad.constant.ax;
 import com.opos.exoplayer.core.i.u;
@@ -14,11 +13,11 @@ import com.opos.exoplayer.core.metadata.id3.TextInformationFrame;
 final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f25145a = u.f("nam");
+    private static final int f11457a = u.f("nam");
     private static final int b = u.f("trk");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f25146c = u.f("cmt");
+    private static final int f11458c = u.f("cmt");
     private static final int d = u.f("day");
     private static final int e = u.f("ART");
     private static final int f = u.f("too");
@@ -44,7 +43,7 @@ final class j {
     private static final int z = u.f("pgap");
     private static final int A = u.f("sosn");
     private static final int B = u.f("tvsh");
-    private static final int C = u.f(com.anythink.expressad.exoplayer.g.b.i.f7358a);
+    private static final int C = u.f(com.anythink.expressad.exoplayer.g.b.i.f4519a);
     private static final String[] D = {"Blues", "Classic Rock", "Country", "Dance", "Disco", "Funk", "Grunge", "Hip-Hop", "Jazz", "Metal", "New Age", "Oldies", "Other", "Pop", "R&B", "Rap", "Reggae", "Rock", "Techno", "Industrial", "Alternative", "Ska", "Death Metal", "Pranks", "Soundtrack", "Euro-Techno", "Ambient", "Trip-Hop", "Vocal", "Jazz+Funk", "Fusion", "Trance", "Classical", "Instrumental", "Acid", "House", "Game", "Sound Clip", "Gospel", "Noise", "AlternRock", "Bass", "Soul", "Punk", "Space", "Meditative", "Instrumental Pop", "Instrumental Rock", "Ethnic", "Gothic", "Darkwave", "Techno-Industrial", "Electronic", "Pop-Folk", "Eurodance", "Dream", "Southern Rock", "Comedy", "Cult", "Gangsta", "Top 40", "Christian Rap", "Pop/Funk", "Jungle", "Native American", "Cabaret", "New Wave", "Psychadelic", "Rave", "Showtunes", HttpHeaders.TRAILER, "Lo-Fi", "Tribal", "Acid Punk", "Acid Jazz", "Polka", "Retro", "Musical", "Rock & Roll", "Hard Rock", "Folk", "Folk-Rock", "National Folk", "Swing", "Fast Fusion", "Bebob", "Latin", "Revival", "Celtic", "Bluegrass", "Avantgarde", "Gothic Rock", "Progressive Rock", "Psychedelic Rock", "Symphonic Rock", "Slow Rock", "Big Band", "Chorus", "Easy Listening", "Acoustic", "Humour", "Speech", "Chanson", "Opera", "Chamber Music", "Sonata", "Symphony", "Booty Bass", "Primus", "Porn Groove", "Satire", "Slow Jam", "Club", "Tango", "Samba", "Folklore", "Ballad", "Power Ballad", "Rhythmic Soul", "Freestyle", "Duet", "Punk Rock", "Drum Solo", "A capella", "Euro-House", "Dance Hall", "Goa", "Drum & Bass", "Club-House", "Hardcore", "Terror", "Indie", "BritPop", "Negerpunk", "Polsk Punk", "Beat", "Christian Gangsta Rap", "Heavy Metal", "Black Metal", "Crossover", "Contemporary Christian", "Christian Rock", "Merengue", "Salsa", "Thrash Metal", "Anime", "Jpop", "Synthpop"};
 
     public static Metadata.Entry a(com.opos.exoplayer.core.i.m mVar) {
@@ -57,10 +56,10 @@ final class j {
         try {
             if (i2 == 169 || i2 == 65533) {
                 int i3 = 16777215 & o3;
-                if (i3 == f25146c) {
+                if (i3 == f11458c) {
                     a2 = a(o3, mVar);
                 } else {
-                    if (i3 != f25145a && i3 != b) {
+                    if (i3 != f11457a && i3 != b) {
                         if (i3 != h && i3 != i) {
                             if (i3 == d) {
                                 str = "TDRC";
@@ -147,7 +146,7 @@ final class j {
         if (mVar.o() == g.aF) {
             mVar.d(8);
             String f2 = mVar.f(o2 - 16);
-            return new CommentFrame(com.anythink.expressad.exoplayer.b.f7166ar, f2, f2);
+            return new CommentFrame(com.anythink.expressad.exoplayer.b.f4327ar, f2, f2);
         }
         com.opos.cmn.an.f.a.c("MetadataUtil", "Failed to parse comment attribute: " + g.c(i2));
         return null;
@@ -160,7 +159,7 @@ final class j {
             i3 = Math.min(1, d2);
         }
         if (i3 >= 0) {
-            return z2 ? new TextInformationFrame(str, null, Integer.toString(i3)) : new CommentFrame(com.anythink.expressad.exoplayer.b.f7166ar, str, Integer.toString(i3));
+            return z2 ? new TextInformationFrame(str, null, Integer.toString(i3)) : new CommentFrame(com.anythink.expressad.exoplayer.b.f4327ar, str, Integer.toString(i3));
         }
         com.opos.cmn.an.f.a.c("MetadataUtil", "Failed to parse uint8 attribute: " + g.c(i2));
         return null;
@@ -197,7 +196,7 @@ final class j {
                 }
                 mVar.c(i3);
                 mVar.d(16);
-                commentFrame = new CommentFrame(com.anythink.expressad.exoplayer.b.f7166ar, str2, mVar.f(i4 - 16));
+                commentFrame = new CommentFrame(com.anythink.expressad.exoplayer.b.f4327ar, str2, mVar.f(i4 - 16));
             }
         }
         return commentFrame;
@@ -223,7 +222,7 @@ final class j {
                 int h3 = mVar.h();
                 String str3 = str2;
                 if (h3 > 0) {
-                    str3 = str2 + BridgeUtil.SPLIT_MARK + h3;
+                    str3 = str2 + "/" + h3;
                 }
                 return new TextInformationFrame(str, null, str3);
             }

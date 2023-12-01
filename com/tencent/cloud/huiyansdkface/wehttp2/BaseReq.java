@@ -18,11 +18,11 @@ import java.util.concurrent.TimeUnit;
 public abstract class BaseReq<R extends BaseReq> implements WeReq {
 
     /* renamed from: a  reason: collision with root package name */
-    protected String f36065a;
+    protected String f22374a;
     protected String b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Map<String, String> f36066c;
+    protected Map<String, String> f22375c;
     protected WeOkHttp d;
     protected Request.Builder e;
     private Call f;
@@ -33,7 +33,7 @@ public abstract class BaseReq<R extends BaseReq> implements WeReq {
 
     public BaseReq(WeOkHttp weOkHttp, String str, String str2) {
         this.d = weOkHttp;
-        this.f36065a = str;
+        this.f22374a = str;
         this.b = str2;
         Request.Builder builder = new Request.Builder();
         this.e = builder;
@@ -166,7 +166,7 @@ public abstract class BaseReq<R extends BaseReq> implements WeReq {
     public final HttpUrl.Builder b() {
         HttpUrl.Builder newBuilder = HttpUrl.parse(this.d.config().getUrl(this.b)).newBuilder();
         a(newBuilder, this.d.config().getParams());
-        return a(newBuilder, this.f36066c);
+        return a(newBuilder, this.f22375c);
     }
 
     protected abstract Call c();
@@ -310,27 +310,27 @@ public abstract class BaseReq<R extends BaseReq> implements WeReq {
     }
 
     public final R param(String str, String str2) {
-        if (this.f36066c == null) {
-            this.f36066c = new HashMap();
+        if (this.f22375c == null) {
+            this.f22375c = new HashMap();
         }
         if (str != null) {
             if (str.trim().equals("")) {
                 return this;
             }
-            this.f36066c.put(str, str2);
+            this.f22375c.put(str, str2);
         }
         return this;
     }
 
     public final R param(Map<String, String> map) {
-        if (this.f36066c == null) {
-            this.f36066c = new HashMap();
+        if (this.f22375c == null) {
+            this.f22375c = new HashMap();
         }
         if (map != null) {
             if (map.size() == 0) {
                 return this;
             }
-            this.f36066c.putAll(map);
+            this.f22375c.putAll(map);
         }
         return this;
     }

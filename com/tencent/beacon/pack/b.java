@@ -11,11 +11,11 @@ import java.util.Map;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f35098a = new byte[0];
+    public static final byte[] f21407a = new byte[0];
     private static final char[] b = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     /* renamed from: c  reason: collision with root package name */
-    protected String f35099c;
+    protected String f21408c;
     private ByteBuffer d;
 
     public b() {
@@ -23,7 +23,7 @@ public class b {
     }
 
     public b(int i) {
-        this.f35099c = "GBK";
+        this.f21408c = "GBK";
         this.d = ByteBuffer.allocate(i);
     }
 
@@ -44,7 +44,7 @@ public class b {
     }
 
     public int a(String str) {
-        this.f35099c = str;
+        this.f21408c = str;
         return 0;
     }
 
@@ -167,7 +167,7 @@ public class b {
     public void a(String str, int i) {
         byte[] bytes;
         try {
-            bytes = str.getBytes(this.f35099c);
+            bytes = str.getBytes(this.f21408c);
         } catch (UnsupportedEncodingException e) {
             bytes = str.getBytes(Charset.forName("UTF-8"));
         }
@@ -337,7 +337,7 @@ public class b {
 
     public byte[] b() {
         byte[] bArr = new byte[this.d.position()];
-        System.arraycopy((Object) this.d.array(), 0, (Object) bArr, 0, this.d.position());
+        System.arraycopy(this.d.array(), 0, bArr, 0, this.d.position());
         return bArr;
     }
 }

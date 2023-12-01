@@ -14,11 +14,11 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     public static final int BEHAVIOR_SET_USER_VISIBLE_HINT = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private final FragmentManager f2995a;
+    private final FragmentManager f2947a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private FragmentTransaction f2996c;
+    private FragmentTransaction f2948c;
     private Fragment d;
     private boolean e;
 
@@ -28,9 +28,9 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     }
 
     public FragmentPagerAdapter(FragmentManager fragmentManager, int i) {
-        this.f2996c = null;
+        this.f2948c = null;
         this.d = null;
-        this.f2995a = fragmentManager;
+        this.f2947a = fragmentManager;
         this.b = i;
     }
 
@@ -41,10 +41,10 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     @Override // androidx.viewpager.widget.PagerAdapter
     public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
         Fragment fragment = (Fragment) obj;
-        if (this.f2996c == null) {
-            this.f2996c = this.f2995a.beginTransaction();
+        if (this.f2948c == null) {
+            this.f2948c = this.f2947a.beginTransaction();
         }
-        this.f2996c.detach(fragment);
+        this.f2948c.detach(fragment);
         if (fragment.equals(this.d)) {
             this.d = null;
         }
@@ -52,7 +52,7 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
 
     @Override // androidx.viewpager.widget.PagerAdapter
     public void finishUpdate(ViewGroup viewGroup) {
-        FragmentTransaction fragmentTransaction = this.f2996c;
+        FragmentTransaction fragmentTransaction = this.f2948c;
         if (fragmentTransaction != null) {
             if (!this.e) {
                 try {
@@ -62,7 +62,7 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
                     this.e = false;
                 }
             }
-            this.f2996c = null;
+            this.f2948c = null;
         }
     }
 
@@ -75,23 +75,23 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     @Override // androidx.viewpager.widget.PagerAdapter
     public Object instantiateItem(ViewGroup viewGroup, int i) {
         Fragment fragment;
-        if (this.f2996c == null) {
-            this.f2996c = this.f2995a.beginTransaction();
+        if (this.f2948c == null) {
+            this.f2948c = this.f2947a.beginTransaction();
         }
         long itemId = getItemId(i);
-        Fragment findFragmentByTag = this.f2995a.findFragmentByTag(a(viewGroup.getId(), itemId));
+        Fragment findFragmentByTag = this.f2947a.findFragmentByTag(a(viewGroup.getId(), itemId));
         if (findFragmentByTag != null) {
-            this.f2996c.attach(findFragmentByTag);
+            this.f2948c.attach(findFragmentByTag);
             fragment = findFragmentByTag;
         } else {
             Fragment item = getItem(i);
-            this.f2996c.add(viewGroup.getId(), item, a(viewGroup.getId(), itemId));
+            this.f2948c.add(viewGroup.getId(), item, a(viewGroup.getId(), itemId));
             fragment = item;
         }
         if (fragment != this.d) {
             fragment.setMenuVisibility(false);
             if (this.b == 1) {
-                this.f2996c.setMaxLifecycle(fragment, Lifecycle.State.STARTED);
+                this.f2948c.setMaxLifecycle(fragment, Lifecycle.State.STARTED);
                 return fragment;
             }
             fragment.setUserVisibleHint(false);
@@ -121,20 +121,20 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
             if (fragment2 != null) {
                 fragment2.setMenuVisibility(false);
                 if (this.b == 1) {
-                    if (this.f2996c == null) {
-                        this.f2996c = this.f2995a.beginTransaction();
+                    if (this.f2948c == null) {
+                        this.f2948c = this.f2947a.beginTransaction();
                     }
-                    this.f2996c.setMaxLifecycle(this.d, Lifecycle.State.STARTED);
+                    this.f2948c.setMaxLifecycle(this.d, Lifecycle.State.STARTED);
                 } else {
                     this.d.setUserVisibleHint(false);
                 }
             }
             fragment.setMenuVisibility(true);
             if (this.b == 1) {
-                if (this.f2996c == null) {
-                    this.f2996c = this.f2995a.beginTransaction();
+                if (this.f2948c == null) {
+                    this.f2948c = this.f2947a.beginTransaction();
                 }
-                this.f2996c.setMaxLifecycle(fragment, Lifecycle.State.RESUMED);
+                this.f2948c.setMaxLifecycle(fragment, Lifecycle.State.RESUMED);
             } else {
                 fragment.setUserVisibleHint(true);
             }

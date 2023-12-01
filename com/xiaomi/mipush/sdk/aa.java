@@ -8,20 +8,20 @@ import com.xiaomi.push.hk;
 public class aa implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ MiTinyDataClient.a.C1093a f41195a;
+    final /* synthetic */ MiTinyDataClient.a.C0923a f27504a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ hk f122a;
+    final /* synthetic */ hk f75a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public aa(MiTinyDataClient.a.C1093a c1093a, hk hkVar) {
-        this.f41195a = c1093a;
-        this.f122a = hkVar;
+    public aa(MiTinyDataClient.a.C0923a c0923a, hk hkVar) {
+        this.f27504a = c0923a;
+        this.f75a = hkVar;
     }
 
     @Override // java.lang.Runnable
     public void run() {
-        this.f41195a.f117a.add(this.f122a);
-        this.f41195a.a();
+        this.f27504a.f70a.add(this.f75a);
+        this.f27504a.a();
     }
 }

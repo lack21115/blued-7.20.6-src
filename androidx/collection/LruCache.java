@@ -8,11 +8,11 @@ import java.util.Map;
 public class LruCache<K, V> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedHashMap<K, V> f1951a;
+    private final LinkedHashMap<K, V> f1903a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f1952c;
+    private int f1904c;
     private int d;
     private int e;
     private int f;
@@ -23,8 +23,8 @@ public class LruCache<K, V> {
         if (i <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.f1952c = i;
-        this.f1951a = new LinkedHashMap<>(0, 0.75f, true);
+        this.f1904c = i;
+        this.f1903a = new LinkedHashMap<>(0, 0.75f, true);
     }
 
     private int b(K k, V v) {
@@ -70,7 +70,7 @@ public class LruCache<K, V> {
         V put;
         if (k != null) {
             synchronized (this) {
-                V v = this.f1951a.get(k);
+                V v = this.f1903a.get(k);
                 if (v != null) {
                     this.g++;
                     return v;
@@ -82,9 +82,9 @@ public class LruCache<K, V> {
                 }
                 synchronized (this) {
                     this.e++;
-                    put = this.f1951a.put(k, a2);
+                    put = this.f1903a.put(k, a2);
                     if (put != null) {
-                        this.f1951a.put(k, put);
+                        this.f1903a.put(k, put);
                     } else {
                         this.b += b(k, a2);
                     }
@@ -93,7 +93,7 @@ public class LruCache<K, V> {
                     a(false, k, a2, put);
                     return put;
                 }
-                trimToSize(this.f1952c);
+                trimToSize(this.f1904c);
                 return a2;
             }
         }
@@ -111,7 +111,7 @@ public class LruCache<K, V> {
     public final int maxSize() {
         int i;
         synchronized (this) {
-            i = this.f1952c;
+            i = this.f1904c;
         }
         return i;
     }
@@ -132,7 +132,7 @@ public class LruCache<K, V> {
         synchronized (this) {
             this.d++;
             this.b += b(k, v);
-            put = this.f1951a.put(k, v);
+            put = this.f1903a.put(k, v);
             if (put != null) {
                 this.b -= b(k, put);
             }
@@ -140,7 +140,7 @@ public class LruCache<K, V> {
         if (put != null) {
             a(false, k, put, v);
         }
-        trimToSize(this.f1952c);
+        trimToSize(this.f1904c);
         return put;
     }
 
@@ -156,7 +156,7 @@ public class LruCache<K, V> {
         V remove;
         if (k != null) {
             synchronized (this) {
-                remove = this.f1951a.remove(k);
+                remove = this.f1903a.remove(k);
                 if (remove != null) {
                     this.b -= b(k, remove);
                 }
@@ -174,7 +174,7 @@ public class LruCache<K, V> {
             throw new IllegalArgumentException("maxSize <= 0");
         }
         synchronized (this) {
-            this.f1952c = i;
+            this.f1904c = i;
         }
         trimToSize(i);
     }
@@ -190,7 +190,7 @@ public class LruCache<K, V> {
     public final Map<K, V> snapshot() {
         LinkedHashMap linkedHashMap;
         synchronized (this) {
-            linkedHashMap = new LinkedHashMap(this.f1951a);
+            linkedHashMap = new LinkedHashMap(this.f1903a);
         }
         return linkedHashMap;
     }
@@ -199,7 +199,7 @@ public class LruCache<K, V> {
         String format;
         synchronized (this) {
             int i = this.g + this.h;
-            format = String.format(Locale.US, "LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", Integer.valueOf(this.f1952c), Integer.valueOf(this.g), Integer.valueOf(this.h), Integer.valueOf(i != 0 ? (this.g * 100) / i : 0));
+            format = String.format(Locale.US, "LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", Integer.valueOf(this.f1904c), Integer.valueOf(this.g), Integer.valueOf(this.h), Integer.valueOf(i != 0 ? (this.g * 100) / i : 0));
         }
         return format;
     }
@@ -221,7 +221,7 @@ public class LruCache<K, V> {
             int r0 = r0.b     // Catch: java.lang.Throwable -> Lab
             if (r0 < 0) goto L84
             r0 = r6
-            java.util.LinkedHashMap<K, V> r0 = r0.f1951a     // Catch: java.lang.Throwable -> Lab
+            java.util.LinkedHashMap<K, V> r0 = r0.f1903a     // Catch: java.lang.Throwable -> Lab
             boolean r0 = r0.isEmpty()     // Catch: java.lang.Throwable -> Lab
             if (r0 == 0) goto L1a
             r0 = r6
@@ -233,13 +233,13 @@ public class LruCache<K, V> {
             r1 = r7
             if (r0 <= r1) goto L81
             r0 = r6
-            java.util.LinkedHashMap<K, V> r0 = r0.f1951a     // Catch: java.lang.Throwable -> Lab
+            java.util.LinkedHashMap<K, V> r0 = r0.f1903a     // Catch: java.lang.Throwable -> Lab
             boolean r0 = r0.isEmpty()     // Catch: java.lang.Throwable -> Lab
             if (r0 == 0) goto L2f
             goto L81
         L2f:
             r0 = r6
-            java.util.LinkedHashMap<K, V> r0 = r0.f1951a     // Catch: java.lang.Throwable -> Lab
+            java.util.LinkedHashMap<K, V> r0 = r0.f1903a     // Catch: java.lang.Throwable -> Lab
             java.util.Set r0 = r0.entrySet()     // Catch: java.lang.Throwable -> Lab
             java.util.Iterator r0 = r0.iterator()     // Catch: java.lang.Throwable -> Lab
             java.lang.Object r0 = r0.next()     // Catch: java.lang.Throwable -> Lab
@@ -252,7 +252,7 @@ public class LruCache<K, V> {
             java.lang.Object r0 = r0.getValue()     // Catch: java.lang.Throwable -> Lab
             r9 = r0
             r0 = r6
-            java.util.LinkedHashMap<K, V> r0 = r0.f1951a     // Catch: java.lang.Throwable -> Lab
+            java.util.LinkedHashMap<K, V> r0 = r0.f1903a     // Catch: java.lang.Throwable -> Lab
             r1 = r8
             java.lang.Object r0 = r0.remove(r1)     // Catch: java.lang.Throwable -> Lab
             r0 = r6

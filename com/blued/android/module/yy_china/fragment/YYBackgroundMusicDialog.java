@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import com.blued.android.module.live.base.manager.YYMusicManager;
 import com.blued.android.module.live.base.music.BackgroundMusicView;
@@ -18,9 +20,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYBackgroundMusicDialog.class */
 public final class YYBackgroundMusicDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BlackMusicListener f17105a;
+    private BlackMusicListener a;
     private BackgroundMusicView b;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -46,25 +46,25 @@ public final class YYBackgroundMusicDialog extends BaseFullScreenDialog {
     }
 
     public final void a(BlackMusicListener blackMusicListener) {
-        this.f17105a = blackMusicListener;
+        this.a = blackMusicListener;
     }
 
     public final BackgroundMusicView f() {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        YYMusicManager.f11418a.c().a(false, "", "");
+        YYMusicManager.a.c().a(false, "", "");
         View inflate = getLayoutInflater().inflate(R.layout.fragment_yy_background_music, (ViewGroup) null);
-        FragmentYyBackgroundMusicBinding a2 = FragmentYyBackgroundMusicBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        BlackMusicListener blackMusicListener = this.f17105a;
+        FragmentYyBackgroundMusicBinding a = FragmentYyBackgroundMusicBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        BlackMusicListener blackMusicListener = this.a;
         if (blackMusicListener != null) {
             Context context = inflate.getContext();
             Intrinsics.c(context, "view.context");
-            a(new BackgroundMusicView(context, blackMusicListener, this, a()));
+            a(new BackgroundMusicView(context, blackMusicListener, (Fragment) this, a()));
             BackgroundMusicView f = f();
             if (f != null) {
                 f.setDissListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYBackgroundMusicDialog$TnxYi-FvfSf50hv8VZu9mnAyCnI
@@ -74,7 +74,7 @@ public final class YYBackgroundMusicDialog extends BaseFullScreenDialog {
                     }
                 });
             }
-            a2.f16491a.addView(f(), -1, -1);
+            a.a.addView(f(), -1, -1);
             BackgroundMusicView f2 = f();
             if (f2 != null) {
                 f2.a();
@@ -83,15 +83,14 @@ public final class YYBackgroundMusicDialog extends BaseFullScreenDialog {
             if (f3 != null) {
                 f3.b();
             }
-            LiveEventBus.get("show_music_close", String.class).observe(this, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYBackgroundMusicDialog$uk-OycvhYjgZV7ipTAqqjJdhVgA
-                @Override // androidx.lifecycle.Observer
+            LiveEventBus.get("show_music_close", String.class).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYBackgroundMusicDialog$uk-OycvhYjgZV7ipTAqqjJdhVgA
                 public final void onChanged(Object obj) {
                     YYBackgroundMusicDialog.a(YYBackgroundMusicDialog.this, (String) obj);
                 }
             });
         }
-        if (this.f17105a == null) {
-            a2.f16491a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYBackgroundMusicDialog$t-VvbAY9-L9u_WXrqV4d_k2tyXk
+        if (this.a == null) {
+            a.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYBackgroundMusicDialog$t-VvbAY9-L9u_WXrqV4d_k2tyXk
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYBackgroundMusicDialog.b(YYBackgroundMusicDialog.this, view);
@@ -101,7 +100,7 @@ public final class YYBackgroundMusicDialog extends BaseFullScreenDialog {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         BackgroundMusicView backgroundMusicView = this.b;

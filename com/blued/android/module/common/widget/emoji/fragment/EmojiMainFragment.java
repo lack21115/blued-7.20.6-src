@@ -18,13 +18,9 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/fragment/EmojiMainFragment.class */
 public class EmojiMainFragment extends Fragment implements EmojiFragment.OnEmojiClickedListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f11128a;
+    private View a;
     private ViewPager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private EmoticonsIndicatorView f11129c;
+    private EmoticonsIndicatorView c;
     private List<Fragment> e;
     private OnMainEmojiClickedListener f;
     private EmojiPagerAdapter g;
@@ -40,12 +36,10 @@ public class EmojiMainFragment extends Fragment implements EmojiFragment.OnEmoji
             super(fragmentManager);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return EmojiMainFragment.this.e.size();
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             return (Fragment) EmojiMainFragment.this.e.get(i);
         }
@@ -64,8 +58,8 @@ public class EmojiMainFragment extends Fragment implements EmojiFragment.OnEmoji
     }
 
     private void b() {
-        this.b = (ViewPager) this.f11128a.findViewById(R.id.fragment_emoji_main_pager);
-        this.f11129c = (EmoticonsIndicatorView) this.f11128a.findViewById(R.id.fragment_emoji_main_indicator);
+        this.b = this.a.findViewById(R.id.fragment_emoji_main_pager);
+        this.c = (EmoticonsIndicatorView) this.a.findViewById(R.id.fragment_emoji_main_indicator);
     }
 
     private void c() {
@@ -115,7 +109,7 @@ public class EmojiMainFragment extends Fragment implements EmojiFragment.OnEmoji
                 this.e.add(emojiFragment3);
             }
         }
-        this.f11129c.a(this.e.size());
+        this.c.a(this.e.size());
         EmojiPagerAdapter emojiPagerAdapter = this.g;
         if (emojiPagerAdapter != null) {
             emojiPagerAdapter.notifyDataSetChanged();
@@ -125,17 +119,14 @@ public class EmojiMainFragment extends Fragment implements EmojiFragment.OnEmoji
         this.g = emojiPagerAdapter2;
         this.b.setAdapter(emojiPagerAdapter2);
         this.b.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.common.widget.emoji.fragment.EmojiMainFragment.1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i7) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i7, float f, int i8) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i7) {
-                EmojiMainFragment.this.f11129c.b(i7);
+                EmojiMainFragment.this.c.b(i7);
             }
         });
     }
@@ -153,22 +144,20 @@ public class EmojiMainFragment extends Fragment implements EmojiFragment.OnEmoji
         this.d = list;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        if (this.f11128a == null) {
+        if (this.a == null) {
             this.j = true;
-            this.f11128a = layoutInflater.inflate(R.layout.fragment_emoji_main, viewGroup, false);
+            this.a = layoutInflater.inflate(R.layout.fragment_emoji_main, viewGroup, false);
             b();
             a();
         }
-        ViewGroup viewGroup2 = (ViewGroup) this.f11128a.getParent();
+        ViewGroup viewGroup2 = (ViewGroup) this.a.getParent();
         if (viewGroup2 != null) {
-            viewGroup2.removeView(this.f11128a);
+            viewGroup2.removeView(this.a);
         }
-        return this.f11128a;
+        return this.a;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onDetach() {
         super.onDetach();
         List<Fragment> list = this.e;
@@ -178,25 +167,21 @@ public class EmojiMainFragment extends Fragment implements EmojiFragment.OnEmoji
         list.clear();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onHiddenChanged(boolean z) {
         Tracker.onHiddenChanged(this, z);
         super.onHiddenChanged(z);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onPause() {
         Tracker.onPause(this);
         super.onPause();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onResume() {
         Tracker.onResume(this);
         super.onResume();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         Tracker.setUserVisibleHint(this, z);
         super.setUserVisibleHint(z);

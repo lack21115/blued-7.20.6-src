@@ -25,7 +25,7 @@ public final class a extends com.kwad.components.ad.h.a implements j.a {
     private boolean nJ;
     private com.kwad.components.core.video.j nL;
     private j qt;
-    private final List<InterfaceC0494a> xA;
+    private final List<InterfaceC0324a> xA;
     private OfflineOnAudioConflictListener xB;
     private String xv;
     private AtomicBoolean xw;
@@ -35,7 +35,7 @@ public final class a extends com.kwad.components.ad.h.a implements j.a {
 
     /* renamed from: com.kwad.components.ad.reward.j.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/reward/j/a$a.class */
-    public interface InterfaceC0494a {
+    public interface InterfaceC0324a {
         void iX();
     }
 
@@ -120,8 +120,8 @@ public final class a extends com.kwad.components.ad.h.a implements j.a {
         this.li = true;
     }
 
-    public final void a(InterfaceC0494a interfaceC0494a) {
-        this.xA.add(interfaceC0494a);
+    public final void a(InterfaceC0324a interfaceC0324a) {
+        this.xA.add(interfaceC0324a);
     }
 
     public final void a(i iVar) {
@@ -135,8 +135,8 @@ public final class a extends com.kwad.components.ad.h.a implements j.a {
         this.xz.add(aVar);
     }
 
-    public final void b(InterfaceC0494a interfaceC0494a) {
-        this.xA.remove(interfaceC0494a);
+    public final void b(InterfaceC0324a interfaceC0324a) {
+        this.xA.remove(interfaceC0324a);
     }
 
     public final void b(i iVar) {
@@ -228,8 +228,8 @@ public final class a extends com.kwad.components.ad.h.a implements j.a {
     }
 
     public final void jD() {
-        for (InterfaceC0494a interfaceC0494a : this.xA) {
-            interfaceC0494a.iX();
+        for (InterfaceC0324a interfaceC0324a : this.xA) {
+            interfaceC0324a.iX();
         }
     }
 

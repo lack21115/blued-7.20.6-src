@@ -28,7 +28,7 @@ public final class TextInfo implements Parcelable {
     private final int mSequenceNumber;
 
     public TextInfo(Parcel parcel) {
-        this.mCharSequence = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.mCharSequence = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         this.mCookie = parcel.readInt();
         this.mSequenceNumber = parcel.readInt();
     }

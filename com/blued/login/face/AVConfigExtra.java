@@ -6,5 +6,5 @@ import com.blued.android.framework.http.parser.BluedEntityBaseExtra;
 public class AVConfigExtra extends BluedEntityBaseExtra {
 
     /* renamed from: a  reason: collision with root package name */
-    public AVConfigModel f20538a;
+    public AVConfigModel f6932a;
 }

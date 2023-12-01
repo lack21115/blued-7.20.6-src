@@ -67,7 +67,7 @@ public class ShareServiceConfigImpl implements IShareService {
 
     @Override // com.app.share.auto.IShareService
     public void a(FeedProtos.Event event, FeedProtos.ShareChannel shareChannel, String str, String str2, String str3, String str4, String str5, FeedProtos.SourcePage sourcePage, String str6, boolean z, String str7, boolean z2, boolean z3, String str8, boolean z4, FeedProtos.FeedType feedType) {
-        EventTrackFeed.a(event, shareChannel, str, str2, str3, str4, str5, sourcePage, str6, z, str7, z2, z3, str8, z4, null, feedType);
+        EventTrackFeed.a(event, shareChannel, str, str2, str3, str4, str5, sourcePage, str6, z, str7, z2, z3, str8, z4, (BluedIngSelfFeed) null, feedType);
     }
 
     @Override // com.app.share.auto.IShareService

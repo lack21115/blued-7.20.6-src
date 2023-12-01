@@ -69,13 +69,13 @@ public final class ImmutableTypeToInstanceMap<B> extends ForwardingMap<TypeToken
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.common.collect.ForwardingMap, java.util.Map
+    @Override // com.google.common.collect.ForwardingMap, java.util.Map, com.google.common.collect.BiMap
     @Deprecated
     public /* bridge */ /* synthetic */ Object put(Object obj, Object obj2) {
         return put((TypeToken<? extends TypeToken<? extends B>>) obj, (TypeToken<? extends B>) obj2);
     }
 
-    @Override // com.google.common.collect.ForwardingMap, java.util.Map
+    @Override // com.google.common.collect.ForwardingMap, java.util.Map, com.google.common.collect.BiMap
     @Deprecated
     public void putAll(Map<? extends TypeToken<? extends B>, ? extends B> map) {
         throw new UnsupportedOperationException();

@@ -1,7 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
-
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/BucketLoggingStatus.class */
 public class BucketLoggingStatus {
     public LoggingEnabled loggingEnabled;
@@ -12,7 +10,7 @@ public class BucketLoggingStatus {
         public String targetPrefix;
 
         public String toString() {
-            return "{LoggingEnabled:\nTargetBucket:" + this.targetBucket + "\nTargetPrefix:" + this.targetPrefix + "\n" + i.d;
+            return "{LoggingEnabled:\nTargetBucket:" + this.targetBucket + "\nTargetPrefix:" + this.targetPrefix + "\n}";
         }
     }
 
@@ -23,7 +21,7 @@ public class BucketLoggingStatus {
             sb.append(loggingEnabled.toString());
             sb.append("\n");
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

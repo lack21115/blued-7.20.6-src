@@ -42,9 +42,8 @@ public interface IInputContext extends IInterface {
         static final int TRANSACTION_setComposingText = 6;
         static final int TRANSACTION_setSelection = 11;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/view/IInputContext$Stub$Proxy.class */
-        public static class Proxy implements IInputContext {
+        private static class Proxy implements IInputContext {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -448,7 +447,7 @@ public interface IInputContext extends IInterface {
                     return true;
                 case 6:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setComposingText(parcel.readInt() != 0 ? TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt());
+                    setComposingText(parcel.readInt() != 0 ? (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt());
                     return true;
                 case 7:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -456,7 +455,7 @@ public interface IInputContext extends IInterface {
                     return true;
                 case 8:
                     parcel.enforceInterface(DESCRIPTOR);
-                    commitText(parcel.readInt() != 0 ? TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt());
+                    commitText(parcel.readInt() != 0 ? (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt());
                     return true;
                 case 9:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -492,7 +491,7 @@ public interface IInputContext extends IInterface {
                     return true;
                 case 17:
                     parcel.enforceInterface(DESCRIPTOR);
-                    sendKeyEvent(parcel.readInt() != 0 ? KeyEvent.CREATOR.createFromParcel(parcel) : null);
+                    sendKeyEvent(parcel.readInt() != 0 ? (KeyEvent) KeyEvent.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 18:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -500,7 +499,7 @@ public interface IInputContext extends IInterface {
                     return true;
                 case 19:
                     parcel.enforceInterface(DESCRIPTOR);
-                    performPrivateCommand(parcel.readString(), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    performPrivateCommand(parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 20:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -514,7 +513,7 @@ public interface IInputContext extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     requestUpdateCursorAnchorInfo(parcel.readInt(), parcel.readInt(), IInputContextCallback.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

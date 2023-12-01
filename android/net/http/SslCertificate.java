@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.android.internal.R;
 import com.android.org.bouncycastle.asn1.x509.X509Name;
 import com.youzan.androidsdk.tool.AppSigning;
 import java.io.ByteArrayInputStream;
@@ -242,24 +241,24 @@ public class SslCertificate {
     }
 
     public View inflateCertificateView(Context context) {
-        View inflate = LayoutInflater.from(context).inflate(R.layout.ssl_certificate, (ViewGroup) null);
+        View inflate = LayoutInflater.from(context).inflate(17367248, (ViewGroup) null);
         DName issuedTo = getIssuedTo();
         if (issuedTo != null) {
-            ((TextView) inflate.findViewById(R.id.to_common)).setText(issuedTo.getCName());
-            ((TextView) inflate.findViewById(R.id.to_org)).setText(issuedTo.getOName());
-            ((TextView) inflate.findViewById(R.id.to_org_unit)).setText(issuedTo.getUName());
+            ((TextView) inflate.findViewById(16909214)).setText(issuedTo.getCName());
+            ((TextView) inflate.findViewById(16909216)).setText(issuedTo.getOName());
+            ((TextView) inflate.findViewById(16909218)).setText(issuedTo.getUName());
         }
-        ((TextView) inflate.findViewById(R.id.serial_number)).setText(getSerialNumber(this.mX509Certificate));
+        ((TextView) inflate.findViewById(16909220)).setText(getSerialNumber(this.mX509Certificate));
         DName issuedBy = getIssuedBy();
         if (issuedBy != null) {
-            ((TextView) inflate.findViewById(R.id.by_common)).setText(issuedBy.getCName());
-            ((TextView) inflate.findViewById(R.id.by_org)).setText(issuedBy.getOName());
-            ((TextView) inflate.findViewById(R.id.by_org_unit)).setText(issuedBy.getUName());
+            ((TextView) inflate.findViewById(16909222)).setText(issuedBy.getCName());
+            ((TextView) inflate.findViewById(16909224)).setText(issuedBy.getOName());
+            ((TextView) inflate.findViewById(16909226)).setText(issuedBy.getUName());
         }
-        ((TextView) inflate.findViewById(R.id.issued_on)).setText(formatCertificateDate(context, getValidNotBeforeDate()));
-        ((TextView) inflate.findViewById(R.id.expires_on)).setText(formatCertificateDate(context, getValidNotAfterDate()));
-        ((TextView) inflate.findViewById(R.id.sha256_fingerprint)).setText(getDigest(this.mX509Certificate, AppSigning.SHA256));
-        ((TextView) inflate.findViewById(R.id.sha1_fingerprint)).setText(getDigest(this.mX509Certificate, AppSigning.SHA1));
+        ((TextView) inflate.findViewById(16909229)).setText(formatCertificateDate(context, getValidNotBeforeDate()));
+        ((TextView) inflate.findViewById(16909231)).setText(formatCertificateDate(context, getValidNotAfterDate()));
+        ((TextView) inflate.findViewById(16909234)).setText(getDigest(this.mX509Certificate, AppSigning.SHA256));
+        ((TextView) inflate.findViewById(16909236)).setText(getDigest(this.mX509Certificate, AppSigning.SHA1));
         return inflate;
     }
 

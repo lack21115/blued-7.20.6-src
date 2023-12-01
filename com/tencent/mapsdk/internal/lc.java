@@ -6,34 +6,34 @@ import android.content.Context;
 public class lc extends ic {
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile lc f37620c;
+    private static volatile lc f23929c;
     private static final String d = "com.tencent.tencentmap.mapsdk.maps.offlinemap";
 
     private lc(Context context) {
         if (context == null) {
             return;
         }
-        this.f37553a = context.getSharedPreferences(d, 0);
+        this.f23862a = context.getSharedPreferences(d, 0);
         c();
     }
 
     public static lc a(Context context) {
-        if (f37620c == null) {
+        if (f23929c == null) {
             synchronized (lc.class) {
                 try {
-                    if (f37620c == null) {
-                        f37620c = new lc(context);
+                    if (f23929c == null) {
+                        f23929c = new lc(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f37620c;
+        return f23929c;
     }
 
     private void c() {
-        if (f37620c == null) {
+        if (f23929c == null) {
             return;
         }
         a(new String[]{"taiwanClearCacheVersion", "taiwanStyle", "taiwanVersion", "mapPoiIcon", "worldTileCount", "rttConfigVersion", "rttConfigMd5", "closeRoadSytleNomalModeVersion", "closeRoadSytleNomalModeMd5", "closeRoadStyleTrafficModeVersion", "closeRoadStyleTrafficModeMd5", "offlineCityListVersion", "offlineCityListMd5"});

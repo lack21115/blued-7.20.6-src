@@ -21,11 +21,11 @@ import java.util.Map;
 public final class e implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21887a;
+    private String f8280a;
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f21888c = 86400000;
+    private long f8281c = 86400000;
     private String[] d = {t.W, "com.bbk.launcher2", "net.oneplus.launcher", "com.android.deskclock", af.e, "com.oppo.market"};
     private String[] e = {"com.tencent.mm", "com.tencent.mobileqq", "com.eg.android.AlipayGphone", "com.jingdong.app.mall", "com.ss.android.article.news", "com.taobao.taobao", "com.tmall.wireless", "com.sankuai.meituan", "com.xunmeng.pinduoduo", "com.ss.android.ugc.aweme"};
 
@@ -136,7 +136,7 @@ public final class e implements b {
                 try {
                     String str2 = a2.get("sdk.gtc.type304.interval");
                     if (str2 != null) {
-                        this.f21888c = Long.parseLong(str2) * 1000;
+                        this.f8281c = Long.parseLong(str2) * 1000;
                     }
                 } catch (Exception e2) {
                     com.getui.gtc.i.c.a.a(e2);
@@ -172,17 +172,17 @@ public final class e implements b {
                 com.getui.gtc.i.c.a.b("type 304 is debug, disallow");
             } else {
                 long currentTimeMillis = System.currentTimeMillis();
-                cVar = c.a.f21997a;
-                if (currentTimeMillis - cVar.f21995a.k < this.f21888c) {
+                cVar = c.a.f8390a;
+                if (currentTimeMillis - cVar.f8388a.k < this.f8281c) {
                     return;
                 }
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
-                String str5 = a.a(simpleDateFormat.format(new Date())) + "|" + a.a(com.getui.gtc.c.b.d) + "|" + a.a(com.getui.gtc.c.b.f21920a) + "|android|" + GtcProvider.context().getPackageName() + "|GTC-3.2.1.0|" + a() + "|" + b();
-                this.f21887a = str5;
+                String str5 = a.a(simpleDateFormat.format(new Date())) + "|" + a.a(com.getui.gtc.c.b.d) + "|" + a.a(com.getui.gtc.c.b.f8313a) + "|android|" + GtcProvider.context().getPackageName() + "|GTC-3.2.1.0|" + a() + "|" + b();
+                this.f8280a = str5;
                 try {
                     com.getui.gtc.h.a.a(str5, 304);
-                    cVar2 = c.a.f21997a;
-                    com.getui.gtc.e.d dVar = cVar2.f21995a;
+                    cVar2 = c.a.f8390a;
+                    com.getui.gtc.e.d dVar = cVar2.f8388a;
                     long currentTimeMillis2 = System.currentTimeMillis();
                     if (dVar.a(16, currentTimeMillis2)) {
                         dVar.k = currentTimeMillis2;

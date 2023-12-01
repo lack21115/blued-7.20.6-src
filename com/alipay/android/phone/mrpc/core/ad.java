@@ -9,9 +9,7 @@ import org.apache.http.protocol.HttpContext;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/ad.class */
 public class ad implements HttpRequestRetryHandler {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final String f4516a = ad.class.getSimpleName();
+    static final String a = ad.class.getSimpleName();
 
     public boolean retryRequest(IOException iOException, int i, HttpContext httpContext) {
         if (i >= 3) {

@@ -12,6 +12,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.igexin.push.extension.mod.PushTaskBean;
 import com.igexin.sdk.PushConsts;
 import com.igexin.sdk.message.BindAliasCmdMessage;
@@ -28,10 +29,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class l extends Handler implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23572a = "MsgServerSender";
+    private static final String f9964a = "MsgServerSender";
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile l f23573c;
+    private static volatile l f9965c;
     private static final int e = 1;
     private static final int f = 2;
     private static Context h;
@@ -45,11 +46,11 @@ public final class l extends Handler implements ServiceConnection {
     public final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        static final int f23574a = 1;
+        static final int f9966a = 1;
         static final int b = 2;
 
         /* renamed from: c  reason: collision with root package name */
-        static final int f23575c = 3;
+        static final int f9967c = 3;
         static final int d = 0;
         static final int e = 1;
         final Handler f;
@@ -102,18 +103,18 @@ public final class l extends Handler implements ServiceConnection {
     }
 
     public static l a() {
-        if (f23573c == null) {
+        if (f9965c == null) {
             synchronized (l.class) {
                 try {
-                    if (f23573c == null) {
-                        f23573c = new l();
+                    if (f9965c == null) {
+                        f9965c = new l();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f23573c;
+        return f9965c;
     }
 
     private void a(int i) {
@@ -136,7 +137,7 @@ public final class l extends Handler implements ServiceConnection {
             return;
         }
         if (this.g == null) {
-            com.igexin.c.a.c.a.a(f23572a, "realSend, remoteMessenger is null");
+            com.igexin.c.a.c.a.a(f9964a, "realSend, remoteMessenger is null");
             com.igexin.c.a.c.a.a("MsgServerSender|realSend, remoteMessenger is null", new Object[0]);
         }
         Bundle extras = intent.getExtras();
@@ -184,14 +185,14 @@ public final class l extends Handler implements ServiceConnection {
             intent.setType(e.l.getPackageName());
             e.l.bindService(intent, lVar, 1);
         } catch (Throwable th) {
-            com.igexin.c.a.c.a.e.a(f23572a, "bind iservice error = " + th.toString());
+            com.igexin.c.a.c.a.e.a(f9964a, "bind iservice error = " + th.toString());
             com.igexin.c.a.c.a.a(th);
             lVar.i.set(false);
         }
     }
 
     private void a(String str, String str2, String str3, String str4, long j) {
-        if (e.f23495a != null && e.f23495a.equals(str)) {
+        if (e.f9887a != null && e.f9887a.equals(str)) {
             Bundle bundle = new Bundle();
             bundle.putInt("action", 10010);
             bundle.putSerializable(PushConsts.KEY_CMD_MSG, new FeedbackCmdMessage(str2, str3, str4, j, PushConsts.THIRDPART_FEEDBACK));
@@ -219,7 +220,7 @@ public final class l extends Handler implements ServiceConnection {
         bundle.putString("appid", str3);
         bundle.putString("payloadid", str2 + ":" + str);
         bundle.putString("packagename", e.g);
-        bundle.putByteArray("payload", bArr);
+        bundle.putByteArray(AssistPushConsts.MSG_TYPE_PAYLOAD, bArr);
         intent.putExtras(bundle);
         intent.setPackage(e.l.getPackageName());
         e.l.sendBroadcast(intent);
@@ -242,7 +243,7 @@ public final class l extends Handler implements ServiceConnection {
             intent.setType(e.l.getPackageName());
             e.l.bindService(intent, this, 1);
         } catch (Throwable th) {
-            com.igexin.c.a.c.a.e.a(f23572a, "bind iservice error = " + th.toString());
+            com.igexin.c.a.c.a.e.a(f9964a, "bind iservice error = " + th.toString());
             com.igexin.c.a.c.a.a(th);
             this.i.set(false);
         }
@@ -275,7 +276,7 @@ public final class l extends Handler implements ServiceConnection {
 
     public static Intent d() {
         Intent intent = new Intent();
-        intent.setAction(b.G + e.f23495a);
+        intent.setAction(b.G + e.f9887a);
         intent.setPackage(e.l.getPackageName());
         return intent;
     }
@@ -298,7 +299,7 @@ public final class l extends Handler implements ServiceConnection {
             intent.setType(e.l.getPackageName());
             e.l.bindService(intent, this, 1);
         } catch (Throwable th) {
-            com.igexin.c.a.c.a.e.a(f23572a, "bind iservice error = " + th.toString());
+            com.igexin.c.a.c.a.e.a(f9964a, "bind iservice error = " + th.toString());
             com.igexin.c.a.c.a.a(th);
             this.i.set(false);
         }
@@ -380,7 +381,7 @@ public final class l extends Handler implements ServiceConnection {
         }
         new String(msgExtra);
         com.igexin.c.a.c.a.a("startapp|broadcast|payload = " + new String(msgExtra), new Object[0]);
-        if (e.f23495a != null && e.f23495a.equals(str3)) {
+        if (e.f9887a != null && e.f9887a.equals(str3)) {
             Bundle bundle = new Bundle();
             bundle.putInt("action", 10001);
             bundle.putSerializable(PushConsts.KEY_MESSAGE_DATA, new GTTransmitMessage(str, str2, str2 + ":" + str, msgExtra));
@@ -395,7 +396,7 @@ public final class l extends Handler implements ServiceConnection {
         bundle2.putString("appid", str3);
         bundle2.putString("payloadid", str2 + ":" + str);
         bundle2.putString("packagename", e.g);
-        bundle2.putByteArray("payload", msgExtra);
+        bundle2.putByteArray(AssistPushConsts.MSG_TYPE_PAYLOAD, msgExtra);
         intent.putExtras(bundle2);
         intent.setPackage(e.l.getPackageName());
         e.l.sendBroadcast(intent);
@@ -429,7 +430,7 @@ public final class l extends Handler implements ServiceConnection {
     }
 
     public final void c() {
-        com.igexin.c.a.c.a.b(f23572a, "broadcastClientId|" + e.A);
+        com.igexin.c.a.c.a.b(f9964a, "broadcastClientId|" + e.A);
         Bundle bundle = new Bundle();
         bundle.putInt("action", 10002);
         bundle.putString(PushConsts.KEY_CLIENT_ID, e.A);

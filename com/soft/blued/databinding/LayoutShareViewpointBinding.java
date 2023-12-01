@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutShareViewpointBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29433a;
+    private final LinearLayout f15743a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29433a;
+        return this.f15743a;
     }
 }

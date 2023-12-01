@@ -9,11 +9,11 @@ import java.util.concurrent.atomic.AtomicLong;
 public class e implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile long f35045a = 0;
+    private volatile long f21354a = 0;
     private volatile long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile long f35046c = 0;
+    private volatile long f21355c = 0;
     final /* synthetic */ g d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -44,19 +44,19 @@ public class e implements Runnable {
             long j10 = atomicLong2.get();
             atomicLong3 = this.d.s;
             long j11 = atomicLong3.get();
-            if (this.f35045a == j9 && this.b == j10 && this.f35046c == j11) {
+            if (this.f21354a == j9 && this.b == j10 && this.f21355c == j11) {
                 return;
             }
-            this.f35045a = j9;
+            this.f21354a = j9;
             this.b = j10;
-            this.f35046c = j11;
+            this.f21355c = j11;
             g gVar = this.d;
             context = this.d.m;
             a2 = gVar.a(context);
             SharedPreferences.Editor edit = a2.edit();
             if (com.tencent.beacon.base.util.b.a(edit)) {
                 j2 = this.d.p;
-                SharedPreferences.Editor putLong = edit.putLong("on_date", j2).putLong("realtime_log_id", this.f35045a).putLong("normal_log_id", this.b).putLong("immediate_log_id", this.f35046c);
+                SharedPreferences.Editor putLong = edit.putLong("on_date", j2).putLong("realtime_log_id", this.f21354a).putLong("normal_log_id", this.b).putLong("immediate_log_id", this.f21355c);
                 j3 = this.d.t;
                 SharedPreferences.Editor putLong2 = putLong.putLong("realtime_min_log_id", j3);
                 j4 = this.d.u;
@@ -77,7 +77,7 @@ public class e implements Runnable {
             sb.append("]");
             String sb2 = sb.toString();
             j = this.d.p;
-            com.tencent.beacon.base.util.c.a(sb2, "  write serial to sp, date: %s ,realtime: %d, normal: %d, immediate: %d ", Long.valueOf(j), Long.valueOf(this.f35045a), Long.valueOf(this.b), Long.valueOf(this.f35046c));
+            com.tencent.beacon.base.util.c.a(sb2, "  write serial to sp, date: %s ,realtime: %d, normal: %d, immediate: %d ", Long.valueOf(j), Long.valueOf(this.f21354a), Long.valueOf(this.b), Long.valueOf(this.f21355c));
         }
     }
 }

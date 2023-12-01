@@ -157,10 +157,10 @@ public class hj {
 
     /* renamed from: com.bytedance.sdk.openadsdk.downloadnew.hj$hj  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/sdk/openadsdk/downloadnew/hj$hj.class */
-    public static class C0325hj implements je {
+    public static class C0155hj implements je {
         private final WeakReference<Context> mb;
 
-        public C0325hj(Context context) {
+        public C0155hj(Context context) {
             this.mb = new WeakReference<>(context);
         }
 
@@ -486,8 +486,8 @@ public class hj {
     }
 
     public static boolean mb(Activity activity, final ExitInstallListener exitInstallListener) {
-        return com.ss.android.downloadlib.addownload.mb.mb.mb().mb(activity, false, new mb.InterfaceC0871mb() { // from class: com.bytedance.sdk.openadsdk.downloadnew.hj.7
-            @Override // com.ss.android.downloadlib.addownload.mb.mb.InterfaceC0871mb
+        return com.ss.android.downloadlib.addownload.mb.mb.mb().mb(activity, false, new mb.InterfaceC0701mb() { // from class: com.bytedance.sdk.openadsdk.downloadnew.hj.7
+            @Override // com.ss.android.downloadlib.addownload.mb.mb.InterfaceC0701mb
             public void mb() {
                 ExitInstallListener exitInstallListener2 = ExitInstallListener.this;
                 if (exitInstallListener2 != null) {
@@ -615,7 +615,7 @@ public class hj {
         if (mb2 == null) {
             return false;
         }
-        com.ss.android.download.api.mb mb3 = mb2.mb(new b()).mb(new mb()).mb(new C0325hj(applicationContext)).mb(new ox()).mb(new com.ss.android.download.api.config.x() { // from class: com.bytedance.sdk.openadsdk.downloadnew.hj.3
+        com.ss.android.download.api.mb mb3 = mb2.mb(new b()).mb(new mb()).mb(new C0155hj(applicationContext)).mb(new ox()).mb(new com.ss.android.download.api.config.x() { // from class: com.bytedance.sdk.openadsdk.downloadnew.hj.3
             @Override // com.ss.android.download.api.config.x
             public JSONObject mb() {
                 return hj.hj() != null ? hj.hj().getDownloadSettings() : new JSONObject();
@@ -628,7 +628,7 @@ public class hj {
                 }
                 return false;
             }
-        }).mb(new mb.C0870mb().ox("143").mb(TTAdConstant.APP_NAME).b("5.1.0.2").hj(String.valueOf(5102)).mb()).mb(new e() { // from class: com.bytedance.sdk.openadsdk.downloadnew.hj.1
+        }).mb(new mb.C0700mb().ox("143").mb(TTAdConstant.APP_NAME).b("5.1.0.2").hj(String.valueOf(5102)).mb()).mb(new e() { // from class: com.bytedance.sdk.openadsdk.downloadnew.hj.1
             @Override // com.ss.android.download.api.config.e
             public byte[] mb(byte[] bArr, int i) {
                 return new byte[0];

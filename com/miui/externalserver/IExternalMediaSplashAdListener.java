@@ -37,7 +37,7 @@ public interface IExternalMediaSplashAdListener extends IInterface {
         public static class Proxy implements IExternalMediaSplashAdListener {
 
             /* renamed from: a  reason: collision with root package name */
-            public static IExternalMediaSplashAdListener f24199a;
+            public static IExternalMediaSplashAdListener f10584a;
             private IBinder b;
 
             Proxy(IBinder iBinder) {
@@ -115,7 +115,7 @@ public interface IExternalMediaSplashAdListener extends IInterface {
         }
 
         public static IExternalMediaSplashAdListener c() {
-            return Proxy.f24199a;
+            return Proxy.f10584a;
         }
 
         @Override // android.os.IInterface

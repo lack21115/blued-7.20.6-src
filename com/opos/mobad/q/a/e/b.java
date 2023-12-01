@@ -6,22 +6,22 @@ import com.opos.mobad.model.data.AdItemData;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f27175a = true;
+    private static boolean f13487a = true;
 
     public static void a(boolean z) {
-        f27175a = z;
+        f13487a = z;
     }
 
     public static boolean a(AdItemData adItemData) {
-        com.opos.cmn.an.f.a.b("WifiPlayUtils", "sPlayRemindAtCellular=" + f27175a);
+        com.opos.cmn.an.f.a.b("WifiPlayUtils", "sPlayRemindAtCellular=" + f13487a);
         boolean z = false;
         try {
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("WifiPlayUtils", "", (Throwable) e);
         }
-        if (f27175a) {
+        if (f13487a) {
             if (adItemData != null && !adItemData.t()) {
-                f27175a = false;
+                f13487a = false;
             }
             z = true;
         }

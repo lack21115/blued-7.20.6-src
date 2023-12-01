@@ -51,8 +51,9 @@ public interface IWindowSession extends IInterface {
         static final int TRANSACTION_wallpaperCommandComplete = 27;
         static final int TRANSACTION_wallpaperOffsetsComplete = 22;
 
+        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/view/IWindowSession$Stub$Proxy.class */
-        private static class Proxy implements IWindowSession {
+        public static class Proxy implements IWindowSession {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -777,12 +778,12 @@ public interface IWindowSession extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     IWindow asInterface = IWindow.Stub.asInterface(parcel.readStrongBinder());
                     int readInt = parcel.readInt();
-                    WindowManager.LayoutParams createFromParcel = parcel.readInt() != 0 ? WindowManager.LayoutParams.CREATOR.createFromParcel(parcel) : null;
+                    WindowManager.LayoutParams layoutParams = parcel.readInt() != 0 ? (WindowManager.LayoutParams) WindowManager.LayoutParams.CREATOR.createFromParcel(parcel) : null;
                     int readInt2 = parcel.readInt();
                     Rect rect = new Rect();
                     Rect rect2 = new Rect();
                     InputChannel inputChannel = new InputChannel();
-                    int add = add(asInterface, readInt, createFromParcel, readInt2, rect, rect2, inputChannel);
+                    int add = add(asInterface, readInt, layoutParams, readInt2, rect, rect2, inputChannel);
                     parcel2.writeNoException();
                     parcel2.writeInt(add);
                     if (rect != null) {
@@ -808,13 +809,13 @@ public interface IWindowSession extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     IWindow asInterface2 = IWindow.Stub.asInterface(parcel.readStrongBinder());
                     int readInt3 = parcel.readInt();
-                    WindowManager.LayoutParams createFromParcel2 = parcel.readInt() != 0 ? WindowManager.LayoutParams.CREATOR.createFromParcel(parcel) : null;
+                    WindowManager.LayoutParams layoutParams2 = parcel.readInt() != 0 ? (WindowManager.LayoutParams) WindowManager.LayoutParams.CREATOR.createFromParcel(parcel) : null;
                     int readInt4 = parcel.readInt();
                     int readInt5 = parcel.readInt();
                     Rect rect3 = new Rect();
                     Rect rect4 = new Rect();
                     InputChannel inputChannel2 = new InputChannel();
-                    int addToDisplay = addToDisplay(asInterface2, readInt3, createFromParcel2, readInt4, readInt5, rect3, rect4, inputChannel2);
+                    int addToDisplay = addToDisplay(asInterface2, readInt3, layoutParams2, readInt4, readInt5, rect3, rect4, inputChannel2);
                     parcel2.writeNoException();
                     parcel2.writeInt(addToDisplay);
                     if (rect3 != null) {
@@ -840,11 +841,11 @@ public interface IWindowSession extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     IWindow asInterface3 = IWindow.Stub.asInterface(parcel.readStrongBinder());
                     int readInt6 = parcel.readInt();
-                    WindowManager.LayoutParams createFromParcel3 = parcel.readInt() != 0 ? WindowManager.LayoutParams.CREATOR.createFromParcel(parcel) : null;
+                    WindowManager.LayoutParams layoutParams3 = parcel.readInt() != 0 ? (WindowManager.LayoutParams) WindowManager.LayoutParams.CREATOR.createFromParcel(parcel) : null;
                     int readInt7 = parcel.readInt();
                     Rect rect5 = new Rect();
                     Rect rect6 = new Rect();
-                    int addWithoutInputChannel = addWithoutInputChannel(asInterface3, readInt6, createFromParcel3, readInt7, rect5, rect6);
+                    int addWithoutInputChannel = addWithoutInputChannel(asInterface3, readInt6, layoutParams3, readInt7, rect5, rect6);
                     parcel2.writeNoException();
                     parcel2.writeInt(addWithoutInputChannel);
                     if (rect5 != null) {
@@ -864,12 +865,12 @@ public interface IWindowSession extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     IWindow asInterface4 = IWindow.Stub.asInterface(parcel.readStrongBinder());
                     int readInt8 = parcel.readInt();
-                    WindowManager.LayoutParams createFromParcel4 = parcel.readInt() != 0 ? WindowManager.LayoutParams.CREATOR.createFromParcel(parcel) : null;
+                    WindowManager.LayoutParams layoutParams4 = parcel.readInt() != 0 ? (WindowManager.LayoutParams) WindowManager.LayoutParams.CREATOR.createFromParcel(parcel) : null;
                     int readInt9 = parcel.readInt();
                     int readInt10 = parcel.readInt();
                     Rect rect7 = new Rect();
                     Rect rect8 = new Rect();
-                    int addToDisplayWithoutInputChannel = addToDisplayWithoutInputChannel(asInterface4, readInt8, createFromParcel4, readInt9, readInt10, rect7, rect8);
+                    int addToDisplayWithoutInputChannel = addToDisplayWithoutInputChannel(asInterface4, readInt8, layoutParams4, readInt9, readInt10, rect7, rect8);
                     parcel2.writeNoException();
                     parcel2.writeInt(addToDisplayWithoutInputChannel);
                     if (rect7 != null) {
@@ -894,7 +895,7 @@ public interface IWindowSession extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     IWindow asInterface5 = IWindow.Stub.asInterface(parcel.readStrongBinder());
                     int readInt11 = parcel.readInt();
-                    WindowManager.LayoutParams createFromParcel5 = parcel.readInt() != 0 ? WindowManager.LayoutParams.CREATOR.createFromParcel(parcel) : null;
+                    WindowManager.LayoutParams layoutParams5 = parcel.readInt() != 0 ? (WindowManager.LayoutParams) WindowManager.LayoutParams.CREATOR.createFromParcel(parcel) : null;
                     int readInt12 = parcel.readInt();
                     int readInt13 = parcel.readInt();
                     int readInt14 = parcel.readInt();
@@ -906,7 +907,7 @@ public interface IWindowSession extends IInterface {
                     Rect rect13 = new Rect();
                     Configuration configuration = new Configuration();
                     Surface surface = new Surface();
-                    int relayout = relayout(asInterface5, readInt11, createFromParcel5, readInt12, readInt13, readInt14, readInt15, rect9, rect10, rect11, rect12, rect13, configuration, surface);
+                    int relayout = relayout(asInterface5, readInt11, layoutParams5, readInt12, readInt13, readInt14, readInt15, rect9, rect10, rect11, rect12, rect13, configuration, surface);
                     parcel2.writeNoException();
                     parcel2.writeInt(relayout);
                     if (rect9 != null) {

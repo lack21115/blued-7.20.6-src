@@ -43,20 +43,14 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYRobMusicManager.class */
 public final class YYRobMusicManager implements RoomManagerController {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f17566a;
+    private boolean a;
     private final RobHandler b = new RobHandler(new WeakReference(this));
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Observer<YYBorImJsonMode> f17567c = new Observer() { // from class: com.blued.android.module.yy_china.manager.-$$Lambda$YYRobMusicManager$6TQ4HmXisxPcYUY5JYpK07gqjOw
-        @Override // androidx.lifecycle.Observer
+    private final Observer<YYBorImJsonMode> c = new Observer() { // from class: com.blued.android.module.yy_china.manager.-$$Lambda$YYRobMusicManager$6TQ4HmXisxPcYUY5JYpK07gqjOw
         public final void onChanged(Object obj) {
             YYRobMusicManager.a(YYRobMusicManager.this, (YYBorImJsonMode) obj);
         }
     };
     private final Observer<TrtcMusicModel> d = new Observer() { // from class: com.blued.android.module.yy_china.manager.-$$Lambda$YYRobMusicManager$OAB-qajij6G21Qf-fAz45FAvn2U
-        @Override // androidx.lifecycle.Observer
         public final void onChanged(Object obj) {
             YYRobMusicManager.a(YYRobMusicManager.this, (TrtcMusicModel) obj);
         }
@@ -92,9 +86,7 @@ public final class YYRobMusicManager implements RoomManagerController {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYRobMusicManager$RobHandler.class */
     public static final class RobHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final Companion f17568a = new Companion(null);
+        public static final Companion a = new Companion(null);
         private final WeakReference<YYRobMusicManager> b;
 
         @Metadata
@@ -148,13 +140,9 @@ public final class YYRobMusicManager implements RoomManagerController {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYRobMusicManager$RobMusicHandlerData.class */
     public static final class RobMusicHandlerData {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final String f17569a;
+        private final String a;
         private final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final long f17570c;
+        private final long c;
         private final boolean d;
         private final String e;
 
@@ -164,7 +152,7 @@ public final class YYRobMusicManager implements RoomManagerController {
             }
             if (obj instanceof RobMusicHandlerData) {
                 RobMusicHandlerData robMusicHandlerData = (RobMusicHandlerData) obj;
-                return Intrinsics.a((Object) this.f17569a, (Object) robMusicHandlerData.f17569a) && Intrinsics.a((Object) this.b, (Object) robMusicHandlerData.b) && this.f17570c == robMusicHandlerData.f17570c && this.d == robMusicHandlerData.d && Intrinsics.a((Object) this.e, (Object) robMusicHandlerData.e);
+                return Intrinsics.a((Object) this.a, (Object) robMusicHandlerData.a) && Intrinsics.a((Object) this.b, (Object) robMusicHandlerData.b) && this.c == robMusicHandlerData.c && this.d == robMusicHandlerData.d && Intrinsics.a((Object) this.e, (Object) robMusicHandlerData.e);
             }
             return false;
         }
@@ -175,15 +163,15 @@ public final class YYRobMusicManager implements RoomManagerController {
         }
 
         public String toString() {
-            return "RobMusicHandlerData(musicId=" + this.f17569a + ", playToke=" + this.b + ", starTime=" + this.f17570c + ", isHostPlay=" + this.d + ", msg=" + this.e + ')';
+            return "RobMusicHandlerData(musicId=" + this.a + ", playToke=" + this.b + ", starTime=" + this.c + ", isHostPlay=" + this.d + ", msg=" + this.e + ')';
         }
     }
 
     public YYRobMusicManager() {
-        LiveEventBus.get("bor_music_ims", YYBorImJsonMode.class).observeForever(this.f17567c);
+        LiveEventBus.get("bor_music_ims", YYBorImJsonMode.class).observeForever(this.c);
         LiveEventBus.get("rob_music_progress", TrtcMusicModel.class).observeForever(this.d);
-        YYMusicManager.f11418a.c().a(YYMusicManager.f11418a.c().i(), this.e);
-        YYMusicManager.f11418a.c().a(YYMusicManager.f11418a.c().i(), this.f);
+        YYMusicManager.a.c().a(YYMusicManager.a.c().i(), this.e);
+        YYMusicManager.a.c().a(YYMusicManager.a.c().i(), this.f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -257,12 +245,12 @@ public final class YYRobMusicManager implements RoomManagerController {
         if (e == null || (b = e.b()) == null || (yYBorImJsonBodyInfoMode = b.robMus) == null) {
             return;
         }
-        this.f17566a = true;
+        this.a = true;
         int status = yYBorImJsonBodyMode.getStatus();
         if (status == 0) {
             a(yYBorImJsonBodyInfoMode.getDynamicLyricUrl(), true);
         } else if (status != 1) {
-            this.f17566a = false;
+            this.a = false;
         } else {
             a(yYBorImJsonBodyInfoMode.getDynamicLyricUrl(), false);
         }
@@ -271,12 +259,12 @@ public final class YYRobMusicManager implements RoomManagerController {
     private final void a(String str, String str2, long j, boolean z) {
         this.g = z;
         this.h = j;
-        YYMusicManager.f11418a.c().a(str, str2, false);
+        YYMusicManager.a.c().a(str, str2, false);
     }
 
     private final void a(String str, boolean z) {
         String lowerCase;
-        String a2;
+        String a;
         if (TextUtils.isEmpty(str)) {
             return;
         }
@@ -288,7 +276,7 @@ public final class YYRobMusicManager implements RoomManagerController {
             Intrinsics.c(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
         }
         Logger.e("download", Intrinsics.a("lrc file name: ", (Object) Md5.a(lowerCase)));
-        String str2 = AppMethods.b("/lrc") + ((Object) File.separator) + ((Object) a2);
+        String str2 = AppMethods.b("/lrc") + ((Object) File.separator) + ((Object) a);
         Logger.e("download", Intrinsics.a("lrc filePath: ", (Object) str2));
         if (TextUtils.isEmpty(str2)) {
             return;
@@ -306,7 +294,7 @@ public final class YYRobMusicManager implements RoomManagerController {
 
     private final void b(String str) {
         String lowerCase;
-        String a2;
+        String a;
         if (TextUtils.isEmpty(str)) {
             return;
         }
@@ -318,7 +306,7 @@ public final class YYRobMusicManager implements RoomManagerController {
             Intrinsics.c(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
         }
         Logger.e("download", Intrinsics.a("Midi file name: ", (Object) Md5.a(lowerCase)));
-        String str2 = AppMethods.b("/lrc") + ((Object) File.separator) + ((Object) a2);
+        String str2 = AppMethods.b("/lrc") + ((Object) File.separator) + ((Object) a);
         Logger.e("download", Intrinsics.a("Midi filePath: ", (Object) str2));
         if (TextUtils.isEmpty(str2)) {
             return;
@@ -379,10 +367,10 @@ public final class YYRobMusicManager implements RoomManagerController {
         if (body != null) {
             if (body.getStatus() == 1) {
                 c().sendEmptyMessageDelayed(1, 5500L);
-                this.f17566a = true;
+                this.a = true;
                 LiveLogUtils.a("开启抢唱大流程");
             } else {
-                this.f17566a = false;
+                this.a = false;
                 c().removeCallbacksAndMessages(null);
                 k();
                 LiveLogUtils.a("关闭抢唱大流程");
@@ -411,7 +399,7 @@ public final class YYRobMusicManager implements RoomManagerController {
         YYRoomInfoManager.e().g = new ArrayList<>();
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b != null && (yYBorImJsonBodyInfoMode = b.robMus) != null && yYBorImJsonBodyInfoMode.getCompletedLrc() && yYBorImJsonBodyInfoMode.getCompletedMidi()) {
-            YYMusicManager.f11418a.c().a(yYBorImJsonBodyInfoMode.getDynamicLyricUrl(), yYBorImJsonBodyInfoMode.getStaticLyricUrl(), GenerateTestUserSig.e(), GenerateTestUserSig.d());
+            YYMusicManager.a.c().a(yYBorImJsonBodyInfoMode.getDynamicLyricUrl(), yYBorImJsonBodyInfoMode.getStaticLyricUrl(), GenerateTestUserSig.e(), GenerateTestUserSig.d());
         }
     }
 
@@ -452,11 +440,11 @@ public final class YYRobMusicManager implements RoomManagerController {
 
     @Override // com.blued.android.module.yy_china.manager.RoomManagerController
     public void a() {
-        LiveEventBus.get("bor_music_ims", YYBorImJsonMode.class).removeObserver(this.f17567c);
+        LiveEventBus.get("bor_music_ims", YYBorImJsonMode.class).removeObserver(this.c);
         LiveEventBus.get("rob_music_progress", TrtcMusicModel.class).removeObserver(this.d);
         this.b.removeCallbacksAndMessages(null);
-        YYMusicManager.f11418a.c().d(YYMusicManager.f11418a.c().i());
-        YYMusicManager.f11418a.c().e(YYMusicManager.f11418a.c().k());
+        YYMusicManager.a.c().d(YYMusicManager.a.c().i());
+        YYMusicManager.a.c().e(YYMusicManager.a.c().k());
     }
 
     public final void a(int i) {
@@ -523,18 +511,15 @@ public final class YYRobMusicManager implements RoomManagerController {
     }
 
     public final void a(String str, String str2) {
-        YYMusicManager.f11418a.c().a(str, str2, new ITXMusicPreloadCallback() { // from class: com.blued.android.module.yy_china.manager.YYRobMusicManager$preloadMusic$1
-            @Override // com.tencent.txcopyrightedmedia.ITXMusicPreloadCallback
+        YYMusicManager.a.c().a(str, str2, new ITXMusicPreloadCallback() { // from class: com.blued.android.module.yy_china.manager.YYRobMusicManager$preloadMusic$1
             public void onPreloadComplete(String str3, String str4, int i, String str5) {
                 Logger.e("preloadMusic", Intrinsics.a("onPreloadComplete: ", (Object) str3));
                 LiveLogUtils.a(Intrinsics.a("抢唱歌曲预加载成功 music_id：", (Object) str3));
             }
 
-            @Override // com.tencent.txcopyrightedmedia.ITXMusicPreloadCallback
             public void onPreloadProgress(String str3, String str4, float f) {
             }
 
-            @Override // com.tencent.txcopyrightedmedia.ITXMusicPreloadCallback
             public void onPreloadStart(String str3, String str4) {
                 Logger.e("preloadMusic", Intrinsics.a("onPreloadStart: ", (Object) str3));
                 LiveLogUtils.a(Intrinsics.a("抢唱歌曲预加载开始 music_id：", (Object) str3));
@@ -544,7 +529,7 @@ public final class YYRobMusicManager implements RoomManagerController {
 
     public final boolean a(String musicId) {
         Intrinsics.e(musicId, "musicId");
-        return YYMusicManager.f11418a.c().b(musicId);
+        return YYMusicManager.a.c().b(musicId);
     }
 
     public final void b(final IRequestHost iRequestHost) {
@@ -567,7 +552,7 @@ public final class YYRobMusicManager implements RoomManagerController {
     }
 
     public final boolean b() {
-        return this.f17566a;
+        return this.a;
     }
 
     public final RobHandler c() {
@@ -651,7 +636,7 @@ public final class YYRobMusicManager implements RoomManagerController {
     }
 
     public final void j() {
-        YYMusicManager.f11418a.c().g();
+        YYMusicManager.a.c().g();
         AudioChannelManager.j().d(4443);
         AudioChannelManager.j().d(4444);
     }

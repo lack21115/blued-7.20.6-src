@@ -9,7 +9,6 @@ import com.anythink.basead.d.g;
 import com.anythink.basead.e.a;
 import com.anythink.core.api.BaseAd;
 import com.anythink.core.api.ErrorCode;
-import com.anythink.core.common.b.g;
 import com.anythink.core.common.e.e;
 import com.anythink.core.common.e.j;
 import com.anythink.splashad.unitgroup.api.CustomSplashAdapter;
@@ -19,11 +18,11 @@ import java.util.Map;
 public class OnlineApiATSplashAdapter extends CustomSplashAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    g f9062a;
+    g f6222a;
     j b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f9063c;
+    String f6223c;
     Map<String, Object> d;
 
     /* renamed from: com.anythink.network.onlineapi.OnlineApiATSplashAdapter$2  reason: invalid class name */
@@ -32,7 +31,6 @@ public class OnlineApiATSplashAdapter extends CustomSplashAdapter {
         AnonymousClass2() {
         }
 
-        @Override // com.anythink.basead.e.a
         public final void onAdClick(int i) {
             e trackingInfo = OnlineApiATSplashAdapter.this.getTrackingInfo();
             if (trackingInfo != null) {
@@ -43,38 +41,34 @@ public class OnlineApiATSplashAdapter extends CustomSplashAdapter {
             }
         }
 
-        @Override // com.anythink.basead.e.a
         public final void onAdClosed() {
             if (OnlineApiATSplashAdapter.this.mImpressionListener != null) {
                 OnlineApiATSplashAdapter.this.mImpressionListener.onSplashAdDismiss();
             }
         }
 
-        @Override // com.anythink.basead.e.a
         public final void onAdShow() {
             if (OnlineApiATSplashAdapter.this.mImpressionListener != null) {
                 OnlineApiATSplashAdapter.this.mImpressionListener.onSplashAdShow();
             }
         }
 
-        @Override // com.anythink.basead.e.a
         public final void onDeeplinkCallback(boolean z) {
             if (OnlineApiATSplashAdapter.this.mImpressionListener != null) {
                 OnlineApiATSplashAdapter.this.mImpressionListener.onDeeplinkCallback(z);
             }
         }
 
-        @Override // com.anythink.basead.e.a
         public final void onShowFailed(com.anythink.basead.c.e eVar) {
             if (OnlineApiATSplashAdapter.this.mImpressionListener != null) {
-                OnlineApiATSplashAdapter.this.mImpressionListener.onSplashAdShowFail(ErrorCode.getErrorCode(ErrorCode.adShowError, eVar.a(), eVar.b()));
+                OnlineApiATSplashAdapter.this.mImpressionListener.onSplashAdShowFail(ErrorCode.getErrorCode("4006", eVar.a(), eVar.b()));
             }
         }
     }
 
     private void a(Context context, Map<String, Object> map) {
         Object obj;
-        this.f9063c = map.get("unit_id") != null ? map.get("unit_id").toString() : "";
+        this.f6223c = map.get("unit_id") != null ? map.get("unit_id").toString() : "";
         int parseInt = (!map.containsKey("orientation") || (obj = map.get("orientation")) == null) ? 1 : Integer.parseInt(obj.toString());
         int i = 5;
         if (map.containsKey("countdown")) {
@@ -97,49 +91,43 @@ public class OnlineApiATSplashAdapter extends CustomSplashAdapter {
                 }
             }
         }
-        this.b = (j) map.get(g.k.f6515a);
-        com.anythink.basead.d.g gVar = new com.anythink.basead.d.g(context, b.a.ONLINE_API_OFFER_REQUEST_TYPE, this.b);
-        this.f9062a = gVar;
+        this.b = (j) map.get("basead_params");
+        g gVar = new g(context, b.a.b, this.b);
+        this.f6222a = gVar;
         gVar.a(new c.a().d(parseInt).e(i).f(i2).a());
-        this.f9062a.a(new AnonymousClass2());
+        this.f6222a.a(new AnonymousClass2());
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
-        com.anythink.basead.d.g gVar = this.f9062a;
+        g gVar = this.f6222a;
         if (gVar != null) {
             gVar.b();
-            this.f9062a = null;
+            this.f6222a = null;
         }
         this.b = null;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public Map<String, Object> getNetworkInfoMap() {
         return this.d;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return "";
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
-        return this.f9063c;
+        return this.f6223c;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return "";
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
-        com.anythink.basead.d.g gVar = this.f9062a;
+        g gVar = this.f6222a;
         boolean z = gVar != null && gVar.c();
         if (z && this.d == null) {
-            this.d = com.anythink.basead.b.a(this.f9062a);
+            this.d = com.anythink.basead.b.a(this.f6222a);
         }
         return z;
     }
@@ -149,10 +137,9 @@ public class OnlineApiATSplashAdapter extends CustomSplashAdapter {
         return true;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(Context context, Map<String, Object> map, Map<String, Object> map2) {
         Object obj;
-        this.f9063c = map.get("unit_id") != null ? map.get("unit_id").toString() : "";
+        this.f6223c = map.get("unit_id") != null ? map.get("unit_id").toString() : "";
         int parseInt = (!map.containsKey("orientation") || (obj = map.get("orientation")) == null) ? 1 : Integer.parseInt(obj.toString());
         int i = 5;
         if (map.containsKey("countdown")) {
@@ -175,29 +162,26 @@ public class OnlineApiATSplashAdapter extends CustomSplashAdapter {
                 }
             }
         }
-        this.b = (j) map.get(g.k.f6515a);
-        com.anythink.basead.d.g gVar = new com.anythink.basead.d.g(context, b.a.ONLINE_API_OFFER_REQUEST_TYPE, this.b);
-        this.f9062a = gVar;
+        this.b = (j) map.get("basead_params");
+        g gVar = new g(context, b.a.b, this.b);
+        this.f6222a = gVar;
         gVar.a(new c.a().d(parseInt).e(i).f(i2).a());
-        this.f9062a.a(new AnonymousClass2());
-        this.f9062a.a(new com.anythink.basead.e.c() { // from class: com.anythink.network.onlineapi.OnlineApiATSplashAdapter.1
-            @Override // com.anythink.basead.e.c
+        this.f6222a.a(new AnonymousClass2());
+        this.f6222a.a(new com.anythink.basead.e.c() { // from class: com.anythink.network.onlineapi.OnlineApiATSplashAdapter.1
             public final void onAdCacheLoaded() {
                 OnlineApiATSplashAdapter onlineApiATSplashAdapter = OnlineApiATSplashAdapter.this;
-                onlineApiATSplashAdapter.d = com.anythink.basead.b.a(onlineApiATSplashAdapter.f9062a);
+                onlineApiATSplashAdapter.d = com.anythink.basead.b.a(onlineApiATSplashAdapter.f6222a);
                 if (OnlineApiATSplashAdapter.this.mLoadListener != null) {
                     OnlineApiATSplashAdapter.this.mLoadListener.onAdCacheLoaded(new BaseAd[0]);
                 }
             }
 
-            @Override // com.anythink.basead.e.c
             public final void onAdDataLoaded() {
                 if (OnlineApiATSplashAdapter.this.mLoadListener != null) {
                     OnlineApiATSplashAdapter.this.mLoadListener.onAdDataLoaded();
                 }
             }
 
-            @Override // com.anythink.basead.e.c
             public final void onAdLoadFailed(com.anythink.basead.c.e eVar) {
                 if (OnlineApiATSplashAdapter.this.mLoadListener != null) {
                     OnlineApiATSplashAdapter.this.mLoadListener.onAdLoadError(eVar.a(), eVar.b());
@@ -208,11 +192,11 @@ public class OnlineApiATSplashAdapter extends CustomSplashAdapter {
 
     @Override // com.anythink.splashad.unitgroup.api.CustomSplashAdapter
     public void show(Activity activity, ViewGroup viewGroup) {
-        if (this.f9062a != null) {
+        if (this.f6222a != null) {
             if (isCustomSkipView()) {
-                this.f9062a.a();
+                this.f6222a.a();
             }
-            this.f9062a.a(viewGroup);
+            this.f6222a.a(viewGroup);
         }
     }
 }

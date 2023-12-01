@@ -11,8 +11,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.module.common.api.BluedApiProxy;
@@ -48,24 +50,24 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/setting/fragment/MsgBackupFragment.class */
 public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(MsgBackupFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FmMsgBackupBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(MsgBackupFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FmMsgBackupBinding;", 0))};
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f33514c;
+    private final ViewBindingProperty f19823c;
 
     public MsgBackupFragment() {
-        super(R.layout.fm_msg_backup);
-        this.f33514c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<MsgBackupFragment, FmMsgBackupBinding>() { // from class: com.soft.blued.ui.setting.fragment.MsgBackupFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fm_msg_backup);
+        this.f19823c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<MsgBackupFragment, FmMsgBackupBinding>() { // from class: com.soft.blued.ui.setting.fragment.MsgBackupFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/MsgBackupFragment;)Lcom/soft/blued/databinding/FmMsgBackupBinding; */
             /* renamed from: a */
-            public final FmMsgBackupBinding invoke(MsgBackupFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmMsgBackupBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<MsgBackupFragment, FmMsgBackupBinding>() { // from class: com.soft.blued.ui.setting.fragment.MsgBackupFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/MsgBackupFragment;)Lcom/soft/blued/databinding/FmMsgBackupBinding; */
             /* renamed from: a */
-            public final FmMsgBackupBinding invoke(MsgBackupFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmMsgBackupBinding.a(fragment.requireView());
             }
@@ -74,7 +76,7 @@ public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FmMsgBackupBinding a() {
-        return (FmMsgBackupBinding) this.f33514c.b(this, b[0]);
+        return (FmMsgBackupBinding) this.f19823c.b(this, b[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -84,18 +86,18 @@ public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MsgBackupFragment this$0, DialogInterface dialogInterface, int i) {
+    public static final void a(MsgBackupFragment msgBackupFragment, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        BluedStructureExtKt.a(this$0, MsgBackupAction.Delete.f33635a);
+        Intrinsics.e(msgBackupFragment, "this$0");
+        BluedStructureExtKt.a(msgBackupFragment, MsgBackupAction.Delete.f19944a);
         EventTrackSettings.a(SettingsProtos.Event.MINE_DELETE_RECORD_TRUE_CLICK);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MsgBackupFragment this$0, View view) {
+    public static final void a(MsgBackupFragment msgBackupFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(msgBackupFragment, "this$0");
+        FragmentActivity activity = msgBackupFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -137,22 +139,22 @@ public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(MsgBackupFragment this$0, DialogInterface dialogInterface, int i) {
+    public static final void b(MsgBackupFragment msgBackupFragment, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(msgBackupFragment, "this$0");
         EventTrackSettings.a(SettingsProtos.Event.MINE_RECOVERY_RECORD_CONTINUE_CLICK);
-        BluedStructureExtKt.a(this$0, MsgBackupAction.DownloadAndRestore.f33636a);
+        BluedStructureExtKt.a(msgBackupFragment, MsgBackupAction.DownloadAndRestore.f19945a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(MsgBackupFragment this$0, View view) {
+    public static final void b(MsgBackupFragment msgBackupFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(msgBackupFragment, "this$0");
         EventTrackSettings.a(SettingsProtos.Event.MINE_BACKUP_RECORD_CLICK);
-        if (BluedApiProxy.f10622a || (NetworkUtils.b() && !NetworkUtils.a())) {
-            this$0.d();
+        if (BluedApiProxy.a || (NetworkUtils.b() && !NetworkUtils.a())) {
+            msgBackupFragment.d();
         } else {
-            this$0.e();
+            msgBackupFragment.e();
         }
     }
 
@@ -191,22 +193,22 @@ public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(MsgBackupFragment this$0, DialogInterface dialogInterface, int i) {
+    public static final void c(MsgBackupFragment msgBackupFragment, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(msgBackupFragment, "this$0");
         EventTrackSettings.a(SettingsProtos.Event.MINE_BACKUP_RECORD_CONTINUE_CLICK);
-        BluedStructureExtKt.a(this$0, MsgBackupAction.Backup.f33634a);
+        BluedStructureExtKt.a(msgBackupFragment, MsgBackupAction.Backup.f19943a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(MsgBackupFragment this$0, View view) {
+    public static final void c(MsgBackupFragment msgBackupFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(msgBackupFragment, "this$0");
         EventTrackSettings.a(SettingsProtos.Event.MINE_RECOVERY_RECORD_CLICK);
-        if (BluedApiProxy.f10622a || (NetworkUtils.b() && !NetworkUtils.a())) {
-            this$0.c();
+        if (BluedApiProxy.a || (NetworkUtils.b() && !NetworkUtils.a())) {
+            msgBackupFragment.c();
         } else {
-            this$0.e();
+            msgBackupFragment.e();
         }
     }
 
@@ -248,17 +250,17 @@ public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(MsgBackupFragment this$0, DialogInterface dialogInterface, int i) {
+    public static final void d(MsgBackupFragment msgBackupFragment, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        BluedStructureExtKt.a(this$0, MsgBackupAction.UploadFile.f33639a);
+        Intrinsics.e(msgBackupFragment, "this$0");
+        BluedStructureExtKt.a(msgBackupFragment, MsgBackupAction.UploadFile.f19948a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(MsgBackupFragment this$0, View view) {
+    public static final void d(MsgBackupFragment msgBackupFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.b();
+        Intrinsics.e(msgBackupFragment, "this$0");
+        msgBackupFragment.b();
         EventTrackSettings.a(SettingsProtos.Event.MINE_DELETE_RECORD_CLICK);
     }
 
@@ -282,11 +284,11 @@ public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void e(MsgBackupFragment this$0, DialogInterface dialogInterface, int i) {
+    public static final void e(MsgBackupFragment msgBackupFragment, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(msgBackupFragment, "this$0");
         EventTrackSettings.a(SettingsProtos.Event.MINE_RECOVERY_RECORD_CANCEL_CLICK);
-        this$0.a(false, false);
+        msgBackupFragment.a(false, false);
     }
 
     private final void f() {
@@ -317,12 +319,10 @@ public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
         a5.e().setTextColor(BluedSkinUtils.a(getContext(), 2131102263));
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void a(boolean z, boolean z2) {
         DialogUtils.b(t());
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         CommonTopTitleNoTrans commonTopTitleNoTrans;
         TextView textView;
@@ -332,7 +332,7 @@ public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
         CommonTopTitleNoTrans commonTopTitleNoTrans2;
         ImageView leftImg;
         FmMsgBackupBinding a2 = a();
-        if (a2 != null && (commonTopTitleNoTrans2 = a2.f28752c) != null && (leftImg = commonTopTitleNoTrans2.getLeftImg()) != null) {
+        if (a2 != null && (commonTopTitleNoTrans2 = a2.f15062c) != null && (leftImg = commonTopTitleNoTrans2.getLeftImg()) != null) {
             leftImg.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$MsgBackupFragment$76y-GV53j3gize5TgODqW6pxZ2o
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -341,13 +341,13 @@ public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
             });
         }
         FmMsgBackupBinding a3 = a();
-        TextView centerTextView = (a3 == null || (commonTopTitleNoTrans = a3.f28752c) == null) ? null : commonTopTitleNoTrans.getCenterTextView();
+        TextView centerTextView = (a3 == null || (commonTopTitleNoTrans = a3.f15062c) == null) ? null : commonTopTitleNoTrans.getCenterTextView();
         if (centerTextView != null) {
             Context context = getContext();
             centerTextView.setText(context == null ? null : context.getString(R.string.msg_backup_restore));
         }
         FmMsgBackupBinding a4 = a();
-        if (a4 != null && (linearLayout2 = a4.f28751a) != null) {
+        if (a4 != null && (linearLayout2 = a4.f15061a) != null) {
             linearLayout2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$MsgBackupFragment$ewf3NPG1yp-5qEB3hQ334_-hfhI
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -388,17 +388,17 @@ public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
         spannableStringBuilder.setSpan(new ClickableSpan() { // from class: com.soft.blued.ui.setting.fragment.MsgBackupFragment$initView$5
             @Override // android.text.style.ClickableSpan
-            public void onClick(View v) {
-                Intrinsics.e(v, "v");
+            public void onClick(View view) {
+                Intrinsics.e(view, "v");
                 WebViewShowInfoFragment.show(MsgBackupFragment.this.getActivity(), H5Url.a(22), 0);
             }
 
             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-            public void updateDrawState(TextPaint ds) {
-                Intrinsics.e(ds, "ds");
-                ds.setColor(AppInfo.d().getResources().getColor(2131101766));
-                ds.setUnderlineText(false);
-                ds.clearShadowLayer();
+            public void updateDrawState(TextPaint textPaint) {
+                Intrinsics.e(textPaint, "ds");
+                textPaint.setColor(AppInfo.d().getResources().getColor(2131101766));
+                textPaint.setUnderlineText(false);
+                textPaint.clearShadowLayer();
             }
         }, string.length() - string2.length(), string.length(), 33);
         FmMsgBackupBinding a8 = a();
@@ -406,15 +406,13 @@ public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
         if (textView3 != null) {
             textView3.setText(spannableStringBuilder);
         }
-        BluedStructureExtKt.a(this, MsgBackupAction.GetBackupInfo.f33637a);
+        BluedStructureExtKt.a(this, MsgBackupAction.GetBackupInfo.f19946a);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner, "viewLifecycleOwner");
         BluedStructureExtKt.a(this, viewLifecycleOwner, new PropertyReference1Impl() { // from class: com.soft.blued.ui.setting.fragment.MsgBackupFragment$liveDataObserver$1
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((MsgBackupState) obj).a();
             }
@@ -424,34 +422,31 @@ public final class MsgBackupFragment extends MVIBaseFragment<MsgBackupVM> {
                 super(1);
             }
 
-            public final void a(String it) {
+            public final void a(String str) {
                 FmMsgBackupBinding a2;
-                Intrinsics.e(it, "it");
+                Intrinsics.e(str, "it");
                 a2 = MsgBackupFragment.this.a();
                 TextView textView = a2 == null ? null : a2.d;
                 if (textView == null) {
                     return;
                 }
-                textView.setText(it);
+                textView.setText(str);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(String str) {
-                a(str);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((String) obj);
+                return Unit.a;
             }
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
-    public void onEvent(UiEvent event) {
-        Intrinsics.e(event, "event");
-        if (event instanceof MsgBackupAction.MsgBackupEvent.FileLimitDialog) {
+    public void onEvent(UiEvent uiEvent) {
+        Intrinsics.e(uiEvent, "event");
+        if (uiEvent instanceof MsgBackupAction.MsgBackupEvent.FileLimitDialog) {
             f();
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void r() {
         DialogUtils.a(t());
     }

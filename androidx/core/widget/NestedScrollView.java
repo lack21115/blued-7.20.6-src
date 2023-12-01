@@ -1,5 +1,6 @@
 package androidx.core.widget;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
@@ -23,7 +24,6 @@ import android.widget.EdgeEffect;
 import android.widget.FrameLayout;
 import android.widget.OverScroller;
 import android.widget.ScrollView;
-import androidx.core.R;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.NestedScrollingChild3;
 import androidx.core.view.NestedScrollingChildHelper;
@@ -33,20 +33,19 @@ import androidx.core.view.ScrollingView;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityRecordCompat;
-import com.alipay.sdk.util.i;
 import java.util.ArrayList;
 
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/widget/NestedScrollView.class */
 public class NestedScrollView extends FrameLayout implements NestedScrollingChild3, NestedScrollingParent3, ScrollingView {
     private static final AccessibilityDelegate u = new AccessibilityDelegate();
-    private static final int[] v = {16843130};
+    private static final int[] v = {R.attr.fillViewport};
 
     /* renamed from: a  reason: collision with root package name */
-    private long f2752a;
+    private long f2704a;
     private final Rect b;
 
     /* renamed from: c  reason: collision with root package name */
-    private OverScroller f2753c;
+    private OverScroller f2705c;
     private int d;
     private boolean e;
     private boolean f;
@@ -175,10 +174,10 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         }
 
         public String toString() {
-            return "HorizontalScrollView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " scrollPosition=" + this.scrollPosition + i.d;
+            return "HorizontalScrollView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " scrollPosition=" + this.scrollPosition + "}";
         }
 
-        @Override // android.view.AbsSavedState, android.os.Parcelable
+        @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
             parcel.writeInt(this.scrollPosition);
@@ -190,7 +189,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
     }
 
     public NestedScrollView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.nestedScrollViewStyle);
+        this(context, attributeSet, androidx.core.R.attr.nestedScrollViewStyle);
     }
 
     public NestedScrollView(Context context, AttributeSet attributeSet, int i) {
@@ -243,7 +242,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
     }
 
     private View a(boolean z, int i, int i2) {
-        ArrayList<View> focusables = getFocusables(2);
+        ArrayList focusables = getFocusables(2);
         int size = focusables.size();
         View view = null;
         int i3 = 0;
@@ -253,7 +252,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
             if (i3 >= size) {
                 return view;
             }
-            View view2 = focusables.get(i3);
+            View view2 = (View) focusables.get(i3);
             int top = view2.getTop();
             int bottom = view2.getBottom();
             View view3 = view;
@@ -300,7 +299,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
     }
 
     private void a() {
-        this.f2753c = new OverScroller(getContext());
+        this.f2705c = new OverScroller(getContext());
         setFocusable(true);
         setDescendantFocusability(262144);
         setWillNotDraw(false);
@@ -454,7 +453,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         if (getChildCount() == 0) {
             return;
         }
-        if (AnimationUtils.currentAnimationTimeMillis() - this.f2752a > 250) {
+        if (AnimationUtils.currentAnimationTimeMillis() - this.f2704a > 250) {
             View childAt = getChildAt(0);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
             int height = childAt.getHeight();
@@ -464,15 +463,15 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
             int paddingTop = getPaddingTop();
             int paddingBottom = getPaddingBottom();
             int scrollY = getScrollY();
-            this.f2753c.startScroll(getScrollX(), scrollY, 0, Math.max(0, Math.min(i2 + scrollY, Math.max(0, ((height + i4) + i5) - ((height2 - paddingTop) - paddingBottom)))) - scrollY, i3);
+            this.f2705c.startScroll(getScrollX(), scrollY, 0, Math.max(0, Math.min(i2 + scrollY, Math.max(0, ((height + i4) + i5) - ((height2 - paddingTop) - paddingBottom)))) - scrollY, i3);
             a(z);
         } else {
-            if (!this.f2753c.isFinished()) {
+            if (!this.f2705c.isFinished()) {
                 f();
             }
             scrollBy(i, i2);
         }
-        this.f2752a = AnimationUtils.currentAnimationTimeMillis();
+        this.f2704a = AnimationUtils.currentAnimationTimeMillis();
     }
 
     private void b(MotionEvent motionEvent) {
@@ -534,7 +533,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
     }
 
     private void f() {
-        this.f2753c.abortAnimation();
+        this.f2705c.abortAnimation();
         stopNestedScroll(1);
     }
 
@@ -550,7 +549,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         if (this.y == 0.0f) {
             TypedValue typedValue = new TypedValue();
             Context context = getContext();
-            if (!context.getTheme().resolveAttribute(16842829, typedValue, true)) {
+            if (!context.getTheme().resolveAttribute(R.attr.listPreferredItemHeight, typedValue, true)) {
                 throw new IllegalStateException("Expected theme to define listPreferredItemHeight.");
             }
             this.y = typedValue.getDimension(context.getResources().getDisplayMetrics());
@@ -690,17 +689,17 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         return true;
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, androidx.core.view.ScrollingView
     public int computeHorizontalScrollExtent() {
         return super.computeHorizontalScrollExtent();
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, androidx.core.view.ScrollingView
     public int computeHorizontalScrollOffset() {
         return super.computeHorizontalScrollOffset();
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, androidx.core.view.ScrollingView
     public int computeHorizontalScrollRange() {
         return super.computeHorizontalScrollRange();
     }
@@ -722,17 +721,17 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         throw new UnsupportedOperationException("Method not decompiled: androidx.core.widget.NestedScrollView.computeScroll():void");
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, androidx.core.view.ScrollingView
     public int computeVerticalScrollExtent() {
         return super.computeVerticalScrollExtent();
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, androidx.core.view.ScrollingView
     public int computeVerticalScrollOffset() {
         return Math.max(0, super.computeVerticalScrollOffset());
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, androidx.core.view.ScrollingView
     public int computeVerticalScrollRange() {
         int childCount = getChildCount();
         int height = (getHeight() - getPaddingBottom()) - getPaddingTop();
@@ -796,7 +795,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
     /* JADX WARN: Code restructure failed: missing block: B:25:0x00f9, code lost:
         if (getClipToPadding() != false) goto L35;
      */
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -863,7 +862,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
 
     public void fling(int i) {
         if (getChildCount() > 0) {
-            this.f2753c.fling(getScrollX(), getScrollY(), 0, i, 0, 0, Integer.MIN_VALUE, Integer.MAX_VALUE, 0, 0);
+            this.f2705c.fling(getScrollX(), getScrollY(), 0, i, 0, 0, Integer.MIN_VALUE, Integer.MAX_VALUE, 0, 0);
             a(true);
         }
     }
@@ -883,9 +882,8 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         return a(i, this.b.top, this.b.bottom);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public float getBottomFadingEdgeStrength() {
+    protected float getBottomFadingEdgeStrength() {
         if (getChildCount() == 0) {
             return 0.0f;
         }
@@ -918,9 +916,8 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         return i;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public float getTopFadingEdgeStrength() {
+    protected float getTopFadingEdgeStrength() {
         if (getChildCount() == 0) {
             return 0.0f;
         }
@@ -955,15 +952,13 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         return this.k;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public void measureChild(View view, int i, int i2) {
+    protected void measureChild(View view, int i, int i2) {
         view.measure(getChildMeasureSpec(i, getPaddingLeft() + getPaddingRight(), view.getLayoutParams().width), View.MeasureSpec.makeMeasureSpec(0, 0));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public void measureChildWithMargins(View view, int i, int i2, int i3, int i4) {
+    protected void measureChildWithMargins(View view, int i, int i2, int i3, int i4) {
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
         view.measure(getChildMeasureSpec(i, getPaddingLeft() + getPaddingRight() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i2, marginLayoutParams.width), View.MeasureSpec.makeMeasureSpec(marginLayoutParams.topMargin + marginLayoutParams.bottomMargin, 0));
     }
@@ -1038,7 +1033,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
             this.h = false;
             this.o = -1;
             e();
-            if (this.f2753c.springBack(getScrollX(), getScrollY(), 0, 0, 0, getScrollRange())) {
+            if (this.f2705c.springBack(getScrollX(), getScrollY(), 0, 0, 0, getScrollRange())) {
                 ViewCompat.postInvalidateOnAnimation(this);
             }
             stopNestedScroll(0);
@@ -1049,17 +1044,17 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
                 this.o = motionEvent.getPointerId(0);
                 c();
                 this.i.addMovement(motionEvent);
-                this.f2753c.computeScrollOffset();
+                this.f2705c.computeScrollOffset();
                 boolean z = true;
                 if (!a(motionEvent)) {
-                    z = !this.f2753c.isFinished();
+                    z = !this.f2705c.isFinished();
                 }
                 this.h = z;
                 startNestedScroll(2, 0);
             } else {
                 boolean z2 = true;
                 if (!a(motionEvent)) {
-                    z2 = !this.f2753c.isFinished();
+                    z2 = !this.f2705c.isFinished();
                 }
                 this.h = z2;
                 e();
@@ -1068,9 +1063,8 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         return this.h;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         int i5 = 0;
         this.e = false;
@@ -1101,9 +1095,8 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         this.f = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         if (this.j && View.MeasureSpec.getMode(i2) != 0 && getChildCount() > 0) {
             View childAt = getChildAt(0);
@@ -1116,7 +1109,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public boolean onNestedFling(View view, float f, float f2, boolean z) {
         if (z) {
             return false;
@@ -1126,12 +1119,12 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         return true;
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public boolean onNestedPreFling(View view, float f, float f2) {
         return dispatchNestedPreFling(f, f2);
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public void onNestedPreScroll(View view, int i, int i2, int[] iArr) {
         onNestedPreScroll(view, i, i2, iArr, 0);
     }
@@ -1141,7 +1134,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         dispatchNestedPreScroll(i, i2, iArr, null, i3);
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public void onNestedScroll(View view, int i, int i2, int i3, int i4) {
         a(i4, 0, (int[]) null);
     }
@@ -1156,7 +1149,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         a(i4, i5, iArr);
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public void onNestedScrollAccepted(View view, View view2, int i) {
         onNestedScrollAccepted(view, view2, i, 0);
     }
@@ -1172,9 +1165,8 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         super.scrollTo(i, i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean onRequestFocusInDescendants(int i, Rect rect) {
+    protected boolean onRequestFocusInDescendants(int i, Rect rect) {
         int i2;
         if (i == 2) {
             i2 = 130;
@@ -1191,9 +1183,8 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         return findNextFocus.requestFocus(i2, rect);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         if (!(parcelable instanceof SavedState)) {
             super.onRestoreInstanceState(parcelable);
             return;
@@ -1204,9 +1195,8 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         requestLayout();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
         savedState.scrollPosition = getScrollY();
         return savedState;
@@ -1221,9 +1211,8 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    @Override // android.view.View
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         View findFocus = findFocus();
         if (findFocus == null || this == findFocus || !a(findFocus, 0, i4)) {
@@ -1234,7 +1223,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         b(a(this.b));
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public boolean onStartNestedScroll(View view, View view2, int i) {
         return onStartNestedScroll(view, view2, i, 0);
     }
@@ -1244,7 +1233,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
         return (i & 2) != 0;
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public void onStopNestedScroll(View view) {
         onStopNestedScroll(view, 0);
     }
@@ -1279,7 +1268,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
                             fling(i);
                         }
                     }
-                } else if (this.f2753c.springBack(getScrollX(), getScrollY(), 0, 0, 0, getScrollRange())) {
+                } else if (this.f2705c.springBack(getScrollX(), getScrollY(), 0, 0, 0, getScrollRange())) {
                     ViewCompat.postInvalidateOnAnimation(this);
                 }
                 this.o = -1;
@@ -1349,7 +1338,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
                     }
                 }
             } else if (actionMasked == 3) {
-                if (this.h && getChildCount() > 0 && this.f2753c.springBack(getScrollX(), getScrollY(), 0, 0, 0, getScrollRange())) {
+                if (this.h && getChildCount() > 0 && this.f2705c.springBack(getScrollX(), getScrollY(), 0, 0, 0, getScrollRange())) {
                     ViewCompat.postInvalidateOnAnimation(this);
                 }
                 this.o = -1;
@@ -1368,7 +1357,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingChil
             if (this.h && (parent = getParent()) != null) {
                 parent.requestDisallowInterceptTouchEvent(true);
             }
-            if (!this.f2753c.isFinished()) {
+            if (!this.f2705c.isFinished()) {
                 f();
             }
             this.d = (int) motionEvent.getY();

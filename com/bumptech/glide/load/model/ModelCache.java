@@ -8,18 +8,18 @@ import java.util.Queue;
 public class ModelCache<A, B> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LruCache<ModelKey<A>, B> f20886a;
+    private final LruCache<ModelKey<A>, B> f7280a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/ModelCache$ModelKey.class */
     public static final class ModelKey<A> {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final Queue<ModelKey<?>> f20888a = Util.a(0);
+        private static final Queue<ModelKey<?>> f7282a = Util.a(0);
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f20889c;
+        private int f7283c;
         private A d;
 
         private ModelKey() {
@@ -27,8 +27,8 @@ public class ModelCache<A, B> {
 
         static <A> ModelKey<A> a(A a2, int i, int i2) {
             ModelKey<?> poll;
-            synchronized (f20888a) {
-                poll = f20888a.poll();
+            synchronized (f7282a) {
+                poll = f7282a.poll();
             }
             ModelKey<?> modelKey = poll;
             if (poll == null) {
@@ -40,13 +40,13 @@ public class ModelCache<A, B> {
 
         private void b(A a2, int i, int i2) {
             this.d = a2;
-            this.f20889c = i;
+            this.f7283c = i;
             this.b = i2;
         }
 
         public void a() {
-            synchronized (f20888a) {
-                f20888a.offer(this);
+            synchronized (f7282a) {
+                f7282a.offer(this);
             }
         }
 
@@ -55,7 +55,7 @@ public class ModelCache<A, B> {
             if (obj instanceof ModelKey) {
                 ModelKey modelKey = (ModelKey) obj;
                 z = false;
-                if (this.f20889c == modelKey.f20889c) {
+                if (this.f7283c == modelKey.f7283c) {
                     z = false;
                     if (this.b == modelKey.b) {
                         z = false;
@@ -69,7 +69,7 @@ public class ModelCache<A, B> {
         }
 
         public int hashCode() {
-            return (((this.b * 31) + this.f20889c) * 31) + this.d.hashCode();
+            return (((this.b * 31) + this.f7283c) * 31) + this.d.hashCode();
         }
     }
 
@@ -78,7 +78,7 @@ public class ModelCache<A, B> {
     }
 
     public ModelCache(long j) {
-        this.f20886a = new LruCache<ModelKey<A>, B>(j) { // from class: com.bumptech.glide.load.model.ModelCache.1
+        this.f7280a = new LruCache<ModelKey<A>, B>(j) { // from class: com.bumptech.glide.load.model.ModelCache.1
             protected void a(ModelKey<A> modelKey, B b) {
                 modelKey.a();
             }
@@ -92,12 +92,12 @@ public class ModelCache<A, B> {
 
     public B a(A a2, int i, int i2) {
         ModelKey<A> a3 = ModelKey.a(a2, i, i2);
-        B b = this.f20886a.b(a3);
+        B b = this.f7280a.b(a3);
         a3.a();
         return b;
     }
 
     public void a(A a2, int i, int i2, B b) {
-        this.f20886a.b(ModelKey.a(a2, i, i2), b);
+        this.f7280a.b(ModelKey.a(a2, i, i2), b);
     }
 }

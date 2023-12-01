@@ -25,17 +25,13 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYSeatGameAdapter.class */
 public class YYSeatGameAdapter extends BaseConnectingAdapter<YYSeatMemberModel, BaseViewHolder> implements SeatChangedObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f16242a;
+    private BaseYYStudioFragment a;
     private YYRoomModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYGameView f16243c;
+    private YYGameView c;
     private HashMap<Integer, YYMemberGameView> d;
 
     private void a() {
-        this.f16243c.a(this.f16242a);
+        this.c.a(this.a);
     }
 
     private void b() {
@@ -49,7 +45,7 @@ public class YYSeatGameAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
             if (i2 >= this.b.mics.size()) {
                 return;
             }
-            this.d.get(Integer.valueOf(i2)).a(this.b.mics.get(i2), this.f16242a.getFragmentActive());
+            this.d.get(Integer.valueOf(i2)).a(this.b.mics.get(i2), this.a.getFragmentActive());
             i = i2 + 1;
         }
     }
@@ -69,7 +65,7 @@ public class YYSeatGameAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
         }
         YYMemberGameView yYMemberGameView = this.d.get(Integer.valueOf(i3));
         if (yYMemberGameView != null) {
-            yYMemberGameView.a(yYSeatMemberModel, this.f16242a.getFragmentActive());
+            yYMemberGameView.a(yYSeatMemberModel, this.a.getFragmentActive());
         }
     }
 
@@ -79,7 +75,7 @@ public class YYSeatGameAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
         if (yYMemberGameView == null) {
             return;
         }
-        yYMemberGameView.a(this.f16242a.getFragmentActive(), str, str2, yYImModel);
+        yYMemberGameView.a(this.a.getFragmentActive(), str, str2, yYImModel);
     }
 
     @Override // com.blued.android.module.yy_china.adapter.BaseConnectingAdapter
@@ -104,7 +100,7 @@ public class YYSeatGameAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
                 yYSeatMemberModel2.speech_ripple = yYSeatMemberModel.speech_ripple;
                 YYMemberGameView yYMemberGameView = this.d.get(Integer.valueOf(i2));
                 if (yYMemberGameView != null) {
-                    yYMemberGameView.a(yYSeatMemberModel2, this.f16242a.getFragmentActive());
+                    yYMemberGameView.a(yYSeatMemberModel2, this.a.getFragmentActive());
                     return;
                 }
             }
@@ -133,7 +129,6 @@ public class YYSeatGameAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYSeatMemberModel yYSeatMemberModel) {
         baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYSeatGameAdapter.1
@@ -145,7 +140,7 @@ public class YYSeatGameAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
         if (yYSeatMemberModel.getItemType() != 7) {
             return;
         }
-        this.f16243c = (YYGameView) baseViewHolder.itemView.findViewById(R.id.yy_game_layout);
+        this.c = (YYGameView) baseViewHolder.itemView.findViewById(R.id.yy_game_layout);
         YYMemberGameView yYMemberGameView = (YYMemberGameView) baseViewHolder.itemView.findViewById(R.id.user_1);
         YYMemberGameView yYMemberGameView2 = (YYMemberGameView) baseViewHolder.itemView.findViewById(R.id.user_2);
         YYMemberGameView yYMemberGameView3 = (YYMemberGameView) baseViewHolder.itemView.findViewById(R.id.user_3);
@@ -174,7 +169,7 @@ public class YYSeatGameAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
         for (YYSeatMemberModel yYSeatMemberModel : this.b.mics) {
             if (TextUtils.equals(yYSeatMemberModel.getUid(), str)) {
                 yYSeatMemberModel.chat_anchor = str2;
-                this.d.get(Integer.valueOf(i)).a(yYSeatMemberModel, this.f16242a.getFragmentActive());
+                this.d.get(Integer.valueOf(i)).a(yYSeatMemberModel, this.a.getFragmentActive());
                 return;
             }
             i++;
@@ -223,20 +218,18 @@ public class YYSeatGameAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
             YYSeatMemberModel yYSeatMemberModel = list.get(i2);
             YYMemberGameView yYMemberGameView = this.d.get(Integer.valueOf(i2));
             if (yYMemberGameView != null) {
-                yYMemberGameView.a(yYSeatMemberModel, this.f16242a.getFragmentActive());
+                yYMemberGameView.a(yYSeatMemberModel, this.a.getFragmentActive());
             }
             i = i2 + 1;
         }
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
         Logger.e("observer", "YYConnectingAdapter onAttachedToRecyclerView ...");
         YYObserverManager.a().a(this);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
         super.onDetachedFromRecyclerView(recyclerView);
         Logger.e("observer", "YYConnectingAdapter onDetachedFromRecyclerView ...");
@@ -248,7 +241,6 @@ public class YYSeatGameAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
         b.clearEmojiAndSendMessage();
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void setNewData(List<YYSeatMemberModel> list) {
         ArrayList arrayList = new ArrayList();
         YYSeatMemberModel yYSeatMemberModel = new YYSeatMemberModel();

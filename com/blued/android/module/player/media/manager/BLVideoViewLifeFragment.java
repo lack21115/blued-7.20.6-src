@@ -7,21 +7,19 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/manager/BLVideoViewLifeFragment.class */
 public class BLVideoViewLifeFragment extends Fragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f15651a = BLVideoViewLifeFragment.class.getSimpleName();
+    public static final String a = BLVideoViewLifeFragment.class.getSimpleName();
     private BLVideoViewCache b;
 
     public static void a(BLVideoViewCache bLVideoViewCache, Activity activity) {
         if (activity == null || activity.getFragmentManager() == null) {
-            Log.c(f15651a, "activity is null");
+            Log.c(a, "activity is null");
             return;
         }
         try {
-            Log.c(f15651a, "PLVideoViewLifeFragment new instance");
+            Log.c(a, "PLVideoViewLifeFragment new instance");
             BLVideoViewLifeFragment bLVideoViewLifeFragment = new BLVideoViewLifeFragment();
             bLVideoViewLifeFragment.b = bLVideoViewCache;
-            activity.getFragmentManager().beginTransaction().add(bLVideoViewLifeFragment, f15651a).commit();
+            activity.getFragmentManager().beginTransaction().add(bLVideoViewLifeFragment, a).commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -29,7 +27,7 @@ public class BLVideoViewLifeFragment extends Fragment {
 
     @Override // android.app.Fragment
     public void onDestroy() {
-        Log.c(f15651a, "onDestroy");
+        Log.c(a, "onDestroy");
         BLVideoViewCache bLVideoViewCache = this.b;
         if (bLVideoViewCache != null) {
             bLVideoViewCache.a();

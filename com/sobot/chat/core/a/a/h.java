@@ -8,10 +8,10 @@ public class h {
     private static final AtomicInteger b = new AtomicInteger();
 
     /* renamed from: a  reason: collision with root package name */
-    private final h f28210a;
+    private final h f14521a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f28211c;
+    private final int f14522c;
     private byte[] d;
     private String e;
     private boolean f;
@@ -20,8 +20,8 @@ public class h {
     private byte[] i;
 
     public h(String str) {
-        this.f28210a = this;
-        this.f28211c = b.getAndIncrement();
+        this.f14521a = this;
+        this.f14522c = b.getAndIncrement();
         this.e = str;
     }
 
@@ -30,14 +30,14 @@ public class h {
     }
 
     public h(byte[] bArr, boolean z) {
-        this.f28210a = this;
-        this.f28211c = b.getAndIncrement();
+        this.f14521a = this;
+        this.f14522c = b.getAndIncrement();
         this.d = Arrays.copyOf(bArr, bArr.length);
         this.f = z;
     }
 
     public int a() {
-        return this.f28211c;
+        return this.f14522c;
     }
 
     public h a(byte[] bArr) {

@@ -31,7 +31,6 @@ import com.anythink.expressad.video.module.a.a.m;
 import com.anythink.expressad.video.signal.a.c;
 import com.anythink.expressad.video.signal.container.AbstractJSContainer;
 import com.anythink.expressad.videocommon.a;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.openalliance.ad.constant.ao;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +74,7 @@ public class ATTempContainer extends AbstractJSContainer {
     private LayoutInflater W;
 
     /* renamed from: a  reason: collision with root package name */
-    protected boolean f8297a;
+    protected boolean f5457a;
     private int ai;
     private int aj;
     private int ak;
@@ -86,7 +85,7 @@ public class ATTempContainer extends AbstractJSContainer {
     private boolean aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private boolean f8298ar;
+    private boolean f5458ar;
     private boolean as;
     private boolean at;
     private boolean au;
@@ -96,7 +95,7 @@ public class ATTempContainer extends AbstractJSContainer {
     private Runnable ay;
 
     /* renamed from: c  reason: collision with root package name */
-    protected boolean f8299c;
+    protected boolean f5459c;
     protected a d;
     protected WindVaneWebView e;
     protected AnythinkVideoView f;
@@ -128,7 +127,7 @@ public class ATTempContainer extends AbstractJSContainer {
             }
             String encodeToString = Base64.encodeToString(str.getBytes(), 2);
             j.a();
-            j.a((WebView) ATTempContainer.this.e, AbsFeedBackForH5.f7096a, encodeToString);
+            j.a((WebView) ATTempContainer.this.e, AbsFeedBackForH5.f4258a, encodeToString);
         }
 
         @Override // com.anythink.expressad.foundation.f.a
@@ -147,7 +146,7 @@ public class ATTempContainer extends AbstractJSContainer {
             }
             String encodeToString = Base64.encodeToString(str.getBytes(), 2);
             j.a();
-            j.a((WebView) ATTempContainer.this.e, AbsFeedBackForH5.f7096a, encodeToString);
+            j.a((WebView) ATTempContainer.this.e, AbsFeedBackForH5.f4258a, encodeToString);
         }
 
         @Override // com.anythink.expressad.foundation.f.a
@@ -166,7 +165,7 @@ public class ATTempContainer extends AbstractJSContainer {
             }
             String encodeToString = Base64.encodeToString(str.getBytes(), 2);
             j.a();
-            j.a((WebView) ATTempContainer.this.e, AbsFeedBackForH5.f7096a, encodeToString);
+            j.a((WebView) ATTempContainer.this.e, AbsFeedBackForH5.f4258a, encodeToString);
         }
     }
 
@@ -224,26 +223,26 @@ public class ATTempContainer extends AbstractJSContainer {
 
         /* renamed from: com.anythink.expressad.video.bt.module.ATTempContainer$a$a  reason: collision with other inner class name */
         /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/video/bt/module/ATTempContainer$a$a.class */
-        public static class C0159a implements a {
+        public static class C0088a implements a {
             private static final String b = "ActivityErrorListener";
 
             /* renamed from: a  reason: collision with root package name */
-            private boolean f8308a = false;
+            private boolean f5468a = false;
 
             @Override // com.anythink.expressad.video.bt.module.ATTempContainer.a
             public void a(String str) {
                 o.d(b, str);
-                this.f8308a = true;
+                this.f5468a = true;
             }
 
             @Override // com.anythink.expressad.video.bt.module.ATTempContainer.a
             public final boolean a() {
-                return this.f8308a;
+                return this.f5468a;
             }
 
             @Override // com.anythink.expressad.video.bt.module.ATTempContainer.a
             public final void b() {
-                this.f8308a = true;
+                this.f5468a = true;
             }
         }
 
@@ -476,7 +475,7 @@ public class ATTempContainer extends AbstractJSContainer {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:59:0x0192, code lost:
-            if (r4.f8313a.C.l() != false) goto L57;
+            if (r4.f5473a.C.l() != false) goto L57;
          */
         @Override // com.anythink.expressad.video.module.a.a.f, com.anythink.expressad.video.module.a.a
         /*
@@ -501,9 +500,9 @@ public class ATTempContainer extends AbstractJSContainer {
         this.S = "";
         this.U = new ArrayList();
         this.V = 0;
-        this.f8297a = false;
-        this.f8299c = false;
-        this.d = new a.C0159a();
+        this.f5457a = false;
+        this.f5459c = false;
+        this.d = new a.C0088a();
         this.h = new Handler();
         this.ai = 0;
         this.aj = 0;
@@ -532,7 +531,7 @@ public class ATTempContainer extends AbstractJSContainer {
         this.an = false;
         this.ao = false;
         this.ap = false;
-        this.f8298ar = false;
+        this.f5458ar = false;
         this.as = false;
         this.at = false;
         this.au = false;
@@ -558,9 +557,9 @@ public class ATTempContainer extends AbstractJSContainer {
         this.S = "";
         this.U = new ArrayList();
         this.V = 0;
-        this.f8297a = false;
-        this.f8299c = false;
-        this.d = new a.C0159a();
+        this.f5457a = false;
+        this.f5459c = false;
+        this.d = new a.C0088a();
         this.h = new Handler();
         this.ai = 0;
         this.aj = 0;
@@ -589,7 +588,7 @@ public class ATTempContainer extends AbstractJSContainer {
         this.an = false;
         this.ao = false;
         this.ap = false;
-        this.f8298ar = false;
+        this.f5458ar = false;
         this.as = false;
         this.at = false;
         this.au = false;
@@ -663,7 +662,7 @@ public class ATTempContainer extends AbstractJSContainer {
     }
 
     private void d() {
-        if (this.f8297a) {
+        if (this.f5457a) {
             setMatchParent();
         }
     }
@@ -768,7 +767,7 @@ public class ATTempContainer extends AbstractJSContainer {
                 this.h.postDelayed(this.i, 2000L);
             }
         } catch (Exception e5) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e5.printStackTrace();
             }
         }
@@ -1124,7 +1123,7 @@ public class ATTempContainer extends AbstractJSContainer {
         try {
             if (!this.y) {
                 o.a(A, "当前非大模板");
-                a.C0164a a2 = this.t ? com.anythink.expressad.videocommon.a.a(287, this.C) : com.anythink.expressad.videocommon.a.a(94, this.C);
+                a.C0093a a2 = this.t ? com.anythink.expressad.videocommon.a.a(287, this.C) : com.anythink.expressad.videocommon.a.a(94, this.C);
                 if (a2 == null || !a2.c()) {
                     return null;
                 }
@@ -1134,7 +1133,7 @@ public class ATTempContainer extends AbstractJSContainer {
                     com.anythink.expressad.videocommon.a.b(94, this.C);
                 }
                 WindVaneWebView a3 = a2.a();
-                if (this.f8298ar) {
+                if (this.f5458ar) {
                     a3.setWebViewTransparent();
                 }
                 return a3;
@@ -1144,13 +1143,13 @@ public class ATTempContainer extends AbstractJSContainer {
                 return null;
             }
             o.a(A, "当前大模板，存在播放模板");
-            a.C0164a a4 = com.anythink.expressad.videocommon.a.a(this.m + BridgeUtil.UNDERLINE_STR + this.C.aZ() + BridgeUtil.UNDERLINE_STR + this.C.Z() + BridgeUtil.UNDERLINE_STR + this.C.M().e());
+            a.C0093a a4 = com.anythink.expressad.videocommon.a.a(this.m + "_" + this.C.aZ() + "_" + this.C.Z() + "_" + this.C.M().e());
             if (a4 != null) {
                 return a4.a();
             }
             return null;
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
                 return null;
             }
@@ -1167,7 +1166,7 @@ public class ATTempContainer extends AbstractJSContainer {
     }
 
     public int getLayoutID() {
-        return findLayout(this.f8298ar ? "anythink_reward_activity_video_templete_transparent" : "anythink_reward_activity_video_templete");
+        return findLayout(this.f5458ar ? "anythink_reward_activity_video_templete_transparent" : "anythink_reward_activity_video_templete");
     }
 
     public void init(Context context) {
@@ -1181,7 +1180,7 @@ public class ATTempContainer extends AbstractJSContainer {
     }
 
     public boolean isLoadSuccess() {
-        return this.f8299c;
+        return this.f5459c;
     }
 
     public void loadModuleDatas() {
@@ -1213,7 +1212,7 @@ public class ATTempContainer extends AbstractJSContainer {
         this.f.setCloseAlert(this.o.k());
         this.f.setBufferTimeout(u());
         this.f.setNotifyListener(new com.anythink.expressad.video.module.a.a.n(this.J, this.C, this.q, this.D, b(), this.m, f, i, new e(this, (byte) 0), this.o.M(), this.y, this.o.U()));
-        this.f.setShowingTransparent(this.f8298ar);
+        this.f.setShowingTransparent(this.f5458ar);
         if (this.t && (this.v == com.anythink.expressad.foundation.g.a.cr || this.v == com.anythink.expressad.foundation.g.a.cs)) {
             this.f.setIVRewardEnable(this.v, this.w, this.x);
             this.f.setDialogRole(getJSCommon() != null ? getJSCommon().n() : 1);
@@ -1226,7 +1225,7 @@ public class ATTempContainer extends AbstractJSContainer {
         this.g.setVideoInteractiveType(this.o.h());
         this.g.setEndscreenType(this.o.r());
         this.g.setVideoSkipTime(i);
-        this.g.setShowingTransparent(this.f8298ar);
+        this.g.setShowingTransparent(this.f5458ar);
         this.g.setJSFactory(this.J);
         if (this.C.J() == 2) {
             this.g.setNotifyListener(new com.anythink.expressad.video.module.a.a.h(this.C, this.D, this.q, b(), this.m, new c(this, (byte) 0), this.o.M(), this.y));
@@ -1237,7 +1236,7 @@ public class ATTempContainer extends AbstractJSContainer {
             this.g.preLoadData(this.J);
             this.f.preLoadData(this.J);
         }
-        if (this.f8298ar) {
+        if (this.f5458ar) {
             this.g.setAnythinkClickMiniCardViewTransparent();
         }
     }
@@ -1256,7 +1255,7 @@ public class ATTempContainer extends AbstractJSContainer {
         AnythinkContainerView anythinkContainerView2;
         AnythinkVideoView anythinkVideoView;
         AnythinkVideoView anythinkVideoView2;
-        if (this.f8298ar && (anythinkVideoView2 = this.f) != null) {
+        if (this.f5458ar && (anythinkVideoView2 = this.f) != null) {
             anythinkVideoView2.notifyVideoClose();
         } else if (this.at && (anythinkVideoView = this.f) != null) {
             if (!anythinkVideoView.isMiniCardShowing()) {
@@ -1319,7 +1318,7 @@ public class ATTempContainer extends AbstractJSContainer {
             View inflate = this.W.inflate(layoutID, (ViewGroup) null);
             this.B = inflate;
             addView(inflate, new RelativeLayout.LayoutParams(-1, -1));
-            if (this.f8297a) {
+            if (this.f5457a) {
                 setMatchParent();
             }
             this.e = findWindVaneWebView();
@@ -1344,7 +1343,7 @@ public class ATTempContainer extends AbstractJSContainer {
                 }
                 return;
             }
-            this.f8299c = true;
+            this.f5459c = true;
             WindVaneWebView windVaneWebView = this.e;
             this.J = new com.anythink.expressad.video.signal.factory.b(this.l, windVaneWebView, this.f, this.g, this.C, new d(this, (byte) 0));
             if (this.C != null && this.C.k() == 5 && this.U != null) {
@@ -1483,9 +1482,8 @@ public class ATTempContainer extends AbstractJSContainer {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
     }
 
@@ -1513,19 +1511,19 @@ public class ATTempContainer extends AbstractJSContainer {
             this.ai = 0;
         }
         try {
-            if (this.f != null && !i() && !this.f.isMiniCardShowing() && !com.anythink.expressad.foundation.f.b.f7818c) {
+            if (this.f != null && !i() && !this.f.isMiniCardShowing() && !com.anythink.expressad.foundation.f.b.f4978c) {
                 this.f.setCover(false);
             }
             if (this.g != null) {
                 this.g.setOnResume();
             }
-            if (this.ap && !i() && !com.anythink.expressad.foundation.f.b.f7818c) {
+            if (this.ap && !i() && !com.anythink.expressad.foundation.f.b.f4978c) {
                 getJSVideoModule().videoOperate(1);
             }
             if (this.l != null) {
                 t.a(this.l.getWindow().getDecorView());
             }
-            if (this.f8298ar && this.as && this.l != null) {
+            if (this.f5458ar && this.as && this.l != null) {
                 this.l.finish();
             }
         } catch (Throwable th) {
@@ -1679,7 +1677,7 @@ public class ATTempContainer extends AbstractJSContainer {
     public void setShowingTransparent() {
         int a2;
         boolean h = h();
-        this.f8298ar = h;
+        this.f5458ar = h;
         if (h || (a2 = i.a(getContext(), "anythink_reward_theme", "style")) <= 1 || this.l == null) {
             return;
         }

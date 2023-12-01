@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutLiveOffcialNewTitleBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29399a;
+    private final LinearLayout f15709a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29399a;
+        return this.f15709a;
     }
 }

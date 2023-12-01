@@ -7,7 +7,7 @@ public enum SnapshotSourceType {
     
 
     /* renamed from: c  reason: collision with root package name */
-    private static final SnapshotSourceType[] f36615c = values();
+    private static final SnapshotSourceType[] f22924c = values();
     private final int mValue;
 
     SnapshotSourceType(int i) {
@@ -15,7 +15,7 @@ public enum SnapshotSourceType {
     }
 
     public static SnapshotSourceType a(int i) {
-        SnapshotSourceType[] snapshotSourceTypeArr = f36615c;
+        SnapshotSourceType[] snapshotSourceTypeArr = f22924c;
         int length = snapshotSourceTypeArr.length;
         int i2 = 0;
         while (true) {

@@ -4,19 +4,19 @@ package com.tencent.qmsp.sdk.g.e;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f38632a;
+    public int f24941a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f38633c;
+    public String f24942c;
     public String d;
 
     public b(String str) {
-        this.f38633c = str;
+        this.f24942c = str;
     }
 
     public void a(int i) {
-        this.f38632a = i;
+        this.f24941a = i;
     }
 
     public void a(long j) {

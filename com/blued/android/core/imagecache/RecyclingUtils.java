@@ -1,6 +1,5 @@
 package com.blued.android.core.imagecache;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -9,8 +8,9 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Handler;
 import android.text.TextUtils;
+import com.alipay.sdk.cons.b;
 import com.android.internal.telephony.PhoneConstants;
-import com.anythink.expressad.foundation.h.i;
+import com.anythink.core.common.l;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.imagecache.FailReason;
@@ -58,11 +58,11 @@ public class RecyclingUtils {
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/RecyclingUtils$Scheme.class */
     public enum Scheme {
         HTTP("http"),
-        HTTPS("https"),
-        FILE(ContentResolver.SCHEME_FILE),
-        CONTENT("content"),
+        HTTPS(b.a),
+        FILE("file"),
+        CONTENT(l.y),
         ASSETS("assets"),
-        DRAWABLE(i.f7952c),
+        DRAWABLE("drawable"),
         UNKNOWN("");
         
         private String h;
@@ -143,7 +143,7 @@ public class RecyclingUtils {
     }
 
     public static Drawable a(Context context, String str, LoadOptions loadOptions) {
-        if (ImageLoaderUtils.f9582a) {
+        if (ImageLoaderUtils.a) {
             Log.a("IMAGE_LOADER", "decodeLocalDrawable(), uri:" + str);
         }
         return a(str, loadOptions, context.getResources());
@@ -154,23 +154,23 @@ public class RecyclingUtils {
         Bitmap bitmap;
         Bitmap bitmap2;
         Bitmap bitmap3;
-        if (ImageLoaderUtils.f9582a) {
+        if (ImageLoaderUtils.a) {
             Log.a("IMAGE_LOADER", "decodeRemoteDrawable(), uri:" + str);
         }
-        int a2 = a(Scheme.DRAWABLE.c(str));
+        int a = a(Scheme.DRAWABLE.c(str));
         if (loadOptions.k) {
             try {
-                return new GifDrawable(resources, a2);
+                return new GifDrawable(resources, a);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(resources, a2, options);
+        BitmapFactory.decodeResource(resources, a, options);
         boolean b = b();
-        BitmapFactory.Options a3 = ImageLoaderUtils.a(options, b);
-        a3.inSampleSize = ImageLoaderUtils.a(a3.outWidth, a3.outHeight, loadOptions.f);
+        BitmapFactory.Options a2 = ImageLoaderUtils.a(options, b);
+        a2.inSampleSize = ImageLoaderUtils.a(a2.outWidth, a2.outHeight, loadOptions.f);
         Bitmap bitmap4 = null;
         int i = 0;
         while (true) {
@@ -184,12 +184,12 @@ public class RecyclingUtils {
                 bitmap2 = bitmap4;
                 bitmap3 = bitmap4;
                 try {
-                    a(a3);
+                    a(a2);
                 } catch (IllegalArgumentException e2) {
                     e2.printStackTrace();
                     drawable = null;
                     bitmap = bitmap3;
-                    if (!c(a3)) {
+                    if (!c(a2)) {
                         break;
                     }
                     Log.e("IMAGE_LOADER", "inBitmap cause exception, cancel it and retry");
@@ -198,12 +198,12 @@ public class RecyclingUtils {
                 } catch (OutOfMemoryError e3) {
                     e3.printStackTrace();
                     MemoryRequest.a().b();
-                    a3.inSampleSize *= 2;
+                    a2.inSampleSize *= 2;
                     bitmap4 = bitmap2;
                 }
             }
             Bitmap bitmap5 = bitmap4;
-            Bitmap decodeResource = BitmapFactory.decodeResource(resources, a2, a3);
+            Bitmap decodeResource = BitmapFactory.decodeResource(resources, a, a2);
             drawable = null;
             bitmap = decodeResource;
             if (decodeResource != null) {
@@ -211,16 +211,16 @@ public class RecyclingUtils {
             }
             bitmap2 = decodeResource;
             bitmap3 = decodeResource;
-            drawable = resources.getDrawable(a2);
+            drawable = resources.getDrawable(a);
             bitmap = decodeResource;
             break;
         }
         if (bitmap != null) {
             RecyclingBitmapDrawable recyclingBitmapDrawable = new RecyclingBitmapDrawable(resources, bitmap);
             recyclingBitmapDrawable.a(str);
-            recyclingBitmapDrawable.b = a3.outHeight;
-            recyclingBitmapDrawable.f9619a = a3.outWidth;
-            recyclingBitmapDrawable.f9620c = a3.inSampleSize;
+            recyclingBitmapDrawable.b = a2.outHeight;
+            recyclingBitmapDrawable.a = a2.outWidth;
+            recyclingBitmapDrawable.c = a2.inSampleSize;
             return recyclingBitmapDrawable;
         }
         return drawable;
@@ -232,11 +232,11 @@ public class RecyclingUtils {
         File file = new File(d);
         if (file.exists() && file.length() > 0 && file.canRead()) {
             try {
-                Drawable c2 = c(Scheme.FILE.b(d), loadOptions);
-                if (c2 != null && (c2 instanceof IRecyclingDrawable)) {
-                    ((IRecyclingDrawable) c2).a(str);
+                Drawable c = c(Scheme.FILE.b(d), loadOptions);
+                if (c != null && (c instanceof IRecyclingDrawable)) {
+                    ((IRecyclingDrawable) c).a(str);
                 }
-                return c2;
+                return c;
             } finally {
                 if (z) {
                 }
@@ -248,7 +248,7 @@ public class RecyclingUtils {
                     return b(str, loadOptions, handler, imageLoadingListener);
                 } catch (Throwable th) {
                     if (th instanceof LoadDrawableException) {
-                        if (th.f9585a == FailReason.FailType.NETWORK_DENIED) {
+                        if (th.a == FailReason.FailType.NETWORK_DENIED) {
                             throw th;
                         }
                     } else if (th instanceof OutOfMemoryError) {
@@ -256,7 +256,7 @@ public class RecyclingUtils {
                     }
                 }
             }
-            if (ImageLoaderUtils.f9582a) {
+            if (ImageLoaderUtils.a) {
                 Log.b("IMAGE_LOADER", "download file failed, try to memory, uri:" + str);
             }
             return c(str, loadOptions, handler, imageLoadingListener);
@@ -265,7 +265,7 @@ public class RecyclingUtils {
     }
 
     public static Drawable a(String str, InputStream inputStream, LoadOptions loadOptions) throws Throwable {
-        if (ImageLoaderUtils.f9582a) {
+        if (ImageLoaderUtils.a) {
             Log.a("IMAGE_LOADER", "decodeInputStreamToDrawable(), uri:" + str);
         }
         if (inputStream == null) {
@@ -340,7 +340,7 @@ public class RecyclingUtils {
         }
         Bitmap b = b(options);
         if (b != null) {
-            if (ImageLoaderUtils.f9582a) {
+            if (ImageLoaderUtils.a) {
                 Log.b("IMAGE_LOADER", "Found bitmap to use for inBitmap");
             }
             options.inBitmap = b;
@@ -422,46 +422,46 @@ public class RecyclingUtils {
         try {
             try {
                 FileOutputStream fileOutputStream = new FileOutputStream(file, false);
-                byte[] a2 = ByteArrayPool.f9730a.a(1024);
+                byte[] a = ByteArrayPool.a.a(1024);
                 while (true) {
-                    int read = inputStream.read(a2);
+                    int read = inputStream.read(a);
                     if (read <= 0) {
                         fileOutputStream.close();
-                        bArr = a2;
-                        bArr2 = a2;
-                        bArr3 = a2;
+                        bArr = a;
+                        bArr2 = a;
+                        bArr3 = a;
                         inputStream.close();
-                        ByteArrayPool.f9730a.a(a2);
+                        ByteArrayPool.a.a(a);
                         return true;
                     }
-                    fileOutputStream.write(a2, 0, read);
+                    fileOutputStream.write(a, 0, read);
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-                ByteArrayPool.f9730a.a(bArr3);
+                ByteArrayPool.a.a(bArr3);
                 return false;
             } catch (IOException e2) {
                 e2.printStackTrace();
-                ByteArrayPool.f9730a.a(bArr2);
+                ByteArrayPool.a.a(bArr2);
                 return false;
             }
         } catch (Throwable th) {
-            ByteArrayPool.f9730a.a(bArr);
+            ByteArrayPool.a.a(bArr);
             throw th;
         }
     }
 
     protected static Bitmap b(BitmapFactory.Options options) {
-        Bitmap a2;
+        Bitmap a;
         if (options.outHeight <= 0 || options.outWidth <= 0) {
             return null;
         }
         int i = options.outWidth / options.inSampleSize;
         int i2 = options.outHeight / options.inSampleSize;
         synchronized (RecyclingImageLoader.a().b) {
-            a2 = RecyclingImageLoader.a().b.a(i, i2, options.inPreferredConfig);
+            a = RecyclingImageLoader.a().b.a(i, i2, options.inPreferredConfig);
         }
-        return a2;
+        return a;
     }
 
     public static Drawable b(String str, LoadOptions loadOptions) {
@@ -477,9 +477,7 @@ public class RecyclingUtils {
             file.delete();
         }
         FileHttpResponseHandler fileHttpResponseHandler = new FileHttpResponseHandler() { // from class: com.blued.android.core.imagecache.RecyclingUtils.1
-
-            /* renamed from: c  reason: collision with root package name */
-            private long f9606c = 0;
+            private long c = 0;
             private int d = -1;
             private int e = 0;
             private long f = 0;
@@ -605,7 +603,7 @@ public class RecyclingUtils {
                     return;
                 }
                 long currentTimeMillis = System.currentTimeMillis();
-                if ((currentTimeMillis - this.f9606c < this.e || i == this.d) && i != 100 && (i == (i3 = this.d) || i - i3 < 10)) {
+                if ((currentTimeMillis - this.c < this.e || i == this.d) && i != 100 && (i == (i3 = this.d) || i - i3 < 10)) {
                     return;
                 }
                 Handler handler2 = handler;
@@ -619,7 +617,7 @@ public class RecyclingUtils {
                 } else {
                     ImageLoadingListener.this.a(i, i2);
                 }
-                this.f9606c = currentTimeMillis;
+                this.c = currentTimeMillis;
                 this.d = i;
             }
 
@@ -640,12 +638,12 @@ public class RecyclingUtils {
                 str2 = str;
             }
             long currentTimeMillis = System.currentTimeMillis();
-            if (ImageLoaderUtils.f9582a) {
+            if (ImageLoaderUtils.a) {
                 Log.a("IMAGE_LOADER", "downloadTest, image downloading, downloadUrl:" + str2);
             }
             FileDownloader.a(str2, file.getAbsolutePath(), fileHttpResponseHandler);
             long currentTimeMillis2 = System.currentTimeMillis();
-            if (ImageLoaderUtils.f9582a) {
+            if (ImageLoaderUtils.a) {
                 Log.a("IMAGE_LOADER", "downloadTest, downloadTime:" + (currentTimeMillis2 - currentTimeMillis) + ", downloadUrl:" + str2);
             }
             data = fileHttpResponseHandler.getData();
@@ -665,9 +663,9 @@ public class RecyclingUtils {
             }
             throw loadDrawableException2;
         }
-        File a2 = a(file, str);
+        File a = a(file, str);
         if (HttpManager.c()) {
-            if (a(a2)) {
+            if (a(a)) {
                 Log.a("IMAGE_LOADER", "webp file, url:" + str);
             } else {
                 Log.a("IMAGE_LOADER", "not webp file, url:" + str);
@@ -675,11 +673,11 @@ public class RecyclingUtils {
         }
         if (loadOptions.i) {
             try {
-                Drawable c2 = c(Scheme.FILE.b(a2.getAbsolutePath()), loadOptions);
-                if (c2 != null && (c2 instanceof IRecyclingDrawable)) {
-                    ((IRecyclingDrawable) c2).a(str);
+                Drawable c = c(Scheme.FILE.b(a.getAbsolutePath()), loadOptions);
+                if (c != null && (c instanceof IRecyclingDrawable)) {
+                    ((IRecyclingDrawable) c).a(str);
                 }
-                return c2;
+                return c;
             } catch (Throwable th) {
                 th.printStackTrace();
                 throw th;
@@ -698,12 +696,12 @@ public class RecyclingUtils {
     }
 
     public static int c() {
-        int a2 = Util.a();
-        int i = a2;
-        if (a2 <= 0) {
+        int a = Util.a();
+        int i = a;
+        if (a <= 0) {
             i = 6;
         }
-        if (ImageLoaderUtils.f9582a) {
+        if (ImageLoaderUtils.a) {
             Log.a("IMAGE_LOADER", "default thread count:" + i);
         }
         return i;

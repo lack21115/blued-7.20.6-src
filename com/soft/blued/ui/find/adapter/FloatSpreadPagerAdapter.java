@@ -38,11 +38,11 @@ import java.util.List;
 public class FloatSpreadPagerAdapter extends PagerAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    public BaseFragment f30041a;
+    public BaseFragment f16351a;
     private List<LiveFloatSpreadModel> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<View> f30042c = new ArrayList();
+    private List<View> f16352c = new ArrayList();
     private List<ViewHolder> d = new ArrayList();
     private List<Unbinder> e = new ArrayList();
 
@@ -63,7 +63,7 @@ public class FloatSpreadPagerAdapter extends PagerAdapter {
 
         public ImgViewHolder_ViewBinding(ImgViewHolder imgViewHolder, View view) {
             this.b = imgViewHolder;
-            imgViewHolder.iv_img = (ImageView) Utils.a(view, 2131365520, "field 'iv_img'", ImageView.class);
+            imgViewHolder.iv_img = (ImageView) Utils.a(view, R.id.iv_img, "field 'iv_img'", ImageView.class);
         }
 
         @Override // butterknife.Unbinder
@@ -96,7 +96,7 @@ public class FloatSpreadPagerAdapter extends PagerAdapter {
 
         public ReddishBagViewHolder_ViewBinding(ReddishBagViewHolder reddishBagViewHolder, View view) {
             this.b = reddishBagViewHolder;
-            reddishBagViewHolder.iv_avatar = (ImageView) Utils.a(view, 2131365082, "field 'iv_avatar'", ImageView.class);
+            reddishBagViewHolder.iv_avatar = (ImageView) Utils.a(view, R.id.iv_avatar, "field 'iv_avatar'", ImageView.class);
             reddishBagViewHolder.tv_bag_num = (TextView) Utils.a(view, R.id.tv_bag_num, "field 'tv_bag_num'", TextView.class);
         }
 
@@ -119,7 +119,7 @@ public class FloatSpreadPagerAdapter extends PagerAdapter {
     }
 
     public FloatSpreadPagerAdapter(BaseFragment baseFragment, List<LiveFloatSpreadModel> list) {
-        this.f30041a = baseFragment;
+        this.f16351a = baseFragment;
         this.b = list;
     }
 
@@ -129,7 +129,7 @@ public class FloatSpreadPagerAdapter extends PagerAdapter {
             return;
         }
         final LiveFloatSpreadModel liveFloatSpreadModel = this.b.get(i);
-        ImageLoader.a(this.f30041a.getFragmentActive(), liveFloatSpreadModel.image.get(0)).b(R.drawable.icon_float_spread_img_default).a(imgViewHolder.iv_img);
+        ImageLoader.a(this.f16351a.getFragmentActive(), liveFloatSpreadModel.image.get(0)).b((int) R.drawable.icon_float_spread_img_default).a(imgViewHolder.iv_img);
         view.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.-$$Lambda$FloatSpreadPagerAdapter$cPWo7tmIQ6HGDkHkhJMZQcqzqQM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -146,7 +146,7 @@ public class FloatSpreadPagerAdapter extends PagerAdapter {
         final LiveFloatSpreadModel liveFloatSpreadModel = this.b.get(i);
         a(reddishBagViewHolder.iv_avatar, liveFloatSpreadModel.image, 0, z);
         TextView textView = reddishBagViewHolder.tv_bag_num;
-        String string = this.f30041a.getResources().getString(2131890213);
+        String string = this.f16351a.getResources().getString(R.string.live_reddish_bag);
         textView.setText(String.format(string, liveFloatSpreadModel.image.size() + ""));
         view.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.-$$Lambda$FloatSpreadPagerAdapter$MHsL7xylEa2tFzjDAwWTicmn5tg
             @Override // android.view.View.OnClickListener
@@ -177,14 +177,14 @@ public class FloatSpreadPagerAdapter extends PagerAdapter {
         if (i >= list.size()) {
             i2 = 0;
         }
-        ImageLoader.a(this.f30041a.getFragmentActive(), list.get(i2)).b(2131237310).c().a(imageView);
+        ImageLoader.a(this.f16351a.getFragmentActive(), list.get(i2)).b(2131237310).c().a(imageView);
         if (!z || list.size() == 1) {
             imageView.animate().setDuration(0L).setListener(null);
             return;
         }
         imageView.animate().alpha(1.0f).translationX(0.0f).setDuration(200L).setInterpolator(new DecelerateInterpolator(1.5f)).setListener(null).start();
         final int i3 = i2;
-        this.f30041a.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.find.adapter.-$$Lambda$FloatSpreadPagerAdapter$bBJXB-kwkDqlO9dov4WEoQknxKQ
+        this.f16351a.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.find.adapter.-$$Lambda$FloatSpreadPagerAdapter$bBJXB-kwkDqlO9dov4WEoQknxKQ
             @Override // java.lang.Runnable
             public final void run() {
                 FloatSpreadPagerAdapter.this.a(imageView, list, i3);
@@ -200,7 +200,7 @@ public class FloatSpreadPagerAdapter extends PagerAdapter {
             a(liveFloatSpreadModel.uid);
         } else if (liveFloatSpreadModel.type == 3) {
             EventTrackLive.d(LiveProtos.Event.LIVE_RESOURCE_CLICK, liveFloatSpreadModel.id, liveFloatSpreadModel.redirect);
-            WebViewShowInfoFragment.show(this.f30041a.getContext(), liveFloatSpreadModel.redirect, 7);
+            WebViewShowInfoFragment.show(this.f16351a.getContext(), liveFloatSpreadModel.redirect, 7);
         }
     }
 
@@ -208,23 +208,22 @@ public class FloatSpreadPagerAdapter extends PagerAdapter {
     public /* synthetic */ void b(LiveFloatSpreadModel liveFloatSpreadModel, View view) {
         Tracker.onClick(view);
         EventTrackLive.d(LiveProtos.Event.LIVE_RESOURCE_CLICK, liveFloatSpreadModel.id, liveFloatSpreadModel.redirect);
-        WebViewShowInfoFragment.show(this.f30041a.getContext(), liveFloatSpreadModel.redirect, 7);
+        WebViewShowInfoFragment.show(this.f16351a.getContext(), liveFloatSpreadModel.redirect, 7);
     }
 
     public void a(String str) {
-        LiveHttpUtils.a(this.f30041a.getActivity(), new BluedUIHttpResponse<BluedEntityA<AnchorLiveStateModel>>() { // from class: com.soft.blued.ui.find.adapter.FloatSpreadPagerAdapter.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        LiveHttpUtils.a(this.f16351a.getActivity(), new BluedUIHttpResponse<BluedEntityA<AnchorLiveStateModel>>() { // from class: com.soft.blued.ui.find.adapter.FloatSpreadPagerAdapter.2
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<AnchorLiveStateModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                     return;
                 }
-                AnchorLiveStateModel singleData = bluedEntityA.getSingleData();
-                if (singleData.is_live != 1) {
-                    BluedURIRouterAdapter.openUserInfoPage(FloatSpreadPagerAdapter.this.f30041a.getActivity(), singleData.uid, singleData.name, 0, 1, "live_float_banner", false, "");
+                AnchorLiveStateModel anchorLiveStateModel = (AnchorLiveStateModel) bluedEntityA.getSingleData();
+                if (anchorLiveStateModel.is_live != 1) {
+                    BluedURIRouterAdapter.openUserInfoPage(FloatSpreadPagerAdapter.this.f16351a.getActivity(), anchorLiveStateModel.uid, anchorLiveStateModel.name, 0, 1, "live_float_banner", false, "");
                     return;
                 }
-                LiveRoomInfoChannel.a(AppInfo.d(), new LiveRoomData(singleData.lid, 0, "footprint", singleData.uid, singleData.name, singleData.avatar, 0), -1, null);
+                LiveRoomInfoChannel.a(AppInfo.d(), new LiveRoomData(anchorLiveStateModel.lid, 0, "footprint", anchorLiveStateModel.uid, anchorLiveStateModel.name, anchorLiveStateModel.avatar, 0), -1, null);
             }
         }, str, (IRequestHost) null);
     }
@@ -257,12 +256,12 @@ public class FloatSpreadPagerAdapter extends PagerAdapter {
         if (list == null || i >= list.size()) {
             return null;
         }
-        if (this.f30042c.size() != this.b.size()) {
-            List<View> list2 = this.f30042c;
+        if (this.f16352c.size() != this.b.size()) {
+            List<View> list2 = this.f16352c;
             if (list2 != null) {
                 list2.clear();
             } else {
-                this.f30042c = new ArrayList();
+                this.f16352c = new ArrayList();
             }
             List<ViewHolder> list3 = this.d;
             if (list3 != null) {
@@ -279,7 +278,7 @@ public class FloatSpreadPagerAdapter extends PagerAdapter {
                 boolean z = true;
                 if (this.b.get(i3).type == 1) {
                     imgViewHolder = new ReddishBagViewHolder();
-                    inflate = LayoutInflater.from(this.f30041a.getContext()).inflate(R.layout.item_float_spread_reddish_bag, viewGroup, false);
+                    inflate = LayoutInflater.from(this.f16351a.getContext()).inflate(R.layout.item_float_spread_reddish_bag, viewGroup, false);
                     a2 = ButterKnife.a(imgViewHolder, inflate);
                     if (this.b.size() != 1) {
                         z = false;
@@ -287,17 +286,17 @@ public class FloatSpreadPagerAdapter extends PagerAdapter {
                     a(inflate, i3, imgViewHolder, z);
                 } else {
                     imgViewHolder = new ImgViewHolder();
-                    inflate = LayoutInflater.from(this.f30041a.getContext()).inflate(R.layout.item_float_spread_img, viewGroup, false);
+                    inflate = LayoutInflater.from(this.f16351a.getContext()).inflate(R.layout.item_float_spread_img, viewGroup, false);
                     a2 = ButterKnife.a(imgViewHolder, inflate);
                     a(inflate, i3, imgViewHolder);
                 }
-                this.f30042c.add(inflate);
+                this.f16352c.add(inflate);
                 this.d.add(imgViewHolder);
                 this.e.add(a2);
                 i2 = i3 + 1;
             }
         }
-        View view = this.f30042c.get(i);
+        View view = this.f16352c.get(i);
         if (view != null && view.getParent() != null) {
             ((ViewGroup) view).removeView(view);
         }

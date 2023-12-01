@@ -207,11 +207,11 @@ public class LivePluginHelper {
         Zeus.registerPluginStateListener(new ZeusPluginStateListener() { // from class: com.bytedance.android.openliveplugin.LivePluginHelper.3
             @Override // com.bytedance.pangle.ZeusPluginStateListener
             public void onPluginStateChange(String str, int i, Object... objArr) {
-                if (Runnable.this != null && "com.byted.live.lite".equals(str) && i == 6) {
+                if (runnable != null && "com.byted.live.lite".equals(str) && i == 6) {
                     if (Zeus.isPluginLoaded("com.byted.live.lite")) {
-                        Runnable.this.run();
+                        runnable.run();
                     } else if (Zeus.loadPlugin("com.byted.live.lite")) {
-                        Runnable.this.run();
+                        runnable.run();
                     }
                 }
             }
@@ -229,7 +229,7 @@ public class LivePluginHelper {
             @Override // java.lang.Runnable
             public void run() {
                 TTLogger.d("live init : material task run");
-                LivePluginHelper.materialManager.run(String.this, application, new ILiveMaterialGet() { // from class: com.bytedance.android.openliveplugin.LivePluginHelper.1.1
+                LivePluginHelper.materialManager.run(str, application, new ILiveMaterialGet() { // from class: com.bytedance.android.openliveplugin.LivePluginHelper.1.1
                     @Override // com.bytedance.android.openliveplugin.material.ILiveMaterialGet
                     public void onMaterialGet(ConfigParams configParams) {
                         TTLogger.d("live init : on material get success ~~~");

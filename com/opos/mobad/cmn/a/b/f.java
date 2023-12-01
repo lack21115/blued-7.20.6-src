@@ -1,5 +1,6 @@
 package com.opos.mobad.cmn.a.b;
 
+import android.R;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.ComponentName;
@@ -29,12 +30,12 @@ import java.util.List;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile com.opos.cmn.an.d.d.a f25888a;
-    private static WeakReference<b.InterfaceC0687b> d;
+    private static volatile com.opos.cmn.an.d.d.a f12200a;
+    private static WeakReference<b.InterfaceC0517b> d;
     private static final byte[] b = new byte[0];
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte[] f25889c = new byte[0];
+    private static final byte[] f12201c = new byte[0];
     private static final String e = com.opos.cmn.an.a.b.a("aGV5dGFwX3VuaW9uX3Rva2Vu");
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -43,46 +44,46 @@ public final class f {
     public static final class AnonymousClass1 implements a.b {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f25890a;
+        final /* synthetic */ Context f12202a;
         final /* synthetic */ View b;
 
         /* renamed from: c  reason: collision with root package name */
-        private com.opos.cmn.e.a.b.a f25891c;
+        private com.opos.cmn.e.a.b.a f12203c;
 
         AnonymousClass1(Context context, View view) {
-            this.f25890a = context;
+            this.f12202a = context;
             this.b = view;
         }
 
         @Override // com.opos.mobad.cmn.a.a.b
         public void a() {
-            com.opos.cmn.e.a.b.a aVar = this.f25891c;
+            com.opos.cmn.e.a.b.a aVar = this.f12203c;
             if (aVar != null) {
                 aVar.a();
             }
         }
 
         @Override // com.opos.mobad.cmn.a.a.b
-        public void a(final a.InterfaceC0679a interfaceC0679a) {
+        public void a(final a.InterfaceC0509a interfaceC0509a) {
             com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.cmn.a.b.f.1.1
                 @Override // java.lang.Runnable
                 public void run() {
                     AnonymousClass1 anonymousClass1 = AnonymousClass1.this;
-                    anonymousClass1.f25891c = f.c(anonymousClass1.f25890a, AnonymousClass1.this.b);
-                    if (AnonymousClass1.this.f25891c == null) {
-                        interfaceC0679a.a();
+                    anonymousClass1.f12203c = f.c(anonymousClass1.f12202a, AnonymousClass1.this.b);
+                    if (AnonymousClass1.this.f12203c == null) {
+                        interfaceC0509a.a();
                     } else {
-                        AnonymousClass1.this.f25891c.a("当前为非Wi-Fi环境，\n是否继续下载？", "下载", "取消", new com.opos.cmn.e.a.b.c.a() { // from class: com.opos.mobad.cmn.a.b.f.1.1.1
+                        AnonymousClass1.this.f12203c.a("当前为非Wi-Fi环境，\n是否继续下载？", "下载", "取消", new com.opos.cmn.e.a.b.c.a() { // from class: com.opos.mobad.cmn.a.b.f.1.1.1
                             @Override // com.opos.cmn.e.a.b.c.a
                             public void a(View view, int[] iArr) {
-                                interfaceC0679a.a();
-                                AnonymousClass1.this.f25891c.a();
+                                interfaceC0509a.a();
+                                AnonymousClass1.this.f12203c.a();
                             }
 
                             @Override // com.opos.cmn.e.a.b.c.a
                             public void b(View view, int[] iArr) {
-                                interfaceC0679a.b();
-                                AnonymousClass1.this.f25891c.a();
+                                interfaceC0509a.b();
+                                AnonymousClass1.this.f12203c.a();
                             }
                         });
                     }
@@ -97,7 +98,7 @@ public final class f {
     public static /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f25894a;
+        static final /* synthetic */ int[] f12206a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -105,25 +106,25 @@ public final class f {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[a.values().length];
-            f25894a = iArr;
+            f12206a = iArr;
             try {
                 iArr[a.Video.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f25894a[a.ClickBt.ordinal()] = 2;
+                f12206a[a.ClickBt.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f25894a[a.NonClickBt.ordinal()] = 3;
+                f12206a[a.NonClickBt.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f25894a[a.FloatLayerClickBt.ordinal()] = 4;
+                f12206a[a.FloatLayerClickBt.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f25894a[a.FloatLayerNonClickBt.ordinal()] = 5;
+                f12206a[a.FloatLayerNonClickBt.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -289,7 +290,7 @@ public final class f {
     }
 
     public static String a() {
-        return b.f25838a;
+        return b.f12150a;
     }
 
     public static String a(int i) {
@@ -424,14 +425,14 @@ public final class f {
         c.a(context, str, str2, str3, "10001", str4);
     }
 
-    public static void a(b.InterfaceC0687b interfaceC0687b) {
+    public static void a(b.InterfaceC0517b interfaceC0517b) {
         try {
             StringBuilder sb = new StringBuilder();
             sb.append("setCacheInterBaseAd=");
-            sb.append(interfaceC0687b != null ? interfaceC0687b : com.igexin.push.core.b.l);
+            sb.append(interfaceC0517b != null ? interfaceC0517b : com.igexin.push.core.b.l);
             com.opos.cmn.an.f.a.b("Utils", sb.toString());
-            if (interfaceC0687b != null) {
-                d = new WeakReference<>(interfaceC0687b);
+            if (interfaceC0517b != null) {
+                d = new WeakReference<>(interfaceC0517b);
             }
         } catch (Exception e2) {
             com.opos.cmn.an.f.a.a("Utils", "", (Throwable) e2);
@@ -439,7 +440,7 @@ public final class f {
     }
 
     public static void a(String str) {
-        b.f25838a = str;
+        b.f12150a = str;
         StringBuilder sb = new StringBuilder();
         sb.append("setAppId=");
         if (str == null) {
@@ -598,7 +599,7 @@ public final class f {
     public static boolean a(AdItemData adItemData, a aVar) {
         int i;
         boolean z = true;
-        if (adItemData == null || adItemData.i() == null || adItemData.i().size() <= 0 || ((i = AnonymousClass2.f25894a[aVar.ordinal()]) == 1 ? 2 != adItemData.i().get(0).K() || 2 != adItemData.i().get(0).L() : i == 2 ? 2 != adItemData.i().get(0).e() || 2 != adItemData.i().get(0).L() : i == 3 ? 2 != adItemData.i().get(0).J() || 2 != adItemData.i().get(0).L() : i == 4 ? 2 != adItemData.i().get(0).V() || 2 != adItemData.i().get(0).L() : i != 5 || 2 != adItemData.i().get(0).W() || 2 != adItemData.i().get(0).L())) {
+        if (adItemData == null || adItemData.i() == null || adItemData.i().size() <= 0 || ((i = AnonymousClass2.f12206a[aVar.ordinal()]) == 1 ? 2 != adItemData.i().get(0).K() || 2 != adItemData.i().get(0).L() : i == 2 ? 2 != adItemData.i().get(0).e() || 2 != adItemData.i().get(0).L() : i == 3 ? 2 != adItemData.i().get(0).J() || 2 != adItemData.i().get(0).L() : i == 4 ? 2 != adItemData.i().get(0).V() || 2 != adItemData.i().get(0).L() : i != 5 || 2 != adItemData.i().get(0).W() || 2 != adItemData.i().get(0).L())) {
             z = false;
         }
         com.opos.cmn.an.f.a.b("Utils", "isDownloaderTypeAd=" + z);
@@ -770,7 +771,7 @@ public final class f {
                             z = true;
                             break;
                         case 3125:
-                            if (str.equals(com.alipay.sdk.sys.a.k)) {
+                            if (str.equals("av")) {
                                 z = true;
                                 break;
                             }
@@ -1205,7 +1206,7 @@ public final class f {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static com.opos.cmn.e.a.b.a c(Context context, View view) {
-        Activity a2 = context instanceof Activity ? (Activity) context : view != null ? a(view.getRootView().findViewById(16908290)) : null;
+        Activity a2 = context instanceof Activity ? (Activity) context : view != null ? a(view.getRootView().findViewById(R.id.content)) : null;
         if (a2 == null) {
             return null;
         }
@@ -1417,14 +1418,14 @@ public final class f {
 
     private static com.opos.cmn.an.d.d.a h(Context context) {
         com.opos.cmn.an.d.d.a aVar;
-        com.opos.cmn.an.d.d.a aVar2 = f25888a;
+        com.opos.cmn.an.d.d.a aVar2 = f12200a;
         if (aVar2 == null) {
             synchronized (b) {
-                com.opos.cmn.an.d.d.a aVar3 = f25888a;
+                com.opos.cmn.an.d.d.a aVar3 = f12200a;
                 aVar = aVar3;
                 if (aVar3 == null) {
                     aVar = new com.opos.cmn.an.d.d.a(context, "mobad.reward.prefs", 0);
-                    f25888a = aVar;
+                    f12200a = aVar;
                 }
             }
             return aVar;
@@ -1487,7 +1488,7 @@ public final class f {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public static com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b k() {
+    public static com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b k() {
         /*
             java.lang.ref.WeakReference<com.opos.mobad.cmn.service.pkginstall.b$b> r0 = com.opos.mobad.cmn.a.b.f.d     // Catch: java.lang.Exception -> L1c
             if (r0 == 0) goto L25
@@ -1496,7 +1497,7 @@ public final class f {
             if (r0 == 0) goto L25
             java.lang.ref.WeakReference<com.opos.mobad.cmn.service.pkginstall.b$b> r0 = com.opos.mobad.cmn.a.b.f.d     // Catch: java.lang.Exception -> L1c
             java.lang.Object r0 = r0.get()     // Catch: java.lang.Exception -> L1c
-            com.opos.mobad.cmn.service.pkginstall.b$b r0 = (com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b) r0     // Catch: java.lang.Exception -> L1c
+            com.opos.mobad.cmn.service.pkginstall.b$b r0 = (com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b) r0     // Catch: java.lang.Exception -> L1c
             r4 = r0
             goto L27
         L1c:

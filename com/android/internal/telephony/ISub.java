@@ -52,9 +52,8 @@ public interface ISub extends IInterface {
         static final int TRANSACTION_setSubState = 33;
         static final int TRANSACTION_setVoicePromptEnabled = 30;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/telephony/ISub$Stub$Proxy.class */
-        public static class Proxy implements ISub {
+        private static class Proxy implements ISub {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -196,10 +195,10 @@ public interface ISub extends IInterface {
                     obtain.writeInt(i);
                     this.mRemote.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
-                    SubscriptionInfo createFromParcel = obtain2.readInt() != 0 ? SubscriptionInfo.CREATOR.createFromParcel(obtain2) : null;
+                    SubscriptionInfo subscriptionInfo = obtain2.readInt() != 0 ? (SubscriptionInfo) SubscriptionInfo.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return subscriptionInfo;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -216,10 +215,10 @@ public interface ISub extends IInterface {
                     obtain.writeString(str);
                     this.mRemote.transact(4, obtain, obtain2, 0);
                     obtain2.readException();
-                    SubscriptionInfo createFromParcel = obtain2.readInt() != 0 ? SubscriptionInfo.CREATOR.createFromParcel(obtain2) : null;
+                    SubscriptionInfo subscriptionInfo = obtain2.readInt() != 0 ? (SubscriptionInfo) SubscriptionInfo.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return subscriptionInfo;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -236,10 +235,10 @@ public interface ISub extends IInterface {
                     obtain.writeInt(i);
                     this.mRemote.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
-                    SubscriptionInfo createFromParcel = obtain2.readInt() != 0 ? SubscriptionInfo.CREATOR.createFromParcel(obtain2) : null;
+                    SubscriptionInfo subscriptionInfo = obtain2.readInt() != 0 ? (SubscriptionInfo) SubscriptionInfo.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return subscriptionInfo;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -939,7 +938,7 @@ public interface ISub extends IInterface {
                     parcel2.writeNoException();
                     parcel2.writeInt(simStateForSubscriber);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

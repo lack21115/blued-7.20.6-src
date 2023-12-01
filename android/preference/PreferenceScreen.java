@@ -1,5 +1,6 @@
 package android.preference;
 
+import android.R;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/preference/PreferenceScreen.class */
 public final class PreferenceScreen extends PreferenceGroup implements AdapterView.OnItemClickListener, DialogInterface.OnDismissListener {
@@ -63,7 +63,7 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
     }
 
     public PreferenceScreen(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, 16842891);
+        super(context, attributeSet, R.attr.preferenceScreenStyle);
     }
 
     private void showDialog(Bundle bundle) {
@@ -71,8 +71,8 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
         if (this.mListView != null) {
             this.mListView.setAdapter((ListAdapter) null);
         }
-        View inflate = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.preference_list_fragment, (ViewGroup) null);
-        this.mListView = (ListView) inflate.findViewById(16908298);
+        View inflate = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(17367199, (ViewGroup) null);
+        this.mListView = (ListView) inflate.findViewById(R.id.list);
         bind(this.mListView);
         CharSequence title = getTitle();
         Dialog dialog = new Dialog(context, context.getThemeResId());

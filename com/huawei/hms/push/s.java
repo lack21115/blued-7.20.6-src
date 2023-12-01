@@ -8,21 +8,21 @@ import com.huawei.hms.support.log.HMSLog;
 public class s {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String[] f22857c = {"url", "app", "cosa", "rp"};
+    private static final String[] f9249c = {"url", "app", "cosa", "rp"};
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f22858a;
+    private Context f9250a;
     private m b;
 
     public s(Context context, m mVar) {
-        this.f22858a = context;
+        this.f9250a = context;
         this.b = mVar;
     }
 
     private void a() {
         try {
             HMSLog.i("PushSelfShowLog", "enter launchApp, appPackageName =" + this.b.d());
-            if (d.c(this.f22858a, this.b.d())) {
+            if (d.c(this.f9250a, this.b.d())) {
                 b();
             }
         } catch (Exception e) {
@@ -31,7 +31,7 @@ public class s {
     }
 
     public static boolean a(String str) {
-        String[] strArr = f22857c;
+        String[] strArr = f9249c;
         int length = strArr.length;
         int i = 0;
         while (true) {
@@ -52,13 +52,13 @@ public class s {
         HMSLog.i("PushSelfShowLog", "run into launchCosaApp");
         try {
             HMSLog.i("PushSelfShowLog", "enter launchExistApp cosa, appPackageName =" + this.b.d() + ",and msg.intentUri is " + this.b.n());
-            Intent b = d.b(this.f22858a, this.b.d());
+            Intent b = d.b(this.f9250a, this.b.d());
             if (this.b.n() != null) {
                 try {
                     Intent parseUri = Intent.parseUri(this.b.n(), 0);
                     parseUri.setSelector(null);
                     HMSLog.i("PushSelfShowLog", "Intent.parseUri(msg.intentUri, 0), action:" + parseUri.getAction());
-                    boolean booleanValue = d.a(this.f22858a, this.b.d(), parseUri).booleanValue();
+                    boolean booleanValue = d.a(this.f9250a, this.b.d(), parseUri).booleanValue();
                     intent = b;
                     z = booleanValue;
                     if (booleanValue) {
@@ -77,7 +77,7 @@ public class s {
                     Intent intent2 = new Intent(this.b.a());
                     intent = b;
                     z = false;
-                    if (d.a(this.f22858a, this.b.d(), intent2).booleanValue()) {
+                    if (d.a(this.f9250a, this.b.d(), intent2).booleanValue()) {
                         intent = intent2;
                         z = false;
                     }
@@ -93,7 +93,7 @@ public class s {
             } else {
                 intent.setFlags(805437440);
             }
-            this.f22858a.startActivity(intent);
+            this.f9250a.startActivity(intent);
         } catch (Exception e2) {
             HMSLog.e("PushSelfShowLog", "launch Cosa App exception." + e2.toString());
         }
@@ -102,7 +102,7 @@ public class s {
     public void c() {
         m mVar;
         HMSLog.d("PushSelfShowLog", "enter launchNotify()");
-        if (this.f22858a == null || (mVar = this.b) == null) {
+        if (this.f9250a == null || (mVar = this.b) == null) {
             HMSLog.d("PushSelfShowLog", "launchNotify  context or msg is null");
         } else if ("app".equals(mVar.i())) {
             a();

@@ -12,11 +12,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class TagViewPager extends ViewPager {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f20602a;
+    private boolean f6996a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f20603c;
+    private int f6997c;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public TagViewPager(Context context) {
@@ -28,7 +28,7 @@ public final class TagViewPager extends ViewPager {
     public TagViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         Intrinsics.e(context, "context");
-        this.f20602a = true;
+        this.f6996a = true;
     }
 
     public final float getBeforeX() {
@@ -36,42 +36,42 @@ public final class TagViewPager extends ViewPager {
     }
 
     public final boolean getEnableScroll() {
-        return this.f20602a;
+        return this.f6996a;
     }
 
     public final int getLastIndex() {
-        return this.f20603c;
+        return this.f6997c;
     }
 
     @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent event) {
-        Intrinsics.e(event, "event");
-        int action = event.getAction();
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        Intrinsics.e(motionEvent, "event");
+        int action = motionEvent.getAction();
         if (action == 0) {
-            this.b = event.getX();
+            this.b = motionEvent.getX();
         } else if (action == 2) {
-            if (event.getX() - this.b < 0.0f && getCurrentItem() == this.f20603c) {
+            if (motionEvent.getX() - this.b < 0.0f && getCurrentItem() == this.f6997c) {
                 return true;
             }
-            this.b = event.getX();
+            this.b = motionEvent.getX();
         }
-        return super.onInterceptTouchEvent(event);
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
     @Override // androidx.viewpager.widget.ViewPager, android.view.View
-    public boolean onTouchEvent(MotionEvent event) {
-        Intrinsics.e(event, "event");
-        if (this.f20602a) {
-            int action = event.getAction();
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        Intrinsics.e(motionEvent, "event");
+        if (this.f6996a) {
+            int action = motionEvent.getAction();
             if (action == 0) {
-                this.b = event.getX();
+                this.b = motionEvent.getX();
             } else if (action == 2) {
-                if (event.getX() - this.b < 0.0f && getCurrentItem() == this.f20603c) {
+                if (motionEvent.getX() - this.b < 0.0f && getCurrentItem() == this.f6997c) {
                     return true;
                 }
-                this.b = event.getX();
+                this.b = motionEvent.getX();
             }
-            return super.onTouchEvent(event);
+            return super.onTouchEvent(motionEvent);
         }
         return false;
     }
@@ -81,10 +81,10 @@ public final class TagViewPager extends ViewPager {
     }
 
     public final void setEnableScroll(boolean z) {
-        this.f20602a = z;
+        this.f6996a = z;
     }
 
     public final void setLastIndex(int i) {
-        this.f20603c = i;
+        this.f6997c = i;
     }
 }

@@ -11,33 +11,33 @@ import java.util.Map;
 public class j extends d implements ITPMediaDRMAsset {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f39230a;
+    private String f25539a;
     @TPCommonEnum.TP_DRM_TYPE
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, String> f39231c = new HashMap();
+    private Map<String, String> f25540c = new HashMap();
 
     public j(@TPCommonEnum.TP_DRM_TYPE int i, String str) {
-        this.f39230a = str;
+        this.f25539a = str;
         this.b = i;
     }
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaDRMAsset
     public Map<String, String> getDrmAllProperties() {
-        return this.f39231c;
+        return this.f25540c;
     }
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaDRMAsset
     public String getDrmPlayUrl() {
-        return this.f39230a;
+        return this.f25539a;
     }
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaDRMAsset
     public String getDrmProperty(String str, String str2) {
         String str3;
-        Map<String, String> map = this.f39231c;
-        if (map != null && !map.isEmpty() && (str3 = this.f39231c.get(str)) != null) {
+        Map<String, String> map = this.f25540c;
+        if (map != null && !map.isEmpty() && (str3 = this.f25540c.get(str)) != null) {
             return str3;
         }
         return str2;
@@ -66,12 +66,12 @@ public class j extends d implements ITPMediaDRMAsset {
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaDRMAsset
     public void setDrmPlayUrl(String str) {
-        this.f39230a = str;
+        this.f25539a = str;
     }
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaDRMAsset
     public void setDrmProperty(String str, String str2) {
-        this.f39231c.put(str, str2);
+        this.f25540c.put(str, str2);
     }
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaDRMAsset

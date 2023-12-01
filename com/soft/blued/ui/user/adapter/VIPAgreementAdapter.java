@@ -19,17 +19,17 @@ import java.util.List;
 public class VIPAgreementAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<VIPBuyOptionForJsonParse._rule_list> f33780a;
+    private List<VIPBuyOptionForJsonParse._rule_list> f20089a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f33781c;
+    private LayoutInflater f20090c;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/adapter/VIPAgreementAdapter$ViewHolder.class */
     public class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public LabeledTextView f33782a;
+        public LabeledTextView f20091a;
         public View b;
 
         public ViewHolder() {
@@ -38,11 +38,11 @@ public class VIPAgreementAdapter extends BaseAdapter {
 
     public VIPAgreementAdapter(Context context, List<VIPBuyOptionForJsonParse._rule_list> list) {
         this.b = context;
-        this.f33781c = LayoutInflater.from(context);
+        this.f20090c = LayoutInflater.from(context);
         if (list != null) {
-            this.f33780a = list;
+            this.f20089a = list;
         } else {
-            this.f33780a = new ArrayList();
+            this.f20089a = new ArrayList();
         }
     }
 
@@ -58,12 +58,12 @@ public class VIPAgreementAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f33780a.size();
+        return this.f20089a.size();
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f33780a.get(i);
+        return this.f20089a.get(i);
     }
 
     @Override // android.widget.Adapter
@@ -77,8 +77,8 @@ public class VIPAgreementAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         if (view == null) {
             viewHolder = new ViewHolder();
-            view2 = this.f33781c.inflate(R.layout.item_vip_agreement, viewGroup, false);
-            viewHolder.f33782a = (LabeledTextView) view2.findViewById(2131372046);
+            view2 = this.f20090c.inflate(R.layout.item_vip_agreement, viewGroup, false);
+            viewHolder.f20091a = (LabeledTextView) view2.findViewById(2131372046);
             viewHolder.b = view2.findViewById(2131366859);
             view2.setTag(viewHolder);
         } else {
@@ -86,9 +86,9 @@ public class VIPAgreementAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         viewHolder.b.setBackgroundColor(BluedSkinUtils.a(this.b, 2131101780));
-        final VIPBuyOptionForJsonParse._rule_list _rule_listVar = this.f33780a.get(i);
+        final VIPBuyOptionForJsonParse._rule_list _rule_listVar = this.f20089a.get(i);
         if (_rule_listVar != null) {
-            viewHolder.f33782a.setTextTitle(_rule_listVar.title);
+            viewHolder.f20091a.setTextTitle(_rule_listVar.title);
         }
         view2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPAgreementAdapter$S58YcNxqzL7x6PZpQ9ZnpGvGILA
             @Override // android.view.View.OnClickListener

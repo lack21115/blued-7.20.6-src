@@ -4,22 +4,22 @@ package com.bytedance.pangle.log;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21436a;
+    private String f7830a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21437c;
+    private String f7831c;
     private long d;
     private long e;
 
     private a(String str, String str2, String str3) {
-        this.f21436a = str;
+        this.f7830a = str;
         this.b = str2;
-        this.f21437c = str3;
+        this.f7831c = str3;
         long currentTimeMillis = System.currentTimeMillis();
         this.e = currentTimeMillis;
         this.d = currentTimeMillis;
-        String str4 = this.f21436a;
+        String str4 = this.f7830a;
         ZeusLogger.i(str4, this.b + String.format(" watcher[%s]-start", str3));
     }
 
@@ -35,8 +35,8 @@ public final class a {
         long currentTimeMillis = System.currentTimeMillis();
         long j = this.e;
         long currentTimeMillis2 = System.currentTimeMillis() - this.d;
-        String str2 = this.f21436a;
-        ZeusLogger.i(str2, this.b + String.format(" watcher[%s]-%s cost=%s, total=%s", this.f21437c, str, Long.valueOf(currentTimeMillis - j), Long.valueOf(currentTimeMillis2)));
+        String str2 = this.f7830a;
+        ZeusLogger.i(str2, this.b + String.format(" watcher[%s]-%s cost=%s, total=%s", this.f7831c, str, Long.valueOf(currentTimeMillis - j), Long.valueOf(currentTimeMillis2)));
         return currentTimeMillis2;
     }
 }

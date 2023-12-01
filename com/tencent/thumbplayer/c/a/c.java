@@ -12,11 +12,11 @@ import java.io.RandomAccessFile;
 public class c implements ITPAssetResourceLoadingDataRequest {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f39240a = "TPAssetResourceLoadingDataRequest";
+    private static String f25549a = "TPAssetResourceLoadingDataRequest";
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f39241c;
+    private long f25550c;
     private boolean d;
     private long e;
     private long f;
@@ -31,7 +31,7 @@ public class c implements ITPAssetResourceLoadingDataRequest {
     static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        long f39242a;
+        long f25551a;
         byte[] b;
 
         private a() {
@@ -51,18 +51,18 @@ public class c implements ITPAssetResourceLoadingDataRequest {
                 return;
             }
             a aVar = (a) message.obj;
-            long j = aVar.f39242a;
+            long j = aVar.f25551a;
             byte[] bArr = aVar.b;
             int i = message.arg1;
             c cVar = c.this;
             if (!cVar.a(j, bArr, cVar.k)) {
-                TPLogUtil.e(c.f39240a, "write data failed");
+                TPLogUtil.e(c.f25549a, "write data failed");
                 return;
             }
             c.this.j.writeLock().lock();
             c.this.e = i + j;
             c.this.j.writeLock().unlock();
-            String str = c.f39240a;
+            String str = c.f25549a;
             TPLogUtil.i(str, "write data from " + j + " , with dataLength" + i);
         }
     }
@@ -71,7 +71,7 @@ public class c implements ITPAssetResourceLoadingDataRequest {
         this.b = j;
         this.f = j;
         this.e = j;
-        this.f39241c = j2;
+        this.f25550c = j2;
         this.d = z;
     }
 
@@ -98,7 +98,7 @@ public class c implements ITPAssetResourceLoadingDataRequest {
         r8.close();
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x006d, code lost:
-        com.tencent.thumbplayer.utils.TPLogUtil.e(com.tencent.thumbplayer.c.a.c.f39240a, "fail to close mRandomAccessFile");
+        com.tencent.thumbplayer.utils.TPLogUtil.e(com.tencent.thumbplayer.c.a.c.f25549a, "fail to close mRandomAccessFile");
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -135,7 +135,7 @@ public class c implements ITPAssetResourceLoadingDataRequest {
             r0 = 1
             return r0
         L33:
-            java.lang.String r0 = com.tencent.thumbplayer.c.a.c.f39240a
+            java.lang.String r0 = com.tencent.thumbplayer.c.a.c.f25549a
             java.lang.String r1 = "fail to close mRandomAccessFile"
             com.tencent.thumbplayer.utils.TPLogUtil.e(r0, r1)
             r0 = 1
@@ -144,7 +144,7 @@ public class c implements ITPAssetResourceLoadingDataRequest {
             r8 = move-exception
             goto L7b
         L41:
-            java.lang.String r0 = com.tencent.thumbplayer.c.a.c.f39240a     // Catch: java.lang.Throwable -> L3d
+            java.lang.String r0 = com.tencent.thumbplayer.c.a.c.f25549a     // Catch: java.lang.Throwable -> L3d
             java.lang.String r1 = "fail to write data"
             com.tencent.thumbplayer.utils.TPLogUtil.e(r0, r1)     // Catch: java.lang.Throwable -> L3d
             r0 = r5
@@ -154,7 +154,7 @@ public class c implements ITPAssetResourceLoadingDataRequest {
             if (r0 == 0) goto L75
             goto L66
         L55:
-            java.lang.String r0 = com.tencent.thumbplayer.c.a.c.f39240a     // Catch: java.lang.Throwable -> L3d
+            java.lang.String r0 = com.tencent.thumbplayer.c.a.c.f25549a     // Catch: java.lang.Throwable -> L3d
             java.lang.String r1 = "file not found"
             com.tencent.thumbplayer.utils.TPLogUtil.e(r0, r1)     // Catch: java.lang.Throwable -> L3d
             r0 = r5
@@ -167,7 +167,7 @@ public class c implements ITPAssetResourceLoadingDataRequest {
             r0.close()     // Catch: java.io.IOException -> La4
             goto L75
         L6d:
-            java.lang.String r0 = com.tencent.thumbplayer.c.a.c.f39240a
+            java.lang.String r0 = com.tencent.thumbplayer.c.a.c.f25549a
             java.lang.String r1 = "fail to close mRandomAccessFile"
             com.tencent.thumbplayer.utils.TPLogUtil.e(r0, r1)
         L75:
@@ -186,7 +186,7 @@ public class c implements ITPAssetResourceLoadingDataRequest {
             r0.close()     // Catch: java.io.IOException -> La8
             goto L96
         L8e:
-            java.lang.String r0 = com.tencent.thumbplayer.c.a.c.f39240a
+            java.lang.String r0 = com.tencent.thumbplayer.c.a.c.f25549a
             java.lang.String r1 = "fail to close mRandomAccessFile"
             com.tencent.thumbplayer.utils.TPLogUtil.e(r0, r1)
         L96:
@@ -223,7 +223,7 @@ public class c implements ITPAssetResourceLoadingDataRequest {
             return -1;
         }
         if (j < this.b) {
-            TPLogUtil.e(f39240a, "Offset less than mRequestedOffset");
+            TPLogUtil.e(f25549a, "Offset less than mRequestedOffset");
             return -1;
         }
         return (int) (j2 - j);
@@ -259,7 +259,7 @@ public class c implements ITPAssetResourceLoadingDataRequest {
 
     @Override // com.tencent.thumbplayer.api.resourceloader.ITPAssetResourceLoadingDataRequest
     public long getRequestedLength() {
-        return this.f39241c;
+        return this.f25550c;
     }
 
     @Override // com.tencent.thumbplayer.api.resourceloader.ITPAssetResourceLoadingDataRequest
@@ -271,15 +271,15 @@ public class c implements ITPAssetResourceLoadingDataRequest {
     public void notifyDataReady(long j, long j2) {
         long j3 = j2 + j;
         long j4 = this.b;
-        if (j3 > this.f39241c + j4) {
-            TPLogUtil.e(f39240a, "data exceed the max request offset");
+        if (j3 > this.f25550c + j4) {
+            TPLogUtil.e(f25549a, "data exceed the max request offset");
             return;
         }
         if (j < j4) {
-            TPLogUtil.w(f39240a, "the notify data offset is less than request offset");
+            TPLogUtil.w(f25549a, "the notify data offset is less than request offset");
         }
         if (j3 < this.f) {
-            TPLogUtil.e(f39240a, "data not reach current offset");
+            TPLogUtil.e(f25549a, "data not reach current offset");
             return;
         }
         this.j.writeLock().lock();
@@ -290,16 +290,16 @@ public class c implements ITPAssetResourceLoadingDataRequest {
 
     @Override // com.tencent.thumbplayer.api.resourceloader.ITPAssetResourceLoadingDataRequest
     public void respondWithData(byte[] bArr) {
-        if (this.g > this.f39241c) {
-            TPLogUtil.i(f39240a, "respond full data");
+        if (this.g > this.f25550c) {
+            TPLogUtil.i(f25549a, "respond full data");
             return;
         }
         int length = bArr.length;
         a aVar = new a();
-        aVar.f39242a = this.f;
+        aVar.f25551a = this.f;
         aVar.b = bArr;
         a(256, length, 0, aVar);
-        String str = f39240a;
+        String str = f25549a;
         TPLogUtil.i(str, "respond data from:" + this.f + ", dataLength:" + length);
         this.j.writeLock().lock();
         long j = (long) length;

@@ -14,28 +14,28 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class ByteBufferUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final AtomicReference<byte[]> f21093a = new AtomicReference<>();
+    private static final AtomicReference<byte[]> f7487a = new AtomicReference<>();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/util/ByteBufferUtil$ByteBufferStream.class */
     static class ByteBufferStream extends InputStream {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ByteBuffer f21094a;
+        private final ByteBuffer f7488a;
         private int b = -1;
 
         ByteBufferStream(ByteBuffer byteBuffer) {
-            this.f21094a = byteBuffer;
+            this.f7488a = byteBuffer;
         }
 
         @Override // java.io.InputStream
         public int available() {
-            return this.f21094a.remaining();
+            return this.f7488a.remaining();
         }
 
         @Override // java.io.InputStream
         public void mark(int i) {
             synchronized (this) {
-                this.b = this.f21094a.position();
+                this.b = this.f7488a.position();
             }
         }
 
@@ -46,17 +46,17 @@ public final class ByteBufferUtil {
 
         @Override // java.io.InputStream
         public int read() {
-            if (this.f21094a.hasRemaining()) {
-                return this.f21094a.get() & 255;
+            if (this.f7488a.hasRemaining()) {
+                return this.f7488a.get() & 255;
             }
             return -1;
         }
 
         @Override // java.io.InputStream
         public int read(byte[] bArr, int i, int i2) throws IOException {
-            if (this.f21094a.hasRemaining()) {
+            if (this.f7488a.hasRemaining()) {
                 int min = Math.min(i2, available());
-                this.f21094a.get(bArr, i, min);
+                this.f7488a.get(bArr, i, min);
                 return min;
             }
             return -1;
@@ -68,15 +68,15 @@ public final class ByteBufferUtil {
                 if (this.b == -1) {
                     throw new IOException("Cannot reset to unset mark position");
                 }
-                this.f21094a.position(this.b);
+                this.f7488a.position(this.b);
             }
         }
 
         @Override // java.io.InputStream
         public long skip(long j) throws IOException {
-            if (this.f21094a.hasRemaining()) {
+            if (this.f7488a.hasRemaining()) {
                 long min = Math.min(j, available());
-                ByteBuffer byteBuffer = this.f21094a;
+                ByteBuffer byteBuffer = this.f7488a;
                 byteBuffer.position((int) (byteBuffer.position() + min));
                 return min;
             }
@@ -89,15 +89,15 @@ public final class ByteBufferUtil {
     public static final class SafeArray {
 
         /* renamed from: a  reason: collision with root package name */
-        final int f21095a;
+        final int f7489a;
         final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final byte[] f21096c;
+        final byte[] f7490c;
 
         SafeArray(byte[] bArr, int i, int i2) {
-            this.f21096c = bArr;
-            this.f21095a = i;
+            this.f7490c = bArr;
+            this.f7489a = i;
             this.b = i2;
         }
     }
@@ -159,7 +159,7 @@ public final class ByteBufferUtil {
 
     public static ByteBuffer a(InputStream inputStream) throws IOException {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(16384);
-        byte[] andSet = f21093a.getAndSet(null);
+        byte[] andSet = f7487a.getAndSet(null);
         byte[] bArr = andSet;
         if (andSet == null) {
             bArr = new byte[16384];
@@ -167,7 +167,7 @@ public final class ByteBufferUtil {
         while (true) {
             int read = inputStream.read(bArr);
             if (read < 0) {
-                f21093a.set(bArr);
+                f7487a.set(bArr);
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
                 return (ByteBuffer) ByteBuffer.allocateDirect(byteArray.length).put(byteArray).position(0);
             }
@@ -227,7 +227,7 @@ public final class ByteBufferUtil {
 
     public static byte[] a(ByteBuffer byteBuffer) {
         SafeArray c2 = c(byteBuffer);
-        if (c2 != null && c2.f21095a == 0 && c2.b == c2.f21096c.length) {
+        if (c2 != null && c2.f7489a == 0 && c2.b == c2.f7490c.length) {
             return byteBuffer.array();
         }
         ByteBuffer asReadOnlyBuffer = byteBuffer.asReadOnlyBuffer();

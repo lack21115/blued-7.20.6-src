@@ -1,6 +1,7 @@
 package okio.internal;
 
 import android.widget.ExpandableListView;
+import com.android.org.conscrypt.NativeCrypto;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -108,11 +109,11 @@ public final class ZipKt {
                 }
                 throw new IOException("not a zip: expected " + getHex(LOCAL_FILE_HEADER_SIGNATURE) + " but was " + getHex(readIntLe2));
             }
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
             CloseableKt.a(buffer, th2);
             long size = fileHandle.size() - 22;
             if (size >= 0) {
-                long max = Math.max(size - 65536, 0L);
+                long max = Math.max(size - NativeCrypto.SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION, 0L);
                 do {
                     BufferedSource buffer2 = Okio.buffer(fileHandle.source(size));
                     if (buffer2.readIntLe() == END_OF_CENTRAL_DIRECTORY_SIGNATURE) {
@@ -140,12 +141,12 @@ public final class ZipKt {
                                         throw new IOException("bad zip: expected " + getHex(ZIP64_EOCD_RECORD_SIGNATURE) + " but was " + getHex(readIntLe));
                                     }
                                     eocdRecord = readZip64EocdRecord(bufferedSource2, readEocdRecord);
-                                    Unit unit2 = Unit.f42314a;
+                                    Unit unit2 = Unit.a;
                                     CloseableKt.a(openReadOnly, th4);
                                 } finally {
                                 }
                             }
-                            Unit unit3 = Unit.f42314a;
+                            Unit unit3 = Unit.a;
                             CloseableKt.a(buffer3, th3);
                         }
                         ArrayList arrayList = new ArrayList();
@@ -155,7 +156,7 @@ public final class ZipKt {
                         long entryCount = eocdRecord.getEntryCount();
                         long j3 = 0;
                         if (0 >= entryCount) {
-                            Unit unit4 = Unit.f42314a;
+                            Unit unit4 = Unit.a;
                             CloseableKt.a(buffer4, th5);
                             ZipFileSystem zipFileSystem = new ZipFileSystem(zipPath, fileSystem, buildIndex(arrayList), readUtf8);
                             CloseableKt.a(openReadOnly, th);
@@ -172,7 +173,7 @@ public final class ZipKt {
                             }
                             j3 = j;
                         } while (j < entryCount);
-                        Unit unit42 = Unit.f42314a;
+                        Unit unit42 = Unit.a;
                         CloseableKt.a(buffer4, th5);
                         ZipFileSystem zipFileSystem2 = new ZipFileSystem(zipPath, fileSystem, buildIndex(arrayList), readUtf8);
                         CloseableKt.a(openReadOnly, th);
@@ -218,26 +219,26 @@ public final class ZipKt {
             Long dosDateTimeToEpochMillis = dosDateTimeToEpochMillis(bufferedSource.readShortLe() & 65535, bufferedSource.readShortLe() & 65535);
             long readIntLe2 = bufferedSource.readIntLe();
             final Ref.LongRef longRef = new Ref.LongRef();
-            longRef.f42544a = bufferedSource.readIntLe() & 4294967295L;
+            longRef.a = bufferedSource.readIntLe() & 4294967295L;
             final Ref.LongRef longRef2 = new Ref.LongRef();
-            longRef2.f42544a = bufferedSource.readIntLe() & 4294967295L;
+            longRef2.a = bufferedSource.readIntLe() & 4294967295L;
             short readShortLe3 = bufferedSource.readShortLe();
             short readShortLe4 = bufferedSource.readShortLe();
             short readShortLe5 = bufferedSource.readShortLe();
             bufferedSource.skip(8L);
             final Ref.LongRef longRef3 = new Ref.LongRef();
-            longRef3.f42544a = bufferedSource.readIntLe() & 4294967295L;
+            longRef3.a = bufferedSource.readIntLe() & 4294967295L;
             String readUtf8 = bufferedSource.readUtf8(readShortLe3 & 65535);
             if (StringsKt.a((CharSequence) readUtf8, (char) 0, false, 2, (Object) null)) {
                 throw new IOException("bad zip: filename contains 0x00");
             }
-            long j = longRef2.f42544a == 4294967295L ? 8 + 0 : 0L;
+            long j = longRef2.a == 4294967295L ? 8 + 0 : 0L;
             long j2 = j;
-            if (longRef.f42544a == 4294967295L) {
+            if (longRef.a == 4294967295L) {
                 j2 = j + 8;
             }
             long j3 = j2;
-            if (longRef3.f42544a == 4294967295L) {
+            if (longRef3.a == 4294967295L) {
                 j3 = j2 + 8;
             }
             final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
@@ -252,33 +253,33 @@ public final class ZipKt {
                 @Override // kotlin.jvm.functions.Function2
                 public /* synthetic */ Unit invoke(Integer num, Long l) {
                     invoke(num.intValue(), l.longValue());
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
 
                 public final void invoke(int i, long j5) {
                     if (i == 1) {
-                        if (Ref.BooleanRef.this.f42538a) {
+                        if (Ref.BooleanRef.this.a) {
                             throw new IOException("bad zip: zip64 extra repeated");
                         }
-                        Ref.BooleanRef.this.f42538a = true;
+                        Ref.BooleanRef.this.a = true;
                         if (j5 < j4) {
                             throw new IOException("bad zip: zip64 extra too short");
                         }
                         Ref.LongRef longRef4 = longRef2;
-                        longRef4.f42544a = longRef4.f42544a == ExpandableListView.PACKED_POSITION_VALUE_NULL ? bufferedSource.readLongLe() : longRef2.f42544a;
+                        longRef4.a = longRef4.a == ExpandableListView.PACKED_POSITION_VALUE_NULL ? bufferedSource.readLongLe() : longRef2.a;
                         Ref.LongRef longRef5 = longRef;
-                        longRef5.f42544a = longRef5.f42544a == ExpandableListView.PACKED_POSITION_VALUE_NULL ? bufferedSource.readLongLe() : 0L;
+                        longRef5.a = longRef5.a == ExpandableListView.PACKED_POSITION_VALUE_NULL ? bufferedSource.readLongLe() : 0L;
                         Ref.LongRef longRef6 = longRef3;
                         long j6 = 0;
-                        if (longRef6.f42544a == ExpandableListView.PACKED_POSITION_VALUE_NULL) {
+                        if (longRef6.a == ExpandableListView.PACKED_POSITION_VALUE_NULL) {
                             j6 = bufferedSource.readLongLe();
                         }
-                        longRef6.f42544a = j6;
+                        longRef6.a = j6;
                     }
                 }
             });
-            if (j3 <= 0 || booleanRef.f42538a) {
-                return new ZipEntry(Path.Companion.get$default(Path.Companion, BridgeUtil.SPLIT_MARK, false, 1, (Object) null).resolve(readUtf8), StringsKt.b(readUtf8, BridgeUtil.SPLIT_MARK, false, 2, (Object) null), bufferedSource.readUtf8(readShortLe5 & 65535), readIntLe2 & 4294967295L, longRef.f42544a, longRef2.f42544a, readShortLe2 & 65535, dosDateTimeToEpochMillis, longRef3.f42544a);
+            if (j3 <= 0 || booleanRef.a) {
+                return new ZipEntry(Path.Companion.get$default(Path.Companion, BridgeUtil.SPLIT_MARK, false, 1, (Object) null).resolve(readUtf8), StringsKt.b(readUtf8, BridgeUtil.SPLIT_MARK, false, 2, (Object) null), bufferedSource.readUtf8(readShortLe5 & 65535), readIntLe2 & 4294967295L, longRef.a, longRef2.a, readShortLe2 & 65535, dosDateTimeToEpochMillis, longRef3.a);
             }
             throw new IOException("bad zip: zip64 extra required but absent");
         }
@@ -339,7 +340,7 @@ public final class ZipKt {
     private static final FileMetadata readOrSkipLocalHeader(final BufferedSource bufferedSource, FileMetadata fileMetadata) {
         int readIntLe;
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = fileMetadata == null ? null : fileMetadata.getLastModifiedAtMillis();
+        objectRef.a = fileMetadata == null ? null : fileMetadata.getLastModifiedAtMillis();
         final Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
         final Ref.ObjectRef objectRef3 = new Ref.ObjectRef();
         if (bufferedSource.readIntLe() != LOCAL_FILE_HEADER_SIGNATURE) {
@@ -366,7 +367,7 @@ public final class ZipKt {
                 @Override // kotlin.jvm.functions.Function2
                 public /* synthetic */ Unit invoke(Integer num, Long l) {
                     invoke(num.intValue(), l.longValue());
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
 
                 /* JADX WARN: Type inference failed for: r1v17, types: [T, java.lang.Long] */
@@ -400,18 +401,18 @@ public final class ZipKt {
                             throw new IOException("bad zip: extended timestamp extra too short");
                         }
                         if (z2) {
-                            objectRef.f42545a = Long.valueOf(BufferedSource.this.readIntLe() * 1000);
+                            objectRef.a = Long.valueOf(BufferedSource.this.readIntLe() * 1000);
                         }
                         if (z3) {
-                            objectRef2.f42545a = Long.valueOf(BufferedSource.this.readIntLe() * 1000);
+                            objectRef2.a = Long.valueOf(BufferedSource.this.readIntLe() * 1000);
                         }
                         if (z) {
-                            objectRef3.f42545a = Long.valueOf(BufferedSource.this.readIntLe() * 1000);
+                            objectRef3.a = Long.valueOf(BufferedSource.this.readIntLe() * 1000);
                         }
                     }
                 }
             });
-            return new FileMetadata(fileMetadata.isRegularFile(), fileMetadata.isDirectory(), null, fileMetadata.getSize(), (Long) objectRef3.f42545a, (Long) objectRef.f42545a, (Long) objectRef2.f42545a, null, 128, null);
+            return new FileMetadata(fileMetadata.isRegularFile(), fileMetadata.isDirectory(), null, fileMetadata.getSize(), (Long) objectRef3.a, (Long) objectRef.a, (Long) objectRef2.a, null, 128, null);
         }
         throw new IOException(Intrinsics.a("unsupported zip: general purpose bit flag=", (Object) getHex(readShortLe)));
     }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ViewFlipper;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.FragmentActivity;
@@ -45,7 +46,7 @@ import java.util.ArrayList;
 public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleDataObserver.IFriendsDataRefreshObserver, SetModelObserver.ISetModelObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f30524a;
+    public Context f16834a;
     public View b;
     protected PullToRefreshRecyclerView d;
     protected PullToRefreshRecyclerView e;
@@ -66,7 +67,7 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
     private boolean w;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f30525c = UserFindResult.USER_SORT_BY.NEARBY;
+    public String f16835c = UserFindResult.USER_SORT_BY.NEARBY;
     private FilterEntity t = new FilterEntity();
     private int u = 1;
     private int v = 60;
@@ -103,20 +104,20 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
 
     public void a() {
         if (getArguments() != null) {
-            this.f30525c = getArguments().getString("KEY_SORT_BY");
+            this.f16835c = getArguments().getString("KEY_SORT_BY");
         }
-        if (StringUtils.d(this.f30525c)) {
-            this.f30525c = UserFindResult.USER_SORT_BY.NEARBY;
+        if (StringUtils.d(this.f16835c)) {
+            this.f16835c = UserFindResult.USER_SORT_BY.NEARBY;
         }
         b();
-        this.o = (NestedScrollView) this.b.findViewById(2131368700);
+        this.o = (NestedScrollView) this.b.findViewById(R.id.nestedScrollView);
         this.j = (ViewFlipper) this.b.findViewById(R.id.viewFlipper);
-        NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) this.b.findViewById(R.id.nodataview);
-        this.l = noDataAndLoadFailView;
-        noDataAndLoadFailView.setBackgroundColorRes(2131101191);
-        ShapeTextView shapeTextView = (ShapeTextView) this.b.findViewById(R.id.tv_refresh_hint);
-        this.n = shapeTextView;
-        shapeTextView.setVisibility(8);
+        NoDataAndLoadFailView findViewById = this.b.findViewById(R.id.nodataview);
+        this.l = findViewById;
+        findViewById.setBackgroundColorRes(2131101191);
+        ShapeTextView findViewById2 = this.b.findViewById(R.id.tv_refresh_hint);
+        this.n = findViewById2;
+        findViewById2.setVisibility(8);
         c();
         e();
         int J = BluedPreferences.J();
@@ -141,7 +142,7 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
         if (!c(recyclerView) || this.w) {
             return;
         }
-        AppMethods.a((CharSequence) this.f30524a.getResources().getString(2131891089));
+        AppMethods.a(this.f16834a.getResources().getString(2131891089));
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -158,7 +159,7 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
         }
         int i = this.v;
         int i2 = this.u;
-        this.t.sort_by = this.f30525c;
+        this.t.sort_by = this.f16835c;
         this.t.longitude = CommonPreferences.u();
         this.t.latitude = CommonPreferences.v();
         this.t.nickName = "";
@@ -169,7 +170,7 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
         this.t.custom = UserInfo.getInstance().getLoginUserInfo() == null ? "" : UserInfo.getInstance().getLoginUserInfo().getCustom();
         FilterEntity filterEntity2 = this.t;
         filterEntity2.start = (i * (i2 - 1)) + "";
-        NearbyHttpUtils.a(this.f30524a, f(), this.t, "", getFragmentActive());
+        NearbyHttpUtils.a(this.f16834a, f(), this.t, "", getFragmentActive());
     }
 
     @Override // com.soft.blued.ui.find.observer.PeopleDataObserver.IFriendsDataRefreshObserver
@@ -207,31 +208,31 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
     }
 
     public void b() {
-        this.i = PeopleGridQuickAdapter.a(this.f30524a);
+        this.i = PeopleGridQuickAdapter.a(this.f16834a);
     }
 
     public void c() {
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.b.findViewById(2131364131);
-        this.d = pullToRefreshRecyclerView;
-        pullToRefreshRecyclerView.setRefreshEnabled(false);
-        RecyclerView refreshableView = this.d.getRefreshableView();
-        this.f = refreshableView;
-        refreshableView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment.1
+        PullToRefreshRecyclerView findViewById = this.b.findViewById(R.id.grid_view);
+        this.d = findViewById;
+        findViewById.setRefreshEnabled(false);
+        RecyclerView recyclerView = (RecyclerView) this.d.getRefreshableView();
+        this.f = recyclerView;
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment.1
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrollStateChanged(RecyclerView recyclerView, int i) {
-                NearbyPeopleTabPageFragment.this.m.onScrollStateChanged(null, i);
-                super.onScrollStateChanged(recyclerView, i);
+            public void onScrollStateChanged(RecyclerView recyclerView2, int i) {
+                NearbyPeopleTabPageFragment.this.m.onScrollStateChanged((AbsListView) null, i);
+                super.onScrollStateChanged(recyclerView2, i);
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i, int i2) {
-                super.onScrolled(recyclerView, i, i2);
-                FloatRedBagViewScrollObserver.a().a(recyclerView, i, i2);
-                NearbyPeopleTabPageFragment.this.a(recyclerView);
+            public void onScrolled(RecyclerView recyclerView2, int i, int i2) {
+                super.onScrolled(recyclerView2, i, i2);
+                FloatRedBagViewScrollObserver.a().a(recyclerView2, i, i2);
+                NearbyPeopleTabPageFragment.this.a(recyclerView2);
             }
         });
-        RecyclerView recyclerView = this.f;
-        recyclerView.setOnTouchListener(b(recyclerView));
+        RecyclerView recyclerView2 = this.f;
+        recyclerView2.setOnTouchListener(b(recyclerView2));
         d();
         this.h.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment.2
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
@@ -255,35 +256,35 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
     }
 
     public void d() {
-        this.h = new PeopleGridQuickAdapter(new ArrayList(), getActivity(), getFragmentActive(), this.f30525c, this.f);
+        this.h = new PeopleGridQuickAdapter(new ArrayList(), getActivity(), getFragmentActive(), this.f16835c, this.f);
     }
 
     public void e() {
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.b.findViewById(2131366898);
-        this.e = pullToRefreshRecyclerView;
-        pullToRefreshRecyclerView.setRefreshEnabled(false);
-        RecyclerView refreshableView = this.e.getRefreshableView();
-        this.g = refreshableView;
-        refreshableView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment.4
+        PullToRefreshRecyclerView findViewById = this.b.findViewById(R.id.list_view);
+        this.e = findViewById;
+        findViewById.setRefreshEnabled(false);
+        RecyclerView recyclerView = (RecyclerView) this.e.getRefreshableView();
+        this.g = recyclerView;
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment.4
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrollStateChanged(RecyclerView recyclerView, int i) {
-                NearbyPeopleTabPageFragment.this.m.onScrollStateChanged(null, i);
-                super.onScrollStateChanged(recyclerView, i);
+            public void onScrollStateChanged(RecyclerView recyclerView2, int i) {
+                NearbyPeopleTabPageFragment.this.m.onScrollStateChanged((AbsListView) null, i);
+                super.onScrollStateChanged(recyclerView2, i);
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i, int i2) {
-                super.onScrolled(recyclerView, i, i2);
-                FloatRedBagViewScrollObserver.a().a(recyclerView, i, i2);
-                if (!NearbyPeopleTabPageFragment.this.c(recyclerView) || NearbyPeopleTabPageFragment.this.w) {
+            public void onScrolled(RecyclerView recyclerView2, int i, int i2) {
+                super.onScrolled(recyclerView2, i, i2);
+                FloatRedBagViewScrollObserver.a().a(recyclerView2, i, i2);
+                if (!NearbyPeopleTabPageFragment.this.c(recyclerView2) || NearbyPeopleTabPageFragment.this.w) {
                     return;
                 }
-                AppMethods.a((CharSequence) NearbyPeopleTabPageFragment.this.f30524a.getResources().getString(2131891089));
+                AppMethods.a(NearbyPeopleTabPageFragment.this.f16834a.getResources().getString(2131891089));
             }
         });
-        RecyclerView recyclerView = this.g;
-        recyclerView.setOnTouchListener(b(recyclerView));
-        PeopleListQuickAdapter peopleListQuickAdapter = new PeopleListQuickAdapter(new ArrayList(), getActivity(), getFragmentActive(), this.f30525c, this.g);
+        RecyclerView recyclerView2 = this.g;
+        recyclerView2.setOnTouchListener(b(recyclerView2));
+        PeopleListQuickAdapter peopleListQuickAdapter = new PeopleListQuickAdapter(new ArrayList(), getActivity(), getFragmentActive(), this.f16835c, this.g);
         this.r = peopleListQuickAdapter;
         peopleListQuickAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment.5
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
@@ -293,32 +294,29 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
             }
         }, this.g);
         this.g.setAdapter(this.r);
-        this.g.setLayoutManager(new GridLayoutManager(this.f30524a, 1));
+        this.g.setLayoutManager(new GridLayoutManager(this.f16834a, 1));
     }
 
     public BluedUIHttpResponse f() {
-        return new BluedUIHttpResponse<BluedEntity<UserFindResult, FindDataExtra>>("nearby_user_" + this.f30525c, getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment.6
+        return new BluedUIHttpResponse<BluedEntity<UserFindResult, FindDataExtra>>("nearby_user_" + this.f16835c, getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment.6
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f30531a = false;
+            boolean f16841a = false;
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUICache(BluedEntity<UserFindResult, FindDataExtra> bluedEntity) {
                 super.onUICache(bluedEntity);
                 NearbyPeopleTabPageFragment.this.a(bluedEntity, true);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                this.f30531a = true;
+                this.f16841a = true;
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 NearbyPeopleTabPageFragment.this.f.stopScroll();
                 NearbyPeopleTabPageFragment.this.g.stopScroll();
-                if (!this.f30531a) {
+                if (!this.f16841a) {
                     if (NearbyPeopleTabPageFragment.this.w) {
                         NearbyPeopleTabPageFragment.this.h.setEnableLoadMore(true);
                         NearbyPeopleTabPageFragment.this.r.setEnableLoadMore(true);
@@ -347,20 +345,17 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
                 NearbyPeopleTabPageFragment.this.r.notifyDataSetChanged();
                 NearbyPeopleTabPageFragment.this.e.j();
                 NearbyPeopleTabPageFragment.this.r.loadMoreComplete();
-                this.f30531a = false;
+                this.f16841a = false;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<UserFindResult, FindDataExtra> bluedEntity) {
                 NearbyPeopleTabPageFragment.this.a(bluedEntity, false);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public BluedEntity<UserFindResult, FindDataExtra> parseData(String str) {
                 BluedEntity<UserFindResult, FindDataExtra> parseData = super.parseData(str);
                 if (parseData != null && parseData.hasData()) {
@@ -370,9 +365,9 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
                         if (i2 >= parseData.data.size()) {
                             break;
                         }
-                        parseData.data.get(i2).distance = DistanceUtils.a(parseData.data.get(i2).distance, BlueAppLocal.c(), false);
-                        parseData.data.get(i2).last_operate_time_stamp = parseData.data.get(i2).last_operate;
-                        parseData.data.get(i2).last_operate = TimeAndDateUtils.a(NearbyPeopleTabPageFragment.this.f30524a, TimeAndDateUtils.c(parseData.data.get(i2).last_operate));
+                        ((UserFindResult) parseData.data.get(i2)).distance = DistanceUtils.a(((UserFindResult) parseData.data.get(i2)).distance, BlueAppLocal.c(), false);
+                        ((UserFindResult) parseData.data.get(i2)).last_operate_time_stamp = ((UserFindResult) parseData.data.get(i2)).last_operate;
+                        ((UserFindResult) parseData.data.get(i2)).last_operate = TimeAndDateUtils.a(NearbyPeopleTabPageFragment.this.f16834a, TimeAndDateUtils.c(((UserFindResult) parseData.data.get(i2)).last_operate));
                         i = i2 + 1;
                     }
                 }
@@ -381,11 +376,10 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
         };
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.utils.PageTimeUtils.APMInterface
     public String getPageBizName() {
         boolean z;
         String pageBizName = super.getPageBizName();
-        String str = this.f30525c;
+        String str = this.f16835c;
         int hashCode = str.hashCode();
         if (hashCode == -1049482625) {
             if (str.equals(UserFindResult.USER_SORT_BY.NEARBY)) {
@@ -406,14 +400,13 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
         return z ? !z ? !z ? pageBizName : "A33" : "A32" : "A31";
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f30524a = getActivity();
+        this.f16834a = getActivity();
         View view = this.b;
         if (view == null) {
             this.m = new PauseOnScrollListener(false, true);
             FragmentActivity activity = getActivity();
-            this.f30524a = activity;
+            this.f16834a = activity;
             this.b = LayoutInflater.from(activity).inflate(R.layout.fragment_nearby_people_tabpage, viewGroup, false);
             a();
             SetModelObserver.a().a(this);
@@ -424,14 +417,12 @@ public class NearbyPeopleTabPageFragment extends BaseFragment implements PeopleD
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         SetModelObserver.a().b(this);
         PeopleDataObserver.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         this.k = z;

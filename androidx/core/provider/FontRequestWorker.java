@@ -9,6 +9,7 @@ import androidx.collection.SimpleArrayMap;
 import androidx.core.graphics.TypefaceCompat;
 import androidx.core.provider.FontsContractCompat;
 import androidx.core.util.Consumer;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
@@ -19,28 +20,28 @@ import java.util.concurrent.ExecutorService;
 public class FontRequestWorker {
 
     /* renamed from: a  reason: collision with root package name */
-    static final LruCache<String, Typeface> f2531a = new LruCache<>(16);
+    static final LruCache<String, Typeface> f2483a = new LruCache<>(16);
     private static final ExecutorService d = RequestExecutor.a("fonts-androidx", 10, 10000);
     static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    static final SimpleArrayMap<String, ArrayList<Consumer<TypefaceResult>>> f2532c = new SimpleArrayMap<>();
+    static final SimpleArrayMap<String, ArrayList<Consumer<TypefaceResult>>> f2484c = new SimpleArrayMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/provider/FontRequestWorker$TypefaceResult.class */
     public static final class TypefaceResult {
 
         /* renamed from: a  reason: collision with root package name */
-        final Typeface f2539a;
+        final Typeface f2491a;
         final int b;
 
         TypefaceResult(int i) {
-            this.f2539a = null;
+            this.f2491a = null;
             this.b = i;
         }
 
         TypefaceResult(Typeface typeface) {
-            this.f2539a = typeface;
+            this.f2491a = typeface;
             this.b = 0;
         }
 
@@ -88,7 +89,7 @@ public class FontRequestWorker {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Typeface a(final Context context, final FontRequest fontRequest, final int i, Executor executor, final CallbackWithHandler callbackWithHandler) {
         final String a2 = a(fontRequest, i);
-        Typeface typeface = f2531a.get(a2);
+        Typeface typeface = f2483a.get(a2);
         if (typeface != null) {
             callbackWithHandler.a(new TypefaceResult(typeface));
             return typeface;
@@ -104,20 +105,20 @@ public class FontRequestWorker {
             }
         };
         synchronized (b) {
-            ArrayList<Consumer<TypefaceResult>> arrayList = f2532c.get(a2);
+            ArrayList<Consumer<TypefaceResult>> arrayList = f2484c.get(a2);
             if (arrayList != null) {
                 arrayList.add(consumer);
                 return null;
             }
             ArrayList<Consumer<TypefaceResult>> arrayList2 = new ArrayList<>();
             arrayList2.add(consumer);
-            f2532c.put(a2, arrayList2);
+            f2484c.put(a2, arrayList2);
             Callable<TypefaceResult> callable = new Callable<TypefaceResult>() { // from class: androidx.core.provider.FontRequestWorker.3
                 /* JADX WARN: Can't rename method to resolve collision */
                 @Override // java.util.concurrent.Callable
                 public TypefaceResult call() {
                     try {
-                        return FontRequestWorker.a(String.this, context, fontRequest, i);
+                        return FontRequestWorker.a(a2, context, fontRequest, i);
                     } catch (Throwable th) {
                         return new TypefaceResult(-3);
                     }
@@ -131,11 +132,11 @@ public class FontRequestWorker {
                 @Override // androidx.core.util.Consumer
                 public void accept(TypefaceResult typefaceResult) {
                     synchronized (FontRequestWorker.b) {
-                        ArrayList<Consumer<TypefaceResult>> arrayList3 = FontRequestWorker.f2532c.get(String.this);
+                        ArrayList<Consumer<TypefaceResult>> arrayList3 = FontRequestWorker.f2484c.get(a2);
                         if (arrayList3 == null) {
                             return;
                         }
-                        FontRequestWorker.f2532c.remove(String.this);
+                        FontRequestWorker.f2484c.remove(a2);
                         int i2 = 0;
                         while (true) {
                             int i3 = i2;
@@ -155,25 +156,25 @@ public class FontRequestWorker {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Typeface a(final Context context, final FontRequest fontRequest, CallbackWithHandler callbackWithHandler, final int i, int i2) {
         final String a2 = a(fontRequest, i);
-        Typeface typeface = f2531a.get(a2);
+        Typeface typeface = f2483a.get(a2);
         if (typeface != null) {
             callbackWithHandler.a(new TypefaceResult(typeface));
             return typeface;
         } else if (i2 == -1) {
             TypefaceResult a3 = a(a2, context, fontRequest, i);
             callbackWithHandler.a(a3);
-            return a3.f2539a;
+            return a3.f2491a;
         } else {
             try {
                 TypefaceResult typefaceResult = (TypefaceResult) RequestExecutor.a(d, new Callable<TypefaceResult>() { // from class: androidx.core.provider.FontRequestWorker.1
                     /* JADX WARN: Can't rename method to resolve collision */
                     @Override // java.util.concurrent.Callable
                     public TypefaceResult call() {
-                        return FontRequestWorker.a(String.this, context, fontRequest, i);
+                        return FontRequestWorker.a(a2, context, fontRequest, i);
                     }
                 }, i2);
                 callbackWithHandler.a(typefaceResult);
-                return typefaceResult.f2539a;
+                return typefaceResult.f2491a;
             } catch (InterruptedException e) {
                 callbackWithHandler.a(new TypefaceResult(-3));
                 return null;
@@ -182,7 +183,7 @@ public class FontRequestWorker {
     }
 
     static TypefaceResult a(String str, Context context, FontRequest fontRequest, int i) {
-        Typeface typeface = f2531a.get(str);
+        Typeface typeface = f2483a.get(str);
         if (typeface != null) {
             return new TypefaceResult(typeface);
         }
@@ -194,7 +195,7 @@ public class FontRequestWorker {
             }
             Typeface createFromFontInfo = TypefaceCompat.createFromFontInfo(context, null, a2.getFonts(), i);
             if (createFromFontInfo != null) {
-                f2531a.put(str, createFromFontInfo);
+                f2483a.put(str, createFromFontInfo);
                 return new TypefaceResult(createFromFontInfo);
             }
             return new TypefaceResult(-3);
@@ -204,11 +205,11 @@ public class FontRequestWorker {
     }
 
     private static String a(FontRequest fontRequest, int i) {
-        return fontRequest.a() + "-" + i;
+        return fontRequest.a() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a() {
-        f2531a.evictAll();
+        f2483a.evictAll();
     }
 }

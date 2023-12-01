@@ -7,7 +7,7 @@ import com.getui.gtc.base.log.ILogFormatter;
 public final class b implements ILogController {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f21908a;
+    public boolean f8301a;
     private ILogFormatter b;
 
     public b() {
@@ -15,7 +15,7 @@ public final class b implements ILogController {
     }
 
     public b(ILogFormatter iLogFormatter) {
-        this.f21908a = true;
+        this.f8301a = true;
         this.b = (ILogFormatter) com.getui.gtc.base.log.e.a.a(iLogFormatter);
     }
 
@@ -23,7 +23,7 @@ public final class b implements ILogController {
     public final boolean isLoggable(int i, String str) {
         int i2 = i & 240;
         if (i2 == 0 || i2 == 16) {
-            return this.f21908a;
+            return this.f8301a;
         }
         return false;
     }

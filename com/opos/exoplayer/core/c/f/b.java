@@ -8,11 +8,11 @@ import com.opos.exoplayer.core.c.f.u;
 public final class b implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.opos.exoplayer.core.i.l f25185a;
+    private final com.opos.exoplayer.core.i.l f11497a;
     private final com.opos.exoplayer.core.i.m b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f25186c;
+    private final String f11498c;
     private String d;
     private com.opos.exoplayer.core.c.n e;
     private int f;
@@ -29,10 +29,10 @@ public final class b implements h {
 
     public b(String str) {
         com.opos.exoplayer.core.i.l lVar = new com.opos.exoplayer.core.i.l(new byte[128]);
-        this.f25185a = lVar;
-        this.b = new com.opos.exoplayer.core.i.m(lVar.f25494a);
+        this.f11497a = lVar;
+        this.b = new com.opos.exoplayer.core.i.m(lVar.f11806a);
         this.f = 0;
-        this.f25186c = str;
+        this.f11498c = str;
     }
 
     private boolean a(com.opos.exoplayer.core.i.m mVar, byte[] bArr, int i) {
@@ -71,10 +71,10 @@ public final class b implements h {
     }
 
     private void c() {
-        this.f25185a.a(0);
-        a.C0648a a2 = com.opos.exoplayer.core.a.a.a(this.f25185a);
-        if (this.j == null || a2.d != this.j.r || a2.f25007c != this.j.s || a2.f25006a != this.j.f) {
-            Format a3 = Format.a(this.d, a2.f25006a, null, -1, -1, a2.d, a2.f25007c, null, null, 0, this.f25186c);
+        this.f11497a.a(0);
+        a.C0478a a2 = com.opos.exoplayer.core.a.a.a(this.f11497a);
+        if (this.j == null || a2.d != this.j.r || a2.f11319c != this.j.s || a2.f11318a != this.j.f) {
+            Format a3 = Format.a(this.d, a2.f11318a, null, -1, -1, a2.d, a2.f11319c, null, null, 0, this.f11498c);
             this.j = a3;
             this.e.a(a3);
         }
@@ -119,7 +119,7 @@ public final class b implements h {
                             this.f = 0;
                         }
                     }
-                } else if (a(mVar, this.b.f25496a, 128)) {
+                } else if (a(mVar, this.b.f11808a, 128)) {
                     c();
                     this.b.c(0);
                     this.e.a(this.b, 128);
@@ -127,8 +127,8 @@ public final class b implements h {
                 }
             } else if (b(mVar)) {
                 this.f = 1;
-                this.b.f25496a[0] = (byte) 11;
-                this.b.f25496a[1] = (byte) 119;
+                this.b.f11808a[0] = (byte) 11;
+                this.b.f11808a[1] = (byte) 119;
                 this.g = 2;
             }
         }

@@ -22,7 +22,7 @@ public abstract class k {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m12059a(Context context, String str, boolean z) {
+    public static boolean m9009a(Context context, String str, boolean z) {
         a(context);
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(str, z);
     }

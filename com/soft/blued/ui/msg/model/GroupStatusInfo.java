@@ -1,5 +1,6 @@
 package com.soft.blued.ui.msg.model;
 
+import android.provider.Contacts;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
@@ -9,9 +10,9 @@ public final class GroupStatusInfo {
     private String group_id;
     private int online;
 
-    public GroupStatusInfo(String group_id, int i) {
-        Intrinsics.e(group_id, "group_id");
-        this.group_id = group_id;
+    public GroupStatusInfo(String str, int i) {
+        Intrinsics.e(str, Contacts.GroupMembership.GROUP_ID);
+        this.group_id = str;
         this.online = i;
     }
 
@@ -33,9 +34,9 @@ public final class GroupStatusInfo {
         return this.online;
     }
 
-    public final GroupStatusInfo copy(String group_id, int i) {
-        Intrinsics.e(group_id, "group_id");
-        return new GroupStatusInfo(group_id, i);
+    public final GroupStatusInfo copy(String str, int i) {
+        Intrinsics.e(str, Contacts.GroupMembership.GROUP_ID);
+        return new GroupStatusInfo(str, i);
     }
 
     public boolean equals(Object obj) {
@@ -44,7 +45,7 @@ public final class GroupStatusInfo {
         }
         if (obj instanceof GroupStatusInfo) {
             GroupStatusInfo groupStatusInfo = (GroupStatusInfo) obj;
-            return Intrinsics.a((Object) this.group_id, (Object) groupStatusInfo.group_id) && this.online == groupStatusInfo.online;
+            return Intrinsics.a(this.group_id, groupStatusInfo.group_id) && this.online == groupStatusInfo.online;
         }
         return false;
     }

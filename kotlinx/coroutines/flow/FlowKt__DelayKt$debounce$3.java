@@ -10,12 +10,10 @@ import kotlinx.coroutines.DelayKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__DelayKt$debounce$3.class */
 final class FlowKt__DelayKt$debounce$3<T> extends Lambda implements Function1<T, Long> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function1<T, Duration> f43121a;
+    final /* synthetic */ Function1<T, Duration> a;
 
     public final long a(T t) {
-        return DelayKt.a(this.f43121a.invoke(t).a());
+        return DelayKt.a(this.a.invoke(t).a());
     }
 
     /* JADX WARN: Multi-variable type inference failed */

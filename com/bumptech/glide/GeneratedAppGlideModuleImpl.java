@@ -11,7 +11,7 @@ import java.util.Set;
 final class GeneratedAppGlideModuleImpl extends GeneratedAppGlideModule {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ImageLoaderAppSetting f20644a = new ImageLoaderAppSetting();
+    private final ImageLoaderAppSetting f7038a = new ImageLoaderAppSetting();
 
     public GeneratedAppGlideModuleImpl(Context context) {
         if (Log.isLoggable("Glide", 3)) {
@@ -28,17 +28,17 @@ final class GeneratedAppGlideModuleImpl extends GeneratedAppGlideModule {
     @Override // com.bumptech.glide.module.LibraryGlideModule, com.bumptech.glide.module.RegistersComponents
     public void a(Context context, Glide glide, Registry registry) {
         new ImageLoaderLibrarySetting().a(context, glide, registry);
-        this.f20644a.a(context, glide, registry);
+        this.f7038a.a(context, glide, registry);
     }
 
     @Override // com.bumptech.glide.module.AppGlideModule, com.bumptech.glide.module.AppliesOptions
     public void a(Context context, GlideBuilder glideBuilder) {
-        this.f20644a.a(context, glideBuilder);
+        this.f7038a.a(context, glideBuilder);
     }
 
     @Override // com.bumptech.glide.module.AppGlideModule
     public boolean c() {
-        return this.f20644a.c();
+        return this.f7038a.c();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -4,11 +4,11 @@ package c.t.m.g;
 public class w1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile y1 f4034a;
+    public static volatile y1 f3986a;
     public static volatile x1 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static volatile boolean f4035c = false;
+    public static volatile boolean f3987c = false;
 
     public static String a() {
         return "1.8.2_20220414";
@@ -23,10 +23,10 @@ public class w1 {
     }
 
     public static y1 c() {
-        return f4034a;
+        return f3986a;
     }
 
     public static boolean d() {
-        return f4035c;
+        return f3987c;
     }
 }

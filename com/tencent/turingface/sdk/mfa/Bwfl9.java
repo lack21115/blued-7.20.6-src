@@ -4,18 +4,18 @@ package com.tencent.turingface.sdk.mfa;
 public final class Bwfl9 extends ucT3w {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f39862a = "";
+    public String f26171a = "";
     public String b = "";
 
     @Override // com.tencent.turingface.sdk.mfa.ucT3w
     public final void a(d5HOq d5hoq) {
-        d5hoq.a(this.f39862a, 0);
+        d5hoq.a(this.f26171a, 0);
         d5hoq.a(this.b, 1);
     }
 
     @Override // com.tencent.turingface.sdk.mfa.ucT3w
     public final void a(nyvKz nyvkz) {
-        this.f39862a = nyvkz.b(0, true);
+        this.f26171a = nyvkz.b(0, true);
         this.b = nyvkz.b(1, true);
     }
 }

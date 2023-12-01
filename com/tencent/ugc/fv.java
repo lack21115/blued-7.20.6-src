@@ -7,11 +7,11 @@ import com.tencent.ugc.TXVideoEditer;
 public final /* synthetic */ class fv implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCVideoProcessor f40399a;
+    private final UGCVideoProcessor f26708a;
     private final TXVideoEditer.TXVideoCustomProcessListener b;
 
     private fv(UGCVideoProcessor uGCVideoProcessor, TXVideoEditer.TXVideoCustomProcessListener tXVideoCustomProcessListener) {
-        this.f40399a = uGCVideoProcessor;
+        this.f26708a = uGCVideoProcessor;
         this.b = tXVideoCustomProcessListener;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class fv implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40399a.mTXVideoCustomProcessListener = this.b;
+        this.f26708a.mTXVideoCustomProcessListener = this.b;
     }
 }

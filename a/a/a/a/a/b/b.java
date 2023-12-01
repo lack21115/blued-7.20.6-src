@@ -17,11 +17,11 @@ import java.util.concurrent.locks.ReentrantLock;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public e f1282a;
+    public e f1234a;
     public Camera b;
 
     /* renamed from: c  reason: collision with root package name */
-    public volatile Camera.CameraInfo f1283c;
+    public volatile Camera.CameraInfo f1235c;
     public Camera.Parameters d;
     public Handler e;
     public d f;
@@ -134,7 +134,7 @@ public class b {
     public static class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final b f1285a = new b();
+        public static final b f1237a = new b();
     }
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/b/b$d.class */
@@ -199,8 +199,8 @@ public class b {
         }
 
         public final void b(Camera.Parameters parameters) {
-            if (b.this.f1282a != null) {
-                b.this.f1282a.a(parameters);
+            if (b.this.f1234a != null) {
+                b.this.f1234a.a(parameters);
             }
         }
 
@@ -237,7 +237,7 @@ public class b {
     }
 
     public b() {
-        this.f1283c = new Camera.CameraInfo();
+        this.f1235c = new Camera.CameraInfo();
         this.g = -1;
         this.h = new Object();
         this.i = new ConditionVariable();
@@ -248,7 +248,7 @@ public class b {
     }
 
     public static b a() {
-        return c.f1285a;
+        return c.f1237a;
     }
 
     public static boolean a(int i) {
@@ -275,7 +275,7 @@ public class b {
     }
 
     public void a(e eVar) {
-        this.f1282a = eVar;
+        this.f1234a = eVar;
     }
 
     public d b(int i) {
@@ -293,8 +293,8 @@ public class b {
     public Camera.CameraInfo b() {
         Camera.CameraInfo cameraInfo;
         synchronized (this.h) {
-            Camera.getCameraInfo(this.g, this.f1283c);
-            cameraInfo = this.f1283c;
+            Camera.getCameraInfo(this.g, this.f1235c);
+            cameraInfo = this.f1235c;
         }
         return cameraInfo;
     }
@@ -309,7 +309,7 @@ public class b {
         a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.g;
         eVar.c("CameraDevice", "camera opened:" + this.b + ",(" + i + ")");
         synchronized (this.h) {
-            Camera.getCameraInfo(i, this.f1283c);
+            Camera.getCameraInfo(i, this.f1235c);
         }
     }
 
@@ -317,7 +317,7 @@ public class b {
         boolean z;
         synchronized (this.h) {
             z = true;
-            if (this.f1283c.facing != 1) {
+            if (this.f1235c.facing != 1) {
                 z = false;
             }
         }

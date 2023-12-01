@@ -18,9 +18,8 @@ final /* synthetic */ class MineNewFragment$liveDataObserver$2 extends FunctionR
         ((MineNewFragment) this.receiver).a(minePageAdModel);
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public /* synthetic */ Unit invoke(MinePageAdModel minePageAdModel) {
-        a(minePageAdModel);
-        return Unit.f42314a;
+    public /* synthetic */ Object invoke(Object obj) {
+        a((MinePageAdModel) obj);
+        return Unit.a;
     }
 }

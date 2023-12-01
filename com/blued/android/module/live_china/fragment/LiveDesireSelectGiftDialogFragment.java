@@ -34,13 +34,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveDesireSelectGiftDialogFragment.class */
 public class LiveDesireSelectGiftDialogFragment extends BaseDialogFragment implements OnClickCallback {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12835a;
+    public Context a;
     public long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public FitemDesireSelectGift f12836c;
+    public FitemDesireSelectGift c;
     private TextView d;
     private TextView e;
     private RecyclerView f;
@@ -56,7 +52,7 @@ public class LiveDesireSelectGiftDialogFragment extends BaseDialogFragment imple
     }
 
     public LiveDesireSelectGiftDialogFragment(Context context, long j, SelectGiftCallBack selectGiftCallBack) {
-        this.f12835a = context;
+        this.a = context;
         this.k = selectGiftCallBack;
         if (j > 0) {
             this.b = j;
@@ -74,7 +70,7 @@ public class LiveDesireSelectGiftDialogFragment extends BaseDialogFragment imple
         if (selectGiftCallBack == null) {
             return;
         }
-        selectGiftCallBack.selectGift(this.f12836c.b);
+        selectGiftCallBack.selectGift(this.c.b);
         dismiss();
     }
 
@@ -93,7 +89,7 @@ public class LiveDesireSelectGiftDialogFragment extends BaseDialogFragment imple
         });
         this.e.setClickable(false);
         this.g.c(false);
-        this.g.l(false);
+        this.g.b(false);
         this.g.f(true);
         this.g.e(true);
         this.g.g(true);
@@ -106,15 +102,14 @@ public class LiveDesireSelectGiftDialogFragment extends BaseDialogFragment imple
             freedomAdapter.notifyDataSetChanged();
             return;
         }
-        final GridLayoutManager gridLayoutManager = new GridLayoutManager(this.f12835a, 4);
+        final GridLayoutManager gridLayoutManager = new GridLayoutManager(this.a, 4);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.live_china.fragment.LiveDesireSelectGiftDialogFragment.1
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 return ((FreedomItem) LiveDesireSelectGiftDialogFragment.this.i.get(i)).a(gridLayoutManager.getSpanCount());
             }
         });
         this.f.setLayoutManager(gridLayoutManager);
-        FreedomAdapter freedomAdapter2 = new FreedomAdapter(this.f12835a, a(), this.i, this);
+        FreedomAdapter freedomAdapter2 = new FreedomAdapter(this.a, a(), this.i, this);
         this.h = freedomAdapter2;
         this.f.setAdapter(freedomAdapter2);
     }
@@ -136,8 +131,8 @@ public class LiveDesireSelectGiftDialogFragment extends BaseDialogFragment imple
                 for (LiveDesireSelectGiftModel liveDesireSelectGiftModel : bluedEntityA.data) {
                     FitemDesireSelectGift fitemDesireSelectGift = new FitemDesireSelectGift(liveDesireSelectGiftModel);
                     if (LiveDesireSelectGiftDialogFragment.this.b > 0 && liveDesireSelectGiftModel.goods_id == LiveDesireSelectGiftDialogFragment.this.b) {
-                        fitemDesireSelectGift.f12531c = true;
-                        LiveDesireSelectGiftDialogFragment.this.f12836c = fitemDesireSelectGift;
+                        fitemDesireSelectGift.c = true;
+                        LiveDesireSelectGiftDialogFragment.this.c = fitemDesireSelectGift;
                         LiveDesireSelectGiftDialogFragment.this.e.setClickable(true);
                         LiveDesireSelectGiftDialogFragment.this.e.animate().alpha(1.0f).setDuration(200L);
                     }
@@ -164,13 +159,13 @@ public class LiveDesireSelectGiftDialogFragment extends BaseDialogFragment imple
         if (this.b == fitemDesireSelectGift.b.goods_id) {
             return;
         }
-        FitemDesireSelectGift fitemDesireSelectGift2 = this.f12836c;
+        FitemDesireSelectGift fitemDesireSelectGift2 = this.c;
         if (fitemDesireSelectGift2 != null) {
             fitemDesireSelectGift2.a(false);
         }
         fitemDesireSelectGift.a(true);
         this.b = fitemDesireSelectGift.b.goods_id;
-        this.f12836c = fitemDesireSelectGift;
+        this.c = fitemDesireSelectGift;
         if (this.e.isClickable()) {
             return;
         }
@@ -178,41 +173,40 @@ public class LiveDesireSelectGiftDialogFragment extends BaseDialogFragment imple
         this.e.animate().alpha(1.0f).setDuration(200L);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f12835a = getActivity();
+        this.a = getActivity();
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_desire_adddesire_select_gift, (ViewGroup) null);
-        int a2 = DensityUtils.a(this.f12835a, 364.0f);
+        int a = DensityUtils.a(this.a, 364.0f);
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-        dialog.setContentView(inflate, new ViewGroup.LayoutParams(-1, a2));
+        dialog.setContentView(inflate, new ViewGroup.LayoutParams(-1, a));
         Window window = dialog.getWindow();
         window.setWindowAnimations(R.style.main_menu_animstyle);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
-        attributes.height = a2;
+        attributes.height = a;
         attributes.x = 0;
-        attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight() - a2;
+        attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight() - a;
         dialog.onWindowAttributesChanged(attributes);
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(R.layout.dialog_live_desire_adddesire_select_gift, viewGroup);
         this.d = (TextView) inflate.findViewById(R.id.tv_cancel);
         this.e = (TextView) inflate.findViewById(R.id.tv_save);
-        this.f = (RecyclerView) inflate.findViewById(R.id.recycler_view);
-        this.g = (SmartRefreshLayout) inflate.findViewById(R.id.smart_refresh);
+        this.f = inflate.findViewById(R.id.recycler_view);
+        this.g = inflate.findViewById(R.id.smart_refresh);
         this.j = (RelativeLayout) inflate.findViewById(R.id.loading);
         d();
         f();
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

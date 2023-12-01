@@ -8,11 +8,11 @@ import com.opos.exoplayer.core.h.d;
 public final class k implements d, t<Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Handler f25453a;
+    private final Handler f11765a;
     private final d.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.opos.exoplayer.core.i.q f25454c;
+    private final com.opos.exoplayer.core.i.q f11766c;
     private final com.opos.exoplayer.core.i.b d;
     private int e;
     private long f;
@@ -30,19 +30,19 @@ public final class k implements d, t<Object> {
     }
 
     public k(Handler handler, d.a aVar, int i) {
-        this(handler, aVar, i, com.opos.exoplayer.core.i.b.f25479a);
+        this(handler, aVar, i, com.opos.exoplayer.core.i.b.f11791a);
     }
 
     public k(Handler handler, d.a aVar, int i, com.opos.exoplayer.core.i.b bVar) {
-        this.f25453a = handler;
+        this.f11765a = handler;
         this.b = aVar;
-        this.f25454c = new com.opos.exoplayer.core.i.q(i);
+        this.f11766c = new com.opos.exoplayer.core.i.q(i);
         this.d = bVar;
         this.j = -1L;
     }
 
     private void a(final int i, final long j, final long j2) {
-        Handler handler = this.f25453a;
+        Handler handler = this.f11765a;
         if (handler == null || this.b == null) {
             return;
         }
@@ -73,9 +73,9 @@ public final class k implements d, t<Object> {
             this.h += j;
             this.i += this.g;
             if (i > 0) {
-                this.f25454c.a((int) Math.sqrt(this.g), (float) ((this.g * 8000) / j));
+                this.f11766c.a((int) Math.sqrt(this.g), (float) ((this.g * 8000) / j));
                 if (this.h >= 2000 || this.i >= PlaybackStateCompat.ACTION_SET_SHUFFLE_MODE_ENABLED) {
-                    float a3 = this.f25454c.a(0.5f);
+                    float a3 = this.f11766c.a(0.5f);
                     this.j = Float.isNaN(a3) ? -1L : a3;
                 }
             }

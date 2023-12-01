@@ -15,13 +15,9 @@ import java.util.Map;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYPrePayViewPagerAdapter.class */
 public class YYPrePayViewPagerAdapter extends PagerAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    public PayOption._pay_list f16210a;
+    public PayOption._pay_list a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f16211c;
+    public int c;
     private Context e;
     private List<PayOption._pay_list> f;
     private SelectModelCallBack j;
@@ -38,7 +34,7 @@ public class YYPrePayViewPagerAdapter extends PagerAdapter {
 
     public YYPrePayViewPagerAdapter(Context context, List<PayOption._pay_list> list, int i, int i2, SelectModelCallBack selectModelCallBack) {
         int i3 = 0;
-        this.f16211c = 0;
+        this.c = 0;
         this.e = context;
         this.f = list;
         this.j = selectModelCallBack;
@@ -46,14 +42,14 @@ public class YYPrePayViewPagerAdapter extends PagerAdapter {
             if (i3 >= this.f.size()) {
                 break;
             } else if (this.f.get(i3).money == 5.0d) {
-                this.f16211c = i3;
+                this.c = i3;
                 break;
             } else {
                 i3++;
             }
         }
         if (i > 0) {
-            this.f16211c = i2;
+            this.c = i2;
         }
     }
 
@@ -71,10 +67,10 @@ public class YYPrePayViewPagerAdapter extends PagerAdapter {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: a */
     public void b(int i, View view, PayOption._pay_list _pay_listVar) {
-        if (i == this.f16211c) {
+        if (i == this.c) {
             this.b = view;
-            this.f16211c = i;
-            this.f16210a = _pay_listVar;
+            this.c = i;
+            this.a = _pay_listVar;
             return;
         }
         View view2 = this.b;
@@ -87,8 +83,8 @@ public class YYPrePayViewPagerAdapter extends PagerAdapter {
         view.setScaleY(0.9f);
         view.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(70L);
         this.b = view;
-        this.f16211c = i;
-        this.f16210a = _pay_listVar;
+        this.c = i;
+        this.a = _pay_listVar;
         SelectModelCallBack selectModelCallBack = this.j;
         if (selectModelCallBack != null) {
             selectModelCallBack.a(_pay_listVar);
@@ -113,8 +109,8 @@ public class YYPrePayViewPagerAdapter extends PagerAdapter {
             if (i3 >= (i + 1) * 6 || i3 >= this.f.size()) {
                 break;
             }
-            if (i3 == this.f16211c) {
-                this.f16210a = this.f.get(i3);
+            if (i3 == this.c) {
+                this.a = this.f.get(i3);
             }
             arrayList.add(this.f.get(i3));
             i2 = i3 + 1;
@@ -122,7 +118,7 @@ public class YYPrePayViewPagerAdapter extends PagerAdapter {
         this.h.put(Integer.valueOf(i), arrayList);
         if (this.i.get(Integer.valueOf(i)) == null) {
             RecyclerView recyclerView = this.g.get(Integer.valueOf(i));
-            YYPrePayPriceAdapter yYPrePayPriceAdapter = new YYPrePayPriceAdapter(this.e, this.f16211c, i, 6, new YYPrePayPriceAdapter.SelectItemCallBack() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYPrePayViewPagerAdapter$xnDBQBtt0Kloo_Wovc66rfBJSwc
+            YYPrePayPriceAdapter yYPrePayPriceAdapter = new YYPrePayPriceAdapter(this.e, this.c, i, 6, new YYPrePayPriceAdapter.SelectItemCallBack() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYPrePayViewPagerAdapter$xnDBQBtt0Kloo_Wovc66rfBJSwc
                 @Override // com.blued.android.module.yy_china.adapter.YYPrePayPriceAdapter.SelectItemCallBack
                 public final void selectItem(int i4, View view, PayOption._pay_list _pay_listVar) {
                     YYPrePayViewPagerAdapter.this.b(i4, view, _pay_listVar);
@@ -132,7 +128,7 @@ public class YYPrePayViewPagerAdapter extends PagerAdapter {
             recyclerView.setAdapter(yYPrePayPriceAdapter);
             this.i.put(Integer.valueOf(i), yYPrePayPriceAdapter);
         }
-        this.i.get(Integer.valueOf(i)).f16208a = this.f16211c;
+        this.i.get(Integer.valueOf(i)).a = this.c;
         this.i.get(Integer.valueOf(i)).setDataAndNotify(arrayList);
     }
 
@@ -170,12 +166,10 @@ public class YYPrePayViewPagerAdapter extends PagerAdapter {
         }
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
         viewGroup.removeView((View) obj);
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public int getCount() {
         List<PayOption._pay_list> list = this.f;
         if (list == null || list.size() == 0) {
@@ -184,22 +178,20 @@ public class YYPrePayViewPagerAdapter extends PagerAdapter {
         return this.f.size() % 6 == 0 ? this.f.size() / 6 : (this.f.size() / 6) + 1;
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public Object instantiateItem(ViewGroup viewGroup, int i) {
-        RecyclerView recyclerView = this.g.get(Integer.valueOf(i));
-        RecyclerView recyclerView2 = recyclerView;
-        if (recyclerView == null) {
-            recyclerView2 = a(i);
+        View view = (View) this.g.get(Integer.valueOf(i));
+        View view2 = view;
+        if (view == null) {
+            view2 = a(i);
         }
         b(i);
-        if (recyclerView2.getParent() != null) {
-            ((ViewGroup) recyclerView2.getParent()).removeView(recyclerView2);
+        if (view2.getParent() != null) {
+            ((ViewGroup) view2.getParent()).removeView(view2);
         }
-        viewGroup.addView(recyclerView2);
-        return recyclerView2;
+        viewGroup.addView(view2);
+        return view2;
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public boolean isViewFromObject(View view, Object obj) {
         return view == obj;
     }

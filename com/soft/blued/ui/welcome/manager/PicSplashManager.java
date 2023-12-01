@@ -16,11 +16,11 @@ public class PicSplashManager extends SplashAdManagerAdapter {
     class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ IRequestHost f34651a;
+        final /* synthetic */ IRequestHost f20960a;
         final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ SplashAdListener f34652c;
+        final /* synthetic */ SplashAdListener f20961c;
         final /* synthetic */ ImageView d;
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -31,19 +31,17 @@ public class PicSplashManager extends SplashAdManagerAdapter {
 
         @Override // java.lang.Runnable
         public void run() {
-            ImageLoader.a(this.f34651a, this.b).a(new ImageLoadResult(this.f34651a) { // from class: com.soft.blued.ui.welcome.manager.PicSplashManager.1.1
-                @Override // com.blued.android.core.image.ImageLoadResult
+            ImageLoader.a(this.f20960a, this.b).a(new ImageLoadResult(this.f20960a) { // from class: com.soft.blued.ui.welcome.manager.PicSplashManager.1.1
                 public void a() {
-                    AnonymousClass1.this.f34652c.b();
+                    AnonymousClass1.this.f20961c.b();
                 }
 
-                @Override // com.blued.android.core.image.ImageLoadResult
                 public void a(int i, Exception exc) {
-                    AnonymousClass1.this.f34652c.a(i, exc.toString());
+                    AnonymousClass1.this.f20961c.a(i, exc.toString());
                 }
             }).a(this.d);
             ImageView imageView = this.d;
-            final SplashAdListener splashAdListener = this.f34652c;
+            final SplashAdListener splashAdListener = this.f20961c;
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.manager.-$$Lambda$PicSplashManager$1$LMtrDWKPxi8VxFnFqYWqWlRaouA
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {

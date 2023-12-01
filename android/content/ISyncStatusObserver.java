@@ -14,9 +14,8 @@ public interface ISyncStatusObserver extends IInterface {
         private static final String DESCRIPTOR = "android.content.ISyncStatusObserver";
         static final int TRANSACTION_onStatusChanged_0 = 1;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/content/ISyncStatusObserver$Stub$Proxy.class */
-        public static class Proxy implements ISyncStatusObserver {
+        private static class Proxy implements ISyncStatusObserver {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

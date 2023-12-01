@@ -5,15 +5,15 @@ public class b0 {
     public static byte[] b = new byte[0];
 
     /* renamed from: c  reason: collision with root package name */
-    public static b0 f3755c;
+    public static b0 f3707c;
 
     /* renamed from: a  reason: collision with root package name */
-    public s f3756a = new s();
+    public s f3708a = new s();
 
     public static b0 b() {
         b0 b0Var;
         synchronized (b) {
-            b0Var = f3755c;
+            b0Var = f3707c;
         }
         return b0Var;
     }
@@ -21,22 +21,22 @@ public class b0 {
     public void a(int i, int i2, float f, double[][] dArr, double[][] dArr2, double[][] dArr3, double[] dArr4) {
         synchronized (this) {
             synchronized (b) {
-                f3755c = this;
+                f3707c = this;
             }
-            this.f3756a.a(i, i2, f, dArr, dArr2, dArr3, dArr4);
+            this.f3708a.a(i, i2, f, dArr, dArr2, dArr3, dArr4);
         }
     }
 
     public void a(long j, float f) {
         synchronized (this) {
             g3.a();
-            this.f3756a.a(j, f);
+            this.f3708a.a(j, f);
         }
     }
 
     public void a(long j, float[] fArr, float[] fArr2) {
         synchronized (this) {
-            this.f3756a.a(j, fArr, fArr2);
+            this.f3708a.a(j, fArr, fArr2);
         }
     }
 
@@ -53,7 +53,7 @@ public class b0 {
         double[] a2;
         synchronized (this) {
             g3.a();
-            a2 = this.f3756a.a(j);
+            a2 = this.f3708a.a(j);
             if (g3.a()) {
                 k2.a(a2, 4, true);
             }
@@ -63,15 +63,15 @@ public class b0 {
 
     public void c() {
         synchronized (this) {
-            this.f3756a.a();
+            this.f3708a.a();
         }
     }
 
     public void d() {
         synchronized (this) {
-            this.f3756a.b();
+            this.f3708a.b();
             synchronized (b) {
-                f3755c = null;
+                f3707c = null;
             }
         }
     }

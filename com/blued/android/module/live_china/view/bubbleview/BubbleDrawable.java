@@ -14,13 +14,9 @@ import android.graphics.drawable.Drawable;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/bubbleview/BubbleDrawable.class */
 public class BubbleDrawable extends Drawable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RectF f15323a;
+    private RectF a;
     private Path b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BitmapShader f15324c;
+    private BitmapShader c;
     private Paint d;
     private float e;
     private float f;
@@ -36,9 +32,7 @@ public class BubbleDrawable extends Drawable {
     /* renamed from: com.blued.android.module.live_china.view.bubbleview.BubbleDrawable$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/bubbleview/BubbleDrawable$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f15325a;
+        static final /* synthetic */ int[] a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:16:0x0055 -> B:32:0x0014). Please submit an issue!!! */
@@ -58,21 +52,21 @@ public class BubbleDrawable extends Drawable {
             } catch (NoSuchFieldError e2) {
             }
             int[] iArr2 = new int[ArrowLocation.values().length];
-            f15325a = iArr2;
+            a = iArr2;
             try {
                 iArr2[ArrowLocation.LEFT.ordinal()] = 1;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f15325a[ArrowLocation.RIGHT.ordinal()] = 2;
+                a[ArrowLocation.RIGHT.ordinal()] = 2;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f15325a[ArrowLocation.TOP.ordinal()] = 3;
+                a[ArrowLocation.TOP.ordinal()] = 3;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f15325a[ArrowLocation.BOTTOM.ordinal()] = 4;
+                a[ArrowLocation.BOTTOM.ordinal()] = 4;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -125,20 +119,16 @@ public class BubbleDrawable extends Drawable {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/bubbleview/BubbleDrawable$Builder.class */
     public static class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static float f15330a = 25.0f;
+        public static float a = 25.0f;
         public static float b = 25.0f;
-
-        /* renamed from: c  reason: collision with root package name */
-        public static float f15331c = 20.0f;
+        public static float c = 20.0f;
         public static float d = 50.0f;
         public static int e = -65536;
         private RectF f;
         private Bitmap l;
         private boolean o;
-        private float g = f15330a;
-        private float h = f15331c;
+        private float g = a;
+        private float h = c;
         private float i = b;
         private float j = d;
         private int k = e;
@@ -202,7 +192,7 @@ public class BubbleDrawable extends Drawable {
     private BubbleDrawable(Builder builder) {
         this.b = new Path();
         this.d = new Paint(1);
-        this.f15323a = builder.f;
+        this.a = builder.f;
         this.f = builder.h;
         this.g = builder.i;
         this.e = builder.g;
@@ -222,8 +212,8 @@ public class BubbleDrawable extends Drawable {
         Matrix matrix = new Matrix();
         matrix.set(null);
         matrix.postScale(getIntrinsicWidth() / this.j.getWidth(), getIntrinsicHeight() / this.j.getHeight());
-        matrix.postTranslate(this.f15323a.left, this.f15323a.top);
-        this.f15324c.setLocalMatrix(matrix);
+        matrix.postTranslate(this.a.left, this.a.top);
+        this.c.setLocalMatrix(matrix);
     }
 
     private void a(Canvas canvas) {
@@ -234,10 +224,10 @@ public class BubbleDrawable extends Drawable {
             if (this.j == null) {
                 return;
             }
-            if (this.f15324c == null) {
-                this.f15324c = new BitmapShader(this.j, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+            if (this.c == null) {
+                this.c = new BitmapShader(this.j, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
             }
-            this.d.setShader(this.f15324c);
+            this.d.setShader(this.c);
             a();
         }
         a(this.k, this.b);
@@ -268,16 +258,16 @@ public class BubbleDrawable extends Drawable {
     }
 
     private void a(ArrowLocation arrowLocation, Path path) {
-        int i = AnonymousClass1.f15325a[arrowLocation.ordinal()];
+        int i = AnonymousClass1.a[arrowLocation.ordinal()];
         if (i == 1) {
-            a(this.f15323a, path);
+            a(this.a, path);
         } else if (i == 2) {
-            c(this.f15323a, path);
+            c(this.a, path);
         } else if (i == 3) {
-            b(this.f15323a, path);
+            b(this.a, path);
         } else if (i != 4) {
         } else {
-            d(this.f15323a, path);
+            d(this.a, path);
         }
     }
 
@@ -353,12 +343,12 @@ public class BubbleDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return (int) this.f15323a.height();
+        return (int) this.a.height();
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return (int) this.f15323a.width();
+        return (int) this.a.width();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -366,9 +356,8 @@ public class BubbleDrawable extends Drawable {
         return -3;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
+    protected void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
     }
 

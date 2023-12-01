@@ -13,15 +13,15 @@ import org.json.JSONObject;
 public class c1 implements INetworkClient {
 
     /* renamed from: a  reason: collision with root package name */
-    public final q1 f21202a;
+    public final q1 f7596a;
 
     public c1(q1 q1Var) {
-        this.f21202a = q1Var;
+        this.f7596a = q1Var;
     }
 
     @Override // com.bytedance.applog.network.INetworkClient
     public String get(String str, Map<String, String> map) {
-        return this.f21202a.a(0, str, (HashMap) map, null);
+        return this.f7596a.a(0, str, (HashMap) map, null);
     }
 
     @Override // com.bytedance.applog.network.INetworkClient
@@ -45,16 +45,16 @@ public class c1 implements INetworkClient {
         if (!TextUtils.isEmpty(str2)) {
             hashMap.put("Content-Type", str2);
         }
-        return this.f21202a.a(1, str, hashMap, bArr);
+        return this.f7596a.a(1, str, hashMap, bArr);
     }
 
     @Override // com.bytedance.applog.network.INetworkClient
     public String post(String str, byte[] bArr, Map<String, String> map) {
-        return this.f21202a.a(1, str, (HashMap) map, bArr);
+        return this.f7596a.a(1, str, (HashMap) map, bArr);
     }
 
     @Override // com.bytedance.applog.network.INetworkClient
     public byte[] postStream(String str, byte[] bArr, Map<String, String> map) {
-        return this.f21202a.a(1, str, (HashMap) map, bArr, 1, -1).b;
+        return this.f7596a.a(1, str, (HashMap) map, bArr, 1, -1).b;
     }
 }

@@ -12,10 +12,10 @@ public class mb extends com.ss.android.socialbase.appdownloader.b.ox {
 
     /* renamed from: com.ss.android.socialbase.appdownloader.hj.mb$mb  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/socialbase/appdownloader/hj/mb$mb.class */
-    static class C0884mb implements jb {
+    static class C0714mb implements jb {
         private AlertDialog mb;
 
-        public C0884mb(AlertDialog.Builder builder) {
+        public C0714mb(AlertDialog.Builder builder) {
             if (builder != null) {
                 this.mb = builder.show();
             }
@@ -45,7 +45,7 @@ public class mb extends com.ss.android.socialbase.appdownloader.b.ox {
 
     @Override // com.ss.android.socialbase.appdownloader.b.je
     public jb mb() {
-        return new C0884mb(this.mb);
+        return new C0714mb(this.mb);
     }
 
     @Override // com.ss.android.socialbase.appdownloader.b.je

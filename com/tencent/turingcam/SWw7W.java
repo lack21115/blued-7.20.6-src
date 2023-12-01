@@ -4,11 +4,11 @@ package com.tencent.turingcam;
 public final class SWw7W extends SkEpO {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f39815a = 0;
+    public int f26124a = 0;
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f39816c = "";
+    public String f26125c = "";
     public String d = "";
     public String e = "";
     public String f = "";
@@ -18,9 +18,9 @@ public final class SWw7W extends SkEpO {
 
     @Override // com.tencent.turingcam.SkEpO
     public void a(ShGzN shGzN) {
-        shGzN.a(this.f39815a, 0);
+        shGzN.a(this.f26124a, 0);
         shGzN.a(this.b, 1);
-        shGzN.a(this.f39816c, 2);
+        shGzN.a(this.f26125c, 2);
         shGzN.a(this.d, 3);
         shGzN.a(this.e, 4);
         shGzN.a(this.f, 5);

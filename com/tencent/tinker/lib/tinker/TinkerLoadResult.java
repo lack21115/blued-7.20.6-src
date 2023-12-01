@@ -3,7 +3,6 @@ package com.tencent.tinker.lib.tinker;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.loader.TinkerRuntimeException;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 import com.tencent.tinker.loader.shareutil.ShareIntentUtil;
@@ -67,10 +66,10 @@ public class TinkerLoadResult {
             ShareTinkerLog.i(TAG, "parseTinkerResult oldVersion:%s, newVersion:%s, current:%s", stringExtra2, stringExtra3, this.currentVersion);
             String patchVersionDirectory = SharePatchFileUtil.getPatchVersionDirectory(this.currentVersion);
             if (!ShareTinkerInternals.isNullOrNil(patchVersionDirectory)) {
-                this.patchVersionDirectory = new File(patchDirectory.getAbsolutePath() + BridgeUtil.SPLIT_MARK + patchVersionDirectory);
+                this.patchVersionDirectory = new File(patchDirectory.getAbsolutePath() + "/" + patchVersionDirectory);
                 this.patchVersionFile = new File(this.patchVersionDirectory.getAbsolutePath(), SharePatchFileUtil.getPatchVersionFile(this.currentVersion));
                 this.dexDirectory = new File(this.patchVersionDirectory, ShareConstants.DEX_PATH);
-                this.libraryDirectory = new File(this.patchVersionDirectory, "lib");
+                this.libraryDirectory = new File(this.patchVersionDirectory, ShareConstants.SO_PATH);
                 this.resourceDirectory = new File(this.patchVersionDirectory, ShareConstants.RES_PATH);
                 this.resourceFile = new File(this.resourceDirectory, ShareConstants.RES_NAME);
             }

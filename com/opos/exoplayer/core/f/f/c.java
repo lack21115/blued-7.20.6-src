@@ -14,11 +14,11 @@ import java.util.TreeSet;
 final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25381a;
+    public final String f11693a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final boolean f25382c;
+    public final boolean f11694c;
     public final long d;
     public final long e;
     public final b f;
@@ -29,11 +29,11 @@ final class c {
     private List<c> k;
 
     private c(String str, String str2, long j, long j2, b bVar, String[] strArr, String str3) {
-        this.f25381a = str;
+        this.f11693a = str;
         this.b = str2;
         this.f = bVar;
         this.h = strArr;
-        this.f25382c = str2 != null;
+        this.f11694c = str2 != null;
         this.d = j;
         this.e = j2;
         this.g = (String) com.opos.exoplayer.core.i.a.a(str3);
@@ -153,12 +153,12 @@ final class c {
         if (!"".equals(str2)) {
             str = str2;
         }
-        if (this.f25382c && z) {
+        if (this.f11694c && z) {
             a(str, map).append((CharSequence) this.b);
-        } else if ("br".equals(this.f25381a) && z) {
+        } else if ("br".equals(this.f11693a) && z) {
             a(str, map).append('\n');
-        } else if (!TtmlUtils.TAG_METADATA.equals(this.f25381a) && a(j)) {
-            boolean equals = "p".equals(this.f25381a);
+        } else if (!TtmlUtils.TAG_METADATA.equals(this.f11693a) && a(j)) {
+            boolean equals = "p".equals(this.f11693a);
             for (Map.Entry<String, SpannableStringBuilder> entry : map.entrySet()) {
                 this.i.put(entry.getKey(), Integer.valueOf(entry.getValue().length()));
             }
@@ -204,7 +204,7 @@ final class c {
     }
 
     private void a(TreeSet<Long> treeSet, boolean z) {
-        boolean equals = "p".equals(this.f25381a);
+        boolean equals = "p".equals(this.f11693a);
         if (z || equals) {
             long j = this.d;
             if (j != com.anythink.expressad.exoplayer.b.b) {
@@ -250,9 +250,9 @@ final class c {
         a(j, false, this.g, (Map<String, SpannableStringBuilder>) treeMap);
         a(map, treeMap);
         ArrayList arrayList = new ArrayList();
-        for (Map.Entry<String, SpannableStringBuilder> entry : treeMap.entrySet()) {
+        for (Map.Entry entry : treeMap.entrySet()) {
             d dVar = map2.get(entry.getKey());
-            arrayList.add(new com.opos.exoplayer.core.f.b(a(entry.getValue()), null, dVar.f25384c, dVar.d, dVar.e, dVar.b, Integer.MIN_VALUE, dVar.f));
+            arrayList.add(new com.opos.exoplayer.core.f.b(a((SpannableStringBuilder) entry.getValue()), null, dVar.f11696c, dVar.d, dVar.e, dVar.b, Integer.MIN_VALUE, dVar.f));
         }
         return arrayList;
     }

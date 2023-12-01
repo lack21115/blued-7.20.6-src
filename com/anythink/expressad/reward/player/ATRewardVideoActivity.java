@@ -22,7 +22,6 @@ import com.anythink.expressad.videocommon.b.c;
 import com.anythink.expressad.videocommon.b.e;
 import com.anythink.expressad.videocommon.b.n;
 import com.anythink.expressad.videocommon.e.d;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.List;
 import java.util.Map;
 
@@ -30,11 +29,11 @@ import java.util.Map;
 public class ATRewardVideoActivity extends AbstractJSActivity {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f8166a = "unitId";
+    public static String f5326a = "unitId";
     public static String b = "userId";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f8167c = "reward";
+    public static String f5327c = "reward";
     public static String d = "mute";
     public static String e = "isIV";
     public static String f = "isBid";
@@ -138,25 +137,25 @@ public class ATRewardVideoActivity extends AbstractJSActivity {
     static final class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<c> f8172a;
+        private final List<c> f5332a;
         private final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f8173c;
+        private final String f5333c;
 
         public a(List<c> list, String str, String str2) {
-            this.f8172a = list;
+            this.f5332a = list;
             this.b = str;
-            this.f8173c = str2;
+            this.f5333c = str2;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                if (this.f8172a == null || this.f8172a.size() <= 0) {
+                if (this.f5332a == null || this.f5332a.size() <= 0) {
                     return;
                 }
-                for (c cVar : this.f8172a) {
+                for (c cVar : this.f5332a) {
                     if (cVar != null && cVar.n() != null) {
                         com.anythink.expressad.foundation.d.c n = cVar.n();
                         String str = n.Z() + n.aZ() + n.S();
@@ -169,11 +168,11 @@ public class ATRewardVideoActivity extends AbstractJSActivity {
                         }
                         if (n != null && n.M() != null) {
                             if (!TextUtils.isEmpty(n.M().e())) {
-                                com.anythink.expressad.videocommon.a.b(this.b + BridgeUtil.UNDERLINE_STR + n.aZ() + BridgeUtil.UNDERLINE_STR + this.f8173c + BridgeUtil.UNDERLINE_STR + n.M().e());
+                                com.anythink.expressad.videocommon.a.b(this.b + "_" + n.aZ() + "_" + this.f5333c + "_" + n.M().e());
                                 com.anythink.expressad.videocommon.a.b(n.w(), n);
                             }
                             if (!TextUtils.isEmpty(n.ar())) {
-                                com.anythink.expressad.videocommon.a.b(this.b + BridgeUtil.UNDERLINE_STR + this.f8173c + BridgeUtil.UNDERLINE_STR + n.ar());
+                                com.anythink.expressad.videocommon.a.b(this.b + "_" + this.f5333c + "_" + n.ar());
                             }
                         }
                     }
@@ -249,7 +248,7 @@ public class ATRewardVideoActivity extends AbstractJSActivity {
     }
 
     private static WindVaneWebView a(String str) {
-        a.C0164a a2 = com.anythink.expressad.videocommon.a.a(str);
+        a.C0093a a2 = com.anythink.expressad.videocommon.a.a(str);
         if (a2 != null) {
             return a2.a();
         }
@@ -553,9 +552,9 @@ public class ATRewardVideoActivity extends AbstractJSActivity {
             anythinkBTContainer.setNotchPadding(i2, i3, i4, i5, i6);
         }
         com.anythink.expressad.video.dynview.a.b.e = i2;
-        com.anythink.expressad.video.dynview.a.b.f8349a = i3;
+        com.anythink.expressad.video.dynview.a.b.f5509a = i3;
         com.anythink.expressad.video.dynview.a.b.b = i4;
-        com.anythink.expressad.video.dynview.a.b.f8350c = i5;
+        com.anythink.expressad.video.dynview.a.b.f5510c = i5;
         com.anythink.expressad.video.dynview.a.b.d = i6;
     }
 
@@ -616,7 +615,7 @@ public class ATRewardVideoActivity extends AbstractJSActivity {
         com.anythink.expressad.foundation.b.a.b().b(this);
         try {
             Intent intent = getIntent();
-            this.q = intent.getStringExtra(f8166a);
+            this.q = intent.getStringExtra(f5326a);
             int a2 = i.a(getApplicationContext(), "anythink_more_offer_activity", "layout");
             if (a2 < 0) {
                 b("no anythink_more_offer_activity layout");
@@ -627,9 +626,9 @@ public class ATRewardVideoActivity extends AbstractJSActivity {
                 b("data empty error");
                 return;
             }
-            this.C = com.anythink.expressad.reward.b.a.f8156c.get(this.q);
+            this.C = com.anythink.expressad.reward.b.a.f5316c.get(this.q);
             this.r = intent.getStringExtra(com.anythink.expressad.a.y);
-            this.t = com.anythink.expressad.videocommon.c.c.b(intent.getStringExtra(f8167c));
+            this.t = com.anythink.expressad.videocommon.c.c.b(intent.getStringExtra(f5327c));
             this.s = intent.getStringExtra(b);
             this.u = intent.getIntExtra(d, 2);
             this.v = intent.getBooleanExtra(e, false);
@@ -704,7 +703,7 @@ public class ATRewardVideoActivity extends AbstractJSActivity {
                     this.O = cVar.Z();
                 }
             }
-            a.C0164a a8 = com.anythink.expressad.videocommon.a.a(this.q + BridgeUtil.UNDERLINE_STR + this.O + BridgeUtil.UNDERLINE_STR + str);
+            a.C0093a a8 = com.anythink.expressad.videocommon.a.a(this.q + "_" + this.O + "_" + str);
             WindVaneWebView a9 = a8 != null ? a8.a() : null;
             this.M = a9;
             if (a9 != null) {
@@ -841,7 +840,7 @@ public class ATRewardVideoActivity extends AbstractJSActivity {
     @Override // com.anythink.expressad.video.signal.activity.AbstractJSActivity, com.anythink.expressad.activity.ATBaseActivity, android.app.Activity
     public void onResume() {
         super.onResume();
-        if (com.anythink.expressad.foundation.f.b.f7818c) {
+        if (com.anythink.expressad.foundation.f.b.f4978c) {
             return;
         }
         com.anythink.expressad.foundation.b.a.b().b(this);
@@ -881,7 +880,7 @@ public class ATRewardVideoActivity extends AbstractJSActivity {
                 ATRewardVideoActivity.this.onResume();
             }
         };
-        if (com.anythink.expressad.foundation.f.b.f7818c) {
+        if (com.anythink.expressad.foundation.f.b.f4978c) {
             return;
         }
         ATTempContainer aTTempContainer = this.K;

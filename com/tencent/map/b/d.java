@@ -12,11 +12,11 @@ import java.util.List;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f37210a = null;
+    private Context f23519a = null;
     private TelephonyManager b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private a f37211c = null;
+    private a f23520c = null;
     private c d = null;
     private b e = null;
     private boolean f = false;
@@ -29,11 +29,11 @@ public final class d {
     public final class a extends PhoneStateListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f37213a;
+        private int f23522a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f37214c = 0;
+        private int f23523c = 0;
         private int d = 0;
         private int e = 0;
         private int f = -1;
@@ -46,10 +46,10 @@ public final class d {
         private Method m = null;
 
         public a(int i, int i2) {
-            this.f37213a = 0;
+            this.f23522a = 0;
             this.b = 0;
             this.b = i;
-            this.f37213a = i2;
+            this.f23522a = i2;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:45:0x01f2  */
@@ -70,7 +70,7 @@ public final class d {
 
         @Override // android.telephony.PhoneStateListener
         public final void onSignalStrengthChanged(int i) {
-            if (this.f37213a == 1) {
+            if (this.f23522a == 1) {
                 d.c(d.this);
             }
             if (Math.abs(i - ((this.f + 113) / 2)) > 3) {
@@ -82,7 +82,7 @@ public final class d {
                 int i3 = i2 - 113;
                 this.f = i3;
                 d dVar = d.this;
-                dVar.e = new b(dVar, this.f37213a, this.b, this.f37214c, this.d, this.e, i3, this.g, this.h);
+                dVar.e = new b(dVar, this.f23522a, this.b, this.f23523c, this.d, this.e, i3, this.g, this.h);
                 if (d.this.d != null) {
                     d.this.d.a(d.this.e);
                 }
@@ -94,11 +94,11 @@ public final class d {
     public final class b implements Cloneable {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f37215a;
+        public int f23524a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f37216c;
+        public int f23525c;
         public int d;
         public int e;
         public int f;
@@ -106,17 +106,17 @@ public final class d {
         public int h;
 
         public b(d dVar, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-            this.f37215a = 0;
+            this.f23524a = 0;
             this.b = 0;
-            this.f37216c = 0;
+            this.f23525c = 0;
             this.d = 0;
             this.e = 0;
             this.f = 0;
             this.g = Integer.MAX_VALUE;
             this.h = Integer.MAX_VALUE;
-            this.f37215a = i;
+            this.f23524a = i;
             this.b = i2;
-            this.f37216c = i3;
+            this.f23525c = i3;
             this.d = i4;
             this.e = i5;
             this.f = i6;
@@ -162,6 +162,7 @@ public final class d {
         return false;
     }
 
+    /* JADX WARN: Type inference failed for: r0v3, types: [com.tencent.map.b.d$1] */
     static /* synthetic */ void c(d dVar) {
         if (!dVar.j) {
             dVar.j = true;
@@ -186,9 +187,9 @@ public final class d {
     public final void a() {
         synchronized (this.h) {
             if (this.f) {
-                if (this.b != null && this.f37211c != null) {
+                if (this.b != null && this.f23520c != null) {
                     try {
-                        this.b.listen(this.f37211c, 0);
+                        this.b.listen(this.f23520c, 0);
                     } catch (Exception e) {
                         this.f = false;
                     }
@@ -206,7 +207,7 @@ public final class d {
             if (context == null || cVar == null) {
                 return false;
             }
-            this.f37210a = context;
+            this.f23519a = context;
             this.d = cVar;
             try {
                 TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
@@ -216,7 +217,7 @@ public final class d {
                 }
                 int phoneType = telephonyManager.getPhoneType();
                 a aVar = new a(a(phoneType), phoneType);
-                this.f37211c = aVar;
+                this.f23520c = aVar;
                 if (aVar == null) {
                     return false;
                 }

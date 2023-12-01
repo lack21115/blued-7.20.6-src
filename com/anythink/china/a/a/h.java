@@ -13,13 +13,11 @@ public interface h extends IInterface {
 
         /* renamed from: com.anythink.china.a.a.h$a$a  reason: collision with other inner class name */
         /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/a/a/h$a$a.class */
-        public static final class C0084a implements h {
+        public static final class C0044a implements h {
+            public IBinder a;
 
-            /* renamed from: a  reason: collision with root package name */
-            public IBinder f6231a;
-
-            public C0084a(IBinder iBinder) {
-                this.f6231a = iBinder;
+            public C0044a(IBinder iBinder) {
+                this.a = iBinder;
             }
 
             public final String a(String str, String str2, String str3) {
@@ -31,7 +29,7 @@ public interface h extends IInterface {
                         obtain.writeString(str);
                         obtain.writeString(str2);
                         obtain.writeString(str3);
-                        this.f6231a.transact(1, obtain, obtain2, 0);
+                        this.a.transact(1, obtain, obtain2, 0);
                         obtain2.readException();
                         return obtain2.readString();
                     } catch (Exception e) {
@@ -48,7 +46,7 @@ public interface h extends IInterface {
 
             @Override // android.os.IInterface
             public final IBinder asBinder() {
-                return this.f6231a;
+                return this.a;
             }
         }
 
@@ -58,7 +56,7 @@ public interface h extends IInterface {
             }
             try {
                 IInterface queryLocalInterface = iBinder.queryLocalInterface("com.heytap.openid.IOpenID");
-                return (queryLocalInterface == null || !(queryLocalInterface instanceof h)) ? new C0084a(iBinder) : (h) queryLocalInterface;
+                return (queryLocalInterface == null || !(queryLocalInterface instanceof h)) ? new C0044a(iBinder) : (h) queryLocalInterface;
             } catch (Throwable th) {
                 return null;
             }

@@ -60,7 +60,7 @@ final class ImmutableMapValues<K, V> extends ImmutableCollection<V> {
         return true;
     }
 
-    @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
     public UnmodifiableIterator<V> iterator() {
         return new UnmodifiableIterator<V>() { // from class: com.google.common.collect.ImmutableMapValues.1
             final UnmodifiableIterator<Map.Entry<K, V>> entryItr;
@@ -81,7 +81,7 @@ final class ImmutableMapValues<K, V> extends ImmutableCollection<V> {
         };
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.map.size();
     }

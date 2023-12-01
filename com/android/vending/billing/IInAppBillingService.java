@@ -60,9 +60,7 @@ public interface IInAppBillingService extends IInterface {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* loaded from: source-6737240-dex2jar.jar:com/android/vending/billing/IInAppBillingService$Stub$Proxy.class */
         public static class Proxy implements IInAppBillingService {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static IInAppBillingService f5815a;
+            public static IInAppBillingService a;
             private IBinder b;
 
             Proxy(IBinder iBinder) {
@@ -106,10 +104,10 @@ public interface IInAppBillingService extends IInterface {
                     }
                     if (this.b.transact(2, obtain, obtain2, 0) || Stub.a() == null) {
                         obtain2.readException();
-                        Bundle createFromParcel = obtain2.readInt() != 0 ? Bundle.CREATOR.createFromParcel(obtain2) : null;
+                        Bundle bundle2 = obtain2.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(obtain2) : null;
                         obtain2.recycle();
                         obtain.recycle();
-                        return createFromParcel;
+                        return bundle2;
                     }
                     return Stub.a().a(i, str, str2, bundle);
                 } finally {
@@ -130,10 +128,10 @@ public interface IInAppBillingService extends IInterface {
                     obtain.writeString(str3);
                     if (this.b.transact(4, obtain, obtain2, 0) || Stub.a() == null) {
                         obtain2.readException();
-                        Bundle createFromParcel = obtain2.readInt() != 0 ? Bundle.CREATOR.createFromParcel(obtain2) : null;
+                        Bundle bundle = obtain2.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(obtain2) : null;
                         obtain2.recycle();
                         obtain.recycle();
-                        return createFromParcel;
+                        return bundle;
                     }
                     return Stub.a().a(i, str, str2, str3);
                 } finally {
@@ -155,10 +153,10 @@ public interface IInAppBillingService extends IInterface {
                     obtain.writeString(str4);
                     if (this.b.transact(3, obtain, obtain2, 0) || Stub.a() == null) {
                         obtain2.readException();
-                        Bundle createFromParcel = obtain2.readInt() != 0 ? Bundle.CREATOR.createFromParcel(obtain2) : null;
+                        Bundle bundle = obtain2.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(obtain2) : null;
                         obtain2.recycle();
                         obtain.recycle();
-                        return createFromParcel;
+                        return bundle;
                     }
                     return Stub.a().a(i, str, str2, str3, str4);
                 } finally {
@@ -190,10 +188,10 @@ public interface IInAppBillingService extends IInterface {
                         return a2;
                     }
                     obtain2.readException();
-                    Bundle createFromParcel = obtain2.readInt() != 0 ? Bundle.CREATOR.createFromParcel(obtain2) : null;
+                    Bundle bundle = obtain2.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return bundle;
                 } catch (Throwable th2) {
                     th = th2;
                     obtain2.recycle();
@@ -253,7 +251,7 @@ public interface IInAppBillingService extends IInterface {
         }
 
         public static IInAppBillingService a() {
-            return Proxy.f5815a;
+            return Proxy.a;
         }
 
         public static IInAppBillingService a(IBinder iBinder) {
@@ -273,13 +271,24 @@ public interface IInAppBillingService extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface("com.android.vending.billing.IInAppBillingService");
-                    int a2 = a(parcel.readInt(), parcel.readString(), parcel.readString());
+                    int a = a(parcel.readInt(), parcel.readString(), parcel.readString());
                     parcel2.writeNoException();
-                    parcel2.writeInt(a2);
+                    parcel2.writeInt(a);
                     return true;
                 case 2:
                     parcel.enforceInterface("com.android.vending.billing.IInAppBillingService");
-                    Bundle a3 = a(parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    Bundle a2 = a(parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
+                    parcel2.writeNoException();
+                    if (a2 == null) {
+                        parcel2.writeInt(0);
+                        return true;
+                    }
+                    parcel2.writeInt(1);
+                    a2.writeToParcel(parcel2, 1);
+                    return true;
+                case 3:
+                    parcel.enforceInterface("com.android.vending.billing.IInAppBillingService");
+                    Bundle a3 = a(parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readString(), parcel.readString());
                     parcel2.writeNoException();
                     if (a3 == null) {
                         parcel2.writeInt(0);
@@ -288,9 +297,9 @@ public interface IInAppBillingService extends IInterface {
                     parcel2.writeInt(1);
                     a3.writeToParcel(parcel2, 1);
                     return true;
-                case 3:
+                case 4:
                     parcel.enforceInterface("com.android.vending.billing.IInAppBillingService");
-                    Bundle a4 = a(parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readString(), parcel.readString());
+                    Bundle a4 = a(parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readString());
                     parcel2.writeNoException();
                     if (a4 == null) {
                         parcel2.writeInt(0);
@@ -298,17 +307,6 @@ public interface IInAppBillingService extends IInterface {
                     }
                     parcel2.writeInt(1);
                     a4.writeToParcel(parcel2, 1);
-                    return true;
-                case 4:
-                    parcel.enforceInterface("com.android.vending.billing.IInAppBillingService");
-                    Bundle a5 = a(parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readString());
-                    parcel2.writeNoException();
-                    if (a5 == null) {
-                        parcel2.writeInt(0);
-                        return true;
-                    }
-                    parcel2.writeInt(1);
-                    a5.writeToParcel(parcel2, 1);
                     return true;
                 case 5:
                     parcel.enforceInterface("com.android.vending.billing.IInAppBillingService");
@@ -318,20 +316,20 @@ public interface IInAppBillingService extends IInterface {
                     return true;
                 case 6:
                     parcel.enforceInterface("com.android.vending.billing.IInAppBillingService");
-                    int c2 = c(parcel.readInt(), parcel.readString(), parcel.readString());
+                    int c = c(parcel.readInt(), parcel.readString(), parcel.readString());
                     parcel2.writeNoException();
-                    parcel2.writeInt(c2);
+                    parcel2.writeInt(c);
                     return true;
                 case 7:
                     parcel.enforceInterface("com.android.vending.billing.IInAppBillingService");
-                    Bundle a6 = a(parcel.readInt(), parcel.readString(), parcel.createStringArrayList(), parcel.readString(), parcel.readString(), parcel.readString());
+                    Bundle a5 = a(parcel.readInt(), parcel.readString(), parcel.createStringArrayList(), parcel.readString(), parcel.readString(), parcel.readString());
                     parcel2.writeNoException();
-                    if (a6 == null) {
+                    if (a5 == null) {
                         parcel2.writeInt(0);
                         return true;
                     }
                     parcel2.writeInt(1);
-                    a6.writeToParcel(parcel2, 1);
+                    a5.writeToParcel(parcel2, 1);
                     return true;
                 default:
                     return super.onTransact(i, parcel, parcel2, i2);

@@ -12,10 +12,10 @@ public class DoActionEvent implements Event {
     public static final String TAG = "DoActionEvent";
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private EventCenter f1106;
+    private EventCenter f1059;
 
     public DoActionEvent(EventCenter eventCenter) {
-        this.f1106 = eventCenter;
+        this.f1059 = eventCenter;
     }
 
     @Override // com.youzan.androidsdk.event.Event
@@ -25,7 +25,7 @@ public class DoActionEvent implements Event {
             if (TextUtils.isEmpty(optString)) {
                 Log.e(TAG, "Action 异常");
             } else {
-                this.f1106.dispatch(context, optString, str);
+                this.f1059.dispatch(context, optString, str);
             }
         } catch (JSONException e) {
             e.printStackTrace();

@@ -22,6 +22,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
+import com.huawei.openalliance.ad.constant.t;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -889,7 +890,7 @@ public class Camera {
                 sb.append(str);
                 sb.append("=");
                 sb.append(this.mMap.get(str));
-                sb.append(";");
+                sb.append(t.aE);
             }
             sb.deleteCharAt(sb.length() - 1);
             return sb.toString();

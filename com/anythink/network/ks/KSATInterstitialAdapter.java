@@ -10,8 +10,8 @@ import com.anythink.core.api.ATBiddingResult;
 import com.anythink.core.api.ATInitMediation;
 import com.anythink.core.api.BaseAd;
 import com.anythink.core.api.MediationInitCallback;
-import com.anythink.core.common.b.g;
 import com.anythink.interstitial.unitgroup.api.CustomInterstitialAdapter;
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.kwad.sdk.api.KsAdSDK;
 import com.kwad.sdk.api.KsFullScreenVideoAd;
 import com.kwad.sdk.api.KsInterstitialAd;
@@ -26,11 +26,11 @@ import java.util.Map;
 public class KSATInterstitialAdapter extends CustomInterstitialAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    long f8994a;
+    long f6154a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f8995c;
+    boolean f6155c;
     String e;
     KsFullScreenVideoAd f;
     KsInterstitialAd g;
@@ -72,7 +72,7 @@ public class KSATInterstitialAdapter extends CustomInterstitialAdapter {
                 ATBiddingListener aTBiddingListener = KSATInterstitialAdapter.this.mBiddingListener;
                 StringBuilder sb = new StringBuilder();
                 sb.append(System.currentTimeMillis());
-                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), kSATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), kSATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
             }
         }
 
@@ -118,7 +118,7 @@ public class KSATInterstitialAdapter extends CustomInterstitialAdapter {
                 ATBiddingListener aTBiddingListener = KSATInterstitialAdapter.this.mBiddingListener;
                 StringBuilder sb = new StringBuilder();
                 sb.append(System.currentTimeMillis());
-                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), kSATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), kSATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
             }
         }
 
@@ -137,7 +137,7 @@ public class KSATInterstitialAdapter extends CustomInterstitialAdapter {
 
     private void a() {
         int i = 1;
-        KsScene.Builder adNum = new KsScene.Builder(this.f8994a).adNum(1);
+        KsScene.Builder adNum = new KsScene.Builder(this.f6154a).adNum(1);
         if (this.b == 2) {
             i = 2;
         }
@@ -155,7 +155,7 @@ public class KSATInterstitialAdapter extends CustomInterstitialAdapter {
 
     static /* synthetic */ void a(KSATInterstitialAdapter kSATInterstitialAdapter) {
         int i = 1;
-        KsScene.Builder adNum = new KsScene.Builder(kSATInterstitialAdapter.f8994a).adNum(1);
+        KsScene.Builder adNum = new KsScene.Builder(kSATInterstitialAdapter.f6154a).adNum(1);
         if (kSATInterstitialAdapter.b == 2) {
             i = 2;
         }
@@ -178,12 +178,12 @@ public class KSATInterstitialAdapter extends CustomInterstitialAdapter {
             return false;
         }
         try {
-            this.f8994a = Long.parseLong(stringFromMap2);
+            this.f6154a = Long.parseLong(stringFromMap2);
         } catch (NumberFormatException e) {
         }
-        this.f8995c = true;
+        this.f6155c = true;
         if (map.containsKey("video_muted")) {
-            this.f8995c = TextUtils.equals("0", ATInitMediation.getStringFromMap(map, "video_muted"));
+            this.f6155c = TextUtils.equals("0", ATInitMediation.getStringFromMap(map, "video_muted"));
         }
         if (map.containsKey("orientation")) {
             this.b = ATInitMediation.getIntFromMap(map, "orientation");
@@ -191,11 +191,11 @@ public class KSATInterstitialAdapter extends CustomInterstitialAdapter {
         if (map.containsKey("is_video")) {
             this.d = ATInitMediation.getIntFromMap(map, "is_video", 1);
         }
-        if (map.containsKey(g.k.o)) {
-            this.i = ATInitMediation.getDoubleFromMap(map, g.k.o);
+        if (map.containsKey("anythink_gsp")) {
+            this.i = ATInitMediation.getDoubleFromMap(map, "anythink_gsp");
         }
-        if (map.containsKey("payload")) {
-            this.e = KSATInitManager.getInstance().getPayloadInfo(ATInitMediation.getStringFromMap(map, "payload"), this.i);
+        if (map.containsKey(AssistPushConsts.MSG_TYPE_PAYLOAD)) {
+            this.e = KSATInitManager.getInstance().getPayloadInfo(ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD), this.i);
             return true;
         }
         return true;
@@ -206,7 +206,6 @@ public class KSATInterstitialAdapter extends CustomInterstitialAdapter {
         return 2;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
         KsFullScreenVideoAd ksFullScreenVideoAd = this.f;
         if (ksFullScreenVideoAd != null) {
@@ -215,33 +214,28 @@ public class KSATInterstitialAdapter extends CustomInterstitialAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void getBidRequestInfo(Context context, Map<String, Object> map, Map<String, Object> map2, ATBidRequestInfoListener aTBidRequestInfoListener) {
-        this.f8994a = ATInitMediation.getLongFromMap(map, "position_id");
+        this.f6154a = ATInitMediation.getLongFromMap(map, "position_id");
         KSATInitManager.getInstance().a(context, map, map2, aTBidRequestInfoListener);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return KSATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
         try {
-            return String.valueOf(this.f8994a);
+            return String.valueOf(this.f6154a);
         } catch (Exception e) {
             e.printStackTrace();
             return "";
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return KSATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
         if (this.d == 0) {
             return this.g != null;
@@ -250,16 +244,13 @@ public class KSATInterstitialAdapter extends CustomInterstitialAdapter {
         return ksFullScreenVideoAd != null && ksFullScreenVideoAd.isAdEnable();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(Context context, Map<String, Object> map, Map<String, Object> map2) {
         if (a(map)) {
             KSATInitManager.getInstance().initSDK(context, map, new MediationInitCallback() { // from class: com.anythink.network.ks.KSATInterstitialAdapter.1
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onFail(String str) {
                     KSATInterstitialAdapter.this.notifyATLoadFail("", str);
                 }
 
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onSuccess() {
                     KSATInterstitialAdapter.a(KSATInterstitialAdapter.this);
                 }
@@ -271,7 +262,7 @@ public class KSATInterstitialAdapter extends CustomInterstitialAdapter {
 
     @Override // com.anythink.interstitial.unitgroup.api.CustomInterstitialAdapter
     public void show(Activity activity) {
-        KsVideoPlayConfig build = new KsVideoPlayConfig.Builder().showLandscape(this.b == 2).skipThirtySecond(false).videoSoundEnable(this.f8995c).build();
+        KsVideoPlayConfig build = new KsVideoPlayConfig.Builder().showLandscape(this.b == 2).skipThirtySecond(false).videoSoundEnable(this.f6155c).build();
         KsFullScreenVideoAd ksFullScreenVideoAd = this.f;
         if (ksFullScreenVideoAd != null && activity != null) {
             ksFullScreenVideoAd.setFullScreenVideoAdInteractionListener(new KsFullScreenVideoAd.FullScreenVideoAdInteractionListener() { // from class: com.anythink.network.ks.KSATInterstitialAdapter.4
@@ -385,7 +376,6 @@ public class KSATInterstitialAdapter extends CustomInterstitialAdapter {
         this.g.showInterstitialAd(activity, build);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.h = true;
         loadCustomNetworkAd(context, map, map2);

@@ -14,11 +14,11 @@ import android.graphics.drawable.shapes.RectShape;
 public final class a extends ShapeDrawable {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f8362a;
+    private int f5522a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f8363c;
+    private float f5523c;
     private int d;
     private int e;
     private Bitmap f;
@@ -28,14 +28,14 @@ public final class a extends ShapeDrawable {
 
     /* renamed from: com.anythink.expressad.video.dynview.g.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/video/dynview/g/a$a.class */
-    public static final class C0161a implements b {
+    public static final class C0090a implements b {
 
         /* renamed from: a  reason: collision with root package name */
-        private RectShape f8364a;
+        private RectShape f5524a;
         private Bitmap b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Bitmap f8365c;
+        private Bitmap f5525c;
         private boolean d;
         private int e;
         private int f;
@@ -43,13 +43,13 @@ public final class a extends ShapeDrawable {
         private float h;
         private float i;
 
-        private C0161a() {
+        private C0090a() {
             this.f = 100;
             this.g = 10;
-            this.f8364a = new RectShape();
+            this.f5524a = new RectShape();
         }
 
-        /* synthetic */ C0161a(byte b) {
+        /* synthetic */ C0090a(byte b) {
             this();
         }
 
@@ -91,7 +91,7 @@ public final class a extends ShapeDrawable {
 
         @Override // com.anythink.expressad.video.dynview.g.a.b
         public final b b(Bitmap bitmap) {
-            this.f8365c = bitmap;
+            this.f5525c = bitmap;
             return this;
         }
 
@@ -128,33 +128,33 @@ public final class a extends ShapeDrawable {
         b c(int i);
     }
 
-    private a(C0161a c0161a) {
-        super(c0161a.f8364a);
+    private a(C0090a c0090a) {
+        super(c0090a.f5524a);
         this.h = false;
-        this.f = c0161a.b;
-        this.g = c0161a.f8365c;
-        this.h = c0161a.d;
-        this.f8362a = c0161a.e;
-        this.d = c0161a.f;
-        this.e = c0161a.g;
-        this.b = c0161a.h;
-        this.f8363c = c0161a.i;
+        this.f = c0090a.b;
+        this.g = c0090a.f5525c;
+        this.h = c0090a.d;
+        this.f5522a = c0090a.e;
+        this.d = c0090a.f;
+        this.e = c0090a.g;
+        this.b = c0090a.h;
+        this.f5523c = c0090a.i;
         Paint paint = new Paint();
         this.i = paint;
         paint.setStyle(Paint.Style.FILL);
         this.i.setAntiAlias(true);
     }
 
-    /* synthetic */ a(C0161a c0161a, byte b2) {
-        this(c0161a);
+    /* synthetic */ a(C0090a c0090a, byte b2) {
+        this(c0090a);
     }
 
-    public static C0161a a() {
-        return new C0161a((byte) 0);
+    public static C0090a a() {
+        return new C0090a((byte) 0);
     }
 
     private void a(Canvas canvas) {
-        float f = this.f8363c / 2.0f;
+        float f = this.f5523c / 2.0f;
         Path path = new Path();
         path.moveTo(0.0f, 0.0f);
         path.lineTo(0.0f, (this.d + f) - this.e);
@@ -178,8 +178,8 @@ public final class a extends ShapeDrawable {
         }
         Path path2 = new Path();
         path2.moveTo(0.0f, this.d + f + this.e);
-        path2.lineTo(0.0f, this.f8363c);
-        path2.lineTo(this.b, this.f8363c);
+        path2.lineTo(0.0f, this.f5523c);
+        path2.lineTo(this.b, this.f5523c);
         path2.lineTo(this.b, (f - this.d) + this.e);
         if (this.h) {
             try {
@@ -216,8 +216,8 @@ public final class a extends ShapeDrawable {
         float f = this.b / 2.0f;
         Path path = new Path();
         path.moveTo(0.0f, 0.0f);
-        path.lineTo(0.0f, this.f8363c);
-        path.lineTo((f - this.d) - this.e, this.f8363c);
+        path.lineTo(0.0f, this.f5523c);
+        path.lineTo((f - this.d) - this.e, this.f5523c);
         path.lineTo((this.d + f) - this.e, 0.0f);
         if (this.h) {
             try {
@@ -238,8 +238,8 @@ public final class a extends ShapeDrawable {
         Path path2 = new Path();
         path2.moveTo(this.d + f + this.e, 0.0f);
         path2.lineTo(this.b, 0.0f);
-        path2.lineTo(this.b, this.f8363c);
-        path2.lineTo((f - this.d) + this.e, this.f8363c);
+        path2.lineTo(this.b, this.f5523c);
+        path2.lineTo((f - this.d) + this.e, this.f5523c);
         if (this.h) {
             try {
                 a(canvas, path2);
@@ -263,8 +263,8 @@ public final class a extends ShapeDrawable {
     @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         super.draw(canvas);
-        if (this.f8362a == 1) {
-            float f = this.f8363c / 2.0f;
+        if (this.f5522a == 1) {
+            float f = this.f5523c / 2.0f;
             Path path = new Path();
             path.moveTo(0.0f, 0.0f);
             path.lineTo(0.0f, (this.d + f) - this.e);
@@ -288,8 +288,8 @@ public final class a extends ShapeDrawable {
             }
             Path path2 = new Path();
             path2.moveTo(0.0f, this.d + f + this.e);
-            path2.lineTo(0.0f, this.f8363c);
-            path2.lineTo(this.b, this.f8363c);
+            path2.lineTo(0.0f, this.f5523c);
+            path2.lineTo(this.b, this.f5523c);
             path2.lineTo(this.b, (f - this.d) + this.e);
             if (this.h) {
                 try {
@@ -315,8 +315,8 @@ public final class a extends ShapeDrawable {
         float f2 = this.b / 2.0f;
         Path path3 = new Path();
         path3.moveTo(0.0f, 0.0f);
-        path3.lineTo(0.0f, this.f8363c);
-        path3.lineTo((f2 - this.d) - this.e, this.f8363c);
+        path3.lineTo(0.0f, this.f5523c);
+        path3.lineTo((f2 - this.d) - this.e, this.f5523c);
         path3.lineTo((this.d + f2) - this.e, 0.0f);
         if (this.h) {
             try {
@@ -337,8 +337,8 @@ public final class a extends ShapeDrawable {
         Path path4 = new Path();
         path4.moveTo(this.d + f2 + this.e, 0.0f);
         path4.lineTo(this.b, 0.0f);
-        path4.lineTo(this.b, this.f8363c);
-        path4.lineTo((f2 - this.d) + this.e, this.f8363c);
+        path4.lineTo(this.b, this.f5523c);
+        path4.lineTo((f2 - this.d) + this.e, this.f5523c);
         if (this.h) {
             try {
                 a(canvas, path4);

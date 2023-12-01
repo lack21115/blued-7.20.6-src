@@ -15,10 +15,10 @@ public class n {
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private File f38970c = null;
+    private File f25279c = null;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f38969a = false;
+    public boolean f25278a = false;
     private boolean d = false;
     private File f = null;
 
@@ -57,14 +57,14 @@ public class n {
 
     private File d() {
         try {
-            if (this.f38970c == null) {
+            if (this.f25279c == null) {
                 File file = new File(QbSdk.getTbsFolderDir(this.b), "core_private");
-                this.f38970c = file;
+                this.f25279c = file;
                 if (file == null || !file.isDirectory()) {
                     return null;
                 }
             }
-            File file2 = new File(this.f38970c, "debug.conf");
+            File file2 = new File(this.f25279c, "debug.conf");
             if (!file2.exists()) {
                 file2.createNewFile();
             }
@@ -99,7 +99,7 @@ public class n {
                 properties.load(bufferedInputStream2);
                 String property = properties.getProperty("setting_forceUseSystemWebview", "");
                 if (!"".equals(property)) {
-                    this.f38969a = Boolean.parseBoolean(property);
+                    this.f25278a = Boolean.parseBoolean(property);
                 }
             } catch (Throwable th2) {
                 bufferedInputStream = bufferedInputStream2;
@@ -147,7 +147,7 @@ public class n {
                 try {
                     properties = new Properties();
                     properties.load(bufferedInputStream);
-                    properties.setProperty("setting_forceUseSystemWebview", Boolean.toString(this.f38969a));
+                    properties.setProperty("setting_forceUseSystemWebview", Boolean.toString(this.f25278a));
                     properties.setProperty("result_systemWebviewForceUsed", Boolean.toString(this.d));
                     bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(d));
                 } catch (Throwable th) {

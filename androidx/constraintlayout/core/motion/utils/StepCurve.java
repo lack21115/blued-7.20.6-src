@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class StepCurve extends Easing {
 
     /* renamed from: c  reason: collision with root package name */
-    MonotonicCurveFit f2061c;
+    MonotonicCurveFit f2013c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public StepCurve(String str) {
@@ -21,7 +21,7 @@ public class StepCurve extends Easing {
             int i2 = i;
             if (indexOf2 == -1) {
                 dArr[i2] = Double.parseDouble(str.substring(indexOf, str.indexOf(41, indexOf)).trim());
-                this.f2061c = a(Arrays.copyOf(dArr, i2 + 1));
+                this.f2013c = a(Arrays.copyOf(dArr, i2 + 1));
                 return;
             }
             dArr[i2] = Double.parseDouble(str.substring(indexOf, indexOf2).trim());
@@ -67,11 +67,11 @@ public class StepCurve extends Easing {
 
     @Override // androidx.constraintlayout.core.motion.utils.Easing
     public double get(double d) {
-        return this.f2061c.getPos(d, 0);
+        return this.f2013c.getPos(d, 0);
     }
 
     @Override // androidx.constraintlayout.core.motion.utils.Easing
     public double getDiff(double d) {
-        return this.f2061c.getSlope(d, 0);
+        return this.f2013c.getSlope(d, 0);
     }
 }

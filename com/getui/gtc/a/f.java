@@ -21,14 +21,14 @@ public final class f implements b {
     private static long h = 86400000;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f21889a;
+    public int f8282a;
     public int b;
     private boolean g = false;
     private long i = 604800000;
     private String j = "none";
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f21890c = true;
+    public boolean f8283c = true;
     public boolean e = false;
     public boolean f = false;
     private final AtomicBoolean k = new AtomicBoolean(true);
@@ -43,7 +43,7 @@ public final class f implements b {
             a(3, new g(-4));
         } else {
             g b = com.getui.gtc.a.a.d.b("");
-            boolean isEmpty = TextUtils.isEmpty(b.f21882c);
+            boolean isEmpty = TextUtils.isEmpty(b.f8275c);
             if (this.k.getAndSet(false) && isEmpty) {
                 ScheduleQueue.getInstance().addSchedule(new Runnable() { // from class: com.getui.gtc.a.f.2
                     @Override // java.lang.Runnable
@@ -67,7 +67,7 @@ public final class f implements b {
     public static void a(int i, g gVar) {
         String str;
         try {
-            String str2 = gVar.f21882c;
+            String str2 = gVar.f8275c;
             String str3 = "";
             if (TextUtils.isEmpty(str2)) {
                 str = "";
@@ -81,7 +81,7 @@ public final class f implements b {
                 str = "2#" + com.getui.gtc.a.a.f.a();
             }
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
-            a(a.a(simpleDateFormat.format(new Date())) + "|" + a.a(com.getui.gtc.c.b.d) + "|" + a.a(com.getui.gtc.c.b.f21920a) + "|android|" + GtcProvider.context().getPackageName() + "|GTC-3.2.1.0|" + i + "|" + gVar.f21881a + "|" + str3 + "|" + gVar.b + "|" + str);
+            a(a.a(simpleDateFormat.format(new Date())) + "|" + a.a(com.getui.gtc.c.b.d) + "|" + a.a(com.getui.gtc.c.b.f8313a) + "|android|" + GtcProvider.context().getPackageName() + "|GTC-3.2.1.0|" + i + "|" + gVar.f8274a + "|" + str3 + "|" + gVar.b + "|" + str);
         } catch (Throwable th) {
             com.getui.gtc.i.c.a.c("type 305 report error: " + th.toString());
         }
@@ -92,15 +92,15 @@ public final class f implements b {
         com.getui.gtc.e.c cVar2;
         com.getui.gtc.e.c cVar3;
         try {
-            cVar = c.a.f21997a;
-            JSONObject a2 = cVar.f21995a.a();
+            cVar = c.a.f8390a;
+            JSONObject a2 = cVar.f8388a.a();
             if (str == null) {
                 str = a2.optString("content");
             } else {
                 a2.put("collectTime", System.currentTimeMillis());
                 a2.put("content", str);
-                cVar2 = c.a.f21997a;
-                cVar2.f21995a.a(a2);
+                cVar2 = c.a.f8390a;
+                cVar2.f8388a.a(a2);
             }
             if (TextUtils.isEmpty(str)) {
                 com.getui.gtc.i.c.a.c("type 305 no content report");
@@ -109,8 +109,8 @@ public final class f implements b {
             } else {
                 com.getui.gtc.h.a.a(str, 305);
                 a2.put("reportTime", System.currentTimeMillis());
-                cVar3 = c.a.f21997a;
-                cVar3.f21995a.a(a2);
+                cVar3 = c.a.f8390a;
+                cVar3.f8388a.a(a2);
             }
         } catch (Throwable th) {
             com.getui.gtc.i.c.a.b(th);
@@ -127,7 +127,7 @@ public final class f implements b {
             a(2, new g(-4));
         } else {
             g e = com.getui.gtc.a.a.d.e();
-            boolean isEmpty = TextUtils.isEmpty(e.f21882c);
+            boolean isEmpty = TextUtils.isEmpty(e.f8275c);
             if (this.k.getAndSet(false) && isEmpty) {
                 ScheduleQueue.getInstance().addSchedule(new Runnable() { // from class: com.getui.gtc.a.f.1
                     @Override // java.lang.Runnable
@@ -244,7 +244,7 @@ public final class f implements b {
             try {
                 String str5 = a2.get("sdk.gtc.type305.s_pm_enable");
                 if (str5 != null) {
-                    this.f21889a = Integer.parseInt(str5);
+                    this.f8282a = Integer.parseInt(str5);
                 }
             } catch (Exception e5) {
                 com.getui.gtc.i.c.a.a(e5);
@@ -284,7 +284,7 @@ public final class f implements b {
             try {
                 String str10 = a2.get("sdk.gtc.type305.sf_enable");
                 if (str10 != null) {
-                    this.f21890c = Boolean.parseBoolean(str10);
+                    this.f8283c = Boolean.parseBoolean(str10);
                 }
             } catch (Exception e10) {
                 com.getui.gtc.i.c.a.a(e10);
@@ -300,33 +300,33 @@ public final class f implements b {
                 return;
             }
             a((String) null);
-            cVar = c.a.f21997a;
-            JSONObject a3 = cVar.f21995a.a();
+            cVar = c.a.f8390a;
+            JSONObject a3 = cVar.f8388a.a();
             if (System.currentTimeMillis() - a3.optLong("collectTime") < this.i) {
                 com.getui.gtc.i.c.a.c("type 305 collect time not expired");
                 return;
             }
             int optInt = a3.optInt("accessCount") + 1;
             a3.put("accessCount", optInt);
-            cVar2 = c.a.f21997a;
-            cVar2.f21995a.a(a3);
+            cVar2 = c.a.f8390a;
+            cVar2.f8388a.a(a3);
             if (optInt < d) {
                 com.getui.gtc.i.c.a.d("accessCount:" + optInt + " < starPnFirstCall:" + d + ", ignored");
                 return;
             }
             int a4 = com.getui.gtc.a.a.d.a(GtcProvider.context());
-            if (this.f21890c && !com.getui.gtc.a.a.d.b(GtcProvider.context())) {
+            if (this.f8283c && !com.getui.gtc.a.a.d.b(GtcProvider.context())) {
                 com.getui.gtc.i.c.a.d("type 305 report not sf.");
                 a(a4, new g(-1));
             } else if (!com.getui.gtc.a.a.d.a()) {
                 com.getui.gtc.i.c.a.d("type 305 report not net.");
                 a(a4, new g(-2));
             } else {
-                com.getui.gtc.i.c.a.d("type 305 pmEnable: " + this.f21889a);
+                com.getui.gtc.i.c.a.d("type 305 pmEnable: " + this.f8282a);
                 if (a4 == 1) {
                     com.getui.gtc.i.c.a.d("type 305 cm n disable.");
                 } else if (a4 == 2) {
-                    if ((this.f21889a & 2) != 2) {
+                    if ((this.f8282a & 2) != 2) {
                         com.getui.gtc.i.c.a.d("type 305 starPm disable.");
                         return;
                     }
@@ -334,7 +334,7 @@ public final class f implements b {
                     a(com.getui.gtc.a.a.d.a(this.j));
                 } else if (a4 != 3) {
                     com.getui.gtc.i.c.a.d("type 305 no sim or error.");
-                } else if ((this.f21889a & 1) != 1) {
+                } else if ((this.f8282a & 1) != 1) {
                     com.getui.gtc.i.c.a.d("type 305 starPm disable.");
                 } else {
                     com.getui.gtc.i.c.a.d("type 305 ct fetch.");

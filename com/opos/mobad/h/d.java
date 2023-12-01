@@ -15,14 +15,14 @@ public class d extends com.opos.mobad.l.e {
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f26196c;
+    private Context f12508c;
     private String d;
     private com.opos.mobad.cmn.a.a e;
     private com.opos.mobad.ad.privacy.a f;
 
     public d(Context context, String str, com.opos.mobad.cmn.a.d dVar, j jVar, com.opos.mobad.ad.privacy.a aVar) {
         super(jVar);
-        this.f26196c = context;
+        this.f12508c = context;
         this.e = new com.opos.mobad.cmn.a.a(context, str, dVar);
         this.d = str;
         this.f = aVar;
@@ -33,7 +33,7 @@ public class d extends com.opos.mobad.l.e {
         ArrayList arrayList = new ArrayList();
         for (AdItemData adItemData : adData.f()) {
             if (adItemData != null) {
-                arrayList.add(new com.opos.mobad.h.b.c(this.e, adItemData, this.f26196c, this.d, this.f.a()));
+                arrayList.add(new com.opos.mobad.h.b.c(this.e, adItemData, this.f12508c, this.d, this.f.a()));
             }
         }
         return arrayList;
@@ -47,16 +47,16 @@ public class d extends com.opos.mobad.l.e {
     @Override // com.opos.mobad.l.f
     public boolean b(String str, int i) {
         this.b = 0;
-        com.opos.mobad.model.b.a(this.f26196c.getApplicationContext()).a(this.f26196c, this.d, 4, str, i, new b.a() { // from class: com.opos.mobad.h.d.1
+        com.opos.mobad.model.b.a(this.f12508c.getApplicationContext()).a(this.f12508c, this.d, 4, str, i, new b.a() { // from class: com.opos.mobad.h.d.1
             @Override // com.opos.mobad.model.b.a
-            public void a(int i2, a.C0707a c0707a) {
-                if (c0707a == null || c0707a.f26482a.a() != 1) {
+            public void a(int i2, a.C0537a c0537a) {
+                if (c0537a == null || c0537a.f12794a.a() != 1) {
                     d.this.b = i2;
-                    d.this.a(d.this.a(c0707a.f26482a));
+                    d.this.a(d.this.a(c0537a.f12794a));
                     return;
                 }
-                com.opos.mobad.service.a.a().a(d.this.d, 4, c0707a.b.f(), c0707a.b.b(), c0707a.f26483c.aa(), c0707a.b.a(), c0707a.b.J());
-                d.this.b = c0707a.f26482a.c();
+                com.opos.mobad.service.a.a().a(d.this.d, 4, c0537a.b.f(), c0537a.b.b(), c0537a.f12795c.aa(), c0537a.b.a(), c0537a.b.J());
+                d.this.b = c0537a.f12794a.c();
                 d.this.a(-1, com.opos.cmn.a.a(-1));
             }
 

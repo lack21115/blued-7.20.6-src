@@ -14,9 +14,7 @@ import java.util.Map;
 /* renamed from: com.amap.api.col.3sl.br  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/br.class */
 public final class br implements jw.a {
-
-    /* renamed from: a  reason: collision with root package name */
-    bs f4787a;
+    bs a;
     long d;
     bm f;
     a h;
@@ -26,9 +24,7 @@ public final class br implements jw.a {
     private kd l;
     private bn m;
     long b = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    long f4788c = 0;
+    long c = 0;
     boolean e = true;
     long g = 0;
     private boolean n = false;
@@ -43,12 +39,10 @@ public final class br implements jw.a {
     /* renamed from: com.amap.api.col.3sl.br$b */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/br$b.class */
     public static final class b extends da {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final String f4789a;
+        private final String a;
 
         public b(String str) {
-            this.f4789a = str;
+            this.a = str;
         }
 
         @Override // com.amap.api.col.p0003sl.kb
@@ -63,7 +57,7 @@ public final class br implements jw.a {
 
         @Override // com.amap.api.col.p0003sl.kb
         public final String getURL() {
-            return this.f4789a;
+            return this.a;
         }
 
         @Override // com.amap.api.col.p0003sl.kb
@@ -73,9 +67,9 @@ public final class br implements jw.a {
     }
 
     public br(bs bsVar, String str, Context context, bx bxVar) throws IOException {
-        this.f4787a = null;
+        this.a = null;
         this.f = bm.a(context.getApplicationContext());
-        this.f4787a = bsVar;
+        this.a = bsVar;
         this.i = context;
         this.k = str;
         this.j = bxVar;
@@ -96,15 +90,15 @@ public final class br implements jw.a {
         by byVar = new by(this.k);
         byVar.setConnectionTimeout(30000);
         byVar.setSoTimeout(30000);
-        this.l = new kd(byVar, this.b, this.f4788c, MapsInitializer.getProtocol() == 2);
-        this.m = new bn(this.f4787a.b() + File.separator + this.f4787a.c(), this.b);
+        this.l = new kd(byVar, this.b, this.c, MapsInitializer.getProtocol() == 2);
+        this.m = new bn(this.a.b() + File.separator + this.a.c(), this.b);
     }
 
     private void d() {
-        File file = new File(this.f4787a.b() + this.f4787a.c());
+        File file = new File(this.a.b() + this.a.c());
         if (!file.exists()) {
             this.b = 0L;
-            this.f4788c = 0L;
+            this.c = 0L;
             return;
         }
         this.e = false;
@@ -112,7 +106,7 @@ public final class br implements jw.a {
         try {
             long g = g();
             this.d = g;
-            this.f4788c = g;
+            this.c = g;
         } catch (IOException e) {
             bx bxVar = this.j;
             if (bxVar != null) {
@@ -123,14 +117,14 @@ public final class br implements jw.a {
 
     private boolean e() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f4787a.b());
+        sb.append(this.a.b());
         sb.append(File.separator);
-        sb.append(this.f4787a.c());
+        sb.append(this.a.c());
         return new File(sb.toString()).length() >= 10;
     }
 
     private void f() throws AMapException {
-        if (hp.f5080a == 1) {
+        if (hp.a == 1) {
             return;
         }
         int i = 0;
@@ -145,7 +139,7 @@ public final class br implements jw.a {
                 iw.c(th, "SiteFileFetch", "authOffLineDownLoad");
                 th.printStackTrace();
             }
-            if (hp.f5080a == 1) {
+            if (hp.a == 1) {
                 return;
             }
             i = i2 + 1;
@@ -153,10 +147,10 @@ public final class br implements jw.a {
     }
 
     private long g() throws IOException {
-        if (hx.a(this.i, dw.a()).f5127a != hx.c.SuccessCode) {
+        if (hx.a(this.i, dw.a()).a != hx.c.SuccessCode) {
             return -1L;
         }
-        String a2 = this.f4787a.a();
+        String a2 = this.a.a();
         Map<String, String> map = null;
         try {
             ka.b();
@@ -184,7 +178,7 @@ public final class br implements jw.a {
 
     private void h() {
         long currentTimeMillis = System.currentTimeMillis();
-        if (this.f4787a == null || currentTimeMillis - this.g <= 500) {
+        if (this.a == null || currentTimeMillis - this.g <= 500) {
             return;
         }
         i();
@@ -193,7 +187,7 @@ public final class br implements jw.a {
     }
 
     private void i() {
-        this.f.a(this.f4787a.e(), this.f4787a.d(), this.d, this.b, this.f4788c);
+        this.f.a(this.a.e(), this.a.d(), this.d, this.b, this.c);
     }
 
     public final void a() {
@@ -206,7 +200,7 @@ public final class br implements jw.a {
                 return;
             }
             f();
-            if (hp.f5080a != 1) {
+            if (hp.a != 1) {
                 if (this.j != null) {
                     this.j.a(bx.a.amap_exception);
                     return;
@@ -220,14 +214,14 @@ public final class br implements jw.a {
                 long g = g();
                 this.d = g;
                 if (g != -1 && g != -2) {
-                    this.f4788c = g;
+                    this.c = g;
                 }
                 this.b = 0L;
             }
             if (this.j != null) {
                 this.j.m();
             }
-            if (this.b >= this.f4788c) {
+            if (this.b >= this.c) {
                 onFinish();
                 return;
             }

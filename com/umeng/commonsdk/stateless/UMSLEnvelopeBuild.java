@@ -23,6 +23,7 @@ public class UMSLEnvelopeBuild {
         isEncryptEnabled = z;
     }
 
+    /* JADX WARN: Type inference failed for: r0v0, types: [com.umeng.commonsdk.stateless.UMSLEnvelopeBuild$1] */
     public JSONObject buildSLBaseHeader(final Context context) {
         new Thread() { // from class: com.umeng.commonsdk.stateless.UMSLEnvelopeBuild.1
             @Override // java.lang.Thread, java.lang.Runnable

@@ -13,11 +13,11 @@ import java.nio.ByteBuffer;
 public class PLMixAudioFile {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f27493a;
+    private String f13805a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f27494c;
+    private long f13806c;
     private long d;
     private float e;
     private long f;
@@ -34,14 +34,14 @@ public class PLMixAudioFile {
 
     public PLMixAudioFile(String str, boolean z) {
         this.b = 0L;
-        this.f27494c = 0L;
+        this.f13806c = 0L;
         this.d = 0L;
         this.e = 1.0f;
         this.f = 0L;
         this.g = 1.0d;
         this.h = false;
         this.i = true;
-        this.f27493a = str;
+        this.f13805a = str;
         long a2 = g.a((Object) str) * 1000;
         this.d = a2;
         this.f = a2;
@@ -51,7 +51,7 @@ public class PLMixAudioFile {
     }
 
     private void g() {
-        d dVar = new d(this.f27494c / 1000, this.d / 1000);
+        d dVar = new d(this.f13806c / 1000, this.d / 1000);
         a aVar = this.l;
         if (aVar != null) {
             aVar.a(dVar);
@@ -61,7 +61,7 @@ public class PLMixAudioFile {
     private void h() {
         a aVar = new a();
         this.l = aVar;
-        aVar.a(this.f27493a);
+        aVar.a(this.f13805a);
         this.l.a(this.e);
         this.l.a(this.h);
     }
@@ -78,12 +78,12 @@ public class PLMixAudioFile {
 
     public long b(long j) {
         long j2 = (j - this.b) / 1000;
-        long j3 = this.d - this.f27494c;
+        long j3 = this.d - this.f13806c;
         long j4 = 0;
         if (j3 > 0) {
             j4 = j2 % (j3 / 1000);
         }
-        return (this.f27494c / 1000) + j4;
+        return (this.f13806c / 1000) + j4;
     }
 
     public SyncAudioResampler b() {
@@ -130,7 +130,7 @@ public class PLMixAudioFile {
     }
 
     public String getFilepath() {
-        return this.f27493a;
+        return this.f13805a;
     }
 
     public long getOffsetInVideo() {
@@ -138,7 +138,7 @@ public class PLMixAudioFile {
     }
 
     public long getStartTime() {
-        return this.f27494c;
+        return this.f13806c;
     }
 
     public float getVolume() {
@@ -155,7 +155,7 @@ public class PLMixAudioFile {
     }
 
     public PLMixAudioFile setEndTime(long j) {
-        if (j < this.f27494c) {
+        if (j < this.f13806c) {
             e.q.e("PLMixAudioFile", "end time must bigger than start time !");
             return this;
         }
@@ -199,7 +199,7 @@ public class PLMixAudioFile {
     }
 
     public PLMixAudioFile setStartTime(long j) {
-        this.f27494c = j;
+        this.f13806c = j;
         g();
         return this;
     }

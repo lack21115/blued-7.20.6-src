@@ -21,10 +21,10 @@ public class c extends a {
     }
 
     private void b() {
-        ImageView imageView = new ImageView(this.f25896a);
+        ImageView imageView = new ImageView(this.f12208a);
         this.j = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        this.i.addView(this.j, new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f25896a, 360.0f), com.opos.cmn.an.h.f.a.a(this.f25896a, 85.0f)));
+        this.i.addView(this.j, new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12208a, 360.0f), com.opos.cmn.an.h.f.a.a(this.f12208a, 85.0f)));
     }
 
     public void a(AdItemData adItemData, boolean z) {
@@ -37,7 +37,7 @@ public class c extends a {
         if (f == null || f.size() <= 0 || f.get(0) == null) {
             return;
         }
-        Bitmap a2 = g.a(f.get(0).a(), com.opos.cmn.an.h.f.a.a(this.f25896a, 360.0f), com.opos.cmn.an.h.f.a.a(this.f25896a, 85.0f));
+        Bitmap a2 = g.a(f.get(0).a(), com.opos.cmn.an.h.f.a.a(this.f12208a, 360.0f), com.opos.cmn.an.h.f.a.a(this.f12208a, 85.0f));
         this.k = a2;
         if (a2 != null) {
             this.j.setImageBitmap(a2);

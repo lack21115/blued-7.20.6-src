@@ -12,17 +12,17 @@ public class CodecManager {
     public static final int[] SUPPORTED_COLOR_FORMATS = {21, 39, 19, 20, MediaCodecInfo.CodecCapabilities.COLOR_TI_FormatYUV420PackedSemiPlanar};
 
     /* renamed from: a  reason: collision with root package name */
-    private static a[] f36059a = null;
+    private static a[] f22368a = null;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/record/h264/CodecManager$a.class */
     static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f36060a;
+        public String f22369a;
         public Integer[] b;
 
         public a(String str, Integer[] numArr) {
-            this.f36060a = str;
+            this.f22369a = str;
             this.b = numArr;
         }
     }
@@ -30,8 +30,8 @@ public class CodecManager {
     public static a[] findEncodersForMimeType(String str) {
         synchronized (CodecManager.class) {
             try {
-                if (f36059a != null) {
-                    return f36059a;
+                if (f22368a != null) {
+                    return f22368a;
                 }
                 ArrayList arrayList = new ArrayList();
                 int codecCount = MediaCodecList.getCodecCount();
@@ -84,11 +84,11 @@ public class CodecManager {
                     codecCount = i;
                 }
                 a[] aVarArr = (a[]) arrayList.toArray(new a[arrayList.size()]);
-                f36059a = aVarArr;
+                f22368a = aVarArr;
                 if (aVarArr.length == 0) {
-                    f36059a = new a[]{new a(null, new Integer[]{0})};
+                    f22368a = new a[]{new a(null, new Integer[]{0})};
                 }
-                return f36059a;
+                return f22368a;
             } catch (Throwable th) {
                 throw th;
             }

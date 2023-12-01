@@ -1,7 +1,5 @@
 package com.android.org.conscrypt;
 
-import com.huawei.openalliance.ad.constant.at;
-import com.tencent.qcloud.core.auth.AuthConstants;
 import java.security.MessageDigestSpi;
 import java.security.NoSuchAlgorithmException;
 
@@ -24,7 +22,7 @@ public class OpenSSLMessageDigestJDK extends MessageDigestSpi implements Cloneab
 
     /* loaded from: source-273268-dex2jar.jar:com/android/org/conscrypt/OpenSSLMessageDigestJDK$SHA1.class */
     public static class SHA1 extends OpenSSLMessageDigestJDK {
-        private static final long EVP_MD = NativeCrypto.EVP_get_digestbyname(AuthConstants.SHA1);
+        private static final long EVP_MD = NativeCrypto.EVP_get_digestbyname("sha1");
         private static final int SIZE = NativeCrypto.EVP_MD_size(EVP_MD);
 
         public SHA1() throws NoSuchAlgorithmException {
@@ -44,7 +42,7 @@ public class OpenSSLMessageDigestJDK extends MessageDigestSpi implements Cloneab
 
     /* loaded from: source-273268-dex2jar.jar:com/android/org/conscrypt/OpenSSLMessageDigestJDK$SHA256.class */
     public static class SHA256 extends OpenSSLMessageDigestJDK {
-        private static final long EVP_MD = NativeCrypto.EVP_get_digestbyname(at.aq);
+        private static final long EVP_MD = NativeCrypto.EVP_get_digestbyname("sha256");
         private static final int SIZE = NativeCrypto.EVP_MD_size(EVP_MD);
 
         public SHA256() throws NoSuchAlgorithmException {

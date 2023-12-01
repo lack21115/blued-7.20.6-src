@@ -8,8 +8,8 @@ import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Pair;
-import com.alipay.security.mobile.module.http.model.c;
 import com.huawei.hms.common.PackageConstants;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.huawei.hms.support.log.HMSLog;
 import com.huawei.hms.utils.PackageManagerHelper;
 import java.security.cert.X509Certificate;
@@ -26,11 +26,11 @@ public class HMSPackageManager {
     public static final Object p = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f22917a;
+    public final Context f9309a;
     public final PackageManagerHelper b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f22918c;
+    public String f9310c;
     public String d;
     public int e;
     public String f;
@@ -49,7 +49,7 @@ public class HMSPackageManager {
         @Override // java.lang.Runnable
         public void run() {
             HMSLog.i("HMSPackageManager", "enter asyncOnceCheckMDMState");
-            for (ResolveInfo resolveInfo : HMSPackageManager.this.f22917a.getPackageManager().queryIntentServices(new Intent("com.huawei.hms.core.aidlservice"), 128)) {
+            for (ResolveInfo resolveInfo : HMSPackageManager.this.f9309a.getPackageManager().queryIntentServices(new Intent("com.huawei.hms.core.aidlservice"), 128)) {
                 if ("com.huawei.hwid".equals(resolveInfo.serviceInfo.applicationInfo.packageName)) {
                     HMSPackageManager.this.c();
                 }
@@ -62,19 +62,19 @@ public class HMSPackageManager {
     public static class b implements Comparable<b> {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f22920a;
+        public String f9312a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f22921c;
+        public String f9313c;
         public String d;
         public String e;
         public Long f;
 
         public b(String str, String str2, String str3, String str4, String str5, long j) {
-            this.f22920a = str;
+            this.f9312a = str;
             this.b = str2;
-            this.f22921c = str3;
+            this.f9313c = str3;
             this.d = str4;
             this.e = str5;
             this.f = Long.valueOf(j);
@@ -88,7 +88,7 @@ public class HMSPackageManager {
     }
 
     public HMSPackageManager(Context context) {
-        this.f22917a = context;
+        this.f9309a = context;
         this.b = new PackageManagerHelper(context);
     }
 
@@ -97,7 +97,7 @@ public class HMSPackageManager {
             return "SPOOFED";
         }
         if (i == 2) {
-            return c.g;
+            return "SUCCESS";
         }
         if (i == 3) {
             return "UNCHECKED";
@@ -159,7 +159,7 @@ public class HMSPackageManager {
         if (b2.size() == 0) {
             HMSLog.e("HMSPackageManager", "certChain is empty");
             return false;
-        } else if (!com.huawei.hms.device.a.a(com.huawei.hms.device.a.a(this.f22917a), b2)) {
+        } else if (!com.huawei.hms.device.a.a(com.huawei.hms.device.a.a(this.f9309a), b2)) {
             HMSLog.e("HMSPackageManager", "failed to verify cert chain");
             return false;
         } else {
@@ -188,7 +188,7 @@ public class HMSPackageManager {
     }
 
     public final boolean b() {
-        String hmsPath = ReadApkFileUtil.getHmsPath(this.f22917a);
+        String hmsPath = ReadApkFileUtil.getHmsPath(this.f9309a);
         if (hmsPath == null) {
             HMSLog.i("HMSPackageManager", "hmsPath is null!");
             return false;
@@ -235,14 +235,14 @@ public class HMSPackageManager {
 
     public final void e() {
         synchronized (o) {
-            this.f22918c = null;
+            this.f9310c = null;
             this.d = null;
             this.e = 0;
         }
     }
 
     public final Pair<String, String> f() {
-        List<ResolveInfo> queryIntentServices = this.f22917a.getPackageManager().queryIntentServices(new Intent("com.huawei.hms.core.aidlservice"), 128);
+        List<ResolveInfo> queryIntentServices = this.f9309a.getPackageManager().queryIntentServices(new Intent("com.huawei.hms.core.aidlservice"), 128);
         if (queryIntentServices.size() == 0) {
             return null;
         }
@@ -258,7 +258,7 @@ public class HMSPackageManager {
             } else if (!bundle.containsKey("hms_app_signer")) {
                 HMSLog.e("HMSPackageManager", "skip package " + str + " for no signer");
             } else if (bundle.containsKey("hms_app_cert_chain")) {
-                if (a(str + "&" + packageSignature, bundle.getString("hms_app_signer"), bundle.getString("hms_app_cert_chain"))) {
+                if (a(str + ContainerUtils.FIELD_DELIMITER + packageSignature, bundle.getString("hms_app_signer"), bundle.getString("hms_app_cert_chain"))) {
                     return new Pair<>(str, packageSignature);
                 }
                 HMSLog.e("HMSPackageManager", "checkSigner failed");
@@ -284,12 +284,12 @@ public class HMSPackageManager {
         Iterator<b> it = h.iterator();
         while (it.hasNext()) {
             b next = it.next();
-            String str = next.f22920a;
+            String str = next.f9312a;
             String str2 = next.b;
-            String str3 = next.f22921c;
+            String str3 = next.f9313c;
             String str4 = next.d;
             String packageSignature = this.b.getPackageSignature(str);
-            if (a(str + "&" + packageSignature + "&" + str2, str3, str4)) {
+            if (a(str + ContainerUtils.FIELD_DELIMITER + packageSignature + ContainerUtils.FIELD_DELIMITER + str2, str3, str4)) {
                 HMSLog.i("HMSPackageManager", "result: " + str + ", " + str2 + ", " + next.f);
                 this.h = PackageConstants.GENERAL_SERVICES_ACTION;
                 b(str2);
@@ -311,13 +311,13 @@ public class HMSPackageManager {
     public String getHMSPackageName() {
         HMSLog.i("HMSPackageManager", "Enter getHMSPackageName");
         refresh();
-        String str = this.f22918c;
+        String str = this.f9310c;
         if (str != null) {
             if (PackageManagerHelper.PackageStates.NOT_INSTALLED.equals(this.b.getPackageStates(str))) {
                 HMSLog.i("HMSPackageManager", "The package name is not installed and needs to be refreshed again");
                 i();
             }
-            String str2 = this.f22918c;
+            String str2 = this.f9310c;
             if (str2 != null) {
                 return str2;
             }
@@ -345,18 +345,18 @@ public class HMSPackageManager {
     public PackageManagerHelper.PackageStates getHMSPackageStates() {
         synchronized (n) {
             refresh();
-            PackageManagerHelper.PackageStates packageStates = this.b.getPackageStates(this.f22918c);
+            PackageManagerHelper.PackageStates packageStates = this.b.getPackageStates(this.f9310c);
             if (packageStates == PackageManagerHelper.PackageStates.NOT_INSTALLED) {
                 e();
                 return PackageManagerHelper.PackageStates.NOT_INSTALLED;
             }
-            if ("com.huawei.hwid".equals(this.f22918c) && c() == 1) {
+            if ("com.huawei.hwid".equals(this.f9310c) && c() == 1) {
                 return PackageManagerHelper.PackageStates.SPOOF;
             }
             boolean z = false;
             if (packageStates == PackageManagerHelper.PackageStates.ENABLED) {
                 z = false;
-                if (!this.d.equals(this.b.getPackageSignature(this.f22918c))) {
+                if (!this.d.equals(this.b.getPackageSignature(this.f9310c))) {
                     z = true;
                 }
             }
@@ -409,7 +409,7 @@ public class HMSPackageManager {
     }
 
     public final ArrayList<b> h() {
-        List<ResolveInfo> queryIntentServices = this.f22917a.getPackageManager().queryIntentServices(new Intent(PackageConstants.GENERAL_SERVICES_ACTION), 128);
+        List<ResolveInfo> queryIntentServices = this.f9309a.getPackageManager().queryIntentServices(new Intent(PackageConstants.GENERAL_SERVICES_ACTION), 128);
         if (queryIntentServices == null || queryIntentServices.isEmpty()) {
             HMSLog.e("HMSPackageManager", "resolveInfoList is null or empty");
             return null;
@@ -470,10 +470,10 @@ public class HMSPackageManager {
                 e();
                 return;
             }
-            this.f22918c = f.first;
+            this.f9310c = f.first;
             this.d = f.second;
             this.e = this.b.getPackageVersionCode(getHMSPackageName());
-            HMSLog.i("HMSPackageManager", "<initHmsPackageInfo> Succeed to find HMS apk: " + this.f22918c + " version: " + this.e);
+            HMSLog.i("HMSPackageManager", "<initHmsPackageInfo> Succeed to find HMS apk: " + this.f9310c + " version: " + this.e);
         }
     }
 
@@ -509,7 +509,7 @@ public class HMSPackageManager {
     }
 
     public final boolean k() {
-        PackageManager packageManager = this.f22917a.getPackageManager();
+        PackageManager packageManager = this.f9309a.getPackageManager();
         if (packageManager == null) {
             HMSLog.e("HMSPackageManager", "In isMinApkVersionEffective, Failed to get 'PackageManager' instance.");
             return true;
@@ -538,7 +538,7 @@ public class HMSPackageManager {
     }
 
     public void refresh() {
-        if (TextUtils.isEmpty(this.f22918c) || TextUtils.isEmpty(this.d)) {
+        if (TextUtils.isEmpty(this.f9310c) || TextUtils.isEmpty(this.d)) {
             i();
         }
     }

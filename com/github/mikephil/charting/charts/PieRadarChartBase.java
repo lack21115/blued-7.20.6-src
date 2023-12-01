@@ -17,11 +17,11 @@ import com.github.mikephil.charting.utils.Utils;
 public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<? extends Entry>>> extends Chart<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f22077a;
+    private float f8470a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected boolean f22078c;
+    protected boolean f8471c;
     protected float d;
 
     /* renamed from: com.github.mikephil.charting.charts.PieRadarChartBase$1  reason: invalid class name */
@@ -29,11 +29,11 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
     class AnonymousClass1 implements ValueAnimator.AnimatorUpdateListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PieRadarChartBase f22079a;
+        final /* synthetic */ PieRadarChartBase f8472a;
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
-            this.f22079a.postInvalidate();
+            this.f8472a.postInvalidate();
         }
     }
 
@@ -43,11 +43,11 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
     public static /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f22080a;
+        static final /* synthetic */ int[] f8473a;
         static final /* synthetic */ int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        static final /* synthetic */ int[] f22081c;
+        static final /* synthetic */ int[] f8474c;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0069 -> B:35:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x006d -> B:6:0x001f). Please submit an issue!!! */
@@ -57,13 +57,13 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x007d -> B:43:0x005d). Please submit an issue!!! */
         static {
             int[] iArr = new int[Legend.LegendOrientation.values().length];
-            f22081c = iArr;
+            f8474c = iArr;
             try {
                 iArr[Legend.LegendOrientation.VERTICAL.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f22081c[Legend.LegendOrientation.HORIZONTAL.ordinal()] = 2;
+                f8474c[Legend.LegendOrientation.HORIZONTAL.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             int[] iArr2 = new int[Legend.LegendHorizontalAlignment.values().length];
@@ -81,13 +81,13 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
             } catch (NoSuchFieldError e5) {
             }
             int[] iArr3 = new int[Legend.LegendVerticalAlignment.values().length];
-            f22080a = iArr3;
+            f8473a = iArr3;
             try {
                 iArr3[Legend.LegendVerticalAlignment.TOP.ordinal()] = 1;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f22080a[Legend.LegendVerticalAlignment.BOTTOM.ordinal()] = 2;
+                f8473a[Legend.LegendVerticalAlignment.BOTTOM.ordinal()] = 2;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -95,17 +95,17 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
 
     public PieRadarChartBase(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f22077a = 270.0f;
+        this.f8470a = 270.0f;
         this.b = 270.0f;
-        this.f22078c = true;
+        this.f8471c = true;
         this.d = 0.0f;
     }
 
     public PieRadarChartBase(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f22077a = 270.0f;
+        this.f8470a = 270.0f;
         this.b = 270.0f;
-        this.f22078c = true;
+        this.f8471c = true;
         this.d = 0.0f;
     }
 
@@ -127,17 +127,17 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
     public void a(MPPointF mPPointF, float f, float f2, MPPointF mPPointF2) {
         double d = f;
         double d2 = f2;
-        mPPointF2.f22204a = (float) (mPPointF.f22204a + (Math.cos(Math.toRadians(d2)) * d));
+        mPPointF2.f8597a = (float) (mPPointF.f8597a + (Math.cos(Math.toRadians(d2)) * d));
         mPPointF2.b = (float) (mPPointF.b + (d * Math.sin(Math.toRadians(d2))));
     }
 
     public float b(float f, float f2) {
         MPPointF centerOffsets = getCenterOffsets();
-        double d = f - centerOffsets.f22204a;
+        double d = f - centerOffsets.f8597a;
         double d2 = f2 - centerOffsets.b;
         float degrees = (float) Math.toDegrees(Math.acos(d2 / Math.sqrt((d * d) + (d2 * d2))));
         float f3 = degrees;
-        if (f > centerOffsets.f22204a) {
+        if (f > centerOffsets.f8597a) {
             f3 = 360.0f - degrees;
         }
         float f4 = f3 + 90.0f;
@@ -163,7 +163,7 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
 
     public float d(float f, float f2) {
         MPPointF centerOffsets = getCenterOffsets();
-        float sqrt = (float) Math.sqrt(Math.pow(f > centerOffsets.f22204a ? f - centerOffsets.f22204a : centerOffsets.f22204a - f, 2.0d) + Math.pow(f2 > centerOffsets.b ? f2 - centerOffsets.b : centerOffsets.b - f2, 2.0d));
+        float sqrt = (float) Math.sqrt(Math.pow(f > centerOffsets.f8597a ? f - centerOffsets.f8597a : centerOffsets.f8597a - f, 2.0d) + Math.pow(f2 > centerOffsets.b ? f2 - centerOffsets.b : centerOffsets.b - f2, 2.0d));
         MPPointF.b(centerOffsets);
         return sqrt;
     }
@@ -197,7 +197,7 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
     protected abstract float getRequiredLegendOffset();
 
     public float getRotationAngle() {
-        return this.f22077a;
+        return this.f8470a;
     }
 
     @Override // com.github.mikephil.charting.interfaces.dataprovider.ChartInterface
@@ -239,7 +239,7 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
     }
 
     public boolean k() {
-        return this.f22078c;
+        return this.f8471c;
     }
 
     @Override // android.view.View
@@ -253,10 +253,10 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
 
     public void setRotationAngle(float f) {
         this.b = f;
-        this.f22077a = Utils.c(f);
+        this.f8470a = Utils.c(f);
     }
 
     public void setRotationEnabled(boolean z) {
-        this.f22078c = z;
+        this.f8471c = z;
     }
 }

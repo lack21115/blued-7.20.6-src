@@ -12,6 +12,7 @@ import com.anythink.expressad.atsignalcommon.windvane.j;
 import com.anythink.expressad.foundation.h.k;
 import com.anythink.expressad.foundation.h.o;
 import com.anythink.expressad.foundation.h.t;
+import com.huawei.hms.ads.fw;
 import java.util.HashMap;
 import org.json.JSONObject;
 
@@ -19,16 +20,16 @@ import org.json.JSONObject;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7996a = "BannerCallJS";
+    private static final String f5156a = "BannerCallJS";
 
     public static void a(WebView webView) {
-        o.d(f7996a, "fireOnJSBridgeConnected");
+        o.d(f5156a, "fireOnJSBridgeConnected");
         j.a();
         j.b(webView);
     }
 
     public static void a(WebView webView, float f, float f2) {
-        o.d(f7996a, "fireOnBannerWebViewShow");
+        o.d(f5156a, "fireOnBannerWebViewShow");
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("startX", f);
@@ -38,35 +39,35 @@ public final class a {
             j.a();
             j.a(webView, "webviewshow", encodeToString);
         } catch (Throwable th) {
-            o.b(f7996a, "fireOnBannerWebViewShow", th);
+            o.b(f5156a, "fireOnBannerWebViewShow", th);
         }
     }
 
     private static void a(WebView webView, int i, int i2) {
-        o.d(f7996a, "fireOnBannerViewSizeChange");
+        o.d(f5156a, "fireOnBannerViewSizeChange");
         try {
             CallMraidJS.getInstance().fireSizeChangeEvent(webView, i, i2);
         } catch (Throwable th) {
-            o.b(f7996a, "fireOnBannerViewSizeChange", th);
+            o.b(f5156a, "fireOnBannerViewSizeChange", th);
         }
     }
 
     public static void a(WebView webView, int i, int i2, int i3, int i4) {
-        o.d(f7996a, "transInfoForMraid");
+        o.d(f5156a, "transInfoForMraid");
         try {
             int i5 = n.a().g().getResources().getConfiguration().orientation;
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("orientation", i5 == 2 ? Camera.Parameters.SCENE_MODE_LANDSCAPE : i5 == 1 ? Camera.Parameters.SCENE_MODE_PORTRAIT : "undefined");
-            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, "true");
+            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, fw.Code);
             float e = k.e(n.a().g());
             float f = k.f(n.a().g());
             HashMap g = k.g(n.a().g());
             int intValue = ((Integer) g.get("width")).intValue();
             int intValue2 = ((Integer) g.get("height")).intValue();
             HashMap hashMap = new HashMap();
-            hashMap.put(CallMraidJS.f7085a, "inline");
+            hashMap.put(CallMraidJS.f4247a, "inline");
             hashMap.put("state", "default");
-            hashMap.put(CallMraidJS.f7086c, "true");
+            hashMap.put(CallMraidJS.f4248c, fw.Code);
             hashMap.put(CallMraidJS.d, jSONObject);
             float f2 = i;
             float f3 = i2;
@@ -79,15 +80,15 @@ public final class a {
             CallMraidJS.getInstance().fireChangeEventForPropertys(webView, hashMap);
             CallMraidJS.getInstance().fireReadyEvent(webView);
         } catch (Throwable th) {
-            o.b(f7996a, "transInfoForMraid", th);
+            o.b(f5156a, "transInfoForMraid", th);
         }
     }
 
     public static void a(WindVaneWebView windVaneWebView, boolean z) {
         try {
-            CallMraidJS.getInstance().fireSetIsViewable(windVaneWebView, z ? "true" : "false");
+            CallMraidJS.getInstance().fireSetIsViewable(windVaneWebView, z ? fw.Code : "false");
         } catch (Throwable th) {
-            o.b(f7996a, "fireMraidIsViewable", th);
+            o.b(f5156a, "fireMraidIsViewable", th);
         }
     }
 }

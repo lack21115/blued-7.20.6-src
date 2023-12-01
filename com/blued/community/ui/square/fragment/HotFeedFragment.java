@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,7 +32,6 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import java.util.Collection;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt;
@@ -47,17 +47,13 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/fragment/HotFeedFragment.class */
 public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f20142c;
+    private final ViewBindingProperty c;
     private final Lazy d;
     private final Lazy e;
     private View f;
     private final RecyclerView.OnScrollListener g;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(HotFeedFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FragmentHotFeedBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f20141a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/fragment/HotFeedFragment$Companion.class */
@@ -77,7 +73,7 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
 
     public HotFeedFragment() {
         super(R.layout.fragment_hot_feed);
-        this.f20142c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<HotFeedFragment, FragmentHotFeedBinding>() { // from class: com.blued.community.ui.square.fragment.HotFeedFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<HotFeedFragment, FragmentHotFeedBinding>() { // from class: com.blued.community.ui.square.fragment.HotFeedFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentHotFeedBinding invoke(HotFeedFragment fragment) {
@@ -123,9 +119,8 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
         });
         this.g = new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.square.fragment.HotFeedFragment$onScrollListener$1
             /* JADX WARN: Code restructure failed: missing block: B:19:0x0052, code lost:
-                r0 = r4.f20147a.p();
+                r0 = r4.a.p();
              */
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -164,7 +159,7 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
                     return
                 L3b:
                     r0 = r5
-                    com.blued.community.view.FloatFooterView r0 = r0.f18888a
+                    com.blued.community.view.FloatFooterView r0 = r0.a
                     r5 = r0
                     r0 = r5
                     if (r0 != 0) goto L45
@@ -187,7 +182,7 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
                     return
                 L5f:
                     r0 = r5
-                    com.blued.community.view.FloatFooterView r0 = r0.f18888a
+                    com.blued.community.view.FloatFooterView r0 = r0.a
                     r5 = r0
                     r0 = r5
                     if (r0 != 0) goto L69
@@ -202,9 +197,8 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:17:0x0047, code lost:
-                r0 = r5.f20147a.p();
+                r0 = r5.a.p();
              */
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -240,7 +234,7 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
                     return
                 L34:
                     r0 = r6
-                    com.blued.community.view.FloatFooterView r0 = r0.f18888a
+                    com.blued.community.view.FloatFooterView r0 = r0.a
                     r6 = r0
                     r0 = r6
                     if (r0 != 0) goto L3e
@@ -261,7 +255,7 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
                     return
                 L54:
                     r0 = r6
-                    com.blued.community.view.FloatFooterView r0 = r0.f18888a
+                    com.blued.community.view.FloatFooterView r0 = r0.a
                     r6 = r0
                     r0 = r6
                     if (r0 != 0) goto L5e
@@ -289,12 +283,12 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(HotFeedFragment this$0, BluedIngSelfFeed bluedIngSelfFeed) {
-        List<BluedIngSelfFeed> value;
+        List list;
         Intrinsics.e(this$0, "this$0");
-        if (bluedIngSelfFeed == null || (value = this$0.a().d().getValue()) == null) {
+        if (bluedIngSelfFeed == null || (list = (List) this$0.a().d().getValue()) == null) {
             return;
         }
-        value.remove(bluedIngSelfFeed);
+        list.remove(bluedIngSelfFeed);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -302,7 +296,7 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
         if (j().e() == 1) {
             r().setNewData(list);
         } else {
-            r().addData((Collection<? extends BluedIngSelfFeed>) list);
+            r().addData(list);
         }
     }
 
@@ -314,7 +308,7 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FragmentHotFeedBinding p() {
-        return (FragmentHotFeedBinding) this.f20142c.b(this, b[0]);
+        return (FragmentHotFeedBinding) this.c.b(this, b[0]);
     }
 
     private final NoDataAndLoadFailView q() {
@@ -335,8 +329,8 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
     public void a(boolean z) {
         SmartRefreshLayout smartRefreshLayout;
         FragmentHotFeedBinding p = p();
-        if (p != null && (smartRefreshLayout = p.f18889c) != null) {
-            smartRefreshLayout.j();
+        if (p != null && (smartRefreshLayout = p.c) != null) {
+            smartRefreshLayout.g();
         }
         r().loadMoreComplete();
         if (z) {
@@ -358,18 +352,16 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
                 HotFeedFragment.a(HotFeedFragment.this, view);
             }
         });
-        p.f18888a.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.blued.community.ui.square.fragment.-$$Lambda$HotFeedFragment$mLipSc4-AKFBdO3h9dALeSDzc6U
-            @Override // com.blued.community.view.FloatFooterView.OnBtnClickListener
+        p.a.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.blued.community.ui.square.fragment.-$$Lambda$HotFeedFragment$mLipSc4-AKFBdO3h9dALeSDzc6U
             public final void onPostFeedClick() {
                 HotFeedFragment.d(HotFeedFragment.this);
             }
         });
         r().setEmptyView(q());
-        HotFeedFragment hotFeedFragment = this;
-        FeedMethods.a(hotFeedFragment, r());
-        CircleMethods.a(hotFeedFragment, r());
-        LiveEventBus.get("feed_delete", BluedIngSelfFeed.class).observe(hotFeedFragment, new Observer() { // from class: com.blued.community.ui.square.fragment.-$$Lambda$HotFeedFragment$l1LemhGr0lAJUl6FtyA4YXCRBEE
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        FeedMethods.a(lifecycleOwner, r());
+        CircleMethods.a(lifecycleOwner, r());
+        LiveEventBus.get("feed_delete", BluedIngSelfFeed.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.community.ui.square.fragment.-$$Lambda$HotFeedFragment$l1LemhGr0lAJUl6FtyA4YXCRBEE
             public final void onChanged(Object obj) {
                 HotFeedFragment.a(HotFeedFragment.this, (BluedIngSelfFeed) obj);
             }
@@ -383,9 +375,8 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
         r().addFooterView(this.f);
         p.b.setLayoutManager(new LinearLayoutManager(getContext()));
         p.b.addOnScrollListener(this.g);
-        p.f18889c.l(false);
-        p.f18889c.a(new OnRefreshListener() { // from class: com.blued.community.ui.square.fragment.HotFeedFragment$initView$1$4
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
+        p.c.b(false);
+        p.c.a(new OnRefreshListener() { // from class: com.blued.community.ui.square.fragment.HotFeedFragment$initView$1$4
             public void onRefresh(RefreshLayout refreshLayout) {
                 HotFeedViewModel j;
                 Intrinsics.e(refreshLayout, "refreshLayout");
@@ -396,7 +387,6 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
             }
         });
         r().setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.square.fragment.HotFeedFragment$initView$1$5
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
                 HotFeedViewModel j;
                 j = HotFeedFragment.this.j();
@@ -421,7 +411,7 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        LifecycleExtKt.a(this, j().d(), new HotFeedFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a((LifecycleOwner) this, j().d(), new HotFeedFragment$liveDataObserver$1(this));
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -444,13 +434,13 @@ public final class HotFeedFragment extends MVVMBaseFragment<HotFeedViewModel> {
         view.setVisibility(0);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         r().e();
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         r().d();

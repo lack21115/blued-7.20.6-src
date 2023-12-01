@@ -5,6 +5,7 @@ import android.net.Uri;
 import com.sobot.chat.widget.zxing.BarcodeFormat;
 import com.sobot.chat.widget.zxing.util.Intents;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +26,7 @@ public final class DecodeFormatManager {
     public static final Set<BarcodeFormat> INDUSTRIAL_FORMATS = EnumSet.of(BarcodeFormat.CODE_39, BarcodeFormat.CODE_93, BarcodeFormat.CODE_128, BarcodeFormat.ITF, BarcodeFormat.CODABAR);
 
     static {
-        EnumSet copyOf = EnumSet.copyOf(PRODUCT_FORMATS);
+        EnumSet copyOf = EnumSet.copyOf((Collection) PRODUCT_FORMATS);
         ONE_D_FORMATS = copyOf;
         copyOf.addAll(INDUSTRIAL_FORMATS);
         HashMap hashMap = new HashMap();

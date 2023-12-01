@@ -19,6 +19,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import com.android.internal.R;
 import com.anythink.expressad.foundation.h.i;
+import com.cdo.oaps.ad.OapsKey;
 import java.io.IOException;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -516,7 +517,7 @@ public class GradientDrawable extends Drawable {
             }
             if (next == 2 && depth2 <= depth) {
                 String name = xmlPullParser.getName();
-                if (name.equals("size")) {
+                if (name.equals(OapsKey.KEY_SIZE)) {
                     TypedArray obtainAttributes = obtainAttributes(resources, theme, attributeSet, R.styleable.GradientDrawableSize);
                     updateGradientDrawableSize(obtainAttributes);
                     obtainAttributes.recycle();
@@ -541,7 +542,7 @@ public class GradientDrawable extends Drawable {
                     updateGradientDrawablePadding(obtainAttributes6);
                     obtainAttributes6.recycle();
                 } else {
-                    Log.w(i.f7952c, "Bad element under <shape>: " + name);
+                    Log.w(i.f5112c, "Bad element under <shape>: " + name);
                 }
             }
         }

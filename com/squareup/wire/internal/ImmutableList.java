@@ -26,17 +26,14 @@ public final class ImmutableList<T> extends AbstractList<T> implements Serializa
         return unmodifiableList;
     }
 
-    @Override // kotlin.collections.AbstractList, java.util.List
     public T get(int i) {
         return this.list.get(i);
     }
 
-    @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
         return this.list.size();
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
     public Object[] toArray() {
         Object[] array = this.list.toArray(new Object[0]);
         if (array != null) {

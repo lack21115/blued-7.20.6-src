@@ -7,6 +7,7 @@ import android.os.Build;
 import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatTextView;
+import com.android.internal.R;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.utils.AppUtils;
@@ -176,7 +177,7 @@ public class ShapeHelper {
     }
 
     public static void a(ShapeView shapeView, int i, int i2) {
-        d(shapeView, i, 17170445, i2);
+        d(shapeView, i, R.color.transparent, i2);
     }
 
     public static void a(ShapeView shapeView, int i, int i2, int i3) {
@@ -185,7 +186,7 @@ public class ShapeHelper {
         b.Q = i2;
         b.R = i3;
         b.b = BluedSkinUtils.a(AppInfo.d(), i);
-        b.f10293c = BluedSkinUtils.a(AppInfo.d(), i2);
+        b.c = BluedSkinUtils.a(AppInfo.d(), i2);
         b.d = BluedSkinUtils.a(AppInfo.d(), i3);
         b.e = 0;
         b.f = 0;
@@ -210,7 +211,7 @@ public class ShapeHelper {
 
     /* JADX WARN: Type inference failed for: r2v1, types: [int[], int[][]] */
     public static ColorStateList b(ShapeModel shapeModel) {
-        return new ColorStateList(new int[]{new int[]{16842908, 16842919}, new int[]{-16842908, 16842919}, new int[]{-16842910}, new int[0]}, new int[]{shapeModel.f10293c, shapeModel.f10293c, shapeModel.d, shapeModel.b});
+        return new ColorStateList(new int[]{new int[]{R.attr.state_focused, R.attr.state_pressed}, new int[]{-16842908, R.attr.state_pressed}, new int[]{-16842910}, new int[0]}, new int[]{shapeModel.c, shapeModel.c, shapeModel.d, shapeModel.b});
     }
 
     public static ShapeModel b(ShapeView shapeView) {

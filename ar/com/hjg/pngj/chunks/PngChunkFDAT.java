@@ -16,7 +16,7 @@ public class PngChunkFDAT extends PngChunkMultiple {
     @Override // ar.com.hjg.pngj.chunks.PngChunk
     public void a(ChunkRaw chunkRaw) {
         this.i = PngHelperInternal.c(chunkRaw.d, 0);
-        this.h = chunkRaw.f3659a - 4;
+        this.h = chunkRaw.f3611a - 4;
         this.j = chunkRaw.d;
     }
 }

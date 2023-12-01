@@ -5,7 +5,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.SettableFuture;
-import com.huawei.hms.push.constant.RemoteMessageConst;
 import io.grpc.Attributes;
 import io.grpc.BinaryLog;
 import io.grpc.CompressorRegistry;
@@ -367,7 +366,7 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
         /* JADX INFO: Access modifiers changed from: private */
         public <ReqT, RespT> ServerStreamListener startCall(ServerStream serverStream, String str, ServerMethodDefinition<ReqT, RespT> serverMethodDefinition, Metadata metadata, Context.CancellableContext cancellableContext, StatsTraceContext statsTraceContext, Tag tag) {
             statsTraceContext.serverCallStarted(new ServerCallInfoImpl(serverMethodDefinition.getMethodDescriptor(), serverStream.getAttributes(), serverStream.getAuthority()));
-            ServerCallHandler<ReqT, RespT> serverCallHandler = serverMethodDefinition.getServerCallHandler();
+            ServerCallHandler serverCallHandler = serverMethodDefinition.getServerCallHandler();
             ServerInterceptor[] serverInterceptorArr = ServerImpl.this.interceptors;
             int length = serverInterceptorArr.length;
             int i = 0;
@@ -379,7 +378,7 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
                 serverCallHandler = InternalServerInterceptors.interceptCallHandler(serverInterceptorArr[i2], serverCallHandler);
                 i = i2 + 1;
             }
-            ServerMethodDefinition<ReqT, RespT> withServerCallHandler = serverMethodDefinition.withServerCallHandler(serverCallHandler);
+            ServerMethodDefinition withServerCallHandler = serverMethodDefinition.withServerCallHandler(serverCallHandler);
             if (ServerImpl.this.binlog != null) {
                 withServerCallHandler = ServerImpl.this.binlog.wrapMethodDefinition(withServerCallHandler);
             }
@@ -388,7 +387,7 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
 
         private <WReqT, WRespT> ServerStreamListener startWrappedCall(String str, ServerMethodDefinition<WReqT, WRespT> serverMethodDefinition, ServerStream serverStream, Metadata metadata, Context.CancellableContext cancellableContext, Tag tag) {
             ServerCallImpl serverCallImpl = new ServerCallImpl(serverStream, serverMethodDefinition.getMethodDescriptor(), metadata, cancellableContext, ServerImpl.this.decompressorRegistry, ServerImpl.this.compressorRegistry, ServerImpl.this.serverCallTracer, tag);
-            ServerCall.Listener<WReqT> startCall = serverMethodDefinition.getServerCallHandler().startCall(serverCallImpl, metadata);
+            ServerCall.Listener startCall = serverMethodDefinition.getServerCallHandler().startCall(serverCallImpl, metadata);
             if (startCall != null) {
                 return serverCallImpl.newServerStreamListener(startCall);
             }
@@ -444,15 +443,14 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
                 private void runInternal() {
                     ServerStreamListener serverStreamListener = ServerImpl.NOOP_LISTENER;
                     try {
-                        ServerMethodDefinition<?, ?> lookupMethod = ServerImpl.this.registry.lookupMethod(this.val$methodName);
-                        ServerMethodDefinition<?, ?> serverMethodDefinition = lookupMethod;
+                        ServerMethodDefinition lookupMethod = ServerImpl.this.registry.lookupMethod(this.val$methodName);
+                        ServerMethodDefinition serverMethodDefinition = lookupMethod;
                         if (lookupMethod == null) {
                             serverMethodDefinition = ServerImpl.this.fallbackRegistry.lookupMethod(this.val$methodName, this.val$stream.getAuthority());
                         }
                         if (serverMethodDefinition != null) {
                             this.val$jumpListener.setListener(ServerTransportListenerImpl.this.startCall(this.val$stream, this.val$methodName, serverMethodDefinition, this.val$headers, this.val$context, this.val$statsTraceCtx, this.val$tag));
                             this.val$context.addListener(new Context.CancellationListener() { // from class: io.grpc.internal.ServerImpl.ServerTransportListenerImpl.1StreamCreated.1ServerStreamCancellationListener
-                                @Override // io.grpc.Context.CancellationListener
                                 public void cancelled(Context context) {
                                     Status statusFromCancelled = Contexts.statusFromCancelled(context);
                                     if (Status.DEADLINE_EXCEEDED.getCode().equals(statusFromCancelled.getCode())) {
@@ -464,11 +462,11 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
                         }
                         Status status = Status.UNIMPLEMENTED;
                         this.val$stream.close(status.withDescription("Method not found: " + this.val$methodName), new Metadata());
-                        this.val$context.cancel(null);
+                        this.val$context.cancel((Throwable) null);
                     } catch (Throwable th) {
                         try {
                             this.val$stream.close(Status.fromThrowable(th), new Metadata());
-                            this.val$context.cancel(null);
+                            this.val$context.cancel((Throwable) null);
                             throw th;
                         } finally {
                             this.val$jumpListener.setListener(serverStreamListener);
@@ -565,7 +563,7 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
         this.binlog = abstractServerImplBuilder.binlog;
         this.channelz = abstractServerImplBuilder.channelz;
         this.serverCallTracer = abstractServerImplBuilder.callTracerFactory.create();
-        this.ticker = (Deadline.Ticker) Preconditions.checkNotNull(abstractServerImplBuilder.ticker, RemoteMessageConst.Notification.TICKER);
+        this.ticker = (Deadline.Ticker) Preconditions.checkNotNull(abstractServerImplBuilder.ticker, "ticker");
         this.channelz.addServer(this);
     }
 
@@ -615,7 +613,6 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
         }
     }
 
-    @Override // io.grpc.Server
     public void awaitTermination() throws InterruptedException {
         synchronized (this.lock) {
             while (!this.terminated) {
@@ -624,7 +621,6 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
         }
     }
 
-    @Override // io.grpc.Server
     public boolean awaitTermination(long j, TimeUnit timeUnit) throws InterruptedException {
         boolean z;
         synchronized (this.lock) {
@@ -642,12 +638,10 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
         return z;
     }
 
-    @Override // io.grpc.Server
     public List<ServerServiceDefinition> getImmutableServices() {
         return this.registry.getServices();
     }
 
-    @Override // io.grpc.Server
     public List<SocketAddress> getListenSockets() {
         List<SocketAddress> listenSocketsIgnoringLifecycle;
         synchronized (this.lock) {
@@ -658,17 +652,14 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
         return listenSocketsIgnoringLifecycle;
     }
 
-    @Override // io.grpc.InternalWithLogId
     public InternalLogId getLogId() {
         return this.logId;
     }
 
-    @Override // io.grpc.Server
     public List<ServerServiceDefinition> getMutableServices() {
         return Collections.unmodifiableList(this.fallbackRegistry.getServices());
     }
 
-    @Override // io.grpc.Server
     public int getPort() {
         SocketAddress listenSocketAddress;
         synchronized (this.lock) {
@@ -685,20 +676,18 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
         }
     }
 
-    @Override // io.grpc.Server
     public List<ServerServiceDefinition> getServices() {
-        List<ServerServiceDefinition> services = this.fallbackRegistry.getServices();
+        List services = this.fallbackRegistry.getServices();
         if (services.isEmpty()) {
             return this.registry.getServices();
         }
-        List<ServerServiceDefinition> services2 = this.registry.getServices();
+        List services2 = this.registry.getServices();
         ArrayList arrayList = new ArrayList(services2.size() + services.size());
         arrayList.addAll(services2);
         arrayList.addAll(services);
         return Collections.unmodifiableList(arrayList);
     }
 
-    @Override // io.grpc.InternalInstrumented
     public ListenableFuture<InternalChannelz.ServerStats> getStats() {
         InternalChannelz.ServerStats.Builder builder = new InternalChannelz.ServerStats.Builder();
         for (InternalServer internalServer : this.transportServers) {
@@ -713,7 +702,6 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
         return create;
     }
 
-    @Override // io.grpc.Server
     public boolean isShutdown() {
         boolean z;
         synchronized (this.lock) {
@@ -722,7 +710,6 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
         return z;
     }
 
-    @Override // io.grpc.Server
     public boolean isTerminated() {
         boolean z;
         synchronized (this.lock) {
@@ -731,7 +718,6 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
         return z;
     }
 
-    @Override // io.grpc.Server
     public ServerImpl shutdown() {
         synchronized (this.lock) {
             if (this.shutdown) {
@@ -752,7 +738,6 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
         }
     }
 
-    @Override // io.grpc.Server
     public ServerImpl shutdownNow() {
         shutdown();
         Status withDescription = Status.UNAVAILABLE.withDescription("Server shutdownNow invoked");
@@ -772,7 +757,6 @@ public final class ServerImpl extends Server implements InternalInstrumented<Int
         }
     }
 
-    @Override // io.grpc.Server
     public ServerImpl start() throws IOException {
         synchronized (this.lock) {
             Preconditions.checkState(!this.started, "Already started");

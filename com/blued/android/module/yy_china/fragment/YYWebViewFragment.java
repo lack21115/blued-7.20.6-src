@@ -46,13 +46,9 @@ import java.util.Map;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYWebViewFragment.class */
 public class YYWebViewFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f17480a;
+    private String a;
     private BridgeManager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BluedWebView f17481c;
+    private BluedWebView c;
     private YYSeatMemberModel d;
     private CallBackFunction e;
     private ConstraintLayout f;
@@ -65,18 +61,18 @@ public class YYWebViewFragment extends BaseFragment {
     private RelativeLayout m;
 
     private void a() {
-        this.b = new BridgeManager(this.f17481c);
+        this.b = new BridgeManager(this.c);
         ModelLoaderRegistry modelLoaderRegistry = new ModelLoaderRegistry();
         modelLoaderRegistry.add(LoaderConstants.YY_BUY_GIFT, new WebPayLoader.Factory());
         modelLoaderRegistry.add(LoaderConstants.YY_NATIVE_CHARGE, new WebNativeChargeLoader.Factory());
-        modelLoaderRegistry.add("close", new WebNativeChargeLoader.Factory());
+        modelLoaderRegistry.add(LoaderConstants.CLOSE, new WebNativeChargeLoader.Factory());
         modelLoaderRegistry.add(LoaderConstants.GO_BACK, new WebNativeChargeLoader.Factory());
         this.b.registerHandler(LoaderConstants.YY_BUY_GIFT, new BridgeHandler() { // from class: com.blued.android.module.yy_china.fragment.YYWebViewFragment.3
             @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
             public void handler(String str, CallBackFunction callBackFunction) {
                 Logger.a("收到js data:" + str, new Object[0]);
                 YYWebViewFragment.this.e = callBackFunction;
-                WebBuyGiftModel webBuyGiftModel = (WebBuyGiftModel) AppInfo.f().fromJson(str, (Class<Object>) WebBuyGiftModel.class);
+                WebBuyGiftModel webBuyGiftModel = (WebBuyGiftModel) AppInfo.f().fromJson(str, WebBuyGiftModel.class);
                 YYWebViewFragment.this.d = webBuyGiftModel.user_info;
                 YYWebViewFragment.this.a(webBuyGiftModel.goods_info, "", false, !TextUtils.equals("2", webBuyGiftModel.recharge_toast));
             }
@@ -93,7 +89,7 @@ public class YYWebViewFragment extends BaseFragment {
                 YYRoomInfoManager.e().c().a(YYWebViewFragment.this.getContext(), "", 0);
             }
         });
-        this.b.registerHandler("close", new BridgeHandler() { // from class: com.blued.android.module.yy_china.fragment.YYWebViewFragment.6
+        this.b.registerHandler(LoaderConstants.CLOSE, new BridgeHandler() { // from class: com.blued.android.module.yy_china.fragment.YYWebViewFragment.6
             @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
             public void handler(String str, CallBackFunction callBackFunction) {
             }
@@ -102,16 +98,16 @@ public class YYWebViewFragment extends BaseFragment {
 
     private void a(View view) {
         this.m = (RelativeLayout) view.findViewById(R.id.root_layout);
-        this.f = (ConstraintLayout) view.findViewById(R.id.ll_title);
+        this.f = view.findViewById(R.id.ll_title);
         this.g = (TextView) view.findViewById(R.id.tv_title);
         this.h = (ImageView) view.findViewById(R.id.img_back);
         this.i = (ImageView) view.findViewById(R.id.iv_top);
         WebView webView = (WebView) view.findViewById(R.id.dialog_web);
         this.l = webView;
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) webView.getLayoutParams();
-        Map<String, String> a2 = !TextUtils.isEmpty(this.f17480a) ? BluedUrlUtils.a(this.f17480a) : null;
-        if (a2 != null) {
-            String str = a2.get("screen");
+        Map<String, String> a = !TextUtils.isEmpty(this.a) ? BluedUrlUtils.a(this.a) : null;
+        if (a != null) {
+            String str = a.get("screen");
             if (!StringUtils.b(str) && str.matches("\\d+")) {
                 Integer num = new Integer(str);
                 if (num.intValue() > 0 && num.intValue() <= 100) {
@@ -124,7 +120,7 @@ public class YYWebViewFragment extends BaseFragment {
         this.l.getSettings().setTextZoom(100);
         if (this.j) {
             if (StatusBarHelper.a()) {
-                ((ConstraintLayout.LayoutParams) this.g.getLayoutParams()).topMargin = StatusBarHelper.a(getContext());
+                this.g.getLayoutParams().topMargin = StatusBarHelper.a(getContext());
             }
             this.f.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.YYWebViewFragment.1
                 @Override // android.view.View.OnClickListener
@@ -134,7 +130,7 @@ public class YYWebViewFragment extends BaseFragment {
             });
             this.f.setVisibility(0);
         }
-        this.f17481c = new BluedWebView(this, this.l, null, new YYSimpleWebCallback() { // from class: com.blued.android.module.yy_china.fragment.YYWebViewFragment.2
+        this.c = new BluedWebView(this, this.l, null, new YYSimpleWebCallback() { // from class: com.blued.android.module.yy_china.fragment.YYWebViewFragment.2
             @Override // com.blued.android.module.yy_china.listener.YYSimpleWebCallback, com.blued.android.framework.web.BluedWebView.WebCallback
             public void a(BluedWebView bluedWebView, String str2) {
                 super.a(bluedWebView, str2);
@@ -170,10 +166,10 @@ public class YYWebViewFragment extends BaseFragment {
         });
         this.l.getSettings().setTextZoom(100);
         a();
-        if (TextUtils.isEmpty(this.f17480a)) {
+        if (TextUtils.isEmpty(this.a)) {
             return;
         }
-        this.f17481c.a(this.f17480a);
+        this.c.a(this.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -223,10 +219,9 @@ public class YYWebViewFragment extends BaseFragment {
     }
 
     public void a(String str) {
-        this.f17480a = str;
+        this.a = str;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         Logger.a("web dialog onActivityResult: " + i, new Object[0]);
@@ -252,25 +247,25 @@ public class YYWebViewFragment extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.fragment_yy_webview_dialog, (ViewGroup) null);
         a(inflate);
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
-        if (this.f17481c != null) {
+        if (this.c != null) {
             this.m.removeView(this.l);
             this.l.removeAllViews();
-            this.f17481c.h();
+            this.c.h();
         }
     }
 }

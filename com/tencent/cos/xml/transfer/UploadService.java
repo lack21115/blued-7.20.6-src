@@ -1,6 +1,7 @@
 package com.tencent.cos.xml.transfer;
 
 import android.content.Context;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.cos.xml.CosXmlSimpleService;
 import com.tencent.cos.xml.common.ClientErrorCode;
 import com.tencent.cos.xml.exception.CosXmlClientException;
@@ -666,17 +667,17 @@ public class UploadService {
                 str4 = cosXmlSimpleService.getAppid();
             }
             stringBuffer.append(str4);
-            stringBuffer.append(";");
+            stringBuffer.append(t.aE);
             stringBuffer.append(str);
-            stringBuffer.append(";");
+            stringBuffer.append(t.aE);
             stringBuffer.append(str2);
-            stringBuffer.append(";");
+            stringBuffer.append(t.aE);
             stringBuffer.append(str3);
-            stringBuffer.append(";");
+            stringBuffer.append(t.aE);
             stringBuffer.append(file.length());
-            stringBuffer.append(";");
+            stringBuffer.append(t.aE);
             stringBuffer.append(file.lastModified());
-            stringBuffer.append(";");
+            stringBuffer.append(t.aE);
             stringBuffer.append(j);
             return stringBuffer.toString();
         }

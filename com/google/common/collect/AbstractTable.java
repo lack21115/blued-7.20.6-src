@@ -47,7 +47,7 @@ abstract class AbstractTable<R, C, V> implements Table<R, C, V> {
             return z;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Table.Cell<R, C, V>> iterator() {
             return AbstractTable.this.cellIterator();
         }
@@ -69,7 +69,7 @@ abstract class AbstractTable<R, C, V> implements Table<R, C, V> {
             return z;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return AbstractTable.this.size();
         }
@@ -81,12 +81,12 @@ abstract class AbstractTable<R, C, V> implements Table<R, C, V> {
         Values() {
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             AbstractTable.this.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return AbstractTable.this.containsValue(obj);
         }
@@ -96,7 +96,7 @@ abstract class AbstractTable<R, C, V> implements Table<R, C, V> {
             return AbstractTable.this.valuesIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return AbstractTable.this.size();
         }
